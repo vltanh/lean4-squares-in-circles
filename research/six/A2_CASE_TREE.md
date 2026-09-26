@@ -589,19 +589,37 @@ both central patterns.  See `check_A2_R22c_NW_envelope.py`,
 
 ### A22- : w < 0
 
-P17--P18 do not apply. Keep
+A1 already supplies a nontrivial lower bound on the own-primary W angle:
+
+    -2/3 < w < 0.                                  (R22d-W)
+
+Indeed the proof of A1 derives `w>-2/3` from W own-primary alone, before
+using the contradictory hypothesis that D is west-cardinal.
+
+The common A2.2 cardinal bounds remain available:
+
+    |n|<2/5, |s|<2/5,
+    |n|+|s|<23/50.                                 (R22d-NS)
+
+Together with P7 and cyclic order,
+
+    0<d<=pi/4,   -pi/4<eps<=0,   w<=d.            (R22d-D)
+
+P17--P18 themselves require `w>=0`, so they cannot yet be invoked.  Keep
 
     D--W in {W-primary,W-secondary,D-primary,D-secondary}.
 
 The old hand certificates cover several subrectangles, but they do not yet
 form a complete structural cover. Record
 
-    R22-d: w<0
+    R22-d:
+      -2/3<w<0,
+      |n|,|s|<2/5, |n|+|s|<23/50,
+      0<d<=pi/4.
 
-as one explicit residual family.
-
-Do **not** assume `w>=0`: a restricted diagnostic run of the current
-non-stress contractions leaves many w<0 residual boxes.
+Do **not** replace this by an unconstrained negative-W box: the inherited
+A1/cardinal inequalities above are part of the branch definition and should
+be used before any new stress search.
 
 ## 6. Structural accounting
 
