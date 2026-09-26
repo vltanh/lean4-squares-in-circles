@@ -12,33 +12,6 @@ seen from the second square.
 noncomputable section
 namespace SquaresInCircles.Seven
 
-def relativePhase (a u A v g : ℝ) (s t : TransverseSign) : ℝ :=
-  g+s.coe*label a u-t.coe*label A v
-
-def centerDX (a u A v g : ℝ) (s t : TransverseSign) : ℝ :=
-  A*Real.cos (relativePhase a u A v g s t)-t.coe*v*Real.sin (relativePhase a u A v g s t)-a
-
-def centerDY (a u A v g : ℝ) (s t : TransverseSign) : ℝ :=
-  A*Real.sin (relativePhase a u A v g s t)+t.coe*v*Real.cos (relativePhase a u A v g s t)-s.coe*u
-
-def pairWidth (d : ℝ) : ℝ := (1+|Real.cos d|+|Real.sin d|)/2
-
-lemma pair_support_axis_values (a u A v g : ℝ) (s t : TransverseSign) :
-    pairSupport a u A v s t 0 g=pairWidth (relativePhase a u A v g s t)-centerDX a u A v g s t ∧
-    pairSupport a u A v s t 1 g=pairWidth (relativePhase a u A v g s t)-centerDY a u A v g s t ∧
-    pairSupport a u A v s t 2 g=pairWidth (relativePhase a u A v g s t)+centerDX a u A v g s t ∧
-    pairSupport a u A v s t 3 g=pairWidth (relativePhase a u A v g s t)+centerDY a u A v g s t := by
-  let d := relativePhase a u A v g s t
-  have he (c : ℝ) : c-g-s.coe*label a u+t.coe*label A v=c-d := by
-    dsimp [d,relativePhase]
-    ring
-  rw [pairSupport_zero,pairSupport_one,pairSupport_two,pairSupport_three,he,he,he,he,
-    support_three_half_sub,support_two_pi_sub,
-    show 5*Real.pi/2-d=(Real.pi/2-d)+2*Real.pi by ring]
-  simp only [support,Real.cos_pi_sub,Real.sin_pi_sub,Real.cos_add_two_pi,Real.sin_add_two_pi,
-    Real.cos_pi_div_two_sub,Real.sin_pi_div_two_sub,abs_neg,pairWidth,centerDX,centerDY,d]
-  refine ⟨?_,?_,?_,?_⟩ <;> ring
-
 lemma reverse_reflected_phase (a u A v g : ℝ) (s t : TransverseSign) :
     relativePhase A v a u g t.flip s.flip=relativePhase a u A v g s t := by
   dsimp [relativePhase]

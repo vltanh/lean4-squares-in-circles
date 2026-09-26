@@ -1,5 +1,4 @@
-import SquaresInCircles.Seven.MarkerSeparation
-import SquaresInCircles.Seven.CircleBudget
+import SquaresInCircles.Seven.Optimality
 
 /-!
 # The ring of six squares

@@ -1,5 +1,6 @@
 import SquaresInCircles.Seven.LabelBoundary
-import SquaresInCircles.Seven.SectorBounds
+import SquaresInCircles.Seven.Support
+import SquaresInCircles.Seven.Analysis
 
 /-!
 # Segments of constant label
@@ -60,7 +61,7 @@ lemma circle_order {u v : ℝ} (hu : 0 ≤ u) (huv : u ≤ v) (hv : v ≤ rd) :
   have hid : (circle u-circle v)*(circle u+circle v+1)=(v-u)*(u+v+1) := by
     linarith
   have hwidth := mul_nonneg (sub_nonneg.mpr huv)
-    (show 0 ≤ circle u+circle v-u-v by linarith [au.2.1,av.2.1])
+    (show 0 ≤ circle u+circle v-u-v by linarith [au.u_le,av.u_le])
   have hpos : 0 < circle u+circle v+1 := by linarith [au.a_nonneg,av.a_nonneg]
   refine ⟨hanti,?_⟩
   by_contra hn
@@ -100,7 +101,7 @@ lemma axialTop_right {u : ℝ} (hu : u0 ≤ u ∧ u ≤ rd) : axialTop u=axialLi
   min_eq_right (circle_switch_right hu)
 
 lemma a_le_circle {a u : ℝ} (h : Admissible a u) : a ≤ circle u := by
-  have hp := h.2.2.2
+  have hp := h.phi_le
   have hr : 0 ≤ targetSq-(u+1/2)^2 := by
     dsimp [phi] at hp
     linarith [sq_nonneg (a+1/2)]
@@ -122,8 +123,8 @@ lemma axialTop_state {u : ℝ} (hu : 0 ≤ u ∧ u ≤ Real.pi/5) :
   have hc := circle_state ⟨hu.1,huR⟩
   have hlineU : u ≤ axialLine u := by dsimp [axialLine]; linarith [hu.2,pi_lt_22_over_7]
   have hlineA : 1/2 ≤ axialLine u := by dsimp [axialLine]; linarith [hu.2,pi_lt_22_over_7]
-  have htop : 1/2 ≤ axialTop u := le_min hc.2.2.1 hlineA
-  have hgeU : u ≤ axialTop u := le_min hc.2.1 hlineU
+  have htop : 1/2 ≤ axialTop u := le_min hc.half_le hlineA
+  have hgeU : u ≤ axialTop u := le_min hc.u_le hlineU
   have hle : axialTop u ≤ circle u := min_le_left _ _
   have hphi : phi (axialTop u) u ≤ targetSq := by
     have hm := mul_nonneg (sub_nonneg.mpr hle)
@@ -147,7 +148,7 @@ lemma side_state_transition_bounds {a u : ℝ} (h : Admissible a u)
   have h0 := transition_coarse
   have he := transition_circle
   have hl := transition_line
-  have hphi := h.2.2.2
+  have hphi := h.phi_le
   have hu : u0 ≤ u := by
     by_contra hn
     have hd : 0 < u0-u := by linarith
@@ -164,7 +165,7 @@ lemma side_state_transition_bounds {a u : ℝ} (h : Admissible a u)
     linarith [sq_nonneg (a-a0),sq_nonneg (u-u0)]
   have ha : a ≤ a0 := by
     have hp := mul_nonneg (sub_nonneg.mpr hu)
-      (show 0 ≤ u+u0+1 by linarith [h.1])
+      (show 0 ≤ u+u0+1 by linarith [h.u_nonneg])
     dsimp [phi,a0,u0] at *
     nlinarith [h.a_nonneg]
   have hs : s0 ≤ label a u := by
@@ -219,7 +220,7 @@ lemma diagonal_state {t : ℝ} (ht : td ≤ t ∧ t ≤ Real.pi/4) :
     Admissible (diagonal t) (diagonal t) ∧
       label (diagonal t) (diagonal t)=side (diagonal t) (diagonal t) ∧
       side (diagonal t) (diagonal t)=t := by
-  have hd : diagonal td=rd := by dsimp [diagonal,td]; ring
+  have hd := diagonal_td
   have hupper : diagonal t ≤ rd := by rw [← hd]; dsimp [diagonal]; linarith [ht.1]
   have hlower : 1/2 < diagonal t := by dsimp [diagonal]; linarith [ht.2,pi_lt_22_over_7]
   have hphi : phi (diagonal t) (diagonal t) ≤ targetSq := by
@@ -262,6 +263,23 @@ lemma tie_state {t : ℝ} (ht : s0 ≤ t ∧ t ≤ Real.pi/4) :
   rw [he] at ha hA
   exact ⟨ha,by rw [hA]; dsimp [axial]; ring,by dsimp [side,tieA]; ring⟩
 
+/-- Along the axial tie line, a state with label `s` moving with the direction
+`x` raises the support `-(A - 1/2) sin x + (v + 1/2) cos x` at this rate,
+positive while `sin x ≤ (9/4) cos x`. -/
+lemma tie_slope_pos {s x : ℝ} (hs : s0 ≤ s ∧ s ≤ Real.pi/4) (hC : 0 < Real.cos x)
+    (hS : 0 ≤ Real.sin x) (hCS : Real.sin x ≤ (9/4)*Real.cos x) :
+    0 < (43/90-(4/5)*s)*Real.sin x+(13/10-tieA s)*Real.cos x := by
+  have hA : tieA s < 9/8 := by
+    have hh : tieA s ≤ tieA s0 := by dsimp [tieA]; linarith [hs.1]
+    linarith [transition_coarse.2.1,tieA_s0]
+  rcases le_total 0 (43/90-(4/5)*s) with hb | hb
+  · nlinarith [mul_nonneg hb hS,mul_pos (show 0 < 13/10-tieA s by linarith) hC]
+  · have hcoef : (91:ℝ)/360 ≤ (13/10-tieA s)+(9/4)*(43/90-(4/5)*s) := by
+      dsimp [tieA]
+      linarith [hs.2,pi_lt_22_over_7]
+    nlinarith [mul_nonneg (neg_nonneg.mpr hb) (sub_nonneg.mpr hCS),
+      mul_pos (show 0 < (13/10-tieA s)+(9/4)*(43/90-(4/5)*s) by linarith) hC]
+
 /-- A state with side label `t` lies on the line of slope `4/9` through the
 axial tie `(tieA t, 4t/5)`. -/
 lemma tie_of_side {a u t : ℝ} (h : side a u=t) : a=tieA t+(4/9)*(u-(4/5)*t) := by
@@ -294,16 +312,96 @@ lemma side_segment {a u : ℝ} (h : Admissible a u)
       have hu' : sideTopU t < u := lt_of_not_ge hn
       have ha' : sideTopA t < a := by linarith
       have hmu := mul_pos (sub_pos.mpr hu')
-        (show 0 < u+sideTopU t+1 by linarith [h.1,htop.1])
+        (show 0 < u+sideTopU t+1 by linarith [h.u_nonneg,htop.1])
       have hma := mul_pos (sub_pos.mpr ha')
         (show 0 < a+sideTopA t+1 by linarith [h.a_nonneg,htop.a_nonneg])
-      have hp := h.2.2.2
+      have hp := h.phi_le
       dsimp [phi] at hnorm hp
       linarith
     · simp only [sideTopU,ite_eq_right hc]
       dsimp [diagonal,tieA] at hlin ⊢
-      linarith [h.2.1]
+      linarith [h.u_le]
   exact ⟨hlow,hupp,hlin⟩
+
+/-! Displacements along the pieces of the boundary, which avoid differentiating
+the minimum at its corner. -/
+
+lemma axialTop_antitone {u v : ℝ}
+    (hu : 0 ≤ u) (huv : u ≤ v) (hv : v ≤ Real.pi/5) :
+    axialTop v ≤ axialTop u := by
+  have hvr : v ≤ rd := by linarith [hv,pi_lt_22_over_7,rd_bounds.1]
+  have hc := (circle_order hu huv hvr).1
+  have hl : axialLine v ≤ axialLine u := by dsimp [axialLine]; linarith
+  exact min_le_min hc hl
+
+lemma axialTop_displacement {u v : ℝ}
+    (hu : 0 ≤ u) (huv : u ≤ v) (hv : v ≤ Real.pi/5) :
+    axialTop u-axialTop v ≤ (11/9)*(v-u) := by
+  have hvr : v ≤ rd := by linarith [hv,pi_lt_22_over_7,rd_bounds.1]
+  have hc := (circle_order hu huv hvr).2
+  by_cases hm : circle v ≤ axialLine v
+  · have hv' : axialTop v=circle v := min_eq_left hm
+    have hu' : axialTop u ≤ circle u := min_le_left _ _
+    rw [hv']
+    linarith
+  · have hv' : axialTop v=axialLine v := min_eq_right (le_of_not_ge hm)
+    have hu' : axialTop u ≤ axialLine u := min_le_right _ _
+    rw [hv']
+    dsimp [axialLine] at hu' ⊢
+    linarith
+
+lemma circle_displacement_half {u v : ℝ}
+    (hu : 0 ≤ u) (huv : u ≤ v) (hv : v ≤ u0) :
+    circle u-circle v ≤ (1/2)*(v-u) := by
+  have hur : v ≤ rd := by linarith [hv,transition_coarse.2.2.2.1,rd_bounds.1]
+  have ho := circle_order hu huv hur
+  have h0u := circle_order hu (huv.trans hv)
+    (show u0 ≤ rd by linarith [transition_coarse.2.2.2.1,rd_bounds.1])
+  have h0v := circle_order (hu.trans huv) hv
+    (show u0 ≤ rd by linarith [transition_coarse.2.2.2.1,rd_bounds.1])
+  rw [circle_u0] at h0u h0v
+  have eu := circle_eq ⟨hu,huv.trans hur⟩
+  have ev := circle_eq ⟨hu.trans huv,hur⟩
+  have hbounds := transition_bounds
+  have hratio : 2*(u+v+1) ≤ circle u+circle v+1 := by linarith
+  have hid : (circle u-circle v)*(circle u+circle v+1) = (v-u)*(u+v+1) := by
+    linarith
+  have hmul := mul_nonneg (sub_nonneg.mpr huv) (sub_nonneg.mpr hratio)
+  have hden : 0 < circle u+circle v+1 := by linarith [transition_coarse.1]
+  by_contra hn
+  have hh := mul_pos
+    (show 0 < circle u-circle v-(1/2)*(v-u) by linarith) hden
+  linarith
+
+lemma sideA_displacement {t s : ℝ}
+    (ht : s0 ≤ t) (hts : t ≤ s) (hs : s ≤ td) :
+    sideA t-sideA s ≤ (12/13)*(s-t) := by
+  let f : ℝ → ℝ := fun x => sideA x+(12/13)*x
+  have hm : MonotoneOn f (Icc t s) := by
+    apply monoOn_of_hasDeriv_nonneg (d := fun x => 12/13-Y x/Z x)
+      (fun x hx => by
+        have hh := (hasDerivAt_X ⟨ht.trans hx.1,hx.2.trans hs⟩).sub_const (1/2)
+        exact (hh.add ((hasDerivAt_id x).const_mul (12/13))).continuousAt.continuousWithinAt)
+    · intro x hx
+      exact (((hasDerivAt_X ⟨by linarith [hx.1],by linarith [hx.2]⟩).sub_const (1/2)).fun_add
+        ((hasDerivAt_id' x).const_mul (12/13))).congr_deriv (by ring)
+    · intro x hx
+      have hx' : s0 ≤ x ∧ x ≤ td := ⟨by linarith [hx.1],by linarith [hx.2]⟩
+      have hb := circle_bounds hx'
+      have he := (circle_identities hx').2.2
+      have hZ := Z_pos hx'
+      have hle : Y x/Z x ≤ 12/13 := (div_le_iff₀ hZ).mpr (by linarith [hb.2.2.1])
+      linarith
+  have h := hm ⟨le_rfl,hts⟩ ⟨hts,le_rfl⟩ hts
+  dsimp [f] at h
+  linarith
+
+lemma side_radial_upper {a u : ℝ} (h : Admissible a u)
+    (hT : label a u=side a u) : a ≤ sideTopA (label a u) := by
+  have hs := side_segment h hT
+  have htop := tie_of_side (sideTop_state
+    ⟨(side_state_transition_bounds h hT).2.2,h.label_le_quarter⟩).2.2
+  linarith [hs.2.1,hs.2.2]
 
 end Boundary
 end SquaresInCircles.Seven

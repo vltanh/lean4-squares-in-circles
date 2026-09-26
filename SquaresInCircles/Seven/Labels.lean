@@ -11,8 +11,6 @@ term, is the angle from the chart phase to the marker.
 noncomputable section
 namespace SquaresInCircles.Seven
 
-lemma pi_lower_157 : (157 : ℝ)/50 < Real.pi := by linarith [Real.pi_gt_d2]
-
 def targetSq : ℝ := 13 / 4
 def gap : ℝ := Real.pi / 3
 def axial (u : ℝ) : ℝ := 5 * u / 4
@@ -20,14 +18,22 @@ def side (a u : ℝ) : ℝ := Real.pi / 6 + (u - 1/2) / 3 + 3 * (1-a) / 4
 def label (a u : ℝ) : ℝ := min (min (axial u) (side a u)) (Real.pi / 4)
 def remainder (a u : ℝ) : ℝ := 4 - 3*a - 2*u
 
-def Admissible (a u : ℝ) : Prop :=
-  0 ≤ u ∧ u ≤ a ∧ 1/2 ≤ a ∧ phi a u ≤ targetSq
+/-- An admissible state: `1/2 ≤ a`, `0 ≤ u ≤ a` and `φ(a, u) ≤ 13/4`. -/
+structure Admissible (a u : ℝ) : Prop where
+  u_nonneg : 0 ≤ u
+  u_le : u ≤ a
+  half_le : 1/2 ≤ a
+  phi_le : phi a u ≤ targetSq
 
-def StrictlyAdmissible (a u : ℝ) : Prop :=
-  0 ≤ u ∧ u ≤ a ∧ 1/2 ≤ a ∧ phi a u < targetSq
+/-- A strictly admissible state: `φ(a, u) < 13/4`. -/
+structure StrictlyAdmissible (a u : ℝ) : Prop where
+  u_nonneg : 0 ≤ u
+  u_le : u ≤ a
+  half_le : 1/2 ≤ a
+  phi_lt : phi a u < targetSq
 
 lemma StrictlyAdmissible.admissible {a u : ℝ} (h : StrictlyAdmissible a u) :
-    Admissible a u := ⟨h.1, h.2.1, h.2.2.1, h.2.2.2.le⟩
+    Admissible a u := ⟨h.u_nonneg, h.u_le, h.half_le, h.phi_lt.le⟩
 
 lemma remainder_identity (a u : ℝ) :
     remainder a u = (a-1)^2 + (u-1/2)^2 + targetSq - phi a u := by
@@ -48,8 +54,8 @@ namespace Admissible
 variable {a u : ℝ} (h : Admissible a u)
 include h
 
-lemma a_nonneg : 0 ≤ a := by linarith [h.2.2.1]
-lemma slack_nonneg : 0 ≤ targetSq - phi a u := sub_nonneg.mpr h.2.2.2
+lemma a_nonneg : 0 ≤ a := by linarith [h.half_le]
+lemma slack_nonneg : 0 ≤ targetSq - phi a u := sub_nonneg.mpr h.phi_le
 
 lemma remainder_nonneg : 0 ≤ remainder a u := by
   rw [remainder_identity]
@@ -61,34 +67,31 @@ lemma tangent : 3*a + 2*u ≤ 4 := by
   linarith
 
 lemma a_le_sqrt_three_sub_half : a ≤ Real.sqrt 3 - 1/2 := by
-  have hp := h.2.2.2
+  have hp := h.phi_le
   have hs := Real.sq_sqrt (show (0 : ℝ) ≤ 3 by norm_num)
   have hn := Real.sqrt_nonneg (3 : ℝ)
   dsimp [phi, targetSq] at hp
-  nlinarith [h.1, h.2.2.1, sq_nonneg u]
+  nlinarith [h.u_nonneg, h.half_le, sq_nonneg u]
 
 lemma a_lt_five_fourths : a < 5/4 := by
   nlinarith [h.a_le_sqrt_three_sub_half, Real.sq_sqrt (show (0 : ℝ) ≤ 3 by norm_num),
     Real.sqrt_nonneg 3]
 
 lemma sum_lt : a+u < 31/20 := by
-  have hp := h.2.2.2
+  have hp := h.phi_le
   dsimp [phi, targetSq] at hp
-  nlinarith [h.1, h.2.2.1, sq_nonneg (a-u)]
+  nlinarith [h.u_nonneg, h.half_le, sq_nonneg (a-u)]
 
-lemma u_lt : u < 31/40 := by linarith [h.sum_lt, h.2.1]
+lemma u_lt : u < 31/40 := by linarith [h.sum_lt, h.u_le]
 
 lemma side_pos : 0 < side a u := by
   have ha := h.a_lt_five_fourths
   have hp := Real.pi_gt_d2
   dsimp [side]
-  linarith [h.1]
+  linarith [h.u_nonneg]
 
-lemma label_nonneg : 0 ≤ label a u := by
-  have hu := h.1
-  unfold label
-  exact le_min (le_min (by dsimp [axial]; positivity) h.side_pos.le)
-    (by positivity)
+lemma label_nonneg : 0 ≤ label a u :=
+  le_min (le_min (by dsimp [axial]; linarith [h.u_nonneg]) h.side_pos.le) (by positivity)
 
 omit h in
 lemma label_le_axial (_h : Admissible a u) : label a u ≤ axial u :=
@@ -101,26 +104,20 @@ lemma label_le_side (_h : Admissible a u) : label a u ≤ side a u :=
 omit h in
 lemma label_le_quarter (_h : Admissible a u) : label a u ≤ Real.pi/4 := min_le_right _ _
 
-lemma label_pos (hu : 0 < u) : 0 < label a u := by
-  unfold label axial
-  exact lt_min (lt_min (by positivity) h.side_pos) (by positivity)
+/-- The label lies in `[0, π/4]`. -/
+lemma label_mem : 0 ≤ label a u ∧ label a u ≤ Real.pi/4 :=
+  ⟨h.label_nonneg, h.label_le_quarter⟩
 
 lemma label_zero_iff : label a u = 0 ↔ u = 0 := by
   constructor
   · intro hl
     by_contra hu
-    have hu' : 0 < u := by
-      rcases lt_or_eq_of_le h.1 with hpos | hz
-      · exact hpos
-      · exact False.elim (hu hz.symm)
-    have hp := h.label_pos hu'
-    rw [hl] at hp
-    exact (lt_irrefl (0 : ℝ)) hp
-  · intro hu
-    subst u
-    apply le_antisymm
-    · simpa only [axial, mul_zero, zero_div] using h.label_le_axial
-    · exact h.label_nonneg
+    have hu' : 0 < u := lt_of_le_of_ne h.u_nonneg (Ne.symm hu)
+    have hp : 0 < label a u :=
+      lt_min (lt_min (by dsimp [axial]; linarith) h.side_pos) (by positivity)
+    exact hp.ne' hl
+  · rintro rfl
+    exact le_antisymm (by simpa [axial] using h.label_le_axial) h.label_nonneg
 
 lemma radial_label_bound : a ≤ 1 + 2*Real.pi/15 - (4/5)*label a u := by
   have ht := h.label_le_side
@@ -128,18 +125,14 @@ lemma radial_label_bound : a ≤ 1 + 2*Real.pi/15 - (4/5)*label a u := by
   linarith [h.remainder_nonneg]
 
 omit h in
-lemma selected (_h : Admissible a u) : label a u = axial u ∨ label a u = side a u ∨
-    label a u = Real.pi/4 := by
-  by_cases hA : axial u ≤ side a u
-  · by_cases hc : axial u ≤ Real.pi/4
-    · exact Or.inl (by simp [label, min_eq_left hA, min_eq_left hc])
-    · exact Or.inr (Or.inr (by
-        simp [label, min_eq_left hA, min_eq_right (le_of_not_ge hc)]))
-  · by_cases hc : side a u ≤ Real.pi/4
-    · exact Or.inr (Or.inl (by
-        simp [label, min_eq_right (le_of_not_ge hA), min_eq_left hc]))
-    · exact Or.inr (Or.inr (by
-        simp [label, min_eq_right (le_of_not_ge hA), min_eq_right (le_of_not_ge hc)]))
+/-- The label is one of its three terms. -/
+lemma selected (_h : Admissible a u) :
+    label a u = axial u ∨ label a u = side a u ∨ label a u = Real.pi/4 := by
+  unfold label
+  rcases min_choice (min (axial u) (side a u)) (Real.pi/4) with h | h <;> rw [h]
+  · rcases min_choice (axial u) (side a u) with h' | h' <;> simp [h']
+  · simp
+
 end Admissible
 
 lemma side_selected_label_gt {a u : ℝ} (h : Admissible a u)
@@ -158,8 +151,8 @@ lemma side_selected_label_gt {a u : ℝ} (h : Admissible a u)
     ring
   by_contra hn
   have ht1 : t ≤ 9/25 := le_of_not_gt hn
-  have ha : 332/225-(44/45)*t < a := by linarith [pi_lower_157]
-  have hp := h.2.2.2
+  have ha : 332/225-(44/45)*t < a := by linarith [Real.pi_gt_d2]
+  have hp := h.phi_le
   dsimp [phi,targetSq] at hp
   have hsqA := sq_nonneg (a-(332/225-(44/45)*t))
   have hsqU := sq_nonneg (u-(4/5)*t)
@@ -173,37 +166,73 @@ lemma side_selected_label_gt {a u : ℝ} (h : Admissible a u)
     (show 0 ≤ 139744/50625-(3232/2025)*(t+9/25) by linarith)
   linarith
 
-lemma side_selected_gt_twelfth {a u : ℝ} (h : Admissible a u)
-    (hsel : label a u = side a u) : Real.pi/12 < side a u := by
-  linarith [side_selected_label_gt h hsel,Real.pi_lt_d2]
-
 lemma side_selected_a_lt {a u : ℝ} (h : Admissible a u)
     (hsel : label a u = side a u) : a < 9/8 := by
   have hl := side_selected_label_gt h hsel
-  have hp := h.2.2.2
+  have hp := h.phi_le
   rw [hsel] at hl
   dsimp [side] at hl
   dsimp [phi, targetSq] at hp
   by_contra hn
   linarith [Real.pi_lt_d2, sq_nonneg (u-2862/10000), sq_nonneg (a-9/8)]
 
-/-- The label of a state whose transverse offset `b` may be negative, with the
-sign of `b`. -/
-def signedLabel (a b : ℝ) : ℝ := if b < 0 then -label a |b| else label a |b|
+lemma side_selected_a_gt {a u : ℝ} (h : Admissible a u)
+    (hsel : label a u = side a u) : (7 : ℝ)/10 < a := by
+  have ht := h.label_le_axial
+  have hq := h.label_le_quarter
+  rw [hsel] at ht hq
+  dsimp [side,axial] at ht hq
+  linarith [pi_lt_22_over_7]
 
-lemma signedLabel_neg {a b : ℝ} (h : Admissible a |b|) :
-    signedLabel a (-b) = -signedLabel a b := by
-  by_cases hb : b = 0
-  · subst b
-    have hz := h.label_zero_iff.mpr (show |(0 : ℝ)| = 0 by simp)
-    simp only [abs_zero] at hz
-    simp [signedLabel, hz]
-  · by_cases hn : b < 0
-    · simp [signedLabel, hn, show ¬ -b < 0 by linarith, abs_neg]
-    · have hbpos : 0 < b := by
-        by_contra hle
-        exact hb (le_antisymm (le_of_not_gt hle) (le_of_not_gt hn))
-      simp [signedLabel, hn, show -b < 0 by linarith, abs_neg]
+lemma axial_tie_line {a u : ℝ} (h : Admissible a u)
+    (hsel : label a u = axial u) : 9*a+11*u ≤ 2*Real.pi+7 := by
+  have hh := h.label_le_side
+  rw [hsel] at hh
+  dsimp [side,axial] at hh
+  linarith
+
+lemma axial_sum_lt {a u : ℝ} (h : Admissible a u)
+    (hsel : label a u = axial u) : a+u < (113 : ℝ)/80 := by
+  have ht := axial_tie_line h hsel
+  by_contra hn
+  have hu : u < 23/80 := by linarith [pi_lt_22_over_7]
+  have hp := h.phi_le
+  dsimp [phi,targetSq] at hp
+  linarith [sq_nonneg (a-9/8),sq_nonneg (u-23/80)]
+
+/-- A side label above `π/6` costs a remainder quadratic in the excess. -/
+lemma side_remainder_quadratic {a u : ℝ} (h : Admissible a u)
+    (hsel : label a u = side a u) :
+    (9/5)*(label a u-Real.pi/6)^2 ≤ remainder a u := by
+  let D := label a u-Real.pi/6
+  let W := remainder a u
+  have hW : 0 ≤ W := h.remainder_nonneg
+  have hD : D ≤ 4/15 := by
+    have hh := h.label_le_quarter
+    dsimp [D]
+    linarith [pi_lt_22_over_7]
+  have hx : a-1 = -(4/5)*D-(2/15)*W := by
+    have hh := side_identity_radial a u
+    rw [← hsel] at hh
+    dsimp [D,W]
+    linarith
+  have hy : u-1/2 = (6/5)*D-(3/10)*W := by
+    have hh := side_identity_transverse a u
+    rw [← hsel] at hh
+    dsimp [D,W]
+    linarith
+  have hs : (a-1)^2+(u-1/2)^2 ≤ W := by
+    have hh := remainder_identity a u
+    have hp := h.slack_nonneg
+    dsimp [W]
+    linarith
+  have hid : (a-1)^2+(u-1/2)^2 =
+      (52/25)*D^2-(38/75)*D*W+(97/900)*W^2 := by
+    rw [hx,hy]
+    ring
+  have hprod := mul_nonneg hW (show 0 ≤ 4/15-D by linarith)
+  change (9/5)*D^2 ≤ W
+  linarith [sq_nonneg W,sq_nonneg D]
 
 /-- The marker in an existing square chart. Reflections are not lost. -/
 def chartMarker {S : UnitSquare} {o : Point} (C : SquareChart S o) : Direction :=

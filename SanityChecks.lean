@@ -58,7 +58,7 @@ example : ((5:ℝ)/6+1/2)^2+(1/2)^2 > 2 := by norm_num
 -- inward sector at its endpoint.
 example : (3/2:ℝ)^2+1 = 13/4 := by norm_num
 example : (1/2:ℝ)^2+3 = 13/4 := by norm_num
-example : Seven.Admissible 1 (1/2) := by norm_num [Seven.Admissible,phi,Seven.targetSq]
+example : Seven.Admissible 1 (1/2) := ⟨by norm_num,by norm_num,by norm_num,by norm_num [phi,Seven.targetSq]⟩
 example : Seven.label 1 (1/2) = Real.pi/6 := by
   have hs : Seven.side 1 (1/2) = Real.pi/6 := by unfold Seven.side; ring
   unfold Seven.label Seven.axial

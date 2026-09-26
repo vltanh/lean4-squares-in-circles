@@ -1,16 +1,92 @@
-import SquaresInCircles.Seven.BoundaryPointChecks
-import SquaresInCircles.Seven.AnalyticOrder
+import SquaresInCircles.Seven.BoundarySegments
 
 /-!
 # Profiles along the boundary of the label regions
 
-The transition profile is positive by a curvature bound and one fixed value
-(`BoundaryPointChecks`); the diagonal profile by monotonicity.
+The transition profile is positive by a curvature bound and one fixed value, the
+diagonal profile by monotonicity. The fixed values at the label `18/25` and at
+the diagonal corner come from rational brackets of `π`, of the transition state
+and of the circle, and from Taylor bounds of `sin` and `cos`.
 -/
 noncomputable section
 open Set
 namespace SquaresInCircles.Seven
 namespace Boundary
+
+def testLabel : ℝ := 18/25
+def testAngle : ℝ := gap-testLabel+s0
+def testValue : ℝ := 1-Y testLabel-(a0-1/2)*Real.sin testAngle+Y0*Real.cos testAngle
+def testSlope : ℝ := -X testLabel/Z testLabel+(a0-1/2)*Real.cos testAngle+Y0*Real.sin testAngle
+
+def diagonalAngle : ℝ := td+s0-Real.pi/6
+def diagonalValue : ℝ := 1/2-rd-(a0-1/2)*Real.sin diagonalAngle+Y0*Real.cos diagonalAngle
+
+lemma test_mem : testLabel ∈ Icc s0 td := by
+  have hs := transition_coarse
+  have ht := td_bounds
+  dsimp [testLabel]
+  constructor <;> linarith
+
+lemma test_point : 1/10000 < testValue ∧ |testSlope| < 1/150 := by
+  have hp1 := Real.pi_gt_d4
+  have hp2 := Real.pi_lt_d4
+  have ht := transition_bounds
+  have hD : 59525/100000 < D testLabel ∧ D testLabel < 59527/100000 := by
+    dsimp only [D,testLabel]
+    constructor <;> linarith
+  have hZ : 13545/10000 < Z testLabel ∧ Z testLabel < 13547/10000 := by
+    have hs := Z_sq test_mem
+    have hz := Z_pos test_mem
+    dsimp only [N,targetSq] at hs
+    constructor <;> nlinarith [mul_pos (sub_pos.mpr hD.1) (sub_pos.mpr hD.2)]
+  have hX : 13330/10000 < X testLabel ∧ X testLabel < 13332/10000 := by
+    unfold X N
+    constructor <;> linarith
+  have hY : Y testLabel < 12138/10000 := by
+    unfold Y N
+    linarith
+  have hb := trig_bracket (l := 6913/10000) (u := 6915/10000) (x := testAngle) (by norm_num)
+    (by linarith) (by dsimp [testAngle,gap,testLabel,s0]; constructor <;> linarith)
+  norm_num at hb
+  have hY0 : 79136/100000 < Y0 ∧ Y0 < 79137/100000 := by
+    dsimp [u0] at ht
+    constructor <;> linarith
+  have hq1 : 13330/13547 < X testLabel/Z testLabel := by
+    rw [lt_div_iff₀ (by linarith)]
+    nlinarith
+  have hq2 : X testLabel/Z testLabel < 13332/13545 := by
+    rw [div_lt_iff₀ (by linarith)]
+    nlinarith
+  have hs0 : 0 ≤ Real.sin testAngle := by linarith
+  have hc0 : 0 ≤ Real.cos testAngle := by linarith
+  have ha1 := mul_le_mul_of_nonneg_right (show a0-1/2 ≤ 61980/100000 by linarith) hs0
+  have ha2 := mul_le_mul_of_nonneg_right (show a0-1/2 ≤ 61980/100000 by linarith) hc0
+  have ha3 := mul_le_mul_of_nonneg_right (show 61979/100000 ≤ a0-1/2 by linarith) hc0
+  have hy1 := mul_le_mul_of_nonneg_right hY0.1.le hc0
+  have hy2 := mul_le_mul_of_nonneg_right hY0.1.le hs0
+  have hy3 := mul_le_mul_of_nonneg_right hY0.2.le hs0
+  refine ⟨by dsimp only [testValue]; linarith,abs_lt.mpr ⟨?_,?_⟩⟩ <;>
+    dsimp only [testSlope] <;> rw [neg_div] <;> linarith
+
+lemma diagonal_angle_bounds : 6246/10000 < diagonalAngle ∧ diagonalAngle < 6248/10000 := by
+  have hp := transition_bounds
+  have hr := rd_bounds
+  dsimp [diagonalAngle,td,s0]
+  constructor <;> linarith
+
+lemma diagonal_value_pos : 0 < diagonalValue := by
+  have hr := rd_bounds
+  have ha := transition_bounds
+  have hd := diagonal_angle_bounds
+  have hb := trig_bracket (l := 6246/10000) (u := 6248/10000) (x := diagonalAngle)
+    (by norm_num) (by linarith [Real.pi_gt_d2]) ⟨hd.1.le,hd.2.le⟩
+  norm_num at hb
+  have hY0 : 79136/100000 < Y0 := by dsimp [u0] at ha; linarith
+  have h1 := mul_le_mul_of_nonneg_right (show a0-1/2 ≤ 61980/100000 by linarith)
+    (show 0 ≤ Real.sin diagonalAngle by linarith)
+  have h2 := mul_le_mul_of_nonneg_right hY0.le (show 0 ≤ Real.cos diagonalAngle by linarith)
+  dsimp only [diagonalValue]
+  linarith
 
 def transitionAngle (t : ℝ) : ℝ := gap-t+s0
 def transitionF (t : ℝ) : ℝ :=
@@ -56,7 +132,7 @@ lemma transition_curvature {t : ℝ} (ht : 2/5 ≤ t ∧ t ≤ td) :
     linarith
   have hangle : Real.pi/6 < transitionAngle t ∧ transitionAngle t < Real.pi/2 := by
     dsimp [transitionAngle,gap]
-    constructor <;> linarith [ht.1,ht.2,td_bounds.2,pi_lt_22_over_7,pi_lower_157]
+    constructor <;> linarith [ht.1,ht.2,td_bounds.2,pi_lt_22_over_7,Real.pi_gt_d2]
   have hsin : 1/2 ≤ Real.sin (transitionAngle t) := by
     have hh := Real.sin_le_sin_of_le_of_le_pi_div_two (by linarith [Real.pi_pos])
       hangle.2.le hangle.1.le
@@ -79,14 +155,14 @@ lemma transitionF_pos {t : ℝ} (ht : 2/5 ≤ t ∧ t ≤ td) : 0 < transitionF 
   have htest : testLabel ∈ Icc (2/5) td := by
     dsimp [testLabel]
     exact ⟨by norm_num,td_bounds.1.le⟩
-  have hv : (3:ℝ)/4000 < transitionF testLabel := by
-    simpa only [transitionF,transitionAngle,testValue,testAngle] using test_value_lower
-  have hd : |transitionFD testLabel| < 1/400 := by
-    simpa only [transitionFD,transitionAngle,testSlope,testAngle] using test_slope_bound
-  exact positive_of_curvature_and_point ht htest
+  obtain ⟨hv,hd⟩ := test_point
+  have hd2 := sq_lt_sq' (abs_lt.mp hd).1 (abs_lt.mp hd).2
+  exact positive_of_curvature (κ := 3/8) (by norm_num) ht htest
     (fun x hx => hasDerivAt_transitionF (sub x hx))
     (fun x hx => hasDerivAt_transitionFD (sub x hx))
-    (fun x hx => (transition_curvature hx).le) hv hd
+    (fun x hx => (transition_curvature hx).le)
+    (by dsimp [transitionF,transitionFD,transitionAngle,testValue,testSlope,testAngle] at *
+        nlinarith)
 
 def transitionDiagonalF (t : ℝ) : ℝ :=
   1/2-diagonal t-(a0-1/2)*Real.sin (transitionAngle t)+Y0*Real.cos (transitionAngle t)
@@ -110,7 +186,7 @@ lemma transitionDiagonalF_pos {t : ℝ} (ht : td ≤ t ∧ t ≤ Real.pi/4) :
     · intro x hx
       have hang : 0 ≤ transitionAngle x ∧ transitionAngle x ≤ Real.pi/2 := by
         dsimp [transitionAngle,gap]
-        constructor <;> linarith [hx.1,hx.2,td_bounds.1,pi_lt_22_over_7,pi_lower_157]
+        constructor <;> linarith [hx.1,hx.2,td_bounds.1,pi_lt_22_over_7,Real.pi_gt_d2]
       have hsin := Real.sin_nonneg_of_nonneg_of_le_pi hang.1 (by linarith [hang.2,Real.pi_pos])
       have hcos := Real.cos_nonneg_of_mem_Icc ⟨by linarith [hang.1,Real.pi_pos],hang.2⟩
       have hy0 : 0 ≤ Y0 := by dsimp [u0] at hs; linarith
@@ -144,46 +220,19 @@ def diagonalK (t : ℝ) : ℝ :=
   (6/5)*(Real.pi/6-t)+(51/40)*Real.cos (7*Real.pi/12-t)-
     (11/40)*Real.sin (7*Real.pi/12-t)
 
-private def diagonalSlope (x : ℝ) : ℝ := (51/40)*Real.sin x+(11/40)*Real.cos x
-
-lemma diagonalSlope_gt {x : ℝ}
-    (hx : Real.pi/3 ≤ x ∧ x ≤ 7*Real.pi/12-2/5) : (6:ℝ)/5 < diagonalSlope x := by
-  let f : ℝ → ℝ := fun y => diagonalSlope y-6/5
-  let df : ℝ → ℝ := fun y => (51/40)*Real.cos y-(11/40)*Real.sin y
-  let dd : ℝ → ℝ := fun y => -diagonalSlope y
-  have d1 (y : ℝ) : HasDerivAt f (df y) y := by
-    convert (((Real.hasDerivAt_sin y).const_mul (51/40)).add
-      ((Real.hasDerivAt_cos y).const_mul (11/40))).sub_const (6/5) using 1
-    · rfl
-    · dsimp [df]; ring
-  have d2 (y : ℝ) : HasDerivAt df (dd y) y := by
-    convert (((Real.hasDerivAt_cos y).const_mul (51/40)).sub
-      ((Real.hasDerivAt_sin y).const_mul (11/40))) using 1
-    dsimp [dd,diagonalSlope]; ring
-  have dsign (y : ℝ) (hy : y ∈ Icc (Real.pi/3) (7*Real.pi/12-2/5)) : dd y ≤ 0 := by
-    have hy0 : 0 ≤ y := by linarith [hy.1,Real.pi_pos]
-    have hyp : y ≤ Real.pi/2 := by linarith [hy.2,pi_lt_22_over_7]
-    have hs := Real.sin_nonneg_of_nonneg_of_le_pi hy0 (by linarith [hyp,Real.pi_pos])
-    have hc := Real.cos_nonneg_of_mem_Icc ⟨by linarith [hy0,Real.pi_pos],hyp⟩
-    dsimp [dd,diagonalSlope]
-    linarith
-  have hl : 0 < f (Real.pi/3) := by
-    dsimp [f,diagonalSlope]
-    rw [Real.sin_pi_div_three,Real.cos_pi_div_three]
-    linarith [sqrt_three_bounds.1]
-  have hu : 0 < f (7*Real.pi/12-2/5) := by
-    let z := 7*Real.pi/12-2/5
-    have hz : 7/5 < z ∧ z < Real.pi/2 := by dsimp [z]; constructor <;> linarith [pi_lower_157,pi_lt_22_over_7]
-    have hs := Real.sin_le_sin_of_le_of_le_pi_div_two (by linarith [Real.pi_pos])
-      hz.2.le hz.1.le
-    have hlow := Real.sin_ge_sub_cube (show (0:ℝ) ≤ 7/5 by norm_num)
-    have hc := Real.cos_nonneg_of_mem_Icc ⟨by linarith [hz.1,Real.pi_pos],hz.2.le⟩
-    change 0 < diagonalSlope z-6/5
-    dsimp [diagonalSlope]
-    linarith
-  have hp := positive_of_second_nonpos hx (by dsimp [f,diagonalSlope]; fun_prop)
-    (by dsimp [df]; fun_prop) (fun y _ => d1 y) (fun y _ => d2 y) dsign hl hu
-  dsimp [f] at hp
+lemma diagonalSlope_gt {x : ℝ} (hx : Real.pi/3 ≤ x ∧ x ≤ 7*Real.pi/12-2/5) :
+    (6:ℝ)/5 < (51/40)*Real.sin x+(11/40)*Real.cos x := by
+  have h := trig_concave_gt (α := 0) (A := 51/40) (B := 11/40) (m := 6/5) (by norm_num)
+    (by norm_num) (by linarith [Real.pi_pos]) (by linarith [pi_lt_22_over_7]) hx
+    (by rw [Real.sin_pi_div_three,Real.cos_pi_div_three]; linarith [sqrt_three_bounds.1])
+    (by
+      have hz : 7/5 < 7*Real.pi/12-2/5 ∧ 7*Real.pi/12-2/5 < Real.pi/2 := by
+        constructor <;> linarith [Real.pi_gt_d2,pi_lt_22_over_7]
+      have hs := Real.sin_le_sin_of_le_of_le_pi_div_two (by linarith [Real.pi_pos])
+        hz.2.le hz.1.le
+      have hlow := Real.sin_ge_sub_cube (show (0:ℝ) ≤ 7/5 by norm_num)
+      have hc := Real.cos_nonneg_of_mem_Icc ⟨by linarith [hz.1,Real.pi_pos],hz.2.le⟩
+      linarith)
   linarith
 
 lemma diagonalK_pos {t : ℝ} (ht : 2/5 ≤ t ∧ t ≤ Real.pi/4) : 0 < diagonalK t := by
@@ -201,11 +250,10 @@ lemma diagonalK_pos {t : ℝ} (ht : 2/5 ≤ t ∧ t ≤ Real.pi/4) : 0 < diagona
     · intro x hx
       have hh := diagonalSlope_gt
         (x := 7*Real.pi/12-x) ⟨by linarith [hx.2],by linarith [hx.1]⟩
-      dsimp [diagonalSlope] at hh
       linarith
   have hbase : 0 < diagonalK (2/5) := by
     let e := 2/5-Real.pi/12
-    have he : 27/200 < e ∧ e < 3/20 := by dsimp [e]; constructor <;> linarith [pi_lower_157,pi_lt_22_over_7]
+    have he : 27/200 < e ∧ e < 3/20 := by dsimp [e]; constructor <;> linarith [Real.pi_gt_d2,pi_lt_22_over_7]
     have hs := Real.sin_ge_sub_cube (show 0 ≤ e by linarith)
     have he3 : e^3 ≤ (3/20:ℝ)^3 := pow_le_pow_left₀ (by linarith [he.1]) he.2.le 3
     have heL : 29/210 ≤ e := by dsimp [e]; linarith [pi_lt_22_over_7]
@@ -215,8 +263,8 @@ lemma diagonalK_pos {t : ℝ} (ht : 2/5 ≤ t ∧ t ≤ Real.pi/4) : 0 < diagona
         Real.cos_pi_div_two_sub]
     dsimp [diagonalK]
     rw [hid]
-    linarith [Real.sin_le_one (7*Real.pi/12-2/5),pi_lower_157]
-  exact hbase.trans_le (hm ⟨le_rfl,by linarith [pi_lower_157]⟩ ht ht.1)
+    linarith [Real.sin_le_one (7*Real.pi/12-2/5),Real.pi_gt_d2]
+  exact hbase.trans_le (hm ⟨le_rfl,by linarith [Real.pi_gt_d2]⟩ ht ht.1)
 
 end Boundary
 end SquaresInCircles.Seven

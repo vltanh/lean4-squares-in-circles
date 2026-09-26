@@ -1,6 +1,4 @@
 import SquaresInCircles.Seven.BoundarySegments
-import SquaresInCircles.Seven.PolynomialCertificates
-import SquaresInCircles.Seven.AnalyticOrder
 
 /-!
 # Monotonicity of the target support on the axial boundary
@@ -91,14 +89,20 @@ lemma ratio_derivative_lt_one {s : ℝ} (hs : 0 ≤ s ∧ s ≤ s0) : ratioD s <
     dsimp [targetSq] at hh
     linarith
   have hrad : 0 < 13-4*(axialX s)^2 := by nlinarith [hb.2.2.1,hy2]
-  have hpoly := axialRatioPolynomial_pos ⟨hb.1.le,hb.2.1.le⟩
+  have hpoly : 0 < -500*(axialX s)^5+800*(axialX s)^4+1705*(axialX s)^3-3900*(axialX s)^2+
+      3120*axialX s-1872 :=
+    bernstein_pos (p := fun X => -500*X^5+800*X^4+1705*X^3-3900*X^2+3120*X-1872)
+      ![2992/25,16676/125,138343/1000,423899/3200,18151/160,20113/256]
+      (fun i => by fin_cases i <;> norm_num) (by norm_num)
+      (fun x => by simp only [bernstein,Fin.sum_univ_succ,Fin.sum_univ_zero]
+                   norm_num [Nat.choose]; ring) ⟨hb.1.le,hb.2.1.le⟩
   have hden : 0 < 5*axialX s*(5*axialX s-4)^2*(13-4*(axialX s)^2) :=
     mul_pos (mul_pos (by linarith [hb.1]) (pow_pos (by linarith [hb.1]) 2)) hrad
-  have hid : 1-ratioD s = axialRatioPolynomial (axialX s)/
+  have hid : 1-ratioD s = (-500*(axialX s)^5+800*(axialX s)^4+1705*(axialX s)^3-
+      3900*(axialX s)^2+3120*axialX s-1872)/
       (5*axialX s*(5*axialX s-4)^2*(13-4*(axialX s)^2)) := by
     dsimp [ratioD]
     rw [hy2]
-    dsimp [axialRatioPolynomial]
     field_simp [hx,show axialX s*5-4 ≠ 0 by linarith [hb.1],
       ne_of_gt hrad,show 13/4-(axialX s)^2 ≠ 0 by linarith]
     ring
@@ -157,7 +161,7 @@ lemma circleTarget_decreases {t : ℝ} (ht : 2/5 ≤ t ∧ t ≤ Real.pi/4) :
     have hm := mul_le_mul_of_nonneg_left (Real.cos_le_one (gap-t)) hR
     dsimp [E]
     simp only [add_zero]
-    linarith [ratio_zero_lt,pi_lower_157]
+    linarith [ratio_zero_lt,Real.pi_gt_d2]
   have hEpos (s : ℝ) (hs : s ∈ Icc 0 s0) : 0 < E s :=
     hE0.trans_le (hEmono ⟨le_rfl,by linarith [transition_coarse.2.2.2.2.1]⟩ hs hs.1)
   have hder (s : ℝ) (hs : s ∈ Icc 0 s0) :
@@ -199,12 +203,10 @@ lemma circleTarget_transition (t : ℝ) :
   ring
 
 lemma lineTarget_transition (t : ℝ) : lineTarget t s0=circleTarget t s0 := by
-  have hl := transition_line
-  have ha : tieA s0=a0 := by dsimp [tieA,s0]; linarith
   have hu : (4/5)*s0+1/2=Y0 := by dsimp [s0,u0]; ring
   rw [circleTarget_transition]
   dsimp [lineTarget]
-  rw [ha,hu]
+  rw [tieA_s0,hu]
 
 lemma switch_range : 0 < switchAngle ∧ switchAngle < Real.pi/2 := by
   exact ⟨Real.arctan_pos.mpr (by norm_num),Real.arctan_lt_pi_div_two _⟩
@@ -238,35 +240,13 @@ lemma lineTarget_derivative_positive {t s : ℝ}
     (hs : s0 ≤ s ∧ s ≤ Real.pi/4)
     (hcut : s ≤ switchLabel t) :
     0 < (43/90-(4/5)*s)*Real.sin (gap-t+s)+(13/10-tieA s)*Real.cos (gap-t+s) := by
-  let x := gap-t+s
-  have hx : 0 < x ∧ x < Real.pi/2 := by
+  have hx : 0 < gap-t+s ∧ gap-t+s < Real.pi/2 := by
     have h0 := transition_coarse
-    dsimp [x,gap]
-    constructor <;> linarith [ht.1,ht.2,hs.1,hs.2,pi_lt_22_over_7,pi_lower_157]
-  have hC : 0 < Real.cos x := Real.cos_pos_of_mem_Ioo ⟨by linarith [hx.1,Real.pi_pos],hx.2⟩
-  have hS := Real.sin_nonneg_of_nonneg_of_le_pi hx.1.le (by linarith [hx.2,Real.pi_pos])
-  have hCS : Real.sin x ≤ (9/4)*Real.cos x := by
-    have hq : x ≤ switchAngle := by dsimp [x,switchLabel] at *; linarith
-    have hh := (switch_iff ⟨hx.1.le,hx.2.le⟩).mpr hq
-    linarith
-  have hA : tieA s < 9/8 := by
-    have he : tieA s0=a0 := by dsimp [tieA,s0]; linarith [transition_line]
-    have hh : tieA s ≤ tieA s0 := by dsimp [tieA]; linarith [hs.1]
-    rw [he] at hh
-    linarith [transition_coarse.2.1]
-  by_cases hb : 0 ≤ 43/90-(4/5)*s
-  · have hp := mul_nonneg hb hS
-    have hpos := mul_pos (show 0 < 13/10-tieA s by linarith) hC
-    dsimp [x] at *
-    linarith
-  · have hp := mul_nonneg (show 0 ≤ -(43/90-(4/5)*s) by linarith)
-      (show 0 ≤ (9/4)*Real.cos x-Real.sin x by linarith)
-    have hcoef : (91:ℝ)/360 ≤ (13/10-tieA s)+(9/4)*(43/90-(4/5)*s) := by
-      dsimp [tieA]
-      linarith [hs.2,pi_lt_22_over_7]
-    have hpos := mul_pos (show 0 < (13/10-tieA s)+(9/4)*(43/90-(4/5)*s) by linarith) hC
-    dsimp [x] at *
-    linarith
+    dsimp [gap]
+    constructor <;> linarith [ht.1,ht.2,hs.1,hs.2,pi_lt_22_over_7,Real.pi_gt_d2]
+  have hq := (switch_iff ⟨hx.1.le,hx.2.le⟩).mpr (by dsimp [switchLabel] at hcut; linarith)
+  exact tie_slope_pos hs (Real.cos_pos_of_mem_Ioo ⟨by linarith [Real.pi_pos],hx.2⟩)
+    (Real.sin_nonneg_of_nonneg_of_le_pi hx.1.le (by linarith [Real.pi_pos])) (by linarith)
 
 lemma lineTarget_low_min {t s : ℝ}
     (ht : 2/5 ≤ t ∧ t ≤ Real.pi/4)

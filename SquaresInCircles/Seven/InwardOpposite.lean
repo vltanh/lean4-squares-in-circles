@@ -1,6 +1,5 @@
-import SquaresInCircles.Seven.InwardBoundaryMinima
-import SquaresInCircles.Seven.InwardAxialAxial
-import SquaresInCircles.Seven.CapReduction
+import SquaresInCircles.Seven.InwardOppositeMinima
+import SquaresInCircles.Seven.InwardAxialTarget
 
 /-!
 # The inward axis with opposite signs
@@ -13,6 +12,38 @@ axial target.
 noncomputable section
 namespace SquaresInCircles.Seven
 open Boundary
+
+lemma inward_opposite_negative_turn {a u A v : ℝ}
+    (h : Admissible a u) (h' : Admissible A v)
+    (hT : label a u=side a u) (hA : label A v=axial v)
+    (he : label a u+label A v-Real.pi/6 ≤ 0) :
+    (2/15)*remainder a u+|label a u+label A v-Real.pi/6|/12 ≤
+      pairSupport a u A v .positive .negative 2 gap := by
+  let z := -(label a u+label A v-Real.pi/6)
+  have hz : 0 ≤ z ∧ z ≤ 1/6 := by
+    have ht := side_selected_label_gt h hT
+    have hs := h'.label_nonneg
+    dsimp [z]
+    constructor <;> linarith [pi_lt_22_over_7]
+  have hv : v+1/2 < 6/5 := by
+    have hs := h'.label_le_quarter
+    rw [hA] at hs
+    dsimp [axial] at hs
+    linarith [pi_lt_22_over_7]
+  have hs0 := Real.sin_nonneg_of_nonneg_of_le_pi hz.1
+    (by linarith [hz.2,Real.pi_gt_d2])
+  have hs := Real.sin_ge_sub_cube hz.1
+  have hc := Real.one_sub_sq_div_two_le_cos (x := z)
+  have hpA := mul_nonneg (show 0 ≤ A-1/2 by linarith [h'.half_le]) hs0
+  have hpV := mul_nonneg (show 0 ≤ 6/5-(v+1/2) by linarith)
+    (sub_nonneg.mpr (Real.cos_le_one z))
+  have hfactor : 1/12 ≤ 1/5-(3/5)*z-z^2/6 := by nlinarith
+  have hprod := mul_nonneg hz.1 (sub_nonneg.mpr hfactor)
+  rw [inward_opposite_formula h h',inward_opposite_side_identity hT hA rfl]
+  have hez : label a u+label A v-Real.pi/6 = -z := by dsimp [z]; ring
+  rw [hez,Real.sin_neg,Real.cos_neg,abs_neg z,abs_neg (Real.sin z),abs_of_nonneg hs0,
+    abs_of_nonneg hz.1]
+  linarith
 
 lemma inward_opposite_side_positive_turn {a u A v : ℝ}
     (h : Admissible a u) (h' : Admissible A v)
@@ -49,15 +80,9 @@ theorem inward_opposite_side_axial_property {a u A v : ℝ}
     PairProperty a u A v .positive .negative 2 := by
   by_cases hz : 0<label a u+label A v-Real.pi/6
   · exact .of_pos (inward_opposite_side_positive_turn h h' hT hA hz)
-  have hl := inward_opposite_negative_turn h h' hT hA (le_of_not_gt hz)
-  have hW := h.remainder_nonneg
-  have he := abs_nonneg (label a u+label A v-Real.pi/6)
-  refine ⟨by linarith,fun hzero => ?_⟩
-  have hc := remainder_zero h (by linarith)
-  have he0 : label a u+label A v-Real.pi/6=0 := abs_eq_zero.mp (by linarith)
-  rw [hc.1,hc.2,side_label,hA] at he0
-  dsimp [axial] at he0
-  exact Or.inr (Or.inl ⟨rfl,hc,axial_of_transverse_zero h' (by linarith)⟩)
+  exact .of_side_axial h h' hA (e := label a u+label A v-Real.pi/6) (by simp [TransverseSign.coe])
+    (c := 1/12) (by norm_num)
+    (by linarith [inward_opposite_negative_turn h h' hT hA (le_of_not_gt hz)])
 
 lemma inward_opposite_axial_positive_turn {a u A v : ℝ}
     (h : Admissible a u) (h' : Admissible A v)
@@ -73,7 +98,7 @@ lemma inward_opposite_axial_positive_turn {a u A v : ℝ}
     have hh := h'.label_le_quarter
     rw [hB] at hh
     dsimp [axial] at hh
-    exact ⟨h'.1,by linarith⟩
+    exact ⟨h'.u_nonneg,by linarith⟩
   have hzu : z≤Real.pi/3 := by dsimp [z]; linarith [h.label_le_quarter,h'.label_le_quarter]
   have hs0 := Real.sin_nonneg_of_nonneg_of_le_pi (x := z) hz.le (by linarith [hzu,Real.pi_pos])
   rw [inward_opposite_formula h h']
@@ -103,7 +128,7 @@ lemma inward_opposite_axial_positive_turn {a u A v : ℝ}
     have hvp : 0≤vp ∧ vp≤v := by
       dsimp [vp]
       constructor
-      · linarith [show 0<z from hz,transition_coarse.2.2.2.1,pi_lower_157]
+      · linarith [show 0<z from hz,transition_coarse.2.2.2.1,Real.pi_gt_d2]
       · rw [hvEq]; linarith
     have hvpDom : 0≤vp ∧ vp≤Real.pi/5 := ⟨hvp.1,hvp.2.trans hvDom.2⟩
     obtain ⟨hb,hbA⟩ := axialTop_state hvpDom
@@ -116,7 +141,7 @@ lemma inward_opposite_axial_positive_turn {a u A v : ℝ}
       (by rw [he]; exact hz)
     rw [inward_opposite_formula transition_admissible hb,he] at hp
     have haup := a_le_circle h
-    have hdisp := circle_displacement_half h.1 huu le_rfl
+    have hdisp := circle_displacement_half h.u_nonneg huu le_rfl
     rw [circle_u0] at hdisp
     have hbup := axial_upper h' hB
     have hmon := axialTop_antitone hvp.1 hvp.2 hvDom.2
@@ -159,11 +184,11 @@ lemma inward_opposite_side_target_reduction {a u A v : ℝ}
     · linarith [cos_ge_half ⟨hz0,hz.2⟩,Real.sin_le_one z]
     · have hS : Real.sin z≤0 := by
         have hh := Real.sin_nonneg_of_nonneg_of_le_pi
-          (show 0≤-z by linarith) (by linarith [hz.1,pi_lower_157])
+          (show 0≤-z by linarith) (by linarith [hz.1,Real.pi_gt_d2])
         rw [Real.sin_neg] at hh
         linarith
       have hC : 0<Real.cos z := Real.cos_pos_of_mem_Ioo
-        ⟨by linarith [hz.1,pi_lower_157],by linarith [hz0,Real.pi_pos]⟩
+        ⟨by linarith [hz.1,Real.pi_gt_d2],by linarith [hz0,Real.pi_pos]⟩
       linarith
   have hseg := side_segment h' hT
   have he : A=tieA s+(4/9)*(v-(4/5)*s) := hseg.2.2

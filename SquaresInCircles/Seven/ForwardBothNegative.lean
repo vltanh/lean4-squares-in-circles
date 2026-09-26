@@ -1,7 +1,6 @@
 import SquaresInCircles.Seven.TargetBoundaryMonotonicity
 import SquaresInCircles.Seven.BoundaryProfiles
-import SquaresInCircles.Seven.EasySectors
-import SquaresInCircles.Seven.CapReduction
+import SquaresInCircles.Seven.Contacts
 
 /-!
 # The forward axis, both signs negative
@@ -53,7 +52,7 @@ lemma sideTarget_concave_second {t s : ℝ}
   have hd : 0 < d ∧ d < Real.pi/2 := by
     have hc := transition_coarse
     dsimp [d,gap]
-    constructor <;> linarith [ht.1,ht.2,hs.1,hs.2,td_bounds.2,pi_lt_22_over_7,pi_lower_157]
+    constructor <;> linarith [ht.1,ht.2,hs.1,hs.2,td_bounds.2,pi_lt_22_over_7,Real.pi_gt_d2]
   have hC := Real.cos_nonneg_of_mem_Icc ⟨by linarith [hd.1,Real.pi_pos],hd.2.le⟩
   have hS := Real.sin_nonneg_of_nonneg_of_le_pi hd.1.le (by linarith [hd.2,Real.pi_pos])
   have hCS : Real.cos d-(4/9)*Real.sin d ≤ 0 := by
@@ -76,14 +75,11 @@ lemma sideTarget_concave_second {t s : ℝ}
     have hhi : 1/Z s ≤ 1 := (div_le_one hZ0).mpr hZlow.le
     constructor <;> linarith
   have hr2 : (1/Z s-1)^2 ≤ (2/7:ℝ)^2 := sq_le_sq' hr.1.le (by linarith [hr.2])
-  have hK : -radius ≤ Y s*Real.cos d-X s*Real.sin d := by
-    have hh := dot_lower_candidate (p := -Real.sin d) (r := Real.cos d)
-      (le_of_eq (circle_identities hs).1)
-    rw [neg_sq,Real.sin_sq_add_cos_sq,Real.sqrt_one,mul_one] at hh
-    linarith
+  have hK := dot_ge (p := -Real.sin d) (r := Real.cos d) (c := 181/100)
+    (le_of_eq (circle_identities hs).1) (by norm_num)
+    (by unfold targetSq; nlinarith [Real.sin_sq_add_cos_sq d])
   have hm := mul_nonneg (sq_nonneg (1/Z s-1))
-    (show 0 ≤ Y s*Real.cos d-X s*Real.sin d+radius by linarith)
-  have hR := mul_le_mul_of_nonneg_left hr2 radius_nonneg
+    (show 0 ≤ Y s*Real.cos d-X s*Real.sin d+181/100 by linarith)
   have hdot : 0 ≤ X s*Real.cos d+Y s*Real.sin d := by
     have hX0 : 0 ≤ X s := by linarith [hb.2.2.2.1]
     have hY0 : 0 ≤ Y s := hb.1.le
@@ -94,7 +90,7 @@ lemma sideTarget_concave_second {t s : ℝ}
   dsimp [sideCircleTargetDD]
   change -Real.sin d-D s*(X s*Real.cos d+Y s*Real.sin d)/(Z s)^3-
     (1/Z s-1)^2*(Y s*Real.cos d-X s*Real.sin d) ≤ 0
-  linarith [radius_lt_181]
+  linarith
 
 lemma sideTarget_at_transition (t : ℝ) : sideCircleTarget t s0=circleTarget t s0 := by
   have hx : X s0=a0+1/2 := by
@@ -147,7 +143,7 @@ lemma diagonal_target_pos {a u s : ℝ}
     ⟨by linarith [hd.1,Real.pi_pos],by linarith [hd.2,he]⟩
   have hCS := cos_le_sin_of_quarter ⟨hd.1,by linarith [hd.2,he]⟩
   have hdia : diagonal s < 31/40 := by
-    have heq : diagonal td=rd := by dsimp [diagonal,td]; ring
+    have heq := diagonal_td
     have hh : diagonal s ≤ diagonal td := by dsimp [diagonal]; linarith [hs.1]
     rw [heq] at hh
     linarith [rd_bounds.2]
@@ -181,7 +177,7 @@ lemma upper_target_pos {a u s : ℝ}
   · have hpos := diagonal_target_pos h hT ht ⟨hdiag,hs.2⟩
     by_cases he : s=td
     · subst s
-      have hdia : diagonal td=rd := by dsimp [diagonal,td]; ring
+      have hdia := diagonal_td
       simp only [vertexTarget,sideTopA,sideTopU,ite_eq_left le_rfl]
       rw [side_at_diagonal.1,side_at_diagonal.2]
       rw [hdia] at hpos
@@ -227,7 +223,7 @@ lemma upper_target_pos {a u s : ℝ}
         have hb := side_at_diagonal.2
         dsimp [sideU] at hb
         linarith
-      have hdia : diagonal td=rd := by dsimp [diagonal,td]; ring
+      have hdia := diagonal_td
       rw [hdia] at hh
       dsimp [f,sideCircleTarget]
       rw [hX,hY]
@@ -255,7 +251,7 @@ lemma target_side_pos {a u A v : ℝ}
   have hd : 0 ≤ d ∧ d ≤ Real.pi/2 := by
     have hc := transition_coarse
     dsimp [d,gap]
-    constructor <;> linarith [ht'.1,ht'.2,hs.1,hs.2,pi_lt_22_over_7,pi_lower_157]
+    constructor <;> linarith [ht'.1,ht'.2,hs.1,hs.2,pi_lt_22_over_7,Real.pi_gt_d2]
   have seg := side_segment h' hT'
   have heq : -(A-1/2)*Real.sin d+(v+1/2)*Real.cos d-lineTarget t s =
       (v-(4/5)*s)*(Real.cos d-(4/9)*Real.sin d) := by
@@ -351,11 +347,8 @@ lemma forward_negative_negative_small {a u A v : ℝ}
     0 < pairSupport a u A v .negative .negative 1 gap := by
   let t := label a u
   let s := label A v
-  have hmarker := marker_arc_support (sign_admissible h' .negative)
-    (x := -s-1/2) (by
-      rw [sign_label h' .negative,abs_le]
-      dsimp [s,TransverseSign.coe]
-      constructor <;> linarith)
+  have hmarker := marker_arc_support h' .negative (x := -s-1/2)
+    (by rw [abs_le]; dsimp [s,TransverseSign.coe]; constructor <;> linarith)
     (3*Real.pi/2-gap+t-s)
   have hang : 3*Real.pi/2-gap+t-s-(-s-1/2)=2*Real.pi-(5*Real.pi/6-t-1/2) := by dsimp [gap]; ring
   rw [hang,Real.cos_two_pi_sub] at hmarker
@@ -363,7 +356,7 @@ lemma forward_negative_negative_small {a u A v : ℝ}
     rw [show 5*Real.pi/6-t-1/2=Real.pi/2+(Real.pi/3-t-1/2) by ring,Real.cos_add]
     simp
   rw [he] at hmarker
-  have harg : 0 ≤ Real.pi/3-t-1/2 := by dsimp [t]; linarith [ht,pi_lower_157]
+  have harg : 0 ≤ Real.pi/3-t-1/2 := by dsimp [t]; linarith [ht,Real.pi_gt_d2]
   have hsin := Real.sin_le harg
   have hside := side_identity_transverse a u
   rw [← hT] at hside

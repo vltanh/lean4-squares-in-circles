@@ -1,17 +1,165 @@
-import SquaresInCircles.Seven.AngularMinima
-import SquaresInCircles.Seven.SectorBounds
+import SquaresInCircles.Seven.PairModel
+import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
 /-!
-# Smooth minima
+# Smooth minima of a support sum
 
-At a smooth leftmost minimum the target support is a negative stationary
-sinusoid, pointing away from the target's corner nearest the disk centre. The
-source support then exceeds the distance of that corner.
+A nonpositive value after a positive left endpoint and before a nonnegative
+right endpoint gives an interior leftmost minimum, so a stretch where a support
+sum is constant cannot hide a new case. At a smooth leftmost minimum the target
+support is a sinusoid; Fermat's theorem and one comparison to the left make it
+stationary with a negative value, pointing away from the target's corner nearest
+the disk centre. The source support then exceeds the distance of that corner.
 -/
 noncomputable section
 open Set Filter
 open scoped Topology
 namespace SquaresInCircles.Seven
+
+lemma sin_zero_between {x : ℝ} (hx : -Real.pi<x ∧ x<Real.pi)
+    (hs : Real.sin x=0) : x=0 := by
+  rcases lt_trichotomy x 0 with h | h | h
+  · have hp := Real.sin_pos_of_pos_of_lt_pi (show 0< -x by linarith) (by linarith [hx.1])
+    rw [Real.sin_neg,hs] at hp
+    linarith
+  · exact h
+  · have hp := Real.sin_pos_of_pos_of_lt_pi h hx.2
+    rw [hs] at hp
+    linarith
+
+lemma cos_one_between {x : ℝ} (hx : -2*Real.pi<x ∧ x<2*Real.pi)
+    (hc : Real.cos x=1) : x=0 := by
+  have hhalf : Real.sin (x/2)=0 := by
+    have he := Real.cos_two_mul (x/2)
+    rw [show 2*(x/2)=x by ring,hc] at he
+    have hu := Real.sin_sq_add_cos_sq (x/2)
+    nlinarith
+  have hh := sin_zero_between (x := x/2)
+    ⟨by linarith [hx.1],by linarith [hx.2]⟩ hhalf
+  linarith
+
+lemma cos_zero_between {x : ℝ} (hx : -Real.pi/2<x ∧ x<Real.pi)
+    (hc : Real.cos x=0) : x=Real.pi/2 := by
+  have hs : Real.sin (x-Real.pi/2)=0 := by
+    rw [Real.sin_sub]
+    simpa using congrArg Neg.neg hc
+  have h := sin_zero_between
+    (x := x-Real.pi/2) ⟨by linarith [hx.1],by linarith [hx.2,Real.pi_pos]⟩ hs
+  linarith
+
+lemma cardinal_range (k : Fin 4) : 0≤cardinalAngle k ∧ cardinalAngle k≤3*Real.pi/2 := by
+  fin_cases k <;> norm_num [cardinalAngle] <;> (try constructor) <;> linarith [Real.pi_pos]
+
+/-- A nonpositive value after a positive left endpoint and before a nonnegative
+right endpoint has an interior leftmost minimizer. Every earlier point has
+strictly larger value. -/
+lemma leftmost_nonpositive_minimum {f : ℝ → ℝ} {l u y : ℝ}
+    (hf : Continuous f) (hy : y∈Ico l u) (hbad : f y≤0)
+    (hl : 0<f l) (hu : 0≤f u) :
+    ∃ x, x∈Ioo l u ∧ f x≤0 ∧
+      (∀z∈Icc l u,f x≤f z) ∧
+      (∀z∈Icc l u,z<x → f x<f z) := by
+  have hy' : y∈Icc l u := Ico_subset_Icc_self hy
+  obtain ⟨m,hm,hmin⟩ := isCompact_Icc.exists_isMinOn
+    ⟨y,hy'⟩ hf.continuousOn
+  let K : Set ℝ := Icc l u ∩ {x | f x=f m}
+  have hK : IsCompact K := isCompact_Icc.inter_right
+    (isClosed_eq hf continuous_const)
+  have hn : K.Nonempty := ⟨m,hm,rfl⟩
+  obtain ⟨x,hx,hleft⟩ := hK.exists_isMinOn hn continuous_id.continuousOn
+  have hxval : f x=f m := hx.2
+  have hym : f m≤f y := hmin hy'
+  have hxnon : f x≤0 := hxval.le.trans (hym.trans hbad)
+  have hxl : l<x := by
+    have hle := hx.1.1
+    by_contra hn
+    have he : x=l := le_antisymm (le_of_not_gt hn) hle
+    rw [he] at hxnon
+    linarith
+  have hxu : x<u := by
+    refine lt_of_le_of_ne hx.1.2 fun he => ?_
+    rw [he] at hxval
+    have hyK : y∈K := ⟨hy',le_antisymm (by linarith) hym⟩
+    have hxy : x≤y := hleft hyK
+    linarith [hy.2]
+  refine ⟨x,⟨hxl,hxu⟩,hxnon,?_,?_⟩
+  · intro z hz
+    rw [hxval]
+    exact hmin hz
+  · intro z hz hzx
+    have hle : f x≤f z := hxval.le.trans (hmin hz)
+    by_contra hn
+    have he : f z=f m := by linarith
+    have hk : z∈K := ⟨hz,he⟩
+    have hh : x≤z := hleft hk
+    linarith
+
+lemma sinusoid_leftmost_minimum {f : ℝ → ℝ} {l u x c A B Z : ℝ}
+    (hx : x∈Ioo l u)
+    (hmin : ∀y∈Icc l u,f x≤f y)
+    (hleft : ∀y∈Icc l u,y<x → f x<f y)
+    (hevent : f =ᶠ[𝓝 x] (fun y => c+A*Real.cos (Z-y)+B*Real.sin (Z-y))) :
+    A*Real.sin (Z-x)-B*Real.cos (Z-x)=0 ∧
+      A*Real.cos (Z-x)+B*Real.sin (Z-x)<0 := by
+  let g : ℝ → ℝ := fun y => c+A*Real.cos (Z-y)+B*Real.sin (Z-y)
+  have he0 : f x=g x := hevent.eq_of_nhds
+  have hlocal : IsLocalMin f x := by
+    filter_upwards [Ioo_mem_nhds hx.1 hx.2] with y hy
+    exact hmin y ⟨hy.1.le,hy.2.le⟩
+  have harg : HasDerivAt (fun y : ℝ => Z-y) (-1) x := (hasDerivAt_id' x).const_sub Z
+  have hg : HasDerivAt g (A*Real.sin (Z-x)-B*Real.cos (Z-x)) x := by
+    convert (((harg.cos.const_mul A).const_add c).add (harg.sin.const_mul B)) using 1
+    ring
+  have hf := hg.congr_of_eventuallyEq hevent
+  have hstationary : A*Real.sin (Z-x)-B*Real.cos (Z-x)=0 :=
+    hlocal.hasDerivAt_eq_zero hf
+  refine ⟨hstationary,?_⟩
+  by_contra hn
+  have hnon : 0≤A*Real.cos (Z-x)+B*Real.sin (Z-x) := le_of_not_gt hn
+  obtain ⟨r,hr,hball⟩ := Metric.mem_nhds_iff.mp hevent
+  let e := min (r/2) ((x-l)/2)
+  have hepos : 0<e := lt_min (by positivity) (by linarith [hx.1])
+  have her : e<r := (min_le_left _ _).trans_lt (by linarith)
+  have hex : e≤(x-l)/2 := min_le_right _ _
+  have hy : x-e∈Icc l u := ⟨by linarith,by linarith [hx.2]⟩
+  have hyl : x-e<x := by linarith
+  have hye : f (x-e)=g (x-e) := hball
+    (by rw [Metric.mem_ball,Real.dist_eq,show (x-e)-x=-e by ring,abs_neg,abs_of_pos hepos]; exact her)
+  have hstrict := hleft (x-e) hy hyl
+  rw [he0,hye] at hstrict
+  have hid : g (x-e)-g x=
+      (A*Real.cos (Z-x)+B*Real.sin (Z-x))*(Real.cos e-1) := by
+    have he : Z-(x-e)=(Z-x)+e := by ring
+    dsimp [g]
+    rw [he,Real.cos_add,Real.sin_add]
+    linear_combination (-Real.sin e)*hstationary
+  have hprod := mul_nonpos_of_nonneg_of_nonpos hnon
+    (sub_nonpos.mpr (Real.cos_le_one e))
+  linarith
+
+lemma absolute_sign_eventually {f : ℝ → ℝ} (hf : Continuous f) {x : ℝ}
+    (hx : f x≠0) :
+    ∀ᶠ y in 𝓝 x, |f y|=(if 0<f x then (1:ℝ) else -1)*f y := by
+  by_cases hpos : 0<f x
+  · filter_upwards [(hf.tendsto x).eventually (lt_mem_nhds hpos)] with y hy
+    simp only [ite_eq_left hpos,one_mul,abs_of_pos hy]
+  · have hneg : f x<0 := lt_of_le_of_ne (le_of_not_gt hpos) hx
+    filter_upwards [(hf.tendsto x).eventually (gt_mem_nhds hneg)] with y hy
+    simp only [ite_eq_right hpos,neg_one_mul,abs_of_neg hy]
+
+/-- Shifting a phase by a cardinal angle and `π` exchanges `cos` and `sin` up to
+sign, so it keeps both nonzero. -/
+lemma cardinal_shift_ne (k : Fin 4) {d : ℝ} (hc : Real.cos d ≠ 0) (hs : Real.sin d ≠ 0) :
+    Real.cos (cardinalAngle k+Real.pi-d) ≠ 0 ∧ Real.sin (cardinalAngle k+Real.pi-d) ≠ 0 := by
+  obtain rfl | rfl | rfl | rfl : k=0 ∨ k=1 ∨ k=2 ∨ k=3 := by fin_cases k <;> simp
+  · simp [cardinalAngle,Real.cos_pi_sub,Real.sin_pi_sub,hc,hs]
+  · rw [show cardinalAngle 1+Real.pi-d = (Real.pi/2-d)+Real.pi by norm_num [cardinalAngle]; ring]
+    simp [Real.cos_add_pi,Real.sin_add_pi,Real.cos_pi_div_two_sub,Real.sin_pi_div_two_sub,hc,hs]
+  · rw [show cardinalAngle 2+Real.pi-d = 2*Real.pi-d by norm_num [cardinalAngle]; ring]
+    simp [Real.cos_two_pi_sub,Real.sin_two_pi_sub,hc,hs]
+  · rw [show cardinalAngle 3+Real.pi-d = (Real.pi/2-d)+2*Real.pi by norm_num [cardinalAngle]; ring]
+    simp [Real.cos_add_two_pi,Real.sin_add_two_pi,Real.cos_pi_div_two_sub,
+      Real.sin_pi_div_two_sub,hc,hs]
 
 lemma first_octant_polar {x y : ℝ} (hx : 0<x) (hy : 0<y) (hxy : y≤x) :
     ∃ d b : ℝ, 0<d ∧ 0<b ∧ b≤Real.pi/4 ∧ d^2=x^2+y^2 ∧
@@ -86,7 +234,7 @@ lemma stationary_nearest_corner {A v z X Y H : ℝ} (t : TransverseSign)
     have hCp : 0<Real.cos z := lt_of_le_of_ne (le_of_not_gt hn) (Ne.symm hC)
     rw [ite_eq_left hCp] at hX
     have hm := mul_neg_of_neg_of_pos hneg hCp
-    linarith [h.2.2.1]
+    linarith [h.half_le]
   have hXX : X=A-1/2 := by
     rw [ite_eq_right (not_lt_of_ge hCneg.le)] at hX
     linarith
@@ -101,7 +249,7 @@ lemma stationary_nearest_corner {A v z X Y H : ℝ} (t : TransverseSign)
         have hSp : 0<Real.sin z := lt_of_le_of_ne (le_of_not_gt hn) (Ne.symm hS)
         rw [ite_eq_left hSp] at hY
         have hm := mul_neg_of_neg_of_pos hneg hSp
-        linarith [h.1]
+        linarith [h.u_nonneg]
       rw [ite_eq_right (not_lt_of_ge hSn.le)] at hY
       have hm := mul_pos_of_neg_of_neg hneg hSn
       exact ⟨by linarith,by linarith⟩
@@ -111,12 +259,12 @@ lemma stationary_nearest_corner {A v z X Y H : ℝ} (t : TransverseSign)
         have hSn : Real.sin z<0 := lt_of_le_of_ne (le_of_not_gt hn) hS
         rw [ite_eq_right (not_lt_of_ge hSn.le)] at hY
         have hm := mul_pos_of_neg_of_neg hneg hSn
-        linarith [h.1]
+        linarith [h.u_nonneg]
       rw [ite_eq_left hSp] at hY
       have hm := mul_neg_of_neg_of_pos hneg hSp
       exact ⟨by linarith,by linarith⟩
   obtain ⟨d,b,hd,hb,hbq,hd2,hdc,hds⟩ := first_octant_polar
-    (x := A-1/2) (y := v-1/2) (by linarith) (by linarith [hYY.2]) (by linarith [h.2.1])
+    (x := A-1/2) (y := v-1/2) (by linarith) (by linarith [hYY.2]) (by linarith [h.u_le])
   have hnorm : X^2+Y^2=H^2 := by
     rw [hXC,hYS]
     linear_combination H^2*hu
@@ -138,7 +286,7 @@ lemma stationary_nearest_corner {A v z X Y H : ℝ} (t : TransverseSign)
   have hsum : d<A+v-1 := by
     have hprod := mul_pos (show 0<A-1/2 by linarith) (show 0<v-1/2 by linarith [hYY.2])
     nlinarith only [hprod,hd2,hd,hA,hYY.2]
-  have hp := h.2.2.2
+  have hp := h.phi_le
   have hdhalf : d<1/2 := by
     dsimp [phi,targetSq] at hp
     nlinarith only [hp,hd2,hsum,hd]
@@ -184,30 +332,26 @@ lemma corner_source_margin {a u A v g d b : ℝ} (s t : TransverseSign) (k : Fin
     linarith
   fin_cases k
   · norm_num [cardinalAngle,support]
-    linarith [h.2.2.1]
+    linarith [h.half_le]
   · cases s
     · norm_num [cardinalAngle,support,TransverseSign.coe]
-      linarith [h.1]
+      linarith [h.u_nonneg]
     · have he' : Real.pi/2+p=g+t.coe*(b-r) := by
         simpa only [N,C,cardinalAngle,Fin.val_one,Nat.cast_one,one_mul,
           TransverseSign.coe,neg_one_mul,sub_neg_eq_add] using he
       cases t
       · simp only [TransverseSign.coe,one_mul] at he'
         dsimp [gap] at hg
-        have hfalse : False := by linarith [hb.2]
-        exact hfalse.elim
+        linarith [hb.2]
       · simp only [TransverseSign.coe,neg_one_mul] at he'
         have hcredit : Real.pi/6+p≤r-b := by dsimp [gap] at hg; linarith [hg.2]
         have hp12 : p<Real.pi/12 := by linarith [hb.1]
         have hax : label a u=axial u := by
           rcases h.selected with hA' | hT' | hcap
           · exact hA'
-          · have hh := side_selected_gt_twelfth h hT'
-            change Real.pi/12<side a u at hh
-            have hfalse : False := by rw [← hT'] at hh; linarith
-            exact hfalse.elim
-          · have hfalse : False := by change p=Real.pi/4 at hcap; linarith [Real.pi_pos]
-            exact hfalse.elim
+          · linarith [side_selected_label_gt h hT',Real.pi_lt_d2]
+          · change p=Real.pi/4 at hcap
+            linarith [Real.pi_pos]
         have hup : u=(4/5)*p := by dsimp [p]; rw [hax]; dsimp [axial]; ring
         let K := (3/4)*Real.cos b-(1/3)*Real.sin b
         have hcospos : 0<Real.cos b := Real.cos_pos_of_mem_Ioo
@@ -234,14 +378,9 @@ lemma corner_source_margin {a u A v g d b : ℝ} (s t : TransverseSign) (k : Fin
         norm_num [cardinalAngle,support,TransverseSign.coe]
         rw [hup]
         linarith
-  · have hfalse : False := by
-      cases s <;> norm_num [N,C,cardinalAngle,TransverseSign.coe] at he <;>
-        change _ = C at he <;> linarith [hCrange.2,hp1,Real.pi_pos]
-    exact hfalse.elim
-  · have hfalse : False := by
-      cases s <;> norm_num [N,C,cardinalAngle,TransverseSign.coe] at he <;>
-        change _ = C at he <;> linarith [hCrange.2,hp1,Real.pi_pos]
-    exact hfalse.elim
+  all_goals
+    cases s <;> norm_num [N,C,cardinalAngle,TransverseSign.coe] at he <;>
+      change _ = C at he <;> linarith [hCrange.2,hp1,Real.pi_pos]
 
 /-- A smooth leftmost support minimum in the intermediate interval is strictly
 positive. Degenerate constant pieces are already excluded by leftmostness. -/
@@ -250,9 +389,12 @@ theorem smooth_leftmost_support_pos {a u A v g : ℝ} (s t : TransverseSign) (k 
     (hg : 1<g ∧ g<gap)
     (hmin : ∀y∈Icc 1 gap,pairSupport a u A v s t k g≤pairSupport a u A v s t k y)
     (hleft : ∀y∈Icc 1 gap,y<g → pairSupport a u A v s t k g<pairSupport a u A v s t k y)
-    (hC : Real.cos (cardinalAngle k+Real.pi-g-s.coe*label a u+t.coe*label A v)≠0)
-    (hS : Real.sin (cardinalAngle k+Real.pi-g-s.coe*label a u+t.coe*label A v)≠0) :
+    (hc : Real.cos (relativePhase a u A v g s t)≠0) (hs : Real.sin (relativePhase a u A v g s t)≠0) :
     0<pairSupport a u A v s t k g := by
+  obtain ⟨hC,hS⟩ := cardinal_shift_ne k hc hs
+  rw [show cardinalAngle k+Real.pi-relativePhase a u A v g s t =
+    cardinalAngle k+Real.pi-g-s.coe*label a u+t.coe*label A v by simp only [relativePhase]; ring]
+    at hC hS
   let Z := cardinalAngle k+Real.pi-s.coe*label a u+t.coe*label A v
   let z := Z-g
   let X := A+(if 0<Real.cos z then (1:ℝ) else -1)/2

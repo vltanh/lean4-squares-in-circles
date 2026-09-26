@@ -74,6 +74,11 @@ lemma transition_line : 9*a0+11*u0=2*Real.pi+7 := by
   dsimp [a0,u0,X0,Y0,M]
   ring
 
+lemma tieA_s0 : tieA s0=a0 := by
+  have hl := transition_line
+  dsimp [tieA,s0]
+  linarith
+
 lemma transition_admissible : Admissible a0 u0 := by
   have hc := transition_coarse
   have he := transition_circle
@@ -87,7 +92,7 @@ lemma transition_labels : label a0 u0=axial u0 ∧ label a0 u0=side a0 u0 := by
   have he : axial u0=side a0 u0 := by dsimp [axial,side]; linarith
   have hcap : axial u0 ≤ Real.pi/4 := by
     dsimp [axial]
-    linarith [pi_lower_157]
+    linarith [Real.pi_gt_d2]
   simp [label,he,show side a0 u0 ≤ Real.pi/4 by simpa only [← he] using hcap]
 
 lemma rd_bounds : (77475:ℝ)/100000 < rd ∧ rd < 77476/100000 := by
@@ -104,6 +109,10 @@ lemma td_bounds : (18:ℝ)/25 < td ∧ td < Real.pi/4 := by
   have hr := rd_bounds
   dsimp [td]
   constructor <;> linarith [Real.pi_gt_d6,Real.pi_lt_d6]
+
+lemma diagonal_td : diagonal td=rd := by
+  dsimp [diagonal,td]
+  ring
 
 lemma D_td : D td=(5/12)*(rd+1/2) := by
   dsimp [D,td]

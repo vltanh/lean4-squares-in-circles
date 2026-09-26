@@ -1,82 +1,51 @@
-import SquaresInCircles.Seven.PairModel
-import SquaresInCircles.Seven.MarkerArc
+import SquaresInCircles.Seven.Contacts
 
 /-!
-# Three sectors valid for every label
+# Four sectors valid for every label
 
 At the gap `π/3`: the outward axis, because the centre of the other square is
-within `√3 - 1/2` of the disk centre; the backward axis, by the marker point of
-the other square; and the inward axis with a negative source sign, by its
-marker arc.
+near the disk centre; the backward axis, by the marker point of the other
+square; the inward axis with a negative source sign, by its marker arc; and the
+forward axis with both signs positive, by Cauchy–Schwarz on the disk and the
+marker bounds.
 -/
 noncomputable section
 open Set
 namespace SquaresInCircles.Seven
-
-lemma marker_arc_signed {a b x : ℝ} (h : Admissible a |b|)
-    (hx : |x-signedLabel a b| ≤ 801/1600) :
-    |Real.cos x-a| ≤ 1/2 ∧ |Real.sin x-b| ≤ 1/2 := by
-  by_cases hb : b < 0
-  · have ht : |-x-label a (|b|)| ≤ 801/1600 := by
-      have he : -x-label a |b| = -(x-(-label a |b|)) := by ring
-      rw [he,abs_neg]
-      simpa only [signedLabel,ite_eq_left hb] using hx
-    have hm := marker_arc h ht
-    rw [Real.cos_neg,Real.sin_neg] at hm
-    refine ⟨hm.1,?_⟩
-    have he : -Real.sin x-|b| = -(Real.sin x-b) := by rw [abs_of_neg hb]; ring
-    rw [he,abs_neg] at hm
-    exact hm.2
-  · simpa only [signedLabel,ite_eq_right hb,abs_of_nonneg (le_of_not_gt hb)] using
-      marker_arc h (by simpa only [signedLabel,ite_eq_right hb] using hx)
-
-lemma marker_arc_support {a b x : ℝ} (h : Admissible a |b|)
-    (hx : |x-signedLabel a b| ≤ 801/1600) (z : ℝ) :
-    Real.cos (z-x) ≤ support a b z := by
-  have hm := marker_arc_signed h hx
-  have hs := point_le_support hm.1 hm.2 z
-  simpa only [Real.cos_sub,mul_comm] using hs
 
 /-- Outward radial source: no active-label case distinction. -/
 theorem fixed_gap_outward {a u A v : ℝ}
     (h : Admissible a u) (h' : Admissible A v) (s t : TransverseSign) :
     0 < pairSupport a u A v s t 0 gap := by
   rw [pairSupport_zero]
-  exact outward_support_pos h.2.2.1 (sign_admissible h' t) _
+  linarith [h.half_le,support_lower (sign_admissible h' t) (Real.pi-gap-s.coe*label a u+
+    t.coe*label A v)]
 
 /-- Backward transverse source: the other square's marker point suffices. -/
 theorem fixed_gap_backward {a u A v : ℝ}
     (h : Admissible a u) (h' : Admissible A v) (s t : TransverseSign) :
     0 < pairSupport a u A v s t 3 gap := by
   rw [pairSupport_three]
-  have hp := marker_arc_support (x := signedLabel A (t.coe*v)) (sign_admissible h' t)
-    (by norm_num) (5*Real.pi/2-gap-s.coe*label a u+t.coe*label A v)
-  rw [sign_label h' t] at hp
-  have he : 5*Real.pi/2-gap-s.coe*label a u+t.coe*label A v-t.coe*label A v =
-      5*Real.pi/2-(gap+s.coe*label a u) := by ring
-  rw [he,cos_five_half_pi_sub] at hp
-  have h0 := h.label_nonneg
-  have h1 := h.label_le_quarter
+  have hp := marker_arc_support h' t (x := t.coe*label A v) (by norm_num)
+    (5*Real.pi/2-gap-s.coe*label a u+t.coe*label A v)
+  rw [show 5*Real.pi/2-gap-s.coe*label a u+t.coe*label A v-t.coe*label A v =
+      Real.pi/2-(gap+s.coe*label a u)+2*Real.pi by ring,Real.cos_add_two_pi,
+    Real.cos_pi_div_two_sub] at hp
+  obtain ⟨h0,h1⟩ := h.label_mem
   cases s
-  · have hcos := Real.one_sub_sq_div_two_le_cos (x := Real.pi/6-label a u)
-    have hid : Real.sin (gap+label a u) = Real.cos (Real.pi/6-label a u) := by
-      have he : gap+label a u = Real.pi/2-(Real.pi/6-label a u) := by dsimp [gap]; ring
-      rw [he,Real.sin_pi_div_two_sub]
-    have hr : -(3/5 : ℝ) < Real.pi/6-label a u ∧
-        Real.pi/6-label a u < 3/5 := by
-      constructor <;> linarith [Real.pi_lt_d4,Real.pi_pos]
-    have hsq : (Real.pi/6-label a u)^2 < (3/5 : ℝ)^2 := by nlinarith [hr.1,hr.2]
+  · rw [show gap+TransverseSign.positive.coe*label a u = Real.pi/2-(Real.pi/6-label a u) by
+      simp [gap,TransverseSign.coe]; ring,Real.sin_pi_div_two_sub] at hp
+    have hc := Real.one_sub_sq_div_two_le_cos (x := Real.pi/6-label a u)
+    have hsq : (Real.pi/6-label a u)^2 < (3/5)^2 := by
+      nlinarith [Real.pi_lt_d2,Real.pi_pos]
     simp only [TransverseSign.coe,one_mul] at hp ⊢
-    rw [hid] at hp
     linarith [h.u_lt]
-  · have hs : 0 ≤ Real.sin (gap-label a u) :=
+  · have hs : 0 ≤ Real.sin (gap+TransverseSign.negative.coe*label a u) :=
       Real.sin_nonneg_of_nonneg_of_le_pi
-        (by dsimp [gap]; linarith [Real.pi_pos])
-        (by dsimp [gap]; linarith [Real.pi_pos])
-    simp only [TransverseSign.coe,neg_one_mul,sub_neg_eq_add] at hp ⊢
-    have he : gap+-label a u = gap-label a u := by ring
-    rw [he] at hp
-    linarith [h.1]
+        (by simp [gap,TransverseSign.coe]; linarith [Real.pi_pos])
+        (by simp [gap,TransverseSign.coe]; linarith [Real.pi_pos])
+    simp only [TransverseSign.coe,neg_one_mul,sub_neg_eq_add] at hp hs ⊢
+    linarith [h.u_nonneg]
 
 /-- The inward radial source is uniformly positive when its transverse sign
 is negative. The other square may have either sign and any label. -/
@@ -84,29 +53,86 @@ theorem fixed_gap_inward_negative {a u A v : ℝ}
     (h : Admissible a u) (h' : Admissible A v) (t : TransverseSign) :
     0 < pairSupport a u A v .negative t 2 gap := by
   rw [pairSupport_two]
-  simp only [TransverseSign.coe,neg_one_mul,sub_neg_eq_add]
-  let x := t.coe*label A v-801/1600
-  let z := 2*Real.pi-gap+label a u+t.coe*label A v
-  have hx : |x-signedLabel A (t.coe*v)| ≤ 801/1600 := by
-    rw [sign_label h' t]
-    dsimp [x]
-    norm_num
-  have hp := marker_arc_support (sign_admissible h' t) hx z
-  have he : z-x = 2*Real.pi- (gap-label a u-801/1600) := by dsimp [z,x]; ring
-  rw [he,Real.cos_two_pi_sub] at hp
-  have hb : -(2/3 : ℝ) < gap-label a u-801/1600 ∧
-      gap-label a u-801/1600 < 2/3 := by
-    have h0 := h.label_nonneg
-    have h1 := h.label_le_quarter
-    dsimp [gap]
+  let y := gap-label a u-801/1600
+  have hp := marker_arc_support h' t (x := t.coe*label A v-801/1600)
+    (by norm_num) (2*Real.pi-gap-TransverseSign.negative.coe*label a u+t.coe*label A v)
+  rw [show 2*Real.pi-gap-TransverseSign.negative.coe*label a u+t.coe*label A v-
+      (t.coe*label A v-801/1600) = 2*Real.pi-y by simp [y,TransverseSign.coe]; ring,
+    Real.cos_two_pi_sub] at hp
+  have hb : -(2/3 : ℝ) < y ∧ y < 2/3 := by
+    obtain ⟨h0,h1⟩ := h.label_mem
+    dsimp [y,gap]
     constructor <;> linarith [Real.pi_gt_d2,Real.pi_lt_d4]
-  have hc := Real.one_sub_sq_div_two_le_cos (x := gap-label a u-801/1600)
-  have hsq : (gap-label a u-801/1600)^2 < (2/3 : ℝ)^2 := by nlinarith [hb.1,hb.2]
+  have hy : y^2 < (2/3)^2 := by nlinarith [hb.1,hb.2]
+  have hc := Real.one_sub_sq_div_two_le_cos (x := y)
   have ha := h.a_le_sqrt_three_sub_half
-  have hr : Real.sqrt 3 < 7/4 := by
-    have hh := Real.sq_sqrt (show (0 : ℝ) ≤ 3 by norm_num)
-    nlinarith [Real.sqrt_nonneg (3 : ℝ)]
-  change 0 < 1/2-a+support A (t.coe*v) z
-  linarith
+  linarith [sqrt_three_bounds.2]
+
+lemma trig_sum_monotone : MonotoneOn (fun x : ℝ => Real.cos x+Real.sin x)
+    (Icc 0 (Real.pi/4)) := by
+  apply monoOn_of_hasDeriv_nonneg (d := fun x => Real.cos x-Real.sin x) (by fun_prop)
+  · intro x _
+    exact ((Real.hasDerivAt_cos x).add (Real.hasDerivAt_sin x)).congr_deriv (by ring)
+  · intro x hx
+    exact sub_nonneg.mpr (sin_le_cos_of_small ⟨hx.1.le,hx.2.le⟩)
+
+/-- The forward axis with both signs positive: positive for every label. -/
+theorem fixed_gap_forward_positive {a u A v : ℝ}
+    (h : Admissible a u) (h' : Admissible A v) :
+    0 < pairSupport a u A v .positive .positive 1 gap := by
+  let t := label a u
+  let z := Real.pi/6-t+label A v
+  obtain ⟨ht0,ht1⟩ := h.label_mem
+  obtain ⟨hs0,hs1⟩ := h'.label_mem
+  have htu : (4/5)*t ≤ u := by
+    have hh := h.label_le_axial
+    dsimp [axial] at hh
+    dsimp [t]
+    linarith
+  have he : pairSupport a u A v .positive .positive 1 gap =
+      1/2+u-A*Real.cos z-v*Real.sin z+(|Real.cos z|+|Real.sin z|)/2 := by
+    rw [pairSupport_one,show 3*Real.pi/2-gap-TransverseSign.positive.coe*label a u+
+      TransverseSign.positive.coe*label A v = Real.pi+z by simp [gap,z,t,TransverseSign.coe]; ring]
+    simp [support,Real.cos_add,Real.sin_add,abs_neg,TransverseSign.coe]
+    ring
+  rw [he]
+  by_cases ht : 5/16 ≤ t
+  · have hl := support_lower (a := A) (b := v) (by rw [abs_of_nonneg h'.u_nonneg]; exact h')
+      (Real.pi+z)
+    simp [support,Real.cos_add,Real.sin_add,abs_neg] at hl
+    linarith
+  have hz : 21/100 ≤ z ∧ z ≤ Real.pi/2 := by
+    dsimp [z]
+    constructor <;> linarith [Real.pi_gt_d2,Real.pi_pos]
+  have hc : 0 ≤ Real.cos z := Real.cos_nonneg_of_mem_Icc ⟨by linarith [Real.pi_pos],hz.2⟩
+  have hsn : 0 ≤ Real.sin z := Real.sin_nonneg_of_nonneg_of_le_pi (by linarith)
+    (by linarith [Real.pi_pos])
+  rw [abs_of_nonneg hc,abs_of_nonneg hsn]
+  by_cases hquarter : Real.pi/4 ≤ z
+  · have hcs := cos_le_sin_of_quarter ⟨hquarter,hz.2⟩
+    have hp := mul_nonneg (show 0 ≤ A-v by linarith [h'.u_le]) (sub_nonneg.mpr hcs)
+    have hprod := mul_nonneg (show 0 ≤ 31/20-A-v by linarith [h'.sum_lt]) (add_nonneg hc hsn)
+    have hunit : Real.sin z+Real.cos z < 3/2 := by
+      nlinarith [Real.sin_sq_add_cos_sq z,sq_nonneg (Real.sin z-Real.cos z)]
+    linarith [h.u_nonneg]
+  · have hd := dot_ge (p := -Real.cos z) (r := -Real.sin z) (c := 181/100) h'.phi_le
+      (by norm_num) (by unfold targetSq; nlinarith [Real.sin_sq_add_cos_sq z])
+    have hm := trig_sum_monotone ⟨show 0 ≤ Real.pi/6-t by linarith [Real.pi_gt_d2],
+      show Real.pi/6-t ≤ Real.pi/4 by linarith⟩ ⟨by linarith,by linarith⟩
+      (show Real.pi/6-t ≤ z by dsimp [z]; linarith)
+    -- `1/2 + (4/5) t + cos (π/6 - t) + sin (π/6 - t)` is concave in `π/6 - t`
+    have hf := trig_concave_gt (α := -4/5) (A := 1) (B := 1) (m := 131/100-2*Real.pi/15)
+      (x := Real.pi/6-t) (by norm_num) (by norm_num) (by norm_num) (by linarith [Real.pi_pos])
+      (show 21/100 ≤ Real.pi/6-t ∧ Real.pi/6-t ≤ Real.pi/6 by
+        constructor <;> linarith [Real.pi_gt_d2])
+      (by
+        have hs := Real.sin_ge_sub_cube (show (0:ℝ) ≤ 21/100 by norm_num)
+        have hc := Real.one_sub_sq_div_two_le_cos (x := (21/100:ℝ))
+        linarith [Real.pi_gt_d2])
+      (by
+        rw [Real.sin_pi_div_six,Real.cos_pi_div_six]
+        linarith [sqrt_three_bounds.1])
+    dsimp at hm
+    linarith
 
 end SquaresInCircles.Seven
