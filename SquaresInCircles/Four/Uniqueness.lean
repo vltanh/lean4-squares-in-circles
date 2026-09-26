@@ -111,15 +111,16 @@ theorem Four.uniqueness (S : Fin 4 → UnitSquare) (o : Point)
     rw [hA i,hA j,hmid i,hmid j] at hd
     linarith
   obtain ⟨φ,σ,hgrid⟩ := regular_polygon _ (by push_cast; ring) hsep
-  refine ⟨φ-((Real.pi/4:ℝ):Direction),σ,fun k => ?_⟩
+  apply normal_form_of_slots (φ := φ-((Real.pi/4:ℝ):Direction)) hp.disjoint
+  intro i
+  obtain ⟨k,rfl⟩ := σ.surjective i
+  refine ⟨k,?_⟩
   have hk : ((k.val*(Real.pi/2) : ℝ) : Direction)=quarterShift k := by
     fin_cases k <;> simp [quarterShift] <;> rw [Real.Angle.angle_eq_iff_two_pi_dvd_sub]
     exacts [⟨0,by ring⟩,⟨1,by push_cast; ring⟩]
   have hrep := vertex_represents (C (σ k)) (hcoords _).1 (hcoords _).2
   rw [hgrid,hk,add_sub_right_comm] at hrep
-  have h := represents_quarter k hrep
   have hc : turnPoint k (1/2,1/2)=Four.centers k := by fin_cases k <;> norm_num [turnPoint,Four.centers]
-  rw [hc] at h
-  exact fun x y => ⟨h x y,h.closed x y⟩
+  simpa only [hc] using represents_quarter k hrep
 
 end SquaresInCircles

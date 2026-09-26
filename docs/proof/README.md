@@ -167,7 +167,7 @@ at the optimal radius; the table lists only the lemmas it adds.
 | 3. two disjoint squares | | 5, 6 | | 5 | 4, 6 | 5 |
 | 4. angular budget | | | | 8 | | 7 |
 | 5. charts | | | | 11 | | |
-| 10. normal forms | 21, 22 | 21, 22 | 21, 22 | 21, 23 | 21, 22 | 21, 22 |
+| 10. normal forms | 21, 22 | 21, 22 | 21, 22 | 21, 22, 23 | 21, 22 | 21, 22 |
 
 ## The legacy proof of three squares
 

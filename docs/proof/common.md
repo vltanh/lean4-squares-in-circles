@@ -851,8 +851,8 @@ Every point of the box is within $\sqrt{B^2 + C^2}$ of the origin. $\square$
 Each uniqueness proof ends the same way: find one frame at $o$ in which every
 square sits at a model centre
 ([Definition 4](preliminaries.md#definition-4-frames-at-the-disk-centre)), then
-apply Lemma 22, or, for four squares, read the relabelling off Lemma 23. That
-lemma also gives the last step of the lower bound for seven squares.
+apply Lemma 22. For four and seven squares Lemma 23 helps find that frame; it
+also gives the last step of the lower bound for seven squares.
 
 ### Lemma 21 (sitting at a centre)
 
