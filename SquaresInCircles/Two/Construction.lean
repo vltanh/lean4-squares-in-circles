@@ -12,14 +12,10 @@ namespace SquaresInCircles.Two
 /-- The optimal radius for two unit squares: half the diagonal of the 2 × 1 rectangle. -/
 def radius : ℝ := Real.sqrt 5 / 2
 
-lemma radius_nonneg : 0 ≤ radius := by
-  unfold radius
-  positivity
+lemma radius_nonneg : 0 ≤ radius := by unfold radius; positivity
 
 lemma radius_sq : radius ^ 2 = 5 / 4 := by
-  have h := Real.sq_sqrt (show (0 : ℝ) ≤ 5 by norm_num)
-  unfold radius
-  linarith
+  rw [radius,div_pow,Real.sq_sqrt (by norm_num)]; norm_num
 
 /-- The rectangle in the frame of its disk centre. -/
 def centers : Fin 2 → Point := ![(-1/2,0),(1/2,0)]

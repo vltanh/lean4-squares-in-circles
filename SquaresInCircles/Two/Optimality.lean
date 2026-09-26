@@ -5,29 +5,23 @@ import SquaresInCircles.Common.Contacts
 # Two squares: the lower bound
 
 The smallest disk containing two non-overlapping unit squares has radius `sqrt 5
-/ 2`, half the diagonal of a 2 × 1 rectangle, and the squares then form that
-rectangle, centred at the disk centre.
+/ 2`, half the diagonal of a 2 × 1 rectangle.
 
-A square whose farthest vertex is strictly within `sqrt 5 / 2` of the disk
-centre has its own centre strictly within `1/2`. Two such centres are less than
-1 apart, but centres of interior-disjoint unit squares are at least 1 apart.
+In a disk of radius at most `sqrt 5 / 2` the farthest-vertex bound keeps both
+centres within `1/2` of the disk centre. Centres of interior-disjoint unit
+squares are at least 1 apart, so by the parallelogram law both are exactly
+`1/2` from it (`centers_at_half`), which puts the farthest vertices at least
+`sqrt 5 / 2` away.
 -/
 noncomputable section
 namespace SquaresInCircles.Two
 
-lemma center_near_of_phi_le {a b : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b)
+/-- A square whose farthest vertex is within `sqrt 5 / 2` of the disk centre
+has its centre within `1/2` of it. -/
+lemma center_near {a b : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b)
     (h : phi a b ≤ 5/4) : a^2+b^2 ≤ 1/4 := by
   unfold phi at h
-  by_contra hn
-  have hs : 1/2 < a+b := by nlinarith [mul_nonneg ha hb]
-  linarith
-
-lemma center_near_of_phi_lt {a b : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b)
-    (h : phi a b < 5/4) : a^2+b^2 < 1/4 := by
-  unfold phi at h
-  by_contra hn
-  have hs : 1/2 ≤ a+b := by nlinarith [mul_nonneg ha hb]
-  linarith
+  nlinarith [mul_nonneg ha hb]
 
 /-- The parallelogram law, with the disk centre `o` as the common origin. -/
 lemma normSq_parallelogram (c d o : Point) :
@@ -36,18 +30,27 @@ lemma normSq_parallelogram (c d o : Point) :
   simp only [normSq,sub,add,scale]
   ring
 
+/-- In a disk of radius at most `sqrt 5 / 2`, both centres are exactly `1/2`
+from the disk centre. -/
+lemma centers_at_half (S : Fin 2 → UnitSquare) (o : Point) (hd : InteriorDisjoint S)
+    (hφ : ∀ i, phi (alpha (S i) o) (beta (S i) o) ≤ 5/4) :
+    ∀ i, alpha (S i) o^2+beta (S i) o^2=1/4 := by
+  have hnear (i : Fin 2) := center_near (alpha_nonneg _ _) (beta_nonneg _ _) (hφ i)
+  simp only [← local_center_norm] at hnear ⊢
+  have hfar := centers_distance_sq_ge_one (S 0) (S 1) (hd 0 1 (by decide))
+  have hpar := normSq_parallelogram (S 1).center (S 0).center o
+  have hmid := normSq_nonneg (sub (add (S 1).center (S 0).center) (scale 2 o))
+  exact Fin.forall_fin_two.mpr ⟨by linarith [hnear 0,hnear 1],by linarith [hnear 0,hnear 1]⟩
+
 theorem squared_lower (S : Fin 2 → UnitSquare) (o : Point) (R : ℝ)
     (hp : Packing S o R) : (5:ℝ)/4 ≤ R^2 := by
   by_contra hn
-  have hsmall : R^2 < 5/4 := lt_of_not_ge hn
-  have hnear (i : Fin 2) : normSq (sub (S i).center o) < 1/4 := by
-    rw [local_center_norm]
-    exact center_near_of_phi_lt (alpha_nonneg _ _) (beta_nonneg _ _)
-      ((hp.phi_le i).trans_lt hsmall)
-  have hfar := centers_distance_sq_ge_one (S 0) (S 1) (hp.2.2 0 1 (by decide))
-  have hpar := normSq_parallelogram (S 1).center (S 0).center o
-  have hmid := normSq_nonneg (sub (add (S 1).center (S 0).center) (scale 2 o))
-  linarith [hnear 0,hnear 1]
+  have hφ (i : Fin 2) := (hp.phi_le i).trans_lt (lt_of_not_ge hn)
+  have h := centers_at_half S o hp.disjoint (fun i => (hφ i).le) 0
+  have h0 := hφ 0
+  unfold phi at h0
+  nlinarith [mul_nonneg (alpha_nonneg (S 0) o) (beta_nonneg (S 0) o),alpha_nonneg (S 0) o,
+    beta_nonneg (S 0) o]
 
 theorem optimality (S : Fin 2 → UnitSquare) (o : Point) (R : ℝ)
     (hp : Packing S o R) : radius ≤ R :=

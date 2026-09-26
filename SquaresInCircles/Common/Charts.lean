@@ -1,4 +1,5 @@
 import SquaresInCircles.Common.AngularBudget
+import Mathlib.Analysis.SpecialFunctions.Complex.Arg
 
 /-!
 # Square-local circle charts
@@ -14,38 +15,10 @@ namespace SquaresInCircles
 
 lemma frame_angle (S : UnitSquare) :
     ∃ t : ℝ, Real.cos t=S.cosine ∧ Real.sin t=S.sine := by
-  have hc0 : -1 ≤ S.cosine := by nlinarith [S.unit,sq_nonneg S.sine]
-  have hc1 : S.cosine ≤ 1 := by nlinarith [S.unit,sq_nonneg S.sine]
-  let t := Real.arccos S.cosine
-  have hcos : Real.cos t=S.cosine := Real.cos_arccos hc0 hc1
-  have hsin0 : 0 ≤ Real.sin t := Real.sin_nonneg_of_nonneg_of_le_pi
-    (Real.arccos_nonneg _) (Real.arccos_le_pi _)
-  have hu := Real.sin_sq_add_cos_sq t
-  rw [hcos] at hu
-  by_cases hs : 0 ≤ S.sine
-  · exact ⟨t,hcos,by nlinarith [S.unit]⟩
-  · refine ⟨-t,by simpa using hcos,?_⟩
-    rw [Real.sin_neg]
-    nlinarith [S.unit]
-
-lemma local_circle (S : UnitSquare) (o : Point) (r θ t : ℝ)
-    (hc : Real.cos θ=S.cosine) (hs : Real.sin θ=S.sine) :
-    localX S (circlePoint o r ((θ:Direction)+(t:Direction))) =
-      r*Real.cos t-frameX S (sub S.center o) ∧
-    localY S (circlePoint o r ((θ:Direction)+(t:Direction))) =
-      r*Real.sin t-frameY S (sub S.center o) := by
-  have hx : localX S (circlePoint o r ((θ:Direction)+(t:Direction))) =
-      r*Real.cos t*(S.cosine^2+S.sine^2)-frameX S (sub S.center o) := by
-    simp only [circlePoint,localX,Real.Angle.cos_add,Real.Angle.sin_add,
-      Real.Angle.cos_coe,Real.Angle.sin_coe,hc,hs,frameX,sub]
-    ring
-  have hy : localY S (circlePoint o r ((θ:Direction)+(t:Direction))) =
-      r*Real.sin t*(S.cosine^2+S.sine^2)-frameY S (sub S.center o) := by
-    simp only [circlePoint,localY,Real.Angle.cos_add,Real.Angle.sin_add,
-      Real.Angle.cos_coe,Real.Angle.sin_coe,hc,hs,frameY,sub]
-    ring
-  exact ⟨by simpa only [S.unit,mul_one] using hx,
-    by simpa only [S.unit,mul_one] using hy⟩
+  have h : ‖(⟨S.cosine,S.sine⟩ : ℂ)‖=1 := by
+    rw [Complex.norm_def,Complex.normSq_mk,← sq,← sq,S.unit,Real.sqrt_one]
+  exact ⟨_,by simpa [h] using Complex.norm_mul_cos_arg ⟨S.cosine,S.sine⟩,
+    by simpa [h] using Complex.norm_mul_sin_arg ⟨S.cosine,S.sine⟩⟩
 
 lemma local_circle_shift (S : UnitSquare) (o : Point) (r θ t m : ℝ)
     (hc : Real.cos θ=S.cosine) (hs : Real.sin θ=S.sine) :
@@ -53,18 +26,22 @@ lemma local_circle_shift (S : UnitSquare) (o : Point) (r θ t m : ℝ)
       (scale m (sub S.center o))) = r*Real.cos t-(1+m)*frameX S (sub S.center o) ∧
     localY S (sub (circlePoint o r ((θ:Direction)+(t:Direction)))
       (scale m (sub S.center o))) = r*Real.sin t-(1+m)*frameY S (sub S.center o) := by
-  rcases local_circle S o r θ t hc hs with ⟨hx,hy⟩
-  have ex (p : Point) : localX S (sub p (scale m (sub S.center o))) =
-      localX S p-m*frameX S (sub S.center o) := by
-    dsimp [localX,sub,scale,frameX]; ring
-  have ey (p : Point) : localY S (sub p (scale m (sub S.center o))) =
-      localY S p-m*frameY S (sub S.center o) := by
-    dsimp [localY,sub,scale,frameY]; ring
-  rw [ex,ey,hx,hy]
-  constructor <;> ring
+  simp only [localX,localY,circlePoint,sub,scale,frameX,frameY,Real.Angle.cos_add,
+    Real.Angle.sin_add,Real.Angle.cos_coe,Real.Angle.sin_coe,hc,hs]
+  constructor
+  · linear_combination r*Real.cos t*S.unit
+  · linear_combination r*Real.sin t*S.unit
 
 def chartAngle (phase : Direction) (rev : Bool) (t : ℝ) : Direction :=
   phase+((if rev then -t else t : ℝ) : Direction)
+
+/-- Seen from `o` along `chartAngle phase rev`, the square slid by `m` along
+the ray through its centre is the axis-parallel square at `(1+m)(a,b)`. -/
+abbrev ChartCondition (S : UnitSquare) (o : Point) (phase : Direction) (rev : Bool) (a b : ℝ) :
+    Prop :=
+  ∀ r t m, openSquare S
+    (sub (circlePoint o r (chartAngle phase rev t)) (scale m (sub S.center o))) ↔
+    |r*Real.cos t-(1+m)*a| < 1/2 ∧ |r*Real.sin t-(1+m)*b| < 1/2
 
 structure SquareChart (S : UnitSquare) (o : Point) where
   a : ℝ
@@ -72,9 +49,7 @@ structure SquareChart (S : UnitSquare) (o : Point) where
   phase : Direction
   reversed : Bool
   coordinates : (a=alpha S o ∧ b=beta S o) ∨ (a=beta S o ∧ b=alpha S o)
-  shifted_membership : ∀ r t m, openSquare S
-    (sub (circlePoint o r (chartAngle phase reversed t)) (scale m (sub S.center o))) ↔
-    |r*Real.cos t-(1+m)*a| < 1/2 ∧ |r*Real.sin t-(1+m)*b| < 1/2
+  shifted_membership : ChartCondition S o phase reversed a b
 
 lemma SquareChart.membership {S : UnitSquare} {o : Point} (C : SquareChart S o)
     (r t : ℝ) : openSquare S (circlePoint o r (chartAngle C.phase C.reversed t)) ↔
@@ -107,83 +82,78 @@ lemma SquareChart.nonneg {S : UnitSquare} {o : Point} (C : SquareChart S o) :
   C.transfer (fun a b => 0 ≤ a ∧ 0 ≤ b) (fun h => ⟨h.2,h.1⟩)
     ⟨alpha_nonneg S o,beta_nonneg S o⟩
 
+section ChartCondition
+
+variable {S : UnitSquare} {o : Point} {φ : Direction} {rev : Bool} {a b : ℝ}
+
+/-- In the frame of its first axis a square satisfies the chart condition at
+the coordinates of its centre. -/
+lemma frame_chart (S : UnitSquare) (o : Point) {θ : ℝ} (hc : Real.cos θ=S.cosine)
+    (hs : Real.sin θ=S.sine) :
+    ChartCondition S o θ false (frameX S (sub S.center o)) (frameY S (sub S.center o)) :=
+  fun r t m => by
+    simp only [openSquare,chartAngle,Bool.false_eq_true,ite_false,
+      (local_circle_shift S o r θ t m hc hs).1,(local_circle_shift S o r θ t m hc hs).2]
+
+/-- Reversing the orientation changes the sign of `b`. -/
+lemma ChartCondition.reflect (h : ChartCondition S o φ rev a b) :
+    ChartCondition S o φ (!rev) a (-b) := by
+  intro r t m
+  have he : chartAngle φ (!rev) t=chartAngle φ rev (-t) := by cases rev <;> simp [chartAngle]
+  rw [he,h,Real.cos_neg,Real.sin_neg,
+    show r*(-Real.sin t)-(1+m)*b=-(r*Real.sin t-(1+m)*(-b)) by ring,abs_neg]
+
+/-- A half turn of the phase changes the signs of both coordinates. -/
+lemma ChartCondition.turn (h : ChartCondition S o φ rev a b) :
+    ChartCondition S o (φ+(Real.pi:Direction)) rev (-a) (-b) := by
+  intro r t m
+  have he : chartAngle (φ+(Real.pi:Direction)) rev t=chartAngle φ rev (t+Real.pi) := by
+    cases rev <;> simp only [chartAngle,Bool.false_eq_true,ite_false,ite_true,Real.Angle.coe_add,
+      Real.Angle.coe_neg,neg_add,Real.Angle.neg_coe_pi] <;> abel
+  rw [he,h,Real.cos_add_pi,Real.sin_add_pi,
+    show r*(-Real.cos t)-(1+m)*a=-(r*Real.cos t-(1+m)*(-a)) by ring,
+    show r*(-Real.sin t)-(1+m)*b=-(r*Real.sin t-(1+m)*(-b)) by ring,abs_neg,abs_neg]
+
+/-- A quarter turn of the phase, with the orientation reversed, exchanges the
+two coordinates. -/
+lemma ChartCondition.swap (h : ChartCondition S o φ rev a b) :
+    ChartCondition S o (chartAngle φ rev (Real.pi/2)) (!rev) b a := by
+  intro r t m
+  have he : chartAngle (chartAngle φ rev (Real.pi/2)) (!rev) t =
+      chartAngle φ rev (Real.pi/2-t) := by
+    cases rev <;> simp only [chartAngle,Bool.not_false,Bool.not_true,Bool.false_eq_true,
+      ite_false,ite_true,Real.Angle.coe_sub,Real.Angle.coe_neg] <;> abel
+  rw [he,h,Real.cos_pi_div_two_sub,Real.sin_pi_div_two_sub]
+  exact and_comm
+
+end ChartCondition
+
+/-- In the frame of the first axis, a reflection, a half turn or both make the
+two coordinates nonnegative. -/
 lemma square_chart (S : UnitSquare) (o : Point) : Nonempty (SquareChart S o) := by
   obtain ⟨θ,hcos,hsin⟩ := frame_angle S
-  have hX : |frameX S (sub S.center o)|=alpha S o := abs_frame_centerX S o
-  have hY : |frameY S (sub S.center o)|=beta S o := abs_frame_centerY S o
-  have hc := local_circle_shift S o
-  generalize frameX S (sub S.center o) = X at hc hX
-  generalize frameY S (sub S.center o) = Y at hc hY
-  by_cases hx : 0 ≤ X <;> by_cases hy : 0 ≤ Y
-  · refine ⟨⟨|X|,|Y|,(θ:Direction),false,Or.inl ⟨hX,hY⟩,?_⟩⟩
-    intro r t m
-    rcases hc r θ t m hcos hsin with ⟨h₁,h₂⟩
-    simp only [chartAngle,Bool.false_eq_true,ite_false,openSquare,h₁,h₂,
-      abs_of_nonneg hx,abs_of_nonneg hy]
-  · refine ⟨⟨|X|,|Y|,(θ:Direction),true,Or.inl ⟨hX,hY⟩,?_⟩⟩
-    intro r t m
-    rcases hc r θ (-t) m hcos hsin with ⟨h₁,h₂⟩
-    have hneg : r*Real.sin (-t)-(1+m)*Y = -(r*Real.sin t-(1+m)*(-Y)) := by
-      rw [Real.sin_neg]; ring
-    simp only [chartAngle,ite_true,openSquare,h₁,h₂,Real.cos_neg,hneg,abs_neg,
-      abs_of_nonneg hx,abs_of_neg (lt_of_not_ge hy)]
-  · refine ⟨⟨|X|,|Y|,((θ+Real.pi:ℝ):Direction),true,Or.inl ⟨hX,hY⟩,?_⟩⟩
-    intro r t m
-    have hang : chartAngle ((θ+Real.pi:ℝ):Direction) true t =
-        (θ:Direction)+((Real.pi-t:ℝ):Direction) := by
-      simp only [chartAngle,ite_true,Real.Angle.coe_add,Real.Angle.coe_sub,
-        Real.Angle.coe_neg]; abel
-    rcases hc r θ (Real.pi-t) m hcos hsin with ⟨h₁,h₂⟩
-    have hneg : r*Real.cos (Real.pi-t)-(1+m)*X = -(r*Real.cos t-(1+m)*(-X)) := by
-      rw [Real.cos_pi_sub]; ring
-    rw [hang]
-    simp only [openSquare,h₁,h₂,hneg,Real.sin_pi_sub,abs_neg,
-      abs_of_neg (lt_of_not_ge hx),abs_of_nonneg hy]
-  · refine ⟨⟨|X|,|Y|,((θ+Real.pi:ℝ):Direction),false,Or.inl ⟨hX,hY⟩,?_⟩⟩
-    intro r t m
-    have hang : chartAngle ((θ+Real.pi:ℝ):Direction) false t =
-        (θ:Direction)+((Real.pi+t:ℝ):Direction) := by
-      simp only [chartAngle,Bool.false_eq_true,ite_false,Real.Angle.coe_add]; abel
-    rcases hc r θ (Real.pi+t) m hcos hsin with ⟨h₁,h₂⟩
-    have hneg₁ : r*Real.cos (Real.pi+t)-(1+m)*X = -(r*Real.cos t-(1+m)*(-X)) := by
-      rw [Real.cos_add]; simp; ring
-    have hneg₂ : r*Real.sin (Real.pi+t)-(1+m)*Y = -(r*Real.sin t-(1+m)*(-Y)) := by
-      rw [Real.sin_add]; simp; ring
-    rw [hang]
-    simp only [openSquare,h₁,h₂,hneg₁,hneg₂,abs_neg,
-      abs_of_neg (lt_of_not_ge hx),abs_of_neg (lt_of_not_ge hy)]
-
-def SquareChart.swap {S : UnitSquare} {o : Point} (C : SquareChart S o) : SquareChart S o where
-  a := C.b
-  b := C.a
-  phase := chartAngle C.phase C.reversed (Real.pi/2)
-  reversed := !C.reversed
-  coordinates := by
-    rcases C.coordinates with ⟨ha,hb⟩ | ⟨ha,hb⟩
-    · exact Or.inr ⟨hb,ha⟩
-    · exact Or.inl ⟨hb,ha⟩
-  shifted_membership := by
-    intro r t m
-    have he : chartAngle (chartAngle C.phase C.reversed (Real.pi/2)) (!C.reversed) t =
-        chartAngle C.phase C.reversed (Real.pi/2-t) := by
-      cases C.reversed <;>
-        simp only [chartAngle,Bool.not_false,Bool.not_true,Bool.false_eq_true,
-          ite_false,ite_true,Real.Angle.coe_sub,Real.Angle.coe_neg] <;> abel
-    rw [he,C.shifted_membership,Real.cos_pi_div_two_sub,Real.sin_pi_div_two_sub]
-    exact and_comm
+  have h := frame_chart S o hcos hsin
+  obtain ⟨φ,rev,h'⟩ : ∃ φ rev, ChartCondition S o φ rev
+      |frameX S (sub S.center o)| |frameY S (sub S.center o)| := by
+    rcases le_or_gt 0 (frameX S (sub S.center o)) with hx | hx <;>
+      rcases le_or_gt 0 (frameY S (sub S.center o)) with hy | hy
+    · exact ⟨_,_,by rwa [abs_of_nonneg hx,abs_of_nonneg hy]⟩
+    · exact ⟨_,_,by rw [abs_of_nonneg hx,abs_of_neg hy]; exact h.reflect⟩
+    · exact ⟨_,_,by rw [abs_of_neg hx,abs_of_nonneg hy]; simpa using h.turn.reflect⟩
+    · exact ⟨_,_,by rw [abs_of_neg hx,abs_of_neg hy]; exact h.turn⟩
+  exact ⟨⟨_,_,φ,rev,Or.inl ⟨abs_frame_centerX S o,abs_frame_centerY S o⟩,h'⟩⟩
 
 lemma sorted_square_chart (S : UnitSquare) (o : Point) :
     ∃ C : SquareChart S o, C.b ≤ C.a := by
   obtain ⟨C⟩ := square_chart S o
-  by_cases h : C.b ≤ C.a
+  rcases le_total C.b C.a with h | h
   · exact ⟨C,h⟩
-  · exact ⟨C.swap,le_of_lt (lt_of_not_ge h)⟩
+  · exact ⟨⟨C.b,C.a,_,_,C.coordinates.symm.imp (fun h => ⟨h.2,h.1⟩) (fun h => ⟨h.2,h.1⟩),
+      C.shifted_membership.swap⟩,h⟩
 
 lemma SquareChart.origin {S : UnitSquare} {o : Point} (C : SquareChart S o) :
-    openSquare S o ↔ C.a < 1/2 ∧ C.b < 1/2 := by
-  have hh := C.membership 0 0
-  simpa only [circlePoint,zero_mul,add_zero,zero_sub,abs_neg,
-    abs_of_nonneg C.nonneg.1,abs_of_nonneg C.nonneg.2] using hh
+    openSquare S o ↔ C.a < 1/2 ∧ C.b < 1/2 :=
+  C.transfer (fun a b => openSquare S o ↔ a < 1/2 ∧ b < 1/2) (fun h => h.trans and_comm) Iff.rfl
 
 lemma SquareChart.exterior {S : UnitSquare} {o : Point} (C : SquareChart S o)
     (hsort : C.b ≤ C.a) (hout : ¬ openSquare S o) : 1/2 ≤ C.a := by
@@ -217,5 +187,22 @@ lemma SquareChart.arc {S : UnitSquare} {o : Point} (C : SquareChart S o)
       A.halfWidth=(u-l)/2 ∧ A.center=chartAngle C.phase C.reversed ((l+u)/2) :=
   arcFromChartInterval o r _ C.phase C.reversed l u hlu hlen
     (fun t ht => (C.membership r t).mpr (hmem t ht))
+
+/-- A square with `a = 1/2` holds the half of a small circle about `o` on its
+side of the near edge. -/
+lemma SquareChart.half_arc {S : UnitSquare} {o : Point} (C : SquareChart S o) {r : ℝ}
+    (hr : 0 < r) (ha : C.a=1/2) (hb : C.b+r ≤ 1/2) :
+    ∃ A : OpenArc o r {p | openSquare S p}, A.halfWidth=Real.pi/2 ∧ A.center=C.phase := by
+  obtain ⟨A,hA,hc⟩ := C.arc r (-(Real.pi/2)) (Real.pi/2) (by linarith [Real.pi_pos])
+    (by linarith [Real.pi_pos]) fun t ht => by
+      have hc := Real.cos_pos_of_mem_Ioo ht
+      have hs := Real.sin_sq_add_cos_sq t
+      have hs1 : Real.sin t < 1 := by nlinarith
+      have hs2 : -1 < Real.sin t := by nlinarith
+      have hb0 := C.nonneg.2
+      rw [ha]
+      exact ⟨abs_lt.mpr ⟨by nlinarith,by nlinarith [Real.cos_le_one t]⟩,
+        abs_lt.mpr ⟨by nlinarith,by nlinarith⟩⟩
+  exact ⟨A,by rw [hA]; ring,by rw [hc]; simp [chartAngle]⟩
 
 end SquaresInCircles

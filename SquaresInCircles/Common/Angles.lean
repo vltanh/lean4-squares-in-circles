@@ -8,8 +8,9 @@ import Mathlib.Data.Fin.Tuple.Sort
 If `(n+1)g = 2π`, then `n+1` directions pairwise at least `g` apart form a
 regular polygon. Sorted as reals `p 0 ≤ … ≤ p n`, neighbours are at least `g`
 apart, and so are `p n` and `p 0+2π`; so `p i-i*g` increases but ends no higher
-than it starts, hence is constant. A quarter turn of the frame turns the centre
-of a square by a quarter turn.
+than it starts, hence is constant. Two directions at least `π` apart are
+opposite, so disjoint half circles have opposite centres. A quarter turn of the
+frame turns the centre of a square by a quarter turn.
 -/
 noncomputable section
 namespace SquaresInCircles
@@ -25,6 +26,14 @@ lemma antipodal_of_distance {φ ψ : Direction} (h : dist φ ψ=Real.pi) :
   have he := Real.Angle.toReal_eq_pi_iff.1 (h.resolve_right (Real.Angle.neg_pi_lt_toReal _).ne')
   rw [← he]
   abel
+
+/-- Disjoint arcs of half-width `π/2` on one circle have opposite centres. -/
+lemma OpenArc.opposite {o : Point} {r : ℝ} {U V : Set Point} (A : OpenArc o r U)
+    (B : OpenArc o r V) (hUV : Disjoint U V) (hA : A.halfWidth=Real.pi/2)
+    (hB : B.halfWidth=Real.pi/2) : B.center=A.center+(Real.pi:Direction) := by
+  refine antipodal_of_distance (le_antisymm ?_ ?_)
+  · rw [direction_dist]; exact Real.Angle.abs_toReal_le_pi _
+  · linarith [A.centers_separated B hUV]
 
 /-- If `(n+1)g = 2π`, then `n+1` directions pairwise at least `g` apart form a
 regular polygon. -/

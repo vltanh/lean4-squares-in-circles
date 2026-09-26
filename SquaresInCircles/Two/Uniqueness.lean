@@ -5,8 +5,10 @@ import SquaresInCircles.Common.Optimum
 /-!
 # Two squares: uniqueness
 
-At the optimal radius the disk centre is the midpoint of the two centres, and
-`unit_contact` makes the squares share a full edge: the rectangle.
+At the optimal radius both centres are exactly `1/2` from the disk centre, so
+each square sits at `(1/2, 0)` in its sorted chart and holds the half of a small
+circle about `o` around its phase. Disjoint half circles are opposite, so a half
+turn puts both squares in one frame, at `(1/2, 0)` and `(-1/2, 0)`.
 
 The file ends with `optimum`: the case as an `Optimum`.
 -/
@@ -16,76 +18,30 @@ namespace SquaresInCircles.Two
 /-- At the optimal radius the two squares form the rectangle. -/
 theorem uniqueness (S : Fin 2 → UnitSquare) (o : Point)
     (hp : Packing S o radius) : HasNormalForm S o centers := by
-  have hnear (i : Fin 2) : normSq (sub (S i).center o) ≤ 1/4 := by
-    rw [local_center_norm]
-    have h := hp.phi_le i
-    rw [radius_sq] at h
-    exact center_near_of_phi_le (alpha_nonneg _ _) (beta_nonneg _ _) h
-  have hd01 := hp.2.2 0 1 (by decide)
-  have hfar := centers_distance_sq_ge_one (S 0) (S 1) hd01
-  have hpar := normSq_parallelogram (S 1).center (S 0).center o
-  have hnn := normSq_nonneg (sub (add (S 1).center (S 0).center) (scale 2 o))
-  have hone : normSq (sub (S 1).center (S 0).center)=1 := by
-    linarith [hnear 0,hnear 1]
-  have hmid : normSq (sub (add (S 1).center (S 0).center) (scale 2 o))=0 := by
-    linarith [hnear 0,hnear 1]
-  simp only [normSq,sub,add,scale] at hmid
-  have hmx : (S 0).center.1=2*o.1-(S 1).center.1 := by
-    nlinarith [sq_nonneg ((S 1).center.1+(S 0).center.1-2*o.1),
-      sq_nonneg ((S 1).center.2+(S 0).center.2-2*o.2)]
-  have hmy : (S 0).center.2=2*o.2-(S 1).center.2 := by
-    nlinarith [sq_nonneg ((S 1).center.1+(S 0).center.1-2*o.1),
-      sq_nonneg ((S 1).center.2+(S 0).center.2-2*o.2)]
-  obtain ⟨haxes,hslots⟩ := unit_contact (S 0) (S 1) hd01 hone
-  obtain ⟨t,htc,hts⟩ := frame_angle (S 0)
-  have hcos : (t:Direction).cos=(S 0).cosine := htc
-  have hsin : (t:Direction).sin=(S 0).sine := hts
-  have r0 := self_represents (S 0) o (t:Direction) hcos hsin
-  have r1 := same_axes_represents (S 0) (S 1) o (t:Direction) hcos hsin haxes
-  -- In the frame of `S 0`, the centres are `∓ d/2` for the unit offset `d`.
-  have hx0 : frameX (S 0) (sub (S 0).center o)=
-      -frameX (S 0) (sub (S 1).center (S 0).center)/2 := by
-    simp only [frameX,sub,hmx,hmy]; ring
-  have hy0 : frameY (S 0) (sub (S 0).center o)=
-      -frameY (S 0) (sub (S 1).center (S 0).center)/2 := by
-    simp only [frameY,sub,hmx,hmy]; ring
-  have hx1 : frameX (S 0) (sub (S 1).center o)=
-      frameX (S 0) (sub (S 1).center (S 0).center)/2 := by
-    simp only [frameX,sub,hmx,hmy]; ring
-  have hy1 : frameY (S 0) (sub (S 1).center o)=
-      frameY (S 0) (sub (S 1).center (S 0).center)/2 := by
-    simp only [frameY,sub,hmx,hmy]; ring
-  rw [hx0,hy0] at r0
-  rw [hx1,hy1] at r1
-  -- A vertical offset is turned into a horizontal one by a quarter turn.
-  have hq : (t:Direction)=((t:Direction)-quarterShift 3)+quarterShift 3 := by abel
-  rcases hslots with ⟨hx,hy⟩ | ⟨hx,hy⟩ | ⟨hx,hy⟩ | ⟨hx,hy⟩ <;> rw [hx,hy] at r0 r1
-  · apply normal_form_of_slots (φ := (t:Direction)) hp.disjoint
-    intro i
-    rcases (show i=0 ∨ i=1 by revert i; decide) with rfl | rfl
-    · exact ⟨0,by convert r0 using 1; norm_num [centers]⟩
-    · exact ⟨1,by convert r1 using 1; norm_num [centers]⟩
-  · rw [hq] at r0 r1
-    have q0 := represents_quarter 3 r0
-    have q1 := represents_quarter 3 r1
-    apply normal_form_of_slots (φ := (t:Direction)-quarterShift 3) hp.disjoint
-    intro i
-    rcases (show i=0 ∨ i=1 by revert i; decide) with rfl | rfl
-    · exact ⟨0,by convert q0 using 1; norm_num [centers,turnPoint]⟩
-    · exact ⟨1,by convert q1 using 1; norm_num [centers,turnPoint]⟩
-  · apply normal_form_of_slots (φ := (t:Direction)) hp.disjoint
-    intro i
-    rcases (show i=0 ∨ i=1 by revert i; decide) with rfl | rfl
-    · exact ⟨1,by convert r0 using 1; norm_num [centers]⟩
-    · exact ⟨0,by convert r1 using 1; norm_num [centers]⟩
-  · rw [hq] at r0 r1
-    have q0 := represents_quarter 3 r0
-    have q1 := represents_quarter 3 r1
-    apply normal_form_of_slots (φ := (t:Direction)-quarterShift 3) hp.disjoint
-    intro i
-    rcases (show i=0 ∨ i=1 by revert i; decide) with rfl | rfl
-    · exact ⟨1,by convert q0 using 1; norm_num [centers,turnPoint]⟩
-    · exact ⟨0,by convert q1 using 1; norm_num [centers,turnPoint]⟩
+  have hφ (i : Fin 2) : phi (alpha (S i) o) (beta (S i) o) ≤ 5/4 := radius_sq ▸ hp.phi_le i
+  have hhalf := centers_at_half S o hp.disjoint hφ
+  -- so each square sits at `(1/2, 0)` in its sorted chart
+  have hC (i : Fin 2) : ∃ C : SquareChart (S i) o, C.a=1/2 ∧ C.b=0 := by
+    obtain ⟨C,hs⟩ := sorted_square_chart (S i) o
+    have h1 := chart_phi C (hφ i)
+    have h2 := C.transfer (fun a b => a^2+b^2=1/4) (fun h => by linarith) (hhalf i)
+    obtain ⟨ha,hb⟩ := C.nonneg
+    unfold phi at h1
+    exact ⟨C,by nlinarith,by nlinarith⟩
+  choose C ha hb using hC
+  -- and holds a half circle about its phase; disjoint half circles are opposite
+  obtain ⟨A,hA,hAc⟩ := (C 0).half_arc (r := 1/2) (by norm_num) (ha 0) (by rw [hb 0]; norm_num)
+  obtain ⟨B,hB,hBc⟩ := (C 1).half_arc (r := 1/2) (by norm_num) (ha 1) (by rw [hb 1]; norm_num)
+  have hanti := A.opposite B (hp.disjoint.pairwise (by decide)) hA hB
+  rw [hAc,hBc] at hanti
+  have r1 := chart_represents (C 1)
+  rw [hanti,show (Real.pi:Direction)=quarterShift 2 from rfl] at r1
+  apply normal_form_of_slots (φ := (C 0).phase) hp.disjoint
+  intro i
+  fin_cases i
+  · exact ⟨1,by simpa [centers,SquareChart.signedB,ha,hb] using chart_represents (C 0)⟩
+  · exact ⟨0,by simpa [centers,turnPoint,SquareChart.signedB,ha,hb,neg_div] using
+      represents_quarter 2 r1⟩
 
 /-- The optimum for two squares: `radius`, attained only by the normal forms
 of `centers`. -/

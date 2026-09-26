@@ -39,9 +39,7 @@ def ofUnique {R : ℝ} (c : Fin n → Point)
   layouts := {c}
   optimality := optimality
   layouts_nonempty := ⟨c,rfl⟩
-  layout_packing := by
-    rintro _ rfl
-    exact packing
+  layout_packing _ h := h ▸ packing
   uniqueness S o hp := ⟨c,rfl,uniqueness S o hp⟩
 
 /-- Some packing attains the optimal radius. -/

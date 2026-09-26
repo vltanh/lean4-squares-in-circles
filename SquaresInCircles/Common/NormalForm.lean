@@ -10,7 +10,6 @@ squares. It does not equate `UnitSquare` records: a quarter-turn of a frame
 describes the same square.
 -/
 noncomputable section
-open Set
 namespace SquaresInCircles
 
 /-- The actual square, expressed in one common positively oriented frame. -/
@@ -43,39 +42,15 @@ lemma frameEquiv_zero (o : Point) (φ : Direction) : frameEquiv o φ (0,0)=o := 
 
 lemma frameEquiv_distance (o : Point) (φ : Direction) (p q : Point) :
     normSq (sub (frameEquiv o φ p) (frameEquiv o φ q))=normSq (sub p q) := by
-  calc
-    _ = (φ.cos^2+φ.sin^2)*normSq (sub p q) := by
-      rw [frameEquiv_apply,frameEquiv_apply]
-      dsimp [pointInDirection,normSq,sub]; ring
-    _ = _ := by rw [Real.Angle.cos_sq_add_sin_sq]; ring
+  simp only [frameEquiv_apply,pointInDirection,normSq,sub]
+  linear_combination ((p.1-q.1)^2+(p.2-q.2)^2)*Real.Angle.cos_sq_add_sin_sq φ
 
-/-- A scalar endpoint is obtained from all strict convex combinations. -/
-lemma affine_endpoint_le {A B D : ℝ}
-    (h : ∀ t : ℝ, 0 ≤ t → t < 1 → (1-t)*A+t*B ≤ D) : B ≤ D := by
-  have hA : A ≤ D := by simpa using h 0 (by norm_num) (by norm_num)
-  have hh := bound_from_shrinks (H := B-A) (D := D-A) fun t ht0 ht1 => by
-    linarith [h t ht0 ht1]
+lemma abs_endpoint_le {A B : ℝ} (h : ∀ t : ℝ, 0 ≤ t → t < 1 → |(1-t)*A+t*B| < 1/2) :
+    |B| ≤ 1/2 := by
+  refine abs_le.mpr ⟨?_,affine_endpoint_le fun t h0 h1 => (abs_lt.mp (h t h0 h1)).2.le⟩
+  have := affine_endpoint_le (A := -A) (B := -B) (D := 1/2) fun t h0 h1 => by
+    linarith [(abs_lt.mp (h t h0 h1)).1]
   linarith
-
-lemma local_affine (S : UnitSquare) (p q : Point) (t : ℝ) :
-    localX S (add (scale (1-t) p) (scale t q))=(1-t)*localX S p+t*localX S q ∧
-    localY S (add (scale (1-t) p) (scale t q))=(1-t)*localY S p+t*localY S q := by
-  constructor <;> dsimp [localX,localY,add,scale] <;> ring
-
-lemma shrink_open (S : UnitSquare) {p : Point} (hp : closedSquare S p)
-    {t : ℝ} (ht0 : 0 ≤ t) (ht1 : t < 1) :
-    openSquare S (add (scale (1-t) S.center) (scale t p)) := by
-  have he := local_affine S S.center p t
-  have hx0 : localX S S.center=0 := by simp [localX]
-  have hy0 : localY S S.center=0 := by simp [localY]
-  simp only [hx0,hy0,mul_zero,zero_add] at he
-  have hX : |t*localX S p| < 1/2 := by
-    rw [abs_mul,abs_of_nonneg ht0]
-    exact (mul_le_mul_of_nonneg_left hp.1 ht0).trans_lt (by linarith)
-  have hY : |t*localY S p| < 1/2 := by
-    rw [abs_mul,abs_of_nonneg ht0]
-    exact (mul_le_mul_of_nonneg_left hp.2 ht0).trans_lt (by linarith)
-  exact ⟨by rw [he.1]; exact hX,by rw [he.2]; exact hY⟩
 
 /-- Equality of open squares implies equality of their closed square sets. -/
 lemma same_open_same_closed (S T : UnitSquare)
@@ -83,36 +58,11 @@ lemma same_open_same_closed (S T : UnitSquare)
     ∀ p, closedSquare S p ↔ closedSquare T p := by
   have oneWay (S T : UnitSquare) (hh : ∀ p, openSquare S p → openSquare T p)
       (p : Point) (hp : closedSquare S p) : closedSquare T p := by
-    have hm (t : ℝ) (ht0 : 0 ≤ t) (ht1 : t < 1) :=
-      hh _ (shrink_open S hp ht0 ht1)
-    have hX : localX T p ≤ 1/2 := by
-      apply affine_endpoint_le (A := localX T S.center)
-      intro t ht0 ht1
-      have hu := (abs_lt.mp (hm t ht0 ht1).1).2.le
-      rw [(local_affine T S.center p t).1] at hu
-      exact hu
-    have hX' : -localX T p ≤ 1/2 := by
-      apply affine_endpoint_le (A := -localX T S.center)
-      intro t ht0 ht1
-      have hu := (abs_lt.mp (hm t ht0 ht1).1).1.le
-      rw [(local_affine T S.center p t).1] at hu
-      linarith
-    have hY : localY T p ≤ 1/2 := by
-      apply affine_endpoint_le (A := localY T S.center)
-      intro t ht0 ht1
-      have hu := (abs_lt.mp (hm t ht0 ht1).2).2.le
-      rw [(local_affine T S.center p t).2] at hu
-      exact hu
-    have hY' : -localY T p ≤ 1/2 := by
-      apply affine_endpoint_le (A := -localY T S.center)
-      intro t ht0 ht1
-      have hu := (abs_lt.mp (hm t ht0 ht1).2).1.le
-      rw [(local_affine T S.center p t).2] at hu
-      linarith
-    exact ⟨abs_le.mpr ⟨by linarith,hX⟩,abs_le.mpr ⟨by linarith,hY⟩⟩
-  intro p
-  exact ⟨oneWay S T (fun q => (h q).mp) p,
-    oneWay T S (fun q => (h q).mpr) p⟩
+    have hm (t : ℝ) (h0 : 0 ≤ t) (h1 : t < 1) := hh _ (shrink_open S hp h0 h1)
+    have he (t : ℝ) := local_affine T S.center p (sub_add_cancel 1 t)
+    exact ⟨abs_endpoint_le fun t h0 h1 => (he t).1 ▸ (hm t h0 h1).1,
+      abs_endpoint_le fun t h0 h1 => (he t).2 ▸ (hm t h0 h1).2⟩
+  exact fun p => ⟨oneWay S T (fun q => (h q).mp) p,oneWay T S (fun q => (h q).mpr) p⟩
 
 def modelSquare (o : Point) (φ : Direction) (c : Point) : UnitSquare where
   center := pointInDirection o φ c.1 c.2
@@ -162,14 +112,6 @@ lemma normal_form_of_slots {n : ℕ} {S : Fin n → UnitSquare} {o : Point}
     simpa only [show f (e.symm i)=i from e.apply_symm_apply i] using hf (e.symm i)
   exact ⟨hh x y,hh.closed x y⟩
 
-lemma axisSquare_open (c p : Point) :
-    openSquare (axisSquare c) p ↔ openAxisSquare c p.1 p.2 := by
-  simp [axisSquare,openSquare,openAxisSquare,localX,localY]
-
-lemma axisSquare_closed (c p : Point) :
-    closedSquare (axisSquare c) p ↔ closedAxisSquare c p.1 p.2 := by
-  simp [axisSquare,closedSquare,closedAxisSquare,localX,localY]
-
 /-- If the axis-parallel squares at `c` pack the disk of radius `R` about the
 origin, every packing with the normal form of `c` packs the disk of radius `R`
 about its centre. -/
@@ -177,26 +119,20 @@ theorem HasNormalForm.packing {n : ℕ} {S : Fin n → UnitSquare} {o : Point}
     {c : Fin n → Point} {R : ℝ} (h : HasNormalForm S o c)
     (hc : Packing (fun i => axisSquare (c i)) (0,0) R) : Packing S o R := by
   obtain ⟨φ,σ,hφ⟩ := h
-  let e := frameEquiv o φ
-  have he (p : Point) : pointInDirection o φ (e.symm p).1 (e.symm p).2 = p :=
-    e.apply_symm_apply p
-  have hopen (i : Fin n) (p : Point) :
-      openSquare (S (σ i)) p ↔ openSquare (axisSquare (c i)) (e.symm p) := by
-    rw [axisSquare_open,← (hφ i _ _).1,he]
-  have hclosed (i : Fin n) (p : Point) :
-      closedSquare (S (σ i)) p ↔ closedSquare (axisSquare (c i)) (e.symm p) := by
-    rw [axisSquare_closed,← (hφ i _ _).2,he]
   refine ⟨hc.1,fun j p hj => ?_,fun j k hjk p hp => ?_⟩
   · obtain ⟨i,rfl⟩ := σ.surjective j
-    have hd := frameEquiv_distance o φ (e.symm p) (0,0)
-    rw [show frameEquiv o φ (e.symm p) = p from e.apply_symm_apply p,frameEquiv_zero] at hd
-    change normSq (sub p o) ≤ R^2
+    obtain ⟨q,rfl⟩ := (frameEquiv o φ).surjective p
+    have hd := frameEquiv_distance o φ q (0,0)
+    rw [frameEquiv_zero] at hd
+    change normSq _ ≤ R^2
     rw [hd]
-    exact hc.2.1 i _ ((hclosed i p).mp hj)
+    exact hc.2.1 i q ((axisSquare_closed _ _).mpr ((hφ i q.1 q.2).2.mp hj))
   · obtain ⟨i,rfl⟩ := σ.surjective j
     obtain ⟨l,rfl⟩ := σ.surjective k
-    exact hc.2.2 i l (fun h => hjk (by rw [h])) (e.symm p)
-      ⟨(hopen i p).mp hp.1,(hopen l p).mp hp.2⟩
+    obtain ⟨q,rfl⟩ := (frameEquiv o φ).surjective p
+    exact hc.2.2 i l (fun h => hjk (by rw [h])) q
+      ⟨(axisSquare_open _ _).mpr ((hφ i q.1 q.2).1.mp hp.1),
+        (axisSquare_open _ _).mpr ((hφ l q.1 q.2).1.mp hp.2)⟩
 
 /-- The normal form, with its frame replaced by an explicit isometry of the plane. -/
 lemma HasNormalForm.rigid_witness {n : ℕ} {S : Fin n → UnitSquare} {o : Point}

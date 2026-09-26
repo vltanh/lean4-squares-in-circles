@@ -59,41 +59,34 @@ def optimum : (n : ℕ) → 1 ≤ n ∧ n ≤ 5 ∨ n = 7 → Optimum n
   | 7, _ => Seven.optimum
   | 0, h | 6, h | _+8, h => absurd h (by omega)
 
-lemma optimum_radius (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7) :
-    (optimum n hn).radius = optimalRadius n := by
+/-- `optimum n` has the radius and the layouts of the tables above. -/
+lemma optimum_spec (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7) :
+    (optimum n hn).radius = optimalRadius n ∧ (optimum n hn).layouts = optimalLayouts n := by
   match n, hn with
-  | 1, _ | 2, _ | 3, _ | 4, _ | 5, _ | 7, _ => rfl
-  | 0, h | 6, h | _+8, h => exact absurd h (by omega)
-
-lemma optimum_layouts (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7) :
-    (optimum n hn).layouts = optimalLayouts n := by
-  match n, hn with
-  | 1, _ | 2, _ | 3, _ | 4, _ | 5, _ | 7, _ => rfl
+  | 1, _ | 2, _ | 3, _ | 4, _ | 5, _ | 7, _ => exact ⟨rfl,rfl⟩
   | 0, h | 6, h | _+8, h => exact absurd h (by omega)
 
 theorem optimality (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7)
     (S : Fin n → UnitSquare) (o : Point) (R : ℝ) (hp : Packing S o R) :
     optimalRadius n ≤ R :=
-  optimum_radius n hn ▸ (optimum n hn).optimality S o R hp
+  (optimum_spec n hn).1 ▸ (optimum n hn).optimality S o R hp
 
 theorem attainment (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7) :
     ∃ (S : Fin n → UnitSquare) (o : Point), Packing S o (optimalRadius n) :=
-  optimum_radius n hn ▸ (optimum n hn).attainment
-
-theorem uniqueness (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7)
-    (S : Fin n → UnitSquare) (o : Point) (hp : Packing S o (optimalRadius n)) :
-    ∃ c ∈ optimalLayouts n, HasNormalForm S o c := by
-  rw [← optimum_radius n hn] at hp
-  rw [← optimum_layouts n hn]
-  exact (optimum n hn).uniqueness S o hp
+  (optimum_spec n hn).1 ▸ (optimum n hn).attainment
 
 /-- The packings at the optimal radius are exactly the normal forms of the
 optimal layouts. -/
 theorem packing_iff (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7)
     (S : Fin n → UnitSquare) (o : Point) :
     Packing S o (optimalRadius n) ↔ ∃ c ∈ optimalLayouts n, HasNormalForm S o c := by
-  rw [← optimum_radius n hn,← optimum_layouts n hn]
+  rw [← (optimum_spec n hn).1,← (optimum_spec n hn).2]
   exact (optimum n hn).packing_iff S o
+
+theorem uniqueness (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7)
+    (S : Fin n → UnitSquare) (o : Point) (hp : Packing S o (optimalRadius n)) :
+    ∃ c ∈ optimalLayouts n, HasNormalForm S o c :=
+  (packing_iff n hn S o).mp hp
 
 /-- Uniqueness with the frame replaced by an explicit isometry of the plane that
 takes the origin to the disk centre. -/
@@ -103,8 +96,8 @@ theorem rigid_uniqueness (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7)
       (∀ p q, normSq (sub (e p) (e q))=normSq (sub p q)) ∧
       (∀ i p, (openSquare (S (σ i)) (e p) ↔ openAxisSquare (c i) p.1 p.2) ∧
         (closedSquare (S (σ i)) (e p) ↔ closedAxisSquare (c i) p.1 p.2)) := by
-  rw [← optimum_radius n hn] at hp
-  rw [← optimum_layouts n hn]
+  rw [← (optimum_spec n hn).1] at hp
+  rw [← (optimum_spec n hn).2]
   exact (optimum n hn).rigid_uniqueness S o hp
 
 /-- The optimum for `n` unit squares: lower bound, attainment, and the optimal

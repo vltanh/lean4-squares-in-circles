@@ -110,7 +110,7 @@ example (S : Fin 7 → UnitSquare) (o : Point) :
 example : optimalLayouts 3 = {Three.centers} := rfl
 example : optimalLayouts 7 = Set.range Seven.slidingCenters := rfl
 example (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7) :
-    (optimum n hn).radius = optimalRadius n := optimum_radius n hn
+    (optimum n hn).radius = optimalRadius n := (optimum_spec n hn).1
 
 -- The attaining packings, each in its own normal form.
 example : HasNormalForm One.model (0,0) One.centers :=

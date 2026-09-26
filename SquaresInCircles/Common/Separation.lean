@@ -18,41 +18,44 @@ namespace SquaresInCircles
 lemma weighted_strict {a b u v H : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b)
     (hab : 0 < a+b) (hu : u < H) (hv : v < H) :
     a*u+b*v < H*(a+b) := by
-  have h₁ := mul_nonneg ha (sub_nonneg.mpr hu.le)
-  have h₂ := mul_nonneg hb (sub_nonneg.mpr hv.le)
-  by_cases hapos : 0 < a
-  · have h := mul_pos hapos (sub_pos.mpr hu)
-    linarith
-  · have hbpos : 0 < b := by linarith
-    have h := mul_pos hbpos (sub_pos.mpr hv)
-    linarith
+  rcases ha.lt_or_eq with ha | rfl
+  · nlinarith [mul_le_mul_of_nonneg_left hv.le hb]
+  · nlinarith
 
 lemma abs_affine_lt {a b u v r : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b)
     (hab : a+b=1) (hu : |u| < r) (hv : |v| < r) : |a*u+b*v| < r := by
-  rcases abs_lt.mp hu with ⟨hu0,hu1⟩
-  rcases abs_lt.mp hv with ⟨hv0,hv1⟩
-  have h₁ := weighted_strict ha hb (by linarith : 0 < a+b) hu1 hv1
-  have h₂ := weighted_strict ha hb (by linarith : 0 < a+b)
-    (show -u < r by linarith) (show -v < r by linarith)
-  rw [hab] at h₁ h₂
-  exact abs_lt.mpr ⟨by linarith, by linarith⟩
+  have h := weighted_strict ha hb (by linarith) hu hv
+  rw [hab,mul_one] at h
+  calc |a*u+b*v| ≤ |a*u|+|b*v| := abs_add_le _ _
+    _ = a*|u|+b*|v| := by rw [abs_mul,abs_mul,abs_of_nonneg ha,abs_of_nonneg hb]
+    _ < r := h
+
+/-- Local coordinates are affine. -/
+lemma local_affine (S : UnitSquare) (p q : Point) {a b : ℝ} (hab : a+b=1) :
+    localX S (a • p+b • q)=a*localX S p+b*localX S q ∧
+    localY S (a • p+b • q)=a*localY S p+b*localY S q := by
+  obtain rfl : b=1-a := by linarith
+  constructor <;> simp only [localX,localY,Prod.fst_add,Prod.snd_add,Prod.smul_fst,Prod.smul_snd,
+    smul_eq_mul] <;> ring
 
 lemma openSquare_convex (S : UnitSquare) : Convex ℝ {p | openSquare S p} := by
   intro p hp q hq a b ha hb hab
-  have hx : localX S (a • p+b • q) = a*localX S p+b*localX S q := by
-    calc
-      _ = a*localX S p+b*localX S q+
-          (a+b-1)*(S.cosine*S.center.1+S.sine*S.center.2) := by
-        dsimp [localX]; ring
-      _ = _ := by rw [hab]; ring
-  have hy : localY S (a • p+b • q) = a*localY S p+b*localY S q := by
-    calc
-      _ = a*localY S p+b*localY S q+
-          (a+b-1)*(-S.sine*S.center.1+S.cosine*S.center.2) := by
-        dsimp [localY]; ring
-      _ = _ := by rw [hab]; ring
+  obtain ⟨hx,hy⟩ := local_affine S p q hab
   exact ⟨by rw [hx]; exact abs_affine_lt ha hb hab hp.1 hq.1,
     by rw [hy]; exact abs_affine_lt ha hb hab hp.2 hq.2⟩
+
+/-- A point of the closed square moved towards the centre, short of the full
+way, lies in the open square. -/
+lemma shrink_open (S : UnitSquare) {p : Point} (hp : closedSquare S p)
+    {t : ℝ} (ht0 : 0 ≤ t) (ht1 : t < 1) :
+    openSquare S ((1-t) • S.center+t • p) := by
+  obtain ⟨hx,hy⟩ := local_affine S S.center p (sub_add_cancel 1 t)
+  have h0 : localX S S.center=0 ∧ localY S S.center=0 := by simp [localX,localY]
+  rw [h0.1,mul_zero,zero_add] at hx
+  rw [h0.2,mul_zero,zero_add] at hy
+  constructor
+  · rw [hx,abs_mul,abs_of_nonneg ht0]; nlinarith [hp.1,abs_nonneg (localX S p)]
+  · rw [hy,abs_mul,abs_of_nonneg ht0]; nlinarith [hp.2,abs_nonneg (localY S p)]
 
 lemma openSquare_isOpen (S : UnitSquare) : IsOpen {p | openSquare S p} := by
   have hX : Continuous (localX S) := by unfold localX; fun_prop
@@ -73,56 +76,34 @@ lemma width_neg (S : UnitSquare) (n : Point) :
   have h₂ : frameY S (scale (-1) n) = -frameY S n := by dsimp [frameY,scale]; ring
   simp only [width,h₁,h₂,abs_neg]
 
-lemma signed_half_product (X t : ℝ) :
-    X*(if 0 ≤ X then t/2 else -t/2) = t*|X|/2 := by
-  split_ifs with hX
-  · rw [abs_of_nonneg hX]; ring
-  · rw [abs_of_neg (lt_of_not_ge hX)]; ring
-
 /-- Shrunk support vertices lie in the open square, even when a coefficient is zero. -/
 lemma support_point (S : UnitSquare) (n : Point) {t : ℝ}
     (ht0 : 0 ≤ t) (ht1 : t < 1) :
     ∃ p : Point, openSquare S p ∧
       dot n p = dot n S.center+t*width S n := by
-  let X := frameX S n
-  let Y := frameY S n
-  let q : Point := (if 0 ≤ X then t/2 else -t/2,
-                    if 0 ≤ Y then t/2 else -t/2)
-  refine ⟨add S.center (rotate S q), ?_, ?_⟩
-  · rw [openSquare,localX_rotated,localY_rotated]
-    have ht : |t/2| = t/2 := abs_of_nonneg (by positivity)
-    dsimp [q]
-    have htn : |(-(t/2))| = t/2 := by rw [abs_neg]; exact ht
-    have hneg : -t/2 = -(t/2) := by ring
-    constructor <;> split_ifs <;>
-      simp only [hneg, ht, htn] <;> linarith
-  · calc
-      dot n (add S.center (rotate S q)) =
-          dot n S.center+X*q.1+Y*q.2 := by
-        dsimp [dot,add,rotate,X,Y,frameX,frameY]; ring
-      _ = dot n S.center+t*|X|/2+t*|Y|/2 := by
-        dsimp [q]
-        rw [signed_half_product,signed_half_product]
-      _ = dot n S.center+t*width S n := by
-        dsimp [width,X,Y]; ring
+  obtain ⟨u,hu,hxu⟩ := exists_signed (frameX S n) (c := 1/2) (by norm_num)
+  obtain ⟨v,hv,hyv⟩ := exists_signed (frameY S n) (c := 1/2) (by norm_num)
+  refine ⟨_,shrink_open S (p := add S.center (rotate S (u,v)))
+    ⟨by rw [localX_rotated,hu],by rw [localY_rotated,hv]⟩ ht0 ht1,?_⟩
+  simp only [dot,add,rotate,width,frameX,frameY,Prod.fst_add,Prod.snd_add,Prod.smul_fst,
+    Prod.smul_snd,smul_eq_mul] at hxu hyv ⊢
+  linear_combination t*hxu+t*hyv
+
+/-- A scalar endpoint is obtained from all strict convex combinations. -/
+lemma affine_endpoint_le {A B D : ℝ}
+    (h : ∀ t : ℝ, 0 ≤ t → t < 1 → (1-t)*A+t*B ≤ D) : B ≤ D := by
+  have hA : A ≤ D := by simpa using h 0 le_rfl one_pos
+  by_contra hn
+  have hBA : 0 < B-A := by linarith
+  set t := (D-A+(B-A))/(2*(B-A))
+  have ht : t*(B-A)=(D-A+(B-A))/2 := by simp only [t]; field_simp
+  have h1 := h t (div_nonneg (by linarith) (by linarith))
+    (by rw [div_lt_one (by linarith)]; linarith)
+  linarith
 
 lemma bound_from_shrinks {H D : ℝ}
-    (h : ∀ t : ℝ, 0 ≤ t → t < 1 → t*H ≤ D) : H ≤ D := by
-  have hD : 0 ≤ D := by simpa using h 0 (by norm_num) (by norm_num)
-  by_contra hn
-  have hDH : D < H := lt_of_not_ge hn
-  have hHp : 0 < H := by linarith
-  let t : ℝ := (D/H+1)/2
-  have hd0 : 0 ≤ D/H := div_nonneg hD hHp.le
-  have hd1 : D/H < 1 := (div_lt_one hHp).2 hDH
-  have ht0 : 0 ≤ t := by dsimp [t]; linarith
-  have ht1 : t < 1 := by dsimp [t]; linarith
-  have htH : t*H = (D+H)/2 := by
-    dsimp [t]
-    field_simp
-  have hh := h t ht0 ht1
-  rw [htH] at hh
-  linarith
+    (h : ∀ t : ℝ, 0 ≤ t → t < 1 → t*H ≤ D) : H ≤ D :=
+  affine_endpoint_le (A := 0) fun t h0 h1 => by simpa using h t h0 h1
 
 /-- A nonzero functional that separates two squares by their full widths. -/
 structure Separation (S T : UnitSquare) where
@@ -134,9 +115,8 @@ structure Separation (S T : UnitSquare) where
 theorem support_separator (S T : UnitSquare)
     (hdisj : ∀ p, ¬ (openSquare S p ∧ openSquare T p)) :
     Nonempty (Separation S T) := by
-  have hd : Disjoint {p | openSquare S p} {p | openSquare T p} := by
-    rw [Set.disjoint_left]
-    exact fun p hp hq => hdisj p ⟨hp,hq⟩
+  have hd : Disjoint {p | openSquare S p} {p | openSquare T p} :=
+    Set.disjoint_left.mpr fun p hp hq => hdisj p ⟨hp,hq⟩
   obtain ⟨f,u,hS,hT⟩ := geometric_hahn_banach_open_open
     (openSquare_convex S) (openSquare_isOpen S)
     (openSquare_convex T) (openSquare_isOpen T) hd

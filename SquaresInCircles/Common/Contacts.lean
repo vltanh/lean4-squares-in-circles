@@ -12,53 +12,40 @@ def relativeS (S T : UnitSquare) : ℝ := -S.sine*T.cosine+S.cosine*T.sine
 def SameAxes (S T : UnitSquare) : Prop := relativeC S T=0 ∨ relativeS S T=0
 
 lemma relative_unit (S T : UnitSquare) : (relativeC S T)^2+(relativeS S T)^2=1 := by
-  calc
-    _ = (S.cosine^2+S.sine^2)*(T.cosine^2+T.sine^2) := by
-      dsimp [relativeC,relativeS]; ring
-    _ = 1 := by rw [S.unit,T.unit]; ring
+  simp only [relativeC,relativeS]
+  linear_combination (T.cosine^2+T.sine^2)*S.unit+T.unit
 
 lemma relative_normal (S T : UnitSquare) (n : Point) :
     frameX T n=relativeC S T*frameX S n+relativeS S T*frameY S n ∧
     frameY T n= -relativeS S T*frameX S n+relativeC S T*frameY S n := by
+  simp only [frameX,frameY,relativeC,relativeS]
   constructor
-  · calc
-      _ = (S.cosine^2+S.sine^2)*frameX T n := by rw [S.unit]; ring
-      _ = _ := by dsimp [frameX,frameY,relativeC,relativeS]; ring
-  · calc
-      _ = (S.cosine^2+S.sine^2)*frameY T n := by rw [S.unit]; ring
-      _ = _ := by dsimp [frameX,frameY,relativeC,relativeS]; ring
+  · linear_combination (-(T.cosine*n.1+T.sine*n.2))*S.unit
+  · linear_combination (-(-T.sine*n.1+T.cosine*n.2))*S.unit
 
+/-- Two squares that both have a side along the same nonzero vector have the
+same axes. -/
 lemma same_axes_from_normal (S T : UnitSquare) {n : Point} (hn : n ≠ (0,0))
     (hS : frameX S n*frameY S n=0) (hT : frameX T n*frameY T n=0) : SameAxes S T := by
-  have hpos := frame_abs_sum_pos S hn
-  have he := relative_normal S T n
-  rcases mul_eq_zero.mp hS with hx | hy
-  · have hy : frameY S n ≠ 0 := by intro hy; simp [hx,hy] at hpos
-    rcases mul_eq_zero.mp hT with ht | ht
-    · have hh : relativeS S T*frameY S n=0 := by rw [hx,ht] at he; simpa using he.1.symm
-      exact Or.inr ((mul_eq_zero.mp hh).resolve_right hy)
-    · have hh : relativeC S T*frameY S n=0 := by rw [hx,ht] at he; simpa using he.2.symm
-      exact Or.inl ((mul_eq_zero.mp hh).resolve_right hy)
-  · have hx : frameX S n ≠ 0 := by intro hx; simp [hx,hy] at hpos
-    rcases mul_eq_zero.mp hT with ht | ht
-    · have hh : relativeC S T*frameX S n=0 := by rw [hy,ht] at he; simpa using he.1.symm
-      exact Or.inl ((mul_eq_zero.mp hh).resolve_right hx)
-    · have hh : -relativeS S T*frameX S n=0 := by rw [hy,ht] at he; simpa using he.2.symm
-      exact Or.inr (neg_eq_zero.mp ((mul_eq_zero.mp hh).resolve_right hx))
+  obtain ⟨hx,hy⟩ := relative_normal S T n
+  have hpos := normSq_pos_of_ne hn
+  rw [← frame_norm S n] at hpos
+  rw [hx,hy] at hT
+  have h : relativeC S T*relativeS S T*((frameY S n)^2-(frameX S n)^2)=0 := by
+    linear_combination hT-(relativeC S T^2-relativeS S T^2)*hS
+  have hne : (frameY S n)^2-(frameX S n)^2 ≠ 0 := by
+    rcases mul_eq_zero.mp hS with h0 | h0 <;> rw [h0] at hpos ⊢
+    · exact ne_of_gt (by nlinarith)
+    · exact ne_of_lt (by nlinarith)
+  exact mul_eq_zero.mp ((mul_eq_zero.mp h).resolve_right hne)
 
 lemma cardinal_box {c s X Y : ℝ} (hu : c^2+s^2=1) (hz : c=0 ∨ s=0) :
     (|c*X+s*Y| < 1/2 ∧ |-s*X+c*Y| < 1/2) ↔ (|X| < 1/2 ∧ |Y| < 1/2) := by
   rcases hz with rfl | rfl
-  · rcases le_total 0 s with hs | hs
-    · have he : s=1 := by nlinarith
-      simp [he,and_comm,abs_neg]
-    · have he : s= -1 := by nlinarith
-      simp [he,and_comm,abs_neg]
-  · rcases le_total 0 c with hc | hc
-    · have he : c=1 := by nlinarith
-      simp [he]
-    · have he : c= -1 := by nlinarith
-      simp [he,abs_neg]
+  · have hs : |s|=1 := by simpa using (sq_eq_sq_iff_abs_eq_abs s 1).mp (by linarith)
+    simp [abs_mul,hs,and_comm]
+  · have hc : |c|=1 := by simpa using (sq_eq_sq_iff_abs_eq_abs c 1).mp (by linarith)
+    simp [abs_mul,hc]
 
 lemma same_axes_represents (S T : UnitSquare) (o : Point) (φ : Direction)
     (hc : φ.cos=S.cosine) (hs : φ.sin=S.sine) (haxes : SameAxes S T) :
@@ -67,17 +54,13 @@ lemma same_axes_represents (S T : UnitSquare) (o : Point) (φ : Direction)
   have heX : localX T (pointInDirection o φ x y)=
       relativeC S T*(x-frameX S (sub T.center o))+
       relativeS S T*(y-frameY S (sub T.center o)) := by
-    have hu := S.unit
-    dsimp [localX,pointInDirection,relativeC,relativeS,frameX,frameY,sub]
-    rw [hc,hs]
-    linear_combination (T.cosine*(T.center.1-o.1)+T.sine*(T.center.2-o.2))*hu
+    simp only [localX,pointInDirection,relativeC,relativeS,frameX,frameY,sub,hc,hs]
+    linear_combination (T.cosine*(T.center.1-o.1)+T.sine*(T.center.2-o.2))*S.unit
   have heY : localY T (pointInDirection o φ x y)=
       -relativeS S T*(x-frameX S (sub T.center o))+
       relativeC S T*(y-frameY S (sub T.center o)) := by
-    have hu := S.unit
-    dsimp [localY,pointInDirection,relativeC,relativeS,frameX,frameY,sub]
-    rw [hc,hs]
-    linear_combination (T.cosine*(T.center.2-o.2)-T.sine*(T.center.1-o.1))*hu
+    simp only [localY,pointInDirection,relativeC,relativeS,frameX,frameY,sub,hc,hs]
+    linear_combination (T.cosine*(T.center.2-o.2)-T.sine*(T.center.1-o.1))*S.unit
   simp only [openSquare,heX,heY]
   exact cardinal_box (relative_unit S T) haxes
 
@@ -107,12 +90,16 @@ lemma cauchy_sq (u v : Point) : (dot u v)^2 ≤ normSq u*normSq v := by
 
 lemma width_lower (S : UnitSquare) (n : Point) :
     Real.sqrt (normSq n) ≤ |frameX S n|+|frameY S n| := by
-  have hu := frame_norm S n
-  have hr := Real.sq_sqrt (normSq_nonneg n)
-  have h0 := Real.sqrt_nonneg (normSq n)
-  have hp := mul_nonneg (abs_nonneg (frameX S n)) (abs_nonneg (frameY S n))
-  nlinarith [sq_abs (frameX S n),sq_abs (frameY S n),
-    abs_nonneg (frameX S n),abs_nonneg (frameY S n)]
+  rw [Real.sqrt_le_left (by positivity),← frame_norm S n]
+  nlinarith [sq_abs (frameX S n),sq_abs (frameY S n),abs_nonneg (frameX S n),
+    abs_nonneg (frameY S n)]
+
+/-- A unit vector with a zero coordinate is one of the four cardinal vectors. -/
+lemma cardinal_of_mul_eq_zero {x y : ℝ} (h1 : x^2+y^2=1) (h0 : x*y=0) :
+    (x=1 ∧ y=0) ∨ (x=0 ∧ y=1) ∨ (x= -1 ∧ y=0) ∨ (x=0 ∧ y= -1) := by
+  rcases mul_eq_zero.mp h0 with rfl | rfl
+  · rcases sq_eq_one_iff.mp (by linarith : y^2=1) with rfl | rfl <;> simp
+  · rcases sq_eq_one_iff.mp (by linarith : x^2=1) with rfl | rfl <;> simp
 
 /-- Equality of center distance forces parallel axes and a cardinal displacement. -/
 lemma unit_contact (S T : UnitSquare)
@@ -124,63 +111,42 @@ lemma unit_contact (S T : UnitSquare)
        (frameX S (sub T.center S.center)= -1 ∧ frameY S (sub T.center S.center)=0) ∨
        (frameX S (sub T.center S.center)=0 ∧ frameY S (sub T.center S.center)= -1)) := by
   obtain ⟨e⟩ := support_separator S T hd
-  let n := e.normal
-  let d := sub T.center S.center
-  let r := Real.sqrt (normSq n)
+  set n := e.normal
+  set d := sub T.center S.center
+  set r := Real.sqrt (normSq n)
   have hr : 0 < r := Real.sqrt_pos.mpr (normSq_pos_of_ne e.nonzero)
   have hr2 : r^2=normSq n := Real.sq_sqrt (normSq_nonneg n)
-  have hCS := cauchy_sq n d
-  change normSq d=1 at hunit
-  rw [hunit] at hCS
-  have hdot : dot n d ≤ r := by nlinarith
+  -- `r ≤ width S n + width T n ≤ dot n d ≤ r`, so all three are equalities
+  have hdot : dot n d ≤ r := by nlinarith [cauchy_sq n d]
+  have hsep := e.separates
   have hS := width_lower S n
   have hT := width_lower T n
-  have hsep := e.separates
-  change width S n+width T n ≤ dot n d at hsep
-  dsimp [width] at hsep
-  have hSumS : |frameX S n|+|frameY S n|=r := by linarith
-  have hSumT : |frameX T n|+|frameY T n|=r := by linarith
-  have hDot : dot n d=r := by linarith
-  have hprodS : frameX S n*frameY S n=0 := by
-    have hu := frame_norm S n
-    have ha : |frameX S n| * |frameY S n|=0 := by
-      linear_combination (1/2*(|frameX S n|+|frameY S n|+r))*hSumS+1/2*hr2-1/2*hu-
-        1/2*sq_abs (frameX S n)-1/2*sq_abs (frameY S n)
-    exact abs_eq_zero.mp (by simpa only [abs_mul] using ha)
-  have hprodT : frameX T n*frameY T n=0 := by
-    have hu := frame_norm T n
-    have ha : |frameX T n| * |frameY T n|=0 := by
-      linear_combination (1/2*(|frameX T n|+|frameY T n|+r))*hSumT+1/2*hr2-1/2*hu-
-        1/2*sq_abs (frameX T n)-1/2*sq_abs (frameY T n)
-    exact abs_eq_zero.mp (by simpa only [abs_mul] using ha)
-  have hnd : n=scale r d := by
-    have hh : (n.1-r*d.1)^2+(n.2-r*d.2)^2=0 := by
-      dsimp [normSq,dot] at hr2 hunit hDot
-      linear_combination (-1)*hr2-2*r*hDot+r^2*hunit
-    obtain ⟨h1,h2⟩ := (add_eq_zero_iff_of_nonneg (sq_nonneg _) (sq_nonneg _)).mp hh
-    exact Prod.ext (sub_eq_zero.mp (pow_eq_zero_iff two_ne_zero |>.mp h1))
-      (sub_eq_zero.mp (pow_eq_zero_iff two_ne_zero |>.mp h2))
-  have hx : frameX S n=r*frameX S d := by rw [hnd]; dsimp [frameX,scale]; ring
-  have hy : frameY S n=r*frameY S d := by rw [hnd]; dsimp [frameY,scale]; ring
-  have hdprod : frameX S d=0 ∨ frameY S d=0 := by
-    rcases mul_eq_zero.mp hprodS with hh | hh
-    · left
-      rw [hx] at hh
-      exact (mul_eq_zero.mp hh).resolve_left (ne_of_gt hr)
-    · right
-      rw [hy] at hh
-      exact (mul_eq_zero.mp hh).resolve_left (ne_of_gt hr)
-  refine ⟨same_axes_from_normal S T e.nonzero hprodS hprodT,?_⟩
-  have hu := frame_norm S d
-  rw [hunit] at hu
-  rcases hdprod with hx0 | hy0
-  · have h1 : frameY S d^2=1 := by rw [hx0] at hu; linarith
-    rcases le_total 0 (frameY S d) with hy0 | hy0
-    · exact Or.inr (Or.inl ⟨hx0,by nlinarith only [h1,hy0]⟩)
-    · exact Or.inr (Or.inr (Or.inr ⟨hx0,by nlinarith only [h1,hy0]⟩))
-  · have h1 : frameX S d^2=1 := by rw [hy0] at hu; linarith
-    rcases le_total 0 (frameX S d) with hx0 | hx0
-    · exact Or.inl ⟨by nlinarith only [h1,hx0],hy0⟩
-    · exact Or.inr (Or.inr (Or.inl ⟨by nlinarith only [h1,hx0],hy0⟩))
+  unfold width at hsep
+  -- so `n` is along a side of each square
+  have hside (U : UnitSquare) (hU : |frameX U n|+|frameY U n|=r) :
+      frameX U n*frameY U n=0 := by
+    have hu := frame_norm U n
+    refine abs_eq_zero.mp ?_
+    rw [abs_mul]
+    nlinarith [sq_abs (frameX U n),sq_abs (frameY U n)]
+  have hnS := hside S (by linarith)
+  refine ⟨same_axes_from_normal S T e.nonzero hnS (hside T (by linarith)),
+    cardinal_of_mul_eq_zero (by rw [frame_norm]; exact hunit) ?_⟩
+  -- and parallel to `d`: `(p y - q x)^2 = |n|^2 |d|^2 - (n·d)^2 = 0`
+  have hn := frame_norm S n
+  have hdd := frame_norm S d
+  have hnd := frame_dot S n d
+  rw [hunit] at hdd
+  have hD : dot n d=r := by linarith
+  have hlag : (frameX S n*frameY S d-frameY S n*frameX S d)^2=0 := by
+    linear_combination (frameX S d^2+frameY S d^2)*hn+normSq n*hdd-
+      (frameX S n*frameX S d+frameY S n*frameY S d+dot n d)*hnd-hr2-(r+dot n d)*hD
+  have hpy := sub_eq_zero.mp (pow_eq_zero_iff two_ne_zero |>.mp hlag)
+  have hN : 0 < normSq n := normSq_pos_of_ne e.nonzero
+  rcases mul_eq_zero.mp hnS with h0 | h0 <;> rw [h0] at hn hpy
+  · have hq : frameY S n ≠ 0 := fun hq => by rw [hq] at hn; linarith
+    rw [(mul_eq_zero.mp (by linarith : frameY S n*frameX S d=0)).resolve_left hq,zero_mul]
+  · have hp : frameX S n ≠ 0 := fun hp => by rw [hp] at hn; linarith
+    rw [(mul_eq_zero.mp (by linarith : frameX S n*frameY S d=0)).resolve_left hp,mul_zero]
 
 end SquaresInCircles
