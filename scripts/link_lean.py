@@ -103,7 +103,9 @@ def relink(doc, decls, errors):
             dest = target(name, doc_dir, decls, errors, doc)
             return m.group(0) if dest is None else f'[`{name}`]({dest})'
 
-        paragraphs[i] = wrap(TOKEN.sub(link, paragraph))
+        # Keep the newline that ends the file when this is the last paragraph.
+        body = paragraph.rstrip('\n')
+        paragraphs[i] = wrap(TOKEN.sub(link, body)) + paragraph[len(body):]
     return '\n\n'.join(paragraphs)
 
 
