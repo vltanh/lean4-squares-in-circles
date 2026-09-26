@@ -15,8 +15,7 @@ case is one of the sector theorems. Where a label is `π/4` the support sums are
 affine in its state, and the capped region is a triangle whose vertices are
 admissible ties; so a support sum at a capped state is at least its value at a
 vertex, and a zero would pass to a vertex as a contact with a capped label,
-which does not exist. Since every contact has a state on the circle, the sums
-are positive for strictly admissible states.
+which does not exist.
 -/
 noncomputable section
 open scoped BigOperators
@@ -177,13 +176,5 @@ theorem fixed_gap_zero {a u A v : ℝ} (s t : TransverseSign) (k : Fin 4)
     (h : Admissible a u) (h' : Admissible A v)
     (hz : pairSupport a u A v s t k gap = 0) : OrderedContact a u A v s t :=
   (fixed_gap_property a u A v s t k h h').2 hz
-
-/-- Strict positivity at the gap `π/3` for strictly admissible states. -/
-theorem fixed_gap_pos {a u A v : ℝ} (s t : TransverseSign) (k : Fin 4)
-    (h : StrictlyAdmissible a u) (h' : StrictlyAdmissible A v) :
-    0<pairSupport a u A v s t k gap := by
-  refine (fixed_gap_nonneg s t k h.admissible h'.admissible).lt_of_ne fun hz => ?_
-  exact contact_not_strict
-    (fixed_gap_zero s t k h.admissible h'.admissible hz.symm) h h'
 
 end SquaresInCircles.Seven

@@ -5,16 +5,17 @@ import SquaresInCircles.Common.Contacts
 import SquaresInCircles.Common.Optimum
 
 /-!
-# Five squares: uniqueness and the lower bound
+# Five squares: uniqueness
 
 On the circle of radius `5/6`, exterior squares with centres in the 12-gon hold
 arcs longer than 72 degrees, and the sweep of a containing square holds 72
 degrees unless the square is centred at the disk centre. So some square is
 centred there, and the other four, at distance at most 1 from the disk centre,
 are its side-neighbours. The closed 12-gon alone is rigid, which is stronger
-than uniqueness for the disk. The lower bound follows from uniqueness.
+than uniqueness for the disk.
 
-The file ends with `optimum`: the case as an `Optimum`.
+The file ends with `optimum`: the case as an `Optimum`, which also gives the
+lower bound.
 -/
 noncomputable section
 open Set
@@ -86,16 +87,10 @@ theorem uniqueness (S : Fin 5 → UnitSquare) (o : Point)
   have h := hp.phi_le i
   rwa [radius_sq] at h
 
-/-- The lower bound: the corner `(3/2, 1/2)` of the plus is on the circle of
-radius `sqrt (5/2)`. -/
-theorem optimality (S : Fin 5 → UnitSquare) (o : Point) (R : ℝ)
-    (hp : Packing S o R) : radius ≤ R :=
-  optimality_of_uniqueness uniqueness
-    ⟨1,3/2,1/2,by norm_num [centers,closedAxisSquare],by norm_num [radius_sq]⟩ hp
-
 /-- The optimum for five squares: `radius`, attained only by the normal forms
 of `centers`. -/
 def optimum : Optimum 5 :=
-  .ofUnique centers optimality model_packing uniqueness
+  .ofUnique centers model_packing
+    ⟨1,3/2,1/2,by norm_num [centers,closedAxisSquare],by norm_num [radius_sq]⟩ uniqueness
 
 end SquaresInCircles.Five

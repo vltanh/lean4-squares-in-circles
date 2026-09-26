@@ -80,7 +80,7 @@ example : Five.P5 ((Real.sqrt 5-1)/2) ((Real.sqrt 5-1)/2) := by
 
 -- Public statements.
 example (S : Fin 3 → UnitSquare) (o : Point) (R : ℝ)
-    (hp : Packing S o R) : Three.radius ≤ R := Three.optimality S o R hp
+    (hp : Packing S o R) : Three.radius ≤ R := Three.optimum.optimality S o R hp
 example (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5) (S : Fin n → UnitSquare) (o : Point)
     (hp : Packing S o (optimalRadius n)) : HasNormalForm S o (modelCenters n) := by
   obtain ⟨c,hc,h⟩ := uniqueness n (Or.inl hn) S o hp
@@ -92,7 +92,7 @@ example (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5) (S : Fin n → UnitSquare) (o : Poi
 example (S : Fin 7 → UnitSquare) (o : Point) (R : ℝ)
     (hp : Packing S o R) : optimalRadius 7 ≤ R := optimality 7 (Or.inr rfl) S o R hp
 example (S : Fin 7 → UnitSquare) (o : Point) (R : ℝ)
-    (hp : Packing S o R) : Seven.radius ≤ R := Seven.optimality S o R hp
+    (hp : Packing S o R) : Seven.radius ≤ R := Seven.optimum.optimality S o R hp
 example (S : Fin 7 → UnitSquare) (o : Point) (hp : Packing S o (optimalRadius 7)) :
     ∃ c : Seven.Column, HasNormalForm S o (Seven.slidingCenters c) := by
   obtain ⟨_,⟨c,rfl⟩,h⟩ := uniqueness 7 (Or.inr rfl) S o hp

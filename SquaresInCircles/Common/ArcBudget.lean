@@ -5,9 +5,7 @@ import SquaresInCircles.Common.Coordinates
 
 Disjoint squares hold disjoint arcs of a circle about the disk centre, and at
 most one of them contains the disk centre; five squares replace that square by
-its radial sweep, which stays disjoint from the others. Three to five squares
-derive their lower bounds from uniqueness: a packing in a smaller disk would
-have the normal form of the optimal layout, which reaches the larger circle.
+its radial sweep, which stays disjoint from the others.
 -/
 noncomputable section
 open Set
@@ -61,23 +59,5 @@ theorem ray_budget_impossible {n : ℕ} (hn : 2 ≤ n) {S : Fin n → UnitSquare
   choose A hA hstrict using harcs
   obtain ⟨i,hi⟩ := exists_exterior hn hd o
   exact uniform_arc_excess A (rayRegions_disjoint hd h8) hA ⟨i,hstrict i hi⟩
-
-/-- The lower bound from uniqueness: if every packing in the disk of radius `R`
-has the normal form of `c`, and a square of `c` reaches the circle of radius
-`R`, then no packing fits in a smaller disk. -/
-theorem optimality_of_uniqueness {n : ℕ} {c : Fin n → Point} {R : ℝ}
-    (huniq : ∀ (S : Fin n → UnitSquare) (o : Point), Packing S o R → HasNormalForm S o c)
-    (hc : ∃ i x y, closedAxisSquare (c i) x y ∧ R^2 ≤ x^2+y^2)
-    {S : Fin n → UnitSquare} {o : Point} {R' : ℝ} (hp : Packing S o R') : R ≤ R' := by
-  by_contra hlt
-  push Not at hlt
-  have hR' := hp.1
-  have hsq : R'^2 < R^2 := by nlinarith
-  obtain ⟨i,x,y,hxy,hR⟩ := hc
-  obtain ⟨φ,σ,hφ⟩ := huniq S o
-    ⟨hR'.trans hlt.le,fun j p hj => (hp.2.1 j p hj).trans hsq.le,hp.2.2⟩
-  have hin := hp.2.1 (σ i) _ ((hφ i x y).2.mpr hxy)
-  rw [inDisk,pointInDirection_norm] at hin
-  linarith
 
 end SquaresInCircles

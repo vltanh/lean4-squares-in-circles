@@ -1,4 +1,4 @@
-import SquaresInCircles.One.Optimality
+import SquaresInCircles.One.Construction
 import SquaresInCircles.Common.Optimum
 
 /-!
@@ -7,10 +7,17 @@ import SquaresInCircles.Common.Optimum
 At the optimal radius both coordinates of a chart of the square vanish, so the
 square sits at the origin of the chart's frame.
 
-The file ends with `optimum`: the case as an `Optimum`.
+The file ends with `optimum`: the case as an `Optimum`, which also gives the
+lower bound.
 -/
 noncomputable section
 namespace SquaresInCircles.One
+
+/-- The farthest vertex of a square is at least half a diagonal away, and
+farther unless the centre is at the disk centre. -/
+lemma half_add_le_phi (a b : ℝ) : 1/2+a+b ≤ phi a b := by
+  unfold phi
+  nlinarith [sq_nonneg a,sq_nonneg b]
 
 /-- At the optimal radius the square is centred at the disk centre. -/
 theorem uniqueness (S : Fin 1 → UnitSquare) (o : Point)
@@ -29,6 +36,7 @@ theorem uniqueness (S : Fin 1 → UnitSquare) (o : Point)
 /-- The optimum for one square: `radius`, attained only by the normal forms
 of `centers`. -/
 def optimum : Optimum 1 :=
-  .ofUnique centers optimality model_packing uniqueness
+  .ofUnique centers model_packing
+    ⟨0,1/2,1/2,by norm_num [centers,closedAxisSquare],by norm_num [radius_sq]⟩ uniqueness
 
 end SquaresInCircles.One

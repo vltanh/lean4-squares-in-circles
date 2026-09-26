@@ -15,9 +15,11 @@ there is one layout, `modelCenters n`, so the optimal packing is unique up to a
 rotation about the disk centre and a relabelling of the squares. For `n = 7`
 the middle column of the layout slides.
 
-Every case proves the same statement, an `Optimum` (`Common/Optimum.lean`), and
-can also be imported on its own, from its folder `SquaresInCircles/One/` to
-`SquaresInCircles/Seven/`.
+Every case proves the same statement, an `Optimum` (`Common/Optimum.lean`):
+the optimal layouts pack the disk and reach its circle, and every packing of
+that radius has the normal form of one of them. The lower bound follows once
+for all cases. Each case can also be imported on its own, from its folder
+`SquaresInCircles/One/` to `SquaresInCircles/Seven/`.
 -/
 noncomputable section
 namespace SquaresInCircles

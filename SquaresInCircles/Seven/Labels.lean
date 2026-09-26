@@ -25,16 +25,6 @@ structure Admissible (a u : ℝ) : Prop where
   half_le : 1/2 ≤ a
   phi_le : phi a u ≤ targetSq
 
-/-- A strictly admissible state: `φ(a, u) < 13/4`. -/
-structure StrictlyAdmissible (a u : ℝ) : Prop where
-  u_nonneg : 0 ≤ u
-  u_le : u ≤ a
-  half_le : 1/2 ≤ a
-  phi_lt : phi a u < targetSq
-
-lemma StrictlyAdmissible.admissible {a u : ℝ} (h : StrictlyAdmissible a u) :
-    Admissible a u := ⟨h.u_nonneg, h.u_le, h.half_le, h.phi_lt.le⟩
-
 lemma remainder_identity (a u : ℝ) :
     remainder a u = (a-1)^2 + (u-1/2)^2 + targetSq - phi a u := by
   unfold remainder targetSq phi
@@ -242,12 +232,5 @@ lemma chart_admissible {S : UnitSquare} {o : Point} (C : SquareChart S o)
     (hsort : C.b ≤ C.a) (hout : ¬ openSquare S o)
     (hp : phi (alpha S o) (beta S o) ≤ targetSq) : Admissible C.a C.b :=
   ⟨C.nonneg.2, hsort, C.exterior hsort hout, chart_phi C hp⟩
-
-lemma chart_strictlyAdmissible {S : UnitSquare} {o : Point} (C : SquareChart S o)
-    (hsort : C.b ≤ C.a) (hout : ¬ openSquare S o)
-    (hp : phi (alpha S o) (beta S o) < targetSq) : StrictlyAdmissible C.a C.b := by
-  refine ⟨C.nonneg.2, hsort, C.exterior hsort hout, ?_⟩
-  exact C.transfer (fun a b => phi a b < targetSq)
-    (fun h => by unfold phi at *; linarith) hp
 
 end SquaresInCircles.Seven

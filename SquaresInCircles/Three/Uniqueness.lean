@@ -5,7 +5,7 @@ import SquaresInCircles.Common.Angles
 import SquaresInCircles.Common.Optimum
 
 /-!
-# Three squares: uniqueness and the lower bound
+# Three squares: uniqueness
 
 In the closed disk of radius `5√17/16` no square contains the disk centre, so
 every square holds a cap of the circle of radius `3/8` of at least 120 degrees.
@@ -13,9 +13,10 @@ The budget makes every cap exactly 120 degrees, so every square is of type A or
 type B. Two squares of type A would hold too wide arcs of the circle of radius
 `7/16`, and three of type B too wide arcs of the circle of radius `1/16`. For
 one square of type A and two of type B, the angles between the caps rebuild the
-T. The lower bound follows from uniqueness.
+T.
 
-The file ends with `optimum`: the case as an `Optimum`.
+The file ends with `optimum`: the case as an `Optimum`, which also gives the
+lower bound.
 -/
 noncomputable section
 open Set
@@ -39,17 +40,6 @@ lemma cap_types {S : UnitSquare} {o : Point} (C : SquareChart S o)
     obtain ⟨h₁,h₂⟩ := htB (by linarith)
     have hA2 : capA aux C.a=Real.pi/2 := by rw [capA,h₁,sub_self,zero_div,Real.arccos_zero]
     exact Or.inr ⟨h₁,h₂,by rw [hc]; congr 1; linarith⟩
-
-/-- A square of type B has an edge through the disk centre, and holds the half
-of the circle of radius `1/16` centred on its phase. -/
-lemma b_semicircle {S : UnitSquare} {o : Point} (C : SquareChart S o)
-    (ha : C.a=1/2) (hb : C.b=5/16) :
-    ∃ W : OpenArc o (1/16) {p | openSquare S p}, W.halfWidth=Real.pi/2 ∧ W.center=C.phase := by
-  have hA : capA (1/16) C.a=Real.pi/2 := by rw [capA,ha,sub_self,zero_div,Real.arccos_zero]
-  have hV : capV (1/16) C.b=Real.pi/2 := Real.arcsin_of_one_le (by rw [hb]; norm_num)
-  obtain ⟨W,hw,hc⟩ := C.full_cap_arc (by norm_num) (by norm_num) ha.ge (by rw [ha]; norm_num)
-    (by rw [hb]; norm_num) (hA.trans hV.symm).le
-  exact ⟨W,hw.trans hA,hc⟩
 
 /-- The phases of the T: if two squares of type B have antipodal phases `φ` and
 `ψ`, and the centres of their caps and the phase `χ` of the square of type A
@@ -160,7 +150,8 @@ theorem uniqueness (S : Fin 3 → UnitSquare) (o : Point)
     by_contra hn
     have hB (i : Fin 3) : (C i).a=1/2 ∧ (C i).b=5/16 :=
       ((hty i).resolve_left fun h => hn ⟨i,h⟩).imp_right And.left
-    choose X hX _ using fun i => b_semicircle (C i) (hB i).1 (hB i).2
+    choose X hX _ using fun i =>
+      (C i).half_arc (r := 1/16) (by norm_num) (hB i).1 (by rw [(hB i).2]; norm_num)
     have h := triple_arc_budget (X 0) (X 1) (X 2) (hd (by decide)) (hd (by decide)) (hd (by decide))
     rw [hX,hX,hX] at h
     linarith [Real.pi_pos]
@@ -171,13 +162,11 @@ theorem uniqueness (S : Fin 3 → UnitSquare) (o : Point)
   obtain ⟨hia,hib,hic⟩ := hB i hik
   obtain ⟨hja,hjb,hjc⟩ := hB j hjk
   -- the two squares of type B have antipodal phases
-  obtain ⟨X,hX,hXc⟩ := b_semicircle (C i) hia hib
-  obtain ⟨Y,hY,hYc⟩ := b_semicircle (C j) hja hjb
+  obtain ⟨X,hX,hXc⟩ := (C i).half_arc (r := 1/16) (by norm_num) hia (by rw [hib]; norm_num)
+  obtain ⟨Y,hY,hYc⟩ := (C j).half_arc (r := 1/16) (by norm_num) hja (by rw [hjb]; norm_num)
   have hanti : (C j).phase=(C i).phase+(Real.pi:Direction) := by
-    apply antipodal_of_distance
-    have h := X.centers_separated Y (hd hij)
-    rw [hX,hY,hXc,hYc] at h
-    linarith [direction_diameter (C i).phase (C j).phase]
+    rw [← hXc,← hYc]
+    exact X.opposite Y (hd hij) hX hY
   -- the caps are centred pairwise `2π/3` apart
   have h01 := cos_sub_distance (W i).center (W j).center
   have h02 := cos_sub_distance (W i).center (W k).center
@@ -200,16 +189,10 @@ theorem uniqueness (S : Fin 3 → UnitSquare) (o : Point)
     cases (C i).reversed <;> simp
   · exact ⟨2,a_represents (C l) hk.1 hk.2.1⟩
 
-/-- The lower bound: the corner `(-1, -13/16)` of the T is on the circle of
-radius `5√17/16`. -/
-theorem optimality (S : Fin 3 → UnitSquare) (o : Point) (R : ℝ)
-    (hp : Packing S o R) : radius ≤ R :=
-  optimality_of_uniqueness uniqueness
-    ⟨0,-1,-13/16,by norm_num [centers,closedAxisSquare],by norm_num [radius_sq]⟩ hp
-
 /-- The optimum for three squares: `radius`, attained only by the normal forms
 of `centers`. -/
 def optimum : Optimum 3 :=
-  .ofUnique centers optimality model_packing uniqueness
+  .ofUnique centers model_packing
+    ⟨0,-1,-13/16,by norm_num [centers,closedAxisSquare],by norm_num [radius_sq]⟩ uniqueness
 
 end SquaresInCircles.Three

@@ -5,8 +5,7 @@ import SquaresInCircles.Seven.PairModel
 
 The three kinds of contact between labelled states: two side states, or a side
 state and an axial state. A side state is `(1, 1/2)`, on the circle
-`φ = 13/4`; an axial state `(a, 0)` keeps `a` free. So every contact has a
-state on the circle, and no contact is strictly admissible.
+`φ = 13/4`; an axial state `(a, 0)` keeps `a` free.
 
 `PairProperty` is what the gap of `π/3` is shown to satisfy, case by case:
 the support sum is nonnegative and vanishes only at a contact.
@@ -61,19 +60,6 @@ lemma reflected_reverse_contact {a u A v : ℝ} {s t : TransverseSign}
     (hc : OrderedContact A v a u t.flip s.flip) : OrderedContact a u A v s t := by
   cases s <;> cases t <;>
     simp only [OrderedContact,TransverseSign.flip] at hc ⊢ <;> aesop
-
-/-- Every contact has a side state `(1, 1/2)`, where `φ = 13/4`. -/
-lemma contact_not_strict {a u A v : ℝ} {s t : TransverseSign}
-    (hc : OrderedContact a u A v s t)
-    (h : StrictlyAdmissible a u) (h' : StrictlyAdmissible A v) : False := by
-  have side {a u : ℝ} (hs : SideState a u) (h : StrictlyAdmissible a u) : False := by
-    have hp := h.phi_lt
-    rw [hs.1,hs.2] at hp
-    norm_num [phi,targetSq] at hp
-  rcases hc with ⟨-,-,hs,-⟩ | ⟨-,hs,-⟩ | ⟨-,-,hs⟩
-  · exact side hs h
-  · exact side hs h
-  · exact side hs h'
 
 /-- An active label is axial or side. -/
 def ActiveLabel (a u : ℝ) : Prop := label a u = axial u ∨ label a u = side a u

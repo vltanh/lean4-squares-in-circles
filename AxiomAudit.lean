@@ -25,7 +25,7 @@ used in this development.
 #print axioms SquaresInCircles.safe_openRay_of_disjoint
 #print axioms SquaresInCircles.open_arc_budget
 #print axioms SquaresInCircles.ray_budget_impossible
-#print axioms SquaresInCircles.optimality_of_uniqueness
+#print axioms SquaresInCircles.Optimum.optimality
 #print axioms SquaresInCircles.OpenArc.third_distance_bounds
 #print axioms SquaresInCircles.centers_distance_sq_ge_one
 #print axioms SquaresInCircles.unit_contact
@@ -45,15 +45,11 @@ used in this development.
 #print axioms SquaresInCircles.Seven.marker_arc
 #print axioms SquaresInCircles.Seven.fixed_gap_nonneg
 #print axioms SquaresInCircles.Seven.fixed_gap_zero
-#print axioms SquaresInCircles.Seven.fixed_gap_pos
 #print axioms SquaresInCircles.Seven.all_gap_pos_below
 #print axioms SquaresInCircles.Seven.SAT.separating_axes
 #print axioms SquaresInCircles.Seven.marker_separation_closed
 #print axioms SquaresInCircles.Seven.ordered_chart_contact
-#print axioms SquaresInCircles.Seven.marker_separation
 #print axioms SquaresInCircles.Seven.six_directions_hexagon
-#print axioms SquaresInCircles.Seven.six_markers_impossible
-#print axioms SquaresInCircles.Seven.six_exterior_squared_lower
 #print axioms SquaresInCircles.Seven.sliding_packing
 
 -- Seven squares at the optimal radius: a square contains the centre, the ring,
@@ -77,7 +73,6 @@ used in this development.
 #check @SquaresInCircles.packing_iff
 #check @SquaresInCircles.rigid_uniqueness
 #check @SquaresInCircles.Five.polygon_uniqueness
-#check @SquaresInCircles.Seven.marker_separation
 #check @SquaresInCircles.Seven.sliding_packing
 #print SquaresInCircles.Seven.Column
 #print SquaresInCircles.Seven.slidingCenters

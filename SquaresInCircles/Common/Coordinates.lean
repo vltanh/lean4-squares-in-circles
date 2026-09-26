@@ -30,11 +30,6 @@ lemma plane_polar (x y : ℝ) :
 def SquareChart.signedB {S : UnitSquare} {o : Point} (C : SquareChart S o) : ℝ :=
   if C.reversed then -C.b else C.b
 
-lemma SquareChart.abs_signedB {S : UnitSquare} {o : Point} (C : SquareChart S o) :
-    |C.signedB|=C.b := by
-  unfold SquareChart.signedB
-  split_ifs <;> simp only [abs_neg,abs_of_nonneg C.nonneg.2]
-
 /-- Without the reversal, a chart holds at `(a, signedB)`. -/
 lemma SquareChart.unreversed {S : UnitSquare} {o : Point} (C : SquareChart S o) :
     ChartCondition S o C.phase false C.a C.signedB := by

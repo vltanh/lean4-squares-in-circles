@@ -5,16 +5,17 @@ import SquaresInCircles.Common.Angles
 import SquaresInCircles.Common.Optimum
 
 /-!
-# Four squares: uniqueness and the lower bound
+# Four squares: uniqueness
 
 On the circle of radius `1/2` about the disk centre, a square whose closed
 square contains the disk centre holds a quarter circle, and every other square
 of a packing in the disk of radius `sqrt 2` holds at least a quarter circle,
 more unless the disk centre is one of its vertices. The angular budget leaves
 the disk centre a vertex of every square, and the four quarter circles form the
-2×2 block. The lower bound follows from uniqueness.
+2×2 block.
 
-The file ends with `optimum`: the case as an `Optimum`.
+The file ends with `optimum`: the case as an `Optimum`, which also gives the
+lower bound.
 -/
 noncomputable section
 open Set
@@ -111,15 +112,10 @@ theorem uniqueness (S : Fin 4 → UnitSquare) (o : Point)
   have hc : turnPoint k (1/2,1/2)=centers k := by fin_cases k <;> norm_num [turnPoint,centers]
   simpa only [hc] using represents_quarter k hrep
 
-/-- The lower bound: the corner `(1, 1)` of the block is on the circle of
-radius `sqrt 2`. -/
-theorem optimality (S : Fin 4 → UnitSquare) (o : Point) (R : ℝ)
-    (hp : Packing S o R) : radius ≤ R :=
-  optimality_of_uniqueness uniqueness ⟨0,1,1,by norm_num [centers],by norm_num [radius_sq]⟩ hp
-
 /-- The optimum for four squares: `radius`, attained only by the normal forms
 of `centers`. -/
 def optimum : Optimum 4 :=
-  .ofUnique centers optimality model_packing uniqueness
+  .ofUnique centers model_packing
+    ⟨0,1,1,by norm_num [centers,closedAxisSquare],by norm_num [radius_sq]⟩ uniqueness
 
 end SquaresInCircles.Four

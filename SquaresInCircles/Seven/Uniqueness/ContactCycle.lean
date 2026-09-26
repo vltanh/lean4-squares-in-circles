@@ -1,14 +1,33 @@
-import SquaresInCircles.Seven.Optimality
+import SquaresInCircles.Seven.MarkerSeparation
+import SquaresInCircles.Common.Angles
 
 /-!
 # The ring of six squares
 
-Round the regular hexagon of markers, consecutive squares are contacts, so
-their kinds cycle through lower side, upper side and axial, twice. Read in one
-frame, they are the two side columns and two axial squares at free heights.
+Six directions pairwise at least `π/3` apart form a regular hexagon. Round the
+hexagon of markers, consecutive squares are contacts, so their kinds cycle
+through lower side, upper side and axial, twice. Read in one frame, they are
+the two side columns and two axial squares at free heights.
 -/
 noncomputable section
 namespace SquaresInCircles.Seven
+
+/-- Six directions pairwise at least `π/3` apart form a regular hexagon. -/
+theorem six_directions_hexagon (c : Fin 6 → Direction)
+    (hsep : ∀ i j, i ≠ j → gap ≤ dist (c i) (c j)) :
+    ∃ (φ : Direction) (σ : Equiv.Perm (Fin 6)),
+      ∀ i, c (σ i) = φ+(((i.val : ℝ)*gap : ℝ) : Direction) :=
+  regular_polygon c (by unfold gap; push_cast; ring) hsep
+
+def next (i : Fin 6) : Fin 6 := i+1
+
+lemma next_ne (i : Fin 6) : next i ≠ i := by fin_cases i <;> decide
+
+lemma hexagon_successor {c : Fin 6 → Direction} {φ : Direction}
+    (h : ∀ i, c i = φ+(((i.val : ℝ)*gap : ℝ) : Direction)) (i : Fin 6) :
+    (gap : Direction) = c (next i)-c i := by
+  rw [h,h,add_sub_add_left_eq_sub,←Real.Angle.coe_sub,Real.Angle.angle_eq_iff_two_pi_dvd_sub]
+  exact ⟨if i = 5 then 1 else 0,by fin_cases i <;> norm_num [next,gap] <;> ring⟩
 
 def KindAt (a u : ℝ) (s : TransverseSign) : Fin 3 → Prop :=
   ![s = .negative ∧ SideState a u, s = .positive ∧ SideState a u, AxialState a u]

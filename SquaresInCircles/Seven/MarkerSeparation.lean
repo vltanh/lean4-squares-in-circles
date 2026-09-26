@@ -10,8 +10,7 @@ states form a contact. A chart with a reversed orientation is read as a turned
 frame with a signed transverse coordinate, so each square sits at its state in
 the frame of its phase and the pair is a canonical pair; a separating axis
 gives a nonpositive support sum. The sign of the marker difference decides
-which square plays the first role. Inside the disk of squared radius below
-`13/4` no contact is possible, so the markers are more than `π/3` apart.
+which square plays the first role.
 -/
 noncomputable section
 namespace SquaresInCircles.Seven
@@ -30,7 +29,6 @@ lemma chartMarker_formula {S : UnitSquare} {o : Point} (C : SquareChart S o) :
     chartMarker C=C.phase+(((chartSign C).coe*label C.a C.b:ℝ):Direction) := by
   cases h : C.reversed <;>
     simp [chartMarker,chartAngle,chartSign,h,TransverseSign.coe]
-
 
 lemma charts_disjoint_canonical {S T : UnitSquare} {o : Point}
     (C : SquareChart S o) (D : SquareChart T o) {g : ℝ}
@@ -107,36 +105,5 @@ theorem ordered_chart_contact {S T : UnitSquare} {o : Point}
   · have hz := le_antisymm hk (fixed_gap_nonneg (chartSign D).flip (chartSign C).flip k hD hC)
     exact reflected_reverse_contact
       (fixed_gap_zero (chartSign D).flip (chartSign C).flip k hD hC hz)
-
-
-/-- The pair theorem: disjoint exterior squares in a disk of squared radius
-below `13/4` have markers more than `π/3` apart. The frames and positions of
-the squares are arbitrary. -/
-theorem marker_separation {S T : UnitSquare} {o : Point}
-    (C : SquareChart S o) (D : SquareChart T o)
-    (hsortC : C.b ≤ C.a) (hsortD : D.b ≤ D.a)
-    (hextC : ¬ openSquare S o) (hextD : ¬ openSquare T o)
-    (hphiC : phi (alpha S o) (beta S o) < targetSq)
-    (hphiD : phi (alpha T o) (beta T o) < targetSq)
-    (hdisj : ∀ p, ¬ (openSquare S p ∧ openSquare T p)) :
-    gap < dist (chartMarker C) (chartMarker D) := by
-  have hC := chart_strictlyAdmissible C hsortC hextC hphiC
-  have hD := chart_strictlyAdmissible D hsortD hextD hphiD
-  refine (marker_separation_closed C D hC.admissible hD.admissible hdisj).lt_of_ne
-    fun heq => ?_
-  let d : ℝ := (chartMarker D-chartMarker C).toReal
-  have hdangle : (d:Direction)=chartMarker D-chartMarker C := Real.Angle.coe_toReal _
-  have hdabs : |d|=gap := by rw [heq,dist_comm,direction_dist]
-  by_cases hd : 0≤d
-  · rw [abs_of_nonneg hd] at hdabs
-    rw [hdabs] at hdangle
-    exact contact_not_strict
-      (ordered_chart_contact C D hC.admissible hD.admissible hdangle hdisj) hC hD
-  · rw [abs_of_neg (lt_of_not_ge hd)] at hdabs
-    have hang : (gap:Direction)=chartMarker C-chartMarker D := by
-      rw [← hdabs,Real.Angle.coe_neg,hdangle]
-      abel
-    exact contact_not_strict (ordered_chart_contact D C hD.admissible
-      hC.admissible hang (fun p hp => hdisj p ⟨hp.2,hp.1⟩)) hD hC
 
 end SquaresInCircles.Seven

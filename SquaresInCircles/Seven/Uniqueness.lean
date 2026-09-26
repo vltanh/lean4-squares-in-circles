@@ -10,16 +10,16 @@ the sliding packings of `Seven/Construction.lean`, moved by one rotation about
 the disk centre and relabelled; the middle column may sit anywhere in its range.
 Conversely every such normal form is an optimal packing (`Optimum.packing_iff`).
 
-The equality case reruns the lower bound. Seven directions cannot be pairwise
-at least `π/3` apart, since closed arcs of half-width `1/2` about them would be
-disjoint, so some square contains the disk centre. The markers of the other six
-form a regular hexagon and neighbouring squares touch as in the optimal packing
-(`Uniqueness/ContactCycle.lean`), and the square in the middle is pinned between
-the side columns (`Uniqueness/CentralSquare.lean`). The three squares of the
-middle column have centres at least 1 apart, which gives the sliding normal
-form.
+Seven directions cannot be pairwise at least `π/3` apart, since closed arcs of
+half-width `1/2` about them would be disjoint, so some square contains the disk
+centre. The markers of the other six form a regular hexagon and neighbouring
+squares touch as in the optimal packing (`Uniqueness/ContactCycle.lean`), and
+the square in the middle is pinned between the side columns
+(`Uniqueness/CentralSquare.lean`). The three squares of the middle column have
+centres at least 1 apart, which gives the sliding normal form.
 
-The file ends with `optimum`: the case as an `Optimum`.
+The file ends with `optimum`: the case as an `Optimum`, which also gives the
+lower bound.
 -/
 noncomputable section
 namespace SquaresInCircles.Seven
@@ -109,11 +109,13 @@ forms of the sliding packings. -/
 def optimum : Optimum 7 where
   radius := radius
   layouts := Set.range slidingCenters
-  optimality := optimality
   layouts_nonempty := ⟨_,centeredColumn,rfl⟩
   layout_packing := by
     rintro _ ⟨c,rfl⟩
     exact sliding_packing c
+  layout_reaches := by
+    rintro _ ⟨c,rfl⟩
+    exact ⟨0,3/2,-1,by norm_num [slidingCenters,closedAxisSquare],by norm_num [radius_sq]⟩
   uniqueness S o hp :=
     let ⟨c,h⟩ := uniqueness S o hp
     ⟨_,⟨c,rfl⟩,h⟩
