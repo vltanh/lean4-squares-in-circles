@@ -8,9 +8,10 @@
    closed disk of radius $R_2$ about the origin.
 2. A packing of two unit squares in a closed disk of radius $R$ forces
    $R \ge R_2$.
-3. A packing of two unit squares in a closed disk of radius $R_2$ has the
-   normal form of $(-\frac12, 0), (\frac12, 0)$: the squares form a
-   $2 \times 1$ rectangle centred at the disk centre.
+3. The packings of two unit squares in a closed disk of radius $R_2$ are
+   exactly the configurations with the normal form of
+   $(-\frac12, 0), (\frac12, 0)$: the squares form a $2 \times 1$ rectangle
+   centred at the disk centre.
 
 ![Two unit squares side by side forming a 2 by 1 rectangle centred at o, with its four corners on the dashed circle of radius root 5 over 2](figures/two.svg)
 
@@ -21,9 +22,10 @@ radius $R_2$.*
 centres within $\frac12$ of the disk centre, so they are less than 1 apart.
 Disjoint unit squares cannot be that close.
 
-*Lean: [`Two.attainment`](../../SquaresInCircles/Two/Construction.lean#L36),
+*Lean: [`Two.model_packing`](../../SquaresInCircles/Two/Construction.lean#L30),
 [`Two.optimality`](../../SquaresInCircles/Two/Optimality.lean#L52),
-[`Two.uniqueness`](../../SquaresInCircles/Two/Uniqueness.lean#L10), in
+[`Two.uniqueness`](../../SquaresInCircles/Two/Uniqueness.lean#L17),
+[`Two.optimum`](../../SquaresInCircles/Two/Uniqueness.lean#L92), in
 [`SquaresInCircles/Two/`](../../SquaresInCircles/Two).*
 
 ## Construction
@@ -37,9 +39,8 @@ of radius $\frac{\sqrt5}2$ about the origin.
 in $[-1, 1] \times [-\frac12, \frac12]$, with $1 + \frac14 = \frac54$. Apply
 [Lemma 20](common.md#lemma-20-axis-parallel-squares). $\square$
 
-*Lean: [`Two.model_disjoint`](../../SquaresInCircles/Two/Construction.lean#L25),
-[`Two.model_packing`](../../SquaresInCircles/Two/Construction.lean#L30),
-[`Two.attainment`](../../SquaresInCircles/Two/Construction.lean#L36).*
+*Lean: [`Two.model_packing`](../../SquaresInCircles/Two/Construction.lean#L30),
+[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L44).*
 
 ## Lower bound
 
@@ -59,8 +60,8 @@ $a + b \ge \frac12$ and $\varphi(a, b) \ge \frac14 + \frac12 + \frac12 = \frac54
 The version with $\le$ is the same argument. $\square$
 
 *Lean:
-[`center_near_of_phi_lt`](../../SquaresInCircles/Two/Optimality.lean#L25),
-[`center_near_of_phi_le`](../../SquaresInCircles/Two/Optimality.lean#L18).*
+[`Two.center_near_of_phi_lt`](../../SquaresInCircles/Two/Optimality.lean#L25),
+[`Two.center_near_of_phi_le`](../../SquaresInCircles/Two/Optimality.lean#L18).*
 
 ### Proposition 2.3 (lower bound)
 
@@ -85,7 +86,8 @@ The parallelogram law
 then gives $|c_S - c_T| < 1$, which contradicts
 [Lemma 4](common.md#lemma-4-centres-at-least-1-apart). $\square$
 
-*Lean: [`normSq_parallelogram`](../../SquaresInCircles/Two/Optimality.lean#L33),
+*Lean:
+[`Two.normSq_parallelogram`](../../SquaresInCircles/Two/Optimality.lean#L33),
 [`Two.squared_lower`](../../SquaresInCircles/Two/Optimality.lean#L39),
 [`Two.optimality`](../../SquaresInCircles/Two/Optimality.lean#L52).*
 
@@ -114,4 +116,8 @@ $(-\frac12, 0), (\frac12, 0)$.
    [Lemma 22](common.md#lemma-22-from-slots-to-a-normal-form) gives the normal
    form. $\square$
 
-*Lean: [`Two.uniqueness`](../../SquaresInCircles/Two/Uniqueness.lean#L10).*
+*Lean: [`Two.uniqueness`](../../SquaresInCircles/Two/Uniqueness.lean#L17).*
+
+Proposition 2.1 and [Lemma 24](common.md#lemma-24-normal-forms-of-a-packing)
+give the converse: every configuration with this normal form is a packing in
+the closed disk of radius $R_2$.

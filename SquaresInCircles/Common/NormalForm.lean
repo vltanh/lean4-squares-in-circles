@@ -1,4 +1,5 @@
 import SquaresInCircles.Common.Coordinates
+import SquaresInCircles.Common.Constructions
 
 /-!
 # Geometric normal forms, not equality of frame records
@@ -160,6 +161,42 @@ lemma normal_form_of_slots {n : ℕ} {S : Fin n → UnitSquare} {o : Point}
   have hh : Represents (S (e.symm i)) o φ (c i) := by
     simpa only [show f (e.symm i)=i from e.apply_symm_apply i] using hf (e.symm i)
   exact ⟨hh x y,hh.closed x y⟩
+
+lemma axisSquare_open (c p : Point) :
+    openSquare (axisSquare c) p ↔ openAxisSquare c p.1 p.2 := by
+  simp [axisSquare,openSquare,openAxisSquare,localX,localY]
+
+lemma axisSquare_closed (c p : Point) :
+    closedSquare (axisSquare c) p ↔ closedAxisSquare c p.1 p.2 := by
+  simp [axisSquare,closedSquare,closedAxisSquare,localX,localY]
+
+/-- If the axis-parallel squares at `c` pack the disk of radius `R` about the
+origin, every packing with the normal form of `c` packs the disk of radius `R`
+about its centre. -/
+theorem HasNormalForm.packing {n : ℕ} {S : Fin n → UnitSquare} {o : Point}
+    {c : Fin n → Point} {R : ℝ} (h : HasNormalForm S o c)
+    (hc : Packing (fun i => axisSquare (c i)) (0,0) R) : Packing S o R := by
+  obtain ⟨φ,σ,hφ⟩ := h
+  let e := frameEquiv o φ
+  have he (p : Point) : pointInDirection o φ (e.symm p).1 (e.symm p).2 = p :=
+    e.apply_symm_apply p
+  have hopen (i : Fin n) (p : Point) :
+      openSquare (S (σ i)) p ↔ openSquare (axisSquare (c i)) (e.symm p) := by
+    rw [axisSquare_open,← (hφ i _ _).1,he]
+  have hclosed (i : Fin n) (p : Point) :
+      closedSquare (S (σ i)) p ↔ closedSquare (axisSquare (c i)) (e.symm p) := by
+    rw [axisSquare_closed,← (hφ i _ _).2,he]
+  refine ⟨hc.1,fun j p hj => ?_,fun j k hjk p hp => ?_⟩
+  · obtain ⟨i,rfl⟩ := σ.surjective j
+    have hd := frameEquiv_distance o φ (e.symm p) (0,0)
+    rw [show frameEquiv o φ (e.symm p) = p from e.apply_symm_apply p,frameEquiv_zero] at hd
+    change normSq (sub p o) ≤ R^2
+    rw [hd]
+    exact hc.2.1 i _ ((hclosed i p).mp hj)
+  · obtain ⟨i,rfl⟩ := σ.surjective j
+    obtain ⟨l,rfl⟩ := σ.surjective k
+    exact hc.2.2 i l (fun h => hjk (by rw [h])) (e.symm p)
+      ⟨(hopen i p).mp hp.1,(hopen l p).mp hp.2⟩
 
 /-- The normal form, with its frame replaced by an explicit isometry of the plane. -/
 lemma HasNormalForm.rigid_witness {n : ℕ} {S : Fin n → UnitSquare} {o : Point}

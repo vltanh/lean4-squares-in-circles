@@ -53,11 +53,11 @@ theorem inward_opposite_side_axial_property {a u A v : ℝ}
   have hW := h.remainder_nonneg
   have he := abs_nonneg (label a u+label A v-Real.pi/6)
   refine ⟨by linarith,fun hzero => ?_⟩
-  have hc := Equality.remainder_zero h (by linarith)
+  have hc := remainder_zero h (by linarith)
   have he0 : label a u+label A v-Real.pi/6=0 := abs_eq_zero.mp (by linarith)
-  rw [hc.1,hc.2,Equality.side_label,hA] at he0
+  rw [hc.1,hc.2,side_label,hA] at he0
   dsimp [axial] at he0
-  exact Or.inr (Or.inl ⟨rfl,hc,Equality.axial_of_transverse_zero h' (by linarith)⟩)
+  exact Or.inr (Or.inl ⟨rfl,hc,axial_of_transverse_zero h' (by linarith)⟩)
 
 lemma inward_opposite_axial_positive_turn {a u A v : ℝ}
     (h : Admissible a u) (h' : Admissible A v)
@@ -198,7 +198,7 @@ theorem fixed_gap_inward_opposite_active {a u A v : ℝ}
   rcases hp.2 (le_antisymm (hcomp.trans hz.le) hp.1) with ⟨hsign,-⟩ | ⟨-,-,hv,-⟩ | ⟨-,-,hc⟩
   · cases hsign
   · linarith [side_selected_label_gt h' hT]
-  · rw [hc.1,hc.2,Equality.side_label] at hBA
+  · rw [hc.1,hc.2,side_label] at hBA
     dsimp [axial] at hBA
     linarith [pi_lt_22_over_7]
 

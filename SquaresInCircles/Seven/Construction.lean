@@ -1,13 +1,13 @@
 import SquaresInCircles.Common.Constructions
 
 /-!
-# Seven squares: the optimal radius and the sliding packings
+# Seven squares: construction
 
-A column of three unit squares between two columns of two, at the optimal
-radius `√13 / 2`. The outer corners of the side columns lie on the circle, but
-the middle column is shorter than the room it has, so it can slide: every
-`Column` gives an optimal packing, and `Seven.centers` is the one with the
-column centred.
+A column of three unit squares between two columns of two, at the optimal radius
+`√13 / 2`. The outer corners of the side columns lie on the circle, but the
+middle column is shorter than the room it has, so it can slide: every `Column`
+gives an optimal packing, and `Seven.centers` is the one with the column
+centred.
 -/
 noncomputable section
 namespace SquaresInCircles.Seven
@@ -67,41 +67,26 @@ def slidingCenters (c : Column) : Fin 7 → Point :=
 def slidingModel (c : Column) : Fin 7 → UnitSquare :=
   fun i => axisSquare (slidingCenters c i)
 
-lemma slidingModel_disjoint (c : Column) : InteriorDisjoint (slidingModel c) := by
+/-- Every position of the middle column gives an optimal packing. -/
+theorem sliding_packing (c : Column) : Packing (slidingModel c) (0,0) radius := by
   have hbm := c.gap_lower
   have hmt := c.gap_upper
   have hbt : c.bottom+1 ≤ c.top := by linarith
-  intro i j hij
-  apply axis_disjoint
-  fin_cases i <;> fin_cases j <;>
-    norm_num [slidingCenters, AxisSeparated, hbm, hmt, hbt] at *
-
-lemma middle_square_contained {y : ℝ} (hy : -columnLimit ≤ y ∧ y ≤ columnLimit) :
-    ∀ p, closedSquare (axisSquare (0, y)) p → inDisk (0, 0) radius p := by
-  apply axis_contained (B := 1/2) (C := columnLimit + 1/2)
-  · norm_num
-  · norm_num
-  · dsimp; linarith [hy.1]
-  · dsimp; linarith [hy.2]
-  · rw [columnLimit_sq, radius_sq]
-    norm_num
-
-/-- Every position of the middle column gives an optimal packing. -/
-theorem sliding_packing (c : Column) : Packing (slidingModel c) (0, 0) radius := by
-  refine ⟨radius_nonneg, ?_, slidingModel_disjoint c⟩
-  intro i
-  fin_cases i
-  · apply axis_contained (B := 3/2) (C := 1) <;>
-      norm_num [slidingModel, slidingCenters, radius_sq]
-  · apply axis_contained (B := 3/2) (C := 1) <;>
-      norm_num [slidingModel, slidingCenters, radius_sq]
-  · apply axis_contained (B := 3/2) (C := 1) <;>
-      norm_num [slidingModel, slidingCenters, radius_sq]
-  · apply axis_contained (B := 3/2) (C := 1) <;>
-      norm_num [slidingModel, slidingCenters, radius_sq]
-  · exact middle_square_contained c.bottom_mem
-  · exact middle_square_contained c.middle_mem
-  · exact middle_square_contained c.top_mem
+  have hmid {y : ℝ} (hy : -columnLimit ≤ y ∧ y ≤ columnLimit) :
+      (|(0:ℝ)|+1/2)^2+(|y|+1/2)^2 ≤ radius^2 := by
+    have h := pow_le_pow_left₀ (by positivity)
+      (show |y|+1/2 ≤ columnLimit+1/2 by linarith [abs_le.mpr hy]) 2
+    rw [columnLimit_sq] at h
+    rw [radius_sq]
+    norm_num at h ⊢
+    linarith
+  apply axis_packing radius_nonneg
+  · intro i j hij
+    fin_cases i <;> fin_cases j <;> norm_num [slidingCenters,AxisSeparated,hbm,hmt,hbt] at *
+  · intro i
+    fin_cases i
+    iterate 4 norm_num [slidingCenters,radius_sq]
+    exacts [hmid c.bottom_mem,hmid c.middle_mem,hmid c.top_mem]
 
 /-- The middle column centred at the disk centre. -/
 def centeredColumn : Column where
@@ -121,9 +106,6 @@ def centers : Fin 7 → Point :=
 /-- That packing, centred at the origin. -/
 def model : Fin 7 → UnitSquare := fun i => axisSquare (centers i)
 
-theorem model_packing : Packing model (0, 0) radius := sliding_packing centeredColumn
-
-theorem attainment : ∃ (S : Fin 7 → UnitSquare) (o : Point), Packing S o radius :=
-  ⟨model, (0, 0), model_packing⟩
+theorem model_packing : Packing model (0,0) radius := sliding_packing centeredColumn
 
 end SquaresInCircles.Seven

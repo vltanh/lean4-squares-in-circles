@@ -278,7 +278,7 @@ theorem fixed_gap_forward_opposite_active {a u A v : ℝ}
   · exact .of_pos (he ▸ opposite_axial_side_pos h h' hA hT')
   · exact .of_pos (he ▸ opposite_side_axial_pos h h' hT hA')
   · refine ⟨he ▸ sideSide_support_nonneg h h' hT hT',fun hz => ?_⟩
-    have hc := Equality.side_side_zero h h' hT hT' (he ▸ hz)
+    have hc := side_side_zero h h' hT hT' (he ▸ hz)
     exact Or.inl ⟨rfl,rfl,hc.1,hc.2⟩
 
 end SquaresInCircles.Seven

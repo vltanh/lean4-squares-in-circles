@@ -82,7 +82,7 @@ lemma cardinal_support_sum (a b A B : ℝ) (k : Fin 4) :
   fin_cases k <;> norm_num [cardinalAngle,support,
     show (3:ℝ)*Real.pi/2=Real.pi+Real.pi/2 by ring,Real.sin_add,Real.cos_add] <;> ring
 
-lemma Equality.parallel_zero_pos_below {a u A v g : ℝ} (s t : TransverseSign) (k : Fin 4)
+lemma parallel_zero_pos_below {a u A v g : ℝ} (s t : TransverseSign) (k : Fin 4)
     (h : Admissible a u) (h' : Admissible A v) (hg : 0 < g ∧ g < gap)
     (he : g+s.coe*label a u-t.coe*label A v = 0) :
     0 < pairSupport a u A v s t k g := by
@@ -113,7 +113,7 @@ lemma Equality.parallel_zero_pos_below {a u A v g : ℝ} (s t : TransverseSign) 
     · linarith [h.1,h'.1]
     · linarith [h.1]
 
-lemma Equality.parallel_quarter_pos_below {a u A v g : ℝ} (s t : TransverseSign) (k : Fin 4)
+lemma parallel_quarter_pos_below {a u A v g : ℝ} (s t : TransverseSign) (k : Fin 4)
     (h : Admissible a u) (h' : Admissible A v) (hg : 0 < g ∧ g < gap)
     (he : g+s.coe*label a u-t.coe*label A v = Real.pi/2) :
     0 < pairSupport a u A v s t k g := by
@@ -160,7 +160,7 @@ lemma cardinal_target_relative {d : ℝ} (k : Fin 4)
     simpa [Real.sin_add,Real.cos_add,Real.sin_two_pi,Real.cos_two_pi,
       Real.cos_pi_div_two_sub,Real.sin_pi_div_two_sub,or_comm] using h
 
-lemma Equality.cardinal_target_pos_below {a u A v g : ℝ} (s t : TransverseSign) (k : Fin 4)
+lemma cardinal_target_pos_below {a u A v g : ℝ} (s t : TransverseSign) (k : Fin 4)
     (h : Admissible a u) (h' : Admissible A v) (hg : 1 ≤ g ∧ g < gap)
     (hcard : Real.sin (cardinalAngle k+Real.pi-g-s.coe*label a u+t.coe*label A v) = 0 ∨
       Real.cos (cardinalAngle k+Real.pi-g-s.coe*label a u+t.coe*label A v) = 0) :

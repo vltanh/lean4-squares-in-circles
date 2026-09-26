@@ -182,11 +182,11 @@ lemma sideSide_support_nonneg {a u A v : ℝ}
   linarith [sideSideL_ge_norm (forward_turn_range h h')]
 
 /-- The side–side sum vanishes only at two side states. -/
-lemma Equality.side_side_zero {a u A v : ℝ}
+lemma side_side_zero {a u A v : ℝ}
     (h : Admissible a u) (h' : Admissible A v)
     (hT : label a u = side a u) (hT' : label A v = side A v)
     (hz : sideSideSupport u A v (label a u+label A v-gap) = 0) :
-    Side a u ∧ Side A v := by
+    SideState a u ∧ SideState A v := by
   let w := label a u+label A v-gap
   have hw : w = side a u+side A v-gap := by simp only [w,hT,hT']
   have hw0 : w = 0 := by

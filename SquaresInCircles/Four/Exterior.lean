@@ -6,11 +6,11 @@ closed disk of radius `sqrt 2` holds an arc of at least 90 degrees, strictly
 more unless its centre is on the edge of the contact diamond. -/
 noncomputable section
 open Set
-namespace SquaresInCircles
+namespace SquaresInCircles.Four
 
 /-- On the circle of radius `1/2` an exterior square holds an arc of at least
 90 degrees, and more unless its centre is on the diamond's edge `a + b = 1`. -/
-lemma four_exterior_arc {S : UnitSquare} {o : Point} (C : SquareChart S o)
+lemma exterior_arc {S : UnitSquare} {o : Point} (C : SquareChart S o)
     (hsort : C.b ≤ C.a) (hout : ¬ openSquare S o) (hφ : phi C.a C.b ≤ 2) :
     ∃ A : OpenArc o (1/2) {p | openSquare S p}, Real.pi/4 ≤ A.halfWidth ∧
       (C.a+C.b < 1 → Real.pi/4 < A.halfWidth) := by
@@ -39,4 +39,4 @@ lemma four_exterior_arc {S : UnitSquare} {o : Point} (C : SquareChart S o)
     have h := min_le_iff.mp hW.ge
     rcases h with h | h <;> linarith
 
-end SquaresInCircles
+end SquaresInCircles.Four

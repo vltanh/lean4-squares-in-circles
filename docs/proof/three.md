@@ -11,8 +11,8 @@ $c_3 = (0, \frac{11}{16})$.
    top of them.
 2. A packing of three unit squares in a closed disk of radius $R$ forces
    $R \ge R_3$.
-3. A packing of three unit squares in a closed disk of radius $R_3$ has the
-   normal form of $c_1, c_2, c_3$.
+3. The packings of three unit squares in a closed disk of radius $R_3$ are
+   exactly the configurations with the normal form of $c_1, c_2, c_3$.
 
 ![The T packing in its dashed circle of radius 5 root 17 over 16, with the small circle of radius 3/8 about the centre divided into three coloured arcs of 120 degrees, one in each square](figures/three.svg)
 
@@ -26,9 +26,11 @@ contains the centre, the arcs are so tight that the other two are forced into
 nearly the T position, where they overlap. At radius exactly $R_3$ every
 inequality is tight, and only the T is left.
 
-*Lean: [`Three.attainment`](../../SquaresInCircles/Three/Construction.lean#L42),
+*Lean:
+[`Three.model_packing`](../../SquaresInCircles/Three/Construction.lean#L31),
 [`Three.optimality`](../../SquaresInCircles/Three/Optimality.lean#L36),
-[`Three.uniqueness`](../../SquaresInCircles/Three/Uniqueness.lean#L289), in
+[`Three.uniqueness`](../../SquaresInCircles/Three/Uniqueness.lean#L292),
+[`Three.optimum`](../../SquaresInCircles/Three/Uniqueness.lean#L343), in
 [`SquaresInCircles/Three/`](../../SquaresInCircles/Three).*
 
 ## Construction
@@ -53,9 +55,8 @@ The six outer corners, $(\pm1, -\frac{13}{16})$ and
 $(\pm\frac12, \frac{19}{16})$, lie on the circle.
 
 *Lean:
-[`Three.model_disjoint`](../../SquaresInCircles/Three/Construction.lean#L27),
-[`Three.model_packing`](../../SquaresInCircles/Three/Construction.lean#L32),
-[`Three.attainment`](../../SquaresInCircles/Three/Construction.lean#L42).*
+[`Three.model_packing`](../../SquaresInCircles/Three/Construction.lean#L31),
+[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L44).*
 
 ## Lower bound
 
@@ -102,8 +103,8 @@ the upper one has $(a_S, b_S) = (\frac{11}{16}, 0)$.
 $\lbrace \varphi \le \frac{425}{256} \rbrace$ at the positions of the squares of
 the T, marked with their types (Lemma 3.5).*
 
-*Lean: [`P3`](../../SquaresInCircles/Three/Tangents.lean#L12),
-[`P3Strict`](../../SquaresInCircles/Three/Tangents.lean#L16).*
+*Lean: [`Three.P3`](../../SquaresInCircles/Three/Tangents.lean#L12),
+[`Three.P3Strict`](../../SquaresInCircles/Three/Tangents.lean#L16).*
 
 #### Lemma 3.4 (contact polygon)
 
@@ -118,9 +119,9 @@ $\square$
 From here on the lower bound uses only the polygon and disjointness; the disk
 is not needed again.
 
-*Lean: [`p3_of_phi_lt`](../../SquaresInCircles/Three/Tangents.lean#L27),
-[`p3_of_phi_le`](../../SquaresInCircles/Three/Tangents.lean#L20),
-[`p3_coordinates`](../../SquaresInCircles/Three/Tangents.lean#L34).*
+*Lean: [`Three.p3_of_phi_lt`](../../SquaresInCircles/Three/Tangents.lean#L27),
+[`Three.p3_of_phi_le`](../../SquaresInCircles/Three/Tangents.lean#L20),
+[`Three.p3_coordinates`](../../SquaresInCircles/Three/Tangents.lean#L34).*
 
 ### Step 2. Exterior squares
 
@@ -177,10 +178,10 @@ $b_S = 0$: type A. If $A_S + V_S = \frac{2\pi}3$, the chain above is tight.
 Its middle step $u_S \le \frac{16}{13}u_S$ is tight only at $u_S = 0$, and
 then $v_S = \frac12$: $(a_S, b_S) = (\frac12, \frac5{16})$, type B. $\square$
 
-*Lean: [`three_cap_data`](../../SquaresInCircles/Three/Exterior.lean#L66),
-[`three_truncated_gap`](../../SquaresInCircles/Three/Exterior.lean#L34),
-[`three_cap_contact_types`](../../SquaresInCircles/Three/Exterior.lean#L82),
-[`three_cap_arc_formula`](../../SquaresInCircles/Three/Exterior.lean#L101).*
+*Lean: [`Three.cap_data`](../../SquaresInCircles/Three/Exterior.lean#L66),
+[`Three.truncated_gap`](../../SquaresInCircles/Three/Exterior.lean#L34),
+[`Three.cap_contact_types`](../../SquaresInCircles/Three/Exterior.lean#L82),
+[`Three.cap_arc_formula`](../../SquaresInCircles/Three/Exterior.lean#L101).*
 
 #### Corollary 3.6 (a containing square)
 
@@ -194,8 +195,8 @@ $\frac\pi3$. Three such arcs would break the angular budget,
 [Lemma 7](common.md#lemma-7-angular-budget). And two disjoint squares cannot
 both contain $o$. $\square$
 
-*Lean: [`three_exterior_arc`](../../SquaresInCircles/Three/Exterior.lean#L109),
-[`three_exterior_reduction`](../../SquaresInCircles/Three/Exterior.lean#L126).*
+*Lean: [`Three.exterior_arc`](../../SquaresInCircles/Three/Exterior.lean#L109),
+[`Three.exterior_reduction`](../../SquaresInCircles/Three/Exterior.lean#L126).*
 
 ### Step 3. The containing square
 
@@ -247,8 +248,8 @@ The arc is the quarter circle facing the centre of $S$, extended a little on
 each side.
 
 *Lean:
-[`three_containing_mem`](../../SquaresInCircles/Three/Containing.lean#L140),
-[`three_containing_arc_formula`](../../SquaresInCircles/Three/Containing.lean#L177).*
+[`Three.containing_mem`](../../SquaresInCircles/Three/Containing.lean#L140),
+[`Three.containing_arc_formula`](../../SquaresInCircles/Three/Containing.lean#L177).*
 
 #### Lemma 3.8 (the radial gap)
 
@@ -282,7 +283,7 @@ $16a + 13b \le \frac{193}{16}$ at $(a_T, b_T)$ gives $b_T \le \frac5{16}$.
 - It also lies in the disk inside $S$, a contradiction. $\square$
 
 *Lean:
-[`three_gap_from_containing`](../../SquaresInCircles/Three/Containing.lean#L197).*
+[`Three.gap_from_containing`](../../SquaresInCircles/Three/Containing.lean#L197).*
 
 #### Lemma 3.9 (an increasing difference)
 
@@ -303,7 +304,7 @@ f'(t) = \frac{16/13}{\sqrt{1 - \left(\frac12 + \frac{16}{13}t\right)^2}} - \frac
 ```
 
 *Lean:
-[`three_asin_increment_mono`](../../SquaresInCircles/Three/Containing.lean#L28).*
+[`Three.asin_increment_mono`](../../SquaresInCircles/Three/Containing.lean#L28).*
 
 #### Lemma 3.10 (two nearly axial squares overlap)
 
@@ -343,8 +344,9 @@ with the sign of the second coordinate matching the turn.
   which is within $\frac12$ of the centre $(a_U, \pm b_U)$ of $U$ in both
   coordinates. So it lies in $U$ as well. $\square$
 
-*Lean: [`near_axis_angles`](../../SquaresInCircles/Three/Containing.lean#L257),
-[`near_axis_square_overlap`](../../SquaresInCircles/Three/Containing.lean#L301).*
+*Lean:
+[`Three.near_axis_angles`](../../SquaresInCircles/Three/Containing.lean#L257),
+[`Three.near_axis_square_overlap`](../../SquaresInCircles/Three/Containing.lean#L301).*
 
 #### Proposition 3.11 (the containing square)
 
@@ -422,11 +424,11 @@ Lemma 9, with the arc of $S$ as the third arc, gives
 contradicts their disjointness. $\square$
 
 *Lean:
-[`three_deficit_bounds`](../../SquaresInCircles/Three/Containing.lean#L91),
-[`three_compensation`](../../SquaresInCircles/Three/Containing.lean#L74),
-[`three_cap_near_axis`](../../SquaresInCircles/Three/Containing.lean#L109),
-[`three_cap_reduction`](../../SquaresInCircles/Three/Containing.lean#L228),
-[`three_containing_impossible`](../../SquaresInCircles/Three/Containing.lean#L333).*
+[`Three.deficit_bounds`](../../SquaresInCircles/Three/Containing.lean#L91),
+[`Three.compensation`](../../SquaresInCircles/Three/Containing.lean#L74),
+[`Three.cap_near_axis`](../../SquaresInCircles/Three/Containing.lean#L109),
+[`Three.cap_reduction`](../../SquaresInCircles/Three/Containing.lean#L228),
+[`Three.containing_impossible`](../../SquaresInCircles/Three/Containing.lean#L333).*
 
 ### Step 4. Conclusion
 
@@ -439,7 +441,7 @@ $P_3$.
 that out. $\square$
 
 *Lean:
-[`three_polygon_strict_impossible`](../../SquaresInCircles/Three/Optimality.lean#L21).*
+[`Three.polygon_strict_impossible`](../../SquaresInCircles/Three/Optimality.lean#L21).*
 
 *Proof of Proposition 3.2.* If $R^2 < \frac{425}{256}$, then by
 [Lemma 1](common.md#lemma-1-farthest-vertex) and Lemma 3.4, $(a_S, b_S)$ is
@@ -465,8 +467,8 @@ strict facet $16a + 13b < \frac{193}{16}$ gives $19a + 8b < \frac{209}{16}$,
 and symmetrically for the fourth facet. $\square$
 
 *Lean:
-[`tangent_strict_of_ne`](../../SquaresInCircles/Three/Uniqueness.lean#L22),
-[`p3_strict_of_inside`](../../SquaresInCircles/Three/Uniqueness.lean#L32).*
+[`Three.tangent_strict_of_ne`](../../SquaresInCircles/Three/Uniqueness.lean#L25),
+[`Three.p3_strict_of_inside`](../../SquaresInCircles/Three/Uniqueness.lean#L35).*
 
 ### Lemma 3.14 (arcs of the two types)
 
@@ -492,9 +494,10 @@ turns them into arcs.
    $\frac38\sin t > -\frac3{16} = b_S - \frac12$. This interval has half-width
    $\frac\pi3$ and midpoint $\frac\pi6$. $\square$
 
-*Lean: [`a_contact_arc`](../../SquaresInCircles/Three/Uniqueness.lean#L45),
-[`b_semicircle`](../../SquaresInCircles/Three/Uniqueness.lean#L63),
-[`b_contact_arc`](../../SquaresInCircles/Three/Uniqueness.lean#L76).*
+*Lean:
+[`Three.a_contact_arc`](../../SquaresInCircles/Three/Uniqueness.lean#L48),
+[`Three.b_semicircle`](../../SquaresInCircles/Three/Uniqueness.lean#L66),
+[`Three.b_contact_arc`](../../SquaresInCircles/Three/Uniqueness.lean#L79).*
 
 ### Proposition 3.15 (uniqueness)
 
@@ -555,13 +558,17 @@ half-turn of the frame gives them
 form. $\square$
 
 *Lean:
-[`three_no_containing`](../../SquaresInCircles/Three/Uniqueness.lean#L260),
-[`two_a_contacts_impossible`](../../SquaresInCircles/Three/Uniqueness.lean#L107),
-[`three_b_contacts_impossible`](../../SquaresInCircles/Three/Uniqueness.lean#L124),
-[`equilateral_arc_centers`](../../SquaresInCircles/Three/Uniqueness.lean#L95),
-[`apex_phase`](../../SquaresInCircles/Three/Uniqueness.lean#L139),
-[`t_contact_reconstruction`](../../SquaresInCircles/Three/Uniqueness.lean#L184),
-[`Three.uniqueness`](../../SquaresInCircles/Three/Uniqueness.lean#L289).*
+[`Three.no_containing`](../../SquaresInCircles/Three/Uniqueness.lean#L263),
+[`Three.two_a_contacts_impossible`](../../SquaresInCircles/Three/Uniqueness.lean#L110),
+[`Three.b_contacts_impossible`](../../SquaresInCircles/Three/Uniqueness.lean#L127),
+[`Three.equilateral_arc_centers`](../../SquaresInCircles/Three/Uniqueness.lean#L98),
+[`Three.apex_phase`](../../SquaresInCircles/Three/Uniqueness.lean#L142),
+[`Three.t_contact_reconstruction`](../../SquaresInCircles/Three/Uniqueness.lean#L187),
+[`Three.uniqueness`](../../SquaresInCircles/Three/Uniqueness.lean#L292).*
+
+Proposition 3.1 and [Lemma 24](common.md#lemma-24-normal-forms-of-a-packing)
+give the converse: every configuration with this normal form is a packing in
+the closed disk of radius $R_3$.
 
 ## The legacy certificate proof
 

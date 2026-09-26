@@ -7,8 +7,9 @@
 1. The square $Q(0, 0)$ lies in the closed disk of radius $R_1$ about the
    origin.
 2. A unit square in a closed disk of radius $R$ forces $R \ge R_1$.
-3. A unit square in a closed disk of radius $R_1$ is centred at the disk
-   centre; the packing has the normal form of $(0, 0)$.
+3. The packings of one unit square in a closed disk of radius $R_1$ are
+   exactly the configurations with the normal form of $(0, 0)$: the square is
+   centred at the disk centre.
 
 ![One unit square centred at the disk centre o, its four vertices on the dashed circle of radius root 2 over 2](figures/one.svg)
 
@@ -17,9 +18,10 @@
 *Sketch.* Some vertex of the square is at least half a diagonal from the disk
 centre, with equality only when the square is centred there.
 
-*Lean: [`One.attainment`](../../SquaresInCircles/One/Construction.lean#L33),
+*Lean: [`One.model_packing`](../../SquaresInCircles/One/Construction.lean#L29),
 [`One.optimality`](../../SquaresInCircles/One/Optimality.lean#L21),
-[`One.uniqueness`](../../SquaresInCircles/One/Uniqueness.lean#L9), in
+[`One.uniqueness`](../../SquaresInCircles/One/Uniqueness.lean#L16),
+[`One.optimum`](../../SquaresInCircles/One/Uniqueness.lean#L44), in
 [`SquaresInCircles/One/`](../../SquaresInCircles/One).*
 
 ## Construction
@@ -33,8 +35,8 @@ the origin.
 $\frac14 + \frac14 = \frac12$; apply
 [Lemma 20](common.md#lemma-20-axis-parallel-squares). $\square$
 
-*Lean: [`One.model_packing`](../../SquaresInCircles/One/Construction.lean#L25),
-[`One.attainment`](../../SquaresInCircles/One/Construction.lean#L33).*
+*Lean: [`One.model_packing`](../../SquaresInCircles/One/Construction.lean#L29),
+[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L44).*
 
 ## Lower bound
 
@@ -50,7 +52,7 @@ and since $a_S, b_S \ge 0$,
 R^2 \ge \varphi(a_S, b_S) = \left(a_S + \tfrac12\right)^2 + \left(b_S + \tfrac12\right)^2 \ge \tfrac14 + \tfrac14 = \tfrac12 . \qquad \square
 ```
 
-*Lean: [`half_le_phi`](../../SquaresInCircles/One/Optimality.lean#L13),
+*Lean: [`One.half_le_phi`](../../SquaresInCircles/One/Optimality.lean#L13),
 [`One.squared_lower`](../../SquaresInCircles/One/Optimality.lean#L17),
 [`One.optimality`](../../SquaresInCircles/One/Optimality.lean#L21).*
 
@@ -68,4 +70,8 @@ sits at $(0, 0)$ ([Lemma 21](common.md#lemma-21-sitting-at-a-centre)), and
 [Lemma 22](common.md#lemma-22-from-slots-to-a-normal-form) gives the normal
 form. $\square$
 
-*Lean: [`One.uniqueness`](../../SquaresInCircles/One/Uniqueness.lean#L9).*
+*Lean: [`One.uniqueness`](../../SquaresInCircles/One/Uniqueness.lean#L16).*
+
+Proposition 1.1 and [Lemma 24](common.md#lemma-24-normal-forms-of-a-packing)
+give the converse: every configuration with this normal form is a packing in
+the closed disk of radius $R_1$.

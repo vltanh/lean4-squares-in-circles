@@ -10,10 +10,9 @@ frame, they are the two side columns and two axial squares at free heights.
 -/
 noncomputable section
 namespace SquaresInCircles.Seven
-namespace Equality
 
 def KindAt (a u : ℝ) (s : TransverseSign) : Fin 3 → Prop :=
-  ![s = .negative ∧ Side a u, s = .positive ∧ Side a u, Axial a u]
+  ![s = .negative ∧ SideState a u, s = .positive ∧ SideState a u, AxialState a u]
 def kindOffset : Fin 3 → ℝ := ![-Real.pi/6,Real.pi/6,0]
 def cycleKinds : Fin 6 → Fin 3 := ![0,1,2,0,1,2]
 def cycleTurns : Fin 6 → Fin 4 := ![0,0,1,2,2,3]
@@ -21,7 +20,7 @@ def cycleTurnAngle : Fin 6 → ℝ := ![0,0,Real.pi/2,Real.pi,Real.pi,3*Real.pi/
 
 lemma kind_unique {a u : ℝ} {s : TransverseSign} {i j : Fin 3}
     (hi : KindAt a u s i) (hj : KindAt a u s j) : i = j := by
-  fin_cases i <;> fin_cases j <;> simp_all [KindAt,Side,Axial]
+  fin_cases i <;> fin_cases j <;> simp_all [KindAt,SideState,AxialState]
 
 lemma contact_kinds {a u A v : ℝ} {s t : TransverseSign}
     (hc : OrderedContact a u A v s t) :
@@ -32,7 +31,7 @@ lemma contact_kinds {a u A v : ℝ} {s t : TransverseSign}
   · exact ⟨2,ha,⟨ht,hb⟩⟩
 
 /-- An axial state is admissible. -/
-lemma Axial.admissible {a u : ℝ} (h : Axial a u) : Admissible a u := by
+lemma AxialState.admissible {a u : ℝ} (h : AxialState a u) : Admissible a u := by
   obtain ⟨rfl,h1,h2⟩ := h
   have := columnLimit_sq
   exact ⟨le_rfl,by linarith,h1,by dsimp [phi,targetSq]; nlinarith⟩
@@ -44,7 +43,7 @@ lemma kind_signed_label {a u : ℝ} {s : TransverseSign} {k : Fin 3} (hk : KindA
     norm_num [side_label,kindOffset,TransverseSign.coe,neg_div]
   · obtain ⟨rfl,rfl,rfl⟩ := hk
     norm_num [side_label,kindOffset,TransverseSign.coe]
-  · change Axial a u at hk
+  · change AxialState a u at hk
     rw [hk.admissible.label_zero_iff.mpr hk.1]
     norm_num [kindOffset]
 
@@ -77,7 +76,6 @@ lemma cycle_phase_arithmetic (i : Fin 6) :
     (i.val : ℝ)*gap-kindOffset (cycleKinds i)-Real.pi/6 = cycleTurnAngle i := by
   fin_cases i <;> dsimp [gap,kindOffset,cycleKinds,cycleTurnAngle] <;> ring
 
-end Equality
 
 def ringCenters (top bottom : ℝ) : Fin 6 → Point :=
   ![(1,-1/2),(1,1/2),(0,top),(-1,1/2),(-1,-1/2),(0,-bottom)]
@@ -91,7 +89,6 @@ structure ExteriorRing (S : Fin 6 → UnitSquare) (o : Point) where
   bottom_bounds : 1/2 ≤ bottom ∧ bottom ≤ columnLimit
   represents : ∀ i, Represents (S (order i)) o phase (ringCenters top bottom i)
 
-namespace Equality
 
 lemma ring_of_ordered_contacts {S : Fin 6 → UnitSquare} {o : Point}
     (C : ∀ i, SquareChart (S i) o)
@@ -149,5 +146,4 @@ theorem six_exterior_ring (S : Fin 6 → UnitSquare) (o : Point)
       (hd _ _ (fun he => (next_ne i) (σ.injective he).symm))
   exact ⟨{ W with order := W.order.trans σ, represents := W.represents }⟩
 
-end Equality
 end SquaresInCircles.Seven

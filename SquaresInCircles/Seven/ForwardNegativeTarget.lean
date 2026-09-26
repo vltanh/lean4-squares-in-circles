@@ -251,13 +251,13 @@ theorem fixed_gap_forward_negative_target {a u A v : ℝ} (sgn : TransverseSign)
   · have hp := sideTarget_positive_angle h' ⟨he0,he.2⟩
     have hW := h'.remainder_nonneg
     refine ⟨by linarith,fun hz => ?_⟩
-    have hc := Equality.remainder_zero h' (by linarith)
+    have hc := remainder_zero h' (by linarith)
     have ht : label a u=0 := by
       have he' : e=0 := by linarith
       dsimp [e,r] at he'
-      rw [hc.1,hc.2,Equality.side_label] at he'
+      rw [hc.1,hc.2,side_label] at he'
       cases sgn <;> dsimp [TransverseSign.coe] at he' <;> linarith
-    exact Or.inr (Or.inr ⟨rfl,Equality.axial_of_transverse_zero h (h.label_zero_iff.mp ht),hc⟩)
+    exact Or.inr (Or.inr ⟨rfl,axial_of_transverse_zero h (h.label_zero_iff.mp ht),hc⟩)
   · have hs := side_selected_label_gt h' hT
     have hp := sideTarget_negative_pos h' hT (z := -e) ⟨by linarith,by
       cases sgn <;> dsimp [e,r,TransverseSign.coe] <;> linarith [pi_lt_22_over_7]⟩

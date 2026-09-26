@@ -20,25 +20,24 @@ def flip : TransverseSign → TransverseSign
 lemma coe_flip (s : TransverseSign) : s.flip.coe= -s.coe := by cases s <;> norm_num [flip,coe]
 end TransverseSign
 
-namespace Equality
 
-abbrev Side (a u : ℝ) : Prop := a = 1 ∧ u = 1/2
-abbrev Axial (a u : ℝ) : Prop := u = 0 ∧ 1/2 ≤ a ∧ a ≤ columnLimit
+abbrev SideState (a u : ℝ) : Prop := a = 1 ∧ u = 1/2
+abbrev AxialState (a u : ℝ) : Prop := u = 0 ∧ 1/2 ≤ a ∧ a ≤ columnLimit
 
 def OrderedContact (a u A v : ℝ) (s t : TransverseSign) : Prop :=
-  (s = .negative ∧ t = .positive ∧ Side a u ∧ Side A v) ∨
-  (s = .positive ∧ Side a u ∧ Axial A v) ∨
-  (t = .negative ∧ Axial a u ∧ Side A v)
+  (s = .negative ∧ t = .positive ∧ SideState a u ∧ SideState A v) ∨
+  (s = .positive ∧ SideState a u ∧ AxialState A v) ∨
+  (t = .negative ∧ AxialState a u ∧ SideState A v)
 
 lemma remainder_zero {a u : ℝ} (h : Admissible a u)
-    (hz : remainder a u = 0) : Side a u := by
+    (hz : remainder a u = 0) : SideState a u := by
   have he := remainder_identity a u
   have hs := h.slack_nonneg
   exact ⟨by nlinarith [sq_nonneg (u-1/2)],
     by nlinarith [sq_nonneg (a-1)]⟩
 
 lemma axial_of_transverse_zero {a u : ℝ} (h : Admissible a u) (hu : u = 0) :
-    Axial a u := ⟨hu,h.2.2.1,h.a_le_sqrt_three_sub_half⟩
+    AxialState a u := ⟨hu,h.2.2.1,h.a_le_sqrt_three_sub_half⟩
 
 lemma side_label : label 1 (1/2) = Real.pi/6 := by
   have hp := pi_lt_22_over_7
@@ -47,7 +46,7 @@ lemma side_label : label 1 (1/2) = Real.pi/6 := by
   rw [min_eq_right (a := (5*(1/2)/4 : ℝ)) (by linarith), min_eq_left (by linarith)]
   ring
 
-lemma axial_label {a u : ℝ} (h : Admissible a u) (ha : Axial a u) :
+lemma axial_label {a u : ℝ} (h : Admissible a u) (ha : AxialState a u) :
     label a u = 0 := h.label_zero_iff.mpr ha.1
 
 lemma side_neq_cap : label 1 (1/2) ≠ Real.pi/4 := by
@@ -74,7 +73,7 @@ lemma reflected_reverse_contact {a u A v : ℝ} {s t : TransverseSign}
 lemma contact_not_strict {a u A v : ℝ} {s t : TransverseSign}
     (hc : OrderedContact a u A v s t)
     (h : StrictlyAdmissible a u) (h' : StrictlyAdmissible A v) : False := by
-  have side {a u : ℝ} (hs : Side a u) (h : StrictlyAdmissible a u) : False := by
+  have side {a u : ℝ} (hs : SideState a u) (h : StrictlyAdmissible a u) : False := by
     have hp := h.2.2.2
     rw [hs.1,hs.2] at hp
     norm_num [phi,targetSq] at hp
@@ -83,5 +82,4 @@ lemma contact_not_strict {a u A v : ℝ} {s t : TransverseSign}
   · exact side hs h
   · exact side hs h'
 
-end Equality
 end SquaresInCircles.Seven

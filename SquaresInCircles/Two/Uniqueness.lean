@@ -1,18 +1,25 @@
 import SquaresInCircles.Two.Optimality
 import SquaresInCircles.Common.Angles
+import SquaresInCircles.Common.Optimum
 
-/-! At the optimal radius the disk centre is the midpoint of the two centres,
-and `unit_contact` makes the squares share a full edge: the rectangle. -/
+/-!
+# Two squares: uniqueness
+
+At the optimal radius the disk centre is the midpoint of the two centres, and
+`unit_contact` makes the squares share a full edge: the rectangle.
+
+The file ends with `optimum`: the case as an `Optimum`.
+-/
 noncomputable section
-namespace SquaresInCircles
+namespace SquaresInCircles.Two
 
 /-- At the optimal radius the two squares form the rectangle. -/
-theorem Two.uniqueness (S : Fin 2 → UnitSquare) (o : Point)
-    (hp : Packing S o Two.radius) : HasNormalForm S o Two.centers := by
+theorem uniqueness (S : Fin 2 → UnitSquare) (o : Point)
+    (hp : Packing S o radius) : HasNormalForm S o centers := by
   have hnear (i : Fin 2) : normSq (sub (S i).center o) ≤ 1/4 := by
     rw [local_center_norm]
     have h := hp.phi_le i
-    rw [Two.radius_sq] at h
+    rw [radius_sq] at h
     exact center_near_of_phi_le (alpha_nonneg _ _) (beta_nonneg _ _) h
   have hd01 := hp.2.2 0 1 (by decide)
   have hfar := centers_distance_sq_ge_one (S 0) (S 1) hd01
@@ -56,28 +63,33 @@ theorem Two.uniqueness (S : Fin 2 → UnitSquare) (o : Point)
   · apply normal_form_of_slots (φ := (t:Direction)) hp.disjoint
     intro i
     rcases (show i=0 ∨ i=1 by revert i; decide) with rfl | rfl
-    · exact ⟨0,by convert r0 using 1; norm_num [Two.centers]⟩
-    · exact ⟨1,by convert r1 using 1; norm_num [Two.centers]⟩
+    · exact ⟨0,by convert r0 using 1; norm_num [centers]⟩
+    · exact ⟨1,by convert r1 using 1; norm_num [centers]⟩
   · rw [hq] at r0 r1
     have q0 := represents_quarter 3 r0
     have q1 := represents_quarter 3 r1
     apply normal_form_of_slots (φ := (t:Direction)-quarterShift 3) hp.disjoint
     intro i
     rcases (show i=0 ∨ i=1 by revert i; decide) with rfl | rfl
-    · exact ⟨0,by convert q0 using 1; norm_num [Two.centers,turnPoint]⟩
-    · exact ⟨1,by convert q1 using 1; norm_num [Two.centers,turnPoint]⟩
+    · exact ⟨0,by convert q0 using 1; norm_num [centers,turnPoint]⟩
+    · exact ⟨1,by convert q1 using 1; norm_num [centers,turnPoint]⟩
   · apply normal_form_of_slots (φ := (t:Direction)) hp.disjoint
     intro i
     rcases (show i=0 ∨ i=1 by revert i; decide) with rfl | rfl
-    · exact ⟨1,by convert r0 using 1; norm_num [Two.centers]⟩
-    · exact ⟨0,by convert r1 using 1; norm_num [Two.centers]⟩
+    · exact ⟨1,by convert r0 using 1; norm_num [centers]⟩
+    · exact ⟨0,by convert r1 using 1; norm_num [centers]⟩
   · rw [hq] at r0 r1
     have q0 := represents_quarter 3 r0
     have q1 := represents_quarter 3 r1
     apply normal_form_of_slots (φ := (t:Direction)-quarterShift 3) hp.disjoint
     intro i
     rcases (show i=0 ∨ i=1 by revert i; decide) with rfl | rfl
-    · exact ⟨1,by convert q0 using 1; norm_num [Two.centers,turnPoint]⟩
-    · exact ⟨0,by convert q1 using 1; norm_num [Two.centers,turnPoint]⟩
+    · exact ⟨1,by convert q0 using 1; norm_num [centers,turnPoint]⟩
+    · exact ⟨0,by convert q1 using 1; norm_num [centers,turnPoint]⟩
 
-end SquaresInCircles
+/-- The optimum for two squares: `radius`, attained only by the normal forms
+of `centers`. -/
+def optimum : Optimum 2 :=
+  .ofUnique centers optimality model_packing uniqueness
+
+end SquaresInCircles.Two

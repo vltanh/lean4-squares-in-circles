@@ -1,34 +1,41 @@
 import SquaresInCircles.Common.Angles
 import SquaresInCircles.Four.Optimality
+import SquaresInCircles.Common.Optimum
 
-/-! Equality rigidity for four squares uses the actual enclosing disk, not
-uniqueness of the diamond relaxation (which is false). -/
+/-!
+# Four squares: uniqueness
+
+Equality rigidity for four squares uses the actual enclosing disk, not
+uniqueness of the diamond relaxation (which is false).
+
+The file ends with `optimum`: the case as an `Optimum`.
+-/
 noncomputable section
 open Set
-namespace SquaresInCircles
+namespace SquaresInCircles.Four
 
-lemma four_contact_eq {a b : ℝ} (hφ : phi a b ≤ 2) (hs : 1 ≤ a+b) :
+lemma contact_eq {a b : ℝ} (hφ : phi a b ≤ 2) (hs : 1 ≤ a+b) :
     a=1/2 ∧ b=1/2 := by
   have he : phi a b-2=2*(a+b-1)+(a-1/2)^2+(b-1/2)^2 := by dsimp [phi]; ring
   have hx := sq_nonneg (a-1/2)
   have hy := sq_nonneg (b-1/2)
   constructor <;> nlinarith
 
-lemma four_some_vertex (S : Fin 4 → UnitSquare) (o : Point)
+lemma some_vertex (S : Fin 4 → UnitSquare) (o : Point)
     (hd : InteriorDisjoint S) (hφ : ∀ i, phi (alpha (S i) o) (beta (S i) o) ≤ 2) :
     ∃ i, alpha (S i) o=1/2 ∧ beta (S i) o=1/2 := by
   by_contra hn
-  apply four_diamond_impossible S o hd hφ
+  apply diamond_impossible S o hd hφ
   intro i
   have hne : ¬ 1 ≤ alpha (S i) o+beta (S i) o := by
     intro h
-    exact hn ⟨i,four_contact_eq (hφ i) h⟩
+    exact hn ⟨i,contact_eq (hφ i) h⟩
   exact lt_of_not_ge hne
 
-lemma four_no_containing (S : Fin 4 → UnitSquare) (o : Point)
+lemma no_containing (S : Fin 4 → UnitSquare) (o : Point)
     (hd : InteriorDisjoint S) (hφ : ∀ i, phi (alpha (S i) o) (beta (S i) o) ≤ 2) :
     ∀ i, ¬ openSquare (S i) o := by
-  obtain ⟨k,hka,hkb⟩ := four_some_vertex S o hd hφ
+  obtain ⟨k,hka,hkb⟩ := some_vertex S o hd hφ
   have hclosed : closedSquare (S k) o := by
     change alpha (S k) o ≤ 1/2 ∧ beta (S k) o ≤ 1/2
     exact ⟨hka.le,hkb.le⟩
@@ -40,19 +47,19 @@ lemma four_no_containing (S : Fin 4 → UnitSquare) (o : Point)
     linarith [h.1]
   · exact closed_open_disjoint (S k) (S i) (hd k i (Ne.symm hi)) hclosed
 
-lemma four_all_vertices (S : Fin 4 → UnitSquare) (o : Point)
+lemma all_vertices (S : Fin 4 → UnitSquare) (o : Point)
     (hd : InteriorDisjoint S) (hφ : ∀ i, phi (alpha (S i) o) (beta (S i) o) ≤ 2) :
     ∀ i, alpha (S i) o=1/2 ∧ beta (S i) o=1/2 := by
-  have hout := four_no_containing S o hd hφ
+  have hout := no_containing S o hd hφ
   choose C hsort using (fun i => sorted_square_chart (S i) o)
-  choose A hA hstrict using (fun i => four_exterior_arc (C i) (hsort i) (hout i)
+  choose A hA hstrict using (fun i => exterior_arc (C i) (hsort i) (hout i)
     (chart_phi (C i) (hφ i)))
   have htight (i : Fin 4) : 1 ≤ (C i).a+(C i).b := by
     by_contra hn
     exact uniform_arc_excess (n := 4) (by decide) A hd.pairwise hA
       ⟨i,hstrict i (lt_of_not_ge hn)⟩
   intro i
-  have hc := four_contact_eq (chart_phi (C i) (hφ i)) (htight i)
+  have hc := contact_eq (chart_phi (C i) (hφ i)) (htight i)
   rcases (C i).coordinates with ⟨ha,hb⟩ | ⟨ha,hb⟩ <;> constructor <;> linarith [hc.1,hc.2]
 
 def vertexMid {S : UnitSquare} {o : Point} (C : SquareChart S o) : Direction :=
@@ -95,12 +102,12 @@ lemma vertex_represents {S : UnitSquare} {o : Point} (C : SquareChart S o)
     simpa only [ht] using represents_quarter 1 h'
 
 /-- The only radius-sqrt(2) packing is the block, including the disk center. -/
-theorem Four.uniqueness (S : Fin 4 → UnitSquare) (o : Point)
-    (hp : Packing S o Four.radius) : HasNormalForm S o Four.centers := by
+theorem uniqueness (S : Fin 4 → UnitSquare) (o : Point)
+    (hp : Packing S o radius) : HasNormalForm S o centers := by
   have hφ (i : Fin 4) : phi (alpha (S i) o) (beta (S i) o) ≤ 2 := by
     have h := hp.phi_le i
-    rwa [Four.radius_sq] at h
-  have hvertices := four_all_vertices S o hp.disjoint hφ
+    rwa [radius_sq] at h
+  have hvertices := all_vertices S o hp.disjoint hφ
   have C (i : Fin 4) : SquareChart (S i) o := (square_chart (S i) o).some
   have hcoords (i : Fin 4) : (C i).a=1/2 ∧ (C i).b=1/2 :=
     (C i).transfer (fun a b => a=1/2 ∧ b=1/2) (fun h => ⟨h.2,h.1⟩) (hvertices i)
@@ -120,7 +127,12 @@ theorem Four.uniqueness (S : Fin 4 → UnitSquare) (o : Point)
     exacts [⟨0,by ring⟩,⟨1,by push_cast; ring⟩]
   have hrep := vertex_represents (C (σ k)) (hcoords _).1 (hcoords _).2
   rw [hgrid,hk,add_sub_right_comm] at hrep
-  have hc : turnPoint k (1/2,1/2)=Four.centers k := by fin_cases k <;> norm_num [turnPoint,Four.centers]
+  have hc : turnPoint k (1/2,1/2)=centers k := by fin_cases k <;> norm_num [turnPoint,centers]
   simpa only [hc] using represents_quarter k hrep
 
-end SquaresInCircles
+/-- The optimum for four squares: `radius`, attained only by the normal forms
+of `centers`. -/
+def optimum : Optimum 4 :=
+  .ofUnique centers optimality model_packing uniqueness
+
+end SquaresInCircles.Four

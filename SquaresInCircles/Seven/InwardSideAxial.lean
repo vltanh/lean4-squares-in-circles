@@ -79,10 +79,10 @@ theorem inward_side_axial_property {a u A v : ℝ}
   have hW := h.remainder_nonneg
   have he := abs_nonneg (label a u-label A v-Real.pi/6)
   refine ⟨by linarith,fun hz => ?_⟩
-  have hc := Equality.remainder_zero h (by linarith)
+  have hc := remainder_zero h (by linarith)
   have he0 : label a u-label A v-Real.pi/6 = 0 := abs_eq_zero.mp (by linarith)
-  rw [hc.1,hc.2,Equality.side_label,hA] at he0
+  rw [hc.1,hc.2,side_label,hA] at he0
   dsimp [axial] at he0
-  exact Or.inr (Or.inl ⟨rfl,hc,Equality.axial_of_transverse_zero h' (by linarith)⟩)
+  exact Or.inr (Or.inl ⟨rfl,hc,axial_of_transverse_zero h' (by linarith)⟩)
 
 end SquaresInCircles.Seven

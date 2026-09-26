@@ -19,7 +19,8 @@ declarations it follows.
 | [7. The radial sweep](#7-the-radial-sweep) | 17 | 15 to 18 | a longer arc for the square that contains $o$ |
 | [8. Elementary estimates](#8-elementary-estimates) | | 19 | numerical bounds |
 | [9. Axis-parallel squares](#9-axis-parallel-squares) | | 20 | checking the optimal packings |
-| [10. Normal forms](#10-normal-forms) | | 21 to 23 | recognising the optimal packing |
+| [10. Normal forms](#10-normal-forms) | | 21 to 24 | recognising the optimal packing, and the converse |
+| [11. One framework for every case](#11-one-framework-for-every-case) | | | the three parts of every theorem |
 
 ## 1. The disk centre seen from a square
 
@@ -174,9 +175,9 @@ from its optimal packing, together with their mirror images. A point lies
 polygons $P_3$, $P_4$ and $P_5$ of the individual cases are defined on their
 pages.
 
-*Lean: [`P3`](../../SquaresInCircles/Three/Tangents.lean#L12),
-[`P4`](../../SquaresInCircles/Four/Tangents.lean#L12),
-[`P5`](../../SquaresInCircles/Five/Tangents.lean#L12).*
+*Lean: [`Three.P3`](../../SquaresInCircles/Three/Tangents.lean#L12),
+[`Four.P4`](../../SquaresInCircles/Four/Tangents.lean#L12),
+[`Five.P5`](../../SquaresInCircles/Five/Tangents.lean#L12).*
 
 ### Definition 11 (the octagon)
 
@@ -547,7 +548,7 @@ when $\varepsilon_S = -1$. $\square$
 
 *Lean:
 [`SquareChart.cartesian`](../../SquaresInCircles/Common/Coordinates.lean#L42),
-[`chart_represents`](../../SquaresInCircles/Common/NormalForm.lean#L175).*
+[`chart_represents`](../../SquaresInCircles/Common/NormalForm.lean#L212).*
 
 ## 6. Arcs of an exterior square
 
@@ -575,8 +576,8 @@ line of the lower edge at $-V_S$. The cap is the part of the circle inside the
 square. Here $V_S < A_S$, so the lower edge clips it and it runs from $-V_S$
 to $A_S$; when $A_S \le V_S$ it runs from $-A_S$ to $A_S$.*
 
-*Lean: [`threeCapA`](../../SquaresInCircles/Three/Exterior.lean#L21),
-[`threeCapV`](../../SquaresInCircles/Three/Exterior.lean#L22) (for
+*Lean: [`Three.capA`](../../SquaresInCircles/Three/Exterior.lean#L21),
+[`Three.capV`](../../SquaresInCircles/Three/Exterior.lean#L22) (for
 $r = \frac38$; written out in the other cases).*
 
 ### Lemma 12 (occupied interval)
@@ -834,6 +835,10 @@ $\square$
    in one coordinate.
 2. $\overline{Q(c)}$ lies in the closed disk of radius $R$ about the origin as
    soon as it lies in a box $[-B, B] \times [-C, C]$ with $B^2 + C^2 \le R^2$.
+3. Hence $Q(c_1), \dots, Q(c_n)$ form a packing in the closed disk of radius
+   $R$ about the origin as soon as any two of the centres differ by at least 1
+   in one coordinate and every centre $c_i = (x_i, y_i)$ has
+   $(|x_i| + \frac12)^2 + (|y_i| + \frac12)^2 \le R^2$.
 
 ![Two axis-parallel squares Q(p) and Q(q), inside a box of half-sides B and C centred at the origin, inside the dashed circle of radius root of B squared plus C squared](figures/axis-squares.svg)
 
@@ -841,10 +846,12 @@ $\square$
 which passes through its corners.*
 
 *Proof.* Two open unit intervals with centres at least 1 apart are disjoint.
-Every point of the box is within $\sqrt{B^2 + C^2}$ of the origin. $\square$
+Every point of the box is within $\sqrt{B^2 + C^2}$ of the origin. For (3),
+take $B = |x_i| + \frac12$ and $C = |y_i| + \frac12$ in (2). $\square$
 
 *Lean: [`axis_disjoint`](../../SquaresInCircles/Common/Constructions.lean#L22),
-[`axis_contained`](../../SquaresInCircles/Common/Constructions.lean#L31).*
+[`axis_contained`](../../SquaresInCircles/Common/Constructions.lean#L31),
+[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L44).*
 
 ## 10. Normal forms
 
@@ -889,8 +896,8 @@ slots, the assignment is a relabelling. The closed squares follow, since a
 closed square is the closure of the open one. $\square$
 
 *Lean:
-[`normal_form_of_slots`](../../SquaresInCircles/Common/NormalForm.lean#L145),
-[`same_open_same_closed`](../../SquaresInCircles/Common/NormalForm.lean#L80).
+[`normal_form_of_slots`](../../SquaresInCircles/Common/NormalForm.lean#L146),
+[`same_open_same_closed`](../../SquaresInCircles/Common/NormalForm.lean#L81).
 Lean reaches a boundary point along the segment from the centre instead of
 taking a closure.*
 
@@ -910,3 +917,34 @@ with $i$. Going round from $p_{m-1}$ to $p_0 + 2\pi$ is also at least $g$, so
 $p_{m-1} - (m - 1)g \le p_0$. Hence $p_i - ig$ is constant. $\square$
 
 *Lean: [`regular_polygon`](../../SquaresInCircles/Common/Angles.lean#L31).*
+
+### Lemma 24 (normal forms of a packing)
+
+If $Q(c_1), \dots, Q(c_n)$ form a packing in the closed disk of radius $R$
+about the origin, then every configuration with the normal form of
+$c_1, \dots, c_n$ is a packing in the closed disk of radius $R$ about its
+disk centre $o$.
+
+*Proof.* The frame of the normal form is an isometry of the plane that takes
+the origin to $o$ and each $Q(c_i)$, open and closed, onto a square of the
+configuration. Isometries preserve distances and disjointness. $\square$
+
+*Lean:
+[`HasNormalForm.packing`](../../SquaresInCircles/Common/NormalForm.lean#L176),
+[`frameEquiv_distance`](../../SquaresInCircles/Common/NormalForm.lean#L44).*
+
+## 11. One framework for every case
+
+Theorem $n$ has the same three parts for every case: a construction (by
+Lemma 20), a lower bound, and uniqueness. Uniqueness says that every packing at
+the optimal radius has the normal form of an optimal layout, and Lemma 24 gives
+the converse, so the optimal packings are exactly those normal forms. For
+$n \le 5$ there is one optimal layout; for $n = 7$ there is a family. In Lean
+each case bundles its three parts as an `Optimum`, from which attainment, the
+converse and uniqueness with an explicit isometry follow once for all cases.
+
+*Lean: [`Optimum`](../../SquaresInCircles/Common/Optimum.lean#L19),
+[`Optimum.attainment`](../../SquaresInCircles/Common/Optimum.lean#L48),
+[`Optimum.packing_iff`](../../SquaresInCircles/Common/Optimum.lean#L54),
+[`Optimum.rigid_uniqueness`](../../SquaresInCircles/Common/Optimum.lean#L60),
+[`Optimum.ofUnique`](../../SquaresInCircles/Common/Optimum.lean#L33).*

@@ -39,4 +39,15 @@ lemma axis_contained {c : Point} {B C R : ℝ}
   dsimp [inDisk,normSq,sub]
   linarith
 
+/-- Axis-parallel unit squares at pairwise separated centres, each inside the
+disk of radius `R` about the origin, form a packing. -/
+lemma axis_packing {n : ℕ} {c : Fin n → Point} {R : ℝ} (hR : 0 ≤ R)
+    (hsep : ∀ i j, i ≠ j → AxisSeparated (c i) (c j))
+    (hin : ∀ i, (|(c i).1|+1/2)^2+(|(c i).2|+1/2)^2 ≤ R^2) :
+    Packing (fun i => axisSquare (c i)) (0,0) R :=
+  ⟨hR,fun i => axis_contained (B := |(c i).1|+1/2) (C := |(c i).2|+1/2)
+      (by linarith [neg_abs_le (c i).1]) (by linarith [le_abs_self (c i).1])
+      (by linarith [neg_abs_le (c i).2]) (by linarith [le_abs_self (c i).2]) (hin i),
+    fun i j hij => axis_disjoint (hsep i j hij)⟩
+
 end SquaresInCircles

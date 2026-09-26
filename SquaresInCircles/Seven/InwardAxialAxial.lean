@@ -15,7 +15,7 @@ namespace SquaresInCircles.Seven
 lemma axial_remainder_pos {a u : ℝ} (h : Admissible a u)
     (hA : label a u = axial u) : 0 < remainder a u := by
   refine h.remainder_nonneg.lt_of_ne fun hz => ?_
-  have hc := Equality.remainder_zero h hz.symm
+  have hc := remainder_zero h hz.symm
   have hle := h.label_le_side
   rw [hA,hc.1,hc.2] at hle
   dsimp [axial,side] at hle

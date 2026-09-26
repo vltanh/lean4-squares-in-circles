@@ -55,7 +55,7 @@ lemma fixed_gap_nonneg {a u A v : ℝ} (s t : TransverseSign) (k : Fin 4)
   (fixed_gap_property a u A v s t k h h').1
 
 /-- A zero of a support sum at the gap `π/3` is a contact. -/
-theorem Equality.fixed_gap_zero {a u A v : ℝ} (s t : TransverseSign) (k : Fin 4)
+theorem fixed_gap_zero {a u A v : ℝ} (s t : TransverseSign) (k : Fin 4)
     (h : Admissible a u) (h' : Admissible A v)
     (hz : pairSupport a u A v s t k gap = 0) : OrderedContact a u A v s t :=
   (fixed_gap_property a u A v s t k h h').2 hz
@@ -65,7 +65,7 @@ theorem fixed_gap_pos {a u A v : ℝ} (s t : TransverseSign) (k : Fin 4)
     (h : StrictlyAdmissible a u) (h' : StrictlyAdmissible A v) :
     0<pairSupport a u A v s t k gap := by
   refine (fixed_gap_nonneg s t k h.admissible h'.admissible).lt_of_ne fun hz => ?_
-  exact Equality.contact_not_strict
-    (Equality.fixed_gap_zero s t k h.admissible h'.admissible hz.symm) h h'
+  exact contact_not_strict
+    (fixed_gap_zero s t k h.admissible h'.admissible hz.symm) h h'
 
 end SquaresInCircles.Seven

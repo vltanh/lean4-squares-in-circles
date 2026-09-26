@@ -15,9 +15,9 @@ $(0, -1)$, $(0, 0)$, $(0, 1)$.
    packing.
 2. A packing of seven unit squares in a closed disk of radius $R$ forces
    $R \ge R_7$.
-3. A packing of seven unit squares in a closed disk of radius $R_7$ has the
-   normal form of $(\pm1, \pm\frac12)$, $(0, y_1)$, $(0, y_2)$, $(0, y_3)$
-   for some $y_1, y_2, y_3$ as in (1).
+3. The packings of seven unit squares in a closed disk of radius $R_7$ are
+   exactly the configurations with the normal form of $(\pm1, \pm\frac12)$,
+   $(0, y_1)$, $(0, y_2)$, $(0, y_3)$ for some $y_1, y_2, y_3$ as in (1).
 
 So the optimum is not unique: by (1) the optimal packings form a
 three-parameter family, with infinitely many packings that no rotation and
@@ -47,10 +47,10 @@ than arcs of a single circle, and it uses the disk only through
 $\varphi(a_S, b_S) \le \frac{13}4$.
 
 *Lean:
-[`Seven.attainment`](../../SquaresInCircles/Seven/Construction.lean#L126),
-[`Seven.sliding_packing`](../../SquaresInCircles/Seven/Construction.lean#L90),
+[`Seven.sliding_packing`](../../SquaresInCircles/Seven/Construction.lean#L71),
 [`Seven.optimality`](../../SquaresInCircles/Seven/Optimality.lean#L37),
-[`Seven.uniqueness`](../../SquaresInCircles/Seven/Uniqueness.lean#L25), in
+[`Seven.uniqueness`](../../SquaresInCircles/Seven/Uniqueness.lean#L28),
+[`Seven.optimum`](../../SquaresInCircles/Seven/Uniqueness.lean#L34), in
 [`SquaresInCircles/Seven/`](../../SquaresInCircles/Seven).*
 
 ## Construction
@@ -77,10 +77,9 @@ squares reach it only at the ends of their range, so the column has
 $2\sqrt3 - 3$ of slack in total.
 
 *Lean: [`Seven.Column`](../../SquaresInCircles/Seven/Construction.lean#L42),
-[`Seven.slidingModel_disjoint`](../../SquaresInCircles/Seven/Construction.lean#L70),
-[`Seven.sliding_packing`](../../SquaresInCircles/Seven/Construction.lean#L90),
-[`Seven.model_packing`](../../SquaresInCircles/Seven/Construction.lean#L124),
-[`Seven.attainment`](../../SquaresInCircles/Seven/Construction.lean#L126).*
+[`Seven.sliding_packing`](../../SquaresInCircles/Seven/Construction.lean#L71),
+[`Seven.model_packing`](../../SquaresInCircles/Seven/Construction.lean#L109),
+[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L44).*
 
 ## Lower bound
 
@@ -338,8 +337,8 @@ separating-axis theorem for two squares. $\square$
 *Lean:
 [`Seven.SAT.separating_axes`](../../SquaresInCircles/Seven/SeparatingAxes.lean#L235),
 [`Seven.SAT.all_normals_strict`](../../SquaresInCircles/Seven/SeparatingAxes.lean#L219),
-[`Seven.Equality.canonical_has_separator`](../../SquaresInCircles/Seven/CanonicalPair.lean#L108),
-[`Seven.Equality.reverse_center_coordinates`](../../SquaresInCircles/Seven/CanonicalPair.lean#L89).*
+[`Seven.canonical_has_separator`](../../SquaresInCircles/Seven/CanonicalPair.lean#L107),
+[`Seven.reverse_center_coordinates`](../../SquaresInCircles/Seven/CanonicalPair.lean#L88).*
 
 #### Definition 7.11 (contacts)
 
@@ -360,12 +359,11 @@ state in a contact has a capped label. Every contact has the side state
 $(1, \frac12)$, where $\varphi = \frac94 + 1 = \frac{13}4$, so no contact
 consists of two strictly admissible states.
 
-*Lean:
-[`Seven.Equality.OrderedContact`](../../SquaresInCircles/Seven/Contacts.lean#L28),
-[`Seven.Equality.Side`](../../SquaresInCircles/Seven/Contacts.lean#L25),
-[`Seven.Equality.Axial`](../../SquaresInCircles/Seven/Contacts.lean#L26),
-[`Seven.Equality.contact_label_not_cap`](../../SquaresInCircles/Seven/Contacts.lean#L57),
-[`Seven.Equality.contact_not_strict`](../../SquaresInCircles/Seven/Contacts.lean#L74).*
+*Lean: [`Seven.OrderedContact`](../../SquaresInCircles/Seven/Contacts.lean#L27),
+[`Seven.SideState`](../../SquaresInCircles/Seven/Contacts.lean#L24),
+[`Seven.AxialState`](../../SquaresInCircles/Seven/Contacts.lean#L25),
+[`Seven.contact_label_not_cap`](../../SquaresInCircles/Seven/Contacts.lean#L56),
+[`Seven.contact_not_strict`](../../SquaresInCircles/Seven/Contacts.lean#L73).*
 
 #### Proposition 7.12 (the gap of $\frac\pi3$)
 
@@ -424,7 +422,7 @@ height $A$ free, as the sliding column requires.
 
 *Lean:
 [`Seven.fixed_gap_nonneg`](../../SquaresInCircles/Seven/FixedGap.lean#L52),
-[`Seven.Equality.fixed_gap_zero`](../../SquaresInCircles/Seven/FixedGap.lean#L58),
+[`Seven.fixed_gap_zero`](../../SquaresInCircles/Seven/FixedGap.lean#L58),
 [`Seven.fixed_gap_pos`](../../SquaresInCircles/Seven/FixedGap.lean#L64),
 [`Seven.fixed_gap_property`](../../SquaresInCircles/Seven/FixedGap.lean#L47),
 [`Seven.PairProperty`](../../SquaresInCircles/Seven/CapReduction.lean#L163),
@@ -442,9 +440,9 @@ height $A$ free, as the sliding column requires.
 [`Seven.fixed_gap_forward_negative_target`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L228),
 [`Seven.fixed_gap_forward_opposite_active`](../../SquaresInCircles/Seven/OppositeForward.lean#L271),
 [`Seven.fixed_gap_forward_both_negative_side`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L378),
-[`Seven.Equality.remainder_zero`](../../SquaresInCircles/Seven/Contacts.lean#L33),
-[`Seven.Equality.axial_of_transverse_zero`](../../SquaresInCircles/Seven/Contacts.lean#L40),
-[`Seven.Equality.side_side_zero`](../../SquaresInCircles/Seven/SideSide.lean#L185).*
+[`Seven.remainder_zero`](../../SquaresInCircles/Seven/Contacts.lean#L32),
+[`Seven.axial_of_transverse_zero`](../../SquaresInCircles/Seven/Contacts.lean#L39),
+[`Seven.side_side_zero`](../../SquaresInCircles/Seven/SideSide.lean#L185).*
 
 #### Lemma 7.13 (small gaps)
 
@@ -504,9 +502,9 @@ point of the stretch but its left end is a leftmost minimum.
 *Lean:
 [`Seven.leftmost_nonpositive_minimum`](../../SquaresInCircles/Seven/AngularMinima.lean#L55),
 [`Seven.sinusoid_leftmost_minimum`](../../SquaresInCircles/Seven/AngularMinima.lean#L96),
-[`Seven.Equality.cardinal_target_pos_below`](../../SquaresInCircles/Seven/SmallAndParallelGaps.lean#L163),
-[`Seven.Equality.opposite_labels_ge`](../../SquaresInCircles/Seven/ParallelLabels.lean#L49),
-[`Seven.Equality.quarter_difference_le`](../../SquaresInCircles/Seven/ParallelLabels.lean#L115),
+[`Seven.cardinal_target_pos_below`](../../SquaresInCircles/Seven/SmallAndParallelGaps.lean#L163),
+[`Seven.opposite_labels_ge`](../../SquaresInCircles/Seven/ParallelLabels.lean#L49),
+[`Seven.quarter_difference_le`](../../SquaresInCircles/Seven/ParallelLabels.lean#L115),
 [`Seven.stationary_nearest_corner`](../../SquaresInCircles/Seven/NearestCornerMinimum.lean#L64),
 [`Seven.corner_source_margin`](../../SquaresInCircles/Seven/NearestCornerMinimum.lean#L147),
 [`Seven.smooth_leftmost_support_pos`](../../SquaresInCircles/Seven/NearestCornerMinimum.lean#L248).*
@@ -521,7 +519,7 @@ then $\sigma_k(1) > 0$ (Lemma 7.13), $\sigma_k(\frac\pi3) \ge 0$
 (Proposition 7.12), and Lemma 7.14 gives a contradiction. $\square$
 
 *Lean:
-[`Seven.Equality.all_gap_pos_below`](../../SquaresInCircles/Seven/AllGaps.lean#L23).*
+[`Seven.all_gap_pos_below`](../../SquaresInCircles/Seven/AllGaps.lean#L23).*
 
 #### Theorem 7.16 (marker separation)
 
@@ -547,12 +545,12 @@ with flipped signs is a contact of the pair itself. The last claim follows by
 Definition 7.11. $\square$
 
 *Lean:
-[`Seven.Equality.marker_separation_closed`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L73),
-[`Seven.Equality.ordered_chart_contact`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L98),
-[`Seven.marker_separation`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L117),
-[`Seven.Equality.charts_disjoint_canonical`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L36),
+[`Seven.marker_separation_closed`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L72),
+[`Seven.ordered_chart_contact`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L97),
+[`Seven.marker_separation`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L115),
+[`Seven.charts_disjoint_canonical`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L35),
 [`Seven.chartMarker_formula`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L29),
-[`Seven.Equality.reflected_reverse_contact`](../../SquaresInCircles/Seven/Contacts.lean#L68).*
+[`Seven.reflected_reverse_contact`](../../SquaresInCircles/Seven/Contacts.lean#L67).*
 
 ### Step 5. Conclusion
 
@@ -568,9 +566,9 @@ $g = \frac\pi3$. Two neighbours of that hexagon are exactly $\frac\pi3$ apart.
 $\square$
 
 *Lean:
-[`Seven.Equality.six_directions_hexagon`](../../SquaresInCircles/Seven/CircleBudget.lean#L16),
-[`Seven.Equality.hexagon_successor`](../../SquaresInCircles/Seven/CircleBudget.lean#L26),
-[`Seven.six_markers_impossible`](../../SquaresInCircles/Seven/CircleBudget.lean#L35),
+[`Seven.six_directions_hexagon`](../../SquaresInCircles/Seven/CircleBudget.lean#L15),
+[`Seven.hexagon_successor`](../../SquaresInCircles/Seven/CircleBudget.lean#L25),
+[`Seven.six_markers_impossible`](../../SquaresInCircles/Seven/CircleBudget.lean#L33),
 [`regular_polygon`](../../SquaresInCircles/Common/Angles.lean#L31).*
 
 *Proof of Proposition 7.2.* Suppose $R^2 < \frac{13}4$. By Lemma 7.3 six of the
@@ -603,8 +601,8 @@ are exterior, with admissible states by
 markers pairwise at least $\frac\pi3$ apart, against (1). $\square$
 
 *Lean:
-[`Seven.Equality.seven_directions_impossible`](../../SquaresInCircles/Seven/Uniqueness/SevenMarkers.lean#L16),
-[`Seven.Equality.exists_containing`](../../SquaresInCircles/Seven/Uniqueness/SevenMarkers.lean#L32).*
+[`Seven.seven_directions_impossible`](../../SquaresInCircles/Seven/Uniqueness/SevenMarkers.lean#L15),
+[`Seven.exists_containing`](../../SquaresInCircles/Seven/Uniqueness/SevenMarkers.lean#L31).*
 
 ### Proposition 7.19 (the ring)
 
@@ -634,11 +632,11 @@ $h$ and $k$ are the first coordinates of the two axial states, and
 Definition 7.11 bounds them. $\square$
 
 *Lean:
-[`Seven.Equality.six_exterior_ring`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L136),
-[`Seven.Equality.ring_of_ordered_contacts`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L96),
-[`Seven.Equality.contact_kinds`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L26),
-[`Seven.Equality.cycle_steps`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L55),
-[`Seven.ExteriorRing`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L85).*
+[`Seven.six_exterior_ring`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L133),
+[`Seven.ring_of_ordered_contacts`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L93),
+[`Seven.contact_kinds`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L25),
+[`Seven.cycle_steps`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L54),
+[`Seven.ExteriorRing`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L83).*
 
 ### Lemma 7.20 (the square in the middle)
 
@@ -658,16 +656,15 @@ the sides of $S$ are parallel to the axes, its centre is on $x = 0$, and
 $|z| < \frac12$ because $S$ contains $o$. $\square$
 
 *Lean:
-[`Seven.Equality.central_square_represents`](../../SquaresInCircles/Seven/Uniqueness/CentralSquare.lean#L61),
-[`Seven.Equality.central_strip`](../../SquaresInCircles/Seven/Uniqueness/CentralSquare.lean#L26),
-[`Seven.Equality.section_strip_rigidity`](../../SquaresInCircles/Seven/Uniqueness/CenterSection.lean#L45).*
+[`Seven.central_square_represents`](../../SquaresInCircles/Seven/Uniqueness/CentralSquare.lean#L60),
+[`Seven.central_strip`](../../SquaresInCircles/Seven/Uniqueness/CentralSquare.lean#L25),
+[`Seven.section_strip_rigidity`](../../SquaresInCircles/Seven/Uniqueness/CenterSection.lean#L45).*
 
 ### Proposition 7.21 (uniqueness)
 
 If seven pairwise disjoint unit squares lie in the closed disk of radius $R_7$
 about $o$, the packing has the normal form of $(\pm1, \pm\frac12)$,
 $(0, y_1)$, $(0, y_2)$, $(0, y_3)$ for some $y_1, y_2, y_3$ as in Theorem 7.
-Conversely, every such normal form is a packing in that disk.
 
 *Proof.* By Lemma 7.18 some square contains $o$. The other six are exterior,
 with admissible states by Lemma 1, and Proposition 7.19 places them in a frame
@@ -677,12 +674,13 @@ of the frame, so $-k + 1 \le z$ and $z + 1 \le h$. With
 $h, k \le \sqrt3 - \frac12$ these are the conditions of Theorem 7 for
 $(y_1, y_2, y_3) = (-k, z, h)$, and
 [Lemma 22](common.md#lemma-22-from-slots-to-a-normal-form) gives the normal
-form. The converse is Proposition 7.1, moved to $o$ by the rotation. $\square$
+form. $\square$
 
-*Lean: [`Seven.uniqueness`](../../SquaresInCircles/Seven/Uniqueness.lean#L25),
-[`Seven.packing_iff_sliding`](../../SquaresInCircles/Seven/Uniqueness.lean#L30),
-[`Seven.Equality.normal_form_of_containing`](../../SquaresInCircles/Seven/Uniqueness/Reconstruction.lean#L28),
-[`Seven.Equality.column_centers_separated`](../../SquaresInCircles/Seven/Uniqueness/Reconstruction.lean#L16),
-[`Seven.SlidingNormalForm`](../../SquaresInCircles/Seven/Uniqueness/NormalForm.lean#L15),
-[`Seven.SlidingNormalForm.packing`](../../SquaresInCircles/Seven/Uniqueness/NormalForm.lean#L27),
-[`Seven.classification_by_slots`](../../SquaresInCircles/Seven/Uniqueness.lean#L36).*
+*Lean: [`Seven.uniqueness`](../../SquaresInCircles/Seven/Uniqueness.lean#L28),
+[`Seven.normal_form_of_containing`](../../SquaresInCircles/Seven/Uniqueness/Reconstruction.lean#L26),
+[`Seven.column_centers_separated`](../../SquaresInCircles/Seven/Uniqueness/Reconstruction.lean#L14),
+[`Seven.classification_by_slots`](../../SquaresInCircles/Seven/Uniqueness.lean#L48).*
+
+Proposition 7.1 and [Lemma 24](common.md#lemma-24-normal-forms-of-a-packing)
+give the converse: every configuration with this normal form is a packing in
+the closed disk of radius $R_7$.

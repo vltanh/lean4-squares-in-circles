@@ -17,7 +17,7 @@ strict 16-gon, so the same argument serves the optimum and its uniqueness.
 -/
 noncomputable section
 open Set
-namespace SquaresInCircles
+namespace SquaresInCircles.Three
 
 /-! ## Deficit and compensation estimates
 
@@ -25,7 +25,7 @@ The variables `P`, `Q`, `u`, `v` of the compensation lemma are normalized by
 the auxiliary radius `3/8`. The only calculus step is a one-dimensional
 monotonicity comparison, with explicit positive square-root denominators. -/
 
-lemma three_asin_increment_mono {P u : ℝ}
+lemma asin_increment_mono {P u : ℝ}
     (hP : 0 ≤ P) (hPu : P ≤ u) (hu : u < 1/2)
     (htop : 1/2+(16/13)*u < 1) :
     Real.arcsin (1/2+(16/13)*P)-Real.arcsin P ≤
@@ -71,7 +71,7 @@ lemma three_asin_increment_mono {P u : ℝ}
   exact hmono ⟨le_rfl,hPu⟩ ⟨hPu,le_rfl⟩ hPu
 
 /-- A clipped neighboring arc plus the containing arc already exceed 240 degrees. -/
-lemma three_compensation {P Q u v : ℝ}
+lemma compensation {P Q u v : ℝ}
     (hP : 0 ≤ P) (hQ : Q ∈ Icc (0:ℝ) 1)
     (hcentral : 1/2 < (16/13)*P+Q) (hPu : P ≤ u)
     (hv : 1/2+(16/13)*u ≤ v) (hv1 : v < 1) :
@@ -79,7 +79,7 @@ lemma three_compensation {P Q u v : ℝ}
       (Real.pi/2-Real.arcsin u+Real.arcsin v)+
       (Real.pi/2+Real.arcsin P+Real.arcsin Q) := by
   have htop : 1/2+(16/13)*u < 1 := hv.trans_lt hv1
-  have hinc := three_asin_increment_mono hP hPu (by linarith) htop
+  have hinc := asin_increment_mono hP hPu (by linarith) htop
   have hvmono := Real.arcsin_le_arcsin hv
   have htP : 1/2+(16/13)*P ∈ Icc (0:ℝ) 1 := ⟨by linarith,by linarith⟩
   have hpair := arcsin_sum_gt_of_sin_lt htP hQ
@@ -88,17 +88,17 @@ lemma three_compensation {P Q u v : ℝ}
   linarith
 
 /-- The deficit bounds use the two first contact tangents, not numerical trig. -/
-lemma three_deficit_bounds {a b : ℝ} (hba : b ≤ a) (ha1 : a < 1/2) (hp : P3Strict a b)
-    (hlen : Real.pi/2+Real.arcsin ((1/2-a)/auxThree)+
-      Real.arcsin ((1/2-b)/auxThree) ≤ 2*Real.pi/3) :
-    0 < (1/2-a)/auxThree ∧ (1/2-a)/auxThree ≤ (1/2-b)/auxThree ∧
-      (1/2-b)/auxThree < 1 ∧ 1/2 < (16/13)*((1/2-a)/auxThree)+(1/2-b)/auxThree ∧
-      Real.pi/6-Real.arcsin ((1/2-a)/auxThree)-Real.arcsin ((1/2-b)/auxThree) < 1/12 := by
-  have hP : 0 < (1/2-a)/auxThree := by dsimp [auxThree]; linarith
-  have hPQ : (1/2-a)/auxThree ≤ (1/2-b)/auxThree := by dsimp [auxThree]; linarith
-  have hcentral : 1/2 < (16/13)*((1/2-a)/auxThree)+(1/2-b)/auxThree := by
-    dsimp [auxThree]; linarith [hp.1]
-  have hQ1 : (1/2-b)/auxThree < 1 := by
+lemma deficit_bounds {a b : ℝ} (hba : b ≤ a) (ha1 : a < 1/2) (hp : P3Strict a b)
+    (hlen : Real.pi/2+Real.arcsin ((1/2-a)/aux)+
+      Real.arcsin ((1/2-b)/aux) ≤ 2*Real.pi/3) :
+    0 < (1/2-a)/aux ∧ (1/2-a)/aux ≤ (1/2-b)/aux ∧
+      (1/2-b)/aux < 1 ∧ 1/2 < (16/13)*((1/2-a)/aux)+(1/2-b)/aux ∧
+      Real.pi/6-Real.arcsin ((1/2-a)/aux)-Real.arcsin ((1/2-b)/aux) < 1/12 := by
+  have hP : 0 < (1/2-a)/aux := by dsimp [aux]; linarith
+  have hPQ : (1/2-a)/aux ≤ (1/2-b)/aux := by dsimp [aux]; linarith
+  have hcentral : 1/2 < (16/13)*((1/2-a)/aux)+(1/2-b)/aux := by
+    dsimp [aux]; linarith [hp.1]
+  have hQ1 : (1/2-b)/aux < 1 := by
     apply Real.arcsin_lt_pi_div_two.mp
     linarith [Real.pi_pos,Real.arcsin_pos.mpr hP]
   have hAP := arcsin_ge_self hP.le (hPQ.trans hQ1.le)
@@ -106,7 +106,7 @@ lemma three_deficit_bounds {a b : ℝ} (hba : b ≤ a) (ha1 : a < 1/2) (hp : P3S
   exact ⟨hP,hPQ,hQ1,hcentral,by linarith [pi_lt_22_over_7]⟩
 
 /-- A cap within 1/24 radians of pi/3 has radial coordinate > 9/20. -/
-lemma three_cap_near_axis {u : ℝ} (hu0 : 0 ≤ u) (hu1 : u ≤ 1/2)
+lemma cap_near_axis {u : ℝ} (hu0 : 0 ≤ u) (hu1 : u ≤ 1/2)
     (hA : Real.arccos u < Real.pi/3+1/24) : 9/20 < u := by
   have hAlow : Real.pi/3 ≤ Real.arccos u := by
     have h := arcsin_le_sixth hu0 hu1
@@ -137,32 +137,32 @@ never assumed to be the entire intersection. The exterior witness has a
 specified clipped-cap length; once clipping is excluded, it is centred on the
 square's radial phase. -/
 
-lemma three_containing_mem {a b t : ℝ}
+lemma containing_mem {a b t : ℝ}
     (ha : 0 ≤ a) (hb : 0 ≤ b) (ha1 : a < 1/2) (hb1 : b < 1/2)
-    (ht : t ∈ Ioo (-Real.arcsin ((1/2-b)/auxThree))
-      (Real.pi/2+Real.arcsin ((1/2-a)/auxThree))) :
-    |auxThree*Real.cos t-a| < 1/2 ∧ |auxThree*Real.sin t-b| < 1/2 := by
-  have hp : 0 < (1/2-a)/auxThree := by dsimp [auxThree]; linarith
-  have hq : 0 < (1/2-b)/auxThree := by dsimp [auxThree]; linarith
+    (ht : t ∈ Ioo (-Real.arcsin ((1/2-b)/aux))
+      (Real.pi/2+Real.arcsin ((1/2-a)/aux))) :
+    |aux*Real.cos t-a| < 1/2 ∧ |aux*Real.sin t-b| < 1/2 := by
+  have hp : 0 < (1/2-a)/aux := by dsimp [aux]; linarith
+  have hq : 0 < (1/2-b)/aux := by dsimp [aux]; linarith
   have ht0 : -(Real.pi/2) < t := by
-    linarith [Real.arcsin_le_pi_div_two ((1/2-b)/auxThree),ht.1]
+    linarith [Real.arcsin_le_pi_div_two ((1/2-b)/aux),ht.1]
   have ht1 : t < Real.pi := by
-    linarith [Real.arcsin_le_pi_div_two ((1/2-a)/auxThree),ht.2]
-  have hcos : -((1/2-a)/auxThree) < Real.cos t := by
+    linarith [Real.arcsin_le_pi_div_two ((1/2-a)/aux),ht.2]
+  have hcos : -((1/2-a)/aux) < Real.cos t := by
     by_cases ht2 : t ≤ Real.pi/2
     · have hc := Real.cos_nonneg_of_mem_Icc ⟨ht0.le,ht2⟩
       linarith
     · have hdom : Real.pi/2-t ∈ Ioc (-(Real.pi/2)) (Real.pi/2) :=
         ⟨by linarith,by linarith [Real.pi_pos]⟩
-      have haS : Real.arcsin (-((1/2-a)/auxThree)) < Real.pi/2-t := by
+      have haS : Real.arcsin (-((1/2-a)/aux)) < Real.pi/2-t := by
         rw [Real.arcsin_neg]
         linarith [ht.2]
       have h := (Real.arcsin_lt_iff_lt_sin' hdom).mp haS
       simpa only [Real.sin_pi_div_two_sub] using h
-  have hsin : -((1/2-b)/auxThree) < Real.sin t := by
+  have hsin : -((1/2-b)/aux) < Real.sin t := by
     by_cases ht2 : t ≤ Real.pi/2
     · have h := (Real.arcsin_lt_iff_lt_sin' ⟨ht0,ht2⟩).mp
-        (show Real.arcsin (-((1/2-b)/auxThree)) < t by
+        (show Real.arcsin (-((1/2-b)/aux)) < t by
           rw [Real.arcsin_neg]; exact ht.1)
       exact h
     · have hs := Real.sin_nonneg_of_nonneg_of_le_pi
@@ -170,31 +170,31 @@ lemma three_containing_mem {a b t : ℝ}
       linarith
   have hc1 := Real.cos_le_one t
   have hs1 := Real.sin_le_one t
-  dsimp [auxThree] at hcos hsin ⊢
+  dsimp [aux] at hcos hsin ⊢
   exact ⟨abs_lt.mpr ⟨by linarith,by linarith⟩,
     abs_lt.mpr ⟨by linarith,by linarith⟩⟩
 
-lemma three_containing_arc_formula {S : UnitSquare} {o : Point}
+lemma containing_arc_formula {S : UnitSquare} {o : Point}
     (C : SquareChart S o) (ho : openSquare S o) :
-    ∃ A : OpenArc o auxThree {z | openSquare S z},
-      2*A.halfWidth=Real.pi/2+Real.arcsin ((1/2-C.a)/auxThree)+
-        Real.arcsin ((1/2-C.b)/auxThree) := by
+    ∃ A : OpenArc o aux {z | openSquare S z},
+      2*A.halfWidth=Real.pi/2+Real.arcsin ((1/2-C.a)/aux)+
+        Real.arcsin ((1/2-C.b)/aux) := by
   have hc := C.origin.mp ho
   have hP0 := Real.arcsin_pos.mpr
-    (show 0 < (1/2-C.a)/auxThree by dsimp [auxThree]; linarith [hc.1])
+    (show 0 < (1/2-C.a)/aux by dsimp [aux]; linarith [hc.1])
   have hQ0 := Real.arcsin_pos.mpr
-    (show 0 < (1/2-C.b)/auxThree by dsimp [auxThree]; linarith [hc.2])
-  obtain ⟨A,hA,-⟩ := C.arc auxThree
-    (-Real.arcsin ((1/2-C.b)/auxThree))
-    (Real.pi/2+Real.arcsin ((1/2-C.a)/auxThree))
+    (show 0 < (1/2-C.b)/aux by dsimp [aux]; linarith [hc.2])
+  obtain ⟨A,hA,-⟩ := C.arc aux
+    (-Real.arcsin ((1/2-C.b)/aux))
+    (Real.pi/2+Real.arcsin ((1/2-C.a)/aux))
     (by linarith [Real.pi_pos])
-    (by linarith [Real.pi_pos,Real.arcsin_le_pi_div_two ((1/2-C.a)/auxThree),
-      Real.arcsin_le_pi_div_two ((1/2-C.b)/auxThree)])
-    (fun t ht => three_containing_mem C.nonneg.1 C.nonneg.2 hc.1 hc.2 ht)
+    (by linarith [Real.pi_pos,Real.arcsin_le_pi_div_two ((1/2-C.a)/aux),
+      Real.arcsin_le_pi_div_two ((1/2-C.b)/aux)])
+    (fun t ht => containing_mem C.nonneg.1 C.nonneg.2 hc.1 hc.2 ht)
   exact ⟨A,by rw [hA]; ring⟩
 
 /-- Disjointness from the inscribed disk forces the exterior radial gap. -/
-lemma three_gap_from_containing {S T : UnitSquare} {o : Point}
+lemma gap_from_containing {S T : UnitSquare} {o : Point}
     (C : SquareChart S o) (D : SquareChart T o)
     (hCsort : C.b ≤ C.a) (ho : openSquare S o)
     (hDa : 1/2 ≤ D.a) (hDp : P3 D.a D.b)
@@ -225,27 +225,27 @@ lemma three_gap_from_containing {S T : UnitSquare} {o : Point}
   exact Set.disjoint_left.mp hd hzS hzT
 
 /-- The budget excludes clipping, and forces a small transverse center coordinate. -/
-lemma three_cap_reduction {a b P Q : ℝ}
+lemma cap_reduction {a b P Q : ℝ}
     (ha : 1/2 ≤ a) (hb : 0 ≤ b) (hp : P3 a b)
     (hP : 0 ≤ P) (hQ : Q ∈ Icc (0:ℝ) 1)
-    (hcentral : 1/2 < (16/13)*P+Q) (hgap : P ≤ (a-1/2)/auxThree)
+    (hcentral : 1/2 < (16/13)*P+Q) (hgap : P ≤ (a-1/2)/aux)
     (hδ : Real.pi/6-Real.arcsin P-Real.arcsin Q < 1/12)
-    (hbudget : threeCapLength a b+(Real.pi/2+Real.arcsin P+Real.arcsin Q) ≤ 4*Real.pi/3) :
-    threeCapA a ≤ threeCapV b ∧ b < 1/16 ∧ a ≤ 11/16 := by
-  obtain ⟨hx0,hx1,hv,hA,hAp,hmin⟩ := three_cap_data ha hb hp
-  have hfull : threeCapA a ≤ threeCapV b := by
+    (hbudget : capLength a b+(Real.pi/2+Real.arcsin P+Real.arcsin Q) ≤ 4*Real.pi/3) :
+    capA a ≤ capV b ∧ b < 1/16 ∧ a ≤ 11/16 := by
+  obtain ⟨hx0,hx1,hv,hA,hAp,hmin⟩ := cap_data ha hb hp
+  have hfull : capA a ≤ capV b := by
     by_contra hn
-    have hclip : threeCapV b < threeCapA a := lt_of_not_ge hn
-    have hv1 : (1/2-b)/auxThree < 1 :=
+    have hclip : capV b < capA a := lt_of_not_ge hn
+    have hv1 : (1/2-b)/aux < 1 :=
       Real.arcsin_lt_pi_div_two.mp (hclip.trans_le hAp)
-    have hcomp := three_compensation hP hQ hcentral hgap hv hv1
-    rw [threeCapLength,min_eq_right (by linarith)] at hbudget
-    dsimp [threeCapA,threeCapV,Real.arccos] at hbudget
+    have hcomp := compensation hP hQ hcentral hgap hv hv1
+    rw [capLength,min_eq_right (by linarith)] at hbudget
+    dsimp [capA,capV,Real.arccos] at hbudget
     linarith
-  have hlen : threeCapLength a b=2*threeCapA a := min_eq_left (by linarith)
-  have hnear : threeCapA a < Real.pi/3+1/24 := by rw [hlen] at hbudget; linarith
-  have hrad := three_cap_near_axis hx0 hx1 hnear
-  dsimp [auxThree] at hrad
+  have hlen : capLength a b=2*capA a := min_eq_left (by linarith)
+  have hnear : capA a < Real.pi/3+1/24 := by rw [hlen] at hbudget; linarith
+  have hrad := cap_near_axis hx0 hx1 hnear
+  dsimp [aux] at hrad
   exact ⟨hfull,by linarith [hp.2.2.1],by linarith [hp.2.2.1]⟩
 
 /-! ## Two nearly axial squares overlap
@@ -330,7 +330,7 @@ lemma near_axis_square_overlap {S T : UnitSquare} {o : Point}
 
 /-- The containing alternative: the square that contains `o` needs the strict
 16-gon, the other two only the closed one. -/
-theorem three_containing_impossible (S : Fin 3 → UnitSquare) (o : Point)
+theorem containing_impossible (S : Fin 3 → UnitSquare) (o : Point)
     (hd : InteriorDisjoint S) (i : Fin 3) (ho : openSquare (S i) o)
     (hS : P3Strict (alpha (S i) o) (beta (S i) o))
     (hp : ∀ j, P3 (alpha (S j) o) (beta (S j) o)) : False := by
@@ -348,28 +348,28 @@ theorem three_containing_impossible (S : Fin 3 → UnitSquare) (o : Point)
   have hDa := D.exterior hDsort fun h => Set.disjoint_left.mp hST ho h
   have hEa := E.exterior hEsort fun h => Set.disjoint_left.mp hSU ho h
   have hinside := C.origin.mp ho
-  obtain ⟨A,hA⟩ := three_containing_arc_formula C ho
-  obtain ⟨B,hB,hBc⟩ := three_cap_arc_formula D hDa hpD
-  obtain ⟨G,hG,hGc⟩ := three_cap_arc_formula E hEa hpE
-  have hDdata := three_cap_data hDa D.nonneg.2 hpD
-  have hEdata := three_cap_data hEa E.nonneg.2 hpE
+  obtain ⟨A,hA⟩ := containing_arc_formula C ho
+  obtain ⟨B,hB,hBc⟩ := cap_arc_formula D hDa hpD
+  obtain ⟨G,hG,hGc⟩ := cap_arc_formula E hEa hpE
+  have hDdata := cap_data hDa D.nonneg.2 hpD
+  have hEdata := cap_data hEa E.nonneg.2 hpE
   have hbudget := triple_arc_budget A B G hST hSU hTU
-  obtain ⟨hP0,hPQ,hQ1,hcentral,hδ⟩ := three_deficit_bounds hCsort hinside.1 hpC
+  obtain ⟨hP0,hPQ,hQ1,hcentral,hδ⟩ := deficit_bounds hCsort hinside.1 hpC
     (by linarith [hDdata.2.2.2.2.2,hEdata.2.2.2.2.2])
-  have hQ : (1/2-C.b)/auxThree ∈ Icc (0:ℝ) 1 := ⟨hP0.le.trans hPQ,hQ1.le⟩
-  have hgapD := three_gap_from_containing C D hCsort ho hDa hpD hST
-  have hgapE := three_gap_from_containing C E hCsort ho hEa hpE hSU
-  obtain ⟨hDfull,hDb,hDamax⟩ := three_cap_reduction hDa D.nonneg.2 hpD hP0.le hQ
-    hcentral (by dsimp [auxThree]; linarith) hδ (by linarith [hEdata.2.2.2.2.2])
-  obtain ⟨hEfull,hEb,hEamax⟩ := three_cap_reduction hEa E.nonneg.2 hpE hP0.le hQ
-    hcentral (by dsimp [auxThree]; linarith) hδ (by linarith [hDdata.2.2.2.2.2])
+  have hQ : (1/2-C.b)/aux ∈ Icc (0:ℝ) 1 := ⟨hP0.le.trans hPQ,hQ1.le⟩
+  have hgapD := gap_from_containing C D hCsort ho hDa hpD hST
+  have hgapE := gap_from_containing C E hCsort ho hEa hpE hSU
+  obtain ⟨hDfull,hDb,hDamax⟩ := cap_reduction hDa D.nonneg.2 hpD hP0.le hQ
+    hcentral (by dsimp [aux]; linarith) hδ (by linarith [hEdata.2.2.2.2.2])
+  obtain ⟨hEfull,hEb,hEamax⟩ := cap_reduction hEa E.nonneg.2 hpE hP0.le hQ
+    hcentral (by dsimp [aux]; linarith) hδ (by linarith [hDdata.2.2.2.2.2])
   have hdist := A.third_distance_bounds B G hST hSU hTU
   rw [hBc hDfull,hGc hEfull] at hdist
-  have hBw : threeCapLength D.a D.b=2*threeCapA D.a := min_eq_left (by linarith)
-  have hGw : threeCapLength E.a E.b=2*threeCapA E.a := min_eq_left (by linarith)
+  have hBw : capLength D.a D.b=2*capA D.a := min_eq_left (by linarith)
+  have hGw : capLength E.a E.b=2*capA E.a := min_eq_left (by linarith)
   obtain ⟨z,hzT,hzU⟩ := near_axis_square_overlap D E ⟨hDa,hDamax⟩ hDb ⟨hEa,hEamax⟩ hEb
     (by linarith [hDdata.2.2.2.1,hEdata.2.2.2.1])
     (by linarith [hDdata.2.2.2.1,hEdata.2.2.2.1])
   exact Set.disjoint_left.mp hTU hzT hzU
 
-end SquaresInCircles
+end SquaresInCircles.Three

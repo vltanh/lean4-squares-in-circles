@@ -1,6 +1,5 @@
 import SquaresInCircles.Seven.Uniqueness.ContactCycle
 import SquaresInCircles.Seven.Uniqueness.CentralSquare
-import SquaresInCircles.Seven.Uniqueness.NormalForm
 
 /-!
 # Reconstruction
@@ -10,7 +9,6 @@ heights of the middle column at least 1 apart: the sliding normal form.
 -/
 noncomputable section
 namespace SquaresInCircles.Seven
-namespace Equality
 
 /-- Two aligned squares in one column cannot have centers less than one apart. -/
 lemma column_centers_separated {S T : UnitSquare} {o : Point} {φ : Direction} {x y : ℝ}
@@ -27,7 +25,7 @@ def outerSlot : Fin 6 → Fin 7 := ![0,1,6,3,2,4]
 sliding normal form. -/
 theorem normal_form_of_containing (S : Fin 7 → UnitSquare) (o : Point)
     (hp : Packing S o radius) (k : Fin 7) (hk : openSquare (S k) o) :
-    SlidingNormalForm S o := by
+    ∃ c : Column, HasNormalForm S o (slidingCenters c) := by
   obtain ⟨W⟩ := six_exterior_ring (fun i => S (k.succAbove i)) o
     (fun i j hij => hp.disjoint _ _ (Fin.succAbove_right_injective.ne hij))
     (fun i hi => hp.disjoint _ k (k.succAbove_ne i) o ⟨hi,hk⟩)
@@ -55,5 +53,4 @@ theorem normal_form_of_containing (S : Fin 7 → UnitSquare) (o : Point)
     fin_cases l <;> simp [ringCenters,slidingCenters,outerSlot,c]
   exact ⟨outerSlot l,hslot ▸ W.represents l⟩
 
-end Equality
 end SquaresInCircles.Seven

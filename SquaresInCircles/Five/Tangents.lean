@@ -7,7 +7,7 @@ Tangents to `phi = 5/2` at `(1, 0)`, `(0, 1)` and `((√5-1)/2, (√5-1)/2)` bou
 every square of a five-square packing; `P5Strict` is the strict version.
 -/
 noncomputable section
-namespace SquaresInCircles
+namespace SquaresInCircles.Five
 
 def P5 (a b : ℝ) : Prop := P8 a b ∧ a+b ≤ Real.sqrt 5-1
 def P5Strict (a b : ℝ) : Prop := P8Strict a b ∧ a+b < Real.sqrt 5-1
@@ -43,4 +43,4 @@ lemma p5_swap {a b : ℝ} (h : P5 a b) : P5 b a := by
   rcases h with ⟨⟨h₀,h₁⟩,h₂⟩
   exact ⟨⟨by linarith, by linarith⟩, by linarith⟩
 
-end SquaresInCircles
+end SquaresInCircles.Five

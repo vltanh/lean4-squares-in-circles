@@ -7,7 +7,7 @@ The tangent to `phi = 2` at `(1/2, 1/2)` bounds every square of a four-square
 packing by `a + b ≤ 1`; `P4Strict` is the strict version.
 -/
 noncomputable section
-namespace SquaresInCircles
+namespace SquaresInCircles.Four
 
 def P4 (a b : ℝ) : Prop := a+b ≤ 1
 def P4Strict (a b : ℝ) : Prop := a+b < 1
@@ -25,4 +25,4 @@ lemma p4Strict_to_p8Strict {a b : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b)
   dsimp [P4Strict] at h
   exact ⟨by linarith, by linarith⟩
 
-end SquaresInCircles
+end SquaresInCircles.Four

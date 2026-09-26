@@ -188,8 +188,9 @@ These are `One.centers`, …, `Five.centers` and `Seven.centers`;
 builds its optimal packing as `model i = axisSquare (centers i)`, the
 axis-parallel square centred at `centers i`.
 
-## The sliding family
+## The optimal layouts
 
+For `n ≤ 5` the optimal packing is unique, and its layout is `modelCenters n`.
 For `n = 7` the optimum is not unique: the column of three squares in the
 middle can slide. A `Column` records its three heights
 (`Seven/Construction.lean`):
@@ -213,13 +214,14 @@ def Seven.slidingCenters (c : Column) : Fin 7 → Point :=
 
 The heights are at least 1 apart, so the three squares do not overlap, and
 within `√3 - 1/2` of the disk centre, so they fit in the disk of radius `√13/2`.
-`Seven.centers` is the member with heights `-1, 0, 1`. Uniqueness for seven
-squares says that every optimal packing has the normal form of
-`slidingCenters c` for some column `c` (`Seven/Uniqueness/NormalForm.lean`):
+`Seven.centers` is the member with heights `-1, 0, 1`. The root file collects
+the layouts of all optimal packings, and uniqueness says that every optimal
+packing has the normal form of one of them (`SquaresInCircles.lean`):
 
 ```lean
-def Seven.SlidingNormalForm (S : Fin 7 → UnitSquare) (o : Point) : Prop :=
-  ∃ c : Column, HasNormalForm S o (slidingCenters c)
+def optimalLayouts : (n : ℕ) → Set (Fin n → Point)
+  | 7 => Set.range Seven.slidingCenters
+  | n => {modelCenters n}
 ```
 
 Read these definitions before trusting the result. A kernel check establishes

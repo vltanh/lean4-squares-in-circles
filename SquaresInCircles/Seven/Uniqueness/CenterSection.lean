@@ -8,7 +8,7 @@ A unit square that contains the origin, and whose points in the band
 tilted square has a section through its centre longer than 1.
 -/
 noncomputable section
-namespace SquaresInCircles.Seven.Equality
+namespace SquaresInCircles.Seven
 
 /-- `(x, y)` lies in the open unit square with centre `(X, Y)` and axes `(c, s)`
 and `(-s, c)`. -/
@@ -62,4 +62,4 @@ theorem section_strip_rigidity {c s X Y : ℝ}
   obtain rfl : X = 0 := by linarith
   exact ⟨by simpa using ((hrect 0 0).mp h0).2,hrect⟩
 
-end SquaresInCircles.Seven.Equality
+end SquaresInCircles.Seven

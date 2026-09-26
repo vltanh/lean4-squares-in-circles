@@ -17,7 +17,8 @@ SquaresInCircles/
 
 Every case folder has the same three core files: `Construction.lean` (the
 radius, the optimal packing and its centres), `Optimality.lean` (the lower
-bound) and `Uniqueness.lean`. Three, four and five squares add the same three
+bound) and `Uniqueness.lean`, which ends with the case's `optimum`, the three
+together as an `Optimum` (`Common/Optimum.lean`). Three, four and five squares add the same three
 helper files for the arc argument: `Tangents.lean` (the contact polygon),
 `Exterior.lean` (arcs of the squares that do not contain the disk centre) and
 `Containing.lean` (the square that does). Seven squares split the pair theorem
@@ -40,7 +41,8 @@ another: each imports only `Common/` and its own folder.
 | `ElementaryTrig.lean` | Arcsine and cosine estimates with exact rational constants |
 | `RectangleArcs.lean` | Occupied arcs of an exterior square: the interval between its edges, and the clipped cap on small circles |
 | `Constructions.lean` | Axis-parallel squares centred at given points: disjointness and containment |
-| `NormalForm.lean` | Normal forms from square-by-square representations, the rigid-motion witness |
+| `NormalForm.lean` | Normal forms from square-by-square representations; normal forms of a packing are packings; the rigid-motion witness |
+| `Optimum.lean` | `Optimum`, the statement every case proves; attainment and the converse of uniqueness for all cases |
 | `Angles.lean` | Quarter turns of a frame; `m` directions pairwise at least `2π/m` apart form a regular polygon |
 | `Contacts.lean` | Disjoint squares have centres at least 1 apart; equality means side-neighbours |
 
@@ -62,7 +64,7 @@ axis-parallel squares at those centres.
 ## Seven
 
 The lower bound of seven squares is spread over 44 files beside
-`Construction.lean` and `Optimality.lean`, and its equality case over 7 files
+`Construction.lean` and `Optimality.lean`, and its equality case over 6 files
 in `Seven/Uniqueness/` beside `Uniqueness.lean`. By the steps of
 [the proof](proof/seven.md), in import order:
 
@@ -76,5 +78,5 @@ in `Seven/Uniqueness/` beside `Uniqueness.lean`. By the steps of
 | 4. all gaps | `AngularMinima.lean`, `ParallelLabels.lean`, `SmallAndParallelGaps.lean`, `NearestCornerMinimum.lean`, `AllGaps.lean` | leftmost minima; small gaps; parallel squares; smooth minima |
 | 4. actual squares | `SeparatingAxes.lean`, `CanonicalPair.lean`, `MarkerSeparation.lean` | the separating-axis theorem; canonical pairs; the pair theorem |
 | 1, 5. conclusion | `ExteriorSelection.lean`, `CircleBudget.lean`, `Optimality.lean` | six exterior squares; six markers form a regular hexagon; the lower bound |
-| uniqueness: normal form | `Uniqueness/NormalForm.lean`, `Uniqueness/Slots.lean` | the sliding normal form; the column as a simplex of gaps |
-| uniqueness: rebuilding | `Uniqueness/SevenMarkers.lean`, `Uniqueness/ContactCycle.lean`, `Uniqueness/CenterSection.lean`, `Uniqueness/CentralSquare.lean`, `Uniqueness/Reconstruction.lean`, `Uniqueness.lean` | a square contains the disk centre; the ring of six squares; the square in the middle; the sliding normal form |
+| uniqueness: slots | `Uniqueness/Slots.lean` | the column as a simplex of gaps |
+| uniqueness: rebuilding | `Uniqueness/SevenMarkers.lean`, `Uniqueness/ContactCycle.lean`, `Uniqueness/CenterSection.lean`, `Uniqueness/CentralSquare.lean`, `Uniqueness/Reconstruction.lean`, `Uniqueness.lean` | a square contains the disk centre; the ring of six squares; the square in the middle; the sliding layouts and the optimum |

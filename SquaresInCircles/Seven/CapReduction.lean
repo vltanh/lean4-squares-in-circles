@@ -162,7 +162,7 @@ lemma exists_le_weighted_sum {w f : Fin 3 → ℝ} (hw : ∀ i,0 ≤ w i) (hs : 
 contact. -/
 def PairProperty (a u A v : ℝ) (s t : TransverseSign) (k : Fin 4) : Prop :=
   0 ≤ pairSupport a u A v s t k gap ∧
-    (pairSupport a u A v s t k gap = 0 → Equality.OrderedContact a u A v s t)
+    (pairSupport a u A v s t k gap = 0 → OrderedContact a u A v s t)
 
 lemma PairProperty.of_pos {a u A v : ℝ} {s t : TransverseSign} {k : Fin 4}
     (hp : 0 < pairSupport a u A v s t k gap) : PairProperty a u A v s t k :=
@@ -180,7 +180,7 @@ lemma pairProperty_cap_first {a u A v : ℝ}
   refine ⟨(hv i).1.trans hi,fun hz => ?_⟩
   have hc := (hv i).2 (le_antisymm (hi.trans hz.le) (hv i).1)
   exact absurd (capVertex_label i)
-    (Equality.contact_label_not_cap (capVertex_admissible i) h' hc).1
+    (contact_label_not_cap (capVertex_admissible i) h' hc).1
 
 lemma pairProperty_cap_second {a u A v : ℝ}
     (h : Admissible a u) (h' : Admissible A v) (hcap : label A v = Real.pi/4)
@@ -194,7 +194,7 @@ lemma pairProperty_cap_second {a u A v : ℝ}
   refine ⟨(hv i).1.trans hi,fun hz => ?_⟩
   have hc := (hv i).2 (le_antisymm (hi.trans hz.le) (hv i).1)
   exact absurd (capVertex_label i)
-    (Equality.contact_label_not_cap h (capVertex_admissible i) hc).2
+    (contact_label_not_cap h (capVertex_admissible i) hc).2
 
 /-- It is enough to prove the support property for active labels. -/
 theorem fixed_gap_of_active_cases

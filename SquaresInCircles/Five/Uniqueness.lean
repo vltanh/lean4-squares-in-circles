@@ -1,11 +1,18 @@
 import SquaresInCircles.Common.Contacts
 import SquaresInCircles.Five.Optimality
+import SquaresInCircles.Common.Optimum
 
-/-! The closed dodecagon itself is rigid.  This is stronger than uniqueness
-for the circular packing problem and permits equality in every input facet. -/
+/-!
+# Five squares: uniqueness
+
+The closed dodecagon itself is rigid. This is stronger than uniqueness for the
+circular packing problem and permits equality in every input facet.
+
+The file ends with `optimum`: the case as an `Optimum`.
+-/
 noncomputable section
 open Set
-namespace SquaresInCircles
+namespace SquaresInCircles.Five
 
 lemma dodecagon_norm_le {a b : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b) (h : P5 a b) :
     a^2+b^2 ≤ 1 := by
@@ -24,11 +31,11 @@ lemma dodecagon_norm_le {a b : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b) (h : P5 a b) :
     linarith
 
 /-- All five slots are forced by the centered square and unit-distance contacts. -/
-theorem Five.polygon_uniqueness (S : Fin 5 → UnitSquare) (o : Point)
+theorem polygon_uniqueness (S : Fin 5 → UnitSquare) (o : Point)
     (hd : InteriorDisjoint S) (hp : ∀ i, P5 (alpha (S i) o) (beta (S i) o)) :
-    HasNormalForm S o Five.centers := by
+    HasNormalForm S o centers := by
   classical
-  obtain ⟨k,hk⟩ := five_centered_square S o hd hp
+  obtain ⟨k,hk⟩ := centered_square S o hd hp
   obtain ⟨t,htc,hts⟩ := frame_angle (S k)
   let φ : Direction := (t:Direction)
   have hc : φ.cos=(S k).cosine := htc
@@ -39,7 +46,7 @@ theorem Five.polygon_uniqueness (S : Fin 5 → UnitSquare) (o : Point)
   · subst i
     refine ⟨0,?_⟩
     have hh := self_represents (S k) o φ hc hs
-    rw [show Five.centers 0=(0,0) by simp [Five.centers]]
+    rw [show centers 0=(0,0) by simp [centers]]
     simpa only [hk,sub,sub_self,frameX,frameY,mul_zero,add_zero] using hh
   · have hlow := centers_distance_sq_ge_one (S k) (S i) (hd k i (Ne.symm hi))
     have hupp : normSq (sub (S i).center o) ≤ 1 := by
@@ -53,12 +60,17 @@ theorem Five.polygon_uniqueness (S : Fin 5 → UnitSquare) (o : Point)
     exacts [⟨1,hrep⟩,⟨2,hrep⟩,⟨3,hrep⟩,⟨4,hrep⟩]
 
 /-- Geometric uniqueness of the radius-sqrt(5/2) disk packing. -/
-theorem Five.uniqueness (S : Fin 5 → UnitSquare) (o : Point)
-    (hp : Packing S o Five.radius) : HasNormalForm S o Five.centers := by
-  apply Five.polygon_uniqueness S o hp.disjoint
+theorem uniqueness (S : Fin 5 → UnitSquare) (o : Point)
+    (hp : Packing S o radius) : HasNormalForm S o centers := by
+  apply polygon_uniqueness S o hp.disjoint
   intro i
   apply p5_of_phi_le
   have h := hp.phi_le i
-  rwa [Five.radius_sq] at h
+  rwa [radius_sq] at h
 
-end SquaresInCircles
+/-- The optimum for five squares: `radius`, attained only by the normal forms
+of `centers`. -/
+def optimum : Optimum 5 :=
+  .ofUnique centers optimality model_packing uniqueness
+
+end SquaresInCircles.Five

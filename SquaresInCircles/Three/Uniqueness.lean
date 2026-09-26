@@ -1,23 +1,26 @@
 import SquaresInCircles.Three.Optimality
 import SquaresInCircles.Common.Angles
+import SquaresInCircles.Common.Optimum
 
 /-!
-# Uniqueness of the T
+# Three squares: uniqueness
 
-At the optimal radius no square contains the disk centre, and the three
-exterior arcs are each exactly 120 degrees. Equality leaves two contact types
-for a square; one A-square and two B-squares are the only possibility, and they
-are reconstructed into the T for every labelling and chart orientation.
+At the optimal radius no square contains the disk centre, and the three exterior
+arcs are each exactly 120 degrees. Equality leaves two contact types for a
+square; one A-square and two B-squares are the only possibility, and they are
+reconstructed into the T for every labelling and chart orientation.
+
+The file ends with `optimum`: the case as an `Optimum`.
 -/
 noncomputable section
 open Set
-namespace SquaresInCircles
+namespace SquaresInCircles.Three
 
 /-! ## No square contains the disk centre
 
 At the optimal radius the squares satisfy only the closed 16-gon. A square that
 contains the disk centre still satisfies the strict one, which is all that
-`three_containing_impossible` asks of it. -/
+`containing_impossible` asks of it. -/
 
 lemma tangent_strict_of_ne {a b u v K : ℝ}
     (h : phi a b ≤ K) (hc : phi u v=K) (hne : a ≠ u ∨ b ≠ v) :
@@ -44,9 +47,9 @@ are antipodal; no numerical angle choices are used. -/
 
 lemma a_contact_arc {S : UnitSquare} {o : Point} (C : SquareChart S o)
     (ha : C.a=11/16) (hb : C.b=0) :
-    ∃ A : OpenArc o auxThree {p | openSquare S p},
+    ∃ A : OpenArc o aux {p | openSquare S p},
       A.halfWidth=Real.pi/3 ∧ A.center=C.phase := by
-  obtain ⟨A,hA,hc⟩ := C.arc auxThree (-(Real.pi/3)) (Real.pi/3)
+  obtain ⟨A,hA,hc⟩ := C.arc aux (-(Real.pi/3)) (Real.pi/3)
     (by linarith [Real.pi_pos]) (by linarith [Real.pi_pos]) (by
       intro t ht
       have hcos : 1/2 < Real.cos t := by
@@ -55,7 +58,7 @@ lemma a_contact_arc {S : UnitSquare} {o : Point} (C : SquareChart S o)
         rw [Real.cos_pi_div_three,Real.cos_abs] at hh
         exact hh
       rw [ha,hb]
-      dsimp [auxThree]
+      dsimp [aux]
       exact ⟨abs_lt.mpr ⟨by linarith,by linarith [Real.cos_le_one t]⟩,
         abs_lt.mpr ⟨by linarith [Real.neg_one_le_sin t],by linarith [Real.sin_le_one t]⟩⟩)
   exact ⟨A,by rw [hA]; ring,by rw [hc]; simp [chartAngle]⟩
@@ -75,9 +78,9 @@ lemma b_semicircle {S : UnitSquare} {o : Point} (C : SquareChart S o)
 
 lemma b_contact_arc {S : UnitSquare} {o : Point} (C : SquareChart S o)
     (ha : C.a=1/2) (hb : C.b=5/16) :
-    ∃ A : OpenArc o auxThree {p | openSquare S p}, A.halfWidth=Real.pi/3 ∧
+    ∃ A : OpenArc o aux {p | openSquare S p}, A.halfWidth=Real.pi/3 ∧
       A.center=chartAngle C.phase C.reversed (Real.pi/6) := by
-  obtain ⟨A,hA,hc⟩ := C.arc auxThree (-Real.pi/6) (Real.pi/2)
+  obtain ⟨A,hA,hc⟩ := C.arc aux (-Real.pi/6) (Real.pi/2)
     (by linarith [Real.pi_pos]) (by linarith [Real.pi_pos]) (by
       intro t ht
       have hcos := Real.cos_pos_of_mem_Ioo
@@ -87,7 +90,7 @@ lemma b_contact_arc {S : UnitSquare} {o : Point} (C : SquareChart S o)
         (show t ∈ Icc (-(Real.pi/2)) (Real.pi/2) by constructor <;> linarith [ht.1,ht.2,Real.pi_pos]) ht.1
       rw [neg_div,Real.sin_neg,Real.sin_pi_div_six] at hsin
       rw [ha,hb]
-      dsimp [auxThree]
+      dsimp [aux]
       exact ⟨abs_lt.mpr ⟨by linarith,by linarith [Real.cos_le_one t]⟩,
         abs_lt.mpr ⟨by linarith,by linarith [Real.sin_le_one t]⟩⟩)
   exact ⟨A,by rw [hA]; ring,by convert hc using 2; ring⟩
@@ -107,7 +110,7 @@ lemma equilateral_arc_centers {o : Point} {r : ℝ} {U V W : Set Point}
 lemma two_a_contacts_impossible {S T U : UnitSquare} {o : Point}
     (C : SquareChart S o) (D : SquareChart T o)
     (hc : C.a=11/16 ∧ C.b=0) (hd : D.a=11/16 ∧ D.b=0)
-    (G : OpenArc o auxThree {p | openSquare U p}) (hg : Real.pi/3 ≤ G.halfWidth)
+    (G : OpenArc o aux {p | openSquare U p}) (hg : Real.pi/3 ≤ G.halfWidth)
     (hST : Disjoint {p | openSquare S p} {p | openSquare T p})
     (hSU : Disjoint {p | openSquare S p} {p | openSquare U p})
     (hTU : Disjoint {p | openSquare T p} {p | openSquare U p}) : False := by
@@ -121,7 +124,7 @@ lemma two_a_contacts_impossible {S T U : UnitSquare} {o : Point}
     (by linarith [hdist.1]) (by linarith [hdist.2])
   exact Set.disjoint_left.mp hST hpS hpT
 
-lemma three_b_contacts_impossible {S T U : UnitSquare} {o : Point}
+lemma b_contacts_impossible {S T U : UnitSquare} {o : Point}
     (C : SquareChart S o) (D : SquareChart T o) (E : SquareChart U o)
     (hc : C.a=1/2 ∧ C.b=5/16) (hd : D.a=1/2 ∧ D.b=5/16)
     (he : E.a=1/2 ∧ E.b=5/16)
@@ -189,9 +192,9 @@ lemma t_contact_reconstruction {S T U : UnitSquare} {o : Point}
     (hSU : Disjoint {p | openSquare S p} {p | openSquare U p})
     (hTU : Disjoint {p | openSquare T p} {p | openSquare U p}) :
     ∃ φ : Direction,
-      ((Represents S o φ (Three.centers 0) ∧ Represents T o φ (Three.centers 1)) ∨
-       (Represents S o φ (Three.centers 1) ∧ Represents T o φ (Three.centers 0))) ∧
-      Represents U o φ (Three.centers 2) := by
+      ((Represents S o φ (centers 0) ∧ Represents T o φ (centers 1)) ∨
+       (Represents S o φ (centers 1) ∧ Represents T o φ (centers 0))) ∧
+      Represents U o φ (centers 2) := by
   obtain ⟨A,ha,hac⟩ := b_contact_arc C hc.1 hc.2
   obtain ⟨B,hb,hbc⟩ := b_contact_arc D hd.1 hd.2
   obtain ⟨G,hg,hgc⟩ := a_contact_arc E he.1 he.2
@@ -239,37 +242,37 @@ lemma t_contact_reconstruction {S T U : UnitSquare} {o : Point}
     have rE := represents_cardinal (ψ := φ) hE 1 (by simpa [quarterShift] using hEc)
       (by simpa [quarterShift] using hEs)
     refine ⟨φ,Or.inl ⟨?_,?_⟩,?_⟩
-    · simpa [neg_div,turnPoint,Three.centers,SquareChart.signedB,hr,hc.1,hc.2] using rC
-    · simpa [neg_div,turnPoint,Three.centers,SquareChart.signedB,hrD,hd.1,hd.2] using rD
-    · simpa [neg_div,turnPoint,Three.centers,SquareChart.signedB,he.1,he.2] using rE
+    · simpa [neg_div,turnPoint,centers,SquareChart.signedB,hr,hc.1,hc.2] using rC
+    · simpa [neg_div,turnPoint,centers,SquareChart.signedB,hrD,hd.1,hd.2] using rD
+    · simpa [neg_div,turnPoint,centers,SquareChart.signedB,he.1,he.2] using rE
   · have hrD : D.reversed=false := by simpa only [hr,Bool.not_true] using hrev
     let φ := C.phase
-    have rC : Represents S o φ (Three.centers 1) := by
-      simpa [neg_div,φ,Three.centers,SquareChart.signedB,hr,hc.1,hc.2] using hC
+    have rC : Represents S o φ (centers 1) := by
+      simpa [neg_div,φ,centers,SquareChart.signedB,hr,hc.1,hc.2] using hC
     have rD := represents_cardinal (ψ := φ) hD 2
       (by simp [φ,hanti,quarterShift]) (by simp [φ,hanti,quarterShift])
     have rE := represents_cardinal (ψ := φ) hE 1
       (by simpa [φ,quarterShift] using hEcos)
       (by simpa [φ,quarterShift,hr] using hEsin)
     refine ⟨φ,Or.inr ⟨rC,?_⟩,?_⟩
-    · simpa [neg_div,turnPoint,Three.centers,SquareChart.signedB,hrD,hd.1,hd.2] using rD
-    · simpa [neg_div,turnPoint,Three.centers,SquareChart.signedB,he.1,he.2] using rE
+    · simpa [neg_div,turnPoint,centers,SquareChart.signedB,hrD,hd.1,hd.2] using rD
+    · simpa [neg_div,turnPoint,centers,SquareChart.signedB,he.1,he.2] using rE
 
 /-! ## Assembly -/
 
-lemma three_no_containing (S : Fin 3 → UnitSquare) (o : Point)
+lemma no_containing (S : Fin 3 → UnitSquare) (o : Point)
     (hd : InteriorDisjoint S)
     (hφ : ∀ i, phi (alpha (S i) o) (beta (S i) o) ≤ (425:ℝ)/256) :
     ∀ i, ¬ openSquare (S i) o := fun i hi =>
-  three_containing_impossible S o hd i hi (p3_strict_of_inside hi.1 hi.2 (hφ i))
+  containing_impossible S o hd i hi (p3_strict_of_inside hi.1 hi.2 (hφ i))
     fun j => p3_of_phi_le (hφ j)
 
-lemma assemble_three {S : Fin 3 → UnitSquare} {o : Point} (hd : InteriorDisjoint S)
+lemma assemble {S : Fin 3 → UnitSquare} {o : Point} (hd : InteriorDisjoint S)
     (i j k : Fin 3) (hij : i ≠ j) (hik : i ≠ k) (hjk : j ≠ k)
     (h : ∃ φ : Direction,
-      ((Represents (S i) o φ (Three.centers 0) ∧ Represents (S j) o φ (Three.centers 1)) ∨
-       (Represents (S i) o φ (Three.centers 1) ∧ Represents (S j) o φ (Three.centers 0))) ∧
-      Represents (S k) o φ (Three.centers 2)) : HasNormalForm S o Three.centers := by
+      ((Represents (S i) o φ (centers 0) ∧ Represents (S j) o φ (centers 1)) ∨
+       (Represents (S i) o φ (centers 1) ∧ Represents (S j) o φ (centers 0))) ∧
+      Represents (S k) o φ (centers 2)) : HasNormalForm S o centers := by
   have hcover : ∀ l : Fin 3, l=i ∨ l=j ∨ l=k := by
     fin_cases i <;> fin_cases j <;> fin_cases k
     all_goals first | exact (hij rfl).elim | exact (hik rfl).elim | exact (hjk rfl).elim | decide
@@ -286,31 +289,31 @@ lemma assemble_three {S : Fin 3 → UnitSquare} {o : Point} (hd : InteriorDisjoi
   · exact ⟨2,hk⟩
 
 /-- Every optimal three-square packing is one rigid image of the T model. -/
-theorem Three.uniqueness (S : Fin 3 → UnitSquare) (o : Point)
-    (hp : Packing S o Three.radius) : HasNormalForm S o Three.centers := by
+theorem uniqueness (S : Fin 3 → UnitSquare) (o : Point)
+    (hp : Packing S o radius) : HasNormalForm S o centers := by
   classical
   have hφ (i : Fin 3) : phi (alpha (S i) o) (beta (S i) o) ≤ (425:ℝ)/256 := by
     have h := hp.phi_le i
-    rwa [Three.radius_sq] at h
-  have hout := three_no_containing S o hp.disjoint hφ
+    rwa [radius_sq] at h
+  have hout := no_containing S o hp.disjoint hφ
   have hpair := hp.disjoint.pairwise
   choose C hsort using (fun i => sorted_square_chart (S i) o)
   have hpC (i : Fin 3) : P3 (C i).a (C i).b :=
     (C i).transfer P3 p3_swap (p3_of_phi_le (hφ i))
   have haC (i : Fin 3) : 1/2 ≤ (C i).a := (C i).exterior (hsort i) (hout i)
-  choose A hlen using (fun i => (three_cap_arc_formula (C i) (haC i) (hpC i)).imp
+  choose A hlen using (fun i => (cap_arc_formula (C i) (haC i) (hpC i)).imp
     fun _ h => h.1)
   have hlo (i : Fin 3) : Real.pi/3 ≤ (A i).halfWidth := by
-    have hh := (three_cap_data (haC i) (C i).nonneg.2 (hpC i)).2.2.2.2.2
+    have hh := (cap_data (haC i) (C i).nonneg.2 (hpC i)).2.2.2.2.2
     linarith [hlen i]
   have hbudget := open_arc_budget A hpair
   rw [Fin.sum_univ_three] at hbudget
-  have hup (i : Fin 3) : threeCapLength (C i).a (C i).b ≤ 2*Real.pi/3 := by
+  have hup (i : Fin 3) : capLength (C i).a (C i).b ≤ 2*Real.pi/3 := by
     have key : i=0 ∨ i=1 ∨ i=2 := by revert i; decide
     rcases key with rfl | rfl | rfl <;> linarith [hlo 0,hlo 1,hlo 2,hlen 0,hlen 1,hlen 2]
   have htype (i : Fin 3) : ((C i).a=11/16 ∧ (C i).b=0) ∨
       ((C i).a=1/2 ∧ (C i).b=5/16) :=
-    three_cap_contact_types (haC i) (C i).nonneg.2 (hpC i) (hup i)
+    cap_contact_types (haC i) (C i).nonneg.2 (hpC i) (hup i)
   have hnotTwo (i j : Fin 3) (hij : i ≠ j)
       (hi : (C i).a=11/16 ∧ (C i).b=0)
       (hj : (C j).a=11/16 ∧ (C j).b=0) : False := by
@@ -324,15 +327,20 @@ theorem Three.uniqueness (S : Fin 3 → UnitSquare) (o : Point)
     push Not at hn
     have hb (i : Fin 3) : (C i).a=1/2 ∧ (C i).b=5/16 :=
       (htype i).resolve_left (by intro h; exact hn i h.1 h.2)
-    exact three_b_contacts_impossible (C 0) (C 1) (C 2) (hb 0) (hb 1) (hb 2)
+    exact b_contacts_impossible (C 0) (C 1) (C 2) (hb 0) (hb 1) (hb 2)
       (hpair (by decide)) (hpair (by decide)) (hpair (by decide))
   obtain ⟨k,hk⟩ := hex
   have hb (i : Fin 3) (hik : i ≠ k) : (C i).a=1/2 ∧ (C i).b=5/16 :=
     (htype i).resolve_left (fun hi => hnotTwo i k hik hi hk)
   obtain ⟨i,j,hij,hik,hjk⟩ : ∃ i j : Fin 3, i ≠ j ∧ i ≠ k ∧ j ≠ k := by
     fin_cases k <;> decide
-  exact assemble_three hp.disjoint i j k hij hik hjk
+  exact assemble hp.disjoint i j k hij hik hjk
     (t_contact_reconstruction (C i) (C j) (C k) (hb i hik) (hb j hjk) hk
       (hpair hij) (hpair hik) (hpair hjk))
 
-end SquaresInCircles
+/-- The optimum for three squares: `radius`, attained only by the normal forms
+of `centers`. -/
+def optimum : Optimum 3 :=
+  .ofUnique centers optimality model_packing uniqueness
+
+end SquaresInCircles.Three

@@ -10,7 +10,6 @@ left free.
 -/
 noncomputable section
 namespace SquaresInCircles.Seven
-namespace Equality
 
 def sideCenters : Fin 4 → Point :=
   ![(1,-1/2),(1,1/2),(-1,-1/2),(-1,1/2)]
@@ -69,5 +68,4 @@ theorem central_square_represents {S : UnitSquare} {B : Fin 4 → UnitSquare}
     (fun x y hxy hy => central_strip h0 hrep hd x y ((hs x y).mpr hxy) hy)
   exact ⟨_,hz,fun x y => (hs x y).trans (hr x y)⟩
 
-end Equality
 end SquaresInCircles.Seven

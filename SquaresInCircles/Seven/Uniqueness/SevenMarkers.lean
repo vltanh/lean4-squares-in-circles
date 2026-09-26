@@ -10,7 +10,6 @@ disk centre.
 -/
 noncomputable section
 namespace SquaresInCircles.Seven
-namespace Equality
 
 /-- Seven directions cannot be pairwise at least `π/3` apart. -/
 lemma seven_directions_impossible (c : Fin 7 → Direction)
@@ -43,5 +42,4 @@ theorem exists_containing (S : Fin 7 → UnitSquare) (o : Point)
   intro i j hij
   exact marker_separation_closed (C i) (C j) (hadm i) (hadm j) (hp.disjoint i j hij)
 
-end Equality
 end SquaresInCircles.Seven

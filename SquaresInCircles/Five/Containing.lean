@@ -4,7 +4,7 @@ import SquaresInCircles.Five.Exterior
 which in turn contains a 72-degree arc. -/
 noncomputable section
 open Set
-namespace SquaresInCircles
+namespace SquaresInCircles.Five
 
 lemma containing_center_norm (S : UnitSquare) {o : Point} (ho : openSquare S o) :
     normSq (sub S.center o) < 1/2 := by
@@ -66,9 +66,9 @@ lemma containing_ray_disk (S : UnitSquare) (o : Point)
   refine ⟨t,ht,q,hq,?_⟩
   apply Prod.ext <;> dsimp [q,w,sub,add] <;> ring
 
-lemma five_arc_in_radial_disk (o : Point) (θ : Direction) {φ : Direction}
+lemma arc_in_radial_disk (o : Point) (θ : Direction) {φ : Direction}
     (hφ : dist φ θ < Real.pi/5) :
-    normSq (sub (circlePoint o auxFive φ) (circlePoint o halfDiagonal θ)) < 1/4 := by
+    normSq (sub (circlePoint o aux φ) (circlePoint o halfDiagonal θ)) < 1/4 := by
   let t := (φ-θ).toReal
   have ht : |t| < Real.pi/5 := by simpa only [direction_dist] using hφ
   have hcos := cos_gt_401_500 ht.le
@@ -77,18 +77,18 @@ lemma five_arc_in_radial_disk (o : Point) (θ : Direction) {φ : Direction}
   rw [he,circle_distance_formula]
   have ha := halfDiagonal_gt_707
   have ha2 := halfDiagonal_sq
-  dsimp [auxFive]
+  dsimp [aux]
   linarith
 
 /-- A containing square with nonzero center supplies the missing 72-degree arc. -/
-theorem five_containing_arc (S : UnitSquare) (o : Point)
+theorem containing_arc (S : UnitSquare) (o : Point)
     (ho : openSquare S o) (hne : S.center ≠ o) :
-    ∃ A : OpenArc o auxFive (openRay S o), A.halfWidth=Real.pi/5 := by
+    ∃ A : OpenArc o aux (openRay S o), A.halfWidth=Real.pi/5 := by
   obtain ⟨θ,hθ⟩ := containing_ray_disk S o ho hne
   refine ⟨{ center := θ
             halfWidth := Real.pi/5
             positive := by positivity
             atMostPi := by linarith [Real.pi_pos]
-            inside := fun φ hφ => hθ _ (five_arc_in_radial_disk o θ hφ) },rfl⟩
+            inside := fun φ hφ => hθ _ (arc_in_radial_disk o θ hφ) },rfl⟩
 
-end SquaresInCircles
+end SquaresInCircles.Five

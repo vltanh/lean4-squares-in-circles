@@ -61,7 +61,6 @@ lemma rotatedState_local (a b d : ℝ) (p : Point) :
   · dsimp [localY,rotatedState]
     linear_combination -b*hu
 
-namespace Equality
 
 def CanonicalDisjoint (a u A v g : ℝ) (s t : TransverseSign) : Prop :=
   ∀ x y : ℝ, ¬ ((|x-a| < 1/2 ∧ |y-s.coe*u| < 1/2) ∧
@@ -160,5 +159,4 @@ lemma canonical_has_separator {a u A v g : ℝ} (s t : TransverseSign)
   · exact (not_le_of_gt hsecond.1) hsep
   · exact (not_le_of_gt hsecond.2) hsep
 
-end Equality
 end SquaresInCircles.Seven

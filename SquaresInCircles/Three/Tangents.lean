@@ -7,7 +7,7 @@ Tangents to `phi = 425/256` at `(1/2, 5/16)`, `(11/16, 0)` and their swaps bound
 every square of a three-square packing; `P3Strict` is the strict version.
 -/
 noncomputable section
-namespace SquaresInCircles
+namespace SquaresInCircles.Three
 
 def P3 (a b : ℝ) : Prop :=
   16*a+13*b ≤ 193/16 ∧ 13*a+16*b ≤ 193/16 ∧
@@ -47,4 +47,4 @@ lemma p3Strict_swap {a b : ℝ} (h : P3Strict a b) : P3Strict b a := by
   rcases h with ⟨h₀,h₁,h₂,h₃⟩
   exact ⟨by linarith, by linarith, by linarith, by linarith⟩
 
-end SquaresInCircles
+end SquaresInCircles.Three

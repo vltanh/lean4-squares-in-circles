@@ -6,7 +6,7 @@ particular on the circle of radius `1/2`. The proof below uses strict
 half-planes and constructs the ray parameter. -/
 noncomputable section
 open Set
-namespace SquaresInCircles
+namespace SquaresInCircles.Four
 
 lemma abs_center_sum_pos (S : UnitSquare) (o : Point) (hne : S.center ≠ o) :
     0 < alpha S o+beta S o := by
@@ -151,7 +151,7 @@ lemma canonical_quarter_ray {a b r : ℝ} (ha : 0 < a) (hb : 0 ≤ b)
   exact ray_parameter ha hb hX hY hstrip
 
 /-- A quarter-circle is available from the containing square's radial sweep. -/
-theorem four_containing_arc {S : UnitSquare} {o : Point} (C : SquareChart S o)
+theorem containing_arc {S : UnitSquare} {o : Point} (C : SquareChart S o)
     {r : ℝ} (hsort : C.b ≤ C.a) (ho : openSquare S o)
     (hpos : 0 < C.a+C.b) (hr : 0 < r) (hr1 : r < halfDiagonal) :
     ∃ A : OpenArc o r (openRay S o), A.halfWidth=Real.pi/4 := by
@@ -164,4 +164,4 @@ theorem four_containing_arc {S : UnitSquare} {o : Point} (C : SquareChart S o)
     (fun t ht => C.ray_mem (hδ t ht))
   exact ⟨A,by rw [hA]; ring⟩
 
-end SquaresInCircles
+end SquaresInCircles.Four

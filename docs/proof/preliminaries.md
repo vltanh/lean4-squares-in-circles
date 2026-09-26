@@ -150,7 +150,7 @@ $Q(c)^\circ$.
 coordinates it is $Q(c)$.*
 
 *Lean: [`pointInDirection`](../../SquaresInCircles/Geometry.lean#L58),
-[`Represents`](../../SquaresInCircles/Common/NormalForm.lean#L16).*
+[`Represents`](../../SquaresInCircles/Common/NormalForm.lean#L17).*
 
 ### Definition 5 (normal form)
 

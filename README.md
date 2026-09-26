@@ -134,8 +134,7 @@ def Seven.slidingCenters (c : Column) : Fin 7 → Point :=
 More on each theorem: [docs/results.md](docs/results.md).
 
 For `1 ≤ n ≤ 5` and `n = 7`, the root file `SquaresInCircles.lean` proves, in
-namespace `SquaresInCircles`, optimality and attainment, for `1 ≤ n ≤ 5`
-uniqueness, and for `n = 7` uniqueness up to the sliding column:
+namespace `SquaresInCircles`, the same three theorems:
 
 ```lean
 theorem optimality (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7)
@@ -145,18 +144,17 @@ theorem optimality (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7)
 theorem attainment (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7) :
     ∃ (S : Fin n → UnitSquare) (o : Point), Packing S o (optimalRadius n)
 
-theorem uniqueness (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5)
-    (S : Fin n → UnitSquare) (o : Point) (hp : Packing S o (optimalRadius n)) :
-    HasNormalForm S o (modelCenters n)
-
-theorem sliding_uniqueness (S : Fin 7 → UnitSquare) (o : Point)
-    (hp : Packing S o (optimalRadius 7)) :
-    ∃ c : Seven.Column, HasNormalForm S o (Seven.slidingCenters c)
+theorem packing_iff (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7)
+    (S : Fin n → UnitSquare) (o : Point) :
+    Packing S o (optimalRadius n) ↔ ∃ c ∈ optimalLayouts n, HasNormalForm S o c
 ```
 
-`optimalRadius n` is the optimal radius, and `modelCenters n` lists the centres
-of the optimal packing, with its disk centre at the origin; for `n = 7` it is
-the packing whose middle column is centred. Their definitions in Lean are:
+`optimalRadius n` is the optimal radius, and `optimalLayouts n` is the set of
+layouts of the optimal packings, as centres with the disk centre at the
+origin. For `n ≤ 5` it is the single layout `modelCenters n`, so the optimal
+packing is unique. For `n = 7` it is every position of the middle column
+(`Seven.slidingCenters`), and `modelCenters 7` is the one with the column
+centred. The definitions in Lean are:
 
 | n | `optimalRadius n` | `modelCenters n` |
 | :-: | --- | --- |
@@ -167,11 +165,18 @@ the packing whose middle column is centred. Their definitions in Lean are:
 | 5 | `Real.sqrt (5 / 2)` | `![(0,0),(1,0),(0,1),(-1,0),(0,-1)]` |
 | 7 | `Real.sqrt 13 / 2` | `![(1,-1/2),(1,1/2),(-1,-1/2),(-1,1/2),(0,-1),(0,0),(0,1)]` |
 
-Each case also stands alone, in namespaces `One` to `Five` and `Seven`, with
-the same theorems; `Seven.uniqueness` has the sliding family in its
-conclusion, and `Seven.sliding_packing` shows that every member of the family
-is optimal. `rigid_uniqueness` restates uniqueness with an explicit isometry
-of the plane.
+```lean
+def optimalLayouts : (n : ℕ) → Set (Fin n → Point)
+  | 7 => Set.range Seven.slidingCenters
+  | n => {modelCenters n}
+```
+
+Every case is the same framework: in its namespace, `One` to `Five` and
+`Seven`, it defines `radius`, `centers` and `model`, and proves
+`model_packing`, `optimality` and `uniqueness`, which make up its `optimum`
+(`Common/Optimum.lean`). Attainment and the converse of uniqueness follow once
+for all cases. `uniqueness` gives the forward direction of `packing_iff`, and
+`rigid_uniqueness` restates it with an explicit isometry of the plane.
 
 ## Proof outline
 

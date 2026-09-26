@@ -10,8 +10,8 @@ $(0, 0)$, $(1, 0)$, $(0, 1)$, $(-1, 0)$, $(0, -1)$.
    four side-neighbours.
 2. A packing of five unit squares in a closed disk of radius $R$ forces
    $R \ge R_5$.
-3. A packing of five unit squares in a closed disk of radius $R_5$ has the
-   normal form of $c_1, \dots, c_5$.
+3. The packings of five unit squares in a closed disk of radius $R_5$ are
+   exactly the configurations with the normal form of $c_1, \dots, c_5$.
 
 ![The plus in its dashed circle of radius root of 5/2, with the circle of radius 5/6 about the centre; each outer square holds a coloured arc of about 74 degrees, and the grey centre square holds none](figures/five.svg)
 
@@ -29,9 +29,11 @@ distance exactly 1 from it: the plus.
 Unlike three and four squares, the arc argument here needs only the closed
 contact polygon, and so does uniqueness; the disk is not used after Step 1.
 
-*Lean: [`Five.attainment`](../../SquaresInCircles/Five/Construction.lean#L40),
-[`Five.optimality`](../../SquaresInCircles/Five/Optimality.lean#L36),
-[`Five.uniqueness`](../../SquaresInCircles/Five/Uniqueness.lean#L56), in
+*Lean:
+[`Five.model_packing`](../../SquaresInCircles/Five/Construction.lean#L29),
+[`Five.optimality`](../../SquaresInCircles/Five/Optimality.lean#L40),
+[`Five.uniqueness`](../../SquaresInCircles/Five/Uniqueness.lean#L63),
+[`Five.optimum`](../../SquaresInCircles/Five/Uniqueness.lean#L73), in
 [`SquaresInCircles/Five/`](../../SquaresInCircles/Five).*
 
 ## Construction
@@ -48,9 +50,8 @@ $\frac94 + \frac14 = \frac52$. Apply
 [Lemma 20](common.md#lemma-20-axis-parallel-squares). $\square$
 
 *Lean:
-[`Five.model_disjoint`](../../SquaresInCircles/Five/Construction.lean#L25),
-[`Five.model_packing`](../../SquaresInCircles/Five/Construction.lean#L30),
-[`Five.attainment`](../../SquaresInCircles/Five/Construction.lean#L40).*
+[`Five.model_packing`](../../SquaresInCircles/Five/Construction.lean#L29),
+[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L44).*
 
 ## Lower bound
 
@@ -70,8 +71,8 @@ The proof takes four steps.
 4. **Conclusion.** So some square is centred at $o$, which the strict
    polygon rules out.
 
-*Lean: [`five_squared_lower`](../../SquaresInCircles/Five/Optimality.lean#L30),
-[`Five.optimality`](../../SquaresInCircles/Five/Optimality.lean#L36).*
+*Lean: [`Five.squared_lower`](../../SquaresInCircles/Five/Optimality.lean#L34),
+[`Five.optimality`](../../SquaresInCircles/Five/Optimality.lean#L40).*
 
 ### Step 1. The contact polygon
 
@@ -94,8 +95,8 @@ square of the plus touches it; Step 2 needs it.
 *The 12-gon $P_5$ where $a, b \ge 0$, with $g = \frac{\sqrt5 - 1}2$. Its third
 side cuts the corner off the octagon.*
 
-*Lean: [`P5`](../../SquaresInCircles/Five/Tangents.lean#L12),
-[`P5Strict`](../../SquaresInCircles/Five/Tangents.lean#L13).*
+*Lean: [`Five.P5`](../../SquaresInCircles/Five/Tangents.lean#L12),
+[`Five.P5Strict`](../../SquaresInCircles/Five/Tangents.lean#L13).*
 
 #### Lemma 5.4 (contact polygon)
 
@@ -108,9 +109,9 @@ $\square$
 From here on only the polygon and disjointness are used, and Steps 2 and 3
 need only the closed $P_5$.
 
-*Lean: [`p5_contact`](../../SquaresInCircles/Five/Tangents.lean#L15),
-[`p5_of_phi_lt`](../../SquaresInCircles/Five/Tangents.lean#L29),
-[`p5_of_phi_le`](../../SquaresInCircles/Five/Tangents.lean#L19).*
+*Lean: [`Five.p5_contact`](../../SquaresInCircles/Five/Tangents.lean#L15),
+[`Five.p5_of_phi_lt`](../../SquaresInCircles/Five/Tangents.lean#L29),
+[`Five.p5_of_phi_le`](../../SquaresInCircles/Five/Tangents.lean#L19).*
 
 ### Step 2. Exterior squares
 
@@ -135,7 +136,7 @@ If $y < 0$, use $\arcsin\frac{6y}5 \le \frac{6y}5$ for the second term, and
 bound $x^3$ directly when $x \le \frac{23}{60}$, or through $3x + y \le 1$
 when $x > \frac{23}{60}$. $\square$
 
-*Lean: [`five_arcsin_sum`](../../SquaresInCircles/Five/Exterior.lean#L19).*
+*Lean: [`Five.arcsin_sum`](../../SquaresInCircles/Five/Exterior.lean#L19).*
 
 #### Lemma 5.6 (exterior arcs)
 
@@ -171,9 +172,10 @@ exceed $\frac{2\pi}5$.
   arguments average $\frac35 > \sin\frac\pi5$; Lemma 19 (4) gives more than
   $\frac{2\pi}5$. $\square$
 
-*Lean: [`sqrt_five_lt_2237`](../../SquaresInCircles/Five/Exterior.lean#L14),
-[`five_rectangle_length`](../../SquaresInCircles/Five/Exterior.lean#L44),
-[`five_exterior_arc`](../../SquaresInCircles/Five/Exterior.lean#L87).*
+*Lean:
+[`Five.sqrt_five_lt_2237`](../../SquaresInCircles/Five/Exterior.lean#L14),
+[`Five.rectangle_length`](../../SquaresInCircles/Five/Exterior.lean#L44),
+[`Five.exterior_arc`](../../SquaresInCircles/Five/Exterior.lean#L87).*
 
 ### Step 3. The containing square
 
@@ -213,10 +215,10 @@ using $\frac1{\sqrt2} > \frac{707}{1000}$. So $p \in \widehat{S}$. $\square$
 A square centred at $o$ gets no arc from this lemma; Step 4 deals with it.
 
 *Lean:
-[`containing_center_norm`](../../SquaresInCircles/Five/Containing.lean#L9),
-[`containing_ray_disk`](../../SquaresInCircles/Five/Containing.lean#L41),
-[`five_arc_in_radial_disk`](../../SquaresInCircles/Five/Containing.lean#L69),
-[`five_containing_arc`](../../SquaresInCircles/Five/Containing.lean#L84).*
+[`Five.containing_center_norm`](../../SquaresInCircles/Five/Containing.lean#L9),
+[`Five.containing_ray_disk`](../../SquaresInCircles/Five/Containing.lean#L41),
+[`Five.arc_in_radial_disk`](../../SquaresInCircles/Five/Containing.lean#L69),
+[`Five.containing_arc`](../../SquaresInCircles/Five/Containing.lean#L84).*
 
 ### Step 4. Conclusion
 
@@ -235,7 +237,7 @@ This contradicts [Proposition 18](common.md#proposition-18-budget-with-a-sweep)
 with $n = 5$ and $r = \frac56$. $\square$
 
 *Lean:
-[`five_centered_square`](../../SquaresInCircles/Five/Optimality.lean#L12).*
+[`Five.centered_square`](../../SquaresInCircles/Five/Optimality.lean#L16).*
 
 #### Corollary 5.9 (polygon relaxation)
 
@@ -248,7 +250,7 @@ are strictly inside the octagon, and
 out. $\square$
 
 *Lean:
-[`five_polygon_strict_impossible`](../../SquaresInCircles/Five/Optimality.lean#L23).*
+[`Five.polygon_strict_impossible`](../../SquaresInCircles/Five/Optimality.lean#L27).*
 
 *Proof of Proposition 5.2.* If $R^2 < \frac52$, then by Lemma 1 and
 Lemma 5.4, $(a_S, b_S)$ is strictly inside $P_5$ for every square $S$, which
@@ -279,7 +281,8 @@ octagon gives $|a - b| \le 3 - 2s$. Then
 2\left(a^2 + b^2\right) = s^2 + (a - b)^2 \le s^2 + (3 - 2s)^2 = 2 + (5s - 7)(s - 1) < 2 . \qquad \square
 ```
 
-*Lean: [`dodecagon_norm_le`](../../SquaresInCircles/Five/Uniqueness.lean#L10).*
+*Lean:
+[`Five.dodecagon_norm_le`](../../SquaresInCircles/Five/Uniqueness.lean#L17).*
 
 ### Proposition 5.11 (the 12-gon is rigid)
 
@@ -306,7 +309,7 @@ the packing problem.
    form. No angle has to be computed. $\square$
 
 *Lean:
-[`Five.polygon_uniqueness`](../../SquaresInCircles/Five/Uniqueness.lean#L27).*
+[`Five.polygon_uniqueness`](../../SquaresInCircles/Five/Uniqueness.lean#L34).*
 
 ### Corollary 5.12 (uniqueness)
 
@@ -316,4 +319,8 @@ about $o$, the packing has the normal form of $c_1, \dots, c_5$.
 *Proof.* By Lemma 1 and Lemma 5.4, $(a_S, b_S) \in P_5$ for every square $S$;
 apply Proposition 5.11. $\square$
 
-*Lean: [`Five.uniqueness`](../../SquaresInCircles/Five/Uniqueness.lean#L56).*
+*Lean: [`Five.uniqueness`](../../SquaresInCircles/Five/Uniqueness.lean#L63).*
+
+Proposition 5.1 and [Lemma 24](common.md#lemma-24-normal-forms-of-a-packing)
+give the converse: every configuration with this normal form is a packing in
+the closed disk of radius $R_5$.

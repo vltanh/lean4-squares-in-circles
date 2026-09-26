@@ -29,10 +29,11 @@ symbol. The figures are drawn from the same geometry by
 
 ## The main theorem
 
-*Lean: [`optimality`](../../SquaresInCircles.lean#L43),
-[`attainment`](../../SquaresInCircles.lean#L55),
-[`uniqueness`](../../SquaresInCircles.lean#L66),
-[`sliding_uniqueness`](../../SquaresInCircles.lean#L79) in
+*Lean: [`optimality`](../../SquaresInCircles.lean#L74),
+[`attainment`](../../SquaresInCircles.lean#L79),
+[`uniqueness`](../../SquaresInCircles.lean#L83),
+[`packing_iff`](../../SquaresInCircles.lean#L92),
+[`optimum`](../../SquaresInCircles.lean#L53), in
 [`SquaresInCircles.lean`](../../SquaresInCircles.lean).*
 
 For $1 \le n \le 5$ and $n = 7$ let $R_n$ and $c_1, \dots, c_n$ be given by the
@@ -54,15 +55,18 @@ table.
    (Definitions 2 and 3).
 2. *Optimality.* If $n$ unit squares form a packing in a closed disk of
    radius $R$, then $R \ge R_n$.
-3. *Uniqueness.* For $n \le 5$, every packing of $n$ unit squares in a closed
-   disk of radius $R_n$ has the normal form of $c_1, \dots, c_n$
-   (Definition 5): one rotation about the disk centre and one relabelling
-   carry the model onto it. For $n = 7$ the same holds with $c_5, c_6, c_7$
-   replaced by $(0, y_1), (0, y_2), (0, y_3)$ for some heights that are at
-   least 1 apart and within $\sqrt3 - \frac12$ of 0: the middle column can
-   slide.
+3. *Uniqueness.* The packings of $n$ unit squares in a closed disk of radius
+   $R_n$ are exactly the configurations with the normal form of an optimal
+   layout (Definition 5): one rotation about the disk centre and one
+   relabelling carry the layout onto them. For $n \le 5$ the only optimal
+   layout is $c_1, \dots, c_n$. For $n = 7$ the optimal layouts are
+   $c_1, \dots, c_4$ with $(0, y_1), (0, y_2), (0, y_3)$ for any heights that
+   are at least 1 apart and within $\sqrt3 - \frac12$ of 0: the middle column
+   can slide.
 
-The case $n$ is Theorem $n$ on the page for that case.
+The case $n$ is Theorem $n$ on the page for that case. Every case proves its
+three parts the same way, and the converse half of part 3 is shared
+([one framework](common.md#11-one-framework-for-every-case)).
 
 ## One and two squares
 
@@ -142,7 +146,8 @@ the optimal packing, and that rebuilds the packing up to the sliding column.
 
 The cells list the lemmas of [common.md](common.md) that each part of a proof
 depends on, including those used only inside other shared lemmas. Every
-construction uses Lemma 20 and nothing else.
+construction uses Lemma 20 and nothing else, and every converse of uniqueness
+uses Lemma 24.
 
 **Optimality.**
 

@@ -20,7 +20,7 @@ lemma pairSupport_continuous (a u A v : ℝ) (s t : TransverseSign) (k : Fin 4) 
   fun_prop
 
 /-- Admissible states: the support sums are positive below the gap `π/3`. -/
-theorem Equality.all_gap_pos_below {a u A v g : ℝ} (s t : TransverseSign) (k : Fin 4)
+theorem all_gap_pos_below {a u A v g : ℝ} (s t : TransverseSign) (k : Fin 4)
     (h : Admissible a u) (h' : Admissible A v) (hg : 0 ≤ g ∧ g < gap) :
     0 < pairSupport a u A v s t k g := by
   by_cases hg1 : g≤1

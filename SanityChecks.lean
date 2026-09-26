@@ -69,13 +69,13 @@ example : ((2951:ℝ)/10-86)/384+801/1600 < 157/150 := by norm_num
 example : (0:ℝ) < Seven.radialPolynomial (5/8) := Seven.radialPolynomial_pos (by norm_num)
 
 -- Contact points of the polygon relaxations.
-example : P3 (1/2) (5/16) := by norm_num [P3]
-example : P3 (11/16) 0 := by norm_num [P3]
-example : P4 (1/2) (1/2) := by norm_num [P4]
-example : P5 1 0 := by
+example : Three.P3 (1/2) (5/16) := by norm_num [Three.P3]
+example : Three.P3 (11/16) 0 := by norm_num [Three.P3]
+example : Four.P4 (1/2) (1/2) := by norm_num [Four.P4]
+example : Five.P5 1 0 := by
   have h := Real.sq_sqrt (show (0:ℝ) ≤ 5 by norm_num)
   exact ⟨by norm_num [P8],by nlinarith [Real.sqrt_nonneg 5]⟩
-example : P5 ((Real.sqrt 5-1)/2) ((Real.sqrt 5-1)/2) := by
+example : Five.P5 ((Real.sqrt 5-1)/2) ((Real.sqrt 5-1)/2) := by
   have h := Real.sq_sqrt (show (0:ℝ) ≤ 5 by norm_num)
   refine ⟨⟨?_,?_⟩,by linarith⟩ <;> nlinarith [Real.sqrt_nonneg 5]
 
@@ -84,21 +84,33 @@ example (S : Fin 3 → UnitSquare) (o : Point) (R : ℝ)
     (hp : Packing S o R) : Three.radius ≤ R := Three.optimality S o R hp
 example (S : Fin 3 → UnitSquare) (o : Point)
     (hd : InteriorDisjoint S)
-    (hp : ∀ i, P3Strict (alpha (S i) o) (beta (S i) o)) : False :=
-  three_polygon_strict_impossible S o hd hp
+    (hp : ∀ i, Three.P3Strict (alpha (S i) o) (beta (S i) o)) : False :=
+  Three.polygon_strict_impossible S o hd hp
 example (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5) (S : Fin n → UnitSquare) (o : Point)
-    (hp : Packing S o (optimalRadius n)) : HasNormalForm S o (modelCenters n) :=
-  uniqueness n hn S o hp
+    (hp : Packing S o (optimalRadius n)) : HasNormalForm S o (modelCenters n) := by
+  obtain ⟨c,hc,h⟩ := uniqueness n (Or.inl hn) S o hp
+  have hl : optimalLayouts n = {modelCenters n} := by
+    obtain ⟨h1,h5⟩ := hn
+    interval_cases n <;> rfl
+  rw [hl,Set.mem_singleton_iff] at hc
+  exact hc ▸ h
 example (S : Fin 7 → UnitSquare) (o : Point) (R : ℝ)
     (hp : Packing S o R) : optimalRadius 7 ≤ R := optimality 7 (Or.inr rfl) S o R hp
 example (S : Fin 7 → UnitSquare) (o : Point) (R : ℝ)
     (hp : Packing S o R) : Seven.radius ≤ R := Seven.optimality S o R hp
 example (S : Fin 7 → UnitSquare) (o : Point) (hp : Packing S o (optimalRadius 7)) :
-    ∃ c : Seven.Column, HasNormalForm S o (Seven.slidingCenters c) :=
-  sliding_uniqueness S o hp
+    ∃ c : Seven.Column, HasNormalForm S o (Seven.slidingCenters c) := by
+  obtain ⟨_,⟨c,rfl⟩,h⟩ := uniqueness 7 (Or.inr rfl) S o hp
+  exact ⟨c,h⟩
 example (S : Fin 7 → UnitSquare) (o : Point) :
-    Packing S o Seven.radius ↔ Seven.SlidingNormalForm S o :=
-  Seven.packing_iff_sliding S o
+    Packing S o Seven.radius ↔ ∃ c ∈ Set.range Seven.slidingCenters, HasNormalForm S o c :=
+  Seven.optimum.packing_iff S o
+
+-- The optimal layouts: one for each n ≤ 5, the sliding family for n = 7.
+example : optimalLayouts 3 = {Three.centers} := rfl
+example : optimalLayouts 7 = Set.range Seven.slidingCenters := rfl
+example (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7) :
+    (optimum n hn).radius = optimalRadius n := optimum_radius n hn
 
 -- The attaining packings, each in its own normal form.
 example : HasNormalForm One.model (0,0) One.centers :=
@@ -143,11 +155,11 @@ example (c : Seven.Column) : |c.middle| < 1/4 := by
 -- Seven squares: the three contacts of the optimal packing, the two squares of
 -- a side column, a side square and the top square at any admissible height, and
 -- the top square and the next side square.
-example : Seven.Equality.OrderedContact 1 (1/2) 1 (1/2) .negative .positive :=
+example : Seven.OrderedContact 1 (1/2) 1 (1/2) .negative .positive :=
   Or.inl ⟨rfl,rfl,⟨rfl,rfl⟩,⟨rfl,rfl⟩⟩
 example {a : ℝ} (ha : 1/2 ≤ a ∧ a ≤ Seven.columnLimit) :
-    Seven.Equality.OrderedContact 1 (1/2) a 0 .positive .negative :=
+    Seven.OrderedContact 1 (1/2) a 0 .positive .negative :=
   Or.inr (Or.inl ⟨rfl,⟨rfl,rfl⟩,⟨rfl,ha.1,ha.2⟩⟩)
 example {a : ℝ} (ha : 1/2 ≤ a ∧ a ≤ Seven.columnLimit) :
-    Seven.Equality.OrderedContact a 0 1 (1/2) .positive .negative :=
+    Seven.OrderedContact a 0 1 (1/2) .positive .negative :=
   Or.inr (Or.inr ⟨rfl,⟨rfl,ha.1,ha.2⟩,⟨rfl,rfl⟩⟩)

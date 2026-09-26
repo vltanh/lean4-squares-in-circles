@@ -3,7 +3,7 @@ import SquaresInCircles.Seven.CircleBudget
 import SquaresInCircles.Seven.ExteriorSelection
 
 /-!
-# The seven-square optimum
+# Seven squares: the lower bound
 
 `Seven.optimality` is the lower bound for arbitrary packings, with every square
 rotated independently and an arbitrary disk centre. The sliding packings of

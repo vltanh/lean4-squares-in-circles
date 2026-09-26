@@ -10,9 +10,9 @@ $(\frac12, -\frac12)$.
    about the origin: the $2 \times 2$ block.
 2. A packing of four unit squares in a closed disk of radius $R$ forces
    $R \ge R_4$.
-3. A packing of four unit squares in a closed disk of radius $R_4$ has the
-   normal form of $c_1, \dots, c_4$. In particular the disk centre is a
-   vertex of every square.
+3. The packings of four unit squares in a closed disk of radius $R_4$ are
+   exactly the configurations with the normal form of $c_1, \dots, c_4$. In
+   particular the disk centre is a vertex of every square.
 
 ![The 2 by 2 block in its dashed circle of radius root 2, with the circle of radius 1/2 about the centre divided into four coloured quarter arcs, one in each square](figures/four.svg)
 
@@ -30,9 +30,11 @@ Unlike three and five squares, this case keeps the disk constraint
 $\varphi(a_S, b_S) \le 2$ next to the contact polygon throughout: the exterior
 arcs need it, and so does uniqueness, because the polygon alone is not rigid.
 
-*Lean: [`Four.attainment`](../../SquaresInCircles/Four/Construction.lean#L35),
-[`Four.optimality`](../../SquaresInCircles/Four/Optimality.lean#L38),
-[`Four.uniqueness`](../../SquaresInCircles/Four/Uniqueness.lean#L98), in
+*Lean:
+[`Four.model_packing`](../../SquaresInCircles/Four/Construction.lean#L28),
+[`Four.optimality`](../../SquaresInCircles/Four/Optimality.lean#L42),
+[`Four.uniqueness`](../../SquaresInCircles/Four/Uniqueness.lean#L105),
+[`Four.optimum`](../../SquaresInCircles/Four/Uniqueness.lean#L135), in
 [`SquaresInCircles/Four/`](../../SquaresInCircles/Four).*
 
 ## Construction
@@ -47,9 +49,8 @@ squares lie in $[-1, 1]^2$, with $1 + 1 = 2$. Apply
 [Lemma 20](common.md#lemma-20-axis-parallel-squares). $\square$
 
 *Lean:
-[`Four.model_disjoint`](../../SquaresInCircles/Four/Construction.lean#L24),
-[`Four.model_packing`](../../SquaresInCircles/Four/Construction.lean#L29),
-[`Four.attainment`](../../SquaresInCircles/Four/Construction.lean#L35).*
+[`Four.model_packing`](../../SquaresInCircles/Four/Construction.lean#L28),
+[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L44).*
 
 ## Lower bound
 
@@ -68,8 +69,8 @@ The proof takes four steps.
    $\Gamma_{1/2}$.
 4. **Conclusion.** The angular budget fails.
 
-*Lean: [`four_squared_lower`](../../SquaresInCircles/Four/Optimality.lean#L31),
-[`Four.optimality`](../../SquaresInCircles/Four/Optimality.lean#L38).*
+*Lean: [`Four.squared_lower`](../../SquaresInCircles/Four/Optimality.lean#L35),
+[`Four.optimality`](../../SquaresInCircles/Four/Optimality.lean#L42).*
 
 ### Step 1. The contact polygon
 
@@ -91,11 +92,11 @@ $3a + b \le 3(a + b) < 3$, and likewise $a + 3b < 3$. $\square$
 
 We call $a + b \le 1$ the *diamond*.
 
-*Lean: [`P4`](../../SquaresInCircles/Four/Tangents.lean#L12),
-[`P4Strict`](../../SquaresInCircles/Four/Tangents.lean#L13),
-[`p4_of_phi_le`](../../SquaresInCircles/Four/Tangents.lean#L15),
-[`p4_of_phi_lt`](../../SquaresInCircles/Four/Tangents.lean#L19),
-[`p4Strict_to_p8Strict`](../../SquaresInCircles/Four/Tangents.lean#L23).*
+*Lean: [`Four.P4`](../../SquaresInCircles/Four/Tangents.lean#L12),
+[`Four.P4Strict`](../../SquaresInCircles/Four/Tangents.lean#L13),
+[`Four.p4_of_phi_le`](../../SquaresInCircles/Four/Tangents.lean#L15),
+[`Four.p4_of_phi_lt`](../../SquaresInCircles/Four/Tangents.lean#L19),
+[`Four.p4Strict_to_p8Strict`](../../SquaresInCircles/Four/Tangents.lean#L23).*
 
 ### Step 2. Exterior squares
 
@@ -125,7 +126,7 @@ applies: the cap has length $\min(2A_S, A_S + V_S)$.
 This is where the disk matters: the diamond alone allows $a_S$ up to 1, and at
 $a_S = 1$ the cap shrinks to nothing.
 
-*Lean: [`four_exterior_arc`](../../SquaresInCircles/Four/Exterior.lean#L13).*
+*Lean: [`Four.exterior_arc`](../../SquaresInCircles/Four/Exterior.lean#L13).*
 
 ### Step 3. The containing square
 
@@ -160,7 +161,7 @@ $|X - s a_S| < \frac12$ and $|Y - s b_S| < \frac12$.
   and the band condition says exactly that the two intervals overlap.
   $\square$
 
-*Lean: [`ray_parameter`](../../SquaresInCircles/Four/Containing.lean#L16),
+*Lean: [`Four.ray_parameter`](../../SquaresInCircles/Four/Containing.lean#L16),
 [`SquareChart.ray_mem`](../../SquaresInCircles/Common/Charts.lean#L84).*
 
 #### Lemma 4.6 (the sweep holds a quarter circle)
@@ -193,9 +194,9 @@ These chart angles form an arc of half-width $\frac\pi4$ centred at
 $\theta_S + \varepsilon_S\delta$, the direction of $c_S - o$. $\square$
 
 *Lean:
-[`first_octant_direction`](../../SquaresInCircles/Four/Containing.lean#L59),
-[`canonical_quarter_ray`](../../SquaresInCircles/Four/Containing.lean#L94),
-[`four_containing_arc`](../../SquaresInCircles/Four/Containing.lean#L154).*
+[`Four.first_octant_direction`](../../SquaresInCircles/Four/Containing.lean#L59),
+[`Four.canonical_quarter_ray`](../../SquaresInCircles/Four/Containing.lean#L94),
+[`Four.containing_arc`](../../SquaresInCircles/Four/Containing.lean#L154).*
 
 ### Step 4. Conclusion
 
@@ -217,7 +218,7 @@ This contradicts [Proposition 18](common.md#proposition-18-budget-with-a-sweep)
 with $n = 4$ and $r = \frac12$. $\square$
 
 *Lean:
-[`four_diamond_impossible`](../../SquaresInCircles/Four/Optimality.lean#L13).*
+[`Four.diamond_impossible`](../../SquaresInCircles/Four/Optimality.lean#L17).*
 
 *Proof of Proposition 4.2.* If $R^2 < 2$, then by
 [Lemma 1](common.md#lemma-1-farthest-vertex) every square $S$ has
@@ -264,9 +265,9 @@ $o$.
    ([Lemma 21](common.md#lemma-21-sitting-at-a-centre) (2)) moves it to
    $(\frac12, \frac12)$ in the frame $\mu_S - \frac\pi4$. $\square$
 
-*Lean: [`vertexMid`](../../SquaresInCircles/Four/Uniqueness.lean#L58),
-[`vertex_arc`](../../SquaresInCircles/Four/Uniqueness.lean#L61),
-[`vertex_represents`](../../SquaresInCircles/Four/Uniqueness.lean#L75).*
+*Lean: [`Four.vertexMid`](../../SquaresInCircles/Four/Uniqueness.lean#L65),
+[`Four.vertex_arc`](../../SquaresInCircles/Four/Uniqueness.lean#L68),
+[`Four.vertex_represents`](../../SquaresInCircles/Four/Uniqueness.lean#L82).*
 
 ### Proposition 4.9 (uniqueness)
 
@@ -299,8 +300,12 @@ $a_S = b_S = \frac12$.
    $c_1, \dots, c_4$. [Lemma 22](common.md#lemma-22-from-slots-to-a-normal-form)
    gives the normal form. $\square$
 
-*Lean: [`four_contact_eq`](../../SquaresInCircles/Four/Uniqueness.lean#L10),
-[`four_some_vertex`](../../SquaresInCircles/Four/Uniqueness.lean#L17),
-[`four_no_containing`](../../SquaresInCircles/Four/Uniqueness.lean#L28),
-[`four_all_vertices`](../../SquaresInCircles/Four/Uniqueness.lean#L43),
-[`Four.uniqueness`](../../SquaresInCircles/Four/Uniqueness.lean#L98).*
+*Lean: [`Four.contact_eq`](../../SquaresInCircles/Four/Uniqueness.lean#L17),
+[`Four.some_vertex`](../../SquaresInCircles/Four/Uniqueness.lean#L24),
+[`Four.no_containing`](../../SquaresInCircles/Four/Uniqueness.lean#L35),
+[`Four.all_vertices`](../../SquaresInCircles/Four/Uniqueness.lean#L50),
+[`Four.uniqueness`](../../SquaresInCircles/Four/Uniqueness.lean#L105).*
+
+Proposition 4.1 and [Lemma 24](common.md#lemma-24-normal-forms-of-a-packing)
+give the converse: every configuration with this normal form is a packing in
+the closed disk of radius $R_4$.

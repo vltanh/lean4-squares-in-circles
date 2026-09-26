@@ -46,7 +46,7 @@ lemma cap_side_sum_gt {a x A y : ℝ}
 
 /-- Two labels on opposite sides of parallel squares add up to at least
 `π/3`. -/
-theorem Equality.opposite_labels_ge {a x A y : ℝ}
+theorem opposite_labels_ge {a x A y : ℝ}
     (h : Admissible a x) (h' : Admissible A y) (hs : 1 ≤ x+y) :
     gap ≤ label a x+label A y := by
   rcases h.selected with hx | hx | hx <;> rcases h'.selected with hy | hy | hy
@@ -73,7 +73,7 @@ lemma signedLabel_nonpos {a b : ℝ} (h : Admissible a |b|) (hb : b < 0) :
   linarith [h.label_nonneg]
 
 /-- One horizontal-separator alternative for a quarter-turned pair. -/
-theorem Equality.quarter_difference_horizontal_le {a b A B : ℝ}
+theorem quarter_difference_horizontal_le {a b A B : ℝ}
     (h : Admissible a |b|) (h' : Admissible A |B|)
     (hsep : 1 ≤ a+B) : signedLabel a b-signedLabel A B ≤ Real.pi/6 := by
   by_cases hB : 0 ≤ B
@@ -112,7 +112,7 @@ theorem Equality.quarter_difference_horizontal_le {a b A B : ℝ}
       linarith [pi_lower_157]
 
 /-- Either separating coordinate suffices for the quarter-turn label inequality. -/
-theorem Equality.quarter_difference_le {a b A B : ℝ}
+theorem quarter_difference_le {a b A B : ℝ}
     (h : Admissible a |b|) (h' : Admissible A |B|)
     (hsep : 1 ≤ a+B ∨ 1 ≤ A-b) :
     signedLabel a b-signedLabel A B ≤ Real.pi/6 := by
