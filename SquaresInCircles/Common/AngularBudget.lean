@@ -51,79 +51,43 @@ theorem closed_arc_budget {n : ℕ} (c : Fin n → AddCircle (2*Real.pi)) (w : F
     (hd : Pairwise (fun i j => Disjoint
       (Metric.closedBall (c i) (w i)) (Metric.closedBall (c j) (w j)))) :
     ∑ i, w i ≤ Real.pi := by
-  classical
-  have hvol (i : Fin n) :
-      volume (Metric.closedBall (c i) (w i)) = ENNReal.ofReal (2*w i) := by
-    rw [AddCircle.volume_closedBall (2*Real.pi)]
-    rw [min_eq_right (by linarith [(hw i).2])]
-  have hd' : ((Finset.univ : Finset (Fin n)) : Set (Fin n)).PairwiseDisjoint
-      (fun i => Metric.closedBall (c i) (w i)) := by
-    intro i _ j _ hij
-    exact hd hij
-  have hm := measure_biUnion_finset (μ := (volume : Measure (AddCircle (2*Real.pi)))) hd'
-    (fun i _ => measurableSet_closedBall)
-  have hmu : (∑ i, ENNReal.ofReal (2*w i)) ≤ ENNReal.ofReal (2*Real.pi) := by
-    calc
-      _ = volume (⋃ i ∈ (Finset.univ : Finset (Fin n)), Metric.closedBall (c i) (w i)) := by
-        rw [hm]
-        exact Finset.sum_congr rfl (fun i _ => (hvol i).symm)
-      _ ≤ volume (univ : Set (AddCircle (2*Real.pi))) := measure_mono (subset_univ _)
-      _ = ENNReal.ofReal (2*Real.pi) := AddCircle.measure_univ (2*Real.pi)
-  have hreal := ENNReal.toReal_mono ENNReal.ofReal_ne_top hmu
-  rw [ENNReal.toReal_sum (fun _ _ => ENNReal.ofReal_ne_top)] at hreal
-  have he (i : Fin n) : (ENNReal.ofReal (2*w i)).toReal=2*w i :=
-    ENNReal.toReal_ofReal (by linarith [(hw i).1])
-  simp only [he, ENNReal.toReal_ofReal (show 0 ≤ 2*Real.pi by positivity)] at hreal
-  rw [← Finset.mul_sum] at hreal
+  have hmu := sum_measure_le_measure_univ (μ := (volume : Measure (AddCircle (2*Real.pi))))
+    (s := Finset.univ) (fun i _ => measurableSet_closedBall.nullMeasurableSet)
+    (fun i _ j _ hij => (hd hij).aedisjoint)
+  have hvol (i : Fin n) : volume (Metric.closedBall (c i) (w i))=ENNReal.ofReal (2*w i) := by
+    rw [AddCircle.volume_closedBall,min_eq_right (by linarith [(hw i).2])]
+  simp only [hvol,AddCircle.measure_univ] at hmu
+  rw [← ENNReal.ofReal_sum_of_nonneg (fun i _ => by linarith [(hw i).1]),
+    ENNReal.ofReal_le_ofReal_iff (by positivity),← Finset.mul_sum] at hmu
   linarith
 
-/-- The same budget for open arc witnesses, without boundary-measure assumptions. -/
+/-- The same budget for open arc witnesses, without boundary-measure assumptions:
+shrink every arc by the same factor `t < 1` and close it. -/
 theorem open_arc_budget {n : ℕ} {o : Point} {r : ℝ} {U : Fin n → Set Point}
     (A : ∀ i, OpenArc o r (U i)) (hd : Pairwise (fun i j => Disjoint (U i) (U j))) :
     ∑ i, (A i).halfWidth ≤ Real.pi := by
-  apply bound_from_shrinks
-  intro t ht0 ht1
-  have hw (i : Fin n) : 0 ≤ t*(A i).halfWidth ∧ t*(A i).halfWidth ≤ Real.pi := by
-    constructor
-    · exact mul_nonneg ht0 (A i).positive.le
-    · have hh := mul_lt_mul_of_pos_right ht1 (A i).positive
-      linarith [(A i).atMostPi]
-  let c : Fin n → AddCircle (2*Real.pi) := fun i => (A i).center
-  have hdisj : Pairwise (fun i j => Disjoint
-      (Metric.closedBall (c i) (t*(A i).halfWidth))
-      (Metric.closedBall (c j) (t*(A j).halfWidth))) := by
-    intro i j hij
-    rw [Set.disjoint_left]
-    intro θ hi hj
-    have hi' : dist θ (c i) ≤ t*(A i).halfWidth := hi
-    have hj' : dist θ (c j) ≤ t*(A j).halfWidth := hj
-    apply Set.disjoint_left.mp (hd hij) ((A i).inside θ ?_) ((A j).inside θ ?_)
-    · have h := mul_lt_mul_of_pos_right ht1 (A i).positive
-      exact lt_of_le_of_lt hi' (by linarith)
-    · have h := mul_lt_mul_of_pos_right ht1 (A j).positive
-      exact lt_of_le_of_lt hj' (by linarith)
-  simpa only [Finset.mul_sum] using closed_arc_budget c
-    (fun i => t*(A i).halfWidth) hw hdisj
+  refine bound_from_shrinks fun t ht0 ht1 => ?_
+  have hw (i : Fin n) : t*(A i).halfWidth < (A i).halfWidth :=
+    mul_lt_of_lt_one_left (A i).positive ht1
+  rw [Finset.mul_sum]
+  exact closed_arc_budget (fun i => (A i).center) _
+    (fun i => ⟨mul_nonneg ht0 (A i).positive.le,(hw i).le.trans (A i).atMostPi⟩)
+    fun i j hij => Set.disjoint_left.mpr fun θ hi hj => Set.disjoint_left.mp (hd hij)
+      ((A i).inside θ (lt_of_le_of_lt hi (hw i))) ((A j).inside θ (lt_of_le_of_lt hj (hw j)))
 
-lemma arc_excess_impossible {n : ℕ} {o : Point} {r : ℝ} {U : Fin n → Set Point}
-    (A : ∀ i, OpenArc o r (U i)) (hd : Pairwise (fun i j => Disjoint (U i) (U j)))
-    (hexcess : Real.pi < ∑ i, (A i).halfWidth) : False :=
-  (not_lt_of_ge (open_arc_budget A hd)) hexcess
-
-/-- Uniform lower bounds, with one strict margin, suffice for a contradiction. -/
-theorem uniform_arc_excess {n : ℕ} (hn : 0 < n) {o : Point} {r : ℝ}
+/-- Arcs of half-width at least `π/n` on one circle, one of them more, cannot
+belong to `n` disjoint sets. -/
+theorem uniform_arc_excess {n : ℕ} {o : Point} {r : ℝ}
     {U : Fin n → Set Point} (A : ∀ i, OpenArc o r (U i))
     (hd : Pairwise (fun i j => Disjoint (U i) (U j)))
-    (hle : ∀ i, Real.pi/(n:ℝ) ≤ (A i).halfWidth)
-    (hlt : ∃ i, Real.pi/(n:ℝ) < (A i).halfWidth) : False := by
-  have hnR : (n:ℝ) ≠ 0 := by exact_mod_cast Nat.ne_of_gt hn
-  have hsum := Finset.sum_lt_sum (s := Finset.univ)
-    (fun i _ => hle i) (by obtain ⟨i,hi⟩ := hlt; exact ⟨i,Finset.mem_univ _,hi⟩)
-  have hconst : (∑ _i : Fin n, Real.pi/(n:ℝ)) = Real.pi := by
-    rw [Finset.sum_const, Finset.card_univ, Fintype.card_fin, nsmul_eq_mul]
-    field_simp
-  rw [hconst] at hsum
-  exact arc_excess_impossible A hd hsum
+    (hle : ∀ i, Real.pi/n ≤ (A i).halfWidth)
+    (hlt : ∃ i, Real.pi/n < (A i).halfWidth) : False := by
+  obtain ⟨i,hi⟩ := hlt
+  have hsum := Finset.sum_lt_sum (s := Finset.univ) (fun j _ => hle j) ⟨i,Finset.mem_univ _,hi⟩
+  have hn : (n:ℝ) ≠ 0 := by exact_mod_cast i.pos.ne'
+  rw [Finset.sum_const,Finset.card_univ,Fintype.card_fin,nsmul_eq_mul,
+    mul_div_cancel₀ _ hn] at hsum
+  exact (open_arc_budget A hd).not_gt hsum
 
 /-- Convert a real parameter interval to an arc on the quotient circle.
 The hypotheses contain *strict* planar membership throughout the interval. -/

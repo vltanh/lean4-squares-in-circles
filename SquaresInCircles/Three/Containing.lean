@@ -1,375 +1,239 @@
 import SquaresInCircles.Three.Exterior
-import SquaresInCircles.Common.Coordinates
 import SquaresInCircles.Common.ArcMetric
 import SquaresInCircles.Common.ElementaryTrig
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
 
 /-!
-# The containing square, three squares
+# Three squares: the containing square
 
-If the disk centre lies inside one square, the other two are exterior. Three
-disjoint arc witnesses on the circle of radius `3/8` bound the containing
-square's deficit. A clipped exterior cap would compensate for that entire
-deficit. Otherwise both exterior caps are full and nearly axial, the circle
-perimeter inequality pins the angle between them, and an explicit point lies in
-both, contradicting interior-disjointness. Only the containing square needs the
-strict 16-gon, so the same argument serves the optimum and its uniqueness.
+A square that contains the disk centre holds an arc of the circle of radius
+`3/8` less than `1/12` short of 120 degrees, and the other two squares hold caps
+of at least 120 degrees. A clipped cap would make up more than that deficit, so
+both caps are full and nearly axial. On the circle of radius `7/16` two nearly
+axial squares hold arcs too wide for the angle between their phases, which the
+budget on the circle of radius `3/8` keeps below `2π/3+1/12`.
 -/
 noncomputable section
 open Set
 namespace SquaresInCircles.Three
 
-/-! ## Deficit and compensation estimates
+/-! ## The arc of the containing square and the radial gap -/
 
-The variables `P`, `Q`, `u`, `v` of the compensation lemma are normalized by
-the auxiliary radius `3/8`. The only calculus step is a one-dimensional
-monotonicity comparison, with explicit positive square-root denominators. -/
-
-lemma asin_increment_mono {P u : ℝ}
-    (hP : 0 ≤ P) (hPu : P ≤ u) (hu : u < 1/2)
-    (htop : 1/2+(16/13)*u < 1) :
-    Real.arcsin (1/2+(16/13)*P)-Real.arcsin P ≤
-      Real.arcsin (1/2+(16/13)*u)-Real.arcsin u := by
-  let f : ℝ → ℝ := fun t => Real.arcsin (1/2+(16/13)*t)-Real.arcsin t
-  let df : ℝ → ℝ := fun t =>
-    (1/Real.sqrt (1-(1/2+(16/13)*t)^2))*(16/13) -
-      1/Real.sqrt (1-t^2)
-  have htdata (t : ℝ) (ht : t ∈ Icc P u) :
-      0 ≤ t ∧ t < 1/2 ∧ 0 < 1/2+(16/13)*t ∧ 1/2+(16/13)*t < 1 := by
-    exact ⟨by linarith [ht.1],by linarith [ht.2],
-      by linarith [ht.1],by linarith [ht.2]⟩
-  have hder (t : ℝ) (ht : t ∈ Icc P u) : HasDerivAt f (df t) t := by
-    obtain ⟨ht0,ht1,hg0,hg1⟩ := htdata t ht
-    have hg : HasDerivAt (fun z : ℝ => 1/2+(16/13)*z) (16/13) t :=
-      (((hasDerivAt_id' t).const_mul (16/13 : ℝ)).const_add (1/2 : ℝ)).congr_deriv
-        (by ring)
-    have hd := ((Real.hasDerivAt_arcsin (by linarith : 1/2+(16/13)*t ≠ -1)
-      (by linarith : 1/2+(16/13)*t ≠ 1)).comp t hg).sub
-        (Real.hasDerivAt_arcsin (by linarith : t ≠ -1) (by linarith : t ≠ 1))
-    exact hd
-  have hdf (t : ℝ) (ht : t ∈ Icc P u) : 0 ≤ df t := by
-    obtain ⟨ht0,ht1,hg0,hg1⟩ := htdata t ht
-    have hs0 : 0 < Real.sqrt (1-(1/2+(16/13)*t)^2) :=
-      Real.sqrt_pos.mpr (by nlinarith)
-    have hl0 : 0 < Real.sqrt (1-t^2) := Real.sqrt_pos.mpr (by nlinarith)
-    have hsle : Real.sqrt (1-(1/2+(16/13)*t)^2) ≤ Real.sqrt (1-t^2) := by
-      apply Real.sqrt_le_sqrt
-      nlinarith
-    have hrec := (div_le_div_iff₀ hl0 hs0).mpr
-      (show 1*Real.sqrt (1-(1/2+(16/13)*t)^2) ≤ 1*Real.sqrt (1-t^2) by linarith)
-    have hpos : 0 < 1/Real.sqrt (1-(1/2+(16/13)*t)^2) := one_div_pos.mpr hs0
-    dsimp [df]
+/-- Between the chart angles `-arcsin Q` and `π/2+arcsin P` the sine exceeds
+`-Q`. -/
+lemma neg_lt_sin {P Q t : ℝ} (hQ : 0 < Q) (h₁ : -Real.arcsin Q < t)
+    (h₂ : t < Real.pi/2+Real.arcsin P) : -Q < Real.sin t := by
+  by_cases ht : t ≤ Real.pi/2
+  · rw [← Real.arcsin_neg] at h₁
+    exact (Real.arcsin_lt_iff_lt_sin' ⟨by linarith [Real.neg_pi_div_two_le_arcsin (-Q)],ht⟩).mp h₁
+  · have := Real.sin_pos_of_pos_of_lt_pi (x := t) (by linarith [Real.pi_pos])
+      (by linarith [Real.arcsin_le_pi_div_two P])
     linarith
-  have hmono : MonotoneOn f (Icc P u) := by
-    apply monotoneOn_of_deriv_nonneg (convex_Icc P u)
-      (show ContinuousOn f (Icc P u) by dsimp [f]; fun_prop)
-    · intro t ht
-      exact (hder t (interior_subset ht)).differentiableAt.differentiableWithinAt
-    · intro t ht
-      rw [(hder t (interior_subset ht)).deriv]
-      exact hdf t (interior_subset ht)
-  exact hmono ⟨le_rfl,hPu⟩ ⟨hPu,le_rfl⟩ hPu
 
-/-- A clipped neighboring arc plus the containing arc already exceed 240 degrees. -/
-lemma compensation {P Q u v : ℝ}
-    (hP : 0 ≤ P) (hQ : Q ∈ Icc (0:ℝ) 1)
-    (hcentral : 1/2 < (16/13)*P+Q) (hPu : P ≤ u)
-    (hv : 1/2+(16/13)*u ≤ v) (hv1 : v < 1) :
-    4*Real.pi/3 <
-      (Real.pi/2-Real.arcsin u+Real.arcsin v)+
-      (Real.pi/2+Real.arcsin P+Real.arcsin Q) := by
-  have htop : 1/2+(16/13)*u < 1 := hv.trans_lt hv1
-  have hinc := asin_increment_mono hP hPu (by linarith) htop
+/-- On the circle of radius `3/8` about a point of the square centred at
+`(a, b)`, `0 ≤ a, b < 1/2`, the far edges are out of reach, and every chart angle
+from `-capV b` to `π/2+capV a` lies in the square. -/
+lemma containing_mem {a b t : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b) (ha1 : a < 1/2) (hb1 : b < 1/2)
+    (ht : t ∈ Ioo (-capV aux b) (Real.pi/2+capV aux a)) :
+    |aux*Real.cos t-a| < 1/2 ∧ |aux*Real.sin t-b| < 1/2 := by
+  unfold capV at ht
+  rw [aux] at ht ⊢
+  have hs := neg_lt_sin (by linarith) ht.1 ht.2
+  have hc := neg_lt_sin (P := (1/2-b)/(3/8)) (Q := (1/2-a)/(3/8)) (t := Real.pi/2-t)
+    (by linarith) (by linarith [ht.2]) (by linarith [ht.1])
+  rw [Real.sin_pi_div_two_sub] at hc
+  exact ⟨abs_lt.mpr ⟨by linarith,by linarith [Real.cos_le_one t]⟩,
+    abs_lt.mpr ⟨by linarith,by linarith [Real.sin_le_one t]⟩⟩
+
+/-- The arc of a containing square, of length `π/2+capV a+capV b`. -/
+lemma containing_arc {S : UnitSquare} {o : Point} (C : SquareChart S o) (ho : openSquare S o) :
+    ∃ W : OpenArc o aux {p | openSquare S p},
+      2*W.halfWidth=Real.pi/2+capV aux C.a+capV aux C.b := by
+  have hc := C.origin.mp ho
+  have hV (x : ℝ) (hx : x < 1/2) : 0 ≤ capV aux x ∧ capV aux x ≤ Real.pi/2 :=
+    ⟨Real.arcsin_nonneg.mpr (by rw [aux]; linarith),Real.arcsin_le_pi_div_two _⟩
+  have ha := hV C.a hc.1
+  have hb := hV C.b hc.2
+  obtain ⟨W,hw,-⟩ := C.arc aux (-capV aux C.b) (Real.pi/2+capV aux C.a)
+    (by linarith [Real.pi_pos]) (by linarith [Real.pi_pos])
+    fun t ht => containing_mem C.nonneg.1 C.nonneg.2 hc.1 hc.2 ht
+  exact ⟨W,by rw [hw]; ring⟩
+
+/-- The radial gap: a containing square holds every circle about `o` of radius
+below `1/2-a`, so a disjoint exterior square cannot reach one. -/
+lemma gap_from_containing {S T : UnitSquare} {o : Point}
+    (C : SquareChart S o) (D : SquareChart T o) (hsort : C.b ≤ C.a) (ho : openSquare S o)
+    (hDa : 1/2 ≤ D.a) (hDb : D.b ≤ 1/2)
+    (hST : Disjoint {p | openSquare S p} {p | openSquare T p}) :
+    1/2-C.a ≤ D.a-1/2 := by
+  by_contra hn
+  push Not at hn
+  have hc := C.origin.mp ho
+  have hr : 0 < (D.a-C.a)/2 := by linarith
+  obtain ⟨A,hA,-⟩ := C.arc ((D.a-C.a)/2) (-Real.pi) Real.pi (by linarith [Real.pi_pos])
+    (by linarith) fun t _ => by
+      have h₁ := mul_le_mul_of_nonneg_left (Real.cos_le_one t) hr.le
+      have h₂ := mul_le_mul_of_nonneg_left (Real.neg_one_le_cos t) hr.le
+      have h₃ := mul_le_mul_of_nonneg_left (Real.sin_le_one t) hr.le
+      have h₄ := mul_le_mul_of_nonneg_left (Real.neg_one_le_sin t) hr.le
+      exact ⟨abs_lt.mpr ⟨by linarith,by linarith [C.nonneg.1]⟩,
+        abs_lt.mpr ⟨by linarith,by linarith [C.nonneg.2]⟩⟩
+  obtain ⟨B,-,-⟩ := D.cap_arc hr (by linarith [C.nonneg.1]) hDa (by linarith) hDb
+  have h := A.centers_separated B hST
+  rw [hA] at h
+  linarith [direction_diameter A.center B.center,B.positive]
+
+/-! ## Compensation and the deficit -/
+
+/-- `arcsin (1/2+16t/13) - arcsin t` increases while `1/2+16t/13 < 1`. -/
+lemma asin_increment_mono {P u : ℝ} (hP : 0 ≤ P) (hPu : P ≤ u) (htop : 1/2+16/13*u < 1) :
+    Real.arcsin (1/2+16/13*P)-Real.arcsin P ≤ Real.arcsin (1/2+16/13*u)-Real.arcsin u := by
+  refine (strictMonoOn_of_deriv_pos (f := fun t => Real.arcsin (1/2+16/13*t)-Real.arcsin t)
+    (convex_Icc P u) (by fun_prop) fun t ht => ?_).monotoneOn
+    ⟨le_rfl,hPu⟩ ⟨hPu,le_rfl⟩ hPu
+  rw [interior_Icc] at ht
+  have h1 : 1/2+16/13*t < 1 := by linarith [ht.2]
+  have hd : HasDerivAt (fun t => Real.arcsin (1/2+16/13*t)-Real.arcsin t)
+      (1/√(1-(1/2+16/13*t)^2)*(16/13)-1/√(1-t^2)) t := by
+    have hg : HasDerivAt (fun z : ℝ => 1/2+16/13*z) (16/13) t :=
+      (((hasDerivAt_id' t).const_mul (16/13:ℝ)).const_add (1/2:ℝ)).congr_deriv (by ring)
+    exact ((Real.hasDerivAt_arcsin (by linarith [ht.1]) h1.ne).comp t hg).sub
+      (Real.hasDerivAt_arcsin (by linarith [ht.1]) (by linarith [ht.1]))
+  rw [hd.deriv]
+  have hs0 : 0 < √(1-(1/2+16/13*t)^2) := Real.sqrt_pos.2 (by nlinarith [ht.1])
+  have hs := one_div_lt_one_div_of_lt hs0 (Real.sqrt_lt_sqrt (by nlinarith [ht.1])
+    (show 1-(1/2+16/13*t)^2 < 1-t^2 by nlinarith [ht.1]))
+  have := one_div_pos.mpr hs0
+  linarith
+
+/-- A clipped cap and the arc of the containing square together exceed 240
+degrees: `arcsin v - arcsin u` makes up the deficit `π/6 - arcsin P - arcsin Q`. -/
+lemma compensation {P Q u v : ℝ} (hP : 0 ≤ P) (hQ : Q ∈ Icc (0:ℝ) 1)
+    (hcentral : 1/2 < 16/13*P+Q) (hPu : P ≤ u) (hv : 1/2+16/13*u ≤ v) (hv1 : v < 1) :
+    Real.pi/3 < Real.arcsin v-Real.arcsin u+Real.arcsin P+Real.arcsin Q := by
+  have hinc := asin_increment_mono hP hPu (by linarith)
   have hvmono := Real.arcsin_le_arcsin hv
-  have htP : 1/2+(16/13)*P ∈ Icc (0:ℝ) 1 := ⟨by linarith,by linarith⟩
-  have hpair := arcsin_sum_gt_of_sin_lt htP hQ
+  have hpair := arcsin_sum_gt_of_sin_lt (show 1/2+16/13*P ∈ Icc (0:ℝ) 1 by
+    constructor <;> linarith) hQ
     (show Real.pi/6 ∈ Icc (0:ℝ) (Real.pi/2) by constructor <;> linarith [Real.pi_pos])
     (by rw [Real.sin_pi_div_six]; linarith)
   linarith
 
-/-- The deficit bounds use the two first contact tangents, not numerical trig. -/
-lemma deficit_bounds {a b : ℝ} (hba : b ≤ a) (ha1 : a < 1/2) (hp : P3Strict a b)
-    (hlen : Real.pi/2+Real.arcsin ((1/2-a)/aux)+
-      Real.arcsin ((1/2-b)/aux) ≤ 2*Real.pi/3) :
-    0 < (1/2-a)/aux ∧ (1/2-a)/aux ≤ (1/2-b)/aux ∧
-      (1/2-b)/aux < 1 ∧ 1/2 < (16/13)*((1/2-a)/aux)+(1/2-b)/aux ∧
-      Real.pi/6-Real.arcsin ((1/2-a)/aux)-Real.arcsin ((1/2-b)/aux) < 1/12 := by
-  have hP : 0 < (1/2-a)/aux := by dsimp [aux]; linarith
-  have hPQ : (1/2-a)/aux ≤ (1/2-b)/aux := by dsimp [aux]; linarith
-  have hcentral : 1/2 < (16/13)*((1/2-a)/aux)+(1/2-b)/aux := by
-    dsimp [aux]; linarith [hp.1]
-  have hQ1 : (1/2-b)/aux < 1 := by
-    apply Real.arcsin_lt_pi_div_two.mp
-    linarith [Real.pi_pos,Real.arcsin_pos.mpr hP]
-  have hAP := arcsin_ge_self hP.le (hPQ.trans hQ1.le)
-  have hAQ := arcsin_ge_self (hP.le.trans hPQ) hQ1.le
-  exact ⟨hP,hPQ,hQ1,hcentral,by linarith [pi_lt_22_over_7]⟩
+/-! ## Nearly axial squares -/
 
-/-- A cap within 1/24 radians of pi/3 has radial coordinate > 9/20. -/
-lemma cap_near_axis {u : ℝ} (hu0 : 0 ≤ u) (hu1 : u ≤ 1/2)
-    (hA : Real.arccos u < Real.pi/3+1/24) : 9/20 < u := by
-  have hAlow : Real.pi/3 ≤ Real.arccos u := by
-    have h := arcsin_le_sixth hu0 hu1
-    dsimp [Real.arccos]
-    linarith
-  let ε := Real.arccos u-Real.pi/3
-  have hε0 : 0 ≤ ε := by dsimp [ε]; linarith
-  have hε1 : ε < 1/24 := by dsimp [ε]; linarith
-  have hεpi : ε ≤ Real.pi := by
-    dsimp [ε]
-    linarith [Real.arccos_le_pi u,Real.pi_pos]
-  have hsε0 := Real.sin_nonneg_of_nonneg_of_le_pi hε0 hεpi
-  have hsε1 := Real.sin_le hε0
-  have hcε := Real.one_sub_sq_div_two_le_cos (x := ε)
-  have hmul := mul_nonneg hsε0 (sub_nonneg.mpr (Real.sin_le_one (Real.pi/3)))
-  have he : u=(1/2)*Real.cos ε-Real.sin (Real.pi/3)*Real.sin ε := by
-    have h := Real.cos_arccos (by linarith : -1 ≤ u) (by linarith : u ≤ 1)
-    rw [show Real.arccos u=Real.pi/3+ε by dsimp [ε]; ring,
-      Real.cos_add,Real.cos_pi_div_three] at h
-    exact h.symm
-  have hε2 : ε^2 < (1/24:ℝ)^2 := by nlinarith
+/-- `cos (π/3+1/24) > 9/20`. -/
+lemma cos_third_gt : (9:ℝ)/20 < Real.cos (Real.pi/3+1/24) := by
+  rw [Real.cos_add,Real.cos_pi_div_three]
+  have hc := Real.one_sub_sq_div_two_le_cos (x := (1:ℝ)/24)
+  have hs := Real.sin_le (show (0:ℝ) ≤ 1/24 by norm_num)
+  have hs0 := Real.sin_nonneg_of_nonneg_of_le_pi (show (0:ℝ) ≤ 1/24 by norm_num)
+    (by linarith [Real.pi_gt_three])
+  nlinarith [Real.sin_le_one (Real.pi/3)]
+
+/-- On the circle of radius `7/16` a nearly axial square holds an arc of
+half-width more than `π/3+1/24` centred on its phase. -/
+lemma wide_arc {S : UnitSquare} {o : Point} (C : SquareChart S o)
+    (h : 1/2 ≤ C.a ∧ C.a ≤ 11/16 ∧ C.b ≤ 1/16) :
+    ∃ W : OpenArc o (7/16) {p | openSquare S p},
+      Real.pi/3+1/24 < W.halfWidth ∧ W.center=C.phase := by
+  have hA : Real.pi/3+1/24 < capA (7/16) C.a := by
+    calc Real.pi/3+1/24=Real.arccos (Real.cos (Real.pi/3+1/24)) :=
+          (Real.arccos_cos (by positivity) (by linarith [Real.pi_gt_three])).symm
+      _ < capA (7/16) C.a := Real.arccos_lt_arccos (by linarith [h.1])
+          (by linarith [h.2.1,cos_third_gt]) (Real.cos_le_one _)
+  have hV : capV (7/16) C.b=Real.pi/2 :=
+    Real.arcsin_of_one_le (by rw [le_div_iff₀ (by norm_num)]; linarith [h.2.2])
+  have hA2 : capA (7/16) C.a ≤ Real.pi/2 := Real.arccos_le_pi_div_two.mpr (by linarith [h.1])
+  obtain ⟨W,hw,hc⟩ := C.full_cap_arc (by norm_num) (by norm_num) h.1 (by linarith [h.2.1])
+    (by linarith [h.2.2]) (hA2.trans_eq hV.symm)
+  exact ⟨W,by rw [hw]; exact hA,hc⟩
+
+/-- Two nearly axial squares whose phases are less than `2π/3+1/12` apart
+overlap. -/
+lemma axial_pair_impossible {S T : UnitSquare} {o : Point}
+    (C : SquareChart S o) (D : SquareChart T o)
+    (hC : 1/2 ≤ C.a ∧ C.a ≤ 11/16 ∧ C.b ≤ 1/16) (hD : 1/2 ≤ D.a ∧ D.a ≤ 11/16 ∧ D.b ≤ 1/16)
+    (hST : Disjoint {p | openSquare S p} {p | openSquare T p})
+    (h : dist C.phase D.phase < 2*Real.pi/3+1/12) : False := by
+  obtain ⟨A,hA,hAc⟩ := wide_arc C hC
+  obtain ⟨B,hB,hBc⟩ := wide_arc D hD
+  have hsep := A.centers_separated B hST
+  rw [hAc,hBc] at hsep
   linarith
-
-/-! ## Arc witnesses
-
-The containing witness is only an interval known to lie in the square; it is
-never assumed to be the entire intersection. The exterior witness has a
-specified clipped-cap length; once clipping is excluded, it is centred on the
-square's radial phase. -/
-
-lemma containing_mem {a b t : ℝ}
-    (ha : 0 ≤ a) (hb : 0 ≤ b) (ha1 : a < 1/2) (hb1 : b < 1/2)
-    (ht : t ∈ Ioo (-Real.arcsin ((1/2-b)/aux))
-      (Real.pi/2+Real.arcsin ((1/2-a)/aux))) :
-    |aux*Real.cos t-a| < 1/2 ∧ |aux*Real.sin t-b| < 1/2 := by
-  have hp : 0 < (1/2-a)/aux := by dsimp [aux]; linarith
-  have hq : 0 < (1/2-b)/aux := by dsimp [aux]; linarith
-  have ht0 : -(Real.pi/2) < t := by
-    linarith [Real.arcsin_le_pi_div_two ((1/2-b)/aux),ht.1]
-  have ht1 : t < Real.pi := by
-    linarith [Real.arcsin_le_pi_div_two ((1/2-a)/aux),ht.2]
-  have hcos : -((1/2-a)/aux) < Real.cos t := by
-    by_cases ht2 : t ≤ Real.pi/2
-    · have hc := Real.cos_nonneg_of_mem_Icc ⟨ht0.le,ht2⟩
-      linarith
-    · have hdom : Real.pi/2-t ∈ Ioc (-(Real.pi/2)) (Real.pi/2) :=
-        ⟨by linarith,by linarith [Real.pi_pos]⟩
-      have haS : Real.arcsin (-((1/2-a)/aux)) < Real.pi/2-t := by
-        rw [Real.arcsin_neg]
-        linarith [ht.2]
-      have h := (Real.arcsin_lt_iff_lt_sin' hdom).mp haS
-      simpa only [Real.sin_pi_div_two_sub] using h
-  have hsin : -((1/2-b)/aux) < Real.sin t := by
-    by_cases ht2 : t ≤ Real.pi/2
-    · have h := (Real.arcsin_lt_iff_lt_sin' ⟨ht0,ht2⟩).mp
-        (show Real.arcsin (-((1/2-b)/aux)) < t by
-          rw [Real.arcsin_neg]; exact ht.1)
-      exact h
-    · have hs := Real.sin_nonneg_of_nonneg_of_le_pi
-        (by linarith [Real.pi_pos]) ht1.le
-      linarith
-  have hc1 := Real.cos_le_one t
-  have hs1 := Real.sin_le_one t
-  dsimp [aux] at hcos hsin ⊢
-  exact ⟨abs_lt.mpr ⟨by linarith,by linarith⟩,
-    abs_lt.mpr ⟨by linarith,by linarith⟩⟩
-
-lemma containing_arc_formula {S : UnitSquare} {o : Point}
-    (C : SquareChart S o) (ho : openSquare S o) :
-    ∃ A : OpenArc o aux {z | openSquare S z},
-      2*A.halfWidth=Real.pi/2+Real.arcsin ((1/2-C.a)/aux)+
-        Real.arcsin ((1/2-C.b)/aux) := by
-  have hc := C.origin.mp ho
-  have hP0 := Real.arcsin_pos.mpr
-    (show 0 < (1/2-C.a)/aux by dsimp [aux]; linarith [hc.1])
-  have hQ0 := Real.arcsin_pos.mpr
-    (show 0 < (1/2-C.b)/aux by dsimp [aux]; linarith [hc.2])
-  obtain ⟨A,hA,-⟩ := C.arc aux
-    (-Real.arcsin ((1/2-C.b)/aux))
-    (Real.pi/2+Real.arcsin ((1/2-C.a)/aux))
-    (by linarith [Real.pi_pos])
-    (by linarith [Real.pi_pos,Real.arcsin_le_pi_div_two ((1/2-C.a)/aux),
-      Real.arcsin_le_pi_div_two ((1/2-C.b)/aux)])
-    (fun t ht => containing_mem C.nonneg.1 C.nonneg.2 hc.1 hc.2 ht)
-  exact ⟨A,by rw [hA]; ring⟩
-
-/-- Disjointness from the inscribed disk forces the exterior radial gap. -/
-lemma gap_from_containing {S T : UnitSquare} {o : Point}
-    (C : SquareChart S o) (D : SquareChart T o)
-    (hCsort : C.b ≤ C.a) (ho : openSquare S o)
-    (hDa : 1/2 ≤ D.a) (hDp : P3 D.a D.b)
-    (hd : Disjoint {z | openSquare S z} {z | openSquare T z}) :
-    1/2-C.a ≤ D.a-1/2 := by
-  by_contra hn
-  have hc := C.origin.mp ho
-  have hdb : D.b < 1/2 := by
-    have hsum := (p3_coordinates D.nonneg.1 D.nonneg.2 hDp).2.2
-    linarith
-  let t := ((D.a-1/2)+(1/2-C.a))/2
-  have ht0 : 0 < t := by dsimp [t]; linarith [hc.1]
-  have htx : D.a-1/2 < t := by dsimp [t]; linarith
-  have htp : t < 1/2-C.a := by dsimp [t]; linarith
-  have ht1 : t < 1/2 := by linarith [C.nonneg.1]
-  let z := pointInDirection o D.phase t 0
-  have hzT : openSquare T z := by
-    apply (D.cartesian t 0).mpr
-    refine ⟨abs_lt.mpr ⟨by linarith,by linarith⟩,?_⟩
-    simpa only [zero_sub,abs_neg,D.abs_signedB] using hdb
-  have hαβ : alpha S o ≤ C.a ∧ beta S o ≤ C.a := by
-    rcases C.coordinates with ⟨ha,hb⟩ | ⟨ha,hb⟩ <;> constructor <;> linarith
-  have hzS : openSquare S z := by
-    apply inscribed_disk_mem S o (a := C.a) (p := 1/2-C.a)
-      (by linarith [hc.1]) (by ring) hαβ.1 hαβ.2
-    rw [show z=pointInDirection o D.phase t 0 by rfl,pointInDirection_norm]
-    nlinarith
-  exact Set.disjoint_left.mp hd hzS hzT
-
-/-- The budget excludes clipping, and forces a small transverse center coordinate. -/
-lemma cap_reduction {a b P Q : ℝ}
-    (ha : 1/2 ≤ a) (hb : 0 ≤ b) (hp : P3 a b)
-    (hP : 0 ≤ P) (hQ : Q ∈ Icc (0:ℝ) 1)
-    (hcentral : 1/2 < (16/13)*P+Q) (hgap : P ≤ (a-1/2)/aux)
-    (hδ : Real.pi/6-Real.arcsin P-Real.arcsin Q < 1/12)
-    (hbudget : capLength a b+(Real.pi/2+Real.arcsin P+Real.arcsin Q) ≤ 4*Real.pi/3) :
-    capA a ≤ capV b ∧ b < 1/16 ∧ a ≤ 11/16 := by
-  obtain ⟨hx0,hx1,hv,hA,hAp,hmin⟩ := cap_data ha hb hp
-  have hfull : capA a ≤ capV b := by
-    by_contra hn
-    have hclip : capV b < capA a := lt_of_not_ge hn
-    have hv1 : (1/2-b)/aux < 1 :=
-      Real.arcsin_lt_pi_div_two.mp (hclip.trans_le hAp)
-    have hcomp := compensation hP hQ hcentral hgap hv hv1
-    rw [capLength,min_eq_right (by linarith)] at hbudget
-    dsimp [capA,capV,Real.arccos] at hbudget
-    linarith
-  have hlen : capLength a b=2*capA a := min_eq_left (by linarith)
-  have hnear : capA a < Real.pi/3+1/24 := by rw [hlen] at hbudget; linarith
-  have hrad := cap_near_axis hx0 hx1 hnear
-  dsimp [aux] at hrad
-  exact ⟨hfull,by linarith [hp.2.2.1],by linarith [hp.2.2.1]⟩
-
-/-! ## Two nearly axial squares overlap
-
-If two squares have small transverse chart coordinates and their radial phases
-differ by between `2*pi/3` and `2*pi/3+1/12`, an explicit point lies in the
-open interiors of both. -/
-
-lemma near_axis_angles {φ ψ : Direction}
-    (hlo : 2*Real.pi/3 ≤ dist φ ψ)
-    (hhi : dist φ ψ < 2*Real.pi/3+1/12) :
-    -(3/5:ℝ) < (ψ-φ).cos ∧ (ψ-φ).cos ≤ -1/2 ∧
-      4/5 < |(ψ-φ).sin| ∧ |(ψ-φ).sin| < 7/8 := by
-  have hcle : (ψ-φ).cos ≤ -1/2 := by
-    have h := Real.cos_le_cos_of_nonneg_of_le_pi (by positivity)
-      (direction_diameter φ ψ) hlo
-    rw [cos_two_pi_thirds,← cos_sub_distance] at h
-    linarith
-  let ε := dist φ ψ-2*Real.pi/3
-  have hε0 : 0 ≤ ε := by dsimp [ε]; linarith
-  have hε1 : ε < 1/12 := by dsimp [ε]; linarith
-  have hεpi : ε ≤ Real.pi := by dsimp [ε]; linarith [Real.pi_pos,direction_diameter φ ψ]
-  have hsε0 := Real.sin_nonneg_of_nonneg_of_le_pi hε0 hεpi
-  have hsε1 := Real.sin_le hε0
-  have hprod := mul_nonneg hsε0 (sub_nonneg.mpr (Real.sin_le_one (2*Real.pi/3)))
-  have hid : (ψ-φ).cos =
-      -(1/2)*Real.cos ε-Real.sin (2*Real.pi/3)*Real.sin ε := by
-    rw [cos_sub_distance,show dist φ ψ=2*Real.pi/3+ε by dsimp [ε]; ring,Real.cos_add,
-      cos_two_pi_thirds]
-  have hclo : -(3/5:ℝ) < (ψ-φ).cos := by linarith [Real.cos_le_one ε]
-  have hu := Real.Angle.cos_sq_add_sin_sq (ψ-φ)
-  have hsabs := abs_nonneg (ψ-φ).sin
-  have hssq : |(ψ-φ).sin|^2=(ψ-φ).sin^2 := sq_abs _
-  have hcSqUp : (ψ-φ).cos^2 < (3/5:ℝ)^2 := by
-    have h := mul_pos (show 0 < (ψ-φ).cos+3/5 by linarith)
-      (show 0 < 3/5-(ψ-φ).cos by linarith)
-    linarith
-  have hcSqLo : (1/2:ℝ)^2 ≤ (ψ-φ).cos^2 := by
-    have h := mul_nonneg (show 0 ≤ -(ψ-φ).cos-1/2 by linarith)
-      (show 0 ≤ -(ψ-φ).cos+1/2 by linarith)
-    linarith
-  refine ⟨hclo,hcle,?_,?_⟩
-  · by_contra hn
-    have h := mul_nonneg (show 0 ≤ 4/5-|(ψ-φ).sin| by linarith)
-      (show 0 ≤ 4/5+|(ψ-φ).sin| by positivity)
-    linarith
-  · by_contra hn
-    have h := mul_nonneg (show 0 ≤ |(ψ-φ).sin|-7/8 by linarith)
-      (show 0 ≤ |(ψ-φ).sin|+7/8 by positivity)
-    linarith
-
-/-- An explicit intersection point, not another separating-axis assumption. -/
-lemma near_axis_square_overlap {S T : UnitSquare} {o : Point}
-    (C : SquareChart S o) (D : SquareChart T o)
-    (ha : 1/2 ≤ C.a ∧ C.a ≤ 11/16) (hb : C.b < 1/16)
-    (ha' : 1/2 ≤ D.a ∧ D.a ≤ 11/16) (hb' : D.b < 1/16)
-    (hlo : 2*Real.pi/3 ≤ dist C.phase D.phase)
-    (hhi : dist C.phase D.phase < 2*Real.pi/3+1/12) :
-    ∃ z, openSquare S z ∧ openSquare T z := by
-  obtain ⟨hc0,hc1,hs0,hs1⟩ := near_axis_angles hlo hhi
-  have hbabs : |C.signedB| < 1/16 := by rw [C.abs_signedB]; exact hb
-  have hbabs' : |D.signedB| < 1/16 := by rw [D.abs_signedB]; exact hb'
-  rcases abs_lt.mp hbabs with ⟨hb0,hb1⟩
-  rcases abs_lt.mp hbabs' with ⟨hb0',hb1'⟩
-  by_cases hs : 0 ≤ (D.phase-C.phase).sin
-  · rw [abs_of_nonneg hs] at hs0 hs1
-    refine ⟨pointInDirection o C.phase (1/5) (2/5),?_,?_⟩
-    · apply (C.cartesian _ _).mpr
-      constructor <;> apply abs_lt.mpr <;> constructor <;> linarith [ha.1,ha.2]
-    · rw [pointInDirection_transition o C.phase D.phase]
-      apply (D.cartesian _ _).mpr
-      constructor <;> apply abs_lt.mpr <;> constructor <;> linarith [ha'.1,ha'.2]
-  · rw [abs_of_neg (lt_of_not_ge hs)] at hs0 hs1
-    refine ⟨pointInDirection o C.phase (1/5) (-(2/5)),?_,?_⟩
-    · apply (C.cartesian _ _).mpr
-      constructor <;> apply abs_lt.mpr <;> constructor <;> linarith [ha.1,ha.2]
-    · rw [pointInDirection_transition o C.phase D.phase]
-      apply (D.cartesian _ _).mpr
-      constructor <;> apply abs_lt.mpr <;> constructor <;> linarith [ha'.1,ha'.2]
 
 /-! ## The containing case -/
 
-/-- The containing alternative: the square that contains `o` needs the strict
-16-gon, the other two only the closed one. -/
-theorem containing_impossible (S : Fin 3 → UnitSquare) (o : Point)
-    (hd : InteriorDisjoint S) (i : Fin 3) (ho : openSquare (S i) o)
-    (hS : P3Strict (alpha (S i) o) (beta (S i) o))
-    (hp : ∀ j, P3 (alpha (S j) o) (beta (S j) o)) : False := by
+/-- A square that contains the disk centre leaves too little room for the
+other two. -/
+theorem no_containing (S : Fin 3 → UnitSquare) (o : Point) (hd : InteriorDisjoint S)
+    (hφ : ∀ i, phi (alpha (S i) o) (beta (S i) o) ≤ 425/256) (i : Fin 3) :
+    ¬ openSquare (S i) o := by
+  intro ho
   obtain ⟨j,k,hij,hik,hjk⟩ : ∃ j k : Fin 3, i ≠ j ∧ i ≠ k ∧ j ≠ k := by
     fin_cases i <;> decide
-  have hST := hd.pairwise hij
-  have hSU := hd.pairwise hik
-  have hTU := hd.pairwise hjk
-  obtain ⟨C,hCsort⟩ := sorted_square_chart (S i) o
-  obtain ⟨D,hDsort⟩ := sorted_square_chart (S j) o
-  obtain ⟨E,hEsort⟩ := sorted_square_chart (S k) o
-  have hpC := C.transfer P3Strict p3Strict_swap hS
-  have hpD := D.transfer P3 p3_swap (hp j)
-  have hpE := E.transfer P3 p3_swap (hp k)
-  have hDa := D.exterior hDsort fun h => Set.disjoint_left.mp hST ho h
-  have hEa := E.exterior hEsort fun h => Set.disjoint_left.mp hSU ho h
-  have hinside := C.origin.mp ho
-  obtain ⟨A,hA⟩ := containing_arc_formula C ho
-  obtain ⟨B,hB,hBc⟩ := cap_arc_formula D hDa hpD
-  obtain ⟨G,hG,hGc⟩ := cap_arc_formula E hEa hpE
-  have hDdata := cap_data hDa D.nonneg.2 hpD
-  have hEdata := cap_data hEa E.nonneg.2 hpE
-  have hbudget := triple_arc_budget A B G hST hSU hTU
-  obtain ⟨hP0,hPQ,hQ1,hcentral,hδ⟩ := deficit_bounds hCsort hinside.1 hpC
-    (by linarith [hDdata.2.2.2.2.2,hEdata.2.2.2.2.2])
-  have hQ : (1/2-C.b)/aux ∈ Icc (0:ℝ) 1 := ⟨hP0.le.trans hPQ,hQ1.le⟩
-  have hgapD := gap_from_containing C D hCsort ho hDa hpD hST
-  have hgapE := gap_from_containing C E hCsort ho hEa hpE hSU
-  obtain ⟨hDfull,hDb,hDamax⟩ := cap_reduction hDa D.nonneg.2 hpD hP0.le hQ
-    hcentral (by dsimp [aux]; linarith) hδ (by linarith [hEdata.2.2.2.2.2])
-  obtain ⟨hEfull,hEb,hEamax⟩ := cap_reduction hEa E.nonneg.2 hpE hP0.le hQ
-    hcentral (by dsimp [aux]; linarith) hδ (by linarith [hDdata.2.2.2.2.2])
-  have hdist := A.third_distance_bounds B G hST hSU hTU
-  rw [hBc hDfull,hGc hEfull] at hdist
-  have hBw : capLength D.a D.b=2*capA D.a := min_eq_left (by linarith)
-  have hGw : capLength E.a E.b=2*capA E.a := min_eq_left (by linarith)
-  obtain ⟨z,hzT,hzU⟩ := near_axis_square_overlap D E ⟨hDa,hDamax⟩ hDb ⟨hEa,hEamax⟩ hEb
-    (by linarith [hDdata.2.2.2.1,hEdata.2.2.2.1])
-    (by linarith [hDdata.2.2.2.1,hEdata.2.2.2.1])
-  exact Set.disjoint_left.mp hTU hzT hzU
+  choose C hsort using fun l => sorted_square_chart (S l) o
+  have hP (l : Fin 3) : P3 (C l).a (C l).b := p3_of_phi (chart_phi (C l) (hφ l))
+  have hin := (C i).origin.mp ho
+  have hcentral : 16*(C i).a+13*(C i).b < 193/16 := by
+    linarith [tangent_lt (u := 1/2) (v := 5/16) (chart_phi (C i) (hφ i)) (by norm_num [phi])
+      hin.1.ne]
+  have hext (l : Fin 3) (hl : i ≠ l) : 1/2 ≤ (C l).a :=
+    (C l).exterior (hsort l) fun h => hd i l hl o ⟨ho,h⟩
+  have hbd (l : Fin 3) (hl : i ≠ l) := cap_bounds (hext l hl) (C l).nonneg.2 (hP l)
+  obtain ⟨W,hW⟩ := containing_arc (C i) ho
+  obtain ⟨B,hB,hBc,hBlo⟩ := exterior_cap (C j) (hext j hij) (hP j)
+  obtain ⟨G,hG,hGc,hGlo⟩ := exterior_cap (C k) (hext k hik) (hP k)
+  have hbudget := triple_arc_budget W B G (hd.pairwise hij) (hd.pairwise hik) (hd.pairwise hjk)
+  -- the deficit of the containing arc
+  have hP0 : 0 ≤ (1/2-(C i).a)/aux := by rw [aux]; linarith
+  have hQ0 : 0 ≤ (1/2-(C i).b)/aux := by rw [aux]; linarith
+  have hQ1 : (1/2-(C i).b)/aux < 1 := by
+    refine Real.arcsin_lt_pi_div_two.mp ?_
+    unfold capV at hW
+    linarith [Real.arcsin_nonneg.mpr hP0,Real.pi_pos]
+  have hdef : 2*Real.pi/3-1/12 < 2*W.halfWidth := by
+    have hPQ : (1/2-(C i).a)/aux ≤ (1/2-(C i).b)/aux := by rw [aux]; linarith [hsort i]
+    have h₁ := arcsin_ge_self hP0 (hPQ.trans hQ1.le)
+    have h₂ := arcsin_ge_self hQ0 hQ1.le
+    rw [hW]
+    unfold capV
+    rw [aux] at h₁ h₂ ⊢
+    linarith [pi_lt_22_over_7,hsort i]
+  -- each other square has a full, nearly axial cap
+  have haxial (l : Fin 3) (hl : i ≠ l) (X : OpenArc o aux {p | openSquare (S l) p})
+      (hX : X.halfWidth=(capA aux (C l).a+min (capA aux (C l).a) (capV aux (C l).b))/2)
+      (hXW : X.halfWidth+W.halfWidth ≤ 2*Real.pi/3) :
+      capA aux (C l).a ≤ capV aux (C l).b ∧ 1/2 ≤ (C l).a ∧ (C l).a ≤ 11/16 ∧ (C l).b ≤ 1/16 := by
+    obtain ⟨hA,hAπ,-,-,-⟩ := hbd l hl
+    have ha := hext l hl
+    have hb := (C l).nonneg.2
+    have hgap := gap_from_containing (C i) (C l) (hsort i) ho ha (by linarith [(hP l).1])
+      (hd.pairwise hl)
+    have hfull : capA aux (C l).a ≤ capV aux (C l).b := by
+      refine le_of_not_gt fun hclip => ?_
+      have hcomp := compensation (P := (1/2-(C i).a)/aux) (Q := (1/2-(C i).b)/aux)
+        (u := ((C l).a-1/2)/aux) (v := (1/2-(C l).b)/aux) hP0
+        ⟨hQ0,hQ1.le⟩ (by rw [aux]; linarith) (by rw [aux]; linarith)
+        (by rw [aux]; linarith [(hP l).1])
+        (Real.arcsin_lt_pi_div_two.mp (hclip.trans_le hAπ))
+      rw [min_eq_right hclip.le] at hX
+      unfold capA capV at hX
+      unfold capV at hW
+      rw [Real.arccos_eq_pi_div_two_sub_arcsin] at hX
+      linarith
+    rw [min_eq_left hfull] at hX
+    have hu := Real.cos_lt_cos_of_nonneg_of_le_pi (Real.arccos_nonneg _)
+      (by linarith [Real.pi_gt_three]) (show capA aux (C l).a < Real.pi/3+1/24 by linarith)
+    rw [Real.cos_arccos (x := ((C l).a-1/2)/aux) (by rw [aux]; linarith)
+      (by rw [aux]; linarith [(hP l).2]),aux] at hu
+    have := cos_third_gt
+    exact ⟨hfull,ha,by linarith [(hP l).2],by linarith [(hP l).2]⟩
+  obtain ⟨hBf,hBa⟩ := haxial j hij B hB (by linarith)
+  obtain ⟨hGf,hGa⟩ := haxial k hik G hG (by linarith)
+  have hdist := (W.third_distance_bounds B G (hd.pairwise hij) (hd.pairwise hik)
+    (hd.pairwise hjk)).2
+  rw [hBc,hGc,min_eq_left hBf,min_eq_left hGf] at hdist
+  simp only [sub_self,zero_div,chartAngle,neg_zero,ite_self,Real.Angle.coe_zero,add_zero] at hdist
+  exact axial_pair_impossible (C j) (C k) hBa hGa (hd.pairwise hjk) (by linarith)
 
 end SquaresInCircles.Three

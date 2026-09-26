@@ -71,7 +71,6 @@ example : (0:ℝ) < Seven.radialPolynomial (5/8) := Seven.radialPolynomial_pos (
 -- Contact points of the polygon relaxations.
 example : Three.P3 (1/2) (5/16) := by norm_num [Three.P3]
 example : Three.P3 (11/16) 0 := by norm_num [Three.P3]
-example : Four.P4 (1/2) (1/2) := by norm_num [Four.P4]
 example : Five.P5 1 0 := by
   have h := Real.sq_sqrt (show (0:ℝ) ≤ 5 by norm_num)
   exact ⟨by norm_num [P8],by nlinarith [Real.sqrt_nonneg 5]⟩
@@ -82,10 +81,6 @@ example : Five.P5 ((Real.sqrt 5-1)/2) ((Real.sqrt 5-1)/2) := by
 -- Public statements.
 example (S : Fin 3 → UnitSquare) (o : Point) (R : ℝ)
     (hp : Packing S o R) : Three.radius ≤ R := Three.optimality S o R hp
-example (S : Fin 3 → UnitSquare) (o : Point)
-    (hd : InteriorDisjoint S)
-    (hp : ∀ i, Three.P3Strict (alpha (S i) o) (beta (S i) o)) : False :=
-  Three.polygon_strict_impossible S o hd hp
 example (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5) (S : Fin n → UnitSquare) (o : Point)
     (hp : Packing S o (optimalRadius n)) : HasNormalForm S o (modelCenters n) := by
   obtain ⟨c,hc,h⟩ := uniqueness n (Or.inl hn) S o hp

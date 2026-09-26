@@ -17,10 +17,7 @@ used in this development.
 #print axioms SquaresInCircles.rigid_uniqueness
 #print axioms SquaresInCircles.optimality_attainment_uniqueness
 
--- The contact-polygon arguments; only the four-square one uses the disk.
-#print axioms SquaresInCircles.Three.polygon_strict_impossible
-#print axioms SquaresInCircles.Four.diamond_impossible
-#print axioms SquaresInCircles.Five.polygon_strict_impossible
+-- The contact-polygon argument of five squares, which uses no disk.
 #print axioms SquaresInCircles.Five.polygon_uniqueness
 
 -- The shared framework.
@@ -28,6 +25,7 @@ used in this development.
 #print axioms SquaresInCircles.safe_openRay_of_disjoint
 #print axioms SquaresInCircles.open_arc_budget
 #print axioms SquaresInCircles.ray_budget_impossible
+#print axioms SquaresInCircles.optimality_of_uniqueness
 #print axioms SquaresInCircles.OpenArc.third_distance_bounds
 #print axioms SquaresInCircles.centers_distance_sq_ge_one
 #print axioms SquaresInCircles.unit_contact
@@ -36,11 +34,10 @@ used in this development.
 #print axioms SquaresInCircles.HasNormalForm.packing
 #print axioms SquaresInCircles.Optimum.packing_iff
 
--- The two alternatives for three squares.
-#print axioms SquaresInCircles.Three.exterior_reduction
-#print axioms SquaresInCircles.Three.containing_impossible
+-- Three squares: the containing square.
+#print axioms SquaresInCircles.Three.no_containing
 #print axioms SquaresInCircles.Three.compensation
-#print axioms SquaresInCircles.Three.near_axis_square_overlap
+#print axioms SquaresInCircles.Three.axial_pair_impossible
 
 -- Seven squares: the marker arc, the gap of pi/3 (nonnegative, zero only at
 -- contacts), all smaller gaps, the pair theorem, the regular hexagon of

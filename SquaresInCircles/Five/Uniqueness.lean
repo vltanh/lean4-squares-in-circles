@@ -1,12 +1,18 @@
+import SquaresInCircles.Five.Containing
+import SquaresInCircles.Five.Construction
+import SquaresInCircles.Common.ArcBudget
 import SquaresInCircles.Common.Contacts
-import SquaresInCircles.Five.Optimality
 import SquaresInCircles.Common.Optimum
 
 /-!
-# Five squares: uniqueness
+# Five squares: uniqueness and the lower bound
 
-The closed dodecagon itself is rigid. This is stronger than uniqueness for the
-circular packing problem and permits equality in every input facet.
+On the circle of radius `5/6`, exterior squares with centres in the 12-gon hold
+arcs longer than 72 degrees, and the sweep of a containing square holds 72
+degrees unless the square is centred at the disk centre. So some square is
+centred there, and the other four, at distance at most 1 from the disk centre,
+are its side-neighbours. The closed 12-gon alone is rigid, which is stronger
+than uniqueness for the disk. The lower bound follows from uniqueness.
 
 The file ends with `optimum`: the case as an `Optimum`.
 -/
@@ -14,6 +20,7 @@ noncomputable section
 open Set
 namespace SquaresInCircles.Five
 
+/-- The 12-gon lies in the unit disk. -/
 lemma dodecagon_norm_le {a b : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b) (h : P5 a b) :
     a^2+b^2 ≤ 1 := by
   by_cases hs : a+b ≤ 1
@@ -29,6 +36,17 @@ lemma dodecagon_norm_le {a b : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b) (h : P5 a b) :
     have hp := mul_neg_of_pos_of_neg (show 0 < a+b-1 by linarith)
       (show 5*(a+b)-7 < 0 by linarith)
     linarith
+
+/-- Some square is centred at the disk centre; only the closed 12-gon is assumed. -/
+lemma centered_square (S : Fin 5 → UnitSquare) (o : Point)
+    (hd : InteriorDisjoint S) (hp : ∀ i, P5 (alpha (S i) o) (beta (S i) o)) :
+    ∃ i, (S i).center=o := by
+  by_contra hn
+  push Not at hn
+  refine ray_budget_impossible (n := 5) (by decide) hd (fun i => (hp i).1) (fun i hi => ?_)
+    (fun i hi => by exact_mod_cast exterior_arc (S i) o (hp i) hi)
+  obtain ⟨A,hA⟩ := containing_arc (square_chart (S i) o).some hi (hn i)
+  exact ⟨A,by rw [hA]; norm_num⟩
 
 /-- All five slots are forced by the centered square and unit-distance contacts. -/
 theorem polygon_uniqueness (S : Fin 5 → UnitSquare) (o : Point)
@@ -64,9 +82,16 @@ theorem uniqueness (S : Fin 5 → UnitSquare) (o : Point)
     (hp : Packing S o radius) : HasNormalForm S o centers := by
   apply polygon_uniqueness S o hp.disjoint
   intro i
-  apply p5_of_phi_le
+  apply p5_of_phi
   have h := hp.phi_le i
   rwa [radius_sq] at h
+
+/-- The lower bound: the corner `(3/2, 1/2)` of the plus is on the circle of
+radius `sqrt (5/2)`. -/
+theorem optimality (S : Fin 5 → UnitSquare) (o : Point) (R : ℝ)
+    (hp : Packing S o R) : radius ≤ R :=
+  optimality_of_uniqueness uniqueness
+    ⟨1,3/2,1/2,by norm_num [centers,closedAxisSquare],by norm_num [radius_sq]⟩ hp
 
 /-- The optimum for five squares: `radius`, attained only by the normal forms
 of `centers`. -/

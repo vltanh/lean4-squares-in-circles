@@ -21,53 +21,33 @@ lemma direction_diameter (a b : Direction) : dist a b ≤ Real.pi := by
   rw [direction_dist]
   exact (a-b).abs_toReal_le_pi
 
-/-- Two disjoint positive-radius occupied arcs have separated midpoint directions. -/
+/-- Disjoint arcs have centres at least the sum of their half-widths apart:
+otherwise the direction dividing the way between the centres in the ratio of
+the half-widths lies in both arcs. -/
 lemma OpenArc.centers_separated {o : Point} {r : ℝ} {U V : Set Point}
     (A : OpenArc o r U) (B : OpenArc o r V) (hUV : Disjoint U V) :
-    A.halfWidth + B.halfWidth ≤ dist A.center B.center := by
+    A.halfWidth+B.halfWidth ≤ dist A.center B.center := by
   by_contra hn
-  have hd : dist A.center B.center < A.halfWidth+B.halfWidth := lt_of_not_ge hn
-  let H := A.halfWidth+B.halfWidth
-  have hH : 0 < H := add_pos A.positive B.positive
-  let s := A.halfWidth/H
-  let t := B.halfWidth/H
+  push Not at hn
+  set d := (B.center-A.center).toReal
+  have hd : |d| < A.halfWidth+B.halfWidth := by rwa [dist_comm,direction_dist] at hn
+  have hH := add_pos A.positive B.positive
+  set s := A.halfWidth/(A.halfWidth+B.halfWidth)
   have hs : 0 < s := div_pos A.positive hH
-  have ht : 0 < t := div_pos B.positive hH
-  have hst : s+t=1 := by
-    dsimp only [s,t]
-    rw [← add_div]
-    exact div_self (ne_of_gt hH)
-  have hsH : s*H=A.halfWidth := div_mul_cancel₀ _ (ne_of_gt hH)
-  have htH : t*H=B.halfWidth := div_mul_cancel₀ _ (ne_of_gt hH)
-  let d := (B.center-A.center).toReal
-  have hdabs : |d|=dist A.center B.center := by
-    rw [dist_comm, direction_dist]
-  have hrep : B.center=A.center+(d:Direction) := direction_offset _ _
-  let z := A.center+((s*d:ℝ):Direction)
-  have hza : z-A.center=((s*d:ℝ):Direction) := by dsimp [z]; abel
-  have hzb : z-B.center=((-t*d:ℝ):Direction) := by
-    rw [hrep]
-    have he : s*d-d = -t*d := by rw [show s = 1-t by linarith]; ring
-    dsimp [z]
-    rw [← he,Real.Angle.coe_sub]
+  have hsA : s*(A.halfWidth+B.halfWidth)=A.halfWidth := div_mul_cancel₀ _ hH.ne'
+  have hB : A.center+((s*d:ℝ):Direction)-B.center=(((s-1)*d:ℝ):Direction) := by
+    rw [show B.center=A.center+(d:Direction) from direction_offset _ _,sub_mul,one_mul,
+      Real.Angle.coe_sub]
     abel
-  have hzA : dist z A.center < A.halfWidth := by
-    rw [dist_eq_norm,hza]
-    have hb := direction_coe_norm_le (s*d)
-    rw [abs_mul,abs_of_pos hs,hdabs] at hb
-    have hm := mul_lt_mul_of_pos_left hd hs
-    change s*dist A.center B.center < s*H at hm
-    rw [hsH] at hm
-    exact hb.trans_lt hm
-  have hzB : dist z B.center < B.halfWidth := by
-    rw [dist_eq_norm,hzb]
-    have hb := direction_coe_norm_le (-t*d)
-    rw [abs_mul,abs_neg,abs_of_pos ht,hdabs] at hb
-    have hm := mul_lt_mul_of_pos_left hd ht
-    change t*dist A.center B.center < t*H at hm
-    rw [htH] at hm
-    exact hb.trans_lt hm
-  exact Set.disjoint_left.mp hUV (A.inside z hzA) (B.inside z hzB)
+  refine Set.disjoint_left.mp hUV (A.inside (A.center+((s*d:ℝ):Direction)) ?_) (B.inside _ ?_)
+  · rw [dist_eq_norm,add_sub_cancel_left]
+    refine (direction_coe_norm_le _).trans_lt ?_
+    rw [abs_mul,abs_of_pos hs]
+    nlinarith
+  · rw [dist_eq_norm,hB]
+    refine (direction_coe_norm_le _).trans_lt ?_
+    rw [abs_mul,abs_of_neg (by nlinarith [B.positive])]
+    nlinarith [B.positive]
 
 lemma direction_norm_wrapped {t : ℝ} (ht : |t| ≤ 2*Real.pi) :
     ‖(t:Direction)‖ ≤ 2*Real.pi-|t| := by
