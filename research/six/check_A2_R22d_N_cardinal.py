@@ -63,7 +63,7 @@ c = cosb(T)
 assert (R*s).hi < F(1,2)
 
 # B_Q0(T) = (sqrt(Q0-1/4)-1) cos T - (1/2) sin T < 1/2.
-depth = K*c - s/2
+depth = K*c - F(1,2)*s
 assert depth.hi < F(1,2), depth.hi
 
 print("R*sin(203/1000) <", float((R*s).hi))
