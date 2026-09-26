@@ -17,7 +17,7 @@ was:
 | 3 | computer-assisted interval enclosure of the radius and the optimal arrangements by Montanher, Neumaier, Markót, Domes and Schichl [1]; no exact value | exact formal proofs of optimality and uniqueness |
 | 4 | reported on Friedman's page as proved at the International Math Summer Camp in 2026; we found no publication | formal proofs of optimality and uniqueness |
 | 5 | none found; the plus is listed only as the best known packing | formal proofs of optimality and uniqueness |
-| 7 | none found; the packing of radius `√13/2` is listed only as the best known one | formal proofs of optimality and of uniqueness up to the sliding of the middle column |
+| 7 | none found; the packing of radius `√13/2` is listed only as the best known one | formal proofs of optimality and of uniqueness up to the heights of the three middle squares |
 
 Montanher et al. [1] state the three-square problem as a constraint satisfaction
 problem over a tiling of the configuration space and search it by interval

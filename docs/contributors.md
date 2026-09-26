@@ -30,12 +30,12 @@ Times are rough commit times, in US Central time (UTC−5).
 ## 23 September 2026
 
 * **16:15 to 21:40 — seven squares.** ChatGPT 6 Pro wrote an analytic proof
-  of the seven-square optimum, with its sliding family of optimal packings,
-  without compiling it
+  of the seven-square optimum, with its family of optimal packings, without
+  compiling it
   ([PR #4](https://github.com/vltanh/lean4-squares-in-circles/pull/4)).
   Claude Opus 5.5 Max compiled it and added it to the library.
 * **21:50 to 22:25 — uniqueness for seven squares.** ChatGPT 6 Pro wrote the
-  classification of the optimal seven-square packings, up to the sliding
-  column, without compiling it
+  classification of the optimal seven-square packings, up to the heights of
+  the middle squares, without compiling it
   ([PR #5](https://github.com/vltanh/lean4-squares-in-circles/pull/5)).
   Claude Opus 5.5 Max compiled it and added it to the library.

@@ -2,12 +2,14 @@ import SquaresInCircles.Common.Coordinates
 import SquaresInCircles.Common.Constructions
 
 /-!
-# Geometric normal forms, not equality of frame records
+# Congruence to a model
 
-A normal form specifies both the open and the closed point set of every square
-in one Euclidean frame centred at the disk centre, up to a permutation of the
-squares. It does not equate `UnitSquare` records: a quarter-turn of a frame
-describes the same square.
+A configuration is congruent to a model when, in one frame at the disk centre
+and after a relabelling, every square is the corresponding model square, both
+as an open and as a closed set. This compares point sets, not `UnitSquare`
+records: a quarter-turn of a frame describes the same square. `Represents`
+places one square at an axis-parallel slot of the frame, and
+`congruent_of_slots` turns an assignment of slots into congruence.
 -/
 noncomputable section
 namespace SquaresInCircles
@@ -92,10 +94,12 @@ lemma Represents.closed {S : UnitSquare} {o : Point} {φ : Direction} {c : Point
   simpa only [closedSquare,(modelSquare_local o φ c x y).1,
     (modelSquare_local o φ c x y).2] using hc (pointInDirection o φ x y)
 
-/-- Non-overlap turns any assignment to the model's slots into a permutation. -/
-lemma normal_form_of_slots {n : ℕ} {S : Fin n → UnitSquare} {o : Point}
+/-- Non-overlap turns any assignment to the model's slots into a permutation:
+the configuration is congruent to the axis-parallel squares at the slots. -/
+lemma congruent_of_slots {n : ℕ} {S : Fin n → UnitSquare} {o : Point}
     {φ : Direction} {c : Fin n → Point} (hd : InteriorDisjoint S)
-    (h : ∀ i, ∃ j, Represents (S i) o φ (c j)) : HasNormalForm S o c := by
+    (h : ∀ i, ∃ j, Represents (S i) o φ (c j)) :
+    Congruent S o (fun i => axisSquare (c i)) := by
   classical
   choose f hf using h
   have hi : Function.Injective f := by
@@ -107,43 +111,39 @@ lemma normal_form_of_slots {n : ℕ} {S : Fin n → UnitSquare} {o : Point}
     exact hd i j hne z ⟨hz₁,hz₂⟩
   let e := Equiv.ofBijective f hi.bijective_of_finite
   refine ⟨φ,e.symm,?_⟩
-  intro i x y
+  intro i p
   have hh : Represents (S (e.symm i)) o φ (c i) := by
     simpa only [show f (e.symm i)=i from e.apply_symm_apply i] using hf (e.symm i)
-  exact ⟨hh x y,hh.closed x y⟩
+  rw [axisSquare_open,axisSquare_closed]
+  exact ⟨hh p.1 p.2,hh.closed p.1 p.2⟩
 
-/-- If the axis-parallel squares at `c` pack the disk of radius `R` about the
-origin, every packing with the normal form of `c` packs the disk of radius `R`
-about its centre. -/
-theorem HasNormalForm.packing {n : ℕ} {S : Fin n → UnitSquare} {o : Point}
-    {c : Fin n → Point} {R : ℝ} (h : HasNormalForm S o c)
-    (hc : Packing (fun i => axisSquare (c i)) (0,0) R) : Packing S o R := by
+/-- A configuration congruent to a packing of the disk of radius `R` about the
+origin packs the disk of radius `R` about its own centre. -/
+theorem Congruent.packing {n : ℕ} {S M : Fin n → UnitSquare} {o : Point} {R : ℝ}
+    (h : Congruent S o M) (hM : Packing M (0,0) R) : Packing S o R := by
   obtain ⟨φ,σ,hφ⟩ := h
-  refine ⟨hc.1,fun j p hj => ?_,fun j k hjk p hp => ?_⟩
+  refine ⟨hM.1,fun j p hj => ?_,fun j k hjk p hp => ?_⟩
   · obtain ⟨i,rfl⟩ := σ.surjective j
     obtain ⟨q,rfl⟩ := (frameEquiv o φ).surjective p
     have hd := frameEquiv_distance o φ q (0,0)
     rw [frameEquiv_zero] at hd
     change normSq _ ≤ R^2
     rw [hd]
-    exact hc.2.1 i q ((axisSquare_closed _ _).mpr ((hφ i q.1 q.2).2.mp hj))
+    exact hM.2.1 i q ((hφ i q).2.mp hj)
   · obtain ⟨i,rfl⟩ := σ.surjective j
     obtain ⟨l,rfl⟩ := σ.surjective k
     obtain ⟨q,rfl⟩ := (frameEquiv o φ).surjective p
-    exact hc.2.2 i l (fun h => hjk (by rw [h])) q
-      ⟨(axisSquare_open _ _).mpr ((hφ i q.1 q.2).1.mp hp.1),
-        (axisSquare_open _ _).mpr ((hφ l q.1 q.2).1.mp hp.2)⟩
+    exact hM.2.2 i l (fun h => hjk (by rw [h])) q ⟨(hφ i q).1.mp hp.1,(hφ l q).1.mp hp.2⟩
 
-/-- The normal form, with its frame replaced by an explicit isometry of the plane. -/
-lemma HasNormalForm.rigid_witness {n : ℕ} {S : Fin n → UnitSquare} {o : Point}
-    {c : Fin n → Point} (h : HasNormalForm S o c) :
+/-- Congruence, with its frame replaced by an explicit isometry of the plane. -/
+lemma Congruent.rigid_witness {n : ℕ} {S M : Fin n → UnitSquare} {o : Point}
+    (h : Congruent S o M) :
     ∃ (e : Point ≃ Point) (σ : Equiv.Perm (Fin n)), e (0,0)=o ∧
       (∀ p q, normSq (sub (e p) (e q))=normSq (sub p q)) ∧
-      (∀ i p, (openSquare (S (σ i)) (e p) ↔ openAxisSquare (c i) p.1 p.2) ∧
-        (closedSquare (S (σ i)) (e p) ↔ closedAxisSquare (c i) p.1 p.2)) := by
+      (∀ i p, (openSquare (S (σ i)) (e p) ↔ openSquare (M i) p) ∧
+        (closedSquare (S (σ i)) (e p) ↔ closedSquare (M i) p)) := by
   obtain ⟨φ,σ,hφ⟩ := h
-  exact ⟨frameEquiv o φ,σ,frameEquiv_zero o φ,frameEquiv_distance o φ,
-    fun i p => hφ i p.1 p.2⟩
+  exact ⟨frameEquiv o φ,σ,frameEquiv_zero o φ,frameEquiv_distance o φ,hφ⟩
 
 lemma chart_represents {S : UnitSquare} {o : Point} (C : SquareChart S o) :
     Represents S o C.phase (C.a,C.signedB) := C.cartesian

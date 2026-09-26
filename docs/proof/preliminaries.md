@@ -23,6 +23,7 @@ Definitions 1 to 5 are on this page, Definitions 6 to 17 on the
 | $Q(c)$ | the axis-parallel unit square centred at $c$ | Definition 2 |
 | $o$ | the disk centre | Definition 3 |
 | $F_\phi$ | the frame at $o$ turned by $\phi$ | Definition 4 |
+| $M_1, \dots, M_n$ | a model: unit squares about the origin | Definition 5 |
 | $a_S \ge b_S$ | the offsets of $o$ from $c_S$ along the axes of $S$ | [Definition 6](common.md#definition-6-position-of-the-disk-centre) |
 | $\varphi(a, b)$ | the farthest-vertex function | [Definition 8](common.md#definition-8-farthest-vertex-function) |
 | $P_8$ ($P_3$, $P_5$) | contact polygons in the $(a, b)$-plane | [Definitions 10, 11](common.md#definition-10-contact-polygon) |
@@ -50,11 +51,11 @@ A *direction* is an angle modulo $2\pi$. The unit vector in the direction
 $\theta$ is $u(\theta) = (\cos\theta, \sin\theta)$, and the direction of a
 nonzero vector $v$ is the $\theta$ with $v = |v| u(\theta)$.
 
-*Lean: [`Point`](../../SquaresInCircles/Geometry.lean#L15),
-[`normSq`](../../SquaresInCircles/Geometry.lean#L17) (the squared norm),
-[`inDisk`](../../SquaresInCircles/Geometry.lean#L45) (the closed disk, stated
+*Lean: [`Point`](../../SquaresInCircles/Geometry.lean#L16),
+[`normSq`](../../SquaresInCircles/Geometry.lean#L18) (the squared norm),
+[`inDisk`](../../SquaresInCircles/Geometry.lean#L46) (the closed disk, stated
 with squared distances),
-[`Direction`](../../SquaresInCircles/Geometry.lean#L55).*
+[`Direction`](../../SquaresInCircles/Geometry.lean#L56).*
 
 ## Unit squares
 
@@ -83,11 +84,11 @@ gives the same sets, and every statement is about these sets.
 *The frame of $S$ at its centre $c_S$, and the local coordinates of a point $p$.
 The open square is where both are below $\frac12$ in absolute value.*
 
-*Lean: [`UnitSquare`](../../SquaresInCircles/Geometry.lean#L21),
-[`localX`](../../SquaresInCircles/Geometry.lean#L27),
-[`localY`](../../SquaresInCircles/Geometry.lean#L30),
-[`openSquare`](../../SquaresInCircles/Geometry.lean#L36),
-[`closedSquare`](../../SquaresInCircles/Geometry.lean#L33).*
+*Lean: [`UnitSquare`](../../SquaresInCircles/Geometry.lean#L22),
+[`localX`](../../SquaresInCircles/Geometry.lean#L28),
+[`localY`](../../SquaresInCircles/Geometry.lean#L31),
+[`openSquare`](../../SquaresInCircles/Geometry.lean#L37),
+[`closedSquare`](../../SquaresInCircles/Geometry.lean#L34).*
 
 ### Definition 2 (axis-parallel square)
 
@@ -105,17 +106,19 @@ The optimal packings are made of such squares.
 
 *The square $Q(c)$ spans $c_1 \pm \frac12$ across and $c_2 \pm \frac12$ up.*
 
-*Lean: [`axisSquare`](../../SquaresInCircles/Common/Constructions.lean#L9) for
-$Q(c)$; [`openAxisSquare`](../../SquaresInCircles/Geometry.lean#L62) and
-[`closedAxisSquare`](../../SquaresInCircles/Geometry.lean#L64) for the two
-conditions above.*
+*Lean: [`axisSquare`](../../SquaresInCircles/Geometry.lean#L63) for $Q(c)$;
+[`openAxisSquare`](../../SquaresInCircles/Common/Constructions.lean#L9) and
+[`closedAxisSquare`](../../SquaresInCircles/Common/Constructions.lean#L11) for
+the two conditions above.*
 
-## Packings and their normal forms
+## Packings and congruence
 
 The main theorem is about unit squares packed in a disk. For each $n$ it names
-the smallest radius and the packings that attain it: for $n \le 5$ one
-packing, up to a rotation about the disk centre and a relabelling of the
-squares, and for $n = 7$ a family in which the middle column slides.
+the smallest radius and the packings that attain it, as models about the
+origin: for $n \le 5$ one model, so the optimal packing is unique up to a
+rotation about the disk centre and a relabelling of the squares, and for
+$n = 7$ a family of models in which each of the three middle squares can move
+along the middle column.
 
 ### Definition 3 (packing)
 
@@ -129,7 +132,7 @@ $\overline{D}(o, R)$. The point $o$ is the *disk centre*.
 *A packing of three unit squares in the closed disk of radius $R$ about $o$.*
 
 *Lean: [`InteriorDisjoint`](../../SquaresInCircles/Common/Basic.lean#L39),
-[`Packing`](../../SquaresInCircles/Geometry.lean#L49).*
+[`Packing`](../../SquaresInCircles/Geometry.lean#L50).*
 
 ### Definition 4 (frames at the disk centre)
 
@@ -149,25 +152,34 @@ $Q(c)^\circ$.
 *The frame $F_\phi$ at $o$. The square sits at $c = (c_1, c_2)$: in these
 coordinates it is $Q(c)$.*
 
-*Lean: [`pointInDirection`](../../SquaresInCircles/Geometry.lean#L58),
-[`Represents`](../../SquaresInCircles/Common/NormalForm.lean#L16).*
+*Lean: [`pointInDirection`](../../SquaresInCircles/Geometry.lean#L59),
+[`Represents`](../../SquaresInCircles/Common/Congruence.lean#L18).*
 
-### Definition 5 (normal form)
+### Definition 5 (congruence to a model)
 
-A packing $S_1, \dots, S_n$ has the *normal form* of the points
-$c_1, \dots, c_n$ if, for one direction $\phi$ and one relabelling $\sigma$,
-each $S_{\sigma(i)}$ sits at $c_i$ in the frame $\phi$, for the open and the
-closed squares alike. In words: one rotation about $o$ and one relabelling
-carry the model squares $Q(c_1), \dots, Q(c_n)$, placed with their disk centre
-at $o$, onto the packing.
+A *model* is a configuration $M_1, \dots, M_n$ of unit squares about the
+origin; every model here is made of axis-parallel squares
+$Q(c_1), \dots, Q(c_n)$. A configuration $S_1, \dots, S_n$ with disk centre $o$
+is *congruent to* the model if, for one direction $\phi$ and one relabelling
+$\sigma$, the frame $F_\phi$ carries each model square onto a square of the
+configuration, the open squares and the closed squares alike:
 
-![The T packing turned about o by an angle phi, inside its dashed circle, with the squares labelled S2, S3 and S1](figures/normal-form.svg)
+```math
+S_{\sigma(i)}^\circ = F_\phi\left(M_i^\circ\right), \qquad \overline{S_{\sigma(i)}} = F_\phi\left(\overline{M_i}\right) \qquad (i = 1, \dots, n) .
+```
 
-*A packing in the normal form of the T. Turning the model by $\phi$ about $o$
-gives the packing; the square in slot $c_i$ is $S_{\sigma(i)}$, here with
+In words: placed with its origin at $o$, the model is carried onto the
+configuration by one rotation about $o$ and one relabelling. For the model
+$Q(c_1), \dots, Q(c_n)$ this says that each $S_{\sigma(i)}$ sits at $c_i$ in
+the frame $\phi$, for the open and the closed squares alike.
+
+![The T packing turned about o by an angle phi, inside its dashed circle, with the squares labelled S2, S3 and S1](figures/congruent.svg)
+
+*A packing congruent to the T. Turning the model by $\phi$ about $o$ gives the
+packing; the square in slot $c_i$ is $S_{\sigma(i)}$, here with
 $\sigma(1) = 2$, $\sigma(2) = 3$, $\sigma(3) = 1$.*
 
-*Lean: [`HasNormalForm`](../../SquaresInCircles/Geometry.lean#L72).*
+*Lean: [`Congruent`](../../SquaresInCircles/Geometry.lean#L75).*
 
 With these definitions the main theorem can be stated; it is on the
 [overview page](README.md#the-main-theorem).

@@ -3,7 +3,7 @@
 [Back to the README](../README.md)
 
 These definitions carry the entire meaning of the results. All except the radii
-and the model centres are in `SquaresInCircles/Geometry.lean`.
+and the optimal models are in `SquaresInCircles/Geometry.lean`.
 
 ## The plane
 
@@ -141,15 +141,15 @@ are rational (`One.radius_sq`, …, `Five.radius_sq`, `Seven.radius_sq`). The
 proofs work with the squared radius, so the contact inequalities stay
 polynomial, which is what `nlinarith` needs. That no smaller radius works is
 proved once for all cases (`Optimum.optimality`): a packing in a smaller disk
-would also lie in the optimal disk, so it would have the normal form of an
-optimal layout, and the outermost corners of that layout would lie outside the
-smaller disk.
+would also lie in the optimal disk, so it would be congruent to an optimal
+model, and the outermost corners of that model would lie outside the smaller
+disk.
 
-## Normal forms
+## Congruence
 
-Uniqueness says that every packing at the optimal radius is the optimal packing,
-moved by one rotation about the disk centre, with the squares relabelled. It is
-stated about point sets:
+Uniqueness says that every packing at the optimal radius is an optimal model,
+placed at the disk centre, turned by one rotation about it, with the squares
+relabelled. It is stated about point sets:
 
 ```lean
 abbrev Direction := Real.Angle
@@ -157,25 +157,36 @@ abbrev Direction := Real.Angle
 def pointInDirection (o : Point) (phase : Direction) (x y : ℝ) : Point :=
   (o.1 + phase.cos * x - phase.sin * y, o.2 + phase.sin * x + phase.cos * y)
 
-abbrev openAxisSquare (c : Point) (x y : ℝ) : Prop :=
-  |x - c.1| < 1 / 2 ∧ |y - c.2| < 1 / 2
-abbrev closedAxisSquare (c : Point) (x y : ℝ) : Prop :=
-  |x - c.1| ≤ 1 / 2 ∧ |y - c.2| ≤ 1 / 2
-
-def HasNormalForm {n : ℕ} (S : Fin n → UnitSquare) (o : Point)
-    (centers : Fin n → Point) : Prop :=
-  ∃ (φ : Direction) (σ : Equiv.Perm (Fin n)), ∀ i x y,
-    (openSquare (S (σ i)) (pointInDirection o φ x y) ↔ openAxisSquare (centers i) x y) ∧
-    (closedSquare (S (σ i)) (pointInDirection o φ x y) ↔ closedAxisSquare (centers i) x y)
+def Congruent {n : ℕ} (S : Fin n → UnitSquare) (o : Point) (M : Fin n → UnitSquare) : Prop :=
+  ∃ (φ : Direction) (σ : Equiv.Perm (Fin n)), ∀ i p,
+    (openSquare (S (σ i)) (pointInDirection o φ p.1 p.2) ↔ openSquare (M i) p) ∧
+    (closedSquare (S (σ i)) (pointInDirection o φ p.1 p.2) ↔ closedSquare (M i) p)
 ```
 
 `pointInDirection o φ` reads coordinates `(x, y)` in the frame at the disk
-centre `o`, rotated by `φ`. `HasNormalForm` says that in one such frame, after
-relabelling by `σ`, square `σ i` is exactly the axis-parallel unit square
-centred at `centers i`, both as an open and as a closed set. It compares point
-sets rather than `UnitSquare` records, because a quarter-turn of a frame
-describes the same square. No reflection is needed, since each model is
-symmetric under one. With the disk centre at the origin, the models are:
+centre `o`, rotated by `φ`; it is a rotation about the origin followed by the
+translation to `o`, so it preserves distances. The model `M` is a configuration
+about the origin. `Congruent S o M` says that in one such frame, after
+relabelling by `σ`, square `σ i` is exactly the model square `M i`, both as an
+open and as a closed set. It compares point sets rather than `UnitSquare`
+records, because a quarter-turn of a frame describes the same square. No
+reflection is needed, since each optimal model is symmetric under one.
+
+## The optimal packings
+
+Every optimal model is made of axis-parallel unit squares:
+
+```lean
+def axisSquare (c : Point) : UnitSquare where
+  center := c
+  cosine := 1
+  sine := 0
+  unit := by norm_num
+```
+
+For `n ≤ 5` the optimal packing is unique. Its model is
+`fun i => axisSquare (centers i)`, with the disk centre at the origin and these
+centres:
 
 | n | `centers` | packing |
 | --- | --- | --- |
@@ -184,19 +195,11 @@ symmetric under one. With the disk centre at the origin, the models are:
 | 3 | `(-1/2, -5/16)`, `(1/2, -5/16)`, `(0, 11/16)` | the T |
 | 4 | `(±1/2, ±1/2)` | the 2×2 block |
 | 5 | `(0, 0)`, `(±1, 0)`, `(0, ±1)` | the plus |
-| 7 | `(±1, ±1/2)`, `(0, -1)`, `(0, 0)`, `(0, 1)` | a column of three between two columns of two |
 
-These are `One.centers`, …, `Five.centers` and `Seven.centers`;
-`modelCenters n` selects the one for `n` (`SquaresInCircles.lean`). Each case
-builds its optimal packing as `model i = axisSquare (centers i)`, the
-axis-parallel square centred at `centers i`.
-
-## The optimal layouts
-
-For `n ≤ 5` the optimal packing is unique, and its layout is `modelCenters n`.
-For `n = 7` the optimum is not unique: the column of three squares in the
-middle can slide. A `Column` records its three heights
-(`Seven/Construction.lean`):
+These are `One.centers`, …, `Five.centers`, and the models `One.model`, …,
+`Five.model`. For `n = 7` the optimum is not unique: between two columns of two
+squares, each of the three squares of the middle column can move along it on
+its own. A `Column` records their three heights (`Seven/Construction.lean`):
 
 ```lean
 def Seven.columnLimit : ℝ := Real.sqrt 3 - 1 / 2
@@ -210,21 +213,29 @@ structure Seven.Column where
   gap_upper : middle + 1 ≤ top
   upper : top ≤ columnLimit
 
-def Seven.slidingCenters (c : Column) : Fin 7 → Point :=
+def Seven.columnCenters (c : Column) : Fin 7 → Point :=
   ![(1, -1/2), (1, 1/2), (-1, -1/2), (-1, 1/2),
     (0, c.bottom), (0, c.middle), (0, c.top)]
+
+def Seven.columnModel (c : Column) : Fin 7 → UnitSquare :=
+  fun i => axisSquare (columnCenters c i)
 ```
 
 The heights are at least 1 apart, so the three squares do not overlap, and
 within `√3 - 1/2` of the disk centre, so they fit in the disk of radius `√13/2`.
-`Seven.centers` is the member with heights `-1, 0, 1`. The root file collects
-the layouts of all optimal packings, and uniqueness says that every optimal
-packing has the normal form of one of them (`SquaresInCircles.lean`):
+`Seven.centers` and `Seven.model` are the column with heights `-1, 0, 1`. The
+root file collects the optimal models, and uniqueness says that every optimal
+packing is congruent to one of them (`SquaresInCircles.lean`):
 
 ```lean
-def optimalLayouts : (n : ℕ) → Set (Fin n → Point)
-  | 7 => Set.range Seven.slidingCenters
-  | n => {modelCenters n}
+def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
+  | 1 => {One.model}
+  | 2 => {Two.model}
+  | 3 => {Three.model}
+  | 4 => {Four.model}
+  | 5 => {Five.model}
+  | 7 => Set.range Seven.columnModel
+  | _ => ∅
 ```
 
 Read these definitions before trusting the result. A kernel check establishes

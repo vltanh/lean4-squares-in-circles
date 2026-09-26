@@ -45,7 +45,7 @@ lemma centers_at_half (S : Fin 2 → UnitSquare) (o : Point) (hd : InteriorDisjo
 
 /-- At the optimal radius the two squares form the rectangle. -/
 theorem uniqueness (S : Fin 2 → UnitSquare) (o : Point)
-    (hp : Packing S o radius) : HasNormalForm S o centers := by
+    (hp : Packing S o radius) : Congruent S o model := by
   have hφ (i : Fin 2) : phi (alpha (S i) o) (beta (S i) o) ≤ 5/4 := radius_sq ▸ hp.phi_le i
   have hhalf := centers_at_half S o hp.disjoint hφ
   -- so each square sits at `(1/2, 0)` in its sorted chart
@@ -64,17 +64,18 @@ theorem uniqueness (S : Fin 2 → UnitSquare) (o : Point)
   rw [hAc,hBc] at hanti
   have r1 := chart_represents (C 1)
   rw [hanti,show (Real.pi:Direction)=quarterShift 2 from rfl] at r1
-  apply normal_form_of_slots (φ := (C 0).phase) hp.disjoint
+  apply congruent_of_slots (φ := (C 0).phase) hp.disjoint
   intro i
   fin_cases i
   · exact ⟨1,by simpa [centers,SquareChart.signedB,ha,hb] using chart_represents (C 0)⟩
   · exact ⟨0,by simpa [centers,turnPoint,SquareChart.signedB,ha,hb,neg_div] using
       represents_quarter 2 r1⟩
 
-/-- The optimum for two squares: `radius`, attained only by the normal forms
-of `centers`. -/
+/-- The optimum for two squares: `radius`, attained only by the configurations
+congruent to `model`. -/
 def optimum : Optimum 2 :=
-  .ofUnique centers model_packing
-    ⟨1,1,1/2,by norm_num [centers,closedAxisSquare],by norm_num [radius_sq]⟩ uniqueness
+  .ofUnique model model_packing
+    ⟨1,(1,1/2),(axisSquare_closed _ _).2 (by norm_num [centers,closedAxisSquare]),by norm_num [normSq,radius_sq]⟩
+    uniqueness
 
 end SquaresInCircles.Two

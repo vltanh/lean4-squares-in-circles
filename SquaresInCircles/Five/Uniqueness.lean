@@ -52,14 +52,14 @@ lemma centered_square (S : Fin 5 → UnitSquare) (o : Point)
 /-- All five slots are forced by the centered square and unit-distance contacts. -/
 theorem polygon_uniqueness (S : Fin 5 → UnitSquare) (o : Point)
     (hd : InteriorDisjoint S) (hp : ∀ i, P5 (alpha (S i) o) (beta (S i) o)) :
-    HasNormalForm S o centers := by
+    Congruent S o model := by
   classical
   obtain ⟨k,hk⟩ := centered_square S o hd hp
   obtain ⟨t,htc,hts⟩ := frame_angle (S k)
   let φ : Direction := (t:Direction)
   have hc : φ.cos=(S k).cosine := htc
   have hs : φ.sin=(S k).sine := hts
-  apply normal_form_of_slots (φ := φ) hd
+  apply congruent_of_slots (φ := φ) hd
   intro i
   by_cases hi : i=k
   · subst i
@@ -80,17 +80,18 @@ theorem polygon_uniqueness (S : Fin 5 → UnitSquare) (o : Point)
 
 /-- Geometric uniqueness of the radius-sqrt(5/2) disk packing. -/
 theorem uniqueness (S : Fin 5 → UnitSquare) (o : Point)
-    (hp : Packing S o radius) : HasNormalForm S o centers := by
+    (hp : Packing S o radius) : Congruent S o model := by
   apply polygon_uniqueness S o hp.disjoint
   intro i
   apply p5_of_phi
   have h := hp.phi_le i
   rwa [radius_sq] at h
 
-/-- The optimum for five squares: `radius`, attained only by the normal forms
-of `centers`. -/
+/-- The optimum for five squares: `radius`, attained only by the configurations
+congruent to `model`. -/
 def optimum : Optimum 5 :=
-  .ofUnique centers model_packing
-    ⟨1,3/2,1/2,by norm_num [centers,closedAxisSquare],by norm_num [radius_sq]⟩ uniqueness
+  .ofUnique model model_packing
+    ⟨1,(3/2,1/2),(axisSquare_closed _ _).2 (by norm_num [centers,closedAxisSquare]),by norm_num [normSq,radius_sq]⟩
+    uniqueness
 
 end SquaresInCircles.Five

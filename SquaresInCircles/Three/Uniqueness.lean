@@ -119,7 +119,7 @@ lemma a_represents {S : UnitSquare} {o : Point} (C : SquareChart S o)
 
 /-- Every optimal three-square packing is one rigid image of the T. -/
 theorem uniqueness (S : Fin 3 → UnitSquare) (o : Point)
-    (hp : Packing S o radius) : HasNormalForm S o centers := by
+    (hp : Packing S o radius) : Congruent S o model := by
   have hφ (i : Fin 3) : phi (alpha (S i) o) (beta (S i) o) ≤ 425/256 := by
     simpa only [radius_sq] using hp.phi_le i
   have hd := hp.disjoint.pairwise
@@ -180,7 +180,7 @@ theorem uniqueness (S : Fin 3 → UnitSquare) (o : Point)
   obtain ⟨hrev,hcos,hsin⟩ := apex_phase (C i).reversed (C j).reversed hanti h01 h02 h12
   have hj' : (C k).phase-(C j).phase=((C k).phase-(C i).phase)-(Real.pi:Direction) := by
     rw [hanti]; abel
-  apply normal_form_of_slots (φ := (C k).phase-((Real.pi/2:ℝ):Direction)) hp.disjoint
+  apply congruent_of_slots (φ := (C k).phase-((Real.pi/2:ℝ):Direction)) hp.disjoint
   intro l
   rcases hcover l with rfl | rfl | rfl
   · exact b_represents (C l) hia hib hcos hsin
@@ -189,10 +189,11 @@ theorem uniqueness (S : Fin 3 → UnitSquare) (o : Point)
     cases (C i).reversed <;> simp
   · exact ⟨2,a_represents (C l) hk.1 hk.2.1⟩
 
-/-- The optimum for three squares: `radius`, attained only by the normal forms
-of `centers`. -/
+/-- The optimum for three squares: `radius`, attained only by the configurations
+congruent to `model`. -/
 def optimum : Optimum 3 :=
-  .ofUnique centers model_packing
-    ⟨0,-1,-13/16,by norm_num [centers,closedAxisSquare],by norm_num [radius_sq]⟩ uniqueness
+  .ofUnique model model_packing
+    ⟨0,(-1,-13/16),(axisSquare_closed _ _).2 (by norm_num [centers,closedAxisSquare]),by norm_num [normSq,radius_sq]⟩
+    uniqueness
 
 end SquaresInCircles.Three

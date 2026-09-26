@@ -5,12 +5,11 @@ used by the attaining packings. -/
 noncomputable section
 namespace SquaresInCircles
 
-/-- The axis-parallel unit square centred at `c`. -/
-def axisSquare (c : Point) : UnitSquare where
-  center := c
-  cosine := 1
-  sine := 0
-  unit := by norm_num
+/-- `(x, y)` lies in the open, or the closed, axis-parallel unit square at `c`. -/
+abbrev openAxisSquare (c : Point) (x y : ℝ) : Prop :=
+  |x - c.1| < 1 / 2 ∧ |y - c.2| < 1 / 2
+abbrev closedAxisSquare (c : Point) (x y : ℝ) : Prop :=
+  |x - c.1| ≤ 1 / 2 ∧ |y - c.2| ≤ 1 / 2
 
 lemma axisSquare_open (c p : Point) :
     openSquare (axisSquare c) p ↔ openAxisSquare c p.1 p.2 := by

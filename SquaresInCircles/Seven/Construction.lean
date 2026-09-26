@@ -5,10 +5,12 @@ import SquaresInCircles.Common.Constructions
 
 A column of three unit squares between two columns of two, at the optimal radius
 `√13 / 2`. The outer corners of the side columns lie on the circle, but the
-middle column is shorter than the room it has, so it can slide: every `Column`
-gives an optimal packing, and `Seven.centers` is the one with the column
-centred. The four gaps of a column, below, between and above its squares, are
-nonnegative with sum `2√3 - 3`, and they determine the column.
+middle column is shorter than the room it has, so each of its three squares can
+move along the middle axis on its own, as long as the three stay at least 1
+apart and inside the disk: every `Column` gives an optimal packing, and
+`Seven.centers` is the one with the column centred. The four gaps of a column,
+below, between and above its squares, are nonnegative with sum `2√3 - 3`, and
+they determine the column.
 -/
 noncomputable section
 namespace SquaresInCircles.Seven
@@ -61,15 +63,16 @@ lemma top_mem (c : Column) : -columnLimit ≤ c.top ∧ c.top ≤ columnLimit :=
 end Column
 
 /-- The four side centres, then the three centres of the middle column. -/
-def slidingCenters (c : Column) : Fin 7 → Point :=
+def columnCenters (c : Column) : Fin 7 → Point :=
   ![(1, -1/2), (1, 1/2), (-1, -1/2), (-1, 1/2),
     (0, c.bottom), (0, c.middle), (0, c.top)]
 
-def slidingModel (c : Column) : Fin 7 → UnitSquare :=
-  fun i => axisSquare (slidingCenters c i)
+/-- The column packing: axis-parallel squares at `columnCenters c`. -/
+def columnModel (c : Column) : Fin 7 → UnitSquare :=
+  fun i => axisSquare (columnCenters c i)
 
-/-- Every position of the middle column gives an optimal packing. -/
-theorem sliding_packing (c : Column) : Packing (slidingModel c) (0,0) radius := by
+/-- Every position of the three middle squares gives an optimal packing. -/
+theorem column_packing (c : Column) : Packing (columnModel c) (0,0) radius := by
   have hbm := c.gap_lower
   have hmt := c.gap_upper
   have hbt : c.bottom+1 ≤ c.top := by linarith
@@ -83,10 +86,10 @@ theorem sliding_packing (c : Column) : Packing (slidingModel c) (0,0) radius := 
     linarith
   apply axis_packing radius_nonneg
   · intro i j hij
-    fin_cases i <;> fin_cases j <;> norm_num [slidingCenters,AxisSeparated,hbm,hmt,hbt] at *
+    fin_cases i <;> fin_cases j <;> norm_num [columnCenters,AxisSeparated,hbm,hmt,hbt] at *
   · intro i
     fin_cases i
-    iterate 4 norm_num [slidingCenters,radius_sq]
+    iterate 4 norm_num [columnCenters,radius_sq]
     exacts [hmid c.bottom_mem,hmid c.middle_mem,hmid c.top_mem]
 
 /-- The middle column centred at the disk centre. -/
@@ -107,7 +110,7 @@ def centers : Fin 7 → Point :=
 /-- That packing, centred at the origin. -/
 def model : Fin 7 → UnitSquare := fun i => axisSquare (centers i)
 
-theorem model_packing : Packing model (0,0) radius := sliding_packing centeredColumn
+theorem model_packing : Packing model (0,0) radius := column_packing centeredColumn
 
 /-! ### The column as a simplex -/
 

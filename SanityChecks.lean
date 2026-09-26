@@ -1,9 +1,9 @@
 import SquaresInCircles
 
 /-!
-Regression checks: the radius and centre tables, the exact rational margins the
+Regression checks: the radius and model tables, the exact rational margins the
 proofs rely on, the contact points of the polygon relaxations, the public
-statements, and the sliding packings of seven squares, which are exactly the
+statements, and the column packings of seven squares, which are exactly the
 optimal ones.
 -/
 noncomputable section
@@ -17,14 +17,20 @@ example : optimalRadius 4 = Real.sqrt 2 := rfl
 example : optimalRadius 5 = Real.sqrt (5 / 2) := rfl
 example : optimalRadius 7 = Real.sqrt 13 / 2 := rfl
 
--- The centre table.
-example : modelCenters 1 = ![(0,0)] := rfl
-example : modelCenters 2 = ![(-1/2,0),(1/2,0)] := rfl
-example : modelCenters 3 = ![(-1/2,-5/16),(1/2,-5/16),(0,11/16)] := rfl
-example : modelCenters 4 = ![(1/2,1/2),(-1/2,1/2),(-1/2,-1/2),(1/2,-1/2)] := rfl
-example : modelCenters 5 = ![(0,0),(1,0),(0,1),(-1,0),(0,-1)] := rfl
-example : modelCenters 7 = ![(1,-1/2),(1,1/2),(-1,-1/2),(-1,1/2),(0,-1),(0,0),(0,1)] :=
+-- The model table: axis-parallel squares at these centres.
+example : optimalPackings 1 = {fun i => axisSquare (![(0,0)] i)} := rfl
+example : optimalPackings 2 = {fun i => axisSquare (![(-1/2,0),(1/2,0)] i)} := rfl
+example : optimalPackings 3 =
+    {fun i => axisSquare (![(-1/2,-5/16),(1/2,-5/16),(0,11/16)] i)} := rfl
+example : optimalPackings 4 =
+    {fun i => axisSquare (![(1/2,1/2),(-1/2,1/2),(-1/2,-1/2),(1/2,-1/2)] i)} := rfl
+example : optimalPackings 5 =
+    {fun i => axisSquare (![(0,0),(1,0),(0,1),(-1,0),(0,-1)] i)} := rfl
+example : optimalPackings 7 = Set.range fun c : Seven.Column => fun i =>
+    axisSquare (![(1,-1/2),(1,1/2),(-1,-1/2),(-1,1/2),(0,c.bottom),(0,c.middle),(0,c.top)] i) :=
   rfl
+example : Seven.columnCenters Seven.centeredColumn =
+    ![(1,-1/2),(1,1/2),(-1,-1/2),(-1,1/2),(0,-1),(0,0),(0,1)] := rfl
 
 -- Three squares: deficit, radial and transverse margins.
 example : (22:ℝ)/42-13/29 = 46/609 := by norm_num
@@ -81,60 +87,52 @@ example : Five.P5 ((Real.sqrt 5-1)/2) ((Real.sqrt 5-1)/2) := by
 -- Public statements.
 example (S : Fin 3 → UnitSquare) (o : Point) (R : ℝ)
     (hp : Packing S o R) : Three.radius ≤ R := Three.optimum.optimality S o R hp
+example : IsLeast {R | ∃ (S : Fin 7 → UnitSquare) (o : Point), Packing S o R}
+    (Real.sqrt 13 / 2) := optimal_radius 7 (Or.inr rfl)
 example (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5) (S : Fin n → UnitSquare) (o : Point)
-    (hp : Packing S o (optimalRadius n)) : HasNormalForm S o (modelCenters n) := by
-  obtain ⟨c,hc,h⟩ := uniqueness n (Or.inl hn) S o hp
-  have hl : optimalLayouts n = {modelCenters n} := by
-    obtain ⟨h1,h5⟩ := hn
-    interval_cases n <;> rfl
-  rw [hl,Set.mem_singleton_iff] at hc
-  exact hc ▸ h
-example (S : Fin 7 → UnitSquare) (o : Point) (R : ℝ)
-    (hp : Packing S o R) : optimalRadius 7 ≤ R := optimality 7 (Or.inr rfl) S o R hp
+    (hp : Packing S o (optimalRadius n)) : ∃ M, optimalPackings n = {M} ∧ Congruent S o M := by
+  obtain ⟨M,hM,h⟩ := (optimal_packings n (Or.inl hn) S o).mp hp
+  obtain ⟨h1,h5⟩ := hn
+  refine ⟨M,?_,h⟩
+  interval_cases n <;> exact (Set.mem_singleton_iff.mp hM) ▸ rfl
+example (S : Fin 4 → UnitSquare) (o : Point) (hp : Packing S o (optimalRadius 4)) :
+    Congruent S o Four.model := by
+  obtain ⟨M,hM,h⟩ := (optimal_packings 4 (Or.inl ⟨by norm_num,by norm_num⟩) S o).mp hp
+  exact (show M = Four.model from hM) ▸ h
+example (S : Fin 7 → UnitSquare) (o : Point) (hp : Packing S o (optimalRadius 7)) :
+    ∃ c : Seven.Column, Congruent S o (Seven.columnModel c) := by
+  obtain ⟨_,⟨c,rfl⟩,h⟩ := (optimal_packings 7 (Or.inr rfl) S o).mp hp
+  exact ⟨c,h⟩
 example (S : Fin 7 → UnitSquare) (o : Point) (R : ℝ)
     (hp : Packing S o R) : Seven.radius ≤ R := Seven.optimum.optimality S o R hp
-example (S : Fin 7 → UnitSquare) (o : Point) (hp : Packing S o (optimalRadius 7)) :
-    ∃ c : Seven.Column, HasNormalForm S o (Seven.slidingCenters c) := by
-  obtain ⟨_,⟨c,rfl⟩,h⟩ := uniqueness 7 (Or.inr rfl) S o hp
-  exact ⟨c,h⟩
-example (S : Fin 7 → UnitSquare) (o : Point) :
-    Packing S o Seven.radius ↔ ∃ c ∈ Set.range Seven.slidingCenters, HasNormalForm S o c :=
-  Seven.optimum.packing_iff S o
-
--- The optimal layouts: one for each n ≤ 5, the sliding family for n = 7.
-example : optimalLayouts 3 = {Three.centers} := rfl
-example : optimalLayouts 7 = Set.range Seven.slidingCenters := rfl
 example (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7) :
     (optimum n hn).radius = optimalRadius n := (optimum_spec n hn).1
 
--- The attaining packings, each in its own normal form.
-example : HasNormalForm One.model (0,0) One.centers :=
-  One.uniqueness One.model (0,0) One.model_packing
-example : HasNormalForm Two.model (0,0) Two.centers :=
-  Two.uniqueness Two.model (0,0) Two.model_packing
-example : HasNormalForm Three.model (0,0) Three.centers :=
+-- The models, each congruent to itself.
+example : Congruent One.model (0,0) One.model := One.uniqueness One.model (0,0) One.model_packing
+example : Congruent Two.model (0,0) Two.model := Two.uniqueness Two.model (0,0) Two.model_packing
+example : Congruent Three.model (0,0) Three.model :=
   Three.uniqueness Three.model (0,0) Three.model_packing
-example : HasNormalForm Four.model (0,0) Four.centers :=
+example : Congruent Four.model (0,0) Four.model :=
   Four.uniqueness Four.model (0,0) Four.model_packing
-example : HasNormalForm Five.model (0,0) Five.centers :=
+example : Congruent Five.model (0,0) Five.model :=
   Five.uniqueness Five.model (0,0) Five.model_packing
-example : ∃ c : Seven.Column, HasNormalForm Seven.model (0,0) (Seven.slidingCenters c) :=
+example : ∃ c : Seven.Column, Congruent Seven.model (0,0) (Seven.columnModel c) :=
   Seven.uniqueness Seven.model (0,0) Seven.model_packing
 
--- Seven squares: every position of the middle column is optimal, for example
--- the column pushed down by one fifth.
+-- Seven squares: every position of the three middle squares is optimal, for
+-- example the bottom one pushed down by one fifth.
 example : Packing Seven.model (0,0) Seven.radius := Seven.model_packing
-example (c : Seven.Column) : Packing (Seven.slidingModel c) (0,0) Seven.radius :=
-  Seven.sliding_packing c
+example (c : Seven.Column) : Packing (Seven.columnModel c) (0,0) Seven.radius :=
+  Seven.column_packing c
 example : ∃ c : Seven.Column, c.bottom = -6/5 ∧
-    Packing (Seven.slidingModel c) (0,0) Seven.radius := by
+    Packing (Seven.columnModel c) (0,0) Seven.radius := by
   have h3 := Real.sq_sqrt (show (0:ℝ) ≤ 3 by norm_num)
   have hl : (6/5:ℝ) ≤ Seven.columnLimit := by
     unfold Seven.columnLimit
     nlinarith [Real.sqrt_nonneg (3:ℝ)]
-  exact ⟨⟨-6/5,-1/5,4/5,by linarith,by norm_num,by norm_num,by linarith⟩,rfl,
-    Seven.sliding_packing _⟩
-example : Seven.slidingCenters Seven.centeredColumn = Seven.centers := rfl
+  exact ⟨⟨-6/5,0,1,by linarith,by norm_num,by norm_num,by linarith⟩,rfl,
+    Seven.column_packing _⟩
 
 -- Seven squares: the four gaps of the column, and the middle square within 1/4
 -- of the disk centre.

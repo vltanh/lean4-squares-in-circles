@@ -9,9 +9,8 @@
 2. A packing of two unit squares in a closed disk of radius $R$ forces
    $R \ge R_2$.
 3. The packings of two unit squares in a closed disk of radius $R_2$ are
-   exactly the configurations with the normal form of
-   $(-\frac12, 0), (\frac12, 0)$: the squares form a $2 \times 1$ rectangle
-   centred at the disk centre.
+   exactly the configurations congruent to $Q(-\frac12, 0), Q(\frac12, 0)$:
+   the squares form a $2 \times 1$ rectangle centred at the disk centre.
 
 ![Two unit squares side by side forming a 2 by 1 rectangle centred at o, with its four corners on the dashed circle of radius root 5 over 2](figures/two.svg)
 
@@ -44,7 +43,7 @@ in $[-1, 1] \times [-\frac12, \frac12]$, with $1 + \frac14 = \frac54$. Apply
 [Lemma 17](common.md#lemma-17-axis-parallel-squares). $\square$
 
 *Lean: [`Two.model_packing`](../../SquaresInCircles/Two/Construction.lean#L26),
-[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L35).*
+[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L34).*
 
 ## Uniqueness
 
@@ -97,8 +96,8 @@ throughout, and $|c_S - o|^2 = |c_T - o|^2 = \frac14$. $\square$
 ### Proposition 2.4 (uniqueness)
 
 If two disjoint unit squares lie in the closed disk of radius
-$\frac{\sqrt5}2$ about $o$, the packing has the normal form of
-$(-\frac12, 0), (\frac12, 0)$.
+$\frac{\sqrt5}2$ about $o$, the packing is congruent to
+$Q(-\frac12, 0), Q(\frac12, 0)$.
 
 *Proof.* Call the squares $S$ and $T$, and take a chart of each
 ([Lemma 10](common.md#lemma-10-charts)).
@@ -122,31 +121,31 @@ $(-\frac12, 0), (\frac12, 0)$.
    $(\frac12, 0)$ in the frame $\theta_S$, and $T$ at $(\frac12, 0)$ in the
    frame $\theta_S + \pi$. Two quarter turns
    ([Lemma 18](common.md#lemma-18-sitting-at-a-centre) (2)) put $T$ at
-   $(-\frac12, 0)$ in the frame $\theta_S$.
-   [Lemma 19](common.md#lemma-19-from-slots-to-a-normal-form) gives the normal
-   form. $\square$
+   $(-\frac12, 0)$ in the frame $\theta_S$, and
+   [Lemma 19](common.md#lemma-19-from-slots-to-congruence) gives the
+   congruence. $\square$
 
 *Lean: [`Two.uniqueness`](../../SquaresInCircles/Two/Uniqueness.lean#L47),
 [`sorted_square_chart`](../../SquaresInCircles/Common/Charts.lean#L146),
 [`chart_phi`](../../SquaresInCircles/Common/Charts.lean#L76),
 [`SquareChart.half_arc`](../../SquaresInCircles/Common/Charts.lean#L193),
 [`OpenArc.opposite`](../../SquaresInCircles/Common/Angles.lean#L31),
-[`chart_represents`](../../SquaresInCircles/Common/NormalForm.lean#L148),
+[`chart_represents`](../../SquaresInCircles/Common/Congruence.lean#L148),
 [`represents_quarter`](../../SquaresInCircles/Common/Angles.lean#L78),
-[`normal_form_of_slots`](../../SquaresInCircles/Common/NormalForm.lean#L96).*
+[`congruent_of_slots`](../../SquaresInCircles/Common/Congruence.lean#L99).*
 
-Proposition 2.1 and [Lemma 21](common.md#lemma-21-normal-forms-of-a-packing)
-give the converse: every configuration with this normal form is a packing in
-the closed disk of radius $R_2$.
+Proposition 2.1 and [Lemma 21](common.md#lemma-21-congruent-configurations)
+give the converse: every configuration congruent to the rectangle is a packing
+in the closed disk of radius $R_2$.
 
 ## Lower bound
 
 *Proof of Theorem 2 (2).* The corner $(1, \frac12)$ of
 $\overline{Q(\frac12, 0)}$ lies on the circle of radius $R_2$ about the origin,
 since $1 + \frac14 = \frac54$. By Proposition 2.4 every packing in the closed
-disk of radius $R_2$ has the normal form of $(-\frac12, 0), (\frac12, 0)$, so
+disk of radius $R_2$ is congruent to $Q(-\frac12, 0), Q(\frac12, 0)$, so
 [Lemma 22](common.md#lemma-22-the-lower-bound) gives
 $R \ge R_2$. $\square$
 
 *Lean: [`Two.optimum`](../../SquaresInCircles/Two/Uniqueness.lean#L76),
-[`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L48).*
+[`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L47).*

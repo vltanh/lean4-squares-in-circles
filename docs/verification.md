@@ -18,14 +18,15 @@ and no `native_decide`.
   `[propext, Classical.choice, Quot.sound]`.
 - `sorryAx` in that output would indicate an unproved lemma;
   `Lean.ofReduceBool` would indicate `native_decide` and compiler trust.
-- The audit also prints `Packing`, `HasNormalForm`, `optimalRadius`,
-  `modelCenters`, `optimalLayouts`, `Optimum`, the sliding column of seven
+- The audit also prints `Packing`, `Congruent`, `axisSquare`,
+  `optimalRadius`, `optimalPackings`, `Optimum`, the column packings of seven
   squares and the theorem signatures for inspection.
-- `SanityChecks.lean` checks the radius and centre tables, re-proves the exact
+- `SanityChecks.lean` checks the radius and model tables, re-proves the exact
   rational margins and the contact points of the contact polygons that the
-  proofs rely on, restates the public theorems, checks the five unique optimal
-  packings against their normal forms, and checks the sliding family of seven
-  squares and its normal form; it must elaborate without errors.
+  proofs rely on, restates the public theorems, checks that the optimal model
+  of each `n ≤ 5` is congruent to itself, and checks the column packings of
+  seven squares, among them one with a single middle square moved; it must
+  elaborate without errors.
 
 [`.github/workflows/lean.yml`](../.github/workflows/lean.yml) runs these steps
 on every push to `main` and on pull requests, using `leanprover/lean-action`.

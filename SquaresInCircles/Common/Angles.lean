@@ -1,4 +1,4 @@
-import SquaresInCircles.Common.NormalForm
+import SquaresInCircles.Common.Congruence
 import SquaresInCircles.Common.ArcMetric
 import Mathlib.Data.Fin.Tuple.Sort
 

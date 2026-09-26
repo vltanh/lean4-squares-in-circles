@@ -1,4 +1,4 @@
-import SquaresInCircles.Common.NormalForm
+import SquaresInCircles.Common.Congruence
 
 /-! Centres of interior-disjoint unit squares are at least 1 apart, and at
 distance exactly 1 the squares are side-neighbours. The supporting functional

@@ -12,7 +12,7 @@ $c_3 = (0, \frac{11}{16})$.
 2. A packing of three unit squares in a closed disk of radius $R$ forces
    $R \ge R_3$.
 3. The packings of three unit squares in a closed disk of radius $R_3$ are
-   exactly the configurations with the normal form of $c_1, c_2, c_3$.
+   exactly the configurations congruent to $Q(c_1), Q(c_2), Q(c_3)$.
 
 ![The T packing in its dashed circle of radius 5 root 17 over 16, with the small circle of radius 3/8 about the centre divided into three coloured arcs of 120 degrees, one in each square](figures/three.svg)
 
@@ -34,7 +34,7 @@ rebuild the T.
 [`Three.model_packing`](../../SquaresInCircles/Three/Construction.lean#L31),
 [`Three.uniqueness`](../../SquaresInCircles/Three/Uniqueness.lean#L121),
 [`Three.optimum`](../../SquaresInCircles/Three/Uniqueness.lean#L194),
-[`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L48), in
+[`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L47), in
 [`SquaresInCircles/Three/`](../../SquaresInCircles/Three).*
 
 ## Construction
@@ -59,14 +59,14 @@ $(\pm\frac12, \frac{19}{16})$, lie on the circle.
 
 *Lean:
 [`Three.model_packing`](../../SquaresInCircles/Three/Construction.lean#L31),
-[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L35).*
+[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L34).*
 
 ## Uniqueness
 
 ### Proposition 3.2 (uniqueness)
 
 If three pairwise disjoint unit squares lie in the closed disk of radius $R_3$
-about $o$, the packing has the normal form of $c_1, c_2, c_3$.
+about $o$, the packing is congruent to $Q(c_1), Q(c_2), Q(c_3)$.
 
 The proof takes four steps.
 
@@ -498,7 +498,7 @@ $(-\frac12, -\frac5{16}) = c_1$. $\square$
 *Lean:
 [`Three.a_represents`](../../SquaresInCircles/Three/Uniqueness.lean#L113),
 [`Three.b_represents`](../../SquaresInCircles/Three/Uniqueness.lean#L94),
-[`chart_represents`](../../SquaresInCircles/Common/NormalForm.lean#L148),
+[`chart_represents`](../../SquaresInCircles/Common/Congruence.lean#L148),
 [`represents_cardinal`](../../SquaresInCircles/Common/Angles.lean#L89).*
 
 *Proof of Proposition 3.2.* Every square $S$ has $(a_S, b_S) \in P_3$
@@ -534,31 +534,28 @@ $\frac\pi3$ (Lemma 3.5).
    | $S_1$ (type B) | $\theta_3 + \varepsilon_1\frac\pi2$, sign $\varepsilon_1$ | $c_1$ if $\varepsilon_1 = 1$, $c_2$ if $\varepsilon_1 = -1$ |
    | $S_2$ (type B) | $\theta_3 - \varepsilon_1\frac\pi2$, sign $-\varepsilon_1$ | $c_2$ if $\varepsilon_1 = 1$, $c_1$ if $\varepsilon_1 = -1$ |
 
-   [Lemma 19](common.md#lemma-19-from-slots-to-a-normal-form) gives the normal
-   form. $\square$
+   [Lemma 19](common.md#lemma-19-from-slots-to-congruence) gives the
+   congruence. $\square$
 
 *Lean: [`Three.uniqueness`](../../SquaresInCircles/Three/Uniqueness.lean#L121),
 [`SquareChart.half_arc`](../../SquaresInCircles/Common/Charts.lean#L193),
 [`OpenArc.opposite`](../../SquaresInCircles/Common/Angles.lean#L31),
-[`normal_form_of_slots`](../../SquaresInCircles/Common/NormalForm.lean#L96).*
+[`congruent_of_slots`](../../SquaresInCircles/Common/Congruence.lean#L99).*
 
-Proposition 3.1 and [Lemma 21](common.md#lemma-21-normal-forms-of-a-packing)
-give the converse: every configuration with this normal form is a packing in
-the closed disk of radius $R_3$.
+Proposition 3.1 and [Lemma 21](common.md#lemma-21-congruent-configurations)
+give the converse: every configuration congruent to the T is a packing in the
+closed disk of radius $R_3$.
 
-## The lower bound
+## Lower bound
 
-### Corollary 3.15 (lower bound)
-
-If three pairwise disjoint unit squares lie in the closed disk of radius $R$
-about $o$, then $R \ge R_3$.
-
-*Proof.* The corner $(-1, -\frac{13}{16})$ of $Q(c_1)$ lies on the circle of
-radius $R_3$ (Proposition 3.1). Proposition 3.2 and
-[Lemma 22](common.md#lemma-22-the-lower-bound) give $R \ge R_3$. $\square$
+*Proof of Theorem 3 (2).* The corner $(-1, -\frac{13}{16})$ of $Q(c_1)$ lies
+on the circle of radius $R_3$ about the origin, since
+$1 + \frac{169}{256} = \frac{425}{256}$. By Proposition 3.2 every packing in
+the closed disk of radius $R_3$ is congruent to $Q(c_1), Q(c_2), Q(c_3)$, so
+[Lemma 22](common.md#lemma-22-the-lower-bound) gives $R \ge R_3$. $\square$
 
 *Lean: [`Three.optimum`](../../SquaresInCircles/Three/Uniqueness.lean#L194),
-[`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L48).*
+[`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L47).*
 
 ## The legacy certificate proof
 

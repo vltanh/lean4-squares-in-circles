@@ -2,26 +2,26 @@
 
 [Back to the proof overview](README.md) · [Preliminaries](preliminaries.md) · [Shared lemmas](common.md)
 
-**Theorem 7.** Let $R_7 = \frac{\sqrt{13}}2$, and let $c_1, \dots, c_7$ be the
-points $(1, -\frac12)$, $(1, \frac12)$, $(-1, -\frac12)$, $(-1, \frac12)$,
-$(0, -1)$, $(0, 0)$, $(0, 1)$.
+**Theorem 7.** Let $R_7 = \frac{\sqrt{13}}2$. For heights $y_1, y_2, y_3$ with
+$y_1 + 1 \le y_2$, $y_2 + 1 \le y_3$ and
+$-(\sqrt3 - \frac12) \le y_1$, $y_3 \le \sqrt3 - \frac12$, the *column
+packing* with these heights is the model $Q(\pm1, \pm\frac12)$, $Q(0, y_1)$,
+$Q(0, y_2)$, $Q(0, y_3)$: a column of three squares between two columns of
+two.
 
-1. $Q(c_1), \dots, Q(c_7)$ form a packing in the closed disk of radius $R_7$
-   about the origin: a column of three squares between two columns of two.
-   More generally the middle column can slide: for any $y_1, y_2, y_3$ with
-   $y_1 + 1 \le y_2$, $y_2 + 1 \le y_3$ and
-   $-(\sqrt3 - \frac12) \le y_1$, $y_3 \le \sqrt3 - \frac12$, the squares
-   $Q(\pm1, \pm\frac12)$, $Q(0, y_1)$, $Q(0, y_2)$, $Q(0, y_3)$ form such a
-   packing.
+1. Every column packing is a packing in the closed disk of radius $R_7$ about
+   the origin.
 2. A packing of seven unit squares in a closed disk of radius $R$ forces
    $R \ge R_7$.
 3. The packings of seven unit squares in a closed disk of radius $R_7$ are
-   exactly the configurations with the normal form of $(\pm1, \pm\frac12)$,
-   $(0, y_1)$, $(0, y_2)$, $(0, y_3)$ for some $y_1, y_2, y_3$ as in (1).
+   exactly the configurations congruent to a column packing.
 
-So the optimum is not unique: by (1) the optimal packings form a
-three-parameter family, with infinitely many packings that no rotation and
-relabelling carry onto one another. By (3) there are no others.
+So the optimum is not unique: the side squares are fixed, but each of the
+three middle squares can move along the middle column on its own, as long as
+their centres stay at least 1 apart and within $\sqrt3 - \frac12$ of the disk
+centre. By (1) the optimal packings form a three-parameter family, with
+infinitely many packings that no rotation and relabelling carry onto one
+another. By (3) there are no others.
 
 ![The packing of seven squares in its dashed circle of radius root 13 over 2: a grey middle square around the centre, one square above and one below it, and two squares on either side; the unit circle about the centre is divided into six coloured arcs of 60 degrees, one in each square other than the middle one](figures/seven.svg)
 
@@ -39,28 +39,29 @@ directions exactly, and shows that the shadows overlap when the markers are
 less than $\frac\pi3$ apart, and also at exactly $\frac\pi3$ unless the squares
 touch as in (1). Seven markers do not fit, so one square contains the centre.
 The markers of the other six form a regular hexagon, and neighbouring squares
-touch as in (1), which rebuilds the packing up to the position of the middle
-column. A packing in a smaller disk would also be a packing at radius $R_7$,
-but all of those reach the circle of radius $R_7$; this gives (2).
+touch as in (1), which rebuilds the packing up to the heights of the three
+middle squares. A packing in a smaller disk would also be a packing at radius
+$R_7$, but all of those reach the circle of radius $R_7$; this gives (2).
 
 Unlike three to five squares, the argument is about pairs of squares rather
 than arcs of a single circle, and it uses the disk only through
 $\varphi(a_S, b_S) \le \frac{13}4$.
 
 *Lean:
-[`Seven.sliding_packing`](../../SquaresInCircles/Seven/Construction.lean#L72),
-[`Seven.uniqueness`](../../SquaresInCircles/Seven/Uniqueness.lean#L103),
-[`Seven.optimum`](../../SquaresInCircles/Seven/Uniqueness.lean#L109), in
+[`Seven.column_packing`](../../SquaresInCircles/Seven/Construction.lean#L75),
+[`Seven.uniqueness`](../../SquaresInCircles/Seven/Uniqueness.lean#L105),
+[`Seven.optimum`](../../SquaresInCircles/Seven/Uniqueness.lean#L111), in
 [`SquaresInCircles/Seven/`](../../SquaresInCircles/Seven).*
 
 ## Construction
 
-### Proposition 7.1 (the sliding packings)
+### Proposition 7.1 (the column packings)
 
 For $y_1, y_2, y_3$ as in Theorem 7, the squares $Q(\pm1, \pm\frac12)$,
 $Q(0, y_1)$, $Q(0, y_2)$, $Q(0, y_3)$ are pairwise disjoint and lie in the
-closed disk of radius $R_7$ about the origin. With $(y_1, y_2, y_3) =
-(-1, 0, 1)$ they are $Q(c_1), \dots, Q(c_7)$.
+closed disk of radius $R_7$ about the origin. With
+$(y_1, y_2, y_3) = (-1, 0, 1)$ the middle column is centred, as in the figure
+above.
 
 *Proof.* Any two of the centres differ by at least 1 in one coordinate. The
 side squares lie in $[-\frac32, \frac32] \times [-1, 1]$ and the middle ones in
@@ -74,20 +75,20 @@ Apply [Lemma 17](common.md#lemma-17-axis-parallel-squares). $\square$
 
 The four outer corners $(\pm\frac32, \pm1)$ lie on the circle. The middle
 squares reach it only at the ends of their range, so the column has
-$2\sqrt3 - 3$ of slack in total.
+$2\sqrt3 - 3$ of slack in total, shared in any way among the four gaps below,
+between and above its squares.
 
-*Lean: [`Seven.Column`](../../SquaresInCircles/Seven/Construction.lean#L43),
-[`Seven.sliding_packing`](../../SquaresInCircles/Seven/Construction.lean#L72),
-[`Seven.model_packing`](../../SquaresInCircles/Seven/Construction.lean#L110),
-[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L35).*
+*Lean: [`Seven.Column`](../../SquaresInCircles/Seven/Construction.lean#L45),
+[`Seven.column_packing`](../../SquaresInCircles/Seven/Construction.lean#L75),
+[`Seven.model_packing`](../../SquaresInCircles/Seven/Construction.lean#L113),
+[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L34).*
 
 ## Uniqueness
 
 ### Proposition 7.2 (uniqueness)
 
 If seven pairwise disjoint unit squares lie in the closed disk of radius $R_7$
-about $o$, the packing has the normal form of $(\pm1, \pm\frac12)$,
-$(0, y_1)$, $(0, y_2)$, $(0, y_3)$ for some $y_1, y_2, y_3$ as in Theorem 7.
+about $o$, the packing is congruent to a column packing.
 
 The proof takes five steps.
 
@@ -104,10 +105,11 @@ The proof takes five steps.
    side columns and puts one square above $o$ and one below, each at a free
    height.
 5. **The middle column.** The side columns pin the square that contains $o$ to
-   the middle column, where it can slide too.
+   the middle column, at any height that keeps it 1 from the squares above and
+   below it.
 
-*Lean: [`Seven.uniqueness`](../../SquaresInCircles/Seven/Uniqueness.lean#L103),
-[`Seven.classification_by_slots`](../../SquaresInCircles/Seven/Uniqueness.lean#L125).*
+*Lean: [`Seven.uniqueness`](../../SquaresInCircles/Seven/Uniqueness.lean#L105),
+[`Seven.classification_by_slots`](../../SquaresInCircles/Seven/Uniqueness.lean#L128).*
 
 ### Step 1. States and markers
 
@@ -130,8 +132,8 @@ $R_7$ every exterior square has an admissible state $(a_S, b_S)$. The identity
 says that $r \ge 0$ is the tangent half-plane of $\varphi = \frac{13}4$ at
 $(1, \frac12)$ ([Lemma 2](common.md#lemma-2-tangent-lines)). In the packing of
 Theorem 7 the four side squares have the state $(1, \frac12)$ and the top and
-bottom squares $(1, 0)$; sliding the column turns the latter into $(y, 0)$ with
-$\frac52 - \sqrt3 \le y \le \sqrt3 - \frac12$.
+bottom squares $(1, 0)$; in the other column packings these have the state
+$(y, 0)$ with $\frac52 - \sqrt3 \le y \le \sqrt3 - \frac12$.
 
 *Lean: [`Seven.Admissible`](../../SquaresInCircles/Seven/Labels.lean#L22),
 [`Seven.remainder`](../../SquaresInCircles/Seven/Labels.lean#L19),
@@ -406,7 +408,7 @@ So $\sigma_k(\frac\pi3)$ vanishes only where two squares touch as in the
 optimal packing: the two squares of a side column, or a side square and the
 top or bottom square. In the second case the equality fixes the side state
 $(1, \frac12)$ and puts the other square on the axis, $v = 0$, but leaves its
-height $A$ free, as the sliding column requires.
+height $A$ free, as the column packings require.
 
 *Lean:
 [`Seven.fixed_gap_nonneg`](../../SquaresInCircles/Seven/FixedGap.lean#L169),
@@ -560,8 +562,8 @@ are exterior, with admissible states by
 markers pairwise at least $\frac\pi3$ apart, against (1). $\square$
 
 *Lean:
-[`Seven.seven_directions_impossible`](../../SquaresInCircles/Seven/Uniqueness.lean#L28),
-[`Seven.exists_containing`](../../SquaresInCircles/Seven/Uniqueness.lean#L44).*
+[`Seven.seven_directions_impossible`](../../SquaresInCircles/Seven/Uniqueness.lean#L29),
+[`Seven.exists_containing`](../../SquaresInCircles/Seven/Uniqueness.lean#L45).*
 
 #### Proposition 7.17 (the ring)
 
@@ -635,24 +637,24 @@ same frame. The squares at $(0, -k)$, $(0, z)$ and $(0, h)$ are disjoint and
 sit on one axis of the frame, so $-k + 1 \le z$ and $z + 1 \le h$. With
 $h, k \le \sqrt3 - \frac12$ these are the conditions of Theorem 7 for
 $(y_1, y_2, y_3) = (-k, z, h)$, and
-[Lemma 19](common.md#lemma-19-from-slots-to-a-normal-form) gives the normal
-form. $\square$
+[Lemma 19](common.md#lemma-19-from-slots-to-congruence) gives the congruence
+to that column packing. $\square$
 
 *Lean:
-[`Seven.normal_form_of_containing`](../../SquaresInCircles/Seven/Uniqueness.lean#L71),
-[`Seven.column_centers_separated`](../../SquaresInCircles/Seven/Uniqueness.lean#L59).*
+[`Seven.congruent_of_containing`](../../SquaresInCircles/Seven/Uniqueness.lean#L72),
+[`Seven.column_centers_separated`](../../SquaresInCircles/Seven/Uniqueness.lean#L60).*
 
-Proposition 7.1 and [Lemma 21](common.md#lemma-21-normal-forms-of-a-packing)
-give the converse: every configuration with this normal form is a packing in
-the closed disk of radius $R_7$.
+Proposition 7.1 and [Lemma 21](common.md#lemma-21-congruent-configurations)
+give the converse: every configuration congruent to a column packing is a
+packing in the closed disk of radius $R_7$.
 
 ## Lower bound
 
-*Proof of Theorem 7 (2).* Every layout of Theorem 7 (1) has the square
+*Proof of Theorem 7 (2).* Every column packing has the square
 $Q(1, -\frac12)$, whose corner $(\frac32, -1)$ lies on the circle of radius
 $R_7$, since $\frac94 + 1 = \frac{13}4$. By Proposition 7.2 every packing in the
-closed disk of radius $R_7$ has the normal form of such a layout, so
+closed disk of radius $R_7$ is congruent to a column packing, so
 [Lemma 22](common.md#lemma-22-the-lower-bound) gives $R \ge R_7$. $\square$
 
-*Lean: [`Seven.optimum`](../../SquaresInCircles/Seven/Uniqueness.lean#L109),
-[`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L48).*
+*Lean: [`Seven.optimum`](../../SquaresInCircles/Seven/Uniqueness.lean#L111),
+[`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L47).*

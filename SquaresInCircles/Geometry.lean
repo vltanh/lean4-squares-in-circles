@@ -1,12 +1,13 @@
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Angle
 
 /-!
-# The statement: squares, disks, packings and normal forms
+# The statement: squares, disks, packings and congruence
 
 The square model allows arbitrary rotations independently for every square.
 `openSquare` uses strict local-coordinate inequalities; no separating-axis
 condition, certificate, or desired lower bound is built into `Packing`.
-`HasNormalForm` is the conclusion of the uniqueness theorems.
+`Congruent` compares a configuration with a model configuration given about the
+origin; the optimal packings are stated with it.
 -/
 
 noncomputable section
@@ -58,21 +59,22 @@ abbrev Direction := Real.Angle
 def pointInDirection (o : Point) (phase : Direction) (x y : ℝ) : Point :=
   (o.1 + phase.cos * x - phase.sin * y, o.2 + phase.sin * x + phase.cos * y)
 
-/-- `(x, y)` lies in the open, or the closed, axis-parallel unit square at `c`. -/
-abbrev openAxisSquare (c : Point) (x y : ℝ) : Prop :=
-  |x - c.1| < 1 / 2 ∧ |y - c.2| < 1 / 2
-abbrev closedAxisSquare (c : Point) (x y : ℝ) : Prop :=
-  |x - c.1| ≤ 1 / 2 ∧ |y - c.2| ≤ 1 / 2
+/-- The axis-parallel unit square centred at `c`. -/
+def axisSquare (c : Point) : UnitSquare where
+  center := c
+  cosine := 1
+  sine := 0
+  unit := by norm_num
 
 /--
-In one frame at the disk centre `o`, and after relabelling the squares by `σ`,
-square `σ i` is exactly the unit square centred at `centers i`, both as an open
-and as a closed set.
+`S` is the configuration `M`, given about the origin, turned about the origin
+by one angle `φ`, moved to `o`, and relabelled by `σ`: square `σ i` is exactly
+`M i` read in the frame at `o` turned by `φ`, both as an open and as a closed
+set.
 -/
-def HasNormalForm {n : ℕ} (S : Fin n → UnitSquare) (o : Point)
-    (centers : Fin n → Point) : Prop :=
-  ∃ (φ : Direction) (σ : Equiv.Perm (Fin n)), ∀ i x y,
-    (openSquare (S (σ i)) (pointInDirection o φ x y) ↔ openAxisSquare (centers i) x y) ∧
-    (closedSquare (S (σ i)) (pointInDirection o φ x y) ↔ closedAxisSquare (centers i) x y)
+def Congruent {n : ℕ} (S : Fin n → UnitSquare) (o : Point) (M : Fin n → UnitSquare) : Prop :=
+  ∃ (φ : Direction) (σ : Equiv.Perm (Fin n)), ∀ i p,
+    (openSquare (S (σ i)) (pointInDirection o φ p.1 p.2) ↔ openSquare (M i) p) ∧
+    (closedSquare (S (σ i)) (pointInDirection o φ p.1 p.2) ↔ closedSquare (M i) p)
 
 end SquaresInCircles

@@ -6,8 +6,8 @@
 Machine-checked proofs, for `n = 1, …, 5` and `n = 7`, of the smallest radius
 of a disk that holds `n` non-overlapping unit squares, and of which packings
 attain it, up to rotation about the disk centre and relabelling of the squares:
-exactly one for `n ≤ 5`, and for `n = 7` a family in which the middle column
-slides.
+exactly one for `n ≤ 5`, and for `n = 7` a family in which each of the three
+middle squares can move along the middle column.
 
 | n | optimal radius | ≈ | an optimal packing |
 | :-: | :-: | :-: | :-: |
@@ -16,7 +16,7 @@ slides.
 | 3 | `5√17 / 16` | 1.2885 | <img src="https://erich-friedman.github.io/packing/squincir/3.gif" width="100" alt="three unit squares in a circle"><br>the T |
 | 4 | `√2` | 1.4142 | <img src="https://erich-friedman.github.io/packing/squincir/4.gif" width="100" alt="four unit squares in a circle"><br>the 2×2 block |
 | 5 | `√(5/2)` | 1.5811 | <img src="https://erich-friedman.github.io/packing/squincir/5.gif" width="100" alt="five unit squares in a circle"><br>the plus |
-| 7 | `√13 / 2` | 1.8028 | <img src="https://erich-friedman.github.io/packing/squincir/7.gif" width="100" alt="seven unit squares in a circle"><br>three in a line between two pairs; not unique, the line of three can slide |
+| 7 | `√13 / 2` | 1.8028 | <img src="https://erich-friedman.github.io/packing/squincir/7.gif" width="100" alt="seven unit squares in a circle"><br>three in a line between two pairs; not unique, each square of the line can move along it |
 
 Pictures by Erich Friedman, from the [Squares in Circles](https://erich-friedman.github.io/packing/squincir/)
 page of Erich's Packing Center.
@@ -81,36 +81,36 @@ def Packing {n : ℕ} (S : Fin n → UnitSquare) (o : Point) (R : ℝ) : Prop :=
   (∀ i j, i ≠ j → ∀ p, ¬ (openSquare (S i) p ∧ openSquare (S j) p))
 ```
 
-### Uniqueness
+### Congruence
 
-Uniqueness says that every packing at the optimal radius is the optimal packing
-of the table, moved by one rotation about the disk centre, with the squares
-relabelled. It compares point sets, not frames, since a quarter turn of a frame
-describes the same square. `pointInDirection o φ x y` is the point with
-coordinates `(x, y)` in the frame at `o` rotated by the angle `φ` (a
-`Direction`, that is, a `Real.Angle`). `openAxisSquare c x y` and
-`closedAxisSquare c x y` say that `(x, y)` lies in the open or the closed
-axis-parallel unit square centred at `c`. These are in `Geometry.lean` too:
+The optimal packings are given as models: configurations of axis-parallel
+squares with the disk centre at the origin. `Congruent S o M` says that the
+configuration `S` is the model `M`, placed at `o`, turned by one angle about
+`o`, and relabelled. It compares point sets, not frames, since a quarter turn
+of a frame describes the same square. `pointInDirection o φ x y` is the point
+with coordinates `(x, y)` in the frame at `o` rotated by the angle `φ` (a
+`Direction`, that is, a `Real.Angle`). These are in `Geometry.lean` too:
 
 ```lean
 def pointInDirection (o : Point) (phase : Direction) (x y : ℝ) : Point :=
   (o.1 + phase.cos * x - phase.sin * y, o.2 + phase.sin * x + phase.cos * y)
 
-abbrev openAxisSquare (c : Point) (x y : ℝ) : Prop :=
-  |x - c.1| < 1 / 2 ∧ |y - c.2| < 1 / 2
-abbrev closedAxisSquare (c : Point) (x y : ℝ) : Prop :=
-  |x - c.1| ≤ 1 / 2 ∧ |y - c.2| ≤ 1 / 2
+def axisSquare (c : Point) : UnitSquare where
+  center := c
+  cosine := 1
+  sine := 0
+  unit := by norm_num
 
-def HasNormalForm {n : ℕ} (S : Fin n → UnitSquare) (o : Point)
-    (centers : Fin n → Point) : Prop :=
-  ∃ (φ : Direction) (σ : Equiv.Perm (Fin n)), ∀ i x y,
-    (openSquare (S (σ i)) (pointInDirection o φ x y) ↔ openAxisSquare (centers i) x y) ∧
-    (closedSquare (S (σ i)) (pointInDirection o φ x y) ↔ closedAxisSquare (centers i) x y)
+def Congruent {n : ℕ} (S : Fin n → UnitSquare) (o : Point) (M : Fin n → UnitSquare) : Prop :=
+  ∃ (φ : Direction) (σ : Equiv.Perm (Fin n)), ∀ i p,
+    (openSquare (S (σ i)) (pointInDirection o φ p.1 p.2) ↔ openSquare (M i) p) ∧
+    (closedSquare (S (σ i)) (pointInDirection o φ p.1 p.2) ↔ closedSquare (M i) p)
 ```
 
 For seven squares the optimal packings form a family: two columns of two
-squares, and between them a column of three whose heights can vary. A
-`Seven.Column` records the three heights (`Seven/Construction.lean`):
+squares, and between them a column of three whose heights can each vary. A
+`Seven.Column` records the three heights, and `Seven.columnModel` is its model
+(`Seven/Construction.lean`):
 
 ```lean
 def Seven.columnLimit : ℝ := Real.sqrt 3 - 1 / 2
@@ -124,9 +124,12 @@ structure Seven.Column where
   gap_upper : middle + 1 ≤ top
   upper : top ≤ columnLimit
 
-def Seven.slidingCenters (c : Column) : Fin 7 → Point :=
+def Seven.columnCenters (c : Column) : Fin 7 → Point :=
   ![(1, -1/2), (1, 1/2), (-1, -1/2), (-1, 1/2),
     (0, c.bottom), (0, c.middle), (0, c.top)]
+
+def Seven.columnModel (c : Column) : Fin 7 → UnitSquare :=
+  fun i => axisSquare (columnCenters c i)
 ```
 
 ## Results
@@ -134,53 +137,57 @@ def Seven.slidingCenters (c : Column) : Fin 7 → Point :=
 More on each theorem: [docs/results.md](docs/results.md).
 
 For `1 ≤ n ≤ 5` and `n = 7`, the root file `SquaresInCircles.lean` proves, in
-namespace `SquaresInCircles`, the same three theorems:
+namespace `SquaresInCircles`:
 
 ```lean
-theorem optimality (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7)
-    (S : Fin n → UnitSquare) (o : Point) (R : ℝ) (hp : Packing S o R) :
-    optimalRadius n ≤ R
+theorem optimal_radius (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7) :
+    IsLeast {R | ∃ (S : Fin n → UnitSquare) (o : Point), Packing S o R} (optimalRadius n)
 
-theorem attainment (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7) :
-    ∃ (S : Fin n → UnitSquare) (o : Point), Packing S o (optimalRadius n)
-
-theorem packing_iff (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7)
+theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7)
     (S : Fin n → UnitSquare) (o : Point) :
-    Packing S o (optimalRadius n) ↔ ∃ c ∈ optimalLayouts n, HasNormalForm S o c
+    Packing S o (optimalRadius n) ↔ ∃ M ∈ optimalPackings n, Congruent S o M
 ```
 
-`optimalRadius n` is the optimal radius, and `optimalLayouts n` is the set of
-layouts of the optimal packings, as centres with the disk centre at the
-origin. For `n ≤ 5` it is the single layout `modelCenters n`, so the optimal
-packing is unique. For `n = 7` it is every position of the middle column
-(`Seven.slidingCenters`), and `modelCenters 7` is the one with the column
-centred. The definitions in Lean are:
+`optimal_radius` says that `optimalRadius n` is the least radius of a disk
+that holds `n` unit squares: some packing attains it, and none fits in a
+smaller disk. `optimal_packings` says that the packings of that radius are
+exactly the configurations congruent to a model in `optimalPackings n`. For
+`n ≤ 5` that set holds one model, so the optimal packing is unique; for `n = 7`
+it holds every column packing. The definitions in Lean are:
 
-| n | `optimalRadius n` | `modelCenters n` |
+```lean
+def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
+  | 1 => {One.model}
+  | 2 => {Two.model}
+  | 3 => {Three.model}
+  | 4 => {Four.model}
+  | 5 => {Five.model}
+  | 7 => Set.range Seven.columnModel
+  | _ => ∅
+```
+
+Each of `One.model`, …, `Five.model` is `fun i => axisSquare (centers i)`,
+the axis-parallel squares at the `centers` of its case:
+
+| n | `optimalRadius n` | centres of the optimal models |
 | :-: | --- | --- |
 | 1 | `Real.sqrt 2 / 2` | `![(0,0)]` |
 | 2 | `Real.sqrt 5 / 2` | `![(-1/2,0),(1/2,0)]` |
 | 3 | `5 * Real.sqrt 17 / 16` | `![(-1/2,-5/16),(1/2,-5/16),(0,11/16)]` |
 | 4 | `Real.sqrt 2` | `![(1/2,1/2),(-1/2,1/2),(-1/2,-1/2),(1/2,-1/2)]` |
 | 5 | `Real.sqrt (5 / 2)` | `![(0,0),(1,0),(0,1),(-1,0),(0,-1)]` |
-| 7 | `Real.sqrt 13 / 2` | `![(1,-1/2),(1,1/2),(-1,-1/2),(-1,1/2),(0,-1),(0,0),(0,1)]` |
+| 7 | `Real.sqrt 13 / 2` | `Seven.columnCenters c` for every `c : Seven.Column` |
 
-```lean
-def optimalLayouts : (n : ℕ) → Set (Fin n → Point)
-  | 7 => Set.range Seven.slidingCenters
-  | n => {modelCenters n}
-```
-
-Every case is the same framework (`Common/Optimum.lean`). In its namespace,
-`One` to `Five` and `Seven`, it defines `radius`, `centers` and `model`, and
-proves `model_packing` and `uniqueness`; with a point of an optimal packing on
-the circle of radius `radius`, these make up its `optimum`. The lower bound,
-attainment and the converse of uniqueness then follow once for all cases: a
-packing in a smaller disk would also be a packing in the optimal one, so by
-uniqueness it would be an optimal packing, and that point would lie outside the
-smaller disk. The root file also states `uniqueness`, the forward direction of
-`packing_iff`, and `rigid_uniqueness`, which restates it with an explicit
-isometry of the plane.
+Every case is the same framework (`Common/Optimum.lean`). Its `optimum` bundles
+the radius, the optimal models, a proof that they pack the disk
+(`model_packing`, for seven squares `column_packing`), a point of each model on
+the circle, and `uniqueness`: every packing at that radius is congruent to a
+model. The rest follows once for all cases. A packing in a smaller disk would
+also be a packing in the optimal one, so by uniqueness it would be congruent to
+a model, and that point would lie outside the smaller disk; and every
+configuration congruent to a model is a packing. The root file also proves
+`optimal_packings_rigid`, which restates uniqueness with an explicit isometry
+of the plane.
 
 ## Proof outline
 
@@ -212,7 +219,7 @@ one page per case: [docs/proof/](docs/proof/README.md)
   this is by far the longest proof in the library. Seven directions cannot be
   pairwise at least `π/3` apart, so one square contains the disk centre, and
   the markers of the other six form a regular hexagon, which rebuilds the
-  packing up to the sliding column.
+  packing up to the heights of the three middle squares.
 - **The lower bound** is shared by all cases: a packing in a smaller disk would
   also be a packing at the optimal radius, hence an optimal packing, and the
   outer corners of an optimal packing reach the circle of the optimal radius.
@@ -239,16 +246,16 @@ More on each earlier result, with references:
 
 We found no proof-assistant verification of any optimal square or circle
 packing. Here every case is proved exactly, uniqueness included (for `n = 7`,
-up to the sliding column), and checked by Lean's kernel.
+up to the heights of the middle squares), and checked by Lean's kernel.
 
 ## Layout
 
 More on each file: [docs/layout.md](docs/layout.md).
 
 ```text
-SquaresInCircles.lean      optimalRadius, and all six cases in one statement
+SquaresInCircles.lean      optimalRadius, optimalPackings, and all six cases
 SquaresInCircles/
-├── Geometry.lean          the statement: squares, disks, Packing, normal forms
+├── Geometry.lean          the statement: squares, disks, Packing, Congruent
 ├── Common/                tools shared by several cases
 ├── One/  Two/             Construction, Uniqueness
 ├── Three/ Five/           Construction, Exterior, Containing, Uniqueness

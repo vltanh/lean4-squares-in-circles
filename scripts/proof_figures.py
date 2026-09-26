@@ -649,7 +649,7 @@ def frame_figure():
            'c = (c1, c2) in that frame')
 
 
-def normal_form_figure():
+def congruent_figure():
     phi = rad(35)
     centers = [(-0.5, -5 / 16), (0.5, -5 / 16), (0, 11 / 16)]
     names = ['2', '3', '1']
@@ -667,8 +667,8 @@ def normal_form_figure():
         subscript(f, rot(c), 'S', name, size=16, color=COLORS[k])
     f.dot((0, 0))
     f.text((0.05, 0.08), 'o', anchor='start')
-    f.save('normal-form', 'A packing in the normal form of the T: the model '
-           'turned about o, with its squares relabelled')
+    f.save('congruent', 'A packing congruent to the T: the model turned '
+           'about o, with its squares relabelled')
 
 
 def inscribed_disks():
@@ -1438,7 +1438,7 @@ def main():
     arc_figure()
     chart_panels()
     frame_figure()
-    normal_form_figure()
+    congruent_figure()
     inscribed_disks()
     midpoint_figure()
     shadows()

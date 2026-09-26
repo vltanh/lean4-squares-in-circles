@@ -4,7 +4,7 @@
 
 This page is the toolkit shared by the cases. Each section defines its tools
 and then proves the lemmas about them; the case pages cite both by number. The
-setting (squares, packings, normal forms) is on the
+setting (squares, packings, congruence) is on the
 [preliminaries page](preliminaries.md). Each result ends with the Lean
 declarations it follows.
 
@@ -19,7 +19,7 @@ declarations it follows.
 | [7. The radial sweep](#7-the-radial-sweep) | 17 | 13 to 15 | a longer arc for the square that contains $o$ |
 | [8. Elementary estimates](#8-elementary-estimates) | | 16 | numerical bounds |
 | [9. Axis-parallel squares](#9-axis-parallel-squares) | | 17 | checking the optimal packings |
-| [10. Normal forms](#10-normal-forms) | | 18 to 22 | recognising the optimal packing; the converse and the lower bound |
+| [10. Congruence](#10-congruence) | | 18 to 22 | recognising an optimal packing; the converse and the lower bound |
 | [11. One framework for every case](#11-one-framework-for-every-case) | | | the three parts of every theorem |
 
 ## 1. The disk centre seen from a square
@@ -66,7 +66,7 @@ packing has at most one containing square.
 *Left, $o$ lies in $S^\circ$ and $a_S < \frac12$. Right, $o$ lies outside
 $S^\circ$ and $a_S \ge \frac12$.*
 
-*Lean: [`openSquare`](../../SquaresInCircles/Geometry.lean#L36), applied to the
+*Lean: [`openSquare`](../../SquaresInCircles/Geometry.lean#L37), applied to the
 disk centre;
 [`exists_exterior`](../../SquaresInCircles/Common/ArcBudget.lean#L15), some
 square of two or more disjoint squares is exterior.*
@@ -565,7 +565,7 @@ in the frame $\theta_S$ and apply that condition with $m = 0$. $\square$
 *Lean:
 [`SquareChart.cartesian`](../../SquaresInCircles/Common/Coordinates.lean#L41),
 [`SquareChart.unreversed`](../../SquaresInCircles/Common/Coordinates.lean#L34),
-[`chart_represents`](../../SquaresInCircles/Common/NormalForm.lean#L148).*
+[`chart_represents`](../../SquaresInCircles/Common/Congruence.lean#L148).*
 
 ## 6. Arcs of an exterior square
 
@@ -823,13 +823,13 @@ A point $p$ of $\overline{Q(c)}$ has $|p_1| \le |x| + \frac12$ and
 $|p_2| \le |y| + \frac12$, so
 $|p|^2 \le (|x| + \frac12)^2 + (|y| + \frac12)^2$. $\square$
 
-*Lean: [`axis_disjoint`](../../SquaresInCircles/Common/Constructions.lean#L26),
-[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L35).*
+*Lean: [`axis_disjoint`](../../SquaresInCircles/Common/Constructions.lean#L25),
+[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L34).*
 
-## 10. Normal forms
+## 10. Congruence
 
 Each uniqueness proof ends the same way: find one frame at $o$ in which every
-square sits at a model centre
+square sits at a centre of the model
 ([Definition 4](preliminaries.md#definition-4-frames-at-the-disk-centre)), then
 apply Lemma 19. For four and seven squares Lemma 20 helps find that frame.
 Lemma 21 gives the converse of uniqueness, and Lemma 22 turns uniqueness into
@@ -859,11 +859,11 @@ same angle. $\square$
 [`represents_quarter`](../../SquaresInCircles/Common/Angles.lean#L78),
 [`represents_cardinal`](../../SquaresInCircles/Common/Angles.lean#L89).*
 
-### Lemma 19 (from slots to a normal form)
+### Lemma 19 (from slots to congruence)
 
 If the squares $S_1, \dots, S_n$ of a packing are pairwise disjoint and each
 one sits at one of the points $c_1, \dots, c_n$ in a common frame $\phi$, then
-the packing has the normal form of $c_1, \dots, c_n$.
+the packing is congruent to the model $Q(c_1), \dots, Q(c_n)$.
 
 *Proof.* Two squares that sit at the same $c_j$ would both contain the point
 $F_\phi(c_j)$, so the squares take different slots; with $n$ squares and $n$
@@ -871,8 +871,8 @@ slots, the assignment is a relabelling. The closed squares follow, since a
 closed square is the closure of the open one. $\square$
 
 *Lean:
-[`normal_form_of_slots`](../../SquaresInCircles/Common/NormalForm.lean#L96),
-[`same_open_same_closed`](../../SquaresInCircles/Common/NormalForm.lean#L56).
+[`congruent_of_slots`](../../SquaresInCircles/Common/Congruence.lean#L99),
+[`same_open_same_closed`](../../SquaresInCircles/Common/Congruence.lean#L58).
 Lean reaches a boundary point along the segment from the centre instead of
 taking a closure.*
 
@@ -893,61 +893,61 @@ $p_{m-1} - (m - 1)g \le p_0$. Hence $p_i - ig$ is constant. $\square$
 
 *Lean: [`regular_polygon`](../../SquaresInCircles/Common/Angles.lean#L40).*
 
-### Lemma 21 (normal forms of a packing)
+### Lemma 21 (congruent configurations)
 
-If $Q(c_1), \dots, Q(c_n)$ form a packing in the closed disk of radius $R$
-about the origin, then every configuration with the normal form of
-$c_1, \dots, c_n$ is a packing in the closed disk of radius $R$ about its
-disk centre $o$.
+If a model $M_1, \dots, M_n$ is a packing in the closed disk of radius $R$
+about the origin, then every configuration congruent to it is a packing in the
+closed disk of radius $R$ about its disk centre $o$.
 
-*Proof.* The frame of the normal form is an isometry of the plane that takes
-the origin to $o$ and each $Q(c_i)$, open and closed, onto a square of the
+*Proof.* The frame $F_\phi$ of the congruence is an isometry of the plane that
+takes the origin to $o$ and each $M_i$, open and closed, onto a square of the
 configuration. Isometries preserve distances and disjointness. $\square$
 
 *Lean:
-[`HasNormalForm.packing`](../../SquaresInCircles/Common/NormalForm.lean#L118),
-[`frameEquiv_distance`](../../SquaresInCircles/Common/NormalForm.lean#L43).*
+[`Congruent.packing`](../../SquaresInCircles/Common/Congruence.lean#L122),
+[`frameEquiv_distance`](../../SquaresInCircles/Common/Congruence.lean#L45).*
 
 ### Lemma 22 (the lower bound)
 
-Let $L$ be a set of layouts $c = (c_1, \dots, c_n)$. Suppose that every
-packing of $n$ unit squares in a closed disk of radius $R_n$ has the normal
-form of a layout in $L$, and that every layout $c$ in $L$ reaches the circle of
-radius $R_n$: some $\overline{Q(c_i)}$ has a point at distance at least $R_n$
-from the origin. Then every packing of $n$ unit squares in a closed disk of
-radius $R$ has $R \ge R_n$.
+Let $\mathcal M$ be a set of models of $n$ unit squares. Suppose that every
+packing of $n$ unit squares in a closed disk of radius $R_n$ is congruent to a
+model in $\mathcal M$, and that every model in $\mathcal M$ reaches the circle
+of radius $R_n$: one of its closed squares has a point at distance at least
+$R_n$ from the origin. Then every packing of $n$ unit squares in a closed disk
+of radius $R$ has $R \ge R_n$.
 
 *Proof.* Suppose $R < R_n$. The packing then lies in the closed disk of radius
-$R_n$ as well, so it has the normal form of some layout $c$ in $L$: in a frame
+$R_n$ as well, so it is congruent to some model $M$ in $\mathcal M$: in a frame
 $F_\phi$ at $o$, and after a relabelling, the closed squares of the packing are
-the images of the $\overline{Q(c_i)}$. Take $i$ and a point $p$ of
-$\overline{Q(c_i)}$ with $|p| \ge R_n$. Since $F_\phi$ is an isometry that
-takes the origin to $o$, the point $F_\phi(p)$ of a closed square of the
-packing is at distance $|p| > R$ from $o$, outside the closed disk of radius
+the images of the $\overline{M_i}$. Take $i$ and a point $p$ of
+$\overline{M_i}$ with $|p| \ge R_n$. Since $F_\phi$ is an isometry that takes
+the origin to $o$, the point $F_\phi(p)$ of a closed square of the packing is
+at distance $|p| > R$ from $o$, outside the closed disk of radius
 $R$. $\square$
 
-*Lean: [`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L48),
+*Lean: [`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L47),
 [`pointInDirection_norm`](../../SquaresInCircles/Common/Coordinates.lean#L19).*
 
 ## 11. One framework for every case
 
 Theorem $n$ has the same three parts for every case, and each case proves two
-things. Its construction, by Lemma 17, shows that the axis-parallel squares at
-each optimal layout form a packing in the closed disk of radius $R_n$, with a
-corner on the circle of radius $R_n$. Its uniqueness proposition, the real work
-of the case, shows that every packing at the optimal radius has the normal
-form of an optimal layout. The rest is shared: Lemma 22 turns uniqueness into
-the lower bound, and Lemma 21 gives the converse of uniqueness, so the optimal
-packings are exactly those normal forms. For $n \le 5$ there is one optimal
-layout; for $n = 7$ there is a family, and each of its layouts has a corner on
-the circle. In Lean each case bundles its layouts, their packings, those
-corners and uniqueness as an `Optimum`, from which the lower bound, attainment,
-the converse and uniqueness with an explicit isometry follow once for all
-cases.
+things. Its construction, by Lemma 17, shows that each optimal model, a set of
+axis-parallel squares about the origin, is a packing in the closed disk of
+radius $R_n$ with a corner on the circle of radius $R_n$. Its uniqueness
+proposition, the real work of the case, shows that every packing at the
+optimal radius is congruent to an optimal model. The rest is shared: Lemma 22
+turns uniqueness into the lower bound, and Lemma 21 gives the converse of
+uniqueness, so the optimal packings are exactly the configurations congruent
+to an optimal model. For $n \le 5$ there is one optimal model; for $n = 7$
+there is a family, and each of its models has a corner on the circle. In Lean
+each case bundles its models, their packings, those corners and uniqueness as
+an `Optimum`. From it follow, once for all cases, that $R_n$ is the least
+radius of a disk that holds $n$ unit squares, the converse of uniqueness, and
+uniqueness with an explicit isometry of the plane in place of the frame.
 
 *Lean: [`Optimum`](../../SquaresInCircles/Common/Optimum.lean#L21),
 [`Optimum.ofUnique`](../../SquaresInCircles/Common/Optimum.lean#L35),
-[`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L48),
-[`Optimum.attainment`](../../SquaresInCircles/Common/Optimum.lean#L61),
+[`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L47),
+[`Optimum.isLeast`](../../SquaresInCircles/Common/Optimum.lean#L61),
 [`Optimum.packing_iff`](../../SquaresInCircles/Common/Optimum.lean#L67),
 [`Optimum.rigid_uniqueness`](../../SquaresInCircles/Common/Optimum.lean#L73).*

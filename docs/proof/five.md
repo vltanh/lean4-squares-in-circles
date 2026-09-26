@@ -11,7 +11,7 @@ $(0, 0)$, $(1, 0)$, $(0, 1)$, $(-1, 0)$, $(0, -1)$.
 2. A packing of five unit squares in a closed disk of radius $R$ forces
    $R \ge R_5$.
 3. The packings of five unit squares in a closed disk of radius $R_5$ are
-   exactly the configurations with the normal form of $c_1, \dots, c_5$.
+   exactly the configurations congruent to $Q(c_1), \dots, Q(c_5)$.
 
 ![The plus in its dashed circle of radius root of 5/2, with the circle of radius 5/6 about the centre; each outer square holds a coloured arc of about 74 degrees, and the grey centre square holds none](figures/five.svg)
 
@@ -34,7 +34,7 @@ contact polygon; the disk is not used after Step 1.
 [`Five.model_packing`](../../SquaresInCircles/Five/Construction.lean#L29),
 [`Five.uniqueness`](../../SquaresInCircles/Five/Uniqueness.lean#L82),
 [`Five.optimum`](../../SquaresInCircles/Five/Uniqueness.lean#L92),
-[`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L48), in
+[`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L47), in
 [`SquaresInCircles/Five/`](../../SquaresInCircles/Five).*
 
 ## Construction
@@ -54,14 +54,14 @@ $(\pm\frac12, \pm\frac32)$, lie on the circle.
 
 *Lean:
 [`Five.model_packing`](../../SquaresInCircles/Five/Construction.lean#L29),
-[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L35).*
+[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L34).*
 
 ## Uniqueness
 
 ### Proposition 5.2 (uniqueness)
 
 If five pairwise disjoint unit squares lie in the closed disk of radius $R_5$
-about $o$, the packing has the normal form of $c_1, \dots, c_5$.
+about $o$, the packing is congruent to $Q(c_1), \dots, Q(c_5)$.
 
 The proof shows more: after Step 1 it needs only a contact polygon, not the
 disk (Proposition 5.10). It takes four steps.
@@ -275,7 +275,7 @@ octagon gives $|a - b| \le 3 - 2s$. Then
 #### Proposition 5.10 (the 12-gon is rigid)
 
 If five pairwise disjoint squares $S$ all have $(a_S, b_S) \in P_5$, they
-have the normal form of $c_1, \dots, c_5$.
+are congruent to $Q(c_1), \dots, Q(c_5)$.
 
 The statement mentions no disk, which makes it stronger than uniqueness for
 the packing problem.
@@ -294,8 +294,8 @@ the packing problem.
 3. **The plus.** In the frame of $S_0$, the square $S_0$ sits at $(0, 0)$ and
    the other four at $(\pm1, 0)$ and $(0, \pm1)$
    ([Lemma 18](common.md#lemma-18-sitting-at-a-centre) (1)).
-   [Lemma 19](common.md#lemma-19-from-slots-to-a-normal-form) gives the normal
-   form. No angle has to be computed. $\square$
+   [Lemma 19](common.md#lemma-19-from-slots-to-congruence) gives the
+   congruence. No angle has to be computed. $\square$
 
 *Lean:
 [`Five.polygon_uniqueness`](../../SquaresInCircles/Five/Uniqueness.lean#L53).*
@@ -305,20 +305,17 @@ every square $S$; apply Proposition 5.10. $\square$
 
 *Lean: [`Five.uniqueness`](../../SquaresInCircles/Five/Uniqueness.lean#L82).*
 
-Proposition 5.1 and [Lemma 21](common.md#lemma-21-normal-forms-of-a-packing)
-give the converse: every configuration with this normal form is a packing in
+Proposition 5.1 and [Lemma 21](common.md#lemma-21-congruent-configurations)
+give the converse: every configuration congruent to the plus is a packing in
 the closed disk of radius $R_5$.
 
-## The lower bound
+## Lower bound
 
-### Corollary 5.11 (lower bound)
-
-If five pairwise disjoint unit squares lie in the closed disk of radius $R$
-about $o$, then $R \ge R_5$.
-
-*Proof.* The corner $(\frac32, \frac12)$ of $Q(c_2)$ lies on the circle of
-radius $R_5$ (Proposition 5.1). Proposition 5.2 and
-[Lemma 22](common.md#lemma-22-the-lower-bound) give $R \ge R_5$. $\square$
+*Proof of Theorem 5 (2).* The corner $(\frac32, \frac12)$ of $Q(c_2)$ lies on
+the circle of radius $R_5$ about the origin, since
+$\frac94 + \frac14 = \frac52$. By Proposition 5.2 every packing in the closed
+disk of radius $R_5$ is congruent to $Q(c_1), \dots, Q(c_5)$, so
+[Lemma 22](common.md#lemma-22-the-lower-bound) gives $R \ge R_5$. $\square$
 
 *Lean: [`Five.optimum`](../../SquaresInCircles/Five/Uniqueness.lean#L92),
-[`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L48).*
+[`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L47).*

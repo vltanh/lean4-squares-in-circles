@@ -18,7 +18,7 @@ symbol. The figures are drawn from the same geometry by
 
 | page | contents |
 | --- | --- |
-| [preliminaries.md](preliminaries.md) | the setting: notation, conventions, and Definitions 1 to 5 (squares, packings, normal forms) |
+| [preliminaries.md](preliminaries.md) | the setting: notation, conventions, and Definitions 1 to 5 (squares, packings, congruence) |
 | [common.md](common.md) | the shared toolkit: Definitions 6 to 17 and statements 1 to 22, each tool defined where it is first used |
 | [one.md](one.md) | Theorem 1, one square |
 | [two.md](two.md) | Theorem 2, two squares |
@@ -29,15 +29,18 @@ symbol. The figures are drawn from the same geometry by
 
 ## The main theorem
 
-*Lean: [`optimality`](../../SquaresInCircles.lean#L71),
-[`attainment`](../../SquaresInCircles.lean#L76),
-[`uniqueness`](../../SquaresInCircles.lean#L88),
-[`packing_iff`](../../SquaresInCircles.lean#L82),
-[`optimum`](../../SquaresInCircles.lean#L55), in
+*Lean: [`optimal_radius`](../../SquaresInCircles.lean#L68),
+[`optimal_packings`](../../SquaresInCircles.lean#L74),
+[`optimal_packings_rigid`](../../SquaresInCircles.lean#L82),
+[`optimalPackings`](../../SquaresInCircles.lean#L40),
+[`optimum`](../../SquaresInCircles.lean#L50), in
 [`SquaresInCircles.lean`](../../SquaresInCircles.lean).*
 
-For $1 \le n \le 5$ and $n = 7$ let $R_n$ and $c_1, \dots, c_n$ be given by the
-table.
+For $1 \le n \le 5$ and $n = 7$ let $R_n$ and the optimal models be given by
+the table. For $n \le 5$ there is one optimal model, the axis-parallel squares
+$Q(c_1), \dots, Q(c_n)$. For $n = 7$ the optimal models are the column
+packings of Theorem 7: the heights $y_1, y_2, y_3$ of the three middle squares
+are any that are at least 1 apart and within $\sqrt3 - \frac12$ of 0.
 
 | $n$ | $R_n$ | $c_1, \dots, c_n$ | packing |
 | :-: | :-: | --- | --- |
@@ -46,27 +49,24 @@ table.
 | 3 | $\frac{5\sqrt{17}}{16}$ | $(-\frac12, -\frac5{16})$, $(\frac12, -\frac5{16})$, $(0, \frac{11}{16})$ | the T |
 | 4 | $\sqrt2$ | $(\frac12, \frac12)$, $(-\frac12, \frac12)$, $(-\frac12, -\frac12)$, $(\frac12, -\frac12)$ | the $2 \times 2$ block |
 | 5 | $\sqrt{5/2}$ | $(0, 0)$, $(1, 0)$, $(0, 1)$, $(-1, 0)$, $(0, -1)$ | the plus |
-| 7 | $\frac{\sqrt{13}}2$ | $(1, -\frac12)$, $(1, \frac12)$, $(-1, -\frac12)$, $(-1, \frac12)$, $(0, -1)$, $(0, 0)$, $(0, 1)$ | two columns of two beside a column of three |
+| 7 | $\frac{\sqrt{13}}2$ | $(1, -\frac12)$, $(1, \frac12)$, $(-1, -\frac12)$, $(-1, \frac12)$, $(0, y_1)$, $(0, y_2)$, $(0, y_3)$ | a column of three between two columns of two |
 
 **Theorem.** Let $1 \le n \le 5$ or $n = 7$.
 
-1. *Attainment.* The axis-parallel squares $Q(c_1), \dots, Q(c_n)$ form a
-   packing in the closed disk of radius $R_n$ about the origin
-   (Definitions 2 and 3).
+1. *Attainment.* Every optimal model is a packing in the closed disk of radius
+   $R_n$ about the origin (Definitions 2 and 3).
 2. *Optimality.* If $n$ unit squares form a packing in a closed disk of
    radius $R$, then $R \ge R_n$.
 3. *Uniqueness.* The packings of $n$ unit squares in a closed disk of radius
-   $R_n$ are exactly the configurations with the normal form of an optimal
-   layout (Definition 5): one rotation about the disk centre and one
-   relabelling carry the layout onto them. For $n \le 5$ the only optimal
-   layout is $c_1, \dots, c_n$. For $n = 7$ the optimal layouts are
-   $c_1, \dots, c_4$ with $(0, y_1), (0, y_2), (0, y_3)$ for any heights that
-   are at least 1 apart and within $\sqrt3 - \frac12$ of 0: the middle column
-   can slide.
+   $R_n$ are exactly the configurations congruent to an optimal model
+   (Definition 5): placed at the disk centre, the model is carried onto them
+   by one rotation and one relabelling.
 
-The case $n$ is Theorem $n$ on the page for that case. Every case proves its
-three parts the same way: part 1 by an explicit construction, part 3 by its
-own argument, and part 2 and the converse half of part 3 follow from these by
+Parts 1 and 2 say that $R_n$ is the least radius of a disk that holds $n$
+unit squares, which is `optimal_radius`; part 3 is `optimal_packings`. The
+case $n$ is Theorem $n$ on the page for that case. Every case proves its three
+parts the same way: part 1 by an explicit construction, part 3 by its own
+argument, and part 2 and the converse half of part 3 follow from these by
 shared lemmas ([one framework](common.md#11-one-framework-for-every-case)).
 
 ## One and two squares
@@ -140,8 +140,8 @@ disk of radius $R_7$.
    square touches the next as in the optimal packing: two side columns, and
    one square above the centre and one below.
 4. **The middle column.** The side columns pin the square that contains the
-   centre to the middle column, where it can slide with the squares above and
-   below it.
+   centre to the middle column. The three squares of that column need only
+   stay 1 apart, so each can move along it on its own.
 
 The lower bound follows by [Lemma 22](common.md#lemma-22-the-lower-bound), as
 for every case.
@@ -164,7 +164,7 @@ uses.
 | 6. arcs of an exterior square | | 12 | 12 | 12 | 12 | |
 | 7. the radial sweep | | | | | 13 to 15 | |
 | 8. elementary estimates | | | 16 | | 16 | 16 |
-| 10. normal forms | 19 | 18, 19 | 18, 19 | 18 to 20 | 18, 19 | 18 to 20 |
+| 10. congruence | 19 | 18, 19 | 18, 19 | 18 to 20 | 18, 19 | 18 to 20 |
 
 ## The legacy proof of three squares
 

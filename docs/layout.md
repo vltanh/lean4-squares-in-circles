@@ -3,9 +3,9 @@
 [Back to the README](../README.md)
 
 ```text
-SquaresInCircles.lean      optimalRadius, and all six cases in one statement
+SquaresInCircles.lean      optimalRadius, optimalPackings, and all six cases
 SquaresInCircles/
-├── Geometry.lean          the statement: squares, disks, Packing, normal forms
+├── Geometry.lean          the statement: squares, disks, Packing, Congruent
 ├── Common/                tools shared by several cases
 ├── One/                   n = 1
 ├── Two/                   n = 2
@@ -16,8 +16,8 @@ SquaresInCircles/
 ```
 
 Every case folder has the same two core files: `Construction.lean` (the
-radius, the optimal packing and its centres) and `Uniqueness.lean`, which ends
-with the case's `optimum`: the construction, a point of it on the circle of the
+radius and the optimal models) and `Uniqueness.lean`, which ends with the
+case's `optimum`: the construction, a point of each model on the circle of the
 optimal radius and uniqueness, together as an `Optimum`
 (`Common/Optimum.lean`). No case proves its own lower bound; `Optimum.lean`
 derives it from uniqueness once for all cases. Three, four and five squares add
@@ -42,9 +42,9 @@ another: each imports only `Common/` and its own folder.
 | `RectangleArcs.lean` | Arcs of an exterior square: between its edges, and the cap on small circles |
 | `ArcBudget.lean` | The budget of a packing: some square avoids the disk centre, and the square that contains it can be replaced by its radial sweep |
 | `ElementaryTrig.lean` | Arcsine and cosine estimates with exact rational constants |
-| `Constructions.lean` | Axis-parallel squares centred at given points: disjointness and containment |
-| `NormalForm.lean` | Normal forms from square-by-square representations; open squares determine closed ones; normal forms of a packing are packings; the rigid-motion witness |
-| `Optimum.lean` | `Optimum`, the statement every case proves; the lower bound, attainment and the converse of uniqueness for all cases |
+| `Constructions.lean` | Axis-parallel squares centred at given points: membership, disjointness and containment |
+| `Congruence.lean` | Congruence to a model from square-by-square slots; open squares determine closed ones; configurations congruent to a packing are packings; the rigid-motion witness |
+| `Optimum.lean` | `Optimum`, the statement every case proves; the lower bound, the least radius and the converse of uniqueness for all cases |
 | `Angles.lean` | `m` directions pairwise at least `2π/m` apart form a regular polygon; disjoint half circles are opposite; quarter turns of a frame |
 | `Contacts.lean` | Disjoint squares have centres at least 1 apart; at distance exactly 1 they are side-neighbours; squares with parallel sides in one frame |
 
@@ -52,14 +52,16 @@ another: each imports only `Common/` and its own folder.
 
 | File | One | Two | Three | Four | Five | Seven |
 | --- | --- | --- | --- | --- | --- | --- |
-| `Construction.lean` | the centred square | the 2×1 rectangle | the T | the 2×2 block | the plus | the sliding column |
+| `Construction.lean` | the centred square | the 2×1 rectangle | the T | the 2×2 block | the plus | the column packings |
 | `Exterior.lean` | | | the 16-gon; caps of at least `120°` on the circle of radius `3/8`, and their two tight types | the diamond; arcs of at least `90°` on the circle of radius `1/2` | the 12-gon; arcs over `72°` on the circle of radius `5/6` | |
 | `Containing.lean` | | | no square contains `o` | | the sweep of a square that contains `o` holds `72°`, unless the square is centred at `o` | |
-| `Uniqueness.lean` | centred at `o` | both centres `1/2` from `o`; opposite half circles | caps of exactly `120°`; one square of type A and two of type B rebuild the T | `o` a vertex of every square; a quarter grid of arcs | a square centred at `o`, the others its side-neighbours; closed 12-gon rigidity | a square contains `o`; the ring and the middle column; the sliding family |
+| `Uniqueness.lean` | centred at `o` | both centres `1/2` from `o`; opposite half circles | caps of exactly `120°`; one square of type A and two of type B rebuild the T | `o` a vertex of every square; a quarter grid of arcs | a square centred at `o`, the others its side-neighbours; closed 12-gon rigidity | a square contains `o`; the ring and the middle column; congruence to a column packing |
 
-Each `Construction.lean` also defines the case's `radius`, its `centers` (the
+Each `Construction.lean` defines the case's `radius`, its `centers` (the
 optimal packing in the frame of its disk centre) and its `model`, the
-axis-parallel squares at those centres.
+axis-parallel squares at those centres. For seven squares these are the column
+centred at the disk centre, one of the column packings `columnModel c`, in
+which each of the three middle squares has its own height.
 
 ## Seven
 
@@ -71,11 +73,11 @@ the 2 files in `Seven/Uniqueness/`:
 
 | part | files | contents |
 | --- | --- | --- |
-| construction | `Construction.lean` | the radius, the sliding column and its four gaps, the optimal packings |
+| construction | `Construction.lean` | the radius, the column packings and the four gaps of a column |
 | states and markers | `Labels.lean`, `Support.lean`, `PairModel.lean` | states, labels and markers; the support function; the support sums of a canonical pair |
 | the marker arc | `Analysis.lean`, `MarkerArc.lean` | monotonicity, curvature, Taylor and Bernstein bounds in one variable; the arc of half-width `801/1600` |
 | tools for the sectors | `Contacts.lean`, `LabelBoundary.lean`, `BoundarySegments.lean`, `BoundaryProfiles.lean`, `TargetBoundaryMonotonicity.lean` | contacts; the boundary of the label regions, segments of constant label, and profiles along the boundary |
 | the gap of `π/3` | `EasySectors.lean`, `InwardAxialTarget.lean`, `InwardSideTarget.lean`, `InwardOppositeMinima.lean`, `InwardOpposite.lean`, `ForwardNegativeTarget.lean`, `ForwardBothNegative.lean`, `OppositeForward.lean`, `FixedGap.lean` | the outward, backward, inward and forward axes, sector by sector, with their zeros, and their assembly |
 | all gaps | `SmoothMinima.lean`, `AllGaps.lean` | leftmost and smooth minima of a support sum; every gap below `π/3` |
 | the pair theorem | `SeparatingAxes.lean`, `CanonicalPair.lean`, `MarkerSeparation.lean` | the separating-axis theorem; canonical pairs; markers at least `π/3` apart, and contacts at exactly `π/3` |
-| the ring and the middle column | `Uniqueness/ContactCycle.lean`, `Uniqueness/CentralSquare.lean`, `Uniqueness.lean` | the regular hexagon of markers and the ring of six squares; the square in the middle; a square contains the disk centre, the sliding layouts, and the optimum |
+| the ring and the middle column | `Uniqueness/ContactCycle.lean`, `Uniqueness/CentralSquare.lean`, `Uniqueness.lean` | the regular hexagon of markers and the ring of six squares; the square in the middle; a square contains the disk centre, congruence to a column packing, and the optimum |

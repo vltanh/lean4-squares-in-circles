@@ -67,7 +67,7 @@ lemma vertex_represents {S : UnitSquare} {o : Point} (C : SquareChart S o)
 /-- The only radius-`sqrt 2` packing is the block: the disk centre is a vertex
 of every square. -/
 theorem uniqueness (S : Fin 4 → UnitSquare) (o : Point)
-    (hp : Packing S o radius) : HasNormalForm S o centers := by
+    (hp : Packing S o radius) : Congruent S o model := by
   choose C hsort using fun i => sorted_square_chart (S i) o
   have hφ (i : Fin 4) : phi (C i).a (C i).b ≤ 2 :=
     chart_phi (C i) (by simpa only [radius_sq] using hp.phi_le i)
@@ -100,7 +100,7 @@ theorem uniqueness (S : Fin 4 → UnitSquare) (o : Point)
     rw [hQ i,hQ j,hmid i,hmid j] at hd
     linarith
   obtain ⟨φ,σ,hgrid⟩ := regular_polygon _ (by push_cast; ring) hsep
-  apply normal_form_of_slots (φ := φ-((Real.pi/4:ℝ):Direction)) hp.disjoint
+  apply congruent_of_slots (φ := φ-((Real.pi/4:ℝ):Direction)) hp.disjoint
   intro i
   obtain ⟨k,rfl⟩ := σ.surjective i
   refine ⟨k,?_⟩
@@ -112,10 +112,11 @@ theorem uniqueness (S : Fin 4 → UnitSquare) (o : Point)
   have hc : turnPoint k (1/2,1/2)=centers k := by fin_cases k <;> norm_num [turnPoint,centers]
   simpa only [hc] using represents_quarter k hrep
 
-/-- The optimum for four squares: `radius`, attained only by the normal forms
-of `centers`. -/
+/-- The optimum for four squares: `radius`, attained only by the configurations
+congruent to `model`. -/
 def optimum : Optimum 4 :=
-  .ofUnique centers model_packing
-    ⟨0,1,1,by norm_num [centers,closedAxisSquare],by norm_num [radius_sq]⟩ uniqueness
+  .ofUnique model model_packing
+    ⟨0,(1,1),(axisSquare_closed _ _).2 (by norm_num [centers,closedAxisSquare]),by norm_num [normSq,radius_sq]⟩
+    uniqueness
 
 end SquaresInCircles.Four

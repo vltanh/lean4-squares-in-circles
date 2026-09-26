@@ -5,10 +5,11 @@ import SquaresInCircles.Common.Optimum
 /-!
 # Seven squares: uniqueness
 
-Every packing of seven unit squares in the disk of radius `√13 / 2` is one of
-the sliding packings of `Seven/Construction.lean`, moved by one rotation about
-the disk centre and relabelled; the middle column may sit anywhere in its range.
-Conversely every such normal form is an optimal packing (`Optimum.packing_iff`).
+Every packing of seven unit squares in the disk of radius `√13 / 2` is
+congruent to one of the column packings of `Seven/Construction.lean`: the four
+side squares are fixed, and each of the three middle squares can sit anywhere
+on the middle axis, at least 1 from the others and inside the disk. Conversely
+every such configuration is an optimal packing (`Optimum.packing_iff`).
 
 Seven directions cannot be pairwise at least `π/3` apart, since closed arcs of
 half-width `1/2` about them would be disjoint, so some square contains the disk
@@ -16,7 +17,7 @@ centre. The markers of the other six form a regular hexagon and neighbouring
 squares touch as in the optimal packing (`Uniqueness/ContactCycle.lean`), and
 the square in the middle is pinned between the side columns
 (`Uniqueness/CentralSquare.lean`). The three squares of the middle column have
-centres at least 1 apart, which gives the sliding normal form.
+centres at least 1 apart, which gives a column packing.
 
 The file ends with `optimum`: the case as an `Optimum`, which also gives the
 lower bound.
@@ -66,11 +67,11 @@ lemma column_centers_separated {S T : UnitSquare} {o : Point} {φ : Direction} {
 def sideRingIndex : Fin 4 → Fin 6 := ![0,1,4,3]
 def outerSlot : Fin 6 → Fin 7 := ![0,1,6,3,2,4]
 
-/-- An optimal packing in which square `k` contains the disk centre has the
-sliding normal form. -/
-theorem normal_form_of_containing (S : Fin 7 → UnitSquare) (o : Point)
+/-- An optimal packing in which square `k` contains the disk centre is
+congruent to a column packing. -/
+theorem congruent_of_containing (S : Fin 7 → UnitSquare) (o : Point)
     (hp : Packing S o radius) (k : Fin 7) (hk : openSquare (S k) o) :
-    ∃ c : Column, HasNormalForm S o (slidingCenters c) := by
+    ∃ c : Column, Congruent S o (columnModel c) := by
   obtain ⟨W⟩ := six_exterior_ring (fun i => S (k.succAbove i)) o
     (fun i j hij => hp.disjoint _ _ (Fin.succAbove_right_injective.ne hij))
     (fun i hi => hp.disjoint _ k (k.succAbove_ne i) o ⟨hi,hk⟩)
@@ -90,32 +91,34 @@ theorem normal_form_of_containing (S : Fin 7 → UnitSquare) (o : Point)
       gap_lower := hbottom
       gap_upper := htop
       upper := W.top_bounds.2 }
-  refine ⟨c,normal_form_of_slots (φ := W.phase) hp.disjoint fun j => ?_⟩
+  refine ⟨c,congruent_of_slots (φ := W.phase) hp.disjoint fun j => ?_⟩
   rcases Fin.eq_self_or_eq_succAbove k j with rfl | ⟨i,rfl⟩
-  · exact ⟨5,by simpa [slidingCenters,c] using hcenter⟩
+  · exact ⟨5,by simpa [columnCenters,c] using hcenter⟩
   obtain ⟨l,rfl⟩ := W.order.surjective i
-  have hslot : ringCenters W.top W.bottom l = slidingCenters c (outerSlot l) := by
-    fin_cases l <;> simp [ringCenters,slidingCenters,outerSlot,c]
+  have hslot : ringCenters W.top W.bottom l = columnCenters c (outerSlot l) := by
+    fin_cases l <;> simp [ringCenters,columnCenters,outerSlot,c]
   exact ⟨outerSlot l,hslot ▸ W.represents l⟩
 
-/-- Every packing at the optimal radius is a sliding packing, rotated about the
-disk centre and relabelled. -/
+/-- Every packing at the optimal radius is congruent to a column packing: the
+four side squares at `(±1, ±1/2)` and the three middle squares at heights that
+are at least 1 apart and within `√3 - 1/2` of the centre. -/
 theorem uniqueness (S : Fin 7 → UnitSquare) (o : Point)
-    (hp : Packing S o radius) : ∃ c : Column, HasNormalForm S o (slidingCenters c) :=
-  (exists_containing S o hp).elim (normal_form_of_containing S o hp)
+    (hp : Packing S o radius) : ∃ c : Column, Congruent S o (columnModel c) :=
+  (exists_containing S o hp).elim (congruent_of_containing S o hp)
 
-/-- The optimum for seven squares: `radius`, attained exactly by the normal
-forms of the sliding packings. -/
+/-- The optimum for seven squares: `radius`, attained exactly by the
+configurations congruent to a column packing. -/
 def optimum : Optimum 7 where
   radius := radius
-  layouts := Set.range slidingCenters
-  layouts_nonempty := ⟨_,centeredColumn,rfl⟩
-  layout_packing := by
+  models := Set.range columnModel
+  models_nonempty := ⟨_,centeredColumn,rfl⟩
+  model_packing := by
     rintro _ ⟨c,rfl⟩
-    exact sliding_packing c
-  layout_reaches := by
+    exact column_packing c
+  model_reaches := by
     rintro _ ⟨c,rfl⟩
-    exact ⟨0,3/2,-1,by norm_num [slidingCenters,closedAxisSquare],by norm_num [radius_sq]⟩
+    exact ⟨0,(3/2,-1),(axisSquare_closed _ _).2 (by norm_num [columnCenters,closedAxisSquare]),
+      by norm_num [normSq,radius_sq]⟩
   uniqueness S o hp :=
     let ⟨c,h⟩ := uniqueness S o hp
     ⟨_,⟨c,rfl⟩,h⟩
@@ -124,9 +127,9 @@ def optimum : Optimum 7 where
 nonnegative, with sum `2√3 - 3`. -/
 theorem classification_by_slots (S : Fin 7 → UnitSquare) (o : Point) :
     Packing S o radius ↔
-    ∃ g : SlotSimplex, HasNormalForm S o (slidingCenters (columnSlotEquiv.symm g)) :=
+    ∃ g : SlotSimplex, Congruent S o (columnModel (columnSlotEquiv.symm g)) :=
   ⟨fun hp => let ⟨c,h⟩ := uniqueness S o hp
     ⟨columnSlotEquiv c,by simpa only [Equiv.symm_apply_apply] using h⟩,
-   fun ⟨_,h⟩ => h.packing (sliding_packing _)⟩
+   fun ⟨_,h⟩ => h.packing (column_packing _)⟩
 
 end SquaresInCircles.Seven

@@ -11,7 +11,7 @@ $(\frac12, -\frac12)$.
 2. A packing of four unit squares in a closed disk of radius $R$ forces
    $R \ge R_4$.
 3. The packings of four unit squares in a closed disk of radius $R_4$ are
-   exactly the configurations with the normal form of $c_1, \dots, c_4$. In
+   exactly the configurations congruent to $Q(c_1), \dots, Q(c_4)$. In
    particular the disk centre is a vertex of every square.
 
 ![The 2 by 2 block in its dashed circle of radius root 2, with the circle of radius 1/2 about the centre divided into four coloured quarter arcs, one in each square](figures/four.svg)
@@ -37,7 +37,7 @@ rigid.
 [`Four.model_packing`](../../SquaresInCircles/Four/Construction.lean#L28),
 [`Four.uniqueness`](../../SquaresInCircles/Four/Uniqueness.lean#L69),
 [`Four.optimum`](../../SquaresInCircles/Four/Uniqueness.lean#L117),
-[`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L48), in
+[`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L47), in
 [`SquaresInCircles/Four/`](../../SquaresInCircles/Four).*
 
 ## Construction
@@ -55,14 +55,14 @@ The four outer corners, $(\pm1, \pm1)$, lie on the circle.
 
 *Lean:
 [`Four.model_packing`](../../SquaresInCircles/Four/Construction.lean#L28),
-[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L35).*
+[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L34).*
 
 ## Uniqueness
 
 ### Proposition 4.2 (uniqueness)
 
 If four pairwise disjoint unit squares lie in the closed disk of radius
-$\sqrt2$ about $o$, the packing has the normal form of $c_1, \dots, c_4$.
+$\sqrt2$ about $o$, the packing is congruent to $Q(c_1), \dots, Q(c_4)$.
 
 The proof takes three steps.
 
@@ -204,8 +204,8 @@ $\mu_S - \frac\pi4$. $\square$
    $\mu_0 - \frac\pi4$ each square sits at $(\frac12, \frac12)$ turned by its
    $k$ quarter turns (Lemmas 4.6 and 18 (2)), which is one of
    $c_1, \dots, c_4$.
-   [Lemma 19](common.md#lemma-19-from-slots-to-a-normal-form) gives the
-   normal form. $\square$
+   [Lemma 19](common.md#lemma-19-from-slots-to-congruence) gives the
+   congruence. $\square$
 
 *Lean: [`Four.uniqueness`](../../SquaresInCircles/Four/Uniqueness.lean#L69),
 [`exists_exterior`](../../SquaresInCircles/Common/ArcBudget.lean#L15),
@@ -213,20 +213,17 @@ $\mu_S - \frac\pi4$. $\square$
 [`regular_polygon`](../../SquaresInCircles/Common/Angles.lean#L40),
 [`represents_quarter`](../../SquaresInCircles/Common/Angles.lean#L78).*
 
-Proposition 4.1 and [Lemma 21](common.md#lemma-21-normal-forms-of-a-packing)
-give the converse: every configuration with this normal form is a packing in
+Proposition 4.1 and [Lemma 21](common.md#lemma-21-congruent-configurations)
+give the converse: every configuration congruent to the block is a packing in
 the closed disk of radius $R_4$.
 
-## The lower bound
+## Lower bound
 
-### Corollary 4.7 (lower bound)
-
-If four pairwise disjoint unit squares lie in the closed disk of radius $R$
-about $o$, then $R \ge \sqrt2$.
-
-*Proof.* The corner $(1, 1)$ of $Q(c_1)$ lies on the circle of radius
-$\sqrt2$ (Proposition 4.1). Proposition 4.2 and
-[Lemma 22](common.md#lemma-22-the-lower-bound) give $R \ge \sqrt2$. $\square$
+*Proof of Theorem 4 (2).* The corner $(1, 1)$ of $Q(c_1)$ lies on the circle
+of radius $R_4$ about the origin, since $1 + 1 = 2$. By Proposition 4.2 every
+packing in the closed disk of radius $R_4$ is congruent to
+$Q(c_1), \dots, Q(c_4)$, so
+[Lemma 22](common.md#lemma-22-the-lower-bound) gives $R \ge R_4$. $\square$
 
 *Lean: [`Four.optimum`](../../SquaresInCircles/Four/Uniqueness.lean#L117),
-[`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L48).*
+[`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L47).*

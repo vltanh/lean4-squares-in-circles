@@ -10,12 +10,9 @@ used in this development.
 -/
 
 -- All six cases in one statement, which depends on every case.
-#print axioms SquaresInCircles.optimality
-#print axioms SquaresInCircles.attainment
-#print axioms SquaresInCircles.uniqueness
-#print axioms SquaresInCircles.packing_iff
-#print axioms SquaresInCircles.rigid_uniqueness
-#print axioms SquaresInCircles.optimality_attainment_uniqueness
+#print axioms SquaresInCircles.optimal_radius
+#print axioms SquaresInCircles.optimal_packings
+#print axioms SquaresInCircles.optimal_packings_rigid
 
 -- The contact-polygon argument of five squares, which uses no disk.
 #print axioms SquaresInCircles.Five.polygon_uniqueness
@@ -26,12 +23,13 @@ used in this development.
 #print axioms SquaresInCircles.open_arc_budget
 #print axioms SquaresInCircles.ray_budget_impossible
 #print axioms SquaresInCircles.Optimum.optimality
+#print axioms SquaresInCircles.Optimum.isLeast
 #print axioms SquaresInCircles.OpenArc.third_distance_bounds
 #print axioms SquaresInCircles.centers_distance_sq_ge_one
 #print axioms SquaresInCircles.unit_contact
 #print axioms SquaresInCircles.regular_polygon
 #print axioms SquaresInCircles.axis_packing
-#print axioms SquaresInCircles.HasNormalForm.packing
+#print axioms SquaresInCircles.Congruent.packing
 #print axioms SquaresInCircles.Optimum.packing_iff
 
 -- Three squares: the containing square.
@@ -41,7 +39,7 @@ used in this development.
 
 -- Seven squares: the marker arc, the gap of pi/3 (nonnegative, zero only at
 -- contacts), all smaller gaps, the pair theorem, the regular hexagon of
--- markers, and the sliding packings.
+-- markers, and the column packings.
 #print axioms SquaresInCircles.Seven.marker_arc
 #print axioms SquaresInCircles.Seven.fixed_gap_nonneg
 #print axioms SquaresInCircles.Seven.fixed_gap_zero
@@ -50,7 +48,7 @@ used in this development.
 #print axioms SquaresInCircles.Seven.marker_separation_closed
 #print axioms SquaresInCircles.Seven.ordered_chart_contact
 #print axioms SquaresInCircles.Seven.six_directions_hexagon
-#print axioms SquaresInCircles.Seven.sliding_packing
+#print axioms SquaresInCircles.Seven.column_packing
 
 -- Seven squares at the optimal radius: a square contains the centre, the ring,
 -- the square in the middle, and the classification.
@@ -62,17 +60,16 @@ used in this development.
 
 -- The statements being proved, for inspection.
 #print SquaresInCircles.Packing
-#print SquaresInCircles.HasNormalForm
+#print SquaresInCircles.Congruent
+#print SquaresInCircles.axisSquare
 #print SquaresInCircles.optimalRadius
-#print SquaresInCircles.modelCenters
-#print SquaresInCircles.optimalLayouts
+#print SquaresInCircles.optimalPackings
 #print SquaresInCircles.Optimum
-#check @SquaresInCircles.optimality
-#check @SquaresInCircles.attainment
-#check @SquaresInCircles.uniqueness
-#check @SquaresInCircles.packing_iff
-#check @SquaresInCircles.rigid_uniqueness
+#check @SquaresInCircles.optimal_radius
+#check @SquaresInCircles.optimal_packings
+#check @SquaresInCircles.optimal_packings_rigid
 #check @SquaresInCircles.Five.polygon_uniqueness
-#check @SquaresInCircles.Seven.sliding_packing
+#check @SquaresInCircles.Seven.column_packing
 #print SquaresInCircles.Seven.Column
-#print SquaresInCircles.Seven.slidingCenters
+#print SquaresInCircles.Seven.columnCenters
+#print SquaresInCircles.Seven.columnModel
