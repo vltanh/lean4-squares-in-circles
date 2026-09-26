@@ -19,7 +19,7 @@ symbol. The figures are drawn from the same geometry by
 | page | contents |
 | --- | --- |
 | [preliminaries.md](preliminaries.md) | the setting: notation, conventions, and Definitions 1 to 5 (squares, packings, normal forms) |
-| [common.md](common.md) | the shared toolkit: Definitions 6 to 17 and Lemmas 1 to 23, each tool defined where it is first used |
+| [common.md](common.md) | the shared toolkit: Definitions 6 to 17 and statements 1 to 22, each tool defined where it is first used |
 | [one.md](one.md) | Theorem 1, one square |
 | [two.md](two.md) | Theorem 2, two squares |
 | [three.md](three.md) | Theorem 3, three squares |
@@ -29,11 +29,11 @@ symbol. The figures are drawn from the same geometry by
 
 ## The main theorem
 
-*Lean: [`optimality`](../../SquaresInCircles.lean#L74),
-[`attainment`](../../SquaresInCircles.lean#L79),
-[`uniqueness`](../../SquaresInCircles.lean#L83),
-[`packing_iff`](../../SquaresInCircles.lean#L92),
-[`optimum`](../../SquaresInCircles.lean#L53), in
+*Lean: [`optimality`](../../SquaresInCircles.lean#L71),
+[`attainment`](../../SquaresInCircles.lean#L76),
+[`uniqueness`](../../SquaresInCircles.lean#L88),
+[`packing_iff`](../../SquaresInCircles.lean#L82),
+[`optimum`](../../SquaresInCircles.lean#L55), in
 [`SquaresInCircles.lean`](../../SquaresInCircles.lean).*
 
 For $1 \le n \le 5$ and $n = 7$ let $R_n$ and $c_1, \dots, c_n$ be given by the
@@ -65,114 +65,106 @@ table.
    can slide.
 
 The case $n$ is Theorem $n$ on the page for that case. Every case proves its
-three parts the same way, and the converse half of part 3 is shared
-([one framework](common.md#11-one-framework-for-every-case)).
+three parts the same way: part 1 by an explicit construction, part 3 by its
+own argument, and part 2 and the converse half of part 3 follow from these by
+shared lemmas ([one framework](common.md#11-one-framework-for-every-case)).
 
 ## One and two squares
 
 The farthest-vertex bound of
-[Lemma 1](common.md#lemma-1-farthest-vertex) settles one square at once, since
-$\varphi(a_S, b_S) \ge \frac12$. For two squares it puts both centres within
-$\frac12$ of the disk centre in any smaller disk, while centres of disjoint
-squares are at least 1 apart; the parallelogram law shows the two facts are
-incompatible.
+[Lemma 1](common.md#lemma-1-farthest-vertex) settles one square at once: at
+radius $R_1$ it forces $\varphi(a_S, b_S) = \frac12$, so the square is centred
+at the disk centre. For two squares at radius $R_2$ it keeps both centres
+within $\frac12$ of the disk centre, while centres of disjoint squares are at
+least 1 apart; by the parallelogram law both centres are exactly $\frac12$
+away, and each square holds the half of a small circle facing it. Disjoint half
+circles are opposite, and that is the rectangle. In both cases the lower bound
+follows by [Lemma 22](common.md#lemma-22-the-lower-bound).
 
 ## Three to five squares
 
-The lower bound is a proof by contradiction. Assume a packing in a disk with
-$R^2$ below $R_n^2$.
+Three, four and five squares are proved by one method, run once, at the
+optimal radius: it shows that every packing in the closed disk of radius $R_n$
+is the optimal packing, and the lower bound follows by
+[Lemma 22](common.md#lemma-22-the-lower-bound). Take such a packing.
 
-1. **The contact polygon.** Lemma 1 gives $\varphi(a_S, b_S) < R^2$ for every
-   square, and the tangent half-planes of
-   [Lemma 2](common.md#lemma-2-tangent-lines) at the contact points of the
-   optimal packing turn this curved constraint into a polygon. From here on
-   the disk is forgotten, except for four squares.
+1. **The contact polygon.** Lemma 1 gives $\varphi(a_S, b_S) \le R_n^2$ for
+   every square, and the tangent half-planes of
+   [Lemma 2](common.md#lemma-2-tangent-lines) at the positions of the squares
+   of the optimal packing turn this curved constraint into a polygon. From here
+   on the disk is forgotten, except for four squares.
 2. **Exterior squares.** On a small auxiliary circle about the disk centre,
-   every square that does not contain the centre holds an arc longer than
-   $\frac{2\pi}n$.
+   every square that does not contain the centre holds an arc of at least
+   $\frac{2\pi}n$, and for three and four squares exactly $\frac{2\pi}n$ only
+   in the positions of the optimal packing.
 3. **The containing square.** At most one square contains the disk centre.
    Its own arc can be short, and each case handles it separately.
-4. **Conclusion.** The arcs of disjoint squares cannot take up more than the
-   whole circle ([Lemma 7](common.md#lemma-7-angular-budget)), so
-   $R^2 \ge R_n^2$.
-
-For uniqueness the same argument runs at the optimal radius with equality
-allowed. Every inequality in the chain must then be tight, and the tight
-configurations are rebuilt exactly.
+4. **The budget.** The arcs of disjoint squares cannot take up more than the
+   whole circle ([Lemma 7](common.md#lemma-7-angular-budget)). For three and
+   four squares every arc is then as short as it can be, and those positions
+   rebuild the optimal packing. For five squares the budget leaves only a
+   square centred at the disk centre, and that forces the plus.
 
 ### Where the cases differ
 
 | | three | four | five |
 | --- | --- | --- | --- |
-| target $R^2$ | $\frac{425}{256}$ | $2$ | $\frac52$ |
+| $R_n^2$ | $\frac{425}{256}$ | $2$ | $\frac52$ |
 | **1.** tangent points | $(\frac12, \frac5{16})$, $(\frac{11}{16}, 0)$ and mirrors | $(\frac12, \frac12)$ | $(1, 0)$, $(0, 1)$, $(\frac{\sqrt5-1}2, \frac{\sqrt5-1}2)$ |
-| **1.** polygon | the 16-gon $P_3$ | the diamond $a + b < 1$ | the 12-gon $P_5$ |
+| **1.** polygon | the 16-gon $P_3$ | the diamond $a + b \le 1$ | the 12-gon $P_5$ |
 | **1.** disk used afterwards | no | yes, $\varphi \le 2$ | no |
 | **2.** auxiliary radius | $\frac38$ | $\frac12$ | $\frac56$ |
-| **2.** exterior arc | a cap longer than 120° | a cap longer than 90° | an interval longer than 72° |
-| **3.** containing square | its own arc; no clipped cap; an explicit common point | radial sweep, 90° | radial sweep, 72°, unless centred at the disk centre |
-| **4.** budget | three arcs (Lemma 9) | sweep (Proposition 18) | sweep (Proposition 18) |
-| uniqueness: tight case | no square contains the centre; three caps of exactly 120° | the centre is a vertex of every square | a centred square; the others at distance 1 |
-| uniqueness: assumes | $\varphi \le \frac{425}{256}$ | $\varphi \le 2$ | the closed 12-gon only |
-| uniqueness: rebuilt from | angles between arc centres | a quarter grid of arc centres | unit contacts |
+| **2.** exterior arc | a cap of at least 120°, exactly 120° only in two positions | a cap of at least 90°, exactly 90° only with a vertex at the centre | an arc longer than 72° |
+| **3.** containing square | impossible: its own arc, no clipped cap, and nearly axial caps too wide on $\Gamma_{7/16}$ | the quarter circle facing its centre | its radial sweep holds 72°, unless it is centred at the disk centre |
+| **4.** budget | three caps of exactly 120° (Lemmas 7, 9) | four quarter circles (Lemma 7) | the sweep ([Proposition 15](common.md#proposition-15-budget-with-a-sweep)): a square centred at the disk centre |
+| rebuilt from | angles between the caps | a quarter grid of arc centres | unit contacts with the centred square |
 
 ## Seven squares
 
-The lower bound is again a proof by contradiction, but it compares pairs of
-squares rather than arcs on one circle. Assume a packing in a disk with
-$R^2 < \frac{13}4$.
+Seven squares also run one argument at the optimal radius, but it compares
+pairs of squares rather than arcs on one circle. Take a packing in the closed
+disk of radius $R_7$.
 
-1. **Six exterior squares.** At most one square contains the disk centre, so
-   six squares avoid it.
-2. **Markers.** Each exterior square gets a marker, a direction from the disk
-   centre computed from the position of the centre relative to the square.
-3. **The pair theorem.** Two disjoint exterior squares have markers at least
-   $\frac\pi3$ apart, and exactly $\frac\pi3$ apart only if they touch as
-   in the optimal packing, which needs $R^2 = \frac{13}4$. The proof puts the
-   pair in a normal position, writes the overlaps of their shadows on the four
-   edge directions in closed form, and shows that they are positive for every
-   gap below $\frac\pi3$ and vanish at $\frac\pi3$ only at those contacts.
-4. **Conclusion.** Six directions pairwise at least $\frac\pi3$ apart form a
-   regular hexagon ([Lemma 23](common.md#lemma-23-regular-polygons)), so they
-   cannot be pairwise more than $\frac\pi3$ apart.
+1. **Markers.** Each square that avoids the disk centre gets a marker, a
+   direction from the disk centre computed from the position of the centre
+   relative to the square.
+2. **The pair theorem.** Two disjoint such squares have markers at least
+   $\frac\pi3$ apart, and exactly $\frac\pi3$ apart only if they touch as in
+   the optimal packing. The proof puts the pair in a normal position, writes
+   the overlaps of their shadows on the four edge directions in closed form,
+   and shows that they are positive for every gap below $\frac\pi3$ and
+   vanish at $\frac\pi3$ only at those contacts.
+3. **The ring.** Seven markers do not fit, so some square contains the disk
+   centre. The markers of the other six form a regular hexagon
+   ([Lemma 20](common.md#lemma-20-regular-polygons)), and going round it each
+   square touches the next as in the optimal packing: two side columns, and
+   one square above the centre and one below.
+4. **The middle column.** The side columns pin the square that contains the
+   centre to the middle column, where it can slide with the squares above and
+   below it.
 
-At the optimal radius the six markers are exactly $\frac\pi3$ apart, and the
-middle column of the packing can slide without changing them. Uniqueness uses
-the same pair theorem: some square contains the centre, the markers of the
-other six form a regular hexagon, neighbouring exterior squares touch as in
-the optimal packing, and that rebuilds the packing up to the sliding column.
+The lower bound follows by [Lemma 22](common.md#lemma-22-the-lower-bound), as
+for every case.
 
 ## Shared lemmas by case
 
-The cells list the lemmas of [common.md](common.md) that each part of a proof
-depends on, including those used only inside other shared lemmas. Every
-construction uses Lemma 20 and nothing else, and every converse of uniqueness
-uses Lemma 24.
-
-**Optimality.**
+The cells list the lemmas of [common.md](common.md) that each case depends
+on, including those used only inside other shared lemmas. Every case also uses
+Lemma 17 for its construction, Lemma 21 for the converse of uniqueness and
+Lemma 22 for its lower bound, so the table lists what its uniqueness proof
+uses.
 
 | section of common.md | 1 | 2 | 3 | 4 | 5 | 7 |
 | --- | :-: | :-: | :-: | :-: | :-: | :-: |
 | 1. the disk centre seen from a square | 1 | 1 | 1 | 1 | 1 | 1 |
-| 2. contact polygons | | | 2 | 2 | 2 | |
-| 3. two disjoint squares | | 3, 4 | 3 | 5 | 3, 5 | 5 |
-| 4. angular budget | | | 7, 8, 9 | 7 | 7 | |
-| 5. charts | | | 10, 11 | 10 | 10 | 10, 11 |
-| 6. exterior arcs | | | 12, 13 | 12, 13 | 12, 14 | |
-| 7. radial sweep | | | | 15 to 18 | 15 to 18 | |
-| 8. elementary estimates | | | 19 | | 19 | 19 |
-| 10. normal forms | | | | | | 23 |
-
-**Uniqueness.** Each uniqueness proof reruns part of the optimality argument
-at the optimal radius; the table lists only the lemmas it adds.
-
-| | 1 | 2 | 3 | 4 | 5 | 7 |
-| --- | :-: | :-: | :-: | :-: | :-: | :-: |
-| reuses | Proposition 1.2 | Lemma 2.2 | Proposition 3.11 | Proposition 4.7 | Proposition 5.8 | Theorem 7.16 |
-| 3. two disjoint squares | | 5, 6 | | 5 | 4, 6 | 5 |
-| 4. angular budget | | | | 8 | | 7 |
-| 5. charts | | | | 11 | | |
-| 10. normal forms | 21, 22 | 21, 22 | 21, 22 | 21, 22, 23 | 21, 22 | 21, 22 |
+| 2. contact polygons | | | 2 | | 2 | |
+| 3. two disjoint squares | | 3, 4 | | 5 | 3 to 6 | 5 |
+| 4. arcs and the angular budget | | 8 | 7 to 9 | 7, 8 | 7 | 7 |
+| 5. charts | 10, 11 | 10, 11 | 10, 11 | 10, 11 | 10 | 10, 11 |
+| 6. arcs of an exterior square | | 12 | 12 | 12 | 12 | |
+| 7. the radial sweep | | | | | 13 to 15 | |
+| 8. elementary estimates | | | 16 | | 16 | 16 |
+| 10. normal forms | 19 | 18, 19 | 18, 19 | 18 to 20 | 18, 19 | 18 to 20 |
 
 ## The legacy proof of three squares
 

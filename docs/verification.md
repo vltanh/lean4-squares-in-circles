@@ -18,13 +18,14 @@ and no `native_decide`.
   `[propext, Classical.choice, Quot.sound]`.
 - `sorryAx` in that output would indicate an unproved lemma;
   `Lean.ofReduceBool` would indicate `native_decide` and compiler trust.
-- The audit also prints `Packing`, `optimalRadius`, `HasNormalForm`,
-  `modelCenters` and the theorem signatures for inspection.
+- The audit also prints `Packing`, `HasNormalForm`, `optimalRadius`,
+  `modelCenters`, `optimalLayouts`, `Optimum`, the sliding column of seven
+  squares and the theorem signatures for inspection.
 - `SanityChecks.lean` checks the radius and centre tables, re-proves the exact
-  rational margins the proofs rely on, restates the public theorems, checks
-  the five unique optimal packings against their normal forms, and checks the
-  sliding family of seven squares and its normal form; it must elaborate
-  without errors.
+  rational margins and the contact points of the contact polygons that the
+  proofs rely on, restates the public theorems, checks the five unique optimal
+  packings against their normal forms, and checks the sliding family of seven
+  squares and its normal form; it must elaborate without errors.
 
 [`.github/workflows/lean.yml`](../.github/workflows/lean.yml) runs these steps
 on every push to `main` and on pull requests, using `leanprover/lean-action`.
@@ -51,5 +52,6 @@ and would be re-resolved.
 
 **Trusted base:** Lean, Lake, mathlib. Every numeric margin is an exact rational
 inequality closed by `norm_num`, `linarith` or `nlinarith`; `π` enters only
-through mathlib's rational bounds `3.14 < π < 3.1416`, and for seven squares
-also `3.141592 < π < 3.141593`.
+through mathlib's rational bounds `3.14 < π < 3.1416` (and weaker ones such as
+`3 < π`), and for seven squares also `3.1415 < π` and
+`3.141592 < π < 3.141593`.

@@ -171,12 +171,16 @@ def optimalLayouts : (n : ℕ) → Set (Fin n → Point)
   | n => {modelCenters n}
 ```
 
-Every case is the same framework: in its namespace, `One` to `Five` and
-`Seven`, it defines `radius`, `centers` and `model`, and proves
-`model_packing`, `optimality` and `uniqueness`, which make up its `optimum`
-(`Common/Optimum.lean`). Attainment and the converse of uniqueness follow once
-for all cases. `uniqueness` gives the forward direction of `packing_iff`, and
-`rigid_uniqueness` restates it with an explicit isometry of the plane.
+Every case is the same framework (`Common/Optimum.lean`). In its namespace,
+`One` to `Five` and `Seven`, it defines `radius`, `centers` and `model`, and
+proves `model_packing` and `uniqueness`; with a point of an optimal packing on
+the circle of radius `radius`, these make up its `optimum`. The lower bound,
+attainment and the converse of uniqueness then follow once for all cases: a
+packing in a smaller disk would also be a packing in the optimal one, so by
+uniqueness it would be an optimal packing, and that point would lie outside the
+smaller disk. The root file also states `uniqueness`, the forward direction of
+`packing_iff`, and `rigid_uniqueness`, which restates it with an explicit
+isometry of the plane.
 
 ## Proof outline
 
@@ -189,21 +193,29 @@ one page per case: [docs/proof/](docs/proof/README.md)
 [seven](docs/proof/seven.md)).
 
 - **One and two squares.** The farthest corner of a square is at least half a
-  diagonal from the disk centre. For two squares, the centres of disjoint unit
-  squares are at least 1 apart, and the parallelogram law does the rest.
-- **Three to five squares.** A smaller disk puts every square's centre strictly
-  inside a contact polygon. Each square then occupies an arc of a small circle
-  around the disk centre, and together the arcs would need more than the whole
-  circle. A square containing the disk centre needs a separate argument, which
-  for three squares is the hardest part of the proof.
-- **Seven squares.** At most one square contains the disk centre, and each of
-  the other six gets a marker, a direction from the disk centre. In a smaller
-  disk, two disjoint squares have markers more than `π/3` apart, which six
-  directions cannot all be. The pair theorem behind this is by far the
-  longest proof in the library. At the optimal radius the markers form a
-  regular hexagon, which rebuilds the packing up to the sliding column.
-- **Uniqueness.** With equality allowed, every inequality in the chain must be
-  tight, and the tight cases are reconstructed exactly.
+  diagonal from the disk centre, so in the disk of radius `√2 / 2` the square
+  is centred at the disk centre. In the disk of radius `√5 / 2` both centres
+  of two squares are within `1/2` of the disk centre, and centres of disjoint
+  unit squares are at least 1 apart, so both are exactly `1/2` from it; each
+  square then holds half of a small circle about the disk centre, and the two
+  halves are opposite.
+- **Three to five squares.** At the optimal radius every square's centre lies
+  in a contact polygon, and each square occupies an arc of a small circle
+  around the disk centre. The arcs cannot take up more than the whole circle,
+  so every inequality is tight, and the tight configurations are rebuilt into
+  the optimal packing. A square containing the disk centre needs a separate
+  argument, which for three squares is the hardest part of the proof.
+- **Seven squares.** Each square that avoids the disk centre gets a marker, a
+  direction from the disk centre. In the disk of radius `√13 / 2`, two
+  disjoint such squares have markers at least `π/3` apart, and exactly `π/3`
+  apart only if they touch as in the optimal packing. The pair theorem behind
+  this is by far the longest proof in the library. Seven directions cannot be
+  pairwise at least `π/3` apart, so one square contains the disk centre, and
+  the markers of the other six form a regular hexagon, which rebuilds the
+  packing up to the sliding column.
+- **The lower bound** is shared by all cases: a packing in a smaller disk would
+  also be a packing at the optimal radius, hence an optimal packing, and the
+  outer corners of an optimal packing reach the circle of the optimal radius.
 
 ## Prior work
 
@@ -238,11 +250,11 @@ SquaresInCircles.lean      optimalRadius, and all six cases in one statement
 SquaresInCircles/
 ├── Geometry.lean          the statement: squares, disks, Packing, normal forms
 ├── Common/                tools shared by several cases
-├── One/  Two/             Construction, Optimality, Uniqueness
-├── Three/ Four/ Five/     Construction, Tangents, Exterior, Containing,
-│                          Optimality, Uniqueness
-└── Seven/                 Construction, Optimality, Uniqueness, the pair
-                           theorem, and Uniqueness/ for the equality case
+├── One/  Two/             Construction, Uniqueness
+├── Three/ Five/           Construction, Exterior, Containing, Uniqueness
+├── Four/                  Construction, Exterior, Uniqueness
+└── Seven/                 Construction, the pair theorem, Uniqueness, and
+                           Uniqueness/ for the ring and the middle square
 ```
 
 No case imports another.

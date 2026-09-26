@@ -25,15 +25,15 @@ Definitions 1 to 5 are on this page, Definitions 6 to 17 on the
 | $F_\phi$ | the frame at $o$ turned by $\phi$ | Definition 4 |
 | $a_S \ge b_S$ | the offsets of $o$ from $c_S$ along the axes of $S$ | [Definition 6](common.md#definition-6-position-of-the-disk-centre) |
 | $\varphi(a, b)$ | the farthest-vertex function | [Definition 8](common.md#definition-8-farthest-vertex-function) |
-| $P_8$ ($P_3$, $P_4$, $P_5$) | contact polygons in the $(a, b)$-plane | [Definitions 10, 11](common.md#definition-10-contact-polygon) |
+| $P_8$ ($P_3$, $P_5$) | contact polygons in the $(a, b)$-plane | [Definitions 10, 11](common.md#definition-10-contact-polygon) |
 | $w_S(n)$ | the half-width of $S$ in the direction $n$ | [Definition 12](common.md#definition-12-width) |
 | $\Gamma_r$, $d(\theta, \theta')$ | the circle of radius $r$ about $o$; the angle between two directions | [Definition 13](common.md#definition-13-circles-about-the-disk-centre) |
 | arc, half-width | a stretch of $\Gamma_r$ that lies in a given set | [Definition 14](common.md#definition-14-arc) |
 | $\theta_S$, $\varepsilon_S$, $t$ | the phase and orientation of the chart of $S$, and the chart angle | [Definition 15](common.md#definition-15-chart) |
-| $A_S$, $V_S$ | the cap angles of an exterior square $S$ | [Definition 16](common.md#definition-16-cap-angles) |
+| $A_S$, $V_S$, $U_S$ | where $\Gamma_r$ crosses the lines of the edges of an exterior square $S$ | [Definition 16](common.md#definition-16-crossing-angles) |
 | $\widehat{S}$ | the radial sweep of $S$ | [Definition 17](common.md#definition-17-radial-sweep) |
-| $r(a, u)$, $\ell(a, u)$ | the remainder and the label of a state, for seven squares | [Definitions 7.4, 7.5](seven.md#definition-74-states) |
-| $h(a, b, z)$, $\sigma_k(g)$ | the support function, and the support sums of a pair, for seven squares | [Definitions 7.8, 7.9](seven.md#definition-78-support-function) |
+| $r(a, u)$, $\ell(a, u)$ | the remainder and the label of a state, for seven squares | [Definitions 7.3, 7.4](seven.md#definition-73-states) |
+| $h(a, b, z)$, $\sigma_k(g)$ | the support function, and the support sums of a pair, for seven squares | [Definitions 7.7, 7.8](seven.md#definition-77-support-function) |
 
 ## Conventions
 
@@ -113,9 +113,9 @@ conditions above.*
 ## Packings and their normal forms
 
 The main theorem is about unit squares packed in a disk. For each $n$ it names
-the smallest radius, and for $n \le 5$ it says that at that radius the packing
-is unique up to a rotation about the disk centre and a relabelling of the
-squares.
+the smallest radius and the packings that attain it: for $n \le 5$ one
+packing, up to a rotation about the disk centre and a relabelling of the
+squares, and for $n = 7$ a family in which the middle column slides.
 
 ### Definition 3 (packing)
 
@@ -128,7 +128,7 @@ $\overline{D}(o, R)$. The point $o$ is the *disk centre*.
 
 *A packing of three unit squares in the closed disk of radius $R$ about $o$.*
 
-*Lean: [`InteriorDisjoint`](../../SquaresInCircles/Common/Basic.lean#L50),
+*Lean: [`InteriorDisjoint`](../../SquaresInCircles/Common/Basic.lean#L39),
 [`Packing`](../../SquaresInCircles/Geometry.lean#L49).*
 
 ### Definition 4 (frames at the disk centre)
@@ -150,7 +150,7 @@ $Q(c)^\circ$.
 coordinates it is $Q(c)$.*
 
 *Lean: [`pointInDirection`](../../SquaresInCircles/Geometry.lean#L58),
-[`Represents`](../../SquaresInCircles/Common/NormalForm.lean#L17).*
+[`Represents`](../../SquaresInCircles/Common/NormalForm.lean#L16).*
 
 ### Definition 5 (normal form)
 

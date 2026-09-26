@@ -138,9 +138,12 @@ def optimalRadius : ℕ → ℝ                      -- SquaresInCircles.lean
 Each value is the distance from the disk centre to the outermost corners of the
 optimal packing. Their squares `1/2`, `5/4`, `425/256`, `2`, `5/2` and `13/4`
 are rational (`One.radius_sq`, …, `Five.radius_sq`, `Seven.radius_sq`). The
-proofs bound the squared radius, so the contact inequalities stay polynomial,
-which is what `nlinarith` needs; mathlib's `le_of_sq_le_sq` turns `r² ≤ R²`
-into `r ≤ R` at the end.
+proofs work with the squared radius, so the contact inequalities stay
+polynomial, which is what `nlinarith` needs. That no smaller radius works is
+proved once for all cases (`Optimum.optimality`): a packing in a smaller disk
+would also lie in the optimal disk, so it would have the normal form of an
+optimal layout, and the outermost corners of that layout would lie outside the
+smaller disk.
 
 ## Normal forms
 
