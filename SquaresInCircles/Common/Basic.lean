@@ -5,7 +5,7 @@ import SquaresInCircles.Geometry
 
 Vector operations, a square's frame and vertices, and the squared distance
 `phi` from a point to the farthest vertex of a square. Distances always use
-`normSq`, not the product-space norm on `ℝ × ℝ` (which is the maximum norm).
+`normSq`; the product-space norm on `ℝ × ℝ` is the maximum norm.
 -/
 noncomputable section
 namespace SquaresInCircles

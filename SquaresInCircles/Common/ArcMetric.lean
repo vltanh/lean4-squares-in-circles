@@ -3,9 +3,10 @@ import SquaresInCircles.Common.AngularBudget
 /-!
 # Metric facts for occupied arc witnesses
 
-An open arc here is an actual region-membership certificate, not an angular
-shadow. These lemmas do not assume that it is the whole circle intersection.
-No packing theorem is used.
+An open arc witness is an arc of the circle that lies in a region, possibly
+only part of the region's trace on the circle. These lemmas are about the
+arcs alone: the separation of the midpoints of disjoint arcs, the perimeter
+inequality for three directions, and the budget of three arcs.
 -/
 noncomputable section
 open Set

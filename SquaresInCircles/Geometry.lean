@@ -4,20 +4,18 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.Angle
 # The statement: squares, disks, packings, congruence and the optimal models
 
 Everything the main theorems (`SquaresInCircles.lean`) state: unit squares, each
-with its own position and rotation; packings in a closed disk; congruence of a
-configuration to a model given about the origin; and the optimal radius and the
-optimal models of each case. `openSquare` uses strict local-coordinate
-inequalities; no separating-axis condition, certificate, or desired lower bound
-is built into `Packing`.
+with its own position and rotation; packings in a closed disk; congruence to a
+model given about the origin; and the optimal radius and models of each case.
+`Packing` asks only that the closed squares lie in the disk and that no point
+lie in two open squares (`openSquare`, with strict inequalities).
 
-`Challenge.lean` restates this file word for word, followed by the main
-theorems, and Comparator checks that the two elaborate to identical
-definitions. Keep every definition the main theorems use in this one file, and
-edit it here only: `scripts/verify-comparator.sh --write` copies the
-definitions into `Challenge.lean` before checking. Lean moves the proofs inside
-a definition, such as the proof of `Nat.AtLeastTwo 2` behind the real numeral
-`2`, into auxiliary lemmas named after the first definition in the file that
-needs them, so the elaborated definitions depend on their file and order.
+`Challenge.lean` restates this file word for word, and Comparator checks that
+the two elaborate identically. That needs every definition here, in this
+order: Lean names the auxiliary lemmas inside a definition, such as the proof
+of `Nat.AtLeastTwo 2` behind the real numeral `2`, after the first definition
+in the file that needs them. Edit here only:
+`scripts/verify-comparator.sh --write` copies the definitions into
+`Challenge.lean`.
 -/
 
 noncomputable section

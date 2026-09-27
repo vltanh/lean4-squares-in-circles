@@ -31,8 +31,7 @@ three ways:
 
 - **Trust.** Their result depends on the correctness of the search code and of
   the libraries' interval rounding. Here Lean's kernel checks every step, and
-  no floating-point arithmetic, interval arithmetic or external solver is
-  involved.
+  every numeric bound is an exact rational inequality.
 - **Exactness.** They enclose the radius and the optimal arrangements. Here the
   radius is exact, and the T is proved to be the only optimal packing, up to a
   rotation about the disk centre and a relabelling of the squares.

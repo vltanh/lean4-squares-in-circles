@@ -167,10 +167,10 @@ fidelity:
     interval enclosures, and it adds uniqueness to the radii and packings
     listed on Friedman's page. For seven squares the optimal packing is not
     unique, so the statement characterizes the whole family. Conventions:
-    congruence allows a rotation about the disk centre and a relabelling but
-    no reflection, which loses nothing because every optimal model is
-    symmetric under a reflection; distances use the squared Euclidean length,
-    never Mathlib's maximum norm on ℝ × ℝ.
+    congruence allows a rotation about the disk centre and a relabelling;
+    every optimal model is symmetric under a reflection, so reflections add
+    nothing. Distances use the squared Euclidean length (Mathlib's norm on
+    ℝ × ℝ is the maximum norm).
 
 review:
   status: "self-assessed"

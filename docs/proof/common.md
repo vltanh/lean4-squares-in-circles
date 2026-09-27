@@ -67,7 +67,7 @@ squares has an exterior square.
 *Figure 3.2.* Left, $o$ lies in $S^\circ$ and $a_S < \frac12$. Right, $o$ lies
 outside $S^\circ$ and $a_S \ge \frac12$.
 
-*Lean: [`openSquare`](../../SquaresInCircles/Geometry.lean#L60),
+*Lean: [`openSquare`](../../SquaresInCircles/Geometry.lean#L58),
 [`exists_exterior`](../../SquaresInCircles/Common/ArcBudget.lean#L15).*
 
 ### Definition 3.3 (farthest-vertex function)
@@ -300,7 +300,7 @@ shadow of $S$ on the line of $n$, in units of $|n|$.
 *Figure 3.10.* For a unit vector $n$, the square reaches $w_S(n)$ beyond its
 centre in the direction $n$.
 
-*Lean: [`width`](../../SquaresInCircles/Common/Separation.lean#L70),
+*Lean: [`width`](../../SquaresInCircles/Common/Separation.lean#L69),
 [`closed_dot_bound`](../../SquaresInCircles/Common/Support.lean#L97),
 [`dot_open_bound_of_ne`](../../SquaresInCircles/Common/Support.lean#L70).*
 
@@ -366,7 +366,7 @@ $q \in T^\circ$. By Definition 3.11, applied to $n$ for $S$ and to $-n$ for $T$,
 so $p \ne q$. $\square$
 
 *Lean:
-[`support_separator`](../../SquaresInCircles/Common/Separation.lean#L115),
+[`support_separator`](../../SquaresInCircles/Common/Separation.lean#L114),
 [`closed_open_disjoint`](../../SquaresInCircles/Common/Support.lean#L108).*
 
 ### Lemma 3.13 (squares at distance 1)
@@ -432,8 +432,8 @@ $\Gamma_r$ are measured by the angle $d$ of §2.1.
 *Figure 3.15.* Two directions $\theta, \theta'$ seen from $o$, the unit vector
 $u(\theta)$, and the angle $d(\theta, \theta')$ between them.
 
-*Lean: [`circlePoint`](../../SquaresInCircles/Common/AngularBudget.lean#L22),
-[`direction_dist`](../../SquaresInCircles/Common/AngularBudget.lean#L31).*
+*Lean: [`circlePoint`](../../SquaresInCircles/Common/AngularBudget.lean#L21),
+[`direction_dist`](../../SquaresInCircles/Common/AngularBudget.lean#L30).*
 
 ### Definition 3.15 (arc)
 
@@ -448,7 +448,7 @@ $S^\circ$, we say that $S$ *holds* the arc.
 *Figure 3.16.* An arc of $U$ with centre $\theta_0$ and half-width $w$ (thick).
 It need not cover all of $\Gamma_r \cap U$ (thin).
 
-*Lean: [`OpenArc`](../../SquaresInCircles/Common/AngularBudget.lean#L39).*
+*Lean: [`OpenArc`](../../SquaresInCircles/Common/AngularBudget.lean#L38).*
 
 ![Four disjoint squares around the disk centre, each holding a coloured arc of the circle of radius r; the arcs do not overlap](figures/budget.svg)
 
@@ -491,9 +491,9 @@ half-width $t w$ for $t < 1$ (thick, here $t = \frac45$) are disjoint, so their
 lengths add up to at most $2\pi$.
 
 *Lean:
-[`open_arc_budget`](../../SquaresInCircles/Common/AngularBudget.lean#L66),
-[`closed_arc_budget`](../../SquaresInCircles/Common/AngularBudget.lean#L49),
-[`uniform_arc_excess`](../../SquaresInCircles/Common/AngularBudget.lean#L80).*
+[`open_arc_budget`](../../SquaresInCircles/Common/AngularBudget.lean#L65),
+[`closed_arc_budget`](../../SquaresInCircles/Common/AngularBudget.lean#L48),
+[`uniform_arc_excess`](../../SquaresInCircles/Common/AngularBudget.lean#L79).*
 
 ### Lemma 3.17 (disjoint arcs have separated centres)
 
@@ -530,7 +530,7 @@ $d(\theta_U, \theta_V) \ge \pi$, and only opposite directions are $\pi$ apart.
 $\square$
 
 *Lean:
-[`OpenArc.centers_separated`](../../SquaresInCircles/Common/ArcMetric.lean#L27),
+[`OpenArc.centers_separated`](../../SquaresInCircles/Common/ArcMetric.lean#L28),
 [`OpenArc.opposite`](../../SquaresInCircles/Common/Angles.lean#L31),
 [`antipodal_of_distance`](../../SquaresInCircles/Common/Angles.lean#L23).*
 
@@ -574,9 +574,9 @@ This gives the budget for three sets without measure theory, and it also
 locates the centres, which the uniqueness proofs use.
 
 *Lean:
-[`OpenArc.third_distance_bounds`](../../SquaresInCircles/Common/ArcMetric.lean#L92),
-[`triple_arc_budget`](../../SquaresInCircles/Common/ArcMetric.lean#L105),
-[`direction_triangle_perimeter`](../../SquaresInCircles/Common/ArcMetric.lean#L67).*
+[`OpenArc.third_distance_bounds`](../../SquaresInCircles/Common/ArcMetric.lean#L93),
+[`triple_arc_budget`](../../SquaresInCircles/Common/ArcMetric.lean#L106),
+[`direction_triangle_perimeter`](../../SquaresInCircles/Common/ArcMetric.lean#L68).*
 
 ### Lemma 3.19 (regular polygons)
 
@@ -1040,13 +1040,13 @@ $\sin\theta < \frac{u+v}2$ lies left of $\mu$, since the sine increases.
    and $\sin\frac\pi5 > 0$. $\square$
 
 *Lean:
-[`pi_lt_22_over_7`](../../SquaresInCircles/Common/ElementaryTrig.lean#L16),
-[`arcsin_ge_self`](../../SquaresInCircles/Common/ElementaryTrig.lean#L19),
-[`arcsin_le_self_of_nonpos`](../../SquaresInCircles/Common/ElementaryTrig.lean#L22),
-[`arcsin_le_cubic`](../../SquaresInCircles/Common/ElementaryTrig.lean#L29),
-[`arcsin_sum_gt_of_sin_lt`](../../SquaresInCircles/Common/ElementaryTrig.lean#L41),
-[`cos_gt_401_500`](../../SquaresInCircles/Common/ElementaryTrig.lean#L60),
-[`sin_pi_fifth_lt_three_fifths`](../../SquaresInCircles/Common/ElementaryTrig.lean#L68).*
+[`pi_lt_22_over_7`](../../SquaresInCircles/Common/ElementaryTrig.lean#L17),
+[`arcsin_ge_self`](../../SquaresInCircles/Common/ElementaryTrig.lean#L20),
+[`arcsin_le_self_of_nonpos`](../../SquaresInCircles/Common/ElementaryTrig.lean#L23),
+[`arcsin_le_cubic`](../../SquaresInCircles/Common/ElementaryTrig.lean#L30),
+[`arcsin_sum_gt_of_sin_lt`](../../SquaresInCircles/Common/ElementaryTrig.lean#L42),
+[`cos_gt_401_500`](../../SquaresInCircles/Common/ElementaryTrig.lean#L61),
+[`sin_pi_fifth_lt_three_fifths`](../../SquaresInCircles/Common/ElementaryTrig.lean#L69).*
 
 ## 3.9 Recognising a model
 

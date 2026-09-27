@@ -7,10 +7,9 @@ import Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic
 We use Haar measure on `Real.Angle = AddCircle (2*pi)`.  Its total mass is
 `2*pi`; a closed metric ball of radius `w ≤ pi` has mass `2*w`.
 
-Witnesses below consist of actual arcs in planar regions.  Angular shadows
-are not used.  Open arcs are handled by shrinking every half-width by the
-same factor and using `bound_from_shrinks`; thus no assertion about polygon
-boundary measures is needed.
+Witnesses below are arcs of the circle that lie in planar regions. Open arcs
+are handled by shrinking every half-width by the same factor and applying
+`bound_from_shrinks`, so only closed arcs are ever measured.
 -/
 noncomputable section
 open scoped BigOperators ENNReal

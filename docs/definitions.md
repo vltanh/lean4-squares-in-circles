@@ -17,9 +17,8 @@ def sub (p q : Point) : Point := (p.1 - q.1, p.2 - q.2)
 
 A point is a pair of reals — the Euclidean plane in coordinates. `normSq p` is
 the **squared** Euclidean length of `p`, and the statements measure distances
-only with it, so `Real.sqrt` appears in them only in the radii. They never use
-mathlib's `dist` on `ℝ × ℝ`, which is the maximum metric, not the Euclidean
-one.
+only with it, so `Real.sqrt` appears in them only in the radii. (Mathlib's
+`dist` on `ℝ × ℝ` is the maximum metric.)
 
 ## Squares
 
@@ -102,16 +101,14 @@ Three conditions, and nothing else:
   Stated with `closedSquare`, so boundaries must fit too.
 - **Non-overlap** — no point is interior to two distinct squares.
 
-What the encoding does and does not assume:
+What the encoding leaves free:
 
 - `S : Fin n → UnitSquare` is an arbitrary family, each square with its own
   frame, so the squares are independently placed and independently rotated.
 - `o` and `R` are universally quantified in the theorems, so the disk centre
-  ranges over the whole plane and no relationship between centre and squares is
-  presupposed.
-- No orientation, separating-axis, arc, tangent, or lower-bound assumption
-  appears anywhere in the hypothesis. Those are derived in the proof, not
-  assumed in the statement.
+  ranges over the whole plane.
+- The hypothesis is `Packing` alone: orientations, separating axes, arcs,
+  tangents and the lower bound all come out of the proof.
 
 ## The optimal radii
 

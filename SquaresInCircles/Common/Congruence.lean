@@ -6,8 +6,8 @@ import SquaresInCircles.Common.Constructions
 
 A configuration is congruent to a model when, in one frame at the disk centre
 and after a relabelling, every square is the corresponding model square, both
-as an open and as a closed set. This compares point sets, not `UnitSquare`
-records: a quarter-turn of a frame describes the same square. `Represents`
+as an open and as a closed set. It compares point sets, since a quarter-turn
+of a frame describes the same square. `Represents`
 places one square at an axis-parallel slot of the frame, and
 `congruent_of_slots` turns an assignment of slots into congruence.
 -/

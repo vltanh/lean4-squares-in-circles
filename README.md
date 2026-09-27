@@ -3,11 +3,11 @@
 [![Lean build](https://github.com/vltanh/lean4-squares-in-circles/actions/workflows/lean.yml/badge.svg)](https://github.com/vltanh/lean4-squares-in-circles/actions/workflows/lean.yml)
 [![Doc links](https://github.com/vltanh/lean4-squares-in-circles/actions/workflows/docs.yml/badge.svg)](https://github.com/vltanh/lean4-squares-in-circles/actions/workflows/docs.yml)
 
-Machine-checked proofs, for `n = 1, …, 5` and `n = 7`, of the smallest radius
-of a disk that holds `n` non-overlapping unit squares, and of which packings
-attain it, up to rotation about the disk centre and relabelling of the squares:
-exactly one for `n ≤ 5`, and for `n = 7` a family in which each of the three
-middle squares can move along the middle column.
+Machine-checked proofs, for `n = 1, …, 5` and `n = 7`, of the least radius of
+a disk holding `n` non-overlapping unit squares, and of every packing that
+attains it, up to rotation about the disk centre and relabelling: exactly one
+for `n ≤ 5`, and for `n = 7` a family in which each of the three middle squares
+slides along the middle column.
 
 | n | optimal radius | ≈ | an optimal packing |
 | :-: | :-: | :-: | :-: |
@@ -25,17 +25,15 @@ page of Erich's Packing Center.
 
 More on each definition: [docs/definitions.md](docs/definitions.md).
 
-Read the definitions before trusting the results. A kernel check establishes
-that the proofs are valid; it cannot establish that the statements mean what
-you intend. All of them are in `SquaresInCircles/Geometry.lean`, and
-`Challenge.lean` restates them, with the main theorems, in one file that
-imports only mathlib ([Palomar registry](#palomar-registry)).
+Read these before trusting the results: the kernel checks the proofs, not that
+the statements mean what you intend. All of them are in
+`SquaresInCircles/Geometry.lean`, which `Challenge.lean` restates with the main
+theorems ([Palomar registry](#palomar-registry)).
 
 ### Squares
 
 A point is a pair of reals, and a unit square is a centre with an orthonormal
-frame `(cosine, sine)`, so every square is placed and rotated independently
-(`SquaresInCircles/Geometry.lean`):
+frame `(cosine, sine)`, so every square is placed and rotated independently:
 
 ```lean
 abbrev Point := ℝ × ℝ
@@ -88,10 +86,10 @@ def Packing {n : ℕ} (S : Fin n → UnitSquare) (o : Point) (R : ℝ) : Prop :=
 The optimal packings are given as models: configurations of axis-parallel
 squares with the disk centre at the origin. `Congruent S o M` says that the
 configuration `S` is the model `M`, placed at `o`, turned by one angle about
-`o`, and relabelled. It compares point sets, not frames, since a quarter turn
-of a frame describes the same square. `pointInDirection o φ x y` is the point
-with coordinates `(x, y)` in the frame at `o` rotated by the angle `φ` (a
-`Direction`, that is, a `Real.Angle`). These are in `Geometry.lean` too:
+`o`, and relabelled. It compares point sets, since a quarter turn of a frame
+describes the same square. `pointInDirection o φ x y` is the point with
+coordinates `(x, y)` in the frame at `o` rotated by `φ : Direction`, a
+`Real.Angle`:
 
 ```lean
 def pointInDirection (o : Point) (phase : Direction) (x y : ℝ) : Point :=
@@ -111,8 +109,7 @@ def Congruent {n : ℕ} (S : Fin n → UnitSquare) (o : Point) (M : Fin n → Un
 
 For seven squares the optimal packings form a family: two columns of two
 squares, and between them a column of three whose heights can each vary. A
-`Seven.Column` records the three heights, and `Seven.columnModel` is its model
-(also in `Geometry.lean`, with the radii and the other models):
+`Seven.Column` records the three heights, and `Seven.columnModel` is its model:
 
 ```lean
 def Seven.columnLimit : ℝ := Real.sqrt 3 - 1 / 2
@@ -150,12 +147,11 @@ theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7)
     Packing S o (optimalRadius n) ↔ ∃ M ∈ optimalPackings n, Congruent S o M
 ```
 
-`optimal_radius` says that `optimalRadius n` is the least radius of a disk
-that holds `n` unit squares: some packing attains it, and none fits in a
-smaller disk. `optimal_packings` says that the packings of that radius are
-exactly the configurations congruent to a model in `optimalPackings n`. For
-`n ≤ 5` that set holds one model, so the optimal packing is unique; for `n = 7`
-it holds every column packing. The definitions in Lean are:
+`optimal_radius`: `optimalRadius n` is the least radius of a disk holding `n`
+unit squares; some packing attains it, and none fits in a smaller disk.
+`optimal_packings`: the packings of that radius are exactly the configurations
+congruent to a model in `optimalPackings n`, which holds one model for `n ≤ 5`
+and every column packing for `n = 7`:
 
 ```lean
 def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
@@ -180,28 +176,24 @@ the axis-parallel squares at the `centers` of its case:
 | 5 | `Real.sqrt (5 / 2)` | `![(0,0),(1,0),(0,1),(-1,0),(0,-1)]` |
 | 7 | `Real.sqrt 13 / 2` | `Seven.columnCenters c` for every `c : Seven.Column` |
 
-Every case is the same framework (`Common/Optimum.lean`). Its `optimum` bundles
-the radius, the optimal models, a proof that they pack the disk
-(`model_packing`, for seven squares `column_packing`), a point of each model on
-the circle, and `uniqueness`: every packing at that radius is congruent to a
-model. The rest follows once for all cases. A packing in a smaller disk would
-also be a packing in the optimal one, so by uniqueness it would be congruent to
-a model, and that point would lie outside the smaller disk; and every
-configuration congruent to a model is a packing. The root file also proves
-`optimal_packings_rigid`, which restates uniqueness with an explicit isometry
-of the plane.
+Every case proves one `Optimum` (`Common/Optimum.lean`): the radius, the
+models, that they pack the disk (`model_packing`; for seven squares
+`column_packing`), a point of each model on the circle, and `uniqueness`, that
+every packing at that radius is congruent to a model. The lower bound and the
+converse of uniqueness then follow once for all cases. The root file also
+proves `optimal_packings_rigid`, uniqueness with an explicit isometry of the
+plane.
 
 ## Proof outline
 
-The proofs are written out as a short illustrated textbook, self-contained
-and with every numbered result linked to its Lean declarations:
-[docs/proof/](docs/proof/README.md). It has an introduction, the
-[preliminaries](docs/proof/preliminaries.md), the [tools](docs/proof/common.md)
-shared by the cases, one chapter per case ([one](docs/proof/one.md),
+The proofs are written out as an illustrated, self-contained textbook, every
+numbered result linked to its Lean declarations: [docs/proof/](docs/proof/README.md),
+with the [preliminaries](docs/proof/preliminaries.md), the shared
+[tools](docs/proof/common.md), one chapter per case ([one](docs/proof/one.md),
 [two](docs/proof/two.md), [three](docs/proof/three.md),
 [four](docs/proof/four.md), [five](docs/proof/five.md),
-[seven](docs/proof/seven.md)), and four appendices with the long computations
-of seven squares.
+[seven](docs/proof/seven.md)), and four appendices of computations for seven
+squares.
 
 - **One and two squares.** The farthest corner of a square is at least half a
   diagonal from the disk centre, so in the disk of radius `√2 / 2` the square
@@ -224,9 +216,9 @@ of seven squares.
   pairwise at least `π/3` apart, so one square contains the disk centre, and
   the markers of the other six form a regular hexagon, which rebuilds the
   packing up to the heights of the three middle squares.
-- **The lower bound** is shared by all cases: a packing in a smaller disk would
-  also be a packing at the optimal radius, hence an optimal packing, and the
-  outer corners of an optimal packing reach the circle of the optimal radius.
+- **The lower bound** is shared by all cases: a packing in a smaller disk also
+  packs the optimal one, so it is congruent to a model, whose outer corners
+  reach the circle of the optimal radius.
 
 ## Prior work
 
@@ -270,7 +262,7 @@ SquaresInCircles/
                            Uniqueness/ for the ring and the middle square
 ```
 
-No case imports another.
+Each case imports only `Common/` and its own folder.
 
 ## Verification
 
@@ -284,37 +276,32 @@ lake env lean SanityChecks.lean
 scripts/verify-comparator.sh
 ```
 
-The build uses Lean `4.35.0-rc3` and mathlib `v4.35.0-rc3`, pinned by
-`lean-toolchain` and `lake-manifest.json`. `lake build` must report no `sorry`,
-and every `#print axioms` line must read exactly
-`[propext, Classical.choice, Quot.sound]`. The last command, which needs Linux
-and `bwrap`, checks the proofs against `Challenge.lean` with `lake comparator`
+The build uses Lean and mathlib `v4.35.0-rc3`, pinned by `lean-toolchain` and
+`lake-manifest.json`. `lake build` must succeed without warnings, and every
+`#print axioms` line must read `[propext, Classical.choice, Quot.sound]`. The
+last command (Linux, `bwrap`) checks the proofs against `Challenge.lean`
 ([Palomar registry](#palomar-registry)). The trusted base is Lean, Lake and
-mathlib. On every push, GitHub Actions runs all five steps and audits the
-axioms of every declaration; the badge at the top shows the result. A second
-workflow, with its own badge, checks that the links from the proof pages to the
-Lean declarations are current.
+mathlib. GitHub Actions runs all five steps on every push and audits the axioms
+of every declaration; a second workflow checks the links from the proof pages
+to the Lean declarations.
 
 ## Palomar registry
 
-The repository is laid out for the [Palomar](https://palomar-registry.org/)
-registry of Lean-verified mathematics. `Challenge.lean` is the statement a
-reader audits: it imports only mathlib, restates `SquaresInCircles/Geometry.lean`
-word for word, and states the two main theorems of `SquaresInCircles.lean`,
-`optimal_radius` and `optimal_packings`, with `sorry`.
-[`comparator.json`](comparator.json) names the two theorems and pairs
-`Challenge.lean` with the root module `SquaresInCircles`, which proves them, and
-`scripts/verify-comparator.sh` runs `lake comparator`, as Palomar does: it
-checks that the library proves exactly these statements, over identical
-definitions and with only the three standard axioms, and replays the proofs
-through the independent kernels NanoDa and con-ron as well as Lean's. Edit the
-definitions in `Geometry.lean` only; `scripts/verify-comparator.sh --write`
-copies them into `Challenge.lean`. [`formalization.yaml`](formalization.yaml)
-records the provenance, sources,
-authorship, AI involvement and review status that Palomar asks for. The
-[Palomar preflight](.github/workflows/palomar.yml) workflow, started by hand
-from the Actions tab, runs the registry's own mechanical verification on a
-commit. Submissions go through <https://submit.palomar-registry.org/>.
+The repository is set up for the [Palomar](https://palomar-registry.org/)
+registry. `Challenge.lean` is the statement to audit: it imports only mathlib,
+restates `SquaresInCircles/Geometry.lean` word for word, and states
+`optimal_radius` and `optimal_packings` with `sorry`.
+[`comparator.json`](comparator.json) pairs it with the root module
+`SquaresInCircles`, which proves them, and `scripts/verify-comparator.sh` runs
+`lake comparator` as Palomar does: the same statements over identical
+definitions, only the three standard axioms, and the proofs replayed through
+the NanoDa and con-ron kernels as well as Lean's. Edit the definitions in
+`Geometry.lean` only; `--write` copies them into `Challenge.lean`.
+[`formalization.yaml`](formalization.yaml) records provenance, sources,
+authorship, AI use and review status. The
+[preflight](.github/workflows/palomar.yml) workflow, run by hand, runs
+Palomar's mechanical check on a commit; submissions go through
+<https://submit.palomar-registry.org/>.
 
 ## License
 

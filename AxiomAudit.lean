@@ -2,11 +2,9 @@ import SquaresInCircles
 
 /-!
 Dependency audit. Every line below must report exactly
-`[propext, Classical.choice, Quot.sound]`.
-
-Any appearance of `sorryAx` would mean an unproved lemma; any appearance of
-`Lean.ofReduceBool` would mean `native_decide` and compiler trust. Neither is
-used in this development.
+`[propext, Classical.choice, Quot.sound]`, the three standard axioms: an
+unproved lemma would add `sorryAx`, and a proof by `native_decide`, which
+trusts the compiler, would add `Lean.ofReduceBool`.
 -/
 
 -- All six cases in one statement, which depends on every case.

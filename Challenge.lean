@@ -3,11 +3,10 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.Angle
 /-!
 # Packing unit squares in a disk: the statement
 
-This file is the statement a reader audits. It imports only Mathlib, restates
-word for word the definitions of `SquaresInCircles/Geometry.lean`, and states
-the two main theorems of the library `SquaresInCircles`, which proves them in
-its root module. Comparator checks that the theorems proved there are exactly
-the ones stated here, over identical definitions.
+The statement a reader audits. It imports only Mathlib, restates the
+definitions of `SquaresInCircles/Geometry.lean` word for word, and states the
+two main theorems, which the root module of the library `SquaresInCircles`
+proves; Comparator checks that statements and definitions are identical.
 
 A packing of `n` unit squares in a disk places `n` squares of side 1 in the
 closed disk, each at its own position and rotation, so that no point is interior
@@ -32,11 +31,11 @@ A unit square is a centre and an orthonormal frame; in the coordinates of its
 frame it is `[-1/2, 1/2]²`, closed (`closedSquare`) or open (`openSquare`). A
 packing asks that every closed square lie in the closed disk and that no point
 lie in two open squares, so squares may touch each other and the circle.
-Distances use the squared Euclidean length `normSq`, never Mathlib's norm on
-`ℝ × ℝ`, which is the maximum norm. Congruence compares point sets, since a
-quarter turn of a frame describes the same square. It allows a rotation about
-the disk centre and a relabelling, but no reflection; every optimal model is
-symmetric under a reflection anyway.
+Distances use the squared Euclidean length `normSq` (Mathlib's norm on
+`ℝ × ℝ` is the maximum norm). Congruence compares point sets, since a quarter
+turn of a frame describes the same square. It allows a rotation about the disk
+centre and a relabelling; every optimal model is symmetric under a reflection,
+so reflections add nothing.
 -/
 
 noncomputable section

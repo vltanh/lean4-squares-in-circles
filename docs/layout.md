@@ -17,29 +17,26 @@ SquaresInCircles/
 └── Seven/                 n = 7
 ```
 
-`Geometry.lean` holds everything the main theorems state, the optimal radius
-and the optimal models of every case included, and `Challenge.lean` restates it
-word for word, followed by the main theorems with `sorry`. Lean moves the proofs
-inside a definition, such as the proof of `Nat.AtLeastTwo 2` behind the real
-numeral `2`, into auxiliary lemmas named after the first definition in the file
-that needs them, so the two files elaborate to identical definitions only while
-every definition stays in one file, in the same order. Edit `Geometry.lean`
-only: `scripts/verify-comparator.sh --write` copies its definitions into
-`Challenge.lean`. `comparator.json` names
-the two theorems that `lake comparator` compares between `Challenge.lean` and
-the root module `SquaresInCircles` ([Verification](verification.md)).
+`Geometry.lean` holds everything the main theorems state, including every
+case's optimal radius and models. `Challenge.lean` restates it word for word
+and states the main theorems with `sorry`; `comparator.json` has
+`lake comparator` check them against the root module
+([Verification](verification.md)). The definitions must stay in one file, in
+one order: Lean names the auxiliary lemmas inside a definition, such as the
+proof of `Nat.AtLeastTwo 2` behind the real numeral `2`, after the first
+definition in the file that needs them. Edit `Geometry.lean` only;
+`scripts/verify-comparator.sh --write` copies its definitions into
+`Challenge.lean`.
 
-Every case folder has the same two core files: `Construction.lean` (the
-optimal models pack the disk) and `Uniqueness.lean`, which ends with the
-case's `optimum`: the construction, a point of each model on the circle of the
-optimal radius and uniqueness, together as an `Optimum`
-(`Common/Optimum.lean`). No case proves its own lower bound; `Optimum.lean`
-derives it from uniqueness once for all cases. Three, four and five squares add
-`Exterior.lean` (the contact polygon, and the arcs of the squares that do not
-contain the disk centre), and three and five squares also `Containing.lean`
-(the square that does). Seven squares spread the pair theorem, the ring and
-the middle column over the files listed [below](#seven). No case imports
-another: each imports only `Common/` and its own folder.
+Every case folder has two core files: `Construction.lean` (the models pack the
+disk) and `Uniqueness.lean`, which ends with the case's `optimum`, an `Optimum`
+(`Common/Optimum.lean`) bundling the construction, a point of each model on the
+circle, and uniqueness; `Optimum.lean` derives every lower bound from
+uniqueness. Three to five squares add `Exterior.lean` (the contact polygon, and
+the arcs of the squares that avoid the disk centre), and three and five squares
+`Containing.lean` (the square that contains it). Seven squares spread the pair
+theorem, the ring and the middle column over the files [below](#seven). Each
+case imports only `Common/` and its own folder.
 
 ## `Common/`
 

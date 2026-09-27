@@ -11,6 +11,7 @@ rev = "v4.35.0-rc3"
 name = "SquaresInCircles"
 
 # The statement a reader audits. `lake comparator` compares it with the root
-# module `SquaresInCircles` (comparator.json); it is not built by default.
+# module `SquaresInCircles` (comparator.json); build it alone with
+# `lake build Challenge`.
 [[lean_lib]]
 name = "Challenge"

@@ -4,8 +4,9 @@ import Mathlib.Analysis.Real.Pi.Bounds
 /-!
 # Small-angle estimates used by the occupied-arc proofs
 
-All decimal-looking constants below are exact rational numbers.  In particular,
-no floating-point evaluation, external solver, or `native_decide` is used.
+All decimal-looking constants below are exact rational numbers, and the
+estimates follow from mathlib's rational bounds on the trigonometric functions
+and on `π`.
 The five-square auxiliary radius is `5/6`, which keeps both the strip and
 radial-extension estimates rational.
 -/

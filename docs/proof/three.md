@@ -38,8 +38,8 @@ c_1 = \left(-\tfrac12, -\tfrac5{16}\right), \qquad c_2 = \left(\tfrac12, -\tfrac
 $o$ (dashed). The circle $\Gamma_{3/8}$ about $o$ splits into three arcs of
 exactly $\frac{2\pi}3$, one in each square.
 
-*Lean: [`Three.radius`](../../SquaresInCircles/Geometry.lean#L142),
-[`Three.model`](../../SquaresInCircles/Geometry.lean#L149),
+*Lean: [`Three.radius`](../../SquaresInCircles/Geometry.lean#L140),
+[`Three.model`](../../SquaresInCircles/Geometry.lean#L147),
 [`Three.model_packing`](../../SquaresInCircles/Three/Construction.lean#L22),
 [`Three.uniqueness`](../../SquaresInCircles/Three/Uniqueness.lean#L121),
 [`Three.optimum`](../../SquaresInCircles/Three/Uniqueness.lean#L194).*
@@ -806,8 +806,8 @@ $\varepsilon\sin\delta = -1$, that is $\sin\delta = -\varepsilon$. So
 $\delta = -\varepsilon\frac\pi2$. $\square$
 
 *Lean: [`Three.apex_phase`](../../SquaresInCircles/Three/Uniqueness.lean#L48),
-[`cos_sub_distance`](../../SquaresInCircles/Common/ArcMetric.lean#L112),
-[`cos_two_pi_thirds`](../../SquaresInCircles/Common/ArcMetric.lean#L118).*
+[`cos_sub_distance`](../../SquaresInCircles/Common/ArcMetric.lean#L113),
+[`cos_two_pi_thirds`](../../SquaresInCircles/Common/ArcMetric.lean#L119).*
 
 ### Lemma 6.17 (where the squares sit)
 
@@ -937,10 +937,3 @@ from the origin; (c) is Proposition 6.3. Parts (1), (2), (3) of the theorem are
 *Lean: [`Three.optimum`](../../SquaresInCircles/Three/Uniqueness.lean#L194),
 [`Optimum.isLeast`](../../SquaresInCircles/Common/Optimum.lean#L61),
 [`Optimum.packing_iff`](../../SquaresInCircles/Common/Optimum.lean#L67).*
-
-*Remark.* An earlier formal proof of the lower bound, part (2) of
-Theorem 6.1, is kept on the
-[`legacy`](https://github.com/vltanh/lean4-squares-in-circles/tree/legacy)
-branch of the repository. It follows a different route, a case analysis of the
-relative positions of the three squares that ends in 53 rational certificates,
-and the argument of this chapter does not use it.

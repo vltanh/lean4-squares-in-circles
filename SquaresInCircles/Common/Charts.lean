@@ -4,10 +4,10 @@ import Mathlib.Analysis.SpecialFunctions.Complex.Arg
 /-!
 # Square-local circle charts
 
-A chart records a phase and a possible reversal of angular orientation.
-It is an equality of actual point-membership predicates, not a statement
-about an angular shadow.  The two absolute center coordinates can then be
-sorted without changing the planar square.
+A chart records a phase and a possible reversal of angular orientation, and
+states membership in the square as an equality of point-membership predicates.
+The two absolute center coordinates can then be sorted without changing the
+planar square.
 -/
 noncomputable section
 open Set

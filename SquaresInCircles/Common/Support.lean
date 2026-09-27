@@ -4,10 +4,10 @@ import SquaresInCircles.Common.Separation
 /-!
 # The common octagon support estimate and safe radial extension
 
-The support estimate does not require a bound on the angle between squares.
-The final `safe_openRay_of_disjoint` theorem uses an arbitrary nonzero separating
-functional from `support_separator` (`Separation.lean`).  No separating-axis
-enumeration or additional geometric hypothesis is required.
+The support estimate holds for squares at any angle to each other.
+`safe_openRay_of_disjoint` takes the separating functional of
+`support_separator` (`Separation.lean`), for any two squares with disjoint
+interiors.
 -/
 noncomputable section
 namespace SquaresInCircles

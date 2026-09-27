@@ -10,68 +10,55 @@ lake env lean SanityChecks.lean
 scripts/verify-comparator.sh
 ```
 
-Requires Elan/Lake and network access for mathlib. The build uses Lean
-`4.35.0-rc3` and mathlib `v4.35.0-rc3`: a release candidate, because
-`lake comparator` first ships with Lean `4.35.0-rc2`, and the Palomar registry
-requires it. The source contains no `sorry`, no `axiom` declarations and no
-`native_decide`.
+Needs Elan and network access for mathlib. Lean and mathlib are at
+`v4.35.0-rc3`, a release candidate whose toolchain ships `lake comparator`,
+which the Palomar registry uses. Every proof is complete and rests on
+`propext`, `Classical.choice` and `Quot.sound` alone.
 
-- `lake build` must report zero `declaration uses 'sorry'` warnings.
-- Every `#print axioms` line in the audit must read exactly
-  `[propext, Classical.choice, Quot.sound]`.
-- `sorryAx` in that output would indicate an unproved lemma;
-  `Lean.ofReduceBool` would indicate `native_decide` and compiler trust.
-- The audit also prints `Packing`, `Congruent`, `axisSquare`,
-  `optimalRadius`, `optimalPackings`, `Optimum`, the column packings of seven
-  squares and the theorem signatures for inspection.
-- `SanityChecks.lean` checks the radius and model tables, re-proves the exact
-  rational margins and the contact points of the contact polygons that the
-  proofs rely on, restates the public theorems, checks that the optimal model
-  of each `n ≤ 5` is congruent to itself, and checks the column packings of
-  seven squares, among them one with a single middle square moved; it must
-  elaborate without errors.
-- `scripts/verify-comparator.sh` checks the library against `Challenge.lean`
-  as the Palomar registry does. It first checks that the definitions in
-  `Challenge.lean` are word for word those of `SquaresInCircles/Geometry.lean`;
-  with `--write` it copies them there instead, so that only `Geometry.lean` is
-  ever edited. It then runs `lake comparator` on
-  `comparator.json`, which builds both modules in a `bwrap` sandbox and checks
-  that `optimal_radius` and `optimal_packings` have the same statements in
-  both, that every definition they use is identical, and that the proofs use
-  no axiom beyond `propext`, `Quot.sound` and `Classical.choice`; it then
-  replays the proofs through the independent kernels NanoDa and con-ron that
-  ship with the toolchain, and through Lean's.
-  It must end with `Your solution is okay!`. It needs Linux and bubblewrap.
+- `lake build` must succeed without warnings; an unfinished proof would show as
+  `declaration uses 'sorry'`.
+- Every `#print axioms` line in the audit must read
+  `[propext, Classical.choice, Quot.sound]`: an unproved lemma would add
+  `sorryAx`, and `native_decide`, which trusts the compiler,
+  `Lean.ofReduceBool`. The audit also prints `Packing`, `Congruent`,
+  `axisSquare`, `optimalRadius`, `optimalPackings`, `Optimum`, the column
+  packings and the theorem signatures for inspection.
+- `SanityChecks.lean` must elaborate without errors. It checks the radius and
+  model tables, re-proves the rational margins and polygon contact points the
+  proofs use, restates the public theorems, checks each model of `n ≤ 5`
+  congruent to itself, and checks column packings of seven squares, one with a
+  single middle square moved.
+- `scripts/verify-comparator.sh` (Linux, bubblewrap) checks the library against
+  `Challenge.lean` as Palomar does, and must end with `Your solution is okay!`.
+  It first checks that `Challenge.lean` restates the definitions of
+  `SquaresInCircles/Geometry.lean` word for word (with `--write` it copies them,
+  so only `Geometry.lean` is edited). Then `lake comparator` builds both modules
+  in a sandbox, checks that `optimal_radius` and `optimal_packings` have the
+  same statements over identical definitions and use only the three standard
+  axioms, and replays the proofs through the toolchain's NanoDa and con-ron
+  kernels and Lean's.
 
 [`.github/workflows/lean.yml`](../.github/workflows/lean.yml) runs these steps
-on every push to `main` and on pull requests, using `leanprover/lean-action`.
-Its axiom audit covers every declaration under `SquaresInCircles`, not only the
-ones printed by `AxiomAudit.lean`.
-[`.github/workflows/palomar.yml`](../.github/workflows/palomar.yml), started by
-hand, runs the Palomar registry's own mechanical verification of a commit, the
-job the registry runs after a submission, without submitting it; its report
-must end with `status: pass`.
+on every push to `main` and on pull requests; its axiom audit covers every
+declaration under `SquaresInCircles`.
+[`.github/workflows/palomar.yml`](../.github/workflows/palomar.yml), run by
+hand, runs Palomar's own mechanical verification of a commit without submitting
+it; its report must say `status: pass`.
 
-The proof pages in [`docs/proof/`](proof/README.md) link every Lean name they
-cite to its declaration, by file and line.
-[`scripts/link_lean.py`](../scripts/link_lean.py) regenerates these links, and
-fails on a name that matches no declaration or more than one.
-[`.github/workflows/docs.yml`](../.github/workflows/docs.yml) runs
-`python3 scripts/link_lean.py --check` on every push to `main` and every pull
-request that touches the Lean sources or the docs, and fails if a link is
-stale. To refresh the links after changing a Lean file, run
-`python3 scripts/link_lean.py` and commit the result. To have this done before
-every commit, run `pre-commit install` once:
-[`.pre-commit-config.yaml`](../.pre-commit-config.yaml) then refreshes the links
-whenever a commit touches the Lean sources or the docs, and stops the commit if
-any link moved, so that the refreshed pages can be staged.
+The proof pages link every Lean name they cite to its declaration, by file and
+line. `python3 scripts/link_lean.py` regenerates the links and fails on a name
+that matches no declaration or several;
+[`.github/workflows/docs.yml`](../.github/workflows/docs.yml) runs it with
+`--check` on pushes and pull requests that touch the Lean sources or the docs.
+After `pre-commit install`,
+[`.pre-commit-config.yaml`](../.pre-commit-config.yaml) refreshes the links on
+every such commit and stops it if a link moved, so the refreshed pages can be
+staged.
 
-The figures of the proof pages are drawn by the scripts in
-[`scripts/figures/`](../scripts/figures):
-[`proof_figures.py`](../scripts/figures/proof_figures.py) holds the drawing
-helpers and runs one module per chapter (`fig_*.py`). Every figure is computed
-from the same geometry as the proofs, and most assert the facts their captions
-state; running `python3 scripts/figures/proof_figures.py` redraws all of them.
+`python3 scripts/figures/proof_figures.py` redraws every figure of the proof
+pages; it holds the drawing helpers and runs one module per chapter
+([`scripts/figures/`](../scripts/figures)). The figures are computed from the
+geometry of the proofs, and most assert the facts their captions state.
 
 Build from the committed `lake-manifest.json`, which pins every dependency by
 hash. Avoid `lake update`: seven transitive packages track `main` or `master`
