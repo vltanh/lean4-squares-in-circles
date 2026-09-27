@@ -76,10 +76,10 @@ the note [5].
    packing of unit squares into a circle. *J. Global Optim.* 73 (2019)
    547–565. [doi:10.1007/s10898-018-0711-5](https://doi.org/10.1007/s10898-018-0711-5)
 2. T. Hales et al. A formal proof of the Kepler conjecture.
-   *Forum Math. Pi* 5 (2017) e2.
+   *Forum Math. Pi* 5 (2017) e2. [doi:10.1017/fmp.2017.1](https://doi.org/10.1017/fmp.2017.1)
 3. S. Hariharan, C. Birkbeck, S. Lee, H. K. G. Ma, B. Mehta, A. Poiroux,
-   M. Viazovska. A milestone in formalization: the sphere packing problem in
-   dimension 8. [arXiv:2604.23468](https://arxiv.org/abs/2604.23468) (2026).
+   M. Viazovska. Progress in formalizing sphere packing in dimension 8.
+   [arXiv:2604.23468](https://arxiv.org/abs/2604.23468) (2026).
 4. The 4th International Mathematics Summer Camp (IMSC 2026). *Marking Schemes
    and Solutions*, Day 2, Problem 6. July 2026. Not public; known to us from
    Friedman's page and [5].

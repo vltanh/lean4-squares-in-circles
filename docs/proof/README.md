@@ -366,16 +366,16 @@ geometry by the scripts in [`scripts/figures/`](../../scripts/figures).
    packing of unit squares into a circle. *J. Global Optim.* 73 (2019)
    547–565. [doi:10.1007/s10898-018-0711-5](https://doi.org/10.1007/s10898-018-0711-5)
 3. T. Hales et al. A formal proof of the Kepler conjecture.
-   *Forum Math. Pi* 5 (2017) e2.
+   *Forum Math. Pi* 5 (2017) e2. [doi:10.1017/fmp.2017.1](https://doi.org/10.1017/fmp.2017.1)
 4. S. Hariharan, C. Birkbeck, S. Lee, H. K. G. Ma, B. Mehta, A. Poiroux,
-   M. Viazovska. A milestone in formalization: the sphere packing problem in
-   dimension 8. [arXiv:2604.23468](https://arxiv.org/abs/2604.23468) (2026).
+   M. Viazovska. Progress in formalizing sphere packing in dimension 8.
+   [arXiv:2604.23468](https://arxiv.org/abs/2604.23468) (2026).
 5. The mathlib Community. The Lean mathematical library. In *Proceedings of
    the 9th ACM SIGPLAN International Conference on Certified Programs and
-   Proofs (CPP 2020)*, 367–381.
+   Proofs (CPP 2020)*, 367–381. [doi:10.1145/3372885.3373824](https://doi.org/10.1145/3372885.3373824)
 6. L. de Moura, S. Ullrich. The Lean 4 theorem prover and programming
    language. In *Automated Deduction – CADE 28*, Lecture Notes in Computer
-   Science 12699 (2021), 625–635.
+   Science 12699 (2021), 625–635. [doi:10.1007/978-3-030-79876-5_37](https://doi.org/10.1007/978-3-030-79876-5_37)
 7. The 4th International Mathematics Summer Camp (IMSC 2026). *Marking Schemes
    and Solutions*, Day 2, Problem 6. July 2026. Not public.
 8. W. Zhao. Four congruent squares in a unit disk: an elementary proof that
