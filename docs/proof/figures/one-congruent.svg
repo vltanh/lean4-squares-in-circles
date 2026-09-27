@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="681" height="314" viewBox="0 0 681 314" role="img" aria-label="Left: the model Q(0, 0), the unit square centred at the origin. Right: a unit square S centred at the disk centre o, with the axes of the frame at o turned by the phase theta S along its sides; the frame carries the model onto S">
+<title>Left: the model Q(0, 0), the unit square centred at the origin. Right: a unit square S centred at the disk centre o, with the axes of the frame at o turned by the phase theta S along its sides; the frame carries the model onto S</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<circle cx="155.8" cy="163.0" r="102.5" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="83.2,235.5 228.2,235.5 228.2,90.5 83.2,90.5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<line x1="25.2" y1="163.0" x2="289.2" y2="163.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="155.8" y1="290.6" x2="155.8" y2="29.6" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
+<circle cx="83.2" cy="235.5" r="2.8" fill="#1f2937"/>
+<circle cx="228.2" cy="235.5" r="2.8" fill="#1f2937"/>
+<circle cx="228.2" cy="90.5" r="2.8" fill="#1f2937"/>
+<circle cx="83.2" cy="90.5" r="2.8" fill="#1f2937"/>
+<circle cx="155.8" cy="163.0" r="3.2" fill="#1f2937"/>
+<text x="163.0" y="174.6" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">0</text>
+<text x="90.5" y="35.4" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">Q(0, 0)</text>
+<line x1="395.0" y1="163.0" x2="658.9" y2="163.0" stroke="#9ca3af" stroke-width="1"/>
+<circle cx="525.5" cy="163.0" r="102.5" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="490.4,259.3 621.8,198.1 560.6,66.7 429.2,127.9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<line x1="525.5" y1="163.0" x2="658.9" y2="163.0" stroke="#9ca3af" stroke-width="1"/>
+<line x1="525.5" y1="163.0" x2="650.3" y2="104.8" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="525.5" y1="163.0" x2="470.3" y2="44.7" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
+<circle cx="490.4" cy="259.3" r="2.8" fill="#1f2937"/>
+<circle cx="621.8" cy="198.1" r="2.8" fill="#1f2937"/>
+<circle cx="560.6" cy="66.7" r="2.8" fill="#1f2937"/>
+<circle cx="429.2" cy="127.9" r="2.8" fill="#1f2937"/>
+<path d="M 569.0 163.0 A 43.5 43.5 0 0 0 564.9 144.6" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-linecap="round"/>
+<text x="582.1" y="150.4" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">θ<tspan dy="4.2" font-size="9.5">S</tspan></text>
+<text x="656.9" y="101.7" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">θ<tspan dy="4.2" font-size="9.5">S</tspan></text>
+<circle cx="525.5" cy="163.0" r="3.2" fill="#1f2937"/>
+<text x="518.2" y="174.6" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
+<text x="479.2" y="146.1" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">S</text>
+<line x1="293.5" y1="252.9" x2="387.8" y2="252.9" stroke="#1f2937" stroke-width="1.4" marker-end="url(#arrow)"/>
+<text x="339.9" y="273.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">turn by θ<tspan dy="3.9" font-size="8.8">S</tspan></text>
+</svg>

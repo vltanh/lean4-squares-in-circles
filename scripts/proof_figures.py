@@ -3,6 +3,11 @@
 
     python3 scripts/proof_figures.py
 
+This module draws the figures shared since the first version of the pages and
+holds the drawing helpers; the modules fig_front.py (Chapters 1 to 3),
+fig_one.py to fig_seven.py (Chapters 4 to 9) and fig_appa.py to fig_appd.py
+(Appendices A to D) draw the figures of each chapter, and main() runs them all.
+
 Arcs of squares on the auxiliary circles are found by sampling the circle and
 testing membership in the open squares, so every figure is computed from the
 same geometry as the proofs.
@@ -1468,6 +1473,13 @@ def main():
             'with the unit circle',
             [(1, -0.5), (1, 0.5), (-1, -0.5), (-1, 0.5), (0, -1), (0, 0),
              (0, 1)], math.sqrt(13) / 2, 1, grey=(5,))
+
+    # The figures of each chapter, drawn by one module per chapter.
+    import importlib
+    for module in ('fig_front', 'fig_one', 'fig_two', 'fig_three', 'fig_four',
+                   'fig_five', 'fig_seven', 'fig_appa', 'fig_appb', 'fig_appc',
+                   'fig_appd'):
+        importlib.import_module(module).main()
 
 
 if __name__ == '__main__':

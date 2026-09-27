@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="612" height="408" viewBox="0 0 612 408" role="img" aria-label="The sine on the interval from 0 to pi/2 and its chord between arcsin u and arcsin v: the midpoint of the chord lies below the curve at mu, so a theta with sine less than (u + v)/2 lies to the left of mu">
+<title>The sine on the interval from 0 to pi/2 and its chord between arcsin u and arcsin v: the midpoint of the chord lies below the curve at mu, so a theta with sine less than (u + v)/2 lies to the left of mu</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="157.3" y1="324.0" x2="157.3" y2="248.7" stroke="#9ca3af" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="72.0" y1="248.7" x2="157.3" y2="248.7" stroke="#9ca3af" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="423.0" y1="324.0" x2="423.0" y2="85.6" stroke="#9ca3af" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="72.0" y1="85.6" x2="423.0" y2="85.6" stroke="#9ca3af" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="72.0" y1="167.2" x2="526.0" y2="167.2" stroke="#ea580c" stroke-width="1.2" stroke-dasharray="5 4"/>
+<line x1="290.2" y1="324.0" x2="290.2" y2="147.7" stroke="#1f2937" stroke-width="1" stroke-dasharray="2 3"/>
+<line x1="217.7" y1="324.0" x2="217.7" y2="199.3" stroke="#16a34a" stroke-width="1.4"/>
+<polyline points="72.0,324.0 74.0,322.3 75.9,320.5 77.8,318.8 79.8,317.0 81.8,315.3 83.7,313.5 85.6,311.8 87.6,310.0 89.5,308.3 91.5,306.5 93.5,304.8 95.4,303.1 97.3,301.3 99.3,299.6 101.2,297.8 103.2,296.1 105.2,294.4 107.1,292.6 109.1,290.9 111.0,289.2 113.0,287.4 114.9,285.7 116.8,284.0 118.8,282.3 120.8,280.6 122.7,278.8 124.6,277.1 126.6,275.4 128.5,273.7 130.5,272.0 132.4,270.3 134.4,268.6 136.4,266.9 138.3,265.2 140.2,263.5 142.2,261.8 144.2,260.1 146.1,258.4 148.1,256.7 150.0,255.0 151.9,253.4 153.9,251.7 155.9,250.0 157.8,248.3 159.8,246.7 161.7,245.0 163.6,243.4 165.6,241.7 167.6,240.1 169.5,238.4 171.5,236.8 173.4,235.1 175.3,233.5 177.3,231.9 179.2,230.3 181.2,228.6 183.2,227.0 185.1,225.4 187.0,223.8 189.0,222.2 191.0,220.6 192.9,219.0 194.8,217.4 196.8,215.9 198.7,214.3 200.7,212.7 202.7,211.2 204.6,209.6 206.6,208.1 208.5,206.5 210.4,205.0 212.4,203.4 214.3,201.9 216.3,200.4 218.2,198.9 220.2,197.4 222.1,195.9 224.1,194.4 226.1,192.9 228.0,191.4 230.0,189.9 231.9,188.4 233.8,187.0 235.8,185.5 237.8,184.0 239.7,182.6 241.6,181.2 243.6,179.7 245.6,178.3 247.5,176.9 249.5,175.5 251.4,174.1 253.3,172.7 255.3,171.3 257.2,169.9 259.2,168.5 261.1,167.2 263.1,165.8 265.1,164.4 267.0,163.1 268.9,161.8 270.9,160.4 272.8,159.1 274.8,157.8 276.8,156.5 278.7,155.2 280.7,153.9 282.6,152.6 284.6,151.4 286.5,150.1 288.4,148.8 290.4,147.6 292.3,146.4 294.3,145.1 296.2,143.9 298.2,142.7 300.1,141.5 302.1,140.3 304.1,139.1 306.0,137.9 307.9,136.8 309.9,135.6 311.9,134.5 313.8,133.3 315.8,132.2 317.7,131.1 319.7,130.0 321.6,128.9 323.6,127.8 325.5,126.7 327.5,125.6 329.4,124.5 331.4,123.5 333.3,122.4 335.3,121.4 337.2,120.4 339.2,119.4 341.1,118.4 343.0,117.4 345.0,116.4 347.0,115.4 348.9,114.4 350.9,113.5 352.8,112.5 354.8,111.6 356.7,110.7 358.6,109.8 360.6,108.9 362.6,108.0 364.5,107.1 366.4,106.2 368.4,105.3 370.4,104.5 372.3,103.7 374.3,102.8 376.2,102.0 378.2,101.2 380.1,100.4 382.1,99.6 384.0,98.8 385.9,98.1 387.9,97.3 389.8,96.6 391.8,95.8 393.8,95.1 395.7,94.4 397.6,93.7 399.6,93.0 401.6,92.3 403.5,91.7 405.5,91.0 407.4,90.4 409.3,89.7 411.3,89.1 413.3,88.5 415.2,87.9 417.2,87.3 419.1,86.8 421.0,86.2 423.0,85.6 424.9,85.1 426.9,84.6 428.9,84.1 430.8,83.6 432.8,83.1 434.7,82.6 436.6,82.1 438.6,81.7 440.6,81.2 442.5,80.8 444.5,80.3 446.4,79.9 448.3,79.5 450.3,79.2 452.2,78.8 454.2,78.4 456.2,78.1 458.1,77.7 460.0,77.4 462.0,77.1 463.9,76.8 465.9,76.5 467.9,76.2 469.8,75.9 471.8,75.7 473.7,75.4 475.6,75.2 477.6,75.0 479.6,74.8 481.5,74.6 483.5,74.4 485.4,74.2 487.3,74.1 489.3,73.9 491.2,73.8 493.2,73.7 495.2,73.5 497.1,73.4 499.0,73.4 501.0,73.3 502.9,73.2 504.9,73.2 506.9,73.1 508.8,73.1 510.7,73.1 512.7,73.1 514.6,73.1 516.6,73.1 518.5,73.2 520.5,73.2 522.5,73.3 524.4,73.3 526.4,73.4 528.3,73.5 530.2,73.6 532.2,73.7 534.2,73.9 536.1,74.0 538.0,74.2 540.0,74.3" fill="none" fill-opacity="1.0" stroke="#2563eb" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="157.3" y1="248.7" x2="423.0" y2="85.6" stroke="#ea580c" stroke-width="1.8"/>
+<circle cx="157.3" cy="248.7" r="3.8" fill="#ea580c"/>
+<circle cx="423.0" cy="85.6" r="3.8" fill="#ea580c"/>
+<circle cx="290.2" cy="167.2" r="3.8" fill="#ea580c"/>
+<circle cx="290.2" cy="147.7" r="3.8" fill="#2563eb"/>
+<circle cx="217.7" cy="199.3" r="3.8" fill="#16a34a"/>
+<line x1="72.0" y1="324.0" x2="534.4" y2="324.0" stroke="#1f2937" stroke-width="1"/>
+<path d="M 540.0 324.0 L 532.0 327.4 L 532.0 320.6 z" fill="#1f2937"/>
+<line x1="72.0" y1="324.0" x2="72.0" y2="53.6" stroke="#1f2937" stroke-width="1"/>
+<path d="M 72.0 48.0 L 75.4 56.0 L 68.6 56.0 z" fill="#1f2937"/>
+<text x="540.0" y="343.2" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic"></text>
+<text x="60.0" y="50.4" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic"></text>
+<line x1="157.3" y1="328.8" x2="157.3" y2="319.2" stroke="#1f2937" stroke-width="1"/>
+<text x="157.3" y="344.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">arcsin <tspan font-style="italic">u</tspan></text>
+<line x1="217.7" y1="328.8" x2="217.7" y2="319.2" stroke="#1f2937" stroke-width="1"/>
+<text x="217.7" y="344.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle"></text>
+<line x1="290.2" y1="328.8" x2="290.2" y2="319.2" stroke="#1f2937" stroke-width="1"/>
+<text x="290.2" y="344.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle"></text>
+<line x1="423.0" y1="328.8" x2="423.0" y2="319.2" stroke="#1f2937" stroke-width="1"/>
+<text x="423.0" y="344.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">arcsin <tspan font-style="italic">v</tspan></text>
+<line x1="67.2" y1="248.7" x2="76.8" y2="248.7" stroke="#1f2937" stroke-width="1"/>
+<text x="62.4" y="248.7" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle"><tspan font-style="italic">u</tspan></text>
+<line x1="67.2" y1="167.2" x2="76.8" y2="167.2" stroke="#1f2937" stroke-width="1"/>
+<text x="62.4" y="167.2" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">(<tspan font-style="italic">u</tspan> + <tspan font-style="italic">v</tspan>)/2</text>
+<line x1="67.2" y1="85.6" x2="76.8" y2="85.6" stroke="#1f2937" stroke-width="1"/>
+<text x="62.4" y="85.6" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle"><tspan font-style="italic">v</tspan></text>
+<text x="217.7" y="344.4" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">θ</text>
+<text x="290.2" y="344.4" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">μ</text>
+<text x="478.2" y="58.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle">sin</text>
+</svg>

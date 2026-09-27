@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="819" height="409" viewBox="0 0 819 409" role="img" aria-label="Two exterior squares in their charts with their caps on the circle of radius 3/8: a full cap, symmetric about t = 0, and a cap clipped by the lower edge; both are longer than a third of the circle">
+<title>Two exterior squares in their charts with their caps on the circle of radius 3/8: a full cap, symmetric about t = 0, and a cap clipped by the lower edge; both are longer than a third of the circle</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="26.2" y1="255.8" x2="387.0" y2="255.8" stroke="#9ca3af" stroke-width="1"/>
+<text x="387.0" y="245.5" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="end" dominant-baseline="middle">t = 0</text>
+<polygon points="141.0,346.0 346.0,346.0 346.0,141.0 141.0,141.0" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<circle cx="243.5" cy="243.5" r="3.2" fill="#2563eb"/>
+<text x="251.7" y="231.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle" font-style="italic">(a<tspan dy="3.9" font-size="8.8">S</tspan><tspan dy="-3.9">, </tspan>b<tspan dy="3.9" font-size="8.8">S</tspan><tspan dy="-3.9">)</tspan></text>
+<line x1="141.0" y1="382.9" x2="141.0" y2="61.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="26.2" y1="346.0" x2="387.0" y2="346.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4"/>
+<circle cx="120.5" cy="255.8" r="76.9" fill="none" stroke="#9ca3af" stroke-width="1.2"/>
+<path d="M 141.0 329.9 A 76.9 76.9 0 0 0 141.0 181.7" fill="none" stroke="#ea580c" stroke-width="5" stroke-linecap="round"/>
+<line x1="120.5" y1="255.8" x2="141.0" y2="181.7" stroke="#1f2937" stroke-width="1"/>
+<circle cx="141.0" cy="181.7" r="3.4" fill="#1f2937"/>
+<line x1="120.5" y1="255.8" x2="141.0" y2="329.9" stroke="#1f2937" stroke-width="1"/>
+<circle cx="141.0" cy="329.9" r="3.4" fill="#1f2937"/>
+<path d="M 143.1 255.8 A 22.6 22.6 0 0 0 126.5 234.1" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-linecap="round"/>
+<text x="148.2" y="234.7" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">A<tspan dy="3.9" font-size="8.8">S</tspan></text>
+<line x1="120.5" y1="255.8" x2="141.0" y2="329.9" stroke="#9ca3af" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="141.0" cy="329.9" r="3.4" fill="#9ca3af"/>
+<path d="M 128.7 285.4 A 30.8 30.8 0 0 0 151.2 255.8" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-linecap="round"/>
+<text x="156.4" y="283.1" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">A<tspan dy="3.9" font-size="8.8">S</tspan></text>
+<text x="202.5" y="30.3" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle">full cap: A ≤ V</text>
+<text x="202.5" y="50.8" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle">half-width 75°</text>
+<circle cx="120.5" cy="255.8" r="3.2" fill="#1f2937"/>
+<text x="114.3" y="270.1" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
+<line x1="436.2" y1="255.8" x2="797.0" y2="255.8" stroke="#9ca3af" stroke-width="1"/>
+<text x="797.0" y="245.5" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="end" dominant-baseline="middle">t = 0</text>
+<polygon points="534.6,300.9 739.6,300.9 739.6,95.9 534.6,95.9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<circle cx="637.1" cy="198.4" r="3.2" fill="#2563eb"/>
+<text x="645.3" y="186.1" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle" font-style="italic">(a<tspan dy="3.9" font-size="8.8">S</tspan><tspan dy="-3.9">, </tspan>b<tspan dy="3.9" font-size="8.8">S</tspan><tspan dy="-3.9">)</tspan></text>
+<line x1="534.6" y1="382.9" x2="534.6" y2="61.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="436.2" y1="300.9" x2="797.0" y2="300.9" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4"/>
+<circle cx="530.5" cy="255.8" r="76.9" fill="none" stroke="#9ca3af" stroke-width="1.2"/>
+<path d="M 592.8 300.9 A 76.9 76.9 0 0 0 534.6 179.0" fill="none" stroke="#ea580c" stroke-width="5" stroke-linecap="round"/>
+<line x1="530.5" y1="255.8" x2="534.6" y2="179.0" stroke="#1f2937" stroke-width="1"/>
+<circle cx="534.6" cy="179.0" r="3.4" fill="#1f2937"/>
+<line x1="530.5" y1="255.8" x2="592.8" y2="300.9" stroke="#1f2937" stroke-width="1"/>
+<circle cx="592.8" cy="300.9" r="3.4" fill="#1f2937"/>
+<path d="M 553.0 255.8 A 22.6 22.6 0 0 0 531.7 233.3" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-linecap="round"/>
+<text x="555.8" y="231.8" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">A<tspan dy="3.9" font-size="8.8">S</tspan></text>
+<path d="M 555.4 273.8 A 30.8 30.8 0 0 0 561.2 255.8" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-linecap="round"/>
+<text x="573.4" y="269.7" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">V<tspan dy="3.9" font-size="8.8">S</tspan></text>
+<text x="612.5" y="30.3" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle">clipped cap: V &lt; A</text>
+<text x="612.5" y="50.8" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle">half-width 61°</text>
+<circle cx="530.5" cy="255.8" r="3.2" fill="#1f2937"/>
+<text x="524.3" y="270.1" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
+</svg>

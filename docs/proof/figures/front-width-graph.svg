@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="661" height="280" viewBox="0 0 661 280" role="img" aria-label="The width of a square in a unit direction n: one half when n is parallel to a side, root 2 over 2 along a diagonal, and in between otherwise, as a function of the angle between n and a side">
+<title>The width of a square in a unit direction n: one half when n is parallel to a side, root 2 over 2 along a diagonal, and in between otherwise, as a function of the angle between n and a side</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<polygon points="71.1,200.9 189.1,200.9 189.1,82.9 71.1,82.9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<circle cx="130.1" cy="141.9" r="3.2" fill="#2563eb"/>
+<line x1="130.1" y1="141.9" x2="189.1" y2="141.9" stroke="#ea580c" stroke-width="2.6"/>
+<line x1="189.1" y1="195.0" x2="189.1" y2="88.8" stroke="#ea580c" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="198.5" y1="141.9" x2="226.0" y2="141.9" stroke="#ea580c" stroke-width="1.4"/>
+<path d="M 231.6 141.9 L 223.6 145.3 L 223.6 138.5 z" fill="#ea580c"/>
+<line x1="130.1" y1="141.9" x2="189.1" y2="82.9" stroke="#16a34a" stroke-width="2.6"/>
+<line x1="226.6" y1="120.4" x2="151.6" y2="45.4" stroke="#16a34a" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="195.8" y1="76.2" x2="215.2" y2="56.8" stroke="#16a34a" stroke-width="1.4"/>
+<path d="M 219.1 52.9 L 215.9 60.9 L 211.1 56.1 z" fill="#16a34a"/>
+<text x="163.1" y="153.7" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle">½</text>
+<text x="163.6" y="104.4" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="end" dominant-baseline="middle">√2/2</text>
+<text x="94.7" y="177.3" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">U</text>
+<line x1="295.3" y1="162.1" x2="625.7" y2="162.1" stroke="#e5e7eb" stroke-width="1"/>
+<line x1="295.3" y1="57.4" x2="625.7" y2="57.4" stroke="#e5e7eb" stroke-width="1"/>
+<polyline points="295.3,162.1 296.7,158.8 298.1,155.6 299.4,152.4 300.8,149.2 302.2,146.1 303.6,143.1 304.9,140.1 306.3,137.1 307.7,134.2 309.1,131.3 310.4,128.5 311.8,125.7 313.2,123.0 314.6,120.3 315.9,117.7 317.3,115.1 318.7,112.6 320.1,110.1 321.5,107.7 322.8,105.3 324.2,103.0 325.6,100.7 327.0,98.5 328.3,96.4 329.7,94.3 331.1,92.2 332.5,90.2 333.8,88.3 335.2,86.4 336.6,84.6 338.0,82.8 339.4,81.1 340.7,79.5 342.1,77.9 343.5,76.4 344.9,74.9 346.2,73.5 347.6,72.1 349.0,70.8 350.4,69.6 351.7,68.4 353.1,67.3 354.5,66.2 355.9,65.2 357.2,64.3 358.6,63.4 360.0,62.6 361.4,61.8 362.8,61.1 364.1,60.5 365.5,59.9 366.9,59.4 368.3,58.9 369.6,58.5 371.0,58.2 372.4,57.9 373.8,57.7 375.1,57.5 376.5,57.4 377.9,57.4 379.3,57.4 380.7,57.5 382.0,57.7 383.4,57.9 384.8,58.2 386.2,58.5 387.5,58.9 388.9,59.4 390.3,59.9 391.7,60.5 393.0,61.1 394.4,61.8 395.8,62.6 397.2,63.4 398.5,64.3 399.9,65.2 401.3,66.2 402.7,67.3 404.1,68.4 405.4,69.6 406.8,70.8 408.2,72.1 409.6,73.5 410.9,74.9 412.3,76.4 413.7,77.9 415.1,79.5 416.4,81.1 417.8,82.8 419.2,84.6 420.6,86.4 422.0,88.3 423.3,90.2 424.7,92.2 426.1,94.3 427.5,96.4 428.8,98.5 430.2,100.7 431.6,103.0 433.0,105.3 434.3,107.7 435.7,110.1 437.1,112.6 438.5,115.1 439.9,117.7 441.2,120.3 442.6,123.0 444.0,125.7 445.4,128.5 446.7,131.3 448.1,134.2 449.5,137.1 450.9,140.1 452.2,143.1 453.6,146.1 455.0,149.2 456.4,152.4 457.7,155.6 459.1,158.8 460.5,162.1 461.9,158.8 463.3,155.6 464.6,152.4 466.0,149.2 467.4,146.1 468.8,143.1 470.1,140.1 471.5,137.1 472.9,134.2 474.3,131.3 475.6,128.5 477.0,125.7 478.4,123.0 479.8,120.3 481.1,117.7 482.5,115.1 483.9,112.6 485.3,110.1 486.7,107.7 488.0,105.3 489.4,103.0 490.8,100.7 492.2,98.5 493.5,96.4 494.9,94.3 496.3,92.2 497.7,90.2 499.0,88.3 500.4,86.4 501.8,84.6 503.2,82.8 504.6,81.1 505.9,79.5 507.3,77.9 508.7,76.4 510.1,74.9 511.4,73.5 512.8,72.1 514.2,70.8 515.6,69.6 516.9,68.4 518.3,67.3 519.7,66.2 521.1,65.2 522.4,64.3 523.8,63.4 525.2,62.6 526.6,61.8 528.0,61.1 529.3,60.5 530.7,59.9 532.1,59.4 533.5,58.9 534.8,58.5 536.2,58.2 537.6,57.9 539.0,57.7 540.3,57.5 541.7,57.4 543.1,57.4 544.5,57.4 545.9,57.5 547.2,57.7 548.6,57.9 550.0,58.2 551.4,58.5 552.7,58.9 554.1,59.4 555.5,59.9 556.9,60.5 558.2,61.1 559.6,61.8 561.0,62.6 562.4,63.4 563.7,64.3 565.1,65.2 566.5,66.2 567.9,67.3 569.3,68.4 570.6,69.6 572.0,70.8 573.4,72.1 574.8,73.5 576.1,74.9 577.5,76.4 578.9,77.9 580.3,79.5 581.6,81.1 583.0,82.8 584.4,84.6 585.8,86.4 587.2,88.3 588.5,90.2 589.9,92.2 591.3,94.3 592.7,96.4 594.0,98.5 595.4,100.7 596.8,103.0 598.2,105.3 599.5,107.7 600.9,110.1 602.3,112.6 603.7,115.1 605.0,117.7 606.4,120.3 607.8,123.0 609.2,125.7 610.6,128.5 611.9,131.3 613.3,134.2 614.7,137.1 616.1,140.1 617.4,143.1 618.8,146.1 620.2,149.2 621.6,152.4 622.9,155.6 624.3,158.8 625.7,162.1" fill="none" fill-opacity="1.0" stroke="#2563eb" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="295.3" y1="212.7" x2="636.2" y2="212.7" stroke="#1f2937" stroke-width="1"/>
+<path d="M 644.6 212.7 L 636.6 216.1 L 636.6 209.3 z" fill="#1f2937"/>
+<line x1="295.3" y1="212.7" x2="295.3" y2="30.6" stroke="#1f2937" stroke-width="1"/>
+<path d="M 295.3 25.6 L 298.7 33.6 L 291.9 33.6 z" fill="#1f2937"/>
+<line x1="295.3" y1="216.2" x2="295.3" y2="209.2" stroke="#1f2937" stroke-width="1"/>
+<text x="295.3" y="228.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">0</text>
+<line x1="377.9" y1="216.2" x2="377.9" y2="209.2" stroke="#1f2937" stroke-width="1"/>
+<text x="377.9" y="228.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π/4</text>
+<line x1="460.5" y1="216.2" x2="460.5" y2="209.2" stroke="#1f2937" stroke-width="1"/>
+<text x="460.5" y="228.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π/2</text>
+<line x1="543.1" y1="216.2" x2="543.1" y2="209.2" stroke="#1f2937" stroke-width="1"/>
+<text x="543.1" y="228.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">3π/4</text>
+<line x1="625.7" y1="216.2" x2="625.7" y2="209.2" stroke="#1f2937" stroke-width="1"/>
+<text x="625.7" y="228.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π</text>
+<text x="288.2" y="162.1" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">½</text>
+<text x="288.2" y="57.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">√2/2</text>
+<circle cx="295.3" cy="162.1" r="3.4" fill="#ea580c"/>
+<circle cx="460.5" cy="162.1" r="3.4" fill="#ea580c"/>
+<circle cx="625.7" cy="162.1" r="3.4" fill="#ea580c"/>
+<circle cx="377.9" cy="57.4" r="3.4" fill="#16a34a"/>
+<circle cx="543.1" cy="57.4" r="3.4" fill="#16a34a"/>
+<text x="460.5" y="248.1" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">the angle between <tspan font-style="italic">n</tspan> and a side of <tspan font-style="italic">U</tspan></text>
+<text x="304.7" y="28.6" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">w<tspan dy="4.2" font-size="9.5">U</tspan><tspan dy="-4.2">(n)</tspan></text>
+</svg>

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="468" viewBox="0 0 440 468" role="img" aria-label="The admissible states in the (A, v)-plane cut into segments of constant label: horizontal for axial labels, of slope 9/4 for side labels. For the source label 0.55 the orange dots mark the end of each segment where the target support is least: the circle or tie line for axial labels, the tie line below the switch and the circle or diagonal above it">
+<title>The admissible states in the (A, v)-plane cut into segments of constant label: horizontal for axial labels, of slope 9/4 for side labels. For the source label 0.55 the orange dots mark the end of each segment where the target support is least: the circle or tie line for axial labels, the tie line below the switch and the circle or diagonal above it</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="18.0" y1="422.2" x2="422.2" y2="422.2" stroke="#9ca3af" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="18.0" y1="450.4" x2="18.0" y2="18.0" stroke="#9ca3af" stroke-width="1" marker-end="url(#arrow)"/>
+<text x="422.2" y="407.1" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="end" dominant-baseline="middle" font-style="italic">A</text>
+<text x="28.1" y="18.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="start" dominant-baseline="middle" font-style="italic">v</text>
+<line x1="46.2" y1="425.7" x2="46.2" y2="418.7" stroke="#9ca3af" stroke-width="1.2"/>
+<text x="46.2" y="439.5" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle">0.5</text>
+<line x1="281.2" y1="425.7" x2="281.2" y2="418.7" stroke="#9ca3af" stroke-width="1.2"/>
+<text x="281.2" y="439.5" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle">1</text>
+<line x1="15.6" y1="187.2" x2="20.4" y2="187.2" stroke="#9ca3af" stroke-width="1.2"/>
+<text x="13.1" y="187.2" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="end" dominant-baseline="middle">0.5</text>
+<polygon points="46.2,422.2 390.3,422.2 389.5,419.6 388.8,417.1 388.0,414.5 387.2,412.0 386.5,409.4 385.7,406.8 384.9,404.3 384.1,401.7 383.3,399.2 382.5,396.7 381.6,394.1 380.8,391.6 380.0,389.0 379.1,386.5 378.2,384.0 377.4,381.5 376.5,378.9 375.6,376.4 374.7,373.9 373.8,371.4 372.9,368.9 372.0,366.4 371.1,363.8 370.2,361.3 369.2,358.8 368.3,356.3 367.3,353.8 366.4,351.4 365.4,348.9 364.4,346.4 363.5,343.9 362.5,341.4 361.5,338.9 360.5,336.5 359.4,334.0 358.4,331.5 357.4,329.1 356.3,326.6 355.3,324.1 354.2,321.7 353.2,319.2 352.1,316.8 351.0,314.3 350.0,311.9 348.9,309.5 347.8,307.0 346.7,304.6 345.5,302.2 344.4,299.8 343.3,297.3 342.1,294.9 341.0,292.5 339.8,290.1 338.7,287.7 337.5,285.3 337.5,285.3 143.9,126.9 106.5,126.9 46.2,187.2" fill="#dbeafe" stroke="none" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="337.5,285.3 336.3,282.9 335.2,280.5 334.0,278.1 332.8,275.7 331.6,273.3 330.4,271.0 329.1,268.6 327.9,266.2 326.7,263.8 325.4,261.5 324.2,259.1 322.9,256.8 321.6,254.4 320.4,252.1 319.1,249.7 317.8,247.4 316.5,245.0 315.2,242.7 313.9,240.4 312.6,238.1 311.3,235.7 309.9,233.4 308.6,231.1 307.2,228.8 305.9,226.5 304.5,224.2 303.1,221.9 301.8,219.6 300.4,217.3 299.0,215.1 297.6,212.8 296.2,210.5 294.8,208.2 293.4,206.0 291.9,203.7 290.5,201.5 289.1,199.2 287.6,197.0 286.2,194.7 284.7,192.5 283.2,190.3 281.8,188.0 280.3,185.8 278.8,183.6 277.3,181.4 275.8,179.2 274.3,177.0 272.8,174.8 271.2,172.6 269.7,170.4 268.2,168.2 266.6,166.0 265.1,163.9 263.5,161.7 261.9,159.5 260.4,157.4 258.8,155.2 257.2,153.1 255.6,150.9 254.0,148.8 252.4,146.7 250.8,144.5 249.2,142.4 247.6,140.3 245.9,138.2 244.3,136.1 242.6,134.0 241.0,131.9 239.3,129.8 237.7,127.7 236.0,125.6 234.3,123.5 232.6,121.4 230.9,119.4 229.2,117.3 227.5,115.3 225.8,113.2 224.1,111.2 222.4,109.1 220.6,107.1 218.9,105.1 217.2,103.0 215.4,101.0 213.7,99.0 211.9,97.0 210.1,95.0 208.3,93.0 206.6,91.0 204.8,89.0 203.0,87.1 201.2,85.1 199.4,83.1 197.6,81.2 195.7,79.2 193.9,77.2 192.1,75.3 190.3,73.4 188.4,71.4 186.6,69.5 184.7,67.6 182.8,65.7 181.0,63.8 179.1,61.9 177.2,60.0 175.3,58.1 173.9,59.5 143.9,126.9" fill="#dcfce7" stroke="none" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="173.9,59.5 106.5,126.9 143.9,126.9" fill="#e5e7eb" stroke="none" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="46.2,422.2 390.3,422.2 389.5,419.6 388.8,417.1 388.0,414.5 387.2,412.0 386.5,409.4 385.7,406.8 384.9,404.3 384.1,401.7 383.3,399.2 382.5,396.7 381.6,394.1 380.8,391.6 380.0,389.0 379.1,386.5 378.2,384.0 377.4,381.5 376.5,378.9 375.6,376.4 374.7,373.9 373.8,371.4 372.9,368.9 372.0,366.4 371.1,363.8 370.2,361.3 369.2,358.8 368.3,356.3 367.3,353.8 366.4,351.4 365.4,348.9 364.4,346.4 363.5,343.9 362.5,341.4 361.5,338.9 360.5,336.5 359.4,334.0 358.4,331.5 357.4,329.1 356.3,326.6 355.3,324.1 354.2,321.7 353.2,319.2 352.1,316.8 351.0,314.3 350.0,311.9 348.9,309.5 347.8,307.0 346.7,304.6 345.5,302.2 344.4,299.8 343.3,297.3 342.1,294.9 341.0,292.5 339.8,290.1 338.7,287.7 337.5,285.3 336.3,282.9 335.2,280.5 334.0,278.1 332.8,275.7 331.6,273.3 330.4,271.0 329.1,268.6 327.9,266.2 326.7,263.8 325.4,261.5 324.2,259.1 322.9,256.8 321.6,254.4 320.4,252.1 319.1,249.7 317.8,247.4 316.5,245.0 315.2,242.7 313.9,240.4 312.6,238.1 311.3,235.7 309.9,233.4 308.6,231.1 307.2,228.8 305.9,226.5 304.5,224.2 303.1,221.9 301.8,219.6 300.4,217.3 299.0,215.1 297.6,212.8 296.2,210.5 294.8,208.2 293.4,206.0 291.9,203.7 290.5,201.5 289.1,199.2 287.6,197.0 286.2,194.7 284.7,192.5 283.2,190.3 281.8,188.0 280.3,185.8 278.8,183.6 277.3,181.4 275.8,179.2 274.3,177.0 272.8,174.8 271.2,172.6 269.7,170.4 268.2,168.2 266.6,166.0 265.1,163.9 263.5,161.7 261.9,159.5 260.4,157.4 258.8,155.2 257.2,153.1 255.6,150.9 254.0,148.8 252.4,146.7 250.8,144.5 249.2,142.4 247.6,140.3 245.9,138.2 244.3,136.1 242.6,134.0 241.0,131.9 239.3,129.8 237.7,127.7 236.0,125.6 234.3,123.5 232.6,121.4 230.9,119.4 229.2,117.3 227.5,115.3 225.8,113.2 224.1,111.2 222.4,109.1 220.6,107.1 218.9,105.1 217.2,103.0 215.4,101.0 213.7,99.0 211.9,97.0 210.1,95.0 208.3,93.0 206.6,91.0 204.8,89.0 203.0,87.1 201.2,85.1 199.4,83.1 197.6,81.2 195.7,79.2 193.9,77.2 192.1,75.3 190.3,73.4 188.4,71.4 186.6,69.5 184.7,67.6 182.8,65.7 181.0,63.8 179.1,61.9 177.2,60.0 175.3,58.1 46.2,187.2" fill="none" stroke="#1f2937" stroke-width="1.2" fill-opacity="1"/>
+<line x1="46.2" y1="422.2" x2="390.3" y2="422.2" stroke="#2563eb" stroke-width="1.3"/>
+<circle cx="390.3" cy="422.2" r="3.4" fill="#ea580c"/>
+<line x1="46.2" y1="385.3" x2="378.7" y2="385.3" stroke="#2563eb" stroke-width="1.3"/>
+<circle cx="378.7" cy="385.3" r="3.4" fill="#ea580c"/>
+<line x1="46.2" y1="348.4" x2="365.2" y2="348.4" stroke="#2563eb" stroke-width="1.3"/>
+<circle cx="365.2" cy="348.4" r="3.4" fill="#ea580c"/>
+<line x1="46.2" y1="311.5" x2="349.8" y2="311.5" stroke="#2563eb" stroke-width="1.3"/>
+<circle cx="349.8" cy="311.5" r="3.4" fill="#ea580c"/>
+<line x1="46.2" y1="274.5" x2="324.4" y2="274.5" stroke="#2563eb" stroke-width="1.3"/>
+<circle cx="324.4" cy="274.5" r="3.4" fill="#ea580c"/>
+<line x1="46.2" y1="237.6" x2="279.3" y2="237.6" stroke="#2563eb" stroke-width="1.3"/>
+<circle cx="279.3" cy="237.6" r="3.4" fill="#ea580c"/>
+<line x1="46.2" y1="200.7" x2="234.2" y2="200.7" stroke="#2563eb" stroke-width="1.3"/>
+<circle cx="234.2" cy="200.7" r="3.4" fill="#ea580c"/>
+<line x1="69.6" y1="163.8" x2="189.1" y2="163.8" stroke="#2563eb" stroke-width="1.3"/>
+<circle cx="189.1" cy="163.8" r="3.4" fill="#ea580c"/>
+<line x1="106.5" y1="126.9" x2="143.9" y2="126.9" stroke="#2563eb" stroke-width="1.3"/>
+<circle cx="143.9" cy="126.9" r="3.4" fill="#ea580c"/>
+<line x1="337.5" y1="285.3" x2="337.5" y2="285.3" stroke="#16a34a" stroke-width="1.3"/>
+<circle cx="337.5" cy="285.3" r="3.4" fill="#ea580c"/>
+<line x1="309.9" y1="262.6" x2="317.2" y2="246.2" stroke="#16a34a" stroke-width="1.3"/>
+<circle cx="309.9" cy="262.6" r="3.4" fill="#ea580c"/>
+<line x1="282.2" y1="240.0" x2="295.7" y2="209.7" stroke="#16a34a" stroke-width="1.3"/>
+<circle cx="282.2" cy="240.0" r="3.4" fill="#ea580c"/>
+<line x1="254.5" y1="217.4" x2="273.2" y2="175.4" stroke="#16a34a" stroke-width="1.3"/>
+<circle cx="254.5" cy="217.4" r="3.4" fill="#ea580c"/>
+<line x1="226.9" y1="194.8" x2="249.8" y2="143.2" stroke="#16a34a" stroke-width="1.3"/>
+<circle cx="226.9" cy="194.8" r="3.4" fill="#ea580c"/>
+<line x1="199.2" y1="172.1" x2="225.6" y2="112.9" stroke="#16a34a" stroke-width="1.3"/>
+<circle cx="225.6" cy="112.9" r="3.4" fill="#ea580c"/>
+<line x1="171.6" y1="149.5" x2="200.5" y2="84.4" stroke="#16a34a" stroke-width="1.3"/>
+<circle cx="200.5" cy="84.4" r="3.4" fill="#ea580c"/>
+<line x1="143.9" y1="126.9" x2="173.9" y2="59.5" stroke="#16a34a" stroke-width="1.3"/>
+<circle cx="173.9" cy="59.5" r="3.4" fill="#ea580c"/>
+<line x1="203.7" y1="175.8" x2="229.5" y2="117.7" stroke="#ea580c" stroke-width="1.4" stroke-dasharray="4 3"/>
+<line x1="337.5" y1="285.3" x2="143.9" y2="126.9" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 3"/>
+<circle cx="337.5" cy="285.3" r="3.5" fill="#1f2937"/>
+<text x="344.6" y="294.7" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">(a<tspan dy="3.9" font-size="8.8">0</tspan><tspan dy="-3.9">, </tspan>u<tspan dy="3.9" font-size="8.8">0</tspan><tspan dy="-3.9">)</tspan></text>
+<circle cx="175.3" cy="58.1" r="3.5" fill="#1f2937"/>
+<text x="182.4" y="48.7" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">(r<tspan dy="3.9" font-size="8.8">d</tspan><tspan dy="-3.9">, </tspan>r<tspan dy="3.9" font-size="8.8">d</tspan><tspan dy="-3.9">)</tspan></text>
+<text x="168.4" y="375.2" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle">axial</text>
+<text x="236.6" y="147.2" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle">side</text>
+<text x="241.3" y="101.2" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle">τ = sw(ℓ)</text>
+</svg>

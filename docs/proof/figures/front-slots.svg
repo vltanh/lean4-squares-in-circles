@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="526" height="519" viewBox="0 0 526 519" role="img" aria-label="The plus in the frame phi at o, with a square sitting at each of its five points: S1 at c3, S2 at c1, S3 at c5, S4 at c2 and S5 at c4">
+<title>The plus in the frame phi at o, with a square sitting at each of its five points: S1 at c3, S2 at c1, S3 at c5, S4 at c2 and S5 at c4</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="39.4" y1="344.4" x2="486.6" y2="181.6" stroke="#9ca3af" stroke-width="1"/>
+<line x1="344.4" y1="486.6" x2="181.6" y2="39.4" stroke="#9ca3af" stroke-width="1"/>
+<polygon points="173.3,221.2 304.8,173.3 257.0,41.7 125.4,89.6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<text x="207.0" y="109.1" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">S<tspan dy="5.1" font-size="11.6">1</tspan></text>
+<circle cx="215.1" cy="131.4" r="3" fill="#1f2937"/>
+<text x="223.3" y="153.8" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">c<tspan dy="3.9" font-size="8.8">3</tspan></text>
+<polygon points="221.2,352.7 352.7,304.8 304.8,173.3 173.3,221.2" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" fill-opacity="1"/>
+<text x="254.9" y="240.6" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">S<tspan dy="5.1" font-size="11.6">2</tspan></text>
+<circle cx="263.0" cy="263.0" r="3" fill="#1f2937"/>
+<text x="271.1" y="285.4" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">c<tspan dy="3.9" font-size="8.8">1</tspan></text>
+<polygon points="269.0,484.3 400.6,436.4 352.7,304.8 221.2,352.7" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" fill-opacity="1"/>
+<text x="302.7" y="372.2" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">S<tspan dy="5.1" font-size="11.6">3</tspan></text>
+<circle cx="310.9" cy="394.6" r="3" fill="#1f2937"/>
+<text x="319.0" y="416.9" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">c<tspan dy="3.9" font-size="8.8">5</tspan></text>
+<polygon points="352.7,304.8 484.3,257.0 436.4,125.4 304.8,173.3" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.5" fill-opacity="1"/>
+<text x="386.4" y="192.8" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#9333ea" text-anchor="middle" dominant-baseline="middle" font-style="italic">S<tspan dy="5.1" font-size="11.6">4</tspan></text>
+<circle cx="394.6" cy="215.1" r="3" fill="#1f2937"/>
+<text x="402.7" y="237.5" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">c<tspan dy="3.9" font-size="8.8">2</tspan></text>
+<polygon points="89.6,400.6 221.2,352.7 173.3,221.2 41.7,269.0" fill="#fce7f3" stroke="#db2777" stroke-width="1.5" fill-opacity="1"/>
+<text x="123.3" y="288.5" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#db2777" text-anchor="middle" dominant-baseline="middle" font-style="italic">S<tspan dy="5.1" font-size="11.6">5</tspan></text>
+<circle cx="131.4" cy="310.9" r="3" fill="#1f2937"/>
+<text x="139.6" y="333.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">c<tspan dy="3.9" font-size="8.8">4</tspan></text>
+<text x="480.1" y="185.4" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">φ</text>
+</svg>

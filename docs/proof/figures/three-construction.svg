@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="571" height="518" viewBox="0 0 571 518" role="img" aria-label="The T in the circle of radius R3: the four corners (-1, -13/16), (1, -13/16), (-1/2, 19/16) and (1/2, 19/16) lie on the circle, the other corners inside it">
+<title>The T in the circle of radius R3: the four corners (-1, -13/16), (1, -13/16), (-1/2, 19/16) and (1/2, 19/16) lie on the circle, the other corners inside it</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<circle cx="285.3" cy="265.5" r="212.6" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="120.3,399.6 285.3,399.6 285.3,234.6 120.3,234.6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="285.3,399.6 450.3,399.6 450.3,234.6 285.3,234.6" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="202.8,234.6 367.8,234.6 367.8,69.6 202.8,69.6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" fill-opacity="1"/>
+<circle cx="202.8" cy="317.1" r="3.2" fill="#2563eb"/>
+<text x="202.8" y="333.6" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">c<tspan dy="4.5" font-size="10.2">1</tspan></text>
+<circle cx="367.8" cy="317.1" r="3.2" fill="#ea580c"/>
+<text x="367.8" y="333.6" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">c<tspan dy="4.5" font-size="10.2">2</tspan></text>
+<circle cx="285.3" cy="152.1" r="3.2" fill="#16a34a"/>
+<text x="285.3" y="168.6" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">c<tspan dy="4.5" font-size="10.2">3</tspan></text>
+<circle cx="120.3" cy="399.6" r="4" fill="#1f2937"/>
+<text x="112.1" y="412.8" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">(−1, −13/16)</text>
+<circle cx="450.3" cy="399.6" r="4" fill="#1f2937"/>
+<text x="458.6" y="412.8" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">(1, −13/16)</text>
+<circle cx="202.8" cy="69.6" r="4" fill="#1f2937"/>
+<text x="192.9" y="58.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">(−½, 19/16)</text>
+<circle cx="367.8" cy="69.6" r="4" fill="#1f2937"/>
+<text x="377.7" y="58.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">(½, 19/16)</text>
+<circle cx="120.3" cy="234.6" r="3" fill="#9ca3af"/>
+<circle cx="450.3" cy="234.6" r="3" fill="#9ca3af"/>
+<circle cx="285.3" cy="265.5" r="3.2" fill="#1f2937"/>
+<text x="291.9" y="277.1" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">o</text>
+<line x1="285.3" y1="265.5" x2="452.8" y2="134.6" stroke="#1f2937" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="412.7" y="146.2" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">R<tspan dy="4.8" font-size="10.9">3</tspan></text>
+</svg>

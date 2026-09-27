@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="709" height="397" viewBox="0 0 709 397" role="img" aria-label="Left: the T reaching the circle of radius R_3 at a corner p. Right: a congruent configuration at o, whose corner F_phi(p) is at the same distance from o, outside the smaller disk of radius R">
+<title>Left: the T reaching the circle of radius R_3 at a corner p. Right: a congruent configuration at o, whose corner F_phi(p) is at the same distance from o, outside the smaller disk of radius R</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<circle cx="179.0" cy="192.8" r="148.2" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="64.0,286.2 179.0,286.2 179.0,171.2 64.0,171.2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="179.0,286.2 294.0,286.2 294.0,171.2 179.0,171.2" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="121.5,171.2 236.5,171.2 236.5,56.2 121.5,56.2" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" fill-opacity="1"/>
+<line x1="179.0" y1="192.8" x2="64.0" y2="286.2" stroke="#ea580c" stroke-width="1.8"/>
+<circle cx="64.0" cy="286.2" r="4" fill="#ea580c"/>
+<circle cx="179.0" cy="192.8" r="3.2" fill="#1f2937"/>
+<circle cx="529.8" cy="192.8" r="148.2" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="465.0,326.1 569.2,277.5 520.6,173.3 416.4,221.9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="569.2,277.5 673.5,228.9 624.9,124.7 520.6,173.3" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="468.5,197.6 572.7,149.0 524.1,44.7 419.9,93.3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" fill-opacity="1"/>
+<line x1="529.8" y1="192.8" x2="465.0" y2="326.1" stroke="#ea580c" stroke-width="1.8"/>
+<circle cx="465.0" cy="326.1" r="4" fill="#ea580c"/>
+<circle cx="529.8" cy="192.8" r="3.2" fill="#1f2937"/>
+<circle cx="529.8" cy="192.8" r="130.4" fill="none" stroke="#dc2626" stroke-width="1.8"/>
+<text x="187.0" y="181.3" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">0</text>
+<text x="537.8" y="181.3" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">o</text>
+<text x="59.4" y="302.3" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="end" dominant-baseline="middle" font-style="italic">p</text>
+<text x="458.1" y="343.3" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="end" dominant-baseline="middle" font-style="italic">F<tspan dy="4.5" font-size="10.2">φ</tspan><tspan dy="-4.5">(p)</tspan></text>
+<text x="64.5" y="78.3" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">R<tspan dy="4.5" font-size="10.2">3</tspan></text>
+<text x="581.8" y="94.9" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#dc2626" text-anchor="middle" dominant-baseline="middle" font-style="italic">R</text>
+<text x="501.6" y="33.3" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">R<tspan dy="4.5" font-size="10.2">3</tspan></text>
+<line x1="328.5" y1="49.0" x2="379.7" y2="49.0" stroke="#1f2937" stroke-width="1.6"/>
+<path d="M 386.0 49.0 L 377.0 52.8 L 377.0 45.3 z" fill="#1f2937"/>
+<text x="357.2" y="29.5" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">F<tspan dy="4.5" font-size="10.2">φ</tspan></text>
+</svg>

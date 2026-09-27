@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="726" height="537" viewBox="0 0 726 537" role="img" aria-label="If the near edge of T came closer to o than one half minus a_S, the circle of radius rho about o would lie in S and cross into T, so S and T would overlap">
+<title>If the near edge of T came closer to o than one half minus a_S, the circle of radius rho about o would lie in S and cross into T, so S and T would overlap</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<polygon points="63.0,483.0 363.0,483.0 363.0,183.0 63.0,183.0" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="361.1,380.6 650.8,303.0 573.2,13.2 283.4,90.8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="363.0,380.1 363.0,183.0 308.1,183.0 361.1,380.6" fill="#ffedd5" stroke="#ea580c" stroke-width="1.2" fill-opacity="1"/>
+<polygon points="63.0,483.0 363.0,483.0 363.0,183.0 63.0,183.0" fill="none" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<circle cx="303.0" cy="303.0" r="60.0" fill="none" stroke="#2563eb" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="303.0" cy="303.0" r="48.0" fill="none" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M 346.0 324.3 A 48.0 48.0 0 0 0 329.5 263.0" fill="none" stroke="#ea580c" stroke-width="6" stroke-linecap="round"/>
+<line x1="389.0" y1="484.9" x2="267.9" y2="32.9" stroke="#16a34a" stroke-width="1" stroke-dasharray="4 4"/>
+<circle cx="303.0" cy="303.0" r="3.2" fill="#1f2937"/>
+<text x="294.0" y="288.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
+<text x="93.0" y="219.0" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">S</text>
+<text x="572.1" y="106.9" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">T</text>
+<line x1="261.4" y1="279.0" x2="183.0" y2="243.0" stroke="#1f2937" stroke-width="0.8"/>
+<text x="177.0" y="237.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">Γ<tspan dy="4.5" font-size="10.2">ρ</tspan></text>
+<line x1="268.6" y1="352.1" x2="198.0" y2="423.0" stroke="#2563eb" stroke-width="0.8"/>
+<text x="195.0" y="435.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="end" dominant-baseline="middle" font-style="italic">D(o, ½ − a<tspan dy="4.2" font-size="9.5">S</tspan><tspan dy="-4.2">)</tspan></text>
+</svg>

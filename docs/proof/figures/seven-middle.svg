@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="448" viewBox="0 0 580 448" role="img" aria-label="The four side squares, the band between them and the strip in the middle; a tilted square containing the disk centre has a chord through its centre longer than 1 that pokes into the side squares; an axis-parallel square in the strip">
+<title>The four side squares, the band between them and the strip in the middle; a tilted square containing the disk centre has a chord through its centre longer than 1 that pokes into the side squares; an axis-parallel square in the strip</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<polygon points="26.2,389.2 554.2,389.2 554.2,59.2 26.2,59.2" fill="#f3f4f6" stroke="none" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="207.7,422.3 372.8,422.3 372.8,26.3 207.7,26.3" fill="#ffedd5" stroke="none" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="372.8,389.2 537.8,389.2 537.8,224.2 372.8,224.2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="372.8,224.2 537.8,224.2 537.8,59.2 372.8,59.2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="42.7,389.2 207.7,389.2 207.7,224.2 42.7,224.2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="42.7,224.2 207.7,224.2 207.7,59.2 42.7,59.2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<line x1="26.2" y1="59.2" x2="554.2" y2="59.2" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="26.2" y1="389.2" x2="554.2" y2="389.2" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 4"/>
+<polygon points="207.7,273.8 372.8,273.8 372.8,108.8 207.7,108.8" fill="#e5e7eb" stroke="#1f2937" stroke-width="1.4" fill-opacity="1"/>
+<polygon points="288.3,324.0 414.7,217.9 308.7,91.5 182.3,197.6" fill="none" stroke="#db2777" stroke-width="1.8" fill-opacity="1" stroke-dasharray="6 4"/>
+<line x1="190.8" y1="207.7" x2="406.2" y2="207.7" stroke="#db2777" stroke-width="2.2"/>
+<circle cx="190.8" cy="207.7" r="3.4" fill="#db2777"/>
+<circle cx="406.2" cy="207.7" r="3.4" fill="#db2777"/>
+<circle cx="290.2" cy="224.2" r="3.2" fill="#1f2937"/>
+<text x="298.5" y="240.8" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">o</text>
+<text x="290.2" y="37.8" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle">|x| ≤ ½</text>
+<text x="529.5" y="47.7" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="end" dominant-baseline="middle">|y| &lt; 1</text>
+</svg>

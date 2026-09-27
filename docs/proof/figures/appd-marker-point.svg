@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="756" height="612" viewBox="0 0 756 612" role="img" aria-label="A canonical pair for the signs minus 1 and minus 1 with a side source of small label: the point u(theta) of the marker arc of T, half a radian behind its marker, lies in T and below the top edge of S">
+<title>A canonical pair for the signs minus 1 and minus 1 with a side source of small label: the point u(theta) of the marker arc of T, half a radian behind its marker, lies in T and below the top edge of S</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<circle cx="78.0" cy="366.0" r="240.0" fill="none" stroke="#9ca3af" stroke-width="1"/>
+<polygon points="226.8,555.9 466.8,555.9 466.8,315.9 226.8,315.9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="0.85"/>
+<polygon points="345.0,339.4 430.5,115.1 206.2,29.6 120.7,253.9" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" fill-opacity="0.85"/>
+<path d="M 314.0 322.5 A 240.0 240.0 0 0 0 168.6 143.8" fill="none" stroke="#16a34a" stroke-width="5" stroke-linecap="round"/>
+<line x1="78.0" y1="366.0" x2="264.2" y2="214.5" stroke="#16a34a" stroke-width="1.2" stroke-dasharray="5 3"/>
+<line x1="78.0" y1="366.0" x2="314.0" y2="322.3" stroke="#1f2937" stroke-width="1"/>
+<path d="M 154.8 366.0 A 76.8 76.8 0 0 0 153.5 352.0" fill="none" stroke="#1f2937" stroke-width="1.1" stroke-linecap="round"/>
+<text x="178.4" y="356.8" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">θ</text>
+<circle cx="314.0" cy="322.3" r="4" fill="#ea580c"/>
+<text x="290.0" y="343.9" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="end" dominant-baseline="middle" font-style="italic">u(θ)</text>
+<text x="106.8" y="217.2" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="end" dominant-baseline="middle">marker arc of T</text>
+<polygon points="297.2,336.7 345.2,336.7 345.2,305.5 297.2,305.5" fill="none" stroke="#1f2937" stroke-width="0.8" fill-opacity="1"/>
+<line x1="345.2" y1="305.5" x2="510.0" y2="141.6" stroke="#9ca3af" stroke-width="0.8"/>
+<line x1="345.2" y1="336.7" x2="510.0" y2="282.0" stroke="#9ca3af" stroke-width="0.8"/>
+<polygon points="726.0,282.0 726.0,188.4 510.0,188.4 510.0,282.0" fill="#dbeafe" stroke="none" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="726.0,282.0 726.0,141.6 510.0,141.6 510.0,211.8 694.0,282.0" fill="#dcfce7" stroke="none" stroke-width="1.5" fill-opacity="0.85"/>
+<line x1="510.0" y1="188.4" x2="726.0" y2="188.4" stroke="#2563eb" stroke-width="1.6"/>
+<line x1="510.0" y1="211.8" x2="510.0" y2="211.8" stroke="#16a34a" stroke-width="1.6"/>
+<polyline points="589.3,238.5 588.4,233.2 587.5,227.8 586.6,222.5 585.6,217.2 584.6,211.9 583.6,206.6 582.5,201.3 581.5,196.0 580.4,190.7 579.2,185.4 578.1,180.2 576.9,174.9 575.7,169.6 574.5,164.4 573.2,159.1 571.9,153.9 570.6,148.6 569.3,143.4" fill="none" stroke="#16a34a" stroke-width="4" stroke-opacity="1" stroke-linejoin="round"/>
+<line x1="510.0" y1="217.2" x2="726.0" y2="217.2" stroke="#ea580c" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="585.6" cy="217.2" r="4" fill="#ea580c"/>
+<line x1="682.8" y1="217.2" x2="682.8" y2="188.4" stroke="#1f2937" stroke-width="1.4"/>
+<text x="692.4" y="202.8" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">gap</text>
+<polygon points="510.0,282.0 726.0,282.0 726.0,141.6 510.0,141.6" fill="none" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
+<text x="618.0" y="122.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle">magnified</text>
+<text x="517.2" y="176.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle">top of S at ½ − u</text>
+<text x="517.2" y="231.6" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle">height sin θ</text>
+<circle cx="78.0" cy="366.0" r="2.8" fill="#1f2937"/>
+<text x="66.0" y="385.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
+<text x="358.8" y="459.9" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">S</text>
+<text x="287.6" y="148.5" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">T</text>
+</svg>

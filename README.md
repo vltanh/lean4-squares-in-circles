@@ -191,13 +191,15 @@ of the plane.
 
 ## Proof outline
 
-The proofs as mathematics: the setting first, then the shared toolkit, then
-one page per case: [docs/proof/](docs/proof/README.md)
-([preliminaries](docs/proof/preliminaries.md),
-[shared lemmas](docs/proof/common.md), [one](docs/proof/one.md),
+The proofs are written out as a short illustrated textbook, self-contained
+and with every numbered result linked to its Lean declarations:
+[docs/proof/](docs/proof/README.md). It has an introduction, the
+[preliminaries](docs/proof/preliminaries.md), the [tools](docs/proof/common.md)
+shared by the cases, one chapter per case ([one](docs/proof/one.md),
 [two](docs/proof/two.md), [three](docs/proof/three.md),
 [four](docs/proof/four.md), [five](docs/proof/five.md),
-[seven](docs/proof/seven.md)).
+[seven](docs/proof/seven.md)), and four appendices with the long computations
+of seven squares.
 
 - **One and two squares.** The farthest corner of a square is at least half a
   diagonal from the disk centre, so in the disk of radius `√2 / 2` the square

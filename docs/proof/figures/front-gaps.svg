@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="712" height="250" viewBox="0 0 712 250" role="img" aria-label="Six directions pairwise at least g = pi/3 apart, on the circle and unrolled onto the line from p0 to p0 + 2 pi: six gaps of at least g add up to 2 pi, so each is exactly g">
+<title>Six directions pairwise at least g = pi/3 apart, on the circle and unrolled onto the line from p0 to p0 + 2 pi: six gaps of at least g add up to 2 pi, so each is exactly g</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<circle cx="131.4" cy="127.2" r="84.0" fill="none" stroke="#9ca3af" stroke-width="1.2"/>
+<line x1="131.4" y1="127.2" x2="52.5" y2="155.9" stroke="#1f2937" stroke-width="1"/>
+<circle cx="52.5" cy="155.9" r="3.6" fill="#1f2937"/>
+<text x="38.3" y="161.1" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">p<tspan dy="4.5" font-size="10.2">0</tspan></text>
+<text x="89.3" y="177.4" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">g</text>
+<line x1="131.4" y1="127.2" x2="116.8" y2="209.9" stroke="#1f2937" stroke-width="1"/>
+<circle cx="116.8" cy="209.9" r="3.6" fill="#1f2937"/>
+<text x="114.2" y="224.8" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">p<tspan dy="4.5" font-size="10.2">1</tspan></text>
+<text x="153.8" y="188.8" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">g</text>
+<line x1="131.4" y1="127.2" x2="195.7" y2="181.2" stroke="#1f2937" stroke-width="1"/>
+<circle cx="195.7" cy="181.2" r="3.6" fill="#1f2937"/>
+<text x="207.3" y="190.9" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">p<tspan dy="4.5" font-size="10.2">2</tspan></text>
+<text x="195.9" y="138.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">g</text>
+<line x1="131.4" y1="127.2" x2="210.3" y2="98.5" stroke="#1f2937" stroke-width="1"/>
+<circle cx="210.3" cy="98.5" r="3.6" fill="#1f2937"/>
+<text x="224.5" y="93.3" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">p<tspan dy="4.5" font-size="10.2">3</tspan></text>
+<text x="173.5" y="77.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">g</text>
+<line x1="131.4" y1="127.2" x2="146.0" y2="44.5" stroke="#1f2937" stroke-width="1"/>
+<circle cx="146.0" cy="44.5" r="3.6" fill="#1f2937"/>
+<text x="148.6" y="29.6" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">p<tspan dy="4.5" font-size="10.2">4</tspan></text>
+<text x="109.0" y="65.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">g</text>
+<line x1="131.4" y1="127.2" x2="67.1" y2="73.2" stroke="#1f2937" stroke-width="1"/>
+<circle cx="67.1" cy="73.2" r="3.6" fill="#1f2937"/>
+<text x="55.5" y="63.5" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">p<tspan dy="4.5" font-size="10.2">5</tspan></text>
+<text x="66.9" y="115.8" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">g</text>
+<path d="M 54.0 159.8 A 84.0 84.0 0 0 0 112.7 209.1" fill="none" stroke="#ea580c" stroke-width="3" stroke-linecap="round"/>
+<path d="M 121.0 210.5 A 84.0 84.0 0 0 0 193.0 184.3" fill="none" stroke="#ea580c" stroke-width="3" stroke-linecap="round"/>
+<path d="M 198.4 177.9 A 84.0 84.0 0 0 0 211.7 102.5" fill="none" stroke="#ea580c" stroke-width="3" stroke-linecap="round"/>
+<path d="M 208.8 94.6 A 84.0 84.0 0 0 0 150.1 45.3" fill="none" stroke="#ea580c" stroke-width="3" stroke-linecap="round"/>
+<path d="M 141.8 43.9 A 84.0 84.0 0 0 0 69.8 70.1" fill="none" stroke="#ea580c" stroke-width="3" stroke-linecap="round"/>
+<path d="M 64.4 76.5 A 84.0 84.0 0 0 0 51.1 151.9" fill="none" stroke="#9333ea" stroke-width="3" stroke-linecap="round"/>
+<circle cx="131.4" cy="127.2" r="3.2" fill="#1f2937"/>
+<text x="135.6" y="135.6" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">o</text>
+<line x1="282.6" y1="127.2" x2="694.2" y2="127.2" stroke="#1f2937" stroke-width="1"/>
+<line x1="291.0" y1="133.9" x2="291.0" y2="120.5" stroke="#1f2937" stroke-width="1.6"/>
+<text x="291.0" y="148.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">p<tspan dy="3.9" font-size="8.8">0</tspan></text>
+<line x1="355.4" y1="133.9" x2="355.4" y2="120.5" stroke="#1f2937" stroke-width="1.6"/>
+<text x="355.4" y="148.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">p<tspan dy="3.9" font-size="8.8">1</tspan></text>
+<line x1="419.8" y1="133.9" x2="419.8" y2="120.5" stroke="#1f2937" stroke-width="1.6"/>
+<text x="419.8" y="148.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">p<tspan dy="3.9" font-size="8.8">2</tspan></text>
+<line x1="484.2" y1="133.9" x2="484.2" y2="120.5" stroke="#1f2937" stroke-width="1.6"/>
+<text x="484.2" y="148.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">p<tspan dy="3.9" font-size="8.8">3</tspan></text>
+<line x1="548.6" y1="133.9" x2="548.6" y2="120.5" stroke="#1f2937" stroke-width="1.6"/>
+<text x="548.6" y="148.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">p<tspan dy="3.9" font-size="8.8">4</tspan></text>
+<line x1="613.0" y1="133.9" x2="613.0" y2="120.5" stroke="#1f2937" stroke-width="1.6"/>
+<text x="613.0" y="148.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">p<tspan dy="3.9" font-size="8.8">5</tspan></text>
+<line x1="677.4" y1="133.9" x2="677.4" y2="120.5" stroke="#1f2937" stroke-width="1.6"/>
+<text x="677.4" y="148.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">p<tspan dy="3.9" font-size="8.8">0</tspan><tspan dy="-3.9"> + 2π</tspan></text>
+<line x1="294.4" y1="110.4" x2="352.0" y2="110.4" stroke="#ea580c" stroke-width="3"/>
+<text x="323.2" y="93.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle">≥ g</text>
+<line x1="358.8" y1="110.4" x2="416.4" y2="110.4" stroke="#ea580c" stroke-width="3"/>
+<text x="387.6" y="93.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle">≥ g</text>
+<line x1="423.2" y1="110.4" x2="480.8" y2="110.4" stroke="#ea580c" stroke-width="3"/>
+<text x="452.0" y="93.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle">≥ g</text>
+<line x1="487.6" y1="110.4" x2="545.2" y2="110.4" stroke="#ea580c" stroke-width="3"/>
+<text x="516.4" y="93.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle">≥ g</text>
+<line x1="552.0" y1="110.4" x2="609.6" y2="110.4" stroke="#ea580c" stroke-width="3"/>
+<text x="580.8" y="93.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle">≥ g</text>
+<line x1="616.4" y1="110.4" x2="674.0" y2="110.4" stroke="#9333ea" stroke-width="3"/>
+<text x="645.2" y="93.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#9333ea" text-anchor="middle" dominant-baseline="middle">≥ g</text>
+</svg>

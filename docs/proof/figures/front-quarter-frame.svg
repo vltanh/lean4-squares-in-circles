@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="674" height="328" viewBox="0 0 674 328" role="img" aria-label="The same square S and point p read in the frame e1, e2 and in the frame turned by a quarter turn, e2, -e1: the local coordinates (x, y) become (y, -x)">
+<title>The same square S and point p read in the frame e1, e2 and in the frame turned by a quarter turn, e2, -e1: the local coordinates (x, y) become (y, -x)</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<polygon points="115.7,286.6 256.6,235.3 205.3,94.4 64.4,145.7" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<line x1="160.5" y1="190.5" x2="264.5" y2="152.6" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M 270.4 150.5 L 263.3 157.1 L 260.7 150.0 z" fill="#1f2937"/>
+<text x="287.4" y="144.3" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">e<tspan dy="4.2" font-size="9.5">1</tspan><tspan dx="-5.2" dy="-9.2" font-size="9.5">S</tspan></text>
+<line x1="160.5" y1="190.5" x2="122.6" y2="86.5" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M 120.5 80.6 L 127.1 87.7 L 120.0 90.3 z" fill="#1f2937"/>
+<text x="114.3" y="63.6" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">e<tspan dy="4.2" font-size="9.5">2</tspan><tspan dx="-5.2" dy="-9.2" font-size="9.5">S</tspan></text>
+<line x1="160.5" y1="190.5" x2="219.7" y2="169.0" stroke="#ea580c" stroke-width="2.6"/>
+<line x1="219.7" y1="169.0" x2="204.3" y2="126.7" stroke="#ea580c" stroke-width="2.6"/>
+<text x="196.8" y="198.1" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">x<tspan dy="4.2" font-size="9.5">S</tspan><tspan dy="-4.2">(p)</tspan></text>
+<text x="226.1" y="142.7" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle" font-style="italic">y<tspan dy="4.2" font-size="9.5">S</tspan><tspan dy="-4.2">(p)</tspan></text>
+<circle cx="160.5" cy="190.5" r="3.2" fill="#1f2937"/>
+<circle cx="204.3" cy="126.7" r="3.2" fill="#ea580c"/>
+<text x="211.8" y="116.2" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle" font-style="italic">p</text>
+<text x="151.5" y="205.5" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">c<tspan dy="4.5" font-size="10.2">S</tspan></text>
+<text x="160.5" y="33.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">the frame of <tspan font-style="italic">S</tspan></text>
+<polygon points="468.2,286.6 609.1,235.3 557.8,94.4 416.9,145.7" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<line x1="513.0" y1="190.5" x2="475.1" y2="86.5" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M 473.0 80.6 L 479.6 87.7 L 472.5 90.3 z" fill="#1f2937"/>
+<text x="466.8" y="63.6" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">e<tspan dy="4.2" font-size="9.5">2</tspan><tspan dx="-5.2" dy="-9.2" font-size="9.5">S</tspan></text>
+<line x1="513.0" y1="190.5" x2="409.0" y2="228.4" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M 403.1 230.5 L 410.2 223.9 L 412.8 231.0 z" fill="#1f2937"/>
+<text x="386.1" y="236.7" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">−e<tspan dy="4.2" font-size="9.5">1</tspan><tspan dx="-5.2" dy="-9.2" font-size="9.5">S</tspan></text>
+<line x1="513.0" y1="190.5" x2="497.6" y2="148.2" stroke="#ea580c" stroke-width="2.6"/>
+<line x1="497.6" y1="148.2" x2="556.8" y2="126.7" stroke="#ea580c" stroke-width="2.6"/>
+<text x="487.0" y="176.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">y<tspan dy="4.2" font-size="9.5">S</tspan><tspan dy="-4.2">(p)</tspan></text>
+<text x="535.4" y="160.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">−x<tspan dy="4.2" font-size="9.5">S</tspan><tspan dy="-4.2">(p)</tspan></text>
+<circle cx="513.0" cy="190.5" r="3.2" fill="#1f2937"/>
+<circle cx="556.8" cy="126.7" r="3.2" fill="#ea580c"/>
+<text x="564.3" y="116.2" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle" font-style="italic">p</text>
+<text x="504.0" y="205.5" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">c<tspan dy="4.5" font-size="10.2">S</tspan></text>
+<text x="513.0" y="33.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">turned by a quarter turn</text>
+</svg>

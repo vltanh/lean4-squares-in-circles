@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="581" height="425" viewBox="0 0 581 425" role="img" aria-label="A square with a = 11/16 and b = 1/16 in its chart: the circle of radius 7/16 just touches the line of the lower edge, and the square holds a full cap of half-width more than pi/3 + 1/24">
+<title>A square with a = 11/16 and b = 1/16 in its chart: the circle of radius 7/16 just touches the line of the lower edge, and the square holds a full cap of half-width more than pi/3 + 1/24</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="23.8" y1="244.2" x2="557.4" y2="244.2" stroke="#9ca3af" stroke-width="1"/>
+<text x="557.4" y="232.6" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="end" dominant-baseline="middle">t = 0</text>
+<polygon points="240.6,371.1 530.6,371.1 530.6,81.1 240.6,81.1" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<circle cx="385.6" cy="226.1" r="3.2" fill="#2563eb"/>
+<text x="397.2" y="208.7" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle">(11/16, 1/16)</text>
+<circle cx="186.2" cy="244.2" r="126.9" fill="none" stroke="#9ca3af" stroke-width="1.2"/>
+<circle cx="186.2" cy="244.2" r="108.8" fill="none" stroke="#e5e7eb" stroke-width="1.2"/>
+<path d="M 240.6 358.8 A 126.9 126.9 0 0 0 240.6 129.6" fill="none" stroke="#ea580c" stroke-width="5" stroke-linecap="round"/>
+<line x1="186.2" y1="244.2" x2="240.6" y2="129.6" stroke="#1f2937" stroke-width="1"/>
+<line x1="186.2" y1="244.2" x2="240.6" y2="358.8" stroke="#1f2937" stroke-width="1"/>
+<line x1="186.2" y1="244.2" x2="271.9" y2="80.4" stroke="#9333ea" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="186.2" y1="244.2" x2="271.9" y2="408.0" stroke="#9333ea" stroke-width="1" stroke-dasharray="4 3"/>
+<path d="M 221.0 244.2 A 34.8 34.8 0 0 0 201.1 212.8" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-linecap="round"/>
+<text x="230.3" y="216.3" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">A</text>
+<text x="271.9" y="72.7" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#9333ea" text-anchor="end" dominant-baseline="middle" font-style="italic">±(π/3 + 1/24)</text>
+<circle cx="186.2" cy="371.1" r="3.6" fill="#db2777"/>
+<line x1="70.2" y1="371.1" x2="534.2" y2="371.1" stroke="#db2777" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="70.2" y="384.1" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#db2777" text-anchor="start" dominant-baseline="middle">lower edge: y = −7/16</text>
+<text x="70.2" y="157.2" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">Γ<tspan dy="4.5" font-size="10.2">7/16</tspan></text>
+<circle cx="186.2" cy="244.2" r="3.2" fill="#1f2937"/>
+<text x="177.5" y="264.5" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
+</svg>

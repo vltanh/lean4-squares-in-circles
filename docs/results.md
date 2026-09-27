@@ -61,21 +61,21 @@ the three middle squares of the optimal packing can take any heights at least
 packings, so `Seven.optimum` has the models `Set.range Seven.columnModel`.
 `Seven.classification_by_slots` parametrizes the family by the four gaps of the
 column, nonnegative with sum `2√3 - 3`. The pair theorem of
-[seven squares](proof/seven.md#theorem-715-marker-separation) is about just two
+[seven squares](proof/seven.md#theorem-924-marker-separation) is about just two
 disjoint squares that avoid the disk centre and satisfy the farthest-vertex
 bound of the disk of radius `√13 / 2`: their markers are at least `π/3` apart
 (`Seven.marker_separation_closed`), and exactly `π/3` apart only if they touch
 as in the optimal packing (`Seven.ordered_chart_contact`).
 
 `Five.polygon_uniqueness` needs only interior-disjointness and the closed 12-gon
-of [Step 1 for five squares](proof/five.md#step-1-the-contact-polygon), not the
-disk.
+of [Definition 8.4](proof/five.md#definition-84-the-12-gon), not the disk
+([Proposition 8.6](proof/five.md#proposition-86-the-12-gon-is-rigid)).
 
 **Polygon relaxations.** Of the arc proofs of
-[three to five squares](proof/README.md#three-to-five-squares), only five
+[three to five squares](proof/README.md#14-outline-of-the-proof), only five
 squares go through a statement that mentions no disk: `Five.polygon_uniqueness`,
 above. The proof for three squares also uses the disk only in
-[Step 1](proof/three.md#step-1-the-contact-polygon), through two tangent lines
+[§6.2](proof/three.md#62-the-contact-polygon), through two tangent lines
 and one strict tangent, but its Lean statements keep the disk. Four squares
 keep the disk constraint throughout: the diamond alone would let the arc of an
 exterior square shrink to nothing.

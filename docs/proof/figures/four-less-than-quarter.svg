@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="524" height="335" viewBox="0 0 524 335" role="img" aria-label="A square with a = 0.9 and b = 0.05, inside the diamond but outside the disk where phi is at most 2: its cap on the circle of radius 1/2 is shorter than a quarter circle">
+<title>A square with a = 0.9 and b = 0.05, inside the diamond but outside the disk where phi is at most 2: its cap on the circle of radius 1/2 is shorter than a quarter circle</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="22.6" y1="169.8" x2="501.0" y2="169.8" stroke="#9ca3af" stroke-width="1"/>
+<line x1="257.2" y1="312.4" x2="257.2" y2="27.2" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4"/>
+<polygon points="257.2,273.3 487.2,273.3 487.2,43.3 257.2,43.3" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<circle cx="372.2" cy="158.3" r="3.2" fill="#2563eb"/>
+<text x="381.4" y="142.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle">(0.9, 0.05)</text>
+<circle cx="165.2" cy="169.8" r="115.0" fill="none" stroke="#9ca3af" stroke-width="1.2"/>
+<line x1="165.2" y1="169.8" x2="246.5" y2="251.1" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="165.2" y1="169.8" x2="246.5" y2="88.5" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="261.2" y="73.8" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="end" dominant-baseline="middle">π/4</text>
+<text x="261.2" y="265.8" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="end" dominant-baseline="middle">−π/4</text>
+<path d="M 257.2 238.8 A 115.0 115.0 0 0 0 257.2 100.8" fill="none" stroke="#ea580c" stroke-width="5" stroke-linecap="round"/>
+<line x1="165.2" y1="169.8" x2="257.2" y2="100.8" stroke="#1f2937" stroke-width="1"/>
+<line x1="165.2" y1="169.8" x2="257.2" y2="238.8" stroke="#1f2937" stroke-width="1"/>
+<path d="M 202.0 169.8 A 36.8 36.8 0 0 0 194.6 147.7" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-linecap="round"/>
+<text x="217.6" y="152.3" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">A<tspan dy="3.9" font-size="8.8">S</tspan></text>
+<text x="264.1" y="36.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">near edge</text>
+<circle cx="165.2" cy="169.8" r="3.2" fill="#1f2937"/>
+<text x="156.0" y="156.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
+</svg>

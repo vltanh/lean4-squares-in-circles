@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="522" height="439" viewBox="0 0 522 439" role="img" aria-label="The square T in its own chart, its vertex nearest to the disk centre at distance delta, and the direction from that vertex towards the centre">
+<title>The square T in its own chart, its vertex nearest to the disk centre at distance delta, and the direction from that vertex towards the centre</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<polygon points="218.2,296.2 478.2,296.2 478.2,36.2 218.2,36.2" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" fill-opacity="1"/>
+<line x1="152.8" y1="169.0" x2="307.4" y2="469.6" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="5 4"/>
+<line x1="127.2" y1="343.0" x2="218.2" y2="296.2" stroke="#ea580c" stroke-width="2.2"/>
+<text x="179.8" y="333.5" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">δ</text>
+<line x1="218.2" y1="296.2" x2="148.8" y2="331.9" stroke="#1f2937" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="135.0" y="339.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">u(z)</text>
+<circle cx="218.2" cy="296.2" r="4" fill="#ea580c"/>
+<text x="226.0" y="314.4" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">(A − ½, t(v − ½))</text>
+<circle cx="348.2" cy="166.2" r="3.2" fill="#16a34a"/>
+<text x="358.6" y="148.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="start" dominant-baseline="middle" font-style="italic">(A, tv)</text>
+<circle cx="127.2" cy="343.0" r="3.2" fill="#1f2937"/>
+<text x="116.8" y="361.2" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
+<text x="426.2" y="83.0" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">T</text>
+</svg>

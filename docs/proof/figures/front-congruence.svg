@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="370" viewBox="0 0 720 370" role="img" aria-label="Left: the T as a model M1, M2, M3 in the disk of radius R about 0. Right: a configuration congruent to it, turned by phi about o and relabelled; a point q of M1 and its image are at the same distance from the centre">
+<title>Left: the T as a model M1, M2, M3 in the disk of radius R about 0. Right: a configuration congruent to it, turned by phi about o and relabelled; a point q of M1 and its image are at the same distance from the centre</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<circle cx="179.0" cy="190.5" r="148.2" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="64.0,283.9 179.0,283.9 179.0,168.9 64.0,168.9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<text x="121.5" y="226.4" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">M<tspan dy="4.5" font-size="10.2">1</tspan></text>
+<polygon points="179.0,283.9 294.0,283.9 294.0,168.9 179.0,168.9" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" fill-opacity="1"/>
+<text x="236.5" y="226.4" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">M<tspan dy="4.5" font-size="10.2">2</tspan></text>
+<polygon points="121.5,168.9 236.5,168.9 236.5,53.9 121.5,53.9" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" fill-opacity="1"/>
+<text x="179.0" y="97.6" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">M<tspan dy="4.5" font-size="10.2">3</tspan></text>
+<line x1="179.0" y1="190.5" x2="64.0" y2="283.9" stroke="#ea580c" stroke-width="1.6"/>
+<circle cx="64.0" cy="283.9" r="3.2" fill="#ea580c"/>
+<circle cx="179.0" cy="190.5" r="3.2" fill="#1f2937"/>
+<circle cx="541.2" cy="190.5" r="148.2" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="500.6,333.0 594.8,267.0 528.9,172.8 434.7,238.8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<text x="514.8" y="252.9" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">S<tspan dy="4.5" font-size="10.2">2</tspan></text>
+<polygon points="594.8,267.0 689.0,201.1 623.1,106.9 528.9,172.8" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" fill-opacity="1"/>
+<text x="609.0" y="187.0" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">S<tspan dy="4.5" font-size="10.2">3</tspan></text>
+<polygon points="481.8,205.8 576.0,139.9 510.0,45.7 415.8,111.6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" fill-opacity="1"/>
+<text x="488.0" y="114.4" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">S<tspan dy="4.5" font-size="10.2">1</tspan></text>
+<line x1="541.2" y1="190.5" x2="500.6" y2="333.0" stroke="#ea580c" stroke-width="1.6"/>
+<circle cx="500.6" cy="333.0" r="3.2" fill="#ea580c"/>
+<circle cx="541.2" cy="190.5" r="3.2" fill="#1f2937"/>
+<text x="187.0" y="179.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">0</text>
+<text x="550.4" y="179.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">o</text>
+<text x="64.0" y="300.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">q</text>
+<text x="512.1" y="344.5" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle" font-style="italic">F<tspan dy="4.2" font-size="9.5">φ</tspan><tspan dy="-4.2">(q)</tspan></text>
+<line x1="334.2" y1="54.8" x2="385.4" y2="54.8" stroke="#1f2937" stroke-width="1.6"/>
+<path d="M 391.8 54.8 L 382.8 58.6 L 382.8 51.0 z" fill="#1f2937"/>
+<text x="363.0" y="32.9" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">F<tspan dy="4.5" font-size="10.2">φ</tspan></text>
+</svg>
