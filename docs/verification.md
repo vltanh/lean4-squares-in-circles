@@ -9,9 +9,11 @@ lake env lean AxiomAudit.lean
 lake env lean SanityChecks.lean
 ```
 
-Requires Elan/Lake and network access for mathlib. The build uses Lean `4.34.0`
-and mathlib `v4.34.0`. The source contains no `sorry`, no `axiom` declarations
-and no `native_decide`.
+Requires Elan/Lake and network access for mathlib. The build uses Lean
+`4.35.0-rc3` and mathlib `v4.35.0-rc3`: a release candidate, because
+`lake comparator` first ships with Lean `4.35.0-rc2`, and the Palomar registry
+requires it. The source contains no `sorry`, no `axiom` declarations and no
+`native_decide`.
 
 - `lake build` must report zero `declaration uses 'sorry'` warnings.
 - Every `#print axioms` line in the audit must read exactly

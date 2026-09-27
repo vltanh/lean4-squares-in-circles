@@ -279,14 +279,14 @@ lake env lean AxiomAudit.lean
 lake env lean SanityChecks.lean
 ```
 
-The build uses Lean `4.34.0` and mathlib `v4.34.0`, pinned by `lean-toolchain`
-and `lake-manifest.json`. `lake build` must report no `sorry`, and every
-`#print axioms` line must read exactly `[propext, Classical.choice, Quot.sound]`.
-The trusted base is Lean, Lake and mathlib. On every push, GitHub Actions runs
-the build, audits the axioms of every declaration, and runs both check files;
-the badge at the top shows the result. A second workflow, with its own badge,
-checks that the links from the proof pages to the Lean declarations are
-current.
+The build uses Lean `4.35.0-rc3` and mathlib `v4.35.0-rc3`, pinned by
+`lean-toolchain` and `lake-manifest.json`. `lake build` must report no `sorry`,
+and every `#print axioms` line must read exactly
+`[propext, Classical.choice, Quot.sound]`. The trusted base is Lean, Lake and
+mathlib. On every push, GitHub Actions runs the build, audits the axioms of
+every declaration, and runs both check files; the badge at the top shows the
+result. A second workflow, with its own badge, checks that the links from the
+proof pages to the Lean declarations are current.
 
 ## License
 
