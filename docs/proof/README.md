@@ -207,19 +207,22 @@ own along the dotted column $[-\frac12, \frac12] \times [-\sqrt3, \sqrt3]$.
 
 ### 1.3 Background
 
-The packings of Table 1.1 are listed on Friedman's page [1], which has
-collected the best known packings of squares in a circle since 1997; the
-packings of three, five and seven squares were found by Friedman in 1997. One
-and two squares are folklore, listed there as trivial. For three squares,
-Montanher, Neumaier, Markót, Domes and Schichl [2] enclosed the optimal radius
-in an interval of width $6 \cdot 10^{-14}$ that contains
-$\frac{5\sqrt{17}}{16}$, and every optimal arrangement in small boxes near the
-T, by a computer-assisted interval branch-and-bound search; their enclosure
-does not determine the radius exactly and does not show that the T itself is
-optimal. Four squares are reported on Friedman's page as proved at the
-International Math Summer Camp in 2026; we found no publication. We found no
-earlier proof for five or seven squares, where the packings of Table 1.1 are
-listed only as the best known ones.
+The packings of Table 1.1 are listed on Friedman's page [1], which has collected
+the best known packings of squares in a circle since 1997; the packings of
+three, five and seven squares were found by Friedman in 1997. One and two
+squares are folklore, listed there as trivial. For three squares, Montanher,
+Neumaier, Markót, Domes and Schichl [2] enclosed the optimal radius in an
+interval of width $6 \cdot 10^{-14}$ that contains $\frac{5\sqrt{17}}{16}$, and
+every optimal arrangement in small boxes near the T, by a computer-assisted
+interval branch-and-bound search; their enclosure does not determine the radius
+exactly and does not show that the T itself is optimal. Four squares were
+Problem 6 of the 4th International Mathematics Summer Camp (IMSC 2026), whose
+official solution [7] proves the radius; an unpublished note by Wei Zhao [8]
+also proves that the block is the only optimal packing, by the argument of
+[Chapter 7](four.md). The argument here was reached without the note, but both
+came out of work with Claude, so the two may not be independent. We found no
+earlier proof for five or seven squares, whose packings in Table 1.1 were listed
+only as the best known ones.
 
 Proof assistants have verified packing theorems in other settings: the Kepler
 conjecture [3] and the optimal sphere packing in dimension 8 [4]. We found no
@@ -373,3 +376,8 @@ geometry by the scripts in [`scripts/figures/`](../../scripts/figures).
 6. L. de Moura, S. Ullrich. The Lean 4 theorem prover and programming
    language. In *Automated Deduction – CADE 28*, Lecture Notes in Computer
    Science 12699 (2021), 625–635.
+7. The 4th International Mathematics Summer Camp (IMSC 2026). *Marking Schemes
+   and Solutions*, Day 2, Problem 6. July 2026. Not public.
+8. W. Zhao. Four congruent squares in a unit disk: an elementary proof that
+   $s_{\max} = \frac{\sqrt2}{2}$. Unpublished note, 6 July 2026, shared with us
+   by E. Friedman.

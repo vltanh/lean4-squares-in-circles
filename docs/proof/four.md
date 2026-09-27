@@ -16,7 +16,10 @@ four squares share the circle, so the disk centre is a vertex of every square,
 and four squares with a common vertex and disjoint quarter circles form the
 block. Unlike the cases of three and five squares, the argument uses the disk
 constraint itself, and not only the linear inequalities of a contact polygon
-(see the remark after Lemma 7.5).
+(see the remark after Lemma 7.5). The same circle and the same count of
+quarters are the argument of an unpublished note by Wei Zhao on Problem 6 of
+IMSC 2026. The two were reached separately, but both with Claude, so they may
+not be independent ([§1.3](README.md#13-background)).
 
 ## Theorem 7.1 (four squares)
 

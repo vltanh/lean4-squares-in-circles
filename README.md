@@ -228,21 +228,21 @@ More on each earlier result, with references:
 - **One and two squares** are folklore; Erich Friedman's page lists them as
   trivial.
 - **Three squares.** Montanher, Neumaier, Markót, Domes and Schichl (2019)
-  enclosed the optimal radius in an interval of width `6·10⁻¹⁴` containing
-  `5√17/16`, and every optimal arrangement in small boxes near the T, by a
-  computer-assisted interval branch-and-bound search. The enclosure trusts
-  C++ code and interval rounding, and gives neither the exact radius nor exact
-  uniqueness.
-- **Four squares** are reported on Friedman's page as proved at the
-  International Math Summer Camp in 2026; we found no publication.
-- **Five squares.** We found no earlier proof; the plus is listed only as the
-  best known packing.
-- **Seven squares.** We found no earlier proof; Friedman's page lists the
-  packing, found by him in 1997, as the best known one.
+  enclosed the radius in an interval of width `6·10⁻¹⁴` containing `5√17/16`,
+  and every optimal arrangement in small boxes near the T, by computer-assisted
+  interval branch and bound. The enclosure trusts C++ code and interval
+  rounding, and gives neither the exact radius nor exact uniqueness.
+- **Four squares** were Problem 6 of IMSC 2026, whose official solution proves
+  the radius. An unpublished note by Wei Zhao (July 2026), shared with us by
+  Friedman, proves the radius and the uniqueness of the 2×2 block by the
+  argument used here: each square holds at least a quarter of a small circle
+  about the disk centre. Our proof was written without the note, but both came
+  from work with Claude, so they may not be independent.
+- **Five and seven squares.** We found no earlier proof; in July 2026
+  Friedman's page listed his packings of 1997 as the best known.
 
 We found no proof-assistant verification of any optimal square or circle
-packing. Here every case is proved exactly, uniqueness included (for `n = 7`,
-up to the heights of the middle squares), and checked by Lean's kernel.
+packing.
 
 ## Layout
 
