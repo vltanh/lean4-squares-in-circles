@@ -2,7 +2,7 @@
 """Draw the figures of Chapters 1 to 3 of docs/proof/ (the introduction,
 preliminaries.md and common.md) as SVG files docs/proof/figures/front-*.svg.
 
-    python3 scripts/fig_front.py
+    python3 scripts/figures/fig_front.py
 
 Every figure is computed from the geometry it illustrates: arcs by sampling
 the circle and testing membership in the open squares, regions by clipping,

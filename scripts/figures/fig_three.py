@@ -2,7 +2,7 @@
 """Draw the figures of Chapter 6 (three squares) as SVG files in
 docs/proof/figures/, all named three-*.svg.
 
-    python3 scripts/fig_three.py
+    python3 scripts/figures/fig_three.py
 
 Every figure is computed from the geometry of the chapter: arcs of squares on
 the auxiliary circles are found by sampling the circle and testing membership

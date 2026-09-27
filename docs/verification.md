@@ -66,11 +66,12 @@ every commit, run `pre-commit install` once:
 whenever a commit touches the Lean sources or the docs, and stops the commit if
 any link moved, so that the refreshed pages can be staged.
 
-The figures of the proof pages are drawn by
-[`scripts/proof_figures.py`](../scripts/proof_figures.py), which also runs one
-module per chapter (`scripts/fig_*.py`). Every figure is computed from the same
-geometry as the proofs, and most assert the facts their captions state; running
-`python3 scripts/proof_figures.py` redraws all of them.
+The figures of the proof pages are drawn by the scripts in
+[`scripts/figures/`](../scripts/figures):
+[`proof_figures.py`](../scripts/figures/proof_figures.py) holds the drawing
+helpers and runs one module per chapter (`fig_*.py`). Every figure is computed
+from the same geometry as the proofs, and most assert the facts their captions
+state; running `python3 scripts/figures/proof_figures.py` redraws all of them.
 
 Build from the committed `lake-manifest.json`, which pins every dependency by
 hash. Avoid `lake update`: seven transitive packages track `main` or `master`

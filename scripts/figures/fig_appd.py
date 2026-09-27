@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Draw the figures of Appendix D (the forward axis of the critical gap).
 
-    python3 scripts/fig_appd.py
+    python3 scripts/figures/fig_appd.py
 
 Every figure is computed from the definitions of the proof: the labels, the
 canonical pair, the support function, the boundary curves of the label

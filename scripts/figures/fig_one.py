@@ -2,7 +2,7 @@
 """Draw the figures of Chapter 4, one square, as SVG files in
 docs/proof/figures/ (prefix one-).
 
-    python3 scripts/fig_one.py
+    python3 scripts/figures/fig_one.py
 
 Every figure is computed from the geometry it illustrates, and the facts that
 the captions state are checked by assertions.

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Draw the figures of Chapter 9 (seven squares) as SVG files.
 
-    python3 scripts/fig_seven.py
+    python3 scripts/figures/fig_seven.py
 
 Every figure is computed from the definitions of the chapter: states and
 labels, the canonical pair of two states, its support sums, and the column

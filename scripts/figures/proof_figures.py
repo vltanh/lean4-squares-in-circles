@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Draw the figures of docs/proof/ as SVG files in docs/proof/figures/.
 
-    python3 scripts/proof_figures.py
+    python3 scripts/figures/proof_figures.py
 
 This module draws the figures shared since the first version of the pages and
 holds the drawing helpers; the modules fig_front.py (Chapters 1 to 3),
@@ -15,7 +15,7 @@ same geometry as the proofs.
 import math
 from pathlib import Path
 
-OUT = Path(__file__).resolve().parent.parent / 'docs' / 'proof' / 'figures'
+OUT = Path(__file__).resolve().parents[2] / 'docs' / 'proof' / 'figures'
 
 INK = '#1f2937'
 FAINT = '#9ca3af'

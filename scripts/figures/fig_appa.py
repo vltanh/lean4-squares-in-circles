@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Draw the figures of Appendix A (docs/proof/appendix-a.md).
 
-    python3 scripts/fig_appa.py
+    python3 scripts/figures/fig_appa.py
 
 Every curve is sampled from the function it shows, and every point is
 computed from the formulas of the appendix.

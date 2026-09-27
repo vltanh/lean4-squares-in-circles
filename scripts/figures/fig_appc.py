@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Draw the figures of Appendix C (the inward axis) in docs/proof/figures/.
 
-    python3 scripts/fig_appc.py
+    python3 scripts/figures/fig_appc.py
 
 Every figure is computed from the functions and states of the appendix: the
 canonical pairs from the labels and the relative phase, the graphs by sampling

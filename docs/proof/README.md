@@ -352,7 +352,7 @@ explicit identity, sum of squares or certificate that can be checked by hand
 or with a computer algebra system. The formal proofs themselves are checked by
 the Lean kernel; the [verification](../verification.md) page explains how to
 build them and audit their axioms. The figures are computed from the same
-geometry by the scripts in [`scripts/`](../../scripts).
+geometry by the scripts in [`scripts/figures/`](../../scripts/figures).
 
 ### References
 

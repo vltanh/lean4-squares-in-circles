@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Draw the figures of Appendix B (docs/proof/appendix-b.md).
 
-    python3 scripts/fig_appb.py
+    python3 scripts/figures/fig_appb.py
 
 The label regions, their boundary pieces, the profiles and the canonical pairs
 are computed from the same formulas as the text: the labels of a state, the

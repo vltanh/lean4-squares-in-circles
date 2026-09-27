@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Draw the new figures of Chapter 7 (four squares) in docs/proof/figures/.
 
-    python3 scripts/fig_four.py
+    python3 scripts/figures/fig_four.py
 
 Every arc is found by sampling the circle and testing membership in the open
 squares, as in proof_figures.py, so each picture is computed from the same

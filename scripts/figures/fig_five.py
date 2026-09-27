@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Draw the new figures of Chapter 8 (five squares) in docs/proof/figures/.
 
-    python3 scripts/fig_five.py
+    python3 scripts/figures/fig_five.py
 
 Arcs are found by sampling the circle and testing membership in the open
 squares (or in the radial sweep), as in proof_figures.py, so each picture is

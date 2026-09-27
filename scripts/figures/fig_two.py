@@ -2,7 +2,7 @@
 """Draw the figures of Chapter 5, two squares, as SVG files in
 docs/proof/figures/ (prefix two-).
 
-    python3 scripts/fig_two.py
+    python3 scripts/figures/fig_two.py
 
 Every figure is computed from the geometry it illustrates: arcs held by
 squares are found by sampling the circle and testing membership in the open
