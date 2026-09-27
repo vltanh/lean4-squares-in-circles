@@ -3,9 +3,11 @@
 [Back to the README](../README.md)
 
 ```text
-SquaresInCircles.lean      optimalRadius, optimalPackings, and all six cases
+SquaresInCircles.lean      the main theorems, for all six cases
+Challenge.lean             the statement alone, for the Palomar registry
 SquaresInCircles/
-├── Geometry.lean          the statement: squares, disks, Packing, Congruent
+├── Geometry.lean          the statement: squares, disks, Packing, Congruent,
+│                          the optimal radii and models
 ├── Common/                tools shared by several cases
 ├── One/                   n = 1
 ├── Two/                   n = 2
@@ -15,8 +17,20 @@ SquaresInCircles/
 └── Seven/                 n = 7
 ```
 
+`Geometry.lean` holds everything the main theorems state, the optimal radius
+and the optimal models of every case included, and `Challenge.lean` restates it
+word for word, followed by the main theorems with `sorry`. Lean moves the proofs
+inside a definition, such as the proof of `Nat.AtLeastTwo 2` behind the real
+numeral `2`, into auxiliary lemmas named after the first definition in the file
+that needs them, so the two files elaborate to identical definitions only while
+every definition stays in one file, in the same order. Edit `Geometry.lean`
+only: `scripts/verify-comparator.sh --write` copies its definitions into
+`Challenge.lean`. `comparator.json` names
+the two theorems that `lake comparator` compares between `Challenge.lean` and
+the root module `SquaresInCircles` ([Verification](verification.md)).
+
 Every case folder has the same two core files: `Construction.lean` (the
-radius and the optimal models) and `Uniqueness.lean`, which ends with the
+optimal models pack the disk) and `Uniqueness.lean`, which ends with the
 case's `optimum`: the construction, a point of each model on the circle of the
 optimal radius and uniqueness, together as an `Optimum`
 (`Common/Optimum.lean`). No case proves its own lower bound; `Optimum.lean`
@@ -57,11 +71,13 @@ another: each imports only `Common/` and its own folder.
 | `Containing.lean` | | | no square contains `o` | | the sweep of a square that contains `o` holds `72°`, unless the square is centred at `o` | |
 | `Uniqueness.lean` | centred at `o` | both centres `1/2` from `o`; opposite half circles | caps of exactly `120°`; one square of type A and two of type B rebuild the T | `o` a vertex of every square; a quarter grid of arcs | a square centred at `o`, the others its side-neighbours; closed 12-gon rigidity | a square contains `o`; the ring and the middle column; congruence to a column packing |
 
-Each `Construction.lean` defines the case's `radius`, its `centers` (the
-optimal packing in the frame of its disk centre) and its `model`, the
-axis-parallel squares at those centres. For seven squares these are the column
-centred at the disk centre, one of the column packings `columnModel c`, in
-which each of the three middle squares has its own height.
+Each case has a `radius`, its `centers` (the optimal packing in the frame of
+its disk centre) and its `model`, the axis-parallel squares at those centres,
+all defined in `Geometry.lean`; its `Construction.lean` proves that the model
+packs the disk of that radius. Seven squares instead have the column packings
+`columnModel c`, in which each of the three middle squares has its own height;
+their `Construction.lean` also defines `centers` and `model`, the column centred
+at the disk centre.
 
 ## Seven
 
@@ -73,7 +89,7 @@ the 2 files in `Seven/Uniqueness/`:
 
 | part | files | contents |
 | --- | --- | --- |
-| construction | `Construction.lean` | the radius, the column packings and the four gaps of a column |
+| construction | `Construction.lean` | the column packings pack the disk; the four gaps of a column |
 | states and markers | `Labels.lean`, `Support.lean`, `PairModel.lean` | states, labels and markers; the support function; the support sums of a canonical pair |
 | the marker arc | `Analysis.lean`, `MarkerArc.lean` | monotonicity, curvature, Taylor and Bernstein bounds in one variable; the arc of half-width `801/1600` |
 | tools for the sectors | `Contacts.lean`, `LabelBoundary.lean`, `BoundarySegments.lean`, `BoundaryProfiles.lean`, `TargetBoundaryMonotonicity.lean` | contacts; the boundary of the label regions, segments of constant label, and profiles along the boundary |

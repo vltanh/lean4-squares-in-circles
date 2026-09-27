@@ -22,3 +22,12 @@ jobs:
         run: |
           lake env lean AxiomAudit.lean
           lake env lean SanityChecks.lean
+      # `lake comparator` sandboxes its build with bubblewrap, which needs
+      # unprivileged user namespaces; Ubuntu 24.04 restricts them by default.
+      - name: Install bubblewrap for lake comparator
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq bubblewrap
+          sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+      - name: Check the proofs against Challenge.lean
+        run: scripts/verify-comparator.sh

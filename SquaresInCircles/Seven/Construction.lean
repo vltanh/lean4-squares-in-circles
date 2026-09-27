@@ -10,14 +10,11 @@ move along the middle axis on its own, as long as the three stay at least 1
 apart and inside the disk: every `Column` gives an optimal packing, and
 `Seven.centers` is the one with the column centred. The four gaps of a column,
 below, between and above its squares, are nonnegative with sum `2√3 - 3`, and
-they determine the column.
+they determine the column. The radius, `Column` and the column packings are
+defined with the statement, in `Geometry.lean`.
 -/
 noncomputable section
 namespace SquaresInCircles.Seven
-
-/-- The optimal radius for seven unit squares: the distance from the disk centre
-to the outer corners of the side columns. -/
-def radius : ℝ := Real.sqrt 13 / 2
 
 lemma radius_nonneg : 0 ≤ radius := by
   unfold radius
@@ -28,9 +25,6 @@ lemma radius_sq : radius ^ 2 = 13 / 4 := by
   rw [div_pow, Real.sq_sqrt (by norm_num)]
   norm_num
 
-/-- How far a centre of the middle column can be from the disk centre. -/
-def columnLimit : ℝ := Real.sqrt 3 - 1 / 2
-
 lemma one_le_columnLimit : (1 : ℝ) ≤ columnLimit := by
   have hs := Real.sq_sqrt (show (0 : ℝ) ≤ 3 by norm_num)
   dsimp [columnLimit]
@@ -39,17 +33,6 @@ lemma one_le_columnLimit : (1 : ℝ) ≤ columnLimit := by
 lemma columnLimit_sq : (columnLimit + 1 / 2) ^ 2 = 3 := by
   simp only [columnLimit, sub_add_cancel]
   exact Real.sq_sqrt (by norm_num)
-
-/-- The heights of the three middle centres: at least 1 apart, and within
-`columnLimit` of the disk centre. -/
-structure Column where
-  bottom : ℝ
-  middle : ℝ
-  top : ℝ
-  lower : -columnLimit ≤ bottom
-  gap_lower : bottom + 1 ≤ middle
-  gap_upper : middle + 1 ≤ top
-  upper : top ≤ columnLimit
 
 namespace Column
 lemma bottom_le_middle (c : Column) : c.bottom ≤ c.middle := by linarith [c.gap_lower]
@@ -61,15 +44,6 @@ lemma middle_mem (c : Column) : -columnLimit ≤ c.middle ∧ c.middle ≤ colum
 lemma top_mem (c : Column) : -columnLimit ≤ c.top ∧ c.top ≤ columnLimit :=
   ⟨(c.lower.trans c.bottom_le_middle).trans c.middle_le_top, c.upper⟩
 end Column
-
-/-- The four side centres, then the three centres of the middle column. -/
-def columnCenters (c : Column) : Fin 7 → Point :=
-  ![(1, -1/2), (1, 1/2), (-1, -1/2), (-1, 1/2),
-    (0, c.bottom), (0, c.middle), (0, c.top)]
-
-/-- The column packing: axis-parallel squares at `columnCenters c`. -/
-def columnModel (c : Column) : Fin 7 → UnitSquare :=
-  fun i => axisSquare (columnCenters c i)
 
 /-- Every position of the three middle squares gives an optimal packing. -/
 theorem column_packing (c : Column) : Packing (columnModel c) (0,0) radius := by

@@ -1,23 +1,42 @@
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Angle
 
 /-!
-# The statement: squares, disks, packings, congruence and the optimal models
+# Packing unit squares in a disk: the statement
 
-Everything the main theorems (`SquaresInCircles.lean`) state: unit squares, each
-with its own position and rotation; packings in a closed disk; congruence of a
-configuration to a model given about the origin; and the optimal radius and the
-optimal models of each case. `openSquare` uses strict local-coordinate
-inequalities; no separating-axis condition, certificate, or desired lower bound
-is built into `Packing`.
+This file is the statement a reader audits. It imports only Mathlib, restates
+word for word the definitions of `SquaresInCircles/Geometry.lean`, and states
+the two main theorems of the library `SquaresInCircles`, which proves them in
+its root module. Comparator checks that the theorems proved there are exactly
+the ones stated here, over identical definitions.
 
-`Challenge.lean` restates this file word for word, followed by the main
-theorems, and Comparator checks that the two elaborate to identical
-definitions. Keep every definition the main theorems use in this one file, and
-edit it here only: `scripts/verify-comparator.sh --write` copies the
-definitions into `Challenge.lean` before checking. Lean moves the proofs inside
-a definition, such as the proof of `Nat.AtLeastTwo 2` behind the real numeral
-`2`, into auxiliary lemmas named after the first definition in the file that
-needs them, so the elaborated definitions depend on their file and order.
+A packing of `n` unit squares in a disk places `n` squares of side 1 in the
+closed disk, each at its own position and rotation, so that no point is interior
+to two squares. For `n = 1, …, 5` and `n = 7` the theorems give the least radius
+of such a disk, and every packing that attains it, up to a rotation about the
+disk centre and a relabelling of the squares:
+
+| `n` | least radius | the optimal packings |
+| :-: | :-: | --- |
+| 1 | `√2 / 2` | the square |
+| 2 | `√5 / 2` | the 2 × 1 rectangle |
+| 3 | `5√17 / 16` | the T: two squares side by side, and one centred on top of them |
+| 4 | `√2` | the 2 × 2 block |
+| 5 | `√(5/2)` | the plus: a square and its four side-neighbours |
+| 7 | `√13 / 2` | two columns of two squares, and between them a column of three, each of which can move along the middle axis |
+
+The theorems assume `1 ≤ n ≤ 5` or `n = 7`. For every other `n`, `n = 6`
+included, `optimalRadius n` is the placeholder `0`, `optimalPackings n` is
+empty, and nothing is claimed.
+
+A unit square is a centre and an orthonormal frame; in the coordinates of its
+frame it is `[-1/2, 1/2]²`, closed (`closedSquare`) or open (`openSquare`). A
+packing asks that every closed square lie in the closed disk and that no point
+lie in two open squares, so squares may touch each other and the circle.
+Distances use the squared Euclidean length `normSq`, never Mathlib's norm on
+`ℝ × ℝ`, which is the maximum norm. Congruence compares point sets, since a
+quarter turn of a frame describes the same square. It allows a rotation about
+the disk centre and a relabelling, but no reflection; every optimal model is
+symmetric under a reflection anyway.
 -/
 
 noncomputable section
@@ -238,5 +257,24 @@ def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
   | 5 => {Five.model}
   | 7 => Set.range Seven.columnModel
   | _ => ∅
+
+/-! ### The theorems -/
+
+/-- `optimalRadius n` is the least radius of a disk that holds `n` unit squares
+with disjoint interiors: some packing of `n` unit squares fits in a disk of
+that radius, and none fits in a disk of smaller radius. -/
+theorem optimal_radius (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7) :
+    IsLeast {R | ∃ (S : Fin n → UnitSquare) (o : Point), Packing S o R} (optimalRadius n) := by
+  sorry
+
+/-- The packings in a disk of radius `optimalRadius n` are exactly the
+configurations congruent to an optimal model: the model, turned about the disk
+centre and relabelled. For `n ≤ 5` the optimal packing is therefore unique up
+to rotation and relabelling, and for `n = 7` the optimal packings are exactly
+the column packings. -/
+theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7)
+    (S : Fin n → UnitSquare) (o : Point) :
+    Packing S o (optimalRadius n) ↔ ∃ M ∈ optimalPackings n, Congruent S o M := by
+  sorry
 
 end SquaresInCircles

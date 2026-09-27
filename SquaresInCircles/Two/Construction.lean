@@ -3,25 +3,17 @@ import SquaresInCircles.Common.Constructions
 /-!
 # Two squares: construction
 
-The 2 × 1 rectangle centred at the disk centre, at the optimal radius `sqrt 5 /
-2`.
+The 2 × 1 rectangle centred at the disk centre packs the disk of the optimal
+radius `sqrt 5 / 2`. The radius and the model are defined with the statement,
+in `Geometry.lean`.
 -/
 noncomputable section
 namespace SquaresInCircles.Two
-
-/-- The optimal radius for two unit squares: half the diagonal of the 2 × 1 rectangle. -/
-def radius : ℝ := Real.sqrt 5 / 2
 
 lemma radius_nonneg : 0 ≤ radius := by unfold radius; positivity
 
 lemma radius_sq : radius ^ 2 = 5 / 4 := by
   rw [radius,div_pow,Real.sq_sqrt (by norm_num)]; norm_num
-
-/-- The rectangle in the frame of its disk centre. -/
-def centers : Fin 2 → Point := ![(-1/2,0),(1/2,0)]
-
-/-- The 2 × 1 rectangle, centred at the origin. -/
-def model : Fin 2 → UnitSquare := fun i => axisSquare (centers i)
 
 theorem model_packing : Packing model (0,0) radius :=
   axis_packing radius_nonneg

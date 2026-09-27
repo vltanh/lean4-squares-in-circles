@@ -40,7 +40,7 @@ about 74° of $\Gamma_{5/6}$, a little more than a fifth of the circle; the
 centre square (grey) holds none.
 
 *Lean:
-[`Five.model_packing`](../../SquaresInCircles/Five/Construction.lean#L29),
+[`Five.model_packing`](../../SquaresInCircles/Five/Construction.lean#L21),
 [`Five.uniqueness`](../../SquaresInCircles/Five/Uniqueness.lean#L82),
 [`Five.optimum`](../../SquaresInCircles/Five/Uniqueness.lean#L92).*
 
@@ -87,10 +87,10 @@ other four centres $(x, y)$ has
 $\square$
 
 *Lean:
-[`Five.model_packing`](../../SquaresInCircles/Five/Construction.lean#L29),
-[`Five.model`](../../SquaresInCircles/Five/Construction.lean#L27),
-[`Five.centers`](../../SquaresInCircles/Five/Construction.lean#L24),
-[`Five.radius`](../../SquaresInCircles/Five/Construction.lean#L13).*
+[`Five.model_packing`](../../SquaresInCircles/Five/Construction.lean#L21),
+[`Five.model`](../../SquaresInCircles/Geometry.lean#L178),
+[`Five.centers`](../../SquaresInCircles/Geometry.lean#L175),
+[`Five.radius`](../../SquaresInCircles/Geometry.lean#L171).*
 
 The eight outer corners, $(\pm\frac32, \pm\frac12)$ and
 $(\pm\frac12, \pm\frac32)$, lie on the circle of radius $R_5$.

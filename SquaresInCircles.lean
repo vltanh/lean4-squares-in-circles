@@ -14,6 +14,8 @@ radius are exactly the configurations congruent to a model in
 `optimalPackings n`. For `n ≤ 5` there is one model, so the optimal packing is
 unique up to a rotation about the disk centre and a relabelling of the squares.
 For `n = 7` the three middle squares of the model move along the middle axis.
+`optimalRadius` and `optimalPackings` are defined with the rest of the
+statement, in `Geometry.lean`.
 
 Every case proves the same statement, an `Optimum` (`Common/Optimum.lean`): its
 models pack the disk and reach its circle, and every packing of that radius is
@@ -23,28 +25,6 @@ also be imported on its own, from its folder `SquaresInCircles/One/` to
 -/
 noncomputable section
 namespace SquaresInCircles
-
-/-- The optimal radius for `n` unit squares, `1 ≤ n ≤ 5` or `n = 7`. -/
-def optimalRadius : ℕ → ℝ
-  | 1 => One.radius
-  | 2 => Two.radius
-  | 3 => Three.radius
-  | 4 => Four.radius
-  | 5 => Five.radius
-  | 7 => Seven.radius
-  | _ => 0
-
-/-- The optimal packings of `n` unit squares, as models about the origin: one
-packing for `n ≤ 5`, and for `n = 7` every position of the three middle
-squares. -/
-def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
-  | 1 => {One.model}
-  | 2 => {Two.model}
-  | 3 => {Three.model}
-  | 4 => {Four.model}
-  | 5 => {Five.model}
-  | 7 => Set.range Seven.columnModel
-  | _ => ∅
 
 /-- The optimum for each `n` with `1 ≤ n ≤ 5` or `n = 7`. -/
 def optimum : (n : ℕ) → 1 ≤ n ∧ n ≤ 5 ∨ n = 7 → Optimum n
@@ -56,7 +36,8 @@ def optimum : (n : ℕ) → 1 ≤ n ∧ n ≤ 5 ∨ n = 7 → Optimum n
   | 7, _ => Seven.optimum
   | 0, h | 6, h | _+8, h => absurd h (by omega)
 
-/-- `optimum n` has the radius and the models of the tables above. -/
+/-- `optimum n` has the radius `optimalRadius n` and the models
+`optimalPackings n`. -/
 lemma optimum_spec (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7) :
     (optimum n hn).radius = optimalRadius n ∧ (optimum n hn).models = optimalPackings n := by
   match n, hn with

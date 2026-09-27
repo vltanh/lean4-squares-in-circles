@@ -1,0 +1,26 @@
+name: Palomar preflight
+
+# Runs the Palomar registry's own mechanical verification of this commit, the
+# job the registry runs after a submission, without submitting anything. Start
+# it by hand from the Actions tab before submitting a commit. The report is an
+# artifact of the run; it must end with `status: pass`.
+#
+# Keep `uses` and `pipeline_commit` on the same PalomarSubmission commit.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    uses: PalomarRegistry/PalomarSubmission/.github/workflows/submission.yml@a59f25bd8a66bf6faf3a4f4260d412989c0185ea
+    with:
+      repository: ${{ github.repository }}
+      commit: ${{ github.sha }}
+      pipeline_commit: a59f25bd8a66bf6faf3a4f4260d412989c0185ea
+      request_id: preflight001
+      mode: full
+      execution_profile: palomar-standard-v1
+      options: '{"comparator_config_path":"comparator.json","authorization_relationship":"I am a responsible author or maintainer"}'

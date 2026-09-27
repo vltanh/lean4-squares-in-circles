@@ -37,7 +37,7 @@ $Q(0, 0)$, centred at the origin, as a model of one square.
 *Figure 4.1.* The model $Q(0, 0)$ placed at the disk centre $o$. Its four
 vertices lie on the circle of radius $R_1$ about $o$ (dashed).
 
-*Lean: [`One.model_packing`](../../SquaresInCircles/One/Construction.lean#L25),
+*Lean: [`One.model_packing`](../../SquaresInCircles/One/Construction.lean#L17),
 [`One.uniqueness`](../../SquaresInCircles/One/Uniqueness.lean#L23),
 [`One.optimum`](../../SquaresInCircles/One/Uniqueness.lean#L38).*
 
@@ -69,9 +69,9 @@ with equality:
 \left(|x| + \tfrac12\right)^2 + \left(|y| + \tfrac12\right)^2 = \tfrac14 + \tfrac14 = \tfrac12 = R_1^2 . \qquad \square
 ```
 
-*Lean: [`One.model_packing`](../../SquaresInCircles/One/Construction.lean#L25),
-[`One.model`](../../SquaresInCircles/One/Construction.lean#L23),
-[`One.radius`](../../SquaresInCircles/One/Construction.lean#L13),
+*Lean: [`One.model_packing`](../../SquaresInCircles/One/Construction.lean#L17),
+[`One.model`](../../SquaresInCircles/Geometry.lean#L120),
+[`One.radius`](../../SquaresInCircles/Geometry.lean#L114),
 [`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L34).*
 
 ## 4.2 Uniqueness

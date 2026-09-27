@@ -1,0 +1,200 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+# Metadata for the Palomar registry, in the formalization.yaml v0.4 format
+# (https://github.com/mathlib-initiative/formalization.yaml). The statement is
+# Challenge.lean; the Comparator configuration is comparator.json.
+version: "v0.4"
+
+project:
+  name: "Optimal packings of one to five, and seven, unit squares in a disk"
+  description: >-
+    For n = 1, 2, 3, 4, 5 and n = 7, this formalization determines the least
+    radius of a closed disk that holds n unit squares with pairwise disjoint
+    interiors, each square placed and rotated independently, and all the
+    packings that attain it. The least radii are √2/2, √5/2, 5√17/16, √2,
+    √(5/2) and √13/2. Up to a rotation about the disk centre and a relabelling
+    of the squares, the optimal packing is unique for n ≤ 5: the square, the
+    2 × 1 rectangle, the T, the 2 × 2 block and the plus. For n = 7 the optimal
+    packings are exactly a three-parameter family: two columns of two squares
+    and, between them, a column of three squares whose heights vary
+    independently, at least 1 apart and within √3 − 1/2 of the disk centre.
+    The proofs for three to five squares bound the arcs that the squares
+    occupy on a small circle about the disk centre. For seven squares, each
+    square that avoids the disk centre is assigned a direction from it, and
+    two disjoint such squares in the optimal disk get directions at least π/3
+    apart. We found no earlier proof of optimality for five or seven squares,
+    and no exact proof for three squares, where a computer-assisted interval
+    enclosure of the radius and of the optimal arrangements was known; nor any
+    earlier proof of uniqueness for four, five or seven squares.
+  # People only; AI contributions are recorded under automation.
+  authors:
+    - "The-Anh Vu-Le"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "The-Anh Vu-Le"
+
+classification:
+  arxiv: ["math.MG"]
+  msc2020: ["52C15"]
+
+sources:
+  - title: "Squares in Circles"
+    authors:
+      - "Erich Friedman"
+    id: "https://erich-friedman.github.io/packing/squincir/"
+    type: "web page"
+    location: >-
+      Entries n = 1 to 7. Before this work: the snapshot of 2026-07-23,
+      https://web.archive.org/web/20260723054450/https://erich-friedman.github.io/packing/squincir/
+    relationship: "background"
+    note: >-
+      The standard record of the best known packings of unit squares in a
+      circle, and the source of the radii and packings proved optimal here. On
+      2026-07-23 it listed one and two squares as trivial, four squares as
+      proved at the International Math Summer Camp in 2026, and the packings
+      of three, five and seven squares as found by Friedman in 1997, that is,
+      as the best known ones. Since September 2026 it states that n = 1 to 5
+      and 7 have been proved optimal, and credits three, five and seven
+      squares to this work.
+  - title: "Optimal packings of one and two unit squares in a circle"
+    type: "folklore"
+    relationship: "independently-proves"
+    note: >-
+      Listed as trivial on Friedman's page, with no reference. The
+      formalization proves both optimal radii and the uniqueness of both
+      optimal packings.
+  - title: "Rigorous packing of unit squares into a circle"
+    authors:
+      - "Tiago Montanher"
+      - "Arnold Neumaier"
+      - "Mihály Csaba Markót"
+      - "Ferenc Domes"
+      - "Hermann Schichl"
+    id: "doi:10.1007/s10898-018-0711-5"
+    type: "paper"
+    location: "J. Global Optim. 73 (2019), no. 3, 547–565; Theorem 2 and Table 6"
+    relationship: "independently-proves"
+    note: >-
+      Reports solving the case of three squares by a computer-assisted
+      interval branch-and-bound search: Theorem 2 encloses the optimal radius
+      in [1.28847050800547, 1.28847050800553], which contains 5√17/16, and
+      every optimal arrangement lies in one of four boxes of width at most
+      6.23·10⁻¹³ near the T. The result trusts the search code and interval
+      rounding, and it gives neither the exact radius nor exact uniqueness.
+      The formalization proves the exact radius and the uniqueness of the T by
+      a different argument, and uses neither their computation nor their
+      method.
+  - title: "Optimality of the 2 × 2 block of four unit squares in a circle"
+    type: "other"
+    id: "https://erich-friedman.github.io/packing/squincir/"
+    relationship: "independently-proves"
+    note: >-
+      Known to us only from Friedman's page, which reports that the case was
+      proved at the International Math Summer Camp in 2026; we found no
+      publication and could not inspect the proof, so we do not know whether
+      it includes uniqueness. The formalization does not use it.
+
+related_formalizations:
+  - id: "https://github.com/vltanh/lean4-squares-in-circles/tree/dba4c44d83821eba7f982e7622fc93b794ca1264"
+    relationship: "supersedes"
+    note: >-
+      The first version of this repository, kept on its legacy branch: a Lean
+      proof of the three-square lower bound by separating axes, 48 branches
+      and 53 rational certificates. The present proofs replace it and do not
+      use it. We found no other formalization of an optimal packing of squares
+      or circles in a circle or a square.
+
+status:
+  scope: >-
+    The least radius and all the optimal packings of n unit squares in a disk
+    for n = 1, …, 5 and n = 7, stated by the two theorems of Challenge.lean,
+    optimal_radius and optimal_packings. Six squares and n ≥ 8 are not
+    treated; for those n the definitions optimalRadius and optimalPackings
+    hold placeholders about which no theorem says anything.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+  main_results:
+    - declaration: "SquaresInCircles.optimal_radius"
+      file: "SquaresInCircles.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+    - declaration: "SquaresInCircles.optimal_packings"
+      file: "SquaresInCircles.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["ChatGPT 6 Pro"]
+      framework: "ChatGPT"
+      tool_setup: >-
+        ChatGPT with its built-in tools, which can run code, prompted by the
+        repository owner. It never compiled its Lean code. It wrote the
+        complete proofs of three, four, five and seven squares, both the
+        mathematics and the Lean code, which Claude then compiled and
+        modified: a first certificate proof for three squares, the
+        occupied-arc framework and proofs for three to five squares, their
+        uniqueness proofs, and the optimality and classification proofs for
+        seven squares. These reached the repository as pull requests #2 to #5
+        and commits co-authored by ChatGPT.
+    - method: "agent"
+      models: ["Claude Opus 5", "Claude Opus 5.5"]
+      framework: "Claude Code"
+      tool_setup: >-
+        A coding agent with a Lean toolchain, run at high to maximum effort. It
+        compiled ChatGPT's proofs, repairing and modifying them until Lean
+        accepted them, and integrated them into the library; suggested the
+        occupied-arc approach for three to five squares (Claude Opus 5); wrote
+        the proofs of one and two squares; reorganized, reviewed and
+        simplified the library; wrote the documentation and its figures; and
+        prepared this submission.
+  notes: >-
+    ChatGPT 6 Pro wrote the proofs of three, four, five and seven squares in
+    full, in mathematics and in Lean, without compiling them; Claude Opus 5
+    and 5.5, in Claude Code, compiled, repaired and modified them, and wrote
+    the proofs of one and two squares. The repository owner directed the
+    work, reviewed it, and decided its scope and naming. A dated account of
+    who did what is in docs/contributors.md, and the commits name the models
+    that co-authored them.
+
+fidelity:
+  divergences: >-
+    None known. The statement is stronger than the claims of the sources: it
+    gives the exact radius and exact uniqueness where Montanher et al. give
+    interval enclosures, and it adds uniqueness to the radii and packings
+    listed on Friedman's page. For seven squares the optimal packing is not
+    unique, so the statement characterizes the whole family. Conventions:
+    congruence allows a rotation about the disk centre and a relabelling but
+    no reflection, which loses nothing because every optimal model is
+    symmetric under a reflection; distances use the squared Euclidean length,
+    never Mathlib's maximum norm on ℝ × ℝ.
+
+review:
+  status: "self-assessed"
+  reviewers: ["The-Anh Vu-Le"]
+  notes: >-
+    The repository owner reviewed the statement (SquaresInCircles/Geometry.lean,
+    restated in Challenge.lean) and the documentation. The mathematics has had
+    no independent human review. Lean's kernel checks every proof, and lake
+    comparator also replays the proofs of the two compared theorems through
+    the NanoDa and con-ron kernels; that establishes the proofs, not that the
+    statement says what the prose claims.
+
+alignment:
+  namespace: "SquaresInCircles"
+  statements:
+    - source: "The least radius of a disk that holds n unit squares, for n = 1 to 5 and 7"
+      lean: "SquaresInCircles.optimal_radius"
+      module: "SquaresInCircles"
+      status: "proved"
+    - source: "The packings of that radius are exactly the optimal models, turned and relabelled"
+      lean: "SquaresInCircles.optimal_packings"
+      module: "SquaresInCircles"
+      status: "proved"
+
+acknowledgements: >-
+  Mathlib, and the Lean toolchain with its lake comparator. The pictures of the
+  optimal packings in the README are Erich Friedman's.

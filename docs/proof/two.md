@@ -41,7 +41,7 @@ $Q(c_1)$ and $Q(c_2)$ share an edge whose midpoint is $o$, and the four
 corners of the $2 \times 1$ rectangle lie on the circle of radius $R_2$ about
 $o$ (dashed).
 
-*Lean: [`Two.model_packing`](../../SquaresInCircles/Two/Construction.lean#L26),
+*Lean: [`Two.model_packing`](../../SquaresInCircles/Two/Construction.lean#L18),
 [`Two.uniqueness`](../../SquaresInCircles/Two/Uniqueness.lean#L47),
 [`Two.optimum`](../../SquaresInCircles/Two/Uniqueness.lean#L76).*
 
@@ -91,9 +91,9 @@ satisfies
 So [Lemma 2.8](preliminaries.md#lemma-28-axis-parallel-squares) (3)
 applies. $\square$
 
-*Lean: [`Two.model_packing`](../../SquaresInCircles/Two/Construction.lean#L26),
-[`Two.model`](../../SquaresInCircles/Two/Construction.lean#L24),
-[`Two.radius`](../../SquaresInCircles/Two/Construction.lean#L13),
+*Lean: [`Two.model_packing`](../../SquaresInCircles/Two/Construction.lean#L18),
+[`Two.model`](../../SquaresInCircles/Geometry.lean#L134),
+[`Two.radius`](../../SquaresInCircles/Geometry.lean#L128),
 [`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L34).*
 
 ## 5.2 The centres

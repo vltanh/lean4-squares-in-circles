@@ -1,0 +1,10 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "SquaresInCircles",
+  "theorem_names": [
+    "SquaresInCircles.optimal_radius",
+    "SquaresInCircles.optimal_packings"
+  ],
+  "definition_names": [],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"]
+}

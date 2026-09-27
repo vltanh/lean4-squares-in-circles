@@ -38,7 +38,7 @@ circle $\Gamma_{1/2}$ about the disk centre $o$ splits into four quarter
 circles, one in each square.
 
 *Lean:
-[`Four.model_packing`](../../SquaresInCircles/Four/Construction.lean#L28),
+[`Four.model_packing`](../../SquaresInCircles/Four/Construction.lean#L21),
 [`Four.uniqueness`](../../SquaresInCircles/Four/Uniqueness.lean#L69),
 [`Four.optimum`](../../SquaresInCircles/Four/Uniqueness.lean#L117).*
 
@@ -78,10 +78,10 @@ coordinate, and every centre $(x, y)$ has
 $\square$
 
 *Lean:
-[`Four.model_packing`](../../SquaresInCircles/Four/Construction.lean#L28),
-[`Four.model`](../../SquaresInCircles/Four/Construction.lean#L26),
-[`Four.centers`](../../SquaresInCircles/Four/Construction.lean#L23),
-[`Four.radius`](../../SquaresInCircles/Four/Construction.lean#L12).*
+[`Four.model_packing`](../../SquaresInCircles/Four/Construction.lean#L21),
+[`Four.model`](../../SquaresInCircles/Geometry.lean#L163),
+[`Four.centers`](../../SquaresInCircles/Geometry.lean#L160),
+[`Four.radius`](../../SquaresInCircles/Geometry.lean#L157).*
 
 The four outer corners $(\pm1, \pm1)$ of the block lie on the circle of radius
 $\sqrt2$.

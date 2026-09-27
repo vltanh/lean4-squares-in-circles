@@ -38,9 +38,9 @@ c_1 = \left(-\tfrac12, -\tfrac5{16}\right), \qquad c_2 = \left(\tfrac12, -\tfrac
 $o$ (dashed). The circle $\Gamma_{3/8}$ about $o$ splits into three arcs of
 exactly $\frac{2\pi}3$, one in each square.
 
-*Lean: [`Three.radius`](../../SquaresInCircles/Three/Construction.lean#L14),
-[`Three.model`](../../SquaresInCircles/Three/Construction.lean#L29),
-[`Three.model_packing`](../../SquaresInCircles/Three/Construction.lean#L31),
+*Lean: [`Three.radius`](../../SquaresInCircles/Geometry.lean#L142),
+[`Three.model`](../../SquaresInCircles/Geometry.lean#L149),
+[`Three.model_packing`](../../SquaresInCircles/Three/Construction.lean#L22),
 [`Three.uniqueness`](../../SquaresInCircles/Three/Uniqueness.lean#L121),
 [`Three.optimum`](../../SquaresInCircles/Three/Uniqueness.lean#L194).*
 
@@ -96,8 +96,8 @@ $(\pm1, -\frac{13}{16})$ of $Q(c_1)$ and $Q(c_2)$ and of the corners
 $(\pm\frac12, \frac{19}{16})$ of $Q(c_3)$. $\square$
 
 *Lean:
-[`Three.model_packing`](../../SquaresInCircles/Three/Construction.lean#L31),
-[`Three.radius_sq`](../../SquaresInCircles/Three/Construction.lean#L20),
+[`Three.model_packing`](../../SquaresInCircles/Three/Construction.lean#L22),
+[`Three.radius_sq`](../../SquaresInCircles/Three/Construction.lean#L17),
 [`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L34).*
 
 ## 6.2 The contact polygon

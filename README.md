@@ -27,7 +27,9 @@ More on each definition: [docs/definitions.md](docs/definitions.md).
 
 Read the definitions before trusting the results. A kernel check establishes
 that the proofs are valid; it cannot establish that the statements mean what
-you intend.
+you intend. All of them are in `SquaresInCircles/Geometry.lean`, and
+`Challenge.lean` restates them, with the main theorems, in one file that
+imports only mathlib ([Palomar registry](#palomar-registry)).
 
 ### Squares
 
@@ -110,7 +112,7 @@ def Congruent {n : ℕ} (S : Fin n → UnitSquare) (o : Point) (M : Fin n → Un
 For seven squares the optimal packings form a family: two columns of two
 squares, and between them a column of three whose heights can each vary. A
 `Seven.Column` records the three heights, and `Seven.columnModel` is its model
-(`Seven/Construction.lean`):
+(also in `Geometry.lean`, with the radii and the other models):
 
 ```lean
 def Seven.columnLimit : ℝ := Real.sqrt 3 - 1 / 2
@@ -255,9 +257,11 @@ up to the heights of the middle squares), and checked by Lean's kernel.
 More on each file: [docs/layout.md](docs/layout.md).
 
 ```text
-SquaresInCircles.lean      optimalRadius, optimalPackings, and all six cases
+SquaresInCircles.lean      the main theorems, for all six cases
+Challenge.lean             the statement alone, for the Palomar registry
 SquaresInCircles/
-├── Geometry.lean          the statement: squares, disks, Packing, Congruent
+├── Geometry.lean          the statement: squares, disks, Packing, Congruent,
+│                          the optimal radii and models
 ├── Common/                tools shared by several cases
 ├── One/  Two/             Construction, Uniqueness
 ├── Three/ Five/           Construction, Exterior, Containing, Uniqueness
@@ -277,16 +281,40 @@ lake exe cache get
 lake build
 lake env lean AxiomAudit.lean
 lake env lean SanityChecks.lean
+scripts/verify-comparator.sh
 ```
 
 The build uses Lean `4.35.0-rc3` and mathlib `v4.35.0-rc3`, pinned by
 `lean-toolchain` and `lake-manifest.json`. `lake build` must report no `sorry`,
 and every `#print axioms` line must read exactly
-`[propext, Classical.choice, Quot.sound]`. The trusted base is Lean, Lake and
-mathlib. On every push, GitHub Actions runs the build, audits the axioms of
-every declaration, and runs both check files; the badge at the top shows the
-result. A second workflow, with its own badge, checks that the links from the
-proof pages to the Lean declarations are current.
+`[propext, Classical.choice, Quot.sound]`. The last command, which needs Linux
+and `bwrap`, checks the proofs against `Challenge.lean` with `lake comparator`
+([Palomar registry](#palomar-registry)). The trusted base is Lean, Lake and
+mathlib. On every push, GitHub Actions runs all five steps and audits the
+axioms of every declaration; the badge at the top shows the result. A second
+workflow, with its own badge, checks that the links from the proof pages to the
+Lean declarations are current.
+
+## Palomar registry
+
+The repository is laid out for the [Palomar](https://palomar-registry.org/)
+registry of Lean-verified mathematics. `Challenge.lean` is the statement a
+reader audits: it imports only mathlib, restates `SquaresInCircles/Geometry.lean`
+word for word, and states the two main theorems of `SquaresInCircles.lean`,
+`optimal_radius` and `optimal_packings`, with `sorry`.
+[`comparator.json`](comparator.json) names the two theorems and pairs
+`Challenge.lean` with the root module `SquaresInCircles`, which proves them, and
+`scripts/verify-comparator.sh` runs `lake comparator`, as Palomar does: it
+checks that the library proves exactly these statements, over identical
+definitions and with only the three standard axioms, and replays the proofs
+through the independent kernels NanoDa and con-ron as well as Lean's. Edit the
+definitions in `Geometry.lean` only; `scripts/verify-comparator.sh --write`
+copies them into `Challenge.lean`. [`formalization.yaml`](formalization.yaml)
+records the provenance, sources,
+authorship, AI involvement and review status that Palomar asks for. The
+[Palomar preflight](.github/workflows/palomar.yml) workflow, started by hand
+from the Actions tab, runs the registry's own mechanical verification on a
+commit. Submissions go through <https://submit.palomar-registry.org/>.
 
 ## License
 

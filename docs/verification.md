@@ -7,6 +7,7 @@ lake exe cache get
 lake build
 lake env lean AxiomAudit.lean
 lake env lean SanityChecks.lean
+scripts/verify-comparator.sh
 ```
 
 Requires Elan/Lake and network access for mathlib. The build uses Lean
@@ -29,11 +30,27 @@ requires it. The source contains no `sorry`, no `axiom` declarations and no
   of each `n ≤ 5` is congruent to itself, and checks the column packings of
   seven squares, among them one with a single middle square moved; it must
   elaborate without errors.
+- `scripts/verify-comparator.sh` checks the library against `Challenge.lean`
+  as the Palomar registry does. It first checks that the definitions in
+  `Challenge.lean` are word for word those of `SquaresInCircles/Geometry.lean`;
+  with `--write` it copies them there instead, so that only `Geometry.lean` is
+  ever edited. It then runs `lake comparator` on
+  `comparator.json`, which builds both modules in a `bwrap` sandbox and checks
+  that `optimal_radius` and `optimal_packings` have the same statements in
+  both, that every definition they use is identical, and that the proofs use
+  no axiom beyond `propext`, `Quot.sound` and `Classical.choice`; it then
+  replays the proofs through the independent kernels NanoDa and con-ron that
+  ship with the toolchain, and through Lean's.
+  It must end with `Your solution is okay!`. It needs Linux and bubblewrap.
 
 [`.github/workflows/lean.yml`](../.github/workflows/lean.yml) runs these steps
 on every push to `main` and on pull requests, using `leanprover/lean-action`.
 Its axiom audit covers every declaration under `SquaresInCircles`, not only the
 ones printed by `AxiomAudit.lean`.
+[`.github/workflows/palomar.yml`](../.github/workflows/palomar.yml), started by
+hand, runs the Palomar registry's own mechanical verification of a commit, the
+job the registry runs after a submission, without submitting it; its report
+must end with `status: pass`.
 
 The proof pages in [`docs/proof/`](proof/README.md) link every Lean name they
 cite to its declaration, by file and line.

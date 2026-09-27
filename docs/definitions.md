@@ -2,8 +2,9 @@
 
 [Back to the README](../README.md)
 
-These definitions carry the entire meaning of the results. All except the radii
-and the optimal models are in `SquaresInCircles/Geometry.lean`.
+These definitions carry the entire meaning of the results. All of them are in
+`SquaresInCircles/Geometry.lean`, and `Challenge.lean` restates them word for
+word.
 
 ## The plane
 
@@ -114,18 +115,17 @@ What the encoding does and does not assume:
 
 ## The optimal radii
 
-Each case defines its radius next to its optimal packing, and the root file
-`SquaresInCircles.lean` collects them:
+Each case has its radius, and `optimalRadius` collects them:
 
 ```lean
-def One.radius : ℝ := Real.sqrt 2 / 2          -- One/Construction.lean
-def Two.radius : ℝ := Real.sqrt 5 / 2          -- Two/Construction.lean
-def Three.radius : ℝ := 5 * Real.sqrt 17 / 16  -- Three/Construction.lean
-def Four.radius : ℝ := Real.sqrt 2             -- Four/Construction.lean
-def Five.radius : ℝ := Real.sqrt (5 / 2)       -- Five/Construction.lean
-def Seven.radius : ℝ := Real.sqrt 13 / 2       -- Seven/Construction.lean
+def One.radius : ℝ := Real.sqrt 2 / 2
+def Two.radius : ℝ := Real.sqrt 5 / 2
+def Three.radius : ℝ := 5 * Real.sqrt 17 / 16
+def Four.radius : ℝ := Real.sqrt 2
+def Five.radius : ℝ := Real.sqrt (5 / 2)
+def Seven.radius : ℝ := Real.sqrt 13 / 2
 
-def optimalRadius : ℕ → ℝ                      -- SquaresInCircles.lean
+def optimalRadius : ℕ → ℝ
   | 1 => One.radius
   | 2 => Two.radius
   | 3 => Three.radius
@@ -199,7 +199,7 @@ centres:
 These are `One.centers`, …, `Five.centers`, and the models `One.model`, …,
 `Five.model`. For `n = 7` the optimum is not unique: between two columns of two
 squares, each of the three squares of the middle column can move along it on
-its own. A `Column` records their three heights (`Seven/Construction.lean`):
+its own. A `Column` records their three heights:
 
 ```lean
 def Seven.columnLimit : ℝ := Real.sqrt 3 - 1 / 2
@@ -223,9 +223,10 @@ def Seven.columnModel (c : Column) : Fin 7 → UnitSquare :=
 
 The heights are at least 1 apart, so the three squares do not overlap, and
 within `√3 - 1/2` of the disk centre, so they fit in the disk of radius `√13/2`.
-`Seven.centers` and `Seven.model` are the column with heights `-1, 0, 1`. The
-root file collects the optimal models, and uniqueness says that every optimal
-packing is congruent to one of them (`SquaresInCircles.lean`):
+`Seven.centers` and `Seven.model` (`Seven/Construction.lean`) are the column
+with heights `-1, 0, 1`. `optimalPackings` collects the optimal models, and
+uniqueness (`SquaresInCircles.lean`) says that every optimal packing is
+congruent to one of them:
 
 ```lean
 def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)

@@ -52,12 +52,12 @@ middle square (grey) contains $o$. The centres of the six arcs are the markers
 of Definition 9.6, in the directions 30°, 90°, …, 330°, exactly $\frac\pi3$
 apart.
 
-*Lean: [`Seven.radius`](../../SquaresInCircles/Seven/Construction.lean#L20),
-[`Seven.columnLimit`](../../SquaresInCircles/Seven/Construction.lean#L32),
-[`Seven.Column`](../../SquaresInCircles/Seven/Construction.lean#L45),
-[`Seven.columnCenters`](../../SquaresInCircles/Seven/Construction.lean#L66),
-[`Seven.columnModel`](../../SquaresInCircles/Seven/Construction.lean#L71),
-[`Seven.column_packing`](../../SquaresInCircles/Seven/Construction.lean#L75),
+*Lean: [`Seven.radius`](../../SquaresInCircles/Geometry.lean#L186),
+[`Seven.columnLimit`](../../SquaresInCircles/Geometry.lean#L191),
+[`Seven.Column`](../../SquaresInCircles/Geometry.lean#L196),
+[`Seven.columnCenters`](../../SquaresInCircles/Geometry.lean#L207),
+[`Seven.columnModel`](../../SquaresInCircles/Geometry.lean#L213),
+[`Seven.column_packing`](../../SquaresInCircles/Seven/Construction.lean#L49),
 [`Seven.uniqueness`](../../SquaresInCircles/Seven/Uniqueness.lean#L105),
 [`Seven.optimum`](../../SquaresInCircles/Seven/Uniqueness.lean#L111).*
 
@@ -149,14 +149,14 @@ $y_3 = \sqrt3 - \frac12 - \eta_3$ when the slacks add up to $2\sqrt3 - 3$.
 $\square$
 
 *Lean:
-[`Seven.column_packing`](../../SquaresInCircles/Seven/Construction.lean#L75),
-[`Seven.model_packing`](../../SquaresInCircles/Seven/Construction.lean#L113),
-[`Seven.centeredColumn`](../../SquaresInCircles/Seven/Construction.lean#L96),
-[`Seven.Column.slots`](../../SquaresInCircles/Seven/Construction.lean#L120),
-[`Seven.Column.slots_nonneg`](../../SquaresInCircles/Seven/Construction.lean#L124),
-[`Seven.Column.sum_slots`](../../SquaresInCircles/Seven/Construction.lean#L128),
-[`Seven.columnOfSlots`](../../SquaresInCircles/Seven/Construction.lean#L135),
-[`Seven.columnSlotEquiv`](../../SquaresInCircles/Seven/Construction.lean#L166),
+[`Seven.column_packing`](../../SquaresInCircles/Seven/Construction.lean#L49),
+[`Seven.model_packing`](../../SquaresInCircles/Seven/Construction.lean#L87),
+[`Seven.centeredColumn`](../../SquaresInCircles/Seven/Construction.lean#L70),
+[`Seven.Column.slots`](../../SquaresInCircles/Seven/Construction.lean#L94),
+[`Seven.Column.slots_nonneg`](../../SquaresInCircles/Seven/Construction.lean#L98),
+[`Seven.Column.sum_slots`](../../SquaresInCircles/Seven/Construction.lean#L102),
+[`Seven.columnOfSlots`](../../SquaresInCircles/Seven/Construction.lean#L109),
+[`Seven.columnSlotEquiv`](../../SquaresInCircles/Seven/Construction.lean#L140),
 [`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L34).*
 
 ![Three column packings side by side, each in its dashed circle of radius root 13 over 2 with the disk centre o: the two side columns are the same in all three; in the first the middle column is pushed down to the circle, in the second its top and bottom squares touch the circle and the middle square sits at the centre, in the third the column is pushed up to the circle](figures/seven-columns.svg)

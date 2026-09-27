@@ -67,7 +67,7 @@ squares has an exterior square.
 *Figure 3.2.* Left, $o$ lies in $S^\circ$ and $a_S < \frac12$. Right, $o$ lies
 outside $S^\circ$ and $a_S \ge \frac12$.
 
-*Lean: [`openSquare`](../../SquaresInCircles/Geometry.lean#L37),
+*Lean: [`openSquare`](../../SquaresInCircles/Geometry.lean#L60),
 [`exists_exterior`](../../SquaresInCircles/Common/ArcBudget.lean#L15).*
 
 ### Definition 3.3 (farthest-vertex function)
