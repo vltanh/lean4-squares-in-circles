@@ -1707,7 +1707,7 @@ Exact rational/Taylor evaluation gives these row-wise lower margins:
 Thus every directed W--D separating axis contradicts the three-separator
 stress inequality.
 
-an independent arithmetic audit checks exactly the scalar inequalities and the 56 fixed
+`check_A1_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` checks exactly the scalar inequalities and the 56 fixed
 endpoint evaluations above, using `Fraction`, integer square-root enclosures,
 and alternating Taylor bounds.  It performs no subdivision.
 
@@ -2215,7 +2215,7 @@ The same monotonicity and endpoint checks therefore give
 
 ### Exact checker
 
-`the pinned independent arithmetic audit` checks only:
+`check_A2_angles.py` at `b51d8a88c30588e279882b8efd5441304635f527` checks only:
 
 1. r0<23/200 by a rational square comparison;
 2. (N-ep);
@@ -2318,7 +2318,7 @@ Therefore d cannot be negative.  At d=0 the exact identity gives Delta_D=0,
 which is also incompatible with the canonical own branch Delta_D>0.  This
 proves (D+).
 
-`the pinned independent arithmetic audit` checks only the three scalar comparisons
+`check_A2_D_sign.py` at `b51d8a88c30588e279882b8efd5441304635f527` checks only the three scalar comparisons
 used above, with rational square-root and alternating Taylor enclosures.
 
 ## A2.1 — exclude N own while E cardinal
@@ -2588,7 +2588,7 @@ The algebraic candidate constants satisfy the strict scalar inequalities
     L-q>1/3.                                      (S6)
 
 They are checked directly from the exact defining radicals by
-an independent arithmetic audit.
+`check_A2_p10_tangent.py` at `b51d8a88c30588e279882b8efd5441304635f527`.
 
 These inequalities give a uniform hand bound.  First consider A_S.  Split
 according to the signs of s and the order of e,s.
@@ -2674,7 +2674,7 @@ The candidate constants satisfy
     m h < 1,       1 < rho_* < 9/8.
 
 These are exact algebraic inequalities checked in
-an independent arithmetic audit.  For `|eps|<=1/4`,
+`check_A2_p10_tangent.py` at `b51d8a88c30588e279882b8efd5441304635f527`.  For `|eps|<=1/4`,
 
     |sin eps| <= 1/4,
     0 <= 1-cos eps <= eps^2/2 <= 1/32.
@@ -2866,7 +2866,7 @@ for any of the four A2.1 central patterns.  The candidate-source part of A2.1
 has been reduced, simultaneously for all four patterns, to a uniform
 second-order remainder estimate.
 
-`the pinned independent arithmetic audit` checks only the exact algebraic
+`check_A2_a21_unified.py` at `b51d8a88c30588e279882b8efd5441304635f527` checks only the exact algebraic
 constant inequalities in (U7) and (U11).
 
 
@@ -3053,7 +3053,7 @@ are
 In particular the four-angle box decomposes as a product of two elementary
 six-sector arrangements; there are no hidden support-sign cases.
 
-`the pinned independent arithmetic audit` checks only the scalar bounds
+`check_A2_a21_support_signs.py` at `b51d8a88c30588e279882b8efd5441304635f527` checks only the scalar bounds
 (U25)--(U28) and the positive reserve inequalities used above.
 
 
@@ -3223,7 +3223,7 @@ point is present.  This is not a subdivision tree: the helper values are the
 nine pair-chamber vertices and the diagonal values are exactly the three
 analytic minimizers in (F13).
 
-`the pinned independent arithmetic audit` performs these fixed exact evaluations.
+`check_A2_a21_vertices.py` at `b51d8a88c30588e279882b8efd5441304635f527` performs these fixed exact evaluations.
 The smooth-helper chamber calculus is supplied by the subsequent Pattern-10,
 Pattern-14, and Pattern-26 reductions; no additional candidate-source step is
 open here.
@@ -3322,7 +3322,7 @@ is possible for d<=1/2.  Hence every Pattern-10 survivor satisfies
     1/2<d<=pi/4,
     D--W in {W-secondary,D-secondary}.             (P10DW7)
 
-An independent arithmetic audit checks only the
+`check_A2_pattern10_DW_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` checks only the
 one-dimensional coordinate and diagonal curvature inequalities and the fixed
 chamber vertices.  It contains no multidimensional subdivision.
 
@@ -3418,7 +3418,7 @@ therefore has exactly
 
     D--W=W-secondary,     D--S=S-secondary.         (P10E7)
 
-An independent arithmetic audit verifies only the scalar
+`check_A2_pattern10_Dedges_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` verifies only the scalar
 curvature/monotonicity inequalities and the fixed chamber vertices.  It
 contains no multidimensional subdivision or adaptive replay.
 
@@ -3515,7 +3515,7 @@ endpoint margins in the three rows of (P10C5) are respectively
 
     > .02309, .00884, .01083.                       (P10C5d)
 
-An independent arithmetic audit checks only
+`check_A2_pattern10_candidate_tails_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` checks only
 these scalar curvature inequalities and the fixed chamber vertices.  It has
 no multidimensional subdivision or adaptive replay.
 
@@ -3547,7 +3547,7 @@ bounds on the corresponding sign regions:
 
     D_w > 9/20,            w>=0, s=0.              (P10C12)
 
-An independent arithmetic audit checks these
+`check_A2_pattern10_candidate_derivatives.py` at `b51d8a88c30588e279882b8efd5441304635f527` checks these
 explicit derivative inequalities directly from the cap/vertex formulas.  It
 has no packing-state search or adaptive subdivision.
 
@@ -4036,19 +4036,22 @@ transfer to all four rows.
 The Pattern-30 hand stresses close every noncandidate D-edge graph:
 
 - W-secondary/S-primary:
-  an independent arithmetic audit and
-  an independent arithmetic audit;
+  `check_A2_pattern30_Ws_Sp_signed_hand.py` and
+  `check_A2_pattern30_Ws_Sp_simple_hand.py`;
 - W-secondary/D-primary and D-secondary/D-primary:
-  an independent arithmetic audit,
-  an independent arithmetic audit;
+  `check_A2_pattern30_Ws_Dp_hand.py`,
+  `check_A2_pattern30_Ds_Dp_hand.py`;
 - D-secondary/S-primary:
-  an independent arithmetic audit;
+  `check_A2_pattern30_Ds_Sp_hand.py`;
 - W-secondary/D-secondary and D-secondary/D-secondary:
-  an independent arithmetic audit,
-  an independent arithmetic audit;
+  `check_A2_pattern30_Ws_Ds_hand.py`,
+  `check_A2_pattern30_Ds_Ds_hand.py`;
 - D-secondary/S-secondary:
-  an independent arithmetic audit together with the universal hard-corner
-  lemma an independent arithmetic audit.
+  `check_A2_pattern30_Ds_Ss_hand.py` together with the universal hard-corner
+  audit `check_A2_A23_DsSs_hard_hand.py`.
+
+All checker names in this list refer to archive commit
+`b51d8a88c30588e279882b8efd5441304635f527`.
 
 After center elimination, every one of these stresses is a sum of
 one-variable functions of
@@ -4072,12 +4075,12 @@ Thus all four A2.3 patterns reduce to the candidate graph
 Three hand lemmas are shared by Patterns 28,29,30,31.
 
 First,
-an independent arithmetic audit removes
+`check_A2_pattern30_candidate_S_tails_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` removes
 
     s<=-1/6,      s>=1/2.                          (A23C1)
 
 Second,
-an independent arithmetic audit removes
+`check_A2_pattern30_candidate_wpos_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` removes
 
     w>=2/25.                                       (A23C2)
 
@@ -4086,8 +4089,8 @@ their own frames, while a fixed signed far-vertex bound makes the D support a
 sum of one-variable terms in d-w,d-s,s-w.  Coordinate and oblique-wall
 concavity leave fixed vertices.
 
-Third, the old far-negative adaptive replay is replaced by
-an independent arithmetic audit.  On
+Third, the old far-negative adaptive replay is replaced by the hand reduction
+audited by `check_A2_A23_candidate_far_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527`.  On
 
     -2/3<=w<=-21/50,
     -1/6<=s<=1/2,
@@ -4394,8 +4397,8 @@ If w<0, the hand Pattern-14 reserve gives, for every W--N source,
 
     B_u(n,w) >= B_*+(73/100)(-w),                  (P30C1)
 
-on the whole remaining interval -21/50<=w<=0.  The scalar hand diagonal
-estimate an independent arithmetic audit gives
+on the whole remaining interval -21/50<=w<=0.  The scalar hand diagonal estimate audited by
+`check_A2_pattern30_Dw_upper_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` gives
 
     partial_w D < 18/25.                           (P30C2)
 
@@ -4414,7 +4417,8 @@ the pair envelopes give
 
     Phi >= a(w)+b(s)+D(w,s,eps).                   (P30C4)
 
-The hand scalar checker an independent arithmetic audit proves
+The hand scalar calculation audited by
+`check_A2_pattern30_candidate_middle_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` proves
 
     s<0:   b'(s)<0,       D_s<-3/5,
     s>0:   b''(s)<-12/25, D_ss<9/20,
@@ -4442,7 +4446,7 @@ E-cardinal/S-own pair.  The same factorization
 
 holds on (A23C5).
 
-an independent arithmetic audit gives:
+`check_A2_pattern28_candidate_scalar_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` audits:
 
 - for s<0, b'(s)<0 and D_s<-1/2;
 - for s>0, splitting only at s=1/10 and s=1/4 gives negative total
@@ -4466,8 +4470,8 @@ both-own pair after reflection
 
     (n,w)=(-e,-s).                                 (P29C1)
 
-The source-independent bridge checker
-an independent arithmetic audit uses
+The source-independent bridge hand reduction, audited by
+`check_A2_pattern29_candidate_bridges_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527`, uses
 
     (299,308,0,197,196)/1000   on -1/6<=s<=-2/25,
     (251,433,0,160,156)/1000   on 21/50<=s<=1/2.  (P29C2)
@@ -4498,16 +4502,15 @@ on those edges give
 For w<0, the A2.2 N/W reserve and (P30C2) again leave
 (1/100)(-w)>0.
 
-For w>0,
-an independent arithmetic audit proves
+For w>0, `check_A2_pattern29_Dw_pos_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` audits
 
     D_w>7/20,                                      (P29C4)
 
 whereas the A2.2 N-cardinal/W-own profile has a'(w)>-29/100.  Thus the total
 w derivative is greater than 3/50 and every minimum moves to w=0.
 
-At w=0, use the reflected E/S hand calculus.  For s<0,
-an independent arithmetic audit gives
+At w=0, use the reflected E/S hand calculus. For s<0,
+`check_A2_pattern29_candidate_middle_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` audits
 
     d/ds a(-s)<-3/40,     D_s<-3/5,                (P29C5)
 
@@ -4540,7 +4543,7 @@ confined to (P29C3).
 For w<0, (P30C1)--(P30C3) move w to zero.  Assume w>=0 and reduce N/W by the
 Pattern-14 positive envelope to a(w).
 
-If s<0, an independent arithmetic audit gives the same
+If s<0, `check_A2_pattern31_candidate_scalar_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` audits the same
 reflected pair derivative as (P29C5), uniformly for 0<=w<=2/25:
 
     d/ds a(-s)<-3/40,     D_s<-3/5.                (P31C1)
@@ -4840,7 +4843,7 @@ at every vertex.  The actual certified minima are greater than
 Therefore both D--S secondary-axis possibilities contradict R^2<=Q0
 throughout (P9-domain).
 
-\`the pinned independent arithmetic audit\` checks only the scalar curvature
+`check_A2_tail_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` checks only the scalar curvature
 inequalities and these 36 fixed endpoint evaluations.  It performs no
 subdivision.
 
@@ -4948,7 +4951,7 @@ at all 64 vertices. The actual smallest certified margin is greater than
 
 Therefore the whole large-N alternate-D-W family contradicts R^2<=Q0.
 
-the pinned independent arithmetic audit checks the displayed curvature
+`check_A2_largeN_alt_dw_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` checks the displayed curvature
 bounds and the 64 fixed endpoint values. It performs no subdivision.
 
 
@@ -5048,7 +5051,7 @@ greater than 0.10708, attained for the N-secondary W--N source at
 
 Hence the entire P11 domain is excluded.
 
-`the pinned independent arithmetic audit` checks the fixed curvature
+`check_A2_Ws_Ss_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` checks the fixed curvature
 inequalities, equality-diagonal concavity, and 96 endpoint values using
 rational square-root and alternating Taylor enclosures only. It performs no
 adaptive subdivision.
@@ -5156,7 +5159,7 @@ for the N-secondary source at
 
 Hence the entire widened P12 domain contradicts R^2<=Q0.
 
-`the pinned independent arithmetic audit` checks the displayed curvature signs
+`check_A2_Ws_Ds_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` checks the displayed curvature signs
 and the 64 fixed endpoint evaluations. It performs no adaptive subdivision.
 
 
@@ -5231,7 +5234,7 @@ attained for W-primary or N-primary source at
 
 Hence the whole P13 domain contradicts R^2<=Q0.
 
-`the pinned independent arithmetic audit` checks the fixed curvature
+`check_A2_largeN_bothD_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` checks the fixed curvature
 inequalities and the 64 endpoint values. It performs no adaptive subdivision.
 
 ### Four-graph consequence for A2.2
@@ -5342,7 +5345,7 @@ for W-primary source at
 
 Hence the entire P14 domain contradicts R^2<=Q0.
 
-`the pinned independent arithmetic audit` checks the fixed curvature
+`check_A2_largeN_bothD_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` checks the fixed curvature
 inequalities and the 64 endpoint values.  It performs no adaptive
 subdivision.
 
@@ -5433,7 +5436,7 @@ Therefore the entire P15 domain is excluded.
 Together, P14 and P15 close both possible D--S secondary choices whenever
 D--W uses W-secondary on the full low-N strip |n|<=1/5.
 
-`the pinned independent arithmetic audit` checks only fixed
+`check_A2_lowN_Wsecondary_full_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` checks only fixed
 curvature/monotonicity inequalities and endpoint values. It performs no
 adaptive subdivision.
 
@@ -5546,7 +5549,7 @@ Whenever s>=1/6 this implies
 Consequently P14--P16 cover the entire cardinally possible negative-n range
 for both W-secondary D--S choices, subject only to their displayed w-ranges.
 
-`the pinned independent arithmetic audit` checks the fixed
+`check_A2_negativeN_Wsecondary_tail.py` at `b51d8a88c30588e279882b8efd5441304635f527` checks the fixed
 curvature/monotonicity inequalities and endpoint values.  It performs no
 adaptive subdivision.
 
@@ -5676,7 +5679,7 @@ Exact square-root arithmetic gives the following row minima:
 
 Thus all four directed primary-axis possibilities are impossible.
 
-`the pinned independent arithmetic audit` checks the two scalar curvature
+`check_A2_DW_primary_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` checks the two scalar curvature
 bounds and the twelve fixed endpoint evaluations.  It performs no subdivision.
 
 
@@ -5780,7 +5783,7 @@ and exact evaluation gives gap >1/100 at each of them.
 
 This proves (P18-angle)--(P18-axis).
 
-`the pinned independent arithmetic audit` checks the scalar curvature
+`check_A2_DW_secondary_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` checks the scalar curvature
 bounds and the ten fixed endpoint evaluations.  It performs no subdivision.
 
 
@@ -5927,7 +5930,7 @@ at (d,s)=(d0,0).
 
 Hence D-primary cannot be the D--S separator anywhere in R22-c.
 
-`the pinned independent arithmetic audit` checks only the scalar
+`check_A2_R22c_Dprimary_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` checks only the scalar
 curvature inequalities and these six fixed endpoint values. It performs no
 subdivision.
 
@@ -6020,7 +6023,7 @@ attained in the negative-n W-primary row at
 Therefore D-secondary cannot separate D from S anywhere in the small-s
 A2.2 residual.
 
-The checker the pinned independent arithmetic audit verifies only the
+The checker `check_A2_R22c_Dsecondary_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` verifies only the
 displayed fixed curvature/monotonicity statements and endpoint values. It
 reuses the P12/P14/P16 stresses exactly and performs no multidimensional
 search.
@@ -6122,7 +6125,7 @@ So the only zero of the tangent-plus-diagonal model is the exact candidate
 tie.  This is the local coercivity input for the final R22-c / S-secondary
 closure.
 
-`the pinned independent arithmetic audit` checks only the algebraic candidate
+`check_A2_R22c_tangent.py` at `b51d8a88c30588e279882b8efd5441304635f527` checks only the algebraic candidate
 inequalities in (A22-coeff), d_*>h, and the rational strip constant
 1/3-17/256>1/4.
 
@@ -6370,7 +6373,7 @@ is enough to retain
     S--E in {S-primary,E-secondary}.               (A22-src-final)
 
 This is a finite hand chamber calculation from the explicit support formula
-(SRC0).  An independent arithmetic audit is retained only as an
+(SRC0).  `check_A2_R22c_sources.py` at `b51d8a88c30588e279882b8efd5441304635f527` is retained only as an
 independent arithmetic check; its rational grid is not part of the proof.
 
 
@@ -6481,8 +6484,7 @@ There
 
 with equality only at eps=0.
 
-This is the complete reduced monotonicity argument.  The old
-an independent arithmetic audit is only an arithmetic
+This is the complete reduced monotonicity argument.  The old `check_A2_R22c_reduced_monotonicity.py` at `b51d8a88c30588e279882b8efd5441304635f527` is only an arithmetic
 cross-check for (MON6)--(MON10), not a proof dependency.
 
 
@@ -6536,7 +6538,7 @@ we obtain the hand envelope
     A_u(n,w) >= a(w)
       for u in {W-primary,N-secondary}.            (A22-env-NW-done)
 
-An independent arithmetic audit is only an arithmetic
+`check_A2_R22c_NW_envelope.py` at `b51d8a88c30588e279882b8efd5441304635f527` is only an arithmetic
 cross-check; no box cover is used in the proof.
 
 
@@ -6599,8 +6601,7 @@ Therefore, for either equality source,
       := B_Sp(0,s),    s<=0,
          B_Es(0,s),    s>=0.                       (A22-env-ES-done)
 
-This is the complete E/S hand envelope.  The former
-an independent arithmetic audit only replays the displayed derivative
+This is the complete E/S hand envelope.  The former `check_A2_R22c_ES_envelope.py` at `b51d8a88c30588e279882b8efd5441304635f527` only replays the displayed derivative
 inequalities numerically and is not a proof dependency.
 #### Pattern-12 cardinal/cardinal extension to \(s<2/5\)
 
@@ -6765,8 +6766,7 @@ survivor satisfies
 
     d>1/2.
 
-This replaces the former fixed cover and predetermined 4x4 refinement in
-an independent arithmetic audit.
+This replaces the former fixed cover and predetermined 4x4 refinement in `check_A2_R22d_DW_secondary_lowd.py` at `b51d8a88c30588e279882b8efd5441304635f527`.
 
 
 ## A2.2 hand lemma — W-primary D--W for w<0
@@ -6876,8 +6876,7 @@ angles and pi/4, using `R_*<17/10` and the defining radical bounds for
 rho_*.
 
 Hence W-primary cannot be the D--W source anywhere in R22-d.  This replaces
-the former fixed `1/100` cover in
-an independent arithmetic audit; that file is retained only as a sanity
+the former fixed `1/100` cover in `check_A2_R22d_DW_Wprimary.py` at `b51d8a88c30588e279882b8efd5441304635f527`; that file is retained only as a sanity
 check.
 
 
@@ -7000,8 +6999,7 @@ rectangle vertices.  Their weakest value is
 So the -e_D orientation is impossible as well.
 
 Consequently D-primary is never the D--W source on R22-d.  This replaces
-the former fixed `1/100` cover in
-an independent arithmetic audit; that checker is retained only as a
+the former fixed `1/100` cover in `check_A2_R22d_DW_Dprimary.py` at `b51d8a88c30588e279882b8efd5441304635f527`; that checker is retained only as a
 sanity check.
 
 
@@ -7114,8 +7112,7 @@ Consequently
 
     D--S=S-primary  =>  s>1/6
 
-on R22-d.  This replaces the former fixed `1/50` cover in
-an independent arithmetic audit; that script is now only a sanity
+on R22-d.  This replaces the former fixed `1/50` cover in `check_A2_R22d_DS_Sprimary_small.py` at `b51d8a88c30588e279882b8efd5441304635f527`; that script is now only a sanity
 check.
 
 
@@ -7209,8 +7206,7 @@ cos x > 1-x^2/2 on the rational angles involved, together with
 42/25<R_*<17/10 and the defining radical bound for rho_*.
 
 Therefore D-primary cannot be the D--S source anywhere on the high-D
-R22-d strip.  This replaces the former two-dimensional fixed-grid check
-an independent arithmetic audit; the latter is retained only as a numerical
+R22-d strip.  This replaces the former two-dimensional fixed-grid check `check_A2_R22d_DS_Dprimary.py` at `b51d8a88c30588e279882b8efd5441304635f527`; the latter is retained only as a numerical
 sanity check, not as a proof dependency.
 
 
@@ -7387,12 +7383,12 @@ D-edge graph is impossible throughout
 
     -1/2<=w<0.
 
-This is a hand chamber/derivative proof.  The former
-an independent arithmetic audit,
-an independent arithmetic audit,
-an independent arithmetic audit, and
-an independent arithmetic audit are retained only as independent arithmetic
-cross-checks.
+This is a hand chamber/derivative proof.  The former `check_A2_R22d_sources_half.py`,
+`check_A2_R22d_NW_reserve.py`,
+`check_A2_R22d_candidate_half_hand.py`, and
+`check_A2_R22d_Dw_upper.py` at
+`b51d8a88c30588e279882b8efd5441304635f527` are retained only as independent
+arithmetic cross-checks.
 
 
 
