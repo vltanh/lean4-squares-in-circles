@@ -216,6 +216,71 @@ Patterns 9,24,25,15 must instead be closed directly.  Pattern 9 has the same
 cardinal/cardinal reduced gap as Pattern 8 and is expected to share its scalar
 closure; Patterns 24,25,15 remain explicit open survivor obligations.
 
+## 4A. Direct closure of Pattern 9
+
+Pattern 9 has
+
+\[
+E_o,N_c,W_c,D_o,S_c.
+\]
+
+Its N/W adjacent pair is cardinal/cardinal, exactly as in Pattern 8.  Hence
+the reflected Pattern-12 pair envelope gives, for every W--N source axis,
+
+\[
+A_u(n,w)\ge b(-w).                                      \tag{G9-1}
+\]
+
+Its E/S adjacent pair is E-own/S-cardinal, exactly the Pattern-13 E/S pair.
+The A2.2 hand E/S envelope was proved simultaneously for Patterns 12 and 13
+and has the **same** lower equality profile in both cases:
+
+\[
+B_v(e,s)\ge b(s),                                      \tag{G9-2}
+\]
+
+where
+
+\[
+b(s)=
+\begin{cases}
+B_{Sp}(0,s),&s\le0,\\
+B_{Es}(0,s),&s\ge0.
+\end{cases}
+\]
+
+The C/W/D/S graph classification and source-independent tails depend on
+neither E nor N and therefore transfer from Pattern 10 exactly as they do for
+Pattern 8.  Every residual Pattern-9 candidate therefore satisfies the same
+reduced inequality
+
+\[
+\Phi\ge F_9(w,s,\epsilon)
+      :=b(-w)+b(s)+D(w,s,\epsilon).                 \tag{G9-3}
+\]
+
+This is identical to the Pattern-8 reduced function.  The same four scalar
+derivative estimates give:
+
+- \(w<0\): \(\partial_wF_9<-1/5\), so \(w\) moves to \(0\);
+- \(w\ge0,s<0\): \(\partial_sF_9<-1/10\), so \(s\) moves to \(0\);
+- \(w\ge0,s>0\): \(\partial_sF_9>1/20\), so \(s\) moves to \(0\);
+- \(s=0,w>0\): \(\partial_wF_9>1/20\), so \(w\) moves to \(0\).
+
+Thus every minimum reaches \(w=s=0\).  There
+
+\[
+F_9(0,0,\epsilon)
+ =2m(d_*-1/\sqrt2)(1-\cos\epsilon)\ge0.             \tag{G9-4}
+\]
+
+Equality in the E-own/S-cardinal envelope would put E on the cardinal tie;
+the cardinal-preferred convention assigns that tie to the cardinal branch.
+Hence Pattern 9 is in fact strict and is impossible at the optimum.
+
+This is a direct Pattern-9 proof and does not use diagonal reflection of the
+global D-normalization.
+
 ## 5. Pattern 27
 
 Pattern 27 has
