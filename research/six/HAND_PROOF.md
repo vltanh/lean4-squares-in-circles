@@ -6115,7 +6115,7 @@ Therefore, for either equality source,
 This is the complete E/S hand envelope.  The former
 an independent arithmetic audit only replays the displayed derivative
 inequalities numerically and is not a proof dependency.
-#### Pattern-12 cardinal/cardinal extension to \(s<3/10\)
+#### Pattern-12 cardinal/cardinal extension to \(s<2/5\)
 
 The preceding common proof was stated only through \(s<1/6\) because the
 Pattern-13 own-E derivative bound (ES4) deteriorates beyond that point.
@@ -6125,7 +6125,7 @@ For that branch the same explicit formulas have substantially more reserve.
 On
 
 \[
-0<s<3/10,\qquad -2/5<e<2/5,
+0<s<2/5,\qquad -2/5<e<2/5,
 \]
 
 direct differentiation of the Pattern-12 formulas, with the same exact
@@ -6171,7 +6171,7 @@ Together with (ES2+)--(ES3+), this proves the Pattern-12-only extension
 
 \[
 \boxed{B_v(e,s)\ge B_{Es}(0,s)\qquad
-       (0\le s<3/10)}                              \tag{A22-env-ES-P12+}
+       (0\le s<2/5)}                              \tag{A22-env-ES-P12+}
 \]
 
 for all four E/S source axes. The Pattern-13 own-E envelope remains
