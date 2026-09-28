@@ -1097,7 +1097,7 @@ D\!-\!S=S\text{-secondary},
 and lies in
 
 \[
--\frac16<w<\frac3{10},\qquad
+-\frac16<w\le\frac25,\qquad
 -\frac3{10}<s<\frac16.
 \]
 
@@ -3224,8 +3224,9 @@ nine pair-chamber vertices and the diagonal values are exactly the three
 analytic minimizers in (F13).
 
 `the pinned independent arithmetic audit` performs these fixed exact evaluations.
-Therefore the only missing step for the candidate-source small box is the
-calculus reduction from each smooth helper chamber to the vertices (F12).
+The smooth-helper chamber calculus is supplied by the subsequent Pattern-10,
+Pattern-14, and Pattern-26 reductions; no additional candidate-source step is
+open here.
 
 
 ## A2.1 Pattern 10 hand lemma — W-cardinal D--W classification
