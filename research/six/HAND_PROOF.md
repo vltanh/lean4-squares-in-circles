@@ -2,13 +2,17 @@
 
 This is an **audited working draft**, not yet a complete proof of the \(n=6\) case.
 
-The September 28 audit found three substantive open obligations:
+The September 28 audit found three substantive defects.  Two are now repaired:
+the invalid diagonal-reflection survivor shortcut has been replaced by direct
+closures of Patterns 9,24,25,15, and the A2.3 support misuse has been replaced
+by an exact cap/vertex analysis.
 
-1. the global normalization lemmas summarized in the concise proof must be supplied with their actual derivations;
-2. the diagonal-reflection reduction of Patterns 9,24,25,15 is not valid after the chosen D-normalization, so those patterns need direct closures;
-3. one A2.3 support step incorrectly used the cap expression on a vertex-support branch and must be repaired with the exact two-branch support formula.
+One substantive obligation remains: the n=6-specific **global normalization
+theorem** must be proved rather than summarized.  Its exact sublemmas are
+listed in §2.3 below.
 
-The document below preserves the verified hand reductions while making those gaps explicit. It contains no executable search or multidimensional numerical proof premise.
+The document below preserves the verified hand reductions while isolating
+that remaining foundation explicitly. It contains no executable search or multidimensional numerical proof premise.
 Every mathematical dependency needed for formalization is stated here.
 Finite scalar endpoint inequalities are part of the hand argument and are
 listed explicitly; they may later be discharged in Lean by elementary
@@ -210,32 +214,45 @@ This theorem concerns the genuine `Seven.chartMarker`. After the
 side-nearest lemma below shows that the axial label is selected, it becomes
 the simplified affine-marker statement used in A2.
 
-The global geometric reductions proved before the A2 analysis give:
+### 2.3. Remaining global-normalization theorem
 
-1. the center of \(C\) satisfies
-   \[
-   |C_x|,|C_y|<23/200;
-   \]
-2. every exterior square is side-nearest, never corner-nearest;
-3. after reflections and relabeling, the five exterior squares occur in the
-   cyclic order
-   \[
+The downstream proof needs the following n=6-specific theorem.  This is now
+the **only** unproved block in this document.
+
+For a candidate-sized packing with the normalization (N3):
+
+1. the central center satisfies
+   [
+   |c_x|,|c_y|<23/200;
+   ]
+2. every exterior square is side-nearest, with a signed local chart
+   [
+   177/200<a<223/200,qquad |b|<117/250;
+   ]
+3. after the dihedral symmetries of (C), the five exterior primary
+   directions occur in cyclic categories
+   [
    E,N,W,D,S;
-   \]
-4. each exterior square contains its prescribed open point on the radius
-   \(9/10\) auxiliary circle;
-5. consecutive affine markers
-   \[
-   \phi_i+{5\over4}b_i
-   \]
-   have gaps strictly between \(\pi/3\) and \(2\pi/3\);
-6. each exterior square has only two possible canonical separators from
-   \(C\): the appropriate cardinal side of \(C\), or its own primary normal;
-7. the canonical convention selects the cardinal separator whenever it is
-   available;
-8. at most one exterior square can occupy any cardinal side of \(C\);
-9. by the W/D reflection normalization, \(D\) may be assumed to use its own
-   primary separator.
+   ]
+4. the radius-(9/10) points at angles
+   [
+   0,quadpi/2,quad11pi/12,quad5pi/4,quad19pi/12
+   ]
+   lie in the respective open squares;
+5. the genuine Seven marker is on its axial branch, hence equals
+   [
+   phi_i+rac54 b_i,
+   ]
+   and the consecutive gaps are those of (N7);
+6. separating-axis completeness leaves, for each exterior square, only the
+   corresponding cardinal normal of (C) or the square's own primary normal;
+7. at most one exterior square may use a given cardinal side of (C);
+8. after the W/D horizontal-reflection relabeling, (D) uses its own-primary
+   separator.
+
+Items 1--8 are the remaining foundation to be proved.  No later A2 or global
+survivor lemma is presently being used to justify them; doing so would be
+circular.
 
 Thus every packing is assigned one of 32 canonical five-bit central patterns,
 with the \(D\) bit fixed to own in the final normalization.
@@ -248,7 +265,9 @@ The intended A2 elimination concerns the nine canonical patterns
 10,12,13,14,26,28,29,30,31.
 \]
 
-A2.1 and A2.2 have hand reductions below. A2.3 must be re-audited after the support-branch correction described in Appendix B; until that repair is complete, the nine-pattern elimination is not claimed as a theorem.
+A2.1, A2.2, and A2.3 are hand-reduced below.  The A2.3 far-negative and bridge
+arguments use the corrected exact cap/vertex support, and the fixed stress
+coefficients needed for auditability are recorded in Appendix B.
 
 ### A2.1
 
@@ -319,9 +338,8 @@ need not remain in that same D-angle domain.  Therefore the previous shortcut
 
 cannot be used as a proof step under the present normalization.
 
-Patterns 9,24,25,15 must instead be closed directly.  Pattern 9 has the same
-cardinal/cardinal reduced gap as Pattern 8 and is expected to share its scalar
-closure; Patterns 24,25,15 remain explicit open survivor obligations.
+Patterns 9,24,25,15 are therefore closed directly in §§4A--4B below; no
+global diagonal-reflection transfer is used.
 
 ## 4A. Direct closure of Pattern 9
 
@@ -753,14 +771,14 @@ audit is not a proof dependency.
 Every packing at or below the candidate radius enters a canonical central
 pattern.
 
-- A2.1/A2.2 supply hand eliminations, while A2.3 still requires the corrected support-branch audit.
-- Pattern 27 is terminal.
-- Pattern 11 is terminal.
-- Pattern 8 has a hand scalar closure.
-- Patterns 9,24,25,15 require direct closures under the fixed D-normalization.
-- the global normalization lemmas listed in §2 still need their derivations inserted into this document.
+- A2 eliminates the nine forbidden canonical patterns by hand chamber
+  reductions with exact scalar support.
+- Patterns 9,11,15,24,25,27 are terminal by the direct arguments above.
+- Pattern 8 has the hand scalar closure and direct equality analysis.
+- the sole remaining proof obligation is the global normalization theorem in
+  §2.3.
 
-After those remaining steps,
+After that remaining theorem,
 
 \[
 R^2\ge q_*
@@ -770,7 +788,8 @@ follows, and the strictness/equality statements in the case reductions force
 every equality packing to be congruent to the displayed candidate
 configuration.
 
-Accordingly this document is an audited proof draft.  The open mathematical obligations are the global normalization derivations, the corrected A2.3 support analysis, and direct closure of Patterns 9,24,25,15.
+Accordingly this document is an audited proof draft with one open
+mathematical obligation: the global normalization theorem of §2.3.
 
 
 # Appendix A — west-category normalization (A1)
