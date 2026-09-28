@@ -2,7 +2,7 @@
 
 ## Goal
 
-Produce a draft Lean formalization of HAND_PROOF.md.
+Produce a draft Lean formalization of HAND_PROOF.md **after the audited mathematical repair gate below is closed**.
 
 The draft does not need to compile. Its purpose is to settle final definitions,
 module boundaries, theorem statements, dependency direction, scalar arithmetic
@@ -13,6 +13,74 @@ No theorem statement may depend on Python, interval boxes, certificate files,
 or the former branch-and-bound verifier.
 
 HAND_PROOF.md is the sole mathematical source of truth.
+
+## Phase -1 — mathematical repair gate
+
+Do not draft the n=6 Lean theorem chain from the current proof until these
+three obligations are closed in HAND_PROOF.md.
+
+### G0. Global normalization foundations
+
+Supply actual proofs, not summaries, for:
+
+- the unique central square;
+- the central-center bound;
+- side-nearest exterior squares;
+- at most one helper per central side;
+- the two-choice central separator theorem;
+- cyclic order E,N,W,D,S;
+- the five forced interior pins;
+- marker-gap bounds;
+- the D-own normalization.
+
+The existing Seven.six_exterior_ring theorem may be reused for the exterior
+starting point; the claim that the repository lacks a formalized n=7 theorem
+is false.
+
+### G1. Repair A2.3 exact support
+
+Any stress using a claim of the form
+
+    disk support <= rho * dominant_component
+
+must prove that the force is on the cap branch. Dominance of one local
+component alone is insufficient.
+
+Use the exact two-branch support function:
+
+    cap    = rho * U,
+    vertex = R * sqrt(X^2+Y^2) - (U+V)/2.
+
+Re-audit every affected A2.3 tail/bridge, especially the far-negative
+candidate tail and any Pattern-29 bridge that relied on global cap dominance.
+
+All corrected margins must be restated as hand scalar lemmas.
+
+### G2. Direct survivor closures
+
+Do not use diagonal reflection to map 9->10, 24->12, 25->14, or 15->27 after
+the D-angle normalization.
+
+Close the survivors directly:
+
+- Pattern 9: first target; its reduced cardinal/cardinal gap appears to be the
+  same as Pattern 8;
+- Pattern 24;
+- Pattern 25;
+- Pattern 15.
+
+Only after G0--G2 are proved should the proof status return to hand-complete.
+
+### Repair acceptance criteria
+
+The repair gate is closed when:
+
+- every global reduction cited by the concise proof has an explicit proof;
+- no support formula is used outside its proved branch;
+- all seven surviving central patterns are closed directly or by a symmetry
+  that preserves the chosen normalization;
+- the end-to-end theorem has no stale/open-status contradiction;
+- HAND_PROOF.md contains a pattern-to-lemma coverage table.
 
 ## Existing APIs to reuse
 
@@ -64,7 +132,7 @@ import file until the n=6 draft theorem chain exists.
 This is intentionally coarser than the discovery history. Do not create a
 Lean file for every former stress/checker branch.
 
-## Phase 0 — compile-shaped skeletons
+## Phase 0 — compile-shaped skeletons (only after Phase -1)
 
 Create every file above with plausible imports, namespace
 SquaresInCircles.Six, real definitions/theorem statements, and by sorry
