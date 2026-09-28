@@ -333,43 +333,138 @@ the quantitative input for the strengthened marker-gap lemma below.
 
 ### 2.3. Remaining global-normalization theorem
 
-The downstream proof needs the following n=6-specific theorem.  This is now
-the **only** unproved block in this document.
+The downstream proof uses a slightly stronger normalization package than the
+coarse \(23/200\) core box.  The exact dependencies are listed here so that no
+later stress silently imports a stronger bound.
 
-For a candidate-sized packing with the normalization (N3):
+Put
 
-1. the central center satisfies
-   [
-   |c_x|,|c_y|<23/200;
-   ]
-2. every exterior square is side-nearest, with a signed local chart
-   [
-   177/200<a<223/200,qquad |b|<117/250;
-   ]
-3. after the dihedral symmetries of (C), the five exterior primary
-   directions occur in cyclic categories
-   [
-   E,N,W,D,S;
-   ]
-4. the radius-(9/10) points at angles
-   [
-   0,quadpi/2,quad11pi/12,quad5pi/4,quad19pi/12
-   ]
-   lie in the respective open squares;
-5. the genuine Seven marker is on its axial branch, hence equals
-   [
-   phi_i+rac54 b_i,
-   ]
-   and the consecutive gaps are those of (N7);
-6. separating-axis completeness leaves, for each exterior square, only the
-   corresponding cardinal normal of (C) or the square's own primary normal;
-7. at most one exterior square may use a given cardinal side of (C);
-8. after the W/D horizontal-reflection relabeling, (D) uses its own-primary
-   separator.
+\[
+\rho_0=\sqrt{Q_0-\frac14}-\frac12,\qquad
+c_0=\rho_0-1=\sqrt{Q_0-\frac14}-\frac32.
+\]
 
-Items 1--8 are the remaining foundation to be proved.  No later A2 or global
-survivor lemma is presently being used to justify them; doing so would be
-circular.
+Numerically \(c_0\approx0.1128<23/200\).
+
+For a candidate-sized packing with normalization (N3), it remains to prove:
+
+1. **Coarse central core**
+   \[
+   0\le c_x,c_y<\frac{23}{200}.                    \tag{N16}
+   \]
+
+2. **Exterior chart bounds and side-nearestness**
+   \[
+   \frac{177}{200}<a<\frac{223}{200},\qquad
+   |b|<\frac{117}{250},                            \tag{N17}
+   \]
+   and the nearest point to \(O\) lies on the relative interior of the near
+   edge, never at a corner.
+
+3. **Cyclic sector theorem.**  After a dihedral symmetry of \(C\), the five
+   exterior primary directions occur in cyclic categories
+   \[
+   E,N,W,D,S.                                      \tag{N18}
+   \]
+
+4. **Five fixed open pins.**  The radius-\(9/10\) points at angles
+   \[
+   0,\quad \frac\pi2,\quad \frac{11\pi}{12},\quad
+   \frac{5\pi}{4},\quad \frac{19\pi}{12}
+   \]
+   lie respectively in \(E,N,W,D,S\).               \tag{N19}
+
+5. **Affine marker.**  The genuine Seven marker is on its axial branch, hence
+   after restoring the chart sign
+   \[
+   \widehat\phi_i=\phi_i+\frac54 b_i,               \tag{N20}
+   \]
+   with the consecutive gaps from (N7).
+
+6. **Central separator two-choice theorem.**  For each exterior square, the
+   only canonical separators from \(C\) are the corresponding cardinal normal
+   of \(C\) or the exterior square's own primary normal.  The cardinal choice
+   is preferred on ties.                            \tag{N21}
+
+7. **One helper per cardinal side.**  At most one exterior square can use any
+   fixed cardinal side of \(C\).                    \tag{N22}
+
+The following facts are then **derived consequences** of items 1--7 and must
+be written down before A2 begins.
+
+### 2.3A. Strong central-center bound actually used downstream
+
+The A2 stresses use
+
+\[
+\boxed{0\le c_x,c_y\le c_0=\rho_0-1},              \tag{N23}
+\]
+
+not merely \(23/200\).
+
+To derive it for \(c_x\), use the E-category helper from (N18).
+If E uses the east cardinal separator, the cap-depth inequality gives its
+radial chart coordinate at least \(1+c_x\).  If E uses own-primary, the same
+inequality follows from the own-primary separator and the fact that its
+primary direction lies in the E sector.  In either case the sharp
+disk-containment cap bound is
+
+\[
+a_E\le \rho_0.
+\]
+
+Hence \(1+c_x\le\rho_0\), so \(c_x\le\rho_0-1\).  The N-category argument is
+identical for \(c_y\).
+
+This upgrade is essential: replacing \(c_0\) by \(23/200\) destroys several
+tight A2.3 margins.
+
+### 2.3B. Moving pins used by P4/P8
+
+Besides the fixed radius-\(9/10\) pins, the later cardinal-helper lemmas use
+
+\[
+P_E=(1+c_x,0)\in E^\circ,\qquad
+P_N=(0,1+c_y)\in N^\circ.                           \tag{N24}
+\]
+
+These follow from the E/N sector theorem, the corresponding cardinal/own
+separator alternatives, and the cap-piercing argument.  They must be proved
+explicitly before P4/P8.
+
+### 2.3C. Cap-depth and opposite-pair angle bounds
+
+The later A2 reductions also consume:
+
+\[
+|\theta|<\frac25
+\quad\text{for every cardinal helper},             \tag{N25}
+\]
+
+and, for the two opposite cardinal pairs,
+
+\[
+|e|+|w|<4c_0,\qquad |n|+|s|<4c_0.                 \tag{N26}
+\]
+
+These are consequences of the moving pins, the cap-depth profile, and (N23).
+They are part of the normalization output and not assumptions of A2.
+
+### 2.3D. D-own normalization is derived, not independent
+
+Once (N18), (N21), and (N22) hold, exactly two helpers occupy the west
+categories W,D and at most one may use the west cardinal side.  Horizontal
+reflection exchanges their cyclic positions while preserving all established
+normalization facts.  Choose the labeling so that any west-cardinal helper is
+W.  Therefore
+
+\[
+\boxed{D\text{ uses own-primary}.}                  \tag{N27}
+\]
+
+Thus the genuinely open geometric content is (N16)--(N22); (N23)--(N27) are
+mandatory derived lemmas that must be present before the downstream A2 proof is
+invoked.
 
 Thus every packing is assigned one of 32 canonical five-bit central patterns,
 with the \(D\) bit fixed to own in the final normalization.
