@@ -281,6 +281,93 @@ Hence Pattern 9 is in fact strict and is impossible at the optimum.
 This is a direct Pattern-9 proof and does not use diagonal reflection of the
 global D-normalization.
 
+## 4B. Direct closures of Patterns 24, 25, and 15
+
+The remaining survivor transfers can be made **without reflecting the global
+packing**.  Only a single E/N central bit changes, while the C/W/D/S geometry
+and the relevant adjacent-pair lower envelope remain unchanged.
+
+### Pattern 24 from Pattern 26
+
+Pattern 24 is
+
+\[
+(E_c,N_c,W_c,D_o,S_o),
+\]
+
+while Pattern 26 is
+
+\[
+(E_c,N_o,W_c,D_o,S_o).
+\]
+
+All D--W/D--S graph classifications, tail stresses, and candidate-strip
+reductions for Pattern 26 use only C,W,D,S, so they apply verbatim to
+Pattern 24.
+
+The only possible difference is the N/W pair.  For N-own/W-cardinal the
+Pattern-26 proof uses the reflected Pattern-13 E/S envelope.  For
+N-cardinal/W-cardinal the corresponding pair is the reflected Pattern-12
+E/S envelope.  But the Pattern-12 and Pattern-13 hand source lemmas have the
+same lower equality profile:
+
+\[
+B_v(e,s)\ge b(s)
+\]
+
+for every source axis.  Reflecting \((e,s)=(-n,-w)\) therefore gives in
+**both** N-bit cases
+
+\[
+A_u(n,w)\ge b(-w).                                  \tag{G24-1}
+\]
+
+Hence the reduced Pattern-24 candidate function is literally the same
+one-variable/pair function used in the Pattern-26 closure.  Every derivative,
+curvature, boundary-face, and endpoint estimate transfers unchanged.
+Therefore Pattern 24 is terminal directly.
+
+### Pattern 25 from Pattern 27
+
+Pattern 25 and Pattern 27 have identical E,W,D,S bits:
+
+\[
+25=(E_o,N_c,W_c,D_o,S_o),\qquad
+27=(E_o,N_o,W_c,D_o,S_o).
+\]
+
+Again all C/W/D/S graph and tail reductions are identical.  The N/W pair
+lower envelope is \(b(-w)\) for either N bit by the same Pattern-12/13
+argument (G24-1).  The E-own/S-own pair is identical in Patterns 25 and 27.
+
+Thus every reduced inequality in the direct Pattern-27 closure applies
+verbatim to Pattern 25.  Pattern 25 is terminal directly.
+
+### Pattern 15 from Pattern 14
+
+Pattern 15 and Pattern 14 have identical N,W,D,S bits:
+
+\[
+15=(E_o,N_o,W_o,D_o,S_c),\qquad
+14=(E_c,N_o,W_o,D_o,S_c).
+\]
+
+All C/W/D/S D-edge classifications and candidate tails from Pattern 14
+therefore transfer unchanged.
+
+The E/S pair is the only changed datum.  Pattern 14 uses the
+E-cardinal/S-cardinal Pattern-12 envelope; Pattern 15 uses the
+E-own/S-cardinal Pattern-13 envelope.  The complete A2.2 E/S source
+comparison proves the same lower profile \(b(s)\) for both central
+descriptions.  Hence the Pattern-14 pair-factorized candidate inequality,
+including its positive- and negative-\(w\) scalar reductions, is unchanged.
+
+Therefore Pattern 15 is terminal directly.
+
+These three arguments alter only the local adjacent-pair envelope and never
+reflect the normalized D sector.  Consequently Patterns 24,25,15 are closed
+within the fixed global normalization.
+
 ## 5. Pattern 27
 
 Pattern 27 has
