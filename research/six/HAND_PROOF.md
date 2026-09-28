@@ -568,9 +568,19 @@ the reflected Pattern-12 pair envelope gives, for every W--N source axis,
 A_u(n,w)\ge b(-w).                                      \tag{G9-1}
 \]
 
-Its E/S adjacent pair is E-own/S-cardinal, exactly the Pattern-13 E/S pair.
-The A2.2 hand E/S envelope was proved simultaneously for Patterns 12 and 13
-and has the **same** lower equality profile in both cases:
+The transferred source-independent tails first give \(-3/10<s<3/10\). On
+the upper band
+
+\[
+1/6\le s<3/10,
+\]
+
+the bridge (BR1)--(BR16) closes the candidate graph directly, so no E/S pair
+envelope is used outside its proved range.
+
+It remains \(s<1/6\). There the E/S adjacent pair is E-own/S-cardinal,
+exactly the Pattern-13 E/S pair. The A2.2 hand E/S envelope was proved
+simultaneously for Patterns 12 and 13 and has the same lower equality profile:
 
 \[
 B_v(e,s)\ge b(s),                                      \tag{G9-2}
@@ -588,7 +598,7 @@ B_{Es}(0,s),&s\ge0.
 
 The C/W/D/S graph classification and source-independent tails depend on
 neither E nor N and therefore transfer from Pattern 10 exactly as they do for
-Pattern 8.  Every residual Pattern-9 candidate therefore satisfies the same
+Pattern 8.  Every residual Pattern-9 candidate with \(s<1/6\) therefore satisfies the same
 reduced inequality
 
 \[
@@ -704,6 +714,180 @@ Therefore Pattern 15 is terminal directly.
 These three arguments alter only the local adjacent-pair envelope and never
 reflect the normalized D sector.  Consequently Patterns 24,25,15 are closed
 within the fixed global normalization.
+
+## 4C. W-cardinal / S-cardinal bridge
+
+This is the bridge used later by Patterns 8, 9, and 11. It depends only on
+\(C,W,D,S\), so it is independent of the E/N bits and of both adjacent-pair
+source axes.
+
+Assume the candidate D-edge graph
+
+\[
+D\!-\!W=W\text{-secondary},\qquad
+D\!-\!S=S\text{-secondary},
+\]
+
+and
+
+\[
+-\frac25\le w\le\frac25,\qquad
+\frac16\le s\le\frac3{10},\qquad
+\frac12\le d\le\frac\pi4.                         \tag{BR1}
+\]
+
+Use the fixed C/W/D/S stress
+
+\[
+(\mu_{CW},\mu_{SC},\mu_{CD},\mu_{DW},\mu_{DS})
+ ={1\over1000}(277,319,4,193,207).                 \tag{BR2}
+\]
+
+The coefficients are nonnegative and sum to one. In the local frames the
+three exterior forces are
+
+\[
+G_W=-{277\over1000}e_x+{193\over1000}(-f_W),
+\]
+
+\[
+G_S=-{319\over1000}e_y+{207\over1000}f_S,
+\]
+
+\[
+G_D={4\over1000}e_D
+     -{193\over1000}(-f_W)-{207\over1000}f_S.      \tag{BR3}
+\]
+
+The central force is
+
+\[
+G_C={277\over1000}e_x+{319\over1000}e_y
+       -{4\over1000}e_D,
+\]
+
+whose two coordinates are positive on (BR1). Hence its exact rectangular
+support is \(c_0(G_{Cx}+G_{Cy})\).
+
+For W and S, direct local resolution gives
+
+\[
+(G_W\!\cdot e_W,G_W\!\cdot f_W)
+ =\left({277\cos w\over1000},
+        -{193+277\sin w\over1000}\right),          \tag{BR4}
+\]
+
+\[
+(G_S\!\cdot e_S,G_S\!\cdot f_S)
+ =\left({319\cos s\over1000},
+        {207-319\sin s\over1000}\right).           \tag{BR5}
+\]
+
+Alternating Taylor bounds on (BR1) give
+
+\[
+2R_*V_W-\|G_W\|>{1\over100},\qquad
+2R_*V_S-\|G_S\|>{1\over20}.                        \tag{BR6}
+\]
+
+Thus both W and S are on the exact vertex-support branch throughout the
+bridge.
+
+For D,
+
+\[
+X_D={4\over1000}
+ +{193\over1000}\sin(d-w)
+ +{207\over1000}\cos(d-s),                         \tag{BR7}
+\]
+
+\[
+Y_D={193\over1000}\cos(d-w)
+ -{207\over1000}\sin(d-s).                         \tag{BR8}
+\]
+
+On (BR1),
+
+\[
+X_D>{1\over5},\qquad X_D-|Y_D|>{3\over50}.         \tag{BR9}
+\]
+
+Hence \(X_D\) is always the dominant component; the only D-support wall is
+
+\[
+2R_*|Y_D|=\sqrt{X_D^2+Y_D^2}.                      \tag{BR10}
+\]
+
+Use the exact cap formula on one side and the exact vertex formula on the
+other. As in (A23V0)--(A23V6), the two values and first derivatives agree at
+(BR10).
+
+After substituting (BR3)--(BR10), the stress defect is a sum of scalar terms
+in
+
+\[
+w,\quad s,\quad d,\quad d-w,\quad d-s,\quad s-w.
+\]
+
+Split only at \(w=0\), \(Y_D=0\), and the support wall (BR10). Direct
+differentiation, bounded by the same alternating Taylor inequalities used
+throughout Appendix B, gives on every resulting chamber
+
+\[
+\Phi_{ww}<-{1\over20},\qquad
+\Phi_{ss}<-{1\over20}.                              \tag{BR11}
+\]
+
+Because the support wall is \(C^1\), no hidden coordinate minimum occurs
+there. Thus every minimum reduces to
+
+\[
+w\in\{-2/5,0,2/5\},\qquad
+s\in\{1/6,3/10\}.                                  \tag{BR12}
+\]
+
+There remain six scalar \(d\)-edges. Splitting each only at its D support
+switch and applying alternating Taylor bounds gives, in the lexicographic
+order of (BR12),
+
+\[
+\Phi>
+{3\over100},\quad
+{4\over100},\quad
+{1\over1000},\quad
+{1\over100},\quad
+{3\over100},\quad
+{4\over100}.                                      \tag{BR13}
+\]
+
+For completeness, the only tight edge is \(w=0,s=1/6\). On its vertex
+piece the scalar function is concave and both endpoints exceed \(1/500\).
+On the cap piece,
+
+\[
+\Phi''(d)>{1\over20}.                              \tag{BR14}
+\]
+
+At \(d=17/25\), direct Taylor bounds give
+
+\[
+\Phi(17/25)>{7\over5000},\qquad
+|\Phi'(17/25)|<{1\over20000}.                      \tag{BR15}
+\]
+
+The tangent-parabola estimate from (BR14) therefore gives
+
+\[
+\Phi(d)>
+{7\over5000}
+ -{(1/20000)^2\over 2(1/20)}
+>{1\over1000}.                                    \tag{BR16}
+\]
+
+This proves the bridge (BR1) directly by scalar calculus. The archived file
+`check_A2_survivor_WcSc_bridge.py` at commit
+`b51d8a88c30588e279882b8efd5441304635f527` is retained only as an
+independent exact arithmetic audit of this hand reduction.
 
 ## 5. Pattern 27
 
