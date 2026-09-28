@@ -103,6 +103,113 @@ Pairwise disjointness shows that exactly one square contains the disk center.
 Call it \(C\), put the disk center at the origin, and use the frame of \(C\)
 as coordinates.
 
+### 2.1. Existence and uniqueness of the central square
+
+This step is already supported by the formalized \(n=7\) exterior theory.
+
+First note that the candidate bounds give
+
+\[
+q_*<\frac{13}{4}.                                  \tag{N1}
+\]
+
+Suppose all six squares avoided the disk center \(O\). For each square \(S_i\),
+disk containment gives
+
+\[
+\phi(\alpha(S_i,O),\beta(S_i,O))\le R^2\le q_*<13/4.
+\]
+
+Thus the six squares satisfy the hypotheses of the existing theorem
+`Seven.six_exterior_ring`: they are pairwise interior-disjoint, exterior to
+\(O\), and their chart states are admissible at the \(13/4\) target.
+
+That theorem supplies, after one common rotation and a permutation, an
+`ExteriorRing`. In particular one of the side squares is represented by the
+axis-parallel unit square centered at \((1,-1/2)\). Its corner
+\((3/2,-1)\) belongs to the closed square, and
+
+\[
+\left(\frac32\right)^2+1=\frac{13}{4}.             \tag{N2}
+\]
+
+This contradicts containment in a disk with \(R^2\le q_*<13/4\).
+Therefore at least one square contains \(O\) in its open interior.
+
+There cannot be two: if \(O\) belonged to the interiors of two distinct
+squares, their open interiors would meet at \(O\), contradicting the packing
+hypothesis. Hence there is a **unique** central square \(C\).
+
+Translate \(O\) to the origin and rotate so that \(C\) is axis-parallel.
+Reflect the coordinate axes if necessary so that
+
+\[
+C=(c_x,c_y),\qquad c_x,c_y\ge0.                    \tag{N3}
+\]
+
+### 2.2. Strict marker gaps for the five exterior squares
+
+The five remaining squares are exterior to \(O\). Choose for each one a
+sorted `SquareChart`. Since its farthest-vertex quantity is at most
+\(R^2\le q_*<13/4\), `Seven.chart_admissible` makes every chart admissible.
+
+For any two distinct exterior squares, the already-proved pair theorem
+`Seven.marker_separation_closed` gives
+
+\[
+\operatorname{dist}(m_i,m_j)\ge\frac{\pi}{3}.      \tag{N4}
+\]
+
+In fact the inequality is strict at the present radius. If equality held,
+orient the two markers so that the second is exactly \(\pi/3\) ahead of the
+first. Then `Seven.ordered_chart_contact` says the two states form an
+`OrderedContact`. By the definition of `OrderedContact`, at least one of the
+two states is a `SideState`, namely
+
+\[
+a=1,\qquad u=\frac12.
+\]
+
+But then
+
+\[
+\phi(a,u)=\left(\frac32\right)^2+1=\frac{13}{4},
+\]
+
+contradicting \(\phi\le R^2\le q_*<13/4\). Thus
+
+\[
+\operatorname{dist}(m_i,m_j)>\frac{\pi}{3}         \tag{N5}
+\]
+
+for every pair.
+
+Order the five markers cyclically and let \(g_1,\ldots,g_5>0\) be the five
+successive angular gaps. By (N5),
+
+\[
+g_i>\frac{\pi}{3}.
+\]
+
+Since \(\sum_i g_i=2\pi\), for each \(i\)
+
+\[
+g_i
+ =2\pi-\sum_{j\ne i}g_j
+ <2\pi-\frac{4\pi}{3}
+ =\frac{2\pi}{3}.                                  \tag{N6}
+\]
+
+Hence every consecutive marker gap lies strictly in
+
+\[
+\boxed{\frac{\pi}{3}<g_i<\frac{2\pi}{3}}.          \tag{N7}
+\]
+
+This theorem concerns the genuine `Seven.chartMarker`. After the
+side-nearest lemma below shows that the axial label is selected, it becomes
+the simplified affine-marker statement used in A2.
+
 The global geometric reductions proved before the A2 analysis give:
 
 1. the center of \(C\) satisfies
