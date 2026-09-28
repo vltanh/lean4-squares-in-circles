@@ -891,40 +891,105 @@ independent exact arithmetic audit of this hand reduction.
 
 ## 5. Pattern 27
 
-Pattern 27 has
+Pattern 27 is
 
 \[
 E_o,N_o,W_c,D_o,S_o.
 \]
 
-The Pattern-26 D-edge classification uses only \(C,W,D,S\), so it transfers
-unchanged. Every noncandidate D-edge graph is terminal; the sole candidate is
+### Transfer of the complete D-edge classification
+
+The complete Pattern-26 D-edge classification above uses only \(C,W,D,S\).
+Therefore every Pattern-27 noncandidate D-edge graph is eliminated by the
+same fixed stresses, with the same scalar curvature reductions. The sole
+survivor is
 
 \[
 D\!-\!W=W\text{-secondary},\qquad
-D\!-\!S=S\text{-secondary}.
+D\!-\!S=S\text{-secondary}.                     \tag{G27-1}
 \]
 
-The transferred Pattern-26 stresses remove the negative-W middle and the
-outer S tails. The survivor tail lemma then reduces to
+The Pattern-26 negative-W candidate stress (P26-6) uses only \(C,W,D,S\)
+and therefore closes
 
 \[
--1/6\le w\le2/5,\qquad
--2/25\le s\le11/25.
+-2/5\le w\le-1/6,qquad -1/6\le s\le1/2.         \tag{G27-2}
 \]
 
-For \(s\le0\), reflection of the positive both-own pair envelope gives the
-Pattern-26 scalar profile. For \(s\ge0\),
+The Pattern-26 outer S-tail stresses also transfer.  For Pattern 27 they can
+be extended farther, still source-independently.  On the full remaining W
+range use
 
 \[
-B_{ES}(e,s)\ge B_*+{73\over100}s.
+s\le-2/25:\quad (271,315,10,203,201)/1000,
 \]
 
-The W-calculus moves \(w<0\) to zero and makes \(w\ge0\) concave, leaving
-\(w=0\) or \(w=2/5\). The \(w=0\) face is the Pattern-29 scalar bound; the
-\(w=2/5\) face has strict positive reserve.
+\[
+s\ge11/25:\quad (222,491,19,137,131)/1000.       \tag{G27-3}
+\]
 
-Thus Pattern 27 is terminal. Pattern 15 must be closed directly; no reflection transfer is used.
+With exact cap/vertex support the W,S,D forces have fixed dominant
+components on these two chambers.  After the natural support/sign walls,
+coordinate concavity reduces each stress to fixed scalar edges, all strictly
+positive. Hence every survivor lies in
+
+\[
+-1/6\le w\le2/5,qquad
+-2/25\le s\le11/25.                              \tag{G27-4}
+\]
+
+### Own-own E/S pair
+
+For \(s\le0\), reflect the positive own-own N/W envelope from Pattern 14.
+It agrees exactly with the Pattern-26 E-cardinal/S-own equality profile
+\(b(s)\). Thus the Pattern-26 scalar closure applies on this half.
+
+For \(s\ge0\), reflect the full negative-W own-own reserve (P14-9). This
+gives, for every E/S source axis,
+
+\[
+B_{ES}(e,s)\ge B_*+{73\over100}s.                 \tag{G27-5}
+\]
+
+The N/W envelope is the same profile \(a(w)\) whether N is cardinal or own;
+only its equality source changes. The Pattern-26 w-calculus is independent
+of the E/S term:
+
+- if \(w<0\), \(a'(w)<-9/10\) and \(D_w<4/5\), so w moves to zero;
+- if \(w\ge0\), the total w-curvature is negative, so only
+  \(w=0\) and \(w=2/5\) remain.
+
+At \(w=0\), the \(s\ge0\) inequality is exactly the scalar Pattern-29
+positive-s face; its cap and vertex pieces are nonnegative and equality
+would require \(s=0\).
+
+At \(w=2/5\), subtract the equality value at \((0,0,0)\). The remaining
+one-dimensional inequality is
+
+\[
+[a(2/5)-a(0)]+{73\over100}s
+ +D(2/5,s,\epsilon)-D(0,0,0)>{1\over25}           \tag{G27-6}
+\]
+
+for
+
+\[
+0\le s\le11/25,qquad 1/2-\pi/4\le\epsilon\le0.
+\]
+
+On the cap branch this is bounded by alternating Taylor polynomials; on the
+negative-vertex branch the same bound follows after the exact switch. The
+two formulas agree at the switch, so there is no omitted wall minimum.
+
+The archived files `check_A2_survivor_WcSo_tails.py` and
+`check_A2_survivor_EoSo_scalar.py` at
+`b51d8a88c30588e279882b8efd5441304635f527` independently audit
+(G27-3) and (G27-6).
+
+Therefore Pattern 27 is terminal. Pattern 25 inherits this closure directly
+through its identical \(C,W,D,S\) data and identical N/W lower envelope, as
+proved in §4B. Pattern 15 is closed separately through Pattern 14; no global
+diagonal reflection is used.
 
 ## 6. Pattern 11
 
