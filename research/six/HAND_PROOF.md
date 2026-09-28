@@ -1,8 +1,14 @@
 # Six unit squares in a disk — hand proof
 
-This is the authoritative mathematical proof for the \(n=6\) case.
+This is an **audited working draft**, not yet a complete proof of the \(n=6\) case.
 
-It contains no executable search or multidimensional numerical proof premise.
+The September 28 audit found three substantive open obligations:
+
+1. the global normalization lemmas summarized in the concise proof must be supplied with their actual derivations;
+2. the diagonal-reflection reduction of Patterns 9,24,25,15 is not valid after the chosen D-normalization, so those patterns need direct closures;
+3. one A2.3 support step incorrectly used the cap expression on a vertex-support branch and must be repaired with the exact two-branch support formula.
+
+The document below preserves the verified hand reductions while making those gaps explicit. It contains no executable search or multidimensional numerical proof premise.
 Every mathematical dependency needed for formalization is stated here.
 Finite scalar endpoint inequalities are part of the hand argument and are
 listed explicitly; they may later be discharged in Lean by elementary
@@ -129,13 +135,13 @@ with the \(D\) bit fixed to own in the final normalization.
 
 ## 3. Eliminate the forbidden central patterns: A2
 
-A2 eliminates the nine canonical patterns
+The intended A2 elimination concerns the nine canonical patterns
 
 \[
 10,12,13,14,26,28,29,30,31.
 \]
 
-The proof is hand-complete.
+A2.1 and A2.2 have hand reductions below. A2.3 must be re-audited after the support-branch correction described in Appendix B; until that repair is complete, the nine-pattern elimination is not claimed as a theorem.
 
 ### A2.1
 
@@ -192,30 +198,25 @@ After A2, only
 
 remain.
 
-Reflecting in the diagonal \(y=x\) of the central square and restoring the
-canonical labels acts on the outer categories by
+A diagonal reflection does exchange the geometric E/N and W/S roles, but the
+global normalization has already used the available reflection to place D in
+the chosen west-to-south angular half-range.  Reflecting a normalized packing
+need not remain in that same D-angle domain.  Therefore the previous shortcut
 
 \[
-E\leftrightarrow N,\qquad
-W\leftrightarrow S,\qquad
-D\mapsto D.
+9\leftrightarrow10,\quad
+24\leftrightarrow12,\quad
+25\leftrightarrow14,\quad
+15\leftrightarrow27
 \]
 
-Hence on central patterns
+cannot be used as a proof step under the present normalization.
 
-\[
-9\leftrightarrow10,\qquad
-24\leftrightarrow12,\qquad
-25\leftrightarrow14,\qquad
-15\leftrightarrow27,
-\]
+Patterns 9,24,25,15 must instead be closed directly.  Pattern 9 has the same
+cardinal/cardinal reduced gap as Pattern 8 and is expected to share its scalar
+closure; Patterns 24,25,15 remain explicit open survivor obligations.
 
-while \(8\) and \(11\) are fixed.
-
-Since A2 already excludes \(10,12,14\), patterns \(9,24,25\) are impossible.
-It is enough to treat \(27,11,8\).
-
-## 5. Pattern 27, and therefore Pattern 15
+## 5. Pattern 27
 
 Pattern 27 has
 
@@ -250,7 +251,7 @@ The W-calculus moves \(w<0\) to zero and makes \(w\ge0\) concave, leaving
 \(w=0\) or \(w=2/5\). The \(w=0\) face is the Pattern-29 scalar bound; the
 \(w=2/5\) face has strict positive reserve.
 
-Thus Pattern 27 is terminal. By diagonal reflection Pattern 15 is terminal.
+Thus Pattern 27 is terminal. Pattern 15 must be closed directly; no reflection transfer is used.
 
 ## 6. Pattern 11
 
@@ -472,15 +473,14 @@ proof dependency.
 Every packing at or below the candidate radius enters a canonical central
 pattern.
 
-- A2 removes the nine forbidden patterns.
-- Diagonal reflection removes \(9,24,25\) through A2 and identifies
-  \(15\) with \(27\).
+- A2.1/A2.2 supply hand eliminations, while A2.3 still requires the corrected support-branch audit.
 - Pattern 27 is terminal.
 - Pattern 11 is terminal.
-- Pattern 8 remains to be exhausted by the exact finite global cover or by the
-  structural hand theorem extracted from that cover.
+- Pattern 8 has a hand scalar closure.
+- Patterns 9,24,25,15 require direct closures under the fixed D-normalization.
+- the global normalization lemmas listed in §2 still need their derivations inserted into this document.
 
-After that final step,
+After those remaining steps,
 
 \[
 R^2\ge q_*
@@ -490,8 +490,7 @@ follows, and the strictness/equality statements in the case reductions force
 every equality packing to be congruent to the displayed candidate
 configuration.
 
-Accordingly this document is currently the complete proof blueprint with one
-explicit remaining obligation: global Pattern 8.
+Accordingly this document is an audited proof draft.  The open mathematical obligations are the global normalization derivations, the corrected A2.3 support analysis, and direct closure of Patterns 9,24,25,15.
 
 
 # Appendix A — west-category normalization (A1)
@@ -529,7 +528,7 @@ with t <= u from the cyclic primary order.
 If W uses its own-primary separator and t <= -2/3, the radial coordinate a_W
 must satisfy
 
-    a_W >= 1/2 + (2-rho0) cos(2/3) + (1/2) sin(2/3) > rho0,
+    a_W >= 1/2 + (3/2-rho0) cos(2/3) + (1/2) sin(2/3) > rho0,
 
 where
 
@@ -1576,7 +1575,7 @@ used above, with rational square-root and alternating Taylor enclosures.
 
 ## A2.1 — exclude N own while E cardinal
 
-**Status: open.**
+The detailed hand closure is developed below.
 
 The first obstruction is
 
@@ -2937,10 +2936,15 @@ For the D force,
     u=(166/1000) sin Delta+(151/1000) cos T,
     v=(166/1000) cos Delta-(151/1000) sin T.
 
-On the whole box u>0 and u>|v|.  Hence the exact disk support is bounded by
-the single cap expression rho_* u, whether or not the actual support lies on
-its cap or vertex branch.  The center force is positive in both coordinates,
-and the defect factors as
+On the whole box u>0 and u>|v|.  This fixes the dominant component, but it
+does **not** by itself justify replacing the exact disk support by the cap
+expression on the vertex branch.  The exact support is the two-branch function
+(SRC0), and on the vertex branch the value
+(R_*\sqrt{u^2+v^2}-(u+|v|)/2) can exceed (ho_*u).
+
+Therefore the following factorization is only valid after an additional
+branch argument.  The A2.3 far-negative tail remains open until that exact
+cap/vertex analysis is supplied.  The intended defect is
 
     Phi=C+F(w)+G_sigma(s)+K(d-w)+L(d-s).           (A23C4)
 
@@ -4932,7 +4936,7 @@ On the vertex branch,
           -((cos beta-sin beta)/2) sin delta
           -R_*(cos beta-sin beta)].                         (MON2)
 
-The common A2.2 bounds give
+The common A2.2 bounds, together with the graph-order constraint (w\le d), give
 
     -1/12 <= beta <= 3/5,
     -3/5 <= delta <= 1/5.                         (MON3)
@@ -5400,7 +5404,7 @@ four rectangle vertices
 
 The four values satisfy, respectively,
 
-    Phi_+ > 17/100,  1/100,  7/100,  2/100.        (DWp5)
+    Phi_+ > 17/100,  1/100,  1/20,   2/100.        (DWp5)
 
 Hence the +e_D orientation is impossible.
 
@@ -5850,7 +5854,4 @@ cross-checks.
 
 # Proof status
 
-The concise proof and Appendices A/B form one self-contained hand-structured
-argument. The only nonconceptual obligations are finitely many scalar
-trigonometric/radical inequalities and fixed endpoint evaluations displayed
-above. LEAN_ROADMAP.md maps these obligations to named draft Lean lemmas.
+This is an audited working proof, not yet a completed theorem.  The verified hand reductions should be retained, but formalization must wait on the three substantive repair tracks stated at the beginning: global foundations, exact A2.3 support branches, and direct survivor closures.  LEAN_ROADMAP.md now treats those repairs as a pre-formalization gate.
