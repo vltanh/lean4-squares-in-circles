@@ -3088,30 +3088,128 @@ For the D force,
     u=(166/1000) sin Delta+(151/1000) cos T,
     v=(166/1000) cos Delta-(151/1000) sin T.
 
-On the whole box u>0 and u>|v|.  This fixes the dominant component, but it
-does **not** by itself justify replacing the exact disk support by the cap
-expression on the vertex branch.  The exact support is the two-branch function
-(SRC0), and on the vertex branch the value
-(R_*\sqrt{u^2+v^2}-(u+|v|)/2) can exceed (ho_*u).
+On the whole box \(u>0\) and \(u>|v|\), so \(U=u\) and
+\(V=|v|\) in the exact disk support.  Split by
 
-Therefore the following factorization is only valid after an additional
-branch argument.  The A2.3 far-negative tail remains open until that exact
-cap/vertex analysis is supplied.  The intended defect is
+\[
+2R_*|v|\lesseqgtr\sqrt{u^2+v^2}.                  \tag{A23V0}
+\]
 
-    Phi=C+F(w)+G_sigma(s)+K(d-w)+L(d-s).           (A23C4)
+On the cap branch the earlier separated formula is valid.  On the vertex
+branch,
 
-It is concave in w and, on each side of s=0, concave in s.  Therefore
+\[
+u^2+v^2=p^2+q^2+2pq\sin(s-w).                     \tag{A23V1}
+\]
 
-    w in {-2/3,-21/50},
-    s in {-1/6,0,1/2},
+Hence the only new radical is
 
-and only six one-dimensional d restrictions remain.  Their exact scalar
-Taylor bounds are positive.  Thus every A2.3 candidate survivor satisfies
+\[
+M(s-w)=-R_*\sqrt{p^2+q^2+2pq\sin(s-w)}.           \tag{A23V2}
+\]
+
+If \(v\ge0\), the vertex terms are
+
+\[
+K_+(\Delta)=p(\sin\Delta+\cos\Delta),\qquad
+L_+(T)=q\cos T.                                    \tag{A23V3}
+\]
+
+If \(v\le0\), they are
+
+\[
+K_-(\Delta)=p\sin\Delta,\qquad
+L_-(T)=q(\cos T+\sin T).                           \tag{A23V4}
+\]
+
+Thus every cap/vertex/sign chamber has the separated form
+
+\[
+\Phi=C+F(w)+G_\sigma(s)+K_\tau(d-w)+L_\tau(d-s)+M_\tau(s-w), \tag{A23V5}
+\]
+
+where \(M=0\) on the cap branch and is (A23V2) on the vertex branch.
+
+The two support formulas meet with equal first derivative.  At the switch,
+put \(U=u,V=|v|,Q=\sqrt{U^2+V^2}\).  Then
+
+\[
+Q=2R_*V,\qquad U=(2\rho_*+1)V,
+\]
+
+because \(R_*^2=\rho_*^2+\rho_*+1/2\).  The cap and vertex values are both
+\(\rho_*U\), while the vertex gradient
+
+\[
+R_*(U,V)/Q-(1/2,1/2)=(\rho_*,0)
+\]
+
+is the cap gradient.  Therefore no hidden coordinate minimum is created at
+the switch.
+
+For the vertex radical,
+
+\[
+M''(x)
+ =R_*\left(
+ {pq\sin x\over Q(x)}
+ +{p^2q^2\cos^2x\over Q(x)^3}
+ \right),
+\quad
+Q(x)^2=p^2+q^2+2pq\sin x.                          \tag{A23V6}
+\]
+
+Alternating Taylor bounds on
+\(19/75\le x=s-w\le7/6\), split only at \(x=2/3\), give
+
+\[
+M''(x)<3/20.                                       \tag{A23V7}
+\]
+
+On the same domain,
+
+\[
+F(w)>6/25,\qquad G_\sigma(s)>1/10,
+\]
+
+\[
+p\sin(d-w)>13/100,\qquad
+p(\sin(d-w)+\cos(d-w))>4/25,
+\]
+
+\[
+q\cos(d-s)>2/25,\qquad
+q(\cos(d-s)+\sin(d-s))>3/20.
+\]
+
+Therefore every vertex/sign chamber satisfies
+
+\[
+\Phi_{ww}<-1/5,\qquad \Phi_{ss}<-1/25.             \tag{A23V8}
+\]
+
+Together with the cap curvatures and the \(C^1\) switch, the exact defect is
+separately concave in \(w\) and \(s\).  Hence it suffices to take
+
+\[
+w\in\{-2/3,-21/50\},\qquad s\in\{-1/6,0,1/2\}.
+\]
+
+The six remaining one-dimensional \(d\)-edges are split only at their scalar
+support/sign switches and bounded by alternating Taylor polynomials.  The
+weakest lower margin is
+
+\[
+\Phi>1/2500.                                       \tag{A23V9}
+\]
+
+Thus the exact two-branch support proves the far-negative tail, and every
+A2.3 candidate survivor satisfies
 
     -21/50<w<2/25,
     -1/6<s<1/2.                                    (A23C5)
 
-No multidimensional value replay occurs in (A23C1)--(A23C5).
+No multidimensional value replay occurs in the repaired far-negative tail.
 
 ### Pattern 30
 
@@ -3200,9 +3298,25 @@ an independent arithmetic audit uses
     (299,308,0,197,196)/1000   on -1/6<=s<=-2/25,
     (251,433,0,160,156)/1000   on 21/50<=s<=1/2.  (P29C2)
 
-On both bridges the D force has a globally dominant positive cap component.
-The defect is concave in w on the two w-sign chambers and concave in s, so
-only scalar d edges remain.  Combining (P29C2) with the universal tails gives
+On both bridges the D force has a dominant positive local component, but
+the exact support may be on either the cap or vertex branch.  Use the exact
+split (A23V0)--(A23V6).  On the vertex branch the radical depends only on
+\(s-w\).  The scalar bound
+
+\[
+M''(s-w)<3/20
+\]
+
+together with the explicit positive \(F,G,K,L\) terms gives negative
+\(w\)- and \(s\)-curvature on every vertex/sign chamber; the cap chambers
+retain the original negative curvatures.  Since the two support branches meet
+\(C^1\), only the same scalar \(d\)-edges remain.  Alternating Taylor bounds
+on those edges give
+
+\[
+\Phi>1/250\quad\hbox{on the negative bridge},\qquad
+\Phi>7/2000\quad\hbox{on the positive bridge}.     \tag{P29C2a}
+\]  Combining (P29C2) with the universal tails gives
 
     -21/50<w<2/25,
     -2/25<s<21/50.                                 (P29C3)
