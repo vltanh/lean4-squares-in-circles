@@ -14,73 +14,199 @@ or the former branch-and-bound verifier.
 
 HAND_PROOF.md is the sole mathematical source of truth.
 
-## Phase -1 — mathematical repair gate
+## Phase -1 — close the remaining normalization theorem
 
-Do not draft the n=6 Lean theorem chain from the current proof until these
-three obligations are closed in HAND_PROOF.md.
+The September audit originally opened three repair tracks. Two are now closed:
 
-### G0. Global normalization foundations
+- the invalid survivor reflection has been replaced by direct closures of
+  Patterns 9, 24, 25, and 15;
+- the A2.3 support misuse has been replaced by exact cap/vertex analysis, and
+  the affected margins/stress coefficients have been repaired and inlined.
 
-Supply actual proofs, not summaries, for:
+The only remaining mathematical obstruction is §2.3 of HAND_PROOF.md: the
+global n=6 normalization theorem.
 
-- the unique central square;
-- the central-center bound;
-- side-nearest exterior squares;
-- at most one helper per central side;
-- the two-choice central separator theorem;
-- cyclic order E,N,W,D,S;
-- the five forced interior pins;
-- marker-gap bounds;
-- the D-own normalization.
+Do not start the Lean draft until this section is closed.
 
-The existing Seven.six_exterior_ring theorem may be reused for the exterior
-starting point; the claim that the repository lacks a formalized n=7 theorem
-is false.
+### N0. Proven starting point
 
-### G1. Repair A2.3 exact support
+The normalization proof may assume only:
 
-Any stress using a claim of the form
+1. six unit squares form a packing with R^2 <= q_* < 13/4;
+2. exactly one square C contains the disk centre O;
+3. after translation/rotation, O=0 and C is axis-parallel;
+4. the other five squares are exterior admissible Seven charts;
+5. their genuine Seven markers are pairwise more than pi/3 apart;
+6. their five cyclic successive marker gaps lie in (pi/3,2pi/3).
 
-    disk support <= rho * dominant_component
+No A2 classification, fixed pin, side category, or 23/200 centre bound may
+be used in proving normalization.
 
-must prove that the force is on the cap branch. Dominance of one local
-component alone is insufficient.
+### N1. Rebuild the exact normalization checker from the correct boundary
 
-Use the exact two-branch support function:
+Create a new exact checker whose state starts at N0, not at the old already-
+normalized 17-dimensional box.
 
-    cap    = rho * U,
-    vertex = R * sqrt(X^2+Y^2) - (U+V)/2.
+Suggested variables:
 
-Re-audit every affected A2.3 tail/bridge, especially the far-negative
-candidate tail and any Pattern-29 bridge that relied on global cap dominance.
+    Cx, Cy,
+    (phase_i, a_i, b_i) for the five exterior SquareCharts.
 
-All corrected margins must be restated as hand scalar lemmas.
+Initial constraints may use only central containment, exteriority, candidate-
+radius containment, pairwise separating-axis disjointness, the genuine Seven
+marker definitions, and the marker-gap inequalities.
 
-### G2. Direct survivor closures
+Do not seed it with any conclusion we are trying to prove: 23/200, the a/b
+bounds, E/N/W/D/S sectors, fixed pins, or the central separator bit choices.
 
-Do not use diagonal reflection to map 9->10, 24->12, 25->14, or 15->27 after
-the D-angle normalization.
+Use exact rational endpoints, rigorous Taylor/trigonometric enclosures, and
+the exact separating-axis/support formulas from the archived fixed verifier.
 
-Close the survivors directly:
+Commit the checker skeleton before optimizing it.
 
-- Pattern 9: first target; its reduced cardinal/cardinal gap appears to be the
-  same as Pattern 8;
-- Pattern 24;
-- Pattern 25;
-- Pattern 15.
+### N2. Certify the central-core bound first
 
-Only after G0--G2 are proved should the proof status return to hand-complete.
+First target only
 
-### Repair acceptance criteria
+    |Cx|, |Cy| < 23/200.
 
-The repair gate is closed when:
+Exhaust the complementary regions |Cx|>=23/200 or |Cy|>=23/200. Every
+terminal box must carry a named reason: containment contradiction, unavoidable
+overlap, marker-gap contradiction, or radial-sweep/support contradiction.
 
-- every global reduction cited by the concise proof has an explicit proof;
-- no support formula is used outside its proved branch;
-- all seven surviving central patterns are closed directly or by a symmetry
-  that preserves the chosen normalization;
-- the end-to-end theorem has no stale/open-status contradiction;
-- HAND_PROOF.md contains a pattern-to-lemma coverage table.
+Then inspect the last residual boxes and extract a scalar hand theorem,
+preferably an angular-budget inequality built from the existing APIs
+`safe_openRay_of_disjoint`, `rayRegions_disjoint`, `SquareChart.edge_arc`,
+`Seven.marker_arc`, and `Seven.all_gap_pos_below`.
+
+Acceptance criterion: HAND_PROOF.md contains a direct proof of the 23/200
+bound with only scalar endpoint inequalities at the leaves.
+
+Commit immediately when the core bound is hand-closed.
+
+### N3. Side-nearest theorem from the core bound
+
+Using the core bound, prove for each exterior chart
+
+    177/200 < a < 223/200,    |b| < 117/250 < 1/2.
+
+Use candidate containment for upper bounds and central disjointness/core
+geometry for the lower radial bound. Then prove that the closest point to O
+is in the relative interior of the near edge, not at a corner.
+
+Finally show that the Seven label is axial on this smaller domain, so after
+restoring the chart sign the marker is
+
+    phi_hat = phi + (5/4)b.
+
+Acceptance criterion: no search remains after the core bound; only scalar
+monotonic/rational inequalities.
+
+Commit.
+
+### N4. Derive sectors and the five fixed pins
+
+Use the affine markers, their cyclic gaps, and the central frame to prove the
+sector theorem. After a dihedral symmetry of C, the five primary directions
+must occur in cyclic categories
+
+    E, N, W, D, S.
+
+Then prove the radius-9/10 pin inclusions at angles
+
+    0, pi/2, 11pi/12, 5pi/4, 19pi/12.
+
+Do this by substituting the sector/marker bounds into the chart membership
+inequalities. A discovery checker may help locate endpoint inequalities, but
+the final argument must list those scalar inequalities explicitly.
+
+Acceptance criterion: the five pins are independent hand lemmas and imply the
+moving-pin formulas already used later.
+
+Commit.
+
+### N5. Cap-piercing and one helper per side
+
+Use the pins and core bound to prove moving piercing points such as
+
+    P_E=(1+Cx,0),    P_N=(0,1+Cy)
+
+lie in the respective exterior squares, and analogously for W/D/S whenever
+a cardinal side is used.
+
+Then prove: two distinct exterior squares cannot both occupy the same
+cardinal side of C. Use true square disjointness, not bounding-box
+disjointness.
+
+Acceptance criterion: this theorem is proved before canonical bit patterns
+are introduced.
+
+Commit.
+
+### N6. Central separator two-choice theorem
+
+For each central/exterior pair, use separating-axis completeness. With the
+core, side-nearest, sector and pin bounds, eliminate:
+
+- the exterior secondary normal;
+- the opposite exterior primary direction;
+- the two wrong cardinal normals of C.
+
+The only survivors are the matching cardinal normal of C and the exterior
+square's own primary normal. Then impose the cardinal-preferred tie rule.
+
+Acceptance criterion: the 2^5 central-pattern encoding is now a theorem, not
+a verifier convention.
+
+Commit.
+
+### N7. Normalize D to own-primary
+
+Use exactly two west-category helpers, their cyclic order, the one-helper-per-
+side theorem, and horizontal reflection. Choose the labeling so that any
+west-cardinal helper is W. Hence D is own-primary.
+
+This is distinct from the invalid diagonal-reflection shortcut removed from
+the survivor analysis.
+
+Commit.
+
+### N8. End-to-end normalization audit
+
+Add a pattern-to-lemma table to HAND_PROOF.md:
+
+| Output used later | Proven by |
+|---|---|
+| unique central square | N0 / Seven exterior theorem |
+| central-core bound | N2 |
+| side-nearest and a,b bounds | N3 |
+| affine marker | N3 |
+| E,N,W,D,S cyclic sectors | N4 |
+| five open pins | N4 |
+| one helper per side | N5 |
+| central separator two-choice | N6 |
+| D own-primary | N7 |
+| marker gaps | N0 |
+
+Then rerun the archived exact scalar checkers that consume these bounds.
+
+The normalization theorem is closed only if every table row points to an
+explicit proof, no checker assumes its own conclusion, no argument uses A2
+circularly, and every checker failure is understood.
+
+Commit the completed normalization theorem.
+
+### N9. Final cleanup before Lean
+
+Once N0--N8 are complete:
+
+1. remove the audited-working-draft/open-normalization status;
+2. state the unrestricted theorem as hand-complete;
+3. remove stale research/checker prose from the mathematical proof;
+4. squash the repair history again while preserving the checker archive;
+5. request independent review of the resulting single hand proof.
+
+Only after that begin Phase 0 below.
 
 ## Existing APIs to reuse
 
