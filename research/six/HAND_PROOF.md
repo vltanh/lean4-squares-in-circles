@@ -74,9 +74,9 @@ Numerically,
 \sqrt{q_*}=1.688542968202\ldots .
 \]
 
-This document assembles the proof. The detailed hand inequalities are in
-\`A2.md\`, the discrete A2 case tree in \`A2_CASE_TREE.md\`, and the final
-global case split in \`GLOBAL_COVERAGE.md\`.
+This file is the consolidated mathematical source.  The detailed A1/A2 hand
+inequalities and the global survivor case split are included below as
+appendices/sections; no deleted research note is a proof dependency.
 
 ## 1. Existence of the candidate
 
@@ -1395,42 +1395,11 @@ The five consecutive marker gaps satisfy
 
 and the five gap slacks above pi/3 add exactly to pi/3.
 
-A2 will use (E)--(S) to show that a canonical own-primary choice consumes
-marker slack in a definite cyclic direction unless the configuration is
-already inside the local-rigidity neighborhood.  This is the hand replacement
-for enumerating central bits in the full normalized state-space argument.
-
-## Why the local qualifier is necessary
-
-At theta=0 the own and cardinal normals coincide and O-K=0.  Thus the bit
-partition has a genuine tie boundary at the candidate.  It is not useful to
-seek a uniform positive radius gap based only on the bit label.
-
-The local-rigidity theorem already proves R^2 >= q_* on the 1/100 candidate
-neighborhood without caring which endpoint supplies a tied separator.
-
-Accordingly A2 only needs the cyclic sign/marker argument on the complement
-of that neighborhood.
-
-## Next A2 step
-
-Use the half-angle forms together with:
-
-- |C_x|,|C_y| <= rho-1;
-- 2-rho <= a <= rho;
-- |b| < 117/250;
-- the fixed/moving pin inequalities;
-- the five marker-gap inequalities;
-
-to prove, outside the local neighborhood,
-
-    N own  -> E own,
-    W own  -> N own,
-    S own  -> W cardinal.
-
-These three implications give exactly the seven nonlocal central patterns
-8, 9, 11, 15, 24, 25, 27.
-
+The identities (E)--(S) are used below only as algebraic tools for the
+pattern-specific hand inequalities.  No separate local-neighborhood theorem
+is needed for coverage: after the global normalization fixes the D bit to
+own-primary there are exactly 16 canonical patterns; A2 eliminates nine of
+them directly, and the remaining seven are therefore exhaustive.
 
 ## Preparatory lemma P2 — cardinal-preferred canonical separator rule
 
