@@ -6115,6 +6115,73 @@ Therefore, for either equality source,
 This is the complete E/S hand envelope.  The former
 an independent arithmetic audit only replays the displayed derivative
 inequalities numerically and is not a proof dependency.
+#### Pattern-12 cardinal/cardinal extension to \(s<3/10\)
+
+The preceding common proof was stated only through \(s<1/6\) because the
+Pattern-13 own-E derivative bound (ES4) deteriorates beyond that point.
+Pattern 14, however, uses the **Pattern-12 cardinal/cardinal** E/S pair only.
+For that branch the same explicit formulas have substantially more reserve.
+
+On
+
+\[
+0<s<3/10,\qquad -2/5<e<2/5,
+\]
+
+direct differentiation of the Pattern-12 formulas, with the same exact
+cap/vertex support and the same \(C^1\) switch, gives
+
+\[
+\Delta'(s)>1/5,                                    \tag{ES1+}
+\]
+
+\[
+\partial_e B_{Es}<0\ (e<0),\qquad
+\partial_e B_{Es}>0\ (e>0),                        \tag{ES2+}
+\]
+
+and for S-primary
+
+\[
+\partial_e B_{Sp}<0\quad(e<0),                     \tag{ES3+}
+\]
+
+\[
+\partial_e B_{Sp}>-7/100\quad(0<e<s),\qquad
+\partial_e B_{Sp}>0\quad(e>s).                     \tag{ES4+}
+\]
+
+These are scalar inequalities. After clearing the positive force norms,
+alternating Taylor bounds on \(|e|,s\le2/5\) give the weaker rational
+margins displayed above. No Pattern-13 multiplier \(\sec e\) or
+\(1+\tan e\) occurs here.
+
+Integrating (ES4+) and using (ES1+) gives, for \(0<e\le s\),
+
+\[
+\begin{aligned}
+B_{Sp}(e,s)
+&\ge B_{Sp}(0,s)-{7\over100}s\\
+&>B_{Es}(0,s)+\left({1\over5}-{7\over100}\right)s\\
+&=B_{Es}(0,s)+{13\over100}s.                       \tag{ES5+}
+\end{aligned}
+\]
+
+Together with (ES2+)--(ES3+), this proves the Pattern-12-only extension
+
+\[
+\boxed{B_v(e,s)\ge B_{Es}(0,s)\qquad
+       (0\le s<3/10)}                              \tag{A22-env-ES-P12+}
+\]
+
+for all four E/S source axes. The Pattern-13 own-E envelope remains
+restricted to \(s<1/6\); no widened claim is made for it.
+
+The archived exact checker `check_A2_R22c_ES_envelope.py` at
+`b51d8a88c30588e279882b8efd5441304635f527` is only an arithmetic
+cross-check for the original strip; the widened Pattern-12 statement above
+is the hand inequality used below.
+
 
 Combining (A22-env-NW-done) and (A22-env-ES-done) with the reduced
 monotonicity below gives
