@@ -210,9 +210,9 @@ Hence every consecutive marker gap lies strictly in
 \boxed{\frac{\pi}{3}<g_i<\frac{2\pi}{3}}.          \tag{N7}
 \]
 
-This theorem concerns the genuine `Seven.chartMarker`. After the
-side-nearest lemma below shows that the axial label is selected, it becomes
-the simplified affine-marker statement used in A2.
+This theorem concerns the genuine `Seven.chartMarker`.  Once the normalization
+package proves side-nearestness and axial-marker selection, (N20) identifies it
+with the affine marker used in A2.
 
 ### 2.2A. Candidate-radius axial reserve
 
@@ -1966,7 +1966,7 @@ The same monotonicity and endpoint checks therefore give
 
 ### Exact checker
 
-`research/six/an independent arithmetic audit` checks only:
+`the pinned independent arithmetic audit` checks only:
 
 1. r0<23/200 by a rational square comparison;
 2. (N-ep);
@@ -2069,7 +2069,7 @@ Therefore d cannot be negative.  At d=0 the exact identity gives Delta_D=0,
 which is also incompatible with the canonical own branch Delta_D>0.  This
 proves (D+).
 
-`research/six/an independent arithmetic audit` checks only the three scalar comparisons
+`the pinned independent arithmetic audit` checks only the three scalar comparisons
 used above, with rational square-root and alternating Taylor enclosures.
 
 ## A2.1 — exclude N own while E cardinal
@@ -2617,7 +2617,7 @@ for any of the four A2.1 central patterns.  The candidate-source part of A2.1
 has been reduced, simultaneously for all four patterns, to a uniform
 second-order remainder estimate.
 
-`research/six/an independent arithmetic audit` checks only the exact algebraic
+`the pinned independent arithmetic audit` checks only the exact algebraic
 constant inequalities in (U7) and (U11).
 
 
@@ -2804,7 +2804,7 @@ are
 In particular the four-angle box decomposes as a product of two elementary
 six-sector arrangements; there are no hidden support-sign cases.
 
-`research/six/an independent arithmetic audit` checks only the scalar bounds
+`the pinned independent arithmetic audit` checks only the scalar bounds
 (U25)--(U28) and the positive reserve inequalities used above.
 
 
@@ -2974,7 +2974,7 @@ point is present.  This is not a subdivision tree: the helper values are the
 nine pair-chamber vertices and the diagonal values are exactly the three
 analytic minimizers in (F13).
 
-`research/six/an independent arithmetic audit` performs these fixed exact evaluations.
+`the pinned independent arithmetic audit` performs these fixed exact evaluations.
 Therefore the only missing step for the candidate-source small box is the
 calculus reduction from each smooth helper chamber to the vertices (F12).
 
@@ -3532,7 +3532,7 @@ q(\cos(d-s)+\sin(d-s))>3/20.
 Therefore every vertex/sign chamber satisfies
 
 \[
-\Phi_{ww}<-1/5,\qquad \Phi_{ss}<-1/25.             \tag{A23V8}
+\Phi_{ww}<-1/5,\qquad \Phi_{ss}<-3/100.            \tag{A23V8}
 \]
 
 Together with the cap curvatures and the \(C^1\) switch, the exact defect is
@@ -4169,7 +4169,7 @@ at every vertex.  The actual certified minima are greater than
 Therefore both D--S secondary-axis possibilities contradict R^2<=Q0
 throughout (P9-domain).
 
-\`research/six/an independent arithmetic audit\` checks only the scalar curvature
+\`the pinned independent arithmetic audit\` checks only the scalar curvature
 inequalities and these 36 fixed endpoint evaluations.  It performs no
 subdivision.
 
@@ -4277,7 +4277,7 @@ at all 64 vertices. The actual smallest certified margin is greater than
 
 Therefore the whole large-N alternate-D-W family contradicts R^2<=Q0.
 
-research/six/an independent arithmetic audit checks the displayed curvature
+the pinned independent arithmetic audit checks the displayed curvature
 bounds and the 64 fixed endpoint values. It performs no subdivision.
 
 
@@ -4377,7 +4377,7 @@ greater than 0.10708, attained for the N-secondary W--N source at
 
 Hence the entire P11 domain is excluded.
 
-`research/six/an independent arithmetic audit` checks the fixed curvature
+`the pinned independent arithmetic audit` checks the fixed curvature
 inequalities, equality-diagonal concavity, and 96 endpoint values using
 rational square-root and alternating Taylor enclosures only. It performs no
 adaptive subdivision.
@@ -4485,7 +4485,7 @@ for the N-secondary source at
 
 Hence the entire widened P12 domain contradicts R^2<=Q0.
 
-`research/six/an independent arithmetic audit` checks the displayed curvature signs
+`the pinned independent arithmetic audit` checks the displayed curvature signs
 and the 64 fixed endpoint evaluations. It performs no adaptive subdivision.
 
 
@@ -4560,7 +4560,7 @@ attained for W-primary or N-primary source at
 
 Hence the whole P13 domain contradicts R^2<=Q0.
 
-`research/six/an independent arithmetic audit` checks the fixed curvature
+`the pinned independent arithmetic audit` checks the fixed curvature
 inequalities and the 64 endpoint values. It performs no adaptive subdivision.
 
 ### Four-graph consequence for A2.2
@@ -4671,7 +4671,7 @@ for W-primary source at
 
 Hence the entire P14 domain contradicts R^2<=Q0.
 
-`research/six/an independent arithmetic audit` checks the fixed curvature
+`the pinned independent arithmetic audit` checks the fixed curvature
 inequalities and the 64 endpoint values.  It performs no adaptive
 subdivision.
 
@@ -4762,7 +4762,7 @@ Therefore the entire P15 domain is excluded.
 Together, P14 and P15 close both possible D--S secondary choices whenever
 D--W uses W-secondary on the full low-N strip |n|<=1/5.
 
-`research/six/an independent arithmetic audit` checks only fixed
+`the pinned independent arithmetic audit` checks only fixed
 curvature/monotonicity inequalities and endpoint values. It performs no
 adaptive subdivision.
 
@@ -4875,7 +4875,7 @@ Whenever s>=1/6 this implies
 Consequently P14--P16 cover the entire cardinally possible negative-n range
 for both W-secondary D--S choices, subject only to their displayed w-ranges.
 
-`research/six/an independent arithmetic audit` checks the fixed
+`the pinned independent arithmetic audit` checks the fixed
 curvature/monotonicity inequalities and endpoint values.  It performs no
 adaptive subdivision.
 
@@ -5005,7 +5005,7 @@ Exact square-root arithmetic gives the following row minima:
 
 Thus all four directed primary-axis possibilities are impossible.
 
-`research/six/an independent arithmetic audit` checks the two scalar curvature
+`the pinned independent arithmetic audit` checks the two scalar curvature
 bounds and the twelve fixed endpoint evaluations.  It performs no subdivision.
 
 
@@ -5109,7 +5109,7 @@ and exact evaluation gives gap >1/100 at each of them.
 
 This proves (P18-angle)--(P18-axis).
 
-`research/six/an independent arithmetic audit` checks the scalar curvature
+`the pinned independent arithmetic audit` checks the scalar curvature
 bounds and the ten fixed endpoint evaluations.  It performs no subdivision.
 
 
@@ -5256,7 +5256,7 @@ at (d,s)=(d0,0).
 
 Hence D-primary cannot be the D--S separator anywhere in R22-c.
 
-`research/six/an independent arithmetic audit` checks only the scalar
+`the pinned independent arithmetic audit` checks only the scalar
 curvature inequalities and these six fixed endpoint values. It performs no
 subdivision.
 
@@ -5349,7 +5349,7 @@ attained in the negative-n W-primary row at
 Therefore D-secondary cannot separate D from S anywhere in the small-s
 A2.2 residual.
 
-The checker research/six/an independent arithmetic audit verifies only the
+The checker the pinned independent arithmetic audit verifies only the
 displayed fixed curvature/monotonicity statements and endpoint values. It
 reuses the P12/P14/P16 stresses exactly and performs no multidimensional
 search.
@@ -5451,7 +5451,7 @@ So the only zero of the tangent-plus-diagonal model is the exact candidate
 tie.  This is the local coercivity input for the final R22-c / S-secondary
 closure.
 
-`research/six/an independent arithmetic audit` checks only the algebraic candidate
+`the pinned independent arithmetic audit` checks only the algebraic candidate
 inequalities in (A22-coeff), d_*>h, and the rational strip constant
 1/3-17/256>1/4.
 
