@@ -720,12 +720,33 @@ F_8(0,0,\epsilon)
 \]
 
 Equality requires \(\epsilon=0\), and equality in the two pair envelopes
-forces \(n=e=0\) and the candidate equality sources.  The completed-square
-equalities, equivalently the local-rigidity theorem, then force the candidate
-centers.
+forces \(n=e=0\) and the candidate equality source axes.
 
-Hence Pattern 8 is closed by hand.  The independent fixed-point audit is not a
-proof dependency.
+It remains only to read equality in the stress construction.  Every
+containment weight in the Pattern-8 equality stress is positive.  Therefore
+equality in the weighted containment sum forces each selected active vertex
+to lie on the circle.  Equality in each completed square forces the center to
+be the unique optimizer for its induced force, while equality in every
+positive separator multiplier forces the corresponding separating-axis
+inequality to be tight.  With (n=e=w=s=epsilon=0), those linear equalities
+are exactly
+
+\[
+N=C+(0,1),\qquad E=C+(1,0),
+\]
+
+\[
+W=(C_x-1,t),\qquad S=(t,C_y-1),
+\]
+
+and the two diagonal contacts give (D=(-d,-d)).  The active-circle
+equalities for N and E then give (C_x=C_y=s); the W/S equality gives the
+displayed value of (t).  Hence every equality configuration is the candidate
+in the normalized frame.
+
+Thus Pattern 8 and its equality case are closed directly; no separate
+local-rigidity theorem is a logical premise.  The independent fixed-point
+audit is not a proof dependency.
 
 ## 8. Conclusion
 
