@@ -3930,8 +3930,19 @@ used.
 
 Use the chain separators C->N, S->C, C->W, W--N, D->W, D->S.
 For each of the four W--N source axes choose one fixed rational
-completed-square stress; the exact coefficients are recorded in
-an independent arithmetic audit.
+completed-square stress.  The containment weights are ordered
+((\lambda_N,\lambda_W,\lambda_S,\lambda_D)), and the separator
+multipliers are ordered
+((\mu_{CN},\mu_{SC},\mu_{CW},\mu_{WN},\mu_{DW},\mu_{DS})):
+
+| W--N source | containment weights /1000 | separator multipliers /1000 |
+|---|---|---|
+| W-primary | (273,275,246,206) | (893,803,570,180,519,465) |
+| W-secondary | (415,52,300,233) | (952,952,152,561,656,638) |
+| N-primary | (318,199,271,212) | (883,868,550,221,578,518) |
+| N-secondary | (318,236,246,200) | (1006,815,432,240,503,429) |
+
+All containment weights are positive and each row sums to one.
 
 The force on C need not vanish. Since 0<=C_x,C_y<=rho0-1, write c0=rho0-1.
 If the C->N, S->C, C->W multipliers are mu_N,mu_S,mu_W, then
@@ -4309,9 +4320,30 @@ Assume D--W uses W-secondary and D--S uses S-secondary. The W--N separator
 may use any of its four source axes. Then R^2<=Q0 is impossible.
 
 Use the same six-edge completed-square stress architecture as P11 and P14,
-with separate fixed rational stresses on the two half-boxes n>=0 and n<=0.
-The coefficients are recorded in
-`research/six/an independent arithmetic audit`.
+with separate fixed rational stresses on the two half-boxes (n\ge0) and
+(n\le0).  The containment weights are ordered
+((\lambda_N,\lambda_W,\lambda_S,\lambda_D)), and the multipliers are
+((\mu_{CN},\mu_{SC},\mu_{CW},\mu_{WN},\mu_{DW},\mu_{DS})).
+
+For (n\ge0):
+
+| source | containment weights /1000 | multipliers /1000 |
+|---|---|---|
+| W-primary | (136,361,242,261) | (431,745,869,139,685,484) |
+| W-secondary | (103,267,324,306) | (41,1001,761,313,811,664) |
+| N-primary | (60,326,308,306) | (0,949,894,205,806,625) |
+| N-secondary | (217,325,223,235) | (694,694,668,244,613,438) |
+
+For (n\le0):
+
+| source | containment weights /1000 | multipliers /1000 |
+|---|---|---|
+| W-primary | (216,324,225,235) | (680,693,683,226,615,451) |
+| W-secondary | (293,16,371,320) | (180,1144,46,854,886,777) |
+| N-primary | (90,291,307,312) | (0,948,734,306,824,624) |
+| N-secondary | (222,316,224,238) | (702,702,604,272,614,429) |
+
+Again every containment row is positive and sums to one.
 
 As before, use the smooth central support bound
 
