@@ -1676,21 +1676,40 @@ For every exterior square,
     R^2 >= (a+1/2)^2+(|b|+1/2)^2
          >= (a+1/2)^2+1/4.                     (C)
 
-The lower bound in (AN-) is strictly increasing for
-0<u<=pi/6, because its derivative is
+For (AN-), the derivative is
 
-    (cos u-sin u)/2 > 0.
+    (cos u-sin u)/2,
 
-The lower bound in (AN+) is also strictly increasing on
-0<theta<=pi/6.  Its derivative is
+which is positive on (0<u<pi/4).  Hence the lower bound is increasing on
+the whole allowed negative-angle range, not merely up to (pi/6).
 
-    (77/200) cos theta - (1/2) sin theta
-      > (77/200)(4/5)-1/4
-      = 29/500 > 0,
+For (AN+), write
 
-using cos theta>4/5 and sin theta<=1/2.
+    L(theta)=1+(cos theta+sin theta)/2-(23/200)sin theta.
 
-Therefore it is enough to check the two rational endpoints.
+On (0<	hetalepi/6),
+
+    L'(theta)
+      =(77/200)cos theta-(1/2)sin theta
+      >(77/200)(4/5)-1/4
+      =29/500>0.
+
+On ([pi/6,pi/4]),
+
+    L''(theta)
+      =-(1/2)cos theta-(77/200)sin theta<0,
+
+so (L) is concave there.  Consequently the minimum of (L) on
+([5/12,pi/4]) occurs at one of the two endpoints (5/12,pi/4).
+The rational/Taylor checks give
+
+    L(5/12)^2+1/4 > Q0,
+    L(pi/4)^2+1/4 > Q0+1/25.                       (N+far)
+
+Thus every theta>=5/12 is excluded.
+
+It is therefore enough to check the stated rational endpoint at (5/12),
+together with the explicit (pi/4) endpoint above.
 
 At u=3/10,
 
@@ -5578,13 +5597,18 @@ stress gaps are separately concave on the complete rectangle.
 It remains to evaluate only the four vertices
 `(w,d) in {-2/3,0} x {0,1/2}`.
 
-For W-secondary the four lower margins are
+For W-secondary the four lower margins, in the vertex order
+((-2/3,0),(-2/3,1/2),(0,0),(0,1/2)), are
 
-    > 5/100,  2/100,  8/100,  3/100,              (SD5)
+    > 3/100,  3/1000,  1/100,  3/1000.            (SD5)
 
-and for D-secondary they are
+For D-secondary the four lower margins are
 
-    > 1/100,  1/100,  3/100,  1/100.              (SD6)
+    > 1/400,  3/1000,  1/250,  1/500.             (SD6)
+
+These are the direct endpoint values with the exact cap/vertex support.
+A separate exact fixed-cover audit gives positive reserve throughout each
+rectangle as well.
 
 The estimates use only alternating Taylor bounds at 1/2 and 2/3 and
 `R_*<17/10`, `c_0<23/200`.
@@ -5696,9 +5720,9 @@ despite the two support switches.  Its minimum is attained at one of
 The four endpoint values satisfy
 
     Phi(-2/3,0)    > 9/100,
-    Phi(-2/3,pi/4) > 1/100,
+    Phi(-2/3,pi/4) > 1/125,
     Phi(0,0)       > 7/1000,
-    Phi(0,pi/4)    > 4/100.                        (WP8)
+    Phi(0,pi/4)    > 7/200.                        (WP8)
 
 These are direct alternating-Taylor evaluations at the displayed rational
 angles and pi/4, using `R_*<17/10` and the defining radical bounds for
