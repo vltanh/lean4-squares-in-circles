@@ -3532,6 +3532,185 @@ Consequently **Pattern 10 is closed by hand**.  No multidimensional replay
 is a logical premise of the Pattern-10 argument.
 
 
+## A2.1 Pattern 14 closure
+
+Pattern 14 is
+
+\[
+(E_c,N_o,W_o,D_o,S_c).
+\]
+
+All initial D-edge reductions in this section use only \(C,W,D,S\), so the
+A2.2 reductions remain valid although N is own-primary.
+
+### D-edge classification
+
+For \(w\ge0\), P17--P18 give
+
+\[
+D\!-\!W=W\text{-secondary},\qquad
+d>\pi/4-1/4>1/2.
+\]
+
+For \(w<0\), the negative-W primary-axis exclusions remove W-primary and
+D-primary, and the secondary low-d stress removes both remaining secondary
+sources when \(d\le1/2\). Hence throughout Pattern 14
+
+\[
+1/2<d\le\pi/4,\qquad
+D\!-\!W\in\{W\text{-secondary},D\text{-secondary}\}. \tag{P14-1}
+\]
+
+The high-D D--S primary-axis lemma similarly leaves
+
+\[
+D\!-\!S\in\{S\text{-primary},S\text{-secondary},D\text{-secondary}\},
+\]
+
+and
+
+\[
+D\!-\!S=S\text{-primary}\Longrightarrow 1/6<s<2/5. \tag{P14-2}
+\]
+
+The five noncandidate D-edge graphs are eliminated as follows.
+
+- D-secondary/D-secondary and D-secondary/S-primary on negative W are the
+  source-independent R22-d hand stresses.
+- W-secondary/S-primary uses
+  \((376,233,0,215,176)/1000\). Outside \(|d-w|\le1/10\) use
+  \(|u|+|v|\ge\sqrt{u^2+v^2}\); in the middle strip use
+  \(|u|+|v|\ge-u+v\). The five scalar chambers have negative coordinate
+  and oblique-edge curvature; the weakest endpoint margin is \(>.00143\).
+- W-secondary/D-secondary for \(w\ge-1/5\) uses
+  \((407,82,0,264,247)/1000\); the part \(w\le-1/5\) is the R22-d
+  hand stress. After the walls \(w=0,s=0,d=w\), the defect is separately
+  concave, including the oblique wall, and its weakest endpoint is \(>.00276\).
+- D-secondary/S-secondary for \(-1/5\le w\le0\) uses
+  \((153,170,290,263,124)/1000\); the far part is the R22-d chamber
+  stress. After the sole sign walls the scalar curvatures are negative and
+  the weakest endpoint margin is \(>.02025\).
+
+Thus the only D-edge survivor is
+
+\[
+D\!-\!W=W\text{-secondary},\qquad
+D\!-\!S=S\text{-secondary}.                    \tag{P14-3}
+\]
+
+The archived files `check_A2_pattern14_Ws_Sp_hand.py` and
+`check_A2_pattern14_Dedges_hand.py` at
+`b51d8a88c30588e279882b8efd5441304635f527` independently audit exactly
+these scalar curvature and endpoint inequalities.
+
+### Source-independent candidate tails
+
+For
+
+\[
+2/25\le w\le\pi/4,
+\]
+
+use the fixed stress
+
+\[
+(381,212,0,252,155)/1000.                          \tag{P14-4}
+\]
+
+With universal far-vertex support the defect separates into one-variable
+terms in \(w,s,d-w,d-s,s-w\). The only walls are \(s=0\) and \(d=w\);
+coordinate and wall concavity leave fixed vertices, all with margin
+\(>.00957\).
+
+For
+
+\[
+-2/3\le w\le-21/50,
+\]
+
+the three-chamber negative-tail argument has scalar endpoint margins
+
+\[
+>.01537,\qquad >.00208,\qquad >.00922,              \tag{P14-5}
+\]
+
+with the positive-S chamber using
+\((436,227,47,153,137)/1000\). Hence every candidate survivor satisfies
+
+\[
+-21/50<w<2/25.                                    \tag{P14-6}
+\]
+
+### Nonnegative-W adjacent-pair closure
+
+On \(0\le w\le2/25\), balance the N/W pair with
+
+\[
+\alpha={\cos w+\sin w\over\cos(w-n)},\qquad
+\gamma={\cos n-\sin n\over\cos(w-n)}.             \tag{P14-7}
+\]
+
+For W-primary and N-secondary the one-sided n-derivatives point to \(n=0\).
+For W-secondary the three chambers cut by \(n=0,n=w\) are monotone. For
+N-primary, n-concavity reduces the only nonmonotone chambers to the four
+scalar edges
+
+\[
+n=-3/10,\qquad n=0,\qquad n=w,\qquad n=5/12.
+\]
+
+Each edge is monotone or concave with positive endpoint reserve. Therefore
+all four W--N source choices satisfy
+
+\[
+B_u(n,w)\ge B_{Wp}(0,w).                           \tag{P14-8}
+\]
+
+At \(n=0\) this is exactly the R22-c N-cardinal/W-own equality profile.
+The E/S pair in Pattern 14 is cardinal/cardinal. By the extended
+Pattern-12 theorem (A22-env-ES-P12+), its equality envelope is valid on the
+entire needed range \(-2/5<s<2/5\), including \(s\ge1/6\). Thus the R22-c
+reduced scalar monotonicity applies without any domain gap and forces
+
+\[
+w=s=0
+\]
+
+on the nonnegative candidate strip, where the diagonal identity is
+nonnegative. Hence no Pattern-14 candidate has \(w\ge0\).
+
+### Negative-W adjacent-pair reserve
+
+On the remaining strip \(-21/50<w<0\), the four W--N source axes satisfy
+
+\[
+B_u(n,w)\ge B_*+{73\over100}(-w).                 \tag{P14-9}
+\]
+
+The only n-walls are \(n=0,n=w\). In all three chambers the reserve is
+concave in n, hence reduces to the same four scalar edges
+
+\[
+-3/10,\quad w,\quad0,\quad5/12.
+\]
+
+The E/S source reduction is independent of N and of the sign of w; it sends
+\(s\) to zero. On \(s=0\), the exact diagonal term loses at most
+
+\[
+{71\over100}(-w).                                  \tag{P14-10}
+\]
+
+Therefore the total reserve is
+
+\[
+\left({73\over100}-{71\over100}\right)(-w)
+ ={1\over50}(-w)>0.                               \tag{P14-11}
+\]
+
+Thus Pattern 14 is impossible. This is the full Pattern-14 hand closure;
+the archived Pattern-14 `_hand.py` files are arithmetic audits only.
+
 
 ## A2.3 hand closure: Patterns 30, 28, 29, 31
 
