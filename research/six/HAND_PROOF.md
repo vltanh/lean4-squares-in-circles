@@ -3711,6 +3711,248 @@ Therefore the total reserve is
 Thus Pattern 14 is impossible. This is the full Pattern-14 hand closure;
 the archived Pattern-14 `_hand.py` files are arithmetic audits only.
 
+## A2.1 Pattern 26 closure
+
+Pattern 26 is
+
+\[
+(E_c,N_o,W_c,D_o,S_o).
+\]
+
+The E and W helpers are opposite cardinal helpers. From the normalization
+cap-depth theorem (N25)--(N26),
+
+\[
+|e|+|w|<4c_0<23/50,\qquad |w|<2/5.                \tag{P26-1}
+\]
+
+The Pattern-10 D--W classification uses only \(C,W,D\), so every survivor
+satisfies
+
+\[
+1/2<d\le\pi/4,qquad
+D\!-\!W\in\{W\text{-secondary},D\text{-secondary}\}. \tag{P26-2}
+\]
+
+### Complete noncandidate D-edge classification
+
+Every noncandidate graph is eliminated by a fixed finite set of scalar
+chambers.  The stress tuples below are ordered
+\((CW,SC,CD,DW,DS)/1000\); all are nonnegative and sum to one.
+
+**W-secondary / S-primary.**  The pin orientation is negative for
+\(s\le-1/4\) and positive for \(s\ge-27/100\):
+
+| s-range | stress |
+|---|---|
+| \([-4/5,-1/4]\) | \((0,500,0,0,500)\) |
+| \([-27/100,1/5]\) | \((525,1,0,272,202)\) |
+| \([1/5,1/2]\) | \((388,295,0,206,111)\) |
+| \([1/2,4/5]\) | \((304,428,0,161,107)\) |
+
+For W use the global x-dominant cap support, for S its own-primary support,
+and for D the far-vertex bound
+\(|u|+|v|\ge\sqrt{u^2+v^2}\).  The w derivative sends each positive
+orientation chamber to \(w=0\); the remaining s/d chambers are concave,
+including the walls \(d-s=0,\pi/2\).
+
+**D-secondary / S-primary.**  The negative pin orientation
+\(-4/5\le s\le-1/4\) uses
+
+\[
+(70,336,122,144,328).                              \tag{P26-3}
+\]
+
+The positive orientation uses the seven fixed chambers
+
+| s-range | w-range | stress |
+|---|---|---|
+| \([-27/100,1/5]\) | \([-2/5,2/5]\) | \((0,0,678,0,322)\) |
+| \([1/5,7/20]\) | \([-2/5,0]\) | \((109,16,586,193,96)\) |
+| \([7/20,1/2]\) | \([-2/5,-1/5]\) | \((57,195,521,168,59)\) |
+| \([7/20,1/2]\) | \([-1/5,0]\) | \((83,75,574,245,23)\) |
+| \([1/5,1/2]\) | \([0,2/5]\) | \((166,1,570,261,2)\) |
+| \([1/2,4/5]\) | \([-2/5,0]\) | \((40,409,382,132,37)\) |
+| \([1/2,4/5]\) | \([0,2/5]\) | \((98,412,338,149,3)\) |
+
+After fixing the natural sign walls, each defect has the separated form
+
+\[
+C+F(w)+G(s)+H(d)+K(d-w)+L(d-s),
+\]
+
+and all remaining minima reduce by scalar concavity to chamber endpoints.
+
+**W-secondary / D-primary.**
+
+| s-range | w-range | stress |
+|---|---|---|
+| \([-4/5,-1/5]\) | \([-2/5,2/5]\) | \((80,530,2,45,343)\) |
+| \([-1/5,1/5]\) | \([-2/5,2/5]\) | \((175,457,11,132,225)\) |
+| \([1/5,1/2]\) | \([-2/5,2/5]\) | \((178,478,74,126,144)\) |
+| \([1/2,13/20]\) | \([-2/5,2/5]\) | \((196,432,106,137,129)\) |
+| \([13/20,4/5]\) | \([-2/5,0]\) | \((256,413,59,191,81)\) |
+| \([13/20,4/5]\) | \([0,2/5]\) | \((218,430,135,118,99)\) |
+
+**D-secondary / D-primary.**
+
+| s-range | stress |
+|---|---|
+| \([-4/5,-1/5]\) | \((74,501,16,93,316)\) |
+| \([-1/5,1/5]\) | \((94,512,14,118,262)\) |
+| \([1/5,1/2]\) | \((111,457,159,139,134)\) |
+| \([1/2,13/20]\) | \((116,422,201,146,115)\) |
+| \([13/20,4/5]\) | \((86,396,286,141,91)\) |
+
+In both primary families universal far-vertex support leaves only
+one-variable functions of \(w,s,d,d-w,d-s\); the walls
+\(s=0,d-s=0,d-s=\pi/2\) are handled by the same concavity argument.
+
+**W-secondary / D-secondary.**
+
+| s-range | stress |
+|---|---|
+| \([-4/5,-1/5]\) | \((304,172,13,247,264)\) |
+| \([-1/5,1/5]\) | \((372,42,14,283,289)\) |
+| \([1/5,1/2]\) | \((283,314,10,199,194)\) |
+| \([1/2,4/5]\) | \((274,382,1,179,164)\) |
+
+Here the w derivative is negative for \(w<0\) and positive for \(w>0\),
+so \(w=0\). The remaining d dependence is monotone except for the
+\(d-s=\pi/2\) wall, where concavity again reduces to endpoints.
+
+**D-secondary / S-secondary.**
+
+| s-range | w-range | stress |
+|---|---|---|
+| \([-4/5,-1/5]\) | \([-2/5,2/5]\) | \((162,355,1,234,248)\) |
+| \([-1/5,1/5]\) | \([-2/5,0]\) | \((123,338,80,242,217)\) |
+| \([-1/5,1/5]\) | \([0,2/5]\) | \((197,161,302,236,104)\) |
+| \([1/5,1/2]\) | \([-2/5,2/5]\) | \((133,399,84,188,196)\) |
+| \([1/2,4/5]\) | \([-2/5,2/5]\) | \((99,368,237,169,127)\) |
+
+**D-secondary / D-secondary.**
+
+| s-range | stress |
+|---|---|
+| \([-4/5,-1/5]\) | \((148,150,1,350,351)\) |
+| \([-1/5,1/5]\) | \((198,9,2,395,396)\) |
+| \([1/5,1/2]\) | \((217,0,1,391,391)\) |
+| \([1/2,4/5]\) | \((107,335,192,219,147)\) |
+
+In the last two families the exact support again factors into scalar
+functions. The coordinate and relevant oblique-wall curvatures are strictly
+negative on each displayed chamber, leaving only one-dimensional s-edges.
+
+Thus every noncandidate D-edge graph is impossible and Pattern 26 reduces to
+
+\[
+D\!-\!W=W\text{-secondary},\qquad
+D\!-\!S=S\text{-secondary}.                    \tag{P26-4}
+\]
+
+The archived Pattern-26 `_hand.py` files at
+`b51d8a88c30588e279882b8efd5441304635f527` independently check the
+displayed scalar curvatures and endpoint signs; no adaptive or
+multidimensional value replay is a premise of this classification.
+
+### Candidate tails
+
+Two source-independent S-tail stresses work on the whole
+\(-2/5\le w\le2/5\) range:
+
+\[
+s\le-1/6:\quad (360,253,0,241,146)/1000,
+\]
+
+\[
+s\ge1/2:\quad (286,396,0,171,147)/1000.          \tag{P26-5}
+\]
+
+With CD weight zero the D-force norm depends only on \(s-w\); after the
+walls \(w=0\) and \(d-s\in\{0,\pi/2\}\), coordinate and wall
+concavity reduce to fixed vertices.
+
+On the remaining negative-W middle strip
+
+\[
+-2/5\le w\le-1/6,qquad -1/6\le s\le1/2,
+\]
+
+use
+
+\[
+(460,154,0,303,83)/1000.                           \tag{P26-6}
+\]
+
+The defect is
+
+\[
+C+F(w)+G_{\pm}(s)+K(d-w)+L(d-s)+M(s-w),
+\]
+
+with the sole wall \(s=0\). Every coordinate curvature is negative; the
+weakest fixed endpoint margin is \(>.00654\). Therefore it remains only
+
+\[
+-1/6\le w\le2/5,qquad -1/6\le s\le1/2.         \tag{P26-7}
+\]
+
+### Adjacent-pair source envelope
+
+The N/W pair is exactly the Pattern-10 N-own/W-cardinal pair, so its equality
+profile is \(a(w)\). For the E-cardinal/S-own pair, direct source-by-source
+calculus gives, for every S--E source axis,
+
+\[
+A_v(e,s)\ge b(s):=
+\begin{cases}
+A_{Sp}(0,s),&s\le0,\\
+A_{Es}(0,s),&s\ge0.
+\end{cases}                                      \tag{P26-8}
+\]
+
+The only walls are \(e=0,e=s\). For \(s\le0\), all sources move to
+\(e=0\) by one-sided derivatives. For \(s\ge0\), E-secondary moves to zero
+and E-primary to \(e=\min(s,2/5)\); the S-secondary high-s dip is bounded by
+a derivative loss \(<1/160\) against a one-dimensional reserve \(>7/100\).
+S-primary is concave on \(e<0\), and on \(0<e<s\) three fixed e/s bands
+reduce the minimum to \(e=0\) or \(e=\min(s,2/5)\). The tiny
+\(0\le s\le1/100\) corner is radial with \(e=ts\). Thus (P26-8) is a
+one-dimensional chamber proof.
+
+Consequently
+
+\[
+F_{26}(w,s,\epsilon)=a(w)+b(s)+D(w,s,\epsilon).    \tag{P26-9}
+\]
+
+### Scalar closure
+
+The explicit derivatives give:
+
+- if \(w<0\), \(\partial_wF_{26}<-1/10\), so w moves to zero;
+- if \(w\ge0\), \(F_{26}\) is concave in w, so only
+  \(w=0\) and \(w=2/5\) remain;
+- at \(w=0,s<0\), \(\partial_sF_{26}<0\), so s moves to zero;
+- at \(w=0,s\ge0\), the s-curvature is negative, so only
+  \(s=0,1/2\) remain.
+
+On \(w=2/5\), the defect is strictly increasing in \(\epsilon\). At the
+lower epsilon edge it is concave in s; the three endpoint values
+\(s=-1/6,0,1/2\) are all \(>1/100\). The remaining
+\((w,s)=(0,1/2)\) face is one-dimensional in epsilon and is also
+\(>1/100\).
+
+At \(w=s=0\),
+
+\[
+F_{26}(0,0,\epsilon)
+ =2m(d_*-1/\sqrt2)(1-\cos\epsilon)\ge0.           \tag{P26-10}
+\]
+
+Thus Pattern 26 is fully closed by hand chamber calculus.
+
 
 ## A2.3 hand closure: Patterns 30, 28, 29, 31
 
