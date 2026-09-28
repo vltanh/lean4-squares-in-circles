@@ -214,6 +214,123 @@ This theorem concerns the genuine `Seven.chartMarker`. After the
 side-nearest lemma below shows that the axial label is selected, it becomes
 the simplified affine-marker statement used in A2.
 
+### 2.2A. Candidate-radius axial reserve
+
+Put
+
+\[
+Q_0={142559\over50000}.
+\]
+
+The exact candidate calculation gives \(q_*<Q_0\).  Hence every exterior
+Seven chart \((a,u)\) in a hypothetical packing at \(R^2\le q_*\) satisfies
+
+\[
+\phi(a,u)=(a+1/2)^2+(u+1/2)^2\le Q_0.              \tag{N8}
+\]
+
+We will need a quantitative strengthening of the Seven axial-label estimate.
+
+**Lemma N8 (axial sum reserve).**  If the Seven label is axial,
+
+\[
+\ell(a,u)=\frac54u,
+\]
+
+then
+
+\[
+a+u<\frac{19}{20}+\frac{2\pi}{15}.                 \tag{N9}
+\]
+
+Equivalently,
+
+\[
+1+\frac{2\pi}{15}-a-u>\frac1{20}.                  \tag{N10}
+\]
+
+*Proof.*  Let \(S=a+u\).  Axial selection and the side-label inequality give
+the Seven tie-line estimate
+
+\[
+9a+11u\le2\pi+7,
+\]
+
+hence
+
+\[
+u\le U(S):=\frac{2\pi+7-9S}{2}.                    \tag{N11}
+\]
+
+Suppose for contradiction that
+
+\[
+S\ge S_0:=\frac{19}{20}+\frac{2\pi}{15}.
+\]
+
+Since \(\pi<22/7<15/4\),
+
+\[
+S_0-\frac{2\pi+7}{10}=\frac14-\frac{\pi}{15}>0,
+\]
+
+so \(U(S)<S/2\).  As \(u\le U(S)\),
+
+\[
+\begin{aligned}
+a^2+u^2
+&=(S-u)^2+u^2\\
+&\ge (S-U(S))^2+U(S)^2.                            \tag{N12}
+\end{aligned}
+\]
+
+Indeed the difference is
+
+\[
+2(U(S)-u)(S-U(S)-u)\ge0.
+\]
+
+Therefore (N8) implies
+
+\[
+Q_0\ge F(S):=(S-U(S))^2+U(S)^2+S+\frac12.          \tag{N13}
+\]
+
+For \(S\ge S_0\),
+
+\[
+F(S)-F(S_0)
+ ={(60S-57-8\pi)(6060S-1592\pi-2523)\over7200}\ge0, \tag{N14}
+\]
+
+because the first factor vanishes at \(S_0\) and the second is already
+positive there:
+
+\[
+3234-784\pi>0
+\]
+
+from \(\pi<22/7\).
+
+Finally
+
+\[
+F(S_0)-Q_0
+ =-\frac{211\pi}{150}+\frac{52\pi^2}{225}
+   +\frac{4021}{800}-\frac{142559}{50000}
+ >\frac{3}{100}.                                   \tag{N15}
+\]
+
+For example, the left side is increasing for
+\(\pi\ge 157/50\), and the standard rational bound
+\(157/50<\pi\) gives the displayed weaker \(3/100\) margin directly.
+Thus \(F(S)>Q_0\), contradicting (N13).  This proves (N9)--(N10). \(\square\)
+
+The significance of (N10) is that the three Seven contact types at the
+critical gap \(\pi/3\) all lie on the larger \(13/4\) boundary.  At the
+candidate radius they acquire a uniform positive support reserve.  This is
+the quantitative input for the strengthened marker-gap lemma below.
+
 ### 2.3. Remaining global-normalization theorem
 
 The downstream proof needs the following n=6-specific theorem.  This is now
