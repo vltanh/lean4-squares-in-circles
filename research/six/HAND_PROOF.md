@@ -2375,8 +2375,7 @@ axis.  No estimate on C_x,C_y is needed.
 
 ### Two positive stresses on the whole forced-own north window
 
-Use the rational candidate-stress coefficients already recorded in
-CAP_STRESS.md.  For the first stress take
+Use the following rational candidate-stress coefficients. For the first stress take
 
     alpha_A = 1102695/10^7,
     beta_A  = 1966219/10^7,
@@ -2420,9 +2419,8 @@ Fix one separating source axis for each of
     W-N, S-E, D-W, D-S.
 
 Sum the eight selected separator inequalities with either stress.  By (CB)
-there is no C term.  Applying the exact one-square disk support function from
-CAP_STRESS.md to E,N,W,D,S gives an inequality depending only on the five
-frame angles.
+there is no C term.  Applying the exact one-square disk support formula (SRC0) to E,N,W,D,S gives
+an inequality depending only on the five frame angles.
 
 Thus the (P10) branch has been reduced from the 17-variable packing state to
 a five-angle inequality, with no center variables and with two stresses which
@@ -7394,4 +7392,10 @@ arithmetic cross-checks.
 
 # Proof status
 
-This is an audited working proof, not yet a completed theorem.  The verified hand reductions should be retained, but formalization must wait on the three substantive repair tracks stated at the beginning: global foundations, exact A2.3 support branches, and direct survivor closures.  LEAN_ROADMAP.md now treats those repairs as a pre-formalization gate.
+This is an audited working proof, not yet a completed theorem. The exact-support
+repair and the direct survivor closures are complete. Pattern 14, Pattern 26,
+Pattern 27, and the cardinal/cardinal survivor bridge are now included here
+rather than imported from archived notes. The sole primary mathematical gate
+remaining is the global normalization package (N16)--(N22), together with its
+mandatory consequences (N23)--(N27). Formalization begins only after that gate
+is closed.
