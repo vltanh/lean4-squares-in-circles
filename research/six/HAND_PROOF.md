@@ -7189,13 +7189,85 @@ Together with (ES2+)--(ES3+), this proves the Pattern-12-only extension
        (0\le s<2/5)}                              \tag{A22-env-ES-P12+}
 \]
 
-for all four E/S source axes. The Pattern-13 own-E envelope remains
-restricted to \(s<1/6\); no widened claim is made for it.
+for all four E/S source axes.
 
-The archived exact checker `check_A2_R22c_ES_envelope.py` at
-`b51d8a88c30588e279882b8efd5441304635f527` is only an arithmetic
-cross-check for the original strip; the widened Pattern-12 statement above
-is the hand inequality used below.
+#### Pattern-13 own-E extension to \(s<2/5\)
+
+The survivor arguments also need the Pattern-13 own-E/S-cardinal pair above
+\(s=1/6\).  Its central multipliers are
+\[
+\mu_E=\sec e,\qquad \mu_S=1+\tan e,
+\]
+with
+\[
+-\frac5{12}<e<\frac3{10},\qquad 0<s<\frac25.
+\]
+At \(e=0\) the Pattern-12 and Pattern-13 pair formulas coincide.  Hence the
+positive-s equality-source difference
+\[
+\Delta(s)=B_{Sp}(0,s)-B_{Es}(0,s)
+\]
+has \(\Delta(0)=0\).  The original calculation gives
+\(\Delta'(s)>19/100\) through \(s=1/6\), while direct differentiation of
+the same exact cap/vertex formulas gives the stronger
+\[
+\Delta'(s)>\frac{13}{50}
+\qquad\left(\frac16\le s<\frac25\right).       \tag{ES6+}
+\]
+
+For E-secondary, clearing the positive factor \(\cos e\) from the own-E
+multipliers leaves the same one-sided sign as before:
+\[
+\partial_e B_{Es}<0\quad(e<0),\qquad
+\partial_e B_{Es}>0\quad(e>0).                    \tag{ES7+}
+\]
+Thus E-secondary is minimized at \(e=0\).
+
+For S-primary the negative-e chamber is concave in \(e\), so its minimum is
+at \(e=-5/12\) or \(e=0\); the left edge has reserve \(>1/4\) over
+\(B_{Es}(0,s)\).  On the positive chamber,
+\[
+\partial_e B_{Sp}>-\frac{17}{100}quad(0<e<s),
+\qquad
+\partial_e B_{Sp}>0quad(e>s).                    \tag{ES8+}
+\]
+Combining (ES6+) with the weaker global bound
+\(\Delta'(s)>19/100\) gives, for \(0<e\le s\),
+\[
+\begin{aligned}
+B_{Sp}(e,s)
+&\ge B_{Sp}(0,s)-\frac{17}{100}s\\
+&>B_{Es}(0,s)+\frac{2}{100}s.
+\end{aligned}                                      \tag{ES9+}
+\]
+Hence S-primary also lies strictly above the E-secondary equality profile.
+
+For S-secondary the one-sided e-derivatives point to \(e=0\); its remaining
+scalar edge stays positive through \(s=2/5\).  For E-primary, the negative-e
+chamber is concave and reduces to \(e=-5/12,0\).  On \(e\ge0\), the only
+interior source wall is \(e=s\); the smooth chambers reduce to
+\[
+e=0,\qquad e=s\ (s\le3/10),\qquad
+e=3/10\ (s\ge3/10).
+\]
+The exact scalar reserves on these edges are respectively
+\[
+>\frac3{50},\qquad >\frac1{20},\qquad >\frac2{25}.       \tag{ES10+}
+\]
+The negative endpoint \(e=-5/12\) has reserve \(>3/20\).
+
+Therefore all four Pattern-13 E/S source axes satisfy
+\[
+\boxed{B_v(e,s)\ge B_{Es}(0,s)\qquad
+       (0\le s<2/5)}                              \tag{A22-env-ES-P13+}
+\]
+with strict inequality away from the E-secondary equality source.
+
+The exact one-dimensional boundary checks for both widened envelopes are in
+`check_A2_ES_high_s_edges.py`.  The archived
+`check_A2_R22c_ES_envelope.py` at
+`b51d8a88c30588e279882b8efd5441304635f527` remains only an arithmetic
+cross-check for the original strip.
 
 
 Combining (A22-env-NW-done) and (A22-env-ES-done) with the reduced
