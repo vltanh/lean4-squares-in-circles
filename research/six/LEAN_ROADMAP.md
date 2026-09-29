@@ -14,24 +14,18 @@ or the former branch-and-bound verifier.
 
 HAND_PROOF.md is the sole mathematical source of truth.
 
-## Phase -1 — close the downstream and normalization repair gates
+## Phase -1 — close the remaining normalization theorem
 
-The September audit has two live tracks.
+The September downstream audit is closed.  The Pattern 26 cap/vertex misuse,
+the false A2.3 curvature rows, the survivor range gaps, the missing far-tail
+data, and the invalid D-own reflection/N23 sketches have all been repaired in
+HAND_PROOF.md.  Failing archived scripts are no longer proof citations.
 
-1. **Downstream exact-support repair.**  Recheck every A2/Pattern 26 chamber
-   with the exact cap/vertex support and repair the inherited survivor
-   arguments and widened range claims.  In particular the Pattern 26
-   W-secondary/S-primary chamber cannot use the x-dominant cap formula merely
-   from U>|V|, and cited archived checker failures must be resolved rather
-   than treated as passing audits.
-2. **Global normalization.**  Finish §2.3 of HAND_PROOF.md from the N0
-   boundary, without importing any A2 conclusion.
+The sole remaining mathematical obstruction is §2.3 of HAND_PROOF.md: finish
+the global n=6 normalization theorem from the N0 boundary, without importing
+any A2 conclusion.
 
-The direct closures of Patterns 9, 24, 25, and 15 remain the intended
-survivor structure, but 24, 25, and 27 inherit Pattern 26 and therefore are
-not closed until the Pattern 26 repair is complete.
-
-Do not start the Lean draft until both tracks are closed.
+Do not start the Lean draft until this normalization track is closed.
 
 ### N0. Proven starting point
 
