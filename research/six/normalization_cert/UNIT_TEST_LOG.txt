@@ -1,0 +1,14 @@
+test_bnb_limits_are_not_success (__main__.ReplayTests.test_bnb_limits_are_not_success) ... ok
+test_central_boundary_witness (__main__.ReplayTests.test_central_boundary_witness) ... ok
+test_exact_child_cover (__main__.ReplayTests.test_exact_child_cover) ... ok
+test_float_endpoint_cover (__main__.ReplayTests.test_float_endpoint_cover) ... ok
+test_interval_products (__main__.ReplayTests.test_interval_products) ... ok
+test_inverse_brackets (__main__.ReplayTests.test_inverse_brackets) ... ok
+test_rational_arithmetic (__main__.ReplayTests.test_rational_arithmetic) ... ok
+test_sqrt_brackets (__main__.ReplayTests.test_sqrt_brackets) ... ok
+test_trig_critical_points (__main__.ReplayTests.test_trig_critical_points) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.108s
+
+OK
