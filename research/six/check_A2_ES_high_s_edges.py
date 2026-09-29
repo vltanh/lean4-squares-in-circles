@@ -89,3 +89,28 @@ print("Delta' >",float(dlo))
 print("S-secondary edge >",float(ssmin))
 print("P12 E-primary edge >",float(p12ep))
 print("P13 E-primary wall >",float(p13ep))
+
+
+# Pattern 13 high-s boundary checks after the hand e-derivative reduction.
+# On e <= 0 the S-primary and E-primary chambers are concave, so only
+# e=-5/12 and e=0 remain.  On e >= 0, E-primary reduces to e=0, e=s
+# (while s<=3/10), or e=3/10 (once s>=3/10).
+def p13_sp_left(s):
+    return B(J(-F(5,12)),s,True,"Sp")-B(J(0),s,True,"Es")
+
+def p13_ep_left(s):
+    return B(J(-F(5,12)),s,True,"Ep")-B(J(0),s,True,"Es")
+
+def p13_ep_edge(s):
+    return B(J(F(3,10)),s,True,"Ep")-B(J(0),s,True,"Es")
+
+p13_sp_left_min=X.minval(p13_sp_left,F(1,6),F(2,5),F(1,500))
+p13_ep_left_min=X.minval(p13_ep_left,F(1,6),F(2,5),F(1,500))
+p13_ep_edge_min=X.minval(p13_ep_edge,F(3,10),F(2,5),F(1,500))
+assert p13_sp_left_min>F(1,4),p13_sp_left_min
+assert p13_ep_left_min>F(3,20),p13_ep_left_min
+assert p13_ep_edge_min>F(2,25),p13_ep_edge_min
+
+print("Pattern13 S-primary left edge >",float(p13_sp_left_min))
+print("Pattern13 E-primary left edge >",float(p13_ep_left_min))
+print("Pattern13 E-primary high-s edge >",float(p13_ep_edge_min))
