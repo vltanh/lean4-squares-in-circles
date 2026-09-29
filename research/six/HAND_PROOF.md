@@ -4526,13 +4526,60 @@ hence d moves to \(1/2\).  The two final endpoint values satisfy
 the smaller certified value is \(0.01896105\ldots\).
 This is audited by check_A2_A23_DsSs_hard_first_exact_hand.py.
 
-The remaining A2.3 graph-classification obligation is the rest of the
-universal hard D-secondary/S-secondary table, together with a direct-support
-endpoint re-audit of the other archived rows after removal of the duplicated
-(CW+SC)/2 constant.  The table-wide repair will use w/s concavity or
-monotonicity followed by one-dimensional d-edge bounds; no blanket
-d-concavity assertion is retained.  Consequently (A23C0) is **not yet
-claimed** until that audit is complete.
+The **entire** 53-cell hard D-secondary/S-secondary table is repaired in
+the same way. Retain the fixed rational cells and stresses recorded in the
+explicit data table below. Four cells,
+
+\[
+36,\ 45,\ 46,\ 48
+\]
+
+in the zero-based table order, have a small positive w-curvature; on those
+cells the exact derivative is instead uniformly positive, with lower bounds
+
+\[
+\frac3{50},\quad\frac1{25},\quad\frac1{25},\quad\frac3{100},
+\]
+
+so w moves to the left cell edge. Every other cell has negative w-curvature.
+All 53 cells have negative s-curvature after the exact D--S support is included.
+
+Thus w and s reduce to fixed cell edges. For the resulting one-dimensional
+d-edges, exact differentiation gives one of three alternatives: increasing,
+decreasing, or concave. Only two support-switch-sensitive edges, both in the
+cell
+
+\[
+-\frac{11}{20}\le w\le-\frac12,\qquad
+-\frac15\le s\le-\frac1{10},
+\]
+
+need a further fixed rational split. For
+\((w,s)=(-11/20,-1/5)\) use
+
+\[
+\frac12,\ \frac35,\ \frac7{10},\ \frac34,\ \frac{77}{100},\ \frac\pi4;
+\]
+
+each subedge is increasing. For \((w,s)=(-1/2,-1/5)\), the intervals
+\([1/2,3/5]\) and \([3/5,7/10]\) are concave and
+\([7/10,\pi/4]\) is decreasing.
+
+All remaining terminal scalar values are positive; the weakest exact
+rational/Taylor reserve is
+
+\[
+\Phi>\frac1{10000}.                              \tag{A23-hard-all}
+\]
+
+The checker `check_A2_A23_DsSs_hard_exact_hand.py` audits precisely these
+one-dimensional reductions. No blanket d-concavity claim, adaptive
+subdivision, or multidimensional replay remains.
+
+The only remaining A2.3 graph-classification task is a direct-support re-audit
+of the other archived rows after removal of the duplicated
+\((CW+SC)/2\) constant. Consequently (A23C0) is still withheld until that
+re-audit is complete.
 
 ### Universal candidate tails
 
