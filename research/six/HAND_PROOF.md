@@ -3937,14 +3937,28 @@ For
 -2/3\le w\le-21/50,
 \]
 
-the three-chamber negative-tail argument has scalar endpoint margins
+the three fixed S chambers and stresses are
 
 \[
->.01537,\qquad >.00208,\qquad >.00922,              \tag{P14-5}
+[-2/5,-3/20]:\quad (491,195,60,166,88)/1000,
+\]
+\[
+[-3/20,1/10]:\quad (480,192,54,160,114)/1000,
+\]
+\[
+[1/10,2/5]:\quad (436,227,47,153,137)/1000.        \tag{P14-5a}
 \]
 
-with the positive-S chamber using
-\((436,227,47,153,137)/1000\). Hence every candidate survivor satisfies
+They are the R22-d far-tail stresses in the first two chambers and the
+retuned positive-S stress in the third. Their scalar endpoint margins are
+
+\[
+>.01537,\qquad >.00208,\qquad >.00922.              \tag{P14-5}
+\]
+
+The exact D cap-branch and one-variable reductions are those of
+(R22d-far-1)--(R22d-far-2), with the enlarged W endpoint \(-21/50\).
+Hence every candidate survivor satisfies
 
 \[
 -21/50<w<2/25.                                    \tag{P14-6}
