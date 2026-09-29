@@ -3,14 +3,17 @@
 This is an **audited working draft**, not yet a complete proof of the \(n=6\) case.
 
 The September 28 audit found substantive defects in both the downstream
-A2/survivor argument and the global normalization package.  The downstream
-repair is now complete: the invalid Pattern-26 support branch was replaced by
-the exact cap/vertex formula, the false A2.3 curvature reductions were replaced
-by valid monotonicity/one-dimensional edge arguments, the survivor range gaps
-were closed, and failing archived scripts were removed as proof citations.
+A2/survivor argument and the global normalization package.  Most identified
+downstream defects have now been repaired: the invalid Pattern-26 support
+branch, false A2.3 curvature reductions, survivor range gaps, missing far-tail
+data, and stale failing-checker citations have explicit replacements.
 
-One repair gate remains before Lean drafting: the n=6-specific global
-normalization theorem of §2.3.
+One downstream verification obligation is still open: every remaining
+non-hard A2.3 classification row must be re-audited with the corrected exact
+support bookkeeping (including the common half-width constant counted once).
+Only after that all-row audit passes may the common classification (A23C0) and
+the downstream gate be called closed.  The global normalization theorem of
+§2.3 remains open independently.
 
 Python remains an arithmetic/discovery cross-check only; every step promoted
 to the hand proof is stated here with its exact support branch and scalar
@@ -1518,13 +1521,14 @@ audit is not a proof dependency.
 
 ## 8. Conclusion
 
-The downstream hand argument is now closed: A2.1--A2.3, the direct survivor
-closures, Pattern 8, and the equality analysis all have their exact-support
-dependencies and scalar ranges stated in this file.
+The downstream hand argument is close but not yet closed.  The identified
+Pattern 26, survivor-range, hard A2.3, D-own, and N23 defects have explicit
+repairs, but the remaining non-hard A2.3 rows still need one comprehensive
+direct-support re-audit before (A23C0) is promoted from provisional status.
 
-The sole remaining mathematical gate is the global normalization theorem of
-§2.3, namely (N16)--(N22) and its mandatory consequences.  Once that package
-is proved from the N0 boundary, the end-to-end conclusion
+After that downstream audit, the other mathematical gate is the global
+normalization theorem of §2.3, namely (N16)--(N22) and its mandatory
+consequences.  Only after both gates are closed does the end-to-end conclusion
 \[
 R^2\ge q_*
 \]
@@ -4660,12 +4664,16 @@ The checker `check_A2_A23_DsSs_hard_exact_hand.py` audits precisely these
 one-dimensional reductions. No blanket d-concavity claim, adaptive
 subdivision, or multidimensional replay remains.
 
-Combining the exact-support source-family audit above with the repaired
-exceptional rows and the full hard table proves the common classification:
+The repaired exceptional rows and the full hard table support the intended
+common classification
 \[
 D\!-\!W=W\text{-secondary},\qquad
 D\!-\!S=S\text{-secondary}.                    \tag{A23C0}
 \]
+but (A23C0) is **provisional** until one exact direct-support audit has covered
+every remaining non-hard row with the corrected stress bookkeeping.  The old
+Pattern-30 scripts do not supply that audit because several fail at the pinned
+archive commit.
 
 ### Universal candidate tails
 
@@ -8124,10 +8132,10 @@ This is a hand chamber/derivative proof.  The former half-strip and source scrip
 
 # Proof status
 
-This is an audited working proof, not yet a completed theorem. The exact-support
-repair and the direct survivor closures are complete. Pattern 14, Pattern 26,
-Pattern 27, and the cardinal/cardinal survivor bridge are now included here
-rather than imported from archived notes. The sole primary mathematical gate
-remaining is the global normalization package (N16)--(N22), together with its
-mandatory consequences (N23)--(N27). Formalization begins only after that gate
-is closed.
+This is an audited working proof, not yet a completed theorem. The known
+Pattern 26, survivor-range, hard A2.3, D-own, and N23 defects have explicit
+repairs, but the downstream gate remains open until a comprehensive corrected
+direct-support audit covers every non-hard A2.3 classification row.  The global
+normalization package (N16)--(N22), together with its mandatory consequences
+(N23)--(N27), is also open. Formalization begins only after both gates are
+closed.
