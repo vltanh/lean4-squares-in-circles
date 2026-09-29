@@ -3833,9 +3833,7 @@ bounds on the corresponding sign regions:
 
     D_w > 9/20,            w>=0, s=0.              (P10C12)
 
-`check_A2_pattern10_candidate_derivatives.py` at `b51d8a88c30588e279882b8efd5441304635f527` checks these
-explicit derivative inequalities directly from the cap/vertex formulas.  It
-has no packing-state search or adaptive subdivision.
+These derivative inequalities are obtained directly from the displayed cap/vertex formulas; the former archived derivative script is not a proof citation.
 
 Now reduce in a fixed order.
 
@@ -5072,15 +5070,14 @@ on those edges give
 For w<0, the A2.2 N/W reserve and (P30C2) again leave
 (1/100)(-w)>0.
 
-For w>0, `check_A2_pattern29_Dw_pos_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` audits
+For w>0, the exact scalar derivative calculation gives
 
     D_w>7/20,                                      (P29C4)
 
 whereas the A2.2 N-cardinal/W-own profile has a'(w)>-29/100.  Thus the total
 w derivative is greater than 3/50 and every minimum moves to w=0.
 
-At w=0, use the reflected E/S hand calculus. For s<0,
-`check_A2_pattern29_candidate_middle_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` audits
+At w=0, use the reflected E/S hand calculus. For s<0, direct differentiation gives
 
     d/ds a(-s)<-3/40,     D_s<-3/5,                (P29C5)
 
@@ -6249,8 +6246,7 @@ Exact square-root arithmetic gives the following row minima:
 
 Thus all four directed primary-axis possibilities are impossible.
 
-`check_A2_DW_primary_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` checks the two scalar curvature
-bounds and the twelve fixed endpoint evaluations.  It performs no subdivision.
+The two scalar curvature bounds and twelve endpoint values above are the complete P17 arithmetic check; no archived executable checker is a proof dependency.
 
 
 ## Preparatory lemma P18 — near-diagonal D--W is forced W-secondary
@@ -6593,10 +6589,7 @@ attained in the negative-n W-primary row at
 Therefore D-secondary cannot separate D from S anywhere in the small-s
 A2.2 residual.
 
-The checker `check_A2_R22c_Dsecondary_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` verifies only the
-displayed fixed curvature/monotonicity statements and endpoint values. It
-reuses the P12/P14/P16 stresses exactly and performs no multidimensional
-search.
+The displayed fixed curvature/monotonicity statements and endpoint values are the complete arithmetic content of this reduction.  The former archived D-secondary script is not a proof dependency.
 
 
 ## A2.2 hand lemma — uniform tangent coercivity for the S-secondary residual
@@ -6943,8 +6936,7 @@ is enough to retain
     S--E in {S-primary,E-secondary}.               (A22-src-final)
 
 This is a finite hand chamber calculation from the explicit support formula
-(SRC0).  `check_A2_R22c_sources.py` at `b51d8a88c30588e279882b8efd5441304635f527` is retained only as an
-independent arithmetic check; its rational grid is not part of the proof.
+(SRC0).  The former source-grid script is retained only as discovery history and is not cited as an arithmetic audit.
 
 
 ### Hand reduced monotonicity once the pair envelopes are known
@@ -8092,12 +8084,7 @@ Hence the candidate W-secondary/S-secondary graph is impossible on
 (R22d-far-0) as well. Combining this with the half-strip argument closes the
 entire R22-d candidate graph on \(-2/3\le w<0\).
 
-This is a hand chamber/derivative proof.  The former `check_A2_R22d_sources_half.py`,
-`check_A2_R22d_NW_reserve.py`,
-`check_A2_R22d_candidate_half_hand.py`, and
-`check_A2_R22d_Dw_upper.py` at
-`b51d8a88c30588e279882b8efd5441304635f527` are retained only as independent
-arithmetic cross-checks.
+This is a hand chamber/derivative proof.  The former half-strip and source scripts are discovery history only; the proof uses the displayed scalar inequalities and the inlined far-tail calculation above.
 
 
 
