@@ -8,12 +8,10 @@ downstream defects have now been repaired: the invalid Pattern-26 support
 branch, false A2.3 curvature reductions, survivor range gaps, missing far-tail
 data, and stale failing-checker citations have explicit replacements.
 
-One downstream verification obligation is still open: every remaining
-non-hard A2.3 classification row must be re-audited with the corrected exact
-support bookkeeping (including the common half-width constant counted once).
-Only after that all-row audit passes may the common classification (A23C0) and
-the downstream gate be called closed.  The global normalization theorem of
-§2.3 remains open independently.
+The downstream A2/survivor repair is now closed.  Every remaining non-hard
+A2.3 classification row has been re-audited with the corrected exact support
+bookkeeping, while the exceptional rows and hard table have dedicated repaired
+checks.  The global normalization theorem of §2.3 remains open independently.
 
 Python remains an arithmetic/discovery cross-check only; every step promoted
 to the hand proof is stated here with its exact support branch and scalar
@@ -1521,14 +1519,13 @@ audit is not a proof dependency.
 
 ## 8. Conclusion
 
-The downstream hand argument is close but not yet closed.  The identified
-Pattern 26, survivor-range, hard A2.3, D-own, and N23 defects have explicit
-repairs, but the remaining non-hard A2.3 rows still need one comprehensive
-direct-support re-audit before (A23C0) is promoted from provisional status.
+The downstream hand argument is closed: the identified Pattern 26,
+survivor-range, A2.3, D-own, and N23 defects have explicit repairs, and the
+corrected all-row direct-support audit has been completed independently.
 
-After that downstream audit, the other mathematical gate is the global
-normalization theorem of §2.3, namely (N16)--(N22) and its mandatory
-consequences.  Only after both gates are closed does the end-to-end conclusion
+The sole remaining mathematical gate is the global normalization theorem of
+§2.3, namely (N16)--(N22) and its mandatory consequences.  Once that gate is
+closed, the end-to-end conclusion
 \[
 R^2\ge q_*
 \]
@@ -8171,10 +8168,9 @@ This is a hand chamber/derivative proof.  The former half-strip and source scrip
 
 # Proof status
 
-This is an audited working proof, not yet a completed theorem. The known
-Pattern 26, survivor-range, hard A2.3, D-own, and N23 defects have explicit
-repairs, but the downstream gate remains open until a comprehensive corrected
-direct-support audit covers every non-hard A2.3 classification row.  The global
-normalization package (N16)--(N22), together with its mandatory consequences
-(N23)--(N27), is also open. Formalization begins only after both gates are
+This is an audited working proof, not yet a completed theorem. The downstream
+exact-support repair and direct survivor closures are complete and have a
+separate all-row audit.  The sole primary mathematical gate remaining is the
+global normalization package (N16)--(N22), together with its mandatory
+consequences (N23)--(N27). Formalization begins only after that gate is
 closed.
