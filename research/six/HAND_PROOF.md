@@ -609,13 +609,34 @@ and, for the two opposite cardinal pairs,
 These are consequences of the moving pins, the cap-depth profile, and (N23).
 They are part of the normalization output and not assumptions of A2.
 
-### 2.3E. D-own normalization is derived, not independent
+### 2.3E. D-own normalization from the west-category stress
 
-Once (N18), (N21), and (N22) hold, exactly two helpers occupy the west
-categories W,D and at most one may use the west cardinal side.  Horizontal
-reflection exchanges their cyclic positions while preserving all established
-normalization facts.  Choose the labeling so that any west-cardinal helper is
-W.  Therefore
+No additional reflection is used here.  Work in the already fixed
+normalization (N3), so \(c_x,c_y\ge0\), and in the cyclic sector frame
+(N18), so the two west-category helpers are W and D.
+
+Suppose D used the west cardinal separator.  By (N22), W cannot use that same
+cardinal side, and by the two-choice theorem (N21) W must therefore use its
+own-primary separator.  This is exactly the hypothesis of Appendix A.
+
+Appendix A treats the fixed \(c_x,c_y\ge0\), E,N,W,D,S frame directly.  It
+first reduces the W/D angles to
+\[
+-\frac23\le w\le d,\qquad -\frac25\le d\le\frac25,
+\]
+using candidate containment and the west cap-depth bound.  For each of the
+eight possible directed W--D SAT normals it then gives a positive
+three-separator stress on
+
+\[
+C\!-!D\text{ west-cardinal},\qquad
+C\!-!W\text{ own-primary},\qquad
+W\!-!D,
+\]
+with every resulting two-angle chamber reduced by scalar concavity to the
+listed vertices.  The smallest displayed reserve is \(>1/500\).
+Consequently D cannot be west-cardinal in this fixed normalization.  By
+(N21) its remaining canonical choice is own-primary:
 
 \[
 \boxed{D\text{ uses own-primary}.}                  \tag{N27}
