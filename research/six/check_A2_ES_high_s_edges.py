@@ -114,3 +114,10 @@ assert p13_ep_edge_min>F(2,25),p13_ep_edge_min
 print("Pattern13 S-primary left edge >",float(p13_sp_left_min))
 print("Pattern13 E-primary left edge >",float(p13_ep_left_min))
 print("Pattern13 E-primary high-s edge >",float(p13_ep_edge_min))
+
+
+def p13_ep_zero(s):
+    return B(J(0),s,True,"Ep")-B(J(0),s,True,"Es")
+p13_ep_zero_min=X.minval(p13_ep_zero,F(1,6),F(2,5),F(1,500))
+assert p13_ep_zero_min>F(3,50),p13_ep_zero_min
+print("Pattern13 E-primary zero edge >",float(p13_ep_zero_min))
