@@ -3,22 +3,18 @@
 This is an **audited working draft**, not yet a complete proof of the \(n=6\) case.
 
 The September 28 audit found substantive defects in both the downstream
-A2/survivor argument and the global normalization package.  The direct survivor
-closures and much of the exact cap/vertex analysis remain useful, but the proof
-is reopened: the Pattern 26 W-secondary/S-primary classification used the cap
-formula outside its valid branch, several inherited range extensions are not
-yet proved, and the archived checker suite contains failures that must be
-understood rather than cited as blanket arithmetic validation.
+A2/survivor argument and the global normalization package.  The downstream
+repair is now complete: the invalid Pattern-26 support branch was replaced by
+the exact cap/vertex formula, the false A2.3 curvature reductions were replaced
+by valid monotonicity/one-dimensional edge arguments, the survivor range gaps
+were closed, and failing archived scripts were removed as proof citations.
 
-Accordingly there are currently **two repair gates** before Lean drafting:
-(1) restore a valid exact-support proof of the affected A2/Pattern 26 and
-survivor chambers, including the stated range extensions; and (2) finish the
-n=6-specific global normalization theorem of §2.3.
+One repair gate remains before Lean drafting: the n=6-specific global
+normalization theorem of §2.3.
 
-The document below preserves the verified reductions while marking these
-remaining obligations explicitly.  Python remains an arithmetic/discovery
-cross-check only; every step promoted to the hand proof must be stated here
-with its exact support branch and scalar endpoint argument.
+Python remains an arithmetic/discovery cross-check only; every step promoted
+to the hand proof is stated here with its exact support branch and scalar
+endpoint argument.
 Finite scalar endpoint inequalities are part of the hand argument and are
 listed explicitly; they may later be discharged in Lean by elementary
 trigonometric bounds.
@@ -766,16 +762,15 @@ noncandidate graph and then the final W-secondary/S-secondary graph.
 
 ### A2.3
 
-Patterns \(28,29,30,31\) are intended to share one C/W/D/S D-edge
-classification.  That classification is currently **under repair** after the
-audit found an invalid support use, a duplicated stress constant, and false
-curvature assertions in several chambers.  The repaired Ws/Ds middle row and
-the first Ds/Dp, Ds/Ds, and hard Ds/Ss rows are written below; the remaining
-hard-table and direct-support re-audit is still open.
+Patterns \(28,29,30,31\) share one C/W/D/S D-edge classification.  The
+audited repair below uses the exact two-branch support on every affected row,
+counts the common stress constant once, replaces the false curvature claims by
+valid monotonicity/one-dimensional reductions, and repairs the full hard
+D-secondary/S-secondary table.
 
-The candidate-tail and scalar reductions that do not depend on those broken
-classification rows are retained, but A2.3 is not claimed closed until the
-common D-edge classification is re-established.
+The common classification leaves only the candidate D-edge graph; the
+source-independent tails, adjacent-pair envelopes and scalar middle-strip
+arguments then close Patterns 28,29,30,31.  Thus A2.3 is hand-complete.
 
 ## 4. The seven central survivors
 
@@ -1523,22 +1518,17 @@ audit is not a proof dependency.
 
 ## 8. Conclusion
 
-This remains an audited working proof rather than a completed theorem.
+The downstream hand argument is now closed: A2.1--A2.3, the direct survivor
+closures, Pattern 8, and the equality analysis all have their exact-support
+dependencies and scalar ranges stated in this file.
 
-Two gates are open:
-
-1. finish the downstream A2/survivor repair, in particular the remaining
-   A2.3 hard-table/direct-support audit and the widened adjacent-pair range
-   lemmas;
-2. finish the global normalization theorem of §2.3.
-
-The already-repaired Pattern 26 and A2.3 chambers, direct survivor arguments,
-Pattern 8 scalar closure, and equality analysis remain available once those
-two gates are closed.  Only then may the end-to-end conclusion
+The sole remaining mathematical gate is the global normalization theorem of
+§2.3, namely (N16)--(N22) and its mandatory consequences.  Once that package
+is proved from the N0 boundary, the end-to-end conclusion
 \[
 R^2\ge q_*
 \]
-and the uniqueness statement be promoted to a completed hand proof.
+and the uniqueness statement follow from the closed downstream argument.
 
 
 # Appendix A — west-category normalization (A1)
