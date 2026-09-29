@@ -955,10 +955,13 @@ therefore transfer unchanged.
 
 The E/S pair is the only changed datum.  Pattern 14 uses the
 E-cardinal/S-cardinal Pattern-12 envelope; Pattern 15 uses the
-E-own/S-cardinal Pattern-13 envelope.  The complete A2.2 E/S source
-comparison proves the same lower profile \(b(s)\) for both central
-descriptions.  Hence the Pattern-14 pair-factorized candidate inequality,
-including its positive- and negative-\(w\) scalar reductions, is unchanged.
+E-own/S-cardinal Pattern-13 envelope.  The original Pattern-13 comparison
+covers \(s<1/6\), and the widened own-E theorem
+(A22-env-ES-P13+) covers \(1/6\le s<2/5\).  Thus on the whole Pattern-14
+candidate range all four Pattern-13 source axes have the same lower profile
+\(b(s)\) as the Pattern-12 pair.  Hence the Pattern-14 pair-factorized
+candidate inequality, including its positive- and negative-\(w\) scalar
+reductions, is unchanged.
 
 Therefore Pattern 15 is terminal directly.
 
