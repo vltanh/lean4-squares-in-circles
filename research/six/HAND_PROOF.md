@@ -4259,32 +4259,67 @@ The Pattern-30 hand stresses close every noncandidate D-edge graph:
   `check_A2_pattern30_Ds_Dp_hand.py`;
 - D-secondary/S-primary:
   `check_A2_pattern30_Ds_Sp_hand.py`;
-- W-secondary/D-secondary and D-secondary/D-secondary:
-  `check_A2_pattern30_Ws_Ds_hand.py`,
-  `check_A2_pattern30_Ds_Ds_hand.py`;
-- D-secondary/S-secondary:
-  `check_A2_pattern30_Ds_Ss_hand.py` together with the universal hard-corner
-  audit `check_A2_A23_DsSs_hard_hand.py`.
+- W-secondary/D-secondary: the middle chamber is repaired below by
+  `check_A2_A23_Ws_Ds_exact_hand.py`; the other displayed Ws/Ds chambers
+  retain their exact-support reductions;
+- D-secondary/D-secondary: the archived reduction is **not** yet accepted,
+  because its first-row w-curvature claim fails and is being replaced;
+- D-secondary/S-secondary: the complement rows remain useful, but the
+  universal hard-corner argument is **not** yet accepted because some cells
+  are not separately concave in d.
 
-All checker names in this list refer to archive commit
-`b51d8a88c30588e279882b8efd5441304635f527`.
+The repaired W-secondary/D-secondary middle chamber is
 
-After center elimination, every one of these stresses is a sum of
-one-variable functions of
+\[
+-\frac15\le s\le\frac15,\qquad
+-\frac23\le w\le\frac\pi4,\qquad
+\frac12\le d\le\frac\pi4,\qquad w\le d.
+\tag{A23-WsDs-0}
+\]
 
-    w, s, d, d-w, d-s,
+Use
 
-with only the explicitly stated sign/support walls.  Coordinate concavity or
-monotonicity, plus curvature on the oblique walls when present, reduces every
-minimum to fixed chamber vertices or scalar edges.  In the universal hard
-D-secondary/S-secondary corner, 53 fixed rational (w,s) cells are used, one
-stress per cell; each cell is separately concave in w,s,d, so only its eight
-vertices remain.
+\[
+(CW,SC,CD,DW,DS)=(400,59,155,183,203)/1000.       \tag{A23-WsDs-1}
+\]
 
-Thus all four A2.3 patterns reduce to the candidate graph
+For this stress the exact five-edge reverse-support defect is formed directly
+from the weighted pair half-widths and the exact support (SRC0).  In
+particular the common source-square contribution is
+\((CW+SC+CD+DW+DS)/2=1/2\) **once**; the earlier archived scalar expansion
+incorrectly added an extra \((CW+SC)/2\).
 
-    D--W=W-secondary,
-    D--S=S-secondary.                              (A23C0)
+The central x-force is positive throughout (A23-WsDs-0).  The central y-force
+can change sign, so split only at \(G_{Cy}=0\), using the exact rectangular
+support \(c_0(G_{Cx}+[G_{Cy}]_+)\).  On either side the w-curvature is
+strictly negative; because \(\partial_wG_{Cy}=CW\cos w>0\), the derivative
+jumps downward at the central-support wall, so global w-concavity is
+preserved.  Hence w reduces to \(-2/3,0\), or the cyclic wall \(w=d\).
+
+The old positive-s concavity assertion is false.  What replaces it is the
+uniform monotonicity
+
+\[
+\partial_s\Phi<-\frac1{100}                     \tag{A23-WsDs-2}
+\]
+
+on both s-sign chambers and both central-support branches.  Therefore s moves
+to \(1/5\).  At \(s=1/5\), the fixed-w d-edges are concave, while on the
+cyclic wall \(w=d\) the d-derivative is \(>1/20\), so only fixed scalar
+endpoints remain.  Exact rational/Taylor evaluation gives
+
+\[
+\Phi>\frac1{100};                                \tag{A23-WsDs-3}
+\]
+
+the smallest certified endpoint reserve is
+\(0.0124952769\ldots\).
+
+Thus the previously failing Ws/Ds middle row is closed with exact support.
+The remaining A2.3 graph-classification obligations are the false-curvature
+pieces in D-secondary/D-primary, D-secondary/D-secondary, and the universal
+hard D-secondary/S-secondary corner.  Consequently (A23C0) is **not yet
+claimed** until those three repairs are written below.
 
 ### Universal candidate tails
 
@@ -4499,7 +4534,7 @@ Two additional simple chambers use
 #### W-secondary / D-secondary
 
     ((-PI.hi/4,-F(1,5)),FULL,(303,157,191,163,186)),
-    ((-F(1,5), F(1,5)),FULL,(365,187,106,185,157)),
+    ((-F(1,5), F(1,5)),FULL,(400, 59,155,183,203)),  # repaired exact row
     ((F(1,5),F(1,2)),(-F(2,3),-F(2,5)),(391,246,77,146,140)),
     ((F(1,5),F(1,2)),(-F(2,5),-F(1,5)),(350,253,32,192,173)),
     ((F(1,5),F(1,2)),(-F(1,5),0),(324,228,23,222,203)),
