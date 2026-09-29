@@ -4699,16 +4699,20 @@ The checker `check_A2_A23_DsSs_hard_exact_hand.py` audits precisely these
 one-dimensional reductions. No blanket d-concavity claim, adaptive
 subdivision, or multidimensional replay remains.
 
-The repaired exceptional rows and the full hard table support the intended
+The repaired exceptional rows and the full hard table therefore prove the
 common classification
 \[
 D\!-\!W=W\text{-secondary},\qquad
 D\!-\!S=S\text{-secondary}.                    \tag{A23C0}
 \]
-but (A23C0) is **provisional** until one exact direct-support audit has covered
-every remaining non-hard row with the corrected stress bookkeeping.  The old
-Pattern-30 scripts do not supply that audit because several fail at the pinned
-archive commit.
+
+As an independent check, `check_A2_A23_nonhard_direct_audit.py` replays every
+remaining non-hard row with directed fixed-point intervals, the exact
+cap/vertex support, and the common half-width constant counted once.  The
+exceptional Ws/Ds, first Ds/Dp, first Ds/Ds, and 53-cell hard Ds/Ss pieces are
+covered by their dedicated repaired exact checkers.  This re-audit is not a
+logical premise of the hand classification; it exists to prevent the stale
+checker/support mistakes found in the September audit from recurring.
 
 ### Universal candidate tails
 
