@@ -4387,11 +4387,43 @@ Thus only scalar endpoints remain, with
 the certified minimum is 0.10214357... .
 This is audited by check_A2_A23_Ds_Ds_first_exact_hand.py.
 
-The remaining A2.3 graph-classification obligation is the universal hard
-D-secondary/S-secondary corner, together with a direct-support endpoint
-re-audit of the other archived rows after removal of the duplicated
-(CW+SC)/2 constant.  Consequently (A23C0) is **not yet claimed** until
-that audit and hard-corner repair are complete.
+The first universal hard D-secondary/S-secondary cell also needs a
+different reduction.  On
+\[
+-\frac23\le w\le-\frac35,\qquad
+-\frac15\le s\le-\frac1{10}
+\]
+use
+\[
+(CW,SC,CD,DW,DS)=(373,248,76,168,135)/1000.        \tag{A23-hard-1}
+\]
+The w-curvature remains negative:
+\[
+\Phi_{ww}<-\frac3{20}.
+\]
+The old d-concavity assertion is false.  Instead
+\[
+\partial_s\Phi<-\frac9{50},
+\]
+so s first moves to \(-1/10\).  At the two remaining w endpoints the
+one-dimensional d-edges are increasing,
+\[
+\partial_d\Phi>\frac1{250},
+\]
+hence d moves to \(1/2\).  The two final endpoint values satisfy
+\[
+\Phi>\frac9{500};                                \tag{A23-hard-2}
+\]
+the smaller certified value is \(0.01896105\ldots\).
+This is audited by check_A2_A23_DsSs_hard_first_exact_hand.py.
+
+The remaining A2.3 graph-classification obligation is the rest of the
+universal hard D-secondary/S-secondary table, together with a direct-support
+endpoint re-audit of the other archived rows after removal of the duplicated
+(CW+SC)/2 constant.  The table-wide repair will use w/s concavity or
+monotonicity followed by one-dimensional d-edge bounds; no blanket
+d-concavity assertion is retained.  Consequently (A23C0) is **not yet
+claimed** until that audit is complete.
 
 ### Universal candidate tails
 
