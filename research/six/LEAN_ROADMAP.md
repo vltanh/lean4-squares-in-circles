@@ -14,20 +14,18 @@ or the former branch-and-bound verifier.
 
 HAND_PROOF.md is the sole mathematical source of truth.
 
-## Phase -1 — close the downstream audit and normalization theorem
+## Phase -1 — close the remaining normalization theorem
 
-Most defects found by the September downstream audit have explicit repairs in
-HAND_PROOF.md.  One verification item remains before that gate is closed:
-run one comprehensive exact direct-support audit over every non-hard A2.3
-classification row using the corrected bookkeeping (the common half-width
-constant counted once and the true cap/vertex switch).  Repair any row that
-fails; only then promote (A23C0).
+The September downstream audit is now closed.  HAND_PROOF.md contains the
+Pattern 26, A2.3, survivor-range, D-own and N23 repairs; the corrected
+non-hard A2.3 rows have a comprehensive exact direct-support re-audit, and
+the exceptional rows/hard table have dedicated repaired checks.
 
-Independently, §2.3 of HAND_PROOF.md still requires the global n=6
-normalization theorem from the N0 boundary, without importing any A2
-conclusion.
+The sole remaining mathematical obstruction is §2.3 of HAND_PROOF.md: finish
+the global n=6 normalization theorem from the N0 boundary, without importing
+any A2 conclusion.
 
-Do not start the Lean draft until both tracks are closed.
+Do not start the Lean draft until this normalization track is closed.
 
 ### N0. Proven starting point
 
