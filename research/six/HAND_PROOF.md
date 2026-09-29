@@ -546,7 +546,7 @@ sector assumption.  The arithmetic margins in (N17d), (N17g)--(N17j), and
 The following facts are then **derived consequences** of items 1--7 and must
 be written down before A2 begins.
 
-### 2.3A. Strong central-center bound actually used downstream
+### 2.3B. Strong central-center bound actually used downstream
 
 The A2 stresses use
 
@@ -573,7 +573,7 @@ identical for \(c_y\).
 This upgrade is essential: replacing \(c_0\) by \(23/200\) destroys several
 tight A2.3 margins.
 
-### 2.3B. Moving pins used by P4/P8
+### 2.3C. Moving pins used by P4/P8
 
 Besides the fixed radius-\(9/10\) pins, the later cardinal-helper lemmas use
 
@@ -586,7 +586,7 @@ These follow from the E/N sector theorem, the corresponding cardinal/own
 separator alternatives, and the cap-piercing argument.  They must be proved
 explicitly before P4/P8.
 
-### 2.3C. Cap-depth and opposite-pair angle bounds
+### 2.3D. Cap-depth and opposite-pair angle bounds
 
 The later A2 reductions also consume:
 
@@ -604,7 +604,7 @@ and, for the two opposite cardinal pairs,
 These are consequences of the moving pins, the cap-depth profile, and (N23).
 They are part of the normalization output and not assumptions of A2.
 
-### 2.3D. D-own normalization is derived, not independent
+### 2.3E. D-own normalization is derived, not independent
 
 Once (N18), (N21), and (N22) hold, exactly two helpers occupy the west
 categories W,D and at most one may use the west cardinal side.  Horizontal
