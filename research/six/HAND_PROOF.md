@@ -3978,15 +3978,38 @@ B_u(n,w)\ge B_{Wp}(0,w).                           \tag{P14-8}
 At \(n=0\) this is exactly the R22-c N-cardinal/W-own equality profile.
 The E/S pair in Pattern 14 is cardinal/cardinal. By the extended
 Pattern-12 theorem (A22-env-ES-P12+), its equality envelope is valid on the
-entire needed range \(-2/5<s<2/5\), including \(s\ge1/6\). Thus the R22-c
-reduced scalar monotonicity applies without any domain gap and forces
+entire needed range \(-2/5<s<2/5\).
 
+The reduced R22-c derivative lemma was originally proved only for
+\(s<1/6\), so the upper strip must be treated separately.  On
 \[
-w=s=0
+0\le w\le\frac2{25},\qquad
+\frac16\le s\le\frac25,\qquad
+-\frac14\le\epsilon\le0,
 \]
+differentiate the **combined** positive-s pair term and diagonal term, rather
+than extending MON7 and MON10 separately.  With
+\[
+\beta={w-s\over2},\qquad
+\delta=\epsilon-{w+s\over2},
+\]
+use the exact formulas (MON1)--(MON2) and the exact cap/vertex switch
+\(2R_*|\sin\delta|=1\).  Direct rational/Taylor enclosure gives
+\[
+{d\over ds}\,[b(s)+D(w,s,\epsilon)]>\frac1{20}. \tag{P14-8a}
+\]
+The cap and vertex first derivatives agree at the switch, so there is no
+missing wall minimum.  Hence decreasing s to \(1/6\) strictly lowers the
+reduced defect throughout this upper strip.
 
-on the nonnegative candidate strip, where the diagonal identity is
-nonnegative. Hence no Pattern-14 candidate has \(w\ge0\).
+The arithmetic audit check_A2_pattern14_high_s_extension.py checks
+(P14-8a) directly; its certified lower bound is greater than 0.068.  Once
+\(s\le1/6\), the original R22-c reduced monotonicity applies and forces
+\[
+w=s=0.
+\]
+The diagonal identity is then nonnegative. Hence no Pattern-14 candidate has
+\(w\ge0\).
 
 ### Negative-W adjacent-pair reserve
 
