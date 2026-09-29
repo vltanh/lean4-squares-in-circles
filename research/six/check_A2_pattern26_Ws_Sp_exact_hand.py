@@ -62,6 +62,43 @@ def reduce_sd(W,sr):
              +X.maxdd(LT,ta,tb,F(1,50)))
         assert sdd<0 and ddd<0,(sa,sb,sdd,ddd)
 
+# Negative orientation: s in [-4/5,-1/4], unchanged stress
+# (0,500,0,0,500). There is no W force. Writing t=d-s and u=t-pi/2,
+# the D-S threshold increases up to t=pi/2 and decreases afterwards, so d
+# reduces to its endpoints; each resulting s edge is concave.
+bn=qn=F(1,2)
+def neg_GS(s):
+    s=jj(s);c,t=jcos(s),jsin(s)
+    return bn*(F(1,2)+(c-t)/2)-jj(c0)*bn*(c-t)
+def neg_LT(t,side):
+    t=jj(t);u=t-jj(PI)/2
+    return qn*(F(1,2)+(jcos(u)+side*jsin(u))/2)
+neg_MX=-(jj(R)-F(1,2))*qn
+dlo=X.drange(lambda z:neg_LT(z,1),F(3,4),PI.lo/2,F(1,50))
+dhi=X.drange(lambda z:neg_LT(z,-1),PI.hi/2,F(8,5),F(1,50))
+assert dlo[0]>0 and dhi[1]<0,(dlo,dhi)
+neg_best=F(100)
+def neg_edge0(s): return neg_GS(s)+neg_LT(J(I(F(1,2)))-s,1)+neg_MX
+assert X.maxdd(neg_edge0,-F(4,5),-F(1,4),F(1,50))<0
+for s0 in (-F(4,5),-F(1,4)):
+    neg_best=min(neg_best,neg_edge0(J(I(s0))).v.lo)
+d1=J(PI)/4
+def f_left(s): return neg_GS(s)+neg_LT(d1-s,-1)+neg_MX
+def f_right(s): return neg_GS(s)+neg_LT(d1-s,1)+neg_MX
+assert PI.lo/4>F(157,200) and PI.hi/4<F(11,14)
+wall_lo=-PI.hi/4; wall_hi=-PI.lo/4
+assert X.maxdd(f_left,-F(4,5),wall_lo,F(1,100))<0
+assert X.maxdd(f_right,wall_hi,-F(1,4),F(1,100))<0
+for s0 in (-F(4,5),-F(1,4)):
+    fun=f_left if s0<wall_lo else f_right
+    neg_best=min(neg_best,fun(J(I(s0))).v.lo)
+def f_wall(s):
+    t=d1-s; u=t-jj(PI)/2
+    return neg_GS(s)+qn*(F(1,2)+(jcos(u)-X.jabs(jsin(u)))/2)+neg_MX
+neg_best=min(neg_best,X.minval(f_wall,wall_lo,wall_hi,F(1,1000)))
+assert neg_best>F(3,25),neg_best
+
+# Low positive-orientation chamber.
 W1=(664,0,0,178,158); sr1=(-F(27,100),F(1,5))
 const,GS,KD,LT,MX,Wcoords,FW,FC,FV=row(W1)
 reduce_sd(W1,sr1)
