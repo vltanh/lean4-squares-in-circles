@@ -7891,10 +7891,77 @@ The E/S term at s=0 is at least b(0), and the candidate diagonal identity is
     A_*+b(0)+D(0,0,eps)
       =2m(d_*-1/sqrt(2))(1-cos eps)>=0.            (NEG-diag)
 
-Because w<0, the reserve in (NEG-coercive) is strict.  Hence the candidate
+Because w<0, the reserve in (NEG-coercive) is strict. Hence the candidate
 D-edge graph is impossible throughout
 
     -1/2<=w<0.
+
+### R22-d far-negative tail
+
+It remains only
+
+\[
+-\frac23\le w\le-\frac12,\qquad
+-\frac25\le s\le\frac25,\qquad
+\frac12\le d\le\frac\pi4.
+\tag{R22d-far-0}
+\]
+
+Split the S angle into
+
+\[
+[-2/5,-3/20],\qquad[-3/20,1/10],\qquad[1/10,2/5]
+\]
+
+and use, respectively,
+
+\[
+(491,195,60,166,88)/1000,
+\]
+\[
+(480,192,54,160,114)/1000,
+\]
+\[
+(466,227,17,153,137)/1000                         \tag{R22d-far-1}
+\]
+
+in the order \((CW,SC,CD,DW,DS)\).
+
+For W the local force is constant \((CW,-DW)\). For S use its exact
+one-variable cap/vertex support. For D put
+\[
+\Delta=d-w,\qquad T=d-s,
+\]
+so its local force is
+\[
+X=CD+DW\sin\Delta+DS\cos T,
+\qquad
+Y=DW\cos\Delta-DS\sin T.
+\]
+On each of the three chambers the scalar estimate
+\[
+X>\frac{17}{5}|Y|
+\]
+holds. Since \(R_*<17/10\), this implies both \(X>|Y|\) and
+\[
+2R_*|Y|<X<\sqrt{X^2+Y^2},
+\]
+so D is rigorously on its exact cap branch.
+
+The stress therefore separates as
+\[
+\Phi=C+F(w)+G(s)+H(d)+K(d-w)+L(d-s).              \tag{R22d-far-2}
+\]
+The w term is concave. The first two s chambers are concave after the sole
+split at \(s=0\); on the third chamber \(\partial_s\Phi>0\), so s moves
+to \(1/10\). Thus w and s reduce to fixed chamber endpoints. The remaining
+d-edges are one-dimensional; on the fixed rational partitions used in
+`check_A2_R22d_Ws_Ss_far_hand.py`, exact Taylor/support bounds give
+strictly positive reserve, with weakest margin greater than \(0.008\).
+
+Hence the candidate W-secondary/S-secondary graph is impossible on
+(R22d-far-0) as well. Combining this with the half-strip argument closes the
+entire R22-d candidate graph on \(-2/3\le w<0\).
 
 This is a hand chamber/derivative proof.  The former `check_A2_R22d_sources_half.py`,
 `check_A2_R22d_NW_reserve.py`,
