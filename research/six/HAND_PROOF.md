@@ -331,10 +331,9 @@ For example, the left side is increasing for
 \(157/50<\pi\) gives the displayed weaker \(3/100\) margin directly.
 Thus \(F(S)>Q_0\), contradicting (N13).  This proves (N9)--(N10). \(\square\)
 
-The significance of (N10) is that the three Seven contact types at the
-critical gap \(\pi/3\) all lie on the larger \(13/4\) boundary.  At the
-candidate radius they acquire a uniform positive support reserve.  This is
-the quantitative input for the strengthened marker-gap lemma below.
+Lemma N8 is not used in the current normalization chain.  It is retained as
+an optional candidate-radius reserve because it may simplify a later scalar
+normalization proof, but no downstream theorem below depends on it.
 
 ### 2.3. Remaining global-normalization theorem
 
@@ -767,13 +766,16 @@ noncandidate graph and then the final W-secondary/S-secondary graph.
 
 ### A2.3
 
-Patterns \(28,29,30,31\) inherit a common hand D-edge classification,
-including the source-independent hard D-secondary/S-secondary corner.
-Universal S tails, positive-W and far-negative-W tails, transferred pair
-reserves, and scalar middle-strip arguments finish the candidate graphs.
+Patterns \(28,29,30,31\) are intended to share one C/W/D/S D-edge
+classification.  That classification is currently **under repair** after the
+audit found an invalid support use, a duplicated stress constant, and false
+curvature assertions in several chambers.  The repaired Ws/Ds middle row and
+the first Ds/Dp, Ds/Ds, and hard Ds/Ss rows are written below; the remaining
+hard-table and direct-support re-audit is still open.
 
-Therefore no multidimensional numerical value replay is a logical premise of
-A2.
+The candidate-tail and scalar reductions that do not depend on those broken
+classification rows are retained, but A2.3 is not claimed closed until the
+common D-edge classification is re-established.
 
 ## 4. The seven central survivors
 
@@ -1162,7 +1164,7 @@ The Pattern-26 negative-W candidate stress (P26-6) uses only \(C,W,D,S\)
 and therefore closes
 
 \[
--2/5\le w\le-1/6,qquad -1/6\le s\le1/2.         \tag{G27-2}
+-2/5\le w\le-1/6,\\qquad -1/6\le s\le1/2.         \tag{G27-2}
 \]
 
 The Pattern-26 outer S-tail stresses also transfer.  For Pattern 27 they can
@@ -1183,7 +1185,7 @@ coordinate concavity reduces each stress to fixed scalar edges, all strictly
 positive. Hence every survivor lies in
 
 \[
--1/6\le w\le2/5,qquad
+-1/6\le w\le2/5,\\qquad
 -2/25\le s\le11/25.                              \tag{G27-4}
 \]
 
@@ -1223,7 +1225,7 @@ one-dimensional inequality is
 for
 
 \[
-0\le s\le11/25,qquad 1/2-\pi/4\le\epsilon\le0.
+0\le s\le11/25,\\qquad 1/2-\pi/4\le\epsilon\le0.
 \]
 
 On the cap branch this is bounded by alternating Taylor polynomials; on the
@@ -1478,28 +1480,22 @@ audit is not a proof dependency.
 
 ## 8. Conclusion
 
-Every packing at or below the candidate radius enters a canonical central
-pattern.
+This remains an audited working proof rather than a completed theorem.
 
-- A2 eliminates the nine forbidden canonical patterns by hand chamber
-  reductions with exact scalar support.
-- Patterns 9,11,15,24,25,27 are terminal by the direct arguments above.
-- Pattern 8 has the hand scalar closure and direct equality analysis.
-- the sole remaining proof obligation is the global normalization theorem in
-  §2.3.
+Two gates are open:
 
-After that remaining theorem,
+1. finish the downstream A2/survivor repair, in particular the remaining
+   A2.3 hard-table/direct-support audit and the widened adjacent-pair range
+   lemmas;
+2. finish the global normalization theorem of §2.3.
 
+The already-repaired Pattern 26 and A2.3 chambers, direct survivor arguments,
+Pattern 8 scalar closure, and equality analysis remain available once those
+two gates are closed.  Only then may the end-to-end conclusion
 \[
 R^2\ge q_*
 \]
-
-follows, and the strictness/equality statements in the case reductions force
-every equality packing to be congruent to the displayed candidate
-configuration.
-
-Accordingly this document is an audited proof draft with one open
-mathematical obligation: the global normalization theorem of §2.3.
+and the uniqueness statement be promoted to a completed hand proof.
 
 
 # Appendix A — west-category normalization (A1)
@@ -4043,7 +4039,7 @@ The Pattern-10 D--W classification uses only \(C,W,D\), so every survivor
 satisfies
 
 \[
-1/2<d\le\pi/4,qquad
+1/2<d\le\pi/4,\\qquad
 D\!-\!W\in\{W\text{-secondary},D\text{-secondary}\}. \tag{P26-2}
 \]
 
@@ -4248,7 +4244,7 @@ concavity reduce to fixed vertices.
 On the remaining negative-W middle strip
 
 \[
--2/5\le w\le-1/6,qquad -1/6\le s\le1/2,
+-2/5\le w\le-1/6,\\qquad -1/6\le s\le1/2,
 \]
 
 use
@@ -4267,7 +4263,7 @@ with the sole wall \(s=0\). Every coordinate curvature is negative; the
 weakest fixed endpoint margin is \(>.00654\). Therefore it remains only
 
 \[
--1/6\le w\le2/5,qquad -1/6\le s\le1/2.         \tag{P26-7}
+-1/6\le w\le2/5,\\qquad -1/6\le s\le1/2.         \tag{P26-7}
 \]
 
 ### Adjacent-pair source envelope
