@@ -4316,10 +4316,82 @@ the smallest certified endpoint reserve is
 \(0.0124952769\ldots\).
 
 Thus the previously failing Ws/Ds middle row is closed with exact support.
-The remaining A2.3 graph-classification obligations are the false-curvature
-pieces in D-secondary/D-primary, D-secondary/D-secondary, and the universal
-hard D-secondary/S-secondary corner.  Consequently (A23C0) is **not yet
-claimed** until those three repairs are written below.
+
+Two further first-row curvature failures are repaired directly.
+
+**D-secondary / D-primary, first row.**  On
+\[
+-\frac\pi4\le s\le-\frac15
+\]
+use
+\[
+(CW,SC,CD,DW,DS)=(55,481,4,129,331)/1000.         \tag{A23-DsDp-1}
+\]
+The central force stays in the positive quadrant.  The archived assertion of
+w-concavity on the whole range is false.  Instead,
+\[
+\partial_w\Phi>\frac3{100}
+  \quad\left(-\frac23\le w\le-\frac25\right),
+\qquad
+\partial_w\Phi>\frac1{200}
+  \quad\left(-\frac25\le w\le-\frac15\right). \tag{A23-DsDp-2}
+\]
+Thus those pieces move to their left endpoints.  On the remaining fixed
+w-intervals the exact-support defect has
+\[
+\Phi_{ww}<-\frac3{25}.                            \tag{A23-DsDp-3}
+\]
+For each resulting fixed w, the (s,d) defect is separately concave:
+\[
+\Phi_{ss}<-\frac25,\qquad
+\Phi_{dd}<-\frac3{25},                            \tag{A23-DsDp-4}
+\]
+and on the cyclic wall w=d the d-curvature is below -1/5.
+Hence only fixed vertices remain.  Exact endpoint evaluation gives
+\[
+\Phi>\frac7{50};                                 \tag{A23-DsDp-5}
+\]
+the certified minimum is 0.14796458... .
+This is audited by check_A2_A23_Ds_Dp_first_exact_hand.py.
+
+**D-secondary / D-secondary, first row.**  On the same s-range use
+\[
+(CW,SC,CD,DW,DS)=(139,261,18,284,298)/1000.        \tag{A23-DsDs-1}
+\]
+Again the two far-negative w-pieces are monotone:
+\[
+\partial_w\Phi>\frac2{25},\qquad
+\partial_w\Phi>\frac3{200},                     \tag{A23-DsDs-2}
+\]
+respectively, and every remaining w-piece has
+\[
+\Phi_{ww}<-\frac14.                               \tag{A23-DsDs-3}
+\]
+Here the useful next reduction is not d-concavity on the original rectangle.
+Instead
+\[
+\partial_s\Phi<-\frac1{50},                     \tag{A23-DsDs-4}
+\]
+so s moves first to -1/5.  At that face all fixed-w d-edges satisfy
+\[
+\Phi_{dd}<-\frac1{25},                            \tag{A23-DsDs-5}
+\]
+while on the cyclic wall w=d,
+\[
+\frac d{dd}\Phi>\frac18.
+\]
+Thus only scalar endpoints remain, with
+\[
+\Phi>\frac1{10};                                 \tag{A23-DsDs-6}
+\]
+the certified minimum is 0.10214357... .
+This is audited by check_A2_A23_Ds_Ds_first_exact_hand.py.
+
+The remaining A2.3 graph-classification obligation is the universal hard
+D-secondary/S-secondary corner, together with a direct-support endpoint
+re-audit of the other archived rows after removal of the duplicated
+(CW+SC)/2 constant.  Consequently (A23C0) is **not yet claimed** until
+that audit and hard-corner repair are complete.
 
 ### Universal candidate tails
 
