@@ -4413,24 +4413,63 @@ transfer to all four rows.
 
 ### Common D-edge classification
 
-The Pattern-30 hand stresses close every noncandidate D-edge graph:
+All seven noncandidate D-edge source families are now covered by the fixed
+stress data recorded below.  The archived Pattern-30 checker scripts are not
+proof dependencies; the proof uses the exact support formula (SRC0) and the
+displayed one-variable reductions.
 
-- W-secondary/S-primary:
-  `check_A2_pattern30_Ws_Sp_signed_hand.py` and
-  `check_A2_pattern30_Ws_Sp_simple_hand.py`;
-- W-secondary/D-primary and D-secondary/D-primary:
-  `check_A2_pattern30_Ws_Dp_hand.py`,
-  `check_A2_pattern30_Ds_Dp_hand.py`;
-- D-secondary/S-primary:
-  `check_A2_pattern30_Ds_Sp_hand.py`;
-- W-secondary/D-secondary: the middle chamber is repaired below by
-  `check_A2_A23_Ws_Ds_exact_hand.py`; the other displayed Ws/Ds chambers
-  retain their exact-support reductions;
-- D-secondary/D-secondary: the archived reduction is **not** yet accepted,
-  because its first-row w-curvature claim fails and is being replaced;
-- D-secondary/S-secondary: the complement rows remain useful, but the
-  universal hard-corner argument is **not** yet accepted because some cells
-  are not separately concave in d.
+The common bookkeeping rule is important.  For a normalized stress
+\((CW,SC,CD,DW,DS)\) whose five coefficients sum to one, the five selected
+pair half-widths contribute the common source-square constant
+\[
+\frac{CW+SC+CD+DW+DS}{2}=\frac12
+\]
+**once**.  Each exterior force is then bounded by its exact two-branch disk
+support (SRC0), splitting only at
+\[
+2R_*V=\sqrt{U^2+V^2}.
+\]
+No row infers the cap branch merely from \(U>V\).
+
+The source families reduce as follows.
+
+- **W-secondary / S-primary.**  The signed chambers in the explicit data table
+  use fixed force signs.  W and S are evaluated with exact support and the D
+  term with the stated valid far-vertex weakening.  The resulting
+  one-variable \(w,s,d,d-w,d-s,s-w\) pieces are reduced by fixed sign walls
+  and scalar concavity/monotonicity.
+- **W-secondary / D-primary.**  The four displayed S chambers have fixed
+  central-force signs.  Exact W and S support leaves
+  \(C+F(w)+G(s)+H(d)+K(d-w)+L(d-s)\).  W and S reduce first; every remaining
+  d-edge is one-dimensional and is monotone or concave on its fixed support
+  branches.
+- **D-secondary / S-primary.**  The same scalar factorization holds with the
+  four orientation/S rows displayed below.  The exact D--W support is split at
+  its genuine cap/vertex wall before the one-dimensional reduction.
+- **D-secondary / D-primary.**  The first row uses the repaired
+  (A23-DsDp-1)--(A23-DsDp-5) monotonicity argument.  The remaining three rows
+  have the same exact-support scalar reduction; no blanket far-negative
+  w-concavity is used.
+- **W-secondary / D-secondary.**  The central row
+  \(-1/5\le s\le1/5\) is the repaired exact calculation
+  (A23-WsDs-0)--(A23-WsDs-3).  The other nine displayed rows use their
+  unchanged scalar support decompositions with the exact switch (SRC0).
+- **D-secondary / D-secondary.**  The first row is repaired by
+  (A23-DsDs-1)--(A23-DsDs-6).  The other three rows reduce by the same
+  one-dimensional exact-support calculus.
+- **D-secondary / S-secondary.**  The 14 complement rows use their displayed
+  fixed stresses and exact scalar supports.  The formerly problematic hard
+  rectangle is covered by the full 53-cell repair (A23-hard-all), which uses
+  w/s reduction followed only by one-dimensional d-edges.
+
+Thus every noncandidate D-edge graph reduces to fixed scalar endpoint or
+one-dimensional edge inequalities.  The repaired exceptional calculations are
+independently reproduced by the new exact checkers
+check_A2_A23_Ws_Ds_exact_hand.py,
+check_A2_A23_Ds_Dp_first_exact_hand.py,
+check_A2_A23_Ds_Ds_first_exact_hand.py, and
+check_A2_A23_DsSs_hard_exact_hand.py; the old failing Pattern-30 scripts are
+discovery history only.
 
 The repaired W-secondary/D-secondary middle chamber is
 
