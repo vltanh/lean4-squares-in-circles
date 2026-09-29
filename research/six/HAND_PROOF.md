@@ -4438,8 +4438,16 @@ The source families reduce as follows.
   d-edge is one-dimensional and is monotone or concave on its fixed support
   branches.
 - **D-secondary / S-primary.**  The same scalar factorization holds with the
-  four orientation/S rows displayed below.  The exact D--W support is split at
-  its genuine cap/vertex wall before the one-dimensional reduction.
+  four orientation/S rows displayed below.  The negative-orientation row does
+  not use blanket s-concavity: on
+  \(-\pi/4\le s\le-9/20\) its exact derivative satisfies
+  \(\partial_s\Phi>3/100\), while on
+  \(-9/20\le s\le-1/4\) the fixed support-wall pieces are concave in s.
+  The w-axis is likewise checked on the fixed mesh of width \(1/15\), where
+  every piece is concave.  The other three rows use the same exact-support
+  scalar reduction.  Thus the negative row reduces to
+  \(s\in\{-\pi/4,-9/20,-1/4\}\) and one-dimensional d-edges rather
+  than the false full-strip concavity claim.
 - **D-secondary / D-primary.**  The first row uses the repaired
   (A23-DsDp-1)--(A23-DsDp-5) monotonicity argument.  The remaining three rows
   have the same exact-support scalar reduction; no blanket far-negative
@@ -4449,8 +4457,14 @@ The source families reduce as follows.
   (A23-WsDs-0)--(A23-WsDs-3).  The other nine displayed rows use their
   unchanged scalar support decompositions with the exact switch (SRC0).
 - **D-secondary / D-secondary.**  The first row is repaired by
-  (A23-DsDs-1)--(A23-DsDs-6).  The other three rows reduce by the same
-  one-dimensional exact-support calculus.
+  (A23-DsDs-1)--(A23-DsDs-6).  In the second row
+  \((89,92,59,363,397)/1000\), full w-concavity is also stronger than
+  necessary: on the fixed \(1/15\) partition of
+  \([-2/3,-1/5]\), \(\partial_w\Phi>1/1000\), so the far-negative
+  part moves left; the remaining support-wall pieces are reduced
+  one-dimensionally.  The last two rows use the same exact-support scalar
+  calculus.  No row now relies on a blanket curvature assertion across a
+  support switch.
 - **D-secondary / S-secondary.**  The 14 complement rows use their displayed
   fixed stresses and exact scalar supports.  The formerly problematic hard
   rectangle is covered by the full 53-cell repair (A23-hard-all), which uses
@@ -4583,6 +4597,27 @@ Thus only scalar endpoints remain, with
 \]
 the certified minimum is 0.10214357... .
 This is audited by check_A2_A23_Ds_Ds_first_exact_hand.py.
+
+**D-secondary / D-secondary, second row.**  On
+\[
+-\frac15\le s\le\frac15
+\]
+use
+\[
+(CW,SC,CD,DW,DS)=(89,92,59,363,397)/1000.          \tag{A23-DsDs2-1}
+\]
+The archived whole-strip w-concavity assertion is not used.  On the fixed
+partition of \([-2/3,-1/5]\) into intervals of width \(1/15\),
+direct differentiation of the exact support gives
+\[
+\partial_w\Phi>\frac1{1000}.                    \tag{A23-DsDs2-2}
+\]
+Hence that part moves to its left endpoint.  The remaining w/support pieces
+and the resulting s,d edges are split only at their exact cap/vertex and sign
+walls and are each monotone or concave.  A directed exact interval re-audit
+of the complete row gives a strictly positive cover; the smallest accepted
+leaf margin is greater than \(2.9\times10^{-5}\).  This interval run is an
+independent audit of the displayed scalar reduction, not a proof premise.
 
 The first universal hard D-secondary/S-secondary cell also needs a
 different reduction.  On
