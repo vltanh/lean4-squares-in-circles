@@ -1195,12 +1195,39 @@ For \(s\le0\), reflect the positive own-own N/W envelope from Pattern 14.
 It agrees exactly with the Pattern-26 E-cardinal/S-own equality profile
 \(b(s)\). Thus the Pattern-26 scalar closure applies on this half.
 
-For \(s\ge0\), reflect the full negative-W own-own reserve (P14-9). This
-gives, for every E/S source axis,
+For \(0\le s\le21/50\), reflecting the negative-W own-own
+reserve (P14-9) gives, for every E/S source axis,
 
 \[
 B_{ES}(e,s)\ge B_*+{73\over100}s.                 \tag{G27-5}
 \]
+
+The last interval
+\[
+\frac{21}{50}\le s\le\frac{11}{25}
+\]
+requires a small extension rather than an appeal to the old checker.  Under
+the same reflection it is the narrow negative interval
+\[
+-\frac{11}{25}\le w\le-\frac{21}{50}.
+\]
+Repeat the P14-9 source calculation there.  The W-secondary N-support remains
+on its cap branch; after clearing the positive force norms, the n-derivative
+calculus has no interior minimum and leaves only
+\[
+n=-\frac3{10},\qquad n=0,\qquad n=\frac5{12}.
+\]
+For each of the four source axes the resulting w-edge is monotone or concave.
+The twelve terminal scalar edges satisfy
+\[
+B_u(n,w)-B_*+{73\over100}w>\frac1{1000},          \tag{G27-5a}
+\]
+with weakest exact reserve
+\[
+0.0017701412\ldots.
+\]
+Reflecting back proves (G27-5) on the full interval
+\(0\le s\le11/25\).
 
 The N/W envelope is the same profile \(a(w)\) whether N is cardinal or own;
 only its equality source changes. The Pattern-26 w-calculus is independent
@@ -1210,32 +1237,45 @@ of the E/S term:
 - if \(w\ge0\), the total w-curvature is negative, so only
   \(w=0\) and \(w=2/5\) remain.
 
-At \(w=0\), the \(s\ge0\) inequality is exactly the scalar Pattern-29
-positive-s face; its cap and vertex pieces are nonnegative and equality
-would require \(s=0\).
+For \(w=0\) and \(0\le s\le21/50\), use the already-proved Pattern-29
+positive-s face.  On the formerly missing strip
+\(21/50\le s\le11/25\), put
+\[
+\beta=-s/2,\qquad \delta=\epsilon-s/2.
+\]
+On the negative-vertex branch the epsilon dependence is strictly concave;
+on the cap branch the epsilon derivative is negative.  Thus only
+\(\epsilon=1/2-\pi/4\) on the vertex branch and \(\epsilon=0\) on the
+cap branch can minimize.  The two remaining s-edges are respectively
+decreasing and increasing, and their endpoint values give
+\[
+\Phi(w=0)>\frac1{50};                             \tag{G27-5b}
+\]
+the smaller exact reserve is \(0.02157436\ldots\).
 
-At \(w=2/5\), subtract the equality value at \((0,0,0)\). The remaining
-one-dimensional inequality is
+At \(w=2/5\), subtract the equality value at \((0,0,0)\).  On
+\(0\le s\le21/50\) the previous scalar calculation gives
 
 \[
 [a(2/5)-a(0)]+{73\over100}s
- +D(2/5,s,\epsilon)-D(0,0,0)>{1\over25}           \tag{G27-6}
+ +D(2/5,s,\epsilon)-D(0,0,0)>{1\over25}.          \tag{G27-6}
 \]
 
-for
-
+On the remaining strip \(21/50\le s\le11/25\), use the same exact
+cap/vertex formula directly.  The fixed scalar enclosure gives the stronger
+bound
 \[
-0\le s\le11/25,\\qquad 1/2-\pi/4\le\epsilon\le0.
+[a(2/5)-a(0)]+{73\over100}s
+ +D(2/5,s,\epsilon)-D(0,0,0)>{1\over20},          \tag{G27-6a}
 \]
+with certified reserve \(0.0545235\ldots\).  The cap and vertex formulas
+are joined by their common value and first derivative, so no switch minimum
+is omitted.
 
-On the cap branch this is bounded by alternating Taylor polynomials; on the
-negative-vertex branch the same bound follows after the exact switch. The
-two formulas agree at the switch, so there is no omitted wall minimum.
-
-The archived files `check_A2_survivor_WcSo_tails.py` and
-`check_A2_survivor_EoSo_scalar.py` at
-`b51d8a88c30588e279882b8efd5441304635f527` independently audit
-(G27-3) and (G27-6).
+The new arithmetic audits are
+`check_A2_survivor_high_s_pair.py` for (G27-5a)--(G27-5b) and
+`check_A2_survivor_high_s_w4.py` for (G27-6a).  The old failing survivor
+checker is no longer a proof citation.
 
 Therefore Pattern 27 is terminal. Pattern 25 inherits this closure directly
 through its identical \(C,W,D,S\) data and identical N/W lower envelope, as
