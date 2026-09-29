@@ -389,6 +389,160 @@ For a candidate-sized packing with normalization (N3), it remains to prove:
 7. **One helper per cardinal side.**  At most one exterior square can use any
    fixed cardinal side of \(C\).                    \tag{N22}
 
+### 2.3A. N17 and N20 from the coarse core
+
+Assume (N16).  Write \(u=|b|\) for the sorted transverse chart coordinate of
+one exterior square, so
+
+\[
+ a\ge u\ge0,
+ \qquad
+ (a+1/2)^2+(u+1/2)^2\le R^2< Q_0.                 \tag{N17a}
+\]
+
+Put
+
+\[
+ r_c=\frac12-\max(|c_x|,|c_y|)>\frac{77}{200}.     \tag{N17b}
+\]
+
+The closed disk of radius \(77/200\) about \(O\) lies in the open central
+square \(C^\circ\).  Indeed each of its Cartesian coordinates has absolute
+value at most \(77/200\), while \(|c_x|,|c_y|<23/200\).  Hence the open
+exterior square cannot meet that disk.
+
+First suppose \(u\ge1/2\).  Then the closest point of the closed exterior
+square to \(O\) is its near corner.  With
+
+\[
+ x=a-\frac12\ge0,\qquad y=u-\frac12\ge0,
+\]
+
+disjointness from the central core gives
+
+\[
+ x^2+y^2>\left(\frac{77}{200}\right)^2,
+ \qquad x+y>\frac{77}{200}.                        \tag{N17c}
+\]
+
+Its far corner would therefore satisfy
+
+\[
+\begin{aligned}
+ (a+1/2)^2+(u+1/2)^2
+ &= (x+1)^2+(y+1)^2\\
+ &=x^2+y^2+2(x+y)+2\\
+ &>\left(\frac{77}{200}\right)^2
+     +2\frac{77}{200}+2\\
+ &=\frac{116729}{40000}
+ =2.918225>Q_0,                                    \tag{N17d}
+\end{aligned}
+\]
+
+contradicting (N17a).  Thus
+
+\[
+ u<\frac12.                                        \tag{N17e}
+\]
+
+Consequently the closest point to \(O\) lies on the relative interior of the
+near edge, at local coordinates \((a-1/2,0)\), and its distance from \(O\) is
+\(a-1/2\).  By (N17b),
+
+\[
+ a-\frac12>\frac{77}{200},
+ \qquad\text{so}\qquad
+ a>\frac{177}{200}.                                \tag{N17f}
+\]
+
+For the upper bound, \(u\ge0\) and (N17a) give
+
+\[
+ a<\sqrt{Q_0-\frac14}-\frac12=\rho_0
+ <\frac{223}{200}.                                 \tag{N17g}
+\]
+
+The last rational comparison has margin
+\(23/200-(\rho_0-1)>1/500\).  Combining (N17f) with (N17a),
+
+\[
+ (u+1/2)^2
+ <Q_0-\left(\frac{277}{200}\right)^2
+ <\left(\frac{121}{125}\right)^2,                 \tag{N17h}
+\]
+
+so
+
+\[
+ u<\frac{117}{250}<\frac12.                        \tag{N17i}
+\]
+
+It remains to identify the genuine Seven label.  The axial term is below the
+cap term because
+
+\[
+ \frac54u<\frac54\frac{117}{250}<\frac\pi4.        \tag{N17j}
+\]
+
+For the side term, the desired inequality
+\(\frac54u<\operatorname{side}(a,u)\) is equivalent to
+
+\[
+ 9a+11u<2\pi+7.                                    \tag{N17k}
+\]
+
+Set \(X=a+1/2\), \(Y=u+1/2\).  Then \(X>277/200\) and
+\(X^2+Y^2<Q_0\).  If instead
+
+\[
+ 9X+11Y\ge\frac{231}{10},                          \tag{N17l}
+\]
+
+then, since \(X<17/10\), the right side below is positive and
+
+\[
+ Y\ge {231/10-9X\over11}.
+\]
+
+Therefore
+
+\[
+ X^2+Y^2\ge
+ G(X):=X^2+{(231/10-9X)^2\over121}.                 \tag{N17m}
+\]
+
+On \(X\ge277/200\),
+
+\[
+ G(X)-G(277/200)
+ ={(200X-277)(20200X-13603)\over2420000}\ge0,      \tag{N17n}
+\]
+
+while
+
+\[
+ G(277/200)-Q_0={21567\over12100000}>0.             \tag{N17o}
+\]
+
+This contradicts (N17a).  Hence \(9X+11Y<231/10\), and the standard
+\(157/50<\pi\) gives
+
+\[
+ 9a+11u=9X+11Y-10
+ <\frac{131}{10}<2\pi+7.                           \tag{N17p}
+\]
+
+Thus the axial term is strictly the least of the three Seven label terms.
+Restoring the chart orientation sign gives
+
+\[
+ \boxed{\widehat\phi=\phi+\frac54 b}.              \tag{N20'}
+\]
+
+This proves (N17), side-nearestness, and (N20) from (N16), with no search or
+sector assumption.  The arithmetic margins in (N17d), (N17g)--(N17j), and
+(N17o) are independently checked by check_normalization_side_nearest.py.
+
 The following facts are then **derived consequences** of items 1--7 and must
 be written down before A2 begins.
 
