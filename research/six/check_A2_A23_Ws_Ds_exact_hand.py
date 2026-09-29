@@ -6,11 +6,12 @@ Domain:
     w <= d.
 
 The old single stress (365,187,106,185,157)/1000 is replaced by five
-fixed w-chambers.  Each has positive central force coordinates, so the exact
-central rectangular support separates into scalar terms.  The exact outer
-support is n6_a2_scalar.support_any.
+fixed w-chambers.  The defect is normalized directly from the five separator
+weights: the global 1/2 term already contains the source-square half-widths,
+so no extra CW/2 or SC/2 constants are added.
 
-The valid reduction is:
+Each row has positive central-force coordinates.  The exact outer support is
+n6_a2_scalar.support_any.  The valid reduction is:
   * strict w-concavity on each fixed chamber;
   * uniform partial_s Phi < 0 (not s-concavity);
   * scalar d-edge positivity after s=1/5.
@@ -39,10 +40,10 @@ def pieces(W,sw,ss,ts):
     mw,ms,md,m7,m8=W
     def FW(x):
         x=jj(x); c,s=jcos(x),jsin(x)
-        return mw*(F(1,2)+(c+sw*s)/2)-jj(c0)*mw*(c+s)
+        return mw*(c+sw*s)/2-jj(c0)*mw*(c+s)
     def GS(x):
         x=jj(x); c,s=jcos(x),jsin(x)
-        return ms*(F(1,2)+(c+ss*s)/2)-jj(c0)*ms*(c-s)
+        return ms*(c+ss*s)/2-jj(c0)*ms*(c-s)
     def HD(x):
         x=jj(x)
         return md*(F(1,2)-jj(c0))*(jcos(x)+jsin(x))
@@ -52,10 +53,13 @@ def pieces(W,sw,ss,ts):
     def LT(x):
         x=jj(x); c,s=jcos(x),jsin(x)
         return m8*(c+ts*s)/2-X.support_any(ms+m8*c,m8*s)
+    # Sum of all selected pair half-widths has the common source-square
+    # contribution (sum weights)/2 = 1/2.  W support is constant in its frame.
     const=J(F(1,2))-X.support_any(J(mw),J(-m7))
     return const,FW,GS,HD,KD,LT
 
-# Fixed positive central-force coordinates on each row.
+# Fixed positive central-force coordinates on each row, so
+# c0 (G_Cx+G_Cy) is the exact central rectangular support.
 for wr,W in ROWS:
     mw,ms,md,_,_=W
     sw=X.sinR(I(*wr)); cw=X.cosR(I(*wr))
@@ -65,15 +69,16 @@ for wr,W in ROWS:
     gy=mw*sw.lo+ms*cs.lo+md*sd.lo
     assert gx>0 and gy>0,(wr,gx,gy)
 
-# Strict w-concavity.  On the last chamber the cyclic wall w=d is treated
-# separately below.
+# Strict w-concavity on each fixed chamber.  On the final chamber the cyclic
+# wall w=d is checked separately below.
 for wr,W in ROWS:
     sw=-1 if wr[1]<=0 else 1
     _,FW,GS,HD,KD,LT=pieces(W,sw,1,1)
     delta=(max(F(0),DR[0]-wr[1]),DR[1]-wr[0])
     assert X.maxdd(FW,*wr,F(1,400))+X.maxdd(KD,*delta,F(1,400))<0
 
-# Replace the false positive-s concavity by monotonicity.
+# The old proof asserted positive-s concavity.  That is false.  What is true
+# for every retuned row is the stronger useful fact partial_s Phi < 0.
 for wr,W in ROWS:
     for sa,sb in ((-F(1,5),F(0)),(F(0),F(1,5))):
         ss=-1 if sb<=0 else 1
@@ -83,7 +88,7 @@ for wr,W in ROWS:
         # d/ds [G(s)+L(d-s)] = G'(s)-L'(d-s).
         assert gd[1]-td[0]<0,(wr,sa,sb,gd,td)
 
-# After w reduction and s -> 1/5, certify only one-dimensional d edges.
+# After w reduction and s -> 1/5, only one-dimensional d edges remain.
 best=[]
 s0=F(1,5)
 for wr,W in ROWS:
@@ -106,7 +111,7 @@ for wr,W in ROWS:
                     +KD(J(I(0)))+LT(d-J(I(s0))))
         rowbest=min(rowbest,X.minval(wall,da,db,F(1,800)))
 
-    assert rowbest>0,(wr,rowbest)
+    assert rowbest>F(1,100),(wr,rowbest)
     best.append(rowbest)
 
 print("A2.3 Ws/Ds repaired scalar audit: PASS")
