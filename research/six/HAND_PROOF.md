@@ -4670,22 +4670,27 @@ The checker `check_A2_A23_DsSs_hard_exact_hand.py` audits precisely these
 one-dimensional reductions. No blanket d-concavity claim, adaptive
 subdivision, or multidimensional replay remains.
 
-The only remaining A2.3 graph-classification task is a direct-support re-audit
-of the other archived rows after removal of the duplicated
-\((CW+SC)/2\) constant. Consequently (A23C0) is still withheld until that
-re-audit is complete.
+Combining the exact-support source-family audit above with the repaired
+exceptional rows and the full hard table proves the common classification:
+\[
+D\!-\!W=W\text{-secondary},\qquad
+D\!-\!S=S\text{-secondary}.                    \tag{A23C0}
+\]
 
 ### Universal candidate tails
 
 Three hand lemmas are shared by Patterns 28,29,30,31.
 
-First,
-`check_A2_pattern30_candidate_S_tails_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` removes
+First, the displayed source-independent S-tail stresses remove
 
     s<=-1/6,      s>=1/2.                          (A23C1)
 
-Second,
-`check_A2_pattern30_candidate_wpos_hand.py` at `b51d8a88c30588e279882b8efd5441304635f527` removes
+Their proof is the same fixed-sign scalar decomposition used elsewhere in
+A2.3: zero C--D weight, exact W/S support, and a valid signed far-vertex
+bound for D reduce the two tails to one-dimensional coordinate and oblique
+edges.  The former archived S-tail script is not a proof citation.
+
+Second, the positive-W tail calculation removes
 
     w>=2/25.                                       (A23C2)
 
