@@ -2,18 +2,23 @@
 
 This is an **audited working draft**, not yet a complete proof of the \(n=6\) case.
 
-The September 28 audit found three substantive defects.  Two are now repaired:
-the invalid diagonal-reflection survivor shortcut has been replaced by direct
-closures of Patterns 9,24,25,15, and the A2.3 support misuse has been replaced
-by an exact cap/vertex analysis.
+The September 28 audit found substantive defects in both the downstream
+A2/survivor argument and the global normalization package.  The direct survivor
+closures and much of the exact cap/vertex analysis remain useful, but the proof
+is reopened: the Pattern 26 W-secondary/S-primary classification used the cap
+formula outside its valid branch, several inherited range extensions are not
+yet proved, and the archived checker suite contains failures that must be
+understood rather than cited as blanket arithmetic validation.
 
-One substantive obligation remains: the n=6-specific **global normalization
-theorem** must be proved rather than summarized.  Its exact sublemmas are
-listed in §2.3 below.
+Accordingly there are currently **two repair gates** before Lean drafting:
+(1) restore a valid exact-support proof of the affected A2/Pattern 26 and
+survivor chambers, including the stated range extensions; and (2) finish the
+n=6-specific global normalization theorem of §2.3.
 
-The document below preserves the verified hand reductions while isolating
-that remaining foundation explicitly. It contains no executable search or multidimensional numerical proof premise.
-Every mathematical dependency needed for formalization is stated here.
+The document below preserves the verified reductions while marking these
+remaining obligations explicitly.  Python remains an arithmetic/discovery
+cross-check only; every step promoted to the hand proof must be stated here
+with its exact support branch and scalar endpoint argument.
 Finite scalar endpoint inequalities are part of the hand argument and are
 listed explicitly; they may later be discharged in Lean by elementary
 trigonometric bounds.
