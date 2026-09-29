@@ -561,19 +561,88 @@ The A2 stresses use
 
 not merely \(23/200\).
 
-To derive it for \(c_x\), use the E-category helper from (N18).
-If E uses the east cardinal separator, the cap-depth inequality gives its
-radial chart coordinate at least \(1+c_x\).  If E uses own-primary, the same
-inequality follows from the own-primary separator and the fact that its
-primary direction lies in the E sector.  In either case the sharp
-disk-containment cap bound is
-
+We first record the center-radius bound used in both separator branches.
+If an exterior square has center p and frame e,f, choose the square vertex v
+with the signs of \(p\cdot e,p\cdot f\).  Then
 \[
-a_E\le \rho_0.
+p\cdot v={|p\cdot e|+|p\cdot f|\over2}\ge{|p|\over2}.
+\]
+Since that vertex lies in the disk and \(|v|^2=1/2\),
+\[
+Q_0\ge|p+v|^2\ge |p|^2+|p|+\frac12.
+\]
+Therefore every exterior center satisfies
+\[
+|p|\le\rho_0=\sqrt{Q_0-\frac14}-\frac12.       \tag{N23a}
 \]
 
-Hence \(1+c_x\le\rho_0\), so \(c_x\le\rho_0-1\).  The N-category argument is
-identical for \(c_y\).
+Now use the E-category helper, and write its signed deviation from east as
+\(e\in[-\pi/4,\pi/4]\), with frame
+\[
+u=(\cos e,\sin e),\qquad v=(-\sin e,\cos e),
+\]
+center \(p_E=a u+b v=(x_E,y_E)\).
+
+If E uses the east cardinal separator, separating-axis completeness gives
+\[
+x_E-c_x\ge \frac12+
+ {\cos e+|\sin e|\over2}\ge1.                  \tag{N23b}
+\]
+Thus \(1+c_x\le x_E\le|p_E|\le\rho_0\), proving
+\(c_x\le\rho_0-1\).
+
+Suppose instead E uses own-primary.  Its own-primary separator gives
+\[
+a\ge
+ c_x\cos e+c_y\sin e+
+ \frac12+{\cos e+|\sin e|\over2}.              \tag{N23c}
+\]
+By (N23a), \(a=u\cdot p_E\le|p_E|\le\rho_0\).  It remains only to
+compare the right side of (N23c) with \(c_x\).
+
+The coarse core (N16) gives
+\[
+0\le c_x,c_y<\frac{23}{200},
+\]
+and (N17g) gives \(\rho_0<223/200\).  Also
+\[
+\tan\frac{|e|}{2}\le\tan\frac\pi8
+ =\sqrt2-1<\frac37,
+\]
+so
+\[
+(\rho_0-\tfrac12)\tan\frac{|e|}{2}
+ <\frac{123}{200}\frac37
+ =\frac{369}{1400}
+ <\frac{77}{200}.                                 \tag{N23d}
+\]
+For \(e\ge0\), (N23d) is stronger than
+\[
+(\rho_0-\tfrac12)(1-\cos e)
+ \le(\tfrac12+c_y)\sin e.
+\]
+For \(e<0\), using \(1/2-c_y>77/200\), it is stronger than
+\[
+(\rho_0-\tfrac12)(1-\cos e)
+ \le(\tfrac12-c_y)|\sin e|.
+\]
+In either sign case, rearranging (N23c) and using \(a\le\rho_0\) gives
+\[
+c_x\cos e\le(\rho_0-1)\cos e.
+\]
+Since \(\cos e>0\),
+\[
+c_x\le\rho_0-1.
+\]
+
+The N-category proof is the same after interchanging x and y (the adverse
+sign uses the already-proved coarse bound on the other central coordinate).
+Hence
+\[
+\boxed{0\le c_x,c_y\le\rho_0-1=c_0}.
+\]
+This proves (N23) without identifying the global chart coordinate a with a
+cardinal center coordinate.
 
 This upgrade is essential: replacing \(c_0\) by \(23/200\) destroys several
 tight A2.3 margins.
