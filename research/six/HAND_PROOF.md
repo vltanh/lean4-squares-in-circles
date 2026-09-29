@@ -3963,21 +3963,80 @@ Every noncandidate graph is eliminated by a fixed finite set of scalar
 chambers.  The stress tuples below are ordered
 \((CW,SC,CD,DW,DS)/1000\); all are nonnegative and sum to one.
 
-**W-secondary / S-primary.**  The pin orientation is negative for
-\(s\le-1/4\) and positive for \(s\ge-27/100\):
+**W-secondary / S-primary.**  This is the chamber in which the earlier
+draft incorrectly used the cap value merely from x-dominance.  For W local
+force components \(X,Y\), put
 
-| s-range | stress |
+\[
+ U=\max(|X|,|Y|),\qquad V=\min(|X|,|Y|),\qquad
+ q=\sqrt{X^2+Y^2}.
+\]
+
+The cap value \(\rho_*U\) is valid only when \(2R_*V\le q\); on the other
+side the exact support is \(R_*q-(U+V)/2\).  Use that exact branch test below.
+
+For the negative pin orientation \(-4/5\le s\le-1/4\), retain
+
+\[
+(0,500,0,0,500)/1000.
+\]
+
+There is no W force.  If \(t=d-s\) and \(u=t-\pi/2\), the D--S threshold is
+\[
+ {1\over2}+{\cos u-|\sin u|\over2}.
+\]
+It increases up to \(t=\pi/2\) and decreases afterwards, so \(d\) reduces to
+its two endpoints.  Each resulting \(s\)-edge is concave; the endpoint/wall
+margin is \(>3/25\).
+
+For the positive orientation use two retuned stresses and then a one-edge
+tail:
+
+| \(s\)-range | stress \((CW,SC,CD,DW,DS)/1000\) |
 |---|---|
-| \([-4/5,-1/4]\) | \((0,500,0,0,500)\) |
-| \([-27/100,1/5]\) | \((525,1,0,272,202)\) |
-| \([1/5,1/2]\) | \((388,295,0,206,111)\) |
-| \([1/2,4/5]\) | \((304,428,0,161,107)\) |
+| \([-27/100,1/5]\) | \((664,0,0,178,158)\) |
+| \([1/5,1/2]\) | \((446,0,0,328,226)\) |
+| \([1/2,4/5]\) | \((0,1000,0,0,0)\) |
 
-For W use the global x-dominant cap support, for S its own-primary support,
-and for D the far-vertex bound
-\(|u|+|v|\ge\sqrt{u^2+v^2}\).  The w derivative sends each positive
-orientation chamber to \(w=0\); the remaining s/d chambers are concave,
-including the walls \(d-s=0,\pi/2\).
+In the first row, for each fixed \(w\), the \(s,d\) defect is separately
+concave after the sign split at \(s=0\).  Hence only
+\[
+ s\in\{-27/100,0,1/5\},\qquad d\in\{1/2,\pi/4\}
+\]
+remain.  The exact W support is on the cap branch for
+\(-2/5\le w\le1/25\), on the vertex branch for
+\(9/200\le w\le2/5\), and the narrow interval
+\(1/25\le w\le9/200\) contains the unique switch.  On the negative cap
+piece \(\partial_w\Phi<0\); on the positive cap piece
+\(\partial_w\Phi>0\); and every remaining vertex edge is concave in \(w\).
+The fixed endpoint margin is \(>3/200\), while the switch interval itself has
+margin \(>1/50\).
+
+For the middle row the W force is on the **vertex branch throughout**:
+directly,
+\[
+ 2R_*V-q>{2\over25}\qquad(-2/5\le w\le2/5).
+\]
+Again the \(s,d\) variables reduce by separate concavity to their endpoints.
+On each half \(w\le0\) and \(w\ge0\) the remaining scalar edge is concave,
+so \(w\in\{-2/5,0,2/5\}\); the smallest endpoint margin is \(>1/125\).
+
+Finally, on \(1/2\le s\le4/5\) the single S-central separator already gives
+\[
+ \Phi_S(s)=
+ -\rho_*+{1\over2}+{\cos s+\sin s\over2}
+ -c_0(\cos s-\sin s).
+\]
+Here \(\Phi_S'(s)>1/10\), and
+\[
+ \Phi_S(1/2)>{1\over50}.
+\]
+Thus this entire high chamber is impossible without using either D edge.
+
+These are scalar reductions with the exact W support.  The independent
+rational/Taylor audit
+\`check_A2_pattern26_Ws_Sp_exact_hand.py\` reproduces the branch tests,
+curvatures and displayed margins.
 
 **D-secondary / S-primary.**  The negative pin orientation
 \(-4/5\le s\le-1/4\) uses
