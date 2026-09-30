@@ -82,11 +82,16 @@ at the disk centre.
 
 The six-square model has five axis-parallel squares and one square rotated by
 45 degrees. `Six/` contains the candidate and construction, normalization,
-classification, analytic fixed-pair/diagonal reduction, equality
-reconstruction, and the unrestricted `LowerBound.lean` and
-`Uniqueness.lean` endpoints. The current public endpoint still crosses the
-explicit internal-classification boundary in `Classification/Reduction.lean`;
-the stronger table-free replacement is tracked under `research/six/lean/`.
+the analytical reduction, equality reconstruction, and the unrestricted
+`LowerBound.lean` and `Uniqueness.lean` endpoints.
+
+There are two n=6 proof approaches in the tree. Historical
+`Classification/`, `Stress/FixedData/` and `Stress/ExactCover.lean`
+belong to the earlier self-contained finite-classification route. The current
+public endpoints instead import `Analytic/CompleteReduction.lean` directly;
+`Classification/Reduction.lean` is only a compatibility adapter to that
+analytical theorem. See [the approach comparison](../research/six/lean/APPROACHES.md)
+and [the analytical proof supplement](proof/six.md).
 
 ## Seven
 

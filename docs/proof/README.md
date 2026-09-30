@@ -1,17 +1,20 @@
 # Packing unit squares in a disk
 
-**Optimal packings of one to five and seven unit squares, with a Lean 4
+**Optimal packings of one through seven unit squares, with a Lean 4
 formalization**
 
 A companion text to the Lean 4 formalization in this repository
 ([lean4-squares-in-circles](https://github.com/vltanh/lean4-squares-in-circles));
 for its authorship see [Contributors](../contributors.md).
 
-**Abstract.** For $n = 1, \dots, 5$ and $n = 7$ we determine the least radius
+**Abstract.** The original numbered chapters treat $n = 1, \dots, 5$ and
+$n = 7$; the [six-square analytical supplement](six.md) adds $n=6$. Together
+the formalization determines the least radius
 $R_n$ of a closed disk that holds $n$ non-overlapping unit squares, and every
 packing that attains it: $R_1 = \frac{\sqrt2}2$, $R_2 = \frac{\sqrt5}2$,
-$R_3 = \frac{5\sqrt{17}}{16}$, $R_4 = \sqrt2$, $R_5 = \sqrt{5/2}$ and
-$R_7 = \frac{\sqrt{13}}2$. For $n \le 5$ the optimal packing is unique up to a
+$R_3 = \frac{5\sqrt{17}}{16}$, $R_4 = \sqrt2$, $R_5 = \sqrt{5/2}$,
+the exact algebraic six-square radius `Six.radius`, and
+$R_7 = \frac{\sqrt{13}}2$. For $n \le 6$ the optimal packing is unique up to a
 rotation about the disk centre and a relabelling of the squares. For $n = 7$
 the optimal packings form a three-parameter family: two columns of two squares
 are fixed, and each of the three squares of the middle column can move along
@@ -79,6 +82,7 @@ declarations that prove it.
   - [8.4 A centred square](five.md#84-a-centred-square)
   - [8.5 The plus](five.md#85-the-plus)
   - [8.6 Proof of Theorem 8.1](five.md#86-proof-of-theorem-81)
+- [Six squares: analytical supplement](six.md)
 - [9. Seven squares](seven.md)
   - [9.1 Construction](seven.md#91-construction)
   - [9.2 States, labels and markers](seven.md#92-states-labels-and-markers)
@@ -195,8 +199,9 @@ squares can move along the middle column on its own, as long as their centres
 stay at least 1 apart and within $\sqrt3 - \frac12$ of the disk centre; the
 total slack is $2\sqrt3 - 3 \approx 0.464$. So the optimal packings form a
 three-parameter family, and infinitely many of them are pairwise not
-congruent (Figure 1.2). (iii) The case $n = 6$ and the cases $n \ge 8$ are
-not treated here.
+congruent (Figure 1.2). (iii) The original numbered chapters do not contain the case $n=6$; it is
+treated separately in the [analytical supplement](six.md). The cases
+$n \ge 8$ are not treated here.
 
 ![Four optimal packings of seven unit squares in the circle of radius root 13 over 2. In each, the four side squares are the same, and the three middle squares sit at different heights along the dotted middle column: centred at -1, 0, 1; pushed to the bottom; with only the bottom square moved down; and with the middle square moved up and the top square at the top of its range](figures/front-columns.svg)
 

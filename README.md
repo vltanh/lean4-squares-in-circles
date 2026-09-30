@@ -9,8 +9,13 @@ up to rotation about the disk centre and relabelling. Cases `1` through `6`
 have one optimal model; for `n = 7` there is a family in which each of the
 three middle squares slides along the middle column.
 
-The newly added `n = 6` source on this branch is complete at the public theorem
-level. Its final build, Comparator run and kernel/axiom audit are still pending.
+The n=6 development has two documented proof approaches. The earlier route
+uses self-contained exact finite classification inside Lean; the current
+public source uses a table-free analytical hand proof. See
+[`research/six/lean/APPROACHES.md`](research/six/lean/APPROACHES.md) for the
+distinction and [the six-square proof supplement](docs/proof/six.md) for the
+analytical argument. The analytical source is complete, but its final build,
+Comparator run and kernel/axiom audit are still pending.
 
 | n | optimal radius | ≈ | an optimal packing |
 | :-: | :-: | :-: | :-: |
@@ -193,11 +198,11 @@ plane.
 
 ## Proof outline
 
-The illustrated, self-contained textbook in [docs/proof/](docs/proof/README.md)
-currently covers cases one through five and seven, with every numbered result
-linked to its Lean declarations. The six-square continuation is documented in
-the source comments and [its live status ledger](research/six/lean/STATUS.md);
-a matching textbook chapter has not yet been written.
+The illustrated textbook in [docs/proof/](docs/proof/README.md) has its
+original numbered chapters for cases one through five and seven, plus a
+[six-square analytical supplement](docs/proof/six.md). The two n=6 proof
+approaches and their dependency differences are recorded separately in
+[`research/six/lean/APPROACHES.md`](research/six/lean/APPROACHES.md).
 
 - **One and two squares.** The farthest corner of a square is at least half a
   diagonal from the disk centre, so in the disk of radius `√2 / 2` the square
@@ -213,12 +218,13 @@ a matching textbook chapter has not yet been written.
   the optimal packing. A square containing the disk centre needs a separate
   argument, which for three squares is the hardest part of the proof.
 - **Six squares.** A candidate-sized packing is normalized into a canonical
-  frame and reduced to fixed-pair and diagonal inequalities. Equality retains
-  the actual separating sources; eight resulting contacts fix all six centres
-  and reconstruct the model, including its rotated diagonal square. The public
-  endpoint currently obtains the final reduction from self-contained Lean
-  finite classification; the optional table-free analytic replacement is
-  tracked separately.
+  frame. Analytical missing-wing exclusions and the OWN-S upper-tail theorem
+  construct the complete reduction without the historical finite classifier.
+  Fixed-pair and diagonal inequalities force the radius. Equality retains the
+  actual separating sources; eight resulting contacts fix all six centres and
+  reconstruct the model, including its rotated diagonal square. The older
+  exact finite-classification route remains documented as a separate
+  historical approach.
 - **Seven squares.** Each square that avoids the disk centre gets a marker, a
   direction from the disk centre. In the disk of radius `√13 / 2`, two
   disjoint such squares have markers at least `π/3` apart, and exactly `π/3`

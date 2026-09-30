@@ -54,11 +54,15 @@ packing in a smaller disk would also pack the optimal disk, so by uniqueness it
 would be congruent to an optimal model, and the point on the circle would lie
 outside the smaller disk. The root theorems are these, for the `optimum` of each `n`.
 
-Six squares uses the same public interface but a longer internal proof stack:
-normalization, the remaining self-contained Lean classification boundary,
-analytic fixed-pair/diagonal closure, and eight-contact equality
-reconstruction. Its model has five axis-parallel squares and one diagonal
-square.
+Six squares uses the same public interface but a longer proof stack:
+normalization, an unconditional analytical reduction, analytic
+fixed-pair/diagonal closure, and eight-contact equality reconstruction. Its
+model has five axis-parallel squares and one diagonal square. The repository
+also retains the earlier exact finite-classification route as a historical
+alternative; the current public lower-bound and uniqueness endpoints use
+`Analytic.CompleteReduction` directly. See [the six-square proof
+supplement](proof/six.md) and the
+[two-approach note](../research/six/lean/APPROACHES.md).
 
 For seven squares the optimum is not unique: `Seven.column_packing` shows that
 the three middle squares of the optimal packing can take any heights at least
