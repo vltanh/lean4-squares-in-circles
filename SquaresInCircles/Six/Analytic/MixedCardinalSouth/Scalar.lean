@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.MixedCardinalWest.Concavity
+module
+public import SquaresInCircles.Six.Analytic.MixedCardinalWest.Concavity
+
+@[expose] public section
 
 /-!
 # A scalar obstruction to the second mixed source when W is cardinal

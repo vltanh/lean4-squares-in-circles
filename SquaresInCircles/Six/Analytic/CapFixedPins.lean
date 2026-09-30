@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Analytic.PinCoordinates
-import SquaresInCircles.Six.Analytic.CapChart
-import SquaresInCircles.Six.Normalization.CapPiercing
+module
+public import SquaresInCircles.Six.Analytic.PinCoordinates
+public import SquaresInCircles.Six.Analytic.CapChart
+public import SquaresInCircles.Six.Normalization.CapPiercing
+
+@[expose] public section
 
 /-!
 # Cardinal caps contain their fixed pins

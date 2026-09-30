@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.FixedPairRadicands
+module
+public import SquaresInCircles.Six.Analytic.FixedPairRadicands
+
+@[expose] public section
 
 /-!
 # The negative-cardinal half of the pair domain

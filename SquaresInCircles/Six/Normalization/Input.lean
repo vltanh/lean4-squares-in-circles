@@ -1,7 +1,10 @@
-import SquaresInCircles.Six.Containing
-import SquaresInCircles.Six.Candidate
-import SquaresInCircles.Six.Normalization.ChartInterop
-import Mathlib.Data.Fin.Embedding
+module
+public import SquaresInCircles.Six.Containing
+public import SquaresInCircles.Six.Candidate
+public import SquaresInCircles.Six.Normalization.ChartInterop
+public import Mathlib.Data.Fin.Embedding
+
+@[expose] public section
 
 /-!
 # The noncircular N0 input package

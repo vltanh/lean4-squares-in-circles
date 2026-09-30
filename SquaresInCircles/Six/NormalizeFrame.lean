@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Containing
-import SquaresInCircles.Common.Contacts
-import SquaresInCircles.Common.Angles
+module
+public import SquaresInCircles.Six.Containing
+public import SquaresInCircles.Common.Contacts
+public import SquaresInCircles.Common.Angles
+
+@[expose] public section
 
 /-!
 # Initial normalization of an arbitrary packing

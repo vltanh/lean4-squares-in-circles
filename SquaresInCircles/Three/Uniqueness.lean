@@ -1,8 +1,11 @@
-import SquaresInCircles.Three.Containing
-import SquaresInCircles.Three.Construction
-import SquaresInCircles.Common.ArcBudget
-import SquaresInCircles.Common.Angles
-import SquaresInCircles.Common.Optimum
+module
+public import SquaresInCircles.Three.Containing
+public import SquaresInCircles.Three.Construction
+public import SquaresInCircles.Common.ArcBudget
+public import SquaresInCircles.Common.Angles
+public import SquaresInCircles.Common.Optimum
+
+@[expose] public section
 
 /-!
 # Three squares: uniqueness

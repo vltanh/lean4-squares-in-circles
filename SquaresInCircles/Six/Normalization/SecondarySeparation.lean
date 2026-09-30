@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Normalization.ChartBounds
+module
+public import SquaresInCircles.Six.Normalization.ChartBounds
+
+@[expose] public section
 
 /-!
 # Lemma B6: exclude both secondary central separators

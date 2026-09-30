@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.WestPinBounds
+module
+public import SquaresInCircles.Six.Analytic.WestPinBounds
+
+@[expose] public section
 
 /-!
 # Western charts contain qW or qD

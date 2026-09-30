@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.SecondaryCostBound
-import SquaresInCircles.Six.Analytic.HighDiagonalProfile
+module
+public import SquaresInCircles.Six.Analytic.SecondaryCostBound
+public import SquaresInCircles.Six.Analytic.HighDiagonalProfile
+
+@[expose] public section
 
 /-!
 # Whole-domain double-D-secondary exclusion with OWN W and S

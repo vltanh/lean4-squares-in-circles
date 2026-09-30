@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.CanonicalWestBounds
-import SquaresInCircles.Six.Analytic.PrimaryClassification
+module
+public import SquaresInCircles.Six.Analytic.CanonicalWestBounds
+public import SquaresInCircles.Six.Analytic.PrimaryClassification
+
+@[expose] public section
 
 /-!
 # Canonical OWN W has negative deviation

@@ -1,8 +1,11 @@
-import SquaresInCircles.Four.Exterior
-import SquaresInCircles.Four.Construction
-import SquaresInCircles.Common.ArcBudget
-import SquaresInCircles.Common.Angles
-import SquaresInCircles.Common.Optimum
+module
+public import SquaresInCircles.Four.Exterior
+public import SquaresInCircles.Four.Construction
+public import SquaresInCircles.Common.ArcBudget
+public import SquaresInCircles.Common.Angles
+public import SquaresInCircles.Common.Optimum
+
+@[expose] public section
 
 /-!
 # Four squares: uniqueness

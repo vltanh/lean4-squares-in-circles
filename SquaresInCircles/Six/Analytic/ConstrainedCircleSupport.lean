@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Normalization.CapSupport
+module
+public import SquaresInCircles.Six.Normalization.CapSupport
+
+@[expose] public section
 
 /-!
 # Circle support with a lower primary coordinate

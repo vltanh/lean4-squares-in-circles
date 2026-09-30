@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Analytic.FixedPinInclusions
-import SquaresInCircles.Six.Normalization.PinData
-import SquaresInCircles.Six.DiagonalReflection
+module
+public import SquaresInCircles.Six.Analytic.FixedPinInclusions
+public import SquaresInCircles.Six.Normalization.PinData
+public import SquaresInCircles.Six.DiagonalReflection
+
+@[expose] public section
 
 /-!
 # Point-set and phase bookkeeping before the pin-labelled model exists

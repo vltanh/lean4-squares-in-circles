@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.MixedSecondaryDepth
-import SquaresInCircles.Six.Analytic.DoubleSecondaryOwn
+module
+public import SquaresInCircles.Six.Analytic.MixedSecondaryDepth
+public import SquaresInCircles.Six.Analytic.DoubleSecondaryOwn
+
+@[expose] public section
 
 /-!
 # The equal-weight double-D-secondary stress for all W/S central bits

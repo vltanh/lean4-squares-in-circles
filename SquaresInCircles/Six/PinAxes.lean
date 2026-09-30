@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.PinChords
-import SquaresInCircles.Six.PreferredAxes
+module
+public import SquaresInCircles.Six.PinChords
+public import SquaresInCircles.Six.PreferredAxes
+
+@[expose] public section
 
 /-!
 # Pin-oriented downstream source inventories

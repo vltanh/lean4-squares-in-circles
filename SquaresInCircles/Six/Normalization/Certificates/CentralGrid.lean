@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Normalization.Certificates.ConeSemantics
+module
+public import SquaresInCircles.Six.Normalization.Certificates.ConeSemantics
+
+@[expose] public section
 
 /-!
 # Exact central staircase and forbidden-arc lengths

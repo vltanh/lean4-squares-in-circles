@@ -1,10 +1,13 @@
-import SquaresInCircles.One.Uniqueness
-import SquaresInCircles.Two.Uniqueness
-import SquaresInCircles.Three.Uniqueness
-import SquaresInCircles.Four.Uniqueness
-import SquaresInCircles.Five.Uniqueness
-import SquaresInCircles.Six.Uniqueness
-import SquaresInCircles.Seven.Uniqueness
+module
+public import SquaresInCircles.One.Uniqueness
+public import SquaresInCircles.Two.Uniqueness
+public import SquaresInCircles.Three.Uniqueness
+public import SquaresInCircles.Four.Uniqueness
+public import SquaresInCircles.Five.Uniqueness
+public import SquaresInCircles.Six.Uniqueness
+public import SquaresInCircles.Seven.Uniqueness
+
+@[expose] public section
 
 /-!
 # Packing one through seven unit squares in a disk

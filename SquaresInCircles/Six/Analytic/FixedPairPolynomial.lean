@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Analytic.FixedPairGap
-import SquaresInCircles.Six.Analytic.PairSharpConstants
-import SquaresInCircles.Six.Analytic.PairPerturbation
+module
+public import SquaresInCircles.Six.Analytic.FixedPairGap
+public import SquaresInCircles.Six.Analytic.PairSharpConstants
+public import SquaresInCircles.Six.Analytic.PairPerturbation
+
+@[expose] public section
 
 /-!
 # Rational-polynomial data for the forced endpoints

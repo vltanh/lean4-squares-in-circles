@@ -1,4 +1,7 @@
-import SquaresInCircles.Common.AngularBudget
+module
+public import SquaresInCircles.Common.AngularBudget
+
+@[expose] public section
 
 /-!
 # Metric facts for occupied arc witnesses

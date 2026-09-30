@@ -1,7 +1,10 @@
-import SquaresInCircles.Two.Construction
-import SquaresInCircles.Common.Contacts
-import SquaresInCircles.Common.Angles
-import SquaresInCircles.Common.Optimum
+module
+public import SquaresInCircles.Two.Construction
+public import SquaresInCircles.Common.Contacts
+public import SquaresInCircles.Common.Angles
+public import SquaresInCircles.Common.Optimum
+
+@[expose] public section
 
 /-!
 # Two squares: uniqueness

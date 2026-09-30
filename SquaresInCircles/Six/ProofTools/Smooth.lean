@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.ProofTools.Certificate
-import Mathlib.Analysis.SpecialFunctions.Sqrt
-import Mathlib.Analysis.Calculus.MeanValue
+module
+public import SquaresInCircles.Six.ProofTools.Certificate
+public import Mathlib.Analysis.SpecialFunctions.Sqrt
+public import Mathlib.Analysis.Calculus.MeanValue
+
+@[expose] public section
 
 /-!
 # Differentiation with an explicit regularity certificate

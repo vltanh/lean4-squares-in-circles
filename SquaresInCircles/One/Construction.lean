@@ -1,4 +1,7 @@
-import SquaresInCircles.Common.Constructions
+module
+public import SquaresInCircles.Common.Constructions
+
+@[expose] public section
 
 /-!
 # One square: construction

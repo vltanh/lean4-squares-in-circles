@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Analytic.WestPinCover
-import SquaresInCircles.Six.Normalization.PinData
-import SquaresInCircles.Six.DiagonalReflection
+module
+public import SquaresInCircles.Six.Analytic.WestPinCover
+public import SquaresInCircles.Six.Normalization.PinData
+public import SquaresInCircles.Six.DiagonalReflection
+
+@[expose] public section
 
 /-!
 # Symmetries of the fixed pin set, before pin assignment

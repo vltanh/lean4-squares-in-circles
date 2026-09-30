@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.FixedPairOpposition
+module
+public import SquaresInCircles.Six.Analytic.FixedPairOpposition
+
+@[expose] public section
 
 /-!
 # Curvature bounds for the four geometric pair sources

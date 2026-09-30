@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.PinLocations
+module
+public import SquaresInCircles.Six.Analytic.PinLocations
+
+@[expose] public section
 
 /-!
 # Labelled windows and central axes without certificates

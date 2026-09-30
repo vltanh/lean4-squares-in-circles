@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.PinCircle
+module
+public import SquaresInCircles.Six.Analytic.PinCircle
+
+@[expose] public section
 
 /-!
 # A whole-sector two-pin covering theorem

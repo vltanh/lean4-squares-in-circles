@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.CardinalLowDiagonalFormula
+module
+public import SquaresInCircles.Six.Analytic.CardinalLowDiagonalFormula
+
+@[expose] public section
 
 /-!
 # The sign/order geometry of the cardinal-W low-D domain

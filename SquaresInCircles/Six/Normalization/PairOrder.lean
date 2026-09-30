@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Normalization.CardinalWindows
-import SquaresInCircles.Six.Analytic.WestDiagonalOrder
+module
+public import SquaresInCircles.Six.Normalization.CardinalWindows
+public import SquaresInCircles.Six.Analytic.WestDiagonalOrder
+
+@[expose] public section
 
 /-!
 # D4 and N18 from analytic pair geometry

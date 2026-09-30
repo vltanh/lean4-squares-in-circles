@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Normalization.CentralSAT
-import SquaresInCircles.Six.Normalization.ChartBounds
-import SquaresInCircles.Seven.Analysis
+module
+public import SquaresInCircles.Six.Normalization.CentralSAT
+public import SquaresInCircles.Six.Normalization.ChartBounds
+public import SquaresInCircles.Seven.Analysis
+
+@[expose] public section
 
 /-!
 # Whole-interval transverse bounds from the actual central separators

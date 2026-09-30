@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.DoubleSecondaryCases
+module
+public import SquaresInCircles.Six.Analytic.DoubleSecondaryCases
+
+@[expose] public section
 
 /-!
 # No actual normalized packing has both diagonal edges sourced by D

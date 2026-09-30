@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Normalization.CentralSAT
-import SquaresInCircles.Six.Construction
+module
+public import SquaresInCircles.Six.Normalization.CentralSAT
+public import SquaresInCircles.Six.Construction
+
+@[expose] public section
 
 /-!
 # Cap chart bounds before the strong central box

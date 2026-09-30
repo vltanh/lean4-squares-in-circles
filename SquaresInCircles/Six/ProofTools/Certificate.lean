@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.ProofTools.Expression
+module
+public import SquaresInCircles.Six.ProofTools.Expression
+
+@[expose] public section
 
 /-!
 # Finite rational covers produce proofs of real formulas

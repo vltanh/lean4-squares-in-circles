@@ -1,4 +1,7 @@
-import SquaresInCircles.Common.Basic
+module
+public import SquaresInCircles.Common.Basic
+
+@[expose] public section
 
 /-! Axis-parallel unit squares: the disjointness and disk-containment tests
 used by the attaining packings. -/

@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.FixedPairGap
+module
+public import SquaresInCircles.Six.Analytic.FixedPairGap
+
+@[expose] public section
 
 /-!
 # Concavity with two prescribed walls

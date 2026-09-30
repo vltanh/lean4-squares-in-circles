@@ -1,6 +1,9 @@
-import SquaresInCircles.Seven.LabelBoundary
-import SquaresInCircles.Seven.Support
-import SquaresInCircles.Seven.Analysis
+module
+public import SquaresInCircles.Seven.LabelBoundary
+public import SquaresInCircles.Seven.Support
+public import SquaresInCircles.Seven.Analysis
+
+@[expose] public section
 
 /-!
 # Segments of constant label

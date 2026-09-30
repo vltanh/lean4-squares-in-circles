@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Stress.VertexEnvelope
-import SquaresInCircles.Six.Stress.SupportFormula
-import SquaresInCircles.Six.Normalization.CapSupport
+module
+public import SquaresInCircles.Six.Stress.VertexEnvelope
+public import SquaresInCircles.Six.Stress.SupportFormula
+public import SquaresInCircles.Six.Normalization.CapSupport
+
+@[expose] public section
 
 /-!
 # Exact analytic reduction of the diagonal contribution

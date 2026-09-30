@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.HighDiagonalProfile
-import SquaresInCircles.Six.Analytic.FrozenTrigStress
+module
+public import SquaresInCircles.Six.Analytic.HighDiagonalProfile
+public import SquaresInCircles.Six.Analytic.FrozenTrigStress
+
+@[expose] public section
 
 /-!
 # Coupled central profiles when the OWN S angle overtakes D

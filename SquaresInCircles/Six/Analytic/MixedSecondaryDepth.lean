@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.RadialSecondarySupport
-import SquaresInCircles.Six.Analytic.SecondaryCostFolded
+module
+public import SquaresInCircles.Six.Analytic.RadialSecondarySupport
+public import SquaresInCircles.Six.Analytic.SecondaryCostFolded
+
+@[expose] public section
 
 /-!
 # Depth reserves for the two mixed double-D-secondary cases

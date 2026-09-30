@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Normalization.CapSupport
-import SquaresInCircles.Six.Normalization.CoreGeometry
-import SquaresInCircles.Six.Normalization.SecondarySeparation
+module
+public import SquaresInCircles.Six.Normalization.CapSupport
+public import SquaresInCircles.Six.Normalization.CoreGeometry
+public import SquaresInCircles.Six.Normalization.SecondarySeparation
+
+@[expose] public section
 
 /-!
 # Deep caps in the actual square geometry

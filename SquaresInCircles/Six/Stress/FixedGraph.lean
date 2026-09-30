@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.PinAxes
-import SquaresInCircles.Six.Stress.SupportExpression
+module
+public import SquaresInCircles.Six.PinAxes
+public import SquaresInCircles.Six.Stress.SupportExpression
+
+@[expose] public section
 
 /-!
 # The fixed C/W/D/S graph used by every classification row

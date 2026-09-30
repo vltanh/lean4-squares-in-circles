@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.TransverseProfileBounds
+module
+public import SquaresInCircles.Six.Analytic.TransverseProfileBounds
+
+@[expose] public section
 
 /-!
 # The two scalar bounds in the small-diagonal W-secondary argument

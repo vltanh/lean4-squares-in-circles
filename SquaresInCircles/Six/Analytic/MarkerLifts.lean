@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.NorthMarker
+module
+public import SquaresInCircles.Six.Analytic.NorthMarker
+
+@[expose] public section
 
 /-!
 # Real lifts for the analytic forbidden-arc argument

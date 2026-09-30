@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.NonnegativeWestSecondary
+module
+public import SquaresInCircles.Six.Analytic.NonnegativeWestSecondary
+
+@[expose] public section
 
 /-!
 # Nonpositive S has only the two forward secondary D/S sources

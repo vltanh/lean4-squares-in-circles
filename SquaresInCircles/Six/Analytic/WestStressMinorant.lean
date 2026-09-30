@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.EndpointReduction
-import SquaresInCircles.Six.Analytic.OwnAxisWindows
+module
+public import SquaresInCircles.Six.Analytic.EndpointReduction
+public import SquaresInCircles.Six.Analytic.OwnAxisWindows
+
+@[expose] public section
 
 /-!
 # A single analytic minorant for the west-cardinal exclusion

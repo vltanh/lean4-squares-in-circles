@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.FixedPairCoordinates
-import SquaresInCircles.Six.Stress.CandidateRadius
+module
+public import SquaresInCircles.Six.Analytic.FixedPairCoordinates
+public import SquaresInCircles.Six.Stress.CandidateRadius
+
+@[expose] public section
 
 /-!
 # Fixed-pair work from actual packing inequalities

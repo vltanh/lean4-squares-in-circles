@@ -1,5 +1,8 @@
-import SquaresInCircles.Seven.Support
-import SquaresInCircles.Seven.MarkerArc
+module
+public import SquaresInCircles.Seven.Support
+public import SquaresInCircles.Seven.MarkerArc
+
+@[expose] public section
 
 /-!
 # Support sums of a canonical pair

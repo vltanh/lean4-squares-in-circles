@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.CardinalLowDiagonalSupport
-import SquaresInCircles.Six.Analytic.LowDiagonalOwn
+module
+public import SquaresInCircles.Six.Analytic.CardinalLowDiagonalSupport
+public import SquaresInCircles.Six.Analytic.LowDiagonalOwn
+
+@[expose] public section
 
 /-!
 # Every normalized packing has d>1/2, without the former low-D tables

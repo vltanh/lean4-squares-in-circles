@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.CoreLargeQuadrants
+module
+public import SquaresInCircles.Six.Analytic.CoreLargeQuadrants
+
+@[expose] public section
 
 /-!
 # Complete analytic forbidden arcs for Proposition A

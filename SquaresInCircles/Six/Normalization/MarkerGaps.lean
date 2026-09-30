@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Normalization.Markers
-import SquaresInCircles.Seven.MarkerSeparation
-import SquaresInCircles.Common.Angles
+module
+public import SquaresInCircles.Six.Normalization.Markers
+public import SquaresInCircles.Seven.MarkerSeparation
+public import SquaresInCircles.Common.Angles
+
+@[expose] public section
 
 /-!
 # N7 and the finite step of Proposition A

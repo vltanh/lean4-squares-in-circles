@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.WestStressMinorant
-import SquaresInCircles.Six.Normalization.CapBounds
+module
+public import SquaresInCircles.Six.Analytic.WestStressMinorant
+public import SquaresInCircles.Six.Normalization.CapBounds
+
+@[expose] public section
 
 /-!
 # The W-secondary west-cardinal stress and the two exact source expressions

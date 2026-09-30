@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.SecondaryCostTangent
-import SquaresInCircles.Six.Analytic.LowDiagonalEndpoints
+module
+public import SquaresInCircles.Six.Analytic.SecondaryCostTangent
+public import SquaresInCircles.Six.Analytic.LowDiagonalEndpoints
+
+@[expose] public section
 
 /-!
 # An affine lower bound on the equal-weight secondary support cost

@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Analytic.EndpointReduction
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
-import Mathlib.Analysis.Real.Pi.Bounds
+module
+public import SquaresInCircles.Six.Analytic.EndpointReduction
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
+public import Mathlib.Analysis.Real.Pi.Bounds
+
+@[expose] public section
 
 /-!
 # Vertex minorant for the fixed-central-weight pair

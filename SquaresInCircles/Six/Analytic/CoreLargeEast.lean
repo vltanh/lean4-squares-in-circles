@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.CoreSmallSouth
+module
+public import SquaresInCircles.Six.Analytic.CoreSmallSouth
+
+@[expose] public section
 
 /-!
 # East markers when both central coordinates exceed c0

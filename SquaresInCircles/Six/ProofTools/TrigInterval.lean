@@ -1,7 +1,10 @@
-import SquaresInCircles.Six.ProofTools.RationalInterval
-import SquaresInCircles.Six.ProofTools.Taylor
-import Mathlib.Analysis.Real.Pi.Bounds
-import Mathlib.Data.Rat.Floor
+module
+public import SquaresInCircles.Six.ProofTools.RationalInterval
+public import SquaresInCircles.Six.ProofTools.Taylor
+public import Mathlib.Analysis.Real.Pi.Bounds
+public import Mathlib.Data.Rat.Floor
+
+@[expose] public section
 
 /-!
 # Sound trigonometric interval evaluation

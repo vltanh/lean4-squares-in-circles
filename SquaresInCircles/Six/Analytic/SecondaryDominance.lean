@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.PrimaryCosineBound
-import SquaresInCircles.Six.Analytic.HighDiagonalProfile
+module
+public import SquaresInCircles.Six.Analytic.PrimaryCosineBound
+public import SquaresInCircles.Six.Analytic.HighDiagonalProfile
+
+@[expose] public section
 
 /-!
 # A secondary separator can replace a primary one on the D/S first quadrant

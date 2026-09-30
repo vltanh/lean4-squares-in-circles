@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.PairCoordinates
-import SquaresInCircles.Six.Analytic.PairProjectionBounds
+module
+public import SquaresInCircles.Six.Analytic.PairCoordinates
+public import SquaresInCircles.Six.Analytic.PairProjectionBounds
+
+@[expose] public section
 
 /-!
 # Only two forward secondary axes can separate W and a west-cardinal D

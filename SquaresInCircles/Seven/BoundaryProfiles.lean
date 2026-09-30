@@ -1,4 +1,7 @@
-import SquaresInCircles.Seven.BoundarySegments
+module
+public import SquaresInCircles.Seven.BoundarySegments
+
+@[expose] public section
 
 /-!
 # Profiles along the boundary of the label regions

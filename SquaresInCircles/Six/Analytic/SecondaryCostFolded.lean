@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.SecondaryCostBound
-import SquaresInCircles.Six.Analytic.DoubleSecondaryOwnBound
+module
+public import SquaresInCircles.Six.Analytic.SecondaryCostBound
+public import SquaresInCircles.Six.Analytic.DoubleSecondaryOwnBound
+
+@[expose] public section
 
 /-!
 # The reflected secondary cost and the OWN-wing penalty

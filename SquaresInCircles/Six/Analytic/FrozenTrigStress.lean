@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.RadicalTrigConcavity
+module
+public import SquaresInCircles.Six.Analytic.RadicalTrigConcavity
+
+@[expose] public section
 
 /-!
 # Freeze centers before reducing stress angles

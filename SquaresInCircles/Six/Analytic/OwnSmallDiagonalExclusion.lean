@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.SmallDiagonalOwnEndpoints
-import SquaresInCircles.Six.Analytic.SmallDiagonalNonnegativeWest
+module
+public import SquaresInCircles.Six.Analytic.SmallDiagonalOwnEndpoints
+public import SquaresInCircles.Six.Analytic.SmallDiagonalNonnegativeWest
+
+@[expose] public section
 
 /-!
 # Small diagonal angles are impossible when W is OWN

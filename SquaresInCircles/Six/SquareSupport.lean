@@ -1,4 +1,7 @@
-import SquaresInCircles.Common.Contacts
+module
+public import SquaresInCircles.Common.Contacts
+
+@[expose] public section
 
 /-!
 # Projection bounds on actual squares

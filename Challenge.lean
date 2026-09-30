@@ -1,5 +1,8 @@
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Angle
-import Mathlib.Tactic.Linarith
+module
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Angle
+public import Mathlib.Tactic.Linarith
+
+@[expose] public section
 
 /-!
 # Packing one through seven unit squares in a disk: the statement

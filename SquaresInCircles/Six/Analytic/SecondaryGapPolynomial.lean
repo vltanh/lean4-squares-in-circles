@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.OwnWingProfileSharpening
-import SquaresInCircles.Six.Analytic.HighDiagonalAffineTransverse
+module
+public import SquaresInCircles.Six.Analytic.OwnWingProfileSharpening
+public import SquaresInCircles.Six.Analytic.HighDiagonalAffineTransverse
+
+@[expose] public section
 
 /-!
 # One quadratic obstruction on the complete quarter-to-one interval

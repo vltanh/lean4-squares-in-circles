@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.TwoPinCover
+module
+public import SquaresInCircles.Six.Analytic.TwoPinCover
+
+@[expose] public section
 
 /-!
 # The short fringe before the western fixed pin

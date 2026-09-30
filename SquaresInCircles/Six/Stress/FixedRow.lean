@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Stress.FixedGeometry
-import SquaresInCircles.Six.ProofTools.Certificate
+module
+public import SquaresInCircles.Six.Stress.FixedGeometry
+public import SquaresInCircles.Six.ProofTools.Certificate
+
+@[expose] public section
 
 /-!
 # Exact closed domains of the fixed-stress rows

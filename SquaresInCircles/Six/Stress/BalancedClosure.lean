@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Stress.BalancedFactorization
-import SquaresInCircles.Six.Stress.PairLowerBound
+module
+public import SquaresInCircles.Six.Stress.BalancedFactorization
+public import SquaresInCircles.Six.Stress.PairLowerBound
+
+@[expose] public section
 
 /-!
 # Common candidate-graph closure: analytic conversion in progress

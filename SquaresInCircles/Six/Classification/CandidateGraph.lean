@@ -1,7 +1,10 @@
-import SquaresInCircles.Six.Classification.A22Edges
-import SquaresInCircles.Six.Classification.A23Edges
-import SquaresInCircles.Six.Classification.Pattern26Edges
-import SquaresInCircles.Six.Classification.CardinalEdges
+module
+public import SquaresInCircles.Six.Classification.A22Edges
+public import SquaresInCircles.Six.Classification.A23Edges
+public import SquaresInCircles.Six.Classification.Pattern26Edges
+public import SquaresInCircles.Six.Classification.CardinalEdges
+
+@[expose] public section
 
 /-!
 # Universal candidate D-edge graph

@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Normalization.Complete
+module
+public import SquaresInCircles.Six.Normalization.Complete
+
+@[expose] public section
 
 /-!
 # N25+: the cardinal E/N bound required by the repaired downstream proof

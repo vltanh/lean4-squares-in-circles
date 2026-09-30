@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.SmallDiagonalSecondary
+module
+public import SquaresInCircles.Six.Analytic.SmallDiagonalSecondary
+
+@[expose] public section
 
 /-!
 # The signed S transverse budget in the unchanged normalized frame

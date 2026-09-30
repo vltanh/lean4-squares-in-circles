@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.HalfAngleControl
-import SquaresInCircles.Six.Normalization.CapBounds
+module
+public import SquaresInCircles.Six.Analytic.HalfAngleControl
+public import SquaresInCircles.Six.Normalization.CapBounds
+
+@[expose] public section
 
 /-!
 # A uniform affine lower bound for the equal-weight secondary cap cost

@@ -1,4 +1,7 @@
-import SquaresInCircles.Seven.Contacts
+module
+public import SquaresInCircles.Seven.Contacts
+
+@[expose] public section
 
 /-!
 # The forward axis, signs `(-, +)`

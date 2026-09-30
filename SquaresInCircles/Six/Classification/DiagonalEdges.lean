@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Stress.RowTactics
+module
+public import SquaresInCircles.Six.Stress.RowTactics
+
+@[expose] public section
 
 /-!
 # Preliminary D-edge classification

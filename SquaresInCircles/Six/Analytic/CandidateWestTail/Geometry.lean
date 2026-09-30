@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.CandidateWestTail.Support
-import SquaresInCircles.Six.Analytic.CanonicalSouthSign
+module
+public import SquaresInCircles.Six.Analytic.CandidateWestTail.Support
+public import SquaresInCircles.Six.Analytic.CanonicalSouthSign
+
+@[expose] public section
 
 /-!
 # The candidate D graph supplies the OWN-W outer tail

@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.DiagonalCoreBounds
+module
+public import SquaresInCircles.Six.Analytic.DiagonalCoreBounds
+
+@[expose] public section
 
 /-!
 # Nonnegative W has only the candidate W-secondary source

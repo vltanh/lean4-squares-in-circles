@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.CardinalLowDiagonalConcavity
+module
+public import SquaresInCircles.Six.Analytic.CardinalLowDiagonalConcavity
+
+@[expose] public section
 
 /-!
 # The six sign/order vertices, with visible rational endpoint bounds

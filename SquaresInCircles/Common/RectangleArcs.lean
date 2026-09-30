@@ -1,4 +1,7 @@
-import SquaresInCircles.Common.Charts
+module
+public import SquaresInCircles.Common.Charts
+
+@[expose] public section
 
 /-!
 # Arcs of an exterior square

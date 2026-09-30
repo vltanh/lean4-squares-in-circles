@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Normalization.CentralSAT
-import SquaresInCircles.Seven.SeparatingAxes
+module
+public import SquaresInCircles.Six.Normalization.CentralSAT
+public import SquaresInCircles.Seven.SeparatingAxes
+
+@[expose] public section
 
 /-!
 # Exact coordinates of the four pair axes

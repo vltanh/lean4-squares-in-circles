@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Analytic.CardinalInwardEndpoints
-import SquaresInCircles.Six.Analytic.CardinalDestinationPrimary
-import SquaresInCircles.Six.Analytic.OwnDestinationPrimary
+module
+public import SquaresInCircles.Six.Analytic.CardinalInwardEndpoints
+public import SquaresInCircles.Six.Analytic.CardinalDestinationPrimary
+public import SquaresInCircles.Six.Analytic.OwnDestinationPrimary
+
+@[expose] public section
 
 /-!
 # Every actual W/D separator is a forward secondary source

@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Stress.FixedData.Checks
+module
+public import SquaresInCircles.Six.Stress.FixedData.Checks
+
+@[expose] public section
 
 /-!
 # Fixed-row application tactics

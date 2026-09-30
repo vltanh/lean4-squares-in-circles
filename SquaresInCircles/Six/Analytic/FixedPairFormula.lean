@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.FixedPair
+module
+public import SquaresInCircles.Six.Analytic.FixedPair
+
+@[expose] public section
 
 /-!
 # Exact smooth formulas on the geometric sign sectors

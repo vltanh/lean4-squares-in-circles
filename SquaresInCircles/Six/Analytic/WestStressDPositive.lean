@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.WestStressDEndpoints
+module
+public import SquaresInCircles.Six.Analytic.WestStressDEndpoints
+
+@[expose] public section
 
 /-!
 # D-secondary positivity on the full ordered angle triangle

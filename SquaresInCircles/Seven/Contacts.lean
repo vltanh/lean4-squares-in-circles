@@ -1,4 +1,7 @@
-import SquaresInCircles.Seven.PairModel
+module
+public import SquaresInCircles.Seven.PairModel
+
+@[expose] public section
 
 /-!
 # Contacts

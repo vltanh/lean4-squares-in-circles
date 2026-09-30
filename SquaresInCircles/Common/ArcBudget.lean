@@ -1,4 +1,7 @@
-import SquaresInCircles.Common.Coordinates
+module
+public import SquaresInCircles.Common.Coordinates
+
+@[expose] public section
 
 /-!
 # The angular budget of a packing

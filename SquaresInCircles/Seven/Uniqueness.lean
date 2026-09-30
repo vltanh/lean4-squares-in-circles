@@ -1,6 +1,9 @@
-import SquaresInCircles.Seven.Uniqueness.ContactCycle
-import SquaresInCircles.Seven.Uniqueness.CentralSquare
-import SquaresInCircles.Common.Optimum
+module
+public import SquaresInCircles.Seven.Uniqueness.ContactCycle
+public import SquaresInCircles.Seven.Uniqueness.CentralSquare
+public import SquaresInCircles.Common.Optimum
+
+@[expose] public section
 
 /-!
 # Seven squares: uniqueness

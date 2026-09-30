@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.OwnAngleWindows
-import SquaresInCircles.Six.Normalization.CapPiercing
+module
+public import SquaresInCircles.Six.Analytic.OwnAngleWindows
+public import SquaresInCircles.Six.Normalization.CapPiercing
+
+@[expose] public section
 
 /-!
 # Radius-9/10 pins in actual square coordinates

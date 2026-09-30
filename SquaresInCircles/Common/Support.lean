@@ -1,5 +1,8 @@
-import SquaresInCircles.Common.Tangents
-import SquaresInCircles.Common.Separation
+module
+public import SquaresInCircles.Common.Tangents
+public import SquaresInCircles.Common.Separation
+
+@[expose] public section
 
 /-!
 # The common octagon support estimate and safe radial extension

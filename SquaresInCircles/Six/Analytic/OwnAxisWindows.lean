@@ -1,7 +1,10 @@
-import SquaresInCircles.Six.Analytic.EndpointReduction
-import SquaresInCircles.Six.Analytic.OwnMovingPin
-import SquaresInCircles.Six.Analytic.PinArc
-import SquaresInCircles.Seven.Analysis
+module
+public import SquaresInCircles.Six.Analytic.EndpointReduction
+public import SquaresInCircles.Six.Analytic.OwnMovingPin
+public import SquaresInCircles.Six.Analytic.PinArc
+public import SquaresInCircles.Seven.Analysis
+
+@[expose] public section
 
 /-!
 # OWN primary-axis windows, before assigning pins

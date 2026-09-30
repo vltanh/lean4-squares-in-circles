@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Normalization.CenterRadius
+module
+public import SquaresInCircles.Six.Normalization.CenterRadius
+
+@[expose] public section
 
 /-!
 # Uniform projection estimates for the W/D ordering argument

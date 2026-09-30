@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.DiagonalHalfBound
+module
+public import SquaresInCircles.Six.Analytic.DiagonalHalfBound
+
+@[expose] public section
 
 /-!
 # Primary-axis exclusion from a positive cosine reserve

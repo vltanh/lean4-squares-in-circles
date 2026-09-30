@@ -1,6 +1,9 @@
-import SquaresInCircles.Seven.TargetBoundaryMonotonicity
-import SquaresInCircles.Seven.BoundaryProfiles
-import SquaresInCircles.Seven.Contacts
+module
+public import SquaresInCircles.Seven.TargetBoundaryMonotonicity
+public import SquaresInCircles.Seven.BoundaryProfiles
+public import SquaresInCircles.Seven.Contacts
+
+@[expose] public section
 
 /-!
 # The forward axis, both signs negative

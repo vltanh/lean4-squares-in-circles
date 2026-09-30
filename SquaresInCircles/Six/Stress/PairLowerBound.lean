@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Stress.PairLocal
+module
+public import SquaresInCircles.Six.Stress.PairLocal
+
+@[expose] public section
 
 /-!
 # A common global adjacent-pair lower envelope

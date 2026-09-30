@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Normalization.CapBounds
+module
+public import SquaresInCircles.Six.Normalization.CapBounds
+
+@[expose] public section
 
 /-!
 # K2: the cap profile from containment, with its genuine branch condition

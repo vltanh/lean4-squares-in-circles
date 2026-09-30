@@ -1,7 +1,10 @@
-import SquaresInCircles.Six.Normalization.Input
-import SquaresInCircles.Six.Analytic.ForbiddenArcs
-import SquaresInCircles.Six.DiagonalReflection
-import SquaresInCircles.Six.Goals
+module
+public import SquaresInCircles.Six.Normalization.Input
+public import SquaresInCircles.Six.Analytic.ForbiddenArcs
+public import SquaresInCircles.Six.DiagonalReflection
+public import SquaresInCircles.Six.Goals
+
+@[expose] public section
 
 /-!
 # Proposition A: the analytic strong central box, before pins and sectors

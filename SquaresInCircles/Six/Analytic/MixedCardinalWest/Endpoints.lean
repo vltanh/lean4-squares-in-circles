@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.MixedCardinalWest.Concavity
+module
+public import SquaresInCircles.Six.Analytic.MixedCardinalWest.Concavity
+
+@[expose] public section
 
 /-!
 # The twelve endpoints forced by coordinate concavity

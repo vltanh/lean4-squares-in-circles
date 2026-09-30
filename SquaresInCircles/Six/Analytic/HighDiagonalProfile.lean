@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.DiagonalHalfBound
-import SquaresInCircles.Six.Analytic.LowDiagonalEndpoints
+module
+public import SquaresInCircles.Six.Analytic.DiagonalHalfBound
+public import SquaresInCircles.Six.Analytic.LowDiagonalEndpoints
+
+@[expose] public section
 
 /-!
 # A small transverse coordinate for high D

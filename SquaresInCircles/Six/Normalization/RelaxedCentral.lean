@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Normalization.CentralSAT
+module
+public import SquaresInCircles.Six.Normalization.CentralSAT
+
+@[expose] public section
 
 /-!
 # Central-coordinate relaxation used by the normalization certificates

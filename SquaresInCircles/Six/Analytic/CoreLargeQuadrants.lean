@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.CoreLargeEast
+module
+public import SquaresInCircles.Six.Analytic.CoreLargeEast
+
+@[expose] public section
 
 /-!
 # The north and south quadrants when c0 < cy <= cx < 1/2

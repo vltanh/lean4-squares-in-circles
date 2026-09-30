@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.TransverseProfileBounds
-import SquaresInCircles.Six.Analytic.SharpFrontProfile
+module
+public import SquaresInCircles.Six.Analytic.TransverseProfileBounds
+public import SquaresInCircles.Six.Analytic.SharpFrontProfile
+
+@[expose] public section
 
 /-!
 # A sharper OWN-wing profile on the small phase-gap domain

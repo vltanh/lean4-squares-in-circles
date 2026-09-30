@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Stress.DiagonalCapBound
-import SquaresInCircles.Six.Analytic.CandidateBounds
-import SquaresInCircles.Six.Analytic.DiagonalVertex
+module
+public import SquaresInCircles.Six.Stress.DiagonalCapBound
+public import SquaresInCircles.Six.Analytic.CandidateBounds
+public import SquaresInCircles.Six.Analytic.DiagonalVertex
+
+@[expose] public section
 
 /-!
 # The diagonal vertex branch, without a finite-cover certificate

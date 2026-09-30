@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.SecondaryPhaseRestrictions
+module
+public import SquaresInCircles.Six.Analytic.SecondaryPhaseRestrictions
+
+@[expose] public section
 
 /-!
 # Signed transverse obstructions near a quarter-turn

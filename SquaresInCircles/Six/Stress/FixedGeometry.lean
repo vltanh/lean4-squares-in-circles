@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Stress.FixedReification
+module
+public import SquaresInCircles.Six.Stress.FixedReification
+
+@[expose] public section
 
 /-!
 # Actual packing semantics of fixed classification stresses

@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Classification.CandidateGraph
-import SquaresInCircles.Six.Stress.RowTactics
+module
+public import SquaresInCircles.Six.Classification.CandidateGraph
+public import SquaresInCircles.Six.Stress.RowTactics
+
+@[expose] public section
 
 /-!
 # Source-independent candidate tails

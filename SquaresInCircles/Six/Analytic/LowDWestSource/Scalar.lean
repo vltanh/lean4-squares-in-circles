@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.OneRadianWestGap
-import SquaresInCircles.Six.Analytic.EndpointReduction
+module
+public import SquaresInCircles.Six.Analytic.OneRadianWestGap
+public import SquaresInCircles.Six.Analytic.EndpointReduction
+
+@[expose] public section
 
 /-!
 # A four-vertex obstruction for a D-sourced west edge below d = 3/5

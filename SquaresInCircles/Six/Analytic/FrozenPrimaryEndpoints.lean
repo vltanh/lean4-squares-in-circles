@@ -1,7 +1,10 @@
-import SquaresInCircles.Six.Analytic.FrozenTrigStress
-import SquaresInCircles.Six.Analytic.OutwardAxes
-import SquaresInCircles.Six.Stress.Support
-import SquaresInCircles.Seven.Analysis
+module
+public import SquaresInCircles.Six.Analytic.FrozenTrigStress
+public import SquaresInCircles.Six.Analytic.OutwardAxes
+public import SquaresInCircles.Six.Stress.Support
+public import SquaresInCircles.Seven.Analysis
+
+@[expose] public section
 
 /-!
 # Four original corners of the OWN-W inward-primary stress

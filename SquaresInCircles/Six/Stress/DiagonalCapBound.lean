@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Stress.DiagonalFormula
-import SquaresInCircles.Six.Analytic.CandidateBounds
+module
+public import SquaresInCircles.Six.Stress.DiagonalFormula
+public import SquaresInCircles.Six.Analytic.CandidateBounds
+
+@[expose] public section
 
 /-!
 # Analytic cap-branch closure of the common diagonal bound

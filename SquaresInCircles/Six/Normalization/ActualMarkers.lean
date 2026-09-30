@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Normalization.PinPacking
+module
+public import SquaresInCircles.Six.Normalization.PinPacking
+
+@[expose] public section
 
 /-!
 # Genuine markers in the final signed-coordinate model

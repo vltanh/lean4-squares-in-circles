@@ -1,4 +1,7 @@
-import SquaresInCircles.Geometry
+module
+public import SquaresInCircles.Geometry
+
+@[expose] public section
 
 /-!
 # Frames, interior-disjointness and the farthest-vertex bound

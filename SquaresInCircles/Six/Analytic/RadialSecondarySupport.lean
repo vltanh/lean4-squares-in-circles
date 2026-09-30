@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.CardinalWidthTriangle
-import SquaresInCircles.Six.Stress.Support
+module
+public import SquaresInCircles.Six.Analytic.CardinalWidthTriangle
+public import SquaresInCircles.Six.Stress.Support
+
+@[expose] public section
 
 /-!
 # Radial support of the cardinal-plus-D-secondary resultants

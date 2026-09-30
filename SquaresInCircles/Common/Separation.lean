@@ -1,5 +1,8 @@
-import SquaresInCircles.Common.Basic
-import Mathlib.Analysis.LocallyConvex.Separation
+module
+public import SquaresInCircles.Common.Basic
+public import Mathlib.Analysis.LocallyConvex.Separation
+
+@[expose] public section
 
 /-!
 # A supporting functional for two squares with disjoint interiors

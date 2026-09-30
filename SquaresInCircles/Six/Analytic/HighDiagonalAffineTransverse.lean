@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.DiagonalCoreBounds
-import SquaresInCircles.Six.Analytic.EndpointReduction
+module
+public import SquaresInCircles.Six.Analytic.DiagonalCoreBounds
+public import SquaresInCircles.Six.Analytic.EndpointReduction
+
+@[expose] public section
 
 /-!
 # An affine transverse bound on the full high-diagonal interval

@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.LowerBound
-import SquaresInCircles.Six.Equality.Reconstruction
-import SquaresInCircles.Common.Optimum
+module
+public import SquaresInCircles.Six.LowerBound
+public import SquaresInCircles.Six.Equality.Reconstruction
+public import SquaresInCircles.Common.Optimum
+
+@[expose] public section
 
 /-!
 # The unrestricted six-square equality theorem

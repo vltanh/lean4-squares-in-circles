@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Normalization.CapSupport
+module
+public import SquaresInCircles.Six.Normalization.CapSupport
+
+@[expose] public section
 
 /-!
 # Proposition A0: OWN is impossible in the east quadrant when `cx > c0`

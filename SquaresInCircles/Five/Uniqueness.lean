@@ -1,8 +1,11 @@
-import SquaresInCircles.Five.Containing
-import SquaresInCircles.Five.Construction
-import SquaresInCircles.Common.ArcBudget
-import SquaresInCircles.Common.Contacts
-import SquaresInCircles.Common.Optimum
+module
+public import SquaresInCircles.Five.Containing
+public import SquaresInCircles.Five.Construction
+public import SquaresInCircles.Common.ArcBudget
+public import SquaresInCircles.Common.Contacts
+public import SquaresInCircles.Common.Optimum
+
+@[expose] public section
 
 /-!
 # Five squares: uniqueness

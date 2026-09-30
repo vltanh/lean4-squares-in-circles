@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.LowDWestSource.Scalar
+module
+public import SquaresInCircles.Six.Analytic.LowDWestSource.Scalar
+
+@[expose] public section
 
 /-!
 # A whole-domain scalar obstruction for the candidate west tail

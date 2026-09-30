@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.FrozenPrimaryExclusion
+module
+public import SquaresInCircles.Six.Analytic.FrozenPrimaryExclusion
+
+@[expose] public section
 
 /-!
 # Positive D-primary is impossible when W is OWN

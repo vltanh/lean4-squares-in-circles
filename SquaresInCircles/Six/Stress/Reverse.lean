@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Stress.Support
-import SquaresInCircles.Seven.SeparatingAxes
+module
+public import SquaresInCircles.Six.Stress.Support
+public import SquaresInCircles.Seven.SeparatingAxes
+
+@[expose] public section
 
 /-!
 # Finite reverse stresses

@@ -1,4 +1,7 @@
-import SquaresInCircles.Seven.BoundarySegments
+module
+public import SquaresInCircles.Seven.BoundarySegments
+
+@[expose] public section
 
 /-!
 # Monotonicity of the target support on the axial boundary

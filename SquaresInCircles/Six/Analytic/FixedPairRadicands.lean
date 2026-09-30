@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.FixedPairSlices
-import SquaresInCircles.Six.Analytic.FixedPairTrig
+module
+public import SquaresInCircles.Six.Analytic.FixedPairSlices
+public import SquaresInCircles.Six.Analytic.FixedPairTrig
+
+@[expose] public section
 
 /-!
 # Nonzero forces and safe curvature interfaces

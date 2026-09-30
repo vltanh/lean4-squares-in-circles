@@ -1,7 +1,10 @@
-import SquaresInCircles.Six.Classification.CandidateTails
-import SquaresInCircles.Six.Stress.CandidateStressConstants
-import SquaresInCircles.Six.Stress.StrictSupport
-import SquaresInCircles.Six.Analytic.ElementaryTrig
+module
+public import SquaresInCircles.Six.Classification.CandidateTails
+public import SquaresInCircles.Six.Stress.CandidateStressConstants
+public import SquaresInCircles.Six.Stress.StrictSupport
+public import SquaresInCircles.Six.Analytic.ElementaryTrig
+
+@[expose] public section
 
 /-!
 # The variable adjacent-pair stress for Patterns 12 and 13

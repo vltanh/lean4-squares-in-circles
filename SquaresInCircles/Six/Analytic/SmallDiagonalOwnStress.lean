@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.SmallDiagonalStressTools
+module
+public import SquaresInCircles.Six.Analytic.SmallDiagonalStressTools
+
+@[expose] public section
 
 /-!
 # One frozen-center stress for negative OWN W and small D

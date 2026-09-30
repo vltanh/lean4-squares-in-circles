@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Normalization.Constants
+module
+public import SquaresInCircles.Six.Normalization.Constants
+
+@[expose] public section
 
 /-!
 # An algebraic replacement for the two-variable piercing leaf S5

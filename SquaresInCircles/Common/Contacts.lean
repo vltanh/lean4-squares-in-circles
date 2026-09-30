@@ -1,4 +1,7 @@
-import SquaresInCircles.Common.Congruence
+module
+public import SquaresInCircles.Common.Congruence
+
+@[expose] public section
 
 /-! Centres of interior-disjoint unit squares are at least 1 apart, and at
 distance exactly 1 the squares are side-neighbours. The supporting functional

@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.CoreSmallNorth
-import SquaresInCircles.Six.Normalization.OwnEastExclusion
+module
+public import SquaresInCircles.Six.Analytic.CoreSmallNorth
+public import SquaresInCircles.Six.Normalization.OwnEastExclusion
+
+@[expose] public section
 
 /-!
 # The remaining quadrants when 0 <= cy <= c0 < cx

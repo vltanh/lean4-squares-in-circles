@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Normalization.Markers
+module
+public import SquaresInCircles.Six.Normalization.Markers
+
+@[expose] public section
 
 /-!
 # Containment bounds every square center, before any normalization

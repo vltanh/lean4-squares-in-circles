@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Construction
-import SquaresInCircles.Six.Containing
+module
+public import SquaresInCircles.Six.Construction
+public import SquaresInCircles.Six.Containing
+
+@[expose] public section
 
 /-!
 # Targets of the six-square formalization

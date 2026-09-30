@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Normalization.PairOrder
-import SquaresInCircles.Six.Normalization.CapPiercing
-import SquaresInCircles.Six.Construction
+module
+public import SquaresInCircles.Six.Normalization.PairOrder
+public import SquaresInCircles.Six.Normalization.CapPiercing
+public import SquaresInCircles.Six.Construction
+
+@[expose] public section
 
 /-!
 # N22, N25 and N26 in the actual labelled frame

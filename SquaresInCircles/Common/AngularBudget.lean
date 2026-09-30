@@ -1,5 +1,8 @@
-import SquaresInCircles.Common.Support
-import Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic
+module
+public import SquaresInCircles.Common.Support
+public import Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic
+
+@[expose] public section
 
 /-!
 # Angular budget on the genuine circle

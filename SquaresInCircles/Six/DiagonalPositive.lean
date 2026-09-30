@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.CanonicalMargins
+module
+public import SquaresInCircles.Six.CanonicalMargins
+
+@[expose] public section
 
 /-!
 # P7: the normalized D deviation is strictly positive

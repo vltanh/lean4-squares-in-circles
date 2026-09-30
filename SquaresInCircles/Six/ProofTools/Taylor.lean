@@ -1,4 +1,7 @@
-import SquaresInCircles.Seven.Analysis
+module
+public import SquaresInCircles.Seven.Analysis
+
+@[expose] public section
 
 /-!
 # Rational Taylor bounds used inside scalar proof certificates

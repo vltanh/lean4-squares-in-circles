@@ -1,6 +1,9 @@
-import SquaresInCircles.Common.Congruence
-import SquaresInCircles.Common.ArcMetric
-import Mathlib.Data.Fin.Tuple.Sort
+module
+public import SquaresInCircles.Common.Congruence
+public import SquaresInCircles.Common.ArcMetric
+public import Mathlib.Data.Fin.Tuple.Sort
+
+@[expose] public section
 
 /-!
 # Directions on the circle

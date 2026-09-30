@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.PinProjections
-import SquaresInCircles.Six.Normalization.ChartBounds
+module
+public import SquaresInCircles.Six.Analytic.PinProjections
+public import SquaresInCircles.Six.Normalization.ChartBounds
+
+@[expose] public section
 
 /-!
 # Two pins sixty degrees apart cover their primary-direction arc

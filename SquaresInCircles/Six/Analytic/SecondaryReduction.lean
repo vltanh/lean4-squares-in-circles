@@ -1,7 +1,10 @@
-import SquaresInCircles.Six.Analytic.SecondaryTransverseSigns
-import SquaresInCircles.Six.Analytic.SouthTransverseBudget
-import SquaresInCircles.Six.Analytic.CoupledWingBudget
-import SquaresInCircles.Six.Analytic.FixedDiagonalWork
+module
+public import SquaresInCircles.Six.Analytic.SecondaryTransverseSigns
+public import SquaresInCircles.Six.Analytic.SouthTransverseBudget
+public import SquaresInCircles.Six.Analytic.CoupledWingBudget
+public import SquaresInCircles.Six.Analytic.FixedDiagonalWork
+
+@[expose] public section
 
 /-!
 # Exact logical frontier of the candidate-edge reduction

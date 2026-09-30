@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Analytic.SecondaryReduction
-import SquaresInCircles.Six.Analytic.OwnWingProfileSharpening
-import SquaresInCircles.Six.Analytic.HighDiagonalAffineTransverse
+module
+public import SquaresInCircles.Six.Analytic.SecondaryReduction
+public import SquaresInCircles.Six.Analytic.OwnWingProfileSharpening
+public import SquaresInCircles.Six.Analytic.HighDiagonalAffineTransverse
+
+@[expose] public section
 
 /-!
 # A full one-radian exclusion for a D-sourced west edge

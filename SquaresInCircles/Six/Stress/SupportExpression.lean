@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Stress.SupportFormula
-import SquaresInCircles.Six.Normalization.Certificates.Model
+module
+public import SquaresInCircles.Six.Stress.SupportFormula
+public import SquaresInCircles.Six.Normalization.Certificates.Model
+
+@[expose] public section
 
 /-!
 # Exploratory reification of the exact support

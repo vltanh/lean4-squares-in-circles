@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Analytic.HarmonicRootConcavity
-import SquaresInCircles.Seven.Analysis
-import Mathlib.Analysis.Real.Pi.Bounds
+module
+public import SquaresInCircles.Six.Analytic.HarmonicRootConcavity
+public import SquaresInCircles.Seven.Analysis
+public import Mathlib.Analysis.Real.Pi.Bounds
+
+@[expose] public section
 
 /-!
 # Five geometric endpoints for the cardinal/cardinal missing-west stress

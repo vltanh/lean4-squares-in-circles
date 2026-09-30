@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Stress.Support
+module
+public import SquaresInCircles.Six.Stress.Support
+
+@[expose] public section
 
 /-!
 # Exact cap/vertex center support

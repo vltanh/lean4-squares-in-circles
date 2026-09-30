@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Stress.CandidateRadiusConstants
+module
+public import SquaresInCircles.Six.Stress.CandidateRadiusConstants
+
+@[expose] public section
 
 /-!
 # Exact candidate self-stress constants

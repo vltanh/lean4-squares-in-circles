@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Analytic.CompensatedTrigConcavity
-import SquaresInCircles.Six.Analytic.FrozenPrimaryEndpoints
-import SquaresInCircles.Six.Normalization.CapSupport
+module
+public import SquaresInCircles.Six.Analytic.CompensatedTrigConcavity
+public import SquaresInCircles.Six.Analytic.FrozenPrimaryEndpoints
+public import SquaresInCircles.Six.Normalization.CapSupport
+
+@[expose] public section
 
 /-!
 # Low-diagonal secondary stresses before support maximization

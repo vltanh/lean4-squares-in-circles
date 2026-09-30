@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Normalization.Certificates.Checks
-import SquaresInCircles.Six.ProofTools.FormulaLemmas
+module
+public import SquaresInCircles.Six.Normalization.Certificates.Checks
+public import SquaresInCircles.Six.ProofTools.FormulaLemmas
+
+@[expose] public section
 
 /-!
 # The geometric meaning of the concrete checks

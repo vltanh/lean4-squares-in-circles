@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Normalization.Constants
-import SquaresInCircles.Seven.Labels
+module
+public import SquaresInCircles.Six.Normalization.Constants
+public import SquaresInCircles.Seven.Labels
+
+@[expose] public section
 
 /-!
 # The scalar part of normalization Lemma B

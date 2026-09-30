@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Stress.BalancedClosure
-import SquaresInCircles.Six.Equality.SupportMaximizers
+module
+public import SquaresInCircles.Six.Stress.BalancedClosure
+public import SquaresInCircles.Six.Equality.SupportMaximizers
+
+@[expose] public section
 
 /-!
 # Equality of the active local supports fixes every exterior center

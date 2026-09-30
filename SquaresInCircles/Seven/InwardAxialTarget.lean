@@ -1,4 +1,7 @@
-import SquaresInCircles.Seven.Contacts
+module
+public import SquaresInCircles.Seven.Contacts
+
+@[expose] public section
 
 /-!
 # The inward axis, positive source sign, axial target

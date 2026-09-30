@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.SmallDiagonalCardinalMinorant
-import SquaresInCircles.Six.Analytic.OwnSmallDiagonalExclusion
+module
+public import SquaresInCircles.Six.Analytic.SmallDiagonalCardinalMinorant
+public import SquaresInCircles.Six.Analytic.OwnSmallDiagonalExclusion
+
+@[expose] public section
 
 /-!
 # The unconditional analytic d>1/2 reduction

@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Normalization.WestCardinalStress
-import SquaresInCircles.Six.Normalization.MovingPins
-import SquaresInCircles.Six.Normalization.NearestPoint
+module
+public import SquaresInCircles.Six.Normalization.WestCardinalStress
+public import SquaresInCircles.Six.Normalization.MovingPins
+public import SquaresInCircles.Six.Normalization.NearestPoint
+
+@[expose] public section
 
 /-!
 # The analytic normalization interface

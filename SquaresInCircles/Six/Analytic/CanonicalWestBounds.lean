@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.HalfAngleControl
-import SquaresInCircles.Six.Normalization.CentralSAT
+module
+public import SquaresInCircles.Six.Analytic.HalfAngleControl
+public import SquaresInCircles.Six.Normalization.CentralSAT
+
+@[expose] public section
 
 /-!
 # Canonical OWN W cannot turn toward D

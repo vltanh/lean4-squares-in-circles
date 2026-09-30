@@ -1,8 +1,11 @@
-import SquaresInCircles.Six.Stress.FixedData.Default
-import SquaresInCircles.Six.Stress.FixedData.Hard
-import SquaresInCircles.Six.Stress.FixedData.Tails
-import SquaresInCircles.Six.Stress.FixedData.AppendixC
-import SquaresInCircles.Six.Stress.FixedData.Bridges
+module
+public import SquaresInCircles.Six.Stress.FixedData.Default
+public import SquaresInCircles.Six.Stress.FixedData.Hard
+public import SquaresInCircles.Six.Stress.FixedData.Tails
+public import SquaresInCircles.Six.Stress.FixedData.AppendixC
+public import SquaresInCircles.Six.Stress.FixedData.Bridges
+
+@[expose] public section
 
 /-!
 # The fixed-row arithmetic proof bodies

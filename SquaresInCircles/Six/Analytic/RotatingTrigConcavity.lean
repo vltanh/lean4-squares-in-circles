@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.RotatingLength
-import SquaresInCircles.Six.Analytic.CompensatedTrigConcavity
+module
+public import SquaresInCircles.Six.Analytic.RotatingLength
+public import SquaresInCircles.Six.Analytic.CompensatedTrigConcavity
+
+@[expose] public section
 
 /-!
 # A trigonometric sum minus one rotating-vector length

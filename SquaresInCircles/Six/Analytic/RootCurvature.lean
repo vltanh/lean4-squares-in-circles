@@ -1,6 +1,9 @@
-import Mathlib.Analysis.SpecialFunctions.Sqrt
-import Mathlib.Analysis.Convex.Deriv
-import Mathlib.Tactic
+module
+public import Mathlib.Analysis.SpecialFunctions.Sqrt
+public import Mathlib.Analysis.Convex.Deriv
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Differentiating a negative square root

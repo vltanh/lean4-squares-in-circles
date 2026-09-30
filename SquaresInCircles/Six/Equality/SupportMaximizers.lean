@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Stress.StrictSupport
+module
+public import SquaresInCircles.Six.Stress.StrictSupport
+
+@[expose] public section
 
 /-!
 # Unique support maximizers needed for equality reconstruction

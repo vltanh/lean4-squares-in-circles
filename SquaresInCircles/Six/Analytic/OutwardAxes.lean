@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.PinAxes
-import SquaresInCircles.Six.Normalization.CenterRadius
+module
+public import SquaresInCircles.Six.PinAxes
+public import SquaresInCircles.Six.Normalization.CenterRadius
+
+@[expose] public section
 
 /-!
 # A uniform primary-axis exclusion before the D-edge classification

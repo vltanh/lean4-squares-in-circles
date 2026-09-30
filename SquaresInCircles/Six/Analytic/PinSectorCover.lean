@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.PinSymmetry
-import SquaresInCircles.Six.Normalization.SecondarySeparation
+module
+public import SquaresInCircles.Six.Analytic.PinSymmetry
+public import SquaresInCircles.Six.Normalization.SecondarySeparation
+
+@[expose] public section
 
 /-!
 # Geometric five-pin covering by primary sectors

@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Normalization.Certificates.Model
+module
+public import SquaresInCircles.Six.Normalization.Certificates.Model
+
+@[expose] public section
 
 /-!
 # Concrete arithmetic proof terms

@@ -1,5 +1,8 @@
-import SquaresInCircles.Seven.MarkerSeparation
-import SquaresInCircles.Common.Angles
+module
+public import SquaresInCircles.Seven.MarkerSeparation
+public import SquaresInCircles.Common.Angles
+
+@[expose] public section
 
 /-!
 # The ring of six squares

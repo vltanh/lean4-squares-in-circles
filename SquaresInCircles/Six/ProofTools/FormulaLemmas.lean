@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.ProofTools.Certificate
+module
+public import SquaresInCircles.Six.ProofTools.Certificate
+
+@[expose] public section
 
 namespace SquaresInCircles.Six.ProofTools.Formula
 

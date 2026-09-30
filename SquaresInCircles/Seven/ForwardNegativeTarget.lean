@@ -1,5 +1,8 @@
-import SquaresInCircles.Seven.BoundarySegments
-import SquaresInCircles.Seven.Contacts
+module
+public import SquaresInCircles.Seven.BoundarySegments
+public import SquaresInCircles.Seven.Contacts
+
+@[expose] public section
 
 /-!
 # The forward axis, negative target sign

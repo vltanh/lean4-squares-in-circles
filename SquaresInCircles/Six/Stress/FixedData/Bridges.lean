@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Stress.FixedRow
+module
+public import SquaresInCircles.Six.Stress.FixedRow
+
+@[expose] public section
 
 /-!
 # Source-independent survivor bridge rows

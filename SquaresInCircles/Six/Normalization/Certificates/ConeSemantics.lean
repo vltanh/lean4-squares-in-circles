@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Normalization.Certificates.Semantics
-import SquaresInCircles.Six.Normalization.OwnEastExclusion
+module
+public import SquaresInCircles.Six.Normalization.Certificates.Semantics
+public import SquaresInCircles.Six.Normalization.OwnEastExclusion
+
+@[expose] public section
 
 /-!
 # Lemma A from the checked reduced-separator predicates

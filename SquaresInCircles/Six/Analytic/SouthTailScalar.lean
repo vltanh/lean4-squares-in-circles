@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.HighDiagonalSupport
-import SquaresInCircles.Six.Analytic.HalfAngleControl
+module
+public import SquaresInCircles.Six.Analytic.HighDiagonalSupport
+public import SquaresInCircles.Six.Analytic.HalfAngleControl
+
+@[expose] public section
 
 /-!
 # Two whole-domain scalar reserves for a negative OWN south angle

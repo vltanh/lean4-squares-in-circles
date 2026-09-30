@@ -1,5 +1,8 @@
-import SquaresInCircles.One.Construction
-import SquaresInCircles.Common.Optimum
+module
+public import SquaresInCircles.One.Construction
+public import SquaresInCircles.Common.Optimum
+
+@[expose] public section
 
 /-!
 # One square: uniqueness

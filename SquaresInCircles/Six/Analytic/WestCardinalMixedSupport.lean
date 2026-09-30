@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Analytic.WestCardinalMixedScalar
-import SquaresInCircles.Six.Analytic.WestSecondaryGap
-import SquaresInCircles.Six.Stress.Support
+module
+public import SquaresInCircles.Six.Analytic.WestCardinalMixedScalar
+public import SquaresInCircles.Six.Analytic.WestSecondaryGap
+public import SquaresInCircles.Six.Stress.Support
+
+@[expose] public section
 
 /-!
 # Exact local supports of the cardinal/cardinal missing-west stress

@@ -1,5 +1,8 @@
-import SquaresInCircles.Common.Coordinates
-import SquaresInCircles.Common.Constructions
+module
+public import SquaresInCircles.Common.Coordinates
+public import SquaresInCircles.Common.Constructions
+
+@[expose] public section
 
 /-!
 # Congruence to a model

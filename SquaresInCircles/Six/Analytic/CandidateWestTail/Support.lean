@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.CandidateWestTail.Scalar
-import SquaresInCircles.Six.Stress.Support
+module
+public import SquaresInCircles.Six.Analytic.CandidateWestTail.Scalar
+public import SquaresInCircles.Six.Stress.Support
+
+@[expose] public section
 
 /-!
 # Support estimates for the candidate west-tail stress

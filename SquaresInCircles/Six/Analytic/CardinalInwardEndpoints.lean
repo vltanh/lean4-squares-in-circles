@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.FrozenPrimaryEndpoints
+module
+public import SquaresInCircles.Six.Analytic.FrozenPrimaryEndpoints
+
+@[expose] public section
 
 /-!
 # Cardinal-W inward-primary endpoint bounds

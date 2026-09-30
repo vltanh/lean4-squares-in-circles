@@ -1,5 +1,8 @@
-import SquaresInCircles.Seven.BoundarySegments
-import SquaresInCircles.Seven.PairModel
+module
+public import SquaresInCircles.Seven.BoundarySegments
+public import SquaresInCircles.Seven.PairModel
+
+@[expose] public section
 
 /-!
 # The inward axis, positive signs, side target

@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.CardinalWingClosure
-import SquaresInCircles.Six.Analytic.CanonicalSouthSign
+module
+public import SquaresInCircles.Six.Analytic.CardinalWingClosure
+public import SquaresInCircles.Six.Analytic.CanonicalSouthSign
+
+@[expose] public section
 
 /-!
 # Analytic secondary-reduction checkpoint

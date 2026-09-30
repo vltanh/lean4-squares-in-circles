@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Normalization.PinReflection
-import SquaresInCircles.Six.Analytic.CardinalFrame
+module
+public import SquaresInCircles.Six.Normalization.PinReflection
+public import SquaresInCircles.Six.Analytic.CardinalFrame
+
+@[expose] public section
 
 /-!
 # Analytic cardinal-helper angle bounds

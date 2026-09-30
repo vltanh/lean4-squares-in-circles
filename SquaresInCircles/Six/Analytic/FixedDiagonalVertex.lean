@@ -1,7 +1,10 @@
-import SquaresInCircles.Six.Analytic.FixedVertexMinorant
-import SquaresInCircles.Six.Analytic.PairSharpConstants
-import SquaresInCircles.Six.Analytic.FixedPair
-import SquaresInCircles.Six.Stress.DiagonalRemainder
+module
+public import SquaresInCircles.Six.Analytic.FixedVertexMinorant
+public import SquaresInCircles.Six.Analytic.PairSharpConstants
+public import SquaresInCircles.Six.Analytic.FixedPair
+public import SquaresInCircles.Six.Stress.DiagonalRemainder
+
+@[expose] public section
 
 /-!
 # The diagonal vertex branch for the new fixed-pair line

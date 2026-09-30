@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Analytic.MixedCardinalWest.Geometry
-import SquaresInCircles.Six.Analytic.MixedCardinalSouth.Geometry
-import SquaresInCircles.Six.Analytic.ReductionInterface
+module
+public import SquaresInCircles.Six.Analytic.MixedCardinalWest.Geometry
+public import SquaresInCircles.Six.Analytic.MixedCardinalSouth.Geometry
+public import SquaresInCircles.Six.Analytic.ReductionInterface
+
+@[expose] public section
 
 /-!
 # Complete analytic reduction for two cardinal wings

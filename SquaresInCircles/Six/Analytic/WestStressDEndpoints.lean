@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.WestStressDConcavity
+module
+public import SquaresInCircles.Six.Analytic.WestStressDConcavity
+
+@[expose] public section
 
 /-!
 # The seven geometric endpoint values for D-secondary

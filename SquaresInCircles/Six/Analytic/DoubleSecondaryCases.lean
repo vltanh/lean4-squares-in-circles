@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.DoubleSecondaryStress
+module
+public import SquaresInCircles.Six.Analytic.DoubleSecondaryStress
+
+@[expose] public section
 
 /-!
 # The three remaining double-D-secondary central-bit combinations

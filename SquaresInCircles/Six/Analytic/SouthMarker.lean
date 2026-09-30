@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.MarkerSupport
-import SquaresInCircles.Six.Analytic.EndpointReduction
+module
+public import SquaresInCircles.Six.Analytic.MarkerSupport
+public import SquaresInCircles.Six.Analytic.EndpointReduction
+
+@[expose] public section
 
 /-!
 # Analytic south-marker bounds for the bad-core case

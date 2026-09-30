@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Analytic.WestStressDPositive
-import SquaresInCircles.Six.Analytic.CapChart
-import SquaresInCircles.Six.Stress.Support
+module
+public import SquaresInCircles.Six.Analytic.WestStressDPositive
+public import SquaresInCircles.Six.Analytic.CapChart
+public import SquaresInCircles.Six.Stress.Support
+
+@[expose] public section
 
 /-!
 # The actual three-square geometry behind the analytic Appendix A stress

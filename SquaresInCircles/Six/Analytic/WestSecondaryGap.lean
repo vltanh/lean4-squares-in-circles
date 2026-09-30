@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.SecondaryReduction
-import SquaresInCircles.Six.Analytic.SecondaryGapPolynomial
+module
+public import SquaresInCircles.Six.Analytic.SecondaryReduction
+public import SquaresInCircles.Six.Analytic.SecondaryGapPolynomial
+
+@[expose] public section
 
 /-!
 # A one-radian gap for a genuine D-sourced west edge

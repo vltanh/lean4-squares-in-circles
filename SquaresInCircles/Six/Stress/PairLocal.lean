@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Stress.PairCertificateChecks
+module
+public import SquaresInCircles.Six.Stress.PairCertificateChecks
+
+@[expose] public section
 
 /-!
 # The local pair bound across all three absolute-value walls

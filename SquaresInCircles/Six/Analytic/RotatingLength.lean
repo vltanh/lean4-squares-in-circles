@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.RootCurvature
+module
+public import SquaresInCircles.Six.Analytic.RootCurvature
+
+@[expose] public section
 
 /-!
 # Uniform curvature of a translated rotating vector

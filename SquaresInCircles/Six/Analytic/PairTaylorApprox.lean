@@ -1,4 +1,7 @@
-import SquaresInCircles.Seven.Analysis
+module
+public import SquaresInCircles.Seven.Analysis
+
+@[expose] public section
 
 /-!
 # Explicit Taylor errors used at the forced pair endpoints

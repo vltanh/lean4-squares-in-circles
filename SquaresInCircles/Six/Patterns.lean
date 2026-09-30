@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Normalization.StrongCardinal
+module
+public import SquaresInCircles.Six.Normalization.StrongCardinal
+
+@[expose] public section
 
 /-!
 # Canonical five-bit patterns

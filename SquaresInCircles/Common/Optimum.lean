@@ -1,4 +1,7 @@
-import SquaresInCircles.Common.Congruence
+module
+public import SquaresInCircles.Common.Congruence
+
+@[expose] public section
 
 /-!
 # The optimum for `n` squares

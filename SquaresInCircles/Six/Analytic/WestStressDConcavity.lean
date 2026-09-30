@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Analytic.WestStressBounds
-import SquaresInCircles.Six.Analytic.WestSecondaryAxes
-import SquaresInCircles.Six.Analytic.RadicalTrigConcavity
+module
+public import SquaresInCircles.Six.Analytic.WestStressBounds
+public import SquaresInCircles.Six.Analytic.WestSecondaryAxes
+public import SquaresInCircles.Six.Analytic.RadicalTrigConcavity
+
+@[expose] public section
 
 /-!
 # Concavity of the D-secondary stress components

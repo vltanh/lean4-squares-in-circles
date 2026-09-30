@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Analytic.SmallDiagonalSecondaryBounds
-import SquaresInCircles.Six.Analytic.ConstrainedCircleSupport
-import SquaresInCircles.Six.Analytic.PrimaryClassification
+module
+public import SquaresInCircles.Six.Analytic.SmallDiagonalSecondaryBounds
+public import SquaresInCircles.Six.Analytic.ConstrainedCircleSupport
+public import SquaresInCircles.Six.Analytic.PrimaryClassification
+
+@[expose] public section
 
 /-!
 # The small-diagonal W-secondary exclusion

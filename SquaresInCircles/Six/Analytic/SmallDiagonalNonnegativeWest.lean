@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.SharpFrontProfile
-import SquaresInCircles.Six.Analytic.SmallDiagonalSecondary
+module
+public import SquaresInCircles.Six.Analytic.SharpFrontProfile
+public import SquaresInCircles.Six.Analytic.SmallDiagonalSecondary
+
+@[expose] public section
 
 /-!
 # Small diagonal angles with a nonnegative W deviation

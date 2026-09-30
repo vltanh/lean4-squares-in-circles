@@ -1,5 +1,8 @@
-import SquaresInCircles.Seven.Labels
-import SquaresInCircles.Seven.Construction
+module
+public import SquaresInCircles.Seven.Labels
+public import SquaresInCircles.Seven.Construction
+
+@[expose] public section
 
 /-!
 # The support function

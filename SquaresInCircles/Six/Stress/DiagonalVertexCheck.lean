@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Stress.DiagonalRemainder
+module
+public import SquaresInCircles.Six.Stress.DiagonalRemainder
+
+@[expose] public section
 
 /-!
 # Compatibility import for the former diagonal vertex certificate

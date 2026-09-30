@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Normalization.CenterRadius
-import SquaresInCircles.Six.SquareSupport
-import SquaresInCircles.Seven.SeparatingAxes
+module
+public import SquaresInCircles.Six.Normalization.CenterRadius
+public import SquaresInCircles.Six.SquareSupport
+public import SquaresInCircles.Seven.SeparatingAxes
+
+@[expose] public section
 
 /-!
 # T2: complete directed central separating axes

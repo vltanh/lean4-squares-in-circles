@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.TwoWallReduction
+module
+public import SquaresInCircles.Six.Analytic.TwoWallReduction
+
+@[expose] public section
 
 /-!
 # The geometric endpoint inventory of a rectangle cut by n=0,w=0,n=w

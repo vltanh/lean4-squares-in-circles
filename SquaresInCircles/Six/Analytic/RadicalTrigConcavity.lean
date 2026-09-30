@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.EndpointReduction
-import Mathlib.Analysis.SpecialFunctions.Sqrt
+module
+public import SquaresInCircles.Six.Analytic.EndpointReduction
+public import Mathlib.Analysis.SpecialFunctions.Sqrt
+
+@[expose] public section
 
 /-!
 # A curvature identity for the radical terms in Appendix A

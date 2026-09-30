@@ -1,8 +1,11 @@
-import SquaresInCircles.Six.AnalyticNormalization
-import SquaresInCircles.Six.Analytic.ElementaryTrig
-import SquaresInCircles.Six.Analytic.CardinalFrame
-import SquaresInCircles.Six.Analytic.CandidateBounds
-import SquaresInCircles.Six.Stress.DiagonalRemainder
+module
+public import SquaresInCircles.Six.AnalyticNormalization
+public import SquaresInCircles.Six.Analytic.ElementaryTrig
+public import SquaresInCircles.Six.Analytic.CardinalFrame
+public import SquaresInCircles.Six.Analytic.CandidateBounds
+public import SquaresInCircles.Six.Stress.DiagonalRemainder
+
+@[expose] public section
 
 /-!
 # Human-analytic checkpoint for the six-square proof

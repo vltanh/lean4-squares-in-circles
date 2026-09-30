@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Normalization.CapGeometry
-import SquaresInCircles.Seven.MarkerArc
+module
+public import SquaresInCircles.Six.Normalization.CapGeometry
+public import SquaresInCircles.Seven.MarkerArc
+
+@[expose] public section
 
 /-!
 # Genuine signed Seven markers used before the strong central box

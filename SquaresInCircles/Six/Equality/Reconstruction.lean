@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Equality.SupportRigidity
-import SquaresInCircles.Six.Equality.Reflection
+module
+public import SquaresInCircles.Six.Equality.SupportRigidity
+public import SquaresInCircles.Six.Equality.Reflection
+
+@[expose] public section
 
 /-!
 # Complete equality reconstruction

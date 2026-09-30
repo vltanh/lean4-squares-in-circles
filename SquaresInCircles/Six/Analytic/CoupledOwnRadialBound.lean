@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.CoupledOwnProfiles
+module
+public import SquaresInCircles.Six.Analytic.CoupledOwnProfiles
+
+@[expose] public section
 
 /-!
 # From the coupled central profiles to secondary separation

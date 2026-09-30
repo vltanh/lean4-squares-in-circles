@@ -1,4 +1,7 @@
-import SquaresInCircles.Common.Basic
+module
+public import SquaresInCircles.Common.Basic
+
+@[expose] public section
 
 /-!
 # Contact tangents and the octagon

@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Normalization.ActualMarkers
+module
+public import SquaresInCircles.Six.Normalization.ActualMarkers
+
+@[expose] public section
 
 /-!
 # Side-nearestness as an actual point-set statement

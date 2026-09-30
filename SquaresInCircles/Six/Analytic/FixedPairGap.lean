@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.FixedPairConcavity
+module
+public import SquaresInCircles.Six.Analytic.FixedPairConcavity
+
+@[expose] public section
 
 /-!
 # The exact target gap on closed sign sectors

@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.FixedPairPolynomial
+module
+public import SquaresInCircles.Six.Analytic.FixedPairPolynomial
+
+@[expose] public section
 
 /-!
 # Whole-domain error control for the endpoint polynomial

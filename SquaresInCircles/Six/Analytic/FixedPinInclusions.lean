@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.OwnAxisWindows
-import SquaresInCircles.Six.Analytic.CoreProfiles
+module
+public import SquaresInCircles.Six.Analytic.OwnAxisWindows
+public import SquaresInCircles.Six.Analytic.CoreProfiles
+
+@[expose] public section
 
 /-!
 # Fixed-pin inclusion from analytic profiles

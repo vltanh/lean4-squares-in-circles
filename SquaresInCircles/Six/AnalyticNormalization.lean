@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Normalization.StrongCardinal
-import SquaresInCircles.Six.Stress.CandidateCardinal
+module
+public import SquaresInCircles.Six.Normalization.StrongCardinal
+public import SquaresInCircles.Six.Stress.CandidateCardinal
+
+@[expose] public section
 
 /-!
 # Analytic normalization of an arbitrary six-square packing

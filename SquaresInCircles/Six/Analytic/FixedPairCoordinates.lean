@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.FixedPair
-import SquaresInCircles.Six.PinAxes
+module
+public import SquaresInCircles.Six.Analytic.FixedPair
+public import SquaresInCircles.Six.PinAxes
+
+@[expose] public section
 
 /-!
 # Actual coordinates of the fixed-weight N/W stress

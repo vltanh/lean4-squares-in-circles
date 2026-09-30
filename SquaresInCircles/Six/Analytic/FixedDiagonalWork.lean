@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Analytic.FixedPairReflection
-import SquaresInCircles.Six.Analytic.FixedDiagonalRemainder
-import SquaresInCircles.Six.Stress.StrictSupport
+module
+public import SquaresInCircles.Six.Analytic.FixedPairReflection
+public import SquaresInCircles.Six.Analytic.FixedDiagonalRemainder
+public import SquaresInCircles.Six.Stress.StrictSupport
+
+@[expose] public section
 
 /-!
 # Actual diagonal work for the fixed-pair proof

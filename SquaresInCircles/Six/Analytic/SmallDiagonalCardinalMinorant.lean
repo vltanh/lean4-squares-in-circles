@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.SmallDiagonalStressTools
+module
+public import SquaresInCircles.Six.Analytic.SmallDiagonalStressTools
+
+@[expose] public section
 
 /-!
 # Cardinal W: a radical minorant on the whole small-diagonal rectangle

@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.FixedDiagonalVertex
+module
+public import SquaresInCircles.Six.Analytic.FixedDiagonalVertex
+
+@[expose] public section
 
 /-!
 # Fixed-pair diagonal remainder, with its actual line coefficients

@@ -1,5 +1,8 @@
-import SquaresInCircles.Common.Basic
-import Mathlib.Tactic
+module
+public import SquaresInCircles.Common.Basic
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # The finite counting step after five-pin covering

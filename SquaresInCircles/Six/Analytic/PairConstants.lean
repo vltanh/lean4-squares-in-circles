@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.CandidateBounds
+module
+public import SquaresInCircles.Six.Analytic.CandidateBounds
+
+@[expose] public section
 
 /-!
 # Candidate constants for the analytic pair argument

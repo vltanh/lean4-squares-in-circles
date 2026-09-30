@@ -1,6 +1,9 @@
-import SquaresInCircles.Seven.Labels
-import SquaresInCircles.Seven.Analysis
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
+module
+public import SquaresInCircles.Seven.Labels
+public import SquaresInCircles.Seven.Analysis
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
+
+@[expose] public section
 
 /-!
 # The marker arc

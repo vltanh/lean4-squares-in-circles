@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.PairConstants
-import SquaresInCircles.Six.Stress.VertexEnvelope
+module
+public import SquaresInCircles.Six.Analytic.PairConstants
+public import SquaresInCircles.Six.Stress.VertexEnvelope
+
+@[expose] public section
 
 /-!
 # A fixed-central-weight adjacent-pair stress

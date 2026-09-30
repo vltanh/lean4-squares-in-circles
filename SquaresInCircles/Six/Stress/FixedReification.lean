@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Stress.FixedGraph
+module
+public import SquaresInCircles.Six.Stress.FixedGraph
+
+@[expose] public section
 
 /-!
 # Proof-producing expressions for the fixed stresses

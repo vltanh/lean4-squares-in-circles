@@ -1,10 +1,13 @@
-import SquaresInCircles.Seven.EasySectors
-import SquaresInCircles.Seven.ForwardNegativeTarget
-import SquaresInCircles.Seven.ForwardBothNegative
-import SquaresInCircles.Seven.OppositeForward
-import SquaresInCircles.Seven.InwardAxialTarget
-import SquaresInCircles.Seven.InwardSideTarget
-import SquaresInCircles.Seven.InwardOpposite
+module
+public import SquaresInCircles.Seven.EasySectors
+public import SquaresInCircles.Seven.ForwardNegativeTarget
+public import SquaresInCircles.Seven.ForwardBothNegative
+public import SquaresInCircles.Seven.OppositeForward
+public import SquaresInCircles.Seven.InwardAxialTarget
+public import SquaresInCircles.Seven.InwardSideTarget
+public import SquaresInCircles.Seven.InwardOpposite
+
+@[expose] public section
 
 /-!
 # The gap of `π/3`

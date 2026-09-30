@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.CoreProfiles
-import SquaresInCircles.Six.Analytic.BasicExclusions
+module
+public import SquaresInCircles.Six.Analytic.CoreProfiles
+public import SquaresInCircles.Six.Analytic.BasicExclusions
+
+@[expose] public section
 
 /-!
 # North OWN markers in the large-center case

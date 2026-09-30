@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.PinDirectedAxes
+module
+public import SquaresInCircles.Six.Analytic.PinDirectedAxes
+
+@[expose] public section
 
 /-!
 # The W and D pins have the same transverse order in both frames

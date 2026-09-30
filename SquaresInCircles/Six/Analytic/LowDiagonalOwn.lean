@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.LowDiagonalEndpoints
-import SquaresInCircles.Six.Analytic.CanonicalWestSign
+module
+public import SquaresInCircles.Six.Analytic.LowDiagonalEndpoints
+public import SquaresInCircles.Six.Analytic.CanonicalWestSign
+
+@[expose] public section
 
 /-!
 # The low-diagonal tail for OWN W is excluded analytically

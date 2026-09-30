@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.FixedPairFormula
+module
+public import SquaresInCircles.Six.Analytic.FixedPairFormula
+
+@[expose] public section
 
 /-!
 # Whole-domain trigonometric reserves for the fixed pair

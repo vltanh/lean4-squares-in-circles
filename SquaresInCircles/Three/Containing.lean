@@ -1,7 +1,10 @@
-import SquaresInCircles.Three.Exterior
-import SquaresInCircles.Common.ArcMetric
-import SquaresInCircles.Common.ElementaryTrig
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
+module
+public import SquaresInCircles.Three.Exterior
+public import SquaresInCircles.Common.ArcMetric
+public import SquaresInCircles.Common.ElementaryTrig
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
+
+@[expose] public section
 
 /-!
 # Three squares: the containing square

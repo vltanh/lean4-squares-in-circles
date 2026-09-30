@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.ProofTools.Smooth
-import Mathlib.Analysis.Calculus.Deriv.MeanValue
+module
+public import SquaresInCircles.Six.ProofTools.Smooth
+public import Mathlib.Analysis.Calculus.Deriv.MeanValue
+
+@[expose] public section
 
 /-!
 # Real calculus consequences of the smooth-expression checker

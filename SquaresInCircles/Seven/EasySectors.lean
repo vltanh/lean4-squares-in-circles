@@ -1,4 +1,7 @@
-import SquaresInCircles.Seven.Contacts
+module
+public import SquaresInCircles.Seven.Contacts
+
+@[expose] public section
 
 /-!
 # Four sectors valid for every label

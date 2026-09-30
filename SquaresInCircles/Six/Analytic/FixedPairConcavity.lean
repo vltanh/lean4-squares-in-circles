@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.FixedPairCurvature
-import SquaresInCircles.Six.Analytic.FixedPairNegativeCardinal
+module
+public import SquaresInCircles.Six.Analytic.FixedPairCurvature
+public import SquaresInCircles.Six.Analytic.FixedPairNegativeCardinal
+
+@[expose] public section
 
 /-!
 # Concavity on the six geometric sign sectors

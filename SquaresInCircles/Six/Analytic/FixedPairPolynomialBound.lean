@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.FixedPairPolynomialError
+module
+public import SquaresInCircles.Six.Analytic.FixedPairPolynomialError
+
+@[expose] public section
 
 /-!
 # From explicit endpoint algebra to the actual analytic pair gap

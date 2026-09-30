@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.HighDiagonalAffineTransverse
+module
+public import SquaresInCircles.Six.Analytic.HighDiagonalAffineTransverse
+
+@[expose] public section
 
 /-!
 # A tangent profile that retains the shared central coordinates

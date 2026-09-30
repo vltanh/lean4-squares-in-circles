@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Analytic.ForbiddenArcs
-import SquaresInCircles.Six.Analytic.OwnMovingPin
-import SquaresInCircles.Seven.Analysis
+module
+public import SquaresInCircles.Six.Analytic.ForbiddenArcs
+public import SquaresInCircles.Six.Analytic.OwnMovingPin
+public import SquaresInCircles.Seven.Analysis
+
+@[expose] public section
 
 /-!
 # OWN angle windows from whole-octant concavity

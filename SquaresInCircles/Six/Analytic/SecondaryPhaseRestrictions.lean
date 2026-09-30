@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.NonnegativeWestSecondary
-import SquaresInCircles.Six.Analytic.SouthSecondaryComplete
+module
+public import SquaresInCircles.Six.Analytic.NonnegativeWestSecondary
+public import SquaresInCircles.Six.Analytic.SouthSecondaryComplete
+
+@[expose] public section
 
 /-!
 # Geometric phase restrictions for the remaining secondary sources

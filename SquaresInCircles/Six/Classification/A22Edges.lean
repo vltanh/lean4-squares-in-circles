@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Classification.DiagonalEdges
-import SquaresInCircles.Six.Stress.ExactCover
+module
+public import SquaresInCircles.Six.Classification.DiagonalEdges
+public import SquaresInCircles.Six.Stress.ExactCover
+
+@[expose] public section
 
 /-!
 # A2.2 diagonal-edge classification

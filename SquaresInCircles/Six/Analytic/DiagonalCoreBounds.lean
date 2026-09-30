@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.SmallDiagonalCardinalExclusion
+module
+public import SquaresInCircles.Six.Analytic.SmallDiagonalCardinalExclusion
+
+@[expose] public section
 
 /-!
 # Quantitative D bounds after the analytic d>1/2 reduction

@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.TransverseProfileBounds
+module
+public import SquaresInCircles.Six.Analytic.TransverseProfileBounds
+
+@[expose] public section
 
 /-!
 # A sharper front profile for the D-secondary reduction

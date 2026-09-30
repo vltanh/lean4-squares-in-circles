@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Normalization.MarkerGaps
-import SquaresInCircles.Common.Congruence
+module
+public import SquaresInCircles.Six.Normalization.MarkerGaps
+public import SquaresInCircles.Common.Congruence
+
+@[expose] public section
 
 /-!
 # Real signed charts are the existing geometric SquareCharts

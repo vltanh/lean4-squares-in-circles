@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.MarkerLifts
+module
+public import SquaresInCircles.Six.Analytic.MarkerLifts
+
+@[expose] public section
 
 /-!
 # The north half of the small-secondary-center forbidden arc

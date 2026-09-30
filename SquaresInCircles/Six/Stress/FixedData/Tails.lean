@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Stress.FixedData.Default
+module
+public import SquaresInCircles.Six.Stress.FixedData.Default
+
+@[expose] public section
 
 namespace SquaresInCircles.Six.Stress.FixedData
 

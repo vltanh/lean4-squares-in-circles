@@ -1,5 +1,8 @@
-import SquaresInCircles.Seven.PairModel
-import Mathlib.Analysis.Calculus.LocalExtr.Basic
+module
+public import SquaresInCircles.Seven.PairModel
+public import Mathlib.Analysis.Calculus.LocalExtr.Basic
+
+@[expose] public section
 
 /-!
 # Smooth minima of a support sum

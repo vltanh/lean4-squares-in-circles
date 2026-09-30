@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Stress.BalancedProjections
+module
+public import SquaresInCircles.Six.Stress.BalancedProjections
+
+@[expose] public section
 
 /-!
 # Exact factorization of the common reverse stress

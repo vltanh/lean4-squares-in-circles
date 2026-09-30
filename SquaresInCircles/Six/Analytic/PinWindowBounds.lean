@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.PinSectorCover
+module
+public import SquaresInCircles.Six.Analytic.PinSectorCover
+
+@[expose] public section
 
 /-!
 # Pin-specific OWN window endpoints

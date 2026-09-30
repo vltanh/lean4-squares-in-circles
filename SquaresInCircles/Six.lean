@@ -1,10 +1,13 @@
-import SquaresInCircles.Six.Construction
-import SquaresInCircles.Six.Normalization.StrongCardinal
-import SquaresInCircles.Six.Stress.CandidateRadius
-import SquaresInCircles.Six.Stress.CandidateCardinal
-import SquaresInCircles.Six.Stress.StrictSupport
-import SquaresInCircles.Six.Classification.CandidateGraph
-import SquaresInCircles.Six.Goals
+module
+public import SquaresInCircles.Six.Construction
+public import SquaresInCircles.Six.Normalization.StrongCardinal
+public import SquaresInCircles.Six.Stress.CandidateRadius
+public import SquaresInCircles.Six.Stress.CandidateCardinal
+public import SquaresInCircles.Six.Stress.StrictSupport
+public import SquaresInCircles.Six.Classification.CandidateGraph
+public import SquaresInCircles.Six.Goals
+
+@[expose] public section
 
 /-!
 # Six-square formalization development entry point

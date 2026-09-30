@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Patterns
+module
+public import SquaresInCircles.Six.Patterns
+
+@[expose] public section
 
 /-!
 # P1/P2 and the equality obstruction of canonical OWN bits

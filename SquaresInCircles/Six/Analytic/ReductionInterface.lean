@@ -1,7 +1,10 @@
-import SquaresInCircles.Six.Analytic.SecondaryReduction
-import SquaresInCircles.Six.Analytic.FixedCandidateClosure
-import SquaresInCircles.Six.Analytic.SouthOwnLowerTail
-import SquaresInCircles.Six.Analytic.CandidateWestTail.Geometry
+module
+public import SquaresInCircles.Six.Analytic.SecondaryReduction
+public import SquaresInCircles.Six.Analytic.FixedCandidateClosure
+public import SquaresInCircles.Six.Analytic.SouthOwnLowerTail
+public import SquaresInCircles.Six.Analytic.CandidateWestTail.Geometry
+
+@[expose] public section
 
 /-!
 # Exact remaining obligations of the analytic reduction

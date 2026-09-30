@@ -1,5 +1,8 @@
-import SquaresInCircles.Common.AngularBudget
-import Mathlib.Analysis.SpecialFunctions.Complex.Arg
+module
+public import SquaresInCircles.Common.AngularBudget
+public import Mathlib.Analysis.SpecialFunctions.Complex.Arg
+
+@[expose] public section
 
 /-!
 # Square-local circle charts

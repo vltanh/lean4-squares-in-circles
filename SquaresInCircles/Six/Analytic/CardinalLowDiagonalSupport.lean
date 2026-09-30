@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.CardinalLowDiagonalEndpoints
+module
+public import SquaresInCircles.Six.Analytic.CardinalLowDiagonalEndpoints
+
+@[expose] public section
 
 /-!
 # Support comparison for the cardinal-W low-diagonal stress

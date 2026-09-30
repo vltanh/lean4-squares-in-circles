@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.SouthTailScalar
-import SquaresInCircles.Six.Analytic.SecondaryReduction
+module
+public import SquaresInCircles.Six.Analytic.SouthTailScalar
+public import SquaresInCircles.Six.Analytic.SecondaryReduction
+
+@[expose] public section
 
 /-!
 # Close the lower OWN-S tail with actual canonical separators

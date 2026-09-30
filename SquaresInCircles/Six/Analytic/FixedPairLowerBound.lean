@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.FixedPairEndpoints
+module
+public import SquaresInCircles.Six.Analytic.FixedPairEndpoints
+
+@[expose] public section
 
 /-!
 # Analytic fixed-pair envelope

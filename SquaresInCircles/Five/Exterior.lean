@@ -1,5 +1,8 @@
-import SquaresInCircles.Common.RectangleArcs
-import SquaresInCircles.Common.ElementaryTrig
+module
+public import SquaresInCircles.Common.RectangleArcs
+public import SquaresInCircles.Common.ElementaryTrig
+
+@[expose] public section
 
 /-!
 # Five squares: the 12-gon and the exterior arcs

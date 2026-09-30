@@ -1,5 +1,8 @@
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Angle
-import Mathlib.Tactic.Linarith
+module
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Angle
+public import Mathlib.Tactic.Linarith
+
+@[expose] public section
 
 /-!
 # Squares, disks, packings, congruence and the optimal models

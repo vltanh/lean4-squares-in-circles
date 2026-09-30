@@ -1,5 +1,8 @@
-import SquaresInCircles.Seven.InwardOppositeMinima
-import SquaresInCircles.Seven.InwardAxialTarget
+module
+public import SquaresInCircles.Seven.InwardOppositeMinima
+public import SquaresInCircles.Seven.InwardAxialTarget
+
+@[expose] public section
 
 /-!
 # The inward axis with opposite signs

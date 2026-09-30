@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.OutwardAxes
+module
+public import SquaresInCircles.Six.Analytic.OutwardAxes
+
+@[expose] public section
 
 /-!
 # Primary separators cannot occur across a sixty-degree phase gap

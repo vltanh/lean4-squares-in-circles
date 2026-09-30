@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Stress.CandidateRadius
+module
+public import SquaresInCircles.Six.Stress.CandidateRadius
+
+@[expose] public section
 
 /-!
 # N26 at the exact candidate radius

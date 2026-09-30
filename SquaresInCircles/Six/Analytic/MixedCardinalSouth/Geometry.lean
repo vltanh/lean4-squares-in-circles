@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Analytic.MixedCardinalSouth.Scalar
-import SquaresInCircles.Six.Analytic.SecondaryReduction
-import SquaresInCircles.Six.Stress.Reverse
+module
+public import SquaresInCircles.Six.Analytic.MixedCardinalSouth.Scalar
+public import SquaresInCircles.Six.Analytic.SecondaryReduction
+public import SquaresInCircles.Six.Stress.Reverse
+
+@[expose] public section
 
 /-!
 # A cardinal W rules out the second mixed source below s=12/25

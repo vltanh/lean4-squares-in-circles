@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.RadicalTrigConcavity
+module
+public import SquaresInCircles.Six.Analytic.RadicalTrigConcavity
+
+@[expose] public section
 
 /-!
 # Curvature of a general first-harmonic square root

@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.PairTaylorApprox
-import SquaresInCircles.Six.Stress.Support
+module
+public import SquaresInCircles.Six.Analytic.PairTaylorApprox
+public import SquaresInCircles.Six.Stress.Support
+
+@[expose] public section
 
 /-!
 # Explicit perturbation and square-root comparisons

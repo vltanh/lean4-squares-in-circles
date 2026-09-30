@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.FrozenPrimaryEndpoints
-import SquaresInCircles.Six.Analytic.SmallGapPrimary
+module
+public import SquaresInCircles.Six.Analytic.FrozenPrimaryEndpoints
+public import SquaresInCircles.Six.Analytic.SmallGapPrimary
+
+@[expose] public section
 
 /-!
 # Analytic exclusion of the inward W-primary D-edge for OWN W

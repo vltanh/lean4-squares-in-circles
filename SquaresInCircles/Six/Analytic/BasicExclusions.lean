@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.QuadrantGeometry
+module
+public import SquaresInCircles.Six.Analytic.QuadrantGeometry
+
+@[expose] public section
 
 /-!
 # Elementary separator exclusions before the strong central box

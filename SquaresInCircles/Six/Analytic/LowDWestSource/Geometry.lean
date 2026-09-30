@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.LowDWestSource.Scalar
-import SquaresInCircles.Six.Stress.Reverse
+module
+public import SquaresInCircles.Six.Analytic.LowDWestSource.Scalar
+public import SquaresInCircles.Six.Stress.Reverse
+
+@[expose] public section
 
 /-!
 # Connect the low-D quadrilateral stress to the actual packing

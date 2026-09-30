@@ -1,5 +1,8 @@
-import SquaresInCircles.Common.ElementaryTrig
-import SquaresInCircles.Common.Charts
+module
+public import SquaresInCircles.Common.ElementaryTrig
+public import SquaresInCircles.Common.Charts
+
+@[expose] public section
 
 /-!
 # States, labels and markers

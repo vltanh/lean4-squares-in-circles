@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Stress.CandidateStressConstants
+module
+public import SquaresInCircles.Six.Stress.CandidateStressConstants
+
+@[expose] public section
 
 /-!
 # Rational bounds from the exact candidate equations

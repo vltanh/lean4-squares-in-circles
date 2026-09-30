@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Normalization.Constants
+module
+public import SquaresInCircles.Six.Normalization.Constants
+
+@[expose] public section
 
 /-!
 # An analytic obstruction to failure of the OWN moving pin

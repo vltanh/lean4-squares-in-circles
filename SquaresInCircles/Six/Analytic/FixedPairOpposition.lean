@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.FixedPairRadicands
+module
+public import SquaresInCircles.Six.Analytic.FixedPairRadicands
+
+@[expose] public section
 
 /-!
 # Why the alternate N-primary source has nonpositive n-curvature

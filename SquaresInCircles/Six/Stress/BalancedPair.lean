@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Stress.CandidateStressConstants
-import SquaresInCircles.Six.Normalization.CentralSAT
+module
+public import SquaresInCircles.Six.Stress.CandidateStressConstants
+public import SquaresInCircles.Six.Normalization.CentralSAT
+
+@[expose] public section
 
 /-!
 # A common adjacent-pair stress

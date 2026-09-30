@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.CapFixedPins
-import SquaresInCircles.Six.Normalization.SecondarySeparation
+module
+public import SquaresInCircles.Six.Analytic.CapFixedPins
+public import SquaresInCircles.Six.Normalization.SecondarySeparation
+
+@[expose] public section
 
 /-!
 # Analytic five-pin covering with the location information retained

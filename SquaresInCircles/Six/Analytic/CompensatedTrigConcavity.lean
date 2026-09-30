@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Analytic.FrozenTrigStress
-import SquaresInCircles.Seven.Analysis
-import Mathlib.Analysis.Real.Pi.Bounds
+module
+public import SquaresInCircles.Six.Analytic.FrozenTrigStress
+public import SquaresInCircles.Seven.Analysis
+public import Mathlib.Analysis.Real.Pi.Bounds
+
+@[expose] public section
 
 /-!
 # Concavity with a compensated negative mixed sine term

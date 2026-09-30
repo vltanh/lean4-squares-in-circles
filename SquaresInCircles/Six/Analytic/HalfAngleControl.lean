@@ -1,6 +1,9 @@
-import SquaresInCircles.Seven.Analysis
-import Mathlib.Analysis.Real.Pi.Bounds
-import Mathlib.Tactic
+module
+public import SquaresInCircles.Seven.Analysis
+public import Mathlib.Analysis.Real.Pi.Bounds
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Whole-interval estimates for the canonical central-margin difference

@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Analytic.FrozenTrigStress
-import SquaresInCircles.Six.Analytic.SharpFrontProfile
-import SquaresInCircles.Six.Stress.Support
+module
+public import SquaresInCircles.Six.Analytic.FrozenTrigStress
+public import SquaresInCircles.Six.Analytic.SharpFrontProfile
+public import SquaresInCircles.Six.Stress.Support
+
+@[expose] public section
 
 /-!
 # Analytic tools for frozen-center small-diagonal stresses

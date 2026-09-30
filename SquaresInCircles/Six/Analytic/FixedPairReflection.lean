@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.FixedPairPacking
+module
+public import SquaresInCircles.Six.Analytic.FixedPairPacking
+
+@[expose] public section
 
 /-!
 # The E/S pair is the same local calculation

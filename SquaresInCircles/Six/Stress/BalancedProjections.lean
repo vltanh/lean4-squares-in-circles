@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Stress.BalancedSystem
+module
+public import SquaresInCircles.Six.Stress.BalancedSystem
+
+@[expose] public section
 
 /-!
 # Exact local-force identities

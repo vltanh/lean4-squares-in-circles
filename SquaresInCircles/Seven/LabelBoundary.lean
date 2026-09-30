@@ -1,4 +1,7 @@
-import SquaresInCircles.Seven.Labels
+module
+public import SquaresInCircles.Seven.Labels
+
+@[expose] public section
 
 /-!
 # The boundary of the label regions

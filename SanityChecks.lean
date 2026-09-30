@@ -1,4 +1,7 @@
-import SquaresInCircles
+module
+public import SquaresInCircles
+
+@[expose] public section
 
 /-!
 Regression checks: the radius and model tables, the exact rational margins the

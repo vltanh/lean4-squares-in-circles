@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.DoubleSecondaryOwnBound
+module
+public import SquaresInCircles.Six.Analytic.DoubleSecondaryOwnBound
+
+@[expose] public section
 
 /-!
 # The double-D-secondary hard case is impossible for actual OWN W and S

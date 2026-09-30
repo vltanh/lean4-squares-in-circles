@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.FrozenPrimaryEndpoints
+module
+public import SquaresInCircles.Six.Analytic.FrozenPrimaryEndpoints
+
+@[expose] public section
 
 /-!
 # Cardinal W cannot separate from D on positive D-primary

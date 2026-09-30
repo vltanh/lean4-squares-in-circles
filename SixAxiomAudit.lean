@@ -1,5 +1,8 @@
-import SquaresInCircles.Six
-import SquaresInCircles.Six.AnalyticReduction
+module
+public import SquaresInCircles.Six
+public import SquaresInCircles.Six.AnalyticReduction
+
+@[expose] public section
 
 /-!
 # Deferred n=6 kernel/axiom audit

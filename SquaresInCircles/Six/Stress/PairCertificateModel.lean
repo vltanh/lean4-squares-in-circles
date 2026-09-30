@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Stress.VertexEnvelope
-import SquaresInCircles.Six.Stress.SupportExpression
-import SquaresInCircles.Six.ProofTools.SmoothCalculus
+module
+public import SquaresInCircles.Six.Stress.VertexEnvelope
+public import SquaresInCircles.Six.Stress.SupportExpression
+public import SquaresInCircles.Six.ProofTools.SmoothCalculus
+
+@[expose] public section
 
 /-!
 # Computational expressions for the common pair lower bound

@@ -1,7 +1,10 @@
-import SquaresInCircles.Six.Analytic.RadicalTrigConcavity
-import SquaresInCircles.Six.Normalization.CapBounds
-import SquaresInCircles.Six.Normalization.SecondarySeparation
-import SquaresInCircles.Seven.Analysis
+module
+public import SquaresInCircles.Six.Analytic.RadicalTrigConcavity
+public import SquaresInCircles.Six.Normalization.CapBounds
+public import SquaresInCircles.Six.Normalization.SecondarySeparation
+public import SquaresInCircles.Seven.Analysis
+
+@[expose] public section
 
 /-!
 # One analytic stress for the cardinal/cardinal mixed west-wing case

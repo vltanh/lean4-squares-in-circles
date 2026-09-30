@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Normalization.RelaxedCentral
-import SquaresInCircles.Six.Normalization.PinData
-import SquaresInCircles.Six.ProofTools.Certificate
+module
+public import SquaresInCircles.Six.Normalization.RelaxedCentral
+public import SquaresInCircles.Six.Normalization.PinData
+public import SquaresInCircles.Six.ProofTools.Certificate
+
+@[expose] public section
 
 /-!
 # Historical reified normalization predicates

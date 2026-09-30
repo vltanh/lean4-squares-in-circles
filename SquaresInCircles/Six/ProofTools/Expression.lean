@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.ProofTools.TrigInterval
+module
+public import SquaresInCircles.Six.ProofTools.TrigInterval
+
+@[expose] public section
 
 /-!
 # Reified real scalar expressions

@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.MovingPinPolynomial
-import SquaresInCircles.Six.Normalization.CentralSAT
+module
+public import SquaresInCircles.Six.Analytic.MovingPinPolynomial
+public import SquaresInCircles.Six.Normalization.CentralSAT
+
+@[expose] public section
 
 /-!
 # The OWN moving pin, without a finite-cover certificate

@@ -1,4 +1,7 @@
-import SquaresInCircles
+module
+public import SquaresInCircles
+
+@[expose] public section
 
 /-!
 Dependency audit. Every line below must report exactly

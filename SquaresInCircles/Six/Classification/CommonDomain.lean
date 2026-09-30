@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Classification.CandidateTails
-import SquaresInCircles.Six.Stress.DiagonalVertexCheck
+module
+public import SquaresInCircles.Six.Classification.CandidateTails
+public import SquaresInCircles.Six.Stress.DiagonalVertexCheck
+
+@[expose] public section
 
 /-!
 # A common compact domain for the balanced candidate stress

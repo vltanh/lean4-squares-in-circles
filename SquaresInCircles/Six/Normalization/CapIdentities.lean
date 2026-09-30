@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Normalization.Constants
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
+module
+public import SquaresInCircles.Six.Normalization.Constants
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
+
+@[expose] public section
 
 /-!
 # Exact cap-branch identity I1 and the opposite-cardinal budget deduction

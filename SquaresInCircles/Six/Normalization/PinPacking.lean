@@ -1,7 +1,10 @@
-import SquaresInCircles.Six.Normalization.StrongCore
-import SquaresInCircles.Six.Normalization.PinCounting
-import SquaresInCircles.Six.Analytic.PinWindows
-import SquaresInCircles.Six.CongruenceTools
+module
+public import SquaresInCircles.Six.Normalization.StrongCore
+public import SquaresInCircles.Six.Normalization.PinCounting
+public import SquaresInCircles.Six.Analytic.PinWindows
+public import SquaresInCircles.Six.CongruenceTools
+
+@[expose] public section
 
 /-!
 # The pin-labelled packing, constructed by analytic geometry

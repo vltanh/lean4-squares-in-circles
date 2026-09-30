@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Equality.LocalCenters
+module
+public import SquaresInCircles.Six.Equality.LocalCenters
+
+@[expose] public section
 
 /-!
 # Actual support equality determines all exterior coordinates

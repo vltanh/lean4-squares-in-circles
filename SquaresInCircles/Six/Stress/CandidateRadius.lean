@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Normalization.Complete
-import SquaresInCircles.Six.Stress.CandidateRadiusConstants
+module
+public import SquaresInCircles.Six.Normalization.Complete
+public import SquaresInCircles.Six.Stress.CandidateRadiusConstants
+
+@[expose] public section
 
 /-!
 # The exact candidate-radius interface for downstream stresses

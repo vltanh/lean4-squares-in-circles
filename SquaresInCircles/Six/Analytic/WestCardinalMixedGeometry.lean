@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.WestCardinalMixedSupport
+module
+public import SquaresInCircles.Six.Analytic.WestCardinalMixedSupport
+
+@[expose] public section
 
 /-!
 # Exclude the missing-west mixed case when both wings are cardinal

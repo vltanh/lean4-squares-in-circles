@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.DiagonalPositive
-import SquaresInCircles.Six.DirectedAxes
+module
+public import SquaresInCircles.Six.DiagonalPositive
+public import SquaresInCircles.Six.DirectedAxes
+
+@[expose] public section
 
 /-!
 # Exact fixed-pin chords

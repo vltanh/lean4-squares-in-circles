@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.PinWindowBounds
+module
+public import SquaresInCircles.Six.Analytic.PinWindowBounds
+
+@[expose] public section
 
 /-!
 # The diagonal pin cannot lie in the negative west-cap fringe

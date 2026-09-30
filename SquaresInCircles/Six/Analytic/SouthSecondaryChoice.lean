@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.SecondaryDominance
-import SquaresInCircles.Six.Analytic.DoubleSecondaryExclusion
+module
+public import SquaresInCircles.Six.Analytic.SecondaryDominance
+public import SquaresInCircles.Six.Analytic.DoubleSecondaryExclusion
+
+@[expose] public section
 
 /-!
 # Selecting a D/S secondary source without a stress table

@@ -1,5 +1,8 @@
-import SquaresInCircles.Seven.BoundaryProfiles
-import SquaresInCircles.Seven.Contacts
+module
+public import SquaresInCircles.Seven.BoundaryProfiles
+public import SquaresInCircles.Seven.Contacts
+
+@[expose] public section
 
 /-!
 # The inward axis with opposite signs: minima on the boundary

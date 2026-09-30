@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Analytic.PairCoordinates
+module
+public import SquaresInCircles.Six.Analytic.PairCoordinates
+
+@[expose] public section
 
 /-!
 # Interior pins determine the direction of a separator

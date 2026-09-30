@@ -1,6 +1,9 @@
-import SquaresInCircles.Six.Construction
-import SquaresInCircles.Six.Normalization.PinReflection
-import SquaresInCircles.Six.CongruenceTools
+module
+public import SquaresInCircles.Six.Construction
+public import SquaresInCircles.Six.Normalization.PinReflection
+public import SquaresInCircles.Six.CongruenceTools
+
+@[expose] public section
 
 /-!
 # Reflection bookkeeping for the equality endpoint

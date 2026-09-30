@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Stress.BalancedClosure
+module
+public import SquaresInCircles.Six.Stress.BalancedClosure
+
+@[expose] public section
 
 /-!
 # The unrestricted six-square radius lower bound

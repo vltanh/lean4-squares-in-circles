@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Stress.PairCertificateModel
-import SquaresInCircles.Six.Analytic.CandidateBounds
+module
+public import SquaresInCircles.Six.Stress.PairCertificateModel
+public import SquaresInCircles.Six.Analytic.CandidateBounds
+
+@[expose] public section
 
 /-!
 # Remaining computational checks for the common pair envelope

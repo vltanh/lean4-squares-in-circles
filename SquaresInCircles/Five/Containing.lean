@@ -1,4 +1,7 @@
-import SquaresInCircles.Five.Exterior
+module
+public import SquaresInCircles.Five.Exterior
+
+@[expose] public section
 
 /-!
 # Five squares: the containing square

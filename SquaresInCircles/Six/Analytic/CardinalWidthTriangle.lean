@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.HighDiagonalProfile
-import SquaresInCircles.Six.Normalization.OwnEastExclusion
+module
+public import SquaresInCircles.Six.Analytic.HighDiagonalProfile
+public import SquaresInCircles.Six.Normalization.OwnEastExclusion
+
+@[expose] public section
 
 /-!
 # Cardinal width terms contain a whole diagonal width

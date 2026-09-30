@@ -1,5 +1,8 @@
-import SquaresInCircles.Seven.SmoothMinima
-import SquaresInCircles.Seven.FixedGap
+module
+public import SquaresInCircles.Seven.SmoothMinima
+public import SquaresInCircles.Seven.FixedGap
+
+@[expose] public section
 
 /-!
 # All marker gaps below `π/3`

@@ -1,4 +1,7 @@
-import SquaresInCircles.Six.Normalization.CapSupport
+module
+public import SquaresInCircles.Six.Normalization.CapSupport
+
+@[expose] public section
 
 /-!
 # A deep cap must face the square's primary coordinate

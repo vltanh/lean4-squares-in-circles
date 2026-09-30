@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.CanonicalWestSign
-import SquaresInCircles.Six.Analytic.EndpointReduction
+module
+public import SquaresInCircles.Six.Analytic.CanonicalWestSign
+public import SquaresInCircles.Six.Analytic.EndpointReduction
+
+@[expose] public section
 
 /-!
 # A coupled angle budget for two OWN wings

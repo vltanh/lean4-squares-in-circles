@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Normalization.CardinalGeometry
-import SquaresInCircles.Six.Analytic.OwnMovingPin
+module
+public import SquaresInCircles.Six.Normalization.CardinalGeometry
+public import SquaresInCircles.Six.Analytic.OwnMovingPin
+
+@[expose] public section
 
 /-!
 # N24: east and north moving pins by analytic geometry

@@ -1,4 +1,7 @@
-import SquaresInCircles.Common.RectangleArcs
+module
+public import SquaresInCircles.Common.RectangleArcs
+
+@[expose] public section
 
 /-!
 # Four squares: exterior arcs

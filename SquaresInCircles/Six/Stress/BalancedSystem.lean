@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Classification.CommonDomain
-import SquaresInCircles.Six.Stress.StrictSupport
+module
+public import SquaresInCircles.Six.Classification.CommonDomain
+public import SquaresInCircles.Six.Stress.StrictSupport
+
+@[expose] public section
 
 /-!
 # One actual stress for every canonical central-bit pattern

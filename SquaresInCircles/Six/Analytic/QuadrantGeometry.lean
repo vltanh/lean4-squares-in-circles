@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.CapChart
-import SquaresInCircles.Six.Analytic.SouthMarker
+module
+public import SquaresInCircles.Six.Analytic.CapChart
+public import SquaresInCircles.Six.Analytic.SouthMarker
+
+@[expose] public section
 
 /-!
 # Exact formulas for the east, north and south primary quadrants

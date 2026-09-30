@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Analytic.RectangleWallReduction
-import SquaresInCircles.Six.Analytic.FixedPairPolynomialBound
+module
+public import SquaresInCircles.Six.Analytic.RectangleWallReduction
+public import SquaresInCircles.Six.Analytic.FixedPairPolynomialBound
+
+@[expose] public section
 
 /-!
 # The actual endpoint inequalities of the pair concavity reduction

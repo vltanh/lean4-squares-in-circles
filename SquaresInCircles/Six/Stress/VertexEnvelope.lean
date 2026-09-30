@@ -1,5 +1,8 @@
-import SquaresInCircles.Six.Stress.BalancedPair
-import SquaresInCircles.Six.Equality.SupportMaximizers
+module
+public import SquaresInCircles.Six.Stress.BalancedPair
+public import SquaresInCircles.Six.Equality.SupportMaximizers
+
+@[expose] public section
 
 /-!
 # A smooth lower bound near the candidate and its exact base value
