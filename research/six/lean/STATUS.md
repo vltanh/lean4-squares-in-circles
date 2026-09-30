@@ -111,3 +111,12 @@ required merely to satisfy Palomar's current mechanical proof standard.
 - `ANALYTIC_DIAGONAL_PROOF.md` — diagonal scalar companion.
 - `NORMALIZATION_DEPENDENCIES.md` — normalization dependency review.
 - `UPLOAD_AUDIT.md` and audit data — historical development evidence only.
+
+
+## External-dependency removal plan
+
+The detailed static audit and removal plan is
+`EXTERNAL_DEPENDENCY_REMOVAL_CHECKLIST.md`. It is the authoritative checklist
+for eliminating certificate-era fixed-row, finite-cover, pair-envelope, and
+historical external-result dependencies from the transitive path of the n=6
+lower-bound and uniqueness theorems. Compilation is a separate later phase.
