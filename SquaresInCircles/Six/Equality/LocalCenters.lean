@@ -1,5 +1,5 @@
 module
-public import SquaresInCircles.Six.Stress.BalancedClosure
+public import SquaresInCircles.Six.Stress.DiagonalFormula
 public import SquaresInCircles.Six.Equality.SupportMaximizers
 
 @[expose] public section
@@ -10,6 +10,9 @@ public import SquaresInCircles.Six.Equality.SupportMaximizers
 The supporting disk point is unique. The feasible center is therefore unique
 on each active vertex branch, and the axial cap leaves zero transverse slack.
 The two signs below cover E/N and W/S without assuming their center coordinates.
+
+Only exact candidate algebra and geometric support theorems are imported here.
+The legacy balanced-closure adapter imports this module, not conversely.
 -/
 
 noncomputable section
