@@ -213,6 +213,46 @@ def columnModel (c : Column) : Fin 7 → UnitSquare :=
 
 end Seven
 
+namespace Six
+
+/-- Half the diagonal of a unit square. -/
+def hStar : ℝ := Real.sqrt 2 / 2
+
+def AStar : ℝ := (1466 + 1940 * hStar) / 267
+
+def BStar : ℝ := (327 + 432 * hStar) / 712
+
+def discriminant : ℝ := AStar ^ 2 - 4 * BStar
+
+/-- The small positive root, written in its numerically stable radical form. -/
+def sStar : ℝ := 2 * BStar / (AStar + Real.sqrt discriminant)
+
+def tStar : ℝ := (-20 + 30 * hStar) * sStar + 7 / 2 - 9 * hStar / 2
+
+def dStar : ℝ := 1 / 2 + hStar - tStar
+
+/-- Exact squared radius of the six-square model. -/
+def qStar : ℝ := 2 * sStar ^ 2 + 4 * sStar + 5 / 2
+
+def radius : ℝ := Real.sqrt qStar
+
+/-- The one diagonal square in the six-square model. -/
+def diagonalSquare : UnitSquare where
+  center := (-dStar, -dStar)
+  cosine := hStar
+  sine := hStar
+  unit := by
+    dsimp [hStar]
+    nlinarith [Real.sq_sqrt (show (0 : ℝ) ≤ 2 by norm_num)]
+
+/-- The exact model in C,N,E,W,S,D order. -/
+def model : Fin 6 → UnitSquare :=
+  ![axisSquare (sStar, sStar), axisSquare (sStar, sStar + 1),
+    axisSquare (sStar + 1, sStar), axisSquare (sStar - 1, tStar),
+    axisSquare (tStar, sStar - 1), diagonalSquare]
+
+end Six
+
 /-- The optimal radius for `n` unit squares, for `1 ≤ n ≤ 5` and `n = 7`. Every
 other `n` gets the placeholder `0`, about which nothing is claimed. -/
 def optimalRadius : ℕ → ℝ

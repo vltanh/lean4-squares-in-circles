@@ -1,0 +1,155 @@
+module
+public import SquaresInCircles.Six.Analytic.PinCoordinates
+public import SquaresInCircles.Six.Analytic.CapChart
+public import SquaresInCircles.Six.Normalization.CapPiercing
+
+@[expose] public section
+
+/-!
+# Cardinal caps contain their fixed pins
+
+A four-quadrant argument first finds the genuine cap-facing primary direction;
+short-axis and backwards-facing directions are excluded geometrically. East
+then uses contraction of the cap piercing point. West uses the sixty-degree
+lemma and the same one-quadratic flank argument as OWN. No pin/window fact is
+assumed in obtaining a cap-facing frame.
+-/
+
+noncomputable section
+namespace SquaresInCircles.Six.Analytic
+open Normalization
+
+lemma cap_margin_transport {t u a b h:ℝ} (he:(t:Direction)=(u:Direction))
+    (hm:h+angularWidth t≤centerX t a b) : h+angularWidth u≤centerX u a b := by
+  have hh := margin_phase_eq he .east a b 0 0
+  dsimp [centralMargin] at hh
+  linarith
+
+lemma opposite_cap_impossible {v a b h:ℝ} (hc:ContainedChart a |b|)
+    (hv:|v|≤Real.pi/4) (hh:0<h)
+    (hm:h+angularWidth (Real.pi+v)≤centerX (Real.pi+v) a b) : False := by
+  have hcos : 0≤Real.cos v := Real.cos_nonneg_of_mem_Icc
+    ⟨by linarith [(abs_le.mp hv).1,Real.pi_pos],by linarith [(abs_le.mp hv).2,Real.pi_pos]⟩
+  have hsin : |Real.sin v|≤Real.cos v := by
+    have hs := Seven.sin_le_cos_of_small ⟨abs_nonneg v,hv⟩
+    rw [sin_abs_angle (by linarith [Real.pi_pos]),Real.cos_abs] at hs
+    exact hs
+  have hA := mul_nonneg (sub_nonneg.mpr hc.u_le) hcos
+  have hB := mul_nonneg (abs_nonneg b) (sub_nonneg.mpr hsin)
+  have hbs : b*Real.sin v≤|b|*|Real.sin v| := by
+    simpa only [abs_mul] using le_abs_self (b*Real.sin v)
+  have hwidth : 0≤angularWidth v := by dsimp [angularWidth]; positivity
+  simp only [centerX,angularWidth,Real.cos_pi_add,Real.sin_pi_add,abs_neg] at hm
+  dsimp [angularWidth] at hwidth
+  nlinarith
+
+/-- A deep cap determines a primary phase within 2/5 of its cardinal normal. -/
+theorem positive_cap_direction {t a b h:ℝ} (hc:ContainedChart a |b|)
+    (hh:coreRadius≤h) (hm:h+angularWidth t≤centerX t a b) :
+    ∃ v, |v|<2/5 ∧ (t:Direction)=(v:Direction) ∧ h+angularWidth v≤centerX v a b := by
+  have hbox : (|a|+1/2)^2+(|b|+1/2)^2≤Q0 := by
+    simpa only [abs_of_nonneg (show 0≤a by linarith [hc.half_le])] using hc.containment
+  rcases four_primary_quadrants t with he | hn | hw | hs
+  · obtain ⟨v,hv,hev⟩ := he
+    have hm' := cap_margin_transport hev hm
+    have hsmall := (signed_cap_bounds hv hh hbox hm').1
+    exact ⟨v,hsmall,hev,hm'⟩
+  · obtain ⟨v,hv,hev⟩ := hn
+    have hm' := cap_margin_transport hev hm
+    have hcb : ContainedChart a |-b| := by simpa only [abs_neg] using hc
+    have htrans : h+angularWidth v≤a*Real.sin v+(-b)*Real.cos v := by
+      simpa [angularWidth,centerX,Real.cos_pi_div_two_sub,Real.sin_pi_div_two_sub,
+        add_comm,sub_eq_add_neg] using hm'
+    exact False.elim (transverse_cap_impossible hcb hv hh htrans)
+  · obtain ⟨v,hv,hev⟩ := hw
+    exact False.elim (opposite_cap_impossible hc hv (coreRadius_pos.trans_le hh)
+      (cap_margin_transport hev hm))
+  · obtain ⟨v,hv,hev⟩ := hs
+    have hm' := cap_margin_transport hev hm
+    have hcb : ContainedChart a |-b| := by simpa only [abs_neg] using hc
+    have htrans : h+angularWidth v≤-(a*Real.sin v+(-b)*Real.cos v) := by
+      have hcos : Real.cos (-Real.pi/2-v) = -Real.sin v := by
+        rw [Real.cos_sub,Real.cos_neg,Real.sin_neg,Real.cos_pi_div_two,Real.sin_pi_div_two]
+        ring
+      have hsin : Real.sin (-Real.pi/2-v) = -Real.cos v := by
+        rw [Real.sin_sub,Real.cos_neg,Real.sin_neg,Real.cos_pi_div_two,Real.sin_pi_div_two]
+        ring
+      simp only [angularWidth,centerX,hcos,hsin,abs_neg] at hm'
+      dsimp [angularWidth]
+      nlinarith
+    exact False.elim (negative_transverse_cap_impossible hcb hv hh htrans)
+
+/-- A cap of depth at least 1/2 contains the east fixed pin, with its stronger
+quarter-angle bound obtained before assigning a label. -/
+theorem east_cap_fixed_pin {t a b h:ℝ} (hc:ContainedChart a |b|)
+    (hb:|b|<1/2) (hh:1/2≤h) (hm:h+angularWidth t≤centerX t a b) :
+    ∃ v, |v|<1/4 ∧ (t:Direction)=(v:Direction) ∧
+      openSquare (orientedSquare t a b) (polarPin (9/10) 0) := by
+  have hcore : coreRadius≤h := by dsimp [coreRadius]; linarith [rho0_gt_one]
+  obtain ⟨v,hv,he,hmv⟩ := positive_cap_direction hc hcore hm
+  have hvpi : |v|≤Real.pi/4 := by linarith [Real.pi_gt_d2]
+  have hbox : (|a|+1/2)^2+(|b|+1/2)^2≤Q0 := by
+    simpa only [abs_of_nonneg (show 0≤a by linarith [hc.half_le])] using hc.containment
+  have hsupport : h≤capDepth |v| := cap_support_bound_signed hvpi hbox hmv
+  have hquarter := cap_angle_lt_quarter hh hsupport hvpi
+  have hp := cap_piercing hvpi hcore (contained_from_corner hbox) (cap_from_margin hmv)
+  have hfixed := fixed_east_of_axis_point hc hb (by linarith : |v|≤5/12)
+    (show 9/10≤h+1/2 by linarith) hp
+  exact ⟨v,hquarter,he,(square_phase_open he _).mpr hfixed⟩
+
+lemma west_cap_identity (v a b cx cy:ℝ) :
+    centralMargin .west (Real.pi+v) a b cx cy =
+      centerX v a b-angularWidth v-(1/2-cx) := by
+  simp only [centralMargin,centerX,angularWidth,Real.cos_pi_add,Real.sin_pi_add,abs_neg]
+  ring
+
+lemma west_cap_rotated_identity (t a b cx cy:ℝ) :
+    centralMargin .west t a b cx cy =
+      centerX (t-Real.pi) a b-angularWidth (t-Real.pi)-(1/2-cx) := by
+  simp only [centralMargin,centerX,angularWidth,Real.cos_sub,Real.sin_sub,
+    Real.cos_pi,Real.sin_pi,mul_neg_one,mul_zero,sub_zero,zero_sub,abs_neg]
+  ring
+
+/-- The left flank of a positive cap uses exactly the already proved profile
+obstruction; the b<0 premise follows from a hypothetical transverse failure. -/
+lemma west_cap_left_pin {v a b h:ℝ} (hc:ContainedChart a |b|) (hb:|b|<1/2)
+    (hh:coreRadius≤h) (hv:|v|<2/5) (hleft:v≤-Real.pi/12)
+    (hm:h+angularWidth v≤centerX v a b) :
+    openSquare (orientedSquare v a b) (polarPin (9/10) (-Real.pi/12)) := by
+  have hvs := abs_lt.mp hv
+  have hcos : 0≤Real.cos (-v) := Real.cos_nonneg_of_mem_Icc
+    ⟨by linarith [Real.pi_pos],by linarith [Real.pi_gt_d2]⟩
+  have hsin : 0≤Real.sin (-v) := Real.sin_nonneg_of_nonneg_of_le_pi
+    (by linarith [Real.pi_pos]) (by linarith [Real.pi_gt_d2])
+  apply (by simpa only [neg_neg] using
+    (western_left_pin (v:=-v) hc hb (by linarith) (by linarith)))
+  intro hbneg
+  have harg : v=-(-v) := by ring
+  have hm' := hm
+  conv at hm' => lhs; arg 2; arg 1; rw [harg]
+  have hmv : h+(Real.cos (-v)+Real.sin (-v))/2≤a*Real.cos (-v)+b*Real.sin (-v) := by
+    have hcos' : Real.cos v=Real.cos (-v) := by rw [Real.cos_neg]
+    have hsin' : Real.sin v= -Real.sin (-v) := by rw [Real.sin_neg]; ring
+    simpa [angularWidth,centerX,hcos',hsin',abs_neg,abs_of_nonneg hcos,
+      abs_of_nonneg hsin,sub_eq_add_neg] using hm
+  have hprod := mul_nonneg (show 0≤a-1/2 by linarith [hc.half_le])
+    (show 0≤1-Real.cos (-v) by linarith [Real.cos_le_one (-v)])
+  have hbprod := mul_nonpos_of_nonpos_of_nonneg hbneg.le hsin
+  have hcore : (77:ℝ)/200<h := coreRadius_gt_77_200.trans_le hh
+  have hcprod := mul_nonneg (show 0≤(77:ℝ)/200 by norm_num)
+    (show 0≤1-Real.cos (-v) by linarith [Real.cos_le_one (-v)])
+  nlinarith
+
+/-- The two western pins cover the cap after rotating its normal to east. -/
+theorem west_cap_fixed_pins {v a b h:ℝ} (hc:ContainedChart a |b|) (hb:|b|<1/2)
+    (hh:coreRadius≤h) (hv:|v|<2/5) (hm:h+angularWidth v≤centerX v a b) :
+    openSquare (orientedSquare v a b) (polarPin (9/10) (-Real.pi/12)) ∨
+      openSquare (orientedSquare v a b) (polarPin (9/10) (Real.pi/4)) := by
+  by_cases hl:v≤-Real.pi/12
+  · exact Or.inl (west_cap_left_pin hc hb hh hv hl hm)
+  · have h := sixty_pin_cover (t:=v) (q:=-Real.pi/12) hc hb
+      ⟨by linarith,by linarith [(abs_lt.mp hv).2,Real.pi_gt_d2]⟩
+    have hid : -Real.pi/12+Real.pi/3=Real.pi/4 := by ring
+    simpa only [hid] using h
+
+end SquaresInCircles.Six.Analytic
