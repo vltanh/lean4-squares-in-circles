@@ -125,7 +125,7 @@ the order/sign domain. Those local arithmetic calculations are development
 checks, not imported mathematical premises. The Lean source has its own
 ordinary analytic and rational proof bodies.
 
-`SixNormalizationAxiomAudit.lean` is now configured for the normalization and
+`SixAxiomAudit.lean` is now configured for the normalization and
 refinement endpoints. Its commands have NOT executed. Actual elaboration,
 proof-term/kernel acceptance and the transitive axiom output remain a separate
 deferred validation gate. Static reachability cannot establish those results.

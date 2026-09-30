@@ -509,7 +509,7 @@ hypotheses. The optional diagonal reflection is explicitly carried to the
 later equality argument.
 
 The independent entry point is `Six/AnalyticNormalization.lean`.
-`SixNormalizationAxiomAudit.lean` contains deferred audit commands, not executed
+`SixAxiomAudit.lean` contains deferred audit commands, not executed
 output. The static import review and explicit rational endpoint calculations
 are development checks only; neither is substituted for a Lean proof premise.
 The theorem bodies perform the displayed analytic reductions themselves.

@@ -1,44 +1,50 @@
 import SquaresInCircles.Six
+import SquaresInCircles.Six.AnalyticReduction
 
 /-!
-Kernel-dependency audit entry point for the written source checkpoints.
-Compilation and execution are deferred. No output of these commands is claimed
-by the source/arithmetic audit. Missing unrestricted lower-bound and uniqueness
-proofs are not replaced by print commands or proposition definitions.
+# Deferred n=6 kernel/axiom audit
+
+This is the single audit entry point for the n=6 development. These commands are
+configuration for a later compiler/kernel audit; they are NOT recorded output.
+Compilation remains deferred.
+
+The final unrestricted endpoints still require the open missing-wing and
+OWN-tail reductions described in research/six/lean/STATUS.md. Printing an
+endpoint here does not certify that its current dependency path satisfies the
+human-analytic acceptance standard.
 -/
 
+-- Candidate and construction
 #print axioms SquaresInCircles.Six.attainment
 #print axioms SquaresInCircles.Six.qStar_lt_Q0
-#print axioms SquaresInCircles.Six.exists_unique_containing_of_ceiling
-#print axioms SquaresInCircles.Six.normalize_frame_of_ceiling
-#print axioms SquaresInCircles.Six.Normalization.strict_marker_separation
-#print axioms SquaresInCircles.Six.Normalization.no_empty_long_arc
-#print axioms SquaresInCircles.Six.Normalization.central_separators_complete
+
+-- Analytic normalization
 #print axioms SquaresInCircles.Six.Normalization.strongCentralBox
+#print axioms SquaresInCircles.Six.Analytic.five_pin_cover
+#print axioms SquaresInCircles.Six.Analytic.labelled_window
 #print axioms SquaresInCircles.Six.Normalization.pinPacking_of_ceiling
 #print axioms SquaresInCircles.Six.Normalization.PinPacking.west_before_diagonal
-#print axioms SquaresInCircles.Six.Normalization.PinPacking.one_helper_per_side
 #print axioms SquaresInCircles.Six.Normalization.PinPacking.moving_pins
 #print axioms SquaresInCircles.Six.Normalization.PinPacking.D_own
 #print axioms SquaresInCircles.Six.Normalization.normalize_of_candidate
-#print axioms SquaresInCircles.Six.Normalization.WestCardinal.impossible
-#print axioms SquaresInCircles.Six.Normalization.capDepth_tilt_budget
-#print axioms SquaresInCircles.Six.Normalization.cap_piercing
-#print axioms SquaresInCircles.Six.Normalization.PinPacking.east_west_budget
-#print axioms SquaresInCircles.Six.Normalization.PinPacking.side_nearest
-#print axioms SquaresInCircles.Six.Normalization.cap_angle_lt_203_1000
 #print axioms SquaresInCircles.Six.Normalization.NormalizedPacking.east_cardinal_angle_203
 #print axioms SquaresInCircles.Six.Normalization.NormalizedPacking.north_cardinal_angle_203
-#print axioms SquaresInCircles.Six.ProofTools.Expr.eval_sound
-#print axioms SquaresInCircles.Six.ProofTools.Formula.verdict_sound
-#print axioms SquaresInCircles.Six.ProofTools.certify_sound
-#print axioms SquaresInCircles.Six.Stress.center_le_exactSupport
-#print axioms SquaresInCircles.Six.Stress.PinPacking.sharp_central_box
-#print axioms SquaresInCircles.Six.Stress.PinPacking.east_west_budget_candidate
-#print axioms SquaresInCircles.Six.Stress.PinPacking.north_south_budget_candidate
-#print axioms SquaresInCircles.Six.Stress.System.bound
-#print axioms SquaresInCircles.Six.Stress.System.support_tight
-#print axioms SquaresInCircles.Six.Stress.System.separator_tight
-#print axioms SquaresInCircles.Six.Stress.center_lt_exactSupport
-#print axioms SquaresInCircles.Six.Stress.System.exists_noncentral_force
-#print axioms SquaresInCircles.Six.Stress.System.radius_eq_of_nonnegative_defect
+
+-- Analytic pair/diagonal closure
+#print axioms SquaresInCircles.Six.Analytic.FixedPair.lower_bound
+#print axioms SquaresInCircles.Six.Analytic.FixedPair.remainder_nonnegative
+#print axioms SquaresInCircles.Six.Analytic.FixedPair.remainder_zero
+#print axioms SquaresInCircles.Six.Analytic.FixedPair.radius_of_reduction
+
+-- Analytic D-edge reduction frontier
+#print axioms SquaresInCircles.Six.Analytic.normalized_diagonal_gt_half
+#print axioms SquaresInCircles.Six.Analytic.DW_Dsecondary_gap_gt_quarter
+#print axioms SquaresInCircles.Six.Analytic.DS_Dsecondary_gap_gt_quarter
+#print axioms SquaresInCircles.Six.Analytic.candidate_or_missing_wing
+#print axioms SquaresInCircles.Six.Analytic.candidate_edges_iff_no_missing_wing
+#print axioms SquaresInCircles.Six.Analytic.FixedPair.reduction_iff_remaining_obligations
+#print axioms SquaresInCircles.Six.Analytic.FixedPair.radius_of_edges_and_own_tails
+
+-- Public endpoints; meaningful only after the analytic dependency path is closed.
+#print axioms SquaresInCircles.Six.lower_bound
+#print axioms SquaresInCircles.Six.uniqueness

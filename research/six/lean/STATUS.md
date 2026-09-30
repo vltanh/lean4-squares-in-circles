@@ -1,103 +1,124 @@
-# n=6 proof status: analytic normalization source closed
+# n=6 human-analytic proof status
 
-**The analytic normalization source is complete and connected.**
-The completed endpoint is `Normalization.normalize_of_candidate`, exported by
-`SquaresInCircles/Six/AnalyticNormalization.lean` and the isolated analytic
-entry point. It starts from the original Packing predicate and the candidate
-radius bound; pins, sectors, the small central box and separator choices are
-not added assumptions on the caller.
+PR #7, branch `feat/six-lean-proof`.
 
-**The complete unrestricted human-analytic n=6 theorem is still unfinished.**
-The remaining work is the separate downstream D-edge/tail classification and
-common pair-envelope conversion, followed by reconnection and validation of
-the existing final stress/equality/public endpoints.
+This is the single live progress ledger for the n=6 proof. Checked items mean
+that the analytic argument, Lean proof body, and relevant source call sites have
+been written. They do **not** mean Lean compilation or kernel/axiom acceptance;
+those remain deferred.
 
-Compilation and kernel/axiom acceptance remain deferred. Source completion is
-not reported as an executed Lean proof check.
+The acceptance criterion is `HUMAN_ANALYTIC_STANDARD.md`. The original
+`Packing` and `Congruent` predicates are unchanged.
 
-## Normalization completed in this continuation
+## Current frontier
 
-The strong-core forbidden-marker proof was already analytic. The remaining
-normalization dependencies have now been replaced and connected:
+Analytic normalization is complete through
+`Normalization.normalize_of_candidate`. The fixed-pair envelope and corrected
+diagonal remainder are also written analytically on their explicit domains.
+The remaining mathematical work is concentrated in two mixed D-edge source
+cases and three OWN-wing tail inequalities.
 
-1. A universal sixty-degree two-pin covering lemma from one completed-square
-   far-corner obstruction, plus the western-flank completed-square argument.
-2. OWN east/west profiles and broad windows from trigonometric concavity and
-   explicit endpoint inequalities.
-3. Cardinal cap-facing directions and fixed pins from geometric quadrant
-   cases, exact cap support and the actual open piercing point.
-4. Five-pin covering and the finite bijection on actual interiors. Unique pin
-   assignment itself rules out the wrong primary locations and gives every
-   labelled window; no separate numerical window check is used.
-5. Allowed central axes directly from the fixed pin coordinates and strong-core
-   secondary exclusion. Both the original and reflected PinPacking constructors
-   now use these analytic results.
-6. The existing analytic OWN moving-pin and W/D four-axis arguments are fully
-   connected to those analytic broad-window inputs.
-7. Appendix A's eight finite checks are replaced by whole-domain projection
-   reductions to two forward secondary sources, both using one multiplier
-   triple. W-secondary uses an affine radical majorant; D-secondary uses the
-   explicit radical second derivative and concavity. Both reduce to the seven
-   geometric vertices of the order/sign domain.
-8. The actual force, norm and support identities connect those positive bounds
-   to the geometric contradiction. D is canonically OWN. Both core-exclusion
-   inputs are explicit at the Appendix A call site.
+For `Stress.pairNormal` on ordered pairs W/D and D/S:
 
-The D-secondary W-force norm has the positive mixed term
-`53/200 + (9/40)*sin(u-t)`. An intermediate erroneous sign/dominance argument
-was corrected and removed; the completed source uses the separate curvature
-proof, not that intermediate claim.
+| W/D | D/S | Sources | Status |
+|---:|---:|---|---|
+| 2 | 6 | W-secondary / S-secondary | candidate graph |
+| 6 | 2 | D-secondary / D-secondary | analytically excluded |
+| 6 | 6 | D-secondary / S-secondary | **open: MissingWestWing** |
+| 2 | 2 | W-secondary / D-secondary | **open: MissingSouthWing** |
 
-The resulting interface retains the strong/coarse box, side-nearest chart
-bounds, genuine affine markers, fixed/moving pins, windows, cyclic order,
-cardinal-preferred two-choice rule, one helper per cardinal side, N25+, both
-opposite-cardinal budgets and D-own. The exact candidate-radius central box and
-budget refinements are exported with both cardinal hypotheses intact. The one
-possible global diagonal reflection remains explicitly recorded.
+The historical 53-cell hard table corresponds to the mixed `(6,6)` case, not
+the already excluded double-D-secondary case.
 
-## Entry points, companion and review
+## Completed: normalization
 
-- `SquaresInCircles/Six/AnalyticNormalization.lean`: normalization and its
-  refinements, independent of downstream computational classification.
-- `SquaresInCircles/Six/Analytic.lean`: includes that normalization together
-  with the earlier analytic diagonal remainder and constant results.
-- `SixNormalizationAxiomAudit.lean`: configured deferred audit commands, not
-  executed output.
-- `ANALYTIC_NORMALIZATION_PROOF.md`: human-readable argument, including the
-  two completed squares, the pin/window deductions, correct force formulas,
-  curvature identity and positive endpoint reserves.
-- `NORMALIZATION_DEPENDENCIES.md`: exact scope of the import/call-site review.
-- `ANALYTIC_PROGRESS.md`: active completion ledger.
+- [x] Strong central box from genuine marker/SAT arguments, before pins/sectors.
+- [x] Five-pin covering from direct geometry and the sixty-degree pin lemma.
+- [x] Unique pin labels and all broad angular windows.
+- [x] Allowed central axes from pin coordinates and strong-core exclusions.
+- [x] OWN moving pins and cardinal cap-piercing cases.
+- [x] W/D order and cyclic primary order.
+- [x] One explicitly recorded global diagonal reflection.
+- [x] Opposite-cardinal budgets with both hypotheses retained.
+- [x] N25+ and exact candidate-radius cardinal refinements.
+- [x] Analytic Appendix A, including D canonically OWN.
+- [x] `normalize_of_ceiling` and `normalize_of_candidate` use the analytic path.
 
-The reviewed manually recorded Six-only import graph reaches 82 modules with
-124 Six-to-Six edges and no cycle or listed computational module. This static
-review is not a Lean elaboration/axiom audit, nor a fresh audit of the existing
-Common, Seven, Geometry or Mathlib libraries. The legacy Certificates namespace
-in PinData contains only ordinary real constants and finite label data.
+Human-readable companion: `ANALYTIC_NORMALIZATION_PROOF.md`.
+Static review scope: `NORMALIZATION_DEPENDENCIES.md`.
 
-Local exact algebra reviewed 34 explicitly displayed polynomial/rational
-comparisons, including the forced endpoint values. No numerical search,
-interval subdivision, certificate replay or generated-table verification was
-used in this normalization conversion. These calculations are development
-checks only, never inputs to the Lean theorems. No GitHub runner, remote
-computation or Lean compiler was used.
+## Completed: pair and diagonal scalar closure
 
-## Remaining analytic proof work outside normalization
+- [x] Fixed central-edge pair stress with explicit central-force correction.
+- [x] Actual N/W and E/S pair work connected to packing separators.
+- [x] Exact smooth sector formulas and positive radicands.
+- [x] Coordinate/diagonal concavity and geometrically forced endpoint reduction.
+- [x] `FixedPair.lower_bound` on the explicit bit-dependent `Domain`, with
+      the `|n|/1000` reserve.
+- [x] Correct negative-side line slope `18/25`.
+- [x] Corrected diagonal cap/vertex remainder on its explicit domain.
+- [x] Diagonal remainder nonnegative with unique zero.
+- [x] Actual candidate D-edge work matches the pair transverse residual.
+- [x] Strict D support gives strict total work below the candidate radius.
+- [x] `FixedCandidateClosure` proves angle/source/radius rigidity from
+      `ReductionHypotheses`.
 
-The diagonal remainder inequality and its unique zero are analytic on their
-explicit domain. The present reduction of every packing to that later, tighter
-domain still uses the fixed D-edge classification and tails. Those large-row
-arguments need conceptual whole-domain replacements. The common adjacent-pair
-lower envelope also still uses outer and derivative covers that must be
-replaced.
+Human-readable diagonal companion: `ANALYTIC_DIAGONAL_PROOF.md`.
 
-Existing LowerBound, Uniqueness, equality reconstruction and public Optimum 6
-source must be reconnected through those analytic-only dependencies. They are
-not accepted as the finished human-analytic unrestricted theorem merely because
-normalization is now converted. Final compilation and transitive kernel/axiom
-checking are an additional deferred validation requirement.
+## Completed: analytic source reduction
 
-Historical UPLOAD_AUDIT and mirror/build logs concern the old computer-assisted
-route. Their old counts and hashes do not validate this source checkpoint.
-The original Packing and Congruent predicates and public problem statements
-were not changed during this normalization completion.
+- [x] All W/D primary and reverse-secondary sources excluded.
+- [x] Full-range existence of a forward-secondary D/S separator.
+- [x] Canonical OWN W has negative deviation.
+- [x] Low-diagonal OWN-W and cardinal-W regions excluded analytically.
+- [x] `normalized_diagonal_gt_half`: `d > 1/2` for both W bits.
+- [x] High-D radial/transverse bounds.
+- [x] Both D-sourced phase gaps exceed `pi/4`.
+- [x] Candidate W edge is automatic on `w >= d-pi/4`.
+- [x] Candidate S edge is automatic on `s <= d-pi/4`.
+- [x] Double-D-secondary case excluded for all four W/S central-bit choices.
+- [x] At least one actual candidate wing separator always exists.
+- [x] `candidate_or_missing_wing` gives the exact remaining source split.
+- [x] `reduction_iff_remaining_obligations` reduces the full scalar closure to
+      missing-wing exclusions plus OWN-wing tails.
+
+## Open mathematical obligations
+
+These are the substantive source-level tasks that still block the unrestricted
+human-analytic theorem.
+
+- [ ] Exclude `MissingWestWing`: mixed `(6,6)`, including the historical
+      53-cell hard region.
+- [ ] Exclude `MissingSouthWing`: mixed `(2,2)`.
+- [ ] OWN-W lower tail: if W is OWN, prove `-11/25 <= w`.
+- [ ] OWN-S lower tail: if S is OWN, prove `-2/25 <= s`.
+- [ ] OWN-S upper tail: if S is OWN, prove `s <= 11/25`.
+
+Once these five facts are proved:
+
+- [ ] Assemble unconditional `ReductionHypotheses`.
+- [ ] Switch the final closure away from the old pair/fixed-row dependency path.
+- [ ] Reconnect exact radius, support equality, reconstruction, and reflection absorption.
+- [ ] Verify `Six.lower_bound`, `Six.uniqueness`, and public `Optimum 6`
+      depend only on the analytic chain.
+- [ ] Complete the final transitive dependency review.
+
+## Validation boundary
+
+No numerical search, interval subdivision, generated stress-table success flag,
+or external program result is a permitted premise of the final theorem.
+Historical computational files and audit logs may remain for comparison, but
+must not occur on the final mathematical dependency path.
+
+Compilation and execution of the axiom audit are still deferred. The canonical
+audit entry point is now `SixAxiomAudit.lean`; its `#print axioms` commands are
+configuration for the later audit, not recorded output.
+
+## Documentation map
+
+- `STATUS.md` — this live ledger; all older checklist/progress files were merged here.
+- `HUMAN_ANALYTIC_STANDARD.md` — acceptance rules.
+- `ANALYTIC_NORMALIZATION_PROOF.md` — normalization companion.
+- `ANALYTIC_DIAGONAL_PROOF.md` — diagonal scalar companion.
+- `NORMALIZATION_DEPENDENCIES.md` — scoped normalization dependency review.
+- `UPLOAD_AUDIT.md` and audit data — historical computer-assisted-route evidence only.
