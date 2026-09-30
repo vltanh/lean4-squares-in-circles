@@ -46,9 +46,7 @@ lemma chordTerm_concave : ConcaveOn ℝ (Set.Icc 0 (6/5)) chordTerm := by
   · intro q _; exact (hff q).hasDerivWithinAt
   · intro q hq
     have h := interior_subset hq
-    have hsq := mul_nonneg (show 0 ≤ q/2 by linarith [h.1])
-      (show 0 ≤ 3/5-q/2 by linarith [h.2])
-    have hsq' := mul_nonneg (show 0 ≤ 3/5-q/2 by linarith [h.2])
+    have hsq := mul_nonneg (show 0 ≤ 3/5-q/2 by linarith [h.2])
       (show 0 ≤ 3/5+q/2 by linarith [h.1])
     have hc : 41/50 ≤ Real.cos (q/2) := by
       nlinarith [Real.one_sub_sq_div_two_le_cos (x := q/2)]
@@ -76,7 +74,10 @@ lemma widthTerm_concave :
   have h := concave_affine_argument (a := 1) (b := -(12/25)) hc
     (l := 1/2) (u := Real.pi/4) (fun d hd => by
       constructor <;> linarith [hd.1,hd.2,Real.pi_lt_d2])
-  simpa [radicalTrig,widthTerm,mul_add] using h
+  convert h using 1
+  funext d
+  dsimp [radicalTrig,widthTerm]
+  ring
 
 lemma westTerm_negative_concave : ConcaveOn ℝ (Set.Icc (-(2/5)) 0) westTerm := by
   have h := concave_affine_argument (a := -1) (b := 0)
@@ -92,8 +93,13 @@ lemma westTerm_positive_concave : ConcaveOn ℝ (Set.Icc 0 (2/5)) westTerm := by
 
 lemma gap_diagonal_concave {w : ℝ} (hw : -(2/5) ≤ w ∧ w ≤ 2/5) :
     ConcaveOn ℝ (Set.Icc (1/2) (Real.pi/4)) (fun d => gap w d) := by
-  have hq := concave_affine_argument (a := 1) (b := -w) chordTerm_concave
+  have hq0 := concave_affine_argument (a := 1) (b := -w) chordTerm_concave
     (l := 1/2) (u := Real.pi/4) (fun d hd => by simpa [sub_eq_add_neg] using offset hw hd)
+  have hq : ConcaveOn ℝ (Set.Icc (1/2) (Real.pi/4)) (fun d => chordTerm (d-w)) := by
+    convert hq0 using 1
+    funext d
+    congr 1
+    ring
   exact ((concave_constant (8-4*c0-3*R0+westTerm w) (1/2) (Real.pi/4)).add hq).add
     widthTerm_concave
 
@@ -101,10 +107,15 @@ lemma gap_west_concave {d l u : ℝ} (hd : 1/2 ≤ d ∧ d ≤ Real.pi/4)
     (hl : -(2/5) ≤ l) (hu : u ≤ 2/5)
     (hw : ConcaveOn ℝ (Set.Icc l u) westTerm) :
     ConcaveOn ℝ (Set.Icc l u) (fun w => gap w d) := by
-  have hq := concave_affine_argument (a := -1) (b := d) chordTerm_concave
+  have hq0 := concave_affine_argument (a := -1) (b := d) chordTerm_concave
     (l := l) (u := u) (fun w hmem => by
       have h := offset ⟨hl.trans hmem.1,hmem.2.trans hu⟩ hd
       convert h using 1 <;> ring)
+  have hq : ConcaveOn ℝ (Set.Icc l u) (fun w => chordTerm (d-w)) := by
+    convert hq0 using 1
+    funext w
+    congr 1
+    ring
   have h := ((concave_constant (8-4*c0-3*R0) l u).add hw).add hq
   exact h.add (concave_constant (widthTerm d) l u)
 
@@ -113,7 +124,9 @@ private lemma sin_half_root {q : ℝ} (hq : 0 ≤ q ∧ q ≤ 6/5) :
   have hs := Real.sin_nonneg_of_nonneg_of_le_pi
     (show 0 ≤ q/2 by linarith [hq.1]) (show q/2 ≤ Real.pi by linarith [hq.2,Real.pi_gt_d2])
   have hc : Real.cos q=1-2*Real.sin (q/2)^2 := by
-    simpa only [show 2*(q/2)=q by ring] using Real.cos_two_mul' (q/2)
+    have h := Real.cos_two_mul (q/2)
+    rw [show 2*(q/2)=q by ring] at h
+    nlinarith only [h,Real.sin_sq_add_cos_sq (q/2)]
   rw [show 18-18*Real.cos q=(6*Real.sin (q/2))^2 by nlinarith only [hc],
     Real.sqrt_sq (by positivity)]
 
@@ -239,7 +252,8 @@ lemma endpoint_positive (i : Fin 3) (j : Fin 2) : 0 < gap (westEnd i) (diagonalE
       fin_cases i <;> fin_cases j <;> norm_num [westRootBound,gapRootBound])
   have hC : c0 ≤ 113/1000 := by dsimp [c0]; linarith [rho0_upper]
   have hp := reserve_positive i j
-  dsimp [gap,westTerm,MixedCardinalWest.southTerm,chordTerm,widthTerm,reserve]
+  dsimp [reserve] at hp
+  dsimp [gap,westTerm,MixedCardinalWest.southTerm,chordTerm,widthTerm]
   rw [Real.cos_neg,Real.sin_neg,neg_neg]
   nlinarith only [hc,hs,hq,hwidth,hmul,hr,hC,hp,hroot]
 
