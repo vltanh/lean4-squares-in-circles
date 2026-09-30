@@ -7,7 +7,7 @@ seven-square proof to a stricter human-analytic style.
 
 This branch is intentionally **research-only**:
 
-- [x] Keep all changes in `research/six/**`.
+- [x] Keep all changes in `research/seven/**`.
 - [x] Do not modify `SquaresInCircles/**`, root files, general documentation,
       CI, metadata, or public theorem statements in this PR.
 - [x] Preserve the existing global n=7 proof architecture unless a local
@@ -39,14 +39,21 @@ The current proof does **not** use the old n=6-style `ExactCover`, generated
 stress rows, interval-box search, `native_decide`, or an external numerical
 success result.
 
-The main human-readability issue is the analytic tail. Eight substantive
-Bernstein-basis positivity calls currently carry 69 displayed rational
-coefficients. Several sectors also switch estimates at hand-chosen rational
-thresholds such as `1/6` and `1/3`.
+The analytic tail deserves review because eight substantive Bernstein-basis
+positivity calls carry 69 displayed rational coefficients, and several sectors
+switch estimates at hand-chosen rational thresholds such as `1/6` and `1/3`.
 
-The goal is to replace as much of that machinery as practical with visible
-whole-interval monotonicity, convexity/concavity, tangent/support arguments,
-completed squares, or short factorizations.
+**Those facts are not defects by themselves.** The n=6 analytical proof also
+uses many exact rational constants, Taylor margins and hand-selected support
+weights. A rational constant or a Bernstein expansion is acceptable when its
+mathematical role is clear, the identity is exact, and the proof does not rely
+on an external search or exhaustive continuous partition.
+
+The goal is therefore to simplify only where the current presentation hides
+the mathematical reason an inequality is true. Prefer visible whole-interval
+monotonicity, convexity/concavity, tangent/support arguments, completed squares,
+or short factorizations when they materially improve the proof; do not replace
+a clean exact Bernstein argument merely to remove coefficients.
 
 ## Acceptance standard
 
@@ -63,8 +70,9 @@ A proposed replacement should satisfy the following.
       explained regions.
 - [ ] Exact Taylor inequalities are allowed when their remainder/sign is proved.
 - [ ] Short explicit polynomial identities are allowed.
-- [ ] Long unexplained vectors of rational coefficients should not be the
-      primary mathematical explanation.
+- [ ] Exact rational constants and Bernstein coefficients are acceptable when
+      their origin and role are explicit; long unexplained vectors should not
+      be the primary mathematical explanation.
 - [ ] If a rational breakpoint remains, document the structural reason for it
       (sign change, tangent switch, geometric transition, or a proved optimal
       analytic regime), rather than merely "this estimate works on this side".
@@ -108,7 +116,9 @@ Checklist:
 - [ ] Write a proposed Lean proof skeleton using existing derivative/Taylor
       lemmas.
 
-Desired outcome: eliminate this Bernstein call completely.
+Desired outcome: either a genuinely clearer whole-domain argument, or a short
+written derivation explaining why the existing Bernstein certificate is already
+the cleanest exact proof.
 
 ## Workstream B — axial-boundary derivative ratio
 
@@ -132,8 +142,8 @@ Checklist:
 - [ ] Look for a completed-square decomposition after using the circle relation.
 - [ ] Produce a short proof of `1 - ratioD > 0` that explains the geometry.
 
-Desired outcome: replace the quintic Bernstein certificate by one derivative or
-completed-square argument.
+Desired outcome: prefer one derivative or completed-square argument if it is
+clearer; otherwise document a transparent derivation of the quintic certificate.
 
 ## Workstream C — inward axial turn profile
 
@@ -156,7 +166,8 @@ Checklist:
 - [ ] Avoid introducing any new subinterval unless it corresponds to a sign
       change of an explicit derivative.
 
-Desired outcome: a direct one-variable calculus/Taylor proof.
+Desired outcome: a direct one-variable calculus/Taylor proof if it is shorter
+and more explanatory than the existing exact certificate.
 
 ## Workstream D — opposite-forward axial scalar
 
@@ -179,7 +190,8 @@ Checklist:
       polynomial if calculus is not cleaner.
 - [ ] Keep the existing elementary bounds on `sqrt 3` and `pi` explicit.
 
-Desired outcome: remove this Bernstein call.
+Desired outcome: simplify this Bernstein call only if the replacement exposes
+a clearer reason for positivity.
 
 ## Workstream E — forward negative target
 
@@ -193,7 +205,8 @@ Current mechanism:
 - hand-chosen switches including `z <= 1/3` and `z <= 1/6`;
 - a mix of Cauchy--Schwarz disk support and Taylor bounds.
 
-This is a major simplification target.
+This is a review priority because three different analytic devices are used in
+one sector. The priority is conceptual unification, not coefficient removal.
 
 Checklist:
 
@@ -213,8 +226,9 @@ Checklist:
       the final human proof has a visible two-step structure.
 - [ ] Document equality/contact behavior separately from strict positivity.
 
-Desired outcome: reduce three coefficient certificates to at most one short
-explicit algebraic lemma, ideally none.
+Desired outcome: reduce the number of independent analytic ideas if possible.
+Keeping more than one exact polynomial certificate is acceptable if each
+corresponds to a genuinely different geometric regime and is clearly derived.
 
 ## Workstream F — inward opposite minima
 
@@ -230,7 +244,10 @@ Current mechanism:
 - polynomial is obtained from a discriminant after bounding a two-circle /
   radical envelope.
 
-This is the hardest and highest-value target.
+This is the hardest review target because the degree-11 discriminant
+calculation obscures the preceding geometry. It is high-value only if an
+earlier geometric inequality can replace that opacity; the mere presence of
+twelve exact coefficients is not itself a reason to rewrite it.
 
 Checklist:
 
@@ -250,8 +267,10 @@ Checklist:
 - [ ] Record the exact equality/strictness conditions needed by the contact
       classification.
 
-Desired outcome: replace the degree-11 Bernstein certificate by a geometric
-support/curvature lemma.
+Desired outcome: find a geometric support/curvature lemma if one exists. If
+not, retain the degree-11 certificate but document its derivation from the
+two-circle comparison well enough that the coefficient vector is verification,
+not the mathematical explanation.
 
 ## Workstream G — rational breakpoints audit
 
@@ -294,7 +313,7 @@ Checklist:
 
 ## Workstream I — proposed handoff artifacts
 
-All artifacts in this research PR should remain under `research/six/**`.
+All artifacts in this research PR should remain under `research/seven/**`.
 
 - [ ] Write one note per completed workstream with:
       exact target theorem, mathematical reformulation, proof, and proposed
@@ -312,30 +331,28 @@ All artifacts in this research PR should remain under `research/six/**`.
 
 ## Suggested order
 
-Work in increasing difficulty:
+Prioritize conceptual opacity rather than raw coefficient count:
 
-1. [ ] Workstream C — inward axial turn profile.
-2. [ ] Workstream D — opposite-forward axial scalar.
-3. [ ] Workstream B — axial-boundary derivative ratio.
-4. [ ] Workstream A — marker arc curvature.
-5. [ ] Workstream E — forward negative target.
-6. [ ] Workstream F — inward opposite minima.
-7. [ ] Workstream G — remove convenience-only breakpoints made obsolete by the
-       stronger lemmas.
-8. [ ] Workstream H — re-check the fixed-gap/all-gaps assembly against the
-       simplified sector lemmas.
+1. [ ] Audit Workstream G first: identify which rational breakpoints are
+       structural and which are convenience-only.
+2. [ ] Review Workstream E — forward negative target — for unnecessary changes
+       of analytic method inside one geometric sector.
+3. [ ] Review Workstream F — inward opposite minima — one step before the
+       degree-11 discriminant, where a geometric support argument might exist.
+4. [ ] Review Workstreams A--D only where a replacement is actually shorter or
+       more explanatory than the present exact Bernstein proof.
+5. [ ] Re-check Workstream H after any replacements.
 
-The first four are plausible quick wins. E and especially F are the places
-most likely to require genuinely new inequalities.
+Do not spend time deleting an exact polynomial certificate merely because its
+coefficients look complicated.
 
 ## Definition of done
 
 This research task is complete when:
 
-- [ ] each of the eight current substantive Bernstein calls has either:
-      - a human-analytic replacement proof, or
-      - a written justification for why a short explicit polynomial proof is
-        still the cleanest option;
+- [ ] each of the eight current substantive Bernstein calls has been reviewed
+      for mathematical transparency; rewrite only those for which a genuinely
+      clearer proof is found;
 - [ ] no replacement relies on interval-box search, a generated table, or an
       external success result;
 - [ ] convenience-only numerical subintervals have been removed or explained;
