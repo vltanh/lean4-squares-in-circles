@@ -1,39 +1,33 @@
 module
-public import SquaresInCircles.Six.Analytic.CardinalWingClosure
-public import SquaresInCircles.Six.Analytic.CanonicalSouthSign
-public import SquaresInCircles.Six.Analytic.OwnWingFrontier
+public import SquaresInCircles.Six.Analytic.CompleteReduction
 
 @[expose] public section
 
 /-!
-# Analytic secondary-reduction checkpoint
+# Complete analytical six-square reduction
 
-The active target is a completely analytic hand proof. This checkpoint exports
-the whole-domain pair and corrected diagonal bounds, full secondary-source
-selection, the double-D exclusion, and the shared-center/transverse budgets.
-The lower OWN-S tail is proved, with the stronger positive-deviation result
-in CanonicalSouthSign. The OWN-W outer tail follows from candidate D edges.
+This entry point now exports an unconditional complete_reduction for every
+NormalizedPacking, using the original normalization record without new fields.
 
-CardinalWingClosure closes both mixed sources when W and S are cardinal.
-CardinalSouthTail now excludes MissingSouthWing for every cardinal W, including
-the formerly unresolved large positive OWN-S case. Its four-edge argument uses
-weights 4,10,3,3 and whole-domain monotonicity/concavity, not a stress table.
+The missing-south cases are closed by the cardinal-W argument and the two
+OWN-W/S-bit arguments. ReflectedOwnWings closes the final missing-west case
+by reflecting scalar inequalities while proving the enlarged reflected domain.
+Together these give candidate_diagonal_separators. The candidate west-tail
+bound and SouthOuterTail then give both bit-dependent pair domains.
 
-CoupledWingBudgetSharp proves s-w<24/25 for two OWN wings. In a missing-west
-configuration, OwnWingFrontier combines this with the one-radian W/D gap to
-obtain d-s>1/25. All these bounds hold in the unchanged normalized frame.
+The final OWN-S tail uses two distinct arguments. Cardinal W uses the original
+whole-rectangle polynomial-root profile. OWN W retains the actual diagonal
+coordinates until the wing angles have been reduced to endpoints; one corner
+then uses a proved narrow radial-support cone. No endpoint of the earlier
+invalid OWN-W scalar rectangle is asserted positive.
 
-The remaining unrestricted analytic tasks are:
-* exclude MissingWestWing with at least one OWN wing and d>3/5;
-* exclude MissingSouthWing with W OWN;
-* prove the canonical OWN-S upper tail s<=11/25.
+CompleteReduction feeds the analytic fixed-pair/diagonal radius closure and
+the retained-source eight-contact equality reconstruction. The public
+LowerBound and Uniqueness modules now use it directly; no finite
+Classification module supplies an input to those endpoint declarations.
 
-ReductionInterface states the exact three obligations without inserting them
-into Packing. No old fixed-table theorem supplies them here. The public
-endpoints still use Classification.Reduction and its internal finite checks;
-those endpoint modules are deliberately not imported by this checkpoint.
-
-These are source proof bodies, not records of executed compilation or kernel
-acceptance. The hand argument for the new closure is written in
-research/six/lean/ANALYTIC_CARDINAL_SOUTH_PROOF.md. STATUS.md is the live ledger.
+These are written analytical arguments and Lean source proof bodies. The
+compiler, elaborated dependency/axiom audit and independent kernel replay have
+not been run. The final tail derivation and full proof map are documented in
+research/six/lean/ANALYTIC_SOUTH_TAIL_PROOF.md and docs/proof/six.md.
 -/
