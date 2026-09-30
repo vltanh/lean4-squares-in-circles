@@ -1,124 +1,113 @@
-# n=6 human-analytic proof status
+# n=6 proof status and Palomar readiness
 
 PR #7, branch `feat/six-lean-proof`.
 
-This is the single live progress ledger for the n=6 proof. Checked items mean
-that the analytic argument, Lean proof body, and relevant source call sites have
-been written. They do **not** mean Lean compilation or kernel/axiom acceptance;
-those remain deferred.
+This is the live status ledger for the six-square extension. The final
+acceptance target is now **Palomar Registry compatibility**: the advertised
+Solution declarations must be self-contained Lean proofs accepted by Comparator
+with only `propext`, `Classical.choice`, and `Quot.sound`, and must not
+depend on `sorryAx`, `Lean.ofReduceBool` / `native_decide`, a custom axiom,
+an unnamed missing definition, or the success of an external script.
 
-The acceptance criterion is `HUMAN_ANALYTIC_STANDARD.md`. The original
-`Packing` and `Congruent` predicates are unchanged.
+Ordinary Lean computation such as `decide` is permitted. External research,
+Python replay, audit logs and numerical experiments may remain in the
+repository, but their success is not a theorem premise.
 
-## Current frontier
+The stronger human-analytic conversion in `HUMAN_ANALYTIC_STANDARD.md`
+remains useful research work, but it is no longer the gate for Palomar
+submission.
 
-Analytic normalization is complete through
-`Normalization.normalize_of_candidate`. The fixed-pair envelope and corrected
-diagonal remainder are also written analytically on their explicit domains.
-The remaining mathematical work is concentrated in two mixed D-edge source
-cases and three OWN-wing tail inequalities.
+## Palomar-facing theorem path
 
-For `Stress.pairNormal` on ordered pairs W/D and D/S:
+The current unrestricted source already has the complete endpoint chain:
 
-| W/D | D/S | Sources | Status |
-|---:|---:|---|---|
-| 2 | 6 | W-secondary / S-secondary | candidate graph |
-| 6 | 2 | D-secondary / D-secondary | analytically excluded |
-| 6 | 6 | D-secondary / S-secondary | **open: MissingWestWing** |
-| 2 | 2 | W-secondary / D-secondary | **open: MissingSouthWing** |
+- `Six/LowerBound.lean` proves the unrestricted radius lower bound.
+- `Six/Uniqueness.lean` proves equality classification and supplies
+  `Optimum 6`.
+- `SquaresInCircles.lean` includes case 6 in the two declarations compared by
+  `comparator.json`.
+- `Challenge.lean` independently states the same two public declarations for
+  every `1 <= n <= 7`.
 
-The historical 53-cell hard table corresponds to the mixed `(6,6)` case, not
-the already excluded double-D-secondary case.
+The legacy fixed-row/common-pair route uses finite data and ordinary kernel
+`decide` through proved soundness lemmas. It does not call an external script
+at theorem elaboration time. Under the current Palomar criterion this route is
+eligible in principle; actual acceptance still requires the build, Comparator,
+axiom audit and NanoDa replay on the final pinned commit.
 
-## Completed: normalization
+## Static Palomar checks already satisfied
 
-- [x] Strong central box from genuine marker/SAT arguments, before pins/sectors.
-- [x] Five-pin covering from direct geometry and the sixty-degree pin lemma.
-- [x] Unique pin labels and all broad angular windows.
-- [x] Allowed central axes from pin coordinates and strong-core exclusions.
-- [x] OWN moving pins and cardinal cap-piercing cases.
-- [x] W/D order and cyclic primary order.
-- [x] One explicitly recorded global diagonal reflection.
-- [x] Opposite-cardinal budgets with both hypotheses retained.
-- [x] N25+ and exact candidate-radius cardinal refinements.
-- [x] Analytic Appendix A, including D canonically OWN.
-- [x] `normalize_of_ceiling` and `normalize_of_candidate` use the analytic path.
+- [x] Public repository and immutable commits available.
+- [x] `Challenge.lean` is 297 lines and about 10 KiB, below Palomar's
+      1,000-line / 100 KiB hard limits and its 300-line warning threshold.
+- [x] Challenge imports Mathlib only.
+- [x] Challenge and Solution module names are distinct:
+      `Challenge` and `SquaresInCircles`.
+- [x] `comparator.json` compares nonempty theorem declarations and permits
+      exactly `propext`, `Quot.sound`, `Classical.choice`.
+- [x] PR diff contains no use of `Lean.ofReduceBool`, `run_tac`, external
+      process invocation or custom `axiom`; the only `sorry` additions are
+      the two deliberate Challenge theorem holes.
+- [x] The apparent `native_decide` hit in the Six proof is documentation saying
+      that the source uses ordinary `decide`, not an invocation.
+- [x] Lean toolchain is `leanprover/lean4:v4.35.0-rc3`.
+- [x] Mathlib is pinned to the matching `v4.35.0-rc3`.
+- [x] Root uses `lakefile.toml` and has a committed `lake-manifest.json`.
+- [x] Root has one Apache-2.0 `LICENSE`, matching `project.license`.
+- [x] `formalization.yaml` is v0.4 and has been updated to include n=6,
+      Palomar's source-type vocabulary, honest six-square provenance, and no
+      unexecuted kernel/NanoDa success claim.
 
-Human-readable companion: `ANALYTIC_NORMALIZATION_PROOF.md`.
-Static review scope: `NORMALIZATION_DEPENDENCIES.md`.
+## Current hard Palomar blocker: Lean module system
 
-## Completed: pair and diagonal scalar closure
+Palomar now requires **every regular .lean file in the submitted repository**
+to use Lean's module system, including unused files and generated certificates.
+The present repository predates that migration: for example
+`Challenge.lean` and `SquaresInCircles.lean` do not yet start with
+`module`.
 
-- [x] Fixed central-edge pair stress with explicit central-force correction.
-- [x] Actual N/W and E/S pair work connected to packing separators.
-- [x] Exact smooth sector formulas and positive radicands.
-- [x] Coordinate/diagonal concavity and geometrically forced endpoint reduction.
-- [x] `FixedPair.lower_bound` on the explicit bit-dependent `Domain`, with
-      the `|n|/1000` reserve.
-- [x] Correct negative-side line slope `18/25`.
-- [x] Corrected diagonal cap/vertex remainder on its explicit domain.
-- [x] Diagonal remainder nonnegative with unique zero.
-- [x] Actual candidate D-edge work matches the pair transverse residual.
-- [x] Strict D support gives strict total work below the candidate radius.
-- [x] `FixedCandidateClosure` proves angle/source/radius rigidity from
-      `ReductionHypotheses`.
+The compatibility migration must therefore be completed repository-wide:
 
-Human-readable diagonal companion: `ANALYTIC_DIAGONAL_PROOF.md`.
+- [ ] Prefix every regular `.lean` source with `module`.
+- [ ] Convert imports needed by clients to `public import`.
+- [ ] Initially expose the existing public API using the compatibility recipe
+      (`@[expose] public section` / targeted exposure), then repair visibility
+      errors rather than weakening statements.
+- [ ] Keep every source file below 10,000 physical lines.
+- [ ] Rebuild after the migration; a textual header edit alone is not enough.
 
-## Completed: analytic source reduction
+## Final mechanical gates before submission
 
-- [x] All W/D primary and reverse-secondary sources excluded.
-- [x] Full-range existence of a forward-secondary D/S separator.
-- [x] Canonical OWN W has negative deviation.
-- [x] Low-diagonal OWN-W and cardinal-W regions excluded analytically.
-- [x] `normalized_diagonal_gt_half`: `d > 1/2` for both W bits.
-- [x] High-D radial/transverse bounds.
-- [x] Both D-sourced phase gaps exceed `pi/4`.
-- [x] Candidate W edge is automatic on `w >= d-pi/4`.
-- [x] Candidate S edge is automatic on `s <= d-pi/4`.
-- [x] Double-D-secondary case excluded for all four W/S central-bit choices.
-- [x] At least one actual candidate wing separator always exists.
-- [x] `candidate_or_missing_wing` gives the exact remaining source split.
-- [x] `reduction_iff_remaining_obligations` reduces the full scalar closure to
-      missing-wing exclusions plus OWN-wing tails.
+These results must be obtained from the exact final commit; they are not
+inferred from source inspection:
 
-## Open mathematical obligations
+- [ ] Full `lake build` on the Palomar-supported toolchain.
+- [ ] `lake comparator` with the checked-in `comparator.json`.
+- [ ] `#print axioms` for `SquaresInCircles.optimal_radius`,
+      `SquaresInCircles.optimal_packings`, `Six.lower_bound` and
+      `Six.uniqueness`; only the standard three axioms may remain.
+- [ ] Confirm no Solution dependency introduces `sorryAx`,
+      `Lean.ofReduceBool`, a custom axiom or an unnamed missing definition.
+- [ ] Submit the exact 40-character commit to Palomar and let Palomar perform
+      its mandatory independent NanoDa replay and metadata/editorial checks.
 
-These are the substantive source-level tasks that still block the unrestricted
-human-analytic theorem.
+No GitHub Actions or other remote proof runner is being used as a substitute
+for those final checks in this development session.
 
-- [ ] Exclude `MissingWestWing`: mixed `(6,6)`, including the historical
-      53-cell hard region.
-- [ ] Exclude `MissingSouthWing`: mixed `(2,2)`.
-- [ ] OWN-W lower tail: if W is OWN, prove `-11/25 <= w`.
-- [ ] OWN-S lower tail: if S is OWN, prove `-2/25 <= s`.
-- [ ] OWN-S upper tail: if S is OWN, prove `s <= 11/25`.
+## Optional stronger analytic track
 
-Once these five facts are proved:
-
-- [ ] Assemble unconditional `ReductionHypotheses`.
-- [ ] Switch the final closure away from the old pair/fixed-row dependency path.
-- [ ] Reconnect exact radius, support equality, reconstruction, and reflection absorption.
-- [ ] Verify `Six.lower_bound`, `Six.uniqueness`, and public `Optimum 6`
-      depend only on the analytic chain.
-- [ ] Complete the final transitive dependency review.
-
-## Validation boundary
-
-No numerical search, interval subdivision, generated stress-table success flag,
-or external program result is a permitted premise of the final theorem.
-Historical computational files and audit logs may remain for comparison, but
-must not occur on the final mathematical dependency path.
-
-Compilation and execution of the axiom audit are still deferred. The canonical
-audit entry point is now `SixAxiomAudit.lean`; its `#print axioms` commands are
-configuration for the later audit, not recorded output.
+The human-analytic conversion has already replaced normalization, the fixed
+pair envelope on its explicit domain, the corrected diagonal remainder, large
+parts of the D-edge classification, and several tail arguments. Its remaining
+mixed-wing reductions are valuable if a certificate-free mathematical proof is
+desired in the stronger sense of eliminating finite Lean tables. They are not
+required merely to satisfy Palomar's current mechanical proof standard.
 
 ## Documentation map
 
-- `STATUS.md` — this live ledger; all older checklist/progress files were merged here.
-- `HUMAN_ANALYTIC_STANDARD.md` — acceptance rules.
+- `STATUS.md` — this Palomar/readiness ledger.
+- `HUMAN_ANALYTIC_STANDARD.md` — optional stronger analytic standard.
 - `ANALYTIC_NORMALIZATION_PROOF.md` — normalization companion.
 - `ANALYTIC_DIAGONAL_PROOF.md` — diagonal scalar companion.
-- `NORMALIZATION_DEPENDENCIES.md` — scoped normalization dependency review.
-- `UPLOAD_AUDIT.md` and audit data — historical computer-assisted-route evidence only.
+- `NORMALIZATION_DEPENDENCIES.md` — normalization dependency review.
+- `UPLOAD_AUDIT.md` and audit data — historical development evidence only.
