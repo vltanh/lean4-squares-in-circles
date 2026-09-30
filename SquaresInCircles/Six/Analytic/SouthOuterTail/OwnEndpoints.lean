@@ -114,7 +114,7 @@ private lemma endpoint_positive (upper right : Bool) (i : Fin 3) :
         cosLower,sinLower,sinUpper]
   exact hp.trans_le h
 
-lemma raw_vertex_corner_positive (upper : Bool) (i : Fin 3) {d a b : ℝ}
+private lemma raw_vertex_corner_positive (upper : Bool) (i : Fin 3) {d a b : ℝ}
     (hd : 1/2 ≤ d ∧ d ≤ 11/14) (hc : ContainedChart a |b|) :
     0 < raw upper (vCorner i) (sCorner i) d a b := by
   have hv : 0 ≤ vCorner i ∧ vCorner i ≤ xMax 0 := by
@@ -128,7 +128,8 @@ lemma raw_vertex_corner_positive (upper : Bool) (i : Fin 3) {d a b : ℝ}
     rw [vertex_diagonal_identity] at hl hu ⊢
     have h := trig_lower_of_endpoints hcoeff.1 hcoeff.2 (by norm_num)
       (by linarith [Real.pi_gt_d2]) hd (C := -vertexConstant upper (vCorner i) (sCorner i))
-      (by simpa [dEnd] using hl) (by simpa [dEnd] using hu)
+      (by dsimp [dEnd] at hl; linarith)
+      (by dsimp [dEnd] at hu; linarith)
     linarith
   exact hp.trans_le (vertex_le_raw upper hc)
 
