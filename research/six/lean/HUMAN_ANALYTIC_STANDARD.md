@@ -1,99 +1,98 @@
 # Human-analytic acceptance standard for the n=6 proof
 
-This file records the mathematical acceptance criterion for PR #7.
-The active detailed ledger is `ANALYTIC_PROGRESS.md`; the current mathematical
-companion is `ANALYTIC_DIAGONAL_PROOF.md`.
+This file records the mathematical acceptance criterion for PR #7. The active
+ledger is `ANALYTIC_PROGRESS.md`; the current companions are
+`ANALYTIC_NORMALIZATION_PROOF.md` and `ANALYTIC_DIAGONAL_PROOF.md`.
 
 The final n=6 proof may be formalized and checked by Lean, but the mathematics
-must be a human analytic proof. In particular, the proof of the unrestricted
-lower bound and uniqueness may not depend on exhaustive numerical search,
-interval-box certification, generated stress tables, or an external program's
-success result.
+must be a human analytic proof. The unrestricted lower bound and uniqueness
+may not depend on exhaustive numerical search, interval-box certification,
+generated stress tables or an external program's success result.
 
 ## Allowed proof methods
 
 - Exact algebraic identities and inequalities.
-- Explicit geometric arguments from the original Packing, UnitSquare,
-  openSquare, closedSquare, support and separation definitions.
-- Symbolic differentiation with hypotheses stated and checked.
-- Monotonicity, convexity/concavity and endpoint reductions proved as ordinary
-  real-analysis lemmas.
+- Explicit geometry from the original Packing, UnitSquare, openSquare,
+  closedSquare, support and separation definitions.
+- Symbolic differentiation with the required hypotheses stated and proved.
+- Monotonicity, convexity/concavity and whole-domain endpoint reductions.
 - Explicit Taylor inequalities with proved remainders or sign arguments.
-- Small conceptual finite case splits, written and justified mathematically.
-- Local ring, norm_num, linarith and nlinarith after the mathematical reduction
-  is visible. Evaluating two explicit endpoint fractions is not a box search.
+- Small conceptual finite cases justified by the geometry.
+- Local ring, norm_num, linarith and nlinarith after a visible mathematical
+  reduction. Evaluating the vertices of a geometrically forced concavity
+  reduction is not an interval subdivision search.
 
 ## Disallowed mathematical dependencies
 
 - Python, Arb/flint, exact-dyadic, floating-point or fixed-point certificate output.
 - Interval/box subdivision searches establishing substantive inequalities.
 - Large generated finite tables certified only by `by decide`.
-- `ProofTools.Certificate.certify` or similar exhaustive finite-cover computation.
-- `FixedData/Checks.lean`, `PairCertificateChecks.lean`, or normalization
-  `Certificates/Checks.lean` as dependencies of the final theorem.
+- `ProofTools.Certificate.certify` or another exhaustive finite-cover engine.
+- FixedData/Checks, PairCertificateChecks or normalization Certificates/Checks
+  on the mathematical dependency path of the final theorem.
 - Imported PASS flags, logs, hashes, sampled minima or numerical minimizers.
-- A range assertion justified only because every machine-partition cell passed.
+- A range statement justified only by machine-partition cells passing.
 
-Such files may remain as exploratory or cross-check material, but the final
-theorem dependency graph must not use them. A noncomputable logical case
-choice on a real proposition is not a numerical certification procedure.
+Exploratory or old certificate files may remain in the repository, but the
+final theorem may not use them. A logical choice on a real proposition or a
+small finite index equality is not a numerical inequality certificate.
 
-## Normalization conversion
+## Normalization conversion — source complete
 
-- [x] Replace all six cardinal-facing angle refinements by the analytic
-      short-transverse-axis cap obstruction (`Analytic/CardinalFrame` and
-      `Normalization/CardinalWindows`). This uses the broad windows as explicit
-      inputs; it does not close their construction below.
-- [ ] Replace the strong-core forbidden-arc certificates by analytic marker/SAT arguments.
-- [ ] Replace certificate-based five-pin covering by direct pin-inclusion arguments.
-- [ ] Replace broad angular windows and forbidden central-axis certificates.
-- [ ] Replace the certificate-based OWN moving-pin inequality.
-- [ ] Replace the certificate-based W/D order and Appendix A stress checks.
-- [ ] Reprove normalization with no mathematical certificate dependency.
+- [x] Strong-core forbidden arcs from genuine markers and actual SAT, before pins/sectors.
+- [x] Five-pin covering from direct geometry, including the universal sixty-degree completed-square argument.
+- [x] Broad labelled windows from analytic profiles and uniqueness of the assigned pin.
+- [x] Forbidden central axes from pin coordinates and the strong-core transverse bound.
+- [x] Analytic OWN moving-pin polynomial and cardinal cap-piercing cases.
+- [x] W/D order from all four actual pair axes.
+- [x] Six cardinal-facing refinements from the short-transverse-axis obstruction.
+- [x] Appendix A: two analytic secondary-source arguments with one multiplier triple, after primary/reversed axes are excluded geometrically.
+- [x] D canonically OWN, with both core-exclusion inputs supplied to Appendix A.
+- [x] Normalization constructor and reflection transport use the analytic lemmas; old covering/window/Appendix A checks are removed from this path.
+- [x] `AnalyticNormalization.lean` exports normalize_of_candidate, N25+ and candidate-radius cardinal refinements independently of downstream certificates.
+- [x] Human-readable companion and explicitly scoped static dependency review.
 
-## Fixed D-edge classification
+This is a source-completion statement, not Lean compiler or kernel acceptance.
+The static review concerns the recorded Six-module imports and changed call
+sites; it is not a fresh formal audit of the pre-existing Common/Seven/Mathlib
+libraries. See `NORMALIZATION_DEPENDENCIES.md`.
+
+## Fixed D-edge classification — still open
 
 - [ ] Replace the 59 default, 99 Appendix-C, 53 hard-cell and auxiliary
-      fixed-row certificate eliminations by structural analytic stress lemmas.
-- [ ] Prove every required row-specific support-wall reduction explicitly;
-      coordinate dominance is never a cap-branch criterion.
-- [ ] Replace the hard A2.3 table by conceptual edge/monotonicity arguments.
-- [ ] Reprove the candidate D-edge graph and common helper domain analytically.
+  fixed-row eliminations by structural analytic arguments.
+- [ ] Justify all required support-wall reductions; coordinate dominance never
+  suffices to select the cap branch.
+- [ ] Replace the hard A2.3 table and candidate tails/bridges.
+- [ ] Derive the candidate D-edge graph and tighter common helper domain analytically.
 
 ## Candidate graph
 
-- [x] Replace the two A22 weight-sign checks by the shifted-sine identity.
-- [x] Separate constant algebra and real support formulas from computational reification.
-- [x] Replace the diagonal coefficient check by exact candidate algebra.
-- [x] Prove the diagonal cap/vertex remainder analytically on its stated
-      DiagonalDomain, including the true switch condition and unique zero.
-      The vertex proof uses concavity and two geometric-boundary quartics;
-      it does not certify a subdivision. See `Stress/DiagonalRemainder`.
+- [x] Both A22 weight-sign checks replaced by the shifted-sine identity.
+- [x] Constant algebra and real support formulas separated from reification.
+- [x] Diagonal coefficient bound from exact candidate algebra.
+- [x] Diagonal cap/vertex remainder on its stated domain, with the genuine
+  switch and unique zero, from concavity and geometric boundary quartics.
 - [ ] Replace the common pair-envelope outer cover and derivative checks.
-- [ ] Prove the remaining pair support-wall transitions and whole-domain reductions.
-- [ ] Derive the common pair lower bound from those analytic arguments.
-- [ ] Reprove balanced closure using only analytic geometric and scalar premises.
+- [ ] Prove the pair support-wall transitions and whole-domain reductions.
+- [ ] Derive the common pair bound and balanced closure through those arguments.
 
 ## Equality and unrestricted endpoints
 
-- [ ] Reuse support-maximizer and reconstruction arguments only after their
-      scalar equality inputs come from an analytic-only chain.
-- [ ] Reprove Six.lower_bound through that analytic-only chain.
-- [ ] Reprove Six.uniqueness through the same chain.
-- [ ] Verify the public Optimum 6 endpoint uses only the analytic chain and
-      unchanged problem predicates.
+- [ ] Reuse support rigidity and reconstruction only after their scalar inputs
+  and geometric domain reduction come from the analytic-only chain.
+- [ ] Reconnect Six.lower_bound and Six.uniqueness through that chain.
+- [ ] Verify the public Optimum 6 endpoint and unchanged problem predicates.
 
-## Final acceptance audit
+## Final acceptance audit — separate from normalization source closure
 
 - [ ] Neither unrestricted endpoint transitively uses a substantive certificate,
-      table checker or numerical search.
-- [ ] Every substantive scalar bound has a human-readable explanation on its
-      whole domain, not merely a generated arithmetic proof object.
-- [ ] The complete hand manuscript can be read independently of Lean and
-      contains the same argument. The diagonal companion is only one component.
-- [ ] All computational files have clearly separated exploratory roles.
-- [ ] Compiler/kernel checking, separately from the human-analytic criterion.
+  generated-table check or numerical search.
+- [ ] Every remaining substantive inequality has a human-readable whole-domain proof.
+- [ ] The complete hand proof contains the same final analytic argument.
+- [ ] Old computational material has a clearly separated exploratory role.
+- [ ] Compile and check the final kernel/axiom dependencies.
 
-Checked items here denote written analytic proof bodies, not compiler acceptance.
-Compilation remains deferred at the user's request. The complete human-analytic
-n=6 lower bound and uniqueness have NOT yet been delivered.
+Compilation remains deferred at the user's request. The complete unrestricted
+human-analytic n=6 theorem is still unfinished outside normalization. The
+acceptance criterion has not been weakened to mark normalization complete.

@@ -1,73 +1,103 @@
-# n=6 proof status: human-analytic conversion
+# n=6 proof status: analytic normalization source closed
 
-**The requested human-analytic n=6 proof is not complete.**
-The current acceptance criterion is `HUMAN_ANALYTIC_STANDARD.md`, and the active
-conversion ledger is `ANALYTIC_PROGRESS.md`. Earlier source-completion checklists
-record progress on a computer-assisted route; their checked boxes are not proof
-of compliance with the new mathematical requirement.
+**The analytic normalization source is complete and connected.**
+The completed endpoint is `Normalization.normalize_of_candidate`, exported by
+`SquaresInCircles/Six/AnalyticNormalization.lean` and the isolated analytic
+entry point. It starts from the original Packing predicate and the candidate
+radius bound; pins, sectors, the small central box and separator choices are
+not added assumptions on the caller.
 
-## What exists, and what is not accepted as finished
+**The complete unrestricted human-analytic n=6 theorem is still unfinished.**
+The remaining work is the separate downstream D-edge/tail classification and
+common pair-envelope conversion, followed by reconnection and validation of
+the existing final stress/equality/public endpoints.
 
-The branch contains Lean source for the unrestricted lower bound, uniqueness,
-equality reconstruction and public Optimum 6 integration. Those sources still
-transitively use computational normalization, fixed-stress classification and
-pair-envelope certificates. They are therefore NOT accepted as the requested
-human-analytic proof, irrespective of eventual kernel acceptance.
+Compilation and kernel/axiom acceptance remain deferred. Source completion is
+not reported as an executed Lean proof check.
 
-The new analytic checkpoint is `SquaresInCircles/Six/Analytic.lean`. Its current
-scope is deliberately smaller and explicit. It collects ordinary geometric,
-algebraic and calculus arguments without the unfinished computational chain.
+## Normalization completed in this continuation
 
-## Completed analytic replacements in this continuation
+The strong-core forbidden-marker proof was already analytic. The remaining
+normalization dependencies have now been replaced and connected:
 
-1. Both A22 stress-angle sign checks are replaced by the shifted-sine identity.
-2. Candidate constant algebra is separated from packing normalization; the
-   diagonal stress-coefficient bound is proved by rational algebra rather than
-   a zero-dimensional certificate.
-3. The diagonal vertex inequality is proved by a diamond-domain reduction,
-   trigonometric concavity and two explicit quartic chord inequalities. The
-   two cases are the two boundary pieces of the diamond, not a searched grid.
-4. Both cap and vertex branches, the genuine support switch, nonnegativity and
-   the unique-zero condition are assembled in `Stress/DiagonalRemainder`.
-5. The real support formula and balanced-pair definitions no longer import
-   computational reification merely to state ordinary real identities.
-6. The six cardinal-facing angle checks are replaced by one short-transverse-
-   coordinate cap obstruction and the four cardinal-coordinate identities.
+1. A universal sixty-degree two-pin covering lemma from one completed-square
+   far-corner obstruction, plus the western-flank completed-square argument.
+2. OWN east/west profiles and broad windows from trigonometric concavity and
+   explicit endpoint inequalities.
+3. Cardinal cap-facing directions and fixed pins from geometric quadrant
+   cases, exact cap support and the actual open piercing point.
+4. Five-pin covering and the finite bijection on actual interiors. Unique pin
+   assignment itself rules out the wrong primary locations and gives every
+   labelled window; no separate numerical window check is used.
+5. Allowed central axes directly from the fixed pin coordinates and strong-core
+   secondary exclusion. Both the original and reflected PinPacking constructors
+   now use these analytic results.
+6. The existing analytic OWN moving-pin and W/D four-axis arguments are fully
+   connected to those analytic broad-window inputs.
+7. Appendix A's eight finite checks are replaced by whole-domain projection
+   reductions to two forward secondary sources, both using one multiplier
+   triple. W-secondary uses an affine radical majorant; D-secondary uses the
+   explicit radical second derivative and concavity. Both reduce to the seven
+   geometric vertices of the order/sign domain.
+8. The actual force, norm and support identities connect those positive bounds
+   to the geometric contradiction. D is canonically OWN. Both core-exclusion
+   inputs are explicit at the Appendix A call site.
 
-The conventional proof is written in `ANALYTIC_DIAGONAL_PROOF.md`, including
-all relevant constants, the branch condition, the two quartics and their exact
-endpoint fractions. The separate `SixAnalyticAxiomAudit.lean` contains deferred
-audit commands, not an execution log.
+The D-secondary W-force norm has the positive mixed term
+`53/200 + (9/40)*sin(u-t)`. An intermediate erroneous sign/dominance argument
+was corrected and removed; the completed source uses the separate curvature
+proof, not that intermediate claim.
 
-## Scope boundaries that remain important
+The resulting interface retains the strong/coarse box, side-nearest chart
+bounds, genuine affine markers, fixed/moving pins, windows, cyclic order,
+cardinal-preferred two-choice rule, one helper per cardinal side, N25+, both
+opposite-cardinal budgets and D-own. The exact candidate-radius central box and
+budget refinements are exported with both cardinal hypotheses intact. The one
+possible global diagonal reflection remains explicitly recorded.
 
-The analytic diagonal theorem assumes its explicit DiagonalDomain. The current
-proof that every packing reaches that domain still depends on fixed stress
-rows and tails, and must be replaced. The new cardinal-angle refinement uses
-the broad windows and strong-core bounds of PinPacking; it does not yet replace
-the certificate-based construction of those inputs.
+## Entry points, companion and review
 
-The principal remaining blocks are: analytic strong-core and pin/window
-construction; W/D and Appendix A reductions; analytic D-edge classification
-and tails in place of the large fixed tables; and the common adjacent-pair
-lower envelope in place of its outer and derivative covers. Only after those
-are replaced can the existing final stress/equality algebra be regarded as
-an analytic-only proof of the unrestricted endpoints.
+- `SquaresInCircles/Six/AnalyticNormalization.lean`: normalization and its
+  refinements, independent of downstream computational classification.
+- `SquaresInCircles/Six/Analytic.lean`: includes that normalization together
+  with the earlier analytic diagonal remainder and constant results.
+- `SixNormalizationAxiomAudit.lean`: configured deferred audit commands, not
+  executed output.
+- `ANALYTIC_NORMALIZATION_PROOF.md`: human-readable argument, including the
+  two completed squares, the pin/window deductions, correct force formulas,
+  curvature identity and positive endpoint reserves.
+- `NORMALIZATION_DEPENDENCIES.md`: exact scope of the import/call-site review.
+- `ANALYTIC_PROGRESS.md`: active completion ledger.
 
-## Execution and historical evidence
+The reviewed manually recorded Six-only import graph reaches 82 modules with
+124 Six-to-Six edges and no cycle or listed computational module. This static
+review is not a Lean elaboration/axiom audit, nor a fresh audit of the existing
+Common, Seven, Geometry or Mathlib libraries. The legacy Certificates namespace
+in PinData contains only ordinary real constants and finite label data.
 
-Compilation is deferred at the user's request. No Lean compilation or kernel
-acceptance is claimed for the new source. No numerical search, certificate
-replay or generated-table verification was used to establish these replacements.
-No GitHub runner or remote computation service was used.
+Local exact algebra reviewed 34 explicitly displayed polynomial/rational
+comparisons, including the forced endpoint values. No numerical search,
+interval subdivision, certificate replay or generated-table verification was
+used in this normalization conversion. These calculations are development
+checks only, never inputs to the Lean theorems. No GitHub runner, remote
+computation or Lean compiler was used.
 
-`UPLOAD_AUDIT.md`, `UPLOAD_AUDIT_RESULTS.json`, and earlier mirror/build records
-remain historical accounts of the computational route. They are not proof
-premises of the analytic checkpoint and do not establish the human-analytic
-acceptance criterion. Their old counts and hashes must not be presented as
-validation of this new source.
+## Remaining analytic proof work outside normalization
 
+The diagonal remainder inequality and its unique zero are analytic on their
+explicit domain. The present reduction of every packing to that later, tighter
+domain still uses the fixed D-edge classification and tails. Those large-row
+arguments need conceptual whole-domain replacements. The common adjacent-pair
+lower envelope also still uses outer and derivative covers that must be
+replaced.
+
+Existing LowerBound, Uniqueness, equality reconstruction and public Optimum 6
+source must be reconnected through those analytic-only dependencies. They are
+not accepted as the finished human-analytic unrestricted theorem merely because
+normalization is now converted. Final compilation and transitive kernel/axiom
+checking are an additional deferred validation requirement.
+
+Historical UPLOAD_AUDIT and mirror/build logs concern the old computer-assisted
+route. Their old counts and hashes do not validate this source checkpoint.
 The original Packing and Congruent predicates and public problem statements
-are unchanged in this conversion. The isolated analytic checkpoint does not
-claim to replace the full n=6 theorem until its remaining dependency gaps are
-closed.
+were not changed during this normalization completion.

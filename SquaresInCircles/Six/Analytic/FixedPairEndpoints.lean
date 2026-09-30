@@ -1,0 +1,161 @@
+import SquaresInCircles.Six.Analytic.RectangleWallReduction
+import SquaresInCircles.Six.Analytic.FixedPairPolynomialBound
+
+/-!
+# The actual endpoint inequalities of the pair concavity reduction
+
+There are nine rectangle/axis vertices and two additional diagonal boundary
+vertices for each central-bit choice. The origin is handled by the exact
+candidate identity for the two equality-compatible sources. Every other value
+is reduced, by the previously proved uniform Taylor error, to three explicit
+rational polynomial comparisons after two sign-checked squarings.
+
+The finite cases below are only the four source axes, four central-bit choices,
+and these geometrically forced vertices. No stress table, interval subdivision,
+external success flag, or `decide` inequality certificate is used. `norm_num`
+proves the displayed rational comparisons. Compilation remains deferred.
+-/
+
+set_option maxRecDepth 100000
+set_option maxHeartbeats 0
+
+noncomputable section
+namespace SquaresInCircles.Six.Analytic.FixedPair
+open Stress Normalization Polynomial PairTaylor
+
+def northEndpoint (no : Bool) : Fin 3 → ℝ := ![(northLo no:ℝ),0,(northHi no:ℝ)]
+def westEndpoint (wo : Bool) : Fin 3 → ℝ := ![(westLo wo:ℝ),0,(westHi wo:ℝ)]
+
+def diagonalEndpoint (no wo : Bool) : Fin 3 → ℝ :=
+  ![max (northLo no:ℝ) (westLo wo:ℝ),0,min (northHi no:ℝ) (westHi wo:ℝ)]
+
+/-- This tactic performs only constant rational arithmetic at a point already
+specified by the geometric reduction. It has no search or subdivision step. -/
+private macro "pair_endpoint_rational" : tactic =>
+  `(tactic| norm_num [EndpointAlgebra,budget,linearPart,squareN,squareW,
+    northSquare,westSquare,northScale,northVector,westVector,baseVector,
+    northSource,westSource,thresholdP,halfWidth,penaltyP,
+    rApprox,mApprox,cApprox,circleUpper,radialUpper,baseUpper,
+    PairTaylor.sinP,PairTaylor.cosP,line,northEndpoint,westEndpoint,diagonalEndpoint,
+    northLo,northHi,westLo,westHi] at *)
+
+/-- Rational endpoint comparisons away from the candidate-origin equality. -/
+lemma corner_algebra (no wo : Bool) (u : Fin 4) (i j : Fin 3)
+    (h : i≠1 ∨ j≠1 ∨ u=1 ∨ u=2) :
+    EndpointAlgebra no wo u (northEndpoint no i) (westEndpoint wo j) := by
+  cases no <;> cases wo <;> fin_cases u <;> fin_cases i <;> fin_cases j
+  all_goals pair_endpoint_rational
+
+lemma diagonal_algebra (no wo : Bool) (u : Fin 4) (i : Fin 3)
+    (h : i≠1 ∨ u=1 ∨ u=2) :
+    EndpointAlgebra no wo u (diagonalEndpoint no wo i) (diagonalEndpoint no wo i) := by
+  cases no <;> cases wo <;> fin_cases u <;> fin_cases i
+  all_goals pair_endpoint_rational
+
+lemma corner_in_domain (no wo : Bool) (i j : Fin 3) :
+    Domain no wo (northEndpoint no i) (westEndpoint wo j) := by
+  cases no <;> cases wo <;> fin_cases i <;> fin_cases j <;>
+    norm_num [Domain,northEndpoint,westEndpoint,northLo,northHi,westLo,westHi]
+
+lemma diagonal_in_domain (no wo : Bool) (i : Fin 3) :
+    Domain no wo (diagonalEndpoint no wo i) (diagonalEndpoint no wo i) := by
+  cases no <;> cases wo <;> fin_cases i <;>
+    norm_num [Domain,diagonalEndpoint,northLo,northHi,westLo,westHi]
+
+lemma origin_in_domain (no wo : Bool) : Domain no wo 0 0 := by
+  cases no <;> cases wo <;> norm_num [Domain]
+
+lemma candidate_gap_origin (no wo : Bool) {u : Fin 4} (hu : u=0 ∨ u=3) :
+    gap no wo u 0 0=0 := by
+  rw [gap,minorant_zero no wo hu]
+  norm_num [line]
+
+lemma alternate_gap_origin (no wo : Bool) {u : Fin 4} (hu : u=1 ∨ u=2) :
+    0<gap no wo u 0 0 := by
+  have he := corner_algebra no wo u 1 1 (Or.inr (Or.inr hu))
+  apply positive_of_endpoint_algebra (origin_in_domain no wo)
+  simpa only [northEndpoint,westEndpoint] using he
+
+lemma gap_origin_nonnegative (no wo : Bool) (u : Fin 4) : 0≤gap no wo u 0 0 := by
+  by_cases hu : u=0 ∨ u=3
+  · rw [candidate_gap_origin no wo hu]
+  · have halt : u=1 ∨ u=2 := by omega
+    exact (alternate_gap_origin no wo halt).le
+
+lemma corner_nonnegative (no wo : Bool) (u : Fin 4) (i j : Fin 3) :
+    0≤gap no wo u (northEndpoint no i) (westEndpoint wo j) := by
+  by_cases hi : i=1
+  · by_cases hj : j=1
+    · subst i
+      subst j
+      exact gap_origin_nonnegative no wo u
+    · exact (positive_of_endpoint_algebra (corner_in_domain no wo i j)
+        (corner_algebra no wo u i j (Or.inr (Or.inl hj)))).le
+  · exact (positive_of_endpoint_algebra (corner_in_domain no wo i j)
+      (corner_algebra no wo u i j (Or.inl hi))).le
+
+lemma diagonal_nonnegative (no wo : Bool) (u : Fin 4) (i : Fin 3) :
+    0≤gap no wo u (diagonalEndpoint no wo i) (diagonalEndpoint no wo i) := by
+  by_cases hi : i=1
+  · subst i
+    exact gap_origin_nonnegative no wo u
+  · exact (positive_of_endpoint_algebra (diagonal_in_domain no wo i)
+      (diagonal_algebra no wo u i (Or.inl hi))).le
+
+lemma north_boundary_index (no : Bool) {n : ℝ}
+    (hn : AxisBoundary (northLo no) (northHi no) n) :
+    ∃ i : Fin 3, n=northEndpoint no i := by
+  rcases hn with rfl | rfl | rfl
+  · exact ⟨0,rfl⟩
+  · exact ⟨1,rfl⟩
+  · exact ⟨2,rfl⟩
+
+lemma west_boundary_index (wo : Bool) {w : ℝ}
+    (hw : AxisBoundary (westLo wo) (westHi wo) w) :
+    ∃ i : Fin 3, w=westEndpoint wo i := by
+  rcases hw with rfl | rfl | rfl
+  · exact ⟨0,rfl⟩
+  · exact ⟨1,rfl⟩
+  · exact ⟨2,rfl⟩
+
+/-- Only the two actual diagonal boundary intersections and zero are needed. -/
+lemma diagonal_boundary_index (no wo : Bool) {z : ℝ}
+    (hd : Domain no wo z z)
+    (hb : AxisBoundary (northLo no) (northHi no) z ∨
+      AxisBoundary (westLo wo) (westHi wo) z) :
+    ∃ i : Fin 3, z=diagonalEndpoint no wo i := by
+  have hr := (domain_iff_rectangle no wo z z).mp hd
+  rcases hb with hn | hw
+  · rcases hn with h | h | h
+    · refine ⟨0,?_⟩
+      have hm : max (northLo no:ℝ) (westLo wo:ℝ)=northLo no :=
+        max_eq_left (by linarith [hr.2.1])
+      simpa only [diagonalEndpoint,hm] using h
+    · exact ⟨1,h⟩
+    · refine ⟨2,?_⟩
+      have hm : min (northHi no:ℝ) (westHi wo:ℝ)=northHi no :=
+        min_eq_left (by linarith [hr.2.2])
+      simpa only [diagonalEndpoint,hm] using h
+  · rcases hw with h | h | h
+    · refine ⟨0,?_⟩
+      have hm : max (northLo no:ℝ) (westLo wo:ℝ)=westLo wo :=
+        max_eq_right (by linarith [hr.1.1])
+      simpa only [diagonalEndpoint,hm] using h
+    · exact ⟨1,h⟩
+    · refine ⟨2,?_⟩
+      have hm : min (northHi no:ℝ) (westHi wo:ℝ)=westHi wo :=
+        min_eq_right (by linarith [hr.1.2])
+      simpa only [diagonalEndpoint,hm] using h
+
+/-- All endpoints required by the analytic rectangle/wall reduction are proved. -/
+theorem endpoint_condition (no wo : Bool) (u : Fin 4) : EndpointCondition no wo u := by
+  constructor
+  · intro n w hn hw
+    obtain ⟨i,rfl⟩ := north_boundary_index no hn
+    obtain ⟨j,rfl⟩ := west_boundary_index wo hw
+    exact corner_nonnegative no wo u i j
+  · intro z hd hb
+    obtain ⟨i,rfl⟩ := diagonal_boundary_index no wo hd hb
+    exact diagonal_nonnegative no wo u i
+
+end SquaresInCircles.Six.Analytic.FixedPair
