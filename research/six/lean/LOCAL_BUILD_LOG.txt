@@ -1,0 +1,4 @@
+NOT COMPILED: required local executable lean is missing.
+No Lean kernel or n=6 theorem acceptance is claimed.
+
+Process exit status: 127

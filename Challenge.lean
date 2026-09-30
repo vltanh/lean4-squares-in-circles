@@ -1,41 +1,24 @@
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Angle
+import Mathlib.Tactic.Linarith
 
 /-!
-# Packing unit squares in a disk: the statement
+# Packing one through seven unit squares in a disk: the statement
 
-The statement a reader audits. It imports only Mathlib, restates the
-definitions of `SquaresInCircles/Geometry.lean` word for word, and states the
-two main theorems, which the root module of the library `SquaresInCircles`
-proves; Comparator checks that statements and definitions are identical.
+This independent statement module imports only Mathlib. Its definitions are
+copied word for word from Geometry.lean. The two declaration placeholders below
+are the existing comparator challenge statements, not proof dependencies of the
+solution; the root SquaresInCircles module supplies their actual proofs.
 
-A packing of `n` unit squares in a disk places `n` squares of side 1 in the
-closed disk, each at its own position and rotation, so that no point is interior
-to two squares. For `n = 1, …, 5` and `n = 7` the theorems give the least radius
-of such a disk, and every packing that attains it, up to a rotation about the
-disk centre and a relabelling of the squares:
+For every 1 <= n <= 7 the theorems identify the least disk radius and all
+optimal packings. Cases 1 through 6 have one model up to the original rotation,
+translation and relabeling congruence. Case 7 has the column-model family.
+The exact six-square radical and its one rotated diagonal square are explicitly
+defined below. Other n retain placeholder values and are outside theorem scope.
 
-| `n` | least radius | the optimal packings |
-| :-: | :-: | --- |
-| 1 | `√2 / 2` | the square |
-| 2 | `√5 / 2` | the 2 × 1 rectangle |
-| 3 | `5√17 / 16` | the T: two squares side by side, and one centred on top of them |
-| 4 | `√2` | the 2 × 2 block |
-| 5 | `√(5/2)` | the plus: a square and its four side-neighbours |
-| 7 | `√13 / 2` | two columns of two squares, and between them a column of three, each of which can move along the middle axis |
-
-The theorems assume `1 ≤ n ≤ 5` or `n = 7`. For every other `n`, `n = 6`
-included, `optimalRadius n` is the placeholder `0`, `optimalPackings n` is
-empty, and nothing is claimed.
-
-A unit square is a centre and an orthonormal frame; in the coordinates of its
-frame it is `[-1/2, 1/2]²`, closed (`closedSquare`) or open (`openSquare`). A
-packing asks that every closed square lie in the closed disk and that no point
-lie in two open squares, so squares may touch each other and the circle.
-Distances use the squared Euclidean length `normSq` (Mathlib's norm on
-`ℝ × ℝ` is the maximum norm). Congruence compares point sets, since a quarter
-turn of a frame describes the same square. It allows a rotation about the disk
-centre and a relabelling; every optimal model is symmetric under a reflection,
-so reflections add nothing.
+Closed squares may touch one another and the circle; only open interiors must
+be disjoint. No parallelism, normalization, pin, sector, or separator assumption
+is added to Packing. Congruent remains orientation-preserving: candidate
+reflection symmetry is established by the solution, not built into the statement.
 -/
 
 noncomputable section
@@ -121,10 +104,10 @@ def Congruent {n : ℕ} (S : Fin n → UnitSquare) (o : Point) (M : Fin n → Un
     (openSquare (S (σ i)) (pointInDirection o φ p.1 p.2) ↔ openSquare (M i) p) ∧
     (closedSquare (S (σ i)) (pointInDirection o φ p.1 p.2) ↔ closedSquare (M i) p)
 
-/-! ### The optimal radii and the optimal models
+/-! ### The optimal radii and models
 
-Every model is made of axis-parallel unit squares, with centres given in the
-frame of the disk centre, which is the origin. -/
+Models are specified about the origin. The six-square model has one genuinely
+rotated square; all squares in the other displayed models are axis-parallel. -/
 
 namespace One
 
@@ -233,45 +216,79 @@ def columnModel (c : Column) : Fin 7 → UnitSquare :=
 
 end Seven
 
-/-- The optimal radius for `n` unit squares, for `1 ≤ n ≤ 5` and `n = 7`. Every
-other `n` gets the placeholder `0`, about which nothing is claimed. -/
+namespace Six
+
+/-- Half the diagonal of a unit square. -/
+def hStar : ℝ := Real.sqrt 2 / 2
+
+def AStar : ℝ := (1466 + 1940 * hStar) / 267
+
+def BStar : ℝ := (327 + 432 * hStar) / 712
+
+def discriminant : ℝ := AStar ^ 2 - 4 * BStar
+
+/-- The small positive root, written in its numerically stable radical form. -/
+def sStar : ℝ := 2 * BStar / (AStar + Real.sqrt discriminant)
+
+def tStar : ℝ := (-20 + 30 * hStar) * sStar + 7 / 2 - 9 * hStar / 2
+
+def dStar : ℝ := 1 / 2 + hStar - tStar
+
+/-- Exact squared radius of the six-square model. -/
+def qStar : ℝ := 2 * sStar ^ 2 + 4 * sStar + 5 / 2
+
+def radius : ℝ := Real.sqrt qStar
+
+/-- The one diagonal square in the six-square model. -/
+def diagonalSquare : UnitSquare where
+  center := (-dStar, -dStar)
+  cosine := hStar
+  sine := hStar
+  unit := by
+    dsimp [hStar]
+    nlinarith [Real.sq_sqrt (show (0 : ℝ) ≤ 2 by norm_num)]
+
+/-- The exact model in C,N,E,W,S,D order. -/
+def model : Fin 6 → UnitSquare :=
+  ![axisSquare (sStar, sStar), axisSquare (sStar, sStar + 1),
+    axisSquare (sStar + 1, sStar), axisSquare (sStar - 1, tStar),
+    axisSquare (tStar, sStar - 1), diagonalSquare]
+
+end Six
+
+/-- The optimal radius for `n` unit squares for `1 ≤ n ≤ 7`.
+Other values receive the placeholder zero and are not covered by the theorems. -/
 def optimalRadius : ℕ → ℝ
   | 1 => One.radius
   | 2 => Two.radius
   | 3 => Three.radius
   | 4 => Four.radius
   | 5 => Five.radius
+  | 6 => Six.radius
   | 7 => Seven.radius
   | _ => 0
 
-/-- The optimal packings of `n` unit squares, as models about the origin: one
-packing for `n ≤ 5`, and for `n = 7` every position of the three middle
-squares. Every other `n` gets the placeholder `∅`, about which nothing is
-claimed. -/
+/-- Optimal models about the origin: a single model for `1 ≤ n ≤ 6`, and the
+column family for `n = 7`. Other values receive the empty placeholder set. -/
 def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
   | 1 => {One.model}
   | 2 => {Two.model}
   | 3 => {Three.model}
   | 4 => {Four.model}
   | 5 => {Five.model}
+  | 6 => {Six.model}
   | 7 => Set.range Seven.columnModel
   | _ => ∅
 
 /-! ### The theorems -/
 
-/-- `optimalRadius n` is the least radius of a disk that holds `n` unit squares
-with disjoint interiors: some packing of `n` unit squares fits in a disk of
-that radius, and none fits in a disk of smaller radius. -/
-theorem optimal_radius (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7) :
+/-- The least disk radius for each of one through seven unit squares. -/
+theorem optimal_radius (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 7) :
     IsLeast {R | ∃ (S : Fin n → UnitSquare) (o : Point), Packing S o R} (optimalRadius n) := by
   sorry
 
-/-- The packings in a disk of radius `optimalRadius n` are exactly the
-configurations congruent to an optimal model: the model, turned about the disk
-centre and relabelled. For `n ≤ 5` the optimal packing is therefore unique up
-to rotation and relabelling, and for `n = 7` the optimal packings are exactly
-the column packings. -/
-theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7)
+/-- Exact equality classification with the unchanged point-set congruence. -/
+theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 7)
     (S : Fin n → UnitSquare) (o : Point) :
     Packing S o (optimalRadius n) ↔ ∃ M ∈ optimalPackings n, Congruent S o M := by
   sorry

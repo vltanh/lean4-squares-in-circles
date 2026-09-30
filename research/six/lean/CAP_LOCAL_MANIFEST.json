@@ -1,0 +1,218 @@
+{
+  "scope": "Source and exact algebra checks only. No Lean compilation, kernel acceptance, or complete n=6 proof.",
+  "source_commit": "8ba422ce0e6a8b0731dd7fe499d0d74a727ece65",
+  "executed_utc": "2026-09-29T11:05:07.502310+00:00",
+  "python_version": "3.13.5",
+  "sympy_version": "1.14.0",
+  "lean_executable": null,
+  "lake_executable": null,
+  "lean_compilation_executed": false,
+  "axiom_audit_executed": false,
+  "github_runner_used": false,
+  "remote_execution_used": false,
+  "unrestricted_n6_theorem_proved": false,
+  "results": {
+    "source_hygiene": "PASS",
+    "lean_files": 18,
+    "lean_proof_declarations": 149,
+    "reachable_six_modules": 17,
+    "candidate_algebra_checks": 40,
+    "cap_algebra_checks": 43,
+    "source_guard_unit_tests": 8,
+    "axiom_declarations_configured_not_executed": 23
+  },
+  "commands": [
+    {
+      "name": "source hygiene",
+      "command": [
+        "python3",
+        "scripts/audit-six-sources.py",
+        "--json",
+        "research/six/lean/SOURCE_AUDIT.json"
+      ],
+      "exit_status": 0,
+      "output_log": null
+    },
+    {
+      "name": "source/audit guard unit tests",
+      "command": [
+        "python3",
+        "research/six/lean/test_source_audit.py"
+      ],
+      "exit_status": 0,
+      "output_log": "SOURCE_TEST_LOG.txt"
+    },
+    {
+      "name": "candidate algebra",
+      "command": [
+        "python3",
+        "research/six/lean/check_algebra.py",
+        "--json",
+        "research/six/lean/ALGEBRA_CHECKS.json"
+      ],
+      "exit_status": 0,
+      "output_log": null
+    },
+    {
+      "name": "cap algebra",
+      "command": [
+        "python3",
+        "research/six/lean/check_cap_algebra.py",
+        "--json",
+        "research/six/lean/CAP_ALGEBRA_CHECKS.json"
+      ],
+      "exit_status": 0,
+      "output_log": null
+    },
+    {
+      "name": "shell syntax",
+      "command": [
+        "bash",
+        "-n",
+        "scripts/verify-six-foundations.sh"
+      ],
+      "exit_status": 0,
+      "output_log": null
+    },
+    {
+      "name": "actual local build entry point",
+      "command": [
+        "bash",
+        "scripts/verify-six-foundations.sh",
+        "/mnt/data/six_cap_local_build"
+      ],
+      "exit_status": 127,
+      "output_log": "LOCAL_BUILD_LOG.txt"
+    }
+  ],
+  "sources": {
+    "SquaresInCircles/Six/Candidate.lean": {
+      "sha256": "d7a76619d17d9d0f15c36a68d07bce6872b868f4d8777f41bdc38942e7b42892",
+      "git_blob": "7e21887036ac51bd9317e08961c416157ed5718c"
+    },
+    "SquaresInCircles/Six/Construction.lean": {
+      "sha256": "f702d98531fe42b8a3c06e94cefae9bcc52701910bb74ad308802496d66f39e1",
+      "git_blob": "b6787d3544a623da16a24d13238057ded3546d78"
+    },
+    "SquaresInCircles/Six/Containing.lean": {
+      "sha256": "f6e7949f31b0c00ce6d2c5ce3c9a07af8b1667b3e147e7084dd1157e0f2f3f3f",
+      "git_blob": "60ddf52bfab474f77d6ae32fcc19e10a789d3703"
+    },
+    "SquaresInCircles/Six/Goals.lean": {
+      "sha256": "6a996e3376cd439fa714e80c6cc255c42e596b4f0e7ef1084556653a2365faf3",
+      "git_blob": "08d07e030cc7ed0a2180139873e2c396c3987b7b"
+    },
+    "SquaresInCircles/Six/Normalization/CapBounds.lean": {
+      "sha256": "7e09eaff299a2a32a291bd58f46aada1789beda7013daf782dedd40fee163192",
+      "git_blob": "b9bd86bf2a27304db5d6f9fee1a2ec954c4ed7c5"
+    },
+    "SquaresInCircles/Six/Normalization/CapGeometry.lean": {
+      "sha256": "b17b860df297d148deb3ccd9e013b0e4f7af7fee55374b64f520369aa433f3f2",
+      "git_blob": "31aca6ef314293bc414dc3897601842ee70c14ee"
+    },
+    "SquaresInCircles/Six/Normalization/CapIdentities.lean": {
+      "sha256": "5041882f3637d7459b4bb27a6ac8982717f87a6d0019d23db44bab1ea83de46a",
+      "git_blob": "d40f1da21feb766939d462b8772abddb24e5945a"
+    },
+    "SquaresInCircles/Six/Normalization/CapPiercing.lean": {
+      "sha256": "ab51eb26f18961986837ca237da431bc2abc26d86c64f0481fbc81d228fa464f",
+      "git_blob": "0f7e47da997bc06297f64f7552d5748a5ec90862"
+    },
+    "SquaresInCircles/Six/Normalization/CapSupport.lean": {
+      "sha256": "2de0576692f2ec86c11e8a3cf06e594bd159922645a0a8b194b804db0a5ab518",
+      "git_blob": "463435f1744bda11b9c5797869c56ec7a2ff5a8c"
+    },
+    "SquaresInCircles/Six/Normalization/ChartBounds.lean": {
+      "sha256": "bb5c5d02b0a6a7004ff4933cb6bca6e9c0ba013e357193753fe4e69ed9ee9b9e",
+      "git_blob": "757d9e83f4383bb9c7912dfb75b8b814d377b651"
+    },
+    "SquaresInCircles/Six/Normalization/Constants.lean": {
+      "sha256": "007691c1bc6448e80c0240a98f8ca1429eb2a69604259dea5d6deb97371a7787",
+      "git_blob": "a1e3716e77987acdb70fb3d4217151e5bad62cea"
+    },
+    "SquaresInCircles/Six/Normalization/CoreGeometry.lean": {
+      "sha256": "87367b9e9151fc5b435af3b3730f57026cc86a868b336d2791f22deef06db703",
+      "git_blob": "0a2b0cf752ca564451291246cdee6b23f21640a2"
+    },
+    "SquaresInCircles/Six/Normalization/OwnEastExclusion.lean": {
+      "sha256": "34da407836187d57e600229cd4d5445f19b506740c9cf5796bcefb1fdaab5889",
+      "git_blob": "a0ec204ff32757ff84f487761f336b2ba69e2d2d"
+    },
+    "SquaresInCircles/Six/Normalization/PiercingPolynomial.lean": {
+      "sha256": "67dd61bd1be0b4e002b79879d7d7e81abb5fe50c3098bfef1b63b51694d36cce",
+      "git_blob": "d9d1ba267283c149a486a9a618ba55dce149e95a"
+    },
+    "SquaresInCircles/Six/Normalization/PinCounting.lean": {
+      "sha256": "5259cd8d98c4a2c311713457c63526f045935a6be3122626062d9bf140538597",
+      "git_blob": "846bf66be9ed77dbbbffd0d266e36df7dba0b020"
+    },
+    "SquaresInCircles/Six/Normalization/SecondarySeparation.lean": {
+      "sha256": "002b75abdf6bd16da1b48ad0a069eb04a9d517c9fb1b14f0dddbe30bbbcf27e3",
+      "git_blob": "9896b0e7beadd6e21974b4494f5d70b32b55b3c0"
+    },
+    "SquaresInCircles/Six.lean": {
+      "sha256": "c0bfe61ded5e8519394a136471b2b358ff4e63ac0f8e01d3089f6093963e40f9",
+      "git_blob": "558a286169a91bcd3e2f8bdcdbb50833a6d738e0"
+    },
+    "SixAxiomAudit.lean": {
+      "sha256": "7d5d2076e7f34ec8f1235540111358079286fa01cdb251c61de5066a680eccfd",
+      "git_blob": "da6fda87bcf38e18e46206c79d7b3fcec9f7905a"
+    },
+    "scripts/audit-six-sources.py": {
+      "sha256": "e30d31b11e3b208ca02f31672d851671733c4cb90f40138d54f0e6ab9f7ed770",
+      "git_blob": "83ad25aff2103600feb96fa6d4431d9ce2d64766"
+    },
+    "scripts/verify-six-foundations.sh": {
+      "sha256": "8bbbe36a4cad6a6440faba9fa30286e581e837177c7edd0c82ca2da606fbde5c",
+      "git_blob": "24214ee912e6f8cbe9170a31f21e300d6c27c727"
+    },
+    "research/six/lean/test_source_audit.py": {
+      "sha256": "6cc9c6c401d6663a11e718207dc2ec9a137c64dee0b7205b50a47c747f32310f",
+      "git_blob": "8500057e5576ebb1fb01a4f20d7713a4ba768d26"
+    },
+    "research/six/lean/check_algebra.py": {
+      "sha256": "7e02b041af8f56d6d43a68d092b1c1d072d2065b3ea8169551f7dcdefd7c9739",
+      "git_blob": "4105ec19f1e7da68c9a16df9ec320366b0c0454f"
+    },
+    "research/six/lean/check_cap_algebra.py": {
+      "sha256": "8e8481f0f2e35a9e8ca5d47d11bb591a31fe35649ca1d93ead2a5576879b3938",
+      "git_blob": "71175d4e8f4753d83821d57a88d3aaf5589e70f1"
+    }
+  },
+  "outputs": {
+    "research/six/lean/SOURCE_AUDIT.json": {
+      "sha256": "447adcf12b3615c48a33af0d9b1679e8c6fb287fa757920331e387545c1b17b1",
+      "git_blob": "1ae566d21ab299b842af0ac2cd832a6d200aec87"
+    },
+    "research/six/lean/SOURCE_TEST_LOG.txt": {
+      "sha256": "d4553099c520d80806f64f1cadbd3362e69e8281798d0bc1b0b83da901d4a1ad",
+      "git_blob": "bb63f0bebacdaa3583371017dec2ab20b17bf6ba"
+    },
+    "research/six/lean/ALGEBRA_CHECKS.json": {
+      "sha256": "0a5f27c18f22edd2f90adcb9018d1c816ebfa755d768c14f82eb8ead19118b5b",
+      "git_blob": "82475000119255660d1b48059f31a91a54456156"
+    },
+    "research/six/lean/CAP_ALGEBRA_CHECKS.json": {
+      "sha256": "a19fe617ccbb98f6c465d6a74b7303c41a8a86b05c9d43142e54fec5d0a7884c",
+      "git_blob": "7afae96ef296f9231752e766b03883b8e0397214"
+    },
+    "research/six/lean/LOCAL_BUILD_LOG.txt": {
+      "sha256": "e327288e6d35a402d8830f29b60f33dd508fd094c78cf9259082f177501e7ab9",
+      "git_blob": "68fed8d10a264adab83901fffdba38cb8b1c4179"
+    }
+  },
+  "new_cap_modules_matched_to_remote_git_blobs": {
+    "source_commit": "8ba422ce0e6a8b0731dd7fe499d0d74a727ece65",
+    "matched": 7,
+    "result": "PASS",
+    "blobs": {
+      "CapBounds.lean": "b9bd86bf2a27304db5d6f9fee1a2ec954c4ed7c5",
+      "CapGeometry.lean": "31aca6ef314293bc414dc3897601842ee70c14ee",
+      "CapPiercing.lean": "0f7e47da997bc06297f64f7552d5748a5ec90862",
+      "CapSupport.lean": "463435f1744bda11b9c5797869c56ec7a2ff5a8c",
+      "OwnEastExclusion.lean": "a0ec204ff32757ff84f487761f336b2ba69e2d2d",
+      "PiercingPolynomial.lean": "d9d1ba267283c149a486a9a618ba55dce149e95a",
+      "SecondarySeparation.lean": "9896b0e7beadd6e21974b4494f5d70b32b55b3c0"
+    }
+  }
+}

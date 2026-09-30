@@ -1,0 +1,86 @@
+{
+  "audit_date": "2026-09-29",
+  "initial_live_head": "fcdb50232d341ce705b9ecf20e3b222d44e25111",
+  "audited_code_checkpoint": "97fec0c5f8b25f8b117ee637158caa081aaa61ab",
+  "scope": {
+    "lean_compilation_performed": false,
+    "lean_axiom_audit_executed": false,
+    "native_arb_executed": false,
+    "github_runner_used": false,
+    "remote_execution_used": false,
+    "unrestricted_n6_lean_proof_complete": false,
+    "all_manuscript_inferences_exhaustively_certified": false,
+    "archived_64_configurations_independently_repeated": false
+  },
+  "input_hashes": {
+    "six_close_proof.zip": "b8dc9ad4de70b330f8d4bfadb7744cf99833d1627228652fa85556f87b5d9c3e",
+    "six_close_proof.patch": "bf3ea1514f64d62dc6fffb9176e6b4a4525ec5d92d3ed9a2ec8d71046eeab6b7"
+  },
+  "integrity": {
+    "research_paths": 47,
+    "lean_changes_in_upload": 0,
+    "zip_and_standalone_patch_identical": true,
+    "preimage_and_postimage_blob_prefixes_match": true,
+    "reverse_and_forward_patch_checks": "PASS",
+    "python_files_parsed": 51,
+    "integrated_patch_postimages_matched": 47
+  },
+  "normalization": {
+    "backend": "supplied unmodified 96-bit exact-dyadic backend; NOT Arb",
+    "modes": ["Q0", "QSTAR"],
+    "per_mode": {
+      "scalar_leaves_passed": 95,
+      "direct_groups_passed": 23,
+      "unresolved": 0,
+      "unit_tests_passed": 11,
+      "sharpness_controls_as_expected": 14,
+      "numerical_identity_sanity_checks": 4
+    }
+  },
+  "downstream": {
+    "final_configurations_passed": 32,
+    "total_configurations": 32,
+    "initial_adapter_failures": 4,
+    "failed_attempts_retained": true,
+    "default_direct_rows_passed": 115,
+    "appendix_C_direct_rows_passed": 99,
+    "hardened_combined_rows_passed": 214,
+    "minimizer_location_search_performed": false,
+    "coverage_checks_passed": 27,
+    "symbolic_force_balances_passed": 214,
+    "guard_tests_passed": 9,
+    "hostile_stress_controls_rejected": 3,
+    "new_lean_algebra_sanity_checks_passed": 10,
+    "backend": "96/128-bit exact-dyadic audit adapter where flint is imported; existing exact rational/fixed-point arithmetic otherwise",
+    "retry_note": "Adapter compatibility/dispatch repaired without changing supplied certificate sources. A separate 96-bit model retry missed a 1e-25 numerical sanity tolerance; 128-bit retry passed. These are not Lean runs."
+  },
+  "revised_source_hashes": {
+    "check_A2_direct_stresses.py": "e6b6a55c5ff9f8b9fade76ded788f4f232227beca24f6d5733ba91ea150a9234",
+    "HAND_PROOF_PRE_NORMALIZATION.md": "56147cf1c806ce41b8b4f3b6d8d8815bd4e1897a4492be7225bcd2ee95b256d0"
+  },
+  "new_lean_source_hashes": {
+    "SquaresInCircles/Six/Normalization/StrongCardinal.lean": {
+      "sha256": "e8e1496864f0cbfcabea3a0711d092cc037a1e3041676770508af8643c28e168",
+      "git_blob": "13344e3bc1a876c26922e758f9a7e06937d619a2"
+    },
+    "SquaresInCircles/Six/Stress/CandidateCardinal.lean": {
+      "sha256": "1c55196ecce58c29943cb7ba5e640dadc81528be7e1428d67570f48b5673702c",
+      "git_blob": "7d5fef9f10a9ad2f560ef745225607eaa133f55b"
+    },
+    "SquaresInCircles/Six/Stress/StrictSupport.lean": {
+      "sha256": "a28503dac7ef306895faebd965b69a01d6916de81dd682385be219c9fa4f9b41",
+      "git_blob": "85b8576a13b7bc0c3b7bbe30e783fd95ba764499"
+    }
+  },
+  "delivery_sha256": {
+    "six_close_proof_audited.patch": "f842232ec2cc12ba9afc1de890ce555619ee4206e51e1b2f263d192cf608c905",
+    "closure_hardening.patch": "279130f10adbb2054786f174160db93f65b0cbca747993cef48e4fc908d0ebfd",
+    "six_close_proof_audit_manifest.json": "cec214fb313148427028c81f4dfabf883b69786ac1e3a664e1dcee00810c425a",
+    "six_close_proof_audit.zip": "dcc22390b922db20cf3b551f66a30273773a8ff8c84418bc5298f61f4ee99a90"
+  },
+  "publication": {
+    "committed": "Targeted Lean changes, development imports, audit inventory, checklist/status and incremental hardening patch on PR #7",
+    "delivered_separately": "Full 47-file research integration patch and revised research copy; not substituted into the live branch manuscripts",
+    "bundle_contains": "Original/revised research sources, three new Lean modules matched to Git blobs, actual logs including failed attempts, adapter/replay tools, exact coverage/algebra results and full AUDIT_MANIFEST.json"
+  }
+}

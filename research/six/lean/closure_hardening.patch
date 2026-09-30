@@ -1,0 +1,139 @@
+--- a/research/six/check_A2_direct_stresses.py
++++ b/research/six/check_A2_direct_stresses.py
+@@ -91,6 +91,7 @@
+ """
+ import sys
+ import time
++import math
+ import heapq
+ from fractions import Fraction as Fr
+ 
+@@ -505,8 +506,11 @@
+ 
+ 
+ class BoxEval:
+-    def __init__(self, st, M=EXACT, wled=True):
++    def __init__(self, st, M=EXACT, wled=True, domain=None):
+         self.st, self.M, self.wled = st, M, wled
++        # Domain witnesses are checked against exact endpoints, not the padded
++        # floating root used for the lower-bound cover.
++        self.domain = domain
+         self.nevals = 0
+ 
+     def lower(self, box):
+@@ -532,7 +536,14 @@
+         return best
+ 
+     def in_domain_point(self, p):
+-        return (not self.wled) or p[0] <= p[2]
++        if self.wled and not p[0] <= p[2]:
++            return False
++        if self.domain is not None:
++            for value, (lo, hi) in zip(p, self.domain):
++                point = arb(value)
++                if not (lo <= point and point <= hi):
++                    return False
++        return True
+ 
+     def mid_value(self, box):
+         p = tuple((a + b) / 2 for a, b in box)
+@@ -709,7 +720,16 @@
+     """float box enclosing the exact interval [lo,hi] (endpoint expressions)"""
+     L = E_arb(E(lo))
+     H = E_arb(E(hi))
+-    return (float(L.lower()) - pad, float(H.upper()) + pad)
++    if not math.isfinite(pad) or pad < 0:
++        raise ValueError("root padding must be finite and nonnegative")
++    if E(lo) != E(hi) and not L <= H:
++        raise ValueError(f"reversed or unresolved exact interval: {lo}, {hi}")
++    left = math.nextafter(float(L.lower()) - pad, -math.inf)
++    right = math.nextafter(float(H.upper()) + pad, math.inf)
++    if not (math.isfinite(left) and math.isfinite(right) and left <= right
++            and arb(left) <= L and H <= arb(right)):
++        raise ValueError(f"float root does not certify coverage: {lo}, {hi}")
++    return left, right
+ 
+ 
+ # ----------------------------------------------------------------- rows
+@@ -1300,7 +1320,8 @@
+ 
+ 
+ def run_row(r, do_min=True, maxboxes=3_000_000, tol=(1e-4, 1e-6)):
+-    ev = BoxEval(r.st, EXACT, r.wled)
++    exact_domain = tuple((E_arb(E(lo)), E_arb(E(hi))) for lo, hi in (r.w, r.s, r.d))
++    ev = BoxEval(r.st, EXACT, r.wled, domain=exact_domain)
+     root = r.box()
+     t0 = time.time()
+     seeds = r.vertices()
+@@ -1368,19 +1389,50 @@
+ 
+ 
+ def select(rows, flt):
+-    if not flt:
+-        return rows
+-    return [r for r in rows if any(f == r.key or f == r.group or f in r.key for f in flt)]
++    """Every requested filter must resolve; an empty run is not a certificate."""
++    def matches(r, f):
++        return f == r.key or f == r.group or f in r.key
++    missing = [f for f in flt if not any(matches(r, f) for r in rows)]
++    if missing:
++        raise ValueError(f"unmatched row filter(s): {', '.join(missing)}")
++    chosen = rows if not flt else [r for r in rows if any(matches(r, f) for f in flt)]
++    if not chosen:
++        raise ValueError("empty row selection: nothing was certified")
++    return chosen
++
++
++def validate_inventory(rows, expected):
++    if len(rows) != expected:
++        raise ValueError(f"row inventory changed: expected {expected}, found {len(rows)}")
++    keys = [r.key for r in rows]
++    if len(set(keys)) != len(keys):
++        raise ValueError("duplicate row keys in the certificate inventory")
++    for r in rows:
++        if sum(r.st.lamq) != 1 or any(x < 0 for x in r.st.lamq):
++            raise ValueError(f"invalid nonnegative normalized stress in {r.key}")
+ 
+ 
+ def main(argv):
+     flt = [a for a in argv if not a.startswith("--")]
+     opts = dict(a[2:].split("=", 1) if "=" in a else (a[2:], "1")
+                 for a in argv if a.startswith("--"))
+-    allrows = list(ROWS)
+-    if "appC" in opts or "appC" in flt:
+-        allrows += appC_rows()
+-    rows = select(allrows, flt)
++    allowed_options = {"appC", "list", "validate", "xfp", "selftest", "nomin", "table",
++                       "rtol", "atol", "maxboxes"}
++    try:
++        unknown = set(opts) - allowed_options
++        if unknown:
++            raise ValueError(f"unknown option(s): {', '.join(sorted(unknown))}")
++        allrows = list(ROWS)
++        validate_inventory(allrows, 115)
++        if "appC" in opts or "appC" in flt:
++            app_rows = appC_rows()
++            validate_inventory(app_rows, 99)
++            allrows += app_rows
++        validate_inventory(allrows, 214 if len(allrows) > 115 else 115)
++        rows = select(allrows, flt)
++    except ValueError as exc:
++        print(f"NOT CERTIFIED: {exc}", file=sys.stderr)
++        return 2
+     if "list" in opts:
+         for r in rows:
+             print(f"{r.key:14s} {r.group:9s} {r.label:48s} {lam_txt(r):28s} "
+--- a/research/six/HAND_PROOF_PRE_NORMALIZATION.md
++++ b/research/six/HAND_PROOF_PRE_NORMALIZATION.md
+@@ -9303,9 +9303,9 @@
+ | `check_A2_survivor_WcSc_bridge_cert.py` | this commit | certificate | §4C bridge: (BR6), (BR9), (BR11), (BR13)--(BR16) and (BR17) Phi>1/1000 on (BR1) directly | pass, 1s |
+ | `check_A2_survivor_WcSo_tails_cert.py` | this commit | certificate | Pattern-27 tails (G27-3) | pass, 2s |
+ | `check_A2_survivor_EoSo_pair_cert.py` | this commit | certificate | Patterns 25/27 own-own E/S pair: s<=0 profile identification; (G27-5a) with its n-reduction | pass, 4s |
+-| `check_A2_survivor_EoSo_face_cert.py` | this commit | certificate | (G27-6), (G27-6a); cross-check of (G27-5b) | pass, 0s |
++| `check_A2_survivor_EoSo_face_cert.py` | this commit | certificate | (G27-5b), (G27-6), (G27-6a), direct exact-support face bounds | pass, 0s |
+ | `check_A2_survivor_P17_cert.py` | this commit | certificate | P17: the four directed D--W primary rows with the stated minima | pass, 1s |
+-| `check_A2_survivor_high_s_pair.py` | this commit | certificate | (G27-5a) twelve edges and (G27-5b) w=0 face (its internal W-secondary cap test is invalid for w<-0.424; the cap branch is certified by check_A2_survivor_EoSo_pair_cert.py) | pass, 7s |
++| `check_A2_survivor_high_s_pair.py` | this commit | cross-check | (G27-5a) twelve edges and (G27-5b) w=0 face only; not a proof dependency because its internal cap test is invalid. The EoSo pair/face certificates prove the needed statements independently | pass, 7s |
+ | `check_A2_survivor_ES_sources_cert.py` | this commit | cross-check | independent certificate of the S--E source comparisons and (SRC-13Ep) used by the survivors | pass, 3s |
+ | `check_A2_survivor_ES_high_s_env_cert.py` | this commit | cross-check | independent certificate of (A22-env-ES-P12+), (A22-env-ES-P13+) on 1/6<=s<=2/5 | pass, 24s |
+ | `check_A2_ES_high_s_edges.py` | this commit | cross-check | one-dimensional terminal edges of the widened E/S envelopes (superseded by check_A2_R22c_high_s_cert.py) | pass, 22s |

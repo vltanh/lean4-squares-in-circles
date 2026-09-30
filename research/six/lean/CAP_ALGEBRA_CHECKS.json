@@ -1,0 +1,224 @@
+{
+  "scope": "exact algebra sanity only; NOT Lean compilation or kernel acceptance",
+  "sympy_version": "1.14.0",
+  "checks": [
+    {
+      "name": "disk Cauchy identity",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "corner supporting line from squared distance",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "corner support slope decomposition",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "cap low-branch gap",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "cap low-branch Taylor substitution",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "cap high-branch Taylor substitution",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "pi squared below ten",
+      "result": "PASS",
+      "exact_positive_margin": "6/49"
+    },
+    {
+      "name": "R0 above three halves squared",
+      "result": "PASS",
+      "exact_positive_margin": "30059/50000"
+    },
+    {
+      "name": "R0 below 1689/1000 squared",
+      "result": "PASS",
+      "exact_positive_margin": "1541/1000000"
+    },
+    {
+      "name": "cap switch sine exceeds 29/100",
+      "result": "PASS",
+      "exact_positive_margin": "1019/50000"
+    },
+    {
+      "name": "sin(2/5) cubic lower bound exceeds one third",
+      "result": "PASS",
+      "exact_positive_margin": "7/125"
+    },
+    {
+      "name": "low-branch tilt coefficient",
+      "result": "PASS",
+      "exact_positive_margin": "133/1500"
+    },
+    {
+      "name": "high-branch coefficient endpoint",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "high-branch tilt reserve",
+      "result": "PASS",
+      "exact_positive_margin": "1/3750"
+    },
+    {
+      "name": "cap at two fifths below core",
+      "result": "PASS",
+      "exact_positive_margin": "11/1500"
+    },
+    {
+      "name": "first cap branch at quarter below half",
+      "result": "PASS",
+      "exact_positive_margin": "1027/96000"
+    },
+    {
+      "name": "second cap branch at quarter below half",
+      "result": "PASS",
+      "exact_positive_margin": "1303/48000"
+    },
+    {
+      "name": "piercing polynomial factorization",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "piercing H plus H squared bound",
+      "result": "PASS",
+      "exact_positive_margin": "3/320"
+    },
+    {
+      "name": "piercing bracket uniform lower bound",
+      "result": "PASS",
+      "exact_positive_margin": "2/25"
+    },
+    {
+      "name": "piercing polynomial baseline above Q0",
+      "result": "PASS",
+      "exact_positive_margin": "13409/200000"
+    },
+    {
+      "name": "piercing transverse failure forces positive b",
+      "result": "PASS",
+      "exact_positive_margin": "1/20"
+    },
+    {
+      "name": "oriented square first local coordinate",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "oriented square second local coordinate",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "cap minimizing vertex first coordinate",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "reflected local X",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "reflected local Y",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "reflection preserves disk square",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "deep cap excludes nonpositive primary coordinate",
+      "result": "PASS",
+      "exact_positive_margin": "2199/5000"
+    },
+    {
+      "name": "disk coordinate sum below twelve fifths",
+      "result": "PASS",
+      "exact_positive_margin": "1441/25000"
+    },
+    {
+      "name": "sorted-frame linear form decomposition",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "nonprimary cap height below core",
+      "result": "PASS",
+      "exact_positive_margin": "17/200"
+    },
+    {
+      "name": "piercing normal lower margin",
+      "result": "PASS",
+      "exact_positive_margin": "503/2500"
+    },
+    {
+      "name": "piercing height ceiling",
+      "result": "PASS",
+      "exact_positive_margin": "3/250"
+    },
+    {
+      "name": "secondary separators coarse margin",
+      "result": "PASS",
+      "exact_positive_margin": "151/500"
+    },
+    {
+      "name": "sqrt2 over two exceeds seven tenths squared",
+      "result": "PASS",
+      "exact_positive_margin": "1/100"
+    },
+    {
+      "name": "first-octant sine lower line",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "first-octant coefficient at c lower bound",
+      "result": "PASS",
+      "exact_positive_margin": "3/5"
+    },
+    {
+      "name": "OWN east strict reserve coefficient",
+      "result": "PASS",
+      "exact_positive_margin": "17/300"
+    },
+    {
+      "name": "OWN positive angle comparison",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "OWN negative angle comparison",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "strict-boundary OWN witness remains equality",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "strict-boundary cap witness remains equality",
+      "result": "PASS",
+      "exact_residual": "0"
+    }
+  ],
+  "passed": 43,
+  "lean_compilation_performed": false,
+  "unrestricted_n6_theorem_proved": false
+}

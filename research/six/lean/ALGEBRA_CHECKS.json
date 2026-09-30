@@ -1,0 +1,219 @@
+{
+  "scope": "exact algebra sanity only; NOT Lean compilation or proof acceptance",
+  "sympy_version": "1.14.0",
+  "checks": [
+    {
+      "name": "sqrt2 lower endpoint squared",
+      "result": "PASS",
+      "exact_positive_margin": "263818039/250000000000000000"
+    },
+    {
+      "name": "sqrt2 upper endpoint squared",
+      "result": "PASS",
+      "exact_positive_margin": "287598881/62500000000000000"
+    },
+    {
+      "name": "A > 10 at h lo",
+      "result": "PASS",
+      "exact_positive_margin": "8389357757/13350000000"
+    },
+    {
+      "name": "A < 11 at h lo",
+      "result": "PASS",
+      "exact_positive_margin": "4960642243/13350000000"
+    },
+    {
+      "name": "B > 4/5 at h lo",
+      "result": "PASS",
+      "exact_positive_margin": "3929383087/44500000000"
+    },
+    {
+      "name": "B < 1 at h lo",
+      "result": "PASS",
+      "exact_positive_margin": "4970616913/44500000000"
+    },
+    {
+      "name": "P(2/25) at h lo",
+      "result": "PASS",
+      "exact_positive_margin": "29655315277/667500000000"
+    },
+    {
+      "name": "-P(842457/10000000) at h lo",
+      "result": "PASS",
+      "exact_positive_margin": "6464682589/22250000000000000"
+    },
+    {
+      "name": "A > 10 at h hi",
+      "result": "PASS",
+      "exact_positive_margin": "1398226309/2225000000"
+    },
+    {
+      "name": "A < 11 at h hi",
+      "result": "PASS",
+      "exact_positive_margin": "826773691/2225000000"
+    },
+    {
+      "name": "B > 4/5 at h hi",
+      "result": "PASS",
+      "exact_positive_margin": "1964691557/22250000000"
+    },
+    {
+      "name": "B < 1 at h hi",
+      "result": "PASS",
+      "exact_positive_margin": "2485308443/22250000000"
+    },
+    {
+      "name": "P(2/25) at h hi",
+      "result": "PASS",
+      "exact_positive_margin": "4942552549/111250000000"
+    },
+    {
+      "name": "-P(842457/10000000) at h hi",
+      "result": "PASS",
+      "exact_positive_margin": "12929604621/44500000000000000"
+    },
+    {
+      "name": "strict candidate ceiling at s upper endpoint",
+      "result": "PASS",
+      "exact_positive_margin": "126203151/50000000000000"
+    },
+    {
+      "name": "small-root denominator polynomial",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "east active radius",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "west active radius certificate",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "diagonal active radius certificate",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "chart supporting-line identity",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "chart supporting-line endpoint minus Q0",
+      "result": "PASS",
+      "exact_positive_margin": "21567/12100000"
+    },
+    {
+      "name": "corner-nearest contradiction",
+      "result": "PASS",
+      "exact_positive_margin": "13409/200000"
+    },
+    {
+      "name": "rho lower endpoint squared",
+      "result": "PASS",
+      "exact_positive_margin": "227/25000"
+    },
+    {
+      "name": "rho upper endpoint squared",
+      "result": "PASS",
+      "exact_positive_margin": "589/1000000"
+    },
+    {
+      "name": "uniform transverse squared upper bound",
+      "result": "PASS",
+      "exact_positive_margin": "141/15625"
+    },
+    {
+      "name": "diagonal inverse x coordinate",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "diagonal inverse y coordinate",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "diagonal farthest-vertex identity",
+      "result": "PASS",
+      "exact_residual": "0"
+    },
+    {
+      "name": "central-diagonal clearance",
+      "result": "PASS",
+      "exact_positive_margin": "5106781/1000000000"
+    },
+    {
+      "name": "diagonal normal separation",
+      "result": "PASS",
+      "exact_positive_margin": "113961029/12500000000"
+    },
+    {
+      "name": "parallel pair 0/1",
+      "result": "PASS",
+      "axis": 2,
+      "exact_lower_margin": "0"
+    },
+    {
+      "name": "parallel pair 0/2",
+      "result": "PASS",
+      "axis": 0,
+      "exact_lower_margin": "0"
+    },
+    {
+      "name": "parallel pair 0/3",
+      "result": "PASS",
+      "axis": 1,
+      "exact_lower_margin": "0"
+    },
+    {
+      "name": "parallel pair 0/4",
+      "result": "PASS",
+      "axis": 3,
+      "exact_lower_margin": "0"
+    },
+    {
+      "name": "parallel pair 1/2",
+      "result": "PASS",
+      "axis": 0,
+      "exact_lower_margin": "0"
+    },
+    {
+      "name": "parallel pair 1/3",
+      "result": "PASS",
+      "axis": 1,
+      "exact_lower_margin": "0"
+    },
+    {
+      "name": "parallel pair 1/4",
+      "result": "PASS",
+      "axis": 3,
+      "exact_lower_margin": "1"
+    },
+    {
+      "name": "parallel pair 2/3",
+      "result": "PASS",
+      "axis": 1,
+      "exact_lower_margin": "1"
+    },
+    {
+      "name": "parallel pair 2/4",
+      "result": "PASS",
+      "axis": 3,
+      "exact_lower_margin": "0"
+    },
+    {
+      "name": "parallel pair 3/4",
+      "result": "PASS",
+      "axis": 0,
+      "exact_lower_margin": "63/200"
+    }
+  ],
+  "passed": 40,
+  "lean_compilation_performed": false,
+  "unrestricted_n6_theorem_proved": false
+}

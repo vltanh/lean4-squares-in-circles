@@ -1,21 +1,17 @@
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Angle
+import Mathlib.Tactic.Linarith
 
 /-!
-# The statement: squares, disks, packings, congruence and the optimal models
+# Squares, disks, packings, congruence and the optimal models
 
-Everything the main theorems (`SquaresInCircles.lean`) state: unit squares, each
-with its own position and rotation; packings in a closed disk; congruence to a
-model given about the origin; and the optimal radius and models of each case.
-`Packing` asks only that the closed squares lie in the disk and that no point
-lie in two open squares (`openSquare`, with strict inequalities).
+The public problem definitions and exact models for one through seven squares.
+Each square has its own position and rotation. Packing requires containment of
+closed squares and disjoint open interiors, so contact is allowed.
 
-`Challenge.lean` restates this file word for word, and Comparator checks that
-the two elaborate identically. That needs every definition here, in this
-order: Lean names the auxiliary lemmas inside a definition, such as the proof
-of `Nat.AtLeastTwo 2` behind the real numeral `2`, after the first definition
-in the file that needs them. Edit here only:
-`scripts/verify-comparator.sh --write` copies the definitions into
-`Challenge.lean`.
+Challenge.lean restates the definitions below word for word and in the same
+order. The comparator checks that the public theorem statements use those
+identical definitions. Keep both copies synchronized with the definition-copy
+step in scripts/verify-comparator.sh; compiler execution is a separate check.
 -/
 
 noncomputable section
@@ -101,10 +97,10 @@ def Congruent {n : ℕ} (S : Fin n → UnitSquare) (o : Point) (M : Fin n → Un
     (openSquare (S (σ i)) (pointInDirection o φ p.1 p.2) ↔ openSquare (M i) p) ∧
     (closedSquare (S (σ i)) (pointInDirection o φ p.1 p.2) ↔ closedSquare (M i) p)
 
-/-! ### The optimal radii and the optimal models
+/-! ### The optimal radii and models
 
-Every model is made of axis-parallel unit squares, with centres given in the
-frame of the disk centre, which is the origin. -/
+Models are specified about the origin. The six-square model has one genuinely
+rotated square; all squares in the other displayed models are axis-parallel. -/
 
 namespace One
 
@@ -213,27 +209,67 @@ def columnModel (c : Column) : Fin 7 → UnitSquare :=
 
 end Seven
 
-/-- The optimal radius for `n` unit squares, for `1 ≤ n ≤ 5` and `n = 7`. Every
-other `n` gets the placeholder `0`, about which nothing is claimed. -/
+namespace Six
+
+/-- Half the diagonal of a unit square. -/
+def hStar : ℝ := Real.sqrt 2 / 2
+
+def AStar : ℝ := (1466 + 1940 * hStar) / 267
+
+def BStar : ℝ := (327 + 432 * hStar) / 712
+
+def discriminant : ℝ := AStar ^ 2 - 4 * BStar
+
+/-- The small positive root, written in its numerically stable radical form. -/
+def sStar : ℝ := 2 * BStar / (AStar + Real.sqrt discriminant)
+
+def tStar : ℝ := (-20 + 30 * hStar) * sStar + 7 / 2 - 9 * hStar / 2
+
+def dStar : ℝ := 1 / 2 + hStar - tStar
+
+/-- Exact squared radius of the six-square model. -/
+def qStar : ℝ := 2 * sStar ^ 2 + 4 * sStar + 5 / 2
+
+def radius : ℝ := Real.sqrt qStar
+
+/-- The one diagonal square in the six-square model. -/
+def diagonalSquare : UnitSquare where
+  center := (-dStar, -dStar)
+  cosine := hStar
+  sine := hStar
+  unit := by
+    dsimp [hStar]
+    nlinarith [Real.sq_sqrt (show (0 : ℝ) ≤ 2 by norm_num)]
+
+/-- The exact model in C,N,E,W,S,D order. -/
+def model : Fin 6 → UnitSquare :=
+  ![axisSquare (sStar, sStar), axisSquare (sStar, sStar + 1),
+    axisSquare (sStar + 1, sStar), axisSquare (sStar - 1, tStar),
+    axisSquare (tStar, sStar - 1), diagonalSquare]
+
+end Six
+
+/-- The optimal radius for `n` unit squares for `1 ≤ n ≤ 7`.
+Other values receive the placeholder zero and are not covered by the theorems. -/
 def optimalRadius : ℕ → ℝ
   | 1 => One.radius
   | 2 => Two.radius
   | 3 => Three.radius
   | 4 => Four.radius
   | 5 => Five.radius
+  | 6 => Six.radius
   | 7 => Seven.radius
   | _ => 0
 
-/-- The optimal packings of `n` unit squares, as models about the origin: one
-packing for `n ≤ 5`, and for `n = 7` every position of the three middle
-squares. Every other `n` gets the placeholder `∅`, about which nothing is
-claimed. -/
+/-- Optimal models about the origin: a single model for `1 ≤ n ≤ 6`, and the
+column family for `n = 7`. Other values receive the empty placeholder set. -/
 def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
   | 1 => {One.model}
   | 2 => {Two.model}
   | 3 => {Three.model}
   | 4 => {Four.model}
   | 5 => {Five.model}
+  | 6 => {Six.model}
   | 7 => Set.range Seven.columnModel
   | _ => ∅
 

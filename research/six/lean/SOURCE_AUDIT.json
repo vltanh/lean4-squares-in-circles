@@ -1,0 +1,116 @@
+{
+  "scope": "source hygiene only; not Lean compilation or theorem acceptance",
+  "source_hygiene": "PASS",
+  "files": [
+    {
+      "path": "SquaresInCircles/Six/Candidate.lean",
+      "sha256": "d7a76619d17d9d0f15c36a68d07bce6872b868f4d8777f41bdc38942e7b42892",
+      "lines": 193,
+      "proof_declarations": 24
+    },
+    {
+      "path": "SquaresInCircles/Six/Construction.lean",
+      "sha256": "f702d98531fe42b8a3c06e94cefae9bcc52701910bb74ad308802496d66f39e1",
+      "lines": 209,
+      "proof_declarations": 13
+    },
+    {
+      "path": "SquaresInCircles/Six/Containing.lean",
+      "sha256": "f6e7949f31b0c00ce6d2c5ce3c9a07af8b1667b3e147e7084dd1157e0f2f3f3f",
+      "lines": 61,
+      "proof_declarations": 4
+    },
+    {
+      "path": "SquaresInCircles/Six/Goals.lean",
+      "sha256": "6a996e3376cd439fa714e80c6cc255c42e596b4f0e7ef1084556653a2365faf3",
+      "lines": 35,
+      "proof_declarations": 0
+    },
+    {
+      "path": "SquaresInCircles/Six/Normalization/CapBounds.lean",
+      "sha256": "7e09eaff299a2a32a291bd58f46aada1789beda7013daf782dedd40fee163192",
+      "lines": 172,
+      "proof_declarations": 16
+    },
+    {
+      "path": "SquaresInCircles/Six/Normalization/CapGeometry.lean",
+      "sha256": "b17b860df297d148deb3ccd9e013b0e4f7af7fee55374b64f520369aa433f3f2",
+      "lines": 193,
+      "proof_declarations": 13
+    },
+    {
+      "path": "SquaresInCircles/Six/Normalization/CapIdentities.lean",
+      "sha256": "5041882f3637d7459b4bb27a6ac8982717f87a6d0019d23db44bab1ea83de46a",
+      "lines": 97,
+      "proof_declarations": 11
+    },
+    {
+      "path": "SquaresInCircles/Six/Normalization/CapPiercing.lean",
+      "sha256": "ab51eb26f18961986837ca237da431bc2abc26d86c64f0481fbc81d228fa464f",
+      "lines": 132,
+      "proof_declarations": 9
+    },
+    {
+      "path": "SquaresInCircles/Six/Normalization/CapSupport.lean",
+      "sha256": "2de0576692f2ec86c11e8a3cf06e594bd159922645a0a8b194b804db0a5ab518",
+      "lines": 162,
+      "proof_declarations": 9
+    },
+    {
+      "path": "SquaresInCircles/Six/Normalization/ChartBounds.lean",
+      "sha256": "bb5c5d02b0a6a7004ff4933cb6bca6e9c0ba013e357193753fe4e69ed9ee9b9e",
+      "lines": 135,
+      "proof_declarations": 8
+    },
+    {
+      "path": "SquaresInCircles/Six/Normalization/Constants.lean",
+      "sha256": "007691c1bc6448e80c0240a98f8ca1429eb2a69604259dea5d6deb97371a7787",
+      "lines": 141,
+      "proof_declarations": 25
+    },
+    {
+      "path": "SquaresInCircles/Six/Normalization/CoreGeometry.lean",
+      "sha256": "87367b9e9151fc5b435af3b3730f57026cc86a868b336d2791f22deef06db703",
+      "lines": 108,
+      "proof_declarations": 6
+    },
+    {
+      "path": "SquaresInCircles/Six/Normalization/OwnEastExclusion.lean",
+      "sha256": "34da407836187d57e600229cd4d5445f19b506740c9cf5796bcefb1fdaab5889",
+      "lines": 97,
+      "proof_declarations": 3
+    },
+    {
+      "path": "SquaresInCircles/Six/Normalization/PiercingPolynomial.lean",
+      "sha256": "67dd61bd1be0b4e002b79879d7d7e81abb5fe50c3098bfef1b63b51694d36cce",
+      "lines": 89,
+      "proof_declarations": 3
+    },
+    {
+      "path": "SquaresInCircles/Six/Normalization/PinCounting.lean",
+      "sha256": "5259cd8d98c4a2c311713457c63526f045935a6be3122626062d9bf140538597",
+      "lines": 45,
+      "proof_declarations": 1
+    },
+    {
+      "path": "SquaresInCircles/Six/Normalization/SecondarySeparation.lean",
+      "sha256": "002b75abdf6bd16da1b48ad0a069eb04a9d517c9fb1b14f0dddbe30bbbcf27e3",
+      "lines": 62,
+      "proof_declarations": 4
+    },
+    {
+      "path": "SquaresInCircles/Six.lean",
+      "sha256": "c0bfe61ded5e8519394a136471b2b358ff4e63ac0f8e01d3089f6093963e40f9",
+      "lines": 26,
+      "proof_declarations": 0
+    },
+    {
+      "path": "SixAxiomAudit.lean",
+      "sha256": "7d5d2076e7f34ec8f1235540111358079286fa01cdb251c61de5066a680eccfd",
+      "lines": 32,
+      "proof_declarations": 0
+    }
+  ],
+  "lean_compilation_performed_by_this_check": false,
+  "unrestricted_n6_theorem_proved": false
+}
