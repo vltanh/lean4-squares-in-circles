@@ -137,8 +137,9 @@ Both questions are harder than they look. Turning a square changes how far it
 reaches in every direction at once, so the space of packings is curved and
 large, and the optimal packings found by search are often rigid only in part.
 The best packings known for small $n$ are collected on Erich Friedman's
-*Squares in Circles* page [1]. We prove that six of them are optimal, and find
-all optimal packings in those six cases.
+*Squares in Circles* page [1]. The original numbered chapters prove six of
+those cases; the [six-square analytical supplement](six.md) adds the remaining
+case, so the formalization now treats every $n=1,\dots,7$.
 
 ### 1.2 The main theorem
 
@@ -156,10 +157,13 @@ axis-parallel unit square centred at $c$ (Definition 2.2).
 | 3 | $\frac{5\sqrt{17}}{16}$ | 1.2885 | $(-\frac12, -\frac5{16})$, $(\frac12, -\frac5{16})$, $(0, \frac{11}{16})$ | the T |
 | 4 | $\sqrt2$ | 1.4142 | $(\frac12, \frac12)$, $(-\frac12, \frac12)$, $(-\frac12, -\frac12)$, $(\frac12, -\frac12)$ | the $2 \times 2$ block |
 | 5 | $\sqrt{5/2}$ | 1.5811 | $(0, 0)$, $(1, 0)$, $(0, 1)$, $(-1, 0)$, $(0, -1)$ | the plus |
+| 6 | `Six.radius` | 1.6885 | $(s_*,s_*)$, $(s_*,s_*+1)$, $(s_*+1,s_*)$, $(s_*-1,t_*)$, $(t_*,s_*-1)$, $(-d_*,-d_*)$ | five parallel squares and one $45^\circ$ diagonal square |
 | 7 | $\frac{\sqrt{13}}2$ | 1.8028 | $(1, -\frac12)$, $(1, \frac12)$, $(-1, -\frac12)$, $(-1, \frac12)$, $(0, y_1)$, $(0, y_2)$, $(0, y_3)$ | the column packings |
 
-*Table 1.1.* The optimal radii and the optimal models $Q(c_1), \dots, Q(c_n)$.
-For $n \le 5$ there is one optimal model. For $n = 7$ the optimal models are
+*Table 1.1.* The optimal radii and the optimal models. For $n \le 5$ the
+models are the axis-parallel squares $Q(c_i)$. For $n=6$ there is again one
+model, but its last square is genuinely rotated; the exact constants
+$s_*,t_*,d_*$ are defined in `Six.Candidate`. For $n = 7$ the optimal models are
 the *column packings*, one for each choice of heights with
 $y_1 + 1 \le y_2$, $y_2 + 1 \le y_3$ and
 $-(\sqrt3 - \frac12) \le y_1$, $y_3 \le \sqrt3 - \frac12$.
@@ -172,17 +176,18 @@ corners on the circle.
 
 #### Theorem 1.1 (main theorem)
 
-Let $n \in \lbrace 1, 2, 3, 4, 5, 7 \rbrace$, and let $R_n$ and the optimal
-models be as in Table 1.1.
+Let $1\le n\le7$, and let $R_n$ and the optimal models be as in Table 1.1.
 
 1. $R_n$ is the least radius of a closed disk that holds a packing of $n$ unit
    squares.
 2. The packings of $n$ unit squares in a closed disk of radius $R_n$ are
    exactly the configurations congruent to an optimal model.
 
-*Proof.* For $n = 1, 2, 3, 4, 5, 7$ this is Theorem 4.1, 5.1, 6.1, 7.1, 8.1
-and 9.1 respectively: parts (1) and (2) of each give the attainment and the
-lower bound of (1) here, and part (3) gives (2). $\square$
+*Proof.* For $n = 1,2,3,4,5,7$ this is Theorem 4.1, 5.1, 6.1, 7.1, 8.1
+and 9.1 respectively. For $n=6$ see the
+[six-square analytical supplement](six.md). In every case the construction and
+uniqueness give attainment, the lower bound and the equality classification.
+$\square$
 
 *Lean: [`optimal_radius`](../../SquaresInCircles.lean#L49),
 [`optimal_packings`](../../SquaresInCircles.lean#L55),
@@ -190,7 +195,7 @@ lower bound of (1) here, and part (3) gives (2). $\square$
 [`optimalRadius`](../../SquaresInCircles/Geometry.lean#L218),
 [`optimalPackings`](../../SquaresInCircles/Geometry.lean#L231).*
 
-*Remarks.* (i) For $n \le 5$ the theorem says that the optimal packing is
+*Remarks.* (i) For $n \le 6$ the theorem says that the optimal packing is
 unique up to a rotation about the disk centre and a relabelling of the
 squares. Reflections are not needed, since every optimal model is symmetric
 under a reflection in a line through the origin. (ii) For $n = 7$ the optimum
