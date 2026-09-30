@@ -1,157 +1,122 @@
-# n=6 analytic hand-proof status
+# n=6 status
 
 PR #7, branch `feat/six-lean-proof`.
 
-## Active target
+## Summary
 
-The current request is to work towards a **completely analytical hand proof**,
-with frequent incremental commits. `HUMAN_ANALYTIC_STANDARD.md` is therefore
-the active mathematical criterion, not an optional improvement to packaging.
-The public `Packing`, `Congruent`, exact candidate and unrestricted theorem
-statements are to remain unchanged.
+There are two distinct n=6 proof approaches in the repository. They are
+documented side by side in `APPROACHES.md`.
 
-The final proof must not use generated stress tables, substantive finite-box
-certification, or an external program's success as a mathematical premise.
-Ordinary Lean finite computation is not an external Python oracle, but the
-remaining finite classification is still insufficient for this hand-proof
-criterion and must be replaced.
+1. The **self-contained finite-classification route** used ordinary Lean
+   finite checking and exact fixed rows. It never required an external script
+   result as a theorem premise.
+2. The **analytical hand-proof route** replaces that classification by
+   continuous geometric and analytic arguments.
 
-Compilation, Comparator, the axiom audit and independent replay remain separate
-validation gates. A written proof body is not a record of kernel acceptance.
+The current public n=6 source uses the **analytical route**.
+
+At source level, the three former reduction obligations are closed:
+
+- `MissingWestWing` is excluded analytically;
+- `MissingSouthWing` is excluded analytically;
+- canonical OWN-S satisfies the required upper tail
+  `helperAngle 4 < 11/25`.
+
+`Analytic.FixedPair.complete_reduction` therefore constructs
+`ReductionHypotheses` for every normalized packing.
 
 ## Current public endpoint path
-
-The unrestricted source currently has the following path:
 
 ```text
 Packing
   -> Normalization.normalize_of_candidate
-  -> Classification.reduction
-       [remaining internal fixed-row / ExactCover classification]
-  -> analytic fixed-pair and diagonal closure
-  -> retained actual separator witnesses
-  -> eight-contact equality and point-set reconstruction
+  -> Analytic.FixedPair.complete_reduction
+       -> Analytic.candidate_diagonal_separators
+       -> SouthOuterTail.normalized_own_south_upper_tail
+       -> ReductionInterface
+  -> Analytic.FixedPair.radius_of_reduction
+  -> retained selected-source work
+  -> eight-contact equality reconstruction
   -> Six.lower_bound / Six.uniqueness / Six.optimum
   -> SquaresInCircles.optimal_radius / optimal_packings
 ```
 
-The public root and the independent Challenge statements cover every
-`1 <= n <= 7`. The old pair-envelope checker and BalancedClosure are not used
-by the new radius/equality endpoints. However, `Classification.Reduction` still
-imports the internal classification through `CommonDomain`. The complete hand
-proof is therefore **not finished**, and the finite classification has not
-been removed from the public endpoint path.
+`Six/LowerBound.lean` imports `Analytic.CompleteReduction` directly.
+`Six/Uniqueness.lean` uses `Analytic.FixedPair.complete_reduction` directly.
+Neither public endpoint imports a `Classification` module.
 
-## New analytic progress in this continuation
+`Classification/Reduction.lean` remains only as a compatibility namespace
+adapter. Its implementation now delegates to the analytical results.
 
-The starting source checkpoint was `158ec1fb3d8cde807ef5f5ff91782378a11e6cf5`.
+## Analytical source milestones
 
-### Entire cardinal-W missing-south branch
+Completed source blocks include:
 
-`CardinalSouthTail/Geometry.lean` now supplies
-`CardinalSouthTail.not_missing_south`: a normalized packing with cardinal W
-cannot have `MissingSouthWing`, regardless of the S central bit.
+- [x] exact candidate construction and normalization;
+- [x] analytic fixed-pair envelope on the explicit domains;
+- [x] corrected diagonal remainder, nonnegativity and unique zero;
+- [x] full secondary-source selection and double-D exclusion;
+- [x] low-D west exclusion and strengthened D-sourced west gap;
+- [x] complete cardinal-W missing-south exclusion;
+- [x] complete OWN-W missing-south exclusions;
+- [x] complete missing-west exclusions for cardinal-S and OWN-S branches;
+- [x] reflected two-OWN cases with their reflected domains proved explicitly;
+- [x] sharper shared-center OWN/OWN angle budgets;
+- [x] final OWN-S upper tail in `Analytic/SouthOuterTail/`;
+- [x] unconditional `Analytic.FixedPair.complete_reduction`;
+- [x] lower bound routed directly through the analytical reduction;
+- [x] uniqueness routed through the analytical reduction and eight contacts;
+- [x] point-set reconstruction and absorption of the recorded reflection.
 
-The previous argument covered only `s<=12/25`. The remaining large-S case has
-S OWN. The new proof combines the actual CW, CS, WD and D-sourced DS
-inequalities with weights `4,10,3,3`. It retains the negative central x-force,
-uses exact disk supports, and proves the resulting scalar positive on its
-whole domain by diagonal monotonicity and separate concavity. There are six
-distinct geometric endpoint inequalities, proved from explicit Taylor bounds;
-there is no angle-grid or fixed-row premise.
+The hand proof is summarized in `docs/proof/six.md`. Detailed analytic notes
+are listed below.
 
-The proof is split into reviewable modules:
+## Historical finite-classification route
 
-- `Analytic/CardinalSouthTail/Scalar.lean`: the whole-domain scalar argument.
-- `Analytic/CardinalSouthTail/Support.lean`: exact support estimates and rational weakening.
-- `Analytic/CardinalSouthTail/Geometry.lean`: actual packing separators and the full branch exclusion.
+The old finite classifier remains in the repository for provenance. It used
+exact fixed data, proved checker soundness and ordinary Lean `decide`.
+It is not an external Python oracle, and it is useful as an independent
+development/reference route.
 
-### Sharper shared-center OWN budget
+It is no longer the advertised endpoint path. Presence of
+`Stress.ExactCover`, `Stress.FixedData` or old classification modules in the
+repository should not be read as a dependency claim about
+`Six.lower_bound` or `Six.uniqueness`.
 
-`CoupledWingBudgetSharp.lean` proves
+See `APPROACHES.md` and `EXTERNAL_DEPENDENCY_REMOVAL_CHECKLIST.md` for the
+dependency distinction.
 
-    P.helperAngle 4 - P.helperAngle 2 < 24/25
+## Validation status
 
-for two OWN wings. This improves the previous bound of 1. Its proof uses one
-concave affine-gap function on `[22/75,2/3]`, with two Taylor endpoint
-inequalities, and the actual shared-center radial sum.
+The analytical route is **source-complete, not yet validated by execution on
+this head**.
 
-### Smaller remaining domains
+Still unexecuted:
 
-`OwnWingFrontier.lean` records the following consequences:
+- [ ] full `lake build`;
+- [ ] `lake comparator`;
+- [ ] `SixAxiomAudit.lean` and the public-root axiom audit;
+- [ ] a transitive elaborated dependency check confirming that no old
+      finite-cover/table declaration is reachable from the public n=6 results;
+- [ ] independent kernel/Palomar replay.
 
-- A missing south wing must have W OWN. The former cardinal-W / large-S
-  exception is closed.
-- A missing west wing still has `d>3/5` and `d-w>1`.
-- If W is cardinal in a missing-west case, S must be OWN.
-- If both wings are OWN in a missing-west case, `s-w<24/25` and `d-s>1/25`.
+No CI run or commit status is currently recorded for the final analytical head.
+Recent proof-development commits used `[skip ci]`.
 
-These facts are consequences of a hypothetical missing wing, not assumptions
-added to `Packing` and not claims that the remaining region is empty.
+Accordingly, the correct current claim is:
 
-`AnalyticReduction.lean` exports the new modules. `SixAxiomAudit.lean` lists
-their key declarations for later checking. The hand derivation is written in
-`ANALYTIC_CARDINAL_SOUTH_PROOF.md`.
-
-## Exact remaining analytic obligations
-
-`ReductionInterface.reduction_iff_three_obligations` still isolates exactly:
-
-- [ ] Exclude `MissingWestWing` with at least one OWN wing, on the smaller
-      domains described above.
-- [ ] Exclude `MissingSouthWing` with W OWN.
-- [ ] Prove the canonical OWN-S upper tail `helperAngle 4 <= 11/25`.
-
-The lower OWN-S tail is already proved, with the stronger sign `s>0`.
-The OWN-W outer tail follows from the two candidate D edges and is not an
-additional independent open problem.
-
-Once these three statements exist, replace the imports and body of
-`Classification.Reduction` via `reduction_iff_three_obligations`. The analytic
-radius and equality modules do not need to be redesigned. Then audit the
-complete transitive path to make the fixed-row/ExactCover and associated
-reified interval machinery unreachable from the public endpoints.
-
-## Source and validation status
-
-The repository-wide module migration was already present at the starting
-checkpoint: its 353 regular Lean files had leading `module` declarations.
-The five new Lean modules in this continuation also use `module`, public
-imports and public exposure. Visibility/elaboration has not been validated by
-a build.
-
-The new hand argument's weighted-sum identity and rational endpoint margins
-were cross-checked during development. Such arithmetic cross-checks are not
-premises of the Lean declarations and are not substitutes for compiling them.
-The source commits use `[skip ci]`; no proof runner has been started here.
-
-The pinned project configuration remains Lean `v4.35.0-rc3` with matching
-mathlib, the committed `lake-manifest.json`, and the existing Comparator
-configuration. The intended allowed axiom set is only `propext`,
-`Classical.choice`, and `Quot.sound`. Metadata is not an executed axiom report.
-
-The final gates remain unexecuted:
-
-- [ ] Full Lean compilation/elaboration, including the new analytic modules.
-- [ ] `lake comparator` on the exact final commit.
-- [ ] Execute `SixAxiomAudit.lean` and the public-root axiom audit.
-- [ ] Confirm no `sorryAx`, `Lean.ofReduceBool`, custom axiom, missing definition,
-      or substantive certificate/table dependency on the final theorem path.
-- [ ] Independent replay and the registry's mechanical/editorial checks on the
-      final pinned commit.
-
-The public endpoints still use finite internal checks today. Their removal is
-part of the active mathematics work, not something certified by the unchecked
-validation list above.
+> The analytical proof is complete at source level and wired into the public
+> endpoints; kernel acceptance and final dependency/axiom validation are still
+> pending.
 
 ## Documentation map
 
-- `STATUS.md`: live mathematical progress and validation ledger.
-- `HUMAN_ANALYTIC_STANDARD.md`: active hand-proof acceptance criterion.
-- `ANALYTIC_CARDINAL_SOUTH_PROOF.md`: new four-edge hand proof and sharper OWN budget.
-- `ANALYTIC_NORMALIZATION_PROOF.md`: normalization companion.
-- `ANALYTIC_DIAGONAL_PROOF.md`: diagonal scalar companion.
-- `NORMALIZATION_DEPENDENCIES.md`: normalization dependency review.
-- `EXTERNAL_DEPENDENCY_REMOVAL_CHECKLIST.md`: remaining internal-classification
-  boundary and the already removed legacy pair/equality chain.
-- `UPLOAD_AUDIT.md` and historical audit data: development evidence only.
+- `APPROACHES.md` — distinction between the finite and analytical routes.
+- `HUMAN_ANALYTIC_STANDARD.md` — acceptance rules for the analytical route.
+- `ANALYTIC_NORMALIZATION_PROOF.md` — normalization.
+- `ANALYTIC_DIAGONAL_PROOF.md` — diagonal scalar closure.
+- `ANALYTIC_CARDINAL_SOUTH_PROOF.md` — cardinal-W large-south exclusion.
+- `ANALYTIC_SOUTH_TAIL_PROOF.md` — final OWN-S tail, including the repaired
+  exceptional OWN/OWN corner.
+- `EXTERNAL_DEPENDENCY_REMOVAL_CHECKLIST.md` — source-path dependency ledger.
+- `docs/proof/six.md` — reader-oriented proof overview.

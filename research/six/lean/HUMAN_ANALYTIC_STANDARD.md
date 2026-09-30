@@ -1,94 +1,103 @@
 # Human-analytic acceptance standard for the n=6 proof
 
-This is the active mathematical acceptance criterion for PR #7, following the
-request to work towards a completely analytical hand proof. The single live
-progress ledger is `STATUS.md`. The normalization, diagonal, and new
-cardinal-south companions are `ANALYTIC_NORMALIZATION_PROOF.md`,
-`ANALYTIC_DIAGONAL_PROOF.md`, and `ANALYTIC_CARDINAL_SOUTH_PROOF.md`.
+This file specifies the stronger mathematical standard used by the current
+public n=6 source. It should be read together with `APPROACHES.md`, which
+separates this route from the historical self-contained finite-classification
+route.
 
-The final n=6 proof may be formalized and checked by Lean, but its mathematics
-must be a human analytic proof. The unrestricted lower bound and uniqueness may
-not depend on exhaustive numerical search, interval-box certification,
-generated stress tables, or an external program's success result.
+## Criterion
 
-The previous distinction remains important: an internal Lean finite checker is
-not an external Python oracle, but it is still insufficient for this stronger
-hand-proof target. The current public endpoint's remaining internal finite
-classification must therefore be replaced, not relabelled as analytic.
+The unrestricted lower bound and uniqueness may be formalized in Lean, but
+their substantive mathematics must be a human-readable analytical proof.
 
-## Allowed proof methods
+The final endpoint path must not depend on exhaustive numerical search,
+interval-box certification, generated stress tables, or an external program's
+success result.
 
-- Exact algebraic identities and inequalities.
-- Explicit geometry from the original `Packing`, `UnitSquare`,
-  `openSquare`, `closedSquare`, support, and separation definitions.
-- Symbolic differentiation with all hypotheses stated and proved.
-- Monotonicity, convexity/concavity, and whole-domain endpoint reductions.
-- Explicit Taylor inequalities with proved remainders or sign arguments.
-- Small conceptual finite case splits justified by the geometry.
-- Local `ring`, `norm_num`, `linarith`, and `nlinarith` after a visible
-  mathematical reduction.
-- Evaluation of finitely many geometrically forced endpoints.
+An internal Lean finite checker is not an external oracle. It is nevertheless
+outside this stronger acceptance standard when it is the substantive reason a
+continuous range or classification is known.
 
-## Disallowed mathematical dependencies
+## Allowed methods
 
-- Python, Arb/flint, floating/fixed-point, or exact-dyadic certificate output.
-- Interval/box subdivision searches establishing substantive inequalities.
-- Large generated finite tables whose mathematical content is only `by decide`.
-- `ProofTools.Certificate.certify` or another exhaustive finite-cover engine.
-- `FixedData/Checks`, `PairCertificateChecks`, or normalization
-  `Certificates/Checks` on the final theorem's mathematical dependency path.
-- Imported PASS flags, logs, hashes, sampled minima, or numerical minimizers.
-- A range claim justified only because all cells of a machine partition passed.
+- exact algebraic identities and inequalities;
+- geometry from the original `Packing`, square and separating-axis
+  definitions;
+- exact support inequalities;
+- symbolic differentiation with stated hypotheses;
+- monotonicity, convexity and concavity on whole intervals;
+- exact Taylor inequalities with proved remainders/signs;
+- finitely many endpoints forced by a proved whole-domain reduction;
+- small conceptual case splits dictated by geometry or sign;
+- local `ring`, `norm_num`, `linarith` and `nlinarith` after the
+  mathematical reduction is explicit.
 
-Historical computational files may remain as exploratory or cross-check
-material, but the final theorem may not depend on them. Small logical finite
-case splits are not numerical certification.
+## Disallowed endpoint dependencies
 
-## Source-complete analytic blocks
+- Python/Arb/flint or other external numerical success as a premise;
+- sampled minima or numerically fitted bounds without proof;
+- exhaustive angle-box subdivision as the substantive proof;
+- generated fixed-row tables whose conclusion is accepted only by exhaustive
+  checking;
+- `Stress.ExactCover`, `ProofTools.Certificate.certify`, fixed-row checkers,
+  or analogous finite-cover engines on the final theorem dependency path;
+- imported logs, PASS flags or hashes as mathematical evidence.
 
-- [x] Strong-core and complete normalization through
-      `Normalization.normalize_of_candidate`.
-- [x] Analytic Appendix A and D-own.
-- [x] Candidate constants and exact support formulas separated from reification.
-- [x] Fixed-pair envelope on its explicit bit-dependent domain.
-- [x] Corrected diagonal remainder, nonnegativity, and unique zero.
-- [x] Low-diagonal exclusion and `d > 1/2`.
-- [x] W/D primary/reverse-secondary classification.
-- [x] Full-range forward-secondary D/S selection.
-- [x] Double-D-secondary exclusion.
-- [x] Conditional candidate/radius closure from explicit `ReductionHypotheses`.
-- [x] Lower OWN-S tail and the stronger canonical sign `s>0`.
-- [x] OWN-W outer tail derived from the two candidate D separators.
-- [x] Both-cardinal wing branch.
-- [x] D-sourced west gap greater than one and its consequence `d>3/5`.
-- [x] Retained separator witnesses, eight-contact equality reconstruction,
-      point-set congruence and absorption of the recorded reflection.
-- [x] Unrestricted endpoints routed through the analytic pair/equality closure,
-      with the remaining finite classification explicit in `Classification.Reduction`.
-- [x] Sharper shared-center OWN/OWN budget `s-w<24/25`.
-- [x] Entire cardinal-W missing-south branch, including large OWN-S, excluded
-      by the four-edge weights `4,10,3,3` and six geometric endpoint inequalities.
-- [x] In a two-OWN missing-west case, the strict reserve `d-s>1/25`.
+Historical files using these techniques may remain in the repository if they
+are not dependencies of the advertised analytical theorem path.
+
+## Source-complete analytical blocks
+
+- [x] strong-core normalization and `normalize_of_candidate`;
+- [x] exact candidate constants and construction;
+- [x] analytic fixed-pair envelope;
+- [x] corrected diagonal remainder and unique equality case;
+- [x] secondary-source selection and double-D exclusion;
+- [x] low-diagonal and high-gap restrictions;
+- [x] complete `MissingSouthWing` exclusion;
+- [x] complete `MissingWestWing` exclusion;
+- [x] final canonical OWN-S upper tail;
+- [x] unconditional `Analytic.FixedPair.complete_reduction`;
+- [x] retained selected-source witnesses through equality;
+- [x] eight-contact coordinate rigidity;
+- [x] point-set reconstruction and reflection absorption;
+- [x] unrestricted lower bound using `complete_reduction` directly;
+- [x] unrestricted uniqueness using `complete_reduction` directly;
+- [x] removal of the finite-classification route from the public endpoint
+      imports at source level;
+- [x] human-readable analytical notes for the normalization, diagonal,
+      cardinal-south and final south-tail arguments.
+
+## Important proof-design points
+
+Several places deliberately avoid shortcuts that would make the proof look
+stronger than what was established:
+
+- scalar reflection is used only after proving the reflected angle domain;
+- the final OWN-S tail does not claim the first rectangular OWN scalar profile
+  is positive at its exceptional corner;
+- at that corner the proof derives a narrow diagonal support cone and applies a
+  separate completed-square support estimate;
+- endpoint checks occur only after monotonicity/concavity has reduced a whole
+  interval to those endpoints.
+
+These distinctions are part of the mathematical proof, not merely
+implementation details.
 
 ## Remaining acceptance work
 
-Exactly three independent analytic statements still supply the final reduction:
+No substantive analytical lemma is currently listed as open.
 
-- [ ] Exclude `MissingWestWing` with at least one OWN wing and `d>3/5`.
-      Cardinal W forces OWN S; two OWN wings additionally satisfy
-      `s-w<24/25` and `d-s>1/25`.
-- [ ] Exclude `MissingSouthWing` with W OWN. The cardinal-W exception is closed.
-- [ ] Prove the canonical OWN-S upper tail `s<=11/25`.
+The remaining gates are formal validation:
 
-The lower OWN-S tail and the OWN-W outer tail are not additional independent
-open items. Once the three statements above are available:
+- [ ] compile every new analytical module;
+- [ ] repair any elaboration/type errors found by the build;
+- [ ] execute the axiom audit and confirm only the intended standard axioms;
+- [ ] inspect the elaborated dependency path for old finite-cover/table
+      declarations;
+- [ ] run Comparator and independent replay;
+- [ ] keep the reader-facing proof chapter synchronized with the accepted
+      source.
 
-- [ ] Replace the imports/body of `Classification.Reduction` using
-      `reduction_iff_three_obligations`, without changing the public goals.
-- [ ] Confirm no substantive certificate/table dependency is transitively reachable.
-- [ ] Complete a human-readable final proof matching the entire formal argument.
-- [ ] Compile and execute the final kernel/axiom audit and independent validation.
-
-Compilation is a separate validation stage. Checked source items do not by
-themselves assert elaboration or kernel acceptance. The new four-edge hand
-argument and its source lemmas have not yet been checked by Lean.
+Until those gates pass, "source-complete analytical proof" is the accurate
+description; "kernel-verified analytical proof" is not yet established.
