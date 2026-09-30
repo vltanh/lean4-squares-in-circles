@@ -8,15 +8,16 @@ public import SquaresInCircles.Common.Optimum
 /-!
 # The unrestricted six-square equality theorem
 
-The analytic fixed-pair closure retains the actual separating sources. Eight
-candidate-frame contact inequalities and exact disk supports then determine
-all centers. Point-set reconstruction and the candidate's diagonal symmetry
-absorb the single recorded reflection without changing Congruent.
+CompleteReduction supplies the reduction input analytically. The fixed-pair
+closure retains the actual separating sources. Eight candidate-frame contact
+inequalities and exact disk supports then determine all centers. Point-set
+reconstruction and the candidate's diagonal symmetry absorb the single
+recorded reflection without changing Congruent.
 
-The legacy pair-envelope checker and BalancedClosure are no longer imported.
-The remaining internal fixed-row classification is explicit in
-Classification.Reduction. No external-script success is a theorem premise.
-Compilation and kernel acceptance remain deferred.
+This endpoint no longer uses a Classification module, the legacy pair-envelope
+checker, or BalancedClosure. No external-script success is a theorem premise.
+Compilation, the elaborated dependency audit and kernel acceptance remain
+separate, unexecuted validation steps.
 -/
 
 noncomputable section
@@ -29,7 +30,7 @@ theorem uniqueness {S : Fin 6 → UnitSquare} {o : Point}
   have hR : Six.radius^2≤Six.qStar := by rw [radius_sq]
   obtain ⟨P,htrace⟩ := Normalization.normalize_of_candidate hp hR
   exact Equality.AnalyticReconstruction.original_congruent_of_reduction
-    P hR (Classification.reduction P) htrace
+    P hR (Analytic.FixedPair.complete_reduction P) htrace
 
 /-- An inhabitant of the unchanged unrestricted uniqueness goal. -/
 theorem uniqueness_goal : Goals.Uniqueness := by
