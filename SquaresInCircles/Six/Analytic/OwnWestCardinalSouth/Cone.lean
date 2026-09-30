@@ -26,17 +26,17 @@ def southTransverse (s d : ℝ) : ℝ := Real.sin (d-s)-Real.sin s
 lemma south_half_angle (s d : ℝ) :
     southRadial s d=2*Real.cos (d/2)*Real.cos (d/2-s) ∧
     southTransverse s d=2*Real.cos (d/2)*Real.sin (d/2-s) := by
-  have hs : s=d/2-(d/2-s) := by ring
-  have hr : d-s=d/2+(d/2-s) := by ring
+  have hc0 := Real.cos_sub (d/2) (d/2-s)
+  have hc1 := Real.cos_add (d/2) (d/2-s)
+  have hs0 := Real.sin_sub (d/2) (d/2-s)
+  have hs1 := Real.sin_add (d/2) (d/2-s)
+  rw [show d/2-(d/2-s)=s by ring] at hc0 hs0
+  rw [show d/2+(d/2-s)=d-s by ring] at hc1 hs1
   constructor
   · dsimp [southRadial]
-    conv_lhs => rw [hs,hr]
-    rw [Real.cos_sub,Real.cos_add]
-    ring
+    nlinarith only [hc0,hc1]
   · dsimp [southTransverse]
-    conv_lhs => rw [hs,hr]
-    rw [Real.sin_sub,Real.sin_add]
-    ring
+    nlinarith only [hs0,hs1]
 
 private lemma square_sum_bound {s d : ℝ}
     (hd : 1/2 ≤ d ∧ d ≤ 11/14) (hs : s ≤ 2/5) (hr : d-s ≤ 11/14) :
