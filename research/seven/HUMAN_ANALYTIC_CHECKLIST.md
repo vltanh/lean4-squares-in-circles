@@ -1,433 +1,144 @@
 # n=7 human-analytic proof checklist
 
-## Scope
+## Scope and status
 
-This is a research handoff for improving the existing seven-square proof to a
-strong human-analytic standard.
+PR #8, branch `research/seven-human-analytic`.
+Production baseline: `1dbbd4f106e9860752e9c0c612864196167df103`.
 
-This PR is deliberately isolated:
+**The mathematical research handoff is complete for all eight Bernstein sites.**
+Each now has a written replacement proof, its exact domain and strictness
+conditions, and a Lean integration recipe. None of the proposed replacements
+needs a Bernstein coefficient vector.
 
-- [x] Change files only under `research/seven/**`.
-- [x] Do not modify production Lean, public statements, general documentation,
-      CI, or metadata.
-- [x] Preserve the marker/contact/hexagon architecture unless a genuinely
-      simpler mathematical argument replaces part of it.
-- [ ] Deliver mathematical proofs and proposed Lean lemmas for a maintainer to
-      integrate separately.
+This is not a claim that the production formalization has been changed or that
+new Lean code has been compiled. Production integration belongs to the
+maintainer. Read [HANDOFF.md](HANDOFF.md) for the replacement map and validation
+boundary.
 
-The goal is not fewer lines or fewer rational constants. The goal is that a
-mathematically trained reader can see **why each substantive continuous
-inequality is true** without having to trust or reverse-engineer an opaque
-coefficient list.
+- [x] Keep this work under `research/seven/**`.
+- [x] Leave production Lean, public statements, root files, general docs, CI,
+      repository metadata, and other research subtrees unchanged.
+- [x] Preserve the marker/contact/hexagon architecture.
+- [x] Deliver mathematical proofs and proposed Lean helper statements/recipes.
 
-## What is already good
+## Acceptance criterion
 
-The global proof is conceptual and should remain the backbone:
+The objective is to expose why the original geometric or analytic quantity has
+the required sign. Exact rational constants are allowed when their roles and
+inequalities are explicit. A long unexplained coefficient vector is not an
+adequate primary explanation of a central inequality.
 
-```text
-admissible exterior states
-  -> marker for every exterior square
-  -> canonical pair
-  -> four separating axes
-  -> sign / active-label geometry
-  -> marker separation >= pi/3
-  -> six exterior markers form a regular hexagon
-  -> equality gives neighbour contacts
-  -> column packing classification
-```
+- [x] No external numerical success is a mathematical premise.
+- [x] No exhaustive interval-box cover or generated stress table is introduced.
+- [x] Domains, signs, denominator positivity and strictness are stated.
+- [x] The proofs use whole-domain bounds, monotonicity, concavity, geometric
+      support, or completed-square/factored identities.
+- [x] Rational constants are tied to a support slope, derivative bound,
+      endpoint enclosure, or explicit slack margin.
+- [x] Exploratory verification is distinguished from the written proof.
 
-The audited n=7 path contains no `ExactCover`, generated stress-table
-classification, interval-box mesh, `native_decide`, `Lean.ofReduceBool`,
-or external numerical success premise.
+## Completed replacement inventory
 
-The four axes, two transverse signs, active axial/side labels, capped-label
-triangle, regular-hexagon combinatorics, and tiny `Fin n` enumerations are
-legitimate mathematical case splits. They are not targets merely because they
-are finite.
-
-## What needs scrutiny
-
-There are eight substantive uses of the Bernstein positivity criterion:
-
-| ID | Production location | Mathematical role | Current certificate |
+| ID | Original certificate | New reason for the sign | Proof |
 | --- | --- | --- | --- |
-| A | `MarkerArc.arcCurvaturePolynomial_pos` | curvature of the marker-arc envelope | degree 8, 9 coefficients |
-| B | `TargetBoundaryMonotonicity.ratio_derivative_lt_one` | monotonicity on the circular axial boundary | degree 5, 6 coefficients |
-| C | `InwardAxialTarget.inward_turn_profile` | inward negative-turn profile | degree 5, 6 coefficients |
-| D | `OppositeForward.opposite_axial_scalar` | opposite-forward axial scalar | degree 5, 6 coefficients |
-| E1 | `ForwardNegativeTarget.axial_target_support`, small-turn branch | disk/tie-line support discriminant | degree 14, 15 coefficients |
-| E2 | `ForwardNegativeTarget.axial_target_support`, large-turn branch | half-angle disk support bound | degree 7, 8 coefficients |
-| E3 | `ForwardNegativeTarget.sideTarget_negative_pos`, small-turn branch | side-target disk support bound | degree 6, 7 coefficients |
-| F | `InwardOppositeMinima.radialPolynomial_pos` | two-circle/radical discriminant | degree 11, 12 coefficients |
-
-The existence of exact rational coefficients is **not itself a defect**. The
-analytical n=6 work also uses many exact support weights, rational Taylor
-bounds, endpoint constants and margins.
-
-The concern is narrower:
-
-> Does the proof explain the sign of the original geometric/analytic quantity,
-> or does the coefficient vector become the only practical reason we know the
-> sign?
-
-For the strongest human-readable standard, an opaque Bernstein vector is not a
-satisfactory final explanation even though Lean checks it exactly.
-
-## Readability test for every substantive inequality
-
-For every item A--F, produce a note that answers these questions in order.
-
-- [ ] **Original quantity.** What geometric or analytic expression are we
-      trying to bound before Taylor expansion or polynomialization?
-- [ ] **Domain.** What is its exact continuous domain, and where does that domain
-      come from geometrically?
-- [ ] **Reduction.** Which exact inequalities reduce the original quantity to
-      the auxiliary polynomial?
-- [ ] **Reason for sign.** Is there a monotonicity, convexity/concavity,
-      tangent/support, completed-square, factorization, or endpoint principle
-      that explains the sign?
-- [ ] **Constants.** For each non-obvious rational constant, state what it is
-      doing: support slope, Taylor truncation, tangent coefficient, interval
-      endpoint, or slack margin.
-- [ ] **Equality/strictness.** Explain where equality could occur and why the
-      theorem is strict when strictness is needed.
-- [ ] **Lean skeleton.** Give the intended Lean lemma statement and the short
-      chain of existing lemmas it should use.
-
-A replacement is preferred when it makes the **reason for positivity visible**,
-not merely when it reduces the coefficient count.
-
-## Bernstein policy
-
-Bernstein positivity is an exact theorem, not numerical sampling. It may still
-appear as a final algebraic check, but only after the human argument has exposed
-the structure.
-
-For each of A--F:
-
-- [ ] First attempt a direct whole-domain proof from the original quantity.
-- [ ] Next attempt a low-complexity polynomial proof by monotonicity,
-      convexity/concavity, factorization, or a sum/completed-square identity.
-- [ ] If Bernstein remains, derive the polynomial explicitly from the preceding
-      analytic inequalities.
-- [ ] Explain why the chosen interval is natural.
-- [ ] Explain how the Bernstein coefficients arise from the polynomial and
-      interval, rather than presenting them as discovered data.
-- [ ] If the vector is long or irregular, treat that as a sign to look one step
-      earlier in the argument for a stronger geometric estimate.
-- [ ] Do not accept “all coefficients are positive” as the sole human
-      explanation for a central inequality.
-
-The goal is not “zero Bernstein at all costs.” The goal is that Bernstein, if
-retained, is bookkeeping at the end of a comprehensible proof rather than the
-substantive proof itself.
-
-## Rational constants and breakpoints
-
-Do not classify a constant as problematic because it looks ugly.
-
-A rational constant is acceptable when a reader can trace it to a visible
-choice or inequality. The same applies to n=6.
-
-Audit the hand-selected thresholds currently used in n=7, including
-`1/6`, `1/3`, `2/3`, and `5/16`.
-
-For every such threshold:
-
-- [ ] Classify it as a geometric boundary, sign boundary, tangent/support
-      switch, or convenience-only analytic split.
-- [ ] Keep genuine geometric/sign boundaries.
-- [ ] For a convenience-only split, attempt a whole-domain estimate.
-- [ ] If it remains, derive why that threshold is a useful or natural point
-      from an explicit inequality.
-- [ ] Do not introduce a fine partition of a continuous interval.
-
-The concern is unexplained regime engineering, not rational arithmetic.
-
-## A — marker-arc curvature
-
-Target:
-
-- `SquaresInCircles/Seven/MarkerArc.lean`
-- `arcCurvaturePolynomial_pos`
-
-Current reduction:
-
-[
-P(x)=676(1-x^2)^3-9x^2(9-8x-4x^2)^3>0,
-qquad 0le xle 3/4.
-]
-
-This controls the sign of the second derivative of the marker-arc envelope.
-
-Tasks:
-
-- [ ] Start from the two radical curvature terms in `arcEnvelopeSecond`,
-      before cubing and expanding.
-- [ ] Form a positive ratio if possible and study its logarithmic or ordinary
-      derivative.
-- [ ] Check whether the ratio is monotone on `[0,3/4]`, so one endpoint
-      comparison suffices.
-- [ ] If polynomialization is still cleaner, study `P`, `P'`, or a shifted
-      polynomial for a short monotonicity/factorization proof.
-- [ ] Document exactly why the curvature statement implies the marker-arc
-      bound used later.
-
-Preferred endpoint: a curvature/ratio argument a reader can reproduce without
-nine unrelated coefficients.
-
-## B — axial-boundary derivative ratio
-
-Target:
-
-- `SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean`
-- `ratio_derivative_lt_one`
-
-Current proof writes
-
-[
-1-mathrm{ratioD}(s)=
-rac{N(X)}
- {5X(5X-4)^2(13-4X^2)}
-]
-
-and proves the quintic numerator (N(X)>0) by six Bernstein coefficients.
-
-Tasks:
-
-- [ ] Use `X^2+Y^2=13/4` before expanding.
-- [ ] Separate the manifestly positive denominator from the real mathematical
-      content.
-- [ ] Determine the exact geometric `X` interval.
-- [ ] Study (N') and (N'') on that interval.
-- [ ] Try a tangent/chord lower bound or completed-square decomposition.
-- [ ] If Bernstein remains, give a direct derivation of the quintic from the
-      derivative-ratio geometry and explain why its positivity is plausible.
-
-Preferred endpoint: the monotonicity of the boundary support should be the
-main idea; the quintic should be secondary verification.
-
-## C — inward axial turn profile
-
-Target:
-
-- `SquaresInCircles/Seven/InwardAxialTarget.lean`
-- `inward_turn_profile`
-
-Original inequality:
-
-[
-rac z{50}
-le
-sin z-rac45zcos z-rac34(1-cos z),
-qquad 0le zleracpi2.
-]
-
-Current proof uses Taylor bounds plus a degree-5 Bernstein certificate.
-
-Tasks:
-
-- [ ] Analyze this displayed function directly.
-- [ ] Compute its first two derivatives and determine whether monotonicity or
-      convexity gives a one- or two-endpoint proof.
-- [ ] Try to prove it from one coherent Taylor remainder estimate.
-- [ ] Try a simple positive grouping of the existing quintic.
-- [ ] Avoid a new arbitrary subinterval split.
-
-This is a likely quick win because the original statement is already a clean
-one-variable inequality.
-
-## D — opposite-forward axial scalar
-
-Target:
-
-- `SquaresInCircles/Seven/OppositeForward.lean`
-- `opposite_axial_scalar`
-
-Original scalar:
-
-[
-1-rac{4pi}{15}+rac45z-(sqrt3-1)sin z
--rac12(1-cos z)>0,
-qquad 0le zleracpi3.
-]
-
-Current proof uses elementary bounds on (pi,sqrt3), Taylor bounds, and a
-degree-5 Bernstein certificate.
-
-Tasks:
-
-- [ ] Study the original scalar and its derivatives first.
-- [ ] Determine whether its minimum is forced to an endpoint or a unique
-      critical point.
-- [ ] Try a global tangent/concavity lower bound.
-- [ ] If the degree-5 polynomial remains, seek a short factorization or
-      derivative proof.
-- [ ] Keep the elementary rational bounds on (pi) and (sqrt3) explicit.
-
-Again, the visible scalar should be the proof object, not its coefficient
-vector.
-
-## E — forward negative target
-
-Target:
-
-- `SquaresInCircles/Seven/ForwardNegativeTarget.lean`
-- especially `axial_target_support` and `sideTarget_negative_pos`
-
-This is the first major priority.
-
-The current proof changes analytic method several times inside one geometric
-sector:
-
-- at `z <= 1/3`, the axial tie line is incorporated as a dual constraint and
-  a degree-14 discriminant polynomial is certified;
-- beyond `1/3`, a half-angle disk support estimate leads to a degree-7
-  certificate;
-- for a negative side-target turn, `z <= 1/6` invokes another degree-6
-  certificate before the proof changes method again.
-
-Tasks:
-
-- [ ] Explain the geometric meaning of the dual variable
-      `n=(3/40)(1-2 sin z)`.
-- [ ] Derive the quantities `L`, `P`, and `U` conceptually rather than
-      treating them as tuned expressions.
-- [ ] Determine whether `z=1/3` is a genuine change in the optimal support
-      argument or only where the chosen approximation ceases to work.
-- [ ] Search for one support/tangent inequality valid on the full
-      `[0,pi/2]` turn range.
-- [ ] If one estimate cannot cover the whole interval, derive the switch point
-      from equality of two mathematically natural bounds.
-- [ ] For `sideTarget_negative_pos`, perform the same audit of `z=1/6`.
-- [ ] Keep radicals and support functions unexpanded long enough to test
-      monotonicity/curvature before introducing Taylor polynomials.
-- [ ] Separate the geometric disk/tie-line optimization from the final
-      one-variable trigonometric inequality.
-- [ ] Track contact/equality cases independently of positive slack estimates.
-
-Preferred endpoint: at most a small number of natural analytic regimes, each
-with a visible support principle and a simple one-variable inequality. A long
-Bernstein vector should not be what tells the reader why the sector works.
-
-## F — inward opposite minima
-
-Target:
-
-- `SquaresInCircles/Seven/InwardOppositeMinima.lean`
-- the two-circle/radical-envelope argument leading to
-  `radialPolynomial_pos`
-
-This is the second major priority.
-
-The present argument reaches a degree-11 polynomial only after bounding a
-radical envelope and taking a discriminant. That suggests the expansion may be
-hiding the actual geometry.
-
-Tasks:
-
-- [ ] Reconstruct the inequality immediately before the discriminant.
-- [ ] Draw/write the two-circle support picture in state coordinates.
-- [ ] Search for a tangent-line comparison between the two radical envelopes.
-- [ ] Search for a completed square before eliminating the radical.
-- [ ] Parameterize the circular boundary by an angle and test whether the
-      radical difference is monotone or convex in that parameter.
-- [ ] Derive the critical-point equation before squaring; check whether it has
-      at most one solution.
-- [ ] Test a support-cone or radial-support argument analogous in spirit to the
-      exceptional OWN/OWN corner in the n=6 analytical work.
-- [ ] Only after these fail, return to `radialPolynomial`.
-- [ ] If the polynomial remains, derive it line by line from the geometric
-      inequality and look for a human sign proof stronger than a 12-entry
-      Bernstein vector.
-
-Preferred endpoint: the reader understands the two-circle comparison before
-seeing any expanded polynomial.
-
-## Preserve the all-gaps assembly
-
-Targets:
-
-- `SquaresInCircles/Seven/FixedGap.lean`
-- `SquaresInCircles/Seven/AllGaps.lean`
-- `SquaresInCircles/Seven/SmoothMinima.lean`
-
-These modules encode good high-level mathematics.
-
-- [ ] Preserve the four-axis fixed-gap structure.
-- [ ] Preserve the convex reduction of capped labels to the capped triangle.
-- [ ] Preserve the small-gap marker-arc contradiction.
-- [ ] Preserve the leftmost-minimum argument for larger gaps.
-- [ ] Ensure every simplified sector lemma has the same strictness/equality
-      information needed by the contact classification.
-- [ ] Do not replace this structure with a new continuous finite partition.
-
-## Research artifacts to produce
-
-All artifacts remain under `research/seven/**`.
-
-For each completed item A--F:
-
-- [ ] write a standalone mathematical note;
-- [ ] state the production theorem being replaced;
-- [ ] state the exact domain and hypotheses;
-- [ ] give the human proof before the Lean skeleton;
-- [ ] list any reusable existing Lean lemmas;
-- [ ] give exact endpoint/factor margins where arithmetic closure is needed;
-- [ ] record any exploratory computation separately from the proof;
-- [ ] never use exploratory numerical success as a theorem premise.
-
-Maintain a summary table:
-
-| ID | Current method | Human explanation recovered? | Replacement found? | Integration note |
-| --- | --- | --- | --- | --- |
-| A | Bernstein degree 8 | [ ] | [ ] | |
-| B | Bernstein degree 5 | [ ] | [ ] | |
-| C | Bernstein degree 5 | [ ] | [ ] | |
-| D | Bernstein degree 5 | [ ] | [ ] | |
-| E1 | Bernstein degree 14 | [ ] | [ ] | |
-| E2 | Bernstein degree 7 | [ ] | [ ] | |
-| E3 | Bernstein degree 6 | [ ] | [ ] | |
-| F | Bernstein degree 11 | [ ] | [ ] | |
-
-## Priority
-
-1. [ ] E — understand and simplify the forward-negative support regimes.
-2. [ ] F — recover the geometry hidden by the degree-11 discriminant.
-3. [ ] C and D — likely simple one-variable cleanups.
-4. [ ] A and B — curvature/ratio proofs that may admit monotonicity arguments.
-5. [ ] Re-audit all rational breakpoints after stronger inequalities are found.
-6. [ ] Re-check the fixed-gap/all-gaps assembly.
-
-Coefficient count alone does not determine priority. E and F rank first because
-their current expansions obscure the preceding geometry.
-
-## Definition of done
-
-The research task is complete when:
-
-- [ ] every Bernstein site A--F has a human-readable derivation from the
-      original geometric/analytic quantity;
-- [ ] every site for which Bernstein remains uses it only as transparent final
-      algebraic verification, not as the primary reason for positivity;
-- [ ] the large E and F certificates have either been replaced or accompanied
-      by a convincing human proof that explains their sign before coefficient
-      verification;
-- [ ] every convenience-only interval split has been removed or given a
-      mathematical derivation;
-- [ ] no interval-box search, generated continuous cover, or external success
-      result is introduced;
-- [ ] equality/contact information is preserved;
-- [ ] a maintainer can integrate the proposed lemmas without reverse-engineering
-      the mathematics from the current Lean coefficient vectors.
-
-## Audit status
-
-This checklist is a plan, not a claim that the simplification has been carried
-out.
-
-The current n=7 proof is exact and formal at source level. The open question is
-whether all of its hardest one-variable inequalities meet the stronger
-human-readable standard above. Under that standard, the eight Bernstein sites
-are genuine audit obligations until their mathematical explanations are
-written down.
+| A | Marker-arc curvature, degree 8 / 9 coefficients | A factored bound on the radicand ratio, followed by a one-variable maximum at the derived critical point 3/5 | [A](A_MARKER_CURVATURE_PROOF.md) |
+| B | Axial-boundary ratio, degree 5 / 6 coefficients | The numerator is concave throughout the radial enclosure; both endpoints are positive | [B](B_BOUNDARY_RATIO_PROOF.md) |
+| C | Inward turn, degree 5 / 6 coefficients | A positive square plus factored Taylor error on [0,1], then a uniformly increasing trigonometric tail | [C](C_INWARD_TURN_PROOF.md) |
+| D | Opposite-forward axial scalar, degree 5 / 6 coefficients | Cauchy–Schwarz bounds the derivative vector; the total possible decrease is smaller than the initial reserve | [D](D_OPPOSITE_FORWARD_PROOF.md) |
+| E1 | Small axial target, degree 14 / 15 coefficients | The axial dual force lies in a proved cone; a linear disk-support bound and one tangent parabola give positive slack | [E, sections 1–4](E_FORWARD_TARGET_PROOF.md#1-axial-targets-the-statement-and-the-actual-support-switch) |
+| E2 | Large axial target, degree 7 / 8 coefficients | The original half-angle support expression is concave, with exact positive endpoints | [E, section 5](E_FORWARD_TARGET_PROOF.md#5-large-axial-turns-half-angle-support-is-concave) |
+| E3 | Negative side target, degree 6 / 7 coefficients | Split by the actual tangent-force sign; the remaining small regime has a simple cubic disk margin | [E, sections 6–9](E_FORWARD_TARGET_PROOF.md#6-side-targets-the-statement-and-transition-tangent) |
+| F | Inward opposite discriminant, degree 11 / 12 coefficients | After the circle comparison and completed square, the polynomial is strictly decreasing and positive at 5/8 | [F](F_INWARD_OPPOSITE_PROOF.md) |
+
+These were the eight sites carrying 69 displayed Bernstein coefficients in the
+baseline. The proposed replacements prove the same statements; C, D, and E
+work directly with the original trigonometric/support inequalities rather than
+preserving unnecessary auxiliary polynomials.
+
+## Readability audit, completed for A–F
+
+- [x] State the original quantity before polynomialization.
+- [x] State the exact continuous domain and its source.
+- [x] Explain the reduction from geometry to the scalar inequality.
+- [x] Give a visible reason for the sign, not a coefficient acceptance test.
+- [x] Explain non-obvious constants and their explicit verification.
+- [x] Preserve strictness and contact/equality boundaries.
+- [x] Provide helper statements or a precise Lean implementation recipe.
+- [x] Avoid circular use of the old positivity theorem in its replacement.
+
+The large E and F items were not declared resolved merely because their
+original coefficients were exact. E has new support arguments replacing all
+three polynomial certificates. F retains its useful geometric quadratic and
+polynomial interface, but replaces the opaque sign proof by a short derivative
+comparison and one exact endpoint.
+
+## Breakpoints audit
+
+The complete audit and additional proofs are in
+[G_BREAKPOINTS_AND_ASSEMBLY.md](G_BREAKPOINTS_AND_ASSEMBLY.md).
+
+- [x] Remove the axial-target split at 1/3: the two support methods now meet at
+      pi/6, where the nonnegative dual multiplier becomes zero.
+- [x] Remove the negative side-target split at 1/6: use the sign of the force
+      along the transition tangent. The small-angle bound is derived from
+      that sign, not imposed as a new case partition.
+- [x] Supply one monotone-profile proof replacing the inward side-target split
+      at 2/3 and its accompanying pi/6 split.
+- [x] Supply a replacement for the separate opposite-side/axial 1/3 cut: use the
+      actual crossing of the two available affine clearance bounds.
+- [x] Explain the forward-positive cutoff 5/16 and show it can be sharpened to
+      3/10, the exact zero of its coarse support reserve.
+- [x] Explain the retained 2/5 source-label cutoff by an explicit 1/1050
+      marker-support reserve and the adjoining boundary-support domain.
+- [x] Distinguish whole-domain enclosures from subdivisions.
+- [x] Explain the new unit-interval split in C by its factored error and
+      derivative-positive tail.
+- [x] Retain geometric label transitions, sign walls, and genuine support
+      switches. No fine mesh is introduced.
+
+Not every rational endpoint is removed. The remaining ones have an explicit
+mathematical function, and their validity is proved as an inequality rather
+than inferred from numerical sampling.
+
+## Fixed-gap, all-gaps, and equality handoff
+
+- [x] Keep the four separating axes and two transverse signs exhaustive.
+- [x] Keep the active axial/side labels.
+- [x] Keep capped labels reduced by convexity to their triangle vertices.
+- [x] Keep the marker-arc contradiction for small gaps.
+- [x] Keep the continuous leftmost-minimum argument for larger gaps.
+- [x] Check at source level that each replacement supplies the original
+      sector statement with the required strictness.
+- [x] Preserve the three contact types, regular hexagon, and column family.
+- [x] Preserve the original Packing, Congruent and theorem statements.
+
+The source-level map is documented in G/H and HANDOFF. It is not an elaborated
+Lean dependency audit.
+
+## Validation performed
+
+- [x] Independently check the principal algebraic identities, derivative
+      factorizations, and rational margins using exact symbolic/rational
+      arithmetic: 52 checks passed.
+- [x] Review the domain and sign conditions in the written arguments.
+- [x] Check the named calculus helpers against the baseline
+      `Seven/Analysis.lean`.
+- [x] Keep mathematical proof, exact-arithmetic cross-check, and kernel
+      acceptance distinct.
+
+The exact checks are development cross-checks, not imported proof premises.
+The complete mathematical arguments are written in the notes.
+
+## Maintainer integration — not performed here
+
+These items are deliberately not marked complete:
+
+- [ ] Implement the proposed Lean helper statements and replacement bodies.
+- [ ] Compile the research replacements against the pinned Lean/mathlib setup.
+- [ ] Integrate selected changes into production modules.
+- [ ] Check elaborated dependencies for accidental use of the old Bernstein
+      results while establishing their replacements.
+- [ ] Run the case and public theorem tests, axiom audit and independent replay.
+
+No new compiled Lean proof is claimed. The deliverable is the completed human
+proof research and integration handoff, confined to `research/seven/**`.
