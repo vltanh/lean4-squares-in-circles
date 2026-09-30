@@ -1,13 +1,14 @@
 import SquaresInCircles.Six.Stress.VertexEnvelope
+import SquaresInCircles.Six.Stress.SupportExpression
 import SquaresInCircles.Six.ProofTools.SmoothCalculus
 
 /-!
-# Exact expressions for the common pair lower bound
+# Computational expressions for the common pair lower bound
 
-The constants are the candidate radicals, not rounded replacements. Outside a
-small square the exact cap/vertex pair value is checked directly. Inside that
-square six sign sectors use the universally valid smooth vertex upper support.
-The sector derivative check carries its regularity conditions in the formula.
+This development still needs human-analytic replacement. Its computational
+support syntax is imported explicitly here rather than through BalancedPair,
+whose definitions and algebra are shared with the analytic diagonal proof.
+No analytic-only entry point should import this module.
 -/
 
 namespace SquaresInCircles.Six.Stress.PairCertificate

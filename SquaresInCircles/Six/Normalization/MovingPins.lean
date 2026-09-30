@@ -1,12 +1,14 @@
 import SquaresInCircles.Six.Normalization.CardinalGeometry
+import SquaresInCircles.Six.Analytic.OwnMovingPin
 
 /-!
-# N24: unconditional east and north moving pins
+# N24: east and north moving pins by analytic geometry
 
-The east OWN case is Lemma G's real geometric certificate. The north case is
-its symmetric local calculation; it does not re-normalize D or assume the
-reflected packing keeps D's half-window. Cardinal cases use the already proved
-cap piercing. The final theorem has no separator-choice hypothesis.
+The east OWN case uses a single whole-interval polynomial contradiction in
+Analytic.OwnMovingPin. North is the same local coordinate identity; it does not
+construct P.mirror, invoke its certificate-derived fields, or re-normalize D.
+Cardinal cases use analytic cap piercing. The construction of the broad windows
+and strong central box remains a separate analytic-conversion obligation.
 -/
 
 noncomputable section
@@ -19,8 +21,8 @@ lemma PinPacking.east_own_moving_pin {R : ℝ} (P : PinPacking R)
     openSquare (orientedSquare (P.phase 0) (P.radial 0) (P.transverse 0)) (1+P.center.1,0) := by
   have ht := P.window 0
   norm_num [windowLower,windowUpper,phaseCenter] at ht
-  have hb := (P.contained 0).bounds (P.avoidsCore 0)
-  exact own_moving_pin_from_margin ht (P.contained 0) hb.1 hb.2.2
+  have habs : |P.phase 0| ≤ 5/12 := abs_le.mpr ⟨by linarith [ht.1],by linarith [ht.2]⟩
+  exact Analytic.own_moving_pin habs (P.contained 0)
     P.box.1.1 P.box.2.1 P.box.1.2 P.box.2.2 hown
 
 lemma own_margin_diagonal (t a b cx cy : ℝ) :
@@ -33,15 +35,21 @@ lemma PinPacking.north_own_moving_pin {R : ℝ} (P : PinPacking R)
     (hown : 0 ≤ centralMargin .own (P.phase 1) (P.radial 1) (P.transverse 1)
       P.center.1 P.center.2) :
     openSquare (orientedSquare (P.phase 1) (P.radial 1) (P.transverse 1)) (0,1+P.center.2) := by
-  have hm : 0 ≤ centralMargin .own (P.mirror.phase 0) (P.mirror.radial 0)
-      (P.mirror.transverse 0) P.mirror.center.1 P.mirror.center.2 := by
-    change 0 ≤ centralMargin .own (mirroredPhase 0 (P.phase (mirrorPin 0)))
-      (P.radial (mirrorPin 0)) (-P.transverse (mirrorPin 0)) P.center.2 P.center.1
-    simpa [mirroredPhase,mirrorPin,own_margin_diagonal] using hown
-  have he := P.mirror.east_own_moving_pin hm
-  have hpoint := (mirrored_oriented_open 0 (P.phase 1) (P.radial 1) (P.transverse 1)
-    (1+P.center.2,0)).mp he
-  simpa [Six.diagonalPoint] using hpoint
+  have ht := P.window 1
+  norm_num [windowLower,windowUpper,phaseCenter] at ht
+  have habs : |Real.pi/2-P.phase 1| ≤ 5/12 := by
+    apply abs_le.mpr
+    constructor <;> linarith [ht.1,ht.2]
+  have hc : ContainedChart (P.radial 1) |-P.transverse 1| := by
+    simpa only [abs_neg] using P.contained 1
+  have ho : 0 ≤ centralMargin .own (Real.pi/2-P.phase 1) (P.radial 1) (-P.transverse 1)
+      P.center.2 P.center.1 := by
+    simpa only [own_margin_diagonal] using hown
+  have hp := Analytic.own_moving_pin habs hc
+    P.box.2.1 P.box.1.1 P.box.2.2 P.box.1.2 ho
+  have hpoint := (oriented_diagonal_open (P.phase 1) (P.radial 1) (P.transverse 1)
+    (1+P.center.2,0)).mp hp
+  simpa only [Six.diagonalPoint] using hpoint
 
 /-- N24 after the cardinal-preferred two-choice theorem, with both cases proved. -/
 theorem PinPacking.moving_pins {R : ℝ} (P : PinPacking R)

@@ -1,13 +1,17 @@
 import SquaresInCircles.Six.Stress.BalancedFactorization
+import SquaresInCircles.Six.Stress.PairLowerBound
 
 /-!
-# Common candidate-graph closure
+# Common candidate-graph closure: analytic conversion in progress
 
-The two pair envelopes and the diagonal inequality close all canonical-bit
-patterns simultaneously after the fixed-stress graph classification. The
-only zero has e=n=w=s=0 and d=pi/4. Canonical cardinal tie preference then
-forces Pattern 8. The strict-support theorem supplies the radius implication;
-no unproved concrete defect is an input to these endpoints.
+The diagonal remainder now has a human-analytic proof. The separate pair
+lower bound and the fixed-stress graph classification still have computational
+certificate dependencies. They are imported explicitly and remain blockers
+under HUMAN_ANALYTIC_STANDARD.md. Therefore the endpoints below are not yet
+accepted as the requested human-analytic n=6 proof.
+
+The implication from the pair and diagonal bounds to angle rigidity and radius
+equality is ordinary stress algebra; no problem predicate is changed.
 -/
 
 noncomputable section
@@ -26,7 +30,7 @@ theorem balanced_defect_lower {R : ℝ} (P : NormalizedPacking R) (u v : Fin 4) 
   dsimp [diagonalRemainder]
   linarith
 
-/-- Nonnegative defect is now proved for every actual source and bit choice. -/
+/-- This conclusion still consumes the not-yet-converted pair lower bound. -/
 theorem balanced_defect_nonnegative {R : ℝ} (P : NormalizedPacking R) (u v : Fin 4) :
     0≤balancedDefect P u v := by
   have h := balanced_defect_lower P u v
@@ -39,7 +43,7 @@ def CandidateAngles {R : ℝ} (P : NormalizedPacking R) : Prop :=
 
 def CandidateSources (u v : Fin 4) : Prop := (u=0 ∨ u=3) ∧ (v=0 ∨ v=3)
 
-/-- Radius-bounded actual packings force equality in every common scalar bound. -/
+/-- Radius-bounded actual packings force equality in the supplied scalar bounds. -/
 theorem balanced_rigidity {R : ℝ} (P : NormalizedPacking R) (hR : R^2≤Six.qStar)
     (u v : Fin 4) (hsel : BalancedSelected P u v) :
     CandidateAngles P ∧ CandidateSources u v ∧ balancedDefect P u v=0 := by
@@ -70,15 +74,15 @@ theorem balanced_rigidity {R : ℝ} (P : NormalizedPacking R) (hR : R^2≤Six.qS
   exact ⟨⟨he,hn,hw,hs,hd⟩,
     ⟨pair_zero_equality_sources _ _ u hu,pair_zero_equality_sources _ _ v hv⟩,hzero⟩
 
-/-- The common closure excludes every non-Pattern-8 canonical case, including
-all previous survivor codes; it does not assume their separate scalar claims. -/
+/-- This uses the common envelope route rather than separate survivor claims. -/
 theorem normalized_pattern_eight {R : ℝ} (P : NormalizedPacking R) (hR : R^2≤Six.qStar) :
     P.patternCode=8 := by
   obtain ⟨u,v,hsel⟩ := exists_balanced_selection P
   have ha := (balanced_rigidity P hR u v hsel).1
   exact P.pattern_eight_of_zero_helpers ha.1 ha.2.1 ha.2.2.1 ha.2.2.2.1
 
-/-- The concrete common defect closes the generic strict-radius implication. -/
+/-- The stress implication is analytic; its remaining pair/classification
+premises still require replacement before this is an analytic-only endpoint. -/
 theorem normalized_radius_eq {R : ℝ} (P : NormalizedPacking R) (hR : R^2≤Six.qStar) :
     R=Six.radius := by
   obtain ⟨u,v,hsel⟩ := exists_balanced_selection P
@@ -93,7 +97,7 @@ theorem normalized_radius_eq {R : ℝ} (P : NormalizedPacking R) (hR : R^2≤Six
     (balanced_weights_nonnegative P u v) (balanced_separates P u v hsel)
     (balanced_threshold_pos P u v) hcentral hdefect
 
-/-- Full selected data for the equality reconstruction; all fields are derived. -/
+/-- Selected equality data, subject to the dependency boundary documented above. -/
 theorem normalized_candidate_data {R : ℝ} (P : NormalizedPacking R) (hR : R^2≤Six.qStar) :
     ∃ u v : Fin 4, BalancedSelected P u v ∧ CandidateAngles P ∧ CandidateSources u v ∧
       balancedDefect P u v=0 ∧ R=Six.radius := by

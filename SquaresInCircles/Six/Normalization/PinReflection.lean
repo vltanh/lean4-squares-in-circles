@@ -3,10 +3,11 @@ import SquaresInCircles.Six.Normalization.PinPacking
 /-!
 # The single global diagonal normalization
 
-The reflection swaps E/N and W/S and fixes D. It preserves the pin set and
-the strong central box. The returned congruence records the reflection rather
-than pretending it is an orientation-preserving frame change. Equality with
-the final candidate must later absorb it using the candidate's actual symmetry.
+The reflection swaps E/N and W/S and fixes D. Its point-set identities preserve
+the pins, windows and strong central box. Allowed axes are rederived from the
+analytic fixed-pin coordinate lemma, without invoking any window certificate.
+The returned congruence records the reflection rather than treating it as a
+rotation. The final candidate symmetry must absorb this recorded case later.
 -/
 
 noncomputable section
@@ -130,20 +131,12 @@ def PinPacking.mirror {R : ℝ} (P : PinPacking R) : PinPacking R := by
     apply central_separators_complete (hcontained i).half_le hbox.1.1 hbox.2.1
       (by linarith [hbox.1.2,c0_lt_23_200]) (by linarith [hbox.2.2,c0_lt_23_200])
     exact hp.disjoint 0 i.succ (by intro he; have hh := congrArg Fin.val he; simp at hh)
-  refine { center := c, phase := t, radial := a, transverse := b,
+  exact { center := c, phase := t, radial := a, transverse := b,
     packing := hp, box := hbox, contained := hcontained, avoidsCore := havoids,
-    pin := hpin, window := hwindow, separator := hsat, allowed_separator := ?_ }
-  intro i k hk
-  have hnear : -Real.pi ≤ t i-phaseCenter i ∧ t i-phaseCenter i ≤ Real.pi := by
-    have h := hwindow i
-    fin_cases i <;> norm_num [windowLower,windowUpper] at h <;>
-      constructor <;> linarith [h.1,h.2,Real.pi_gt_d2]
-  have hup := exists_upper_of_actual hbox.1 hbox.2 (hsat i)
-  have hw := window_from_upper i hnear (hcontained i) hup (hpin i)
-  by_contra hn
-  have hneg := hw.2 k hn
-  have hnonneg := hk.trans (centralMargin_le_upper hbox.1 hbox.2 k)
-  linarith
+    pin := hpin, window := hwindow, separator := hsat,
+    allowed_separator := fun i k hk =>
+      Analytic.allowed_axis_of_pin i (hcontained i) (havoids i)
+        hbox.1.1 hbox.2.1 hbox.1.2 hbox.2.2 (hpin i) k hk }
 
 lemma PinPacking.mirror_open {R : ℝ} (P : PinPacking R) (i : Fin 6) (p : Point) :
     openSquare (P.mirror.model i) p ↔
@@ -174,13 +167,11 @@ lemma PinPacking.congruent_reflected_mirror {R : ℝ} (P : PinPacking R) :
   exact Six.congruent_of_origin_sets τ ho
     (fun i => same_open_same_closed _ _ (ho i))
 
-/-- Either no reflection was used, or the remaining reflected point-set relation
-is explicitly retained for the final equality argument. -/
+/-- The possible reflection is retained explicitly for the final equality argument. -/
 def CongruentOrDiagonal {n : ℕ} (S : Fin n → UnitSquare) (o : Point)
     (M : Fin n → UnitSquare) : Prop :=
   Congruent S o M ∨ Congruent S o (fun i => Six.reflectDiagonalSquare (M i))
 
-/-- The D half-window is imposed once, without losing a congruence case. -/
 theorem normalize_D_half {R : ℝ} (P : PinPacking R) :
     ∃ Q : PinPacking R, Q.phase 3 ≤ 5*Real.pi/4 ∧ CongruentOrDiagonal P.model (0,0) Q.model := by
   by_cases h : P.phase 3 ≤ 5*Real.pi/4

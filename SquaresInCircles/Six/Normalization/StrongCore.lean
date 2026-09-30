@@ -1,24 +1,25 @@
 import SquaresInCircles.Six.Normalization.Input
-import SquaresInCircles.Six.Normalization.Certificates.CentralGrid
+import SquaresInCircles.Six.Analytic.ForbiddenArcs
 import SquaresInCircles.Six.DiagonalReflection
 import SquaresInCircles.Six.Goals
 
 /-!
-# Proposition A: the strong central box, before pins and sectors
+# Proposition A: the analytic strong central box, before pins and sectors
 
-The proof uses the supplied sufficient rational forbidden arcs. Their finite
-arithmetic proofs are kernel reductions in Certificates.Checks, connected to
-actual SAT by ConeSemantics. The five-marker contradiction is proved in
-MarkerGaps. No pin, sector, A2 conclusion, or strong-box assumption is used.
+The forbidden arcs are proved on whole geometric quadrants by algebra,
+trigonometric bounds, completed squares and one explicit quartic chord
+argument. No central-coordinate subdivision, certificate checker, pin,
+sector, or A2 conclusion is used. The existing genuine Seven marker-gap
+inequality then contradicts the empty arc.
 
-The temporary diagonal reflection proves the symmetric bound on the original
-packing. It does not impose a D-angle convention or consume the later global
-D normalization.
+A temporary diagonal reflection proves the symmetric bound on the ORIGINAL
+packing. It imposes no D-angle convention and does not spend the later global
+D normalization. Compilation is distinct from this source proof.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Normalization
-open Certificates
+open Six.Analytic
 
 private theorem bad_east_center_impossible {S : Fin 6 → UnitSquare} {R cx cy : ℝ}
     (hp : Packing S (0,0) R) (hQ : R^2 ≤ Q0)
@@ -57,23 +58,17 @@ private theorem bad_east_center_impossible {S : Fin 6 → UnitSquare} {R cx cy :
     have hX := (chart_same_open_oriented (D.chart i) (htclass i) p).mpr hboth.2
     exact hp.disjoint 0 _ hne p ⟨(hcentral p).mpr hboth.1,hX⟩
   by_cases hyc : cy ≤ c0
-  · apply D.no_empty_arc first_arc_long
+  · apply D.no_empty_arc small_arc_length
     intro i v hvl hvu he
-    have hred := reducedUpper_of_actual (hc i) hx hy0 (by linarith : cy ≤ cx+1/10)
-      ⟨hx.le,hx1.le⟩ ⟨hy0,hyc⟩ (hs i)
-    have hout := coneA1_marker (ht i) (hc i) hred
-    apply no_marker_lift_in_arc (ht i) (hc i)
-      first_arc_near_east.1 first_arc_near_east.2 hout ⟨hvl,hvu⟩
+    have hout := small_core_marker_outside (hc i) hx hx1 hy0 hyc (hs i)
+    apply marker_no_representative (hc i) (ht i)
+      small_arc_near_east.1 small_arc_near_east.2 hout ⟨hvl,hvu⟩
     exact he.trans (hmarker i).symm
-  · have hyc' : c0 ≤ cy := (lt_of_not_ge hyc).le
-    obtain ⟨i0,j0,hji,hxb,hyb⟩ := triangular_grid_cover ⟨hx.le,hx1.le⟩ ⟨hyc',hy⟩
-    apply D.no_empty_arc second_arc_long
+  · apply D.no_empty_arc large_arc_length
     intro i v hvl hvu he
-    have hred := reducedUpper_of_actual (hc i) hx hy0 (by linarith : cy ≤ cx+1/10)
-      hxb hyb (hs i)
-    have hout := coneA2_marker i0 j0 hji (ht i) (hc i) hred
-    apply no_marker_lift_in_arc (ht i) (hc i)
-      second_arc_near_east.1 second_arc_near_east.2 hout ⟨hvl,hvu⟩
+    have hout := large_core_marker_outside (hc i) (lt_of_not_ge hyc) hy hx1 (hs i)
+    apply marker_no_representative (hc i) (ht i)
+      large_arc_near_east le_rfl hout ⟨hvl,hvu⟩
     exact he.trans (hmarker i).symm
 
 /-- N23 for an actual packing with an axis-parallel central point set. -/
@@ -91,7 +86,7 @@ theorem strong_central_box {S : Fin 6 → UnitSquare} {R cx cy : ℝ}
     have hcentral' := Six.reflected_central_axis hcentral
     exact bad_east_center_impossible hp' hQ hcentral' hy hy1 hx0 horder
 
-/-- The previously uninhabited strong-box goal is now supplied by Proposition A. -/
+/-- Unconditional strong-box endpoint, now through only analytic marker lemmas. -/
 theorem strongCentralBox : Six.Goals.StrongCentralBox := by
   intro S c R hp hR haxis hinside hcx hcy
   have hbounds : |c.1| < 1/2 ∧ |c.2| < 1/2 := by
@@ -101,7 +96,7 @@ theorem strongCentralBox : Six.Goals.StrongCentralBox := by
   · exact (le_abs_self c.1).trans_lt hbounds.1
   · exact (le_abs_self c.2).trans_lt hbounds.2
 
-/-- N16 is a consequence of the closed strong box, not an input to it. -/
+/-- N16 follows from the closed strong box, not conversely. -/
 theorem coarse_central_box {S : Fin 6 → UnitSquare} {R cx cy : ℝ}
     (hp : Packing S (0,0) R) (hQ : R^2 ≤ Q0)
     (hcentral : ∀ p, openSquare (S 0) p ↔ openSquare (axisSquare (cx,cy)) p)

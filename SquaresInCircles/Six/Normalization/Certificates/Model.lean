@@ -1,13 +1,13 @@
 import SquaresInCircles.Six.Normalization.RelaxedCentral
+import SquaresInCircles.Six.Normalization.PinData
 import SquaresInCircles.Six.ProofTools.Certificate
 
 /-!
-# Reified normalization statements, not certificate axioms
+# Historical reified normalization predicates
 
-These are the supplied direct-certificate predicates, with exact rational root
-boxes and the same genuine label. Their real interpretations are identified
-with the geometric quantities here. A later module supplies concrete kernel
-computations; this module itself asserts no Boolean success.
+This exploratory computational model is not an analytic proof dependency.
+Ordinary pin, phase and window definitions live in PinData. Analytic geometry
+imports PinData without importing this evaluator or its finite checks.
 -/
 
 namespace SquaresInCircles.Six.Normalization.Certificates
@@ -49,15 +49,6 @@ def pinE {n : ℕ} (i : Fin 5) : Expr n × Expr n :=
     (r (9/10) * .cos (r (5/4) * .pi),r (9/10) * .sin (r (5/4) * .pi)),
     (r (9/10) * .cos (r (19/12) * .pi),r (9/10) * .sin (r (19/12) * .pi))] i
 
-noncomputable def fixedPin (i : Fin 5) : Point :=
-  ![(9/10,0),(0,9/10),
-    ((9/10)*Real.cos ((11/12)*Real.pi),(9/10)*Real.sin ((11/12)*Real.pi)),
-    ((9/10)*Real.cos ((5/4)*Real.pi),(9/10)*Real.sin ((5/4)*Real.pi)),
-    ((9/10)*Real.cos ((19/12)*Real.pi),(9/10)*Real.sin ((19/12)*Real.pi))] i
-
-noncomputable def pinMargin (t a b : ℝ) (q : Point) : ℝ :=
-  1/2-max |q.1*Real.cos t+q.2*Real.sin t-a| |-q.1*Real.sin t+q.2*Real.cos t-b|
-
 def pinMarginE {n : ℕ} (t a b qx qy : Expr n) : Expr n :=
   r (1/2)-.max (.abs (qx * .cos t+qy * .sin t-a))
     (.abs (-qx * .sin t+qy * .cos t-b))
@@ -78,13 +69,6 @@ def pinCoverFormula : Formula 3 :=
       .lt (r (1/100)) (pinMarginE t a b (pinE i).1 (pinE i).2))))
 
 def centerE {n : ℕ} (i : Fin 5) : Expr n := ![0,.pi/2,.pi,r (5/4)*.pi,r (3/2)*.pi] i
-noncomputable def phaseCenter (i : Fin 5) : ℝ := ![0,Real.pi/2,Real.pi,(5/4)*Real.pi,(3/2)*Real.pi] i
-
-def windowLower : Fin 5 → ℚ := ![-5/12,-3/10,-2/3,-15/14,-5/8]
-def windowUpper : Fin 5 → ℚ := ![3/10,5/12,5/8,15/14,2/3]
-
-def allowed : Fin 5 → List CentralAxis :=
-  ![[.own,.east],[.own,.north],[.own,.west],[.own,.west,.south],[.own,.south]]
 
 def windowPhaseRoot : Fin 5 → RInterval :=
   ![⟨-22/7,22/7⟩,⟨-11/7,33/7⟩,⟨0,44/7⟩,⟨3/4,71/10⟩,⟨3/2,8⟩]

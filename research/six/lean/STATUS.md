@@ -1,88 +1,73 @@
-# n=6 Lean formalization status
+# n=6 proof status: human-analytic conversion
 
-Updated 2026-09-29 after the audit of `six_close_proof.zip` and its matching patch.
+**The requested human-analytic n=6 proof is not complete.**
+The current acceptance criterion is `HUMAN_ANALYTIC_STANDARD.md`, and the active
+conversion ledger is `ANALYTIC_PROGRESS.md`. Earlier source-completion checklists
+record progress on a computer-assisted route; their checked boxes are not proof
+of compliance with the new mathematical requirement.
 
-**The unrestricted n=6 Lean proof is not complete. Compilation and kernel
-acceptance are deferred at the user's request.** Written proof bodies and
-independently executed arithmetic checks are recorded separately below.
+## What exists, and what is not accepted as finished
 
-## Source implementation
+The branch contains Lean source for the unrestricted lower bound, uniqueness,
+equality reconstruction and public Optimum 6 integration. Those sources still
+transitively use computational normalization, fixed-stress classification and
+pair-envelope certificates. They are therefore NOT accepted as the requested
+human-analytic proof, irrespective of eventual kernel acceptance.
 
-The repository contains candidate algebra and attainment, the original-packing
-normalization chain, the strong central box, actual pin-labelled geometry and
-windows, the recorded diagonal reflection, W/D order, moving pins, cap piercing,
-opposite-cardinal budgets and Appendix A's D-own exclusion.
+The new analytic checkpoint is `SquaresInCircles/Six/Analytic.lean`. Its current
+scope is deliberately smaller and explicit. It collects ordinary geometric,
+algebraic and calculus arguments without the unfinished computational chain.
 
-`Normalization.StrongCore` supplies a proof body for
-`Six.Goals.StrongCentralBox`. `Normalization.normalize_of_candidate` supplies
-the normalization interface without seeding Packing with pins, sectors, a
-small central box or an A2 conclusion. The exact candidate-radius central box
-and two-branch center support are in `Stress/CandidateRadius.lean` and
-`Stress/ExactSupport.lean`.
+## Completed analytic replacements in this continuation
 
-The audit added three modules:
+1. Both A22 stress-angle sign checks are replaced by the shifted-sine identity.
+2. Candidate constant algebra is separated from packing normalization; the
+   diagonal stress-coefficient bound is proved by rational algebra rather than
+   a zero-dimensional certificate.
+3. The diagonal vertex inequality is proved by a diamond-domain reduction,
+   trigonometric concavity and two explicit quartic chord inequalities. The
+   two cases are the two boundary pieces of the diamond, not a searched grid.
+4. Both cap and vertex branches, the genuine support switch, nonnegativity and
+   the unique-zero condition are assembled in `Stress/DiagonalRemainder`.
+5. The real support formula and balanced-pair definitions no longer import
+   computational reification merely to state ordinary real identities.
+6. The six cardinal-facing angle checks are replaced by one short-transverse-
+   coordinate cap obstruction and the four cardinal-coordinate identities.
 
-- `Normalization/StrongCardinal.lean`: N25+ for cardinal E and N,
-  |e|, |n| < 203/1000, with an analytic cap proof and canonical-bit wrappers.
-- `Stress/CandidateCardinal.lean`: the sharper candidate-radius N26 bounds with
-  4*cStar, retaining BOTH opposite-cardinal hypotheses.
-- `Stress/StrictSupport.lean`: strict cap/vertex support for nonzero forces
-  under smaller-radius containment, the required noncentral nonzero force,
-  and the generic radius inference from a proved nonnegative stress defect.
+The conventional proof is written in `ANALYTIC_DIAGONAL_PROOF.md`, including
+all relevant constants, the branch condition, the two quartics and their exact
+endpoint fractions. The separate `SixAnalyticAxiomAudit.lean` contains deferred
+audit commands, not an execution log.
 
-The old development root and axiom-audit file still referenced the earlier cap
-checkpoint at the start of this audit. They now import and list the later
-normalization, candidate-radius and new audit-stage endpoints. Configuring
-`#print axioms` is not execution of an axiom audit.
+## Scope boundaries that remain important
 
-## What remains open
+The analytic diagonal theorem assumes its explicit DiagonalDomain. The current
+proof that every packing reaches that domain still depends on fixed stress
+rows and tails, and must be replaced. The new cardinal-angle refinement uses
+the broad windows and strong-core bounds of PinPacking; it does not yet replace
+the certificate-based construction of those inputs.
 
-The complete directed pattern classification, the repaired A2.1/A2.2/A2.3
-inequalities and survivor chains, Pattern 8's global scalar closure, equality
-reconstruction and the candidate reflection-symmetry step still need their
-Lean implementations. `Six.Goals.LowerBound` and `Six.Goals.Uniqueness` remain
-uninhabited. The generic strict-radius theorem requires the concrete defect
-inequality; it does not prove those missing case closures.
+The principal remaining blocks are: analytic strong-core and pin/window
+construction; W/D and Appendix A reductions; analytic D-edge classification
+and tails in place of the large fixed tables; and the common adjacent-pair
+lower envelope in place of its outer and derivative covers. Only after those
+are replaced can the existing final stress/equality algebra be regarded as
+an analytic-only proof of the unrestricted endpoints.
 
-The updated task ledger is `CHECKLIST.md`. No public Packing, Congruent,
-Geometry, Challenge, optimum statement, lake configuration or workflow was
-changed in this audit.
+## Execution and historical evidence
 
-## Independent arithmetic audit
+Compilation is deferred at the user's request. No Lean compilation or kernel
+acceptance is claimed for the new source. No numerical search, certificate
+replay or generated-table verification was used to establish these replacements.
+No GitHub runner or remote computation service was used.
 
-See `UPLOAD_AUDIT.md` for findings and scope. Fresh internal executions gave:
+`UPLOAD_AUDIT.md`, `UPLOAD_AUDIT_RESULTS.json`, and earlier mirror/build records
+remain historical accounts of the computational route. They are not proof
+premises of the analytic checkpoint and do not establish the human-analytic
+acceptance criterion. Their old counts and hashes must not be presented as
+validation of this new source.
 
-- 95 scalar leaves and 23 direct normalization groups, zero unresolved, at
-  each of Q0 and QSTAR; 11 unit tests and 14 sharpness controls per mode.
-- 32/32 final supplied downstream configurations passed, including all 115
-  default and 99 Appendix-C direct stress rows. Initial adapter failures and
-  their successful retries are preserved in the execution records.
-- All 214 direct rows passed again after the checker was hardened.
-- 27 exact stated-domain coverage checks, 214 symbolic force balances, nine
-  new guard tests, three hostile controls and ten new Lean algebra checks passed.
-
-Normalization used the supplied standard-library 96-bit exact-dyadic backend.
-Downstream programs ran with a conservative exact-dyadic audit adapter or their
-existing exact-rational/fixed-point arithmetic. **Native Arb was not run.**
-Numerical identity and sample-agreement checks remain sanity checks, not proofs
-of exact equality. No GitHub runner or remote computation was used.
-
-The two older JSON mirror statistics are internally consistent but lack the
-source/root/evaluator hashes needed for independent reproduction. The upload's
-64 archived run configurations were not independently rerun. Passing the
-supplied programs is not an exhaustive audit of every manuscript inference.
-
-## Research integration boundary
-
-The full 47-file uploaded research revision and the audit's checker/citation
-corrections are delivered as `six_close_proof_audited.patch`, separately from
-the targeted Lean and audit commits. They have not been silently substituted
-into the branch's live manuscripts. The committed `closure_hardening.patch`
-is the incremental delta to apply after the original upload; the full audited
-patch already incorporates it.
-
-The downloadable bundle contains the revised research copy, original inputs,
-actual logs, replay tools, failure/retry records and `AUDIT_MANIFEST.json`.
-Earlier SOURCE_AUDIT/CAP_LOCAL_MANIFEST/compiler-failure logs in this repository
-are historical records; their old file counts and hashes do not cover this
-new checkpoint and must not be presented as current Lean acceptance.
+The original Packing and Congruent predicates and public problem statements
+are unchanged in this conversion. The isolated analytic checkpoint does not
+claim to replace the full n=6 theorem until its remaining dependency gaps are
+closed.

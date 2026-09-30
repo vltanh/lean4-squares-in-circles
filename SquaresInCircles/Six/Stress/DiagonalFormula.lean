@@ -1,11 +1,16 @@
-import SquaresInCircles.Six.Stress.PairLowerBound
+import SquaresInCircles.Six.Stress.VertexEnvelope
+import SquaresInCircles.Six.Stress.SupportFormula
+import SquaresInCircles.Six.Normalization.CapSupport
 
 /-!
-# Exact reduction of the remaining diagonal contribution
+# Exact analytic reduction of the diagonal contribution
 
 The force direction and length are derived algebraically. The cap branch is
 selected by 2 R |sin delta| <= 1, not by coordinate dominance. Dominance is
 proved separately only to identify the larger coordinate in the support.
+
+The scalar reduction does not use the common pair lower bound. In particular
+PairLowerBound and its computational certificates are no longer imported here.
 -/
 
 noncomputable section
@@ -31,7 +36,7 @@ def DiagonalDomain (w s d : ℝ) : Prop :=
 
 lemma diagonalK_pos : 0<diagonalK := by
   dsimp [diagonalK]
-  positivity
+  exact mul_pos (mul_pos (by norm_num) Six.hStar_pos) mStar_pos
 
 lemma diagonal_parameters {w s d : ℝ} (h : DiagonalDomain w s d) :
     (-11/25≤diagonalBeta w s ∧ diagonalBeta w s≤2/5) ∧
@@ -123,8 +128,7 @@ lemma diagonal_force_length {w s d : ℝ} (h : DiagonalDomain w s d) :
         (Real.sin_sq_add_cos_sq (diagonalDelta w s d))
   rw [hsq,Real.sqrt_sq hscale.le]
 
-/-- Exact two-branch expression. The switch is the actual constrained-disk
-support switch after the force length has been proved. -/
+/-- Exact two-branch expression, with the constrained-disk support condition. -/
 theorem diagonal_value_formula {w s d : ℝ} (h : DiagonalDomain w s d) :
     diagonalValue w s d=
       if 2*Six.radius*|Real.sin (diagonalDelta w s d)|≤1

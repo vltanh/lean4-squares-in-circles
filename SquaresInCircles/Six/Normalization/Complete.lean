@@ -3,23 +3,25 @@ import SquaresInCircles.Six.Normalization.MovingPins
 import SquaresInCircles.Six.Normalization.NearestPoint
 
 /-!
-# The complete normalization source interface
+# The analytic normalization interface
 
-Every input is an actual packing and the candidate-radius ceiling. Proposition
-A is proved before pins and sectors. The only global diagonal reflection is
-recorded explicitly. Appendix A is invoked only after the strong box, windows,
-W/D order and one-helper theorem are available. No A2 conclusion occurs in
-this dependency chain.
+Every input is an actual packing and a radius ceiling. Strong-core forbidden
+arcs precede pins and sectors; pin covering and windows are analytic geometry;
+W/D order is a direct four-axis argument; and Appendix A uses the two-source
+analytic stress proof. No finite-cover or generated stress-table check is a
+mathematical premise of this normalization chain.
 
-This is source completion of the normalization package, not a claim that the
-unrestricted lower bound or uniqueness has already been formalized.
+The one global diagonal reflection remains recorded. The already proved core
+exclusions are supplied explicitly to Appendix A. No downstream A2 result is
+used. This closes the analytic normalization source, not the remaining analytic
+D-edge classification/pair envelope or the final compiler/kernel validation.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Normalization
 open Certificates
 
-/-- N27's west-cardinal exclusion with the full Appendix A interface. -/
+/-- N27's west-cardinal exclusion with all upstream geometric inputs explicit. -/
 theorem PinPacking.D_west_negative {R : ℝ} (P : PinPacking R)
     (hD : P.phase 3 ≤ 5*Real.pi/4) :
     centralMargin .west (P.phase 3) (P.radial 3) (P.transverse 3) P.center.1 P.center.2 < 0 := by
@@ -45,12 +47,13 @@ theorem PinPacking.D_west_negative {R : ℝ} (P : PinPacking R)
   apply WestCardinal.impossible (c := P.center)
     (t := P.phase 2-Real.pi) (u := P.phase 3-Real.pi)
     (a := P.radial 2) (b := P.transverse 2) (A := P.radial 3) (B := P.transverse 3)
-    P.box (P.contained 2) (P.contained 3) hw.1.le hub.1.le hub.2.le (by linarith)
+    P.box (P.contained 2) (P.contained 3) (P.avoidsCore 2) (P.avoidsCore 3)
+    hw.1.le hub.1.le hub.2.le (by linarith)
   · simpa only [htEq] using hownW
   · simpa only [huEq] using hwestD
   · simpa only [htEq,huEq] using P.exterior_disjoint 2 3 (by decide)
 
-/-- D is canonically OWN; cardinal ties have genuinely been excluded. -/
+/-- D is canonically OWN; west-cardinal ties are excluded analytically. -/
 theorem PinPacking.D_own {R : ℝ} (P : PinPacking R)
     (hD : P.phase 3 ≤ 5*Real.pi/4) :
     P.canonicalOwn 3 = true ∧
@@ -61,8 +64,8 @@ theorem PinPacking.D_own {R : ℝ} (P : PinPacking R)
     exact hneg
   exact ⟨hbit,P.own_of_canonicalOwn hD 3 hbit⟩
 
-/-- The pin-labelled packing with its one global D half-window choice. All
-remaining normalization outputs are the proved lemmas on this structure. -/
+/-- The model includes only the recorded D half-window choice; the conclusions
+below are proved, not additional assumptions on the original packing. -/
 structure NormalizedPacking (R : ℝ) extends PinPacking R where
   diagonal_half : phase 3 ≤ 5*Real.pi/4
 
@@ -150,8 +153,8 @@ lemma marker_separation (i j : Fin 5) (hij : i≠j) :
 
 end NormalizedPacking
 
-/-- One theorem constructs the full normalization interface from the original
-packing. Its returned orientation trace records the possible diagonal reflection. -/
+/-- Construct the analytic normalization of the original packing. The optional
+diagonal reflection is an explicit output, not an extra free symmetry later. -/
 theorem normalize_of_ceiling {S : Fin 6 → UnitSquare} {o : Point} {R : ℝ}
     (hp : Packing S o R) (hQ : R^2 ≤ Q0) :
     ∃ P : NormalizedPacking R, CongruentOrDiagonal S o P.model := by
@@ -163,7 +166,7 @@ theorem normalize_of_ceiling {S : Fin 6 → UnitSquare} {o : Point} {R : ℝ}
   · exact Or.inl (Six.congruent_trans hP h)
   · exact Or.inr (Six.congruent_trans hP h)
 
-/-- The exact candidate bound is strictly inside the rational normalization ceiling. -/
+/-- Candidate-sized packings lie inside the rational normalization ceiling. -/
 theorem normalize_of_candidate {S : Fin 6 → UnitSquare} {o : Point} {R : ℝ}
     (hp : Packing S o R) (hR : R^2 ≤ Six.qStar) :
     ∃ P : NormalizedPacking R, CongruentOrDiagonal S o P.model :=

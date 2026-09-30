@@ -1,12 +1,14 @@
 import SquaresInCircles.Six.Stress.DiagonalFormula
+import SquaresInCircles.Six.Analytic.CandidateBounds
 
 /-!
 # Analytic cap-branch closure of the common diagonal bound
 
-The cap case has a uniform reserve (|w|+|s|)/40. Only the exact coefficient
-bound 139/100 < sqrt(2) m rho < 141/100 and elementary sine/cosine inequalities
-are used. No multidimensional cap certificate, branch-wall derivative or
-coordinate-concavity assertion is required.
+The cap expression has reserve (|w|+|s|)/40 throughout the helper rectangle.
+The coefficient bounds 139/100 < sqrt(2)m rho < 141/100 now come directly from
+candidate algebra in Analytic.CandidateBounds, not a constant certificate.
+Only elementary sine/cosine estimates and explicit nonnegative products are
+used. The exact support formula determines when this expression is active.
 -/
 
 noncomputable section
@@ -24,8 +26,8 @@ lemma pairBase_eq_diagonal_scale : 2*pairBase=diagonalK*(rhoStar-1) := by
   dsimp [diagonalK]
   nlinarith only [h]
 
-/-- The cap expression itself obeys this bound on the entire helper rectangle;
-the separate exact support formula determines when it is the active branch. -/
+/-- Whole-domain cap-expression bound. It is used as the actual support only
+where the separately proved cap/vertex condition selects it. -/
 theorem diagonal_cap_remainder_lower {w s d : ℝ} (hdom : DiagonalDomain w s d) :
     (|w|+|s|)/40 ≤ pairLine w+pairLine (-s)+diagonalCap w s d+2*pairBase := by
   let b := diagonalBeta w s
@@ -36,7 +38,7 @@ theorem diagonal_cap_remainder_lower {w s d : ℝ} (hdom : DiagonalDomain w s d)
   have hparams := diagonal_parameters hdom
   have hsign := diagonal_trig_signs hdom
   have hT : (139:ℝ)/100<T ∧ T<(141:ℝ)/100 := by
-    simpa [T,diagonalK] using PairCertificate.diagonal_constant_bounds
+    simpa [T,diagonalK] using Analytic.diagonal_constant_bounds
   have hT0 : 0≤T := by linarith [hT.1]
   have hcd0 : 0≤Real.cos z := hsign.2.1.le
   have hcd1 := Real.cos_le_one z
@@ -106,8 +108,7 @@ lemma diagonal_cap_zero_helpers (d : ℝ) :
     zero_sub,zero_add,sub_zero,zero_div,Real.cos_zero,Real.sin_zero,mul_zero,add_zero]
   ring
 
-/-- The only zero of the cap remainder in the allowed domain is the exact
-candidate diagonal direction together with w=s=0. -/
+/-- The only zero of the cap remainder has exactly the candidate angles. -/
 theorem diagonal_cap_zero_iff {w s d : ℝ} (hdom : DiagonalDomain w s d)
     (heq : pairLine w+pairLine (-s)+diagonalCap w s d+2*pairBase=0) :
     w=0 ∧ s=0 ∧ d=Real.pi/4 := by

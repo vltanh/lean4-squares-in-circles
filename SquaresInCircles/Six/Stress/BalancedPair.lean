@@ -1,14 +1,17 @@
 import SquaresInCircles.Six.Stress.CandidateStressConstants
-import SquaresInCircles.Six.Stress.SupportExpression
+import SquaresInCircles.Six.Normalization.CentralSAT
 
 /-!
 # A common adjacent-pair stress
 
-The N/W pair is parametrized by both canonical bits and all four genuine source
-axes. The E/S pair is the same formula at (-e,-s). The weights solve the same
-fixed pair-resultant equation in all four bit cases. The common linear lower
-envelope below is weaker than the manuscript's sharp pair envelopes; its proof
-is supplied separately and uses exactly these real formulas.
+These are ordinary real-valued definitions and exact resultant identities.
+The E/S pair uses the same expressions at (-e,-s). All four central-bit choices
+and all four genuine source axes are explicit.
+
+Computational reification is no longer imported here. The common pair lower
+bound is a separate obligation; its existing certificate implementation still
+requires human-analytic replacement. The definitions and algebra below are
+also used independently by the analytic diagonal proof.
 -/
 
 noncomputable section
@@ -53,24 +56,22 @@ def pairThreshold (no wo : Bool) (n w : ℝ) : ℝ :=
   pairAlpha no wo n w*(1/2+angularWidth n)+
     pairGamma no wo n w*(1/2+angularWidth w)+rStar*(1/2+angularWidth (n-w))+mStar/2
 
-/-- Both supports are the already-proved exact cap/vertex center support. -/
+/-- Both supports are the proved exact cap/vertex center support. -/
 def pairValue (no wo : Bool) (u : Fin 4) (n w : ℝ) : ℝ :=
   pairThreshold no wo n w-
     scalarSupport Six.radius (pairNorthForce no wo u n w).1 (pairNorthForce no wo u n w).2-
     scalarSupport Six.radius (pairWestForce no wo u n w).1 (pairWestForce no wo u n w).2
 
-/-- The exact self-stress pair value, simplified using the candidate identities. -/
 def pairBase : ℝ := mStar*(1/2-Six.tStar)
 
-/-- One deliberately weaker envelope suffices for every pair/bit combination. -/
+/-- The proposed common envelope, whose whole-domain pair proof is separate. -/
 def pairLine (x : ℝ) : ℝ := (73/100)*max (-x) 0-(13/50)*max x 0
 
 def diagonalLocalForce (w s d : ℝ) : Point :=
   (mStar*(Real.sin (d-w)+Real.cos (d-s)),
    mStar*(Real.cos (d-w)-Real.sin (d-s)))
 
-/-- Only the angle-dependent halves of the two diagonal thresholds occur here;
-their constant halves m/2 have already been assigned to the two pair values. -/
+/-- The constant halves m/2 of these thresholds belong to the two pair terms. -/
 def diagonalValue (w s d : ℝ) : ℝ :=
   mStar*(angularWidth (d-w)+angularWidth (d-s))-
     scalarSupport Six.radius (diagonalLocalForce w s d).1 (diagonalLocalForce w s d).2

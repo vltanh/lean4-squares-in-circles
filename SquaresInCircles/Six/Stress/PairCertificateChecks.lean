@@ -1,12 +1,16 @@
 import SquaresInCircles.Six.Stress.PairCertificateModel
+import SquaresInCircles.Six.Analytic.CandidateBounds
 
 /-!
-# Concrete checks for the common pair envelope
+# Remaining computational checks for the common pair envelope
 
-Ordinary `decide` reduces the proved exact-rational checker. The independent
-fixed-dyadic replay is development evidence, not an assumption of these
-statements. Compilation remains deferred; no kernel execution is claimed here.
-The local checks include regularity as well as the derivative lower bound.
+The outer and local-derivative checks below have NOT yet been converted to
+human analytic proofs. They remain a blocker under HUMAN_ANALYTIC_STANDARD.md.
+
+The former diagonalConstantClaim and its checker have been removed. The
+compatibility lemma at the end now follows from explicit candidate algebra in
+Analytic.CandidateBounds, whose imports do not include normalization or
+certificate modules.
 -/
 
 set_option maxRecDepth 1000000
@@ -26,23 +30,13 @@ theorem local_derivative_checked (no wo : Bool) (u : Fin 2) (sector : Fin 6) (ax
       (fun _ => 1) 0 24 localRoot=true := by
   cases no <;> cases wo <;> fin_cases u <;> fin_cases sector <;> fin_cases axis <;> decide
 
-/-- The only coefficient bounds needed in the analytic diagonal cap argument. -/
-def diagonalConstantClaim : Formula 1 :=
-  let T := (2*(hE : Smooth 1)*mE*rhoE).expr
-  .conj (.lt (er (139/100)) T) (.lt T (er (141/100)))
-
-theorem diagonal_constants_checked :
-    certify diagonalConstantClaim (fun _ => 1) 0 0 (fun _ => ⟨0,0⟩)=true := by
-  decide
-
 noncomputable section
 
+/-- Compatibility name only: this bound is proved by rational algebra, not
+by either checker above. New analytic code should use the Analytic name. -/
 lemma diagonal_constant_bounds : (139:ℝ)/100<2*Six.hStar*mStar*rhoStar ∧
-    2*Six.hStar*mStar*rhoStar<(141:ℝ)/100 := by
-  have hx : (fun _ : Fin 1 => (⟨0,0⟩:RInterval)).Mem (fun _ => 0) :=
-    fun _ => ⟨le_rfl,le_rfl⟩
-  have h := certify_sound diagonalConstantClaim (fun _ => 1) 0 0 diagonal_constants_checked hx
-  simpa [diagonalConstantClaim,Formula.Holds,Expr.denote] using h
+    2*Six.hStar*mStar*rhoStar<(141:ℝ)/100 :=
+  Analytic.diagonal_constant_bounds
 
 end
 end SquaresInCircles.Six.Stress.PairCertificate

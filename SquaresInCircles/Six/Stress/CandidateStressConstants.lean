@@ -1,11 +1,11 @@
-import SquaresInCircles.Six.Stress.CandidateRadius
+import SquaresInCircles.Six.Stress.CandidateRadiusConstants
 
 /-!
 # Exact candidate self-stress constants
 
-These are the outer multipliers used by every candidate-graph stress in the
-audited hand proof. Their signs and basic ranges are consequences of the
-candidate algebra, not numerical assumptions.
+These are the outer multipliers used by every candidate-graph stress. Their
+signs and basic identities are consequences of candidate algebra alone.
+The constant dependency chain no longer imports packing normalization.
 -/
 
 noncomputable section
@@ -37,37 +37,36 @@ lemma mStar_pos : 0 < mStar := by
 
 lemma one_add_rStar_pos : 0 < 1+rStar := by linarith [rStar_pos]
 
-lemma rStar_mul_den :
-    rStar*(Six.sStar+3/2)=Six.sStar+1/2 := by
+lemma rStar_mul_den : rStar*(Six.sStar+3/2)=Six.sStar+1/2 := by
   rw [rStar, div_mul_cancel₀]
   exact ne_of_gt rStar_den_pos
 
-lemma kStar_mul_den :
-    kStar*(3/2-Six.sStar)=Six.tStar+1/2 := by
+lemma kStar_mul_den : kStar*(3/2-Six.sStar)=Six.tStar+1/2 := by
   rw [kStar, div_mul_cancel₀]
   exact ne_of_gt kStar_den_pos
 
-lemma mStar_mul_den :
-    mStar*(3/2-Six.sStar)=(1+rStar)*(Six.tStar+1/2) := by
+lemma mStar_mul_den : mStar*(3/2-Six.sStar)=(1+rStar)*(Six.tStar+1/2) := by
   dsimp [mStar]
   rw [mul_assoc,kStar_mul_den]
 
-/-- The candidate cap radius equals the diagonal center's primary coordinate:
-rho_* = sqrt(2) d_* = 2 h_* d_*. -/
 lemma rhoStar_eq_two_h_d : rhoStar=2*Six.hStar*Six.dStar := by
   have hx : (2*Six.hStar*Six.dStar)^2+
       (2*Six.hStar*Six.dStar)+1/2=Six.qStar := by
-    nlinarith [Six.hStar_sq,Six.diagonal_radius_identity]
+    have hh := congrArg (fun z : ℝ => 4*Six.dStar^2*z) Six.hStar_sq
+    nlinarith [hh,Six.diagonal_radius_identity]
   have hsum : 0 < rhoStar+2*Six.hStar*Six.dStar+1 := by
-    positivity
-  nlinarith [rhoStar_identity,hx]
+    have hp := mul_pos (mul_pos (by norm_num : (0:ℝ)<2) Six.hStar_pos) Six.dStar_pos
+    linarith [rhoStar_gt_11_10]
+  have hfactor : (rhoStar-2*Six.hStar*Six.dStar)*
+      (rhoStar+2*Six.hStar*Six.dStar+1)=0 := by
+    nlinarith [rhoStar_identity,hx]
+  exact sub_eq_zero.mp ((mul_eq_zero.mp hfactor).resolve_right (ne_of_gt hsum))
 
 lemma dStar_gt_hStar : Six.hStar < Six.dStar := by
   dsimp [Six.dStar]
   linarith [Six.tStar_bounds.2]
 
-lemma diagonal_self_factor_pos :
-    0 < 2*mStar*(Six.dStar-Six.hStar) := by
-  positivity
+lemma diagonal_self_factor_pos : 0 < 2*mStar*(Six.dStar-Six.hStar) := by
+  exact mul_pos (mul_pos (by norm_num) mStar_pos) (sub_pos.mpr dStar_gt_hStar)
 
 end SquaresInCircles.Six.Stress

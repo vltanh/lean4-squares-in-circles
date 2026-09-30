@@ -1,15 +1,17 @@
 import SquaresInCircles.Six.Normalization.StrongCore
 import SquaresInCircles.Six.Normalization.PinCounting
+import SquaresInCircles.Six.Analytic.PinWindows
 import SquaresInCircles.Six.CongruenceTools
 
 /-!
-# The pin-labelled packing, constructed rather than assumed
+# The pin-labelled packing, constructed by analytic geometry
 
-Pin order is E,N,W,D,S. Every field is obtained from an actual packing: the
-strong box comes first, then chart bounds, the covering theorem, the finite
-bijection, and the labelled windows and separator alternatives. The chosen
-phase is lifted near its label's cardinal/diagonal center. No D normalization
-or reflection has yet been imposed.
+The strong box is established before pins or sectors. Analytic.PinWindows
+supplies geometric covering, and the finite pin bijection gives uniqueness.
+That uniqueness, not a second numerical test, excludes the wrong primary
+quadrants and gives all five labelled windows. The allowed central axes are
+then derived directly from the fixed pin coordinates and the strong core.
+No certificate-success hypothesis or finite-cover computation is used here.
 -/
 
 noncomputable section
@@ -85,7 +87,7 @@ lemma exterior_disjoint : InteriorDisjoint
 
 end PinPacking
 
-/-- Construct the labelled model from a nonnegative central frame. -/
+/-- Construct all pin and window fields from a nonnegative central frame. -/
 theorem pinPacking_of_normalized {S : Fin 6 → UnitSquare} {c : Point} {R : ℝ}
     (hp : Packing S (0,0) R) (hQ : R^2 ≤ Q0) (haxis : S 0 = axisSquare c)
     (hinside : openSquare (S 0) (0,0)) (hx0 : 0 ≤ c.1) (hy0 : 0 ≤ c.2) :
@@ -120,14 +122,11 @@ theorem pinPacking_of_normalized {S : Fin 6 → UnitSquare} {c : Point} {R : ℝ
     exact hp.disjoint 0 i.succ
       (by intro he; have hh := congrArg Fin.val he; simp at hh) p
       ⟨by simpa [haxis] using hh.1,(chart_same_open_oriented (C i) ht p).mpr hh.2⟩
-  have hupper (i : Fin 5) (t : ℝ) (ht : (t:Direction)=(C i).phase) :
-      ∃ k, 0 ≤ centralUpper k t (C i).a (C i).signedB 0 c0 0 c0 :=
-    exists_upper_of_actual ⟨hx0,hcore.1⟩ ⟨hy0,hcore.2⟩ (hsat i t ht)
   have hcover (i : Fin 5) : ∃ j, openSquare (F i) (fixedPin j) := by
     let t := (C i).phase.toReal
     have ht : (t:Direction)=(C i).phase := Real.Angle.coe_toReal _
-    have htr : |t| ≤ Real.pi := Real.Angle.abs_toReal_le_pi _
-    obtain ⟨j,hj⟩ := pin_cover_from_upper htr (hc i) (hupper i t ht)
+    obtain ⟨j,hj⟩ := Analytic.five_pin_cover (hc i) (hav i)
+      hx0 hy0 hcore.1 hcore.2 (hsat i t ht)
     exact ⟨j,(chart_same_open_oriented (C i) ht _).mpr hj⟩
   obtain ⟨σ,hσ⟩ := pin_labels_of_covering F fixedPin hFdisj hcover
   let t : Fin 5 → ℝ := fun i => liftNear (phaseCenter i) (C (σ i)).phase
@@ -139,8 +138,13 @@ theorem pinPacking_of_normalized {S : Fin 6 → UnitSquare} {c : Point} {R : ℝ
     chart_same_open_oriented (C (σ i)) (ht i) p
   have hpin (i : Fin 5) : openSquare (orientedSquare (t i) (a i) (b i)) (fixedPin i) :=
     (hsame i _).mp (hσ i).1
-  have hwin (i : Fin 5) := window_from_upper i (liftNear_range _ _) (hc (σ i))
-    (hupper (σ i) (t i) (ht i)) (hpin i)
+  have huniq (i j : Fin 5)
+      (hj : openSquare (orientedSquare (t i) (a i) (b i)) (fixedPin j)) : j=i :=
+    (hσ i).2.2 j ((hsame i (fixedPin j)).mpr hj)
+  have hwin (i : Fin 5) : (windowLower i:ℝ)<t i-phaseCenter i ∧
+      t i-phaseCenter i<(windowUpper i:ℝ) :=
+    Analytic.labelled_window i (hc (σ i)) (hav (σ i)) hx0 hy0 hcore.1 hcore.2
+      (hsat (σ i) (t i) (ht i)) (liftNear_range _ _) (huniq i)
   let τ := Six.extendExteriorPerm σ
   have hmodelopen (i : Fin 6) (p : Point) :
       openSquare (pinModel c t a b i) p ↔ openSquare (S (τ i)) p := by
@@ -162,20 +166,16 @@ theorem pinPacking_of_normalized {S : Fin 6 → UnitSquare} {c : Point} {R : ℝ
     contained := fun i => hc (σ i)
     avoidsCore := fun i => hav (σ i)
     pin := hpin
-    window := fun i => (hwin i).1
+    window := hwin
     separator := fun i => hsat (σ i) (t i) (ht i)
-    allowed_separator := by
-      intro i k hk
-      by_contra hnot
-      have hn := (hwin i).2 k hnot
-      have hu := hk.trans (centralMargin_le_upper ⟨hx0,hcore.1⟩ ⟨hy0,hcore.2⟩ k)
-      linarith }
+    allowed_separator := fun i k hk =>
+      Analytic.allowed_axis_of_pin i (hc (σ i)) (hav (σ i))
+        hx0 hy0 hcore.1 hcore.2 (hpin i) k hk }
   refine ⟨P,?_⟩
   exact Six.congruent_of_origin_sets τ (fun i p => (hmodelopen i p).symm)
     (fun i p => (hmodelclosed i p).symm)
 
-/-- The first full geometric assembly from an arbitrary packing, not an extra
-normalization assumption. D's diagonal half-window is imposed later. -/
+/-- Construct the analytic pin-labelled model of an arbitrary packing. -/
 theorem pinPacking_of_ceiling {S : Fin 6 → UnitSquare} {o : Point} {R : ℝ}
     (hp : Packing S o R) (hQ : R^2 ≤ Q0) :
     ∃ P : PinPacking R, Congruent S o P.model := by

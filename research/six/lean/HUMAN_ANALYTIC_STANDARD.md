@@ -1,6 +1,8 @@
 # Human-analytic acceptance standard for the n=6 proof
 
 This file records the mathematical acceptance criterion for PR #7.
+The active detailed ledger is `ANALYTIC_PROGRESS.md`; the current mathematical
+companion is `ANALYTIC_DIAGONAL_PROOF.md`.
 
 The final n=6 proof may be formalized and checked by Lean, but the mathematics
 must be a human analytic proof. In particular, the proof of the unrestricted
@@ -11,94 +13,87 @@ success result.
 ## Allowed proof methods
 
 - Exact algebraic identities and inequalities.
-- Explicit geometric arguments from the repository's original Packing,
-  UnitSquare, openSquare, closedSquare, support and separation definitions.
+- Explicit geometric arguments from the original Packing, UnitSquare,
+  openSquare, closedSquare, support and separation definitions.
 - Symbolic differentiation with hypotheses stated and checked.
 - Monotonicity, convexity/concavity and endpoint reductions proved as ordinary
   real-analysis lemmas.
-- Explicit Taylor inequalities whose remainder/sign argument is proved in Lean.
-- Small conceptual finite case splits whose cases are written and justified
-  mathematically.
-- Local algebra tactics such as ring, norm_num, linarith and nlinarith after the
-  substantive mathematical reduction is visible in the source.
+- Explicit Taylor inequalities with proved remainders or sign arguments.
+- Small conceptual finite case splits, written and justified mathematically.
+- Local ring, norm_num, linarith and nlinarith after the mathematical reduction
+  is visible. Evaluating two explicit endpoint fractions is not a box search.
 
-## Not acceptable as a mathematical proof dependency
+## Disallowed mathematical dependencies
 
-- Python, Arb/flint, exact-dyadic, floating-point or fixed-point certificate
-  output.
-- Proofs whose substantive content is an interval/box subdivision search.
+- Python, Arb/flint, exact-dyadic, floating-point or fixed-point certificate output.
+- Interval/box subdivision searches establishing substantive inequalities.
 - Large generated finite tables certified only by `by decide`.
-- `ProofTools.Certificate.certify` or a similar exhaustive finite-cover
-  computation establishing a substantive real inequality.
+- `ProofTools.Certificate.certify` or similar exhaustive finite-cover computation.
 - `FixedData/Checks.lean`, `PairCertificateChecks.lean`, or normalization
   `Certificates/Checks.lean` as dependencies of the final theorem.
-- Imported PASS flags, log files, source hashes, sampled minima or numerical
-  minimizer searches.
-- A theorem whose only explanation for a range is that all cells in a machine
-  partition passed.
+- Imported PASS flags, logs, hashes, sampled minima or numerical minimizers.
+- A range assertion justified only because every machine-partition cell passed.
 
-These files may remain in the repository as exploratory/audit material, but
-the final theorem dependency graph must not use them.
+Such files may remain as exploratory or cross-check material, but the final
+theorem dependency graph must not use them. A noncomputable logical case
+choice on a real proposition is not a numerical certification procedure.
 
-## Current non-analytic dependencies to replace
+## Normalization conversion
 
-### Normalization
+- [x] Replace all six cardinal-facing angle refinements by the analytic
+      short-transverse-axis cap obstruction (`Analytic/CardinalFrame` and
+      `Normalization/CardinalWindows`). This uses the broad windows as explicit
+      inputs; it does not close their construction below.
+- [ ] Replace the strong-core forbidden-arc certificates by analytic marker/SAT arguments.
+- [ ] Replace certificate-based five-pin covering by direct pin-inclusion arguments.
+- [ ] Replace broad angular windows and forbidden central-axis certificates.
+- [ ] Replace the certificate-based OWN moving-pin inequality.
+- [ ] Replace the certificate-based W/D order and Appendix A stress checks.
+- [ ] Reprove normalization with no mathematical certificate dependency.
 
-- [ ] Replace `Normalization/Certificates/Checks.lean` uses in the strong-core
-      forbidden arcs by explicit marker/SAT inequalities and monotonicity.
-- [ ] Replace certificate-based five-pin covering by direct geometric/analytic
-      pin inclusion arguments.
-- [ ] Replace certificate-based angular windows and forbidden central axes by
-      analytic separator estimates.
-- [ ] Replace the certificate-based moving-pin inequality by an analytic proof.
-- [ ] Replace the certificate-based W/D ordering check by an analytic
-      four-axis argument.
-- [ ] Reprove the final normalization theorem with no import of
-      `ProofTools/Certificate` in its theorem dependency graph.
-
-### Fixed D-edge classification
+## Fixed D-edge classification
 
 - [ ] Replace the 59 default, 99 Appendix-C, 53 hard-cell and auxiliary
-      fixed-row certificate eliminations by a small set of analytic stress
-      lemmas.
-- [ ] Prove the support branch conditions explicitly; coordinate dominance is
-      never a cap-branch criterion.
-- [ ] Replace the hard A2.3 table by monotonicity/convexity/edge reductions and
-      explicit one-variable endpoint inequalities.
-- [ ] Reprove the universal candidate D-edge graph without
-      `Stress/FixedData/Checks.lean`.
+      fixed-row certificate eliminations by structural analytic stress lemmas.
+- [ ] Prove every required row-specific support-wall reduction explicitly;
+      coordinate dominance is never a cap-branch criterion.
+- [ ] Replace the hard A2.3 table by conceptual edge/monotonicity arguments.
+- [ ] Reprove the candidate D-edge graph and common helper domain analytically.
 
-### Candidate graph
+## Candidate graph
 
-- [ ] Replace `Stress/PairCertificateChecks.lean` and all finite pair-envelope
-      covers by analytic lower-envelope lemmas.
-- [ ] Prove each support-wall transition analytically and prove the relevant
-      derivatives/one-sided derivatives on the entire stated intervals.
-- [ ] Derive the common pair bound from those analytic lemmas, not from a
-      checked box partition.
-- [ ] Prove the diagonal cap/vertex remainder analytically on both branches.
-- [ ] Reprove balanced nonnegative defect and rigidity from those lemmas.
+- [x] Replace the two A22 weight-sign checks by the shifted-sine identity.
+- [x] Separate constant algebra and real support formulas from computational reification.
+- [x] Replace the diagonal coefficient check by exact candidate algebra.
+- [x] Prove the diagonal cap/vertex remainder analytically on its stated
+      DiagonalDomain, including the true switch condition and unique zero.
+      The vertex proof uses concavity and two geometric-boundary quartics;
+      it does not certify a subdivision. See `Stress/DiagonalRemainder`.
+- [ ] Replace the common pair-envelope outer cover and derivative checks.
+- [ ] Prove the remaining pair support-wall transitions and whole-domain reductions.
+- [ ] Derive the common pair lower bound from those analytic arguments.
+- [ ] Reprove balanced closure using only analytic geometric and scalar premises.
 
-### Equality and endpoints
+## Equality and unrestricted endpoints
 
-- [ ] Retain the geometric support-maximizer and reconstruction arguments once
-      their scalar equality premises come from analytic proofs.
-- [ ] Reprove `Six.lower_bound` through an analytic-only normalization and
-      balanced closure chain.
-- [ ] Reprove `Six.uniqueness` through the same analytic-only chain.
-- [ ] Verify the public `Optimum 6` endpoint depends only on the analytic
-      chain and the original problem predicates.
+- [ ] Reuse support-maximizer and reconstruction arguments only after their
+      scalar equality inputs come from an analytic-only chain.
+- [ ] Reprove Six.lower_bound through that analytic-only chain.
+- [ ] Reprove Six.uniqueness through the same chain.
+- [ ] Verify the public Optimum 6 endpoint uses only the analytic chain and
+      unchanged problem predicates.
 
-## Final dependency audit
+## Final acceptance audit
 
-Before the proof is called complete:
+- [ ] Neither unrestricted endpoint transitively uses a substantive certificate,
+      table checker or numerical search.
+- [ ] Every substantive scalar bound has a human-readable explanation on its
+      whole domain, not merely a generated arithmetic proof object.
+- [ ] The complete hand manuscript can be read independently of Lean and
+      contains the same argument. The diagonal companion is only one component.
+- [ ] All computational files have clearly separated exploratory roles.
+- [ ] Compiler/kernel checking, separately from the human-analytic criterion.
 
-- [ ] Neither `Six.lower_bound` nor `Six.uniqueness` transitively depends on
-      any certificate/check/table module listed above.
-- [ ] Every substantive scalar inequality has a corresponding readable
-      mathematical lemma explaining why it is true on the whole interval.
-- [ ] The hand-proof manuscript can be read independently of Lean and contains
-      the same reductions and inequalities used by Lean.
-- [ ] Computational files are labelled exploratory/cross-check only.
-- [ ] Compiler/kernel checking is a separate verification step; its success
-      does not substitute for the human-analytic requirement.
+Checked items here denote written analytic proof bodies, not compiler acceptance.
+Compilation remains deferred at the user's request. The complete human-analytic
+n=6 lower bound and uniqueness have NOT yet been delivered.

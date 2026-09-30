@@ -1,15 +1,19 @@
 import SquaresInCircles.Six.Classification.CandidateTails
 import SquaresInCircles.Six.Stress.CandidateStressConstants
 import SquaresInCircles.Six.Stress.StrictSupport
-import SquaresInCircles.Six.ProofTools.Certificate
+import SquaresInCircles.Six.Analytic.ElementaryTrig
 
 /-!
 # The variable adjacent-pair stress for Patterns 12 and 13
 
-This is the geometric half of (A22-factor).  The selected N/W and S/E source
-axes come from the interior pins, while the D edges are the universal candidate
-graph.  The angle-dependent central multipliers cancel the force on C exactly.
-A separate reified file proves the scalar lower bound for the resulting defect.
+This is the geometric half of (A22-factor). The selected N/W and S/E source
+axes come from the interior pins, while the D edges are the candidate graph.
+The angle-dependent central multipliers cancel the force on C exactly.
+
+The numerator/denominator sign proofs now use the analytic shifted-sine
+identity in Analytic.ElementaryTrig. No sign formula, root box, or finite
+certificate is used here. The imported candidate-graph classification still
+has computational dependencies; this change does not claim to remove those.
 -/
 
 set_option maxRecDepth 1000000
@@ -17,38 +21,15 @@ set_option maxHeartbeats 0
 
 noncomputable section
 namespace SquaresInCircles.Six.Stress
-open Normalization Classification ProofTools
-
-private def signFormula : Formula 1 :=
-  .conj (.lt 0 (.cos (.var 0))) (.lt 0 (.cos (.var 0)+.sin (.var 0)))
-
-private def signWeights : Fin 1 → ℚ := fun _ => 1
-private def wSignRoot : RBox 1 := ![⟨-2/3,5/8⟩]
-private def eSignRoot : RBox 1 := ![⟨-5/12,3/10⟩]
-
-private theorem wSign_checked : certify signFormula signWeights 0 16 wSignRoot=true := by decide
-private theorem eSign_checked : certify signFormula signWeights 0 16 eSignRoot=true := by decide
-
-private lemma sign_from_root (root : RBox 1)
-    (hc : certify signFormula signWeights 0 16 root=true)
-    {x : ℝ} (hx : root.Mem ![x]) :
-    0<Real.cos x ∧ 0<Real.cos x+Real.sin x := by
-  have h := certify_sound signFormula signWeights 0 16 hc hx
-  simpa [signFormula,Formula.Holds,Expr.denote] using h
+open Normalization Classification
 
 lemma a22_w_sign {w : ℝ} (hw : -2/3≤w ∧ w≤5/8) :
-    0<Real.cos w ∧ 0<Real.cos w+Real.sin w := by
-  apply sign_from_root wSignRoot wSign_checked
-  intro i
-  fin_cases i
-  simpa [wSignRoot,RInterval.Mem] using hw
+    0<Real.cos w ∧ 0<Real.cos w+Real.sin w :=
+  Analytic.west_stress_sign hw
 
 lemma a22_e_sign {e : ℝ} (he : -5/12≤e ∧ e≤3/10) :
-    0<Real.cos e ∧ 0<Real.cos e+Real.sin e := by
-  apply sign_from_root eSignRoot eSign_checked
-  intro i
-  fin_cases i
-  simpa [eSignRoot,RInterval.Mem] using he
+    0<Real.cos e ∧ 0<Real.cos e+Real.sin e :=
+  Analytic.east_stress_sign he
 
 def a22MuN (w : ℝ) : ℝ := (Real.cos w+Real.sin w)/Real.cos w
 def a22MuW (w : ℝ) : ℝ := 1/Real.cos w
@@ -114,7 +95,7 @@ lemma selected_CN {R : ℝ} (P : NormalizedPacking R) (hN : P.ownBits 1=false) :
     Seven.SAT.threshold (P.model 0) (P.model 2) ≤
       dot (0,1) (sub (P.model 2).center (P.model 0).center) := by
   have h := P.cardinal_separator 1 hN
-  rw [model_zero,model_succ,central_threshold] 
+  rw [model_zero,model_succ,central_threshold]
   rw [P.square_def 1]
   dsimp [centralMargin,centerY,dot,sub,axisSquare,orientedSquare] at h ⊢
   linarith

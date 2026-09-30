@@ -1,60 +1,58 @@
 import SquaresInCircles.Six.Normalization.PinReflection
-import SquaresInCircles.Six.Normalization.Certificates.Semantics
+import SquaresInCircles.Six.Analytic.CardinalFrame
 
 /-!
-# Cardinal-helper angle windows in the actual labelled packing
+# Analytic cardinal-helper angle bounds
 
-These are the six relevant pin/cardinal cases of the supplied L3-prime
-checks. The concrete computations have Lean `decide` proof bodies and the
-same exact-rational mirror has completed all six. No certificate flag is an
-input to the exported geometric statements.
+The six previous finite-cover checks are removed. A single geometric argument
+excludes a cap facing the short transverse coordinate; the remaining primary
+frame obeys the proved cap profile. The finite cases below only express the
+four cardinal rotations and the labelled phase conventions.
+
+The hypotheses of PinPacking (including its broad windows and strong core)
+still need their separate analytic construction. This change removes the six
+additional cardinal-angle certificates, not every normalization certificate.
 -/
 
-set_option maxRecDepth 1000000
-set_option maxHeartbeats 0
-
+noncomputable section
 namespace SquaresInCircles.Six.Normalization
-open Certificates ProofTools
+open Certificates
 
-noncomputable def cardinalCenter : CentralAxis → ℝ
+def cardinalCenter : CentralAxis → ℝ
   | .east => 0
   | .north => Real.pi/2
   | .west => Real.pi
   | .south => 3*Real.pi/2
   | _ => 0
 
-def cardinalCenterE {n : ℕ} : CentralAxis → Expr n
-  | .east => 0
-  | .north => .pi/2
-  | .west => .pi
-  | .south => r (3/2)*.pi
-  | _ => 0
-
 def cardinalCasePin : Fin 6 → Fin 5 := ![0,1,2,3,3,4]
 def cardinalCaseAxis : Fin 6 → CentralAxis := ![.east,.north,.west,.west,.south,.south]
 
-def cardinalWindowFormula (j : Fin 6) : Formula 3 :=
-  let i := cardinalCasePin j
-  let k := cardinalCaseAxis j
-  let t := Expr.var 0
-  let a := Expr.var 1
-  let b := Expr.var 2
-  .imp (.all [.le (r (1/2)) a,.le (.abs b) a,.le (containE a b) q0E,
-    .lt 0 (pinMarginE t a b (pinE i).1 (pinE i).2),
-    .le 0 (upperE k t a b 0 c0E 0 c0E)])
-    (.conj (.lt (r (-2/5)) (t-cardinalCenterE k))
-      (.lt (t-cardinalCenterE k) (r (2/5))))
+private def caseDepth (j : Fin 6) (cx cy : ℝ) : ℝ :=
+  ![1/2+cx,1/2+cy,1/2-cx,1/2-cx,1/2-cy,1/2-cy] j
 
-theorem cardinalWindow_checked (j : Fin 6) :
-    certify (cardinalWindowFormula j) (fun _ => 1) 0 64
-      (windowRoot (cardinalCasePin j)) = true := by
-  fin_cases j <;> decide
+private lemma sine_south : Real.sin (3*Real.pi/2) = -1 := by
+  rw [show 3*Real.pi/2=Real.pi+Real.pi/2 by ring,Real.sin_add]
+  simp
 
-@[simp] lemma denote_cardinalCenterE {n : ℕ} (x : Fin n → ℝ) (k : CentralAxis) :
-    Expr.denote (cardinalCenterE k : Expr n) x = cardinalCenter k := by
-  cases k <;> simp [cardinalCenterE,Expr.denote,cardinalCenter,div_eq_mul_inv,mul_assoc]
+private lemma cosine_south : Real.cos (3*Real.pi/2) = 0 := by
+  rw [show 3*Real.pi/2=Real.pi+Real.pi/2 by ring,Real.cos_add]
+  simp
 
-noncomputable section
+/-- This is a cardinal-coordinate identity, not an inequality check. -/
+private lemma case_margin_identity (j : Fin 6) (t a b cx cy : ℝ) :
+    centralMargin (cardinalCaseAxis j) t a b cx cy =
+      a*Real.cos (t-cardinalCenter (cardinalCaseAxis j))-
+      b*Real.sin (t-cardinalCenter (cardinalCaseAxis j))-
+      (|Real.cos (t-cardinalCenter (cardinalCaseAxis j))|+
+        |Real.sin (t-cardinalCenter (cardinalCaseAxis j))|)/2-caseDepth j cx cy := by
+  fin_cases j
+  all_goals simp only [cardinalCaseAxis,cardinalCenter,centralMargin,centerX,centerY,
+    angularWidth,caseDepth,Real.cos_sub,Real.sin_sub,Real.cos_zero,Real.sin_zero,
+    Real.cos_pi,Real.sin_pi,Real.cos_pi_div_two,Real.sin_pi_div_two,
+    sine_south,cosine_south,abs_neg,mul_zero,mul_one,mul_neg_one,zero_mul,
+    one_mul,zero_add,add_zero,sub_zero,zero_sub,neg_neg]
+  all_goals ring
 
 lemma PinPacking.window_near_center {R : ℝ} (P : PinPacking R) (i : Fin 5) :
     -Real.pi ≤ P.phase i-phaseCenter i ∧ P.phase i-phaseCenter i ≤ Real.pi := by
@@ -62,32 +60,43 @@ lemma PinPacking.window_near_center {R : ℝ} (P : PinPacking R) (i : Fin 5) :
   fin_cases i <;> norm_num [windowLower,windowUpper] at h <;>
     constructor <;> linarith [h.1,h.2,Real.pi_gt_d2]
 
-/-- N25 in each of the six pin/cardinal cases, before D is forced OWN. -/
+/-- N25 for every relevant labelled cardinal helper. The proof uses no
+certificate result: its only phase input is the broad labelled window. -/
 theorem PinPacking.cardinal_angle {R : ℝ} (P : PinPacking R) (j : Fin 6)
     (hk : 0 ≤ centralMargin (cardinalCaseAxis j)
       (P.phase (cardinalCasePin j)) (P.radial (cardinalCasePin j))
       (P.transverse (cardinalCasePin j)) P.center.1 P.center.2) :
     |P.phase (cardinalCasePin j)-cardinalCenter (cardinalCaseAxis j)| < 2/5 := by
   let i := cardinalCasePin j
-  let k := cardinalCaseAxis j
-  let x : Fin 3 → ℝ := ![P.phase i,P.radial i,P.transverse i]
-  have hx := windowRoot_mem i (P.window_near_center i) (P.contained i)
-  have hc := certify_sound (cardinalWindowFormula j) (fun _ => 1) 0 64
-    (cardinalWindow_checked j) hx
-  have hu := hk.trans (centralMargin_le_upper P.box.1 P.box.2 (cardinalCaseAxis j))
-  have hpin : 0 < pinMargin (P.phase i) (P.radial i) (P.transverse i) (fixedPin i) :=
-    pinMargin_pos_iff.mpr (P.pin i)
-  have hinput : Formula.Holds
-      (.all [.le (r (1/2)) (.var 1),.le (.abs (.var 2)) (.var 1),
-        .le (containE (.var 1) (.var 2)) q0E,
-        .lt 0 (pinMarginE (.var 0) (.var 1) (.var 2) (pinE i).1 (pinE i).2),
-        .le 0 (upperE k (.var 0) (.var 1) (.var 2) 0 c0E 0 c0E)]) x := by
-    simpa [x,Formula.all,Formula.Holds,Expr.denote,containE,phi] using
-      And.intro (P.contained i).half_le (And.intro (P.contained i).u_le
-        (And.intro (P.contained i).containment (And.intro hpin hu)))
-  have hr := hc hinput
-  apply abs_lt.mpr
-  simpa [i,k,x,Formula.Holds,Expr.denote] using hr
+  let t := P.phase i-cardinalCenter (cardinalCaseAxis j)
+  let h := caseDepth j P.center.1 P.center.2
+  have ha0 : 0 ≤ P.radial i := by linarith [(P.contained i).half_le]
+  have ha : |P.radial i| ≤ rho0 := by
+    simpa only [abs_of_nonneg ha0] using (P.contained i).a_le_rho0
+  have hb : |P.transverse i| < 1/2 :=
+    (P.contained i).u_lt_half (P.avoidsCore i)
+  have hh : coreRadius ≤ h := by
+    have hsum := c0_add_coreRadius
+    dsimp [h]
+    fin_cases j <;> dsimp [caseDepth] <;>
+      linarith [P.box.1.1,P.box.1.2,P.box.2.1,P.box.2.2,c0_pos]
+  have ht : |t| ≤ 3*Real.pi/4 := by
+    have hw := P.window i
+    dsimp [i,t] at *
+    fin_cases j <;>
+      norm_num [cardinalCasePin,cardinalCaseAxis,cardinalCenter,phaseCenter,
+        windowLower,windowUpper] at hw ⊢
+    all_goals apply abs_le.mpr
+    all_goals constructor <;> linarith [hw.1,hw.2,Real.pi_gt_d2]
+  have hbox : (|P.radial i|+1/2)^2+(|P.transverse i|+1/2)^2 ≤ Q0 := by
+    simpa only [abs_of_nonneg ha0] using (P.contained i).containment
+  have hcap : h+(|Real.cos t|+|Real.sin t|)/2 ≤
+      P.radial i*Real.cos t-P.transverse i*Real.sin t := by
+    rw [case_margin_identity] at hk
+    change 0 ≤ P.radial i*Real.cos t-P.transverse i*Real.sin t-
+      (|Real.cos t|+|Real.sin t|)/2-h at hk
+    linarith
+  exact Analytic.primary_cap_angle ha hb hh ht hbox hcap
 
 /-- The one global D reflection rules out its south-cardinal alternative. -/
 theorem PinPacking.D_south_negative {R : ℝ} (P : PinPacking R)
@@ -101,7 +110,7 @@ theorem PinPacking.D_south_negative {R : ℝ} (P : PinPacking R)
 
 def matchingCardinal : Fin 5 → CentralAxis := ![.east,.north,.west,.west,.south]
 
-/-- N21: the matching cardinal separator or OWN, after D's half-window choice. -/
+/-- N21 after the D half-window choice and the label-specific SAT alternatives. -/
 theorem PinPacking.two_choice {R : ℝ} (P : PinPacking R)
     (hD : P.phase 3 ≤ 5*Real.pi/4) (i : Fin 5) :
     0 ≤ centralMargin (matchingCardinal i) (P.phase i) (P.radial i) (P.transverse i)
@@ -118,8 +127,8 @@ theorem PinPacking.two_choice {R : ℝ} (P : PinPacking R)
   rcases hlast with ⟨rfl,rfl⟩
   linarith [P.D_south_negative hD]
 
-/-- Cardinal is preferred on ties: OWN is selected precisely when the cardinal
-margin is strictly negative. -/
+/-- A logical case distinction on a real margin, not numerical verification.
+Cardinal is preferred on ties. -/
 def PinPacking.canonicalOwn {R : ℝ} (P : PinPacking R) (i : Fin 5) : Bool :=
   decide (centralMargin (matchingCardinal i) (P.phase i) (P.radial i) (P.transverse i)
     P.center.1 P.center.2 < 0)
@@ -142,5 +151,4 @@ lemma PinPacking.own_of_canonicalOwn {R : ℝ} (P : PinPacking R)
   · linarith
   · exact h
 
-end
 end SquaresInCircles.Six.Normalization

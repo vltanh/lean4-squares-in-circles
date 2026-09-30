@@ -1,31 +1,18 @@
-import SquaresInCircles.Six.Stress.ExactSupport
+import SquaresInCircles.Six.Stress.SupportFormula
 import SquaresInCircles.Six.Normalization.Certificates.Model
 
 /-!
-# Exact support as a reified real expression
+# Exploratory reification of the exact support
 
-The expression uses the genuine condition 2 R min(|x|,|y|) <= sqrt(x^2+y^2).
-An undecided interval comparison encloses both branches, by Expr.eval_sound.
-The equality below identifies this expression with the support already proved
-for actual contained square centers.
+The mathematical formula and its proof live in SupportFormula, which has no
+computational-certificate imports. This file retains the expression syntax
+needed by the not-yet-converted certificate developments. It is not an allowed
+mathematical dependency of the final human-analytic proof.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Stress
 open ProofTools Normalization
-
-lemma scalarSupport_max_min (R x y : ℝ) :
-    scalarSupport R x y =
-      if 2*R*min |x| |y| ≤ Real.sqrt (x^2+y^2) then
-        rhoAt R*max |x| |y|
-      else R*Real.sqrt (x^2+y^2)-(|x|+|y|)/2 := by
-  unfold scalarSupport orderedSupport
-  by_cases h : |y|≤|x|
-  · simp only [if_pos h,min_eq_right h,max_eq_left h,sq_abs]
-  · have h' : |x|≤|y| := (lt_of_not_ge h).le
-    simp only [if_neg h,min_eq_left h',max_eq_right h',sq_abs]
-    rw [show y^2+x^2=x^2+y^2 by ring]
-    split_ifs <;> ring
 
 namespace Reified
 
