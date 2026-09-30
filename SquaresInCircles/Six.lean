@@ -6,19 +6,21 @@ public import SquaresInCircles.Six.Uniqueness
 /-!
 # Six-square proof entry point
 
-This entry point exports the exact candidate construction, unrestricted radius
-lower bound, uniqueness, and Optimum 6 source declarations. Both endpoint paths
-now use the analytic fixed-pair bound and the eight-contact equality argument.
-The legacy BalancedClosure, pair-envelope checker, and its derivative-cover
-proofs are not used by those endpoints.
+This entry point exports the exact construction, unrestricted radius lower
+bound, uniqueness and Optimum 6 source declarations. Both endpoint paths use
+Analytic.CompleteReduction directly: analytical missing-wing exclusions give
+the candidate D edges, the final tail argument supplies the pair domains,
+and the analytic fixed-pair/diagonal closure and eight-contact reconstruction
+finish the radius and equality arguments.
 
-The remaining internal finite classification is deliberately isolated in
-Classification.Reduction. Replacing that boundary by the three open analytic
-geometric facts would remove the remaining fixed-row/ExactCover dependencies;
-this entry point does not claim that replacement has already happened.
+The former Classification.Reduction boundary is now only a compatibility
+adapter and is not imported by the public endpoints. The legacy fixed-row,
+ExactCover, pair-envelope and BalancedClosure sources remain in the repository
+as historical material, not as premises of this proof path.
 
-No external script's success is a theorem premise. Source declarations have
-not been compiled or kernel-audited in this continuation. The current state
-and remaining work are recorded in research/six/lean/STATUS.md and
-EXTERNAL_DEPENDENCY_REMOVAL_CHECKLIST.md.
+No external script's success is a theorem premise. These source declarations
+have not been compiled or kernel-audited in this continuation. Source-level
+completion and execution evidence are kept separate in
+research/six/lean/STATUS.md. The human proof is organized in docs/proof/six.md
+and its linked analytical companions.
 -/
