@@ -12,9 +12,9 @@ packing and the explicit `CongruentOrDiagonal` relation. Its constructor does
 not accept a small-core, pin, window, A2, numerical-certificate or stress-table
 hypothesis from the caller.
 
-The mathematical source checkpoint is `4ec2d54aa24d8a2e0e1bb6649b96a2ef5310dd81`.
-The isolated entry point and deferred audit were added through
-`44f9727fb8826016dde7f0dd2946c740ea339e8a`.
+The normalization source is preserved in the compact milestone history on the
+current feature branch. The pre-cleanup fine-grained history is archived on
+`backup/six-lean-proof-precleanup-20260930`.
 
 The review consisted of reading the Six-module import headers and the changed
 constructor/call sites, then traversing the manually recorded Six-only graph.
@@ -130,11 +130,9 @@ refinement endpoints. Its commands have NOT executed. Actual elaboration,
 proof-term/kernel acceptance and the transitive axiom output remain a separate
 deferred validation gate. Static reachability cannot establish those results.
 
-## Remaining work outside normalization
+## Downstream boundary
 
-The analytic reduction to the later candidate D-edge graph and tighter common
-helper domain still needs replacements for fixed-row/tail certificates. The
-common pair envelope also still has outer and derivative-cover dependencies.
-Those are excluded from AnalyticNormalization. Existing unrestricted endpoint
-source cannot be accepted as the final human-analytic n=6 proof until those
-separate dependencies are replaced and the final chain is validated.
+Normalization is closed at the source level. The remaining mixed candidate-edge
+cases, OWN-wing tails, endpoint rewiring and final validation are tracked only
+in `STATUS.md`; they are outside the scope of this normalization dependency
+review.
