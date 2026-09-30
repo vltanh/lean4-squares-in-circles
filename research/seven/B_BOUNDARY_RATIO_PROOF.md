@@ -85,8 +85,9 @@ lemma ratio_numerator_pos {X : ℝ} (hX : 8/5 ≤ X ∧ X ≤ 7/4) :
 
 Define N, N' and N''; produce their `HasDerivAt` proofs using sums and powers.
 Rewrite N'' with t=X-8/5 by `ring`. The sign follows from `t>=0` and positivity
-of powers. Apply the existing `Seven.positive_of_concavity`, with the two
-endpoint values closed by `norm_num`.
+of powers. Apply the existing `Seven.positive_of_second_nonpos`, supplying
+continuity of N and N', the two derivative formulas, the second-derivative sign,
+and the two positive endpoint values closed by `norm_num`.
 
 Use that helper in place of the `bernstein_pos` block inside
 `ratio_derivative_lt_one`. Keep the exact denominator identity and the rest of
@@ -96,5 +97,6 @@ Use that helper in place of the `bernstein_pos` block inside
 
 The derivative transformation, translated N'', and both endpoint values were
 checked by exact symbolic/rational arithmetic. The displayed proof does not
-use a computational success premise. The Lean recipe is not a claim of
-successful compilation or kernel validation.
+use a computational success premise. The helper name was checked against
+`Seven/Analysis.lean` at the baseline commit. The Lean recipe is not a claim
+of successful compilation or kernel validation.
