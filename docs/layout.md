@@ -38,7 +38,7 @@ analytic and equality stack between those endpoints. Three to five squares add `
 the arcs of the squares that avoid the disk centre), and three and five squares
 `Containing.lean` (the square that contains it). Seven squares spread the pair
 theorem, the ring and the middle column over the files [below](#seven). Each
-the compact cases import only `Common/` and their own folders.
+The compact cases import only `Common/` and their own folders.
 
 ## `Common/`
 

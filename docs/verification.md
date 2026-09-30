@@ -14,9 +14,18 @@ scripts/verify-comparator.sh
 Needs Elan and network access for mathlib. Lean and mathlib are at
 `v4.35.0-rc3`, a release candidate whose toolchain ships `lake comparator`,
 which the Palomar registry uses. These commands are the acceptance criteria for
-the repository. On PR #7 the new six-square source has not yet completed the
-final build, Comparator and axiom-audit run, so the expected three-axiom result
-is not recorded here as an executed fact.
+the repository. On PR #7 the current analytical six-square source has not yet
+completed the final build, Comparator and axiom-audit run, so the expected
+three-axiom result is not recorded here as an executed fact.
+
+For n=6, verification must distinguish the two documented proof routes. The
+historical finite-classification route is retained as source, but the advertised
+endpoint now uses `Analytic.CompleteReduction`. A successful final audit must
+therefore check not only the theorem statements and axioms, but also that the
+accepted dependency path of `Six.lower_bound` and `Six.uniqueness` does not
+reach the old `Stress.ExactCover` / fixed-row classification or legacy
+pair-certificate chain. See
+[`research/six/lean/APPROACHES.md`](../research/six/lean/APPROACHES.md).
 
 - `lake build` must succeed without warnings; an unfinished proof would show as
   `declaration uses 'sorry'`.
@@ -72,3 +81,15 @@ inequality closed by `norm_num`, `linarith` or `nlinarith`; `π` enters only
 through mathlib's rational bounds `3.14 < π < 3.1416` (and weaker ones such as
 `3 < π`), and for seven squares also `3.1415 < π` and
 `3.141592 < π < 3.141593`.
+
+
+## n=6 route-specific checks
+
+The two n=6 approaches have different audit questions:
+
+| Route | What must be checked |
+| --- | --- |
+| Historical finite classification | If replayed independently, its exact finite checkers elaborate and use no external-script success premise. |
+| Current analytical route | The public declarations elaborate through `Analytic.CompleteReduction`, use the intended axiom set, and have no transitive dependency on the historical finite classification. |
+
+The second row is the release criterion for the current branch.

@@ -282,7 +282,9 @@ SquaresInCircles/
                            Uniqueness/ for the ring and the middle square
 ```
 
-Each case imports only `Common/` and its own folder.
+The compact cases primarily import `Common/` and their own folders. The
+six-square development has a larger internal stack under `Six/`, including
+normalization, analytical reduction and equality reconstruction.
 
 ## Verification
 

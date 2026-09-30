@@ -167,10 +167,12 @@ automation:
       framework: "ChatGPT"
       tool_setup: >-
         Used through ChatGPT with GitHub repository tools to develop and review
-        the six-square Lean proof and its exact algebraic reductions. External
-        Python or numerical-script success is not a theorem premise; the
-        retained finite checks are ordinary Lean computations such as decide.
-        This session did not itself run the deferred Lean/Comparator build.
+        the six-square Lean proof and its exact algebraic reductions. An earlier
+        self-contained route used exact internal Lean finite classification;
+        the current public endpoint instead uses the table-free analytical
+        `Analytic.CompleteReduction` route. External Python or numerical-script
+        success is not a theorem premise. This session did not itself run the
+        deferred Lean/Comparator build or final axiom/dependency audit.
   notes: >-
     The development is AI-assisted and directed by the repository owner.
     Earlier cases were developed with ChatGPT and Claude as recorded in
