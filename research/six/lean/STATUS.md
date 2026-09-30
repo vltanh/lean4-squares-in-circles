@@ -1,114 +1,157 @@
-# n=6 proof status and Palomar readiness
+# n=6 analytic hand-proof status
 
 PR #7, branch `feat/six-lean-proof`.
 
-This is the live status ledger for the six-square extension. The final
-acceptance target is now **Palomar Registry compatibility**: the advertised
-Solution declarations must be self-contained Lean proofs accepted by Comparator
-with only `propext`, `Classical.choice`, and `Quot.sound`, and must not
-depend on `sorryAx`, `Lean.ofReduceBool` / `native_decide`, a custom axiom,
-an unnamed missing definition, or the success of an external script.
+## Active target
 
-Ordinary Lean computation such as `decide` is permitted. External research,
-Python replay, audit logs and numerical experiments may remain in the
-repository, but their success is not a theorem premise.
+The current request is to work towards a **completely analytical hand proof**,
+with frequent incremental commits. `HUMAN_ANALYTIC_STANDARD.md` is therefore
+the active mathematical criterion, not an optional improvement to packaging.
+The public `Packing`, `Congruent`, exact candidate and unrestricted theorem
+statements are to remain unchanged.
 
-The stronger human-analytic conversion in `HUMAN_ANALYTIC_STANDARD.md`
-remains useful research work, but it is no longer the gate for Palomar
-submission.
+The final proof must not use generated stress tables, substantive finite-box
+certification, or an external program's success as a mathematical premise.
+Ordinary Lean finite computation is not an external Python oracle, but the
+remaining finite classification is still insufficient for this hand-proof
+criterion and must be replaced.
 
-## Palomar-facing theorem path
+Compilation, Comparator, the axiom audit and independent replay remain separate
+validation gates. A written proof body is not a record of kernel acceptance.
 
-The current unrestricted source already has the complete endpoint chain:
+## Current public endpoint path
 
-- `Six/LowerBound.lean` proves the unrestricted radius lower bound.
-- `Six/Uniqueness.lean` proves equality classification and supplies
-  `Optimum 6`.
-- `SquaresInCircles.lean` includes case 6 in the two declarations compared by
-  `comparator.json`.
-- `Challenge.lean` independently states the same two public declarations for
-  every `1 <= n <= 7`.
+The unrestricted source currently has the following path:
 
-The legacy fixed-row/common-pair route uses finite data and ordinary kernel
-`decide` through proved soundness lemmas. It does not call an external script
-at theorem elaboration time. Under the current Palomar criterion this route is
-eligible in principle; actual acceptance still requires the build, Comparator,
-axiom audit and NanoDa replay on the final pinned commit.
+```text
+Packing
+  -> Normalization.normalize_of_candidate
+  -> Classification.reduction
+       [remaining internal fixed-row / ExactCover classification]
+  -> analytic fixed-pair and diagonal closure
+  -> retained actual separator witnesses
+  -> eight-contact equality and point-set reconstruction
+  -> Six.lower_bound / Six.uniqueness / Six.optimum
+  -> SquaresInCircles.optimal_radius / optimal_packings
+```
 
-## Static Palomar checks already satisfied
+The public root and the independent Challenge statements cover every
+`1 <= n <= 7`. The old pair-envelope checker and BalancedClosure are not used
+by the new radius/equality endpoints. However, `Classification.Reduction` still
+imports the internal classification through `CommonDomain`. The complete hand
+proof is therefore **not finished**, and the finite classification has not
+been removed from the public endpoint path.
 
-- [x] Public repository and immutable commits available.
-- [x] `Challenge.lean` is 297 lines and about 10 KiB, below Palomar's
-      1,000-line / 100 KiB hard limits and its 300-line warning threshold.
-- [x] Challenge imports Mathlib only.
-- [x] Challenge and Solution module names are distinct:
-      `Challenge` and `SquaresInCircles`.
-- [x] `comparator.json` compares nonempty theorem declarations and permits
-      exactly `propext`, `Quot.sound`, `Classical.choice`.
-- [x] PR diff contains no use of `Lean.ofReduceBool`, `run_tac`, external
-      process invocation or custom `axiom`; the only `sorry` additions are
-      the two deliberate Challenge theorem holes.
-- [x] The apparent `native_decide` hit in the Six proof is documentation saying
-      that the source uses ordinary `decide`, not an invocation.
-- [x] Lean toolchain is `leanprover/lean4:v4.35.0-rc3`.
-- [x] Mathlib is pinned to the matching `v4.35.0-rc3`.
-- [x] Root uses `lakefile.toml` and has a committed `lake-manifest.json`.
-- [x] Root has one Apache-2.0 `LICENSE`, matching `project.license`.
-- [x] `formalization.yaml` is v0.4 and has been updated to include n=6,
-      Palomar's source-type vocabulary, honest six-square provenance, and no
-      unexecuted kernel/NanoDa success claim.
+## New analytic progress in this continuation
 
-## Lean module-system migration
+The starting source checkpoint was `158ec1fb3d8cde807ef5f5ff91782378a11e6cf5`.
 
-The source migration is complete on this branch: all 353 regular `.lean` files
-in the PR now use a leading `module` declaration, with the compatibility
-`public import` / exposure edits applied across the source tree.
+### Entire cardinal-W missing-south branch
 
-This is a source-level completion only. The final build must still verify that
-the migrated visibility boundaries elaborate correctly; no successful build is
-being inferred from the textual migration.
+`CardinalSouthTail/Geometry.lean` now supplies
+`CardinalSouthTail.not_missing_south`: a normalized packing with cardinal W
+cannot have `MissingSouthWing`, regardless of the S central bit.
 
-## Final mechanical gates before submission
+The previous argument covered only `s<=12/25`. The remaining large-S case has
+S OWN. The new proof combines the actual CW, CS, WD and D-sourced DS
+inequalities with weights `4,10,3,3`. It retains the negative central x-force,
+uses exact disk supports, and proves the resulting scalar positive on its
+whole domain by diagonal monotonicity and separate concavity. There are six
+distinct geometric endpoint inequalities, proved from explicit Taylor bounds;
+there is no angle-grid or fixed-row premise.
 
-These results must be obtained from the exact final commit; they are not
-inferred from source inspection:
+The proof is split into reviewable modules:
 
-- [ ] Full `lake build` on the Palomar-supported toolchain.
-- [ ] `lake comparator` with the checked-in `comparator.json`.
-- [ ] `#print axioms` for `SquaresInCircles.optimal_radius`,
-      `SquaresInCircles.optimal_packings`, `Six.lower_bound` and
-      `Six.uniqueness`; only the standard three axioms may remain.
-- [ ] Confirm no Solution dependency introduces `sorryAx`,
-      `Lean.ofReduceBool`, a custom axiom or an unnamed missing definition.
-- [ ] Submit the exact 40-character commit to Palomar and let Palomar perform
-      its mandatory independent NanoDa replay and metadata/editorial checks.
+- `Analytic/CardinalSouthTail/Scalar.lean`: the whole-domain scalar argument.
+- `Analytic/CardinalSouthTail/Support.lean`: exact support estimates and rational weakening.
+- `Analytic/CardinalSouthTail/Geometry.lean`: actual packing separators and the full branch exclusion.
 
-No GitHub Actions or other remote proof runner is being used as a substitute
-for those final checks in this development session.
+### Sharper shared-center OWN budget
 
-## Optional stronger analytic track
+`CoupledWingBudgetSharp.lean` proves
 
-The human-analytic conversion has already replaced normalization, the fixed
-pair envelope on its explicit domain, the corrected diagonal remainder, large
-parts of the D-edge classification, and several tail arguments. Its remaining
-mixed-wing reductions are valuable if a certificate-free mathematical proof is
-desired in the stronger sense of eliminating finite Lean tables. They are not
-required merely to satisfy Palomar's current mechanical proof standard.
+    P.helperAngle 4 - P.helperAngle 2 < 24/25
+
+for two OWN wings. This improves the previous bound of 1. Its proof uses one
+concave affine-gap function on `[22/75,2/3]`, with two Taylor endpoint
+inequalities, and the actual shared-center radial sum.
+
+### Smaller remaining domains
+
+`OwnWingFrontier.lean` records the following consequences:
+
+- A missing south wing must have W OWN. The former cardinal-W / large-S
+  exception is closed.
+- A missing west wing still has `d>3/5` and `d-w>1`.
+- If W is cardinal in a missing-west case, S must be OWN.
+- If both wings are OWN in a missing-west case, `s-w<24/25` and `d-s>1/25`.
+
+These facts are consequences of a hypothetical missing wing, not assumptions
+added to `Packing` and not claims that the remaining region is empty.
+
+`AnalyticReduction.lean` exports the new modules. `SixAxiomAudit.lean` lists
+their key declarations for later checking. The hand derivation is written in
+`ANALYTIC_CARDINAL_SOUTH_PROOF.md`.
+
+## Exact remaining analytic obligations
+
+`ReductionInterface.reduction_iff_three_obligations` still isolates exactly:
+
+- [ ] Exclude `MissingWestWing` with at least one OWN wing, on the smaller
+      domains described above.
+- [ ] Exclude `MissingSouthWing` with W OWN.
+- [ ] Prove the canonical OWN-S upper tail `helperAngle 4 <= 11/25`.
+
+The lower OWN-S tail is already proved, with the stronger sign `s>0`.
+The OWN-W outer tail follows from the two candidate D edges and is not an
+additional independent open problem.
+
+Once these three statements exist, replace the imports and body of
+`Classification.Reduction` via `reduction_iff_three_obligations`. The analytic
+radius and equality modules do not need to be redesigned. Then audit the
+complete transitive path to make the fixed-row/ExactCover and associated
+reified interval machinery unreachable from the public endpoints.
+
+## Source and validation status
+
+The repository-wide module migration was already present at the starting
+checkpoint: its 353 regular Lean files had leading `module` declarations.
+The five new Lean modules in this continuation also use `module`, public
+imports and public exposure. Visibility/elaboration has not been validated by
+a build.
+
+The new hand argument's weighted-sum identity and rational endpoint margins
+were cross-checked during development. Such arithmetic cross-checks are not
+premises of the Lean declarations and are not substitutes for compiling them.
+The source commits use `[skip ci]`; no proof runner has been started here.
+
+The pinned project configuration remains Lean `v4.35.0-rc3` with matching
+mathlib, the committed `lake-manifest.json`, and the existing Comparator
+configuration. The intended allowed axiom set is only `propext`,
+`Classical.choice`, and `Quot.sound`. Metadata is not an executed axiom report.
+
+The final gates remain unexecuted:
+
+- [ ] Full Lean compilation/elaboration, including the new analytic modules.
+- [ ] `lake comparator` on the exact final commit.
+- [ ] Execute `SixAxiomAudit.lean` and the public-root axiom audit.
+- [ ] Confirm no `sorryAx`, `Lean.ofReduceBool`, custom axiom, missing definition,
+      or substantive certificate/table dependency on the final theorem path.
+- [ ] Independent replay and the registry's mechanical/editorial checks on the
+      final pinned commit.
+
+The public endpoints still use finite internal checks today. Their removal is
+part of the active mathematics work, not something certified by the unchecked
+validation list above.
 
 ## Documentation map
 
-- `STATUS.md` — this Palomar/readiness ledger.
-- `HUMAN_ANALYTIC_STANDARD.md` — optional stronger analytic standard.
-- `ANALYTIC_NORMALIZATION_PROOF.md` — normalization companion.
-- `ANALYTIC_DIAGONAL_PROOF.md` — diagonal scalar companion.
-- `NORMALIZATION_DEPENDENCIES.md` — normalization dependency review.
-- `UPLOAD_AUDIT.md` and audit data — historical development evidence only.
-
-
-## External-dependency removal plan
-
-The detailed static audit and removal plan is
-`EXTERNAL_DEPENDENCY_REMOVAL_CHECKLIST.md`. It is the authoritative checklist
-for eliminating certificate-era fixed-row, finite-cover, pair-envelope, and
-historical external-result dependencies from the transitive path of the n=6
-lower-bound and uniqueness theorems. Compilation is a separate later phase.
+- `STATUS.md`: live mathematical progress and validation ledger.
+- `HUMAN_ANALYTIC_STANDARD.md`: active hand-proof acceptance criterion.
+- `ANALYTIC_CARDINAL_SOUTH_PROOF.md`: new four-edge hand proof and sharper OWN budget.
+- `ANALYTIC_NORMALIZATION_PROOF.md`: normalization companion.
+- `ANALYTIC_DIAGONAL_PROOF.md`: diagonal scalar companion.
+- `NORMALIZATION_DEPENDENCIES.md`: normalization dependency review.
+- `EXTERNAL_DEPENDENCY_REMOVAL_CHECKLIST.md`: remaining internal-classification
+  boundary and the already removed legacy pair/equality chain.
+- `UPLOAD_AUDIT.md` and historical audit data: development evidence only.
