@@ -1,5 +1,5 @@
 module
-public import SquaresInCircles.Six
+public import SquaresInCircles
 public import SquaresInCircles.Six.AnalyticReduction
 
 @[expose] public section
@@ -7,47 +7,45 @@ public import SquaresInCircles.Six.AnalyticReduction
 /-!
 # Deferred n=6 kernel/axiom audit
 
-This is the single audit entry point for the n=6 development. These commands are
-configuration for a later compiler/kernel audit; they are NOT recorded output.
-Compilation remains deferred.
+This imports the actual public theorem root, not just a development checkpoint.
+The commands are configuration for later validation, NOT recorded execution.
+Compilation and the kernel/axiom audit remain deferred by the user.
 
-The final unrestricted endpoints still require the open missing-wing and
-OWN-tail reductions described in research/six/lean/STATUS.md. Printing an
-endpoint here does not certify that its current dependency path satisfies the
-human-analytic acceptance standard.
+The pair/equality chain is analytic. Classification.Reduction still uses the
+internal fixed-row classification; its separate entry below makes that boundary
+visible. No conclusion about kernel acceptance follows from this source file.
 -/
 
--- Candidate and construction
+-- Candidate and normalization.
 #print axioms SquaresInCircles.Six.attainment
 #print axioms SquaresInCircles.Six.qStar_lt_Q0
-
--- Analytic normalization
 #print axioms SquaresInCircles.Six.Normalization.strongCentralBox
-#print axioms SquaresInCircles.Six.Analytic.five_pin_cover
-#print axioms SquaresInCircles.Six.Analytic.labelled_window
-#print axioms SquaresInCircles.Six.Normalization.pinPacking_of_ceiling
-#print axioms SquaresInCircles.Six.Normalization.PinPacking.west_before_diagonal
-#print axioms SquaresInCircles.Six.Normalization.PinPacking.moving_pins
-#print axioms SquaresInCircles.Six.Normalization.PinPacking.D_own
 #print axioms SquaresInCircles.Six.Normalization.normalize_of_candidate
-#print axioms SquaresInCircles.Six.Normalization.NormalizedPacking.east_cardinal_angle_203
-#print axioms SquaresInCircles.Six.Normalization.NormalizedPacking.north_cardinal_angle_203
 
--- Analytic pair/diagonal closure
+-- The remaining internal classification boundary.
+#print axioms SquaresInCircles.Six.Classification.reduction
+
+-- Analytic pair/diagonal bounds and the actual retained source witnesses.
 #print axioms SquaresInCircles.Six.Analytic.FixedPair.lower_bound
 #print axioms SquaresInCircles.Six.Analytic.FixedPair.remainder_nonnegative
 #print axioms SquaresInCircles.Six.Analytic.FixedPair.remainder_zero
 #print axioms SquaresInCircles.Six.Analytic.FixedPair.radius_of_reduction
+#print axioms SquaresInCircles.Six.Analytic.FixedPair.northwest_work_of_selected
+#print axioms SquaresInCircles.Six.Analytic.FixedPair.eastsouth_work_of_selected
+#print axioms SquaresInCircles.Six.Analytic.FixedPair.candidate_data_with_selection
 
--- Analytic D-edge reduction frontier
-#print axioms SquaresInCircles.Six.Analytic.normalized_diagonal_gt_half
-#print axioms SquaresInCircles.Six.Analytic.DW_Dsecondary_gap_gt_quarter
-#print axioms SquaresInCircles.Six.Analytic.DS_Dsecondary_gap_gt_quarter
-#print axioms SquaresInCircles.Six.Analytic.candidate_or_missing_wing
-#print axioms SquaresInCircles.Six.Analytic.candidate_edges_iff_no_missing_wing
-#print axioms SquaresInCircles.Six.Analytic.FixedPair.reduction_iff_remaining_obligations
-#print axioms SquaresInCircles.Six.Analytic.FixedPair.radius_of_edges_and_own_tails
+-- Equality without the legacy BalancedClosure or pair checker.
+#print axioms SquaresInCircles.Six.Equality.ContactCoordinates.support_tight
+#print axioms SquaresInCircles.Six.Equality.ContactCoordinates.coordinates_of_contacts
+#print axioms SquaresInCircles.Six.Equality.ContactCoordinates.center_of_contacts
+#print axioms SquaresInCircles.Six.Equality.AnalyticContacts.contacts_of_selected
+#print axioms SquaresInCircles.Six.Equality.AnalyticContacts.coordinates_of_reduction
+#print axioms SquaresInCircles.Six.Equality.AnalyticReconstruction.normalized_congruent_of_reduction
+#print axioms SquaresInCircles.Six.Equality.absorb_normalization_reflection
 
--- Public endpoints; meaningful only after the analytic dependency path is closed.
+-- Actual advertised endpoints, with their unchanged problem statements.
 #print axioms SquaresInCircles.Six.lower_bound
 #print axioms SquaresInCircles.Six.uniqueness
+#print axioms SquaresInCircles.Six.optimum
+#print axioms SquaresInCircles.optimal_radius
+#print axioms SquaresInCircles.optimal_packings
