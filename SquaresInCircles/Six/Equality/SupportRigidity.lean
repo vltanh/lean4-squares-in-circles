@@ -1,15 +1,17 @@
 module
 public import SquaresInCircles.Six.Equality.LocalCenters
+public import SquaresInCircles.Six.Stress.BalancedClosure
 
 @[expose] public section
 
 /-!
 # Actual support equality determines all exterior coordinates
 
-The support and separator equalities come from the same selected nonnegative
-stress used in the radius proof. No equality case of a numerical checker is
-assumed. The center-coordinate uniqueness lemmas are then applied to the
-original contained squares in their actual frames.
+This is the legacy balanced-stress adapter. Its BalancedClosure dependency is
+explicit, so the generic local-center uniqueness lemmas can also be imported
+by the analytic equality route without importing this adapter or its tables.
+The support and separator equalities below use the same selected nonnegative
+stress as the legacy radius proof; no numerical equality oracle is assumed.
 -/
 
 noncomputable section
