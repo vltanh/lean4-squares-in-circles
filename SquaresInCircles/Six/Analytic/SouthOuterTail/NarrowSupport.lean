@@ -47,7 +47,8 @@ theorem narrow_support {a b U V : ℝ} (hc : ContainedChart a |b|)
   have habs : |V| ≤ 7/25 := by linarith [hV,hU.2]
   have hsquare := mul_nonneg (sub_nonneg.mpr habs)
     (show 0 ≤ 7/25+|V| by positivity)
-  rw [sq_abs] at hsquare
-  nlinarith only [hsoft,hsquare]
+  have hbound : V^2 ≤ (7/25:ℝ)^2 := by
+    nlinarith only [hsquare,sq_abs V]
+  nlinarith only [hsoft,hbound]
 
 end SquaresInCircles.Six.Analytic.SouthOuterTail
