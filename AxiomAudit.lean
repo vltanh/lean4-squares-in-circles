@@ -10,7 +10,7 @@ unproved lemma would add `sorryAx`, and a proof by `native_decide`, which
 trusts the compiler, would add `Lean.ofReduceBool`.
 -/
 
--- All six cases in one statement, which depends on every case.
+-- All seven cases in one statement, which depends on every case.
 #print axioms SquaresInCircles.optimal_radius
 #print axioms SquaresInCircles.optimal_packings
 #print axioms SquaresInCircles.optimal_packings_rigid

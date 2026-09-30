@@ -3,7 +3,7 @@
 [Back to the README](../README.md)
 
 ```text
-SquaresInCircles.lean      the main theorems, for all six cases
+SquaresInCircles.lean      the main theorems, for all seven cases
 Challenge.lean             the statement alone, for the Palomar registry
 SquaresInCircles/
 ├── Geometry.lean          the statement: squares, disks, Packing, Congruent,
@@ -14,6 +14,7 @@ SquaresInCircles/
 ├── Three/                 n = 3
 ├── Four/                  n = 4
 ├── Five/                  n = 5
+├── Six/                   n = 6
 └── Seven/                 n = 7
 ```
 
@@ -28,15 +29,16 @@ definition in the file that needs them. Edit `Geometry.lean` only;
 `scripts/verify-comparator.sh --write` copies its definitions into
 `Challenge.lean`.
 
-Every case folder has two core files: `Construction.lean` (the models pack the
-disk) and `Uniqueness.lean`, which ends with the case's `optimum`, an `Optimum`
+Every case exposes `Construction.lean` (the models pack the disk) and
+`Uniqueness.lean`, which ends with the case's `optimum`, an `Optimum`
 (`Common/Optimum.lean`) bundling the construction, a point of each model on the
 circle, and uniqueness; `Optimum.lean` derives every lower bound from
-uniqueness. Three to five squares add `Exterior.lean` (the contact polygon, and
+uniqueness. Six adds a substantially larger normalization, classification,
+analytic and equality stack between those endpoints. Three to five squares add `Exterior.lean` (the contact polygon, and
 the arcs of the squares that avoid the disk centre), and three and five squares
 `Containing.lean` (the square that contains it). Seven squares spread the pair
 theorem, the ring and the middle column over the files [below](#seven). Each
-case imports only `Common/` and its own folder.
+the compact cases import only `Common/` and their own folders.
 
 ## `Common/`
 
@@ -59,7 +61,7 @@ case imports only `Common/` and its own folder.
 | `Angles.lean` | `m` directions pairwise at least `2π/m` apart form a regular polygon; disjoint half circles are opposite; quarter turns of a frame |
 | `Contacts.lean` | Disjoint squares have centres at least 1 apart; at distance exactly 1 they are side-neighbours; squares with parallel sides in one frame |
 
-## The cases
+## The compact cases
 
 | File | One | Two | Three | Four | Five | Seven |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -68,13 +70,23 @@ case imports only `Common/` and its own folder.
 | `Containing.lean` | | | no square contains `o` | | the sweep of a square that contains `o` holds `72°`, unless the square is centred at `o` | |
 | `Uniqueness.lean` | centred at `o` | both centres `1/2` from `o`; opposite half circles | caps of exactly `120°`; one square of type A and two of type B rebuild the T | `o` a vertex of every square; a quarter grid of arcs | a square centred at `o`, the others its side-neighbours; closed 12-gon rigidity | a square contains `o`; the ring and the middle column; congruence to a column packing |
 
-Each case has a `radius`, its `centers` (the optimal packing in the frame of
-its disk centre) and its `model`, the axis-parallel squares at those centres,
-all defined in `Geometry.lean`; its `Construction.lean` proves that the model
-packs the disk of that radius. Seven squares instead have the column packings
+Cases one through five have a `radius`, `centers` and an axis-parallel
+`model`, all defined in `Geometry.lean`; their `Construction.lean` files
+prove that the model packs the disk of that radius. Seven squares instead have
+the column packings
 `columnModel c`, in which each of the three middle squares has its own height;
 their `Construction.lean` also defines `centers` and `model`, the column centred
 at the disk centre.
+
+## Six
+
+The six-square model has five axis-parallel squares and one square rotated by
+45 degrees. `Six/` contains the candidate and construction, normalization,
+classification, analytic fixed-pair/diagonal reduction, equality
+reconstruction, and the unrestricted `LowerBound.lean` and
+`Uniqueness.lean` endpoints. The current public endpoint still crosses the
+explicit internal-classification boundary in `Classification/Reduction.lean`;
+the stronger table-free replacement is tracked under `research/six/lean/`.
 
 ## Seven
 

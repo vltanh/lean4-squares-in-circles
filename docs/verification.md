@@ -6,14 +6,17 @@
 lake exe cache get
 lake build
 lake env lean AxiomAudit.lean
+lake env lean SixAxiomAudit.lean
 lake env lean SanityChecks.lean
 scripts/verify-comparator.sh
 ```
 
 Needs Elan and network access for mathlib. Lean and mathlib are at
 `v4.35.0-rc3`, a release candidate whose toolchain ships `lake comparator`,
-which the Palomar registry uses. Every proof is complete and rests on
-`propext`, `Classical.choice` and `Quot.sound` alone.
+which the Palomar registry uses. These commands are the acceptance criteria for
+the repository. On PR #7 the new six-square source has not yet completed the
+final build, Comparator and axiom-audit run, so the expected three-axiom result
+is not recorded here as an executed fact.
 
 - `lake build` must succeed without warnings; an unfinished proof would show as
   `declaration uses 'sorry'`.
@@ -25,7 +28,7 @@ which the Palomar registry uses. Every proof is complete and rests on
   packings and the theorem signatures for inspection.
 - `SanityChecks.lean` must elaborate without errors. It checks the radius and
   model tables, re-proves the rational margins and polygon contact points the
-  proofs use, restates the public theorems, checks each model of `n ≤ 5`
+  proofs use, restates the public theorems, checks each unique model of `n ≤ 6`
   congruent to itself, and checks column packings of seven squares, one with a
   single middle square moved.
 - `scripts/verify-comparator.sh` (Linux, bubblewrap) checks the library against

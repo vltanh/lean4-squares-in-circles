@@ -7,10 +7,10 @@ public import SquaresInCircles.Six.Containing
 /-!
 # Targets of the six-square formalization
 
-These are proposition DEFINITIONS, not theorem declarations. `LowerBound` and
-`Uniqueness` still have no proof inhabitants in this development.
-`Normalization.StrongCore` now supplies a proof body for `StrongCentralBox`;
-its compilation and kernel acceptance remain deferred.
+These are proposition DEFINITIONS, not theorem declarations. Their unrestricted
+inhabitants now live in `Six/LowerBound.lean` and `Six/Uniqueness.lean`.
+`Normalization.StrongCore` supplies a proof body for `StrongCentralBox`.
+Compilation and kernel acceptance of the new six-square path remain deferred.
 
 Keeping these exact targets separate prevents a conditional normalization
 lemma, a generic stress implication, or the attaining example from being
@@ -21,12 +21,12 @@ the goal definition below, so that would create an import cycle.
 noncomputable section
 namespace SquaresInCircles.Six.Goals
 
-/-- The missing unrestricted lower bound, using the original packing predicate. -/
+/-- The unrestricted lower-bound target, using the original packing predicate. -/
 def LowerBound : Prop :=
   ∀ (S : Fin 6 → UnitSquare) (o : Point) (R : ℝ),
     Packing S o R → Six.radius ≤ R
 
-/-- The missing equality classification. -/
+/-- The unrestricted equality-classification target. -/
 def Uniqueness : Prop :=
   ∀ (S : Fin 6 → UnitSquare) (o : Point),
     Packing S o Six.radius → Congruent S o Six.model

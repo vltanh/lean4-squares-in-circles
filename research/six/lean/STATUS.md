@@ -58,23 +58,15 @@ axiom audit and NanoDa replay on the final pinned commit.
       Palomar's source-type vocabulary, honest six-square provenance, and no
       unexecuted kernel/NanoDa success claim.
 
-## Current hard Palomar blocker: Lean module system
+## Lean module-system migration
 
-Palomar now requires **every regular .lean file in the submitted repository**
-to use Lean's module system, including unused files and generated certificates.
-The present repository predates that migration: for example
-`Challenge.lean` and `SquaresInCircles.lean` do not yet start with
-`module`.
+The source migration is complete on this branch: all 353 regular `.lean` files
+in the PR now use a leading `module` declaration, with the compatibility
+`public import` / exposure edits applied across the source tree.
 
-The compatibility migration must therefore be completed repository-wide:
-
-- [ ] Prefix every regular `.lean` source with `module`.
-- [ ] Convert imports needed by clients to `public import`.
-- [ ] Initially expose the existing public API using the compatibility recipe
-      (`@[expose] public section` / targeted exposure), then repair visibility
-      errors rather than weakening statements.
-- [ ] Keep every source file below 10,000 physical lines.
-- [ ] Rebuild after the migration; a textual header edit alone is not enough.
+This is a source-level completion only. The final build must still verify that
+the migrated visibility boundaries elaborate correctly; no successful build is
+being inferred from the textual migration.
 
 ## Final mechanical gates before submission
 

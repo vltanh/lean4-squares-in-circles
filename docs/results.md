@@ -2,15 +2,15 @@
 
 [Back to the README](../README.md)
 
-The results for all six cases are in the root file `SquaresInCircles.lean`,
-namespace `SquaresInCircles`. The same two theorems cover `n = 1, …, 5` and
-`n = 7`:
+The results for all seven cases are in the root file `SquaresInCircles.lean`,
+namespace `SquaresInCircles`. The same two theorems cover every
+`1 ≤ n ≤ 7`:
 
 ```lean
-theorem optimal_radius (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7) :
+theorem optimal_radius (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 7) :
     IsLeast {R | ∃ (S : Fin n → UnitSquare) (o : Point), Packing S o R} (optimalRadius n)
 
-theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7)
+theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 7)
     (S : Fin n → UnitSquare) (o : Point) :
     Packing S o (optimalRadius n) ↔ ∃ M ∈ optimalPackings n, Congruent S o M
 ```
@@ -20,8 +20,8 @@ theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7)
 of radius `optimalRadius n` and that none fits in a smaller one.
 `optimal_packings` says that the packings of that radius are exactly the
 configurations congruent to an optimal model. `optimalPackings n` is
-`{X.model}` for the case `X` of `n ≤ 5`, so the optimal packing is unique up to
-a rotation about the disk centre and a relabelling, and the set of all column
+`{X.model}` for each case `X` of `n ≤ 6`, so the optimal packing is unique up
+to a rotation about the disk centre and a relabelling, and the set of all column
 packings `Set.range Seven.columnModel` for `n = 7`
 ([Definitions](definitions.md#the-optimal-packings)). The statements use only
 the definitions in [Definitions](definitions.md).
@@ -33,8 +33,9 @@ the plane that preserves Euclidean distance and takes the origin to `o`: under
 model.
 
 **One framework.** Each case also stands alone, in namespaces
-`SquaresInCircles.One`, …, `SquaresInCircles.Five` and `SquaresInCircles.Seven`
-(folders `One/`, …, `Five/` and `Seven/`), and each proves the same things:
+`SquaresInCircles.One`, …, `SquaresInCircles.Seven`
+(folders `One/`, …, `Seven/`), and each exposes the same public optimum
+interface. The compact cases use the following pattern:
 
 | declaration | for `n = 3` |
 | --- | --- |
@@ -51,8 +52,13 @@ follows from them once, for every case: the lower bound
 uniqueness (`Optimum.packing_iff`) and its rigid form. For the lower bound, a
 packing in a smaller disk would also pack the optimal disk, so by uniqueness it
 would be congruent to an optimal model, and the point on the circle would lie
-outside the smaller disk. The root theorems are these, for the `optimum` of
-each `n`.
+outside the smaller disk. The root theorems are these, for the `optimum` of each `n`.
+
+Six squares uses the same public interface but a longer internal proof stack:
+normalization, the remaining self-contained Lean classification boundary,
+analytic fixed-pair/diagonal closure, and eight-contact equality
+reconstruction. Its model has five axis-parallel squares and one diagonal
+square.
 
 For seven squares the optimum is not unique: `Seven.column_packing` shows that
 the three middle squares of the optimal packing can take any heights at least

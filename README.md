@@ -3,11 +3,14 @@
 [![Lean build](https://github.com/vltanh/lean4-squares-in-circles/actions/workflows/lean.yml/badge.svg)](https://github.com/vltanh/lean4-squares-in-circles/actions/workflows/lean.yml)
 [![Doc links](https://github.com/vltanh/lean4-squares-in-circles/actions/workflows/docs.yml/badge.svg)](https://github.com/vltanh/lean4-squares-in-circles/actions/workflows/docs.yml)
 
-Machine-checked proofs, for `n = 1, …, 5` and `n = 7`, of the least radius of
-a disk holding `n` non-overlapping unit squares, and of every packing that
-attains it, up to rotation about the disk centre and relabelling: exactly one
-for `n ≤ 5`, and for `n = 7` a family in which each of the three middle squares
-slides along the middle column.
+Lean formalization of the least radius of a disk holding `n` non-overlapping
+unit squares for every `n = 1, …, 7`, and of every packing that attains it,
+up to rotation about the disk centre and relabelling. Cases `1` through `6`
+have one optimal model; for `n = 7` there is a family in which each of the
+three middle squares slides along the middle column.
+
+The newly added `n = 6` source on this branch is complete at the public theorem
+level. Its final build, Comparator run and kernel/axiom audit are still pending.
 
 | n | optimal radius | ≈ | an optimal packing |
 | :-: | :-: | :-: | :-: |
@@ -16,6 +19,7 @@ slides along the middle column.
 | 3 | `5√17 / 16` | 1.2885 | <img src="https://erich-friedman.github.io/packing/squincir/3.gif" width="100" alt="three unit squares in a circle"><br>the T |
 | 4 | `√2` | 1.4142 | <img src="https://erich-friedman.github.io/packing/squincir/4.gif" width="100" alt="four unit squares in a circle"><br>the 2×2 block |
 | 5 | `√(5/2)` | 1.5811 | <img src="https://erich-friedman.github.io/packing/squincir/5.gif" width="100" alt="five unit squares in a circle"><br>the plus |
+| 6 | `Six.radius` (exact algebraic constant) | 1.6885 | <img src="https://erich-friedman.github.io/packing/squincir/6.gif" width="100" alt="six unit squares in a circle"><br>five parallel squares and one diagonal square |
 | 7 | `√13 / 2` | 1.8028 | <img src="https://erich-friedman.github.io/packing/squincir/7.gif" width="100" alt="seven unit squares in a circle"><br>three in a line between two pairs; not unique, each square of the line can move along it |
 
 Pictures by Erich Friedman, from the [Squares in Circles](https://erich-friedman.github.io/packing/squincir/)
@@ -135,14 +139,14 @@ def Seven.columnModel (c : Column) : Fin 7 → UnitSquare :=
 
 More on each theorem: [docs/results.md](docs/results.md).
 
-For `1 ≤ n ≤ 5` and `n = 7`, the root file `SquaresInCircles.lean` proves, in
+For every `1 ≤ n ≤ 7`, the root file `SquaresInCircles.lean` proves, in
 namespace `SquaresInCircles`:
 
 ```lean
-theorem optimal_radius (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7) :
+theorem optimal_radius (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 7) :
     IsLeast {R | ∃ (S : Fin n → UnitSquare) (o : Point), Packing S o R} (optimalRadius n)
 
-theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7)
+theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 7)
     (S : Fin n → UnitSquare) (o : Point) :
     Packing S o (optimalRadius n) ↔ ∃ M ∈ optimalPackings n, Congruent S o M
 ```
@@ -150,7 +154,7 @@ theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7)
 `optimal_radius`: `optimalRadius n` is the least radius of a disk holding `n`
 unit squares; some packing attains it, and none fits in a smaller disk.
 `optimal_packings`: the packings of that radius are exactly the configurations
-congruent to a model in `optimalPackings n`, which holds one model for `n ≤ 5`
+congruent to a model in `optimalPackings n`, which holds one model for `n ≤ 6`
 and every column packing for `n = 7`:
 
 ```lean
@@ -160,12 +164,14 @@ def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
   | 3 => {Three.model}
   | 4 => {Four.model}
   | 5 => {Five.model}
+  | 6 => {Six.model}
   | 7 => Set.range Seven.columnModel
   | _ => ∅
 ```
 
-Each of `One.model`, …, `Five.model` is `fun i => axisSquare (centers i)`,
-the axis-parallel squares at the `centers` of its case:
+Cases one through five use axis-parallel models `fun i => axisSquare (centers i)`.
+`Six.model` has five axis-parallel squares and one genuinely rotated diagonal
+square; seven uses the column family:
 
 | n | `optimalRadius n` | centres of the optimal models |
 | :-: | --- | --- |
@@ -174,6 +180,7 @@ the axis-parallel squares at the `centers` of its case:
 | 3 | `5 * Real.sqrt 17 / 16` | `![(-1/2,-5/16),(1/2,-5/16),(0,11/16)]` |
 | 4 | `Real.sqrt 2` | `![(1/2,1/2),(-1/2,1/2),(-1/2,-1/2),(1/2,-1/2)]` |
 | 5 | `Real.sqrt (5 / 2)` | `![(0,0),(1,0),(0,1),(-1,0),(0,-1)]` |
+| 6 | `Six.radius` | `Six.model`: C,N,E,W,S axis-parallel, D diagonal |
 | 7 | `Real.sqrt 13 / 2` | `Seven.columnCenters c` for every `c : Seven.Column` |
 
 Every case proves one `Optimum` (`Common/Optimum.lean`): the radius, the
@@ -186,14 +193,11 @@ plane.
 
 ## Proof outline
 
-The proofs are written out as an illustrated, self-contained textbook, every
-numbered result linked to its Lean declarations: [docs/proof/](docs/proof/README.md),
-with the [preliminaries](docs/proof/preliminaries.md), the shared
-[tools](docs/proof/common.md), one chapter per case ([one](docs/proof/one.md),
-[two](docs/proof/two.md), [three](docs/proof/three.md),
-[four](docs/proof/four.md), [five](docs/proof/five.md),
-[seven](docs/proof/seven.md)), and four appendices of computations for seven
-squares.
+The illustrated, self-contained textbook in [docs/proof/](docs/proof/README.md)
+currently covers cases one through five and seven, with every numbered result
+linked to its Lean declarations. The six-square continuation is documented in
+the source comments and [its live status ledger](research/six/lean/STATUS.md);
+a matching textbook chapter has not yet been written.
 
 - **One and two squares.** The farthest corner of a square is at least half a
   diagonal from the disk centre, so in the disk of radius `√2 / 2` the square
@@ -208,6 +212,13 @@ squares.
   so every inequality is tight, and the tight configurations are rebuilt into
   the optimal packing. A square containing the disk centre needs a separate
   argument, which for three squares is the hardest part of the proof.
+- **Six squares.** A candidate-sized packing is normalized into a canonical
+  frame and reduced to fixed-pair and diagonal inequalities. Equality retains
+  the actual separating sources; eight resulting contacts fix all six centres
+  and reconstruct the model, including its rotated diagonal square. The public
+  endpoint currently obtains the final reduction from self-contained Lean
+  finite classification; the optional table-free analytic replacement is
+  tracked separately.
 - **Seven squares.** Each square that avoids the disk centre gets a marker, a
   direction from the disk centre. In the disk of radius `√13 / 2`, two
   disjoint such squares have markers at least `π/3` apart, and exactly `π/3`
@@ -238,6 +249,8 @@ More on each earlier result, with references:
   argument used here: each square holds at least a quarter of a small circle
   about the disk centre. Our proof was written without the note, but both came
   from work with Claude, so they may not be independent.
+- **Six squares.** Friedman's page supplied the numerical candidate used here,
+  but we found no earlier exact optimality-and-uniqueness proof for it.
 - **Five and seven squares.** We found no earlier proof; in July 2026
   Friedman's page listed his packings of 1997 as the best known.
 
@@ -249,7 +262,7 @@ packing.
 More on each file: [docs/layout.md](docs/layout.md).
 
 ```text
-SquaresInCircles.lean      the main theorems, for all six cases
+SquaresInCircles.lean      the main theorems, for all seven cases
 Challenge.lean             the statement alone, for the Palomar registry
 SquaresInCircles/
 ├── Geometry.lean          the statement: squares, disks, Packing, Congruent,
@@ -258,6 +271,7 @@ SquaresInCircles/
 ├── One/  Two/             Construction, Uniqueness
 ├── Three/ Five/           Construction, Exterior, Containing, Uniqueness
 ├── Four/                  Construction, Exterior, Uniqueness
+├── Six/                   normalization, reduction, lower bound, equality
 └── Seven/                 Construction, the pair theorem, Uniqueness, and
                            Uniqueness/ for the ring and the middle square
 ```
@@ -272,9 +286,13 @@ More on each check: [docs/verification.md](docs/verification.md).
 lake exe cache get
 lake build
 lake env lean AxiomAudit.lean
+lake env lean SixAxiomAudit.lean
 lake env lean SanityChecks.lean
 scripts/verify-comparator.sh
 ```
+
+On this PR head, the six-square build and audit commands above are acceptance
+criteria rather than recorded successful runs.
 
 The build uses Lean and mathlib `v4.35.0-rc3`, pinned by `lean-toolchain` and
 `lake-manifest.json`. `lake build` must succeed without warnings, and every
@@ -309,6 +327,6 @@ Apache-2.0, matching mathlib and the Lean ecosystem.
 
 ## Contributors
 
-The proofs and the Lean code were written by AI models, ChatGPT 6 Pro and
-Claude Opus 5 and 5.5, with the repository owner directing and reviewing the
-work. Who did what, and when: [docs/contributors.md](docs/contributors.md).
+The proofs and the Lean code were written with AI models including ChatGPT 6
+Pro, GPT-5.6 Sol, and Claude Opus 5 and 5.5, with the repository owner directing
+and reviewing the work. Who did what, and when: [docs/contributors.md](docs/contributors.md).
