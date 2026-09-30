@@ -1,29 +1,42 @@
 import SquaresInCircles.Six.Analytic.SecondaryReduction
 import SquaresInCircles.Six.Analytic.FixedCandidateClosure
+import SquaresInCircles.Six.Analytic.SouthOwnLowerTail
 
 /-!
 # Remove already-proved facts from the final reduction obligation
 
-The E/N pair ranges, the complete cardinal W/S ranges, the OWN-W upper bound,
-and d>1/2 already follow analytically from normalization and source geometry.
-Only the three explicitly stated OWN-wing tail inequalities remain in the pair
-Domain premise. The equivalences below prevent those missing tails from being
-hidden among facts that have already been established.
+The E/N pair ranges, cardinal W/S ranges, OWN-W upper bound, d>1/2 and the
+lower OWN-S tail are analytic consequences of the actual packing. The remaining
+pair-domain requirements are only the outer OWN-W and OWN-S tails. The original
+three-bound interface is retained for compatibility and proved equivalent to
+this smaller frontier.
 
-These are exact interface theorems, not proofs of the two mixed-source
-exclusions or of the three remaining tail inequalities. They do not add any
-assumption to Packing or NormalizedPacking, and no old fixed-row theorem is
-imported to instantiate the unresolved obligations.
+The two mixed-wing exclusions and the two remaining outer-tail inequalities
+are not assumed true. No extra premise is inserted into Packing or the
+normalized model, and no old fixed-row theorem instantiates those obligations.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.FixedPair
 open Normalization
 
-/-- The remaining individual bounds, with the canonical OWN hypotheses kept. -/
+/-- Original interface, retained to avoid changing earlier conditional theorems. -/
 def OwnWingTailBounds {R : ℝ} (P : NormalizedPacking R) : Prop :=
   (P.ownBits 2=true → -11/25 ≤ P.helperAngle 2) ∧
   (P.ownBits 4=true → -2/25 ≤ P.helperAngle 4 ∧ P.helperAngle 4 ≤ 11/25)
+
+/-- Only the two outer tails remain: the lower OWN-S bound has been proved. -/
+def OwnWingOuterBounds {R : ℝ} (P : NormalizedPacking R) : Prop :=
+  (P.ownBits 2=true → -11/25 ≤ P.helperAngle 2) ∧
+  (P.ownBits 4=true → P.helperAngle 4 ≤ 11/25)
+
+lemma own_tail_bounds_iff_outer_bounds {R : ℝ} (P : NormalizedPacking R) :
+    OwnWingTailBounds P ↔ OwnWingOuterBounds P := by
+  constructor
+  · rintro ⟨hW,hS⟩
+    exact ⟨hW,fun hs => (hS hs).2⟩
+  · rintro ⟨hW,hS⟩
+    exact ⟨hW,fun hs => ⟨(normalized_own_south_lower_tail P hs).le,hS hs⟩⟩
 
 lemma north_pair_range {R : ℝ} (P : NormalizedPacking R) :
     if P.ownBits 1 then -3/10 ≤ P.helperAngle 1 ∧ P.helperAngle 1 ≤ 5/12
@@ -45,8 +58,7 @@ lemma east_pair_range {R : ℝ} (P : NormalizedPacking R) :
     simp only [h,if_true]
     constructor <;> linarith [he.1,he.2]
 
-/-- For N/W only the negative OWN-W tail remains; its positive side has the
-stronger strict sign already proved by canonical separator preference. -/
+/-- For N/W only the negative OWN-W tail remains. -/
 theorem northwest_domain_iff_own_tail {R : ℝ} (P : NormalizedPacking R) :
     Domain (P.ownBits 1) (P.ownBits 2) (P.helperAngle 1) (P.helperAngle 2) ↔
       (P.ownBits 2=true → -11/25 ≤ P.helperAngle 2) := by
@@ -64,8 +76,7 @@ theorem northwest_domain_iff_own_tail {R : ℝ} (P : NormalizedPacking R) :
       simp only [hW,if_true]
       exact ⟨htail hW,by linarith⟩
 
-/-- Reflection of the scalar E/S calculation turns the OWN-S interval into
-exactly these two signed inequalities; no new global reflection is used. -/
+/-- This reflects only the scalar E/S calculation, not the global D window. -/
 theorem eastsouth_domain_iff_own_tail {R : ℝ} (P : NormalizedPacking R) :
     Domain (P.ownBits 0) (P.ownBits 4) (-P.helperAngle 0) (-P.helperAngle 4) ↔
       (P.ownBits 4=true → -2/25 ≤ P.helperAngle 4 ∧ P.helperAngle 4 ≤ 11/25) := by
@@ -84,8 +95,7 @@ theorem eastsouth_domain_iff_own_tail {R : ℝ} (P : NormalizedPacking R) :
       simp only [hS,if_true]
       constructor <;> linarith [hs.1,hs.2]
 
-/-- This states the exact remaining mathematical work. In particular neither
-normalization nor d>1/2 is left as an unproved input to the final interface. -/
+/-- Neither normalization nor d>1/2 is an unproved premise of this interface. -/
 theorem reduction_iff_edges_and_own_tails {R : ℝ} (P : NormalizedPacking R) :
     ReductionHypotheses P ↔ (CandidateDSeparators P ∧ OwnWingTailBounds P) := by
   constructor
@@ -96,18 +106,28 @@ theorem reduction_iff_edges_and_own_tails {R : ℝ} (P : NormalizedPacking R) :
     exact ⟨hedges,(northwest_domain_iff_own_tail P).mpr hW,
       (eastsouth_domain_iff_own_tail P).mpr hS,(normalized_diagonal_gt_half P).le⟩
 
-/-- The source alternatives are the genuine missing-wing cases, not merely
-arbitrary choices of a separating index at a tie. This does not exclude them. -/
+/-- Backwards-compatible formulation of the reduction equivalence. -/
 theorem reduction_iff_remaining_obligations {R : ℝ} (P : NormalizedPacking R) :
     ReductionHypotheses P ↔
       (¬ MissingWestWing P ∧ ¬ MissingSouthWing P) ∧ OwnWingTailBounds P := by
   rw [reduction_iff_edges_and_own_tails,candidate_edges_iff_no_missing_wing]
 
-/-- A usable closing implication once the remaining substantive inequalities
-are provided. No unconditional radius conclusion is asserted by this lemma. -/
+/-- Four substantive facts remain, not five: the lower OWN-S tail is supplied
+by its whole-domain canonical-separator proof. -/
+theorem reduction_iff_four_obligations {R : ℝ} (P : NormalizedPacking R) :
+    ReductionHypotheses P ↔
+      (¬ MissingWestWing P ∧ ¬ MissingSouthWing P) ∧ OwnWingOuterBounds P := by
+  rw [reduction_iff_remaining_obligations,own_tail_bounds_iff_outer_bounds]
+
+/-- A closing implication, still conditional on the unresolved case reductions. -/
 theorem radius_of_edges_and_own_tails {R : ℝ} (P : NormalizedPacking R)
     (hR : R^2 ≤ Six.qStar) (hedges : CandidateDSeparators P) (htails : OwnWingTailBounds P) :
     R=Six.radius :=
   radius_of_reduction P hR ((reduction_iff_edges_and_own_tails P).mpr ⟨hedges,htails⟩)
+
+theorem radius_of_edges_and_outer_tails {R : ℝ} (P : NormalizedPacking R)
+    (hR : R^2 ≤ Six.qStar) (hedges : CandidateDSeparators P) (htails : OwnWingOuterBounds P) :
+    R=Six.radius :=
+  radius_of_edges_and_own_tails P hR hedges ((own_tail_bounds_iff_outer_bounds P).mpr htails)
 
 end SquaresInCircles.Six.Analytic.FixedPair
