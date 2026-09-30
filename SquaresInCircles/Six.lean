@@ -1,33 +1,24 @@
 module
-public import SquaresInCircles.Six.Construction
-public import SquaresInCircles.Six.Normalization.StrongCardinal
-public import SquaresInCircles.Six.Stress.CandidateRadius
-public import SquaresInCircles.Six.Stress.CandidateCardinal
-public import SquaresInCircles.Six.Stress.StrictSupport
-public import SquaresInCircles.Six.Classification.CandidateGraph
-public import SquaresInCircles.Six.Goals
+public import SquaresInCircles.Six.Uniqueness
 
 @[expose] public section
 
 /-!
-# Six-square formalization development entry point
+# Six-square proof entry point
 
-The isolated development imports the normalization source chain, its N25+
-cardinal E/N refinement, the candidate-radius central box and support, the
-candidate-radius opposite-cardinal budgets, the strict-support implication,
-and the complete fixed-stress D-edge classification. The latter starts from
-actual pairwise disjointness, orients SAT axes by the fixed pins, and proves
-that every normalized packing reaches the common candidate D-edge graph
-W-secondary / S-secondary.
+This entry point exports the exact candidate construction, unrestricted radius
+lower bound, uniqueness, and Optimum 6 source declarations. Both endpoint paths
+now use the analytic fixed-pair bound and the eight-contact equality argument.
+The legacy BalancedClosure, pair-envelope checker, and its derivative-cover
+proofs are not used by those endpoints.
 
-The remaining work is the candidate-graph scalar closure, the survivor and
-Pattern-8 equality chains, equality reconstruction, and the unrestricted
-lower-bound and uniqueness endpoints. A generic stress theorem cannot
-substitute for those concrete pattern proofs.
+The remaining internal finite classification is deliberately isolated in
+Classification.Reduction. Replacing that boundary by the three open analytic
+geometric facts would remove the remaining fixed-row/ExactCover dependencies;
+this entry point does not claim that replacement has already happened.
 
-Compilation and kernel acceptance remain separate from source completion.
-Source bodies and independently replayed arithmetic are recorded in
-`research/six/lean/CHECKLIST.md`, `research/six/lean/DOWNSTREAM_CHECKLIST.md`
-and `UPLOAD_AUDIT.md`. This module remains separate from the public
-`SquaresInCircles` root.
+No external script's success is a theorem premise. Source declarations have
+not been compiled or kernel-audited in this continuation. The current state
+and remaining work are recorded in research/six/lean/STATUS.md and
+EXTERNAL_DEPENDENCY_REMOVAL_CHECKLIST.md.
 -/
