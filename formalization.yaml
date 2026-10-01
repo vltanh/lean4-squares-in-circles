@@ -168,7 +168,9 @@ automation:
         chat, with numerical certificates (pull request #6), in which Claude
         wrote the normalization; ChatGPT 6 Pro then turned the certificates
         into the analytical proof formalized here and wrote the whole Lean
-        proof (pull request #7).
+        proof (pull request #7). ChatGPT 6 Pro also wrote the human-readable
+        proofs that replaced the Bernstein certificates of seven squares
+        (pull request #8).
     - method: "agent"
       models: ["Claude Opus 5.5"]
       framework: "Claude"
@@ -194,9 +196,10 @@ automation:
     ChatGPT's latest model and Claude Opus 5.5 Max, both in chat, proved the
     optimum together with numerical certificates, Claude writing the
     normalization; ChatGPT 6 Pro turned this proof into an analytical one and
-    wrote the Lean, without compiling it. Claude Opus 5 and 5.5, in Claude
-    Code, compiled, repaired and modified all of these, and wrote the proofs
-    of one and two squares. The repository owner directed and reviewed the
+    wrote the Lean, without compiling it. It later wrote human-readable
+    proofs to replace the Bernstein certificates of seven squares. Claude
+    Opus 5 and 5.5, in Claude Code, compiled, repaired and modified all of
+    these, and wrote the proofs of one and two squares. The repository owner directed and reviewed the
     work and decided its scope and naming. docs/contributors.md gives a dated
     account, and the commits name the models that co-authored them.
 

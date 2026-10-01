@@ -91,7 +91,7 @@ declarations that prove it.
 - [Appendix A. One-variable estimates and the marker arc](appendix-a.md)
   - [A.1 Monotonicity and concavity](appendix-a.md#a1-monotonicity-and-concavity)
   - [A.2 Sine and cosine](appendix-a.md#a2-sine-and-cosine)
-  - [A.3 The Bernstein criterion](appendix-a.md#a3-the-bernstein-criterion)
+  - [A.3 A peak](appendix-a.md#a3-a-peak)
   - [A.4 Proof of Lemma 9.9](appendix-a.md#a4-proof-of-lemma-99)
 - [Appendix B. The critical gap: set-up and the easy axes](appendix-b.md)
   - [B.1 The plan](appendix-b.md#b1-the-plan)

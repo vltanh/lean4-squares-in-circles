@@ -259,31 +259,57 @@ def taylor():
            'hold on [0, infinity) and are tight near 0')
 
 
-# The Bernstein basis (Definition A.9).
+# A peak (Lemma A.9).
 
-def bernstein_basis():
-    n = 4
-    p = Plot(-0.12, 1.12, -0.16, 1.12, 380, 250)
-    x_axis(p, -0.05, 1.1, ticks=((0, 'l'), (1, 'u')), label='x')
-    y_axis(p, 0, 1.1, ticks=((1, '1'),))
-    p.line((0, 1), (1, 1), stroke=FAINT, width=1.4, dash='6 4')
-    for i in range(n + 1):
-        b = lambda x, i=i: math.comb(n, i) * x ** i * (1 - x) ** (n - i)
-        p.curve(b, 0, 1, stroke=COLORS[i], width=2.2)
-        if i == 0:
-            p.text((0.1, b(0.1)), sb('b', '4,0', size=15), size=15,
-                   color=COLORS[i], anchor='start', dx=8, dy=-4)
-        elif i == n:
-            p.text((0.9, b(0.9)), sb('b', '4,4', size=15), size=15,
-                   color=COLORS[i], anchor='end', dx=-8, dy=-4)
-        else:
-            p.text((i / n, b(i / n)), sb('b', f'4,{i}', size=15), size=15,
-                   color=COLORS[i], dy=-14)
-    p.text((0.5, 1), 'the sum is 1', size=13, italic=False, color=FAINT,
-           dy=-11)
-    p.save('appa-bernstein-basis', 'The five Bernstein basis polynomials of '
-           'degree 4 on an interval [l, u]: they are nonnegative there and add '
-           'up to 1')
+def peak():
+    """Lemma A.9 for f(y) = y^3/3 - y^4/4, whose derivative d(y) = y^2 (1 - y)
+    is nonnegative on [l, c] = [-0.35, 1], with a double zero at 0, and
+    nonpositive on [c, u] = [1, 1.25]: f is largest at c, although it is not
+    concave."""
+    l, c, r = -0.35, 1.0, 1.25
+    f = lambda y: y ** 3 / 3 - y ** 4 / 4
+    d = lambda y: y * y * (1 - y)
+    for k in range(401):
+        y = l + (r - l) * k / 400
+        e = 1e-6
+        assert abs((f(y + e) - f(y - e)) / (2 * e) - d(y)) < 1e-8
+        assert d(y) >= 0 if y <= c else d(y) <= 0
+        assert f(y) <= f(c)
+    # f is drawn above, d below, each at its own vertical scale.
+    above = lambda y: 1.25 + 15 * f(y)
+    below = lambda y: 2.4 * d(y)
+    lo, hi = -1.08, 2.78
+    pl = Plot(l - 0.2, r + 0.12, lo - 0.3, hi + 0.06, 300, 100)
+    pl.polygon([(l, lo), (c, lo), (c, hi), (l, hi)], fill=FILLS[2],
+               stroke='none', opacity=0.55)
+    pl.polygon([(c, lo), (r, lo), (r, hi), (c, hi)], fill=FILLS[1],
+               stroke='none', opacity=0.55)
+    for y, name in ((l, 'l'), (c, 'c'), (r, 'u')):
+        a, b = pl.q(y, lo)
+        pl.f.line((a, b - 4), (a, b + 4), width=1)
+        pl.f.text((a, b), name, size=15, dy=15)
+    pl.line((l, lo), (r, lo), width=1)
+    # Above: f and its value at the peak.
+    pl.line((l, above(c)), (r, above(c)), stroke=INK, width=1.3, dash='6 4')
+    pl.text((l, above(c)), 'f(c)', size=14, anchor='end', dx=-6)
+    pl.curve(above, l, r, stroke=BLUE, width=2.4)
+    pl.dot((c, above(c)), fill=BLUE)
+    pl.text((-0.2, above(-0.2)), 'f', size=17, color=BLUE, dy=-14)
+    # The flat point of f, where d touches zero.
+    pl.line((0, 0), (0, above(0)), stroke=FAINT, width=1, dash='3 3')
+    pl.dot((0, above(0)), r=2.6, fill=BLUE)
+    pl.dot((0, 0), r=2.6, fill=PURPLE)
+    # Below: d and its zero line.
+    pl.line((l, 0), (r, 0), width=1)
+    pl.text((l, 0), '0', size=13, italic=False, anchor='end', dx=-6)
+    pl.curve(below, l, r, stroke=PURPLE, width=2.2)
+    pl.text((0.62, below(0.62)), 'd', size=17, color=PURPLE, dy=-14)
+    pl.text(((l + c) / 2, -0.55), 'd ≥ 0', size=14, color=GREEN)
+    pl.text(((c + r) / 2, 0.45), 'd ≤ 0', size=14, color=ORANGE)
+    pl.save('appa-peak', 'Lemma A.9 for f(y) = y cubed/3 - y to the '
+            'fourth/4 on [-0.35, 1.25]: its derivative d(y) = y squared '
+            '(1 - y) is nonnegative up to c = 1, vanishing at 0, and '
+            'nonpositive after it, so f stays below its value at c')
 
 
 # The marker arc in the chart (section A.4).
@@ -404,7 +430,7 @@ def admissible_region():
            'a = x + 1/2 the circle bounds u')
 
 
-# A line against the arcsine (Lemma A.11).
+# A line against the arcsine (Lemma A.10).
 
 def asin_line():
     g = lambda y: 1.25 * y - math.asin(max(-1.0, min(1.0, y)))
@@ -438,7 +464,7 @@ def asin_line():
            'on the range of the upper edge it stays below its value at 3/5')
 
 
-# The label between the transverse edges (Lemmas A.12 and A.13).
+# The label between the transverse edges (Lemmas A.11 and A.12).
 
 def transverse():
     umax = math.sqrt(TARGET / 2) - 0.5
@@ -452,7 +478,7 @@ def transverse():
     high = [label(max(0.5, uu), uu) for uu in us]
     lower_edge = lambda uu: math.asin(uu - 0.5) + HALF_WIDTH
     upper_edge = lambda uu: math.asin(min(1.0, uu + 0.5)) - HALF_WIDTH
-    # Lemmas A.12 and A.13 on a grid of admissible states.
+    # Lemmas A.11 and A.12 on a grid of admissible states.
     for i in range(0, n + 1, 4):
         uu = us[i]
         for j in range(41):
@@ -485,7 +511,7 @@ def transverse():
            '1/2 below the curve arcsin(u + 1/2) - 801/1600 of the upper edge')
 
 
-# The envelope (Definition A.14 and Lemmas A.15 to A.17).
+# The envelope (Definition A.13 and Lemmas A.14 to A.16).
 
 def envelope(x):
     return (1 / 24 + math.sqrt(TARGET - (x + 1) ** 2) / 3 + math.asin(x)
@@ -529,66 +555,77 @@ def envelope_band():
            'touches it where the disk bounds u')
 
 
-def curvature_polynomial():
-    P = lambda x: 676 * (1 - x * x) ** 3 - 9 * x * x * (9 - 8 * x - 4 * x * x) ** 3
-    c = [676, 676, 32221 / 64, 64997 / 224, 327833 / 2240, 14627 / 128,
-         3921235 / 28672, 402967 / 4096, 13945 / 256]
-    w = 0.75
-    for k in range(101):
-        x = w * k / 100
-        s = sum(c[i] * math.comb(8, i) * x ** i * (w - x) ** (8 - i)
-                for i in range(9)) / w ** 8
-        assert abs(s - P(x)) < 1e-8 * 676
-    pts = [(w * i / 8, c[i]) for i in range(9)]
-    p = Plot(-0.07, 0.83, -60, 740, 560, 0.4)
-    x_axis(p, -0.02, 0.81, ticks=((0, '0'), (w, '¾')), label='x')
-    y_axis(p, -20, 730, ticks=((100, '100'), (300, '300'), (500, '500'),
-                               (676, '676')))
-    p.line((0, min(c)), (w, min(c)), stroke=ORANGE, width=1, dash='3 3')
-    p.polyline(pts, stroke=FAINT, width=1.4, dash='5 3')
-    p.curve(P, 0, w, stroke=BLUE, width=2.4)
-    for i, q in enumerate(pts):
-        p.dot(q, r=4, fill=ORANGE)
-        p.text(q, sb('c', str(i), size=13), size=13, color=ORANGE, dy=-12)
-    p.text((0.36, P(0.36)), 'P', size=17, color=BLUE, anchor='end', dx=-10,
-           dy=-6)
-    p.save('appa-bernstein', 'The curvature polynomial P on [0, 3/4] and its '
-           'nine Bernstein coefficients of degree 8, drawn as a control '
-           'polygon at the points 3i/32; all of them are positive')
+def peak_bound():
+    """Lemma A.14: h(x) = 9 (x + 1/8)^2 (9 - 7x)^3 rises on [0, 123/280],
+    falls on [123/280, 3/4], and its peak is below 676."""
+    h = lambda x: 9 * (x + 1 / 8) ** 2 * (9 - 7 * x) ** 3
+    dh = lambda x: 9 * (x + 1 / 8) * (9 - 7 * x) ** 2 * (123 / 8 - 35 * x)
+    c, w = 123 / 280, 0.75
+    for k in range(301):
+        x = w * k / 300
+        assert (dh(x) >= 0) == (x <= c) or abs(x - c) < 1e-12
+        assert h(x) <= h(c) < 9 * (4 / 7) ** 2 * 6 ** 3 < 676
+    pl = Plot(-0.07, 0.86, -40, 760, 560, 0.42)
+    pl.polygon([(0, 0), (c, 0), (c, 735), (0, 735)], fill=FILLS[2],
+               stroke='none', opacity=0.55)
+    pl.polygon([(c, 0), (w, 0), (w, 735), (c, 735)], fill=FILLS[1],
+               stroke='none', opacity=0.55)
+    x_axis(pl, -0.03, 0.84, ticks=((0, '0'), (w, '¾')), label='x')
+    vtick(pl, c, 0, '123/280')
+    y_axis(pl, 0, 745, ticks=((200, '200'), (400, '400'), (676, '676')))
+    pl.line((0, 676), (0.8, 676), stroke=INK, width=1.3, dash='6 4')
+    pl.line((0, h(c)), (c, h(c)), stroke=FAINT, width=1, dash='3 3')
+    pl.line((c, 0), (c, h(c)), stroke=FAINT, width=1, dash='3 3')
+    pl.curve(h, 0, w, stroke=BLUE, width=2.4)
+    pl.dot((c, h(c)), fill=BLUE)
+    pl.text((c, h(c)), f'h(123/280) ≈ {h(c):.1f}', size=13, italic=False,
+            color=BLUE, dy=-14)
+    pl.text((0.12, h(0.12)), 'h', size=17, color=BLUE, anchor='end', dx=-8,
+            dy=-6)
+    pl.text((c / 2, 40), "h′ ≥ 0", size=14, color=GREEN)
+    pl.text(((c + w) / 2, 40), "h′ ≤ 0", size=14, color=ORANGE)
+    pl.save('appa-peak-bound', 'The function h(x) = 9 (x + 1/8) squared '
+            '(9 - 7x) cubed on [0, 3/4]: it increases up to x = 123/280, '
+            'where its derivative changes sign, and decreases after it; its '
+            'peak, about 596.1, is below 676')
 
 
-def envelope_tangent():
-    t = 1 / 8
-    d = 1 / math.sqrt(1 - t * t) - 0.75 - (t + 1) / (
-        3 * math.sqrt(TARGET - (t + 1) ** 2))
-    tan = lambda x: envelope(t) + d * (x - t)
-    for k in range(101):
-        x = 0.75 * k / 100
-        assert envelope(x) <= tan(x) + 1e-12 and envelope(x) <= 0.5443
+def envelope_parabola():
+    """Lemma A.16: the envelope minus pi/6 below the parabola with its value
+    13/24 and slope 1/36 at 0 and curvature -1/8, whose top 353/648 at 2/9 is
+    below the level pi/3 - 801/1600 of Lemma A.17."""
+    par = lambda x: 13 / 24 + x / 36 - x * x / 16
+    top = 353 / 648
+    slope = 1 - 0.75 - 1 / (3 * math.sqrt(TARGET - 1))
+    assert abs(envelope(0) - 13 / 24) < 1e-12 and abs(slope - 1 / 36) < 1e-12
+    assert abs(par(2 / 9) - top) < 1e-12
     level = math.pi / 3 - HALF_WIDTH
-    p = Plot(-0.07, 0.84, 0.455, 0.565, 520, 3000)
-    x_axis(p, -0.02, 0.82, y=0.46, ticks=((0, '0'), (t, '1/8'), (0.75, '¾')),
+    for k in range(301):
+        x = 0.75 * k / 300
+        assert envelope(x) <= par(x) + 1e-12 and par(x) <= top < level
+    pl = Plot(-0.07, 0.86, 0.462, 0.557, 520, 4000)
+    x_axis(pl, -0.02, 0.84, y=0.466, ticks=((0, '0'), (0.75, '¾')),
            label='x')
-    y_axis(p, 0.46, 0.562, x=0, ticks=((0.48, '0.48'), (0.5, '0.50'),
-                                       (0.52, '0.52'), (0.54, '0.54')))
-    p.line((0, level), (0.8, level), stroke=INK, width=1.3)
-    p.text((0.8, level), 'π/3 − 801/1600', size=13, italic=False,
-           anchor='end', dy=-10)
-    p.line((0, 0.5443), (0.8, 0.5443), stroke=GREEN, width=1.3, dash='6 4')
-    p.text((0.8, 0.5443), '0.5443', size=13, italic=False, color=GREEN,
-           anchor='end', dy=11)
-    p.line((0, tan(0)), (0.75, tan(0.75)), stroke=PURPLE, width=1.6,
-           dash='7 4')
-    p.line((t, 0.46), (t, envelope(t)), stroke=FAINT, width=1, dash='3 3')
-    p.curve(envelope, 0, 0.75, stroke=ORANGE, width=2.4)
-    p.dot((t, envelope(t)), fill=PURPLE)
-    p.text((0.45, tan(0.45)), 'tangent at 1/8', size=13, italic=False,
-           color=PURPLE, dy=13)
-    p.text((0.55, envelope(0.55)), 'E(x) − π/6', size=14, color=ORANGE,
-           anchor='end', dx=-10, dy=6)
-    p.save('appa-envelope', 'The envelope minus pi/6 on [0, 3/4], below its '
-           'tangent at 1/8, which is nearly flat; both stay below 0.5443, '
-           'itself below pi/3 - 801/1600')
+    vtick(pl, 2 / 9, 0.466, '2/9')
+    y_axis(pl, 0.466, 0.555, x=0, ticks=((0.48, '0.48'), (0.5, '0.50'),
+                                         (0.52, '0.52'), (top, '353/648')))
+    pl.line((0, level), (0.8, level), stroke=INK, width=1.3)
+    pl.text((0.8, level), 'π/3 − 801/1600', size=13, italic=False,
+            anchor='end', dy=-10)
+    pl.line((0, top), (2 / 9, top), stroke=FAINT, width=1, dash='3 3')
+    pl.line((2 / 9, 0.466), (2 / 9, top), stroke=FAINT, width=1, dash='3 3')
+    pl.curve(par, 0, 0.75, stroke=PURPLE, width=1.8, dash='7 4')
+    pl.curve(envelope, 0, 0.75, stroke=ORANGE, width=2.4)
+    pl.dot((2 / 9, top), fill=PURPLE)
+    pl.dot((0, envelope(0)), fill=INK)
+    pl.text((0.555, 0.5225), '13/24 + x/36 − x²/16', size=13,
+            color=PURPLE, anchor='start')
+    pl.text((0.5, envelope(0.5)), 'E(x) − π/6', size=14, color=ORANGE,
+            anchor='end', dx=-12, dy=10)
+    pl.save('appa-parabola', 'The envelope minus pi/6 on [0, 3/4] below the '
+            'parabola 13/24 + x/36 - x squared/16, which has the same value '
+            'and slope at 0 and is highest, at 353/648, at x = 2/9; the level '
+            'pi/3 - 801/1600 lies above both')
 
 
 def main():
@@ -596,14 +633,14 @@ def main():
     concave()
     sin_cos()
     taylor()
-    bernstein_basis()
+    peak()
     admissible_region()
     marker_arc()
     asin_line()
     transverse()
     envelope_band()
-    curvature_polynomial()
-    envelope_tangent()
+    peak_bound()
+    envelope_parabola()
 
 
 if __name__ == '__main__':

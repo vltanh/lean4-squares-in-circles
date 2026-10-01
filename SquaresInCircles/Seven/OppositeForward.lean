@@ -217,27 +217,26 @@ lemma opposite_support_negative_turn {u A v z : ℝ}
   rw [Real.sin_neg,Real.cos_neg,abs_neg,abs_of_nonneg hs]
   linarith
 
+/-- Cauchy–Schwarz: the vector `(√3 - 1, 1/2)` is shorter than `9/10`. -/
+lemma opposite_slope_lt (z : ℝ) :
+    (Real.sqrt 3-1)*Real.cos z+(1/2)*Real.sin z < 9/10 := by
+  have hid : ((Real.sqrt 3-1)*Real.cos z+(1/2)*Real.sin z)^2+
+      ((Real.sqrt 3-1)*Real.sin z-(1/2)*Real.cos z)^2 = (Real.sqrt 3-1)^2+1/4 := by
+    linear_combination ((Real.sqrt 3-1)^2+1/4)*Real.cos_sq_add_sin_sq z
+  nlinarith [Real.sq_sqrt (show (0 : ℝ) ≤ 3 by norm_num),sqrt_three_bounds.1,
+    sq_nonneg ((Real.sqrt 3-1)*Real.sin z-(1/2)*Real.cos z)]
+
+/-- The value `1 - 4π/15` at zero exceeds the largest possible loss `π/30` on
+`[0, π/3]`: by `opposite_slope_lt` the slope stays above `-1/10`. -/
 lemma opposite_axial_scalar {z : ℝ} (hz : 0 ≤ z ∧ z ≤ Real.pi/3) :
     0 < 1-4*Real.pi/15+(4/5)*z-(Real.sqrt 3-1)*Real.sin z
       -(1/2)*(1-Real.cos z) := by
-  have hz1 : z ≤ 11/10 := by linarith [hz.2,pi_lt_22_over_7]
-  have hp : 0 < 17/105+z/20-z^2/4+7*z^3/60-z^5/160 :=
-    bernstein_pos (p := fun z => 17/105+z/20-z^2/4+7*z^3/60-z^5/160)
-      ![17/105,3631/21000,12907/84000,502669/4200000,22711/262500,20033129/336000000]
-      (fun i => by fin_cases i <;> norm_num) (by norm_num)
-      (fun x => by simp only [bernstein,Fin.sum_univ_succ,Fin.sum_univ_zero]
-                   norm_num [Nat.choose]; ring) ⟨hz.1,hz1⟩
-  have c0 : 0 ≤ Real.sqrt 3-1 := by linarith [sqrt_three_bounds.1]
-  have cL : 7/10 ≤ Real.sqrt 3-1 := by linarith [sqrt_three_bounds.1]
-  have cU : Real.sqrt 3-1 ≤ 3/4 := by linarith [sqrt_three_bounds.2]
-  have hs := mul_le_mul_of_nonneg_left (sin_upper_five hz.1) c0
-  have hc := Real.one_sub_sq_div_two_le_cos (x := z)
-  have h1 := mul_nonneg hz.1 (show 0 ≤ 3/4-(Real.sqrt 3-1) by linarith)
-  have h3 := mul_nonneg (pow_nonneg hz.1 3)
-    (show 0 ≤ Real.sqrt 3-1-7/10 by linarith)
-  have h5 := mul_nonneg (pow_nonneg hz.1 5)
-    (show 0 ≤ 3/4-(Real.sqrt 3-1) by linarith)
-  linarith [pi_lt_22_over_7]
+  have h := nonneg_of_deriv_nonneg
+    (fun x => (9/10)*x-(Real.sqrt 3-1)*Real.sin x-(1/2)*(1-Real.cos x))
+    (by fun_prop) (by simp) (fun x _ => by
+      simp (disch := fun_prop)
+      linarith [opposite_slope_lt x]) hz.1
+  linarith [hz.2,pi_lt_22_over_7]
 
 lemma opposite_axial_axial_pos {a u A v : ℝ}
     (h : Admissible a u) (h' : Admissible A v)

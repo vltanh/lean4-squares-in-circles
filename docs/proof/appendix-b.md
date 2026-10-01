@@ -369,12 +369,12 @@ Let $(a, u)$ be admissible and $\ell = \ell(a, u)$.
 *Proof.* Parts (1) and (2) are parts (2) and (1) of [Lemma 9.8](seven.md#lemma-98-side-and-axial-labels), and part (3) is
 [Lemma 9.7](seven.md#lemma-97-the-label) (3). $\square$
 
-*Lean: [`Seven.axial_tie_line`](../../SquaresInCircles/Seven/Labels.lean#L177),
-[`Seven.axial_sum_lt`](../../SquaresInCircles/Seven/Labels.lean#L184),
-[`Seven.side_selected_label_gt`](../../SquaresInCircles/Seven/Labels.lean#L128),
-[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Labels.lean#L169),
-[`Seven.side_selected_a_lt`](../../SquaresInCircles/Seven/Labels.lean#L159),
-[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Labels.lean#L194),
+*Lean: [`Seven.axial_tie_line`](../../SquaresInCircles/Seven/Labels.lean#L165),
+[`Seven.axial_sum_lt`](../../SquaresInCircles/Seven/Labels.lean#L174),
+[`Seven.side_selected_label_gt`](../../SquaresInCircles/Seven/Labels.lean#L134),
+[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Labels.lean#L157),
+[`Seven.side_selected_a_lt`](../../SquaresInCircles/Seven/Labels.lean#L146),
+[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Labels.lean#L184),
 [`Seven.Admissible.radial_label_bound`](../../SquaresInCircles/Seven/Labels.lean#L112).*
 
 ### Definition B.9 (boundary curves and special states)
@@ -1198,13 +1198,13 @@ is the target part at the tie state of label $\ell'$, and $H$ at the top of the
 side label $\ell'$. At the switch label, $d = \omega$.
 
 *Lean:
-[`Seven.Boundary.axialX`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L14),
-[`Seven.Boundary.axialY`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L15),
-[`Seven.Boundary.circleTarget`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L23),
-[`Seven.Boundary.lineTarget`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L25),
-[`Seven.Boundary.vertexTarget`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L27),
-[`Seven.Boundary.switchAngle`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L30),
-[`Seven.Boundary.switchLabel`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L31).*
+[`Seven.Boundary.axialX`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L15),
+[`Seven.Boundary.axialY`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L16),
+[`Seven.Boundary.circleTarget`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L24),
+[`Seven.Boundary.lineTarget`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L26),
+[`Seven.Boundary.vertexTarget`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L28),
+[`Seven.Boundary.switchAngle`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L31),
+[`Seven.Boundary.switchLabel`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L32).*
 
 ### Lemma B.22 (a derivative ratio)
 
@@ -1215,13 +1215,29 @@ Let $0 \le \ell' \le s_0$, and write $\xi, \eta$ for $\xi(\ell'), \eta(\ell')$.
 2. $\xi$ and $\eta$ are differentiable, with $\xi' = -\frac45\cdot\frac\eta\xi$
    and $\eta' = \frac45$.
 3. The function $\rho = \frac{\xi(\frac95 - \xi)}{\eta(\xi - \frac45)}$ is
-   nonnegative, $\rho(0) < \frac{51}{200}$, and its derivative
+   nonnegative, and $\rho(0) < 2 - \sqrt3$.
+4. The derivative of $\rho$ is
 
    ```math
-   \rho' = \frac{4\left(25\xi^4 - 65\xi^3 + 25\xi^2\eta^2 + 36\xi^2 - 40\xi\eta^2 + 36\eta^2\right)}{5\xi\eta^2(5\xi - 4)^2}
+   \rho' = \frac{4\left(25\xi^4 - 65\xi^3 + 25\xi^2\eta^2 + 36\xi^2 - 40\xi\eta^2 + 36\eta^2\right)}{5\xi\eta^2(5\xi - 4)^2} ,
+   \qquad
+   1 - \rho' = \frac{P(\xi)}{5\xi(5\xi - 4)^2(13 - 4\xi^2)} ,
    ```
 
-   satisfies $\rho' < 1$.
+   where the quintic
+
+   ```math
+   P(X) = -500X^5 + 800X^4 + 1705X^3 - 3900X^2 + 3120X - 1872
+   ```
+
+   is positive on $[\frac85, \frac74]$. In particular $\rho' < 1$.
+5. $(2 - \sqrt3)\cos x \le \sin x$ for $\frac\pi{12} \le x \le \frac\pi2$.
+
+The number $2 - \sqrt3$ is $\tan\frac\pi{12}$ (see the proof of (5)), so (3)
+and (5) give $\rho(0) < \tan x$ for $\frac\pi{12} \le x < \frac\pi2$.
+Proposition B.23 uses this with $x$ the angle $d$ of the target support at
+$\ell' = 0$, and then (4) to keep $\rho$ below $\tan d$ as $\ell'$ grows
+(Figure B.6).
 
 *Proof.* (1) Let $w = \frac45\ell' \in [0, u_0]$ (as $s_0 = \frac54 u_0$). Then
 $\xi = \gamma(w) + \frac12$ and $\eta = w + \frac12$, so
@@ -1235,71 +1251,123 @@ $\xi \le \sqrt3 < 1.733 < \frac74$.
 gives $\xi' = -\frac{\eta\eta'}\xi = -\frac45\cdot\frac\eta\xi$.
 
 (3) Since $\frac45 < \xi < \frac74 < \frac95$ and $\eta > 0$, $\rho \ge 0$. At
-$\ell' = 0$, $\xi = \sqrt3$ and $\eta = \frac12$, and since
-$\sqrt3 - \frac45 > 0$,
+$\ell' = 0$, $\xi = \sqrt3$ and $\eta = \frac12$; multiplying the numerator and
+the denominator of $\rho(0)$ by $5$, and using
+$(2 - \sqrt3)(5\sqrt3 - 4) = 14\sqrt3 - 23$,
 
 ```math
-\rho(0) < \tfrac{51}{200}
-\iff 2\sqrt3\left(\tfrac95 - \sqrt3\right) < \tfrac{51}{200}\left(\sqrt3 - \tfrac45\right)
-\iff \tfrac{669}{200}\sqrt3 < \tfrac{1449}{250}
-\iff \sqrt3 < \tfrac{1932}{1115} ,
+\rho(0) = \frac{2\sqrt3\left(\frac95 - \sqrt3\right)}{\sqrt3 - \frac45} = \frac{18\sqrt3 - 30}{5\sqrt3 - 4},
+\qquad
+2 - \sqrt3 - \rho(0) = \frac{(14\sqrt3 - 23) - (18\sqrt3 - 30)}{5\sqrt3 - 4} = \frac{7 - 4\sqrt3}{5\sqrt3 - 4} .
 ```
 
-which holds because $3\cdot 1115^2 = 3729675 < 3732624 = 1932^2$.
+Both $7 - 4\sqrt3$ and $5\sqrt3 - 4$ are positive, as $(4\sqrt3)^2 = 48 < 49$
+and $(5\sqrt3)^2 = 75 > 16$. So $\rho(0) < 2 - \sqrt3$; numerically
+$\rho(0) \approx 0.2525$ and $2 - \sqrt3 \approx 0.2679$.
 
-The formula for $\rho'$ follows from the quotient rule with (2): the numerator
-of $\rho$ has derivative $\xi'(\frac95 - 2\xi)$ and the denominator
-$\frac45(\xi - \frac45) + \eta\xi'$; substituting $\xi' = -\frac{4\eta}{5\xi}$
-and clearing denominators gives the displayed quotient, as one checks by
-expanding. To compare $\rho'$ with $1$, substitute
-$\eta^2 = \frac{13}4 - \xi^2$: the numerator becomes
-$4(-25\xi^3 + \frac{325}4\xi^2 - 130\xi + 117)$ and the denominator
-$\frac54\xi(5\xi - 4)^2(13 - 4\xi^2)$, and
+(4) The formula for $\rho'$ follows from the quotient rule with (2): the
+numerator $\xi(\frac95 - \xi)$ of $\rho$ has derivative $\xi'(\frac95 - 2\xi)$
+and the denominator $\eta(\xi - \frac45)$ has derivative
+$\frac45(\xi - \frac45) + \eta\xi'$. Substituting $\xi' = -\frac{4\eta}{5\xi}$
+and expanding,
 
 ```math
-1 - \rho' = \frac{P(\xi)}{5\xi(5\xi - 4)^2(13 - 4\xi^2)},
-\qquad P(X) = -500X^5 + 800X^4 + 1705X^3 - 3900X^2 + 3120X - 1872 ,
+\xi'\left(\tfrac95 - 2\xi\right)\eta\left(\xi - \tfrac45\right) - \xi\left(\tfrac95 - \xi\right)\left(\tfrac45\left(\xi - \tfrac45\right) + \eta\xi'\right)
+= \frac{4\left(25\xi^4 - 65\xi^3 + 25\xi^2\eta^2 + 36\xi^2 - 40\xi\eta^2 + 36\eta^2\right)}{125\xi} ,
 ```
 
-because
+and dividing by the squared denominator
+$\eta^2(\xi - \frac45)^2 = \frac1{25}\eta^2(5\xi - 4)^2$ gives the displayed
+quotient. To compare $\rho'$ with $1$, substitute
+$\eta^2 = \frac{13}4 - \xi^2$ in that quotient: its numerator becomes
+$4(-25\xi^3 + \frac{325}4\xi^2 - 130\xi + 117)$ and its denominator
+$\frac54\xi(5\xi - 4)^2(13 - 4\xi^2)$, so
+
+```math
+\rho' = \frac{16\left(-25\xi^3 + \frac{325}4\xi^2 - 130\xi + 117\right)}{5\xi(5\xi - 4)^2(13 - 4\xi^2)} .
+```
+
+The formula for $1 - \rho'$ follows, because
 
 ```math
 \begin{aligned}
 5X(5X - 4)^2(13 - 4X^2) &= -500X^5 + 800X^4 + 1305X^3 - 2600X^2 + 1040X,\\
-16\left(-25X^3 + \tfrac{325}4X^2 - 130X + 117\right) &= -400X^3 + 1300X^2 - 2080X + 1872 .
+16\left(-25X^3 + \tfrac{325}4X^2 - 130X + 117\right) &= -400X^3 + 1300X^2 - 2080X + 1872 ,
 \end{aligned}
 ```
 
-The denominator is positive, since $13 - 4\xi^2 = 4\eta^2$. The quintic $P$ is
-positive on $[\frac85, \frac74]$ by its Bernstein coefficients
-([Lemma A.10](appendix-a.md#lemma-a10-bernstein-criterion)) (Figure B.6): the interval has length
-$\frac74 - \frac85 = \frac3{20}$, and
+and the first right side minus the second is $P(X)$. The denominator
+$5\xi(5\xi - 4)^2(13 - 4\xi^2)$ is positive, since $\xi > \frac85$ and
+$13 - 4\xi^2 = 4\eta^2 > 0$.
+
+It remains to show that $P > 0$ on $[\frac85, \frac74]$, which contains $\xi$
+by (1). The quintic is concave there (Figure B.6): its derivatives are
 
 ```math
-P(X)\left(\tfrac3{20}\right)^5 = \sum_{i=0}^{5} c_i\binom5i\left(X - \tfrac85\right)^i\left(\tfrac74 - X\right)^{5-i},
-\qquad
-(c_0, \dots, c_5) = \left(\tfrac{2992}{25}, \tfrac{16676}{125}, \tfrac{138343}{1000}, \tfrac{423899}{3200}, \tfrac{18151}{160}, \tfrac{20113}{256}\right),
+P'(X) = -2500X^4 + 3200X^3 + 5115X^2 - 7800X + 3120, \qquad
+P''(X) = -10000X^3 + 9600X^2 + 10230X - 7800 ,
 ```
 
-an identity of polynomials of degree $5$ (checked by expanding), and all six
-coefficients are positive. So $1 - \rho' > 0$. $\square$
+and expanding the cubic $P''$ about $\frac85$,
+
+```math
+P''\left(\tfrac85 + t\right) = -7816 - 35850t - 38400t^2 - 10000t^3 ,
+```
+
+which is negative for $t \ge 0$. At the ends of the interval
+
+```math
+P\left(\tfrac85\right) = \tfrac{2992}{25}, \qquad P\left(\tfrac74\right) = \tfrac{20113}{256} ,
+```
+
+both positive. By [Lemma A.4](appendix-a.md#lemma-a4-positivity-from-concavity), applied to $P$ with its derivatives
+$P'$ and $P''$, $P > 0$ on $[\frac85, \frac74]$; its proof shows more: $P$ lies
+above its chord, so $P \ge \frac{20113}{256}$ there. Hence $1 - \rho' > 0$.
+
+(5) Since $\frac\pi{12} = \frac\pi3 - \frac\pi4$, the subtraction formulas give
+
+```math
+\sin\tfrac\pi{12} = \tfrac{\sqrt3}2\cdot\tfrac{\sqrt2}2 - \tfrac12\cdot\tfrac{\sqrt2}2 = \tfrac{\sqrt2}4\left(\sqrt3 - 1\right),
+\qquad
+\cos\tfrac\pi{12} = \tfrac12\cdot\tfrac{\sqrt2}2 + \tfrac{\sqrt3}2\cdot\tfrac{\sqrt2}2 = \tfrac{\sqrt2}4\left(\sqrt3 + 1\right),
+```
+
+and $(2 - \sqrt3)(\sqrt3 + 1) = \sqrt3 - 1$, so
+$\sin\frac\pi{12} = (2 - \sqrt3)\cos\frac\pi{12}$: that is,
+$\tan\frac\pi{12} = 2 - \sqrt3$. For $\frac\pi{12} \le x \le \frac\pi2$ we have
+$0 \le x - \frac\pi{12} \le \pi$, so
+
+```math
+0 \le \sin\left(x - \tfrac\pi{12}\right) = \sin x\cos\tfrac\pi{12} - \cos x\sin\tfrac\pi{12}
+= \cos\tfrac\pi{12}\left(\sin x - (2 - \sqrt3)\cos x\right) ,
+```
+
+and $\cos\frac\pi{12} > 0$. $\square$
 
 *Lean:
-[`Seven.Boundary.axial_circle_bounds`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L33),
-[`Seven.Boundary.hasDerivAt_axialX`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L56),
-[`Seven.Boundary.hasDerivAt_axialY`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L51),
-[`Seven.Boundary.ratio`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L16),
-[`Seven.Boundary.ratioD`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L18),
-[`Seven.Boundary.hasDerivAt_ratio`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L67),
-[`Seven.Boundary.ratio_nonneg`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L112),
-[`Seven.Boundary.ratio_zero_lt`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L118),
-[`Seven.Boundary.ratio_derivative_lt_one`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L83).*
+[`Seven.Boundary.axial_circle_bounds`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L34),
+[`Seven.Boundary.hasDerivAt_axialX`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L57),
+[`Seven.Boundary.hasDerivAt_axialY`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L52),
+[`Seven.Boundary.ratio`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L17),
+[`Seven.Boundary.ratio_nonneg`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L129),
+[`Seven.Boundary.ratio_zero_lt`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L137),
+[`Seven.Boundary.ratioD`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L19),
+[`Seven.Boundary.hasDerivAt_ratio`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L68),
+[`Seven.Boundary.ratio_numerator_pos`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L87),
+[`Seven.Boundary.ratio_derivative_lt_one`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L106),
+[`Seven.Boundary.tan_twelfth_le`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L148).*
 
-![The graph of the quintic P on the interval from 8/5 to 7/4, a blue arch from about 120 at 8/5 up to about 132 and down to about 79 at 7/4, together with its dashed orange Bernstein control polygon through the six control points labelled c0 to c5, all well above the axis](figures/appb-bernstein.svg)
+![Two graphs. Left: the quintic P on the interval from 8/5 to 7/4, a concave blue arch from 2992/25, about 120, at 8/5 up to about 132 and down to 20113/256, about 79, at 7/4, continued in grey beyond both ends, above the orange chord joining its two end points and far above the axis. Right: on the interval from 0 to s0, the increasing blue ratio rho, from rho(0), about 0.25, to about 0.45, below the orange curve tan d for the source label pi/4, which starts just above it at 2 - root 3, about 0.27, and rises to about 0.72](figures/appb-ratio.svg)
 
-*Figure B.6.* The quintic $P$ of Lemma B.22 and its Bernstein control polygon on
-$[\frac85, \frac74]$: the control points $(\frac85 + \frac{3i}{100}, c_i)$ lie
-above the axis, and so does the curve.
+*Figure B.6.* Lemma B.22. (a) The quintic $P$ (blue) is concave on
+$[\frac85, \frac74]$, so it lies above its chord (orange) through the positive
+end values $P(\frac85) = \frac{2992}{25}$ and $P(\frac74) = \frac{20113}{256}$.
+(b) The ratio $\rho$ (blue) and $\tan d$ (orange) on $[0, s_0]$ for the source
+label $\ell = \frac\pi4$, where the angle $d = \frac\pi{12} + \ell'$ is
+smallest. At $\ell' = 0$, $\rho(0) \approx 0.2525$ lies just below
+$\tan\frac\pi{12} = 2 - \sqrt3 \approx 0.2679$, and $\rho$ stays below
+$\tan d$; this is $E > 0$ in the proof of Proposition B.23. For a smaller
+source label, $d$ and $\tan d$ are larger.
 
 ### Proposition B.23 (the circular piece)
 
@@ -1322,15 +1390,19 @@ B.22 (2), since $d' = 1$,
 ```
 
 The factor $\frac\eta\xi(\xi - \frac45)$ is positive, so it suffices that
-$E > 0$. By Lemma B.22 (3), $E' = (1 - \rho')\cos d + \rho\sin d \ge 0$, so $E$
-is nondecreasing, and at $\ell' = 0$, using that $\sin$ increases on
-$[0, \frac\pi2]$, $\sin x \ge x - \frac{x^3}6$ for $x \ge 0$,
-$\frac\pi{12} < \frac{11}{42}$ and $\pi > 3.14$,
+$E > 0$. By Lemma B.22 (3) and (4), $E' = (1 - \rho')\cos d + \rho\sin d \ge 0$,
+so $E$ is nondecreasing on $[0, s_0]$
+([Lemma A.1](appendix-a.md#lemma-a1-monotonicity-from-the-derivative) (1)). At $\ell' = 0$ the angle is
+$d_0 = \frac\pi3 - \ell$, which lies in $[\frac\pi{12}, \frac\pi2)$, so
+$\cos d_0 > 0$, and Lemma B.22 (5) gives $\sin d_0 \ge (2 - \sqrt3)\cos d_0$.
+With $\rho(0) < 2 - \sqrt3$ (Lemma B.22 (3)),
 
 ```math
-E = \sin\left(\tfrac\pi3 - \ell\right) - \rho(0)\cos\left(\tfrac\pi3 - \ell\right)
-\ge \sin\tfrac\pi{12} - \rho(0) > \tfrac{3.14}{12} - \tfrac16\left(\tfrac{11}{42}\right)^3 - \tfrac{51}{200} > 0.2586 - 0.255 > 0 .
+E(0) = \sin d_0 - \rho(0)\cos d_0 \ge \left(2 - \sqrt3 - \rho(0)\right)\cos d_0 > 0 .
 ```
+
+So $E \ge E(0) > 0$ on $[0, s_0]$; as $\cos d > 0$, this says that $\rho$ stays
+below $\tan d$ (Figure B.6 (b)).
 
 At $\ell' = s_0$: $\xi(s_0) = \gamma(u_0) + \frac12 = a_0 + \frac12$ and
 $\eta(s_0) = Y_0$ (Lemma B.12 (3)), and $\alpha(s_0) = a_0$ and
@@ -1338,9 +1410,9 @@ $\frac45 s_0 + \frac12 = Y_0$ (Lemma B.10), which gives the two values.
 $\square$
 
 *Lean:
-[`Seven.Boundary.circleTarget_decreases`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L129),
-[`Seven.Boundary.circleTarget_transition`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L191),
-[`Seven.Boundary.lineTarget_transition`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L205).*
+[`Seven.Boundary.circleTarget_decreases`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L161),
+[`Seven.Boundary.circleTarget_transition`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L217),
+[`Seven.Boundary.lineTarget_transition`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L231).*
 
 ### Lemma B.24 (the switch angle)
 
@@ -1354,9 +1426,9 @@ $\cos x - \frac49\sin x$ is strictly decreasing, as $\cos$ decreases and $\sin$
 increases there, and it vanishes at $\omega$. $\square$
 
 *Lean:
-[`Seven.Boundary.switch_range`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L211),
-[`Seven.Boundary.switch_zero`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L214),
-[`Seven.Boundary.switch_iff`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L219).*
+[`Seven.Boundary.switch_range`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L237),
+[`Seven.Boundary.switch_zero`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L240),
+[`Seven.Boundary.switch_iff`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L245).*
 
 ### Proposition B.25 (the straight piece)
 
@@ -1374,8 +1446,8 @@ $c = \frac\pi3 - \ell$, the derivative of $L(\ell, \cdot)$ at $y$ is positive.
 With Proposition B.23 this gives the claim. $\square$
 
 *Lean:
-[`Seven.Boundary.lineTarget_derivative_positive`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L238),
-[`Seven.Boundary.lineTarget_low_min`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L251).*
+[`Seven.Boundary.lineTarget_derivative_positive`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L264),
+[`Seven.Boundary.lineTarget_low_min`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L277).*
 
 ![Graphs of the target support against the target label for four source labels 2/5, 0.55, 0.7 and pi/4, in four colours. Each curve decreases slowly (solid) from the target label 0 to s0, where it has a corner marked by a dot, and then increases (dashed) along the tie line up to the switch label or pi/4](figures/appb-targets.svg)
 

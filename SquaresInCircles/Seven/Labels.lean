@@ -125,46 +125,34 @@ lemma selected (_h : Admissible a u) :
 
 end Admissible
 
-lemma side_selected_label_gt {a u : ℝ} (h : Admissible a u)
-    (hsel : label a u = side a u) : (9 : ℝ)/25 < label a u := by
-  let t := label a u
-  have ht0 : 0 ≤ t := h.label_nonneg
-  have htu : (4/5)*t ≤ u := by
-    have ht := h.label_le_axial
-    dsimp [axial] at ht
-    dsimp [t]
-    linarith
-  have he : 9*a-4*u = 2*Real.pi+7-12*t := by
-    dsimp [t] at *
-    rw [hsel]
-    dsimp [side]
-    ring
-  by_contra hn
-  have ht1 : t ≤ 9/25 := le_of_not_gt hn
-  have ha : 332/225-(44/45)*t < a := by linarith [Real.pi_gt_d2]
+/-- Projecting the state disk onto the direction `(2, 1)`: `2a + u < 38/15`. -/
+lemma Admissible.projection_two_one {a u : ℝ} (h : Admissible a u) : 2*a+u < 38/15 := by
   have hp := h.phi_le
   dsimp [phi,targetSq] at hp
-  have hsqA := sq_nonneg (a-(332/225-(44/45)*t))
-  have hsqU := sq_nonneg (u-(4/5)*t)
-  have hlinA := mul_nonneg
-    (show 0 ≤ a-(332/225-(44/45)*t) by linarith)
-    (show 0 ≤ 2*(332/225-(44/45)*t)+1 by linarith)
-  have hlinU := mul_nonneg
-    (show 0 ≤ u-(4/5)*t by linarith)
-    (show 0 ≤ 2*(4/5)*t+1 by linarith)
-  have hquad := mul_nonneg (show 0 ≤ 9/25-t by linarith)
-    (show 0 ≤ 139744/50625-(3232/2025)*(t+9/25) by linarith)
-  linarith
+  nlinarith [sq_nonneg (2*(u+1/2)-(a+1/2)),sq_nonneg (2*a+u-38/15)]
 
+lemma side_selected_label_gt {a u : ℝ} (h : Admissible a u)
+    (hsel : label a u = side a u) : (9 : ℝ)/25 < label a u := by
+  have hproj := h.projection_two_one
+  have hu := h.label_le_axial
+  have hs := hsel
+  dsimp [axial] at hu
+  dsimp [side] at hs
+  by_contra hn
+  linarith [Real.pi_gt_d2]
+
+/-- At `a ≥ 9/8` the side label forces `u > 9/32`, and the corner
+`(9/8, 9/32)` lies outside the disk. -/
 lemma side_selected_a_lt {a u : ℝ} (h : Admissible a u)
     (hsel : label a u = side a u) : a < 9/8 := by
   have hl := side_selected_label_gt h hsel
   have hp := h.phi_le
   rw [hsel] at hl
   dsimp [side] at hl
-  dsimp [phi, targetSq] at hp
+  dsimp [phi,targetSq] at hp
   by_contra hn
-  linarith [Real.pi_lt_d2, sq_nonneg (u-2862/10000), sq_nonneg (a-9/8)]
+  have hu : (9 : ℝ)/32 < u := by linarith [pi_lt_22_over_7]
+  nlinarith
 
 lemma side_selected_a_gt {a u : ℝ} (h : Admissible a u)
     (hsel : label a u = side a u) : (7 : ℝ)/10 < a := by
@@ -181,6 +169,8 @@ lemma axial_tie_line {a u : ℝ} (h : Admissible a u)
   dsimp [side,axial] at hh
   linarith
 
+/-- At `a + u ≥ 113/80` the tie line forces `u < 23/80`, and the disk misses
+the region `a ≥ 113/80 - u`, `u < 23/80`. -/
 lemma axial_sum_lt {a u : ℝ} (h : Admissible a u)
     (hsel : label a u = axial u) : a+u < (113 : ℝ)/80 := by
   have ht := axial_tie_line h hsel
@@ -188,7 +178,7 @@ lemma axial_sum_lt {a u : ℝ} (h : Admissible a u)
   have hu : u < 23/80 := by linarith [pi_lt_22_over_7]
   have hp := h.phi_le
   dsimp [phi,targetSq] at hp
-  linarith [sq_nonneg (a-9/8),sq_nonneg (u-23/80)]
+  nlinarith [h.u_nonneg]
 
 /-- A side label above `π/6` costs a remainder quadratic in the excess. -/
 lemma side_remainder_quadratic {a u : ℝ} (h : Admissible a u)

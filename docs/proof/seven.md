@@ -256,7 +256,7 @@ $\varphi(a_S, b_S) \le R_7^2 = \frac{13}4$ by
 [`Seven.Admissible.a_nonneg`](../../SquaresInCircles/Seven/Labels.lean#L47),
 [`Seven.Admissible.slack_nonneg`](../../SquaresInCircles/Seven/Labels.lean#L48),
 [`Seven.sqrt_three_bounds`](../../SquaresInCircles/Seven/Support.lean#L34),
-[`Seven.chart_admissible`](../../SquaresInCircles/Seven/Labels.lean#L231).*
+[`Seven.chart_admissible`](../../SquaresInCircles/Seven/Labels.lean#L221).*
 
 The identity (1) says that $r \ge 0$ is the tangent half-plane
 (([Definition 3.5](common.md#definition-35-tangent-half-plane) and [Lemma 3.6](common.md#lemma-36-tangent-lines))) of the circle
@@ -311,7 +311,7 @@ $(a_0, u_0) \approx (1.1198, 0.2914)$ and $s_0 \approx 0.3642$.
 [`Seven.side`](../../SquaresInCircles/Seven/Labels.lean#L17),
 [`Seven.label`](../../SquaresInCircles/Seven/Labels.lean#L18),
 [`Seven.ActiveLabel`](../../SquaresInCircles/Seven/Contacts.lean#L65),
-[`Seven.chartMarker`](../../SquaresInCircles/Seven/Labels.lean#L228),
+[`Seven.chartMarker`](../../SquaresInCircles/Seven/Labels.lean#L218),
 [`Seven.chartSign`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L20),
 [`Seven.Boundary.a0`](../../SquaresInCircles/Seven/LabelBoundary.lean#L19),
 [`Seven.Boundary.u0`](../../SquaresInCircles/Seven/LabelBoundary.lean#L20),
@@ -399,38 +399,36 @@ Let $(a, u)$ be an admissible state.
 have $12\ell = 2\pi + 7 + 4u - 9a$, and since $\ell \le \mathrm{axial}(u)$ we
 have $u \ge \frac45\ell$.
 
-*The label exceeds $\frac9{25}$.* Suppose $\ell \le \frac9{25}$. Then, as
-$\pi > \frac{157}{50}$,
+*The label exceeds $\frac9{25}$.* Every admissible state has
+$2a + u < \frac{38}{15}$: with $X = a + \frac12$ and $Y = u + \frac12$,
 
 ```math
-9a = 2\pi + 7 - 12\ell + 4u \ge 2\pi + 7 - \tfrac{44}5\ell > \tfrac{332}{25} - \tfrac{44}5\ell .
+(2X + Y)^2 + (2Y - X)^2 = 5\left(X^2 + Y^2\right) = 5\,\varphi(a, u) \le \tfrac{65}4 < \left(\tfrac{121}{30}\right)^2 ,
 ```
 
-Put $\alpha = \frac{332}{225} - \frac{44}{45}\ell$ and $\beta = \frac45\ell$, so
-that $a > \alpha$ and $u \ge \beta \ge 0$, and
-$\alpha \ge \frac{332}{225} - \frac{44}{45}\cdot\frac9{25} > 0$. Then
+since $\frac{65}4 = \frac{14625}{900}$ and $(\frac{121}{30})^2 = \frac{14641}{900}$,
+so $2X + Y < \frac{121}{30}$, that is $2a + u < \frac{121}{30} - \frac32 = \frac{38}{15}$.
+This is the disk $\varphi \le \frac{13}4$ seen in the direction $(2, 1)$.
+Now suppose $\ell \le \frac9{25}$. Then $9a = 2\pi + 7 - 12\ell + 4u$ and
+$u \ge \frac45\ell$ give, as $\pi > \frac{157}{50}$,
 
 ```math
-\varphi(a, u) > \left(\alpha + \tfrac12\right)^2 + \left(\beta + \tfrac12\right)^2 = \tfrac{13}4 + F(\ell), \qquad
-F(x) = \tfrac{3232}{2025}x^2 - \tfrac{31016}{10125}x + \tfrac{182821}{202500} .
+9(2a + u) = 4\pi + 14 - 24\ell + 17u \ge 4\pi + 14 - \tfrac{52}5\ell \ge 4\pi + 14 - \tfrac{468}{125} > \tfrac{2852}{125} ,
 ```
 
-The vertex of this parabola is at $x = \frac{31016}{32320} > \frac9{25}$, so $F$
-decreases on $[0, \frac9{25}]$, and as $0 \le \ell \le \frac9{25}$,
-$F(\ell) \ge F(\frac9{25}) = \frac{34813}{5062500} > 0$. Hence
-$\varphi(a, u) > \frac{13}4$, a contradiction.
+so $2a + u > \frac{2852}{1125} > \frac{2850}{1125} = \frac{38}{15}$, a contradiction.
 
 *The bound $a < \frac98$.* Suppose $a \ge \frac98$. From
-$\mathrm{side}(a, u) > \frac9{25}$ and $\pi < \frac{63}{20}$,
+$\mathrm{side}(a, u) > \frac9{25}$ and $\pi < \frac{22}7$,
 
 ```math
-u > \tfrac12 + \tfrac{27}{25} - \tfrac\pi2 + \tfrac94(a - 1) \ge \tfrac12 + \tfrac{27}{25} - \tfrac{63}{40} + \tfrac9{32} = \tfrac{229}{800} ,
+u > \tfrac12 + \tfrac{27}{25} - \tfrac\pi2 + \tfrac94(a - 1) > \tfrac12 + \tfrac{27}{25} - \tfrac{11}7 + \tfrac9{32} = \tfrac{1623}{5600} > \tfrac9{32} ,
 ```
 
-and then
+and then the corner $(\frac98, \frac9{32})$ already lies outside the disk:
 
 ```math
-\varphi(a, u) > \left(\tfrac{13}8\right)^2 + \left(\tfrac{629}{800}\right)^2 = \tfrac{2085641}{640000} > \tfrac{13}4 ,
+\varphi(a, u) > \left(\tfrac{13}8\right)^2 + \left(\tfrac{25}{32}\right)^2 = \tfrac{3329}{1024} > \tfrac{3328}{1024} = \tfrac{13}4 ,
 ```
 
 a contradiction.
@@ -484,12 +482,13 @@ so $u < \frac{23}{80}$, and then
 a contradiction. $\square$
 
 *Lean:
-[`Seven.side_selected_label_gt`](../../SquaresInCircles/Seven/Labels.lean#L128),
-[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Labels.lean#L169),
-[`Seven.side_selected_a_lt`](../../SquaresInCircles/Seven/Labels.lean#L159),
-[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Labels.lean#L194),
-[`Seven.axial_tie_line`](../../SquaresInCircles/Seven/Labels.lean#L177),
-[`Seven.axial_sum_lt`](../../SquaresInCircles/Seven/Labels.lean#L184).*
+[`Seven.Admissible.projection_two_one`](../../SquaresInCircles/Seven/Labels.lean#L129),
+[`Seven.side_selected_label_gt`](../../SquaresInCircles/Seven/Labels.lean#L134),
+[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Labels.lean#L157),
+[`Seven.side_selected_a_lt`](../../SquaresInCircles/Seven/Labels.lean#L146),
+[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Labels.lean#L184),
+[`Seven.axial_tie_line`](../../SquaresInCircles/Seven/Labels.lean#L165),
+[`Seven.axial_sum_lt`](../../SquaresInCircles/Seven/Labels.lean#L174).*
 
 ### Lemma 9.9 (the marker arc)
 
@@ -505,7 +504,7 @@ $\overline{Q(a, u)}$.
 
 The proof is given in [Appendix A](appendix-a.md).
 
-*Lean: [`Seven.marker_arc`](../../SquaresInCircles/Seven/MarkerArc.lean#L283).*
+*Lean: [`Seven.marker_arc`](../../SquaresInCircles/Seven/MarkerArc.lean#L281).*
 
 In a chart of an exterior square with an admissible state, the lemma says that
 the closed square contains the arc of the unit circle with half-width
@@ -950,8 +949,10 @@ state is at least its value at a vertex. For active labels, each support sum
 is written in closed form, reduced by monotonicity or concavity to the
 boundary of the label regions, and bounded below by a function of one angle,
 which is shown positive with the Taylor bounds of $\sin$ and $\cos$
-([Lemma A.7](appendix-a.md#lemma-a7-taylor-bounds)) and the Bernstein criterion ([Lemma A.10](appendix-a.md#lemma-a10-bernstein-criterion))
-of Appendix A.
+([Lemma A.7](appendix-a.md#lemma-a7-taylor-bounds)), monotonicity and concavity
+([Lemmas A.1 to A.4](appendix-a.md#a1-monotonicity-and-concavity)) of
+Appendix A, and Cauchy–Schwarz on the disk
+([Lemma B.3](appendix-b.md#lemma-b3-cauchyschwarz-on-the-disk)).
 
 The zeros occur only at contacts for the following reason. Where the lower
 bound of a case can vanish, it is a sum of nonnegative terms, among them the

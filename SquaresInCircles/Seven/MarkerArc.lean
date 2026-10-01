@@ -8,8 +8,8 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
 For an admissible state, the closed square holds the arc of the unit circle of
 half-width `801/1600` about its label: each of the four edge lines stays out
 of the way, the far one trivially. The transverse edges are controlled by
-arcsine bounds, and the near edge by an envelope that is concave, hence below
-its tangent at `1/8`.
+arcsine bounds, and the near edge by an envelope whose curvature is at most
+`-1/8`, hence below a parabola through its value and slope at `0`.
 -/
 noncomputable section
 open Set
@@ -76,19 +76,6 @@ lemma marker_lower_endpoint {a u : ℝ} (h : Admissible a u) :
     linarith [h.u_lt]
   unfold label
   exact lt_min (lt_min (by linarith) hT) hcap
-
-/-- `64((13/4)²(1 - x²)³ - 9x²(13/4 - (x+1)²)³)`: on `[0, 3/4]` it is positive
-exactly where the second derivative of `arcEnvelope` is negative. -/
-def arcCurvaturePolynomial (x : ℝ) : ℝ :=
-  676*(1-x^2)^3-9*x^2*(9-8*x-4*x^2)^3
-
-lemma arcCurvaturePolynomial_pos {x : ℝ} (hx : 0 ≤ x ∧ x ≤ 3/4) :
-    0 < arcCurvaturePolynomial x :=
-  bernstein_pos ![676,676,32221/64,64997/224,327833/2240,14627/128,
-    3921235/28672,402967/4096,13945/256] (fun i => by fin_cases i <;> norm_num) (by norm_num)
-    (fun x => by
-      simp only [arcCurvaturePolynomial,bernstein,Fin.sum_univ_succ,Fin.sum_univ_zero]
-      norm_num [Nat.choose]; ring) hx
 
 /-- Upper envelope for side label plus arcsine of the near vertical edge. -/
 def arcEnvelope (x : ℝ) : ℝ :=
@@ -161,8 +148,36 @@ lemma arcEnvelopeDeriv_hasDeriv {x : ℝ} (hx : 0 ≤ x ∧ x ≤ 3/4) :
     linarith
   exact (hi.sub_const (3/4 : ℝ)).sub hj
 
-lemma arcEnvelopeSecond_neg {x : ℝ} (hx : 0 ≤ x ∧ x ≤ 3/4) :
-    arcEnvelopeSecond x < 0 := by
+/-- `9(x+1/8)²(9-7x)³` rises up to `x = 123/280` and falls after it; its peak
+is below `676`. -/
+lemma curvature_peak_lt {x : ℝ} (hx : 0 ≤ x ∧ x ≤ 3/4) :
+    9*(x+1/8)^2*(9-7*x)^3 < 676 := by
+  have hd (y : ℝ) : HasDerivAt (fun y : ℝ => 9*(y+1/8)^2*(9-7*y)^3)
+      (9*(y+1/8)*(9-7*y)^2*(123/8-35*y)) y := by
+    have h := ((((hasDerivAt_id y).add_const (1/8)).pow 2).const_mul 9).mul
+      ((((hasDerivAt_id y).const_mul 7).const_sub 9).pow 3)
+    convert h using 1
+    · funext z
+      simp only [Pi.mul_apply,Pi.pow_apply,id]
+    · simp only [Pi.pow_apply,id]
+      ring
+  have hm := le_at_peak (c := 123/280) (l := 0) (u := 3/4) (by norm_num) hx
+    (by fun_prop) hd
+    (fun y hy => by
+      have : 0 ≤ y+1/8 := by linarith [hy.1]
+      have : 0 ≤ 123/8-35*y := by linarith [hy.2]
+      positivity)
+    (fun y hy => mul_nonpos_of_nonneg_of_nonpos
+      (by have : 0 ≤ y+1/8 := by linarith [hy.1]
+          positivity) (by linarith [hy.1]))
+  norm_num at hm
+  linarith
+
+/-- The envelope bends down at rate at least `1/8`: with `A = √(1-x²) ≤ 1` and
+`B = √(13/4-(x+1)²)`, this is `12(x+1/8)B³ < 13A³`, which squares to the peak
+bound since `4B² ≤ (9-7x)A²`. -/
+lemma arcEnvelopeSecond_le {x : ℝ} (hx : 0 ≤ x ∧ x ≤ 3/4) :
+    arcEnvelopeSecond x ≤ -1/8 := by
   have hp := arc_radicands hx
   let A := Real.sqrt (1-x^2)
   let B := Real.sqrt (targetSq-(x+1)^2)
@@ -170,66 +185,49 @@ lemma arcEnvelopeSecond_neg {x : ℝ} (hx : 0 ≤ x ∧ x ≤ 3/4) :
   have hB : 0 < B := Real.sqrt_pos.mpr hp.2
   have hA2 : A^2=1-x^2 := Real.sq_sqrt hp.1.le
   have hB2 : B^2=targetSq-(x+1)^2 := Real.sq_sqrt hp.2.le
-  have hpoly := arcCurvaturePolynomial_pos hx
-  have hid :
-      64*((targetSq*A^3)^2-(3*x*B^3)^2)=arcCurvaturePolynomial x := by
-    calc
-      _ = 64*(targetSq^2*(A^2)^3-9*x^2*(B^2)^3) := by ring
-      _ = _ := by rw [hA2,hB2]; dsimp [arcCurvaturePolynomial,targetSq]; ring
-  have hleft : 0 ≤ 3*x*B^3 := by
-    have hx0 := hx.1
-    positivity
-  have hright : 0 < targetSq*A^3 := by dsimp [targetSq]; positivity
-  have hlt : 3*x*B^3 < targetSq*A^3 := by nlinarith
-  have hrepr : arcEnvelopeSecond x =
-      (3*x*B^3-targetSq*A^3)/(3*A^3*B^3) := by
-    change x/A^3-targetSq/(3*B^3) = _
-    field_simp [ne_of_gt hA,ne_of_gt hB]
-  rw [hrepr]
-  exact div_neg_of_neg_of_pos (by linarith) (by positivity)
+  have hA3 : A^3 ≤ 1 := pow_le_one₀ hA.le (by nlinarith)
+  have hratio : 4*B^2 ≤ (9-7*x)*A^2 := by
+    rw [hA2,hB2]
+    dsimp [targetSq]
+    nlinarith [mul_nonneg hx.1 (sq_nonneg (x-5/14))]
+  have hcube := pow_le_pow_left₀ (by positivity) hratio 3
+  have hpeak := mul_lt_mul_of_pos_right (curvature_peak_lt hx) (pow_pos (pow_pos hA 2) 3)
+  have hsq : (12*(x+1/8)*B^3)^2 < (13*A^3)^2 := by
+    have hx8 : 0 ≤ (x+1/8)^2 := sq_nonneg _
+    nlinarith [mul_le_mul_of_nonneg_left hcube hx8]
+  have hlt : 12*(x+1/8)*B^3 < 13*A^3 := lt_of_pow_lt_pow_left₀ 2 (by positivity) hsq
+  have hrepr : arcEnvelopeSecond x+1/8 =
+      (12*x*B^3-13*A^3+(3/2)*A^3*B^3)/(12*A^3*B^3) := by
+    change x/A^3-targetSq/(3*B^3)+1/8 = _
+    dsimp [targetSq]
+    field_simp
+    ring
+  have hnum : 12*x*B^3-13*A^3+(3/2)*A^3*B^3 < 0 := by
+    nlinarith [mul_le_mul_of_nonneg_right hA3 (pow_pos hB 3).le]
+  have hneg : arcEnvelopeSecond x+1/8 < 0 := by
+    rw [hrepr]
+    exact div_neg_of_neg_of_pos hnum (by positivity)
+  linarith
 
-/-- The envelope is concave, so below its tangent at `1/8`, where it decreases. -/
+/-- With value `π/6 + 13/24` and slope `1/36` at `0`, and curvature at most
+`-1/8`, the envelope stays below `π/6 + 353/648`, its parabola's top. -/
 lemma arcEnvelope_bound {x : ℝ} (hx : 0 ≤ x ∧ x ≤ 3/4) :
-    arcEnvelope x ≤ Real.pi/6+5443/10000 := by
+    arcEnvelope x ≤ Real.pi/6+353/648 := by
   have hdom (y : ℝ) (hy : y ∈ Icc (0 : ℝ) (3/4)) : 0 ≤ y ∧ y ≤ 3/4 := hy
   have ht := curvature_tangent (f := fun y => -arcEnvelope y) (d := fun y => -arcEnvelopeDeriv y)
-    (dd := fun y => -arcEnvelopeSecond y) (κ := 0) (l := 0) (u := 3/4) (t := 1/8) hx
+    (dd := fun y => -arcEnvelopeSecond y) (κ := 1/8) (l := 0) (u := 3/4) (t := 0) hx
     (by norm_num) (fun y hy => (arcEnvelope_hasDeriv (hdom y hy)).neg)
     (fun y hy => (arcEnvelopeDeriv_hasDeriv (hdom y hy)).neg)
-    (fun y hy => by linarith [arcEnvelopeSecond_neg (hdom y hy)])
-  -- the value and the slope at `1/8`, through `√(63/64)` and `√(127/64)`
-  have h63 := Real.sq_sqrt (show (0 : ℝ) ≤ 63/64 by norm_num)
-  have h127 := Real.sq_sqrt (show (0 : ℝ) ≤ 127/64 by norm_num)
-  have h63' := Real.sqrt_nonneg (63/64 : ℝ)
-  have h127' := Real.sqrt_nonneg (127/64 : ℝ)
-  have hA : 992156/1000000 < Real.sqrt (63/64) ∧ Real.sqrt (63/64) < 99216/100000 := by
-    constructor <;> nlinarith
-  have hB : 140867/100000 < Real.sqrt (127/64) ∧ Real.sqrt (127/64) < 140868/100000 := by
-    constructor <;> nlinarith
-  have hv : arcEnvelope (1/8) ≤ Real.pi/6+5430/10000 := by
-    have ha := arcsin_le_cubic (x := 1/8) (by norm_num) (by norm_num)
-    have he : arcEnvelope (1/8) = Real.pi/6+1/24+(1/3)*Real.sqrt (127/64)+Real.arcsin (1/8)-3/32 := by
-      norm_num [arcEnvelope,targetSq]
-    rw [he]
-    norm_num at ha
-    linarith
-  have hd : -1/100 ≤ arcEnvelopeDeriv (1/8) ∧ arcEnvelopeDeriv (1/8) ≤ 0 := by
-    have he : arcEnvelopeDeriv (1/8) = 1/Real.sqrt (63/64)-3/4-(9/8)/(3*Real.sqrt (127/64)) := by
-      norm_num [arcEnvelopeDeriv,targetSq]
-    rw [he]
-    have h1 : 10079/10000 ≤ 1/Real.sqrt (63/64) := by
-      rw [le_div_iff₀ (by linarith)]; nlinarith
-    have h1' : 1/Real.sqrt (63/64) ≤ 100791/100000 := by
-      rw [div_le_iff₀ (by linarith)]; nlinarith
-    have h2 : 2662/10000 ≤ (9/8)/(3*Real.sqrt (127/64)) := by
-      rw [le_div_iff₀ (by positivity)]; nlinarith
-    have h2' : (9/8)/(3*Real.sqrt (127/64)) ≤ 26621/100000 := by
-      rw [div_le_iff₀ (by positivity)]; nlinarith
-    constructor <;> linarith
-  rcases le_total x (1/8) with hx8 | hx8
-  · linarith [mul_nonneg (show 0 ≤ 1/8-x by linarith) (show 0 ≤ arcEnvelopeDeriv (1/8)+1/100 by
-      linarith)]
-  · linarith [mul_nonneg (show 0 ≤ x-1/8 by linarith) (neg_nonneg.mpr hd.2)]
+    (fun y hy => by linarith [arcEnvelopeSecond_le (hdom y hy)])
+  have hs : Real.sqrt (9/4 : ℝ) = 3/2 := by
+    rw [show (9/4 : ℝ) = (3/2)^2 by norm_num]
+    exact Real.sqrt_sq (by norm_num)
+  have h0 : arcEnvelope 0 = Real.pi/6+13/24 := by
+    norm_num [arcEnvelope,targetSq,hs]
+    ring
+  have h0' : arcEnvelopeDeriv 0 = 1/36 := by norm_num [arcEnvelopeDeriv,targetSq,hs]
+  simp only [h0,h0'] at ht
+  nlinarith [sq_nonneg (x-2/9)]
 
 lemma marker_vertical_endpoint {a u : ℝ} (h : Admissible a u) :
     label a u+801/1600 < Real.arccos (a-1/2) := by

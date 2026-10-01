@@ -13,23 +13,49 @@ source it is at least the remainder plus a multiple of the turn, which vanish
 together only at the contact of a side square with the top or bottom square.
 -/
 noncomputable section
+open Set
 namespace SquaresInCircles.Seven
 
-/-- The profile of a negative turn `-z`. -/
-lemma inward_turn_profile {z : ℝ} (hz : 0 ≤ z ∧ z ≤ Real.pi/2) :
-    z/50 ≤ Real.sin z-(4/5)*z*Real.cos z-(3/4)*(1-Real.cos z) := by
-  have hq : 0 < 9/50-3*z/8+7*z^2/30+z^3/32-z^4/30-z^5/960 :=
-    bernstein_pos (p := fun z => 9/50-3*z/8+7*z^2/30+z^3/32-z^4/30-z^5/960)
-      ![9/50,123/2000,937/750000,462959/40000000,237199301/3750000000,
-        22578739001/300000000000]
-      (fun i => by fin_cases i <;> norm_num) (by norm_num)
-      (fun x => by simp only [bernstein,Fin.sum_univ_succ,Fin.sum_univ_zero]
-                   norm_num [Nat.choose]; ring)
-      ⟨hz.1,show z ≤ 79/50 by linarith [Real.pi_lt_d2]⟩
+/-- A negative turn `-z` with `z ≤ 1`: the Taylor bounds of the profile exceed `z/50` by
+`z ((9/40)(z - 5/6)² + 19/800) + (z³/960)(5 + (1 - z)(z² + 33z + 3))`. -/
+lemma inward_small_turn_bound {z : ℝ} (hz : 0 ≤ z ∧ z ≤ 1) :
+    z/50+z*((9/40)*(z-5/6)^2+19/800) ≤
+      Real.sin z-(4/5)*z*Real.cos z-(3/4)*(1-Real.cos z) := by
   have hs := Real.sin_ge_sub_cube hz.1
   have hcu := mul_le_mul_of_nonneg_left (cos_upper_four hz.1) hz.1
   have hcl := cos_lower_six hz.1
-  nlinarith [mul_nonneg hz.1 hq.le]
+  have he : 0 ≤ z^3*(5+(1-z)*(z^2+33*z+3)) := mul_nonneg (pow_nonneg hz.1 3)
+    (add_nonneg (by norm_num) (mul_nonneg (sub_nonneg.mpr hz.2) (by nlinarith [hz.1])))
+  linarith
+
+/-- The profile of a negative turn `-z`. Past `z = 1` the profile less `z/20` increases:
+its slope is `(3/20) cos z + (4/5)(z - 1) sin z + (cos z + sin z - 1)/20`. -/
+lemma inward_turn_profile {z : ℝ} (hz : 0 ≤ z ∧ z ≤ Real.pi/2) :
+    z/50 ≤ Real.sin z-(4/5)*z*Real.cos z-(3/4)*(1-Real.cos z) := by
+  rcases le_total z 1 with hz1 | hz1
+  · linarith [inward_small_turn_bound ⟨hz.1,hz1⟩,
+      mul_nonneg hz.1 (show 0 ≤ (9/40)*(z-5/6)^2+19/800 by positivity)]
+  have hm : MonotoneOn (fun y => Real.sin y-(4/5)*y*Real.cos y-(3/4)*(1-Real.cos y)-y/20)
+      (Icc 1 (Real.pi/2)) := by
+    apply monoOn_of_hasDeriv_nonneg
+      (d := fun y => (1/5)*Real.cos y+((4/5)*y-3/4)*Real.sin y-1/20) (by fun_prop)
+    · intro y _
+      exact ((((Real.hasDerivAt_sin y).sub (((hasDerivAt_id' y).const_mul (4/5)).mul
+        (Real.hasDerivAt_cos y))).sub (((hasDerivAt_const y 1).sub
+        (Real.hasDerivAt_cos y)).const_mul (3/4))).sub
+        ((hasDerivAt_id' y).div_const 20)).congr_deriv (by ring)
+    · intro y hy
+      have hs := Real.sin_nonneg_of_nonneg_of_le_pi (x := y) (by linarith [hy.1])
+        (by linarith [hy.2,Real.pi_pos])
+      have hc := Real.cos_nonneg_of_mem_Icc ⟨by linarith [hy.1,Real.pi_pos],hy.2.le⟩
+      -- `cos y + sin y ≥ cos² y + sin² y = 1` in the first quadrant
+      have hs2 := mul_nonneg hs (sub_nonneg.mpr (Real.sin_le_one y))
+      have hc2 := mul_nonneg hc (sub_nonneg.mpr (Real.cos_le_one y))
+      have hys := mul_nonneg (sub_nonneg.mpr hy.1.le) hs
+      linarith [Real.sin_sq_add_cos_sq y]
+  have h1 := inward_small_turn_bound (z := 1) ⟨zero_le_one,le_rfl⟩
+  have h2 := hm ⟨le_rfl,hz1.trans hz.2⟩ ⟨hz1,hz.2⟩ hz1
+  linarith
 
 /-- Positive turn: the radial extent of the target is the only upper bound used. -/
 lemma inward_positive_turn_bound {A v e : ℝ}

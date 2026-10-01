@@ -5,7 +5,7 @@
 
 Every figure is computed from the definitions of the proof: the labels, the
 canonical pair, the support function, the boundary curves of the label
-regions, and the one-variable profiles with their certified lower bounds.
+regions, and the one-variable profiles with the lower bounds of the proofs.
 """
 import math
 
@@ -215,23 +215,15 @@ class Plot:
                    dx=7, dy=4)
 
 
-def taylor_s(n, x):
-    return sum((-1) ** k * x ** (2 * k + 1) / math.factorial(2 * k + 1)
-               for k in range((n + 1) // 2))
-
-
-def taylor_c(n, x):
-    return sum((-1) ** k * x ** (2 * k) / math.factorial(2 * k)
-               for k in range(n // 2 + 1))
-
-
-def poly(coeffs):
-    return lambda x: sum(c * x ** k for k, c in enumerate(coeffs))
-
-
-def bernstein_values(c, x0, x1):
-    n = len(c) - 1
-    return [(x0 + (x1 - x0) * i / n, ci) for i, ci in enumerate(c)]
+def root(fn, lo, hi):
+    """A zero of fn between lo and hi, where fn changes sign."""
+    for _ in range(60):
+        mid = (lo + hi) / 2
+        if (fn(lo) < 0) == (fn(mid) < 0):
+            lo = mid
+        else:
+            hi = mid
+    return (lo + hi) / 2
 
 
 # Figure D.1: the canonical pairs on the forward axis.
@@ -353,66 +345,95 @@ def disk_support():
            'the disk')
 
 
-# Figure D.3: Bernstein certificates.
+# Figure D.3: the residual forces of Lemma D.2 and the cone bound.
 
-def bernstein_panels():
-    P = [113 / 168, 673 / 250, -1 / 2, -291 / 500, 1 / 24, 291 / 10000,
-         -1 / 720, -97 / 140000]
-    U = [109 / 800, 221 / 200, 48 / 25, -1841 / 1200, -377 / 800,
-         8321 / 24000, 1373 / 24000, -29921 / 1008000, 0, 3 / 3200]
-    fP, fU = poly(P), poly(U)
-    Q = lambda z: fP(z) ** 2 - 13 / 4 * fU(z)
-    cQ = [13553 / 1411200, 72827 / 7056000, 393747163 / 34398000000,
-          2710739309 / 206388000000, 9910498733 / 638512875000,
-          153072314621 / 8172964800000, 47296571468413 / 2068781715000000,
-          3708166534047959 / 132402029760000000,
-          188854262621881 / 5516751240000000,
-          6257753867831 / 150456852000000,
-          6998517462046433 / 139642765762500000,
-          48606823214392757 / 812467000800000000,
-          29832818108969789 / 421857865800000000,
-          34918908326684453 / 421857865800000000,
-          80964059146525129 / 843715731600000000]
-    R = poly([-197 / 1500, 19 / 40, -29 / 160, -17 / 320, 269 / 7680,
-              17 / 25600, -1 / 720, -17 / 4300800])
-    cR = [27834859 / 5225472000, 21646979107 / 329204736000,
-          85094698273 / 768144384000, 83663391929 / 597445632000,
-          650018406713 / 4182119424000, 224217116981 / 1394039808000,
-          1222825127771 / 7589772288000, 8516973787387 / 53128406016000]
-    H = poly([26 / 75, -653 / 300, 23 / 45, 349 / 720, -47 / 900,
-              -1069 / 21600, -13 / 37800])
-    cH = [26 / 75, 3091 / 10800, 11017 / 48600, 523261 / 3110400,
-          3882011 / 34992000, 55351163 / 1007769600, 1001149 / 3527193600]
-    p5 = poly([17 / 105, 1 / 20, -1 / 4, 7 / 60, 0, -1 / 160])
-    c5 = [17 / 105, 3631 / 21000, 12907 / 84000, 502669 / 4200000,
-          22711 / 262500, 20033129 / 336000000]
-    panels = [(Q, cQ, 0, 1 / 3, 0.11, 'Q, degree 14, Lemma D.2',
-               [(0, '0'), (1 / 3, '1/3')], [(0.05, '0.05'), (0.1, '0.1')]),
-              (R, cR, 1 / 3, 11 / 7, 0.19, 'R, degree 7, Lemma D.2',
-               [(1 / 3, '1/3'), (11 / 7, '11/7')], [(0.1, '0.1')]),
-              (H, cH, 0, 1 / 6, 0.38, 'H, degree 6, Lemma D.6',
-               [(0, '0'), (1 / 6, '1/6')], [(0.1, '0.1'), (0.3, '0.3')]),
-              (p5, c5, 0, 11 / 10, 0.19,
-               sb('p', '5', ', degree 5, Lemma D.12', 13),
-               [(0, '0'), (11 / 10, '11/10')], [(0.1, '0.1')])]
-    W, Hh = 290, 170
-    f = Figure(0, 2 * W + 90, 0, 2 * Hh + 110, 1)
-    for k, (fn, c, x0, x1, ymax, title, xt, yt) in enumerate(panels):
-        px = 55 + (k % 2) * (W + 30)
-        py = 40 + (1 - k // 2) * (Hh + 50)
-        pl = Plot(f, px, py, W - 30, Hh - 20, (x0, x1), (0, ymax))
-        pl.axes(xt, yt)
-        pts = bernstein_values(c, x0, x1)
-        pl.points(pts, stroke=ORANGE, width=1.2, dash='4 3')
-        for x, y in pts:
-            pl.dot(x, y, r=2.6, fill=ORANGE)
-        pl.curve(fn, x0, x1, stroke=INK, width=1.8)
-        f.text((px + (W - 30) / 2, py + Hh + 6), title, size=13,
-               italic=False)
-    f.save('appd-bernstein', 'The four polynomial certificates of Appendix D '
-           'on their intervals, each with its Bernstein control polygon: all '
-           'control points are positive, and the graph lies in their convex '
-           'hull')
+def tie_share(z):
+    """The share mu(z) of the force taken up by the tie line, Lemma D.2."""
+    return 3 / 40 * (1 - 2 * math.sin(z))
+
+
+def force(z):
+    return math.cos(z), 1 - math.sin(z)
+
+
+def residual(z):
+    """The force (cos z, 1 - sin z) minus mu(z) (9, 11)."""
+    p, q = force(z)
+    m = tie_share(z)
+    return p - 9 * m, q - 11 * m
+
+
+def cone_margin(r):
+    """The margin of the cone bound for the force (1, r)."""
+    return (13 / 8 + 0.8 * r) ** 2 - R2 * (1 + r * r)
+
+
+def cone_bound():
+    f = Figure(0, 680, 0, 330, 1)
+    # Left: the plane of forces.
+    pl = Plot(f, 45, 45, 265, 265, (0, 1.15), (0, 1.15))
+    pl.axes([(0.5, '0.5'), (1, '1')], [(0.5, '0.5'), (1, '1')])
+    ends = [(1.15, 0.575), (1.15, 0.69)]
+    f.polygon([pl.q(0, 0)] + [pl.q(*e) for e in ends], fill=FILLS[1],
+              stroke='none')
+    for e in ends:
+        f.line(pl.q(0, 0), pl.q(*e), stroke=ORANGE, width=1.3)
+    pl.text(*ends[1], 'V = 3U/5', size=12, italic=False, color=ORANGE,
+            anchor='start', dx=5, dy=-4)
+    pl.text(*ends[0], 'V = U/2', size=12, italic=False, color=ORANGE,
+            anchor='start', dx=5, dy=5)
+    for k in range(6):
+        z = PI / 6 * k / 6
+        pl.points([residual(z), force(z)], stroke=PURPLE,
+                  width=1.6 if k == 0 else 0.9)
+    pl.points([force(PI / 6 * k / 60) for k in range(61)], stroke=INK,
+              width=1.6)
+    pl.points([residual(PI / 6 * k / 60) for k in range(61)], stroke=BLUE,
+              width=2.6)
+    for z in (0, PI / 6):
+        pl.dot(*force(z), r=3.4)
+        pl.dot(*residual(z), r=3.4, fill=BLUE)
+    pl.text(1.0, 1.0, 'z = 0', size=12, italic=False, anchor='start', dx=7,
+            dy=-2)
+    pl.text(1.0, 1.0, '(cos z, 1 − sin z)', size=12, italic=False,
+            anchor='end', dx=-6, dy=-12)
+    pl.text(*residual(0), 'z = 0', size=12, italic=False, color=BLUE,
+            anchor='end', dx=-4, dy=-11)
+    pl.text(*force(PI / 6), 'z = π/6', size=12, italic=False,
+            anchor='start', dx=2, dy=30)
+    pl.text(0.62, 0.64, 'μ(9, 11)', size=12, italic=False, color=PURPLE,
+            anchor='end')
+    pl.text(0.5, 0.17, 'residual (U, V)', size=12, italic=False,
+            color=BLUE, anchor='start')
+    # Right: the margin of the cone bound against the slope r = V/U.
+    pr = Plot(f, 445, 45, 210, 265, (0.35, 0.66), (-0.03, 0.05))
+    pr.axes([(0.5, '1/2'), (0.6, '3/5')], [(0.02, '0.02'), (0.04, '0.04')],
+            xlabel='r')
+    pr.text(0.35, 0.05, 'margin', size=12, italic=False, anchor='start',
+            dx=7, dy=4)
+    f.polygon([pr.q(0.5, 0)] +
+              [pr.q(0.5 + 0.1 * k / 40, cone_margin(0.5 + 0.1 * k / 40))
+               for k in range(41)] + [pr.q(0.6, 0)], fill=FILLS[1],
+              stroke='none')
+    for r in (0.5, 0.6):
+        pr.points([(r, 0), (r, cone_margin(r))], stroke=ORANGE, width=1.2)
+        pr.dot(r, cone_margin(r), r=3.2, fill=ORANGE)
+    pr.curve(cone_margin, 0.35, 0.66, stroke=INK, width=1.8)
+    r0 = residual(0)[1] / residual(0)[0]
+    r1 = residual(PI / 6)[1] / residual(PI / 6)[0]
+    pr.points([(r0, 0), (r1, 0)], stroke=BLUE, width=5)
+    pr.text(0.5, cone_margin(0.5), '61/1600', size=12, italic=False,
+            color=ORANGE, anchor='end', dx=-6, dy=-8)
+    pr.text(0.6, cone_margin(0.6), '441/40000', size=12, italic=False,
+            color=ORANGE, anchor='start', dx=6, dy=-6)
+    pr.text((r0 + r1) / 2, 0, 'residual slopes', size=12, italic=False,
+            color=BLUE, dy=30)
+    f.save('appd-cone', 'Left: the plane of forces. For turns z from 0 to '
+           'pi/6 the force (cos z, 1 - sin z) splits into mu(9, 11), taken '
+           'up by the tie line, and a residual force (U, V) that stays in the '
+           'cone U/2 at most V at most 3U/5. Right: the margin of the bound '
+           'UX + VY at most 13U/8 + 4V/5 against the slope r = V/U, a '
+           'concave quadratic positive on the cone')
 
 
 # Figure D.4: the profile of an axial target at a negative turn.
@@ -432,40 +453,65 @@ def axial_region_points(n=120):
     return pts
 
 
+def axial_margins():
+    """The bounds m1 (small turns) and m2 (large turns) of Lemma D.2."""
+    lam = lambda z: 1 + 2 * PI / 15 - 0.8 * z + math.cos(z)
+    b = 3 * PI / 10 - 131 / 800
+    m1 = lambda z: (1091 / 1600 - PI / 60 - 5 / 8 * math.cos(z) +
+                    b * math.sin(z) - 0.8 * z)
+    m2 = lambda z: lam(z) - 2.55 * (math.cos(z / 2) - math.sin(z / 2))
+    return lam, m1, m2
+
+
 def axial_profile():
     pts = axial_region_points()
-    Lam = lambda z: 1 + 2 * PI / 15 - 0.8 * z + math.cos(z)
-    E = lambda z: min(Lam(z) - (A + .5) * math.cos(z) - (v + .5) *
+    lam, m1, m2 = axial_margins()
+    E = lambda z: min(lam(z) - (A + .5) * math.cos(z) - (v + .5) *
                       (1 - math.sin(z)) for A, v in pts)
-    P = poly([113 / 168, 673 / 250, -1 / 2, -291 / 500, 1 / 24, 291 / 10000,
-              -1 / 720, -97 / 140000])
-    U = poly([109 / 800, 221 / 200, 48 / 25, -1841 / 1200, -377 / 800,
-              8321 / 24000, 1373 / 24000, -29921 / 1008000, 0, 3 / 3200])
-    R = poly([-197 / 1500, 19 / 40, -29 / 160, -17 / 320, 269 / 7680,
-              17 / 25600, -1 / 720, -17 / 4300800])
-    cs = lambda z: Lam(z) - 2.55 * (math.cos(z / 2) - math.sin(z / 2))
-    f = Figure(0, 560, 0, 300, 1)
-    pl = Plot(f, 60, 45, 470, 225, (0, PI / 2), (0, 0.2))
-    pl.axes([(0, '0'), (1 / 3, '1/3'), (1, '1'), (PI / 2, 'π/2')],
+    par = lambda z: (z - 0.2) ** 2 / 16 + 3 / 2000
+    zs = root(m2, 0.2, 0.5)
+    lo, hi = PI / 6, PI / 2
+    chord = lambda z: m2(lo) + (m2(hi) - m2(lo)) * (z - lo) / (hi - lo)
+    f = Figure(0, 660, 0, 300, 1)
+    # Left: the whole range of turns.
+    pl = Plot(f, 55, 45, 320, 225, (0, PI / 2), (0, 0.2))
+    pl.axes([(0, '0'), (PI / 6, 'π/6'), (1, '1'), (PI / 2, 'π/2')],
             [(0.1, '0.1'), (0.2, '0.2')], xlabel='z')
-    pl.vline(1 / 3)
+    pl.points([(PI / 6, 0.07), (PI / 6, 0.17)], stroke=FAINT, width=1,
+              dash='4 4')
+    pl.points([(0, 0.07), (PI / 6, 0.07), (PI / 6, 0)], stroke=FAINT,
+              width=1, dash='2 3')
+    pl.curve(m2, zs, PI / 6, stroke=GREEN, width=1.4, dash='1 3')
+    pl.curve(chord, lo, hi, stroke=GREEN, width=1.2, dash='5 3')
     pl.curve(E, 0, PI / 2, n=160, stroke=BLUE, width=2.2)
-    pl.curve(lambda z: P(z) - math.sqrt(R2 * U(z)), 0, 1 / 3, stroke=ORANGE,
-             width=1.6)
-    pl.curve(cs, 1 / 3, PI / 2, stroke=GREEN, width=1.6)
-    pl.curve(R, 1 / 3, PI / 2, stroke=ORANGE, width=1.6, dash='5 3')
-    pl.text(0.36, 0.178, 'least value over the axial states', size=12,
+    pl.curve(m1, 0, PI / 6, stroke=ORANGE, width=1.8)
+    pl.curve(m2, PI / 6, PI / 2, stroke=GREEN, width=1.8)
+    pl.text(0.05, 0.185, 'least value over the axial states', size=12,
             italic=False, color=BLUE, anchor='start')
-    pl.text(0.03, 0.05, 'P − √(13U/4)', size=12, italic=False,
-            color=ORANGE, anchor='start')
-    pl.text(1.36, 0.14, 'R (dashed)', size=12, italic=False, color=ORANGE)
-    pl.text(1.08, 0.105, 'Cauchy–Schwarz', size=12, italic=False,
-            color=GREEN, anchor='start')
+    pl.text(1.3, 0.182, sb('m', '2', size=13), size=13, color=GREEN)
+    pl.text(1.22, 0.108, 'chord', size=12, italic=False, color=GREEN,
+            anchor='start')
+    pl.text(0.2, 0.045, sb('m', '1', size=13), size=13, color=ORANGE)
+    # Right: the small turns, magnified.
+    pr = Plot(f, 445, 45, 190, 225, (0, PI / 6), (0, 0.07))
+    pr.axes([(0, '0'), (0.2, '1/5'), (PI / 6, 'π/6')],
+            [(0.03, '0.03'), (0.06, '0.06')], xlabel='z')
+    pr.curve(E, 0, PI / 6, n=120, stroke=BLUE, width=2.2)
+    pr.curve(m1, 0, PI / 6, stroke=ORANGE, width=1.8)
+    pr.curve(par, 0, PI / 6, stroke=ORANGE, width=1.6, dash='5 3')
+    pr.dot(0.2, 3 / 2000, r=3, fill=ORANGE)
+    pr.text(0.06, 0.045, 'least value', size=12, italic=False, color=BLUE,
+            anchor='start')
+    pr.text(0.36, 0.02, sb('m', '1', size=13), size=13, color=ORANGE,
+            anchor='start')
+    pr.text(0.36, 0.0105, 'parabola', size=12, italic=False, color=ORANGE,
+            anchor='start')
     f.save('appd-axial-profile', 'The left side of Lemma D.2 minimised over '
            'the admissible states with axial label, as a function of z, above '
-           'the two certified lower bounds: P minus the root of 13U/4 on '
-           '[0, 1/3] and R on [1/3, pi/2], with the Cauchy–Schwarz bound '
-           'between them')
+           'the two lower bounds of the proof: m1 for z up to pi/6, which '
+           'lies above a parabola with least value 3/2000, and the concave '
+           'm2 from pi/6 to pi/2, which lies above its chord; the right panel '
+           'magnifies the small turns')
 
 
 # Figure D.5: the tangent at the transition state.
@@ -519,6 +565,11 @@ def side_region_points(n=140):
     return pts
 
 
+def tangent_force(z):
+    """The force k(z) along the tangent at the transition state, Lemma D.6."""
+    return 12 / 25 * (math.cos(z) - 0.6) + math.sin(z) - 4 / 15
+
+
 def side_profile():
     pts = side_region_points()
     E = lambda z, A, v: (math.cos(z) - 2 / 15 - 0.8 * z + (0.6 - math.cos(z)) *
@@ -527,33 +578,50 @@ def side_profile():
     L0 = lambda z: math.cos(z) - 2 / 15 - 0.8 * z
     cs = lambda z: L0(z) - math.sqrt(R2 * ((0.6 - math.cos(z)) ** 2 +
                                            (math.sin(z) - 4 / 15) ** 2))
-    f = Figure(0, 560, 0, 300, 1)
-    pl = Plot(f, 60, 45, 470, 225, (0, 1), (0, 0.17))
-    pl.axes([(0, '0'), (1 / 6, '1/6'), (math.acos(0.6), 'arccos 3/5'),
-             (1, '1')], [(0.05, '0.05'), (0.1, '0.1'), (0.15, '0.15')],
-            xlabel='z')
-    pl.vline(1 / 6)
-    pl.vline(math.acos(0.6))
+    zk = root(tangent_force, 0, 1)
+    zc = math.acos(0.6)
+    f = Figure(0, 560, 0, 395, 1)
+    # Top: the least value and its bounds.
+    pl = Plot(f, 60, 180, 470, 195, (0, 1), (0, 0.17))
+    pl.axes([(0, ''), (zk, ''), (zc, ''), (1, '')],
+            [(0.05, '0.05'), (0.1, '0.1'), (0.15, '0.15')], xlabel='z')
+    for x in (zk, zc):
+        pl.vline(x)
     pl.curve(lambda z: E(z, A0, U0), 0, 1, stroke=GREEN, width=1.6,
              dash='5 3')
     pl.curve(m, 0, 1, n=160, stroke=BLUE, width=2.2)
-    pl.curve(cs, 0, 0.19, stroke=ORANGE, width=1.8)
+    pl.curve(cs, 0, root(cs, 0.1, 0.3), stroke=ORANGE, width=1.8)
     pl.text(0.3, 0.12, 'least value over the side states', size=12,
             italic=False, color=BLUE, anchor='start')
     pl.text(0.2, 0.045, 'value at the transition state (dashed)', size=12,
             italic=False, color=GREEN, anchor='start')
-    pl.f.line(pl.q(0.19, 0.042), pl.q(0.05, 0.0095), stroke=GREEN,
+    pl.f.line(pl.q(0.19, 0.042), pl.q(0.035, 0.0092), stroke=GREEN,
               width=0.8)
     pl.text(0.2, 0.004, 'Cauchy–Schwarz', size=12, italic=False,
             color=ORANGE, anchor='start', dy=-8)
-    pl.text(0.083, 0.163, 'step 1', size=11, italic=False, color=FAINT)
-    pl.text(0.55, 0.163, 'steps 2 and 3', size=11, italic=False,
-            color=FAINT)
-    pl.text(0.965, 0.163, '4', size=11, italic=False, color=FAINT)
-    f.save('appd-side-profile', 'The expression of Lemma D.6 minimised over '
-           'the admissible states with side label, as a function of z, with '
-           'its value at the transition state and the Cauchy–Schwarz bound '
-           'used for z up to 1/6')
+    for x, t in ((zk / 2, '1'), ((zk + zc) / 2, '2'), ((zc + 1) / 2, '3')):
+        pl.text(x, 0.163, t, size=12, italic=False, color=FAINT)
+    # Bottom: the force along the tangent at the transition state.
+    pb = Plot(f, 60, 40, 470, 110, (0, 1), (-0.1, 0.6))
+    pb.axes([(0, '0'), (1 / 12, '1/12'), (zc, 'arccos 3/5'), (1, '1')],
+            [(0, '0'), (0.5, '0.5')], zero=False)
+    pb.text(1, -0.1, 'z', size=15, anchor='start', dx=8)
+    pb.hline(0, stroke=INK, dash=None, width=0.8)
+    for x in (zk, zc):
+        pb.vline(x)
+    pb.curve(tangent_force, 0, 1, stroke=PURPLE, width=2)
+    pb.dot(0, tangent_force(0), r=3, fill=PURPLE)
+    pb.dot(zk, 0, r=3, fill=PURPLE)
+    pb.text(0.11, -0.055, 'k(0) = −28/375', size=12, italic=False,
+            color=PURPLE, anchor='start')
+    pb.text(0.45, 0.42, 'k(z)', size=13, color=PURPLE, anchor='end')
+    f.save('appd-side-profile', 'Top: the expression of Lemma D.6 minimised '
+           'over the admissible states with side label, as a function of z, '
+           'with its value at the transition state and the Cauchy–Schwarz '
+           'bound used while k is negative. Bottom: the force k(z) along the '
+           'tangent at the transition state, increasing, negative only below '
+           '1/12; the three cases of the proof are cut where k changes sign '
+           'and where cos z = 3/5')
 
 
 # Figure D.7: the side margin and the lines B(w) = 0.
@@ -635,6 +703,8 @@ def opposite_profiles():
     pl.curve(lambda w: 1 - 4 * PI / 15 + base(w), 0, PI / 6, stroke=BLUE,
              width=2)
     pl.curve(lambda w: aa_neg(-w), -PI / 3, 0, stroke=BLUE, width=2)
+    pl.curve(lambda w: 1 - 4 * PI / 15 + w / 10, -PI / 3, 0, stroke=BLUE,
+             width=1.2, dash='5 3')
     pl.curve(lambda w: 1 / 170 + base(w), 0, PI / 6, stroke=GREEN,
              width=2)
     pl.curve(lambda w: 1 / 170 - w * (7 / 40 + w / 4), -0.7, 0,
@@ -651,7 +721,8 @@ def opposite_profiles():
             italic=False, color=PINK, anchor='start')
     f.save('appd-opposite-profiles', 'The lower bounds for the support sum '
            'with opposite signs as functions of the turn w, for two axial '
-           'labels and for the two mixed pairs of labels; all are positive')
+           'labels, above a line of slope 1/10 for negative turns, and for '
+           'the two mixed pairs of labels; all are positive')
 
 
 # Figure D.9: the marker point of Lemma D.17.
@@ -823,7 +894,7 @@ def circle_profile():
 def main():
     forward_pairs()
     disk_support()
-    bernstein_panels()
+    cone_bound()
     axial_profile()
     transition_tangent()
     side_profile()

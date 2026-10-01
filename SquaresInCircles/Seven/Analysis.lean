@@ -7,8 +7,7 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
 
 The analytic tools of the sector analysis: monotonicity and concavity from
 derivatives, positivity from a curvature bound and one value, Taylor bounds of
-`sin` and `cos` on `[0, ∞)`, and positivity of a polynomial from its
-coefficients in a Bernstein basis.
+`sin` and `cos` on `[0, ∞)`, and the largest value at a peak.
 -/
 noncomputable section
 open Set
@@ -158,12 +157,6 @@ lemma sin_lower_seven {x : ℝ} (hx : 0 ≤ x) : x-x^3/6+x^5/120-x^7/5040 ≤ Re
       linarith [cos_lower_six ht]) hx
   linarith
 
-lemma cos_sq_lower_six {x : ℝ} (hx : 0 ≤ x) :
-    1-x^2+x^4/3-2*x^6/45 ≤ Real.cos x^2 := by
-  have h := cos_lower_six (show 0 ≤ 2*x by linarith)
-  rw [Real.cos_two_mul] at h
-  linarith
-
 /-- Polynomial brackets of `sin` and `cos` on an interval `[l, u] ⊆ [0, π/2]`. -/
 lemma trig_bracket {l u x : ℝ} (hl : 0 ≤ l) (hu : u ≤ Real.pi/2) (hx : l ≤ x ∧ x ≤ u) :
     l-l^3/6+l^5/120-l^7/5040 ≤ Real.sin x ∧ Real.sin x ≤ u-u^3/6+u^5/120 ∧
@@ -177,34 +170,16 @@ lemma trig_bracket {l u x : ℝ} (hl : 0 ≤ l) (hu : u ≤ Real.pi/2) (hx : l �
     (cos_lower_six hu0).trans (Real.cos_le_cos_of_nonneg_of_le_pi hx0 (by linarith) hx.2),
     (Real.cos_le_cos_of_nonneg_of_le_pi hl (by linarith) hx.1).trans (cos_upper_four hl)⟩
 
-/-- The Bernstein basis polynomials of degree `n` on `[l, u]`, scaled by `(u - l)ⁿ`. -/
-def bernstein (n : ℕ) (i : Fin (n+1)) (l u x : ℝ) : ℝ :=
-  (n.choose i : ℝ)*(x-l)^(i : ℕ)*(u-x)^(n-i)
-
-/-- A polynomial with positive coefficients in the Bernstein basis of `[l, u]` is
-positive on `[l, u]`. -/
-lemma bernstein_pos {n : ℕ} (c : Fin (n+1) → ℝ) (hc : ∀ i, 0 < c i) {p : ℝ → ℝ}
-    {l u : ℝ} (hlu : l < u) (hp : ∀ x, p x*(u-l)^n = ∑ i, c i*bernstein n i l u x)
-    {x : ℝ} (hx : l ≤ x ∧ x ≤ u) : 0 < p x := by
-  have hnon (i : Fin (n+1)) : 0 ≤ c i*bernstein n i l u x := by
-    have := sub_nonneg.mpr hx.1
-    have := sub_nonneg.mpr hx.2
-    have := (hc i).le
-    unfold bernstein
-    positivity
-  have hsum : 0 < ∑ i, c i*bernstein n i l u x := by
-    rcases eq_or_lt_of_le hx.2 with rfl | hxu
-    · refine (mul_pos (hc (Fin.last n)) ?_).trans_le
-        (Finset.single_le_sum (fun i _ => hnon i) (Finset.mem_univ _))
-      simp only [bernstein,Fin.val_last,Nat.choose_self,Nat.cast_one,one_mul,Nat.sub_self,
-        pow_zero,mul_one]
-      exact pow_pos (sub_pos.mpr hlu) n
-    · refine (mul_pos (hc 0) ?_).trans_le
-        (Finset.single_le_sum (fun i _ => hnon i) (Finset.mem_univ _))
-      simp only [bernstein,Fin.val_zero,Nat.choose_zero_right,Nat.cast_one,one_mul,pow_zero,
-        Nat.sub_zero]
-      exact pow_pos (sub_pos.mpr hxu) n
-  rw [← hp] at hsum
-  exact pos_of_mul_pos_left hsum (pow_nonneg (sub_nonneg.mpr hlu.le) n)
+/-- A function increasing up to `c` and decreasing after it is largest at `c`. -/
+lemma le_at_peak {f d : ℝ → ℝ} {l c u x : ℝ}
+    (hc : l ≤ c ∧ c ≤ u) (hx : l ≤ x ∧ x ≤ u)
+    (hf : Continuous f) (hd : ∀ y, HasDerivAt f (d y) y)
+    (hleft : ∀ y ∈ Icc l c, 0 ≤ d y)
+    (hright : ∀ y ∈ Icc c u, d y ≤ 0) : f x ≤ f c := by
+  rcases le_total x c with hxc | hcx
+  · exact monoOn_of_hasDeriv_nonneg hf.continuousOn (fun y _ => hd y)
+      (fun y hy => hleft y ⟨hy.1.le,hy.2.le⟩) ⟨hx.1,hxc⟩ ⟨hc.1,le_rfl⟩ hxc
+  · exact antiOn_of_hasDeriv_nonpos hf.continuousOn (fun y _ => hd y)
+      (fun y hy => hright y ⟨hy.1.le,hy.2.le⟩) ⟨le_rfl,hc.2⟩ ⟨hcx,hx.2⟩ hcx
 
 end SquaresInCircles.Seven

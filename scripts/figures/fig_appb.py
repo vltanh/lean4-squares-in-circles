@@ -592,31 +592,79 @@ def targets():
            'pi/4 (dashed)')
 
 
-# Figure: the Bernstein certificate of the derivative ratio.
+# Figure: the quintic and the derivative ratio (Lemma B.22).
 
-def bernstein():
-    c = [2992 / 25, 16676 / 125, 138343 / 1000, 423899 / 3200, 18151 / 160,
-         20113 / 256]
+def quintic(x):
+    return (-500 * x ** 5 + 800 * x ** 4 + 1705 * x ** 3 - 3900 * x ** 2
+            + 3120 * x - 1872)
 
-    def P(x):
-        return (-500 * x ** 5 + 800 * x ** 4 + 1705 * x ** 3 - 3900 * x ** 2
-                + 3120 * x - 1872)
-    f = Figure(0, 6.6, 0, 4.3, 80)
-    g = Plot(f, (1.0, 0.7, 5.0, 3.2), (1.58, 1.77), (0, 150))
-    g.axes([(1.6, '8/5'), (1.75, '7/4')],
+
+def ratio_rho(s):
+    return xi(s) * (9 / 5 - xi(s)) / (eta(s) * (xi(s) - 4 / 5))
+
+
+def ratio():
+    f = Figure(0, 10.0, 0, 4.0, 70)
+    # (a) The quintic is concave on [8/5, 7/4], so above its chord.
+    lo, hi = 8 / 5, 7 / 4
+
+    def chord(x):
+        return ((hi - x) * quintic(lo) + (x - lo) * quintic(hi)) / (hi - lo)
+    assert quintic(lo) > 0 and quintic(hi) > 0
+    assert all(quintic(x) > chord(x) - 1e-9 for x in grid(lo, hi, 300))
+    g = Plot(f, (0.9, 0.7, 4.0, 2.9), (1.56, 1.8), (0, 150))
+    g.axes([(lo, '8/5'), (hi, '7/4')],
            [(0, '0'), (50, '50'), (100, '100'), (150, '150')], 'X')
-    ctrl = [(1.6 + 0.15 * i / 5, c[i]) for i in range(6)]
-    g.curve(ctrl, stroke=ORANGE, width=1.3, dash='5 3')
-    for i, p in enumerate(ctrl):
-        f.dot(g.P(*p), r=3.4, fill=ORANGE)
-        f.text(shift(g.P(*p), (0, 0.2)), sb('c', str(i), size=12), size=12,
-               color=ORANGE)
-    g.curve([(x, P(x)) for x in grid(1.6, 1.75, 120)], stroke=BLUE,
+    for x in (lo, hi):
+        f.line(g.P(x, 0), g.P(x, quintic(x)), stroke=FAINT, width=0.8,
+               dash='2 3')
+    g.curve([(x, quintic(x)) for x in grid(1.57, lo, 20)], stroke=FAINT,
+            width=1.6)
+    g.curve([(x, quintic(x)) for x in grid(hi, 1.78, 20)], stroke=FAINT,
+            width=1.6)
+    g.curve([(lo, quintic(lo)), (hi, quintic(hi))], stroke=ORANGE, width=2)
+    g.curve([(x, quintic(x)) for x in grid(lo, hi, 120)], stroke=BLUE,
+            width=2.4)
+    for x, s, dx, anchor in ((lo, '2992/25', 0.12, 'start'),
+                             (hi, '20113/256', -0.12, 'end')):
+        f.dot(g.P(x, quintic(x)), r=3.4, fill=ORANGE)
+        f.text(shift(g.P(x, quintic(x)), (dx, -0.38)), s, size=12,
+               italic=False, color=ORANGE, anchor=anchor)
+    f.text(shift(g.P(1.675, quintic(1.675)), (0, 0.2)), 'P', size=15,
+           color=BLUE)
+    f.text(shift(g.P(1.675, (quintic(lo) + quintic(hi)) / 2), (0, -0.2)),
+           'chord', size=12, italic=False, color=ORANGE)
+    f.text(shift(g.P(1.56, 150), (0.1, 0.25)), '(a) the quintic P',
+           size=13, italic=False, anchor='start')
+    # (b) For the source label pi/4 the ratio stays below tan d.
+    assert ratio_rho(0) < 2 - ROOT3
+    assert all(ratio_rho(s) < math.tan(PI / 12 + s) for s in grid(0, S0))
+    h = Plot(f, (6.1, 0.7, 3.4, 2.9), (0, 0.42), (0.2, 0.8))
+    h.axes([(0, '0'), (S0, sb('s', '0', size=12))],
+           [(0.4, '0.4'), (0.6, '0.6'), (0.8, '0.8')], 'ℓ′')
+    f.line(h.P(S0, 0.2), h.P(S0, math.tan(PI / 12 + S0)), stroke=FAINT,
+           width=0.8, dash='2 3')
+    h.curve([(s, math.tan(PI / 12 + s)) for s in grid(0, S0, 80)],
+            stroke=ORANGE, width=2.2)
+    h.curve([(s, ratio_rho(s)) for s in grid(0, S0, 80)], stroke=BLUE,
             width=2.2)
-    f.text(shift(g.P(1.67, P(1.67)), (0, -0.3)), 'P', size=15, color=BLUE)
-    f.save('appb-bernstein', 'The quintic P on [8/5, 7/4] and its Bernstein '
-           'control polygon: the six coefficients c0 to c5 are positive, so '
-           'P is positive on the interval')
+    f.dot(h.P(0, 2 - ROOT3), r=3.2, fill=ORANGE)
+    f.dot(h.P(0, ratio_rho(0)), r=3.2, fill=BLUE)
+    f.text(shift(h.P(0, 2 - ROOT3), (-0.12, 0.13)), '2 − √3', size=12,
+           italic=False, color=ORANGE, anchor='end')
+    f.text(shift(h.P(0, ratio_rho(0)), (-0.12, -0.13)), 'ρ(0)', size=12,
+           color=BLUE, anchor='end')
+    f.text(shift(h.P(S0, math.tan(PI / 12 + S0)), (0.1, 0)), 'tan d',
+           size=13, color=ORANGE, anchor='start')
+    f.text(shift(h.P(S0, ratio_rho(S0)), (0.1, 0)), 'ρ', size=15,
+           color=BLUE, anchor='start')
+    f.text(shift(h.P(0, 0.8), (0.1, 0.25)), '(b) ρ and tan d, for ℓ = π/4',
+           size=13, italic=False, anchor='start')
+    f.save('appb-ratio', 'Left: the quintic P on [8/5, 7/4], concave and '
+           'above its chord through the positive end values 2992/25 and '
+           '20113/256. Right: for the source label pi/4, the ratio rho on '
+           '[0, s0] below tan d with d = pi/12 + l′; at 0 it starts at '
+           'rho(0), just below 2 - root 3 = tan(pi/12)')
 
 
 # Figure: the easy sectors.
@@ -722,7 +770,7 @@ def main():
     capped()
     profiles()
     targets()
-    bernstein()
+    ratio()
     easy()
 
 

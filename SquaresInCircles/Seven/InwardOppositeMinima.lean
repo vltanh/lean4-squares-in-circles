@@ -11,9 +11,10 @@ top of its label segment and the target at the end of its label segment. A
 diagonal source moves to its junction or a capped axial endpoint, and a circular
 source with a straight axial target to one of its two junctions. The circular
 pieces use a two-circle certificate: the radical envelope is bounded by an
-explicit quadratic, which turns the support bound into `radialE`, positive by a
-Bernstein certificate; the diagonal junction uses one fixed positive value and
-monotonicity.
+explicit quadratic, which turns the support bound into `radialE`, positive by
+completing the square in `v`: what remains is `z` times a polynomial that
+decreases on `[0, 1]` and is positive at `5/8`. The diagonal junction uses one
+fixed positive value and monotonicity.
 -/
 noncomputable section
 open Set
@@ -49,17 +50,29 @@ def radialPolynomial (z : ℝ) : ℝ :=
   + (977419/182520000)*z^5 - (13/6300)*z^6
   - (364297/196560000)*z^7 + z^8/90720 + z^9/8640 - z^11/518400
 
+/-- `radialPolynomial` decreases on `[0, 1]`: the only positive terms of its derivative,
+in `z⁴`, `z⁷` and `z⁸`, cannot outweigh its negative constant term there. It is positive
+at `5/8`. -/
 lemma radialPolynomial_pos {z : ℝ} (hz : 0 ≤ z ∧ z ≤ 5/8) :
-    0 < radialPolynomial z :=
-  bernstein_pos ![201/2000,61767947/624624000,160355527/1665664000,
-    22183121153/239855616000,1341122208527/15350759424000,
-    44622066127207/552627339264000,23358801914587/322365947904000,
-    4410162763554631/70736299425792000,1523041486356419/30315556896768000,
-    4524018740302909/125753421201408000,406318644428659/20958903533568000,
-    125352005285647/418089296461824000]
-    (fun i => by fin_cases i <;> norm_num) (by norm_num)
-    (fun x => by simp only [radialPolynomial,bernstein,Fin.sum_univ_succ,Fin.sum_univ_zero]
-                 norm_num [Nat.choose]; ring) hz
+    0 < radialPolynomial z := by
+  have hanti : AntitoneOn radialPolynomial (Icc 0 1) := by
+    apply antiOn_of_hasDeriv_nonpos (d := fun x => -201353/7098000-(3091/10920)*x
+      -(1571239/4732000)*x^2-(23103/1820000)*x^3+(977419/36504000)*x^4
+      -(13/1050)*x^5-(364297/28080000)*x^6+x^7/11340+x^8/960-(11/518400)*x^10)
+      (by unfold radialPolynomial; fun_prop)
+    · intro x _
+      have hd : DifferentiableAt ℝ radialPolynomial x := by unfold radialPolynomial; fun_prop
+      convert hd.hasDerivAt using 1
+      unfold radialPolynomial
+      simp (disch := fun_prop)
+      ring
+    · intro x hx
+      have h0 := hx.1.le
+      have h1 := hx.2.le
+      linarith [pow_le_one₀ (n := 4) h0 h1,pow_le_one₀ (n := 7) h0 h1,pow_le_one₀ (n := 8) h0 h1,
+        pow_nonneg h0 2,pow_nonneg h0 3,pow_nonneg h0 5,pow_nonneg h0 6,pow_nonneg h0 10]
+  have h58 : 0 < radialPolynomial (5/8) := by norm_num [radialPolynomial]
+  exact h58.trans_le (hanti ⟨hz.1,by linarith [hz.2]⟩ (by constructor <;> norm_num) hz.2)
 
 def radialB (z : ℝ) : ℝ :=
   67*z/1000-z^2/4+73*z^3/600+z^4/48-733*z^5/120000-z^6/1440

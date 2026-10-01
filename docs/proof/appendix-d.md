@@ -40,7 +40,9 @@ in one angle, the *turn*, which measures how far $T$ is turned from its position
 at a contact. Then the support of $T$ is bounded below, either by Cauchy–Schwarz
 on the disk $\varphi \le \frac{13}4$ (§D.2, §D.3) or by following the exact
 boundary of the label regions (§D.4). What remains is an inequality in the turn
-alone, which is reduced to exact polynomial checks.
+alone. It is proved by elementary calculus, from the sign of a derivative, a
+bound on a second derivative or concavity, together with Taylor bounds and
+exact values at a few points.
 
 ![Three canonical pairs in the chart of S, each with the forward normal n1 drawn as a vertical arrow on the right and the shadows of S (blue) and T (green) on it; in each panel the dashed marker rays of S and T are pi/3 apart. Left, signs (1, −1): S = Q(1, 0), and T is an axis-parallel square above it that shares half of the top edge of S; the shadows touch. Middle, signs (−1, 1): S = Q(1, −1/2) and T = Q(1, 1/2) share an edge; the shadows touch. Right, signs (−1, −1): S = Q(1, −1/2), and T is turned by 30 degrees and pokes into S; the shadows overlap.](figures/appd-forward-pairs.svg)
 
@@ -74,20 +76,24 @@ $\pi - e$, $\frac{3\pi}2 + w$ or $\frac{3\pi}2 - d$ for a turn $e$, $w$ or $d$,
 and we use $\cos(\pi - x) = -\cos x$, $\sin(\pi - x) = \sin x$,
 $\cos(\frac{3\pi}2 \pm x) = \pm\sin x$ and $\sin(\frac{3\pi}2 \pm x) = -\cos x$.
 
-**Cauchy–Schwarz on the disk.** Let $\varphi(A, v) \le \frac{13}4$, and let $p$,
-$q$ and $c \ge 0$ be real numbers. If $\frac{13}4(p^2 + q^2) \le c^2$, then
+**Cauchy–Schwarz on the disk.** Let $\varphi(A, v) \le \frac{13}4$, and put
+$X = A + \frac12$ and $Y = v + \frac12$, so that $X^2 + Y^2 \le \frac{13}4$. We
+call the coefficient vector $(p, q)$ of a linear form $pX + qY$ its *force*.
+Let $c \ge 0$. If $\frac{13}4(p^2 + q^2) \le c^2$, then
 
 ```math
-p\left(A + \tfrac12\right) + q\left(v + \tfrac12\right) \ge -c ,
+-c \le p\left(A + \tfrac12\right) + q\left(v + \tfrac12\right) \le c ,
 ```
 
-and the inequality is strict if $\frac{13}4(p^2 + q^2) < c^2$ ([Lemma 9.11](seven.md#lemma-911-the-support-function)). Indeed, by Cauchy–Schwarz the square of the left side is at
-most $(p^2 + q^2)\,\varphi(A, v) \le \frac{13}4(p^2 + q^2)$. Geometrically, the
-disk $\varphi \le \frac{13}4$ is the disk of radius $\frac{\sqrt{13}}2$ about
-$(-\frac12, -\frac12)$ in the $(A, v)$-plane; the least value of the linear form
-on it is taken where one of its level lines supports the disk (Figure D.2), and
-this least value is at least $-c$. The same holds for $(a, u)$ in place of
-$(A, v)$.
+and the first inequality is strict if $\frac{13}4(p^2 + q^2) < c^2$
+([Lemma B.3](appendix-b.md#lemma-b3-cauchyschwarz-on-the-disk); the upper bound is the lower bound for the force
+$(-p, -q)$). Indeed, by Cauchy–Schwarz the square of the middle term is at most
+$(p^2 + q^2)\,\varphi(A, v) \le \frac{13}4(p^2 + q^2)$. Geometrically, the disk
+$\varphi \le \frac{13}4$ is the disk of radius $\frac{\sqrt{13}}2$ about
+$(-\frac12, -\frac12)$ in the $(A, v)$-plane. The least and the greatest value
+of the linear form on it, $\mp\frac{\sqrt{13}}2\sqrt{p^2 + q^2}$, are taken
+where its level lines support the disk (Figure D.2). The same holds for
+$(a, u)$ in place of $(A, v)$.
 
 ![The admissible states in the (A, v)-plane: the region cut from the disk phi at most 13/4 (dashed circle) by A at least 1/2 and 0 at most v at most A, divided into axial labels (blue, below the dashed tie line), side labels (green) and capped labels (grey). The thick orange line 3A + 2v = 4, marked r(A, v) = 0, touches the circle at the side state (1, 1/2), where the normal (3, 2) is drawn; two thin parallel orange lines cut the disk.](figures/appd-disk-support.svg)
 
@@ -100,54 +106,73 @@ that supports the disk. Drawn is the case $(p, q) = -(\frac9{10}, \frac35)$ of
 Proposition D.10, whose supporting line is $r(A, v) = 0$, touching at the side
 state $(1, \frac12)$.
 
+**A cone of forces.** The greatest value of $UX + VY$ on the disk,
+$\frac{\sqrt{13}}2\sqrt{U^2 + V^2}$, is not linear in the force $(U, V)$. On a
+narrow cone of forces it is bounded by a linear function: if $U > 0$ and
+$\frac U2 \le V \le \frac35U$, then
+
+```math
+UX + VY \le \tfrac{13}8U + \tfrac45V .
+```
+
+Indeed $c = \frac{13}8U + \frac45V$ is positive, and expanding shows
+
+```math
+c^2 - \tfrac{13}4\left(U^2 + V^2\right)
+= \tfrac{261}{100}\left(V - \tfrac U2\right)\left(\tfrac35U - V\right) + \tfrac{271}{1000}\,U\left(\tfrac35U - V\right) + \tfrac{441}{40000}\,U^2 ,
+```
+
+a sum of nonnegative terms on the cone; so Cauchy–Schwarz on the disk applies.
+In terms of the slope $r = V/U$, the left side is $U^2$ times the concave
+quadratic $-\frac{39}{64} + \frac{13}5r - \frac{261}{100}r^2$. It is
+$\frac{61}{1600}$ at $r = \frac12$ and $\frac{441}{40000}$ at $r = \frac35$,
+and positive only for slopes between about $0.38$ and $0.62$: the bound holds
+only on a narrow cone (Figure D.3). Geometrically, the point
+$(\frac{13}8, \frac45)$, just outside the circle $X^2 + Y^2 = \frac{13}4$, lies
+beyond every tangent of the circle whose outer normal is in the cone. Lemma D.2
+applies the bound to the part of a force that the tie line leaves over.
+
+![Two panels. Left: the plane of forces, with the orange cone between the rays V = U/2 and V = 3U/5. The black arc of forces (cos z, 1 − sin z) runs from (1, 1) at z = 0 down to (√3/2, 1/2) at z = π/6; purple segments parallel to (9, 11) join forces to residual forces, and the blue curve of residual forces (U, V) runs inside the cone from about (0.33, 0.18) at z = 0 to the force itself at z = π/6. Right: a concave arch over the slope r from 0.35 to 0.66, negative at both ends and positive between about 0.38 and 0.62; the part over the cone from 1/2 to 3/5 is shaded, with end values 61/1600 and 441/40000, and a blue segment on the axis marks the slopes of the residual forces.](figures/appd-cone.svg)
+
+*Figure D.3.* The cone bound and the residual forces of Lemma D.2. Left: for
+$0 \le z \le \frac\pi6$ the force $(\cos z, 1 - \sin z)$ (black) splits into
+$\mu\,(9, 11)$ (purple), which the tie line takes up, and a residual force
+$(U, V)$ (blue), which stays in the cone $\frac U2 \le V \le \frac35U$
+(orange). The share $\mu = \frac3{40}(1 - 2\sin z)$ vanishes at
+$z = \frac\pi6$, where the force itself lies in the cone. Right: the margin
+$c^2 - \frac{13}4(U^2 + V^2)$ of the cone bound for the force $(1, r)$, as a
+function of the slope $r$. It is positive on the cone (shaded), and in
+particular at the slopes of the residual forces, between about $0.54$ and
+$0.58$ (blue).
+
 **Taylor bounds.** Put
 
 ```math
-S_3(x) = x - \tfrac{x^3}6, \quad S_5(x) = S_3(x) + \tfrac{x^5}{120}, \quad S_7(x) = S_5(x) - \tfrac{x^7}{5040},
-```
-
-```math
-C_2(x) = 1 - \tfrac{x^2}2, \quad C_4(x) = C_2(x) + \tfrac{x^4}{24}, \quad C_6(x) = C_4(x) - \tfrac{x^6}{720}, \quad
-K_6(x) = 1 - x^2 + \tfrac{x^4}3 - \tfrac{2x^6}{45} .
+S_3(x) = x - \tfrac{x^3}6, \quad S_5(x) = S_3(x) + \tfrac{x^5}{120}, \quad
+C_2(x) = 1 - \tfrac{x^2}2, \quad C_4(x) = C_2(x) + \tfrac{x^4}{24} .
 ```
 
 Then $\cos x \ge C_2(x)$ for all real $x$, and for $x \ge 0$
 
 ```math
-S_3(x) \le \sin x \le x, \qquad S_7(x) \le \sin x \le S_5(x), \qquad
-C_6(x) \le \cos x \le C_4(x), \qquad \cos^2 x \ge K_6(x) .
+S_3(x) \le \sin x \le x, \qquad \sin x \le S_5(x), \qquad \cos x \le C_4(x) .
 \tag{D.2}
 ```
 
 Starting from $\sin x \le x$, each of $1 - \cos x \le \frac{x^2}2$,
-$\sin x \ge S_3$, $\cos x \le C_4$, $\sin x \le S_5$, $\cos x \ge C_6$,
-$\sin x \ge S_7$ follows from the previous one by integrating from $0$ to $x$;
-and $\cos^2 x = \frac12(1 + \cos 2x) \ge \frac12(1 + C_6(2x)) = K_6(x)$
-([Lemma A.7](appendix-a.md#lemma-a7-taylor-bounds)).
+$\sin x \ge S_3$, $\cos x \le C_4$, $\sin x \le S_5$ follows from the previous
+one by integrating from $0$ to $x$ ([Lemma A.7](appendix-a.md#lemma-a7-taylor-bounds)).
 
-**Bernstein coefficients.** Let $p$ be a polynomial of degree at most $n$ and
-$x_0 < x_1$. Its *Bernstein coefficients* on $[x_0, x_1]$ are the numbers
-$c_0, \dots, c_n$ with
-
-```math
-p(x)\,(x_1 - x_0)^n = \sum_{i=0}^n c_i \binom ni (x - x_0)^i (x_1 - x)^{n-i} .
-```
-
-If $q(y) = p(x_0 + (x_1 - x_0)y) = \sum_k \alpha_k y^k$, then
-$c_i = \sum_{k \le i} \binom ik \binom nk^{-1} \alpha_k$. If all $c_i$ are
-positive, then $p > 0$ on $[x_0, x_1]$ ([Lemma A.10](appendix-a.md#lemma-a10-bernstein-criterion)), since every term
-of the sum is nonnegative there and one of the two end terms is positive. The
-four such certificates of this appendix are listed in full, with exact
-coefficients, in Lemmas D.2, D.6 and D.12 (Figure D.3).
-
-![Four graphs, each of a polynomial (black) on its interval with its Bernstein control polygon (orange, dashed, with dots): Q of degree 14 on [0, 1/3], R of degree 7 on [1/3, 11/7], H of degree 6 on [0, 1/6], and p5 of degree 5 on [0, 11/10]. All control points lie above the horizontal axis.](figures/appd-bernstein.svg)
-
-*Figure D.3.* The four Bernstein certificates of this appendix. Each polynomial
-(black) is drawn with its control polygon (orange), whose vertices are the
-points $(x_0 + \frac in(x_1 - x_0), c_i)$. The graph lies in the convex hull of
-the control points, which is why positive coefficients give a positive
-polynomial. The last coefficient of $H$ is about $0.0003$: $H$ nearly vanishes
-at $\frac16$, where Lemma D.6 changes its method.
+**Calculus in one variable.** The inequalities in the turn alone are proved
+with the tools of Appendix A. A function with a nonnegative derivative on an
+interval is nondecreasing there ([Lemma A.1](appendix-a.md#lemma-a1-monotonicity-from-the-derivative)). A function whose second
+derivative is at least $\kappa$ on an interval lies above its tangent parabolas
+of curvature $\kappa$ there,
+$f(x) \ge f(t) + f'(t)(x - t) + \frac\kappa2(x - t)^2$
+([Lemma A.2](appendix-a.md#lemma-a2-tangent-parabolas)). A function whose second derivative is at most 0 on an
+interval is concave there, so it is positive on the interval if it is positive
+at both ends ([Lemma A.4](appendix-a.md#lemma-a4-positivity-from-concavity)). For instance $\alpha y + A\sin y + B\cos y$ with
+$A, B \ge 0$ is concave on $[0, \frac\pi2]$ ([Lemma A.5](appendix-a.md#lemma-a5-concave-trigonometric-sums)).
 
 **Constants.** We use $3.14 < \pi < \frac{22}7$, and occasionally the sharper
 bounds of §2.1. Also $\frac{173}{100} < \sqrt3 < \frac{1733}{1000}$
@@ -338,8 +363,8 @@ $\ell \le \mathrm{axial}(u) = \frac54u$. If $s = -1$, the label is axial, so
 $\ell = \frac54u$ and $su = -u = \frac45 s\ell$. $\square$
 
 *Lean:
-[`Seven.forward_negative_target_lower`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L22),
-[`Seven.rawTarget`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L19).*
+[`Seven.forward_negative_target_lower`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L23),
+[`Seven.rawTarget`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L20).*
 
 ### Lemma D.2 (an axial target at a negative turn)
 
@@ -352,146 +377,141 @@ Let $(A, v)$ be admissible with axial label, and $0 \le z \le \frac\pi2$. Then
 *Proof.* Put $X = A + \frac12$ and $Y = v + \frac12$, so that
 $X^2 + Y^2 = \varphi(A, v) \le \frac{13}4$, and
 $\Lambda(z) = 1 + \frac{2\pi}{15} - \frac45z + \cos z$. The claim is
-$X\cos z + Y(1 - \sin z) < \Lambda(z)$, a linear bound on the disk. The label is
-axial, so $9A + 11v \le 2\pi + 7$, that is
+$X\cos z + Y(1 - \sin z) < \Lambda(z)$: the linear form with the force
+$(\cos z, 1 - \sin z)$ stays below $\Lambda(z)$ on the states with axial label.
+The label is axial, so $9A + 11v \le 2\pi + 7$, that is
 
 ```math
 9X + 11Y \le 2\pi + 17 .
 \tag{D.6}
 ```
 
-1. *For $z \le \frac13$ we split off the tie line.* Let
-   $n = \frac3{40}(1 - 2\sin z)$ and
+Let $\gamma = \cos\frac z2 - \sin\frac z2$. As
+$\sin z = 2\sin\frac z2\cos\frac z2$,
+
+```math
+\cos^2 z + (1 - \sin z)^2 = 2 - 2\sin z = 2\gamma^2 ,
+```
+
+and $\gamma \ge 0$ by [Lemma A.6](appendix-a.md#lemma-a6-sine-and-cosine-compared), as $0 \le \frac z2 \le \frac\pi4$. So the force has
+length $\sqrt2\,\gamma$. For large turns the disk alone bounds the form (step
+3). For small turns it does not: at $z = 0$ the greatest value of $X + Y$ on the
+disk is $\sqrt{13/2} > 2.5$, while $\Lambda(0) = 2 + \frac{2\pi}{15} < 2.5$.
+There the tie line (D.6) takes up part of the force first. The two cases meet
+at $z = \frac\pi6$, where the share of the tie line vanishes (Figure D.4).
+
+1. *Small turns: the residual force.* Let $0 \le z \le \frac\pi6$. Then
+   $0 \le \sin z \le \frac12$ and $\cos z \ge \frac{\sqrt3}2 > \frac56$, as the
+   sine increases and the cosine decreases on $[0, \frac\pi2]$, and
+   $\sqrt3 > \frac53$. Let $\mu = \frac3{40}(1 - 2\sin z) \ge 0$, and split the
+   force as $(\cos z, 1 - \sin z) = \mu\,(9, 11) + (U, V)$, so that
 
    ```math
-   L(z) = \cos z - \tfrac{11}{40} - \tfrac\pi{60} - \tfrac45z + \left(\tfrac{51}{20} + \tfrac{3\pi}{10}\right)\sin z .
+   U = \cos z - \tfrac{27}{40} + \tfrac{27}{20}\sin z , \qquad V = \tfrac7{40} + \tfrac{13}{20}\sin z .
    ```
 
-   Then $n \ge 0$, as $\sin z \le z \le \frac13$, and expanding gives
-   $L(z) + (2\pi + 17)n = \Lambda(z)$. Hence
+   The residual force $(U, V)$ lies in the cone of §D.1 (Figure D.3). First,
+   $U > \frac56 - \frac{27}{40} = \frac{19}{120} > 0$. Next,
 
    ```math
-   \Lambda(z) - X\cos z - Y(1 - \sin z)
-   = \Bigl[L(z) - (\cos z - 9n)X - (1 - \sin z - 11n)Y\Bigr] + n\,(2\pi + 17 - 9X - 11Y) .
+   V - \tfrac U2 = \tfrac1{80}\left(41 - 40\cos z - 2\sin z\right) \ge 0 , \qquad
+   \tfrac35U - V = \tfrac1{50}\left(30\cos z + 8\sin z - 29\right) > 0 :
    ```
 
-   The last term is nonnegative by (D.6). We show that the bracket is positive
-   by Cauchy–Schwarz on the disk with $p = -(\cos z - 9n)$,
-   $q = -(1 - \sin z - 11n)$ and $c = L(z)$. For this we need $L(z) \ge 0$ and
-   $\frac{13}4(p^2 + q^2) < L(z)^2$.
-2. *A lower bound for $L$.* As $\pi > 3.14 = \frac{157}{50}$, the coefficient
-   $\frac{51}{20} + \frac{3\pi}{10}$ exceeds $\frac{873}{250}$; as
-   $\pi < \frac{22}7$, $\frac{11}{40} + \frac\pi{60} < \frac{55}{168}$. With
-   $\cos z \ge C_6(z)$, $\sin z \ge 0$ and $\sin z \ge S_7(z)$ from (D.2),
-   $L(z) \ge P(z)$, where
-   $P(z) = C_6(z) - \frac{55}{168} - \frac45z + \frac{873}{250}S_7(z)$, that is
+   the first as $\cos z \le 1$ and $\sin z \le \frac12$; the second as
+   $30\cos y + 8\sin y$ is concave on $[0, \frac\pi2]$ and exceeds 29 at both
+   ends of $[0, \frac\pi6]$, where it is $30$ and $15\sqrt3 + 4 > 29$
+   ([Lemma A.5](appendix-a.md#lemma-a5-concave-trigonometric-sums)).
+2. *Small turns: the margin.* By (D.6), $\mu \ge 0$ and the cone bound of §D.1,
 
    ```math
-   P(z) = \tfrac{113}{168} + \tfrac{673}{250}z - \tfrac{1}{2}z^{2} - \tfrac{291}{500}z^{3} + \tfrac{1}{24}z^{4} + \tfrac{291}{10000}z^{5} - \tfrac{1}{720}z^{6} - \tfrac{97}{140000}z^{7} .
+   X\cos z + Y(1 - \sin z) = \mu\,(9X + 11Y) + UX + VY \le \mu\,(2\pi + 17) + \tfrac{13}8U + \tfrac45V .
    ```
 
-   On $[0, \frac13]$ we have $z^2 \le \frac19$ and $z^3 \le \frac1{27}$, the
-   linear term of $P$ is nonnegative, and
+   Substituting $\mu$, $U$ and $V$ and expanding, $\Lambda(z)$ exceeds the right
+   side by
 
    ```math
-   \tfrac1{24}z^4 - \tfrac1{720}z^6 = z^4\left(\tfrac1{24} - \tfrac{z^2}{720}\right) \ge 0, \qquad
-   \tfrac{291}{10000}z^5 - \tfrac{97}{140000}z^7 = \tfrac{873}{250}z^5\left(\tfrac1{120} - \tfrac{z^2}{5040}\right) \ge 0 .
+   m_1(z) = \tfrac{1091}{1600} - \tfrac\pi{60} - \tfrac58\cos z + \left(\tfrac{3\pi}{10} - \tfrac{131}{800}\right)\sin z - \tfrac45z ,
    ```
 
-   So
+   so it suffices that $m_1 > 0$ on $[0, \frac\pi6]$. By
+   $3.14 < \pi < \frac{22}7$, the coefficient of $\sin z$ lies between 0 and
+   $\frac{66}{70} - \frac{131}{800} = \frac{4363}{5600}$, so for
+   $0 \le z \le \frac\pi6$
 
    ```math
-   P(z) \ge \tfrac{113}{168} - \tfrac1{18} - \tfrac{291}{13500} = \tfrac{37517}{63000} > \tfrac12 ,
+   m_1''(z) = \tfrac58\cos z - \left(\tfrac{3\pi}{10} - \tfrac{131}{800}\right)\sin z
+   > \tfrac58\cdot\tfrac56 - \tfrac12\cdot\tfrac{4363}{5600} = \tfrac{4411}{33600} > \tfrac18 .
    ```
 
-   and $L(z) \ge P(z) > \frac12$.
-3. *An upper bound for $p^2 + q^2$.* We have
-   $\cos z - 9n = \cos z - \frac{27}{40} + \frac{27}{20}\sin z$ and
-   $1 - \sin z - 11n = \frac7{40} + \frac{13}{20}\sin z$. Expanding the squares
-   and using $\cos^2 z = 1 - \sin^2 z$,
+   By [Lemma A.2](appendix-a.md#lemma-a2-tangent-parabolas) with $t = 0$ and $\kappa = \frac18$,
+   $m_1(z) \ge m_1(0) + m_1'(0)\,z + \frac{z^2}{16}$. Again by
+   $3.14 < \pi < \frac{22}7$,
 
    ```math
-   p^2 + q^2 = \tfrac{1189}{800} - \tfrac{27}{20}\cos z + \tfrac{27}{10}\sin z\cos z + \tfrac{249}{200}\sin^2 z - \tfrac{319}{200}\sin z .
+   m_1(0) = \tfrac{91}{1600} - \tfrac\pi{60} > \tfrac{151}{33600} > \tfrac1{250} , \qquad
+   m_1'(0) = \tfrac{3\pi}{10} - \tfrac{771}{800} > -\tfrac{87}{4000} > -\tfrac1{40} ,
    ```
 
-   By (D.2), $\cos z \ge C_6(z)$, $0 \le \sin z\cos z \le S_5(z)C_4(z)$ (both
-   factors are nonnegative), $\sin^2 z = 1 - \cos^2 z \le 1 - K_6(z)$ and
-   $\sin z \ge S_7(z)$. So $p^2 + q^2 \le U(z)$, where
+   and therefore
 
    ```math
-   \begin{aligned}
-   U(z) &= \tfrac{1189}{800} - \tfrac{27}{20}C_6(z) + \tfrac{27}{10}S_5(z)C_4(z) + \tfrac{249}{200}\bigl(1 - K_6(z)\bigr) - \tfrac{319}{200}S_7(z) \\
-   &= \tfrac{109}{800} + \tfrac{221}{200}z + \tfrac{48}{25}z^{2} - \tfrac{1841}{1200}z^{3} - \tfrac{377}{800}z^{4} + \tfrac{8321}{24000}z^{5} + \tfrac{1373}{24000}z^{6} - \tfrac{29921}{1008000}z^{7} + \tfrac{3}{3200}z^{9} .
-   \end{aligned}
+   m_1(z) > \tfrac1{250} - \tfrac z{40} + \tfrac{z^2}{16} = \tfrac1{16}\left(z - \tfrac15\right)^2 + \tfrac3{2000} > 0 .
    ```
 
-4. *The certificate.* The polynomial $Q = P^2 - \frac{13}4U$ of degree 14 is
+3. *Large turns: the disk alone.* Let $\frac\pi6 \le z \le \frac\pi2$. The force
+   has squared length $2\gamma^2$, and
+   $\frac{13}4\cdot2\gamma^2 \le (\frac{51}{20}\gamma)^2$, as
+   $\frac{13}2 = \frac{2600}{400} < \frac{2601}{400}$. So Cauchy–Schwarz on the
+   disk ([Lemma B.3](appendix-b.md#lemma-b3-cauchyschwarz-on-the-disk)) gives $X\cos z + Y(1 - \sin z) \le \frac{51}{20}\gamma$,
+   and it suffices that
 
    ```math
-   \begin{aligned}
-   Q(z) = {} & \tfrac{13553}{1411200} + \tfrac{2531}{84000}z + \tfrac{877393}{2625000}z^{2} + \tfrac{253867}{168000}z^{3} - \tfrac{163280113}{126000000}z^{4} - \tfrac{315081}{1120000}z^{5} + \tfrac{1005239077}{3780000000}z^{6} + \tfrac{1476347}{141120000}z^{7} \\
-   & - \tfrac{1206721}{35000000}z^{8} + \tfrac{11341}{6720000}z^{9} + \tfrac{29059789}{18900000000}z^{10} - \tfrac{97}{700000}z^{11} - \tfrac{544253}{14175000000}z^{12} + \tfrac{97}{50400000}z^{13} + \tfrac{9409}{19600000000}z^{14} ,
-   \end{aligned}
+   m_2(z) = \Lambda(z) - \tfrac{51}{20}\left(\cos\tfrac z2 - \sin\tfrac z2\right) > 0 .
    ```
 
-   and its Bernstein coefficients on $[0, \frac13]$ are
+   As $\cos z = \cos^2\frac z2 - \sin^2\frac z2$ is
+   $\gamma\,(\cos\frac z2 + \sin\frac z2)$, the second derivative factors:
 
    ```math
-   \begin{aligned}
-   & \tfrac{13553}{1411200},\ \tfrac{72827}{7056000},\ \tfrac{393747163}{34398000000},\ \tfrac{2710739309}{206388000000},\ \tfrac{9910498733}{638512875000},\ \tfrac{153072314621}{8172964800000},\ \tfrac{47296571468413}{2068781715000000},\ \tfrac{3708166534047959}{132402029760000000}, \\
-   & \tfrac{188854262621881}{5516751240000000},\ \tfrac{6257753867831}{150456852000000},\ \tfrac{6998517462046433}{139642765762500000},\ \tfrac{48606823214392757}{812467000800000000},\ \tfrac{29832818108969789}{421857865800000000},\ \tfrac{34918908326684453}{421857865800000000},\ \tfrac{80964059146525129}{843715731600000000} ,
-   \end{aligned}
+   m_2''(z) = -\cos z + \tfrac{51}{80}\gamma = \gamma\left(\tfrac{51}{80} - \cos\tfrac z2 - \sin\tfrac z2\right) \le 0 ,
    ```
 
-   all positive (they increase from about $0.0096$ to about $0.096$). So $Q > 0$
-   on $[0, \frac13]$, and as $0 < P \le L$,
+   since $(\cos\frac z2 + \sin\frac z2)^2 = 1 + \sin z \ge 1$. So $m_2$ is
+   concave on $[\frac\pi6, \frac\pi2]$, and by [Lemma A.4](appendix-a.md#lemma-a4-positivity-from-concavity) it suffices
+   that it is positive at both ends. At $z = \frac\pi6$ the terms in $\pi$
+   cancel, and $2\gamma^2 = \cos^2\frac\pi6 + (1 - \sin\frac\pi6)^2 = 1$; so
+   $\gamma^2 = \frac12 < \frac{25}{49}$, $\gamma < \frac57$ and
 
    ```math
-   \tfrac{13}4\left(p^2 + q^2\right) \le \tfrac{13}4U(z) < P(z)^2 \le L(z)^2 .
+   m_2\left(\tfrac\pi6\right) = 1 + \tfrac{\sqrt3}2 - \tfrac{51}{20}\gamma > 1 + \tfrac{173}{200} - \tfrac{51}{28} = \tfrac{61}{1400} > 0 .
    ```
 
-   Cauchy–Schwarz on the disk makes the bracket of step 1 positive, which proves
-   the claim for $0 \le z \le \frac13$.
-5. *For $\frac13 < z \le \frac\pi2$ Cauchy–Schwarz alone suffices.* Let
-   $\gamma = \cos\frac z2 - \sin\frac z2$, which is nonnegative as
-   $0 \le \frac z2 \le \frac\pi4$. Then
-   $\cos^2 z + (1 - \sin z)^2 = 2 - 2\sin z = 2\gamma^2$, and Cauchy–Schwarz on
-   the disk with $p = -\cos z$, $q = -(1 - \sin z)$ and
-   $c = \frac{51}{20}\gamma$ applies, since
-   $\frac{13}4(p^2 + q^2) = \frac{13}2\gamma^2$ and
-   $\frac{13}2 = \frac{2600}{400} < \frac{2601}{400} = (\frac{51}{20})^2$. So
-   $X\cos z + Y(1 - \sin z) \le \frac{51}{20}\gamma$, and it suffices that
-   $\Lambda(z) - \frac{51}{20}(\cos\frac z2 - \sin\frac z2) > 0$. By
-   $\frac{2\pi}{15} > \frac{157}{375}$ (that is, $\pi > \frac{157}{50}$) and
-   (D.2) at $z$ and at $\frac z2$, this is at least
+   At $z = \frac\pi2$ the force vanishes, $\gamma = 0$, and
 
    ```math
-   \begin{aligned}
-   R(z) &= 1 + \tfrac{157}{375} - \tfrac45z + C_6(z) - \tfrac{51}{20}\Bigl(C_4\bigl(\tfrac z2\bigr) - S_7\bigl(\tfrac z2\bigr)\Bigr) \\
-   &= -\tfrac{197}{1500} + \tfrac{19}{40}z - \tfrac{29}{160}z^{2} - \tfrac{17}{320}z^{3} + \tfrac{269}{7680}z^{4} + \tfrac{17}{25600}z^{5} - \tfrac{1}{720}z^{6} - \tfrac{17}{4300800}z^{7} .
-   \end{aligned}
+   m_2\left(\tfrac\pi2\right) = 1 - \tfrac{4\pi}{15} > 1 - \tfrac{88}{105} = \tfrac{17}{105} > 0 . \qquad\square
    ```
 
-   Its Bernstein coefficients of degree 7 on $[\frac13, \frac{11}7]$ are
-
-   ```math
-   \tfrac{27834859}{5225472000},\ \tfrac{21646979107}{329204736000},\ \tfrac{85094698273}{768144384000},\ \tfrac{83663391929}{597445632000},\ \tfrac{650018406713}{4182119424000},\ \tfrac{224217116981}{1394039808000},\ \tfrac{1222825127771}{7589772288000},\ \tfrac{8516973787387}{53128406016000} ,
-   ```
-
-   all positive, and $\frac\pi2 < \frac{11}7$; so $R > 0$ on
-   $[\frac13, \frac\pi2]$. $\square$
-
-![Graph over z from 0 to pi/2: the least value of the left side of Lemma D.2 over the admissible states with axial label (blue), near 0.008 at z = 0 and rising to about 0.16; just below it the orange curve P minus the root of 13U/4 on [0, 1/3]; on [1/3, pi/2] the green Cauchy–Schwarz bound and the dashed orange curve R, which almost coincide, start near 0.005 at z = 1/3 and approach the blue curve.](figures/appd-axial-profile.svg)
+![Two panels. Left: graph over z from 0 to pi/2 of the least value of the left side of Lemma D.2 over the admissible states with axial label (blue), near 0.008 at z = 0 and rising to about 0.16; just below it the orange bound m1 on [0, pi/6]; on [pi/6, pi/2] the green bound m2, almost on the blue curve, above its dashed chord; a dotted green continuation of m2 to the left of pi/6 reaches 0 near z = 0.32; a dotted box marks [0, pi/6] by [0, 0.07]. Right: that box magnified, with the blue least value, the orange m1 and below it the dashed orange parabola, whose lowest point, at z = 1/5, is marked.](figures/appd-axial-profile.svg)
 
 *Figure D.4.* Lemma D.2. The left side of the lemma, minimised over the
 admissible states with axial label (blue), and the lower bounds of the proof:
-$P - \sqrt{13U/4}$ on $[0, \frac13]$ (orange), and on $[\frac13, \frac\pi2]$ the
-Cauchy–Schwarz bound $\Lambda(z) - \frac{51}{20}(\cos\frac z2 - \sin\frac z2)$
-(green) and $R$ (dashed). Near $z = 0$ the minimum is small; there the
-Cauchy–Schwarz bound alone is negative, and the tie line (D.6) is needed.
+$m_1$ on $[0, \frac\pi6]$ (orange), above the parabola
+$\frac1{16}(z - \frac15)^2 + \frac3{2000}$ (dashed, right), and $m_2$ on
+$[\frac\pi6, \frac\pi2]$ (green), concave and so above its chord (dashed). The
+right panel magnifies the dotted box. Continued to the left of $\frac\pi6$,
+$m_2$ (dotted) becomes negative below $z \approx 0.32$: there the disk alone
+does not suffice, and the tie line (D.6) is needed.
 
 *Lean:
-[`Seven.axial_target_support`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L56).*
+[`Seven.axial_target_support`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L162),
+[`Seven.small_turn_bounds`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L56),
+[`Seven.cone_support`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L67),
+[`Seven.axial_small_turn`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L77),
+[`Seven.axial_large_turn`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L109),
+[`Seven.dot_ge`](../../SquaresInCircles/Seven/Support.lean#L45).*
 
 ### Lemma D.3 (an axial target)
 
@@ -527,7 +547,7 @@ $\lvert\sin e\rvert = \sin z$. Then
 which is positive by Lemma D.2. $\square$
 
 *Lean:
-[`Seven.negative_target_axial_pos`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L253).*
+[`Seven.negative_target_axial_pos`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L280).*
 
 ### Lemma D.4 (the tangent at the transition state)
 
@@ -561,7 +581,7 @@ $\frac{12}{25}(v - u_0) = a_0 - A$ of slope $-\frac{25}{12}$, which at this
 scale cannot be told apart from it.
 
 *Lean:
-[`Seven.side_transition_trade`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L137).*
+[`Seven.side_transition_trade`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L169).*
 
 ### Lemma D.5 (a side target at a nonnegative turn)
 
@@ -585,8 +605,8 @@ The three terms are nonnegative, since $A \ge \frac12$ and $v < \frac{31}{40}$
 ([Lemma 9.5](seven.md#lemma-95-admissible-states)). $\square$
 
 *Lean:
-[`Seven.sideTarget`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L157),
-[`Seven.sideTarget_positive_angle`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L161).*
+[`Seven.sideTarget`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L189),
+[`Seven.sideTarget_positive_angle`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L193).*
 
 ### Lemma D.6 (a side target at a negative turn)
 
@@ -601,99 +621,110 @@ $r(A, v) = 4 - 3A - 2v$ and expanding gives
 \qquad L_0(z) = \cos z - \tfrac2{15} - \tfrac45z .
 ```
 
-We treat three ranges of $z$ (Figure D.6).
+By [Proposition B.16](appendix-b.md#proposition-b16-segments-of-constant-side-label), $A \le a_0$ and $v \ge u_0$, where
+$a_0 > \frac{11}{10}$ and $u_0 > \frac{29}{100}$. Let
 
-1. *For $0 < z \le \frac16$, Cauchy–Schwarz on the disk.* Here
-   $L_0(z) \ge 1 - \frac1{72} - \frac4{15} = \frac{259}{360} > 0$, by
-   $\cos z \ge C_2(z)$. Let $p = \frac35 - \cos z$ and
-   $q = \sin z - \frac4{15}$. Expanding and using $\sin^2 z + \cos^2 z = 1$,
+```math
+k(z) = \tfrac{12}{25}\left(\cos z - \tfrac35\right) + \sin z - \tfrac4{15} .
+```
+
+This is the force along the tangent at the transition state: moving the state
+from $(a_0, u_0)$ along the line $a_0 - A = \frac{12}{25}(v - u_0)$ of Lemma
+D.4, so that $v$ grows by $t$, changes $E$ by $k(z)\,t$. The function $k$
+increases on $[0, 1]$, by [Lemma A.1](appendix-a.md#lemma-a1-monotonicity-from-the-derivative): there
+$k'(y) = \cos y - \frac{12}{25}\sin y \ge \frac12 - \frac{12}{25} = \frac1{50}$,
+as $\cos y \ge 1 - \frac{y^2}2 \ge \frac12$ and $\sin y \le 1$. Also
+$k(0) = -\frac{28}{375}$, and by (D.2)
+
+```math
+k\left(\tfrac1{12}\right) \ge \tfrac{12}{25}\left(1 - \tfrac1{288} - \tfrac35\right) + \tfrac1{12} - \tfrac1{10368} - \tfrac4{15} = \tfrac{8947}{1296000} > 0 .
+```
+
+So $k(z) < 0$ only for $z < \frac1{12}$. Every $z$ in $(0, 1)$ has $k(z) < 0$,
+or $k(z) \ge 0$ and $\cos z \ge \frac35$, or $\cos z < \frac35$, and we treat
+these three cases in turn (Figure D.6).
+
+1. *If $k(z) < 0$: the disk alone.* Then $z < \frac1{12}$, and by
+   $\cos z \ge C_2(z)$
+
+   ```math
+   L_0(z) \ge 1 - \tfrac{z^2}2 - \tfrac2{15} - \tfrac45z > 1 - \tfrac1{288} - \tfrac15 = \tfrac{1147}{1440} > 0 .
+   ```
+
+   Let $p = \frac35 - \cos z$ and $q = \sin z - \frac4{15}$. Expanding and using
+   $\sin^2 z + \cos^2 z = 1$,
 
    ```math
    L_0(z)^2 - \tfrac{13}4\left(p^2 + q^2\right) = \cos^2 z + \left(\tfrac{109}{30} - \tfrac85z\right)\cos z + \tfrac{26}{15}\sin z + \left(\tfrac2{15} + \tfrac45z\right)^2 - \tfrac{2093}{450} .
    ```
 
-   By (D.2), $\cos^2 z \ge K_6(z)$,
-   $\frac{109}{30}\cos z \ge \frac{109}{30}C_6(z)$,
-   $-\frac85z\cos z \ge -\frac85zC_4(z)$ and
-   $\frac{26}{15}\sin z \ge \frac{26}{15}S_7(z)$. Replacing each term by its
-   bound gives exactly $zH(z)$, where
+   The coefficients of $\cos^2 z$, $\cos z$ and $\sin z$ are positive. With
+   $\cos^2 z = 1 - \sin^2 z \ge 1 - z^2$, $\cos z \ge C_2(z)$ and
+   $\sin z \ge S_3(z)$ from (D.2), the right side is at least
 
    ```math
-   H(z) = \tfrac{26}{75} - \tfrac{653}{300}z + \tfrac{23}{45}z^{2} + \tfrac{349}{720}z^{3} - \tfrac{47}{900}z^{4} - \tfrac{1069}{21600}z^{5} - \tfrac{13}{37800}z^{6} .
+   z\left(\tfrac{26}{75} - \tfrac{653}{300}z + \tfrac{23}{45}z^2\right) \ge z\left(\tfrac{26}{75} - \tfrac{653}{3600}\right) = \tfrac{119}{720}\,z > 0 ,
    ```
 
-   Its Bernstein coefficients of degree 6 on $[0, \frac16]$ are
+   as $z < \frac1{12}$. By Cauchy–Schwarz on the disk ([Lemma B.3](appendix-b.md#lemma-b3-cauchyschwarz-on-the-disk)),
+   $p(A + \frac12) + q(v + \frac12) > -L_0(z)$, that is, $E(A, v) > 0$.
+2. *If $k(z) \ge 0$ and $\cos z \ge \frac35$: the transition state.* Expanding,
 
    ```math
-   \tfrac{26}{75},\ \tfrac{3091}{10800},\ \tfrac{11017}{48600},\ \tfrac{523261}{3110400},\ \tfrac{3882011}{34992000},\ \tfrac{55351163}{1007769600},\ \tfrac{1001149}{3527193600} ,
+   E(A, v) - E(a_0, u_0) = \left(\cos z - \tfrac35\right)\left[(a_0 - A) - \tfrac{12}{25}(v - u_0)\right] + k(z)\,(v - u_0) ,
    ```
 
-   all positive, so $H > 0$ on $[0, \frac16]$ and
-   $L_0(z)^2 - \frac{13}4(p^2 + q^2) \ge zH(z) > 0$. Cauchy–Schwarz on the disk
-   gives $p(A + \frac12) + q(v + \frac12) > -L_0(z)$, that is $E(A, v) > 0$.
-2. *The transition state.* We show $E(a_0, u_0) > 0$ for $0 \le z \le 1$.
-   Expanding,
+   and both terms are nonnegative, by Lemma D.4 and $v \ge u_0$. It remains to
+   show $E(a_0, u_0) > 0$. As $\cos z \le 1$ and $\sin z \le z$,
+   $k(z) \le z - \frac{28}{375}$, so $z \ge \frac{28}{375}$. Written as
+   $\beta_{\mathrm{side}}$,
 
    ```math
-   E(a_0, u_0) = \left(X_0 - \tfrac85\right)(1 - \cos z) + \left(Y_0 - \tfrac{79}{100}\right)\sin z + \tfrac25\left(\tfrac{13}8 - X_0\right) + \tfrac4{15}\left(\tfrac45 - Y_0\right) + \Bigl[-\tfrac35\cos z + \tfrac{79}{100}\sin z - \tfrac45z + \tfrac{181}{300}\Bigr] .
+   E(a_0, u_0) = \tfrac2{15}r(a_0, u_0) + \left(a_0 - \tfrac12\right)(1 - \cos z) + \left(u_0 + \tfrac12\right)\sin z - \tfrac45z ,
    ```
 
-   Since $\frac85 < X_0 < \frac{13}8$ and $\frac{79}{100} < Y_0 < \frac45$, the
-   first four terms are nonnegative and the third is positive. By (D.2) the
-   bracket is at least
+   where $r(a_0, u_0) \ge 0$, as the transition state is admissible
+   ([Lemma B.10](appendix-b.md#lemma-b10-the-transition-state)), $a_0 - \frac12 > \frac35$ and
+   $u_0 + \frac12 > \frac{79}{100}$. With $\cos z \le C_4(z)$ and
+   $\sin z \ge S_3(z)$ from (D.2), and $z^4 \le z^2$, $z^3 \le z^2$ as
+   $0 < z < 1$,
 
    ```math
-   -\tfrac35C_4(z) + \tfrac{79}{100}S_3(z) - \tfrac45z + \tfrac{181}{300}
-   = \tfrac1{300}\left(43z^2 - 3z + 1\right) + \tfrac{79}{600}\left(z^2 - z^3\right) + \tfrac1{40}\left(z^2 - z^4\right),
+   E(a_0, u_0) \ge \tfrac35(1 - \cos z) + \tfrac{79}{100}\sin z - \tfrac45z
+   \ge -\tfrac z{100} + \tfrac3{10}z^2 - \tfrac{79}{600}z^3 - \tfrac1{40}z^4
+   \ge z\left(\tfrac{43}{300}z - \tfrac1{100}\right) ,
    ```
 
-   which is nonnegative for $0 \le z \le 1$, as $43z^2 - 3z + 1$ has negative
-   discriminant $9 - 172$.
-3. *For $\frac16 < z < 1$ and $\cos z \ge \frac35$, comparison with the
-   transition state.* By [Proposition B.16](appendix-b.md#proposition-b16-segments-of-constant-side-label),
-   $a_0 - A \ge 0$ and $v - u_0 \ge 0$, and
+   which is positive, as
+   $\frac{43}{300}\cdot\frac{28}{375} = \frac{1204}{112500} > \frac1{100}$.
+3. *If $\cos z < \frac35$: the signs.* As $z < 1$,
+   $\cos z \ge 1 - \frac{z^2}2 > \frac12$, so $\cos^2 z < \frac9{25}$ and
+   $\sin z > \frac45$. Both coefficients $\frac35 - \cos z$ and
+   $\sin z - \frac4{15}$ are positive, and as $A \ge \frac12$ and
+   $v \ge u_0 > \frac{29}{100}$,
 
    ```math
-   E(A, v) - E(a_0, u_0) = \left(\cos z - \tfrac35\right)(a_0 - A) + \left(\sin z - \tfrac4{15}\right)(v - u_0) .
+   E(A, v) \ge L_0(z) + \left(\tfrac35 - \cos z\right) + \tfrac{79}{100}\left(\sin z - \tfrac4{15}\right)
+   = \tfrac7{15} - \tfrac45z + \tfrac{79}{100}\left(\sin z - \tfrac4{15}\right)
+   > \tfrac7{15} - \tfrac45 + \tfrac{79}{100}\cdot\tfrac8{15} = \tfrac{11}{125} . \qquad\square
    ```
 
-   If $\sin z \ge \frac4{15}$, both terms are nonnegative, and
-   $E(A, v) \ge E(a_0, u_0) > 0$. If $\sin z < \frac4{15}$, then
-   $\cos^2 z > 1 - \frac{16}{225} = \frac{209}{225} > (\frac{24}{25})^2$, so
-   $\cos z > \frac{24}{25}$; and $\sin z \ge \sin\frac16 \ge S_3(\frac16)$, as
-   $\sin$ increases on $[0, \frac\pi2]$, with
-   $S_3(\frac16) = \frac{215}{1296} > \frac{33}{200}$. Then
+![Two panels sharing the z-axis from 0 to 1, cut by vertical lines where k(z) = 0, near z = 0.076, and at z = arccos 3/5; the three ranges are numbered 1, 2 and 3. Top: the least value of the expression of Lemma D.6 over the admissible states with side label (blue), from 0 at z = 0 up to about 0.16 at z = 1; the dashed green value at the transition state, slightly above it in range 1 and equal to it after; the orange Cauchy–Schwarz bound, a small positive arch that follows the blue curve in range 1 and falls to 0 near z = 0.17. Bottom: the purple curve k(z), increasing from −28/375 at z = 0 through 0 just before z = 1/12 to about 0.55 at z = 1.](figures/appd-side-profile.svg)
 
-   ```math
-   E(A, v) - E(a_0, u_0) = \left(\cos z - \tfrac35\right)\left[(a_0 - A) - \tfrac{12}{25}(v - u_0)\right] + (v - u_0)\left[\tfrac{12}{25}\left(\cos z - \tfrac35\right) + \sin z - \tfrac4{15}\right] .
-   ```
-
-   The first product is nonnegative by Lemma D.4, and the second bracket exceeds
-   $\frac{12}{25}\cdot\frac9{25} + \frac{33}{200} - \frac4{15}$, which is
-   $\frac{1067}{15000} > 0$. Again $E(A, v) \ge E(a_0, u_0) > 0$.
-4. *For $\frac16 < z < 1$ and $\cos z < \frac35$.* Here
-   $\cos z \ge C_2(z) > \frac12$, so $\cos^2 z < \frac9{25}$ and
-   $\sin z > \frac45$. As $A \ge 0$ and $v \ge u_0 > \frac{29}{100}$,
-
-   ```math
-   \begin{aligned}
-   E(A, v) &= L_0(z) + \left(\tfrac35 - \cos z\right)A + \tfrac12\left(\tfrac35 - \cos z\right) + \left(\sin z - \tfrac4{15}\right)\left(v - \tfrac{29}{100}\right) + \tfrac{79}{100}\left(\sin z - \tfrac4{15}\right) \\
-   &\ge \tfrac12\cos z + \tfrac3{10} - \tfrac2{15} - \tfrac45z + \tfrac{79}{100}\left(\sin z - \tfrac4{15}\right)
-   > \tfrac14 + \tfrac3{10} - \tfrac2{15} - \tfrac45 + \tfrac{79}{100}\left(\tfrac45 - \tfrac4{15}\right) = \tfrac{19}{500} . \qquad\square
-   \end{aligned}
-   ```
-
-![Graph over z from 0 to 1 of the least value of the expression of Lemma D.6 over the admissible states with side label (blue), from 0 at z = 0 up to about 0.16 at z = 1; the dashed green value at the transition state, which is slightly above it near z = 0 and coincides with it further on; the orange Cauchy–Schwarz bound on [0, 1/6], a small positive arch; vertical lines at z = 1/6 and z = arccos 3/5 separate the steps of the proof.](figures/appd-side-profile.svg)
-
-*Figure D.6.* Lemma D.6. The least value of $\beta_{\mathrm{side}}(A, v; -z)$
-over the admissible states with side label (blue). It tends to 0 as $z \to 0$,
-at the side state $(1, \frac12)$, where the contact of Proposition D.7 sits;
-there step 1 uses Cauchy–Schwarz on the disk (orange), with the margin $zH(z)$.
-For larger $z$ the value at the transition state (dashed), which steps 2 and 3
-compare with, is the minimum.
+*Figure D.6.* Lemma D.6. Top: the least value of
+$\beta_{\mathrm{side}}(A, v; -z)$ over the admissible states with side label
+(blue). It tends to 0 as $z \to 0$, at the side state $(1, \frac12)$, where the
+contact of Proposition D.7 sits. Bottom: the force $k(z)$ along the tangent at
+the transition state. The three cases of the proof, numbered at the top, are
+cut where $k$ changes sign and where $\cos z = \frac35$. In case 1 the bound is Cauchy–Schwarz on the
+disk (orange), with the margin $\frac{119}{720}z$; it fails for $z$ above about
+$0.17$. From case 2 on, the least value is the value at the transition state
+(dashed), with which case 2 compares.
 
 *Lean:
-[`Seven.sideTarget_negative_pos`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L175).*
+[`Seven.sideTarget_negative_pos`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L225),
+[`Seven.tangent_force_pos`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L209),
+[`Seven.dot_gt`](../../SquaresInCircles/Seven/Support.lean#L49).*
 
 ### Proposition D.7 (target sign negative)
 
@@ -731,7 +762,7 @@ So $z < 1$, and Lemma D.6 gives
 $\sigma_1 \ge \beta_{\mathrm{side}}(A, v; -z) > 0$. $\square$
 
 *Lean:
-[`Seven.fixed_gap_forward_negative_target`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L289).*
+[`Seven.fixed_gap_forward_negative_target`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L316).*
 
 ## D.3 Opposite signs
 
@@ -932,29 +963,27 @@ $v(1 - \cos z) \ge 0$. $\square$
 2. If $(a, u)$ and $(A, v)$ are admissible with axial labels, then
    $F(u, A, v; w) > 0$ for $w = \ell + \lambda - \frac\pi3$.
 
-*Proof.* (1) Let $\kappa = \sqrt3 - 1$, so $\frac7{10} < \kappa < \frac34$. By
-(D.2), $\sin z \le S_5(z)$, and
+*Proof.* (1) Let $\kappa = \sqrt3 - 1$, and let $f(z)$ be the left side. For
+every real $x$, expanding and using $\cos^2 x + \sin^2 x = 1$,
 
 ```math
-\tfrac34z - \tfrac7{60}z^3 + \tfrac1{160}z^5 - \kappa S_5(z)
-= \left(\tfrac34 - \kappa\right)z + \tfrac16\left(\kappa - \tfrac7{10}\right)z^3 + \tfrac1{120}\left(\tfrac34 - \kappa\right)z^5 \ge 0 .
+\left(\kappa\cos x + \tfrac12\sin x\right)^2 + \left(\kappa\sin x - \tfrac12\cos x\right)^2
+= \kappa^2 + \tfrac14 = \tfrac{17}4 - 2\sqrt3 < \tfrac{17}4 - \tfrac{173}{50} = \tfrac{79}{100} < \left(\tfrac9{10}\right)^2 ,
 ```
 
-With $1 - \cos z \le \frac{z^2}2$ and
-$1 - \frac{4\pi}{15} > 1 - \frac{88}{105} = \frac{17}{105}$, the left side of
-(1) is greater than
+so $\kappa\cos x + \frac12\sin x < \frac9{10}$: by Cauchy–Schwarz, as the vector
+$(\kappa, \frac12)$ is shorter than $\frac9{10}$. Hence
+$g(x) = \frac9{10}x - \kappa\sin x - \frac12(1 - \cos x)$ has $g(0) = 0$ and
+$g'(x) = \frac9{10} - \kappa\cos x - \frac12\sin x > 0$, so $g(z) \ge 0$ for
+$z \ge 0$ ([Lemma A.1](appendix-a.md#lemma-a1-monotonicity-from-the-derivative)). As $f(z) = 1 - \frac{4\pi}{15} - \frac z{10} + g(z)$,
+the slope of $f$ stays above $-\frac1{10}$, and for $0 \le z \le \frac\pi3$
 
 ```math
-p_5(z) = \tfrac{17}{105} + \tfrac{1}{20}z - \tfrac{1}{4}z^{2} + \tfrac{7}{60}z^{3} - \tfrac{1}{160}z^{5} .
+f(z) \ge 1 - \tfrac{4\pi}{15} - \tfrac z{10} \ge 1 - \tfrac{4\pi}{15} - \tfrac\pi{30} = 1 - \tfrac{3\pi}{10} > 1 - \tfrac{33}{35} = \tfrac2{35} > 0 .
 ```
 
-Its Bernstein coefficients of degree 5 on $[0, \frac{11}{10}]$ are
-
-```math
-\tfrac{17}{105},\ \tfrac{3631}{21000},\ \tfrac{12907}{84000},\ \tfrac{502669}{4200000},\ \tfrac{22711}{262500},\ \tfrac{20033129}{336000000} ,
-```
-
-all positive, and $\frac\pi3 < \frac{11}{10}$; so $p_5 > 0$ on $[0, \frac\pi3]$.
+The value $1 - \frac{4\pi}{15}$ of $f$ at 0 exceeds the largest loss
+$\frac\pi{30}$ that this slope allows on $[0, \frac\pi3]$ (Figure D.8).
 
 (2) Both labels are axial, so
 $u + v = \frac45(\ell + \lambda) = \frac45(\frac\pi3 + w)$. If $w \ge 0$, Lemma
@@ -974,8 +1003,9 @@ F \ge 1 - \tfrac45\left(\tfrac\pi3 - z\right) - (\sqrt3 - 1)\sin z - \tfrac12(1 
 which is positive by (1). $\square$
 
 *Lean:
-[`Seven.opposite_axial_scalar`](../../SquaresInCircles/Seven/OppositeForward.lean#L220),
-[`Seven.opposite_axial_axial_pos`](../../SquaresInCircles/Seven/OppositeForward.lean#L242).*
+[`Seven.opposite_slope_lt`](../../SquaresInCircles/Seven/OppositeForward.lean#L221),
+[`Seven.opposite_axial_scalar`](../../SquaresInCircles/Seven/OppositeForward.lean#L231),
+[`Seven.opposite_axial_axial_pos`](../../SquaresInCircles/Seven/OppositeForward.lean#L241).*
 
 ### Lemma D.13 (the mixed clearance)
 
@@ -1013,8 +1043,8 @@ F \ge 1 - u - v + \sin w - \tfrac12(1 - \cos w) \ge \tfrac1{170} + \Bigl[\sin w 
 ```
 
 *Lean:
-[`Seven.mixed_clearance_bound`](../../SquaresInCircles/Seven/OppositeForward.lean#L277),
-[`Seven.mixed_positive_turn`](../../SquaresInCircles/Seven/OppositeForward.lean#L287).*
+[`Seven.mixed_clearance_bound`](../../SquaresInCircles/Seven/OppositeForward.lean#L276),
+[`Seven.mixed_positive_turn`](../../SquaresInCircles/Seven/OppositeForward.lean#L286).*
 
 ### Lemma D.14 (an axial source and a side target)
 
@@ -1035,7 +1065,7 @@ F \ge \tfrac1{170} + \tfrac45z - \tfrac58\sin z - \tfrac14z^2 \ge \tfrac1{170} +
 ```
 
 *Lean:
-[`Seven.opposite_axial_side_pos`](../../SquaresInCircles/Seven/OppositeForward.lean#L323).*
+[`Seven.opposite_axial_side_pos`](../../SquaresInCircles/Seven/OppositeForward.lean#L322).*
 
 ### Lemma D.15 (a side source and an axial target)
 
@@ -1093,8 +1123,8 @@ $v = \frac45\lambda$, and $\ell = \frac\pi3 - z - \lambda$. So
 and (D.9) gives $F \ge \Psi(z) > 0$ by (1). $\square$
 
 *Lean:
-[`Seven.side_axial_far_profile`](../../SquaresInCircles/Seven/OppositeForward.lean#L295),
-[`Seven.opposite_side_axial_pos`](../../SquaresInCircles/Seven/OppositeForward.lean#L354).*
+[`Seven.side_axial_far_profile`](../../SquaresInCircles/Seven/OppositeForward.lean#L294),
+[`Seven.opposite_side_axial_pos`](../../SquaresInCircles/Seven/OppositeForward.lean#L353).*
 
 ### Proposition D.16 (opposite signs)
 
@@ -1111,15 +1141,18 @@ $F > 0$: by Lemma D.12 if both labels are axial, by Lemma D.14 if the label of
 $(a, u)$ is axial and that of $(A, v)$ side, and by Lemma D.15 if the label of
 $(a, u)$ is side and that of $(A, v)$ axial. $\square$
 
-![Graph over the turn w from −pi/3 to pi/6 of three lower bounds: for two axial labels (blue), between about 0.12 and 0.2; for an axial source and a side target (green), two low arches from 1/170 at w = −7/10 to 1/170 at w = 0 and beyond; for a side source and an axial target (dashed pink), falling from about 0.12 at w = −7/10 to nearly 0 at w = −1/3, then a low arch that joins the green curve at w = 0. Vertical lines at w = −7/10 and w = −1/3.](figures/appd-opposite-profiles.svg)
+![Graph over the turn w from −pi/3 to pi/6 of three lower bounds: for two axial labels (blue), between about 0.12 and 0.2, and below it for negative w a dashed blue line falling from 1 − 4pi/15 at w = 0 to about 0.06 at w = −pi/3; for an axial source and a side target (green), two low arches from 1/170 at w = −7/10 to 1/170 at w = 0 and beyond; for a side source and an axial target (dashed pink), falling from about 0.12 at w = −7/10 to nearly 0 at w = −1/3, then a low arch that joins the green curve at w = 0. Vertical lines at w = −7/10 and w = −1/3.](figures/appd-opposite-profiles.svg)
 
 *Figure D.8.* The lower bounds of Lemmas D.12, D.14 and D.15 for
-$F(u, A, v; w)$, as functions of the turn $w$. For mixed labels the turn exceeds
-$-\frac7{10}$. The bound for a side source and an axial target is weakest at
-$w = -\frac13$, where Lemma D.15 changes its method.
+$F(u, A, v; w)$, as functions of the turn $w$. For two axial labels and
+$w = -z < 0$ the bound is the left side of Lemma D.12 (1); its slope in $z$
+stays above $-\frac1{10}$, so it stays above the line
+$1 - \frac{4\pi}{15} - \frac z{10}$ (dashed blue). For mixed labels the turn
+exceeds $-\frac7{10}$. The bound for a side source and an axial target is
+weakest at $w = -\frac13$, where Lemma D.15 changes its method.
 
 *Lean:
-[`Seven.fixed_gap_forward_opposite_active`](../../SquaresInCircles/Seven/OppositeForward.lean#L405).*
+[`Seven.fixed_gap_forward_opposite_active`](../../SquaresInCircles/Seven/OppositeForward.lean#L404).*
 
 ## D.4 Both signs negative
 

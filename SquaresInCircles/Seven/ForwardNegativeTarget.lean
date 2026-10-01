@@ -5,10 +5,11 @@ import SquaresInCircles.Seven.Contacts
 # The forward axis, negative target sign
 
 A positive source with any active label, and a negative source with an axial
-label. The support of the target is bounded below by Cauchy–Schwarz on the disk
-and polynomial certificates, and at medium turns by the tangent of the disk at
-the transition state. The sum vanishes only at an axial source and a side
-target.
+label. The support of the target is bounded below by Cauchy–Schwarz on the disk:
+for an axial target after the tie line takes up part of the force, and for a
+side target through the tangent of the disk at the transition state where the
+force along it is nonnegative. The sum vanishes only at an axial source and a
+side target.
 -/
 noncomputable section
 namespace SquaresInCircles.Seven
@@ -51,88 +52,119 @@ lemma forward_negative_target_lower {a u A v : ℝ} (sgn : TransverseSign)
   dsimp [rawTarget]
   linarith
 
-/-- An axial target at a turn `-z` with `0 ≤ z ≤ π/2`. For `z ≤ 1/3` the tie
-line `9A + 11v ≤ 2π + 7` of the axial label enters as a dual constraint. -/
+/-- On `[0, π/6]`, `0 ≤ sin z ≤ 1/2` and `cos z > 5/6`. -/
+private lemma small_turn_bounds {z : ℝ} (hz : 0 ≤ z ∧ z ≤ Real.pi/6) :
+    0 ≤ Real.sin z ∧ Real.sin z ≤ 1/2 ∧ 5/6 < Real.cos z := by
+  have hs := Real.sin_le_sin_of_le_of_le_pi_div_two (by linarith [Real.pi_pos])
+    (by linarith [Real.pi_pos]) hz.2
+  have hc := Real.cos_le_cos_of_nonneg_of_le_pi hz.1 (by linarith [Real.pi_pos]) hz.2
+  rw [Real.sin_pi_div_six] at hs
+  rw [Real.cos_pi_div_six] at hc
+  exact ⟨Real.sin_nonneg_of_nonneg_of_le_pi hz.1 (by linarith [Real.pi_pos]),hs,
+    by linarith [sqrt_three_bounds.1]⟩
+
+/-- On the cone `U/2 ≤ V ≤ 3U/5` the support of the disk is at most `13U/8 + 4V/5`. -/
+private lemma cone_support {X Y U V : ℝ} (h : X^2+Y^2 ≤ 13/4) (hU : 0 < U)
+    (hlo : U/2 ≤ V) (hhi : V ≤ (3/5)*U) : U*X+V*Y ≤ (13/8)*U+(4/5)*V := by
+  have hp := mul_nonneg (sub_nonneg.mpr hlo) (sub_nonneg.mpr hhi)
+  have hq := mul_nonneg hU.le (sub_nonneg.mpr hhi)
+  have hd := dot_ge (p := -U) (r := -V) (c := (13/8)*U+(4/5)*V) (show X^2+Y^2 ≤ targetSq from h)
+    (by linarith) (by simp only [targetSq,neg_sq]; linarith [sq_nonneg U])
+  linarith
+
+/-- Below `π/6` the tie line takes up `λ(9, 11)` of the force, `λ = 3(1-2 sin z)/40`. The
+rest lies in the cone of `cone_support`, and the margin left has curvature at least `1/8`. -/
+private lemma axial_small_turn {A v z : ℝ} (h : Admissible A v) (hA : label A v=axial v)
+    (hz : 0 ≤ z ∧ z ≤ Real.pi/6) :
+    0 < 1+2*Real.pi/15-(4/5)*z+Real.cos z-(A+1/2)*Real.cos z-(v+1/2)*(1-Real.sin z) := by
+  have hb := small_turn_bounds hz
+  have hforce := trig_concave_gt (α := 0) (A := 8) (B := 30) (m := 29) (l := 0)
+    (u := Real.pi/6) (by norm_num) (by norm_num) le_rfl (by linarith [Real.pi_pos]) hz
+    (by norm_num) (by rw [Real.sin_pi_div_six,Real.cos_pi_div_six]; linarith [sqrt_three_bounds.1])
+  have hcone := cone_support (U := Real.cos z-27/40+(27/20)*Real.sin z)
+    (V := 7/40+(13/20)*Real.sin z) h.phi_le (by linarith) (by linarith [Real.cos_le_one z])
+    (by linarith)
+  have hline := mul_le_mul_of_nonneg_left (axial_tie_line h hA)
+    (show 0 ≤ (3/40)*(1-2*Real.sin z) by linarith)
+  have hpi : 0 ≤ 3*Real.pi/10-131/800 := by linarith [Real.pi_gt_d2]
+  have hM := curvature_tangent (l := 0) (u := Real.pi/6) (t := 0) (κ := 1/8)
+    (f := fun y => -(5/8)*Real.cos y+(3*Real.pi/10-131/800)*Real.sin y-(4/5)*y)
+    (d := fun y => (5/8)*Real.sin y+(3*Real.pi/10-131/800)*Real.cos y-4/5)
+    (dd := fun y => (5/8)*Real.cos y-(3*Real.pi/10-131/800)*Real.sin y)
+    hz ⟨le_rfl,by linarith [Real.pi_pos]⟩
+    (fun y _ => ((((Real.hasDerivAt_cos y).const_mul (-(5/8))).add
+      ((Real.hasDerivAt_sin y).const_mul (3*Real.pi/10-131/800))).sub
+      ((hasDerivAt_id' y).const_mul (4/5))).congr_deriv (by ring))
+    (fun y _ => ((((Real.hasDerivAt_sin y).const_mul (5/8)).add
+      ((Real.hasDerivAt_cos y).const_mul (3*Real.pi/10-131/800))).sub_const (4/5)).congr_deriv
+      (by ring))
+    (fun y hy => by
+      have hy' := small_turn_bounds hy
+      linarith [mul_le_mul_of_nonneg_left hy'.2.1 hpi,pi_lt_22_over_7])
+  simp only [Real.cos_zero,Real.sin_zero] at hM
+  linarith [sq_nonneg (z-1/5),mul_le_mul_of_nonneg_right Real.pi_gt_d2.le hz.1,pi_lt_22_over_7]
+
+/-- Above `π/6` the force `(cos z, 1 - sin z)` has length `√2 (cos(z/2) - sin(z/2))`; the
+bound it gives is concave in `z` and positive at `π/6` and `π/2`. -/
+private lemma axial_large_turn {A v z : ℝ} (h : Admissible A v)
+    (hz : Real.pi/6 ≤ z ∧ z ≤ Real.pi/2) :
+    0 < 1+2*Real.pi/15-(4/5)*z+Real.cos z-(A+1/2)*Real.cos z-(v+1/2)*(1-Real.sin z) := by
+  have hhalf (y : ℝ) (hy : 0 ≤ y ∧ y ≤ Real.pi/2) :
+      0 ≤ Real.cos (y/2)-Real.sin (y/2) ∧ 1 ≤ Real.cos (y/2)+Real.sin (y/2) := by
+    have hs := Real.sin_nonneg_of_nonneg_of_le_pi (x := y/2) (by linarith)
+      (by linarith [Real.pi_pos])
+    have hc := Real.cos_nonneg_of_mem_Icc (x := y/2) ⟨by linarith [Real.pi_pos],by linarith⟩
+    have hsc := sin_le_cos_of_small (x := y/2) ⟨by linarith,by linarith⟩
+    refine ⟨by linarith,?_⟩
+    nlinarith [Real.sin_sq_add_cos_sq (y/2),Real.sin_le_one (y/2),Real.cos_le_one (y/2)]
+  have hnorm (y : ℝ) : Real.cos y^2+(1-Real.sin y)^2=2*(Real.cos (y/2)-Real.sin (y/2))^2 := by
+    have hs : Real.sin y=2*Real.sin (y/2)*Real.cos (y/2) := by rw [← Real.sin_two_mul]; ring_nf
+    linarith [Real.sin_sq_add_cos_sq y,Real.sin_sq_add_cos_sq (y/2)]
+  have hh := hhalf z ⟨by linarith [Real.pi_pos],hz.2⟩
+  have hcs := dot_ge (p := -Real.cos z) (r := -(1-Real.sin z))
+    (c := (51/20)*(Real.cos (z/2)-Real.sin (z/2))) h.phi_le (by linarith)
+    (by simp only [targetSq,neg_sq]; linarith [hnorm z,sq_nonneg (Real.cos (z/2)-Real.sin (z/2))])
+  have hG := positive_of_second_nonpos (l := Real.pi/6) (u := Real.pi/2)
+    (f := fun y => 1+2*Real.pi/15-(4/5)*y+Real.cos y-(51/20)*(Real.cos (y/2)-Real.sin (y/2)))
+    (d := fun y => -4/5-Real.sin y+(51/40)*(Real.sin (y/2)+Real.cos (y/2)))
+    (dd := fun y => -Real.cos y+(51/80)*(Real.cos (y/2)-Real.sin (y/2)))
+    hz (by fun_prop) (by fun_prop)
+    (fun y _ => by
+      have hy := (hasDerivAt_id' y).div_const 2
+      exact ((((hasDerivAt_const y (1+2*Real.pi/15)).sub
+        ((hasDerivAt_id' y).const_mul (4/5))).add (Real.hasDerivAt_cos y)).sub
+        ((hy.cos.sub hy.sin).const_mul (51/20))).congr_deriv (by ring))
+    (fun y _ => by
+      have hy := (hasDerivAt_id' y).div_const 2
+      exact (((hasDerivAt_const y (-4/5)).sub (Real.hasDerivAt_sin y)).add
+        ((hy.sin.add hy.cos).const_mul (51/40))).congr_deriv (by ring))
+    (fun y hy => by
+      have hh := hhalf y ⟨by linarith [hy.1,Real.pi_pos],hy.2⟩
+      have hc : Real.cos y=2*Real.cos (y/2)^2-1 := by rw [← Real.cos_two_mul]; ring_nf
+      linarith [mul_nonneg hh.1 (show 0 ≤ Real.cos (y/2)+Real.sin (y/2)-51/80 by linarith),
+        Real.sin_sq_add_cos_sq (y/2)])
+    (by
+      have hn := hnorm (Real.pi/6)
+      have hh := (hhalf (Real.pi/6) ⟨by positivity,by linarith [Real.pi_pos]⟩).1
+      rw [Real.cos_pi_div_six,Real.sin_pi_div_six] at hn
+      have h7 : Real.cos (Real.pi/6/2)-Real.sin (Real.pi/6/2) < 5/7 := by
+        nlinarith [Real.sq_sqrt (show (0:ℝ) ≤ 3 by norm_num)]
+      rw [Real.cos_pi_div_six]
+      linarith [sqrt_three_bounds.1])
+    (by
+      rw [show Real.pi/2/2=Real.pi/4 by ring,Real.cos_pi_div_two,Real.cos_pi_div_four,
+        Real.sin_pi_div_four]
+      linarith [pi_lt_22_over_7])
+  linarith
+
+/-- An axial target at a turn `-z` with `0 ≤ z ≤ π/2`. Below `π/6` the tie line
+`9A + 11v ≤ 2π + 7` of the axial label takes up part of the force. -/
 lemma axial_target_support {A v z : ℝ} (h : Admissible A v) (hA : label A v=axial v)
     (hz : 0 ≤ z ∧ z ≤ Real.pi/2) :
     0 < 1+2*Real.pi/15-(4/5)*z+Real.cos z-(A+1/2)*Real.cos z-(v+1/2)*(1-Real.sin z) := by
-  have hs0 : 0 ≤ Real.sin z :=
-    Real.sin_nonneg_of_nonneg_of_le_pi hz.1 (by linarith [hz.2,Real.pi_pos])
-  have hsL := sin_lower_seven hz.1
-  have hcL := cos_lower_six hz.1
-  by_cases hsmall : z ≤ 1/3
-  · let n := (3/40)*(1-2*Real.sin z)
-    let L := Real.cos z-11/40-Real.pi/60-(4/5)*z+(51/20+3*Real.pi/10)*Real.sin z
-    let P := 1-z^2/2+z^4/24-z^6/720-55/168-(4/5)*z+
-      (873/250)*(z-z^3/6+z^5/120-z^7/5040)
-    let U := 1189/800-(27/20)*(1-z^2/2+z^4/24-z^6/720)+
-      (27/10)*(1-z^2/2+z^4/24)*(z-z^3/6+z^5/120)+(249/200)*(z^2-z^4/3+2*z^6/45)-
-      (319/200)*(z-z^3/6+z^5/120-z^7/5040)
-    have hn : 0 ≤ n := by dsimp [n]; linarith [Real.sin_le hz.1]
-    have hPL : P ≤ L := by
-      have := mul_nonneg (show 0 ≤ 51/20+3*Real.pi/10-873/250 by linarith [Real.pi_gt_d2]) hs0
-      dsimp [P,L]
-      linarith [pi_lt_22_over_7]
-    have hP : 1/2 < P := by
-      have hz2 : z^2 ≤ (1/3)^2 := by nlinarith
-      have hz3 : z^3 ≤ (1/3)^3 := pow_le_pow_left₀ hz.1 hsmall 3
-      have := mul_nonneg (pow_nonneg hz.1 4) (show 0 ≤ 1/24-z^2/720 by linarith)
-      have := mul_nonneg (pow_nonneg hz.1 5) (show 0 ≤ 1/120-z^2/5040 by linarith)
-      dsimp [P]
-      linarith
-    have hU : (Real.cos z-9*n)^2+(1-Real.sin z-11*n)^2 ≤ U := by
-      have hc0 : 0 ≤ Real.cos z := Real.cos_nonneg_of_mem_Icc
-        ⟨by linarith [Real.pi_pos],hz.2⟩
-      have hcU := cos_upper_four hz.1
-      have hcs := mul_le_mul hcU (sin_upper_five hz.1) hs0 (hc0.trans hcU)
-      have hsin2 : Real.sin z^2 ≤ z^2-z^4/3+2*z^6/45 := by
-        linarith [Real.sin_sq_add_cos_sq z,cos_sq_lower_six hz.1]
-      dsimp [n,U]
-      linarith [Real.sin_sq_add_cos_sq z]
-    have hdisc : 0 < P^2-(13/4)*U :=
-      bernstein_pos (p := fun z => (1-z^2/2+z^4/24-z^6/720-55/168-(4/5)*z+
-          (873/250)*(z-z^3/6+z^5/120-z^7/5040))^2-(13/4)*(1189/800-
-          (27/20)*(1-z^2/2+z^4/24-z^6/720)+(27/10)*(1-z^2/2+z^4/24)*(z-z^3/6+z^5/120)+
-          (249/200)*(z^2-z^4/3+2*z^6/45)-(319/200)*(z-z^3/6+z^5/120-z^7/5040)))
-        ![13553/1411200,72827/7056000,393747163/34398000000,
-          2710739309/206388000000,9910498733/638512875000,
-          153072314621/8172964800000,47296571468413/2068781715000000,
-          3708166534047959/132402029760000000,188854262621881/5516751240000000,
-          6257753867831/150456852000000,6998517462046433/139642765762500000,
-          48606823214392757/812467000800000000,29832818108969789/421857865800000000,
-          34918908326684453/421857865800000000,80964059146525129/843715731600000000]
-        (fun i => by fin_cases i <;> norm_num) (by norm_num)
-        (fun x => by simp only [bernstein,Fin.sum_univ_succ,Fin.sum_univ_zero]
-                     norm_num [Nat.choose]; ring) ⟨hz.1,hsmall⟩
-    have hcs := dot_gt (p := -(Real.cos z-9*n)) (r := -(1-Real.sin z-11*n)) (c := L)
-      h.phi_le (by linarith) (by unfold targetSq; nlinarith)
-    have hline := mul_le_mul_of_nonneg_left
-      (show 9*(A+1/2)+11*(v+1/2) ≤ 2*Real.pi+17 by linarith [axial_tie_line h hA]) hn
-    dsimp [n,L] at hcs hline
-    linarith
-  · have hzu : z ≤ 11/7 := by linarith [hz.2,pi_lt_22_over_7]
-    have hdiff : 0 ≤ Real.cos (z/2)-Real.sin (z/2) :=
-      sub_nonneg.mpr (sin_le_cos_of_small ⟨by linarith,by linarith [hz.2]⟩)
-    have hunit : Real.cos z^2+(1-Real.sin z)^2 = 2*(Real.cos (z/2)-Real.sin (z/2))^2 := by
-      have hsin : Real.sin z=2*Real.sin (z/2)*Real.cos (z/2) := by
-        rw [← Real.sin_two_mul]; ring_nf
-      linarith [Real.sin_sq_add_cos_sq z,Real.sin_sq_add_cos_sq (z/2)]
-    have hcs := dot_ge (p := -Real.cos z) (r := -(1-Real.sin z))
-      (c := (51/20)*(Real.cos (z/2)-Real.sin (z/2))) h.phi_le (by positivity)
-      (by unfold targetSq; nlinarith)
-    have hp : 0 < 1+157/375-(4/5)*z+(1-z^2/2+z^4/24-z^6/720)-
-        (51/20)*((1-(z/2)^2/2+(z/2)^4/24)-((z/2)-(z/2)^3/6+(z/2)^5/120-(z/2)^7/5040)) :=
-      bernstein_pos (p := fun z => 1+157/375-(4/5)*z+(1-z^2/2+z^4/24-z^6/720)-
-          (51/20)*((1-(z/2)^2/2+(z/2)^4/24)-((z/2)-(z/2)^3/6+(z/2)^5/120-(z/2)^7/5040)))
-        ![27834859/5225472000,21646979107/329204736000,85094698273/768144384000,
-          83663391929/597445632000,650018406713/4182119424000,224217116981/1394039808000,
-          1222825127771/7589772288000,8516973787387/53128406016000]
-        (fun i => by fin_cases i <;> norm_num) (by norm_num)
-        (fun x => by simp only [bernstein,Fin.sum_univ_succ,Fin.sum_univ_zero]
-                     norm_num [Nat.choose]; ring) ⟨(lt_of_not_ge hsmall).le,hzu⟩
-    have hch := cos_upper_four (show 0 ≤ z/2 by linarith)
-    have hsh := sin_lower_seven (show 0 ≤ z/2 by linarith)
-    linarith [Real.pi_gt_d2]
+  rcases le_total z (Real.pi/6) with hs | hs
+  · exact axial_small_turn h hA ⟨hz.1,hs⟩
+  · exact axial_large_turn h ⟨hs,hz.2⟩
 
 lemma side_transition_trade {A v : ℝ} (h : Admissible A v)
     (hT : label A v=side A v) :
@@ -172,6 +204,24 @@ lemma sideTarget_positive_angle {A v e : ℝ} (h : Admissible A v)
   rw [abs_of_nonneg hs0]
   linarith
 
+/-- The force along the tangent of the disk at the transition state increases on `[0, 1]`
+and is positive at `1/12`. -/
+private lemma tangent_force_pos {z : ℝ} (hz : 1/12 ≤ z ∧ z ≤ 1) :
+    0 < (12/25)*(Real.cos z-3/5)+Real.sin z-4/15 := by
+  have hm := monoOn_of_hasDeriv_nonneg (l := 0) (u := 1)
+    (f := fun y => (12/25)*(Real.cos y-3/5)+Real.sin y-4/15)
+    (d := fun y => Real.cos y-(12/25)*Real.sin y) (by fun_prop)
+    (fun y _ => (((((Real.hasDerivAt_cos y).sub_const (3/5)).const_mul (12/25)).add
+      (Real.hasDerivAt_sin y)).sub_const (4/15)).congr_deriv (by ring))
+    (fun y hy => by
+      nlinarith [Real.one_sub_sq_div_two_le_cos (x := y),Real.sin_le_one y,hy.1,hy.2])
+  have hK := hm (show (1/12:ℝ) ∈ Set.Icc 0 1 by norm_num) ⟨by linarith,hz.2⟩ hz.1
+  have hs := Real.sin_ge_sub_cube (show (0:ℝ) ≤ 1/12 by norm_num)
+  have hc := Real.one_sub_sq_div_two_le_cos (x := (1/12:ℝ))
+  linarith
+
+/-- A side target at a turn `-z` with `0 < z < 1`. Where the force along the tangent at the
+transition state is nonnegative the target exceeds its value there; elsewhere `z < 1/12`. -/
 lemma sideTarget_negative_pos {A v z : ℝ} (h : Admissible A v)
     (hT : label A v=side A v) (hz : 0 < z ∧ z < 1) :
     0 < sideTarget A v (-z) := by
@@ -183,69 +233,46 @@ lemma sideTarget_negative_pos {A v z : ℝ} (h : Admissible A v)
     rw [Real.sin_neg,Real.cos_neg,abs_neg,abs_of_nonneg hs0]
     ring
   rw [hexp]
-  by_cases hsmall : z ≤ 1/6
-  · have hH : 0 < 26/75-(653/300)*z+(23/45)*z^2+(349/720)*z^3-(47/900)*z^4-
-        (1069/21600)*z^5-(13/37800)*z^6 :=
-      bernstein_pos (p := fun z => 26/75-(653/300)*z+(23/45)*z^2+(349/720)*z^3-
-          (47/900)*z^4-(1069/21600)*z^5-(13/37800)*z^6)
-        ![26/75,3091/10800,11017/48600,523261/3110400,3882011/34992000,
-          55351163/1007769600,1001149/3527193600]
-        (fun i => by fin_cases i <;> norm_num) (by norm_num)
-        (fun x => by simp only [bernstein,Fin.sum_univ_succ,Fin.sum_univ_zero]
-                     norm_num [Nat.choose]; ring) ⟨hz.1.le,hsmall⟩
-    have hL : 0 ≤ Real.cos z-2/15-(4/5)*z := by
-      nlinarith [Real.one_sub_sq_div_two_le_cos (x := z)]
-    have hcs := dot_gt (p := 3/5-Real.cos z) (r := Real.sin z-4/15) h.phi_le hL (by
-      have := mul_le_mul_of_nonneg_left (cos_upper_four hz.1.le) hz.1.le
-      have := cos_sq_lower_six hz.1.le
-      have := cos_lower_six hz.1.le
-      have := sin_lower_seven hz.1.le
-      have := mul_pos hz.1 hH
-      unfold targetSq
-      nlinarith [Real.sin_sq_add_cos_sq z,pow_nonneg hz.1.le 4])
-    linarith
-  have hbig : 1/6 ≤ z := (lt_of_not_ge hsmall).le
   have hb := side_state_transition_bounds h hT
-  have ht := side_transition_trade h hT
   have hc := transition_coarse
   by_cases hcos : 3/5 ≤ Real.cos z
-  · -- compared with the transition state, a positive profile
-    have hsin := Real.sin_ge_sub_cube (show 0 ≤ z by linarith)
-    have hcosU := cos_upper_four (show 0 ≤ z by linarith)
-    have hsinU := Real.sin_le (show 0 ≤ z by linarith)
-    have htrans : 0 < Real.cos z-2/15-(4/5)*z+(3/5-Real.cos z)*(a0+1/2)+
-        (Real.sin z-4/15)*(u0+1/2) := by
-      have hpA := mul_nonneg (show 0 ≤ a0-1/2-3/5 by linarith) (sub_nonneg.mpr (Real.cos_le_one z))
+  · by_cases hK : 0 ≤ (12/25)*(Real.cos z-3/5)+Real.sin z-4/15
+    · -- at least the value at the transition state, positive as `z ≥ 28/375`
+      have ht := side_transition_trade h hT
+      have h1 := mul_nonneg (sub_nonneg.mpr hcos) (show 0 ≤ a0-A-(12/25)*(v-u0) by linarith)
+      have h2 := mul_nonneg hK (sub_nonneg.mpr hb.1)
+      have hz0 : 28/375 ≤ z := by linarith [Real.sin_le hz.1.le,Real.cos_le_one z]
+      have hpA := mul_nonneg (show 0 ≤ a0-1/2-3/5 by linarith)
+        (sub_nonneg.mpr (Real.cos_le_one z))
       have hpU := mul_nonneg (show 0 ≤ u0+1/2-79/100 by linarith) hs0
-      have hcube := mul_nonneg (pow_nonneg (show 0 ≤ z by linarith) 3)
-        (show (0:ℝ) ≤ 4/5-79/100 by norm_num)
+      have hsin := Real.sin_ge_sub_cube hz.1.le
+      have hcosU := cos_upper_four hz.1.le
       have hz3 : z^3 ≤ z^2 := by nlinarith [mul_nonneg (sq_nonneg z) (show 0 ≤ 1-z by linarith)]
-      have hz4 : z^4 ≤ z^2 := by nlinarith [mul_nonneg (sq_nonneg z) (show 0 ≤ 1-z^2 by nlinarith)]
-      have hpos := mul_pos (show 0 < z by linarith) (show 0 < -1/100+(17/120)*z by linarith)
+      have hz4 : z^4 ≤ z^2 := by
+        nlinarith [mul_nonneg (sq_nonneg z) (show 0 ≤ 1-z^2 by nlinarith)]
+      have hpos := mul_pos hz.1 (show 0 < -1/100+(17/120)*z by linarith)
+      have hW : 0 ≤ 4-3*a0-2*u0 := transition_admissible.remainder_nonneg
+      linarith [pow_nonneg hz.1.le 3]
+    · -- below `1/12` the disk alone suffices
+      have hz12 : z < 1/12 := by
+        by_contra hn
+        exact hK (tangent_force_pos ⟨le_of_not_gt hn,hz.2.le⟩).le
+      have hcL := Real.one_sub_sq_div_two_le_cos (x := z)
+      have hz2 := mul_nonneg hz.1.le (show 0 ≤ 1/12-z by linarith)
+      have hL : 0 ≤ Real.cos z-2/15-(4/5)*z := by linarith
+      have hm := mul_le_mul_of_nonneg_left hcL (show 0 ≤ 109/30-(8/5)*z by linarith)
+      have hs2 := pow_le_pow_left₀ hs0 (Real.sin_le hz.1.le) 2
+      have hsin := Real.sin_ge_sub_cube hz.1.le
+      have hcs := dot_gt (p := 3/5-Real.cos z) (r := Real.sin z-4/15) h.phi_le hL
+        (by simp only [targetSq]; linarith [Real.sin_sq_add_cos_sq z,pow_nonneg hz.1.le 3])
       linarith
-    by_cases hsin4 : 4/15 ≤ Real.sin z
-    · have h1 := mul_nonneg (show 0 ≤ Real.cos z-3/5 by linarith)
-        (show 0 ≤ a0-A by linarith [hb.2.1])
-      have h2 := mul_nonneg (show 0 ≤ Real.sin z-4/15 by linarith)
-        (show 0 ≤ v-u0 by linarith [hb.1])
-      linarith
-    · have hcos' : 24/25 < Real.cos z := by
-        nlinarith [Real.sin_sq_add_cos_sq z]
-      have hsin' : (33:ℝ)/200 < Real.sin z := by
-        have hm := Real.sin_le_sin_of_le_of_le_pi_div_two (x := 1/6) (y := z)
-          (by linarith [Real.pi_gt_d2]) (by linarith [hz.2,Real.pi_gt_d2]) hbig
-        have hl := Real.sin_ge_sub_cube (show (0:ℝ) ≤ 1/6 by norm_num)
-        linarith
-      have h1 := mul_nonneg (show 0 ≤ Real.cos z-3/5 by linarith)
-        (show 0 ≤ a0-A-(12/25)*(v-u0) by linarith)
-      have h2 := mul_nonneg (show 0 ≤ v-u0 by linarith [hb.1])
-        (show 0 ≤ (12/25)*(Real.cos z-3/5)+Real.sin z-4/15 by linarith)
-      linarith
-  · have hc0 : (1:ℝ)/2 < Real.cos z := by
+  · -- both coefficients are positive
+    have hc0 : (1:ℝ)/2 < Real.cos z := by
       nlinarith [Real.one_sub_sq_div_two_le_cos (x := z)]
     have hsin : 4/5 < Real.sin z := by
       nlinarith [Real.sin_sq_add_cos_sq z]
-    have h1 := mul_nonneg (show 0 ≤ 3/5-Real.cos z by linarith) h.a_nonneg
+    have h1 := mul_nonneg (show 0 ≤ 3/5-Real.cos z by linarith)
+      (show 0 ≤ A-1/2 by linarith [h.half_le])
     have h2 := mul_nonneg (show 0 ≤ v-29/100 by linarith [hb.1,hc.2.2.1])
       (show 0 ≤ Real.sin z-4/15 by linarith)
     linarith

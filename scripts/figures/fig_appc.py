@@ -4,9 +4,9 @@
     python3 scripts/figures/fig_appc.py
 
 Every figure is computed from the functions and states of the appendix: the
-canonical pairs from the labels and the relative phase, the graphs by sampling
-the functions, the control polygons from the Bernstein coefficients, and the
-label regions by clipping the admissible region with the lines of the labels.
+canonical pairs from the labels and the relative phase, the graphs and the
+bounds of the proofs by sampling the functions, and the label regions by
+clipping the admissible region with the lines of the labels.
 """
 import math
 
@@ -90,17 +90,6 @@ def J(a, A, v, e):
         (v + 0.5) * math.cos(e)
 
 
-def bernstein(coeffs, c):
-    """The polynomial with these Bernstein coefficients on [0, c]."""
-    n = len(coeffs) - 1
-
-    def p(z):
-        t = z / c
-        return sum(b * math.comb(n, i) * t ** i * (1 - t) ** (n - i)
-                   for i, b in enumerate(coeffs))
-    return p
-
-
 def polyline(f, pts, stroke=INK, width=1.6, dash=None):
     d = ' '.join(f'{x:.1f},{y:.1f}' for x, y in (f.p(*q) for q in pts))
     extra = f' stroke-dasharray="{dash}"' if dash else ''
@@ -119,16 +108,23 @@ def open_dot(f, c, r=3.6, stroke=INK):
 
 
 class Graph:
+    """A graph with its own scales on the two axes. It fills a Figure of its
+    own, or is a panel of the Figure `fig` with its origin at the pixel
+    `at`."""
+
     def __init__(self, x0, x1, y0, y1, width=520, height=280, left=58,
-                 right=24, top=18, bottom=44):
+                 right=24, top=18, bottom=44, fig=None, at=(0, 0)):
         self.x0, self.x1, self.y0, self.y1 = x0, x1, y0, y1
         self.kx = width / (x1 - x0)
         self.ky = height / (y1 - y0)
         self.width, self.height = width, height
-        self.f = Figure(-left, width + right, -bottom, height + top, 1, pad=0)
+        self.at = at
+        self.f = fig if fig is not None else Figure(
+            -left, width + right, -bottom, height + top, 1, pad=0)
 
     def q(self, x, y):
-        return ((x - self.x0) * self.kx, (y - self.y0) * self.ky)
+        return (self.at[0] + (x - self.x0) * self.kx,
+                self.at[1] + (y - self.y0) * self.ky)
 
     def axes(self, xticks, yticks, xname='', yname=''):
         f = self.f
@@ -267,57 +263,105 @@ def profile(z):
 
 
 def quintic(z):
+    """q: the Taylor bounds give p(z) - z/50 >= z q(z)."""
     return (9 / 50 - 3 * z / 8 + 7 * z ** 2 / 30 + z ** 3 / 32 - z ** 4 / 30
             - z ** 5 / 960)
 
 
-Q_COEFFS = [9 / 50, 123 / 2000, 937 / 750000, 462959 / 40000000,
-            237199301 / 3750000000, 22578739001 / 300000000000]
+def completed_square(z):
+    return 9 / 40 * (z - 5 / 6) ** 2 + 19 / 800
+
+
+def factored_error(z):
+    """q(z) - completed_square(z), nonnegative for 0 <= z <= 1."""
+    return z ** 2 / 960 * (5 + (1 - z) * (z ** 2 + 33 * z + 3))
+
+
+def check_profile_bounds():
+    """The identity and the inequalities of the proof of Lemma C.2."""
+    for k in range(158):
+        z = k / 100
+        assert abs(quintic(z) - completed_square(z) - factored_error(z)) \
+            < 1e-15
+        if z <= 1:
+            assert factored_error(z) >= 0
+            assert profile(z) - z / 50 >= z * quintic(z) - 1e-15
+        else:
+            assert profile(z) - z / 20 >= profile(z - 0.01) - (z - 0.01) / 20
+    assert abs(1 / 50 + completed_square(1) - 1 / 20) < 1e-15
 
 
 def turn_profile():
+    check_profile_bounds()
     g = Graph(0, PI / 2, 0, 0.26)
     g.axes([(0, '0'), (0.5, '0.5'), (1, '1'), (PI / 2, 'π/2')],
            [(0, '0'), (0.1, '0.1'), (0.2, '0.2')], xname='z')
     g.curve(lambda z: z / 50, stroke=FAINT, width=1.6)
-    g.curve(lambda z: z / 50 + z * quintic(z), stroke=ORANGE, width=1.6,
+    g.curve(lambda z: z / 50 + z * completed_square(z), 0, 1, stroke=ORANGE,
+            width=1.8, dash='6 4')
+    g.curve(lambda z: z / 20, 1, PI / 2, stroke=GREEN, width=1.8,
             dash='6 4')
     g.curve(profile, stroke=BLUE, width=2.2)
+    g.dot(1, 1 / 20)
     g.text(1.28, profile(1.28) + 0.018, 'p(z)', color=BLUE, anchor='end')
-    g.text(0.78, 0.07, 'z/50 + z q(z)', color=ORANGE, size=14)
+    g.text(0.66, 0.072, 'Lemma C.2 (1)', color=ORANGE, size=14,
+           italic=False)
+    g.text(1.45, 1.45 / 20 + 0.016, 'z/20', color=GREEN, size=14)
     g.text(1.35, 1.35 / 50 - 0.014, 'z/50', color=FAINT, size=14)
-    for k in range(0, 158, 2):
-        z = k / 100
-        assert profile(z) >= z / 50 + z * quintic(z) - 1e-12
-    g.f.save('appc-turn-profile', 'The turn profile p, its polynomial lower '
-             'bound z/50 + z q(z), and the line z/50')
+    g.f.save('appc-turn-profile', 'The turn profile p above the line z/50, '
+             'with the lower bounds of the proof: the bound of part (1) on '
+             '[0, 1] and the line z/20 on [1, pi/2], which meet at z = 1')
 
 
-def profile_bernstein():
-    c = 79 / 50
-    g = Graph(0, c, 0, 0.2)
-    g.axes([(0, '0'), (0.5, '0.5'), (1, '1'), (c, '79/50')],
-           [(0, '0'), (0.1, '0.1'), (0.2, '0.2')], xname='z')
-    pts = [(c * i / 5, b) for i, b in enumerate(Q_COEFFS)]
-    g.points(pts, stroke=ORANGE, width=1.4, dash='5 4')
-    for x, y in pts:
-        g.dot(x, y, r=3.6, fill=ORANGE)
-    p = bernstein(Q_COEFFS, c)
-    for k in range(101):
-        z = c * k / 100
-        assert abs(p(z) - quintic(z)) < 1e-12
-    g.curve(quintic, stroke=BLUE, width=2.2)
-    g.text(0.2, 0.15, 'q', color=BLUE, size=16)
-    g.text(pts[2][0], pts[2][1] + 0.014, sb('b', '2'), color=ORANGE, size=14)
-    g.text(pts[3][0] + 0.02, pts[3][1] - 0.012, sb('b', '3'), color=ORANGE,
-           size=14, anchor='start')
-    g.text(pts[0][0] + 0.04, pts[0][1] + 0.006, sb('b', '0'), color=ORANGE,
-           size=14, anchor='start')
-    g.text(pts[5][0] - 0.03, pts[5][1] + 0.012, sb('b', '5'), color=ORANGE,
-           size=14, anchor='end')
-    g.f.save('appc-profile-bernstein', 'The quintic q on the interval from 0 '
-             'to 79/50 and its control polygon through the Bernstein '
-             'coefficients')
+def profile_split():
+    W, H, gap = 300, 230, 84
+    f = Figure(-58, 2 * W + gap + 24, -44, H + 46, 1, pad=0)
+    # (a) 0 <= z <= 1: the Taylor bound z q(z) is the completed square plus
+    # the factored error.
+    a = Graph(0, 1, 0, 0.05, width=W, height=H, fig=f)
+    a.axes([(0, '0'), (0.5, '0.5'), (5 / 6, '5/6'), (1, '1')],
+           [(0, '0'), (0.02, '0.02'), (0.04, '0.04')], xname='z')
+    zs = [k / 200 for k in range(201)]
+    f.polygon([a.q(z, z * completed_square(z)) for z in zs]
+              + [a.q(z, z * quintic(z)) for z in reversed(zs)],
+              fill=FILLS[3], stroke='none')
+    a.curve(lambda z: z * quintic(z), stroke=PURPLE, width=1.6, dash='6 4')
+    a.curve(lambda z: z * completed_square(z), stroke=ORANGE, width=1.8,
+            dash='6 4')
+    a.curve(lambda z: profile(z) - z / 50, stroke=BLUE, width=2.2)
+    a.dot(1, completed_square(1), fill=ORANGE)
+    # a legend in the empty upper left corner
+    rows = [('p(z) − z/50', BLUE, None, True),
+            ('z q(z)', PURPLE, '6 4', True),
+            ('completed square', ORANGE, '6 4', False),
+            ('factored error', None, None, False)]
+    for k, (name, color, dash, italic) in enumerate(rows):
+        y = 0.0478 - 0.0042 * k
+        if color is None:
+            f.polygon([a.q(0.03, y - 0.0012), a.q(0.11, y - 0.0012),
+                       a.q(0.11, y + 0.0012), a.q(0.03, y + 0.0012)],
+                      fill=FILLS[3], stroke='none')
+        else:
+            a.points([(0.03, y), (0.11, y)], stroke=color,
+                     width=2.2 if dash is None else 1.8, dash=dash)
+        a.text(0.13, y, name, color=color or PURPLE, size=13, italic=italic,
+               anchor='start')
+    f.text((W / 2, H + 30), '(a) 0 ≤ z ≤ 1', size=14, italic=False)
+    # (b) 1 <= z <= pi/2: the profile less z/20 increases.
+    b = Graph(1, PI / 2, 0, 0.18, width=W, height=H, fig=f, at=(W + gap, 0))
+    b.axes([(1, '1'), (1.25, '1.25'), (PI / 2, 'π/2')],
+           [(0, '0'), (0.05, '0.05'), (0.1, '0.1'), (0.15, '0.15')],
+           xname='z')
+    b.curve(lambda z: profile(z) - z / 20, stroke=BLUE, width=2.2)
+    b.dot(1, profile(1) - 1 / 20, fill=BLUE)
+    b.text(1.33, profile(1.33) - 1.33 / 20 + 0.011, 'p(z) − z/20',
+           color=BLUE, size=14, anchor='end')
+    f.text((W + gap + W / 2, H + 30), '(b) 1 ≤ z ≤ π/2', size=14,
+           italic=False)
+    f.save('appc-profile-split', 'The two parts of the proof of the turn '
+           'profile bound: on [0, 1] the profile less z/50 above its Taylor '
+           'bound z q(z), which is the completed square plus a factored '
+           'error; on [1, pi/2] the profile less z/20, increasing')
 
 
 def positive_turn():
@@ -536,17 +580,6 @@ def label_boundary():
 # Section C.7: two circles.
 
 
-P_COEFFS = [201 / 2000, 61767947 / 624624000, 160355527 / 1665664000,
-            22183121153 / 239855616000, 1341122208527 / 15350759424000,
-            44622066127207 / 552627339264000,
-            23358801914587 / 322365947904000,
-            4410162763554631 / 70736299425792000,
-            1523041486356419 / 30315556896768000,
-            4524018740302909 / 125753421201408000,
-            406318644428659 / 20958903533568000,
-            125352005285647 / 418089296461824000]
-
-
 def radial_poly(z):
     return (201 / 2000 - 201353 / 7098000 * z - 3091 / 21840 * z ** 2
             - 1571239 / 14196000 * z ** 3 - 23103 / 7280000 * z ** 4
@@ -555,28 +588,71 @@ def radial_poly(z):
             - z ** 11 / 518400)
 
 
-def radial_bernstein():
-    c = 5 / 8
-    g = Graph(0, c, 0, 0.11, height=260)
-    g.axes([(0, '0'), (0.2, '0.2'), (0.4, '0.4'), (c, '5/8')],
-           [(0, '0'), (0.05, '0.05'), (0.1, '0.1')], xname='z')
-    p = bernstein(P_COEFFS, c)
+# The derivative of P: its constant term, and the sum of its terms with a
+# positive coefficient, those in z^4, z^7 and z^8.
+RADIAL_CONST = 201353 / 7098000
+
+
+def radial_positive_terms(z):
+    return 977419 / 36504000 * z ** 4 + z ** 7 / 11340 + z ** 8 / 960
+
+
+def radial_slope(z):
+    return (-RADIAL_CONST - 3091 / 10920 * z - 1571239 / 4732000 * z ** 2
+            - 23103 / 1820000 * z ** 3 - 13 / 1050 * z ** 5
+            - 364297 / 28080000 * z ** 6 - 11 / 518400 * z ** 10
+            + radial_positive_terms(z))
+
+
+def radial_decreasing():
+    h = 1e-6
     for k in range(101):
-        z = c * k / 100
-        assert abs(p(z) - radial_poly(z)) < 1e-12
-    pts = [(c * i / 11, b) for i, b in enumerate(P_COEFFS)]
-    g.points(pts, stroke=ORANGE, width=1.4, dash='5 4')
-    for x, y in pts:
-        g.dot(x, y, r=3.2, fill=ORANGE)
-    g.curve(radial_poly, stroke=BLUE, width=2.2)
-    g.text(0.3, radial_poly(0.3) - 0.012, 'P', color=BLUE, size=16)
-    g.text(pts[11][0] - 0.01, pts[11][1] + 0.01, sb('b', '11'),
-           color=ORANGE, size=14, anchor='end')
-    g.text(pts[0][0] + 0.012, pts[0][1] + 0.006, sb('b', '0'), color=ORANGE,
-           size=14, anchor='start')
-    g.f.save('appc-radial-bernstein', 'The polynomial P of degree 11 on the '
-             'interval from 0 to 5/8 and its control polygon through the '
-             'Bernstein coefficients')
+        z = k / 100
+        slope = (radial_poly(z + h) - radial_poly(z - h)) / (2 * h)
+        assert abs(slope - radial_slope(z)) < 1e-8 and radial_slope(z) < 0
+        assert radial_positive_terms(z) <= radial_positive_terms(1) \
+            < RADIAL_CONST
+    # the decimal bounds of the proof of Lemma C.18
+    assert radial_positive_terms(1) < 0.0268 + 0.0001 + 0.0011 < 0.0283 \
+        < RADIAL_CONST
+    c = 5 / 8
+    assert radial_poly(c) > 1 / 4000
+    W, H, gap = 300, 230, 84
+    f = Figure(-58, 2 * W + gap + 24, -44, H + 46, 1, pad=0)
+    # (a) P decreases on [0, 1] and is positive at 5/8.
+    a = Graph(0, 1, -0.2, 0.12, width=W, height=H, fig=f)
+    a.axes([(0, '0'), (0.25, '0.25'), (c, '5/8'), (1, '1')],
+           [(-0.2, '−0.2'), (-0.1, '−0.1'), (0, '0'), (0.1, '0.1')],
+           xname='z')
+    zs = [c * k / 200 for k in range(201)]
+    f.polygon([a.q(0, 0)] + [a.q(z, radial_poly(z)) for z in zs]
+              + [a.q(c, 0)], fill=FILLS[0], stroke='none')
+    a.hline(0, stroke=FAINT, width=1, dash='4 3')
+    f.line(a.q(c, -0.2), a.q(c, 0.12), stroke=FAINT, width=1, dash='4 3')
+    a.curve(radial_poly, stroke=BLUE, width=2.2)
+    a.dot(c, radial_poly(c), fill=BLUE)
+    a.text(0.36, radial_poly(0.36) + 0.022, 'P(z)', color=BLUE, size=15)
+    a.text(c + 0.03, 0.03, 'P(5/8) ≈ 0.0003', color=BLUE, size=13,
+           anchor='start')
+    f.text((W / 2, H + 30), '(a) the polynomial P', size=14, italic=False)
+    # (b) The positive terms of P' stay below its negative constant term.
+    b = Graph(0, 1, 0, 0.032, width=W, height=H, fig=f, at=(W + gap, 0))
+    b.axes([(0, '0'), (0.5, '0.5'), (1, '1')],
+           [(0, '0'), (0.01, '0.01'), (0.02, '0.02'), (0.03, '0.03')],
+           xname='z')
+    b.hline(RADIAL_CONST, stroke=FAINT, width=1.6, dash='6 4')
+    b.curve(radial_positive_terms, stroke=ORANGE, width=2.2)
+    b.dot(1, radial_positive_terms(1), fill=ORANGE)
+    b.text(0.04, RADIAL_CONST + 0.0016, '201353/7098000 ≈ 0.0284',
+           color=FAINT, size=13, italic=False, anchor='start')
+    b.text(0.78, radial_positive_terms(0.78) + 0.0035,
+           'positive terms of P′', color=ORANGE, size=13, italic=False,
+           anchor='end')
+    f.text((W + gap + W / 2, H + 30), '(b) two parts of its slope P′',
+           size=14, italic=False)
+    f.save('appc-radial-decreasing', 'The polynomial P decreasing on [0, 1] '
+           'and positive at 5/8; the terms of its derivative with a positive '
+           'coefficient stay below the size of its negative constant term')
 
 
 def circular_pair():
@@ -751,13 +827,13 @@ def upper_cases():
 def main():
     inward_sectors()
     turn_profile()
-    profile_bernstein()
+    profile_split()
     positive_turn()
     target_arc()
     quarter_profile()
     side_target()
     label_boundary()
-    radial_bernstein()
+    radial_decreasing()
     circular_pair()
     turn_margin()
     junction()

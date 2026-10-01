@@ -30,9 +30,11 @@ form as a function of the turn $e$ (§C.1). The equations of the labels tie the
 radial coordinates $a$ and $A$ to the turn and to the remainder $r(a, u)$. Where
 this does not fix the states, the sum is monotone in them and its minimum sits
 on the boundary of the label regions (§C.6 to §C.8). What is left is an
-inequality in one angle, which Taylor bounds of $\sin$ and $\cos$ reduce to a
-polynomial that is positive by its Bernstein coefficients or by an explicit
-identity.
+inequality in one angle. Taylor bounds of $\sin$ and $\cos$ reduce it to a
+polynomial inequality, which an explicit identity proves by writing the
+difference as a sum of nonnegative terms; or the inequality holds at one end of
+an interval and the sign of a derivative carries it to the rest, or it holds at
+both ends and concavity carries it to the points between.
 
 We use the following facts of Chapter 9 without further comment. For an
 admissible state $(a, u)$:
@@ -69,11 +71,12 @@ $\cos z \ge 1 - \frac{z^2}2$ together with the Taylor bounds of Appendix A
 1 - \tfrac{z^2}2 + \tfrac{z^4}{24} - \tfrac{z^6}{720} \le \cos z \le 1 - \tfrac{z^2}2 + \tfrac{z^4}{24} .
 ```
 
-A polynomial whose Bernstein coefficients on an interval are all positive is
-positive on that interval ([Lemma A.10](appendix-a.md#lemma-a10-bernstein-criterion)): if $p$ has degree $n$ and
-$p(z)\,c^n = \sum_{i=0}^n b_i \binom ni z^i (c - z)^{n-i}$ with all $b_i > 0$,
-then $p > 0$ on $[0, c]$. We call $b_0, \dots, b_n$ the Bernstein coefficients
-of $p$ on $[0, c]$.
+The sign of a derivative gives monotonicity
+([Lemma A.1](appendix-a.md#lemma-a1-monotonicity-from-the-derivative)): a function that is continuous on a closed interval
+and has a derivative $f'(y) \ge 0$ at every interior point $y$ is
+nondecreasing on the interval, and one with $f'(y) \le 0$ at every interior
+point is nonincreasing. The identities are checked by expanding, and the
+decimal bounds on fractions by one multiplication each.
 
 ## C.1 The inward support sum
 
@@ -136,20 +139,20 @@ Let $(a, u)$ be admissible and $\ell = \ell(a, u)$.
 
 *Lean:
 [`Seven.Admissible.radial_label_bound`](../../SquaresInCircles/Seven/Labels.lean#L112),
-[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Labels.lean#L169),
-[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Labels.lean#L194).*
+[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Labels.lean#L157),
+[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Labels.lean#L184).*
 
 ## C.2 Two profiles of the turn
 
 ### Lemma C.2 (the turn profile)
 
-For $0 \le z \le \frac\pi2$,
+For real $z$ let $p(z) = \sin z - \frac45 z\cos z - \frac34(1 - \cos z)$.
 
-```math
-p(z) = \sin z - \tfrac45 z\cos z - \tfrac34(1 - \cos z) \ge \tfrac z{50} .
-```
+1. If $0 \le z \le 1$, then
+   $p(z) - \frac z{50} \ge z\left(\frac9{40}\left(z - \frac56\right)^2 + \frac{19}{800}\right)$.
+2. If $0 \le z \le \frac\pi2$, then $p(z) \ge \frac z{50}$.
 
-*Proof.* Let $0 \le z \le \frac\pi2$. We use $\sin z \ge z - \frac{z^3}6$, the
+*Proof.* (1) Let $0 \le z \le 1$. We use $\sin z \ge z - \frac{z^3}6$, the
 upper Taylor bound of $\cos z$ multiplied by $\frac45 z \ge 0$, and the lower
 Taylor bound of $\cos z$:
 
@@ -162,40 +165,74 @@ p(z) - \tfrac z{50} \ge \left(z - \tfrac{z^3}6\right) - \tfrac45 z\left(1 - \tfr
 q(z) = \tfrac9{50} - \tfrac{3z}8 + \tfrac{7z^2}{30} + \tfrac{z^3}{32} - \tfrac{z^4}{30} - \tfrac{z^5}{960} .
 ```
 
-Since $\pi < 3.16$, $[0, \frac\pi2] \subset [0, \frac{79}{50}]$. On
-$[0, \frac{79}{50}]$ the quintic $q$ has the Bernstein coefficients
+We split $q$ into a completed square and an error that factors:
 
 ```math
-\tfrac9{50},\quad \tfrac{123}{2000},\quad \tfrac{937}{750000},\quad \tfrac{462959}{40000000},\quad
-\tfrac{237199301}{3750000000},\quad \tfrac{22578739001}{300000000000},
+q(z) = \tfrac9{40}\left(z - \tfrac56\right)^2 + \tfrac{19}{800} + \tfrac{z^2}{960}\left(5 + (1 - z)\left(z^2 + 33z + 3\right)\right) .
 ```
 
-that is, if $b_0, \dots, b_5$ denote these numbers, then
+Indeed, as $\frac9{40}\cdot\frac{25}{36} + \frac{19}{800} = \frac5{32} + \frac{19}{800} = \frac9{50}$,
 
 ```math
-q(z)\left(\tfrac{79}{50}\right)^5 = \sum_{i=0}^5 b_i\binom5i z^i\left(\tfrac{79}{50} - z\right)^{5-i},
+\tfrac9{40}\left(z - \tfrac56\right)^2 + \tfrac{19}{800} = \tfrac9{50} - \tfrac{3z}8 + \tfrac{9z^2}{40} ;
 ```
 
-as one checks by expanding. They are positive, so $q > 0$ on
-$[0, \frac{79}{50}]$ ([Lemma A.10](appendix-a.md#lemma-a10-bernstein-criterion)), and
-$p(z) - \frac z{50} \ge z\,q(z) \ge 0$. $\square$
+and as $5 + (1 - z)(z^2 + 33z + 3) = 8 + 30z - 32z^2 - z^3$, the error is
+$\frac{z^2}{120} + \frac{z^3}{32} - \frac{z^4}{30} - \frac{z^5}{960}$. The two
+add up to $q(z)$, because $\frac9{40} + \frac1{120} = \frac7{30}$. For
+$0 \le z \le 1$ the error is nonnegative, since $1 - z \ge 0$ and
+$z^2 + 33z + 3 > 0$; multiplying by $z \ge 0$,
+
+```math
+p(z) - \tfrac z{50} \ge z\,q(z) \ge z\left(\tfrac9{40}\left(z - \tfrac56\right)^2 + \tfrac{19}{800}\right) .
+```
+
+(2) For $0 \le z \le 1$ this follows from (1), whose right side is
+nonnegative. On $[1, \frac\pi2]$ let $f(y) = p(y) - \frac y{20}$. Since the
+derivative of $y\cos y$ is $\cos y - y\sin y$,
+
+```math
+f'(y) = \tfrac15\cos y + \left(\tfrac45y - \tfrac34\right)\sin y - \tfrac1{20}
+= \tfrac3{20}\cos y + \tfrac45(y - 1)\sin y + \tfrac1{20}\left(\cos y + \sin y - 1\right) .
+```
+
+For $1 \le y \le \frac\pi2$, $0 \le \cos y \le 1$ and $0 \le \sin y \le 1$, so
+$\cos y \ge \cos^2 y$ and $\sin y \ge \sin^2 y$, and
+$\cos y + \sin y - 1 \ge \cos^2 y + \sin^2 y - 1 = 0$. So all three terms of
+$f'(y)$ are nonnegative, the middle one because $y \ge 1$, and $f$ is
+nondecreasing on $[1, \frac\pi2]$
+([Lemma A.1](appendix-a.md#lemma-a1-monotonicity-from-the-derivative) (1)). At $y = 1$, part (1) gives
+
+```math
+p(1) \ge \tfrac1{50} + \tfrac9{40}\cdot\tfrac1{36} + \tfrac{19}{800} = \tfrac1{50} + \tfrac3{100} = \tfrac1{20},
+```
+
+that is, $f(1) \ge 0$. Hence for $1 \le z \le \frac\pi2$, $f(z) \ge f(1) \ge 0$
+and $p(z) \ge \frac z{20} \ge \frac z{50}$. $\square$
 
 *Lean:
-[`Seven.inward_turn_profile`](../../SquaresInCircles/Seven/InwardAxialTarget.lean#L19).*
+[`Seven.inward_small_turn_bound`](../../SquaresInCircles/Seven/InwardAxialTarget.lean#L21),
+[`Seven.inward_turn_profile`](../../SquaresInCircles/Seven/InwardAxialTarget.lean#L33).*
 
-![Graph over the interval from 0 to pi over 2: the turn profile p rises from 0, flattens near 0.037 around z = 0.5 and climbs to 0.25 at pi over 2; below it the polynomial lower bound z/50 + z q(z), and at the bottom the line z/50](figures/appc-turn-profile.svg)
+![Graph over the interval from 0 to pi over 2: the turn profile p rises from 0, flattens near 0.037 around z = 0.5 and climbs to 0.25 at pi over 2. Below it, on the interval from 0 to 1, the bound of part (1), close to p up to about 0.6, rises to 1/20 at z = 1, where it meets the line z/20, which continues below p up to pi over 2; at the bottom the line z/50](figures/appc-turn-profile.svg)
 
-*Figure C.2.* The turn profile $p$ of Lemma C.2 (blue), its lower bound
-$\frac z{50} + z\,q(z)$ from the Taylor bounds (orange, dashed), and
-$\frac z{50}$ (grey). The lower bound follows $p$ closely up to about $z = 0.6$;
-the quintic $q$, its margin over $\frac z{50}$ per unit of $z$, is least near
-$z = 0.84$ (Figure C.3).
+*Figure C.2.* The turn profile $p$ of Lemma C.2 (blue) and the line
+$\frac z{50}$ (grey). The proof bounds $p$ below by
+$\frac z{50} + z(\frac9{40}(z - \frac56)^2 + \frac{19}{800})$ on $[0, 1]$
+(orange, dashed), which follows $p$ closely up to about $z = 0.6$, and by
+$\frac z{20}$ on $[1, \frac\pi2]$ (green, dashed). The two bounds meet at
+$(1, \frac1{20})$ (dot).
 
-![Graph of the quintic q on the interval from 0 to 79/50, positive with a minimum of about 0.031 near z = 0.84, together with its control polygon through the six Bernstein coefficients, which are all above the axis](figures/appc-profile-bernstein.svg)
+![Two graphs. Left, on the interval from 0 to 1: p(z) − z/50 in blue rises to about 0.027, stays nearly level up to about 0.7 and climbs to about 0.044 at z = 1; just below it the Taylor bound z q(z), dashed, ending near 0.035; below that the completed square, dashed, least near 0.019 and ending at 0.03 (dot); the band between the last two is shaded. Right, on the interval from 1 to pi over 2: p(z) − z/20 increases from about 0.014 at z = 1 (dot) to about 0.17](figures/appc-profile-split.svg)
 
-*Figure C.3.* The quintic $q$ of Lemma C.2 on $[0, \frac{79}{50}]$ and its
-control polygon: the points $(\frac{79}{250}i, b_i)$, $i = 0, \dots, 5$. The
-polygon lies above the axis, and $q$ lies in its convex hull.
+*Figure C.3.* The two parts of the proof of Lemma C.2. (a) On $[0, 1]$:
+$p(z) - \frac z{50}$ (blue) and its Taylor bound $z\,q(z)$ (purple, dashed),
+which is the completed square $z(\frac9{40}(z - \frac56)^2 + \frac{19}{800})$
+(orange, dashed) plus the factored error
+$\frac{z^3}{960}(5 + (1 - z)(z^2 + 33z + 3))$ (shaded). At $z = 1$ the completed
+square is $\frac3{100}$ (dot). (b) On $[1, \frac\pi2]$: $p(z) - \frac z{20}$
+increases from its value at 1, about $0.014$, which part (1) shows to be
+nonnegative.
 
 ### Lemma C.3 (a nonnegative turn)
 
@@ -220,7 +257,7 @@ and $\frac{671}{840} = \frac45 - \frac1{840}$. Every term is nonnegative.
 $\square$
 
 *Lean:
-[`Seven.inward_positive_turn_bound`](../../SquaresInCircles/Seven/InwardAxialTarget.lean#L35).*
+[`Seven.inward_positive_turn_bound`](../../SquaresInCircles/Seven/InwardAxialTarget.lean#L61).*
 
 ![Graph over the interval from 0 to pi over 12: the left side of Lemma C.3 for A = root 3 minus one half and v = 0 rises from 0 to about 0.005 near e = 0.15 and falls to about 0.003 at pi over 12, well above the line e/840, which ends near 0.0003](figures/appc-positive-turn.svg)
 
@@ -263,7 +300,7 @@ and the bracket is at least $\frac e{840}$ by Lemma C.3, which applies since
 $A \le \sqrt3 - \frac12$ and $v \ge 0$. $\square$
 
 *Lean:
-[`Seven.inward_axial_positive_turn`](../../SquaresInCircles/Seven/InwardAxialTarget.lean#L58).*
+[`Seven.inward_axial_positive_turn`](../../SquaresInCircles/Seven/InwardAxialTarget.lean#L84).*
 
 ### Lemma C.5 (two axial labels, nonpositive turn)
 
@@ -291,7 +328,7 @@ Expanding shows the identity
 ```
 
 with $p$ the turn profile of Lemma C.2. Every term after $\frac1{200}$ is
-nonnegative: $p(z) \ge \frac z{50}$ by Lemma C.2;
+nonnegative: $p(z) \ge \frac z{50}$ by Lemma C.2 (2);
 $a \le \sqrt3 - \frac12 < \frac54 - \frac1{200}$; $a + u < \frac{113}{80}$ for
 the axial label $\ell_1$, while $\pi > 3.14$ gives
 
@@ -302,7 +339,7 @@ the axial label $\ell_1$, while $\pi > 3.14$ gives
 and $A \ge \frac12$. So $\sigma_2 \ge \frac1{200}$. $\square$
 
 *Lean:
-[`Seven.inward_axial_nonpositive_turn`](../../SquaresInCircles/Seven/InwardAxialTarget.lean#L77).*
+[`Seven.inward_axial_nonpositive_turn`](../../SquaresInCircles/Seven/InwardAxialTarget.lean#L103).*
 
 ### Proposition C.6 (two axial labels)
 
@@ -314,7 +351,7 @@ with $t = +1$. If $e > 0$, Lemma C.4 gives
 $\sigma_2 \ge \frac2{15}r(a, u) + \frac e{840} > 0$. $\square$
 
 *Lean:
-[`Seven.inward_axial_axial_pos`](../../SquaresInCircles/Seven/InwardAxialTarget.lean#L106).*
+[`Seven.inward_axial_axial_pos`](../../SquaresInCircles/Seven/InwardAxialTarget.lean#L132).*
 
 ### Proposition C.7 (side source, axial target)
 
@@ -364,8 +401,8 @@ and hence, by expanding,
 + \left(v - \tfrac12 - \tfrac45z + \tfrac34\right)(1 - \cos z) + \left(\tfrac1{50} - \tfrac1{840}\right)z .
 ```
 
-Each term is nonnegative, by Lemma C.2, by $A \ge \frac12$ and by the inequality
-above. This proves the bound.
+Each term is nonnegative, by Lemma C.2 (2), by $A \ge \frac12$ and by the
+inequality above. This proves the bound.
 
 Both terms of the lower bound are nonnegative, so $\sigma_2 = 0$ forces
 $r(a, u) = 0$ and $e = 0$. Then $(a, u) = (1, \frac12)$, whose label is
@@ -374,8 +411,8 @@ $(A, 0)$ is an axial state, and with $s = +1$ the two states form a contact of
 the second kind. $\square$
 
 *Lean:
-[`Seven.inward_side_axial_property`](../../SquaresInCircles/Seven/InwardAxialTarget.lean#L161),
-[`Seven.inward_side_axial_lower`](../../SquaresInCircles/Seven/InwardAxialTarget.lean#L126).*
+[`Seven.inward_side_axial_property`](../../SquaresInCircles/Seven/InwardAxialTarget.lean#L187),
+[`Seven.inward_side_axial_lower`](../../SquaresInCircles/Seven/InwardAxialTarget.lean#L152).*
 
 ## C.4 Signs (+, +) with a side target
 
@@ -651,9 +688,9 @@ $\frac45(\mathrm{side}(a, u) - \frac\pi6) + \frac2{15}(4 - 3a - 2u) = 1 - a$ by
 the definition of the side label. $\square$
 
 *Lean:
-[`Seven.inwardOpposite`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L23),
-[`Seven.inward_opposite_formula`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L26),
-[`Seven.inward_opposite_side_identity`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L34).*
+[`Seven.inwardOpposite`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L24),
+[`Seven.inward_opposite_formula`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L27),
+[`Seven.inward_opposite_side_identity`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L35).*
 
 The function $J$ decreases in $a$; it decreases in $A$ where $\sin e \ge 0$ and
 increases in $v$ where $\cos e \ge 0$. This is what moves the states to the
@@ -825,7 +862,7 @@ So $B^2 \ge 3 - w - w^2 \ge 0$, and since $B > 0$, $\sqrt{3 - w - w^2} \le B$.
 $\square$
 
 *Lean:
-[`Seven.circle_quadratic_upper`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L98).*
+[`Seven.circle_quadratic_upper`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L111).*
 
 ### Definition C.16 (the radial polynomials)
 
@@ -851,11 +888,11 @@ P(z) ={}& \tfrac{201}{2000} - \tfrac{201353}{7098000}z - \tfrac{3091}{21840}z^2 
 ```
 
 *Lean:
-[`Seven.radialB`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L64),
-[`Seven.radialL`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L67),
-[`Seven.radialK`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L70),
-[`Seven.radialE`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L72),
-[`Seven.radialPolynomial`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L46).*
+[`Seven.radialB`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L77),
+[`Seven.radialL`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L80),
+[`Seven.radialK`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L83),
+[`Seven.radialE`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L85),
+[`Seven.radialPolynomial`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L47).*
 
 ### Lemma C.17 (a Taylor bound for the circular pieces)
 
@@ -891,32 +928,59 @@ side is at least
 which is $b_0(z) + v\,b_1(z) + v^2b_2(z)$ by expanding. $\square$
 
 *Lean:
-[`Seven.radial_trig_lower`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L132).*
+[`Seven.radial_trig_lower`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L145).*
 
 ### Lemma C.18 (positivity of the radial form)
 
 $P(z) > 0$ for $0 \le z \le \frac58$, and $E(z, v) > 0$ for $0 < z \le \frac58$
 and every real $v$.
 
-*Proof.* On $[0, \frac58]$ the polynomial $P$, of degree 11, has the Bernstein
-coefficients
+*Proof.* The derivative of $P$ is
 
 ```math
 \begin{aligned}
-&\tfrac{201}{2000},\quad \tfrac{61767947}{624624000},\quad \tfrac{160355527}{1665664000},\quad
-\tfrac{22183121153}{239855616000},\quad \tfrac{1341122208527}{15350759424000},\quad
-\tfrac{44622066127207}{552627339264000}, \\
-&\tfrac{23358801914587}{322365947904000},\quad \tfrac{4410162763554631}{70736299425792000},\quad
-\tfrac{1523041486356419}{30315556896768000},\quad \tfrac{4524018740302909}{125753421201408000}, \\
-&\tfrac{406318644428659}{20958903533568000},\quad \tfrac{125352005285647}{418089296461824000},
+P'(z) ={}& -\tfrac{201353}{7098000} - \tfrac{3091}{10920}z - \tfrac{1571239}{4732000}z^2 - \tfrac{23103}{1820000}z^3
++ \tfrac{977419}{36504000}z^4 \\
+&- \tfrac{13}{1050}z^5 - \tfrac{364297}{28080000}z^6 + \tfrac1{11340}z^7 + \tfrac1{960}z^8 - \tfrac{11}{518400}z^{10} .
 \end{aligned}
 ```
 
-that is, if $b_0, \dots, b_{11}$ denote these numbers (from about $0.1005$ down
-to about $0.0003$), then
-$P(z)(\frac58)^{11} = \sum_{i=0}^{11} b_i\binom{11}i z^i(\frac58 - z)^{11-i}$,
-as one checks by expanding. They are all positive, so $P > 0$ on $[0, \frac58]$
-([Lemma A.10](appendix-a.md#lemma-a10-bernstein-criterion)).
+Let $0 \le z \le 1$. The terms in $z$, $z^2$, $z^3$, $z^5$, $z^6$ and $z^{10}$
+have negative coefficients, so they are at most 0. The other three, in $z^4$,
+$z^7$ and $z^8$, have positive coefficients, and they are at most their
+coefficients, since $z^4, z^7, z^8 \le 1$. As $\frac{201353}{7098000} > 0.0283$,
+$\frac{977419}{36504000} < 0.0268$, $\frac1{11340} < 0.0001$ and
+$\frac1{960} < 0.0011$,
+
+```math
+P'(z) \le -\tfrac{201353}{7098000} + \tfrac{977419}{36504000} + \tfrac1{11340} + \tfrac1{960}
+< -0.0283 + 0.0268 + 0.0001 + 0.0011 = -0.0003 < 0 .
+```
+
+So $P$ is nonincreasing on $[0, 1]$
+([Lemma A.1](appendix-a.md#lemma-a1-monotonicity-from-the-derivative) (2)), and $P(z) \ge P(\frac58)$ for
+$0 \le z \le \frac58$.
+
+It remains to bound $P(\frac58)$, which is about $0.0003$, from below. At
+$z = \frac58$ the terms of $P$ of degrees 1, 2 and 3 exceed
+$-0.01773$, $-0.055285$ and $-0.027022$; for instance
+$\frac{3091}{21840}\cdot\frac{25}{64} = \frac{15455}{279552}$ and
+$0.055285 \cdot 279552 > 15455$. The terms of degrees 4 and 5 add up to
+$(\frac58)^4(\frac{977419}{182520000}\cdot\frac58 - \frac{23103}{7280000})$,
+which is positive, as the first product in the bracket exceeds $0.0033$ and the
+fraction after it is below $0.0032$. The terms of degrees 6 and 7 add up to
+$-(\frac58)^6(\frac{13}{6300} + \frac{364297}{196560000}\cdot\frac58)$, and as
+$(\frac58)^6 < 0.06$, $\frac{13}{6300} < 0.0021$ and
+$\frac{364297}{196560000}\cdot\frac58 < 0.0012$, this is more than
+$-0.06\cdot 0.0033 > -0.0002$. The terms of degrees 8, 9 and 11 add up to a
+positive number, since $\frac{z^9}{8640} \ge \frac{z^{11}}{518400}$ for
+$0 \le z \le 1$. Hence
+
+```math
+P\left(\tfrac58\right) > 0.1005 - 0.01773 - 0.055285 - 0.027022 - 0.0002 = 0.000263 > \tfrac1{4000},
+```
+
+and $P > 0$ on $[0, \frac58]$.
 
 Expanding $\frac6{25}(z - \frac54v)^2 = \frac6{25}z^2 - \frac35zv + \frac38v^2$
 shows that $E$ is a quadratic polynomial in $v$,
@@ -936,15 +1000,18 @@ For $0 < z \le \frac58$, $b_2(z) = \frac{341}{1092}z(1 - \frac{z^2}6) > 0$, so
 $\alpha > 0$, and $z\,P(z) > 0$. Therefore $E(z, v) > 0$. $\square$
 
 *Lean:
-[`Seven.radialE_pos`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L82),
-[`Seven.radial_discriminant_identity`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L75),
-[`Seven.radialPolynomial_pos`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L52).*
+[`Seven.radialE_pos`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L95),
+[`Seven.radial_discriminant_identity`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L88),
+[`Seven.radialPolynomial_pos`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L56).*
 
-![Graph of the degree 11 polynomial P on the interval from 0 to 5/8: it decreases from about 0.1 at 0 to about 0.0003 at 5/8, and its control polygon through the twelve Bernstein coefficients decreases likewise and stays above the axis](figures/appc-radial-bernstein.svg)
+![Two graphs on the interval from 0 to 1. Left: the polynomial P decreases from about 0.1 at 0 to about 0.0003 at 5/8, where a dot marks it on a dashed vertical line and the region under the graph from 0 to 5/8 is shaded, then crosses the axis just after 5/8 and ends near −0.18 at 1. Right: the sum of the terms of the derivative of P with a positive coefficient rises from 0 to about 0.0279 at 1, just below the dashed horizontal line at 201353/7098000, about 0.0284](figures/appc-radial-decreasing.svg)
 
-*Figure C.9.* The polynomial $P$ of Lemma C.18 on $[0, \frac58]$ with its
-control polygon $(\frac5{88}i, b_i)$. Both come close to the axis only at the
-right end, where $P(\frac58) = b_{11} \approx 0.0003$.
+*Figure C.9.* Lemma C.18. (a) The polynomial $P$ on $[0, 1]$: it decreases,
+and $P(\frac58) \approx 0.0003$ (dot); it vanishes just beyond, near
+$z = 0.626$. (b) The terms of $P'$ with a positive coefficient,
+$\frac{977419}{36504000}z^4 + \frac{z^7}{11340} + \frac{z^8}{960}$ (orange),
+stay below the size $\frac{201353}{7098000}$ of its constant term (grey,
+dashed) on $[0, 1]$; at $z = 1$ they fall short of it by about $0.0005$.
 
 ### Proposition C.19 (both states on the circle)
 
@@ -970,7 +1037,7 @@ by Lemma C.17 with $\rho = \sqrt3 - 1 \in [\frac{73}{100}, \frac{733}{1000}]$
 and by Lemma C.18. $\square$
 
 *Lean:
-[`Seven.inward_circular_pos`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L155).*
+[`Seven.inward_circular_pos`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L168).*
 
 ![A canonical pair with opposite signs drawn in the chart of S: the blue square S and the turned green square T both inside the dashed circle of radius root 13 over 2 about o, each with its far corner on that circle; the shadows of S and T on the line of n_2 overlap by a small positive amount](figures/appc-circular-pair.svg)
 
@@ -1006,7 +1073,7 @@ $\sqrt3 > \frac{173}{100}$,
 $\square$
 
 *Lean:
-[`Seven.line_to_circle_turn_margin`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L182).*
+[`Seven.line_to_circle_turn_margin`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L195).*
 
 ![Graph over the interval from 0.19 to pi over 3 of the concave function 44/45 sin z + 4/5 cos z, which rises from about 0.97 to about 1.25 with a maximum in between, above the horizontal line at 12/13](figures/appc-turn-margin.svg)
 
@@ -1028,12 +1095,12 @@ U(z, x) = J\left(a^+(x), \bar a(\nu(z, x)), \nu(z, x), z\right),
 and $G(z) = J(r_d, \tau(\mu(z, t_d)), \nu(z, t_d), z)$, the *diagonal junction*.
 
 *Lean:
-[`Seven.Boundary.otherLabel`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L195),
-[`Seven.Boundary.otherV`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L196),
-[`Seven.Boundary.oppositeUpper`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L197),
-[`Seven.Boundary.diagonalJunction`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L200),
-[`Seven.Boundary.sideTopA_diagonal`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L203),
-[`Seven.Boundary.sideTopA_td`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L212).*
+[`Seven.Boundary.otherLabel`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L208),
+[`Seven.Boundary.otherV`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L209),
+[`Seven.Boundary.oppositeUpper`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L210),
+[`Seven.Boundary.diagonalJunction`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L213),
+[`Seven.Boundary.sideTopA_diagonal`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L216),
+[`Seven.Boundary.sideTopA_td`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L225).*
 
 If the source has the side label $x$, the target has the axial label $\mu(z, x)$
 and the turn is $z$, then the target has the second coordinate $\nu(z, x)$, and
@@ -1059,7 +1126,7 @@ Proposition C.19 applies to these two states and gives
 $U(z, x) = J(a^+(x), \bar a(\nu), \nu, z) > 0$. $\square$
 
 *Lean:
-[`Seven.Boundary.opposite_upper_circular`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L216).*
+[`Seven.Boundary.opposite_upper_circular`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L229).*
 
 ### Lemma C.23 (capped target)
 
@@ -1082,7 +1149,7 @@ U(z, x) = \tfrac12 - \delta(x) - \left(\bar a\left(\tfrac\pi5\right) - \tfrac12\
 $\square$
 
 *Lean:
-[`Seven.Boundary.opposite_upper_cap`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L242).*
+[`Seven.Boundary.opposite_upper_cap`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L255).*
 
 ### Lemma C.24 (the diagonal junction)
 
@@ -1117,7 +1184,7 @@ g(z_d) = \tfrac12 - r_d - \left(a_0 - \tfrac12\right)\sin z_d + \left(u_0 + \tfr
 by Appendix B ([Lemma B.19](appendix-b.md#lemma-b19-the-diagonal-junction)). $\square$
 
 *Lean:
-[`Seven.Boundary.diagonal_junction_pos`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L267).*
+[`Seven.Boundary.diagonal_junction_pos`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L280).*
 
 The value $g(z_d) \approx 0.0046$ is the smallest margin on the inward axis.
 
@@ -1139,7 +1206,7 @@ $\bar a(\nu) = \lambda(\nu) = \tau(\mu(z, t_d))$; with $a^+(t_d) = r_d$ this
 gives $U(z, t_d) = G(z)$, which is positive by Lemma C.24. $\square$
 
 *Lean:
-[`Seven.Boundary.opposite_upper_junction`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L313).*
+[`Seven.Boundary.opposite_upper_junction`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L326).*
 
 ### Lemma C.26 (a diagonal source moves down)
 
@@ -1162,7 +1229,7 @@ U(z, x) - U(z, l) = \tfrac{28}{45}(x - l) + \tfrac{44}{45}(x - l)(1 - \sin z) + 
 a sum of nonnegative terms, as $0 \le \sin z, \cos z \le 1$. $\square$
 
 *Lean:
-[`Seven.Boundary.diagonal_source_reduction`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L334).*
+[`Seven.Boundary.diagonal_source_reduction`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L347).*
 
 ### Lemma C.27 (a circular source moves up)
 
@@ -1186,7 +1253,7 @@ by the displacement bound for $a^+$ ([Proposition B.16](appendix-b.md#propositio
 Lemma C.20. $\square$
 
 *Lean:
-[`Seven.Boundary.circular_source_line_reduction`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L356).*
+[`Seven.Boundary.circular_source_line_reduction`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L369).*
 
 ### Proposition C.28 (the upper profile is positive)
 
@@ -1220,7 +1287,7 @@ by Lemma C.25. Otherwise $x' = z + \frac\pi6 - s_0 \in [s_0, t_d]$ and
 $\mu(z, x') = s_0$, so $U(z, x') > 0$ by Lemma C.22. $\square$
 
 *Lean:
-[`Seven.Boundary.opposite_upper_pos`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L384).*
+[`Seven.Boundary.opposite_upper_pos`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L397).*
 
 ![The rectangle of label pairs, the source label x from s_0 to pi over 4 horizontally and the target label mu from 0 to pi over 4 vertically, split by the horizontal line mu = s_0 into a lower part where both states lie on the circle and an upper part where the target lies on the tie line, with a very thin strip at the right edge for diagonal sources and a grey corner where the turn is not positive; dashed anti-diagonal lines of constant turn, and arrows along them from the upper part down to the line mu = s_0 or to the right edge x = t_d](figures/appc-upper-cases.svg)
 

@@ -82,3 +82,14 @@ Times are rough commit times, in US Central time (UTC−5).
   all from changes in Lean and mathlib, and two wrong constants in scalar
   bounds, whose corrected values still close the proofs. It then added the
   case to the library.
+* **18:25 to 20:40 — seven squares without Bernstein certificates.**
+  ChatGPT 6 Pro wrote human-readable proofs for the eight Bernstein
+  certificates of seven squares and for five other numerical steps, in
+  mathematics and in Lean, without compiling them
+  ([PR #8](https://github.com/vltanh/lean4-squares-in-circles/pull/8)).
+* **From 20:50 — the certificates replaced.** Claude Opus 5.5, in Claude
+  Code, compiled these proofs and put those of the eight certificates into the
+  library, together with three of the other steps: the marker envelope, the
+  initial boundary ratio and the bounds on side labels. The other two, longer
+  than the computations they replace, were left out. It then rewrote the
+  affected parts of the textbook.
