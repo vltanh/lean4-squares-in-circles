@@ -1,4 +1,4 @@
-import SquaresInCircles.Six.Normalization.Basic
+import SquaresInCircles.Six.Constants
 import SquaresInCircles.Common.Constructions
 
 /-!

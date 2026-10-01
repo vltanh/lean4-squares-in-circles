@@ -67,6 +67,18 @@ example : (6:ℝ)/5*(1-2*(23/60))+(54/125)*(23/60)^3 < 314/1000 := by norm_num
 example : (3-(1:ℝ)/2)/4 = 5/8 := by norm_num
 example : ((5:ℝ)/8)^2 < 1/2 := by norm_num
 
+-- Six squares: the far corners of E and W and the far vertices of D on the
+-- circle, the optimal radius below the ceiling `Q0` of the normalization, and
+-- the arcs of the exterior squares, of half-width more than `π/6`.
+example : Six.qStar = (Six.sStar+1/2)^2+(Six.sStar+3/2)^2 := Six.east_radius_identity
+example : Six.qStar = (3/2-Six.sStar)^2+(Six.tStar+1/2)^2 := Six.west_radius_identity
+example : Six.qStar = 2*Six.dStar^2+2*Six.hStar*Six.dStar+1/2 := Six.diagonal_radius_identity
+example : Six.qStar < Six.Q0 := by
+  have h := Six.qStar_bounds.2
+  norm_num [Six.Q0] at h ⊢
+  linarith
+example : Real.pi/6 < 14/25 := by linarith [Real.pi_lt_d2]
+
 -- Seven squares: the outer corners, the side state and its label, the margin
 -- of the marker arc at the near edge (`π/3 > 157/150`), and the polynomial of
 -- the inward sector at its endpoint.
