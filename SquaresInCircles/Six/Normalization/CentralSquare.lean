@@ -478,7 +478,7 @@ private theorem east_center_impossible {S : Fin 6 → UnitSquare} {R cx cy : ℝ
     intro t ht i hin
     obtain ⟨C, hsort⟩ := sorted_square_chart (S i.succ) (0, 0)
     have hs : (C.phase.toReal : Direction) = C.phase := Real.Angle.coe_toReal _
-    have hcc := chart_signed_containment C hsort (hout i) ((hp.phi_le i.succ).trans hQ)
+    have hcc := C.exteriorChart_signed hsort (hout i) ((hp.phi_le i.succ).trans hQ)
     obtain ⟨k, hk⟩ := central_separators_complete hcc.half_le hx0 hy0 hx1.le hy1.le
       (fun p hh => hp.disjoint 0 i.succ (hne i) p
         ⟨(hcentral p).mpr hh.1, (chart_same_open_oriented C hs p).mpr hh.2⟩)

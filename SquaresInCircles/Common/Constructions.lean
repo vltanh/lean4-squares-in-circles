@@ -34,13 +34,8 @@ disk of radius `R` about the origin, form a packing. -/
 lemma axis_packing {n : ℕ} {c : Fin n → Point} {R : ℝ} (hR : 0 ≤ R)
     (hsep : ∀ i j, i ≠ j → AxisSeparated (c i) (c j))
     (hin : ∀ i, (|(c i).1|+1/2)^2+(|(c i).2|+1/2)^2 ≤ R^2) :
-    Packing (fun i => axisSquare (c i)) (0,0) R := by
-  refine ⟨hR,fun i p hp => ?_,fun i j hij => axis_disjoint (hsep i j hij)⟩
-  rw [axisSquare_closed] at hp
-  have hx : |p.1| ≤ |(c i).1|+1/2 := by linarith [abs_sub_abs_le_abs_sub p.1 (c i).1,hp.1]
-  have hy : |p.2| ≤ |(c i).2|+1/2 := by linarith [abs_sub_abs_le_abs_sub p.2 (c i).2,hp.2]
-  have := hin i
-  simp only [inDisk,normSq,sub,sub_zero]
-  nlinarith [sq_abs p.1,sq_abs p.2,abs_nonneg p.1,abs_nonneg p.2]
+    Packing (fun i => axisSquare (c i)) (0,0) R :=
+  ⟨hR,fun i _ => inDisk_of_phi_le (by simpa [phi,alpha,beta,localX,localY,axisSquare] using hin i),
+    fun i j hij => axis_disjoint (hsep i j hij)⟩
 
 end SquaresInCircles

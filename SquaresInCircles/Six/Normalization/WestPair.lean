@@ -59,7 +59,7 @@ lemma primary_projection_bound {A B a c s : ℝ}
     (hc : 1519/3200 ≤ c) (hunit : c^2+s^2=1) :
     |A*c+B*s-a| < 1/2+(c+|s|)/2 := by
   have hc0 : 0 ≤ c := by linarith
-  have hp := projection_abs_le_rho0 (chart_center_radius_sq hchart) hunit
+  have hp := projection_abs_le_rho0 hchart.center_sq_le hunit
   have hpu := (abs_le.mp hp).2
   have hBs : -(|B| *|s|) ≤ B*s := by
     have h := neg_le_abs (B*s)

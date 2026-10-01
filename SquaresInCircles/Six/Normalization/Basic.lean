@@ -1,6 +1,6 @@
 import SquaresInCircles.Common.Contacts
 import SquaresInCircles.Common.Support
-import SquaresInCircles.Common.Charts
+import SquaresInCircles.Common.ExteriorCharts
 import SquaresInCircles.Common.Trigonometry
 import SquaresInCircles.Common.Congruence
 import SquaresInCircles.Six.Constants
@@ -36,11 +36,7 @@ lemma corner_sq_le {A B x y : ℝ} (hA : 0 ≤ A) (hB : 0 ≤ B) (hAx : A ≤ x)
 
 /-- A sorted chart `(a, u)` whose far corner lies in the disk of squared radius
 `Q0`. -/
-structure ContainedChart (a u : ℝ) : Prop where
-  half_le : 1 / 2 ≤ a
-  u_nonneg : 0 ≤ u
-  u_le : u ≤ a
-  containment : (a + 1 / 2) ^ 2 + (u + 1 / 2) ^ 2 ≤ Q0
+abbrev ContainedChart (a u : ℝ) : Prop := ExteriorChart Q0 a u
 
 /-- The closed square avoids the open disk of radius `coreRadius` about the
 origin: for `a ≥ 1/2` and `u ≥ 0`, the right side is the squared distance of its
@@ -52,12 +48,7 @@ namespace ContainedChart
 variable {a u : ℝ} (h : ContainedChart a u)
 include h
 
-lemma a_le_rho0 : a ≤ rho0 := by
-  have hs : (a + 1 / 2) ^ 2 ≤ Q0 - 1 / 4 := by
-    nlinarith [h.containment, h.u_nonneg, sq_nonneg u]
-  have hr := Real.le_sqrt_of_sq_le hs
-  dsimp [rho0]
-  linarith
+lemma a_le_rho0 : a ≤ rho0 := coordinate_le_of_phi h.u_nonneg h.phi_le
 
 /-- A square that avoids the core has `u < 1/2`: its nearest point is not a
 corner. -/
@@ -115,63 +106,6 @@ lemma bounds (hc : AvoidsCore a u) :
 
 end ContainedChart
 
-/-- The containment of a contained chart with absolute values, as for an
-oriented square. -/
-lemma ContainedChart.abs_box {a b : ℝ} (h : ContainedChart a |b|) :
-    (|a| + 1 / 2) ^ 2 + (|b| + 1 / 2) ^ 2 ≤ Q0 := by
-  rw [abs_of_nonneg (show 0 ≤ a by linarith [h.half_le])]
-  exact h.containment
-
-private lemma clipped_distance {x v : ℝ}
-    (hv : |v| = min |x| (1 / 2))
-    (hprod : x * v = min |x| (1 / 2) * |x|) :
-    (v - x) ^ 2 = (max (|x| - 1 / 2) 0) ^ 2 := by
-  have hv2 : v ^ 2 = (min |x| (1 / 2)) ^ 2 := by
-    rw [← sq_abs v, hv]
-  have hx2 := sq_abs x
-  rcases le_total |x| (1 / 2) with h | h
-  · rw [min_eq_left h] at hv2 hprod
-    rw [max_eq_right (by linarith : |x| - 1 / 2 ≤ 0)]
-    nlinarith
-  · rw [min_eq_right h] at hv2 hprod
-    rw [max_eq_left (by linarith : 0 ≤ |x| - 1 / 2)]
-    nlinarith
-
-/-- A point of the closed square at squared distance
-`(max (α - 1/2) 0)² + (max (β - 1/2) 0)²` from `o`. -/
-lemma exists_clipped_point (S : UnitSquare) (o : Point) :
-    ∃ p : Point, closedSquare S p ∧
-      normSq (sub p o) = (max (alpha S o - 1 / 2) 0) ^ 2 +
-        (max (beta S o - 1 / 2) 0) ^ 2 := by
-  obtain ⟨u, hu, hxu⟩ := exists_signed (localX S o)
-    (c := min |localX S o| (1 / 2))
-    (le_min (abs_nonneg _) (by norm_num))
-  obtain ⟨v, hv, hyv⟩ := exists_signed (localY S o)
-    (c := min |localY S o| (1 / 2))
-    (le_min (abs_nonneg _) (by norm_num))
-  refine ⟨add S.center (rotate S (u, v)), ?_, ?_⟩
-  · constructor
-    · rw [localX_rotated, hu]
-      exact min_le_right _ _
-    · rw [localY_rotated, hv]
-      exact min_le_right _ _
-  · rw [← frame_distance S, localX_rotated, localY_rotated,
-      clipped_distance hu hxu, clipped_distance hv hyv]
-    rfl
-
-/-- The point of the closed square nearest to `o`, at the squared distance
-`max (a - 1/2) 0 ^ 2 + max (b - 1/2) 0 ^ 2`. -/
-lemma chart_exists_clipped_point {S : UnitSquare} {o : Point} (T : SquareChart S o) :
-    ∃ p : Point, closedSquare S p ∧
-      normSq (sub p o) = (max (T.a - 1 / 2) 0) ^ 2 +
-        (max (T.b - 1 / 2) 0) ^ 2 := by
-  apply T.transfer
-    (fun a b => ∃ p : Point, closedSquare S p ∧
-      normSq (sub p o) = (max (a - 1 / 2) 0) ^ 2 + (max (b - 1 / 2) 0) ^ 2)
-  · rintro a b ⟨p, hp, hd⟩
-    exact ⟨p, hp, by simpa only [add_comm] using hd⟩
-  · exact exists_clipped_point S o
-
 /-- If the local coordinates of `o` in the frame of C are at most `c0`, an
 exterior square whose interior is disjoint from that of C avoids the core
 disk. -/
@@ -189,23 +123,13 @@ lemma avoidsCore_of_disjoint {S C : UnitSquare} {o : Point} (T : SquareChart S o
   rw [hdist, max_eq_left ha] at hcore
   exact hcore
 
-lemma radial_sq_le_of_phi {a b ρ : ℝ} (hρ : 0 < ρ) (ha : 0 ≤ a) (hb : 0 ≤ b)
-    (hc : phi a b ≤ ρ ^ 2 + ρ + 1 / 2) : a ^ 2 + b ^ 2 ≤ ρ ^ 2 := by
-  by_contra! hr
-  have hsum : a + b < ρ := by
-    dsimp [phi] at hc
-    nlinarith
-  have hp := mul_pos (sub_pos.mpr hsum) (show 0 < ρ + a + b by linarith)
-  nlinarith [mul_nonneg ha hb]
-
 /-- A square in the disk of squared radius `Q0` has its centre within `rho0`
 of `o`. -/
 theorem center_radius_sq {S : UnitSquare} {o : Point}
     (hc : phi (alpha S o) (beta S o) ≤ Q0) :
     normSq (sub S.center o) ≤ rho0 ^ 2 := by
   rw [local_center_norm]
-  exact radial_sq_le_of_phi (by linarith [rho0_bounds.1]) (alpha_nonneg S o) (beta_nonneg S o)
-    (by rw [rho0_sq]; exact hc)
+  exact radial_sq_le_of_phi (alpha_nonneg S o) (beta_nonneg S o) (by rw [rho0_sq]; exact hc)
 
 lemma projection_abs_le_rho0 {x y c s : ℝ}
     (hp : x ^ 2 + y ^ 2 ≤ rho0 ^ 2) (hu : c ^ 2 + s ^ 2 = 1) :
@@ -216,16 +140,9 @@ lemma projection_abs_le_rho0 {x y c s : ℝ}
   apply abs_le.mpr
   constructor <;> nlinarith [rho0_bounds.1]
 
-lemma chart_center_radius_sq {a b : ℝ} (hc : ContainedChart a |b|) :
-    a ^ 2 + b ^ 2 ≤ rho0 ^ 2 := by
-  have hh := radial_sq_le_of_phi (ρ := rho0) (by linarith [rho0_bounds.1])
-    (by linarith [hc.half_le])
-    (abs_nonneg b) (by rw [rho0_sq]; exact hc.containment)
-  simpa only [sq_abs] using hh
-
 lemma chart_center_east_bound {a b t : ℝ} (hc : ContainedChart a |b|) :
     a * Real.cos t - b * Real.sin t ≤ rho0 := by
-  have hh := projection_abs_le_rho0 (chart_center_radius_sq hc)
+  have hh := projection_abs_le_rho0 hc.center_sq_le
     (c := Real.cos t) (s := -Real.sin t)
     (by nlinarith [Real.sin_sq_add_cos_sq t])
   have hu := (abs_le.mp hh).2
@@ -233,10 +150,6 @@ lemma chart_center_east_bound {a b t : ℝ} (hc : ContainedChart a |b|) :
 
 /-! ### Oriented squares -/
 
-lemma signedB_abs {S : UnitSquare} {o : Point} (C : SquareChart S o) :
-    |C.signedB| = C.b := by
-  cases h : C.reversed <;>
-    simp [SquareChart.signedB, h, abs_of_nonneg C.nonneg.2]
 
 /-- The open square of a chart is the model square at its phase and signed
 coordinates. -/
@@ -256,23 +169,6 @@ theorem chart_same_open_oriented {S : UnitSquare} (C : SquareChart S (0, 0))
     ∀ p, openSquare S p ↔ openSquare (orientedSquare t C.a C.signedB) p := by
   rw [orientedSquare_eq_modelSquare, ht]
   exact chart_same_open_model C
-
-/-- A sorted chart of an exterior square in the disk of squared radius `Q0` is a
-contained chart. -/
-lemma chart_signed_containment {S : UnitSquare} {o : Point} (C : SquareChart S o)
-    (hsort : C.b ≤ C.a) (hout : ¬ openSquare S o)
-    (hQ : phi (alpha S o) (beta S o) ≤ Q0) :
-    ContainedChart C.a |C.signedB| := by
-  rw [signedB_abs]
-  exact ⟨C.exterior hsort hout, C.nonneg.2, hsort, chart_phi C hQ⟩
-
-lemma coordinate_le_rho0 {a b : ℝ}
-    (hbox : (|a| + 1 / 2) ^ 2 + (|b| + 1 / 2) ^ 2 ≤ Q0) : |a| ≤ rho0 := by
-  have hb : 1 / 4 ≤ (|b| + 1 / 2) ^ 2 := by nlinarith [abs_nonneg b]
-  have hs : (|a| + 1 / 2) ^ 2 ≤ Q0 - 1 / 4 := by linarith
-  have hr := Real.le_sqrt_of_sq_le hs
-  dsimp [rho0]
-  linarith
 
 /-! ### Phases -/
 
@@ -337,33 +233,6 @@ namespace SquaresInCircles.Six
 
 /-! ### Projections of a square -/
 
-/-- If `phi` of the local coordinates of `o` is at most `R ^ 2`, the closed
-square lies in the closed disk of radius `R` about `o`: the converse of the
-farthest-vertex bound. -/
-lemma inDisk_of_phi_le {S : UnitSquare} {o : Point} {R : ℝ}
-    (hphi : phi (alpha S o) (beta S o) ≤ R ^ 2)
-    {p : Point} (hp : closedSquare S p) : inDisk o R p := by
-  have hx : |localX S p - localX S o| ≤ alpha S o + 1 / 2 := by
-    have hh := abs_add_le (localX S p) (-localX S o)
-    rw [abs_neg, ← sub_eq_add_neg] at hh
-    dsimp [alpha]
-    linarith [hp.1]
-  have hy : |localY S p - localY S o| ≤ beta S o + 1 / 2 := by
-    have hh := abs_add_le (localY S p) (-localY S o)
-    rw [abs_neg, ← sub_eq_add_neg] at hh
-    dsimp [beta]
-    linarith [hp.2]
-  have hxp := mul_nonneg (sub_nonneg.mpr hx)
-    (show 0 ≤ alpha S o + 1 / 2 + |localX S p - localX S o| by
-      linarith [alpha_nonneg S o, abs_nonneg (localX S p - localX S o)])
-  have hyp := mul_nonneg (sub_nonneg.mpr hy)
-    (show 0 ≤ beta S o + 1 / 2 + |localY S p - localY S o| by
-      linarith [beta_nonneg S o, abs_nonneg (localY S p - localY S o)])
-  change normSq (sub p o) ≤ R ^ 2
-  rw [← frame_distance S]
-  dsimp [phi] at hphi
-  nlinarith [sq_abs (localX S p - localX S o), sq_abs (localY S p - localY S o)]
-
 /-- The unit normal to the sides `x = ±1/2` of `S`, its first frame axis. -/
 def normalX (S : UnitSquare) : Point := (S.cosine,S.sine)
 
@@ -398,7 +267,7 @@ namespace SquaresInCircles.Six.Normalization
 lemma oriented_contained_of_chart {t a b : ℝ} (hc : ContainedChart a |b|) :
     ∀ p, closedSquare (orientedSquare t a b) p → inDisk (0,0) R0 p := by
   intro p hp
-  apply Six.inDisk_of_phi_le (S := orientedSquare t a b) (o := (0,0)) (R := R0) _ hp
+  apply inDisk_of_phi_le (S := orientedSquare t a b) (o := (0,0)) (R := R0) _ hp
   rw [orientedSquare_alpha,orientedSquare_beta,R0_sq]
   simpa [phi,abs_of_nonneg (show 0 ≤ a by linarith [hc.half_le])] using hc.containment
 

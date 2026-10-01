@@ -109,7 +109,7 @@ theorem pinPacking_of_normalized {S : Fin 6 → UnitSquare} {c : Point} {R : ℝ
       (0,0) ⟨hi,hinside⟩
   choose C hsorted using fun i : Fin 5 => sorted_square_chart (F i) (0,0)
   have hc (i : Fin 5) : ContainedChart (C i).a |(C i).signedB| :=
-    chart_signed_containment (C i) (hsorted i) (hout i) ((hp.phi_le i.succ).trans hQ)
+    (C i).exteriorChart_signed (hsorted i) (hout i) ((hp.phi_le i.succ).trans hQ)
   have hav (i : Fin 5) : AvoidsCore (C i).a |(C i).signedB| := by
     rw [signedB_abs]
     apply avoidsCore_of_disjoint (C i) (hsorted i) (hout i) hCcore

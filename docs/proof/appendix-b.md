@@ -352,8 +352,8 @@ $a + u < \frac{31}{20}$. Moreover $1.73 < \sqrt3 < 1.733$.
 $1.733 = \frac{1733}{1000}$. $\square$
 
 *Lean:
-[`Seven.Admissible.a_le_sqrt_three_sub_half`](../../SquaresInCircles/Seven/Labels.lean#L59),
-[`Seven.Admissible.sum_lt`](../../SquaresInCircles/Seven/Labels.lean#L70),
+[`Seven.Admissible.a_le_sqrt_three_sub_half`](../../SquaresInCircles/Seven/Labels.lean#L52),
+[`Seven.Admissible.sum_lt`](../../SquaresInCircles/Seven/Labels.lean#L59),
 [`Seven.sqrt_three_bounds`](../../SquaresInCircles/Seven/Support.lean#L34).*
 
 ### Lemma B.8 (axial and side labels)
@@ -369,13 +369,13 @@ Let $(a, u)$ be admissible and $\ell = \ell(a, u)$.
 *Proof.* Parts (1) and (2) are parts (2) and (1) of [Lemma 9.8](seven.md#lemma-98-side-and-axial-labels), and part (3) is
 [Lemma 9.7](seven.md#lemma-97-the-label) (3). $\square$
 
-*Lean: [`Seven.axial_tie_line`](../../SquaresInCircles/Seven/Labels.lean#L165),
-[`Seven.axial_sum_lt`](../../SquaresInCircles/Seven/Labels.lean#L174),
-[`Seven.side_selected_label_gt`](../../SquaresInCircles/Seven/Labels.lean#L134),
-[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Labels.lean#L157),
-[`Seven.side_selected_a_lt`](../../SquaresInCircles/Seven/Labels.lean#L146),
-[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Labels.lean#L184),
-[`Seven.Admissible.radial_label_bound`](../../SquaresInCircles/Seven/Labels.lean#L112).*
+*Lean: [`Seven.axial_tie_line`](../../SquaresInCircles/Seven/Labels.lean#L154),
+[`Seven.axial_sum_lt`](../../SquaresInCircles/Seven/Labels.lean#L163),
+[`Seven.side_selected_label_gt`](../../SquaresInCircles/Seven/Labels.lean#L123),
+[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Labels.lean#L146),
+[`Seven.side_selected_a_lt`](../../SquaresInCircles/Seven/Labels.lean#L135),
+[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Labels.lean#L173),
+[`Seven.Admissible.radial_label_bound`](../../SquaresInCircles/Seven/Labels.lean#L101).*
 
 ### Definition B.9 (boundary curves and special states)
 

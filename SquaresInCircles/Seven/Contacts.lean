@@ -24,7 +24,7 @@ def OrderedContact (a u A v : ℝ) (s t : TransverseSign) : Prop :=
 lemma remainder_zero {a u : ℝ} (h : Admissible a u)
     (hz : remainder a u = 0) : SideState a u := by
   have he := remainder_identity a u
-  have hs := h.slack_nonneg
+  have hs := h.phi_le
   exact ⟨by nlinarith [sq_nonneg (u-1/2)],
     by nlinarith [sq_nonneg (a-1)]⟩
 

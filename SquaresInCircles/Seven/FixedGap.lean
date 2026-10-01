@@ -58,7 +58,7 @@ lemma capVertex_admissible (i : Fin 3) :
   have hr (a u : ℝ) (ha0 : 1/2 ≤ a) (hu0 : 0 ≤ u)
       (hau : u ≤ a) (ha1 : a < 193/250) (hu1 : u < 193/250) :
       Admissible a u := by
-    refine ⟨hu0,hau,ha0,?_⟩
+    refine ⟨ha0,hu0,hau,?_⟩
     dsimp [phi,targetSq]
     nlinarith
   fin_cases i <;> apply hr <;> norm_num [capVertex] <;> linarith

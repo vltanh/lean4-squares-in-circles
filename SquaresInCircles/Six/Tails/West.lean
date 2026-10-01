@@ -310,7 +310,7 @@ lemma south_support (k : Fin 3) {a b s : ℝ} (hc : ContainedChart a |b|) :
 lemma diagonal_support {a b v s d : ℝ} (hc : ContainedChart a |b|) :
     diagonalU v s d*a+diagonalV v s d*b ≤ diagonalUpper v s := by
   have h := dot_le_radius (v := (diagonalU v s d,diagonalV v s d))
-    (p := (a,b)) (show 0 ≤ rho0 by linarith [rho0_bounds.1]) (chart_center_radius_sq hc)
+    (p := (a,b)) (show 0 ≤ rho0 by linarith [rho0_bounds.1]) hc.center_sq_le
   have hi : (diagonalU v s d)^2+(diagonalV v s d)^2=
       mu^2+nu^2+2*mu*nu*Real.sin (v+s) := by
     have ht : Real.sin (v+s)=Real.sin (v+d)*Real.cos (d-s)-

@@ -17,13 +17,6 @@ lower bound.
 noncomputable section
 namespace SquaresInCircles.Two
 
-/-- A square whose farthest vertex is within `sqrt 5 / 2` of the disk centre
-has its centre within `1/2` of it. -/
-lemma center_near {a b : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b)
-    (h : phi a b ≤ 5/4) : a^2+b^2 ≤ 1/4 := by
-  unfold phi at h
-  nlinarith [mul_nonneg ha hb]
-
 /-- The parallelogram law, with the disk centre `o` as the common origin. -/
 lemma normSq_parallelogram (c d o : Point) :
     normSq (sub c d)+normSq (sub (add c d) (scale 2 o)) =
@@ -36,7 +29,8 @@ from the disk centre. -/
 lemma centers_at_half (S : Fin 2 → UnitSquare) (o : Point) (hd : InteriorDisjoint S)
     (hφ : ∀ i, phi (alpha (S i) o) (beta (S i) o) ≤ 5/4) :
     ∀ i, alpha (S i) o^2+beta (S i) o^2=1/4 := by
-  have hnear (i : Fin 2) := center_near (alpha_nonneg _ _) (beta_nonneg _ _) (hφ i)
+  have hnear (i : Fin 2) := radial_sq_le_of_phi (ρ := 1/2) (alpha_nonneg _ _) (beta_nonneg _ _)
+    ((hφ i).trans_eq (by norm_num))
   simp only [← local_center_norm] at hnear ⊢
   have hfar := centers_distance_sq_ge_one (S 0) (S 1) (hd 0 1 (by decide))
   have hpar := normSq_parallelogram (S 1).center (S 0).center o

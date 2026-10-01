@@ -138,9 +138,9 @@ Let $(a, u)$ be admissible and $\ell = \ell(a, u)$.
 [Lemma 9.8](seven.md#lemma-98-side-and-axial-labels) (1). $\square$
 
 *Lean:
-[`Seven.Admissible.radial_label_bound`](../../SquaresInCircles/Seven/Labels.lean#L112),
-[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Labels.lean#L157),
-[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Labels.lean#L184).*
+[`Seven.Admissible.radial_label_bound`](../../SquaresInCircles/Seven/Labels.lean#L101),
+[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Labels.lean#L146),
+[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Labels.lean#L173).*
 
 ## C.2 Two profiles of the turn
 

@@ -4,7 +4,9 @@ import SquaresInCircles.Geometry
 # Frames, interior-disjointness and the farthest-vertex bound
 
 Vector operations, a square's frame and vertices, and the squared distance
-`phi` from a point to the farthest vertex of a square. Distances always use
+`phi` from a point to the farthest vertex of a square: the closed square lies
+in a closed disk about the point exactly when `phi` is at most the squared
+radius, and `phi` bounds the distance of the centre. Distances always use
 `normSq`; the product-space norm on `ℝ × ℝ` is the maximum norm.
 -/
 noncomputable section
@@ -137,6 +139,62 @@ lemma Packing.phi_le {n : ℕ} {S : Fin n → UnitSquare} {o : Point} {R : ℝ}
     (hp : Packing S o R) (i : Fin n) :
     phi (alpha (S i) o) (beta (S i) o) ≤ R^2 :=
   phi_le_of_contained _ _ _ (hp.2.1 i)
+
+/-- The converse of the farthest-vertex bound: if `φ(α, β) ≤ R²`, the closed
+square lies in the closed disk of radius `R` about `o`. -/
+lemma inDisk_of_phi_le {S : UnitSquare} {o : Point} {R : ℝ}
+    (hphi : phi (alpha S o) (beta S o) ≤ R^2) {p : Point} (hp : closedSquare S p) :
+    inDisk o R p := by
+  have hx : |localX S p-localX S o| ≤ alpha S o+1/2 := by
+    unfold alpha; linarith [abs_sub (localX S p) (localX S o),hp.1]
+  have hy : |localY S p-localY S o| ≤ beta S o+1/2 := by
+    unfold beta; linarith [abs_sub (localY S p) (localY S o),hp.2]
+  rw [inDisk,← frame_distance S,← sq_abs (localX S p-_),← sq_abs (localY S p-_)]
+  exact (add_le_add (pow_le_pow_left₀ (abs_nonneg _) hx 2)
+    (pow_le_pow_left₀ (abs_nonneg _) hy 2)).trans hphi
+
+/-- If `a, b ≥ 0` and `φ(a, b) ≤ ρ² + ρ + 1/2`, then `a² + b² ≤ ρ²`: a square
+whose farthest vertex is within `√(ρ² + ρ + 1/2)` of `o` has its centre within
+`ρ` of `o`. -/
+lemma radial_sq_le_of_phi {a b ρ : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b)
+    (h : phi a b ≤ ρ^2+ρ+1/2) : a^2+b^2 ≤ ρ^2 := by
+  by_contra! hr
+  have hsum : a+b < ρ := by unfold phi at h; nlinarith
+  nlinarith [mul_pos (sub_pos.mpr hsum) (show 0 < ρ+a+b by linarith),mul_nonneg ha hb]
+
+/-- If `b ≥ 0` and `φ(a, b) ≤ Q`, then `a ≤ √(Q - 1/4) - 1/2`. -/
+lemma coordinate_le_of_phi {a b Q : ℝ} (hb : 0 ≤ b) (h : phi a b ≤ Q) :
+    a ≤ Real.sqrt (Q-1/4)-1/2 := by
+  have hs := Real.le_sqrt_of_sq_le (show (a+1/2)^2 ≤ Q-1/4 by unfold phi at h; nlinarith)
+  linarith
+
+private lemma clipped_distance {x v : ℝ} (hv : |v|=min |x| (1/2))
+    (hprod : x*v=min |x| (1/2)*|x|) : (v-x)^2=(max (|x|-1/2) 0)^2 := by
+  have hv2 : v^2=(min |x| (1/2))^2 := by rw [← sq_abs v,hv]
+  have hx2 := sq_abs x
+  rcases le_total |x| (1/2) with h | h
+  · rw [min_eq_left h] at hv2 hprod
+    rw [max_eq_right (by linarith : |x|-1/2 ≤ 0)]
+    nlinarith
+  · rw [min_eq_right h] at hv2 hprod
+    rw [max_eq_left (by linarith : 0 ≤ |x|-1/2)]
+    nlinarith
+
+/-- A point of the closed square at squared distance
+`(max (α - 1/2) 0)² + (max (β - 1/2) 0)²` from `o`. -/
+lemma exists_clipped_point (S : UnitSquare) (o : Point) :
+    ∃ p : Point, closedSquare S p ∧
+      normSq (sub p o)=(max (alpha S o-1/2) 0)^2+(max (beta S o-1/2) 0)^2 := by
+  obtain ⟨u,hu,hxu⟩ := exists_signed (localX S o) (c := min |localX S o| (1/2))
+    (le_min (abs_nonneg _) (by norm_num))
+  obtain ⟨v,hv,hyv⟩ := exists_signed (localY S o) (c := min |localY S o| (1/2))
+    (le_min (abs_nonneg _) (by norm_num))
+  refine ⟨add S.center (rotate S (u,v)),⟨?_,?_⟩,?_⟩
+  · rw [localX_rotated,hu]; exact min_le_right _ _
+  · rw [localY_rotated,hv]; exact min_le_right _ _
+  · rw [← frame_distance S,localX_rotated,localY_rotated,clipped_distance hu hxu,
+      clipped_distance hv hyv]
+    rfl
 
 /-- The disk given by the nearer side of a containing square is really inside it. -/
 lemma inscribed_disk_mem (S : UnitSquare) (o : Point) {a p : ℝ}

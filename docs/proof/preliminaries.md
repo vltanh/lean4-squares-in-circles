@@ -153,7 +153,7 @@ but the open squares do not meet: the squares are disjoint, and may both
 belong to a packing. Right, the open squares meet in the shaded region.
 
 *Lean: [`Packing`](../../SquaresInCircles/Geometry.lean#L73),
-[`InteriorDisjoint`](../../SquaresInCircles/Common/Basic.lean#L45).*
+[`InteriorDisjoint`](../../SquaresInCircles/Common/Basic.lean#L47).*
 
 ## 2.4 Frames and congruence
 

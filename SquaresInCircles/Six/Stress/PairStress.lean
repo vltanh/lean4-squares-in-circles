@@ -109,8 +109,7 @@ lemma work_le_vertexBound {a b : ℝ} (F : Point)
 of the disk centre. -/
 lemma center_radial_bound {a b : ℝ} (hbox : (|a|+1/2)^2+(|b|+1/2)^2≤radius^2) :
     a^2+b^2≤rhoStar^2 := by
-  have h := radial_sq_le_of_phi (ρ := rhoStar) (by linarith [rhoStar_bounds.1]) (abs_nonneg a)
-    (abs_nonneg b)
+  have h := radial_sq_le_of_phi (ρ := rhoStar) (abs_nonneg a) (abs_nonneg b)
     (by rw [rhoStar_identity,← radius_sq]; exact hbox)
   simpa only [sq_abs] using h
 

@@ -48,8 +48,8 @@ coordinates of $o$ are nonnegative, and they are $a_S$ and $b_S$ in some order.
 quadrant. From the centre $c_S$, the disk centre $o$ is $a_S$ along one axis
 and $b_S$ along the other.
 
-*Lean: [`alpha`](../../SquaresInCircles/Common/Basic.lean#L95),
-[`beta`](../../SquaresInCircles/Common/Basic.lean#L96),
+*Lean: [`alpha`](../../SquaresInCircles/Common/Basic.lean#L97),
+[`beta`](../../SquaresInCircles/Common/Basic.lean#L98),
 [`SquareChart.transfer`](../../SquaresInCircles/Common/Charts.lean#L69). (The
 formal offsets come in the order of the frame; every statement is symmetric in
 them.)*
@@ -81,44 +81,69 @@ For real numbers $a$ and $b$, let
 For a square $S$, $\varphi(a_S, b_S)$ is the squared distance from $o$ to the
 vertex of $S$ farthest from it (Lemma 3.4).
 
-*Lean: [`phi`](../../SquaresInCircles/Common/Basic.lean#L114).*
+*Lean: [`phi`](../../SquaresInCircles/Common/Basic.lean#L116).*
 
 ### Lemma 3.4 (farthest vertex)
 
-For every square $S$, the vertex of $S$ farthest from $o$ is at squared
-distance $\varphi(a_S, b_S)$ from $o$, and the centre is at squared distance
-$a_S^2 + b_S^2$. In particular, if $\overline{S}$ lies in the closed disk
-$\overline{D}(o, R)$, then
+1. For every square $S$, the vertex of $S$ farthest from $o$ is at squared
+   distance $\varphi(a_S, b_S)$ from $o$, no point of $\overline{S}$ is
+   farther, and the centre is at squared distance $a_S^2 + b_S^2$. So
+   $\overline{S}$ lies in the closed disk $\overline{D}(o, R)$ exactly when
 
-```math
-\varphi(a_S, b_S) \le R^2 . \tag{3.1}
-```
+   ```math
+   \varphi(a_S, b_S) \le R^2 . \tag{3.1}
+   ```
+
+2. If $b \ge 0$ and $\varphi(a, b) \le R^2$, then
+   $a \le \sqrt{R^2 - \frac14} - \frac12$.
+3. If $a, b, \rho \ge 0$ and $\varphi(a, b) \le \rho^2 + \rho + \frac12$, then
+   $a^2 + b^2 \le \rho^2$. In particular, if $a, b \ge 0$ and
+   $\varphi(a, b) \le R^2$, then
+   $a^2 + b^2 \le \left(\sqrt{R^2 - \frac14} - \frac12\right)^2$: by (1), a square
+   in $\overline{D}(o, R)$ has its centre within
+   $\sqrt{R^2 - \frac14} - \frac12$ of $o$.
 
 ![The same square with a right triangle from o to the farthest vertex, the corner (-1/2, -1/2): a horizontal leg of length a plus one half, split where it crosses the vertical axis, a vertical leg of length b plus one half, split at the horizontal axis, and the hypotenuse of length the square root of phi(a, b)](figures/farthest-vertex.svg)
 
 *Figure 3.3.* The farthest vertex, $(-\frac12, -\frac12)$ in the frame of the
 figure, is $a_S + \frac12$ across and $b_S + \frac12$ down from $o$.
 
-*Proof.* Work in the frame of $S$ turned as in Definition 3.1 (Figure 3.3);
-distances can be computed in local coordinates, since these are an isometry.
-There $o = (x, y)$ with $x, y \ge 0$, and $x, y$ are $a_S, b_S$ in some order.
-The vertices are $(\pm\frac12, \pm\frac12)$. The vertex $(-\frac12, -\frac12)$,
-across both axes from $o$, is at squared distance
+*Proof.* (1) Work in the frame of $S$ turned as in Definition 3.1
+(Figure 3.3); distances can be computed in local coordinates, since these are
+an isometry. There $o = (x, y)$ with $x, y \ge 0$, and $x, y$ are $a_S, b_S$ in
+some order. The vertices are $(\pm\frac12, \pm\frac12)$. The vertex
+$(-\frac12, -\frac12)$, across both axes from $o$, is at squared distance
 $(x + \frac12)^2 + (y + \frac12)^2 = \varphi(a_S, b_S)$, since $\varphi$ is
-symmetric. No vertex is farther, because $|x \mp \frac12| \le x + \frac12$ and
-$|y \mp \frac12| \le y + \frac12$. The centre is at squared distance
-$x^2 + y^2 = a_S^2 + b_S^2$. If $\overline{S} \subseteq \overline{D}(o, R)$,
-the farthest vertex is in the disk, which is (3.1). $\square$
+symmetric. No point $(x', y')$ of $\overline{S}$ is farther, because
+$|x' - x| \le |x'| + x \le x + \frac12$ and likewise
+$|y' - y| \le y + \frac12$. The centre is at squared distance
+$x^2 + y^2 = a_S^2 + b_S^2$. So $\overline{S} \subseteq \overline{D}(o, R)$
+exactly when the farthest vertex is in the disk, which is (3.1).
+
+(2) As $b \ge 0$, $(b + \frac12)^2 \ge \frac14$, so
+$(a + \frac12)^2 = \varphi(a, b) - (b + \frac12)^2 \le R^2 - \frac14$.
+
+(3) Expanding the squares,
+$\varphi(a, b) = (a^2 + b^2) + (a + b) + \frac12$, and
+$(a + b)^2 = a^2 + b^2 + 2ab \ge a^2 + b^2$, so $a + b \ge r$ for
+$r = \sqrt{a^2 + b^2}$. Hence $r^2 + r \le \rho^2 + \rho$, and as $t^2 + t$
+increases for $t \ge 0$, $r \le \rho$. For the last claim,
+$R^2 \ge \varphi(a, b) \ge \varphi(0, 0) = \frac12$, so
+$\rho = \sqrt{R^2 - \frac14} - \frac12 \ge 0$, and
+$\rho^2 + \rho + \frac12 = (\rho + \frac12)^2 + \frac14 = R^2$. $\square$
 
 *Remark.* The case chapters use the disk only through (3.1), one inequality for
 each square. Every uniqueness proof starts from these inequalities and from
 then on works only with the pairs $(a_S, b_S)$ and the disjointness of the
 squares.
 
-*Lean: [`phi_le_of_contained`](../../SquaresInCircles/Common/Basic.lean#L123),
-[`Packing.phi_le`](../../SquaresInCircles/Common/Basic.lean#L136),
-[`local_center_norm`](../../SquaresInCircles/Common/Basic.lean#L109),
-[`exists_signed`](../../SquaresInCircles/Common/Basic.lean#L117).*
+*Lean: [`phi_le_of_contained`](../../SquaresInCircles/Common/Basic.lean#L125),
+[`inDisk_of_phi_le`](../../SquaresInCircles/Common/Basic.lean#L145),
+[`Packing.phi_le`](../../SquaresInCircles/Common/Basic.lean#L138),
+[`coordinate_le_of_phi`](../../SquaresInCircles/Common/Basic.lean#L166),
+[`radial_sq_le_of_phi`](../../SquaresInCircles/Common/Basic.lean#L159),
+[`local_center_norm`](../../SquaresInCircles/Common/Basic.lean#L111),
+[`exists_signed`](../../SquaresInCircles/Common/Basic.lean#L119).*
 
 ## 3.2 Contact polygons
 
@@ -253,9 +278,9 @@ and $q = \langle n, e^U_2\rangle$, and $|n|^2 = p^2 + q^2$. Then
 
 with equality exactly when $pq = 0$. $\square$
 
-*Lean: [`cauchy_sq`](../../SquaresInCircles/Common/Basic.lean#L39),
-[`frame_norm`](../../SquaresInCircles/Common/Basic.lean#L61),
-[`width_lower`](../../SquaresInCircles/Common/Basic.lean#L71).*
+*Lean: [`cauchy_sq`](../../SquaresInCircles/Common/Basic.lean#L41),
+[`frame_norm`](../../SquaresInCircles/Common/Basic.lean#L63),
+[`width_lower`](../../SquaresInCircles/Common/Basic.lean#L73).*
 
 ### Lemma 3.9 (inscribed disks)
 
@@ -277,8 +302,8 @@ value. So $|x_S(p)| < \alpha + (\frac12 - \alpha) = \frac12$, and likewise
 $|y_S(p)| < \frac12$. (1) The same argument with $c_S$ in place of $o$, whose
 local coordinates are both 0, and $\alpha = 0$. $\square$
 
-*Lean: [`inscribed_disk_mem`](../../SquaresInCircles/Common/Basic.lean#L142),
-[`small_disk_in_openSquare`](../../SquaresInCircles/Common/Basic.lean#L158).*
+*Lean: [`inscribed_disk_mem`](../../SquaresInCircles/Common/Basic.lean#L200),
+[`small_disk_in_openSquare`](../../SquaresInCircles/Common/Basic.lean#L216).*
 
 ### Lemma 3.10 (centres at least 1 apart)
 

@@ -46,7 +46,7 @@ lemma circle_state {u : ℝ} (hu : 0 ≤ u ∧ u ≤ rd) : Admissible (circle u)
   have ha0 : 1/2 ≤ circle u := by
     dsimp [targetSq] at he
     nlinarith
-  exact ⟨hu.1,ha,ha0,by dsimp [phi]; linarith⟩
+  exact ⟨ha0,hu.1,ha,by dsimp [phi]; linarith⟩
 
 lemma circle_order {u v : ℝ} (hu : 0 ≤ u) (huv : u ≤ v) (hv : v ≤ rd) :
     circle v ≤ circle u ∧ circle u-circle v ≤ v-u := by
@@ -132,7 +132,7 @@ lemma axialTop_state {u : ℝ} (hu : 0 ≤ u ∧ u ≤ Real.pi/5) :
     have he := circle_eq ⟨hu.1,huR⟩
     dsimp [phi]
     linarith
-  have ha : Admissible (axialTop u) u := ⟨hu.1,hgeU,htop,hphi⟩
+  have ha : Admissible (axialTop u) u := ⟨htop,hu.1,hgeU,hphi⟩
   have hside : axial u ≤ side (axialTop u) u := by
     have hh : axialTop u ≤ axialLine u := min_le_right _ _
     dsimp [axialLine,axial,side] at *
@@ -186,11 +186,11 @@ lemma circle_state_at_label {t : ℝ} (ht : s0 ≤ t ∧ t ≤ td) :
   have he := circle_identities ht
   have ha : Admissible (sideA t) (sideU t) := by
     refine ⟨?_,?_,?_,?_⟩
+    · dsimp [sideA]; linarith
     · have h0 := transition_coarse
       dsimp [u0] at h0
       dsimp [sideU]; linarith [h0.2.2.1]
     · dsimp [sideA,sideU]; linarith
-    · dsimp [sideA]; linarith
     · dsimp [phi,sideA,sideU]; linarith [he.1]
   have hcircle : circle (sideU t)=sideA t := by
     have hX : Real.sqrt (targetSq-(sideU t+1/2)^2) = X t := by
@@ -234,7 +234,7 @@ lemma diagonal_state {t : ℝ} (ht : td ≤ t ∧ t ≤ Real.pi/4) :
     rw [he]
     dsimp [diagonal,axial]
     linarith [ht.2,pi_lt_22_over_7]
-  refine ⟨⟨by linarith,le_rfl,hlower.le,hphi⟩,?_,he⟩
+  refine ⟨⟨hlower.le,by linarith,le_rfl,hphi⟩,?_,he⟩
   rw [he] at hTA
   simp only [label,he,min_eq_right hTA,min_eq_left ht.2]
 
@@ -312,7 +312,7 @@ lemma side_segment {a u : ℝ} (h : Admissible a u)
       have hu' : sideTopU t < u := lt_of_not_ge hn
       have ha' : sideTopA t < a := by linarith
       have hmu := mul_pos (sub_pos.mpr hu')
-        (show 0 < u+sideTopU t+1 by linarith [h.u_nonneg,htop.1])
+        (show 0 < u+sideTopU t+1 by linarith [h.u_nonneg,htop.u_nonneg])
       have hma := mul_pos (sub_pos.mpr ha')
         (show 0 < a+sideTopA t+1 by linarith [h.a_nonneg,htop.a_nonneg])
       have hp := h.phi_le

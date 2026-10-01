@@ -204,6 +204,7 @@ The *state* of an exterior square $S$ is $(a_S, b_S)$, and its *sign* is
 $\varepsilon_S$.
 
 *Lean: [`Seven.Admissible`](../../SquaresInCircles/Seven/Labels.lean#L22),
+[`ExteriorChart`](../../SquaresInCircles/Common/ExteriorCharts.lean#L17),
 [`Seven.remainder`](../../SquaresInCircles/Seven/Labels.lean#L19),
 [`Seven.targetSq`](../../SquaresInCircles/Seven/Labels.lean#L14).*
 
@@ -228,10 +229,9 @@ $(u - \frac12)^2 - (u + \frac12)^2 = -2u$, and
 $\frac34 + \frac{13}4 = 4$. For an admissible state the three terms on the
 right are nonnegative.
 
-(2) Since $u \ge 0$, we have $(u + \frac12)^2 \ge \frac14$, so
-$(a + \frac12)^2 = \varphi(a, u) - (u + \frac12)^2 \le 3$ and
-$a \le \sqrt3 - \frac12$; and $\sqrt3 < \frac74$ because $3 < \frac{49}{16}$.
-Next,
+(2) As $u \ge 0$, [Lemma 3.4](common.md#lemma-34-farthest-vertex) (2) gives
+$a \le \sqrt{\frac{13}4 - \frac14} - \frac12 = \sqrt3 - \frac12$; and
+$\sqrt3 < \frac74$ because $3 < \frac{49}{16}$. Next,
 $2\varphi(a, u) = (a + u + 1)^2 + (a - u)^2 \ge (a + u + 1)^2$, so
 $(a + u + 1)^2 \le \frac{13}2 = \frac{2600}{400} < (\frac{51}{20})^2$ and
 $a + u < \frac{31}{20}$. With $u \le a$ this gives
@@ -246,17 +246,16 @@ $\varphi(a_S, b_S) \le R_7^2 = \frac{13}4$ by
 [Lemma 3.4](common.md#lemma-34-farthest-vertex). $\square$
 
 *Lean:
-[`Seven.remainder_identity`](../../SquaresInCircles/Seven/Labels.lean#L28),
-[`Seven.Admissible.remainder_nonneg`](../../SquaresInCircles/Seven/Labels.lean#L50),
-[`Seven.Admissible.tangent`](../../SquaresInCircles/Seven/Labels.lean#L54),
-[`Seven.Admissible.a_le_sqrt_three_sub_half`](../../SquaresInCircles/Seven/Labels.lean#L59),
-[`Seven.Admissible.a_lt_five_fourths`](../../SquaresInCircles/Seven/Labels.lean#L66),
-[`Seven.Admissible.sum_lt`](../../SquaresInCircles/Seven/Labels.lean#L70),
-[`Seven.Admissible.u_lt`](../../SquaresInCircles/Seven/Labels.lean#L75),
-[`Seven.Admissible.a_nonneg`](../../SquaresInCircles/Seven/Labels.lean#L47),
-[`Seven.Admissible.slack_nonneg`](../../SquaresInCircles/Seven/Labels.lean#L48),
+[`Seven.remainder_identity`](../../SquaresInCircles/Seven/Labels.lean#L24),
+[`Seven.Admissible.remainder_nonneg`](../../SquaresInCircles/Seven/Labels.lean#L43),
+[`Seven.Admissible.tangent`](../../SquaresInCircles/Seven/Labels.lean#L47),
+[`Seven.Admissible.a_le_sqrt_three_sub_half`](../../SquaresInCircles/Seven/Labels.lean#L52),
+[`Seven.Admissible.a_lt_five_fourths`](../../SquaresInCircles/Seven/Labels.lean#L55),
+[`Seven.Admissible.sum_lt`](../../SquaresInCircles/Seven/Labels.lean#L59),
+[`Seven.Admissible.u_lt`](../../SquaresInCircles/Seven/Labels.lean#L64),
+[`coordinate_le_of_phi`](../../SquaresInCircles/Common/Basic.lean#L166),
 [`Seven.sqrt_three_bounds`](../../SquaresInCircles/Seven/Support.lean#L34),
-[`Seven.chart_admissible`](../../SquaresInCircles/Seven/Labels.lean#L221).*
+[`SquareChart.exteriorChart`](../../SquaresInCircles/Common/ExteriorCharts.lean#L49).*
 
 The identity (1) says that $r \ge 0$ is the tangent half-plane
 (([Definition 3.5](common.md#definition-35-tangent-half-plane) and [Lemma 3.6](common.md#lemma-36-tangent-lines))) of the circle
@@ -311,7 +310,7 @@ $(a_0, u_0) \approx (1.1198, 0.2914)$ and $s_0 \approx 0.3642$.
 [`Seven.side`](../../SquaresInCircles/Seven/Labels.lean#L17),
 [`Seven.label`](../../SquaresInCircles/Seven/Labels.lean#L18),
 [`Seven.ActiveLabel`](../../SquaresInCircles/Seven/Contacts.lean#L65),
-[`Seven.chartMarker`](../../SquaresInCircles/Seven/Labels.lean#L218),
+[`Seven.chartMarker`](../../SquaresInCircles/Seven/Labels.lean#L207),
 [`Seven.chartSign`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L20),
 [`Seven.Boundary.a0`](../../SquaresInCircles/Seven/LabelBoundary.lean#L19),
 [`Seven.Boundary.u0`](../../SquaresInCircles/Seven/LabelBoundary.lean#L20),
@@ -369,17 +368,17 @@ $\ell(a, u) \le \mathrm{side}(a, u) \le \frac\pi6 - \frac54(a - 1)$; solve for
 $a$. $\square$
 
 *Lean:
-[`Seven.side_identity_transverse`](../../SquaresInCircles/Seven/Labels.lean#L33),
-[`Seven.side_identity_radial`](../../SquaresInCircles/Seven/Labels.lean#L38),
-[`Seven.Admissible.side_pos`](../../SquaresInCircles/Seven/Labels.lean#L77),
-[`Seven.Admissible.label_nonneg`](../../SquaresInCircles/Seven/Labels.lean#L83),
-[`Seven.Admissible.label_le_axial`](../../SquaresInCircles/Seven/Labels.lean#L87),
-[`Seven.Admissible.label_le_side`](../../SquaresInCircles/Seven/Labels.lean#L91),
-[`Seven.Admissible.label_le_quarter`](../../SquaresInCircles/Seven/Labels.lean#L95),
-[`Seven.Admissible.label_mem`](../../SquaresInCircles/Seven/Labels.lean#L98),
-[`Seven.Admissible.selected`](../../SquaresInCircles/Seven/Labels.lean#L119),
-[`Seven.Admissible.label_zero_iff`](../../SquaresInCircles/Seven/Labels.lean#L101),
-[`Seven.Admissible.radial_label_bound`](../../SquaresInCircles/Seven/Labels.lean#L112).*
+[`Seven.side_identity_transverse`](../../SquaresInCircles/Seven/Labels.lean#L29),
+[`Seven.side_identity_radial`](../../SquaresInCircles/Seven/Labels.lean#L34),
+[`Seven.Admissible.side_pos`](../../SquaresInCircles/Seven/Labels.lean#L66),
+[`Seven.Admissible.label_nonneg`](../../SquaresInCircles/Seven/Labels.lean#L72),
+[`Seven.Admissible.label_le_axial`](../../SquaresInCircles/Seven/Labels.lean#L76),
+[`Seven.Admissible.label_le_side`](../../SquaresInCircles/Seven/Labels.lean#L80),
+[`Seven.Admissible.label_le_quarter`](../../SquaresInCircles/Seven/Labels.lean#L84),
+[`Seven.Admissible.label_mem`](../../SquaresInCircles/Seven/Labels.lean#L87),
+[`Seven.Admissible.selected`](../../SquaresInCircles/Seven/Labels.lean#L108),
+[`Seven.Admissible.label_zero_iff`](../../SquaresInCircles/Seven/Labels.lean#L90),
+[`Seven.Admissible.radial_label_bound`](../../SquaresInCircles/Seven/Labels.lean#L101).*
 
 ### Lemma 9.8 (side and axial labels)
 
@@ -482,13 +481,13 @@ so $u < \frac{23}{80}$, and then
 a contradiction. $\square$
 
 *Lean:
-[`Seven.Admissible.projection_two_one`](../../SquaresInCircles/Seven/Labels.lean#L129),
-[`Seven.side_selected_label_gt`](../../SquaresInCircles/Seven/Labels.lean#L134),
-[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Labels.lean#L157),
-[`Seven.side_selected_a_lt`](../../SquaresInCircles/Seven/Labels.lean#L146),
-[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Labels.lean#L184),
-[`Seven.axial_tie_line`](../../SquaresInCircles/Seven/Labels.lean#L165),
-[`Seven.axial_sum_lt`](../../SquaresInCircles/Seven/Labels.lean#L174).*
+[`Seven.Admissible.projection_two_one`](../../SquaresInCircles/Seven/Labels.lean#L118),
+[`Seven.side_selected_label_gt`](../../SquaresInCircles/Seven/Labels.lean#L123),
+[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Labels.lean#L146),
+[`Seven.side_selected_a_lt`](../../SquaresInCircles/Seven/Labels.lean#L135),
+[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Labels.lean#L173),
+[`Seven.axial_tie_line`](../../SquaresInCircles/Seven/Labels.lean#L154),
+[`Seven.axial_sum_lt`](../../SquaresInCircles/Seven/Labels.lean#L163).*
 
 ### Lemma 9.9 (the marker arc)
 

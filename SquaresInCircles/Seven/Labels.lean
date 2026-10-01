@@ -1,5 +1,5 @@
 import SquaresInCircles.Common.Trigonometry
-import SquaresInCircles.Common.Charts
+import SquaresInCircles.Common.ExteriorCharts
 
 /-!
 # States, labels and markers
@@ -19,11 +19,7 @@ def label (a u : ℝ) : ℝ := min (min (axial u) (side a u)) (Real.pi / 4)
 def remainder (a u : ℝ) : ℝ := 4 - 3*a - 2*u
 
 /-- An admissible state: `1/2 ≤ a`, `0 ≤ u ≤ a` and `φ(a, u) ≤ 13/4`. -/
-structure Admissible (a u : ℝ) : Prop where
-  u_nonneg : 0 ≤ u
-  u_le : u ≤ a
-  half_le : 1/2 ≤ a
-  phi_le : phi a u ≤ targetSq
+abbrev Admissible (a u : ℝ) : Prop := ExteriorChart targetSq a u
 
 lemma remainder_identity (a u : ℝ) :
     remainder a u = (a-1)^2 + (u-1/2)^2 + targetSq - phi a u := by
@@ -44,24 +40,17 @@ namespace Admissible
 variable {a u : ℝ} (h : Admissible a u)
 include h
 
-lemma a_nonneg : 0 ≤ a := by linarith [h.half_le]
-lemma slack_nonneg : 0 ≤ targetSq - phi a u := sub_nonneg.mpr h.phi_le
-
 lemma remainder_nonneg : 0 ≤ remainder a u := by
   rw [remainder_identity]
-  linarith [sq_nonneg (a-1), sq_nonneg (u-1/2), h.slack_nonneg]
+  linarith [sq_nonneg (a-1), sq_nonneg (u-1/2), h.phi_le]
 
 lemma tangent : 3*a + 2*u ≤ 4 := by
   have hw := h.remainder_nonneg
   dsimp [remainder] at hw
   linarith
 
-lemma a_le_sqrt_three_sub_half : a ≤ Real.sqrt 3 - 1/2 := by
-  have hp := h.phi_le
-  have hs := Real.sq_sqrt (show (0 : ℝ) ≤ 3 by norm_num)
-  have hn := Real.sqrt_nonneg (3 : ℝ)
-  dsimp [phi, targetSq] at hp
-  nlinarith [h.u_nonneg, h.half_le, sq_nonneg u]
+lemma a_le_sqrt_three_sub_half : a ≤ Real.sqrt 3 - 1/2 :=
+  (coordinate_le_of_phi h.u_nonneg h.phi_le).trans_eq (by norm_num [targetSq])
 
 lemma a_lt_five_fourths : a < 5/4 := by
   nlinarith [h.a_le_sqrt_three_sub_half, Real.sq_sqrt (show (0 : ℝ) ≤ 3 by norm_num),
@@ -203,7 +192,7 @@ lemma side_remainder_quadratic {a u : ℝ} (h : Admissible a u)
     linarith
   have hs : (a-1)^2+(u-1/2)^2 ≤ W := by
     have hh := remainder_identity a u
-    have hp := h.slack_nonneg
+    have hp := h.phi_le
     dsimp [W]
     linarith
   have hid : (a-1)^2+(u-1/2)^2 =
@@ -217,10 +206,5 @@ lemma side_remainder_quadratic {a u : ℝ} (h : Admissible a u)
 /-- The marker in an existing square chart. Reflections are not lost. -/
 def chartMarker {S : UnitSquare} {o : Point} (C : SquareChart S o) : Direction :=
   chartAngle C.phase C.reversed (label C.a C.b)
-
-lemma chart_admissible {S : UnitSquare} {o : Point} (C : SquareChart S o)
-    (hsort : C.b ≤ C.a) (hout : ¬ openSquare S o)
-    (hp : phi (alpha S o) (beta S o) ≤ targetSq) : Admissible C.a C.b :=
-  ⟨C.nonneg.2, hsort, C.exterior hsort hout, chart_phi C hp⟩
 
 end SquaresInCircles.Seven

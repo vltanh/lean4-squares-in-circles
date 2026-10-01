@@ -45,7 +45,7 @@ lemma contact_kinds {a u A v : ℝ} {s t : TransverseSign}
 lemma AxialState.admissible {a u : ℝ} (h : AxialState a u) : Admissible a u := by
   obtain ⟨rfl,h1,h2⟩ := h
   have := columnLimit_sq
-  exact ⟨le_rfl,by linarith,h1,by dsimp [phi,targetSq]; nlinarith⟩
+  exact ⟨h1,le_rfl,by linarith,by dsimp [phi,targetSq]; nlinarith⟩
 
 lemma kind_signed_label {a u : ℝ} {s : TransverseSign} {k : Fin 3} (hk : KindAt a u s k) :
     s.coe*label a u = kindOffset k := by
@@ -146,7 +146,8 @@ theorem six_exterior_ring (S : Fin 6 → UnitSquare) (o : Point)
     (hphi : ∀ i, phi (alpha (S i) o) (beta (S i) o) ≤ targetSq) :
     Nonempty (ExteriorRing S o) := by
   choose C hsort using (fun i => sorted_square_chart (S i) o)
-  have hadm (i : Fin 6) := chart_admissible (C i) (hsort i) (hext i) (hphi i)
+  have hadm (i : Fin 6) : Admissible (C i).a (C i).b :=
+    (C i).exteriorChart (hsort i) (hext i) (hphi i)
   obtain ⟨φ,σ,hgrid⟩ := regular_polygon (n := 5) (fun i => chartMarker (C i))
     (by unfold gap; push_cast; ring)
     (fun i j hij => marker_separation_closed (C i) (C j) (hadm i) (hadm j) (hd i j hij))

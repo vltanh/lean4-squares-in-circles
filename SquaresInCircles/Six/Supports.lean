@@ -185,7 +185,7 @@ lemma cap_linear_upper {a b U V : ℝ} (hc : ContainedChart a |b|)
 lemma chart_radial_work {a b : ℝ} (hc : ContainedChart a |b|) (g : Point) :
     dot g (a,b)≤(1113/1000)*vectorLength g := by
   have h := dot_le_radius (v := g) (p := (a,b))
-    (show 0≤rho0 by linarith [rho0_bounds.1]) (chart_center_radius_sq hc)
+    (show 0≤rho0 by linarith [rho0_bounds.1]) hc.center_sq_le
   have hr := mul_le_mul_of_nonneg_right (show rho0 ≤ 1113/1000 by linarith [rho0_bounds.2])
     (vectorLength_nonneg g)
   exact h.trans hr

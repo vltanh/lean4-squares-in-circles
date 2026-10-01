@@ -32,7 +32,7 @@ theorem exists_containing (S : Fin 7 → UnitSquare) (o : Point)
   have hext : ∀ i, ¬ openSquare (S i) o := by simpa only [not_exists] using hn
   choose C hsort using (fun i => sorted_square_chart (S i) o)
   have hadm (i : Fin 7) : Admissible (C i).a (C i).b := by
-    apply chart_admissible (C i) (hsort i) (hext i)
+    apply (C i).exteriorChart (hsort i) (hext i)
     have hh := hp.phi_le i
     simpa only [radius_sq,targetSq] using hh
   have h := directions_budget (n := 6) (fun i => chartMarker (C i))

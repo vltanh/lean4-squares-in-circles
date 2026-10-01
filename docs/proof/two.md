@@ -42,8 +42,8 @@ corners of the $2 \times 1$ rectangle lie on the circle of radius $R_2$ about
 $o$ (dashed).
 
 *Lean: [`Two.model_packing`](../../SquaresInCircles/Two/Construction.lean#L18),
-[`Two.uniqueness`](../../SquaresInCircles/Two/Uniqueness.lean#L47),
-[`Two.optimum`](../../SquaresInCircles/Two/Uniqueness.lean#L76).*
+[`Two.uniqueness`](../../SquaresInCircles/Two/Uniqueness.lean#L41),
+[`Two.optimum`](../../SquaresInCircles/Two/Uniqueness.lean#L70).*
 
 *Outline of the proof.* Part (1) is a direct check (Proposition 5.2, §5.1).
 The substance of the theorem is uniqueness, Proposition 5.3: two unit squares
@@ -130,19 +130,10 @@ $a^2 + b^2 \le \frac14$, and meets the quarter circle $a^2 + b^2 = \frac14$
 $(\frac12, 0)$ has $b \le a$; this is step 1 of the proof of
 Proposition 5.3.
 
-*Proof.* Expanding the squares,
+*Proof.* This is [Lemma 3.4](common.md#lemma-34-farthest-vertex) (3) with
+$\rho = \frac12$, since $\frac14 + \frac12 + \frac12 = \frac54$. $\square$
 
-```math
-\varphi(a, b) = \left(a + \tfrac12\right)^2 + \left(b + \tfrac12\right)^2 = (a^2 + b^2) + (a + b) + \tfrac12 . \tag{5.1}
-```
-
-Suppose that $a^2 + b^2 > \frac14$. As $a, b \ge 0$, we have
-$(a + b)^2 = a^2 + b^2 + 2ab \ge a^2 + b^2 > \frac14$, and as $a + b \ge 0$,
-also $a + b > \frac12$. Then (5.1) gives
-$\varphi(a, b) > \frac14 + \frac12 + \frac12 = \frac54$, a contradiction.
-$\square$
-
-*Lean: [`Two.center_near`](../../SquaresInCircles/Two/Uniqueness.lean#L22).*
+*Lean: [`radial_sq_le_of_phi`](../../SquaresInCircles/Common/Basic.lean#L159).*
 
 ### Lemma 5.5 (both centres at distance one half)
 
@@ -195,8 +186,8 @@ $|u|^2 = \frac14$, and in the same way $|v|^2 = \frac14$. By Lemma 3.4 these
 are the claims $a_S^2 + b_S^2 = \frac14$ and $a_T^2 + b_T^2 = \frac14$.
 $\square$
 
-*Lean: [`Two.centers_at_half`](../../SquaresInCircles/Two/Uniqueness.lean#L36),
-[`Two.normSq_parallelogram`](../../SquaresInCircles/Two/Uniqueness.lean#L28).*
+*Lean: [`Two.centers_at_half`](../../SquaresInCircles/Two/Uniqueness.lean#L29),
+[`Two.normSq_parallelogram`](../../SquaresInCircles/Two/Uniqueness.lean#L21).*
 
 *Remark.* Equality throughout also gives $u + v = 0$ and $|c_S - c_T| = 1$:
 the disk centre is the midpoint of the two centres, which are exactly 1 apart,
@@ -222,9 +213,10 @@ a_S^2 + b_S^2 = a_T^2 + b_T^2 = \tfrac14 .
 **Step 1. The disk centre is the midpoint of an edge of each square.** We show
 that $(a_S, b_S) = (\frac12, 0)$; the same argument gives
 $(a_T, b_T) = (\frac12, 0)$. Write $a = a_S$ and $b = b_S$, so that
-$a \ge b \ge 0$ (Definition 3.1) and $a^2 + b^2 = \frac14$. By (5.1),
-$\varphi(a, b) = \frac14 + (a + b) + \frac12 \le \frac54$, so
-$a + b \le \frac12$. On the other hand
+$a \ge b \ge 0$ (Definition 3.1) and $a^2 + b^2 = \frac14$. Expanding the
+squares,
+$\varphi(a, b) = (a^2 + b^2) + (a + b) + \frac12 = \frac14 + (a + b) + \frac12 \le \frac54$,
+so $a + b \le \frac12$. On the other hand
 $(a + b)^2 = a^2 + b^2 + 2ab \ge \frac14$ and $a + b \ge 0$, so
 $a + b \ge \frac12$. Hence $a + b = \frac12$, and
 
@@ -340,7 +332,7 @@ $S, T$ is congruent to the model $Q(c_1), Q(c_2)$, the rectangle, with the
 relabelling that puts $T$ in the slot $c_1$ and $S$ in the slot $c_2$.
 $\square$
 
-*Lean: [`Two.uniqueness`](../../SquaresInCircles/Two/Uniqueness.lean#L47),
+*Lean: [`Two.uniqueness`](../../SquaresInCircles/Two/Uniqueness.lean#L41),
 [`SquareChart.half_arc`](../../SquaresInCircles/Common/Charts.lean#L193),
 [`OpenArc.opposite`](../../SquaresInCircles/Common/Angles.lean#L32),
 [`represents_quarter`](../../SquaresInCircles/Common/Angles.lean#L112).*
@@ -356,7 +348,7 @@ $\sqrt{1 + \frac14} = R_2$ from the origin (Figure 5.2); (c) is
 Proposition 5.3. Parts (1), (2), (3) of the theorem are (a), (i) and (ii).
 $\square$
 
-*Lean: [`Two.optimum`](../../SquaresInCircles/Two/Uniqueness.lean#L76),
+*Lean: [`Two.optimum`](../../SquaresInCircles/Two/Uniqueness.lean#L70),
 [`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L47),
 [`Optimum.isLeast`](../../SquaresInCircles/Common/Optimum.lean#L61),
 [`Optimum.packing_iff`](../../SquaresInCircles/Common/Optimum.lean#L67).*

@@ -44,7 +44,7 @@ squares the pair theorem, the ring and the middle column over the files
 
 | File | Contents |
 | --- | --- |
-| `Basic.lean` | Vector operations and the Cauchy–Schwarz inequality, square frames and vertices, `InteriorDisjoint`, the farthest-vertex bound `phi`, inscribed disks |
+| `Basic.lean` | Vector operations and the Cauchy–Schwarz inequality, square frames and vertices, `InteriorDisjoint`, the farthest-vertex bound `phi` and its converse, the centre and the nearest point of a square in a disk, inscribed disks |
 | `Separation.lean` | Open squares are convex; the Hahn–Banach supporting functional for two squares with disjoint interiors |
 | `Tangents.lean` | The tangent identity for `phi` |
 | `Support.lean` | The radial sweep stays disjoint from the other squares when every centre is within distance 1 of the disk centre; a closed square misses a disjoint open one |
@@ -52,6 +52,7 @@ squares the pair theorem, the ring and the middle column over the files
 | `ArcMetric.lean` | Midpoint separation of disjoint arcs; circle perimeter inequality; three-arc budget |
 | `Charts.lean` | `SquareChart`: membership seen from the disk centre, sorted coordinates, arcs from chart intervals, the half circle of a square with `a = 1/2` |
 | `Coordinates.lean` | Points in a rotated frame at the disk centre; a chart in Cartesian coordinates |
+| `ExteriorCharts.lean` | `ExteriorChart`: the sorted chart of an exterior square in a disk of squared radius `Q`, with its far corner in the disk and its centre within `√(Q - 1/4) - 1/2` of the disk centre; the nearest point of a square in chart coordinates |
 | `RectangleArcs.lean` | Arcs of an exterior square: between its edges, bounded by the four sums `2A`, `A + U`, `A + V`, `U + V`, and the cap on small circles |
 | `ArcBudget.lean` | The budget of a packing: some square avoids the disk centre, and the square that contains it can be replaced by its radial sweep |
 | `Analysis.lean` | Monotonicity and concavity from derivatives, positivity from a curvature bound and one value, the largest value at a peak, leftmost minima |

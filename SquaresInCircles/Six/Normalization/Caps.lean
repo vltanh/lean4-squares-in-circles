@@ -216,7 +216,7 @@ private lemma deep_cap_primary_pos {a b h t : ℝ}
       a * Real.cos t - b * Real.sin t) : 0 < a := by
   have htr := small_cap_trig ht0 ht
   have hc0 : 0 ≤ Real.cos t := by linarith [htr.1]
-  have hbR : |b| ≤ rho0 := coordinate_le_rho0 (a := b) (b := a) (by linarith)
+  have hbR : |b| ≤ rho0 := coordinate_le_of_phi (abs_nonneg a) (by unfold phi; linarith)
   have hm := mul_le_mul hbR htr.2.2.1 htr.2.1
     (show 0 ≤ rho0 by linarith [rho0_bounds.1])
   have hbs := mul_le_mul_of_nonneg_right (neg_le_abs b) htr.2.1
@@ -305,7 +305,8 @@ private theorem deep_cap_bounds_nonneg {a b h t : ℝ}
     have hx := (closed_center_coordinate_bounds hp).1.1
     exact le_trans (by dsimp [angularWidth, centerX] at hm ⊢; linarith) hx
   have hchart : ContainedChart a |b| :=
-    ⟨ha, abs_nonneg b, hab.le, by simpa only [abs_of_nonneg (show 0 ≤ a by linarith)] using hbox⟩
+    ⟨ha, abs_nonneg b, hab.le,
+      by simpa only [phi, abs_of_nonneg (show 0 ≤ a by linarith)] using hbox⟩
   have hu := hchart.u_lt_half havoid
   have htr := small_cap_trig ht0 ht'.le
   have hbs := mul_le_mul_of_nonneg_right (neg_le_abs b) htr.2.1
