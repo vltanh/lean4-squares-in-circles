@@ -60,7 +60,7 @@ squares the pair theorem, the ring and the middle column over the files
 | `Constructions.lean` | Axis-parallel squares centred at given points: membership, disjointness and containment |
 | `Congruence.lean` | Congruence to a model from square-by-square slots; open squares determine closed ones; configurations congruent to a packing are packings; the rigid-motion witness |
 | `Optimum.lean` | `Optimum`, the statement every case proves; the lower bound, the least radius and the converse of uniqueness for all cases |
-| `Angles.lean` | `m` directions pairwise at least `2π/m` apart form a regular polygon; disjoint half circles are opposite; quarter turns of a frame |
+| `Angles.lean` | `m` directions pairwise at least `g` apart have `mg ≤ 2π`, and form a regular polygon when `mg = 2π`; disjoint half circles are opposite; quarter turns of a frame |
 | `Contacts.lean` | Disjoint squares have centres at least 1 apart; at distance exactly 1 they are side-neighbours; squares with parallel sides in one frame |
 
 ## The cases

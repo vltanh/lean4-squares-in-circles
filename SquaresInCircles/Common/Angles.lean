@@ -5,10 +5,11 @@ import Mathlib.Data.Fin.Tuple.Sort
 /-!
 # Directions on the circle
 
-If `(n+1)g = 2π`, then `n+1` directions pairwise at least `g` apart form a
-regular polygon. Sorted as reals `p 0 ≤ … ≤ p n`, neighbours are at least `g`
-apart, and so are `p n` and `p 0+2π`; so `p i-i*g` increases but ends no higher
-than it starts, hence is constant. Two directions at least `π` apart are
+Sorted as reals `p 0 ≤ … ≤ p n`, `n+1` directions pairwise at least `g` apart
+have neighbours at least `g` apart, and so are `p n` and `p 0+2π`; so `p i-i*g`
+increases and ends at most `2π-(n+1)g` above where it starts. Hence
+`(n+1)g ≤ 2π`, and if `(n+1)g = 2π` then `p i-i*g` is constant: the directions
+form a regular polygon. Two directions at least `π` apart are
 opposite, so disjoint half circles have opposite centres. A quarter turn of the
 frame turns the centre of a square by a quarter turn.
 -/
@@ -35,12 +36,13 @@ lemma OpenArc.opposite {o : Point} {r : ℝ} {U V : Set Point} (A : OpenArc o r 
   · rw [direction_dist]; exact Real.Angle.abs_toReal_le_pi _
   · linarith [A.centers_separated B hUV]
 
-/-- If `(n+1)g = 2π`, then `n+1` directions pairwise at least `g` apart form a
-regular polygon. -/
-theorem regular_polygon {n : ℕ} {g : ℝ} (c : Fin (n+1) → Direction) (hg : (n+1)*g=2*Real.pi)
+/-- `n+1` directions pairwise at least `g` apart, sorted as reals
+`p 0 ≤ … ≤ p n`: neighbours are at least `g` apart, and so are `p n` and
+`p 0 + 2π`. -/
+lemma sorted_directions {n : ℕ} {g : ℝ} (c : Fin (n+1) → Direction) (hg : g ≤ 2*Real.pi)
     (hsep : ∀ i j, i ≠ j → g ≤ dist (c i) (c j)) :
-    ∃ (φ : Direction) (σ : Equiv.Perm (Fin (n+1))),
-      ∀ i, c (σ i)=φ+(((i.val : ℝ)*g : ℝ) : Direction) := by
+    ∃ (σ : Equiv.Perm (Fin (n+1))) (p : Fin (n+1) → ℝ), (∀ i, (p i : Direction)=c (σ i)) ∧
+      (∀ i : Fin n, p i.castSucc+g ≤ p i.succ) ∧ p (Fin.last n)+g ≤ p 0+2*Real.pi := by
   let r : Fin (n+1) → ℝ := fun i => (c i).toReal
   let σ := Tuple.sort r
   let p : Fin (n+1) → ℝ := fun i => r (σ i)
@@ -56,17 +58,40 @@ theorem regular_polygon {n : ℕ} {g : ℝ} (c : Fin (n+1) → Direction) (hg : 
       linarith [(c (σ i)).neg_pi_lt_toReal,(c (σ j)).toReal_le_pi])
     rw [abs_of_nonneg h0] at h1 h2
     exact ⟨h.trans h1,h.trans h2⟩
+  refine ⟨σ,p,hrepr,fun i => by linarith [(hd i.castSucc_lt_succ).1],?_⟩
+  rcases (Fin.zero_le (Fin.last n)).lt_or_eq with h | h
+  · linarith [(hd h).2]
+  · rw [← h]
+    linarith
+
+/-- `n+1` directions pairwise at least `g` apart need `(n+1)g ≤ 2π`. -/
+theorem directions_budget {n : ℕ} {g : ℝ} (c : Fin (n+1) → Direction) (hg : g ≤ 2*Real.pi)
+    (hsep : ∀ i j, i ≠ j → g ≤ dist (c i) (c j)) : (n+1)*g ≤ 2*Real.pi := by
+  obtain ⟨σ,p,-,hstep,hlast⟩ := sorted_directions c hg hsep
+  have hq : Monotone fun i : Fin (n+1) => p i-i.val*g := Fin.monotone_iff_le_succ.2 fun i => by
+    simp only [Fin.val_succ,Fin.val_castSucc,Nat.cast_succ]
+    linarith [hstep i]
+  have h := hq (Fin.zero_le (Fin.last n))
+  simp only [Fin.val_last,Fin.val_zero,Nat.cast_zero,zero_mul,sub_zero] at h
+  linarith
+
+/-- If `(n+1)g = 2π`, then `n+1` directions pairwise at least `g` apart form a
+regular polygon. -/
+theorem regular_polygon {n : ℕ} {g : ℝ} (c : Fin (n+1) → Direction) (hg : (n+1)*g=2*Real.pi)
+    (hsep : ∀ i j, i ≠ j → g ≤ dist (c i) (c j)) :
+    ∃ (φ : Direction) (σ : Equiv.Perm (Fin (n+1))),
+      ∀ i, c (σ i)=φ+(((i.val : ℝ)*g : ℝ) : Direction) := by
+  obtain ⟨σ,p,hrepr,hstep,hlast⟩ := sorted_directions c
+    (by nlinarith [Real.pi_pos,show (0:ℝ) ≤ n by positivity]) hsep
   let q : Fin (n+1) → ℝ := fun i => p i-i.val*g
   have hq : Monotone q := Fin.monotone_iff_le_succ.2 fun i => by
     simp only [q,Fin.val_succ,Fin.val_castSucc,Nat.cast_succ]
-    linarith [(hd i.castSucc_lt_succ).1]
-  have hlast : q (Fin.last n) ≤ q 0 := by
-    rcases (Fin.zero_le (Fin.last n)).lt_or_eq with h | h
-    · simp only [q,Fin.val_last,Fin.val_zero,Nat.cast_zero]
-      linarith [(hd h).2]
-    · rw [h]
+    linarith [hstep i]
+  have hlast' : q (Fin.last n) ≤ q 0 := by
+    simp only [q,Fin.val_last,Fin.val_zero,Nat.cast_zero,zero_mul,sub_zero]
+    linarith
   refine ⟨c (σ 0),σ,fun i => ?_⟩
-  have hi : q i=q 0 := le_antisymm ((hq (Fin.le_last i)).trans hlast) (hq (Fin.zero_le i))
+  have hi : q i=q 0 := le_antisymm ((hq (Fin.le_last i)).trans hlast') (hq (Fin.zero_le i))
   simp only [q,Fin.val_zero,Nat.cast_zero,zero_mul,sub_zero] at hi
   rw [← hrepr,eq_add_of_sub_eq hi,Real.Angle.coe_add,hrepr]
 

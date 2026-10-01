@@ -12,13 +12,6 @@ the two side columns and two axial squares at free heights.
 noncomputable section
 namespace SquaresInCircles.Seven
 
-/-- Six directions pairwise at least `π/3` apart form a regular hexagon. -/
-theorem six_directions_hexagon (c : Fin 6 → Direction)
-    (hsep : ∀ i j, i ≠ j → gap ≤ dist (c i) (c j)) :
-    ∃ (φ : Direction) (σ : Equiv.Perm (Fin 6)),
-      ∀ i, c (σ i) = φ+(((i.val : ℝ)*gap : ℝ) : Direction) :=
-  regular_polygon c (by unfold gap; push_cast; ring) hsep
-
 def next (i : Fin 6) : Fin 6 := i+1
 
 lemma next_ne (i : Fin 6) : next i ≠ i := by fin_cases i <;> decide
@@ -154,7 +147,8 @@ theorem six_exterior_ring (S : Fin 6 → UnitSquare) (o : Point)
     Nonempty (ExteriorRing S o) := by
   choose C hsort using (fun i => sorted_square_chart (S i) o)
   have hadm (i : Fin 6) := chart_admissible (C i) (hsort i) (hext i) (hphi i)
-  obtain ⟨φ,σ,hgrid⟩ := six_directions_hexagon (fun i => chartMarker (C i))
+  obtain ⟨φ,σ,hgrid⟩ := regular_polygon (n := 5) (fun i => chartMarker (C i))
+    (by unfold gap; push_cast; ring)
     (fun i j hij => marker_separation_closed (C i) (C j) (hadm i) (hadm j) (hd i j hij))
   have hm (i : Fin 6) : (gap : Direction) =
       chartMarker (C (σ (next i)))-chartMarker (C (σ i)) :=

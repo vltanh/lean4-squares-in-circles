@@ -58,8 +58,8 @@ apart.
 [`Seven.columnCenters`](../../SquaresInCircles/Geometry.lean#L259),
 [`Seven.columnModel`](../../SquaresInCircles/Geometry.lean#L265),
 [`Seven.column_packing`](../../SquaresInCircles/Seven/Construction.lean#L49),
-[`Seven.uniqueness`](../../SquaresInCircles/Seven/Uniqueness.lean#L105),
-[`Seven.optimum`](../../SquaresInCircles/Seven/Uniqueness.lean#L111).*
+[`Seven.uniqueness`](../../SquaresInCircles/Seven/Uniqueness.lean#L91),
+[`Seven.optimum`](../../SquaresInCircles/Seven/Uniqueness.lean#L97).*
 
 *Remark.* The optimum is not unique. The four side squares are fixed, but each
 of the three middle squares can move along the middle column on its own, as
@@ -177,7 +177,7 @@ at the end of §9.7.
 Every packing of seven unit squares in a closed disk of radius $R_7$ is
 congruent to a column packing.
 
-*Lean: [`Seven.uniqueness`](../../SquaresInCircles/Seven/Uniqueness.lean#L105).*
+*Lean: [`Seven.uniqueness`](../../SquaresInCircles/Seven/Uniqueness.lean#L91).*
 
 Throughout, the disk centre $o$ is fixed. For every exterior square $S$
 ([Definition 3.2](common.md#definition-32-containing-and-exterior-squares)) we
@@ -916,7 +916,7 @@ is a contact of kind (2). $\square$
 [`Seven.axial_label`](../../SquaresInCircles/Seven/Contacts.lean#L41),
 [`Seven.side_neq_cap`](../../SquaresInCircles/Seven/Contacts.lean#L44),
 [`Seven.contact_label_not_cap`](../../SquaresInCircles/Seven/Contacts.lean#L48),
-[`Seven.AxialState.admissible`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L52),
+[`Seven.AxialState.admissible`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L45),
 [`Seven.remainder_zero`](../../SquaresInCircles/Seven/Contacts.lean#L24),
 [`Seven.axial_of_transverse_zero`](../../SquaresInCircles/Seven/Contacts.lean#L31),
 [`Seven.reflected_reverse_contact`](../../SquaresInCircles/Seven/Contacts.lean#L59),
@@ -1410,27 +1410,17 @@ claim by Lemma 9.16 (4). $\square$
 
 ### Lemma 9.25 (a square contains the centre)
 
-1. Seven directions cannot be pairwise at least $\frac\pi3$ apart.
-2. In a packing of seven unit squares in a closed disk of radius $R_7$ about
-   $o$, some square contains $o$.
+In a packing of seven unit squares in a closed disk of radius $R_7$ about $o$,
+some square contains $o$.
 
-*Proof.* (1) Let $c_1, \dots, c_7$ be directions pairwise at least
-$\frac\pi3$ apart. The sets
-$U_i = \lbrace o + u(\theta) : d(\theta, c_i) < \frac12\rbrace$ hold arcs of
-$\Gamma_1$ with centres $c_i$ and half-width $\frac12$
-([Definition 3.15](common.md#definition-315-arc)), and they are pairwise
-disjoint: a direction within $\frac12$ of $c_i$ and of $c_j$ would give
-$d(c_i, c_j) < 1 < \frac\pi3$ by the triangle inequality. By
-[Lemma 3.16](common.md#lemma-316-angular-budget), $\frac72 \le \pi$, which is
-false.
+*Proof.* Otherwise all seven squares are exterior, and their states are
+admissible by Lemma 9.5 (3). By Theorem 9.24 their markers are pairwise at
+least $\frac\pi3$ apart, so by
+[Lemma 3.19](common.md#lemma-319-regular-polygons) (1)
+$7 \cdot \frac\pi3 \le 2\pi$, which is false. $\square$
 
-(2) Otherwise all seven squares are exterior, and their states are admissible
-by Lemma 9.5 (3). By Theorem 9.24 their markers are pairwise at least
-$\frac\pi3$ apart, against (1). $\square$
-
-*Lean:
-[`Seven.seven_directions_impossible`](../../SquaresInCircles/Seven/Uniqueness.lean#L29),
-[`Seven.exists_containing`](../../SquaresInCircles/Seven/Uniqueness.lean#L45).*
+*Lean: [`directions_budget`](../../SquaresInCircles/Common/Angles.lean#L68),
+[`Seven.exists_containing`](../../SquaresInCircles/Seven/Uniqueness.lean#L28).*
 
 ### Proposition 9.26 (the ring)
 
@@ -1445,7 +1435,7 @@ renumbering of the squares such that in the frame $\theta$ they sit at
 
 *Proof.* *Step 1: a hexagon of contacts.* The states are admissible by Lemma
 9.5 (3), so by Theorem 9.24 the six markers are pairwise at least
-$\frac\pi3$ apart. By [Lemma 3.19](common.md#lemma-319-regular-polygons),
+$\frac\pi3$ apart. By [Lemma 3.19](common.md#lemma-319-regular-polygons) (2),
 with six directions and $6 \cdot \frac\pi3 = 2\pi$, after renumbering the
 squares $S_0, \dots, S_5$ the markers are $\mu_{S_i} = \psi + i\frac\pi3$ for
 some direction $\psi$. So each marker is exactly $\frac\pi3$ ahead of the one
@@ -1489,14 +1479,13 @@ $k = a_{S_5}$; they lie in $[\frac12, \sqrt3 - \frac12]$ because the states of
 $S_2$ and $S_5$ are axial. $\square$
 
 *Lean:
-[`Seven.six_exterior_ring`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L151),
-[`Seven.six_directions_hexagon`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L16),
-[`Seven.hexagon_successor`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L26),
-[`Seven.ring_of_ordered_contacts`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L111),
-[`Seven.contact_kinds`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L43),
-[`Seven.kind_unique`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L39),
-[`Seven.ExteriorRing`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L101),
-[`regular_polygon`](../../SquaresInCircles/Common/Angles.lean#L40).*
+[`Seven.six_exterior_ring`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L144),
+[`Seven.hexagon_successor`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L19),
+[`Seven.ring_of_ordered_contacts`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L104),
+[`Seven.contact_kinds`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L36),
+[`Seven.kind_unique`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L32),
+[`Seven.ExteriorRing`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L94),
+[`regular_polygon`](../../SquaresInCircles/Common/Angles.lean#L80).*
 
 ![The six exterior squares of a column packing without the middle square, the unit circle about o, and the six markers as rays from o at 30, 90, 150, 210, 270 and 330 degrees, forming a regular hexagon; each square is labelled lower, upper or axial, and the edges along which consecutive squares touch are drawn thick](figures/seven-ring.svg)
 
@@ -1587,7 +1576,7 @@ so the square is axis-parallel and centred on the axis $x = 0$.
 *Proof of Proposition 9.3.* Let $S_1, \dots, S_7$ be a packing of seven unit
 squares in the closed disk of radius $R_7$ about $o$.
 
-1. By Lemma 9.25 (2) some square, say $S_7$, contains $o$. Two disjoint squares
+1. By Lemma 9.25 some square, say $S_7$, contains $o$. Two disjoint squares
    cannot both contain $o$, so the other six are exterior, and
    $\varphi(a_{S_i}, b_{S_i}) \le \frac{13}4$ by
    [Lemma 3.4](common.md#lemma-34-farthest-vertex).
@@ -1609,8 +1598,8 @@ squares in the closed disk of radius $R_7$ about $o$.
    congruent to that column packing. $\square$
 
 *Lean:
-[`Seven.congruent_of_containing`](../../SquaresInCircles/Seven/Uniqueness.lean#L72),
-[`Seven.column_centers_separated`](../../SquaresInCircles/Seven/Uniqueness.lean#L60),
+[`Seven.congruent_of_containing`](../../SquaresInCircles/Seven/Uniqueness.lean#L58),
+[`Seven.column_centers_separated`](../../SquaresInCircles/Seven/Uniqueness.lean#L46),
 [`congruent_of_slots`](../../SquaresInCircles/Common/Congruence.lean#L99).*
 
 ## 9.8 Proof of Theorem 9.1
@@ -1629,8 +1618,8 @@ By Proposition 9.2 (2), the optimal packings are the configurations congruent
 to the column packing of a quadruple of slacks
 $\eta_0, \eta_1, \eta_2, \eta_3 \ge 0$ with sum $2\sqrt3 - 3$.
 
-*Lean: [`Seven.optimum`](../../SquaresInCircles/Seven/Uniqueness.lean#L111),
+*Lean: [`Seven.optimum`](../../SquaresInCircles/Seven/Uniqueness.lean#L97),
 [`Optimum.isLeast`](../../SquaresInCircles/Common/Optimum.lean#L61),
 [`Optimum.packing_iff`](../../SquaresInCircles/Common/Optimum.lean#L67),
 [`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L47),
-[`Seven.classification_by_slots`](../../SquaresInCircles/Seven/Uniqueness.lean#L128).*
+[`Seven.classification_by_slots`](../../SquaresInCircles/Seven/Uniqueness.lean#L114).*

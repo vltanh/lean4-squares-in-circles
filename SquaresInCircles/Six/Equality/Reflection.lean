@@ -4,7 +4,7 @@ import SquaresInCircles.Six.Normalization.CentralSquare
 /-!
 # The diagonal reflection of the model
 
-Lemma 10.16. The model is symmetric under the reflection in the diagonal
+The model is symmetric under the reflection in the diagonal
 `y = x`, which exchanges N with E and W with S and maps C and D to themselves,
 so its reflection is congruent to it by a relabelling alone. Reflecting both
 sides of a congruence gives a congruence with the opposite rotation. Hence a

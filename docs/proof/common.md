@@ -531,8 +531,8 @@ $\square$
 
 *Lean:
 [`OpenArc.centers_separated`](../../SquaresInCircles/Common/ArcMetric.lean#L28),
-[`OpenArc.opposite`](../../SquaresInCircles/Common/Angles.lean#L31),
-[`antipodal_of_distance`](../../SquaresInCircles/Common/Angles.lean#L23).*
+[`OpenArc.opposite`](../../SquaresInCircles/Common/Angles.lean#L32),
+[`antipodal_of_distance`](../../SquaresInCircles/Common/Angles.lean#L24).*
 
 ### Lemma 3.18 (three arcs)
 
@@ -580,9 +580,12 @@ locates the centres, which the uniqueness proofs use.
 
 ### Lemma 3.19 (regular polygons)
 
-Let $m \ge 1$ and $g > 0$ with $mg = 2\pi$. If $m$ directions are pairwise at
-least $g$ apart, then for some direction $\theta_0$ they are, in some order,
-$\theta_0, \theta_0 + g, \dots, \theta_0 + (m - 1)g$.
+Let $m \ge 1$ and $0 \le g \le 2\pi$, and let $m$ directions be pairwise at
+least $g$ apart.
+
+1. $mg \le 2\pi$.
+2. If $mg = 2\pi$, then for some direction $\theta_0$ the directions are, in
+   some order, $\theta_0, \theta_0 + g, \dots, \theta_0 + (m - 1)g$.
 
 ![Four radii of a circle about o in the directions theta0, theta0 plus pi/2, theta0 plus pi and theta0 plus 3pi/2](figures/four-directions.svg)
 
@@ -601,11 +604,14 @@ each is exactly $g$.
 $p_0 \le p_1 \le \dots \le p_{m-1}$. The $m$ gaps $p_1 - p_0, \dots, p_{m-1} - p_{m-2}$ and
 $p_0 + 2\pi - p_{m-1}$ are nonnegative and add up to $2\pi$. Each of them is at
 least the angle between the two directions it joins, since both ends of each
-gap represent those directions, hence at least $g$. As $m$ gaps of at least $g$
-add up to $mg = 2\pi$, every gap equals $g$, and $p_i = p_0 + ig$. Take
-$\theta_0$ the direction of $p_0$. $\square$
+gap represent those directions, hence at least $g$ (for $m = 1$ the one gap is
+$2\pi \ge g$). (1) So $mg \le 2\pi$. (2) As $m$ gaps of at least $g$ add up to
+$mg = 2\pi$, every gap equals $g$, and $p_i = p_0 + ig$. Take $\theta_0$ the
+direction of $p_0$. $\square$
 
-*Lean: [`regular_polygon`](../../SquaresInCircles/Common/Angles.lean#L40).*
+*Lean: [`directions_budget`](../../SquaresInCircles/Common/Angles.lean#L68),
+[`regular_polygon`](../../SquaresInCircles/Common/Angles.lean#L80),
+[`sorted_directions`](../../SquaresInCircles/Common/Angles.lean#L42).*
 
 ## 3.5 Charts
 
@@ -1095,8 +1101,8 @@ $\square$
 
 *Lean: [`self_represents`](../../SquaresInCircles/Common/Contacts.lean#L67),
 [`same_axes_represents`](../../SquaresInCircles/Common/Contacts.lean#L50),
-[`represents_quarter`](../../SquaresInCircles/Common/Angles.lean#L78),
-[`represents_cardinal`](../../SquaresInCircles/Common/Angles.lean#L89).*
+[`represents_quarter`](../../SquaresInCircles/Common/Angles.lean#L103),
+[`represents_cardinal`](../../SquaresInCircles/Common/Angles.lean#L114).*
 
 ### Lemma 3.31 (from slots to congruence)
 

@@ -8,7 +8,7 @@ import SquaresInCircles.Six.Wings.WestSign
 /-!
 # The stress bound at the optimal radius
 
-Theorem 10.12: in a normalized packing in the disk of radius `radius`, the five
+In a normalized packing in the disk of radius `radius`, the five
 exterior squares are turned exactly as in the model, and the eight contacts of
 the model hold. The stress has weight one on the edges from C to E, N, W and S,
 along the axes that separate them from C, weight `rStar` on N–W and E–S, along
@@ -430,8 +430,8 @@ lemma contacts_of_model_angles (P : NormalizedPacking radius)
   · rw [angularWidth,cos_quarter,sin_quarter,abs_of_pos hStar_pos] at hDS
     nlinarith only [hDS]
 
-/-- Theorem 10.12: in the disk of radius `radius` the exterior squares of a
-normalized packing are turned as in the model, and the eight contacts hold. -/
+/-- In the disk of radius `radius` the exterior squares of a normalized packing
+are turned as in the model, and the eight contacts hold. -/
 theorem stress_bound (P : NormalizedPacking radius) :
     P.phase=Normalization.modelPhase ∧ Equality.Contacts P.center P.radial P.transverse := by
   obtain ⟨hNW,hES,hdiag⟩ := angle_domains P

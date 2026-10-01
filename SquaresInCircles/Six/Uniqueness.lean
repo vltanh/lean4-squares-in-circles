@@ -5,7 +5,7 @@ import SquaresInCircles.Common.Optimum
 /-!
 # Six squares: uniqueness
 
-Proposition 10.17 and Theorem 10.1. A packing of six unit squares in the closed
+A packing of six unit squares in the closed
 disk of radius `radius` is normalized, possibly after a reflection in a diagonal:
 one square contains the disk centre, the pins label the others, and the packing
 is read in a frame of the central square. The stress bound turns the exterior
@@ -95,8 +95,8 @@ lemma model_congruent :
           sin_diagonal])))) p
   exact congruent_of_origin_sets order ho (fun i => same_open_same_closed _ _ (ho i))
 
-/-- Proposition 10.17: every packing of six unit squares in a closed disk of
-radius `radius` is congruent to `model`. -/
+/-- Every packing of six unit squares in a closed disk of radius `radius` is
+congruent to `model`. -/
 theorem uniqueness (S : Fin 6 → UnitSquare) (o : Point)
     (hp : Packing S o radius) : Congruent S o model := by
   obtain ⟨P,htrace⟩ := normalize hp radius_sq.le

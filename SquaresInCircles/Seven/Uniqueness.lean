@@ -11,9 +11,8 @@ side squares are fixed, and each of the three middle squares can sit anywhere
 on the middle axis, at least 1 from the others and inside the disk. Conversely
 every such configuration is an optimal packing (`Optimum.packing_iff`).
 
-Seven directions cannot be pairwise at least `π/3` apart, since closed arcs of
-half-width `1/2` about them would be disjoint, so some square contains the disk
-centre. The markers of the other six form a regular hexagon and neighbouring
+Seven directions cannot be pairwise at least `π/3` apart, so some square
+contains the disk centre. The markers of the other six form a regular hexagon and neighbouring
 squares touch as in the optimal packing (`Uniqueness/ContactCycle.lean`), and
 the square in the middle is pinned between the side columns
 (`Uniqueness/CentralSquare.lean`). The three squares of the middle column have
@@ -24,22 +23,6 @@ lower bound.
 -/
 noncomputable section
 namespace SquaresInCircles.Seven
-
-/-- Seven directions cannot be pairwise at least `π/3` apart. -/
-lemma seven_directions_impossible (c : Fin 7 → Direction)
-    (hsep : ∀ i j, i ≠ j → gap ≤ dist (c i) (c j)) : False := by
-  have hballs : Pairwise (fun i j =>
-      Disjoint (Metric.closedBall (c i) (1/2)) (Metric.closedBall (c j) (1/2))) := by
-    intro i j hij
-    apply Metric.closedBall_disjoint_closedBall
-    have hg := hsep i j hij
-    dsimp [gap] at hg
-    linarith [Real.pi_gt_d2]
-  have hb := closed_arc_budget c (fun _ => (1/2 : ℝ))
-    (fun _ => ⟨by norm_num,by linarith [Real.pi_pos,Real.pi_gt_d2]⟩) hballs
-  simp only [Finset.sum_const,Finset.card_univ,Fintype.card_fin,nsmul_eq_mul] at hb
-  norm_num at hb
-  linarith [pi_lt_22_over_7]
 
 /-- At the optimal radius some square contains the disk centre. -/
 theorem exists_containing (S : Fin 7 → UnitSquare) (o : Point)
@@ -52,9 +35,12 @@ theorem exists_containing (S : Fin 7 → UnitSquare) (o : Point)
     apply chart_admissible (C i) (hsort i) (hext i)
     have hh := hp.phi_le i
     simpa only [radius_sq,targetSq] using hh
-  apply seven_directions_impossible (fun i => chartMarker (C i))
-  intro i j hij
-  exact marker_separation_closed (C i) (C j) (hadm i) (hadm j) (hp.disjoint i j hij)
+  have h := directions_budget (n := 6) (fun i => chartMarker (C i))
+    (by unfold gap; linarith [Real.pi_pos])
+    fun i j hij => marker_separation_closed (C i) (C j) (hadm i) (hadm j) (hp.disjoint i j hij)
+  unfold gap at h
+  push_cast at h
+  linarith [Real.pi_pos]
 
 /-- Two aligned squares in one column cannot have centers less than one apart. -/
 lemma column_centers_separated {S T : UnitSquare} {o : Point} {φ : Direction} {x y : ℝ}

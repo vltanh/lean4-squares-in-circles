@@ -63,8 +63,8 @@ lemma corner_bound {R μ x y A B a b : ℝ} (hμ : 0<μ) (hx : 0<x) (hy : 0<y)
   have hbe : b=|b| := by nlinarith only [ha,hb,he,hA',hB',hx,hy]
   exact ⟨by linarith,by linarith⟩
 
-/-- Proposition 10.15: the eight contacts and the disk fix the local coordinates
-of the exterior squares and the centre of C. -/
+/-- The eight contacts and the disk fix the local coordinates of the exterior
+squares and the centre of C. -/
 theorem model_of_contacts {c : Point} {a b : Fin 5 → ℝ} (h : Contacts c a b)
     (hbox : ∀ i, (|a i|+1/2)^2+(|b i|+1/2)^2≤radius^2) :
     a=modelRadial ∧ b=modelTransverse ∧ c=(sStar,sStar) := by

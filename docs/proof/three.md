@@ -839,7 +839,7 @@ $(\frac12, \frac5{16})$ to $(-\frac12, -\frac5{16}) = c_1$. $\square$
 [`Three.a_represents`](../../SquaresInCircles/Three/Uniqueness.lean#L113),
 [`Three.b_represents`](../../SquaresInCircles/Three/Uniqueness.lean#L94),
 [`chart_represents`](../../SquaresInCircles/Common/Congruence.lean#L148),
-[`represents_cardinal`](../../SquaresInCircles/Common/Angles.lean#L89).*
+[`represents_cardinal`](../../SquaresInCircles/Common/Angles.lean#L114).*
 
 The proof of Proposition 6.3 rules out two squares of type A and three of
 type B; Figures 6.16 and 6.17 show why such squares overlap.
@@ -921,7 +921,7 @@ $w_i \ge \frac\pi3$. The caps lie in the pairwise disjoint sets $S_i^\circ$.
 
 *Lean: [`Three.uniqueness`](../../SquaresInCircles/Three/Uniqueness.lean#L121),
 [`SquareChart.half_arc`](../../SquaresInCircles/Common/Charts.lean#L193),
-[`OpenArc.opposite`](../../SquaresInCircles/Common/Angles.lean#L31),
+[`OpenArc.opposite`](../../SquaresInCircles/Common/Angles.lean#L32),
 [`congruent_of_slots`](../../SquaresInCircles/Common/Congruence.lean#L99).*
 
 ## 6.6 Proof of Theorem 6.1

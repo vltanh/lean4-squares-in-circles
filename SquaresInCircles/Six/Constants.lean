@@ -10,7 +10,7 @@ The model (defined with the statement, in `Geometry.lean`) is built from
 `h = √2/2` and the smaller root `s*` of `s² - A s + B`; `t*`, `d*` and the
 squared radius `q* = 2s*² + 4s* + 5/2` follow from it. The far corners of E and
 W and the far vertices of D lie on the circle of squared radius `q*`. The
-stress of the model (Proposition 10.10) has weight `1` on the four contacts of
+stress of the model has weight `1` on the four contacts of
 C, `r* = (s* + 1/2)/(s* + 3/2)` on N–W and E–S, and `m* = (1 + r*) k*`, with
 `k* = (t* + 1/2)/(3/2 - s*)`, on W–D and D–S; the force on D has length
 `diagonalK = 2h m*`, the centre of D lies at distance `ρ* = √(q* - 1/4) - 1/2`

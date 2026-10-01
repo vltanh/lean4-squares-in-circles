@@ -26,6 +26,7 @@ trusts the compiler, would add `Lean.ofReduceBool`.
 #print axioms SquaresInCircles.centers_distance_sq_ge_one
 #print axioms SquaresInCircles.unit_contact
 #print axioms SquaresInCircles.regular_polygon
+#print axioms SquaresInCircles.directions_budget
 #print axioms SquaresInCircles.axis_packing
 #print axioms SquaresInCircles.Congruent.packing
 #print axioms SquaresInCircles.Optimum.packing_iff
@@ -48,8 +49,7 @@ trusts the compiler, would add `Lean.ofReduceBool`.
 #print axioms SquaresInCircles.Six.uniqueness
 
 -- Seven squares: the marker arc, the gap of pi/3 (nonnegative, zero only at
--- contacts), all smaller gaps, the pair theorem, the regular hexagon of
--- markers, and the column packings.
+-- contacts), all smaller gaps, the pair theorem, and the column packings.
 #print axioms SquaresInCircles.Seven.marker_arc
 #print axioms SquaresInCircles.Seven.fixed_gap_nonneg
 #print axioms SquaresInCircles.Seven.fixed_gap_zero
@@ -57,7 +57,6 @@ trusts the compiler, would add `Lean.ofReduceBool`.
 #print axioms SquaresInCircles.SAT.separating_axes
 #print axioms SquaresInCircles.Seven.marker_separation_closed
 #print axioms SquaresInCircles.Seven.ordered_chart_contact
-#print axioms SquaresInCircles.Seven.six_directions_hexagon
 #print axioms SquaresInCircles.Seven.column_packing
 
 -- Seven squares at the optimal radius: a square contains the centre, the ring,
