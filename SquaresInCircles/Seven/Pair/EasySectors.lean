@@ -66,7 +66,7 @@ theorem fixed_gap_inward_negative {a u A v : ℝ}
   have hb : -(2/3 : ℝ) < y ∧ y < 2/3 := by
     obtain ⟨h0,h1⟩ := h.label_mem
     dsimp [y,gap]
-    constructor <;> linarith [Real.pi_gt_d2,Real.pi_lt_d4]
+    constructor <;> linarith [Real.pi_pos,Real.pi_lt_d2]
   have hy : y^2 < (2/3)^2 := by nlinarith [hb.1,hb.2]
   have hc := Real.one_sub_sq_div_two_le_cos (x := y)
   have ha := h.a_le_sqrt_three_sub_half

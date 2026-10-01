@@ -51,11 +51,11 @@ lemma sideSideL_pos {w : ℝ} (hw : -Real.pi/3 ≤ w ∧ w ≤ Real.pi/6) :
   have hpi := Real.pi_lt_d4
   by_cases h : 0 ≤ w
   · have hs := Real.sin_nonneg_of_nonneg_of_le_pi h (by linarith [hw.2,Real.pi_pos])
-    have hc := Real.one_sub_sq_div_two_le_cos (x := w)
-    have hw' : w < 8/15 := by linarith [hw.2]
+    have hc := Real.cos_nonneg_of_mem_Icc (x := w)
+      ⟨by linarith [Real.pi_pos],by linarith [hw.2]⟩
     unfold sideSideL
     rw [min_eq_right hs]
-    nlinarith
+    linarith [hw.2]
   · have hz : 0 ≤ -w ∧ -w ≤ Real.pi/3 := ⟨by linarith,by linarith [hw.1]⟩
     have hc := cos_ge_half hz
     have hs := Real.sin_nonneg_of_nonneg_of_le_pi hz.1 (by linarith [hz.2,Real.pi_pos])
@@ -83,9 +83,9 @@ lemma sideSide_margin_pos {w : ℝ}
         (19+20*Real.cos w-24*w)^2-
           13*(197-180*Real.sin w-80*Real.cos w) := by
       linarith
-    have hw4 : w^4 ≤ (8/15 : ℝ)^4 := by gcongr
     have hp : 0 < 468-724*w+90*w^2-40*w^4 := by
-      linarith [sq_nonneg w]
+      linarith [mul_nonneg (sq_nonneg w)
+        (show 0 ≤ 9-4*w^2 by linarith [mul_le_mul_of_nonneg_left hw' h.le])]
     have hn := mul_pos h hp
     have hid :
         400*((sideSideL w)^2-targetSq*((Real.sin w-9/10)^2+(2/5-Real.cos w)^2)) =
@@ -271,49 +271,49 @@ lemma opposite_axial_axial_pos {a u A v : ℝ}
     dsimp [gap] at he
     linarith
 
-/-- Clearance of an axial and a side label: on the disk, Cauchy–Schwarz bounds
-`(3/5)(A + 1/2) + (11/15)(v + 1/2)` by `41/24`. -/
+/-- Clearance of an axial and a side label: as `v ≤ A`, the form
+`(3/5)(A + 1/2) + (11/15)(v + 1/2)` is at most `(2/3)(A + v + 1) < 17/10`. -/
 lemma mixed_clearance_bound {a u A v : ℝ}
     (h' : Admissible A v)
     (hA : label a u=axial u) (hT : label A v=side A v) :
-    1/170-(4/5)*(label a u+label A v-gap) ≤ 1-u-v := by
-  have hl := dot_ge (p := -(3/5)) (r := -(11/15)) (c := 41/24) h'.phi_le (by norm_num)
-    (by norm_num [targetSq])
+    1/70-(4/5)*(label a u+label A v-gap) ≤ 1-u-v := by
+  have hs := h'.sum_lt
+  have hle := h'.u_le
   rw [hA,hT]
   dsimp [axial,side,gap]
   linarith [pi_lt_22_over_7]
 
 lemma mixed_positive_turn {u A v w : ℝ}
     (h' : Admissible A v) (hw : 0 ≤ w ∧ w ≤ Real.pi/6)
-    (hclear : 1/170-(4/5)*w ≤ 1-u-v) :
+    (hclear : 1/70-(4/5)*w ≤ 1-u-v) :
     0 < sideSideSupport u A v w := by
   have hl := opposite_support_positive_turn (u := u) h'.half_le h'.u_nonneg hw
   have hr := forward_turn_nonneg hw
   linarith
 
-lemma side_axial_far_profile {z : ℝ} (hz : 1/3 ≤ z ∧ z ≤ 7/10) :
+lemma side_axial_far_profile {z : ℝ} (hz : 2/5 ≤ z ∧ z ≤ 7/10) :
     0 < 1/2-Real.pi/5+(6/5)*z-(Real.sqrt 3-1)*Real.sin z
       -(1/2)*(1-Real.cos z) := by
   let B : ℝ → ℝ := fun x => 1/2-Real.pi/5+(6/5)*x-
     (Real.sqrt 3-1)*Real.sin x-(1/2)*(1-Real.cos x)
   have hc0 : 0 ≤ Real.sqrt 3-1 := by linarith [sqrt_three_bounds.1]
   have hc1 : Real.sqrt 3-1 < 11/15 := by linarith [sqrt_three_bounds.2]
-  have hm : MonotoneOn B (Icc (1/3) (7/10)) := by
+  have hm : MonotoneOn B (Icc (2/5) (7/10)) := by
     apply monotoneOn_of_deriv_nonneg (convex_Icc _ _) (by dsimp [B]; fun_prop)
     · exact Differentiable.differentiableOn (by dsimp [B]; fun_prop)
     · intro x hx
-      have hx' : x ∈ Icc (1/3 : ℝ) (7/10) := interior_subset hx
+      have hx' : x ∈ Icc (2/5 : ℝ) (7/10) := interior_subset hx
       have hsin := Real.sin_le (show 0 ≤ x by linarith [hx'.1])
       have hcos := mul_le_mul_of_nonneg_left (Real.cos_le_one x) hc0
       have hd : deriv B x = 6/5-(Real.sqrt 3-1)*Real.cos x-(1/2)*Real.sin x := by
         simp (disch := fun_prop) [B]
       rw [hd]
       linarith [hx'.2]
-  have hb : 0 < B (1/3) := by
-    have hsin := sin_upper_five (show (0 : ℝ) ≤ 1/3 by norm_num)
-    have hcos := Real.one_sub_sq_div_two_le_cos (x := (1/3 : ℝ))
+  have hb : 0 < B (2/5) := by
+    have hsin := Real.sin_le (show (0 : ℝ) ≤ 2/5 by norm_num)
+    have hcos := Real.one_sub_sq_div_two_le_cos (x := (2/5 : ℝ))
     have hsin0 := Real.sin_nonneg_of_nonneg_of_le_pi
-      (show (0 : ℝ) ≤ 1/3 by norm_num) (by linarith [Real.pi_gt_d2])
+      (show (0 : ℝ) ≤ 2/5 by norm_num) (by linarith [Real.pi_gt_d2])
     have hp := mul_nonneg (show 0 ≤ 11/15-(Real.sqrt 3-1) by linarith) hsin0
     dsimp [B]
     linarith [pi_lt_22_over_7]
@@ -326,7 +326,7 @@ lemma opposite_axial_side_pos {a u A v : ℝ}
   let w := label a u+label A v-gap
   have hw : -Real.pi/3 ≤ w ∧ w ≤ Real.pi/6 := forward_turn_range h h'
   have hclear := mixed_clearance_bound h' hA hT
-  change 1/170-(4/5)*w ≤ 1-u-v at hclear
+  change 1/70-(4/5)*w ≤ 1-u-v at hclear
   change 0 < sideSideSupport u A v w
   by_cases hpos : 0 ≤ w
   · exact mixed_positive_turn h' ⟨hpos,hw.2⟩ hclear
@@ -356,7 +356,7 @@ lemma opposite_side_axial_pos {a u A v : ℝ}
     0 < sideSideSupport u A v (label a u+label A v-gap) := by
   let w := label a u+label A v-gap
   have hw : -Real.pi/3 ≤ w ∧ w ≤ Real.pi/6 := forward_turn_range h h'
-  have hclear : 1/170-(4/5)*w ≤ 1-u-v := by
+  have hclear : 1/70-(4/5)*w ≤ 1-u-v := by
     have hc := mixed_clearance_bound h hA hT
     dsimp [w]
     linarith
@@ -378,10 +378,10 @@ lemma opposite_side_axial_pos {a u A v : ℝ}
       (by linarith [hz.2,Real.pi_pos])
     have hA1 := h'.a_le_sqrt_three_sub_half
     have hp := mul_nonneg (show 0 ≤ Real.sqrt 3-1-(A-1/2) by linarith) hsin0
-    by_cases hzsmall : z ≤ 1/3
+    by_cases hzsmall : z ≤ 2/5
     · have hsin := Real.sin_le hz.1
       have hcos := Real.one_sub_sq_div_two_le_cos (x := z)
-      have hq := mul_nonneg hz.1 (show 0 ≤ 1/3-z by linarith)
+      have hq := mul_nonneg (show 0 ≤ 2/5-z by linarith) (show 0 ≤ z+2/15 by linarith)
       have hpc := mul_nonneg
         (show 0 ≤ 11/15-(Real.sqrt 3-1) by linarith [sqrt_three_bounds.2]) hsin0
       linarith

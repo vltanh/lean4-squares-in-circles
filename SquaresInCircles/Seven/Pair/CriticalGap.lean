@@ -53,15 +53,15 @@ def capVertex : Fin 3 → Point :=
 
 lemma capVertex_admissible (i : Fin 3) :
     Admissible (capVertex i).1 (capVertex i).2 := by
-  have hp0 := Real.pi_gt_d2
-  have hp1 := pi_lt_22_over_7
-  have hr (a u : ℝ) (ha0 : 1/2 ≤ a) (hu0 : 0 ≤ u)
-      (hau : u ≤ a) (ha1 : a < 193/250) (hu1 : u < 193/250) :
+  have hp := pi_lt_22_over_7
+  have hrd : (7-Real.pi)/5 < Boundary.rd := by linarith [Boundary.rd_bounds.1,Real.pi_gt_d2]
+  have hr (a u : ℝ) (ha0 : 1/2 ≤ a) (hu0 : 0 ≤ u) (hau : u ≤ a) (ha1 : a < Boundary.rd) :
       Admissible a u := by
     refine ⟨ha0,hu0,hau,?_⟩
-    dsimp [phi,targetSq]
+    have hs := Boundary.rd_sq
+    dsimp [phi,targetSq] at hs ⊢
     nlinarith
-  fin_cases i <;> apply hr <;> norm_num [capVertex] <;> linarith
+  fin_cases i <;> apply hr <;> norm_num [capVertex] <;> linarith [Real.pi_gt_three]
 
 lemma capVertex_label (i : Fin 3) :
     label (capVertex i).1 (capVertex i).2 = Real.pi/4 := by

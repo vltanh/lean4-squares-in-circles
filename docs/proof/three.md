@@ -707,17 +707,11 @@ $w_T = A_T$. In the same way the cap of $U$ is full, centred at $\theta_U$, and
 $w_U = A_U$.
 
 **3. Both squares are nearly of type A: $b_T \le \frac1{16}$.** Suppose that
-$b_T > \frac1{16}$. The second inequality (6.1) gives
-$19a_T < \frac{209}{16} - \frac8{16} = \frac{201}{16}$, so
-$a_T < \frac{201}{304}$ and
-
-```math
-u_T = \tfrac83\left(a_T - \tfrac12\right) < \tfrac83 \cdot \tfrac{49}{304} = \tfrac{49}{114} .
-```
-
-By Lemma 6.14 (1), $A_T \ge \frac\pi3 + \frac12 - u_T > \frac\pi3 + \frac4{57}$.
-On the other hand $w_T = A_T$ by step 2, and (6.6), $w_U \ge \frac\pi3$ and
-step 1 give
+$b_T > \frac1{16}$. By (6.2), the second inequality (6.1) says
+$b_T \le \frac{57}{64}(\frac12 - u_T)$, so
+$\frac12 - u_T \ge \frac{64}{57}b_T > \frac4{57}$, and by Lemma 6.14 (1),
+$A_T \ge \frac\pi3 + \frac12 - u_T > \frac\pi3 + \frac4{57}$. On the other
+hand $w_T = A_T$ by step 2, and (6.6), $w_U \ge \frac\pi3$ and step 1 give
 
 ```math
 A_T \le \pi - \tfrac\pi3 - \tfrac12 L_S < \tfrac{2\pi}3 - \tfrac\pi4 - \tfrac{13}{58} = \tfrac{5\pi}{12} - \tfrac{13}{58} .
@@ -726,12 +720,11 @@ A_T \le \pi - \tfrac\pi3 - \tfrac12 L_S < \tfrac{2\pi}3 - \tfrac\pi4 - \tfrac{13
 Together, $\frac\pi3 + \frac4{57} < \frac{5\pi}{12} - \frac{13}{58}$, that is
 
 ```math
-\pi > 12\left(\tfrac4{57} + \tfrac{13}{58}\right) = 12 \cdot \tfrac{973}{3306} = \tfrac{1946}{551} > \tfrac{22}7 ,
+\tfrac\pi{12} > \tfrac4{57} + \tfrac{13}{58} > \tfrac1{15} + \tfrac15 = \tfrac4{15} ,
 ```
 
-against $\pi < \frac{22}7$
-([Lemma 3.29](common.md#lemma-329-elementary-estimates) (1)); the last
-inequality holds because $1946 \cdot 7 = 13622 > 12122 = 22 \cdot 551$. So
+so $\pi > \frac{16}5 > \frac{22}7$, against $\pi < \frac{22}7$
+([Lemma 3.29](common.md#lemma-329-elementary-estimates) (1)). So
 $b_T \le \frac1{16}$, and with
 $\frac12 \le a_T \le \frac{11}{16}$ (Lemma 6.8 (1)), $T$ satisfies the
 hypotheses of Lemma 6.14 (2). The same holds for $U$.
@@ -747,9 +740,9 @@ d(\theta_T, \theta_U) \le 2\pi - L_S - A_T - A_U \le \tfrac{4\pi}3 - L_S < \tfra
 **5. Contradiction.** By step 3, Lemma 6.14 (3) applies to $T$ and $U$ and
 gives $d(\theta_T, \theta_U) \ge \frac{2\pi}3 + \frac17$. But
 $\frac{5\pi}6 - \frac{13}{29} < \frac{2\pi}3 + \frac17$, since
-$\frac\pi6 < \frac{11}{21} < \frac{13}{29} + \frac17 = \frac{120}{203}$, the
-first by $\pi < \frac{22}7$ and the second as $11 \cdot 203 = 2233 < 2520 = 120 \cdot 21$.
-This contradicts step 4. $\square$
+$\frac\pi6 < \frac47 = \frac37 + \frac17 < \frac{13}{29} + \frac17$, the first
+by $\pi < \frac{22}7$ and the second as $3 \cdot 29 < 13 \cdot 7$. This
+contradicts step 4. $\square$
 
 *Lean:
 [`Three.no_containing`](../../SquaresInCircles/Three/Containing.lean#L165).*

@@ -75,11 +75,11 @@ lemma sideTarget_concave_second {t s : ℝ}
     have hhi : 1/Z s ≤ 1 := (div_le_one hZ0).mpr hZlow.le
     constructor <;> linarith
   have hr2 : (1/Z s-1)^2 ≤ (2/7:ℝ)^2 := sq_le_sq' hr.1.le (by linarith [hr.2])
-  have hK := dot_ge (p := -Real.sin d) (r := Real.cos d) (c := 181/100)
+  have hK := dot_ge (p := -Real.sin d) (r := Real.cos d) (c := 2)
     (le_of_eq (circle_identities hs).1) (by norm_num)
-    (by unfold targetSq; nlinarith [Real.sin_sq_add_cos_sq d])
+    (by unfold targetSq; linarith [Real.sin_sq_add_cos_sq d])
   have hm := mul_nonneg (sq_nonneg (1/Z s-1))
-    (show 0 ≤ Y s*Real.cos d-X s*Real.sin d+181/100 by linarith)
+    (show 0 ≤ Y s*Real.cos d-X s*Real.sin d+2 by linarith)
   have hdot : 0 ≤ X s*Real.cos d+Y s*Real.sin d := by
     have hX0 : 0 ≤ X s := by linarith [hb.2.2.2.1]
     have hY0 : 0 ≤ Y s := hb.1.le

@@ -13,6 +13,9 @@ noncomputable section
 namespace SquaresInCircles.Seven
 open Boundary
 
+/-- A side source and an axial target with opposite signs at a turn `-z ≤ 0`: as
+`z ≤ 1/6`, the Taylor bounds leave `z (1/5 - (3/5) z - z²/6) ≥ z/12` beyond the
+remainder. -/
 lemma inward_opposite_negative_turn {a u A v : ℝ}
     (h : Admissible a u) (h' : Admissible A v)
     (hT : label a u=side a u) (hA : label A v=axial v)
@@ -37,8 +40,8 @@ lemma inward_opposite_negative_turn {a u A v : ℝ}
   have hpA := mul_nonneg (show 0 ≤ A-1/2 by linarith [h'.half_le]) hs0
   have hpV := mul_nonneg (show 0 ≤ 6/5-(v+1/2) by linarith)
     (sub_nonneg.mpr (Real.cos_le_one z))
-  have hfactor : 1/12 ≤ 1/5-(3/5)*z-z^2/6 := by nlinarith
-  have hprod := mul_nonneg hz.1 (sub_nonneg.mpr hfactor)
+  have hz2 : z^2 ≤ (1/6)^2 := pow_le_pow_left₀ hz.1 hz.2 2
+  have hprod := mul_nonneg hz.1 (show 0 ≤ 1/5-(3/5)*z-z^2/6-1/12 by linarith)
   rw [inward_opposite_formula h h',inward_opposite_side_identity hT hA rfl]
   have hez : label a u+label A v-Real.pi/6 = -z := by dsimp [z]; ring
   rw [hez,Real.sin_neg,Real.cos_neg,abs_neg z,abs_neg (Real.sin z),abs_of_nonneg hs0,

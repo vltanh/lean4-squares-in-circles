@@ -1052,10 +1052,10 @@ $\sin\theta < \frac{u+v}2$ lies left of $\mu$, since the sine increases.
    $y - x \le \alpha - \beta$. Taking $x = 0$, or $y = 0$, gives the two
    particular bounds, as $\arcsin 0 = 0$.
 3. Put $y = x + \frac{x^3}4$. Since $x^2 \le \frac9{25}$,
-   $y \le (1 + \frac9{100})x = \frac{109}{100}x \le \frac{327}{500} < \frac\pi2$.
+   $y \le (1 + \frac9{100})x = \frac{109}{100}x < 1 < \frac\pi2$.
    For $y \ge 0$, $\sin y \ge y - \frac{y^3}6$, and
    $y - \frac{y^3}6 \ge x$ because $\frac{y^3}6 \le \frac16\left(\frac{109}{100}\right)^3x^3 < \frac{x^3}4$,
-   as $\left(\frac{109}{100}\right)^3 = 1.295029 < \frac32$. So $\sin y \ge x$
+   as $\left(\frac{109}{100}\right)^3 < 1.3 < \frac32$. So $\sin y \ge x$
    with $y \in [0, \frac\pi2]$, and $\arcsin x \le y$ because $\arcsin$ is
    increasing and $\arcsin(\sin y) = y$.
 4. Both $\arcsin u$ and $\arcsin v$ lie in $[0, \frac\pi2]$. The sine is
@@ -1088,7 +1088,7 @@ $\sin\theta < \frac{u+v}2$ lies left of $\mu$, since the sine increases.
 [`arcsin_le_cubic`](../../SquaresInCircles/Common/Trigonometry.lean#L739),
 [`arcsin_sum_gt_of_sin_lt`](../../SquaresInCircles/Common/Trigonometry.lean#L751),
 [`Five.sqrt_five_gt`](../../SquaresInCircles/Five/Exterior.lean#L36),
-[`Five.arc_length`](../../SquaresInCircles/Five/Exterior.lean#L63). (The value
+[`Five.arc_length`](../../SquaresInCircles/Five/Exterior.lean#L65). (The value
 of the cosine in (5) comes from mathlib.)*
 
 ## 3.9 Recognising a model

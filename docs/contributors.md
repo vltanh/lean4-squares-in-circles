@@ -122,3 +122,12 @@ Times are rough commit times, in US Central time (UTC−5).
   of seven squares by a square in the target height plus an affine part that
   is positive at both ends of its range, one end by Taylor bounds and the
   other by concavity and one value.
+* **Around 12:20 — no long fractions.** Claude Opus 5.5, in Claude Code,
+  removed every fraction with four or more digits from the proofs of three
+  and five squares, Chapter 9 and Appendices A to D, mostly by better
+  arguments: the small turns of the forward axis are bounded at the
+  transition state, where the force lies between the normals of the circle and
+  of the tie line; the transition profile is tested at the diagonal corner,
+  where X/Z = 12/13 exactly; elsewhere the leading terms suffice, or concavity
+  and one value. Brackets of irrational constants are written as short
+  decimals, in the proofs and in the Lean.

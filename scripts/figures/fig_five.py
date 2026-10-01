@@ -153,24 +153,24 @@ def third_side():
 
 
 def arcsine_region():
-    """Lemma 8.7: its region in the (x, y)-plane, split into the three cases
-    of the proof, below the level curve of the arcsine sum at pi/10."""
-    q = 23 / 60
-    s = 237 / 1000
+    """Lemma 8.8: its region in the (x, y)-plane, split at x = 2/5 into the
+    two cases of the proof, below the level curve of the arcsine sum at
+    pi/10."""
+    q = 2 / 5
+    s = SQ5 - 2
     xc = (1 - s) / 2
     yc = s - xc
-    orange, blue, green, purple = COLORS[1], COLORS[0], COLORS[2], COLORS[3]
+    orange, blue, purple = COLORS[1], COLORS[0], COLORS[3]
     f = Figure(-0.1, 0.72, -0.6, 0.47, 540)
     region = [(0, -0.5), (0.5, -0.5), (xc, yc), (0, s)]
-    case1 = [(0, 0), (s, 0), (0, s)]
-    case2 = [(0, -0.5), (q, -0.5), (q, 1 - 3 * q), (xc, yc), (s, 0), (0, 0)]
-    case3 = [(q, -0.5), (0.5, -0.5), (q, 1 - 3 * q)]
-    for poly, k in ((case1, 2), (case2, 0), (case3, 3)):
+    case1 = [(0, -0.5), (q, -0.5), (q, 1 - 3 * q), (xc, yc), (0, s)]
+    case2 = [(q, -0.5), (0.5, -0.5), (q, 1 - 3 * q)]
+    assert xc < q
+    for poly, k in ((case1, 0), (case2, 3)):
         f.polygon(poly, fill=FILLS[k], stroke='none')
     f.polygon(region, stroke=INK, width=1.6)
     f.line((q, -0.5), (q, 1 - 3 * q), stroke=INK, width=1, dash='3 3')
     f.line((xc, yc), (0.5, s - 0.5), stroke=INK, width=1, dash='1 3')
-    f.line((0, 0), (s, 0), stroke=INK, width=1, dash='3 3')
     # The level curve arcsin(6x/5) + arcsin(6y/5) = pi/10.
     level = []
     for k in range(101):
@@ -179,36 +179,41 @@ def arcsine_region():
         level.append((x, y))
     for k in range(100):
         f.line(level[k], level[k + 1], stroke=orange, width=1.8)
+    # Without the side 3x + y <= 1 the lemma fails at x = 1/2.
+    assert level[-1][1] < s - 0.5
     worst = max(math.asin(1.2 * x) + math.asin(1.2 * y)
                 for x in (0.5 * i / 400 for i in range(401))
                 for y in (-0.5 + j / 400 for j in range(401))
                 if x + y <= s and 3 * x + y <= 1)
-    assert worst < 313 / 1000 < math.pi / 10
+    assert worst < 0.314 < math.pi / 10
+    # The bounds of the proof: sqrt 5 - 2 < 0.237, and the two cases.
+    assert 2.237 ** 2 > 5 and 54 / 125 * q ** 3 < 0.0277
+    assert 6 / 5 * 0.237 + 0.0277 < 0.314
+    assert abs(6 / 5 / 5 + 54 / 125 / 8 - 0.294) < 1e-12
     # Axes, ticks and labels.
     f.line((-0.06, 0), (0.6, 0), width=1, arrow=True)
     f.line((0, -0.58), (0, 0.45), width=1, arrow=True)
     f.text((0.6, -0.03), 'x', anchor='end')
     f.text((-0.02, 0.44), 'y', anchor='end')
-    for x, label in ((0.5, '½'), (q, '23/60')):
+    for x, label in ((0.5, '½'), (q, '2/5')):
         f.line((x, -0.51), (x, -0.49), width=1)
         f.text((x, -0.535), label, size=12, italic=False)
     f.line((-0.01, -0.5), (0.01, -0.5), width=1)
     f.text((-0.02, -0.5), '−½', size=12, italic=False, anchor='end')
     f.line((-0.01, s), (0.01, s), width=1)
-    f.text((-0.02, s), '237/1000', size=11, italic=False, anchor='end')
-    f.text((0.06, 0.06), '(i)', size=14, italic=False, color=green)
-    f.text((0.15, -0.3), '(ii)', size=14, italic=False, color=blue)
-    f.text((0.425, -0.42), '(iii)', size=13, italic=False, color=purple)
-    f.text((0.505, s - 0.5), 'x + y = 237/1000', size=12, italic=False,
+    f.text((-0.02, s), '√5 − 2', size=11, italic=False, anchor='end')
+    f.text((0.15, -0.3), '(i)', size=14, italic=False, color=blue)
+    f.text((0.437, -0.42), '(ii)', size=13, italic=False, color=purple)
+    f.text((0.505, s - 0.5), 'x + y = √5 − 2', size=12, italic=False,
            anchor='start')
     f.text((0.46, -0.35), '3x + y = 1', size=12, italic=False,
            anchor='start')
     f.text((0.03, 0.3), 'sum = π/10', size=12, italic=False, color=orange,
            anchor='start')
     save(f, 'five-arcsine-region', 'The region of the arcsine-sum lemma in the '
-         'plane of x and y, cut by x + y at most 237/1000 and 3x + y at most '
-         '1, split into the three cases of the proof; it lies below the curve '
-         'where the arcsine sum equals pi/10')
+         'plane of x and y, cut by x + y at most root 5 - 2 and 3x + y at '
+         'most 1, split at x = 2/5 into the two cases of the proof; it lies '
+         'below the curve where the arcsine sum equals pi/10')
 
 
 def arc_cases():

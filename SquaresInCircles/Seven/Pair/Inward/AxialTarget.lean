@@ -106,7 +106,7 @@ lemma inward_axial_nonpositive_turn {a u A v : ℝ} (t : TransverseSign)
     (he : label a u-t.coe*label A v-Real.pi/6 ≤ 0) :
     0 < pairSupport a u A v .positive t 2 gap := by
   let z := -(label a u-t.coe*label A v-Real.pi/6)
-  have hz : 0 ≤ z ∧ z ≤ Real.pi/2 := by
+  have hz : 0 ≤ z ∧ z ≤ 5*Real.pi/12 := by
     obtain ⟨h0,-⟩ := h.label_mem
     obtain ⟨h1,h2⟩ := h'.label_mem
     dsimp [z]
@@ -117,11 +117,12 @@ lemma inward_axial_nonpositive_turn {a u A v : ℝ} (t : TransverseSign)
     dsimp [axial]
     ring
   have hs := Real.sin_nonneg_of_nonneg_of_le_pi hz.1 (by linarith [Real.pi_pos])
-  have hc := Real.cos_nonneg_of_mem_Icc ⟨by linarith [Real.pi_pos],hz.2⟩
-  have hp := inward_turn_profile hz
-  have h0 := mul_nonneg hc (show 0 ≤ 1+2*Real.pi/15-a-u-1/200 by
+  have hc : 0 < Real.cos z := Real.cos_pos_of_mem_Ioo
+    ⟨by linarith [Real.pi_pos],by linarith [Real.pi_pos]⟩
+  have hp := inward_turn_profile ⟨hz.1,by linarith [Real.pi_pos]⟩
+  have h0 := mul_pos hc (show 0 < 1+2*Real.pi/15-a-u by
     linarith [axial_sum_lt h hA,Real.pi_gt_d2])
-  have h1 := mul_nonneg (sub_nonneg.mpr (Real.cos_le_one z)) (show 0 ≤ 5/4-a-1/200 by
+  have h1 := mul_nonneg (sub_nonneg.mpr (Real.cos_le_one z)) (show 0 ≤ 5/4-a by
     linarith [h.a_le_sqrt_three_sub_half,sqrt_three_bounds.2])
   have h2 := mul_nonneg (show 0 ≤ A-1/2 by linarith [h'.half_le]) hs
   rw [pairSupport_inward t h h',show label a u-t.coe*label A v-Real.pi/6 = -z by dsimp [z]; ring,

@@ -138,8 +138,8 @@ lemma side_selected_label_gt {a u : ℝ} (h : Admissible a u)
   by_contra hn
   linarith [Real.pi_gt_d2]
 
-/-- At `a ≥ 9/8` the side label forces `u > 9/32`, and the corner
-`(9/8, 9/32)` lies outside the disk. -/
+/-- At `a ≥ 9/8` the side label forces `u > 29/100`, and the corner
+`(9/8, 29/100)` lies outside the disk. -/
 lemma side_selected_a_lt {a u : ℝ} (h : Admissible a u)
     (hsel : label a u = side a u) : a < 9/8 := by
   have hl := side_selected_label_gt h hsel
@@ -148,7 +148,7 @@ lemma side_selected_a_lt {a u : ℝ} (h : Admissible a u)
   dsimp [side] at hl
   dsimp [phi,targetSq] at hp
   by_contra hn
-  have hu : (9 : ℝ)/32 < u := by linarith [pi_lt_22_over_7]
+  have hu : (29 : ℝ)/100 < u := by linarith [Real.pi_lt_d4]
   nlinarith
 
 lemma side_selected_a_gt {a u : ℝ} (h : Admissible a u)
@@ -157,7 +157,7 @@ lemma side_selected_a_gt {a u : ℝ} (h : Admissible a u)
   have hq := h.label_le_quarter
   rw [hsel] at ht hq
   dsimp [side,axial] at ht hq
-  linarith [pi_lt_22_over_7]
+  linarith [Real.pi_lt_d4]
 
 lemma axial_tie_line {a u : ℝ} (h : Admissible a u)
     (hsel : label a u = axial u) : 9*a+11*u ≤ 2*Real.pi+7 := by
@@ -172,7 +172,7 @@ lemma axial_sum_lt {a u : ℝ} (h : Admissible a u)
     (hsel : label a u = axial u) : a+u < (113 : ℝ)/80 := by
   have ht := axial_tie_line h hsel
   by_contra hn
-  have hu : u < 23/80 := by linarith [pi_lt_22_over_7]
+  have hu : u < 23/80 := by linarith [Real.pi_lt_d4]
   have hp := h.phi_le
   dsimp [phi,targetSq] at hp
   nlinarith [h.u_nonneg]
@@ -187,7 +187,7 @@ lemma side_remainder_quadratic {a u : ℝ} (h : Admissible a u)
   have hD : D ≤ 4/15 := by
     have hh := h.label_le_quarter
     dsimp [D]
-    linarith [pi_lt_22_over_7]
+    linarith [Real.pi_lt_d4]
   have hx : a-1 = -(4/5)*D-(2/15)*W := by
     have hh := side_identity_radial a u
     rw [← hsel] at hh
@@ -215,7 +215,7 @@ lemma side_remainder_quadratic {a u : ℝ} (h : Admissible a u)
 def chartMarker {S : UnitSquare} {o : Point} (C : SquareChart S o) : Direction :=
   chartAngle C.phase C.reversed (label C.a C.b)
 
-lemma sqrt_three_bounds : (173 : ℝ)/100 < Real.sqrt 3 ∧ Real.sqrt 3 < 1733/1000 := by
+lemma sqrt_three_bounds : (1.73 : ℝ) < Real.sqrt 3 ∧ Real.sqrt 3 < 1.733 := by
   have hs := Real.sq_sqrt (show (0 : ℝ) ≤ 3 by norm_num)
   constructor <;> nlinarith [Real.sqrt_nonneg (3 : ℝ)]
 
@@ -252,7 +252,7 @@ lemma asin_line_mono :
 
 lemma marker_lower_endpoint {a u : ℝ} (h : Admissible a u) :
     Real.arcsin (u-1/2)+1/2 < label a u := by
-  have hasin : Real.arcsin (u-1/2) ≤ u-1/2+1331/256000 := by
+  have hasin : Real.arcsin (u-1/2) ≤ u-1/2+(11/40)^3/4 := by
     by_cases h0 : 0 ≤ u-1/2
     · have hb := arcsin_le_cubic h0 (by linarith [h.u_lt])
       have hc : (u-1/2)^3 ≤ (11/40 : ℝ)^3 := pow_le_pow_left₀ h0 (by linarith [h.u_lt]) 3
@@ -267,14 +267,9 @@ lemma marker_lower_endpoint {a u : ℝ} (h : Admissible a u) :
     rw [neg_div,Real.arcsin_neg,asin_half] at hm
     dsimp [axial]
     linarith
-  have hcs : (3/4)*(a+1/2)+(2/3)*(u+1/2) < 2171/1200 := by
-    have hid : ((3/4)*(a+1/2)+(2/3)*(u+1/2))^2+
-        ((2/3)*(a+1/2)-(3/4)*(u+1/2))^2 = (145/144)*phi a u := by
-      dsimp [phi]; ring
-    have hh := h.phi_le
-    dsimp [targetSq] at hh
-    have hs := sq_nonneg ((2/3)*(a+1/2)-(3/4)*(u+1/2))
-    nlinarith
+  -- the side term, by Cauchy–Schwarz on the disk: `(3/4)(a+1/2)+(2/3)(u+1/2) < 43/24+7/400`
+  have hcs := dot_gt (p := -3/4) (r := -2/3) (c := 43/24+7/400) h.phi_le (by norm_num)
+    (by norm_num [targetSq])
   have hT : Real.arcsin (u-1/2)+1/2 < side a u := by
     dsimp [side]
     linarith
@@ -452,20 +447,20 @@ lemma marker_vertical_endpoint {a u : ℝ} (h : Admissible a u) :
     linarith
   have hb := arcEnvelope_bound hx
   have hl := h.label_le_side
-  have hpi := Real.pi_gt_d4
+  have hpi := Real.pi_gt_d2
   change label a u+1/2 < Real.arccos x
   rw [Real.arccos_eq_pi_div_two_sub_arcsin]
   linarith
 
 lemma marker_horizontal_endpoint {a u : ℝ} (h : Admissible a u) (hu : u ≤ 1/2) :
     label a u+1/2 < Real.arcsin (u+1/2) := by
-  have hs : Real.sin (63/100 : ℝ) < 3/5 := by
-    have hb := sin_upper_five (x := 63/100) (by norm_num)
+  have hs : Real.sin (5/8 : ℝ) < 3/5 := by
+    have hb := sin_upper_five (x := 5/8) (by norm_num)
     norm_num at hb ⊢
     linarith
-  have ha : (63/100 : ℝ) < Real.arcsin (3/5 : ℝ) :=
+  have ha : (5/8 : ℝ) < Real.arcsin (3/5 : ℝ) :=
     (Real.lt_arcsin_iff_sin_lt'
-      (show (63/100 : ℝ) ∈ Ico (-(Real.pi/2)) (Real.pi/2) by
+      (show (5/8 : ℝ) ∈ Ico (-(Real.pi/2)) (Real.pi/2) by
         constructor <;> linarith [Real.two_le_pi])).mpr hs
   -- `(5/4) y - arcsin y` is largest at `y = 3/5`
   have ht : Real.arcsin (3/5 : ℝ)+(5/4)*(u+1/2-3/5) ≤ Real.arcsin (u+1/2) := by

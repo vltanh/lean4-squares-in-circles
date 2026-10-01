@@ -350,8 +350,7 @@ $(1, \frac12)$ and the axial states $(a, 0)$ on the bottom edge.
 Let $(a, u)$ be admissible. Then $a \le \sqrt3 - \frac12$ and
 $a + u < \frac{31}{20}$. Moreover $1.73 < \sqrt3 < 1.733$.
 
-*Proof.* This is part of [Lemma 9.5](seven.md#lemma-95-admissible-states) (2), since $1.73 = \frac{173}{100}$ and
-$1.733 = \frac{1733}{1000}$. $\square$
+*Proof.* This is part of [Lemma 9.5](seven.md#lemma-95-admissible-states) (2). $\square$
 
 *Lean:
 [`Seven.Admissible.a_le_sqrt_three_sub_half`](../../SquaresInCircles/Seven/Exterior.lean#L62),
@@ -394,7 +393,7 @@ Let $(a, u)$ be admissible and $\ell = \ell(a, u)$.
    and the *diagonal state* of label $\tau$ is $(\delta(\tau), \delta(\tau))$
    with $\delta(\tau) = \frac15(2\pi + 7 - 12\tau)$.
 4. The *transition state* $(a_0, u_0)$ and its label $s_0$: with $M = 2\pi + 17$
-   and $J = \sqrt{\frac{1313}2 - M^2}$,
+   and $J = \sqrt{202\cdot\frac{13}4 - M^2}$, where $202 = 9^2 + 11^2$,
 
    ```math
    X_0 = \tfrac1{202}(9M + 11J), \quad Y_0 = \tfrac1{202}(11M - 9J), \quad
@@ -436,7 +435,7 @@ $\mathrm{side}(\alpha(\tau), \frac45\tau) = \tau = \mathrm{axial}(\frac45\tau)$.
 
 ### Lemma B.10 (the transition state)
 
-1. $\frac{1313}2 - M^2 > 0$, so $J$ is well defined, and
+1. $202\cdot\frac{13}4 - M^2 > 0$, so $J$ is well defined, and
    $10.69547 < J < 10.69549$.
 2. $X_0^2 + Y_0^2 = \frac{13}4$, $9a_0 + 11u_0 = 2\pi + 7$, and
    $\alpha(s_0) = a_0$.
@@ -447,16 +446,13 @@ $\mathrm{side}(\alpha(\tau), \frac45\tau) = \tau = \mathrm{axial}(\frac45\tau)$.
    $\ell(a_0, u_0) = \mathrm{axial}(u_0) = \mathrm{side}(a_0, u_0) = s_0$.
 
 *Proof.* (1) From $3.141592 < \pi < 3.141593$ we get
-$23.283184 < M < 23.283186$, hence
+$23.283184 < M < 23.283186$. As $202\cdot\frac{13}4 = 656.5$, squaring shows
 
 ```math
-\begin{aligned}
-\tfrac{1313}2 - M^2 &> 656.5 - 23.283186^2 = 114.393249689404 > 114.3930785209 = 10.69547^2,\\
-\tfrac{1313}2 - M^2 &< 656.5 - 23.283184^2 = 114.393342822144 < 114.3935063401 = 10.69549^2 .
-\end{aligned}
+10.69547^2 < 656.5 - 23.283186^2 < 656.5 - M^2 < 656.5 - 23.283184^2 < 10.69549^2 .
 ```
 
-(2) Expanding, and using $M^2 + J^2 = \frac{1313}2$,
+(2) Expanding, and using $M^2 + J^2 = 202\cdot\frac{13}4$,
 
 ```math
 (9M + 11J)^2 + (11M - 9J)^2 = 202\left(M^2 + J^2\right) = 202^2\cdot\tfrac{13}4,
@@ -468,15 +464,10 @@ $9a_0 + 11u_0 = M - 10 = 2\pi + 7$. Then
 $\alpha(s_0) = \frac{2\pi + 7}9 - \frac{44}{45}\cdot\frac54 u_0$, which is
 $\frac19(2\pi + 7 - 11u_0) = a_0$.
 
-(3) By (1) and the bounds on $M$, $9M + 11J$ lies between
-$9(23.283184) + 11(10.69547) = 327.198826$ and
-$9(23.283186) + 11(10.69549) = 327.199064$, and $11M - 9J$ between
-$11(23.283184) - 9(10.69549) = 159.855614$ and
-$11(23.283186) - 9(10.69547) = 159.855816$. Since $202(1.61979) = 327.19758$,
-$202(1.6198) = 327.1996$, $202(0.79136) = 159.85472$ and
-$202(0.79137) = 159.85674$, we get $1.61979 < X_0 < 1.6198$ and
-$0.79136 < Y_0 < 0.79137$. The coarse bounds follow, with
-$s_0 = 1.25u_0 \in (0.3642, 0.36422)$.
+(3) By (1) and the bounds on $M$, $327.1988 < 9M + 11J < 327.1991$ and
+$159.8556 < 11M - 9J < 159.8559$. Dividing by 202 gives
+$1.61979 < X_0 < 1.6198$ and $0.79136 < Y_0 < 0.79137$. The coarse bounds
+follow, with $s_0 = 1.25u_0 \in (0.3642, 0.36422)$.
 
 (4) By (3), $0 \le u_0 \le a_0$ and $a_0 \ge \frac12$, and
 $\varphi(a_0, u_0) = X_0^2 + Y_0^2 = \frac{13}4$. By (2) and the identity at the
@@ -501,12 +492,12 @@ and $s_0 < \frac25 < \frac\pi4$. $\square$
    $\frac15(7 - \pi) < r_d$.
 
 *Proof.* (1) The identity is the definition, and
-$1.27475^2 = 1.6249875625 < \frac{13}8 < 1.6250130576 = 1.27476^2$. (2)
+$1.27475^2 < \frac{13}8 < 1.27476^2$. (2)
 $12t_d = 2\pi + 7 - 5r_d$, so $\delta(t_d) = \frac15(2\pi + 7 - 12t_d) = r_d$.
 Next, $t_d$ exceeds $\frac{3.141592}6 + \frac7{12} - \frac5{12}(0.77476)$, which
 is more than $0.7841 > \frac{18}{25}$. Finally $t_d < \frac\pi4$ is equivalent
 to $7 - 5r_d < \pi$, and
-$\frac15(7 - \pi) < \frac15(7 - 3.141592) = 0.7716816 < r_d$. $\square$
+$\frac15(7 - \pi) < \frac15(7 - 3.1415) < 0.7717 < r_d$. $\square$
 
 *Lean:
 [`Seven.Boundary.rd_sq`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L104),
@@ -563,9 +554,10 @@ $u_0 \le u \le r_d$, (2) gives
 $\gamma(u) \ge a_0 - (u - u_0) \ge a_0 - \frac{11}9(u - u_0) = \lambda(u)$.
 
 (4) By (2) and (3), $\gamma(u), \gamma(v) \ge \gamma(u_0) = a_0$, so
-$\gamma(u) + \gamma(v) + 1 \ge 2a_0 + 1 > 3.23958$, while
-$2(u + v + 1) \le 4u_0 + 2 < 3.16548$ (Lemma B.10). The quotient in the proof of
-(2) is therefore at most $\frac12(v - u)$.
+$\gamma(u) + \gamma(v) + 1 \ge 2a_0 + 1 > \frac{16}5$, while
+$2(u + v + 1) \le 4u_0 + 2 < \frac{16}5$, as $a_0 > \frac{11}{10}$ and
+$u_0 < \frac3{10}$ (Lemma B.10). The quotient in the proof of (2) is therefore
+at most $\frac12(v - u)$.
 
 (5) $(a + \frac12)^2 = \varphi(a, w) - (w + \frac12)^2$ is positive and at most
 $\frac{13}4 - (w + \frac12)^2$, and $a + \frac12 > 0$; take square roots.
@@ -591,13 +583,13 @@ Let $N = \frac{97}{144}$. For $s_0 \le \tau \le t_d$ put
 
 ```math
 D(\tau) = \tfrac\pi6 + \tfrac{19}{24} - \tau, \qquad
-Z(\tau) = \sqrt{\tfrac{1261}{576} - D(\tau)^2}, \qquad
+Z(\tau) = \sqrt{\tfrac{13}4N - D(\tau)^2}, \qquad
 X(\tau) = \tfrac1N\left(\tfrac34 D(\tau) + \tfrac13 Z(\tau)\right), \qquad
 Y(\tau) = \tfrac1N\left(-\tfrac13 D(\tau) + \tfrac34 Z(\tau)\right),
 ```
 
-where $\frac{1261}{576} = \frac{13}4 N$. The *top* of the side label $\tau$ is
-the state $(\hat a(\tau), \hat u(\tau))$ with
+The *top* of the side label $\tau$ is the state $(\hat a(\tau), \hat u(\tau))$
+with
 
 ```math
 \left(\hat a(\tau), \hat u(\tau)\right) = \left(X(\tau) - \tfrac12,\ Y(\tau) - \tfrac12\right) \text{ for } s_0 \le \tau \le t_d, \qquad
@@ -652,9 +644,9 @@ Let $s_0 \le \tau \le t_d$ and write $D, Z, X, Y$ for their values at $\tau$.
    $\left(\frac XZ\right)' = -\frac{39}{16Z^3}$.
 
 *Proof.* (1) $D$ decreases in $\tau$. By Lemmas B.10 and B.11,
-$D(t_d) = \frac5{12}(r_d + \frac12) > \frac5{12}(1.27475) > 0.5311$ and
-$D(s_0) < \frac{3.141593}6 + \frac{19}{24} - 0.3642 < 0.9511$. So
-$D^2 < 1 < \frac{1261}{576}$ and $Z > 0$. The two linear identities follow by
+$D(t_d) = \frac5{12}(r_d + \frac12) > \frac5{12}\cdot\frac65 = \frac12$ and, as
+$\pi < 3.15$, $D(s_0) < \frac{3.15}6 + \frac{19}{24} - \frac9{25} < 1$. So
+$D^2 < 1 < \frac{13}4N$ and $Z > 0$. The two linear identities follow by
 substituting the definitions of $X$ and $Y$ (the coefficients combine through
 $\frac9{16} + \frac19 = N$), and then Lagrange's identity gives
 
@@ -682,7 +674,7 @@ At $t_d$, using $(r_d + \frac12)^2 = \frac{13}8$,
 ```math
 D(t_d) = \tfrac{19}{24} - \tfrac7{12} + \tfrac5{12}r_d = \tfrac5{12}\left(r_d + \tfrac12\right),
 \qquad
-Z(t_d)^2 = \tfrac{1261}{576} - \tfrac{25}{144}\cdot\tfrac{13}8 = \tfrac{2197}{1152} = \left(\tfrac{13}{12}\left(r_d + \tfrac12\right)\right)^2 ,
+Z(t_d)^2 = \tfrac{13}4N - \tfrac{25}{144}\cdot\tfrac{13}8 = \left(\tfrac{194}{144} - \tfrac{25}{144}\right)\tfrac{13}8 = \left(\tfrac{13}{12}\left(r_d + \tfrac12\right)\right)^2 ,
 ```
 
 so $Z(t_d) = \frac{13}{12}(r_d + \frac12)$; and since
@@ -693,13 +685,15 @@ $X(t_d) = Y(t_d) = r_d + \frac12$.
 (3) As $\tau$ increases, $D$ decreases and stays positive, so $Z$ increases;
 hence $Y = \frac1N(-\frac13 D + \frac34 Z)$ increases, and
 $Y \ge Y(s_0) = Y_0 > 0$. Next $X - Y = \frac1{12N}(13D - 5Z)$, and $5Z \le 13D$
-is equivalent to $25(\frac{1261}{576} - D^2) \le 169D^2$, that is, to
-$D^2 \ge \frac{325}{1152} = D(t_d)^2$, which holds since $D \ge D(t_d) > 0$. So
-$Y \le X$. Then $2X^2 \ge X^2 + Y^2 = \frac{13}4$ gives
-$X^2 \ge \frac{13}8 > \frac{25}{16}$, and $X^2 = \frac{13}4 - Y^2$ is at most
-$\frac{13}4 - Y_0^2 = X_0^2$, so $X \le X_0$. For $Z$, first
-$Z = \frac13 X + \frac34 Y$ exceeds
-$\frac5{12} + \frac34\cdot\frac{79}{100} = \frac{1211}{1200} > 1$. Second,
+is equivalent to $25Z^2 \le 169D^2$, that is, to
+$25\cdot\frac{13}4N \le 194D^2$. As $194 = 288N$, this says
+$D^2 \ge \frac{25}{144}\cdot\frac{13}8 = D(t_d)^2$, which holds since
+$D \ge D(t_d) > 0$. So $Y \le X$. Then
+$2X^2 \ge X^2 + Y^2 = \frac{13}4$ gives $X^2 \ge \frac{13}8 > \frac{25}{16}$,
+and $X^2 = \frac{13}4 - Y^2$ is at most $\frac{13}4 - Y_0^2 = X_0^2$, so
+$X \le X_0$. For $Z$, first
+$Z^2 = \frac{13}4N - D^2 > \frac{13}4\cdot\frac23 - 1 > 1$ by (1), as
+$N > \frac23$. Second,
 $(X + Y)^2 \le 2(X^2 + Y^2) = \frac{13}2 < (\frac{51}{20})^2$, so
 
 ```math
@@ -725,7 +719,7 @@ YZ + XD = Y\left(\tfrac13 X + \tfrac34 Y\right) + X\left(\tfrac34 X - \tfrac13 Y
 $\square$
 
 *Lean:
-[`Seven.Boundary.D_range`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L126),
+[`Seven.Boundary.D_range`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L127),
 [`Seven.Boundary.radicand_pos`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L134),
 [`Seven.Boundary.Z_pos`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L140),
 [`Seven.Boundary.Z_sq`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L143),
@@ -736,11 +730,11 @@ $\square$
 [`Seven.Boundary.D_td`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L117),
 [`Seven.Boundary.side_at_diagonal`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L181),
 [`Seven.Boundary.circle_bounds`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L195),
-[`Seven.Boundary.hasDerivAt_D`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L252),
-[`Seven.Boundary.hasDerivAt_Z`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L257),
-[`Seven.Boundary.hasDerivAt_X`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L268),
-[`Seven.Boundary.hasDerivAt_Y`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L280),
-[`Seven.Boundary.hasDerivAt_Y_prime`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L292).*
+[`Seven.Boundary.hasDerivAt_D`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L255),
+[`Seven.Boundary.hasDerivAt_Z`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L260),
+[`Seven.Boundary.hasDerivAt_X`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L271),
+[`Seven.Boundary.hasDerivAt_Y`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L283),
+[`Seven.Boundary.hasDerivAt_Y_prime`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L295).*
 
 ## B.4 Segments of constant label
 
@@ -975,8 +969,9 @@ F(\tau) = 1 - Y(\tau) - \left(a_0 - \tfrac12\right)\sin\theta(\tau) + Y_0\cos\th
 G(\tau) = \tfrac12 - \delta(\tau) - \left(a_0 - \tfrac12\right)\sin\theta(\tau) + Y_0\cos\theta(\tau) \quad (t_d \le \tau \le \tfrac\pi4).
 ```
 
-1. $F(\frac{18}{25}) > \frac1{10000}$ and $|F'(\frac{18}{25})| < \frac1{150}$.
-2. $F''(\tau) > \frac38$ for $\frac25 \le \tau \le t_d$, and $F(\tau) > 0$
+1. The angle $\theta_1 = \theta(t_d)$ lies in $(0.6272, 0.6273)$,
+   $F(t_d) > 0.002$ and $0 < F'(t_d) < 0.044$.
+2. $F''(\tau) > \frac12$ for $\frac25 \le \tau \le t_d$, and $F(\tau) > 0$
    there.
 3. $G$ is nondecreasing on $[t_d, \frac\pi4]$, $G(t_d) = F(t_d)$, and
    $G(\tau) > 0$ there.
@@ -990,7 +985,7 @@ G(\tau) = \tfrac12 - \delta(\tau) - \left(a_0 - \tfrac12\right)\sin\theta(\tau) 
 Since $\frac12 - \hat u(\tau)$ is $1 - Y(\tau)$ for $\tau \le t_d$ and
 $\frac12 - \delta(\tau)$ for $\tau \ge t_d$, $F$ and $G$ are the expression of
 (4) with the source at the top of its segment. Their minimum is small, about
-$5\cdot 10^{-4}$ near $\tau = 0.72$ (Figure B.5).
+$8\cdot 10^{-4}$ near $\tau = 0.72$ (Figure B.5).
 
 *Proof.* By Lemma B.14 (4), $F$ is twice differentiable on $[s_0, t_d]$ with
 
@@ -1001,50 +996,44 @@ F'' = \frac{39}{16Z^3} + \left(a_0 - \tfrac12\right)\sin\theta - Y_0\cos\theta ,
 
 since $\theta' = -1$.
 
-(1) Let $\tau = \frac{18}{25}$. We use $3.1415 < \pi < 3.1416$, the bounds
-$a_0 - \frac12 \in (0.61979, 0.6198)$, $Y_0 \in (0.79136, 0.79137)$ and
-$s_0 \in (0.3642, 0.36422)$ of Lemma B.10, and $N = \frac{97}{144}$.
+(1) At $\tau = t_d$ the point $(X, Y)$ is the diagonal corner: by Lemma B.14
+(2), $X = Y = r_d + \frac12$, and by Lemma B.14 (1),
+$Z = \frac13 X + \frac34 Y = \frac{13}{12}(r_d + \frac12)$. So
+$1 - Y = \frac12 - r_d$ and $\frac XZ = \frac{12}{13}$. The angle
+$\theta_1 = \frac\pi3 - t_d + s_0 = \frac\pi6 - \frac7{12} + \frac5{12}r_d + \frac54u_0$
+lies, by $3.1415 < \pi < 3.1416$ and Lemmas B.10 and B.11, between
 
-- $D = \frac\pi6 + \frac{43}{600} \in (0.59525, 0.59527)$.
-- $Z^2 = \frac{1261}{576} - D^2$ lies between
-  $\frac{1261}{576} - 0.59527^2 > 1.834889$ and
-  $\frac{1261}{576} - 0.59525^2 < 1.834914$; as $1.3545^2 = 1.83467025$ and
-  $1.3547^2 = 1.83521209$, $1.3545 < Z < 1.3547$.
-- $X = \frac1N(\frac34 D + \frac13 Z)$ lies in $(1.33302, 1.33315)$, so
-  $1.3330 < X < 1.3332$; and $Y = \frac1N(-\frac13 D + \frac34 Z) < 1.21377$.
-- $\theta = \frac\pi3 - \frac{18}{25} + s_0$ lies in $(0.69136, 0.69142)$,
-  inside $[0.6913, 0.6915]$, so the Taylor brackets with $l = 0.6913$ and
-  $h = 0.6915$ give $0.63753 < \sin\theta < 0.63771$ and
-  $0.77028 < \cos\theta < 0.77057$.
-- $\frac XZ$ lies between $\frac{1.3330}{1.3547} > 0.98398$ and
-  $\frac{1.3332}{1.3545} < 0.98428$.
+```math
+\tfrac{3.1415}6 - \tfrac7{12} + \tfrac5{12}(0.77475) + \tfrac54(0.29136) > 0.6272
+\qquad\text{and}\qquad
+\tfrac{3.1416}6 - \tfrac7{12} + \tfrac5{12}(0.77476) + \tfrac54(0.29137) < 0.6273 ,
+```
 
-Hence
+and the Taylor brackets with $l = 0.6272$ and $h = 0.6273$ give
+$0.5868 < \sin\theta_1 < 0.587$ and $0.8096 < \cos\theta_1 < 0.8098$. With
+$a_0 - \frac12 \in (0.61979, 0.6198)$ and $Y_0 \in (0.79136, 0.79137)$
+(Lemma B.10),
 
 ```math
 \begin{aligned}
-F\left(\tfrac{18}{25}\right) &> 1 - 1.21377 - 0.6198\cdot 0.63771 + 0.79136\cdot 0.77028 = 0.0005461228 > \tfrac1{10000},\\
-F'\left(\tfrac{18}{25}\right) &< -0.98398 + 0.6198\cdot 0.77057 + 0.79137\cdot 0.63771 = -0.0017161513 ,\\
-F'\left(\tfrac{18}{25}\right) &> -0.98428 + 0.61979\cdot 0.77028 + 0.79136\cdot 0.63753 = -0.002352418 ,
+F(t_d) &= \tfrac12 - r_d - \left(a_0 - \tfrac12\right)\sin\theta_1 + Y_0\cos\theta_1 > 0.5 - 0.77476 - 0.6198\cdot 0.587 + 0.79136\cdot 0.8096 > 0.002,\\
+F'(t_d) &= -\tfrac{12}{13} + \left(a_0 - \tfrac12\right)\cos\theta_1 + Y_0\sin\theta_1 < -\tfrac{12}{13} + 0.6198\cdot 0.8098 + 0.79137\cdot 0.587 < 0.044,\\
+F'(t_d) &> -\tfrac{12}{13} + 0.61979\cdot 0.8096 + 0.79136\cdot 0.5868 > 0 .
 \end{aligned}
 ```
 
-and both bounds on $F'$ lie in $(-\frac1{150}, \frac1{150})$.
-
 (2) For $\frac25 \le \tau \le t_d$, Lemma B.14 (3) gives $Z < \frac75$, so
-$\frac{39}{16Z^3} > \frac{39}{16}\cdot\frac{125}{343}$, and this is
-$\frac{4875}{5488} > \frac78$. The angle $\theta$ lies in
-$(\frac\pi6, \frac\pi2)$: it is at least
-$\frac\pi3 - t_d + s_0 > 0.6272 > \frac\pi6$ and at most
-$\frac\pi3 - \frac25 + s_0 < 1.0115 < \frac\pi2$ (Lemmas B.10, B.11). So
-$\sin\theta \ge \frac12$ and $0 \le \cos\theta \le 1$, and with
-$a_0 - \frac12 > \frac35$ and $Y_0 < \frac45$,
-$F'' > \frac78 + \frac35\cdot\frac12 - \frac45 = \frac38$. Now apply
+$16Z^3 < 16(\frac75)^3 < 44$ and $\frac{39}{16Z^3} > \frac{39}{44} > \frac78$.
+The angle $\theta$ is at least $\theta(t_d) = \theta_1 > 0.6272 > \frac\pi6$ and
+at most $\frac\pi3 - \frac25 + s_0 < \frac\pi3$ (Lemma B.10). So
+$\sin\theta \ge \frac12$ and, by the bracket of $\cos\theta_1$ in (1),
+$0 \le \cos\theta \le \cos\theta_1 < 0.81$; with $a_0 - \frac12 > \frac35$ and
+$Y_0 < \frac45$ this gives
+$F'' > \frac78 + \frac35\cdot\frac12 - \frac45\cdot 0.81 > \frac12$. Now apply
 [Lemma A.3](appendix-a.md#lemma-a3-positivity-from-curvature) on $[\frac25, t_d]$ with the curvature bound
-$\kappa = \frac38$ at the point $\tau^* = \frac{18}{25}$, which lies in the
-interval because $t_d > \frac{18}{25}$: by (1),
-$F'(\tau^*)^2 < \frac1{22500} < \frac3{40000} < 2\kappa F(\tau^*)$, so $F > 0$
-on $[\frac25, t_d]$. Indeed, for every $\tau$ in the interval,
+$\kappa = \frac12$ at the point $\tau^* = t_d$: by (1),
+$F'(\tau^*)^2 < 0.044^2 < 0.002 < 2\kappa F(\tau^*)$, so $F > 0$ on
+$[\frac25, t_d]$. Indeed, for every $\tau$ in the interval,
 
 ```math
 F(\tau) \ge F(\tau^*) + F'(\tau^*)(\tau - \tau^*) + \tfrac\kappa2(\tau - \tau^*)^2
@@ -1056,7 +1045,7 @@ $[0, \frac\pi2]$ (it is at least $\frac\pi3 - \frac\pi4 + s_0 > 0$ and at most
 $\frac\pi3 - t_d + s_0 < \frac\pi2$), and
 $G' = \frac{12}5 + (a_0 - \frac12)\cos\theta + Y_0\sin\theta \ge 0$. Since
 $\delta(t_d) = r_d = Y(t_d) - \frac12$ (Lemmas B.11 and B.14 (2)),
-$\frac12 - \delta(t_d) = 1 - Y(t_d)$ and $G(t_d) = F(t_d) > 0$ by (2). So
+$\frac12 - \delta(t_d) = 1 - Y(t_d)$ and $G(t_d) = F(t_d) > 0$ by (1). So
 $G(\tau) \ge G(t_d) > 0$.
 
 (4) By Proposition B.16 (2), $u \le \hat u(\ell)$. If $\ell \le t_d$, then
@@ -1066,15 +1055,16 @@ $\frac12 - u \ge \frac12 - \delta(\ell)$ and the expression is at least
 $G(\ell) > 0$ by (3). $\square$
 
 *Lean:
-[`Seven.Boundary.transition_actual_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L205),
-[`Seven.Boundary.transitionF`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L92),
-[`Seven.Boundary.transitionF_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L152),
-[`Seven.Boundary.transitionDiagonalF`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L167),
-[`Seven.Boundary.transitionDiagonalF_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L170),
-[`Seven.Boundary.test_point`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L30),
-[`Seven.Boundary.transition_curvature`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L122),
-[`Seven.Boundary.hasDerivAt_transitionF`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L104),
-[`Seven.Boundary.hasDerivAt_transitionFD`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L113).*
+[`Seven.Boundary.transition_actual_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L208),
+[`Seven.Boundary.transitionF`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L41),
+[`Seven.Boundary.transitionF_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L159),
+[`Seven.Boundary.transitionDiagonalF`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L170),
+[`Seven.Boundary.transitionDiagonalF_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L173),
+[`Seven.Boundary.corner_angle_bounds`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L73),
+[`Seven.Boundary.corner_point`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L82),
+[`Seven.Boundary.transition_curvature`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L116),
+[`Seven.Boundary.hasDerivAt_transitionF`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L53),
+[`Seven.Boundary.hasDerivAt_transitionFD`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L62).*
 
 ### Lemma B.19 (the diagonal junction)
 
@@ -1085,25 +1075,25 @@ Let $\theta_d = t_d + s_0 - \frac\pi6$. Then $0.6246 < \theta_d < 0.6248$ and
 ```
 
 *Proof.* $\theta_d = \frac7{12} - \frac5{12}r_d + s_0$, which by Lemmas B.10 and
-B.11 lies between $\frac7{12} - \frac5{12}(0.77476) + 0.3642 > 0.62471$ and
-$\frac7{12} - \frac5{12}(0.77475) + 0.36422 < 0.62475$. The Taylor brackets with
+B.11 lies between $\frac7{12} - \frac5{12}(0.77476) + 0.3642 > 0.6246$ and
+$\frac7{12} - \frac5{12}(0.77475) + 0.36422 < 0.6248$. The Taylor brackets with
 $h = 0.6248$ give
 
 ```math
-0 \le \sin\theta_d \le 0.6248 - \tfrac{0.6248^3}6 + \tfrac{0.6248^5}{120} < 0.584944,
+0 \le \sin\theta_d \le 0.6248 - \tfrac{0.6248^3}6 + \tfrac{0.6248^5}{120} < 0.585,
 \qquad
-\cos\theta_d \ge 1 - \tfrac{0.6248^2}2 + \tfrac{0.6248^4}{24} - \tfrac{0.6248^6}{720} > 0.811078 .
+\cos\theta_d \ge 1 - \tfrac{0.6248^2}2 + \tfrac{0.6248^4}{24} - \tfrac{0.6248^6}{720} > 0.811 .
 ```
 
 So the expression exceeds
-$\frac12 - 0.77476 - 0.6198\cdot 0.584944 + 0.79136\cdot 0.811078$, which is
-more than $0.0045$. $\square$
+$0.5 - 0.77476 - 0.6198\cdot 0.585 + 0.79136\cdot 0.811$, which is more than
+$0.004$. $\square$
 
 *Lean:
-[`Seven.Boundary.diagonalAngle`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L21),
-[`Seven.Boundary.diagonalValue`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L22),
-[`Seven.Boundary.diagonal_angle_bounds`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L71),
-[`Seven.Boundary.diagonal_value_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L77).*
+[`Seven.Boundary.diagonalAngle`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L17),
+[`Seven.Boundary.diagonalValue`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L18),
+[`Seven.Boundary.diagonal_angle_bounds`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L20),
+[`Seven.Boundary.diagonal_value_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L26).*
 
 ### Lemma B.20 (the diagonal profile)
 
@@ -1115,19 +1105,19 @@ more than $0.0045$. $\square$
    K(\ell) = \tfrac65\left(\tfrac\pi6 - \ell\right) + \tfrac{51}{40}\cos\left(\tfrac{7\pi}{12} - \ell\right) - \tfrac{11}{40}\sin\left(\tfrac{7\pi}{12} - \ell\right)
    ```
 
-   is nondecreasing on $[\frac25, \frac\pi4]$, and $K(\ell) > \frac{361}{8000}$
-   there; in particular $K > 0$.
+   is nondecreasing on $[\frac25, \frac\pi4]$, and $K(\ell) > 0$ there.
 
 *Proof.* (1) By [Lemma A.5](appendix-a.md#lemma-a5-concave-trigonometric-sums), the function
 $\frac{51}{40}\sin x + \frac{11}{40}\cos x$ is concave on $[0, \frac\pi2]$,
 which contains the interval (since $\frac\pi{12} < \frac25$), so it suffices to
 check the two ends. At $x = \frac\pi3$ it is $\frac1{80}(51\sqrt3 + 11)$, more
-than $\frac1{80}(51(1.73) + 11) = \frac{9923}{8000} > \frac65$. The right end
-$x_1 = \frac{7\pi}{12} - \frac25$ lies in $(\frac75, \frac\pi2)$, so
-$\cos x_1 \ge 0$ and
-$\sin x_1 \ge \sin\frac75 \ge \frac75 - \frac16(\frac75)^3$, and the value is at
-least
-$\frac{51}{40}(\frac75 - \frac{343}{750}) = \frac{12019}{10000} > \frac65$.
+than $\frac1{80}(51\cdot\frac53 + 11) = \frac65$, as $\sqrt3 > 1.73 > \frac53$.
+The right end is $x_1 = \frac{7\pi}{12} - \frac25 = \frac\pi2 - \epsilon$ with
+$\epsilon = \frac25 - \frac\pi{12}$, and $0 < \epsilon < \frac3{20}$ by
+$3 < \pi < \frac{22}7$. So $\cos x_1 = \sin\epsilon \ge 0$ and
+$\sin x_1 = \cos\epsilon \ge 1 - \frac{\epsilon^2}2 > \frac{16}{17}$ (as
+$\epsilon^2 < \frac2{17}$), and the value at $x_1$ is more than
+$\frac{51}{40}\cdot\frac{16}{17} = \frac65$.
 
 (2) The derivative is
 
@@ -1137,32 +1127,31 @@ K'(\ell) = -\tfrac65 + \tfrac{51}{40}\sin\left(\tfrac{7\pi}{12} - \ell\right) + 
 
 and for $\frac25 \le \ell \le \frac\pi4$ the angle $\frac{7\pi}{12} - \ell$ lies
 in $[\frac\pi3, \frac{7\pi}{12} - \frac25]$, so $K' > 0$ by (1). At
-$\ell = \frac25$ put $\epsilon = \frac25 - \frac\pi{12}$, so that
-$\frac{7\pi}{12} - \frac25 = \frac\pi2 - \epsilon$ and
-$\frac{29}{210} < \epsilon < \frac3{20}$ (by $3 < \pi < \frac{22}7$). Then
-$\sin(\frac\pi2 - \epsilon) \le 1$ and
+$\ell = \frac25$ the angle is $\frac\pi2 - \epsilon$ with $\epsilon$ as in (1),
+and now $\frac{11}{80} < \epsilon < \frac3{20}$ by $3 < \pi < 3.15$. Then
+$\sin(\frac\pi2 - \epsilon) \le 1$ and, as $\epsilon^3 < \frac1{40}$,
 
 ```math
-\cos\left(\tfrac\pi2 - \epsilon\right) = \sin\epsilon \ge \epsilon - \tfrac{\epsilon^3}6 > \tfrac{29}{210} - \tfrac16\left(\tfrac3{20}\right)^3 > \tfrac{27}{200},
+\cos\left(\tfrac\pi2 - \epsilon\right) = \sin\epsilon \ge \epsilon - \tfrac{\epsilon^3}6 > \tfrac{11}{80} - \tfrac1{240} = \tfrac2{15},
 \qquad
-K\left(\tfrac25\right) > \tfrac\pi5 - \tfrac{12}{25} + \tfrac{51}{40}\cdot\tfrac{27}{200} - \tfrac{11}{40} ,
+K\left(\tfrac25\right) > \tfrac\pi5 - \tfrac{12}{25} + \tfrac{51}{40}\cdot\tfrac2{15} - \tfrac{11}{40} = \tfrac\pi5 - \tfrac{117}{200} ,
 ```
 
-which with $\pi > 3.14$ exceeds
-$0.628 - 0.48 + 0.172125 - 0.275 = \frac{361}{8000}$. $\square$
+which is positive as $\pi > 3$. $\square$
 
 *Lean:
-[`Seven.Boundary.diagonalK`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L219),
-[`Seven.Boundary.diagonalK_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L238),
-[`Seven.Boundary.diagonalSlope_gt`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L223).*
+[`Seven.Boundary.diagonalK`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L222),
+[`Seven.Boundary.diagonalK_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L248),
+[`Seven.Boundary.diagonalSlope_gt`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L229).*
 
-![Two graphs. Left: the transition profile F on the interval from 2/5 to td, a convex blue curve falling from about 0.053 to a minimum just above 0 near 18/25 and rising slightly, continued by a short green piece on the tiny interval from td to pi/4, above a dashed orange parabola that touches the curve at the black dot of abscissa 18/25. Right: the profile K on the interval from 2/5 to pi/4, an increasing blue curve from about 0.052 to 0.085, above a dashed orange level line at 361/8000](figures/appb-profiles.svg)
+![Two graphs. Left: the transition profile F on the interval from 2/5 to td, a convex blue curve falling from about 0.053 to a minimum just above 0 near 0.72 and rising slightly up to td, continued by a short green piece on the tiny interval from td to pi/4, above a dashed orange parabola that touches the curve at the black dot at td and dips nearly to 0 near 0.7. Right: the profile K on the interval from 2/5 to pi/4, an increasing blue curve from about 0.052, marked by a dot at 2/5, to 0.085](figures/appb-profiles.svg)
 
 *Figure B.5.* Left: the transition profile of Lemma B.18. The curvature bound
-$F'' > \frac38$ puts $F$ above the parabola of curvature $\frac38$ through its
-value and slope at $\frac{18}{25}$ (dashed), whose minimum is positive; beyond
-$t_d$ the profile $G$ (green) increases. Right: the profile $K$ of Lemma B.20,
-increasing from a value above $\frac{361}{8000}$.
+$F'' > \frac12$ puts $F$ above the parabola of curvature $\frac12$ through its
+value and slope at the diagonal corner $t_d$ (dashed), whose minimum, about
+$3\cdot 10^{-4}$, is positive; beyond $t_d$ the profile $G$ (green) increases.
+Right: the profile $K$ of Lemma B.20, increasing from its positive value at
+$\frac25$ (dot).
 
 ## B.6 The target support on the axial boundary
 
@@ -1317,15 +1306,11 @@ and expanding the cubic $P''$ about $\frac85$,
 P''\left(\tfrac85 + t\right) = -7816 - 35850t - 38400t^2 - 10000t^3 ,
 ```
 
-which is negative for $t \ge 0$. At the ends of the interval
-
-```math
-P\left(\tfrac85\right) = \tfrac{2992}{25}, \qquad P\left(\tfrac74\right) = \tfrac{20113}{256} ,
-```
-
-both positive. By [Lemma A.4](appendix-a.md#lemma-a4-positivity-from-concavity), applied to $P$ with its derivatives
-$P'$ and $P''$, $P > 0$ on $[\frac85, \frac74]$; its proof shows more: $P$ lies
-above its chord, so $P \ge \frac{20113}{256}$ there. Hence $1 - \rho' > 0$.
+which is negative for $t \ge 0$. At the ends of the interval,
+$P(\frac85) = 119.68$ and $P(\frac74) > 78.5$ are positive. By
+[Lemma A.4](appendix-a.md#lemma-a4-positivity-from-concavity), applied to $P$ with its derivatives $P'$ and $P''$,
+$P > 0$ on $[\frac85, \frac74]$; its proof shows more: $P$ lies above its
+chord, so $P > 78.5$ there. Hence $1 - \rho' > 0$.
 
 (5) Since $\frac\pi{12} = \frac\pi3 - \frac\pi4$, the subtraction formulas give
 
@@ -1360,11 +1345,11 @@ and $\cos\frac\pi{12} > 0$. $\square$
 [`Seven.Boundary.ratio_derivative_lt_one`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L105),
 [`Seven.Boundary.tan_twelfth_le`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L147).*
 
-![Two graphs. Left: the quintic P on the interval from 8/5 to 7/4, a concave blue arch from 2992/25, about 120, at 8/5 up to about 132 and down to 20113/256, about 79, at 7/4, continued in grey beyond both ends, above the orange chord joining its two end points and far above the axis. Right: on the interval from 0 to s0, the increasing blue ratio rho, from rho(0), about 0.25, to about 0.45, below the orange curve tan d for the source label pi/4, which starts just above it at 2 - root 3, about 0.27, and rises to about 0.72](figures/appb-ratio.svg)
+![Two graphs. Left: the quintic P on the interval from 8/5 to 7/4, a concave blue arch from 119.68 at 8/5 up to about 132 and down to about 78.6 at 7/4, continued in grey beyond both ends, above the orange chord joining its two end points and far above the axis. Right: on the interval from 0 to s0, the increasing blue ratio rho, from rho(0), about 0.25, to about 0.45, below the orange curve tan d for the source label pi/4, which starts just above it at 2 - root 3, about 0.27, and rises to about 0.72](figures/appb-ratio.svg)
 
 *Figure B.6.* Lemma B.22. (a) The quintic $P$ (blue) is concave on
 $[\frac85, \frac74]$, so it lies above its chord (orange) through the positive
-end values $P(\frac85) = \frac{2992}{25}$ and $P(\frac74) = \frac{20113}{256}$.
+end values $P(\frac85) = 119.68$ and $P(\frac74) \approx 78.57$.
 (b) The ratio $\rho$ (blue) and $\tan d$ (orange) on $[0, s_0]$ for the source
 label $\ell = \frac\pi4$, where the angle $d = \frac\pi{12} + \ell'$ is
 smallest. At $\ell' = 0$, $\rho(0) \approx 0.2525$ lies just below
@@ -1542,12 +1527,12 @@ the source: $z - x = 2\pi - y$ with $y = \frac\pi3 - \ell - \frac12$, so
 \sigma_2\left(\tfrac\pi3\right) \ge \tfrac12 - a + \cos y .
 ```
 
-Since $0 \le \ell \le \frac\pi4$ and $3.14 < \pi < 3.1416$, $y$ lies between
-$\frac\pi{12} - \frac12 > -0.24$ and $\frac\pi3 - \frac12 < 0.548$, so
-$y^2 < \frac49$ and
-$\cos y \ge 1 - \frac{y^2}2 > \frac79$. By Lemma B.7,
-$a \le \sqrt3 - \frac12 < 1.233$. Hence
-$\sigma_2(\frac\pi3) > \frac12 - 1.233 + \frac79 = \frac{403}{9000}$. $\square$
+Since $0 \le \ell \le \frac\pi4$ and $0 < \pi < 3.15$, $y$ lies between
+$\frac\pi{12} - \frac12 > -\frac12$ and $\frac\pi3 - \frac12 < 0.55$, so
+$y^2 < \frac49$ and $\cos y \ge 1 - \frac{y^2}2 > \frac79$. By Lemma B.7,
+$a \le \sqrt3 - \frac12$. Hence
+$\sigma_2(\frac\pi3) > \frac12 - (\sqrt3 - \frac12) + \frac79 = \frac{16}9 - \sqrt3$,
+which is positive as $\sqrt3 < 1.733 < \frac{16}9$. $\square$
 
 *Lean:
 [`Seven.fixed_gap_inward_negative`](../../SquaresInCircles/Seven/Pair/EasySectors.lean#L56).*
@@ -1617,7 +1602,7 @@ Recall $u \ge \frac45\ell$, because $\ell \le \mathrm{axial}(u)$.
    $\cos x \ge 1 - \frac{x^2}2$,
 
    ```math
-   k\left(\tfrac{21}{100}\right) \ge -0.168 + \left(0.21 - \tfrac{0.21^3}6\right) + \left(1 - \tfrac{0.21^2}2\right) = 1.0184065 ,
+   k\left(\tfrac{21}{100}\right) \ge -0.168 + \left(0.21 - \tfrac{0.21^3}6\right) + \left(1 - \tfrac{0.21^2}2\right) > 1.018 ,
    ```
 
    while $m < 1.31 - \frac{2(3.14)}{15} < 0.8914$. At $\frac\pi6$,
@@ -1657,13 +1642,17 @@ V_2 = \left(\tfrac15(7 - \pi), \tfrac15(7 - \pi)\right) .
 3. In (2), for all real $p, q, r$ there is an $i$ with
    $p + q a_i + r u_i \le p + q a + r u$, where $V_i = (a_i, u_i)$.
 
-*Proof.* (1) From $3.14 < \pi < \frac{22}7$: $0.628 < \frac\pi5 < 0.6286$,
-$0.7079 < \frac19(7 - \frac\pi5) < 0.708$ and
-$0.7714 < \frac15(7 - \pi) < 0.772$. So every coordinate of every $V_i$ lies in
-$[\frac12, \frac{193}{250})$, the second coordinate is at most the first, and
-$\varphi(V_i) < 2(\frac{193}{250} + \frac12)^2 = \frac{50562}{15625}$, which is
-less than $\frac{13}4$. The labels follow from the identities at the start of
-§B.3:
+*Proof.* (1) As $3 < \pi < \frac{22}7$, so that $2\pi < 7$, the coordinates
+satisfy
+
+```math
+\tfrac12 < \tfrac\pi5 < \tfrac19\left(7 - \tfrac\pi5\right) < \tfrac15(7 - \pi) < r_d ,
+```
+
+the last by Lemma B.11 (2). So every coordinate of every $V_i$ lies in
+$[\frac12, r_d)$, the second coordinate is at most the first, and
+$\varphi(V_i) < 2(r_d + \frac12)^2 = \frac{13}4$. The labels follow from the
+identities at the start of §B.3:
 
 | vertex | $\mathrm{axial} - \frac\pi4$ | $\mathrm{side} - \frac\pi4$ |
 | --- | --- | --- |

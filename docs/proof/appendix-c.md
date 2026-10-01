@@ -60,8 +60,8 @@ admissible state $(a, u)$:
   and an admissible state $(A, 0)$ is an axial state
   ([Lemma 9.16](seven.md#lemma-916-contacts)).
 
-We also use $\frac{173}{100} < \sqrt3 < \frac{1733}{1000}$ (compare the
-squares), the bounds $3.14 < \pi < \frac{22}7$, and, for $z \ge 0$, the
+We also use $1.73 < \sqrt3 < 1.733$ (compare the squares), the bounds
+$3.14 < \pi < \frac{22}7$, and, for $z \ge 0$, the
 elementary estimates $z - \frac{z^3}6 \le \sin z \le z$ and
 $\cos z \ge 1 - \frac{z^2}2$ together with the Taylor bounds of Appendix A
 ([Lemma A.7](appendix-a.md#lemma-a7-taylor-bounds)):
@@ -244,16 +244,16 @@ Let $A \le \sqrt3 - \frac12$, $v \ge 0$ and $0 \le e \le \frac\pi{12}$. Then
 
 *Proof.* Here $0 \le \sin e \le e$, so $\lvert\sin e\rvert = \sin e$;
 $0 \le 1 - \cos e \le \frac{e^2}2$; $\sqrt3 < \frac{26}{15}$; and
-$e \le \frac\pi{12} < \frac{11}{42}$. The left side minus $\frac e{840}$ equals
+$e \le \frac\pi{12} < \frac{11}{42}$. As $A \le \sqrt3 - \frac12$, $v \ge 0$
+and $\sqrt3 - 1 \ge 0$, the left side is at least
 
 ```math
-\left(\sqrt3 - \tfrac12 - A\right)\sin e + \left(\sqrt3 - 1\right)(e - \sin e) + v(1 - \cos e)
-+ \tfrac12\left(\tfrac{e^2}2 - (1 - \cos e)\right) + \left(\tfrac{26}{15} - \sqrt3\right)e + \tfrac14 e\left(\tfrac{11}{42} - e\right),
+\tfrac45e - \left(\sqrt3 - 1\right)\sin e - \tfrac12(1 - \cos e) \ge \tfrac45e - \left(\sqrt3 - 1\right)e - \tfrac{e^2}4
+= e\left(\tfrac95 - \sqrt3 - \tfrac e4\right),
 ```
 
-as one checks by expanding; for instance, the terms linear in $e$ add up to
-$(\sqrt3 - 1 + \frac{26}{15} - \sqrt3 + \frac{11}{168})e = \frac{671}{840}e$,
-and $\frac{671}{840} = \frac45 - \frac1{840}$. Every term is nonnegative.
+which is at least $\frac e{840}$, since
+$\frac95 - \sqrt3 - \frac e4 > \frac95 - \frac{26}{15} - \frac{11}{168} = \frac1{15} - \frac{11}{168} = \frac1{840}$.
 $\square$
 
 *Lean:
@@ -310,8 +310,8 @@ $e = \ell_1 - t\ell_2 - \frac\pi6 \le 0$. Then $\sigma_2 > 0$ for the signs
 $(+, t)$.
 
 *Proof.* Put $z = -e \ge 0$. As $\ell_1 \ge 0$ and $\ell_2 \le \frac\pi4$,
-$z = \frac\pi6 - \ell_1 + t\ell_2 \le \frac{5\pi}{12} < \frac\pi2$, so $\sin z$
-and $\cos z$ are nonnegative. Since $\ell_1 = \frac54u$ and
+$z = \frac\pi6 - \ell_1 + t\ell_2 \le \frac{5\pi}{12} < \frac\pi2$, so
+$\sin z \ge 0$ and $\cos z > 0$. Since $\ell_1 = \frac54u$ and
 $t\ell_2 = \frac54tv$, we have $tv = u + \frac45z - \frac{2\pi}{15}$, and (C.1)
 becomes
 
@@ -322,21 +322,14 @@ becomes
 Expanding shows the identity
 
 ```math
-\sigma_2 = \tfrac1{200} + \tfrac z{50} + \left(p(z) - \tfrac z{50}\right)
-+ \left(\tfrac54 - a - \tfrac1{200}\right)(1 - \cos z)
-+ \left(1 + \tfrac{2\pi}{15} - a - u - \tfrac1{200}\right)\cos z + \left(A - \tfrac12\right)\sin z ,
+\sigma_2 = p(z) + \left(\tfrac54 - a\right)(1 - \cos z) + \left(1 + \tfrac{2\pi}{15} - a - u\right)\cos z + \left(A - \tfrac12\right)\sin z ,
 ```
 
-with $p$ the turn profile of Lemma C.2. Every term after $\frac1{200}$ is
-nonnegative: $p(z) \ge \frac z{50}$ by Lemma C.2 (2);
-$a \le \sqrt3 - \frac12 < \frac54 - \frac1{200}$; $a + u < \frac{113}{80}$ for
-the axial label $\ell_1$, while $\pi > 3.14$ gives
-
-```math
-1 + \tfrac{2\pi}{15} - \tfrac1{200} - \tfrac{113}{80} > 1 + \tfrac{2 \cdot 3.14}{15} - \tfrac1{200} - \tfrac{113}{80} = \tfrac7{6000} ;
-```
-
-and $A \ge \frac12$. So $\sigma_2 \ge \frac1{200}$. $\square$
+with $p$ the turn profile of Lemma C.2. Every term is nonnegative, and the
+third is positive: $p(z) \ge \frac z{50}$ by Lemma C.2 (2);
+$a \le \sqrt3 - \frac12 < \frac54$; $a + u < \frac{113}{80} = 1.4125$ for the
+axial label $\ell_1$, while $1 + \frac{2\pi}{15} > 1 + \frac{2\cdot 3.14}{15} > 1.418$;
+and $A \ge \frac12$. So $\sigma_2 > 0$. $\square$
 
 *Lean:
 [`Seven.inward_axial_nonpositive_turn`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L103).*
@@ -351,7 +344,7 @@ with $t = +1$. If $e > 0$, Lemma C.4 gives
 $\sigma_2 \ge \frac2{15}r(a, u) + \frac e{840} > 0$. $\square$
 
 *Lean:
-[`Seven.inward_axial_axial_pos`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L132).*
+[`Seven.inward_axial_axial_pos`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L133).*
 
 ### Proposition C.7 (side source, axial target)
 
@@ -411,8 +404,8 @@ $(A, 0)$ is an axial state, and with $s = +1$ the two states form a contact of
 the second kind. $\square$
 
 *Lean:
-[`Seven.inward_side_axial_property`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L187),
-[`Seven.inward_side_axial_lower`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L152).*
+[`Seven.inward_side_axial_property`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L188),
+[`Seven.inward_side_axial_lower`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L153).*
 
 ## C.4 Signs (+, +) with a side target
 
@@ -499,25 +492,21 @@ $r(A, v) \ge 0$ give $s \ge \frac\pi6 + \frac56(v - \frac12)$, that is,
 $v \le \frac12 + \frac65(s - \frac\pi6)$. We distinguish three cases.
 
 - $s \le \frac\pi6$. Then
-  $A \ge \tau(\frac\pi6) = \frac79 + \frac{8\pi}{135} > \frac{19}{20}$ and
+  $A \ge \tau(\frac\pi6) = \frac79 + \frac{8\pi}{135} > \frac56$ and
   $v \le \frac12$. Also $d < \frac{22}{21} - \frac9{25} < \frac7{10}$, so
-  $\cos d \ge 1 - \frac{d^2}2 > \frac{151}{200}$. Hence
-  $H(0) \ge (A + \frac12)\cos d$, which exceeds
-  $\frac{29}{20}\cdot\frac{151}{200} = \frac{4379}{4000} > 1$.
+  $d^2 < \frac12$ and $\cos d \ge 1 - \frac{d^2}2 > \frac34$. Hence
+  $H(0) \ge (A + \frac12)\cos d > \frac43\cdot\frac34 = 1$.
 - $\frac\pi6 < s \le \frac23$. Then
   $A \ge \tau(\frac23) = \frac{30\pi + 17}{135} > \frac45$ and
   $v \le \frac{13}{10} - \frac\pi5 < \frac7{10}$. Also $0 < d < \frac\pi6$, so
-  $\cos d > \frac{\sqrt3}2 > \frac{17}{20}$ and $\sin d \le \frac12$. Hence
+  $\cos d \ge \frac{\sqrt3}2 > 0.865$ and $\sin d \le \frac12$. Hence
   $H(0) = (A + \frac12)\cos d + (\frac7{10} - v)\sin d - \frac15\sin d$, which
-  exceeds $\frac{13}{10}\cdot\frac{17}{20} - \frac1{10} = \frac{201}{200} > 1$.
+  exceeds $1.3\cdot 0.865 - 0.1 > 1$.
 - $s > \frac23$. Then $A > \frac7{10}$ by Lemma C.1 (2), and
-  $v < \frac{31}{40}$. Also $d < \frac{22}{21} - \frac23 = \frac8{21}$, so
-  $\cos d > 1 - \frac12(\frac8{21})^2 = \frac{409}{441}$ and
-  $\sin d \le d < \frac8{21}$. Hence
+  $v < \frac{31}{40}$. Also $d < \frac{22}{21} - \frac23 = \frac8{21} < 0.381$,
+  so $\cos d \ge 1 - \frac{d^2}2 > 0.927$ and $\sin d \le d < 0.381$. Hence
   $H(0) = (A + \frac12)\cos d + (\frac{31}{40} - v)\sin d - \frac{11}{40}\sin d$,
-  which exceeds
-  $\frac65\cdot\frac{409}{441} - \frac{11}{40}\cdot\frac8{21} = \frac{247}{245} > 1$.
-  $\square$
+  which exceeds $1.2\cdot 0.927 - 0.275\cdot 0.381 > 1$. $\square$
 
 *Lean:
 [`Seven.targetH_zero_gt_one`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L49).*
@@ -542,45 +531,41 @@ On the interval, $\frac\pi3 \le y \le \frac\pi2$ (the upper bound because
 $\frac{5\pi}{12} + \frac16 \le \frac\pi2$ for $\pi \ge 2$), so
 $0 \le \cos y \le \frac12$ and $\sin y \ge \frac{\sqrt3}2 > \frac45$. The factor
 $P = \frac45\cos y + \frac65\sin y$ is nonnegative and
-$d \le \frac\pi{12} < \frac4{15}$, so $dP \le \frac4{15}P$ and
+$d \le \frac\pi{12} < \frac13$, so $dP \le \frac13P$ and
 
 ```math
-Q''(d) \le \tfrac{167}{150}\cos y - \tfrac{32}{25}\sin y < \tfrac{167}{150}\cdot\tfrac12 - \tfrac{32}{25}\cdot\tfrac45 = -\tfrac{701}{1500} < 0 .
+Q''(d) \le \tfrac76\cos y - \tfrac65\sin y < \tfrac76\cdot\tfrac12 - \tfrac65\cdot\tfrac45 < 0 .
 ```
 
 So $Q$ is concave on $[-\frac16, \frac\pi{12}]$, and it suffices to check the
 two ends.
 
 At $d = -\frac16$, $y = \frac\pi2 - \varepsilon$ with
-$\varepsilon = \frac\pi{12} - \frac16$, and
-$\frac9{100} < \frac{19}{200} < \varepsilon < \frac2{21} < \frac1{10}$. Then
+$\varepsilon = \frac\pi{12} - \frac16$, and $0.095 < \varepsilon < 0.1$ by
+$3.14 < \pi < \frac{22}7$. Then
 $Q(-\frac16) = (\frac32 + \frac2{15})\sin\varepsilon + \frac15\cos\varepsilon$,
-that is, $Q(-\frac16) = \frac{49}{30}\sin\varepsilon + \frac15\cos\varepsilon$;
-and with $\sin\varepsilon \ge \varepsilon - \frac{\varepsilon^3}6$,
-$\varepsilon^3 \le \frac1{1000}$,
-$\cos\varepsilon \ge 1 - \frac{\varepsilon^2}2$ and
-$\varepsilon^2 \le \frac\varepsilon{10}$,
+and with $\sin\varepsilon \ge \varepsilon - \frac{\varepsilon^3}6 > 0.094$ and
+$\cos\varepsilon \ge 1 - \frac{\varepsilon^2}2 > 0.995$,
 
 ```math
-Q\left(-\tfrac16\right) - \tfrac13 \ge \tfrac{49}{30}\varepsilon - \tfrac{49}{180000} + \tfrac15 - \tfrac\varepsilon{100} - \tfrac13
-= \tfrac{487}{300}\varepsilon - \tfrac{49}{180000} - \tfrac2{15} > \tfrac{487}{300}\cdot\tfrac9{100} - \tfrac{49}{180000} - \tfrac2{15} = \tfrac{2249}{180000} .
+Q\left(-\tfrac16\right) = \tfrac{49}{30}\sin\varepsilon + \tfrac15\cos\varepsilon > \tfrac{49}{30}\cdot 0.094 + \tfrac15\cdot 0.995 > 0.153 + 0.199 > \tfrac13 .
 ```
 
-At $d = \frac\pi{12}$, $y = \frac\pi3$ and
+At $d = \frac\pi{12}$, $y = \frac\pi3$; as $\frac1{30} + \frac{\sqrt3}{20} < \frac18$
+(that is, $\sqrt3 < \frac{11}6$) and $\pi < \frac{10}3$,
 
 ```math
 Q\left(\tfrac\pi{12}\right) = \tfrac34 - \tfrac\pi{12}\left(\tfrac25 + \tfrac{3\sqrt3}5\right)
-= \tfrac34 - \pi\left(\tfrac1{30} + \tfrac{\sqrt3}{20}\right)
-> \tfrac34 - \tfrac{22}7\left(\tfrac1{30} + \tfrac{1733}{20000}\right) = \tfrac13 + \tfrac{8311}{210000} .
+= \tfrac34 - \pi\left(\tfrac1{30} + \tfrac{\sqrt3}{20}\right) > \tfrac34 - \tfrac\pi8 > \tfrac13 .
 ```
 
 $\square$
 
 *Lean:
-[`Seven.quarterProfile`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L107),
-[`Seven.quarter_profile_gt`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L118),
-[`Seven.quarterProfileD`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L110),
-[`Seven.quarterProfileDD`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L114).*
+[`Seven.quarterProfile`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L108),
+[`Seven.quarter_profile_gt`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L119),
+[`Seven.quarterProfileD`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L111),
+[`Seven.quarterProfileDD`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L115).*
 
 ![Graph of the quarter profile Q on the interval from minus 1/6 to pi over 12: a concave arch from about 0.354 at the left end, up to about 0.391, and down to about 0.373 at the right end, above the horizontal line at height one third](figures/appc-quarter-profile.svg)
 
@@ -614,7 +599,7 @@ The bracket is at least $\frac3{10}\cdot\frac45 - \frac2{15} = \frac8{75} > 0$,
 so $H(\frac\pi4) \ge Q(d) > \frac13$ by Lemma C.10. $\square$
 
 *Lean:
-[`Seven.targetH_quarter_gt`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L185).*
+[`Seven.targetH_quarter_gt`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L187).*
 
 ### Proposition C.12 (side target)
 
@@ -649,7 +634,7 @@ A concave function on an interval is at least the smaller of its values at the
 ends, so $f(\ell_1) > 0$ and $\sigma_2 > 0$. $\square$
 
 *Lean:
-[`Seven.fixed_gap_inward_side_target`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L221).*
+[`Seven.fixed_gap_inward_side_target`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L223).*
 
 ![Graph over the source labels from 0 to pi over 4 of the concave function f for four side targets: the side state (1, 1/2), the transition state, the diagonal corner and the tie state of label pi over 4; every curve is concave and positive, and decreases towards the right end](figures/appc-side-target.svg)
 
@@ -707,37 +692,27 @@ $e = \ell_1 + \ell_2 - \frac\pi6 \le 0$. Then, for the signs $(+, -)$,
 ```
 
 *Proof.* Put $z = -e \ge 0$. As $\ell_1 > \frac9{25}$ and $\ell_2 \ge 0$,
-$z < \frac\pi6 - \frac9{25}$, and
-$\frac\pi6 - \frac9{25} < \frac{11}{21} - \frac9{25} = \frac{86}{525} < \frac16$.
-As $\frac54v = \ell_2 \le \frac\pi4$,
-$v + \frac12 \le \frac\pi5 + \frac12 < \frac65$. By Lemma C.13, with
-$\sin e = -\sin z \le 0$,
+$z < \frac\pi6 - \frac9{25} < 0.524 - 0.36 < \frac16$. As
+$\frac54v = \ell_2 \le \frac\pi4$, $v + \frac12 \le \frac\pi5 + \frac12 < \frac65$.
+By Lemma C.13, with $\sin e = -\sin z \le 0$,
 
 ```math
-\sigma_2 = -\tfrac45z + \tfrac2{15}r(a, u) + A\sin z + \tfrac12\sin z - \left(v + \tfrac12\right)(1 - \cos z),
+\sigma_2 = -\tfrac45z + \tfrac2{15}r(a, u) + A\sin z + \tfrac12\sin z - \left(v + \tfrac12\right)(1 - \cos z).
 ```
 
-and expanding shows
+Here $A \ge \frac12$, $\sin z \ge z - \frac{z^3}6 \ge 0$ and
+$0 \le 1 - \cos z \le \frac{z^2}2$, so
 
 ```math
-\begin{aligned}
-\sigma_2 - \tfrac2{15}r(a, u) - \tfrac z{12} ={}& \left(A - \tfrac12\right)\sin z + \left(\sin z - z + \tfrac{z^3}6\right)
-+ \left(\tfrac65 - v - \tfrac12\right)(1 - \cos z) \\
-&+ \tfrac65\left(\cos z - 1 + \tfrac{z^2}2\right) + z\left(\tfrac7{60} - \tfrac35z - \tfrac{z^2}6\right) .
-\end{aligned}
+\sigma_2 - \tfrac2{15}r(a, u) \ge -\tfrac45z + z - \tfrac{z^3}6 - \tfrac65\cdot\tfrac{z^2}2
+= z\left(\tfrac15 - \tfrac35z - \tfrac{z^2}6\right) \ge \tfrac z{12},
 ```
 
-The first four terms are nonnegative, and so is the last, since for
-$0 \le z \le \frac16$
-
-```math
-\tfrac7{60} - \tfrac35z - \tfrac{z^2}6 = \tfrac{13}{1080} + \tfrac35\left(\tfrac16 - z\right) + \tfrac16\left(\tfrac16 - z\right)\left(\tfrac16 + z\right) > 0 .
-```
-
-$\square$
+because $\frac35z + \frac{z^2}6 \le \frac1{10} + \frac1{216} < \frac15 - \frac1{12}$
+for $0 \le z \le \frac16$. $\square$
 
 *Lean:
-[`Seven.inward_opposite_negative_turn`](../../SquaresInCircles/Seven/Pair/Inward/Opposite.lean#L16).*
+[`Seven.inward_opposite_negative_turn`](../../SquaresInCircles/Seven/Pair/Inward/Opposite.lean#L19).*
 
 ## C.6 The boundary of the label regions
 
@@ -846,14 +821,14 @@ $\frac5{16}w^2$.
 *Proof.* Since $\frac{13}4 - (w + \frac12)^2 = 3 - w - w^2$, the left side is
 $\sqrt{3 - w - w^2} - 1$. Let
 $B = \sqrt3\left(1 - \frac w6\right) - \frac5{16}w^2$. Then
-$B \ge \frac{173}{100}\cdot\frac{19}{20} - \frac5{16}\cdot\frac9{100} > 0$, and,
+$B \ge 1.73\cdot\frac{19}{20} - \frac5{16}\cdot\frac9{100} > 0$, and,
 using $(\sqrt3)^2 = 3$,
 
 ```math
 B^2 - (3 - w - w^2) = \left(\tfrac{13}{12} - \tfrac58\sqrt3\right)w^2 + \tfrac5{48}\sqrt3\,w^3 + \tfrac{25}{256}w^4 ,
 ```
 
-where $\frac{13}{12} - \frac58\sqrt3 > 0$ as $\sqrt3 < \frac{1733}{1000} < \frac{26}{15}$.
+where $\frac{13}{12} - \frac58\sqrt3 > 0$ as $\sqrt3 < 1.733 < \frac{26}{15}$.
 So $B^2 \ge 3 - w - w^2 \ge 0$, and since $B > 0$, $\sqrt{3 - w - w^2} \le B$.
 $\square$
 
@@ -886,7 +861,7 @@ E\left(z, \tfrac3{10}\right) > \alpha(z)\left(\tfrac3{10} - \tfrac z2\right)^2 .
 
 *Proof.* Write $S = \sin z$ and $C = \cos z$. For $0 \le z \le \frac58$,
 $0 \le S \le z$ and $C \ge 1 - \frac{z^2}2 \ge 0$; we also use
-$\sqrt3 < \frac{1733}{1000}$.
+$\sqrt3 < 1.733$.
 
 *The height $v = 0$.* Here
 
@@ -1019,16 +994,15 @@ $\frac{44}{45}\sin z + \frac45\cos z > \frac{12}{13}$.
 
 *Proof.* The function is concave on $[0, \frac\pi2]$, as a combination with
 nonnegative coefficients of $\sin$ and $\cos$, which are concave there
-([Lemma A.5](appendix-a.md#lemma-a5-concave-trigonometric-sums)). So it suffices to check the ends, where, by
-$\sin z \ge z - \frac{z^3}6$, $\cos z \ge 1 - \frac{z^2}2$ and
-$\sqrt3 > \frac{173}{100}$,
+([Lemma A.5](appendix-a.md#lemma-a5-concave-trigonometric-sums)). So it suffices to check the ends, where
+$\sin\frac{19}{100} \ge \frac{19}{100} - \frac16(\frac{19}{100})^3 > 0.18$,
+$\cos\frac{19}{100} \ge 1 - \frac12(\frac{19}{100})^2 > 0.98$ and
+$\frac{\sqrt3}2 > 0.865$:
 
 ```math
 \begin{aligned}
-\tfrac{44}{45}\sin\tfrac{19}{100} + \tfrac45\cos\tfrac{19}{100}
-&\ge \tfrac{44}{45}\left(\tfrac{19}{100} - \tfrac16\left(\tfrac{19}{100}\right)^3\right) + \tfrac45\left(1 - \tfrac12\left(\tfrac{19}{100}\right)^2\right)
-= \tfrac{65489851}{67500000} > \tfrac{12}{13}, \\
-\tfrac{44}{45}\sin\tfrac\pi3 + \tfrac45\cos\tfrac\pi3 &= \tfrac{44}{45}\cdot\tfrac{\sqrt3}2 + \tfrac25 > \tfrac{44}{45}\cdot\tfrac{173}{200} + \tfrac25 = \tfrac{2803}{2250} > \tfrac{12}{13} .
+\tfrac{44}{45}\sin\tfrac{19}{100} + \tfrac45\cos\tfrac{19}{100} &> \tfrac{44}{45}\cdot 0.18 + \tfrac45\cdot 0.98 = 0.96 > \tfrac{12}{13}, \\
+\tfrac{44}{45}\sin\tfrac\pi3 + \tfrac45\cos\tfrac\pi3 &= \tfrac{44}{45}\cdot\tfrac{\sqrt3}2 + \tfrac25 > \tfrac{44}{45}\cdot 0.865 + 0.4 > 1.2 > \tfrac{12}{13} .
 \end{aligned}
 ```
 
@@ -1299,8 +1273,8 @@ state $(A, 0)$ is an axial state. With $s = +1$ this is a contact of the second
 kind. $\square$
 
 *Lean:
-[`Seven.inward_opposite_side_axial_property`](../../SquaresInCircles/Seven/Pair/Inward/Opposite.lean#L77),
-[`Seven.inward_opposite_side_positive_turn`](../../SquaresInCircles/Seven/Pair/Inward/Opposite.lean#L48).*
+[`Seven.inward_opposite_side_axial_property`](../../SquaresInCircles/Seven/Pair/Inward/Opposite.lean#L80),
+[`Seven.inward_opposite_side_positive_turn`](../../SquaresInCircles/Seven/Pair/Inward/Opposite.lean#L51).*
 
 ### Proposition C.30 (two axial labels)
 
@@ -1344,8 +1318,8 @@ is at least $-\frac12(u_0 - u) + 0 + \frac12(u_0 - u) = 0$, so $\sigma_2 > 0$.
 $\square$
 
 *Lean:
-[`Seven.inward_opposite_axial_axial_pos`](../../SquaresInCircles/Seven/Pair/Inward/Opposite.lean#L156),
-[`Seven.inward_opposite_axial_positive_turn`](../../SquaresInCircles/Seven/Pair/Inward/Opposite.lean#L87).*
+[`Seven.inward_opposite_axial_axial_pos`](../../SquaresInCircles/Seven/Pair/Inward/Opposite.lean#L159),
+[`Seven.inward_opposite_axial_positive_turn`](../../SquaresInCircles/Seven/Pair/Inward/Opposite.lean#L90).*
 
 ### Lemma C.31 (a side target moves to its tie point)
 
@@ -1373,7 +1347,7 @@ J(a, A, v, z) - J\left(a, \tau(\ell_2), \tfrac45\ell_2, z\right)
 $\square$
 
 *Lean:
-[`Seven.inward_opposite_side_target_reduction`](../../SquaresInCircles/Seven/Pair/Inward/Opposite.lean#L165).*
+[`Seven.inward_opposite_side_target_reduction`](../../SquaresInCircles/Seven/Pair/Inward/Opposite.lean#L168).*
 
 ### Theorem C.32 (opposite signs with active labels)
 
@@ -1400,4 +1374,4 @@ $\ell_2 = \frac58 \ne \frac\pi6$. So $\sigma_2 > 0$ when the target has a side
 label. $\square$
 
 *Lean:
-[`Seven.fixed_gap_inward_opposite_active`](../../SquaresInCircles/Seven/Pair/Inward/Opposite.lean#L204).*
+[`Seven.fixed_gap_inward_opposite_active`](../../SquaresInCircles/Seven/Pair/Inward/Opposite.lean#L207).*

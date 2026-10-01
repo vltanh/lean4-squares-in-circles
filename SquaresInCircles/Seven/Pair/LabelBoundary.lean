@@ -44,15 +44,15 @@ lemma J_sq : J^2=202*targetSq-M^2 := by
   dsimp [M,targetSq]
   nlinarith [Real.pi_gt_d6,Real.pi_lt_d6]
 
-lemma J_bounds : (1069547:ℝ)/100000 < J ∧ J < 1069549/100000 := by
+lemma J_bounds : (10.69547:ℝ) < J ∧ J < 10.69549 := by
   have hsq := J_sq
   have hn : 0 ≤ J := Real.sqrt_nonneg _
   dsimp [M,targetSq] at hsq
   constructor <;> nlinarith [Real.pi_gt_d6,Real.pi_lt_d6]
 
 lemma transition_bounds :
-    (111979:ℝ)/100000 < a0 ∧ a0 < 111980/100000 ∧
-    (29136:ℝ)/100000 < u0 ∧ u0 < 29137/100000 := by
+    (1.11979:ℝ) < a0 ∧ a0 < 1.1198 ∧
+    (0.29136:ℝ) < u0 ∧ u0 < 0.29137 := by
   have hj := J_bounds
   dsimp [a0,u0,X0,Y0,M]
   refine ⟨?_,?_,?_,?_⟩ <;> linarith [Real.pi_gt_d6,Real.pi_lt_d6]
@@ -95,7 +95,7 @@ lemma transition_labels : label a0 u0=axial u0 ∧ label a0 u0=side a0 u0 := by
     linarith [Real.pi_gt_d2]
   simp [label,he,show side a0 u0 ≤ Real.pi/4 by simpa only [← he] using hcap]
 
-lemma rd_bounds : (77475:ℝ)/100000 < rd ∧ rd < 77476/100000 := by
+lemma rd_bounds : (0.77475:ℝ) < rd ∧ rd < 0.77476 := by
   have hs := Real.sq_sqrt (show (0:ℝ) ≤ 13/8 by norm_num)
   have hn := Real.sqrt_nonneg (13/8:ℝ)
   dsimp [rd]
@@ -123,13 +123,13 @@ lemma D_s0 : D s0=(3/4)*X0-Y0/3 := by
   dsimp [D,s0,a0,u0] at *
   linarith
 
+/-- `D` lies between `D(t_d) = (5/12)(r_d + 1/2) > 1/2` and `D(s_0) < 1`. -/
 lemma D_range {t : ℝ} (ht : s0 ≤ t ∧ t ≤ td) :
     (1:ℝ)/2 < D t ∧ D t < 1 := by
   have hr := rd_bounds
   have hs := transition_coarse
   dsimp [D,td] at *
-  dsimp [s0] at ht
-  constructor <;> linarith [Real.pi_gt_d6,Real.pi_lt_d6]
+  constructor <;> linarith [Real.pi_lt_d2]
 
 lemma radicand_pos {t : ℝ} (ht : s0 ≤ t ∧ t ≤ td) :
     0 < N*targetSq-(D t)^2 := by
@@ -240,8 +240,11 @@ lemma circle_bounds {t : ℝ} (ht : s0 ≤ t ∧ t ≤ td) :
     have hX00 : 0 < X0 := by dsimp [a0] at h0; linarith
     exact (sq_le_sq₀ hXpos.le hX00.le).mp (by linarith [hc.1])
   have hZlower : 1 < Z t := by
-    have hb : (79:ℝ)/100 < Y0 := by dsimp [u0] at h0; linarith
-    linarith [hc.2.2]
+    have h1 : 1 < (Z t)^2 := by
+      rw [hz]
+      dsimp [N,targetSq]
+      nlinarith [hd.1,hd.2]
+    exact (one_lt_sq_iff₀ hz0.le).mp h1
   have hsum : X t+Y t < 51/20 := by
     have hh := sq_nonneg (X t-Y t)
     dsimp [targetSq] at hc

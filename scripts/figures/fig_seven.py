@@ -147,7 +147,7 @@ def plane_axes(f, amax, umax, ticks_a=(), ticks_u=()):
 
 def transition_state():
     M = 2 * PI + 17
-    J = math.sqrt(1313 / 2 - M * M)
+    J = math.sqrt(202 * 13 / 4 - M * M)
     return (9 * M + 11 * J) / 202 - 0.5, (11 * M - 9 * J) / 202 - 0.5
 
 

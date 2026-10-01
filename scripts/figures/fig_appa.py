@@ -394,11 +394,12 @@ def admissible_region():
     for a, uu in region:
         assert (a + 0.5) ** 2 + (uu + 0.5) ** 2 <= TARGET + 1e-9
     # The line of the Cauchy-Schwarz bound, 3/4 (a + 1/2) + 2/3 (u + 1/2)
-    # = 2171/1200, and its nearest point to the disk.
-    L = 2171 / 1200
+    # = sqrt(1885)/24, and the point where it touches the circle.
+    L = math.sqrt(1885) / 24
+    assert L < 43.42 / 24 and abs(43.42 / 24 - 43 / 24 - 0.0175) < 1e-12
     norm = math.hypot(0.75, 2 / 3)
     touch = (-0.5 + root * 0.75 / norm, -0.5 + root * (2 / 3) / norm)
-    assert 0.75 * (touch[0] + 0.5) + (2 / 3) * (touch[1] + 0.5) < L
+    assert abs(0.75 * (touch[0] + 0.5) + (2 / 3) * (touch[1] + 0.5) - L) < 1e-12
     line_u = lambda a: (L - 0.75 * (a + 0.5)) / (2 / 3) - 0.5
     x = 0.4
     top = math.sqrt(TARGET - (x + 1) ** 2) - 0.5
@@ -478,6 +479,11 @@ def transverse():
     high = [label(max(0.5, uu), uu) for uu in us]
     lower_edge = lambda uu: math.asin(uu - 0.5) + HALF_WIDTH
     upper_edge = lambda uu: math.asin(min(1.0, uu + 0.5)) - HALF_WIDTH
+    # The decimal bounds of Lemmas A.11 and A.12.
+    assert (11 / 40) ** 3 / 4 < 0.0052 and 3.14 / 6 - 0.0175 - 0.0052 - 0.5 > 0
+    assert 11 / 40 + 0.0052 + 0.5 < 3.14 / 4
+    z = 5 / 8
+    assert z - z ** 3 / 6 + z ** 5 / 120 < 0.5852 < 0.6
     # Lemmas A.11 and A.12 on a grid of admissible states.
     for i in range(0, n + 1, 4):
         uu = us[i]
@@ -564,7 +570,8 @@ def peak_bound():
     for k in range(301):
         x = w * k / 300
         assert (dh(x) >= 0) == (x <= c) or abs(x - c) < 1e-12
-        assert h(x) <= h(c) < 9 * (4 / 7) ** 2 * 6 ** 3 < 676
+        assert h(x) <= h(c) < 9 * 6 ** 3 / 3 == 648 < 676
+    assert (c + 1 / 8) ** 2 < (4 / 7) ** 2 < 1 / 3 and 9 - 7 * c < 6
     pl = Plot(-0.07, 0.86, -40, 760, 560, 0.42)
     pl.polygon([(0, 0), (c, 0), (c, 735), (0, 735)], fill=FILLS[2],
                stroke='none', opacity=0.55)

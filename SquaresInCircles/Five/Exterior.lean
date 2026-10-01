@@ -36,27 +36,29 @@ def aux : ℝ := 5/6
 lemma sqrt_five_gt : (11:ℝ)/5 < Real.sqrt 5 := by
   rw [Real.lt_sqrt (by norm_num)]; norm_num
 
-/-- An arcsine sum, from the cubic bound on `arcsin`. -/
+/-- An arcsine sum, from the cubic bound on `arcsin`: for `x ≤ 2/5` the cubic
+terms are at most `(2/5)³`, and for `x > 2/5` the side `3x+y ≤ 1` keeps `x+y`
+below `1/5`. -/
 lemma arcsin_sum {x y : ℝ} (hx0 : 0 ≤ x) (hx1 : x ≤ 1/2)
     (hy0 : -1/2 ≤ y) (hy1 : y ≤ 1/2)
-    (hsum : x+y ≤ 237/1000) (hside : 3*x+y ≤ 1) :
+    (hsum : x+y ≤ Real.sqrt 5-2) (hside : 3*x+y ≤ 1) :
     Real.arcsin (x/aux)+Real.arcsin (y/aux) < Real.pi/10 := by
   rw [show x/aux=6/5*x by rw [aux]; ring,show y/aux=6/5*y by rw [aux]; ring]
   have hFx := arcsin_le_cubic (x := 6/5*x) (by positivity) (by linarith)
   have hπ := Real.pi_gt_d2
-  by_cases hy : 0 ≤ y
-  · have hFy := arcsin_le_cubic (x := 6/5*y) (by positivity) (by linarith)
-    have hcross := mul_nonneg (mul_nonneg hx0 hy) (add_nonneg hx0 hy)
-    have hsumcube : (x+y)^3 ≤ (237/1000:ℝ)^3 := by gcongr
-    linarith
+  have h5 : Real.sqrt 5 < 2.237 := (Real.sqrt_lt' (by norm_num)).mpr (by norm_num)
+  by_cases hx : x ≤ 2/5
+  · by_cases hy : 0 ≤ y
+    · have hFy := arcsin_le_cubic (x := 6/5*y) (by positivity) (by linarith)
+      have hcross := mul_nonneg (mul_nonneg hx0 hy) (add_nonneg hx0 hy)
+      have hc : (x+y)^3 ≤ (2/5:ℝ)^3 := by gcongr; linarith
+      linarith
+    · have hFy := arcsin_le_self_of_nonpos (x := 6/5*y) (by linarith) (by linarith)
+      have hc : x^3 ≤ (2/5:ℝ)^3 := by gcongr
+      linarith
   · have hFy := arcsin_le_self_of_nonpos (x := 6/5*y) (by linarith) (by linarith)
-    by_cases hxq : x ≤ 23/60
-    · have hc : x^3 ≤ (23/60:ℝ)^3 := by gcongr
-      linarith
-    · have hq : 23/60 ≤ x := (lt_of_not_ge hxq).le
-      have hxsq : x^2+x*(23/60)+(23/60:ℝ)^2 ≤ 3/4 := by nlinarith
-      have hprod := mul_nonneg (sub_nonneg.mpr hq) (sub_nonneg.mpr hxsq)
-      linarith
+    have hc : x^3 ≤ (1/2:ℝ)^3 := by gcongr
+    linarith
 
 /-- On the circle of radius `5/6` an exterior square with centre in `P5` has
 each of `2A`, `A+U`, `A+V` and `U+V` above `2π/5`. -/
@@ -75,8 +77,7 @@ lemma arc_length {a b : ℝ} (ha : 1/2 ≤ a) (hb : 0 ≤ b) (hsort : b ≤ a) (
           (by rw [aux,Real.cos_pi_div_five]; linarith [sqrt_five_gt]) (Real.cos_le_one _)
   have h₂ : 2*Real.pi/5 < capA aux a+capV aux b := by
     have hf := arcsin_sum (x := a-1/2) (y := b-1/2) (by linarith) (by linarith) (by linarith)
-      (by linarith) (by nlinarith [h.2.2,Real.sq_sqrt (show (0:ℝ) ≤ 5 by norm_num)])
-      (by linarith [h.1])
+      (by linarith) (by linarith [h.2.2]) (by linarith [h.1])
     rw [hA,hV]
     linarith
   have h₃ : 2*Real.pi/5 < capA aux a+capU aux b := by

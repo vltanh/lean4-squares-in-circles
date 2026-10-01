@@ -44,11 +44,10 @@ example : Seven.columnCenters Seven.centeredColumn =
 -- Three squares: the arc of a containing square, nearly axial squares, the
 -- angle between their phases, and radial and transverse margins.
 example : (29:ℝ)/2*(13/29) = 13/2 := by norm_num
-example : (8:ℝ)/3*((209/16-8/16)/19-1/2) = 49/114 := by norm_num
-example : (1/2:ℝ)-49/114 = 4/57 := by norm_num
-example : (22:ℝ)/7 < 12*(4/57+13/58) := by norm_num
+example : (64:ℝ)/57*(1/16) = 4/57 := by norm_num
+example : (1:ℝ)/15+1/5 < 4/57+13/58 ∧ (22:ℝ)/7 < 12*(1/15+1/5) := by norm_num
 example : (1/2:ℝ)-(3/16)/(7/16) = 1/14 := by norm_num
-example : (22:ℝ)/7/6 < 13/29+1/7 := by norm_num
+example : (22:ℝ)/7/6 < 3/7+1/7 ∧ (3:ℝ)/7 < 13/29 := by norm_num
 example : (3/5:ℝ)/5-(4/5)*(2/5)+11/16 < 1/2 := by norm_num
 example : (7/8:ℝ)/5+(3/5)*(2/5)+1/16 < 1/2 := by norm_num
 example : (1/5:ℝ)-11/16 > -1/2 := by norm_num
@@ -56,14 +55,13 @@ example : (2/5:ℝ)+1/16 < 1/2 := by norm_num
 
 -- Four and five squares: radical and Taylor margins.
 example : ((109:ℝ)/100)^3/6 < 1/4 := by norm_num
-example : (5:ℝ) < (2237/1000)^2 := by norm_num
+example : (5:ℝ) < 2.237^2 := by norm_num
 example : ((11:ℝ)/5)^2 < 5 := by norm_num
 example : (3:ℝ)/5 < (1+11/5)/4 := by norm_num
 example : (5-(11:ℝ)/5)/8 < (3/5)^2 := by norm_num
 example : ((17:ℝ)/30)^2 < (3+11/5)/16 := by norm_num
-example : (6:ℝ)/5*(237/1000)+(54/125)*(237/1000)^3 < 314/1000 := by norm_num
-example : (6:ℝ)/5*(237/1000)+(54/125)*(23/60)^3 < 314/1000 := by norm_num
-example : (6:ℝ)/5*(1-2*(23/60))+(54/125)*(23/60)^3 < 314/1000 := by norm_num
+example : (54:ℝ)/125*(2/5)^3 < 0.0277 ∧ (6:ℝ)/5*0.237+0.0277 < 0.314 := by norm_num
+example : (6:ℝ)/5*(1/5)+(54/125)*(1/2)^3 = 0.294 := by norm_num
 example : (3-(1:ℝ)/2)/4 = 5/8 := by norm_num
 example : ((5:ℝ)/8)^2 < 1/2 := by norm_num
 

@@ -298,12 +298,12 @@ $u < \frac{31}{40}$ ([Lemma 9.5](seven.md#lemma-95-admissible-states)), $a < \fr
 ([Lemma 9.5](seven.md#lemma-95-admissible-states)) and $\ell(a, u) \ge 0$
 ([Lemma 9.7](seven.md#lemma-97-the-label)).
 
-![The admissible states in the (a, u)-plane: a region bounded by the segment of the a-axis from one half to root 3 minus one half, the arc of the circle phi equals 13/4 up to the diagonal, the diagonal u equals a, and the vertical line a equals one half. An orange line just outside the circle touches it near (0.85, 0.70); a green vertical segment at a = x + 1/2 rises from the a-axis to the circle; the side state (1, 1/2) is marked on the circle](figures/appa-admissible.svg)
+![The admissible states in the (a, u)-plane: a region bounded by the segment of the a-axis from one half to root 3 minus one half, the arc of the circle phi equals 13/4 up to the diagonal, the diagonal u equals a, and the vertical line a equals one half. An orange line touches the circle at about (0.85, 0.70); a green vertical segment at a = x + 1/2 rises from the a-axis to the circle; the side state (1, 1/2) is marked on the circle](figures/appa-admissible.svg)
 
 *Figure A.6.* The admissible states (shaded). The line
-$\frac34(a + \frac12) + \frac23(u + \frac12) = \frac{2171}{1200}$ (orange)
-passes just outside the circle $\varphi = \frac{13}4$, which it nearly touches
-at the dot (step 3 of Lemma A.11). At $a = x + \frac12$ the circle bounds
+$\frac34(a + \frac12) + \frac23(u + \frac12) = \frac{\sqrt{1885}}{24}$ (orange)
+touches the circle $\varphi = \frac{13}4$ at the dot, and the disk lies below
+it (step 3 of Lemma A.11). At $a = x + \frac12$ the circle bounds
 $u + \frac12$ by $\sqrt{13/4 - (x + 1)^2}$ (green; step 1 of Lemma A.17).
 
 In the chart of an exterior square with state $(a, u)$ (Chapter 9) the closed
@@ -387,12 +387,12 @@ $\arcsin(u - \frac12) + \frac12 < \ell(a, u)$.
 $-\frac12 \le y < \frac{11}{40}$. We show that $\arcsin y + \frac12$ is
 less than each of the three terms whose minimum is $\ell(a, u)$.
 
-1. *A bound on the arcsine: $\arcsin y \le y + \frac{1331}{256000}$.* If
+1. *A bound on the arcsine: $\arcsin y < y + 0.0052$.* If
    $y \ge 0$, then $y < \frac{11}{40} < \frac35$, and
    [Lemma 3.29](common.md#lemma-329-elementary-estimates) (3) gives
 
    ```math
-   \arcsin y \le y + \tfrac{y^3}4 \le y + \tfrac14\left(\tfrac{11}{40}\right)^3 = y + \tfrac{1331}{256000} .
+   \arcsin y \le y + \tfrac{y^3}4 \le y + \tfrac14\left(\tfrac{11}{40}\right)^3 < y + 0.0052 .
    ```
 
    If $y < 0$, then $\arcsin y \le y$ by Lemma 3.29 (2), as $y \ge -1$.
@@ -407,53 +407,38 @@ less than each of the three terms whose minimum is $\ell(a, u)$.
    $\frac\pi6 > \frac{3.14}6 > \frac12$, we get
    $\arcsin y + \frac12 < \mathrm{axial}(u)$.
 3. *The side term.* Put $p = a + \frac12$, $q = u + \frac12$ and
-   $L = \frac34 p + \frac23 q$. By Lagrange's identity, the equality form of
-   the Cauchy–Schwarz inequality,
+   $L = \frac34 p + \frac23 q$. By the Cauchy–Schwarz inequality, with
+   $\varphi(a, u) = p^2 + q^2 \le \frac{13}4$,
 
    ```math
-   \left(\tfrac34 p + \tfrac23 q\right)^2 + \left(\tfrac23 p - \tfrac34 q\right)^2 = \tfrac{145}{144}\left(p^2 + q^2\right) ,
+   L^2 \le \left(\tfrac9{16} + \tfrac49\right)\left(p^2 + q^2\right) \le \tfrac{145}{144} \cdot \tfrac{13}4 ,
    ```
 
-   so, with $\varphi(a, u) = p^2 + q^2 \le \frac{13}4$ (Figure A.6),
-
-   ```math
-   L^2 \le \tfrac{145}{144} \cdot \tfrac{13}4 = \tfrac{1885}{576} = \tfrac{4712500}{1440000}
-   < \tfrac{4713241}{1440000} = \left(\tfrac{2171}{1200}\right)^2 ,
-   ```
-
-   and hence $L < \frac{2171}{1200}$. By the definition of the side term, and
-   since $\frac{43}{24} - \frac{2171}{1200} = -\frac7{400}$,
+   so $L \le \frac{\sqrt{1885}}{24}$, with equality where the line
+   $L = \frac{\sqrt{1885}}{24}$ touches the circle (Figure A.6). By the
+   definition of the side term, and as $\sqrt{1885} < 43.42$,
 
    ```math
    \mathrm{side}(a, u) - y = \tfrac\pi6 - \tfrac23 y - \tfrac34 (a - 1) = \tfrac\pi6 + \tfrac{43}{24} - L
-   > \tfrac\pi6 - \tfrac7{400} .
+   > \tfrac\pi6 - \tfrac{43.42 - 43}{24} = \tfrac\pi6 - 0.0175 .
    ```
 
-   With step 1,
+   With step 1, and as $\frac\pi6 > \frac{3.14}6 > 0.5233$,
 
    ```math
-   \mathrm{side}(a, u) - \arcsin y - \tfrac12
-   > \tfrac\pi6 - \tfrac7{400} - \tfrac{1331}{256000} - \tfrac12
-   = \tfrac\pi6 - \tfrac{133811}{256000} > 0 ,
+   \mathrm{side}(a, u) - \arcsin y - \tfrac12 > \tfrac\pi6 - 0.0175 - 0.0052 - 0.5 > 0 .
    ```
 
-   because $\frac\pi6 > \frac{3.14}6 > 0.52333$ and
-   $\frac{133811}{256000} = 0.52269921875$.
 4. *The cap.* By step 1, and as $y < \frac{11}{40}$,
-
-   ```math
-   \arcsin y + \tfrac12 \le y + \tfrac{1331}{256000} + \tfrac12
-   < \tfrac{11}{40} + \tfrac{1331}{256000} + \tfrac12 = \tfrac{199731}{256000} ,
-   ```
-
-   and $\frac{199731}{256000} < 0.781 < \frac{3.14}4 < \frac\pi4$.
+   $\arcsin y + \frac12 < \frac{11}{40} + 0.0052 + \frac12 = 0.7802 < \frac{3.14}4 < \frac\pi4$.
 
 So $\arcsin y + \frac12$ is less than $\mathrm{axial}(u)$,
 $\mathrm{side}(a, u)$ and $\frac\pi4$, hence less than their minimum
 $\ell(a, u)$. $\square$
 
 *Lean:
-[`Seven.marker_lower_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L253).*
+[`Seven.marker_lower_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L253),
+[`dot_gt`](../../SquaresInCircles/Common/DiskSupport.lean#L34).*
 
 ### Lemma A.12 (the upper edge)
 
@@ -462,17 +447,16 @@ $\ell(a, u) + \frac12 < \arcsin(u + \frac12)$.
 
 *Proof.*
 
-1. *$\arcsin\frac35 > \frac{63}{100}$.* By Lemma A.7 (2),
+1. *$\arcsin\frac35 > \frac58$.* By Lemma A.7 (2),
 
    ```math
-   \sin\tfrac{63}{100} \le \tfrac{63}{100} - \tfrac16\left(\tfrac{63}{100}\right)^3 + \tfrac1{120}\left(\tfrac{63}{100}\right)^5
-   = \tfrac{235661012181}{400000000000} < \tfrac35 .
+   \sin\tfrac58 \le \tfrac58 - \tfrac16\left(\tfrac58\right)^3 + \tfrac1{120}\left(\tfrac58\right)^5 < 0.5852 < \tfrac35 .
    ```
 
-   If $\arcsin\frac35 \le \frac{63}{100}$, then, as
-   $-\frac\pi2 \le \arcsin\frac35 \le \frac{63}{100} < \frac\pi2$ and the sine
+   If $\arcsin\frac35 \le \frac58$, then, as
+   $-\frac\pi2 \le \arcsin\frac35 \le \frac58 < \frac\pi2$ and the sine
    is increasing on $[-\frac\pi2, \frac\pi2]$, we would get
-   $\frac35 = \sin(\arcsin\frac35) \le \sin\frac{63}{100} < \frac35$.
+   $\frac35 = \sin(\arcsin\frac35) \le \sin\frac58 < \frac35$.
 2. Put $y = u + \frac12 \in [\frac12, 1]$. By Lemma A.10 (1) if
    $y \le \frac35$, and by Lemma A.10 (2) if $y \ge \frac35$,
    $g(y) \le g(\frac35)$, that is,
@@ -480,15 +464,14 @@ $\ell(a, u) + \frac12 < \arcsin(u + \frac12)$.
    $\frac54(y - \frac35) = \frac54 u - \frac18$, step 1 gives
 
    ```math
-   \arcsin y > \tfrac{63}{100} + \tfrac54 u - \tfrac18 = \tfrac54 u + \tfrac{101}{200} .
+   \arcsin y > \tfrac58 + \tfrac54 u - \tfrac18 = \tfrac54 u + \tfrac12 .
    ```
 
-3. As $\ell(a, u) \le \mathrm{axial}(u) = \frac54 u$ and
-   $\frac{101}{200} > \frac12$, step 2 gives
+3. As $\ell(a, u) \le \mathrm{axial}(u) = \frac54 u$, step 2 gives
    $\arcsin(u + \frac12) > \ell(a, u) + \frac12$. $\square$
 
 *Lean:
-[`Seven.marker_horizontal_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L460).*
+[`Seven.marker_horizontal_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L455).*
 
 ### Definition A.13 (the envelope)
 
@@ -507,9 +490,9 @@ E_2(x) &= \frac x{\left(1 - x^2\right)^{3/2}} - \frac{13}{12\left(13/4 - (x + 1)
 $E$ is the *envelope*; $E_1$ and $E_2$ are its first and second derivatives
 on $[0, \frac34]$ (Lemma A.15).
 
-*Lean: [`Seven.arcEnvelope`](../../SquaresInCircles/Seven/Exterior.lean#L287),
-[`Seven.arcEnvelopeDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L290),
-[`Seven.arcEnvelopeSecond`](../../SquaresInCircles/Seven/Exterior.lean#L293).*
+*Lean: [`Seven.arcEnvelope`](../../SquaresInCircles/Seven/Exterior.lean#L282),
+[`Seven.arcEnvelopeDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L285),
+[`Seven.arcEnvelopeSecond`](../../SquaresInCircles/Seven/Exterior.lean#L288).*
 
 The definition of the side term can be written
 
@@ -555,21 +538,20 @@ For $y \in [0, \frac34]$ the factors $y + \frac18$ and $(9 - 7y)^2$ are
 nonnegative, and $\frac{123}8 - 35y = 35\left(\frac{123}{280} - y\right)$ is
 nonnegative for $y \le \frac{123}{280}$ and nonpositive for
 $y \ge \frac{123}{280}$. By Lemma A.9 on $[0, \frac34]$, with the peak
-$c = \frac{123}{280}$, $h(x) \le h(\frac{123}{280})$. At the peak
-$\frac{123}{280} + \frac18 = \frac{158}{280} = \frac{79}{140} < \frac47$ and
-$9 - 7 \cdot \frac{123}{280} = \frac{1659}{280} = \frac{237}{40} < 6$, so
+$c = \frac{123}{280}$, $h(x) \le h(c)$. At the peak
+$c + \frac18 = \frac{79}{140} < \frac47$, so
+$(c + \frac18)^2 < \frac{16}{49} < \frac13$; and
+$9 - 7c = 9 - \frac{123}{40} = \frac{237}{40} < 6$. Hence
 
 ```math
-h\left(\tfrac{123}{280}\right) = 9\left(\tfrac{158}{280}\right)^2\left(\tfrac{1659}{280}\right)^3
-< 9\left(\tfrac47\right)^2 \cdot 6^3 = \tfrac{31104}{49} < 635 < 676 . \qquad \square
+h(c) < 9 \cdot \tfrac13 \cdot 6^3 = 648 < 676 . \qquad \square
 ```
 
 *Lean:
-[`Seven.curvature_peak_lt`](../../SquaresInCircles/Seven/Exterior.lean#L359).*
+[`Seven.curvature_peak_lt`](../../SquaresInCircles/Seven/Exterior.lean#L354).*
 
-For orientation, $h(0) = \frac{6561}{64} \approx 102.5$,
-$h(\frac{123}{280}) \approx 596.1$ and
-$h(\frac34) = \frac{1488375}{4096} \approx 363.4$.
+For orientation, $h(0) \approx 102.5$, $h(\frac{123}{280}) \approx 596.1$ and
+$h(\frac34) \approx 363.4$.
 
 ### Lemma A.15 (the curvature of the envelope)
 
@@ -627,10 +609,10 @@ Let $0 \le x \le \frac34$. Then
    $12(x + \frac18)B^3 < 13A^3$, and $E_2(x) < -\frac18$. $\square$
 
 *Lean:
-[`Seven.arcEnvelopeSecond_le`](../../SquaresInCircles/Seven/Exterior.lean#L385),
-[`Seven.arc_radicands`](../../SquaresInCircles/Seven/Exterior.lean#L296),
-[`Seven.arcEnvelope_hasDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L301),
-[`Seven.arcEnvelopeDeriv_hasDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L318).*
+[`Seven.arcEnvelopeSecond_le`](../../SquaresInCircles/Seven/Exterior.lean#L380),
+[`Seven.arc_radicands`](../../SquaresInCircles/Seven/Exterior.lean#L291),
+[`Seven.arcEnvelope_hasDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L296),
+[`Seven.arcEnvelopeDeriv_hasDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L313).*
 
 The two terms of $E_2$ come from the arcsine, which bends up, and from the
 circle $\varphi = \frac{13}4$, which bends down: $B$ is the value of
@@ -685,7 +667,7 @@ level $\frac\pi3 - \frac12 \approx 0.5472$ that Lemma A.17 needs
    With (A.2), $E(x) \le \frac\pi6 + \frac{353}{648}$. $\square$
 
 *Lean:
-[`Seven.arcEnvelope_bound`](../../SquaresInCircles/Seven/Exterior.lean#L420).*
+[`Seven.arcEnvelope_bound`](../../SquaresInCircles/Seven/Exterior.lean#L415).*
 
 For orientation: the largest value of $E$ on $[0, \frac34]$ is about
 $\frac\pi6 + 0.54293$, taken near $x = 0.094$, and
@@ -718,11 +700,11 @@ $0 \le x < \frac34$.
    = \tfrac\pi3 - \tfrac{677}{648} > 0 ,
    ```
 
-   because $\frac\pi3 > \frac{3.14}3 = \frac{157}{150}$ and
-   $157 \cdot 648 = 101736 > 101550 = 677 \cdot 150$. $\square$
+   because $\frac\pi3 > \frac{3.14}3 > 1.0466$ and $\frac{677}{648} < 1.0448$.
+   $\square$
 
 *Lean:
-[`Seven.marker_vertical_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L438).*
+[`Seven.marker_vertical_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L433).*
 
 *Proof of [Lemma 9.9](seven.md#lemma-99-the-marker-arc).* Let $(a, u)$ be admissible, write
 $\ell = \ell(a, u)$, and let $|t - \ell| \le \frac12$, so that
@@ -748,4 +730,4 @@ $0 \le \theta \le \frac\pi2$ and $\cos\theta = a - \frac12$.
    so $\sin t < u + \frac12$. With step 3, $|\sin t - u| \le \frac12$.
    $\square$
 
-*Lean: [`Seven.marker_arc`](../../SquaresInCircles/Seven/Exterior.lean#L487).*
+*Lean: [`Seven.marker_arc`](../../SquaresInCircles/Seven/Exterior.lean#L482).*

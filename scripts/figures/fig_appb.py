@@ -484,8 +484,17 @@ def transition_F(t):
     return 1 - top - (A0 - 0.5) * math.sin(ang) + Y0 * math.cos(ang)
 
 
-def transition_dF(t, h=1e-6):
-    return (transition_F(t + h) - transition_F(t - h)) / (2 * h)
+def transition_dF(t):
+    """F' on [s0, td], as in Lemma B.18."""
+    ang = PI / 3 - t + S0
+    return -X(t) / Z(t) + (A0 - 0.5) * math.cos(ang) + Y0 * math.sin(ang)
+
+
+def transition_ddF(t):
+    """F'' on [s0, td], as in Lemma B.18."""
+    ang = PI / 3 - t + S0
+    return (39 / (16 * Z(t) ** 3) + (A0 - 0.5) * math.sin(ang)
+            - Y0 * math.cos(ang))
 
 
 def diagonal_K(t):
@@ -494,23 +503,33 @@ def diagonal_K(t):
 
 
 def profiles():
+    # Lemma B.18: the value and slope at the diagonal corner, and F'' > 1/2.
+    th1 = PI / 3 - TD + S0
+    F0, F1 = transition_F(TD), transition_dF(TD)
+    assert 0.6272 < th1 < 0.6273
+    assert 0.5868 < math.sin(th1) < 0.587 and 0.8096 < math.cos(th1) < 0.8098
+    assert F0 > 0.002 and 0 < F1 < 0.044 and 0.044 ** 2 < 0.002
+    assert abs(X(TD) / Z(TD) - 12 / 13) < 1e-12
+    assert all(transition_ddF(x) > 0.5 for x in grid(0.4, TD, 300))
+    # Lemma B.20: K increases and is positive at 2/5.
+    assert all(diagonal_K(x) < diagonal_K(y) for x, y in
+               zip(grid(0.4, PI / 4), grid(0.4, PI / 4)[1:]))
+    assert diagonal_K(0.4) > PI / 5 - 117 / 200 > 0
     f = Figure(0, 10.0, 0, 4.0, 70)
     g = Plot(f, (0.9, 0.7, 4.3, 2.9), (0.38, 0.81), (-0.004, 0.056))
-    g.axes([(0.4, '2/5'), (0.72, '18/25'), (PI / 4, 'π/4')],
+    g.axes([(0.4, '2/5'), (PI / 4, 'π/4')],
            [(0, '0'), (0.05, '0.05')], 'τ')
     f.line(g.P(TD, -0.004), g.P(TD, 0.05), stroke=FAINT, width=0.8,
            dash='2 3')
     f.text(shift(g.P(TD, 0.05), (0, 0.14)), sb('t', 'd', size=12), size=12)
-    tp = 0.72
-    F0, F1 = transition_F(tp), transition_dF(tp)
-    par = [(x, F0 + F1 * (x - tp) + 3 / 16 * (x - tp) ** 2)
+    par = [(x, F0 + F1 * (x - TD) + (x - TD) ** 2 / 4)
            for x in grid(0.4, TD, 100)]
     g.curve(par, stroke=ORANGE, width=1.4, dash='5 3')
     g.curve([(x, transition_F(x)) for x in grid(0.4, TD, 200)], stroke=BLUE,
             width=2.2)
     g.curve([(x, transition_F(x)) for x in grid(TD, PI / 4, 40)],
             stroke=GREEN, width=2.6)
-    f.dot(g.P(tp, F0), r=3.4)
+    f.dot(g.P(TD, F0), r=3.4)
     f.text(shift(g.P(0.47, 0.034), (0.05, 0)), 'F', size=15, color=BLUE,
            anchor='start')
     f.text(shift(g.P(0.43, 0.006), (0, 0)), 'parabola', size=12,
@@ -525,18 +544,15 @@ def profiles():
            [(0, '0'), (0.05, '0.05'), (0.1, '0.1')], 'ℓ')
     h.curve([(x, diagonal_K(x)) for x in grid(0.4, PI / 4, 100)],
             stroke=BLUE, width=2.2)
-    f.line(h.P(0.4, 361 / 8000), h.P(0.52, 361 / 8000), stroke=ORANGE,
-           width=1.4, dash='4 3')
-    f.text(shift(h.P(0.52, 361 / 8000), (0.06, 0)), '361/8000', size=12,
-           italic=False, color=ORANGE, anchor='start')
+    f.dot(h.P(0.4, diagonal_K(0.4)), r=3.4)
     f.text(shift(h.P(0.6, 0.075), (0, 0.12)), 'K', size=15, color=BLUE)
     f.text(shift(h.P(0.38, 0.1), (0.1, 0.25)), '(b) the diagonal profile',
            size=13, italic=False, anchor='start')
     f.save('appb-profiles', 'Left: the transition profile F on [2/5, td] '
            '(blue) and its continuation along the diagonal on [td, pi/4] '
-           '(green), above the parabola of curvature 3/8 through the point '
-           'of abscissa 18/25. Right: the profile K, increasing on '
-           '[2/5, pi/4] from a value above 361/8000')
+           '(green), above the parabola of curvature 1/2 through its value '
+           'and slope at td. Right: the profile K, increasing on '
+           '[2/5, pi/4] from a positive value at 2/5')
 
 
 # Figure: the target support on the axial boundary.
@@ -610,7 +626,7 @@ def ratio():
 
     def chord(x):
         return ((hi - x) * quintic(lo) + (x - lo) * quintic(hi)) / (hi - lo)
-    assert quintic(lo) > 0 and quintic(hi) > 0
+    assert abs(quintic(lo) - 119.68) < 1e-9 and quintic(hi) > 78.5
     assert all(quintic(x) > chord(x) - 1e-9 for x in grid(lo, hi, 300))
     g = Plot(f, (0.9, 0.7, 4.0, 2.9), (1.56, 1.8), (0, 150))
     g.axes([(lo, '8/5'), (hi, '7/4')],
@@ -625,8 +641,8 @@ def ratio():
     g.curve([(lo, quintic(lo)), (hi, quintic(hi))], stroke=ORANGE, width=2)
     g.curve([(x, quintic(x)) for x in grid(lo, hi, 120)], stroke=BLUE,
             width=2.4)
-    for x, s, dx, anchor in ((lo, '2992/25', 0.12, 'start'),
-                             (hi, '20113/256', -0.12, 'end')):
+    for x, s, dx, anchor in ((lo, '119.68', 0.12, 'start'),
+                             (hi, '78.57', -0.12, 'end')):
         f.dot(g.P(x, quintic(x)), r=3.4, fill=ORANGE)
         f.text(shift(g.P(x, quintic(x)), (dx, -0.38)), s, size=12,
                italic=False, color=ORANGE, anchor=anchor)
@@ -661,8 +677,8 @@ def ratio():
     f.text(shift(h.P(0, 0.8), (0.1, 0.25)), '(b) ρ and tan d, for ℓ = π/4',
            size=13, italic=False, anchor='start')
     f.save('appb-ratio', 'Left: the quintic P on [8/5, 7/4], concave and '
-           'above its chord through the positive end values 2992/25 and '
-           '20113/256. Right: for the source label pi/4, the ratio rho on '
+           'above its chord through the positive end values 119.68 and '
+           'about 78.57. Right: for the source label pi/4, the ratio rho on '
            '[0, s0] below tan d with d = pi/12 + l′; at 0 it starts at '
            'rho(0), just below 2 - root 3 = tan(pi/12)')
 

@@ -239,82 +239,51 @@ square.
 ### Lemma 8.8 (an arcsine sum)
 
 Let $x$ and $y$ be real numbers with $0 \le x \le \frac12$,
-$-\frac12 \le y \le \frac12$, $x + y \le \frac{237}{1000}$ and
-$3x + y \le 1$. Then
+$-\frac12 \le y \le \frac12$, $x + y \le \sqrt5 - 2$ and $3x + y \le 1$. Then
 
 ```math
 \arcsin\tfrac{6x}5 + \arcsin\tfrac{6y}5 < \tfrac\pi{10} .
 ```
 
-![The (x, y)-plane with x from 0 to 1/2 and y from -1/2 to 1/2: the region of the lemma is a quadrilateral with vertices (0, -1/2), (1/2, -1/2), the crossing of the lines 3x + y = 1 and x + y = 237/1000, and (0, 237/1000). It is split into three shaded pieces, (i) where y is at least 0, (ii) where y is negative and x at most 23/60, and (iii) where y is negative and x more than 23/60; an orange curve, where the arcsine sum equals pi/10, runs just above the region](figures/five-arcsine-region.svg)
+![The (x, y)-plane with x from 0 to 1/2 and y from -1/2 to 1/2: the region of the lemma is a quadrilateral with vertices (0, -1/2), (1/2, -1/2), the crossing of the lines 3x + y = 1 and x + y = root 5 - 2, and (0, root 5 - 2). It is split into two shaded pieces, (i) where x is at most 2/5 and (ii) where x is more than 2/5; an orange curve, where the arcsine sum equals pi/10, runs just above the region](figures/five-arcsine-region.svg)
 
 *Figure 8.5.* The region of Lemma 8.8 in the $(x, y)$-plane, split into the
-three cases of the proof, and the curve (orange) on which
+two cases of the proof, and the curve (orange) on which
 $\arcsin\frac{6x}5 + \arcsin\frac{6y}5 = \frac\pi{10}$. The region lies below
-the curve. Case (iii) needs the side $3x + y \le 1$: without it the lemma
+the curve. Case (ii) needs the side $3x + y \le 1$: without it the lemma
 would fail near $x = \frac12$, where the curve passes below the line
-$x + y = \frac{237}{1000}$ (dotted).
+$x + y = \sqrt5 - 2$ (dotted).
 
-*Proof.* Since $\pi > 3.14$, we have $\frac\pi{10} > \frac{157}{500}$, and it
-suffices to show that the sum is less than $\frac{157}{500}$. For
+*Proof.* Since $\pi > 3.14$ and $2.237^2 > 5$, we have
+$\frac\pi{10} > 0.314$ and $x + y \le \sqrt5 - 2 < 0.237$. For
 $0 \le z \le \frac12$ we have $0 \le \frac{6z}5 \le \frac35$, and
 [Lemma 3.29](common.md#lemma-329-elementary-estimates) (3) gives
 
 ```math
-\arcsin\tfrac{6z}5 \le \tfrac{6z}5 + \tfrac14\left(\tfrac{6z}5\right)^3 = \tfrac65 z + \tfrac{54}{125}z^3 . \tag{8.1}
+\arcsin\tfrac{6z}5 \le \tfrac{6z}5 + \tfrac14\left(\tfrac{6z}5\right)^3 = \tfrac65 z + \tfrac{54}{125}z^3 ; \tag{8.1}
 ```
 
-We use (8.1) for $z = x$ and distinguish three cases.
+for $-\frac12 \le z < 0$, Lemma 3.29 (2) gives
+$\arcsin\frac{6z}5 \le \frac65 z$. We use (8.1) for $z = x$ and distinguish
+two cases.
 
-(i) *$y \ge 0$.* Then (8.1) holds for $z = y$ as well. Put $s = x + y$, so
-that $0 \le s \le \frac{237}{1000} < \frac14$. Since
-$x^3 + y^3 = s^3 - 3xys \le s^3$,
+(i) *$x \le \frac25$.* If $y \ge 0$, then (8.1) holds for $z = y$ as well,
+and $x^3 + y^3 \le (x + y)^3 < (\frac25)^3$. If $y < 0$, then
+$\arcsin\frac{6y}5 \le \frac65 y$ and $x^3 \le (\frac25)^3$. In both cases
 
 ```math
-\begin{aligned}
-\arcsin\tfrac{6x}5 + \arcsin\tfrac{6y}5 &\le \tfrac65 s + \tfrac{54}{125}\left(x^3 + y^3\right) \le \tfrac65 s + \tfrac{54}{125}s^3 \\
-&< \tfrac65\cdot\tfrac{237}{1000} + \tfrac{54}{125}\cdot\tfrac1{64} = \tfrac{711}{2500} + \tfrac{27}{4000} = \tfrac{5823}{20000} < \tfrac{157}{500} .
-\end{aligned}
+\arcsin\tfrac{6x}5 + \arcsin\tfrac{6y}5 \le \tfrac65(x + y) + \tfrac{54}{125}\left(\tfrac25\right)^3 < \tfrac65\cdot 0.237 + 0.0277 < 0.314 .
 ```
 
-In the other two cases $y < 0$, so $-\frac35 \le \frac{6y}5 < 0$, and
-Lemma 3.29 (2) gives $\arcsin\frac{6y}5 \le \frac{6y}5$. With (8.1) for
-$z = x$,
+(ii) *$x > \frac25$.* Then $y \le 1 - 3x < 0$, so
+$\arcsin\frac{6y}5 \le \frac65 y$, and $x + y \le 1 - 2x < \frac15$. With
+(8.1) for $z = x$ and $x^3 \le \frac18$,
 
 ```math
-\arcsin\tfrac{6x}5 + \arcsin\tfrac{6y}5 \le \tfrac65(x + y) + \tfrac{54}{125}x^3 . \tag{8.2}
+\arcsin\tfrac{6x}5 + \arcsin\tfrac{6y}5 \le \tfrac65(x + y) + \tfrac{54}{125}x^3 < \tfrac65\cdot\tfrac15 + \tfrac{54}{125}\cdot\tfrac18 = 0.294 < 0.314 . \qquad \square
 ```
 
-Let $q = \frac{23}{60}$, so that
-
-```math
-\tfrac{54}{125}q^3 = \tfrac{54}{125}\cdot\tfrac{12167}{216000} = \tfrac{12167}{500000} .
-```
-
-(ii) *$y < 0$ and $x \le q$.* By $x + y \le \frac{237}{1000}$ and
-$x^3 \le q^3$, the right side of (8.2) is at most
-
-```math
-\tfrac{711}{2500} + \tfrac{12167}{500000} = \tfrac{154367}{500000} < \tfrac{157000}{500000} = \tfrac{157}{500} .
-```
-
-(iii) *$y < 0$ and $x > q$.* Now we use $3x + y \le 1$, that is,
-$x + y \le 1 - 2x$: the right side of (8.2) is at most $h(x)$, where
-$h(z) = \frac65(1 - 2z) + \frac{54}{125}z^3$. Factoring $x^3 - q^3$,
-
-```math
-h(q) - h(x) = \tfrac{12}5(x - q) - \tfrac{54}{125}\left(x^3 - q^3\right) = (x - q)\left(\tfrac{12}5 - \tfrac{54}{125}\left(x^2 + qx + q^2\right)\right) .
-```
-
-Both $x$ and $q$ lie in $(0, \frac12]$, so $x^2 + qx + q^2 \le \frac34$, and
-the second factor is at least $\frac{12}5 - \frac{81}{250} > 0$. As $x > q$,
-this gives $h(x) < h(q)$, and since $1 - 2q = \frac7{30}$,
-
-```math
-h(q) = \tfrac65\cdot\tfrac7{30} + \tfrac{12167}{500000} = \tfrac7{25} + \tfrac{12167}{500000} = \tfrac{152167}{500000} < \tfrac{157}{500} . \qquad \square
-```
-
-*Lean: [`Five.arcsin_sum`](../../SquaresInCircles/Five/Exterior.lean#L40),
+*Lean: [`Five.arcsin_sum`](../../SquaresInCircles/Five/Exterior.lean#L42),
 [`Five.aux`](../../SquaresInCircles/Five/Exterior.lean#L33).*
 
 ### Lemma 8.9 (the arc length)
@@ -352,10 +321,10 @@ We bound the four sums in turn.
    decreasing on $[-1, 1]$, so $A > \arccos(\cos\frac\pi5) = \frac\pi5$.
 2. *$A + V > \frac{2\pi}5$.* Here
    $A + V = \frac\pi2 - (\arcsin\frac{6x}5 + \arcsin\frac{6y}5)$, and
-   Lemma 8.8 applies: $x + y = a + b - 1 \le \sqrt5 - 2 < \frac{237}{1000}$ by
-   the third side of $P_5$ (as $2237^2 = 5004169 > 5 \cdot 10^6$), and
-   $3x + y = 3a + b - 2 \le 1$ by the first. So the sum of arcsines is less
-   than $\frac\pi{10}$, and $A + V > \frac\pi2 - \frac\pi{10} = \frac{2\pi}5$.
+   Lemma 8.8 applies: $x + y = a + b - 1 \le \sqrt5 - 2$ by the third side of
+   $P_5$, and $3x + y = 3a + b - 2 \le 1$ by the first. So the sum of
+   arcsines is less than $\frac\pi{10}$, and
+   $A + V > \frac\pi2 - \frac\pi{10} = \frac{2\pi}5$.
 3. *$A + U \ge \frac\pi2$.* As $a \le 1$, we have
    $b + \frac12 \ge \frac12 \ge a - \frac12$, and the arcsine is
    nondecreasing, so $U \ge \arcsin\frac65(a - \frac12) = \frac\pi2 - A$.
@@ -368,7 +337,7 @@ We bound the four sums in turn.
    with $\theta = \frac\pi5$, gives
    $\frac{2\pi}5 < \arcsin u + \arcsin v = U + V$. $\square$
 
-*Lean: [`Five.arc_length`](../../SquaresInCircles/Five/Exterior.lean#L63).*
+*Lean: [`Five.arc_length`](../../SquaresInCircles/Five/Exterior.lean#L65).*
 
 *Remark.* Only two of the four sums occur as the length
 $\min(A, U) + \min(A, V)$ of the arc of
@@ -408,7 +377,7 @@ the numbers $A, V, U$ of Lemma 8.9 for $(a, b) = (a_S, b_S)$, so each of the
 four sums exceeds $\frac{2\pi}5$, and $S$ holds an arc of $\Gamma_{5/6}$ of
 half-width greater than $\frac\pi5$. $\square$
 
-*Lean: [`Five.exterior_arc`](../../SquaresInCircles/Five/Exterior.lean#L110).*
+*Lean: [`Five.exterior_arc`](../../SquaresInCircles/Five/Exterior.lean#L111).*
 
 Unlike the circle $\Gamma_{1/2}$ of Chapter 7, the circle $\Gamma_{5/6}$ can
 leave an exterior square through its upper edge, so we use the general arc of

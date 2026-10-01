@@ -219,7 +219,7 @@ theorem no_containing (S : Fin 3 → UnitSquare) (o : Point) (hd : InteriorDisjo
       rw [Real.arccos_eq_pi_div_two_sub_arcsin] at hX
       linarith
     rw [min_eq_left hfull] at hX
-    -- with `b > 1/16`, `u < 49/114` and the cap exceeds its share of the budget
+    -- with `b > 1/16`, `1/2-u > 4/57` and the cap exceeds its share of the budget
     refine ⟨hfull,le_of_not_gt fun hb' => ?_⟩
     have hA := third_le_arccos (u := ((C l).a-1/2)/(3/8)) (by linarith) (by linarith [(hP l).2])
     unfold capA aux at hX

@@ -452,6 +452,16 @@ def quarter_profile():
     g.text(0.02, quarter(0.02) + 0.007, 'Q(d)', color=BLUE)
     for k in range(101):
         assert quarter(lo + (hi - lo) * k / 100) > 1 / 3
+    # the bounds of the proof of Lemma C.10
+    eps = PI / 12 - 1 / 6
+    assert 7 / 6 * 0.5 - 6 / 5 * 0.8 < 0 and PI / 12 < 1 / 3
+    assert (3.14 - 2) / 12 >= 0.095 - 1e-15 and (22 / 7 - 2) / 12 < 0.1
+    assert math.sin(eps) >= eps - eps ** 3 / 6 and 0.095 - 0.1 ** 3 / 6 > 0.094
+    assert math.cos(eps) >= 1 - eps ** 2 / 2 and 1 - 0.1 ** 2 / 2 >= 0.995
+    assert 49 / 30 * 0.094 > 0.153 and 0.153 + 0.995 / 5 > 1 / 3
+    assert abs(quarter(lo) - 49 / 30 * math.sin(eps) - math.cos(eps) / 5) \
+        < 1e-12
+    assert 1 / 30 + SQRT3 / 20 < 1 / 8 and 3 / 4 - 22 / 7 / 8 > 1 / 3
     g.f.save('appc-quarter-profile', 'The concave quarter profile Q above the '
              'line at one third')
 
@@ -483,6 +493,14 @@ def side_target():
         y = 0.19 - 0.04 * k
         g.points([(0.03, y), (0.09, y)], stroke=color, width=2)
         g.text(0.1, y, name, color=color, size=13, anchor='start')
+    # the bounds of the proof of Lemma C.9 at the left end
+    assert 7 / 9 + 8 * 3.14 / 135 > 5 / 6 and 22 / 21 - 9 / 25 < 0.7
+    assert 1 - 0.7 ** 2 / 2 > 3 / 4 and tie_a(PI / 6) > 5 / 6
+    assert (30 * 3.14 + 17) / 135 > 4 / 5 and abs(
+        tie_a(2 / 3) - (30 * PI + 17) / 135) < 1e-12
+    assert SQRT3 / 2 > 0.865 and 1.3 * 0.865 - 0.1 > 1
+    assert 8 / 21 < 0.381 and 1 - 0.381 ** 2 / 2 > 0.927
+    assert 1.2 * 0.927 - 0.275 * 0.381 > 1
     g.f.save('appc-side-target', 'The concave lower bound f of the inward sum '
              'with a side target, as a function of the source label, for four '
              'side targets')
@@ -766,6 +784,11 @@ def turn_margin():
     g.dot(hi, m(hi), fill=BLUE)
     g.text(0.62, 1.05, '(44/45) sin z + (4/5) cos z', color=BLUE, size=14,
            anchor='start')
+    # the bounds of the proof of Lemma C.20 at the two ends
+    assert math.sin(lo) >= lo - lo ** 3 / 6 > 0.18
+    assert math.cos(lo) >= 1 - lo ** 2 / 2 > 0.98
+    assert abs(44 / 45 * 0.18 + 0.8 * 0.98 - 0.96) < 1e-12 and 0.96 > 12 / 13
+    assert SQRT3 / 2 > 0.865 and 44 / 45 * 0.865 + 0.4 > 1.2 > 12 / 13
     g.f.save('appc-turn-margin', 'The concave turn margin above the line at '
              '12/13')
 

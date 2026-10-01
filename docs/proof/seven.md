@@ -219,7 +219,7 @@ $\varepsilon_S$.
    Hence an admissible state has $r(a, u) \ge 0$, that is $3a + 2u \le 4$.
 2. An admissible state $(a, u)$ has $a \le \sqrt3 - \frac12 < \frac54$,
    $a + u < \frac{31}{20}$ and $u < \frac{31}{40}$. Here
-   $\frac{173}{100} < \sqrt3 < \frac{1733}{1000}$.
+   $1.73 < \sqrt3 < 1.733$.
 3. If $S$ is an exterior square with $\varphi(a_S, b_S) \le \frac{13}4$, in
    particular if $\overline S$ lies in a closed disk of radius $R_7$ about $o$,
    then the state of $S$ is admissible.
@@ -234,10 +234,10 @@ on the right are nonnegative.
 $a \le \sqrt{\frac{13}4 - \frac14} - \frac12 = \sqrt3 - \frac12$; and
 $\sqrt3 < \frac74$ because $3 < \frac{49}{16}$. Next,
 $2\varphi(a, u) = (a + u + 1)^2 + (a - u)^2 \ge (a + u + 1)^2$, so
-$(a + u + 1)^2 \le \frac{13}2 = \frac{2600}{400} < (\frac{51}{20})^2$ and
+$(a + u + 1)^2 \le \frac{13}2 < (\frac{51}{20})^2 = 6.5025$ and
 $a + u < \frac{31}{20}$. With $u \le a$ this gives
-$2u \le a + u < \frac{31}{20}$. The bounds on $\sqrt3$ are
-$(\frac{173}{100})^2 = 2.9929$ and $(\frac{1733}{1000})^2 = 3.003289$.
+$2u \le a + u < \frac{31}{20}$. The bounds on $\sqrt3$ follow from
+$1.73^2 < 3 < 1.733^2$.
 
 (3) By [Lemma 3.21](common.md#lemma-321-charts) (1), $a_S \ge \frac12$ since
 $o \notin S^\circ$, and $0 \le b_S \le a_S$ by
@@ -303,7 +303,7 @@ line meets the circle $\varphi = \frac{13}4$ in two points; the one with the
 larger $a$ is the *transition state* $(a_0, u_0)$,
 
 ```math
-a_0 = \frac{9M + 11J}{202} - \frac12, \qquad u_0 = \frac{11M - 9J}{202} - \frac12, \qquad M = 2\pi + 17, \quad J = \sqrt{\tfrac{1313}2 - M^2} ,
+a_0 = \frac{9M + 11J}{202} - \frac12, \qquad u_0 = \frac{11M - 9J}{202} - \frac12, \qquad M = 2\pi + 17, \quad J = \sqrt{202\cdot\tfrac{13}4 - M^2} ,
 ```
 
 and $s_0 = \frac54 u_0$ is its label. Numerically
@@ -397,7 +397,9 @@ Let $(a, u)$ be an admissible state.
 2. If the label is axial, $\ell(a, u) = \mathrm{axial}(u)$, then
    $9a + 11u \le 2\pi + 7$ and $a + u < \frac{113}{80}$.
 
-*Proof.* (1) Write $\ell = \ell(a, u)$. Since $\ell = \mathrm{side}(a, u)$ we
+*Proof.* We use $3.14 < \pi < 3.1416$.
+
+(1) Write $\ell = \ell(a, u)$. Since $\ell = \mathrm{side}(a, u)$ we
 have $12\ell = 2\pi + 7 + 4u - 9a$, and since $\ell \le \mathrm{axial}(u)$ we
 have $u \ge \frac45\ell$.
 
@@ -408,29 +410,29 @@ $2a + u < \frac{38}{15}$: with $X = a + \frac12$ and $Y = u + \frac12$,
 (2X + Y)^2 + (2Y - X)^2 = 5\left(X^2 + Y^2\right) = 5\,\varphi(a, u) \le \tfrac{65}4 < \left(\tfrac{121}{30}\right)^2 ,
 ```
 
-since $\frac{65}4 = \frac{14625}{900}$ and $(\frac{121}{30})^2 = \frac{14641}{900}$,
 so $2X + Y < \frac{121}{30}$, that is $2a + u < \frac{121}{30} - \frac32 = \frac{38}{15}$.
 This is the disk $\varphi \le \frac{13}4$ seen in the direction $(2, 1)$.
 Now suppose $\ell \le \frac9{25}$. Then $9a = 2\pi + 7 - 12\ell + 4u$ and
-$u \ge \frac45\ell$ give, as $\pi > \frac{157}{50}$,
+$u \ge \frac45\ell$ give
 
 ```math
-9(2a + u) = 4\pi + 14 - 24\ell + 17u \ge 4\pi + 14 - \tfrac{52}5\ell \ge 4\pi + 14 - \tfrac{468}{125} > \tfrac{2852}{125} ,
+9(2a + u) = 4\pi + 14 - 24\ell + 17u \ge 4\pi + 14 - \tfrac{52}5\ell \ge 4\pi + 14 - \tfrac{52}5 \cdot \tfrac9{25} > 12.56 + 14 - 3.744 > 22.8 ,
 ```
 
-so $2a + u > \frac{2852}{1125} > \frac{2850}{1125} = \frac{38}{15}$, a contradiction.
+so $2a + u > \frac{22.8}9 = \frac{38}{15}$, a contradiction.
 
 *The bound $a < \frac98$.* Suppose $a \ge \frac98$. From
-$\mathrm{side}(a, u) > \frac9{25}$ and $\pi < \frac{22}7$,
+$\mathrm{side}(a, u) > \frac9{25}$,
 
 ```math
-u > \tfrac12 + \tfrac{27}{25} - \tfrac\pi2 + \tfrac94(a - 1) > \tfrac12 + \tfrac{27}{25} - \tfrac{11}7 + \tfrac9{32} = \tfrac{1623}{5600} > \tfrac9{32} ,
+u - \tfrac12 > \tfrac{27}{25} - \tfrac\pi2 + \tfrac94(a - 1) \ge 1.08 - 1.5708 + 0.28125 > -0.21 ,
 ```
 
-and then the corner $(\frac98, \frac9{32})$ already lies outside the disk:
+so $u + \frac12 > 0.79$. With $a + \frac12 \ge \frac{13}8$, the state lies beyond
+the corner $(\frac98, 0.29)$, which is already outside the disk:
 
 ```math
-\varphi(a, u) > \left(\tfrac{13}8\right)^2 + \left(\tfrac{25}{32}\right)^2 = \tfrac{3329}{1024} > \tfrac{3328}{1024} = \tfrac{13}4 ,
+\varphi(a, u) > \left(\tfrac{13}8\right)^2 + 0.79^2 > 2.64 + 0.62 > \tfrac{13}4 ,
 ```
 
 a contradiction.
@@ -444,8 +446,7 @@ $9a + 11u \ge 2\pi + 7$. Together,
 2\pi + 7 \le 9a + 11\left(\tfrac94 a + \tfrac\pi4 - \tfrac74\right) = \tfrac{135}4 a + \tfrac{11\pi}4 - \tfrac{77}4 ,
 ```
 
-so $a \ge \frac{35 - \pi}{45}$, and with $\pi < \frac{22}7$ this exceeds
-$\frac{223}{315} > \frac7{10}$.
+so $a \ge \frac{35 - \pi}{45}$, which exceeds $\frac7{10}$ as $\pi < \frac72$.
 
 *The quadratic bound.* Put $D = \ell - \frac\pi6$ and $w = r(a, u) \ge 0$. By
 Lemma 9.7 (1) with $\ell = \mathrm{side}(a, u)$,
@@ -456,32 +457,31 @@ so that
 (a - 1)^2 + \left(u - \tfrac12\right)^2 = \tfrac{52}{25}D^2 - \tfrac{38}{75}Dw + \tfrac{97}{900}w^2 .
 ```
 
-By Lemma 9.5 (1),
-$q = w - (a - 1)^2 - (u - \frac12)^2 = \frac{13}4 - \varphi(a, u) \ge 0$. Also
-$D \le \frac\pi4 - \frac\pi6 = \frac\pi{12} < \frac4{15}$. Expanding checks the
-identity
+By Lemma 9.5 (1) the left side is at most $w$. Also
+$D \le \frac\pi4 - \frac\pi6 = \frac\pi{12} < \frac4{15}$, so, as $w \ge 0$,
+$\frac{38}{75}Dw \le \frac{38}{75} \cdot \frac4{15}\,w \le \frac w7$. Dropping the
+term in $w^2$, we get $w \ge \frac{52}{25}D^2 - \frac w7$, that is,
 
 ```math
-\tfrac{1277}{1125}\left(w - \tfrac95 D^2\right) = q + \tfrac{38}{75}\,w\left(\tfrac4{15} - D\right) + \tfrac{97}{900}w^2 + \tfrac{207}{5625}D^2 ,
+w \ge \tfrac78 \cdot \tfrac{52}{25}D^2 = \tfrac{91}{50}D^2 \ge \tfrac95 D^2 .
 ```
-
-whose right side is nonnegative. So $w \ge \frac95 D^2$.
 
 (2) Now $\ell(a, u) = \mathrm{axial}(u) \le \mathrm{side}(a, u)$, and
 $12(\mathrm{axial}(u) - \mathrm{side}(a, u)) = 9a + 11u - 2\pi - 7$, so
-$9a + 11u \le 2\pi + 7$. Suppose $a + u \ge \frac{113}{80}$. With
-$\pi < \frac{22}7$,
-$2u = (9a + 11u) - 9(a + u) < \frac{93}7 - \frac{1017}{80} = \frac{321}{560}$,
-so $u < \frac{23}{80}$, and then
+$9a + 11u \le 2\pi + 7$. Suppose $a + u \ge \frac{113}{80}$. Then
+$2u = (9a + 11u) - 9(a + u) \le 2\pi + 7 - 9 \cdot \frac{113}{80} < 13.2832 - 12.7125 < 0.575$,
+so $u < \frac{23}{80}$, and $\varphi(a, u)$ is at least its value at the corner
+$(\frac98, \frac{23}{80})$:
 
 ```math
 \begin{aligned}
-\varphi(a, u) - \tfrac{13}4 &= \left(a - \tfrac98\right)^2 + \left(u - \tfrac{23}{80}\right)^2 \\
-&\quad + \tfrac{13}4\left(a + u - \tfrac{113}{80}\right) + \tfrac{67}{40}\left(\tfrac{23}{80} - u\right) + \tfrac{69}{6400} > 0 ,
+\varphi(a, u) - \left(\tfrac{13}8\right)^2 - \left(\tfrac{63}{80}\right)^2 &= \left(a - \tfrac98\right)^2 + \left(u - \tfrac{23}{80}\right)^2 \\
+&\quad + \tfrac{13}4\left(a + u - \tfrac{113}{80}\right) + \tfrac{67}{40}\left(\tfrac{23}{80} - u\right) \ge 0 .
 \end{aligned}
 ```
 
-a contradiction. $\square$
+As $(\frac{13}8)^2 + (\frac{63}{80})^2 > 2.64 + 0.62 > \frac{13}4$, this is a
+contradiction. $\square$
 
 *Lean:
 [`Seven.Admissible.projection_two_one`](../../SquaresInCircles/Seven/Exterior.lean#L127),
@@ -507,7 +507,7 @@ $\overline{Q(a, u)}$.
 
 The proof is given in [Appendix A](appendix-a.md).
 
-*Lean: [`Seven.marker_arc`](../../SquaresInCircles/Seven/Exterior.lean#L487).*
+*Lean: [`Seven.marker_arc`](../../SquaresInCircles/Seven/Exterior.lean#L482).*
 
 In a chart of an exterior square with an admissible state, the lemma says that
 the closed square contains the arc of the unit circle with half-width
@@ -577,7 +577,7 @@ $\rho = \sqrt{a^2 + b^2} \le \sqrt{\frac{13}4 - \frac14} - \frac12 = \sqrt3 - \f
 By Cauchy–Schwarz $a\cos z + b\sin z \ge -\rho$, and
 $(|\cos z| + |\sin z|)^2 = 1 + 2|\cos z\sin z| \ge 1$, so
 $h(a, b, z) \ge \frac12 - \rho \ge 1 - \sqrt3$, and
-$1 - \sqrt3 > 1 - \frac{1733}{1000} > -\frac{37}{50}$ by Lemma 9.5 (2).
+$1 - \sqrt3 > 1 - 1.733 > -\frac{37}{50}$ by Lemma 9.5 (2).
 
 (4) By Cauchy–Schwarz,
 $(pX + qY)^2 \le (p^2 + q^2)(X^2 + Y^2) \le \frac{13}4(p^2 + q^2)$, which is at

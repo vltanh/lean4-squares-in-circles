@@ -69,20 +69,20 @@ private lemma targetH_zero_gt_one {A v : ℝ} (h : Admissible A v)
     dsimp only [targetH,d,s]; rw [add_zero]
   rw [hH]
   by_cases hs1 : s ≤ Real.pi/6
-  · have hA : 19/20 < A := by dsimp [Boundary.tieA] at hline; linarith [Real.pi_gt_d2]
+  · have hA : 5/6 < A := by dsimp [Boundary.tieA] at hline; linarith [Real.pi_gt_three]
     have hv : v ≤ 1/2 := by linarith
     have hd7 : d < 7/10 := by dsimp [d,gap]; linarith [hs.1,pi_lt_22_over_7]
-    have hcos : 151/200 < Real.cos d := by
+    have hcos : 3/4 < Real.cos d := by
       have hh := Real.one_sub_sq_div_two_le_cos (x := d)
       nlinarith
     have hm := mul_nonneg (show 0 ≤ 1/2-v by linarith) hsin0
-    have hc : (29/20:ℝ)*(151/200) < (A+1/2)*Real.cos d := by gcongr; linarith
+    have hc : (4/3:ℝ)*(3/4) < (A+1/2)*Real.cos d := by gcongr; linarith
     linarith
   · by_cases hs2 : s ≤ 2/3
     · have hA : 4/5 < A := by dsimp [Boundary.tieA] at hline; linarith [Real.pi_gt_d2]
       have hv : v < 7/10 := by linarith [Real.pi_gt_d2]
       have hd6 : d ≤ Real.pi/6 := by dsimp [d,gap]; linarith
-      have hcos : 17/20 < Real.cos d := by
+      have hcos : 173/200 < Real.cos d := by
         have hh := Real.cos_le_cos_of_nonneg_of_le_pi hd.1.le (by linarith [Real.pi_pos]) hd6
         rw [Real.cos_pi_div_six] at hh
         linarith [sqrt_three_bounds.1]
@@ -91,17 +91,18 @@ private lemma targetH_zero_gt_one {A v : ℝ} (h : Admissible A v)
           (by linarith [Real.pi_pos]) hd6
         simpa only [Real.sin_pi_div_six] using hh
       have hm := mul_nonneg (show 0 ≤ 7/10-v by linarith) hsin0
-      have hc : (13/10:ℝ)*(17/20) < (A+1/2)*Real.cos d := by gcongr; linarith
+      have hc : (13/10:ℝ)*(173/200) < (A+1/2)*Real.cos d := by gcongr; linarith
       linarith
     · have hA := side_selected_a_gt h hT
       have hv := h.u_lt
       have hdlim : d < 8/21 := by dsimp [d,gap]; linarith [pi_lt_22_over_7]
-      have hcos : 409/441 < Real.cos d := by
+      have hcos : 1-(8/21)^2/2 < Real.cos d := by
         have hh := Real.one_sub_sq_div_two_le_cos (x := d)
         nlinarith
       have hsin : Real.sin d < 8/21 := (Real.sin_le hd.1.le).trans_lt hdlim
       have hm := mul_nonneg (show 0 ≤ 31/40-v by linarith) hsin0
-      have hc : (6/5:ℝ)*(409/441) < (A+1/2)*Real.cos d := by gcongr; linarith
+      have hc : (6/5)*(1-(8/21)^2/2) < (A+1/2)*Real.cos d :=
+        mul_lt_mul'' (by linarith) hcos (by norm_num) (by norm_num)
       linarith
 
 private def quarterProfile (d : ℝ) : ℝ :=
@@ -148,16 +149,17 @@ private lemma quarter_profile_gt {d : ℝ} (hd : -1/6 ≤ d ∧ d ≤ Real.pi/12
       rw [Real.sin_pi_div_three] at hh
       linarith [sqrt_three_bounds.1]
     have h0 : 0 ≤ (4/5)*Real.cos z+(6/5)*Real.sin z := by positivity
-    have h1 : (4/5)*Real.cos z+(6/5)*Real.sin z ≤ 8/5 := by linarith [Real.sin_le_one z]
-    have hp := mul_nonneg (show 0 ≤ 4/15-x by linarith [hx.2,pi_lt_22_over_7]) h0
+    have hp := mul_nonneg (show 0 ≤ 1/3-x by linarith [hx.2,pi_lt_22_over_7]) h0
     dsimp [quarterProfileDD]
     change (9/10)*Real.cos z-(8/5)*Real.sin z+x*((4/5)*Real.cos z+(6/5)*Real.sin z) ≤ 0
     linarith
   have hlo : 0 < f (-1/6) := by
     let e := Real.pi/12-1/6
-    have he : 9/100 < e ∧ e < 1/10 := by dsimp [e]; constructor <;> linarith [Real.pi_gt_d2,pi_lt_22_over_7]
+    have he : 19/200 < e ∧ e < 1/10 := by
+      dsimp [e]; constructor <;> linarith [Real.pi_gt_d2,pi_lt_22_over_7]
     have hs := Real.sin_ge_sub_cube (show 0 ≤ e by linarith)
     have hc := Real.one_sub_sq_div_two_le_cos (x := e)
+    have he2 : e^2 ≤ (1/10:ℝ)^2 := pow_le_pow_left₀ (by linarith) he.2.le 2
     have he3 : e^3 ≤ (1/10:ℝ)^3 := pow_le_pow_left₀ (by linarith) he.2.le 3
     have hid : quarterProfile (-1/6)=(49/30)*Real.sin e+(1/5)*Real.cos e := by
       have hang : 5*Real.pi/12-(-1/6)=Real.pi/2-e := by dsimp [e]; ring
@@ -166,18 +168,18 @@ private lemma quarter_profile_gt {d : ℝ} (hd : -1/6 ≤ d ∧ d ≤ Real.pi/12
       ring
     dsimp [f]
     rw [hid]
-    nlinarith
+    linarith
   have hhi : 0 < f (Real.pi/12) := by
     have hid : quarterProfile (Real.pi/12)=3/4-Real.pi*(1/30+Real.sqrt 3/20) := by
       dsimp [quarterProfile]
       rw [show 5*Real.pi/12-Real.pi/12=Real.pi/3 by ring,
         Real.cos_pi_div_three,Real.sin_pi_div_three]
       ring
-    have hp := mul_lt_mul_of_pos_left sqrt_three_bounds.2 Real.pi_pos
-    have hp' := mul_lt_mul_of_pos_right pi_lt_22_over_7 (show (0:ℝ) < 1/30+(1733/1000)/20 by norm_num)
+    have hp := mul_lt_mul_of_pos_left
+      (show 1/30+Real.sqrt 3/20 < 1/8 by linarith [sqrt_three_bounds.2]) Real.pi_pos
     dsimp [f]
     rw [hid]
-    linarith
+    linarith [pi_lt_22_over_7]
   have hh := positive_of_second_nonpos hd (fun x _ => d1 x) (fun x _ => d2 x) hdd hlo hhi
   dsimp [f] at hh
   linarith

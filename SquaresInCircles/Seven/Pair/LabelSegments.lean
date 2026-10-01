@@ -362,7 +362,7 @@ lemma circle_displacement_half {u v : ℝ}
   rw [circle_u0] at h0u h0v
   have eu := circle_eq ⟨hu,huv.trans hur⟩
   have ev := circle_eq ⟨hu.trans huv,hur⟩
-  have hbounds := transition_bounds
+  have hbounds := transition_coarse
   have hratio : 2*(u+v+1) ≤ circle u+circle v+1 := by linarith
   have hid : (circle u-circle v)*(circle u+circle v+1) = (v-u)*(u+v+1) := by
     linarith
