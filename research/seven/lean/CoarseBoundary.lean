@@ -235,7 +235,10 @@ lemma side_transition_trade {a u : ℝ} (h : Admissible a u)
   have hm := mul_nonneg (sub_nonneg.mpr hb.1)
     (show 0 ≤ Y0-(12/25)*X0 by linarith)
   have hprod : 0 ≤ X0*((a0-a)-(12/25)*(u-u0)) := by nlinarith
-  have hnon := nonneg_of_mul_nonneg_left hprod hx.1
+  have hnon : 0 ≤ (a0-a)-(12/25)*(u-u0) := by
+    by_contra hn
+    have hmneg := mul_neg_of_pos_of_neg hx.1 (lt_of_not_ge hn)
+    linarith
   linarith
 
 end SquaresInCircles.Seven.Human
