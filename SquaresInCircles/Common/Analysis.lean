@@ -85,6 +85,24 @@ lemma concave_gt_of_endpoints {f : ℝ → ℝ} {l u x c : ℝ}
   (lt_min hl hu).trans_le
     (hf.min_le_of_mem_Icc ⟨le_rfl,hx.1.trans hx.2⟩ ⟨hx.1.trans hx.2,le_rfl⟩ hx)
 
+/-- A concave function that vanishes at `l` and is positive at `u` is positive on
+`(l, u]`: it lies above its chord. -/
+lemma concave_pos_of_zero_left {f : ℝ → ℝ} {l u x : ℝ}
+    (hf : ConcaveOn ℝ (Icc l u) f) (hx : l < x ∧ x ≤ u) (hl : f l = 0) (hu : 0 < f u) :
+    0 < f x := by
+  have hlu : 0 < u-l := by linarith [hx.1,hx.2]
+  have ht : 0 < (x-l)/(u-l) := div_pos (by linarith [hx.1]) hlu
+  have ht1 : (x-l)/(u-l) ≤ 1 := (div_le_one hlu).mpr (by linarith [hx.2])
+  have h := hf.2 (left_mem_Icc.mpr (by linarith)) (right_mem_Icc.mpr (by linarith))
+    (sub_nonneg.mpr ht1) ht.le (by ring)
+  have hx' : (1-(x-l)/(u-l))•l+((x-l)/(u-l))•u = x := by
+    simp only [smul_eq_mul]
+    field_simp
+    ring
+  rw [hx',hl] at h
+  simp only [smul_eq_mul,mul_zero,zero_add] at h
+  exact (mul_pos ht hu).trans_le h
+
 /-- A function concave on `[L, U]`, composed with an affine map from `[l, u]`
 into `[L, U]`, is concave on `[l, u]`. -/
 lemma concave_affine_argument {f : ℝ → ℝ} {L U l u a b : ℝ}

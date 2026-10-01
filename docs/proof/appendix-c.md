@@ -688,9 +688,9 @@ $\frac45(\mathrm{side}(a, u) - \frac\pi6) + \frac2{15}(4 - 3a - 2u) = 1 - a$ by
 the definition of the side label. $\square$
 
 *Lean:
-[`Seven.inwardOpposite`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L24),
-[`Seven.inward_opposite_formula`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L27),
-[`Seven.inward_opposite_side_identity`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L35).*
+[`Seven.inwardOpposite`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L25),
+[`Seven.inward_opposite_formula`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L28),
+[`Seven.inward_opposite_side_identity`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L36).*
 
 The function $J$ decreases in $a$; it decreases in $A$ where $\sin e \ge 0$ and
 increases in $v$ where $\cos e \ge 0$. This is what moves the states to the
@@ -837,181 +837,144 @@ target through the following quadratic bound.
 For $0 \le w \le \frac3{10}$,
 
 ```math
-c(w) - \tfrac12 \le \sqrt3 - 1 - \tfrac{15}{52}w - \tfrac{341}{1092}w^2 .
+c(w) - \tfrac12 \le \sqrt3 - 1 - \tfrac{\sqrt3}6w - \tfrac5{16}w^2 .
 ```
+
+The right side is the tangent of $c(w) - \frac12$ at $w = 0$, lowered by
+$\frac5{16}w^2$.
 
 *Proof.* Since $\frac{13}4 - (w + \frac12)^2 = 3 - w - w^2$, the left side is
-$\sqrt{3 - w - w^2} - 1$. Let $\alpha = \frac{15}{52}$,
-$\beta = \frac{341}{1092} = \frac{15}{52} + \frac1{42}$ and
-$B = \sqrt3 - \alpha w - \beta w^2$. Then
-$B \ge \frac{173}{100} - \alpha\cdot\frac3{10} - \beta\cdot\frac9{100} > 0$,
-and, using $(\sqrt3)^2 = 3$,
+$\sqrt{3 - w - w^2} - 1$. Let
+$B = \sqrt3\left(1 - \frac w6\right) - \frac5{16}w^2$. Then
+$B \ge \frac{173}{100}\cdot\frac{19}{20} - \frac5{16}\cdot\frac9{100} > 0$, and,
+using $(\sqrt3)^2 = 3$,
 
 ```math
-B^2 - (3 - w - w^2) = w\left(1 - 2\sqrt3\,\alpha\right) + w^2\left(1 - 2\sqrt3\,\beta + \alpha^2\right) + 2\alpha\beta w^3 + \beta^2w^4 ,
+B^2 - (3 - w - w^2) = \left(\tfrac{13}{12} - \tfrac58\sqrt3\right)w^2 + \tfrac5{48}\sqrt3\,w^3 + \tfrac{25}{256}w^4 ,
 ```
 
-where, by $\sqrt3 < \frac{1733}{1000}$,
-
-```math
-1 - 2\sqrt3\,\alpha > 1 - 2\cdot\tfrac{1733}{1000}\cdot\tfrac{15}{52} = \tfrac1{5200}, \qquad
-1 - 2\sqrt3\,\beta + \alpha^2 > 1 - 2\cdot\tfrac{1733}{1000}\cdot\tfrac{341}{1092} + \tfrac{225}{2704} = \tfrac{1559}{1774500} .
-```
-
+where $\frac{13}{12} - \frac58\sqrt3 > 0$ as $\sqrt3 < \frac{1733}{1000} < \frac{26}{15}$.
 So $B^2 \ge 3 - w - w^2 \ge 0$, and since $B > 0$, $\sqrt{3 - w - w^2} \le B$.
 $\square$
 
 *Lean:
-[`Seven.circle_quadratic_upper`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L111).*
+[`Seven.circle_quadratic_upper`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L48).*
 
-### Definition C.16 (the radial polynomials)
+### Definition C.16 (the radial form)
 
 For real $z$ and $v$ let
 
 ```math
-\begin{aligned}
-b_0(z) &= \tfrac{67}{1000}z - \tfrac14z^2 + \tfrac{73}{600}z^3 + \tfrac1{48}z^4 - \tfrac{733}{120000}z^5 - \tfrac1{1440}z^6, \\
-b_1(z) &= \tfrac{15}{52}\left(z - \tfrac{z^3}6\right) - \left(\tfrac{z^2}2 - \tfrac{z^4}{24} + \tfrac{z^6}{720}\right), \qquad
-b_2(z) = \tfrac{341}{1092}\left(z - \tfrac{z^3}6\right), \\
-E(z, v) &= b_0(z) + v\,b_1(z) + v^2b_2(z) + \tfrac6{25}\left(z - \tfrac54v\right)^2,
-\end{aligned}
+E(z, v) = \tfrac45z + \tfrac6{25}\left(z - \tfrac54v\right)^2 - \left(\sqrt3 - 1 - \tfrac{\sqrt3}6v - \tfrac5{16}v^2\right)\sin z - \left(v + \tfrac12\right)(1 - \cos z)
 ```
 
-and
-
-```math
-\begin{aligned}
-P(z) ={}& \tfrac{201}{2000} - \tfrac{201353}{7098000}z - \tfrac{3091}{21840}z^2 - \tfrac{1571239}{14196000}z^3
-- \tfrac{23103}{7280000}z^4 + \tfrac{977419}{182520000}z^5 \\
-&- \tfrac{13}{6300}z^6 - \tfrac{364297}{196560000}z^7 + \tfrac1{90720}z^8 + \tfrac1{8640}z^9 - \tfrac1{518400}z^{11} .
-\end{aligned}
-```
+and $\alpha(z) = \frac38 + \frac5{16}\sin z$. Since
+$\frac6{25}(z - \frac54v)^2 = \frac6{25}z^2 - \frac35zv + \frac38v^2$, $E(z, v)$ is a
+quadratic polynomial in $v$ with leading coefficient $\alpha(z)$.
 
 *Lean:
-[`Seven.radialB`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L77),
-[`Seven.radialL`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L80),
-[`Seven.radialK`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L83),
-[`Seven.radialE`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L85),
-[`Seven.radialPolynomial`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L47).*
+[`Seven.radialForm`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L77).*
 
-### Lemma C.17 (a Taylor bound for the circular pieces)
+### Lemma C.17 (the radial form at two heights)
 
-Let $0 \le z \le \frac58$, $v \ge 0$ and
-$\frac{73}{100} \le \rho \le \frac{733}{1000}$. Then
+For $0 < z \le \frac58$,
 
 ```math
-b_0(z) + v\,b_1(z) + v^2b_2(z) \le \tfrac45z - \left(\rho - \tfrac{15}{52}v - \tfrac{341}{1092}v^2\right)\sin z - \left(v + \tfrac12\right)(1 - \cos z) .
+E(z, 0) > \alpha(z)\left(\tfrac z2\right)^2, \qquad
+E\left(z, \tfrac3{10}\right) > \alpha(z)\left(\tfrac3{10} - \tfrac z2\right)^2 .
 ```
 
-*Proof.* We bound the terms on the right one by one, using $z, v, \rho \ge 0$.
-By the upper Taylor bound of $\sin z$,
+*Proof.* Write $S = \sin z$ and $C = \cos z$. For $0 \le z \le \frac58$,
+$0 \le S \le z$ and $C \ge 1 - \frac{z^2}2 \ge 0$; we also use
+$\sqrt3 < \frac{1733}{1000}$.
+
+*The height $v = 0$.* Here
 
 ```math
-\rho\sin z \le \rho\left(z - \tfrac{z^3}6 + \tfrac{z^5}{120}\right)
-= \tfrac{733}{1000}z - \tfrac{73}{600}z^3 + \tfrac{733}{120000}z^5
-- \left(\tfrac{733}{1000} - \rho\right)z - \left(\rho - \tfrac{73}{100}\right)\tfrac{z^3}6 - \left(\tfrac{733}{1000} - \rho\right)\tfrac{z^5}{120},
+E(z, 0) - \alpha(z)\left(\tfrac z2\right)^2 = \tfrac45z + \tfrac6{25}z^2 - (\sqrt3 - 1)S - \tfrac12(1 - C) - \left(\tfrac3{32} + \tfrac5{64}S\right)z^2 .
 ```
 
-and the last three terms are nonpositive. By $\sin z \ge z - \frac{z^3}6$,
-$\frac{15}{52}v\sin z \ge \frac{15}{52}v(z - \frac{z^3}6)$ and
-$\frac{341}{1092}v^2\sin z \ge \frac{341}{1092}v^2(z - \frac{z^3}6)$. By the
-lower Taylor bound of $\cos z$, $(v + \frac12)(1 - \cos z)$ is at most
-$(v + \frac12)(\frac{z^2}2 - \frac{z^4}{24} + \frac{z^6}{720})$. So the right
-side is at least
+We bound $S \le z - \frac{z^3}6 + \frac{z^5}{120}$ in the term $(\sqrt3 - 1)S$,
+$S \le z$ in the last term, and $1 - C \le \frac{z^2}2$. As
+$\frac14 - \frac6{25} = \frac1{100}$, the difference is then at least
 
 ```math
-\left(\tfrac45 - \tfrac{733}{1000}\right)z + \tfrac{73}{600}z^3 - \tfrac{733}{120000}z^5
-+ \tfrac{15}{52}v\left(z - \tfrac{z^3}6\right) + \tfrac{341}{1092}v^2\left(z - \tfrac{z^3}6\right)
-- \left(v + \tfrac12\right)\left(\tfrac{z^2}2 - \tfrac{z^4}{24} + \tfrac{z^6}{720}\right),
+z\left(\tfrac95 - \sqrt3 - \left(\tfrac1{100} + \tfrac3{32}\right)z\right) + z^3\left((\sqrt3 - 1)\left(\tfrac16 - \tfrac{z^2}{120}\right) - \tfrac5{64}\right).
 ```
 
-which is $b_0(z) + v\,b_1(z) + v^2b_2(z)$ by expanding. $\square$
+For $0 < z \le \frac58$ both brackets are positive: the first exceeds
+$0.067 - \frac58\cdot 0.104 > 0$, and the second exceeds
+$0.73\cdot 0.163 - 0.079 > 0$.
+
+*The height $v = \frac3{10}$.* Let
+$F(z) = E(z, \frac3{10}) - \alpha(z)(\frac3{10} - \frac z2)^2$ and let
+$\rho = \sqrt3 - 1 - \frac{\sqrt3}6\cdot\frac3{10} - \frac5{16}\cdot\frac9{100}$, so that
+
+```math
+E\left(z, \tfrac3{10}\right) = \tfrac45z + \tfrac6{25}\left(z - \tfrac38\right)^2 - \rho\,S - \tfrac45(1 - C).
+```
+
+Then $F(0) = \frac6{25}\cdot\frac9{64} - \frac38\cdot\frac9{100} = 0$, and,
+differentiating twice,
+
+```math
+F''(z) = \tfrac{12}{25} - \tfrac3{16} + S\left(\rho - \tfrac5{32} + \tfrac5{16}\left(\tfrac3{10} - \tfrac z2\right)^2\right) - C\left(\tfrac45 - \tfrac58\left(\tfrac3{10} - \tfrac z2\right)\right).
+```
+
+For $0 \le z \le \frac58$: $(\frac3{10} - \frac z2)^2 \le \frac9{100}$ and
+$\rho < 0.6183$, so the factor of $S$ is less than $\frac12$; and
+$\frac45 - \frac58(\frac3{10} - \frac z2) \ge \frac35 + \frac5{16}z$. With
+$S \le z$ and $C \ge 1 - \frac{z^2}2$,
+
+```math
+F''(z) < \tfrac3{10} + \tfrac z2 - \left(\tfrac35 + \tfrac5{16}z\right)\left(1 - \tfrac{z^2}2\right)
+= -\tfrac3{10} + \tfrac3{16}z + \tfrac3{10}z^2 + \tfrac5{32}z^3
+< -0.3 + 0.118 + 0.118 + 0.039 < 0 ,
+```
+
+so $F$ is concave on $[0, \frac58]$. At $z = \frac58$, where
+$\frac3{10} - \frac z2 = -\frac1{80}$, the Taylor bounds give
+$\sin\frac58 < 0.5852$ and $\cos\frac58 > 0.8109$, and $\alpha(\frac58) < 1$, so
+
+```math
+F\left(\tfrac58\right) = \tfrac12 + \tfrac3{200} - \rho\sin\tfrac58 - \tfrac45\left(1 - \cos\tfrac58\right) - \tfrac{\alpha(5/8)}{6400}
+> 0.515 - 0.6183\cdot 0.5852 - 0.8\cdot 0.1891 - 0.0002 > 0.0016 .
+```
+
+By concavity, $F$ lies above its chord: $F(z) \ge \frac{8z}5F(\frac58) > 0$
+for $0 < z \le \frac58$. $\square$
 
 *Lean:
-[`Seven.radial_trig_lower`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L145).*
+[`Seven.radialForm_ends`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L138).*
 
 ### Lemma C.18 (positivity of the radial form)
 
-$P(z) > 0$ for $0 \le z \le \frac58$, and $E(z, v) > 0$ for $0 < z \le \frac58$
-and every real $v$.
+$E(z, v) > 0$ for $0 < z \le \frac58$ and $0 \le v \le \frac3{10}$.
 
-*Proof.* The derivative of $P$ is
-
-```math
-\begin{aligned}
-P'(z) ={}& -\tfrac{201353}{7098000} - \tfrac{3091}{10920}z - \tfrac{1571239}{4732000}z^2 - \tfrac{23103}{1820000}z^3
-+ \tfrac{977419}{36504000}z^4 \\
-&- \tfrac{13}{1050}z^5 - \tfrac{364297}{28080000}z^6 + \tfrac1{11340}z^7 + \tfrac1{960}z^8 - \tfrac{11}{518400}z^{10} .
-\end{aligned}
-```
-
-Let $0 \le z \le 1$. The terms in $z$, $z^2$, $z^3$, $z^5$, $z^6$ and $z^{10}$
-have negative coefficients, so they are at most 0. The other three, in $z^4$,
-$z^7$ and $z^8$, have positive coefficients, and they are at most their
-coefficients, since $z^4, z^7, z^8 \le 1$. As $\frac{201353}{7098000} > 0.0283$,
-$\frac{977419}{36504000} < 0.0268$, $\frac1{11340} < 0.0001$ and
-$\frac1{960} < 0.0011$,
+*Proof.* As $E(z, v)$ is a quadratic polynomial in $v$ with leading coefficient
+$\alpha(z)$ (Definition C.16), the difference
+$D(v) = E(z, v) - \alpha(z)(v - \frac z2)^2$ is affine in $v$, and
+$D(0) > 0$ and $D(\frac3{10}) > 0$ by Lemma C.17. For $0 \le v \le \frac3{10}$,
+$D(v) = (1 - \frac{10}3v)D(0) + \frac{10}3v\,D(\frac3{10}) > 0$, and since
+$\alpha(z) > 0$,
 
 ```math
-P'(z) \le -\tfrac{201353}{7098000} + \tfrac{977419}{36504000} + \tfrac1{11340} + \tfrac1{960}
-< -0.0283 + 0.0268 + 0.0001 + 0.0011 = -0.0003 < 0 .
+E(z, v) = \alpha(z)\left(v - \tfrac z2\right)^2 + D(v) > 0 .
 ```
 
-So $P$ is nonincreasing on $[0, 1]$
-([Lemma A.1](appendix-a.md#lemma-a1-monotonicity-from-the-derivative) (2)), and $P(z) \ge P(\frac58)$ for
-$0 \le z \le \frac58$.
-
-It remains to bound $P(\frac58)$, which is about $0.0003$, from below. At
-$z = \frac58$ the terms of $P$ of degrees 1, 2 and 3 exceed
-$-0.01773$, $-0.055285$ and $-0.027022$; for instance
-$\frac{3091}{21840}\cdot\frac{25}{64} = \frac{15455}{279552}$ and
-$0.055285 \cdot 279552 > 15455$. The terms of degrees 4 and 5 add up to
-$(\frac58)^4(\frac{977419}{182520000}\cdot\frac58 - \frac{23103}{7280000})$,
-which is positive, as the first product in the bracket exceeds $0.0033$ and the
-fraction after it is below $0.0032$. The terms of degrees 6 and 7 add up to
-$-(\frac58)^6(\frac{13}{6300} + \frac{364297}{196560000}\cdot\frac58)$, and as
-$(\frac58)^6 < 0.06$, $\frac{13}{6300} < 0.0021$ and
-$\frac{364297}{196560000}\cdot\frac58 < 0.0012$, this is more than
-$-0.06\cdot 0.0033 > -0.0002$. The terms of degrees 8, 9 and 11 add up to a
-positive number, since $\frac{z^9}{8640} \ge \frac{z^{11}}{518400}$ for
-$0 \le z \le 1$. Hence
-
-```math
-P\left(\tfrac58\right) > 0.1005 - 0.01773 - 0.055285 - 0.027022 - 0.0002 = 0.000263 > \tfrac1{4000},
-```
-
-and $P > 0$ on $[0, \frac58]$.
-
-Expanding $\frac6{25}(z - \frac54v)^2 = \frac6{25}z^2 - \frac35zv + \frac38v^2$
-shows that $E$ is a quadratic polynomial in $v$,
-
-```math
-E(z, v) = \gamma + \beta v + \alpha v^2, \qquad
-\alpha = b_2(z) + \tfrac38, \quad \beta = b_1(z) - \tfrac35z, \quad \gamma = b_0(z) + \tfrac6{25}z^2 ,
-```
-
-and expanding the polynomials of Definition C.16 gives the discriminant identity
-
-```math
-4\alpha\gamma - \beta^2 = z\,P(z), \qquad\text{hence}\qquad 4\alpha\,E(z, v) = \left(2\alpha v + \beta\right)^2 + z\,P(z) .
-```
-
-For $0 < z \le \frac58$, $b_2(z) = \frac{341}{1092}z(1 - \frac{z^2}6) > 0$, so
-$\alpha > 0$, and $z\,P(z) > 0$. Therefore $E(z, v) > 0$. $\square$
+$\square$
 
 *Lean:
-[`Seven.radialE_pos`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L95),
-[`Seven.radial_discriminant_identity`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L88),
-[`Seven.radialPolynomial_pos`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L56).*
+[`Seven.radialForm_pos`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L161).*
 
-![Two graphs on the interval from 0 to 1. Left: the polynomial P decreases from about 0.1 at 0 to about 0.0003 at 5/8, where a dot marks it on a dashed vertical line and the region under the graph from 0 to 5/8 is shaded, then crosses the axis just after 5/8 and ends near −0.18 at 1. Right: the sum of the terms of the derivative of P with a positive coefficient rises from 0 to about 0.0279 at 1, just below the dashed horizontal line at 201353/7098000, about 0.0284](figures/appc-radial-decreasing.svg)
+![Two graphs. Left: at z = 5/8, over v from 0 to 0.36, the radial form E decreases from about 0.071 to about 0.003 at v = 3/10; below it the square alpha times (v − 5/16) squared falls from about 0.054 to 0 at 5/16, and their difference is a green straight line falling from about 0.016 at v = 0 to about 0.0025 at v = 3/10, with dots at both ends above the axis. Right: over z from 0 to 5/8, the orange difference at v = 0 rises from 0 to about 0.016, and the blue difference F at v = 3/10 rises to about 0.013 near z = 0.3 and falls to about 0.0025 at 5/8, an arch above the dashed chord from the origin to its end value](figures/appc-radial-ends.svg)
 
-*Figure C.9.* Lemma C.18. (a) The polynomial $P$ on $[0, 1]$: it decreases,
-and $P(\frac58) \approx 0.0003$ (dot); it vanishes just beyond, near
-$z = 0.626$. (b) The terms of $P'$ with a positive coefficient,
-$\frac{977419}{36504000}z^4 + \frac{z^7}{11340} + \frac{z^8}{960}$ (orange),
-stay below the size $\frac{201353}{7098000}$ of its constant term (grey,
-dashed) on $[0, 1]$; at $z = 1$ they fall short of it by about $0.0005$.
+*Figure C.9.* Lemmas C.17 and C.18. (a) At $z = \frac58$: the radial form
+$E(\frac58, v)$ (blue) is the square $\alpha(\frac58)(v - \frac5{16})^2$ (orange)
+plus the affine function $D$ (green), positive at $v = 0$ and $v = \frac3{10}$
+(dots). (b) The two heights of Lemma C.17 on $[0, \frac58]$: $D(0)$ (orange) and
+$F = D(\frac3{10})$ (blue), which is concave and so lies above its chord
+(dashed) from $F(0) = 0$ to $F(\frac58) \approx 0.0025$.
 
 ### Proposition C.19 (both states on the circle)
 
@@ -1020,7 +983,7 @@ $\ell_2 = \mathrm{axial}(v)$, let $z = \ell_1 + \ell_2 - \frac\pi6$, and suppose
 that $0 < z \le \frac58$ and $v \le \frac3{10}$. Then $J(a, A, v, z) > 0$.
 
 *Proof.* By $A \le c(v)$ ([Lemma B.12](appendix-b.md#lemma-b12-the-circle-over-the-u-axis)) and Lemma C.15,
-$A - \frac12 \le \sqrt3 - 1 - \frac{15}{52}v - \frac{341}{1092}v^2$; and
+$A - \frac12 \le \sqrt3 - 1 - \frac{\sqrt3}6v - \frac5{16}v^2$; and
 $\sin z \ge 0$. As $\ell_1 - \frac\pi6 = z - \frac54v$, Lemma C.1 (3) gives
 $r(a, u) \ge \frac95(z - \frac54v)^2$. By Lemma C.13 (2), with
 $\lvert\sin z\rvert = \sin z$,
@@ -1028,16 +991,15 @@ $\lvert\sin z\rvert = \sin z$,
 ```math
 \begin{aligned}
 J(a, A, v, z) &= \tfrac45z + \tfrac2{15}r(a, u) - \left(A - \tfrac12\right)\sin z - \left(v + \tfrac12\right)(1 - \cos z) \\
-&\ge \tfrac6{25}\left(z - \tfrac54v\right)^2 + \tfrac45z - \left(\sqrt3 - 1 - \tfrac{15}{52}v - \tfrac{341}{1092}v^2\right)\sin z - \left(v + \tfrac12\right)(1 - \cos z) \\
-&\ge \tfrac6{25}\left(z - \tfrac54v\right)^2 + b_0(z) + v\,b_1(z) + v^2b_2(z) = E(z, v) > 0,
+&\ge \tfrac45z + \tfrac6{25}\left(z - \tfrac54v\right)^2 - \left(\sqrt3 - 1 - \tfrac{\sqrt3}6v - \tfrac5{16}v^2\right)\sin z - \left(v + \tfrac12\right)(1 - \cos z) = E(z, v),
 \end{aligned}
 ```
 
-by Lemma C.17 with $\rho = \sqrt3 - 1 \in [\frac{73}{100}, \frac{733}{1000}]$
-and by Lemma C.18. $\square$
+and $E(z, v) > 0$ by Lemma C.18, as $0 \le v \le \frac3{10}$ (the state $(A, v)$
+is admissible, so $v \ge 0$). $\square$
 
 *Lean:
-[`Seven.inward_circular_pos`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L168).*
+[`Seven.inward_circular_pos`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L177).*
 
 ![A canonical pair with opposite signs drawn in the chart of S: the blue square S and the turned green square T both inside the dashed circle of radius root 13 over 2 about o, each with its far corner on that circle; the shadows of S and T on the line of n_2 overlap by a small positive amount](figures/appc-circular-pair.svg)
 
@@ -1073,7 +1035,7 @@ $\sqrt3 > \frac{173}{100}$,
 $\square$
 
 *Lean:
-[`Seven.line_to_circle_turn_margin`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L195).*
+[`Seven.line_to_circle_turn_margin`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L199).*
 
 ![Graph over the interval from 0.19 to pi over 3 of the concave function 44/45 sin z + 4/5 cos z, which rises from about 0.97 to about 1.25 with a maximum in between, above the horizontal line at 12/13](figures/appc-turn-margin.svg)
 
@@ -1095,12 +1057,12 @@ U(z, x) = J\left(a^+(x), \bar a(\nu(z, x)), \nu(z, x), z\right),
 and $G(z) = J(r_d, \tau(\mu(z, t_d)), \nu(z, t_d), z)$, the *diagonal junction*.
 
 *Lean:
-[`Seven.Boundary.otherLabel`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L208),
-[`Seven.Boundary.otherV`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L209),
-[`Seven.Boundary.oppositeUpper`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L210),
-[`Seven.Boundary.diagonalJunction`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L213),
-[`Seven.Boundary.sideTopA_diagonal`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L216),
-[`Seven.Boundary.sideTopA_td`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L225).*
+[`Seven.Boundary.otherLabel`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L212),
+[`Seven.Boundary.otherV`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L213),
+[`Seven.Boundary.oppositeUpper`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L214),
+[`Seven.Boundary.diagonalJunction`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L217),
+[`Seven.Boundary.sideTopA_diagonal`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L220),
+[`Seven.Boundary.sideTopA_td`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L229).*
 
 If the source has the side label $x$, the target has the axial label $\mu(z, x)$
 and the turn is $z$, then the target has the second coordinate $\nu(z, x)$, and
@@ -1126,7 +1088,7 @@ Proposition C.19 applies to these two states and gives
 $U(z, x) = J(a^+(x), \bar a(\nu), \nu, z) > 0$. $\square$
 
 *Lean:
-[`Seven.Boundary.opposite_upper_circular`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L229).*
+[`Seven.Boundary.opposite_upper_circular`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L233).*
 
 ### Lemma C.23 (capped target)
 
@@ -1149,7 +1111,7 @@ U(z, x) = \tfrac12 - \delta(x) - \left(\bar a\left(\tfrac\pi5\right) - \tfrac12\
 $\square$
 
 *Lean:
-[`Seven.Boundary.opposite_upper_cap`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L255).*
+[`Seven.Boundary.opposite_upper_cap`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L259).*
 
 ### Lemma C.24 (the diagonal junction)
 
@@ -1184,7 +1146,7 @@ g(z_d) = \tfrac12 - r_d - \left(a_0 - \tfrac12\right)\sin z_d + \left(u_0 + \tfr
 by Appendix B ([Lemma B.19](appendix-b.md#lemma-b19-the-diagonal-junction)). $\square$
 
 *Lean:
-[`Seven.Boundary.diagonal_junction_pos`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L280).*
+[`Seven.Boundary.diagonal_junction_pos`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L284).*
 
 The value $g(z_d) \approx 0.0046$ is the smallest margin on the inward axis.
 
@@ -1206,7 +1168,7 @@ $\bar a(\nu) = \lambda(\nu) = \tau(\mu(z, t_d))$; with $a^+(t_d) = r_d$ this
 gives $U(z, t_d) = G(z)$, which is positive by Lemma C.24. $\square$
 
 *Lean:
-[`Seven.Boundary.opposite_upper_junction`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L326).*
+[`Seven.Boundary.opposite_upper_junction`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L330).*
 
 ### Lemma C.26 (a diagonal source moves down)
 
@@ -1229,7 +1191,7 @@ U(z, x) - U(z, l) = \tfrac{28}{45}(x - l) + \tfrac{44}{45}(x - l)(1 - \sin z) + 
 a sum of nonnegative terms, as $0 \le \sin z, \cos z \le 1$. $\square$
 
 *Lean:
-[`Seven.Boundary.diagonal_source_reduction`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L347).*
+[`Seven.Boundary.diagonal_source_reduction`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L351).*
 
 ### Lemma C.27 (a circular source moves up)
 
@@ -1253,7 +1215,7 @@ by the displacement bound for $a^+$ ([Proposition B.16](appendix-b.md#propositio
 Lemma C.20. $\square$
 
 *Lean:
-[`Seven.Boundary.circular_source_line_reduction`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L369).*
+[`Seven.Boundary.circular_source_line_reduction`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L373).*
 
 ### Proposition C.28 (the upper profile is positive)
 
@@ -1287,7 +1249,7 @@ by Lemma C.25. Otherwise $x' = z + \frac\pi6 - s_0 \in [s_0, t_d]$ and
 $\mu(z, x') = s_0$, so $U(z, x') > 0$ by Lemma C.22. $\square$
 
 *Lean:
-[`Seven.Boundary.opposite_upper_pos`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L397).*
+[`Seven.Boundary.opposite_upper_pos`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L401).*
 
 ![The rectangle of label pairs, the source label x from s_0 to pi over 4 horizontally and the target label mu from 0 to pi over 4 vertically, split by the horizontal line mu = s_0 into a lower part where both states lie on the circle and an upper part where the target lies on the tie line, with a very thin strip at the right edge for diagonal sources and a grey corner where the turn is not positive; dashed anti-diagonal lines of constant turn, and arrows along them from the upper part down to the line mu = s_0 or to the right edge x = t_d](figures/appc-upper-cases.svg)
 

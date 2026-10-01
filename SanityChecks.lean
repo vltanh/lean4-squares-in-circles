@@ -91,7 +91,7 @@ example : Seven.label 1 (1/2) = Real.pi/6 := by
   rw [hs,min_eq_right (show Real.pi/6 ≤ 5*(1/2)/4 by linarith [Real.pi_lt_d4]),
     min_eq_left (show Real.pi/6 ≤ Real.pi/4 by linarith [Real.pi_pos])]
 example : (353:ℝ)/648+1/2 < 157/150 := by norm_num
-example : (0:ℝ) < Seven.radialPolynomial (5/8) := Seven.radialPolynomial_pos (by norm_num)
+example : (0:ℝ) < Seven.radialForm (5/8) (3/10) := Seven.radialForm_pos (by norm_num) (by norm_num)
 
 -- Contact points of the polygon relaxations.
 example : Three.P3 (1/2) (5/16) := by norm_num [Three.P3]

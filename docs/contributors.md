@@ -115,3 +115,10 @@ Times are rough commit times, in US Central time (UTC−5).
   9/20, four squares the bound 5/6, and the octagon that kept the radial sweep
   of five squares disjoint gave way to centres within distance 1 of the disk
   centre.
+* **Around 11:00 — the last Bernstein certificates.** Claude Opus 5.5, in
+  Claude Code, replaced the two Bernstein certificates that remained in six
+  squares, for the transverse bounds of the wing W, by keeping the leading
+  terms of each polynomial, and the polynomial of degree 11 behind Lemma C.18
+  of seven squares by a square in the target height plus an affine part that
+  is positive at both ends of its range, one end by Taylor bounds and the
+  other by concavity and one value.

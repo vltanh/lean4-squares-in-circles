@@ -1038,7 +1038,7 @@ and every $z \in [\alpha, x)$ lies outside $E$, so $f(z) > \underline f = f(x)$.
 $\square$
 
 *Lean:
-[`leftmost_nonpositive_minimum`](../../SquaresInCircles/Common/Analysis.lean#L204).*
+[`leftmost_nonpositive_minimum`](../../SquaresInCircles/Common/Analysis.lean#L222).*
 
 ![The graph of a continuous function on an interval from alpha to beta: positive at alpha, nonnegative at beta, dipping below zero with a flat bottom; the leftmost point of the flat bottom is marked x](figures/seven-leftmost.svg)
 
@@ -1314,7 +1314,7 @@ So $c > \delta$ in every case, and $\sigma_k(g) = c - \delta > 0$. $\square$
 
 *Lean:
 [`Seven.smooth_leftmost_support_pos`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L229),
-[`sinusoid_leftmost_minimum`](../../SquaresInCircles/Common/Analysis.lean#L255),
+[`sinusoid_leftmost_minimum`](../../SquaresInCircles/Common/Analysis.lean#L273),
 [`Seven.stationary_nearest_corner`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L54),
 [`Seven.corner_source_margin`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L137),
 [`Seven.corner_label_gt`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L44),

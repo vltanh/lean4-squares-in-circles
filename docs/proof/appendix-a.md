@@ -72,7 +72,7 @@ $h_1 \le 0$ on $[l, t]$ and $h_1 \ge 0$ on $[t, u]$. By Lemma A.1 again, $h$ is
 nonincreasing on $[l, t]$ and nondecreasing on $[t, u]$. As $h(t) = 0$, we get
 $h \ge 0$ on $[l, u]$, and $h(x) \ge 0$ is the claim. $\square$
 
-*Lean: [`curvature_tangent`](../../SquaresInCircles/Common/Analysis.lean#L131).*
+*Lean: [`curvature_tangent`](../../SquaresInCircles/Common/Analysis.lean#L149).*
 
 With $\kappa = 0$, Lemma A.2 says that a function with a nonnegative second
 derivative lies above its tangent lines; applied to $-f$, that a function with
@@ -100,7 +100,7 @@ value of the parabola, $f(t) - d(t)^2/2\kappa$ (green), is positive.
 ```
 
 *Lean:
-[`positive_of_curvature`](../../SquaresInCircles/Common/Analysis.lean#L161).*
+[`positive_of_curvature`](../../SquaresInCircles/Common/Analysis.lean#L179).*
 
 ### Lemma A.4 (positivity from concavity)
 
@@ -124,7 +124,7 @@ f(x) \ge \frac{(u - x) f(l) + (x - l) f(u)}{u - l} \ge \min\left(f(l), f(u)\righ
 ```
 
 *Lean:
-[`positive_of_second_nonpos`](../../SquaresInCircles/Common/Analysis.lean#L122).*
+[`positive_of_second_nonpos`](../../SquaresInCircles/Common/Analysis.lean#L140).*
 
 ### Lemma A.5 (concave trigonometric sums)
 

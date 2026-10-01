@@ -580,79 +580,113 @@ def label_boundary():
 # Section C.7: two circles.
 
 
-def radial_poly(z):
-    return (201 / 2000 - 201353 / 7098000 * z - 3091 / 21840 * z ** 2
-            - 1571239 / 14196000 * z ** 3 - 23103 / 7280000 * z ** 4
-            + 977419 / 182520000 * z ** 5 - 13 / 6300 * z ** 6
-            - 364297 / 196560000 * z ** 7 + z ** 8 / 90720 + z ** 9 / 8640
-            - z ** 11 / 518400)
+SQRT3 = math.sqrt(3)
 
 
-# The derivative of P: its constant term, and the sum of its terms with a
-# positive coefficient, those in z^4, z^7 and z^8.
-RADIAL_CONST = 201353 / 7098000
+def radial_form(z, v):
+    """E(z, v) of Definition C.16."""
+    return (4 / 5 * z + 6 / 25 * (z - 5 * v / 4) ** 2
+            - (SQRT3 - 1 - SQRT3 / 6 * v - 5 / 16 * v ** 2) * math.sin(z)
+            - (v + 0.5) * (1 - math.cos(z)))
 
 
-def radial_positive_terms(z):
-    return 977419 / 36504000 * z ** 4 + z ** 7 / 11340 + z ** 8 / 960
+def radial_alpha(z):
+    return 3 / 8 + 5 / 16 * math.sin(z)
 
 
-def radial_slope(z):
-    return (-RADIAL_CONST - 3091 / 10920 * z - 1571239 / 4732000 * z ** 2
-            - 23103 / 1820000 * z ** 3 - 13 / 1050 * z ** 5
-            - 364297 / 28080000 * z ** 6 - 11 / 518400 * z ** 10
-            + radial_positive_terms(z))
+def radial_affine(z, v):
+    """D(v) = E(z, v) - alpha(z) (v - z/2)^2 of Lemma C.18."""
+    return radial_form(z, v) - radial_alpha(z) * (v - z / 2) ** 2
 
 
-def radial_decreasing():
-    h = 1e-6
-    for k in range(101):
-        z = k / 100
-        slope = (radial_poly(z + h) - radial_poly(z - h)) / (2 * h)
-        assert abs(slope - radial_slope(z)) < 1e-8 and radial_slope(z) < 0
-        assert radial_positive_terms(z) <= radial_positive_terms(1) \
-            < RADIAL_CONST
-    # the decimal bounds of the proof of Lemma C.18
-    assert radial_positive_terms(1) < 0.0268 + 0.0001 + 0.0011 < 0.0283 \
-        < RADIAL_CONST
+def end_bound0(z):
+    """The lower bound of D(0) in the proof of Lemma C.17."""
+    return (z * (9 / 5 - SQRT3 - (1 / 100 + 3 / 32) * z)
+            + z ** 3 * ((SQRT3 - 1) * (1 / 6 - z ** 2 / 120) - 5 / 64))
+
+
+def top_second(z):
+    """F''(z) of the proof of Lemma C.17."""
+    rho = SQRT3 - 1 - SQRT3 / 6 * 0.3 - 5 / 16 * 0.09
+    return (12 / 25 - 3 / 16
+            + math.sin(z) * (rho - 5 / 32 + 5 / 16 * (0.3 - z / 2) ** 2)
+            - math.cos(z) * (4 / 5 - 5 / 8 * (0.3 - z / 2)))
+
+
+def radial_ends():
     c = 5 / 8
-    assert radial_poly(c) > 1 / 4000
+    rho = SQRT3 - 1 - SQRT3 / 6 * 0.3 - 5 / 16 * 0.09
+    for k in range(1, 201):
+        z = c * k / 200
+        # Lemma C.17 at v = 0: the bound is positive and below D(0).
+        assert 0 < end_bound0(z) <= radial_affine(z, 0)
+        # Lemma C.17 at v = 3/10: F'' is negative, below the cubic bound.
+        cubic = -3 / 10 + 3 / 16 * z + 3 / 10 * z ** 2 + 5 / 32 * z ** 3
+        h = 1e-4
+        fd = (radial_affine(z + h, 0.3) - 2 * radial_affine(z, 0.3)
+              + radial_affine(z - h, 0.3)) / h ** 2
+        assert abs(fd - top_second(z)) < 1e-5 and top_second(z) < cubic < 0
+        # Lemma C.18: D is affine in v, so E is positive between the heights.
+        for j in range(31):
+            v = 0.3 * j / 30
+            d = ((1 - 10 * v / 3) * radial_affine(z, 0)
+                 + 10 * v / 3 * radial_affine(z, 0.3))
+            assert abs(radial_affine(z, v) - d) < 1e-12
+            assert radial_form(z, v) > 0
+    # the decimal bounds of the proof of Lemma C.17
+    assert 1800 - 1733 == 67 and 1 / 100 + 3 / 32 < 0.104
+    assert 0.067 - c * 0.104 > 0 and 1 / 6 - c ** 2 / 120 > 0.163
+    assert 0.73 * 0.163 - 0.079 > 0 and 5 / 64 < 0.079
+    assert 19 / 20 * 1.733 - 1 - 9 / 320 < 0.6183 and rho < 0.6183
+    assert 0.6183 - 5 / 32 + 5 / 16 * 0.09 < 0.5 and 12 / 25 - 3 / 16 < 0.3
+    assert 3 / 16 * c < 0.118 and 3 / 10 * c ** 2 < 0.118
+    assert 5 / 32 * c ** 3 < 0.039 and -0.3 + 0.118 + 0.118 + 0.039 < 0
+    assert math.sin(c) <= c - c ** 3 / 6 + c ** 5 / 120 < 0.5852
+    assert math.cos(c) >= 1 - c ** 2 / 2 + c ** 4 / 24 - c ** 6 / 720 > 0.8109
+    assert radial_affine(c, 0.3) > 0.515 - 0.6183 * 0.5852 - 0.8 * 0.1891 \
+        - 0.0002 > 0.0016
     W, H, gap = 300, 230, 84
     f = Figure(-58, 2 * W + gap + 24, -44, H + 46, 1, pad=0)
-    # (a) P decreases on [0, 1] and is positive at 5/8.
-    a = Graph(0, 1, -0.2, 0.12, width=W, height=H, fig=f)
-    a.axes([(0, '0'), (0.25, '0.25'), (c, '5/8'), (1, '1')],
-           [(-0.2, '−0.2'), (-0.1, '−0.1'), (0, '0'), (0.1, '0.1')],
-           xname='z')
-    zs = [c * k / 200 for k in range(201)]
-    f.polygon([a.q(0, 0)] + [a.q(z, radial_poly(z)) for z in zs]
-              + [a.q(c, 0)], fill=FILLS[0], stroke='none')
-    a.hline(0, stroke=FAINT, width=1, dash='4 3')
-    f.line(a.q(c, -0.2), a.q(c, 0.12), stroke=FAINT, width=1, dash='4 3')
-    a.curve(radial_poly, stroke=BLUE, width=2.2)
-    a.dot(c, radial_poly(c), fill=BLUE)
-    a.text(0.36, radial_poly(0.36) + 0.022, 'P(z)', color=BLUE, size=15)
-    a.text(c + 0.03, 0.03, 'P(5/8) ≈ 0.0003', color=BLUE, size=13,
+    # (a) At z = 5/8, E is a square plus the affine D, positive at both ends.
+    vmax = 0.36
+    a = Graph(0, vmax, 0, 0.08, width=W, height=H, fig=f)
+    a.axes([(0, '0'), (0.1, '0.1'), (0.2, '0.2'), (0.3, '3/10')],
+           [(0, '0'), (0.02, '0.02'), (0.04, '0.04'), (0.06, '0.06'),
+            (0.08, '0.08')], xname='v')
+    f.line(a.q(0.3, 0), a.q(0.3, 0.08), stroke=FAINT, width=1, dash='4 3')
+    a.curve(lambda v: radial_alpha(c) * (v - c / 2) ** 2, stroke=ORANGE,
+            width=2.2)
+    a.curve(lambda v: radial_affine(c, v), 0, 0.3, stroke=GREEN, width=2.2)
+    a.curve(lambda v: radial_form(c, v), stroke=BLUE, width=2.2)
+    for v in (0, 0.3):
+        a.dot(v, radial_affine(c, v), fill=GREEN)
+    a.text(0.035, radial_form(c, 0.035) + 0.008, 'E(5/8, v)', color=BLUE,
+           size=14, anchor='start')
+    a.text(0.006, 0.0222, 'α (v − 5/16)²', color=ORANGE, size=12,
            anchor='start')
-    f.text((W / 2, H + 30), '(a) the polynomial P', size=14, italic=False)
-    # (b) The positive terms of P' stay below its negative constant term.
-    b = Graph(0, 1, 0, 0.032, width=W, height=H, fig=f, at=(W + gap, 0))
-    b.axes([(0, '0'), (0.5, '0.5'), (1, '1')],
-           [(0, '0'), (0.01, '0.01'), (0.02, '0.02'), (0.03, '0.03')],
-           xname='z')
-    b.hline(RADIAL_CONST, stroke=FAINT, width=1.6, dash='6 4')
-    b.curve(radial_positive_terms, stroke=ORANGE, width=2.2)
-    b.dot(1, radial_positive_terms(1), fill=ORANGE)
-    b.text(0.04, RADIAL_CONST + 0.0016, '201353/7098000 ≈ 0.0284',
-           color=FAINT, size=13, italic=False, anchor='start')
-    b.text(0.78, radial_positive_terms(0.78) + 0.0035,
-           'positive terms of P′', color=ORANGE, size=13, italic=False,
-           anchor='end')
-    f.text((W + gap + W / 2, H + 30), '(b) two parts of its slope P′',
-           size=14, italic=False)
-    f.save('appc-radial-decreasing', 'The polynomial P decreasing on [0, 1] '
-           'and positive at 5/8; the terms of its derivative with a positive '
-           'coefficient stay below the size of its negative constant term')
+    a.text(0.16, radial_affine(c, 0.16) + 0.006, 'D(v)', color=GREEN,
+           size=14, anchor='start')
+    f.text((W / 2, H + 30), '(a) the radial form at z = 5/8', size=14,
+           italic=False)
+    # (b) The two heights: D(0) positive, F concave above its chord.
+    b = Graph(0, c, 0, 0.02, width=W, height=H, fig=f, at=(W + gap, 0))
+    b.axes([(0, '0'), (0.2, '0.2'), (0.4, '0.4'), (c, '5/8')],
+           [(0, '0'), (0.01, '0.01'), (0.02, '0.02')], xname='z')
+    b.points([(0, 0), (c, radial_affine(c, 0.3))], stroke=BLUE, width=1.2,
+             dash='5 4')
+    b.curve(lambda z: radial_affine(z, 0), stroke=ORANGE, width=2.2)
+    b.curve(lambda z: radial_affine(z, 0.3), stroke=BLUE, width=2.2)
+    b.dot(c, radial_affine(c, 0.3), fill=BLUE)
+    b.text(0.5, radial_affine(0.5, 0) + 0.0016, 'D(0)', color=ORANGE,
+           size=14, anchor='end')
+    b.text(0.22, radial_affine(0.22, 0.3) + 0.0016, 'F = D(3/10)', color=BLUE,
+           size=14, anchor='middle')
+    f.text((W + gap + W / 2, H + 30), '(b) the two heights', size=14,
+           italic=False)
+    f.save('appc-radial-ends', 'The radial form at z = 5/8 as a square plus '
+           'an affine function of v that is positive at v = 0 and v = 3/10; '
+           'the two heights on [0, 5/8], the one at v = 3/10 concave and '
+           'above its chord')
 
 
 def circular_pair():
@@ -833,7 +867,7 @@ def main():
     quarter_profile()
     side_target()
     label_boundary()
-    radial_decreasing()
+    radial_ends()
     circular_pair()
     turn_margin()
     junction()

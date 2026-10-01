@@ -10,11 +10,12 @@ axial target at a positive turn it is at least its value with the source at the
 top of its label segment and the target at the end of its label segment. A
 diagonal source moves to its junction or a capped axial endpoint, and a circular
 source with a straight axial target to one of its two junctions. On the
-circular pieces the radical of the circle lies below an explicit quadratic,
-which turns the support bound into `radialE`, positive by completing the square
-in `v`: what remains is `z` times a polynomial that decreases on `[0, 1]` and is
-positive at `5/8`. The diagonal junction uses one positive value and
-monotonicity.
+circular pieces the circle lies below its tangent at `v = 0` lowered by
+`(5/16) v²`, which turns the support bound into `radialForm`, a quadratic in the
+target height `v`. Minus a square centred at `v = z/2` it is affine in `v`; it is
+positive at `v = 0` by Taylor bounds, and at `v = 3/10` because it is concave in
+`z`, zero at `0` and positive at `5/8`. The diagonal junction uses one positive
+value and monotonicity.
 -/
 noncomputable section
 open Set
@@ -42,128 +43,136 @@ lemma inward_opposite_side_identity {a u A v e : ℝ}
   dsimp [inwardOpposite,side,axial,remainder] at *
   linarith
 
-/-- Minus the discriminant of `radialE z` as a quadratic in `v`, divided by `z`
-(`radial_discriminant_identity`). -/
-def radialPolynomial (z : ℝ) : ℝ :=
-  201/2000 - (201353/7098000)*z - (3091/21840)*z^2
-  - (1571239/14196000)*z^3 - (23103/7280000)*z^4
-  + (977419/182520000)*z^5 - (13/6300)*z^6
-  - (364297/196560000)*z^7 + z^8/90720 + z^9/8640 - z^11/518400
-
-/-- `radialPolynomial` decreases on `[0, 1]`: the only positive terms of its derivative,
-in `z⁴`, `z⁷` and `z⁸`, cannot outweigh its negative constant term there. It is positive
-at `5/8`. -/
-lemma radialPolynomial_pos {z : ℝ} (hz : 0 ≤ z ∧ z ≤ 5/8) :
-    0 < radialPolynomial z := by
-  have hanti : AntitoneOn radialPolynomial (Icc 0 1) := by
-    apply antiOn_of_hasDeriv_nonpos (d := fun x => -201353/7098000-(3091/10920)*x
-      -(1571239/4732000)*x^2-(23103/1820000)*x^3+(977419/36504000)*x^4
-      -(13/1050)*x^5-(364297/28080000)*x^6+x^7/11340+x^8/960-(11/518400)*x^10)
-      (by unfold radialPolynomial; fun_prop)
-    · intro x _
-      have hd : DifferentiableAt ℝ radialPolynomial x := by unfold radialPolynomial; fun_prop
-      convert hd.hasDerivAt using 1
-      unfold radialPolynomial
-      simp (disch := fun_prop)
-      ring
-    · intro x hx
-      have h0 := hx.1.le
-      have h1 := hx.2.le
-      linarith [pow_le_one₀ (n := 4) h0 h1,pow_le_one₀ (n := 7) h0 h1,pow_le_one₀ (n := 8) h0 h1,
-        pow_nonneg h0 2,pow_nonneg h0 3,pow_nonneg h0 5,pow_nonneg h0 6,pow_nonneg h0 10]
-  have h58 : 0 < radialPolynomial (5/8) := by norm_num [radialPolynomial]
-  exact h58.trans_le (hanti ⟨hz.1,by linarith [hz.2]⟩ (by constructor <;> norm_num) hz.2)
-
-def radialB (z : ℝ) : ℝ :=
-  67*z/1000-z^2/4+73*z^3/600+z^4/48-733*z^5/120000-z^6/1440
-
-def radialL (z : ℝ) : ℝ :=
-  (15/52)*(z-z^3/6)-(z^2/2-z^4/24+z^6/720)
-
-def radialK (z : ℝ) : ℝ := (15/52+1/42)*(z-z^3/6)
-
-def radialE (z v : ℝ) : ℝ :=
-  radialB z+v*radialL z+v^2*radialK z+(6/25)*(z-5*v/4)^2
-
-lemma radial_discriminant_identity (z : ℝ) :
-    4*(radialK z+3/8)*(radialB z+(6/25)*z^2)
-      -(radialL z-(3/5)*z)^2 = z*radialPolynomial z := by
-  unfold radialB radialL radialK radialPolynomial
-  ring
-
-/-- `radialE z` is positive for every `v`, by completing the square in `v`. -/
-theorem radialE_pos {z : ℝ} (hz : 0 < z ∧ z ≤ 5/8) (v : ℝ) :
-    0 < radialE z v := by
-  have hK : 0 < radialK z := by
-    have hm := mul_nonneg hz.1.le (show 0 ≤ 1-z^2 by nlinarith)
-    unfold radialK
-    exact mul_pos (by norm_num) (by linarith)
-  have hid : 4*(radialK z+3/8)*radialE z v =
-      (2*(radialK z+3/8)*v+(radialL z-(3/5)*z))^2+z*radialPolynomial z := by
-    rw [← radial_discriminant_identity]
-    unfold radialE
-    ring
-  have hp := mul_pos hz.1 (radialPolynomial_pos ⟨hz.1.le,hz.2⟩)
-  have hsq := sq_nonneg (2*(radialK z+3/8)*v+(radialL z-(3/5)*z))
-  exact pos_of_mul_pos_right (show 0 < 4*(radialK z+3/8)*radialE z v by linarith)
-    (by positivity)
-
+/-- Below `w = 3/10` the circle lies under its tangent at `w = 0`, lowered by
+`(5/16) w²`. -/
 lemma circle_quadratic_upper {v : ℝ} (hv : 0 ≤ v ∧ v ≤ 3/10) :
-    circle v-1/2 ≤ Real.sqrt 3-1-(15/52)*v-(15/52+1/42)*v^2 := by
-  let a : ℝ := 15/52
-  let b : ℝ := 15/52+1/42
-  let B := Real.sqrt 3-a*v-b*v^2
+    circle v-1/2 ≤ Real.sqrt 3-1-(Real.sqrt 3/6)*v-(5/16)*v^2 := by
+  let B := Real.sqrt 3-(Real.sqrt 3/6)*v-(5/16)*v^2
   have hs := Real.sq_sqrt (show (0:ℝ) ≤ 3 by norm_num)
+  have h3 := sqrt_three_bounds
   have hr : 0 ≤ 3-v-v^2 := by nlinarith [hv.1,hv.2]
   have hrad := Real.sq_sqrt hr
   have hroot := Real.sqrt_nonneg (3-v-v^2)
   have hB0 : 0 < B := by
     have hv2 : v^2 ≤ (3/10:ℝ)^2 := by nlinarith
-    dsimp [B,a,b]
-    linarith [sqrt_three_bounds.1]
-  have hcoeff1 : 0 ≤ 1-2*Real.sqrt 3*a := by
-    dsimp [a]
-    linarith [sqrt_three_bounds.2]
-  have hcoeff2 : 0 < 1-2*Real.sqrt 3*b+a^2 := by
-    dsimp [a,b]
-    linarith [sqrt_three_bounds.2]
-  have p1 := mul_nonneg hv.1 hcoeff1
-  have p2 := mul_nonneg (sq_nonneg v) hcoeff2.le
-  have p3 : 0 ≤ 2*a*b*v^3 := mul_nonneg (by dsimp [a,b]; norm_num) (pow_nonneg hv.1 3)
-  have p4 : 0 ≤ b^2*v^4 := by positivity
-  have hid : B^2-(3-v-v^2)=v*(1-2*Real.sqrt 3*a)+
-      v^2*(1-2*Real.sqrt 3*b+a^2)+2*a*b*v^3+b^2*v^4 := by
+    have hp := mul_le_mul_of_nonneg_left hv.2 (Real.sqrt_nonneg 3)
     dsimp [B]
     linarith
-  have hle : Real.sqrt (3-v-v^2) ≤ B := by nlinarith
+  have p2 := mul_nonneg (sq_nonneg v) (show 0 ≤ 13/12-(5/8)*Real.sqrt 3 by linarith)
+  have p3 := mul_nonneg (Real.sqrt_nonneg 3) (pow_nonneg hv.1 3)
+  have hid : B^2-(3-v-v^2) =
+      v^2*(13/12-(5/8)*Real.sqrt 3)+(5/48)*(Real.sqrt 3*v^3)+(25/256)*v^4 := by
+    dsimp [B]
+    linear_combination (1-v/6)^2*hs
+  have hle : Real.sqrt (3-v-v^2) ≤ B := by nlinarith [pow_nonneg hv.1 4]
   have he : targetSq-(v+1/2)^2=3-v-v^2 := by dsimp [targetSq]; ring
   dsimp [circle]
   rw [he]
-  dsimp [B,a,b] at hle
+  dsimp [B] at hle
   linarith
 
-lemma radial_trig_lower {z v r : ℝ}
-    (hz : 0 ≤ z ∧ z ≤ 5/8) (hv : 0 ≤ v)
-    (hr : 73/100 ≤ r ∧ r ≤ 733/1000) :
-    radialB z+v*radialL z+v^2*radialK z ≤
-      (4/5)*z-(r-(15/52)*v-(15/52+1/42)*v^2)*Real.sin z-
-        (v+1/2)*(1-Real.cos z) := by
-  have hsinL := Real.sin_ge_sub_cube hz.1
-  have hsinU := sin_upper_five hz.1
-  have hcosL := cos_lower_six hz.1
-  have hr0 : 0 ≤ r := by linarith [hr.1]
-  have hbase := mul_le_mul_of_nonneg_left hsinU hr0
-  have h1 := mul_nonneg hz.1 (show 0 ≤ 733/1000-r by linarith [hr.2])
-  have h3 := mul_nonneg (pow_nonneg hz.1 3) (show 0 ≤ r-73/100 by linarith [hr.1])
-  have h5 := mul_nonneg (pow_nonneg hz.1 5) (show 0 ≤ 733/1000-r by linarith [hr.2])
-  have hvSin := mul_le_mul_of_nonneg_left hsinL
-    (show 0 ≤ (15/52)*v by positivity)
-  have hv2Sin := mul_le_mul_of_nonneg_left hsinL
-    (show 0 ≤ (15/52+1/42)*v^2 by positivity)
-  have hcos := mul_le_mul_of_nonneg_left hcosL
-    (show 0 ≤ v+1/2 by linarith)
-  dsimp [radialB,radialL,radialK]
-  linarith
+/-- The support bound for a side source and an axial target on the circle, at
+the turn `z` and the target height `v`: the remainder is replaced by its lower
+bound `(9/5)(z - 5v/4)²` and the target by `circle_quadratic_upper`. -/
+def radialForm (z v : ℝ) : ℝ :=
+  (4/5)*z+(6/25)*(z-5*v/4)^2-(Real.sqrt 3-1-(Real.sqrt 3/6)*v-(5/16)*v^2)*Real.sin z-
+    (v+1/2)*(1-Real.cos z)
+
+/-- `radialForm` at the height `3/10`, minus `(3/8 + (5/16) sin z)(3/10 - z/2)²`. -/
+private def radialTop (z : ℝ) : ℝ :=
+  radialForm z (3/10)-(3/8+(5/16)*Real.sin z)*(3/10-z/2)^2
+
+/-- `radialTop` is concave on `[0, 5/8]`: in its second derivative the constant
+`12/25 - 3/16` and the term in `sin z` lose to the term in `cos z`. -/
+private lemma radialTop_concave : ConcaveOn ℝ (Icc 0 (5/8)) radialTop := by
+  let ρ := Real.sqrt 3-1-(Real.sqrt 3/6)*(3/10)-(5/16)*(3/10)^2
+  let d : ℝ → ℝ := fun x => 4/5+(12/25)*(x-3/8)-ρ*Real.cos x-(4/5)*Real.sin x-
+    ((5/16)*Real.cos x*(3/10-x/2)^2-(3/8+(5/16)*Real.sin x)*(3/10-x/2))
+  let dd : ℝ → ℝ := fun x => 12/25-3/16+Real.sin x*(ρ-5/32+(5/16)*(3/10-x/2)^2)-
+    Real.cos x*(4/5-(5/8)*(3/10-x/2))
+  have hd (x : ℝ) : HasDerivAt radialTop (d x) x := by
+    have h := (show DifferentiableAt ℝ radialTop x by
+      unfold radialTop radialForm; fun_prop).hasDerivAt
+    convert h using 1
+    unfold radialTop radialForm
+    simp (disch := fun_prop)
+    ring
+  have hdd (x : ℝ) : HasDerivAt d (dd x) x := by
+    have h := (show DifferentiableAt ℝ d x by fun_prop).hasDerivAt
+    convert h using 1
+    simp (disch := fun_prop) [d,dd]
+    ring
+  refine concave_of_deriv2 (fun x _ => hd x) (fun x _ => hdd x) (fun x hx => ?_)
+  have hs0 := Real.sin_nonneg_of_nonneg_of_le_pi hx.1 (by linarith [hx.2,Real.pi_gt_three])
+  have hB : ρ-5/32+(5/16)*(3/10-x/2)^2 ≤ 1/2 := by
+    have hg : (3/10-x/2)^2 ≤ 9/100 := by nlinarith [hx.1,hx.2]
+    dsimp only [ρ]
+    linarith [sqrt_three_bounds.2]
+  have hS := mul_le_mul_of_nonneg_left hB hs0
+  have hC := mul_le_mul_of_nonneg_right (Real.one_sub_sq_div_two_le_cos (x := x))
+    (show 0 ≤ 4/5-(5/8)*(3/10-x/2) by linarith [hx.1])
+  have h2 := mul_le_mul_of_nonneg_left hx.2 hx.1
+  have h3 := mul_le_mul_of_nonneg_left h2 hx.1
+  dsimp only [dd]
+  linarith [Real.sin_le hx.1,hx.1,hx.2]
+
+private lemma radialTop_zero : radialTop 0 = 0 := by
+  unfold radialTop radialForm
+  simp
+  norm_num
+
+private lemma radialTop_right : 0 < radialTop (5/8) := by
+  have hs := sin_upper_five (show (0:ℝ) ≤ 5/8 by norm_num)
+  have hc := cos_lower_six (show (0:ℝ) ≤ 5/8 by norm_num)
+  have hs0 := Real.sin_nonneg_of_nonneg_of_le_pi (show (0:ℝ) ≤ 5/8 by norm_num)
+    (by linarith [Real.pi_gt_three])
+  have hr := mul_le_mul_of_nonneg_right sqrt_three_bounds.2.le hs0
+  unfold radialTop radialForm
+  norm_num at hs hc ⊢
+  linarith [Real.sin_le_one (5/8)]
+
+/-- At the heights `v = 0` and `v = 3/10`, `radialForm` exceeds
+`(3/8 + (5/16) sin z)(v - z/2)²`. At `v = 0` Taylor bounds leave `z` times a
+positive linear function plus `z³` times a positive one; at `v = 3/10` the excess
+is concave in `z`, zero at `0` and positive at `5/8`. -/
+lemma radialForm_ends {z : ℝ} (hz : 0 < z ∧ z ≤ 5/8) :
+    (3/8+(5/16)*Real.sin z)*(z/2)^2 < radialForm z 0 ∧
+      (3/8+(5/16)*Real.sin z)*(3/10-z/2)^2 < radialForm z (3/10) := by
+  have hz0 := hz.1.le
+  have h3 := sqrt_three_bounds
+  constructor
+  · have hsU := mul_le_mul_of_nonneg_left (sin_upper_five hz0)
+      (show 0 ≤ Real.sqrt 3-1 by linarith [h3.1])
+    have hsz := mul_le_mul_of_nonneg_left (Real.sin_le hz0) (sq_nonneg z)
+    have hc := Real.one_sub_sq_div_two_le_cos (x := z)
+    have hlin := mul_pos hz.1
+      (show 0 < 9/5-Real.sqrt 3-(1/100+3/32)*z by linarith [hz.2,h3.2])
+    have hcub := mul_nonneg (pow_nonneg hz0 3)
+      (show 0 ≤ (Real.sqrt 3-1)*(1/6-z^2/120)-5/64 by nlinarith [h3.1])
+    dsimp only [radialForm]
+    linarith
+  · have h := concave_pos_of_zero_left radialTop_concave hz radialTop_zero radialTop_right
+    dsimp only [radialTop] at h
+    linarith
+
+/-- `radialForm z v` is positive for `0 ≤ v ≤ 3/10`: minus
+`(3/8 + (5/16) sin z)(v - z/2)²` it is affine in `v`, and it is positive at both
+ends (`radialForm_ends`). -/
+theorem radialForm_pos {z v : ℝ} (hz : 0 < z ∧ z ≤ 5/8) (hv : 0 ≤ v ∧ v ≤ 3/10) :
+    0 < radialForm z v := by
+  obtain ⟨h0,h3⟩ := radialForm_ends hz
+  have hs0 := Real.sin_nonneg_of_nonneg_of_le_pi hz.1.le (by linarith [hz.2,Real.pi_gt_three])
+  have hsq := mul_nonneg (show 0 ≤ 3/8+(5/16)*Real.sin z by linarith) (sq_nonneg (v-z/2))
+  have hid : radialForm z v = (3/8+(5/16)*Real.sin z)*(v-z/2)^2+
+      (1-10*v/3)*(radialForm z 0-(3/8+(5/16)*Real.sin z)*(z/2)^2)+
+      (10*v/3)*(radialForm z (3/10)-(3/8+(5/16)*Real.sin z)*(3/10-z/2)^2) := by
+    unfold radialForm
+    ring
+  rw [hid]
+  rcases le_total (radialForm z 0-(3/8+(5/16)*Real.sin z)*(z/2)^2)
+    (radialForm z (3/10)-(3/8+(5/16)*Real.sin z)*(3/10-z/2)^2) with hle | hle
+  · linarith only [hsq,h0,mul_nonneg hv.1 (sub_nonneg.mpr hle)]
+  · linarith only [hsq,h3,mul_nonneg (show 0 ≤ 1-10*v/3 by linarith [hv.2]) (sub_nonneg.mpr hle)]
 
 lemma inward_circular_pos {a u A v z : ℝ}
     (h : Admissible a u) (h' : Admissible A v)
@@ -171,25 +180,20 @@ lemma inward_circular_pos {a u A v z : ℝ}
     (he : z=label a u+label A v-Real.pi/6)
     (hz : 0 < z ∧ z ≤ 5/8) (hv : v ≤ 3/10) :
     0 < inwardOpposite a A v z := by
-  have hupper := (a_le_circle h').trans (show circle v ≤ circle v by rfl)
   have hquad := circle_quadratic_upper ⟨h'.u_nonneg,hv⟩
-  have hAupper : A-1/2 ≤ Real.sqrt 3-1-(15/52)*v-(15/52+1/42)*v^2 := by
-    linarith
   have hs0 := Real.sin_nonneg_of_nonneg_of_le_pi hz.1.le
     (by linarith [hz.2,Real.pi_gt_d2])
-  have hmul := mul_le_mul_of_nonneg_right hAupper hs0
+  have hmul := mul_le_mul_of_nonneg_right
+    (show A-1/2 ≤ Real.sqrt 3-1-(Real.sqrt 3/6)*v-(5/16)*v^2 by linarith [a_le_circle h']) hs0
   have hW := side_remainder_quadratic h hT
   have hwarg : label a u-Real.pi/6=z-(5/4)*v := by
     rw [hA] at he
     dsimp [axial] at he
     linarith
   rw [hwarg] at hW
-  have htrig := radial_trig_lower ⟨hz.1.le,hz.2⟩ h'.u_nonneg
-    (r := Real.sqrt 3-1) ⟨by linarith [sqrt_three_bounds.1],by linarith [sqrt_three_bounds.2]⟩
-  have hp := radialE_pos hz v
-  rw [inward_opposite_side_identity hT hA he]
-  rw [abs_of_nonneg hs0]
-  dsimp [radialE] at hp
+  have hp := radialForm_pos hz ⟨h'.u_nonneg,hv⟩
+  rw [inward_opposite_side_identity hT hA he,abs_of_nonneg hs0]
+  dsimp only [radialForm] at hp
   linarith
 
 lemma line_to_circle_turn_margin {z : ℝ}
