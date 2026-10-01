@@ -3,23 +3,19 @@ import SquaresInCircles.Six.Normalization.Basic
 /-!
 # Supports of the squares in the disk
 
-A unit square in the closed disk of radius `R` about the origin, with centre
-`(a, b)` in its frame, does work `U a + V b` under a force `(U, V)`. Some vertex
-lies `(|U| + |V|)/2` beyond the centre along the force, and as it lies in the
-disk, Cauchy–Schwarz bounds the work by `R |(U, V)| - (|U| + |V|)/2`
-(`center_le_vertexSupport`, and `box_vertex_support` for the far corner
-`(|a| + 1/2, |b| + 1/2)` in the disk). For the ceiling `R0` and a chart in the
-disk: the centre lies within `ρ0` of the origin (`chart_radial_work`); a linear
-function on the part of the disk beyond a line `A = l` is largest at a corner of
-that part (`disk_corner_support`, `circle_support_above_primary`), so a force
-close to the primary axis has the cap bound `ρ0 U` (`cap_linear_upper`); the far
-corner gives `a + (31/100)(|b| + b²) ≤ ρ0` (`radial_transverse_quadratic`), and
-hence the cone supports `ρ̄ U` for `|V| ≤ (31/100) U` and `ρ̄ U` plus a multiple
-of `V²` in wider cones, by completed squares; and the force
-`(z + sin q, cos q - 1)` on D has length at most
-`(2 + z²/4) sin (q/2) + z cos (q/2)` (`chord_support`). The centre of C lies in
-the box `[0, c0]²`, where the work of a force is largest at a corner or on the
-face chosen by the sign of a component (`center_face`).
+A force `(U, V)` does work at most `R0 |(U, V)| - (|U| + |V|)/2` on the centre
+`(a, b)` of a chart in the disk of radius `R0`, by its far vertex
+(`local_vertex_support`), and the centre lies within `ρ0` of the origin
+(`chart_radial_work`). A linear function on the part of the disk beyond a line
+`A = l` is largest at a corner of that part (`disk_corner_support`,
+`circle_support_above_primary`), so a force close to the primary axis has the
+cap bound `ρ0 U` (`cap_linear_upper`); the far corner gives
+`a + (31/100)(|b| + b²) ≤ ρ0` (`radial_transverse_quadratic`), and hence the
+cone supports `ρ̄ U` for `|V| ≤ (31/100) U` and `ρ̄ U` plus a multiple of `V²`
+in wider cones, by completed squares; and the force `(z + sin q, cos q - 1)` on
+D has length at most `(2 + z²/4) sin (q/2) + z cos (q/2)` (`chord_support`). The
+centre of C lies in the box `[0, c0]²`, where the work of a force is largest at
+a corner or on the face chosen by the sign of a component (`center_face`).
 -/
 
 noncomputable section
@@ -27,74 +23,6 @@ namespace SquaresInCircles.Six
 open Normalization
 
 /-! ### The far vertex -/
-
-/-- The length of a vector. -/
-def vectorLength (v : Point) : ℝ := Real.sqrt (normSq v)
-
-/-- The far-vertex support `R |v| - width S v`. -/
-def vertexSupport (R : ℝ) (S : UnitSquare) (v : Point) : ℝ :=
-  R*vectorLength v-width S v
-
-lemma vectorLength_nonneg (v : Point) : 0 ≤ vectorLength v := Real.sqrt_nonneg _
-
-lemma vectorLength_sq (v : Point) : vectorLength v^2=normSq v := Real.sq_sqrt (normSq_nonneg v)
-
-lemma dot_le_radius {v p : Point} {R : ℝ} (hR : 0 ≤ R) (hp : normSq p ≤ R^2) :
-    dot v p ≤ R*vectorLength v := by
-  have hcs := cauchy_sq v p
-  have hm := mul_le_mul_of_nonneg_left hp (normSq_nonneg v)
-  have hs : (dot v p)^2 ≤ (R*vectorLength v)^2 := by
-    calc
-      (dot v p)^2 ≤ normSq v*normSq p := hcs
-      _ ≤ normSq v*R^2 := hm
-      _ = (R*vectorLength v)^2 := by rw [← vectorLength_sq]; ring
-  have hn : 0 ≤ R*vectorLength v := mul_nonneg hR (vectorLength_nonneg v)
-  by_contra! h
-  have hprod := mul_pos (sub_pos.mpr h)
-    (show 0 < dot v p+R*vectorLength v by linarith)
-  nlinarith
-
-/-- Some vertex of the square lies `width S n` beyond its centre along `n`. -/
-lemma exists_support_vertex (S : UnitSquare) (n : Point) :
-    ∃ p, closedSquare S p ∧ dot n p=dot n S.center+width S n := by
-  obtain ⟨u,hu,hxu⟩ := exists_signed (frameX S n) (c := (1:ℝ)/2) (by norm_num)
-  obtain ⟨v,hv,hyv⟩ := exists_signed (frameY S n) (c := (1:ℝ)/2) (by norm_num)
-  let p := add S.center (rotate S (u,v))
-  have hp : closedSquare S p := by
-    constructor
-    · simpa only [p,localX_rotated,hu] using (le_rfl : (1:ℝ)/2 ≤ 1/2)
-    · simpa only [p,localY_rotated,hv] using (le_rfl : (1:ℝ)/2 ≤ 1/2)
-  have hproj : dot n (sub p S.center)=frameX S n*localX S p+frameY S n*localY S p :=
-    (frame_dot S n _).symm
-  dsimp [p] at hproj
-  rw [localX_rotated,localY_rotated,dot_sub_right] at hproj
-  refine ⟨p,hp,?_⟩
-  dsimp [width]
-  linarith
-
-/-- A square in the closed disk of radius `R` about the origin has
-`⟨n, c⟩ ≤ R |n| - width S n` for every `n`. -/
-theorem center_le_vertexSupport {S : UnitSquare} {R : ℝ}
-    (hR : 0 ≤ R) (hcontain : ∀ p, closedSquare S p → inDisk (0,0) R p) (n : Point) :
-    dot n S.center ≤ vertexSupport R S n := by
-  obtain ⟨p,hp,he⟩ := exists_support_vertex S n
-  have hd : normSq p ≤ R^2 := by simpa [inDisk,sub] using hcontain p hp
-  have hb := dot_le_radius (v := n) hR hd
-  rw [he] at hb
-  dsimp [vertexSupport]
-  linarith
-
-/-- The far-vertex support in the frame of a square: if the far corner
-`(|a| + 1/2, |b| + 1/2)` lies in the disk of radius `R`, the force `(U, V)` does
-work at most `R |(U, V)| - (|U| + |V|)/2` on the centre `(a, b)`. -/
-lemma box_vertex_support {R a b : ℝ} (hR : 0 ≤ R) (hbox : (|a|+1/2)^2+(|b|+1/2)^2 ≤ R^2)
-    (U V : ℝ) : U*a+V*b ≤ R*Real.sqrt (U^2+V^2)-(|U|+|V|)/2 := by
-  have hC := dot_le_radius (v := (|U|,|V|)) (p := (|a|+1/2,|b|+1/2)) hR
-    (by simpa only [normSq] using hbox)
-  simp only [vectorLength,normSq,dot,sq_abs] at hC
-  have hA : U*a ≤ |U| * |a| := by rw [← abs_mul]; exact le_abs_self _
-  have hB : V*b ≤ |V| * |b| := by rw [← abs_mul]; exact le_abs_self _
-  linarith
 
 /-- The far-vertex support of a chart in the disk of radius `R0`. -/
 lemma local_vertex_support {a b : ℝ} (hc : ContainedChart a |b|) (U V : ℝ) :

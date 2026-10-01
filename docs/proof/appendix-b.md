@@ -159,9 +159,9 @@ $(pX + rY)^2 + (pY - rX)^2 = (p^2 + r^2)(X^2 + Y^2) \le \frac{13}4(p^2 + r^2)$.
 (2) By (1), $|pX + rY| \le \sqrt{\frac{13}4(p^2 + r^2)}$, which is at most $c$,
 or less than $c$, respectively. $\square$
 
-*Lean: [`Seven.dot_ge`](../../SquaresInCircles/Seven/Support.lean#L45),
-[`Seven.dot_gt`](../../SquaresInCircles/Seven/Support.lean#L49),
-[`Seven.dot_sq_le`](../../SquaresInCircles/Seven/Support.lean#L38).*
+*Lean: [`dot_ge`](../../SquaresInCircles/Common/DiskSupport.lean#L30),
+[`dot_gt`](../../SquaresInCircles/Common/DiskSupport.lean#L34),
+[`dot_sq_le`](../../SquaresInCircles/Common/DiskSupport.lean#L24).*
 
 ### Lemma B.4 (lower bounds for the support)
 
@@ -177,14 +177,15 @@ or less than $c$, respectively. $\square$
 
 Part (1) says that the square $Q(a, b)$ has a point beyond the line
 $\langle\cdot, u(z)\rangle = -\frac{37}{50}$ in every direction $u(z)$, because
-its centre lies within $\frac{31}{25}$ of the origin. Part (2) says that the
-support of $Q(a, su)$ is at least that of each point $u(x) = (\cos x, \sin x)$
-of the marker arc about the direction $s\,\ell(a, u)$.
+its centre lies within $\sqrt3 - \frac12 < \frac{31}{25}$ of the origin.
+Part (2) says that the support of $Q(a, su)$ is at least that of each point
+$u(x) = (\cos x, \sin x)$ of the marker arc about the direction
+$s\,\ell(a, u)$.
 
 *Proof.* Part (1) is [Lemma 9.11](seven.md#lemma-911-the-support-function) (3). In part (2), $|su| = u$, and the
 inequality is Lemma 9.11 (2). $\square$
 
-*Lean: [`Seven.support_lower`](../../SquaresInCircles/Seven/Support.lean#L55),
+*Lean: [`Seven.support_lower`](../../SquaresInCircles/Seven/Support.lean#L20),
 [`Seven.sign_admissible`](../../SquaresInCircles/Seven/PairModel.lean#L42),
 [`Seven.marker_arc_support`](../../SquaresInCircles/Seven/PairModel.lean#L48).*
 
@@ -354,7 +355,7 @@ $1.733 = \frac{1733}{1000}$. $\square$
 *Lean:
 [`Seven.Admissible.a_le_sqrt_three_sub_half`](../../SquaresInCircles/Seven/Labels.lean#L52),
 [`Seven.Admissible.sum_lt`](../../SquaresInCircles/Seven/Labels.lean#L59),
-[`Seven.sqrt_three_bounds`](../../SquaresInCircles/Seven/Support.lean#L34).*
+[`Seven.sqrt_three_bounds`](../../SquaresInCircles/Seven/Support.lean#L14).*
 
 ### Lemma B.8 (axial and side labels)
 

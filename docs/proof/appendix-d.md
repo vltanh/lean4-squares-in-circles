@@ -511,7 +511,7 @@ does not suffice, and the tie line (D.6) is needed.
 [`Seven.cone_support`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L67),
 [`Seven.axial_small_turn`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L77),
 [`Seven.axial_large_turn`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L109),
-[`Seven.dot_ge`](../../SquaresInCircles/Seven/Support.lean#L45).*
+[`dot_ge`](../../SquaresInCircles/Common/DiskSupport.lean#L30).*
 
 ### Lemma D.3 (an axial target)
 
@@ -724,7 +724,7 @@ $0.17$. From case 2 on, the least value is the value at the transition state
 *Lean:
 [`Seven.sideTarget_negative_pos`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L225),
 [`Seven.tangent_force_pos`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L209),
-[`Seven.dot_gt`](../../SquaresInCircles/Seven/Support.lean#L49).*
+[`dot_gt`](../../SquaresInCircles/Common/DiskSupport.lean#L34).*
 
 ### Proposition D.7 (target sign negative)
 

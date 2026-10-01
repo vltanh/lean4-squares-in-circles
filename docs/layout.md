@@ -57,6 +57,7 @@ squares the pair theorem, the ring and the middle column over the files
 | `ArcBudget.lean` | The budget of a packing: some square avoids the disk centre, and the square that contains it can be replaced by its radial sweep |
 | `Analysis.lean` | Monotonicity and concavity from derivatives, positivity from a curvature bound and one value, the largest value at a peak, leftmost minima |
 | `Trigonometry.lean` | Bounds for `π`, `sin`, `cos` and `arcsin`: small angles, Taylor brackets, concave first harmonics, radicals and rotating lengths, half angles |
+| `DiskSupport.lean` | Cauchy–Schwarz on a disk; the support of a square in a disk from its far vertex; the support function of an axis-parallel square and its lower bound from the distance of the centre |
 | `SeparatingAxes.lean` | The separating-axis theorem: disjoint squares are separated along one of their four edge axes, each with its threshold; for two oriented squares, the threshold `1/2 + angularWidth d` and the offset of the centres in either frame |
 | `Constructions.lean` | Axis-parallel squares centred at given points: membership, disjointness and containment |
 | `Congruence.lean` | Congruence to a model from square-by-square slots; open squares determine closed ones; configurations congruent to a packing are packings; the rigid-motion witness; the square at given coordinates in a rotated frame (`modelSquare`, `orientedSquare`) |
@@ -92,7 +93,7 @@ of angles:
 | part | files | contents |
 | --- | --- | --- |
 | construction | `Constants.lean`, `Construction.lean` | the constants of the model, their identities and rational brackets; the model packs the disk |
-| tools | `Supports.lean` | the support of a square in the disk |
+| tools | `Supports.lean` | the supports of a chart in the disk of radius `R0`: its far vertex, the cap and the cones; the box of the centre of C |
 | the central square | `Normalization/CentralSquare.lean` | a square contains the disk centre, by the arcs that the other squares hold on the circle of radius `9/10`; the box of its centre |
 | normalization | the other 8 files of `Normalization/` | charts and the separating axes of the central square; squares in a deep cap; the five pins, the labels, their windows and order; `D` separated from the central square along its own axis; normalized packings and the axes of their pairs |
 | separators | `Separators/` (9 files) | the axes that separate consecutive squares; the angle of `D` exceeds `1/2`; the profile of `D`; walls, missing wings and the signs of the wings |
@@ -112,7 +113,7 @@ the 2 files in `Seven/Uniqueness/`:
 | part | files | contents |
 | --- | --- | --- |
 | construction | `Construction.lean` | the column packings pack the disk; the four gaps of a column |
-| states and markers | `Labels.lean`, `Support.lean`, `PairModel.lean` | states, labels and markers; the support function; the support sums of a canonical pair |
+| states and markers | `Labels.lean`, `Support.lean`, `PairModel.lean` | states, labels and markers; the support of an admissible square; the support sums of a canonical pair |
 | the marker arc | `MarkerArc.lean` | the arc of half-width `1/2` |
 | tools for the sectors | `Contacts.lean`, `LabelBoundary.lean`, `BoundarySegments.lean`, `BoundaryProfiles.lean`, `TargetBoundaryMonotonicity.lean` | contacts; the boundary of the label regions, segments of constant label, and profiles along the boundary |
 | the gap of `π/3` | `EasySectors.lean`, `InwardAxialTarget.lean`, `InwardSideTarget.lean`, `InwardOppositeMinima.lean`, `InwardOpposite.lean`, `ForwardNegativeTarget.lean`, `ForwardBothNegative.lean`, `OppositeForward.lean`, `FixedGap.lean` | the outward, backward, inward and forward axes, sector by sector, with their zeros, and their assembly |

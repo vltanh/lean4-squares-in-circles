@@ -1,6 +1,7 @@
 import SquaresInCircles.Common.Contacts
 import SquaresInCircles.Common.Support
 import SquaresInCircles.Common.ExteriorCharts
+import SquaresInCircles.Common.DiskSupport
 import SquaresInCircles.Common.Trigonometry
 import SquaresInCircles.Common.Congruence
 import SquaresInCircles.Six.Constants
@@ -134,11 +135,9 @@ theorem center_radius_sq {S : UnitSquare} {o : Point}
 lemma projection_abs_le_rho0 {x y c s : ℝ}
     (hp : x ^ 2 + y ^ 2 ≤ rho0 ^ 2) (hu : c ^ 2 + s ^ 2 = 1) :
     |x*c + y*s| ≤ rho0 := by
-  have hid : (x*c+y*s)^2 + (x*s-y*c)^2 = (x^2+y^2)*(c^2+s^2) := by ring
-  rw [hu,mul_one] at hid
-  have hsq : (x*c+y*s)^2 ≤ rho0^2 := by nlinarith [sq_nonneg (x*s-y*c)]
-  apply abs_le.mpr
-  constructor <;> nlinarith [rho0_bounds.1]
+  have h := dot_sq_le (p := c) (r := s) hp
+  rw [hu,mul_one] at h
+  exact abs_le_of_sq_le_sq (by linarith) (by linarith [rho0_bounds.1])
 
 lemma chart_center_east_bound {a b t : ℝ} (hc : ContainedChart a |b|) :
     a * Real.cos t - b * Real.sin t ≤ rho0 := by

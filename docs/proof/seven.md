@@ -254,7 +254,7 @@ $\varphi(a_S, b_S) \le R_7^2 = \frac{13}4$ by
 [`Seven.Admissible.sum_lt`](../../SquaresInCircles/Seven/Labels.lean#L59),
 [`Seven.Admissible.u_lt`](../../SquaresInCircles/Seven/Labels.lean#L64),
 [`coordinate_le_of_phi`](../../SquaresInCircles/Common/Basic.lean#L166),
-[`Seven.sqrt_three_bounds`](../../SquaresInCircles/Seven/Support.lean#L34),
+[`Seven.sqrt_three_bounds`](../../SquaresInCircles/Seven/Support.lean#L14),
 [`SquareChart.exteriorChart`](../../SquaresInCircles/Common/ExteriorCharts.lean#L49).*
 
 The identity (1) says that $r \ge 0$ is the tangent half-plane
@@ -536,7 +536,7 @@ For real $a$, $b$ and a direction $z$ let
 h(a, b, z) = a\cos z + b\sin z + \tfrac12\left(|\cos z| + |\sin z|\right) .
 ```
 
-*Lean: [`Seven.support`](../../SquaresInCircles/Seven/Support.lean#L15).*
+*Lean: [`support`](../../SquaresInCircles/Common/DiskSupport.lean#L93).*
 
 ### Lemma 9.11 (the support function)
 
@@ -548,9 +548,9 @@ h(a, b, z) = a\cos z + b\sin z + \tfrac12\left(|\cos z| + |\sin z|\right) .
    $|x - s\,\ell(a, u)| \le \frac12$. Then
    $u(x) \in \overline{Q(a, su)}$, and $h(a, su, z) \ge \cos(z - x)$ for every
    $z$.
-3. If $(a, |b|)$ is admissible, then $a^2 + b^2 < (\frac{31}{25})^2$ and
-   $h(a, b, z) > -\frac{37}{50}$ for every $z$. In particular this holds for
-   $b = su$ when $(a, u)$ is admissible and $s = \pm1$.
+3. If $(a, |b|)$ is admissible, then $a^2 + b^2 \le (\sqrt3 - \frac12)^2$ and
+   $h(a, b, z) \ge 1 - \sqrt3 > -\frac{37}{50}$ for every $z$. In particular
+   this holds for $b = su$ when $(a, u)$ is admissible and $s = \pm1$.
 4. (Cauchy–Schwarz on the disk.) Let $X^2 + Y^2 \le \frac{13}4$, $c \ge 0$ and
    $p, q$ real. If $\frac{13}4(p^2 + q^2) \le c^2$, then $pX + qY \ge -c$; if
    $\frac{13}4(p^2 + q^2) < c^2$, then $pX + qY > -c$.
@@ -567,31 +567,28 @@ $|\cos x - a| \le \frac12$ and $|{-\sin x} - u| \le \frac12$, so
 $u(x) \in \overline{Q(a, -u)}$. In both cases (1) gives
 $h(a, su, z) \ge \langle u(x), u(z)\rangle = \cos(z - x)$.
 
-(3) Put $\rho = \sqrt{a^2 + b^2}$. As $a$ and $|b|$ are nonnegative,
-$(a + |b|)^2 \ge a^2 + b^2$, so $a + |b| \ge \rho$, and
-
-```math
-\tfrac{13}4 \ge \varphi(a, |b|) = \rho^2 + (a + |b|) + \tfrac12 \ge \rho^2 + \rho + \tfrac12 .
-```
-
-So $(\rho + \frac12)^2 \le 3$ and
-$\rho \le \sqrt3 - \frac12 < \frac{1733}{1000} - \frac12 < \frac{31}{25}$. By
-Cauchy–Schwarz $a\cos z + b\sin z \ge -\rho$, and
+(3) As $a$ and $|b|$ are nonnegative and $\varphi(a, |b|) \le \frac{13}4$,
+[Lemma 3.4](common.md#lemma-34-farthest-vertex) (3) gives
+$\rho = \sqrt{a^2 + b^2} \le \sqrt{\frac{13}4 - \frac14} - \frac12 = \sqrt3 - \frac12$.
+By Cauchy–Schwarz $a\cos z + b\sin z \ge -\rho$, and
 $(|\cos z| + |\sin z|)^2 = 1 + 2|\cos z\sin z| \ge 1$, so
-$h(a, b, z) \ge \frac12 - \rho > \frac12 - \frac{31}{25} = -\frac{37}{50}$.
+$h(a, b, z) \ge \frac12 - \rho \ge 1 - \sqrt3$, and
+$1 - \sqrt3 > 1 - \frac{1733}{1000} > -\frac{37}{50}$ by Lemma 9.5 (2).
 
 (4) By Cauchy–Schwarz,
 $(pX + qY)^2 \le (p^2 + q^2)(X^2 + Y^2) \le \frac{13}4(p^2 + q^2)$, which is at
 most, or less than, $c^2$. $\square$
 
-*Lean:
-[`Seven.point_le_support`](../../SquaresInCircles/Seven/Support.lean#L18),
+*Lean: [`point_le_support`](../../SquaresInCircles/Common/DiskSupport.lean#L96),
 [`Seven.marker_arc_support`](../../SquaresInCircles/Seven/PairModel.lean#L48),
 [`Seven.sign_admissible`](../../SquaresInCircles/Seven/PairModel.lean#L42),
-[`Seven.support_lower`](../../SquaresInCircles/Seven/Support.lean#L55),
-[`Seven.dot_ge`](../../SquaresInCircles/Seven/Support.lean#L45),
-[`Seven.dot_gt`](../../SquaresInCircles/Seven/Support.lean#L49),
-[`Seven.dot_sq_le`](../../SquaresInCircles/Seven/Support.lean#L38).*
+[`Seven.support_lower`](../../SquaresInCircles/Seven/Support.lean#L20),
+[`support_ge`](../../SquaresInCircles/Common/DiskSupport.lean#L107),
+[`ExteriorChart.center_sq_le`](../../SquaresInCircles/Common/ExteriorCharts.lean#L41),
+[`dot_ge`](../../SquaresInCircles/Common/DiskSupport.lean#L30),
+[`dot_gt`](../../SquaresInCircles/Common/DiskSupport.lean#L34),
+[`dot_sq_le`](../../SquaresInCircles/Common/DiskSupport.lean#L24),
+[`cauchy_sq`](../../SquaresInCircles/Common/Basic.lean#L41).*
 
 ### Definition 9.12 (canonical pair and support sums)
 
