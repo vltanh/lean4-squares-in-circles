@@ -2,7 +2,7 @@ import SquaresInCircles.Six.Stress.PairStress
 import SquaresInCircles.Common.Trigonometry
 
 /-!
-# The pair gap at the vertices of the sectors
+# Six squares: the pair gap at the vertices of the sectors
 
 The gap is positive at the corners of the domain, at the points where its sides
 meet the axes, and at the points where the diagonal `n = w` meets a side or an

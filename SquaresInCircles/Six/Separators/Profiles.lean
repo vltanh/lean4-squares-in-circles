@@ -2,7 +2,7 @@ import SquaresInCircles.Six.Separators.DiagonalAngle
 import SquaresInCircles.Six.Supports
 
 /-!
-# Radial profiles and transverse coordinates
+# Six squares: radial profiles and transverse coordinates
 
 A square separated from the central square C along its own axis, or along a
 side of C, has its radial coordinate `a` bounded below by a profile in its

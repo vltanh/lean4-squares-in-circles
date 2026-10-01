@@ -1,7 +1,7 @@
 import SquaresInCircles.Six.Normalization.Basic
 
 /-!
-# Supports of the squares in the disk
+# Six squares: supports of the squares in the disk
 
 A force `(U, V)` does work at most `R0 |(U, V)| - (|U| + |V|)/2` on the centre
 `(a, b)` of a chart in the disk of radius `R0`, by its far vertex

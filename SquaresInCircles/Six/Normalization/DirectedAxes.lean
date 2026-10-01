@@ -1,7 +1,7 @@
 import SquaresInCircles.Six.Normalization.Basic
 
 /-!
-# Directed axes of a pair of squares
+# Six squares: directed axes of a pair of squares
 
 Two squares S and T with disjoint interiors are separated along one of the
 eight directed axes `±e₁`, `±e₂` of the pair (`directed_pair_separator`). Along

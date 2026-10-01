@@ -2,7 +2,7 @@ import SquaresInCircles.Six.Supports
 import SquaresInCircles.Six.Wings.Chart
 
 /-!
-# The angles of W and D in a missing west wing
+# Six squares: the angles of W and D in a missing west wing
 
 Let W be separated from C along its own axis and from D along the secondary
 axis of D, at the angles `v` and `d`, with `q = d + v ≥ 1`. Weights `b`, `z`

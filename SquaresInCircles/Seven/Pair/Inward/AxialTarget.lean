@@ -1,7 +1,7 @@
-import SquaresInCircles.Seven.Contacts
+import SquaresInCircles.Seven.Pair.Contacts
 
 /-!
-# The inward axis, positive source sign, axial target
+# Seven squares: the inward axis, positive source sign, axial target
 
 In the turn `e = label a u - t label A v - π/6` the support sum is
 `1/2 - a - A sin e + |sin e|/2 + (1/2 - t v) cos e`. A nonnegative turn is at

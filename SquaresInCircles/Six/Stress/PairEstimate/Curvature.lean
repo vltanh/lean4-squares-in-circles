@@ -2,7 +2,7 @@ import SquaresInCircles.Six.Stress.PairStress
 import SquaresInCircles.Common.Trigonometry
 
 /-!
-# Concavity of the pair gap along lines
+# Six squares: concavity of the pair gap along lines
 
 The signs of `n`, `w` and `n - w` cut the domain into sectors. On a sector
 `|sin|`, `max (sin ·) 0`, the line and `|n|` are constant multiples of `sin` and

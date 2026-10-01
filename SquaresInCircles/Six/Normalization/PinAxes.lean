@@ -2,7 +2,7 @@ import SquaresInCircles.Six.Normalization.Complete
 import SquaresInCircles.Six.Normalization.DirectedAxes
 
 /-!
-# The exterior squares of a normalized packing and their pin axes
+# Six squares: the exterior squares of a normalized packing and their pin axes
 
 The five exterior squares E, N, W, D, S of a normalized packing sit at the
 phases `θ + t` of the directions `0`, `π/2`, `π`, `5π/4`, `3π/2`. E or N

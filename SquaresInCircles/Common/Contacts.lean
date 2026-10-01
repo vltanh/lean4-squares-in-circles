@@ -1,8 +1,13 @@
 import SquaresInCircles.Common.Congruence
 
-/-! Centres of interior-disjoint unit squares are at least 1 apart, and at
-distance exactly 1 the squares are side-neighbours. The supporting functional
-comes from `support_separator`. -/
+/-!
+# Contacts
+
+Centres of interior-disjoint unit squares are at least 1 apart, and at distance
+exactly 1 the squares are side-neighbours, by the supporting functional of
+`support_separator`. Squares with parallel sides read in one frame; squares with
+the same centre and the same axes are the same square.
+-/
 noncomputable section
 namespace SquaresInCircles
 

@@ -1,14 +1,19 @@
+import SquaresInCircles.Seven.Pair
 import SquaresInCircles.Common.Frames
+import SquaresInCircles.Common.Angles
 
 /-!
-# The square in the middle
+# Seven squares: the containing square
 
-A unit square that contains the origin, and whose points in the band `|y| < 1`
-all have `|x| ≤ 1/2`, is axis-parallel and centred on `x = 0`: a tilted square
-has a section through its centre longer than 1. The four side squares block the
-band `|y| ≤ 1` beyond `|x| = 1/2`, so the square that contains the disk centre,
-read in the frame of the side squares (`pullSquare`), stays in the strip between
-them. Its height is left free.
+Seven markers pairwise at least `π/3` apart do not fit on the circle, so some
+square contains the disk centre (`exists_containing`). A unit square that
+contains the origin, and whose points in the band `|y| < 1` all have
+`|x| ≤ 1/2`, is axis-parallel and centred on `x = 0`: a tilted square has a
+section through its centre longer than 1. The four side squares of the ring
+block the band `|y| ≤ 1` beyond `|x| = 1/2`, so the square that contains the
+disk centre, read in the frame of the side squares (`pullSquare`), stays in the
+strip between them; its height is left free. Aligned squares of one column have
+centres at least 1 apart.
 -/
 noncomputable section
 namespace SquaresInCircles.Seven
@@ -107,5 +112,31 @@ theorem central_square_represents {S : UnitSquare} {B : Fin 4 → UnitSquare}
   obtain ⟨hz,hr⟩ := section_strip_rigidity ((hs 0 0).mp (by rw [frameEquiv_zero]; exact h0))
     (fun x y hxy hy => central_strip h0 hrep hd x y ((hs x y).mpr hxy) hy)
   exact ⟨_,hz,fun x y => (hs x y).trans (hr x y)⟩
+
+/-- At the optimal radius some square contains the disk centre. -/
+theorem exists_containing (S : Fin 7 → UnitSquare) (o : Point)
+    (hp : Packing S o radius) : ∃ i, openSquare (S i) o := by
+  classical
+  by_contra hn
+  have hext : ∀ i, ¬ openSquare (S i) o := by simpa only [not_exists] using hn
+  choose C hsort using (fun i => sorted_square_chart (S i) o)
+  have hadm (i : Fin 7) : Admissible (C i).a (C i).b := by
+    apply (C i).exteriorChart (hsort i) (hext i)
+    have hh := hp.phi_le i
+    simpa only [radius_sq,targetSq] using hh
+  have h := directions_budget (n := 6) (fun i => chartMarker (C i))
+    (by unfold gap; linarith [Real.pi_pos])
+    fun i j hij => marker_separation_closed (C i) (C j) (hadm i) (hadm j) (hp.disjoint i j hij)
+  unfold gap at h
+  push_cast at h
+  linarith [Real.pi_pos]
+
+/-- Two aligned squares in one column cannot have centers less than one apart. -/
+lemma column_centers_separated {S T : UnitSquare} {o : Point} {φ : Direction} {x y : ℝ}
+    (hS : Represents S o φ (0,x)) (hT : Represents T o φ (0,y))
+    (hxy : x ≤ y) (hd : ∀ p, ¬ (openSquare S p ∧ openSquare T p)) : x+1 ≤ y := by
+  by_contra hn
+  refine hd (pointInDirection o φ 0 ((x+y)/2)) ⟨(hS _ _).mpr ?_,(hT _ _).mpr ?_⟩ <;>
+    exact ⟨by norm_num,abs_lt.mpr ⟨by linarith,by linarith⟩⟩
 
 end SquaresInCircles.Seven

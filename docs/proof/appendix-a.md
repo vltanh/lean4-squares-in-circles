@@ -362,7 +362,7 @@ $\sqrt{1 - y^2} < \frac45$ and $g'(y) < 0$; apply Lemma A.1 (2).
 $\square$
 
 *Lean:
-[`Seven.asin_line_mono`](../../SquaresInCircles/Seven/MarkerArc.lean#L20),
+[`Seven.asin_line_mono`](../../SquaresInCircles/Seven/Exterior.lean#L231),
 [`asin_half`](../../SquaresInCircles/Common/Trigonometry.lean#L717).*
 
 By (1) and (2), $g(\frac35) = \frac34 - \arcsin\frac35$ is the largest value of
@@ -453,7 +453,7 @@ $\mathrm{side}(a, u)$ and $\frac\pi4$, hence less than their minimum
 $\ell(a, u)$. $\square$
 
 *Lean:
-[`Seven.marker_lower_endpoint`](../../SquaresInCircles/Seven/MarkerArc.lean#L42).*
+[`Seven.marker_lower_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L253).*
 
 ### Lemma A.12 (the upper edge)
 
@@ -488,7 +488,7 @@ $\ell(a, u) + \frac12 < \arcsin(u + \frac12)$.
    $\arcsin(u + \frac12) > \ell(a, u) + \frac12$. $\square$
 
 *Lean:
-[`Seven.marker_horizontal_endpoint`](../../SquaresInCircles/Seven/MarkerArc.lean#L249).*
+[`Seven.marker_horizontal_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L460).*
 
 ### Definition A.13 (the envelope)
 
@@ -507,9 +507,9 @@ E_2(x) &= \frac x{\left(1 - x^2\right)^{3/2}} - \frac{13}{12\left(13/4 - (x + 1)
 $E$ is the *envelope*; $E_1$ and $E_2$ are its first and second derivatives
 on $[0, \frac34]$ (Lemma A.15).
 
-*Lean: [`Seven.arcEnvelope`](../../SquaresInCircles/Seven/MarkerArc.lean#L76),
-[`Seven.arcEnvelopeDeriv`](../../SquaresInCircles/Seven/MarkerArc.lean#L79),
-[`Seven.arcEnvelopeSecond`](../../SquaresInCircles/Seven/MarkerArc.lean#L82).*
+*Lean: [`Seven.arcEnvelope`](../../SquaresInCircles/Seven/Exterior.lean#L287),
+[`Seven.arcEnvelopeDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L290),
+[`Seven.arcEnvelopeSecond`](../../SquaresInCircles/Seven/Exterior.lean#L293).*
 
 The definition of the side term can be written
 
@@ -565,7 +565,7 @@ h\left(\tfrac{123}{280}\right) = 9\left(\tfrac{158}{280}\right)^2\left(\tfrac{16
 ```
 
 *Lean:
-[`Seven.curvature_peak_lt`](../../SquaresInCircles/Seven/MarkerArc.lean#L148).*
+[`Seven.curvature_peak_lt`](../../SquaresInCircles/Seven/Exterior.lean#L359).*
 
 For orientation, $h(0) = \frac{6561}{64} \approx 102.5$,
 $h(\frac{123}{280}) \approx 596.1$ and
@@ -627,10 +627,10 @@ Let $0 \le x \le \frac34$. Then
    $12(x + \frac18)B^3 < 13A^3$, and $E_2(x) < -\frac18$. $\square$
 
 *Lean:
-[`Seven.arcEnvelopeSecond_le`](../../SquaresInCircles/Seven/MarkerArc.lean#L174),
-[`Seven.arc_radicands`](../../SquaresInCircles/Seven/MarkerArc.lean#L85),
-[`Seven.arcEnvelope_hasDeriv`](../../SquaresInCircles/Seven/MarkerArc.lean#L90),
-[`Seven.arcEnvelopeDeriv_hasDeriv`](../../SquaresInCircles/Seven/MarkerArc.lean#L107).*
+[`Seven.arcEnvelopeSecond_le`](../../SquaresInCircles/Seven/Exterior.lean#L385),
+[`Seven.arc_radicands`](../../SquaresInCircles/Seven/Exterior.lean#L296),
+[`Seven.arcEnvelope_hasDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L301),
+[`Seven.arcEnvelopeDeriv_hasDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L318).*
 
 The two terms of $E_2$ come from the arcsine, which bends up, and from the
 circle $\varphi = \frac{13}4$, which bends down: $B$ is the value of
@@ -685,7 +685,7 @@ level $\frac\pi3 - \frac12 \approx 0.5472$ that Lemma A.17 needs
    With (A.2), $E(x) \le \frac\pi6 + \frac{353}{648}$. $\square$
 
 *Lean:
-[`Seven.arcEnvelope_bound`](../../SquaresInCircles/Seven/MarkerArc.lean#L209).*
+[`Seven.arcEnvelope_bound`](../../SquaresInCircles/Seven/Exterior.lean#L420).*
 
 For orientation: the largest value of $E$ on $[0, \frac34]$ is about
 $\frac\pi6 + 0.54293$, taken near $x = 0.094$, and
@@ -722,7 +722,7 @@ $0 \le x < \frac34$.
    $157 \cdot 648 = 101736 > 101550 = 677 \cdot 150$. $\square$
 
 *Lean:
-[`Seven.marker_vertical_endpoint`](../../SquaresInCircles/Seven/MarkerArc.lean#L227).*
+[`Seven.marker_vertical_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L438).*
 
 *Proof of [Lemma 9.9](seven.md#lemma-99-the-marker-arc).* Let $(a, u)$ be admissible, write
 $\ell = \ell(a, u)$, and let $|t - \ell| \le \frac12$, so that
@@ -748,4 +748,4 @@ $0 \le \theta \le \frac\pi2$ and $\cos\theta = a - \frac12$.
    so $\sin t < u + \frac12$. With step 3, $|\sin t - u| \le \frac12$.
    $\square$
 
-*Lean: [`Seven.marker_arc`](../../SquaresInCircles/Seven/MarkerArc.lean#L276).*
+*Lean: [`Seven.marker_arc`](../../SquaresInCircles/Seven/Exterior.lean#L487).*

@@ -307,10 +307,11 @@ SquaresInCircles/
 ├── Common/                tools shared by several cases
 ├── One/  Two/             Construction, Uniqueness
 ├── Three/ Four/ Five/     Construction, Exterior, Containing, Uniqueness
-├── Six/                   Construction, Normalization/, Separators/, Wings/,
-│                          Tails/, Stress/, Equality/, Uniqueness
-└── Seven/                 Construction, the pair theorem, Uniqueness, and
-                           Uniqueness/ for the ring and the middle square
+├── Six/                   Construction, Exterior, Containing, Uniqueness, and
+│                          Normalization/, Separators/, Wings/, Tails/,
+│                          Stress/, Equality/ in between
+└── Seven/                 Construction, Exterior, Containing, Uniqueness, and
+                           the pair theorem (Pair, Pair/) and the Ring
 ```
 
 Each case imports only `Common/` and its own folder.

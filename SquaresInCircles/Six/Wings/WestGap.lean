@@ -3,7 +3,7 @@ import SquaresInCircles.Six.Separators.Profiles
 import SquaresInCircles.Six.Supports
 
 /-!
-# W and D along the secondary axis of D
+# Six squares: W and D along the secondary axis of D
 
 If W and D are separated along the secondary axis of D, the phase of D exceeds
 that of W by more than one radian. Let `v = -w`, `q = d + v` the phase gap and

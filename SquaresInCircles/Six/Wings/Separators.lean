@@ -7,7 +7,7 @@ import SquaresInCircles.Six.Wings.WestDiagonal
 import SquaresInCircles.Six.Wings.WestRange
 
 /-!
-# The separators of the turned square
+# Six squares: the separators of the turned square
 
 In the model W and D are separated along the secondary axis of W, and D and S
 along that of S. If the first separation fails, the west wing is missing: W

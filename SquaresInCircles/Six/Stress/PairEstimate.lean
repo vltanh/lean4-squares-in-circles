@@ -2,7 +2,7 @@ import SquaresInCircles.Six.Stress.PairEstimate.Curvature
 import SquaresInCircles.Six.Stress.PairEstimate.Vertices
 
 /-!
-# The pair estimate
+# Six squares: the pair estimate
 
 On its domain the value of the pair N, W is at least
 `pairBase + line w + |n|/1000`, and at zero angles it is `pairBase` only for the

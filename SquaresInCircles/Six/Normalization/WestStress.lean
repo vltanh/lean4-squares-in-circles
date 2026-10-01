@@ -3,7 +3,7 @@ import SquaresInCircles.Common.Trigonometry
 import SquaresInCircles.Six.Supports
 
 /-!
-# D is not separated along the west side of C
+# Six squares: D is not separated along the west side of C
 
 Let W and D be at the phases `π + t` and `π + u`, with `-2/3 ≤ t ≤ u` and
 `-2/5 ≤ u ≤ 2/5`, let W be separated from C along its own axis and D along the

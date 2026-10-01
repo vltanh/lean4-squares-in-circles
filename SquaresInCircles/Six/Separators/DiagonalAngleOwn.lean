@@ -2,7 +2,7 @@ import SquaresInCircles.Six.Wings.WestSign
 import SquaresInCircles.Six.Supports
 
 /-!
-# The angle of D with W on its own axis
+# Six squares: the angle of D with W on its own axis
 
 If W is separated from C along its own axis, the angle `d` of D exceeds `1/2`.
 Suppose `d ≤ 1/2`; then `0 ≤ d`, and `0 ≤ v ≤ 2/3` with `v = -w`, since W turns

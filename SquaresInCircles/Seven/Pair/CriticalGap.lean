@@ -1,13 +1,13 @@
-import SquaresInCircles.Seven.EasySectors
-import SquaresInCircles.Seven.ForwardNegativeTarget
-import SquaresInCircles.Seven.ForwardBothNegative
-import SquaresInCircles.Seven.OppositeForward
-import SquaresInCircles.Seven.InwardAxialTarget
-import SquaresInCircles.Seven.InwardSideTarget
-import SquaresInCircles.Seven.InwardOpposite
+import SquaresInCircles.Seven.Pair.EasySectors
+import SquaresInCircles.Seven.Pair.Forward.NegativeTarget
+import SquaresInCircles.Seven.Pair.Forward.BothNegative
+import SquaresInCircles.Seven.Pair.Forward.Opposite
+import SquaresInCircles.Seven.Pair.Inward.AxialTarget
+import SquaresInCircles.Seven.Pair.Inward.SideTarget
+import SquaresInCircles.Seven.Pair.Inward.Opposite
 
 /-!
-# The gap of `π/3`
+# Seven squares: the critical gap `π/3`
 
 The support sums at the gap `π/3` on all four axes, for all signs and labels,
 are nonnegative for admissible states and vanish only at contacts. Each active

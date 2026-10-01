@@ -2,7 +2,7 @@ import SquaresInCircles.Six.Normalization.WestStress
 import SquaresInCircles.Six.Construction
 
 /-!
-# Normalized packings
+# Six squares: normalized packings
 
 A `PinPacking` is a packing about the origin in the frame of its central square,
 whose centre lies in the box `[0, c0]²`; the other five squares are labelled E,

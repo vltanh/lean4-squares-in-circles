@@ -2,7 +2,7 @@ import SquaresInCircles.Six.Separators.Axes
 import SquaresInCircles.Six.Separators.Profiles
 
 /-!
-# D and S along a secondary axis
+# Six squares: D and S along a secondary axis
 
 In every normalized packing D and S are separated along the secondary axis of D
 or along that of S. For `s ≤ d` this is the dominance of the secondary axes

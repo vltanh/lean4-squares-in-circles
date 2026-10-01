@@ -1,7 +1,7 @@
 import SquaresInCircles.Six.Wings.Chart
 
 /-!
-# The west tail
+# Six squares: the west tail
 
 If W–D and D–S are separated along the secondary axes of W and of S, as in the
 model, and W is separated from C along its own axis, then `w > -11/25`.

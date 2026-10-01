@@ -1,7 +1,7 @@
 import SquaresInCircles.Six.Separators.Profiles
 
 /-!
-# The cost of a wing separated along the secondary axis of D
+# Six squares: the cost of a wing separated along the secondary axis of D
 
 Bounds for the terms of a square W or S in a double separation at D, where W–D
 and D–S are both separated along the secondary axis of D. A square with equal

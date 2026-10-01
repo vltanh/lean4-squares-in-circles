@@ -1,7 +1,7 @@
 import SquaresInCircles.Six.Separators.Profiles
 
 /-!
-# Separation along the secondary axis of D at a small angle
+# Six squares: separation along the secondary axis of D at a small angle
 
 Let a square lie in the disk and outside the core disk, with centre `(a, b)` in
 its frame, and let `0 ≤ q ≤ π/4`. Then

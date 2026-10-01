@@ -1,7 +1,7 @@
-import SquaresInCircles.Seven.BoundarySegments
+import SquaresInCircles.Seven.Pair.LabelSegments
 
 /-!
-# Monotonicity of the target support on the axial boundary
+# Seven squares: the target support on the axial boundary
 
 On the circular piece by the sign of a derivative ratio: the ratio starts below
 `tan (π/12)`, and its derivative stays below `1` by the concavity of a quintic in

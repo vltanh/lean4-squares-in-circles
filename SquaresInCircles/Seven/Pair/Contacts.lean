@@ -1,7 +1,7 @@
-import SquaresInCircles.Seven.PairModel
+import SquaresInCircles.Seven.Pair.Frame
 
 /-!
-# Contacts
+# Seven squares: contacts
 
 The three kinds of contact between labelled states: two side states, or a side
 state and an axial state. A side state is `(1, 1/2)`, on the circle

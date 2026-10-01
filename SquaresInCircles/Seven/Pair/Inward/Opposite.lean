@@ -1,8 +1,8 @@
-import SquaresInCircles.Seven.InwardOppositeMinima
-import SquaresInCircles.Seven.InwardAxialTarget
+import SquaresInCircles.Seven.Pair.Inward.OppositeMinima
+import SquaresInCircles.Seven.Pair.Inward.AxialTarget
 
 /-!
-# The inward axis with opposite signs
+# Seven squares: the inward axis with opposite signs
 
 Axial sources move monotonically to the axial/side transition, and a side
 target moves along its label segment to the axial tie. A nonpositive turn keeps

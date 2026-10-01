@@ -2,7 +2,7 @@ import SquaresInCircles.Six.Normalization.Basic
 import SquaresInCircles.Common.Constructions
 
 /-!
-# The six-square model
+# Six squares: construction
 
 The model packs the disk of radius `radius = √q*`, whose circle passes through
 the far corners of E and W and the far vertices of D (`Constants`):

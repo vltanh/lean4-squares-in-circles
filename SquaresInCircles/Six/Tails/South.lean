@@ -2,7 +2,7 @@ import SquaresInCircles.Six.Tails.West
 import SquaresInCircles.Six.Wings.Separators
 
 /-!
-# The south tail
+# Six squares: the south tail
 
 If S is separated from C along its own axis, at the phase `3π/2 + s`, then
 `s < 11/25`. Otherwise `s ∈ [11/25, 2/3]`; W–D and D–S are separated along the

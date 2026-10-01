@@ -1,8 +1,8 @@
-import SquaresInCircles.Seven.BoundarySegments
-import SquaresInCircles.Seven.PairModel
+import SquaresInCircles.Seven.Pair.LabelSegments
+import SquaresInCircles.Seven.Pair.Frame
 
 /-!
-# The inward axis, positive signs, side target
+# Seven squares: the inward axis, positive signs, side target
 
 The support is concave in the source label, so the endpoints `0` and `π/4`
 suffice.

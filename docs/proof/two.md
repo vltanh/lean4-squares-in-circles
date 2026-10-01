@@ -94,7 +94,7 @@ applies. $\square$
 *Lean: [`Two.model_packing`](../../SquaresInCircles/Two/Construction.lean#L18),
 [`Two.model`](../../SquaresInCircles/Geometry.lean#L133),
 [`Two.radius`](../../SquaresInCircles/Geometry.lean#L127),
-[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L34).*
+[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L38).*
 
 ## 5.2 The centres
 

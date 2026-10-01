@@ -1,9 +1,9 @@
-import SquaresInCircles.Seven.LabelBoundary
-import SquaresInCircles.Seven.Support
+import SquaresInCircles.Seven.Pair.LabelBoundary
+import SquaresInCircles.Seven.Exterior
 import SquaresInCircles.Common.Trigonometry
 
 /-!
-# Segments of constant label
+# Seven squares: segments of constant label
 
 At a fixed label the support is affine in the state, so it is extreme at the
 ends of the admissible segment of that label. The segments end on the axial

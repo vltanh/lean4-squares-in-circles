@@ -1,8 +1,8 @@
-import SquaresInCircles.Seven.CanonicalPair
-import SquaresInCircles.Seven.AllGaps
+import SquaresInCircles.Seven.Pair.Frame
+import SquaresInCircles.Seven.Pair.SmallerGaps
 
 /-!
-# The pair theorem for actual squares
+# Seven squares: the pair theorem
 
 Two disjoint squares that avoid the disk centre, each in the disk of squared
 radius `13/4`, have markers at least `π/3` apart, and at exactly `π/3` their

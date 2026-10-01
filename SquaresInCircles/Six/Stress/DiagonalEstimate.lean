@@ -1,7 +1,7 @@
 import SquaresInCircles.Six.Stress.PairStress
 
 /-!
-# The diagonal estimate
+# Six squares: the diagonal estimate
 
 Let W, D and S be at the phases `π + w`, `π + d` and `3π/2 + s`, with
 `-11/25 ≤ w ≤ 2/5`, `-2/5 ≤ s ≤ 11/25` and `1/2 ≤ d ≤ π/4`, and let

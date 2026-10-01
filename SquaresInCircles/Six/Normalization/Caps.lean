@@ -1,7 +1,7 @@
 import SquaresInCircles.Six.Supports
 
 /-!
-# Squares in a deep cap
+# Six squares: squares in a deep cap
 
 A square in the closed disk of radius `R0` that lies beyond a line whose normal
 makes the angle `t`, `|t| ≤ π/4`, with an axis of the square keeps the line

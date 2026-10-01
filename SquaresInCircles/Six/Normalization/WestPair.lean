@@ -2,7 +2,7 @@ import SquaresInCircles.Six.Normalization.Pins
 import SquaresInCircles.Six.Normalization.DirectedAxes
 
 /-!
-# The pair W, D
+# Six squares: the pair W, D
 
 Two disjoint contained squares that avoid the core, the second turned from the
 first by `d ∈ [0, 16/15]`, are separated along the secondary axis of one of

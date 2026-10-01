@@ -319,7 +319,7 @@ $\frac12|c_T - c_S| < \frac12$ from each of them, so by Lemma 3.9 (1) it lies
 in $S^\circ$ and in $T^\circ$. $\square$
 
 *Lean:
-[`centers_distance_sq_ge_one`](../../SquaresInCircles/Common/Contacts.lean#L83).*
+[`centers_distance_sq_ge_one`](../../SquaresInCircles/Common/Contacts.lean#L88).*
 
 ### Definition 3.11 (width)
 
@@ -444,7 +444,7 @@ is, one of $\pm e^S_1, \pm e^S_2$, and the sides of $T$ are parallel to $d$ and
 to its perpendicular, hence to those of $S$. A square with the same axes whose
 centre is one unit away along an axis shares the corresponding edge. $\square$
 
-*Lean: [`unit_contact`](../../SquaresInCircles/Common/Contacts.lean#L103).*
+*Lean: [`unit_contact`](../../SquaresInCircles/Common/Contacts.lean#L108).*
 
 ## 3.4 Arcs and the angular budget
 
@@ -1136,8 +1136,8 @@ $\rho$ maps $Q(c)^\circ$ onto $Q(\rho(c))^\circ$. So
 $S^\circ = F_{\phi + k\pi/2}(Q(c)^\circ) = F_\phi(Q(\rho^k(c))^\circ)$.
 $\square$
 
-*Lean: [`self_represents`](../../SquaresInCircles/Common/Contacts.lean#L67),
-[`same_axes_represents`](../../SquaresInCircles/Common/Contacts.lean#L50),
+*Lean: [`self_represents`](../../SquaresInCircles/Common/Contacts.lean#L72),
+[`same_axes_represents`](../../SquaresInCircles/Common/Contacts.lean#L55),
 [`represents_quarter`](../../SquaresInCircles/Common/Angles.lean#L112),
 [`represents_cardinal`](../../SquaresInCircles/Common/Angles.lean#L123).*
 

@@ -33,12 +33,14 @@ Every case folder has two core files: `Construction.lean` (the models pack the
 disk) and `Uniqueness.lean`, which ends with the case's `optimum`, an `Optimum`
 (`Common/Optimum.lean`) bundling the construction, a point of each model on the
 circle, and uniqueness; `Optimum.lean` derives every lower bound from
-uniqueness. Three to five squares add `Exterior.lean` (the contact polygon, and
-the arcs of the squares that avoid the disk centre) and `Containing.lean` (the
-square that contains it). Six squares spread their
-normalization, separators and estimates over the files [below](#six), and seven
-squares the pair theorem, the ring and the middle column over the files
-[below](#seven). Each case imports only `Common/` and its own folder.
+uniqueness. From three squares on, every case also has `Exterior.lean`, what a
+square that avoids the disk centre holds (an arc or a cap of a circle about the
+disk centre, or for seven squares a marker and the arc about it), and
+`Containing.lean`, what becomes of the square that contains it. Six and seven
+squares put the long middle of their proofs in folders: six squares their
+normalization, separators, wings, tails, stress bound and equality case
+([below](#six)), seven squares the pair theorem in `Pair/`
+([below](#seven)). Each case imports only `Common/` and its own folder.
 
 ## `Common/`
 
@@ -65,12 +67,12 @@ squares the pair theorem, the ring and the middle column over the files
 
 ## The cases
 
-| File | One | Two | Three | Four | Five | Seven |
-| --- | --- | --- | --- | --- | --- | --- |
-| `Construction.lean` | the centred square | the 2×1 rectangle | the T | the 2×2 block | the plus | the column packings |
-| `Exterior.lean` | | | the 16-gon; caps of at least `120°` on the circle of radius `3/8`, and their two tight types | the diamond; arcs of at least `90°` on the circle of radius `1/2` | the 12-gon; arcs over `72°` on the circle of radius `5/6` | |
-| `Containing.lean` | | | no square contains `o` | a square whose closed square contains `o` holds a quarter circle | the sweep of a square that contains `o` holds `72°`, unless the square is centred at `o` | |
-| `Uniqueness.lean` | centred at `o` | both centres `1/2` from `o`; opposite half circles | caps of exactly `120°`; one square of type A and two of type B rebuild the T | `o` a vertex of every square; a quarter grid of arcs | a square centred at `o`, the others its side-neighbours; closed 12-gon rigidity | a square contains `o`; the ring and the middle column; congruence to a column packing |
+| File | One | Two | Three | Four | Five | Six | Seven |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `Construction.lean` | the centred square | the 2×1 rectangle | the T | the 2×2 block | the plus | the central square, four neighbours and the turned square | the column packings |
+| `Exterior.lean` | | | the 16-gon; caps of at least `120°` on the circle of radius `3/8`, and their two tight types | the diamond; arcs of at least `90°` on the circle of radius `1/2` | the 12-gon; arcs over `72°` on the circle of radius `5/6` | arcs over `60°` on the circle of radius `9/10` | states, labels and markers; the marker arc of half-width `1/2` |
+| `Containing.lean` | | | no square contains `o` | a square whose closed square contains `o` holds a quarter circle | the sweep of a square that contains `o` holds `72°`, unless the square is centred at `o` | exactly one square contains `o`; the box of its centre | some square contains `o`; it sits in the middle column |
+| `Uniqueness.lean` | centred at `o` | both centres `1/2` from `o`; opposite half circles | caps of exactly `120°`; one square of type A and two of type B rebuild the T | `o` a vertex of every square; a quarter grid of arcs | a square centred at `o`, the others its side-neighbours; closed 12-gon rigidity | the stress bound and the eight contacts rebuild the model | the ring and the middle column; congruence to a column packing |
 
 Each case has a `radius`, its `centers` (the optimal packing in the frame of
 its disk centre) and its `model`, the axis-parallel squares at those centres,
@@ -83,16 +85,16 @@ at the disk centre.
 
 ## Six
 
-The proof of six squares is uniqueness at the optimal radius, in 43 files and
-about 19,000 lines, most of them estimates in one variable on whole intervals
+The proof of six squares is uniqueness at the optimal radius, in 44 files and
+about 18,000 lines, most of them estimates in one variable on whole intervals
 of angles:
 
 | part | files | contents |
 | --- | --- | --- |
 | construction | `Constants.lean`, `Construction.lean` | the constants of the model, their identities and rational brackets; the model packs the disk |
-| tools | `Supports.lean` | the supports of a chart in the disk of radius `R0`: its far vertex, the cap and the cones; the box of the centre of C |
-| the central square | `Normalization/CentralSquare.lean` | a square contains the disk centre, by the arcs that the other squares hold on the circle of radius `9/10`; the box of its centre |
-| normalization | the other 8 files of `Normalization/` | charts and the separating axes of the central square; squares in a deep cap; the five pins, the labels, their windows and order; `D` separated from the central square along its own axis; normalized packings and the axes of their pairs |
+| the exterior and the central squares | `Exterior.lean`, `Containing.lean` | the arcs that the exterior squares hold on the circle of radius `9/10`; a square contains the disk centre, and the box of its centre |
+| supports | `Supports.lean` | the supports of a chart in the disk of radius `R0`: the cap and the cones; the box of the centre of C |
+| normalization | `Normalization/` (8 files) | charts and the separating axes of the central square; squares in a deep cap; the five pins, the labels, their windows and order; `D` separated from the central square along its own axis; normalized packings and the axes of their pairs |
 | separators | `Separators/` (9 files) | the axes that separate consecutive squares; the angle of `D` exceeds `1/2`; the profile of `D`; walls, missing wings and the signs of the wings |
 | wings | `Wings/` (11 files) | no wing is missing: `D` is separated from `W` and from `S` along their axes, case by case |
 | tails | `Tails/West.lean`, `Tails/South.lean` | the angles of `W` and `S` when they are separated along their own axes |
@@ -102,18 +104,18 @@ of angles:
 ## Seven
 
 The proof of seven squares is uniqueness at the optimal radius, in five steps
-([seven.md](proof/seven.md)). Steps 1 to 3, the states and markers, the marker
-arc and the pair theorem, take 22 files beside `Construction.lean`; steps 4 and
-5, the ring of six squares and the middle column, take `Uniqueness.lean` and
-the 2 files in `Seven/Uniqueness/`:
+([seven.md](proof/seven.md)): the states and markers with the marker arc, the
+pair theorem, the containing square, the ring of six squares and the middle
+column. The pair theorem takes the folder `Pair/` and `Pair.lean`, 17 files in
+the order of Chapter 9 and Appendices B to D:
 
 | part | files | contents |
 | --- | --- | --- |
 | construction | `Construction.lean` | the column packings pack the disk; the four gaps of a column |
-| states and markers | `Labels.lean`, `Support.lean`, `PairModel.lean` | states, labels and markers; the support of an admissible square; the support sums of a canonical pair |
-| the marker arc | `MarkerArc.lean` | the arc of half-width `1/2` |
-| tools for the sectors | `Contacts.lean`, `LabelBoundary.lean`, `BoundarySegments.lean`, `BoundaryProfiles.lean`, `TargetBoundaryMonotonicity.lean` | contacts; the boundary of the label regions, segments of constant label, and profiles along the boundary |
-| the gap of `π/3` | `EasySectors.lean`, `InwardAxialTarget.lean`, `InwardSideTarget.lean`, `InwardOppositeMinima.lean`, `InwardOpposite.lean`, `ForwardNegativeTarget.lean`, `ForwardBothNegative.lean`, `OppositeForward.lean`, `FixedGap.lean` | the outward, backward, inward and forward axes, sector by sector, with their zeros, and their assembly |
-| all gaps | `SmoothMinima.lean`, `AllGaps.lean` | leftmost and smooth minima of a support sum; every gap below `π/3` |
-| the pair theorem | `CanonicalPair.lean`, `MarkerSeparation.lean` | canonical pairs; markers at least `π/3` apart, and contacts at exactly `π/3` |
-| the ring and the middle column | `Uniqueness/ContactCycle.lean`, `Uniqueness/CentralSquare.lean`, `Uniqueness.lean` | the regular hexagon of markers and the ring of six squares; the square in the middle; a square contains the disk centre, congruence to a column packing, and the optimum |
+| states and markers | `Exterior.lean` | states, labels and markers; the support of an admissible square; the marker arc of half-width `1/2` |
+| a pair in one frame | `Pair/Frame.lean`, `Pair/Contacts.lean` | the support sums of a pair in the frame of its first square, and the separating axes of a disjoint pair; contacts |
+| the label regions | `Pair/LabelBoundary.lean`, `Pair/LabelSegments.lean`, `Pair/BoundaryProfiles.lean`, `Pair/AxialBoundary.lean` | the boundary of the label regions, segments of constant label, profiles along the boundary, and the target support on the axial boundary |
+| the critical gap `π/3` | `Pair/EasySectors.lean`, `Pair/Inward/` (4 files), `Pair/Forward/` (3 files), `Pair/CriticalGap.lean` | the outward, backward, inward and forward axes, sector by sector, with their zeros, and their assembly |
+| the smaller gaps | `Pair/SmallerGaps.lean` | leftmost and smooth minima of a support sum; every gap below `π/3` |
+| the pair theorem | `Pair.lean` | markers at least `π/3` apart, and contacts at exactly `π/3` |
+| the containing square, the ring | `Containing.lean`, `Ring.lean`, `Uniqueness.lean` | a square contains the disk centre and sits in the middle column; the regular hexagon of markers and the ring of six squares; congruence to a column packing, and the optimum |

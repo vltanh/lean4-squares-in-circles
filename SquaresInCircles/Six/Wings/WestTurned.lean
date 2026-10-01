@@ -2,7 +2,7 @@ import SquaresInCircles.Six.Wings.Chord
 import SquaresInCircles.Six.Wings.Chart
 
 /-!
-# Own wings, W turned at least as far as S
+# Six squares: own wings, W turned at least as far as S
 
 Let W and S be separated from C along their own axes, at the angles `v` and `s`
 with `0 ≤ s ≤ v`, W and D along the secondary axis of W, and D and S along that

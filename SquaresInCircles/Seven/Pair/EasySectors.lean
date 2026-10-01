@@ -1,7 +1,7 @@
-import SquaresInCircles.Seven.Contacts
+import SquaresInCircles.Seven.Pair.Contacts
 
 /-!
-# Four sectors valid for every label
+# Seven squares: four sectors valid for every label
 
 At the gap `π/3`: the outward axis, because the centre of the other square is
 near the disk centre; the backward axis, by the marker point of the other

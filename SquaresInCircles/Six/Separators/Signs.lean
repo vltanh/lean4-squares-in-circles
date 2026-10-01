@@ -1,7 +1,7 @@
 import SquaresInCircles.Six.Separators.Walls
 
 /-!
-# The signs of the own wings
+# Six squares: the signs of the own wings
 
 If S is not separated from C along the south side of C, it is separated along
 its own axis at the phase `3π/2 + s`, and `s > 0`. At `s = 0` the two margins

@@ -4,7 +4,7 @@ import SquaresInCircles.Six.Separators.WingCosts
 import SquaresInCircles.Six.Normalization.PinAxes
 
 /-!
-# The walls and the missing wings
+# Six squares: the walls and the missing wings
 
 In the model W and D are separated along the secondary axis of W, and D and S
 along that of S: these are the two wings. A separation along the secondary axis

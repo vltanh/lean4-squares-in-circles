@@ -363,8 +363,8 @@ $\ell \le \mathrm{axial}(u) = \frac54u$. If $s = -1$, the label is axial, so
 $\ell = \frac54u$ and $su = -u = \frac45 s\ell$. $\square$
 
 *Lean:
-[`Seven.forward_negative_target_lower`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L23),
-[`Seven.rawTarget`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L20).*
+[`Seven.forward_negative_target_lower`](../../SquaresInCircles/Seven/Pair/Forward/NegativeTarget.lean#L23),
+[`Seven.rawTarget`](../../SquaresInCircles/Seven/Pair/Forward/NegativeTarget.lean#L20).*
 
 ### Lemma D.2 (an axial target at a negative turn)
 
@@ -506,11 +506,11 @@ $m_2$ (dotted) becomes negative below $z \approx 0.32$: there the disk alone
 does not suffice, and the tie line (D.6) is needed.
 
 *Lean:
-[`Seven.axial_target_support`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L162),
-[`Seven.small_turn_bounds`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L56),
-[`Seven.cone_support`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L67),
-[`Seven.axial_small_turn`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L77),
-[`Seven.axial_large_turn`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L109),
+[`Seven.axial_target_support`](../../SquaresInCircles/Seven/Pair/Forward/NegativeTarget.lean#L162),
+[`Seven.small_turn_bounds`](../../SquaresInCircles/Seven/Pair/Forward/NegativeTarget.lean#L56),
+[`Seven.cone_support`](../../SquaresInCircles/Seven/Pair/Forward/NegativeTarget.lean#L67),
+[`Seven.axial_small_turn`](../../SquaresInCircles/Seven/Pair/Forward/NegativeTarget.lean#L77),
+[`Seven.axial_large_turn`](../../SquaresInCircles/Seven/Pair/Forward/NegativeTarget.lean#L109),
 [`dot_ge`](../../SquaresInCircles/Common/DiskSupport.lean#L30).*
 
 ### Lemma D.3 (an axial target)
@@ -547,7 +547,7 @@ $\lvert\sin e\rvert = \sin z$. Then
 which is positive by Lemma D.2. $\square$
 
 *Lean:
-[`Seven.negative_target_axial_pos`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L280).*
+[`Seven.negative_target_axial_pos`](../../SquaresInCircles/Seven/Pair/Forward/NegativeTarget.lean#L280).*
 
 ### Lemma D.4 (the tangent at the transition state)
 
@@ -581,7 +581,7 @@ $\frac{12}{25}(v - u_0) = a_0 - A$ of slope $-\frac{25}{12}$, which at this
 scale cannot be told apart from it.
 
 *Lean:
-[`Seven.side_transition_trade`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L169).*
+[`Seven.side_transition_trade`](../../SquaresInCircles/Seven/Pair/Forward/NegativeTarget.lean#L169).*
 
 ### Lemma D.5 (a side target at a nonnegative turn)
 
@@ -605,8 +605,8 @@ The three terms are nonnegative, since $A \ge \frac12$ and $v < \frac{31}{40}$
 ([Lemma 9.5](seven.md#lemma-95-admissible-states)). $\square$
 
 *Lean:
-[`Seven.sideTarget`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L189),
-[`Seven.sideTarget_positive_angle`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L193).*
+[`Seven.sideTarget`](../../SquaresInCircles/Seven/Pair/Forward/NegativeTarget.lean#L189),
+[`Seven.sideTarget_positive_angle`](../../SquaresInCircles/Seven/Pair/Forward/NegativeTarget.lean#L193).*
 
 ### Lemma D.6 (a side target at a negative turn)
 
@@ -722,8 +722,8 @@ $0.17$. From case 2 on, the least value is the value at the transition state
 (dashed), with which case 2 compares.
 
 *Lean:
-[`Seven.sideTarget_negative_pos`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L225),
-[`Seven.tangent_force_pos`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L209),
+[`Seven.sideTarget_negative_pos`](../../SquaresInCircles/Seven/Pair/Forward/NegativeTarget.lean#L225),
+[`Seven.tangent_force_pos`](../../SquaresInCircles/Seven/Pair/Forward/NegativeTarget.lean#L209),
 [`dot_gt`](../../SquaresInCircles/Common/DiskSupport.lean#L34).*
 
 ### Proposition D.7 (target sign negative)
@@ -762,7 +762,7 @@ So $z < 1$, and Lemma D.6 gives
 $\sigma_1 \ge \beta_{\mathrm{side}}(A, v; -z) > 0$. $\square$
 
 *Lean:
-[`Seven.fixed_gap_forward_negative_target`](../../SquaresInCircles/Seven/ForwardNegativeTarget.lean#L316).*
+[`Seven.fixed_gap_forward_negative_target`](../../SquaresInCircles/Seven/Pair/Forward/NegativeTarget.lean#L316).*
 
 ## D.3 Opposite signs
 
@@ -794,9 +794,9 @@ h\left(A, v, \tfrac{3\pi}2 + w\right) = A\sin w - v\cos w + \tfrac12\left(\lvert
 where $\cos w \ge 0$ as $\lvert w\rvert \le \frac\pi3$. $\square$
 
 *Lean:
-[`Seven.sideSideSupport`](../../SquaresInCircles/Seven/OppositeForward.lean#L17),
-[`Seven.forward_turn_range`](../../SquaresInCircles/Seven/OppositeForward.lean#L21),
-[`Seven.pairSupport_forward_opposite`](../../SquaresInCircles/Seven/OppositeForward.lean#L28).*
+[`Seven.sideSideSupport`](../../SquaresInCircles/Seven/Pair/Forward/Opposite.lean#L17),
+[`Seven.forward_turn_range`](../../SquaresInCircles/Seven/Pair/Forward/Opposite.lean#L21),
+[`Seven.pairSupport_forward_opposite`](../../SquaresInCircles/Seven/Pair/Forward/Opposite.lean#L28).*
 
 ### Lemma D.9 (the side margin)
 
@@ -874,9 +874,9 @@ $160z^2 < \frac{405}2 < 636$ and $212 + z(636 - 160z^2) > 0$; hence $N(z) > 0$.
 $\square$
 
 *Lean:
-[`Seven.sideSideL`](../../SquaresInCircles/Seven/OppositeForward.lean#L46),
-[`Seven.sideSideL_pos`](../../SquaresInCircles/Seven/OppositeForward.lean#L49),
-[`Seven.sideSide_margin_pos`](../../SquaresInCircles/Seven/OppositeForward.lean#L68).*
+[`Seven.sideSideL`](../../SquaresInCircles/Seven/Pair/Forward/Opposite.lean#L46),
+[`Seven.sideSideL_pos`](../../SquaresInCircles/Seven/Pair/Forward/Opposite.lean#L49),
+[`Seven.sideSide_margin_pos`](../../SquaresInCircles/Seven/Pair/Forward/Opposite.lean#L68).*
 
 ### Proposition D.10 (two side labels)
 
@@ -924,8 +924,8 @@ each misses the disk, so $B(w) > 0$ on it, except the line for $w = 0$, the
 tangent $r(A, v) = 0$ at the side state.
 
 *Lean:
-[`Seven.side_side_property`](../../SquaresInCircles/Seven/OppositeForward.lean#L131),
-[`Seven.side_side_zero`](../../SquaresInCircles/Seven/OppositeForward.lean#L177).*
+[`Seven.side_side_property`](../../SquaresInCircles/Seven/Pair/Forward/Opposite.lean#L131),
+[`Seven.side_side_zero`](../../SquaresInCircles/Seven/Pair/Forward/Opposite.lean#L177).*
 
 ### Lemma D.11 (bounds in the turn)
 
@@ -948,9 +948,9 @@ $(A - \frac12)\sin w + v(1 - \cos w) \ge 0$.
 $v(1 - \cos z) \ge 0$. $\square$
 
 *Lean:
-[`Seven.forward_turn_nonneg`](../../SquaresInCircles/Seven/OppositeForward.lean#L186),
-[`Seven.opposite_support_positive_turn`](../../SquaresInCircles/Seven/OppositeForward.lean#L196),
-[`Seven.opposite_support_negative_turn`](../../SquaresInCircles/Seven/OppositeForward.lean#L208).*
+[`Seven.forward_turn_nonneg`](../../SquaresInCircles/Seven/Pair/Forward/Opposite.lean#L186),
+[`Seven.opposite_support_positive_turn`](../../SquaresInCircles/Seven/Pair/Forward/Opposite.lean#L196),
+[`Seven.opposite_support_negative_turn`](../../SquaresInCircles/Seven/Pair/Forward/Opposite.lean#L208).*
 
 ### Lemma D.12 (two axial labels)
 
@@ -1003,9 +1003,9 @@ F \ge 1 - \tfrac45\left(\tfrac\pi3 - z\right) - (\sqrt3 - 1)\sin z - \tfrac12(1 
 which is positive by (1). $\square$
 
 *Lean:
-[`Seven.opposite_slope_lt`](../../SquaresInCircles/Seven/OppositeForward.lean#L221),
-[`Seven.opposite_axial_scalar`](../../SquaresInCircles/Seven/OppositeForward.lean#L231),
-[`Seven.opposite_axial_axial_pos`](../../SquaresInCircles/Seven/OppositeForward.lean#L241).*
+[`Seven.opposite_slope_lt`](../../SquaresInCircles/Seven/Pair/Forward/Opposite.lean#L221),
+[`Seven.opposite_axial_scalar`](../../SquaresInCircles/Seven/Pair/Forward/Opposite.lean#L231),
+[`Seven.opposite_axial_axial_pos`](../../SquaresInCircles/Seven/Pair/Forward/Opposite.lean#L241).*
 
 ### Lemma D.13 (the mixed clearance)
 
@@ -1043,8 +1043,8 @@ F \ge 1 - u - v + \sin w - \tfrac12(1 - \cos w) \ge \tfrac1{170} + \Bigl[\sin w 
 ```
 
 *Lean:
-[`Seven.mixed_clearance_bound`](../../SquaresInCircles/Seven/OppositeForward.lean#L276),
-[`Seven.mixed_positive_turn`](../../SquaresInCircles/Seven/OppositeForward.lean#L286).*
+[`Seven.mixed_clearance_bound`](../../SquaresInCircles/Seven/Pair/Forward/Opposite.lean#L276),
+[`Seven.mixed_positive_turn`](../../SquaresInCircles/Seven/Pair/Forward/Opposite.lean#L286).*
 
 ### Lemma D.14 (an axial source and a side target)
 
@@ -1065,7 +1065,7 @@ F \ge \tfrac1{170} + \tfrac45z - \tfrac58\sin z - \tfrac14z^2 \ge \tfrac1{170} +
 ```
 
 *Lean:
-[`Seven.opposite_axial_side_pos`](../../SquaresInCircles/Seven/OppositeForward.lean#L322).*
+[`Seven.opposite_axial_side_pos`](../../SquaresInCircles/Seven/Pair/Forward/Opposite.lean#L322).*
 
 ### Lemma D.15 (a side source and an axial target)
 
@@ -1123,8 +1123,8 @@ $v = \frac45\lambda$, and $\ell = \frac\pi3 - z - \lambda$. So
 and (D.9) gives $F \ge \Psi(z) > 0$ by (1). $\square$
 
 *Lean:
-[`Seven.side_axial_far_profile`](../../SquaresInCircles/Seven/OppositeForward.lean#L294),
-[`Seven.opposite_side_axial_pos`](../../SquaresInCircles/Seven/OppositeForward.lean#L353).*
+[`Seven.side_axial_far_profile`](../../SquaresInCircles/Seven/Pair/Forward/Opposite.lean#L294),
+[`Seven.opposite_side_axial_pos`](../../SquaresInCircles/Seven/Pair/Forward/Opposite.lean#L353).*
 
 ### Proposition D.16 (opposite signs)
 
@@ -1152,7 +1152,7 @@ exceeds $-\frac7{10}$. The bound for a side source and an axial target is
 weakest at $w = -\frac13$, where Lemma D.15 changes its method.
 
 *Lean:
-[`Seven.fixed_gap_forward_opposite_active`](../../SquaresInCircles/Seven/OppositeForward.lean#L406).*
+[`Seven.fixed_gap_forward_opposite_active`](../../SquaresInCircles/Seven/Pair/Forward/Opposite.lean#L406).*
 
 ## D.4 Both signs negative
 
@@ -1212,7 +1212,7 @@ below the top $\frac12 - u$ of $S$ (inset), so the shadows of $S$ and $T$ on
 $n_1$ overlap.
 
 *Lean:
-[`Seven.forward_negative_negative_small`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L341).*
+[`Seven.forward_negative_negative_small`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L341).*
 
 For $\ell \ge \frac25$ we follow the segments of constant label (Figure D.10),
 and first the circular piece of the upper ends of the side segments.
@@ -1249,9 +1249,9 @@ $G^{\mathrm{circ}}(\ell, \tau) = G^{\mathrm{top}}(\ell, \tau)$ for
 $s_0 \le \tau \le \tau_d$.
 
 *Lean:
-[`Seven.Boundary.sideCircleTarget`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L17),
-[`Seven.Boundary.sideCircleTargetD`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L19),
-[`Seven.Boundary.sideCircleTargetDD`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L21).*
+[`Seven.Boundary.sideCircleTarget`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L17),
+[`Seven.Boundary.sideCircleTargetD`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L19),
+[`Seven.Boundary.sideCircleTargetDD`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L21).*
 
 ### Lemma D.19 (derivatives along the circle)
 
@@ -1282,7 +1282,7 @@ Hence the derivative of $G^{\mathrm{circ}}_1$ is
 ```
 
 *Lean:
-[`Seven.Boundary.sideTarget_derivatives`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L25).*
+[`Seven.Boundary.sideTarget_derivatives`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L25).*
 
 ### Lemma D.20 (concavity along the circle)
 
@@ -1310,7 +1310,7 @@ G^{\mathrm{circ}}_2(\ell, \tau) \le -\sin\delta + \tfrac{181}{100}\left(\tfrac1Z
 ```
 
 *Lean:
-[`Seven.Boundary.sideTarget_concave_second`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L47).*
+[`Seven.Boundary.sideTarget_concave_second`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L47).*
 
 ### Lemma D.21 (the ends of the circular piece)
 
@@ -1339,8 +1339,8 @@ G^{\mathrm{circ}}(\ell, \tau) - G^{\mathrm{tie}}(\ell, \tau) = \left(Y(\tau) - \
 ```
 
 *Lean:
-[`Seven.Boundary.sideTarget_at_transition`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L95),
-[`Seven.Boundary.sideTarget_at_switch`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L109).*
+[`Seven.Boundary.sideTarget_at_transition`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L95),
+[`Seven.Boundary.sideTarget_at_switch`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L109).*
 
 ### Lemma D.22 (the diagonal piece)
 
@@ -1375,7 +1375,7 @@ $u \le \frac12 + \frac65(\ell - \frac\pi6)$, the left side of the claim is at
 least $K(\ell)$, which is positive by (D.5). $\square$
 
 *Lean:
-[`Seven.Boundary.diagonal_target_pos`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L127).*
+[`Seven.Boundary.diagonal_target_pos`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L127).*
 
 ### Lemma D.23 (the top of a side segment)
 
@@ -1427,7 +1427,7 @@ state; above it the top values form a concave curve, positive at both ends
 (Lemma D.23).
 
 *Lean:
-[`Seven.Boundary.upper_target_pos`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L166).*
+[`Seven.Boundary.upper_target_pos`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L166).*
 
 ### Lemma D.24 (the side segment of the target)
 
@@ -1467,7 +1467,7 @@ G_\delta(A, v) - G^{\mathrm{top}}(\ell, \tau) = \bigl(\mathrm{top}_u(\tau) - v\b
 and Lemma D.23 concludes. $\square$
 
 *Lean:
-[`Seven.Boundary.target_side_pos`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L237).*
+[`Seven.Boundary.target_side_pos`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L237).*
 
 ### Lemma D.25 (the axial segment of the target)
 
@@ -1502,7 +1502,7 @@ applied to $(a, u)$ and the tie state, gives
 $\frac12 - u + G_\delta(\mathrm{tie}(\tau), \frac45\tau) > 0$. $\square$
 
 *Lean:
-[`Seven.Boundary.target_axial_pos`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L288).*
+[`Seven.Boundary.target_axial_pos`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L288).*
 
 ### Proposition D.26 (both signs negative)
 
@@ -1531,7 +1531,7 @@ which is positive by Lemma D.24 if the label of $(A, v)$ is side, and by Lemma
 D.25 if it is axial. $\square$
 
 *Lean:
-[`Seven.fixed_gap_forward_both_negative_side`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L370).*
+[`Seven.fixed_gap_forward_both_negative_side`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L370).*
 
 Together with the sector $(1, 1)$ of Appendix B, Propositions D.7, D.16 and D.26
 give the pair property on the forward axis for all active labels: for the signs

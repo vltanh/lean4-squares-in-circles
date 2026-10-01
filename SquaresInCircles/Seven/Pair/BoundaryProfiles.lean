@@ -1,7 +1,7 @@
-import SquaresInCircles.Seven.BoundarySegments
+import SquaresInCircles.Seven.Pair.LabelSegments
 
 /-!
-# Profiles along the boundary of the label regions
+# Seven squares: profiles along the boundary of the label regions
 
 The transition profile is positive by a curvature bound and one fixed value, the
 diagonal profile by monotonicity. The fixed values at the label `18/25` and at

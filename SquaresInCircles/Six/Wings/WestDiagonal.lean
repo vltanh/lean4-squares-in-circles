@@ -1,7 +1,7 @@
 import SquaresInCircles.Six.Wings.WestRange
 
 /-!
-# A missing west wing with W on its own axis
+# Six squares: a missing west wing with W on its own axis
 
 Let W be separated from C along its own axis at the angle `v`, W and D along
 the secondary axis of D, and D and S along the secondary axis of S, so that

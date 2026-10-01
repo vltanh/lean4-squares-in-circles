@@ -99,7 +99,7 @@ $(\pm\frac12, \frac{19}{16})$ of $Q(c_3)$. $\square$
 *Lean:
 [`Three.model_packing`](../../SquaresInCircles/Three/Construction.lean#L22),
 [`Three.radius_sq`](../../SquaresInCircles/Three/Construction.lean#L17),
-[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L34).*
+[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L38).*
 
 ## 6.2 The contact polygon
 

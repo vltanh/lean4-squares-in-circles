@@ -2,7 +2,7 @@ import SquaresInCircles.Six.Wings.Chord
 import SquaresInCircles.Six.Wings.Chart
 
 /-!
-# W on its own axis, S on the south side of C
+# Six squares: W on its own axis, S on the south side of C
 
 Let W be separated from C along its own axis, S along the south side of C, W
 from D along the secondary axis of W and D from S along the secondary axis of

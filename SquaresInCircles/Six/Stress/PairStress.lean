@@ -1,7 +1,7 @@
 import SquaresInCircles.Six.Supports
 
 /-!
-# The stress of the pair N, W
+# Six squares: the stress of the pair N, W
 
 The stress bound reads the squares N and W through the forces of four edges, in
 the frames of N and W: weight one on C–N and C–W, along the own axis of each

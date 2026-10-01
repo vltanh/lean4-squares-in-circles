@@ -1,7 +1,7 @@
 import SquaresInCircles.Six.Construction
 
 /-!
-# Eight contacts fix the centres
+# Six squares: eight contacts fix the centres
 
 Let C be at `c` and E, N, W, D, S be turned as in the model, at the local
 coordinates `(a i, b i)`, in the disk of radius `radius`, and let them satisfy the

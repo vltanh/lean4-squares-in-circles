@@ -1,7 +1,7 @@
 import SquaresInCircles.Six.Supports
 
 /-!
-# The chord term
+# Six squares: the chord term
 
 With weight `z` on C–D and `1` on W–D and D–S the force on D is
 `(z + sin q, cos q - 1)`, of length at most `(2 + z²/4) sin (q/2) + z cos (q/2)`

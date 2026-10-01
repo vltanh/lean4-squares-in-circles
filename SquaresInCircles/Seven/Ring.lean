@@ -1,8 +1,8 @@
-import SquaresInCircles.Seven.MarkerSeparation
+import SquaresInCircles.Seven.Pair
 import SquaresInCircles.Common.Angles
 
 /-!
-# The ring of six squares
+# Seven squares: the ring
 
 Six directions pairwise at least `π/3` apart form a regular hexagon. Round the
 hexagon of markers, consecutive squares are contacts, so their kinds cycle

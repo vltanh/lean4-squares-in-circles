@@ -3,7 +3,7 @@ import SquaresInCircles.Six.Normalization.Basic
 import SquaresInCircles.Common.Trigonometry
 
 /-!
-# The separating axes of consecutive exterior squares
+# Six squares: the separating axes of consecutive exterior squares
 
 Two exterior squares are separated along one of eight directed axes, `±e₁` and
 `±e₂` of either square. The outward axis `e₁` of the first square and the

@@ -120,10 +120,10 @@ Q(c)^\circ = \lbrace (x, y) : |x - c_1| < \tfrac12,\ |y - c_2| < \tfrac12 \rbrac
 $c_2 \pm \frac12$ up.
 
 *Lean: [`axisSquare`](../../SquaresInCircles/Geometry.lean#L87),
-[`openAxisSquare`](../../SquaresInCircles/Common/Constructions.lean#L9),
-[`closedAxisSquare`](../../SquaresInCircles/Common/Constructions.lean#L11),
-[`axisSquare_open`](../../SquaresInCircles/Common/Constructions.lean#L14),
-[`axisSquare_closed`](../../SquaresInCircles/Common/Constructions.lean#L18).*
+[`openAxisSquare`](../../SquaresInCircles/Common/Constructions.lean#L13),
+[`closedAxisSquare`](../../SquaresInCircles/Common/Constructions.lean#L15),
+[`axisSquare_open`](../../SquaresInCircles/Common/Constructions.lean#L18),
+[`axisSquare_closed`](../../SquaresInCircles/Common/Constructions.lean#L22).*
 
 ## 2.3 Packings
 
@@ -311,8 +311,8 @@ likewise $|p_2| \le |y| + \frac12$, so
 $|p|^2 \le (|x| + \frac12)^2 + (|y| + \frac12)^2 \le R^2$. (3) combines (1) and
 (2). $\square$
 
-*Lean: [`axis_disjoint`](../../SquaresInCircles/Common/Constructions.lean#L25),
-[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L34).*
+*Lean: [`axis_disjoint`](../../SquaresInCircles/Common/Constructions.lean#L29),
+[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L38).*
 
 ## 2.6 Reduction to uniqueness
 

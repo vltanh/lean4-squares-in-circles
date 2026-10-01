@@ -1,8 +1,8 @@
 import SquaresInCircles.Six.Normalization.Complete
-import SquaresInCircles.Six.Normalization.CentralSquare
+import SquaresInCircles.Six.Containing
 
 /-!
-# The diagonal reflection of the model
+# Six squares: the diagonal reflection of the model
 
 The model is symmetric under the reflection in the diagonal
 `y = x`, which exchanges N with E and W with S and maps C and D to themselves,

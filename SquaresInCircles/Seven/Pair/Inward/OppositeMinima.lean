@@ -1,8 +1,8 @@
-import SquaresInCircles.Seven.BoundaryProfiles
-import SquaresInCircles.Seven.Contacts
+import SquaresInCircles.Seven.Pair.BoundaryProfiles
+import SquaresInCircles.Seven.Pair.Contacts
 
 /-!
-# The inward axis with opposite signs: minima on the boundary
+# Seven squares: the inward axis with opposite signs, minima on the boundary
 
 In the turn `e = label a u + label A v - π/6` the support sum is
 `1/2 - a - A sin e + |sin e|/2 + (v + 1/2) cos e`. For a side source and an

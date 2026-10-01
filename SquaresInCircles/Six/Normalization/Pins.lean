@@ -1,9 +1,9 @@
 import SquaresInCircles.Six.Normalization.Caps
-import SquaresInCircles.Six.Normalization.CentralSquare
+import SquaresInCircles.Six.Containing
 import SquaresInCircles.Common.Trigonometry
 
 /-!
-# The pins
+# Six squares: the pins
 
 The pins are the five points at distance `9/10` from the origin in the
 directions `0`, `π/2`, `11π/12`, `5π/4` and `19π/12`; the reflection in the

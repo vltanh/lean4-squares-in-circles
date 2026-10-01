@@ -2,7 +2,7 @@ import SquaresInCircles.Common.Basic
 import SquaresInCircles.Common.Trigonometry
 
 /-!
-# The constants
+# Six squares: the constants
 
 The constants of the six-square proof, each with one rational bracket.
 

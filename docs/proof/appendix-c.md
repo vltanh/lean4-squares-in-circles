@@ -138,9 +138,9 @@ Let $(a, u)$ be admissible and $\ell = \ell(a, u)$.
 [Lemma 9.8](seven.md#lemma-98-side-and-axial-labels) (1). $\square$
 
 *Lean:
-[`Seven.Admissible.radial_label_bound`](../../SquaresInCircles/Seven/Labels.lean#L101),
-[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Labels.lean#L145),
-[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Labels.lean#L172).*
+[`Seven.Admissible.radial_label_bound`](../../SquaresInCircles/Seven/Exterior.lean#L110),
+[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Exterior.lean#L154),
+[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Exterior.lean#L181).*
 
 ## C.2 Two profiles of the turn
 
@@ -211,8 +211,8 @@ that is, $f(1) \ge 0$. Hence for $1 \le z \le \frac\pi2$, $f(z) \ge f(1) \ge 0$
 and $p(z) \ge \frac z{20} \ge \frac z{50}$. $\square$
 
 *Lean:
-[`Seven.inward_small_turn_bound`](../../SquaresInCircles/Seven/InwardAxialTarget.lean#L21),
-[`Seven.inward_turn_profile`](../../SquaresInCircles/Seven/InwardAxialTarget.lean#L33).*
+[`Seven.inward_small_turn_bound`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L21),
+[`Seven.inward_turn_profile`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L33).*
 
 ![Graph over the interval from 0 to pi over 2: the turn profile p rises from 0, flattens near 0.037 around z = 0.5 and climbs to 0.25 at pi over 2. Below it, on the interval from 0 to 1, the bound of part (1), close to p up to about 0.6, rises to 1/20 at z = 1, where it meets the line z/20, which continues below p up to pi over 2; at the bottom the line z/50](figures/appc-turn-profile.svg)
 
@@ -257,7 +257,7 @@ and $\frac{671}{840} = \frac45 - \frac1{840}$. Every term is nonnegative.
 $\square$
 
 *Lean:
-[`Seven.inward_positive_turn_bound`](../../SquaresInCircles/Seven/InwardAxialTarget.lean#L61).*
+[`Seven.inward_positive_turn_bound`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L61).*
 
 ![Graph over the interval from 0 to pi over 12: the left side of Lemma C.3 for A = root 3 minus one half and v = 0 rises from 0 to about 0.005 near e = 0.15 and falls to about 0.003 at pi over 12, well above the line e/840, which ends near 0.0003](figures/appc-positive-turn.svg)
 
@@ -300,7 +300,7 @@ and the bracket is at least $\frac e{840}$ by Lemma C.3, which applies since
 $A \le \sqrt3 - \frac12$ and $v \ge 0$. $\square$
 
 *Lean:
-[`Seven.inward_axial_positive_turn`](../../SquaresInCircles/Seven/InwardAxialTarget.lean#L84).*
+[`Seven.inward_axial_positive_turn`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L84).*
 
 ### Lemma C.5 (two axial labels, nonpositive turn)
 
@@ -339,7 +339,7 @@ the axial label $\ell_1$, while $\pi > 3.14$ gives
 and $A \ge \frac12$. So $\sigma_2 \ge \frac1{200}$. $\square$
 
 *Lean:
-[`Seven.inward_axial_nonpositive_turn`](../../SquaresInCircles/Seven/InwardAxialTarget.lean#L103).*
+[`Seven.inward_axial_nonpositive_turn`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L103).*
 
 ### Proposition C.6 (two axial labels)
 
@@ -351,7 +351,7 @@ with $t = +1$. If $e > 0$, Lemma C.4 gives
 $\sigma_2 \ge \frac2{15}r(a, u) + \frac e{840} > 0$. $\square$
 
 *Lean:
-[`Seven.inward_axial_axial_pos`](../../SquaresInCircles/Seven/InwardAxialTarget.lean#L132).*
+[`Seven.inward_axial_axial_pos`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L132).*
 
 ### Proposition C.7 (side source, axial target)
 
@@ -411,8 +411,8 @@ $(A, 0)$ is an axial state, and with $s = +1$ the two states form a contact of
 the second kind. $\square$
 
 *Lean:
-[`Seven.inward_side_axial_property`](../../SquaresInCircles/Seven/InwardAxialTarget.lean#L187),
-[`Seven.inward_side_axial_lower`](../../SquaresInCircles/Seven/InwardAxialTarget.lean#L152).*
+[`Seven.inward_side_axial_property`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L187),
+[`Seven.inward_side_axial_lower`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L152).*
 
 ## C.4 Signs (+, +) with a side target
 
@@ -467,10 +467,10 @@ $\sigma_2 = \frac12 - a + (A + \frac12)\cos\psi(x) + (\frac12 - v)\sin\psi(x)$,
 which is $\frac12 - a + H(x)$. $\square$
 
 *Lean:
-[`Seven.targetH`](../../SquaresInCircles/Seven/InwardSideTarget.lean#L14),
-[`Seven.target_angle`](../../SquaresInCircles/Seven/InwardSideTarget.lean#L17),
-[`Seven.targetH_pos`](../../SquaresInCircles/Seven/InwardSideTarget.lean#L36),
-[`Seven.targetH_support`](../../SquaresInCircles/Seven/InwardSideTarget.lean#L25).*
+[`Seven.targetH`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L14),
+[`Seven.target_angle`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L17),
+[`Seven.targetH_pos`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L36),
+[`Seven.targetH_support`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L25).*
 
 ![The side target T drawn in its own chart as an axis-parallel square, the dashed unit circle about o, the marker direction of T and its marker arc inside T, the point of the unit circle in the direction ell_2 minus one half, and a direction minus psi with the support line of T perpendicular to it, which lies beyond the projection of that point](figures/appc-target-arc.svg)
 
@@ -520,7 +520,7 @@ $v \le \frac12 + \frac65(s - \frac\pi6)$. We distinguish three cases.
   $\square$
 
 *Lean:
-[`Seven.targetH_zero_gt_one`](../../SquaresInCircles/Seven/InwardSideTarget.lean#L49).*
+[`Seven.targetH_zero_gt_one`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L49).*
 
 ### Lemma C.10 (the quarter profile)
 
@@ -577,10 +577,10 @@ Q\left(\tfrac\pi{12}\right) = \tfrac34 - \tfrac\pi{12}\left(\tfrac25 + \tfrac{3\
 $\square$
 
 *Lean:
-[`Seven.quarterProfile`](../../SquaresInCircles/Seven/InwardSideTarget.lean#L107),
-[`Seven.quarter_profile_gt`](../../SquaresInCircles/Seven/InwardSideTarget.lean#L118),
-[`Seven.quarterProfileD`](../../SquaresInCircles/Seven/InwardSideTarget.lean#L110),
-[`Seven.quarterProfileDD`](../../SquaresInCircles/Seven/InwardSideTarget.lean#L114).*
+[`Seven.quarterProfile`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L107),
+[`Seven.quarter_profile_gt`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L118),
+[`Seven.quarterProfileD`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L110),
+[`Seven.quarterProfileDD`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L114).*
 
 ![Graph of the quarter profile Q on the interval from minus 1/6 to pi over 12: a concave arch from about 0.354 at the left end, up to about 0.391, and down to about 0.373 at the right end, above the horizontal line at height one third](figures/appc-quarter-profile.svg)
 
@@ -614,7 +614,7 @@ The bracket is at least $\frac3{10}\cdot\frac45 - \frac2{15} = \frac8{75} > 0$,
 so $H(\frac\pi4) \ge Q(d) > \frac13$ by Lemma C.10. $\square$
 
 *Lean:
-[`Seven.targetH_quarter_gt`](../../SquaresInCircles/Seven/InwardSideTarget.lean#L185).*
+[`Seven.targetH_quarter_gt`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L185).*
 
 ### Proposition C.12 (side target)
 
@@ -649,7 +649,7 @@ A concave function on an interval is at least the smaller of its values at the
 ends, so $f(\ell_1) > 0$ and $\sigma_2 > 0$. $\square$
 
 *Lean:
-[`Seven.fixed_gap_inward_side_target`](../../SquaresInCircles/Seven/InwardSideTarget.lean#L221).*
+[`Seven.fixed_gap_inward_side_target`](../../SquaresInCircles/Seven/Pair/Inward/SideTarget.lean#L221).*
 
 ![Graph over the source labels from 0 to pi over 4 of the concave function f for four side targets: the side state (1, 1/2), the transition state, the diagonal corner and the tie state of label pi over 4; every curve is concave and positive, and decreases towards the right end](figures/appc-side-target.svg)
 
@@ -688,9 +688,9 @@ $\frac45(\mathrm{side}(a, u) - \frac\pi6) + \frac2{15}(4 - 3a - 2u) = 1 - a$ by
 the definition of the side label. $\square$
 
 *Lean:
-[`Seven.inwardOpposite`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L24),
-[`Seven.inward_opposite_formula`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L27),
-[`Seven.inward_opposite_side_identity`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L35).*
+[`Seven.inwardOpposite`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L24),
+[`Seven.inward_opposite_formula`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L27),
+[`Seven.inward_opposite_side_identity`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L35).*
 
 The function $J$ decreases in $a$; it decreases in $A$ where $\sin e \ge 0$ and
 increases in $v$ where $\cos e \ge 0$. This is what moves the states to the
@@ -737,7 +737,7 @@ $0 \le z \le \frac16$
 $\square$
 
 *Lean:
-[`Seven.inward_opposite_negative_turn`](../../SquaresInCircles/Seven/InwardOpposite.lean#L16).*
+[`Seven.inward_opposite_negative_turn`](../../SquaresInCircles/Seven/Pair/Inward/Opposite.lean#L16).*
 
 ## C.6 The boundary of the label regions
 
@@ -862,7 +862,7 @@ So $B^2 \ge 3 - w - w^2 \ge 0$, and since $B > 0$, $\sqrt{3 - w - w^2} \le B$.
 $\square$
 
 *Lean:
-[`Seven.circle_quadratic_upper`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L111).*
+[`Seven.circle_quadratic_upper`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L111).*
 
 ### Definition C.16 (the radial polynomials)
 
@@ -888,11 +888,11 @@ P(z) ={}& \tfrac{201}{2000} - \tfrac{201353}{7098000}z - \tfrac{3091}{21840}z^2 
 ```
 
 *Lean:
-[`Seven.radialB`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L77),
-[`Seven.radialL`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L80),
-[`Seven.radialK`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L83),
-[`Seven.radialE`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L85),
-[`Seven.radialPolynomial`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L47).*
+[`Seven.radialB`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L77),
+[`Seven.radialL`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L80),
+[`Seven.radialK`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L83),
+[`Seven.radialE`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L85),
+[`Seven.radialPolynomial`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L47).*
 
 ### Lemma C.17 (a Taylor bound for the circular pieces)
 
@@ -928,7 +928,7 @@ side is at least
 which is $b_0(z) + v\,b_1(z) + v^2b_2(z)$ by expanding. $\square$
 
 *Lean:
-[`Seven.radial_trig_lower`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L145).*
+[`Seven.radial_trig_lower`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L145).*
 
 ### Lemma C.18 (positivity of the radial form)
 
@@ -1000,9 +1000,9 @@ For $0 < z \le \frac58$, $b_2(z) = \frac{341}{1092}z(1 - \frac{z^2}6) > 0$, so
 $\alpha > 0$, and $z\,P(z) > 0$. Therefore $E(z, v) > 0$. $\square$
 
 *Lean:
-[`Seven.radialE_pos`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L95),
-[`Seven.radial_discriminant_identity`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L88),
-[`Seven.radialPolynomial_pos`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L56).*
+[`Seven.radialE_pos`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L95),
+[`Seven.radial_discriminant_identity`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L88),
+[`Seven.radialPolynomial_pos`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L56).*
 
 ![Two graphs on the interval from 0 to 1. Left: the polynomial P decreases from about 0.1 at 0 to about 0.0003 at 5/8, where a dot marks it on a dashed vertical line and the region under the graph from 0 to 5/8 is shaded, then crosses the axis just after 5/8 and ends near −0.18 at 1. Right: the sum of the terms of the derivative of P with a positive coefficient rises from 0 to about 0.0279 at 1, just below the dashed horizontal line at 201353/7098000, about 0.0284](figures/appc-radial-decreasing.svg)
 
@@ -1037,7 +1037,7 @@ by Lemma C.17 with $\rho = \sqrt3 - 1 \in [\frac{73}{100}, \frac{733}{1000}]$
 and by Lemma C.18. $\square$
 
 *Lean:
-[`Seven.inward_circular_pos`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L168).*
+[`Seven.inward_circular_pos`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L168).*
 
 ![A canonical pair with opposite signs drawn in the chart of S: the blue square S and the turned green square T both inside the dashed circle of radius root 13 over 2 about o, each with its far corner on that circle; the shadows of S and T on the line of n_2 overlap by a small positive amount](figures/appc-circular-pair.svg)
 
@@ -1073,7 +1073,7 @@ $\sqrt3 > \frac{173}{100}$,
 $\square$
 
 *Lean:
-[`Seven.line_to_circle_turn_margin`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L195).*
+[`Seven.line_to_circle_turn_margin`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L195).*
 
 ![Graph over the interval from 0.19 to pi over 3 of the concave function 44/45 sin z + 4/5 cos z, which rises from about 0.97 to about 1.25 with a maximum in between, above the horizontal line at 12/13](figures/appc-turn-margin.svg)
 
@@ -1095,12 +1095,12 @@ U(z, x) = J\left(a^+(x), \bar a(\nu(z, x)), \nu(z, x), z\right),
 and $G(z) = J(r_d, \tau(\mu(z, t_d)), \nu(z, t_d), z)$, the *diagonal junction*.
 
 *Lean:
-[`Seven.Boundary.otherLabel`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L208),
-[`Seven.Boundary.otherV`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L209),
-[`Seven.Boundary.oppositeUpper`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L210),
-[`Seven.Boundary.diagonalJunction`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L213),
-[`Seven.Boundary.sideTopA_diagonal`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L216),
-[`Seven.Boundary.sideTopA_td`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L225).*
+[`Seven.Boundary.otherLabel`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L208),
+[`Seven.Boundary.otherV`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L209),
+[`Seven.Boundary.oppositeUpper`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L210),
+[`Seven.Boundary.diagonalJunction`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L213),
+[`Seven.Boundary.sideTopA_diagonal`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L216),
+[`Seven.Boundary.sideTopA_td`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L225).*
 
 If the source has the side label $x$, the target has the axial label $\mu(z, x)$
 and the turn is $z$, then the target has the second coordinate $\nu(z, x)$, and
@@ -1126,7 +1126,7 @@ Proposition C.19 applies to these two states and gives
 $U(z, x) = J(a^+(x), \bar a(\nu), \nu, z) > 0$. $\square$
 
 *Lean:
-[`Seven.Boundary.opposite_upper_circular`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L229).*
+[`Seven.Boundary.opposite_upper_circular`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L229).*
 
 ### Lemma C.23 (capped target)
 
@@ -1149,7 +1149,7 @@ U(z, x) = \tfrac12 - \delta(x) - \left(\bar a\left(\tfrac\pi5\right) - \tfrac12\
 $\square$
 
 *Lean:
-[`Seven.Boundary.opposite_upper_cap`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L255).*
+[`Seven.Boundary.opposite_upper_cap`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L255).*
 
 ### Lemma C.24 (the diagonal junction)
 
@@ -1184,7 +1184,7 @@ g(z_d) = \tfrac12 - r_d - \left(a_0 - \tfrac12\right)\sin z_d + \left(u_0 + \tfr
 by Appendix B ([Lemma B.19](appendix-b.md#lemma-b19-the-diagonal-junction)). $\square$
 
 *Lean:
-[`Seven.Boundary.diagonal_junction_pos`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L280).*
+[`Seven.Boundary.diagonal_junction_pos`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L280).*
 
 The value $g(z_d) \approx 0.0046$ is the smallest margin on the inward axis.
 
@@ -1206,7 +1206,7 @@ $\bar a(\nu) = \lambda(\nu) = \tau(\mu(z, t_d))$; with $a^+(t_d) = r_d$ this
 gives $U(z, t_d) = G(z)$, which is positive by Lemma C.24. $\square$
 
 *Lean:
-[`Seven.Boundary.opposite_upper_junction`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L326).*
+[`Seven.Boundary.opposite_upper_junction`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L326).*
 
 ### Lemma C.26 (a diagonal source moves down)
 
@@ -1229,7 +1229,7 @@ U(z, x) - U(z, l) = \tfrac{28}{45}(x - l) + \tfrac{44}{45}(x - l)(1 - \sin z) + 
 a sum of nonnegative terms, as $0 \le \sin z, \cos z \le 1$. $\square$
 
 *Lean:
-[`Seven.Boundary.diagonal_source_reduction`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L347).*
+[`Seven.Boundary.diagonal_source_reduction`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L347).*
 
 ### Lemma C.27 (a circular source moves up)
 
@@ -1253,7 +1253,7 @@ by the displacement bound for $a^+$ ([Proposition B.16](appendix-b.md#propositio
 Lemma C.20. $\square$
 
 *Lean:
-[`Seven.Boundary.circular_source_line_reduction`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L369).*
+[`Seven.Boundary.circular_source_line_reduction`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L369).*
 
 ### Proposition C.28 (the upper profile is positive)
 
@@ -1287,7 +1287,7 @@ by Lemma C.25. Otherwise $x' = z + \frac\pi6 - s_0 \in [s_0, t_d]$ and
 $\mu(z, x') = s_0$, so $U(z, x') > 0$ by Lemma C.22. $\square$
 
 *Lean:
-[`Seven.Boundary.opposite_upper_pos`](../../SquaresInCircles/Seven/InwardOppositeMinima.lean#L397).*
+[`Seven.Boundary.opposite_upper_pos`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L397).*
 
 ![The rectangle of label pairs, the source label x from s_0 to pi over 4 horizontally and the target label mu from 0 to pi over 4 vertically, split by the horizontal line mu = s_0 into a lower part where both states lie on the circle and an upper part where the target lies on the tie line, with a very thin strip at the right edge for diagonal sources and a grey corner where the turn is not positive; dashed anti-diagonal lines of constant turn, and arrows along them from the upper part down to the line mu = s_0 or to the right edge x = t_d](figures/appc-upper-cases.svg)
 
@@ -1337,8 +1337,8 @@ state $(A, 0)$ is an axial state. With $s = +1$ this is a contact of the second
 kind. $\square$
 
 *Lean:
-[`Seven.inward_opposite_side_axial_property`](../../SquaresInCircles/Seven/InwardOpposite.lean#L77),
-[`Seven.inward_opposite_side_positive_turn`](../../SquaresInCircles/Seven/InwardOpposite.lean#L48).*
+[`Seven.inward_opposite_side_axial_property`](../../SquaresInCircles/Seven/Pair/Inward/Opposite.lean#L77),
+[`Seven.inward_opposite_side_positive_turn`](../../SquaresInCircles/Seven/Pair/Inward/Opposite.lean#L48).*
 
 ### Proposition C.30 (two axial labels)
 
@@ -1382,8 +1382,8 @@ is at least $-\frac12(u_0 - u) + 0 + \frac12(u_0 - u) = 0$, so $\sigma_2 > 0$.
 $\square$
 
 *Lean:
-[`Seven.inward_opposite_axial_axial_pos`](../../SquaresInCircles/Seven/InwardOpposite.lean#L156),
-[`Seven.inward_opposite_axial_positive_turn`](../../SquaresInCircles/Seven/InwardOpposite.lean#L87).*
+[`Seven.inward_opposite_axial_axial_pos`](../../SquaresInCircles/Seven/Pair/Inward/Opposite.lean#L156),
+[`Seven.inward_opposite_axial_positive_turn`](../../SquaresInCircles/Seven/Pair/Inward/Opposite.lean#L87).*
 
 ### Lemma C.31 (a side target moves to its tie point)
 
@@ -1411,7 +1411,7 @@ J(a, A, v, z) - J\left(a, \tau(\ell_2), \tfrac45\ell_2, z\right)
 $\square$
 
 *Lean:
-[`Seven.inward_opposite_side_target_reduction`](../../SquaresInCircles/Seven/InwardOpposite.lean#L165).*
+[`Seven.inward_opposite_side_target_reduction`](../../SquaresInCircles/Seven/Pair/Inward/Opposite.lean#L165).*
 
 ### Theorem C.32 (opposite signs with active labels)
 
@@ -1438,4 +1438,4 @@ $\ell_2 = \frac58 \ne \frac\pi6$. So $\sigma_2 > 0$ when the target has a side
 label. $\square$
 
 *Lean:
-[`Seven.fixed_gap_inward_opposite_active`](../../SquaresInCircles/Seven/InwardOpposite.lean#L204).*
+[`Seven.fixed_gap_inward_opposite_active`](../../SquaresInCircles/Seven/Pair/Inward/Opposite.lean#L204).*

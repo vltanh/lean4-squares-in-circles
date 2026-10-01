@@ -1,7 +1,7 @@
 import SquaresInCircles.Six.Separators.Signs
 
 /-!
-# The wings in the frames of the squares
+# Six squares: the wings in the frames of the squares
 
 Read W, D and S at the phases `π - v`, `π + d` and `3π/2 + s`, each with the
 coordinates `(a, b)` of its centre in its own frame, and the centre of C at

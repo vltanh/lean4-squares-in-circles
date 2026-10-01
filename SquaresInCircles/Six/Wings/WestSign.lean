@@ -2,7 +2,7 @@ import SquaresInCircles.Common.Trigonometry
 import SquaresInCircles.Six.Separators.Axes
 
 /-!
-# W on its own axis turns away from D
+# Six squares: W on its own axis turns away from D
 
 If W is separated from C along its own axis but not along the west side of C,
 its phase is `π + w` with `w < 0`. At `w = 0` the two margins agree; for

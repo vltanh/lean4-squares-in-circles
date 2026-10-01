@@ -1,15 +1,17 @@
-import SquaresInCircles.Seven.Support
-import SquaresInCircles.Seven.MarkerArc
+import SquaresInCircles.Seven.Exterior
 import SquaresInCircles.Common.SeparatingAxes
 
 /-!
-# Support sums of a canonical pair
+# Seven squares: a pair in the frame of its first square
 
-The support sum of a canonical pair on each of the four edge axes of the first
-square, with its value on each axis. A sign `s` turns the state `(a, u)` into
-the offset `s u` and the label `s * label a u`, and the second square is turned
-by the relative phase. The support of a square is at least the support of any
-point of its marker arc.
+Two exterior squares read in the frame of the first: a sign `s` turns the state
+`(a, u)` into the offset `s u` and the label `s * label a u`, and the second
+square is turned by the relative phase. The support sum on each of the four
+edge axes of the first square is the half-width of the pair on that axis minus
+the offset of the centres, and the support of a square is at least the support
+of any point of its marker arc. If the open squares of the pair are disjoint,
+the separating-axis theorem gives a nonpositive support sum on one of the axes,
+of the pair or of the pair seen from the second square.
 -/
 noncomputable section
 namespace SquaresInCircles.Seven
@@ -156,5 +158,40 @@ lemma pair_support_axis_values (a u A v g : ℝ) (s t : TransverseSign) :
   simp only [support,Real.cos_pi_sub,Real.sin_pi_sub,Real.cos_add_two_pi,Real.sin_add_two_pi,
     Real.cos_pi_div_two_sub,Real.sin_pi_div_two_sub,abs_neg,angularWidth,centerDX,centerDY,d]
   refine ⟨?_,?_,?_,?_⟩ <;> ring
+
+lemma reverse_reflected_phase (a u A v g : ℝ) (s t : TransverseSign) :
+    relativePhase A v a u g t.flip s.flip=relativePhase a u A v g s t := by
+  dsimp [relativePhase]
+  rw [TransverseSign.coe_flip,TransverseSign.coe_flip]
+  ring
+
+/-- The open squares of the canonical pair are disjoint: `Q(a, su)`, and the
+square at `(A, tv)` in the frame turned by the relative phase. -/
+def CanonicalDisjoint (a u A v g : ℝ) (s t : TransverseSign) : Prop :=
+  ∀ p, ¬ (openSquare (orientedSquare 0 a (s.coe*u)) p ∧
+    openSquare (orientedSquare (relativePhase a u A v g s t) A (t.coe*v)) p)
+
+/-- A disjoint canonical pair has a nonpositive support sum in one of its
+frames: along the axes of the first square these are the support sums of the
+pair, and along the axes of the second square those of the reversed pair. -/
+lemma canonical_has_separator {a u A v g : ℝ} (s t : TransverseSign)
+    (hd : CanonicalDisjoint a u A v g s t) :
+    (∃ k, pairSupport a u A v s t k g ≤ 0) ∨
+    (∃ k, pairSupport A v a u t.flip s.flip k g ≤ 0) := by
+  obtain ⟨e0,e1,e2,e3⟩ := pair_support_axis_values a u A v g s t
+  obtain ⟨f0,f1,f2,f3⟩ := pair_support_axis_values A v a u g t.flip s.flip
+  simp only [centerDX,centerDY] at e0 e1 e2 e3
+  simp only [reverse_reflected_phase,centerDX,centerDY,TransverseSign.coe_flip] at f0 f1 f2 f3
+  have h := oriented_separating_axes hd
+  rw [sub_zero] at h
+  rcases h with h | h | h | h <;> rcases le_abs'.mp h with h | h
+  · exact Or.inl ⟨2,by linarith⟩
+  · exact Or.inl ⟨0,by linarith⟩
+  · exact Or.inl ⟨3,by linarith⟩
+  · exact Or.inl ⟨1,by linarith⟩
+  · exact Or.inr ⟨0,by linarith⟩
+  · exact Or.inr ⟨2,by linarith⟩
+  · exact Or.inr ⟨3,by linarith⟩
+  · exact Or.inr ⟨1,by linarith⟩
 
 end SquaresInCircles.Seven

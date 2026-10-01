@@ -6,7 +6,7 @@ import SquaresInCircles.Six.Separators.DiagonalAngle
 import SquaresInCircles.Six.Wings.WestSign
 
 /-!
-# The stress bound at the optimal radius
+# Six squares: the stress bound at the optimal radius
 
 In a normalized packing in the disk of radius `radius`, the five
 exterior squares are turned exactly as in the model, and the eight contacts of

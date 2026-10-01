@@ -1,7 +1,7 @@
-import SquaresInCircles.Seven.Contacts
+import SquaresInCircles.Seven.Pair.Contacts
 
 /-!
-# The forward axis, signs `(-, +)`
+# Seven squares: the forward axis, signs `(-, +)`
 
 In the turn `w = label a u + label A v - π/3` the support sum is
 `1/2 - u + A sin w - v cos w + (|sin w| + cos w)/2`. For two side labels,

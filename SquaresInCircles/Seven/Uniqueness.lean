@@ -1,5 +1,5 @@
-import SquaresInCircles.Seven.Uniqueness.ContactCycle
-import SquaresInCircles.Seven.Uniqueness.CentralSquare
+import SquaresInCircles.Seven.Ring
+import SquaresInCircles.Seven.Containing
 import SquaresInCircles.Common.Optimum
 
 /-!
@@ -11,44 +11,17 @@ side squares are fixed, and each of the three middle squares can sit anywhere
 on the middle axis, at least 1 from the others and inside the disk. Conversely
 every such configuration is an optimal packing (`Optimum.packing_iff`).
 
-Seven directions cannot be pairwise at least `π/3` apart, so some square
-contains the disk centre. The markers of the other six form a regular hexagon and neighbouring
-squares touch as in the optimal packing (`Uniqueness/ContactCycle.lean`), and
-the square in the middle is pinned between the side columns
-(`Uniqueness/CentralSquare.lean`). The three squares of the middle column have
-centres at least 1 apart, which gives a column packing.
+Some square contains the disk centre, and it is pinned between the side
+columns (`Containing.lean`). The markers of the other six form a regular
+hexagon, and neighbouring squares touch as in the optimal packing
+(`Ring.lean`). The three squares of the middle column have centres at least 1
+apart, which gives a column packing.
 
 The file ends with `optimum`: the case as an `Optimum`, which also gives the
 lower bound.
 -/
 noncomputable section
 namespace SquaresInCircles.Seven
-
-/-- At the optimal radius some square contains the disk centre. -/
-theorem exists_containing (S : Fin 7 → UnitSquare) (o : Point)
-    (hp : Packing S o radius) : ∃ i, openSquare (S i) o := by
-  classical
-  by_contra hn
-  have hext : ∀ i, ¬ openSquare (S i) o := by simpa only [not_exists] using hn
-  choose C hsort using (fun i => sorted_square_chart (S i) o)
-  have hadm (i : Fin 7) : Admissible (C i).a (C i).b := by
-    apply (C i).exteriorChart (hsort i) (hext i)
-    have hh := hp.phi_le i
-    simpa only [radius_sq,targetSq] using hh
-  have h := directions_budget (n := 6) (fun i => chartMarker (C i))
-    (by unfold gap; linarith [Real.pi_pos])
-    fun i j hij => marker_separation_closed (C i) (C j) (hadm i) (hadm j) (hp.disjoint i j hij)
-  unfold gap at h
-  push_cast at h
-  linarith [Real.pi_pos]
-
-/-- Two aligned squares in one column cannot have centers less than one apart. -/
-lemma column_centers_separated {S T : UnitSquare} {o : Point} {φ : Direction} {x y : ℝ}
-    (hS : Represents S o φ (0,x)) (hT : Represents T o φ (0,y))
-    (hxy : x ≤ y) (hd : ∀ p, ¬ (openSquare S p ∧ openSquare T p)) : x+1 ≤ y := by
-  by_contra hn
-  refine hd (pointInDirection o φ 0 ((x+y)/2)) ⟨(hS _ _).mpr ?_,(hT _ _).mpr ?_⟩ <;>
-    exact ⟨by norm_num,abs_lt.mpr ⟨by linarith,by linarith⟩⟩
 
 def sideRingIndex : Fin 4 → Fin 6 := ![0,1,4,3]
 def outerSlot : Fin 6 → Fin 7 := ![0,1,6,3,2,4]

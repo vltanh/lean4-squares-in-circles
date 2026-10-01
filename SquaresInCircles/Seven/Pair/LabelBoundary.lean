@@ -1,7 +1,7 @@
-import SquaresInCircles.Seven.Labels
+import SquaresInCircles.Seven.Exterior
 
 /-!
-# The boundary of the label regions
+# Seven squares: the boundary of the label regions
 
 The transition state, where the line on which the axial and side labels agree
 meets the circle `φ = 13/4`, the diagonal corner, and a parametrization of the

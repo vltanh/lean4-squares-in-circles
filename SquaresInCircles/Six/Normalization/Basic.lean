@@ -9,7 +9,7 @@ import SquaresInCircles.Common.SeparatingAxes
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
 
 /-!
-# Charts, oriented squares and the separating axes of the central square
+# Six squares: charts and the separating axes of the central square
 
 The normalization works in disks of squared radius at most `Q0`, just above the
 square of the optimal radius, with the constants `R0`, `ρ0`, `c0`, `coreRadius`,

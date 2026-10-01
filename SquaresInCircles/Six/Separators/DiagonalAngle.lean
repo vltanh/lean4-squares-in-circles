@@ -1,7 +1,7 @@
 import SquaresInCircles.Six.Separators.DiagonalAngleOwn
 
 /-!
-# The angle of D exceeds 1/2
+# Six squares: the angle of D exceeds 1/2
 
 In a normalized packing the angle `d` of D is more than `1/2`. For W on its own
 axis this is `own_west_diagonal_gt_half`. For W on the west side of C, at the

@@ -1,8 +1,8 @@
-import SquaresInCircles.Seven.BoundarySegments
-import SquaresInCircles.Seven.Contacts
+import SquaresInCircles.Seven.Pair.LabelSegments
+import SquaresInCircles.Seven.Pair.Contacts
 
 /-!
-# The forward axis, negative target sign
+# Seven squares: the forward axis, negative target sign
 
 A positive source with any active label, and a negative source with an axial
 label. The support of the target is bounded below by Cauchy–Schwarz on the disk:

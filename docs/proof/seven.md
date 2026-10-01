@@ -58,8 +58,8 @@ apart.
 [`Seven.columnCenters`](../../SquaresInCircles/Geometry.lean#L259),
 [`Seven.columnModel`](../../SquaresInCircles/Geometry.lean#L265),
 [`Seven.column_packing`](../../SquaresInCircles/Seven/Construction.lean#L49),
-[`Seven.uniqueness`](../../SquaresInCircles/Seven/Uniqueness.lean#L91),
-[`Seven.optimum`](../../SquaresInCircles/Seven/Uniqueness.lean#L97).*
+[`Seven.uniqueness`](../../SquaresInCircles/Seven/Uniqueness.lean#L64),
+[`Seven.optimum`](../../SquaresInCircles/Seven/Uniqueness.lean#L70).*
 
 *Remark.* The optimum is not unique. The four side squares are fixed, but each
 of the three middle squares can move along the middle column on its own, as
@@ -157,7 +157,7 @@ $\square$
 [`Seven.Column.sum_slots`](../../SquaresInCircles/Seven/Construction.lean#L102),
 [`Seven.columnOfSlots`](../../SquaresInCircles/Seven/Construction.lean#L109),
 [`Seven.columnSlotEquiv`](../../SquaresInCircles/Seven/Construction.lean#L140),
-[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L34).*
+[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L38).*
 
 ![Three column packings side by side, each in its dashed circle of radius root 13 over 2 with the disk centre o: the two side columns are the same in all three; in the first the middle column is pushed down to the circle, in the second its top and bottom squares touch the circle and the middle square sits at the centre, in the third the column is pushed up to the circle](figures/seven-columns.svg)
 
@@ -177,7 +177,7 @@ at the end of §9.7.
 Every packing of seven unit squares in a closed disk of radius $R_7$ is
 congruent to a column packing.
 
-*Lean: [`Seven.uniqueness`](../../SquaresInCircles/Seven/Uniqueness.lean#L91).*
+*Lean: [`Seven.uniqueness`](../../SquaresInCircles/Seven/Uniqueness.lean#L64).*
 
 Throughout, the disk centre $o$ is fixed. For every exterior square $S$
 ([Definition 3.2](common.md#definition-32-containing-and-exterior-squares)) we
@@ -203,10 +203,10 @@ r(a, u) = 4 - 3a - 2u .
 The *state* of an exterior square $S$ is $(a_S, b_S)$, and its *sign* is
 $\varepsilon_S$.
 
-*Lean: [`Seven.Admissible`](../../SquaresInCircles/Seven/Labels.lean#L24),
+*Lean: [`Seven.Admissible`](../../SquaresInCircles/Seven/Exterior.lean#L33),
 [`ExteriorChart`](../../SquaresInCircles/Common/ExteriorCharts.lean#L17),
-[`Seven.remainder`](../../SquaresInCircles/Seven/Labels.lean#L21),
-[`Seven.targetSq`](../../SquaresInCircles/Seven/Labels.lean#L16).*
+[`Seven.remainder`](../../SquaresInCircles/Seven/Exterior.lean#L30),
+[`Seven.targetSq`](../../SquaresInCircles/Seven/Exterior.lean#L25).*
 
 ### Lemma 9.5 (admissible states)
 
@@ -247,17 +247,17 @@ $\varphi(a_S, b_S) \le R_7^2 = \frac{13}4$ by
 [Lemma 3.4](common.md#lemma-34-farthest-vertex). $\square$
 
 *Lean:
-[`Seven.remainder_identity`](../../SquaresInCircles/Seven/Labels.lean#L26),
-[`Seven.Admissible.remainder_nonneg`](../../SquaresInCircles/Seven/Labels.lean#L49),
-[`Seven.Admissible.tangent`](../../SquaresInCircles/Seven/Labels.lean#L46),
+[`Seven.remainder_identity`](../../SquaresInCircles/Seven/Exterior.lean#L35),
+[`Seven.Admissible.remainder_nonneg`](../../SquaresInCircles/Seven/Exterior.lean#L58),
+[`Seven.Admissible.tangent`](../../SquaresInCircles/Seven/Exterior.lean#L55),
 [`tangent_le`](../../SquaresInCircles/Common/Tangents.lean#L19),
-[`Seven.Admissible.a_le_sqrt_three_sub_half`](../../SquaresInCircles/Seven/Labels.lean#L53),
-[`Seven.Admissible.a_lt_five_fourths`](../../SquaresInCircles/Seven/Labels.lean#L56),
-[`Seven.Admissible.sum_lt`](../../SquaresInCircles/Seven/Labels.lean#L60),
-[`Seven.Admissible.u_lt`](../../SquaresInCircles/Seven/Labels.lean#L64),
+[`Seven.Admissible.a_le_sqrt_three_sub_half`](../../SquaresInCircles/Seven/Exterior.lean#L62),
+[`Seven.Admissible.a_lt_five_fourths`](../../SquaresInCircles/Seven/Exterior.lean#L65),
+[`Seven.Admissible.sum_lt`](../../SquaresInCircles/Seven/Exterior.lean#L69),
+[`Seven.Admissible.u_lt`](../../SquaresInCircles/Seven/Exterior.lean#L73),
 [`dot_gt`](../../SquaresInCircles/Common/DiskSupport.lean#L34),
 [`coordinate_le_of_phi`](../../SquaresInCircles/Common/Basic.lean#L166),
-[`Seven.sqrt_three_bounds`](../../SquaresInCircles/Seven/Support.lean#L14),
+[`Seven.sqrt_three_bounds`](../../SquaresInCircles/Seven/Exterior.lean#L218),
 [`SquareChart.exteriorChart`](../../SquaresInCircles/Common/ExteriorCharts.lean#L49).*
 
 The identity (1) says that $r \ge 0$ is the tangent half-plane
@@ -309,15 +309,15 @@ a_0 = \frac{9M + 11J}{202} - \frac12, \qquad u_0 = \frac{11M - 9J}{202} - \frac1
 and $s_0 = \frac54 u_0$ is its label. Numerically
 $(a_0, u_0) \approx (1.1198, 0.2914)$ and $s_0 \approx 0.3642$.
 
-*Lean: [`Seven.axial`](../../SquaresInCircles/Seven/Labels.lean#L18),
-[`Seven.side`](../../SquaresInCircles/Seven/Labels.lean#L19),
-[`Seven.label`](../../SquaresInCircles/Seven/Labels.lean#L20),
-[`Seven.ActiveLabel`](../../SquaresInCircles/Seven/Contacts.lean#L65),
-[`Seven.chartMarker`](../../SquaresInCircles/Seven/Labels.lean#L206),
-[`Seven.chartSign`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L20),
-[`Seven.Boundary.a0`](../../SquaresInCircles/Seven/LabelBoundary.lean#L19),
-[`Seven.Boundary.u0`](../../SquaresInCircles/Seven/LabelBoundary.lean#L20),
-[`Seven.Boundary.s0`](../../SquaresInCircles/Seven/LabelBoundary.lean#L21).*
+*Lean: [`Seven.axial`](../../SquaresInCircles/Seven/Exterior.lean#L27),
+[`Seven.side`](../../SquaresInCircles/Seven/Exterior.lean#L28),
+[`Seven.label`](../../SquaresInCircles/Seven/Exterior.lean#L29),
+[`Seven.ActiveLabel`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L65),
+[`Seven.chartMarker`](../../SquaresInCircles/Seven/Exterior.lean#L215),
+[`Seven.chartSign`](../../SquaresInCircles/Seven/Pair.lean#L20),
+[`Seven.Boundary.a0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L19),
+[`Seven.Boundary.u0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L20),
+[`Seven.Boundary.s0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L21).*
 
 The label is an angle measured in the chart from the phase $\theta_S$ towards
 the centre of $S$ (Figure 9.5). In the column packing of Figure 9.1 the side
@@ -371,17 +371,17 @@ $\ell(a, u) \le \mathrm{side}(a, u) \le \frac\pi6 - \frac54(a - 1)$; solve for
 $a$. $\square$
 
 *Lean:
-[`Seven.side_identity_transverse`](../../SquaresInCircles/Seven/Labels.lean#L31),
-[`Seven.side_identity_radial`](../../SquaresInCircles/Seven/Labels.lean#L36),
-[`Seven.Admissible.side_pos`](../../SquaresInCircles/Seven/Labels.lean#L66),
-[`Seven.Admissible.label_nonneg`](../../SquaresInCircles/Seven/Labels.lean#L72),
-[`Seven.Admissible.label_le_axial`](../../SquaresInCircles/Seven/Labels.lean#L76),
-[`Seven.Admissible.label_le_side`](../../SquaresInCircles/Seven/Labels.lean#L80),
-[`Seven.Admissible.label_le_quarter`](../../SquaresInCircles/Seven/Labels.lean#L84),
-[`Seven.Admissible.label_mem`](../../SquaresInCircles/Seven/Labels.lean#L87),
-[`Seven.Admissible.selected`](../../SquaresInCircles/Seven/Labels.lean#L108),
-[`Seven.Admissible.label_zero_iff`](../../SquaresInCircles/Seven/Labels.lean#L90),
-[`Seven.Admissible.radial_label_bound`](../../SquaresInCircles/Seven/Labels.lean#L101).*
+[`Seven.side_identity_transverse`](../../SquaresInCircles/Seven/Exterior.lean#L40),
+[`Seven.side_identity_radial`](../../SquaresInCircles/Seven/Exterior.lean#L45),
+[`Seven.Admissible.side_pos`](../../SquaresInCircles/Seven/Exterior.lean#L75),
+[`Seven.Admissible.label_nonneg`](../../SquaresInCircles/Seven/Exterior.lean#L81),
+[`Seven.Admissible.label_le_axial`](../../SquaresInCircles/Seven/Exterior.lean#L85),
+[`Seven.Admissible.label_le_side`](../../SquaresInCircles/Seven/Exterior.lean#L89),
+[`Seven.Admissible.label_le_quarter`](../../SquaresInCircles/Seven/Exterior.lean#L93),
+[`Seven.Admissible.label_mem`](../../SquaresInCircles/Seven/Exterior.lean#L96),
+[`Seven.Admissible.selected`](../../SquaresInCircles/Seven/Exterior.lean#L117),
+[`Seven.Admissible.label_zero_iff`](../../SquaresInCircles/Seven/Exterior.lean#L99),
+[`Seven.Admissible.radial_label_bound`](../../SquaresInCircles/Seven/Exterior.lean#L110).*
 
 ### Lemma 9.8 (side and axial labels)
 
@@ -484,14 +484,14 @@ so $u < \frac{23}{80}$, and then
 a contradiction. $\square$
 
 *Lean:
-[`Seven.Admissible.projection_two_one`](../../SquaresInCircles/Seven/Labels.lean#L118),
+[`Seven.Admissible.projection_two_one`](../../SquaresInCircles/Seven/Exterior.lean#L127),
 [`dot_gt`](../../SquaresInCircles/Common/DiskSupport.lean#L34),
-[`Seven.side_selected_label_gt`](../../SquaresInCircles/Seven/Labels.lean#L122),
-[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Labels.lean#L145),
-[`Seven.side_selected_a_lt`](../../SquaresInCircles/Seven/Labels.lean#L134),
-[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Labels.lean#L172),
-[`Seven.axial_tie_line`](../../SquaresInCircles/Seven/Labels.lean#L153),
-[`Seven.axial_sum_lt`](../../SquaresInCircles/Seven/Labels.lean#L162).*
+[`Seven.side_selected_label_gt`](../../SquaresInCircles/Seven/Exterior.lean#L131),
+[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Exterior.lean#L154),
+[`Seven.side_selected_a_lt`](../../SquaresInCircles/Seven/Exterior.lean#L143),
+[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Exterior.lean#L181),
+[`Seven.axial_tie_line`](../../SquaresInCircles/Seven/Exterior.lean#L162),
+[`Seven.axial_sum_lt`](../../SquaresInCircles/Seven/Exterior.lean#L171).*
 
 ### Lemma 9.9 (the marker arc)
 
@@ -507,7 +507,7 @@ $\overline{Q(a, u)}$.
 
 The proof is given in [Appendix A](appendix-a.md).
 
-*Lean: [`Seven.marker_arc`](../../SquaresInCircles/Seven/MarkerArc.lean#L276).*
+*Lean: [`Seven.marker_arc`](../../SquaresInCircles/Seven/Exterior.lean#L487).*
 
 In a chart of an exterior square with an admissible state, the lemma says that
 the closed square contains the arc of the unit circle with half-width
@@ -584,9 +584,9 @@ $(pX + qY)^2 \le (p^2 + q^2)(X^2 + Y^2) \le \frac{13}4(p^2 + q^2)$, which is at
 most, or less than, $c^2$. $\square$
 
 *Lean: [`point_le_support`](../../SquaresInCircles/Common/DiskSupport.lean#L96),
-[`Seven.marker_arc_support`](../../SquaresInCircles/Seven/PairModel.lean#L48),
-[`Seven.sign_admissible`](../../SquaresInCircles/Seven/PairModel.lean#L42),
-[`Seven.support_lower`](../../SquaresInCircles/Seven/Support.lean#L20),
+[`Seven.marker_arc_support`](../../SquaresInCircles/Seven/Pair/Frame.lean#L50),
+[`Seven.sign_admissible`](../../SquaresInCircles/Seven/Pair/Frame.lean#L44),
+[`Seven.support_lower`](../../SquaresInCircles/Seven/Exterior.lean#L224),
 [`support_ge`](../../SquaresInCircles/Common/DiskSupport.lean#L107),
 [`ExteriorChart.center_sq_le`](../../SquaresInCircles/Common/ExteriorCharts.lean#L41),
 [`dot_ge`](../../SquaresInCircles/Common/DiskSupport.lean#L30),
@@ -633,12 +633,12 @@ regarded as functions of the gap $g$, all other data being fixed. The
 and the same gap $g$; we write $\sigma'_k(g)$ for its support sums.
 
 *Lean:
-[`Seven.TransverseSign`](../../SquaresInCircles/Seven/PairModel.lean#L17),
-[`Seven.cardinalAngle`](../../SquaresInCircles/Seven/PairModel.lean#L35),
-[`Seven.relativePhase`](../../SquaresInCircles/Seven/PairModel.lean#L131),
-[`Seven.pairSupport`](../../SquaresInCircles/Seven/PairModel.lean#L37),
+[`Seven.TransverseSign`](../../SquaresInCircles/Seven/Pair/Frame.lean#L19),
+[`Seven.cardinalAngle`](../../SquaresInCircles/Seven/Pair/Frame.lean#L37),
+[`Seven.relativePhase`](../../SquaresInCircles/Seven/Pair/Frame.lean#L133),
+[`Seven.pairSupport`](../../SquaresInCircles/Seven/Pair/Frame.lean#L39),
 [`orientedSquare`](../../SquaresInCircles/Common/Congruence.lean#L87),
-[`Seven.CanonicalDisjoint`](../../SquaresInCircles/Seven/CanonicalPair.lean#L23).*
+[`Seven.CanonicalDisjoint`](../../SquaresInCircles/Seven/Pair/Frame.lean#L170).*
 
 ![A canonical pair: the axis-parallel square S and the square T turned by the angle d, the disk centre o at the origin, part of the unit circle, and the two markers as rays from o, g apart. The four normals n0, n1, n2, n3 are drawn at the edges of S. Below the squares, their shadows on the first axis, which leave a gap marked sigma2 less than 0; to the left, their shadows on the second axis, which overlap by sigma1](figures/seven-canonical-pair.svg)
 
@@ -738,14 +738,14 @@ $\Delta' = (a\cos d + su\sin d - A,\ a\sin d - su\cos d + tv)$. Expanding,
 $\square$
 
 *Lean:
-[`Seven.pair_support_axis_values`](../../SquaresInCircles/Seven/PairModel.lean#L140),
+[`Seven.pair_support_axis_values`](../../SquaresInCircles/Seven/Pair/Frame.lean#L142),
 [`angularWidth`](../../SquaresInCircles/Common/SeparatingAxes.lean#L250),
-[`Seven.centerDX`](../../SquaresInCircles/Seven/PairModel.lean#L134),
-[`Seven.centerDY`](../../SquaresInCircles/Seven/PairModel.lean#L137),
-[`Seven.reverse_reflected_phase`](../../SquaresInCircles/Seven/CanonicalPair.lean#L15),
+[`Seven.centerDX`](../../SquaresInCircles/Seven/Pair/Frame.lean#L136),
+[`Seven.centerDY`](../../SquaresInCircles/Seven/Pair/Frame.lean#L139),
+[`Seven.reverse_reflected_phase`](../../SquaresInCircles/Seven/Pair/Frame.lean#L162),
 [`pair_frameX_right`](../../SquaresInCircles/Common/SeparatingAxes.lean#L336),
 [`pair_frameY_right`](../../SquaresInCircles/Common/SeparatingAxes.lean#L344),
-[`Seven.pairSupport_continuous`](../../SquaresInCircles/Seven/AllGaps.lean#L175).*
+[`Seven.pairSupport_continuous`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L430).*
 
 The reversed pair is the pair seen from $T$: the isometry of the plane that
 turns by $-d$ about the origin and then reflects in the first axis maps $T$
@@ -816,7 +816,7 @@ $\omega(n) \le \langle n, c_T - c_S\rangle = \langle n, \Delta\rangle$. This
 contradiction proves the lemma. $\square$
 
 *Lean:
-[`Seven.canonical_has_separator`](../../SquaresInCircles/Seven/CanonicalPair.lean#L30),
+[`Seven.canonical_has_separator`](../../SquaresInCircles/Seven/Pair/Frame.lean#L177),
 [`oriented_separating_axes`](../../SquaresInCircles/Common/SeparatingAxes.lean#L356),
 [`SAT.separating_axes`](../../SquaresInCircles/Common/SeparatingAxes.lean#L205),
 [`SAT.all_normals_strict`](../../SquaresInCircles/Common/SeparatingAxes.lean#L189),
@@ -847,9 +847,9 @@ $(A, v)$ with signs $s$ and $t$, in this order, form a *contact* if
 2. $s = 1$, $(a, u)$ is a side state and $(A, v)$ is an axial state; or
 3. $t = -1$, $(a, u)$ is an axial state and $(A, v)$ is a side state.
 
-*Lean: [`Seven.SideState`](../../SquaresInCircles/Seven/Contacts.lean#L16),
-[`Seven.AxialState`](../../SquaresInCircles/Seven/Contacts.lean#L17),
-[`Seven.OrderedContact`](../../SquaresInCircles/Seven/Contacts.lean#L19).*
+*Lean: [`Seven.SideState`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L16),
+[`Seven.AxialState`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L17),
+[`Seven.OrderedContact`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L19).*
 
 Going counterclockwise round a column packing, these are the three ways in
 which an exterior square touches the next one (Figure 9.8): in (1) the lower
@@ -914,15 +914,16 @@ whose label is $\frac\pi6$ by (1); then $t\,\ell(A, v) = 0$, so
 $\frac54 v = \ell(A, v) = 0$, and $(A, v)$ is axial by (3). With $s = 1$ this
 is a contact of kind (2). $\square$
 
-*Lean: [`Seven.side_label`](../../SquaresInCircles/Seven/Contacts.lean#L34),
-[`Seven.axial_label`](../../SquaresInCircles/Seven/Contacts.lean#L41),
-[`Seven.side_neq_cap`](../../SquaresInCircles/Seven/Contacts.lean#L44),
-[`Seven.contact_label_not_cap`](../../SquaresInCircles/Seven/Contacts.lean#L48),
-[`Seven.AxialState.admissible`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L45),
-[`Seven.remainder_zero`](../../SquaresInCircles/Seven/Contacts.lean#L24),
-[`Seven.axial_of_transverse_zero`](../../SquaresInCircles/Seven/Contacts.lean#L31),
-[`Seven.reflected_reverse_contact`](../../SquaresInCircles/Seven/Contacts.lean#L59),
-[`Seven.PairProperty.of_side_axial`](../../SquaresInCircles/Seven/Contacts.lean#L80).*
+*Lean:
+[`Seven.side_label`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L34),
+[`Seven.axial_label`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L41),
+[`Seven.side_neq_cap`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L44),
+[`Seven.contact_label_not_cap`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L48),
+[`Seven.AxialState.admissible`](../../SquaresInCircles/Seven/Ring.lean#L45),
+[`Seven.remainder_zero`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L24),
+[`Seven.axial_of_transverse_zero`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L31),
+[`Seven.reflected_reverse_contact`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L59),
+[`Seven.PairProperty.of_side_axial`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L80).*
 
 ### Proposition 9.17 (the critical gap)
 
@@ -933,11 +934,11 @@ $\sigma_k(\frac\pi3) \ge 0$, and $\sigma_k(\frac\pi3) = 0$ only if the two
 states with the signs $s$ and $t$ form a contact.
 
 *Lean:
-[`Seven.fixed_gap_nonneg`](../../SquaresInCircles/Seven/FixedGap.lean#L171),
-[`Seven.fixed_gap_zero`](../../SquaresInCircles/Seven/FixedGap.lean#L177),
-[`Seven.fixed_gap_property`](../../SquaresInCircles/Seven/FixedGap.lean#L166),
-[`Seven.PairProperty`](../../SquaresInCircles/Seven/Contacts.lean#L69),
-[`Seven.gap`](../../SquaresInCircles/Seven/Labels.lean#L17).*
+[`Seven.fixed_gap_nonneg`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L171),
+[`Seven.fixed_gap_zero`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L177),
+[`Seven.fixed_gap_property`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L166),
+[`Seven.PairProperty`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L69),
+[`Seven.gap`](../../SquaresInCircles/Seven/Exterior.lean#L26).*
 
 The proof is a case analysis over the four axes, the four pairs of signs and
 the kinds of the two labels, carried out in [Appendix B](appendix-b.md)
@@ -1008,7 +1009,7 @@ lie on one line. But a line meets the unit circle in at most two points.
 $\square$
 
 *Lean:
-[`Seven.small_gap_support_pos`](../../SquaresInCircles/Seven/AllGaps.lean#L21).*
+[`Seven.small_gap_support_pos`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L276).*
 
 ![A canonical pair at a gap below 1, with the unit circle about o. The marker arc of S, of half-width 1/2 about its marker, is drawn in blue inside S; the marker arc of T, about a marker g further round, in green inside T. The two arcs overlap in a short arc around the midpoint direction m, which lies in both squares](figures/seven-small-gaps.svg)
 
@@ -1115,9 +1116,9 @@ conclusion $(-t)\ell(A, v) - (-s)\ell(a, u) \le \frac\pi6$ is the claim.
 $\square$
 
 *Lean:
-[`Seven.opposite_labels_ge`](../../SquaresInCircles/Seven/AllGaps.lean#L71),
-[`Seven.quarter_difference_le`](../../SquaresInCircles/Seven/AllGaps.lean#L140),
-[`Seven.quarter_difference_horizontal`](../../SquaresInCircles/Seven/AllGaps.lean#L117).*
+[`Seven.opposite_labels_ge`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L326),
+[`Seven.quarter_difference_le`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L395),
+[`Seven.quarter_difference_horizontal`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L372).*
 
 ### Lemma 9.21 (parallel and quarter-turned pairs)
 
@@ -1148,8 +1149,9 @@ $\sigma_2 = 1 - a - tv \le 0$, then $A - su \ge 1$ or $a + tv \ge 1$, and Lemma
 9.20 (2) gives $s\,\ell(a, u) - t\,\ell(A, v) \le \frac\pi6$, so that
 $d < \frac\pi3 + \frac\pi6 = \frac\pi2$, a contradiction. $\square$
 
-*Lean: [`Seven.parallel_pos`](../../SquaresInCircles/Seven/AllGaps.lean#L86),
-[`Seven.quarter_turn_pos`](../../SquaresInCircles/Seven/AllGaps.lean#L152).*
+*Lean:
+[`Seven.parallel_pos`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L341),
+[`Seven.quarter_turn_pos`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L407).*
 
 ![Two panels. Left: a parallel pair, S below the first axis and T above it, both axis-parallel, with the horizontal line between them that would separate them. Right: a quarter-turned pair, S and T to its upper left, with the vertical line that would separate them. In both panels the markers of S and T are drawn as rays from o](figures/seven-parallel.svg)
 
@@ -1311,12 +1313,12 @@ We go through the axes.
 So $c > \delta$ in every case, and $\sigma_k(g) = c - \delta > 0$. $\square$
 
 *Lean:
-[`Seven.smooth_leftmost_support_pos`](../../SquaresInCircles/Seven/SmoothMinima.lean#L221),
+[`Seven.smooth_leftmost_support_pos`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L229),
 [`sinusoid_leftmost_minimum`](../../SquaresInCircles/Common/Analysis.lean#L255),
-[`Seven.stationary_nearest_corner`](../../SquaresInCircles/Seven/SmoothMinima.lean#L46),
-[`Seven.corner_source_margin`](../../SquaresInCircles/Seven/SmoothMinima.lean#L129),
-[`Seven.corner_label_gt`](../../SquaresInCircles/Seven/SmoothMinima.lean#L36),
-[`Seven.cardinal_shift_ne`](../../SquaresInCircles/Seven/SmoothMinima.lean#L24).*
+[`Seven.stationary_nearest_corner`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L54),
+[`Seven.corner_source_margin`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L137),
+[`Seven.corner_label_gt`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L44),
+[`Seven.cardinal_shift_ne`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L32).*
 
 ![The square T in its own chart, the axis-parallel square centred at (A, tv), and the disk centre o at the origin outside it. The vertex of T nearest to o is joined to o by a segment of length delta; the line through that vertex perpendicular to the segment has T on its far side, and the direction u(z) is drawn from the vertex towards o](figures/seven-nearest-vertex.svg)
 
@@ -1351,7 +1353,7 @@ $(-\frac\pi2, \pi)$, and Lemma 9.21 (2) gives $f(x) > 0$. Otherwise Lemma 9.22
 gives $f(x) > 0$. Each contradicts $f(x) \le 0$. $\square$
 
 *Lean:
-[`Seven.all_gap_pos_below`](../../SquaresInCircles/Seven/AllGaps.lean#L181).*
+[`Seven.all_gap_pos_below`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L436).*
 
 ![The four support sums of the canonical pair of two side states with signs -1 and 1, as functions of the gap g from 0 to pi/2: all four are positive for g below pi/3; the forward support sum sigma1 decreases to 0 exactly at g = pi/3 and is negative beyond](figures/seven-gap-profile.svg)
 
@@ -1402,11 +1404,11 @@ contact: for the pair this is the claim, and for the reversed pair it is the
 claim by Lemma 9.16 (4). $\square$
 
 *Lean:
-[`Seven.marker_separation_closed`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L72),
-[`Seven.ordered_chart_contact`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L97),
-[`Seven.charts_disjoint_canonical`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L33),
-[`Seven.chartMarker_formula`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L28),
-[`Seven.ordered_gap_not_below`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L59).*
+[`Seven.marker_separation_closed`](../../SquaresInCircles/Seven/Pair.lean#L72),
+[`Seven.ordered_chart_contact`](../../SquaresInCircles/Seven/Pair.lean#L97),
+[`Seven.charts_disjoint_canonical`](../../SquaresInCircles/Seven/Pair.lean#L33),
+[`Seven.chartMarker_formula`](../../SquaresInCircles/Seven/Pair.lean#L28),
+[`Seven.ordered_gap_not_below`](../../SquaresInCircles/Seven/Pair.lean#L59).*
 
 ## 9.6 The ring
 
@@ -1422,7 +1424,7 @@ least $\frac\pi3$ apart, so by
 $7 \cdot \frac\pi3 \le 2\pi$, which is false. $\square$
 
 *Lean: [`directions_budget`](../../SquaresInCircles/Common/Angles.lean#L68),
-[`Seven.exists_containing`](../../SquaresInCircles/Seven/Uniqueness.lean#L28).*
+[`Seven.exists_containing`](../../SquaresInCircles/Seven/Containing.lean#L117).*
 
 ### Proposition 9.26 (the ring)
 
@@ -1480,13 +1482,12 @@ $(-1, -\frac12)$ and $S_5$ at $(0, -a_{S_5})$. Put $h = a_{S_2}$ and
 $k = a_{S_5}$; they lie in $[\frac12, \sqrt3 - \frac12]$ because the states of
 $S_2$ and $S_5$ are axial. $\square$
 
-*Lean:
-[`Seven.six_exterior_ring`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L144),
-[`Seven.hexagon_successor`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L19),
-[`Seven.ring_of_ordered_contacts`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L104),
-[`Seven.contact_kinds`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L36),
-[`Seven.kind_unique`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L32),
-[`Seven.ExteriorRing`](../../SquaresInCircles/Seven/Uniqueness/ContactCycle.lean#L94),
+*Lean: [`Seven.six_exterior_ring`](../../SquaresInCircles/Seven/Ring.lean#L144),
+[`Seven.hexagon_successor`](../../SquaresInCircles/Seven/Ring.lean#L19),
+[`Seven.ring_of_ordered_contacts`](../../SquaresInCircles/Seven/Ring.lean#L104),
+[`Seven.contact_kinds`](../../SquaresInCircles/Seven/Ring.lean#L36),
+[`Seven.kind_unique`](../../SquaresInCircles/Seven/Ring.lean#L32),
+[`Seven.ExteriorRing`](../../SquaresInCircles/Seven/Ring.lean#L94),
 [`regular_polygon`](../../SquaresInCircles/Common/Angles.lean#L80).*
 
 ![The six exterior squares of a column packing without the middle square, the unit circle about o, and the six markers as rays from o at 30, 90, 150, 210, 270 and 330 degrees, forming a regular hexagon; each square is labelled lower, upper or axial, and the edges along which consecutive squares touch are drawn thick](figures/seven-ring.svg)
@@ -1562,10 +1563,10 @@ forces $X = 0$. Finally the origin lies in $Q(0, Y)^\circ$, so $|Y| < \frac12$,
 and $S$ sits at $(0, z)$ with $z = Y$. $\square$
 
 *Lean:
-[`Seven.central_square_represents`](../../SquaresInCircles/Seven/Uniqueness/CentralSquare.lean#L101),
-[`Seven.central_strip`](../../SquaresInCircles/Seven/Uniqueness/CentralSquare.lean#L79),
-[`Seven.section_strip_rigidity`](../../SquaresInCircles/Seven/Uniqueness/CentralSquare.lean#L46),
-[`Seven.center_section_forces_cardinal`](../../SquaresInCircles/Seven/Uniqueness/CentralSquare.lean#L18),
+[`Seven.central_square_represents`](../../SquaresInCircles/Seven/Containing.lean#L106),
+[`Seven.central_strip`](../../SquaresInCircles/Seven/Containing.lean#L84),
+[`Seven.section_strip_rigidity`](../../SquaresInCircles/Seven/Containing.lean#L51),
+[`Seven.center_section_forces_cardinal`](../../SquaresInCircles/Seven/Containing.lean#L23),
 [`pullSquare`](../../SquaresInCircles/Common/Frames.lean#L21),
 [`pullSquare_open`](../../SquaresInCircles/Common/Frames.lean#L40).*
 
@@ -1602,8 +1603,8 @@ squares in the closed disk of radius $R_7$ about $o$.
    congruent to that column packing. $\square$
 
 *Lean:
-[`Seven.congruent_of_containing`](../../SquaresInCircles/Seven/Uniqueness.lean#L58),
-[`Seven.column_centers_separated`](../../SquaresInCircles/Seven/Uniqueness.lean#L46),
+[`Seven.congruent_of_containing`](../../SquaresInCircles/Seven/Uniqueness.lean#L31),
+[`Seven.column_centers_separated`](../../SquaresInCircles/Seven/Containing.lean#L135),
 [`congruent_of_slots`](../../SquaresInCircles/Common/Congruence.lean#L148).*
 
 ## 9.8 Proof of Theorem 9.1
@@ -1622,8 +1623,8 @@ By Proposition 9.2 (2), the optimal packings are the configurations congruent
 to the column packing of a quadruple of slacks
 $\eta_0, \eta_1, \eta_2, \eta_3 \ge 0$ with sum $2\sqrt3 - 3$.
 
-*Lean: [`Seven.optimum`](../../SquaresInCircles/Seven/Uniqueness.lean#L97),
+*Lean: [`Seven.optimum`](../../SquaresInCircles/Seven/Uniqueness.lean#L70),
 [`Optimum.isLeast`](../../SquaresInCircles/Common/Optimum.lean#L61),
 [`Optimum.packing_iff`](../../SquaresInCircles/Common/Optimum.lean#L67),
 [`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L47),
-[`Seven.classification_by_slots`](../../SquaresInCircles/Seven/Uniqueness.lean#L114).*
+[`Seven.classification_by_slots`](../../SquaresInCircles/Seven/Uniqueness.lean#L87).*

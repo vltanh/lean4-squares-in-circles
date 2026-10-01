@@ -4,7 +4,7 @@ import SquaresInCircles.Common.Trigonometry
 import SquaresInCircles.Six.Normalization.Basic
 
 /-!
-# W on the west side of C
+# Six squares: W on the west side of C
 
 When W is separated from C along the west side of C, no wing is missing. The
 weights `4`, `3`, `3` on the separations of C and W, of W and D along the
