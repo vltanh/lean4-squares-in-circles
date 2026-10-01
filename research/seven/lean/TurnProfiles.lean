@@ -40,7 +40,8 @@ lemma inwardF_hasDeriv (z : ℝ) : HasDerivAt inwardF
     (((hasDerivAt_id z).mul (Real.hasDerivAt_cos z)).const_mul (4/5))).sub
     (((hasDerivAt_const z 1).sub (Real.hasDerivAt_cos z)).const_mul (3/4))).sub
     ((hasDerivAt_id z).div_const 50)
-  convert hd using 1 <;> dsimp [inwardF] <;> ring
+  convert hd using 1 <;>
+    first | rfl | (funext y; dsimp [inwardF]; ring) | (dsimp; ring)
 
 lemma first_quadrant_sum {z : ℝ} (hz : 0 ≤ z ∧ z ≤ Real.pi/2) :
     1 ≤ Real.cos z+Real.sin z := by
@@ -49,8 +50,7 @@ lemma first_quadrant_sum {z : ℝ} (hz : 0 ≤ z ∧ z ≤ Real.pi/2) :
   have hc := Real.cos_nonneg_of_mem_Icc
     (show z ∈ Icc (-(Real.pi/2)) (Real.pi/2) by
       constructor <;> linarith [hz.1,hz.2,Real.pi_pos])
-  have hm := mul_nonneg hs hc
-  nlinarith [Real.sin_sq_add_cos_sq z]
+  nlinarith [Real.sin_sq_add_cos_sq z,mul_nonneg hs hc]
 
 lemma inward_tail_lower {z : ℝ} (hz : 1 ≤ z ∧ z ≤ Real.pi/2) :
     (3/100 : ℝ)*z ≤ inwardF z := by
@@ -68,7 +68,8 @@ lemma inward_tail_lower {z : ℝ} (hz : 1 ≤ z ∧ z ≤ Real.pi/2) :
       have hc := Real.cos_nonneg_of_mem_Icc
         (show y ∈ Icc (-(Real.pi/2)) (Real.pi/2) by
           constructor <;> linarith [hy.1,hy.2,Real.pi_pos])
-      have hm := mul_nonneg (show 0 ≤ (4/5 : ℝ)*y-3/4-1/20 by linarith [hy.1]) hs
+      have hm := mul_nonneg
+        (show 0 ≤ (4/5 : ℝ)*y-3/4-1/20 by linarith [hy.1]) hs
       have hsum := first_quadrant_sum ⟨hy0,hy.2.le⟩
       nlinarith
   have hOne := inward_small_lower (z := (1 : ℝ)) (by constructor <;> norm_num)
@@ -99,9 +100,10 @@ lemma oppositeF_hasDeriv (z : ℝ) : HasDerivAt oppositeF
     ((hasDerivAt_id z).const_mul (4/5))).sub
     ((Real.hasDerivAt_sin z).const_mul (Real.sqrt 3-1))).sub
     (((hasDerivAt_const z 1).sub (Real.hasDerivAt_cos z)).const_mul (1/2))
-  convert hd using 1 <;> dsimp [oppositeF] <;> ring
+  convert hd using 1 <;>
+    first | rfl | (funext y; dsimp [oppositeF]; ring) | (dsimp; ring)
 
-/-- One fixed vector, not an angle-by-angle polynomial certificate. -/
+/-- One fixed vector, with its orthogonal square explicitly accounted for. -/
 lemma opposite_derivative_vector (z : ℝ) :
     (Real.sqrt 3-1)*Real.cos z+(1/2)*Real.sin z < (9 : ℝ)/10 := by
   let r := Real.sqrt 3-1
@@ -109,8 +111,9 @@ lemma opposite_derivative_vector (z : ℝ) :
   have hr2 := Real.sq_sqrt (show (0 : ℝ) ≤ 3 by norm_num)
   have hid : (r*Real.cos z+(1/2)*Real.sin z)^2+
       (r*Real.sin z-(1/2)*Real.cos z)^2 = r^2+1/4 := by
-    nlinarith [Real.sin_sq_add_cos_sq z,
-      mul_pos (show (0 : ℝ) < 1 by norm_num) (show 0 < (1 : ℝ) by norm_num)]
+    calc
+      _ = (r^2+1/4)*(Real.cos z^2+Real.sin z^2) := by ring
+      _ = r^2+1/4 := by rw [Real.cos_sq_add_sin_sq]; ring
   have hnorm : r^2+1/4 < (9/10 : ℝ)^2 := by dsimp [r]; nlinarith [hr.1]
   have hsq := sq_nonneg (r*Real.sin z-(1/2)*Real.cos z)
   change r*Real.cos z+(1/2)*Real.sin z < (9 : ℝ)/10
@@ -125,8 +128,7 @@ lemma opposite_scalar_reserve {z : ℝ} (hz : 0 ≤ z ∧ z ≤ Real.pi/3) :
     · dsimp [oppositeF]; fun_prop
     · intro y _
       exact (oppositeF_hasDeriv y).add ((hasDerivAt_id y).const_mul (1/10))
-    · intro y _
-      linarith [opposite_derivative_vector y]
+    · intro y _; linarith [opposite_derivative_vector y]
   have hh := hm (show (0 : ℝ) ∈ Icc 0 (Real.pi/3) by
     constructor <;> linarith [Real.pi_pos]) hz hz.1
   have hzero : oppositeF 0 = 1-4*Real.pi/15 := by simp [oppositeF]
