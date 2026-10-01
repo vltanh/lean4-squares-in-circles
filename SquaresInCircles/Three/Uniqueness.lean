@@ -1,6 +1,6 @@
 import SquaresInCircles.Three.Containing
 import SquaresInCircles.Three.Construction
-import SquaresInCircles.Common.ArcBudget
+import SquaresInCircles.Common.Sweep
 import SquaresInCircles.Common.Angles
 import SquaresInCircles.Common.Optimum
 

@@ -514,8 +514,8 @@ direction of $c_S$.
    of $c_S - o$.) $\square$
 
 *Lean: [`Five.containing_arc`](../../SquaresInCircles/Five/Containing.lean#L17),
-[`SquareChart.ray_mem`](../../SquaresInCircles/Common/Charts.lean#L59),
-[`arcFromChartInterval`](../../SquaresInCircles/Common/Charts.lean#L164).*
+[`SquareChart.ray_mem`](../../SquaresInCircles/Common/Charts.lean#L63),
+[`arcFromChartInterval`](../../SquaresInCircles/Common/Charts.lean#L168).*
 
 A square centred at $o$ gets no arc from this lemma, and none from its sweep
 either: then $\widehat S = S^\circ$, which lies in the open disk of radius

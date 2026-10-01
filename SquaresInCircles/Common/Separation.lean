@@ -143,4 +143,44 @@ theorem support_separator (S T : UnitSquare)
   dsimp [dot,sub] at hsep ⊢
   linarith
 
+lemma frame_abs_sum_pos (S : UnitSquare) {n : Point} (hn : n ≠ (0,0)) :
+    0 < |frameX S n|+|frameY S n| := by
+  have hp := normSq_pos_of_ne hn
+  rw [← frame_norm S n,← sq_abs (frameX S n),← sq_abs (frameY S n)] at hp
+  by_contra h
+  nlinarith [abs_nonneg (frameX S n),abs_nonneg (frameY S n)]
+
+lemma dot_open_bound_of_ne (S : UnitSquare) {n : Point} (hn : n ≠ (0,0))
+    {p : Point} (hp : openSquare S p) : |dot n (sub p S.center)| < width S n := by
+  have hh := weighted_strict (abs_nonneg (frameX S n)) (abs_nonneg (frameY S n))
+    (frame_abs_sum_pos S hn) hp.1 hp.2
+  rw [← frame_dot S]
+  change |frameX S n*localX S p+frameY S n*localY S p| < width S n
+  have ha := abs_add_le (frameX S n*localX S p) (frameY S n*localY S p)
+  rw [abs_mul,abs_mul] at ha
+  dsimp [width]
+  linarith
+
+lemma closed_dot_bound (S : UnitSquare) (n : Point) {p : Point}
+    (hp : closedSquare S p) : |dot n (sub p S.center)| ≤ width S n := by
+  rw [← frame_dot S]
+  change |frameX S n*localX S p+frameY S n*localY S p| ≤ width S n
+  have ha := abs_add_le (frameX S n*localX S p) (frameY S n*localY S p)
+  rw [abs_mul,abs_mul] at ha
+  have hx := mul_le_mul_of_nonneg_left hp.1 (abs_nonneg (frameX S n))
+  have hy := mul_le_mul_of_nonneg_left hp.2 (abs_nonneg (frameY S n))
+  dsimp [width]
+  linarith
+
+lemma closed_open_disjoint (S T : UnitSquare)
+    (hd : ∀ p, ¬ (openSquare S p ∧ openSquare T p))
+    {p : Point} (hS : closedSquare S p) : ¬ openSquare T p := by
+  obtain ⟨e⟩ := support_separator S T hd
+  intro hT
+  have h₁ := (abs_le.mp (closed_dot_bound S e.normal hS)).2
+  have h₂ := (abs_lt.mp (dot_open_bound_of_ne T e.nonzero hT)).1
+  have hsep := e.separates
+  simp only [dot_sub_right] at *
+  linarith
+
 end SquaresInCircles

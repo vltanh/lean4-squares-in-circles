@@ -1,4 +1,4 @@
-import SquaresInCircles.Common.RectangleArcs
+import SquaresInCircles.Common.ExteriorArcs
 
 /-!
 # Four squares: exterior arcs

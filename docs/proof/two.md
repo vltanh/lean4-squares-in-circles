@@ -333,7 +333,7 @@ relabelling that puts $T$ in the slot $c_1$ and $S$ in the slot $c_2$.
 $\square$
 
 *Lean: [`Two.uniqueness`](../../SquaresInCircles/Two/Uniqueness.lean#L41),
-[`SquareChart.half_arc`](../../SquaresInCircles/Common/Charts.lean#L193),
+[`SquareChart.half_arc`](../../SquaresInCircles/Common/Charts.lean#L197),
 [`OpenArc.opposite`](../../SquaresInCircles/Common/Angles.lean#L32),
 [`represents_quarter`](../../SquaresInCircles/Common/Angles.lean#L112).*
 

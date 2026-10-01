@@ -1,5 +1,5 @@
 import SquaresInCircles.Common.Congruence
-import SquaresInCircles.Common.ArcMetric
+import SquaresInCircles.Common.Arcs
 import Mathlib.Data.Fin.Tuple.Sort
 
 /-!

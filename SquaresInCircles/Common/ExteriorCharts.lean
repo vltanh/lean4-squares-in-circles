@@ -1,4 +1,4 @@
-import SquaresInCircles.Common.Coordinates
+import SquaresInCircles.Common.Charts
 
 /-!
 # Charts of exterior squares in a disk

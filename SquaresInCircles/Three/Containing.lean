@@ -1,5 +1,5 @@
 import SquaresInCircles.Three.Exterior
-import SquaresInCircles.Common.ArcMetric
+import SquaresInCircles.Common.Arcs
 import SquaresInCircles.Common.Trigonometry
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
 

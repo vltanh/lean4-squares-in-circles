@@ -50,7 +50,7 @@ and $b_S$ along the other.
 
 *Lean: [`alpha`](../../SquaresInCircles/Common/Basic.lean#L97),
 [`beta`](../../SquaresInCircles/Common/Basic.lean#L98),
-[`SquareChart.transfer`](../../SquaresInCircles/Common/Charts.lean#L69). (The
+[`SquareChart.transfer`](../../SquaresInCircles/Common/Charts.lean#L73). (The
 formal offsets come in the order of the frame; every statement is symmetric in
 them.)*
 
@@ -68,7 +68,7 @@ squares has an exterior square.
 outside $S^\circ$ and $a_S \ge \frac12$.
 
 *Lean: [`openSquare`](../../SquaresInCircles/Geometry.lean#L58),
-[`exists_exterior`](../../SquaresInCircles/Common/ArcBudget.lean#L16).*
+[`exists_exterior`](../../SquaresInCircles/Common/Sweep.lean#L66).*
 
 ### Definition 3.3 (farthest-vertex function)
 
@@ -344,8 +344,8 @@ shadow of $S$ on the line of $n$, in units of $|n|$.
 centre in the direction $n$.
 
 *Lean: [`width`](../../SquaresInCircles/Common/Separation.lean#L69),
-[`closed_dot_bound`](../../SquaresInCircles/Common/Support.lean#L78),
-[`dot_open_bound_of_ne`](../../SquaresInCircles/Common/Support.lean#L50).*
+[`closed_dot_bound`](../../SquaresInCircles/Common/Separation.lean#L164),
+[`dot_open_bound_of_ne`](../../SquaresInCircles/Common/Separation.lean#L153).*
 
 ### Lemma 3.12 (supporting line)
 
@@ -410,7 +410,7 @@ so $p \ne q$. $\square$
 
 *Lean:
 [`support_separator`](../../SquaresInCircles/Common/Separation.lean#L114),
-[`closed_open_disjoint`](../../SquaresInCircles/Common/Support.lean#L89).*
+[`closed_open_disjoint`](../../SquaresInCircles/Common/Separation.lean#L175).*
 
 ### Lemma 3.13 (squares at distance 1)
 
@@ -468,8 +468,8 @@ $\Gamma_r$ are measured by the angle $d$ of §2.1.
 *Figure 3.14.* Two directions $\theta, \theta'$ seen from $o$, the unit vector
 $u(\theta)$, and the angle $d(\theta, \theta')$ between them.
 
-*Lean: [`circlePoint`](../../SquaresInCircles/Common/AngularBudget.lean#L21),
-[`direction_dist`](../../SquaresInCircles/Common/AngularBudget.lean#L30).*
+*Lean: [`circlePoint`](../../SquaresInCircles/Common/Arcs.lean#L24),
+[`direction_dist`](../../SquaresInCircles/Common/Arcs.lean#L33).*
 
 ### Definition 3.15 (arc)
 
@@ -484,7 +484,7 @@ $S^\circ$, we say that $S$ *holds* the arc.
 *Figure 3.15.* An arc of $U$ with centre $\theta_0$ and half-width $w$ (thick).
 It need not cover all of $\Gamma_r \cap U$ (thin).
 
-*Lean: [`OpenArc`](../../SquaresInCircles/Common/AngularBudget.lean#L38).*
+*Lean: [`OpenArc`](../../SquaresInCircles/Common/Arcs.lean#L41).*
 
 ![Four disjoint squares around the disk centre, each holding a coloured arc of the circle of radius r; the arcs do not overlap](figures/budget.svg)
 
@@ -526,10 +526,9 @@ meet at endpoints that lie in none of them (hollow). The closed arcs of
 half-width $t w$ for $t < 1$ (thick, here $t = \frac45$) are disjoint, so their
 lengths add up to at most $2\pi$.
 
-*Lean:
-[`open_arc_budget`](../../SquaresInCircles/Common/AngularBudget.lean#L65),
-[`closed_arc_budget`](../../SquaresInCircles/Common/AngularBudget.lean#L48),
-[`uniform_arc_excess`](../../SquaresInCircles/Common/AngularBudget.lean#L79).*
+*Lean: [`open_arc_budget`](../../SquaresInCircles/Common/Arcs.lean#L68),
+[`closed_arc_budget`](../../SquaresInCircles/Common/Arcs.lean#L51),
+[`uniform_arc_excess`](../../SquaresInCircles/Common/Arcs.lean#L82).*
 
 ### Lemma 3.17 (disjoint arcs have separated centres)
 
@@ -566,7 +565,7 @@ $d(\theta_U, \theta_V) \ge \pi$, and only opposite directions are $\pi$ apart.
 $\square$
 
 *Lean:
-[`OpenArc.centers_separated`](../../SquaresInCircles/Common/ArcMetric.lean#L28),
+[`OpenArc.centers_separated`](../../SquaresInCircles/Common/Arcs.lean#L131),
 [`OpenArc.opposite`](../../SquaresInCircles/Common/Angles.lean#L32),
 [`antipodal_of_distance`](../../SquaresInCircles/Common/Angles.lean#L24).*
 
@@ -610,9 +609,9 @@ This gives the budget for three sets without measure theory, and it also
 locates the centres, which the uniqueness proofs use.
 
 *Lean:
-[`OpenArc.third_distance_bounds`](../../SquaresInCircles/Common/ArcMetric.lean#L93),
-[`triple_arc_budget`](../../SquaresInCircles/Common/ArcMetric.lean#L106),
-[`direction_triangle_perimeter`](../../SquaresInCircles/Common/ArcMetric.lean#L68).*
+[`OpenArc.third_distance_bounds`](../../SquaresInCircles/Common/Arcs.lean#L196),
+[`triple_arc_budget`](../../SquaresInCircles/Common/Arcs.lean#L209),
+[`direction_triangle_perimeter`](../../SquaresInCircles/Common/Arcs.lean#L171).*
 
 ### Lemma 3.19 (regular polygons)
 
@@ -680,9 +679,9 @@ $-\theta_S$, and reflecting when $\varepsilon_S = -1$, puts the square in
 standard position, centred at $(a_S, b_S)$; the point at angle
 $\theta_S + \varepsilon_S t$ goes to the point at chart angle $t$.
 
-*Lean: [`SquareChart`](../../SquaresInCircles/Common/Charts.lean#L46),
-[`ChartCondition`](../../SquaresInCircles/Common/Charts.lean#L40),
-[`chartAngle`](../../SquaresInCircles/Common/Charts.lean#L35).*
+*Lean: [`SquareChart`](../../SquaresInCircles/Common/Charts.lean#L50),
+[`ChartCondition`](../../SquaresInCircles/Common/Charts.lean#L44),
+[`chartAngle`](../../SquaresInCircles/Common/Charts.lean#L39).*
 
 ### Lemma 3.21 (charts)
 
@@ -741,13 +740,13 @@ $\theta_S + \varepsilon_S t$ with $t \in (l, h)$, because $h - l \le 2\pi$; and
 at $m = 0$ the hypothesis says that each such point $o + r\,u(\theta_S + \varepsilon_S t)$
 lies in $S^\circ$. $\square$
 
-*Lean: [`sorted_square_chart`](../../SquaresInCircles/Common/Charts.lean#L146),
-[`square_chart`](../../SquaresInCircles/Common/Charts.lean#L133),
-[`ChartCondition.reflect`](../../SquaresInCircles/Common/Charts.lean#L99),
-[`ChartCondition.turn`](../../SquaresInCircles/Common/Charts.lean#L107),
-[`ChartCondition.swap`](../../SquaresInCircles/Common/Charts.lean#L119),
-[`SquareChart.exterior`](../../SquaresInCircles/Common/Charts.lean#L158),
-[`SquareChart.arc`](../../SquaresInCircles/Common/Charts.lean#L182).*
+*Lean: [`sorted_square_chart`](../../SquaresInCircles/Common/Charts.lean#L150),
+[`square_chart`](../../SquaresInCircles/Common/Charts.lean#L137),
+[`ChartCondition.reflect`](../../SquaresInCircles/Common/Charts.lean#L103),
+[`ChartCondition.turn`](../../SquaresInCircles/Common/Charts.lean#L111),
+[`ChartCondition.swap`](../../SquaresInCircles/Common/Charts.lean#L123),
+[`SquareChart.exterior`](../../SquaresInCircles/Common/Charts.lean#L162),
+[`SquareChart.arc`](../../SquaresInCircles/Common/Charts.lean#L186).*
 
 ### Lemma 3.22 (Cartesian form of a chart)
 
@@ -776,8 +775,8 @@ So $F_{\theta_S}(x, y) \in S^\circ$ exactly when $|x - a_S| < \frac12$ and
 $|y - \varepsilon_S b_S| < \frac12$, which is Definition 2.4. $\square$
 
 *Lean:
-[`SquareChart.cartesian`](../../SquaresInCircles/Common/Coordinates.lean#L41),
-[`SquareChart.unreversed`](../../SquaresInCircles/Common/Coordinates.lean#L34),
+[`SquareChart.cartesian`](../../SquaresInCircles/Common/Charts.lean#L241),
+[`SquareChart.unreversed`](../../SquaresInCircles/Common/Charts.lean#L234),
 [`chart_represents`](../../SquaresInCircles/Common/Congruence.lean#L197).*
 
 ## 3.6 Arcs of an exterior square
@@ -810,9 +809,9 @@ and the line of the lower edge at $-V_S$; it does not reach the upper edge.
 The part of the circle inside the square is highlighted: here $V_S < A_S$, so
 the lower edge clips it, and it runs from $-V_S$ to $A_S$.
 
-*Lean: [`capA`](../../SquaresInCircles/Common/RectangleArcs.lean#L21),
-[`capV`](../../SquaresInCircles/Common/RectangleArcs.lean#L22),
-[`capU`](../../SquaresInCircles/Common/RectangleArcs.lean#L23).*
+*Lean: [`capA`](../../SquaresInCircles/Common/ExteriorArcs.lean#L21),
+[`capV`](../../SquaresInCircles/Common/ExteriorArcs.lean#L22),
+[`capU`](../../SquaresInCircles/Common/ExteriorArcs.lean#L23).*
 
 ### Lemma 3.24 (arcs of an exterior square)
 
@@ -888,12 +887,12 @@ from $-A_S$ to $A_S$, and its centre is the phase.
 because $\frac{1/2 - b_S}r \ge 1$. By (2), $S$ holds the cap of half-width
 $\frac\pi2$ centred at $\theta_S$. $\square$
 
-*Lean: [`cap_mem`](../../SquaresInCircles/Common/RectangleArcs.lean#L27),
-[`SquareChart.edge_arc`](../../SquaresInCircles/Common/RectangleArcs.lean#L54),
-[`SquareChart.edge_arc_gt`](../../SquaresInCircles/Common/RectangleArcs.lean#L73),
-[`SquareChart.cap_arc`](../../SquaresInCircles/Common/RectangleArcs.lean#L87),
-[`SquareChart.full_cap_arc`](../../SquaresInCircles/Common/RectangleArcs.lean#L103),
-[`SquareChart.half_arc`](../../SquaresInCircles/Common/Charts.lean#L193).*
+*Lean: [`cap_mem`](../../SquaresInCircles/Common/ExteriorArcs.lean#L27),
+[`SquareChart.edge_arc`](../../SquaresInCircles/Common/ExteriorArcs.lean#L54),
+[`SquareChart.edge_arc_gt`](../../SquaresInCircles/Common/ExteriorArcs.lean#L73),
+[`SquareChart.cap_arc`](../../SquaresInCircles/Common/ExteriorArcs.lean#L87),
+[`SquareChart.full_cap_arc`](../../SquaresInCircles/Common/ExteriorArcs.lean#L103),
+[`SquareChart.half_arc`](../../SquaresInCircles/Common/Charts.lean#L197).*
 
 ## 3.7 The radial sweep
 
@@ -920,7 +919,7 @@ $\Gamma_r$. Sliding it away from $o$ along the ray through its centre (dotted
 copies) sweeps out $\widehat{S}$, which covers the highlighted arc. Five squares
 use exactly this ([Lemma 8.11](five.md#lemma-811-the-sweep-holds-a-fifth-of-the-circle)).
 
-*Lean: [`openRay`](../../SquaresInCircles/Common/Support.lean#L28).*
+*Lean: [`openRay`](../../SquaresInCircles/Common/Sweep.lean#L33).*
 
 The sweep holds longer arcs than the square itself. The next two lemmas show
 that it still avoids every other square, as long as every centre lies within
@@ -948,7 +947,7 @@ $w_S(n) = \frac12\left(|\langle n, e^S_1\rangle| + |\langle n, e^S_2\rangle|\rig
 and $w_T(n)$ are both at least $\frac12|n|$, so their sum is at least $|n|$.
 $\square$
 
-*Lean: [`dot_center_le`](../../SquaresInCircles/Common/Support.lean#L18).*
+*Lean: [`dot_center_le`](../../SquaresInCircles/Common/Sweep.lean#L23).*
 
 ### Lemma 3.27 (the sweep is safe)
 
@@ -988,8 +987,8 @@ line, so sliding $S$ along the ray only moves it further from $T$.
    $\square$
 
 *Lean:
-[`safe_openRay_of_disjoint`](../../SquaresInCircles/Common/Support.lean#L63),
-[`Separation.center_signs`](../../SquaresInCircles/Common/Support.lean#L39).*
+[`safe_openRay_of_disjoint`](../../SquaresInCircles/Common/Sweep.lean#L50),
+[`Separation.center_signs`](../../SquaresInCircles/Common/Sweep.lean#L37).*
 
 ### Proposition 3.28 (budget with a sweep)
 
@@ -1010,10 +1009,9 @@ holds an arc of half-width at least $\frac\pi n$. Since $n \ge 2$, some square
 is exterior (Definition 3.2), and its arc has half-width more than
 $\frac\pi n$. This contradicts Lemma 3.16. $\square$
 
-*Lean:
-[`ray_budget_impossible`](../../SquaresInCircles/Common/ArcBudget.lean#L43),
-[`rayRegions_disjoint`](../../SquaresInCircles/Common/ArcBudget.lean#L28),
-[`exists_exterior`](../../SquaresInCircles/Common/ArcBudget.lean#L16).*
+*Lean: [`ray_budget_impossible`](../../SquaresInCircles/Common/Sweep.lean#L93),
+[`rayRegions_disjoint`](../../SquaresInCircles/Common/Sweep.lean#L78),
+[`exists_exterior`](../../SquaresInCircles/Common/Sweep.lean#L66).*
 
 ## 3.8 Elementary estimates
 

@@ -53,7 +53,7 @@ squares (Definition 2.1), indexed by $\lbrace 1, \dots, n\rbrace$. A
 [`normSq`](../../SquaresInCircles/Geometry.lean#L30),
 [`inDisk`](../../SquaresInCircles/Geometry.lean#L67),
 [`Direction`](../../SquaresInCircles/Geometry.lean#L79),
-[`direction_dist`](../../SquaresInCircles/Common/AngularBudget.lean#L30).*
+[`direction_dist`](../../SquaresInCircles/Common/Arcs.lean#L33).*
 
 ## 2.2 Unit squares
 
@@ -214,7 +214,7 @@ the orthonormal basis. Finally $F_\phi(0) = o$. $\square$
 *Lean: [`frameEquiv`](../../SquaresInCircles/Common/Congruence.lean#L24),
 [`frameEquiv_zero`](../../SquaresInCircles/Common/Congruence.lean#L44),
 [`frameEquiv_distance`](../../SquaresInCircles/Common/Congruence.lean#L47),
-[`pointInDirection_norm`](../../SquaresInCircles/Common/Coordinates.lean#L19).*
+[`pointInDirection_norm`](../../SquaresInCircles/Common/Charts.lean#L219).*
 
 ### Definition 2.6 (congruence to a model)
 
@@ -357,7 +357,7 @@ $|p| \ge R_n > R$. So $\overline{S_{\sigma(i)}}$ does not lie in
 $\overline{D}(o, R)$, a contradiction. $\square$
 
 *Lean: [`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L47),
-[`pointInDirection_norm`](../../SquaresInCircles/Common/Coordinates.lean#L19).*
+[`pointInDirection_norm`](../../SquaresInCircles/Common/Charts.lean#L219).*
 
 ### Corollary 2.10 (the scheme of proof)
 

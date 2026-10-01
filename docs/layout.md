@@ -45,26 +45,23 @@ squares the pair theorem, the ring and the middle column over the files
 | File | Contents |
 | --- | --- |
 | `Basic.lean` | Vector operations and the Cauchy–Schwarz inequality, square frames and vertices, `InteriorDisjoint`, the farthest-vertex bound `phi` and its converse, the centre and the nearest point of a square in a disk, inscribed disks |
-| `Separation.lean` | Open squares are convex; the Hahn–Banach supporting functional for two squares with disjoint interiors |
-| `Tangents.lean` | The tangent identity for `phi` |
-| `Support.lean` | The radial sweep stays disjoint from the other squares when every centre is within distance 1 of the disk centre; a closed square misses a disjoint open one |
-| `AngularBudget.lean` | `OpenArc` witnesses on circles about the disk centre, and the Haar-measure budget |
-| `ArcMetric.lean` | Midpoint separation of disjoint arcs; circle perimeter inequality; three-arc budget |
-| `Charts.lean` | `SquareChart`: membership seen from the disk centre, sorted coordinates, arcs from chart intervals, the half circle of a square with `a = 1/2` |
-| `Coordinates.lean` | Points in a rotated frame at the disk centre; a chart in Cartesian coordinates |
+| `Tangents.lean` | The tangent identity for `phi`, the lines of the contact polygons |
+| `Separation.lean` | Open squares are convex; the Hahn–Banach supporting functional for two squares with disjoint interiors; the projections of a square on a direction |
+| `Arcs.lean` | `OpenArc` witnesses on circles about the disk centre; the budget of arcs in disjoint regions; the separation of their centres and the budget of three arcs |
+| `Sweep.lean` | The radial sweep of a square stays disjoint from the other squares when every centre is within distance 1 of the disk centre; the budget with a sweep |
+| `Charts.lean` | `SquareChart`: membership seen from the disk centre, sorted coordinates, arcs from chart intervals, the half circle of a square with `a = 1/2`; points in a rotated frame and the Cartesian form of a chart |
 | `ExteriorCharts.lean` | `ExteriorChart`: the sorted chart of an exterior square in a disk of squared radius `Q`, with its far corner in the disk and its centre within `√(Q - 1/4) - 1/2` of the disk centre; the nearest point of a square in chart coordinates |
-| `RectangleArcs.lean` | Arcs of an exterior square: between its edges, bounded by the four sums `2A`, `A + U`, `A + V`, `U + V`, and the cap on small circles |
-| `ArcBudget.lean` | The budget of a packing: some square avoids the disk centre, and the square that contains it can be replaced by its radial sweep |
+| `ExteriorArcs.lean` | Arcs of an exterior square: between its edges, bounded by the four sums `2A`, `A + U`, `A + V`, `U + V`, and the cap on small circles |
+| `DiskSupport.lean` | Cauchy–Schwarz on a disk; the support of a square in a disk from its far vertex; the support function of an axis-parallel square and its lower bound from the distance of the centre |
 | `Analysis.lean` | Monotonicity and concavity from derivatives, positivity from a curvature bound and one value, the largest value at a peak, leftmost minima |
 | `Trigonometry.lean` | Bounds for `π`, `sin`, `cos` and `arcsin`: small angles, Taylor brackets, concave first harmonics, radicals and rotating lengths, half angles |
-| `DiskSupport.lean` | Cauchy–Schwarz on a disk; the support of a square in a disk from its far vertex; the support function of an axis-parallel square and its lower bound from the distance of the centre |
-| `SeparatingAxes.lean` | The separating-axis theorem: disjoint squares are separated along one of their four edge axes, each with its threshold; for two oriented squares, the threshold `1/2 + angularWidth d` and the offset of the centres in either frame |
 | `Constructions.lean` | Axis-parallel squares centred at given points: membership, disjointness and containment |
 | `Congruence.lean` | Congruence to a model from square-by-square slots; open squares determine closed ones; configurations congruent to a packing are packings; the rigid-motion witness; the square at given coordinates in a rotated frame (`modelSquare`, `orientedSquare`) |
-| `Optimum.lean` | `Optimum`, the statement every case proves; the lower bound, the least radius and the converse of uniqueness for all cases |
-| `Angles.lean` | `m` directions pairwise at least `g` apart have `mg ≤ 2π`, and form a regular polygon when `mg = 2π`; disjoint half circles are opposite; quarter turns of a frame |
 | `Contacts.lean` | Disjoint squares have centres at least 1 apart; at distance exactly 1 they are side-neighbours; squares with parallel sides in one frame |
+| `Angles.lean` | `m` directions pairwise at least `g` apart have `mg ≤ 2π`, and form a regular polygon when `mg = 2π`; disjoint half circles are opposite; quarter turns of a frame |
+| `SeparatingAxes.lean` | The separating-axis theorem: disjoint squares are separated along one of their four edge axes, each with its threshold; for two oriented squares, the threshold `1/2 + angularWidth d` and the offset of the centres in either frame |
 | `Frames.lean` | A square read in another frame (`pullSquare`); packings under a change of frame, a relabelling and the reflection in the diagonal; composing congruences; the frame of a square that contains the disk centre |
+| `Optimum.lean` | `Optimum`, the statement every case proves; the lower bound, the least radius and the converse of uniqueness for all cases |
 
 ## The cases
 

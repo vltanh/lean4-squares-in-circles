@@ -805,8 +805,8 @@ $\varepsilon\sin\delta = -1$, that is $\sin\delta = -\varepsilon$. So
 $\delta = -\varepsilon\frac\pi2$. $\square$
 
 *Lean: [`Three.apex_phase`](../../SquaresInCircles/Three/Uniqueness.lean#L48),
-[`cos_sub_distance`](../../SquaresInCircles/Common/ArcMetric.lean#L113),
-[`cos_two_pi_thirds`](../../SquaresInCircles/Common/ArcMetric.lean#L119).*
+[`cos_sub_distance`](../../SquaresInCircles/Common/Arcs.lean#L216),
+[`cos_two_pi_thirds`](../../SquaresInCircles/Common/Arcs.lean#L222).*
 
 ### Lemma 6.17 (where the squares sit)
 
@@ -919,7 +919,7 @@ $w_i \ge \frac\pi3$. The caps lie in the pairwise disjoint sets $S_i^\circ$.
    [Lemma 3.31](common.md#lemma-331-from-slots-to-congruence). $\square$
 
 *Lean: [`Three.uniqueness`](../../SquaresInCircles/Three/Uniqueness.lean#L121),
-[`SquareChart.half_arc`](../../SquaresInCircles/Common/Charts.lean#L193),
+[`SquareChart.half_arc`](../../SquaresInCircles/Common/Charts.lean#L197),
 [`OpenArc.opposite`](../../SquaresInCircles/Common/Angles.lean#L32),
 [`congruent_of_slots`](../../SquaresInCircles/Common/Congruence.lean#L148).*
 

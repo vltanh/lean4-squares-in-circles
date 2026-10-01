@@ -1,4 +1,4 @@
-import SquaresInCircles.Common.Coordinates
+import SquaresInCircles.Common.Charts
 import SquaresInCircles.Common.Constructions
 
 /-!

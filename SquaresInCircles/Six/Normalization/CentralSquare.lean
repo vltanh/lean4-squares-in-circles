@@ -1,5 +1,5 @@
-import SquaresInCircles.Common.ArcBudget
-import SquaresInCircles.Common.RectangleArcs
+import SquaresInCircles.Common.Sweep
+import SquaresInCircles.Common.ExteriorArcs
 import SquaresInCircles.Common.Trigonometry
 import SquaresInCircles.Six.Normalization.Basic
 import SquaresInCircles.Common.Frames

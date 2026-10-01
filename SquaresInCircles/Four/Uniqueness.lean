@@ -1,7 +1,7 @@
 import SquaresInCircles.Four.Exterior
 import SquaresInCircles.Four.Containing
 import SquaresInCircles.Four.Construction
-import SquaresInCircles.Common.ArcBudget
+import SquaresInCircles.Common.Sweep
 import SquaresInCircles.Common.Angles
 import SquaresInCircles.Common.Optimum
 

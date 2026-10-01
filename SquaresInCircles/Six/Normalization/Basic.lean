@@ -1,5 +1,5 @@
 import SquaresInCircles.Common.Contacts
-import SquaresInCircles.Common.Support
+import SquaresInCircles.Common.Sweep
 import SquaresInCircles.Common.ExteriorCharts
 import SquaresInCircles.Common.DiskSupport
 import SquaresInCircles.Common.Trigonometry
