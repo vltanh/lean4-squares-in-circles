@@ -934,9 +934,9 @@ $\sigma_k(\frac\pi3) \ge 0$, and $\sigma_k(\frac\pi3) = 0$ only if the two
 states with the signs $s$ and $t$ form a contact.
 
 *Lean:
-[`Seven.fixed_gap_nonneg`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L171),
-[`Seven.fixed_gap_zero`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L177),
-[`Seven.fixed_gap_property`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L166),
+[`Seven.fixed_gap_nonneg`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L172),
+[`Seven.fixed_gap_zero`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L178),
+[`Seven.fixed_gap_property`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L167),
 [`Seven.PairProperty`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L69),
 [`Seven.gap`](../../SquaresInCircles/Seven/Exterior.lean#L26).*
 

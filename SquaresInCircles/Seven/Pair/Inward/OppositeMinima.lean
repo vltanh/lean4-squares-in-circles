@@ -9,12 +9,12 @@ In the turn `e = label a u + label A v - π/6` the support sum is
 axial target at a positive turn it is at least its value with the source at the
 top of its label segment and the target at the end of its label segment. A
 diagonal source moves to its junction or a capped axial endpoint, and a circular
-source with a straight axial target to one of its two junctions. The circular
-pieces use a two-circle certificate: the radical envelope is bounded by an
-explicit quadratic, which turns the support bound into `radialE`, positive by
-completing the square in `v`: what remains is `z` times a polynomial that
-decreases on `[0, 1]` and is positive at `5/8`. The diagonal junction uses one
-fixed positive value and monotonicity.
+source with a straight axial target to one of its two junctions. On the
+circular pieces the radical of the circle lies below an explicit quadratic,
+which turns the support bound into `radialE`, positive by completing the square
+in `v`: what remains is `z` times a polynomial that decreases on `[0, 1]` and is
+positive at `5/8`. The diagonal junction uses one positive value and
+monotonicity.
 -/
 noncomputable section
 open Set

@@ -162,7 +162,8 @@ theorem fixed_gap_of_active_cases
   · exact pairProperty_cap_first ha hb hcap fun i =>
       target _ _ A v s t k (capVertex_admissible i) hb (capVertex_active i)
 
-/-- Complete fixed-angle support theorem including capped labels. -/
+/-- At the gap `π/3`, the support sums of two admissible states are nonnegative
+on every axis and for every pair of signs, and zero only at a contact. -/
 theorem fixed_gap_property (a u A v : ℝ) (s t : TransverseSign) (k : Fin 4)
     (h : Admissible a u) (h' : Admissible A v) :
     PairProperty a u A v s t k :=

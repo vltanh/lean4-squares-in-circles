@@ -5,8 +5,8 @@ import SquaresInCircles.Seven.Pair.Contacts
 
 In the turn `w = label a u + label A v - π/3` the support sum is
 `1/2 - u + A sin w - v cos w + (|sin w| + cos w)/2`. For two side labels,
-Cauchy–Schwarz on both disks with a certificate tight only at zero turn bounds
-it below by `0`, so it vanishes only at two side states. For the other active
+Cauchy–Schwarz on both disks, with weights for which it is tight only at zero
+turn, bounds it below by `0`, so it vanishes only at two side states. For the other active
 labels a linear clearance between the labels and one-variable profiles in the
 turn make it positive.
 -/
