@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Normalization.Constants
-public import SquaresInCircles.Seven.Labels
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.Constants
+import SquaresInCircles.Seven.Labels
 
 /-!
 # The scalar part of normalization Lemma B
@@ -29,6 +26,7 @@ def AvoidsCore (a u : ℝ) : Prop :=
 
 namespace ContainedChart
 variable {a u : ℝ} (h : ContainedChart a u)
+include h
 
 lemma seven_admissible : Seven.Admissible a u where
   u_nonneg := h.u_nonneg

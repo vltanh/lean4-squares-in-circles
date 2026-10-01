@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.PairConstants
-public import SquaresInCircles.Six.Stress.VertexEnvelope
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.PairConstants
+import SquaresInCircles.Six.Stress.VertexEnvelope
 
 /-!
 # A fixed-central-weight adjacent-pair stress
@@ -139,7 +136,6 @@ lemma minorant_le_value (no wo : Bool) (u : Fin 4) (n w : ℝ) :
 
 @[simp] lemma threshold_zero : threshold 0 0=2+rStar+mStar/2 := by
   norm_num [threshold,angularWidth]
-  ring
 
 lemma minorant_zero (no wo : Bool) {u : Fin 4} (hu : u=0 ∨ u=3) :
     minorant no wo u 0 0=pairBase := by

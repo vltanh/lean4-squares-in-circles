@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Normalization.CapSupport
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.CapSupport
 
 /-!
 # A deep cap must face the square's primary coordinate
@@ -59,7 +56,7 @@ theorem primary_cap_angle {a b h t : ℝ}
   have hwide := abs_le.mp ht
   by_cases hhi : t ≤ Real.pi / 4
   · by_cases hlo : -Real.pi / 4 ≤ t
-    · have hsmall : |t| ≤ Real.pi / 4 := abs_le.mpr ⟨hlo, hhi⟩
+    · have hsmall : |t| ≤ Real.pi / 4 := abs_le.mpr ⟨by linarith, hhi⟩
       exact cap_angle_lt_two_fifths hh (cap_support_bound_signed hsmall hbox hcap) hsmall
     · have hfold : |t + Real.pi / 2| ≤ Real.pi / 4 := by
         apply abs_le.mpr

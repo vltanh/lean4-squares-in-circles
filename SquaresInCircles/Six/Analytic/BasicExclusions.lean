@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.QuadrantGeometry
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.QuadrantGeometry
 
 /-!
 # Elementary separator exclusions before the strong central box
@@ -21,7 +18,7 @@ lemma inward_secondary_negative {b t x y : ℝ}
     b-1/2-x*Real.cos t-y*Real.sin t-angularWidth t < 0 := by
   have hc := octant_trig ht
   have hxc := mul_nonneg hx0 (show 0 ≤ Real.cos t by linarith [hc.1.1])
-  have hys := (signed_sine_product hy0 hy1).2 (t := t)
+  have hys := (signed_sine_product (t := t) hy0 hy1).2
   have hb' := (le_abs_self b).trans_lt hb
   dsimp [angularWidth]
   rw [abs_of_nonneg (show 0 ≤ Real.cos t by linarith [hc.1.1])]

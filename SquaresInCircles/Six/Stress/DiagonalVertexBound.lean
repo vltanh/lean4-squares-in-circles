@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Stress.DiagonalCapBound
-public import SquaresInCircles.Six.Analytic.CandidateBounds
-public import SquaresInCircles.Six.Analytic.DiagonalVertex
-
-@[expose] public section
+import SquaresInCircles.Six.Stress.DiagonalCapBound
+import SquaresInCircles.Six.Analytic.CandidateBounds
+import SquaresInCircles.Six.Analytic.DiagonalVertex
 
 /-!
 # The diagonal vertex branch, without a finite-cover certificate
@@ -42,7 +39,8 @@ private lemma diagonal_diamond {w s d : ℝ} (hd : DiagonalDomain w s d) :
 private lemma diagonal_max_le_abs_sum (w s : ℝ) :
     2 * max |(w + s) / 2| |diagonalBeta w s| ≤ |w| + |s| := by
   have hs := abs_add_le w s
-  have hd := abs_sub_le w s
+  have hd : |w - s| ≤ |w| + |s| := abs_le.mpr
+    ⟨by linarith [neg_abs_le w, le_abs_self s], by linarith [le_abs_self w, neg_abs_le s]⟩
   have hsum : w + s = 2 * ((w + s) / 2) := by ring
   have hdiff : w - s = 2 * diagonalBeta w s := by dsimp [diagonalBeta]; ring
   rw [hsum, abs_mul, abs_of_pos (by norm_num : (0 : ℝ) < 2)] at hs
@@ -72,7 +70,9 @@ theorem diagonal_vertex_remainder_positive {w s d : ℝ} (hd : DiagonalDomain w 
     change 1 ≤ 2 * Six.radius * |Real.sin z| at hv
     dsimp [t]
     nlinarith only [hv, hprod]
-  have htriangle := abs_sub_le (d - Real.pi / 4) a
+  have htriangle : |d - Real.pi / 4 - a| ≤ |d - Real.pi / 4| + |a| := abs_le.mpr
+    ⟨by linarith [neg_abs_le (d - Real.pi / 4), le_abs_self a],
+      by linarith [le_abs_self (d - Real.pi / 4), neg_abs_le a]⟩
   have hsign : d - Real.pi / 4 ≤ 0 := by linarith [hd.2.2.2]
   rw [abs_of_nonpos hsign] at htriangle
   have hpi : Real.pi < (22 : ℝ) / 7 := by linarith [Real.pi_lt_d4]

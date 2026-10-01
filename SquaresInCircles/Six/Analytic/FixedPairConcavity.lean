@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.FixedPairCurvature
-public import SquaresInCircles.Six.Analytic.FixedPairNegativeCardinal
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FixedPairCurvature
+import SquaresInCircles.Six.Analytic.FixedPairNegativeCardinal
 
 /-!
 # Concavity on the six geometric sign sectors
@@ -23,15 +20,19 @@ private def trigSlope (A B x : ℝ) : ℝ := -A*Real.sin x+B*Real.cos x
 
 private lemma trigValue_deriv (A B x : ℝ) :
     HasDerivAt (trigValue A B) (trigSlope A B x) x := by
-  convert ((Real.hasDerivAt_cos x).const_mul A).add
-    ((Real.hasDerivAt_sin x).const_mul B) using 1 <;>
-    dsimp [trigValue,trigSlope] <;> ring
+  have h := ((Real.hasDerivAt_cos x).const_mul A).add
+    ((Real.hasDerivAt_sin x).const_mul B)
+  have e : A*(-Real.sin x)+B*Real.cos x=trigSlope A B x := by
+    simp only [trigSlope]; ring
+  exact h.congr_deriv e
 
 private lemma trigSlope_deriv (A B x : ℝ) :
     HasDerivAt (trigSlope A B) (-trigValue A B x) x := by
-  convert ((Real.hasDerivAt_sin x).const_mul (-A)).add
-    ((Real.hasDerivAt_cos x).const_mul B) using 1 <;>
-    dsimp [trigValue,trigSlope] <;> ring
+  have h := ((Real.hasDerivAt_sin x).const_mul (-A)).add
+    ((Real.hasDerivAt_cos x).const_mul B)
+  have e : -A*Real.cos x+B*(-Real.sin x)=-trigValue A B x := by
+    simp only [trigValue]; ring
+  exact h.congr_deriv e
 
 private def nSpeed (k : Fin 3) : ℝ := if k=1 then 0 else 1
 private def wSpeed (k : Fin 3) : ℝ := if k=0 then 0 else 1
@@ -142,19 +143,20 @@ theorem sliceCurvature_negative {no wo pn pw pq : Bool} (u : Fin 4) (k : Fin 3)
     {n w x : ℝ} (hd : Domain no wo (sliceN k n w x) (sliceW k n w x))
     (hs : Sector pn pw pq (sliceN k n w x) (sliceW k n w x)) :
     sliceCurvature no wo u pn pw pq k n w x≤-1/500 := by
-  have hN := north_curvature_bound no u k n w x
   fin_cases k
   · change Domain no wo x w at hd
     change Sector pn pw pq x w at hs
     change -northTrig no u pn x-differenceTrig u pq (x-w)+
-      (northWave no u 0 n w).curvature (northRadius u) x+
-      (westWave wo u 0 n w).curvature Six.radius x≤-1/500
-    have htN := northTrig_lower hd hs
-    fin_cases u
-    · have hW := west_n_first wo (u := 0) (Or.inl rfl) n w x
+      (northWave no u 0 x w).curvature (northRadius u) x+
+      (westWave wo u 0 x w).curvature Six.radius x≤-1/500
+    have hN := north_curvature_bound no u 0 x w x
+    have htN := northTrig_lower (u := u) hd hs
+    have hu4 : u=0 ∨ u=1 ∨ u=2 ∨ u=3 := by fin_cases u <;> simp
+    rcases hu4 with rfl | rfl | rfl | rfl
+    · have hW := west_n_first wo (u := 0) (Or.inl rfl) x w x
       have hQ := differenceTrig_candidate hd hs (u := 0) (Or.inl rfl)
       linarith
-    · have hW := west_n_first wo (u := 1) (Or.inr rfl) n w x
+    · have hW := west_n_first wo (u := 1) (Or.inr rfl) x w x
       have hQ := differenceTrig_alternate_one hd hs
       linarith
     · have hW := west_alternate_two_curvature_nonpos hd
@@ -165,14 +167,16 @@ theorem sliceCurvature_negative {no wo pn pw pq : Bool} (u : Fin 4) (k : Fin 3)
       cases no
       · have htN' := northTrig_cardinal_candidate hd hs (u := 3) (Or.inr rfl)
         linarith
-      · have hN0 := north_n_own_last (u := 3) (Or.inr rfl) n w x
+      · have hN0 := north_n_own_last (u := 3) (Or.inr rfl) x w x
         linarith
   · change Domain no wo n x at hd
     change Sector pn pw pq n x at hs
     change -westTrig wo pw x-differenceTrig u pq (n-x)+
-      (northWave no u 1 n w).curvature (northRadius u) x+
-      (westWave wo u 1 n w).curvature Six.radius x≤-1/500
-    fin_cases u
+      (northWave no u 1 n x).curvature (northRadius u) x+
+      (westWave wo u 1 n x).curvature Six.radius x≤-1/500
+    have hN := north_curvature_bound no u 1 n x x
+    have hu4 : u=0 ∨ u=1 ∨ u=2 ∨ u=3 := by fin_cases u <;> simp
+    rcases hu4 with rfl | rfl | rfl | rfl
     · cases wo
       · have hW := west_w_cardinal_bound hd 0
         norm_num [westWCap] at hW
@@ -185,7 +189,7 @@ theorem sliceCurvature_negative {no wo pn pw pq : Bool} (u : Fin 4) (k : Fin 3)
           have htW := westTrig_cardinal_lower hd hs hx0
           have hQ := differenceTrig_cardinal_west hd hs (u := 0) (Or.inl rfl) hx0
           linarith
-      · have hW := west_w_own_first (u := 0) (Or.inl rfl) n w x
+      · have hW := west_w_own_first (u := 0) (Or.inl rfl) n x x
         have htW := westTrig_own_lower hd hs
         have hQ := differenceTrig_candidate hd hs (u := 0) (Or.inl rfl)
         linarith
@@ -195,10 +199,10 @@ theorem sliceCurvature_negative {no wo pn pw pq : Bool} (u : Fin 4) (k : Fin 3)
         norm_num [westWCap] at hW
         have htW := westTrig_cardinal_coarse hd hs
         linarith
-      · have hW := west_w_own_first (u := 1) (Or.inr rfl) n w x
+      · have hW := west_w_own_first (u := 1) (Or.inr rfl) n x x
         have htW := westTrig_own_lower hd hs
         linarith
-    · have hN0 := north_w_last no (u := 2) (Or.inl rfl) n w x
+    · have hN0 := north_w_last no (u := 2) (Or.inl rfl) n x x
       have hQ := differenceTrig_alternate_two hd hs
       cases wo
       · have hW := west_w_cardinal_bound hd 2
@@ -208,7 +212,7 @@ theorem sliceCurvature_negative {no wo pn pw pq : Bool} (u : Fin 4) (k : Fin 3)
       · have hW := west_w_own_bound hd 2
         have htW := westTrig_own_lower hd hs
         linarith
-    · have hN0 := north_w_last no (u := 3) (Or.inr rfl) n w x
+    · have hN0 := north_w_last no (u := 3) (Or.inr rfl) n x x
       have hQ := differenceTrig_candidate hd hs (u := 3) (Or.inr rfl)
       cases wo
       · have hW := west_w_cardinal_bound hd 3
@@ -221,14 +225,15 @@ theorem sliceCurvature_negative {no wo pn pw pq : Bool} (u : Fin 4) (k : Fin 3)
   · change Domain no wo x x at hd
     change Sector pn pw pq x x at hs
     change -northTrig no u pn x-westTrig wo pw x+
-      (northWave no u 2 n w).curvature (northRadius u) x+
-      (westWave wo u 2 n w).curvature Six.radius x≤-1/500
-    have htN := northTrig_lower hd hs
+      (northWave no u 2 x x).curvature (northRadius u) x+
+      (westWave wo u 2 x x).curvature Six.radius x≤-1/500
+    have hN := north_curvature_bound no u 2 x x x
+    have htN := northTrig_lower (u := u) hd hs
     cases wo
     · have hW := west_diagonal_cardinal_bound hd u
       have htW := westTrig_cardinal_coarse hd hs
       linarith
-    · have hW := west_diagonal_own u n w x
+    · have hW := west_diagonal_own u x x x
       have htW := westTrig_own_lower hd hs
       linarith
 

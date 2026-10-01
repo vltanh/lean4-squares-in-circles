@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.FixedPairEndpoints
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FixedPairEndpoints
 
 /-!
 # Analytic fixed-pair envelope
@@ -24,7 +21,7 @@ open Stress
 /-- The whole-domain minorant inequality, including all three sign walls. -/
 theorem minorant_lower_bound {no wo : Bool} (u : Fin 4) {n w : ℝ}
     (hd : Domain no wo n w) :
-    pairBase+line w+(1/1000)*|n|≤minorant no wo u n w := by
+    pairBase+line w+(1/1000)*|n|≤ minorant no wo u n w := by
   have hg := nonnegative_of_endpoints (endpoint_condition no wo u) hd
   dsimp [gap] at hg
   linarith

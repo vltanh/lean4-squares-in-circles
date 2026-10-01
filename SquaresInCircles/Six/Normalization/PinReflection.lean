@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Normalization.PinPacking
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.PinPacking
 
 /-!
 # The single global diagonal normalization
@@ -134,7 +131,8 @@ def PinPacking.mirror {R : ℝ} (P : PinPacking R) : PinPacking R := by
     apply central_separators_complete (hcontained i).half_le hbox.1.1 hbox.2.1
       (by linarith [hbox.1.2,c0_lt_23_200]) (by linarith [hbox.2.2,c0_lt_23_200])
     exact hp.disjoint 0 i.succ (by intro he; have hh := congrArg Fin.val he; simp at hh)
-  exact { center := c, phase := t, radial := a, transverse := b,
+  exact {
+    center := c, phase := t, radial := a, transverse := b,
     packing := hp, box := hbox, contained := hcontained, avoidsCore := havoids,
     pin := hpin, window := hwindow, separator := hsat,
     allowed_separator := fun i k hk =>

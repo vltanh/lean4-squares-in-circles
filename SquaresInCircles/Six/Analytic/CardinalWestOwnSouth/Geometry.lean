@@ -1,8 +1,6 @@
-module
-public import SquaresInCircles.Six.Analytic.CardinalWestOwnSouth.Support
-public import SquaresInCircles.Six.Analytic.OwnWingFrontier
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CardinalWestOwnSouth.Support
+import SquaresInCircles.Six.Analytic.OwnWingFrontier
+import SquaresInCircles.Six.Analytic.CanonicalSouthSign
 
 /-!
 # A missing west wing must have OWN W
@@ -22,6 +20,12 @@ noncomputable section
 namespace SquaresInCircles.Six.Analytic.CardinalWestOwnSouth
 open Normalization
 
+private lemma cos_pi_add' (x : ℝ) : Real.cos (Real.pi+x) = -Real.cos x := by
+  rw [add_comm,Real.cos_add_pi]
+
+private lemma sin_pi_add' (x : ℝ) : Real.sin (Real.pi+x) = -Real.sin x := by
+  rw [add_comm,Real.sin_add_pi]
+
 theorem not_missing_west {R : ℝ} (P : NormalizedPacking R)
     (hW : P.ownBits 2=false) (hS : P.ownBits 4=true) : ¬ MissingWestWing P := by
   intro hmissing
@@ -40,10 +44,13 @@ theorem not_missing_west {R : ℝ} (P : NormalizedPacking R)
     dsimp [s]
     constructor <;> linarith [P.diagonal_angle_range.2,Real.pi_lt_d4]
   have hr : 0 ≤ d-s ∧ d-s ≤ 4/7 := by
-    dsimp [d,s]
-    constructor <;> linarith [hs.2,hd.1,Real.pi_lt_d4]
+    constructor
+    · linarith [hs.2,hd.1]
+    · dsimp [d,s]
+      linarith [hgap,Real.pi_lt_d4]
   have hWphase : P.phase 2=Real.pi-s := by
-    rw [P.phase_from_deviation 2]
+    have h : P.phase 2=Real.pi+P.helperAngle 2 := P.phase_from_deviation 2
+    rw [h]
     dsimp [s]
     ring
   have hSphase : P.phase 4=3*Real.pi/2+v := P.phase_from_deviation 4
@@ -55,7 +62,7 @@ theorem not_missing_west {R : ℝ} (P : NormalizedPacking R)
     have h := P.own_separator 4 hS
     rw [hSphase] at h
     simp only [centralMargin,centralNormal,angularWidth,Real.cos_add,Real.sin_add,
-      south_cos,south_sin,zero_mul,one_mul,neg_one_mul,zero_add,add_zero,abs_neg] at h
+      south_cos,south_sin,zero_mul,neg_one_mul,add_zero,zero_sub,neg_neg,abs_neg] at h
     dsimp [angularWidth]
     nlinarith only [h]
   have hCS : 1/2+angularWidth s ≤
@@ -72,7 +79,7 @@ theorem not_missing_west {R : ℝ} (P : NormalizedPacking R)
       P.radial 3+P.center.2*Real.cos d+P.center.1*Real.sin d := by
     have h := P.own_separator 3 P.diagonal_own
     rw [hDphase] at h
-    simp only [centralMargin,centralNormal,angularWidth,Real.cos_pi_add,Real.sin_pi_add,
+    simp only [centralMargin,centralNormal,angularWidth,cos_pi_add',sin_pi_add',
       Real.cos_pi_div_two_sub,Real.sin_pi_div_two_sub,abs_neg] at h
     dsimp [angularWidth]
     nlinarith only [h]
@@ -117,6 +124,6 @@ lemma MissingWestWing.west_own {R : ℝ} {P : NormalizedPacking R}
     (h : MissingWestWing P) : P.ownBits 2=true := by
   cases hW : P.ownBits 2
   · exact False.elim (not_missing_west_of_cardinal_west P hW h)
-  · exact hW
+  · rfl
 
 end SquaresInCircles.Six.Analytic

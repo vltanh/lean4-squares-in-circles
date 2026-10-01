@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.PairCoordinates
-public import SquaresInCircles.Six.Analytic.PairProjectionBounds
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.PairCoordinates
+import SquaresInCircles.Six.Analytic.PairProjectionBounds
 
 /-!
 # Only two forward secondary axes can separate W and a west-cardinal D
@@ -58,7 +55,8 @@ theorem west_secondary_axes {t u a b A B:ℝ}
     (by simpa only [neg_sq] using htr.2.2)
   have hprimaryW : |A*Real.cos (u-t)-B*Real.sin (u-t)-a|<
       1/2+(Real.cos (u-t)+Real.sin (u-t))/2 := by
-    simpa only [mul_neg,sub_eq_add_neg,abs_neg,abs_of_nonneg htr.2.1] using hprimaryW0
+    rw [abs_neg,abs_of_nonneg htr.2.1,mul_neg,← sub_eq_add_neg] at hprimaryW0
+    exact hprimaryW0
   have hprimaryD := primary_projection_bound hW hw.1.le (hW.u_lt_half hWcore).le
     hd'.1.le hD.a_le_rho0 (c:=Real.cos (u-t)) (s:=Real.sin (u-t))
     (by linarith [htr.1]) htr.2.2

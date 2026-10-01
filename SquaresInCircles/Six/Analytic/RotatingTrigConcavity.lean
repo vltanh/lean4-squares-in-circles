@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.RotatingLength
-public import SquaresInCircles.Six.Analytic.CompensatedTrigConcavity
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.RotatingLength
+import SquaresInCircles.Six.Analytic.CompensatedTrigConcavity
 
 /-!
 # A trigonometric sum minus one rotating-vector length
@@ -61,7 +58,12 @@ theorem rotating_trig_concave {C A B G H c R p q L l u : ℝ}
       ((((Real.hasDerivAt_sin (x+c)).comp x ((hasDerivAt_id x).add_const c)).const_mul (-G)).add
         (((Real.hasDerivAt_cos (x+c)).comp x ((hasDerivAt_id x).add_const c)).const_mul H))
     have hr := harmonicRoot_second (R := R) (harg x)
-    convert hb.add hr using 1 <;> dsimp [f',f''] <;> ring
+    convert hb.add hr using 1
+    · funext y
+      dsimp [f']
+      ring
+    · dsimp [f'']
+      ring
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc l u)
     (f' := f') (f'' := f'') (by dsimp [f,sineRoot]; fun_prop)
   · intro x _; exact (hd x).hasDerivWithinAt
@@ -75,7 +77,7 @@ theorem rotating_trig_concave {C A B G H c R p q L l u : ℝ}
 /-- A root upper bound proved by squaring yields a lower bound on its negative. -/
 lemma sineRoot_lower_of_squared {R p q x L : ℝ}
     (hR : 0≤R) (hL : 0≤L) (hp : 0≤p) (hq : 0≤q) (hne : p≠q)
-    (hsq : p^2+q^2+2*p*q*Real.sin x≤L^2) : -R*L≤sineRoot R p q x := by
+    (hsq : p^2+q^2+2*p*q*Real.sin x≤L^2) : -R*L≤ sineRoot R p q x := by
   have harg : 0≤p^2+q^2+2*p*q*Real.sin x := by
     have hh := sineRoot_arg_positive (x := x) hp hq hne
     simpa [harmonicArg] using hh.le

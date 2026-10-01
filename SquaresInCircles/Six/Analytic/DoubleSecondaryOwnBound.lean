@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.SecondaryCostBound
-public import SquaresInCircles.Six.Analytic.HighDiagonalProfile
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SecondaryCostBound
+import SquaresInCircles.Six.Analytic.HighDiagonalProfile
 
 /-!
 # Whole-domain double-D-secondary exclusion with OWN W and S
@@ -35,7 +32,11 @@ lemma ownWingCost_lower {x : ℝ} (hx : 0≤x ∧ x≤2/3) : 249/1000<ownWingCos
     intro p hp q hq a b ha hb hab
     simp only [smul_eq_mul]
     nlinarith only [hab]
-  have hconc := ht.add hl
+  have hconc : ConcaveOn ℝ (Set.Icc 0 (2/3)) (fun t : ℝ =>
+      (387/1000)*Real.cos t+(613/1000)*Real.sin t+(-(13/20)*t-249/1000)) := by
+    refine (ht.add hl).congr ?_
+    intro t _
+    simp only [Pi.add_apply,one_mul,add_zero]
   have hz : 0<(387/1000)*Real.cos 0+(613/1000)*Real.sin 0+(-(13/20)*0-249/1000) := by
     norm_num
   have he : 0<(387/1000)*Real.cos (2/3)+(613/1000)*Real.sin (2/3)+
@@ -63,7 +64,7 @@ def doubleOwnSecondaryGap (v s d aw bw aS bS cx cy : ℝ) : ℝ :=
 /-- Strict positivity over the entire original OWN helper ranges. The
 additional qS>=1/2 fact is proved geometrically from high D at the call site. -/
 theorem double_own_secondary_gap_positive {v s d aw bw aS bS cx cy : ℝ}
-    (hv : 0≤v ∧ v≤2/3) (hs : -5/8≤s ∧ s≤2/3)
+    (hv : 0≤v ∧ v≤2/3) (hs : -5/8≤ s ∧ s≤2/3)
     (hd : 1/2≤d ∧ d≤Real.pi/4) (hqs : 1/2≤Real.pi/2+s-d)
     (hW : ContainedChart aw |bw|) (hS : ContainedChart aS |bS|)
     (hc : (0≤cx ∧ cx≤c0) ∧ (0≤cy ∧ cy≤c0)) :
@@ -87,7 +88,7 @@ theorem double_own_secondary_gap_positive {v s d aw bw aS bS cx cy : ℝ}
   have hY : 0≤Real.cos s-Real.sin v := by linarith [(abs_le.mp htv.2).2,hts.1]
   have hcentral := coarse_central_work hc hX hY le_rfl le_rfl
   have hvline := ownWingCost_lower hv
-  by_cases hs0 : 0≤s
+  by_cases hs0 : 0≤ s
   · have hsins := Real.sin_nonneg_of_nonneg_of_le_pi hs0
       (by linarith [hs.2,Real.pi_gt_d2])
     have hsline := ownWingCost_lower ⟨hs0,hs.2⟩

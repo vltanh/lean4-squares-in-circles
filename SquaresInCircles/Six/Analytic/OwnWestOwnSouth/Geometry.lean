@@ -1,8 +1,6 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnWestOwnSouth.Support
-public import SquaresInCircles.Six.Analytic.OwnWestCardinalWing.Geometry
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnWestOwnSouth.Support
+import SquaresInCircles.Six.Analytic.OwnWestCardinalWing.Geometry
+import SquaresInCircles.Six.Analytic.CanonicalSouthSign
 
 /-!
 # The two-OWN missing-west case when the west tilt dominates
@@ -39,7 +37,10 @@ theorem not_missing_west_of_order {R : ℝ} (P : NormalizedPacking R)
     dsimp [s]
     constructor <;> linarith
   have hWphase : P.phase 2=Real.pi-v := by
-    rw [P.phase_from_deviation 2]
+    have h := P.phase_from_deviation 2
+    have h2 : cardinalCenter (matchingCardinal 2) = Real.pi := rfl
+    rw [h2] at h
+    rw [h]
     dsimp [v]
     ring
   have hSphase : P.phase 4=3*Real.pi/2+s := P.phase_from_deviation 4
@@ -58,7 +59,8 @@ theorem not_missing_west_of_order {R : ℝ} (P : NormalizedPacking R)
     have h := P.own_separator 4 hS
     rw [hSphase] at h
     simp only [centralMargin,centralNormal,angularWidth,Real.cos_add,Real.sin_add,
-      south_cos,south_sin,zero_mul,one_mul,neg_one_mul,zero_add,add_zero,abs_neg] at h
+      south_cos,south_sin,zero_mul,one_mul,neg_one_mul,zero_add,add_zero,zero_sub,neg_neg,
+      abs_neg] at h
     dsimp [angularWidth]
     nlinarith only [h]
   have hWD : 1/2+angularWidth (v+d) ≤

@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.HighDiagonalSupport
-public import SquaresInCircles.Six.Analytic.HalfAngleControl
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.HighDiagonalSupport
+import SquaresInCircles.Six.Analytic.HalfAngleControl
 
 /-!
 # Two whole-domain scalar reserves for a negative OWN south angle
@@ -29,7 +26,7 @@ lemma halfRatio_upper_five_eighths {v : ℝ} (hv : 0 ≤ v ∧ v ≤ 5/8) :
   have hp := mul_nonneg hv.1 hcoef
   have hs := Seven.sin_upper_five hv.1
   have hc := mul_le_mul_of_nonneg_left (Real.one_sub_sq_div_two_le_cos (x := v))
-    (show 0 ≤ (13/25)*v by positivity)
+    (show 0 ≤ (13/25)*v by linarith [hv.1])
   unfold halfRatio
   apply (div_le_iff₀ (halfRatio_den_pos ⟨hv.1,by linarith [hv.2]⟩)).mpr
   nlinarith only [hp,hs,hc]
@@ -91,8 +88,7 @@ theorem south_wing_tail_reserve {v d : ℝ}
   have hbase : 0 < 19359/50000-(11/20)*Real.cos z+
       (1379/5000)*Real.sin z-(55641/50000)*halfRatio v := by
     have hvz : v=z-1/2 := by dsimp [z]; ring
-    rw [hvz] at ht
-    nlinarith only [ht,hc,hs,hz3,hz4,hquad,hz.1,sq_nonneg z]
+    nlinarith only [ht,hc,hs,hz3,hz4,hquad,hz.1,sq_nonneg z,hvz]
   dsimp [coreCeiling]
   nlinarith only [hbase,hB,hsin,hcos]
 

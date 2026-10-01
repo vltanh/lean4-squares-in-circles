@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.OneRadianWestGap
-public import SquaresInCircles.Six.Analytic.EndpointReduction
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OneRadianWestGap
+import SquaresInCircles.Six.Analytic.EndpointReduction
 
 /-!
 # A four-vertex obstruction for a D-sourced west edge below d = 3/5
@@ -129,7 +126,10 @@ private lemma wall_positive (b : Bool) {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 3/5) 
     ring
   have ht := trig_nonnegative (x := 1) ⟨by norm_num,by norm_num⟩
   have hv0 : 0 ≤ vSin b := by linarith [(coefficient_bounds b).1]
-  have hA : 0 ≤ A := by dsimp [A]; positivity
+  have hA : 0 ≤ A := by
+    have hp := mul_nonneg hv0 ht.2
+    dsimp only [A]
+    linarith [ht.1]
   have hcos : Real.cos 1 ≤ 13/24 := by nlinarith [Seven.cos_upper_four (x := 1) (by norm_num)]
   have hprod := mul_le_mul (coefficient_bounds b).2.1 hcos ht.1 (by norm_num : (0:ℝ) ≤ 2379/10000)
   have hB : 0 ≤ B := by
@@ -156,7 +156,7 @@ theorem positive (b : Bool) {v d : ℝ}
     dsimp [minorant,A,B,K]
     rw [Real.cos_add,Real.sin_add]
     ring
-  have ht := trig_nonnegative ⟨by linarith [hd.1],by linarith [hd.2]⟩
+  have ht := trig_nonnegative (x := d) ⟨by linarith [hd.1],by linarith [hd.2]⟩
   have hA : 0 ≤ A := by dsimp [A]; linarith [Real.sin_le_one d]
   have hB : 0 ≤ B := by dsimp [B]; linarith [harmonic_bound d,(coefficient_bounds b).1]
   rw [ident]

@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.FixedPairFormula
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FixedPairFormula
 
 /-!
 # Whole-domain trigonometric reserves for the fixed pair
@@ -19,7 +16,7 @@ open Stress Normalization
 lemma domain_absolute {no wo : Bool} {n w : ℝ} (h : Domain no wo n w) :
     |n|≤5/12 ∧ |w|≤11/25 ∧ |n-w|≤6/7 := by
   rcases domain_bounds h with ⟨hn0,hn1,hw0,hw1,hq0,hq1⟩
-  refine ⟨abs_le.mpr ⟨?_,hn1⟩,abs_le.mpr ⟨hw0,?_⟩,abs_le.mpr ⟨?_,hq1⟩⟩ <;> linarith
+  refine ⟨abs_le.mpr ⟨?_,hn1⟩,abs_le.mpr ⟨?_,?_⟩,abs_le.mpr ⟨?_,hq1⟩⟩ <;> linarith
 
 lemma cos_lower_of_abs_le {x a : ℝ} (h : |x|≤a) : 1-a^2/2≤Real.cos x := by
   have hs := pow_le_pow_left₀ (abs_nonneg x) h 2
@@ -55,21 +52,25 @@ lemma northTrig_lower {no wo pn pw pq : Bool} {u : Fin 4} {n w : ℝ}
   have hsn : 0≤(sign pn+1)*Real.sin n := by nlinarith [hsign.1,neg_le_abs (Real.sin n)]
   cases no
   · by_cases hu : u=0 ∨ u=3
-    · simp only [northTrig,northCosCoeff,northSinCoeff,Bool.false_eq_true,if_false,if_pos hu]
+    · simp only [northTrig,northCosCoeff,northSinCoeff,Bool.false_eq_true,ite_false,if_pos hu]
       nlinarith
-    · simp only [northTrig,northCosCoeff,northSinCoeff,Bool.false_eq_true,if_false,if_neg hu]
+    · simp only [northTrig,northCosCoeff,northSinCoeff,Bool.false_eq_true,ite_false,if_neg hu]
       nlinarith [hsign.1]
-  · simp only [northTrig,northCosCoeff,northSinCoeff,if_true]
+  · have hmax : cStar*max (Real.sin n) 0=cStar*(positivePart pn*Real.sin n) := by
+      rw [hsign.2]
+    simp only [northTrig,northCosCoeff,northSinCoeff,ite_true]
     nlinarith [hsign.1,hsign.2]
 
 lemma northTrig_cardinal_candidate {wo pn pw pq : Bool} {u : Fin 4} {n w : ℝ}
     (hd : Domain false wo n w) (hs : Sector pn pw pq n w) (hu : u=0 ∨ u=3) :
     97/100<northTrig false u pn n := by
-  have hn : |n|≤203/1000 := abs_le.mpr hd.1
+  have hd1 : -203/1000≤n ∧ n≤203/1000 := by
+    simpa only [Bool.false_eq_true,ite_false] using hd.1
+  have hn : |n|≤203/1000 := abs_le.mpr ⟨by linarith [hd1.1],hd1.2⟩
   have hc := cos_lower_of_abs_le hn
   have hsign := sign_sin hs.1 (by linarith [Real.pi_gt_d2] : |n|≤Real.pi)
   have hp : 0≤(sign pn+1)*Real.sin n := by nlinarith [hsign.1,neg_le_abs (Real.sin n)]
-  simp only [northTrig,northCosCoeff,northSinCoeff,Bool.false_eq_true,if_false,if_pos hu]
+  simp only [northTrig,northCosCoeff,northSinCoeff,Bool.false_eq_true,ite_false,if_pos hu]
   nlinarith
 
 lemma westTrig_own_lower {no pn pw pq : Bool} {n w : ℝ}
@@ -78,7 +79,8 @@ lemma westTrig_own_lower {no pn pw pq : Bool} {n w : ℝ}
   have hsign := sign_sin hs.2.1 (by linarith [Real.pi_gt_d2] : |w|≤Real.pi)
   have hwidth := cos_add_abs_sin_ge_one (by linarith [Real.pi_gt_d2] : |w|≤Real.pi/2)
   cases pw
-  · simp only [westTrig,westCosCoeff,westSinCoeff,if_true,sign,positivePart,Bool.false_eq_true,if_false]
+  · simp only [westTrig,westCosCoeff,westSinCoeff,ite_true,sign,positivePart,Bool.false_eq_true,
+      ite_false] at hsign ⊢
     nlinarith [hsign.1]
   · have hw0 : 0≤w := hs.2.1
     have hw1 : w≤2/25 := hd.2.2
@@ -91,32 +93,36 @@ lemma westTrig_own_lower {no pn pw pq : Bool} {n w : ℝ}
     have hcoef : 0≤1/2-cStar := by linarith [pair_coarse_constants]
     have hm := mul_le_mul_of_nonneg_left hslo hcoef
     have hcs := mul_nonneg (show 0≤113/1000-cStar by linarith [pair_coarse_constants]) hw0
-    simp only [westTrig,westCosCoeff,westSinCoeff,if_true,sign,positivePart]
+    simp only [westTrig,westCosCoeff,westSinCoeff,ite_true,sign,positivePart]
     nlinarith
 
 /-- Uniform reserve on the entire cardinal interval. -/
 lemma westTrig_cardinal_coarse {no pn pw pq : Bool} {n w : ℝ}
     (hd : Domain no false n w) (hs : Sector pn pw pq n w) :
     23/25≤westTrig false pw w := by
-  have hw : |w|≤2/5 := abs_le.mpr hd.2
+  have hd2 : -2/5≤w ∧ w≤2/5 := by
+    simpa only [Bool.false_eq_true,ite_false] using hd.2
+  have hw : |w|≤2/5 := abs_le.mpr ⟨by linarith [hd2.1],hd2.2⟩
   have hc := cos_lower_of_abs_le hw
   have hsign := sign_sin hs.2.1 (by linarith [Real.pi_gt_d2] : |w|≤Real.pi)
   have hpositive : 0≤(sign pw+1)*Real.sin w := by
     nlinarith [hsign.1,neg_le_abs (Real.sin w)]
-  simp only [westTrig,westCosCoeff,westSinCoeff,Bool.false_eq_true,if_false]
+  simp only [westTrig,westCosCoeff,westSinCoeff,Bool.false_eq_true,ite_false]
   nlinarith
 
 /-- The positive cardinal half has the stronger width reserve. -/
 lemma westTrig_cardinal_lower {no pn pw pq : Bool} {n w : ℝ}
     (hd : Domain no false n w) (hs : Sector pn pw pq n w) (hw0 : 0≤w) :
     493/500<westTrig false pw w := by
-  have hw : |w|≤2/5 := abs_le.mpr hd.2
+  have hd2 : -2/5≤w ∧ w≤2/5 := by
+    simpa only [Bool.false_eq_true,ite_false] using hd.2
+  have hw : |w|≤2/5 := abs_le.mpr ⟨by linarith [hd2.1],hd2.2⟩
   have hsin := Real.sin_nonneg_of_nonneg_of_le_pi hw0
-    (by linarith [hd.2.2,Real.pi_gt_d2])
+    (by linarith [hd2.2,Real.pi_gt_d2])
   have hsign := sign_sin hs.2.1 (by linarith [Real.pi_gt_d2] : |w|≤Real.pi)
   have hwidth := cos_add_abs_sin_ge_one (by linarith [Real.pi_gt_d2] : |w|≤Real.pi/2)
   rw [abs_of_nonneg hsin] at hsign hwidth
-  simp only [westTrig,westCosCoeff,westSinCoeff,Bool.false_eq_true,if_false]
+  simp only [westTrig,westCosCoeff,westSinCoeff,Bool.false_eq_true,ite_false]
   nlinarith [hsign.1]
 
 lemma differenceTrig_candidate {no wo pn pw pq : Bool} {u : Fin 4} {n w : ℝ}
@@ -146,6 +152,8 @@ lemma differenceTrig_candidate_negative {no wo pn pw pq : Bool} {u : Fin 4} {n w
     linarith
   rw [abs_of_nonpos hsin] at hwidth hsign
   have hmul := mul_le_mul_of_nonneg_left hwidth rStar_pos.le
+  have hprod : rStar*(sign pq*Real.sin (n-w))=rStar*(-Real.sin (n-w)) := by
+    rw [← hsign.1]
   have he : u≠1 := by rcases hu with rfl | rfl <;> decide
   simp only [differenceTrig,differenceCosCoeff,differenceSinCoeff,if_pos hu,if_neg he]
   nlinarith [hsign.1]

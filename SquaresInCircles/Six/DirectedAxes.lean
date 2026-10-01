@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Stress.Reverse
-
-@[expose] public section
+import SquaresInCircles.Six.Stress.Reverse
 
 /-!
 # Complete directed square axes
@@ -67,7 +64,9 @@ lemma threshold_symm (S T : UnitSquare) : Seven.SAT.threshold S T=Seven.SAT.thre
     relativeS_antisymm S T,abs_neg]
 
 lemma self_width_normalX (S : UnitSquare) : width S (normalX S)=1/2 := by
-  have hx : frameX S (normalX S)=1 := by simpa [frameX,normalX] using S.unit
+  have hx : frameX S (normalX S)=1 := by
+    dsimp [frameX,normalX]
+    linear_combination S.unit
   have hy : frameY S (normalX S)=0 := by dsimp [frameY,normalX]; ring
   norm_num [width,hx,hy]
 
@@ -106,16 +105,35 @@ lemma pairNormal_ne (S T : UnitSquare) (i : Fin 8) : Stress.pairNormal i S T ≠
 lemma pairNormal_widths (S T : UnitSquare) (i : Fin 8) :
     width S (Stress.pairNormal i S T)+width T (Stress.pairNormal i S T)=
       Seven.SAT.threshold S T := by
+  have hS : width S (normalX S)+width T (normalX S)=Seven.SAT.threshold S T := by
+    rw [self_width_normalX,cross_width_normalX,Seven.SAT.threshold]
+    ring
+  have hSY : width S (normalY S)+width T (normalY S)=Seven.SAT.threshold S T := by
+    rw [self_width_normalY,cross_width_normalY,Seven.SAT.threshold]
+    ring
+  have hT : width S (normalX T)+width T (normalX T)=Seven.SAT.threshold S T := by
+    rw [self_width_normalX,cross_width_normalX,threshold_symm,Seven.SAT.threshold]
+    ring
+  have hTY : width S (normalY T)+width T (normalY T)=Seven.SAT.threshold S T := by
+    rw [self_width_normalY,cross_width_normalY,threshold_symm,Seven.SAT.threshold]
+    ring
   fin_cases i
-  all_goals simp only [Stress.pairNormal,Matrix.cons_val_zero,Matrix.cons_val_one,
-    Matrix.cons_val_succ,width_scale_neg,self_width_normalX,self_width_normalY,
-    cross_width_normalX,cross_width_normalY]
-  all_goals first
-    | simp [Seven.SAT.threshold]
-      <;> ring
-    | rw [threshold_symm]
-      simp [Seven.SAT.threshold]
-      <;> ring
+  · exact hS
+  · show width S (scale (-1) (normalX S))+width T (scale (-1) (normalX S))=_
+    rw [width_scale_neg,width_scale_neg]
+    exact hS
+  · exact hSY
+  · show width S (scale (-1) (normalY S))+width T (scale (-1) (normalY S))=_
+    rw [width_scale_neg,width_scale_neg]
+    exact hSY
+  · exact hT
+  · show width S (scale (-1) (normalX T))+width T (scale (-1) (normalX T))=_
+    rw [width_scale_neg,width_scale_neg]
+    exact hT
+  · exact hTY
+  · show width S (scale (-1) (normalY T))+width T (scale (-1) (normalY T))=_
+    rw [width_scale_neg,width_scale_neg]
+    exact hTY
 
 lemma threshold_pos (S T : UnitSquare) : 0 < Seven.SAT.threshold S T := by
   dsimp [Seven.SAT.threshold]

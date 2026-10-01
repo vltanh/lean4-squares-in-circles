@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.TwoWallReduction
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.TwoWallReduction
 
 /-!
 # The geometric endpoint inventory of a rectangle cut by n=0,w=0,n=w
@@ -44,9 +41,10 @@ theorem rectangle_wall_nonnegative {f : ℝ → ℝ → ℝ} {nl nr wl wr n w : 
       · intro z hz
         refine ⟨hpn,(hseg z hz).2.1,?_⟩
         have hh := hasSign_neg (hseg z hz).2.2
-        simpa only [neg_sub] using hh
+        rw [neg_sub] at hh
+        exact hh
     · intro z hz hcut
-      rcases hcut with rfl | rfl | rfl | rfl
+      rcases hcut with h | h | h | h <;> subst z
       · exact hcorner v wl hvb (Or.inl rfl)
       · exact hcorner v wr hvb (Or.inr (Or.inr rfl))
       · exact hcorner v 0 hvb (Or.inr (Or.inl rfl))
@@ -64,7 +62,7 @@ theorem rectangle_wall_nonnegative {f : ℝ → ℝ → ℝ} {nl nr wl wr n w : 
       · intro v hv
         exact hrect v (hseg v hv).1
       · intro v hv
-        exact ⟨(hseg v hv).2.1,(hseg v hv).2.1,by simp [HasSign]⟩
+        exact ⟨(hseg v hv).2.1,(hseg v hv).2.1,by simp [HasSign,sliceN,sliceW]⟩
     · intro v hv hcut
       apply hdiagonal v (hrect v hv)
       rcases hcut with h | h | h | h
@@ -85,7 +83,7 @@ theorem rectangle_wall_nonnegative {f : ℝ → ℝ → ℝ} {nl nr wl wr n w : 
     · intro x hx
       exact ⟨(hseg x hx).2.1,hpw,(hseg x hx).2.2⟩
   · intro x hx hcut
-    rcases hcut with rfl | rfl | rfl | rfl
+    rcases hcut with h | h | h | h <;> subst x
     · exact hvertical nl hx (Or.inl rfl) w hpoint.2
     · exact hvertical nr hx (Or.inr (Or.inr rfl)) w hpoint.2
     · exact hvertical 0 hx (Or.inr (Or.inl rfl)) w hpoint.2

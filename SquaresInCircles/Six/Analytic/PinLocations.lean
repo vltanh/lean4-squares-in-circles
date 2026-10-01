@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.CapFixedPins
-public import SquaresInCircles.Six.Normalization.SecondarySeparation
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CapFixedPins
+import SquaresInCircles.Six.Normalization.SecondarySeparation
 
 /-!
 # Analytic five-pin covering with the location information retained
@@ -19,7 +16,7 @@ namespace SquaresInCircles.Six.Analytic
 open Normalization Normalization.Certificates
 
 def EastPinData (t a b:ℝ) : Prop :=
-  ∃ v, (-5/12<v ∧ v<3/10) ∧ (t:Direction)=(v:Direction) ∧
+  ∃ v : ℝ, (-5/12<v ∧ v<3/10) ∧ (t:Direction)=(v:Direction) ∧
     openSquare (orientedSquare t a b) (fixedPin 0)
 
 def NorthPinData (t a b:ℝ) : Prop :=
@@ -88,7 +85,7 @@ lemma east_data_diagonal {t a b:ℝ} (h:EastPinData (Real.pi/2-t) a (-b)) : Nort
   rw [fixedPin_diagonal_identity] at hpoint
   refine ⟨-v,⟨by linarith [hv.2],by linarith [hv.1]⟩,?_,?_⟩
   · simpa only [sub_eq_add_neg] using ht
-  · simpa only [diagonalPinIndex] using hpoint
+  · exact hpoint
 
 lemma west_data_diagonal {t a b:ℝ} (h:WestPinData (Real.pi/2-t) a (-b)) : SouthPinData t a b := by
   obtain ⟨v,hv,he,hcover,hleft,hupper⟩ := h
@@ -101,12 +98,14 @@ lemma west_data_diagonal {t a b:ℝ} (h:WestPinData (Real.pi/2-t) a (-b)) : Sout
       _ = _ := by simp only [Real.Angle.coe_sub,he]
   have hW : openSquare (orientedSquare (Real.pi/2-t) a (-b)) (fixedPin 2) ↔
       openSquare (orientedSquare t a b) (fixedPin 4) := by
-    simpa only [fixedPin_diagonal_identity,diagonalPinIndex] using
-      square_diagonal_membership t a b (fixedPin 2)
+    have h := square_diagonal_membership t a b (fixedPin 2)
+    rw [fixedPin_diagonal_identity] at h
+    exact h
   have hD : openSquare (orientedSquare (Real.pi/2-t) a (-b)) (fixedPin 3) ↔
       openSquare (orientedSquare t a b) (fixedPin 3) := by
-    simpa only [fixedPin_diagonal_identity,diagonalPinIndex] using
-      square_diagonal_membership t a b (fixedPin 3)
+    have h := square_diagonal_membership t a b (fixedPin 3)
+    rw [fixedPin_diagonal_identity] at h
+    exact h
   refine ⟨-v,⟨by linarith [hv.2],by linarith [hv.1]⟩,?_,?_,?_,?_⟩
   · simpa only [sub_eq_add_neg] using ht
   · exact hcover.elim (fun h => Or.inl (hW.mp h)) (fun h => Or.inr (hD.mp h))
@@ -126,20 +125,20 @@ lemma own_pin_location {t a b cx cy:ℝ} (hc:ContainedChart a |b|) (hb:|b|<1/2)
   · obtain ⟨v,hv,he⟩ := hE
     exact Or.inl (own_east_data hc hb hx0 hy0 hx hy hv he ho)
   · obtain ⟨v,hv,he⟩ := hN
-    have hr : ((Real.pi/2-t):Direction)=(v:Direction) := by
+    have hr : ((Real.pi/2-t:ℝ):Direction)=(v:Direction) := by
       have hid : Real.pi/2-(Real.pi/2-v)=v := by ring
       calc
-        ((Real.pi/2-t):Direction) = (Real.pi/2-(Real.pi/2-v):ℝ) := by
+        ((Real.pi/2-t:ℝ):Direction) = (Real.pi/2-(Real.pi/2-v):ℝ) := by
           simp only [Real.Angle.coe_sub,he]
         _ = _ := congrArg (fun x:ℝ => (x:Direction)) hid
     exact Or.inr (Or.inl (east_data_diagonal (own_east_data hcn hbn hy0 hx0 hy hx hv hr hor)))
   · obtain ⟨v,hv,he⟩ := hW
     exact Or.inr (Or.inr (Or.inl (own_west_data hc hb hx hy0 hy hv he ho)))
   · obtain ⟨v,hv,he⟩ := hS
-    have hr : ((Real.pi/2-t):Direction)=(Real.pi+v:ℝ) := by
+    have hr : ((Real.pi/2-t:ℝ):Direction)=(Real.pi+v:ℝ) := by
       have hid : Real.pi/2-(-Real.pi/2-v)=Real.pi+v := by ring
       calc
-        ((Real.pi/2-t):Direction) = (Real.pi/2-(-Real.pi/2-v):ℝ) := by
+        ((Real.pi/2-t:ℝ):Direction) = (Real.pi/2-(-Real.pi/2-v):ℝ) := by
           simp only [Real.Angle.coe_sub,he]
         _ = _ := congrArg (fun x:ℝ => (x:Direction)) hid
     exact Or.inr (Or.inr (Or.inr (west_data_diagonal (own_west_data hcn hbn hy hx0 hx hv hr hor))))

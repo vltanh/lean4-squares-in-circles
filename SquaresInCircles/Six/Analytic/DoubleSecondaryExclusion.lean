@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.DoubleSecondaryCases
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.DoubleSecondaryCases
 
 /-!
 # No actual normalized packing has both diagonal edges sourced by D
@@ -41,14 +38,16 @@ theorem double_Dsecondary_impossible {R : ℝ} (P : NormalizedPacking R)
     linarith
   have hCW : 0≤centralMargin (if P.ownBits 2 then .own else .west)
       (Real.pi+P.helperAngle 2) (P.radial 2) (P.transverse 2) P.center.1 P.center.2 := by
+    have hmc : matchingCardinal 2=.west := rfl
     cases h : P.ownBits 2
-    · simpa only [hWphase,h,Bool.false_eq_true,if_false] using P.cardinal_separator 2 h
-    · simpa only [hWphase,h,if_true] using P.own_separator 2 h
+    · simpa only [hWphase,hmc,h,Bool.false_eq_true,ite_false] using P.cardinal_separator 2 h
+    · simpa only [hWphase,h,ite_true] using P.own_separator 2 h
   have hCS : 0≤centralMargin (if P.ownBits 4 then .own else .south)
       (3*Real.pi/2+P.helperAngle 4) (P.radial 4) (P.transverse 4) P.center.1 P.center.2 := by
+    have hmc : matchingCardinal 4=.south := rfl
     cases h : P.ownBits 4
-    · simpa only [hSphase,h,Bool.false_eq_true,if_false] using P.cardinal_separator 4 h
-    · simpa only [hSphase,h,if_true] using P.own_separator 4 h
+    · simpa only [hSphase,hmc,h,Bool.false_eq_true,ite_false] using P.cardinal_separator 4 h
+    · simpa only [hSphase,h,ite_true] using P.own_separator 4 h
   have hnegative := double_secondary_frozen_nonpositive (P.ownBits 2) (P.ownBits 4) hCW hCS
     (by simpa only [P.square_def,hWphase,hDphase] using hWD)
     (by simpa only [P.square_def,hDphase,hSphase] using hDS)

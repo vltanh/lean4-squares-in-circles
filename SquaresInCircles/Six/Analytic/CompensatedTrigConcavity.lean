@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Analytic.FrozenTrigStress
-public import SquaresInCircles.Seven.Analysis
-public import Mathlib.Analysis.Real.Pi.Bounds
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FrozenTrigStress
+import SquaresInCircles.Seven.Analysis
+import Mathlib.Analysis.Real.Pi.Bounds
 
 /-!
 # Concavity with a compensated negative mixed sine term
@@ -26,19 +23,23 @@ lemma trig_sum_concave_of_nonnegative {C A B G H c l u : ℝ}
   let f' : ℝ→ℝ := fun x => -A*Real.sin x+B*Real.cos x-G*Real.sin (x+c)+H*Real.cos (x+c)
   let f'' : ℝ→ℝ := fun x => -A*Real.cos x-B*Real.sin x-G*Real.cos (x+c)-H*Real.sin (x+c)
   have hd (x : ℝ) : HasDerivAt f (f' x) x := by
-    convert ((((Real.hasDerivAt_cos x).const_mul A).const_add C).add
-      ((Real.hasDerivAt_sin x).const_mul B)).add
-      ((((Real.hasDerivAt_cos (x+c)).comp x ((hasDerivAt_id x).add_const c)).const_mul G).add
-        (((Real.hasDerivAt_sin (x+c)).comp x ((hasDerivAt_id x).add_const c)).const_mul H))
-      using 1 <;> dsimp [f,f'] <;> ring
+    have hx : HasDerivAt (fun y => y+c) 1 x := (hasDerivAt_id' x).add_const c
+    have h := (((((Real.hasDerivAt_cos x).const_mul A).const_add C).fun_add
+      ((Real.hasDerivAt_sin x).const_mul B)).fun_add
+      (hx.cos.const_mul G)).fun_add (hx.sin.const_mul H)
+    refine h.congr_deriv ?_
+    simp only [f']
+    ring
   have hdd (x : ℝ) : HasDerivAt f' (f'' x) x := by
-    convert (((Real.hasDerivAt_sin x).const_mul (-A)).add
-      ((Real.hasDerivAt_cos x).const_mul B)).add
-      ((((Real.hasDerivAt_sin (x+c)).comp x ((hasDerivAt_id x).add_const c)).const_mul (-G)).add
-        (((Real.hasDerivAt_cos (x+c)).comp x ((hasDerivAt_id x).add_const c)).const_mul H))
-      using 1 <;> dsimp [f',f''] <;> ring
+    have hx : HasDerivAt (fun y => y+c) 1 x := (hasDerivAt_id' x).add_const c
+    have h := ((((Real.hasDerivAt_sin x).const_mul (-A)).fun_add
+      ((Real.hasDerivAt_cos x).const_mul B)).fun_sub
+      (hx.sin.const_mul G)).fun_add (hx.cos.const_mul H)
+    refine h.congr_deriv ?_
+    simp only [f'']
+    ring
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc l u)
-    (f' := f') (f'' := f'') (by dsimp [f]; fun_prop)
+    (f' := f') (f'' := f'') (fun x _ => (hd x).continuousAt.continuousWithinAt)
   · intro x _; exact (hd x).hasDerivWithinAt
   · intro x _; exact (hdd x).hasDerivWithinAt
   · intro x hx
@@ -136,7 +137,7 @@ theorem compensated_frozen_positive {C Av Bv Ad Bd Aq Bq v d : ℝ}
     apply h.congr
     intro y _
     dsimp [frozenTrig]
-    ring
+    ring_nf
   exact positive_on_separately_concave_rectangle hv hd hfirst
     (hsecond 0 (by constructor <;> norm_num))
     (hsecond (2/3) (by constructor <;> norm_num)) h00 h0D hV0 hVD

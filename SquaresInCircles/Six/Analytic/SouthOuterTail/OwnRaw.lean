@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.SouthOuterTail.Profile
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SouthOuterTail.Profile
 
 /-!
 # Retain the actual diagonal center during the two wing reductions
@@ -17,30 +14,30 @@ used. This avoids the false OWN-W corner of the earlier scalar majorant.
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.SouthOuterTail.Own
 
- def weightW : ℝ := 5/8
- def westRootUpper : ℝ := 371021/500000
- def constant : ℝ :=
+def weightW : ℝ := 5/8
+def westRootUpper : ℝ := 371021/500000
+def constant : ℝ :=
   93/40-CandidateWestTail.radiusBound*(westRootUpper+southRootUpper)
 
- def raw (upper : Bool) (v s d a b : ℝ) : ℝ :=
+def raw (upper : Bool) (v s d a b : ℝ) : ℝ :=
   constant+weightW*(1/2-face upper)*Real.cos v+weightW*B*Real.sin v+
     A*Real.cos s+(1/2+face upper)*Real.sin s+
     mu*((1/2-b)*Real.cos (d+v)+(1/2-a)*Real.sin (d+v))+
     nu*((1/2-a)*Real.cos (d-s)+(1/2+b)*Real.sin (d-s))
 
- def vA (upper : Bool) (d a b : ℝ) : ℝ :=
+def vA (upper : Bool) (d a b : ℝ) : ℝ :=
   weightW*(1/2-face upper)+mu*((1/2-b)*Real.cos d+(1/2-a)*Real.sin d)
- def vB (d a b : ℝ) : ℝ :=
+def vB (d a b : ℝ) : ℝ :=
   weightW*B+mu*(-(1/2-b)*Real.sin d+(1/2-a)*Real.cos d)
- def vK (upper : Bool) (s d a b : ℝ) : ℝ :=
+def vK (upper : Bool) (s d a b : ℝ) : ℝ :=
   constant+A*Real.cos s+(1/2+face upper)*Real.sin s+
     nu*((1/2-a)*Real.cos (d-s)+(1/2+b)*Real.sin (d-s))
 
- def sA (d a b : ℝ) : ℝ :=
+def sA (d a b : ℝ) : ℝ :=
   A+nu*((1/2-a)*Real.cos d+(1/2+b)*Real.sin d)
- def sB (upper : Bool) (d a b : ℝ) : ℝ :=
+def sB (upper : Bool) (d a b : ℝ) : ℝ :=
   1/2+face upper+nu*((1/2-a)*Real.sin d-(1/2+b)*Real.cos d)
- def sK (upper : Bool) (v d a b : ℝ) : ℝ :=
+def sK (upper : Bool) (v d a b : ℝ) : ℝ :=
   constant+weightW*(1/2-face upper)*Real.cos v+weightW*B*Real.sin v+
     mu*((1/2-b)*Real.cos (d+v)+(1/2-a)*Real.sin (d+v))
 

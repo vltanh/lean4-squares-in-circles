@@ -1,10 +1,7 @@
-module
-public import SquaresInCircles.Six.Analytic.SecondaryReduction
-public import SquaresInCircles.Six.Analytic.FixedCandidateClosure
-public import SquaresInCircles.Six.Analytic.SouthOwnLowerTail
-public import SquaresInCircles.Six.Analytic.CandidateWestTail.Geometry
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SecondaryReduction
+import SquaresInCircles.Six.Analytic.FixedCandidateClosure
+import SquaresInCircles.Six.Analytic.SouthOwnLowerTail
+import SquaresInCircles.Six.Analytic.CandidateWestTail.Geometry
 
 /-!
 # Exact remaining obligations of the analytic reduction
@@ -50,7 +47,8 @@ lemma north_pair_range {R : ℝ} (P : NormalizedPacking R) :
     else -203/1000 ≤ P.helperAngle 1 ∧ P.helperAngle 1 ≤ 203/1000 := by
   cases h : P.ownBits 1
   · have hn := abs_lt.mp (P.north_cardinal_angle_203 h)
-    simpa only [h,Bool.false_eq_true,if_false] using And.intro hn.1.le hn.2.le
+    simp only [h,Bool.false_eq_true,if_false]
+    constructor <;> linarith [hn.1,hn.2]
   · have hn := P.helper_windows.2.1
     simpa only [h,if_true] using And.intro hn.1.le hn.2.le
 
@@ -77,7 +75,8 @@ theorem northwest_domain_iff_own_tail {R : ℝ} (P : NormalizedPacking R) :
     refine ⟨north_pair_range P,?_⟩
     cases hW : P.ownBits 2
     · have hw := abs_lt.mp (P.cardinal_angle 2 hW)
-      simpa only [hW,Bool.false_eq_true,if_false] using And.intro hw.1.le hw.2.le
+      simp only [hW,Bool.false_eq_true,if_false]
+      constructor <;> linarith [hw.1,hw.2]
     · have hneg := canonical_own_west_negative P hW
       simp only [hW,if_true]
       exact ⟨htail hW,by linarith⟩

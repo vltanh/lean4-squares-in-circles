@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.PairTaylorApprox
-public import SquaresInCircles.Six.Stress.Support
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.PairTaylorApprox
+import SquaresInCircles.Six.Stress.Support
 
 /-!
 # Explicit perturbation and square-root comparisons
@@ -25,8 +22,9 @@ lemma sum_difference {a b A B e f : ℝ}
 
 lemma sub_difference {a b A B e f : ℝ}
     (ha : |a-A|≤e) (hb : |b-B|≤f) : |(a-b)-(A-B)|≤e+f := by
-  have h := abs_sub_le (a-A) (b-B)
-  have he : (a-b)-(A-B)=(a-A)-(b-B) := by ring
+  have h := abs_add_le (a-A) (-(b-B))
+  rw [abs_neg] at h
+  have he : (a-b)-(A-B)=(a-A)+-(b-B) := by ring
   rw [he]
   linarith
 
@@ -49,12 +47,12 @@ theorem length_le_of_coordinate_errors {x y X Y e : ℝ}
   have hdotX : X*(x-X)≤L*e := by
     calc
       _≤|X*(x-X)| := le_abs_self _
-      _=|X|*|x-X| := abs_mul _ _
+      _=|X| *|x-X| := abs_mul _ _
       _≤L*e := mul_le_mul hX hx (abs_nonneg _) hL0
   have hdotY : Y*(y-Y)≤L*e := by
     calc
       _≤|Y*(y-Y)| := le_abs_self _
-      _=|Y|*|y-Y| := abs_mul _ _
+      _=|Y| *|y-Y| := abs_mul _ _
       _≤L*e := mul_le_mul hY hy (abs_nonneg _) hL0
   have hnorm : x^2+y^2≤(L+2*e)^2 := by nlinarith [sq_nonneg e]
   have hroot := Real.sq_sqrt (show 0≤x^2+y^2 by positivity)

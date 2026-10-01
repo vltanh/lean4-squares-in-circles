@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Normalization.Constants
-public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.Constants
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
 
 /-!
 # Exact cap-branch identity I1 and the opposite-cardinal budget deduction
@@ -29,7 +26,7 @@ lemma R0_pos : 0 < R0 := Real.sqrt_pos.mpr Q0_pos
 lemma R0_gt_one : 1 < R0 := by
   have hs : Real.sqrt (1 : ℝ) < Real.sqrt Q0 :=
     Real.sqrt_lt_sqrt (by norm_num) (by norm_num [Q0])
-  simpa only [Real.sqrt_one] using hs
+  simpa only [Real.sqrt_one, R0] using hs
 
 lemma switch_sine_bounds : 0 < 1 / (2 * R0) ∧ 1 / (2 * R0) < 1 := by
   have hp : 0 < 2 * R0 := by linarith [R0_pos]

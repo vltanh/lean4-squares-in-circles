@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Vertices
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Vertices
 
 /-!
 # Exact endpoint margins for the west-dominant profile
@@ -33,23 +30,24 @@ private def lowerPolynomial (upper : Bool) (v s d : ℝ) : ℝ :=
 private lemma polynomial_le (upper : Bool) {v s d : ℝ}
     (hv : 0 ≤ v) (hs : 0 ≤ s) (hd : 0 ≤ d) (hr : s ≤ d) :
     lowerPolynomial upper v s d ≤ profile upper v s d := by
-  have cv := Seven.cos_lower_six hv
-  have sv := Seven.sin_lower_seven hv
-  have cs := Seven.cos_lower_six hs
-  have ss := Seven.sin_lower_seven hs
-  have cd := Seven.cos_lower_six hd
-  have sd := Seven.sin_lower_seven hd
-  have sq := Seven.sin_lower_seven (x := d+v) (by linarith)
-  have sh := Seven.sin_upper_five (x := (d+v)/2) (by linarith)
-  have ch := Seven.cos_upper_four (x := (d+v)/2) (by linarith)
-  have cr := Seven.cos_upper_four (x := d-s) (by linarith)
-  have sr := Seven.sin_lower_seven (x := d-s) (by linarith)
-  have crr := Seven.cos_lower_six (x := 2*(d-s)) (by linarith)
+  -- The Taylor polynomials are kept as atoms; the comparison is then linear.
+  have cv : cosLower v ≤ Real.cos v := Seven.cos_lower_six hv
+  have sv : sinLower v ≤ Real.sin v := Seven.sin_lower_seven hv
+  have cs : cosLower s ≤ Real.cos s := Seven.cos_lower_six hs
+  have ss : sinLower s ≤ Real.sin s := Seven.sin_lower_seven hs
+  have cd : cosLower d ≤ Real.cos d := Seven.cos_lower_six hd
+  have sd : sinLower d ≤ Real.sin d := Seven.sin_lower_seven hd
+  have sq : sinLower (d+v) ≤ Real.sin (d+v) := Seven.sin_lower_seven (by linarith)
+  have sh : Real.sin ((d+v)/2) ≤ sinUpper ((d+v)/2) := Seven.sin_upper_five (by linarith)
+  have ch : Real.cos ((d+v)/2) ≤ cosUpper ((d+v)/2) := Seven.cos_upper_four (by linarith)
+  have cr : Real.cos (d-s) ≤ cosUpper (d-s) := Seven.cos_upper_four (by linarith)
+  have sr : sinLower (d-s) ≤ Real.sin (d-s) := Seven.sin_lower_seven (by linarith)
+  have crr : cosLower (2*(d-s)) ≤ Real.cos (2*(d-s)) := Seven.cos_lower_six (by linarith)
   cases upper <;>
-    dsimp [lowerPolynomial,profile,constantTerm,westSlice,southSlice,westTerm,southTerm,
+    simp only [lowerPolynomial,profile,constantTerm,westSlice,southSlice,westTerm,southTerm,
       diagonalTerm,chord,transverse,westWeight,southWeight,diagonalWeight,
-      wingCos,wingSin,centerY,chordSin,chordCos,cosLower,cosUpper,sinLower,sinUpper] <;>
-    nlinarith only [cv,sv,cs,ss,cd,sd,sq,sh,ch,cr,sr,crr]
+      wingCos,wingSin,centerY,chordSin,chordCos,Bool.false_eq_true,ite_false,ite_true] <;>
+    linarith only [cv,sv,cs,ss,cd,sd,sq,sh,ch,cr,sr,crr]
 
 /-- The four coordinates are the vertices proved sufficient in Vertices.lean. -/
 private def vertexV (i : Fin 4) : ℝ := ![0,2/3,2/3,12/25] i

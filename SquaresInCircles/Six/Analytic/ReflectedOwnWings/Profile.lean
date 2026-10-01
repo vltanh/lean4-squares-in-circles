@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.ReflectedOwnWings.Transverse
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.ReflectedOwnWings.Transverse
 
 /-!
 # Coordinate concavity for the last reflected two-OWN case
@@ -49,14 +46,16 @@ def value (upper : Bool) (v s d : ℝ) : ℝ :=
 lemma chord_hasDeriv (q : ℝ) : HasDerivAt chord (chordFirst q) q := by
   convert (((Real.hasDerivAt_sin q).sub
     ((((hasDerivAt_id q).div_const 2).sin).const_mul chordSin)).sub
-    ((((hasDerivAt_id q).div_const 2).cos).const_mul chordCos)) using 1 <;>
-    dsimp [chord,chordFirst] <;> ring
+    ((((hasDerivAt_id q).div_const 2).cos).const_mul chordCos)) using 1
+  · funext y; simp only [chord,Pi.sub_apply,id_eq]
+  · dsimp [chordFirst]; ring
 
 lemma chord_first_hasDeriv (q : ℝ) : HasDerivAt chordFirst (chordSecond q) q := by
   convert (((Real.hasDerivAt_cos q).sub
     ((((hasDerivAt_id q).div_const 2).cos).const_mul (chordSin/2))).add
-    ((((hasDerivAt_id q).div_const 2).sin).const_mul (chordCos/2))) using 1 <;>
-    dsimp [chordFirst,chordSecond] <;> ring
+    ((((hasDerivAt_id q).div_const 2).sin).const_mul (chordCos/2))) using 1
+  · funext y; simp only [chordFirst,Pi.sub_apply,Pi.add_apply,id_eq]
+  · dsimp [chordSecond]; ring
 
 lemma chord_second_upper {q : ℝ} (hq : 157/200 ≤ q ∧ q ≤ 5/3) :
     chordSecond q ≤ -(19/100) :=
@@ -64,37 +63,43 @@ lemma chord_second_upper {q : ℝ} (hq : 157/200 ≤ q ∧ q ≤ 5/3) :
 
 lemma west_hasDeriv (upper : Bool) (v : ℝ) : HasDerivAt (westTerm upper) (westFirst upper v) v := by
   convert (((Real.hasDerivAt_cos v).const_mul A).add
-    ((Real.hasDerivAt_sin v).const_mul (1/2+face upper))).const_mul beta using 1 <;>
-    dsimp [westTerm,westFirst] <;> ring
+    ((Real.hasDerivAt_sin v).const_mul (1/2+face upper))).const_mul beta using 1
+  · funext y; simp only [westTerm,Pi.add_apply]
+  · dsimp [westFirst]; ring
 
 lemma west_first_hasDeriv (upper : Bool) (v : ℝ) :
     HasDerivAt (westFirst upper) (-westTerm upper v) v := by
   convert (((Real.hasDerivAt_sin v).const_mul (-A)).add
-    ((Real.hasDerivAt_cos v).const_mul (1/2+face upper))).const_mul beta using 1 <;>
-    dsimp [westTerm,westFirst] <;> ring
+    ((Real.hasDerivAt_cos v).const_mul (1/2+face upper))).const_mul beta using 1
+  · funext y; simp only [westFirst,Pi.add_apply]
+  · dsimp [westTerm]; ring
 
 lemma south_hasDeriv (upper : Bool) (s : ℝ) : HasDerivAt (southTerm upper) (southFirst upper s) s := by
   convert (((Real.hasDerivAt_cos s).const_mul (1/2-face upper)).add
-    ((Real.hasDerivAt_sin s).const_mul B)).const_mul gamma using 1 <;>
-    dsimp [southTerm,southFirst] <;> ring
+    ((Real.hasDerivAt_sin s).const_mul B)).const_mul gamma using 1
+  · funext y; simp only [southTerm,Pi.add_apply]
+  · dsimp [southFirst]; ring
 
 lemma south_first_hasDeriv (upper : Bool) (s : ℝ) :
     HasDerivAt (southFirst upper) (-southTerm upper s) s := by
   convert (((Real.hasDerivAt_sin s).const_mul (-(1/2-face upper))).add
-    ((Real.hasDerivAt_cos s).const_mul B)).const_mul gamma using 1 <;>
-    dsimp [southTerm,southFirst] <;> ring
+    ((Real.hasDerivAt_cos s).const_mul B)).const_mul gamma using 1
+  · funext y; simp only [southFirst,Pi.add_apply]
+  · dsimp [southTerm]; ring
 
 lemma diagonal_hasDeriv (upper : Bool) (d : ℝ) :
     HasDerivAt (diagonalTerm upper) (diagonalFirst upper d) d := by
   convert (((Real.hasDerivAt_cos d).const_mul A).add
-    ((Real.hasDerivAt_sin d).const_mul (1/2-face upper))).const_mul delta using 1 <;>
-    dsimp [diagonalTerm,diagonalFirst] <;> ring
+    ((Real.hasDerivAt_sin d).const_mul (1/2-face upper))).const_mul delta using 1
+  · funext y; simp only [diagonalTerm,Pi.add_apply]
+  · dsimp [diagonalFirst]; ring
 
 lemma diagonal_first_hasDeriv (upper : Bool) (d : ℝ) :
     HasDerivAt (diagonalFirst upper) (-diagonalTerm upper d) d := by
   convert (((Real.hasDerivAt_sin d).const_mul (-A)).add
-    ((Real.hasDerivAt_cos d).const_mul (1/2-face upper))).const_mul delta using 1 <;>
-    dsimp [diagonalTerm,diagonalFirst] <;> ring
+    ((Real.hasDerivAt_cos d).const_mul (1/2-face upper))).const_mul delta using 1
+  · funext y; simp only [diagonalFirst,Pi.add_apply]
+  · dsimp [diagonalTerm]; ring
 
 private lemma west_nonnegative (upper : Bool) {v : ℝ} (hv : 0 ≤ v ∧ v ≤ 2/3) :
     0 ≤ westTerm upper v := by
@@ -135,12 +140,16 @@ lemma west_concave (upper : Bool) {d : ℝ} (hd : 157/200 ≤ d ∧ d ≤ 163/17
   let f'' : ℝ → ℝ := fun v => -westTerm upper v+chordSecond (d+v)
   have hf (v : ℝ) : HasDerivAt (westSlice upper d) (f' v) v := by
     have hq := (chord_hasDeriv (d+v)).comp v ((hasDerivAt_id v).const_add d)
-    convert (west_hasDeriv upper v).add hq using 1 <;> dsimp [westSlice,f'] <;> ring
+    convert (west_hasDeriv upper v).add hq using 1
+    · funext y; simp only [westSlice,Pi.add_apply,Function.comp_apply]
+    · simp only [f']; ring
   have hff (v : ℝ) : HasDerivAt f' (f'' v) v := by
     have hq := (chord_first_hasDeriv (d+v)).comp v ((hasDerivAt_id v).const_add d)
-    convert (west_first_hasDeriv upper v).add hq using 1 <;> dsimp [f',f''] <;> ring
+    convert (west_first_hasDeriv upper v).add hq using 1
+    · funext y; simp only [f',Pi.add_apply,Function.comp_apply]
+    · simp only [f'']; ring
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc 0 (2/3))
-    (f' := f') (f'' := f'') (by dsimp [westSlice,westTerm,chord]; fun_prop)
+    (f' := f') (f'' := f'') (fun v _ => (hf v).continuousAt.continuousWithinAt)
   · intro v _; exact (hf v).hasDerivWithinAt
   · intro v _; exact (hff v).hasDerivWithinAt
   · intro v hv
@@ -156,12 +165,16 @@ lemma south_concave (upper : Bool) {d : ℝ} (hd : 157/200 ≤ d ∧ d ≤ 163/1
   let f'' : ℝ → ℝ := fun s => -southTerm upper s+transverseSecond (d-s)
   have hf (s : ℝ) : HasDerivAt (southSlice upper d) (f' s) s := by
     have hr := (transverse_hasDeriv (d-s)).comp s ((hasDerivAt_id s).const_sub d)
-    convert (south_hasDeriv upper s).add hr using 1 <;> dsimp [southSlice,f'] <;> ring
+    convert (south_hasDeriv upper s).add hr using 1
+    · funext y; simp only [southSlice,Pi.add_apply,Function.comp_apply]
+    · simp only [f']; ring
   have hff (s : ℝ) : HasDerivAt f' (f'' s) s := by
     have hr := (transverse_first_hasDeriv (d-s)).comp s ((hasDerivAt_id s).const_sub d)
-    convert (south_first_hasDeriv upper s).sub hr using 1 <;> dsimp [f',f''] <;> ring
+    convert (south_first_hasDeriv upper s).sub hr using 1
+    · funext y; simp only [f',Pi.sub_apply,Function.comp_apply]
+    · simp only [f'']; ring
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc (48/175) (12/25))
-    (f' := f') (f'' := f'') (by dsimp [southSlice,southTerm,transverse]; fun_prop)
+    (f' := f') (f'' := f'') (fun s _ => (hf s).continuousAt.continuousWithinAt)
   · intro s _; exact (hf s).hasDerivWithinAt
   · intro s _; exact (hff s).hasDerivWithinAt
   · intro s hs
@@ -180,14 +193,17 @@ lemma diagonal_concave (upper : Bool) {v s : ℝ}
     have hq := (chord_hasDeriv (d+v)).comp d ((hasDerivAt_id d).add_const v)
     have hr := (transverse_hasDeriv (d-s)).comp d ((hasDerivAt_id d).sub_const s)
     convert (((diagonal_hasDeriv upper d).add hq).add hr).const_add
-      (constantTerm+westTerm upper v+southTerm upper s) using 1 <;>
-      dsimp [value,westSlice,southSlice,f'] <;> ring
+      (constantTerm+westTerm upper v+southTerm upper s) using 1
+    · funext y; simp only [value,westSlice,southSlice,Pi.add_apply,Function.comp_apply,id_eq]; ring
+    · simp only [f']; ring
   have hff (d : ℝ) : HasDerivAt f' (f'' d) d := by
     have hq := (chord_first_hasDeriv (d+v)).comp d ((hasDerivAt_id d).add_const v)
     have hr := (transverse_first_hasDeriv (d-s)).comp d ((hasDerivAt_id d).sub_const s)
-    convert ((diagonal_first_hasDeriv upper d).add hq).add hr using 1 <;> dsimp [f',f''] <;> ring
+    convert ((diagonal_first_hasDeriv upper d).add hq).add hr using 1
+    · funext y; simp only [f',Pi.add_apply,Function.comp_apply,id_eq]
+    · simp only [f'']; ring
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc (157/200) (163/175))
-    (f' := f') (f'' := f'') (by dsimp [value,westSlice,southSlice,diagonalTerm,chord,transverse]; fun_prop)
+    (f' := f') (f'' := f'') (fun d _ => (hf d).continuousAt.continuousWithinAt)
   · intro d _; exact (hf d).hasDerivWithinAt
   · intro d _; exact (hff d).hasDerivWithinAt
   · intro d hd

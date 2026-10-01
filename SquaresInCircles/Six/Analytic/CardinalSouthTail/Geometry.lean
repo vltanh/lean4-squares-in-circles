@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.CardinalSouthTail.Support
-public import SquaresInCircles.Six.Analytic.MixedCardinalSouth.Geometry
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CardinalSouthTail.Support
+import SquaresInCircles.Six.Analytic.MixedCardinalSouth.Geometry
 
 /-!
 # Close the entire cardinal-W missing-south branch
@@ -78,7 +75,8 @@ theorem not_missing_south_of_large_own {R : ℝ} (P : NormalizedPacking R)
     have hhi := P.diagonal_angle_range.2
     constructor <;> linarith [Real.pi_lt_d4]
   have hWphase : P.phase 2=Real.pi-v := by
-    rw [P.phase_from_deviation 2]
+    have h : P.phase 2=Real.pi+P.helperAngle 2 := P.phase_from_deviation 2
+    rw [h]
     dsimp [v]
     ring
   have hSphase : P.phase 4=3*Real.pi/2+s := P.phase_from_deviation 4
@@ -99,7 +97,7 @@ theorem not_missing_south_of_large_own {R : ℝ} (P : NormalizedPacking R)
     have h := P.own_separator 4 hS
     rw [hSphase] at h
     simp only [centralMargin,centralNormal,angularWidth,Real.cos_add,Real.sin_add,
-      south_cos,south_sin,zero_mul,one_mul,neg_one_mul,zero_add,add_zero,abs_neg] at h
+      south_cos,south_sin,zero_mul,neg_one_mul,add_zero,abs_neg,zero_sub,neg_neg] at h
     dsimp [angularWidth]
     nlinarith only [h]
   have hWD : 1/2+angularWidth (d+v) ≤
@@ -148,6 +146,6 @@ theorem missing_south_requires_own_west {R : ℝ} {P : NormalizedPacking R}
     (hmissing : MissingSouthWing P) : P.ownBits 2=true := by
   cases hW : P.ownBits 2
   · exact False.elim (not_missing_south P hW hmissing)
-  · exact hW
+  · rfl
 
 end SquaresInCircles.Six.Analytic.CardinalSouthTail

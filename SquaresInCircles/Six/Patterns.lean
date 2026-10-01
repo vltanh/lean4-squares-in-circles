@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Normalization.StrongCardinal
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.StrongCardinal
 
 /-!
 # Canonical five-bit patterns
@@ -116,4 +113,6 @@ lemma candidate_bits (h : P.patternCode=8) : P.ownBits=CentralPattern.allCardina
   (CentralPattern.code_eq_eight_iff P.ownBits).mp h
 
 end Normalization.NormalizedPacking
+end
+
 end SquaresInCircles.Six

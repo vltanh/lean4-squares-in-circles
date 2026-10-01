@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.WestStressGeometry
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.WestStressGeometry
 
 /-!
 # Appendix A: analytic exclusion of west-cardinal D

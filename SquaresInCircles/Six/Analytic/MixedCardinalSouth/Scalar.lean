@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.MixedCardinalWest.Concavity
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.MixedCardinalWest.Concavity
 
 /-!
 # A scalar obstruction to the second mixed source when W is cardinal
@@ -37,14 +34,21 @@ lemma chordTerm_concave : ConcaveOn ℝ (Set.Icc 0 (6/5)) chordTerm := by
   let f'' : ℝ → ℝ := fun q => -3*Real.sin q+(3*R0/2)*Real.sin (q/2)
   have hf (q : ℝ) : HasDerivAt chordTerm (f' q) q := by
     have hh := (((hasDerivAt_id q).div_const 2).sin).const_mul (6*R0)
-    convert ((Real.hasDerivAt_sin q).const_mul 3).sub hh using 1 <;>
-      dsimp [chordTerm,f'] <;> ring
+    convert ((Real.hasDerivAt_sin q).const_mul 3).sub hh using 1
+    · funext y
+      simp only [chordTerm,Pi.sub_apply,id]
+    · simp only [f',id]
+      ring
   have hff (q : ℝ) : HasDerivAt f' (f'' q) q := by
     have hh := (((hasDerivAt_id q).div_const 2).cos).const_mul (3*R0)
-    convert ((Real.hasDerivAt_cos q).const_mul 3).sub hh using 1 <;>
-      dsimp [f',f''] <;> ring
+    convert ((Real.hasDerivAt_cos q).const_mul 3).sub hh using 1
+    · funext y
+      simp only [f',Pi.sub_apply,id]
+    · simp only [f'',id]
+      ring
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc 0 (6/5))
-    (f' := f') (f'' := f'') (by dsimp [chordTerm]; fun_prop)
+    (f := chordTerm) (f' := f') (f'' := f'')
+    (fun q _ => (hf q).continuousAt.continuousWithinAt)
   · intro q _; exact (hf q).hasDerivWithinAt
   · intro q _; exact (hff q).hasDerivWithinAt
   · intro q hq
@@ -80,19 +84,23 @@ lemma widthTerm_concave :
   convert h using 1
   funext d
   dsimp [radicalTrig,widthTerm]
-  ring
+  ring_nf
 
 lemma westTerm_negative_concave : ConcaveOn ℝ (Set.Icc (-(2/5)) 0) westTerm := by
   have h := concave_affine_argument (a := -1) (b := 0)
     MixedCardinalWest.southTerm_positive_concave
     (l := -(2/5)) (u := 0) (fun w hw => by constructor <;> linarith [hw.1,hw.2])
-  simpa [westTerm] using h
+  convert h using 1
+  funext w
+  simp [westTerm]
 
 lemma westTerm_positive_concave : ConcaveOn ℝ (Set.Icc 0 (2/5)) westTerm := by
   have h := concave_affine_argument (a := -1) (b := 0)
     MixedCardinalWest.southTerm_negative_concave
     (l := 0) (u := 2/5) (fun w hw => by constructor <;> linarith [hw.1,hw.2])
-  simpa [westTerm] using h
+  convert h using 1
+  funext w
+  simp [westTerm]
 
 lemma gap_diagonal_concave {w : ℝ} (hw : -(2/5) ≤ w ∧ w ≤ 2/5) :
     ConcaveOn ℝ (Set.Icc (1/2) (Real.pi/4)) (fun d => gap w d) := by
@@ -113,7 +121,7 @@ lemma gap_west_concave {d l u : ℝ} (hd : 1/2 ≤ d ∧ d ≤ Real.pi/4)
   have hq0 := concave_affine_argument (a := -1) (b := d) chordTerm_concave
     (l := l) (u := u) (fun w hmem => by
       have h := offset ⟨hl.trans hmem.1,hmem.2.trans hu⟩ hd
-      convert h using 1 <;> ring)
+      constructor <;> linarith [h.1,h.2])
   have hq : ConcaveOn ℝ (Set.Icc l u) (fun w => chordTerm (d-w)) := by
     convert hq0 using 1
     funext w
@@ -256,9 +264,13 @@ lemma endpoint_positive (i : Fin 3) (j : Fin 2) : 0 < gap (westEnd i) (diagonalE
   have hC : c0 ≤ 113/1000 := by dsimp [c0]; linarith [rho0_upper]
   have hp := reserve_positive i j
   dsimp [reserve] at hp
+  have hroot' : 6*R0*Real.sin ((diagonalEnd j-westEnd i)/2)=
+      R0*Real.sqrt (18-18*Real.cos (diagonalEnd j-westEnd i)) := by
+    rw [← hroot]
+    ring
   dsimp [gap,westTerm,MixedCardinalWest.southTerm,chordTerm,widthTerm]
-  rw [Real.cos_neg,Real.sin_neg,neg_neg]
-  nlinarith only [hc,hs,hq,hwidth,hmul,hr,hC,hp,hroot]
+  rw [Real.cos_neg,Real.sin_neg,neg_neg,mul_neg,sub_neg_eq_add]
+  linarith only [hc,hs,hq,hwidth,hmul,hr,hC,hp,hroot']
 
 /-- Whole-domain positivity. Six endpoint fractions follow from the actual
 wall w=0 and the two physical diagonal endpoints, not from a mesh. -/
@@ -269,11 +281,14 @@ theorem positive {w d : ℝ}
       fin_cases i <;> norm_num [westEnd]
     exact positive_on_concave_interval (gap_diagonal_concave hwi) hd
       (endpoint_positive i 0) (endpoint_positive i 1)
+  have h0 : 0 < gap (-(2/5)) d := by
+    have h := he 0
+    rwa [show westEnd 0 = -(2/5) by norm_num [westEnd]] at h
   by_cases hw0 : w ≤ 0
-  · exact positive_on_concave_interval
+  · exact positive_on_concave_interval (f := fun w => gap w d)
       (gap_west_concave hd le_rfl (by norm_num) westTerm_negative_concave)
-      ⟨hw.1,hw0⟩ (he 0) (he 1)
-  · exact positive_on_concave_interval
+      ⟨hw.1,hw0⟩ h0 (he 1)
+  · exact positive_on_concave_interval (f := fun w => gap w d)
       (gap_west_concave hd (by norm_num) le_rfl westTerm_positive_concave)
       ⟨le_of_not_ge hw0,hw.2⟩ (he 1) (he 2)
 

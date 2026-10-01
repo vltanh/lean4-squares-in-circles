@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.FixedPairSlices
-public import SquaresInCircles.Six.Analytic.FixedPairTrig
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FixedPairSlices
+import SquaresInCircles.Six.Analytic.FixedPairTrig
 
 /-!
 # Nonzero forces and safe curvature interfaces
@@ -17,14 +14,14 @@ namespace SquaresInCircles.Six.Analytic.FixedPair
 open Stress Normalization
 
 lemma northSource_first_lower (u : Fin 4) (q : ℝ) : -1≤(pairNorthSource u q).1 := by
-  fin_cases u <;> simp only [pairNorthSource]
+  fin_cases u <;> simp only [pairNorthSource,Fin.reduceFinMk,Matrix.cons_val]
   · linarith [Real.sin_le_one q]
   · exact Real.neg_one_le_cos q
   · norm_num
   · norm_num
 
 lemma westSource_first_lower (u : Fin 4) (q : ℝ) : -1≤(pairWestSource u q).1 := by
-  fin_cases u <;> simp only [pairWestSource]
+  fin_cases u <;> simp only [pairWestSource,Fin.reduceFinMk,Matrix.cons_val]
   · norm_num
   · norm_num
   · linarith [Real.sin_le_one q]
@@ -34,7 +31,7 @@ lemma northForce_first_positive {no wo : Bool} {n w : ℝ}
     (hd : Domain no wo n w) (u : Fin 4) : 1/2<(northForce no u n w).1 := by
   have hc := cos_lower_of_abs_le (domain_absolute hd).1
   have hb : 9/10≤(pairNorthBase no n).1 := by
-    cases no <;> simp only [pairNorthBase,Bool.false_eq_true,if_false,if_true] <;> nlinarith
+    cases no <;> simp only [pairNorthBase,Bool.false_eq_true,ite_false,ite_true] <;> nlinarith
   have hs := mul_le_mul_of_nonneg_left (northSource_first_lower u (n-w)) rStar_pos.le
   dsimp [northForce]
   nlinarith [pair_multiplier_bounds]
@@ -43,7 +40,7 @@ lemma westForce_first_positive {no wo : Bool} {n w : ℝ}
     (hd : Domain no wo n w) (u : Fin 4) : 1/2<(westForce wo u n w).1 := by
   have hc := cos_lower_of_abs_le (domain_absolute hd).2.1
   have hb : 9/10≤(pairWestBase wo w).1 := by
-    cases wo <;> simp only [pairWestBase,Bool.false_eq_true,if_false,if_true] <;> nlinarith
+    cases wo <;> simp only [pairWestBase,Bool.false_eq_true,ite_false,ite_true] <;> nlinarith
   have hs := mul_le_mul_of_nonneg_left (westSource_first_lower u (n-w)) rStar_pos.le
   dsimp [westForce]
   nlinarith [pair_multiplier_bounds]
@@ -107,7 +104,7 @@ lemma Wave.curvature_le_rational {W : Wave} {x A B M : ℝ}
   have h := Wave.curvature_bound Six.radius_pos.le hr.le hb ha hx hA hB hB0 hab
   have hAB : 0<A+B := by linarith
   have hprod := mul_le_mul_of_nonneg_right candidate_radius_bounds.2.le
-    (show 0≤A*B/(A+B) by positivity)
+    (div_nonneg (mul_nonneg (hr.le.trans hA) hB0) hAB.le)
   have hstep : Six.radius*A*B/(A+B)≤(1689/1000)*A*B/(A+B) := by
     simpa only [mul_div_assoc,mul_assoc] using hprod
   exact h.trans (hstep.trans hm)

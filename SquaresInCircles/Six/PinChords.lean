@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.DiagonalPositive
-public import SquaresInCircles.Six.DirectedAxes
-
-@[expose] public section
+import SquaresInCircles.Six.DiagonalPositive
+import SquaresInCircles.Six.DirectedAxes
 
 /-!
 # Exact fixed-pin chords
@@ -20,6 +17,12 @@ def polar (r t : ℝ) : Point := (r*Real.cos t,r*Real.sin t)
 def primary (t : ℝ) : Point := (Real.cos t,Real.sin t)
 def secondary (t : ℝ) : Point := (-Real.sin t,Real.cos t)
 
+private lemma cos_pi_add' (x : ℝ) : Real.cos (Real.pi+x) = -Real.cos x := by
+  rw [add_comm,Real.cos_add_pi]
+
+private lemma sin_pi_add' (x : ℝ) : Real.sin (Real.pi+x) = -Real.sin x := by
+  rw [add_comm,Real.sin_add_pi]
+
 lemma dot_primary_polar (r t z : ℝ) : dot (primary t) (polar r z)=r*Real.cos (z-t) := by
   dsimp [dot,primary,polar]
   rw [Real.cos_sub]
@@ -34,7 +37,7 @@ lemma centered_chord (r m u : ℝ) :
     sub (polar r (m+u)) (polar r (m-u)) =
       scale (2*r*Real.sin u) (-Real.sin m,Real.cos m) := by
   apply Prod.ext <;> dsimp [sub,polar,scale] <;>
-    rw [Real.cos_add,Real.cos_sub,Real.sin_add,Real.sin_sub] <;> ring
+    simp only [Real.cos_add,Real.cos_sub,Real.sin_add,Real.sin_sub] <;> ring
 
 lemma sub_reverse (p q : Point) : sub p q=scale (-1) (sub q p) := by
   apply Prod.ext <;> dsimp [sub,scale] <;> ring
@@ -46,7 +49,8 @@ lemma pin_chord_WD : sub (fixedPin 3) (fixedPin 2)=
   have h1 : 13*Real.pi/12+Real.pi/6=(5/4)*Real.pi := by ring
   have h2 : 13*Real.pi/12-Real.pi/6=(11/12)*Real.pi := by ring
   rw [h1,h2,show 13*Real.pi/12=Real.pi+Real.pi/12 by ring,
-    Real.sin_pi_add,Real.cos_pi_add,Real.sin_pi_div_six] at h
+    sin_pi_add',cos_pi_add',Real.sin_pi_div_six,
+    show (2:ℝ)*(9/10)*(1/2)=9/10 by norm_num] at h
   simpa [fixedPin,polar,scale] using h
 
 /-- D-to-S follows from the exact diagonal symmetry of the pin set. -/
@@ -97,7 +101,7 @@ lemma WD_primary_projection (t : ℝ) :
       (9/10)*Real.sin (t-Real.pi/12) := by
   rw [pin_chord_WD]
   dsimp [dot,primary]
-  rw [Real.cos_pi_add,Real.sin_pi_add,Real.sin_sub]
+  rw [cos_pi_add',sin_pi_add',Real.sin_sub]
   ring
 
 lemma WD_secondary_projection (t : ℝ) :
@@ -105,7 +109,7 @@ lemma WD_secondary_projection (t : ℝ) :
       (9/10)*Real.cos (t-Real.pi/12) := by
   rw [pin_chord_WD]
   dsimp [dot,secondary]
-  rw [Real.cos_pi_add,Real.sin_pi_add,Real.cos_sub]
+  rw [cos_pi_add',sin_pi_add',Real.cos_sub]
   ring
 
 lemma DS_primary_D_projection (d : ℝ) :
@@ -113,7 +117,7 @@ lemma DS_primary_D_projection (d : ℝ) :
       -(9/10)*Real.cos (d+Real.pi/12) := by
   rw [pin_chord_DS]
   dsimp [dot,primary]
-  rw [Real.cos_pi_add,Real.sin_pi_add,Real.cos_add]
+  rw [cos_pi_add',sin_pi_add',Real.cos_add]
   ring
 
 lemma DS_secondary_D_projection (d : ℝ) :
@@ -121,7 +125,7 @@ lemma DS_secondary_D_projection (d : ℝ) :
       (9/10)*Real.sin (d+Real.pi/12) := by
   rw [pin_chord_DS]
   dsimp [dot,secondary]
-  rw [Real.cos_pi_add,Real.sin_pi_add,Real.sin_add]
+  rw [cos_pi_add',sin_pi_add',Real.sin_add]
   ring
 
 lemma DS_primary_S_projection (s : ℝ) :

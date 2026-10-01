@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.SecondaryCostTangent
-public import SquaresInCircles.Six.Analytic.LowDiagonalEndpoints
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SecondaryCostTangent
+import SquaresInCircles.Six.Analytic.LowDiagonalEndpoints
 
 /-!
 # An affine lower bound on the equal-weight secondary support cost
@@ -46,19 +43,23 @@ private lemma secondary_vertex_smooth_concave :
   let f'' : ℝ→ℝ := fun q => -Real.cos q-Real.sin q+
     (1689/2000)*Real.cos (Real.pi/4-q/2)
   have hu (q : ℝ) : HasDerivAt (fun x : ℝ => Real.pi/4-x/2) (-1/2) q := by
-    convert ((hasDerivAt_id q).div_const 2).neg.const_add (Real.pi/4) using 1 <;> ring
+    convert ((hasDerivAt_id' q).div_const 2).const_sub (Real.pi/4) using 1; ring
   have hf (q : ℝ) : HasDerivAt secondaryVertexSmooth (f' q) q := by
-    have h := (((((hasDerivAt_id q).const_mul (13/20)).const_add (91/125+1/2)).add
-      (Real.hasDerivAt_cos q)).add (Real.hasDerivAt_sin q)).sub
+    have h := (((((hasDerivAt_id' q).const_mul (13/20)).const_add (91/125+1/2)).fun_add
+      (Real.hasDerivAt_cos q)).fun_add (Real.hasDerivAt_sin q)).fun_sub
       (((Real.hasDerivAt_cos (Real.pi/4-q/2)).comp q (hu q)).const_mul (1689/500))
-    convert h using 1 <;> dsimp [secondaryVertexSmooth,f'] <;> ring
+    convert h using 1
+    · funext x; simp only [secondaryVertexSmooth, Function.comp_apply]; ring
+    · dsimp [f']; ring
   have hff (q : ℝ) : HasDerivAt f' (f'' q) q := by
-    have h := ((((Real.hasDerivAt_sin q).neg).const_add (13/20)).add
-      (Real.hasDerivAt_cos q)).sub
+    have h := ((((Real.hasDerivAt_sin q).fun_neg).const_add (13/20)).fun_add
+      (Real.hasDerivAt_cos q)).fun_sub
       (((Real.hasDerivAt_sin (Real.pi/4-q/2)).comp q (hu q)).const_mul (1689/1000))
-    convert h using 1 <;> dsimp [f',f''] <;> ring
+    convert h using 1
+    · funext x; simp only [f', Function.comp_apply]; ring
+    · dsimp [f'']; ring
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc (1/2) 1)
-    (f' := f') (f'' := f'') (by dsimp [secondaryVertexSmooth]; fun_prop)
+    (f' := f') (f'' := f'') (fun q _ => (hf q).continuousAt.continuousWithinAt)
   · intro q _; exact (hf q).hasDerivWithinAt
   · intro q _; exact (hff q).hasDerivWithinAt
   · intro q hq
@@ -66,14 +67,14 @@ private lemma secondary_vertex_smooth_concave :
     have hcos := Real.cos_nonneg_of_mem_Icc
       (show q∈Set.Icc (-(Real.pi/2)) (Real.pi/2) by
         constructor <;> linarith [hqc.1,hqc.2,Real.pi_gt_d2])
-    have hsin := Real.sin_nonneg_of_nonneg_of_le_pi
+    have hsin := Real.sin_nonneg_of_nonneg_of_le_pi (x := q)
       (by linarith [hqc.1]) (by linarith [hqc.2,Real.pi_gt_d2])
     have hsum := one_le_abs_cos_add_abs_sin q
     rw [abs_of_nonneg hcos,abs_of_nonneg hsin] at hsum
     dsimp [f'']
     linarith [Real.cos_le_one (Real.pi/4-q/2)]
 
-private lemma secondary_vertex_line_half : 0<secondaryVertexLine (1/2) := by
+private lemma secondary_vertex_line_half : 0< secondaryVertexLine (1/2) := by
   obtain ⟨hcl,_,hsl,hsu⟩ := low_half_bracket
   have hp : 0≤2+2*Real.sin (1/2) := by linarith
   have hs := Real.sq_sqrt hp
@@ -82,7 +83,7 @@ private lemma secondary_vertex_line_half : 0<secondaryVertexLine (1/2) := by
   dsimp [secondaryVertexLine]
   linarith
 
-private lemma secondary_vertex_line_one : 0<secondaryVertexLine 1 := by
+private lemma secondary_vertex_line_one : 0< secondaryVertexLine 1 := by
   have hc := Seven.cos_lower_six (x := (1:ℝ)) (by norm_num)
   have hl := Seven.sin_lower_seven (x := (1:ℝ)) (by norm_num)
   have hu := Seven.sin_upper_five (x := (1:ℝ)) (by norm_num)
@@ -95,7 +96,7 @@ private lemma secondary_vertex_line_one : 0<secondaryVertexLine 1 := by
   linarith
 
 lemma secondary_vertex_line_positive {q : ℝ} (hq : 1/2≤q ∧ q≤1) :
-    0<secondaryVertexLine q := by
+    0< secondaryVertexLine q := by
   have he (x : ℝ) (hx : 1/2≤x ∧ x≤1) :
       secondaryVertexLine x=secondaryVertexSmooth x := by
     dsimp [secondaryVertexLine,secondaryVertexSmooth]
@@ -129,14 +130,14 @@ lemma secondary_cost_first_quadrant {a b q : ℝ} (hc : ContainedChart a |b|)
   have hcos := Real.cos_nonneg_of_mem_Icc
     (show q∈Set.Icc (-(Real.pi/2)) (Real.pi/2) by
       constructor <;> linarith [hq.1,hq.2,Real.pi_pos])
-  have hsin := Real.sin_nonneg_of_nonneg_of_le_pi
+  have hsin := Real.sin_nonneg_of_nonneg_of_le_pi (x := q)
     (by linarith [hq.1]) (by linarith [hq.2,Real.pi_pos])
   have hc' : ContainedChart a |-b| := by simpa only [abs_neg] using hc
   rw [angularWidth,abs_of_nonneg hcos,abs_of_nonneg hsin]
   by_cases hsmall : q≤1
   · have hp := vertex_linear_upper hc' (U := 1+Real.sin q) (V := Real.cos q)
       (L := Real.sqrt ((1+Real.sin q)^2+Real.cos q^2)) hcos (Real.sqrt_nonneg _)
-      (by rw [Real.sq_sqrt (by positivity)]; exact le_rfl)
+      (by rw [Real.sq_sqrt (by positivity)])
     have he : (1+Real.sin q)^2+Real.cos q^2=2+2*Real.sin q := by
       nlinarith [Real.sin_sq_add_cos_sq q]
     rw [he] at hp

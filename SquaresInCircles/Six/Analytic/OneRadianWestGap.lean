@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Analytic.SecondaryReduction
-public import SquaresInCircles.Six.Analytic.OwnWingProfileSharpening
-public import SquaresInCircles.Six.Analytic.HighDiagonalAffineTransverse
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SecondaryReduction
+import SquaresInCircles.Six.Analytic.OwnWingProfileSharpening
+import SquaresInCircles.Six.Analytic.HighDiagonalAffineTransverse
 
 /-!
 # A full one-radian exclusion for a D-sourced west edge
@@ -75,12 +72,13 @@ private lemma westDefect_mono_q {U v : ℝ}
     nlinarith [rho0_lower]
   have hd (q : ℝ) : HasDerivAt (westDefect U v)
       (A*Real.cos q-(U-1/2)*Real.sin q-17/100) q := by
-    convert (((((Real.hasDerivAt_sin q).const_mul A).add
-      ((Real.hasDerivAt_cos q).const_mul (U-1/2))).sub_const (19/100)).sub
-      ((hasDerivAt_id q).const_mul (17/100))).add_const ((17/100)*v) using 1 <;>
-      dsimp [westDefect,A] <;> ring
-  apply Seven.monoOn_of_hasDeriv_nonneg (by dsimp [westDefect]; fun_prop)
-    (fun q _ => hd q)
+    convert (((((Real.hasDerivAt_sin q).const_mul A).fun_add
+      ((Real.hasDerivAt_cos q).const_mul (U-1/2))).sub_const (19/100)).fun_sub
+      ((hasDerivAt_id q).const_mul (17/100))).add_const ((17/100)*v) using 1
+    · funext y; dsimp [westDefect,A]
+    · dsimp [A]; ring
+  apply Seven.monoOn_of_hasDeriv_nonneg
+    (fun q _ => (hd q).continuousAt.continuousWithinAt) (fun q _ => hd q)
   intro q hq
   obtain ⟨hc,hs0,_⟩ := trig_one_bounds ⟨hq.1.le,hq.2.le⟩
   have hp := mul_nonneg (show 0 ≤ A-39/100 by linarith)
@@ -184,7 +182,9 @@ theorem DW_Dsecondary_gap_gt_one {R : ℝ} (P : NormalizedPacking R)
   let v := -P.helperAngle 2
   let d := P.diagonalAngle
   have hv0 : 0 ≤ v := by dsimp [v]; linarith
-  have hWphase : P.phase 2=Real.pi-v := by rw [P.phase_from_deviation 2]; dsimp [v]; ring
+  have hWphase : P.phase 2=Real.pi-v := by
+    rw [P.phase_from_deviation 2,show cardinalCenter (matchingCardinal 2)=Real.pi from rfl]
+    dsimp [v]; ring
   have hDphase : P.phase 3=Real.pi+d := by dsimp [d,NormalizedPacking.diagonalAngle]; ring
   have hgap : P.phase 3-P.phase 2=d+v := by rw [hWphase,hDphase]; ring
   by_contra! hsmall
@@ -222,7 +222,8 @@ theorem DW_Dsecondary_gap_gt_one {R : ℝ} (P : NormalizedPacking R)
 lemma MissingWestWing.phase_wall_one {R : ℝ} {P : NormalizedPacking R}
     (h : MissingWestWing P) : P.helperAngle 2 < P.diagonalAngle-1 := by
   have hg := DW_Dsecondary_gap_gt_one P h.from_diagonal
-  rw [P.phase_from_deviation 2] at hg
+  rw [P.phase_from_deviation 2,
+    show cardinalCenter (matchingCardinal 2)=Real.pi from rfl] at hg
   dsimp [NormalizedPacking.diagonalAngle]
   linarith
 

@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnWestCardinalSouth.SouthAngle
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnWestCardinalSouth.SouthAngle
 
 /-!
 # A two-variable profile for the last missing-south bit family
@@ -51,13 +48,13 @@ lemma chord_hasDeriv (q : ℝ) : HasDerivAt chord (chordFirst q) q := by
   convert (((Real.hasDerivAt_sin q).sub
     ((((hasDerivAt_id q).div_const 2).sin).const_mul chordSin)).sub
     ((((hasDerivAt_id q).div_const 2).cos).const_mul chordCos)) using 1 <;>
-    dsimp [chord,chordFirst] <;> ring
+    (try funext x) <;> dsimp [chord,chordFirst] <;> ring
 
 lemma chord_first_hasDeriv (q : ℝ) : HasDerivAt chordFirst (chordSecond q) q := by
   convert (((Real.hasDerivAt_cos q).sub
     ((((hasDerivAt_id q).div_const 2).cos).const_mul (chordSin/2))).add
     ((((hasDerivAt_id q).div_const 2).sin).const_mul (chordCos/2))) using 1 <;>
-    dsimp [chordFirst,chordSecond] <;> ring
+    (try funext x) <;> dsimp [chordFirst,chordSecond] <;> ring
 
 /-- A coefficient comparison transfers the whole-interval curvature envelope. -/
 lemma chord_second_upper {q : ℝ} (hq : 1/2 ≤ q ∧ q ≤ 3/2) :
@@ -82,36 +79,38 @@ lemma west_hasDeriv (upper : Bool) (v : ℝ) :
     HasDerivAt (westTerm upper) (westFirst upper v) v := by
   convert (((Real.hasDerivAt_cos v).const_mul wingCos).add
     ((Real.hasDerivAt_sin v).const_mul (1/2+centerY upper))).const_mul westWeight using 1 <;>
-    dsimp [westTerm,westFirst] <;> ring
+    (try funext x) <;> dsimp [westTerm,westFirst] <;> ring
 
 lemma west_first_hasDeriv (upper : Bool) (v : ℝ) :
     HasDerivAt (westFirst upper) (-westTerm upper v) v := by
   convert (((Real.hasDerivAt_sin v).const_mul (-wingCos)).add
     ((Real.hasDerivAt_cos v).const_mul (1/2+centerY upper))).const_mul westWeight using 1 <;>
-    dsimp [westTerm,westFirst] <;> ring
+    (try funext x) <;> dsimp [westTerm,westFirst] <;> ring
 
 lemma diagonal_hasDeriv (upper : Bool) (d : ℝ) :
     HasDerivAt (diagonalTerm upper) (diagonalFirst upper d) d := by
   convert (((Real.hasDerivAt_cos d).const_mul wingCos).add
     ((Real.hasDerivAt_sin d).const_mul (1/2-centerY upper))).const_mul diagonalWeight using 1 <;>
-    dsimp [diagonalTerm,diagonalFirst] <;> ring
+    (try funext x) <;> dsimp [diagonalTerm,diagonalFirst] <;> ring
 
 lemma diagonal_first_hasDeriv (upper : Bool) (d : ℝ) :
     HasDerivAt (diagonalFirst upper) (-diagonalTerm upper d) d := by
   convert (((Real.hasDerivAt_sin d).const_mul (-wingCos)).add
     ((Real.hasDerivAt_cos d).const_mul (1/2-centerY upper))).const_mul diagonalWeight using 1 <;>
-    dsimp [diagonalTerm,diagonalFirst] <;> ring
+    (try funext x) <;> dsimp [diagonalTerm,diagonalFirst] <;> ring
 
 lemma half_linear_hasDeriv (d : ℝ) :
     HasDerivAt halfLinear (southB*Real.sin (d/2)+(1/2)*Real.cos (d/2)) d := by
   convert (((((hasDerivAt_id d).div_const 2).cos).const_mul (-2*southB)).add
-    (((hasDerivAt_id d).div_const 2).sin)) using 1 <;> dsimp [halfLinear] <;> ring
+    (((hasDerivAt_id d).div_const 2).sin)) using 1 <;> (try funext x) <;> dsimp [halfLinear] <;>
+    ring
 
 lemma half_linear_first_hasDeriv (d : ℝ) :
     HasDerivAt (fun x => southB*Real.sin (x/2)+(1/2)*Real.cos (x/2))
       ((southB/2)*Real.cos (d/2)-(1/4)*Real.sin (d/2)) d := by
   convert (((((hasDerivAt_id d).div_const 2).sin).const_mul southB).add
-    ((((hasDerivAt_id d).div_const 2).cos).const_mul (1/2))) using 1 <;> ring
+    ((((hasDerivAt_id d).div_const 2).cos).const_mul (1/2))) using 1 <;> (try funext x) <;>
+    dsimp <;> ring
 
 private lemma west_nonnegative (upper : Bool) {v : ℝ}
     (hv : 0 ≤ v ∧ v ≤ 2/3) : 0 ≤ westTerm upper v := by
@@ -150,12 +149,13 @@ lemma profile_west_concave (upper : Bool) {d : ℝ}
     have hq := (chord_hasDeriv (d+v)).comp v ((hasDerivAt_id v).const_add d)
     convert ((west_hasDeriv upper v).add hq).const_add
       (constantTerm upper+diagonalTerm upper d+halfLinear d) using 1 <;>
-      dsimp [profile,f'] <;> ring
+      (try funext x) <;> dsimp [profile,f'] <;> ring
   have hff (v : ℝ) : HasDerivAt f' (f'' v) v := by
     have hq := (chord_first_hasDeriv (d+v)).comp v ((hasDerivAt_id v).const_add d)
-    convert (west_first_hasDeriv upper v).add hq using 1 <;> dsimp [f',f''] <;> ring
+    convert (west_first_hasDeriv upper v).add hq using 1 <;> (try funext x) <;>
+      dsimp [f',f''] <;> ring
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc 0 (2/3))
-    (f' := f') (f'' := f'') (by dsimp [profile,westTerm,chord]; fun_prop)
+    (f' := f') (f'' := f'') (fun x _ => (hf x).continuousAt.continuousWithinAt)
   · intro v _; exact (hf v).hasDerivWithinAt
   · intro v _; exact (hff v).hasDerivWithinAt
   · intro v hv
@@ -174,13 +174,14 @@ lemma profile_diagonal_concave (upper : Bool) {v : ℝ} (hv : 0 ≤ v ∧ v ≤ 
   have hf (d : ℝ) : HasDerivAt (profile upper v) (f' d) d := by
     have hq := (chord_hasDeriv (d+v)).comp d ((hasDerivAt_id d).add_const v)
     convert (((diagonal_hasDeriv upper d).add hq).add (half_linear_hasDeriv d)).const_add
-      (constantTerm upper+westTerm upper v) using 1 <;> dsimp [profile,f'] <;> ring
+      (constantTerm upper+westTerm upper v) using 1 <;> (try funext x) <;>
+      dsimp [profile,f'] <;> ring
   have hff (d : ℝ) : HasDerivAt f' (f'' d) d := by
     have hq := (chord_first_hasDeriv (d+v)).comp d ((hasDerivAt_id d).add_const v)
     convert ((diagonal_first_hasDeriv upper d).add hq).add (half_linear_first_hasDeriv d)
-      using 1 <;> dsimp [f',f''] <;> ring
+      using 1 <;> (try funext x) <;> dsimp [f',f''] <;> ring
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc (1/2) (11/14))
-    (f' := f') (f'' := f'') (by dsimp [profile,diagonalTerm,chord,halfLinear]; fun_prop)
+    (f' := f') (f'' := f'') (fun x _ => (hf x).continuousAt.continuousWithinAt)
   · intro d _; exact (hf d).hasDerivWithinAt
   · intro d _; exact (hff d).hasDerivWithinAt
   · intro d hd

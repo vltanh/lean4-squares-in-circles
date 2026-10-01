@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnWingProfileSharpening
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnWingProfileSharpening
 
 /-!
 # A smooth substitute for an axial/vertex support split
@@ -37,9 +34,9 @@ theorem soft_axial_support {a b U V : ℝ} (hc : ContainedChart a |b|)
     (show 0 ≤ (31/100)*U-(31/50)*|V| by linarith [hV]) (abs_nonneg b)
   have hquadratic := mul_nonneg
     (show 0 ≤ (31/100)*U-217/500 by linarith [hU]) (sq_nonneg b)
-  have hprod : V*b ≤ |V|*|b| := by
+  have hprod : V*b ≤ |V| *|b| := by
     simpa only [abs_mul] using le_abs_self (V*b)
-  have hsq : 0 ≤ (217/500)*|b|^2-(19/50)*|b|*|V|+|V|^2/12 := by
+  have hsq : 0 ≤ (217/500)*|b|^2-(19/50)*|b| *|V|+|V|^2/12 := by
     rw [soft_axial_square]
     positivity
   rw [sq_abs,sq_abs] at hsq

@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.WestStressMinorant
-public import SquaresInCircles.Six.Normalization.CapBounds
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.WestStressMinorant
+import SquaresInCircles.Six.Normalization.CapBounds
 
 /-!
 # The W-secondary west-cardinal stress and the two exact source expressions
@@ -51,9 +48,9 @@ lemma west_angle_bounds {t:ℝ} (ht:-2/3≤t ∧ t≤2/5) :
     (show -(Real.pi/2)≤(-2:ℝ)/3 by linarith [Real.pi_gt_d2])
     (show t≤Real.pi/2 by linarith [ht.2,Real.pi_gt_d2]) ht.1
   have hsinBound := Real.sin_le (show (0:ℝ)≤2/3 by norm_num)
-  rw [Real.sin_neg] at hsinL
+  rw [show (-2:ℝ)/3=-(2/3) by norm_num,Real.sin_neg] at hsinL
   have hsinBoundU := Real.sin_le (show (0:ℝ)≤2/5 by norm_num)
-  have habs : |t|≤2/3 := abs_le.mpr ⟨ht.1,by linarith [ht.2]⟩
+  have habs : |t|≤2/3 := abs_le.mpr ⟨by linarith [ht.1],by linarith [ht.2]⟩
   have hsq := pow_le_pow_left₀ (abs_nonneg t) habs 2
   rw [sq_abs] at hsq
   exact ⟨by nlinarith [Real.one_sub_sq_div_two_le_cos (x:=t)],

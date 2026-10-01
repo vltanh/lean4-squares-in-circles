@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.CardinalWidthTriangle
-public import SquaresInCircles.Six.Stress.Support
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CardinalWidthTriangle
+import SquaresInCircles.Six.Stress.Support
 
 /-!
 # Radial support of the cardinal-plus-D-secondary resultants
@@ -103,9 +100,10 @@ lemma radial_length_sum_bound (d : ℝ) :
   have hproduct := mul_le_mul_of_nonneg_left (Real.cos_le_one (Real.pi/8-d/2)) hcos
   have hsum : Real.cos (Real.pi/4-d/2)+Real.cos (d/2)=
       2*Real.cos (Real.pi/8)*Real.cos (Real.pi/8-d/2) := by
-    have hA : Real.pi/4-d/2=Real.pi/8+(Real.pi/8-d/2) := by ring
-    have hB : d/2=Real.pi/8-(Real.pi/8-d/2) := by ring
-    rw [hA,hB,Real.cos_add,Real.cos_sub]
+    have hA : Real.cos (Real.pi/4-d/2)=Real.cos (Real.pi/8+(Real.pi/8-d/2)) := by
+      congr 1; ring
+    have hB : Real.cos (d/2)=Real.cos (Real.pi/8-(Real.pi/8-d/2)) := by congr 1; ring
+    rw [hA,hB,Real.cos_add (Real.pi/8),Real.cos_sub (Real.pi/8) (Real.pi/8-d/2)]
     ring
   dsimp [westRadialLength,southRadialLength]
   nlinarith only [hproduct,hsum,eighth_cos_upper]

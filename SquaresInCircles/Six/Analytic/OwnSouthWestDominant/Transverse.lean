@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Chord
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Chord
 
 /-!
 # Whole-domain transverse and wing curvature reserves
@@ -37,24 +34,24 @@ lemma transverse_eq (r : ℝ) :
   nlinarith only [h,Real.sin_sq_add_cos_sq r]
 
 lemma transverse_hasDeriv (r : ℝ) : HasDerivAt transverse (transverseFirst r) r := by
-  convert (((((Real.hasDerivAt_cos r).const_mul (-wingSin)).add
-    ((Real.hasDerivAt_sin r).const_mul (1/2))).sub_const (1/24)).add
-    ((((hasDerivAt_id r).const_mul 2).cos).const_mul (1/24))) using 1 <;>
-    dsimp [transverse,transverseFirst] <;> ring
+  exact (((((Real.hasDerivAt_cos r).const_mul (-wingSin)).fun_add
+    ((Real.hasDerivAt_sin r).const_mul (1/2))).sub_const (1/24)).fun_add
+    ((((hasDerivAt_id' r).const_mul 2).cos).const_mul (1/24))).congr_deriv
+    (by simp only [transverseFirst]; ring)
 
 lemma transverse_first_hasDeriv (r : ℝ) :
     HasDerivAt transverseFirst (transverseSecond r) r := by
-  convert ((((Real.hasDerivAt_sin r).const_mul wingSin).add
-    ((Real.hasDerivAt_cos r).const_mul (1/2))).sub
-    ((((hasDerivAt_id r).const_mul 2).sin).const_mul (1/12))) using 1 <;>
-    dsimp [transverseFirst,transverseSecond] <;> ring
+  exact ((((Real.hasDerivAt_sin r).const_mul wingSin).fun_add
+    ((Real.hasDerivAt_cos r).const_mul (1/2))).fun_sub
+    ((((hasDerivAt_id' r).const_mul 2).sin).const_mul (1/12))).congr_deriv
+    (by simp only [transverseSecond]; ring)
 
 lemma transverse_second_hasDeriv (r : ℝ) :
     HasDerivAt transverseSecond (transverseThird r) r := by
-  convert ((((Real.hasDerivAt_cos r).const_mul wingSin).sub
-    ((Real.hasDerivAt_sin r).const_mul (1/2))).sub
-    ((((hasDerivAt_id r).const_mul 2).cos).const_mul (1/6))) using 1 <;>
-    dsimp [transverseSecond,transverseThird] <;> ring
+  exact ((((Real.hasDerivAt_cos r).const_mul wingSin).fun_sub
+    ((Real.hasDerivAt_sin r).const_mul (1/2))).fun_sub
+    ((((hasDerivAt_id' r).const_mul 2).cos).const_mul (1/6))).congr_deriv
+    (by simp only [transverseThird]; ring)
 
 private lemma cubic_identity (x : ℝ) :
     1/10-(17/300)*x-(3/10)*x^2+(2/5)*x^3 =
@@ -100,15 +97,19 @@ lemma transverse_third_upper {r : ℝ} (hr : 0 ≤ r ∧ r ≤ 4/5) :
 
 lemma transverse_second_upper {r : ℝ} (hr : 0 ≤ r ∧ r ≤ 4/5) :
     transverseSecond r ≤ wingSin-1/6-(2/5)*r := by
+  have hd (x : ℝ) : HasDerivAt (fun x => -(transverseSecond x+(2/5)*x))
+      (-(transverseThird x+2/5)) x :=
+    (((transverse_second_hasDeriv x).fun_add
+      ((hasDerivAt_id' x).const_mul (2/5))).fun_neg).congr_deriv (by ring)
   have hm : MonotoneOn (fun x => -(transverseSecond x+(2/5)*x)) (Set.Icc 0 (4/5)) := by
-    apply Seven.monoOn_of_hasDeriv_nonneg (by dsimp [transverseSecond]; fun_prop)
-      (fun x _ => ((transverse_second_hasDeriv x).add
-        ((hasDerivAt_id x).const_mul (2/5))).neg)
+    apply Seven.monoOn_of_hasDeriv_nonneg
+      (fun x _ => (hd x).continuousAt.continuousWithinAt) (fun x _ => hd x)
     intro x hx
     have h := transverse_third_upper ⟨hx.1.le,hx.2.le⟩
     linarith
+  have h0 : transverseSecond 0 = wingSin-1/6 := by norm_num [transverseSecond]
   have h := hm (by norm_num : (0:ℝ) ∈ Set.Icc 0 (4/5)) hr hr.1
-  norm_num [transverseSecond] at h
+  dsimp only at h
   linarith
 
 lemma wing_affine_lower {s : ℝ} (hs : 0 ≤ s ∧ s ≤ 12/25) :
@@ -117,13 +118,13 @@ lemma wing_affine_lower {s : ℝ} (hs : 0 ≤ s ∧ s ≤ 12/25) :
   let f' : ℝ → ℝ := fun x => -wingCos*Real.sin x+wingSin*Real.cos x-49/100
   let f'' : ℝ → ℝ := fun x => -wingCos*Real.cos x-wingSin*Real.sin x
   have hf (x : ℝ) : HasDerivAt f (f' x) x := by
-    convert (((((Real.hasDerivAt_cos x).const_mul wingCos).add
-      ((Real.hasDerivAt_sin x).const_mul wingSin)).sub_const wingCos).sub
-      ((hasDerivAt_id x).const_mul (49/100))) using 1 <;> dsimp [f,f'] <;> ring
+    exact (((((Real.hasDerivAt_cos x).const_mul wingCos).fun_add
+      ((Real.hasDerivAt_sin x).const_mul wingSin)).sub_const wingCos).fun_sub
+      ((hasDerivAt_id' x).const_mul (49/100))).congr_deriv (by simp only [f']; ring)
   have hff (x : ℝ) : HasDerivAt f' (f'' x) x := by
-    convert ((((Real.hasDerivAt_sin x).const_mul (-wingCos)).add
-      ((Real.hasDerivAt_cos x).const_mul wingSin)).sub_const (49/100)) using 1 <;>
-      dsimp [f',f''] <;> ring
+    exact ((((Real.hasDerivAt_sin x).const_mul (-wingCos)).fun_add
+      ((Real.hasDerivAt_cos x).const_mul wingSin)).sub_const (49/100)).congr_deriv
+      (by simp only [f'']; ring)
   have hc : ConcaveOn ℝ (Set.Icc 0 (12/25)) f := by
     apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc 0 (12/25))
       (f' := f') (f'' := f'') (by dsimp [f]; fun_prop)

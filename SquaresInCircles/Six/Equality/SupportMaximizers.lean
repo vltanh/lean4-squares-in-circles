@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Stress.StrictSupport
-
-@[expose] public section
+import SquaresInCircles.Six.Stress.StrictSupport
 
 /-!
 # Unique support maximizers needed for equality reconstruction
@@ -59,14 +56,14 @@ theorem center_eq_of_vertex_support {S : UnitSquare} {g : Point} {R sx sy : ℝ}
   let p : Point := add S.center (rotate S (sx/2,sy/2))
   have hp : closedSquare S p := by
     constructor
-    · rw [show localX S p=sx/2 from localX_rotated S (sx/2) (sy/2)]
+    · rw [show localX S p=sx/2 from localX_rotated S (sx/2,sy/2)]
       simp [abs_div,hsx]
-    · rw [show localY S p=sy/2 from localY_rotated S (sx/2) (sy/2)]
+    · rw [show localY S p=sy/2 from localY_rotated S (sx/2,sy/2)]
       simp [abs_div,hsy]
   have hproj := projection_local S g p
   rw [dot_sub_right] at hproj
-  have hlocx : localX S p=sx/2 := localX_rotated S (sx/2) (sy/2)
-  have hlocy : localY S p=sy/2 := localY_rotated S (sx/2) (sy/2)
+  have hlocx : localX S p=sx/2 := localX_rotated S (sx/2,sy/2)
+  have hlocy : localY S p=sy/2 := localY_rotated S (sx/2,sy/2)
   rw [hlocx,hlocy] at hproj
   have hdot : dot g p=R*vectorLength g := by
     dsimp [vertexSupport,width] at he

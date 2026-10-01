@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Normalization.PairOrder
-public import SquaresInCircles.Six.Normalization.CapPiercing
-public import SquaresInCircles.Six.Construction
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.PairOrder
+import SquaresInCircles.Six.Normalization.CapPiercing
+import SquaresInCircles.Six.Construction
 
 /-!
 # N22, N25 and N26 in the actual labelled frame
@@ -49,7 +46,9 @@ lemma PinPacking.matching_cardinal_angle {R : ℝ} (P : PinPacking R) (i : Fin 5
     (hi : 0 ≤ centralMargin (matchingCardinal i) (P.phase i) (P.radial i) (P.transverse i)
       P.center.1 P.center.2) :
     |P.phase i-cardinalCenter (matchingCardinal i)| < 2/5 := by
-  simpa only [matchingCase_pin,matchingCase_axis] using P.cardinal_angle (matchingCase i) hi
+  have h := P.cardinal_angle (matchingCase i)
+  simp only [matchingCase_pin,matchingCase_axis] at h
+  exact h hi
 
 lemma south_sin : Real.sin (3*Real.pi/2) = -1 := by
   rw [show 3*Real.pi/2=Real.pi+Real.pi/2 by ring,Real.sin_add]
@@ -146,7 +145,8 @@ theorem PinPacking.cardinal_cap_depth {R : ℝ} (P : PinPacking R) (i : Fin 5)
   have hangle := P.matching_cardinal_angle i hi
   have hm := hi
   rw [cardinal_margin_local _ (matchingCardinal_isCardinal i)] at hm
-  apply cap_support_bound_signed (by linarith [Real.pi_gt_d2])
+  apply cap_support_bound_signed (a := P.radial i) (b := P.transverse i)
+    (by linarith [Real.pi_gt_d2])
   · simpa [phi,abs_of_nonneg (show 0 ≤ P.radial i by linarith [(P.contained i).half_le])]
       using (P.contained i).containment
   · dsimp [centerX,angularWidth] at hm
@@ -161,7 +161,11 @@ theorem PinPacking.east_west_budget {R : ℝ} (P : PinPacking R)
   have hw := P.cardinal_cap_depth 2 hW
   have hae := P.matching_cardinal_angle 0 hE
   have haw := P.matching_cardinal_angle 2 hW
-  simp only [matchingCardinal,cardinalCenter,cardinalDepth,sub_zero] at he hw hae haw
+  have h0 : matchingCardinal 0 = .east := rfl
+  have h2 : matchingCardinal 2 = .west := rfl
+  rw [h0] at he hae
+  rw [h2] at hw haw
+  simp only [cardinalCenter,cardinalDepth,sub_zero] at he hw hae haw
   exact opposite_cardinal_angle_budget_of_caps he hw hae.le haw.le
 
 /-- N26 north/south, again only for two cardinal helpers. -/

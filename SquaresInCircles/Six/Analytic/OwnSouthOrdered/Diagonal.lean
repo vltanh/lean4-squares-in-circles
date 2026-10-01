@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnSouthOrdered.Chord
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnSouthOrdered.Chord
 
 /-!
 # Diagonal monotonicity without a partition
@@ -33,18 +30,24 @@ def profile (v s d : ℝ) : ℝ :=
 
 lemma south_hasDeriv (x : ℝ) : HasDerivAt southTerm (southDerivative x) x := by
   convert ((Real.hasDerivAt_cos x).const_mul (-wingSin)).add
-    ((Real.hasDerivAt_sin x).const_mul (1/2)) using 1 <;>
-    dsimp [southTerm,southDerivative] <;> ring
+    ((Real.hasDerivAt_sin x).const_mul (1/2)) using 1
+  · funext y
+    simp only [southTerm,Pi.add_apply]
+  · simp only [southDerivative]
+    ring
 
 lemma south_derivative_hasDeriv (x : ℝ) :
     HasDerivAt southDerivative (wingSin*Real.cos x-(1/2)*Real.sin x) x := by
   convert ((Real.hasDerivAt_sin x).const_mul wingSin).add
-    ((Real.hasDerivAt_cos x).const_mul (1/2)) using 1 <;>
-    dsimp [southDerivative] <;> ring
+    ((Real.hasDerivAt_cos x).const_mul (1/2)) using 1
+  · funext y
+    simp only [southDerivative,Pi.add_apply]
+  · ring
 
 lemma south_derivative_monotone :
     MonotoneOn southDerivative (Set.Icc (-(1/6)) (4/5)) := by
-  apply Seven.monoOn_of_hasDeriv_nonneg (by dsimp [southDerivative]; fun_prop)
+  apply Seven.monoOn_of_hasDeriv_nonneg (f := southDerivative)
+    (fun x _ => (south_derivative_hasDeriv x).continuousAt.continuousWithinAt)
     (fun x _ => south_derivative_hasDeriv x)
   intro x hx
   have hxx : x^2 ≤ (4/5:ℝ)^2 := by
@@ -117,10 +120,14 @@ lemma profile_at_upper_diagonal {v s d : ℝ}
     have hq := (chord_hasDeriv (x+v)).comp x ((hasDerivAt_id x).add_const v)
     have hr := (south_hasDeriv (x-s)).comp x ((hasDerivAt_id x).sub_const s)
     convert (hq.add hr).const_add
-      (-83178077/125000000+westWeight*wing v+southWeight*wing s) using 1 <;>
-      dsimp [profile] <;> ring
+      (-83178077/125000000+westWeight*wing v+southWeight*wing s) using 1
+    · funext y
+      simp only [profile,Pi.add_apply,Function.comp_apply,id]
+      ring
+    · ring
   have hm : MonotoneOn (fun x => -profile v s x) (Set.Icc (1/2) (11/14)) := by
-    apply Seven.monoOn_of_hasDeriv_nonneg (by dsimp [profile,chord,southTerm]; fun_prop)
+    apply Seven.monoOn_of_hasDeriv_nonneg (f := fun x => -profile v s x)
+      (fun x _ => (hf x).neg.continuousAt.continuousWithinAt)
       (fun x _ => (hf x).neg)
     intro x hx
     exact neg_nonneg.mpr (diagonal_derivative_negative hv hs ⟨hx.1.le,hx.2.le⟩).le

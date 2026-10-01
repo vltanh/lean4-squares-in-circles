@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.CardinalLowDiagonalEndpoints
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CardinalLowDiagonalEndpoints
 
 /-!
 # Support comparison for the cardinal-W low-diagonal stress
@@ -96,13 +93,13 @@ theorem cardLowGap_le_frozen (ds : Bool) {w d aw bw ad bd cx cy : ℝ}
       (U := (40/100)*Real.cos w) (V := (40/100)*Real.sin w+25/100)
       (L := Real.sqrt (((40/100)*Real.cos w)^2+((40/100)*Real.sin w+25/100)^2))
       (by linarith) (Real.sqrt_nonneg _)
-      (by rw [Real.sq_sqrt (by positivity)]; exact le_rfl)
+      (by rw [Real.sq_sqrt (by positivity)])
     rw [cardLow_transverse_norm] at hWb
     have hDb := vertex_linear_upper hD'
       (U := 35/100+(25/100)*Real.sin (d-w)) (V := (25/100)*Real.cos (d-w))
       (L := Real.sqrt ((35/100+(25/100)*Real.sin (d-w))^2+((25/100)*Real.cos (d-w))^2))
       (by positivity) (Real.sqrt_nonneg _)
-      (by rw [Real.sq_sqrt (by positivity)]; exact le_rfl)
+      (by rw [Real.sq_sqrt (by positivity)])
     rw [low_rotating_norm] at hDb
     dsimp [cardLowAlpha,cardLowBeta] at hcentral
     unfold cardLowGap
@@ -121,7 +118,7 @@ theorem cardLowGap_le_frozen (ds : Bool) {w d aw bw ad bd cx cy : ℝ}
       (L := Real.sqrt (((30/100)*Real.cos w+(27/100)*Real.sin (d-w))^2+
         ((30/100)*Real.sin w+(27/100)*Real.cos (d-w))^2))
       (by nlinarith [hqt.1]) (Real.sqrt_nonneg _)
-      (by rw [Real.sq_sqrt (by positivity)]; exact le_rfl)
+      (by rw [Real.sq_sqrt (by positivity)])
     rw [cardLow_Ds_norm] at hWb
     have hDb := vertex_linear_upper hD' (U := (43:ℝ)/100) (V := (27:ℝ)/100)
       (L := (5078:ℝ)/10000) (by norm_num) (by norm_num) (by norm_num)

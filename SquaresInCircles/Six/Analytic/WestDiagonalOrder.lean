@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.PairProjectionBounds
-public import SquaresInCircles.Six.Analytic.PinProjections
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.PairProjectionBounds
+import SquaresInCircles.Six.Analytic.PinProjections
 
 /-!
 # Analytic W/D order

@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Normalization.MarkerGaps
-public import SquaresInCircles.Common.Congruence
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.MarkerGaps
+import SquaresInCircles.Common.Congruence
 
 /-!
 # Real signed charts are the existing geometric SquareCharts
@@ -34,6 +31,7 @@ lemma signedLabel_chart {S : UnitSquare} {o : Point} (C : SquareChart S o)
     simp [Seven.chartSign, hr, Seven.TransverseSign.coe]
   · by_cases hb : C.b = 0
     · have hl := hC.label_zero_iff.mpr hb
+      rw [hb] at hl
       simp [signedLabel, SquareChart.signedB, Seven.chartSign, hr, hb, hl]
     · have hpos : 0 < C.b := lt_of_le_of_ne C.nonneg.2 (Ne.symm hb)
       have hneg : C.signedB < 0 := by simp [SquareChart.signedB, hr]; linarith
@@ -49,10 +47,10 @@ theorem liftedMarker_eq_chartMarker {S : UnitSquare} {o : Point} (C : SquareChar
 
 lemma orientedSquare_eq_modelSquare (t a b : ℝ) :
     orientedSquare t a b = modelSquare (0, 0) (t : Direction) (a, b) := by
-  apply UnitSquare.ext
-  · apply Prod.ext <;> simp [orientedSquare, modelSquare, pointInDirection]
-  · simp [orientedSquare, modelSquare]
-  · simp [orientedSquare, modelSquare]
+  unfold orientedSquare modelSquare
+  congr 1
+  simp only [pointInDirection, Real.Angle.cos_coe, Real.Angle.sin_coe]
+  ext <;> ring
 
 /-- A chart describes the actual square as a rotated axis-square point set. -/
 theorem chart_same_open_model {S : UnitSquare} {o : Point} (C : SquareChart S o) :

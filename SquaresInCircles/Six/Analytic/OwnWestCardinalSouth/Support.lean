@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnWestCardinalSouth.Scalar
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnWestCardinalSouth.Scalar
 
 /-!
 # The actual OWN-W / cardinal-S five-edge contradiction

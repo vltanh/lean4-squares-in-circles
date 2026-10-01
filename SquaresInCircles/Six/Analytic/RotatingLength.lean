@@ -1,7 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.RootCurvature
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.RootCurvature
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
 
 /-!
 # Uniform curvature of a translated rotating vector
@@ -28,18 +26,26 @@ def harmonicCurvature (R P Q T x : ℝ) : ℝ :=
 
 lemma harmonicRoot_deriv {R P Q T x : ℝ} (hx : 0<harmonicArg P Q T x) :
     HasDerivAt (harmonicRoot R P Q T) (harmonicRootD R P Q T x) x := by
-  have hd := (((Real.hasDerivAt_cos x).const_mul Q).add
-    ((Real.hasDerivAt_sin x).const_mul T)).const_add P
+  have hd : HasDerivAt (harmonicArg P Q T) (-Q*Real.sin x+T*Real.cos x) x := by
+    convert ((((Real.hasDerivAt_cos x).const_mul Q).add
+      ((Real.hasDerivAt_sin x).const_mul T)).const_add P) using 1
+    · funext y
+      simp only [harmonicArg,Pi.add_apply,add_assoc]
+    · ring
   have hroot := hd.sqrt (ne_of_gt hx)
-  convert hroot.const_mul (-R) using 1 <;>
-    dsimp [harmonicRoot,harmonicRootD,harmonicArg] <;> ring
+  convert hroot.const_mul (-R) using 1
+  · rfl
+  · simp only [harmonicRootD]
+    ring
 
 lemma harmonicRoot_second {R P Q T x : ℝ} (hx : 0<harmonicArg P Q T x) :
     HasDerivAt (harmonicRootD R P Q T) (harmonicCurvature R P Q T x) x := by
   have hf : HasDerivAt (harmonicArg P Q T) (-Q*Real.sin x+T*Real.cos x) x := by
     convert ((((Real.hasDerivAt_cos x).const_mul Q).add
-      ((Real.hasDerivAt_sin x).const_mul T)).const_add P) using 1 <;>
-      dsimp [harmonicArg] <;> ring
+      ((Real.hasDerivAt_sin x).const_mul T)).const_add P) using 1
+    · funext y
+      simp only [harmonicArg,Pi.add_apply,add_assoc]
+    · ring
   have hd : HasDerivAt (fun y => -Q*Real.sin y+T*Real.cos y)
       (-Q*Real.cos x-T*Real.sin x) x := by
     convert ((Real.hasDerivAt_sin x).const_mul (-Q)).add
@@ -51,7 +57,13 @@ lemma harmonicRoot_second {R P Q T x : ℝ} (hx : 0<harmonicArg P Q T x) :
         2*P*(Q*Real.cos x+T*Real.sin x)+Q^2+T^2 := by
     dsimp [harmonicArg]
     linear_combination (Q^2+T^2)*(Real.sin_sq_add_cos_sq x)
-  simpa only [harmonicRootD,harmonicCurvature,harmonicArg,hid] using hh
+  have hA : harmonicArg P Q T x=P+(Q*Real.cos x+T*Real.sin x) := by
+    dsimp only [harmonicArg]
+    ring
+  convert hh using 1
+  · rfl
+  · rw [hid,hA]
+    rfl
 
 lemma harmonic_wave_bound {a b Q T x : ℝ} (ha : 0≤a) (hb : 0≤b)
     (hQT : Q^2+T^2=4*a^2*b^2) :
@@ -102,19 +114,19 @@ theorem harmonicCurvature_le_harmonic_mean {R a b P Q T x : ℝ}
   have hLsq : L^2=harmonicArg P Q T x := Real.sq_sqrt hx.le
   have he : harmonicCurvature R P Q T x =
       R*(L^4-(a^2-b^2)^2)/(4*L^3) := by
-    unfold harmonicCurvature
+    have hs : L^2=P+(Q*Real.cos x+T*Real.sin x) := by
+      rw [hLsq]
+      dsimp only [harmonicArg]
+      ring
     have hid : (Q*Real.cos x+T*Real.sin x)^2+2*P*(Q*Real.cos x+T*Real.sin x)+Q^2+T^2 =
         L^4-(a^2-b^2)^2 := by
-      rw [hQT,hP]
-      have hs : L^2=a^2+b^2+Q*Real.cos x+T*Real.sin x := by
-        simpa [harmonicArg,hP] using hLsq
-      calc
-        _=(a^2+b^2+Q*Real.cos x+T*Real.sin x)^2-(a^2-b^2)^2 := by ring
-        _=_ := by rw [← hs]; ring
-    rw [hid]
-    change R*(L^4-(a^2-b^2)^2)/(4*harmonicArg P Q T x*L)=_
-    rw [← hLsq]
-    congr 1 <;> ring
+      linear_combination hQT-(P+a^2+b^2)*hP-(L^2+P+(Q*Real.cos x+T*Real.sin x))*hs
+    have hroot : Real.sqrt (P+(Q*Real.cos x+T*Real.sin x))=L := by
+      rw [← hs]
+      exact Real.sqrt_sq hL.le
+    dsimp only [harmonicCurvature]
+    rw [hid,hroot,← hs]
+    ring
   rw [he]
   have hpositive : 0≤(a+b)*L^3+(a-b)^2*L^2+(a+b)*(a-b)^2*L+(a+b)^2*(a-b)^2 := by
     positivity
@@ -149,10 +161,14 @@ theorem harmonicCurvature_nonpos_of_opposition {R a b P Q T x : ℝ}
   have hid : (Q*Real.cos x+T*Real.sin x)^2+
       2*P*(Q*Real.cos x+T*Real.sin x)+Q^2+T^2 =
       (Q*Real.cos x+T*Real.sin x+2*a^2)*(Q*Real.cos x+T*Real.sin x+2*b^2) := by
-    rw [hP,hQT]
-    ring
-  unfold harmonicCurvature
+    linear_combination 2*(Q*Real.cos x+T*Real.sin x)*hP+hQT
+  have hA : 0<P+(Q*Real.cos x+T*Real.sin x) := by
+    have h := hx
+    dsimp only [harmonicArg] at h
+    linarith
+  dsimp only [harmonicCurvature]
   rw [hid]
-  exact div_nonpos_of_nonpos_of_nonneg (mul_nonpos_of_nonneg_of_nonpos hR hproduct) (by positivity)
+  exact div_nonpos_of_nonpos_of_nonneg (mul_nonpos_of_nonneg_of_nonpos hR hproduct)
+    (mul_nonneg (by linarith) (Real.sqrt_nonneg _))
 
 end SquaresInCircles.Six.Analytic

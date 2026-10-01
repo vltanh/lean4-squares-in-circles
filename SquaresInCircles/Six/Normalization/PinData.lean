@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Normalization.CentralSAT
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.CentralSAT
 
 /-!
 # The five fixed pins and labelled angular conventions

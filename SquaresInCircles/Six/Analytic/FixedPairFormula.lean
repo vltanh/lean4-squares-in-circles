@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.FixedPair
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FixedPair
 
 /-!
 # Exact smooth formulas on the geometric sign sectors
@@ -25,7 +22,7 @@ def Sector (pn pw pq : Bool) (n w : ℝ) : Prop :=
 lemma domain_bounds {no wo : Bool} {n w : ℝ} (h : Domain no wo n w) :
     -3/10≤n ∧ n≤5/12 ∧ -11/25≤w ∧ w≤2/5 ∧
       -7/10≤n-w ∧ n-w≤6/7 := by
-  cases no <;> cases wo <;> simp only [Domain,Bool.false_eq_true,if_false,if_true] at h
+  cases no <;> cases wo <;> simp only [Domain,Bool.false_eq_true,ite_false,ite_true] at h
   all_goals rcases h with ⟨hn,hw⟩
   all_goals repeat' constructor
   all_goals linarith [hn.1,hn.2,hw.1,hw.2]
@@ -80,18 +77,18 @@ lemma northSq_eq_norm (no : Bool) (u : Fin 4) (n w : ℝ) :
     northSq no u n w=(northForce no u n w).1^2+(northForce no u n w).2^2 := by
   cases no <;> fin_cases u
   all_goals norm_num [northSq,northForce,pairNorthBase,pairNorthSource]
-  all_goals simp only [Real.sin_sub,Real.cos_sub]
+  all_goals try simp only [Real.sin_sub,Real.cos_sub]
   all_goals ring_nf
-  all_goals simp only [sin_sq_replace n,sin_sq_replace w]
+  all_goals try simp only [sin_sq_replace n,sin_sq_replace w]
   all_goals ring
 
 lemma westSq_eq_norm (wo : Bool) (u : Fin 4) (n w : ℝ) :
     westSq wo u n w=(westForce wo u n w).1^2+(westForce wo u n w).2^2 := by
   cases wo <;> fin_cases u
   all_goals norm_num [westSq,westForce,pairWestBase,pairWestSource]
-  all_goals simp only [Real.sin_sub,Real.cos_sub]
+  all_goals try simp only [Real.sin_sub,Real.cos_sub]
   all_goals ring_nf
-  all_goals simp only [sin_sq_replace n,sin_sq_replace w]
+  all_goals try simp only [sin_sq_replace n,sin_sq_replace w]
   all_goals ring
 
 def constant (no wo : Bool) (u : Fin 4) : ℝ :=

@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.DoubleSecondaryStress
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.DoubleSecondaryStress
 
 /-!
 # The three remaining double-D-secondary central-bit combinations
@@ -67,7 +64,7 @@ lemma double_ownW_cardinalS_gap_positive {v s d aw bw aS bS cx cy : ℝ}
   nlinarith only [hWcost,hSwork,hSwidth,hcentral,hwing,hdepth]
 
 lemma double_cardinalW_ownS_gap_positive {w s d aw bw aS bS cx cy : ℝ}
-    (hw : |w|≤2/5) (hs : -5/8≤s ∧ s≤2/3) (hd : 1/2≤d ∧ d≤Real.pi/4)
+    (hw : |w|≤2/5) (hs : -5/8≤ s ∧ s≤2/3) (hd : 1/2≤d ∧ d≤Real.pi/4)
     (hqs : 1/2≤Real.pi/2+s-d)
     (hW : ContainedChart aw |bw|) (hS : ContainedChart aS |bS|)
     (hc : (0≤cx ∧ cx≤c0) ∧ (0≤cy ∧ cy≤c0)) :

@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.SecondaryDominance
-public import SquaresInCircles.Six.Analytic.DoubleSecondaryExclusion
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SecondaryDominance
+import SquaresInCircles.Six.Analytic.DoubleSecondaryExclusion
 
 /-!
 # Selecting a D/S secondary source without a stress table
@@ -34,13 +31,13 @@ theorem south_secondary_choice_of_angle {R : ℝ} (P : NormalizedPacking R)
   have hk3 : k≠3 := by
     intro hk
     subst k
-    change 0<dot (scale (-1) (normalY (P.square 3))) (sub (fixedPin 4) (fixedPin 3)) at hpin
+    change 0<dot (scale (-1) (normalY (P.square 3))) (sub (Certificates.fixedPin 4) (Certificates.fixedPin 3)) at hpin
     rw [dot_scale_neg] at hpin
     linarith [hchord.2.1]
   have hk7 : k≠7 := by
     intro hk
     subst k
-    change 0<dot (scale (-1) (normalY (P.square 4))) (sub (fixedPin 4) (fixedPin 3)) at hpin
+    change 0<dot (scale (-1) (normalY (P.square 4))) (sub (Certificates.fixedPin 4) (Certificates.fixedPin 3)) at hpin
     rw [dot_scale_neg] at hpin
     linarith [hchord.2.2]
   have hDphase : P.phase 3=Real.pi+P.diagonalAngle := by
@@ -49,7 +46,7 @@ theorem south_secondary_choice_of_angle {R : ℝ} (P : NormalizedPacking R)
   have hSphase : P.phase 4=3*Real.pi/2+P.helperAngle 4 := P.phase_from_deviation 4
   have hq0 : 0≤P.phase 4-P.phase 3 := sub_nonneg.mpr P.primary_order.2.2.2.1.le
   have hq1 : P.phase 4-P.phase 3≤Real.pi/2 := by rw [hDphase,hSphase]; linarith
-  have hDprofile := P.high_diagonal_profile
+  have hDprofile := NormalizedPacking.high_diagonal_profile P
   have hSrad := (P.contained 4).aMin_le (P.avoidsCore 4)
   have hStrans := (P.contained 4).u_le_U0 (P.avoidsCore 4)
   have hDtrans := (P.contained 3).u_lt_half (P.avoidsCore 3)
@@ -64,7 +61,7 @@ theorem south_secondary_choice_of_angle {R : ℝ} (P : NormalizedPacking R)
       -frameX (P.square 3) (sub (P.square 4).center (P.square 3).center) at hsep
     rw [P.square_def 3,P.square_def 4,oriented_pair_threshold,pair_frameX_left] at hsep
     by_cases hsmall : P.phase 4-P.phase 3≤11/10
-    · have hc := cosine_lower_eleven_tenths
+    · have hc := cosine_lower_eleven_tenths (q := P.phase 4-P.phase 3)
         (by simpa only [abs_of_nonneg hq0] using hsmall)
       have hb := inward_primary_cosine_bound (P.contained 3).a_le_rho0 hSrad
         ((P.contained 4).u_lt_half (P.avoidsCore 4)) hc
@@ -82,7 +79,7 @@ theorem south_secondary_choice_of_angle {R : ℝ} (P : NormalizedPacking R)
       frameX (P.square 4) (sub (P.square 4).center (P.square 3).center) at hsep
     rw [P.square_def 3,P.square_def 4,oriented_pair_threshold,pair_frameX_right] at hsep
     by_cases hsmall : P.phase 4-P.phase 3≤11/10
-    · have hc := cosine_lower_eleven_tenths
+    · have hc := cosine_lower_eleven_tenths (q := P.phase 4-P.phase 3)
         (by simpa only [abs_of_nonneg hq0] using hsmall)
       have hb := destination_primary_cosine_bound (P.contained 4).a_le_rho0 hDcore hDtrans hc
       exact False.elim (by linarith)

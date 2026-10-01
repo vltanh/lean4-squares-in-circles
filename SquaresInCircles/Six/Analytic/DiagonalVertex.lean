@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.VertexMinorant
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.VertexMinorant
 
 /-!
 # An analytic replacement for the diagonal vertex certificate

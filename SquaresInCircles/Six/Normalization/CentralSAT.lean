@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Normalization.CenterRadius
-public import SquaresInCircles.Six.SquareSupport
-public import SquaresInCircles.Seven.SeparatingAxes
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.CenterRadius
+import SquaresInCircles.Six.SquareSupport
+import SquaresInCircles.Seven.SeparatingAxes
 
 /-!
 # T2: complete directed central separating axes
@@ -18,13 +15,15 @@ namespace SquaresInCircles.Six.Normalization
 
 inductive CentralAxis where
   | own | secPlus | secMinus | east | west | north | south
-  deriving DecidableEq, Fintype, Repr
+  deriving DecidableEq, Repr
 
 def CentralAxis.all : List CentralAxis :=
   [.own,.secPlus,.secMinus,.east,.west,.north,.south]
 
 lemma CentralAxis.mem_all (k : CentralAxis) : k ∈ CentralAxis.all := by
   cases k <;> simp [CentralAxis.all]
+
+instance : Fintype CentralAxis := Fintype.ofList CentralAxis.all CentralAxis.mem_all
 
 def angularWidth (t : ℝ) : ℝ := (|Real.cos t|+|Real.sin t|)/2
 
@@ -89,6 +88,11 @@ theorem central_separators_complete {t a b cx cy : ℝ}
       (sub (orientedSquare t a b).center (axisSquare (cx,cy)).center) = centerY t a b-cy := by
     simp [frameY,axisSquare,orientedSquare,sub,centerY]
   rw [hX,hY] at hs
+  have hN : centralNormal t (axisSquare (cx,cy)).center.1 (axisSquare (cx,cy)).center.2 =
+      centralNormal t cx cy := rfl
+  have hT : centralTransverse t (axisSquare (cx,cy)).center.1 (axisSquare (cx,cy)).center.2 =
+      centralTransverse t cx cy := rfl
+  rw [hN,hT] at hs
   rcases hs with hs | hs | hs | hs
   · by_cases h0 : 0 ≤ centerX t a b-cx
     · rw [abs_of_nonneg h0] at hs

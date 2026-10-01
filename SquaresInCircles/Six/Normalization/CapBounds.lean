@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Normalization.CapIdentities
-public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
-public import Mathlib.Analysis.Real.Pi.Bounds
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.CapIdentities
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
+import Mathlib.Analysis.Real.Pi.Bounds
 
 /-!
 # Analytic cap bounds without numerical certificate assumptions
@@ -109,7 +106,7 @@ lemma cos_add_sin_mono {x y : ℝ} (hx : 0 ≤ x) (hxy : x ≤ y)
     (show y + Real.pi / 4 ≤ Real.pi / 2 by linarith)
     (show x + Real.pi / 4 ≤ y + Real.pi / 4 by linarith)
   simp only [Real.sin_add, Real.sin_pi_div_four, Real.cos_pi_div_four] at h
-  apply (mul_le_mul_left (show 0 < Real.sqrt 2 / 2 by positivity)).mp
+  apply (mul_le_mul_iff_right₀ (show 0 < Real.sqrt 2 / 2 by positivity)).mp
   nlinarith only [h]
 
 lemma capSecond_two_fifths_lt_core : capSecond (2 / 5) < coreRadius := by

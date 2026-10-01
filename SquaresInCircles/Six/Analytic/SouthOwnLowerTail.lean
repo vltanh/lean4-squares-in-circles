@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.SouthTailScalar
-public import SquaresInCircles.Six.Analytic.SecondaryReduction
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SouthTailScalar
+import SquaresInCircles.Six.Analytic.SecondaryReduction
 
 /-!
 # Close the lower OWN-S tail with actual canonical separators
@@ -177,7 +174,9 @@ theorem normalized_own_south_lower_tail {R : ℝ} (P : NormalizedPacking R)
   have hd : 1/2 ≤ d ∧ d ≤ Real.pi/4 :=
     ⟨(normalized_diagonal_gt_half P).le,P.diagonal_angle_range.2⟩
   have hDphase : P.phase 3=Real.pi+d := by dsimp [d,NormalizedPacking.diagonalAngle]; ring
-  have hSphase : P.phase 4=3*Real.pi/2-v := by rw [P.phase_from_deviation 4]; dsimp [v]; ring
+  have hSphase : P.phase 4=3*Real.pi/2-v := by
+    have hh : P.phase 4=3*Real.pi/2+P.helperAngle 4 := P.phase_from_deviation 4
+    rw [hh]; dsimp [v]; ring
   have hcS : centralMargin .south (P.phase 4) (P.radial 4) (P.transverse 4)
       P.center.1 P.center.2 < 0 :=
     (P.toPinPacking.canonicalOwn_eq_true 4).mp hS
@@ -194,17 +193,17 @@ theorem normalized_own_south_lower_tail {R : ℝ} (P : NormalizedPacking R)
       change Seven.SAT.threshold (P.square 3) (P.square 4) ≤
         frameY (P.square 3) (sub (P.square 4).center (P.square 3).center) at h
       rw [P.square_def 3,P.square_def 4,hDphase,hSphase,
-        oriented_pair_threshold,pair_frameY_left,hq,
+        oriented_pair_threshold,pair_frameY_left,hq,angularWidth,
         Real.sin_pi_div_two_sub,Real.cos_pi_div_two_sub,
-        angularWidth,abs_of_nonneg hcos,abs_of_nonneg hsin] at h
+        abs_of_nonneg hcos,abs_of_nonneg hsin] at h
       linarith
     · right
       change Seven.SAT.threshold (P.square 3) (P.square 4) ≤
         frameY (P.square 4) (sub (P.square 4).center (P.square 3).center) at h
       rw [P.square_def 3,P.square_def 4,hDphase,hSphase,
-        oriented_pair_threshold,pair_frameY_right,hq,
+        oriented_pair_threshold,pair_frameY_right,hq,angularWidth,
         Real.sin_pi_div_two_sub,Real.cos_pi_div_two_sub,
-        angularWidth,abs_of_nonneg hcos,abs_of_nonneg hsin] at h
+        abs_of_nonneg hcos,abs_of_nonneg hsin] at h
       linarith
   exact negative_own_south_impossible hv hd (P.contained 4) (P.contained 3)
     ⟨P.box.1.1,P.box.1.2.trans c0_lt_coreCeiling.le⟩

@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Analytic.ReflectedOwnWings.Scalar
-public import SquaresInCircles.Six.Analytic.RadialChordSupport
-public import SquaresInCircles.Six.Analytic.SoftAxialSupport
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.ReflectedOwnWings.Scalar
+import SquaresInCircles.Six.Analytic.RadialChordSupport
+import SquaresInCircles.Six.Analytic.SoftAxialSupport
 
 /-!
 # Five real inequalities supply the reflected two-OWN obstruction
@@ -51,8 +48,8 @@ lemma west_support {a b : ℝ} (hc : ContainedChart a |b|) : beta*a-b ≤ westUp
     simpa only [Real.sqrt_sq (by norm_num : (0:ℝ) ≤ 123111/50000)] using h
   have hm := mul_le_mul CandidateWestTail.ceiling_bounds.1 hr (Real.sqrt_nonneg _)
     (by norm_num [CandidateWestTail.radiusBound])
-  norm_num [beta] at h
-  dsimp [westUpper,beta]
+  rw [neg_one_sq,abs_neg,abs_one,abs_of_pos (show (0:ℝ) < beta by norm_num [beta])] at h
+  dsimp only [westUpper]
   linarith
 
 lemma diagonal_support {a b q : ℝ} (hc : ContainedChart a |b|)

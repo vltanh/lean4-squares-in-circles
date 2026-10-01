@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Normalization.CapBounds
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.CapBounds
 
 /-!
 # K2: the cap profile from containment, with its genuine branch condition
@@ -148,7 +145,7 @@ lemma capDepth_le_axis {t : ℝ} (ht0 : 0 ≤ t) (ht : t ≤ Real.pi / 4) :
       rw [cap_branches_agree]
       dsimp [capSecond]
       linarith
-    have hs : 0 ≤ Real.sin capSwitch := by rw [sin_capSwitch]; positivity
+    have hs : 0 ≤ Real.sin capSwitch := by rw [sin_capSwitch]; exact switch_sine_bounds.1.le
     exact hc.trans (capFirst_le_axis hs)
 
 /-- Proposition A, step (e): an excessively deep east cap is impossible. -/

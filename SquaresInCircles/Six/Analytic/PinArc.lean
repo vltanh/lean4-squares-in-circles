@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.PinProjections
-public import SquaresInCircles.Six.Normalization.ChartBounds
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.PinProjections
+import SquaresInCircles.Six.Normalization.ChartBounds
 
 /-!
 # Two pins sixty degrees apart cover their primary-direction arc
@@ -51,7 +48,7 @@ lemma sixty_sine_sum (v : ℝ) :
   calc
     _ = Real.sin ((v-Real.pi/6)+Real.pi/6)+
         Real.sin (Real.pi/6-(v-Real.pi/6)) := by congr 1 <;> congr 1 <;> ring
-    _ = _ := by rw [Real.sin_add,Real.sin_sub,Real.sin_pi_div_six]; ring
+    _ = _ := by rw [Real.sin_add,Real.sin_sub (Real.pi/6),Real.sin_pi_div_six]; ring
 
 /-- The far-corner obstruction is a single positive quadratic on the whole
 real line. Its minimum reserve is 304609/2450000. -/
@@ -155,6 +152,6 @@ theorem sixty_pin_cover {t q a b : ℝ} (hc : ContainedChart a |b|)
   rw [polar_mem_iff,polar_mem_iff]
   have hL : q-t=-(t-q) := by ring
   have hR : q+Real.pi/3-t=Real.pi/3-(t-q) := by ring
-  simpa only [hL,hR,Real.cos_neg,Real.sin_neg,mul_neg] using hv
+  simpa only [hL,hR,Real.cos_neg,Real.sin_neg,mul_neg,neg_mul] using hv
 
 end SquaresInCircles.Six.Analytic

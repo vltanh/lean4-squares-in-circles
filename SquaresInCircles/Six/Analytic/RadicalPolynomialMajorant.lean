@@ -1,8 +1,5 @@
-module
-public import Mathlib.Analysis.Real.Sqrt
-public import Mathlib.Tactic
-
-@[expose] public section
+import Mathlib.Analysis.Real.Sqrt
+import Mathlib.Tactic
 
 /-!
 # A denominator-free analytic square-root majorant

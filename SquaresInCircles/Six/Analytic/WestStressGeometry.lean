@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Analytic.WestStressDPositive
-public import SquaresInCircles.Six.Analytic.CapChart
-public import SquaresInCircles.Six.Stress.Support
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.WestStressDPositive
+import SquaresInCircles.Six.Analytic.CapChart
+import SquaresInCircles.Six.Stress.Support
 
 /-!
 # The actual three-square geometry behind the analytic Appendix A stress
@@ -18,6 +15,12 @@ secondary normals give precisely the expressions proved positive above.
 noncomputable section
 namespace SquaresInCircles.Six.Analytic
 open Normalization
+
+private lemma west_cos_pi_add (x:ℝ) : Real.cos (Real.pi+x)=-Real.cos x := by
+  rw [add_comm,Real.cos_add_pi]
+
+private lemma west_sin_pi_add (x:ℝ) : Real.sin (Real.pi+x)=-Real.sin x := by
+  rw [add_comm,Real.sin_add_pi]
 
 def westForceC (t:ℝ) : Point := (3/10+(9/20)*Real.cos t,(9/20)*Real.sin t)
 def westForceW (t z:ℝ) : Point :=
@@ -56,27 +59,27 @@ lemma west_forceD_norm (z:ℝ) : normSq (westForceD z)=61/400-(3/20)*Real.sin z 
 lemma west_forceW_frameX (t z a b:ℝ) :
     frameX (orientedSquare (Real.pi+t) a b) (westForceW t z)=9/20+(1/4)*Real.sin (z-t) := by
   dsimp [frameX,orientedSquare,westForceW]
-  rw [Real.cos_pi_add,Real.sin_pi_add,Real.sin_sub]
+  rw [west_cos_pi_add,west_sin_pi_add,Real.sin_sub]
   linear_combination (9/20)*(Real.sin_sq_add_cos_sq t)
 
 lemma west_forceW_frameY (t z a b:ℝ) :
     frameY (orientedSquare (Real.pi+t) a b) (westForceW t z)=-(1/4)*Real.cos (z-t) := by
   dsimp [frameY,orientedSquare,westForceW]
-  rw [Real.cos_pi_add,Real.sin_pi_add,Real.cos_sub]
+  rw [west_cos_pi_add,west_sin_pi_add,Real.cos_sub]
   ring
 
 lemma west_forceD_frameX (u z A B:ℝ) :
     frameX (orientedSquare (Real.pi+u) A B) (westForceD z)=
       (3/10)*Real.cos u+(1/4)*Real.sin (u-z) := by
   dsimp [frameX,orientedSquare,westForceD]
-  rw [Real.cos_pi_add,Real.sin_pi_add,Real.sin_sub]
+  rw [west_cos_pi_add,west_sin_pi_add,Real.sin_sub]
   ring
 
 lemma west_forceD_frameY (u z A B:ℝ) :
     frameY (orientedSquare (Real.pi+u) A B) (westForceD z)=
       -(3/10)*Real.sin u+(1/4)*Real.cos (u-z) := by
   dsimp [frameY,orientedSquare,westForceD]
-  rw [Real.cos_pi_add,Real.sin_pi_add,Real.cos_sub]
+  rw [west_cos_pi_add,west_sin_pi_add,Real.cos_sub]
   ring
 
 lemma west_widthW_lower (t z a b:ℝ) :
@@ -112,18 +115,18 @@ lemma west_own_separator {c:Point} {t a b:ℝ}
   have hp := primary_difference (Real.pi+t) a b c.1 c.2
   have hd : dot (-Real.cos t,-Real.sin t)
       (sub (orientedSquare (Real.pi+t) a b).center c)=a-centralNormal (Real.pi+t) c.1 c.2 := by
-    simpa only [frameX,orientedSquare,dot,Real.cos_pi_add,Real.sin_pi_add] using hp
+    simpa only [frameX,orientedSquare,dot,west_cos_pi_add,west_sin_pi_add,Prod.mk.eta] using hp
   rw [hd]
-  simp only [centralMargin,angularWidth,Real.cos_pi_add,Real.sin_pi_add,abs_neg] at h
+  simp only [centralMargin,angularWidth,west_cos_pi_add,west_sin_pi_add,abs_neg] at h
   dsimp [angularWidth]
   linarith
 
 lemma west_cardinal_separator {c:Point} {u A B:ℝ}
     (h:0≤centralMargin .west (Real.pi+u) A B c.1 c.2) :
     1/2+angularWidth u≤dot (-1,0) (sub (orientedSquare (Real.pi+u) A B).center c) := by
-  simp only [centralMargin,angularWidth,Real.cos_pi_add,Real.sin_pi_add,abs_neg] at h
+  simp only [centralMargin,angularWidth,west_cos_pi_add,west_sin_pi_add,abs_neg] at h
   dsimp [dot,sub,orientedSquare,centerX,angularWidth] at h ⊢
-  simp only [Real.cos_pi_add,Real.sin_pi_add]
+  simp only [west_cos_pi_add,west_sin_pi_add] at h ⊢
   linarith
 
 /-- Any actual selected forward secondary normal has nonpositive defect. -/
@@ -198,13 +201,13 @@ theorem west_cardinal_impossible {c:Point} {t u a b A B:ℝ}
   rcases west_secondary_axes hW hD hWcore hDcore ht hu1 htu hWD with h | h
   · have h' : 1/2+angularWidth (u-t)≤dot (westNormal t)
         (sub (orientedSquare (Real.pi+u) A B).center (orientedSquare (Real.pi+t) a b).center) := by
-      simpa only [westNormal,normalY,orientedSquare,Real.sin_pi_add,Real.cos_pi_add,neg_neg] using h
+      simpa only [westNormal,normalY,orientedSquare,west_sin_pi_add,west_cos_pi_add,neg_neg] using h
     have hn := west_geometric_defect_nonpos hc hW hD ⟨ht,htu.trans hu1⟩ hCW hCD h'
     rw [hforms.1] at hn
     linarith [westStressW_positive ht hu0 hu1 htu]
   · have h' : 1/2+angularWidth (u-t)≤dot (westNormal u)
         (sub (orientedSquare (Real.pi+u) A B).center (orientedSquare (Real.pi+t) a b).center) := by
-      simpa only [westNormal,normalY,orientedSquare,Real.sin_pi_add,Real.cos_pi_add,neg_neg] using h
+      simpa only [westNormal,normalY,orientedSquare,west_sin_pi_add,west_cos_pi_add,neg_neg] using h
     have hn := west_geometric_defect_nonpos hc hW hD ⟨ht,htu.trans hu1⟩ hCW hCD h'
     rw [hforms.2] at hn
     linarith [westStressD_positive ht hu0 hu1 htu]

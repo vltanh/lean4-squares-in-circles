@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Normalization.CapSupport
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.CapSupport
 
 /-!
 # Circle support with a lower primary coordinate
@@ -32,7 +29,7 @@ condition follows from the unit normal and R0*s<=l, rather than being assumed. -
 theorem circle_support_above_primary {a b l s c : ℝ}
     (hl : 0<l) (ha : l≤a+1/2)
     (hbox : (a+1/2)^2+(|b|+1/2)^2≤Q0)
-    (hs : 0≤s) (hc : 0≤c) (hu : s^2+c^2=1)
+    (hs : 0≤ s) (hc : 0≤c) (hu : s^2+c^2=1)
     (hbranch : R0*s≤l) :
     a*s+b*c≤(l-1/2)*s+(Real.sqrt (Q0-l^2)-1/2)*c := by
   let B := Real.sqrt (Q0-l^2)
@@ -40,7 +37,7 @@ theorem circle_support_above_primary {a b l s c : ℝ}
   have hBpos : 0<B := by dsimp [B]; linarith [hb.1]
   have hcircle : B^2+l^2=Q0 := hb.2
   have hbranchSq := mul_nonneg (sub_nonneg.mpr hbranch)
-    (show 0≤l+R0*s by positivity)
+    (show 0≤l+R0*s from add_nonneg hl.le (mul_nonneg R0_nonneg hs))
   have hidentity : (B*s)^2-(l*c)^2=(R0*s)^2-l^2 := by
     have h1 := congrArg (fun z : ℝ => s^2*z) hcircle
     have h2 := congrArg (fun z : ℝ => l^2*z) hu

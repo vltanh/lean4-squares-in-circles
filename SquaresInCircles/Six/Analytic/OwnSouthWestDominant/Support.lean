@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Scalar
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Scalar
 
 /-!
 # Exact supports for the west-dominant five-edge stress
@@ -47,16 +44,17 @@ def defect (upper : Bool) (v s d : ℝ) : ℝ :=
 lemma west_support {a b : ℝ} (hc : ContainedChart a |b|) :
     westWeight*a-b ≤ westUpper := by
   have h := CandidateWestTail.local_vertex_support hc westWeight (-1)
-  have hs := Real.sq_sqrt (show 0 ≤ westWeight^2+1 by positivity)
-  have hn := Real.sqrt_nonneg (westWeight^2+1)
-  have hroot : Real.sqrt (westWeight^2+1) ≤ 123111/50000 := by
-    norm_num [westWeight] at hs
+  have e : westWeight^2+(-1)^2 = (97/16:ℝ) := by norm_num [westWeight]
+  have ea : |westWeight|+|(-1:ℝ)| = 13/4 := by norm_num [westWeight]
+  rw [e,ea] at h
+  have hs := Real.sq_sqrt (show (0:ℝ) ≤ 97/16 by norm_num)
+  have hn := Real.sqrt_nonneg (97/16:ℝ)
+  have hroot : Real.sqrt (97/16) ≤ 123111/50000 := by
     nlinarith only [hs,hn]
   have hm := mul_le_mul CandidateWestTail.ceiling_bounds.1 hroot hn
     (by norm_num [CandidateWestTail.radiusBound])
-  norm_num [westWeight] at h
-  dsimp [westUpper,westWeight] at *
-  nlinarith only [h,hm]
+  dsimp only [westUpper,westWeight] at h hm ⊢
+  linarith only [h,hm]
 
 lemma diagonal_support {a b q : ℝ} (hc : ContainedChart a |b|)
     (hq : 0 ≤ q ∧ q ≤ Real.pi) :

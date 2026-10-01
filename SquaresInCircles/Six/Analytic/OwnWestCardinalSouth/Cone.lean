@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.SoftAxialSupportWide
-public import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Curvature
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SoftAxialSupportWide
+import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Curvature
 
 /-!
 # The cardinal-S resultant stays in one smooth-support cone

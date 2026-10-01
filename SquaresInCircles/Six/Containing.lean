@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Seven.Uniqueness.ContactCycle
-public import SquaresInCircles.Six.Normalization.Constants
-
-@[expose] public section
+import SquaresInCircles.Seven.Uniqueness.ContactCycle
+import SquaresInCircles.Six.Normalization.Constants
 
 /-!
 # A central square for a six-square packing below the Seven threshold

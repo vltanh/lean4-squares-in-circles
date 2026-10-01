@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Normalization.ChartBounds
-public import SquaresInCircles.Common.Support
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.ChartBounds
+import SquaresInCircles.Common.Support
 
 /-!
 # From the strong central box to actual square-chart bounds

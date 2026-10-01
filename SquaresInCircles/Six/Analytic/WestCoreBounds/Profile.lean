@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.WestGapReserve.Geometry
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.WestGapReserve.Geometry
 
 /-!
 # Common whole-domain endpoint reductions for the three-edge west stress
@@ -40,10 +37,10 @@ lemma adverse_harmonic (x : ℝ) :
   have hid : ((1/2)*Real.sin x+B*Real.cos x)^2+
       ((1/2)*Real.cos x-B*Real.sin x)^2=(1/2:ℝ)^2+B^2 := by
     linear_combination ((1/2:ℝ)^2+B^2)*(Real.sin_sq_add_cos_sq x)
+  have hB : (1/2:ℝ)^2+B^2 < (4/5)^2 := by norm_num [B]
   by_contra! h
   have hp := mul_pos (sub_pos.mpr h)
     (show 0 < (1/2)*Real.sin x+B*Real.cos x+4/5 by linarith)
-  norm_num [B] at hid
   nlinarith [sq_nonneg ((1/2)*Real.cos x-B*Real.sin x)]
 
 private lemma trig_nonnegative {x : ℝ} (hx : 0 ≤ x ∧ x ≤ Real.pi/2) :
@@ -119,9 +116,15 @@ lemma extend_gap_wall {b z y K l u d : ℝ} (hc : Coefficients b z y)
   have hcos : Real.cos ((53:ℝ)/50) ≤ 1/2 := by
     nlinarith only [Seven.cos_upper_four (x := (53:ℝ)/50) (by norm_num)]
   have hp := mul_le_mul_of_nonneg_left hcos
-    (show 0 ≤ b*(1/2+y) by positivity)
+    (show 0 ≤ b*(1/2+y) from mul_nonneg hc.b_nonneg (by linarith [hc.y_nonneg]))
   have hs := mul_nonneg (mul_nonneg hc.b_nonneg (by norm_num [A] : 0 ≤ A)) ht.2
-  have hA : 0 ≤ a := by dsimp [a,A]; positivity
+  have hA : 0 ≤ a := by
+    have hAp : (0:ℝ) ≤ A := by norm_num [A]
+    have h1 := mul_nonneg hc.z_nonneg hAp
+    have h2 := mul_nonneg hc.b_nonneg (add_nonneg (mul_nonneg hAp ht.1)
+      (mul_nonneg (show (0:ℝ) ≤ 1/2+y by linarith [hc.y_nonneg]) ht.2))
+    dsimp [a]
+    linarith
   have hE : 0 ≤ e := by dsimp [e]; nlinarith only [hbalance,hp,hs]
   rw [ident] at hleft hright ⊢
   have h := trig_lower_of_endpoints hA hE hl hu hd

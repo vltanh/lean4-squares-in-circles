@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.CardinalLowDiagonalConcavity
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CardinalLowDiagonalConcavity
 
 /-!
 # The six sign/order vertices, with visible rational endpoint bounds
@@ -43,58 +40,58 @@ lemma cardLow_tenth_bracket :
   exact ⟨by linarith,by linarith,by linarith⟩
 
 private lemma cardLow_Ws_root_minus :
-    -(1689/1000)*(3804/10000)≤sineRoot (1689/1000) (40/100) (25/100) (-2/5) := by
+    -(1689/1000)*(3804/10000)≤ sineRoot (1689/1000) (40/100) (25/100) (-2/5) := by
   apply sineRoot_lower_of_squared (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
-  rw [Real.sin_neg]
+  rw [show (-2/5:ℝ)=-(2/5) by norm_num,Real.sin_neg]
   nlinarith [cardLow_two_fifths_bracket.2.1]
 
 private lemma cardLow_Ws_root_zero :
-    -(1689/1000)*(4718/10000)≤sineRoot (1689/1000) (40/100) (25/100) 0 := by
+    -(1689/1000)*(4718/10000)≤ sineRoot (1689/1000) (40/100) (25/100) 0 := by
   apply sineRoot_lower_of_squared (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
   norm_num
 
 private lemma cardLow_Ws_root_plus :
-    -(1689/1000)*(5482/10000)≤sineRoot (1689/1000) (40/100) (25/100) (2/5) := by
+    -(1689/1000)*(5482/10000)≤ sineRoot (1689/1000) (40/100) (25/100) (2/5) := by
   apply sineRoot_lower_of_squared (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
   nlinarith [cardLow_two_fifths_bracket.2.2]
 
 private lemma cardLow_Ds_root_zero :
-    -(1689/1000)*(4037/10000)≤sineRoot (1689/1000) (30/100) (27/100) 0 := by
+    -(1689/1000)*(4037/10000)≤ sineRoot (1689/1000) (30/100) (27/100) 0 := by
   apply sineRoot_lower_of_squared (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
   norm_num
 
 private lemma cardLow_Ds_root_half :
-    -(1689/1000)*(4906/10000)≤sineRoot (1689/1000) (30/100) (27/100) (1/2) := by
+    -(1689/1000)*(4906/10000)≤ sineRoot (1689/1000) (30/100) (27/100) (1/2) := by
   apply sineRoot_lower_of_squared (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
   nlinarith [low_half_bracket.2.2.2]
 
 private lemma cardLow_Ds_root_two_fifths :
-    -(1689/1000)*(4755/10000)≤sineRoot (1689/1000) (30/100) (27/100) (2/5) := by
+    -(1689/1000)*(4755/10000)≤ sineRoot (1689/1000) (30/100) (27/100) (2/5) := by
   apply sineRoot_lower_of_squared (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
   nlinarith [cardLow_two_fifths_bracket.2.2]
 
 private lemma cardLow_relative_root_zero :
-    -(1689/1000)*(4302/10000)≤sineRoot (1689/1000) (35/100) (25/100) 0 := by
+    -(1689/1000)*(4302/10000)≤ sineRoot (1689/1000) (35/100) (25/100) 0 := by
   apply sineRoot_lower_of_squared (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
   norm_num
 
 private lemma cardLow_relative_root_two_fifths :
-    -(1689/1000)*(5033/10000)≤sineRoot (1689/1000) (35/100) (25/100) (2/5) := by
+    -(1689/1000)*(5033/10000)≤ sineRoot (1689/1000) (35/100) (25/100) (2/5) := by
   apply sineRoot_lower_of_squared (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
   nlinarith [cardLow_two_fifths_bracket.2.2]
 
 private lemma cardLow_relative_root_half :
-    -(1689/1000)*(5187/10000)≤sineRoot (1689/1000) (35/100) (25/100) (1/2) := by
+    -(1689/1000)*(5187/10000)≤ sineRoot (1689/1000) (35/100) (25/100) (1/2) := by
   apply sineRoot_lower_of_squared (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
   nlinarith [low_half_bracket.2.2.2]
 
 private lemma cardLow_relative_root_nine_tenths :
-    -(1689/1000)*(5677/10000)≤sineRoot (1689/1000) (35/100) (25/100) (9/10) := by
+    -(1689/1000)*(5677/10000)≤ sineRoot (1689/1000) (35/100) (25/100) (9/10) := by
   apply sineRoot_lower_of_squared (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
   nlinarith [cardLow_nine_tenths_bracket.2.2]
 
 private lemma cardLow_relative_root_tenth :
-    -(1689/1000)*(4501/10000)≤sineRoot (1689/1000) (35/100) (25/100) (1/10) := by
+    -(1689/1000)*(4501/10000)≤ sineRoot (1689/1000) (35/100) (25/100) (1/10) := by
   apply sineRoot_lower_of_squared (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
   nlinarith [cardLow_tenth_bracket.2.2]
 

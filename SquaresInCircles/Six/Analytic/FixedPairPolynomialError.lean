@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.FixedPairPolynomial
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FixedPairPolynomial
 
 /-!
 # Whole-domain error control for the endpoint polynomial
@@ -33,7 +30,8 @@ private lemma base_error (own : Bool) {t : ℝ} (ht : |t|≤6/7) :
   cases own
   · constructor
     · exact hc
-    · simpa only [pairNorthBase,baseVector,if_false,neg_sub_neg,abs_sub_comm] using hs
+    · simpa only [pairNorthBase,baseVector,Bool.false_eq_true,ite_false,neg_sub_neg,abs_sub_comm]
+        using hs
   · norm_num [pairNorthBase,baseVector]
 
 private lemma north_source_bounds (u : Fin 4) (q : ℝ) :
@@ -146,8 +144,8 @@ private def penaltyFactorP (no wo : Bool) (n w : ℝ) : ℝ :=
     (if wo then max (sinP w) 0 else 0)
 
 private lemma penaltyFactor_bound (no wo : Bool) (n w : ℝ) : |penaltyFactor no wo n w|≤4 := by
-  have hn0 : 0≤max (Real.sin n) 0 := le_max_right _ _
-  have hw0 : 0≤max (Real.sin w) 0 := le_max_right _ _
+  have hn0 : 0≤ max (Real.sin n) 0 := le_max_right _ _
+  have hw0 : 0≤ max (Real.sin w) 0 := le_max_right _ _
   have hn1 : max (Real.sin n) 0≤1 := max_le (Real.sin_le_one n) (by norm_num)
   have hw1 : max (Real.sin w) 0≤1 := max_le (Real.sin_le_one w) (by norm_num)
   have hc0 := Real.neg_one_le_cos n

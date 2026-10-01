@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.SecondaryCostBound
-public import SquaresInCircles.Six.Analytic.DoubleSecondaryOwnBound
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SecondaryCostBound
+import SquaresInCircles.Six.Analytic.DoubleSecondaryOwnBound
 
 /-!
 # The reflected secondary cost and the OWN-wing penalty
@@ -45,14 +42,14 @@ def ownWingPotential (s : ℝ) : ℝ :=
 
 def positiveWing (s : ℝ) : ℝ := (387/1000)*Real.cos s+(613/1000)*Real.sin s
 
-lemma ownWingPotential_nonnegative_angle {s : ℝ} (hs : 0≤s ∧ s≤Real.pi/4) :
+lemma ownWingPotential_nonnegative_angle {s : ℝ} (hs : 0≤ s ∧ s≤Real.pi/4) :
     ownWingPotential s=positiveWing s := by
   have ht := Real.sin_nonneg_of_nonneg_of_le_pi hs.1
     (by linarith [hs.2,Real.pi_pos])
   rw [ownWingPotential,abs_of_nonneg ht,positiveWing]
   ring
 
-lemma ownWingPotential_negative_lower {s : ℝ} (hs : -5/8≤s ∧ s≤0) :
+lemma ownWingPotential_negative_lower {s : ℝ} (hs : -5/8≤ s ∧ s≤0) :
     387/1000≤ownWingPotential s := by
   have hc := Real.cos_nonneg_of_mem_Icc
     (show s∈Set.Icc (-(Real.pi/2)) (Real.pi/2) by
@@ -69,9 +66,9 @@ lemma positiveWing_minus_antitone :
     AntitoneOn (fun x : ℝ => positiveWing x-(13/20)*x) (Set.Icc 0 (Real.pi/4)) := by
   apply Seven.antiOn_of_hasDeriv_nonpos (by dsimp [positiveWing]; fun_prop)
   · intro x _
-    convert (((Real.hasDerivAt_cos x).const_mul (387/1000)).add
-      ((Real.hasDerivAt_sin x).const_mul (613/1000))).sub
-      ((hasDerivAt_id x).const_mul (13/20)) using 1 <;> dsimp [positiveWing] <;> ring
+    exact (((Real.hasDerivAt_cos x).const_mul (387/1000)).fun_add
+      ((Real.hasDerivAt_sin x).const_mul (613/1000))).fun_sub
+      ((hasDerivAt_id' x).const_mul (13/20))
   · intro x hx
     have hs := Real.sin_nonneg_of_nonneg_of_le_pi hx.1.le
       (by linarith [hx.2,Real.pi_pos])
@@ -81,9 +78,9 @@ lemma positiveWing_plus_monotone :
     MonotoneOn (fun x : ℝ => positiveWing x+(13/20)*x) (Set.Icc 0 (Real.pi/4)) := by
   apply Seven.monoOn_of_hasDeriv_nonneg (by dsimp [positiveWing]; fun_prop)
   · intro x _
-    convert (((Real.hasDerivAt_cos x).const_mul (387/1000)).add
-      ((Real.hasDerivAt_sin x).const_mul (613/1000))).add
-      ((hasDerivAt_id x).const_mul (13/20)) using 1 <;> dsimp [positiveWing] <;> ring
+    exact (((Real.hasDerivAt_cos x).const_mul (387/1000)).fun_add
+      ((Real.hasDerivAt_sin x).const_mul (613/1000))).fun_add
+      ((hasDerivAt_id' x).const_mul (13/20))
   · intro x hx
     have hc := Real.cos_nonneg_of_mem_Icc
       (show x∈Set.Icc (-(Real.pi/2)) (Real.pi/2) by
@@ -92,9 +89,9 @@ lemma positiveWing_plus_monotone :
 
 /-- In the interior, the minimum of G(s)+13|s-d|/20 is at s=d. -/
 lemma own_wing_penalty_lower {s d : ℝ}
-    (hs : -5/8≤s ∧ s≤2/3) (hd : 0≤d ∧ d≤Real.pi/4) :
+    (hs : -5/8≤ s ∧ s≤2/3) (hd : 0≤d ∧ d≤Real.pi/4) :
     positiveWing d≤ownWingPotential s+(13/20)*|s-d| := by
-  by_cases hs0 : 0≤s
+  by_cases hs0 : 0≤ s
   · have hspi : s≤Real.pi/4 := by linarith [hs.2,Real.pi_gt_d2]
     rw [ownWingPotential_nonnegative_angle ⟨hs0,hspi⟩]
     rcases le_total s d with hsd | hds
@@ -108,12 +105,12 @@ lemma own_wing_penalty_lower {s d : ℝ}
       (show (0:ℝ)∈Set.Icc 0 (Real.pi/4) by constructor <;> linarith [Real.pi_pos]) hd hd.1
     have hp := ownWingPotential_negative_lower ⟨hs.1,(lt_of_not_ge hs0).le⟩
     norm_num [positiveWing] at hh
-    rw [abs_of_nonpos (by linarith [hd.1])]
-    linarith
+    rw [abs_of_nonpos (by linarith [hd.1]),positiveWing]
+    linarith [lt_of_not_ge hs0]
 
 /-- Beyond the allowed helper endpoint, the minimum stays at s=2/3. -/
 lemma own_wing_penalty_endpoint {s d : ℝ}
-    (hs : -5/8≤s ∧ s≤2/3) (hd : 2/3≤d) :
+    (hs : -5/8≤ s ∧ s≤2/3) (hd : 2/3≤d) :
     positiveWing (2/3)+(13/20)*(d-2/3)≤ownWingPotential s+(13/20)*|s-d| := by
   have hb := own_wing_penalty_lower hs
     (d := (2:ℝ)/3) ⟨by norm_num,by linarith [Real.pi_gt_d2]⟩

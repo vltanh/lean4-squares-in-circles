@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Analytic.MixedCardinalWest.Endpoints
-public import SquaresInCircles.Six.Analytic.SecondaryReduction
-public import SquaresInCircles.Six.Stress.Reverse
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.MixedCardinalWest.Endpoints
+import SquaresInCircles.Six.Analytic.SecondaryReduction
+import SquaresInCircles.Six.Stress.Reverse
 
 /-!
 # Actual-packing exclusion of the cardinal/cardinal mixed west-wing case
@@ -22,6 +19,12 @@ Compilation and kernel acceptance remain deferred.
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.MixedCardinalWest
 open Normalization
+
+private lemma cos_pi_add' (x : ℝ) : Real.cos (Real.pi+x) = -Real.cos x := by
+  rw [add_comm,Real.cos_add_pi]
+
+private lemma sin_pi_add' (x : ℝ) : Real.sin (Real.pi+x) = -Real.sin x := by
+  rw [add_comm,Real.sin_add_pi]
 
 def forceW (d : ℝ) : Point := (-2-3*Real.sin d,3*Real.cos d)
 def forceD (s d : ℝ) : Point := (3*Real.sin d-3*Real.cos s,-3*Real.cos d-3*Real.sin s)
@@ -80,15 +83,15 @@ private lemma width_from_plus (S : UnitSquare) (g : Point) :
 
 lemma west_support {w d a b : ℝ} (hc : ContainedChart a |b|) :
     dot (forceW d) (orientedSquare (Real.pi+w) a b).center ≤ upperW w d := by
-  have h := Stress.center_le_vertexSupport R0_nonneg (oriented_contained_of_chart hc) (forceW d)
+  have h := Stress.center_le_vertexSupport R0_nonneg (oriented_contained_of_chart (t := Real.pi+w) hc) (forceW d)
   have hw := width_from_minus (orientedSquare (Real.pi+w) a b) (forceW d)
   have hx : frameX (orientedSquare (Real.pi+w) a b) (forceW d)=
       2*Real.cos w+3*Real.sin (d-w) := by
-    simp only [frameX,orientedSquare,forceW,Real.cos_pi_add,Real.sin_pi_add,Real.sin_sub]
+    simp only [frameX,orientedSquare,forceW,cos_pi_add',sin_pi_add',Real.sin_sub]
     ring
   have hy : frameY (orientedSquare (Real.pi+w) a b) (forceW d)=
       -2*Real.sin w-3*Real.cos (d-w) := by
-    simp only [frameY,orientedSquare,forceW,Real.cos_pi_add,Real.sin_pi_add,Real.cos_sub]
+    simp only [frameY,orientedSquare,forceW,cos_pi_add',sin_pi_add',Real.cos_sub]
     ring
   rw [hx,hy] at hw
   dsimp [Stress.vertexSupport,Stress.vectorLength] at h
@@ -98,13 +101,13 @@ lemma west_support {w d a b : ℝ} (hc : ContainedChart a |b|) :
 
 lemma diagonal_support {s d a b : ℝ} (hc : ContainedChart a |b|) :
     dot (forceD s d) (orientedSquare (Real.pi+d) a b).center ≤ upperD s d := by
-  have h := Stress.center_le_vertexSupport R0_nonneg (oriented_contained_of_chart hc) (forceD s d)
+  have h := Stress.center_le_vertexSupport R0_nonneg (oriented_contained_of_chart (t := Real.pi+d) hc) (forceD s d)
   have hw := width_from_plus (orientedSquare (Real.pi+d) a b) (forceD s d)
   have hx : frameX (orientedSquare (Real.pi+d) a b) (forceD s d)=3*Real.cos (d-s) := by
-    simp only [frameX,orientedSquare,forceD,Real.cos_pi_add,Real.sin_pi_add,Real.cos_sub]
+    simp only [frameX,orientedSquare,forceD,cos_pi_add',sin_pi_add',Real.cos_sub]
     ring
   have hy : frameY (orientedSquare (Real.pi+d) a b) (forceD s d)=3-3*Real.sin (d-s) := by
-    simp only [frameY,orientedSquare,forceD,Real.cos_pi_add,Real.sin_pi_add,Real.sin_sub]
+    simp only [frameY,orientedSquare,forceD,cos_pi_add',sin_pi_add',Real.sin_sub]
     linear_combination 3*(Real.sin_sq_add_cos_sq d)
   rw [hx,hy] at hw
   dsimp [Stress.vertexSupport,Stress.vectorLength] at h
@@ -114,7 +117,7 @@ lemma diagonal_support {s d a b : ℝ} (hc : ContainedChart a |b|) :
 
 lemma south_support {s a b : ℝ} (hc : ContainedChart a |b|) :
     dot (forceS s) (orientedSquare (3*Real.pi/2+s) a b).center ≤ upperS s := by
-  have h := Stress.center_le_vertexSupport R0_nonneg (oriented_contained_of_chart hc) (forceS s)
+  have h := Stress.center_le_vertexSupport R0_nonneg (oriented_contained_of_chart (t := 3*Real.pi/2+s) hc) (forceS s)
   have hw := width_from_plus (orientedSquare (3*Real.pi/2+s) a b) (forceS s)
   have hx : frameX (orientedSquare (3*Real.pi/2+s) a b) (forceS s)=4*Real.cos s := by
     simp only [frameX,orientedSquare,forceS,Real.cos_add,Real.sin_add,south_cos,south_sin]
@@ -161,7 +164,8 @@ lemma system_gap {w s d : ℝ}
     ⟨by linarith [hx.1,Real.pi_pos],hx.2⟩
   have hsx := Real.sin_nonneg_of_nonneg_of_le_pi hx.1 (by linarith [hx.2,Real.pi_pos])
   have hwidthW : angularWidth w=(Real.cos w-Real.sin w)/2 := by
-    simp [angularWidth,abs_of_nonneg hcw,abs_of_nonpos hsw]
+    simp only [angularWidth,abs_of_nonneg hcw,abs_of_nonpos hsw]
+    ring
   have hwidthS : angularWidth s=(Real.cos s+|Real.sin s|)/2 := by
     simp [angularWidth,abs_of_nonneg hcs]
   have hwidthQ : angularWidth (d-w)=(Real.cos (d-w)+Real.sin (d-w))/2 := by
@@ -202,17 +206,17 @@ theorem not_missing_west {R : ℝ} (P : NormalizedPacking R)
     intro e
     fin_cases e
     · have h := P.cardinal_separator 2 hW
-      rw [hWphase] at h
-      simp only [centralMargin,centerX,angularWidth,Real.cos_pi_add,Real.sin_pi_add,abs_neg] at h
+      rw [show matchingCardinal 2 = CentralAxis.west from rfl,hWphase] at h
+      simp only [centralMargin,centerX,angularWidth,cos_pi_add',sin_pi_add',abs_neg] at h
       dsimp [system,Sq,dot,sub]
       rw [P.square_def 2,hWphase]
       dsimp [orientedSquare,axisSquare,angularWidth]
-      simp only [Real.cos_pi_add,Real.sin_pi_add]
+      simp only [cos_pi_add',sin_pi_add']
       nlinarith
     · have h := P.cardinal_separator 4 hS
-      rw [hSphase] at h
+      rw [show matchingCardinal 4 = CentralAxis.south from rfl,hSphase] at h
       simp only [centralMargin,centerY,angularWidth,Real.cos_add,Real.sin_add,south_cos,
-        south_sin,zero_mul,neg_one_mul,add_zero,zero_add,abs_neg] at h
+        south_sin,zero_mul,neg_one_mul,add_zero,zero_sub,neg_neg,abs_neg] at h
       dsimp [system,Sq,dot,sub]
       rw [P.square_def 4,hSphase]
       dsimp [orientedSquare,axisSquare,angularWidth]
@@ -222,7 +226,7 @@ theorem not_missing_west {R : ℝ} (P : NormalizedPacking R)
       rw [P.square_def 2,P.square_def 3,hWphase,hDphase,oriented_pair_threshold,
         show (Real.pi+d)-(Real.pi+w)=d-w by ring] at h
       simpa [system,Sq,P.square_def,hWphase,hDphase,normalY,orientedSquare,
-        Real.cos_pi_add,Real.sin_pi_add] using h
+        cos_pi_add',sin_pi_add'] using h
     · have h := hmissing.south_wing
       rw [P.square_def 3,P.square_def 4,hDphase,hSphase,oriented_pair_threshold,
         show (3*Real.pi/2+s)-(Real.pi+d)=Real.pi/2+s-d by ring] at h

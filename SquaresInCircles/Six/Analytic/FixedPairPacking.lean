@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.FixedPairCoordinates
-public import SquaresInCircles.Six.Stress.CandidateRadius
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FixedPairCoordinates
+import SquaresInCircles.Six.Stress.CandidateRadius
 
 /-!
 # Fixed-pair work from actual packing inequalities
@@ -47,7 +44,7 @@ theorem pair_work_bound (no wo : Bool) (u : Fin 4)
   linarith
 
 lemma width_pi_add (t : ℝ) : angularWidth (Real.pi+t)=angularWidth t := by
-  simp [angularWidth,Real.cos_pi_add,Real.sin_pi_add,abs_neg]
+  simp [angularWidth,Real.cos_add,Real.sin_add,abs_neg]
 
 lemma width_half_pi_add (t : ℝ) : angularWidth (Real.pi/2+t)=angularWidth t := by
   simp [angularWidth,Real.cos_add,Real.sin_add,abs_neg,add_comm]
@@ -75,13 +72,15 @@ lemma chosen_center_separates {R : ℝ} (P : NormalizedPacking R) (i : Fin 5) :
   cases hbit : P.ownBits i
   · have hm := P.cardinal_separator i hbit
     fin_cases i
-    all_goals simp only [chosenCenterAxis,hbit,Bool.false_eq_true,if_false,
-      matchingCardinal,cardinalCenter,primary,Real.cos_zero,Real.sin_zero,
-      Real.cos_pi,Real.sin_pi,Real.cos_pi_div_two,Real.sin_pi_div_two,south_cos,south_sin]
+    all_goals simp only [Fin.reduceFinMk,Fin.isValue] at hbit hm ⊢
+    all_goals simp only [chosenCenterAxis,hbit,Bool.false_eq_true,ite_false,
+      Matrix.cons_val,matchingCardinal,cardinalCenter,primary] at hm ⊢
+    all_goals simp only [Real.cos_zero,Real.sin_zero,Real.cos_pi,Real.sin_pi,
+      Real.cos_pi_div_two,Real.sin_pi_div_two,south_cos,south_sin] at hm ⊢
     all_goals dsimp [centralMargin,centerX,centerY,dot,sub,orientedSquare] at hm ⊢
     all_goals linarith
   · have hm := P.own_separator i hbit
-    simp only [chosenCenterAxis,hbit,if_true]
+    simp only [chosenCenterAxis,hbit,ite_true]
     change 1/2+angularWidth (P.phase i)≤
       frameX (orientedSquare (P.phase i) (P.radial i) (P.transverse i))
         (sub (orientedSquare (P.phase i) (P.radial i) (P.transverse i)).center P.center)
@@ -101,7 +100,7 @@ lemma chosen_west_axis {R : ℝ} (P : NormalizedPacking R) :
   have hw : P.phase 2=Real.pi+P.helperAngle 2 := P.phase_from_deviation 2
   cases hb : P.ownBits 2 <;>
     simp [chosenCenterAxis,westNormal,hb,hw,matchingCardinal,cardinalCenter,
-      primary,Real.cos_pi_add,Real.sin_pi_add]
+      primary,Real.cos_add,Real.sin_add]
 
 lemma preferred_northwest_axis {R : ℝ} (P : NormalizedPacking R) (u : Fin 4) :
     preferredPairAxis NWsigns (P.square 2) (P.square 1) u=
@@ -122,8 +121,10 @@ theorem actual_northwest_pair {R : ℝ} (P : NormalizedPacking R)
   have hw : P.phase 2=Real.pi+P.helperAngle 2 := P.phase_from_deviation 2
   have hN := chosen_center_separates P 1
   have hW := chosen_center_separates P 2
-  change Seven.SAT.threshold (axisSquare P.center) (P.square 1)≤_ at hN
-  change Seven.SAT.threshold (axisSquare P.center) (P.square 2)≤_ at hW
+  change Seven.SAT.threshold (axisSquare P.center) (P.square 1)≤
+    dot (chosenCenterAxis P 1) (sub (P.square 1).center P.center) at hN
+  change Seven.SAT.threshold (axisSquare P.center) (P.square 2)≤
+    dot (chosenCenterAxis P 2) (sub (P.square 2).center P.center) at hW
   rw [P.square_def,central_threshold,chosen_north_axis,hn,width_half_pi_add] at hN
   rw [P.square_def,central_threshold,chosen_west_axis,hw,width_pi_add] at hW
   rw [preferred_northwest_axis,P.square_def 2,P.square_def 1,hw,hn,northwest_threshold] at hsel
@@ -132,7 +133,7 @@ theorem actual_northwest_pair {R : ℝ} (P : NormalizedPacking R)
   change phi (alpha (P.square 1) (0,0)) (beta (P.square 1) (0,0))≤Six.qStar at hNbox
   change phi (alpha (P.square 2) (0,0)) (beta (P.square 2) (0,0))≤Six.qStar at hWbox
   rw [P.square_def,orientedSquare_alpha,orientedSquare_beta] at hNbox hWbox
-  have hc := P.toPinPacking.sharp_central_box hR
+  have hc := Stress.PinPacking.sharp_central_box P.toPinPacking hR
   refine ⟨u,pair_work_bound (P.ownBits 1) (P.ownBits 2) u hc ?_ ?_ hN hW hsel⟩
   · simpa only [Six.radius_sq,phi] using hNbox
   · simpa only [Six.radius_sq,phi] using hWbox

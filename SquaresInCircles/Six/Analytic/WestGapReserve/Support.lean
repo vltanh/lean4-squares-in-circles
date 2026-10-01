@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.WestGapReserve.Scalar
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.WestGapReserve.Scalar
 
 /-!
 # Three actual inequalities force the larger west phase gap
@@ -71,8 +68,9 @@ lemma diagonal_support {a b : ℝ} (hc : ContainedChart a |b|) :
     simpa only [Real.sqrt_sq (by norm_num : (0:ℝ) ≤ 2489659/1000000)] using hr
   have hm := mul_le_mul CandidateWestTail.ceiling_bounds.1 hroot (Real.sqrt_nonneg _)
     (by norm_num [CandidateWestTail.radiusBound])
-  norm_num [delta] at h
-  dsimp [diagonalUpper,delta]
+  have hdelta : |delta| = delta := abs_of_pos (by norm_num [delta])
+  rw [one_pow,abs_one,one_mul,hdelta] at h
+  dsimp only [diagonalUpper]
   linarith
 
 lemma center_support {v d cx cy : ℝ}
@@ -134,7 +132,7 @@ theorem scalar_impossible {v d aw bw ad bd cx cy : ℝ}
       forceX v d*cx+forceY v d*cy := by
     dsimp [thresholdSum,beta,delta,forceX,forceY]
     linear_combination (27/100)*hCW+(57/25)*hCD+hWD
-  have hw := west_support hW
+  have hw := west_support (q := v+d) hW
   have hdiag := diagonal_support hD
   have hc := center_support hq hd hx hy
   have hn : defect v d ≤ 0 := by

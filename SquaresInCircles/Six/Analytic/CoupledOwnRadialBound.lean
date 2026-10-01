@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.CoupledOwnProfiles
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CoupledOwnProfiles
 
 /-!
 # From the coupled central profiles to secondary separation
@@ -32,7 +29,7 @@ lemma chart_three_radial_support {a b : ℝ} (hc : ContainedChart a |b|) :
 
 lemma coupled_own_radial_sum {a b A B cx cy d s : ℝ}
     (hD : ContainedChart a |b|) (hS : ContainedChart A |B|)
-    (hy : cy≤c0) (hd : 1/2≤d) (hds : d≤s) (hs : s≤2/3)
+    (hy : cy≤c0) (hd : 1/2≤d) (hds : d≤ s) (hs : s≤2/3)
     (hCD : 0≤centralMargin .own (Real.pi+d) a b cx cy)
     (hCS : 0≤centralMargin .own (3*Real.pi/2+s) A B cx cy) :
     217/100+(s-d)/3<a+A := by
@@ -40,35 +37,39 @@ lemma coupled_own_radial_sum {a b A B cx cy d s : ℝ}
     (show d∈Set.Icc (-(Real.pi/2)) (Real.pi/2) by
       constructor <;> linarith [hd,hds,hs,Real.pi_gt_d2])
   have hsd := Real.sin_nonneg_of_nonneg_of_le_pi
-    (by linarith) (by linarith [Real.pi_gt_d2])
+    (show 0≤d by linarith) (by linarith [Real.pi_gt_d2])
   have hcs := Real.cos_nonneg_of_mem_Icc
     (show s∈Set.Icc (-(Real.pi/2)) (Real.pi/2) by
       constructor <;> linarith [hd,hds,hs,Real.pi_gt_d2])
   have hss := Real.sin_nonneg_of_nonneg_of_le_pi
-    (by linarith) (by linarith [Real.pi_gt_d2])
+    (show 0≤s by linarith) (by linarith [Real.pi_gt_d2])
   have hcr := Real.cos_nonneg_of_mem_Icc
     (show s-d∈Set.Icc (-(Real.pi/2)) (Real.pi/2) by
       constructor <;> linarith [hd,hds,hs,Real.pi_gt_d2])
   have hDgap : 0≤a-1/2-(1/2-cx)*Real.cos d-(1/2-cy)*Real.sin d := by
-    simp only [centralMargin,centralNormal,angularWidth,Real.cos_pi_add,Real.sin_pi_add,
+    have e1 : Real.cos (Real.pi+d)=-Real.cos d := by rw [add_comm]; exact Real.cos_add_pi d
+    have e2 : Real.sin (Real.pi+d)=-Real.sin d := by rw [add_comm]; exact Real.sin_add_pi d
+    simp only [centralMargin,centralNormal,angularWidth,e1,e2,
       abs_neg,abs_of_nonneg hcd,abs_of_nonneg hsd] at hCD
     nlinarith only [hCD]
   have hSgap : 0≤A-1/2-(1/2-cy)*Real.cos s-(1/2+cx)*Real.sin s := by
     simp only [centralMargin,centralNormal,angularWidth,Real.cos_add,Real.sin_add,
-      south_cos,south_sin,zero_mul,one_mul,neg_one_mul,zero_add,add_zero,abs_neg,
+      south_cos,south_sin,zero_mul,neg_one_mul,zero_sub,neg_neg,add_zero,abs_neg,
       abs_of_nonneg hcs,abs_of_nonneg hss] at hCS
     nlinarith only [hCS]
   have hDp := mul_nonneg hDgap hss
   have hSp := mul_nonneg hSgap hcd
   have hcy : 387/1000≤1/2-cy := by dsimp [c0] at hy; linarith [rho0_upper]
   have hcyprod := mul_nonneg (sub_nonneg.mpr hcy) hcr
-  have hidentity : Real.cos (s-d)=Real.cos s*Real.cos d+Real.sin s*Real.sin d := Real.cos_sub s d
+  rw [Real.cos_sub] at hcyprod
   have hcombined : (Real.cos d+Real.sin s)/2+Real.sin s*Real.cos d+
       (387/1000)*Real.cos (s-d)≤a*Real.sin s+A*Real.cos d := by
-    nlinarith only [hDp,hSp,hcyprod,hidentity]
-  have hcoslower := (helper_trig_bounds
-    (abs_le.mpr ⟨by linarith,by linarith⟩ : |d|≤2/3)).1
-  have hsinupper := Real.sin_le (show 0≤s by linarith)
+    rw [Real.cos_sub]
+    linarith only [hDp,hSp,hcyprod]
+  have hcoslower : 7/9≤Real.cos d := by
+    have hc := Real.one_sub_sq_div_two_le_cos (x := d)
+    nlinarith only [hc,mul_nonneg (show 0≤2/3-d by linarith) (show 0≤2/3+d by linarith)]
+  have hsinupper := Real.sin_le (show 0≤ s by linarith)
   have hdiff : 0≤Real.cos d-Real.sin s := by linarith
   have hAupper : A≤1113/1000 := hS.a_le_rho0.trans rho0_upper.le
   have hAp := mul_le_mul_of_nonneg_right hAupper hdiff

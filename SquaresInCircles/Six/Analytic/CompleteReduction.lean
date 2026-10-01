@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.SouthOuterTail.Geometry
-public import SquaresInCircles.Six.Analytic.ReductionInterface
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SouthOuterTail.Geometry
+import SquaresInCircles.Six.Analytic.ReductionInterface
 
 /-!
 # Unconditional analytical reduction

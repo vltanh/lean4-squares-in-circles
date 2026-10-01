@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Normalization.ActualMarkers
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.ActualMarkers
 
 /-!
 # Side-nearestness as an actual point-set statement
@@ -32,7 +29,8 @@ lemma nearFoot_normSq (t a : ℝ) : normSq (nearFoot t a)=(a-1/2)^2 := by
 
 lemma localX_frame_origin (t a b : ℝ) (p : Point) :
     localX (orientedSquare t a b) p = frameX (orientedSquare t a b) p-a := by
-  simp only [orientedSquare_localX,frameX,orientedSquare]
+  rw [orientedSquare_localX]
+  simp only [frameX,orientedSquare]
   ring
 
 /-- The point realizing minimum distance is strictly inside the near edge. -/

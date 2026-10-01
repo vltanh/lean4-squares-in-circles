@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.FrozenPrimaryEndpoints
-public import SquaresInCircles.Six.Analytic.SmallGapPrimary
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FrozenPrimaryEndpoints
+import SquaresInCircles.Six.Analytic.SmallGapPrimary
 
 /-!
 # Analytic exclusion of the inward W-primary D-edge for OWN W
@@ -28,7 +25,7 @@ lemma inward_primary_frozen_positive {v d aw ad bd cx cy : ℝ}
     (hv : 0≤v ∧ v≤2/3) (hd : 0≤d ∧ d≤Real.pi/4)
     (haw : aw≤rho0) (hD : ContainedChart ad |bd|) (hb : |bd|<1/2)
     (hc : (0≤cx ∧ cx≤c0) ∧ (0≤cy ∧ cy≤c0)) :
-    0<inwardPrimaryFrozen v d aw ad bd cx cy := by
+    0< inwardPrimaryFrozen v d aw ad bd cx cy := by
   have hxhalf : 0≤1/2-cx := by linarith [hc.1.2,c0_lt_23_200]
   have hyhalf : 0≤1/2-cy := by linarith [hc.2.2,c0_lt_23_200]
   have had : 0≤1/2+ad := by linarith [hD.half_le]
@@ -36,7 +33,7 @@ lemma inward_primary_frozen_positive {v d aw ad bd cx cy : ℝ}
   unfold inwardPrimaryFrozen
   apply frozenTrig_positive
     (show 0≤(43/100)*(1/2-cx) by positivity)
-    (show 0≤(43/100)*(1/2+cy) by positivity)
+    (show 0≤(43/100)*(1/2+cy) by linarith [hc.2.1])
     (show 0≤(19/50)*(1/2-cx) by positivity)
     (show 0≤(19/50)*(1/2-cy) by positivity)
     (show 0≤(19/100)*(1/2+ad) by positivity)
@@ -67,8 +64,10 @@ lemma inward_primary_frozen_nonpositive {v d aw bw ad bd cx cy : ℝ}
       Real.sin_pi_sub,abs_neg,abs_of_nonneg hvtr.1,abs_of_nonneg hvtr.2] at hCW
     nlinarith only [hCW]
   have hD : 1/2-ad+(1/2-cx)*Real.cos d+(1/2-cy)*Real.sin d≤0 := by
-    simp only [centralMargin,centralNormal,angularWidth,Real.cos_pi_add,
-      Real.sin_pi_add,abs_neg,abs_of_nonneg hdtr.1,abs_of_nonneg hdtr.2] at hCD
+    have hcos : Real.cos (Real.pi+d)=-Real.cos d := by rw [add_comm,Real.cos_add_pi]
+    have hsin : Real.sin (Real.pi+d)=-Real.sin d := by rw [add_comm,Real.sin_add_pi]
+    simp only [centralMargin,centralNormal,angularWidth,hcos,hsin,abs_neg,
+      abs_of_nonneg hdtr.1,abs_of_nonneg hdtr.2] at hCD
     nlinarith only [hCD]
   have hproj : dot (scale (-1) (normalX (orientedSquare (Real.pi-v) aw bw)))
       (sub (orientedSquare (Real.pi+d) ad bd).center
@@ -77,10 +76,15 @@ lemma inward_primary_frozen_nonpositive {v d aw bw ad bd cx cy : ℝ}
     have hp := pair_frameX_left (Real.pi-v) aw bw (Real.pi+d) ad bd
     have hq : (Real.pi+d)-(Real.pi-v)=v+d := by ring
     rw [hq] at hp
-    change -(frameX (orientedSquare (Real.pi-v) aw bw)
-      (sub (orientedSquare (Real.pi+d) ad bd).center
-        (orientedSquare (Real.pi-v) aw bw).center))=_
-    rw [hp]
+    have hid : dot (scale (-1) (normalX (orientedSquare (Real.pi-v) aw bw)))
+        (sub (orientedSquare (Real.pi+d) ad bd).center
+          (orientedSquare (Real.pi-v) aw bw).center)=
+        -(frameX (orientedSquare (Real.pi-v) aw bw)
+          (sub (orientedSquare (Real.pi+d) ad bd).center
+            (orientedSquare (Real.pi-v) aw bw).center)) := by
+      simp only [dot,scale,normalX,frameX]
+      ring
+    rw [hid,hp]
   have hq : (Real.pi+d)-(Real.pi-v)=v+d := by ring
   rw [hproj,oriented_pair_threshold,hq,angularWidth,
     abs_of_nonneg hqtr.1,abs_of_nonneg hqtr.2] at hWD

@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.CardinalLowDiagonalFormula
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CardinalLowDiagonalFormula
 
 /-!
 # The sign/order geometry of the cardinal-W low-D domain
@@ -22,7 +19,7 @@ lemma cardLowSmooth_concave_w (ds positive : Bool) {d l u : ℝ}
     ConcaveOn ℝ (Set.Icc l u) (fun w => cardLowSmooth ds positive w d) := by
   have hF := cardLowF_concave ds positive hl hu hpos
   have hH := concave_affine_argument (cardLowH_concave ds)
-    (a := -1) (b := d) (by intro x hx; simpa only [neg_one_mul,neg_add_eq_sub] using hmap x hx)
+    (a := -1) (b := d) (by intro x hx; simpa only [neg_one_mul,neg_add_eq_sub,Set.mem_Icc] using hmap x hx)
   have hC := concave_constant (cardLowC ds+cardLowG ds d) l u
   have h := (hC.add hF).add hH
   apply h.congr
@@ -39,17 +36,18 @@ lemma cardLowSmooth_concave_d (ds positive : Bool) {w l u : ℝ}
   cases ds
   · have hG := cardLowG_false_concave hl hu
     have hH := concave_affine_argument (cardLowH_concave false)
-      (a := 1) (b := -w) (by intro x hx; simpa only [one_mul,sub_eq_add_neg] using hmap x hx)
+      (a := 1) (b := -w) (by intro x hx; simpa only [one_mul,sub_eq_add_neg,Set.mem_Icc] using hmap x hx)
     have hC := concave_constant (cardLowC false+cardLowF false positive w) l u
     have h := (hC.add hG).add hH
     apply h.congr
     intro x _
-    simp only [cardLowSmooth,one_mul,sub_eq_add_neg]
+    simp only [cardLowSmooth,one_mul,sub_eq_add_neg,Pi.add_apply]
   · have h := rotating_trig_concave
       (C := cardLowC true+cardLowF true positive w)
       (A := (43:ℝ)/100*(387/1000)) (B := (43:ℝ)/100*(387/1000))
       (G := (27:ℝ)/100) (H := (27:ℝ)/100) (c := -w)
       (R := (1689:ℝ)/1000) (p := (30:ℝ)/100) (q := (27:ℝ)/100) (L := (1:ℝ)/4)
+      (l := l) (u := u)
       (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
       (fun x hx => by
         have hbase := cardLow_trig (x := x) ⟨hl.trans hx.1,by linarith [hx.2]⟩
@@ -74,13 +72,14 @@ lemma cardLowSmooth_diagonal_concave (ds : Bool) :
     have h := hC.add (hF.add hG)
     apply h.congr
     intro x _
-    simp only [cardLowSmooth,sub_self]
+    simp only [cardLowSmooth,sub_self,Pi.add_apply]
     ring
   · have h := rotating_trig_concave
       (C := cardLowC true+cardLowH true 0)
       (A := (30:ℝ)/100+(43/100)*(387/1000))
       (B := (30:ℝ)/100+(43/100)*(387/1000)) (G := 0) (H := 0) (c := 0)
       (R := (1689:ℝ)/1000) (p := (30:ℝ)/100) (q := (27:ℝ)/100) (L := (1:ℝ)/4)
+      (l := 0) (u := 2/5)
       (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
       (fun x hx => by
         have ht := (cardLow_trig (x := x) ⟨hx.1,by linarith [hx.2]⟩).2.2

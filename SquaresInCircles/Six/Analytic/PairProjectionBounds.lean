@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Normalization.CenterRadius
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.CenterRadius
 
 /-!
 # Uniform projection estimates for the W/D ordering argument
@@ -27,7 +24,7 @@ lemma primary_projection_bound {A B a c s : ℝ}
   have hc0 : 0 ≤ c := by linarith
   have hp := projection_abs_le_rho0 (chart_center_radius_sq hchart) hunit
   have hpu := (abs_le.mp hp).2
-  have hBs : -(|B|*|s|) ≤ B*s := by
+  have hBs : -(|B| *|s|) ≤ B*s := by
     have h := neg_le_abs (B*s)
     rw [abs_mul] at h
     linarith

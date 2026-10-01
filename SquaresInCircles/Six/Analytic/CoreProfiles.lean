@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.MarkerSupport
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.MarkerSupport
 
 /-!
 # Analytic marker budgets when the smaller central coordinate is small

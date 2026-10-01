@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.DirectedAxes
-
-@[expose] public section
+import SquaresInCircles.Six.DirectedAxes
 
 /-!
 # Four source axes after pin orientation

@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.HighChordCurvature
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.HighChordCurvature
 
 /-!
 # Uniform transverse curvature in the reflected two-OWN domain
@@ -37,20 +34,23 @@ lemma transverse_identity (r : ℝ) :
 lemma transverse_hasDeriv (r : ℝ) : HasDerivAt transverse (transverseFirst r) r := by
   convert ((((Real.hasDerivAt_cos r).const_mul (-B)).add
     ((Real.hasDerivAt_sin r).const_mul (1/2))).sub_const (1/24)).add
-    ((((hasDerivAt_id r).const_mul 2).cos).const_mul (1/24)) using 1 <;>
-    dsimp [transverse,transverseFirst] <;> ring
+    ((((hasDerivAt_id r).const_mul 2).cos).const_mul (1/24)) using 1
+  · funext y; simp only [transverse,Pi.add_apply,id_eq]
+  · dsimp [transverseFirst]; ring
 
 lemma transverse_first_hasDeriv (r : ℝ) : HasDerivAt transverseFirst (transverseSecond r) r := by
   convert (((Real.hasDerivAt_sin r).const_mul B).add
     ((Real.hasDerivAt_cos r).const_mul (1/2))).sub
-    ((((hasDerivAt_id r).const_mul 2).sin).const_mul (1/12)) using 1 <;>
-    dsimp [transverseFirst,transverseSecond] <;> ring
+    ((((hasDerivAt_id r).const_mul 2).sin).const_mul (1/12)) using 1
+  · funext y; simp only [transverseFirst,Pi.add_apply,Pi.sub_apply,id_eq]
+  · dsimp [transverseSecond]; ring
 
 lemma transverse_second_hasDeriv (r : ℝ) : HasDerivAt transverseSecond (transverseThird r) r := by
   convert (((Real.hasDerivAt_cos r).const_mul B).sub
     ((Real.hasDerivAt_sin r).const_mul (1/2))).sub
-    ((((hasDerivAt_id r).const_mul 2).cos).const_mul (1/6)) using 1 <;>
-    dsimp [transverseSecond,transverseThird] <;> ring
+    ((((hasDerivAt_id r).const_mul 2).cos).const_mul (1/6)) using 1
+  · funext y; simp only [transverseSecond,Pi.sub_apply,id_eq]
+  · dsimp [transverseThird]; ring
 
 lemma transverse_third_nonpositive {r : ℝ} (hr : 0 ≤ r ∧ r ≤ 2/3) :
     transverseThird r ≤ 0 := by
@@ -69,8 +69,10 @@ lemma transverse_third_nonpositive {r : ℝ} (hr : 0 ≤ r ∧ r ≤ 2/3) :
 lemma transverse_second_upper {r : ℝ} (hr : 3/10 ≤ r ∧ r ≤ 2/3) :
     transverseSecond r ≤ 31/100 := by
   have hm : MonotoneOn (fun x => -transverseSecond x) (Set.Icc 0 (2/3)) := by
-    apply Seven.monoOn_of_hasDeriv_nonneg (by dsimp [transverseSecond]; fun_prop)
-      (fun x _ => (transverse_second_hasDeriv x).neg)
+    have hd (x : ℝ) : HasDerivAt (fun x => -transverseSecond x) (-transverseThird x) x :=
+      (transverse_second_hasDeriv x).neg
+    apply Seven.monoOn_of_hasDeriv_nonneg (fun x _ => (hd x).continuousAt.continuousWithinAt)
+      (fun x _ => hd x)
     intro x hx
     exact neg_nonneg.mpr (transverse_third_nonpositive ⟨hx.1.le,hx.2.le⟩)
   have h := hm (by norm_num : (3:ℝ)/10 ∈ Set.Icc 0 (2/3))

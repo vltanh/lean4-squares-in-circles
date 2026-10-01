@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Equality.AnalyticContacts
-public import SquaresInCircles.Six.Equality.Reflection
-
-@[expose] public section
+import SquaresInCircles.Six.Equality.AnalyticContacts
+import SquaresInCircles.Six.Equality.Reflection
 
 /-!
 # Reconstruction independent of the legacy balanced-closure theorem
@@ -22,11 +19,11 @@ open Stress Normalization Analytic.FixedPair
 open AnalyticContacts ContactCoordinates
 
 private lemma cos_diagonal : Real.cos (5*Real.pi/4)= -Six.hStar := by
-  rw [show 5*Real.pi/4=Real.pi+Real.pi/4 by ring,Real.cos_pi_add]
+  rw [show 5*Real.pi/4=Real.pi/4+Real.pi by ring,Real.cos_add_pi]
   simp [Six.hStar]
 
 private lemma sin_diagonal : Real.sin (5*Real.pi/4)= -Six.hStar := by
-  rw [show 5*Real.pi/4=Real.pi+Real.pi/4 by ring,Real.sin_pi_add]
+  rw [show 5*Real.pi/4=Real.pi/4+Real.pi by ring,Real.sin_add_pi]
   simp [Six.hStar]
 
 private lemma rho_times_half : rhoStar*Six.hStar=Six.dStar := by
@@ -41,16 +38,21 @@ lemma exterior_centers {R : ℝ} (P : NormalizedPacking R)
     (hf : Frame P) (hc : Coordinates P.radial P.transverse) (i : Fin 5) :
     (P.square i).center=centers i := by
   fin_cases i
-  · rw [P.square_def,hf.east,hc.east_radial,hc.east_transverse]
+  · show (P.square 0).center=centers 0
+    rw [P.square_def,hf.east,hc.east_radial,hc.east_transverse]
     apply Prod.ext <;> simp [orientedSquare,centers] <;> ring
-  · rw [P.square_def,hf.north,hc.north_radial,hc.north_transverse]
+  · show (P.square 1).center=centers 1
+    rw [P.square_def,hf.north,hc.north_radial,hc.north_transverse]
     apply Prod.ext <;> simp [orientedSquare,centers] <;> ring
-  · rw [P.square_def,hf.west,hc.west_radial,hc.west_transverse]
+  · show (P.square 2).center=centers 2
+    rw [P.square_def,hf.west,hc.west_radial,hc.west_transverse]
     apply Prod.ext <;> simp [orientedSquare,centers] <;> ring
-  · rw [P.square_def,hf.diagonal,hc.diagonal_radial,hc.diagonal_transverse]
+  · show (P.square 3).center=centers 3
+    rw [P.square_def,hf.diagonal,hc.diagonal_radial,hc.diagonal_transverse]
     apply Prod.ext <;>
       simp [orientedSquare,centers,cos_diagonal,sin_diagonal,rho_times_half]
-  · rw [P.square_def,hf.south,hc.south_radial,hc.south_transverse]
+  · show (P.square 4).center=centers 4
+    rw [P.square_def,hf.south,hc.south_radial,hc.south_transverse]
     apply Prod.ext <;> simp [orientedSquare,centers,south_cos,south_sin] <;> ring
 
 private lemma cardinal_open (S : UnitSquare)
@@ -58,7 +60,7 @@ private lemma cardinal_open (S : UnitSquare)
       (S.cosine= -1 ∧ S.sine=0) ∨ (S.cosine=0 ∧ S.sine= -1)) (p : Point) :
     openSquare S p ↔ openSquare (axisSquare S.center) p := by
   rcases h with ⟨hc,hs⟩ | ⟨hc,hs⟩ | ⟨hc,hs⟩ | ⟨hc,hs⟩
-  all_goals simp [openSquare,localX,localY,axisSquare,hc,hs,abs_neg,and_comm]
+  all_goals simp [openSquare,localX,localY,axisSquare,hc,hs,abs_sub_comm,and_comm]
 
 private lemma opposite_open (S T : UnitSquare)
     (hc : S.center=T.center) (hcos : S.cosine= -T.cosine) (hsin : S.sine= -T.sine)

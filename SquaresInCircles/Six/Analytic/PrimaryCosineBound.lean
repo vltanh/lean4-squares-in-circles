@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.DiagonalHalfBound
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.DiagonalHalfBound
 
 /-!
 # Primary-axis exclusion from a positive cosine reserve
@@ -30,7 +27,7 @@ lemma inward_primary_cosine_bound {a A B q : ℝ}
     a-A*Real.cos q+B*Real.sin q<1/2+angularWidth q := by
   have hA0 : 0≤A+1/2 := by dsimp [aMin] at hA; linarith [rho0_upper]
   have hp := mul_le_mul_of_nonneg_left hq hA0
-  have hb : B*Real.sin q≤|B|*|Real.sin q| := by
+  have hb : B*Real.sin q≤|B| *|Real.sin q| := by
     simpa only [abs_mul] using le_abs_self (B*Real.sin q)
   have hb' := mul_le_mul_of_nonneg_right hB.le (abs_nonneg (Real.sin q))
   dsimp [angularWidth]
@@ -59,13 +56,15 @@ theorem DS_selected_secondary_nonpositive_s {R : ℝ} (P : NormalizedPacking R)
   have hk3 : k≠3 := by
     intro hk
     subst k
-    change 0<dot (scale (-1) (normalY (P.square 3))) (sub (fixedPin 4) (fixedPin 3)) at hpin
+    change 0<dot (scale (-1) (normalY (P.square 3)))
+      (sub (Certificates.fixedPin 4) (Certificates.fixedPin 3)) at hpin
     rw [dot_scale_neg] at hpin
     linarith [hchord.2.1]
   have hk7 : k≠7 := by
     intro hk
     subst k
-    change 0<dot (scale (-1) (normalY (P.square 4))) (sub (fixedPin 4) (fixedPin 3)) at hpin
+    change 0<dot (scale (-1) (normalY (P.square 4)))
+      (sub (Certificates.fixedPin 4) (Certificates.fixedPin 3)) at hpin
     rw [dot_scale_neg] at hpin
     linarith [hchord.2.2]
   have hDphase : P.phase 3=Real.pi+P.diagonalAngle := by
@@ -85,6 +84,9 @@ theorem DS_selected_secondary_nonpositive_s {R : ℝ} (P : NormalizedPacking R)
   fin_cases k
   · exact False.elim (hout.1 rfl)
   · change Seven.SAT.threshold (P.square 3) (P.square 4)≤
+      dot (scale (-1) (normalX (P.square 3))) (sub (P.square 4).center (P.square 3).center) at hsep
+    rw [dot_scale_neg] at hsep
+    change Seven.SAT.threshold (P.square 3) (P.square 4)≤
       -frameX (P.square 3) (sub (P.square 4).center (P.square 3).center) at hsep
     rw [P.square_def 3,P.square_def 4,oriented_pair_threshold,pair_frameX_left] at hsep
     linarith

@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.SmallDiagonalCardinalExclusion
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SmallDiagonalCardinalExclusion
 
 /-!
 # Quantitative D bounds after the analytic d>1/2 reduction
@@ -27,7 +24,9 @@ lemma own_front_profile_quarter {a b cx cy d : ℝ}
   have hcy : 0≤1/2-cy-387/1000 := by dsimp [c0] at hy; linarith [rho0_upper]
   have hX := mul_nonneg hcx hc0
   have hY := mul_nonneg hcy hs0
-  simp only [centralMargin,centralNormal,angularWidth,Real.cos_pi_add,Real.sin_pi_add,
+  have e1 : Real.cos (Real.pi+d)=-Real.cos d := by rw [add_comm]; exact Real.cos_add_pi d
+  have e2 : Real.sin (Real.pi+d)=-Real.sin d := by rw [add_comm]; exact Real.sin_add_pi d
+  simp only [centralMargin,centralNormal,angularWidth,e1,e2,
     abs_neg,abs_of_nonneg hc0,abs_of_nonneg hs0] at hown
   nlinarith only [hown,hX,hY]
 

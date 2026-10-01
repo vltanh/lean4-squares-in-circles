@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.WestMixed.Reduction
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.WestMixed.Reduction
 
 /-!
 # Common support facts for the two remaining OWN-W mixed families
@@ -20,8 +17,8 @@ lemma west_support {a b q : ℝ} (hc : ContainedChart a |b|)
     (hq : 1 ≤ q ∧ q ≤ Real.pi/2) :
     (beta+Real.sin q)*a-Real.cos q*b ≤
       CandidateWestTail.rhoBound*(beta+Real.sin q) := by
-  have hs := Real.sin_nonneg_of_nonneg_of_le_pi (by linarith [hq.1])
-    (by linarith [hq.2,Real.pi_pos])
+  have hs := Real.sin_nonneg_of_nonneg_of_le_pi (show 0 ≤ q by linarith [hq.1])
+    (show q ≤ Real.pi by linarith [hq.2,Real.pi_pos])
   have hcq := Real.cos_nonneg_of_mem_Icc ⟨by linarith [hq.1,Real.pi_pos],hq.2⟩
   have hm := Real.cos_le_cos_of_nonneg_of_le_pi (by norm_num : (0:ℝ) ≤ 1)
     (show q ≤ Real.pi by linarith [hq.2,Real.pi_pos]) hq.1

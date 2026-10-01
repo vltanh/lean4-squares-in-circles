@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Normalization.CapGeometry
-public import SquaresInCircles.Six.Normalization.PiercingPolynomial
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.CapGeometry
+import SquaresInCircles.Six.Normalization.PiercingPolynomial
 
 /-!
 # K4: a common open piercing point for every square in a deep cap

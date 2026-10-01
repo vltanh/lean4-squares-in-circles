@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Analytic.FixedPinInclusions
-public import SquaresInCircles.Six.Normalization.PinData
-public import SquaresInCircles.Six.DiagonalReflection
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FixedPinInclusions
+import SquaresInCircles.Six.Normalization.PinData
+import SquaresInCircles.Six.DiagonalReflection
 
 /-!
 # Point-set and phase bookkeeping before the pin-labelled model exists
@@ -23,7 +20,7 @@ def fixedPinPhase : Fin 5 → ℝ :=
 def diagonalPinIndex : Fin 5 → Fin 5 := ![1,0,4,3,2]
 
 lemma fixedPin_eq_polar (i : Fin 5) : fixedPin i=polarPin (9/10) (fixedPinPhase i) := by
-  fin_cases i <;> simp [fixedPin,fixedPinPhase,polarPin,div_eq_mul_inv,mul_assoc]
+  fin_cases i <;> simp [fixedPin,fixedPinPhase,polarPin] <;> constructor <;> ring_nf
 
 lemma diagonal_pin_phase (i : Fin 5) :
     (fixedPinPhase (diagonalPinIndex i):Direction)=(Real.pi/2-fixedPinPhase i:ℝ) := by
@@ -83,7 +80,7 @@ lemma square_diagonal_membership (t a b:ℝ) (p:Point) :
 /-- A real primary phase has exactly one of four quadrant descriptions, up to
 harmless boundary overlaps. The west case includes both ends of the principal lift. -/
 theorem four_primary_quadrants (t:ℝ) :
-    (∃ v, |v|≤Real.pi/4 ∧ (t:Direction)=(v:Direction)) ∨
+    (∃ v : ℝ, |v|≤Real.pi/4 ∧ (t:Direction)=(v:Direction)) ∨
     (∃ v, |v|≤Real.pi/4 ∧ (t:Direction)=(Real.pi/2-v:ℝ)) ∨
     (∃ v, |v|≤Real.pi/4 ∧ (t:Direction)=(Real.pi+v:ℝ)) ∨
     (∃ v, |v|≤Real.pi/4 ∧ (t:Direction)=(-Real.pi/2-v:ℝ)) := by
@@ -93,7 +90,7 @@ theorem four_primary_quadrants (t:ℝ) :
   have hz : (z:Direction)=(t:Direction) := Real.Angle.coe_toReal _
   by_cases h0 : -Real.pi/4≤z
   · by_cases h1 : z≤Real.pi/4
-    · exact Or.inl ⟨z,abs_le.mpr ⟨h0,h1⟩,hz.symm⟩
+    · exact Or.inl ⟨z,abs_le.mpr ⟨by linarith,h1⟩,hz.symm⟩
     · by_cases h2 : z≤3*Real.pi/4
       · right; left
         refine ⟨Real.pi/2-z,abs_le.mpr ⟨by linarith,by linarith⟩,?_⟩
@@ -120,8 +117,14 @@ lemma phase_eq_of_short_difference {t u:ℝ} (he:(t:Direction)=(u:Direction))
   have hb := abs_lt.mp hshort
   rw [hk] at hb
   have hp : 0<2*Real.pi := by positivity
-  have hlo : (-1:ℝ)<(k:ℝ) := (mul_lt_mul_left hp).mp (by simpa using hb.1)
-  have hhi : (k:ℝ)<1 := (mul_lt_mul_left hp).mp (by simpa using hb.2)
+  have hlo : (-1:ℝ)<(k:ℝ) := by
+    by_contra! hc
+    have := mul_le_mul_of_nonneg_left hc hp.le
+    linarith [hb.1]
+  have hhi : (k:ℝ)<1 := by
+    by_contra! hc
+    have := mul_le_mul_of_nonneg_left hc hp.le
+    linarith [hb.2]
   have hlo' : (-1:ℤ)<k := by exact_mod_cast hlo
   have hhi' : k<1 := by exact_mod_cast hhi
   have hz : k=0 := by omega

@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.OutwardAxes
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OutwardAxes
 
 /-!
 # Primary separators cannot occur across a sixty-degree phase gap
@@ -28,7 +25,7 @@ lemma inward_primary_small_gap {a A B q : ℝ}
   have hcos := cosine_half_of_small_gap hq
   have hA0 : 0≤A+1/2 := by dsimp [aMin] at hA; linarith [rho0_upper]
   have hp := mul_le_mul_of_nonneg_left hcos hA0
-  have hb : B*Real.sin q≤|B|*|Real.sin q| := by
+  have hb : B*Real.sin q≤|B| *|Real.sin q| := by
     simpa only [abs_mul] using le_abs_self (B*Real.sin q)
   have hb' := mul_le_mul_of_nonneg_right hB.le (abs_nonneg (Real.sin q))
   dsimp [angularWidth]

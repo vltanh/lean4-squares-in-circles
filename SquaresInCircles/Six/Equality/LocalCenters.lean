@@ -1,8 +1,6 @@
-module
-public import SquaresInCircles.Six.Stress.DiagonalFormula
-public import SquaresInCircles.Six.Equality.SupportMaximizers
-
-@[expose] public section
+import SquaresInCircles.Six.Stress.DiagonalFormula
+import SquaresInCircles.Six.Equality.SupportMaximizers
+import SquaresInCircles.Six.Construction
 
 /-!
 # Equality of the active local supports fixes every exterior center
@@ -86,10 +84,9 @@ theorem north_center_unique {a b sgn : ℝ} (hs : sgn=1 ∨ sgn= -1)
   have hgp : ((1:ℝ),sgn*rStar)=scale l p := by
     apply Prod.ext
     · dsimp [scale,l,p]
-      field_simp [ne_of_gt rStar_den_pos]
+      exact (div_mul_cancel₀ _ (ne_of_gt rStar_den_pos)).symm
     · dsimp [scale,l,p,rStar]
       field_simp [ne_of_gt rStar_den_pos]
-      ring
   have hsign : sgn*(sgn*rStar)=|sgn*rStar| := by
     rw [abs_mul,hsgn.2,abs_of_pos rStar_pos,one_mul]
     calc
@@ -122,10 +119,9 @@ theorem west_center_unique {a b sgn : ℝ} (hs : sgn=1 ∨ sgn= -1)
   have hgp : (1+rStar,sgn*mStar)=scale l p := by
     apply Prod.ext
     · dsimp [scale,l,p]
-      field_simp [ne_of_gt kStar_den_pos]
+      exact (div_mul_cancel₀ _ (ne_of_gt kStar_den_pos)).symm
     · dsimp [scale,l,p,mStar,kStar]
       field_simp [ne_of_gt kStar_den_pos]
-      ring
   have hsign : sgn*(sgn*mStar)=|sgn*mStar| := by
     rw [abs_mul,hsgn.2,abs_of_pos mStar_pos,one_mul]
     calc

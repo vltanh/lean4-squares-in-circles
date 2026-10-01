@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.WestMixed.Reduction
-public import SquaresInCircles.Six.Analytic.RadicalPolynomialMajorant
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.WestMixed.Reduction
+import SquaresInCircles.Six.Analytic.RadicalPolynomialMajorant
 
 /-!
 # A continuous-weight analytic stress for two OWN wings
@@ -23,7 +20,7 @@ namespace SquaresInCircles.Six.Analytic.OwnWestOwnSouth
 open WestMixed
 
 def gamma (s : ℝ) : ℝ := 38/25+3*s
-def constantTerm : ℝ := 99676293/125000000
+def constantTerm : ℝ := 3959823/5000000
 
 def profile (v s d : ℝ) : ℝ :=
   constantTerm+base v s d+gamma s*(1+wing s)-
@@ -35,7 +32,7 @@ private def sinLower (x : ℝ) : ℝ := x-x^3/6+x^5/120-x^7/5040
 private def sinUpper (x : ℝ) : ℝ := x-x^3/6+x^5/120
 
 private def trigLower (v s d : ℝ) : ℝ :=
-  constantTerm+beta*(A*cosLower v+B*sinLower v)+
+  constantTerm+WestMixed.beta*(A*cosLower v+B*sinLower v)+
   (1/2)*cosLower (v+d)-B*sinUpper (v+d)+
   nu*cosLower (d-s)-waveCoefficient*cosUpper ((d-s)/2)+waveCoefficient*sinLower ((d-s)/2)+
   gamma s*(1+A*cosLower s+B*sinLower s)
@@ -62,7 +59,7 @@ private lemma polynomial_le {v s d : ℝ} (hv : 0 ≤ v) (hs : 0 ≤ s)
   have hss := mul_nonneg (mul_nonneg hg (by norm_num [B] : 0 ≤ B))
     (show 0 ≤ Real.sin s-sinLower s by exact sub_nonneg.mpr ss)
   have htrig : trigLower v s d ≤ constantTerm+base v s d+gamma s*(1+wing s) := by
-    dsimp [trigLower,base,wing,gapWave,diagonalWave,beta,A,B,nu,waveCoefficient,
+    dsimp [trigLower,base,wing,gapWave,diagonalWave,WestMixed.beta,A,B,nu,waveCoefficient,
       rootSlope,CandidateWestTail.radiusBound,cosLower,cosUpper,sinLower,sinUpper] at *
     nlinarith only [cv,sv,cq,sq,cr,ch,sh,hcs,hss]
   have hm := mul_le_mul_of_nonneg_left htrig (show 0 ≤ (gamma s)^5 by positivity)
@@ -85,18 +82,22 @@ lemma coarse_factor (s : ℝ) :
 
 lemma coarse_positive {s : ℝ} (hs : 0 ≤ s ∧ s ≤ 12/25) : 0 < coarse s := by
   have hhalf : s ≤ (1:ℝ)/2 := by linarith [hs.2]
-  have h2 : s^2 ≤ ((1:ℝ)/2)^2 := by gcongr
-  have h3 : s^3 ≤ ((1:ℝ)/2)^3 := by gcongr
-  have h4 : s^4 ≤ ((1:ℝ)/2)^4 := by gcongr
-  have h7 : s^7 ≤ ((1:ℝ)/2)^7 := by gcongr
-  have h8 : s^8 ≤ ((1:ℝ)/2)^8 := by gcongr
+  have h2 : s^2 ≤ ((1:ℝ)/2)^2 := pow_le_pow_left₀ hs.1 hhalf 2
+  have h3 : s^3 ≤ ((1:ℝ)/2)^3 := pow_le_pow_left₀ hs.1 hhalf 3
+  have h4 : s^4 ≤ ((1:ℝ)/2)^4 := pow_le_pow_left₀ hs.1 hhalf 4
+  have h7 : s^7 ≤ ((1:ℝ)/2)^7 := pow_le_pow_left₀ hs.1 hhalf 7
+  have h8 : s^8 ≤ ((1:ℝ)/2)^8 := pow_le_pow_left₀ hs.1 hhalf 8
   have htail : 7437/256 ≤ 144-302*s^2-307*s^3-17*s^4-s^7-s^8 := by
     norm_num at h2 h3 h4 h7 h8
     linarith
-  have hprod := mul_nonneg (show 0 ≤ s^5 by positivity)
+  have hprod := mul_nonneg (pow_nonneg hs.1 5)
     (show 0 ≤ 144-302*s^2-307*s^3-17*s^4-s^7-s^8 by linarith)
   rw [coarse_factor]
-  exact add_pos_of_pos_of_nonneg (by positivity) hprod
+  have p2 := pow_nonneg hs.1 2
+  have p3 := pow_nonneg hs.1 3
+  have p4 := pow_nonneg hs.1 4
+  have p6 := pow_nonneg hs.1 6
+  exact add_pos_of_pos_of_nonneg (by linarith [hs.1]) hprod
 
 private def vertexV (i : Fin 3) : ℝ := ![21/50,48/175,31/50] i
 private def vertexD (i : Fin 3) : ℝ := ![16/25,11/14,16/25] i
@@ -108,7 +109,7 @@ lemma coarse_le_boundary (i : Fin 3) {s : ℝ} (hs : 0 ≤ s) :
   apply sub_nonneg.mp
   fin_cases i <;>
     dsimp [coarse,lowerPolynomial,trigLower,RadicalPolynomialMajorant.numerator,
-      gamma,constantTerm,beta,A,B,nu,waveCoefficient,rootSlope,
+      gamma,constantTerm,WestMixed.beta,A,B,nu,waveCoefficient,rootSlope,
       CandidateWestTail.radiusBound,cosLower,cosUpper,sinLower,sinUpper,vertexV,vertexD] <;>
     ring_nf <;> positivity
 
@@ -119,7 +120,7 @@ lemma boundary_positive (i : Fin 3) {s : ℝ} (hs : 0 ≤ s ∧ s ≤ 12/25) :
   have hr : s ≤ vertexD i := by fin_cases i <;> norm_num [vertexD] <;> linarith [hs.2]
   have hp := polynomial_le hv hs.1 hd hr
   have hlo := (coarse_positive hs).trans_le (coarse_le_boundary i hs.1)
-  have hg : 0 ≤ (gamma s)^5 := by dsimp [gamma]; positivity
+  have hg : 0 ≤ (gamma s)^5 := pow_nonneg (by dsimp [gamma]; linarith [hs.1]) 5
   by_contra! h
   have hm := mul_nonpos_of_nonneg_of_nonpos hg h
   linarith

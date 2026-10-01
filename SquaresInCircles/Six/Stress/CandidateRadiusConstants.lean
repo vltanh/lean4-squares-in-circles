@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Candidate
-public import SquaresInCircles.Six.Stress.ExactSupport
-
-@[expose] public section
+import SquaresInCircles.Six.Candidate
+import SquaresInCircles.Six.Stress.ExactSupport
 
 /-!
 # Candidate-radius constants independent of normalization

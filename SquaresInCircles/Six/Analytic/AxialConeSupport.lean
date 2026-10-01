@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnWingProfileSharpening
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnWingProfileSharpening
 
 /-!
 # Axial support without a selected cap branch
@@ -23,7 +20,7 @@ theorem axial_cone_support {a b U V : ℝ} (hc : ContainedChart a |b|)
   have hp := mul_nonneg hU
     (show 0 ≤ rho0-a-(31/100)*|b| by nlinarith [sq_nonneg b])
   have hv := mul_le_mul_of_nonneg_right hV (abs_nonneg b)
-  have hm : V*b ≤ |V|*|b| := by
+  have hm : V*b ≤ |V| *|b| := by
     simpa only [abs_mul] using le_abs_self (V*b)
   nlinarith only [hp,hv,hm]
 

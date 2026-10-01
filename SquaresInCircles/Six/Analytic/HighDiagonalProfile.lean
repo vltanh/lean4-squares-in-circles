@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.DiagonalHalfBound
-public import SquaresInCircles.Six.Analytic.LowDiagonalEndpoints
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.DiagonalHalfBound
+import SquaresInCircles.Six.Analytic.LowDiagonalEndpoints
 
 /-!
 # A small transverse coordinate for high D
@@ -26,7 +23,7 @@ lemma high_diagonal_profile {a b cx cy d : ℝ}
   have hcd := Real.cos_nonneg_of_mem_Icc
     (show d∈Set.Icc (-(Real.pi/2)) (Real.pi/2) by
       constructor <;> linarith [hd.1,hd.2,Real.pi_pos])
-  have hsd := Real.sin_nonneg_of_nonneg_of_le_pi
+  have hsd := Real.sin_nonneg_of_nonneg_of_le_pi (x := d)
     (by linarith [hd.1]) (by linarith [hd.2,Real.pi_pos])
   have hm := cos_add_sin_mono (x := (1:ℝ)/2) (by norm_num) hd.1 hd.2
   have hT : 339/250≤Real.cos d+Real.sin d := by
@@ -35,7 +32,9 @@ lemma high_diagonal_profile {a b cx cy d : ℝ}
   have hcy : 387/1000≤1/2-cy := by dsimp [c0] at hy; linarith [rho0_upper]
   have hxprod := mul_le_mul_of_nonneg_right hcx hcd
   have hyprod := mul_le_mul_of_nonneg_right hcy hsd
-  simp only [centralMargin,centralNormal,angularWidth,Real.cos_pi_add,Real.sin_pi_add,
+  have hcpi : Real.cos (Real.pi+d)=-Real.cos d := by rw [add_comm]; exact Real.cos_add_pi d
+  have hspi : Real.sin (Real.pi+d)=-Real.sin d := by rw [add_comm]; exact Real.sin_add_pi d
+  simp only [centralMargin,centralNormal,angularWidth,hcpi,hspi,
     abs_neg,abs_of_nonneg hcd,abs_of_nonneg hsd] at hown
   have ha : 128/125≤a := by nlinarith only [hown,hxprod,hyprod,hT]
   refine ⟨ha,?_⟩
@@ -83,7 +82,7 @@ theorem DS_Dsecondary_gap_gt_half {R : ℝ} (P : NormalizedPacking R)
   by_contra! hq
   have hnonneg := P.primary_order.2.2.2.1.le
   have hb := (P.contained 4).u_le_U0 (P.avoidsCore 4)
-  have hx := P.high_diagonal_profile.2
+  have hx := (NormalizedPacking.high_diagonal_profile P).2
   have hbound := short_secondary_projection (P.contained 4).a_le_rho0
     ((le_abs_self _).trans hb) ((neg_le_abs _).trans hx.le)
     ⟨sub_nonneg.mpr hnonneg,hq⟩
@@ -100,7 +99,7 @@ theorem WD_Dsecondary_gap_gt_half {R : ℝ} (P : NormalizedPacking R)
   by_contra! hq
   have hnonneg := P.primary_order.2.2.1.le
   have hb := (P.contained 2).u_le_U0 (P.avoidsCore 2)
-  have hx := P.high_diagonal_profile.2
+  have hx := (NormalizedPacking.high_diagonal_profile P).2
   have hbound := short_secondary_projection (P.contained 2).a_le_rho0
     ((neg_le_abs _).trans hb) ((le_abs_self _).trans hx.le)
     ⟨sub_nonneg.mpr hnonneg,hq⟩

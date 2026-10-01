@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Normalization.ChartBounds
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.ChartBounds
 
 /-!
 # Lemma B6: exclude both secondary central separators
@@ -48,7 +45,7 @@ theorem secondary_separators_fail {b cx cy t : ℝ}
         (|Real.cos t| + |Real.sin t|) / 2 < 0 ∧
       (-cx * Real.sin t + cy * Real.cos t) - 1 / 2 - b -
         (|Real.cos t| + |Real.sin t|) / 2 < 0 := by
-  have hd := abs_lt.mp (transverse_distance_lt_one hb hx0 hy0 hx hy)
+  have hd := abs_lt.mp (transverse_distance_lt_one (t := t) hb hx0 hy0 hx hy)
   have hw := one_le_abs_cos_add_abs_sin t
   constructor <;> linarith
 

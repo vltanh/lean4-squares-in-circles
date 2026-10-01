@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Stress.DiagonalVertexBound
-
-@[expose] public section
+import SquaresInCircles.Six.Stress.DiagonalVertexBound
 
 /-!
 # Human-analytic diagonal remainder and equality

@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnSouthOrdered.Support
-public import SquaresInCircles.Six.Analytic.CoupledWingBudgetSharp
-public import SquaresInCircles.Six.Analytic.CardinalSouthTail.Geometry
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnSouthOrdered.Support
+import SquaresInCircles.Six.Analytic.CoupledWingBudgetSharp
+import SquaresInCircles.Six.Analytic.CardinalSouthTail.Geometry
 
 /-!
 # An actual missing-south configuration cannot have 0 <= -w <= s
@@ -14,7 +11,7 @@ The shared-center angle bound gives v+s<24/25. The four-edge scalar theorem
 then excludes the entire ordered two-OWN domain.
 
 Together with the existing cardinal-W exclusion, a remaining missing-south
-configuration with OWN S must satisfy W OWN and 0<s<-w. This is a strict
+configuration with OWN S must satisfy W OWN and 0< s<-w. This is a strict
 reduction of the remaining cases, not a claim that the opposite ordering or
 the cardinal-S case is already excluded. Compilation remains unverified.
 -/
@@ -40,7 +37,8 @@ theorem not_missing_south_of_order {R : ℝ} (P : NormalizedPacking R)
   have hd : 1/2 ≤ d ∧ d ≤ Real.pi/4 :=
     ⟨(normalized_diagonal_gt_half P).le,P.diagonal_angle_range.2⟩
   have hWphase : P.phase 2=Real.pi-v := by
-    rw [P.phase_from_deviation 2]
+    rw [P.phase_from_deviation 2,
+      show cardinalCenter (matchingCardinal 2)=Real.pi from rfl]
     dsimp [v]
     ring
   have hSphase : P.phase 4=3*Real.pi/2+s := P.phase_from_deviation 4
@@ -59,7 +57,7 @@ theorem not_missing_south_of_order {R : ℝ} (P : NormalizedPacking R)
     have h := P.own_separator 4 hS
     rw [hSphase] at h
     simp only [centralMargin,centralNormal,angularWidth,Real.cos_add,Real.sin_add,
-      south_cos,south_sin,zero_mul,one_mul,neg_one_mul,zero_add,add_zero,abs_neg] at h
+      south_cos,south_sin,zero_mul,neg_one_mul,zero_sub,neg_neg,add_zero,abs_neg] at h
     dsimp [angularWidth]
     nlinarith only [h]
   have hWD : 1/2+angularWidth (d+v) ≤

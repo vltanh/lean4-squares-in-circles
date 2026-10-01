@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.CandidateWestTail.Support
-public import SquaresInCircles.Six.Analytic.CanonicalSouthSign
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CandidateWestTail.Support
+import SquaresInCircles.Six.Analytic.CanonicalSouthSign
 
 /-!
 # The candidate D graph supplies the OWN-W outer tail
@@ -40,12 +37,12 @@ theorem scalar_impossible (k : Fin 3) {v x d aw bw ad bd asouth bsouth cx cy : �
       (diagonalU v (side k*x) d*ad+diagonalV v (side k*x) d*bd)+
       southWork k (side k*x) asouth bsouth+centerWork k v (side k*x) cx cy := by
     by_cases hk : k=0
-    · simp only [if_pos hk] at hCS
-      simp only [totalThreshold,diagonalU,diagonalV,southWork,centerWork,if_pos hk]
+    · simp only [ite_eq_left hk] at hCS
+      simp only [totalThreshold,diagonalU,diagonalV,southWork,centerWork,ite_eq_left hk]
       dsimp [beta,gamma,mu,nu]
       linear_combination (109/200)*hCW+(47/250)*hCS+(169/1000)*hWD+(49/500)*hDS
-    · simp only [if_neg hk] at hCS
-      simp only [totalThreshold,diagonalU,diagonalV,southWork,centerWork,if_neg hk]
+    · simp only [ite_eq_right hk] at hCS
+      simp only [totalThreshold,diagonalU,diagonalV,southWork,centerWork,ite_eq_right hk]
       dsimp [beta,gamma,mu,nu]
       linear_combination (109/200)*hCW+(47/250)*hCS+(169/1000)*hWD+(49/500)*hDS
   have hw := west_support hW
@@ -75,7 +72,8 @@ theorem normalized_own_west_tail_of_edges {R : ℝ} (P : NormalizedPacking R)
     have hhi := P.diagonal_angle_range.2
     constructor <;> linarith [Real.pi_lt_d4]
   have hWphase : P.phase 2=Real.pi-v := by
-    rw [P.phase_from_deviation 2]
+    rw [P.phase_from_deviation 2,
+      show cardinalCenter (matchingCardinal 2)=Real.pi from rfl]
     dsimp [v]
     ring
   have hSphase : P.phase 4=3*Real.pi/2+s := P.phase_from_deviation 4
@@ -115,7 +113,7 @@ theorem normalized_own_west_tail_of_edges {R : ℝ} (P : NormalizedPacking R)
     · exact hWD
     · simpa only [← hxid] using hDS
   cases hS : P.ownBits 4
-  · have hs : -2/5 < s ∧ s < 2/5 := abs_lt.mp (P.cardinal_angle 4 hS)
+  · have hs : -(2/5) < s ∧ s < 2/5 := abs_lt.mp (P.cardinal_angle 4 hS)
     have hCS : 1/2+angularWidth s ≤
         P.radial 4*Real.cos s-P.transverse 4*Real.sin s+P.center.2 := by
       have h := P.cardinal_separator 4 hS
@@ -123,7 +121,7 @@ theorem normalized_own_west_tail_of_edges {R : ℝ} (P : NormalizedPacking R)
         P.center.1 P.center.2 at h
       rw [hSphase] at h
       simp only [centralMargin,centerY,angularWidth,Real.cos_add,Real.sin_add,
-        south_cos,south_sin,zero_mul,one_mul,neg_one_mul,zero_add,add_zero,abs_neg] at h
+        south_cos,south_sin,zero_mul,neg_one_mul,zero_sub,neg_neg,add_zero,abs_neg] at h
       dsimp [angularWidth]
       nlinarith only [h]
     by_cases hs0 : 0 ≤ s
@@ -145,7 +143,7 @@ theorem normalized_own_west_tail_of_edges {R : ℝ} (P : NormalizedPacking R)
       have h := P.own_separator 4 hS
       rw [hSphase] at h
       simp only [centralMargin,centralNormal,angularWidth,Real.cos_add,Real.sin_add,
-        south_cos,south_sin,zero_mul,one_mul,neg_one_mul,zero_add,add_zero,abs_neg] at h
+        south_cos,south_sin,zero_mul,neg_one_mul,zero_sub,neg_neg,add_zero,abs_neg] at h
       dsimp [angularWidth]
       nlinarith only [h]
     apply finish 0 s

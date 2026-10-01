@@ -1,10 +1,7 @@
-module
-public import SquaresInCircles.Six.Analytic.FixedVertexMinorant
-public import SquaresInCircles.Six.Analytic.PairSharpConstants
-public import SquaresInCircles.Six.Analytic.FixedPair
-public import SquaresInCircles.Six.Stress.DiagonalRemainder
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FixedVertexMinorant
+import SquaresInCircles.Six.Analytic.PairSharpConstants
+import SquaresInCircles.Six.Analytic.FixedPair
+import SquaresInCircles.Six.Stress.DiagonalRemainder
 
 /-!
 # The diagonal vertex branch for the new fixed-pair line
@@ -29,7 +26,7 @@ lemma line_sum (w s : ℝ) :
       rw [line,max_eq_left (by linarith),max_eq_right h',abs_of_nonpos h']
       ring
   have hs : line (-s)=(23/100)*|s|+(49/100)*s := by
-    by_cases h : 0≤s
+    by_cases h : 0≤ s
     · rw [line,neg_neg,max_eq_left h,max_eq_right (by linarith),abs_of_nonneg h]
       ring
     · have h' : s≤0 := (lt_of_not_ge h).le
@@ -137,7 +134,7 @@ private lemma fixed_diamond {w s d : ℝ} (hd : DiagonalDomain w s d) :
 private lemma fixed_max_bound (w s : ℝ) :
     2*max |(w+s)/2| |diagonalBeta w s|≤|w|+|s| := by
   have ha := abs_add_le w s
-  have hb := abs_sub_le w s
+  have hb := abs_sub w s
   have he : w+s=2*((w+s)/2) := by ring
   have hf : w-s=2*diagonalBeta w s := by dsimp [diagonalBeta]; ring
   rw [he,abs_mul,abs_of_pos (by norm_num : (0:ℝ)<2)] at ha
@@ -165,7 +162,7 @@ theorem fixed_diagonal_vertex_positive {w s d : ℝ} (hd : DiagonalDomain w s d)
     change 1≤2*Six.radius*|Real.sin z| at hv
     dsimp [t]
     nlinarith only [hv,hprod]
-  have htriangle := abs_sub_le (d-Real.pi/4) a
+  have htriangle := abs_sub (d-Real.pi/4) a
   have hsign : d-Real.pi/4≤0 := by linarith [hd.2.2.2]
   rw [abs_of_nonpos hsign] at htriangle
   have hpi : Real.pi<(22:ℝ)/7 := by linarith [Real.pi_lt_d4]

@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.PinChords
-public import SquaresInCircles.Six.PreferredAxes
-
-@[expose] public section
+import SquaresInCircles.Six.PinChords
+import SquaresInCircles.Six.PreferredAxes
 
 /-!
 # Pin-oriented downstream source inventories
@@ -65,7 +62,7 @@ lemma NW_chord_positive {w n : ℝ}
   · exact hN.2
 
 lemma ES_chord_positive {s e : ℝ}
-    (hs : -5/8<s ∧ s<2/3) (he : -5/12<e ∧ e<3/10)
+    (hs : -5/8< s ∧ s<2/3) (he : -5/12<e ∧ e<3/10)
     (a b A B : ℝ) (i : Fin 4) :
     0 < dot (preferredPairAxis ESsigns (orientedSquare (3*Real.pi/2+s) a b)
       (orientedSquare e A B) i) (sub (fixedPin 0) (fixedPin 4)) := by
@@ -117,7 +114,8 @@ lemma helper_windows :
   have hn := P.window 1
   have hw := P.window 2
   have hs := P.window 4
-  simpa [helperAngle,matchingCardinal,cardinalCenter,windowLower,windowUpper,phaseCenter]
+  have e : (3/2:ℝ)*Real.pi = 3*Real.pi/2 := by ring
+  simpa [helperAngle,matchingCardinal,cardinalCenter,windowLower,windowUpper,phaseCenter,e]
     using And.intro he (And.intro hn (And.intro hw hs))
 
 lemma pair_disjoint (i j : Fin 5) (hij : i≠j) :
@@ -131,8 +129,10 @@ theorem NW_source : ∃ i : Fin 4,
         (sub (P.square 1).center (P.square 2).center) := by
   apply preferred_separators_complete NWsigns _ _ (P.pin 2) (P.pin 1) _
     (P.pair_disjoint 2 1 (by decide))
+  have h2 : P.phase 2=Real.pi+P.helperAngle 2 := P.phase_from_deviation 2
+  have h1 : P.phase 1=Real.pi/2+P.helperAngle 1 := P.phase_from_deviation 1
   intro i
-  rw [P.square_def 2,P.square_def 1,P.phase_from_deviation 2,P.phase_from_deviation 1]
+  rw [h2,h1]
   exact NW_chord_positive P.helper_windows.2.2.1 P.helper_windows.2.1 _ _ _ _ i
 
 /-- Exactly the four E/S source normals in the manuscript, all oriented S-to-E. -/
@@ -142,10 +142,13 @@ theorem ES_source : ∃ i : Fin 4,
         (sub (P.square 0).center (P.square 4).center) := by
   apply preferred_separators_complete ESsigns _ _ (P.pin 4) (P.pin 0) _
     (P.pair_disjoint 4 0 (by decide))
+  have h4 : P.phase 4=3*Real.pi/2+P.helperAngle 4 := P.phase_from_deviation 4
+  have h0 : P.phase 0=P.helperAngle 0 := by
+    rw [P.phase_from_deviation 0]
+    simp [matchingCardinal,cardinalCenter]
   intro i
-  rw [P.square_def 4,P.square_def 0,P.phase_from_deviation 4,P.phase_from_deviation 0]
-  simpa only [matchingCardinal,cardinalCenter,zero_add] using
-    ES_chord_positive P.helper_windows.2.2.2 P.helper_windows.1 _ _ _ _ i
+  rw [h4,h0]
+  exact ES_chord_positive P.helper_windows.2.2.2 P.helper_windows.1 _ _ _ _ i
 
 lemma DW_chord_positive_secondary :
     0<dot (normalY (P.square 2)) (sub (fixedPin 3) (fixedPin 2)) ∧
@@ -217,6 +220,7 @@ theorem DS_source : ∃ i : Fin 8,
   have hp := selected_axis_points_to_pin _ _ (P.pin 3) (P.pin 4) i hi
   refine ⟨i,hi,?_,?_,?_⟩
   · intro h; subst i
+    change 0<dot (normalX (P.square 3)) _ at hp
     linarith [P.DS_chord_signs.1]
   · intro h; subst i
     change 0<dot (scale (-1) (normalY (P.square 3))) _ at hp

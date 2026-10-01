@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.CoreLargeEast
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CoreLargeEast
 
 /-!
 # The north and south quadrants when c0 < cy <= cx < 1/2
@@ -16,7 +13,7 @@ noncomputable section
 namespace SquaresInCircles.Six.Analytic
 open Normalization
 
- theorem north_large_marker {a b t x y : ℝ} (h : ContainedChart a |b|)
+theorem north_large_marker {a b t x y : ℝ} (h : ContainedChart a |b|)
     (ht : |t| ≤ Real.pi/4) (hy : c0 < y) (hxy : y ≤ x) (hx1 : x < 1/2)
     (hsep : ∃ k, 0 ≤ centralMargin k (Real.pi/2+t) a b x y) :
     Real.pi/2 ≤ liftedMarker (Real.pi/2+t) a b := by
@@ -38,7 +35,7 @@ open Normalization
   · exact (north_west_marker h ht hx1 hk).le
   · have hbad := east_separator_negative (t := t) h hy
     rw [north_north] at hk
-    dsimp [centerX] at hbad
+    dsimp only [angularWidth] at hk
     exact False.elim (by linarith)
   · exact False.elim ((not_le_of_gt (north_south_negative h ht hy1)) hk)
 

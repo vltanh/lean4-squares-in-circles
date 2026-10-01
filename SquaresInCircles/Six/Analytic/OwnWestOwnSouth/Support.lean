@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnWestOwnSouth.Scalar
-public import SquaresInCircles.Six.Analytic.WestMixed.Support
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnWestOwnSouth.Scalar
+import SquaresInCircles.Six.Analytic.WestMixed.Support
 
 /-!
 # Actual supports for the continuous-weight two-OWN stress
@@ -25,17 +22,17 @@ def diagonalUpper (r : ℝ) : ℝ :=
   CandidateWestTail.radiusBound*(rootSlope*halfDifference r+rootError)-
     (nu*Real.cos r+1-nu*Real.sin r)/2
 
-def forceX (v s : ℝ) : ℝ := beta*Real.cos v-gamma s*Real.sin s
-def forceY (v s : ℝ) : ℝ := gamma s*Real.cos s-beta*Real.sin v
+def forceX (v s : ℝ) : ℝ := WestMixed.beta*Real.cos v-gamma s*Real.sin s
+def forceY (v s : ℝ) : ℝ := gamma s*Real.cos s-WestMixed.beta*Real.sin v
 
 def centerUpper (v s : ℝ) : ℝ := CandidateWestTail.coreUpper*(forceX v s+forceY v s)
 
 def thresholdSum (v s d : ℝ) : ℝ :=
-  beta*(1/2+angularWidth v)+gamma s*(1/2+angularWidth s)+
+  WestMixed.beta*(1/2+angularWidth v)+gamma s*(1/2+angularWidth s)+
     (1/2+angularWidth (v+d))+nu*(1/2+angularWidth (d-s))
 
 def defect (v s d : ℝ) : ℝ :=
-  thresholdSum v s d-CandidateWestTail.rhoBound*(beta+Real.sin (v+d))-
+  thresholdSum v s d-CandidateWestTail.rhoBound*(WestMixed.beta+Real.sin (v+d))-
     southUpper s-diagonalUpper (d-s)-centerUpper v s
 
 lemma gamma_bounds {s : ℝ} (hs : 0 ≤ s ∧ s ≤ 12/25) :
@@ -72,7 +69,7 @@ lemma central_forces {v s : ℝ} (hv : 0 ≤ v ∧ v ≤ 31/50)
   have hprodS := mul_le_mul hg.2 hss hs0 (by norm_num : (0:ℝ) ≤ 74/25)
   have hprodC := mul_le_mul hg.1 hcs (by norm_num : (0:ℝ) ≤ 553/625)
     (show 0 ≤ gamma s by linarith [hg.1])
-  dsimp [forceX,forceY,beta]
+  dsimp [forceX,forceY,WestMixed.beta]
   constructor <;> nlinarith only [hcv,hsv,hprodS,hprodC]
 
 lemma profile_eq_defect {v s d : ℝ} (hs : 0 ≤ s ∧ s ≤ 12/25)
@@ -86,7 +83,7 @@ lemma profile_eq_defect {v s d : ℝ} (hs : 0 ≤ s ∧ s ≤ 12/25)
   have hR := width_formula (x := d-s) (by
     constructor <;> linarith [hs.1,hs.2,hd.1,hd.2,Real.pi_gt_d2])
   dsimp [profile,base,wing,gapWave,diagonalWave,defect,thresholdSum,southUpper,
-    diagonalUpper,centerUpper,forceX,forceY,constantTerm,beta,nu,A,B,
+    diagonalUpper,centerUpper,forceX,forceY,constantTerm,WestMixed.beta,nu,A,B,
     waveCoefficient,rootSlope,rootError,halfDifference,CandidateWestTail.radiusBound,
     CandidateWestTail.rhoBound,CandidateWestTail.coreUpper]
   rw [hW,hS,hQ,hR]
@@ -105,11 +102,11 @@ theorem scalar_impossible {v s d aw bw ad bd asouth bsouth cx cy : ℝ}
     (hDS : 1/2+angularWidth (d-s) ≤ bsouth+ad*Real.cos (d-s)-bd*Real.sin (d-s)) : False := by
   have hg : 0 ≤ gamma s := by linarith [(gamma_bounds hs).1]
   have hsum : thresholdSum v s d ≤
-      ((beta+Real.sin (v+d))*aw-Real.cos (v+d)*bw)+
+      ((WestMixed.beta+Real.sin (v+d))*aw-Real.cos (v+d)*bw)+
       (gamma s*asouth+nu*bsouth)+
       (nu*Real.cos (d-s)*ad+(1-nu*Real.sin (d-s))*bd)+
       forceX v s*cx+forceY v s*cy := by
-    dsimp [thresholdSum,forceX,forceY,beta,nu]
+    dsimp [thresholdSum,forceX,forceY,WestMixed.beta,nu]
     linear_combination (41/20)*hCW+(gamma s)*hCS+hWD+(211/200)*hDS
   have hv0 : 0 ≤ v := by linarith [hv.1,hd.2]
   have hq : 1 ≤ v+d ∧ v+d ≤ Real.pi/2 := by

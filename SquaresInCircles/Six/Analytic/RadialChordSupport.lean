@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.CandidateWestTail.Support
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CandidateWestTail.Support
 
 /-!
 # An analytic support bound for a radial force added to a chord

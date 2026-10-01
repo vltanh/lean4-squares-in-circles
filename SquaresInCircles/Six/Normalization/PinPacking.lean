@@ -1,10 +1,7 @@
-module
-public import SquaresInCircles.Six.Normalization.StrongCore
-public import SquaresInCircles.Six.Normalization.PinCounting
-public import SquaresInCircles.Six.Analytic.PinWindows
-public import SquaresInCircles.Six.CongruenceTools
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.StrongCore
+import SquaresInCircles.Six.Normalization.PinCounting
+import SquaresInCircles.Six.Analytic.PinWindows
+import SquaresInCircles.Six.CongruenceTools
 
 /-!
 # The pin-labelled packing, constructed by analytic geometry
@@ -86,7 +83,7 @@ lemma central_inside : openSquare (P.model 0) (0,0) := by
 lemma exterior_disjoint : InteriorDisjoint
     (fun i : Fin 5 => orientedSquare (P.phase i) (P.radial i) (P.transverse i)) := by
   intro i j hij
-  exact P.packing.disjoint i.succ j.succ (Fin.succ_injective.ne hij)
+  exact P.packing.disjoint i.succ j.succ ((Fin.succ_injective _).ne hij)
 
 end PinPacking
 
@@ -105,7 +102,7 @@ theorem pinPacking_of_normalized {S : Fin 6 → UnitSquare} {c : Point} {R : ℝ
       abs_of_nonneg hx0,abs_of_nonneg hy0] using hcore
   let F : Fin 5 → UnitSquare := fun i => S i.succ
   have hFdisj : InteriorDisjoint F :=
-    fun i j hij => hp.disjoint i.succ j.succ (Fin.succ_injective.ne hij)
+    fun i j hij => hp.disjoint i.succ j.succ ((Fin.succ_injective _).ne hij)
   have hout (i : Fin 5) : ¬ openSquare (F i) (0,0) := by
     intro hi
     exact hp.disjoint i.succ 0 (by intro he; have hh := congrArg Fin.val he; simp at hh)

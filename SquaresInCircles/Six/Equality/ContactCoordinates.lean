@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Equality.LocalCenters
-
-@[expose] public section
+import SquaresInCircles.Six.Equality.LocalCenters
 
 /-!
 # Eight candidate-frame contacts determine all six centers
@@ -108,7 +105,8 @@ theorem support_tight {c : Point} {a b : Fin 5 → ℝ}
   have hD : diagonalK*a 3 ≤ diagonalK*rhoStar := by
     have hd := scalar_center_support (x := diagonalK) (y := (0:ℝ)) radius_gt_half (hbox 3)
     rw [scalarSupport_positive_axis diagonalK_pos.le] at hd
-    simpa only [zero_mul,add_zero,mul_comm] using hd
+    change diagonalK*a 3+0*b 3 ≤ rhoStar*diagonalK at hd
+    linarith
   have hlo := work_lower h
   have hid := total_upper_identity
   have heq : a 0+rStar*b 0=northUpper := by nlinarith only [he,hn,hw,hs,hD,hlo,hid]
@@ -122,7 +120,8 @@ theorem support_tight {c : Point} {a b : Fin 5 → ℝ}
   · simpa only [candidate_west_exact_support,westUpper] using hwq
   · simpa only [west_positive_support] using hsq
   · rw [scalarSupport_positive_axis diagonalK_pos.le]
-    simpa only [mul_comm] using hdq
+    change diagonalK*a 3=rhoStar*diagonalK
+    rw [hdq,mul_comm]
 
 /-- A finite contact graph and actual disk containment fix all local coordinates. -/
 theorem coordinates_of_contacts {c : Point} {a b : Fin 5 → ℝ}
@@ -132,9 +131,9 @@ theorem coordinates_of_contacts {c : Point} {a b : Fin 5 → ℝ}
   have ce := north_center_unique (sgn := (1:ℝ)) (Or.inl rfl) (hbox 0)
     (by simpa only [one_mul] using he)
   have cn := north_center_unique (sgn := (-1:ℝ)) (Or.inr rfl) (hbox 1)
-    (by simpa only [neg_one_mul,neg_mul,sub_eq_add_neg] using hn)
+    (by simpa only [neg_one_mul,neg_mul,one_mul,sub_eq_add_neg] using hn)
   have cw := west_center_unique (sgn := (-1:ℝ)) (Or.inr rfl) (hbox 2)
-    (by simpa only [neg_one_mul,neg_mul,sub_eq_add_neg] using hw)
+    (by simpa only [neg_one_mul,neg_mul,one_mul,sub_eq_add_neg] using hw)
   have cs := west_center_unique (sgn := (1:ℝ)) (Or.inl rfl) (hbox 4)
     (by simpa only [one_mul] using hs)
   have cd := diagonal_center_unique (hbox 3) hd

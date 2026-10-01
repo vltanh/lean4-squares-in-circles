@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.CoupledWingBudget
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CoupledWingBudget
 
 /-!
 # A sharper shared-center budget for two OWN wings
@@ -32,16 +29,20 @@ private lemma coupledSharpGap_concave :
   let f' : ℝ → ℝ := fun x => -(387/1000)*Real.sin x+(61/100)*Real.cos x-9/25
   let f'' : ℝ → ℝ := fun x => -(387/1000)*Real.cos x-(61/100)*Real.sin x
   have hf (x : ℝ) : HasDerivAt coupledSharpGap (f' x) x := by
-    convert ((((Real.hasDerivAt_cos x).const_mul (387/1000)).add
+    have h := ((((Real.hasDerivAt_cos x).const_mul (387/1000)).add
       ((Real.hasDerivAt_sin x).const_mul (61/100))).const_add (1/2)).sub
-      (((hasDerivAt_id x).const_mul (9/25)).const_add (941/1000)) using 1 <;>
-      dsimp [coupledSharpGap,f'] <;> ring
+      (((hasDerivAt_id x).const_mul (9/25)).const_add (941/1000))
+    convert h using 1
+    · funext y; simp only [coupledSharpGap,Pi.sub_apply,Pi.add_apply,id]; ring
+    · dsimp only [f']; ring
   have hff (x : ℝ) : HasDerivAt f' (f'' x) x := by
     convert ((((Real.hasDerivAt_sin x).const_mul (-(387/1000))).add
       ((Real.hasDerivAt_cos x).const_mul (61/100))).sub_const (9/25)) using 1 <;>
       dsimp [f',f''] <;> ring
+  have hcont : ContinuousOn coupledSharpGap (Set.Icc (22/75) (2/3)) :=
+    fun x _ => (hf x).continuousAt.continuousWithinAt
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc (22/75) (2/3))
-    (f' := f') (f'' := f'') (by dsimp [coupledSharpGap]; fun_prop)
+    (f' := f') (f'' := f'') hcont
   · intro x _
     exact (hf x).hasDerivWithinAt
   · intro x _
@@ -51,7 +52,7 @@ private lemma coupledSharpGap_concave :
     have hc : 0 ≤ Real.cos x := Real.cos_nonneg_of_mem_Icc
       ⟨by linarith [h.1,Real.pi_pos],by linarith [h.2,Real.pi_gt_d2]⟩
     have hs := Real.sin_nonneg_of_nonneg_of_le_pi
-      (by linarith [h.1]) (by linarith [h.2,Real.pi_gt_d2])
+      (show 0 ≤ x by linarith [h.1]) (by linarith [h.2,Real.pi_gt_d2])
     dsimp [f'']
     linarith
 
@@ -94,7 +95,8 @@ theorem normalized_own_wing_angle_sum_lt_twenty_four_twenty_fifths
   have hvsmall : 22/75 ≤ v ∧ v ≤ 2/3 := ⟨by linarith,hv.2⟩
   have hssmall : 22/75 ≤ s ∧ s ≤ 2/3 := ⟨by linarith,hsupper⟩
   have hWphase : P.phase 2=Real.pi-v := by
-    rw [P.phase_from_deviation 2]
+    have hc : cardinalCenter (matchingCardinal 2)=Real.pi := rfl
+    rw [P.phase_from_deviation 2,hc]
     dsimp [v]
     ring
   have hSphase : P.phase 4=3*Real.pi/2+s := P.phase_from_deviation 4

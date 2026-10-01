@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.WestMixed.Diagonal
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.WestMixed.Diagonal
 
 /-!
 # Three boundary points, with no partition of the south variable
@@ -32,12 +29,14 @@ private lemma wing_concave : ConcaveOn ℝ (Set.Icc 0 (2/3)) wing := by
   let f'' : ℝ → ℝ := fun v => -A*Real.cos v-B*Real.sin v
   have hf (v : ℝ) : HasDerivAt wing (f' v) v := by
     convert ((Real.hasDerivAt_cos v).const_mul A).add
-      ((Real.hasDerivAt_sin v).const_mul B) using 1 <;> dsimp [wing,f'] <;> ring
+      ((Real.hasDerivAt_sin v).const_mul B) using 1
+    · funext y; simp only [wing,Pi.add_apply]
+    · simp only [f']; ring
   have hff (v : ℝ) : HasDerivAt f' (f'' v) v := by
     convert ((Real.hasDerivAt_sin v).const_mul (-A)).add
       ((Real.hasDerivAt_cos v).const_mul B) using 1 <;> dsimp [f',f''] <;> ring
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc 0 (2/3))
-    (f' := f') (f'' := f'') (by dsimp [wing]; fun_prop)
+    (f' := f') (f'' := f'') (fun v _ => (hf v).continuousAt.continuousWithinAt)
   · intro v _; exact (hf v).hasDerivWithinAt
   · intro v _; exact (hff v).hasDerivWithinAt
   · intro v hv
@@ -124,8 +123,11 @@ lemma top_monotone {s : ℝ} (hs : -(2/5) ≤ s ∧ s ≤ 12/25) :
     have hc := (((hasDerivAt_id d).const_add (31/50)).cos).const_mul (1/2)
     have hs' := (((hasDerivAt_id d).const_add (31/50)).sin).const_mul B
     have hr := (diagonal_hasDeriv (d-s)).comp d ((hasDerivAt_id d).sub_const s)
-    convert ((hc.sub hs').add hr).const_add (beta*wing (31/50)) using 1 <;>
-      dsimp [base,gapWave] <;> ring
+    convert ((hc.sub hs').add hr).const_add (beta*wing (31/50)) using 1
+    · funext y
+      simp only [base,gapWave,Pi.add_apply,Pi.sub_apply,Function.comp_apply,id_eq]
+      ring
+    · dsimp [base,gapWave]; ring
   apply Seven.monoOn_of_hasDeriv_nonneg
     (by dsimp [base,gapWave,diagonalWave]; fun_prop) (fun d _ => hf d)
   intro d hd
@@ -137,7 +139,7 @@ lemma top_monotone {s : ℝ} (hs : -(2/5) ≤ s ∧ s ≤ 12/25) :
     (show 31/50+d ≤ Real.pi by linarith [hd.2,Real.pi_gt_d2])
     (show (63:ℝ)/50 ≤ 31/50+d by linarith [hd.1])
   have ht := Seven.cos_upper_four (x := (63:ℝ)/50) (by norm_num)
-  have hcos : Real.cos (31/50+d) ≤ 31/100 := by nlinarith only [hmono,ht]
+  have hcos : Real.cos (31/50+d) ≤ 8/25 := by nlinarith only [hmono,ht]
   dsimp [B]
   linarith [Real.sin_le_one (31/50+d)]
 

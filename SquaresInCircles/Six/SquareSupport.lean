@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Common.Contacts
-
-@[expose] public section
+import SquaresInCircles.Common.Contacts
 
 /-!
 # Projection bounds on actual squares
@@ -13,6 +10,12 @@ strict for every nonzero normal. The distinction is essential at contacts.
 
 noncomputable section
 namespace SquaresInCircles.Six
+
+/-- The unit normal to the sides `x = ±1/2` of `S`, its first frame axis. -/
+def normalX (S : UnitSquare) : Point := (S.cosine,S.sine)
+
+/-- The unit normal to the sides `y = ±1/2` of `S`, its second frame axis. -/
+def normalY (S : UnitSquare) : Point := (-S.sine,S.cosine)
 
 lemma projection_local (S : UnitSquare) (n p : Point) :
     dot n (sub p S.center) = frameX S n * localX S p + frameY S n * localY S p := by

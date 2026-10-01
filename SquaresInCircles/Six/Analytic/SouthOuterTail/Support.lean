@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.SouthOuterTail.CardinalEndpoints
-public import SquaresInCircles.Six.Analytic.SouthOuterTail.OwnEndpoints
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SouthOuterTail.CardinalEndpoints
+import SquaresInCircles.Six.Analytic.SouthOuterTail.OwnEndpoints
 
 /-!
 # Support ingredients for the final four-edge tail argument
@@ -17,9 +14,9 @@ noncomputable section
 namespace SquaresInCircles.Six.Analytic.SouthOuterTail
 open Normalization
 
- def diagonalU (v s d : ℝ) : ℝ := mu*Real.sin (d+v)+nu*Real.cos (d-s)
- def diagonalV (v s d : ℝ) : ℝ := mu*Real.cos (d+v)-nu*Real.sin (d-s)
- def coreUpper : ℝ := 5641/50000
+def diagonalU (v s d : ℝ) : ℝ := mu*Real.sin (d+v)+nu*Real.cos (d-s)
+def diagonalV (v s d : ℝ) : ℝ := mu*Real.cos (d+v)-nu*Real.sin (d-s)
+def coreUpper : ℝ := 5641/50000
 
 lemma width_lower (t : ℝ) : (Real.cos t+Real.sin t)/2 ≤ angularWidth t := by
   dsimp [angularWidth]

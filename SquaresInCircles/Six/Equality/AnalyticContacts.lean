@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.SelectedPairWork
-public import SquaresInCircles.Six.Equality.ContactCoordinates
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SelectedPairWork
+import SquaresInCircles.Six.Equality.ContactCoordinates
 
 /-!
 # The analytic closure supplies the eight real contacts

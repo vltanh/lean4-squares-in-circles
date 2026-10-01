@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Chord
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Chord
 
 /-!
 # A high-angle chord curvature bound
@@ -42,19 +39,21 @@ private lemma polynomial_upper {q : ℝ} (hq : 157/200 ≤ q ∧ q ≤ 5/3) :
   nlinarith only [hl,hu,hc,h7,hq0,h3,h5,sq_nonneg q,sq_nonneg (q^2)]
 
 private lemma hasDeriv (q : ℝ) : HasDerivAt polynomial (first q) q := by
-  convert ((((((hasDerivAt_id q).const_mul (-(567/1000))).const_add (19/100)).add
-    (((hasDerivAt_id q).pow 2).const_mul (-(23/1000)))).add
-    (((hasDerivAt_id q).pow 3).const_mul (149/1000))).add
-    (((hasDerivAt_id q).pow 4).const_mul (1/2000))).add
-    (((hasDerivAt_id q).pow 5).const_mul (-(3/400))) using 1 <;>
-    dsimp [polynomial,first] <;> ring
+  convert ((((((hasDerivAt_id q).const_mul (-(567/1000))).const_add (19/100)).fun_add
+    (((hasDerivAt_id q).fun_pow 2).const_mul (-(23/1000)))).fun_add
+    (((hasDerivAt_id q).fun_pow 3).const_mul (149/1000))).fun_add
+    (((hasDerivAt_id q).fun_pow 4).const_mul (1/2000))).fun_add
+    (((hasDerivAt_id q).fun_pow 5).const_mul (-(3/400))) using 1
+  · funext y; dsimp [polynomial]; ring
+  · dsimp [first]; ring
 
 private lemma first_hasDeriv (q : ℝ) : HasDerivAt first (second q) q := by
-  convert (((((hasDerivAt_id q).const_mul (-(23/500))).const_add (-(567/1000))).add
-    (((hasDerivAt_id q).pow 2).const_mul (447/1000))).add
-    (((hasDerivAt_id q).pow 3).const_mul (1/500))).add
-    (((hasDerivAt_id q).pow 4).const_mul (-(3/80))) using 1 <;>
-    dsimp [first,second] <;> ring
+  convert (((((hasDerivAt_id q).const_mul (-(23/500))).const_add (-(567/1000))).fun_add
+    (((hasDerivAt_id q).fun_pow 2).const_mul (447/1000))).fun_add
+    (((hasDerivAt_id q).fun_pow 3).const_mul (1/500))).fun_add
+    (((hasDerivAt_id q).fun_pow 4).const_mul (-(3/80))) using 1
+  · funext y; dsimp [first]; ring
+  · dsimp [second]; ring
 
 private lemma second_nonnegative {q : ℝ} (hq : 157/200 ≤ q ∧ q ≤ 5/3) :
     0 ≤ second q := by
@@ -72,12 +71,12 @@ private lemma polynomial_strict_upper {q : ℝ} (hq : 157/200 ≤ q ∧ q ≤ 5/
       (f' := fun q => -first q) (f'' := fun q => -second q)
       (by dsimp [polynomial]; fun_prop)
     · intro q _
-      have h := (hasDeriv q).const_sub (-(19/100))
-      simpa only [neg_mul,one_mul] using h.hasDerivWithinAt
+      exact ((hasDeriv q).const_sub (-19/100)).hasDerivWithinAt
     · intro q _
       exact (first_hasDeriv q).neg.hasDerivWithinAt
     · intro q hq
-      exact neg_nonpos.mpr (second_nonnegative (interior_subset hq))
+      have hq' : q ∈ Set.Icc (157/200:ℝ) (5/3) := interior_subset hq
+      exact neg_nonpos.mpr (second_nonnegative hq')
   have h := positive_on_concave_interval hc hq
     (by norm_num [polynomial]) (by norm_num [polynomial])
   linarith

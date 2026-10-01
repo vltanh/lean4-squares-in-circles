@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.NormalizeFrame
-
-@[expose] public section
+import SquaresInCircles.Six.NormalizeFrame
 
 /-!
 # Congruence bookkeeping for the normalization chain

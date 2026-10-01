@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Containing
-public import SquaresInCircles.Common.Contacts
-public import SquaresInCircles.Common.Angles
-
-@[expose] public section
+import SquaresInCircles.Six.Containing
+import SquaresInCircles.Common.Contacts
+import SquaresInCircles.Common.Angles
 
 /-!
 # Initial normalization of an arbitrary packing
@@ -27,13 +24,13 @@ def pullSquare (o : Point) (φ : Direction) (S : UnitSquare) : UnitSquare where
 
 lemma pullSquare_localX (o : Point) (φ : Direction) (S : UnitSquare) (p : Point) :
     localX (pullSquare o φ S) p = localX S (frameEquiv o φ p) := by
-  dsimp [localX,pullSquare,frameEquiv,pointInDirection]
+  simp only [localX,pullSquare,frameEquiv,pointInDirection,Equiv.coe_fn_mk,Equiv.coe_fn_symm_mk]
   linear_combination
     -(S.cosine*(S.center.1-o.1)+S.sine*(S.center.2-o.2))*Real.Angle.cos_sq_add_sin_sq φ
 
 lemma pullSquare_localY (o : Point) (φ : Direction) (S : UnitSquare) (p : Point) :
     localY (pullSquare o φ S) p = localY S (frameEquiv o φ p) := by
-  dsimp [localY,pullSquare,frameEquiv,pointInDirection]
+  simp only [localY,pullSquare,frameEquiv,pointInDirection,Equiv.coe_fn_mk,Equiv.coe_fn_symm_mk]
   linear_combination
     -(-S.sine*(S.center.1-o.1)+S.cosine*(S.center.2-o.2))*Real.Angle.cos_sq_add_sin_sq φ
 

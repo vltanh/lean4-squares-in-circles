@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.MixedCardinalWest.Concavity
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.MixedCardinalWest.Concavity
 
 /-!
 # The twelve endpoints forced by coordinate concavity
@@ -157,9 +154,11 @@ private lemma endpoint_trig (i : Fin 2) (j : Fin 3) (k : Fin 2) :
   · fin_cases i <;> norm_num [westCosLower,westEnd] <;> linarith
   · fin_cases j <;> norm_num [southCosLower,southEnd] <;> linarith
   · fin_cases j
-    · simpa [southNegativeLower,southEnd] using hs4.trans (le_max_left (Real.sin (2/5)) 0)
+    · have e : Real.sin (-2/5 : ℝ) = -Real.sin (2/5) := by
+        rw [neg_div,Real.sin_neg]
+      simp [southNegativeLower,southEnd,e,hs4]
     · simp [southNegativeLower,southEnd]
-    · simpa [southNegativeLower,southEnd] using le_max_right (-Real.sin ((2:ℝ)/5)) 0
+    · simp [southNegativeLower,southEnd]
   · fin_cases i <;> fin_cases k <;>
       norm_num [westSumLower,diagonalEnd,westEnd] at * <;> linarith
   · fin_cases j <;> fin_cases k <;>
@@ -220,16 +219,31 @@ theorem positive {w s d : ℝ}
       fin_cases i <;> norm_num [westEnd]
     have hs' : -(2/5) ≤ southEnd j ∧ southEnd j ≤ 2/5 := by
       fin_cases j <;> norm_num [southEnd]
-    exact positive_on_concave_interval (gap_diagonal_concave hw' hs') hd
-      (endpoint_positive i j 0) (endpoint_positive i j 1)
-  have hsend (j : Fin 3) : 0 < gap w (southEnd j) d :=
-    positive_on_concave_interval (gap_west_concave hd) hw (hwend 0 j) (hwend 1 j)
+    have h0 := endpoint_positive i j 0
+    have h1 := endpoint_positive i j 1
+    rw [show diagonalEnd 0 = 1/2 by simp [diagonalEnd]] at h0
+    rw [show diagonalEnd 1 = Real.pi/4 by simp [diagonalEnd]] at h1
+    exact positive_on_concave_interval (f := fun d => gap (westEnd i) (southEnd j) d)
+      (gap_diagonal_concave hw' hs') hd h0 h1
+  have hsend (j : Fin 3) : 0 < gap w (southEnd j) d := by
+    have h0 := hwend 0 j
+    have h1 := hwend 1 j
+    rw [show westEnd 0 = -(2/5) by norm_num [westEnd]] at h0
+    rw [show westEnd 1 = 0 by simp [westEnd]] at h1
+    exact positive_on_concave_interval (f := fun w => gap w (southEnd j) d)
+      (gap_west_concave hd) hw h0 h1
+  have k0 := hsend 0
+  have k1 := hsend 1
+  have k2 := hsend 2
+  rw [show southEnd 0 = -(2/5) by norm_num [southEnd]] at k0
+  rw [show southEnd 1 = 0 by simp [southEnd]] at k1
+  rw [show southEnd 2 = 2/5 by simp [southEnd]] at k2
   by_cases hs0 : s ≤ 0
-  · exact positive_on_concave_interval
+  · exact positive_on_concave_interval (f := fun s => gap w s d)
       (gap_south_concave hd le_rfl (by norm_num) southTerm_negative_concave)
-      ⟨hs.1,hs0⟩ (hsend 0) (hsend 1)
-  · exact positive_on_concave_interval
+      ⟨hs.1,hs0⟩ k0 k1
+  · exact positive_on_concave_interval (f := fun s => gap w s d)
       (gap_south_concave hd (by norm_num) le_rfl southTerm_positive_concave)
-      ⟨le_of_not_ge hs0,hs.2⟩ (hsend 1) (hsend 2)
+      ⟨le_of_not_ge hs0,hs.2⟩ k1 k2
 
 end SquaresInCircles.Six.Analytic.MixedCardinalWest

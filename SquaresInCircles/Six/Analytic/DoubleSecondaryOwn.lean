@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.DoubleSecondaryOwnBound
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.DoubleSecondaryOwnBound
 
 /-!
 # The double-D-secondary hard case is impossible for actual OWN W and S
@@ -66,7 +63,8 @@ theorem double_Dsecondary_own_impossible {R : ℝ} (P : NormalizedPacking R)
   let s := P.helperAngle 4
   let d := P.diagonalAngle
   have hWphase : P.phase 2=Real.pi-v := by
-    rw [P.phase_from_deviation 2]
+    have hc : cardinalCenter (matchingCardinal 2)=Real.pi := rfl
+    rw [P.phase_from_deviation 2,hc]
     dsimp [v]
     ring
   have hDphase : P.phase 3=Real.pi+d := by
@@ -77,7 +75,7 @@ theorem double_Dsecondary_own_impossible {R : ℝ} (P : NormalizedPacking R)
   have hv : 0≤v ∧ v≤2/3 := by
     dsimp [v]
     constructor <;> linarith [P.helper_windows.2.2.1.1]
-  have hs : -5/8≤s ∧ s≤2/3 :=
+  have hs : -5/8≤ s ∧ s≤2/3 :=
     ⟨P.helper_windows.2.2.2.1.le,P.helper_windows.2.2.2.2.le⟩
   have hd : 1/2≤d ∧ d≤Real.pi/4 :=
     ⟨(normalized_diagonal_gt_half P).le,P.diagonal_angle_range.2⟩

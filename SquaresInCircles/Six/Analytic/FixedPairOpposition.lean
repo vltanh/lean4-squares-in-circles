@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.FixedPairRadicands
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FixedPairRadicands
 
 /-!
 # Why the alternate N-primary source has nonpositive n-curvature
@@ -30,7 +27,7 @@ lemma own_west_opposition {no : Bool} {n w : ℝ} (hd : Domain no true n w) :
     have hc := cos_lower_of_abs_le hsmall
     have hs := sin_lower_of_nonpos hq
     have hp := mul_le_mul
-      (show (889:ℝ)/1000≤mStar by linarith [pair_multiplier_bounds]) hc
+      (show (889:ℝ)/1000≤ mStar by linarith [pair_multiplier_bounds]) hc
       (by norm_num : (0:ℝ)≤1-(19/50)^2/2) hm0
     nlinarith [pair_multiplier_bounds]
   · have hq0 : 0≤n-w := (lt_of_not_ge hq).le
@@ -38,7 +35,7 @@ lemma own_west_opposition {no : Bool} {n w : ℝ} (hd : Domain no true n w) :
       (by linarith [(abs_le.mp hb.2.2).2,Real.pi_gt_d2])
     have hc := cos_lower_of_abs_le hb.2.2
     have hp := mul_le_mul
-      (show (889:ℝ)/1000≤mStar by linarith [pair_multiplier_bounds]) hc
+      (show (889:ℝ)/1000≤ mStar by linarith [pair_multiplier_bounds]) hc
       (by norm_num : (0:ℝ)≤1-(6/7)^2/2) hm0
     nlinarith [pair_multiplier_bounds]
 
@@ -54,7 +51,7 @@ lemma cardinal_west_opposition {no : Bool} {n w : ℝ} (hd : Domain no false n w
     have hc := cos_lower_of_abs_le hq
     have hs := sin_lower_of_nonpos hn
     have hp := mul_le_mul
-      (show (889:ℝ)/1000≤mStar by linarith [pair_multiplier_bounds]) hc
+      (show (889:ℝ)/1000≤ mStar by linarith [pair_multiplier_bounds]) hc
       (by norm_num : (0:ℝ)≤1-(7/10)^2/2) hm0
     nlinarith [pair_multiplier_bounds,hbounds.1]
   · have hn0 : 0≤n := (lt_of_not_ge hn).le
@@ -62,7 +59,7 @@ lemma cardinal_west_opposition {no : Bool} {n w : ℝ} (hd : Domain no false n w
       (by linarith [(abs_le.mp hb.1).2,Real.pi_gt_d2])
     have hc := cos_lower_of_abs_le hb.2.2
     have hp := mul_le_mul
-      (show (889:ℝ)/1000≤mStar by linarith [pair_multiplier_bounds]) hc
+      (show (889:ℝ)/1000≤ mStar by linarith [pair_multiplier_bounds]) hc
       (by norm_num : (0:ℝ)≤1-(6/7)^2/2) hm0
     nlinarith [pair_multiplier_bounds]
 
@@ -70,7 +67,7 @@ lemma westWave_alternate_two_wave (wo : Bool) (n w : ℝ) :
     (westWave wo 2 0 n w).cosine*Real.cos n+
       (westWave wo 2 0 n w).sine*Real.sin n =
       -2*rStar*((if wo then Real.sin (n-w) else Real.sin n)+mStar*Real.cos (n-w)) := by
-  cases wo <;> simp only [westWave,Bool.false_eq_true,if_false,if_true,
+  cases wo <;> simp only [westWave,Bool.false_eq_true,ite_false,ite_true,Matrix.cons_val,
     Real.cos_sub,Real.sin_sub]
   all_goals ring
 
@@ -82,7 +79,7 @@ theorem west_alternate_two_curvature_nonpos {no wo : Bool} {n w : ℝ}
     cases wo <;> simpa [westWave] using rStar_pos
   have hx : 0<(westWave wo 2 0 n w).arg n := by
     apply westWave_positive (no := no) 2 0
-    simpa only [sliceN,sliceW,if_true] using hd
+    simpa only [sliceN,sliceW,ite_true,ite_self] using hd
   apply Wave.curvature_nonpos_of_opposition Six.radius_pos.le hr
     (westWave_amplitude wo 2 0 n w) hx
   rw [westWave_alternate_two_wave]
@@ -90,7 +87,7 @@ theorem west_alternate_two_curvature_nonpos {no wo : Bool} {n w : ℝ}
     cases wo
     · exact cardinal_west_opposition hd
     · exact own_west_opposition hd
-  have hmul := mul_nonneg (show 0≤2*rStar by positivity) (sub_nonneg.mpr hp)
+  have hmul := mul_nonneg (show 0≤2*rStar by linarith [rStar_pos]) (sub_nonneg.mpr hp)
   have hrot : (westWave wo 2 0 n w).rotor=rStar := by cases wo <;> rfl
   rw [hrot]
   nlinarith

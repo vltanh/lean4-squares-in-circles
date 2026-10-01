@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Normalization.PinReflection
-public import SquaresInCircles.Six.Analytic.CardinalFrame
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.PinReflection
+import SquaresInCircles.Six.Analytic.CardinalFrame
 
 /-!
 # Analytic cardinal-helper angle bounds
@@ -51,7 +48,8 @@ private lemma case_margin_identity (j : Fin 6) (t a b cx cy : ℝ) :
         |Real.sin (t-cardinalCenter (cardinalCaseAxis j))|)/2-caseDepth j cx cy := by
   fin_cases j
   all_goals simp only [cardinalCaseAxis,cardinalCenter,centralMargin,centerX,centerY,
-    angularWidth,caseDepth,Real.cos_sub,Real.sin_sub,Real.cos_zero,Real.sin_zero,
+    angularWidth,caseDepth,Fin.reduceFinMk,Matrix.cons_val,Real.cos_sub,Real.sin_sub,
+    Real.cos_zero,Real.sin_zero,
     Real.cos_pi,Real.sin_pi,Real.cos_pi_div_two,Real.sin_pi_div_two,
     sine_south,cosine_south,abs_neg,mul_zero,mul_one,mul_neg_one,zero_mul,
     one_mul,zero_add,add_zero,sub_zero,zero_sub,neg_neg]
@@ -60,8 +58,10 @@ private lemma case_margin_identity (j : Fin 6) (t a b cx cy : ℝ) :
 lemma PinPacking.window_near_center {R : ℝ} (P : PinPacking R) (i : Fin 5) :
     -Real.pi ≤ P.phase i-phaseCenter i ∧ P.phase i-phaseCenter i ≤ Real.pi := by
   have h := P.window i
-  fin_cases i <;> norm_num [windowLower,windowUpper] at h <;>
-    constructor <;> linarith [h.1,h.2,Real.pi_gt_d2]
+  have hb : -Real.pi ≤ (windowLower i : ℝ) ∧ (windowUpper i : ℝ) ≤ Real.pi := by
+    fin_cases i <;> constructor <;> norm_num [windowLower,windowUpper] <;>
+      linarith [Real.pi_gt_d2]
+  constructor <;> linarith [h.1,h.2,hb.1,hb.2]
 
 /-- N25 for every relevant labelled cardinal helper. The proof uses no
 certificate result: its only phase input is the broad labelled window. -/

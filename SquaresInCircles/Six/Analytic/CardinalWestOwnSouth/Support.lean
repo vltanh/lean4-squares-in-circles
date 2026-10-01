@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.CardinalWestOwnSouth.Scalar
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CardinalWestOwnSouth.Scalar
 
 /-!
 # Actual supports for the reflected cardinal-W / OWN-S case
@@ -106,7 +103,7 @@ lemma south_support {a b s d : ℝ} (hc : ContainedChart a |b|)
     (show 0 ≤ rho0-a-(31/100)*|b| by nlinarith [sq_nonneg b])
   have hV := mul_le_mul_of_nonneg_right hcone.2 (abs_nonneg b)
   have hprod : OwnWestCardinalSouth.southTransverse s d*b ≤
-      |OwnWestCardinalSouth.southTransverse s d|*|b| := by
+      |OwnWestCardinalSouth.southTransverse s d| *|b| := by
     simpa only [abs_mul] using le_abs_self (OwnWestCardinalSouth.southTransverse s d*b)
   have hR := mul_le_mul_of_nonneg_right CandidateWestTail.ceiling_bounds.2.1 hU
   dsimp [southUpper]

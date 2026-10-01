@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.WestCoreBounds.Profile
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.WestCoreBounds.Profile
 
 /-!
 # Two exact three-edge scalar obstructions

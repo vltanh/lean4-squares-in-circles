@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Uniqueness
-
-@[expose] public section
+import SquaresInCircles.Six.Uniqueness
 
 /-!
 # Six-square proof entry point

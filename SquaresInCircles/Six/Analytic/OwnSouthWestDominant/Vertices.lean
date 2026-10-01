@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Curvature
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Curvature
 
 /-!
 # The four vertices of the west-dominant shared-angle polygon
@@ -80,7 +77,8 @@ theorem positive_of_four_vertices (upper : Bool) {v s d : ℝ}
   have hv0 : 0 ≤ v := hs.trans horder
   have hsmax : s ≤ 12/25 := by linarith
   have hequal : 0 < profile upper s s d :=
-    positive_on_concave_interval (equal_wall_concave upper hd) ⟨hs,hsmax⟩
+    positive_on_concave_interval (f := fun s => profile upper s s d)
+      (equal_wall_concave upper hd) ⟨hs,hsmax⟩
       hvertices.1 hvertices.2.2.2
   have hcv : ConcaveOn ℝ (Set.Icc 0 (2/3)) (fun x => profile upper x s d) := by
     have h := ((concave_constant (constantTerm+diagonalTerm upper d) 0 (2/3)).add
@@ -88,18 +86,22 @@ theorem positive_of_four_vertices (upper : Bool) {v s d : ℝ}
     exact h
   by_cases hcut : s ≤ 22/75
   · have htop : 0 < profile upper (2/3) s d :=
-      positive_on_concave_interval (vertical_wall_concave upper hd) ⟨hs,hcut⟩
+      positive_on_concave_interval (f := fun s => profile upper (2/3) s d)
+        (vertical_wall_concave upper hd) ⟨hs,hcut⟩
         hvertices.2.1 hvertices.2.2.1
     have hm := hcv.min_le_of_mem_Icc
       (show s ∈ Set.Icc 0 (2/3) by constructor <;> linarith)
       (by norm_num : (2:ℝ)/3 ∈ Set.Icc 0 (2/3)) ⟨horder,hv⟩
     exact (lt_min hequal htop).trans_le hm
   · have hleft : 0 < profile upper (24/25-22/75) (22/75) d := by
-      convert hvertices.2.2.1 using 1 <;> norm_num
+      rw [show (24:ℝ)/25-22/75 = 2/3 by norm_num]
+      exact hvertices.2.2.1
     have hright : 0 < profile upper (24/25-12/25) (12/25) d := by
-      convert hvertices.2.2.2 using 1 <;> norm_num
+      rw [show (24:ℝ)/25-12/25 = 12/25 by norm_num]
+      exact hvertices.2.2.2
     have htop : 0 < profile upper (24/25-s) s d :=
-      positive_on_concave_interval (sum_wall_concave upper hd)
+      positive_on_concave_interval (f := fun s => profile upper (24/25-s) s d)
+        (sum_wall_concave upper hd)
         ⟨le_of_not_ge hcut,hsmax⟩ hleft hright
     have hupper : 24/25-s ∈ Set.Icc 0 (2/3) := by
       constructor <;> linarith

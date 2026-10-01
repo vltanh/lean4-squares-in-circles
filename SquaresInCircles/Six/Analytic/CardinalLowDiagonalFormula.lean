@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.RotatingTrigConcavity
-public import SquaresInCircles.Six.Analytic.LowDiagonalEndpoints
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.RotatingTrigConcavity
+import SquaresInCircles.Six.Analytic.LowDiagonalEndpoints
 
 /-!
 # Cardinal-W low-diagonal stress components

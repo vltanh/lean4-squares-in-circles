@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Common.Basic
-public import SquaresInCircles.Six.Normalization.Constants
-
-@[expose] public section
+import SquaresInCircles.Common.Basic
+import SquaresInCircles.Six.Normalization.Constants
 
 /-!
 # Exact algebra of the six-square candidate

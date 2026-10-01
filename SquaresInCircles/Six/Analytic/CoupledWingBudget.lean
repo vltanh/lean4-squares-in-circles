@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.CanonicalWestSign
-public import SquaresInCircles.Six.Analytic.EndpointReduction
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CanonicalWestSign
+import SquaresInCircles.Six.Analytic.EndpointReduction
 
 /-!
 # A coupled angle budget for two OWN wings
@@ -29,16 +26,20 @@ private lemma wingLineGap_concave :
   let f' : ℝ → ℝ := fun x => -(387/1000)*Real.sin x+(61/100)*Real.cos x-9/25
   let f'' : ℝ → ℝ := fun x => -(387/1000)*Real.cos x-(61/100)*Real.sin x
   have hf (x : ℝ) : HasDerivAt wingLineGap (f' x) x := by
-    convert ((((Real.hasDerivAt_cos x).const_mul (387/1000)).add
+    have h := ((((Real.hasDerivAt_cos x).const_mul (387/1000)).add
       ((Real.hasDerivAt_sin x).const_mul (61/100))).const_add (1/2)).sub
-      (((hasDerivAt_id x).const_mul (9/25)).const_add (47/50)) using 1 <;>
-      dsimp [wingLineGap,f'] <;> ring
+      (((hasDerivAt_id x).const_mul (9/25)).const_add (47/50))
+    convert h using 1
+    · funext y; simp only [wingLineGap,Pi.sub_apply,Pi.add_apply,id]; ring
+    · dsimp only [f']; ring
   have hff (x : ℝ) : HasDerivAt f' (f'' x) x := by
     convert ((((Real.hasDerivAt_sin x).const_mul (-(387/1000))).add
       ((Real.hasDerivAt_cos x).const_mul (61/100))).sub_const (9/25)) using 1 <;>
       dsimp [f',f''] <;> ring
+  have hcont : ContinuousOn wingLineGap (Set.Icc (1/3) (2/3)) :=
+    fun x _ => (hf x).continuousAt.continuousWithinAt
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc (1/3) (2/3))
-    (f' := f') (f'' := f'') (by dsimp [wingLineGap]; fun_prop)
+    (f' := f') (f'' := f'') hcont
   · intro x _; exact (hf x).hasDerivWithinAt
   · intro x _; exact (hff x).hasDerivWithinAt
   · intro x hx
@@ -46,7 +47,7 @@ private lemma wingLineGap_concave :
     have hc : 0 ≤ Real.cos x := Real.cos_nonneg_of_mem_Icc
       ⟨by linarith [h.1,Real.pi_pos],by linarith [h.2,Real.pi_gt_d2]⟩
     have hs := Real.sin_nonneg_of_nonneg_of_le_pi
-      (by linarith [h.1]) (by linarith [h.2,Real.pi_gt_d2])
+      (show 0 ≤ x by linarith [h.1]) (by linarith [h.2,Real.pi_gt_d2])
     dsimp [f'']
     linarith
 
@@ -101,7 +102,7 @@ lemma coupled_own_wing_radial_sum {v s aw bw aS bS cx cy : ℝ}
   simp only [centralMargin,centralNormal,angularWidth,Real.cos_pi_sub,Real.sin_pi_sub,
     abs_neg,abs_of_nonneg hcv0,abs_of_nonneg hsv0] at hW
   simp only [centralMargin,centralNormal,angularWidth,Real.cos_add,Real.sin_add,
-    south_cos,south_sin,zero_mul,one_mul,neg_one_mul,zero_add,add_zero,abs_neg,
+    south_cos,south_sin,zero_mul,neg_one_mul,zero_sub,neg_neg,add_zero,abs_neg,
     abs_of_nonneg hcs0,abs_of_nonneg hss0] at hS
   nlinarith only [hW,hS,hX,hY,hC,hT]
 
@@ -121,7 +122,9 @@ theorem normalized_own_wing_angle_sum {R : ℝ} (P : NormalizedPacking R)
   have hsum : 1 ≤ v+s := by dsimp [v,s]; linarith
   have hvsmall : 1/3 ≤ v ∧ v ≤ 2/3 := ⟨by linarith,hv.2⟩
   have hssmall : 1/3 ≤ s ∧ s ≤ 2/3 := ⟨by linarith,hsupper⟩
-  have hWphase : P.phase 2=Real.pi-v := by rw [P.phase_from_deviation 2]; dsimp [v]; ring
+  have hWphase : P.phase 2=Real.pi-v := by
+    have hc : cardinalCenter (matchingCardinal 2)=Real.pi := rfl
+    rw [P.phase_from_deviation 2,hc]; dsimp [v]; ring
   have hSphase : P.phase 4=3*Real.pi/2+s := P.phase_from_deviation 4
   have hrad := coupled_own_wing_radial_sum hv ⟨by linarith [hssmall.1],hsupper⟩
     P.box.1.2 P.box.2.2

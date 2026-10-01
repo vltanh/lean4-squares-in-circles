@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.SouthOuterTail.OwnDiagonal
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SouthOuterTail.OwnDiagonal
 
 /-!
 # Complete the OWN-W final-tail scalar inequality
@@ -17,12 +14,12 @@ noncomputable section
 namespace SquaresInCircles.Six.Analytic.SouthOuterTail.Own
 open Normalization
 
- def vertexProfile (upper : Bool) (v s d : ℝ) : ℝ :=
+def vertexProfile (upper : Bool) (v s d : ℝ) : ℝ :=
   constant-CandidateWestTail.radiusBound*(61/120)+
     weightW*(1/2-face upper)*Real.cos v+weightW*B*Real.sin v+
     A*Real.cos s+(1/2+face upper)*Real.sin s+
     mu*(Real.cos (d+v)+Real.sin (d+v))+nu*Real.cos (d-s)-kappa*Real.sin (v+s)
- def vertexConstant (upper : Bool) (v s : ℝ) : ℝ :=
+def vertexConstant (upper : Bool) (v s : ℝ) : ℝ :=
   constant-CandidateWestTail.radiusBound*(61/120)+
     weightW*(1/2-face upper)*Real.cos v+weightW*B*Real.sin v+
     A*Real.cos s+(1/2+face upper)*Real.sin s-kappa*Real.sin (v+s)
@@ -34,7 +31,7 @@ lemma diagonal_root_upper (z : ℝ) (hz : -(1:ℝ) ≤ z ∧ z ≤ 1) :
   have hn := Real.sqrt_nonneg (mu^2+nu^2+2*mu*nu*z)
   have hP : 0 ≤ 61/120+z/5 := by linarith [hz.1]
   have he := sq_nonneg (z/5-11/120)
-  dsimp [mu,nu] at hs
+  dsimp [mu,nu] at hs hn ⊢
   nlinarith only [hs,hn,hP,he]
 
 lemma vertex_le_raw (upper : Bool) {v s d a b : ℝ} (hc : ContainedChart a |b|) :
@@ -77,7 +74,11 @@ private lemma cos_lower (x : ℝ) : cosLower x ≤ Real.cos x := by
   by_cases hx : 0 ≤ x
   · exact Seven.cos_lower_six hx
   · have h := Seven.cos_lower_six (x := -x) (by linarith)
-    simpa [cosLower,Real.cos_neg] using h
+    have h2 : (-x)^2 = x^2 := by ring
+    have h4 : (-x)^4 = x^4 := by ring
+    have h6 : (-x)^6 = x^6 := by ring
+    rw [h2,h4,h6,Real.cos_neg] at h
+    simpa [cosLower] using h
 
 private def polynomialLower (upper : Bool) (v s d : ℝ) : ℝ :=
   constant-CandidateWestTail.radiusBound*(61/120)+
@@ -133,7 +134,7 @@ private lemma raw_vertex_corner_positive (upper : Bool) (i : Fin 3) {d a b : ℝ
     linarith
   exact hp.trans_le (vertex_le_raw upper hc)
 
- def specialValue (upper : Bool) (d : ℝ) : ℝ :=
+def specialValue (upper : Bool) (d : ℝ) : ℝ :=
   constant+(weightW*(1/2-face upper)+A)*Real.cos corner+
     (weightW*B+1/2+face upper)*Real.sin corner-1/160+specialTerm d
 

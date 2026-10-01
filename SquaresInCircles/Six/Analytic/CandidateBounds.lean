@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Stress.CandidateStressConstants
-
-@[expose] public section
+import SquaresInCircles.Six.Stress.CandidateStressConstants
 
 /-!
 # Rational bounds from the exact candidate equations
@@ -116,7 +113,7 @@ theorem diagonal_constant_bounds :
   have hρ := candidate_cap_radius_lower
   have hlo := mul_le_mul hK.1.le hρ.le
     (by norm_num : (0 : ℝ) ≤ 111 / 100)
-    (show 0 ≤ 2 * Six.hStar * mStar by positivity)
+    (show 0 ≤ 2 * Six.hStar * mStar by linarith [hK.1])
   have hhi := mul_le_mul hK.2.le rhoStar_upper.le
     (show 0 ≤ rhoStar by linarith)
     (by norm_num : (0 : ℝ) ≤ 253 / 200)

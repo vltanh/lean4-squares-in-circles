@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.SmallDiagonalStressTools
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SmallDiagonalStressTools
 
 /-!
 # One frozen-center stress for negative OWN W and small D
@@ -45,7 +42,7 @@ lemma ownSmallD_concave_v {aw bw ad bd cx cy d : ℝ}
   have hA : 387/1000≤1/2-cx := by dsimp [c0] at hC; linarith [hC.1.2,rho0_upper]
   have hB : 387/1000≤1/2+cy := by linarith [hC.2.1]
   have h := frozen_secondary_curvature (k := (3:ℝ)/2) (by norm_num) hA hB
-    hW.half_le hW.a_le_rho0 (abs_le.mp hb).1 hv
+    hW.half_le hW.a_le_rho0 (show -1/2≤bw by linarith [(abs_le.mp hb).1]) hv
     (show 0≤v+d ∧ v+d≤7/6 by constructor <;> linarith [hv.1,hv.2,hd.1,hd.2])
   nlinarith only [h]
 
@@ -58,7 +55,7 @@ lemma ownSmallD_concave_d {aw bw ad bd cx cy v : ℝ}
   have hA : 387/1000≤1/2-cx := by dsimp [c0] at hC; linarith [hC.1.2,rho0_upper]
   have hB : 387/1000≤1/2-cy := by dsimp [c0] at hC; linarith [hC.2.2,rho0_upper]
   have h := frozen_secondary_curvature (k := (2:ℝ)) (by norm_num) hA hB
-    hW.half_le hW.a_le_rho0 (abs_le.mp hb).1
+    hW.half_le hW.a_le_rho0 (show -1/2≤bw by linarith [(abs_le.mp hb).1])
     (show 0≤d ∧ d≤2/3 by constructor <;> linarith [hd.1,hd.2])
     (show 0≤v+d ∧ v+d≤7/6 by constructor <;> linarith [hv.1,hv.2,hd.1,hd.2])
   nlinarith only [h]

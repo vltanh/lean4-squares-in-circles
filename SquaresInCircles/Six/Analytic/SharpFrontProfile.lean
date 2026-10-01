@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.TransverseProfileBounds
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.TransverseProfileBounds
 
 /-!
 # A sharper front profile for the D-secondary reduction
@@ -44,7 +41,7 @@ private lemma sharp_front_circle {d : ℝ} (hd : 0≤d ∧ d≤1/2) :
   let u := 2*d
   have hu0 : 0≤u := by dsimp [u]; linarith [hd.1]
   have hu1 : 0≤1-u := by dsimp [u]; linarith [hd.2]
-  have hsum : 0≤sharpFrontPositiveSum u := by dsimp [sharpFrontPositiveSum]; positivity
+  have hsum : 0≤ sharpFrontPositiveSum u := by dsimp [sharpFrontPositiveSum]; positivity
   have hp := mul_nonneg hu0 hsum
   have hid : (sharpFront d)^2+(241/250-(47/100)*d)^2-Q0 =
       377/200000+u*sharpFrontPositiveSum u/256000000 := by
@@ -62,7 +59,7 @@ theorem sharp_front_transverse {a b d : ℝ} (hd : 0≤d ∧ d≤1/2)
   have hdsq := mul_nonneg (sub_nonneg.mpr hd.2) (show 0≤1/2+d by linarith [hd.1])
   have hco : 0≤1-d/2-d^2/6 := by nlinarith [hd.2]
   have hprod := mul_nonneg hd.1 hco
-  have ha0 : 0≤sharpFront d := by dsimp [sharpFront]; nlinarith only [hprod]
+  have ha0 : 0≤ sharpFront d := by dsimp [sharpFront]; nlinarith only [hprod]
   by_contra! hb
   have hb' : 241/250-(47/100)*d≤|b|+1/2 := by linarith
   have hb0 : 0≤241/250-(47/100)*d := by linarith [hd.2]
@@ -83,7 +80,9 @@ lemma own_sharp_front_profile {a b cx cy d : ℝ}
   have hcy : 0≤1/2-cy-387/1000 := by dsimp [c0] at hy; linarith [rho0_upper]
   have hX := mul_nonneg hcx hc0
   have hY := mul_nonneg hcy hs0
-  simp only [centralMargin,centralNormal,angularWidth,Real.cos_pi_add,Real.sin_pi_add,
+  have hcpi : Real.cos (Real.pi+d)=-Real.cos d := by rw [add_comm,Real.cos_add_pi]
+  have hspi : Real.sin (Real.pi+d)=-Real.sin d := by rw [add_comm,Real.sin_add_pi]
+  simp only [centralMargin,centralNormal,angularWidth,hcpi,hspi,
     abs_neg,abs_of_nonneg hc0,abs_of_nonneg hs0] at hown
   nlinarith only [hown,hX,hY]
 

@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.CapChart
-public import SquaresInCircles.Six.Analytic.SouthMarker
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CapChart
+import SquaresInCircles.Six.Analytic.SouthMarker
 
 /-!
 # Exact formulas for the east, north and south primary quadrants
@@ -107,7 +104,7 @@ lemma primary_projection_nonneg {a b t : ℝ} (h : ContainedChart a |b|)
     (ht : |t| ≤ Real.pi/4) : 0 ≤ a*Real.cos t-b*Real.sin t := by
   have hc := octant_trig ht
   have hcos : 0 ≤ Real.cos t := by linarith [hc.1.1]
-  have hp : b*Real.sin t ≤ |b|*|Real.sin t| := by
+  have hp : b*Real.sin t ≤ |b| *|Real.sin t| := by
     simpa only [abs_mul] using le_abs_self (b*Real.sin t)
   have hprod := mul_le_mul h.u_le hc.2.1 (abs_nonneg _) (by linarith [h.half_le] : 0 ≤ a)
   nlinarith only [hp,hprod]

@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Normalization.CapSupport
-public import SquaresInCircles.Six.Normalization.CoreGeometry
-public import SquaresInCircles.Six.Normalization.SecondarySeparation
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.CapSupport
+import SquaresInCircles.Six.Normalization.CoreGeometry
+import SquaresInCircles.Six.Normalization.SecondarySeparation
 
 /-!
 # Deep caps in the actual square geometry
@@ -60,7 +57,7 @@ lemma orientedSquare_cap_support {t a b h : ℝ}
   let p := add S.center (rotate S (-1 / 2, 1 / 2))
   have hp : closedSquare S p := by
     dsimp [p]
-    norm_num only [closedSquare, localX_rotated, localY_rotated]
+    norm_num [closedSquare, localX_rotated, localY_rotated]
   have hh := hcap p hp
   dsimp [p, S, add, rotate, orientedSquare] at hh
   linarith

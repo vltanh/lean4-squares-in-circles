@@ -1,9 +1,7 @@
-module
-public import Mathlib.Analysis.SpecialFunctions.Sqrt
-public import Mathlib.Analysis.Convex.Deriv
-public import Mathlib.Tactic
-
-@[expose] public section
+import Mathlib.Analysis.SpecialFunctions.Sqrt
+import Mathlib.Analysis.Calculus.Deriv.Inv
+import Mathlib.Analysis.Convex.Deriv
+import Mathlib.Tactic
 
 /-!
 # Differentiating a negative square root
@@ -32,7 +30,7 @@ lemma hasDerivAt_negative_sqrt {f d : ℝ → ℝ} {r x dd : ℝ}
   have hroot := hf.sqrt (ne_of_gt hx)
   have hpos : 0<Real.sqrt (f x) := Real.sqrt_pos.mpr hx
   have hden : 2*Real.sqrt (f x)≠0 := ne_of_gt (by positivity)
-  have hquot := (hd.const_mul (-r)).div (hroot.const_mul 2) hden
+  have hquot := HasDerivAt.div (hd.const_mul (-r)) (hroot.const_mul 2) hden
   convert hquot using 1
   all_goals first
     | rfl

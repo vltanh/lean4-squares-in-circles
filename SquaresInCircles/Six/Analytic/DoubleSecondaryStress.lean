@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.MixedSecondaryDepth
-public import SquaresInCircles.Six.Analytic.DoubleSecondaryOwn
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.MixedSecondaryDepth
+import SquaresInCircles.Six.Analytic.DoubleSecondaryOwn
 
 /-!
 # The equal-weight double-D-secondary stress for all W/S central bits
@@ -32,7 +29,7 @@ lemma double_secondary_own_formula (v s d aw bw aS bS cx cy : ℝ) :
     doubleSecondaryGap true true (-v) s d aw bw aS bS cx cy=
       doubleOwnSecondaryGap v s d aw bw aS bS cx cy := by
   simp only [doubleSecondaryGap,doubleOwnSecondaryGap,wingBaseX,wingBaseY,
-    if_true,Real.cos_neg,Real.sin_neg,sub_neg_eq_add]
+    ite_true,Real.cos_neg,Real.sin_neg,sub_neg_eq_add]
   have he : angularWidth (-v)=angularWidth v := by
     simp [angularWidth,Real.cos_neg,Real.sin_neg,abs_neg]
   rw [he]
@@ -53,8 +50,14 @@ lemma double_secondary_frozen_nonpositive (wo so : Bool) {w s d aw bw ad bd aS b
         (sub (orientedSquare (3*Real.pi/2+s) aS bS).center
           (orientedSquare (Real.pi+d) ad bd).center)) :
     doubleSecondaryGap wo so w s d aw bw aS bS cx cy≤0 := by
+  have e1 : Real.cos (Real.pi+w)=-Real.cos w := by rw [add_comm]; exact Real.cos_add_pi w
+  have e2 : Real.sin (Real.pi+w)=-Real.sin w := by rw [add_comm]; exact Real.sin_add_pi w
+  have e3 : Real.cos (3*Real.pi/2+s)=Real.sin s := by
+    rw [Real.cos_add,south_cos,south_sin]; ring
+  have e4 : Real.sin (3*Real.pi/2+s)=-Real.cos s := by
+    rw [Real.sin_add,south_cos,south_sin]; ring
   have hw : angularWidth (Real.pi+w)=angularWidth w := by
-    simp [angularWidth,Real.cos_pi_add,Real.sin_pi_add,abs_neg]
+    simp [angularWidth,e1,e2,abs_neg]
   have hs : angularWidth (3*Real.pi/2+s)=angularWidth s := by
     simp [angularWidth,Real.cos_add,Real.sin_add,south_cos,south_sin,abs_neg,add_comm]
   change Seven.SAT.threshold (orientedSquare (Real.pi+w) aw bw)
@@ -72,9 +75,8 @@ lemma double_secondary_frozen_nonpositive (wo so : Bool) {w s d aw bw ad bd aS b
   rw [oriented_pair_threshold,pair_frameY_left,
     show (3*Real.pi/2+s)-(Real.pi+d)=Real.pi/2+s-d by ring] at hDS
   cases wo <;> cases so
-  all_goals simp only [Bool.false_eq_true,if_false,if_true,centralMargin,centralNormal,
-    centerX,centerY,hw,hs,Real.cos_pi_add,Real.sin_pi_add,Real.cos_add,Real.sin_add,
-    south_cos,south_sin,zero_mul,one_mul,neg_one_mul,zero_add,add_zero] at hCW hCS
+  all_goals simp only [Bool.false_eq_true,ite_false,ite_true,centralMargin,centralNormal,
+    centerX,centerY,hw,hs,e1,e2,e3,e4] at hCW hCS
   all_goals dsimp [doubleSecondaryGap,wingBaseX,wingBaseY]
   all_goals nlinarith only [hCW,hCS,hWD,hDS]
 
@@ -88,7 +90,7 @@ lemma high_diagonal_width (d : ℝ) (hd : 1/2≤d ∧ d≤Real.pi/4) :
     (show d∈Set.Icc (-(Real.pi/2)) (Real.pi/2) by
       constructor <;> linarith [hd.1,hd.2,Real.pi_pos])
   have hs := Real.sin_nonneg_of_nonneg_of_le_pi
-    (by linarith [hd.1]) (by linarith [hd.2,Real.pi_pos])
+    (show 0≤d by linarith [hd.1]) (by linarith [hd.2,Real.pi_pos])
   rw [angularWidth,abs_of_nonneg hc,abs_of_nonneg hs]
 
 end SquaresInCircles.Six.Analytic

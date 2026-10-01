@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.SouthOuterTail.Support
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SouthOuterTail.Support
 
 /-!
 # Four genuine separating inequalities exclude the final south tail
@@ -56,7 +53,7 @@ theorem own_impossible {v s d aw bw asouth bsouth ad bd cx cy : ℝ}
       nlinarith only [hsum,hw,hsu,hcenter,wv,ws,wq,wr]
   exact (not_lt_of_ge hn) (Own.positive_raw upper hv hs hd hD hb)
 
- def cardinalSign (negative : Bool) : ℝ := if negative then -1 else 1
+def cardinalSign (negative : Bool) : ℝ := if negative then -1 else 1
 
 /-- The two cardinal-W sign cases, with no OWN-W or diagonal-center guess. -/
 theorem cardinal_impossible (negative : Bool) {x s d aw bw asouth bsouth ad bd cx cy : ℝ}

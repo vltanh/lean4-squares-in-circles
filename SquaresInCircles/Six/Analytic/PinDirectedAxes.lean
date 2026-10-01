@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.PairCoordinates
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.PairCoordinates
 
 /-!
 # Interior pins determine the direction of a separator
@@ -38,7 +35,6 @@ lemma normalY_ne_zero (S : UnitSquare) : normalY S ≠ (0,0) := by
 
 lemma dot_normalY (S : UnitSquare) (v : Point) : dot (normalY S) v=frameY S v := by
   dsimp [dot,normalY,frameY]
-  ring
 
 lemma threshold_secondary_left (S T : UnitSquare) :
     Seven.SAT.threshold S T = width S (normalY S)+width T (normalY S) := by

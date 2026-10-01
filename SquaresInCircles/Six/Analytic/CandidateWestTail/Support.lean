@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.CandidateWestTail.Scalar
-public import SquaresInCircles.Six.Stress.Support
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CandidateWestTail.Scalar
+import SquaresInCircles.Six.Stress.Support
 
 /-!
 # Support estimates for the candidate west-tail stress
@@ -59,11 +56,11 @@ lemma ceiling_bounds : R0 ≤ radiusBound ∧ rho0 ≤ rhoBound ∧
 lemma local_vertex_support {a b : ℝ} (hc : ContainedChart a |b|) (U V : ℝ) :
     U*a+V*b ≤ R0*Real.sqrt (U^2+V^2)-(|U|+|V|)/2 := by
   have hC := Stress.dot_le_radius (v := (|U|,|V|)) (p := (a+1/2,|b|+1/2))
-    R0_nonneg (by simpa only [R0_sq] using hc.containment)
+    R0_nonneg (by simpa only [R0_sq,normSq] using hc.containment)
   simp only [Stress.vectorLength,normSq,dot,sq_abs] at hC
   have hA := mul_le_mul_of_nonneg_right (le_abs_self U)
     (show 0 ≤ a by linarith [hc.half_le])
-  have hB : V*b ≤ |V|*|b| := by simpa only [abs_mul] using le_abs_self (V*b)
+  have hB : V*b ≤ |V| *|b| := by simpa only [abs_mul] using le_abs_self (V*b)
   nlinarith only [hC,hA,hB]
 
 lemma local_vertex_weak {a b : ℝ} (hc : ContainedChart a |b|) (U V : ℝ) :
@@ -72,10 +69,11 @@ lemma local_vertex_weak {a b : ℝ} (hc : ContainedChart a |b|) (U V : ℝ) :
   linarith [le_abs_self U,le_abs_self V]
 
 private lemma west_root : Real.sqrt (beta^2+mu^2) ≤ westNormUpper := by
-  have hs := Real.sq_sqrt (show 0 ≤ beta^2+mu^2 by positivity)
-  have hn := Real.sqrt_nonneg (beta^2+mu^2)
-  dsimp [beta,mu,westNormUpper]
-  norm_num [beta,mu] at hs
+  have hval : beta^2+mu^2=162793/500000 := by norm_num [beta,mu]
+  rw [hval]
+  have hs := Real.sq_sqrt (show (0:ℝ) ≤ 162793/500000 by norm_num)
+  have hn := Real.sqrt_nonneg (162793/500000:ℝ)
+  dsimp [westNormUpper]
   nlinarith
 
 /-- The radical majorant is one completed square on the whole sine range. -/
@@ -130,9 +128,10 @@ lemma west_support {a b : ℝ} (hc : ContainedChart a |b|) : beta*a-mu*b ≤ wes
   have h := local_vertex_support hc beta (-mu)
   have hp := mul_le_mul ceiling_bounds.1 west_root (Real.sqrt_nonneg _)
     (by norm_num [radiusBound])
-  norm_num [beta,mu] at h
-  dsimp [westUpper,beta,mu] at *
-  nlinarith only [h,hp]
+  rw [neg_sq,abs_neg,abs_of_pos (show (0:ℝ) < beta by norm_num [beta]),
+    abs_of_pos (show (0:ℝ) < mu by norm_num [mu])] at h
+  dsimp [westUpper]
+  linarith only [h,hp]
 
 lemma south_support (k : Fin 3) {a b s : ℝ} (hc : ContainedChart a |b|) :
     southWork k s a b ≤ southUpper k s := by
@@ -142,7 +141,7 @@ lemma south_support (k : Fin 3) {a b s : ℝ} (hc : ContainedChart a |b|) :
     simp only [mul_zero,sub_zero,add_zero] at hr
     have hp := mul_le_mul ceiling_bounds.1 hr (Real.sqrt_nonneg _)
       (by norm_num [radiusBound])
-    simp only [southWork,southUpper,if_pos hk]
+    simp only [southWork,southUpper,ite_eq_left hk]
     nlinarith only [h,hp]
   · have h := local_vertex_weak hc (gamma*Real.cos s) (nu-gamma*Real.sin s)
     have hi : (gamma*Real.cos s)^2+(nu-gamma*Real.sin s)^2=
@@ -152,7 +151,7 @@ lemma south_support (k : Fin 3) {a b s : ℝ} (hc : ContainedChart a |b|) :
     have hr := south_root ⟨Real.neg_one_le_sin s,Real.sin_le_one s⟩
     have hp := mul_le_mul ceiling_bounds.1 hr (Real.sqrt_nonneg _)
       (by norm_num [radiusBound])
-    simp only [southWork,southUpper,if_neg hk]
+    simp only [southWork,southUpper,ite_eq_right hk]
     nlinarith only [h,hp]
 
 lemma diagonal_support {a b v s d : ℝ} (hc : ContainedChart a |b|) :
@@ -206,13 +205,13 @@ lemma center_support (k : Fin 3) {v x cx cy : ℝ}
     have hps := mul_nonneg
       (show 0 ≤ c0-coreLower by linarith [ceiling_bounds.2.2.1])
       (show 0 ≤ gamma*Real.sin x by dsimp [gamma]; positivity)
-    simp only [centerWork,centerUpper,side,Matrix.cons_val_zero,one_mul,if_pos rfl]
+    simp only [centerWork,centerUpper,side,Matrix.cons_val_zero,one_mul,↓reduceIte]
     nlinarith only [hX,hY,hpv,hps]
   · have gx : 0 ≤ beta*Real.cos v := by dsimp [beta]; nlinarith
     have gy : gamma-beta*Real.sin v ≤ 0 := by dsimp [beta,gamma]; nlinarith
     have hX := mul_nonneg (sub_nonneg.mpr hcx) gx
     have hY := mul_nonpos_of_nonneg_of_nonpos hcy gy
-    simp only [centerWork,centerUpper,if_neg hk]
+    simp only [centerWork,centerUpper,ite_eq_right hk]
     nlinarith only [hX,hY,hpv]
 
 def totalThreshold (v s d : ℝ) : ℝ :=
@@ -240,7 +239,7 @@ lemma minorant_le_defect (k : Fin 3) (v x d : ℝ) :
   all_goals norm_num [minorant,centerUpper,westUpper,diagonalUpper,southUpper,
     beta,gamma,mu,nu,radiusBound,rhoBound,coreUpper,coreLower,
     westNormUpper,southNormUpper,southSlope,diagonalIntercept,diagonalSlope,
-    offset,gCoeff,hCoeff,side,Real.cos_neg,Real.sin_neg]
+    offset,gCoeff,hCoeff,side,Real.cos_neg,Real.sin_neg] at hu ⊢
   all_goals nlinarith only [hv,hx,hq,hu]
 
 end SquaresInCircles.Six.Analytic.CandidateWestTail

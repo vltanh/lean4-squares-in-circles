@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.EndpointReduction
-public import SquaresInCircles.Six.Analytic.OwnAxisWindows
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.EndpointReduction
+import SquaresInCircles.Six.Analytic.OwnAxisWindows
 
 /-!
 # A single analytic minorant for the west-cardinal exclusion
@@ -101,13 +98,14 @@ private lemma vertex_bounds :
 
 private lemma small_u {u:ℝ} (hu:-2/5≤u ∧ u≤2/5) :
     23/25≤Real.cos u ∧ -2/5≤Real.sin u ∧ Real.sin u≤2/5 := by
-  have habs : |u|≤2/5 := abs_le.mpr hu
+  have habs : |u|≤2/5 := abs_le.mpr ⟨by linarith [hu.1],hu.2⟩
   have hs : |Real.sin u|≤2/5 := by
     have h := Real.abs_sin_sub_sin_le u 0
-    simpa only [Real.sin_zero,sub_zero] using h.trans habs
+    simp only [Real.sin_zero,sub_zero] at h
+    exact h.trans habs
   have hsq := pow_le_pow_left₀ (abs_nonneg u) habs 2
   rw [sq_abs] at hsq
-  refine ⟨?_,(abs_le.mp hs).1,(abs_le.mp hs).2⟩
+  refine ⟨?_,by linarith [(abs_le.mp hs).1],(abs_le.mp hs).2⟩
   nlinarith [Real.one_sub_sq_div_two_le_cos (x:=u)]
 
 private lemma t_coefficients {u:ℝ} (hu:-2/5≤u ∧ u≤2/5) :
@@ -127,7 +125,7 @@ private lemma far_coefficients :
   have hs := Real.sin_le (show (0:ℝ)≤2/3 by norm_num)
   have hs0 := Real.sin_nonneg_of_nonneg_of_le_pi
     (show (0:ℝ)≤2/3 by norm_num) (show (2:ℝ)/3≤Real.pi by linarith [Real.pi_gt_d2])
-  rw [Real.cos_neg,Real.sin_neg]
+  rw [show (-2:ℝ)/3=-(2/3) by norm_num,Real.cos_neg,Real.sin_neg]
   refine ⟨?_,?_,?_⟩ <;> nlinarith [Real.cos_le_one ((2:ℝ)/3)]
 
 private lemma far_negative {u:ℝ} (hu:-2/5≤u ∧ u≤0) :

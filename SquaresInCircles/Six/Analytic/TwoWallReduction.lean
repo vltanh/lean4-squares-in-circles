@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.FixedPairGap
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FixedPairGap
 
 /-!
 # Concavity with two prescribed walls
@@ -33,7 +30,8 @@ lemma nonneg_on_concave_interval {l r x : ℝ} {f : ℝ → ℝ}
     (Set.right_mem_Icc.mpr (hx.1.trans hx.2)) hx)
 
 lemma hasSign_neg {p : Bool} {x : ℝ} (hx : HasSign p x) : HasSign (!p) (-x) := by
-  cases p <;> simp only [HasSign,Bool.not_false,Bool.not_true,if_false,if_true] at * <;> linarith
+  cases p <;> simp only [HasSign,Bool.not_false,Bool.not_true,Bool.false_eq_true,
+    ite_false,ite_true] at * <;> linarith
 
 lemma exists_hasSign (x : ℝ) : ∃ p : Bool, HasSign p x := by
   by_cases h : 0≤x

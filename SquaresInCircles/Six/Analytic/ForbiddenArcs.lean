@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.CoreLargeQuadrants
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CoreLargeQuadrants
 
 /-!
 # Complete analytic forbidden arcs for Proposition A
@@ -17,8 +14,8 @@ noncomputable section
 namespace SquaresInCircles.Six.Analytic
 open Normalization
 
- def smallArcLeft : ℝ := -Real.pi/2+2/3
- def smallArcRight : ℝ := Real.pi/2-3/8
+def smallArcLeft : ℝ := -Real.pi/2+2/3
+def smallArcRight : ℝ := Real.pi/2-3/8
 
 lemma small_arc_length : 2*Real.pi/3 < smallArcRight-smallArcLeft := by
   dsimp [smallArcLeft,smallArcRight]
@@ -121,8 +118,10 @@ theorem marker_no_representative {a b t l u v : ℝ} (h : ContainedChart a |b|)
     linarith [hm.2,htb.2,hv.1,Real.pi_pos]
   rw [hk] at hup hlo
   have hpi : 0 < 2*Real.pi := by positivity
-  have hku : (k:ℝ) < 1 := (mul_lt_mul_left hpi).mp (by simpa using hup)
-  have hkl : (-1:ℝ) < (k:ℝ) := (mul_lt_mul_left hpi).mp (by simpa using hlo)
+  have hku : (k:ℝ) < 1 :=
+    lt_of_mul_lt_mul_left (by linarith : 2*Real.pi*(k:ℝ) < 2*Real.pi*1) hpi.le
+  have hkl : (-1:ℝ) < (k:ℝ) :=
+    lt_of_mul_lt_mul_left (by linarith : 2*Real.pi*(-1) < 2*Real.pi*(k:ℝ)) hpi.le
   have hku' : k < 1 := by exact_mod_cast hku
   have hkl' : (-1:ℤ) < k := by exact_mod_cast hkl
   have hk0 : k=0 := by omega

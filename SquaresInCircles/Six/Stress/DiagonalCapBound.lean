@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Stress.DiagonalFormula
-public import SquaresInCircles.Six.Analytic.CandidateBounds
-
-@[expose] public section
+import SquaresInCircles.Six.Stress.DiagonalFormula
+import SquaresInCircles.Six.Analytic.CandidateBounds
 
 /-!
 # Analytic cap-branch closure of the common diagonal bound
@@ -19,7 +16,8 @@ namespace SquaresInCircles.Six.Stress
 open Normalization
 
 lemma twice_beta_abs_le (w s : ℝ) : 2*|diagonalBeta w s|≤|w|+|s| := by
-  have h := abs_sub_le w s
+  have h : |w-s|≤|w|+|s| := abs_le.mpr
+    ⟨by linarith [neg_abs_le w,le_abs_self s],by linarith [le_abs_self w,neg_abs_le s]⟩
   have he : w-s=2*diagonalBeta w s := by dsimp [diagonalBeta]; ring
   rw [he,abs_mul,abs_of_nonneg (by norm_num : (0:ℝ)≤2)] at h
   exact h

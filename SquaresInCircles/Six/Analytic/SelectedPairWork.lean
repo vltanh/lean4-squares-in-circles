@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.FixedCandidateClosure
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FixedCandidateClosure
 
 /-!
 # Actual separator witnesses survive the analytic scalar closure
@@ -44,10 +41,12 @@ lemma northwest_work_of_selected {R : ℝ} (P : NormalizedPacking R)
       P.center.1-P.center.2+mStar*(P.transverse 2+1/2) := by
   have hn : P.phase 1=Real.pi/2+P.helperAngle 1 := P.phase_from_deviation 1
   have hw : P.phase 2=Real.pi+P.helperAngle 2 := P.phase_from_deviation 2
-  have hN := chosen_center_separates P 1
-  have hW := chosen_center_separates P 2
-  change Seven.SAT.threshold (axisSquare P.center) (P.square 1) ≤ _ at hN
-  change Seven.SAT.threshold (axisSquare P.center) (P.square 2) ≤ _ at hW
+  have hN : Seven.SAT.threshold (axisSquare P.center) (P.square 1) ≤
+      dot (chosenCenterAxis P 1) (sub (P.square 1).center P.center) :=
+    chosen_center_separates P 1
+  have hW : Seven.SAT.threshold (axisSquare P.center) (P.square 2) ≤
+      dot (chosenCenterAxis P 2) (sub (P.square 2).center P.center) :=
+    chosen_center_separates P 2
   rw [P.square_def,central_threshold,chosen_north_axis,hn,width_half_pi_add] at hN
   rw [P.square_def,central_threshold,chosen_west_axis,hw,width_pi_add] at hW
   rw [preferred_northwest_axis,P.square_def 2,P.square_def 1,hw,hn,northwest_threshold] at hsel
@@ -57,7 +56,7 @@ lemma northwest_work_of_selected {R : ℝ} (P : NormalizedPacking R)
   change phi (alpha (P.square 2) (0,0)) (beta (P.square 2) (0,0)) ≤ Six.qStar at hWbox
   rw [P.square_def,orientedSquare_alpha,orientedSquare_beta] at hNbox hWbox
   apply pair_work_bound (P.ownBits 1) (P.ownBits 2) u
-    (P.toPinPacking.sharp_central_box hR) ?_ ?_ hN hW hsel
+    (Stress.PinPacking.sharp_central_box P.toPinPacking hR) ?_ ?_ hN hW hsel
   · simpa only [Six.radius_sq,phi] using hNbox
   · simpa only [Six.radius_sq,phi] using hWbox
 
@@ -78,13 +77,16 @@ lemma eastsouth_work_of_selected {R : ℝ} (P : NormalizedPacking R)
   change Seven.SAT.threshold (axisSquare P.center) (P.square 4) ≤ _ at hS
   rw [P.square_def,central_threshold,he] at hE
   rw [P.square_def,central_threshold,hs,width_three_half_pi_add] at hS
-  rw [P.square_def 4,P.square_def 0,hs,he,eastsouth_threshold] at hsel
+  have hthr : Seven.SAT.threshold (P.square 4) (P.square 0)=
+      1/2+angularWidth ((-P.helperAngle 0)-(-P.helperAngle 4)) := by
+    rw [P.square_def 4,P.square_def 0,hs,he,eastsouth_threshold]
+  rw [hthr] at hsel
   have hEbox := (P.packing.phi_le (0:Fin 5).succ).trans hR
   have hSbox := (P.packing.phi_le (4:Fin 5).succ).trans hR
   change phi (alpha (P.square 0) (0,0)) (beta (P.square 0) (0,0)) ≤ Six.qStar at hEbox
   change phi (alpha (P.square 4) (0,0)) (beta (P.square 4) (0,0)) ≤ Six.qStar at hSbox
   rw [P.square_def,orientedSquare_alpha,orientedSquare_beta] at hEbox hSbox
-  have hc := P.toPinPacking.sharp_central_box hR
+  have hc := Stress.PinPacking.sharp_central_box P.toPinPacking hR
   have hNE : (orientedSquare (Real.pi/2+(-P.helperAngle 0))
       (P.radial 0) (-P.transverse 0)).center=Six.diagonalPoint (P.square 0).center := by
     rw [P.square_def,he]
@@ -96,6 +98,7 @@ lemma eastsouth_work_of_selected {R : ℝ} (P : NormalizedPacking R)
     simpa only [sub_eq_add_neg] using
       reflected_south_center (P.helperAngle 4) (P.radial 4) (P.transverse 4)
   apply pair_work_bound (P.ownBits 0) (P.ownBits 4) v
+    (an := P.radial 0) (bn := -P.transverse 0) (aw := P.radial 4)
     (c := Six.diagonalPoint P.center) ⟨hc.2,hc.1⟩ ?_ ?_ ?_ ?_ ?_
   · simpa only [Six.radius_sq,phi,abs_neg] using hEbox
   · simpa only [Six.radius_sq,phi,abs_neg] using hSbox

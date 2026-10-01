@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.WestMixed.Reduction
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.WestMixed.Reduction
 
 /-!
 # The remaining cardinal-S mixed-west scalar
@@ -23,10 +20,10 @@ def gamma : ℝ := 38/25
 def rootIntercept : ℝ := 273901/148000
 def rootSin : ℝ := 8018/9250
 
-def constantTerm : ℝ := -122625601603/46250000000
+def constantTerm : ℝ := -51639691/29600000
 def side (negative : Bool) : ℝ := if negative then -1 else 1
 def sineCoefficient (negative : Bool) : ℝ :=
-  if negative then 1308013/23125000 else 33841987/23125000
+  if negative then 1302013/23125000 else 33847987/23125000
 
 def southTerm (negative : Bool) (x : ℝ) : ℝ :=
   gamma*Real.cos x+sineCoefficient negative*Real.sin x
@@ -40,14 +37,18 @@ private lemma south_term_concave (negative : Bool) :
   let f'' : ℝ → ℝ := fun x => -gamma*Real.cos x-sineCoefficient negative*Real.sin x
   have hf (x : ℝ) : HasDerivAt (southTerm negative) (f' x) x := by
     convert ((Real.hasDerivAt_cos x).const_mul gamma).add
-      ((Real.hasDerivAt_sin x).const_mul (sineCoefficient negative)) using 1 <;>
-      dsimp [southTerm,f'] <;> ring
+      ((Real.hasDerivAt_sin x).const_mul (sineCoefficient negative)) using 1
+    · funext y
+      simp only [southTerm,Pi.add_apply]
+    · simp only [f']
+      ring
   have hff (x : ℝ) : HasDerivAt f' (f'' x) x := by
     convert ((Real.hasDerivAt_sin x).const_mul (-gamma)).add
-      ((Real.hasDerivAt_cos x).const_mul (sineCoefficient negative)) using 1 <;>
-      dsimp [f',f''] <;> ring
+      ((Real.hasDerivAt_cos x).const_mul (sineCoefficient negative)) using 1
+    simp only [f'']
+    ring
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc 0 (2/5))
-    (f' := f') (f'' := f'') (by dsimp [southTerm]; fun_prop)
+    (f' := f') (f'' := f'') (fun x _ => (hf x).continuousAt.continuousWithinAt)
   · intro x _; exact (hf x).hasDerivWithinAt
   · intro x _; exact (hff x).hasDerivWithinAt
   · intro x hx
@@ -74,7 +75,7 @@ lemma south_concave (negative : Bool) {v d : ℝ}
     congr 1
     ring
   have h := ((concave_constant
-    (constantTerm+beta*wing v+gapWave (v+d)) 0 (2/5)).add hD).add (south_term_concave negative)
+    (constantTerm+WestMixed.beta*wing v+gapWave (v+d)) 0 (2/5)).add hD).add (south_term_concave negative)
   convert h using 1
   funext x
   dsimp [profile,base]
@@ -86,7 +87,7 @@ private def sinLower (x : ℝ) : ℝ := x-x^3/6+x^5/120-x^7/5040
 private def sinUpper (x : ℝ) : ℝ := x-x^3/6+x^5/120
 
 private def lowerPolynomial (negative : Bool) (v x d : ℝ) : ℝ :=
-  constantTerm+beta*(A*cosLower v+B*sinLower v)+
+  constantTerm+WestMixed.beta*(A*cosLower v+B*sinLower v)+
   (1/2)*cosLower (v+d)-B*sinUpper (v+d)+
   nu*cosLower (d-side negative*x)-waveCoefficient*cosUpper ((d-side negative*x)/2)+
   waveCoefficient*sinLower ((d-side negative*x)/2)+
@@ -106,7 +107,7 @@ private lemma polynomial_le (negative : Bool) {v x d : ℝ}
   have sx := Seven.sin_lower_seven hx
   cases negative <;>
     dsimp [lowerPolynomial,profile,base,wing,gapWave,diagonalWave,southTerm,
-      beta,A,B,nu,waveCoefficient,rootSlope,CandidateWestTail.radiusBound,
+      WestMixed.beta,A,B,nu,waveCoefficient,rootSlope,CandidateWestTail.radiusBound,
       gamma,sineCoefficient,cosLower,cosUpper,sinLower,sinUpper] <;>
     nlinarith only [cv,sv,cq,sq,cr,ch,sh,cx,sx]
 
@@ -117,7 +118,7 @@ private def endpoint (upper : Bool) : ℝ := if upper then 2/5 else 0
 private lemma endpoint_margin (negative upper : Bool) (i : Fin 3) :
     (1:ℝ)/1000 < lowerPolynomial negative (vertexV i) (endpoint upper) (vertexD i) := by
   cases negative <;> cases upper <;> fin_cases i <;>
-    norm_num [lowerPolynomial,constantTerm,beta,A,B,nu,waveCoefficient,rootSlope,
+    norm_num [lowerPolynomial,constantTerm,WestMixed.beta,A,B,nu,waveCoefficient,rootSlope,
       CandidateWestTail.radiusBound,gamma,sineCoefficient,side,
       cosLower,cosUpper,sinLower,sinUpper,vertexV,vertexD,endpoint]
 
@@ -135,7 +136,14 @@ lemma boundary_positive (negative : Bool) (i : Fin 3) {x : ℝ}
     linarith
   have hd : 16/25 ≤ vertexD i ∧ vertexD i ≤ 11/14 := by
     fin_cases i <;> norm_num [vertexD]
-  exact positive_on_concave_interval (south_concave negative hd) hx (endpos false) (endpos true)
+  have h0 := endpos false
+  have h1 := endpos true
+  have he0 : endpoint false=0 := by simp [endpoint]
+  have he1 : endpoint true=2/5 := by simp [endpoint]
+  rw [he0] at h0
+  rw [he1] at h1
+  exact positive_on_concave_interval (f := fun x => profile negative (vertexV i) x (vertexD i))
+    (south_concave negative hd) hx h0 h1
 
 /-- The full scalar domain, including both signs of the cardinal angle. -/
 theorem positive (negative : Bool) {v x d : ℝ}

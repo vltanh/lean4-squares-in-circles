@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.CanonicalWestBounds
-public import SquaresInCircles.Six.Analytic.PrimaryClassification
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CanonicalWestBounds
+import SquaresInCircles.Six.Analytic.PrimaryClassification
 
 /-!
 # Canonical OWN W has negative deviation
@@ -26,7 +23,8 @@ lemma west_own_cardinal_difference (w a b cx cy : ℝ) :
     centralMargin .own (Real.pi+w) a b cx cy-
       centralMargin .west (Real.pi+w) a b cx cy=
       (1-Real.cos w)*(a-cx)+Real.sin w*(b+cy) := by
-  simp only [centralMargin,centralNormal,centerX,Real.cos_pi_add,Real.sin_pi_add]
+  rw [add_comm Real.pi w]
+  simp only [centralMargin,centralNormal,centerX,Real.cos_add_pi,Real.sin_add_pi]
   ring
 
 lemma canonical_west_transverse_lower {w a b cx cy : ℝ}
@@ -74,7 +72,7 @@ theorem canonical_west_nonnegative_impossible {w d aw bw ad bd cx cy : ℝ}
   by_cases hw0 : w=0
   · subst w
     have hdiff := west_own_cardinal_difference 0 aw bw cx cy
-    simp only [Real.cos_zero,Real.sin_zero,sub_self,zero_mul,mul_zero,add_zero] at hdiff
+    simp only [Real.cos_zero,Real.sin_zero,sub_self,zero_mul,add_zero] at hdiff hownW hcardW
     linarith
   have hwpos : 0<w := lt_of_le_of_ne hw (Ne.symm hw0)
   have hw1 : w≤4/5 := by linarith [Real.pi_lt_d2]

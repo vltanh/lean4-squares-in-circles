@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Analytic.CardinalInwardEndpoints
-public import SquaresInCircles.Six.Analytic.CardinalDestinationPrimary
-public import SquaresInCircles.Six.Analytic.OwnDestinationPrimary
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CardinalInwardEndpoints
+import SquaresInCircles.Six.Analytic.CardinalDestinationPrimary
+import SquaresInCircles.Six.Analytic.OwnDestinationPrimary
 
 /-!
 # Every actual W/D separator is a forward secondary source
@@ -42,7 +39,9 @@ private lemma cardinal_inward_frozen_nonpositive {v d aw bw ad bd cx cy : ℝ}
     (show 0≤v+d by linarith [hv.1,hd.1])
     (show v+d≤Real.pi by linarith [hv.2,hd.2,Real.pi_gt_d2])
   have hD : 1/2-ad+(1/2-cx)*Real.cos d+(1/2-cy)*Real.sin d≤0 := by
-    simp only [centralMargin,centralNormal,angularWidth,Real.cos_pi_add,Real.sin_pi_add,
+    have hcpi : Real.cos (Real.pi+d) = -Real.cos d := by rw [add_comm,Real.cos_add_pi]
+    have hspi : Real.sin (Real.pi+d) = -Real.sin d := by rw [add_comm,Real.sin_add_pi]
+    simp only [centralMargin,centralNormal,angularWidth,hcpi,hspi,
       abs_neg,abs_of_nonneg hcd,abs_of_nonneg hsd] at hCD
     nlinarith only [hCD]
   have hproj : dot (scale (-1) (normalX (orientedSquare (Real.pi-v) aw bw)))
@@ -84,9 +83,10 @@ theorem normalized_cardinalW_inward_primary_excluded {R : ℝ}
       (P.contained 2).a_le_rho0 (P.contained 3)
       ((P.contained 3).u_lt_half (P.avoidsCore 3)) P.box
     have hC := P.cardinal_separator 2 hcard
+    have hmc : matchingCardinal 2 = CentralAxis.west := rfl
     have haxial := west_cardinal_radial_lower (P.contained 2).half_le
       ((P.contained 2).u_lt_half (P.avoidsCore 2)).le
-      (by simpa only [hwphase] using hC)
+      (by simpa only [hwphase,hmc] using hC)
     have hwphase' : P.phase 2=Real.pi-(-P.helperAngle 2) := by rw [hwphase]; ring
     have hnegative := cardinal_inward_frozen_nonpositive hv ⟨hd.1.le,hd.2⟩ haxial
       (by simpa only [hdphase] using P.own_separator 3 P.diagonal_own)
@@ -104,13 +104,15 @@ theorem DW_selected_secondary {R : ℝ} (P : NormalizedPacking R) (k : Fin 8)
   have hneg3 : k≠3 := by
     intro he
     subst k
-    change 0<dot (scale (-1) (normalY (P.square 2))) (sub (fixedPin 3) (fixedPin 2)) at hp
+    change 0<dot (scale (-1) (normalY (P.square 2)))
+      (sub (Certificates.fixedPin 3) (Certificates.fixedPin 2)) at hp
     rw [dot_scale_neg] at hp
     linarith [P.DW_chord_positive_secondary.1]
   have hneg7 : k≠7 := by
     intro he
     subst k
-    change 0<dot (scale (-1) (normalY (P.square 3))) (sub (fixedPin 3) (fixedPin 2)) at hp
+    change 0<dot (scale (-1) (normalY (P.square 3)))
+      (sub (Certificates.fixedPin 3) (Certificates.fixedPin 2)) at hp
     rw [dot_scale_neg] at hp
     linarith [P.DW_chord_positive_secondary.2]
   fin_cases k

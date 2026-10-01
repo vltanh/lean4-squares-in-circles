@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.FixedPairConcavity
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FixedPairConcavity
 
 /-!
 # The exact target gap on closed sign sectors
@@ -31,11 +28,11 @@ lemma line_eq_of_HasSign {p : Bool} {x : ℝ} (hx : HasSign p x) :
     line x=lineSlope p*x := by
   cases p
   · have h : x≤0 := hx
-    simp only [line,lineSlope,if_false,max_eq_right h,
+    simp only [line,lineSlope,Bool.false_eq_true,ite_false,max_eq_right h,
       max_eq_left (neg_nonneg.mpr h),mul_zero,sub_zero]
     ring
   · have h : 0≤x := hx
-    simp only [line,lineSlope,if_true,max_eq_left h,
+    simp only [line,lineSlope,ite_true,max_eq_left h,
       max_eq_right (neg_nonpos.mpr h),mul_zero,zero_sub]
     ring
 
@@ -76,21 +73,21 @@ theorem gap_slice_concave {no wo pn pw pq : Bool} (u : Fin 4) (k : Fin 3)
     apply hc.congr
     intro x hx
     have he := gap_eq_on_sector (u := u) (hd x hx) (hs x hx)
-    simp only [sliceN,sliceW,if_true] at he ⊢
+    simp +decide only [sliceN,sliceW,ite_true,ite_false] at he ⊢
     rw [he]
     ring
   · have hc := sub_affine_concave hf (lineSlope pw) (pairBase+(sign pn/1000)*n)
     apply hc.congr
     intro x hx
     have he := gap_eq_on_sector (u := u) (hd x hx) (hs x hx)
-    simp only [sliceN,sliceW,if_true,if_false] at he ⊢
+    simp +decide only [sliceN,sliceW,ite_true,ite_false] at he ⊢
     rw [he]
     ring
   · have hc := sub_affine_concave hf (lineSlope pw+sign pn/1000) pairBase
     apply hc.congr
     intro x hx
     have he := gap_eq_on_sector (u := u) (hd x hx) (hs x hx)
-    simp only [sliceN,sliceW,if_false] at he ⊢
+    simp +decide only [sliceN,sliceW,ite_false] at he ⊢
     rw [he]
     ring
 

@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Stress.ExactSupport
-public import SquaresInCircles.Six.Stress.Reverse
-
-@[expose] public section
+import SquaresInCircles.Six.Stress.ExactSupport
+import SquaresInCircles.Six.Stress.Reverse
 
 /-!
 # Strict support and the radius step in the uploaded conclusion

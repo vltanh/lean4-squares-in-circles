@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.WestCoreBounds.Scalar
-public import SquaresInCircles.Six.Analytic.AxialConeSupport
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.WestCoreBounds.Scalar
+import SquaresInCircles.Six.Analytic.AxialConeSupport
 
 /-!
 # The two three-edge core profiles are genuine support obstructions
@@ -32,7 +29,7 @@ lemma west_support (large : Bool) {a b q : ℝ} (hc : ContainedChart a |b|)
     (hq : 1 ≤ q ∧ q ≤ Real.pi/2) :
     (beta large+Real.sin q)*a-Real.cos q*b ≤
       CandidateWestTail.rhoBound*(beta large+Real.sin q) := by
-  have hs := Real.sin_nonneg_of_nonneg_of_le_pi (by linarith [hq.1])
+  have hs := Real.sin_nonneg_of_nonneg_of_le_pi (x := q) (by linarith [hq.1])
     (by linarith [hq.2,Real.pi_pos])
   have hcq := Real.cos_nonneg_of_mem_Icc
     ⟨by linarith [hq.1,Real.pi_pos],hq.2⟩
@@ -58,8 +55,9 @@ lemma diagonal_support (large : Bool) {a b : ℝ} (hc : ContainedChart a |b|) :
       simpa only [Real.sqrt_sq (by norm_num : (0:ℝ) ≤ 61327/25000)] using h
     have hm := mul_le_mul CandidateWestTail.ceiling_bounds.1 hroot (Real.sqrt_nonneg _)
       (by norm_num [CandidateWestTail.radiusBound])
-    norm_num [delta] at h
-    dsimp [diagonalUpper,delta]
+    rw [one_pow,one_mul,abs_one,
+      abs_of_nonneg (show (0:ℝ) ≤ delta false by norm_num [delta])] at h
+    dsimp [diagonalUpper]
     linarith
   · have h := axial_cone_support hc (U := delta true) (V := 1)
       (by norm_num [delta]) (by norm_num [delta])

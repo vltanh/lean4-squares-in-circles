@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.SouthOuterTail.Profile
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SouthOuterTail.Profile
 
 /-!
 # The cardinal-W final-tail rectangles
@@ -37,7 +34,11 @@ private lemma cos_lower (x : ℝ) : cosLower x ≤ Real.cos x := by
   by_cases hx : 0 ≤ x
   · exact Seven.cos_lower_six hx
   · have h := Seven.cos_lower_six (x := -x) (by linarith)
-    simpa [cosLower,Real.cos_neg] using h
+    have h2 : (-x)^2 = x^2 := by ring
+    have h4 : (-x)^4 = x^4 := by ring
+    have h6 : (-x)^6 = x^6 := by ring
+    rw [h2,h4,h6,Real.cos_neg] at h
+    simpa [cosLower] using h
 
 private lemma sin_bracket (x : ℝ) :
     sinLower x ≤ Real.sin x ∧ Real.sin x ≤ sinUpper x := by

@@ -1,8 +1,6 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Support
-public import SquaresInCircles.Six.Analytic.OwnSouthOrdered.Geometry
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Support
+import SquaresInCircles.Six.Analytic.OwnSouthOrdered.Geometry
+import SquaresInCircles.Six.Analytic.CanonicalSouthSign
 
 /-!
 # Complete the two-OWN missing-south exclusion
@@ -38,7 +36,8 @@ theorem not_missing_south_of_order {R : ℝ} (P : NormalizedPacking R)
   have hd : 1/2 ≤ d ∧ d ≤ Real.pi/4 :=
     ⟨(normalized_diagonal_gt_half P).le,P.diagonal_angle_range.2⟩
   have hWphase : P.phase 2=Real.pi-v := by
-    rw [P.phase_from_deviation 2]
+    have h : P.phase 2=Real.pi+P.helperAngle 2 := P.phase_from_deviation 2
+    rw [h]
     dsimp [v]
     ring
   have hSphase : P.phase 4=3*Real.pi/2+s := P.phase_from_deviation 4
@@ -57,14 +56,15 @@ theorem not_missing_south_of_order {R : ℝ} (P : NormalizedPacking R)
     have h := P.own_separator 4 hS
     rw [hSphase] at h
     simp only [centralMargin,centralNormal,angularWidth,Real.cos_add,Real.sin_add,
-      south_cos,south_sin,zero_mul,one_mul,neg_one_mul,zero_add,add_zero,abs_neg] at h
+      south_cos,south_sin,zero_mul,neg_one_mul,add_zero,abs_neg,zero_sub,neg_neg] at h
     dsimp [angularWidth]
     nlinarith only [h]
   have hCD : 1/2+angularWidth d ≤
       P.radial 3+P.center.1*Real.cos d+P.center.2*Real.sin d := by
     have h := P.own_separator 3 P.diagonal_own
-    rw [hDphase] at h
-    simp only [centralMargin,centralNormal,angularWidth,Real.cos_pi_add,Real.sin_pi_add,abs_neg] at h
+    rw [hDphase,add_comm Real.pi d] at h
+    simp only [centralMargin,centralNormal,angularWidth,Real.cos_add_pi,Real.sin_add_pi,
+      abs_neg] at h
     dsimp [angularWidth]
     nlinarith only [h]
   have hWD : 1/2+angularWidth (d+v) ≤
@@ -108,7 +108,7 @@ theorem not_missing_south_of_own_south {R : ℝ} (P : NormalizedPacking R)
 lemma MissingSouthWing.south_cardinal {R : ℝ} {P : NormalizedPacking R}
     (h : MissingSouthWing P) : P.ownBits 4=false := by
   cases hS : P.ownBits 4
-  · exact hS
+  · rfl
   · exact False.elim (not_missing_south_of_own_south P hS h)
 
 end SquaresInCircles.Six.Analytic

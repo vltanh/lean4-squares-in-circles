@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.WestStressDConcavity
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.WestStressDConcavity
 
 /-!
 # The seven geometric endpoint values for D-secondary
@@ -55,9 +52,7 @@ private lemma D_root_endpoints :
   norm_num at s415 s23 s1615 s25 l25
   refine ⟨?_,west_root_bound,?_,?_,?_,?_,?_,?_⟩
   all_goals apply sqrt_upper (by norm_num)
-  all_goals first
-    | (rw [Real.sin_neg]; norm_num; linarith)
-    | (norm_num; linarith)
+  all_goals (norm_num <;> linarith)
 
 private lemma D_minorant_endpoints :
     0<D_vertex_expression (-2/3) (-2/5) (57/100) (23/50) ∧

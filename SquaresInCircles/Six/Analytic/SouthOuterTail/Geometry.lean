@@ -1,8 +1,6 @@
-module
-public import SquaresInCircles.Six.Analytic.SouthOuterTail.ScalarGeometry
-public import SquaresInCircles.Six.Analytic.ReflectedOwnWings.Geometry
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SouthOuterTail.ScalarGeometry
+import SquaresInCircles.Six.Analytic.ReflectedOwnWings.Geometry
+import SquaresInCircles.Six.Analytic.CandidateWestTail.Geometry
 
 /-!
 # The last independent analytic reduction obligation
@@ -38,7 +36,8 @@ theorem normalized_own_south_upper_tail {R : ℝ} (P : NormalizedPacking R)
   have hy : P.center.2 ≤ coreUpper :=
     P.box.2.2.trans CandidateWestTail.ceiling_bounds.2.2.2
   have hWphase : P.phase 2=Real.pi-v := by
-    rw [P.phase_from_deviation 2]
+    have h : P.phase 2=Real.pi+P.helperAngle 2 := P.phase_from_deviation 2
+    rw [h]
     dsimp [v]
     ring
   have hSphase : P.phase 4=3*Real.pi/2+s := P.phase_from_deviation 4
@@ -51,6 +50,7 @@ theorem normalized_own_south_upper_tail {R : ℝ} (P : NormalizedPacking R)
     rw [hSphase] at h
     simp only [centralMargin,centralNormal,angularWidth,Real.cos_add,Real.sin_add,
       south_cos,south_sin,zero_mul,one_mul,neg_one_mul,zero_add,add_zero,abs_neg] at h
+    simp only [zero_sub,neg_neg] at h
     dsimp [angularWidth]
     nlinarith only [h]
   have hWD : 1/2+angularWidth (d+v) ≤
@@ -107,6 +107,6 @@ theorem normalized_own_south_upper_tail {R : ℝ} (P : NormalizedPacking R)
       dsimp [angularWidth]
       nlinarith only [h]
     exact own_impossible hv hs hd (P.contained 2) (P.contained 4) (P.contained 3)
-      P.high_diagonal_profile.2.le hx hy hCW hCS hWD hDS
+      (Analytic.NormalizedPacking.high_diagonal_profile P).2.le hx hy hCW hCS hWD hDS
 
 end SquaresInCircles.Six.Analytic.SouthOuterTail

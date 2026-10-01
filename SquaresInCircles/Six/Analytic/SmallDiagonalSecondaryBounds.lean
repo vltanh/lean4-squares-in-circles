@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.TransverseProfileBounds
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.TransverseProfileBounds
 
 /-!
 # The two scalar bounds in the small-diagonal W-secondary argument
@@ -22,8 +19,8 @@ def smallDiagonalProjection (d q : ℝ) : ℝ :=
   smallDiagonalA d*Real.sin q-smallDiagonalB d*Real.cos q
 
 lemma smallDiagonal_coefficients {d : ℝ} (hd : 0≤d ∧ d≤1/2) :
-    (0≤smallDiagonalA d ∧ smallDiagonalA d≤3/5) ∧
-      (0≤smallDiagonalB d ∧ smallDiagonalB d≤4/15) := by
+    (0≤ smallDiagonalA d ∧ smallDiagonalA d≤3/5) ∧
+      (0≤ smallDiagonalB d ∧ smallDiagonalB d≤4/15) := by
   have hc0 : 0≤Real.cos d := Real.cos_nonneg_of_mem_Icc
     ⟨by linarith [hd.1,Real.pi_pos],by linarith [hd.2,Real.pi_gt_d2]⟩
   have hs0 : 0≤Real.sin d := Real.sin_nonneg_of_nonneg_of_le_pi hd.1
@@ -43,25 +40,24 @@ lemma smallDiagonal_derivative_le {d : ℝ} (hd : 0≤d ∧ d≤1/2) (q : ℝ) :
       (smallDiagonalA d)^2+(smallDiagonalB d)^2 := by
     linear_combination ((smallDiagonalA d)^2+(smallDiagonalB d)^2)*(Real.sin_sq_add_cos_sq q)
   by_contra! h
-  have hp := mul_pos (show 0<smallDiagonalA d*Real.cos q+smallDiagonalB d*Real.sin q-2/3 by linarith)
-    (show 0<smallDiagonalA d*Real.cos q+smallDiagonalB d*Real.sin q+2/3 by linarith)
+  have hp := mul_pos (show 0< smallDiagonalA d*Real.cos q+smallDiagonalB d*Real.sin q-2/3 by linarith)
+    (show 0< smallDiagonalA d*Real.cos q+smallDiagonalB d*Real.sin q+2/3 by linarith)
   nlinarith [sq_nonneg (smallDiagonalA d*Real.sin q-smallDiagonalB d*Real.cos q)]
 
 /-- Increasing the phase gap by v costs at most 2v/3. -/
 lemma smallDiagonalProjection_increment {d v : ℝ}
     (hd : 0≤d ∧ d≤1/2) (hv : 0≤v) :
-    smallDiagonalProjection d (d+v)≤smallDiagonalProjection d d+(2/3)*v := by
+    smallDiagonalProjection d (d+v)≤ smallDiagonalProjection d d+(2/3)*v := by
   let f : ℝ → ℝ := fun q => smallDiagonalProjection d q-(2/3)*q
   have hder (q : ℝ) : HasDerivAt f
       (smallDiagonalA d*Real.cos q+smallDiagonalB d*Real.sin q-2/3) q := by
-    convert (((Real.hasDerivAt_sin q).const_mul (smallDiagonalA d)).sub
-      ((Real.hasDerivAt_cos q).const_mul (smallDiagonalB d))).sub
-      ((hasDerivAt_id q).const_mul (2/3)) using 1 <;>
-      dsimp [f,smallDiagonalProjection] <;> ring
+    exact (((Real.hasDerivAt_sin q).const_mul (smallDiagonalA d)).fun_sub
+      ((Real.hasDerivAt_cos q).const_mul (smallDiagonalB d))).fun_sub
+      ((hasDerivAt_id' q).const_mul (2/3)) |>.congr_deriv (by ring)
   have hanti := Seven.antiOn_of_hasDeriv_nonpos
     (l := d) (u := d+v) (f := f)
     (d := fun q => smallDiagonalA d*Real.cos q+smallDiagonalB d*Real.sin q-2/3)
-    (by dsimp [f,smallDiagonalProjection]; fun_prop)
+    (fun q _ => (hder q).continuousAt.continuousWithinAt)
     (fun q _ => hder q)
     (fun q _ => by linarith [smallDiagonal_derivative_le hd q])
   have hh := hanti (show d∈Set.Icc d (d+v) by constructor <;> linarith)
@@ -72,7 +68,7 @@ lemma smallDiagonalProjection_increment {d v : ℝ}
 /-- Decreasing the gap within the first quadrant can only lower the bound. -/
 lemma smallDiagonalProjection_mono {d q : ℝ}
     (hd : 0≤d ∧ d≤1/2) (hq : 0≤q ∧ q≤d) :
-    smallDiagonalProjection d q≤smallDiagonalProjection d d := by
+    smallDiagonalProjection d q≤ smallDiagonalProjection d d := by
   have hs := Real.sin_le_sin_of_le_of_le_pi_div_two
     (show -(Real.pi/2)≤q by linarith [hq.1,Real.pi_pos])
     (show d≤Real.pi/2 by linarith [hd.2,Real.pi_gt_d2]) hq.2
@@ -95,7 +91,7 @@ private def secondaryChordFactor (d : ℝ) : ℝ :=
 private lemma secondaryPolynomial_negative {d : ℝ} (hd : 0≤d ∧ d≤1/2) :
     secondaryPolynomial d<0 := by
   have hsq := mul_nonneg (sub_nonneg.mpr hd.2) (show 0≤1/2+d by linarith [hd.1])
-  have hfactor : 0≤secondaryChordFactor d := by
+  have hfactor : 0≤ secondaryChordFactor d := by
     dsimp [secondaryChordFactor]
     nlinarith [pow_nonneg hd.1 3,pow_nonneg hd.1 4,hd.2]
   have hp := mul_nonneg (mul_nonneg hd.1 (show 0≤1/2-d by linarith [hd.2])) hfactor
@@ -116,7 +112,7 @@ lemma smallDiagonalProjection_at_diagonal {d : ℝ} (hd : 0≤d ∧ d≤1/2) :
   have hcos := Real.one_sub_sq_div_two_le_cos (x := d)
   have hB : 0≤3/100+(9/20)*d := by linarith [hd.1]
   have hcosMul := mul_le_mul_of_nonneg_left hcos hB
-  have hupper : smallDiagonalProjection d d-3/100≤secondaryPolynomial d := by
+  have hupper : smallDiagonalProjection d d-3/100≤ secondaryPolynomial d := by
     dsimp [smallDiagonalProjection,smallDiagonalA,smallDiagonalB,secondaryPolynomial]
     nlinarith only [hdouble,hcosSq,hunit,hcosMul]
   linarith [secondaryPolynomial_negative hd]
@@ -152,6 +148,7 @@ lemma unconstrained_gap_gt_nine_tenths {l q : ℝ}
 /-- The two endpoints are those of the whole unconstrained branch interval. -/
 lemma unconstrained_secondary_reserve {q : ℝ} (hq : 9/10≤q ∧ q≤7/6) :
     5977/3000<(2/3)*q+Real.sin q+Real.cos q := by
+  rw [show (2/3:ℝ)*q+Real.sin q+Real.cos q=2/3*q+1*Real.sin q+1*Real.cos q by ring]
   apply Seven.trig_concave_gt (α := (2:ℝ)/3) (A := 1) (B := 1)
     (by norm_num) (by norm_num) (by norm_num)
     (by linarith [Real.pi_gt_d2]) hq

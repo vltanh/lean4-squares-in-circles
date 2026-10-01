@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.MarkerLifts
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.MarkerLifts
 
 /-!
 # The north half of the small-secondary-center forbidden arc
@@ -39,7 +36,7 @@ lemma north_small_own {a b t x y : ℝ} (h : ContainedChart a |b|)
     have htv : 0 ≤ -t := by linarith
     have htv1 : -t ≤ Real.pi/4 := by have hh := abs_le.mp ht; linarith [hh.1]
     have hsin := sin_nonneg_octant htv htv1
-    have hs0 := sin_nonpos_octant htneg.le (abs_le.mp ht).1
+    have hs0 := sin_nonpos_octant htneg.le (by linarith [(abs_le.mp ht).1])
     have hx61 : 61/100 ≤ x+1/2 := by dsimp [c0] at hx; linarith [rho0_lower]
     have hxmul := mul_le_mul_of_nonneg_right hx61 hsin
     have hymul := mul_nonneg hy0 hc0
@@ -74,7 +71,7 @@ lemma north_small_cap {a b t y : ℝ} (h : ContainedChart a |b|)
     have htv1 : -t < 1/4 := by simpa only [abs_of_neg htneg] using htq
     by_cases hb : b < 0
     · have hc0 : 0 ≤ Real.cos t := by linarith [(octant_trig ht).1.1]
-      have hs0 := sin_nonpos_octant htneg.le (abs_le.mp ht).1
+      have hs0 := sin_nonpos_octant htneg.le (by linarith [(abs_le.mp ht).1])
       have hmul := mul_nonneg (show 0 ≤ a-1/2 by linarith)
         (show 0 ≤ 1-Real.cos t by linarith [Real.cos_le_one t])
       have hrad : 1+(|b|+1/2)*Real.sin (-t) ≤ a := by

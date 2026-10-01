@@ -1,10 +1,7 @@
-module
-public import SquaresInCircles.Six.Analytic.RadicalTrigConcavity
-public import SquaresInCircles.Six.Normalization.CapBounds
-public import SquaresInCircles.Six.Normalization.SecondarySeparation
-public import SquaresInCircles.Seven.Analysis
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.RadicalTrigConcavity
+import SquaresInCircles.Six.Normalization.CapBounds
+import SquaresInCircles.Six.Normalization.SecondarySeparation
+import SquaresInCircles.Seven.Analysis
 
 /-!
 # One analytic stress for the cardinal/cardinal mixed west-wing case
@@ -99,8 +96,14 @@ lemma diagonalTerm_concave :
         have hp := mul_pos (sub_pos.mpr h)
           (show 0 < R0*Real.sqrt (18-18*Real.sin x)+12*Real.cos x by linarith)
         nlinarith
-      simpa using hbound
-  simpa [radicalTrig,diagonalTerm] using hh
+      have e : (18:ℝ) + -18*Real.sin x = 18-18*Real.sin x := by ring
+      rw [e]
+      linarith [hbound]
+  apply concave_congr_on hh
+  intro x _
+  have e : (18:ℝ) + -18*Real.sin x = 18-18*Real.sin x := by ring
+  simp only [radicalTrig,diagonalTerm,e]
+  ring
 
 private lemma south_radical_concave {B l u : ℝ}
     (hl : -(2/5) ≤ l) (hu : u ≤ 2/5)
@@ -117,7 +120,9 @@ private lemma south_radical_concave {B l u : ℝ}
     have hprod := mul_le_mul_of_nonneg_left hroot R0_nonneg
     have hc := cos_small ⟨hl.trans hx.1,hx.2.trans hu⟩
     have hb := hB x hx
-    nlinarith [R0_lt_1689_1000]
+    have e : (25:ℝ) + -24*Real.sin x = 25-24*Real.sin x := by ring
+    rw [e]
+    linarith [R0_lt_1689_1000]
 
 lemma southTerm_negative_concave :
     ConcaveOn ℝ (Set.Icc (-(2/5)) 0) southTerm := by
@@ -176,9 +181,15 @@ lemma gap_diagonal_concave {w s : ℝ}
     (hw : -(2/5) ≤ w ∧ w ≤ 0) (hs : -(2/5) ≤ s ∧ s ≤ 2/5) :
     ConcaveOn ℝ (Set.Icc (1/2) (Real.pi/4)) (fun d => gap w s d) := by
   have hd := concave_affine_argument (a := 1) (b := -s) diagonalTerm_concave
-    (fun d hd => by simpa only [one_mul,sub_eq_add_neg] using offset_range hd hs)
-  exact ((concave_constant (9-6*c0+2*Real.cos w+southTerm s) (1/2) (Real.pi/4)).add hd).add
+    (fun d hd => by
+      obtain ⟨h1,h2⟩ := offset_range hd hs
+      exact ⟨by linarith,by linarith⟩)
+  have h := ((concave_constant (9-6*c0+2*Real.cos w+southTerm s) (1/2) (Real.pi/4)).add hd).add
     (westTerm_diagonal_concave hw)
+  apply concave_congr_on h
+  intro d _
+  have e : 1*d+-s = d-s := by ring
+  simp only [Pi.add_apply,gap,e]
 
 lemma gap_west_concave {s d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ Real.pi/4) :
     ConcaveOn ℝ (Set.Icc (-(2/5)) 0) (fun w => gap w s d) := by
@@ -213,7 +224,7 @@ lemma gap_south_concave {w d l u : ℝ}
   have hh := concave_affine_argument (a := -1) (b := d) diagonalTerm_concave
     (fun s hs => by
       have hm := offset_range hd ⟨hl.trans hs.1,hs.2.trans hu⟩
-      convert hm using 1 <;> ring)
+      exact ⟨by linarith [hm.1],by linarith [hm.2]⟩)
   let K := 9-6*c0+2*Real.cos w+westTerm w d
   have h := (hs.add hh).add (concave_constant K l u)
   apply concave_congr_on h

@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnWestCardinalSouth.Profile
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnWestCardinalSouth.Profile
 
 /-!
 # Four exact corners for the last missing-south scalar
@@ -67,10 +64,12 @@ theorem positive (upper : Bool) {v d : ℝ}
     (hv : 0 ≤ v ∧ v ≤ 2/3) (hd : 1/2 ≤ d ∧ d ≤ 11/14) :
     0 < profile upper v d := by
   have hl : 0 < profile upper v (1/2) :=
-    positive_on_concave_interval (profile_west_concave upper (d := 1/2) (by norm_num)) hv
+    positive_on_concave_interval (f := fun w => profile upper w (1/2)) (x := v)
+      (profile_west_concave upper (d := 1/2) (by norm_num)) hv
       (endpoint_positive upper false false) (endpoint_positive upper true false)
   have hu : 0 < profile upper v (11/14) :=
-    positive_on_concave_interval (profile_west_concave upper (d := 11/14) (by norm_num)) hv
+    positive_on_concave_interval (f := fun w => profile upper w (11/14)) (x := v)
+      (profile_west_concave upper (d := 11/14) (by norm_num)) hv
       (endpoint_positive upper false true) (endpoint_positive upper true true)
   exact positive_on_concave_interval (profile_diagonal_concave upper hv) hd hl hu
 

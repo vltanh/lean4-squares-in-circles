@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Construction
-public import SquaresInCircles.Six.Normalization.PinReflection
-public import SquaresInCircles.Six.CongruenceTools
-
-@[expose] public section
+import SquaresInCircles.Six.Construction
+import SquaresInCircles.Six.Normalization.PinReflection
+import SquaresInCircles.Six.CongruenceTools
 
 /-!
 # Reflection bookkeeping for the equality endpoint
@@ -24,11 +21,7 @@ def candidateMirror : Equiv.Perm (Fin 6) where
   left_inv i := by fin_cases i <;> rfl
   right_inv i := by fin_cases i <;> rfl
 
-lemma diagonalSquare_reflection : reflectDiagonalSquare diagonalSquare = diagonalSquare := by
-  apply UnitSquare.ext
-  · rfl
-  · rfl
-  · rfl
+lemma diagonalSquare_reflection : reflectDiagonalSquare diagonalSquare = diagonalSquare := rfl
 
 /-- The reflected candidate has the same actual open-square point sets. -/
 lemma candidate_reflection_open (i : Fin 6) (p : Point) :

@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.CoupledOwnRadialBound
-public import SquaresInCircles.Six.Analytic.SouthSecondaryChoice
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CoupledOwnRadialBound
+import SquaresInCircles.Six.Analytic.SouthSecondaryChoice
 
 /-!
 # Every normalized packing admits a forward secondary D/S source

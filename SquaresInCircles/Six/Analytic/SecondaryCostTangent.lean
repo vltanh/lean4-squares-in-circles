@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.HalfAngleControl
-public import SquaresInCircles.Six.Normalization.CapBounds
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.HalfAngleControl
+import SquaresInCircles.Six.Normalization.CapBounds
 
 /-!
 # A uniform affine lower bound for the equal-weight secondary cap cost
@@ -41,7 +38,7 @@ private def tangentB : ℝ := -Real.sin (13/10)/2-(613/1000)*Real.cos (13/10)
 
 private lemma secondary_tangent_constants :
     tangentA≤-9/20 ∧ -33/50≤tangentB ∧ tangentB≤0 ∧
-      |13/20+tangentB|≤1/200 ∧ 1/500≤secondaryCapLine (13/10) := by
+      |13/20+tangentB|≤1/200 ∧ 1/500≤ secondaryCapLine (13/10) := by
   have hcl := Seven.cos_lower_six (x := (13:ℝ)/10) (by norm_num)
   have hcu := Seven.cos_upper_four (x := (13:ℝ)/10) (by norm_num)
   have hsl := Seven.sin_lower_seven (x := (13:ℝ)/10) (by norm_num)
@@ -65,7 +62,7 @@ lemma secondary_cap_line_expansion (h : ℝ) :
 
 /-- A completed-square certificate for the entire cap-side interval. -/
 theorem secondary_cap_line_positive {q : ℝ} (hq : 1≤q ∧ q≤Real.pi/2) :
-    0<secondaryCapLine q := by
+    0< secondaryCapLine q := by
   let h := q-13/10
   have hh : |h|≤1/2 := by
     apply abs_le.mpr

@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.LowerBound
-public import SquaresInCircles.Six.Equality.AnalyticReconstruction
-public import SquaresInCircles.Common.Optimum
-
-@[expose] public section
+import SquaresInCircles.Six.LowerBound
+import SquaresInCircles.Six.Equality.AnalyticReconstruction
+import SquaresInCircles.Common.Optimum
 
 /-!
 # The unrestricted six-square equality theorem
@@ -43,11 +40,15 @@ theorem model_reaches : ∃ (i : Fin 6) (p : Point),
   refine ⟨2,(sStar+3/2,sStar+1/2),?_,?_⟩
   · change closedSquare (axisSquare (sStar+1,sStar)) (sStar+3/2,sStar+1/2)
     constructor
-    · change |(sStar+3/2)-(sStar+1)|≤1/2
-      rw [show (sStar+3/2)-(sStar+1)=(1:ℝ)/2 by ring]
+    · have e : localX (axisSquare (sStar+1,sStar)) (sStar+3/2,sStar+1/2)=1/2 := by
+        dsimp [localX,axisSquare]
+        ring
+      rw [e]
       norm_num
-    · change |(sStar+1/2)-sStar|≤1/2
-      rw [show (sStar+1/2)-sStar=(1:ℝ)/2 by ring]
+    · have e : localY (axisSquare (sStar+1,sStar)) (sStar+3/2,sStar+1/2)=1/2 := by
+        dsimp [localY,axisSquare]
+        ring
+      rw [e]
       norm_num
   · dsimp [normSq]
     nlinarith [radius_sq,east_radius_identity]

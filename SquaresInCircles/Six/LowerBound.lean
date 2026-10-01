@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.CompleteReduction
-public import SquaresInCircles.Six.Goals
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CompleteReduction
+import SquaresInCircles.Six.Goals
 
 /-!
 # The unrestricted six-square radius lower bound

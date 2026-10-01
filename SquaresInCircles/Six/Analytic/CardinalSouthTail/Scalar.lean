@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.MixedCardinalSouth.Scalar
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.MixedCardinalSouth.Scalar
 
 /-!
 # A whole-domain obstruction for the large positive south tail
@@ -39,7 +36,7 @@ def profile (negative : Bool) (v s d : ℝ) : ℝ :=
 lemma v_bounds {negative : Bool} {v : ℝ}
     (hv : vLower negative ≤ v ∧ v ≤ vUpper negative) :
     -(2/5) ≤ v ∧ v ≤ 2/5 := by
-  cases negative <;> simp only [vLower,vUpper,if_true,if_false] at hv <;>
+  cases negative <;> simp only [vLower,vUpper,Bool.false_eq_true,ite_true,ite_false] at hv <;>
     constructor <;> linarith [hv.1,hv.2]
 
 private lemma q_bounds {v d : ℝ}
@@ -51,12 +48,12 @@ private lemma coefficient_sine_lower {negative : Bool} {v : ℝ}
     (hv : vLower negative ≤ v ∧ v ≤ vUpper negative) :
     -(67/3125) ≤ coefficient negative*Real.sin v := by
   cases negative
-  · simp only [vLower,vUpper,if_false] at hv
+  · simp only [vLower,vUpper,Bool.false_eq_true,ite_false] at hv
     have hs := Real.sin_nonneg_of_nonneg_of_le_pi hv.1
       (by linarith [hv.2,Real.pi_gt_d2])
     dsimp [coefficient]
     linarith
-  · simp only [vLower,vUpper,if_true] at hv
+  · simp only [vLower,vUpper,ite_true] at hv
     have hs := Real.sin_le (show 0 ≤ -v by linarith [hv.2])
     rw [Real.sin_neg] at hs
     dsimp [coefficient]
@@ -99,14 +96,20 @@ lemma profile_at_upper_diagonal {negative : Bool} {v s d : ℝ}
   have hf (x : ℝ) : HasDerivAt (profile negative v s) (D x) x := by
     let K := -263/40+(387/100)*Real.cos s+5*Real.sin s+
       4*Real.cos v+coefficient negative*Real.sin v
-    convert (((((((hasDerivAt_id x).add_const v).sin).const_mul 3).sub
-      (((((hasDerivAt_id x).add_const v).div_const 2).sin).const_mul (5067/500))).sub
-      ((((hasDerivAt_id x).sub_const s).cos).const_mul (1839/1000))).add
-      ((((hasDerivAt_id x).sub_const s).sin).const_mul (3/2))).const_add K using 1 <;>
-      dsimp [profile,D,K] <;> ring
+    have h := (((((((hasDerivAt_id' x).add_const v).sin).const_mul 3).fun_sub
+      (((((hasDerivAt_id' x).add_const v).div_const 2).sin).const_mul (5067/500))).fun_sub
+      ((((hasDerivAt_id' x).sub_const s).cos).const_mul (1839/1000))).fun_add
+      ((((hasDerivAt_id' x).sub_const s).sin).const_mul (3/2))).const_add K
+    convert h using 1
+    · funext y
+      simp only [profile,K]
+      ring
+    · simp only [D]
+      ring
   have hmono : MonotoneOn (fun x => -profile negative v s x) (Set.Icc (1/2) (11/14)) := by
-    apply Seven.monoOn_of_hasDeriv_nonneg (by dsimp [profile]; fun_prop)
-      (fun x _ => (hf x).neg)
+    apply Seven.monoOn_of_hasDeriv_nonneg
+      (fun x _ => (hf x).fun_neg.continuousAt.continuousWithinAt)
+      (fun x _ => (hf x).fun_neg)
     intro x hx
     exact neg_nonneg.mpr (diagonal_derivative_nonpositive hv hs ⟨hx.1.le,hx.2.le⟩)
   have h := hmono hd (by norm_num : (11:ℝ)/14 ∈ Set.Icc (1/2) (11/14)) hd.2
@@ -123,20 +126,25 @@ lemma profile_v_concave (negative : Bool) {s d : ℝ}
   have hf (v : ℝ) : HasDerivAt (fun x => profile negative x s d) (f' v) v := by
     let K := -263/40+(387/100)*Real.cos s+5*Real.sin s-
       (1839/1000)*Real.cos (d-s)+(3/2)*Real.sin (d-s)
-    convert (((((Real.hasDerivAt_cos v).const_mul 4).add
-      ((Real.hasDerivAt_sin v).const_mul (coefficient negative))).add
-      ((((hasDerivAt_id v).const_add d).sin).const_mul 3)).sub
-      (((((hasDerivAt_id v).const_add d).div_const 2).sin).const_mul (5067/500))).const_add K
-      using 1 <;> dsimp [profile,f',K] <;> ring
+    have h := (((((Real.hasDerivAt_cos v).const_mul 4).fun_add
+      ((Real.hasDerivAt_sin v).const_mul (coefficient negative))).fun_add
+      ((((hasDerivAt_id' v).const_add d).sin).const_mul 3)).fun_sub
+      (((((hasDerivAt_id' v).const_add d).div_const 2).sin).const_mul (5067/500))).const_add K
+    convert h using 1
+    · funext y
+      simp only [profile,K]
+      ring
+    · simp only [f']
+      ring
   have hff (v : ℝ) : HasDerivAt f' (f'' v) v := by
-    convert ((((Real.hasDerivAt_sin v).const_mul (-4)).add
-      ((Real.hasDerivAt_cos v).const_mul (coefficient negative))).add
-      ((((hasDerivAt_id v).const_add d).cos).const_mul 3)).sub
-      (((((hasDerivAt_id v).const_add d).div_const 2).cos).const_mul (5067/1000))
-      using 1 <;> dsimp [f',f''] <;> ring
+    exact (((((Real.hasDerivAt_sin v).const_mul (-4)).fun_add
+      ((Real.hasDerivAt_cos v).const_mul (coefficient negative))).fun_add
+      ((((hasDerivAt_id' v).const_add d).cos).const_mul 3)).fun_sub
+      (((((hasDerivAt_id' v).const_add d).div_const 2).cos).const_mul (5067/1000))).congr_deriv
+      (by simp only [f'']; ring)
   apply concaveOn_of_hasDerivWithinAt2_nonpos
     (convex_Icc (vLower negative) (vUpper negative))
-    (f' := f') (f'' := f'') (by dsimp [profile]; fun_prop)
+    (f' := f') (f'' := f'') (fun x _ => (hf x).continuousAt.continuousWithinAt)
   · intro v _
     exact (hf v).hasDerivWithinAt
   · intro v _
@@ -189,14 +197,19 @@ private lemma cos_lower (x : ℝ) : cosLower x ≤ Real.cos x := by
   by_cases hx : 0 ≤ x
   · exact Seven.cos_lower_six hx
   · have h := Seven.cos_lower_six (x := -x) (by linarith)
-    simpa [cosLower,Real.cos_neg] using h
+    rw [Real.cos_neg] at h
+    have e : cosLower x = 1-(-x)^2/2+(-x)^4/24-(-x)^6/720 := by
+      simp only [cosLower]
+      ring
+    rw [e]
+    exact h
 
 private lemma sin_lower (x : ℝ) : sinLower x ≤ Real.sin x := by
   by_cases hx : 0 ≤ x
   · simpa [sinLower,hx] using Seven.sin_lower_seven hx
   · have h := Seven.sin_upper_five (x := -x) (by linarith)
     rw [Real.sin_neg] at h
-    simp only [sinLower,if_neg hx,sinFive]
+    simp only [sinLower,hx,ite_false,sinFive]
     nlinarith only [h]
 
 private def endpointPolynomial (negative : Bool) (v s : ℝ) : ℝ :=

@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.CardinalSouthTail.Support
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CardinalSouthTail.Support
 
 /-!
 # The asymmetric chord in the ordered two-OWN south argument
@@ -80,6 +77,7 @@ private lemma root_error_positive {t : ℝ} (ht : 95/384 ≤ t ∧ t ≤ 3/5) :
     · simpa using mul_pos (sub_pos.mpr hlu) hu
   by_contra! h
   have hn := mul_nonpos_of_nonneg_of_nonpos (sub_nonneg.mpr hlu.le) h
+  clear_value l u
   linarith
 
 lemma chord_norm_sq (q : ℝ) :
@@ -106,20 +104,26 @@ lemma chord_norm_upper {q : ℝ} (hq : 1/2 ≤ q ∧ q ≤ 443/350) :
     (show 0 ≤ ((109/100)*Real.sin q)^2+((109/100)*Real.cos q-1)^2 by positivity)
   have hn := Real.sqrt_nonneg
     (((109/100)*Real.sin q)^2+((109/100)*Real.cos q-1)^2)
-  rw [chord_norm_sq] at hs
+  rw [chord_norm_sq] at hs hn ⊢
   dsimp [rootError] at herr
   nlinarith only [herr,hs,hn,hnonneg]
 
 lemma chord_hasDeriv (q : ℝ) : HasDerivAt chord (chordDerivative q) q := by
   convert ((Real.hasDerivAt_sin q).const_mul (109/100)).sub
-    ((((hasDerivAt_id q).div_const 2).sin).const_mul chordCoefficient) using 1 <;>
-    dsimp [chord,chordDerivative] <;> ring
+    ((((hasDerivAt_id q).div_const 2).sin).const_mul chordCoefficient) using 1
+  · funext y
+    simp only [chord,Pi.sub_apply,id]
+  · simp only [chordDerivative,id]
+    ring
 
 lemma chord_derivative_hasDeriv (q : ℝ) :
     HasDerivAt chordDerivative (chordSecond q) q := by
   convert ((Real.hasDerivAt_cos q).const_mul (109/100)).sub
-    ((((hasDerivAt_id q).div_const 2).cos).const_mul (chordCoefficient/2)) using 1 <;>
-    dsimp [chordDerivative,chordSecond] <;> ring
+    ((((hasDerivAt_id q).div_const 2).cos).const_mul (chordCoefficient/2)) using 1
+  · funext y
+    simp only [chordDerivative,Pi.sub_apply,id]
+  · simp only [chordSecond,id]
+    ring
 
 lemma chord_second_nonpositive {q : ℝ} (hq : 1/2 ≤ q ∧ q ≤ 4/3) :
     chordSecond q ≤ 0 := by
@@ -142,16 +146,18 @@ lemma chord_second_nonpositive {q : ℝ} (hq : 1/2 ≤ q ∧ q ≤ 4/3) :
 
 lemma chord_concave : ConcaveOn ℝ (Set.Icc (1/2) (4/3)) chord := by
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc (1/2) (4/3))
-    (f' := chordDerivative) (f'' := chordSecond) (by dsimp [chord]; fun_prop)
+    (f := chord) (f' := chordDerivative) (f'' := chordSecond)
+    (fun q _ => (chord_hasDeriv q).continuousAt.continuousWithinAt)
   · intro q _; exact (chord_hasDeriv q).hasDerivWithinAt
   · intro q _; exact (chord_derivative_hasDeriv q).hasDerivWithinAt
   · intro q hq
-    exact chord_second_nonpositive (interior_subset hq)
+    exact chord_second_nonpositive (Set.mem_Icc.mp (interior_subset hq))
 
 lemma chord_derivative_antitone :
     AntitoneOn chordDerivative (Set.Icc (1/2) (4/3)) := by
   have hm : MonotoneOn (fun q => -chordDerivative q) (Set.Icc (1/2) (4/3)) := by
-    apply Seven.monoOn_of_hasDeriv_nonneg (by dsimp [chordDerivative]; fun_prop)
+    apply Seven.monoOn_of_hasDeriv_nonneg (f := fun q => -chordDerivative q)
+      (fun q _ => (chord_derivative_hasDeriv q).neg.continuousAt.continuousWithinAt)
       (fun q _ => (chord_derivative_hasDeriv q).neg)
     intro q hq
     exact neg_nonneg.mpr (chord_second_nonpositive ⟨hq.1.le,hq.2.le⟩)

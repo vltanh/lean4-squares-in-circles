@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Stress.VertexEnvelope
-public import SquaresInCircles.Six.Stress.SupportFormula
-public import SquaresInCircles.Six.Normalization.CapSupport
-
-@[expose] public section
+import SquaresInCircles.Six.Stress.VertexEnvelope
+import SquaresInCircles.Six.Stress.SupportFormula
+import SquaresInCircles.Six.Normalization.CapSupport
 
 /-!
 # Exact analytic reduction of the diagonal contribution
@@ -35,7 +32,7 @@ def diagonalVertex (w s d : ℝ) : ℝ :=
     (Real.cos b-Real.sin b)*|Real.sin z|/2-Six.radius*(Real.cos b-Real.sin b))
 
 def DiagonalDomain (w s d : ℝ) : Prop :=
-  (-11/25≤w ∧ w≤2/5) ∧ (-2/5≤s ∧ s≤11/25) ∧ (1/2≤d ∧ d≤Real.pi/4)
+  (-11/25≤w ∧ w≤2/5) ∧ (-2/5≤ s ∧ s≤11/25) ∧ (1/2≤d ∧ d≤Real.pi/4)
 
 lemma diagonalK_pos : 0<diagonalK := by
   dsimp [diagonalK]
@@ -68,7 +65,7 @@ lemma diagonal_trig_signs {w s d : ℝ} (h : DiagonalDomain w s d) :
     0<Real.cos (diagonalDelta w s d) ∧
     |Real.sin (diagonalDelta w s d)|≤Real.cos (diagonalDelta w s d) := by
   have hp := diagonal_parameters h
-  have hb : |diagonalBeta w s|≤11/25 := abs_le.mpr ⟨hp.1.1,by linarith [hp.1.2]⟩
+  have hb : |diagonalBeta w s|≤11/25 := abs_le.mpr ⟨by linarith [hp.1.1],by linarith [hp.1.2]⟩
   have hcb := cos_lower_from_abs (by norm_num : (0:ℝ)≤11/25) hb
   have hsb := (abs_sin_le_abs_value (diagonalBeta w s)).trans hb
   have hcd := cos_lower_from_abs (by norm_num : (0:ℝ)≤71/100) hp.2.1
@@ -146,7 +143,9 @@ theorem diagonal_value_formula {w s d : ℝ} (h : DiagonalDomain w s d) :
     exact abs_of_pos (mul_pos hL hsign.2.1)
   have hy : |(diagonalLocalForce w s d).2|=L*|Real.sin z| := by
     rw [diagonal_force_formula]
-    change |-(L*Real.sin z)|=L*|Real.sin z|
+    dsimp only
+    rw [show -diagonalK*(Real.cos (diagonalBeta w s)-Real.sin (diagonalBeta w s))*
+        Real.sin (diagonalDelta w s d)=-(L*Real.sin z) by dsimp [L,b,z]; ring]
     rw [abs_neg,abs_mul,abs_of_pos hL]
   have horder : |(diagonalLocalForce w s d).2|≤|(diagonalLocalForce w s d).1| := by
     rw [hx,hy]
@@ -154,18 +153,21 @@ theorem diagonal_value_formula {w s d : ℝ} (h : DiagonalDomain w s d) :
   have hswitch : 2*Six.radius*(L*|Real.sin z|)≤L ↔ 2*Six.radius*|Real.sin z|≤1 := by
     calc
       (2*Six.radius*(L*|Real.sin z|)≤L) ↔ (L*(2*Six.radius*|Real.sin z|)≤L*1) := by ring_nf
-      _ ↔ 2*Six.radius*|Real.sin z|≤1 := mul_le_mul_left hL
+      _ ↔ 2*Six.radius*|Real.sin z|≤1 := mul_le_mul_iff_right₀ hL
   rw [diagonalValue,diagonal_threshold_formula h,scalarSupport_max_min,
     min_eq_right horder,max_eq_left horder,diagonal_force_length h,hx,hy]
   change diagonalK*Real.cos b*Real.cos z-
     (if 2*Six.radius*(L*|Real.sin z|)≤L then rhoAt Six.radius*(L*Real.cos z)
      else Six.radius*L-(L*Real.cos z+L*|Real.sin z|)/2)=_
-  rw [hswitch]
   by_cases hb : 2*Six.radius*|Real.sin z|≤1
-  · rw [if_pos hb,if_pos hb]
+  · have hb' : 2*Six.radius*(L*|Real.sin z|)≤L := hswitch.mpr hb
+    have hb'' : 2*Six.radius*|Real.sin (diagonalDelta w s d)|≤1 := hb
+    rw [if_pos hb',if_pos hb'']
     dsimp [diagonalCap,L,b,z,rhoStar]
     ring
-  · rw [if_neg hb,if_neg hb]
+  · have hb' : ¬2*Six.radius*(L*|Real.sin z|)≤L := fun h => hb (hswitch.mp h)
+    have hb'' : ¬2*Six.radius*|Real.sin (diagonalDelta w s d)|≤1 := hb
+    rw [if_neg hb',if_neg hb'']
     dsimp [diagonalVertex,L,b,z]
     ring
 

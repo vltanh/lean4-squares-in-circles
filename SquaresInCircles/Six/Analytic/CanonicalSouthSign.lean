@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Analytic.SecondaryReduction
-public import SquaresInCircles.Six.Analytic.OwnWingProfileSharpening
-public import SquaresInCircles.Six.Analytic.HighDiagonalAffineTransverse
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SecondaryReduction
+import SquaresInCircles.Six.Analytic.OwnWingProfileSharpening
+import SquaresInCircles.Six.Analytic.HighDiagonalAffineTransverse
 
 /-!
 # Canonical OWN S has positive deviation
@@ -81,17 +78,23 @@ private lemma southDefect_antitone_d {v : ℝ} (hv : 0 ≤ v ∧ v ≤ 5/8) :
     ((527/10000)*(1+2*transverseLimit d)+transverseLimit d-1/2)*Real.cos (d+v)-
       (radialLimit d-1/2+17/100)*Real.sin (d+v)
   have hU (d : ℝ) : HasDerivAt transverseLimit (-(17/100)) d := by
-    convert (hasDerivAt_const d (31/100)).sub ((hasDerivAt_id d).const_mul (17/100)) using 1 <;>
-      dsimp [transverseLimit] <;> ring
+    have h := ((hasDerivAt_id' d).const_mul (17/100 : ℝ)).const_sub (31/100 : ℝ)
+    simp only [mul_one] at h
+    exact h
   have hA (d : ℝ) : HasDerivAt radialLimit ((527/10000)*(1+2*transverseLimit d)) d := by
-    convert (hasDerivAt_const d rho0).sub (((hU d).add ((hU d).pow 2)).const_mul (31/100)) using 1 <;>
-      dsimp [radialLimit] <;> ring
+    have h := (((hU d).fun_add ((hU d).fun_pow 2)).const_mul (31/100 : ℝ)).const_sub rho0
+    refine h.congr_deriv ?_
+    norm_num
+    ring
   have hf (d : ℝ) : HasDerivAt (fun x => southDefect x v) (derivF d) d := by
-    have ht := (hasDerivAt_id d).add_const v
-    convert ((((hA d).sub_const (1/2)).mul ht.cos).const_add
-      (c0+rho0*halfRatio v-1/2)).add (((hU d).sub_const (1/2)).mul ht.sin) using 1 <;>
-      dsimp [southDefect,derivF] <;> ring
-  apply Seven.antiOn_of_hasDeriv_nonpos (by dsimp [southDefect,radialLimit,transverseLimit]; fun_prop)
+    have ht : HasDerivAt (fun x => x + v) 1 d := (hasDerivAt_id' d).add_const v
+    have h1 := ((hA d).sub_const (1/2)).fun_mul ht.cos
+    have h2 := ((hU d).sub_const (1/2)).fun_mul ht.sin
+    have h := (h1.const_add (c0+rho0*halfRatio v-1/2)).fun_add h2
+    refine h.congr_deriv ?_
+    simp only [derivF]
+    ring
+  apply Seven.antiOn_of_hasDeriv_nonpos (fun x _ => (hf x).continuousAt.continuousWithinAt)
     (fun d _ => hf d)
   intro d hd
   obtain ⟨hu0,hu,ha⟩ := limit_bounds ⟨hd.1.le,hd.2.le⟩
@@ -139,8 +142,8 @@ private lemma southDefect_left_negative {v : ℝ} (hv : 0 ≤ v ∧ v ≤ 5/8) :
     nlinarith only [hc,hAs,hT,hTv,htrig]
   have hcv := Seven.cos_upper_four hv.1
   have hsv := Real.sin_ge_sub_cube hv.1
-  have hv2 : v^2 ≤ 25/64 := by nlinarith [mul_nonneg (sub_nonneg.mpr hv.2)
-    (show 0 ≤ (5:ℝ)/8+v by linarith [hv.1])]
+  have hv2 : v^2 ≤ 25/64 := by
+    nlinarith [mul_nonneg (sub_nonneg.mpr hv.2) (show 0 ≤ (5:ℝ)/8+v by linarith [hv.1])]
   have hv3 := mul_le_mul hv.2 hv2 (sq_nonneg v) (by norm_num : (0:ℝ) ≤ 5/8)
   have hv4 := mul_le_mul hv2 hv2 (sq_nonneg v) (by norm_num : (0:ℝ) ≤ 25/64)
   have hcomplete := sq_nonneg ((83/500)*v-2383/40000)
@@ -160,12 +163,12 @@ private lemma canonical_south_upper {v a b cx cy : ℝ}
     b < cx+halfRatio v*(a-cy) := by
   have ho : 0 ≤ centralMargin .own (Real.pi+v) a (-b) cy cx := by
     have h := south_own_as_west (-v) a b cx cy
-    simp only [sub_neg_eq_add,add_neg_eq_sub] at h
+    simp only [sub_neg_eq_add,← sub_eq_add_neg] at h
     rw [h]
     exact hown
   have hc : centralMargin .west (Real.pi+v) a (-b) cy cx < 0 := by
     have h := south_cardinal_as_west (-v) a b cx cy
-    simp only [sub_neg_eq_add,add_neg_eq_sub] at h
+    simp only [sub_neg_eq_add,← sub_eq_add_neg] at h
     rw [h]
     exact hcard
   have h := canonical_west_transverse_lower ⟨hv.1,by linarith [hv.2]⟩ ho hc
@@ -238,9 +241,10 @@ theorem canonical_own_south_positive {R : ℝ} (P : NormalizedPacking R)
     P.center.1 P.center.2 < 0 at hcard
   have hS := P.own_separator 4 hown
   have hSphase := P.phase_from_deviation 4
+  have hmc : cardinalCenter (matchingCardinal 4) = 3*Real.pi/2 := rfl
   by_contra! hs
   by_cases hs0 : P.helperAngle 4=0
-  · rw [hSphase,hs0,add_zero] at hS hcard
+  · rw [hSphase,hs0,add_zero,hmc] at hS hcard
     simp only [centralMargin,centralNormal,centerY,angularWidth,south_cos,south_sin,
       mul_zero,mul_neg_one,zero_mul,neg_one_mul,add_zero,zero_add,sub_zero,
       neg_neg,abs_zero,abs_neg,abs_one] at hS hcard
@@ -253,7 +257,7 @@ theorem canonical_own_south_positive {R : ℝ} (P : NormalizedPacking R)
     constructor <;> linarith [P.helper_windows.2.2.2.1]
   have hd : 1/2 ≤ d ∧ d ≤ Real.pi/4 :=
     ⟨(normalized_diagonal_gt_half P).le,P.diagonal_angle_range.2⟩
-  have hSP : P.phase 4=3*Real.pi/2-v := by rw [hSphase]; dsimp [v]; ring
+  have hSP : P.phase 4=3*Real.pi/2-v := by rw [hSphase,hmc]; dsimp [v]; ring
   have hDP : P.phase 3=Real.pi+d := by dsimp [d,NormalizedPacking.diagonalAngle]; ring
   have hq : P.phase 4-P.phase 3=Real.pi/2-(d+v) := by rw [hSP,hDP]; ring
   have htrig := angle_sum_trig hd ⟨hv.1.le,hv.2⟩

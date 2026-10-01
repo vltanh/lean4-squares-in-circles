@@ -1,10 +1,7 @@
-module
-public import SquaresInCircles.Six.Analytic.CoupledWingBudgetSharp
-public import SquaresInCircles.Six.Analytic.CardinalSouthTail.Geometry
-public import SquaresInCircles.Six.Analytic.LowDWestSource.Geometry
-public import SquaresInCircles.Six.Analytic.MixedCardinalWest.Geometry
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CoupledWingBudgetSharp
+import SquaresInCircles.Six.Analytic.CardinalSouthTail.Geometry
+import SquaresInCircles.Six.Analytic.LowDWestSource.Geometry
+import SquaresInCircles.Six.Analytic.MixedCardinalWest.Geometry
 
 /-!
 # Smaller domains for the still-open mixed-source exclusions
@@ -34,13 +31,14 @@ lemma MissingWestWing.south_own_of_cardinal_west {R : ℝ} {P : NormalizedPackin
     (h : MissingWestWing P) (hW : P.ownBits 2=false) : P.ownBits 4=true := by
   cases hS : P.ownBits 4
   · exact False.elim (MixedCardinalWest.not_missing_west P hW hS h)
-  · exact hS
+  · rfl
 
 /-- The actual D-sourced west gap, expressed in the helper coordinates. -/
 lemma MissingWestWing.diagonal_minus_west_gt_one {R : ℝ} {P : NormalizedPacking R}
     (h : MissingWestWing P) : 1 < P.diagonalAngle-P.helperAngle 2 := by
   have hg := DW_Dsecondary_gap_gt_one P h.from_diagonal
-  rw [P.phase_from_deviation 2] at hg
+  have hc : cardinalCenter (matchingCardinal 2) = Real.pi := rfl
+  rw [P.phase_from_deviation 2, hc] at hg
   dsimp [NormalizedPacking.diagonalAngle]
   linarith
 

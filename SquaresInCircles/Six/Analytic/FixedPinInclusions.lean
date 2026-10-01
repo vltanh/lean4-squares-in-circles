@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnAxisWindows
-public import SquaresInCircles.Six.Analytic.CoreProfiles
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnAxisWindows
+import SquaresInCircles.Six.Analytic.CoreProfiles
 
 /-!
 # Fixed-pin inclusion from analytic profiles
@@ -30,7 +27,7 @@ lemma contract_transverse {L b s : ℝ} (hL : 9/10≤L)
   have hbb := abs_lt.mp hb
   have hff := abs_lt.mp hfar
   apply abs_lt.mpr
-  by_cases hs : 0≤s
+  by_cases hs : 0≤ s
   · have hlo := mul_nonneg (show (0:ℝ)≤9/10 by norm_num) hs
     have hhi := mul_nonneg (sub_nonneg.mpr hL) hs
     constructor <;> nlinarith [hbb.1,hbb.2,hff.1,hff.2]
@@ -56,8 +53,11 @@ theorem fixed_east_of_axis_point {t a b L : ℝ} (hc : ContainedChart a |b|)
     rw [hid,abs_neg] at h
     exact h
   have hY := contract_transverse hL hb hfar
+  have hY' : |-((9/10)*Real.sin t)-b|<1/2 := by
+    rw [show -((9/10)*Real.sin t)-b=-((9/10)*Real.sin t+b) by ring,abs_neg]
+    exact hY
   rw [polar_mem_iff]
-  simpa only [zero_sub,Real.cos_neg,Real.sin_neg,mul_neg,neg_sub,abs_neg] using And.intro hX hY
+  simpa only [zero_sub,Real.cos_neg,Real.sin_neg,mul_neg,neg_sub,abs_neg] using And.intro hX hY'
 
 /-- OWN in the east octant both has the stated window and contains qE. -/
 theorem own_east_fixed_pin {t a b cx cy : ℝ} (hc : ContainedChart a |b|)

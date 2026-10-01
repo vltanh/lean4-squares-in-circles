@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.SmallDiagonalStressTools
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SmallDiagonalStressTools
 
 /-!
 # Cardinal W: a radical minorant on the whole small-diagonal rectangle
@@ -144,7 +141,7 @@ theorem cardinalSmallD_positive {v d : ℝ}
     (cardinalSmallD_above_rational (by constructor <;> norm_num) (by norm_num) (by norm_num))
   have h11 : 0<cardinalSmallDMinorant (2/5) (1/2) := he.2.2.2.trans_le
     (cardinalSmallD_above_rational (by constructor <;> norm_num) (by norm_num) cardinal_root_half)
-  exact positive_on_separately_concave_rectangle hv hd cardinalSmallD_concave_v
+  exact positive_on_separately_concave_rectangle hv hd (fun _ ht => cardinalSmallD_concave_v ht)
     (cardinalSmallD_concave_d (by constructor <;> norm_num))
     (cardinalSmallD_concave_d (by constructor <;> norm_num)) h00 h01 h10 h11
 

@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Normalization.CentralSAT
-public import SquaresInCircles.Six.Normalization.ChartBounds
-public import SquaresInCircles.Seven.Analysis
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.CentralSAT
+import SquaresInCircles.Six.Normalization.ChartBounds
+import SquaresInCircles.Seven.Analysis
 
 /-!
 # Whole-interval transverse bounds from the actual central separators
@@ -150,7 +147,7 @@ theorem cardinal_west_negative_transverse {a b cx cy v : ℝ}
   have hsinLow := Real.sin_ge_sub_cube hv.1
   have hs : (9/10)*v≤Real.sin v := by nlinarith only [hcube,hsinLow]
   have hbshift : 211/300≤1/2-b := by linarith [hv.2]
-  have hprod := mul_le_mul hbshift hs (show 0≤(9/10)*v by positivity)
+  have hprod := mul_le_mul hbshift hs (show 0≤(9/10)*v by linarith [hv.1])
     (show 0≤1/2-b by linarith)
   have hcprod := mul_nonneg (show 0≤a-1/2 by linarith [hc.half_le])
     (show 0≤1-Real.cos v by linarith [Real.cos_le_one v])
@@ -176,7 +173,9 @@ theorem own_front_radial_profile {a b cx cy d : ℝ}
     (by linarith [hd.2,Real.pi_gt_d2])
   have hxc := mul_nonneg (show 0≤1/2-cx-77/200 by linarith [c0_lt_23_200]) hc0
   have hys := mul_nonneg (show 0≤1/2-cy-77/200 by linarith [c0_lt_23_200]) hs0
-  simp only [centralMargin,centralNormal,angularWidth,Real.cos_pi_add,Real.sin_pi_add,
+  have hcpi : Real.cos (Real.pi+d)=-Real.cos d := by rw [add_comm,Real.cos_add_pi]
+  have hspi : Real.sin (Real.pi+d)=-Real.sin d := by rw [add_comm,Real.sin_add_pi]
+  simp only [centralMargin,centralNormal,angularWidth,hcpi,hspi,
     abs_neg,abs_of_nonneg hc0,abs_of_nonneg hs0] at hown
   nlinarith only [hown,hxc,hys]
 

@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Analytic.CardinalSouthTail.Scalar
-public import SquaresInCircles.Six.Analytic.CandidateWestTail.Support
-public import SquaresInCircles.Six.Analytic.OwnWingProfileSharpening
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CardinalSouthTail.Scalar
+import SquaresInCircles.Six.Analytic.CandidateWestTail.Support
+import SquaresInCircles.Six.Analytic.OwnWingProfileSharpening
 
 /-!
 # Exact support bounds for the large-south four-edge argument
@@ -92,7 +89,7 @@ lemma south_support {a b r : ℝ} (hc : ContainedChart a |b|)
   have hb : Real.sin r*b ≤ |b| := by
     calc
       Real.sin r*b ≤ |Real.sin r*b| := le_abs_self _
-      _ = |Real.sin r|*|b| := abs_mul _ _
+      _ = |Real.sin r| *|b| := abs_mul _ _
       _ ≤ 1*|b| := mul_le_mul_of_nonneg_right hsin (abs_nonneg b)
       _ = |b| := one_mul _
   have hm := mul_nonneg (show 0 ≤ 10+3*Real.cos r by linarith)
@@ -133,14 +130,14 @@ private lemma sine_term_lower {negative : Bool} {v : ℝ}
     coefficient negative*Real.sin v ≤
       2*(|Real.sin v|-Real.sin v)+(12/5)*R0*Real.sin v := by
   cases negative
-  · simp only [vLower,vUpper,if_false] at hv
+  · simp only [vLower,vUpper,Bool.false_eq_true,ite_false] at hv
     have hs := Real.sin_nonneg_of_nonneg_of_le_pi hv.1
       (by linarith [hv.2,Real.pi_gt_d2])
     rw [abs_of_nonneg hs]
     have hp := mul_nonneg (show 0 ≤ R0-5/3 by linarith [radius_bounds.1]) hs
     dsimp [coefficient]
     nlinarith only [hp]
-  · simp only [vLower,vUpper,if_true] at hv
+  · simp only [vLower,vUpper,ite_true] at hv
     have hs := Real.sin_nonneg_of_nonneg_of_le_pi
       (show 0 ≤ -v by linarith [hv.2])
       (show -v ≤ Real.pi by linarith [hv.1,Real.pi_gt_d2])

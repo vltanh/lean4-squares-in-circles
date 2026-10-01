@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Normalization.Markers
-public import SquaresInCircles.Seven.MarkerSeparation
-public import SquaresInCircles.Common.Angles
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.Markers
+import SquaresInCircles.Seven.MarkerSeparation
+import SquaresInCircles.Common.Angles
 
 /-!
 # N7 and the finite step of Proposition A
@@ -107,7 +104,6 @@ theorem five_marker_gaps (m : Fin 5 → Direction)
   have hsum : (∑ i, successiveGaps p i) = 2 * Real.pi := by
     simp only [successiveGaps, Fin.sum_univ_succ, Fin.sum_univ_zero]
     norm_num
-    ring
   have hhi (i : Fin 5) : successiveGaps p i < 2 * Real.pi / 3 := by
     have h0 := hlo 0
     have h1 := hlo 1
@@ -127,7 +123,7 @@ lemma liftFrom_spec (a : ℝ) (m : Direction) :
       (liftFrom a m : Direction) = m := by
   have hl := (m - (a : Direction)).neg_pi_lt_toReal
   have hu := (m - (a : Direction)).toReal_le_pi
-  unfold liftFrom
+  dsimp only [liftFrom]
   split_ifs with h
   · refine ⟨by linarith [Real.pi_pos], by linarith, ?_⟩
     simp only [Real.Angle.coe_add, Real.Angle.coe_two_pi, add_zero,

@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnSouthOrdered.Scalar
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnSouthOrdered.Scalar
 
 /-!
 # Four actual separators supply the ordered OWN-south obstruction
@@ -43,16 +40,19 @@ def defect (v s d : ℝ) : ℝ :=
 lemma west_support {a b : ℝ} (hc : ContainedChart a |b|) :
     westWeight*a-pairWeight*b ≤ westUpper := by
   have h := CandidateWestTail.local_vertex_support hc westWeight (-pairWeight)
-  have hs := Real.sq_sqrt (show 0 ≤ westWeight^2+pairWeight^2 by positivity)
-  have hn := Real.sqrt_nonneg (westWeight^2+pairWeight^2)
-  have hroot : Real.sqrt (westWeight^2+pairWeight^2) ≤ 106073/50000 := by
-    norm_num [westWeight,pairWeight] at hs
+  have hval : westWeight^2+(-pairWeight)^2=9001/2000 := by
+    norm_num [westWeight,pairWeight]
+  have habs : |westWeight|+|(-pairWeight)|=westWeight+pairWeight := by
+    norm_num [westWeight,pairWeight]
+  rw [hval,habs] at h
+  have hs := Real.sq_sqrt (show (0:ℝ) ≤ 9001/2000 by norm_num)
+  have hn := Real.sqrt_nonneg (9001/2000:ℝ)
+  have hroot : Real.sqrt (9001/2000:ℝ) ≤ 106073/50000 := by
     nlinarith only [hs,hn]
   have hm := mul_le_mul CandidateWestTail.ceiling_bounds.1 hroot hn
     (by norm_num [CandidateWestTail.radiusBound])
-  norm_num [westWeight,pairWeight] at h
-  dsimp [westUpper,westWeight,pairWeight] at *
-  nlinarith only [h,hm]
+  dsimp [westUpper]
+  linarith only [h,hm]
 
 lemma diagonal_support {a b q : ℝ} (hc : ContainedChart a |b|)
     (hq : 1/2 ≤ q ∧ q ≤ 443/350) :
@@ -103,7 +103,7 @@ lemma south_support {a b r : ℝ} (hc : ContainedChart a |b|)
   have hrad : a+(31/100)*|b| ≤ rho0 := by nlinarith [sq_nonneg b]
   have ht := south_slope hr
   have hp := mul_nonneg ht.1 (show 0 ≤ rho0-a-(31/100)*|b| by linarith)
-  have hb : Real.sin r*b ≤ |Real.sin r|*|b| := by
+  have hb : Real.sin r*b ≤ |Real.sin r| *|b| := by
     simpa only [abs_mul] using le_abs_self (Real.sin r*b)
   have hs := mul_le_mul_of_nonneg_right ht.2 (abs_nonneg b)
   have hR := mul_le_mul_of_nonneg_right CandidateWestTail.ceiling_bounds.2.1 ht.1

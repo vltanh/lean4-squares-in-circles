@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.NonnegativeWestSecondary
-public import SquaresInCircles.Six.Analytic.SouthSecondaryComplete
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.NonnegativeWestSecondary
+import SquaresInCircles.Six.Analytic.SouthSecondaryComplete
 
 /-!
 # Geometric phase restrictions for the remaining secondary sources
@@ -65,11 +62,10 @@ theorem DW_Dsecondary_west_of_wall {R : ℝ} (P : NormalizedPacking R)
       dot (normalY (P.square 3)) (sub (P.square 3).center (P.square 2).center)) :
     P.helperAngle 2 < P.diagonalAngle-Real.pi/4 := by
   have h := DW_Dsecondary_gap_gt_quarter P hsep
-  have hw := P.phase_from_deviation 2
+  have hw : P.phase 2=Real.pi+P.helperAngle 2 := P.phase_from_deviation 2
   have hd : P.phase 3=Real.pi+P.diagonalAngle := by
     dsimp [NormalizedPacking.diagonalAngle]
     ring
-  simp only [matchingCardinal,cardinalCenter] at hw
   rw [hw,hd] at h
   linarith
 
@@ -79,11 +75,10 @@ theorem DS_Dsecondary_south_of_wall {R : ℝ} (P : NormalizedPacking R)
       dot (normalY (P.square 3)) (sub (P.square 4).center (P.square 3).center)) :
     P.diagonalAngle-Real.pi/4 < P.helperAngle 4 := by
   have h := DS_Dsecondary_gap_gt_quarter P hsep
-  have hs := P.phase_from_deviation 4
+  have hs : P.phase 4=3*Real.pi/2+P.helperAngle 4 := P.phase_from_deviation 4
   have hd : P.phase 3=Real.pi+P.diagonalAngle := by
     dsimp [NormalizedPacking.diagonalAngle]
     ring
-  simp only [matchingCardinal,cardinalCenter] at hs
   rw [hd,hs] at h
   linarith
 

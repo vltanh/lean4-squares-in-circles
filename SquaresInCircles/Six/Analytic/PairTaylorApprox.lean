@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Seven.Analysis
-
-@[expose] public section
+import SquaresInCircles.Seven.Analysis
 
 /-!
 # Explicit Taylor errors used at the forced pair endpoints
@@ -31,7 +28,7 @@ lemma cos_upper_eight {x : ℝ} (hx : 0≤x) : Real.cos x≤cosP x+x^8/40320 := 
       linarith) hx
   linarith
 
-lemma sin_upper_nine {x : ℝ} (hx : 0≤x) : Real.sin x≤sinP x+x^9/362880 := by
+lemma sin_upper_nine {x : ℝ} (hx : 0≤x) : Real.sin x≤ sinP x+x^9/362880 := by
   have hh := Seven.nonneg_of_deriv_nonneg
     (fun t => sinP t+t^9/362880-Real.sin t)
     (by dsimp [sinP]; fun_prop) (by norm_num [sinP])
@@ -79,7 +76,7 @@ theorem cos_error {x : ℝ} (hx : |x|≤6/7) : |Real.cos x-cosP x|≤1/100000 :=
 lemma sin_error_coarse {x : ℝ} (hx : |x|≤6/7) : |Real.sin x-sinP x|≤1/100000 :=
   (sin_error hx).trans (by norm_num)
 
-lemma absolute_lipschitz (x y : ℝ) : ||x|-|y||≤|x-y| := by
+lemma absolute_lipschitz (x y : ℝ) : |(|x|-|y|)|≤|x-y| := by
   have hx : |x|≤|x-y|+|y| := by
     simpa only [sub_add_cancel] using abs_add_le (x-y) y
   have hy : |y|≤|x-y|+|x| := by
@@ -101,7 +98,7 @@ lemma positivePart_lipschitz (x y : ℝ) : |max x 0-max y 0|≤|x-y| := by
     exact abs_nonneg _
 
 lemma product_difference (a b x y : ℝ) :
-    |a*x-b*y|≤|a-b|*|x|+|b|*|x-y| := by
+    |a*x-b*y|≤|a-b| *|x|+|b| *|x-y| := by
   have he : a*x-b*y=(a-b)*x+b*(x-y) := by ring
   rw [he]
   simpa only [abs_mul] using abs_add_le ((a-b)*x) (b*(x-y))

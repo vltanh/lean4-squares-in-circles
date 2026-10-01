@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.FixedPairPacking
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FixedPairPacking
 
 /-!
 # The E/S pair is the same local calculation
@@ -52,7 +49,8 @@ lemma eastsouth_threshold (e s ae be aS bS : ℝ) :
   rw [h]
   have hn : (-e)-(-s)=-(e-s) := by ring
   rw [hn,width_neg]
-  simp [angularWidth,Real.cos_sub,Real.sin_sub,south_cos,south_sin,abs_neg,add_comm]
+  simp [angularWidth,Real.cos_sub,Real.sin_sub,south_cos,south_sin,add_comm]
+  exact abs_sub_comm _ _
 
 lemma chosen_east_swap {R : ℝ} (P : NormalizedPacking R) :
     northNormal (P.ownBits 0) (-P.helperAngle 0)=Six.diagonalPoint (chosenCenterAxis P 0) := by
@@ -102,7 +100,7 @@ theorem actual_eastsouth_pair {R : ℝ} (P : NormalizedPacking R)
   change phi (alpha (P.square 0) (0,0)) (beta (P.square 0) (0,0))≤Six.qStar at hEbox
   change phi (alpha (P.square 4) (0,0)) (beta (P.square 4) (0,0))≤Six.qStar at hSbox
   rw [P.square_def,orientedSquare_alpha,orientedSquare_beta] at hEbox hSbox
-  have hc := P.toPinPacking.sharp_central_box hR
+  have hc := Stress.PinPacking.sharp_central_box P.toPinPacking hR
   have hNE : (orientedSquare (Real.pi/2+(-P.helperAngle 0))
       (P.radial 0) (-P.transverse 0)).center=Six.diagonalPoint (P.square 0).center := by
     rw [P.square_def,he]
@@ -112,6 +110,7 @@ theorem actual_eastsouth_pair {R : ℝ} (P : NormalizedPacking R)
     rw [P.square_def,hs]
     simpa only [sub_eq_add_neg] using reflected_south_center (P.helperAngle 4) (P.radial 4) (P.transverse 4)
   refine ⟨v,pair_work_bound (P.ownBits 0) (P.ownBits 4) v
+    (an := P.radial 0) (bn := -P.transverse 0) (aw := P.radial 4)
     (c := Six.diagonalPoint P.center) ⟨hc.2,hc.1⟩ ?_ ?_ ?_ ?_ ?_⟩
   · simpa only [Six.radius_sq,phi,abs_neg] using hEbox
   · simpa only [Six.radius_sq,phi,abs_neg] using hSbox
@@ -119,7 +118,7 @@ theorem actual_eastsouth_pair {R : ℝ} (P : NormalizedPacking R)
     exact hE
   · rw [width_neg,chosen_south_swap,hWS,← swap_sub,swap_dot]
     exact hS
-  · rw [preferred_eastsouth_swap,hNE,hWS,← swap_sub,swap_dot]
+  · rw [preferred_eastsouth_swap,hNE,hWS,← swap_sub,swap_dot,P.square_def 4,P.square_def 0,hs,he]
     exact hsel
 
 /-- Central coordinate terms cancel between the two actual pairs. The residual

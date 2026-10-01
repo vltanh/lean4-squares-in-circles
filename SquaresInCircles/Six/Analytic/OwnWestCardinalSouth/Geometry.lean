@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnWestCardinalSouth.Support
-public import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Geometry
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnWestCardinalSouth.Support
+import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Geometry
 
 /-!
 # No normalized packing has a missing south wing
@@ -40,7 +37,10 @@ theorem not_missing_south {R : ℝ} (P : NormalizedPacking R)
     dsimp [d,s]
     linarith
   have hWphase : P.phase 2=Real.pi-v := by
-    rw [P.phase_from_deviation 2]
+    have h := P.phase_from_deviation 2
+    have h2 : cardinalCenter (matchingCardinal 2) = Real.pi := rfl
+    rw [h2] at h
+    rw [h]
     dsimp [v]
     ring
   have hSphase : P.phase 4=3*Real.pi/2+s := P.phase_from_deviation 4
@@ -61,14 +61,17 @@ theorem not_missing_south {R : ℝ} (P : NormalizedPacking R)
       P.center.1 P.center.2 at h
     rw [hSphase] at h
     simp only [centralMargin,Normalization.centerY,angularWidth,Real.cos_add,Real.sin_add,
-      south_cos,south_sin,zero_mul,one_mul,neg_one_mul,zero_add,add_zero,abs_neg] at h
+      south_cos,south_sin,zero_mul,one_mul,neg_one_mul,zero_add,add_zero,zero_sub,neg_neg,
+      abs_neg] at h
     dsimp [angularWidth]
     nlinarith only [h]
   have hCD : 1/2+angularWidth d ≤
       P.radial 3+P.center.1*Real.cos d+P.center.2*Real.sin d := by
     have h := P.own_separator 3 P.diagonal_own
     rw [hDphase] at h
-    simp only [centralMargin,centralNormal,angularWidth,Real.cos_pi_add,Real.sin_pi_add,abs_neg] at h
+    have hc : Real.cos (Real.pi+d) = -Real.cos d := by rw [add_comm]; exact Real.cos_add_pi d
+    have hs' : Real.sin (Real.pi+d) = -Real.sin d := by rw [add_comm]; exact Real.sin_add_pi d
+    simp only [centralMargin,centralNormal,angularWidth,hc,hs',abs_neg] at h
     dsimp [angularWidth]
     nlinarith only [h]
   have hWD : 1/2+angularWidth (d+v) ≤

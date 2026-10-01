@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Patterns
-
-@[expose] public section
+import SquaresInCircles.Six.Patterns
 
 /-!
 # P1/P2 and the equality obstruction of canonical OWN bits
@@ -27,14 +24,16 @@ lemma own_minus_north (t a b x y : ℝ) :
       centralMargin .north (Real.pi/2+t) a b x y =
       (1-Real.cos t)*(a+y)+Real.sin t*(b+x) := by
   simp only [centralMargin,centralNormal,centerY,Real.cos_add,Real.sin_add,
-    Real.cos_pi_div_two,Real.sin_pi_div_two,zero_mul,one_mul,zero_add,zero_sub,add_zero]
+    Real.cos_pi_div_two,Real.sin_pi_div_two,zero_mul,one_mul,zero_sub,add_zero]
   ring
 
 lemma own_minus_west (t a b x y : ℝ) :
     centralMargin .own (Real.pi+t) a b x y-
       centralMargin .west (Real.pi+t) a b x y =
       (1-Real.cos t)*(a-x)+Real.sin t*(b+y) := by
-  simp only [centralMargin,centralNormal,centerX,Real.cos_pi_add,Real.sin_pi_add]
+  have hc : Real.cos (Real.pi+t) = -Real.cos t := by rw [add_comm,Real.cos_add_pi]
+  have hs : Real.sin (Real.pi+t) = -Real.sin t := by rw [add_comm,Real.sin_add_pi]
+  simp only [centralMargin,centralNormal,centerX,hc,hs]
   ring
 
 lemma own_minus_south (t a b x y : ℝ) :
@@ -42,7 +41,7 @@ lemma own_minus_south (t a b x y : ℝ) :
       centralMargin .south (3*Real.pi/2+t) a b x y =
       (1-Real.cos t)*(a-y)+Real.sin t*(b-x) := by
   simp only [centralMargin,centralNormal,centerY,Real.cos_add,Real.sin_add,
-    south_cos,south_sin,zero_mul,neg_one_mul,zero_sub,zero_add,add_zero]
+    south_cos,south_sin,zero_mul,neg_one_mul,zero_sub,add_zero]
   ring
 
 lemma own_cardinal_at_center (k : CentralAxis) (hk : IsCardinal k)

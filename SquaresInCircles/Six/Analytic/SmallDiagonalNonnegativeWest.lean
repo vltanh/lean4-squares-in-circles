@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.SharpFrontProfile
-public import SquaresInCircles.Six.Analytic.SmallDiagonalSecondary
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SharpFrontProfile
+import SquaresInCircles.Six.Analytic.SmallDiagonalSecondary
 
 /-!
 # Small diagonal angles with a nonnegative W deviation
@@ -24,14 +21,13 @@ private lemma smallDPositiveW_negative {d : ℝ} (hd : 0≤d ∧ d≤1/2) :
     smallDPositiveW d<0 := by
   have hder (x : ℝ) : HasDerivAt smallDPositiveW
       ((613/1000)*Real.cos x+(37/1000)*Real.sin x-47/100) x := by
-    convert ((((Real.hasDerivAt_sin x).const_mul (613/1000)).sub
-      ((Real.hasDerivAt_cos x).const_mul (37/1000))).sub_const (9/250)).sub
-      ((hasDerivAt_id x).const_mul (47/100)) using 1 <;>
-      dsimp [smallDPositiveW] <;> ring
+    exact ((((Real.hasDerivAt_sin x).const_mul (613/1000)).fun_sub
+      ((Real.hasDerivAt_cos x).const_mul (37/1000))).sub_const (9/250)).fun_sub
+      ((hasDerivAt_id' x).const_mul (47/100)) |>.congr_deriv (by ring)
   have hmono := Seven.monoOn_of_hasDeriv_nonneg
     (l := 0) (u := (1:ℝ)/2) (f := smallDPositiveW)
     (d := fun x => (613/1000)*Real.cos x+(37/1000)*Real.sin x-47/100)
-    (by dsimp [smallDPositiveW]; fun_prop) (fun x _ => hder x) (by
+    (fun x _ => (hder x).continuousAt.continuousWithinAt) (fun x _ => hder x) (by
       intro x hx
       have hx0 := hx.1.le
       have hx1 := hx.2.le
@@ -78,7 +74,7 @@ theorem nonnegative_W_forces_large_diagonal {R : ℝ} (P : NormalizedPacking R)
   obtain ⟨k,hsep,hk⟩ := DW_secondary_exists P
   rcases hk with rfl | rfl
   · linarith [W_secondary_forces_large_diagonal P hsep]
-  · have hwphase := P.phase_from_deviation 2
+  · have hwphase : P.phase 2=Real.pi+P.helperAngle 2 := P.phase_from_deviation 2
     have hdphase : P.phase 3=Real.pi+P.diagonalAngle := by
       dsimp [NormalizedPacking.diagonalAngle]
       ring
@@ -90,7 +86,7 @@ theorem nonnegative_W_forces_large_diagonal {R : ℝ} (P : NormalizedPacking R)
     rw [hdphase] at hown
     have hbd := own_sharp_front_transverse (P.contained 3) P.box.1.2 P.box.2.2 hd hown
     have hbW := (P.contained 2).u_le_U0 (P.avoidsCore 2)
-    have hbound := small_diagonal_nonnegative_W_D_secondary hd ⟨hw,horder⟩
+    have hbound := small_diagonal_nonnegative_W_D_secondary (bw := P.transverse 2) hd ⟨hw,horder⟩
       ((P.contained 2).a_le_rho0.trans rho0_upper.le)
       (by linarith [neg_le_abs (P.transverse 2),normalization_transverse_upper_sharp])
       ((le_abs_self (P.transverse 3)).trans_lt hbd)

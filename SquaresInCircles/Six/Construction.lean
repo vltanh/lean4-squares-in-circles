@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Candidate
-public import SquaresInCircles.Common.Constructions
-
-@[expose] public section
+import SquaresInCircles.Six.Candidate
+import SquaresInCircles.Common.Constructions
 
 /-!
 # Attainment by the six-square candidate

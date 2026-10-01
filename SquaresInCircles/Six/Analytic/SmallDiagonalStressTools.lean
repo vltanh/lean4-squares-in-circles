@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Analytic.FrozenTrigStress
-public import SquaresInCircles.Six.Analytic.SharpFrontProfile
-public import SquaresInCircles.Six.Stress.Support
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FrozenTrigStress
+import SquaresInCircles.Six.Analytic.SharpFrontProfile
+import SquaresInCircles.Six.Stress.Support
 
 /-!
 # Analytic tools for frozen-center small-diagonal stresses
@@ -116,7 +113,10 @@ lemma signed_trig_concave {A B C l u : ℝ}
     (l := l) (u := u) (by norm_num) (by norm_num)
     (by intro x _; norm_num) (by intro x hx; simpa using mul_nonneg (by norm_num : (0:ℝ)≤4) (h x hx))
   have hc := concave_constant C l u
-  simpa [radicalTrig,add_assoc] using hc.add ht
+  refine (hc.add ht).congr ?_
+  intro x _
+  simp only [Pi.add_apply,radicalTrig]
+  ring
 
 lemma frozenTrig_concave_v_of_curvature {C Av Bv Ad Bd Aq Bq l u d : ℝ}
     (h : ∀ x∈Set.Icc l u,
@@ -134,6 +134,7 @@ lemma frozenTrig_concave_v_of_curvature {C Av Bv Ad Bd Aq Bq l u d : ℝ}
     (fun x hx => by rw [he]; exact h x hx)
   apply hc.congr
   intro x _
+  dsimp only
   rw [show C+Ad*Real.cos d+Bd*Real.sin d+A*Real.cos x+B*Real.sin x =
       C+Ad*Real.cos d+Bd*Real.sin d+(A*Real.cos x+B*Real.sin x) by ring,he]
   dsimp [frozenTrig]

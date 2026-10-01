@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.SecondaryPhaseRestrictions
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SecondaryPhaseRestrictions
 
 /-!
 # Signed transverse obstructions near a quarter-turn
@@ -72,7 +69,7 @@ theorem cardinal_W_Dsecondary_positive_transverse {R : ℝ} (P : NormalizedPacki
     113/1000 < P.transverse 3 := by
   have hlow := (DW_Dsecondary_gap_gt_quarter P hsep).le
   have hw := (abs_lt.mp (P.cardinal_angle 2 hcard)).1
-  have hWphase := P.phase_from_deviation 2
+  have hWphase : P.phase 2=Real.pi+P.helperAngle 2 := P.phase_from_deviation 2
   have hDphase : P.phase 3=Real.pi+P.diagonalAngle := by
     dsimp [NormalizedPacking.diagonalAngle]
     ring
@@ -128,7 +125,7 @@ theorem cardinal_W_non_candidate_phase_wedge {R : ℝ} (P : NormalizedPacking R)
   have hb := cardinal_W_Dsecondary_positive_transverse P hcard hsep
   have hz : c0 ≤ P.transverse 3 := by dsimp [c0]; linarith [rho0_upper]
   have hgap := positive_Dtransverse_south_gap P hz
-  have hSphase := P.phase_from_deviation 4
+  have hSphase : P.phase 4=3*Real.pi/2+P.helperAngle 4 := P.phase_from_deviation 4
   have hDphase : P.phase 3=Real.pi+P.diagonalAngle := by
     dsimp [NormalizedPacking.diagonalAngle]
     ring

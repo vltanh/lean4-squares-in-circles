@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.WestStressDEndpoints
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.WestStressDEndpoints
 
 /-!
 # D-secondary positivity on the full ordered angle triangle
@@ -81,7 +78,7 @@ theorem westStressD_positive {t u:ℝ}
     have h := positive_on_concave_interval hf ⟨ht,htu⟩
       (D_far_negative ⟨hu0,huSign⟩) (D_negative_diagonal ⟨hu0,huSign⟩)
     rwa [westDForm_eq false false ⟨ht,by linarith⟩ ⟨hu0,hu1⟩
-      (by linarith) huSign] at h
+      (show t≤0 by linarith) huSign] at h
   · have huSign' : 0≤u := le_of_not_ge huSign
     by_cases htSign:t≤0
     · have hf := westDForm_concave_t false true u (-2/3) 0 westJ_negative_concave

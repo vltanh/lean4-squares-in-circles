@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.RadialChordSupport
-public import SquaresInCircles.Six.Analytic.SoftAxialSupport
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.RadialChordSupport
+import SquaresInCircles.Six.Analytic.SoftAxialSupport
 
 /-!
 # A curvature envelope for the west-dominant chord
@@ -31,16 +28,16 @@ def chordSecond (q : ℝ) : ℝ :=
   -Real.sin q+(chordSin/4)*Real.sin (q/2)+(chordCos/4)*Real.cos (q/2)
 
 lemma chord_hasDeriv (q : ℝ) : HasDerivAt chord (chordFirst q) q := by
-  convert (((Real.hasDerivAt_sin q).sub
-    ((((hasDerivAt_id q).div_const 2).sin).const_mul chordSin)).sub
-    ((((hasDerivAt_id q).div_const 2).cos).const_mul chordCos)) using 1 <;>
-    dsimp [chord,chordFirst] <;> ring
+  exact (((Real.hasDerivAt_sin q).fun_sub
+    ((((hasDerivAt_id' q).div_const 2).sin).const_mul chordSin)).fun_sub
+    ((((hasDerivAt_id' q).div_const 2).cos).const_mul chordCos)).congr_deriv
+    (by simp only [chordFirst]; ring)
 
 lemma chord_first_hasDeriv (q : ℝ) : HasDerivAt chordFirst (chordSecond q) q := by
-  convert (((Real.hasDerivAt_cos q).sub
-    ((((hasDerivAt_id q).div_const 2).cos).const_mul (chordSin/2))).add
-    ((((hasDerivAt_id q).div_const 2).sin).const_mul (chordCos/2))) using 1 <;>
-    dsimp [chordFirst,chordSecond] <;> ring
+  exact (((Real.hasDerivAt_cos q).fun_sub
+    ((((hasDerivAt_id' q).div_const 2).cos).const_mul (chordSin/2))).fun_add
+    ((((hasDerivAt_id' q).div_const 2).sin).const_mul (chordCos/2))).congr_deriv
+    (by simp only [chordSecond]; ring)
 
 private def p (q : ℝ) : ℝ :=
   19/100-(567/1000)*q-(23/1000)*q^2+(149/1000)*q^3+
@@ -66,19 +63,27 @@ private lemma polynomial_upper {q : ℝ} (hq : 1/2 ≤ q ∧ q ≤ 3/2) :
   nlinarith only [hl,hu,hc,h7,hq0,h3,h5,sq_nonneg q,sq_nonneg (q^2)]
 
 private lemma p_hasDeriv (q : ℝ) : HasDerivAt p (pFirst q) q := by
-  convert ((((((hasDerivAt_id q).const_mul (-(567/1000))).const_add (19/100)).add
-    (((hasDerivAt_id q).pow 2).const_mul (-(23/1000)))).add
-    (((hasDerivAt_id q).pow 3).const_mul (149/1000))).add
-    (((hasDerivAt_id q).pow 4).const_mul (1/2000))).add
-    (((hasDerivAt_id q).pow 5).const_mul (-(19/2500))) using 1 <;>
-    dsimp [p,pFirst] <;> ring
+  have h := ((((((hasDerivAt_id' q).const_mul (-(567/1000))).const_add (19/100)).fun_add
+    (((hasDerivAt_id' q).pow 2).const_mul (-(23/1000)))).fun_add
+    (((hasDerivAt_id' q).pow 3).const_mul (149/1000))).fun_add
+    (((hasDerivAt_id' q).pow 4).const_mul (1/2000))).fun_add
+    (((hasDerivAt_id' q).pow 5).const_mul (-(19/2500)))
+  have e : p = fun x : ℝ => 19/100 + -(567/1000) * x + -(23/1000) * x^2 +
+      149/1000 * x^3 + 1/2000 * x^4 + -(19/2500) * x^5 := by
+    funext x; simp only [p]; ring
+  rw [e]
+  exact h.congr_deriv (by simp only [pFirst]; norm_num; ring)
 
 private lemma p_first_hasDeriv (q : ℝ) : HasDerivAt pFirst (pSecond q) q := by
-  convert (((((hasDerivAt_id q).const_mul (-(23/500))).const_add (-(567/1000))).add
-    (((hasDerivAt_id q).pow 2).const_mul (447/1000))).add
-    (((hasDerivAt_id q).pow 3).const_mul (1/500))).add
-    (((hasDerivAt_id q).pow 4).const_mul (-(19/500))) using 1 <;>
-    dsimp [pFirst,pSecond] <;> ring
+  have h := (((((hasDerivAt_id' q).const_mul (-(23/500))).const_add (-(567/1000))).fun_add
+    (((hasDerivAt_id' q).pow 2).const_mul (447/1000))).fun_add
+    (((hasDerivAt_id' q).pow 3).const_mul (1/500))).fun_add
+    (((hasDerivAt_id' q).pow 4).const_mul (-(19/500)))
+  have e : pFirst = fun x : ℝ => -(567/1000) + -(23/500) * x + 447/1000 * x^2 +
+      1/500 * x^3 + -(19/500) * x^4 := by
+    funext x; simp only [pFirst]; ring
+  rw [e]
+  exact h.congr_deriv (by simp only [pSecond]; norm_num; ring)
 
 private lemma p_second_nonnegative {q : ℝ} (hq : 1/2 ≤ q ∧ q ≤ 3/2) :
     0 ≤ pSecond q := by
@@ -92,13 +97,14 @@ private lemma p_second_nonnegative {q : ℝ} (hq : 1/2 ≤ q ∧ q ≤ 3/2) :
 private lemma envelope_concave (A B : ℝ) {l u : ℝ}
     (hl : 1/2 ≤ l) (hu : u ≤ 3/2) :
     ConcaveOn ℝ (Set.Icc l u) (fun q => A+B*q-p q) := by
-  have hf (q : ℝ) : HasDerivAt (fun q => A+B*q-p q) (B-pFirst q) q := by
-    convert (((hasDerivAt_id q).const_mul B).const_add A).sub (p_hasDeriv q) using 1 <;> ring
-  have hff (q : ℝ) : HasDerivAt (fun q => B-pFirst q) (-pSecond q) q := by
-    simpa only [zero_sub] using (hasDerivAt_const q B).sub (p_first_hasDeriv q)
+  have hf (q : ℝ) : HasDerivAt (fun q => A+B*q-p q) (B-pFirst q) q :=
+    ((((hasDerivAt_id' q).const_mul B).const_add A).fun_sub (p_hasDeriv q)).congr_deriv
+      (by ring)
+  have hff (q : ℝ) : HasDerivAt (fun q => B-pFirst q) (-pSecond q) q :=
+    ((hasDerivAt_const q B).fun_sub (p_first_hasDeriv q)).congr_deriv (by ring)
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc l u)
     (f' := fun q => B-pFirst q) (f'' := fun q => -pSecond q)
-    (by dsimp [p]; fun_prop)
+    (fun x _ => (hf x).continuousAt.continuousWithinAt)
   · intro q _; exact (hf q).hasDerivWithinAt
   · intro q _; exact (hff q).hasDerivWithinAt
   · intro q hq
@@ -129,9 +135,12 @@ lemma chord_second_nonpositive {q : ℝ} (hq : 1/2 ≤ q ∧ q ≤ 3/2) :
 
 lemma chord_concave : ConcaveOn ℝ (Set.Icc (1/2) (3/2)) chord := by
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc (1/2) (3/2))
-    (f' := chordFirst) (f'' := chordSecond) (by dsimp [chord]; fun_prop)
+    (f' := chordFirst) (f'' := chordSecond)
+    (fun x _ => (chord_hasDeriv x).continuousAt.continuousWithinAt)
   · intro q _; exact (chord_hasDeriv q).hasDerivWithinAt
   · intro q _; exact (chord_first_hasDeriv q).hasDerivWithinAt
-  · intro q hq; exact chord_second_nonpositive (interior_subset hq)
+  · intro q hq
+    have h : q ∈ Set.Icc (1/2:ℝ) (3/2) := interior_subset hq
+    exact chord_second_nonpositive h
 
 end SquaresInCircles.Six.Analytic.OwnSouthWestDominant

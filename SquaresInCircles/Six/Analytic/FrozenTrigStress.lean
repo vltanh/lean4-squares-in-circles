@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.RadicalTrigConcavity
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.RadicalTrigConcavity
 
 /-!
 # Freeze centers before reducing stress angles
@@ -22,13 +19,34 @@ namespace SquaresInCircles.Six.Analytic
 
 lemma positive_trig_concave {A B : ℝ} (hA : 0≤A) (hB : 0≤B) :
     ConcaveOn ℝ (Set.Icc 0 (Real.pi/2)) (fun x => A*Real.cos x+B*Real.sin x) := by
-  have hsin : ConcaveOn ℝ (Set.Icc 0 (Real.pi/2)) Real.sin :=
-    strictConcaveOn_sin_Icc.concaveOn.subset
-      (Set.Icc_subset_Icc le_rfl (by linarith [Real.pi_pos])) (convex_Icc _ _)
-  have hcos : ConcaveOn ℝ (Set.Icc 0 (Real.pi/2)) Real.cos :=
-    strictConcaveOn_cos_Icc.concaveOn.subset
-      (Set.Icc_subset_Icc (by linarith [Real.pi_pos]) le_rfl) (convex_Icc _ _)
-  simpa only [smul_eq_mul] using (hcos.smul hA).add (hsin.smul hB)
+  let f' : ℝ → ℝ := fun x => -A*Real.sin x+B*Real.cos x
+  let f'' : ℝ → ℝ := fun x => -A*Real.cos x-B*Real.sin x
+  have hd (x : ℝ) : HasDerivAt (fun x => A*Real.cos x+B*Real.sin x) (f' x) x := by
+    convert ((Real.hasDerivAt_cos x).const_mul A).add
+      ((Real.hasDerivAt_sin x).const_mul B) using 1
+    dsimp [f']
+    ring
+  have hdd (x : ℝ) : HasDerivAt f' (f'' x) x := by
+    convert ((Real.hasDerivAt_sin x).const_mul (-A)).add
+      ((Real.hasDerivAt_cos x).const_mul B) using 1
+    dsimp [f'']
+    ring
+  apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc _ _) (f' := f') (f'' := f'')
+    (by fun_prop)
+  · intro x _
+    exact (hd x).hasDerivWithinAt
+  · intro x _
+    exact (hdd x).hasDerivWithinAt
+  · intro x hx
+    have hx' := interior_subset hx
+    have hc : 0≤Real.cos x :=
+      Real.cos_nonneg_of_mem_Icc ⟨by linarith [Real.pi_pos,hx'.1],hx'.2⟩
+    have hs : 0≤Real.sin x :=
+      Real.sin_nonneg_of_nonneg_of_le_pi hx'.1 (by linarith [Real.pi_pos,hx'.2])
+    have hAc := mul_nonneg hA hc
+    have hBs := mul_nonneg hB hs
+    dsimp [f'']
+    linarith
 
 lemma positive_trig_affine_concave {A B l u a b : ℝ} (hA : 0≤A) (hB : 0≤B)
     (hmap : ∀ x∈Set.Icc l u, 0≤a*x+b ∧ a*x+b≤Real.pi/2) :
@@ -43,9 +61,9 @@ lemma positive_on_separately_concave_rectangle {f : ℝ → ℝ → ℝ} {l u L 
     (hleft : ConcaveOn ℝ (Set.Icc L U) (f l))
     (hright : ConcaveOn ℝ (Set.Icc L U) (f u))
     (hll : 0<f l L) (hlu : 0<f l U) (hul : 0<f u L) (huu : 0<f u U) : 0<f x y := by
-  exact positive_on_concave_interval (hfirst y hy) hx
-    (positive_on_concave_interval hleft hy hll hlu)
-    (positive_on_concave_interval hright hy hul huu)
+  exact positive_on_concave_interval (f := fun z => f z y) (hfirst y hy) hx
+    (positive_on_concave_interval (f := f l) hleft hy hll hlu)
+    (positive_on_concave_interval (f := f u) hright hy hul huu)
 
 /-- The common three-angle form: v, d and v+d. All coefficients are fixed
 when the square centers are frozen. Its only domain condition is geometric. -/
@@ -63,7 +81,9 @@ lemma frozenTrig_concave_v {C Av Bv Ad Bd Aq Bq V D d : ℝ}
     hAq hBq (by intro x hx; constructor <;> linarith [hx.1,hx.2,hd.1,hd.2])
   have hc := concave_constant C 0 V
   have hdc := concave_constant (Ad*Real.cos d+Bd*Real.sin d) 0 V
-  simpa only [frozenTrig,one_mul,add_zero] using ((hc.add hv).add hdc).add hq
+  refine (((hc.add hv).add hdc).add hq).congr ?_
+  intro x _
+  simp only [frozenTrig,Pi.add_apply,one_mul,add_zero]
 
 lemma frozenTrig_concave_d {C Av Bv Ad Bd Aq Bq V D v : ℝ}
     (hAd : 0≤Ad) (hBd : 0≤Bd) (hAq : 0≤Aq) (hBq : 0≤Bq)
@@ -75,7 +95,9 @@ lemma frozenTrig_concave_d {C Av Bv Ad Bd Aq Bq V D v : ℝ}
     hAq hBq (by intro x hx; constructor <;> linarith [hx.1,hx.2,hv.1,hv.2])
   have hc := concave_constant C 0 D
   have hvc := concave_constant (Av*Real.cos v+Bv*Real.sin v) 0 D
-  simpa only [frozenTrig,one_mul,add_zero,add_comm] using ((hc.add hvc).add hd).add hq
+  refine (((hc.add hvc).add hd).add hq).congr ?_
+  intro x _
+  simp only [frozenTrig,Pi.add_apply,one_mul,add_zero,add_comm x v]
 
 /-- No support-wall case is required: the proof precedes support maximization. -/
 theorem frozenTrig_positive {C Av Bv Ad Bd Aq Bq V D v d : ℝ}

@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Normalization.Markers
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.Markers
 
 /-!
 # Weighted containment bounds for genuine Seven markers
@@ -32,8 +29,10 @@ lemma chart_weighted_support {a u : ℝ} (h : ContainedChart a u) :
   nlinarith
 
 lemma genuine_label_le_side (a u : ℝ) :
-    Seven.label a u ≤ Real.pi/6+(u-1/2)/3+(3/4)*(1-a) :=
-  (min_le_left _ _).trans (min_le_right _ _)
+    Seven.label a u ≤ Real.pi/6+(u-1/2)/3+(3/4)*(1-a) := by
+  have h : Seven.label a u ≤ Seven.side a u := (min_le_left _ _).trans (min_le_right _ _)
+  unfold Seven.side at h
+  linarith
 
 lemma genuine_side_lower {a u : ℝ} (h : ContainedChart a u) :
     Real.pi/6-17/48+(43/48)*u < Real.pi/6+(u-1/2)/3+(3/4)*(1-a) := by
@@ -45,7 +44,7 @@ lemma genuine_label_lower {a u L : ℝ} (h : ContainedChart a u)
     (hquarter : L < Real.pi/4) : L < Seven.label a u := by
   unfold Seven.label Seven.axial Seven.side
   apply lt_min
-  · exact lt_min hax (hside.trans_lt (genuine_side_lower h))
+  · exact lt_min (by linarith) (by linarith [genuine_side_lower h])
   · exact hquarter
 
 lemma sine_nine_tenths {t : ℝ} (ht0 : 0 ≤ t) (ht1 : t ≤ 1/2) :

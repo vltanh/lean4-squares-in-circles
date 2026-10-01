@@ -1,10 +1,7 @@
-module
-public import SquaresInCircles.Six.Analytic.EndpointReduction
-public import SquaresInCircles.Six.Analytic.OwnMovingPin
-public import SquaresInCircles.Six.Analytic.PinArc
-public import SquaresInCircles.Seven.Analysis
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.EndpointReduction
+import SquaresInCircles.Six.Analytic.OwnMovingPin
+import SquaresInCircles.Six.Analytic.PinArc
+import SquaresInCircles.Seven.Analysis
 
 /-!
 # OWN primary-axis windows, before assigning pins
@@ -119,7 +116,9 @@ lemma own_west_positive_profile {t a b cx cy : ℝ}
   have hp := mul_nonneg (sub_nonneg.mpr hcx) hc
   have hq := mul_nonneg (sub_nonneg.mpr hcy) hs
   dsimp [centralMargin,centralNormal,angularWidth] at ho
-  rw [Real.cos_pi_add,Real.sin_pi_add,abs_neg,abs_neg,abs_of_nonneg hc,abs_of_nonneg hs] at ho
+  have hcpi : Real.cos (Real.pi+t)=-Real.cos t := by rw [add_comm]; exact Real.cos_add_pi t
+  have hspi : Real.sin (Real.pi+t)=-Real.sin t := by rw [add_comm]; exact Real.sin_add_pi t
+  rw [hcpi,hspi,abs_neg,abs_neg,abs_of_nonneg hc,abs_of_nonneg hs] at ho
   nlinarith
 
 lemma own_west_lower_window {t a b cx cy : ℝ} (hc : ContainedChart a |b|)

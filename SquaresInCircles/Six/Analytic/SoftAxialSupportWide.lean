@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.SoftAxialSupport
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SoftAxialSupport
 
 /-!
 # A wider smooth-support cone
@@ -33,9 +30,9 @@ theorem soft_axial_support_wide {a b U V : ℝ} (hc : ContainedChart a |b|)
     (show 0 ≤ (31/100)*U-(31/60)*|V| by linarith [hV]) (abs_nonneg b)
   have hquadratic := mul_nonneg
     (show 0 ≤ (31/100)*U-1023/2000 by linarith [hU]) (sq_nonneg b)
-  have hprod : V*b ≤ |V|*|b| := by
+  have hprod : V*b ≤ |V| *|b| := by
     simpa only [abs_mul] using le_abs_self (V*b)
-  have hsq : 0 ≤ (1023/2000)*|b|^2-(29/60)*|b|*|V|+(3/25)*|V|^2 := by
+  have hsq : 0 ≤ (1023/2000)*|b|^2-(29/60)*|b| *|V|+(3/25)*|V|^2 := by
     rw [wide_axial_square]
     positivity
   rw [sq_abs,sq_abs] at hsq

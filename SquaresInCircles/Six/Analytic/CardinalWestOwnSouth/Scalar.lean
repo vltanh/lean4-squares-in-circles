@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.CardinalWestOwnSouth.Profile
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CardinalWestOwnSouth.Profile
 
 /-!
 # Four high-diagonal geometric corners
@@ -65,12 +62,16 @@ lemma endpoint_positive (face west diagonal : Bool) :
 theorem positive (upper : Bool) {v d : ℝ}
     (hv : 0 ≤ v ∧ v ≤ 2/3) (hd : 157/200 ≤ d ∧ d ≤ 34/35) :
     0 < profile upper v d := by
+  have e00 : 0 < profile upper 0 (157/200) := endpoint_positive upper false false
+  have e10 : 0 < profile upper (2/3) (157/200) := endpoint_positive upper true false
+  have e01 : 0 < profile upper 0 (34/35) := endpoint_positive upper false true
+  have e11 : 0 < profile upper (2/3) (34/35) := endpoint_positive upper true true
   have hl : 0 < profile upper v (157/200) :=
-    positive_on_concave_interval (profile_west_concave upper (d := 157/200) (by norm_num)) hv
-      (endpoint_positive upper false false) (endpoint_positive upper true false)
+    positive_on_concave_interval (f := fun v => profile upper v (157/200))
+      (profile_west_concave upper (d := 157/200) (by norm_num)) hv e00 e10
   have hu : 0 < profile upper v (34/35) :=
-    positive_on_concave_interval (profile_west_concave upper (d := 34/35) (by norm_num)) hv
-      (endpoint_positive upper false true) (endpoint_positive upper true true)
+    positive_on_concave_interval (f := fun v => profile upper v (34/35))
+      (profile_west_concave upper (d := 34/35) (by norm_num)) hv e01 e11
   exact positive_on_concave_interval (profile_diagonal_concave upper hv) hd hl hu
 
 end SquaresInCircles.Six.Analytic.CardinalWestOwnSouth

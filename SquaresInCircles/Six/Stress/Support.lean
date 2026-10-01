@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.SquareSupport
-public import SquaresInCircles.Common.Support
-
-@[expose] public section
+import SquaresInCircles.Six.SquareSupport
+import SquaresInCircles.Common.Support
 
 /-!
 # Geometric support inequalities used by the n=6 stresses

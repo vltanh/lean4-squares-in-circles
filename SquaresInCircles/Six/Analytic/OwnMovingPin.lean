@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.MovingPinPolynomial
-public import SquaresInCircles.Six.Normalization.CentralSAT
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.MovingPinPolynomial
+import SquaresInCircles.Six.Normalization.CentralSAT
 
 /-!
 # The OWN moving pin, without a finite-cover certificate
@@ -74,6 +71,6 @@ theorem own_moving_pin {t a b cx cy : ℝ}
   constructor
   · simpa using hX
   · have hid : -(1+cx)*Real.sin t-b = -((1+cx)*Real.sin t+b) := by ring
-    simpa only [mul_zero,zero_add,add_zero,hid,abs_neg] using hY
+    simpa only [zero_mul,mul_zero,zero_add,add_zero,hid,abs_neg] using hY
 
 end SquaresInCircles.Six.Analytic

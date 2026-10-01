@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.FixedPairRadicands
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FixedPairRadicands
 
 /-!
 # The negative-cardinal half of the pair domain
@@ -23,9 +20,9 @@ lemma harmonicCurvature_length_form {R P Q T x D : ℝ}
   let z := Q*Real.cos x+T*Real.sin x
   let L := Real.sqrt (harmonicArg P Q T x)
   have harg : harmonicArg P Q T x=P+z := by dsimp [harmonicArg,z]; ring
-  have hroot : Real.sqrt (P+z)=L := by rw [← harg]; rfl
+  have hroot : Real.sqrt (P+z)=L := by rw [← harg]
   have hL : 0<L := Real.sqrt_pos.mpr hx
-  have hsq : L^2=P+z := by simpa only [harg] using Real.sq_sqrt hx.le
+  have hsq : L^2=P+z := by rw [← harg]; exact Real.sq_sqrt hx.le
   have hn : z^2+2*P*z+Q^2+T^2=L^4-D := by
     calc
       _=(P+z)^2-D := by nlinarith only [hD]
@@ -34,7 +31,6 @@ lemma harmonicCurvature_length_form {R P Q T x D : ℝ}
   change R*(z^2+2*P*z+Q^2+T^2)/(4*(P+z)*Real.sqrt (P+z))=(R/4)*(L-D/L^3)
   rw [hroot,hn,← hsq]
   field_simp [ne_of_gt hL]
-  ring
 
 lemma harmonicCurvature_le_length_ceiling {R P Q T x D D0 B : ℝ}
     (hR : 0≤R) (hx : 0<harmonicArg P Q T x) (hD : P^2-Q^2-T^2=D)
@@ -70,7 +66,7 @@ theorem negative_cardinal_north_curvature {no : Bool} {n w : ℝ}
     nlinarith
   have hx : 0<W.arg w := by
     apply northWave_positive (wo := false) 0 1
-    simpa only [sliceN,sliceW,if_true,if_false] using hd
+    simpa only [sliceN,sliceW,ite_true,ite_self] using hd
   have hbounds := domain_bounds hd
   have hz : W.cosine*Real.cos w+W.sine*Real.sin w≤(3/5)*rStar := by
     cases no
@@ -80,7 +76,7 @@ theorem negative_cardinal_north_curvature {no : Bool} {n w : ℝ}
         rw [Real.sin_neg] at hh
         linarith
       change 0*Real.cos w+2*rStar*Real.sin w≤(3/5)*rStar
-      have hp := mul_nonpos_of_nonneg_of_nonpos (show 0≤2*rStar by positivity) hs
+      have hp := mul_nonpos_of_nonneg_of_nonpos (show 0≤2*rStar by linarith [rStar_pos]) hs
       linarith [rStar_pos]
     · have hq : -3/10≤Real.sin (n-w) := by
         by_cases h : n-w≤0
@@ -94,7 +90,8 @@ theorem negative_cardinal_north_curvature {no : Bool} {n w : ℝ}
         rw [Real.sin_sub]
         ring
       rw [he]
-      have hp := mul_nonneg (show 0≤2*rStar by positivity) (show 0≤Real.sin (n-w)+3/10 by linarith)
+      have hp := mul_nonneg (show 0≤2*rStar by linarith [rStar_pos])
+        (show 0≤Real.sin (n-w)+3/10 by linarith)
       nlinarith
   have hrsq := pow_le_pow_left₀ rStar_pos.le pair_multiplier_bounds.2.1.le 2
   have hlength : Real.sqrt (W.arg w)≤7/6 := by

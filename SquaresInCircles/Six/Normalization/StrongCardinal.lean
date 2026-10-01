@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Normalization.Complete
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.Complete
 
 /-!
 # N25+: the cardinal E/N bound required by the repaired downstream proof
@@ -53,7 +50,9 @@ theorem PinPacking.east_cardinal_angle_203 {R : ℝ} (P : PinPacking R)
       P.center.1 P.center.2) : |P.phase 0| < 203 / 1000 := by
   have hcap := P.cardinal_cap_depth 0 hE
   have hangle := P.matching_cardinal_angle 0 hE
-  simp only [matchingCardinal, cardinalCenter, cardinalDepth, sub_zero] at hcap hangle
+  have h0 : matchingCardinal 0 = .east := rfl
+  rw [h0] at hcap hangle
+  simp only [cardinalCenter, cardinalDepth, sub_zero] at hcap hangle
   apply cap_angle_lt_203_1000
     (show (1 : ℝ) / 2 ≤ 1 / 2 + P.center.1 by linarith [P.box.1.1]) hcap
   linarith [Real.pi_gt_d2]
@@ -64,7 +63,9 @@ theorem PinPacking.north_cardinal_angle_203 {R : ℝ} (P : PinPacking R)
       P.center.1 P.center.2) : |P.phase 1 - Real.pi / 2| < 203 / 1000 := by
   have hcap := P.cardinal_cap_depth 1 hN
   have hangle := P.matching_cardinal_angle 1 hN
-  simp only [matchingCardinal, cardinalCenter, cardinalDepth] at hcap hangle
+  have h1 : matchingCardinal 1 = .north := rfl
+  rw [h1] at hcap hangle
+  simp only [cardinalCenter, cardinalDepth] at hcap hangle
   apply cap_angle_lt_203_1000
     (show (1 : ℝ) / 2 ≤ 1 / 2 + P.center.2 by linarith [P.box.2.1]) hcap
   linarith [Real.pi_gt_d2]
@@ -72,13 +73,15 @@ theorem PinPacking.north_cardinal_angle_203 {R : ℝ} (P : PinPacking R)
 /-- The canonical cardinal bit supplies exactly the hypothesis required by N25+. -/
 theorem NormalizedPacking.east_cardinal_angle_203 {R : ℝ} (P : NormalizedPacking R)
     (hE : P.ownBits 0 = false) : |P.helperAngle 0| < 203 / 1000 := by
-  simpa only [NormalizedPacking.helperAngle, matchingCardinal, cardinalCenter, sub_zero]
+  have h0 : matchingCardinal 0 = .east := rfl
+  simpa only [NormalizedPacking.helperAngle, h0, cardinalCenter, sub_zero]
     using P.toPinPacking.east_cardinal_angle_203 (P.cardinal_separator 0 hE)
 
 /-- The N25+ endpoint consumed by the R22-d and Pattern-28/29 reserves. -/
 theorem NormalizedPacking.north_cardinal_angle_203 {R : ℝ} (P : NormalizedPacking R)
     (hN : P.ownBits 1 = false) : |P.helperAngle 1| < 203 / 1000 := by
-  simpa only [NormalizedPacking.helperAngle, matchingCardinal, cardinalCenter]
+  have h1 : matchingCardinal 1 = .north := rfl
+  simpa only [NormalizedPacking.helperAngle, h1, cardinalCenter]
     using P.toPinPacking.north_cardinal_angle_203 (P.cardinal_separator 1 hN)
 
 end SquaresInCircles.Six.Normalization

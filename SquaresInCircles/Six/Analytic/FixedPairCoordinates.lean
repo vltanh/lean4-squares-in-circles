@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.FixedPair
-public import SquaresInCircles.Six.PinAxes
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FixedPair
+import SquaresInCircles.Six.PinAxes
 
 /-!
 # Actual coordinates of the fixed-weight N/W stress
@@ -40,6 +37,12 @@ def westResultant (wo : Bool) (u : Fin 4) (n w : ℝ) : Point :=
     (add (scale (-rStar) (sourceAxis n w u))
       (scale (-mStar) (secondary (Real.pi+w))))
 
+private lemma cos_pi_add' (x : ℝ) : Real.cos (Real.pi+x)=-Real.cos x := by
+  rw [add_comm]; exact Real.cos_add_pi x
+
+private lemma sin_pi_add' (x : ℝ) : Real.sin (Real.pi+x)=-Real.sin x := by
+  rw [add_comm]; exact Real.sin_add_pi x
+
 lemma project_add (t : ℝ) (p q : Point) :
     project t (add p q)=add (project t p) (project t q) := by
   apply Prod.ext <;> dsimp [project,add] <;> ring
@@ -51,12 +54,12 @@ lemma project_scale (t l : ℝ) (p : Point) :
 lemma project_primary (t z : ℝ) :
     project t (primary z)=(Real.cos (z-t),Real.sin (z-t)) := by
   apply Prod.ext <;> dsimp [project,primary] <;>
-    rw [Real.cos_sub,Real.sin_sub] <;> ring
+    simp only [Real.cos_sub,Real.sin_sub] <;> ring
 
 lemma project_secondary (t z : ℝ) :
     project t (secondary z)=(-Real.sin (z-t),Real.cos (z-t)) := by
   apply Prod.ext <;> dsimp [project,secondary] <;>
-    rw [Real.cos_sub,Real.sin_sub] <;> ring
+    simp only [Real.cos_sub,Real.sin_sub] <;> ring
 
 lemma project_north_normal (no : Bool) (n : ℝ) :
     project (Real.pi/2+n) (northNormal no n)=pairNorthBase no n := by
@@ -70,16 +73,17 @@ lemma project_north_normal (no : Bool) (n : ℝ) :
 lemma project_west_normal (wo : Bool) (w : ℝ) :
     project (Real.pi+w) (westNormal wo w)=pairWestBase wo w := by
   cases wo
-  · simp [project,westNormal,pairWestBase,Real.cos_pi_add,Real.sin_pi_add]
+  · simp [project,westNormal,pairWestBase,cos_pi_add',sin_pi_add']
   · have hw : westNormal true w=primary (Real.pi+w) := by
-      simp [westNormal,primary,Real.cos_pi_add,Real.sin_pi_add]
+      simp [westNormal,primary,cos_pi_add',sin_pi_add']
     rw [hw,project_primary]
     simp [pairWestBase]
 
 lemma source_north_projection (u : Fin 4) (n w : ℝ) :
     project (Real.pi/2+n) (sourceAxis n w u)=pairNorthSource u (n-w) := by
   have hq : (Real.pi+w)-(Real.pi/2+n)=Real.pi/2-(n-w) := by ring
-  fin_cases u
+  have hu4 : u=0 ∨ u=1 ∨ u=2 ∨ u=3 := by fin_cases u <;> simp
+  rcases hu4 with rfl | rfl | rfl | rfl
   all_goals simp only [sourceAxis,Matrix.cons_val_zero,Matrix.cons_val_one,
     Matrix.cons_val,project_scale,project_primary,project_secondary,hq,
     sub_self,Real.cos_zero,Real.sin_zero,Real.cos_pi_div_two_sub,
@@ -89,7 +93,8 @@ lemma source_north_projection (u : Fin 4) (n w : ℝ) :
 lemma source_west_projection (u : Fin 4) (n w : ℝ) :
     project (Real.pi+w) (scale (-1) (sourceAxis n w u))=pairWestSource u (n-w) := by
   have hq : (Real.pi/2+n)-(Real.pi+w)=(n-w)-Real.pi/2 := by ring
-  fin_cases u
+  have hu4 : u=0 ∨ u=1 ∨ u=2 ∨ u=3 := by fin_cases u <;> simp
+  rcases hu4 with rfl | rfl | rfl | rfl
   all_goals simp only [sourceAxis,Matrix.cons_val_zero,Matrix.cons_val_one,
     Matrix.cons_val,project_scale,project_primary,project_secondary,hq,
     sub_self,Real.cos_zero,Real.sin_zero,Real.cos_sub,Real.sin_sub,
@@ -106,8 +111,9 @@ lemma west_resultant_projection (wo : Bool) (u : Fin 4) (n w : ℝ) :
   have hneg : scale (-rStar) (sourceAxis n w u)=
       scale rStar (scale (-1) (sourceAxis n w u)) := by
     apply Prod.ext <;> dsimp [scale] <;> ring
-  rw [westResultant,project_add,project_add,hneg,project_scale,project_scale,
-    project_west_normal,source_west_projection,project_secondary]
+  rw [westResultant,project_add,project_add,hneg,project_scale (Real.pi+w) rStar,
+    project_scale (Real.pi+w) (-mStar),project_west_normal,source_west_projection,
+    project_secondary]
   simp only [sub_self,Real.sin_zero,Real.cos_zero,neg_zero]
   apply Prod.ext <;> dsimp [westForce,add,scale] <;> ring
 

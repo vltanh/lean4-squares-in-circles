@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Profile
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Profile
 
 /-!
 # Coordinate concavity on the west-dominant geometric domain
@@ -35,8 +32,9 @@ lemma west_term_nonnegative (upper : Bool) {v : ℝ}
     (hv : 0 ≤ v ∧ v ≤ 2/3) : 0 ≤ westTerm upper v := by
   have h := small_trig ⟨hv.1,by linarith [hv.2]⟩
   have hy := (centerY_bounds upper).1
+  have h1 := mul_nonneg (show (0:ℝ) ≤ 1/2+centerY upper by linarith) h.2
   dsimp [westTerm,westWeight,wingCos]
-  positivity
+  linarith [h.1]
 
 lemma south_term_affine_lower (upper : Bool) {s : ℝ}
     (hs : 0 ≤ s ∧ s ≤ 12/25) :
@@ -104,7 +102,7 @@ lemma west_slice_concave (upper : Bool) {d : ℝ}
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc 0 (2/3))
     (f' := fun v => westFirst upper v+chordFirst (d+v))
     (f'' := fun v => -westTerm upper v+chordSecond (d+v))
-    (by dsimp [westSlice,westTerm,chord]; fun_prop)
+    (fun x _ => (west_slice_hasDeriv upper d x).continuousAt.continuousWithinAt)
   · intro v _
     exact (west_slice_hasDeriv upper d v).hasDerivWithinAt
   · intro v _
@@ -121,13 +119,14 @@ lemma south_slice_concave (upper : Bool) {d : ℝ}
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc 0 (12/25))
     (f' := fun s => southFirst upper s-transverseFirst (d-s))
     (f'' := fun s => -southTerm upper s+transverseSecond (d-s))
-    (by dsimp [southSlice,southTerm,transverse]; fun_prop)
+    (fun x _ => (south_slice_hasDeriv upper d x).continuousAt.continuousWithinAt)
   · intro s _
     exact (south_slice_hasDeriv upper d s).hasDerivWithinAt
   · intro s _
     exact (south_slice_first_hasDeriv upper d s).hasDerivWithinAt
   · intro s hs
-    exact (south_curvature_negative upper (interior_subset hs) hd).le
+    exact (south_curvature_negative upper
+      (interior_subset hs : s ∈ Set.Icc (0:ℝ) (12/25)) hd).le
 
 lemma profile_diagonal_concave (upper : Bool) {v s : ℝ}
     (hv : 0 ≤ v ∧ v ≤ 2/3) (hs : 0 ≤ s ∧ s ≤ 12/25) (horder : s ≤ v) :
@@ -135,12 +134,13 @@ lemma profile_diagonal_concave (upper : Bool) {v s : ℝ}
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc (1/2) (11/14))
     (f' := fun d => diagonalFirst upper d+chordFirst (d+v)+transverseFirst (d-s))
     (f'' := fun d => -diagonalTerm upper d+chordSecond (d+v)+transverseSecond (d-s))
-    (by dsimp [profile,westSlice,southSlice,diagonalTerm,chord,transverse]; fun_prop)
+    (fun x _ => (profile_diagonal_hasDeriv upper v s x).continuousAt.continuousWithinAt)
   · intro d _
     exact (profile_diagonal_hasDeriv upper v s d).hasDerivWithinAt
   · intro d _
     exact (profile_diagonal_first_hasDeriv upper v s d).hasDerivWithinAt
   · intro d hd
-    exact (diagonal_curvature_negative upper hv hs horder (interior_subset hd)).le
+    exact (diagonal_curvature_negative upper hv hs horder
+      (interior_subset hd : d ∈ Set.Icc (1/2:ℝ) (11/14))).le
 
 end SquaresInCircles.Six.Analytic.OwnSouthWestDominant

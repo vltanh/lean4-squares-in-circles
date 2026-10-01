@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.SouthOuterTail.OwnRaw
-public import SquaresInCircles.Six.Analytic.SouthOuterTail.NarrowSupport
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SouthOuterTail.OwnRaw
+import SquaresInCircles.Six.Analytic.SouthOuterTail.NarrowSupport
 
 /-!
 # The one exceptional wing corner needs no diagonal partition
@@ -19,11 +16,11 @@ noncomputable section
 namespace SquaresInCircles.Six.Analytic.SouthOuterTail.Own
 open Normalization
 
- def corner : ℝ := 11/25
- def forceU (d : ℝ) : ℝ := mu*Real.sin (d+corner)+nu*Real.cos (d-corner)
- def forceV (d : ℝ) : ℝ := mu*Real.cos (d+corner)-nu*Real.sin (d-corner)
- def rotationA : ℝ := mu*Real.sin corner+nu*Real.cos corner
- def rotationB : ℝ := mu*Real.cos corner+nu*Real.sin corner
+def corner : ℝ := 11/25
+def forceU (d : ℝ) : ℝ := mu*Real.sin (d+corner)+nu*Real.cos (d-corner)
+def forceV (d : ℝ) : ℝ := mu*Real.cos (d+corner)-nu*Real.sin (d-corner)
+def rotationA : ℝ := mu*Real.sin corner+nu*Real.cos corner
+def rotationB : ℝ := mu*Real.cos corner+nu*Real.sin corner
 
 lemma force_rotation (d : ℝ) :
     forceU d=rotationA*Real.cos d+rotationB*Real.sin d ∧
@@ -109,10 +106,10 @@ lemma corner_support {a b d : ℝ} (hc : ContainedChart a |b|)
     (show 0 ≤ forceU d by linarith [hcone.1.1])
   nlinarith only [h,hp]
 
- def specialTerm (d : ℝ) : ℝ :=
+def specialTerm (d : ℝ) : ℝ :=
   (mu/2)*Real.cos (d+corner)-mu*B*Real.sin (d+corner)-
     nu*B*Real.cos (d-corner)+(nu/2)*Real.sin (d-corner)
- def specialFirst (d : ℝ) : ℝ :=
+def specialFirst (d : ℝ) : ℝ :=
   -mu*(B*Real.cos (d+corner)+(1/2)*Real.sin (d+corner))+
     nu*((1/2)*Real.cos (d-corner)+B*Real.sin (d-corner))
 
@@ -120,8 +117,11 @@ lemma special_hasDeriv (d : ℝ) : HasDerivAt specialTerm (specialFirst d) d := 
   convert ((((((hasDerivAt_id d).add_const corner).cos).const_mul (mu/2)).sub
     ((((hasDerivAt_id d).add_const corner).sin).const_mul (mu*B))).sub
     ((((hasDerivAt_id d).sub_const corner).cos).const_mul (nu*B))).add
-    ((((hasDerivAt_id d).sub_const corner).sin).const_mul (nu/2)) using 1 <;>
-    dsimp [specialTerm,specialFirst] <;> ring
+    ((((hasDerivAt_id d).sub_const corner).sin).const_mul (nu/2)) using 1
+  · funext y
+    simp only [specialTerm,Pi.add_apply,Pi.sub_apply,id]
+  · dsimp [specialFirst]
+    ring
 
 lemma special_derivative_nonpositive {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 11/14) :
     specialFirst d ≤ 0 := by
@@ -140,7 +140,7 @@ lemma special_derivative_nonpositive {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 11/14) 
   have hr : 0 ≤ d-corner := by dsimp [corner]; linarith [hd.1]
   have hs : Real.sin (d-corner) ≤ 121/350 := by
     have h := Real.sin_le hr
-    dsimp [corner] at h
+    dsimp [corner] at h ⊢
     linarith [hd.2]
   have hc := Real.cos_le_one (d-corner)
   dsimp [specialFirst,mu,nu,B] at *
@@ -149,8 +149,9 @@ lemma special_derivative_nonpositive {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 11/14) 
 lemma special_at_upper_diagonal {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 11/14) :
     specialTerm (11/14) ≤ specialTerm d := by
   have hm : MonotoneOn (fun x => -specialTerm x) (Set.Icc (1/2) (11/14)) := by
-    apply Seven.monoOn_of_hasDeriv_nonneg (by dsimp [specialTerm]; fun_prop)
-      (fun x _ => (special_hasDeriv x).neg)
+    refine Seven.monoOn_of_hasDeriv_nonneg (d := fun x => -specialFirst x)
+      (fun x _ => (special_hasDeriv x).continuousAt.neg.continuousWithinAt)
+      (fun x _ => (special_hasDeriv x).neg) ?_
     intro x hx
     exact neg_nonneg.mpr (special_derivative_nonpositive ⟨hx.1.le,hx.2.le⟩)
   have h := hm hd (by norm_num : (11:ℝ)/14 ∈ Set.Icc (1/2) (11/14)) hd.2

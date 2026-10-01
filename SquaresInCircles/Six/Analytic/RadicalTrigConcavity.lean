@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.EndpointReduction
-public import Mathlib.Analysis.SpecialFunctions.Sqrt
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.EndpointReduction
+import Mathlib.Analysis.SpecialFunctions.Sqrt
 
 /-!
 # A curvature identity for the radical terms in Appendix A
@@ -69,15 +66,19 @@ theorem radicalTrig_concave {A B p q R l u:ℝ}
   have hd (x:ℝ) (hx:x∈Set.Icc l u) : HasDerivAt (radicalTrig A B p q R) (d x) x := by
     convert (((Real.hasDerivAt_cos x).const_mul A).add
       ((Real.hasDerivAt_sin x).const_mul B)).sub
-      ((radical_first_derivative (hroot x hx)).const_mul R) using 1 <;>
-      dsimp [radicalTrig,d] <;> ring
+      ((radical_first_derivative (hroot x hx)).const_mul R) using 1
+    · funext y
+      simp only [radicalTrig,Pi.add_apply,Pi.sub_apply]
+    · simp only [d]
+      ring
   have hdd (x:ℝ) (hx:x∈Set.Icc l u) : HasDerivAt d (dd x) x := by
     convert (((Real.hasDerivAt_sin x).const_mul (-A)).add
       ((Real.hasDerivAt_cos x).const_mul B)).sub
-      ((radical_second_derivative (hroot x hx)).const_mul R) using 1 <;>
-      dsimp [d,dd] <;> ring
+      ((radical_second_derivative (hroot x hx)).const_mul R) using 1
+    simp only [dd]
+    ring
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc l u)
-    (f':=d) (f'':=dd) (by dsimp [radicalTrig]; fun_prop)
+    (f':=d) (f'':=dd) (by unfold radicalTrig; fun_prop)
   · intro x hx
     exact (hd x (interior_subset hx)).hasDerivWithinAt
   · intro x hx
@@ -108,7 +109,7 @@ lemma concave_constant (C l u:ℝ) : ConcaveOn ℝ (Set.Icc l u) (fun _=>C) := b
   refine ⟨convex_Icc l u,?_⟩
   intro x hx y hy r s hr hs hrs
   simp only [smul_eq_mul]
-  nlinarith only [hrs]
+  rw [← add_mul,hrs,one_mul]
 
 lemma positive_on_concave_interval {f:ℝ→ℝ} {l u x:ℝ}
     (hf:ConcaveOn ℝ (Set.Icc l u) f) (hx:l≤x ∧ x≤u)

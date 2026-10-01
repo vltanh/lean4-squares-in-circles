@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.ReflectedOwnWings.Profile
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.ReflectedOwnWings.Profile
 
 /-!
 # Exact vertices of the reflected two-OWN polygon
@@ -63,7 +60,8 @@ lemma positive_of_four_vertices (upper : Bool) {v s d : ℝ}
     (hsum : v+s ≤ 24/25) (hd : 157/200 ≤ d ∧ d ≤ 163/175)
     (he : FourVertices upper d) : 0 < value upper v s d := by
   have hleft : 0 < value upper s s d :=
-    positive_on_concave_interval (equal_wall_concave upper hd) hs he.1 he.2.2.2
+    positive_on_concave_interval (f := fun x => value upper x x d)
+      (equal_wall_concave upper hd) hs he.1 he.2.2.2
   have hcv : ConcaveOn ℝ (Set.Icc 0 (2/3)) (fun x => value upper x s d) :=
     ((concave_constant (constantTerm+diagonalTerm upper d) 0 (2/3)).add
       (west_concave upper hd)).add (concave_constant (southSlice upper d s) 0 (2/3))
@@ -123,7 +121,7 @@ private lemma polynomial_le (upper : Bool) {v s d : ℝ}
     dsimp [lowerPolynomial,value,westSlice,southSlice,westTerm,southTerm,diagonalTerm,
       chord,transverse,beta,gamma,delta,A,B,face,chordSin,chordCos,
       cosLower,cosUpper,sinLower,sinUpper] <;>
-    nlinarith only [cv,sv,cs,ss,cd,sd,sq,sh,ch,cr,sr,crr]
+    linarith only [cv,sv,cs,ss,cd,sd,sq,sh,ch,cr,sr,crr]
 
 private def vertexV (i : Fin 4) : ℝ := ![48/175,2/3,2/3,12/25] i
 private def vertexS (i : Fin 4) : ℝ := ![48/175,48/175,22/75,12/25] i

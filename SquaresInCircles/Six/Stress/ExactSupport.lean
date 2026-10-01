@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Stress.Support
-
-@[expose] public section
+import SquaresInCircles.Six.Stress.Support
 
 /-!
 # Exact cap/vertex center support
@@ -62,7 +59,7 @@ private lemma cap_slope {R U V : ℝ} (hR : 1/2 < R) (hU : 0 ≤ U) (hV : 0 ≤ 
 lemma ordered_center_support {R a b U V : ℝ}
     (hR : 1/2 < R) (hU : 0 ≤ U) (hV : 0 ≤ V)
     (hbox : (|a|+1/2)^2+(|b|+1/2)^2 ≤ R^2) :
-    |a|*U+|b|*V ≤ orderedSupport R U V := by
+    |a| *U+|b| *V ≤ orderedSupport R U V := by
   unfold orderedSupport
   split_ifs with hswitch
   · have hrad : 0 < R^2-1/4 := by nlinarith [sq_nonneg (R-1/2)]
@@ -85,9 +82,9 @@ sorting handled explicitly. -/
 theorem scalar_center_support {R a b x y : ℝ}
     (hR : 1/2 < R) (hbox : (|a|+1/2)^2+(|b|+1/2)^2 ≤ R^2) :
     x*a+y*b ≤ scalarSupport R x y := by
-  have hx : x*a ≤ |a|*|x| := by
+  have hx : x*a ≤ |a| *|x| := by
     simpa only [abs_mul,mul_comm] using le_abs_self (x*a)
-  have hy : y*b ≤ |b|*|y| := by
+  have hy : y*b ≤ |b| *|y| := by
     simpa only [abs_mul,mul_comm] using le_abs_self (y*b)
   unfold scalarSupport
   split_ifs

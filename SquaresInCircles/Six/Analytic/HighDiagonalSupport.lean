@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.HighDiagonalAffineTransverse
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.HighDiagonalAffineTransverse
 
 /-!
 # A tangent profile that retains the shared central coordinates
@@ -55,22 +52,25 @@ private lemma profileCircle_concave :
     -2*(19359/50000)*(Real.sin x+Real.cos x)-
     4*(19359/50000)^2*Real.sin (2*x)+2*(17/100)^2
   have hf (x : ℝ) : HasDerivAt profileCircle (f' x) x := by
-    have htr := ((Real.hasDerivAt_cos x).add (Real.hasDerivAt_sin x)).const_mul
+    have htr := ((Real.hasDerivAt_cos x).fun_add (Real.hasDerivAt_sin x)).const_mul
       (2*(19359/50000))
     have htwo := (((hasDerivAt_id x).const_mul 2).sin).const_mul ((19359/50000)^2)
-    have hsq := ((hasDerivAt_const x (2023/2500)).sub
-      ((hasDerivAt_id x).const_mul (17/100))).pow 2
-    convert ((htr.const_add (1+(19359/50000)^2-Q0)).add htwo).add hsq using 1 <;>
-      dsimp [profileCircle,f'] <;> ring
+    have hsq := ((hasDerivAt_const x (2023/2500)).fun_sub
+      ((hasDerivAt_id x).const_mul (17/100))).fun_pow 2
+    convert ((htr.const_add (1+(19359/50000)^2-Q0)).fun_add htwo).fun_add hsq using 1
+    · funext y; dsimp [profileCircle]
+    · dsimp [f']; ring
   have hff (x : ℝ) : HasDerivAt f' (f'' x) x := by
-    have htr := ((Real.hasDerivAt_cos x).sub (Real.hasDerivAt_sin x)).const_mul
+    have htr := ((Real.hasDerivAt_cos x).fun_sub (Real.hasDerivAt_sin x)).const_mul
       (2*(19359/50000))
     have htwo := (((hasDerivAt_id x).const_mul 2).cos).const_mul (2*(19359/50000)^2)
-    have hlin := ((hasDerivAt_const x (2023/2500)).sub
+    have hlin := ((hasDerivAt_const x (2023/2500)).fun_sub
       ((hasDerivAt_id x).const_mul (17/100))).const_mul (-2*(17/100))
-    convert (htr.add htwo).add hlin using 1 <;> dsimp [f',f''] <;> ring
+    convert (htr.fun_add htwo).fun_add hlin using 1
+    · funext y; dsimp [f']; ring
+    · dsimp [f'']; ring
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc (1/2) (Real.pi/4))
-    (f' := f') (f'' := f'') (by dsimp [profileCircle]; fun_prop)
+    (f' := f') (f'' := f'') (fun x _ => (hf x).continuousAt.continuousWithinAt)
   · intro x _; exact (hf x).hasDerivWithinAt
   · intro x _; exact (hff x).hasDerivWithinAt
   · intro x hx
@@ -78,7 +78,7 @@ private lemma profileCircle_concave :
     have hc := Real.cos_nonneg_of_mem_Icc
       (show x∈Set.Icc (-(Real.pi/2)) (Real.pi/2) by
         constructor <;> linarith [h.1,h.2,Real.pi_pos])
-    have hs := Real.sin_nonneg_of_nonneg_of_le_pi
+    have hs := Real.sin_nonneg_of_nonneg_of_le_pi (x := x)
       (by linarith [h.1]) (by linarith [h.2,Real.pi_pos])
     have hs2 := Real.sin_nonneg_of_nonneg_of_le_pi
       (show 0 ≤ 2*x by linarith [h.1]) (show 2*x ≤ Real.pi by linarith [h.2,Real.pi_pos])
@@ -138,7 +138,7 @@ lemma diagonal_base_bounds {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ Real.pi/4) :
   have hc := Real.cos_nonneg_of_mem_Icc
     (show d∈Set.Icc (-(Real.pi/2)) (Real.pi/2) by
       constructor <;> linarith [hd.1,hd.2,Real.pi_pos])
-  have hs := Real.sin_nonneg_of_nonneg_of_le_pi
+  have hs := Real.sin_nonneg_of_nonneg_of_le_pi (x := d)
     (by linarith [hd.1]) (by linarith [hd.2,Real.pi_pos])
   have hmono := cos_add_sin_mono (x := (1:ℝ)/2) (by norm_num) hd.1 hd.2
   have hcos := Real.one_sub_sq_div_two_le_cos (x := (1:ℝ)/2)
@@ -186,9 +186,11 @@ lemma own_diagonal_profile {a b cx cy d : ℝ}
   have hc := Real.cos_nonneg_of_mem_Icc
     (show d∈Set.Icc (-(Real.pi/2)) (Real.pi/2) by
       constructor <;> linarith [hd.1,hd.2,Real.pi_pos])
-  have hs := Real.sin_nonneg_of_nonneg_of_le_pi
+  have hs := Real.sin_nonneg_of_nonneg_of_le_pi (x := d)
     (by linarith [hd.1]) (by linarith [hd.2,Real.pi_pos])
-  simp only [centralMargin,centralNormal,angularWidth,Real.cos_pi_add,Real.sin_pi_add,
+  have hcpi : Real.cos (Real.pi+d)=-Real.cos d := by rw [add_comm]; exact Real.cos_add_pi d
+  have hspi : Real.sin (Real.pi+d)=-Real.sin d := by rw [add_comm]; exact Real.sin_add_pi d
+  simp only [centralMargin,centralNormal,angularWidth,hcpi,hspi,
     abs_neg,abs_of_nonneg hc,abs_of_nonneg hs] at hown
   dsimp [diagonalBase,coreCeiling]
   nlinarith only [hown]
@@ -202,7 +204,7 @@ theorem diagonal_shared_center_budget {a b cx cy d : ℝ}
   have hcos := Real.cos_nonneg_of_mem_Icc
     (show d∈Set.Icc (-(Real.pi/2)) (Real.pi/2) by
       constructor <;> linarith [hd.1,hd.2,Real.pi_pos])
-  have hsin := Real.sin_nonneg_of_nonneg_of_le_pi
+  have hsin := Real.sin_nonneg_of_nonneg_of_le_pi (x := d)
     (by linarith [hd.1]) (by linarith [hd.2,Real.pi_pos])
   have hX := mul_nonneg (sub_nonneg.mpr hx) hcos
   have hY := mul_nonneg (sub_nonneg.mpr hy) hsin

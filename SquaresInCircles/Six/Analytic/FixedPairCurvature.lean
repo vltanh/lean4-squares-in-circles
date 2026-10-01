@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.FixedPairOpposition
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FixedPairOpposition
 
 /-!
 # Curvature bounds for the four geometric pair sources
@@ -28,7 +25,7 @@ lemma north_curvature_bound (no : Bool) (u : Fin 4) (k : Fin 3) (n w x : ℝ) :
     norm_num
   · let W := northWave no u k n w
     have hP : W.parameter=rStar^2+(1:ℝ)^2 := by
-      simp only [Wave.parameter,hr,hb,one_pow]
+      simp only [W,Wave.parameter,hr,hb,one_pow]
     have hQT : W.cosine^2+W.sine^2=4*rStar^2*(1:ℝ)^2 := by
       simpa only [W,hr,hb,one_pow,mul_one] using northWave_amplitude no u k n w
     have hx : 0<W.arg x := harmonic_arg_positive rStar_pos.le (by norm_num)
@@ -36,7 +33,7 @@ lemma north_curvature_bound (no : Bool) (u : Fin 4) (k : Fin 3) (n w x : ℝ) :
     have hh := harmonicCurvature_le_harmonic_mean (northRadius_nonneg u)
       rStar_pos.le (by norm_num : (0:ℝ)≤1) (by linarith [rStar_pos]) hP hQT hx
     have hm := mul_le_mul_of_nonneg_right (northRadius_le_circle u)
-      (show 0≤rStar/(1+rStar) by positivity)
+      (div_pos rStar_pos one_add_rStar_pos).le
     have hh' : W.curvature (northRadius u) x≤northRadius u*rStar/(1+rStar) := by
       simpa only [Wave.curvature,add_comm,mul_one] using hh
     have hm' : northRadius u*rStar/(1+rStar)≤Six.radius*rStar/(1+rStar) := by
@@ -73,7 +70,7 @@ private lemma multiplier_squares :
   have h := pair_multiplier_bounds
   have hr := pow_le_pow_left₀ rStar_pos.le h.2.1.le 2
   have hm := pow_le_pow_left₀ mStar_pos.le h.2.2.2.le 2
-  have hmr : 0≤mStar-rStar := by linarith [h.2.1,h.2.2.1]
+  have hmr : 0≤ mStar-rStar := by linarith [h.2.1,h.2.2.1]
   have hmr' : mStar-rStar≤21/40 := by linarith [h.1,h.2.2.2]
   exact ⟨hr,hm,pow_le_pow_left₀ hmr hmr' 2⟩
 
@@ -98,7 +95,7 @@ private lemma west_n_base_upper {no wo : Bool} {n w : ℝ}
     (westWave wo u 0 n w).baseSq≤(8/5:ℝ)^2 := by
   have hm := multiplier_squares.2.1
   have hs := (sine_domain_bounds hd).2
-  have hp := mul_le_mul_of_nonneg_left hs (show 0≤2*mStar by positivity)
+  have hp := mul_le_mul_of_nonneg_left hs (show 0≤2*mStar by linarith [mStar_pos])
   rcases hu with rfl | rfl <;> cases wo <;> dsimp [westWave]
   all_goals nlinarith [pair_multiplier_bounds]
 
@@ -144,10 +141,10 @@ lemma west_w_cardinal_bound {no : Bool} {n w : ℝ} (hd : Domain no false n w) (
     (westWave false u 1 n w).curvature Six.radius w≤westWCap u := by
   have hsq := multiplier_squares
   have hsn := (sine_domain_bounds hd).1
-  have hp := mul_le_mul_of_nonneg_left hsn (show 0≤2*rStar by positivity)
-  have hc := mul_le_mul_of_nonneg_left (Real.cos_le_one n) (show 0≤2*rStar by positivity)
+  have hp := mul_le_mul_of_nonneg_left hsn (show 0≤2*rStar by linarith [rStar_pos])
+  have hc := mul_le_mul_of_nonneg_left (Real.cos_le_one n) (show 0≤2*rStar by linarith [rStar_pos])
   have hr : 0<(westWave false u 1 n w).rotor := by
-    fin_cases u <;> dsimp [westWave] <;> first | norm_num | exact mStar_pos
+    fin_cases u <;> dsimp [westWave] <;> norm_num [mStar_pos]
   have hx : 0<(westWave false u 1 n w).arg w := by
     apply westWave_positive (no := no) u 1
     simpa [sliceN,sliceW] using hd

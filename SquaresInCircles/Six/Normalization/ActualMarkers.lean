@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Normalization.PinPacking
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.PinPacking
 
 /-!
 # Genuine markers in the final signed-coordinate model
@@ -31,7 +28,8 @@ def orientedChart (t a b : ℝ) (ha : 0 ≤ a) : SquareChart (orientedSquare t a
   have hframe : ChartCondition (orientedSquare t a b) (0,0) (t:Direction) false a b := by
     simpa only [oriented_frame_centerX,oriented_frame_centerY] using
       frame_chart (orientedSquare t a b) (0,0) (θ := t) rfl rfl
-  refine { a := a, b := |b|, phase := (t:Direction), reversed := decide (b<0),
+  refine {
+    a := a, b := |b|, phase := (t:Direction), reversed := decide (b<0),
     coordinates := Or.inl ⟨?_,?_⟩, shifted_membership := ?_ }
   · simp only [orientedSquare_alpha,abs_of_nonneg ha]
   · exact (orientedSquare_beta t a b).symm
@@ -61,8 +59,10 @@ def affineMarker (i : Fin 5) : Direction := (P.phase i+(5/4)*P.transverse i : �
 
 lemma actualChart_marker (i : Fin 5) : Seven.chartMarker (P.actualChart i)=P.affineMarker i := by
   have hh := chartMarker_affine_of_core (P.actualChart i) (P.contained i) (P.avoidsCore i)
-  rw [orientedChart_signedB] at hh
-  simpa [actualChart,affineMarker,Real.Angle.coe_add] using hh
+  have hs : (P.actualChart i).signedB = P.transverse i := orientedChart_signedB _ _ _ _
+  have hp : (P.actualChart i).phase = (P.phase i : Direction) := rfl
+  rw [hs, hp] at hh
+  rw [hh, affineMarker, Real.Angle.coe_add]
 
 lemma marker_separation (i j : Fin 5) (hij : i≠j) :
     Real.pi/3 < dist (P.affineMarker i) (P.affineMarker j) := by

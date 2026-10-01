@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Analytic.ReflectedOwnWings.Support
-public import SquaresInCircles.Six.Analytic.OwnWestOwnSouth.Geometry
-public import SquaresInCircles.Six.Analytic.OwnWestCardinalSouth.Geometry
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.ReflectedOwnWings.Support
+import SquaresInCircles.Six.Analytic.OwnWestOwnSouth.Geometry
+import SquaresInCircles.Six.Analytic.OwnWestCardinalSouth.Geometry
 
 /-!
 # Both candidate diagonal separators now follow analytically
@@ -46,7 +43,7 @@ theorem not_missing_west_of_order {R : ℝ} (P : NormalizedPacking R)
     dsimp [d]
     constructor <;> linarith [hcore.2,P.diagonal_angle_range.2,Real.pi_gt_d2,Real.pi_lt_d4]
   have hWphase : P.phase 2=Real.pi-s := by
-    rw [P.phase_from_deviation 2]
+    rw [P.phase_from_deviation 2,show cardinalCenter (matchingCardinal 2)=Real.pi from rfl]
     dsimp [s]
     ring
   have hSphase : P.phase 4=3*Real.pi/2+v := P.phase_from_deviation 4
@@ -58,7 +55,7 @@ theorem not_missing_west_of_order {R : ℝ} (P : NormalizedPacking R)
     have h := P.own_separator 4 hS
     rw [hSphase] at h
     simp only [centralMargin,centralNormal,angularWidth,Real.cos_add,Real.sin_add,
-      south_cos,south_sin,zero_mul,one_mul,neg_one_mul,zero_add,add_zero,abs_neg] at h
+      south_cos,south_sin,zero_mul,neg_one_mul,zero_sub,neg_neg,add_zero,abs_neg] at h
     dsimp [angularWidth]
     nlinarith only [h]
   have hCS : 1/2+angularWidth s ≤
@@ -71,8 +68,8 @@ theorem not_missing_west_of_order {R : ℝ} (P : NormalizedPacking R)
   have hCD : 1/2+angularWidth d ≤
       P.radial 3+P.center.2*Real.cos d+P.center.1*Real.sin d := by
     have h := P.own_separator 3 P.diagonal_own
-    rw [hDphase] at h
-    simp only [centralMargin,centralNormal,angularWidth,Real.cos_pi_add,Real.sin_pi_add,
+    rw [hDphase,add_comm Real.pi] at h
+    simp only [centralMargin,centralNormal,angularWidth,Real.cos_add_pi,Real.sin_add_pi,
       Real.cos_pi_div_two_sub,Real.sin_pi_div_two_sub,abs_neg] at h
     dsimp [angularWidth]
     nlinarith only [h]

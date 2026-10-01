@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.CanonicalMargins
-
-@[expose] public section
+import SquaresInCircles.Six.CanonicalMargins
 
 /-!
 # P7: the normalized D deviation is strictly positive
@@ -19,11 +16,11 @@ open Normalization Normalization.Certificates
 
 lemma fixedPin_diagonal_coordinates : fixedPin 3 = (-(9/10)*hStar,-(9/10)*hStar) := by
   have hc : Real.cos ((5/4:ℝ)*Real.pi) = -hStar := by
-    rw [show (5/4:ℝ)*Real.pi=Real.pi+Real.pi/4 by ring,Real.cos_pi_add,
+    rw [show (5/4:ℝ)*Real.pi=Real.pi/4+Real.pi by ring,Real.cos_add_pi,
       Real.cos_pi_div_four]
     rfl
   have hs : Real.sin ((5/4:ℝ)*Real.pi) = -hStar := by
-    rw [show (5/4:ℝ)*Real.pi=Real.pi+Real.pi/4 by ring,Real.sin_pi_add,
+    rw [show (5/4:ℝ)*Real.pi=Real.pi/4+Real.pi by ring,Real.sin_add_pi,
       Real.sin_pi_div_four]
     rfl
   simp [fixedPin,hc,hs]
@@ -49,7 +46,7 @@ lemma diagonal_pin_transverse_lower {a b v : ℝ}
   have hp := (abs_lt.mp hpin.2).2
   rw [orientedSquare_localY,fixedPin_diagonal_coordinates] at hp
   simp only [Real.sin_sub,Real.cos_sub,Real.sin_pi,Real.cos_pi,
-    zero_mul,neg_one_mul,zero_sub,sub_zero] at hp
+    zero_mul,neg_one_mul,zero_sub] at hp
   have hs := small_positive_sine_lower hv0 hv
   have hc := small_cosine_linear_lower hv0 hv
   have hsum : 1+(19/25)*v ≤ Real.cos v+Real.sin v := by linarith
@@ -101,7 +98,8 @@ theorem diagonal_angle_pos : 0 < P.diagonalAngle := by
   have hbad := negative_diagonal_gap hv0 hv (P.contained 3).a_le_rho0
     P.box.1.1 P.box.2.1 hpin
   have hgap := P.canonical_gap_pos 3 hown
-  rw [hphase,show Real.pi-v=Real.pi+(-v) by ring,own_minus_west,
+  rw [hphase,show Real.pi-v=Real.pi+(-v) by ring,
+    show matchingCardinal 3 = CentralAxis.west from rfl,own_minus_west,
     Real.cos_neg,Real.sin_neg] at hgap
   change 0 < (1-Real.cos v)*(P.radial 3-P.center.1)+(-Real.sin v)*(P.transverse 3+P.center.2)
     at hgap

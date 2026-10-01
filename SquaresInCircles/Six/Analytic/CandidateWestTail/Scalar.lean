@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.LowDWestSource.Scalar
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.LowDWestSource.Scalar
 
 /-!
 # A whole-domain scalar obstruction for the candidate west tail
@@ -187,16 +184,18 @@ private lemma cos_lower (x : ℝ) : cosLower x ≤ Real.cos x := by
   by_cases hx : 0 ≤ x
   · exact Seven.cos_lower_six hx
   · have h := Seven.cos_lower_six (x := -x) (by linarith)
-    simpa [cosLower,Real.cos_neg] using h
+    rw [Real.cos_neg] at h
+    simp only [cosLower]
+    linarith
 
 private lemma sin_bracket (x : ℝ) : sinLower x ≤ Real.sin x ∧ Real.sin x ≤ sinUpper x := by
   by_cases hx : 0 ≤ x
-  · simp only [sinLower,sinUpper,if_pos hx]
+  · simp only [sinLower,sinUpper,ite_eq_left hx]
     exact ⟨Seven.sin_lower_seven hx,Seven.sin_upper_five hx⟩
   · have hl := Seven.sin_lower_seven (x := -x) (by linarith)
     have hu := Seven.sin_upper_five (x := -x) (by linarith)
     simp only [Real.sin_neg] at hl hu
-    simp only [sinLower,sinUpper,if_neg hx]
+    simp only [sinLower,sinUpper,ite_eq_right hx]
     constructor <;> nlinarith only [hl,hu]
 
 private def polynomialLower (k : Fin 3) (v x d : ℝ) : ℝ :=
@@ -218,8 +217,12 @@ private lemma polynomial_le (k : Fin 3) (v x d : ℝ) :
   have cr := cos_lower (d-side k*x)
   have sr := (sin_bracket (d-side k*x)).1
   have sz := (sin_bracket (v+side k*x)).2
-  fin_cases k <;> dsimp [polynomialLower,minorant,gCoeff,hCoeff] <;>
-    nlinarith only [cv,sv,cx,sx,cq,sq,cr,sr,sz]
+  have hg : 0 ≤ gCoeff k := by fin_cases k <;> norm_num [gCoeff]
+  have hh : 0 ≤ hCoeff k := by fin_cases k <;> norm_num [hCoeff]
+  have gx := mul_le_mul_of_nonneg_left cx hg
+  have hx := mul_le_mul_of_nonneg_left sx hh
+  dsimp [polynomialLower,minorant]
+  linarith only [cv,sv,gx,hx,cq,sq,cr,sr,sz]
 
 private def vEnd (i : Fin 2) : ℝ := ![11/25,2/3] i
 private def xEnd (k : Fin 3) (i : Fin 2) : ℝ := ![0,xMax k] i

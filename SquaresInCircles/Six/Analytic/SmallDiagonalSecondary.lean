@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Analytic.SmallDiagonalSecondaryBounds
-public import SquaresInCircles.Six.Analytic.ConstrainedCircleSupport
-public import SquaresInCircles.Six.Analytic.PrimaryClassification
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SmallDiagonalSecondaryBounds
+import SquaresInCircles.Six.Analytic.ConstrainedCircleSupport
+import SquaresInCircles.Six.Analytic.PrimaryClassification
 
 /-!
 # The small-diagonal W-secondary exclusion
@@ -90,14 +87,16 @@ lemma normalized_west_transverse_budget {R : ℝ} (P : NormalizedPacking R) :
   · have hv0 : 0≤-P.helperAngle 2 := by linarith
     rw [max_eq_left hv0]
     have hwphase : P.phase 2=Real.pi-(-P.helperAngle 2) := by
-      rw [P.phase_from_deviation 2]
-      simp only [matchingCardinal,cardinalCenter]
+      have hh : P.phase 2=Real.pi+P.helperAngle 2 := P.phase_from_deviation 2
+      rw [hh]
       ring
     cases hbit : P.ownBits 2
     · have hangle := abs_lt.mp (P.cardinal_angle 2 hbit)
       apply cardinal_west_negative_transverse (P.contained 2) P.box.1.2
         ⟨hv0,by linarith [hangle.1]⟩
-      simpa only [hwphase] using P.cardinal_separator 2 hbit
+      have h := P.cardinal_separator 2 hbit
+      rw [hwphase] at h
+      exact h
     · have hwindow := P.window 2
       norm_num [Certificates.windowLower,Certificates.windowUpper,Certificates.phaseCenter] at hwindow
       have hbound := own_west_negative_transverse (P.contained 2) P.box.1.2 P.box.2.1
@@ -112,14 +111,13 @@ theorem W_secondary_forces_large_diagonal {R : ℝ} (P : NormalizedPacking R)
     1/2<P.diagonalAngle := by
   by_contra! hdsmall
   have hd : 0≤P.diagonalAngle ∧ P.diagonalAngle≤1/2 := ⟨P.diagonal_angle_range.1.le,hdsmall⟩
-  have hwphase := P.phase_from_deviation 2
+  have hwphase : P.phase 2=Real.pi+P.helperAngle 2 := P.phase_from_deviation 2
   have hdphase : P.phase 3=Real.pi+P.diagonalAngle := by
     dsimp [NormalizedPacking.diagonalAngle]
     ring
   have hwindow := P.window 2
   norm_num [Certificates.windowLower,Certificates.windowUpper,Certificates.phaseCenter] at hwindow
   have hw : -2/3≤P.helperAngle 2 := by
-    simp only [matchingCardinal,cardinalCenter] at hwphase
     linarith [hwindow.1]
   have horder : P.helperAngle 2≤P.diagonalAngle := by
     have hh := P.primary_order.2.2.1

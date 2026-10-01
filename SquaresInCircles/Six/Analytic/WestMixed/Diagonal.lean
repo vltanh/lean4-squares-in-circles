@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.WestCoreBounds.Geometry
-public import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Chord
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.WestCoreBounds.Geometry
+import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Chord
 
 /-!
 # A single half-angle support for the mixed-west diagonal
@@ -56,7 +53,8 @@ lemma norm_identity (r : ℝ) :
     simpa only [show 2*(r/2)=r by ring] using Real.sin_two_mul (r/2)
   dsimp [halfDifference]
   rw [hs]
-  linear_combination nu^2*(Real.sin_sq_add_cos_sq r)-2*nu*(Real.sin_sq_add_cos_sq (r/2))
+  linear_combination nu^2*(Real.sin_sq_add_cos_sq r)-2*nu*(Real.sin_sq_add_cos_sq (r/2))-
+    nu^2*(Real.sin r+2*Real.sin (r/2)*Real.cos (r/2))*hs
 
 lemma norm_upper {r : ℝ} (hr : 0 ≤ r ∧ r ≤ 6/5) :
     Real.sqrt ((nu*Real.cos r)^2+(1-nu*Real.sin r)^2) ≤
@@ -74,7 +72,7 @@ lemma norm_upper {r : ℝ} (hr : 0 ≤ r ∧ r ≤ 6/5) :
   have hs := Real.sq_sqrt
     (show 0 ≤ (nu*Real.cos r)^2+(1-nu*Real.sin r)^2 by positivity)
   have hn := Real.sqrt_nonneg ((nu*Real.cos r)^2+(1-nu*Real.sin r)^2)
-  rw [norm_identity] at hs
+  rw [norm_identity] at hs hn ⊢
   nlinarith only [hp,hnonneg,hs,hn]
 
 lemma support {a b r : ℝ} (hc : ContainedChart a |b|) (hr : 0 ≤ r ∧ r ≤ 6/5) :
@@ -91,14 +89,16 @@ lemma support {a b r : ℝ} (hc : ContainedChart a |b|) (hr : 0 ≤ r ∧ r ≤ 
 lemma diagonal_hasDeriv (r : ℝ) : HasDerivAt diagonalWave (diagonalFirst r) r := by
   convert ((((Real.hasDerivAt_cos r).const_mul nu).sub
     ((((hasDerivAt_id r).div_const 2).cos).const_mul waveCoefficient)).add
-    ((((hasDerivAt_id r).div_const 2).sin).const_mul waveCoefficient)) using 1 <;>
-    dsimp [diagonalWave,diagonalFirst] <;> ring
+    ((((hasDerivAt_id r).div_const 2).sin).const_mul waveCoefficient)) using 1
+  · funext y; simp only [diagonalWave,Pi.add_apply,Pi.sub_apply,id_eq]
+  · dsimp [diagonalFirst]; ring
 
 lemma diagonal_first_hasDeriv (r : ℝ) : HasDerivAt diagonalFirst (diagonalSecond r) r := by
   convert (((Real.hasDerivAt_sin r).const_mul (-nu)).add
     (((((hasDerivAt_id r).div_const 2).sin).add
-      (((hasDerivAt_id r).div_const 2).cos)).const_mul (waveCoefficient/2))) using 1 <;>
-    dsimp [diagonalFirst,diagonalSecond] <;> ring
+      (((hasDerivAt_id r).div_const 2).cos)).const_mul (waveCoefficient/2))) using 1
+  · funext y; simp only [diagonalFirst,Pi.add_apply,id_eq]
+  · dsimp [diagonalSecond]; ring
 
 lemma diagonal_second_nonpositive {r : ℝ} (hr : 0 ≤ r ∧ r ≤ 6/5) :
     diagonalSecond r ≤ 0 := by
@@ -123,21 +123,26 @@ lemma diagonal_second_nonpositive {r : ℝ} (hr : 0 ≤ r ∧ r ≤ 6/5) :
     nlinarith only [h,Real.sin_sq_add_cos_sq (r/2)]
   dsimp [diagonalSecond]
   rw [hid]
-  dsimp [halfDifference] at hp
+  dsimp [halfDifference] at hp ⊢
   nlinarith only [hp]
 
 lemma diagonal_concave : ConcaveOn ℝ (Set.Icc 0 (6/5)) diagonalWave := by
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc 0 (6/5))
-    (f' := diagonalFirst) (f'' := diagonalSecond) (by dsimp [diagonalWave]; fun_prop)
+    (f' := diagonalFirst) (f'' := diagonalSecond)
+    (fun r _ => (diagonal_hasDeriv r).continuousAt.continuousWithinAt)
   · intro r _; exact (diagonal_hasDeriv r).hasDerivWithinAt
   · intro r _; exact (diagonal_first_hasDeriv r).hasDerivWithinAt
-  · intro r hr; exact diagonal_second_nonpositive (interior_subset hr)
+  · intro r hr
+    have h : r ∈ Set.Icc (0:ℝ) (6/5) := interior_subset hr
+    exact diagonal_second_nonpositive h
 
 lemma diagonal_first_lower {r : ℝ} (hr : 0 ≤ r ∧ r ≤ 6/5) :
     7/10 ≤ diagonalFirst r := by
   have hm : MonotoneOn (fun x => -diagonalFirst x) (Set.Icc 0 (6/5)) := by
-    apply Seven.monoOn_of_hasDeriv_nonneg (by dsimp [diagonalFirst]; fun_prop)
-      (fun x _ => (diagonal_first_hasDeriv x).neg)
+    have hd (x : ℝ) : HasDerivAt (fun x => -diagonalFirst x) (-diagonalSecond x) x :=
+      (diagonal_first_hasDeriv x).neg
+    apply Seven.monoOn_of_hasDeriv_nonneg (fun x _ => (hd x).continuousAt.continuousWithinAt)
+      (fun x _ => hd x)
     intro x hx
     exact neg_nonneg.mpr (diagonal_second_nonpositive ⟨hx.1.le,hx.2.le⟩)
   have h := hm hr (by norm_num : (6:ℝ)/5 ∈ Set.Icc 0 (6/5)) hr.2

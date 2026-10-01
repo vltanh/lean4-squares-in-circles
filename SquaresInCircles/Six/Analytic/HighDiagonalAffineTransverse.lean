@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.DiagonalCoreBounds
-public import SquaresInCircles.Six.Analytic.EndpointReduction
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.DiagonalCoreBounds
+import SquaresInCircles.Six.Analytic.EndpointReduction
 
 /-!
 # An affine transverse bound on the full high-diagonal interval
@@ -38,20 +35,23 @@ private lemma highDepthCircle_concave :
   let f'' : ℝ → ℝ := fun x => -2*(387/1000)*(Real.sin x+Real.cos x)-
     4*(387/1000)^2*Real.sin (2*x)+2*(17/100)^2
   have hf (x : ℝ) : HasDerivAt highDepthCircle (f' x) x := by
-    have htr := ((Real.hasDerivAt_cos x).add (Real.hasDerivAt_sin x)).const_mul (2*(387/1000))
+    have htr := ((Real.hasDerivAt_cos x).fun_add (Real.hasDerivAt_sin x)).const_mul (2*(387/1000))
     have htwo := (((hasDerivAt_id x).const_mul 2).sin).const_mul ((387/1000)^2)
-    have hsq := ((hasDerivAt_const x (81/100)).sub
-      ((hasDerivAt_id x).const_mul (17/100))).pow 2
-    convert ((htr.const_add (1+(387/1000)^2-Q0)).add htwo).add hsq using 1 <;>
-      dsimp [highDepthCircle,f'] <;> ring
+    have hsq := ((hasDerivAt_const x (81/100)).fun_sub
+      ((hasDerivAt_id x).const_mul (17/100))).fun_pow 2
+    convert ((htr.const_add (1+(387/1000)^2-Q0)).fun_add htwo).fun_add hsq using 1
+    · funext y; dsimp [highDepthCircle]
+    · dsimp [f']; ring
   have hff (x : ℝ) : HasDerivAt f' (f'' x) x := by
-    have htr := ((Real.hasDerivAt_cos x).sub (Real.hasDerivAt_sin x)).const_mul (2*(387/1000))
+    have htr := ((Real.hasDerivAt_cos x).fun_sub (Real.hasDerivAt_sin x)).const_mul (2*(387/1000))
     have htwo := (((hasDerivAt_id x).const_mul 2).cos).const_mul (2*(387/1000)^2)
-    have hlin := ((hasDerivAt_const x (81/100)).sub
+    have hlin := ((hasDerivAt_const x (81/100)).fun_sub
       ((hasDerivAt_id x).const_mul (17/100))).const_mul (-2*(17/100))
-    convert (htr.add htwo).add hlin using 1 <;> dsimp [f',f''] <;> ring
+    convert (htr.fun_add htwo).fun_add hlin using 1
+    · funext y; dsimp [f']; ring
+    · dsimp [f'']; ring
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc (1/2) (Real.pi/4))
-    (f' := f') (f'' := f'') (by dsimp [highDepthCircle]; fun_prop)
+    (f' := f') (f'' := f'') (fun x _ => (hf x).continuousAt.continuousWithinAt)
   · intro x _; exact (hf x).hasDerivWithinAt
   · intro x _; exact (hff x).hasDerivWithinAt
   · intro x hx
@@ -59,7 +59,7 @@ private lemma highDepthCircle_concave :
     have hc := Real.cos_nonneg_of_mem_Icc
       (show x∈Set.Icc (-(Real.pi/2)) (Real.pi/2) by
         constructor <;> linarith [h.1,h.2,Real.pi_pos])
-    have hs := Real.sin_nonneg_of_nonneg_of_le_pi
+    have hs := Real.sin_nonneg_of_nonneg_of_le_pi (x := x)
       (by linarith [h.1]) (by linarith [h.2,Real.pi_pos])
     have hs2 := Real.sin_nonneg_of_nonneg_of_le_pi
       (show 0 ≤ 2*x by linarith [h.1]) (show 2*x ≤ Real.pi by linarith [h.2,Real.pi_pos])
@@ -117,9 +117,9 @@ lemma high_diagonal_transverse_of_profile {a b d : ℝ}
   have hcos := Real.cos_nonneg_of_mem_Icc
     (show d∈Set.Icc (-(Real.pi/2)) (Real.pi/2) by
       constructor <;> linarith [hd.1,hd.2,Real.pi_pos])
-  have hsin := Real.sin_nonneg_of_nonneg_of_le_pi
+  have hsin := Real.sin_nonneg_of_nonneg_of_le_pi (x := d)
     (by linarith [hd.1]) (by linarith [hd.2,Real.pi_pos])
-  have hA0 : 0 ≤ 1+(387/1000)*(Real.cos d+Real.sin d) := by positivity
+  have hA0 : 0 ≤ 1+(387/1000)*(Real.cos d+Real.sin d) := by linarith
   have hB0 : 0 ≤ 81/100-(17/100)*d := by linarith [hd.2,Real.pi_lt_d2]
   by_contra! hb
   have hB : 81/100-(17/100)*d ≤ |b|+1/2 := by linarith
@@ -138,7 +138,7 @@ theorem normalized_diagonal_transverse_affine {R : ℝ} (P : NormalizedPacking R
   have hcos := Real.cos_nonneg_of_mem_Icc
     (show P.diagonalAngle∈Set.Icc (-(Real.pi/2)) (Real.pi/2) by
       constructor <;> linarith [hd.1,hd.2,Real.pi_pos])
-  have hsin := Real.sin_nonneg_of_nonneg_of_le_pi
+  have hsin := Real.sin_nonneg_of_nonneg_of_le_pi (x := P.diagonalAngle)
     (by linarith [hd.1]) (by linarith [hd.2,Real.pi_pos])
   have hx : 387/1000 ≤ 1/2-P.center.1 := by
     have h := P.box.1.2
@@ -151,11 +151,11 @@ theorem normalized_diagonal_transverse_affine {R : ℝ} (P : NormalizedPacking R
   have hX := mul_nonneg (show 0 ≤ 1/2-P.center.1-387/1000 by linarith) hcos
   have hY := mul_nonneg (show 0 ≤ 1/2-P.center.2-387/1000 by linarith) hsin
   have hown := P.own_separator 3 P.diagonal_own
-  have hphase : P.phase 3=Real.pi+P.diagonalAngle := by
+  have hphase : P.phase 3=P.diagonalAngle+Real.pi := by
     dsimp [NormalizedPacking.diagonalAngle]
     ring
   rw [hphase] at hown
-  simp only [centralMargin,centralNormal,angularWidth,Real.cos_pi_add,Real.sin_pi_add,
+  simp only [centralMargin,centralNormal,angularWidth,Real.cos_add_pi,Real.sin_add_pi,
     abs_neg,abs_of_nonneg hcos,abs_of_nonneg hsin] at hown
   nlinarith only [hown,hX,hY]
 

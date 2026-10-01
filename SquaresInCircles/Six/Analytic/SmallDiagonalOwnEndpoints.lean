@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.SmallDiagonalOwnStress
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SmallDiagonalOwnStress
 
 /-!
 # Four endpoint inequalities for one frozen stress

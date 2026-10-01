@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.FixedPairLowerBound
-public import SquaresInCircles.Six.Analytic.FixedDiagonalWork
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FixedPairLowerBound
+import SquaresInCircles.Six.Analytic.FixedDiagonalWork
 
 /-!
 # Candidate-graph closure using only the analytic fixed-pair bounds

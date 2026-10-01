@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.HighDiagonalProfile
-public import SquaresInCircles.Six.Analytic.FrozenTrigStress
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.HighDiagonalProfile
+import SquaresInCircles.Six.Analytic.FrozenTrigStress
 
 /-!
 # Coupled central profiles when the OWN S angle overtakes D
@@ -36,8 +33,9 @@ private lemma coupled_formula (d s : ℝ) :
 
 private lemma coupled_trig {x : ℝ} (hx : 1/2≤x ∧ x≤2/3) :
     7/9≤Real.cos x ∧ 4794/10000≤Real.sin x := by
-  have hc := (helper_trig_bounds
-    (abs_le.mpr ⟨by linarith [hx.1],hx.2⟩ : |x|≤2/3)).1
+  have hcos := Real.one_sub_sq_div_two_le_cos (x := x)
+  have hx2 := mul_nonneg (sub_nonneg.mpr hx.2) (show 0≤2/3+x by linarith [hx.1])
+  have hc : 7/9≤Real.cos x := by nlinarith only [hcos,hx2]
   have hm := Real.sin_le_sin_of_le_of_le_pi_div_two
     (show -(Real.pi/2)≤(1:ℝ)/2 by linarith [Real.pi_pos])
     (show x≤Real.pi/2 by linarith [hx.2,Real.pi_gt_d2]) hx.1
@@ -52,7 +50,7 @@ private lemma affine_interval_concave (a b l u : ℝ) :
   rw [hpq] at he
   nlinarith only [he]
 
-private lemma coupled_concave_d {s : ℝ} (hs : 1/2≤s ∧ s≤2/3) :
+private lemma coupled_concave_d {s : ℝ} (hs : 1/2≤ s ∧ s≤2/3) :
     ConcaveOn ℝ (Set.Icc (1/2) s) (fun d => coupledOwnReserve d s) := by
   have ht := coupled_trig hs
   have hA : 0≤coupledA s := by dsimp [coupledA]; linarith [ht.1,ht.2]
@@ -64,6 +62,7 @@ private lemma coupled_concave_d {s : ℝ} (hs : 1/2≤s ∧ s≤2/3) :
     (-(557/1000+s/3)*Real.sin s) (1/2) s
   apply (htrig.add hlinear).congr
   intro d _
+  simp only [Pi.add_apply,one_mul,add_zero]
   rw [coupled_formula]
   ring
 
@@ -86,20 +85,24 @@ private lemma coupled_left_concave : ConcaveOn ℝ (Set.Icc (1/2) (2/3)) coupled
     (2/3)*Real.cos s+((s-1/2)/3)*Real.sin s
   have hA : 0≤A := by dsimp [A]; linarith [low_half_bracket.1]
   have hB : 0≤B := by dsimp [B]; linarith [low_half_bracket.1,low_half_bracket.2.2.1]
-  have hu (s : ℝ) : HasDerivAt (fun x : ℝ => (x-1/2)/3) (1/3) s := by
-    convert ((hasDerivAt_id s).sub_const (1/2)).div_const 3 using 1 <;> ring
+  have hu (s : ℝ) : HasDerivAt (fun x : ℝ => (x-1/2)/3) (1/3) s :=
+    ((hasDerivAt_id' s).sub_const (1/2)).div_const 3
   have hf (s : ℝ) : HasDerivAt coupledLeft (f' s) s := by
-    convert ((((Real.hasDerivAt_cos s).const_mul A).add
+    have h := ((((Real.hasDerivAt_cos s).const_mul A).fun_add
       ((Real.hasDerivAt_sin s).const_mul B)).sub_const
-      ((613/1000)*Real.cos (1/2))).sub ((hu s).mul (Real.hasDerivAt_sin s))
-      using 1 <;> dsimp [coupledLeft,f',A,B] <;> ring
+      ((613/1000)*Real.cos (1/2))).fun_sub ((hu s).fun_mul (Real.hasDerivAt_sin s))
+    refine h.congr_deriv ?_
+    simp only [f']
+    ring
   have hff (s : ℝ) : HasDerivAt f' (f'' s) s := by
-    convert ((((Real.hasDerivAt_sin s).const_mul (-A)).add
-      ((Real.hasDerivAt_cos s).const_mul B)).sub
-      ((Real.hasDerivAt_sin s).div_const 3)).sub ((hu s).mul (Real.hasDerivAt_cos s))
-      using 1 <;> dsimp [f',f''] <;> ring
+    have h := ((((Real.hasDerivAt_sin s).const_mul (-A)).fun_add
+      ((Real.hasDerivAt_cos s).const_mul B)).fun_sub
+      ((Real.hasDerivAt_sin s).div_const 3)).fun_sub ((hu s).fun_mul (Real.hasDerivAt_cos s))
+    refine h.congr_deriv ?_
+    simp only [f'']
+    ring
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc (1/2) (2/3))
-    (f' := f') (f'' := f'') (by dsimp [coupledLeft]; fun_prop)
+    (f' := f') (f'' := f'') (fun x _ => (hf x).continuousAt.continuousWithinAt)
   · intro s _; exact (hf s).hasDerivWithinAt
   · intro s _; exact (hff s).hasDerivWithinAt
   · intro s hs
@@ -126,17 +129,20 @@ private lemma coupled_diagonal_concave :
   have hu (s : ℝ) : HasDerivAt (fun x : ℝ => 2*x) 2 s := by
     simpa using (hasDerivAt_id s).const_mul 2
   have hf (s : ℝ) : HasDerivAt coupledDiagonal (f' s) s := by
-    convert (((((Real.hasDerivAt_sin (2*s)).comp s (hu s)).div_const 2).const_add
-      (387/1000)).sub ((Real.hasDerivAt_cos s).const_mul (613/1000))).sub
+    have h := (((((hu s).sin).div_const 2).const_add (387/1000)).fun_sub
+      ((Real.hasDerivAt_cos s).const_mul (613/1000))).fun_sub
       ((Real.hasDerivAt_sin s).const_mul (557/1000))
-      using 1 <;> dsimp [coupledDiagonal,f'] <;> ring
+    refine h.congr_deriv ?_
+    simp only [f']
+    ring
   have hff (s : ℝ) : HasDerivAt f' (f'' s) s := by
-    convert (((Real.hasDerivAt_cos (2*s)).comp s (hu s)).add
-      ((Real.hasDerivAt_sin s).const_mul (613/1000))).sub
+    have h := (((hu s).cos).fun_add ((Real.hasDerivAt_sin s).const_mul (613/1000))).fun_sub
       ((Real.hasDerivAt_cos s).const_mul (557/1000))
-      using 1 <;> dsimp [f',f''] <;> ring
+    refine h.congr_deriv ?_
+    simp only [f'']
+    ring
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc (1/2) (2/3))
-    (f' := f') (f'' := f'') (by dsimp [coupledDiagonal]; fun_prop)
+    (f' := f') (f'' := f'') (fun x _ => (hf x).continuousAt.continuousWithinAt)
   · intro s _; exact (hf s).hasDerivWithinAt
   · intro s _; exact (hff s).hasDerivWithinAt
   · intro s hs
@@ -173,7 +179,7 @@ private lemma coupled_vertices :
 
 /-- The whole original triangle reduces to its three original vertices. -/
 theorem coupled_own_reserve_positive {d s : ℝ}
-    (hd : 1/2≤d) (hds : d≤s) (hs : s≤2/3) : 0<coupledOwnReserve d s := by
+    (hd : 1/2≤d) (hds : d≤ s) (hs : s≤2/3) : 0<coupledOwnReserve d s := by
   have hleft : 0<coupledOwnReserve (1/2) s := by
     rw [coupled_left_formula]
     exact positive_on_concave_interval coupled_left_concave ⟨hd.trans hds,hs⟩
@@ -184,7 +190,8 @@ theorem coupled_own_reserve_positive {d s : ℝ}
     exact positive_on_concave_interval coupled_diagonal_concave ⟨hd.trans hds,hs⟩
       (by rw [← coupled_diagonal_formula]; exact coupled_vertices.1)
       (by rw [← coupled_diagonal_formula]; exact coupled_vertices.2.2)
-  exact positive_on_concave_interval (coupled_concave_d ⟨hd.trans hds,hs⟩)
+  have h := positive_on_concave_interval (coupled_concave_d ⟨hd.trans hds,hs⟩)
     ⟨hd,hds⟩ hleft hdiag
+  exact h
 
 end SquaresInCircles.Six.Analytic

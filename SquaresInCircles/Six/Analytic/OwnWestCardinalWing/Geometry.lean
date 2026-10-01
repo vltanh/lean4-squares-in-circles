@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnWestCardinalWing.Support
-public import SquaresInCircles.Six.Analytic.CardinalWestOwnSouth.Geometry
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnWestCardinalWing.Support
+import SquaresInCircles.Six.Analytic.CardinalWestOwnSouth.Geometry
 
 /-!
 # A missing west wing must have two OWN wings
@@ -35,7 +32,8 @@ theorem not_missing_west {R : ℝ} (P : NormalizedPacking R)
     have h := abs_lt.mp (P.cardinal_angle 4 hS)
     exact ⟨h.1.le,h.2.le⟩
   have hWphase : P.phase 2=Real.pi-v := by
-    rw [P.phase_from_deviation 2]
+    have h : P.phase 2=Real.pi+P.helperAngle 2 := P.phase_from_deviation 2
+    rw [h]
     dsimp [v]
     ring
   have hSphase : P.phase 4=3*Real.pi/2+s := P.phase_from_deviation 4
@@ -57,6 +55,7 @@ theorem not_missing_west {R : ℝ} (P : NormalizedPacking R)
     rw [hSphase] at h
     simp only [centralMargin,Normalization.centerY,angularWidth,Real.cos_add,Real.sin_add,
       south_cos,south_sin,zero_mul,one_mul,neg_one_mul,zero_add,add_zero,abs_neg] at h
+    simp only [zero_sub,neg_neg] at h
     dsimp [angularWidth]
     nlinarith only [h]
   have hWD : 1/2+angularWidth (v+d) ≤
@@ -94,6 +93,6 @@ lemma MissingWestWing.south_own {R : ℝ} {P : NormalizedPacking R}
     (h : MissingWestWing P) : P.ownBits 4=true := by
   cases hS : P.ownBits 4
   · exact False.elim (not_missing_west_of_cardinal_south P hS h)
-  · exact hS
+  · rfl
 
 end SquaresInCircles.Six.Analytic

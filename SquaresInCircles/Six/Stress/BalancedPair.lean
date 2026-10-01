@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Stress.CandidateStressConstants
-public import SquaresInCircles.Six.Normalization.CentralSAT
-
-@[expose] public section
+import SquaresInCircles.Six.Stress.CandidateStressConstants
+import SquaresInCircles.Six.Normalization.CentralSAT
 
 /-!
 # A common adjacent-pair stress
@@ -140,7 +137,7 @@ lemma pair_balance (no wo : Bool) {n w : ℝ}
   all_goals simp only [pairAlpha,pairGamma,Bool.false_eq_true,if_false,if_true]
   all_goals field_simp [hcn,hcw,hcwn]
   all_goals first
-    | ring
+    | ring1
     | rw [Real.cos_sub]
       ring
 

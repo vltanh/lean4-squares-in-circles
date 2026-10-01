@@ -1,10 +1,7 @@
-module
-public import SquaresInCircles.Six.Analytic.FrozenTrigStress
-public import SquaresInCircles.Six.Analytic.OutwardAxes
-public import SquaresInCircles.Six.Stress.Support
-public import SquaresInCircles.Seven.Analysis
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FrozenTrigStress
+import SquaresInCircles.Six.Analytic.OutwardAxes
+import SquaresInCircles.Six.Stress.Support
+import SquaresInCircles.Seven.Analysis
 
 /-!
 # Four original corners of the OWN-W inward-primary stress
@@ -73,14 +70,15 @@ lemma inward_primary_endpoint_lower {v d aw ad bd cx cy L X Y : ℝ}
     (hcy : (19/50)*Real.sin d-(43/100)*Real.sin v≤Y) :
     69/100+(19/100)*(Real.cos d+Real.sin d)+(43/200)*(Real.cos v+Real.sin v)+
       (19/100)*Real.sin (v+d)-(31/50)*(1113/1000)-(1689/1000)*L-
-      (113/1000)*(X+Y)≤inwardPrimaryFrozen v d aw ad bd cx cy := by
-  have hsupport := vertex_linear_upper hD
+      (113/1000)*(X+Y)≤ inwardPrimaryFrozen v d aw ad bd cx cy := by
+  have hD' : ContainedChart ad |-bd| := by rwa [abs_neg]
+  have hsupport := vertex_linear_upper hD'
     (U := 19/50-(19/100)*Real.cos (v+d)) (V := (19/100)*Real.sin (v+d))
     (by positivity) hL (by rwa [inward_primary_norm_identity])
   have hcentral := coarse_central_work hc hX hY hcx hcy
   have haw' : aw≤1113/1000 := haw.trans rho0_upper.le
   dsimp [inwardPrimaryFrozen,frozenTrig]
-  nlinarith
+  linarith
 
 lemma two_thirds_endpoint_bracket :
     (157:ℝ)/200≤Real.cos (2/3) ∧ Real.cos (2/3)≤787/1000 ∧
@@ -103,7 +101,7 @@ lemma quarter_endpoint_bracket :
 lemma inward_primary_corner_zero {aw ad bd cx cy : ℝ}
     (haw : aw≤rho0) (hD : ContainedChart ad |bd|)
     (hc : (0≤cx ∧ cx≤c0) ∧ (0≤cy ∧ cy≤c0)) :
-    0<inwardPrimaryFrozen 0 0 aw ad bd cx cy := by
+    0< inwardPrimaryFrozen 0 0 aw ad bd cx cy := by
   have had := hD.a_le_rho0
   have hcx := hc.1.2
   dsimp [c0] at hcx
@@ -113,7 +111,7 @@ lemma inward_primary_corner_zero {aw ad bd cx cy : ℝ}
 lemma inward_primary_corner_far_zero {aw ad bd cx cy : ℝ}
     (haw : aw≤rho0) (hD : ContainedChart ad |bd|)
     (hc : (0≤cx ∧ cx≤c0) ∧ (0≤cy ∧ cy≤c0)) :
-    0<inwardPrimaryFrozen (2/3) 0 aw ad bd cx cy := by
+    0< inwardPrimaryFrozen (2/3) 0 aw ad bd cx cy := by
   obtain ⟨hcl,hcu,hsl,hsu⟩ := two_thirds_endpoint_bracket
   have h := inward_primary_endpoint_lower (v := (2:ℝ)/3) (d := 0)
     (L := 26/100) (X := (43/100)*(787/1000)+19/50) (Y := 0)
@@ -128,7 +126,7 @@ lemma inward_primary_corner_far_zero {aw ad bd cx cy : ℝ}
 lemma inward_primary_corner_zero_quarter {aw ad bd cx cy : ℝ}
     (haw : aw≤rho0) (hD : ContainedChart ad |bd|)
     (hc : (0≤cx ∧ cx≤c0) ∧ (0≤cy ∧ cy≤c0)) :
-    0<inwardPrimaryFrozen 0 (Real.pi/4) aw ad bd cx cy := by
+    0< inwardPrimaryFrozen 0 (Real.pi/4) aw ad bd cx cy := by
   obtain ⟨hhl,hhu,hsc⟩ := quarter_endpoint_bracket
   have h := inward_primary_endpoint_lower (v := 0) (d := Real.pi/4)
     (L := 281/1000) (X := 43/100+(19/50)*(708/1000)) (Y := (19/50)*(708/1000))
@@ -143,7 +141,7 @@ lemma inward_primary_corner_zero_quarter {aw ad bd cx cy : ℝ}
 lemma inward_primary_corner_far_quarter {aw ad bd cx cy : ℝ}
     (haw : aw≤rho0) (hD : ContainedChart ad |bd|)
     (hc : (0≤cx ∧ cx≤c0) ∧ (0≤cy ∧ cy≤c0)) :
-    0<inwardPrimaryFrozen (2/3) (Real.pi/4) aw ad bd cx cy := by
+    0< inwardPrimaryFrozen (2/3) (Real.pi/4) aw ad bd cx cy := by
   obtain ⟨hcl,hcu,hsl,hsu⟩ := two_thirds_endpoint_bracket
   obtain ⟨hhl,hhu,hsc⟩ := quarter_endpoint_bracket
   have hdiff : (166:ℝ)/1000≤Real.cos (2/3)-Real.sin (2/3) := by linarith

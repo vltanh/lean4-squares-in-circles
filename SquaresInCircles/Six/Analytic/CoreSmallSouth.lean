@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.CoreSmallNorth
-public import SquaresInCircles.Six.Normalization.OwnEastExclusion
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CoreSmallNorth
+import SquaresInCircles.Six.Normalization.OwnEastExclusion
 
 /-!
 # The remaining quadrants when 0 <= cy <= c0 < cx
@@ -42,7 +39,7 @@ lemma south_small_own {a b t x y : ℝ} (h : ContainedChart a |b|)
   · have htneg : t < 0 := lt_of_not_ge ht0
     have htv : 0 ≤ -t := by linarith
     have htv1 : -t ≤ Real.pi/4 := by have hh := abs_le.mp ht; linarith [hh.1]
-    have hs0 := sin_nonpos_octant htneg.le (abs_le.mp ht).1
+    have hs0 := sin_nonpos_octant htneg.le (by linarith [(abs_le.mp ht).1])
     have hxmul := mul_nonneg (show 0 ≤ 1/2-x by linarith)
       (sin_nonneg_octant htv htv1)
     have ha : 1/2+(77/200)*Real.cos (-t) ≤ a := by

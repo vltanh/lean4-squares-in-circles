@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnWestCardinalSouth.Cone
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnWestCardinalSouth.Cone
 
 /-!
 # Eliminate the cardinal-S angle analytically
@@ -117,8 +114,8 @@ lemma negative_expression_monotone {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 11/14) :
     convert ((((Real.hasDerivAt_cos x).const_mul (-2*southB*Real.cos (d/2))).add
       ((Real.hasDerivAt_sin x).const_mul (Real.cos (d/2)))).sub
       (((Real.hasDerivAt_sin x).pow 2).const_mul (halfQuadratic d))) using 1 <;>
-      dsimp [negativeExpression] <;> ring
-  apply Seven.monoOn_of_hasDeriv_nonneg (by dsimp [negativeExpression]; fun_prop)
+      (try funext y) <;> dsimp [negativeExpression] <;> ring
+  apply Seven.monoOn_of_hasDeriv_nonneg (fun y _ => (hf y).continuousAt.continuousWithinAt)
     (fun x _ => hf x)
   intro x hx
   have hs := Real.sin_nonneg_of_nonneg_of_le_pi hx.1.le

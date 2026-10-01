@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Stress.ExactSupport
-
-@[expose] public section
+import SquaresInCircles.Six.Stress.ExactSupport
 
 /-!
 # The scalar support formula as ordinary real algebra

@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.PairConstants
-public import SquaresInCircles.Six.Stress.VertexEnvelope
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.PairConstants
+import SquaresInCircles.Six.Stress.VertexEnvelope
 
 /-!
 # Rational constants at the geometric pair endpoints
@@ -60,7 +57,7 @@ lemma pair_ratio_sharp_bounds :
     linarith [hs.2,ht.2]
 
 lemma pair_multiplier_sharp_bounds :
-    (8896967:ℝ)/10000000<mStar ∧ mStar<8896971/10000000 := by
+    (8896967:ℝ)/10000000< mStar ∧ mStar<8896971/10000000 := by
   have h := pair_ratio_sharp_bounds
   have hl := mul_le_mul
     (show (13687847:ℝ)/10000000≤1+rStar by linarith [h.1]) h.2.2.1.le
@@ -68,7 +65,7 @@ lemma pair_multiplier_sharp_bounds :
   have hu := mul_le_mul
     (show 1+rStar≤(13687848:ℝ)/10000000 by linarith [h.2.1]) h.2.2.2.le
     kStar_pos.le (by norm_num : (0:ℝ)≤13687848/10000000)
-  change (13687847/10000000:ℝ)*(6499903/10000000)≤mStar at hl
+  change (13687847/10000000:ℝ)*(6499903/10000000)≤ mStar at hl
   change mStar≤(13687848/10000000:ℝ)*(6499904/10000000) at hu
   constructor <;> norm_num at hl hu ⊢ <;> linarith
 

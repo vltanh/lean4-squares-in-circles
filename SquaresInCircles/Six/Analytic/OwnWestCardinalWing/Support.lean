@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnWestCardinalWing.Scalar
-public import SquaresInCircles.Six.Analytic.WestMixed.Support
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnWestCardinalWing.Scalar
+import SquaresInCircles.Six.Analytic.WestMixed.Support
 
 /-!
 # Four actual separators supply the cardinal-S mixed-west scalar
@@ -27,14 +24,14 @@ def diagonalUpper (r : ℝ) : ℝ :=
     (nu*Real.cos r+1-nu*Real.sin r)/2
 
 def centerUpper (v : ℝ) : ℝ :=
-  CandidateWestTail.coreUpper*(beta*Real.cos v+gamma-beta*Real.sin v)
+  CandidateWestTail.coreUpper*(WestMixed.beta*Real.cos v+gamma-WestMixed.beta*Real.sin v)
 
 def thresholdSum (v s d : ℝ) : ℝ :=
-  beta*(1/2+angularWidth v)+gamma*(1/2+angularWidth s)+
+  WestMixed.beta*(1/2+angularWidth v)+gamma*(1/2+angularWidth s)+
     (1/2+angularWidth (v+d))+nu*(1/2+angularWidth (d-s))
 
 def defect (v s d : ℝ) : ℝ :=
-  thresholdSum v s d-CandidateWestTail.rhoBound*(beta+Real.sin (v+d))-
+  thresholdSum v s d-CandidateWestTail.rhoBound*(WestMixed.beta+Real.sin (v+d))-
     southUpper s-diagonalUpper (d-s)-centerUpper v
 
 lemma south_root (s : ℝ) :
@@ -64,14 +61,16 @@ lemma south_support {a b s : ℝ} (hc : ContainedChart a |b|) :
 
 lemma center_support {v cx cy : ℝ} (hv : 0 ≤ v ∧ v ≤ 31/50)
     (hx : cx ≤ CandidateWestTail.coreUpper) (hy : cy ≤ CandidateWestTail.coreUpper) :
-    beta*Real.cos v*cx+(gamma-beta*Real.sin v)*cy ≤ centerUpper v := by
+    WestMixed.beta*Real.cos v*cx+(gamma-WestMixed.beta*Real.sin v)*cy ≤ centerUpper v := by
   have hc := Real.cos_nonneg_of_mem_Icc
     (show v ∈ Set.Icc (-(Real.pi/2)) (Real.pi/2) by
       constructor <;> linarith [hv.1,hv.2,Real.pi_gt_d2])
-  have hX : 0 ≤ beta*Real.cos v := by dsimp [beta]; positivity
+  have hX : 0 ≤ WestMixed.beta*Real.cos v := by dsimp [WestMixed.beta]; positivity
   have hs := Real.sin_le hv.1
-  have hY : 0 ≤ gamma-beta*Real.sin v := by dsimp [gamma,beta]; linarith [hv.2]
-  exact WestMixed.central_support hX hY hx hy
+  have hY : 0 ≤ gamma-WestMixed.beta*Real.sin v := by dsimp [gamma,WestMixed.beta]; linarith [hv.2]
+  refine (WestMixed.central_support hX hY hx hy).trans_eq ?_
+  dsimp [centerUpper]
+  ring
 
 lemma profile_eq_defect (negative : Bool) {v x d : ℝ}
     (hx : 0 ≤ x ∧ x ≤ 2/5) (hd : 16/25 ≤ d ∧ d ≤ 11/14)
@@ -94,11 +93,11 @@ lemma profile_eq_defect (negative : Bool) {v x d : ℝ}
     cases negative <;> simp [side,angularWidth,abs_of_nonneg hcx,abs_of_nonneg hsx]
   dsimp [profile,base,wing,gapWave,diagonalWave,southTerm,defect,thresholdSum,
     southUpper,diagonalUpper,centerUpper,constantTerm,rootIntercept,rootSin,
-    beta,gamma,nu,A,B,waveCoefficient,rootSlope,rootError,halfDifference,
+    WestMixed.beta,gamma,nu,A,B,waveCoefficient,rootSlope,rootError,halfDifference,
     CandidateWestTail.radiusBound,CandidateWestTail.rhoBound,CandidateWestTail.coreUpper]
   rw [hW,hQ,hR,hS]
-  cases negative <;> simp only [side,sineCoefficient,if_true,if_false,neg_one_mul,one_mul,
-    Real.cos_neg,Real.sin_neg] <;> ring
+  cases negative <;> simp only [side,sineCoefficient,Bool.false_eq_true,if_true,if_false,
+    neg_one_mul,one_mul,Real.cos_neg,Real.sin_neg] <;> ring
 
 /-- The candidate south inequality and the actual D-sourced west inequality suffice. -/
 theorem scalar_impossible {v s d aw bw ad bd asouth bsouth cx cy : ℝ}
@@ -112,11 +111,11 @@ theorem scalar_impossible {v s d aw bw ad bd asouth bsouth cx cy : ℝ}
     (hWD : 1/2+angularWidth (v+d) ≤ aw*Real.sin (v+d)-bw*Real.cos (v+d)+bd)
     (hDS : 1/2+angularWidth (d-s) ≤ bsouth+ad*Real.cos (d-s)-bd*Real.sin (d-s)) : False := by
   have hsum : thresholdSum v s d ≤
-      ((beta+Real.sin (v+d))*aw-Real.cos (v+d)*bw)+
+      ((WestMixed.beta+Real.sin (v+d))*aw-Real.cos (v+d)*bw)+
       (gamma*Real.cos s*asouth+(nu-gamma*Real.sin s)*bsouth)+
       (nu*Real.cos (d-s)*ad+(1-nu*Real.sin (d-s))*bd)+
-      beta*Real.cos v*cx+(gamma-beta*Real.sin v)*cy := by
-    dsimp [thresholdSum,beta,gamma,nu]
+      WestMixed.beta*Real.cos v*cx+(gamma-WestMixed.beta*Real.sin v)*cy := by
+    dsimp [thresholdSum,WestMixed.beta,gamma,nu]
     linear_combination (41/20)*hCW+(38/25)*hCS+hWD+(211/200)*hDS
   have hv0 : 0 ≤ v := by linarith [hv.1,hd.2]
   have hq : 1 ≤ v+d ∧ v+d ≤ Real.pi/2 := by
@@ -125,7 +124,7 @@ theorem scalar_impossible {v s d aw bw ad bd asouth bsouth cx cy : ℝ}
     constructor <;> linarith [hs.1,hs.2,hd.1,hd.2]
   have hw := WestMixed.west_support hW hq
   have hdiag := WestMixed.support hD hr
-  have hsouth := south_support hS
+  have hsouth := south_support (s := s) hS
   have hc := center_support ⟨hv0,hv.2⟩ hx hy
   have hn : defect v s d ≤ 0 := by
     dsimp [defect,diagonalUpper]
@@ -133,7 +132,8 @@ theorem scalar_impossible {v s d aw bw ad bd asouth bsouth cx cy : ℝ}
   by_cases hs0 : 0 ≤ s
   · have hp := positive false ⟨hs0,hs.2⟩ hd hv
     rw [profile_eq_defect false ⟨hs0,hs.2⟩ hd hv] at hp
-    simpa only [side,if_false,one_mul] using (not_lt_of_ge hn) hp
+    simp only [side,Bool.false_eq_true,if_false,one_mul] at hp
+    exact (not_lt_of_ge hn) hp
   · have hx' : 0 ≤ -s ∧ -s ≤ 2/5 := by constructor <;> linarith [hs.1]
     have hp := positive true hx' hd hv
     rw [profile_eq_defect true hx' hd hv] at hp

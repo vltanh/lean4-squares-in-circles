@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Normalization.WestCardinalStress
-public import SquaresInCircles.Six.Normalization.MovingPins
-public import SquaresInCircles.Six.Normalization.NearestPoint
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.WestCardinalStress
+import SquaresInCircles.Six.Normalization.MovingPins
+import SquaresInCircles.Six.Normalization.NearestPoint
 
 /-!
 # The analytic normalization interface
@@ -42,7 +39,9 @@ theorem PinPacking.D_west_negative {R : ℝ} (P : PinPacking R)
   have hw := P.window 2
   norm_num [windowLower,windowUpper,phaseCenter] at hw
   have hu := P.matching_cardinal_angle 3 hwestD
-  simp only [matchingCardinal,cardinalCenter] at hu
+  have h3 : matchingCardinal 3 = .west := rfl
+  rw [h3] at hu
+  simp only [cardinalCenter] at hu
   have hub := abs_lt.mp hu
   have hord := P.west_before_diagonal hD
   have htEq : Real.pi+(P.phase 2-Real.pi)=P.phase 2 := by ring
@@ -51,7 +50,7 @@ theorem PinPacking.D_west_negative {R : ℝ} (P : PinPacking R)
     (t := P.phase 2-Real.pi) (u := P.phase 3-Real.pi)
     (a := P.radial 2) (b := P.transverse 2) (A := P.radial 3) (B := P.transverse 3)
     P.box (P.contained 2) (P.contained 3) (P.avoidsCore 2) (P.avoidsCore 3)
-    hw.1.le hub.1.le hub.2.le (by linarith)
+    (by linarith [hw.1]) (by linarith [hub.1]) (by linarith [hub.2]) (by linarith)
   · simpa only [htEq] using hownW
   · simpa only [huEq] using hwestD
   · simpa only [htEq,huEq] using P.exterior_disjoint 2 3 (by decide)
@@ -140,12 +139,16 @@ lemma moving_pins : openSquare (P.model 1) (1+P.center.1,0) ∧
 
 lemma east_west_budget (hE : P.ownBits 0=false) (hW : P.ownBits 2=false) :
     |P.helperAngle 0|+|P.helperAngle 2| < 4*c0 := by
-  simpa only [helperAngle,matchingCardinal,cardinalCenter,sub_zero] using
+  have h0 : matchingCardinal 0 = .east := rfl
+  have h2 : matchingCardinal 2 = .west := rfl
+  simpa only [helperAngle,h0,h2,cardinalCenter,sub_zero] using
     P.toPinPacking.east_west_budget (P.cardinal_separator 0 hE) (P.cardinal_separator 2 hW)
 
 lemma north_south_budget (hN : P.ownBits 1=false) (hS : P.ownBits 4=false) :
     |P.helperAngle 1|+|P.helperAngle 4| < 4*c0 := by
-  simpa only [helperAngle,matchingCardinal,cardinalCenter] using
+  have h1 : matchingCardinal 1 = .north := rfl
+  have h4 : matchingCardinal 4 = .south := rfl
+  simpa only [helperAngle,h1,h4,cardinalCenter] using
     P.toPinPacking.north_south_budget (P.cardinal_separator 1 hN) (P.cardinal_separator 4 hS)
 
 lemma diagonal_own : P.ownBits 3=true := (P.toPinPacking.D_own P.diagonal_half).1

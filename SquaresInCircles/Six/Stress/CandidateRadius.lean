@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Normalization.Complete
-public import SquaresInCircles.Six.Stress.CandidateRadiusConstants
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.Complete
+import SquaresInCircles.Six.Stress.CandidateRadiusConstants
 
 /-!
 # The exact candidate-radius interface for downstream stresses
@@ -61,7 +58,7 @@ private lemma own_east_at_sharp_radius {a cx cy t : ℝ}
 lemma PinPacking.sharp_east_center {R : ℝ} (P : PinPacking R) (hR : R^2 ≤ Six.qStar) :
     P.center.1 ≤ cStar := by
   by_contra! hx
-  have hc := P.contained_at_candidate hR 0
+  have hc := Stress.PinPacking.contained_at_candidate P hR 0
   have ha := sharp_coordinate_bound
     (show 0 ≤ P.radial 0 by linarith [(P.contained 0).half_le]) (abs_nonneg _) hc
   have hw := P.window 0
@@ -93,8 +90,8 @@ lemma PinPacking.sharp_east_center {R : ℝ} (P : PinPacking R) (hR : R^2 ≤ Si
 /-- The exact candidate-radius box used in tight A2 stresses is derived, not assumed. -/
 theorem PinPacking.sharp_central_box {R : ℝ} (P : PinPacking R) (hR : R^2 ≤ Six.qStar) :
     (0 ≤ P.center.1 ∧ P.center.1 ≤ cStar) ∧ (0 ≤ P.center.2 ∧ P.center.2 ≤ cStar) := by
-  have hx := P.sharp_east_center hR
-  have hy := P.mirror.sharp_east_center hR
+  have hx := Stress.PinPacking.sharp_east_center P hR
+  have hy := Stress.PinPacking.sharp_east_center P.mirror hR
   exact ⟨⟨P.box.1.1,hx⟩,⟨P.box.2.1,hy⟩⟩
 
 /-- Exterior containment at the exact candidate radius for support applications. -/

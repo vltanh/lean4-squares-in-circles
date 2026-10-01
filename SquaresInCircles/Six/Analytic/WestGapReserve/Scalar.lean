@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.CandidateWestTail.Support
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CandidateWestTail.Support
 
 /-!
 # A stronger D-sourced west gap

@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.LowDiagonalStress
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.LowDiagonalStress
 
 /-!
 # The four original corners for each low-diagonal secondary source

@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.SouthOuterTail.Root
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SouthOuterTail.Root
 
 /-!
 # Concavity of the cardinal-wing tail slice
@@ -37,19 +34,28 @@ lemma cardinal_slice_concave (negative : Bool) {a b K : ℝ}
       ((Real.hasDerivAt_sin x).const_mul (rootSign negative))
     convert ((((Real.hasDerivAt_cos x).const_mul a).const_add K).add
       ((Real.hasDerivAt_sin x).const_mul b)).sub
-      (hr.const_mul CandidateWestTail.radiusBound) using 1 <;>
-      dsimp [cardinalSlice,f'] <;> ring
+      (hr.const_mul CandidateWestTail.radiusBound) using 1
+    · funext y
+      simp only [cardinalSlice,Pi.add_apply,Pi.sub_apply,Function.comp_apply]
+    · simp only [f']
+      ring
   have hff (x : ℝ) : HasDerivAt f' (f'' x) x := by
     have hP := (root_first_hasDeriv (rootSign negative*Real.sin x)).comp x
       ((Real.hasDerivAt_sin x).const_mul (rootSign negative))
     have hC := (Real.hasDerivAt_cos x).const_mul (rootSign negative)
     have hr := (hP.mul hC).const_mul CandidateWestTail.radiusBound
+    have hσ : rootSign negative^2=1 := by cases negative <;> norm_num [rootSign]
     convert (((Real.hasDerivAt_sin x).const_mul (-a)).add
-      ((Real.hasDerivAt_cos x).const_mul b)).sub hr using 1 <;>
-      cases negative <;> dsimp [f',f'',rootSign] <;> ring
+      ((Real.hasDerivAt_cos x).const_mul b)).sub hr using 1
+    · funext y
+      simp only [f',Pi.add_apply,Pi.sub_apply,Pi.mul_apply,Function.comp_apply]
+      ring
+    · simp only [f'',Function.comp_apply]
+      linear_combination (CandidateWestTail.radiusBound*
+        rootSecond (rootSign negative*Real.sin x)*Real.cos x^2)*hσ
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc 0 (2/5))
     (f' := f') (f'' := f'')
-    (by dsimp [cardinalSlice,rootPolynomial,rootOffset]; fun_prop)
+    (fun x _ => (hf x).continuousAt.continuousWithinAt)
   · intro x _; exact (hf x).hasDerivWithinAt
   · intro x _; exact (hff x).hasDerivWithinAt
   · intro x hx
@@ -76,12 +82,13 @@ lemma cardinal_slice_concave (negative : Bool) {a b K : ℝ}
     · simp only [rootSign,Bool.false_eq_true,if_false,one_mul] at hp hQ hb
       have hP := mul_nonpos_of_nonpos_of_nonneg hp.2.1 hs0
       have hB := mul_nonneg (show 0 ≤ b+7/20 by linarith) hs0
-      dsimp [f'',rootSign,CandidateWestTail.radiusBound]
+      simp only [f'',rootSign,Bool.false_eq_true,if_false,one_mul,
+        CandidateWestTail.radiusBound]
       nlinarith only [hc,hA,hC2,hQ,hP,hB,hs1]
     · simp only [rootSign,if_true,neg_one_mul] at hp hQ hb
       have hP := mul_nonneg (show 0 ≤ rootFirst (-Real.sin x)+21/50 by linarith [hp.1]) hs0
       have hB := mul_nonneg hb hs0
-      dsimp [f'',rootSign,CandidateWestTail.radiusBound]
+      simp only [f'',rootSign,if_true,neg_one_mul,CandidateWestTail.radiusBound]
       nlinarith only [hc,hA,hC2,hQ,hP,hB,hs1]
 
 end SquaresInCircles.Six.Analytic.SouthOuterTail

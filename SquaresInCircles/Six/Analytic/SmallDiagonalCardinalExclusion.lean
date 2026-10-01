@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.SmallDiagonalCardinalMinorant
-public import SquaresInCircles.Six.Analytic.OwnSmallDiagonalExclusion
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SmallDiagonalCardinalMinorant
+import SquaresInCircles.Six.Analytic.OwnSmallDiagonalExclusion
 
 /-!
 # The unconditional analytic d>1/2 reduction
@@ -91,7 +88,9 @@ lemma cardinalSmallD_nonpositive {aw bw ad bd cx cy v d : ℝ}
       abs_neg,abs_of_nonneg htv.1,abs_of_nonneg htv.2.1] at hCW
     nlinarith only [hCW]
   have hDgap : 1/2-ad+(1/2-cx)*Real.cos d+(1/2-cy)*Real.sin d≤0 := by
-    simp only [centralMargin,centralNormal,angularWidth,Real.cos_pi_add,Real.sin_pi_add,
+    have hcpi : Real.cos (Real.pi+d)=-Real.cos d := by rw [add_comm,Real.cos_add_pi]
+    have hspi : Real.sin (Real.pi+d)=-Real.sin d := by rw [add_comm,Real.sin_add_pi]
+    simp only [centralMargin,centralNormal,angularWidth,hcpi,hspi,
       abs_neg,abs_of_nonneg htd.1,abs_of_nonneg htd.2.1] at hCD
     nlinarith only [hCD]
   have hq : (Real.pi+d)-(Real.pi-v)=v+d := by ring
@@ -144,7 +143,9 @@ theorem normalized_diagonal_gt_half {R : ℝ} (P : NormalizedPacking R) : 1/2<P.
           dsimp [NormalizedPacking.diagonalAngle]
           ring
         apply cardinal_small_diagonal_Dsecondary_impossible (P.contained 2) (P.contained 3) P.box hv hd
-        · simpa only [hwphase] using P.cardinal_separator 2 hbit
+        · have h := P.cardinal_separator 2 hbit
+          rw [hwphase] at h
+          exact h
         · simpa only [hdphase] using P.own_separator 3 P.diagonal_own
         · change Seven.SAT.threshold (P.square 2) (P.square 3)≤
             dot (normalY (P.square 3)) (sub (P.square 3).center (P.square 2).center) at hsep

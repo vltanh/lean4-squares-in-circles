@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.HalfAngleControl
-public import SquaresInCircles.Six.Normalization.CentralSAT
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.HalfAngleControl
+import SquaresInCircles.Six.Normalization.CentralSAT
 
 /-!
 # Canonical OWN W cannot turn toward D
@@ -39,7 +36,8 @@ theorem diagonal_transverse_profile {a b cx cy d : ℝ}
     nlinarith [Real.sin_sq_add_cos_sq d,sq_nonneg (Real.cos d-Real.sin d)]
   have hcx := mul_nonneg (show 0≤1/2-cx-77/200 by linarith [c0_lt_23_200]) hcd
   have hcy := mul_nonneg (show 0≤1/2-cy-77/200 by linarith [c0_lt_23_200]) hsd
-  simp only [centralMargin,centralNormal,angularWidth,Real.cos_pi_add,Real.sin_pi_add,
+  rw [add_comm Real.pi d] at hown
+  simp only [centralMargin,centralNormal,angularWidth,Real.cos_add_pi,Real.sin_add_pi,
     abs_neg,abs_of_nonneg hcd,abs_of_nonneg hsd] at hown
   have hA : 1+(77/200)*v≤a+1/2 := by dsimp [v]; nlinarith only [hown,hcx,hcy]
   by_contra! hbad

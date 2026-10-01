@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnWingProfileSharpening
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnWingProfileSharpening
 
 /-!
 # A radial support estimate for the final OWN/OWN corner
@@ -36,9 +33,9 @@ theorem narrow_support {a b U V : ℝ} (hc : ContainedChart a |b|)
     (show 0 ≤ (31/100)*U-(31/40)*|V| by linarith [hV]) (abs_nonneg b)
   have hquadratic := mul_nonneg
     (show 0 ≤ (31/100)*U-93/500 by linarith [hU.1]) (sq_nonneg b)
-  have hproduct : V*b ≤ |V|*|b| := by
+  have hproduct : V*b ≤ |V| *|b| := by
     simpa only [abs_mul] using le_abs_self (V*b)
-  have hsq : 0 ≤ (93/500)*|b|^2-(9/40)*|b|*|V|+(7/100)*|V|^2 := by
+  have hsq : 0 ≤ (93/500)*|b|^2-(9/40)*|b| *|V|+(7/100)*|V|^2 := by
     rw [narrow_support_square]
     positivity
   rw [sq_abs,sq_abs] at hsq

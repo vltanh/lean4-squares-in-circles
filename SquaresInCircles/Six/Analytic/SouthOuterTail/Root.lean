@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.CandidateWestTail.Support
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CandidateWestTail.Support
 
 /-!
 # One polynomial majorant for the final west resultant
@@ -46,7 +43,11 @@ lemma root_polynomial_lower {t : ℝ} (ht : -(2/5) ≤ t ∧ t ≤ 2/5) :
   have hquad : 0 ≤ (rootOffset t)^2-(1/5)*rootOffset t+1/25 := by
     nlinarith [sq_nonneg (rootOffset t-1/10)]
   have hcube := mul_nonneg (show 0 ≤ rootOffset t+1/5 by linarith [he.1]) hquad
-  dsimp [rootPolynomial,rootBase]
+  have hform : rootPolynomial t=18/25+(25/36)*rootOffset t-
+      (15625/46656)*(rootOffset t)^2+(9765625/30233088)*(rootOffset t)^3 := by
+    dsimp [rootPolynomial,rootBase]
+    ring
+  rw [hform]
   nlinarith only [he.1,hsq,hcube]
 
 lemma root_square_error (t : ℝ) :
@@ -69,21 +70,33 @@ theorem root_upper {t : ℝ} (ht : -(2/5) ≤ t ∧ t ≤ 2/5) :
 
 lemma root_hasDeriv (t : ℝ) : HasDerivAt rootPolynomial (rootFirst t) t := by
   have he : HasDerivAt rootOffset (-rootRate) t := by
-    convert ((hasDerivAt_id t).const_mul (-rootRate)).const_add (1/625) using 1 <;>
-      dsimp [rootOffset] <;> ring
+    convert ((hasDerivAt_id t).const_mul (-rootRate)).const_add (1/625) using 1
+    · funext x
+      simp only [rootOffset,id]
+      ring
+    · ring
   convert (((he.div_const (2*rootBase)).const_add rootBase).sub
     ((he.pow 2).div_const (8*rootBase^3))).add
-    ((he.pow 3).div_const (16*rootBase^5)) using 1 <;>
-    dsimp [rootPolynomial,rootFirst,rootBase,rootRate] <;> ring
+    ((he.pow 3).div_const (16*rootBase^5)) using 1
+  · funext x
+    simp only [rootPolynomial,Pi.add_apply,Pi.sub_apply,Pi.pow_apply]
+  · dsimp [rootFirst,rootBase,rootRate]
+    ring
 
 lemma root_first_hasDeriv (t : ℝ) : HasDerivAt rootFirst (rootSecond t) t := by
   have he : HasDerivAt rootOffset (-rootRate) t := by
-    convert ((hasDerivAt_id t).const_mul (-rootRate)).const_add (1/625) using 1 <;>
-      dsimp [rootOffset] <;> ring
+    convert ((hasDerivAt_id t).const_mul (-rootRate)).const_add (1/625) using 1
+    · funext x
+      simp only [rootOffset,id]
+      ring
+    · ring
   convert (((he.const_mul rootRate).div_const (4*rootBase^3)).const_add
     (-rootRate/(2*rootBase))).sub
-    (((he.pow 2).const_mul (3*rootRate)).div_const (16*rootBase^5)) using 1 <;>
-    dsimp [rootFirst,rootSecond,rootBase,rootRate] <;> ring
+    (((he.pow 2).const_mul (3*rootRate)).div_const (16*rootBase^5)) using 1
+  · funext x
+    simp only [rootFirst,Pi.sub_apply,Pi.pow_apply]
+  · dsimp [rootSecond,rootBase,rootRate]
+    ring
 
 lemma root_derivative_bounds {t : ℝ} (ht : -(2/5) ≤ t ∧ t ≤ 2/5) :
     -(21/50) ≤ rootFirst t ∧ rootFirst t ≤ 0 ∧ -(1/4) ≤ rootSecond t := by
@@ -91,13 +104,20 @@ lemma root_derivative_bounds {t : ℝ} (ht : -(2/5) ≤ t ∧ t ≤ 2/5) :
   have hsq := mul_nonneg (show 0 ≤ 1/5-rootOffset t by linarith [he.2])
     (show 0 ≤ 1/5+rootOffset t by linarith [he.1])
   have hn := sq_nonneg (rootOffset t)
-  dsimp [rootFirst,rootSecond,rootBase,rootRate]
+  have h1 : rootFirst t=-1/3+(625/1944)*rootOffset t-(390625/839808)*(rootOffset t)^2 := by
+    dsimp [rootFirst,rootBase,rootRate]
+    ring
+  have h2 : rootSecond t=-(3600/23328)+(13500000/30233088)*rootOffset t := by
+    dsimp [rootSecond,rootBase,rootRate]
+    ring
+  rw [h1,h2]
   refine ⟨?_,?_,?_⟩ <;> nlinarith only [he.1,he.2,hsq,hn]
 
 lemma root_antitone : AntitoneOn rootPolynomial (Set.Icc (-(2/5)) (2/5)) := by
   have hm : MonotoneOn (fun t => -rootPolynomial t) (Set.Icc (-(2/5)) (2/5)) := by
-    apply Seven.monoOn_of_hasDeriv_nonneg (by dsimp [rootPolynomial,rootOffset]; fun_prop)
-      (fun t _ => (root_hasDeriv t).neg)
+    refine Seven.monoOn_of_hasDeriv_nonneg (d := fun t => -rootFirst t)
+      (fun t _ => (root_hasDeriv t).continuousAt.neg.continuousWithinAt)
+      (fun t _ => (root_hasDeriv t).neg) ?_
     intro t ht
     exact neg_nonneg.mpr (root_derivative_bounds ⟨ht.1.le,ht.2.le⟩).2.1
   intro x hx y hy hxy

@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.PinDirectedAxes
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.PinDirectedAxes
 
 /-!
 # The W and D pins have the same transverse order in both frames
@@ -31,7 +28,7 @@ lemma west_diagonal_projection_difference (t a b : ℝ) :
   rw [polar_transverse_projection,polar_transverse_projection]
   have hD : 5*Real.pi/4-t=(13*Real.pi/12-t)+Real.pi/6 := by ring
   have hW : 11*Real.pi/12-t=(13*Real.pi/12-t)-Real.pi/6 := by ring
-  rw [hD,hW,Real.sin_add,Real.sin_sub,Real.sin_pi_div_six]
+  rw [hD,hW,Real.sin_add,Real.sin_sub (13*Real.pi/12-t) (Real.pi/6),Real.sin_pi_div_six]
   ring
 
 lemma west_diagonal_pin_order {t a b : ℝ}

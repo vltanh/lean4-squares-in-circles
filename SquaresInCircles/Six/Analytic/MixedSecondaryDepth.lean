@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.RadialSecondarySupport
-public import SquaresInCircles.Six.Analytic.SecondaryCostFolded
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.RadialSecondarySupport
+import SquaresInCircles.Six.Analytic.SecondaryCostFolded
 
 /-!
 # Depth reserves for the two mixed double-D-secondary cases
@@ -30,7 +27,7 @@ def westMixedDepth (d : ℝ) : ℝ :=
   (Real.cos d+Real.sin d)/2-(1113/1000)*westRadialLength d+(13/20)*d
 
 lemma south_mixed_depth_lower {d : ℝ} (hd : 1/2≤d ∧ d≤Real.pi/4) :
-    -(19/10)<southMixedDepth d := by
+    -(19/10)< southMixedDepth d := by
   have hd0 : 0≤d := by linarith [hd.1]
   have hd1 : d≤4/5 := by linarith [hd.2,Real.pi_lt_d2]
   have hc := Real.one_sub_sq_div_two_le_cos (x := d)
@@ -53,27 +50,31 @@ private lemma west_mixed_base_concave :
     (1113/1000)*Real.sin (Real.pi/4-d/2)
   let f'' : ℝ→ℝ := fun d => -(887/1000)*Real.cos d-(1113/1000)*Real.sin d+
     (1113/2000)*Real.cos (Real.pi/4-d/2)
-  have hu (d : ℝ) : HasDerivAt (fun x : ℝ => Real.pi/4-x/2) (-1/2) d := by
-    convert ((hasDerivAt_id d).div_const 2).neg.const_add (Real.pi/4) using 1 <;> ring
+  have hu (d : ℝ) : HasDerivAt (fun x : ℝ => Real.pi/4-x/2) (-1/2) d :=
+    (((hasDerivAt_id' d).div_const 2).const_sub (Real.pi/4)).congr_deriv (by norm_num)
   have hf (d : ℝ) : HasDerivAt westMixedBase (f' d) d := by
-    convert ((((Real.hasDerivAt_cos d).const_mul (887/1000)).const_add westMixedConstant).add
-      ((Real.hasDerivAt_sin d).const_mul (1113/1000))).sub
+    convert ((((Real.hasDerivAt_cos d).const_mul (887/1000)).const_add westMixedConstant).fun_add
+      ((Real.hasDerivAt_sin d).const_mul (1113/1000))).fun_sub
       (((Real.hasDerivAt_cos (Real.pi/4-d/2)).comp d (hu d)).const_mul (1113/500))
-      using 1 <;> dsimp [westMixedBase,westRadialLength,f'] <;> ring
+      using 1
+    · funext y; dsimp [westMixedBase,westRadialLength]; ring
+    · dsimp [f']; ring
   have hff (d : ℝ) : HasDerivAt f' (f'' d) d := by
-    convert (((Real.hasDerivAt_sin d).const_mul (-(887/1000))).add
-      ((Real.hasDerivAt_cos d).const_mul (1113/1000))).sub
+    convert (((Real.hasDerivAt_sin d).const_mul (-(887/1000))).fun_add
+      ((Real.hasDerivAt_cos d).const_mul (1113/1000))).fun_sub
       (((Real.hasDerivAt_sin (Real.pi/4-d/2)).comp d (hu d)).const_mul (1113/1000))
-      using 1 <;> dsimp [f',f''] <;> ring
+      using 1
+    · funext y; dsimp [f']
+    · dsimp [f'']; ring
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc (1/2) (2/3))
-    (f' := f') (f'' := f'') (by dsimp [westMixedBase,westRadialLength]; fun_prop)
+    (f' := f') (f'' := f'') (fun x _ => (hf x).continuousAt.continuousWithinAt)
   · intro d _; exact (hf d).hasDerivWithinAt
   · intro d _; exact (hff d).hasDerivWithinAt
   · intro d hd
     have hdc : d∈Set.Icc (1/2) (2/3) := interior_subset hd
     have hc := (helper_trig_bounds
       (abs_le.mpr ⟨by linarith [hdc.1],hdc.2⟩ : |d|≤2/3)).1
-    have hs := Real.sin_nonneg_of_nonneg_of_le_pi
+    have hs := Real.sin_nonneg_of_nonneg_of_le_pi (x := d)
       (by linarith [hdc.1]) (by linarith [hdc.2,Real.pi_gt_d2])
     dsimp [f'']
     linarith [Real.cos_le_one (Real.pi/4-d/2)]
@@ -119,15 +120,18 @@ lemma west_mixed_depth_monotone :
     MonotoneOn westMixedDepth (Set.Icc (2/3) (Real.pi/4)) := by
   let f' : ℝ→ℝ := fun d => (Real.cos d-Real.sin d)/2-
     (1113/1000)*Real.sin (Real.pi/4-d/2)+13/20
-  have hu (d : ℝ) : HasDerivAt (fun x : ℝ => Real.pi/4-x/2) (-1/2) d := by
-    convert ((hasDerivAt_id d).div_const 2).neg.const_add (Real.pi/4) using 1 <;> ring
-  apply Seven.monoOn_of_hasDeriv_nonneg
-    (by dsimp [westMixedDepth,westRadialLength]; fun_prop)
+  have hu (d : ℝ) : HasDerivAt (fun x : ℝ => Real.pi/4-x/2) (-1/2) d :=
+    (((hasDerivAt_id' d).div_const 2).const_sub (Real.pi/4)).congr_deriv (by norm_num)
+  have hD (d : ℝ) : HasDerivAt westMixedDepth (f' d) d := by
+    convert ((((Real.hasDerivAt_cos d).fun_add (Real.hasDerivAt_sin d)).div_const 2).fun_sub
+      (((Real.hasDerivAt_cos (Real.pi/4-d/2)).comp d (hu d)).const_mul (1113/500))).fun_add
+      ((hasDerivAt_id d).const_mul (13/20)) using 1
+    · funext y; dsimp [westMixedDepth,westRadialLength]; ring
+    · dsimp [f']; ring
+  apply Seven.monoOn_of_hasDeriv_nonneg (d := f')
+    (fun x _ => (hD x).continuousAt.continuousWithinAt)
   · intro d _
-    convert ((((Real.hasDerivAt_cos d).add (Real.hasDerivAt_sin d)).div_const 2).sub
-      (((Real.hasDerivAt_cos (Real.pi/4-d/2)).comp d (hu d)).const_mul (1113/500))).add
-      ((hasDerivAt_id d).const_mul (13/20)) using 1 <;>
-      dsimp [westMixedDepth,westRadialLength,f'] <;> ring
+    exact hD d
   · intro d hd
     have hc := (east_quadrant_trig (by linarith [hd.1]) hd.2.le).2.2
     have hu0 : 0≤Real.pi/4-d/2 := by linarith [hd.2,Real.pi_pos]
@@ -138,7 +142,7 @@ lemma west_mixed_depth_monotone :
 
 /-- The mixed cardinal-W/OWN-S bound after minimizing in the actual S range. -/
 theorem west_cardinal_own_south_reserve {s d : ℝ}
-    (hs : -5/8≤s ∧ s≤2/3) (hd : 1/2≤d ∧ d≤Real.pi/4) :
+    (hs : -5/8≤ s ∧ s≤2/3) (hd : 1/2≤d ∧ d≤Real.pi/4) :
     0<westMixedConstant+(Real.cos d+Real.sin d)/2-
       (1113/1000)*westRadialLength d+ownWingPotential s+(13/20)*|s-d| := by
   by_cases hsmall : d≤2/3

@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.FrozenPrimaryEndpoints
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FrozenPrimaryEndpoints
 
 /-!
 # Cardinal W cannot separate from D on positive D-primary
@@ -18,8 +15,8 @@ noncomputable section
 namespace SquaresInCircles.Six.Analytic
 open Normalization Stress
 
-lemma quarter_circle_chord {c s : ℝ} (hc : 7/10≤c ∧ c≤1) (hs : 0≤s)
-    (hu : c^2+s^2=1) : (7/3)*(1-c)≤s := by
+lemma quarter_circle_chord {c s : ℝ} (hc : 7/10≤c ∧ c≤1) (hs : 0≤ s)
+    (hu : c^2+s^2=1) : (7/3)*(1-c)≤ s := by
   have hp := mul_nonneg (show 0≤1-c by linarith) (show 0≤58*c-40 by linarith)
   by_contra! h
   have hprod := mul_pos (sub_pos.mpr h)
@@ -28,7 +25,7 @@ lemma quarter_circle_chord {c s : ℝ} (hc : 7/10≤c ∧ c≤1) (hs : 0≤s)
 
 /-- A visible quadratic identity controls the entire radial endpoint family. -/
 lemma cardinal_destination_scalar {c s L : ℝ}
-    (hc : 707/1000≤c ∧ c≤1) (hs : 0≤s) (hu : c^2+s^2=1)
+    (hc : 707/1000≤c ∧ c≤1) (hs : 0≤ s) (hu : c^2+s^2=1)
     (hL : 0≤L) (hLs : L^2=37/80-(11/25)*c) :
     (1113/1000)*L<103/250+(387/20000)*(c+s) := by
   have hsin := quarter_circle_chord ⟨by linarith [hc.1],hc.2⟩ hs hu
@@ -50,7 +47,7 @@ lemma cardinal_destination_scalar {c s L : ℝ}
   linarith
 
 lemma cardinal_destination_reserve {c s L : ℝ}
-    (hc : 707/1000≤c ∧ c≤1) (hs : 0≤s) (hu : c^2+s^2=1)
+    (hc : 707/1000≤c ∧ c≤1) (hs : 0≤ s) (hu : c^2+s^2=1)
     (hL : 0≤L) (hLs : L^2=37/80-(11/25)*c) :
     rho0*(9/20+L)+c0*(11/20+(c+s)/20)<39/40+(c+s)/40 := by
   have hscalar := cardinal_destination_scalar hc hs hu hL hLs
@@ -84,19 +81,22 @@ theorem normalized_cardinalW_destination_primary_excluded {R : ℝ}
       (show Real.pi/4≤Real.pi by linarith [Real.pi_pos]) hd.2
     exact quarter_endpoint_bracket.1.trans hmono
   have hcoshi : c≤1 := Real.cos_le_one d
-  have hsin : 0≤s := Real.sin_nonneg_of_nonneg_of_le_pi hd.1
+  have hsin : 0≤ s := Real.sin_nonneg_of_nonneg_of_le_pi hd.1
     (by linarith [hd.2,Real.pi_pos])
   have hunit : c^2+s^2=1 := by nlinarith [Real.sin_sq_add_cos_sq d]
   have hL : 0≤L := vectorLength_nonneg g
   have hLs : L^2=37/80-(11/25)*c := by
-    have h := vectorLength_sq g
-    dsimp [g,normSq] at h
-    nlinarith
+    have h : L^2=normSq g := vectorLength_sq g
+    simp only [g,normSq] at h
+    rw [h]
+    linear_combination (4/25)*hunit
   have hreserve := cardinal_destination_reserve ⟨hcoslo,hcoshi⟩ hsin hunit hL hLs
   have hDphase : P.phase 3=Real.pi+d := by dsimp [d,NormalizedPacking.diagonalAngle]; ring
+  have hcpi : Real.cos (Real.pi+d)=-c := by rw [add_comm]; exact Real.cos_add_pi d
+  have hspi : Real.sin (Real.pi+d)=-s := by rw [add_comm]; exact Real.sin_add_pi d
   have hDaxis : normalX (P.square 3)=(-c,-s) := by
     rw [P.square_def,hDphase]
-    simp [normalX,orientedSquare,c,s,Real.cos_pi_add,Real.sin_pi_add]
+    simp [normalX,orientedSquare,hcpi,hspi]
   have hDcenter : dot (normalX (P.square 3)) (P.square 3).center=P.radial 3 := by
     have h := oriented_frame_centerX (P.phase 3) (P.radial 3) (P.transverse 3)
     simpa [P.square_def,frameX,normalX,dot,sub] using h
@@ -116,8 +116,7 @@ theorem normalized_cardinalW_destination_primary_excluded {R : ℝ}
   have hCD := P.own_separator 3 P.diagonal_own
   have hDlower : 1/2+(c+s)/2≤P.radial 3+P.center.1*c+P.center.2*s := by
     rw [hDphase] at hCD
-    simp only [centralMargin,centralNormal,angularWidth,Real.cos_pi_add,
-      Real.sin_pi_add,abs_neg] at hCD
+    simp only [centralMargin,centralNormal,angularWidth,hcpi,hspi,abs_neg] at hCD
     change 0≤P.radial 3-1/2-(P.center.1*(-c)+P.center.2*(-s))-(|c|+|s|)/2 at hCD
     rw [abs_of_nonneg (by linarith),abs_of_nonneg hsin] at hCD
     nlinarith
@@ -127,7 +126,7 @@ theorem normalized_cardinalW_destination_primary_excluded {R : ℝ}
   have hx := mul_le_mul_of_nonneg_left P.box.1.2
     (show 0≤11/20+c/20 by linarith)
   have hy := mul_le_mul_of_nonneg_left P.box.2.2
-    (show 0≤s/20 by positivity)
+    (show 0≤ s/20 by positivity)
   dsimp [dot,g] at hWsupport hDWlower
   change (-11/20+(2/5)*c)*(P.square 2).center.1+(2/5)*s*(P.square 2).center.2≤rho0*L at hWsupport
   nlinarith only [hDWlower,hWlower,hDlower,hWsupport,hAd,hx,hy,hreserve]

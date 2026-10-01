@@ -1,10 +1,7 @@
-module
-public import SquaresInCircles.Six.Normalization.Input
-public import SquaresInCircles.Six.Analytic.ForbiddenArcs
-public import SquaresInCircles.Six.DiagonalReflection
-public import SquaresInCircles.Six.Goals
-
-@[expose] public section
+import SquaresInCircles.Six.Normalization.Input
+import SquaresInCircles.Six.Analytic.ForbiddenArcs
+import SquaresInCircles.Six.DiagonalReflection
+import SquaresInCircles.Six.Goals
 
 /-!
 # Proposition A: the analytic strong central box, before pins and sectors
@@ -82,9 +79,13 @@ theorem strong_central_box {S : Fin 6 → UnitSquare} {R cx cy : ℝ}
     cx ≤ c0 ∧ cy ≤ c0 := by
   by_contra! hbad
   rcases le_total cy cx with horder | horder
-  · have hx : c0 < cx := by rcases hbad with h | h <;> linarith
+  · have hx : c0 < cx := by
+      by_contra! h
+      linarith [hbad h]
     exact bad_east_center_impossible hp hQ hcentral hx hx1 hy0 horder
-  · have hy : c0 < cy := by rcases hbad with h | h <;> linarith
+  · have hy : c0 < cy := by
+      by_contra! h
+      linarith [hbad (by linarith)]
     have hp' := Six.packing_reflectDiagonal hp
     have hcentral' := Six.reflected_central_axis hcentral
     exact bad_east_center_impossible hp' hQ hcentral' hy hy1 hx0 horder

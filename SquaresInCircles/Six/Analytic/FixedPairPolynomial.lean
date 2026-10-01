@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Analytic.FixedPairGap
-public import SquaresInCircles.Six.Analytic.PairSharpConstants
-public import SquaresInCircles.Six.Analytic.PairPerturbation
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FixedPairGap
+import SquaresInCircles.Six.Analytic.PairSharpConstants
+import SquaresInCircles.Six.Analytic.PairPerturbation
 
 /-!
 # Rational-polynomial data for the forced endpoints
@@ -94,11 +91,11 @@ lemma circle_bounds : 0≤Six.radius ∧ Six.radius≤circleUpper ∧ 0≤circle
 
 lemma base_bound : pairBase≤baseUpper := pair_base_sharp_upper.le
 
-lemma squareN_nonneg (no : Bool) (u : Fin 4) (n w : ℝ) : 0≤squareN no u n w := by
+lemma squareN_nonneg (no : Bool) (u : Fin 4) (n w : ℝ) : 0≤ squareN no u n w := by
   dsimp [squareN,northSquare]
   positivity
 
-lemma squareW_nonneg (wo : Bool) (u : Fin 4) (n w : ℝ) : 0≤squareW wo u n w := by
+lemma squareW_nonneg (wo : Bool) (u : Fin 4) (n w : ℝ) : 0≤ squareW wo u n w := by
   dsimp [squareW,westSquare]
   positivity
 

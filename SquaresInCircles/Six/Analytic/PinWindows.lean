@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.PinLocations
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.PinLocations
 
 /-!
 # Labelled windows and central axes without certificates
@@ -68,7 +65,8 @@ theorem window_for_unique_pin {t a b:ℝ} (i:Fin 5) (hloc:PinLocation t a b)
     · have hi : i=4 := (huniq 4 hpS).symm
       subst i
       apply window_transport 4 ht he
-      simpa [windowLower,windowUpper,phaseCenter] using And.intro (hlower hpS) hv.2
+      norm_num [windowLower,windowUpper,phaseCenter]
+      constructor <;> linarith [hlower hpS,hv.2]
     · have hi : i=3 := (huniq 3 hpD).symm
       subst i
       have hvhi : v<Real.pi/12 := by
@@ -98,8 +96,8 @@ lemma fixed_pin_coordinates (i:Fin 5) : fixedPin i =
   · rfl
   · have h : (11/12)*Real.pi=Real.pi-Real.pi/12 := by ring
     simp [fixedPin,h,Real.cos_pi_sub,Real.sin_pi_sub]
-  · have h : (5/4)*Real.pi=Real.pi+Real.pi/4 := by ring
-    simp [fixedPin,h,Real.cos_pi_add,Real.sin_pi_add]
+  · have h : (5/4)*Real.pi=Real.pi/4+Real.pi := by ring
+    simp [fixedPin,h,Real.cos_add_pi,Real.sin_add_pi]
   · have h : (19/12)*Real.pi=(Real.pi/12-Real.pi/2)+2*Real.pi := by ring
     simp [fixedPin,h,Real.cos_add,Real.sin_add,Real.cos_sub,Real.sin_sub]
 
@@ -119,24 +117,28 @@ private lemma pin_trig_signs :
 lemma non_east_pin_x (i:Fin 5) (hi:i≠0) : (fixedPin i).1≤3/10 := by
   rw [fixed_pin_coordinates]
   have h := pin_trig_signs
-  fin_cases i <;> norm_num at hi ⊢ <;>
-    nlinarith [h.1,h.2.1,h.2.2.1,h.2.2.2.1,h.2.2.2.2]
+  revert hi
+  fin_cases i <;> norm_num <;>
+    nlinarith [h.1,h.2.1,h.2.2.1,h.2.2.2.1,h.2.2.2.2,Real.sqrt_nonneg 2]
 
 lemma non_north_pin_y (i:Fin 5) (hi:i≠1) : (fixedPin i).2≤3/10 := by
   rw [fixed_pin_coordinates]
   have h := pin_trig_signs
-  fin_cases i <;> norm_num at hi ⊢ <;>
-    nlinarith [h.1,h.2.1,h.2.2.1,h.2.2.2.1,h.2.2.2.2]
+  revert hi
+  fin_cases i <;> norm_num <;>
+    nlinarith [h.1,h.2.1,h.2.2.1,h.2.2.2.1,h.2.2.2.2,Real.sqrt_nonneg 2]
 
 lemma non_west_pin_x (i:Fin 5) (hiW:i≠2) (hiD:i≠3) : 0≤(fixedPin i).1 := by
   rw [fixed_pin_coordinates]
   have h := pin_trig_signs
-  fin_cases i <;> norm_num at hiW hiD ⊢ <;> nlinarith [h.2.1]
+  revert hiW hiD
+  fin_cases i <;> norm_num <;> nlinarith [h.2.1]
 
 lemma non_south_pin_y (i:Fin 5) (hiD:i≠3) (hiS:i≠4) : 0≤(fixedPin i).2 := by
   rw [fixed_pin_coordinates]
   have h := pin_trig_signs
-  fin_cases i <;> norm_num at hiD hiS ⊢ <;> nlinarith [h.2.1]
+  revert hiD hiS
+  fin_cases i <;> norm_num <;> nlinarith [h.2.1]
 
 /-- D1 follows directly from the pin coordinates and strong-core SEC exclusion.
 It does not need a window theorem or a relaxed-margin certificate. -/

@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.FrozenPrimaryEndpoints
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FrozenPrimaryEndpoints
 
 /-!
 # Cardinal-W inward-primary endpoint bounds
@@ -19,9 +16,10 @@ open Normalization
 lemma west_cardinal_radial_lower {w a b cx cy : ℝ}
     (ha : 1/2≤a) (hb : |b|≤1/2)
     (hwest : 0≤centralMargin .west (Real.pi+w) a b cx cy) : 1≤a+cx := by
-  simp only [centralMargin,centerX,angularWidth,Real.cos_pi_add,
-    Real.sin_pi_add,abs_neg] at hwest
-  have hs : -(b*Real.sin w)≤|b|*|Real.sin w| := by
+  rw [add_comm Real.pi w] at hwest
+  simp only [centralMargin,centerX,angularWidth,Real.cos_add_pi,
+    Real.sin_add_pi,abs_neg] at hwest
+  have hs : -(b*Real.sin w)≤|b| *|Real.sin w| := by
     simpa only [abs_mul] using neg_le_abs (b*Real.sin w)
   have hb' := mul_le_mul_of_nonneg_right hb (abs_nonneg (Real.sin w))
   have hc := mul_nonneg (show 0≤a-1/2 by linarith) (show 0≤1-Real.cos w by linarith [Real.cos_le_one w])
@@ -47,7 +45,7 @@ lemma cardinal_inward_endpoint_lower {v d aw ad bd cx cy L X Y : ℝ}
     17/20+(13/40)*(Real.cos d+Real.sin d)+(3/10)*Real.sin (v+d)-
       (7/20)*(1113/1000)-(1689/1000)*L-(113/1000)*(X+Y)≤
         cardinalInwardFrozen v d aw ad bd cx cy := by
-  have hv := vertex_linear_upper hD
+  have hv := vertex_linear_upper (b := -bd) (by simpa only [abs_neg] using hD)
     (U := 13/20-(3/10)*Real.cos (v+d)) (V := (3/10)*Real.sin (v+d))
     (by positivity) hL (by rwa [cardinal_inward_norm_identity])
   have hC := coarse_central_work hc hX hY hgX hgY

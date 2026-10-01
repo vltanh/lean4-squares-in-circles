@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.FixedPairFormula
-public import SquaresInCircles.Six.Analytic.RotatingLength
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.FixedPairFormula
+import SquaresInCircles.Six.Analytic.RotatingLength
 
 /-!
 # The coordinate and diagonal slices of the fixed pair

@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Stress.BalancedPair
-public import SquaresInCircles.Six.Equality.SupportMaximizers
-
-@[expose] public section
+import SquaresInCircles.Six.Stress.BalancedPair
+import SquaresInCircles.Six.Equality.SupportMaximizers
 
 /-!
 # A smooth lower bound near the candidate and its exact base value
@@ -21,7 +18,7 @@ lemma orderedSupport_le_vertex {R U V : ℝ} (hR : 1≤R) (hU : 0≤U) (hV : 0�
   have hrad : 0≤R^2-1/4 := by nlinarith [sq_nonneg (R-1)]
   have hid := Real.sq_sqrt hrad
   have hround := dot_le_radius (v := (U,V))
-    (p := (Real.sqrt (R^2-1/4),(1:ℝ)/2)) (by linarith)
+    (p := (Real.sqrt (R^2-1/4),(1:ℝ)/2)) (R := R) (by linarith)
     (by dsimp [normSq]; nlinarith [hid])
   dsimp [dot,vectorLength,normSq] at hround
   unfold orderedSupport
@@ -81,11 +78,11 @@ lemma northVertex_candidate_north : northVertex 1 (-rStar)=1+Six.sStar+rStar*Six
   have hg : (1,-rStar)=scale (1/(Six.sStar+3/2)) p := by
     apply Prod.ext
     · dsimp [scale,p]
-      field_simp [ne_of_gt rStar_den_pos]
+      exact (div_mul_cancel₀ (1:ℝ) (ne_of_gt rStar_den_pos)).symm
     · dsimp [scale,p,rStar]
       ring
   have hd := radius_length_eq_dot_of_ray
-    (show 0≤1/(Six.sStar+3/2) by positivity) Six.radius_pos.le hp hg
+    (show 0≤1/(Six.sStar+3/2) from (one_div_pos.mpr rStar_den_pos).le) Six.radius_pos.le hp hg
   dsimp [vectorLength,normSq,dot,p] at hd
   dsimp [northVertex]
   nlinarith
@@ -101,7 +98,7 @@ lemma northVertex_candidate_west :
   have hg : (1+rStar,-mStar)=scale l p := by
     apply Prod.ext
     · dsimp [scale,l,p]
-      field_simp [ne_of_gt kStar_den_pos]
+      exact (div_mul_cancel₀ (1+rStar) (ne_of_gt kStar_den_pos)).symm
     · dsimp [scale,l,p,mStar,kStar]
       ring
   have hd := radius_length_eq_dot_of_ray hl Six.radius_pos.le hp hg

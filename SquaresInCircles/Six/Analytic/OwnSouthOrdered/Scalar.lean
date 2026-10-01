@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.OwnSouthOrdered.Diagonal
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.OwnSouthOrdered.Diagonal
 
 /-!
 # Four vertices for the ordered two-OWN missing-south stress
@@ -34,13 +31,15 @@ private lemma harmonic_concave {A B l u : ℝ} (hA : 0 ≤ A) (hB : 0 ≤ B)
         (by linarith [hx.2,hu,Real.pi_pos])
       simp only [zero_mul]
       positivity)
-  simpa only [radicalTrig,zero_mul,sub_zero] using h
+  convert h using 1
+  funext x
+  simp only [radicalTrig,zero_mul,sub_zero]
 
 private lemma harmonic_chord_concave {A B K l u : ℝ}
     (hA : 0 ≤ A) (hB : 0 ≤ B) (hl : 0 ≤ l) (hu : u ≤ 12/25) :
     ConcaveOn ℝ (Set.Icc l u)
       (fun v => K+(A*Real.cos v+B*Real.sin v)+chord (11/14+v)) := by
-  have ht := harmonic_concave hA hB hl (by linarith [hu,Real.pi_gt_d2])
+  have ht := harmonic_concave (u := u) hA hB hl (by linarith [hu,Real.pi_gt_d2])
   have hq := concave_affine_argument (a := 1) (b := 11/14) chord_concave
     (l := l) (u := u) (by
       intro v hv
@@ -127,13 +126,16 @@ private lemma sum_wall_concave :
   have hst : -(1/5) ≤ Real.sin t := by
     have h := Real.sin_le (x := -t) (by norm_num [t,k])
     rw [Real.sin_neg] at h
-    norm_num [t,k] at h
+    have ht : t=-61/350 := by norm_num [t,k]
+    clear_value A B t k
     linarith
   have hA : 0 ≤ A := by
     dsimp [A,westWeight,southWeight,wingCos,wingSin]
+    clear_value A B t k
     linarith [Real.cos_le_one t]
   have hB : 0 ≤ B := by
     dsimp [B,westWeight,southWeight,wingCos,wingSin]
+    clear_value A B t k
     linarith [Real.cos_le_one k]
   have h := harmonic_chord_concave (K := -83178077/125000000)
     (l := 22/75) (u := 12/25) hA hB (by norm_num) le_rfl
@@ -141,7 +143,6 @@ private lemma sum_wall_concave :
   funext v
   dsimp [profile,wing,southTerm,A,B]
   rw [show (11:ℝ)/14-(24/25-v)=t+v by dsimp [t,k]; ring]
-  change _ = _
   simp only [Real.cos_sub,Real.sin_sub,Real.cos_add,Real.sin_add]
   dsimp [t,k]
   ring
@@ -190,20 +191,27 @@ theorem positive {v s d : ℝ} (hv : 0 ≤ v) (hvs : v ≤ s)
   have hvmax : v ≤ 12/25 := by linarith
   have hs0 : 0 ≤ s := hv.trans hvs
   have hequal : 0 < profile v v (11/14) :=
-    positive_on_concave_interval equal_wall_concave ⟨hv,hvmax⟩ four_vertices.1 four_vertices.2.2.2
+    positive_on_concave_interval (f := fun v => profile v v (11/14))
+      equal_wall_concave ⟨hv,hvmax⟩ four_vertices.1 four_vertices.2.2.2
   have hupper : 0 < profile v s (11/14) := by
     by_cases hcut : v ≤ 22/75
     · have htop : 0 < profile v (2/3) (11/14) :=
-        positive_on_concave_interval vertical_concave ⟨hv,hcut⟩
-          four_vertices.2.1 four_vertices.2.2.1
+        positive_on_concave_interval (f := fun v => profile v (2/3) (11/14))
+          vertical_concave ⟨hv,hcut⟩ four_vertices.2.1 four_vertices.2.2.1
       rw [s_identity] at hequal htop ⊢
       have h := trig_lower_of_endpoints s_coefficients.1 s_coefficients.2 hv
         (show (2:ℝ)/3 ≤ Real.pi/2 by linarith [Real.pi_gt_d2])
         ⟨hvs,hs⟩ (C := -sK v) (by linarith) (by linarith)
       linarith
-    · have htop : 0 < profile v (24/25-v) (11/14) :=
-        positive_on_concave_interval sum_wall_concave
-          ⟨(le_of_not_ge hcut),hvmax⟩ four_vertices.2.2.1 four_vertices.2.2.2
+    · have hleft : 0 < profile (22/75) (24/25-22/75) (11/14) := by
+        rw [show (24:ℝ)/25-22/75=2/3 by norm_num]
+        exact four_vertices.2.2.1
+      have hright : 0 < profile (12/25) (24/25-12/25) (11/14) := by
+        rw [show (24:ℝ)/25-12/25=12/25 by norm_num]
+        exact four_vertices.2.2.2
+      have htop : 0 < profile v (24/25-v) (11/14) :=
+        positive_on_concave_interval (f := fun v => profile v (24/25-v) (11/14))
+          sum_wall_concave ⟨(le_of_not_ge hcut),hvmax⟩ hleft hright
       rw [s_identity] at hequal htop ⊢
       have hu : 24/25-v ≤ Real.pi/2 := by linarith [hv,Real.pi_gt_d2]
       have h := trig_lower_of_endpoints s_coefficients.1 s_coefficients.2 hv hu

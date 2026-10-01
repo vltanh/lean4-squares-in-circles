@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.LowDWestSource.Scalar
-public import SquaresInCircles.Six.Stress.Reverse
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.LowDWestSource.Scalar
+import SquaresInCircles.Six.Stress.Reverse
 
 /-!
 # Connect the low-D quadrilateral stress to the actual packing
@@ -51,6 +48,12 @@ def raw (b : Bool) (v d : ℝ) : ℝ :=
     (43/100)*(if b then 1/2-c0 else 1/2)*Real.sin d+
     (9/100)*Real.cos (v+d)+(18/100)*(1/2-rho0)*Real.sin (v+d)
 
+private lemma cos_pi_add' (x : ℝ) : Real.cos (Real.pi+x) = -Real.cos x := by
+  rw [add_comm]; exact Real.cos_add_pi x
+
+private lemma sin_pi_add' (x : ℝ) : Real.sin (Real.pi+x) = -Real.sin x := by
+  rw [add_comm]; exact Real.sin_add_pi x
+
 private lemma quadrant {x : ℝ} (hx : 0 ≤ x ∧ x ≤ 4/3) :
     0 ≤ Real.cos x ∧ 0 ≤ Real.sin x :=
   ⟨Real.cos_nonneg_of_mem_Icc
@@ -72,7 +75,7 @@ private lemma cap_slope {v d : ℝ}
     (rho0+1/2)*((18/100)*Real.cos (v+d)) ≤
       (1/2)*(39/100+(18/100)*Real.sin (v+d)) := by
   have hq : 1 ≤ v+d ∧ v+d ≤ 19/15 := by constructor <;> linarith [hd.2,hv.1,hv.2]
-  have ht := quadrant ⟨by linarith [hq.1],by linarith [hq.2]⟩
+  have ht := quadrant (x := v+d) ⟨by linarith [hq.1],by linarith [hq.2]⟩
   have hcos := Real.cos_le_cos_of_nonneg_of_le_pi
     (show (0:ℝ) ≤ 1 by norm_num) (show v+d ≤ Real.pi by linarith [hq.2,Real.pi_gt_d2]) hq.1
   have hc1 := Seven.cos_upper_four (x := 1) (by norm_num)
@@ -92,36 +95,42 @@ lemma west_support {v d a b : ℝ} (hc : ContainedChart a |b|)
   let U := 39/100+(18/100)*Real.sin (v+d)
   let V := (18/100)*Real.cos (v+d)
   have hq := quadrant (x := v+d) ⟨by linarith [hv.1],by linarith [hv.2,hd.2]⟩
-  have hU : 0 ≤ U := by dsimp [U]; positivity
+  have hU : 0 ≤ U := by
+    show 0 ≤ 39/100+(18/100)*Real.sin (v+d)
+    linarith [hq.2]
   have hs := cap_slope hd hv
   have hbox : (a+1/2)^2+(|b|+1/2)^2 ≤ Q0 := hc.containment
   have hcorner := disk_corner_support
     (A := a+1/2) (B := |b|+1/2) (a := rho0+1/2) (b := (1:ℝ)/2)
     (c := U) (s := V) (by linarith [rho0_lower])
     (by linarith [abs_nonneg b]) hU (by nlinarith [rho0_sq]) hbox hs.2
-  have hb := mul_le_mul_of_nonneg_right (neg_le_abs b) hs.1
+  have hb : -b*V ≤ |b| * V := mul_le_mul_of_nonneg_right (neg_le_abs b) hs.1
   have he : dot (forceW v d) (orientedSquare (Real.pi-v) a b).center=U*a-V*b := by
     dsimp [forceW,dot,orientedSquare,U,V]
     rw [Real.cos_pi_sub,Real.sin_pi_sub,Real.cos_add,Real.sin_add]
     linear_combination (39/100)*a*(Real.sin_sq_add_cos_sq v)
   rw [he]
   change U*a-V*b ≤ rho0*U
-  nlinarith only [hcorner,hb]
+  linarith only [hcorner,hb]
 
 lemma diagonal_support {d a b : ℝ} (hc : ContainedChart a |b|) :
     dot (forceD d) (orientedSquare (Real.pi+d) a b).center ≤
       R0*Real.sqrt (2173/10000)-61/200 := by
-  have h := Stress.center_le_vertexSupport R0_nonneg (oriented_contained_of_chart hc) (forceD d)
+  have h := Stress.center_le_vertexSupport R0_nonneg
+    (oriented_contained_of_chart (t := Real.pi+d) hc) (forceD d)
   have hn : normSq (forceD d)=2173/10000 := by
     dsimp [normSq,forceD]
     linear_combination (2173/10000)*(Real.sin_sq_add_cos_sq d)
   have hx : frameX (orientedSquare (Real.pi+d) a b) (forceD d)=43/100 := by
-    simp only [frameX,orientedSquare,forceD,Real.cos_pi_add,Real.sin_pi_add]
+    simp only [frameX,orientedSquare,forceD,cos_pi_add',sin_pi_add']
     linear_combination (43/100)*(Real.sin_sq_add_cos_sq d)
   have hy : frameY (orientedSquare (Real.pi+d) a b) (forceD d)=18/100 := by
-    simp only [frameY,orientedSquare,forceD,Real.cos_pi_add,Real.sin_pi_add]
+    simp only [frameY,orientedSquare,forceD,cos_pi_add',sin_pi_add']
     linear_combination (18/100)*(Real.sin_sq_add_cos_sq d)
-  simpa [Stress.vertexSupport,Stress.vectorLength,width,hn,hx,hy] using h
+  have hw : width (orientedSquare (Real.pi+d) a b) (forceD d)=61/200 := by
+    simp only [width,hx,hy]
+    norm_num
+  simpa only [Stress.vertexSupport,Stress.vectorLength,hn,hw] using h
 
 private lemma minorant_le_raw (b : Bool) {v d : ℝ}
     (hd : 1/2 ≤ d ∧ d ≤ 3/5) (hv : 1-d ≤ v ∧ v ≤ 2/3) :
@@ -137,7 +146,7 @@ private lemma minorant_le_raw (b : Bool) {v d : ℝ}
   have pds := mul_nonneg (sub_nonneg.mpr cu) td.2
   have prho := mul_nonneg
     (show 0 ≤ 1113/1000-rho0 by linarith [rho0_upper])
-    (show 0 ≤ 39/100+(18/100)*Real.sin (v+d) by positivity)
+    (show 0 ≤ 39/100+(18/100)*Real.sin (v+d) by linarith [tq.2])
   have hroot : Real.sqrt (2173/10000) ≤ 2331/5000 := by
     have hs := Real.sq_sqrt (show (0:ℝ) ≤ 2173/10000 by norm_num)
     have hn := Real.sqrt_nonneg (2173/10000:ℝ)
@@ -167,7 +176,9 @@ theorem own_low_diagonal_impossible {R : ℝ} (P : NormalizedPacking R)
   let v := -P.helperAngle 2
   let d := P.diagonalAngle
   have hd : 1/2 ≤ d ∧ d ≤ 3/5 := ⟨(normalized_diagonal_gt_half P).le,hdhigh⟩
-  have hWphase : P.phase 2=Real.pi-v := by rw [P.phase_from_deviation 2]; dsimp [v]; ring
+  have hWphase : P.phase 2=Real.pi-v := by
+    have h : P.phase 2=Real.pi+P.helperAngle 2 := P.phase_from_deviation 2
+    rw [h]; dsimp [v]; ring
   have hDphase : P.phase 3=Real.pi+d := by dsimp [d,NormalizedPacking.diagonalAngle]; ring
   have hgap := DW_Dsecondary_gap_gt_one P hsep
   rw [hWphase,hDphase] at hgap
@@ -205,20 +216,20 @@ theorem own_low_diagonal_impossible {R : ℝ} (P : NormalizedPacking R)
       have hi : dot (-Real.cos d,-Real.sin d)
           (sub (orientedSquare (Real.pi+d) (P.radial 3) (P.transverse 3)).center P.center)=
           P.radial 3-centralNormal (Real.pi+d) P.center.1 P.center.2 := by
-        simpa [frameX,orientedSquare,dot,Real.cos_pi_add,Real.sin_pi_add] using hp
+        simpa [frameX,orientedSquare,dot,cos_pi_add',sin_pi_add'] using hp
       rw [hi]
       have hw : angularWidth (Real.pi+d)=angularWidth d := by
-        simp [angularWidth,Real.cos_pi_add,Real.sin_pi_add]
+        simp [angularWidth,cos_pi_add',sin_pi_add']
       rw [hw] at hh
       linarith
     · have hh := hsep
       rw [P.square_def 2,P.square_def 3,hWphase,hDphase,oriented_pair_threshold,
         show (Real.pi+d)-(Real.pi-v)=v+d by ring] at hh
       simpa [system,S,P.square_def,hWphase,hDphase,normalY,orientedSquare,
-        Real.cos_pi_add,Real.sin_pi_add] using hh
+        cos_pi_add',sin_pi_add'] using hh
   have tx := quadrant (x := v) ⟨by linarith [hv.1,hd.2],by linarith [hv.2]⟩
   have td := quadrant (x := d) ⟨by linarith [hd.1],by linarith [hd.2]⟩
-  have gx : 0 ≤ (forceC v d).1 := by dsimp [forceC]; positivity
+  have gx : 0 ≤ (forceC v d).1 := by dsimp only [forceC]; linarith [tx.1,td.1]
   have hcx := mul_le_mul_of_nonneg_right P.box.1.2 gx
   have finish (b : Bool)
       (hc : dot (forceC v d) P.center ≤ upperValues b v d 0) : False := by
@@ -260,7 +271,8 @@ theorem DW_Dsecondary_diagonal_gt_three_fifths {R : ℝ} (P : NormalizedPacking 
   cases hW : P.ownBits 2
   · have hw := (abs_lt.mp (P.cardinal_angle 2 hW)).1
     have hg := DW_Dsecondary_gap_gt_one P hsep
-    rw [P.phase_from_deviation 2] at hg
+    have h2 : P.phase 2=Real.pi+P.helperAngle 2 := P.phase_from_deviation 2
+    rw [h2] at hg
     dsimp [NormalizedPacking.diagonalAngle]
     linarith
   · by_contra! h

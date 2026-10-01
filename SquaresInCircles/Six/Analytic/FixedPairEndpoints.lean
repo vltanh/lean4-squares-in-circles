@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.RectangleWallReduction
-public import SquaresInCircles.Six.Analytic.FixedPairPolynomialBound
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.RectangleWallReduction
+import SquaresInCircles.Six.Analytic.FixedPairPolynomialBound
 
 /-!
 # The actual endpoint inequalities of the pair concavity reduction
@@ -19,8 +16,6 @@ external success flag, or `decide` inequality certificate is used. `norm_num`
 proves the displayed rational comparisons. Compilation remains deferred.
 -/
 
-set_option maxRecDepth 100000
-set_option maxHeartbeats 0
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.FixedPair
@@ -34,7 +29,7 @@ def diagonalEndpoint (no wo : Bool) : Fin 3 → ℝ :=
 
 /-- This tactic performs only constant rational arithmetic at a point already
 specified by the geometric reduction. It has no search or subdivision step. -/
-private macro "pair_endpoint_rational" : tactic =>
+macro "pair_endpoint_rational" : tactic =>
   `(tactic| norm_num [EndpointAlgebra,budget,linearPart,squareN,squareW,
     northSquare,westSquare,northScale,northVector,westVector,baseVector,
     northSource,westSource,thresholdP,halfWidth,penaltyP,
@@ -42,12 +37,38 @@ private macro "pair_endpoint_rational" : tactic =>
     PairTaylor.sinP,PairTaylor.cosP,line,northEndpoint,westEndpoint,diagonalEndpoint,
     northLo,northHi,westLo,westHi] at *)
 
+/-- The corner comparisons, one lemma for each choice of the two central bits. -/
+private lemma corner_algebra_ff (u : Fin 4) (i j : Fin 3)
+    (h : i≠1 ∨ j≠1 ∨ u=1 ∨ u=2) :
+    EndpointAlgebra false false u (northEndpoint false i) (westEndpoint false j) := by
+  fin_cases u <;> fin_cases i <;> fin_cases j
+  all_goals pair_endpoint_rational
+
+private lemma corner_algebra_ft (u : Fin 4) (i j : Fin 3)
+    (h : i≠1 ∨ j≠1 ∨ u=1 ∨ u=2) :
+    EndpointAlgebra false true u (northEndpoint false i) (westEndpoint true j) := by
+  fin_cases u <;> fin_cases i <;> fin_cases j
+  all_goals pair_endpoint_rational
+
+private lemma corner_algebra_tf (u : Fin 4) (i j : Fin 3)
+    (h : i≠1 ∨ j≠1 ∨ u=1 ∨ u=2) :
+    EndpointAlgebra true false u (northEndpoint true i) (westEndpoint false j) := by
+  fin_cases u <;> fin_cases i <;> fin_cases j
+  all_goals pair_endpoint_rational
+
+private lemma corner_algebra_tt (u : Fin 4) (i j : Fin 3)
+    (h : i≠1 ∨ j≠1 ∨ u=1 ∨ u=2) :
+    EndpointAlgebra true true u (northEndpoint true i) (westEndpoint true j) := by
+  fin_cases u <;> fin_cases i <;> fin_cases j
+  all_goals pair_endpoint_rational
+
 /-- Rational endpoint comparisons away from the candidate-origin equality. -/
 lemma corner_algebra (no wo : Bool) (u : Fin 4) (i j : Fin 3)
     (h : i≠1 ∨ j≠1 ∨ u=1 ∨ u=2) :
     EndpointAlgebra no wo u (northEndpoint no i) (westEndpoint wo j) := by
-  cases no <;> cases wo <;> fin_cases u <;> fin_cases i <;> fin_cases j
-  all_goals pair_endpoint_rational
+  cases no <;> cases wo
+  exacts [corner_algebra_ff u i j h,corner_algebra_ft u i j h,
+    corner_algebra_tf u i j h,corner_algebra_tt u i j h]
 
 lemma diagonal_algebra (no wo : Bool) (u : Fin 4) (i : Fin 3)
     (h : i≠1 ∨ u=1 ∨ u=2) :
@@ -77,7 +98,7 @@ lemma alternate_gap_origin (no wo : Bool) {u : Fin 4} (hu : u=1 ∨ u=2) :
     0<gap no wo u 0 0 := by
   have he := corner_algebra no wo u 1 1 (Or.inr (Or.inr hu))
   apply positive_of_endpoint_algebra (origin_in_domain no wo)
-  simpa only [northEndpoint,westEndpoint] using he
+  simpa only [northEndpoint,westEndpoint,Matrix.cons_val_one,Matrix.cons_val_zero] using he
 
 lemma gap_origin_nonnegative (no wo : Bool) (u : Fin 4) : 0≤gap no wo u 0 0 := by
   by_cases hu : u=0 ∨ u=3
@@ -133,22 +154,22 @@ lemma diagonal_boundary_index (no wo : Bool) {z : ℝ}
     · refine ⟨0,?_⟩
       have hm : max (northLo no:ℝ) (westLo wo:ℝ)=northLo no :=
         max_eq_left (by linarith [hr.2.1])
-      simpa only [diagonalEndpoint,hm] using h
+      simpa only [diagonalEndpoint,hm,Matrix.cons_val_zero] using h
     · exact ⟨1,h⟩
     · refine ⟨2,?_⟩
       have hm : min (northHi no:ℝ) (westHi wo:ℝ)=northHi no :=
         min_eq_left (by linarith [hr.2.2])
-      simpa only [diagonalEndpoint,hm] using h
+      simpa only [diagonalEndpoint,hm,Matrix.cons_val_two,Matrix.tail_cons,Matrix.head_cons] using h
   · rcases hw with h | h | h
     · refine ⟨0,?_⟩
       have hm : max (northLo no:ℝ) (westLo wo:ℝ)=westLo wo :=
         max_eq_right (by linarith [hr.1.1])
-      simpa only [diagonalEndpoint,hm] using h
+      simpa only [diagonalEndpoint,hm,Matrix.cons_val_zero] using h
     · exact ⟨1,h⟩
     · refine ⟨2,?_⟩
       have hm : min (northHi no:ℝ) (westHi wo:ℝ)=westHi wo :=
         min_eq_right (by linarith [hr.1.2])
-      simpa only [diagonalEndpoint,hm] using h
+      simpa only [diagonalEndpoint,hm,Matrix.cons_val_two,Matrix.tail_cons,Matrix.head_cons] using h
 
 /-- All endpoints required by the analytic rectangle/wall reduction are proved. -/
 theorem endpoint_condition (no wo : Bool) (u : Fin 4) : EndpointCondition no wo u := by

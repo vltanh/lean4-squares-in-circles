@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.WestCoreBounds.Support
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.WestCoreBounds.Support
 
 /-!
 # A compact actual domain for an OWN-W D-sourced separator
@@ -37,7 +34,7 @@ theorem own_west_domain {R : ℝ} (P : NormalizedPacking R) (hW : P.ownBits 2=tr
   have hq : 1 ≤ v+d ∧ v+d ≤ Real.pi/2 := by
     constructor <;> linarith [hgap,hv.2,hd.2,Real.pi_gt_d2]
   have hWphase : P.phase 2=Real.pi-v := by
-    rw [P.phase_from_deviation 2]
+    rw [P.phase_from_deviation 2,show cardinalCenter (matchingCardinal 2)=Real.pi from rfl]
     dsimp [v]
     ring
   have hDphase : P.phase 3=Real.pi+d := by
@@ -54,7 +51,9 @@ theorem own_west_domain {R : ℝ} (P : NormalizedPacking R) (hW : P.ownBits 2=tr
       P.radial 3+P.center.1*Real.cos d+P.center.2*Real.sin d := by
     have h := P.own_separator 3 P.diagonal_own
     rw [hDphase] at h
-    simp only [centralMargin,centralNormal,angularWidth,Real.cos_pi_add,Real.sin_pi_add,abs_neg] at h
+    have hcpi : Real.cos (Real.pi+d)=-Real.cos d := by rw [add_comm]; exact Real.cos_add_pi d
+    have hspi : Real.sin (Real.pi+d)=-Real.sin d := by rw [add_comm]; exact Real.sin_add_pi d
+    simp only [centralMargin,centralNormal,angularWidth,hcpi,hspi,abs_neg] at h
     dsimp [angularWidth]
     nlinarith only [h]
   have hWD : 1/2+angularWidth (v+d) ≤

@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Stress.Support
-public import SquaresInCircles.Seven.SeparatingAxes
-
-@[expose] public section
+import SquaresInCircles.Six.Stress.Support
+import SquaresInCircles.Seven.SeparatingAxes
 
 /-!
 # Finite reverse stresses
@@ -107,7 +104,7 @@ theorem support_tight (E : System n m) (S : Fin n → UnitSquare) (U : Fin n →
       ∑ j, (U j-dot (E.force j) (S j).center) :=
     Finset.single_le_sum (fun j _ => hnslack j) (Finset.mem_univ i)
   rw [Finset.sum_sub_distrib] at hsingle
-  linarith
+  linarith [hu i]
 
 /-- Positive edge multipliers also force the corresponding separating contact. -/
 theorem separator_tight (E : System n m) (S : Fin n → UnitSquare) (U : Fin n → ℝ)
@@ -148,21 +145,21 @@ lemma directed_pair_separator (S T : UnitSquare)
     · rw [abs_of_nonneg h] at hs
       exact ⟨0,by simpa [pairNormal,normalX,frameX,dot] using hs⟩
     · rw [abs_of_neg (lt_of_not_ge h)] at hs
-      exact ⟨1,by simpa [pairNormal,normalX,frameX,dot,scale] using hs⟩
+      exact ⟨1,by simp [pairNormal,normalX,frameX,dot,scale] at hs ⊢; linarith⟩
   · by_cases h : 0 ≤ frameY S (sub T.center S.center)
     · rw [abs_of_nonneg h] at hs
       exact ⟨2,by simpa [pairNormal,normalY,frameY,dot] using hs⟩
     · rw [abs_of_neg (lt_of_not_ge h)] at hs
-      exact ⟨3,by simpa [pairNormal,normalY,frameY,dot,scale] using hs⟩
+      exact ⟨3,by simp [pairNormal,normalY,frameY,dot,scale] at hs ⊢; linarith⟩
   · by_cases h : 0 ≤ frameX T (sub T.center S.center)
     · rw [abs_of_nonneg h] at hs
       exact ⟨4,by simpa [pairNormal,normalX,frameX,dot] using hs⟩
     · rw [abs_of_neg (lt_of_not_ge h)] at hs
-      exact ⟨5,by simpa [pairNormal,normalX,frameX,dot,scale] using hs⟩
+      exact ⟨5,by simp [pairNormal,normalX,frameX,dot,scale] at hs ⊢; linarith⟩
   · by_cases h : 0 ≤ frameY T (sub T.center S.center)
     · rw [abs_of_nonneg h] at hs
       exact ⟨6,by simpa [pairNormal,normalY,frameY,dot] using hs⟩
     · rw [abs_of_neg (lt_of_not_ge h)] at hs
-      exact ⟨7,by simpa [pairNormal,normalY,frameY,dot,scale] using hs⟩
+      exact ⟨7,by simp [pairNormal,normalY,frameY,dot,scale] at hs ⊢; linarith⟩
 
 end SquaresInCircles.Six.Stress

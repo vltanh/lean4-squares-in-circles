@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.CoreSmallSouth
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CoreSmallSouth
 
 /-!
 # East markers when both central coordinates exceed c0
@@ -41,7 +38,7 @@ lemma east_secondary_large_marker {a b t x y : ℝ} (h : ContainedChart a |b|)
     rw [liftedMarker,signedLabel_of_neg hb]
     linarith
   · have htneg : t < 0 := lt_of_not_ge ht0
-    have hs0 := sin_nonpos_octant htneg.le (abs_le.mp ht).1
+    have hs0 := sin_nonpos_octant htneg.le (by linarith [(abs_le.mp ht).1])
     have hfirst := mul_nonneg (show 0 ≤ 1/2-y by linarith) hc0
     have hsecond := mul_nonneg (show 0 ≤ 1/2-x by linarith)
       (show 0 ≤ -Real.sin t by linarith)
@@ -79,7 +76,7 @@ lemma east_south_cap_marker {a b t y : ℝ} (h : ContainedChart a |b|)
   · have htneg : t < 0 := lt_of_not_ge ht0
     have hv : 0 ≤ -t := by linarith
     have hv1 : -t ≤ Real.pi/4 := by have h := abs_le.mp ht; linarith [h.1]
-    have hs0 := sin_nonpos_octant htneg.le (abs_le.mp ht).1
+    have hs0 := sin_nonpos_octant htneg.le (by linarith [(abs_le.mp ht).1])
     rw [abs_of_nonpos hs0] at hm
     have hcap : (b+1/2)*Real.cos (-t) ≤ (a-1/2)*Real.sin (-t) := by
       rw [Real.cos_neg,Real.sin_neg]

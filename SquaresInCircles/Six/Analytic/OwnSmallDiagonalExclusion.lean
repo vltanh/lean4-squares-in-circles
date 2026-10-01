@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.SmallDiagonalOwnEndpoints
-public import SquaresInCircles.Six.Analytic.SmallDiagonalNonnegativeWest
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SmallDiagonalOwnEndpoints
+import SquaresInCircles.Six.Analytic.SmallDiagonalNonnegativeWest
 
 /-!
 # Small diagonal angles are impossible when W is OWN
@@ -37,7 +34,9 @@ lemma ownSmallD_nonpositive {aw bw ad bd cx cy v d : ℝ}
       abs_neg,abs_of_nonneg htv.1,abs_of_nonneg htv.2.1] at hCW
     nlinarith only [hCW]
   have hD : 1/2-ad+(1/2-cx)*Real.cos d+(1/2-cy)*Real.sin d≤0 := by
-    simp only [centralMargin,centralNormal,angularWidth,Real.cos_pi_add,Real.sin_pi_add,
+    have hcpi : Real.cos (Real.pi+d)=-Real.cos d := by rw [add_comm]; exact Real.cos_add_pi d
+    have hspi : Real.sin (Real.pi+d)=-Real.sin d := by rw [add_comm]; exact Real.sin_add_pi d
+    simp only [centralMargin,centralNormal,angularWidth,hcpi,hspi,
       abs_neg,abs_of_nonneg htd.1,abs_of_nonneg htd.2.1] at hCD
     nlinarith only [hCD]
   have hq : (Real.pi+d)-(Real.pi-v)=v+d := by ring

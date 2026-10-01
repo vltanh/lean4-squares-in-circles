@@ -1,9 +1,6 @@
-module
-public import SquaresInCircles.Six.Analytic.CompensatedTrigConcavity
-public import SquaresInCircles.Six.Analytic.FrozenPrimaryEndpoints
-public import SquaresInCircles.Six.Normalization.CapSupport
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.CompensatedTrigConcavity
+import SquaresInCircles.Six.Analytic.FrozenPrimaryEndpoints
+import SquaresInCircles.Six.Normalization.CapSupport
 
 /-!
 # Low-diagonal secondary stresses before support maximization
@@ -53,7 +50,7 @@ lemma low_frozen_formula (ds : Bool) (v d aw bw ad bd cx cy : ℝ) :
         (lowAlpha ds*(1/2-cx)) (lowAlpha ds*(1/2-cy))
         (lowMu ds*(if ds then 1/2+bw else 1/2-bd))
         (lowMu ds*(if ds then 1/2-aw else 1/2-ad)) v d := by
-  cases ds <;> dsimp [lowFrozen,lowWForce,lowDForce,frozenTrig] <;> ring
+  cases ds <;> dsimp [lowFrozen,lowWForce,lowDForce,frozenTrig,dot] <;> ring
 
 lemma low_rotating_norm (p mu q : ℝ) :
     (p+mu*Real.sin q)^2+(mu*Real.cos q)^2=p^2+mu^2+2*p*mu*Real.sin q := by
@@ -94,13 +91,13 @@ lemma low_vertex_endpoint_lower (ds : Bool) {v d aw bw ad bd cx cy L0 L X Y : �
     have hDb := vertex_linear_upper hD' (U := 31/100+(25/100)*Real.sin (v+d))
       (V := (25/100)*Real.cos (v+d)) (by positivity) hL
       (by rw [low_rotating_norm]; exact hn)
-    dsimp [lowFrozen,lowWForce,lowDForce,lowAlpha,lowBeta,lowMu,dot]
+    dsimp [lowFrozen,lowWForce,lowDForce,lowAlpha,lowBeta,lowMu,dot] at hcentral ⊢
     nlinarith only [hWb,hDb,hcentral]
   · have hDb := vertex_linear_upper hD' (U := 42/100) (V := 21/100) (by norm_num) hL0 hn0
     have hWb := vertex_linear_upper hW (U := 37/100+(21/100)*Real.sin (v+d))
       (V := (21/100)*Real.cos (v+d)) (by positivity) hL
       (by rw [low_rotating_norm]; exact hn)
-    dsimp [lowFrozen,lowWForce,lowDForce,lowAlpha,lowBeta,lowMu,dot]
+    dsimp [lowFrozen,lowWForce,lowDForce,lowAlpha,lowBeta,lowMu,dot] at hcentral ⊢
     nlinarith only [hWb,hDb,hcentral]
 
 /-- The mixed corner uses the proved cap slope; the other force remains on its
@@ -126,12 +123,14 @@ lemma low_cap_endpoint_lower (ds : Bool) {v d aw bw ad bd cx cy L0 X Y : ℝ}
   · have hWb := vertex_linear_upper hW (U := 44/100) (V := 25/100) (by norm_num) hL0 hn0
     have hDb := cap_linear_upper hD' (U := 31/100+(25/100)*Real.sin (v+d))
       (V := (25/100)*Real.cos (v+d)) (by positivity) (by positivity) hslope
-    dsimp [lowFrozen,lowWForce,lowDForce,lowAlpha,lowBeta,lowMu,lowFixed,lowVariable,dot]
+    dsimp [lowFrozen,lowWForce,lowDForce,lowAlpha,lowBeta,lowMu,lowFixed,lowVariable,
+      dot] at hcentral ⊢
     nlinarith only [hWb,hDb,hcentral]
   · have hDb := vertex_linear_upper hD' (U := 42/100) (V := 21/100) (by norm_num) hL0 hn0
     have hWb := cap_linear_upper hW (U := 37/100+(21/100)*Real.sin (v+d))
       (V := (21/100)*Real.cos (v+d)) (by positivity) (by positivity) hslope
-    dsimp [lowFrozen,lowWForce,lowDForce,lowAlpha,lowBeta,lowMu,lowFixed,lowVariable,dot]
+    dsimp [lowFrozen,lowWForce,lowDForce,lowAlpha,lowBeta,lowMu,lowFixed,lowVariable,
+      dot] at hcentral ⊢
     nlinarith only [hWb,hDb,hcentral]
 
 end SquaresInCircles.Six.Analytic

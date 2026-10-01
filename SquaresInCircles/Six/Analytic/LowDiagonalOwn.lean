@@ -1,8 +1,5 @@
-module
-public import SquaresInCircles.Six.Analytic.LowDiagonalEndpoints
-public import SquaresInCircles.Six.Analytic.CanonicalWestSign
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.LowDiagonalEndpoints
+import SquaresInCircles.Six.Analytic.CanonicalWestSign
 
 /-!
 # The low-diagonal tail for OWN W is excluded analytically
@@ -70,7 +67,9 @@ lemma low_secondary_frozen_nonpositive (ds : Bool) {v d aw bw ad bd cx cy : ℝ}
       abs_neg,abs_of_nonneg hcv,abs_of_nonneg hsv] at hCW
     nlinarith only [hCW]
   have hD : 1/2-ad+(1/2-cx)*Real.cos d+(1/2-cy)*Real.sin d≤0 := by
-    simp only [centralMargin,centralNormal,angularWidth,Real.cos_pi_add,Real.sin_pi_add,
+    have hcpi : Real.cos (Real.pi+d)=-Real.cos d := by rw [add_comm]; exact Real.cos_add_pi d
+    have hspi : Real.sin (Real.pi+d)=-Real.sin d := by rw [add_comm]; exact Real.sin_add_pi d
+    simp only [centralMargin,centralNormal,angularWidth,hcpi,hspi,
       abs_neg,abs_of_nonneg hcd,abs_of_nonneg hsd] at hCD
     nlinarith only [hCD]
   have hq : (Real.pi+d)-(Real.pi-v)=v+d := by ring
@@ -123,7 +122,7 @@ theorem own_west_diagonal_gt_half {R : ℝ} (P : NormalizedPacking R)
   have hdiag : 0≤P.diagonalAngle ∧ P.diagonalAngle≤1/2 :=
     ⟨P.diagonal_angle_range.1.le,hd⟩
   have hWphase : P.phase 2=Real.pi-(-P.helperAngle 2) := by
-    rw [P.phase_from_deviation 2]
+    rw [P.phase_from_deviation 2,show cardinalCenter (matchingCardinal 2)=Real.pi from rfl]
     ring
   have hDphase : P.phase 3=Real.pi+P.diagonalAngle := by
     dsimp [NormalizedPacking.diagonalAngle]
@@ -134,8 +133,9 @@ theorem own_west_diagonal_gt_half {R : ℝ} (P : NormalizedPacking R)
       (P.avoidsCore 2) (P.avoidsCore 3) P.box
       (by simpa only [hWphase] using P.own_separator 2 hown)
       (by simpa only [hDphase] using P.own_separator 3 P.diagonal_own)
-    simpa only [Stress.pairNormal,Matrix.cons_val_zero,Matrix.cons_val_one,
-      Bool.false_eq_true,if_false,P.square_def,hWphase,hDphase] using hsep
+    change Seven.SAT.threshold (P.square 2) (P.square 3)≤
+      dot (normalY (P.square 2)) (sub (P.square 3).center (P.square 2).center) at hsep
+    simpa only [Bool.false_eq_true,ite_false,P.square_def,hWphase,hDphase] using hsep
   · apply low_diagonal_own_secondary_impossible true hv hdiag (P.contained 2) (P.contained 3)
       (P.avoidsCore 2) (P.avoidsCore 3) P.box
       (by simpa only [hWphase] using P.own_separator 2 hown)

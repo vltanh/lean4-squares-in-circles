@@ -1,7 +1,4 @@
-module
-public import SquaresInCircles.Six.Analytic.SouthOuterTail.RootConcavity
-
-@[expose] public section
+import SquaresInCircles.Six.Analytic.SouthOuterTail.RootConcavity
 
 /-!
 # Whole-domain reduction of the final OWN-S upper tail
@@ -90,12 +87,18 @@ def xB (k : Fin 3) (s d : ℝ) : ℝ :=
 def xK (k : Fin 3) (upper : Bool) (s d : ℝ) : ℝ :=
   constantTerm k upper+A*Real.cos s+(1/2+face upper)*Real.sin s+nu*Real.cos (d-s)
 
+private lemma side_trig (k : Fin 3) (x : ℝ) :
+    Real.cos (side k*x)=Real.cos x ∧ Real.sin (side k*x)=side k*Real.sin x := by
+  fin_cases k <;> simp [side]
+
 lemma x_identity (k : Fin 3) (upper : Bool) (x s d : ℝ) :
     profile k upper x s d=xK k upper s d+xA k upper s d*Real.cos x+xB k s d*Real.sin x-
       CandidateWestTail.radiusBound*westRoot k x := by
-  fin_cases k <;> dsimp [profile,xK,xA,xB,side] <;>
-    rw [Real.cos_add,Real.sin_add,Real.sin_add] <;>
-    simp only [Real.cos_neg,Real.sin_neg] <;> ring
+  have hσ := side_trig k x
+  dsimp [profile,xK,xA,xB]
+  rw [Real.cos_add d (side k*x),Real.sin_add d (side k*x),Real.sin_add (side k*x) s,
+    hσ.1,hσ.2]
+  ring
 
 lemma x_coefficients (upper : Bool) {s d : ℝ}
     (hs : 11/25 ≤ s ∧ s ≤ 2/3) (hd : 1/2 ≤ d ∧ d ≤ 11/14) :
@@ -119,9 +122,10 @@ def sK (k : Fin 3) (upper : Bool) (x d : ℝ) : ℝ :=
 
 lemma s_identity (k : Fin 3) (upper : Bool) (x s d : ℝ) :
     profile k upper x s d=sK k upper x d+sA k x d*Real.cos s+sB upper x d*Real.sin s := by
-  fin_cases k <;> dsimp [profile,sK,sA,sB,side] <;>
-    rw [Real.cos_sub,Real.sin_add] <;>
-    simp only [Real.cos_neg,Real.sin_neg] <;> ring
+  have hσ := side_trig k x
+  dsimp [profile,sK,sA,sB]
+  rw [Real.cos_sub d s,Real.sin_add (side k*x) s,hσ.1,hσ.2]
+  ring
 
 lemma s_coefficients (k : Fin 3) (upper : Bool) {x d : ℝ}
     (hx : 0 ≤ x ∧ x ≤ xMax k) (hd : 1/2 ≤ d ∧ d ≤ 11/14) :
@@ -143,9 +147,10 @@ def dK (k : Fin 3) (upper : Bool) (x s : ℝ) : ℝ :=
 
 lemma d_identity (k : Fin 3) (upper : Bool) (x s d : ℝ) :
     profile k upper x s d=dK k upper x s+dA k x s*Real.cos d+dB k x s*Real.sin d := by
-  fin_cases k <;> dsimp [profile,dK,dA,dB,side] <;>
-    rw [Real.cos_add,Real.sin_add,Real.cos_sub] <;>
-    simp only [Real.cos_neg,Real.sin_neg] <;> ring
+  have hσ := side_trig k x
+  dsimp [profile,dK,dA,dB]
+  rw [Real.cos_add d (side k*x),Real.sin_add d (side k*x),Real.cos_sub d s,hσ.1,hσ.2]
+  ring
 
 lemma d_coefficients (k : Fin 3) {x s : ℝ}
     (hx : 0 ≤ x ∧ x ≤ xMax k) (hs : 11/25 ≤ s ∧ s ≤ 2/3) :
@@ -184,8 +189,9 @@ lemma extend_west (k : Fin 3) (upper : Bool) {x s d : ℝ}
     0 < profile k upper x s d := by
   have hc := x_coefficients upper hs hd
   rw [x_identity] at hl hu ⊢
-  fin_cases k
-  · simp only [westRoot,if_pos rfl] at hl hu ⊢
+  obtain rfl | rfl | rfl : k = 0 ∨ k = 1 ∨ k = 2 := by fin_cases k <;> decide
+  · have hw (y : ℝ) : westRoot 0 y = rootPolynomial 0 := by simp [westRoot]
+    simp only [hw] at hl hu ⊢
     have h := trig_lower_of_endpoints hc.1.1 hc.1.2 (by norm_num)
       (by norm_num [xMax]; linarith [Real.pi_gt_d2]) hx
       (C := CandidateWestTail.radiusBound*rootPolynomial 0-xK 0 upper s d)
