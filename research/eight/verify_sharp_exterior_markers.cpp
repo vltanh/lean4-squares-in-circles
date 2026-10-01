@@ -1,8 +1,8 @@
-// Exact dyadic interval certificate for exterior marker separation > 7/8.
+// Exact dyadic interval certificate for exterior marker separation.
+// Default: q<=98/25 and marker separation >7/8.
 // Build: g++ -O3 -std=c++17 verify_sharp_exterior_markers.cpp -o /tmp/n8marker
-// Run: /tmp/n8marker                 (all four sign choices)
-// This is NOT an unrestricted proof of the eight-square optimal radius.
-// See SHARP_MARKER_RING.md for domains, arithmetic soundness and consequences.
+// For q<=19/5, gap>44/49, add the four N8_Q/GAP_* compiler definitions.
+// This is not a certificate of the sharp eight-square optimum.
 #include <algorithm>
 #include <array>
 #include <chrono>
@@ -12,6 +12,19 @@
 #include <iostream>
 #include <stdexcept>
 #include <vector>
+
+#ifndef N8_Q_NUM
+#define N8_Q_NUM 98
+#endif
+#ifndef N8_Q_DEN
+#define N8_Q_DEN 25
+#endif
+#ifndef N8_GAP_NUM
+#define N8_GAP_NUM 7
+#endif
+#ifndef N8_GAP_DEN
+#define N8_GAP_DEN 8
+#endif
 
 using Wide = __int128_t;
 using Integer = int64_t;
@@ -53,8 +66,7 @@ I square(I a) {
 }
 Integer integer_sqrt(Wide n) {
     if (n < 0) throw std::runtime_error("Negative square-root input");
-    // Floating point supplies ONLY an initial integer guess. The exact loops
-    // establish r^2 <= n < (r+1)^2, even if that guess is inaccurate.
+    // The floating-point seed is corrected by exact integer inequalities.
     Integer r = Integer(std::sqrt((long double)n));
     while (Wide(r)*r > n) --r;
     while (Wide(r+1)*(r+1) <= n) ++r;
@@ -66,7 +78,9 @@ I root(I a) {
     Integer hi = integer_sqrt(Wide(a.hi)*SCALE);
     return {lo, hi + (Wide(hi)*hi != Wide(a.hi)*SCALE)};
 }
-const I CEILING = rational(98,25), CAP = rational(157,200);
+const I CEILING = rational(N8_Q_NUM,N8_Q_DEN);
+const I GAMMA = rational(N8_GAP_NUM,N8_GAP_DEN);
+const I CAP = rational(157,200);
 std::vector<I> sine17, sine19, cosine16, cosine18;
 I polynomial(const std::vector<I>& coefficients, I x) {
     I out = coefficients.back();
@@ -100,7 +114,7 @@ I label(I a,I u) {
     return {std::min({x.lo,y.lo,CAP.lo}),std::min({x.hi,y.hi,CAP.hi})};
 }
 Integer minimum_term(Integer al,Integer ah,Integer xl,Integer xh) {
-    // Minimum of alpha*x+|x|/2: four rectangle corners and possibly x=0.
+    // Minimum of alpha*x+|x|/2: rectangle corners and possibly x=0.
     Wide n=std::min({Wide(al)*xl+Wide(HALF)*std::abs(xl),
                      Wide(al)*xh+Wide(HALF)*std::abs(xh),
                      Wide(ah)*xl+Wide(HALF)*std::abs(xl),
@@ -142,7 +156,7 @@ bool contract(Box& b) {
 struct Node { Box box; unsigned depth; };
 void verify(int sg,int tg,uint64_t limit) {
     Box initial{{I(HALF,3*SCALE/2),I(0,SCALE),I(HALF,3*SCALE/2),
-                 I(0,SCALE),I(0,7*SCALE/8)}};
+                 I(0,SCALE),I(0,GAMMA.hi)}};
     std::vector<Node> pending{{initial,0}};
     uint64_t nodes=0,empty=0,positive=0;
     unsigned max_depth=0;
@@ -178,6 +192,10 @@ void verify(int sg,int tg,uint64_t limit) {
 }
 int main(int argc,char** argv) {
     try {
+        if (N8_Q_DEN<=0 || N8_GAP_DEN<=0 || N8_Q_NUM<=0 || N8_GAP_NUM<0 ||
+            Wide(N8_Q_NUM)*25>Wide(98)*N8_Q_DEN ||
+            Wide(N8_GAP_NUM)*100>Wide(93)*N8_GAP_DEN)
+            throw std::runtime_error("Parameters outside proved enclosing domains");
         Integer factorial[20]; factorial[0]=1;
         for (int k=1;k<20;++k) factorial[k]=factorial[k-1]*k;
         for (int k=0;k<10;++k) {
