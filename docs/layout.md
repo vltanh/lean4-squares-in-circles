@@ -85,9 +85,10 @@ at the disk centre.
 
 ## Six
 
-The proof of six squares is uniqueness at the optimal radius, in 44 files and
-about 18,000 lines, most of them estimates in one variable on whole intervals
-of angles:
+The proof of six squares is uniqueness at the optimal radius
+([09-six.md](proof/09-six.md)), in 44 files and about 18,000 lines, most of them
+estimates in one variable on whole intervals of angles, in the order of
+Chapter 9 and Appendices B to E:
 
 | part | files | contents |
 | --- | --- | --- |
@@ -104,10 +105,10 @@ of angles:
 ## Seven
 
 The proof of seven squares is uniqueness at the optimal radius, in five steps
-([seven.md](proof/seven.md)): the states and markers with the marker arc, the
+([10-seven.md](proof/10-seven.md)): the states and markers with the marker arc, the
 pair theorem, the containing square, the ring of six squares and the middle
 column. The pair theorem takes the folder `Pair/` and `Pair.lean`, 17 files in
-the order of Chapter 9 and Appendices B to D:
+the order of Chapter 10 and Appendices G to I:
 
 | part | files | contents |
 | --- | --- | --- |

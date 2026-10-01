@@ -226,12 +226,13 @@ plane.
 
 The proofs are written out as an illustrated, self-contained textbook, every
 numbered result linked to its Lean declarations: [docs/proof/](docs/proof/README.md),
-with the [preliminaries](docs/proof/preliminaries.md), the shared
-[tools](docs/proof/common.md), one chapter per case ([one](docs/proof/one.md),
-[two](docs/proof/two.md), [three](docs/proof/three.md),
-[four](docs/proof/four.md), [five](docs/proof/five.md),
-[seven](docs/proof/seven.md)), and four appendices of computations for seven
-squares. Six squares do not have their chapter yet.
+with the [preliminaries](docs/proof/02-preliminaries.md), the shared
+[tools](docs/proof/03-tools.md), one chapter per case ([one](docs/proof/04-one.md),
+[two](docs/proof/05-two.md), [three](docs/proof/06-three.md),
+[four](docs/proof/07-four.md), [five](docs/proof/08-five.md),
+[six](docs/proof/09-six.md), [seven](docs/proof/10-seven.md)), and nine appendices
+of computations: one-variable estimates, then four for six squares and four for
+seven squares.
 
 - **One and two squares.** The farthest corner of a square is at least half a
   diagonal from the disk centre, so in the disk of radius `√2 / 2` the square

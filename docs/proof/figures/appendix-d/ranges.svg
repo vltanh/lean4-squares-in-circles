@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="856" height="386" viewBox="0 0 856 386" role="img" aria-label="For each case, the range of the angle d of D on which its proposition is proved (grey), the part used for normalized packings, d in (1/2, pi/4] or (16/25, pi/4] (blue), and the part used for the reflection of a missing west wing, d in [pi/4, pi/2 - 3/5) or [pi/4, pi/2 - 16/25) (orange); the upper ends 34/35 and 163/175 lie just beyond pi/2 - 3/5 and pi/2 - 16/25">
+<title>For each case, the range of the angle d of D on which its proposition is proved (grey), the part used for normalized packings, d in (1/2, pi/4] or (16/25, pi/4] (blue), and the part used for the reflection of a missing west wing, d in [pi/4, pi/2 - 3/5) or [pi/4, pi/2 - 16/25) (orange); the upper ends 34/35 and 163/175 lie just beyond pi/2 - 3/5 and pi/2 - 16/25</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="178.0" y1="313.0" x2="810.0" y2="313.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="234.4" y1="313.0" x2="234.4" y2="318.0" stroke="#1f2937" stroke-width="1"/>
+<text x="234.4" y="331.0" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">1/2</text>
+<line x1="234.4" y1="313.0" x2="234.4" y2="23.0" stroke="#9ca3af" stroke-width="0.8" stroke-dasharray="3 3"/>
+<line x1="392.2" y1="313.0" x2="392.2" y2="318.0" stroke="#1f2937" stroke-width="1"/>
+<text x="392.2" y="331.0" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">16/25</text>
+<line x1="392.2" y1="313.0" x2="392.2" y2="23.0" stroke="#9ca3af" stroke-width="0.8" stroke-dasharray="3 3"/>
+<line x1="556.1" y1="313.0" x2="556.1" y2="318.0" stroke="#1f2937" stroke-width="1"/>
+<text x="556.1" y="331.0" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π/4</text>
+<line x1="556.1" y1="313.0" x2="556.1" y2="23.0" stroke="#9ca3af" stroke-width="0.8" stroke-dasharray="3 3"/>
+<line x1="720.0" y1="313.0" x2="720.0" y2="318.0" stroke="#1f2937" stroke-width="1"/>
+<text x="720.0" y="331.0" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π/2 − 16/25</text>
+<line x1="720.0" y1="313.0" x2="720.0" y2="23.0" stroke="#9ca3af" stroke-width="0.8" stroke-dasharray="3 3"/>
+<line x1="765.1" y1="313.0" x2="765.1" y2="335.0" stroke="#1f2937" stroke-width="1"/>
+<text x="765.1" y="348.0" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π/2 − 3/5</text>
+<line x1="765.1" y1="313.0" x2="765.1" y2="23.0" stroke="#9ca3af" stroke-width="0.8" stroke-dasharray="3 3"/>
+<text x="818.0" y="331.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">d</text>
+<polygon points="234.4,52.8 556.1,52.8 556.1,34.6 234.4,34.6" fill="#e5e7eb" stroke="#9ca3af" stroke-width="0.8" fill-opacity="1"/>
+<polygon points="234.4,48.7 556.1,48.7 556.1,38.7 234.4,38.7" fill="#2563eb" stroke="none" stroke-width="1.5" fill-opacity="1"/>
+<text x="168.0" y="43.7" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">Proposition D.10</text>
+<polygon points="234.4,94.3 556.1,94.3 556.1,76.0 234.4,76.0" fill="#e5e7eb" stroke="#9ca3af" stroke-width="0.8" fill-opacity="1"/>
+<polygon points="234.4,90.1 556.1,90.1 556.1,80.2 234.4,80.2" fill="#2563eb" stroke="none" stroke-width="1.5" fill-opacity="1"/>
+<text x="168.0" y="85.1" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">Proposition D.11</text>
+<polygon points="234.4,135.7 556.4,135.7 556.4,117.5 234.4,117.5" fill="#e5e7eb" stroke="#9ca3af" stroke-width="0.8" fill-opacity="1"/>
+<polygon points="234.4,131.5 556.1,131.5 556.1,121.6 234.4,121.6" fill="#2563eb" stroke="none" stroke-width="1.5" fill-opacity="1"/>
+<text x="168.0" y="126.6" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">Proposition D.12</text>
+<text x="562.4" y="126.6" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">11/14</text>
+<polygon points="234.4,177.1 765.8,177.1 765.8,158.9 234.4,158.9" fill="#e5e7eb" stroke="#9ca3af" stroke-width="0.8" fill-opacity="1"/>
+<polygon points="234.4,173.0 556.1,173.0 556.1,163.0 234.4,163.0" fill="#2563eb" stroke="none" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="556.1,173.0 765.1,173.0 765.1,163.0 556.1,163.0" fill="#ea580c" stroke="none" stroke-width="1.5" fill-opacity="1"/>
+<text x="168.0" y="168.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">Proposition D.14</text>
+<text x="771.8" y="168.0" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">34/35</text>
+<polygon points="234.4,218.5 556.1,218.5 556.1,200.3 234.4,200.3" fill="#e5e7eb" stroke="#9ca3af" stroke-width="0.8" fill-opacity="1"/>
+<polygon points="234.4,214.4 556.1,214.4 556.1,204.5 234.4,204.5" fill="#2563eb" stroke="none" stroke-width="1.5" fill-opacity="1"/>
+<text x="168.0" y="209.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">Proposition D.15</text>
+<polygon points="234.4,260.0 720.7,260.0 720.7,241.7 234.4,241.7" fill="#e5e7eb" stroke="#9ca3af" stroke-width="0.8" fill-opacity="1"/>
+<polygon points="234.4,255.8 556.1,255.8 556.1,245.9 234.4,245.9" fill="#2563eb" stroke="none" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="556.1,255.8 720.0,255.8 720.0,245.9 556.1,245.9" fill="#ea580c" stroke="none" stroke-width="1.5" fill-opacity="1"/>
+<text x="168.0" y="250.9" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">Proposition D.17</text>
+<text x="726.7" y="250.9" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">163/175</text>
+<polygon points="392.2,301.4 556.4,301.4 556.4,283.2 392.2,283.2" fill="#e5e7eb" stroke="#9ca3af" stroke-width="0.8" fill-opacity="1"/>
+<polygon points="392.2,297.3 556.1,297.3 556.1,287.3 392.2,287.3" fill="#2563eb" stroke="none" stroke-width="1.5" fill-opacity="1"/>
+<text x="168.0" y="292.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">Proposition D.19, D.20</text>
+<text x="562.4" y="292.3" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">11/14</text>
+</svg>

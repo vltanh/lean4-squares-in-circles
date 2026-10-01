@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Draw the figures of Chapter 6 (three squares) as SVG files in
-docs/proof/figures/, all named three-*.svg.
+docs/proof/figures/06-three/.
 
     python3 scripts/figures/fig_three.py
 
@@ -113,7 +113,7 @@ def construction():
     f.line((0, 0), shift((0, 0), u(rad(38)), R3), width=1, dash='3 3')
     f.text(shift((0, 0), u(rad(38)), 0.82 * R3), sb('R', '3', size=16),
            size=16, dx=-10, dy=-12)
-    f.save('three-construction', 'The T in the circle of radius R3: the four '
+    f.save('06-three/construction', 'The T in the circle of radius R3: the four '
            'corners (-1, -13/16), (1, -13/16), (-1/2, 19/16) and (1/2, 19/16) '
            'lie on the circle, the other corners inside it')
 
@@ -164,7 +164,7 @@ def tangents():
     f.text((0.2, 0.08), 'φ ≤ 425/256', size=14, color=BLUE)
     vertex = (69 / 112, 19 / 112)
     f.dot(vertex, r=2.6, fill=ORANGE)
-    f.save('three-tangents', 'The sector b at most a of the (a, b)-plane: '
+    f.save('06-three/tangents', 'The sector b at most a of the (a, b)-plane: '
            'the disk where phi is at most 425/256, and its tangent lines at '
            'B = (1/2, 5/16) and A = (11/16, 0), which cut out the part of P3 '
            'in the sector')
@@ -215,7 +215,7 @@ def uv_plane():
     f.text((0.03, 0.47), 'B', size=15, italic=False, anchor='start')
     f.dot((0.5, 4 / 3), r=4.2)
     f.text((0.53, 1.36), 'A', size=15, italic=False, anchor='start')
-    f.save('three-uv', 'The (u, v)-plane: the image of the part of P3 with a '
+    f.save('06-three/uv', 'The (u, v)-plane: the image of the part of P3 with a '
            'at least 1/2, above the curve where A + V = 2 pi / 3 except at B, '
            'and left of the line where A = pi / 3 except at A; the dashed '
            'curve where A = V separates clipped from full caps')
@@ -272,7 +272,7 @@ def caps():
     assert A1 <= V1 and V2 < A2
     for a, b in ((0.6, 0.06), (0.52, 0.28)):
         assert 16 * a + 13 * b <= 193 / 16 and 19 * a + 8 * b <= 209 / 16
-    f.save('three-caps', 'Two exterior squares in their charts with their '
+    f.save('06-three/caps', 'Two exterior squares in their charts with their '
            'caps on the circle of radius 3/8: a full cap, symmetric about '
            't = 0, and a cap clipped by the lower edge; both are longer than '
            'a third of the circle')
@@ -311,7 +311,7 @@ def radial_proof():
     f.line(q, (-0.35, -0.4), width=0.8, stroke=BLUE)
     f.text((-0.36, -0.44), 'D(o, ½ − ' + sb('a', 'S', ')', 14), size=14,
            anchor='end', color=BLUE)
-    f.save('three-radial-proof', 'If the near edge of T came closer to o '
+    f.save('06-three/radial-proof', 'If the near edge of T came closer to o '
            'than one half minus a_S, the circle of radius rho about o would '
            'lie in S and cross into T, so S and T would overlap')
 
@@ -350,7 +350,7 @@ def compensation():
            anchor='start')
     f.text((0.412, 0.095), 'deficit', size=12, italic=False, color=BLUE,
            anchor='start')
-    f.save('three-compensation', 'Graphs on the interval from 0 to 13/32: '
+    f.save('06-three/compensation', 'Graphs on the interval from 0 to 13/32: '
            'the increasing function f(t) - pi/6, the least excess of a '
            'clipped cap, lies above the largest deficit of the containing '
            'square')
@@ -385,7 +385,7 @@ def deficit():
            size=14, color=RED)
     label_o(f, dx=-0.03, dy=-0.06)
     f.text((a + 0.38, b + 0.42), 'S', size=17, color=BLUE)
-    f.save('three-deficit', 'A square containing o with P = Q = 13/58, the '
+    f.save('06-three/deficit', 'A square containing o with P = Q = 13/58, the '
            'worst case: its arc of the circle of radius 3/8 falls short of a '
            'third of the circle by less than pi/6 - 13/29')
 
@@ -423,7 +423,7 @@ def wide_arc():
            italic=False, color=RED, anchor='start')
     subscript(f, (-0.4, 0.3), 'Γ', '7/16', size=15)
     label_o(f)
-    f.save('three-wide-arc', 'A square with a = 11/16 and b = 1/16 in its '
+    f.save('06-three/wide-arc', 'A square with a = 11/16 and b = 1/16 in its '
            'chart: the circle of radius 7/16 just touches the line of the '
            'lower edge, and the square holds a full cap of half-width more '
            'than pi/3 + 1/14')
@@ -458,7 +458,7 @@ def two_type_a():
     q = shift((0, 0), u(rad(-20)), 7 / 16)
     f.line(q, (0.55, -0.35), width=0.8)
     subscript(f, (0.56, -0.4), 'Γ', '7/16', size=14, anchor='start')
-    f.save('three-two-type-a', 'Two squares of type A whose phases are a '
+    f.save('06-three/two-type-a', 'Two squares of type A whose phases are a '
            'third of a turn apart overlap; their arcs of the circle of radius '
            '7/16 overlap too')
 
@@ -503,7 +503,7 @@ def three_type_b():
     f.dot(off)
     f.text(shift(off, (0.06, -0.08)), 'o', anchor='start')
     subscript(f, shift(off, (0.62, 0.62)), 'Γ', '3/16', size=15)
-    f.save('three-three-type-b', 'Three squares of type B: each holds a half '
+    f.save('06-three/three-type-b', 'Three squares of type B: each holds a half '
            'of the circle of radius 3/16 about o, and three half circles '
            'cannot be disjoint; enlarged on the right')
 
@@ -555,7 +555,7 @@ def phases():
     q = shift((0, 0), u(rad(-118)), 3 / 8)
     f.line(q, (-0.35, -0.72), width=0.8)
     subscript(f, (-0.37, -0.76), 'Γ', '3/8', size=14, anchor='end')
-    f.save('three-phases', 'The T turned about o: the three caps of the circle '
+    f.save('06-three/phases', 'The T turned about o: the three caps of the circle '
            'of radius 3/8, each a third, with their centres marked, the phases '
            'of the three squares, the two opposite half circles of radius '
            '3/16 held by the lower squares, and the frame in which the '

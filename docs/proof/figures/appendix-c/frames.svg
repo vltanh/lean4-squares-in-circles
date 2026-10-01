@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="535" height="529" viewBox="0 0 535 529" role="img" aria-label="The model of six squares in the circle of radius R6, with the frames e1, e2 of W, D and S at their centres, the rays of their phases pi, 5 pi/4 and 3 pi/2, and the two wings: the line of the lower side of W, which D touches, and the line of the left side of S, which D touches">
+<title>The model of six squares in the circle of radius R6, with the frames e1, e2 of W, D and S at their centres, the rays of their phases pi, 5 pi/4 and 3 pi/2, and the two wings: the line of the lower side of W, which D touches, and the line of the left side of S, which D touches</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<circle cx="267.6" cy="261.2" r="216.1" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="214.4,314.4 342.4,314.4 342.4,186.4 214.4,186.4" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5" fill-opacity="0.9"/>
+<polygon points="342.4,314.4 470.4,314.4 470.4,186.4 342.4,186.4" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5" fill-opacity="0.9"/>
+<polygon points="214.4,186.4 342.4,186.4 342.4,58.4 214.4,58.4" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5" fill-opacity="0.9"/>
+<polygon points="86.4,271.4 214.4,271.4 214.4,143.4 86.4,143.4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="0.9"/>
+<polygon points="166.9,452.4 257.4,361.9 166.9,271.4 76.4,361.9" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.5" fill-opacity="0.9"/>
+<polygon points="257.4,442.4 385.4,442.4 385.4,314.4 257.4,314.4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" fill-opacity="0.9"/>
+<line x1="267.6" y1="261.2" x2="41.2" y2="261.2" stroke="#9ca3af" stroke-width="1" stroke-dasharray="2 4"/>
+<text x="29.7" y="261.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle">π</text>
+<line x1="267.6" y1="261.2" x2="107.5" y2="421.3" stroke="#9ca3af" stroke-width="1" stroke-dasharray="2 4"/>
+<text x="99.4" y="429.4" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle">5π/4</text>
+<line x1="267.6" y1="261.2" x2="267.6" y2="487.6" stroke="#9ca3af" stroke-width="1" stroke-dasharray="2 4"/>
+<text x="267.6" y="499.1" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle">3π/2</text>
+<line x1="60.2" y1="271.4" x2="244.6" y2="271.4" stroke="#2563eb" stroke-width="1.4" stroke-dasharray="6 4"/>
+<line x1="257.4" y1="468.6" x2="257.4" y2="284.2" stroke="#16a34a" stroke-width="1.4" stroke-dasharray="6 4"/>
+<line x1="150.4" y1="207.4" x2="106.9" y2="207.4" stroke="#1f2937" stroke-width="1.6"/>
+<polygon points="96.6,207.4 106.9,212.0 106.9,202.8" fill="#1f2937" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
+<line x1="150.4" y1="207.4" x2="150.4" y2="250.9" stroke="#1f2937" stroke-width="1.6"/>
+<polygon points="150.4,261.2 155.0,250.9 145.8,250.9" fill="#1f2937" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
+<text x="97.7" y="190.8" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" dominant-baseline="middle" text-anchor="end" font-style="italic">e</text>
+<text x="98.3" y="195.6" font-size="10.5" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" dominant-baseline="middle" text-anchor="start">1</text>
+<text x="98.3" y="184.5" font-size="10.5" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" dominant-baseline="middle" text-anchor="start" font-style="italic">W</text>
+<text x="173.3" y="253.5" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" dominant-baseline="middle" text-anchor="end" font-style="italic">e</text>
+<text x="173.9" y="258.3" font-size="10.5" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" dominant-baseline="middle" text-anchor="start">2</text>
+<text x="173.9" y="247.2" font-size="10.5" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" dominant-baseline="middle" text-anchor="start" font-style="italic">W</text>
+<circle cx="150.4" cy="207.4" r="2.6" fill="#1f2937"/>
+<line x1="166.9" y1="361.9" x2="136.1" y2="392.7" stroke="#1f2937" stroke-width="1.6"/>
+<polygon points="128.9,399.9 139.4,396.0 132.8,389.4" fill="#1f2937" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
+<line x1="166.9" y1="361.9" x2="197.7" y2="392.7" stroke="#1f2937" stroke-width="1.6"/>
+<polygon points="204.9,399.9 200.9,389.4 194.4,396.0" fill="#1f2937" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
+<text x="110.8" y="389.7" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" dominant-baseline="middle" text-anchor="end" font-style="italic">e</text>
+<text x="111.4" y="394.5" font-size="10.5" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" dominant-baseline="middle" text-anchor="start">1</text>
+<text x="111.4" y="383.4" font-size="10.5" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" dominant-baseline="middle" text-anchor="start" font-style="italic">D</text>
+<text x="221.4" y="387.1" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" dominant-baseline="middle" text-anchor="end" font-style="italic">e</text>
+<text x="222.0" y="391.9" font-size="10.5" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" dominant-baseline="middle" text-anchor="start">2</text>
+<text x="222.0" y="380.8" font-size="10.5" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" dominant-baseline="middle" text-anchor="start" font-style="italic">D</text>
+<circle cx="166.9" cy="361.9" r="2.6" fill="#1f2937"/>
+<line x1="321.4" y1="378.4" x2="321.4" y2="421.9" stroke="#1f2937" stroke-width="1.6"/>
+<polygon points="321.4,432.2 326.0,421.9 316.8,421.9" fill="#1f2937" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
+<line x1="321.4" y1="378.4" x2="364.9" y2="378.4" stroke="#1f2937" stroke-width="1.6"/>
+<polygon points="375.1,378.4 364.9,373.8 364.9,383.0" fill="#1f2937" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
+<text x="344.3" y="425.8" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" dominant-baseline="middle" text-anchor="end" font-style="italic">e</text>
+<text x="344.9" y="430.6" font-size="10.5" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" dominant-baseline="middle" text-anchor="start">1</text>
+<text x="344.9" y="419.5" font-size="10.5" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" dominant-baseline="middle" text-anchor="start" font-style="italic">S</text>
+<text x="376.3" y="360.5" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" dominant-baseline="middle" text-anchor="end" font-style="italic">e</text>
+<text x="376.9" y="365.3" font-size="10.5" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" dominant-baseline="middle" text-anchor="start">2</text>
+<text x="376.9" y="354.2" font-size="10.5" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" dominant-baseline="middle" text-anchor="start" font-style="italic">S</text>
+<circle cx="321.4" cy="378.4" r="2.6" fill="#1f2937"/>
+<text x="304.0" y="222.3" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">C</text>
+<text x="432.0" y="222.3" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">E</text>
+<text x="304.0" y="94.3" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">N</text>
+<text x="176.0" y="175.4" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">W</text>
+<text x="133.6" y="364.5" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#9333ea" text-anchor="middle" dominant-baseline="middle" font-style="italic">D</text>
+<text x="354.7" y="401.5" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">S</text>
+<circle cx="267.6" cy="261.2" r="2.6" fill="#1f2937"/>
+<text x="274.0" y="271.4" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">o</text>
+</svg>

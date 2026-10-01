@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Draw the figures of Chapters 1 to 3 of docs/proof/ (the introduction,
-preliminaries.md and common.md) as SVG files docs/proof/figures/front-*.svg.
+02-preliminaries.md and 03-tools.md) as SVG files in docs/proof/figures/,
+in the directories 01-introduction/, 02-preliminaries/ and 03-tools/.
 
     python3 scripts/figures/fig_front.py
 
@@ -258,6 +259,22 @@ MODELS = {
         math.sqrt(13) / 2, '√13/2'),
 }
 
+# Six squares: five axis-parallel squares and one turned by 45 degrees; a
+# square is either its centre or a pair (centre, angle in degrees).
+_H = math.sqrt(2) / 2
+_A, _B = (1466 + 1940 * _H) / 267, (327 + 432 * _H) / 712
+S6 = 2 * _B / (_A + math.sqrt(_A * _A - 4 * _B))
+T6 = (-20 + 30 * _H) * S6 + 3.5 - 4.5 * _H
+D6 = 0.5 + _H - T6
+R6 = math.sqrt(2 * S6 * S6 + 4 * S6 + 2.5)
+MODELS[6] = ([(S6, S6), (S6, S6 + 1), (S6 + 1, S6), (S6 - 1, T6),
+              (T6, S6 - 1), ((-D6, -D6), 45)], R6, '√q* ≈ 1.6885')
+
+
+def placed(c):
+    """Centre and angle of a model square given as a centre or a pair."""
+    return (c, 0.0) if isinstance(c[0], (int, float)) else c
+
 
 def column(heights):
     return [(1, -0.5), (1, 0.5), (-1, -0.5), (-1, 0.5)] + [
@@ -266,12 +283,20 @@ def column(heights):
 
 def check_model(centers, R):
     """Lemma 2.8: a packing in the closed disk of radius R about the origin,
-    with a corner on the circle. Returns the corners on the circle."""
-    for i, p in enumerate(centers):
-        assert (abs(p[0]) + 0.5) ** 2 + (abs(p[1]) + 0.5) ** 2 <= R * R + 1e-12
-        for q in centers[i + 1:]:
-            assert max(abs(p[0] - q[0]), abs(p[1] - q[1])) >= 1 - 1e-12
-    touch = [q for c in centers for q in square_corners(c)
+    with a corner on the circle. Returns the corners on the circle. A turned
+    square is checked by its vertices and by sampling for overlaps."""
+    squares = [placed(c) for c in centers]
+    for i, (p, deg) in enumerate(squares):
+        assert all(norm(q) <= R + 1e-9 for q in square_corners(p, deg))
+        for q, deg2 in squares[i + 1:]:
+            if deg == 0 and deg2 == 0:
+                assert max(abs(p[0] - q[0]), abs(p[1] - q[1])) >= 1 - 1e-12
+            else:
+                grid = [(p[0] + (i - 10) / 14, p[1] + (j - 10) / 14)
+                        for i in range(21) for j in range(21)]
+                assert not any(in_open_square(x, p, deg) and
+                               in_open_square(x, q, deg2) for x in grid)
+    touch = [q for c, deg in squares for q in square_corners(c, deg)
              if abs(norm(q) - R) < 1e-9]
     assert touch
     return touch
@@ -285,7 +310,8 @@ def draw_model(f, centers, R, at=(0.0, 0.0), phi=0.0, fills=None,
     for k, c in enumerate(centers):
         fill = fills[k] if fills else FILLS[k % len(FILLS)]
         stroke = strokes[k] if strokes else COLORS[k % len(COLORS)]
-        f.polygon([shift(at, rotate(q, phi)) for q in square_corners(c)],
+        c, deg = placed(c)
+        f.polygon([shift(at, rotate(q, phi)) for q in square_corners(c, deg)],
                   fill=fill, stroke=stroke)
     if touch:
         for q in corners:
@@ -334,7 +360,7 @@ def phi_ab(a, b):
 
 def optimal_packings():
     gap, s = 0.34, 58
-    rows = [(1, 2, 3, 4), (5, 7)]
+    rows = [(1, 2, 3, 4), (5, 6, 7)]
     widths = [sum(2 * MODELS[n][1] for n in row) + gap * (len(row) - 1)
               for row in rows]
     W = max(widths)
@@ -353,9 +379,9 @@ def optimal_packings():
             f.text((x, y - R_top - 0.45), sbn('R', str(n), ' = ' + name, 14),
                    size=14)
             x += R + gap
-    f.save('front-optimal', 'The six optimal packings, n = 1, 2, 3, 4, 5 '
-           'and 7, each in its dashed circle of radius R_n, drawn at a common '
-           'scale; dots mark the corners on the circle')
+    f.save('01-introduction/optimal', 'The seven optimal packings, n = 1 to 7, each '
+           'in its dashed circle of radius R_n, drawn at a common scale; dots '
+           'mark the corners on the circle')
 
 
 def column_packings():
@@ -384,7 +410,7 @@ def column_packings():
         f.text(shift(at, (0, -R - 0.24)),
                '(' + sbn('y', '1', ', ', 13) + sbn('y', '2', ', ', 13) +
                sbn('y', '3', ') = ', 13) + name, size=13)
-    f.save('front-columns', 'Four column packings of seven squares in the '
+    f.save('01-introduction/columns', 'Four column packings of seven squares in the '
            'circle of radius root 13 over 2: the side squares are fixed, and '
            'the three middle squares move along the dotted middle column, '
            'each on its own')
@@ -416,7 +442,7 @@ def reduction():
            sbn('R', '5'))
     f.dot((0, 0))
     f.text((0.06, 0.1), 'o', anchor='start')
-    f.save('front-reduction', 'The plus turned about o in its dashed circle of '
+    f.save('01-introduction/reduction', 'The plus turned about o in its dashed circle of '
            'radius R_5, and a smaller circle of radius R: the corners on the '
            'dashed circle, and the shaded parts of the squares around them, '
            'lie outside the smaller disk')
@@ -476,7 +502,7 @@ def arc_method():
     f.text(shift(c, rotate((0.3, 0.3), theta)), 'S', size=17, color=GREEN)
     f.dot(at)
     f.text(shift(at, (0.02, -0.13)), 'o', anchor='start')
-    f.save('front-arc-method', 'Four squares and the circle of radius 1/2 '
+    f.save('01-introduction/arc-method', 'Four squares and the circle of radius 1/2 '
            'about o, inside the disk of radius root 2. Left: a square that '
            'avoids o, without a vertex at o, holds more than a quarter of the '
            'circle. Right: a square containing o holds the quarter facing its '
@@ -542,7 +568,7 @@ def markers():
         f.line(at, shift(at, u(m)), stroke=ORANGE, width=1.2)
         f.dot(shift(at, u(m)), r=3.4, fill=ORANGE)
     f.text(shift(at, (0.1, 0.0)), 'o', anchor='start', size=14)
-    f.save('front-markers', 'Seven squares and their markers on the unit '
+    f.save('01-introduction/markers', 'Seven squares and their markers on the unit '
            'circle. Left: a side square and the top square touch, and their '
            'markers are exactly pi/3 apart. Middle: turned so that the '
            'markers are closer, the squares overlap. Right: in a column '
@@ -592,7 +618,7 @@ def angle_between():
             f.line((X(t), y0 + h - 0.06), (X(t), y0 + h + 0.06), stroke=col,
                    width=1.6)
         f.text(((X(lo) + X(hi)) / 2, y0 + h + 0.17), s, size=14, color=col)
-    f.save('front-angle', 'The angle between two directions theta and theta '
+    f.save('02-preliminaries/angle', 'The angle between two directions theta and theta '
            'prime: the shorter way round the circle, and the least distance '
            'between real numbers that represent them')
 
@@ -623,7 +649,7 @@ def arcsin_graph():
         word(f, shift(P(0, y), (-0.08, 0.12)), s, size=12, anchor='end')
     word(f, P(1.75, math.pi / 2 + 0.22), 'arcsin', size=14, color=BLUE)
     word(f, P(-1.75, math.pi + 0.22), 'arccos', size=14, color=ORANGE)
-    f.save('front-arcsin', 'The extended arcsine, constant at minus and plus '
+    f.save('02-preliminaries/arcsin', 'The extended arcsine, constant at minus and plus '
            'pi over 2 outside the interval from -1 to 1, and the arccosine, pi '
            'over 2 minus the arcsine')
 
@@ -671,7 +697,7 @@ def quarter_frame():
         f.text(shift(p, (0.05, 0.07)), 'p', anchor='start', color=ORANGE)
         f.text(shift(c, (-0.06, -0.1)), sbn('c', 'S'), anchor='end')
         f.text((c[0], 1.05), title, size=13, italic=False)
-    f.save('front-quarter-frame', 'The same square S and point p read in the '
+    f.save('02-preliminaries/quarter-frame', 'The same square S and point p read in the '
            'frame e1, e2 and in the frame turned by a quarter turn, e2, -e1: '
            'the local coordinates (x, y) become (y, -x)')
 
@@ -709,7 +735,7 @@ def touching():
         f.text(shift(shift(at, tc), (0.1, 0.12)), 'T', size=16, color=ORANGE)
         word(f, (at[0] + 0.55, 1.5), title, size=14)
         word(f, (at[0] + 0.55, -0.92), verdict, size=14, color=col)
-    f.save('front-touching', 'Left: two squares sharing part of an edge. '
+    f.save('02-preliminaries/touching', 'Left: two squares sharing part of an edge. '
            'Middle: a vertex of one square on an edge of the other. Both '
            'pairs are disjoint, since their open squares do not meet. Right: '
            'two overlapping squares, which are not disjoint')
@@ -764,7 +790,7 @@ def frame_map():
     f.text(shift(o, u(phi / 2), 0.68), 'φ', size=14)
     arrow(f, (1.95, 0.75), (2.75, 0.75), width=1.6)
     f.text((2.35, 0.95), sbn('F', 'φ'), size=16)
-    f.save('front-frame-map', 'The frame F_phi carries the plane with origin '
+    f.save('02-preliminaries/frame-map', 'The frame F_phi carries the plane with origin '
            '0 onto the plane with origin o, turned by phi: the grid, the '
            'square Q(c) and the point q go to the turned grid, the square '
            'sitting at c, and a point at the same distance from o')
@@ -799,7 +825,7 @@ def congruence_figure():
            anchor='start', size=14)
     arrow(f, (1.35, 1.18), (1.85, 1.18), width=1.6)
     f.text((1.6, 1.37), sbn('F', 'φ'), size=15)
-    f.save('front-congruence', 'Left: the T as a model M1, M2, M3 in the disk '
+    f.save('02-preliminaries/congruence', 'Left: the T as a model M1, M2, M3 in the disk '
            'of radius R about 0. Right: a configuration congruent to it, '
            'turned by phi about o and relabelled; a point q of M1 and its '
            'image are at the same distance from the centre')
@@ -859,7 +885,7 @@ def axis_lemma():
            italic=False)
     f.text(shift(o, u(rad(-35)), R + 0.02), 'R', size=14, anchor='start')
     word(f, shift(o, (-R + 0.1, R - 0.05)), '(2)', size=14)
-    f.save('front-axis-lemma', 'Left: two axis-parallel squares whose centres '
+    f.save('02-preliminaries/axis-lemma', 'Left: two axis-parallel squares whose centres '
            'differ by more than 1 across lie on either side of a vertical '
            'line. Right: the corner of Q(c) farthest from the origin is |x| + '
            '1/2 across and |y| + 1/2 up')
@@ -895,7 +921,7 @@ def lower_bound():
     f.text(shift(o, u(rad(100)), R3 + 0.12), sbn('R', '3'), size=14)
     arrow(f, (1.3, 1.25), (1.8, 1.25), width=1.6)
     f.text((1.55, 1.42), sbn('F', 'φ'), size=15)
-    f.save('front-lower-bound', 'Left: the T reaching the circle of radius '
+    f.save('02-preliminaries/lower-bound', 'Left: the T reaching the circle of radius '
            'R_3 at a corner p. Right: a congruent configuration at o, whose '
            'corner F_phi(p) is at the same distance from o, outside the '
            'smaller disk of radius R')
@@ -909,9 +935,10 @@ def scheme():
                3: ((-1, -13 / 16), '1 + 169/256 = 425/256'),
                4: ((1, 1), '1 + 1 = 2'),
                5: ((1.5, 0.5), '9/4 + ¼ = 5/2'),
+               6: ((S6 + 1.5, S6 + 0.5), '(s*+3/2)² + (s*+½)² = q*'),
                7: ((1.5, -1), '9/4 + 1 = 13/4')}
     gap, s = 0.62, 56
-    rows = [(1, 2, 3), (4, 5, 7)]
+    rows = [(1, 2, 3, 4), (5, 6, 7)]
     widths = [sum(2 * MODELS[n][1] for n in row) + gap * (len(row) - 1)
               for row in rows]
     W = max(widths)
@@ -927,7 +954,7 @@ def scheme():
             p, text = corners[n]
             assert abs(norm(p) - R) < 1e-12
             assert any(norm((p[0] - q[0], p[1] - q[1])) < 1e-12
-                       for c in centers for q in square_corners(c))
+                       for c in centers for q in square_corners(*placed(c)))
             x += R
             at = (x, y)
             draw_model(f, centers, R, at=at, touch=False)
@@ -937,7 +964,7 @@ def scheme():
             f.text((x, y - R_top - 0.47), '|' + it('p') + '|² = ' + text,
                    size=12, italic=False, color=ORANGE)
             x += R + gap
-    f.save('front-scheme', 'The six optimal models, each in its dashed circle '
+    f.save('02-preliminaries/scheme', 'The seven optimal models, each in its dashed circle '
            'of radius R_n, with one corner p on the circle and its squared '
            'distance from the centre, which equals R_n squared')
 
@@ -999,7 +1026,7 @@ def contact_polygons():
         f.text(shift(at, where), name, size=15, color=ORANGE,
                anchor='start')
         word(f, shift(at, (0.55, -0.2)), title, size=14)
-    f.save('front-contact-polygons', 'The contact polygons of three, four and '
+    f.save('03-tools/contact-polygons', 'The contact polygons of three, four and '
            'five squares where a, b are at least 0: each is cut out by '
            'tangent lines of the disk phi at most R_n squared at the dotted '
            'points, and contains that disk')
@@ -1053,7 +1080,7 @@ def support_proof():
     f.text((kappa, 0.92), 'κ', size=15)
     f.text((-1.15, -0.45), 'S', size=17, color=BLUE)
     f.text((1.45, -0.45), 'T', size=17, color=GREEN)
-    f.save('front-support-proof', 'Two disjoint squares, a separating line, '
+    f.save('03-tools/support-proof', 'Two disjoint squares, a separating line, '
            'and the segments from each centre to its extreme vertex in the '
            'direction n; test points a fraction t of the way lie in the open '
            'squares, and the two supporting lines are at the full widths')
@@ -1100,7 +1127,7 @@ def lengths():
         f.dot(c, fill=BLUE)
         f.text(shift(shift(c, e1, -0.33), e2, -0.33), 'U', size=16,
                color=BLUE)
-    f.save('front-lengths', 'Left: a vector n from the centre of a square U is '
+    f.save('03-tools/lengths', 'Left: a vector n from the centre of a square U is '
            'the hypotenuse of a right triangle whose legs p and q lie along '
            'the axes of U, and the legs together are longer than n. Right: n '
            'along an axis of U, where the second leg vanishes and the first '
@@ -1151,7 +1178,7 @@ def width_graph():
          it('n') + ' and a side of ' + it('U'), size=12)
     f.text(shift(P.P(0, 0.75), (0.08, 0.06)), sbn('w', 'U', '(n)', 14),
            size=14, anchor='start')
-    f.save('front-width-graph', 'The width of a square in a unit direction n: '
+    f.save('03-tools/width-graph', 'The width of a square in a unit direction n: '
            'one half when n is parallel to a side, root 2 over 2 along a '
            'diagonal, and in between otherwise, as a function of the angle '
            'between n and a side')
@@ -1189,7 +1216,7 @@ def centre_slab():
            size=13, color=ORANGE)
     arrow(f, (-0.25, -1.08), (0.25, -1.08), color=INK, width=1.6)
     f.text((0.0, -1.2), 'n')
-    f.save('front-centre-slab', 'A square S whose centre is within distance 1 '
+    f.save('03-tools/centre-slab', 'A square S whose centre is within distance 1 '
            'of the disk centre o, for a unit vector n: the slab about the '
            'centre of S of half-width w_S(n) + w_T(n), which is at least 1, '
            'contains the unit disk about the centre of S, and so o')
@@ -1232,7 +1259,7 @@ def shrink():
         f.text(shift((0, 0), u((mid + end) / 2), rad_ + 0.02), s_, size=13)
     f.dot((0, 0), r=2.6)
     f.text((0.03, -0.07), 'o', anchor='start', size=14)
-    f.save('front-shrink', 'The three open arcs of the T on the circle of '
+    f.save('03-tools/shrink', 'The three open arcs of the T on the circle of '
            'radius 3/8 meet at their endpoints, which lie in none of them; the '
            'closed arcs of half-width t times w, thick, are disjoint')
 
@@ -1260,7 +1287,7 @@ def arc_overlap():
     f.text(shift((0, 0), u(rad(38)), 0.55), 'δ', size=15)
     f.dot((0, 0))
     f.text((0.04, -0.09), 'o', anchor='start')
-    f.save('front-arc-overlap', 'Two arcs U and V whose centres are less than '
+    f.save('03-tools/arc-overlap', 'Two arcs U and V whose centres are less than '
            'the sum of their half-widths apart: the direction x that divides '
            'the angle between the centres in the ratio of the half-widths '
            'lies in both')
@@ -1295,7 +1322,7 @@ def perimeter():
            color=ORANGE)
     f.dot((0, 0))
     f.text((0.05, -0.1), 'o', anchor='start')
-    f.save('front-perimeter', 'Three directions cut the circle into three gaps '
+    f.save('03-tools/perimeter', 'Three directions cut the circle into three gaps '
            'that add up to 2 pi; the angle between two of the directions is at '
            'most the gap between them, here the angle between U and W is '
            'shorter than its gap')
@@ -1336,7 +1363,7 @@ def gaps_figure():
         f.line((a, y0 + 0.2), (b, y0 + 0.2), stroke=col, width=3)
         f.text(((a + b) / 2, y0 + 0.4), '≥ g', size=13, color=col,
                italic=False)
-    f.save('front-gaps', 'Six directions pairwise at least g = pi/3 apart, '
+    f.save('03-tools/gaps', 'Six directions pairwise at least g = pi/3 apart, '
            'on the circle and unrolled onto the line from p0 to p0 + 2 pi: '
            'six gaps of at least g add up to 2 pi, so each is exactly g')
 
@@ -1377,7 +1404,7 @@ def chart_moves():
         f.text(shift(at, (-0.1, -0.12)), 'o', size=14)
         f.dot(cc, fill=BLUE)
         word(f, (at[0] + 0.4, at[1] + 1.55), title + ' ' + it(head), size=14)
-    f.save('front-chart-moves', 'One square and four charts: a chart with '
+    f.save('03-tools/chart-moves', 'One square and four charts: a chart with '
            'phase theta and orientation epsilon, its reversal, its half turn '
            'and its exchange; in each the centre of the square has the chart '
            'coordinates (X, Y), (X, -Y), (-X, -Y) and (Y, X)')
@@ -1428,7 +1455,7 @@ def cartesian():
         title = 'orientation ' + it(sbn('ε', 'S', ' = +1' if eps > 0
                                         else ' = −1', 14))
         f.text((at[0] + 0.45, 1.62), title, size=14, italic=False)
-    f.save('front-cartesian', 'A square with a chart of phase theta and '
+    f.save('03-tools/cartesian', 'A square with a chart of phase theta and '
            'orientation +1 or -1, and the frame theta at o: the centre is at '
            '(a, b) or (a, -b) in the frame')
 
@@ -1485,7 +1512,7 @@ def caps():
         f.text(shift(at, (-0.05, 0.08)), 'o', anchor='end', size=14)
         f.dot(shift(at, (a, b)), fill=BLUE)
         f.text((at[0] + 0.35, 1.02), title, size=13, italic=False)
-    f.save('front-caps', 'Three exterior squares in their charts with a '
+    f.save('03-tools/caps', 'Three exterior squares in their charts with a '
            'circle of radius at most 1/2 about o. Left: the full cap from -A '
            'to A. Middle: the lower edge clips the cap, from -V to A. Right: '
            'with the near edge through o, the square holds a half circle')
@@ -1531,7 +1558,7 @@ def estimates():
     Q.axes('t', '', [(-t5, '−π/5'), (t5, 'π/5')],
            [(c5, '(1 + √5)/4'), (1, '1')], x_at=-0.8, y_at=0.7)
     word(f, Q.P(0.36, 0.975), 'cos ' + it('t'), size=13, color=BLUE)
-    f.save('front-estimates', 'Left: the arcsine between x and x + x cubed '
+    f.save('03-tools/estimates', 'Left: the arcsine between x and x + x cubed '
            'over 4 on the interval from 0 to 3/5. Right: the cosine meets '
            'the level (1 + root 5)/4 at -pi/5 and pi/5 and lies above it in '
            'between')
@@ -1568,7 +1595,7 @@ def sine_concave():
     f.text(shift(P.P(th, 0), (0, -0.17)), 'θ', size=14, color=GREEN)
     f.text(shift(P.P(mu, 0), (0, -0.17)), 'μ', size=14)
     word(f, P.P(1.45, 1.06), 'sin', size=13, color=BLUE)
-    f.save('front-sine-concave', 'The sine on the interval from 0 to pi/2 and '
+    f.save('03-tools/sine-concave', 'The sine on the interval from 0 to pi/2 and '
            'its chord between arcsin u and arcsin v: the midpoint of the chord '
            'lies below the curve at mu, so a theta with sine less than (u + '
            'v)/2 lies to the left of mu')
@@ -1620,7 +1647,7 @@ def quarter_turn():
     f.text((0.08, -0.12), 'o', size=14)
     f.dot(centre, fill=BLUE)
     f.text(shift(centre, (0.1, 0.1)), 'S', size=17, color=BLUE, anchor='start')
-    f.save('front-quarter-turn', 'A square sitting at c = (c1, c2) in the '
+    f.save('03-tools/quarter-turn', 'A square sitting at c = (c1, c2) in the '
            'frame phi + pi/2, whose axes are y = x prime and y prime, sits at '
            '(-c2, c1) in the frame phi, whose axes are x and y')
 
@@ -1649,7 +1676,7 @@ def slots():
                size=13)
     f.text(shift((0, 0), u(phi), 1.62), 'φ', size=14, anchor='start',
            dx=4)
-    f.save('front-slots', 'The plus in the frame phi at o, with a square '
+    f.save('03-tools/slots', 'The plus in the frame phi at o, with a square '
            'sitting at each of its five points: S1 at c3, S2 at c1, S3 at c5, '
            'S4 at c2 and S5 at c4')
 

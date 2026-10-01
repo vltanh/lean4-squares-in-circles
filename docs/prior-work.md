@@ -45,7 +45,7 @@ account in [5], it proves the radius with a concentric auxiliary circle and
 does not discuss uniqueness. An unpublished note by Wei Zhao [5], dated 6 July
 2026 and shared with us by Friedman, proves the radius and that the 2×2 block
 is then the only packing, up to rotation, by the argument of
-[Chapter 7](proof/four.md): on the circle about the disk centre of radius half
+[Chapter 7](proof/07-four.md): on the circle about the disk centre of radius half
 a side, every square holds at least a quarter, and exactly a quarter only when
 the disk centre is one of its vertices. The proof here was written without the
 note or the official solution: the arc idea came from Claude, and ChatGPT used

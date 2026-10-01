@@ -3,10 +3,13 @@
 
     python3 scripts/figures/proof_figures.py
 
-This module draws the figures shared since the first version of the pages and
-holds the drawing helpers; the modules fig_front.py (Chapters 1 to 3),
-fig_one.py to fig_seven.py (Chapters 4 to 9) and fig_appa.py to fig_appd.py
-(Appendices A to D) draw the figures of each chapter, and main() runs them all.
+The figures of each chapter go to the directory of its page: 01-introduction/
+for the introduction, 02-preliminaries/ to 10-seven/ for the chapters, and
+appendix-a/ to appendix-i/ for the appendices. This module draws the figures
+shared since the first version of the pages and holds the drawing helpers; the
+modules fig_front.py (Chapters 1 to 3), fig_one.py to fig_seven.py
+(Chapters 4 to 10) and fig_appa.py to fig_appi.py (Appendices A to I) draw the
+figures of each chapter, and main() runs them all.
 
 Arcs of squares on the auxiliary circles are found by sampling the circle and
 testing membership in the open squares, so every figure is computed from the
@@ -100,8 +103,68 @@ class Figure:
                f'<path d="M 0 0 L 10 5 L 0 10 z" fill="{INK}"/></marker></defs>',
                f'<rect width="100%" height="100%" fill="#ffffff"/>']
         svg += self.items + ['</svg>']
-        OUT.mkdir(parents=True, exist_ok=True)
-        (OUT / f'{name}.svg').write_text('\n'.join(svg) + '\n')
+        path = OUT / f'{name}.svg'
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text('\n'.join(svg) + '\n')
+
+
+class Graph:
+    """A graph: the data point (x, y) is drawn at (kx (x - x0), ky (y - y0))
+    shifted by (dx, dy) in the coordinates of the figure, so that several
+    graphs with their own scales can share one figure."""
+
+    def __init__(self, f, kx, ky, x0=0.0, y0=0.0, dx=0.0, dy=0.0):
+        self.f, self.kx, self.ky = f, kx, ky
+        self.x0, self.y0, self.dx, self.dy = x0, y0, dx, dy
+
+    def q(self, x, y):
+        return (self.dx + (x - self.x0) * self.kx,
+                self.dy + (y - self.y0) * self.ky)
+
+    def polyline(self, pts, stroke=INK, width=1.8, dash=None):
+        d = ' '.join(f'{x:.1f},{y:.1f}'
+                     for x, y in (self.f.p(*self.q(*p)) for p in pts))
+        extra = f' stroke-dasharray="{dash}"' if dash else ''
+        self.f.add(f'<polyline points="{d}" fill="none" stroke="{stroke}" '
+                   f'stroke-width="{width}" stroke-linejoin="round"{extra}/>')
+
+    def curve(self, fn, x0, x1, n=300, **kw):
+        pts = [(x0 + (x1 - x0) * k / n, fn(x0 + (x1 - x0) * k / n))
+               for k in range(n + 1)]
+        self.polyline(pts, **kw)
+
+    def polygon(self, pts, **kw):
+        self.f.polygon([self.q(*p) for p in pts], **kw)
+
+    def line(self, a, b, **kw):
+        self.f.line(self.q(*a), self.q(*b), **kw)
+
+    def dot(self, p, **kw):
+        self.f.dot(self.q(*p), **kw)
+
+    def text(self, p, s, **kw):
+        self.f.text(self.q(*p), s, **kw)
+
+    def x_axis(self, x0, x1, y=0.0, ticks=(), label='', size=12):
+        self.line((x0, y), (x1, y), width=1, arrow=True)
+        for x, name in ticks:
+            a, b = self.q(x, y)
+            k = 4 / self.f.s
+            self.f.line((a, b - k), (a, b + k), width=1)
+            self.f.text((a, b), name, size=size, italic=False, dy=15)
+        if label:
+            self.text((x1, y), label, size=15, anchor='end', dy=-11)
+
+    def y_axis(self, y0, y1, x=0.0, ticks=(), label='', size=12):
+        self.line((x, y0), (x, y1), width=1, arrow=True)
+        for y, name in ticks:
+            a, b = self.q(x, y)
+            k = 4 / self.f.s
+            self.f.line((a - k, b), (a + k, b), width=1)
+            self.f.text((a, b), name, size=size, italic=False, anchor='end',
+                        dx=-7)
+        if label:
+            self.text((x, y1), label, size=15, anchor='start', dx=7, dy=3)
 
 
 def square_corners(c, deg=0.0):
@@ -167,7 +230,7 @@ def position():
     f.text((a + 0.07, b / 2), sb('b', 'S'), anchor='start')
     f.dot(o)
     f.text((o[0] - 0.02, o[1] + 0.08), 'o', anchor='end')
-    f.save('position', 'A square in its own frame, turned so that the disk '
+    f.save('03-tools/position', 'A square in its own frame, turned so that the disk '
            'centre o lies in the first quadrant; o is reached from the centre '
            'by going a along the first axis and b along the second')
 
@@ -200,7 +263,7 @@ def farthest_vertex():
            color=orange)
     f.dot(o)
     f.text((o[0] + 0.03, o[1] + 0.02), 'o', anchor='start')
-    f.save('farthest-vertex', 'The farthest vertex of a square from the disk '
+    f.save('03-tools/farthest-vertex', 'The farthest vertex of a square from the disk '
            'centre, in the frame of the square turned so that o lies in the '
            'first quadrant')
 
@@ -244,7 +307,7 @@ def chart():
            color=FAINT)
     f.dot((0, 0))
     f.text((-0.03, 0.05), 'o', anchor='end')
-    f.save('chart', 'A square in its chart: the circle meets the line of '
+    f.save('03-tools/chart', 'A square in its chart: the circle meets the line of '
            'the near edge at the angles plus and minus A and the line of '
            'the lower edge at minus V, and the cap runs between')
 
@@ -265,7 +328,7 @@ def budget():
     f.dot((0, 0))
     f.text((0.04, -0.07), 'o', anchor='start')
     f.text((-0.02, -0.34), sb('Γ', 'r', size=16), size=16)
-    f.save('budget', 'Disjoint squares hold disjoint arcs of a circle around '
+    f.save('03-tools/budget', 'Disjoint squares hold disjoint arcs of a circle around '
            'the disk centre')
 
 
@@ -299,7 +362,7 @@ def sweep():
     f.text((-0.1, -0.4), 'S', size=17, color=blue)
     f.text((1.45, 1.02), 'Ŝ', size=19, color=orange)
     f.text((-0.72, 0.62), sb('Γ', 'r', size=16), size=16)
-    f.save('sweep', 'A square containing the disk centre and copies of it '
+    f.save('03-tools/sweep', 'A square containing the disk centre and copies of it '
            'slid away from the centre; together they form the radial '
            'sweep, which covers a long arc of the circle')
 
@@ -422,7 +485,7 @@ def directions():
     f.text(shift((0.07, 0.05), u(t2), 0.6), 'r')
     f.dot((0, 0))
     f.text((0.02, -0.08), 'o', anchor='start')
-    f.save('directions', 'Two directions from o, the unit vector u(theta), '
+    f.save('03-tools/directions', 'Two directions from o, the unit vector u(theta), '
            'and the angle d between the directions on the circle of radius r')
 
 
@@ -453,7 +516,7 @@ def local_coordinates():
     f.text(shift(p, (0.05, 0.03)), 'p', anchor='start')
     f.text(shift(shift(c, e1, -0.33), e2, 0.32), 'S', size=17,
            color=COLORS[0])
-    f.save('local-coordinates', 'A unit square with centre c and frame e1, '
+    f.save('02-preliminaries/local-coordinates', 'A unit square with centre c and frame e1, '
            'e2, and the local coordinates of a point p')
 
 
@@ -479,7 +542,7 @@ def packing_example():
            'R')
     f.dot((0, 0))
     f.text((0.05, 0.08), 'o', anchor='start')
-    f.save('packing', 'Three pairwise disjoint unit squares in a closed disk '
+    f.save('02-preliminaries/packing', 'Three pairwise disjoint unit squares in a closed disk '
            'of radius R about o')
 
 
@@ -507,7 +570,7 @@ def width_figure():
            width=1.6)
     f.text(shift((-0.72, 0.8), n, 0.3), 'n', anchor='start')
     f.text((0.3, -0.52), 'S', size=17, color=COLORS[0])
-    f.save('width', 'The half-width of a square in a unit direction n: how '
+    f.save('03-tools/width', 'The half-width of a square in a unit direction n: how '
            'far the square reaches beyond its centre in that direction')
 
 
@@ -533,7 +596,7 @@ def arc_figure():
     subscript(f, (-0.75, 0.6), 'Γ', 'r', size=16)
     f.dot((0, 0))
     f.text((-0.03, -0.08), 'o', anchor='end')
-    f.save('arc', 'An arc of a set U on the circle: all points within angle '
+    f.save('03-tools/arc', 'An arc of a set U on the circle: all points within angle '
            'w of the direction theta zero lie in U')
 
 
@@ -581,7 +644,7 @@ def chart_panels():
     f.line((1.45, -0.45), (2.2, -0.45), width=1.4, arrow=True)
     f.text((1.82, -0.6), 'turn by −' + sb('θ', 'S', size=13), size=13,
            italic=False)
-    f.save('chart-panels', 'A square seen from o, and the same square in its '
+    f.save('03-tools/chart-panels', 'A square seen from o, and the same square in its '
            'chart after turning by minus its phase')
 
 
@@ -610,7 +673,7 @@ def frame_figure():
     f.dot((0, 0))
     f.text((-0.04, -0.08), 'o', anchor='end')
     f.text((1.25, 1.2), 'Q(c)', size=15, color=COLORS[0], italic=True)
-    f.save('frame', 'The frame at o turned by phi, and a square sitting at '
+    f.save('02-preliminaries/frame', 'The frame at o turned by phi, and a square sitting at '
            'c = (c1, c2) in that frame')
 
 
@@ -632,7 +695,7 @@ def congruent_figure():
         subscript(f, rot(c), 'S', name, size=16, color=COLORS[k])
     f.dot((0, 0))
     f.text((0.05, 0.08), 'o', anchor='start')
-    f.save('congruent', 'A packing congruent to the T: the model turned '
+    f.save('02-preliminaries/congruent', 'A packing congruent to the T: the model turned '
            'about o, with its squares relabelled')
 
 
@@ -653,7 +716,7 @@ def inscribed_disks():
     f.text((0.03, -0.05), sb('c', 'S'), anchor='start')
     f.dot(o, fill=orange)
     f.text(shift(o, (0.04, -0.05)), 'o', anchor='start', color=orange)
-    f.save('inscribed-disks', 'The disk of radius one half about the centre, '
+    f.save('03-tools/inscribed-disks', 'The disk of radius one half about the centre, '
            'and the disk of radius one half minus alpha about o, both inside '
            'the open square')
 
@@ -671,7 +734,7 @@ def midpoint_figure():
     f.text(shift(m, (0.0, 0.09)), 'm')
     subscript(f, shift(s[0], (-0.02, -0.1)), 'c', 'S', color=COLORS[0])
     subscript(f, shift(t[0], (0.0, -0.1)), 'c', 'T', color=COLORS[2])
-    f.save('midpoint', 'Two squares whose centres are less than 1 apart: '
+    f.save('03-tools/midpoint', 'Two squares whose centres are less than 1 apart: '
            'the midpoint lies in both inscribed disks')
 
 
@@ -697,7 +760,7 @@ def shadows():
               color=COLORS[2])
     f.text((-1.2, 0.62), 'S', size=17, color=COLORS[0])
     f.text((1.3, 0.55), 'T', size=17, color=COLORS[2])
-    f.save('shadows', 'Two disjoint squares and a separating direction n: '
+    f.save('03-tools/shadows', 'Two disjoint squares and a separating direction n: '
            'their shadows on a line in direction n do not overlap')
 
 
@@ -714,7 +777,7 @@ def edge_contact():
     f.text(shift(shift(s, e1, 0.72), u(rad(d + 90)), 0.1), '1')
     subscript(f, shift(s, (-0.05, -0.1)), 'c', 'S', color=COLORS[0])
     subscript(f, shift(t, (0.0, -0.1)), 'c', 'T', color=COLORS[2])
-    f.save('edge-contact', 'Two squares with centres exactly 1 apart share a '
+    f.save('03-tools/edge-contact', 'Two squares with centres exactly 1 apart share a '
            'full edge')
 
 
@@ -735,7 +798,7 @@ def arc_centres():
            size=14)
     f.dot((0, 0))
     f.text((0.03, -0.08), 'o', anchor='start')
-    f.save('arc-centres', 'Two disjoint arcs on a circle: their centres are '
+    f.save('03-tools/arc-centres', 'Two disjoint arcs on a circle: their centres are '
            'at least the sum of their half-widths apart')
 
 
@@ -770,7 +833,7 @@ def rectangle_interval():
     f.dot((0, 0))
     f.text((-0.03, -0.08), 'o', anchor='end')
     subscript(f, (-0.72, -0.72), 'Γ', 'r', size=16)
-    f.save('rectangle-interval', 'On a larger circle the arc of an exterior '
+    f.save('03-tools/rectangle-interval', 'On a larger circle the arc of an exterior '
            'square runs from the lower edge to the upper edge')
 
 
@@ -796,7 +859,7 @@ def safe_sweep():
     f.text((0.25, -0.25), 'S', size=17, color=blue)
     f.text((-1.2, 0.5), 'T', size=17, color=green)
     f.text((1.5, 0.95), 'Ŝ', size=19, color=orange)
-    f.save('safe-sweep', 'The separating line between S and T; the ray from '
+    f.save('03-tools/safe-sweep', 'The separating line between S and T; the ray from '
            'o through the centre of S points away from T, so the sweep of S '
            'stays on its side')
 
@@ -866,7 +929,7 @@ def containing_exterior():
         name = 'containing' if color == 0 else 'exterior'
         f.text((dx, 0.86), name + ': ' + label, size=14, italic=False,
                color=COLORS[color])
-    f.save('containing-exterior', 'Left: a containing square, with the disk '
+    f.save('03-tools/containing-exterior', 'Left: a containing square, with the disk '
            'centre o inside it. Right: an exterior square, with o outside it')
 
 
@@ -892,7 +955,7 @@ def tangent_half_plane():
     f.text((-1.0, -1.1), 'φ ≤ K', size=16, color=blue)
     f.text((0.95, -1.7), 'tangent half-plane', size=14, italic=False,
            color=orange)
-    f.save('tangent-half-plane', 'The disk where phi is at most K in the '
+    f.save('03-tools/tangent-half-plane', 'The disk where phi is at most K in the '
            '(a, b)-plane, a point (u, v) on its boundary, and the tangent '
            'half-plane there, which contains the disk')
 
@@ -919,7 +982,7 @@ def four_directions():
     f.line(a2, a3, width=1)
     f.dot((0, 0))
     f.text((-0.06, -0.14), 'o', anchor='end')
-    f.save('four-directions', 'Four directions pairwise at least a quarter '
+    f.save('03-tools/four-directions', 'Four directions pairwise at least a quarter '
            'turn apart: they are a first direction and its quarter turns')
 
 
@@ -941,7 +1004,7 @@ def parallelogram():
     subscript(f, shift(ct, (0.02, 0.07)), 'c', 'T', color=COLORS[2],
               anchor='start')
     f.text((-0.38, 0.45), 'D(o, ½)', size=13, anchor='end')
-    f.save('parallelogram', 'Two centres inside the disk of radius one half '
+    f.save('05-two/parallelogram', 'Two centres inside the disk of radius one half '
            'about o, and the parallelogram they span with o; its diagonals '
            'are the segment between the centres and the dashed segment from o')
 
@@ -978,7 +1041,7 @@ def contact_types():
                                                    (off + 0.5, 5 / 16)),
                           3 / 16):
         f.arc(o, 3 / 16, t0, t1, COLORS[3], width=4)
-    f.save('contact-types', 'Left: a type A square in its chart, holding '
+    f.save('06-three/contact-types', 'Left: a type A square in its chart, holding '
            'a third of the circle of radius 3/8, centred on its axis. '
            'Right: a type B square, holding a third of that circle and half '
            'of the small circle of radius 3/16')
@@ -1004,7 +1067,7 @@ def containing_arc():
     f.dot((0, 0))
     f.text((-0.03, -0.07), 'o', anchor='end')
     f.text((a + 0.4, b + 0.4), 'S', size=17, color=COLORS[0])
-    f.save('containing-arc', 'A square containing o, in its chart, and the '
+    f.save('06-three/containing-arc', 'A square containing o, in its chart, and the '
            'arc of the circle of radius 3/8 that it holds: the quarter facing '
            'its centre and a little more on each side')
 
@@ -1033,7 +1096,7 @@ def radial_gap():
     f.text((-0.03, -0.74), sb('a', 'T', ' − ½', 14), size=14, anchor='end')
     f.text((-0.75, 0.5), 'S', size=17, color=COLORS[0])
     f.text((1.08, 0.46), 'T', size=17, color=COLORS[2])
-    f.save('radial-gap', 'The disk about o of radius one half minus a_S lies '
+    f.save('06-three/radial-gap', 'The disk about o of radius one half minus a_S lies '
            'in the containing square S, and the near edge of T is at least '
            'that far from o')
 
@@ -1064,44 +1127,9 @@ def near_axis_overlap():
     f.text((0.03, -0.07), 'o', anchor='start')
     f.text((1.05, -0.4), 'T', size=17, color=COLORS[0])
     f.text((-1.05, 0.95), 'U', size=17, color=COLORS[2])
-    f.save('near-axis-overlap', 'Two nearly type A squares whose phases are '
+    f.save('06-three/near-axis-overlap', 'Two nearly type A squares whose phases are '
            'a little more than a third of a turn apart overlap; the point z '
            'lies in both')
-
-
-def sweep_test():
-    a, b, r = 0.35, 0.15, 0.6
-    orange, blue = COLORS[1], COLORS[0]
-    c = (a, b)
-    corners = square_corners(c)
-    hull = convex_hull(corners + [shift(q, c, 12) for q in corners])
-    f = Figure(-0.75, 1.6, -0.75, 1.3, 200)
-    f.polygon(hull, fill=FILLS[1], stroke='none', opacity=0.8)
-    L = math.hypot(a, b)
-    d, n = (a / L, b / L), (-b / L, a / L)
-    for sgn in (1, -1):
-        base = shift((0, 0), n, sgn * (a + b) / (2 * L))
-        f.line(shift(base, d, -0.8), shift(base, d, 2.2), stroke=orange,
-               width=1.2, dash='5 4')
-    f.line((a - 0.5, -0.72), (a - 0.5, 1.25), width=1, dash='3 3')
-    f.line((-0.72, b - 0.5), (1.55, b - 0.5), width=1, dash='3 3')
-    f.square(c, fill=FILLS[0], stroke=blue)
-    f.circle((0, 0), r)
-    delta = math.atan2(b, a)
-    f.arc((0, 0), r, delta - math.pi / 4, delta + math.pi / 4, orange,
-          width=5)
-    f.line((0, 0), shift((0, 0), d, 1.5), width=1, dash='2 3', arrow=True)
-    f.dot((0, 0))
-    f.text((-0.03, -0.07), 'o', anchor='end')
-    f.dot(c, fill=blue)
-    f.text((1.25, 1.05), 'Ŝ', size=19, color=orange)
-    f.text((a - 0.52, 1.2), 'X = ' + sb('a', 'S', ' − ½', 12), size=12,
-           anchor='end', italic=False)
-    f.text((1.55, b - 0.56), 'Y = ' + sb('b', 'S', ' − ½', 12), size=12,
-           anchor='end', italic=False)
-    f.save('sweep-test', 'A containing square in its chart and its sweep: '
-           'the band between the dashed lines, beyond the two back edges. '
-           'The highlighted quarter circle lies in the sweep')
 
 
 def slid_disk():
@@ -1127,7 +1155,7 @@ def slid_disk():
     f.dot(cstar, fill=orange)
     f.text(shift(cstar, (0.03, -0.08)), 'c*', anchor='start', color=orange)
     f.text((-0.45, -0.45), 'S', size=17, color=blue)
-    f.save('slid-disk', 'A square containing o slid outward until its centre '
+    f.save('08-five/slid-disk', 'A square containing o slid outward until its centre '
            'is at distance one over root 2; its inscribed disk covers a fifth '
            'of the circle of radius 5/6')
 
@@ -1144,7 +1172,7 @@ def dodecagon_disk():
     f.text((0.35, 0.35), sb('P', '5', size=16), size=16, color=orange)
     f.text((0.85, 0.85), 'a² + b² = 1', size=13, italic=False, color=blue,
            anchor='start')
-    f.save('dodecagon-disk', 'The 12-gon of five squares, in the quadrant a, '
+    f.save('08-five/dodecagon-disk', 'The 12-gon of five squares, in the quadrant a, '
            'b at least 0, lies inside the unit disk and touches it at (1, 0) '
            'and (0, 1)')
 
@@ -1170,7 +1198,7 @@ def sixteen_gon():
     f.text((0.25, 0.25), 'φ ≤ 425/256', size=14, color=blue)
     f.text((0.6, 0.55), sb('P', '3', size=16), size=16, color=orange,
            anchor='start')
-    f.save('sixteen-gon', 'The part with a, b at least 0 of the 16-gon of '
+    f.save('06-three/sixteen-gon', 'The part with a, b at least 0 of the 16-gon of '
            'three squares, hugging the disk where phi is at most 425/256; the '
            'disk touches it at the type A and type B points')
 
@@ -1187,7 +1215,7 @@ def diamond():
     f.text((0.28, 0.2), 'φ ≤ 2', size=15, color=blue)
     f.text((0.38, 0.75), 'a + b = 1', size=13, italic=False, color=orange,
            anchor='start')
-    f.save('diamond', 'The disk where phi is at most 2, inside the diamond a '
+    f.save('07-four/diamond', 'The disk where phi is at most 2, inside the diamond a '
            'plus b at most 1, which touches it at (1/2, 1/2)')
 
 
@@ -1211,7 +1239,7 @@ def twelve_gon():
     f.text((0.3, 0.3), 'φ ≤ 5/2', size=15, color=blue)
     f.text((0.86, 0.72), sb('P', '5', size=16), size=16, color=orange,
            anchor='start')
-    f.save('twelve-gon', 'The part with a, b at least 0 of the 12-gon of five '
+    f.save('08-five/twelve-gon', 'The part with a, b at least 0 of the 12-gon of five '
            'squares, around the disk where phi is at most 5/2, which it '
            'touches at (1, 0), (0, 1) and (g, g) with g = (root 5 - 1)/2')
 
@@ -1235,7 +1263,7 @@ def axis_square():
     for y, s in ((c[1] - 0.5, ' − ½'), (c[1] + 0.5, ' + ½')):
         f.text((-0.04, y), sb('c', '2', s, 13), size=13, anchor='end')
     f.text((c[0] + 0.3, c[1] + 0.32), 'Q(c)', size=15, color=COLORS[0])
-    f.save('axis-square', 'The axis-parallel unit square Q(c), which spans '
+    f.save('02-preliminaries/axis-square', 'The axis-parallel unit square Q(c), which spans '
            'c1 minus a half to c1 plus a half across and c2 minus a half to c2 '
            'plus a half up')
 
@@ -1258,7 +1286,7 @@ def three_arcs():
            'd(' + sb('θ', 'V', ', ') + sb('θ', 'W', ')'), size=14)
     f.dot((0, 0))
     f.text((0.06, 0.08), 'o', anchor='start')
-    f.save('three-arcs', 'Three disjoint arcs U, V and W of a circle about o; '
+    f.save('03-tools/three-arcs', 'Three disjoint arcs U, V and W of a circle about o; '
            'the angle between the centres of V and W is at least the sum of '
            'their half-widths and at most what the arc U leaves')
 
@@ -1282,7 +1310,7 @@ def axis_squares():
     f.text(shift(qs, (0, 0.02)), 'Q(q)', size=14, color=COLORS[2])
     f.dot((0, 0))
     f.text((-0.05, 0.08), 'o', anchor='end')
-    f.save('axis-squares', 'Two axis-parallel squares whose centres are more '
+    f.save('02-preliminaries/axis-squares', 'Two axis-parallel squares whose centres are more '
            'than 1 apart across, inside a box of half-sides B and C, inside '
            'the circle of radius root of B squared plus C squared')
 
@@ -1315,7 +1343,7 @@ def parallel_squares():
            color=orange)
     f.text(shift(shift(foot, e2, 0.1), e1, 0.1), sb('c', '2'),
            color=orange, anchor='start')
-    f.save('parallel-squares', 'Axes at o parallel to the sides of S; a '
+    f.save('03-tools/parallel-squares', 'Axes at o parallel to the sides of S; a '
            'square T with the same axes sits at the coordinates (c1, c2) of '
            'its centre in this frame')
 
@@ -1339,7 +1367,7 @@ def vertex_square():
     f.dot((0, 0))
     f.text((-0.04, -0.06), 'o', anchor='end')
     f.text(shift(c, (0.25, -0.3)), 'S', size=17, color=COLORS[0])
-    f.save('vertex-square', 'A square with a vertex at o holds the quarter of '
+    f.save('07-four/vertex-square', 'A square with a vertex at o holds the quarter of '
            'the circle of radius 1/2 between its two edges from o, centred at '
            'the bisecting direction')
 
@@ -1353,7 +1381,6 @@ def main():
     containing_arc()
     radial_gap()
     near_axis_overlap()
-    sweep_test()
     slid_disk()
     dodecagon_disk()
     sixteen_gon()
@@ -1384,20 +1411,20 @@ def main():
     chart()
     budget()
     sweep()
-    packing('one', 'One square in its circle of radius root 2 over 2',
+    packing('04-one/one', 'One square in its circle of radius root 2 over 2',
             [(0, 0)], math.sqrt(2) / 2)
-    packing('two', 'The 2 by 1 rectangle in its circle of radius root 5 '
+    packing('05-two/two', 'The 2 by 1 rectangle in its circle of radius root 5 '
             'over 2', [(-0.5, 0), (0.5, 0)], math.sqrt(5) / 2)
-    packing('three', 'The T with the circle of radius 3/8',
+    packing('06-three/three', 'The T with the circle of radius 3/8',
             [(-0.5, -5 / 16), (0.5, -5 / 16), (0, 11 / 16)],
             5 * math.sqrt(17) / 16, 3 / 8)
-    packing('four', 'The 2 by 2 block with the circle of radius 1/2',
+    packing('07-four/four', 'The 2 by 2 block with the circle of radius 1/2',
             [(0.5, 0.5), (-0.5, 0.5), (-0.5, -0.5), (0.5, -0.5)],
             math.sqrt(2), 1 / 2)
-    packing('five', 'The plus with the circle of radius 5/6',
+    packing('08-five/five', 'The plus with the circle of radius 5/6',
             [(0, 0), (1, 0), (0, 1), (-1, 0), (0, -1)],
             math.sqrt(2.5), 5 / 6, grey=(0,))
-    packing('seven', 'Two columns of two squares beside a column of three, '
+    packing('10-seven/seven', 'Two columns of two squares beside a column of three, '
             'with the unit circle',
             [(1, -0.5), (1, 0.5), (-1, -0.5), (-1, 0.5), (0, -1), (0, 0),
              (0, 1)], math.sqrt(13) / 2, 1, grey=(5,))
@@ -1405,8 +1432,9 @@ def main():
     # The figures of each chapter, drawn by one module per chapter.
     import importlib
     for module in ('fig_front', 'fig_one', 'fig_two', 'fig_three', 'fig_four',
-                   'fig_five', 'fig_seven', 'fig_appa', 'fig_appb', 'fig_appc',
-                   'fig_appd'):
+                   'fig_five', 'fig_six', 'fig_seven', 'fig_appa', 'fig_appb',
+                   'fig_appc', 'fig_appd', 'fig_appe', 'fig_appf', 'fig_appg',
+                   'fig_apph', 'fig_appi'):
         importlib.import_module(module).main()
 
 

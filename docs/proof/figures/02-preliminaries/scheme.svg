@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="685" height="497" viewBox="0 0 685 497" role="img" aria-label="The seven optimal models, each in its dashed circle of radius R_n, with one corner p on the circle and its squared distance from the centre, which equals R_n squared">
+<title>The seven optimal models, each in its dashed circle of radius R_n, with one corner p on the circle and its squared distance from the centre, which equals R_n squared</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<circle cx="76.3" cy="100.0" r="39.6" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="48.3,128.0 104.3,128.0 104.3,72.0 48.3,72.0" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<circle cx="76.3" cy="100.0" r="2.6" fill="#1f2937"/>
+<line x1="76.3" y1="100.0" x2="104.3" y2="72.0" stroke="#ea580c" stroke-width="1.8"/>
+<circle cx="104.3" cy="72.0" r="4" fill="#ea580c"/>
+<text x="76.3" y="191.5" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle"><tspan font-style="italic">n</tspan> = 1</text>
+<text x="76.3" y="205.5" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle">|<tspan font-style="italic">p</tspan>|² = ¼ + ¼ = ½</text>
+<circle cx="213.3" cy="100.0" r="62.6" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="157.3,128.0 213.3,128.0 213.3,72.0 157.3,72.0" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="213.3,128.0 269.3,128.0 269.3,72.0 213.3,72.0" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" fill-opacity="1"/>
+<circle cx="213.3" cy="100.0" r="2.6" fill="#1f2937"/>
+<line x1="213.3" y1="100.0" x2="269.3" y2="72.0" stroke="#ea580c" stroke-width="1.8"/>
+<circle cx="269.3" cy="72.0" r="4" fill="#ea580c"/>
+<text x="213.3" y="191.5" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle"><tspan font-style="italic">n</tspan> = 2</text>
+<text x="213.3" y="205.5" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle">|<tspan font-style="italic">p</tspan>|² = 1 + ¼ = 5/4</text>
+<circle cx="382.7" cy="100.0" r="72.2" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="326.7,145.5 382.7,145.5 382.7,89.5 326.7,89.5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="382.7,145.5 438.7,145.5 438.7,89.5 382.7,89.5" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="354.7,89.5 410.7,89.5 410.7,33.5 354.7,33.5" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" fill-opacity="1"/>
+<circle cx="382.7" cy="100.0" r="2.6" fill="#1f2937"/>
+<line x1="382.7" y1="100.0" x2="326.7" y2="145.5" stroke="#ea580c" stroke-width="1.8"/>
+<circle cx="326.7" cy="145.5" r="4" fill="#ea580c"/>
+<text x="382.7" y="191.5" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle"><tspan font-style="italic">n</tspan> = 3</text>
+<text x="382.7" y="205.5" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle">|<tspan font-style="italic">p</tspan>|² = 1 + 169/256 = 425/256</text>
+<circle cx="568.8" cy="100.0" r="79.2" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="568.8,100.0 624.8,100.0 624.8,44.0 568.8,44.0" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="512.8,100.0 568.8,100.0 568.8,44.0 512.8,44.0" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="512.8,156.0 568.8,156.0 568.8,100.0 512.8,100.0" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="568.8,156.0 624.8,156.0 624.8,100.0 568.8,100.0" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.5" fill-opacity="1"/>
+<circle cx="568.8" cy="100.0" r="2.6" fill="#1f2937"/>
+<line x1="568.8" y1="100.0" x2="624.8" y2="44.0" stroke="#ea580c" stroke-width="1.8"/>
+<circle cx="624.8" cy="44.0" r="4" fill="#ea580c"/>
+<text x="568.8" y="191.5" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle"><tspan font-style="italic">n</tspan> = 4</text>
+<text x="568.8" y="205.5" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle">|<tspan font-style="italic">p</tspan>|² = 1 + 1 = 2</text>
+<circle cx="112.1" cy="337.3" r="88.5" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="84.1,365.3 140.1,365.3 140.1,309.3 84.1,309.3" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="140.1,365.3 196.1,365.3 196.1,309.3 140.1,309.3" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="84.1,309.3 140.1,309.3 140.1,253.3 84.1,253.3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="28.1,365.3 84.1,365.3 84.1,309.3 28.1,309.3" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="84.1,421.3 140.1,421.3 140.1,365.3 84.1,365.3" fill="#fce7f3" stroke="#db2777" stroke-width="1.5" fill-opacity="1"/>
+<circle cx="112.1" cy="337.3" r="2.6" fill="#1f2937"/>
+<line x1="112.1" y1="337.3" x2="196.1" y2="309.3" stroke="#ea580c" stroke-width="1.8"/>
+<circle cx="196.1" cy="309.3" r="4" fill="#ea580c"/>
+<text x="112.1" y="450.5" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle"><tspan font-style="italic">n</tspan> = 5</text>
+<text x="112.1" y="464.5" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle">|<tspan font-style="italic">p</tspan>|² = 9/4 + ¼ = 5/2</text>
+<circle cx="330.0" cy="337.3" r="94.6" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="306.7,360.5 362.7,360.5 362.7,304.5 306.7,304.5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="306.7,304.5 362.7,304.5 362.7,248.5 306.7,248.5" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="362.7,360.5 418.7,360.5 418.7,304.5 362.7,304.5" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="250.7,341.7 306.7,341.7 306.7,285.7 250.7,285.7" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="325.5,416.5 381.5,416.5 381.5,360.5 325.5,360.5" fill="#fce7f3" stroke="#db2777" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="285.9,420.9 325.5,381.3 285.9,341.7 246.3,381.3" fill="#cffafe" stroke="#0891b2" stroke-width="1.5" fill-opacity="1"/>
+<circle cx="330.0" cy="337.3" r="2.6" fill="#1f2937"/>
+<line x1="330.0" y1="337.3" x2="418.7" y2="304.5" stroke="#ea580c" stroke-width="1.8"/>
+<circle cx="418.7" cy="304.5" r="4" fill="#ea580c"/>
+<text x="330.0" y="450.5" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle"><tspan font-style="italic">n</tspan> = 6</text>
+<text x="330.0" y="464.5" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle">|<tspan font-style="italic">p</tspan>|² = (s*+3/2)² + (s*+½)² = q*</text>
+<circle cx="560.2" cy="337.3" r="101.0" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="588.2,393.3 644.2,393.3 644.2,337.3 588.2,337.3" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="588.2,337.3 644.2,337.3 644.2,281.3 588.2,281.3" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="476.2,393.3 532.2,393.3 532.2,337.3 476.2,337.3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="476.2,337.3 532.2,337.3 532.2,281.3 476.2,281.3" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="532.2,421.3 588.2,421.3 588.2,365.3 532.2,365.3" fill="#fce7f3" stroke="#db2777" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="532.2,365.3 588.2,365.3 588.2,309.3 532.2,309.3" fill="#cffafe" stroke="#0891b2" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="532.2,309.3 588.2,309.3 588.2,253.3 532.2,253.3" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5" fill-opacity="1"/>
+<circle cx="560.2" cy="337.3" r="2.6" fill="#1f2937"/>
+<line x1="560.2" y1="337.3" x2="644.2" y2="393.3" stroke="#ea580c" stroke-width="1.8"/>
+<circle cx="644.2" cy="393.3" r="4" fill="#ea580c"/>
+<text x="560.2" y="450.5" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle"><tspan font-style="italic">n</tspan> = 7</text>
+<text x="560.2" y="464.5" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle">|<tspan font-style="italic">p</tspan>|² = 9/4 + 1 = 13/4</text>
+</svg>

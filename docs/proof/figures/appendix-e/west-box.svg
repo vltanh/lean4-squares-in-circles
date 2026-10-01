@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="992" height="342" viewBox="0 0 992 342" role="img" aria-label="The three boxes of the west minorant with the Taylor lower bounds at their corners, all positive; the corner v = 2/3, x = 0, d = 11/14 is the tight one">
+<title>The three boxes of the west minorant with the Taylor lower bounds at their corners, all positive; the corner v = 2/3, x = 0, d = 11/14 is the tight one</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="78.0" y1="266.0" x2="228.0" y2="266.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="78.0" y1="266.0" x2="140.0" y2="214.0" stroke="#1f2937" stroke-width="1.3" stroke-dasharray="4 3"/>
+<line x1="78.0" y1="266.0" x2="78.0" y2="101.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="78.0" y1="101.0" x2="228.0" y2="101.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="78.0" y1="101.0" x2="140.0" y2="49.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="140.0" y1="214.0" x2="140.0" y2="49.0" stroke="#1f2937" stroke-width="1.3" stroke-dasharray="4 3"/>
+<line x1="140.0" y1="214.0" x2="290.0" y2="214.0" stroke="#1f2937" stroke-width="1.3" stroke-dasharray="4 3"/>
+<line x1="228.0" y1="266.0" x2="290.0" y2="214.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="228.0" y1="266.0" x2="228.0" y2="101.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="140.0" y1="49.0" x2="290.0" y2="49.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="228.0" y1="101.0" x2="290.0" y2="49.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="290.0" y1="214.0" x2="290.0" y2="49.0" stroke="#1f2937" stroke-width="1.3"/>
+<circle cx="78.0" cy="266.0" r="3.6" fill="#1f2937"/>
+<text x="68.0" y="277.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.00948</text>
+<circle cx="78.0" cy="101.0" r="3.6" fill="#1f2937"/>
+<text x="68.0" y="90.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.00250</text>
+<circle cx="140.0" cy="214.0" r="3.6" fill="#1f2937"/>
+<text x="130.0" y="225.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.00438</text>
+<circle cx="140.0" cy="49.0" r="3.6" fill="#1f2937"/>
+<text x="130.0" y="38.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.00815</text>
+<circle cx="228.0" cy="266.0" r="3.6" fill="#1f2937"/>
+<text x="238.0" y="277.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">0.01432</text>
+<circle cx="228.0" cy="101.0" r="3.6" fill="#ea580c"/>
+<text x="238.0" y="114.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle">0.00035</text>
+<circle cx="290.0" cy="214.0" r="3.6" fill="#1f2937"/>
+<text x="300.0" y="225.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">0.01694</text>
+<circle cx="290.0" cy="49.0" r="3.6" fill="#1f2937"/>
+<text x="300.0" y="38.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">0.01372</text>
+<text x="183.0" y="314.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">k = 0: own axis</text>
+<text x="153.0" y="282.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">v</text>
+<text x="271.0" y="244.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">x</text>
+<text x="68.0" y="183.5" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">d</text>
+<line x1="384.0" y1="266.0" x2="534.0" y2="266.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="384.0" y1="266.0" x2="446.0" y2="214.0" stroke="#1f2937" stroke-width="1.3" stroke-dasharray="4 3"/>
+<line x1="384.0" y1="266.0" x2="384.0" y2="101.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="384.0" y1="101.0" x2="534.0" y2="101.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="384.0" y1="101.0" x2="446.0" y2="49.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="446.0" y1="214.0" x2="446.0" y2="49.0" stroke="#1f2937" stroke-width="1.3" stroke-dasharray="4 3"/>
+<line x1="446.0" y1="214.0" x2="596.0" y2="214.0" stroke="#1f2937" stroke-width="1.3" stroke-dasharray="4 3"/>
+<line x1="534.0" y1="266.0" x2="596.0" y2="214.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="534.0" y1="266.0" x2="534.0" y2="101.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="446.0" y1="49.0" x2="596.0" y2="49.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="534.0" y1="101.0" x2="596.0" y2="49.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="596.0" y1="214.0" x2="596.0" y2="49.0" stroke="#1f2937" stroke-width="1.3"/>
+<circle cx="384.0" cy="266.0" r="3.6" fill="#1f2937"/>
+<text x="374.0" y="277.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.00948</text>
+<circle cx="384.0" cy="101.0" r="3.6" fill="#1f2937"/>
+<text x="374.0" y="90.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.00250</text>
+<circle cx="446.0" cy="214.0" r="3.6" fill="#1f2937"/>
+<text x="436.0" y="225.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.00352</text>
+<circle cx="446.0" cy="49.0" r="3.6" fill="#1f2937"/>
+<text x="436.0" y="38.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.00729</text>
+<circle cx="534.0" cy="266.0" r="3.6" fill="#1f2937"/>
+<text x="544.0" y="277.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">0.01432</text>
+<circle cx="534.0" cy="101.0" r="3.6" fill="#ea580c"/>
+<text x="544.0" y="114.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle">0.00035</text>
+<circle cx="596.0" cy="214.0" r="3.6" fill="#1f2937"/>
+<text x="606.0" y="225.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">0.01608</text>
+<circle cx="596.0" cy="49.0" r="3.6" fill="#1f2937"/>
+<text x="606.0" y="38.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">0.01286</text>
+<text x="489.0" y="314.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">k = 1: south side, s ≥ 0</text>
+<text x="459.0" y="282.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">v</text>
+<text x="577.0" y="244.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">x</text>
+<text x="374.0" y="183.5" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">d</text>
+<line x1="690.0" y1="266.0" x2="840.0" y2="266.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="690.0" y1="266.0" x2="752.0" y2="214.0" stroke="#1f2937" stroke-width="1.3" stroke-dasharray="4 3"/>
+<line x1="690.0" y1="266.0" x2="690.0" y2="101.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="690.0" y1="101.0" x2="840.0" y2="101.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="690.0" y1="101.0" x2="752.0" y2="49.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="752.0" y1="214.0" x2="752.0" y2="49.0" stroke="#1f2937" stroke-width="1.3" stroke-dasharray="4 3"/>
+<line x1="752.0" y1="214.0" x2="902.0" y2="214.0" stroke="#1f2937" stroke-width="1.3" stroke-dasharray="4 3"/>
+<line x1="840.0" y1="266.0" x2="902.0" y2="214.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="840.0" y1="266.0" x2="840.0" y2="101.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="752.0" y1="49.0" x2="902.0" y2="49.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="840.0" y1="101.0" x2="902.0" y2="49.0" stroke="#1f2937" stroke-width="1.3"/>
+<line x1="902.0" y1="214.0" x2="902.0" y2="49.0" stroke="#1f2937" stroke-width="1.3"/>
+<circle cx="690.0" cy="266.0" r="3.6" fill="#1f2937"/>
+<text x="680.0" y="277.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.00948</text>
+<circle cx="690.0" cy="101.0" r="3.6" fill="#1f2937"/>
+<text x="680.0" y="90.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.00250</text>
+<circle cx="752.0" cy="214.0" r="3.6" fill="#1f2937"/>
+<text x="742.0" y="225.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.04462</text>
+<circle cx="752.0" cy="49.0" r="3.6" fill="#1f2937"/>
+<text x="742.0" y="38.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.02964</text>
+<circle cx="840.0" cy="266.0" r="3.6" fill="#1f2937"/>
+<text x="850.0" y="277.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">0.01432</text>
+<circle cx="840.0" cy="101.0" r="3.6" fill="#ea580c"/>
+<text x="850.0" y="114.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle">0.00035</text>
+<circle cx="902.0" cy="214.0" r="3.6" fill="#1f2937"/>
+<text x="912.0" y="225.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">0.04705</text>
+<circle cx="902.0" cy="49.0" r="3.6" fill="#1f2937"/>
+<text x="912.0" y="38.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">0.02509</text>
+<text x="795.0" y="314.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">k = 2: south side, s ≤ 0</text>
+<text x="765.0" y="282.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">v</text>
+<text x="883.0" y="244.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">x</text>
+<text x="680.0" y="183.5" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">d</text>
+</svg>

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Draw the figures of Chapter 4, one square, as SVG files in
-docs/proof/figures/ (prefix one-).
+docs/proof/figures/04-one/.
 
     python3 scripts/figures/fig_one.py
 
@@ -65,7 +65,7 @@ def farthest():
     f.dot(o)
     f.text(shift(o, (-0.05, 0.05)), 'o', anchor='end')
     f.text(frame_point(c, t, 0.28, -0.3), 'S', size=17, color=BLUE)
-    f.save('one-farthest', 'A unit square whose centre is not the disk centre '
+    f.save('04-one/farthest', 'A unit square whose centre is not the disk centre '
            'o: its vertices lie on the dotted circle of radius R1 about its '
            'centre, and its farthest vertex from o lies outside the dashed '
            'circle of radius R1 about o')
@@ -94,7 +94,7 @@ def ab_plane():
     f.text((0.44, 0.46), 'a, b ≥ 0', size=15, color=ORANGE)
     f.text((-0.66, 0.74), 'a + b = 0', size=14, italic=False,
            anchor='start')
-    f.save('one-ab-plane', 'The (a, b)-plane: the disk where phi is at most '
+    f.save('04-one/ab-plane', 'The (a, b)-plane: the disk where phi is at most '
            'one half, centred at (-1/2, -1/2), lies on one side of the line a '
            'plus b equals 0 and touches it at the origin, the only point it '
            'shares with the quadrant where a and b are at least 0')
@@ -139,7 +139,7 @@ def congruent():
     f.line((0.95, -0.62), (1.6, -0.62), width=1.4, arrow=True)
     f.text((1.27, -0.76), 'turn by ' + sb('θ', 'S', size=13), size=13,
            italic=False)
-    f.save('one-congruent', 'Left: the model Q(0, 0), the unit square '
+    f.save('04-one/congruent', 'Left: the model Q(0, 0), the unit square '
            'centred at the origin. Right: a unit square S centred at the disk '
            'centre o, with the axes of the frame at o turned by the phase '
            'theta S along its sides; the frame carries the model onto S')
@@ -171,7 +171,7 @@ def too_small():
     f.dot((0, 0))
     f.text((-0.04, -0.07), 'o', anchor='end')
     f.text(shift((0, 0), u(rad(200)), 0.3), 'S', size=17, color=BLUE)
-    f.save('one-too-small', 'A unit square centred at o and a smaller '
+    f.save('04-one/too-small', 'A unit square centred at o and a smaller '
            'concentric disk of radius R less than R1: the four vertices of '
            'the square lie on the dashed circle of radius R1, outside the '
            'smaller disk')

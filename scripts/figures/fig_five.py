@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Draw the new figures of Chapter 8 (five squares) in docs/proof/figures/.
+"""Draw the new figures of Chapter 8 (five squares) in
+docs/proof/figures/08-five/.
 
     python3 scripts/figures/fig_five.py
 
@@ -24,8 +25,8 @@ CY = SQ5 - 1 - CX
 
 
 def save(f, name, title):
-    """Save a figure of this chapter; only names with the prefix five-."""
-    assert name.startswith('five-'), name
+    """Save a figure of this chapter, in its directory."""
+    assert name.startswith('08-five/'), name
     f.save(name, title)
 
 
@@ -96,7 +97,7 @@ def twelve_gon_plane():
     f.text((0.2, -0.6), 'φ ≤ 5/2', size=14, color=blue)
     f.text((0.98, 0.5), sb('P', '5', size=16), size=16, color=orange,
            anchor='start')
-    save(f, 'five-twelve-gon-plane', 'The positions of the disk centre o in '
+    save(f, '08-five/twelve-gon-plane', 'The positions of the disk centre o in '
          'the frame of a square S that keep S in the disk of radius root 5/2 '
          '(blue), inside the 12-gon P5 (orange), inside the dashed octagon of '
          'its first two sides; the dots are the points of tangency')
@@ -146,7 +147,7 @@ def third_side():
                          'corner of ' + sb('P', '5', size=14),
                          '≈ 72.8°')
     assert 72 < 72.7 < math.degrees(s1 - s0) < 72.9
-    save(f, 'five-third-side', 'Left: a square at (3/4, 3/4), where the '
+    save(f, '08-five/third-side', 'Left: a square at (3/4, 3/4), where the '
          'first two sides of the 12-gon meet, holds only about 55 degrees of '
          'the circle of radius 5/6, less than a fifth. Right: at the corner of '
          'the 12-gon it holds about 72.8 degrees, just more than a fifth')
@@ -210,7 +211,7 @@ def arcsine_region():
            anchor='start')
     f.text((0.03, 0.3), 'sum = π/10', size=12, italic=False, color=orange,
            anchor='start')
-    save(f, 'five-arcsine-region', 'The region of the arcsine-sum lemma in the '
+    save(f, '08-five/arcsine-region', 'The region of the arcsine-sum lemma in the '
          'plane of x and y, cut by x + y at most root 5 - 2 and 3x + y at '
          'most 1, split at x = 2/5 into the two cases of the proof; it lies '
          'below the curve where the arcsine sum equals pi/10')
@@ -263,7 +264,7 @@ def arc_cases():
         f.text(shift(o, (-0.04, 0.07)), 'o', anchor='end')
         f.text(shift(o, (a + 0.05, b - 0.08)), f'({a:g}, {b:g})', size=12,
                italic=False, color=blue, anchor='start')
-    save(f, 'five-arc-cases', 'Two exterior squares in their charts on the '
+    save(f, '08-five/arc-cases', 'Two exterior squares in their charts on the '
          'circle of radius 5/6. Left, the square at (0.8, 0.4): the arc runs '
          'from the lower edge at minus V to the near edge at A, length A + V. '
          'Right, the square at (1, 0): it runs from the lower edge at minus V '
@@ -319,7 +320,7 @@ def sweep_positions():
         f.text(shift(o, (-0.62, -0.72)), 'S', size=15, color=blue)
         f.text(shift(o, (0.3, 1.3)), pair(('a', 'S'), ('b', 'S'), 12) + ' = ('
                + f'{a:g}, {b:g})', size=12, italic=False, color=blue)
-    save(f, 'five-sweep-positions', 'Three containing squares in their charts, '
+    save(f, '08-five/sweep-positions', 'Three containing squares in their charts, '
          'with their radial sweeps shaded. Each slid copy, dashed, has its '
          'centre at distance 1 over root 2 from o, and its inscribed disk '
          'covers the arc of the circle of radius 5/6 of half-width pi/5 about '
@@ -376,7 +377,7 @@ def budget():
            size=12, italic=False, anchor='start')
     f.dot(o)
     f.text(shift(o, (0.05, -0.08)), 'o', anchor='start')
-    save(f, 'five-budget', 'Left: four arcs of more than a fifth of the circle '
+    save(f, '08-five/budget', 'Left: four arcs of more than a fifth of the circle '
          'and one of a fifth cannot be disjoint; laid end to end, the last '
          'overlaps the first. Right: in the plus the four outer squares hold '
          'about 73.7 degrees each, and the four gaps between them add up to '
@@ -423,7 +424,7 @@ def unit_contacts():
     f.text(shift(o, (0.05, -0.1)), 'o', anchor='start')
     f.text(shift(o, u(th + rad(225)), 0.42), sb('S', 'k', size=15),
            size=15, color=INK)
-    save(f, 'five-unit-contacts', 'Around a square centred at o, with the '
+    save(f, '08-five/unit-contacts', 'Around a square centred at o, with the '
          'dashed unit circle about o. Left: a square whose centre is at '
          'distance 1 from o but not on an axis of the centred square overlaps '
          'it. Right: the only squares at distance 1 that do not overlap it are '

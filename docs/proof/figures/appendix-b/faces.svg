@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="526" height="526" viewBox="0 0 526 526" role="img" aria-label="A square T in the cap beyond the line x = eta, turned by 0.2, inside the circle of radius R0. From the origin, the four directions u(0.2 + k pi/2), k = 0, 1, 2, 3, that can serve as its primary axis, each labelled with the coordinates (a, b) of the centre of T in that frame: (1.05, 0.08) for the frame facing the cap, drawn in blue, and (0.08, -1.05), (-1.05, -0.08) and (-0.08, 1.05) for the others, drawn grey">
+<title>A square T in the cap beyond the line x = eta, turned by 0.2, inside the circle of radius R0. From the origin, the four directions u(0.2 + k pi/2), k = 0, 1, 2, 3, that can serve as its primary axis, each labelled with the coordinates (a, b) of the centre of T in that frame: (1.05, 0.08) for the frame facing the cap, drawn in blue, and (0.08, -1.05), (-1.05, -0.08) and (-0.08, 1.05) for the others, drawn grey</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<circle cx="262.8" cy="262.8" r="236.4" fill="none" stroke="#1f2937" stroke-width="1.2"/>
+<text x="98.3" y="79.5" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">R<tspan dy="4.2" font-size="9.5">0</tspan></text>
+<line x1="317.0" y1="504.8" x2="317.0" y2="20.8" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="7 4"/>
+<text x="322.6" y="465.8" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">x = η</text>
+<polygon points="349.9,305.1 487.2,277.3 459.3,140.1 322.1,167.9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8" fill-opacity="1"/>
+<circle cx="404.6" cy="222.6" r="3.2" fill="#2563eb"/>
+<text x="422.8" y="176.4" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">T</text>
+<line x1="262.8" y1="262.8" x2="347.9" y2="245.6" stroke="#2563eb" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="359.0" y="261.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">(1.05, 0.08)</text>
+<line x1="262.8" y1="262.8" x2="245.6" y2="177.7" stroke="#9ca3af" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="244.4" y="158.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle">(0.08, −1.05)</text>
+<line x1="262.8" y1="262.8" x2="177.7" y2="280.0" stroke="#9ca3af" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="166.6" y="281.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="end" dominant-baseline="middle">(−1.05, −0.08)</text>
+<line x1="262.8" y1="262.8" x2="280.0" y2="347.9" stroke="#9ca3af" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="267.2" y="367.4" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle">(−0.08, 1.05)</text>
+<circle cx="262.8" cy="262.8" r="2.8" fill="#1f2937"/>
+<text x="255.8" y="251.6" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
+</svg>

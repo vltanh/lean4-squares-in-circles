@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="896" height="424" viewBox="0 0 896 424" role="img" aria-label="Left: the angles (s, d) of a missing south wing; the wall of Lemma 9.42 excludes s &lt;= d - pi/4 (grey); the dashed lines s = 0, 2/5 and 12/25 bound the angles of S on its own axis and on the south side of C and split Propositions D.11 and D.12. Right: the angles (v, d) of a missing west wing with W on its own axis: the wall v &lt;= pi/4 - d (grey), the gap d + v &lt;= 1 of Lemma D.5 (yellow), and the four parts of Proposition D.7 exclude everything but the small green domain of section D.9, with the three points of Lemma D.18 marked">
+<title>Left: the angles (s, d) of a missing south wing; the wall of Lemma 9.42 excludes s &lt;= d - pi/4 (grey); the dashed lines s = 0, 2/5 and 12/25 bound the angles of S on its own axis and on the south side of C and split Propositions D.11 and D.12. Right: the angles (v, d) of a missing west wing with W on its own axis: the wall v &lt;= pi/4 - d (grey), the gap d + v &lt;= 1 of Lemma D.5 (yellow), and the four parts of Proposition D.7 exclude everything but the small green domain of section D.9, with the three points of Lemma D.18 marked</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="88.0" y1="373.0" x2="420.0" y2="373.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="88.0" y1="373.0" x2="88.0" y2="61.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="101.7" y1="373.0" x2="101.7" y2="378.0" stroke="#1f2937" stroke-width="1"/>
+<text x="101.7" y="390.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">−2/5</text>
+<line x1="211.1" y1="373.0" x2="211.1" y2="378.0" stroke="#1f2937" stroke-width="1"/>
+<text x="211.1" y="390.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">0</text>
+<line x1="320.5" y1="373.0" x2="320.5" y2="378.0" stroke="#1f2937" stroke-width="1"/>
+<text x="320.5" y="390.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">2/5</text>
+<line x1="342.4" y1="373.0" x2="342.4" y2="378.0" stroke="#1f2937" stroke-width="1"/>
+<text x="342.4" y="390.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle"></text>
+<line x1="393.4" y1="373.0" x2="393.4" y2="378.0" stroke="#1f2937" stroke-width="1"/>
+<text x="393.4" y="390.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">2/3</text>
+<line x1="88.0" y1="373.0" x2="83.0" y2="373.0" stroke="#1f2937" stroke-width="1"/>
+<text x="79.0" y="373.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">1/2</text>
+<line x1="88.0" y1="267.9" x2="83.0" y2="267.9" stroke="#1f2937" stroke-width="1"/>
+<text x="79.0" y="267.9" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">3/5</text>
+<line x1="88.0" y1="162.8" x2="83.0" y2="162.8" stroke="#1f2937" stroke-width="1"/>
+<text x="79.0" y="162.8" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">7/10</text>
+<line x1="88.0" y1="73.0" x2="83.0" y2="73.0" stroke="#1f2937" stroke-width="1"/>
+<text x="79.0" y="73.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">π/4</text>
+<text x="422.0" y="390.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">s</text>
+<text x="88.0" y="49.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">d</text>
+<polygon points="88.0,373.0 133.0,373.0 211.1,73.0 88.0,73.0" fill="#e5e7eb" stroke="none" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="133.0,373.0 393.4,373.0 393.4,73.0 211.1,73.0" fill="#dcfce7" stroke="none" stroke-width="1.5" fill-opacity="1"/>
+<line x1="133.0" y1="373.0" x2="211.1" y2="73.0" stroke="#9333ea" stroke-width="2"/>
+<line x1="211.1" y1="373.0" x2="211.1" y2="73.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="320.5" y1="373.0" x2="320.5" y2="73.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="342.4" y1="373.0" x2="342.4" y2="73.0" stroke="#ea580c" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="109.9" y="141.7" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#9333ea" text-anchor="start" dominant-baseline="middle">wall</text>
+<text x="109.9" y="173.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#9333ea" text-anchor="start" dominant-baseline="middle">s ≤ d − π/4</text>
+<text x="345.1" y="336.2" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle">12/25</text>
+<text x="98.0" y="31.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">a missing south wing</text>
+<line x1="518.0" y1="373.0" x2="850.0" y2="373.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="518.0" y1="373.0" x2="518.0" y2="61.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="518.0" y1="373.0" x2="518.0" y2="378.0" stroke="#1f2937" stroke-width="1"/>
+<text x="518.0" y="390.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">0</text>
+<line x1="700.9" y1="373.0" x2="700.9" y2="378.0" stroke="#1f2937" stroke-width="1"/>
+<text x="700.9" y="390.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">2/5</text>
+<line x1="801.4" y1="373.0" x2="801.4" y2="378.0" stroke="#1f2937" stroke-width="1"/>
+<text x="801.4" y="390.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">31/50</text>
+<line x1="822.8" y1="373.0" x2="822.8" y2="378.0" stroke="#1f2937" stroke-width="1"/>
+<text x="822.8" y="390.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle"></text>
+<line x1="518.0" y1="373.0" x2="513.0" y2="373.0" stroke="#1f2937" stroke-width="1"/>
+<text x="509.0" y="373.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">1/2</text>
+<line x1="518.0" y1="267.9" x2="513.0" y2="267.9" stroke="#1f2937" stroke-width="1"/>
+<text x="509.0" y="267.9" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">3/5</text>
+<line x1="518.0" y1="225.8" x2="513.0" y2="225.8" stroke="#1f2937" stroke-width="1"/>
+<text x="509.0" y="225.8" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">16/25</text>
+<line x1="518.0" y1="73.0" x2="513.0" y2="73.0" stroke="#1f2937" stroke-width="1"/>
+<text x="509.0" y="73.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">π/4</text>
+<text x="852.0" y="390.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">v</text>
+<text x="518.0" y="49.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">d</text>
+<polygon points="518.0,373.0 648.5,373.0 518.0,73.0" fill="#e5e7eb" stroke="#1f2937" stroke-width="0.6" fill-opacity="1"/>
+<text x="550.0" y="309.9" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">wall</text>
+<polygon points="648.5,373.0 746.6,373.0 616.1,73.0 518.0,73.0" fill="#fde68a" stroke="#1f2937" stroke-width="0.6" fill-opacity="1"/>
+<text x="641.4" y="267.9" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">D.5</text>
+<polygon points="746.6,373.0 822.8,373.0 822.8,267.9 700.9,267.9" fill="#dbeafe" stroke="#1f2937" stroke-width="0.6" fill-opacity="1"/>
+<text x="774.0" y="320.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">(1)</text>
+<polygon points="700.9,267.9 728.3,267.9 643.5,73.0 616.1,73.0" fill="#ffedd5" stroke="#1f2937" stroke-width="0.6" fill-opacity="1"/>
+<text x="670.2" y="162.8" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">(2)</text>
+<polygon points="801.4,267.9 822.8,267.9 822.8,73.0 801.4,73.0" fill="#fce7f3" stroke="#1f2937" stroke-width="0.6" fill-opacity="1"/>
+<text x="812.9" y="162.8" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">(3)</text>
+<polygon points="728.3,267.9 801.4,267.9 801.4,225.8 710.0,225.8" fill="#cffafe" stroke="#1f2937" stroke-width="0.6" fill-opacity="1"/>
+<text x="760.3" y="246.9" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">(4)</text>
+<polygon points="710.0,225.8 801.4,225.8 801.4,73.0 643.5,73.0" fill="#dcfce7" stroke="#1f2937" stroke-width="0.6" fill-opacity="1"/>
+<line x1="648.5" y1="373.0" x2="518.0" y2="73.0" stroke="#9333ea" stroke-width="2"/>
+<circle cx="710.0" cy="225.8" r="3.4" fill="#16a34a"/>
+<circle cx="643.4" cy="72.7" r="3.4" fill="#16a34a"/>
+<circle cx="801.4" cy="225.8" r="3.4" fill="#16a34a"/>
+<text x="755.7" y="94.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle">§G.9</text>
+<text x="528.0" y="31.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">a missing west wing, W on its own axis</text>
+</svg>

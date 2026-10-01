@@ -1,1791 +1,1609 @@
-# Appendix B. The critical gap: set-up and the easy axes
+# Appendix B. Six squares: the normalization
 
 [Contents](README.md) · [← Appendix A](appendix-a.md) · [Appendix C →](appendix-c.md)
 
-Appendices B, C and D prove the critical-gap proposition
-([Proposition 9.17](seven.md#proposition-917-the-critical-gap)): for admissible states $(a, u)$ and $(A, v)$ and all
-signs $s, t \in \lbrace 1, -1\rbrace$, the support sums of the canonical pair at
-the gap $\frac\pi3$ satisfy $\sigma_k(\frac\pi3) \ge 0$ on every axis $k$, with
-equality only if the two states with these signs form a contact. The proof is a
-case analysis over *sectors*: an axis, a pair of signs, and the kinds of the two
-labels. This appendix lays out the sectors (§B.1), collects the tools that
-Appendices C and D share (§B.2 to §B.6), settles the four sectors that need no
-condition on the labels (§B.7), reduces capped labels to active ones (§B.8), and
-assembles the proof (§B.9). Appendix C treats the remaining sectors of the
-inward axis and Appendix D those of the forward axis.
+Appendices B to E hold the long estimates of [Chapter 9](09-six.md). This one
+proves five results of the normalization: the shallow support lines behind the
+central box, [Lemma 9.14](09-six.md#lemma-914-shallow-support-lines) (§B.1); the
+squares in a deep cap, [Lemma 9.17](09-six.md#lemma-917-deep-caps) (§B.2); the
+squares separated from the central square along their own axis,
+[Lemma 9.20](09-six.md#lemma-920-squares-separated-along-their-own-axis) (§B.3);
+the supports of a square in the disk of squared radius $Q_0$,
+[Lemma 9.26](09-six.md#lemma-926-supports-in-the-ceiling) (§B.4); and the west
+stress, which puts $D$ on its own axis,
+[Proposition 9.33](09-six.md#proposition-933-the-west-stress) (§B.5).
 
-We use the notation of Chapter 9. A *state* is a pair $(a, u)$ with
-$\frac12 \le a$ and $0 \le u \le a$, *admissible* if
-$\varphi(a, u) = (a + \frac12)^2 + (u + \frac12)^2 \le \frac{13}4$
-([Definition 9.4](seven.md#definition-94-states)); its remainder is $r(a, u) = 4 - 3a - 2u$
-([Definition 9.4](seven.md#definition-94-states)). The label is
-$\ell(a, u) = \min(\mathrm{axial}(u), \mathrm{side}(a, u), \frac\pi4)$ with
-$\mathrm{axial}(u) = \frac54 u$ and
-$\mathrm{side}(a, u) = \frac\pi6 + \frac13(u - \frac12) + \frac34(1 - a)$
-([Definition 9.6](seven.md#definition-96-labels-and-markers)). It is *axial*, *side* or *capped* when it equals the first,
-second or third term, and *active* when it is axial or side; since a minimum of
-three numbers is one of them, every label is axial, side or capped. The support
-function of the axis-parallel unit square centred at $(x, y)$ is
-$h(x, y, z) = x\cos z + y\sin z + \frac12(|\cos z| + |\sin z|)$
-([Definition 9.10](seven.md#definition-910-support-function)).
+We use the notation of Chapter 9: $h = \frac{\sqrt2}2$, the constants of the
+model ([Lemma 9.2](09-six.md#lemma-92-the-constants)) and of the ceiling
+([Definition 9.4](09-six.md#definition-94-the-ceiling),
+[Lemma 9.5](09-six.md#lemma-95-the-ceiling)), with the decimals
+$\bar R = 1.6886$, $\bar\rho = 1.11282$ and $\bar c = 0.11282$; the squares
+$Q_t(a, b)$, the charts in the ceiling and the widths $\omega(\delta)$ and
+thresholds $\tau(\delta) = \frac12 + \omega(\delta)$
+([Definition 9.9](09-six.md#definition-99-squares-in-a-frame)); the margins of a
+square against the containing square $C = Q(c)$
+([Definition 9.12](09-six.md#definition-912-separators-of-the-containing-square)),
+the pins ([Definition 9.18](09-six.md#definition-918-pins)) and the stresses of
+§9.4. We write $u(\theta) = (\cos\theta, \sin\theta)$, and a square *holds*
+a point when the point lies in its open square. The tools of
+[Appendix A](appendix-a.md) are used throughout, in particular the Taylor
+bounds of [Lemma A.7](appendix-a.md#lemma-a7-taylor-bounds), the polynomial
+brackets of [Lemma A.8](appendix-a.md#lemma-a8-polynomial-brackets) and the
+concave functions and harmonics of
+[§A.4](appendix-a.md#a4-concave-functions-and-harmonics), and so is
+$3.141592 < \pi < 3.141593$.
 
-In the canonical pair of two states $(a, u)$ and $(A, v)$ with signs $s, t$ at
-the gap $g$ ([Definition 9.12](seven.md#definition-912-canonical-pair-and-support-sums)), the square $S = Q(a, su)$ is the *source* and
-the square $T$, whose frame is turned by the relative phase
-$d = g + s\,\ell(a, u) - t\,\ell(A, v)$ and which sits at $(A, tv)$ in that
-frame, is the *target*. Accordingly $(a, u)$, $s$ and $\ell = \ell(a, u)$ are
-the source state, sign and label, and $(A, v)$, $t$ and $\ell' = \ell(A, v)$ the
-target ones. The support sums are
+## B.1 Proof of Lemma 9.14
+
+We prove [Lemma 9.14](09-six.md#lemma-914-shallow-support-lines), which keeps the
+free arc of [Proposition 9.15](09-six.md#proposition-915-the-central-box) out of
+the squares separated from $C$ along one of their own axes:
+
+> *Let $c_0 < c_x < \frac12$ and $0 \le c_y \le c_x$, and let $(q_1, q_2)$ be
+> a point with $0 < q_1 \le \frac9{10}$ and either $c_y \le c_0$ and
+> $-\frac9{40} \le q_2 \le \frac25$, or $c_y > c_0$ and $0 \le q_2 \le \frac35$.
+> If a unit vector $(x, y)$ satisfies
+> $c_x x + c_y y + \frac12(|x| + |y|) \le \rho_0 - \frac12$, then
+> $q_1 x + q_2 y \le c_x x + c_y y + \frac12(|x| + |y|)$.*
+
+Throughout this section $C = Q(c)$ with $c = (c_x, c_y)$ as in the lemma, and
 
 ```math
-\sigma_k(g) = h\left(a, su, k\tfrac\pi2\right) + h\left(A, tv, k\tfrac\pi2 + \pi - d\right)
-= \max_{\overline S}\,\langle \cdot, n_k\rangle - \min_{\overline T}\,\langle \cdot, n_k\rangle ,
-\qquad n_k = u\left(k\tfrac\pi2\right),
+L = \rho_0 - \tfrac12 , \qquad g(x, y) = c_x x + c_y y + \tfrac12\left(|x| + |y|\right) ,
 ```
 
-and in the chart of $S$ the normal $n_0$ points away from the disk centre (the
-*outward* axis), $n_2$ towards it (*inward*), $n_1$ in the direction of
-increasing angle, towards the marker of $T$ (*forward*), and $n_3$ the other way
-(*backward*).
+so that $0.61281 < L < 0.61282$ by [Lemma 9.5](09-six.md#lemma-95-the-ceiling)
+(2). For a unit vector $n = (x, y)$, $g(n)$ is the largest value of
+$\langle n, p\rangle$ over the points $p$ of $\overline C$, attained at a vertex
+of $C$: the line $\langle n, p\rangle = g(n)$ is the support line of $C$
+with outer normal $n$, at the distance $g(n)$ from the origin, which lies in
+$C$. We call it *shallow* when $g(n) \le L$. The lemma says that no shallow
+support line separates the point $q = (q_1, q_2)$ from $C$. We call its two
+cases the *regimes* (i), $c_y \le c_0$, and (ii), $c_y > c_0$. In both,
+$c_x + \frac12 > c_0 + \frac12 = L$.
 
-## B.1 The plan
+The points $q$ lie between the lines of the north and the south sides of $C$
+and east of its west side, so only the support lines whose normal points east
+can separate them. For these, the depth $L$ forces a normal close to the
+vertical (Figure B.1). The next lemma says this at the two eastern vertices of
+$C$.
 
-### Definition B.1 (the gap property)
+### Lemma B.1 (support lines at the eastern vertices)
 
-Let $(a, u)$ and $(A, v)$ be admissible states, $s, t \in \lbrace 1, -1\rbrace$
-signs and $k \in \lbrace 0, 1, 2, 3\rbrace$ an axis. The two states with the
-signs $s, t$ have the *gap property on the axis $k$* if
-$\sigma_k(\frac\pi3) \ge 0$, and $\sigma_k(\frac\pi3) = 0$ only if they form a
-contact ([Definition 9.15](seven.md#definition-915-contacts)). As above, a label is *active* if it is axial
-or side.
+Let $(x, w)$ be a unit vector with $x, w \ge 0$, and let $X > L$.
 
-So the critical-gap proposition ([Proposition 9.17](seven.md#proposition-917-the-critical-gap)) says that any two
-admissible states, with any signs, have the gap property on every axis.
+1. If $Xx + \frac12 w \le L$, then $x < \frac{21}{100}$.
+2. If $Y \ge 1 - L$ and $Xx + Yw \le L$, then $x < \frac{43}{100}$.
+3. If $0 \le Y < 1 - L$, $X + Y \ge 1$ and $w < x$, then $Xx + Yw > L$.
 
-*Lean:
-[`Seven.PairProperty`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L69),
-[`Seven.ActiveLabel`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L65).*
+In use, $X = c_x + \frac12$ and $Y$ is $\frac12$ or $\frac12 - c_y$, and
+$Xx + Yw$ bounds or equals the support $g$ along $(x, w)$ or $(x, -w)$: the
+north-east vertex of $C$ is $(c_x + \frac12, c_y + \frac12)$ and the south-east
+vertex is $(c_x + \frac12, c_y - \frac12)$.
 
-### Lemma B.2 (zeros at contacts)
+*Proof.* (1) and (2). If $x = 0$ there is nothing to prove, so let $x > 0$.
+Put $\beta = \frac12$ in (1) and $\beta = 1 - L$ in (2). In both cases the
+hypothesis gives $Xx + \beta w \le L$, and $Xx > Lx$, so $\beta w < L(1 - x)$;
+in particular $x < 1$. Squaring, with $w^2 = 1 - x^2 = (1 - x)(1 + x)$, and
+dividing by $1 - x > 0$ gives $\beta^2(1 + x) < L^2(1 - x)$, that is
 
-Let $(a, u)$ and $(A, v)$ be admissible states.
+```math
+x < \frac{L^2 - \beta^2}{L^2 + \beta^2} .
+```
 
-1. If $r(a, u) = 0$, then $(a, u) = (1, \frac12)$, the side state.
-2. If $v = 0$, then $(A, v)$ is an axial state:
-   $\frac12 \le A \le \sqrt3 - \frac12$.
-3. $\ell(1, \frac12) = \frac\pi6$, and every axial state has label $0$.
-4. If $\sigma_k(\frac\pi3) > 0$ for the signs $s, t$, then the two states with
-   these signs have the gap property on the axis $k$.
-5. Let $t$ be a sign, $k$ an axis and $c > 0$. Suppose that the label of
-   $(A, v)$ is axial, put $e = \ell(a, u) - t\,\ell(A, v) - \frac\pi6$, and
-   suppose that for the signs $(1, t)$
+For $\beta = \frac12$ the right side is $1 - \frac2{4L^2 + 1}$, and
+$4L^2 < 4\cdot 0.61282^2 < 1.5022$, so it is less than
+$1 - \frac2{2.5022} < 0.2008$. For $\beta = 1 - L$ it is
 
-   ```math
-   \tfrac2{15}\, r(a, u) + c\,|e| \le \sigma_k\left(\tfrac\pi3\right) .
-   ```
+```math
+\frac{2L - 1}{2\left(L - \frac12\right)^2 + \frac12} < \frac{0.22564}{2\cdot 0.11281^2 + \frac12} < \frac{0.22564}{0.52545} < 0.4295 .
+```
 
-   Then the two states with the signs $(1, t)$ have the gap property on the axis
-   $k$, and $\sigma_k(\frac\pi3) = 0$ only if $(a, u)$ is the side state and
-   $(A, v)$ is axial.
+(3) Here $x > w \ge 0$ and $x^2 + w^2 = 1$, so $x^2 > \frac12$ and
+$x > \frac7{10}$. Also $(x + w)^2 = 1 + 2xw \ge 1$, so $x + w \ge 1$ and
+$0 < x - w \le (x - w)(x + w) = 2x^2 - 1$. As $X \ge 1 - Y$, $x > 0$, $Y \ge 0$
+and $Y < 1 - L$,
 
-*Proof.* Parts (1), (2) and (3) are parts (2), (3) and (1) of [Lemma 9.16](seven.md#lemma-916-contacts), and
-part (5) is its part (5), stated with the gap property of Definition B.1.
-Part (4) holds because a positive number is nonnegative and not zero.
+```math
+Xx + Yw \ge (1 - Y)x + Yw = x - Y(x - w) \ge x - Y\left(2x^2 - 1\right) > x - (1 - L)\left(2x^2 - 1\right) ,
+```
+
+and, as one checks by expanding,
+
+```math
+x - (1 - L)\left(2x^2 - 1\right) - L = (1 - x)\left(2(1 - L)x + 1 - 2L\right) \ge 0 ,
+```
+
+because $x \le 1$ and
+$2(1 - L)x + 1 - 2L > \frac75(1 - L) + 1 - 2L = \frac{12 - 17L}5 > 0$.
 $\square$
 
 *Lean:
-[`Seven.PairProperty.of_pos`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L73),
-[`Seven.PairProperty.of_side_axial`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L80),
-[`Seven.remainder_zero`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L24),
-[`Seven.axial_of_transverse_zero`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L31),
-[`Seven.side_label`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L34),
-[`Seven.axial_label`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L41).*
+[`Six.Normalization.first_quadrant_steep`](../../SquaresInCircles/Six/Containing.lean#L62),
+[`Six.Normalization.fourth_quadrant_steep`](../../SquaresInCircles/Six/Containing.lean#L76),
+[`Six.Normalization.fourth_quadrant_flat`](../../SquaresInCircles/Six/Containing.lean#L94).*
 
-![Four copies of the same canonical pair: a blue source square S with its centre to the right of the disk centre o and a green target square T turned by about 71 degrees above it, overlapping S at a corner, with dashed rays from o to the two markers on a faint unit circle. In each copy a grey line in the direction of one normal carries the blue shadow of S and the green shadow of T, and an orange bracket marks the support sum: on the outward and backward axes it spans both shadows, on the forward and inward axes it is the overlap of the shadows](figures/appb-pair-axes.svg)
+So in regime (i) a shallow support line with a normal in the first quadrant
+has its normal within $\arcsin\frac{21}{100} \approx 12°$ of the north, and one
+with a normal in the fourth quadrant within $\arcsin\frac{43}{100} \approx 25°$
+of the south. In regime (ii) the first quadrant has no shallow normal at all,
+since both coordinates of the north-east vertex exceed $L$, and the fourth
+quadrant has none closer to the east than to the south.
 
-*Figure B.1.* A canonical pair at the gap $\frac\pi3$, with the source state
-$(0.95, 0.35)$, the target state $(1, 0.2)$ and both signs $1$. In the panel of
-the axis $k$ the shadows of $S$ (blue) and $T$ (green) on the line of $n_k$ are
-drawn beside the squares, and the orange bracket has the length
-$\sigma_k(\frac\pi3)$: it runs from the lowest point of $T$ to the highest point
-of $S$ along $n_k$. The sum would be negative if the shadows were disjoint with
-$T$ ahead of $S$ along $n_k$.
+![Two panels, regimes (i) and (ii) of Lemma 9.14. In each, the containing square C near the origin o, the dashed circle of radius rho0 - 1/2, the dotted circle of radius 9/10 with the free arc in green, and the green rectangle of the points q allowed by the lemma. Thin lines are the shallow support lines of C: grey ones with a normal pointing west pass west of the rectangle; in regime (i) blue ones with a normal in the first quadrant pass above it and orange ones with a normal in the fourth quadrant below it; in regime (ii) only orange lines, nearly horizontal, remain below it](figures/appendix-b/shallow.svg)
 
-The sectors are listed in the table below. The labels $\ell$ and $\ell'$ are
-those of the source and the target; *any* means that the row holds for all
-admissible states, whatever their labels. A row marked *positive* proves
-$\sigma_k(\frac\pi3) > 0$; the other rows prove the gap property and name the
-only contact at which the sum can vanish (the contacts of
-[Definition 9.15](seven.md#definition-915-contacts), numbered (1) to (3) as there: two side states with
-signs $(-1, 1)$; a side state and an axial state with source sign $1$; an axial
-state and a side state with target sign $-1$).
+*Figure B.1.* Lemma 9.14 in its two regimes, for $c = (0.16, 0.03)$ (left)
+and $c = (0.3, 0.2)$ (right). The thin lines are the shallow support lines of
+$C$, at distance at most $L = \rho_0 - \frac12$ (dashed circle) from the
+origin; the green rectangle holds the points $q$ of the lemma, and the green
+arc is the free arc of Proposition 9.15 on $\Gamma_{9/10}$ (dotted). The lines
+with a normal pointing west (grey) pass west of the rectangle. In regime (i)
+the lines with a normal in the first quadrant (blue) pass above it and those
+with a normal in the fourth quadrant (orange) below it. In regime (ii) only
+orange lines with a normal closer to the south than to the east remain. In
+each family the bold line is the shallow line whose normal is closest to the
+east.
 
-| axis | signs $(s, t)$ | labels $\ell$, $\ell'$ | result | statement |
-| --- | --- | --- | --- | --- |
-| $0$, outward | all | any, any | positive | Proposition B.26 |
-| $3$, backward | all | any, any | positive | Proposition B.27 |
-| $2$, inward | $(-1, 1)$, $(-1, -1)$ | any, any | positive | Proposition B.28 |
-| $2$, inward | $(1, 1)$ | axial, axial | positive | ([Proposition C.6](appendix-c.md#proposition-c6-two-axial-labels)) |
-| $2$, inward | $(1, 1)$ | side, axial | zero only at contact (2) | ([Proposition C.7](appendix-c.md#proposition-c7-side-source-axial-target)) |
-| $2$, inward | $(1, 1)$ | any, side | positive | ([Proposition C.12](appendix-c.md#proposition-c12-side-target)) |
-| $2$, inward | $(1, -1)$ | active, active | zero only at contact (2) | ([Theorem C.32](appendix-c.md#theorem-c32-opposite-signs-with-active-labels)) |
-| $1$, forward | $(1, 1)$ | any, any | positive | Proposition B.29 |
-| $1$, forward | $(1, -1)$ | any, active | zero only at contact (3) | ([Proposition D.7](appendix-d.md#proposition-d7-target-sign-negative)) |
-| $1$, forward | $(-1, -1)$ | axial, active | zero only at contact (3) | ([Proposition D.7](appendix-d.md#proposition-d7-target-sign-negative)) |
-| $1$, forward | $(-1, -1)$ | side, active | positive | ([Proposition D.26](appendix-d.md#proposition-d26-both-signs-negative)) |
-| $1$, forward | $(-1, 1)$ | active, active | zero only at contact (1) | ([Proposition D.16](appendix-d.md#proposition-d16-opposite-signs)) |
+*Proof of [Lemma 9.14](09-six.md#lemma-914-shallow-support-lines).* Let $(x, y)$
+be a unit vector with $g(x, y) \le L$; we show that
+$g(x, y) - q_1x - q_2y \ge 0$. First, $|q_2 - c_y| < \frac12$ in both
+regimes: in (i), $-\frac9{40} - c_0 \le q_2 - c_y \le \frac25$, and
+$\frac9{40} + c_0 < 0.34$; in (ii),
+$-\frac12 < -c_y \le q_2 - c_y \le \frac35 - c_0 < 0.49$.
 
-The rows cover every sector in which both labels are active (Proposition B.32),
-and Proposition B.31 reduces capped labels to active ones: a capped state is a
-convex combination of the three vertices of a triangle, at which the labels are
-active, and every support sum is affine in a state of constant label.
-
-## B.2 Support sums in closed form
-
-### Lemma B.3 (Cauchy–Schwarz on the disk)
-
-Let $X, Y$ be real numbers with $X^2 + Y^2 \le \frac{13}4$, and let $p, r, c$ be
-real numbers with $c \ge 0$.
-
-1. $(pX + rY)^2 \le \frac{13}4(p^2 + r^2)$.
-2. If $\frac{13}4(p^2 + r^2) \le c^2$, then $pX + rY \ge -c$. If
-   $\frac{13}4(p^2 + r^2) < c^2$, then $pX + rY > -c$.
-
-For an admissible state $(A, v)$ the point $(X, Y) = (A + \frac12, v + \frac12)$
-satisfies $X^2 + Y^2 = \varphi(A, v) \le \frac{13}4$, so the lemma bounds linear
-forms in $A + \frac12$ and $v + \frac12$ from below.
-
-*Proof.* (1) By Lagrange's identity,
-$(pX + rY)^2 + (pY - rX)^2 = (p^2 + r^2)(X^2 + Y^2) \le \frac{13}4(p^2 + r^2)$.
-(2) By (1), $|pX + rY| \le \sqrt{\frac{13}4(p^2 + r^2)}$, which is at most $c$,
-or less than $c$, respectively. $\square$
-
-*Lean: [`dot_ge`](../../SquaresInCircles/Common/DiskSupport.lean#L30),
-[`dot_gt`](../../SquaresInCircles/Common/DiskSupport.lean#L34),
-[`dot_sq_le`](../../SquaresInCircles/Common/DiskSupport.lean#L24).*
-
-### Lemma B.4 (lower bounds for the support)
-
-1. Let $a, b$ be real numbers such that $(a, |b|)$ is an admissible state. Then
-   $h(a, b, z) > -\frac{37}{50}$ for every real $z$.
-2. Let $(a, u)$ be admissible and $s$ a sign. Then $(a, |su|) = (a, u)$ is
-   admissible, and for every real $x$ with
-   $|x - s\,\ell(a, u)| \le \frac12$ and every real $z$,
+1. *$x \le 0$.* Then
 
    ```math
-   \cos(z - x) \le h(a, su, z) .
+   g(x, y) - q_1x - q_2y = \left(q_1 + \tfrac12 - c_x\right)(-x) + \tfrac12|y| - (q_2 - c_y)\,y \ge 0 ,
    ```
 
-Part (1) says that the square $Q(a, b)$ has a point beyond the line
-$\langle\cdot, u(z)\rangle = -\frac{37}{50}$ in every direction $u(z)$, because
-its centre lies within $\sqrt3 - \frac12 < \frac{31}{25}$ of the origin.
-Part (2) says that the support of $Q(a, su)$ is at least that of each point
-$u(x) = (\cos x, \sin x)$ of the marker arc about the direction
-$s\,\ell(a, u)$.
-
-*Proof.* Part (1) is [Lemma 9.11](seven.md#lemma-911-the-support-function) (3). In part (2), $|su| = u$, and the
-inequality is Lemma 9.11 (2). $\square$
-
-*Lean: [`Seven.support_lower`](../../SquaresInCircles/Seven/Exterior.lean#L228),
-[`Seven.sign_admissible`](../../SquaresInCircles/Seven/Pair/Frame.lean#L44),
-[`Seven.marker_arc_support`](../../SquaresInCircles/Seven/Pair/Frame.lean#L50).*
-
-### Lemma B.5 (support sums in closed form)
-
-Let $(a, u)$ and $(A, v)$ be states, $s, t$ signs and $g$ real, and let
-$d = g + s\,\ell(a, u) - t\,\ell(A, v)$.
-
-1. The four support sums are
+   since $q_1 > 0 > c_x - \frac12$ and $|(q_2 - c_y)y| \le \frac12|y|$. Here
+   the hypothesis $g(x, y) \le L$ is not needed.
+2. *$x \ge 0$ and $y \ge 0$.* In regime (ii), $c_x + \frac12$ and
+   $c_y + \frac12$ both exceed $L$, so
+   $g(x, y) = (c_x + \frac12)x + (c_y + \frac12)y > L(x + y) \ge L$, as
+   $(x, y) \ne 0$ and $x + y \ge \sqrt{x^2 + y^2} = 1$: this case does not
+   occur. In regime (i), $g(x, y) \ge (c_x + \frac12)x + \frac12 y$, and
+   Lemma B.1 (1) with $X = c_x + \frac12$ and $w = y$ gives
+   $x < \frac{21}{100}$, so $y = \sqrt{1 - x^2} > \frac9{10}$. As
+   $c_x + \frac12 - q_1 > c_0 - \frac25 > -\frac3{10}$ and
+   $c_y + \frac12 - q_2 \ge \frac1{10}$,
 
    ```math
-   \begin{aligned}
-   \sigma_0(g) &= a + \tfrac12 + h(A, tv, \pi - d), &
-   \sigma_1(g) &= \tfrac12 + su + h\left(A, tv, \tfrac{3\pi}2 - d\right),\\
-   \sigma_2(g) &= \tfrac12 - a + h(A, tv, 2\pi - d), &
-   \sigma_3(g) &= \tfrac12 - su + h\left(A, tv, \tfrac{5\pi}2 - d\right).
-   \end{aligned}
+   g(x, y) - q_1x - q_2y = \left(c_x + \tfrac12 - q_1\right)x + \left(c_y + \tfrac12 - q_2\right)y \ge \tfrac1{10}(y - 3x) > \tfrac1{10}\left(\tfrac9{10} - \tfrac{63}{100}\right) > 0 .
    ```
 
-2. For all real $x, y, w$,
+3. *$x \ge 0 \ge y$.* Put $w = -y$, $X = c_x + \frac12 > L$ and
+   $Y = \frac12 - c_y > 0$, so that $g(x, y) = Xx + Yw$ and
+   $g(x, y) - q_1x - q_2y = (X - q_1)x + (Y + q_2)w$. In regime (i),
+   $Y \ge \frac12 - c_0 = 1 - L$, and Lemma B.1 (2) gives
+   $x < \frac{43}{100}$, so $w > \sqrt{1 - 0.1849} > \frac9{10}$. As
+   $X - q_1 > -\frac3{10}$ and $Y + q_2 \ge \frac12 - c_0 - \frac9{40} > \frac3{20}$,
 
    ```math
-   \begin{aligned}
-   h\left(x, y, \tfrac{3\pi}2 - w\right) &= -x\sin w - y\cos w + \tfrac12(|\sin w| + |\cos w|),\\
-   h(x, y, 2\pi - w) &= x\cos w - y\sin w + \tfrac12(|\cos w| + |\sin w|).
-   \end{aligned}
+   (X - q_1)x + (Y + q_2)w \ge \tfrac3{20}(w - 2x) > \tfrac3{20}\left(\tfrac9{10} - \tfrac{86}{100}\right) > 0 .
    ```
 
-3. Let $c = (c_1, c_2) = (A\cos d - tv\sin d,\ A\sin d + tv\cos d)$ and
-   $W = \frac12(1 + |\cos d| + |\sin d|)$. Then
+   In regime (ii), $Y < \frac12 - c_0 = 1 - L$ and
+   $X + Y = 1 + c_x - c_y \ge 1$. If $w < x$, Lemma B.1 (3) gives
+   $g(x, y) > L$: this does not occur. If $w \ge x$, then, as $q_2 \ge 0$
+   and $Y > 0$,
 
    ```math
-   \sigma_0(g) = W - (c_1 - a), \quad \sigma_1(g) = W - (c_2 - su), \quad
-   \sigma_2(g) = W + (c_1 - a), \quad \sigma_3(g) = W + (c_2 - su).
+   (X - q_1)x + (Y + q_2)w \ge (X - q_1 + Y)x = \left(1 + c_x - c_y - q_1\right)x \ge \tfrac1{10}x \ge 0 . \qquad \square
    ```
 
-In (3), $c$ is the centre of $T$ in the chart of $S$, since $T$ sits at
-$(A, tv)$ in the frame turned by $d$, and $(a, su)$ is the centre of $S$. The
-number $W$ is the sum of the half-widths of $S$ and $T$ in the directions $n_k$:
-$\frac12$ for $S$ and $\frac12(|\cos d| + |\sin d|)$ for $T$. So $\sigma_k(g)$
-is $W$ minus the offset of the centre of $T$ from that of $S$ along $n_k$, as
-Figure B.1 shows.
+*Lean:
+[`Six.Normalization.shallow_support`](../../SquaresInCircles/Six/Containing.lean#L119),
+[`Six.Normalization.FreeRegime`](../../SquaresInCircles/Six/Containing.lean#L112).*
 
-*Proof.* (1) For $\theta = k\frac\pi2$ one of $|\cos\theta|$, $|\sin\theta|$ is
-$1$ and the other $0$, so
-$h(a, su, \theta) = a\cos\theta + su\sin\theta + \frac12$, which is
-$a + \frac12$, $\frac12 + su$, $\frac12 - a$, $\frac12 - su$ for
-$k = 0, 1, 2, 3$. The second arguments $k\frac\pi2 + \pi - d$ are $\pi - d$,
-$\frac{3\pi}2 - d$, $2\pi - d$ and $\frac{5\pi}2 - d$.
+## B.2 Proof of Lemma 9.17
 
-(2) $\cos(\frac{3\pi}2 - w) = -\sin w$, $\sin(\frac{3\pi}2 - w) = -\cos w$,
-$\cos(2\pi - w) = \cos w$ and $\sin(2\pi - w) = -\sin w$; the absolute values do
-not see the signs.
+We prove [Lemma 9.17](09-six.md#lemma-917-deep-caps):
 
-(3) We have $\cos(\pi - d) = -\cos d$ and $\sin(\pi - d) = \sin d$, and, since
-$\frac{5\pi}2 - d = 2\pi + (\frac\pi2 - d)$, $\cos(\frac{5\pi}2 - d) = \sin d$
-and $\sin(\frac{5\pi}2 - d) = \cos d$. With these and part (2) for $w = d$, part
-(1) becomes
+> *Let $\eta \ge r_0$, and let $T = Q_t(a, b)$ with
+> $(|a| + \frac12)^2 + (|b| + \frac12)^2 \le Q_0$ lie beyond the line
+> $x = \eta$: $x_t(a, b) \ge \eta + \omega(t)$.*
+>
+> 1. *If $|t| \le \frac\pi4$, then $|t| < \frac25$, $|b| < a$,
+>    $\eta + \frac12 \le a \le \rho_0$, $|b| \le U_0$ and $|b| < \frac12$,
+>    and $T$ contains the point $(\eta + \frac12, 0)$.*
+> 2. *If moreover $\eta \ge \frac12$, then $|t| < 0.203$.*
+> 3. *If $a \ge 0$ and $|b| < \frac12$, then $T$ faces the cap: $t \equiv v$
+>    modulo $2\pi$ for a $v$ with $|v| < \frac25$.*
+
+The vertices of $T$ are
+$c_T + \frac12\epsilon_1 u(t) + \frac12\epsilon_2 u(t + \frac\pi2)$ with
+$\epsilon_1, \epsilon_2 = \pm1$; their first coordinates are
+$x_t(a, b) + \frac12(\epsilon_1\cos t - \epsilon_2\sin t)$, and the least of
+them is $x_t(a, b) - \omega(t)$. So the hypothesis says that $\overline T$ lies
+in the half-plane $x \ge \eta$. The hypothesis and the conclusions depend on
+$t$ only through $\cos t$ and $\sin t$. The reflection
+$(x, y) \mapsto (x, -y)$ maps the square $Q_t(a, b)$ onto the square
+$Q_{-t}(a, -b)$, and it keeps $x_{-t}(a, -b) = x_t(a, b)$,
+$\omega(-t) = \omega(t)$, the condition on $(|a|, |b|)$, the line $x = \eta$
+and the point $(\eta + \frac12, 0)$. So for $|t| \le \frac\pi4$ we may assume
+$t \ge 0$.
+
+How deep can a cap be that holds a square turned by $s$ against its normal?
+In the frame of the square, the hypothesis bounds $\eta$ by the support of
+the far corner $(|a| + \frac12, |b| + \frac12)$ along $(\cos s, \sin s)$, less
+$\cos s + \sin s$; and the far corner ranges over the part $B \ge \frac12$ of
+the disk $A^2 + B^2 \le Q_0$. A linear function on that part is largest at the
+corner $(\rho_0 + \frac12, \frac12)$ while its direction lies below the
+direction of the corner, and at the point of the circle in its direction
+beyond it.
+
+### Definition B.2 (the cap depth)
+
+Let $\vartheta = \arcsin\frac1{2R_0}$, the *switch angle*, and for
+$0 \le s \le \frac\pi4$ let
 
 ```math
-\begin{aligned}
-\sigma_0(g) &= a + \tfrac12 - A\cos d + tv\sin d + \tfrac12(|\cos d| + |\sin d|) = W - (c_1 - a),\\
-\sigma_1(g) &= \tfrac12 + su - A\sin d - tv\cos d + \tfrac12(|\sin d| + |\cos d|) = W - (c_2 - su),\\
-\sigma_2(g) &= \tfrac12 - a + A\cos d - tv\sin d + \tfrac12(|\cos d| + |\sin d|) = W + (c_1 - a),\\
-\sigma_3(g) &= \tfrac12 - su + A\sin d + tv\cos d + \tfrac12(|\sin d| + |\cos d|) = W + (c_2 - su).
-\end{aligned}
+\mathrm{cap}(s) = \begin{cases} \left(\rho_0 - \frac12\right)\cos s - \frac12\sin s & \text{if } s \le \vartheta, \\ R_0 - \cos s - \sin s & \text{if } s > \vartheta . \end{cases}
 ```
 
+As $(\rho_0 + \frac12)^2 + \frac14 = Q_0$
+([Lemma 9.5](09-six.md#lemma-95-the-ceiling) (3)), the corner
+$(\rho_0 + \frac12, \frac12)$ lies on the circle of radius $R_0$ in the
+direction $\vartheta$: $\cos\vartheta = (\rho_0 + \frac12)/R_0$ and
+$\sin\vartheta = \frac1{2R_0}$. The two expressions agree at $s = \vartheta$,
+and so do their derivatives: their differences are
+$(\rho_0 + \frac12)\cos\vartheta + \frac12\sin\vartheta - R_0$ and
+$-(\rho_0 + \frac12)\sin\vartheta + \frac12\cos\vartheta$, both $0$. Moreover
+$0.29 < \vartheta < \frac25$: on the one hand
+$\vartheta \ge \sin\vartheta = \frac1{2R_0}$ and
+$\frac1{2R_0} > \frac1{3.3772} > 0.29$; on the other hand
+$\sin\frac25 \ge \frac25 - \frac16(\frac25)^3 > 0.389 > \frac13 > \sin\vartheta$,
+where the sine increases on $[0, \frac\pi2]$. Numerically
+$\vartheta \approx 0.30062$.
+
+*Lean:
+[`Six.Normalization.capSwitch`](../../SquaresInCircles/Six/Normalization/Caps.lean#L29),
+[`Six.Normalization.capFirst`](../../SquaresInCircles/Six/Normalization/Caps.lean#L32),
+[`Six.Normalization.capSecond`](../../SquaresInCircles/Six/Normalization/Caps.lean#L36),
+[`Six.Normalization.capDepth`](../../SquaresInCircles/Six/Normalization/Caps.lean#L40),
+[`Six.Normalization.capSwitch_gt_29_100`](../../SquaresInCircles/Six/Normalization/Caps.lean#L54).*
+
+### Lemma B.3 (the cap depth bounds the cap)
+
+Let $|t| \le \frac\pi4$ and $(|a| + \frac12)^2 + (|b| + \frac12)^2 \le Q_0$,
+and let $\eta$ be a number with $x_t(a, b) \ge \eta + \omega(t)$. Then
+$\eta \le \mathrm{cap}(|t|)$.
+
+*Proof.* Put $s = |t|$. Then $\cos t = \cos s \ge 0$,
+$|\sin t| = \sin s \ge 0$, $\omega(t) = \frac12(\cos s + \sin s)$ and
+$x_t(a, b) = a\cos t - b\sin t \le |a|\cos s + |b|\sin s$, so
+
+```math
+\eta \le |a|\cos s + |b|\sin s - \tfrac12\left(\cos s + \sin s\right) . \tag{B.1}
+```
+
+If $s \le \vartheta$, then $\tan s \le \tan\vartheta = \frac{1/2}{\rho_0 + 1/2}$,
+that is $(\rho_0 + \frac12)\sin s \le \frac12\cos s$, and
+[Lemma 9.25](09-six.md#lemma-925-supports-of-a-square-in-a-disk) (3), with
+$R = R_0$, $U = \cos s$ and $V = \sin s$, applied to the numbers $|a|$ and
+$-|b|$, gives $|a|\cos s + |b|\sin s \le \rho_0\cos s$; with (B.1),
+$\eta \le \mathrm{cap}(s)$. If $s > \vartheta$, Lemma 9.25 (1) with the same
+$U$ and $V$, applied to $|a|$ and $|b|$, gives
+$|a|\cos s + |b|\sin s \le R_0 - \frac12(\cos s + \sin s)$, and again
+$\eta \le \mathrm{cap}(s)$. $\square$
+
+*Lean:
+[`Six.Normalization.cap_support_bound_signed`](../../SquaresInCircles/Six/Normalization/Caps.lean#L105),
+[`Six.disk_corner_support`](../../SquaresInCircles/Six/Supports.lean#L85).*
+
+The bound is sharp: for $s \le \vartheta$ the square with $(a, b) = (\rho_0, 0)$,
+whose far edge has both corners on the circle, attains it, and for
+$s > \vartheta$ the square whose far vertex lies on the circle in the direction
+of the normal.
+
+### Lemma B.4 (the cap depth at large angles)
+
+Let $0 \le s \le \frac\pi4$ and $\eta \le \mathrm{cap}(s)$.
+
+1. If $\eta \ge r_0$, then $s < \frac25$.
+2. If $\eta \ge \frac12$, then $s < \frac14$, and even $s < 0.203$.
+
+*Proof.* On $[0, \frac\pi4]$ both expressions of $\mathrm{cap}$ decrease, as
+$\cos s$ decreases, $\sin s$ increases and $\cos s + \sin s$ does not decrease
+([Lemma A.15](appendix-a.md#lemma-a15-small-angles) (3)). We use $\rho_0 - \frac12 < 0.61282$,
+$R_0 < 1.6886$, and the bounds $\cos x \ge 1 - \frac{x^2}2$ and
+$\sin x \ge x - \frac{x^3}6$ for $x \ge 0$ from the proof of
+[Lemma A.7](appendix-a.md#lemma-a7-taylor-bounds).
+
+(1) Let $s \ge \frac25$. Then $s > \vartheta$, and, as
+$\cos\frac25 \ge \frac{23}{25}$ and $\sin\frac25 \ge \frac25 - \frac4{375} > 0.3893$,
+
+```math
+\mathrm{cap}(s) \le R_0 - \cos\tfrac25 - \sin\tfrac25 < 1.6886 - 0.92 - 0.3893 < 0.3794 < r_0 ,
+```
+
+so $\eta < r_0$.
+
+(2) Let $s \ge \frac14$; recall $\sin\frac14 \ge \frac14 - \frac1{384} > 0.2473$
+and $\cos\frac14 \ge \frac{31}{32}$. If $s \le \vartheta$, then
+$\mathrm{cap}(s) \le \rho_0 - \frac12 - \frac12\sin\frac14 < 0.61282 - 0.1236 < \frac12$;
+if $s > \vartheta$, then
+$\mathrm{cap}(s) \le R_0 - \cos\frac14 - \sin\frac14 < 1.6886 - 0.96875 - 0.2473 < 0.473$.
+Let next $0.203 \le s < \frac14$. Then $s < \vartheta$, and by Lemma A.7 (1)
+and (4), with $x = 0.203$,
+$\cos x \le 1 - \frac{x^2}2 + \frac{x^4}{24} < 0.979467$ and
+$\sin x \ge x - \frac{x^3}6 + \frac{x^5}{120} - \frac{x^7}{5040} > 0.201608$,
+so
+
+```math
+\mathrm{cap}(s) \le \left(\rho_0 - \tfrac12\right)\cos 0.203 - \tfrac12\sin 0.203 < 0.61282 \cdot 0.979467 - \tfrac12 \cdot 0.201608 < 0.49944 .
+```
+
+In both cases $\eta < \frac12$. $\square$
+
+*Lean:
+[`Six.Normalization.cap_angle_lt_two_fifths`](../../SquaresInCircles/Six/Normalization/Caps.lean#L159),
+[`Six.Normalization.cap_angle_lt_quarter`](../../SquaresInCircles/Six/Normalization/Caps.lean#L185),
+[`Six.Normalization.cap_angle_small`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L26).*
+
+The thresholds are close: $\mathrm{cap}$ falls through $\frac12$ at about
+$0.20207$ and through $r_0$ at about $0.38320$ (Figure B.2).
+
+![The graph of the cap depth for s from 0 to pi/4: a blue branch, (rho0 - 1/2) cos s - 1/2 sin s, from rho0 - 1/2 at s = 0 down to the switch angle theta, where an orange branch, R0 - cos s - sin s, takes over, the two touching there; dashed, each branch continued a little beyond the switch. The graph crosses the dashed level 1/2 at about 0.2021, marked, just before the tick 0.203, and the dashed level r0 at about 0.3832, just before the tick 2/5](figures/appendix-b/cap-depth.svg)
+
+*Figure B.2.* The cap depth of Definition B.2: the depth of the deepest cap
+that holds a square turned by $s$ against the normal of its line. Below the
+switch angle $\vartheta$ (blue) the square touches the circle with both
+corners of its far edge, beyond it (orange) with its far vertex; the two
+branches touch at $\vartheta$ (dashed, their continuations). The depth falls
+below $\frac12$ at about $0.2021$ and below $r_0$ at about $0.3832$, which are
+Lemma B.4 (2) and (1).
+
+### Lemma B.5 (a square in a deep cap)
+
+Let $\eta \ge r_0$, $|t| \le \frac\pi4$,
+$(|a| + \frac12)^2 + (|b| + \frac12)^2 \le Q_0$ and
+$x_t(a, b) \ge \eta + \omega(t)$. Then $|t| < \frac25$, $|b| < a$,
+$\eta + \frac12 \le a \le \rho_0$, $|b| \le U_0$ and $|b| < \frac12$.
+
+*Proof.* By the reflection we may assume $0 \le t \le \frac\pi4$. By Lemmas
+B.3 and B.4 (1), $t < \frac25$. So $\cos t \ge 1 - \frac{t^2}2 \ge \frac{23}{25}$,
+$0 \le \sin t \le t < \frac25$, $\sin t \le \cos t$ and
+$1 \le \cos t + \sin t \le \sqrt2 < \frac32$
+([Lemma A.15](appendix-a.md#lemma-a15-small-angles)), and the hypothesis reads
+
+```math
+\eta + \tfrac12\left(\cos t + \sin t\right) \le a\cos t - b\sin t \le a\cos t + |b|\sin t . \tag{B.2}
+```
+
+Also $|b| \le \rho_0$, as $(|b| + \frac12)^2 \le Q_0 - \frac14 = (\rho_0 + \frac12)^2$.
+
+1. *$a > 0$.* Otherwise the right side of (B.2) is at most
+   $|b|\sin t < \frac25\rho_0 < 0.45$, while the left side is at least
+   $r_0 + \frac12 > 0.88$.
+2. *$|b| < a$.* Otherwise $|b| \ge a > 0$, and
+   $(|b| - a)(\cos t - \sin t) \ge 0$ gives
+   $2(a\cos t + |b|\sin t) \le (a + |b|)(\cos t + \sin t)$. The hypothesis on
+   $(|a|, |b|)$ gives
+   $(a + |b| + 1)^2 \le 2(a + \frac12)^2 + 2(|b| + \frac12)^2 \le 2Q_0$,
+   and $2Q_0 < 5.71 < (\frac{12}5)^2$, so $a + |b| < \frac75$, and (B.2) gives
+   $\eta \le \frac12(a + |b| - 1)(\cos t + \sin t) < \frac15\cdot\frac32 < r_0$,
+   a contradiction.
+3. *$a \ge \frac12$.* Otherwise, by 2,
+   $a\cos t + |b|\sin t \le a(\cos t + \sin t) < \frac12(\cos t + \sin t)$, and
+   (B.2) gives $\eta < 0$.
+4. *$|b| < \frac12$.* Otherwise put $x = a - \frac12$ and $y = |b| - \frac12$,
+   both nonnegative, and $r = \sqrt{x^2 + y^2}$. By (B.2) and Cauchy–Schwarz,
+   $\eta \le x\cos t + y\sin t \le r$, so $r \ge r_0 > \frac38$; and as
+   $x + y \ge r$,
+
+   ```math
+   Q_0 \ge (x + 1)^2 + (y + 1)^2 = r^2 + 2(x + y) + 2 \ge (r + 1)^2 + 1 > \left(\tfrac{11}8\right)^2 + 1 > 2.89 ,
+   ```
+
+   a contradiction.
+5. *$\eta + \frac12 \le a$.* By 4, $|b|\sin t \le \frac12\sin t$, so (B.2)
+   gives $\eta + \frac12\cos t \le a\cos t$, that is
+   $\eta \le (a - \frac12)\cos t \le a - \frac12$, by 3.
+6. *$a \le \rho_0$ and $|b| \le U_0$.* First
+   $(a + \frac12)^2 \le Q_0 - \frac14 = (\rho_0 + \frac12)^2$. By 5,
+   $a + \frac12 \ge \eta + 1 \ge r_0 + 1 = \frac52 - \rho_0 > 0$, so
+   $(|b| + \frac12)^2 \le Q_0 - (\frac52 - \rho_0)^2 = (U_0 + \frac12)^2$.
+   $\square$
+
+*Lean:
+[`Six.Normalization.deep_cap_bounds`](../../SquaresInCircles/Six/Normalization/Caps.lean#L330).*
+
+### Lemma B.6 (the piercing point)
+
+Under the hypotheses of Lemma B.5, $T$ holds the point $(\eta + \frac12, 0)$.
+
+*Proof.* The reflection fixes the point, so again let $0 \le t < \frac25$, and
+put $H = \eta + \frac12$ and $\sigma = \sin t \in [0, \frac25)$. By Lemma B.5,
+$\frac78 < r_0 + \frac12 \le H \le a \le \rho_0 < \frac98$. In the frame of $T$
+the point $(H, 0)$ has the local coordinates $(H\cos t - a, -H\sigma - b)$,
+and we show that both lie in $(-\frac12, \frac12)$.
+
+The first: $H\cos t - a \le H - a \le 0$, and
+$H\cos t - a \ge \frac78\cdot\frac{23}{25} - \rho_0 > -0.31$. The second:
+$-H\sigma - b \le -b < \frac12$ by Lemma B.5. It remains to show
+$b < \frac12 - H\sigma$. Suppose not, and put $V = 1 - H\sigma$, so that
+$V \ge 1 - \frac98\cdot\frac25 = \frac{11}{20}$. Then $b \ge V - \frac12 > 0$,
+so $|b| + \frac12 = b + \frac12 \ge V$; and by (B.2), $a \ge \frac12$ and
+$\cos t \le 1$,
+
+```math
+a - \tfrac12 \ge \left(a - \tfrac12\right)\cos t \ge \eta + \tfrac12\sigma + b\sigma \ge \eta + V\sigma .
+```
+
+So in the frame of $T$ the far corner $(a + \frac12, |b| + \frac12)$ lies beyond
+the point $(\eta + 1 + V\sigma, V)$ in both coordinates, and both coordinates of
+that point are positive; hence
+$(\eta + 1 + V\sigma)^2 + V^2 \le (a + \frac12)^2 + (|b| + \frac12)^2 \le Q_0$.
+But, as one checks by expanding with $\eta + 1 = H + \frac12$,
+
+```math
+(\eta + 1 + V\sigma)^2 + V^2 - (\eta + 1)^2 - 1 = \sigma\left(1 + \left(1 - H - H^2\right)\sigma - 2H\sigma^2 + H^2\sigma^3\right) ,
+```
+
+and the bracket is positive: $H + H^2 < \frac98 + \frac{81}{64} < \frac{12}5$,
+so it is at least $1 - \frac75\cdot\frac25 - 2\cdot\frac98\cdot\frac4{25} = \frac2{25}$.
+So $(\eta + 1 + V\sigma)^2 + V^2 \ge (\eta + 1)^2 + 1 > (\frac{11}8)^2 + 1 > Q_0$,
+a contradiction. $\square$
+
+*Lean:
+[`Six.Normalization.cap_piercing`](../../SquaresInCircles/Six/Normalization/Caps.lean#L414),
+[`Six.Normalization.piercing_transverse_upper`](../../SquaresInCircles/Six/Normalization/Caps.lean#L385),
+[`Six.Normalization.piercing_polynomial_lower`](../../SquaresInCircles/Six/Normalization/Caps.lean#L343),
+[`Six.Normalization.piercing_polynomial_gt_ceiling`](../../SquaresInCircles/Six/Normalization/Caps.lean#L372).*
+
+![The part of the disk of radius R0 beyond the dashed line x = eta, for the deepest cap eta = r0, shaded, with four squares drawn in it as outlines: two parallel to the axes and pushed up and down as far as the disk allows, and two turned by 0.3 and by minus 0.38, also pushed sideways. All four contain the point (eta + 1/2, 0), marked by a dot on the first axis](figures/appendix-b/piercing.svg)
+
+*Figure B.3.* Lemma B.6 for the deepest cap, $\eta = r_0$: four squares in
+the cap, two parallel to the axes and pushed up and down as far as the disk
+allows, and two turned by $0.3$ and by $-0.38$ and pushed sideways. All of them
+hold the point $(\eta + \frac12, 0)$. Pushed further, a square would have its
+far corner beyond the point $(\eta + 1 + V\sigma, V)$ of the proof, outside the
+disk.
+
+### Lemma B.7 (facing the cap)
+
+Let $\eta \ge r_0$, $a \ge 0$, $|b| < \frac12$,
+$(|a| + \frac12)^2 + (|b| + \frac12)^2 \le Q_0$ and
+$x_t(a, b) \ge \eta + \omega(t)$. Then $t \equiv v$ modulo $2\pi$ for a $v$
+with $|v| < \frac25$, and $x_v(a, b) \ge \eta + \omega(v)$. If moreover
+$|t| \le \frac{3\pi}4$, then $t = v$, so $|t| < \frac25$.
+
+*Proof.* As $x_t(a, b)$ and $\omega(t)$ depend on $t$ only through $\cos t$ and
+$\sin t$, we may replace $t$ by any $t' \equiv t$. Every real number is
+congruent modulo $2\pi$ to one of $v$, $\frac\pi2 - v$, $\pi + v$ and
+$-\frac\pi2 - v$ for some $|v| \le \frac\pi4$: take its representative in
+$(-\pi, \pi]$ and the nearest of the directions $0$, $\pm\frac\pi2$, $\pi$. The
+last three cases turn the frame of $T$ by a quarter, a half and three
+quarters of a turn, which does not change the square, but puts the cap in front
+of a coordinate that cannot reach it (Figure B.4).
+
+- If $t \equiv \frac\pi2 - v$, then $\cos t = \sin v$ and $\sin t = \cos v$, so
+  $x_t(a, b) = a\sin v - b\cos v = x_{-v}(-b, a)$, and $\omega(t) = \omega(-v)$
+  ([Lemma A.15](appendix-a.md#lemma-a15-small-angles) (2)). The hypotheses of Lemma B.5 hold
+  for the phase $-v$ and the coordinates $(-b, a)$, and it gives
+  $\eta + \frac12 \le -b$, against $|b| < \frac12$.
+- If $t \equiv \pi + v$, then $x_t(a, b) = x_v(-a, -b)$, and Lemma B.5 gives
+  $\eta + \frac12 \le -a$, against $a \ge 0$.
+- If $t \equiv -\frac\pi2 - v$, then $\cos t = -\sin v$ and
+  $\sin t = -\cos v$, so $x_t(a, b) = b\cos v - a\sin v = x_{-v}(b, -a)$, and
+  Lemma B.5 gives $\eta + \frac12 \le b$, against $|b| < \frac12$.
+
+So $t \equiv v$ with $|v| \le \frac\pi4$, $x_v(a, b) = x_t(a, b)$ and
+$\omega(v) = \omega(t)$, and Lemma B.5 gives $|v| < \frac25$. If
+$|t| \le \frac{3\pi}4$, then $t - v$ is a multiple of $2\pi$ with
+$|t - v| < \frac{3\pi}4 + \frac25 < 2\pi$, so $t = v$. $\square$
+
+*Lean:
+[`Six.Normalization.deep_cap_faces`](../../SquaresInCircles/Six/Normalization/Caps.lean#L471),
+[`Six.Normalization.primary_cap_angle`](../../SquaresInCircles/Six/Normalization/Caps.lean#L520),
+[`Six.Normalization.cos_sin_eq_of_coe_eq`](../../SquaresInCircles/Six/Normalization/Caps.lean#L460),
+[`Six.Normalization.four_primary_quadrants`](../../SquaresInCircles/Six/Normalization/Basic.lean#L172),
+[`Six.Normalization.phase_eq_of_short_difference`](../../SquaresInCircles/Six/Normalization/Basic.lean#L205).*
+
+![A square T in the cap beyond the dashed line x = eta, turned by 0.2, inside the circle of radius R0. From the origin, the four directions u(0.2 + k pi/2), k = 0, 1, 2, 3, that can serve as its primary axis, each labelled with the coordinates (a, b) of the centre of T in that frame: (1.05, 0.08) for the frame facing the cap, drawn in blue, and (0.08, -1.05), (-1.05, -0.08) and (-0.08, 1.05) for the others, drawn grey](figures/appendix-b/faces.svg)
+
+*Figure B.4.* Lemma B.7. A square $T$ in a deep cap, at the phase $0.2$ with
+$(a, b) = (1.05, 0.08)$. Each of the four directions
+$u(0.2 + k\frac\pi2)$, $k = 0, 1, 2, 3$, can serve as its primary axis, since a
+quarter turn of the frame does not change the square; beside each is the pair
+of coordinates of the centre of $T$ in that frame. Only the frame facing the
+cap (blue) has $a \ge 0$ and $|b| < \frac12$. In the others the cap lies in
+front of the coordinate $-b$, $-a$ or $b$, which Lemma B.5 would make at
+least $\eta + \frac12$.
+
+*Proof of [Lemma 9.17](09-six.md#lemma-917-deep-caps).* (1) is Lemmas B.5 and
+B.6. (2) By the reflection let $t \ge 0$; Lemma B.3 gives
+$\eta \le \mathrm{cap}(t)$, and Lemma B.4 (2) gives $t < 0.203$. (3) is
+Lemma B.7. $\square$
+
+*Lean:
+[`Six.Normalization.deep_cap_bounds`](../../SquaresInCircles/Six/Normalization/Caps.lean#L330),
+[`Six.Normalization.cap_piercing`](../../SquaresInCircles/Six/Normalization/Caps.lean#L414),
+[`Six.Normalization.cap_angle_small`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L26),
+[`Six.Normalization.deep_cap_faces`](../../SquaresInCircles/Six/Normalization/Caps.lean#L471).*
+
+## B.3 Proof of Lemma 9.20
+
+We prove
+[Lemma 9.20](09-six.md#lemma-920-squares-separated-along-their-own-axis):
+
+> *Let $c \in [0, c_0]^2$, let $(t, a, b)$ be a chart in the ceiling with
+> $|b| < \frac12$, and let $T = Q_t(a, b)$ be separated from $C = Q(c)$ along
+> its own axis.*
+>
+> 1. *If $|t| \le \frac\pi4$, then $-\frac5{12} < t < \frac3{10}$ and $T$
+>    holds $p_E$.*
+> 2. *If $t = \pi + v$ with $|v| \le \frac\pi4$, then $v > -\frac23$; $T$ holds
+>    $p_W$ or $p_D$; it holds $p_W$ if $v \le -\frac\pi{12}$; and if it holds
+>    $p_W$, then $v < \frac58$.*
+>
+> *The same conclusion as in (2) for $v \le -\frac\pi{12}$ holds for a square
+> in a deep cap beyond the west side of $C$: if $T = Q_{\pi + v}(a, b)$, with
+> $|v| < \frac25$ and $v \le -\frac\pi{12}$, lies beyond the line $x = -\eta$
+> for some $\eta \ge r_0$, that is $-x_{\pi + v}(a, b) \ge \eta + \omega(v)$,
+> then $T$ holds $p_W$.*
+
+Recall that a square holds a point when the point lies in its open square.
+The point $r\,u(q)$ at distance $r$ in the direction $q$ has, in the frame of
+$Q_t(a, b)$, the local coordinates
+
+```math
+\left(r\cos(q - t) - a,\ r\sin(q - t) - b\right) , \tag{B.3}
+```
+
+since $\langle u(q), u(t)\rangle = \cos(q - t)$ and
+$\langle u(q), u(t + \frac\pi2)\rangle = \sin(q - t)$; it lies in the open
+square when both are less than $\frac12$ in absolute value. By
+[Definition 9.12](09-six.md#definition-912-separators-of-the-containing-square),
+$T$ is separated from $C$ along its own axis when
+
+```math
+a \ge \tfrac12 + c_x\cos t + c_y\sin t + \omega(t) . \tag{B.4}
+```
+
+The proof bounds the radial coordinate $a$ from below by (B.4) and from above
+by $a \le \rho_0$ ([Lemma 9.10](09-six.md#lemma-910-charts-in-the-ceiling) (2)),
+which confines the phase to a window. Inside the window the far corner
+$(a + \frac12, |b| + \frac12)$ of $T$ in its frame confines $b$, and the pins
+follow.
+
+### Lemma B.8 (far corners)
+
+Let $(t, a, b)$ be a chart in the ceiling, and let $A$, $B$ be numbers with
+$0 \le A \le a + \frac12$ and $0 \le B \le |b| + \frac12$. Then
+$A^2 + B^2 \le Q_0$. On the other hand, each of the following points
+$(A, B)$ has $A^2 + B^2 > Q_0$:
+
+1. $(\frac32 + \frac v4, 1 - v)$, for every real $v$;
+2. $(\frac{11}8 + \frac w3, \frac{49}{40} - \frac9{10}w)$, for every real $w$;
+3. $(1.54, 0.696)$.
+
+*Proof.* $A^2 + B^2 \le (a + \frac12)^2 + (|b| + \frac12)^2 \le Q_0$ by the
+definition of a chart in the ceiling. (1) The points lie on the line
+$4A + B = 7$, and $17(A^2 + B^2) = (4A + B)^2 + (A - 4B)^2 \ge 49$, while
+$\frac{49}{17} > 2.88 > Q_0$. (2) The points lie on the line
+$27A + 10B = \frac{395}8$, and
+$829(A^2 + B^2) = (27A + 10B)^2 + (10A - 27B)^2 \ge (\frac{395}8)^2$, while
+$(\frac{395}8)^2/829 > 2.94$. (3) $1.54^2 + 0.696^2 = 2.856016$. $\square$
+
+*Lean:
+[`Six.Normalization.corner_sq_le`](../../SquaresInCircles/Six/Normalization/Basic.lean#L32),
+[`Six.moving_pin_polynomial`](../../SquaresInCircles/Six/Normalization/Pins.lean#L336),
+[`Six.western_flank_quadratic`](../../SquaresInCircles/Six/Normalization/Pins.lean#L672).*
+
+So a far corner cannot lie beyond any point of the two lines, nor beyond the
+point (3): these three obstacles lie just outside the disk (Figure B.5). Each
+of the next proofs puts the far corner beyond one of them.
+
+![The plane of the far corner (A, B) = (a + 1/2, |b| + 1/2) of a chart in the ceiling, whose possible positions fill the blue region inside the circle A^2 + B^2 = Q0. Three obstacles lie outside the circle: an orange segment on the dashed line 4A + B = 7, a green segment on the dashed line 27A + 10B = 395/8, and the purple point (1.54, 0.696)](figures/appendix-b/far-lines.svg)
+
+*Figure B.5.* The obstacles of Lemma B.8 in the plane of the far corner
+$(A, B) = (a + \frac12, |b| + \frac12)$, which ranges over the blue region,
+inside the circle $A^2 + B^2 = Q_0$. The lines $4A + B = 7$ (orange) and
+$27A + 10B = \frac{395}8$ (green) pass outside the circle, at the distances
+$\frac7{\sqrt{17}} \approx 1.6977$ and $\approx 1.7149$ from the origin,
+against $R_0 \approx 1.6885$; the thick segments are the points used by the
+transverse obstruction (Lemma B.12) and on the western flank (Lemma B.14).
+The point $(1.54, 0.696)$ (purple), used for the pin of $W$ (Lemma B.15), lies
+only about $0.0014$ outside.
+
+### Lemma B.9 (radial profiles)
+
+Let $c \in [0, c_0]^2$, and let $t$ and $a$ satisfy (B.4).
+
+1. If $0 \le t \le \frac\pi4$, then $a \ge \frac12 + \frac12(\cos t + \sin t)$.
+2. If $t = -s$ with $0 \le s \le \frac\pi4$, then
+   $a \ge \frac12 + \frac12\cos s + r_0\sin s$.
+3. If $t = \pi - s$ with $0 \le s \le \frac\pi4$, then
+   $a \ge \frac12 + r_0\cos s + \frac12\sin s$.
+4. If $t = \pi + s$ with $0 \le s \le \frac\pi4$, then
+   $a \ge \frac12 + r_0(\cos s + \sin s)$.
+5. If $\cos t \ge 0$, then
+   $a + \frac12 \ge 1 + (\frac12 + c_x)\cos t + \frac38|\sin t|$.
+
+*Proof.* In (1) to (4), $\cos s$ and $\sin s$ are nonnegative,
+$\omega(t) = \frac12(\cos s + \sin s)$, and $\frac12 - c_0 = r_0$
+([Lemma 9.5](09-six.md#lemma-95-the-ceiling) (3)). The term
+$c_x\cos t + c_y\sin t$ of (B.4) is $c_x\cos s + c_y\sin s \ge 0$ in (1),
+$c_x\cos s - c_y\sin s \ge -c_0\sin s$ in (2),
+$-c_x\cos s + c_y\sin s \ge -c_0\cos s$ in (3), and
+$-c_x\cos s - c_y\sin s \ge -c_0(\cos s + \sin s)$ in (4). In (5),
+$\omega(t) = \frac12(\cos t + |\sin t|)$ and
+$c_y\sin t \ge -c_0|\sin t| \ge -\frac18|\sin t|$. $\square$
+
+*Lean:
+[`Six.own_east_positive_profile`](../../SquaresInCircles/Six/Normalization/Pins.lean#L424),
+[`Six.own_east_negative_profile`](../../SquaresInCircles/Six/Normalization/Pins.lean#L437),
+[`Six.own_west_negative_profile`](../../SquaresInCircles/Six/Normalization/Pins.lean#L496),
+[`Six.own_west_positive_profile`](../../SquaresInCircles/Six/Normalization/Pins.lean#L511),
+[`Six.own_radial_lower`](../../SquaresInCircles/Six/Normalization/Pins.lean#L407).*
+
+### Lemma B.10 (an affine minorant)
+
+Let $A, B \ge 0$ and $0 \le s \le r$. Then
+
+```math
+A\cos s + B\sin s \ge A + \left(B - \tfrac{Ar}2 - \tfrac{Br^2}6\right)s .
+```
+
+*Proof.* $\cos s \ge 1 - \frac{s^2}2 \ge 1 - \frac{rs}2$ and
+$\sin s \ge s - \frac{s^3}6 \ge s - \frac{r^2s}6$, by the bounds of the proof
+of [Lemma A.7](appendix-a.md#lemma-a7-taylor-bounds) and $0 \le s \le r$;
+multiply by $A$ and $B$ and add. $\square$
+
+*Lean:
+[`Six.trig_affine_lower`](../../SquaresInCircles/Six/Normalization/Pins.lean#L585).*
+
+### Lemma B.11 (the windows)
+
+Let $c \in [0, c_0]^2$, let $(t, a, b)$ be a chart in the ceiling, and let
+(B.4) hold.
+
+1. If $|t| \le \frac\pi4$, then $-\frac5{12} < t < \frac3{10}$.
+2. If $t = \pi + v$ with $|v| \le \frac\pi4$, then $v > -\frac23$.
+
+*Proof.* Outside the windows the profiles of Lemma B.9 exceed $\rho_0$,
+against $a \le \rho_0$. Put $K = \frac12 - \rho_0$, so $K > -0.61282$, and
+recall $r_0 > 0.387$ and $\cos\frac\pi4 = \sin\frac\pi4 = h > 0.7071$. Each
+profile, less $\rho_0$, is $K$ plus a first harmonic $A\cos s + B\sin s$ with
+$A, B \ge 0$; by [Lemma A.11](appendix-a.md#lemma-a11-first-harmonics) (2) it is positive on an
+interval $[l, \frac\pi4]$ once it is positive at both ends. At the left ends
+we bound $\cos$ and $\sin$ below by their Taylor polynomials of degrees 6 and 7
+([Lemma A.7](appendix-a.md#lemma-a7-taylor-bounds) (3), (4)).
+
+(1) Let $t \ge \frac3{10}$. By Lemma B.9 (1), and as $\cos + \sin$ does not
+decrease on $[0, \frac\pi4]$ ([Lemma A.15](appendix-a.md#lemma-a15-small-angles) (3)),
+
+```math
+a - \rho_0 \ge K + \tfrac12\left(\cos\tfrac3{10} + \sin\tfrac3{10}\right) > -0.61282 + \tfrac12(0.955 + 0.2955) > 0.0124 ,
+```
+
+with $\cos\frac3{10} \ge 1 - \frac9{200}$ and
+$\sin\frac3{10} \ge \frac3{10} - \frac9{2000}$. Let next $t \le -\frac5{12}$,
+and put $s = -t \in [\frac5{12}, \frac\pi4]$. By Lemma B.9 (2),
+$a - \rho_0 \ge f(s) = K + \frac12\cos s + r_0\sin s$, and, with
+$\cos\frac5{12} > 0.914443$ and $\sin\frac5{12} > 0.404714$,
+
+```math
+f\left(\tfrac5{12}\right) > -0.61282 + \tfrac12 \cdot 0.914443 + 0.387 \cdot 0.404714 > 0.00102 , \qquad f\left(\tfrac\pi4\right) > -0.61282 + 0.887 \cdot 0.7071 > 0.0143 .
+```
+
+So $f > 0$ on $[\frac5{12}, \frac\pi4]$. In both cases $a > \rho_0$, a
+contradiction.
+
+(2) Let $v \le -\frac23$, and put $s = -v \in [\frac23, \frac\pi4]$, so that
+$t = \pi - s$. By Lemma B.9 (3), $a - \rho_0 \ge g(s) = K + r_0\cos s + \frac12\sin s$,
+and, with $\cos\frac23 > 0.785886$ and $\sin\frac23 > 0.618369$,
+
+```math
+g\left(\tfrac23\right) > -0.61282 + 0.387 \cdot 0.785886 + \tfrac12 \cdot 0.618369 > 0.0005 , \qquad g\left(\tfrac\pi4\right) > -0.61282 + 0.887 \cdot 0.7071 > 0.0143 .
+```
+
+So $g > 0$ on $[\frac23, \frac\pi4]$, and $a > \rho_0$, a contradiction.
 $\square$
 
 *Lean:
-[`Seven.pairSupport_zero`](../../SquaresInCircles/Seven/Pair/Frame.lean#L79),
-[`Seven.pairSupport_one`](../../SquaresInCircles/Seven/Pair/Frame.lean#L85),
-[`Seven.pairSupport_two`](../../SquaresInCircles/Seven/Pair/Frame.lean#L92),
-[`Seven.pairSupport_three`](../../SquaresInCircles/Seven/Pair/Frame.lean#L99),
-[`Seven.support_three_half_sub`](../../SquaresInCircles/Seven/Pair/Frame.lean#L65),
-[`Seven.support_two_pi_sub`](../../SquaresInCircles/Seven/Pair/Frame.lean#L73),
-[`Seven.pair_support_axis_values`](../../SquaresInCircles/Seven/Pair/Frame.lean#L142),
-[`Seven.centerDX`](../../SquaresInCircles/Seven/Pair/Frame.lean#L136),
-[`Seven.centerDY`](../../SquaresInCircles/Seven/Pair/Frame.lean#L139),
-[`angularWidth`](../../SquaresInCircles/Common/SeparatingAxes.lean#L250).*
-
-### Lemma B.6 (the inward sum with a positive source sign)
-
-Let $(a, u)$ and $(A, v)$ be admissible, let $t$ be a sign, and put
-$e = \ell(a, u) - t\,\ell(A, v) - \frac\pi6$. Then
-$-\frac\pi2 \le e \le \frac\pi2$, and for the signs $(1, t)$
-
-```math
-\sigma_2\left(\tfrac\pi3\right) = \tfrac12 - a - A\sin e + \tfrac12|\sin e| + \left(\tfrac12 - tv\right)\cos e .
-```
-
-*Proof.* Here $d = \frac\pi3 + \ell(a, u) - t\,\ell(A, v) = \frac\pi2 + e$, so
-$2\pi - d = \frac{3\pi}2 - e$, and Lemma B.5 (1) and (2) give
-
-```math
-\sigma_2\left(\tfrac\pi3\right) = \tfrac12 - a - A\sin e - tv\cos e + \tfrac12(|\sin e| + |\cos e|) .
-```
-
-Both labels lie in $[0, \frac\pi4]$ ([Lemma 9.7](seven.md#lemma-97-the-label)), so
-$e \in [-\frac{5\pi}{12}, \frac\pi{12}]$ if $t = 1$ and
-$e \in [-\frac\pi6, \frac\pi3]$ if $t = -1$. In both cases $\cos e \ge 0$, so
-$|\cos e| = \cos e$. $\square$
-
-*Lean:
-[`Seven.pairSupport_inward`](../../SquaresInCircles/Seven/Pair/Frame.lean#L110).*
-
-*Remark (the turns of the sectors).* In each sector Appendices C and D write
-$\sigma_k(\frac\pi3)$ through a *turn*, the relative phase
-$d = \frac\pi3 + s\ell - t\ell'$ shifted so that it vanishes, or is small, at
-the contacts. With $\ell = \ell(a, u)$ and $\ell' = \ell(A, v)$, Lemma B.5 (3)
-gives the following closed forms; in each row $\sin d$ and $\cos d$ are written
-through the turn (for instance $\sin d = \cos z$ and $\cos d = \sin z$ in the
-second row).
-
-| axis, signs | turn | range of the turn | $\sigma_k(\frac\pi3)$ |
-| --- | --- | --- | --- |
-| inward, $s = 1$ | $e = \ell - t\ell' - \frac\pi6 = d - \frac\pi2$ | $[-\frac{5\pi}{12}, \frac\pi3]$ | $\frac12 - a - A\sin e - tv\cos e + \frac12(\lvert\sin e\rvert + \lvert\cos e\rvert)$ |
-| forward, $s = t = 1$ | $z = \frac\pi6 - \ell + \ell' = \frac\pi2 - d$ | $[-\frac\pi{12}, \frac{5\pi}{12}]$ | $\frac12 + u - A\cos z - v\sin z + \frac12(\lvert\cos z\rvert + \lvert\sin z\rvert)$ |
-| forward, $t = -1$ | $e = s\ell + \ell' - \frac\pi6 = d - \frac\pi2$ | $[-\frac{5\pi}{12}, \frac\pi3]$ | $\frac12 + su - A\cos e - v\sin e + \frac12(\lvert\sin e\rvert + \lvert\cos e\rvert)$ |
-| forward, $(s, t) = (-1, 1)$ | $w = \ell + \ell' - \frac\pi3 = -d$ | $[-\frac\pi3, \frac\pi6]$ | $\frac12 - u + A\sin w - v\cos w + \frac12(\lvert\sin w\rvert + \lvert\cos w\rvert)$ |
-| forward, $(s, t) = (-1, -1)$ | $d = \frac\pi3 - \ell + \ell'$ | $[\frac\pi{12}, \frac{7\pi}{12}]$ | $\frac12 - u - A\sin d + v\cos d + \frac12(\lvert\sin d\rvert + \lvert\cos d\rvert)$ |
-
-The first row is Lemma B.6; with $t = -1$ it reads
-$\frac12 - a - A\sin e + \frac12|\sin e| + (\frac12 + v)\cos e$ with
-$e = \ell + \ell' - \frac\pi6 \in [-\frac\pi6, \frac\pi3]$.
-
-## B.3 The label regions and their boundary
-
-Two of the three terms of the label agree along a line:
-
-```math
-12\left(\mathrm{side}(a, u) - \mathrm{axial}(u)\right) = 2\pi + 7 - 9a - 11u, \qquad
-12\left(\mathrm{side}(a, u) - \tfrac\pi4\right) = 7 - \pi - 9a + 4u ,
-```
-
-and $\mathrm{axial}(u) = \frac\pi4$ exactly when $u = \frac\pi5$. So the label
-of a state is axial where $9a + 11u \le 2\pi + 7$ and $u \le \frac\pi5$; side
-where $9a + 11u \ge 2\pi + 7$ and $9a - 4u \ge 7 - \pi$; and capped where
-$u \ge \frac\pi5$ and $9a - 4u \le 7 - \pi$. We call the line
-$9a + 11u = 2\pi + 7$ the *tie line*. Inside the admissible region, bounded by
-the lines $a = \frac12$, $u = 0$, $u = a$ and the circle $\varphi = \frac{13}4$,
-these conditions cut out the three regions of Figure B.2. The tie line meets the
-circle at the *transition state* $(a_0, u_0)$, and the diagonal $u = a$ meets it
-at the *diagonal corner* $(r_d, r_d)$ (Definition B.9).
-
-![The admissible states in the (a, u)-plane: the region between the lines a = 1/2, u = 0 and u = a and the circle phi = 13/4, split into a large blue axial region at the bottom and left, a green side region between a purple tie line and the circle at the upper right, and a small orange capped triangle at the top left against the diagonal. The tie line runs from the transition state (a0, u0) on the circle up to the vertex V1 of the triangle; the side state (1, 1/2) lies on the circle in the side region, the diagonal corner (rd, rd) at the top, and the axial states (a, 0) form the bottom edge](figures/appb-regions.svg)
-
-*Figure B.2.* The label regions. The label is axial in the blue region, side in
-the green one and capped in the orange triangle $V_0V_1V_2$ of Lemma B.30. The
-tie line (purple) separates the axial region from the side region and meets the
-circle $\varphi = \frac{13}4$ at the transition state
-$(a_0, u_0) \approx (1.1198, 0.2914)$. The side region is bounded by the tie
-line, the circle up to the diagonal corner
-$(r_d, r_d) \approx (0.7748, 0.7748)$, the diagonal, and the edge $V_1V_2$ where
-the side label is $\frac\pi4$. The contacts of Chapter 9 involve the side state
-$(1, \frac12)$ and the axial states $(a, 0)$ on the bottom edge.
-
-### Lemma B.7 (the admissible region)
-
-Let $(a, u)$ be admissible. Then $a \le \sqrt3 - \frac12$ and
-$a + u < \frac{31}{20}$. Moreover $1.73 < \sqrt3 < 1.733$.
-
-*Proof.* This is part of [Lemma 9.5](seven.md#lemma-95-admissible-states) (2). $\square$
-
-*Lean:
-[`Seven.Admissible.a_le_sqrt_three_sub_half`](../../SquaresInCircles/Seven/Exterior.lean#L62),
-[`Seven.Admissible.sum_lt`](../../SquaresInCircles/Seven/Exterior.lean#L69),
-[`Seven.sqrt_three_bounds`](../../SquaresInCircles/Seven/Exterior.lean#L222).*
-
-### Lemma B.8 (axial and side labels)
-
-Let $(a, u)$ be admissible and $\ell = \ell(a, u)$.
-
-1. If the label is axial, then $9a + 11u \le 2\pi + 7$ and
-   $a + u < 1 + \frac{2\pi}{15}$.
-2. If the label is side, then $\frac9{25} < \ell$, $\frac7{10} < a < \frac98$,
-   and $\frac95\left(\ell - \frac\pi6\right)^2 \le r(a, u)$.
-3. In every case $a \le 1 + \frac{2\pi}{15} - \frac45\ell$.
-
-*Proof.* Parts (1) and (2) are parts (2) and (1) of [Lemma 9.8](seven.md#lemma-98-side-and-axial-labels), and part (3) is
-[Lemma 9.7](seven.md#lemma-97-the-label) (3). $\square$
-
-*Lean:
-[`Seven.axial_tie_line`](../../SquaresInCircles/Seven/Exterior.lean#L162),
-[`Seven.axial_sum_lt`](../../SquaresInCircles/Seven/Exterior.lean#L172),
-[`Seven.side_selected_label_gt`](../../SquaresInCircles/Seven/Exterior.lean#L131),
-[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Exterior.lean#L154),
-[`Seven.side_selected_a_lt`](../../SquaresInCircles/Seven/Exterior.lean#L143),
-[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Exterior.lean#L185),
-[`Seven.Admissible.radial_label_bound`](../../SquaresInCircles/Seven/Exterior.lean#L110).*
-
-### Definition B.9 (boundary curves and special states)
-
-1. The *circle* over $u$ is
-   $\gamma(u) = \sqrt{\frac{13}4 - (u + \frac12)^2} - \frac12$, for
-   $(u + \frac12)^2 \le \frac{13}4$; the state $(\gamma(u), u)$ lies on
-   $\varphi = \frac{13}4$.
-2. The *tie line* over $u$ is $\lambda(u) = \frac19(2\pi + 7 - 11u)$, and the
-   *top of the axial region* over $u$ is $\mu(u) = \min(\gamma(u), \lambda(u))$.
-3. For a label value $\tau$, the *tie state* of label $\tau$ is
-   $(\alpha(\tau), \frac45\tau)$ with
-   $\alpha(\tau) = \lambda(\frac45\tau) = \frac{2\pi + 7}9 - \frac{44}{45}\tau$,
-   and the *diagonal state* of label $\tau$ is $(\delta(\tau), \delta(\tau))$
-   with $\delta(\tau) = \frac15(2\pi + 7 - 12\tau)$.
-4. The *transition state* $(a_0, u_0)$ and its label $s_0$: with $M = 2\pi + 17$
-   and $J = \sqrt{202\cdot\frac{13}4 - M^2}$, where $202 = 9^2 + 11^2$,
-
-   ```math
-   X_0 = \tfrac1{202}(9M + 11J), \quad Y_0 = \tfrac1{202}(11M - 9J), \quad
-   a_0 = X_0 - \tfrac12, \quad u_0 = Y_0 - \tfrac12, \quad s_0 = \tfrac54 u_0 .
-   ```
-
-5. The *diagonal corner* $(r_d, r_d)$ and its label $t_d$:
-   $r_d = \sqrt{\frac{13}8} - \frac12$ and
-   $t_d = \frac\pi6 + \frac7{12} - \frac5{12}r_d$.
-
-In the coordinates $X = a + \frac12$, $Y = u + \frac12$ the circle
-$\varphi = \frac{13}4$ is $X^2 + Y^2 = \frac{13}4$ and the tie line is
-$9X + 11Y = M$. The points of this line are $\frac M{202}(9, 11) + y\,(11, -9)$,
-at squared distance $\frac{M^2}{202} + 202y^2$ from the origin, so the line
-meets the circle where $y = \pm\frac J{202}$; $(X_0, Y_0)$ is the point with
-$y = \frac J{202}$. The diagonal $u = a$ meets the circle where
-$2(a + \frac12)^2 = \frac{13}4$, at $a = r_d$. The tie state and the diagonal
-state have the side label $\tau$: indeed
-$12\,\mathrm{side}(x, x) = 2\pi + 7 - 5x$, so
-$\mathrm{side}(\delta(\tau), \delta(\tau)) = \tau$ and $t_d$ is the side label
-of $(r_d, r_d)$, and Proposition B.16 (5) below gives
-$\mathrm{side}(\alpha(\tau), \frac45\tau) = \tau = \mathrm{axial}(\frac45\tau)$.
-
-*Lean:
-[`Seven.Boundary.circle`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L33),
-[`Seven.Boundary.axialLine`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L34),
-[`Seven.Boundary.axialTop`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L35),
-[`Seven.Boundary.tieA`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L36),
-[`Seven.Boundary.diagonal`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L37),
-[`Seven.Boundary.M`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L15),
-[`Seven.Boundary.J`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L16),
-[`Seven.Boundary.X0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L17),
-[`Seven.Boundary.Y0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L18),
-[`Seven.Boundary.a0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L19),
-[`Seven.Boundary.u0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L20),
-[`Seven.Boundary.s0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L21),
-[`Seven.Boundary.rd`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L22),
-[`Seven.Boundary.td`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L23).*
-
-### Lemma B.10 (the transition state)
-
-1. $202\cdot\frac{13}4 - M^2 > 0$, so $J$ is well defined, and
-   $10.69547 < J < 10.69549$.
-2. $X_0^2 + Y_0^2 = \frac{13}4$, $9a_0 + 11u_0 = 2\pi + 7$, and
-   $\alpha(s_0) = a_0$.
-3. $1.11979 < a_0 < 1.11980$ and $0.29136 < u_0 < 0.29137$. Hence
-   $\frac{11}{10} < a_0 < \frac98$, $\frac{29}{100} < u_0 < \frac3{10}$ and
-   $\frac9{25} < s_0 < \frac25$.
-4. $(a_0, u_0)$ is admissible, and
-   $\ell(a_0, u_0) = \mathrm{axial}(u_0) = \mathrm{side}(a_0, u_0) = s_0$.
-
-*Proof.* (1) From $3.141592 < \pi < 3.141593$ we get
-$23.283184 < M < 23.283186$. As $202\cdot\frac{13}4 = 656.5$, squaring shows
-
-```math
-10.69547^2 < 656.5 - 23.283186^2 < 656.5 - M^2 < 656.5 - 23.283184^2 < 10.69549^2 .
-```
-
-(2) Expanding, and using $M^2 + J^2 = 202\cdot\frac{13}4$,
-
-```math
-(9M + 11J)^2 + (11M - 9J)^2 = 202\left(M^2 + J^2\right) = 202^2\cdot\tfrac{13}4,
-\qquad 9X_0 + 11Y_0 = \tfrac1{202}(81M + 121M) = M .
-```
-
-The first identity is $X_0^2 + Y_0^2 = \frac{13}4$, and the second gives
-$9a_0 + 11u_0 = M - 10 = 2\pi + 7$. Then
-$\alpha(s_0) = \frac{2\pi + 7}9 - \frac{44}{45}\cdot\frac54 u_0$, which is
-$\frac19(2\pi + 7 - 11u_0) = a_0$.
-
-(3) By (1) and the bounds on $M$, $327.1988 < 9M + 11J < 327.1991$ and
-$159.8556 < 11M - 9J < 159.8559$. Dividing by 202 gives
-$1.61979 < X_0 < 1.6198$ and $0.79136 < Y_0 < 0.79137$. The coarse bounds
-follow, with $s_0 = 1.25u_0 \in (0.3642, 0.36422)$.
-
-(4) By (3), $0 \le u_0 \le a_0$ and $a_0 \ge \frac12$, and
-$\varphi(a_0, u_0) = X_0^2 + Y_0^2 = \frac{13}4$. By (2) and the identity at the
-start of this section, $\mathrm{side}(a_0, u_0) = \mathrm{axial}(u_0) = s_0$,
-and $s_0 < \frac25 < \frac\pi4$. $\square$
-
-*Lean:
-[`Seven.Boundary.J_sq`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L42),
-[`Seven.Boundary.J_bounds`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L47),
-[`Seven.Boundary.transition_circle`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L68),
-[`Seven.Boundary.transition_line`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L73),
-[`Seven.Boundary.tieA_s0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L77),
-[`Seven.Boundary.transition_bounds`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L53),
-[`Seven.Boundary.transition_coarse`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L60),
-[`Seven.Boundary.transition_admissible`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L82),
-[`Seven.Boundary.transition_labels`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L89).*
-
-### Lemma B.11 (the diagonal corner)
-
-1. $(r_d + \frac12)^2 = \frac{13}8$ and $0.77475 < r_d < 0.77476$.
-2. $\delta(t_d) = r_d$, and $\frac{18}{25} < t_d < \frac\pi4$; indeed
-   $\frac15(7 - \pi) < r_d$.
-
-*Proof.* (1) The identity is the definition, and
-$1.27475^2 < \frac{13}8 < 1.27476^2$. (2)
-$12t_d = 2\pi + 7 - 5r_d$, so $\delta(t_d) = \frac15(2\pi + 7 - 12t_d) = r_d$.
-Next, $t_d$ exceeds $\frac{3.141592}6 + \frac7{12} - \frac5{12}(0.77476)$, which
-is more than $0.7841 > \frac{18}{25}$. Finally $t_d < \frac\pi4$ is equivalent
-to $7 - 5r_d < \pi$, and
-$\frac15(7 - \pi) < \frac15(7 - 3.1415) < 0.7717 < r_d$. $\square$
-
-*Lean:
-[`Seven.Boundary.rd_sq`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L104),
-[`Seven.Boundary.rd_bounds`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L98),
-[`Seven.Boundary.td_bounds`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L108),
-[`Seven.Boundary.diagonal_td`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L113).*
-
-### Lemma B.12 (the circle over the u-axis)
-
-Let $0 \le u \le v \le r_d$.
-
-1. $\frac{13}4 - (u + \frac12)^2 \ge \frac{13}8$, so $\gamma(u)$ is defined;
-   $(\gamma(u) + \frac12)^2 + (u + \frac12)^2 = \frac{13}4$; $u \le \gamma(u)$;
-   and $(\gamma(u), u)$ is admissible.
-2. $\gamma(v) \le \gamma(u)$ and $\gamma(u) - \gamma(v) \le v - u$.
-3. $\gamma(u_0) = a_0$. If $u \le u_0$, then $\gamma(u) \le \lambda(u)$, so
-   $\mu(u) = \gamma(u)$; if $u \ge u_0$, then $\lambda(u) \le \gamma(u)$, so
-   $\mu(u) = \lambda(u)$.
-4. If $v \le u_0$, then $\gamma(u) - \gamma(v) \le \frac12(v - u)$.
-5. If $(a, w)$ is an admissible state, then $(w + \frac12)^2 < \frac{13}4$ and
-   $a \le \gamma(w)$.
-
-So the axial region lies below the graph of $\mu$, which follows the circle up
-to $u_0$ and the tie line beyond (Figure B.2).
-
-*Proof.* (1) Since
-$(r_d + \frac12)^2 - (u + \frac12)^2 = (r_d - u)(r_d + u + 1) \ge 0$, we have
-$(u + \frac12)^2 \le (r_d + \frac12)^2 = \frac{13}8$, hence the first claim, and
-the identity is the definition of $\gamma$. Then
-$(\gamma(u) + \frac12)^2 \ge \frac{13}8 \ge (u + \frac12)^2$ gives
-$u \le \gamma(u)$, and $\gamma(u) + \frac12 \ge \sqrt{13/8} > 1$ gives
-$\gamma(u) > \frac12$. With $\varphi(\gamma(u), u) = \frac{13}4$ this makes
-$(\gamma(u), u)$ admissible.
-
-(2) By (1),
-
-```math
-\left(\gamma(u) - \gamma(v)\right)\left(\gamma(u) + \gamma(v) + 1\right)
-= \left(\gamma(u) + \tfrac12\right)^2 - \left(\gamma(v) + \tfrac12\right)^2
-= (v - u)(u + v + 1) \ge 0 ,
-```
-
-and $\gamma(u) + \gamma(v) + 1 \ge u + v + 1 > 0$. So
-
-```math
-0 \le \gamma(u) - \gamma(v) = \frac{(v - u)(u + v + 1)}{\gamma(u) + \gamma(v) + 1} \le v - u .
-```
-
-(3) By Lemma B.10, $(a_0 + \frac12)^2 + (u_0 + \frac12)^2 = \frac{13}4$ with
-$a_0 + \frac12 > 0$ and $0 \le u_0 \le r_d$, so $\gamma(u_0) = a_0$; and
-$9a_0 + 11u_0 = 2\pi + 7$ gives $\lambda(u) = a_0 + \frac{11}9(u_0 - u)$. For
-$u \le u_0$, (2) gives $\gamma(u) \le a_0 + (u_0 - u) \le \lambda(u)$. For
-$u_0 \le u \le r_d$, (2) gives
-$\gamma(u) \ge a_0 - (u - u_0) \ge a_0 - \frac{11}9(u - u_0) = \lambda(u)$.
-
-(4) By (2) and (3), $\gamma(u), \gamma(v) \ge \gamma(u_0) = a_0$, so
-$\gamma(u) + \gamma(v) + 1 \ge 2a_0 + 1 > \frac{16}5$, while
-$2(u + v + 1) \le 4u_0 + 2 < \frac{16}5$, as $a_0 > \frac{11}{10}$ and
-$u_0 < \frac3{10}$ (Lemma B.10). The quotient in the proof of (2) is therefore
-at most $\frac12(v - u)$.
-
-(5) $(a + \frac12)^2 = \varphi(a, w) - (w + \frac12)^2$ is positive and at most
-$\frac{13}4 - (w + \frac12)^2$, and $a + \frac12 > 0$; take square roots.
-$\square$
-
-*Lean:
-[`Seven.Boundary.circle_radicand_pos`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L17),
-[`Seven.Boundary.circle_eq`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L25),
-[`Seven.Boundary.circle_ge_coordinate`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L31),
-[`Seven.Boundary.circle_state`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L40),
-[`Seven.Boundary.circle_order`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L51),
-[`Seven.Boundary.circle_u0`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L71),
-[`Seven.Boundary.circle_switch_left`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L79),
-[`Seven.Boundary.circle_switch_right`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L88),
-[`Seven.Boundary.axialTop_left`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L97),
-[`Seven.Boundary.axialTop_right`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L100),
-[`Seven.Boundary.circle_displacement_half`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L352),
-[`Seven.Boundary.a_le_circle`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L103).*
-
-### Definition B.13 (the circle parametrised by the side label)
-
-Let $N = \frac{97}{144}$. For $s_0 \le \tau \le t_d$ put
-
-```math
-D(\tau) = \tfrac\pi6 + \tfrac{19}{24} - \tau, \qquad
-Z(\tau) = \sqrt{\tfrac{13}4N - D(\tau)^2}, \qquad
-X(\tau) = \tfrac1N\left(\tfrac34 D(\tau) + \tfrac13 Z(\tau)\right), \qquad
-Y(\tau) = \tfrac1N\left(-\tfrac13 D(\tau) + \tfrac34 Z(\tau)\right),
-```
-
-The *top* of the side label $\tau$ is the state $(\hat a(\tau), \hat u(\tau))$
-with
-
-```math
-\left(\hat a(\tau), \hat u(\tau)\right) = \left(X(\tau) - \tfrac12,\ Y(\tau) - \tfrac12\right) \text{ for } s_0 \le \tau \le t_d, \qquad
-\left(\hat a(\tau), \hat u(\tau)\right) = \left(\delta(\tau), \delta(\tau)\right) \text{ for } t_d < \tau \le \tfrac\pi4 .
-```
-
-In the coordinates $X = a + \frac12$, $Y = u + \frac12$ the side label is
-$\mathrm{side}(a, u) = \frac\pi6 + \frac{19}{24} - (\frac34 X - \frac13 Y)$. The
-vectors $(\frac34, -\frac13)$ and $(\frac13, \frac34)$ are orthogonal, both of
-squared length $N$, so $\frac34 X - \frac13 Y$ and $\frac13 X + \frac34 Y$ are
-$\sqrt N$ times the coordinates of $(X, Y)$ along the unit vectors in their
-directions (Figure B.3). So the line of side label $\tau$ is
-$\frac34 X - \frac13 Y = D(\tau)$, and it meets the circle
-$X^2 + Y^2 = \frac{13}4$ where
-$(\frac13 X + \frac34 Y)^2 = \frac{13}4 N - D(\tau)^2$; the point
-$(X(\tau), Y(\tau))$ is the intersection with
-$\frac13 X + \frac34 Y = Z(\tau) > 0$.
-
-*Lean:
-[`Seven.Boundary.N`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L25),
-[`Seven.Boundary.D`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L26),
-[`Seven.Boundary.Z`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L27),
-[`Seven.Boundary.X`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L28),
-[`Seven.Boundary.Y`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L29),
-[`Seven.Boundary.sideA`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L30),
-[`Seven.Boundary.sideU`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L31),
-[`Seven.Boundary.sideTopA`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L40),
-[`Seven.Boundary.sideTopU`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L39).*
-
-![The quarter circle X squared plus Y squared equals 13/4 in the (X, Y)-plane with the diagonal X = Y; from the origin, two short arrows along (3/4, -1/3) and (1/3, 3/4); an orange segment from the origin along the first direction of length D/root N to the foot of a purple line of constant side label, and a blue segment along that line of length Z/root N up to the point (X(tau), Y(tau)) on the circle; a thick green arc of the circle from the transition point (X0, Y0) up to the diagonal point (rd + 1/2, rd + 1/2)](figures/appb-parametrisation.svg)
-
-*Figure B.3.* The parametrisation of Definition B.13 at $\tau = 0.6$, in the
-coordinates $X = a + \frac12$, $Y = u + \frac12$. The line of side label $\tau$
-(purple) is perpendicular to $(\frac34, -\frac13)$ at the distance
-$D(\tau)/\sqrt N$ from the origin, and the point $(X(\tau), Y(\tau))$ lies on it
-at the distance $Z(\tau)/\sqrt N$ from the foot. As $\tau$ increases from $s_0$
-to $t_d$, the line moves towards the origin and the point runs along the circle
-from $(X_0, Y_0)$ to $(r_d + \frac12, r_d + \frac12)$ (green arc).
-
-### Lemma B.14 (the parametrisation)
-
-Let $s_0 \le \tau \le t_d$ and write $D, Z, X, Y$ for their values at $\tau$.
-
-1. $\frac12 < D < 1$ and $Z > 0$; $X^2 + Y^2 = \frac{13}4$,
-   $\frac34 X - \frac13 Y = D$ and $\frac13 X + \frac34 Y = Z$; and
-   $\mathrm{side}(X - \frac12, Y - \frac12) = \tau$.
-2. $D(s_0) = \frac34 X_0 - \frac13 Y_0$, $X(s_0) = X_0$ and $Y(s_0) = Y_0$;
-   $D(t_d) = \frac5{12}(r_d + \frac12)$ and $X(t_d) = Y(t_d) = r_d + \frac12$.
-3. $0 < Y_0 \le Y \le X$, $\frac54 < X \le X_0$, and $1 < Z < \frac75$.
-4. The functions $D, Z, X, Y$ are differentiable on $[s_0, t_d]$, with
-   $D' = -1$, $Z' = \frac DZ$, $X' = -\frac YZ$, $Y' = \frac XZ$ and
-   $\left(\frac XZ\right)' = -\frac{39}{16Z^3}$.
-
-*Proof.* (1) $D$ decreases in $\tau$. By Lemmas B.10 and B.11,
-$D(t_d) = \frac5{12}(r_d + \frac12) > \frac5{12}\cdot\frac65 = \frac12$ and, as
-$\pi < 3.15$, $D(s_0) < \frac{3.15}6 + \frac{19}{24} - \frac9{25} < 1$. So
-$D^2 < 1 < \frac{13}4N$ and $Z > 0$. The two linear identities follow by
-substituting the definitions of $X$ and $Y$ (the coefficients combine through
-$\frac9{16} + \frac19 = N$), and then Lagrange's identity gives
-
-```math
-N\left(X^2 + Y^2\right) = \left(\tfrac34 X - \tfrac13 Y\right)^2 + \left(\tfrac13 X + \tfrac34 Y\right)^2 = D^2 + Z^2 = \tfrac{13}4 N .
-```
-
-Finally $\mathrm{side}(X - \frac12, Y - \frac12)$ is
-$\frac\pi6 + \frac{19}{24} - D = \tau$.
-
-(2) By Lemma B.10 (4), $\mathrm{side}(a_0, u_0) = s_0$, which by the formula for
-the side label above means $D(s_0) = \frac34 X_0 - \frac13 Y_0$. By Lagrange's
-identity,
-$Z(s_0)^2 = N(X_0^2 + Y_0^2) - D(s_0)^2 = (\frac13 X_0 + \frac34 Y_0)^2$, and
-$\frac13 X_0 + \frac34 Y_0 > 0$, so $Z(s_0) = \frac13 X_0 + \frac34 Y_0$ and
-
-```math
-X(s_0) = \tfrac1N\left(\left(\tfrac9{16} + \tfrac19\right)X_0 + \left(-\tfrac14 + \tfrac14\right)Y_0\right) = X_0,
-\qquad
-Y(s_0) = \tfrac1N\left(\left(-\tfrac14 + \tfrac14\right)X_0 + \left(\tfrac19 + \tfrac9{16}\right)Y_0\right) = Y_0 .
-```
-
-At $t_d$, using $(r_d + \frac12)^2 = \frac{13}8$,
-
-```math
-D(t_d) = \tfrac{19}{24} - \tfrac7{12} + \tfrac5{12}r_d = \tfrac5{12}\left(r_d + \tfrac12\right),
-\qquad
-Z(t_d)^2 = \tfrac{13}4N - \tfrac{25}{144}\cdot\tfrac{13}8 = \left(\tfrac{194}{144} - \tfrac{25}{144}\right)\tfrac{13}8 = \left(\tfrac{13}{12}\left(r_d + \tfrac12\right)\right)^2 ,
-```
-
-so $Z(t_d) = \frac{13}{12}(r_d + \frac12)$; and since
-$\frac34\cdot\frac5{12} + \frac13\cdot\frac{13}{12} = \frac{97}{144} = N$ and
-$-\frac13\cdot\frac5{12} + \frac34\cdot\frac{13}{12} = \frac{97}{144} = N$,
-$X(t_d) = Y(t_d) = r_d + \frac12$.
-
-(3) As $\tau$ increases, $D$ decreases and stays positive, so $Z$ increases;
-hence $Y = \frac1N(-\frac13 D + \frac34 Z)$ increases, and
-$Y \ge Y(s_0) = Y_0 > 0$. Next $X - Y = \frac1{12N}(13D - 5Z)$, and $5Z \le 13D$
-is equivalent to $25Z^2 \le 169D^2$, that is, to
-$25\cdot\frac{13}4N \le 194D^2$. As $194 = 288N$, this says
-$D^2 \ge \frac{25}{144}\cdot\frac{13}8 = D(t_d)^2$, which holds since
-$D \ge D(t_d) > 0$. So $Y \le X$. Then
-$2X^2 \ge X^2 + Y^2 = \frac{13}4$ gives $X^2 \ge \frac{13}8 > \frac{25}{16}$,
-and $X^2 = \frac{13}4 - Y^2$ is at most $\frac{13}4 - Y_0^2 = X_0^2$, so
-$X \le X_0$. For $Z$, first
-$Z^2 = \frac{13}4N - D^2 > \frac{13}4\cdot\frac23 - 1 > 1$ by (1), as
-$N > \frac23$. Second,
-$(X + Y)^2 \le 2(X^2 + Y^2) = \frac{13}2 < (\frac{51}{20})^2$, so
-
-```math
-Z = \tfrac{13}{24}(X + Y) - \tfrac5{24}(X - Y) \le \tfrac{13}{24}(X + Y) < \tfrac{13}{24}\cdot\tfrac{51}{20} < \tfrac75 .
-```
-
-(4) $Z$ is differentiable because its radicand is positive, and the chain rule
-gives
-
-```math
-Z' = -\frac{DD'}Z = \frac DZ, \qquad
-X' = \frac1N\left(-\frac34 + \frac D{3Z}\right) = -\frac{\frac34 Z - \frac13 D}{NZ} = -\frac YZ, \qquad
-Y' = \frac1N\left(\frac13 + \frac{3D}{4Z}\right) = \frac{\frac13 Z + \frac34 D}{NZ} = \frac XZ .
-```
-
-Finally $\left(\frac XZ\right)' = \frac{X'Z - XZ'}{Z^2} = -\frac{YZ + XD}{Z^3}$,
-and by (1),
-
-```math
-YZ + XD = Y\left(\tfrac13 X + \tfrac34 Y\right) + X\left(\tfrac34 X - \tfrac13 Y\right) = \tfrac34\left(X^2 + Y^2\right) = \tfrac{39}{16} .
-```
-
-$\square$
-
-*Lean:
-[`Seven.Boundary.D_range`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L127),
-[`Seven.Boundary.radicand_pos`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L134),
-[`Seven.Boundary.Z_pos`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L140),
-[`Seven.Boundary.Z_sq`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L143),
-[`Seven.Boundary.circle_identities`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L147),
-[`Seven.Boundary.circle_label`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L156),
-[`Seven.Boundary.D_s0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L121),
-[`Seven.Boundary.side_at_transition`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L162),
-[`Seven.Boundary.D_td`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L117),
-[`Seven.Boundary.side_at_diagonal`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L181),
-[`Seven.Boundary.circle_bounds`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L195),
-[`Seven.Boundary.hasDerivAt_D`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L255),
-[`Seven.Boundary.hasDerivAt_Z`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L260),
-[`Seven.Boundary.hasDerivAt_X`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L271),
-[`Seven.Boundary.hasDerivAt_Y`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L283),
-[`Seven.Boundary.hasDerivAt_Y_prime`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L295).*
-
-## B.4 Segments of constant label
-
-A support sum at the gap $\frac\pi3$ depends on a state through its coordinates
-and its label. At a fixed label it is affine in the state, so it is extreme at
-the ends of the set of admissible states with that label. For an axial label
-$\tau$ this set is the horizontal segment $u = \frac45\tau$,
-$\frac12 \le a \le \mu(\frac45\tau)$ (Proposition B.15). For a side label $\tau$
-it is a segment of slope $\frac94$ in the $(a, u)$-plane, from the tie state of
-label $\tau$ up to the top $(\hat a(\tau), \hat u(\tau))$ (Proposition B.16 and
-Figure B.4).
-
-### Proposition B.15 (the axial region)
-
-1. If $(a, u)$ is admissible and its label is axial, then $a \le \mu(u)$.
-2. If $0 \le u \le \frac\pi5$, the state $(\mu(u), u)$ is admissible and its
-   label is axial, equal to $\frac54 u$.
-3. If $0 \le u \le v \le \frac\pi5$, then $\mu(v) \le \mu(u)$ and
-   $\mu(u) - \mu(v) \le \frac{11}9(v - u)$.
-
-*Proof.* (1) By Lemma B.12 (5), $a \le \gamma(u)$, and by Lemma B.8 (1),
-$9a + 11u \le 2\pi + 7$, that is, $a \le \lambda(u)$.
-
-(2) Since $\frac\pi5 < \frac{22}{35} < 0.77475 < r_d$, Lemma B.12 (1) applies:
-$(\gamma(u), u)$ is admissible, $u \le \gamma(u)$ and $\gamma(u) > \frac12$.
-Next $u \le \lambda(u)$, because $20u \le 4\pi < 2\pi + 7$; and
-$\lambda(u) \ge \frac12$, because $11u \le \frac{11\pi}5 = 2\pi + \frac\pi5$ and
-$\frac\pi5 < \frac52$. So $\mu(u) \ge u$ and $\mu(u) \ge \frac12$, and from
-$\frac12 \le \mu(u) \le \gamma(u)$ we get
-$\varphi(\mu(u), u) \le \varphi(\gamma(u), u) = \frac{13}4$: the state
-$(\mu(u), u)$ is admissible. Its label is axial: $\mu(u) \le \lambda(u)$ means
-$9\mu(u) + 11u \le 2\pi + 7$, that is,
-$\mathrm{axial}(u) \le \mathrm{side}(\mu(u), u)$; and
-$\mathrm{axial}(u) = \frac54 u \le \frac\pi4$.
-
-(3) By Lemma B.12 (2), $\gamma$ is nonincreasing on $[0, r_d]$, and so is
-$\lambda$; hence so is their minimum $\mu$. If $\mu(v) = \gamma(v)$, then by
-Lemma B.12 (2)
-$\mu(u) \le \gamma(u) \le \gamma(v) + (v - u) \le \mu(v) + \frac{11}9(v - u)$.
-If $\mu(v) = \lambda(v)$, then
-$\mu(u) \le \lambda(u) = \lambda(v) + \frac{11}9(v - u)$. $\square$
-
-*Lean:
-[`Seven.Boundary.axial_upper`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L113),
-[`Seven.Boundary.axialTop_state`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L120),
-[`Seven.Boundary.axialTop_antitone`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L328),
-[`Seven.Boundary.axialTop_displacement`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L336).*
-
-### Proposition B.16 (segments of constant side label)
-
-1. Let $(a, u)$ be admissible with a side label $\tau = \mathrm{side}(a, u)$.
-   Then $u_0 \le u$, $a \le a_0$ and $s_0 \le \tau \le \frac\pi4$.
-2. In (1), $a = \alpha(\tau) + \frac49(u - \frac45\tau)$,
-   $\frac45\tau \le u \le \hat u(\tau)$ and $a \le \hat a(\tau)$.
-3. For $s_0 \le \tau \le \frac\pi4$ the tie state $(\alpha(\tau), \frac45\tau)$
-   is admissible, and its label is $\tau$, equal to both
-   $\mathrm{axial}(\frac45\tau)$ and $\mathrm{side}(\alpha(\tau), \frac45\tau)$.
-4. For $s_0 \le \tau \le \frac\pi4$ the top $(\hat a(\tau), \hat u(\tau))$ is
-   admissible, with the side label $\tau$. For $\tau \le t_d$ it lies on the
-   circle $\varphi = \frac{13}4$, and for $\tau \ge t_d$ on the diagonal.
-5. For all real $a', u', \tau$ with $\mathrm{side}(a', u') = \tau$,
-   $a' = \alpha(\tau) + \frac49(u' - \frac45\tau)$.
-6. For $s_0 \le \tau \le \tau' \le t_d$,
-   $\hat a(\tau) - \hat a(\tau') \le \frac{12}{13}(\tau' - \tau)$.
-
-*Proof.* (5) Solving $\mathrm{side}(a', u') = \tau$ for $a'$ gives
-$a' = \frac43(\frac\pi6 + \frac7{12} + \frac13 u' - \tau)$, that is,
-$a' = \frac{2\pi + 7}9 + \frac49 u' - \frac43\tau$; and
-$\alpha(\tau) - \frac{16}{45}\tau = \frac{2\pi + 7}9 - \frac43\tau$.
-
-(1) Since the label is side, $\mathrm{side}(a, u) \le \mathrm{axial}(u)$, that
-is, $9a + 11u \ge 2\pi + 7 = 9a_0 + 11u_0$. Suppose $u < u_0$. Then
-$a - a_0 \ge \frac{11}9(u_0 - u) > 0$. Expanding $\varphi$ about $(a_0, u_0)$,
-where it equals $X_0^2 + Y_0^2 = \frac{13}4$,
-
-```math
-\varphi(a, u) - \tfrac{13}4 = 2X_0(a - a_0) - 2Y_0(u_0 - u) + (a - a_0)^2 + (u - u_0)^2
-\ge (u_0 - u)\left(\tfrac{22}9 X_0 - 2Y_0\right) > 0 ,
-```
-
-because $\frac{22}9 X_0 > \frac{22}9(1.61979) > 3.95 > 2Y_0$ (Lemma B.10); this
-contradicts admissibility. So $u \ge u_0$, and then
-$(a + \frac12)^2 \le \frac{13}4 - (u + \frac12)^2$ is at most
-$\frac{13}4 - (u_0 + \frac12)^2 = (a_0 + \frac12)^2$, so $a \le a_0$. Finally
-$\tau - s_0 = \mathrm{side}(a, u) - \mathrm{side}(a_0, u_0)$ equals
-$\frac13(u - u_0) + \frac34(a_0 - a) \ge 0$, and
-$\tau = \ell(a, u) \le \frac\pi4$.
-
-(3) Let $w = \frac45\tau$. Then $u_0 = \frac45 s_0 \le w \le \frac\pi5 < r_d$,
-so $\mu(w) = \lambda(w) = \alpha(\tau)$ by Lemma B.12 (3). By Proposition B.15
-(2), $(\alpha(\tau), w)$ is admissible with the axial label $\frac54 w = \tau$,
-and by (5) its side label is $\tau$ too.
-
-(4) First let $\tau \le t_d$ and write $X, Y, Z$ for their values at $\tau$. By
-Lemma B.14, $\hat u = Y - \frac12 \ge u_0 > 0$, $\hat u \le \hat a$ since
-$Y \le X$, $\hat a > \frac34$ since $X > \frac54$, and
-$\varphi(\hat a, \hat u) = X^2 + Y^2 = \frac{13}4$: the top is admissible and on
-the circle. Its side label is $\tau \le t_d < \frac\pi4$. It remains to see
-$\tau \le \mathrm{axial}(\hat u)$, that is, $9\hat a + 11\hat u \ge 2\pi + 7$,
-that is, $\lambda(\hat u) \le \hat a$. Since $Y \le X$,
-$2Y^2 \le X^2 + Y^2 = \frac{13}4$, so
-$\hat u + \frac12 = Y \le \sqrt{13/8} = r_d + \frac12$. So
-$u_0 \le \hat u \le r_d$, and $\gamma(\hat u) = \hat a$ because
-$(\hat a + \frac12)^2 = \frac{13}4 - (\hat u + \frac12)^2$ with
-$\hat a + \frac12 > 0$. Lemma B.12 (3) gives
-$\lambda(\hat u) \le \gamma(\hat u) = \hat a$.
-
-Now let $t_d \le \tau \le \frac\pi4$ and $x = \delta(\tau)$, so that
-$\mathrm{side}(x, x) = \tau$ (Definition B.9). Then $x \le \delta(t_d) = r_d$,
-and $x > \frac12$ because $12\tau \le 3\pi < 2\pi + \frac92$. So
-$\varphi(x, x) = 2(x + \frac12)^2 \le 2(r_d + \frac12)^2 = \frac{13}4$ and
-$(x, x)$ is admissible, on the diagonal. Its side label $\tau$ is at most
-$\frac\pi4$, and at most $\mathrm{axial}(x) = \frac54 x$ because
-$16\tau \le 4\pi < 2\pi + 7$ (which is $4\tau \le 2\pi + 7 - 12\tau = 5x$). At
-$\tau = t_d$ both descriptions give the diagonal corner (Lemma B.14 (2)).
-
-(2) The identity is (5), and $u \ge \frac45\tau$ because
-$\tau = \ell(a, u) \le \mathrm{axial}(u)$. For the upper bound, first let
-$\tau \le t_d$. By (4) and (5), the top $(\hat a, \hat u)$ lies on the same line
-$a' = \alpha(\tau) + \frac49(u' - \frac45\tau)$ as $(a, u)$. If $u > \hat u$,
-then $a - \hat a = \frac49(u - \hat u) > 0$ and
-
-```math
-\varphi(a, u) - \varphi(\hat a, \hat u) = (a - \hat a)(a + \hat a + 1) + (u - \hat u)(u + \hat u + 1) > 0 ,
-```
-
-so $\varphi(a, u) > \frac{13}4$, which is impossible. Next let $\tau > t_d$.
-From $u \le a = \alpha(\tau) + \frac49 u - \frac{16}{45}\tau$ we get
-$\frac59 u \le \frac{2\pi + 7}9 - \frac43\tau$, that is,
-$u \le \delta(\tau) = \hat u(\tau)$. In both cases $(a, u)$ and the top lie on
-the line of (5), of positive slope, so
-$a - \hat a(\tau) = \frac49(u - \hat u(\tau)) \le 0$.
-
-(6) On $[\tau, \tau']$ the function
-$x \mapsto \hat a(x) + \frac{12}{13}x = X(x) - \frac12 + \frac{12}{13}x$ has the
-derivative $\frac{12}{13} - \frac YZ$ (Lemma B.14 (4)), which is nonnegative
-because $13Y \le 12Z = 4X + 9Y$ by $Y \le X$. So the function is nondecreasing,
-and its values at $\tau$ and $\tau'$ give the claim. $\square$
-
-*Lean:
-[`Seven.Boundary.side_state_transition_bounds`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L143),
-[`Seven.Boundary.side_segment`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L289),
-[`Seven.Boundary.side_radial_upper`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L398),
-[`Seven.Boundary.tie_state`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L251),
-[`Seven.Boundary.sideTop_state`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L241),
-[`Seven.Boundary.circle_state_at_label`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L182),
-[`Seven.Boundary.diagonal_state`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L219),
-[`Seven.Boundary.tie_of_side`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L284),
-[`Seven.Boundary.sideA_displacement`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L375).*
-
-![A zoom on the side region in the (a, u)-plane: the green region between the purple tie line at the bottom left, the circle phi = 13/4 at the right and the diagonal at the top left, with the orange capped triangle at its left corner. Green segments of slope 9/4 cross it from the tie line to the circle, labelled by their side labels 0.42, 0.48, pi/6, 0.6, 0.66, 0.72; the segment of label pi/6 ends at the side state (1, 1/2), two further segments end on the diagonal, and the orange segment of label pi/4 is the edge V1 V2 of the capped triangle. The transition state (a0, u0) is the lower right corner and the diagonal corner (rd, rd) the top](figures/appb-segments.svg)
-
-*Figure B.4.* The side region is swept by the segments of constant side label
-(Proposition B.16), from the transition state, where the segment of label $s_0$
-degenerates to a point, to the edge $V_1V_2$ of label $\frac\pi4$. Each segment
-runs from its tie state on the tie line (purple dots) to its top (black dots),
-on the circle for $\tau \le t_d$ and on the diagonal for $\tau \ge t_d$. The
-segment of label $\frac\pi6$ ends at the side state $(1, \frac12)$.
-
-### Lemma B.17 (the slope along the tie line)
-
-Let $s_0 \le \tau \le \frac\pi4$, and let $x$ be real with $\cos x > 0$,
-$\sin x \ge 0$ and $\sin x \le \frac94\cos x$. Then
-
-```math
-\left(\tfrac{43}{90} - \tfrac45\tau\right)\sin x + \left(\tfrac{13}{10} - \alpha(\tau)\right)\cos x > 0 .
-```
-
-For a constant $c$, the left side at $x = c + \tau$ is the derivative in $\tau$
-of
-
-```math
--\left(\alpha(\tau) - \tfrac12\right)\sin(c + \tau) + \left(\tfrac45\tau + \tfrac12\right)\cos(c + \tau) ,
-```
-
-the support $-(A - \frac12)\sin x + (v + \frac12)\cos x$ of a target $(A, v)$
-that moves along the tie line with its label.
-
-*Proof.* Since $\alpha' = -\frac{44}{45}$, the derivative above is
-
-```math
-\tfrac{44}{45}\sin x - \left(\alpha(\tau) - \tfrac12\right)\cos x + \tfrac45\cos x - \left(\tfrac45\tau + \tfrac12\right)\sin x ,
-```
-
-which is the left side. Since $\alpha$ decreases, Lemma B.10 gives
-$\alpha(\tau) \le \alpha(s_0) = a_0 < \frac98$, so
-$\frac{13}{10} - \alpha(\tau) > \frac7{40}$. If
-$\frac{43}{90} - \frac45\tau \ge 0$, the first term is nonnegative and the
-second positive. Otherwise, multiplying $\sin x \le \frac94\cos x$ by the
-negative number $\frac{43}{90} - \frac45\tau$, the first term is at least
-$\frac94(\frac{43}{90} - \frac45\tau)\cos x$, and the sum is at least
-
-```math
-\left(\tfrac{13}{10} - \alpha(\tau) + \tfrac94\left(\tfrac{43}{90} - \tfrac45\tau\right)\right)\cos x
-= \left(\tfrac{115}{72} - \tfrac{2\pi}9 - \tfrac{37}{45}\tau\right)\cos x
-\ge \left(\tfrac{115}{72} - \tfrac{77\pi}{180}\right)\cos x > 0 ,
-```
-
-using $\tau \le \frac\pi4$ and $\pi < \frac{22}7$. $\square$
-
-*Lean:
-[`Seven.Boundary.tie_slope_pos`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L269).*
-
-## B.5 Profiles along the boundary
-
-Where a sector is reduced to the boundary of the label regions, what remains is
-a function of one label. This section proves three such bounds that Appendices C
-and D use: along the side boundary with the target at the transition state, at
-the diagonal corner, and along the diagonal. By the Remark after Lemma B.6, the
-expression in Lemma B.18 (4) is the support sum $\sigma_1(\frac\pi3)$ for the
-signs $(-1, -1)$ with the target at the transition state, and the value in Lemma
-B.19 is $\sigma_2(\frac\pi3)$ for the signs $(1, -1)$ with the source at the
-diagonal corner and the target at the transition state.
-
-We use the Taylor brackets of [Lemma A.8](appendix-a.md#lemma-a8-polynomial-brackets): for
-$0 \le l \le x \le h \le \frac\pi2$,
-
-```math
-l - \tfrac{l^3}6 + \tfrac{l^5}{120} - \tfrac{l^7}{5040} \le \sin x \le h - \tfrac{h^3}6 + \tfrac{h^5}{120},
-\qquad
-1 - \tfrac{h^2}2 + \tfrac{h^4}{24} - \tfrac{h^6}{720} \le \cos x \le 1 - \tfrac{l^2}2 + \tfrac{l^4}{24} .
-```
-
-### Lemma B.18 (the transition profile)
-
-For $s_0 \le \tau \le \frac\pi4$ let $\theta(\tau) = \frac\pi3 - \tau + s_0$,
-and put
-
-```math
-F(\tau) = 1 - Y(\tau) - \left(a_0 - \tfrac12\right)\sin\theta(\tau) + Y_0\cos\theta(\tau) \quad (s_0 \le \tau \le t_d),
-\qquad
-G(\tau) = \tfrac12 - \delta(\tau) - \left(a_0 - \tfrac12\right)\sin\theta(\tau) + Y_0\cos\theta(\tau) \quad (t_d \le \tau \le \tfrac\pi4).
-```
-
-1. The angle $\theta_1 = \theta(t_d)$ lies in $(0.6272, 0.6273)$,
-   $F(t_d) > 0.002$ and $0 < F'(t_d) < 0.044$.
-2. $F''(\tau) > \frac12$ for $\frac25 \le \tau \le t_d$, and $F(\tau) > 0$
-   there.
-3. $G$ is nondecreasing on $[t_d, \frac\pi4]$, $G(t_d) = F(t_d)$, and
-   $G(\tau) > 0$ there.
-4. If $(a, u)$ is admissible with a side label $\ell = \ell(a, u) \ge \frac25$,
-   then
-
-   ```math
-   \tfrac12 - u - \left(a_0 - \tfrac12\right)\sin\left(\tfrac\pi3 - \ell + s_0\right) + Y_0\cos\left(\tfrac\pi3 - \ell + s_0\right) > 0 .
-   ```
-
-Since $\frac12 - \hat u(\tau)$ is $1 - Y(\tau)$ for $\tau \le t_d$ and
-$\frac12 - \delta(\tau)$ for $\tau \ge t_d$, $F$ and $G$ are the expression of
-(4) with the source at the top of its segment. Their minimum is small, about
-$8\cdot 10^{-4}$ near $\tau = 0.72$ (Figure B.5).
-
-*Proof.* By Lemma B.14 (4), $F$ is twice differentiable on $[s_0, t_d]$ with
-
-```math
-F' = -\frac XZ + \left(a_0 - \tfrac12\right)\cos\theta + Y_0\sin\theta, \qquad
-F'' = \frac{39}{16Z^3} + \left(a_0 - \tfrac12\right)\sin\theta - Y_0\cos\theta ,
-```
-
-since $\theta' = -1$.
-
-(1) At $\tau = t_d$ the point $(X, Y)$ is the diagonal corner: by Lemma B.14
-(2), $X = Y = r_d + \frac12$, and by Lemma B.14 (1),
-$Z = \frac13 X + \frac34 Y = \frac{13}{12}(r_d + \frac12)$. So
-$1 - Y = \frac12 - r_d$ and $\frac XZ = \frac{12}{13}$. The angle
-$\theta_1 = \frac\pi3 - t_d + s_0 = \frac\pi6 - \frac7{12} + \frac5{12}r_d + \frac54u_0$
-lies, by $3.1415 < \pi < 3.1416$ and Lemmas B.10 and B.11, between
-
-```math
-\tfrac{3.1415}6 - \tfrac7{12} + \tfrac5{12}(0.77475) + \tfrac54(0.29136) > 0.6272
-\qquad\text{and}\qquad
-\tfrac{3.1416}6 - \tfrac7{12} + \tfrac5{12}(0.77476) + \tfrac54(0.29137) < 0.6273 ,
-```
-
-and the Taylor brackets with $l = 0.6272$ and $h = 0.6273$ give
-$0.5868 < \sin\theta_1 < 0.587$ and $0.8096 < \cos\theta_1 < 0.8098$. With
-$a_0 - \frac12 \in (0.61979, 0.6198)$ and $Y_0 \in (0.79136, 0.79137)$
-(Lemma B.10),
-
-```math
-\begin{aligned}
-F(t_d) &= \tfrac12 - r_d - \left(a_0 - \tfrac12\right)\sin\theta_1 + Y_0\cos\theta_1 > 0.5 - 0.77476 - 0.6198\cdot 0.587 + 0.79136\cdot 0.8096 > 0.002,\\
-F'(t_d) &= -\tfrac{12}{13} + \left(a_0 - \tfrac12\right)\cos\theta_1 + Y_0\sin\theta_1 < -\tfrac{12}{13} + 0.6198\cdot 0.8098 + 0.79137\cdot 0.587 < 0.044,\\
-F'(t_d) &> -\tfrac{12}{13} + 0.61979\cdot 0.8096 + 0.79136\cdot 0.5868 > 0 .
-\end{aligned}
-```
-
-(2) For $\frac25 \le \tau \le t_d$, Lemma B.14 (3) gives $Z < \frac75$, so
-$16Z^3 < 16(\frac75)^3 < 44$ and $\frac{39}{16Z^3} > \frac{39}{44} > \frac78$.
-The angle $\theta$ is at least $\theta(t_d) = \theta_1 > 0.6272 > \frac\pi6$ and
-at most $\frac\pi3 - \frac25 + s_0 < \frac\pi3$ (Lemma B.10). So
-$\sin\theta \ge \frac12$ and, by the bracket of $\cos\theta_1$ in (1),
-$0 \le \cos\theta \le \cos\theta_1 < 0.81$; with $a_0 - \frac12 > \frac35$ and
-$Y_0 < \frac45$ this gives
-$F'' > \frac78 + \frac35\cdot\frac12 - \frac45\cdot 0.81 > \frac12$. Now apply
-[Lemma A.3](appendix-a.md#lemma-a3-positivity-from-curvature) on $[\frac25, t_d]$ with the curvature bound
-$\kappa = \frac12$ at the point $\tau^* = t_d$: by (1),
-$F'(\tau^*)^2 < 0.044^2 < 0.002 < 2\kappa F(\tau^*)$, so $F > 0$ on
-$[\frac25, t_d]$. Indeed, for every $\tau$ in the interval,
-
-```math
-F(\tau) \ge F(\tau^*) + F'(\tau^*)(\tau - \tau^*) + \tfrac\kappa2(\tau - \tau^*)^2
-\ge F(\tau^*) - \frac{F'(\tau^*)^2}{2\kappa} > 0 .
-```
-
-(3) For $t_d \le \tau \le \frac\pi4$, the angle $\theta$ lies in
-$[0, \frac\pi2]$ (it is at least $\frac\pi3 - \frac\pi4 + s_0 > 0$ and at most
-$\frac\pi3 - t_d + s_0 < \frac\pi2$), and
-$G' = \frac{12}5 + (a_0 - \frac12)\cos\theta + Y_0\sin\theta \ge 0$. Since
-$\delta(t_d) = r_d = Y(t_d) - \frac12$ (Lemmas B.11 and B.14 (2)),
-$\frac12 - \delta(t_d) = 1 - Y(t_d)$ and $G(t_d) = F(t_d) > 0$ by (1). So
-$G(\tau) \ge G(t_d) > 0$.
-
-(4) By Proposition B.16 (2), $u \le \hat u(\ell)$. If $\ell \le t_d$, then
-$\frac12 - u \ge 1 - Y(\ell)$ and the expression is at least $F(\ell) > 0$ by
-(2), since $\ell \ge \frac25$. If $\ell > t_d$, then
-$\frac12 - u \ge \frac12 - \delta(\ell)$ and the expression is at least
-$G(\ell) > 0$ by (3). $\square$
-
-*Lean:
-[`Seven.Boundary.transition_actual_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L208),
-[`Seven.Boundary.transitionF`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L41),
-[`Seven.Boundary.transitionF_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L159),
-[`Seven.Boundary.transitionDiagonalF`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L170),
-[`Seven.Boundary.transitionDiagonalF_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L173),
-[`Seven.Boundary.corner_angle_bounds`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L73),
-[`Seven.Boundary.corner_point`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L82),
-[`Seven.Boundary.transition_curvature`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L116),
-[`Seven.Boundary.hasDerivAt_transitionF`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L53),
-[`Seven.Boundary.hasDerivAt_transitionFD`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L62).*
-
-### Lemma B.19 (the diagonal junction)
-
-Let $\theta_d = t_d + s_0 - \frac\pi6$. Then $0.6246 < \theta_d < 0.6248$ and
-
-```math
-\tfrac12 - r_d - \left(a_0 - \tfrac12\right)\sin\theta_d + Y_0\cos\theta_d > 0 .
-```
-
-*Proof.* $\theta_d = \frac7{12} - \frac5{12}r_d + s_0$, which by Lemmas B.10 and
-B.11 lies between $\frac7{12} - \frac5{12}(0.77476) + 0.3642 > 0.6246$ and
-$\frac7{12} - \frac5{12}(0.77475) + 0.36422 < 0.6248$. The Taylor brackets with
-$h = 0.6248$ give
-
-```math
-0 \le \sin\theta_d \le 0.6248 - \tfrac{0.6248^3}6 + \tfrac{0.6248^5}{120} < 0.585,
-\qquad
-\cos\theta_d \ge 1 - \tfrac{0.6248^2}2 + \tfrac{0.6248^4}{24} - \tfrac{0.6248^6}{720} > 0.811 .
-```
-
-So the expression exceeds
-$0.5 - 0.77476 - 0.6198\cdot 0.585 + 0.79136\cdot 0.811$, which is more than
-$0.004$. $\square$
-
-*Lean:
-[`Seven.Boundary.diagonalAngle`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L17),
-[`Seven.Boundary.diagonalValue`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L18),
-[`Seven.Boundary.diagonal_angle_bounds`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L20),
-[`Seven.Boundary.diagonal_value_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L26).*
-
-### Lemma B.20 (the diagonal profile)
-
-1. $\frac{51}{40}\sin x + \frac{11}{40}\cos x > \frac65$ for
-   $\frac\pi3 \le x \le \frac{7\pi}{12} - \frac25$.
-2. The function
-
-   ```math
-   K(\ell) = \tfrac65\left(\tfrac\pi6 - \ell\right) + \tfrac{51}{40}\cos\left(\tfrac{7\pi}{12} - \ell\right) - \tfrac{11}{40}\sin\left(\tfrac{7\pi}{12} - \ell\right)
-   ```
-
-   is nondecreasing on $[\frac25, \frac\pi4]$, and $K(\ell) > 0$ there.
-
-*Proof.* (1) By [Lemma A.5](appendix-a.md#lemma-a5-concave-trigonometric-sums), the function
-$\frac{51}{40}\sin x + \frac{11}{40}\cos x$ is concave on $[0, \frac\pi2]$,
-which contains the interval (since $\frac\pi{12} < \frac25$), so it suffices to
-check the two ends. At $x = \frac\pi3$ it is $\frac1{80}(51\sqrt3 + 11)$, more
-than $\frac1{80}(51\cdot\frac53 + 11) = \frac65$, as $\sqrt3 > 1.73 > \frac53$.
-The right end is $x_1 = \frac{7\pi}{12} - \frac25 = \frac\pi2 - \epsilon$ with
-$\epsilon = \frac25 - \frac\pi{12}$, and $0 < \epsilon < \frac3{20}$ by
-$3 < \pi < \frac{22}7$. So $\cos x_1 = \sin\epsilon \ge 0$ and
-$\sin x_1 = \cos\epsilon \ge 1 - \frac{\epsilon^2}2 > \frac{16}{17}$ (as
-$\epsilon^2 < \frac2{17}$), and the value at $x_1$ is more than
-$\frac{51}{40}\cdot\frac{16}{17} = \frac65$.
-
-(2) The derivative is
-
-```math
-K'(\ell) = -\tfrac65 + \tfrac{51}{40}\sin\left(\tfrac{7\pi}{12} - \ell\right) + \tfrac{11}{40}\cos\left(\tfrac{7\pi}{12} - \ell\right),
-```
-
-and for $\frac25 \le \ell \le \frac\pi4$ the angle $\frac{7\pi}{12} - \ell$ lies
-in $[\frac\pi3, \frac{7\pi}{12} - \frac25]$, so $K' > 0$ by (1). At
-$\ell = \frac25$ the angle is $\frac\pi2 - \epsilon$ with $\epsilon$ as in (1),
-and now $\frac{11}{80} < \epsilon < \frac3{20}$ by $3 < \pi < 3.15$. Then
-$\sin(\frac\pi2 - \epsilon) \le 1$ and, as $\epsilon^3 < \frac1{40}$,
-
-```math
-\cos\left(\tfrac\pi2 - \epsilon\right) = \sin\epsilon \ge \epsilon - \tfrac{\epsilon^3}6 > \tfrac{11}{80} - \tfrac1{240} = \tfrac2{15},
-\qquad
-K\left(\tfrac25\right) > \tfrac\pi5 - \tfrac{12}{25} + \tfrac{51}{40}\cdot\tfrac2{15} - \tfrac{11}{40} = \tfrac\pi5 - 0.585 ,
-```
-
-which is positive as $\pi > 3$. $\square$
-
-*Lean:
-[`Seven.Boundary.diagonalK`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L222),
-[`Seven.Boundary.diagonalK_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L248),
-[`Seven.Boundary.diagonalSlope_gt`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L229).*
-
-![Two graphs. Left: the transition profile F on the interval from 2/5 to td, a convex blue curve falling from about 0.053 to a minimum just above 0 near 0.72 and rising slightly up to td, continued by a short green piece on the tiny interval from td to pi/4, above a dashed orange parabola that touches the curve at the black dot at td and dips nearly to 0 near 0.7. Right: the profile K on the interval from 2/5 to pi/4, an increasing blue curve from about 0.052, marked by a dot at 2/5, to 0.085](figures/appb-profiles.svg)
-
-*Figure B.5.* Left: the transition profile of Lemma B.18. The curvature bound
-$F'' > \frac12$ puts $F$ above the parabola of curvature $\frac12$ through its
-value and slope at the diagonal corner $t_d$ (dashed), whose minimum, about
-$3\cdot 10^{-4}$, is positive; beyond $t_d$ the profile $G$ (green) increases.
-Right: the profile $K$ of Lemma B.20, increasing from its positive value at
-$\frac25$ (dot).
-
-## B.6 The target support on the axial boundary
-
-On the forward axis with the signs $(-1, -1)$ the support sum is
-$\frac12 - u - A\sin d + v\cos d + \frac12(|\sin d| + |\cos d|)$ with
-$d = \frac\pi3 - \ell + \ell'$ (the Remark after Lemma B.6). When
-$\sin d, \cos d \ge 0$ the part that depends on the target is
-$-(A - \frac12)\sin d + (v + \frac12)\cos d$, and Appendix D bounds it below by
-moving the target to the boundary of the label regions. This section studies
-that function along the upper boundary of the axial region: the circular piece
-from $(\sqrt3 - \frac12, 0)$ to the transition state, where it decreases, and
-the tie line beyond, where it increases up to a switch label.
-
-### Definition B.21 (targets on the boundary)
-
-For labels $\ell, \ell'$ put $d = \frac\pi3 - \ell + \ell'$ and define
-
-```math
-\begin{aligned}
-\xi(\ell') &= \sqrt{\tfrac{13}4 - \left(\tfrac12 + \tfrac45\ell'\right)^2}, \qquad \eta(\ell') = \tfrac12 + \tfrac45\ell',\\
-C(\ell, \ell') &= -\left(\xi(\ell') - 1\right)\sin d + \eta(\ell')\cos d,\\
-L(\ell, \ell') &= -\left(\alpha(\ell') - \tfrac12\right)\sin d + \left(\tfrac45\ell' + \tfrac12\right)\cos d,\\
-H(\ell, \ell') &= -\left(\hat a(\ell') - \tfrac12\right)\sin d + \left(\hat u(\ell') + \tfrac12\right)\cos d,
-\end{aligned}
-```
-
-the last for $s_0 \le \ell' \le \frac\pi4$. Let $\omega = \arctan\frac94$, and
-call $\omega - \frac\pi3 + \ell$ the *switch label* of $\ell$.
-
-For $0 \le \ell' \le s_0$ the state
-$(\xi(\ell') - \frac12, \eta(\ell') - \frac12)$ is
-$(\gamma(\frac45\ell'), \frac45\ell')$, the point of the circular piece of the
-axial boundary with the axial label $\ell'$ (Lemma B.12 (3) and Proposition B.15
-(2)), so $C(\ell, \ell')$ is the target part above for that target. Likewise $L$
-is the target part at the tie state of label $\ell'$, and $H$ at the top of the
-side label $\ell'$. At the switch label, $d = \omega$.
-
-*Lean:
-[`Seven.Boundary.axialX`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L15),
-[`Seven.Boundary.axialY`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L16),
-[`Seven.Boundary.circleTarget`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L24),
-[`Seven.Boundary.lineTarget`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L26),
-[`Seven.Boundary.vertexTarget`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L28),
-[`Seven.Boundary.switchAngle`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L31),
-[`Seven.Boundary.switchLabel`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L32).*
-
-### Lemma B.22 (a derivative ratio)
-
-Let $0 \le \ell' \le s_0$, and write $\xi, \eta$ for $\xi(\ell'), \eta(\ell')$.
-
-1. $\frac85 < \xi < \frac74$, $\frac12 \le \eta \le Y_0$ and
-   $\xi^2 + \eta^2 = \frac{13}4$.
-2. $\xi$ and $\eta$ are differentiable, with $\xi' = -\frac45\cdot\frac\eta\xi$
-   and $\eta' = \frac45$.
-3. The function $\rho = \frac{\xi(\frac95 - \xi)}{\eta(\xi - \frac45)}$ is
-   nonnegative, and $\rho(0) < 2 - \sqrt3$.
-4. The derivative of $\rho$ is
-
-   ```math
-   \rho' = \frac{4\left(25\xi^4 - 65\xi^3 + 25\xi^2\eta^2 + 36\xi^2 - 40\xi\eta^2 + 36\eta^2\right)}{5\xi\eta^2(5\xi - 4)^2} ,
-   \qquad
-   1 - \rho' = \frac{P(\xi)}{5\xi(5\xi - 4)^2(13 - 4\xi^2)} ,
-   ```
-
-   where the quintic
-
-   ```math
-   P(X) = -500X^5 + 800X^4 + 1705X^3 - 3900X^2 + 3120X - 1872
-   ```
-
-   is positive on $[\frac85, \frac74]$. In particular $\rho' < 1$.
-5. $(2 - \sqrt3)\cos x \le \sin x$ for $\frac\pi{12} \le x \le \frac\pi2$.
-
-The number $2 - \sqrt3$ is $\tan\frac\pi{12}$ (see the proof of (5)), so (3)
-and (5) give $\rho(0) < \tan x$ for $\frac\pi{12} \le x < \frac\pi2$.
-Proposition B.23 uses this with $x$ the angle $d$ of the target support at
-$\ell' = 0$, and then (4) to keep $\rho$ below $\tan d$ as $\ell'$ grows
+[`Six.own_east_window`](../../SquaresInCircles/Six/Normalization/Pins.lean#L455),
+[`Six.own_west_lower_window`](../../SquaresInCircles/Six/Normalization/Pins.lean#L528),
+[`Six.quarter_trig_lower`](../../SquaresInCircles/Six/Normalization/Pins.lean#L419),
+[`harmonic_pos_of_endpoints`](../../SquaresInCircles/Common/Trigonometry.lean#L340).*
+
+The margins are small: the profiles cross $\rho_0$ at about $-0.4095$ and
+$0.2631$ near the east axis, and at about $-0.6625$ near the west axis
 (Figure B.6).
 
-*Proof.* (1) Let $w = \frac45\ell' \in [0, u_0]$ (as $s_0 = \frac54 u_0$). Then
-$\xi = \gamma(w) + \frac12$ and $\eta = w + \frac12$, so
-$\xi^2 + \eta^2 = \frac{13}4$ (Lemma B.12 (1)) and
-$\frac12 \le \eta \le u_0 + \frac12 = Y_0$. By Lemma B.12 (2) and (3),
-$\gamma(w) \ge \gamma(u_0) = a_0$, so $\xi \ge a_0 + \frac12 > \frac85$; and
-since $(\gamma(w), w)$ is admissible, Lemma B.7 gives
-$\xi \le \sqrt3 < 1.733 < \frac74$.
+![Two graphs over the angles from minus pi/4 to pi/4. Left, near the east axis: the least radial coordinate a allowed by the separation along the own axis, a blue curve with a corner at 0, rises above the dashed level rho0 outside the green window from minus 5/12 to 3/10. Right, near the west axis: the blue curve rises above rho0 left of minus 2/3, and on the right it meets the dashed orange curve of the largest a for a square that holds the pin p_W before 5/8](figures/appendix-b/profiles.svg)
 
-(2) The radicand $\frac{13}4 - \eta^2 = \xi^2$ is positive, and the chain rule
-gives $\xi' = -\frac{\eta\eta'}\xi = -\frac45\cdot\frac\eta\xi$.
+*Figure B.6.* The radial profiles of Lemma B.9, the least radial coordinate
+allowed by the separation along the own axis (blue), against $a \le \rho_0$
+(dashed), with the windows of Lemma 9.20 shaded. Left, the phase $t$ near the
+east axis: the profile exceeds $\rho_0$ outside $(-0.4095, 0.2631)$. Right, the
+phase $\pi + v$ near the west axis: on the left the profile exceeds $\rho_0$
+before $v = -0.6625$; on the right it stays below $\rho_0$, and it is the pin
+$p_W$ that bounds $v$: the largest radial coordinate of a square that holds
+$p_W$ (orange) falls below the profile at about $v = 0.6169$
+(Lemma B.15).
 
-(3) Since $\frac45 < \xi < \frac74 < \frac95$ and $\eta > 0$, $\rho \ge 0$. At
-$\ell' = 0$, $\xi = \sqrt3$ and $\eta = \frac12$; multiplying the numerator and
-the denominator of $\rho(0)$ by $5$, and using
-$(2 - \sqrt3)(5\sqrt3 - 4) = 14\sqrt3 - 23$,
+### Lemma B.12 (the transverse obstruction)
 
-```math
-\rho(0) = \frac{2\sqrt3\left(\frac95 - \sqrt3\right)}{\sqrt3 - \frac45} = \frac{18\sqrt3 - 30}{5\sqrt3 - 4},
-\qquad
-2 - \sqrt3 - \rho(0) = \frac{(14\sqrt3 - 23) - (18\sqrt3 - 30)}{5\sqrt3 - 4} = \frac{7 - 4\sqrt3}{5\sqrt3 - 4} .
-```
+Let $(t, a, b)$ be a chart in the ceiling with $|t| \le \frac5{12}$, and let
+$0 \le x \le \frac18$ be a number with
+$a + \frac12 \ge 1 + (\frac12 + x)\cos t + \frac38|\sin t|$. Then
+$|b| + (1 + x)|\sin t| < \frac12$.
 
-Both $7 - 4\sqrt3$ and $5\sqrt3 - 4$ are positive, as $(4\sqrt3)^2 = 48 < 49$
-and $(5\sqrt3)^2 = 75 > 16$. So $\rho(0) < 2 - \sqrt3$; numerically
-$\rho(0) \approx 0.2525$ and $2 - \sqrt3 \approx 0.2679$.
-
-(4) The formula for $\rho'$ follows from the quotient rule with (2): the
-numerator $\xi(\frac95 - \xi)$ of $\rho$ has derivative $\xi'(\frac95 - 2\xi)$
-and the denominator $\eta(\xi - \frac45)$ has derivative
-$\frac45(\xi - \frac45) + \eta\xi'$. Substituting $\xi' = -\frac{4\eta}{5\xi}$
-and expanding,
+*Proof.* Put $\gamma = \cos t$ and $\sigma = |\sin t|$, so that
+$\gamma^2 + \sigma^2 = 1$, $\gamma \ge 1 - \frac{t^2}2 \ge 1 - \frac{25}{288} > \frac56$
+and $\sigma \le |t| \le \frac5{12}$ ([Lemma A.15](appendix-a.md#lemma-a15-small-angles) (1)).
+Suppose that $|b| + (1 + x)\sigma \ge \frac12$, and put
 
 ```math
-\xi'\left(\tfrac95 - 2\xi\right)\eta\left(\xi - \tfrac45\right) - \xi\left(\tfrac95 - \xi\right)\left(\tfrac45\left(\xi - \tfrac45\right) + \eta\xi'\right)
-= \frac{4\left(25\xi^4 - 65\xi^3 + 25\xi^2\eta^2 + 36\xi^2 - 40\xi\eta^2 + 36\eta^2\right)}{125\xi} ,
+A_0 = 1 + \tfrac12\gamma + \tfrac38\sigma , \qquad B_0 = 1 - \sigma , \qquad A = A_0 + x\gamma , \qquad B = B_0 - x\sigma .
 ```
 
-and dividing by the squared denominator
-$\eta^2(\xi - \frac45)^2 = \frac1{25}\eta^2(5\xi - 4)^2$ gives the displayed
-quotient. To compare $\rho'$ with $1$, substitute
-$\eta^2 = \frac{13}4 - \xi^2$ in that quotient: its numerator becomes
-$4(-25\xi^3 + \frac{325}4\xi^2 - 130\xi + 117)$ and its denominator
-$\frac54\xi(5\xi - 4)^2(13 - 4\xi^2)$, so
+Then $A \le a + \frac12$ by hypothesis, $B \le |b| + \frac12$ by the
+supposition, and $A > 0$, $B \ge 1 - \frac98\cdot\frac5{12} > 0$; so
+$A^2 + B^2 \le Q_0$ by Lemma B.8. Now
 
 ```math
-\rho' = \frac{16\left(-25\xi^3 + \frac{325}4\xi^2 - 130\xi + 117\right)}{5\xi(5\xi - 4)^2(13 - 4\xi^2)} .
+A^2 + B^2 = A_0^2 + B_0^2 + 2x\left(A_0\gamma - B_0\sigma\right) + x^2 \ge A_0^2 + B_0^2 ,
 ```
 
-The formula for $1 - \rho'$ follows, because
-
-```math
-\begin{aligned}
-5X(5X - 4)^2(13 - 4X^2) &= -500X^5 + 800X^4 + 1305X^3 - 2600X^2 + 1040X,\\
-16\left(-25X^3 + \tfrac{325}4X^2 - 130X + 117\right) &= -400X^3 + 1300X^2 - 2080X + 1872 ,
-\end{aligned}
-```
-
-and the first right side minus the second is $P(X)$. The denominator
-$5\xi(5\xi - 4)^2(13 - 4\xi^2)$ is positive, since $\xi > \frac85$ and
-$13 - 4\xi^2 = 4\eta^2 > 0$.
-
-It remains to show that $P > 0$ on $[\frac85, \frac74]$, which contains $\xi$
-by (1). The quintic is concave there (Figure B.6): its derivatives are
-
-```math
-P'(X) = -2500X^4 + 3200X^3 + 5115X^2 - 7800X + 3120, \qquad
-P''(X) = -10000X^3 + 9600X^2 + 10230X - 7800 ,
-```
-
-and expanding the cubic $P''$ about $\frac85$,
-
-```math
-P''\left(\tfrac85 + t\right) = -7816 - 35850t - 38400t^2 - 10000t^3 ,
-```
-
-which is negative for $t \ge 0$. At the ends of the interval,
-$P(\frac85) = 119.68$ and $P(\frac74) > 78.5$ are positive. By
-[Lemma A.4](appendix-a.md#lemma-a4-positivity-from-concavity), applied to $P$ with its derivatives $P'$ and $P''$,
-$P > 0$ on $[\frac85, \frac74]$; its proof shows more: $P$ lies above its
-chord, so $P > 78.5$ there. Hence $1 - \rho' > 0$.
-
-(5) Since $\frac\pi{12} = \frac\pi3 - \frac\pi4$, the subtraction formulas give
-
-```math
-\sin\tfrac\pi{12} = \tfrac{\sqrt3}2\cdot\tfrac{\sqrt2}2 - \tfrac12\cdot\tfrac{\sqrt2}2 = \tfrac{\sqrt2}4\left(\sqrt3 - 1\right),
-\qquad
-\cos\tfrac\pi{12} = \tfrac12\cdot\tfrac{\sqrt2}2 + \tfrac{\sqrt3}2\cdot\tfrac{\sqrt2}2 = \tfrac{\sqrt2}4\left(\sqrt3 + 1\right),
-```
-
-and $(2 - \sqrt3)(\sqrt3 + 1) = \sqrt3 - 1$, so
-$\sin\frac\pi{12} = (2 - \sqrt3)\cos\frac\pi{12}$: that is,
-$\tan\frac\pi{12} = 2 - \sqrt3$. For $\frac\pi{12} \le x \le \frac\pi2$ we have
-$0 \le x - \frac\pi{12} \le \pi$, so
-
-```math
-0 \le \sin\left(x - \tfrac\pi{12}\right) = \sin x\cos\tfrac\pi{12} - \cos x\sin\tfrac\pi{12}
-= \cos\tfrac\pi{12}\left(\sin x - (2 - \sqrt3)\cos x\right) ,
-```
-
-and $\cos\frac\pi{12} > 0$. $\square$
+as $A_0\gamma \ge \gamma > \frac56 > \frac5{12} \ge \sigma \ge B_0\sigma$. Next,
+$\gamma \ge 1 - \frac\sigma4$: indeed $(1 - \gamma)(\gamma - \frac56) \ge 0$
+gives $\frac{11}6\gamma \ge \gamma^2 + \frac56 = \frac{11}6 - \sigma^2$, so
+$\gamma \ge 1 - \frac6{11}\sigma^2 \ge 1 - \frac\sigma4$, as
+$\sigma \le \frac5{12} < \frac{11}{24}$. Hence
+$A_0 \ge \frac32 + \frac\sigma4 \ge 0$, and the point
+$(\frac32 + \frac\sigma4, 1 - \sigma)$ has squared norm at most
+$A_0^2 + B_0^2 \le Q_0$, against Lemma B.8 (1). $\square$
 
 *Lean:
-[`Seven.Boundary.axial_circle_bounds`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L34),
-[`Seven.Boundary.hasDerivAt_axialX`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L57),
-[`Seven.Boundary.hasDerivAt_axialY`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L52),
-[`Seven.Boundary.ratio`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L17),
-[`Seven.Boundary.ratio_nonneg`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L128),
-[`Seven.Boundary.ratio_zero_lt`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L136),
-[`Seven.Boundary.ratioD`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L19),
-[`Seven.Boundary.hasDerivAt_ratio`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L68),
-[`Seven.Boundary.ratio_numerator_pos`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L87),
-[`Seven.Boundary.ratio_derivative_lt_one`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L105),
-[`Seven.Boundary.tan_twelfth_le`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L147).*
+[`Six.own_transverse_obstruction`](../../SquaresInCircles/Six/Normalization/Pins.lean#L343),
+[`Six.moving_pin_trig`](../../SquaresInCircles/Six/Normalization/Pins.lean#L400),
+[`Six.moving_pin_polynomial`](../../SquaresInCircles/Six/Normalization/Pins.lean#L336).*
 
-![Two graphs. Left: the quintic P on the interval from 8/5 to 7/4, a concave blue arch from 119.68 at 8/5 up to about 132 and down to about 78.6 at 7/4, continued in grey beyond both ends, above the orange chord joining its two end points and far above the axis. Right: on the interval from 0 to s0, the increasing blue ratio rho, from rho(0), about 0.25, to about 0.45, below the orange curve tan d for the source label pi/4, which starts just above it at 2 - root 3, about 0.27, and rises to about 0.72](figures/appb-ratio.svg)
+### Lemma B.13 (the east pin)
 
-*Figure B.6.* Lemma B.22. (a) The quintic $P$ (blue) is concave on
-$[\frac85, \frac74]$, so it lies above its chord (orange) through the positive
-end values $P(\frac85) = 119.68$ and $P(\frac74) \approx 78.57$.
-(b) The ratio $\rho$ (blue) and $\tan d$ (orange) on $[0, s_0]$ for the source
-label $\ell = \frac\pi4$, where the angle $d = \frac\pi{12} + \ell'$ is
-smallest. At $\ell' = 0$, $\rho(0) \approx 0.2525$ lies just below
-$\tan\frac\pi{12} = 2 - \sqrt3 \approx 0.2679$, and $\rho$ stays below
-$\tan d$; this is $E > 0$ in the proof of Proposition B.23. For a smaller
-source label, $d$ and $\tan d$ are larger.
+1. Let $c \in [0, c_0]^2$, let $(t, a, b)$ be a chart in the ceiling with
+   $|t| \le \frac\pi4$, and let (B.4) hold. Then
+   $-\frac5{12} < t < \frac3{10}$, and $Q_t(a, b)$ holds $p_E$.
+2. Let $(t, a, b)$ be a chart in the ceiling with $|b| < \frac12$ and
+   $|t| \le \frac5{12}$, whose square holds a point $(L, 0)$ with
+   $L \ge \frac9{10}$. Then it holds $p_E$.
 
-### Proposition B.23 (the circular piece)
+*Proof.* By (B.3), $p_E = \frac9{10}u(0)$ has the local coordinates
+$(\frac9{10}\cos t - a, -\frac9{10}\sin t - b)$, and $(L, 0)$ has
+$(L\cos t - a, -L\sin t - b)$. In both parts $|t| \le \frac5{12}$, so
+$\cos t > \frac56$, and $\frac12 \le a \le \rho_0$; hence
+$\frac9{10}\cos t - a > \frac34 - \rho_0 > -\frac12$.
 
-Let $\frac25 \le \ell \le \frac\pi4$. Then $\ell' \mapsto C(\ell, \ell')$ is
-nonincreasing on $[0, s_0]$, and
+(1) The window is Lemma B.11 (1). As $c_y \le c_0 < \frac18$, Lemma B.9 (5)
+gives $a + \frac12 \ge 1 + (\frac12 + c_x)\cos t + \frac38|\sin t|$. In
+particular $a \ge \frac12 + \frac12\cos t > \frac{11}{12}$, so the first
+coordinate of $p_E$ is negative; and Lemma B.12 with $x = c_x$ gives
 
 ```math
-C(\ell, s_0) = L(\ell, s_0) = -\left(a_0 - \tfrac12\right)\sin\left(\tfrac\pi3 - \ell + s_0\right) + Y_0\cos\left(\tfrac\pi3 - \ell + s_0\right) .
+\left|\tfrac9{10}\sin t + b\right| \le \tfrac9{10}|\sin t| + |b| \le (1 + c_x)|\sin t| + |b| < \tfrac12 .
 ```
 
-*Proof.* For $0 \le \ell' \le s_0$ the angle $d = \frac\pi3 - \ell + \ell'$
-satisfies $\frac\pi{12} \le d < \frac\pi2$: the lower bound because
-$\ell \le \frac\pi4$, the upper because
-$d \le \frac\pi3 - \frac25 + s_0 < 1.0115$. So $\sin d, \cos d \ge 0$. By Lemma
-B.22 (2), since $d' = 1$,
+(2) The first coordinate is at most $\frac9{10} - a \le \frac25$. The second,
+$-\frac9{10}\sin t - b$, lies between $-b$ and $-L\sin t - b$, as
+$0 \le \frac9{10} \le L$; both lie in $(-\frac12, \frac12)$, the second
+because $(L, 0)$ is held. $\square$
+
+*Lean:
+[`Six.own_east_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L645),
+[`Six.east_pin_of_axis_point`](../../SquaresInCircles/Six/Normalization/Pins.lean#L621),
+[`Six.contract_transverse`](../../SquaresInCircles/Six/Normalization/Pins.lean#L604).*
+
+Part (2) is used for squares in a deep cap beyond the east side of $C$, which
+by Lemma 9.17 hold the point $(1 + c_x, 0)$.
+
+![Two copies of the disk of radius R0 with the containing square C, grey, and a square T, orange, separated from C along its own axis by the dashed support line of C. Left, T at the phase 0.262, with C = Q(0, 0); right, T at the phase -0.409, with C = Q(0, c0). Each T is pushed out to the circle, and each holds the east pin p_E at (9/10, 0), marked by a dot](figures/appendix-b/east-pin.svg)
+
+*Figure B.7.* Squares at the two ends of the east window, separated from $C$
+along their own axis by the dashed support line of $C$: left at the phase
+$0.262$ with $C = Q(0, 0)$, right at $-0.409$ with $C = Q(0, c_0)$, the
+centres of $C$ that make the profiles of Lemma B.9 (1) and (2) exact. Both are
+pushed out to the circle of radius $R_0$, with $b \approx 0$, and both hold
+the east pin $p_E$ on $\Gamma_{9/10}$ (dotted).
+
+### Lemma B.14 (the western flank)
+
+Let $(t, a, b)$ be a chart in the ceiling with $|b| < \frac12$ and
+$t = \pi - w$, $\frac\pi{12} \le w \le \frac23$, such that
 
 ```math
-\frac{\partial C}{\partial\ell'} = \tfrac45\cdot\tfrac\eta\xi\sin d - (\xi - 1)\cos d + \tfrac45\cos d - \eta\sin d
-= -\frac{\eta\left(\xi - \frac45\right)}\xi\,E, \qquad E = \sin d - \rho\cos d .
+a \ge \tfrac12 + \tfrac38\cos w + \tfrac12\sin w \qquad \text{if } b < 0 . \tag{B.5}
 ```
 
-The factor $\frac\eta\xi(\xi - \frac45)$ is positive, so it suffices that
-$E > 0$. By Lemma B.22 (3) and (4), $E' = (1 - \rho')\cos d + \rho\sin d \ge 0$,
-so $E$ is nondecreasing on $[0, s_0]$
-([Lemma A.1](appendix-a.md#lemma-a1-monotonicity-from-the-derivative) (1)). At $\ell' = 0$ the angle is
-$d_0 = \frac\pi3 - \ell$, which lies in $[\frac\pi{12}, \frac\pi2)$, so
-$\cos d_0 > 0$, and Lemma B.22 (5) gives $\sin d_0 \ge (2 - \sqrt3)\cos d_0$.
-With $\rho(0) < 2 - \sqrt3$ (Lemma B.22 (3)),
+Then $Q_t(a, b)$ holds $p_W$. Condition (B.5) holds in each of the following
+cases:
+
+1. $c \in [0, c_0]^2$ and (B.4) holds;
+2. $w < \frac25$ and $-x_t(a, b) \ge \eta + \omega(t)$ for some
+   $\eta \ge r_0$.
+
+*Proof.* Put $\delta = w - \frac\pi{12}$, so that
+$0 \le \delta \le \frac23 - \frac\pi{12} < \frac5{12}$, $\cos\delta > \frac56$
+and $0 \le \sin\delta \le \delta$. As $p_W = \frac9{10}u(\pi - \frac\pi{12})$,
+(B.3) gives its local coordinates
+$(\frac9{10}\cos\delta - a, \frac9{10}\sin\delta - b)$. The first lies
+between $\frac34 - \rho_0 > -\frac12$ and $\frac9{10} - \frac12 < \frac12$,
+as $\frac56 < \cos\delta \le 1$ and $\frac12 \le a \le \rho_0$. The second
+exceeds $-\frac12$, as $b < \frac12$ and $\sin\delta \ge 0$. Suppose
+that it is at least $\frac12$. Then
+$b \le \frac9{10}\sin\delta - \frac12 \le \frac9{10}\cdot\frac5{12} - \frac12 < 0$,
+and (B.5) applies; by Lemma B.10 with $A = \frac38$, $B = \frac12$ and
+$r = \frac23$,
 
 ```math
-E(0) = \sin d_0 - \rho(0)\cos d_0 \ge \left(2 - \sqrt3 - \rho(0)\right)\cos d_0 > 0 .
+a + \tfrac12 \ge 1 + \tfrac38\cos w + \tfrac12\sin w \ge \tfrac{11}8 + \left(\tfrac12 - \tfrac18 - \tfrac1{27}\right)w = \tfrac{11}8 + \tfrac{73}{216}w \ge \tfrac{11}8 + \tfrac w3 .
 ```
 
-So $E \ge E(0) > 0$ on $[0, s_0]$; as $\cos d > 0$, this says that $\rho$ stays
-below $\tan d$ (Figure B.6 (b)).
+And, as $\frac{3\pi}{40} > 0.2355 > \frac9{40}$,
 
-At $\ell' = s_0$: $\xi(s_0) = \gamma(u_0) + \frac12 = a_0 + \frac12$ and
-$\eta(s_0) = Y_0$ (Lemma B.12 (3)), and $\alpha(s_0) = a_0$ and
-$\frac45 s_0 + \frac12 = Y_0$ (Lemma B.10), which gives the two values.
+```math
+|b| + \tfrac12 = \tfrac12 - b \ge 1 - \tfrac9{10}\sin\delta \ge 1 - \tfrac9{10}\delta = 1 + \tfrac{3\pi}{40} - \tfrac9{10}w > \tfrac{49}{40} - \tfrac9{10}w .
+```
+
+Both $\frac{11}8 + \frac w3$ and
+$\frac{49}{40} - \frac9{10}w \ge \frac{49}{40} - \frac35$ are positive, so by
+Lemma B.8 the point $(\frac{11}8 + \frac w3, \frac{49}{40} - \frac9{10}w)$ has
+squared norm at most $Q_0$, against Lemma B.8 (2).
+
+(1) Here $t = \pi - w$ with $0 \le w \le \frac\pi4$, and Lemma B.9 (3) gives
+$a \ge \frac12 + r_0\cos w + \frac12\sin w$, which implies (B.5), whatever the
+sign of $b$, as $r_0 > \frac38$ and $\cos w \ge 0$.
+
+(2) As $\cos t = -\cos w$ and $\sin t = \sin w$, the hypothesis reads
+$a\cos w + b\sin w \ge \eta + \frac12(\cos w + \sin w)$. If $b < 0$, then
+$a\cos w \ge \eta + \frac12\cos w + \frac12\sin w$, and as $a \ge \frac12$ and
+$\eta \ge r_0 > \frac38$,
+
+```math
+a \ge a\cos w + \tfrac12(1 - \cos w) \ge \eta + \tfrac12 + \tfrac12\sin w > \tfrac12 + \tfrac38\cos w + \tfrac12\sin w . \qquad \square
+```
+
+*Lean:
+[`Six.western_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L679),
+[`Six.western_flank_quadratic`](../../SquaresInCircles/Six/Normalization/Pins.lean#L672),
+[`Six.own_west_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L713),
+[`Six.west_cap_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L772),
+[`Six.west_cap_rotated_identity`](../../SquaresInCircles/Six/Normalization/Pins.lean#L764),
+[`Six.polar_rotate`](../../SquaresInCircles/Six/Normalization/Pins.lean#L597).*
+
+On this flank the phase of $T$ lies between $\pi - \frac23$ and the direction
+$\pi - \frac\pi{12}$ of $p_W$, so the sixty-degree lemma does not apply; the
+pin is held because a square that misses it on the north side would reach
+too far out (Figure B.8).
+
+![Two panels with the arc of the circle of radius R0 and the dotted circle of radius 9/10 through the pins p_W and p_D. Left: a square T at the phase pi - 0.5, separated from C = Q(c0, 0) along its own axis by the dashed line, pushed sideways as far as the disk allows; it holds p_W. Dashed purple, the same square moved across until it just misses p_W: its far vertex, marked, lies outside the circle. Right: a square T at the phase pi - 0.3 beyond the dashed line x = -eta of the west side of C; it holds p_W](figures/appendix-b/flank.svg)
+
+*Figure B.8.* The western flank, Lemma B.14. Left, case (1): a square at the
+phase $\pi - 0.5$, separated from $C = Q(c_0, 0)$ along its own axis (dashed),
+pushed sideways as far as the disk allows; it holds $p_W$. Moved across until
+it just misses $p_W$ (dashed purple), it would put its far vertex outside the
+circle of radius $R_0$. Right, case (2): a square at the phase $\pi - 0.3$
+beyond the line $x = -\eta$ of the west side of $C = Q(c_0, c_0)$, with
+$\eta = r_0$; it holds $p_W$.
+
+### Lemma B.15 (the pin of W bounds the turn)
+
+Let $c \in [0, c_0]^2$, let $(t, a, b)$ be a chart in the ceiling with
+$t = \pi + v$ and $|v| \le \frac\pi4$, let (B.4) hold, and let $Q_t(a, b)$
+hold $p_W$. Then $v < \frac58$.
+
+*Proof.* Suppose $v \ge \frac58$. By Lemma B.9 (4) and Lemma A.15 (3), with
+$\cos\frac58 > 0.810962$ and $\sin\frac58 > 0.585097$ (Lemma A.7 (3), (4)),
+
+```math
+a + \tfrac12 \ge 1 + r_0\left(\cos\tfrac58 + \sin\tfrac58\right) > 1 + 0.387 \cdot 1.39605 > 1.54 .
+```
+
+By (B.3), the second local coordinate of $p_W$ is
+$\frac9{10}\sin(\frac{11\pi}{12} - \pi - v) - b = -\frac9{10}\sin(\frac\pi{12} + v) - b$,
+and it exceeds $-\frac12$; so
+$|b| + \frac12 \ge \frac12 - b > \frac9{10}\sin(\frac\pi{12} + v)$. Here
+$0.8866 < \frac\pi{12} + \frac58 \le \frac\pi{12} + v \le \frac\pi3 < \frac\pi2$,
+so $\sin(\frac\pi{12} + v) > \sin 0.8866 > 0.7749$ (Lemma A.7 (4)), and
+$|b| + \frac12 > 0.6974 > 0.696$. By Lemma B.8 the point $(1.54, 0.696)$ then
+has squared norm at most $Q_0$, against Lemma B.8 (3). $\square$
+
+*Lean:
+[`Six.own_west_pin_upper`](../../SquaresInCircles/Six/Normalization/Pins.lean#L553).*
+
+*Proof of
+[Lemma 9.20](09-six.md#lemma-920-squares-separated-along-their-own-axis).* (1) is
+Lemma B.13 (1). (2) Let $t = \pi + v$. By Lemma B.11 (2), $v > -\frac23$. If
+$v \le -\frac\pi{12}$, Lemma B.14 (1) with $w = -v \in [\frac\pi{12}, \frac23)$
+shows that $T$ holds $p_W$. Otherwise
+$\frac{11\pi}{12} < t \le \frac{5\pi}4 = \frac{11\pi}{12} + \frac\pi3$, and
+[Lemma 9.19](09-six.md#lemma-919-sixty-degrees) with $q = \frac{11\pi}{12}$ shows
+that $T$ holds $\frac9{10}u(\frac{11\pi}{12}) = p_W$ or
+$\frac9{10}u(\frac{5\pi}4) = p_D$. If $T$ holds $p_W$, then $v < \frac58$ by
+Lemma B.15. Finally, the claim for a square in a deep cap beyond the west side
+of $C$ is Lemma B.14 (2) with $w = -v$, as $\omega(\pi + v) = \omega(v)$.
 $\square$
 
 *Lean:
-[`Seven.Boundary.circleTarget_decreases`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L160),
-[`Seven.Boundary.circleTarget_transition`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L216),
-[`Seven.Boundary.lineTarget_transition`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L230).*
+[`Six.own_east_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L645),
+[`Six.own_east_window`](../../SquaresInCircles/Six/Normalization/Pins.lean#L455),
+[`Six.own_west_lower_window`](../../SquaresInCircles/Six/Normalization/Pins.lean#L528),
+[`Six.own_west_pins`](../../SquaresInCircles/Six/Normalization/Pins.lean#L734),
+[`Six.own_west_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L713),
+[`Six.own_west_pin_upper`](../../SquaresInCircles/Six/Normalization/Pins.lean#L553),
+[`Six.west_cap_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L772),
+[`Six.sixty_pin_cover`](../../SquaresInCircles/Six/Normalization/Pins.lean#L317).*
 
-### Lemma B.24 (the switch angle)
+## B.4 Proof of Lemma 9.26
 
-$0 < \omega < \frac\pi2$ and $\cos\omega - \frac49\sin\omega = 0$. For
-$0 \le x \le \frac\pi2$, $\cos x - \frac49\sin x \ge 0$ if and only if
-$x \le \omega$.
+We prove [Lemma 9.26](09-six.md#lemma-926-supports-in-the-ceiling):
 
-*Proof.* $\tan\omega = \frac94 > 0$ gives the range and
-$\sin\omega = \frac94\cos\omega$. On $[0, \frac\pi2]$ the function
-$\cos x - \frac49\sin x$ is strictly decreasing, as $\cos$ decreases and $\sin$
-increases there, and it vanishes at $\omega$. $\square$
+> *Let $(t, a, b)$ be a chart in the ceiling.*
+>
+> 1. *(the far corner) $a + \frac{31}{100}(|b| + b^2) \le \rho_0$.*
+> 2. *(the cones) For real $U$ and $V$: if $|V| \le \frac{31}{100}U$, then
+>    $Ua + Vb \le \bar\rho U$; if $U \ge \frac75$ and $|V| \le \frac12 U$,
+>    then $Ua + Vb \le \bar\rho U + \frac1{12}V^2$; if $U \ge \frac{33}{20}$
+>    and $|V| \le \frac35 U$, then $Ua + Vb \le \bar\rho U + \frac3{25}V^2$;
+>    and if $\frac35 \le U \le \frac7{10}$ and $|V| \le \frac25 U$, then
+>    $Ua + Vb \le \rho_0 U + \frac1{160}$.*
+> 3. *(the chord) For $z \ge 0$ and $0 \le q \le \pi$,*
+>
+>    ```math
+>    (z + \sin q)\,a + (\cos q - 1)\,b \le \bar R\left(\left(2 + \tfrac{z^2}4\right)\sin\tfrac q2 + z\cos\tfrac q2\right) - \tfrac12\left(z + \sin q + 1 - \cos q\right) .
+>    ```
+>
+> 4. *(the box) If $0 \le c_x, c_y \le c_0$, then
+>    $Xc_x + Yc_y \le \bar c(X + Y)$ for $X, Y \ge 0$, and for $X \ge 0$ and
+>    real $Y$, $Xc_x + Yc_y \le \bar c X + yY$ for $y = 0$ or $y = \bar c$.*
 
-*Lean:
-[`Seven.Boundary.switch_range`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L236),
-[`Seven.Boundary.switch_zero`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L239),
-[`Seven.Boundary.switch_iff`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L244).*
+The centre $(a, b)$ of a chart in the ceiling ranges over the region bounded
+by the lines $a = \frac12$ and $|b| = a$ and by the circle
+$(a + \frac12)^2 + (|b| + \frac12)^2 = Q_0$ (Figure B.9). Part (1) puts this
+region inside a parabola that touches the circle at its tip $(\rho_0, 0)$, and
+the bounds (2) for forces close to the primary axis follow from it by
+completing squares. For part (3) recall from
+[Lemma 9.25](09-six.md#lemma-925-supports-of-a-square-in-a-disk) that the work of
+a force with the components $(U, V)$ in the frame of the square on its centre
+is $Ua + Vb$.
 
-### Proposition B.25 (the straight piece)
-
-Let $\frac25 \le \ell \le \frac\pi4$ and $s_0 \le \ell' \le \frac\pi4$ with
-$\ell' \le \omega - \frac\pi3 + \ell$. Then $y \mapsto L(\ell, y)$ is increasing
-on $[s_0, \ell']$, with a positive derivative, and so
-$C(\ell, s_0) = L(\ell, s_0) \le L(\ell, \ell')$.
-
-*Proof.* For $s_0 \le y \le \ell'$ let $x = \frac\pi3 - \ell + y$. Then
-$0 < x < \frac\pi2$, since $x \ge \frac\pi3 - \frac\pi4 + s_0 > 0$ and
-$x \le \frac\pi3 - \frac25 + \frac\pi4 < 1.433$; and $x \le \omega$, since
-$y \le \omega - \frac\pi3 + \ell$. By Lemma B.24, $\sin x \le \frac94\cos x$,
-and $\cos x > 0$, $\sin x \ge 0$. By Lemma B.17 with $\tau = y$ and
-$c = \frac\pi3 - \ell$, the derivative of $L(\ell, \cdot)$ at $y$ is positive.
-With Proposition B.23 this gives the claim. $\square$
-
-*Lean:
-[`Seven.Boundary.lineTarget_derivative_positive`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L263),
-[`Seven.Boundary.lineTarget_low_min`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L276).*
-
-![Graphs of the target support against the target label for four source labels 2/5, 0.55, 0.7 and pi/4, in four colours. Each curve decreases slowly (solid) from the target label 0 to s0, where it has a corner marked by a dot, and then increases (dashed) along the tie line up to the switch label or pi/4](figures/appb-targets.svg)
-
-*Figure B.7.* The target part of the forward sum with the signs $(-1, -1)$, for
-a target on the upper boundary of the axial region: $C(\ell, \ell')$ on the
-circular piece $0 \le \ell' \le s_0$ (solid, Proposition B.23) and
-$L(\ell, \ell')$ on the tie line from $s_0$ up to the switch label or
-$\frac\pi4$ (dashed, Proposition B.25). For each source label $\ell$ the minimum
-is at the transition state, $\ell' = s_0$.
-
-## B.7 The easy sectors
-
-Four sectors hold for all labels and give positive sums (Figure B.8). On the
-outward axis the far edge of $S$ is out of reach of $T$; on the backward axis
-$T$ contains its marker point, which lies beyond the lower edge of $S$; on the
-inward axis with a negative source sign the marker arc of $T$ reaches past the
-near edge of $S$; and on the forward axis with positive signs a Cauchy–Schwarz
-bound on the disk $\varphi \le \frac{13}4$ suffices.
-
-![Four panels, each with the disk centre o, a faint unit circle and a blue source square S and a green target square T of a canonical pair at the gap pi/3. (a) Outward axis: the side square Q(1, 1/2) and the square Q(0, 1) above it; a dashed circle of radius 31/25 about o contains the centre of T, an orange dashed line x = 37/50 and a blue dashed line x = a + 1/2 through the far edge of S, and an orange bracket from the leftmost point of T to that edge. (b) Backward axis with source sign 1: the same squares; the marker point of T on the unit circle above o, and an orange segment from it down to the dashed line y = u - 1/2 of the lower edge of S. (c) Inward axis with source sign -1: the side column, S below the axis and T above it; the marker arc of T drawn thick on the unit circle, and an orange segment from the dashed near-edge line x = a - 1/2 of S to the lower end of the arc. (d) Forward axis with both signs 1: the pair of Figure B.1 with the shadows of S and T on a vertical line and an orange bracket over their overlap](figures/appb-easy.svg)
-
-*Figure B.8.* The easy sectors. (a) Proposition B.26: $T$ has a point to the
-left of $x = \frac{37}{50}$, since its centre lies in the dashed disk of radius
-$\frac{31}{25}$, while $S$ reaches $x = a + \frac12 \ge 1$. (b) Proposition
-B.27: the marker point of $T$ lies in $T$, above the lower edge of $S$; the
-orange segment is a lower bound for $\sigma_3(\frac\pi3)$. (c) Proposition B.28:
-the end of the marker arc of $T$ nearest to the axis lies to the right of the
-near edge of $S$; the orange segment is a lower bound for $\sigma_2(\frac\pi3)$.
-(d) Proposition B.29: the shadows on the forward axis overlap. In (a) to (c) the
-pairs are contacts of the second and first kinds; the propositions hold for all
-admissible states.
-
-### Proposition B.26 (the outward axis)
-
-Let $(a, u)$ and $(A, v)$ be admissible and $s, t$ signs. Then
-$\sigma_0(\frac\pi3) > 0$.
-
-*Proof.* By Lemma B.5 (1),
-$\sigma_0(\frac\pi3) = a + \frac12 + h(A, tv, \pi - d)$. Since
-$(A, |tv|) = (A, v)$ is admissible, Lemma B.4 (1) gives
-$h(A, tv, \pi - d) > -\frac{37}{50}$, and $a \ge \frac12$. So
-$\sigma_0(\frac\pi3) > 1 - \frac{37}{50} = \frac{13}{50}$. $\square$
-
-*Lean:
-[`Seven.fixed_gap_outward`](../../SquaresInCircles/Seven/Pair/EasySectors.lean#L19).*
-
-### Proposition B.27 (the backward axis)
-
-Let $(a, u)$ and $(A, v)$ be admissible and $s, t$ signs. Then
-$\sigma_3(\frac\pi3) > 0$.
-
-*Proof.* By Lemma B.5 (1), $\sigma_3(\frac\pi3) = \frac12 - su + h(A, tv, z)$
-with $z = \frac{5\pi}2 - d = \frac{5\pi}2 - \frac\pi3 - s\ell + t\ell'$, where
-$\ell = \ell(a, u)$ and $\ell' = \ell(A, v)$. Apply Lemma B.4 (2) to the target
-with $x = t\ell'$, its marker: since
-$z - x = 2\pi + \frac\pi2 - (\frac\pi3 + s\ell)$,
+*Proof.* (1) By [Lemma 9.5](09-six.md#lemma-95-the-ceiling) (3),
+$Q_0 - \frac14 = (\rho_0 + \frac12)^2$, so
 
 ```math
-\sigma_3\left(\tfrac\pi3\right) \ge \tfrac12 - su + \cos(z - x) = \tfrac12 - su + \sin\left(\tfrac\pi3 + s\ell\right) .
+|b| + b^2 = \left(|b| + \tfrac12\right)^2 - \tfrac14 \le Q_0 - \left(a + \tfrac12\right)^2 - \tfrac14 = (\rho_0 - a)(\rho_0 + a + 1) .
 ```
 
-If $s = 1$, then $\sin(\frac\pi3 + \ell) = \cos(\frac\pi6 - \ell)$ is at least
-$1 - \frac12(\frac\pi6 - \ell)^2$, and
-$|\frac\pi6 - \ell| \le \frac\pi6 < \frac35$ because $0 \le \ell \le \frac\pi4$
-([Lemma 9.7](seven.md#lemma-97-the-label)); so
-$\sin(\frac\pi3 + \ell) > 1 - \frac9{50} = \frac{41}{50}$. With
-$u < \frac{31}{40}$ ([Lemma 9.5](seven.md#lemma-95-admissible-states)), $\sigma_3(\frac\pi3)$ exceeds
-$\frac12 - \frac{31}{40} + \frac{41}{50} > \frac12$.
-If $s = -1$, then $\frac\pi3 - \ell \in [\frac\pi{12}, \frac\pi3]$, so
-$\sin(\frac\pi3 - \ell) \ge 0$ and
-$\sigma_3(\frac\pi3) \ge \frac12 + u \ge \frac12$. $\square$
+As $a \le \rho_0$ ([Lemma 9.10](09-six.md#lemma-910-charts-in-the-ceiling) (2)),
+$\rho_0 - a \ge 0$, and $2\rho_0 + 1 < 3.22564$, so
+$\frac{31}{100}(\rho_0 + a + 1) \le \frac{31}{100}(2\rho_0 + 1) < 0.99995$;
+hence $\frac{31}{100}(|b| + b^2) \le \rho_0 - a$.
+
+(2) By (1), for $U \ge 0$,
+
+```math
+Ua + Vb \le Ua + |V|\,|b| \le \rho_0 U - \tfrac{31}{100}U\left(|b| + b^2\right) + |V|\,|b| . \tag{B.6}
+```
+
+In each case $U \ge 0$, and we bound the sum of the last two terms of (B.6).
+
+- If $|V| \le \frac{31}{100}U$, it is at most $-\frac{31}{100}Ub^2 \le 0$, so
+  $Ua + Vb \le \rho_0 U \le \bar\rho U$.
+- If $U \ge \frac75$ and $|V| \le \frac12 U$, then
+  $\frac{31}{100}U \ge \frac{31}{50}|V|$ and
+  $\frac{31}{100}U \ge \frac{217}{500}$, so it is at most
+
+  ```math
+  \tfrac{19}{50}|V|\,|b| - \tfrac{217}{500}b^2 = \tfrac1{12}V^2 - \tfrac1{12}\left(|V| - \tfrac{57}{25}|b|\right)^2 - \tfrac1{1250}b^2 \le \tfrac1{12}V^2 .
+  ```
+
+- If $U \ge \frac{33}{20}$ and $|V| \le \frac35 U$, then
+  $\frac{31}{100}U \ge \frac{31}{60}|V|$ and
+  $\frac{31}{100}U \ge \frac{1023}{2000} > \frac12$, so it is at most
+
+  ```math
+  \tfrac{29}{60}|V|\,|b| - \tfrac12 b^2 = \tfrac3{25}V^2 - \tfrac12\left(|b| - \tfrac{29}{60}|V|\right)^2 - \tfrac{23}{7200}V^2 \le \tfrac3{25}V^2 .
+  ```
+
+- If $\frac35 \le U \le \frac7{10}$ and $|V| \le \frac25 U$, then
+  $\frac{31}{100}U \ge \frac{31}{40}|V|$ and
+  $\frac{31}{100}U \ge \frac{93}{500}$, so it is at most
+
+  ```math
+  \tfrac9{40}|V|\,|b| - \tfrac{93}{500}b^2 = \tfrac7{100}V^2 - \tfrac7{100}\left(|V| - \tfrac{45}{28}|b|\right)^2 - \tfrac{291}{56000}b^2 \le \tfrac7{100}V^2 ,
+  ```
+
+  and $|V| \le \frac25\cdot\frac7{10} = \frac7{25}$, so
+  $\frac7{100}V^2 \le \frac{343}{62500} < \frac1{160}$.
+
+In the first three cases $\rho_0 U \le \bar\rho U$ completes the bound.
+
+(3) Lemma 9.25 (1) with $R = R_0$, $U = z + \sin q$ and $V = \cos q - 1$
+gives $Ua + Vb \le R_0\sqrt{U^2 + V^2} - \frac12(|U| + |V|)$, and
+$|U| + |V| \ge U - V = z + \sin q + 1 - \cos q$. Put
+$\sigma = \sin\frac q2 \ge 0$ and $\gamma = \cos\frac q2 \ge 0$, so that
+$\sin q = 2\sigma\gamma$ and $1 - \cos q = 2\sigma^2$, and let
+$M = (2 + \frac{z^2}4)\sigma + z\gamma \ge 0$. Then
+$U^2 + V^2 = (z + 2\sigma\gamma)^2 + 4\sigma^4 = z^2 + 4z\sigma\gamma + 4\sigma^2$,
+and, as one checks by expanding with $\sigma^2 + \gamma^2 = 1$,
+
+```math
+M^2 - U^2 - V^2 = \tfrac{z^3}2\sigma\gamma + \tfrac{z^4}{16}\sigma^2 \ge 0 .
+```
+
+So $\sqrt{U^2 + V^2} \le M$, and $R_0\sqrt{U^2 + V^2} \le \bar R M$.
+
+(4) For $X, Y \ge 0$, $Xc_x \le c_0X \le \bar cX$ and $Yc_y \le \bar cY$. For
+$X \ge 0$ and real $Y$, $Xc_x \le \bar cX$; if $Y \ge 0$, then
+$Yc_y \le \bar cY$, and $y = \bar c$ will do; if $Y < 0$, then
+$Yc_y \le 0$, and $y = 0$ will do. $\square$
 
 *Lean:
-[`Seven.fixed_gap_backward`](../../SquaresInCircles/Seven/Pair/EasySectors.lean#L28).*
+[`Six.radial_transverse_quadratic`](../../SquaresInCircles/Six/Supports.lean#L164),
+[`Six.cone_support`](../../SquaresInCircles/Six/Supports.lean#L176),
+[`Six.soft_support`](../../SquaresInCircles/Six/Supports.lean#L187),
+[`Six.wide_support`](../../SquaresInCircles/Six/Supports.lean#L205),
+[`Six.narrow_support`](../../SquaresInCircles/Six/Supports.lean#L223),
+[`Six.chordMajorant`](../../SquaresInCircles/Six/Supports.lean#L55),
+[`Six.chord_support`](../../SquaresInCircles/Six/Supports.lean#L60),
+[`Six.vertex_support`](../../SquaresInCircles/Six/Supports.lean#L34),
+[`Six.center_corner`](../../SquaresInCircles/Six/Supports.lean#L267),
+[`Six.center_face`](../../SquaresInCircles/Six/Supports.lean#L275).*
 
-### Proposition B.28 (the inward axis with a negative source sign)
+The number $\frac{31}{100}$ is just below the slope
+$\frac{1/2}{\rho_0 + 1/2} > 0.31001$ of the circle at the tip, where the
+parabola of (1) touches it; the cones of (2) are the forces whose support
+lines meet the parabola near the tip (Figure B.9). In (3), the force
+$(z + \sin q, \cos q - 1)$ is $z$ times the primary axis plus the chord from
+$(0, 1)$ to $(\sin q, \cos q)$ of the unit circle; for $z = 0$ its
+length is the chord $2\sin\frac q2$, which the majorant $M$ equals
+(Figure B.10).
 
-Let $(a, u)$ and $(A, v)$ be admissible and $t$ a sign. Then, for the signs
-$(-1, t)$, $\sigma_2(\frac\pi3) > 0$.
+![The centres (a, b) of the charts in the ceiling, a blue region bounded by the lines a = 1/2 and |b| = a and by the circle of the far corner, and around it the dashed parabola a + 0.31(|b| + b^2) = rho0, which touches it at (rho0, 0). Four support lines, one for the extreme force of each cone of Lemma 9.26 (2), listed in a legend, fan out from the tip; each lies beyond the parabola and comes close to it near a dot](figures/appendix-b/centres.svg)
 
-*Proof.* Here $d = \frac\pi3 - \ell - t\ell'$ with $\ell = \ell(a, u)$,
-$\ell' = \ell(A, v)$, and by Lemma B.5 (1),
-$\sigma_2(\frac\pi3) = \frac12 - a + h(A, tv, z)$ with
-$z = 2\pi - \frac\pi3 + \ell + t\ell'$. Apply Lemma B.4 (2) with
-$x = t\ell' - \frac12$, the end of the marker arc of the target on the side of
-the source: $z - x = 2\pi - y$ with $y = \frac\pi3 - \ell - \frac12$, so
+*Figure B.9.* The centres $(a, b)$ of the charts in the ceiling (blue), inside
+the parabola $a + \frac{31}{100}(|b| + b^2) = \rho_0$ (dashed) of Lemma 9.26
+(1). For the extreme force of each cone of (2) the line
+$Ua + Vb = \text{bound}$ is drawn: $V = \frac{31}{100}U$ (black),
+$(U, V) = (\frac35, \frac6{25})$ (purple), $(\frac75, \frac7{10})$ (orange)
+and $(\frac{33}{20}, \frac{99}{100})$ (green). Each line lies beyond the
+parabola and comes closest to it at the dot; the black line passes the tip
+with the slope of the parabola there.
+
+![For z = 0, 0.5, 1 and 1.5, the length of the force (z + sin q, cos q - 1) as a function of q from 0 to pi, solid, and its majorant (2 + z^2/4) sin(q/2) + z cos(q/2), dashed in the same colour just above it; for z = 0 the two coincide, as the chord 2 sin(q/2)](figures/appendix-b/chord.svg)
+
+*Figure B.10.* The chord majorant of Lemma 9.26 (3): the length
+$\sqrt{(z + \sin q)^2 + (1 - \cos q)^2}$ of the force (solid) and its majorant
+$(2 + \frac{z^2}4)\sin\frac q2 + z\cos\frac q2$ (dashed) for
+$z = 0, 0.5, 1, 1.5$ and $0 \le q \le \pi$. They agree for $z = 0$, and the
+excess of the square, $\frac{z^3}2\sigma\gamma + \frac{z^4}{16}\sigma^2$, is
+small for small $z$.
+
+A few further bounds of the same kind, with decimal constants, are used in
+the later appendices.
+
+### Lemma B.16 (further supports)
+
+Let $(t, a, b)$ be a chart in the ceiling and $U$, $V$ real numbers.
+
+1. If $r \ge 0$ and $U^2 + V^2 \le r^2$, then
+   $Ua + Vb \le \bar R r - \frac12(|U| + |V|)$; if moreover $V \ge 0$, then
+   $Ua - Vb \le 1.689\,r - \frac12(U + V)$.
+2. $Ua + Vb \le 1.113\sqrt{U^2 + V^2}$; and if $U, V \ge 0$ and
+   $(\rho_0 + \frac12)V \le \frac12 U$, then $Ua - Vb \le 1.113\,U$.
+3. Let $0 < l \le a + \frac12$, and let $s, \gamma \ge 0$ with
+   $s^2 + \gamma^2 = 1$ and $R_0 s \le l$. Then
+   $as + b\gamma \le (l - \frac12)s + (\sqrt{Q_0 - l^2} - \frac12)\gamma$.
+4. If $0 \le c_x, c_y \le c_0$, $X, Y \ge 0$, $g_x \le X$ and $g_y \le Y$,
+   then $g_xc_x + g_yc_y \le 0.113(X + Y)$. If $0 \le x \le \kappa$, then
+   $xv \le \kappa\max(v, 0)$ for every real $v$.
+
+*Proof.* (1) Lemma 9.25 (1) with $R = R_0$, as
+$\sqrt{U^2 + V^2} \le r$ and $R_0 < \bar R < 1.689$; for the second claim
+apply it to $(U, -V)$ and use $|U| \ge U$. (2) Lemma 9.25 (2) and (3), as
+$\rho_0 < 1.113$. (3) Put $\beta = \sqrt{Q_0 - l^2}$, $A = a + \frac12 \ge l$
+and $B = |b| + \frac12$, so that $A^2 + B^2 \le Q_0$. As
+$l^2 \le A^2 \le Q_0 - \frac14$, $\beta \ge \frac12$, and $(l, \beta)$ lies on
+the circle $A^2 + B^2 = Q_0$; so the disk lies on one side of the tangent there,
+$l(A - l) + \beta(B - \beta) \le 0$, since twice the left side is
+$(A^2 + B^2) - Q_0 - (A - l)^2 - (B - \beta)^2$. Next,
+$(\beta s)^2 - (l\gamma)^2 = s^2(Q_0 - l^2) - l^2(1 - s^2) = (R_0s)^2 - l^2 \le 0$,
+so $\beta s \le l\gamma$. Hence
 
 ```math
-\sigma_2\left(\tfrac\pi3\right) \ge \tfrac12 - a + \cos y .
+\beta\left(sA + \gamma B - sl - \gamma\beta\right) = s\beta(A - l) + \gamma\beta(B - \beta) \le s\beta(A - l) - \gamma l(A - l) = (A - l)(s\beta - \gamma l) \le 0 ,
 ```
 
-Since $0 \le \ell \le \frac\pi4$ and $0 < \pi < 3.15$, $y$ lies between
-$\frac\pi{12} - \frac12 > -\frac12$ and $\frac\pi3 - \frac12 < 0.55$, so
-$y^2 < \frac49$ and $\cos y \ge 1 - \frac{y^2}2 > \frac79$. By Lemma B.7,
-$a \le \sqrt3 - \frac12$. Hence
-$\sigma_2(\frac\pi3) > \frac12 - (\sqrt3 - \frac12) + \frac79 = \frac{16}9 - \sqrt3$,
-which is positive as $\sqrt3 < 1.733 < \frac{16}9$. $\square$
+so $sA + \gamma B \le sl + \gamma\beta$, and
+
+```math
+as + b\gamma \le sA + \gamma B - \tfrac12(s + \gamma) \le \left(l - \tfrac12\right)s + \left(\beta - \tfrac12\right)\gamma .
+```
+
+(4) $g_xc_x \le Xc_x \le c_0X < 0.113X$, and likewise for $y$; and $xv$ is at
+most $0$ if $v < 0$ and at most $\kappa v$ if $v \ge 0$. $\square$
 
 *Lean:
-[`Seven.fixed_gap_inward_negative`](../../SquaresInCircles/Seven/Pair/EasySectors.lean#L56).*
+[`Six.local_vertex_support`](../../SquaresInCircles/Six/Supports.lean#L28),
+[`Six.vertex_support`](../../SquaresInCircles/Six/Supports.lean#L34),
+[`Six.vertex_linear_upper`](../../SquaresInCircles/Six/Supports.lean#L44),
+[`Six.chart_radial_work`](../../SquaresInCircles/Six/Supports.lean#L113),
+[`Six.cap_linear_upper`](../../SquaresInCircles/Six/Supports.lean#L101),
+[`Six.disk_corner_support`](../../SquaresInCircles/Six/Supports.lean#L85),
+[`Six.circle_support_above_primary`](../../SquaresInCircles/Six/Supports.lean#L134),
+[`Six.coarse_central_work`](../../SquaresInCircles/Six/Supports.lean#L253),
+[`Six.scalar_box_support`](../../SquaresInCircles/Six/Supports.lean#L244).*
 
-### Proposition B.29 (the forward axis with positive signs)
+Part (3) is the analogue of Lemma 9.25 (3) for the part $A \ge l$ of the disk:
+a force at the angle $\arcsin s$ from the secondary axis does the most work at
+the corner $(l, \sqrt{Q_0 - l^2})$ of that part as long as $R_0 s \le l$.
 
-Let $(a, u)$ and $(A, v)$ be admissible. Then, for the signs $(1, 1)$,
-$\sigma_1(\frac\pi3) > 0$.
+## B.5 Proof of Proposition 9.33
 
-*Proof.* Let $\ell = \ell(a, u)$, $\ell' = \ell(A, v)$ and
-$z = \frac\pi6 - \ell + \ell'$. By the Remark after Lemma B.6 (second row),
+We prove [Proposition 9.33](09-six.md#proposition-933-the-west-stress):
 
-```math
-\sigma_1\left(\tfrac\pi3\right) = \tfrac12 + u - A\cos z - v\sin z + \tfrac12(|\cos z| + |\sin z|)
-= \tfrac12 + u + h(A, v, \pi + z) .
-```
+> *Let $c \in [0, c_0]^2$, and let $W = Q_{\pi + t}(a, b)$ and
+> $D = Q_{\pi + u}(a', b')$, for charts in the ceiling, avoid the open disk of
+> radius $r_0$ about the origin, with $-\frac23 \le t \le u$ and
+> $-\frac25 \le u \le \frac25$. If $W$ is separated from $C = Q(c)$ along its
+> own axis and $D$ along the west side of $C$, then $W$ and $D$ are not
+> disjoint.*
 
-Recall $u \ge \frac45\ell$, because $\ell \le \mathrm{axial}(u)$.
+This is the first stress argument of the book written out in full, and it
+follows the plan of §9.4. Three separating inequalities between $C$, $W$ and
+$D$, weighted and added, become the works of three forces on the centres
+([Lemma 9.24](09-six.md#lemma-924-balance)); the disk bounds the works on $W$
+and $D$ ([Lemma 9.25](09-six.md#lemma-925-supports-of-a-square-in-a-disk)), and
+the box $[0, c_0]^2$ the work on $C$, as in
+[Lemma 9.26](09-six.md#lemma-926-supports-in-the-ceiling) (4); and what remains
+is a function of the two angles $t$ and $u$ that would have to be at most 0,
+but is positive on the whole triangle of angles. The function is concave in the
+right directions ([Lemmas A.11](appendix-a.md#lemma-a11-first-harmonics) and
+[A.12](appendix-a.md#lemma-a12-a-harmonic-less-a-radical)), so its values at seven points
+decide. In this section $t$ and $u$ are the angles of $W$ and $D$, as in the
+proposition, and vectors are written in coordinates.
 
-1. *If $\ell \ge \frac5{16}$*, then $u \ge \frac14$, and Lemma B.4 (1) gives
-   $\sigma_1(\frac\pi3) > \frac12 + \frac14 - \frac{37}{50} = \frac1{100}$.
+Suppose that $W$ and $D$ are disjoint. Their phases differ by
+$u - t \in [0, \frac{16}{15}]$, so by
+[Lemma 9.31](09-six.md#lemma-931-turned-pairs) they are separated along
+$e^W_2 = (\sin t, -\cos t)$ or along $e^D_2 = (\sin u, -\cos u)$, from $W$ to
+$D$. Let $z = t$ in the first case and $z = u$ in the second, and
+$n_z = (\sin z, -\cos z)$. The three separations form the stress of
+Table B.1 ([Definition 9.23](09-six.md#definition-923-stress)). Indeed, the
+margin $m_{\mathrm{own}} \ge 0$ of $W$
+([Definition 9.12](09-six.md#definition-912-separators-of-the-containing-square))
+says $\langle e^W_1, c_W - c\rangle \ge \tau(\pi + t) = \tau(t)$, as
+$\langle e^W_1, c_W\rangle = a$; the margin $m_{\mathrm{west}} \ge 0$ of $D$
+says $\langle (-1, 0), c_D - c\rangle \ge \tau(\pi + u) = \tau(u)$; and the
+separation of $W$ and $D$ is (9.1) of
+[Lemma 9.11](09-six.md#lemma-911-separating-axes-of-two-squares) with
+$\delta = u - t$.
 
-2. *If $\ell < \frac5{16}$*, then, using $\pi > 3.14$,
-   $\frac15 < \frac\pi6 - \frac5{16} < z$ and
-   $z \le \frac\pi6 + \frac\pi4 < \frac\pi2$, so $\cos z, \sin z \ge 0$ and the
-   absolute values in the closed form can be dropped.
+| edge | source | target | normal $n_e$ | weight $\lambda_e$ | threshold $\tau_e$ |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| own axis of $W$ | $C$ | $W$ | $e^W_1 = (-\cos t, -\sin t)$ | $\frac9{20}$ | $\tau(t)$ |
+| west side of $C$ | $C$ | $D$ | $(-1, 0)$ | $\frac3{10}$ | $\tau(u)$ |
+| secondary axis | $W$ | $D$ | $n_z = (\sin z, -\cos z)$ | $\frac14$ | $\tau(u - t)$ |
 
-3. *If moreover $z \ge \frac\pi4$*, then $\sin z \ge \cos z$. With $A - v \ge 0$
-   and $A + v < \frac{31}{20}$ (Lemma B.7),
+*Table B.1.* The west stress: its three edges, with $z = t$ if $W$ and $D$ are
+separated along the secondary axis of $W$ and $z = u$ if along that of $D$.
 
-   ```math
-   A\cos z + v\sin z = \tfrac12\left((A + v)(\cos z + \sin z) - (A - v)(\sin z - \cos z)\right)
-   \le \tfrac{31}{40}(\cos z + \sin z),
-   ```
+### Definition B.17 (the west stress)
 
-   and $(\cos z + \sin z)^2 = 1 + 2\sin z\cos z \le 2 < \frac94$. So
-
-   ```math
-   \sigma_1\left(\tfrac\pi3\right) \ge \tfrac12 + u - \tfrac{11}{40}(\cos z + \sin z) > \tfrac12 - \tfrac{11}{40}\cdot\tfrac32 = \tfrac7{80} .
-   ```
-
-4. *If instead $z < \frac\pi4$*, apply Lemma B.3 to
-   $(X, Y) = (A + \frac12, v + \frac12)$ with $p = -\cos z$, $r = -\sin z$ and
-   $c = \frac{11}6$, which is allowed since $\frac{13}4 < (\frac{11}6)^2$, that
-   is, $117 < 121$:
-   $-(A + \frac12)\cos z - (v + \frac12)\sin z \ge -\frac{11}6$. Hence
-
-   ```math
-   \sigma_1\left(\tfrac\pi3\right) = \tfrac12 + u - \left(A + \tfrac12\right)\cos z - \left(v + \tfrac12\right)\sin z + \cos z + \sin z
-   \ge \tfrac12 + u - \tfrac{11}6 + \cos z + \sin z .
-   ```
-
-   The function $\cos + \sin$ is nondecreasing on $[0, \frac\pi4]$, where its
-   derivative $\cos - \sin$ is nonnegative, and
-   $0 < \frac\pi6 - \ell \le z < \frac\pi4$. So with $x = \frac\pi6 - \ell$ and
-   $u \ge \frac45\ell = \frac{2\pi}{15} - \frac45 x$,
-
-   ```math
-   \sigma_1\left(\tfrac\pi3\right) \ge \tfrac12 + \tfrac{2\pi}{15} - \tfrac{11}6 + k(x), \qquad
-   k(x) = -\tfrac45 x + \sin x + \cos x ,
-   ```
-
-   where $\frac15 < x \le \frac\pi6$. By [Lemma A.5](appendix-a.md#lemma-a5-concave-trigonometric-sums), $k$
-   is concave on $[0, \frac\pi2]$, so on $[\frac15, \frac\pi6]$ it
-   exceeds $m = \frac43 - \frac{2\pi}{15}$ as soon as it does at both
-   ends. At $\frac15$, by $\sin x \ge x - \frac{x^3}6$ and
-   $\cos x \ge 1 - \frac{x^2}2$,
-
-   ```math
-   k\left(\tfrac15\right) \ge -0.16 + \left(0.2 - \tfrac{0.2^3}6\right) + \left(1 - \tfrac{0.2^2}2\right) > 1.018 ,
-   ```
-
-   while $m < \frac43 - \frac{2(3.14)}{15} < 0.915$. At $\frac\pi6$,
-   $k(\frac\pi6) = -\frac{2\pi}{15} + \frac12 + \frac{\sqrt3}2 > m$ because
-   $\sqrt3 > \frac53$. So $k(x) > m$, that is,
-   $\sigma_1(\frac\pi3) > 0$. $\square$
-
-*Lean:
-[`Seven.fixed_gap_forward_positive`](../../SquaresInCircles/Seven/Pair/EasySectors.lean#L76),
-[`cos_add_sin_mono`](../../SquaresInCircles/Common/Trigonometry.lean#L79).*
-
-## B.8 The capped labels
-
-A label equal to $\frac\pi4$ is the same for every capped state, so a support
-sum at a capped state is an affine function of that state. The capped states
-fill the triangle of Figure B.9, whose vertices are admissible with active
-labels; an affine function on the triangle is at least its least value at a
-vertex. This reduces the capped labels to active ones.
-
-### Lemma B.30 (the capped triangle)
-
-Let
-
-```math
-V_0 = \left(\tfrac\pi5, \tfrac\pi5\right), \qquad
-V_1 = \left(\tfrac19\left(7 - \tfrac\pi5\right), \tfrac\pi5\right), \qquad
-V_2 = \left(\tfrac15(7 - \pi), \tfrac15(7 - \pi)\right) .
-```
-
-1. Each $V_i$ is an admissible state with label $\frac\pi4$, which is axial at
-   $V_0$ and $V_1$ and side at $V_2$. In particular each $V_i$ has an active
-   label.
-2. Let $(a, u)$ be admissible with $\ell(a, u) = \frac\pi4$. Then the weights
-   $w_0 = 7 - \pi - 9a + 4u$, $w_1 = 9(a - u)$ and $w_2 = 5u - \pi$ are
-   nonnegative, $w_0 + w_1 + w_2 = 7 - 2\pi > 0$, and
-   $w_0V_0 + w_1V_1 + w_2V_2 = (7 - 2\pi)(a, u)$.
-3. In (2), for all real $p, q, r$ there is an $i$ with
-   $p + q a_i + r u_i \le p + q a + r u$, where $V_i = (a_i, u_i)$.
-
-*Proof.* (1) As $3 < \pi < \frac{22}7$, so that $2\pi < 7$, the coordinates
-satisfy
-
-```math
-\tfrac12 < \tfrac\pi5 < \tfrac19\left(7 - \tfrac\pi5\right) < \tfrac15(7 - \pi) < r_d ,
-```
-
-the last by Lemma B.11 (2). So every coordinate of every $V_i$ lies in
-$[\frac12, r_d)$, the second coordinate is at most the first, and
-$\varphi(V_i) < 2(r_d + \frac12)^2 = \frac{13}4$. The labels follow from the
-identities at the start of §B.3:
-
-| vertex | $\mathrm{axial} - \frac\pi4$ | $\mathrm{side} - \frac\pi4$ |
-| --- | --- | --- |
-| $V_0$ | $0$ | $\frac7{12} - \frac\pi6 > 0$ |
-| $V_1$ | $0$ | $0$ |
-| $V_2$ | $\frac74 - \frac\pi2 > 0$ | $0$ |
-
-(2) $\ell(a, u) = \frac\pi4$ means $\mathrm{axial}(u) \ge \frac\pi4$, that is,
-$w_2 \ge 0$, and $\mathrm{side}(a, u) \ge \frac\pi4$, that is, $w_0 \ge 0$
-(§B.3); and $w_1 \ge 0$ because $u \le a$. The sum is
-$7 - \pi - 9a + 4u + 9a - 9u + 5u - \pi = 7 - 2\pi$. Expanding the weighted sum
-of the vertices coordinate by coordinate,
+For real numbers $t$, $u$, $r$ and $s$ let
 
 ```math
 \begin{aligned}
-\tfrac\pi5 w_0 + \tfrac19\left(7 - \tfrac\pi5\right)w_1 + \tfrac{7 - \pi}5 w_2
-&= \tfrac\pi5(7 - \pi - 9a + 4u) + \left(7 - \tfrac\pi5\right)(a - u) + \tfrac{7 - \pi}5(5u - \pi) = (7 - 2\pi)a,\\
-\tfrac\pi5 w_0 + \tfrac\pi5 w_1 + \tfrac{7 - \pi}5 w_2
-&= \tfrac\pi5(7 - \pi - 5u) + \tfrac{7 - \pi}5(5u - \pi) = (7 - 2\pi)u .
+\Phi(t, u; r, s) = {}& \tfrac{17}{20} + \tfrac3{10}\cos u + \tfrac3{10}\max(-\sin u, 0) + \tfrac9{40}\left(\cos t + |\sin t|\right) + \tfrac14\left(\cos(u - t) + \sin(u - t)\right) \\
+& - c_0\left(\tfrac3{10} + \tfrac9{20}\cos t + \tfrac9{20}\max(\sin t, 0)\right) - R_0\,r - R_0\,s ,
 \end{aligned}
 ```
 
-(3) Let $f(x, y) = p + qx + ry$, and choose $i$ with $f(V_i)$ least. Since $f$
-is affine and the weights are nonnegative, (2) gives
+and
 
 ```math
-(7 - 2\pi)f(V_i) = \sum_j w_j f(V_i) \le \sum_j w_j f(V_j) = (7 - 2\pi) f(a, u) ,
+\Phi_W(t, u) = \Phi\left(t, u; \sqrt{\tfrac{53}{200}}, \sqrt{\tfrac{61}{400} - \tfrac3{20}\sin t}\right), \qquad \Phi_D(t, u) = \Phi\left(t, u; \sqrt{\tfrac{53}{200} + \tfrac9{40}\sin(u - t)}, \sqrt{\tfrac{61}{400} - \tfrac3{20}\sin u}\right) .
 ```
 
-and $7 - 2\pi > 0$. $\square$
+The *triangle* $\Delta$ is the set of the pairs $(t, u)$ with
+$-\frac23 \le t \le u$ and $-\frac25 \le u \le \frac25$.
 
 *Lean:
-[`Seven.capVertex`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L51),
-[`Seven.capVertex_admissible`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L54),
-[`Seven.capVertex_label`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L66),
-[`Seven.capVertex_active`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L72),
-[`Seven.cap_vertex_le`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L91),
-[`Seven.exists_le_weighted_sum`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L81).*
+[`Six.westStress`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L41),
+[`Six.westStressW`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L47),
+[`Six.westStressD`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L51),
+[`Six.westCentralSupport`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L36).*
 
-![A zoom on the capped triangle in the (a, u)-plane: the orange triangle with vertices V0 on the diagonal u = a at the lower left, V1 on the line u = pi/5 to its right, and V2 on the diagonal at the top; the dashed lines u = pi/5 and 9a - 4u = 7 - pi through its edges, the purple tie line through V1, the grey half-plane u > a above the diagonal where there are no states, the words axial below the triangle and side to its right, and a capped state (a, u) inside joined to the three vertices by dashed segments](figures/appb-capped.svg)
+### Lemma B.18 (the stress bounds the separations)
 
-*Figure B.9.* The capped triangle $V_0V_1V_2$ of Lemma B.30. Its edges lie on
-the line $u = \frac\pi5$, where $\mathrm{axial}(u) = \frac\pi4$, on the line
-$9a - 4u = 7 - \pi$, where $\mathrm{side}(a, u) = \frac\pi4$, and on the
-diagonal. A capped state $(a, u)$ is the convex combination of the vertices with
-the weights $w_i/(7 - 2\pi)$.
+In the setting of Proposition 9.33, if $W$ and $D$ are separated along
+$e^W_2$, then $\Phi_W(t, u) \le 0$; if they are separated along $e^D_2$, then
+$\Phi_D(t, u) \le 0$.
 
-### Proposition B.31 (reduction to active labels)
+*Proof.* Let $z$ be $t$ or $u$ accordingly. Note that $|t| \le \frac23$ and
+$|u| \le \frac25$, so $\cos t$ and $\cos u$ are positive, and that
+$0 \le u - t \le \frac{16}{15} < \frac\pi2$.
 
-Suppose that any two admissible states with active labels, with any signs, have
-the gap property on every axis. Then any two admissible states, with any signs,
-have the gap property on every axis.
-
-*Proof.* Fix signs $s, t$ and an axis $k$, and put $\theta = k\frac\pi2$.
-
-1. *A capped target.* Let $(a, u)$ be admissible and suppose that the gap
-   property holds for $(a, u)$ and each $V_i$. Let $(A, v)$ be admissible with
-   $\ell(A, v) = \frac\pi4$. Put
-   $\psi = \theta + \pi - \frac\pi3 - s\ell(a, u) + t\frac\pi4$. For every state
-   $(x, y)$ of label $\frac\pi4$ the support sum of $(a, u)$ and $(x, y)$ is
+1. *The forces.* Adding $\lambda_e n_e$ at the target and $-\lambda_e n_e$ at
+   the source of each edge of Table B.1,
 
    ```math
-   \sigma_k\left(\tfrac\pi3\right) = h(a, su, \theta) + h(x, ty, \psi)
-   = \left(h(a, su, \theta) + \tfrac12(|\cos\psi| + |\sin\psi|)\right) + x\cos\psi + y\,t\sin\psi ,
+   F_C = \left(\tfrac3{10} + \tfrac9{20}\cos t,\ \tfrac9{20}\sin t\right), \quad F_W = \left(-\tfrac9{20}\cos t - \tfrac14\sin z,\ -\tfrac9{20}\sin t + \tfrac14\cos z\right), \quad F_D = \left(-\tfrac3{10} + \tfrac14\sin z,\ -\tfrac14\cos z\right) .
    ```
 
-   an affine function of $(x, y)$ with the same coefficients for $(A, v)$ and
-   for each $V_i$. By Lemma B.30 (3) there is an $i$ at which it is at most its
-   value at $(A, v)$. So the sum for $(A, v)$ is at least the sum for $V_i$,
-   which is nonnegative. If the sum for $(A, v)$ were zero, the sum for $V_i$
-   would be zero too, and by hypothesis $(a, u)$ and $V_i$ would form a contact;
-   but no state of a contact has the label $\frac\pi4$
-   ([Lemma 9.16](seven.md#lemma-916-contacts)), while $\ell(V_i) = \frac\pi4$. So the sum
-   for $(A, v)$ is positive, and the gap property holds.
-
-2. *A capped source.* In the same way, let $(A, v)$ be admissible, suppose that
-   the gap property holds for each $V_i$ and $(A, v)$, and let $(a, u)$ be
-   admissible with $\ell(a, u) = \frac\pi4$. For every state $(x, y)$ of label
-   $\frac\pi4$,
+2. *The balance.* By Lemma 9.24 with $o$ the origin, as the stress separates
+   the squares,
 
    ```math
-   \sigma_k\left(\tfrac\pi3\right) = h(x, sy, \theta) + h\left(A, tv, \theta + \pi - \tfrac\pi3 - s\tfrac\pi4 + t\ell(A, v)\right),
-   \qquad h(x, sy, \theta) = x\cos\theta + y\,s\sin\theta + \tfrac12(|\cos\theta| + |\sin\theta|),
+   \tfrac9{20}\tau(t) + \tfrac3{10}\tau(u) + \tfrac14\tau(u - t) \le \langle F_C, c\rangle + \langle F_W, c_W\rangle + \langle F_D, c_D\rangle . \tag{B.7}
    ```
 
-   again affine in $(x, y)$, and the argument of step 1 applies.
+3. *The work on $C$.* As $\frac3{10} + \frac9{20}\cos t > 0$ and
+   $0 \le c_x, c_y \le c_0$,
 
-3. *Conclusion.* Let $(a, u)$ and $(A, v)$ be admissible. If $\ell(a, u)$ is
-   active: when $\ell(A, v)$ is active the hypothesis applies; otherwise
-   $\ell(A, v) = \frac\pi4$, the hypothesis applies to $(a, u)$ and each $V_i$
-   (Lemma B.30 (1)), and step 1 concludes. If $\ell(a, u)$ is not active, then
-   $\ell(a, u) = \frac\pi4$; by the first case each $V_i$ and $(A, v)$ have the
-   gap property, and step 2 concludes. $\square$
+   ```math
+   \langle F_C, c\rangle \le c_0\left(\tfrac3{10} + \tfrac9{20}\cos t + \tfrac9{20}\max(\sin t, 0)\right) .
+   ```
+
+4. *The work on $W$.* In the frame $e^W_1 = (-\cos t, -\sin t)$,
+   $e^W_2 = (\sin t, -\cos t)$ of $W$ the force has the components
+
+   ```math
+   U = \langle F_W, e^W_1\rangle = \tfrac9{20} + \tfrac14\sin(z - t), \qquad V = \langle F_W, e^W_2\rangle = -\tfrac14\cos(z - t) ,
+   ```
+
+   so $|F_W|^2 = U^2 + V^2 = \frac{53}{200} + \frac9{40}\sin(z - t)$. The
+   square $W$ lies in the closed disk of radius $R_0$
+   ([Lemma 9.10](09-six.md#lemma-910-charts-in-the-ceiling) (2)), its work is
+   $Ua + Vb$, and Lemma 9.25 (1) with $|U| + |V| \ge U - V$ gives
+
+   ```math
+   \langle F_W, c_W\rangle \le R_0|F_W| - \tfrac9{40} - \tfrac18\left(\sin(z - t) + \cos(z - t)\right) .
+   ```
+
+5. *The work on $D$.* In the frame $e^D_1 = (-\cos u, -\sin u)$,
+   $e^D_2 = (\sin u, -\cos u)$ of $D$,
+
+   ```math
+   U' = \tfrac3{10}\cos u + \tfrac14\sin(u - z), \qquad V' = -\tfrac3{10}\sin u + \tfrac14\cos(u - z) ,
+   ```
+
+   so $|F_D|^2 = \frac{61}{400} - \frac3{20}\sin z$, and Lemma 9.25 (1) with
+   $|U'| + |V'| \ge U' + V'$ gives
+
+   ```math
+   \langle F_D, c_D\rangle \le R_0|F_D| - \tfrac3{20}(\cos u - \sin u) - \tfrac18\left(\sin(u - z) + \cos(u - z)\right) .
+   ```
+
+6. *The thresholds.* As $\cos t$, $\cos u$, $\cos(u - t)$ and $\sin(u - t)$
+   are nonnegative, $\tau(t) = \frac12 + \frac12(\cos t + |\sin t|)$,
+   $\tau(u) = \frac12 + \frac12(\cos u + |\sin u|)$ and
+   $\tau(u - t) = \frac12 + \frac12(\cos(u - t) + \sin(u - t))$.
+
+For $z = t$ and for $z = u$ alike, the terms subtracted in 4 and 5 add up to
+$\frac7{20} + \frac3{20}(\cos u - \sin u) + \frac18(\cos(u - t) + \sin(u - t))$.
+Insert 3 to 6 into (B.7) and move everything to the left; with
+$\frac3{20}(|\sin u| - \sin u) = \frac3{10}\max(-\sin u, 0)$ this is
+$\Phi(t, u; |F_W|, |F_D|) \le 0$. For $z = t$ the two lengths are
+$\sqrt{53/200}$ and $\sqrt{61/400 - 3\sin t/20}$, which gives
+$\Phi_W(t, u) \le 0$; for $z = u$ they are those of $\Phi_D$. $\square$
 
 *Lean:
-[`Seven.fixed_gap_of_active_cases`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L144),
-[`Seven.pairProperty_cap_first`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L112),
-[`Seven.pairProperty_cap_second`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L128).*
+[`Six.west_geometric_defect_nonpos`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L732),
+[`Six.west_defect_at_secondary_axes`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L763),
+[`Six.westGeometricDefect`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L634),
+[`Six.west_force_balance`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L640),
+[`Six.westForceC`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L613),
+[`Six.westForceW`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L615),
+[`Six.westForceD`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L618),
+[`Six.westNormal`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L620),
+[`Six.westThreshold`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L623),
+[`Six.west_forceW_norm`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L647),
+[`Six.west_forceD_norm`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L652),
+[`Six.west_forceW_frameX`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L656),
+[`Six.west_forceW_frameY`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L662),
+[`Six.west_forceD_frameX`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L668),
+[`Six.west_forceD_frameY`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L675),
+[`Six.westWidthW`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L627),
+[`Six.westWidthD`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L629),
+[`Six.west_widthW_lower`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L682),
+[`Six.west_widthD_lower`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L690),
+[`Six.west_central_support`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L698),
+[`Six.west_own_separator`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L709),
+[`Six.west_cardinal_separator`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L723),
+[`center_le_vertexSupport`](../../SquaresInCircles/Common/DiskSupport.lean#L70).*
 
-## B.9 Proof of Proposition 9.17
+The forces add up to zero, and on $W$ and $D$ they point outwards, roughly
+at the far vertices, where the bound of Lemma 9.25 (1) is attained
+(Figure B.11). The separations are tight in the figure, and yet the squares
+do not fit: the stress shows that this is so for all angles of the triangle.
 
-### Proposition B.32 (active labels)
+![The containing square C, grey, the square W, orange, turned by -0.3 from the west and separated from C along its own axis, and the square D, blue, turned by 0.1 and separated from C along the west side of C and from W along the secondary axis of W; the three separating lines are dashed and labelled with their weights 9/20, 3/10 and 1/4. Thick arrows are the forces F_C, F_W and F_D of the west stress. With every separation tight and W placed as well as possible, two vertices, marked, still lie outside the circle of radius R0; the dashed circle through the farther one has radius about 1.80](figures/appendix-b/west-stress.svg)
 
-Let $(a, u)$ and $(A, v)$ be admissible states with active labels, $s, t$ signs
-and $k$ an axis. Then the two states with the signs $s, t$ have the gap property
-on the axis $k$.
+*Figure B.11.* The situation of Proposition 9.33 for $t = -0.3$, $u = 0.1$ and
+$z = t$, with $c = (\frac12 c_0, \frac12 c_0)$: $W$ (orange) separated from $C$
+along its own axis, $D$ (blue) along the west side of $C$ and from $W$ along
+$e^W_2$; the separating lines are dashed, with the weights of Table B.1. All
+three separations are tight, and $W$ is placed along its secondary axis so as
+to bring its far vertices and those of $D$ as close to the origin as possible;
+still two vertices (pink) lie outside the circle of radius $R_0$, the farther
+at distance about $1.80$ (dashed circle). The arrows are the forces $F_C$,
+$F_W$ and $F_D$, drawn at $0.9$ times their length.
 
-*Proof.* We go through the axes and signs; the cases are the rows of the table
-of §B.1. A positive sum gives the gap property by Lemma B.2 (4).
+### Lemma B.19 (the terms)
 
-- $k = 0$: Proposition B.26.
-- $k = 3$: Proposition B.27.
-- $k = 2$, $s = -1$: Proposition B.28.
-- $k = 2$, $(s, t) = (1, 1)$: if the target label is side,
-  [Proposition C.12](appendix-c.md#proposition-c12-side-target); if it is axial and the source label is
-  axial, [Proposition C.6](appendix-c.md#proposition-c6-two-axial-labels); if it is axial and the source label
-  is side, [Proposition C.7](appendix-c.md#proposition-c7-side-source-axial-target).
-- $k = 2$, $(s, t) = (1, -1)$: ([Theorem C.32](appendix-c.md#theorem-c32-opposite-signs-with-active-labels)).
-- $k = 1$, $(s, t) = (1, 1)$: Proposition B.29.
-- $k = 1$, $(s, t) = (1, -1)$: ([Proposition D.7](appendix-d.md#proposition-d7-target-sign-negative)), with
-  the source sign $1$ and an active target label.
-- $k = 1$, $(s, t) = (-1, 1)$: ([Proposition D.16](appendix-d.md#proposition-d16-opposite-signs)).
-- $k = 1$, $(s, t) = (-1, -1)$: if the source label is axial,
-  [Proposition D.7](appendix-d.md#proposition-d7-target-sign-negative) with the source sign $-1$; if it
-  is side, [Proposition D.26](appendix-d.md#proposition-d26-both-signs-negative).
+Let $\alpha = \frac9{40} - \frac9{20}c_0$, and for $0 \le R \le R_0$ let
 
-Every active label is axial or side, so the cases are exhaustive. $\square$
+```math
+\begin{aligned}
+J_\pm(x; R) &= \alpha\cos x + \beta_\pm\sin x - R\sqrt{\tfrac{61}{400} - \tfrac3{20}\sin x} , \qquad \beta_- = -\tfrac9{40} , \quad \beta_+ = \alpha , \\
+H_\pm(x; R) &= \tfrac3{10}\cos x + \gamma_\pm\sin x - R\sqrt{\tfrac{61}{400} - \tfrac3{20}\sin x} , \qquad \gamma_- = -\tfrac3{10} , \quad \gamma_+ = 0 , \\
+G(x; R) &= \tfrac14\left(\cos x + \sin x\right) - R\sqrt{\tfrac{53}{200} + \tfrac9{40}\sin x} .
+\end{aligned}
+```
+
+Let $J(x; R)$ be $J_-(x; R)$ for $x \le 0$ and $J_+(x; R)$ for $x \ge 0$, and
+$H(x; R)$ likewise; the two expressions agree at $x = 0$.
+
+1. On the triangle,
+
+   ```math
+   \Phi_W(t, u) = K_W + J(t; R_0) + H(u; 0) + G(u - t; 0) , \qquad \Phi_D(t, u) = K_D + J(t; 0) + H(u; R_0) + G(u - t; R_0) ,
+   ```
+
+   with $K_W = \frac{17}{20} - \frac3{10}c_0 - R_0\sqrt{\frac{53}{200}}$ and
+   $K_D = \frac{17}{20} - \frac3{10}c_0$.
+2. For $0 \le R \le R_0$, $J_-(\cdot; R)$ is concave on $[-\frac23, 0]$,
+   $J_+(\cdot; R)$ on $[0, \frac25]$, $H_-(\cdot; R)$ on $[-\frac25, 0]$,
+   $H_+(\cdot; R)$ on $[0, \frac25]$, and $G(\cdot; R)$ on
+   $[0, \frac{16}{15}]$.
+
+*Proof.* (1) On the triangle, $-\frac23 \le t \le \frac25$ and
+$-\frac25 \le u \le \frac25$, so $\sin t$ has the sign of $t$ and $\sin u$
+that of $u$. For $t \le 0$ the terms of $\Phi$ in $t$ are
+$\frac9{40}(\cos t - \sin t) - \frac9{20}c_0\cos t = \alpha\cos t - \frac9{40}\sin t$,
+and for $t \ge 0$ they are
+$(\frac9{40} - \frac9{20}c_0)(\cos t + \sin t) = \alpha(\cos t + \sin t)$; the
+terms in $u$ are $\frac3{10}(\cos u - \sin u)$ for $u \le 0$ and
+$\frac3{10}\cos u$ for $u \ge 0$. The rest is the constant
+$\frac{17}{20} - \frac3{10}c_0$, the term
+$\frac14(\cos(u - t) + \sin(u - t))$, and $R_0$ times the two lengths. In
+$\Phi_W$ the first length is the constant $\sqrt{53/200}$, which goes into
+$K_W$, and the second is the radical of $J(t; R_0)$; in $\Phi_D$ they are the
+radicals of $G(u - t; R_0)$ and $H(u; R_0)$.
+
+(2) Each function has the form $A\cos x + B\sin x - R\sqrt{p + q\sin x}$ of
+Lemma A.12, with $q^2 \le p^2$: $(\frac3{20})^2 = 0.0225 < (\frac{61}{400})^2$
+and $(\frac9{40})^2 = 0.050625 < (\frac{53}{200})^2 = 0.070225$. The
+radicands are positive: $\frac{61}{400} - \frac3{20}\sin x > 0$ always, and
+$\sin x \ge 0$ on $[0, \frac{16}{15}]$. It remains to check
+$R\sqrt{p + q\sin x} \le 4(A\cos x + B\sin x)$ on each interval, and for the
+first three functions it suffices to check it with $\bar R > R_0 \ge R$ in the
+place of $R$. We use $c_0 < \bar c$, so that
+$4\alpha = \frac9{10} - \frac95c_0 > 0.6969$, and the bounds of
+[Lemma A.15](appendix-a.md#lemma-a15-small-angles).
+
+- $J_-$ on $[-\frac23, 0]$. Put $\sigma = \sin x$; then
+  $-\frac23 \le x \le \sigma \le 0$, so $\sigma^2 \le -\frac23\sigma$. By
+  [Lemma A.14](appendix-a.md#lemma-a14-tangents-of-the-square-root) with $c = \frac25$,
+  $\sqrt{\frac{61}{400} - \frac3{20}\sigma} \le \frac{25}{64} - \frac3{16}\sigma$,
+  and $\cos x \ge \cos^2 x = 1 - \sigma^2$ as $0 \le \cos x \le 1$. So
+
+  ```math
+  4\left(\alpha\cos x - \tfrac9{40}\sigma\right) - \bar R\left(\tfrac{25}{64} - \tfrac3{16}\sigma\right) \ge \tfrac{69}{100}\left(1 - \sigma^2\right) - \tfrac9{10}\sigma - \bar R\left(\tfrac{25}{64} - \tfrac3{16}\sigma\right) \ge \left(\tfrac{69}{100} - \tfrac{25}{64}\bar R\right) - \left(\tfrac{11}{25} - \tfrac3{16}\bar R\right)\sigma ,
+  ```
+
+  which is positive, as $\frac{69}{100} - \frac{25}{64}\bar R > 0.0303$,
+  $\frac{11}{25} - \frac3{16}\bar R > 0.12$ and $\sigma \le 0$.
+- $J_+$ on $[0, \frac25]$. Here $\sin x \ge 0$, so
+  $\sqrt{\frac{61}{400} - \frac3{20}\sin x} \le \sqrt{\frac{61}{400}} < \frac25$,
+  and $\cos x + \sin x \ge 1$; so the left side is less than
+  $\frac25\bar R < 0.6755 < 4\alpha \le 4\alpha(\cos x + \sin x)$.
+- $H_\pm$ on $[-\frac25, 0]$ and $[0, \frac25]$. Here $\gamma_\pm\sin x \ge 0$,
+  $\cos x \ge 1 - \frac{x^2}2 \ge \frac{23}{25}$ and $|\sin x| \le \frac25$,
+  so $\sqrt{\frac{61}{400} - \frac3{20}\sin x} \le \sqrt{\frac{85}{400}} < \frac12$;
+  the left side is less than $\frac12\bar R < 0.85$, and the right side is
+  at least $4\cdot\frac3{10}\cdot\frac{23}{25} > 1.1$.
+- $G$ on $[0, \frac{16}{15}]$. Here $\sin x \ge 0$, and
+  [Lemma A.8](appendix-a.md#lemma-a8-polynomial-brackets) with
+  $\ell = \frac{16}{15}$ gives
+  $\cos x \ge 1 - \frac{\ell^2}2 + \frac{\ell^4}{24} - \frac{\ell^6}{720} > 0.483$,
+  so $\cos x > \frac{12}{25}$. Both $R_0\sqrt{\frac{53}{200} + \frac9{40}\sin x}$
+  and $\cos x + \sin x$ are nonnegative, and their squares compare:
+
+  ```math
+  Q_0\left(\tfrac{53}{200} + \tfrac9{40}\sin x\right) < 0.7556 + 0.6416\sin x < 1 + \tfrac{24}{25}\sin x \le 1 + 2\sin x\cos x = (\cos x + \sin x)^2 .
+  ```
+
+  So $R\sqrt{\frac{53}{200} + \frac9{40}\sin x}$ is at most
+  $\cos x + \sin x = 4\cdot\frac14(\cos x + \sin x)$.
+
+Lemma A.12 applies in each case. $\square$
 
 *Lean:
-[`Seven.fixed_gap_active`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L27).*
+[`Six.westStress_eq`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L217),
+[`Six.westWForm`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L206),
+[`Six.westDForm`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L211),
+[`Six.westWForm_eq`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L243),
+[`Six.westDForm_eq`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L251),
+[`Six.westJ`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L192),
+[`Six.westH`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L198),
+[`Six.westG`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L202),
+[`Six.westJ_negative_concave`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L298),
+[`Six.westJ_positive_concave`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L306),
+[`Six.westH_negative_concave`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L375),
+[`Six.westH_positive_concave`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L384),
+[`Six.westG_concave`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L323),
+[`Six.west_affine_radical`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L69),
+[`Six.westJ_coefficient_pos`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L261),
+[`Six.west_angle_bounds`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L58),
+[`Six.west_sin_nonpos`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L82),
+[`Six.west_difference_trig`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L87),
+[`radicalTrig`](../../SquaresInCircles/Common/Trigonometry.lean#L350),
+[`radicalTrig_concave`](../../SquaresInCircles/Common/Trigonometry.lean#L391),
+[`sqrt_le_tangent`](../../SquaresInCircles/Common/Trigonometry.lean#L609).*
 
-*Proof of [Proposition 9.17](seven.md#proposition-917-the-critical-gap).* By Proposition B.32 the hypothesis of
-Proposition B.31 holds, so any two admissible states, with any signs, have the
-gap property on every axis (Definition B.1): $\sigma_k(\frac\pi3) \ge 0$, and
-$\sigma_k(\frac\pi3) = 0$ only if the two states with these signs form a
-contact. $\square$
+So in $\Phi_W$ the length of the force on $W$ is the constant
+$\sqrt{53/200}$, and that of the force on $D$ enters the term in $t$; in
+$\Phi_D$ the lengths enter the terms in $u - t$ and $u$ (Figure B.12). At
+$x = 0$ the slopes of $J$ and $H$ jump up, from $-\frac9{40}$ to $\alpha$ and
+from $-\frac3{10}$ to $0$: they are concave on either side of $0$ but not
+across it. This is why the triangle is cut along $t = 0$ and $u = 0$.
+
+![Six graphs in two rows and three columns: the terms J(t) on -2/3 to 2/5, H(u) on -2/5 to 2/5 and G(d) on 0 to 16/15 of the west stress, each on its own vertical scale, with its range written above it. The top row has the terms of Phi_W, where the length of the force on D enters J (R = R0) and H and G are plain harmonics (R = 0); the bottom row has those of Phi_D, where the lengths enter H and G. Each curve lies above its dashed chords on either side of 0, where J and H have a convex corner](figures/appendix-b/terms.svg)
+
+*Figure B.12.* The terms of Lemma B.19, each on its own vertical scale (its
+range above it): top, those of $\Phi_W$, namely $J(t; R_0)$, $H(u; 0)$ and
+$G(d; 0)$; bottom, those of $\Phi_D$, namely $J(t; 0)$, $H(u; R_0)$ and
+$G(d; R_0)$. Each lies above its chords (dashed) on either side of $0$; at $0$,
+$J$ and $H$ have a convex corner.
+
+### Lemma B.20 (positivity on the triangle)
+
+Let $K$ be a number and $J$, $H$, $G$ functions such that $J$ is concave on
+$[-\frac23, 0]$ and on $[0, \frac25]$, $H$ on $[-\frac25, 0]$ and on
+$[0, \frac25]$, and $G$ on $[0, \frac{16}{15}]$, and put
+$F(t, u) = K + J(t) + H(u) + G(u - t)$. If $F$ is positive at the seven points
+
+```math
+v_1 = \left(-\tfrac23, -\tfrac25\right), \quad v_2 = \left(-\tfrac25, -\tfrac25\right), \quad v_3 = \left(-\tfrac23, 0\right), \quad v_4 = (0, 0), \quad v_5 = \left(-\tfrac23, \tfrac25\right), \quad v_6 = \left(0, \tfrac25\right), \quad v_7 = \left(\tfrac25, \tfrac25\right),
+```
+
+then $F$ is positive on the triangle $\Delta$.
+
+*Proof.* The lines $u = 0$ and $t = 0$ cut $\Delta$ into three parts: where
+$u \le 0$, the quadrilateral $v_1v_2v_4v_3$; where $t \le 0 \le u$, the
+rectangle $v_3v_4v_6v_5$; and where $t \ge 0$, the triangle $v_4v_7v_6$
+(Figure B.13). Inside each part $J$ and $H$ keep one concave piece, and
+$u - t$ stays in $[0, \frac{16}{15}]$, so by
+[Lemma A.10](appendix-a.md#lemma-a10-concave-functions) (3) $F$ is concave in $t$ for fixed
+$u$, concave in $u$ along each vertical edge $t = -\frac23$ and $t = 0$ (there
+$G(u - t)$ is $G$ composed with an affine map), and concave along the
+diagonal $t = u$, where $F(u, u) = K + J(u) + H(u) + G(0)$. We use Lemma A.10
+(2) with $m = 0$ along segments.
+
+1. *The edges.* $u \mapsto F(-\frac23, u)$ is concave on $[-\frac25, 0]$ and
+   on $[0, \frac25]$, so it is positive there by its values at $v_1$, $v_3$
+   and at $v_3$, $v_5$. $u \mapsto F(0, u)$ is concave on $[0, \frac25]$ and
+   positive by its values at $v_4$, $v_6$. $u \mapsto F(u, u)$ is concave on
+   $[-\frac25, 0]$ and on $[0, \frac25]$, and positive by its values at
+   $v_2$, $v_4$ and at $v_4$, $v_7$.
+2. *The parts.* Let $(t, u) \in \Delta$. If $u \le 0$, then $F(\cdot, u)$ is
+   concave on $[-\frac23, u]$ and positive at its ends $-\frac23$ and $u$, by
+   step 1. If $t \le 0 \le u$, it is concave on $[-\frac23, 0]$ and positive at
+   $-\frac23$ and $0$. If $t \ge 0$, it is concave on $[0, u]$ and positive at
+   $0$ and $u$. In each case $F(t, u) > 0$. $\square$
+
+*Lean:
+[`Six.triangle_positive`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L113),
+[`concave_gt_of_endpoints`](../../SquaresInCircles/Common/Analysis.lean#L81),
+[`concave_affine_argument`](../../SquaresInCircles/Common/Analysis.lean#L107).*
+
+### Lemma B.21 (the seven vertices)
+
+$\Phi_W$ and $\Phi_D$ are positive at the seven points $v_1, \dots, v_7$ of
+Lemma B.20.
+
+*Proof.* At each vertex we bound $\Phi$ from below, as follows (Table B.3).
+
+- Replace $c_0$ by $\bar c$ and $R_0$ by $\bar R$; both multiply nonnegative
+  numbers that are subtracted, so $\Phi$ can only decrease.
+- Replace the two lengths by their upper brackets in Table B.2; the square
+  of each bracket exceeds the radicand, by the upper brackets of the sines
+  there.
+- Replace each cosine and sine that does not vanish by its lower bracket in
+  Table B.2, using $\cos(-x) = \cos x$ and $|\sin(-x)| = \sin x$. This is
+  legitimate because, once $c_0$ is replaced by $\bar c$, each of them has a
+  positive coefficient: $\cos t$, and $\sin t$ for $t > 0$, the coefficient
+  $\frac9{40} - \frac9{20}\bar c > 0$; $|\sin t|$ for $t < 0$ the coefficient
+  $\frac9{40}$; $\cos u$ and $\max(-\sin u, 0)$ the coefficient $\frac3{10}$;
+  and $\cos(u - t)$ and $\sin(u - t)$ the coefficient $\frac14$.
+
+The brackets of Table B.2 are those of
+[Lemma A.7](appendix-a.md#lemma-a7-taylor-bounds): the lower ones from the
+Taylor polynomials of degrees 6 and 7, the upper ones of the sine from that
+of degree 5. The resulting lower bounds, listed in Table B.3, are positive.
+$\square$
+
+| $x$ | $\cos x \ge$ | $\sin x \ge$ | $\sin x \le$ |
+| :-: | :-: | :-: | :-: |
+| $\frac4{15}$ | $0.964654$ | $0.263517$ | $0.263518$ |
+| $\frac25$ | $0.921060$ | $0.389418$ | $0.389419$ |
+| $\frac23$ | $0.785886$ | $0.618369$ | $0.618382$ |
+| $\frac{16}{15}$ | $0.483004$ | $0.875590$ | $0.875903$ |
+
+| length | $\le$ | length | $\le$ |
+| :-: | :-: | :-: | :-: |
+| $\sqrt{\frac{53}{200}}$ | $0.515$ | $\sqrt{\frac{61}{400} + \frac3{20}\sin\frac23}$ | $0.496$ |
+| $\sqrt{\frac{53}{200} + \frac9{40}\sin\frac4{15}}$ | $0.57$ | $\sqrt{\frac{61}{400} + \frac3{20}\sin\frac25}$ | $0.46$ |
+| $\sqrt{\frac{53}{200} + \frac9{40}\sin\frac25}$ | $0.6$ | $\sqrt{\frac{61}{400}}$ | $0.391$ |
+| $\sqrt{\frac{53}{200} + \frac9{40}\sin\frac23}$ | $0.64$ | $\sqrt{\frac{61}{400} - \frac3{20}\sin\frac25}$ | $0.31$ |
+| $\sqrt{\frac{53}{200} + \frac9{40}\sin\frac{16}{15}}$ | $0.7$ | | |
+
+*Table B.2.* The brackets used at the vertices: of the cosine and the sine at
+the four angles that occur (Lemma A.7 (2) to (4)), and of the lengths of the
+forces, from the upper brackets of the sines; for instance
+$\frac{53}{200} + \frac9{40}\cdot 0.263518 < 0.3243 < 0.57^2$.
+
+| vertex | $(t, u)$ | $u - t$ | $\Phi_W$ | lengths | bound | $\Phi_D$ | lengths | bound |
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| $v_1$ | $(-\frac23, -\frac25)$ | $\frac4{15}$ | $0.08695$ | $0.515$, $0.496$ | $0.0852$ | $0.05537$ | $0.57$, $0.46$ | $0.0531$ |
+| $v_2$ | $(-\frac25, -\frac25)$ | $0$ | $0.06270$ | $0.515$, $0.46$ | $0.0610$ | $0.06270$ | $0.515$, $0.46$ | $0.0610$ |
+| $v_3$ | $(-\frac23, 0)$ | $\frac23$ | $0.03783$ | $0.515$, $0.496$ | $0.0361$ | $0.01045$ | $0.64$, $0.391$ | $0.0023$ |
+| $v_4$ | $(0, 0)$ | $0$ | $0.01176$ | $0.515$, $0.391$ | $0.0105$ | $0.01176$ | $0.515$, $0.391$ | $0.0105$ |
+| $v_5$ | $(-\frac23, \frac25)$ | $\frac{16}{15}$ | $0.00274$ | $0.515$, $0.496$ | $0.0010$ | $0.04253$ | $0.7$, $0.31$ | $0.0026$ |
+| $v_6$ | $(0, \frac25)$ | $\frac25$ | $0.06570$ | $0.515$, $0.391$ | $0.0644$ | $0.07370$ | $0.6$, $0.31$ | $0.0576$ |
+| $v_7$ | $(\frac25, \frac25)$ | $0$ | $0.18363$ | $0.515$, $0.31$ | $0.1777$ | $0.18363$ | $0.515$, $0.31$ | $0.1777$ |
+
+*Table B.3.* The west stresses at the seven vertices: the values of $\Phi_W$
+and $\Phi_D$ (to five decimals), the brackets of the lengths $r$, $s$ used,
+and the lower bounds obtained with $\bar c$, $\bar R$ and the brackets of
+Table B.2 (rounded down). At $v_2$, $v_4$ and $v_7$, where $u = t$, the two
+stresses coincide.
+
+*Lean:
+[`Six.westStressW_vertices`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L488),
+[`Six.westStressD_vertices`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L512),
+[`Six.diagonalVertexExpression`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L396),
+[`Six.diagonal_lower_from_roots`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L401),
+[`Six.diagonal_root_endpoints`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L412),
+[`Six.west_minorant_positive`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L432),
+[`Six.diagonal_minorant_endpoints`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L460),
+[`Six.west_root_bound`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L55),
+[`Six.westCentralSupport_upper`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L74),
+[`cos_lower_six`](../../SquaresInCircles/Common/Trigonometry.lean#L214),
+[`sin_lower_seven`](../../SquaresInCircles/Common/Trigonometry.lean#L221),
+[`sin_upper_five`](../../SquaresInCircles/Common/Trigonometry.lean#L207).*
+
+![The triangle of the angles (t, u) with -2/3 at most t, t at most u, and u between -2/5 and 2/5, cut by the lines u = 0 and t = 0 into three parts, shaded differently: u negative, t negative and u positive, and t positive. The seven vertices v1 to v7 of the parts are marked, each labelled with the values of the two west stresses there, Phi_W first and Phi_D second, all positive; dotted horizontal segments indicate directions in which the stresses are concave](figures/appendix-b/triangle.svg)
+
+*Figure B.13.* The triangle $\Delta$ of the angles $(t, u)$, cut into its
+three parts, and the seven vertices with the values $\Phi_W / \Phi_D$ there.
+Along each horizontal segment (dotted) inside a part, the stresses are concave
+in $t$; along the vertical edges $t = -\frac23$ and $t = 0$ and along the
+diagonal they are concave in $u$, piece by piece. So their values at the
+vertices bound them below on the whole triangle (Lemma B.20). The smallest
+value is $\Phi_W(v_5) \approx 0.0027$, where $W$ is turned furthest from
+$D$.
+
+*Proof of [Proposition 9.33](09-six.md#proposition-933-the-west-stress).*
+Suppose that $W$ and $D$ are disjoint. By Lemma 9.31 they are separated along
+$e^W_2$ or along $e^D_2$, and by Lemma B.18, $\Phi_W(t, u) \le 0$ or
+$\Phi_D(t, u) \le 0$, where $(t, u) \in \Delta$. But by Lemma B.19 each of
+$\Phi_W$ and $\Phi_D$ has the form of Lemma B.20, with
+$J = J(\cdot; R_0)$, $H = H(\cdot; 0)$, $G = G(\cdot; 0)$ for $\Phi_W$ and
+$J = J(\cdot; 0)$, $H = H(\cdot; R_0)$, $G = G(\cdot; R_0)$ for $\Phi_D$, and
+by Lemma B.21 both are positive at the seven vertices. By Lemma B.20 both are
+positive on $\Delta$, a contradiction. $\square$
+
+*Lean:
+[`Six.west_cardinal_impossible`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L788),
+[`Six.west_secondary_axes`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L157),
+[`Six.turned_pair_secondary`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L103),
+[`Six.westStressW_positive`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L545),
+[`Six.westStressD_positive`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L578).*

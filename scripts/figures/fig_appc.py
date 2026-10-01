@@ -1,907 +1,1280 @@
 #!/usr/bin/env python3
-"""Draw the figures of Appendix C (the inward axis) in docs/proof/figures/.
+"""Draw the figures of Appendix C (docs/proof/appendix-c.md), six squares: the
+separators, in docs/proof/figures/appendix-c/.
 
     python3 scripts/figures/fig_appc.py
 
-Every figure is computed from the functions and states of the appendix: the
-canonical pairs from the labels and the relative phase, the graphs and the
-bounds of the proofs by sampling the functions, and the label regions by
-clipping the admissible region with the lines of the labels.
+Every figure is computed from the definitions of the appendix: the model of
+Theorem 9.1, the margins of the exterior squares against the central square,
+the separating inequalities of the pairs W, D and D, S, the stresses of
+Proposition 9.39 and Lemma 9.42 with their forces, the lower bounds of the
+proofs at the vertices of their domains, and the profiles of Lemma 9.40.
 """
 import math
 
-from proof_figures import (Figure, INK, FAINT, COLORS, FILLS, GREY,
-                           square_corners, in_open_square, arcs_in, u, shift,
-                           sb, clip)
+from proof_figures import (Figure, INK, FAINT, COLORS, FILLS, GREY, SERIF,
+                           square_corners, u, shift)
 
 PI = math.pi
-BLUE, ORANGE, GREEN, PURPLE = COLORS[0], COLORS[1], COLORS[2], COLORS[3]
+BLUE, ORANGE, GREEN, PURPLE, PINK, CYAN = COLORS[:6]
+FW, FD, FS = FILLS[0], FILLS[3], FILLS[2]
+
+# The ceiling (Definition 9.4).
+Q0 = 2.85118
+R0 = math.sqrt(Q0)
+RHO0 = math.sqrt(Q0 - 0.25) - 0.5
+C0 = RHO0 - 1
+A0 = 2 - RHO0
+U0 = math.sqrt(Q0 - (2.5 - RHO0) ** 2) - 0.5
+
+# The model (Theorem 9.1).
+H = math.sqrt(2) / 2
+AS = (1466 + 1940 * H) / 267
+BS = (327 + 432 * H) / 712
+S_STAR = (AS - math.sqrt(AS * AS - 4 * BS)) / 2
+T_STAR = (30 * H - 20) * S_STAR + 3.5 - 4.5 * H
+D_STAR = 0.5 + H - T_STAR
+R6 = math.sqrt(2 * S_STAR ** 2 + 4 * S_STAR + 2.5)
+
+
+def save(f, name, title):
+    assert name.startswith('appendix-c/'), name
+    f.save(name, title)
+
 
 # ---------------------------------------------------------------------------
-# The states, labels and boundary functions of Chapter 9 and Appendix B.
+# Geometry of squares in a frame (Definition 9.9) and their margins.
+
+def omega(x):
+    return (abs(math.cos(x)) + abs(math.sin(x))) / 2
 
 
-def axial(u_):
-    return 5 * u_ / 4
+def tau(x):
+    return 0.5 + omega(x)
 
 
-def side(a, u_):
-    return PI / 6 + (u_ - 0.5) / 3 + 3 * (1 - a) / 4
+def centre(t, a, b):
+    return (a * math.cos(t) - b * math.sin(t),
+            a * math.sin(t) + b * math.cos(t))
 
 
-def label(a, u_):
-    return min(axial(u_), side(a, u_), PI / 4)
+def dot(p, q):
+    return p[0] * q[0] + p[1] * q[1]
 
 
-def phi(a, u_):
-    return (a + 0.5) ** 2 + (u_ + 0.5) ** 2
+def half_width(t, n):
+    """The half-width of a unit square of phase t along the unit vector n."""
+    return (abs(dot(n, u(t))) + abs(dot(n, u(t + PI / 2)))) / 2
 
 
-def admissible(a, u_, tol=1e-9):
-    return (-tol <= u_ <= a + tol and a >= 0.5 - tol
-            and phi(a, u_) <= 13 / 4 + tol)
+def chart_excess(a, b):
+    """(a + 1/2)^2 + (|b| + 1/2)^2 - Q0: positive when the far corner of the
+    square leaves the disk of radius R0."""
+    return (a + 0.5) ** 2 + (abs(b) + 0.5) ** 2 - Q0
 
 
-def circle_a(w):
-    """c(w): the circle phi = 13/4 as a graph over the second coordinate."""
-    return math.sqrt(13 / 4 - (w + 0.5) ** 2) - 0.5
+def own_radial(t, c):
+    """The radial coordinate for which the own margin against Q(c) vanishes:
+    a - <c, u(t)> - tau(t) = 0."""
+    return tau(t) + dot(c, u(t))
 
 
-def tie_line(w):
-    return (2 * PI + 7 - 11 * w) / 9
+def far_corner(t, a, b):
+    """The vertex of Q_t(a, b) farthest from the origin."""
+    sb_ = 1 if b >= 0 else -1
+    return centre(t, a + 0.5, b + 0.5 * sb_)
 
 
-def axial_top(w):
-    return min(circle_a(w), tie_line(w))
+def arrow(f, p, q, color=ORANGE, width=2.2, head=0.075):
+    """An arrow from p to q with a filled head of the given length."""
+    d = (q[0] - p[0], q[1] - p[1])
+    L = math.hypot(*d)
+    if L < 1e-9:
+        return
+    e = (d[0] / L, d[1] / L)
+    n = (-e[1], e[0])
+    base = shift(q, e, -head)
+    f.line(p, base, stroke=color, width=width)
+    f.polygon([q, shift(base, n, 0.45 * head), shift(base, n, -0.45 * head)],
+              fill=color, stroke=color, width=1)
 
 
-def tie_a(x):
-    return (2 * PI + 7) / 9 - 44 / 45 * x
+def contact_line(f, o, p, n, polys, margin=0.22, **kw):
+    """The line through p with the normal n, drawn over the vertices of the
+    given polygons that lie on it, and p, with a margin at both ends."""
+    m = (-n[1], n[0])
+    ts = [0.0]
+    for poly in polys:
+        for v in poly:
+            if abs(dot(n, shift(v, p, -1))) < 1e-6:
+                ts.append(dot(m, shift(v, p, -1)))
+    lo, hi = min(ts) - margin, max(ts) + margin
+    f.line(shift(o, shift(p, m, lo)), shift(o, shift(p, m, hi)), **kw)
 
 
-def diagonal(x):
-    return (2 * PI + 7 - 12 * x) / 5
-
-
-M = 2 * PI + 17
-JJ = math.sqrt(202 * 13 / 4 - M ** 2)
-A0 = (9 * M + 11 * JJ) / 202 - 0.5
-U0 = (11 * M - 9 * JJ) / 202 - 0.5
-S0 = 5 / 4 * U0
-RD = math.sqrt(13 / 8) - 0.5
-TD = PI / 6 + 7 / 12 - 5 / 12 * RD
-ZD = TD + S0 - PI / 6
-
-
-def side_top(x):
-    """(a+(x), u+(x)): the upper end of the segment of side label x."""
-    if x > TD:
-        return diagonal(x), diagonal(x)
-    n = 97 / 144
-    d = PI / 6 + 19 / 24 - x
-    z = math.sqrt(n * 13 / 4 - d * d)
-    X = (0.75 * d + z / 3) / n
-    Y = (-d / 3 + 0.75 * z) / n
-    return X - 0.5, Y - 0.5
-
-
-def J(a, A, v, e):
-    return 0.5 - a - A * math.sin(e) + abs(math.sin(e)) / 2 + \
-        (v + 0.5) * math.cos(e)
-
-
-def polyline(f, pts, stroke=INK, width=1.6, dash=None):
+def polyline(f, pts, stroke=INK, width=1.6, dash=None, opacity=1):
     d = ' '.join(f'{x:.1f},{y:.1f}' for x, y in (f.p(*q) for q in pts))
     extra = f' stroke-dasharray="{dash}"' if dash else ''
     f.add(f'<polyline points="{d}" fill="none" stroke="{stroke}" '
-          f'stroke-width="{width}" stroke-linejoin="round"{extra}/>')
+          f'stroke-width="{width}" stroke-opacity="{opacity}" '
+          f'stroke-linejoin="round"{extra}/>')
 
 
-def open_dot(f, c, r=3.6, stroke=INK):
+def label(f, c, base, sub='', sup='', size=15, color=INK, italic=True):
+    """A symbol with a subscript and a superscript, centred at c. The parts
+    are separate text elements that meet at one point, so that the label does
+    not depend on how a renderer places tspans."""
     x, y = f.p(*c)
-    f.add(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r}" fill="#ffffff" '
-          f'stroke="{stroke}" stroke-width="1.6"/>')
+    small = 0.7 * size
+    wb = 0.5 * size * len(base)
+    ws = 0.5 * small * max(len(sub), len(sup))
+    xj = x - (wb + ws) / 2 + wb
+    style = ' font-style="italic"' if italic else ''
+    common = f'font-family="{SERIF}" fill="{color}" dominant-baseline="middle"'
+    f.add(f'<text x="{xj:.1f}" y="{y:.1f}" font-size="{size}" {common} '
+          f'text-anchor="end"{style}>{base}</text>')
+    if sub:
+        f.add(f'<text x="{xj + 0.6:.1f}" y="{y + 0.32 * size:.1f}" '
+              f'font-size="{small:.1f}" {common} text-anchor="start">{sub}'
+              '</text>')
+    if sup:
+        f.add(f'<text x="{xj + 0.6:.1f}" y="{y - 0.42 * size:.1f}" '
+              f'font-size="{small:.1f}" {common} text-anchor="start"{style}>'
+              f'{sup}</text>')
+
+
+def C6(x):
+    return 1 - x ** 2 / 2 + x ** 4 / 24 - x ** 6 / 720
+
+
+def C4(x):
+    return 1 - x ** 2 / 2 + x ** 4 / 24
+
+
+def S7(x):
+    return x - x ** 3 / 6 + x ** 5 / 120 - x ** 7 / 5040
+
+
+def S5(x):
+    return x - x ** 3 / 6 + x ** 5 / 120
 
 
 # ---------------------------------------------------------------------------
-# Graphs of one-variable functions, with separate scales on the two axes.
+# Graphs with separate scales on the two axes, drawn in pixel units.
 
+class Plot:
+    """A graph panel inside a Figure drawn in pixel units: the data box
+    xr x yr is mapped onto the pixel box at (x0, y0) of size w x h."""
 
-class Graph:
-    """A graph with its own scales on the two axes. It fills a Figure of its
-    own, or is a panel of the Figure `fig` with its origin at the pixel
-    `at`."""
-
-    def __init__(self, x0, x1, y0, y1, width=520, height=280, left=58,
-                 right=24, top=18, bottom=44, fig=None, at=(0, 0)):
-        self.x0, self.x1, self.y0, self.y1 = x0, x1, y0, y1
-        self.kx = width / (x1 - x0)
-        self.ky = height / (y1 - y0)
-        self.width, self.height = width, height
-        self.at = at
-        self.f = fig if fig is not None else Figure(
-            -left, width + right, -bottom, height + top, 1, pad=0)
+    def __init__(self, f, x0, y0, w, h, xr, yr):
+        self.f, self.x0, self.y0, self.w, self.h = f, x0, y0, w, h
+        self.xr, self.yr = xr, yr
 
     def q(self, x, y):
-        return (self.at[0] + (x - self.x0) * self.kx,
-                self.at[1] + (y - self.y0) * self.ky)
+        sx = (x - self.xr[0]) / (self.xr[1] - self.xr[0])
+        sy = (y - self.yr[0]) / (self.yr[1] - self.yr[0])
+        return (self.x0 + sx * self.w, self.y0 + sy * self.h)
 
-    def axes(self, xticks, yticks, xname='', yname=''):
-        f = self.f
-        f.line(self.q(self.x0, self.y0), self.q(self.x1, self.y0), width=1)
-        f.line(self.q(self.x0, self.y0), self.q(self.x0, self.y1), width=1)
-        for x, s in xticks:
-            p = self.q(x, self.y0)
-            f.line(p, (p[0], p[1] - 5), width=1)
-            f.text((p[0], p[1] - 16), s, size=13, italic=False)
-        for y, s in yticks:
-            p = self.q(self.x0, y)
-            f.line(p, (p[0] - 5, p[1]), width=1)
-            f.text((p[0] - 8, p[1]), s, size=13, italic=False, anchor='end')
-        if xname:
-            p = self.q(self.x1, self.y0)
-            f.text((p[0] + 4, p[1] - 30), xname, size=15, anchor='end')
-        if yname:
-            p = self.q(self.x0, self.y1)
-            f.text((p[0] + 8, p[1] - 4), yname, size=15, anchor='start')
-
-    def curve(self, fn, a=None, b=None, n=400, **kw):
-        a = self.x0 if a is None else a
-        b = self.x1 if b is None else b
-        pts = [self.q(a + (b - a) * k / n, fn(a + (b - a) * k / n))
-               for k in range(n + 1)]
-        polyline(self.f, pts, **kw)
+    def curve(self, fn, a, b, n=300, **kw):
+        xs = [a + (b - a) * k / n for k in range(n + 1)]
+        polyline(self.f, [self.q(x, fn(x)) for x in xs], **kw)
 
     def points(self, pts, **kw):
         polyline(self.f, [self.q(x, y) for x, y in pts], **kw)
 
+    def polygon(self, pts, **kw):
+        self.f.polygon([self.q(x, y) for x, y in pts], **kw)
+
     def dot(self, x, y, r=3.2, fill=INK):
         self.f.dot(self.q(x, y), r=r, fill=fill)
 
-    def text(self, x, y, s, **kw):
-        self.f.text(self.q(x, y), s, **kw)
+    def text(self, x, y, s, dx=0, dy=0, **kw):
+        self.f.text(self.q(x, y), s, dx=dx, dy=dy, **kw)
 
-    def hline(self, y, **kw):
-        self.f.line(self.q(self.x0, y), self.q(self.x1, y), **kw)
+    def line(self, a, b, **kw):
+        self.f.line(self.q(*a), self.q(*b), **kw)
+
+    def vline(self, x, stroke=FAINT, dash='4 4', width=1, lo=None, hi=None):
+        lo = self.yr[0] if lo is None else lo
+        hi = self.yr[1] if hi is None else hi
+        self.f.line(self.q(x, lo), self.q(x, hi), stroke=stroke, dash=dash,
+                    width=width)
+
+    def hline(self, y, stroke=FAINT, dash='4 4', width=1, a=None, b=None):
+        a = self.xr[0] if a is None else a
+        b = self.xr[1] if b is None else b
+        self.f.line(self.q(a, y), self.q(b, y), stroke=stroke, dash=dash,
+                    width=width)
+
+    def axes(self, xticks, yticks, xlabel='', ylabel='', y_axis_at=None):
+        f = self.f
+        y0 = self.yr[0] if y_axis_at is None else y_axis_at
+        f.line(self.q(self.xr[0], y0), self.q(self.xr[1], y0), width=1,
+               arrow=True)
+        f.line(self.q(self.xr[0], self.yr[0]), self.q(self.xr[0], self.yr[1]),
+               width=1, arrow=True)
+        for x, s in xticks:
+            f.line(shift(self.q(x, y0), (0, -3)), shift(self.q(x, y0), (0, 3)),
+                   width=1)
+            f.text(self.q(x, y0), s, size=12, italic=False, dy=14)
+        for y, s in yticks:
+            f.line(shift(self.q(self.xr[0], y), (-3, 0)),
+                   shift(self.q(self.xr[0], y), (3, 0)), width=1)
+            f.text(self.q(self.xr[0], y), s, size=12, italic=False,
+                   anchor='end', dx=-6)
+        if xlabel:
+            f.text(self.q(self.xr[1], y0), xlabel, anchor='end', dy=-10)
+        if ylabel:
+            f.text(self.q(self.xr[0], self.yr[1]), ylabel, anchor='start',
+                   dx=8, dy=4)
+
+
+def pixel_figure(width, height):
+    """A Figure whose units are pixels, with the origin at the lower left."""
+    return Figure(0, width, 0, height, 1, pad=0)
 
 
 # ---------------------------------------------------------------------------
-# Figure C.1: the canonical pair on the inward axis in four sectors.
+# Figure C.1: the model, the frames of W, D and S and the two wings.
+
+def model_frames():
+    f = Figure(-1.95, 1.95, -1.95, 1.9, 128)
+    f.circle((0, 0), R6, stroke=INK, width=1.2, dash='6 4')
+    squares = [((S_STAR, S_STAR), 0, GREY, FAINT, 'C'),
+               ((S_STAR + 1, S_STAR), 0, GREY, FAINT, 'E'),
+               ((S_STAR, S_STAR + 1), 0, GREY, FAINT, 'N'),
+               ((S_STAR - 1, T_STAR), 0, FW, BLUE, 'W'),
+               ((-D_STAR, -D_STAR), 45, FD, PURPLE, 'D'),
+               ((T_STAR, S_STAR - 1), 0, FS, GREEN, 'S')]
+    for c, deg, fill, stroke, name in squares:
+        f.square(c, deg, fill=fill, stroke=stroke, opacity=0.9)
+    # Phase rays of W, D and S.
+    for t, s in ((PI, 'π'), (5 * PI / 4, '5π/4'), (3 * PI / 2, '3π/2')):
+        f.line((0, 0), shift((0, 0), u(t), R6 + 0.08), stroke=FAINT, width=1,
+               dash='2 4')
+        f.text(shift((0, 0), u(t), R6 + 0.17), s, size=13, italic=False,
+               color=FAINT)
+    # The wings: W-D along e2 of W (the line y = t* - 1/2) and D-S along e2
+    # of S (the line x = t* - 1/2).
+    yw = T_STAR - 0.5
+    f.line((-1.62, yw), (-0.18, yw), stroke=BLUE, width=1.4, dash='6 4')
+    f.line((yw, -1.62), (yw, -0.18), stroke=GREEN, width=1.4, dash='6 4')
+    # Frames.
+    frames = [((S_STAR - 1, T_STAR), PI, 'W', (0, 0.13), (0.17, 0.06)),
+              ((-D_STAR, -D_STAR), 5 * PI / 4, 'D', (-0.15, 0.08),
+               (0.12, 0.1)),
+              ((T_STAR, S_STAR - 1), 3 * PI / 2, 'S', (0.17, 0.05),
+               (0.0, 0.14))]
+    for c, t, name, o1, o2 in frames:
+        e1, e2 = u(t), u(t + PI / 2)
+        arrow(f, c, shift(c, e1, 0.42), color=INK, width=1.6, head=0.08)
+        arrow(f, c, shift(c, e2, 0.42), color=INK, width=1.6, head=0.08)
+        label(f, shift(shift(c, e1, 0.42), o1), 'e', '1', name, size=15)
+        label(f, shift(shift(c, e2, 0.42), o2), 'e', '2', name, size=15)
+        f.dot(c, r=2.6)
+    for c, deg, fill, stroke, name in squares:
+        if name in 'CEN':
+            f.text(shift(c, (0.2, 0.22)), name, size=16, color=INK)
+    f.text((S_STAR - 1 + 0.2, T_STAR + 0.25), 'W', size=17, color=BLUE)
+    f.text((-D_STAR - 0.26, -D_STAR - 0.02), 'D', size=17, color=PURPLE)
+    f.text((T_STAR + 0.26, S_STAR - 1 - 0.18), 'S', size=17, color=GREEN)
+    f.dot((0, 0), r=2.6)
+    f.text((0.05, -0.08), 'o', size=14, anchor='start')
+    save(f, 'appendix-c/frames', 'The model of six squares in the circle of radius '
+         'R6, with the frames e1, e2 of W, D and S at their centres, the rays '
+         'of their phases pi, 5 pi/4 and 3 pi/2, and the two wings: the line '
+         'of the lower side of W, which D touches, and the line of the left '
+         'side of S, which D touches')
 
 
-def canonical_pair(a, uu, A, v, s, t):
-    """The squares S and T of the canonical pair at the gap pi/3, in the chart
-    of S: centres, turning angles (degrees), and the two markers."""
-    l1, l2 = label(a, uu), label(A, v)
-    d = PI / 3 + s * l1 - t * l2
-    cs = (a, s * uu)
-    ct = (A * math.cos(d) - t * v * math.sin(d),
-          A * math.sin(d) + t * v * math.cos(d))
-    return cs, ct, math.degrees(d), s * l1, s * l1 + PI / 3
+# ---------------------------------------------------------------------------
+# Figure C.2: the dominance of the secondary axes (Lemma C.3).
+
+def inward_excess(q):
+    """The largest inward primary projection rho0 - a0 cos q + U0 sin q,
+    less the threshold tau(q)."""
+    return RHO0 - A0 * math.cos(q) + U0 * math.sin(q) - tau(q)
 
 
-def pair_panel(f, off, title, a, uu, A, v, s, t, y_sh=-1.28):
-    def P(p):
-        return (p[0] + off[0], p[1] + off[1])
+def secondary_lead(q):
+    """The least excess of the secondary projection over the inward primary
+    one: (a0 - U0) cos q - (rho0 + U0)(1 - sin q)."""
+    return (A0 - U0) * math.cos(q) - (RHO0 + U0) * (1 - math.sin(q))
 
-    cs, ct, ddeg, m1, m2 = canonical_pair(a, uu, A, v, s, t)
-    S = square_corners(cs)
-    T = square_corners(ct, ddeg)
-    f.circle(P((0, 0)), 1, stroke=FAINT, dash='4 4')
-    f.polygon([P(q) for q in S], fill=FILLS[0], stroke=BLUE, opacity=0.7)
-    f.polygon([P(q) for q in T], fill=FILLS[2], stroke=GREEN, opacity=0.6)
-    f.polygon([P(q) for q in S], stroke=BLUE)
-    for c, deg, color in ((cs, 0.0, BLUE), (ct, ddeg, GREEN)):
-        for t0, t1 in arcs_in(lambda q: in_open_square(q, c, deg), 1):
-            f.arc(P((0, 0)), 1, t0, t1, color, width=4)
-    for m, color in ((m1, BLUE), (m2, GREEN)):
-        f.line(P((0, 0)), P(u(m)), stroke=color, width=1, dash='3 3')
-        f.dot(P(u(m)), r=4.2, fill=color)
-    f.dot(P((0, 0)))
-    f.text(P((-0.07, -0.1)), 'o', anchor='end')
-    f.text(P(shift(cs, (0.3, -0.33))), 'S', size=16, color=BLUE)
-    f.text(P(shift(ct, u(math.radians(ddeg) + PI / 2), 0.25)), 'T', size=16,
-           color=GREEN)
-    # Shadows on the line of n_2.
-    s_lo, s_hi = a - 0.5, a + 0.5
-    t_lo = min(q[0] for q in T)
-    t_hi = max(q[0] for q in T)
-    sigma = t_hi - s_lo
-    # the closed form (C.1) of the inward sum, for s = +1
-    e = label(a, uu) - t * label(A, v) - PI / 6
-    closed = (0.5 - a - A * math.sin(e) + abs(math.sin(e)) / 2
-              + (0.5 - t * v) * math.cos(e))
-    assert s == 1 and abs(sigma - closed) < 1e-12
-    f.line(P((-1.15, y_sh)), P((1.72, y_sh)), width=1)
-    f.line(P((-0.75, y_sh + 0.2)), P((-1.1, y_sh + 0.2)), width=1.4,
-           arrow=True)
-    f.text(P((-0.93, y_sh + 0.33)), sb('n', '2'), size=14)
-    f.line(P((s_lo, y_sh + 0.05)), P((s_hi, y_sh + 0.05)), stroke=BLUE,
-           width=5)
-    f.line(P((t_lo, y_sh - 0.05)), P((t_hi, y_sh - 0.05)), stroke=GREEN,
-           width=5)
-    f.line(P((s_lo, cs[1] - 0.5)), P((s_lo, y_sh + 0.05)), stroke=BLUE,
-           width=1, dash='3 3')
-    xt = max(T, key=lambda q: q[0])
-    f.line(P(xt), P((xt[0], y_sh - 0.05)), stroke=GREEN, width=1, dash='3 3')
-    if sigma > 1e-9:
-        f.line(P((s_lo, y_sh - 0.15)), P((t_hi, y_sh - 0.15)), stroke=ORANGE,
-               width=4)
-        f.text(P(((s_lo + t_hi) / 2, y_sh - 0.3)),
-               sb('σ', '2') + f' = {sigma:.2f}', size=13, color=ORANGE)
+
+def root(fn, lo, hi):
+    for _ in range(80):
+        mid = (lo + hi) / 2
+        if (fn(lo) < 0) == (fn(mid) < 0):
+            lo = mid
+        else:
+            hi = mid
+    return (lo + hi) / 2
+
+
+def dominance():
+    W_, H_ = 600, 340
+    f = pixel_figure(W_, H_)
+    g = Plot(f, 62, 48, 500, 262, (0, PI / 2 + 0.03), (-1.25, 0.72))
+    g.polygon([(1.1, -1.25), (PI / 2, -1.25), (PI / 2, 0.72), (1.1, 0.72)],
+              fill=FILLS[6], stroke='none', opacity=0.8)
+    g.hline(0, stroke=INK, dash=None, width=0.8)
+    g.curve(inward_excess, 0, PI / 2, stroke=ORANGE, width=2.2)
+    g.curve(secondary_lead, 0, PI / 2, stroke=BLUE, width=2.2)
+    q1 = root(inward_excess, 1.0, 1.3)
+    q2 = root(secondary_lead, 0.8, 1.2)
+    assert 1.1 < q1 < 1.15 and q2 < 1.1
+    assert all(secondary_lead(1.1 + (PI / 2 - 1.1) * k / 200) >= -1e-12
+               for k in range(201))
+    g.dot(q1, 0, r=3.6, fill=ORANGE)
+    g.dot(q2, 0, r=3.6, fill=BLUE)
+    g.text(q1, 0, f'{q1:.2f}', size=12, italic=False, color=ORANGE, dx=4,
+           dy=14, anchor='start')
+    g.text(0.86, inward_excess(0.86), 'p(q) − τ(q)', size=15, color=ORANGE,
+           dx=8, dy=16, anchor='start')
+    g.text(0.72, secondary_lead(0.72), 'δ(q)', size=15, color=BLUE, dx=-8,
+           dy=-14, anchor='end')
+    g.axes([(0, '0'), (0.5, '1/2'), (1, '1'), (1.1, '11/10'),
+            (PI / 2, 'π/2')],
+           [(-1, '−1'), (-0.5, '−0.5'), (0, '0'), (0.5, '0.5')],
+           xlabel='q')
+    g.text(1.335, 0.62, 'q ≥ 11/10', size=13, italic=False, color=INK)
+    save(f, 'appendix-c/dominance', 'Two functions of the phase gap q on zero to '
+         'pi over 2: in orange the largest inward primary projection less the '
+         'threshold, negative up to about 1.14 and rising to about 0.58; in '
+         'blue the least excess of the secondary projection over the inward '
+         'primary one, from about minus 1.15 up to zero near 1.05 and '
+         'nonnegative beyond; the band from 11/10 to pi over 2 is shaded')
+
+
+# ---------------------------------------------------------------------------
+# Figure C.3: W on its own axis but not on the west side (Lemma 9.38).
+
+def circle_arc(f, o, r, t0, t1, steps=160, **kw):
+    polyline(f, [shift(o, u(t0 + (t1 - t0) * k / steps), r)
+                 for k in range(steps + 1)], **kw)
+
+
+def corner_position(w, c):
+    """The chart (a, b) of W = Q_(pi + w)(a, b) with both its own margin and
+    its west margin against Q(c) equal to zero."""
+    a = tau(w) - c[0] * math.cos(w) - c[1] * math.sin(w)
+    b = (c[0] - tau(w) + a * math.cos(w)) / math.sin(w)
+    return a, b
+
+
+def own_west_margins(w, a, b, c):
+    t = PI + w
+    own = a - dot(c, u(t)) - tau(t)
+    x = a * math.cos(t) - b * math.sin(t)
+    west = c[0] - x - tau(t)
+    return own, west
+
+
+def turn_panel(f, ox, w, title):
+    o = (ox, 0)
+    c = (C0, C0)
+    t = PI + w
+    a, b = corner_position(w, c)
+    own, west = own_west_margins(w, a, b, c)
+    assert abs(own) < 1e-12 and abs(west) < 1e-12
+    circle_arc(f, o, R0, 0.62 * PI, 1.47 * PI, stroke=INK, width=1.1,
+               dash='6 4')
+    f.square(shift(o, c), 0, fill=GREY, stroke=FAINT, opacity=0.9)
+    f.text(shift(o, (c[0] + 0.12, c[1] + 0.12)), 'C', size=16)
+    # The west line x = c_x - 1/2 and the own line of W through the corner.
+    xw = c[0] - 0.5
+    f.line(shift(o, (xw, -1.45)), shift(o, (xw, 1.2)), stroke=INK, width=1.1,
+           dash='5 4')
+    n = u(t)
+    P = (xw, c[1] - 0.5 if w > 0 else c[1] + 0.5)
+    m = (-n[1], n[0])
+    f.line(shift(o, shift(P, m, -1.25)), shift(o, shift(P, m, 1.25)),
+           stroke=BLUE, width=1.3, dash='5 4')
+    # D's own line through the lower-left corner and the pin of D.
+    nd = u(PI + 0.65)
+    md = (-nd[1], nd[0])
+    Pd = (xw, c[1] - 0.5)
+    f.line(shift(o, shift(Pd, md, -1.15)), shift(o, shift(Pd, md, 0.9)),
+           stroke=PURPLE, width=1.2, dash='2 3')
+    pd = shift((0, 0), u(5 * PI / 4), 0.9)
+    # W at the corner position, and slid along its own line.
+    slide = 0.32 if w > 0 else -0.32
+    f.square(shift(o, centre(t, a, b + slide)), math.degrees(t), fill=FW,
+             stroke=BLUE, opacity=0.35, width=1.2)
+    f.square(shift(o, centre(t, a, b)), math.degrees(t), fill='none',
+             stroke=BLUE, width=1.8)
+    cw = centre(t, a, b)
+    arrow(f, shift(o, cw), shift(o, centre(t, a, b + slide)), color=BLUE,
+          width=1.8, head=0.08)
+    f.dot(shift(o, P), r=3.4)
+    f.dot(shift(o, pd), r=4, fill=PURPLE)
+    label(f, shift(o, shift(pd, (0.04, -0.15))), 'p', 'D', '', size=15,
+          color=PURPLE)
+    f.text(shift(o, shift(cw, (-0.32, 0.36 if w < 0 else 0.3))), 'W',
+           size=17, color=BLUE)
+    f.text(shift(o, (-1.35, -1.47)), title, size=14, italic=False)
+
+
+def turn():
+    f = Figure(-1.95, 4.0, -1.55, 1.45, 118)
+    turn_panel(f, 0.0, -0.3, '(a)  w = −0.3')
+    turn_panel(f, 2.95, 0.3, '(b)  w = 0.3')
+    save(f, 'appendix-c/turn', 'Two panels with the central square C, the line of '
+         'its west side (dashed, vertical) and the line of its side across '
+         'which W is separated along its own axis (blue, dashed), both '
+         'through a corner of C; W is drawn at the corner position, where '
+         'both margins vanish, and slid along its own line to where it is '
+         'separated along its own axis but not along the west side. In (a), '
+         'with w negative, W slides upwards, away from the pin of D; in (b), '
+         'with w positive, it slides downwards, towards the pin of D and '
+         'across the purple line beyond which D lies')
+
+
+# ---------------------------------------------------------------------------
+# Figures C.4 and C.5: the stresses at D of Proposition 9.39, drawn at a
+# configuration where every separating inequality of the stress holds with
+# equality; the far corners of W and D then leave the disk of radius R0.
+
+def solve_free(excess_pair, lo=-0.5, hi=0.5, steps=2000):
+    """The parameter in [lo, hi] that minimises the larger of two excesses."""
+    best = None
+    for k in range(steps + 1):
+        t = lo + (hi - lo) * k / steps
+        m = max(excess_pair(t))
+        if best is None or m < best[0]:
+            best = (m, t)
+    return best[1]
+
+
+def stress_configuration(tw, td, along_d, west, c):
+    """Charts (aW, bW, aD, bD) of W = Q_tw and D = Q_td with the separations
+    of the stress at equality: W from C along its own axis (or along the west
+    side if `west`), D from C along its own axis, and W, D along the secondary
+    axis of D (if `along_d`) or of W."""
+    q = td - tw
+    aD = own_radial(td, c)
+
+    def charts(bw):
+        if west:
+            w = tw - PI
+            aw = (tau(w) - c[0] + bw * math.sin(w)) / math.cos(w)
+        else:
+            aw = own_radial(tw, c)
+        if along_d:
+            bd = tau(q) - aw * math.sin(q) + bw * math.cos(q)
+        else:
+            bd = (tau(q) + bw - aD * math.sin(q)) / math.cos(q)
+        return aw, bw, aD, bd
+
+    bw = solve_free(lambda t: (chart_excess(*charts(t)[:2]),
+                               chart_excess(*charts(t)[2:])))
+    return charts(bw)
+
+
+def stress_panel(f, o, tw, td, along_d, west, weights, title):
+    """One configuration of the stress at D with its forces."""
+    c = (C0, C0)
+    al, be, mu = weights
+    aw, bw, ad, bd = stress_configuration(tw, td, along_d, west, c)
+    q = td - tw
+    cw, cd = centre(tw, aw, bw), centre(td, ad, bd)
+    # Check the separations of the stress.
+    nW = (-1.0, 0.0) if west else u(tw)
+    assert abs(dot(nW, shift(cw, c, -1)) - tau(tw)) < 1e-9
+    assert abs(dot(u(td), shift(cd, c, -1)) - tau(td)) < 1e-9
+    nWD = u(td + PI / 2) if along_d else u(tw + PI / 2)
+    assert abs(dot(nWD, shift(cd, cw, -1)) - tau(q)) < 1e-9
+    circle_arc(f, o, R0, 0.55 * PI, 1.55 * PI, stroke=INK, width=1.1,
+               dash='6 4')
+    f.square(shift(o, c), 0, fill=GREY, stroke=FAINT, opacity=0.9)
+    f.text(shift(o, (c[0] + 0.13, c[1] + 0.13)), 'C', size=16)
+    draw = lambda t, a, b, fill, stroke: f.square(
+        shift(o, centre(t, a, b)), math.degrees(t), fill=fill, stroke=stroke,
+        opacity=0.8, width=1.6)
+    draw(tw, aw, bw, FW, BLUE)
+    draw(td, ad, bd, FD, PURPLE)
+    # Separating lines: of C towards W and towards D, and between W and D.
+    Wpoly = square_corners(cw, math.degrees(tw))
+    Dpoly = square_corners(cd, math.degrees(td))
+    Cpoly = square_corners(c, 0)
+    for n, poly, col in ((nW, Wpoly, BLUE), (u(td), Dpoly, PURPLE)):
+        p = shift(c, n, half_width(0.0, n))
+        contact_line(f, o, p, n, [Cpoly, poly], stroke=col, width=1.2,
+                     dash='5 4')
+    p = shift(cw, nWD, half_width(tw, nWD))
+    contact_line(f, o, p, nWD, [Wpoly, Dpoly], stroke=INK, width=1.2,
+                 dash='2 3')
+    for t, a, b in ((tw, aw, bw), (td, ad, bd)):
+        v = far_corner(t, a, b)
+        r = math.hypot(*v)
+        if r > R0:
+            f.line(shift(o, shift((0, 0), v, R0 / r)), shift(o, v),
+                   stroke=PINK, width=3.2)
+            f.dot(shift(o, v), r=4.2, fill=PINK)
+    # Forces, in Cartesian coordinates.
+    if west:
+        FWc = shift(shift((0, 0), nW, be), nWD, -mu)
     else:
-        f.text(P((s_lo, y_sh - 0.3)), sb('σ', '2') + ' = 0', size=13,
-               color=ORANGE)
-    f.text(P((0.25, 2.12)), title, size=14, italic=False)
-    return sigma
+        FWc = shift(shift((0, 0), u(tw), be), nWD, -mu)
+    FDc = shift(shift((0, 0), u(td), al), nWD, mu)
+    FCc = shift(shift((0, 0), nW, -be), u(td), -al)
+    k = 1.25
+    for p0, F in ((cw, FWc), (cd, FDc), (c, FCc)):
+        arrow(f, shift(o, p0), shift(o, shift(p0, F, k)), color=ORANGE,
+              width=2.4, head=0.09)
+    for p0, F, name, extra in ((cw, FWc, 'W', (0.1, 0.06)),
+                               (cd, FDc, 'D', (-0.1, 0.06)),
+                               (c, FCc, 'C', (0.08, 0.0))):
+        L = math.hypot(*F)
+        tip = shift(p0, F, k)
+        label(f, shift(o, shift(shift(tip, F, 0.16 / L), extra)), 'F', name,
+              size=15, color=ORANGE)
+    f.text(shift(o, shift(cw, (0.22, -0.14))), 'W', size=17, color=BLUE)
+    f.text(shift(o, shift(cd, (0.2, 0.2))), 'D', size=17, color=PURPLE)
+    f.dot(shift(o, (0, 0)), r=2.5)
+    f.text(shift(o, (-1.55, 1.42)), title, size=15, italic=False,
+           anchor='start')
+    return aw, bw, ad, bd
 
 
-def inward_sectors():
-    w, h = 3.05, 4.05
-    f = Figure(-1.25, -1.25 + 2 * w, -1.72 - h, 2.22, 100)
+def own_stress():
+    f = Figure(-1.95, 4.5, -1.78, 1.62, 108)
+    v, d = 0.3, 0.3
+    stress_panel(f, (0, 0), PI - v, PI + d, False, False,
+                 (0.31, 0.44, 0.25), '(a)')
+    stress_panel(f, (3.2, 0), PI - v, PI + d, True, False,
+                 (0.42, 0.37, 0.21), '(b)')
+    save(f, 'appendix-c/own-stress', 'The stress at D with W on its own axis, at '
+         'v = d = 0.3, with every separating inequality of the stress at '
+         'equality: W touches the line of C across which it is separated '
+         'along its own axis, D the corresponding line for D, and D the line '
+         'of the side of W (a) or W the line of the side of D (b); the far '
+         'vertices of W and D, marked, leave the dashed circle of radius R0, '
+         'and the forces on W, D and C are drawn as arrows')
+
+
+def west_stress():
+    f = Figure(-1.95, 4.5, -1.78, 1.62, 108)
+    w, d = -0.2, 0.35
+    stress_panel(f, (0, 0), PI + w, PI + d, False, True,
+                 (0.35, 0.40, 0.25), '(a)')
+    stress_panel(f, (3.2, 0), PI + w, PI + d, True, True,
+                 (0.43, 0.30, 0.27), '(b)')
+    save(f, 'appendix-c/west-stress', 'The stress at D with W on the west side of '
+         'C, at w = -0.2 and d = 0.35, with every separating inequality of '
+         'the stress at equality: W touches the line of the west side of C, '
+         'D the line of C across which it is separated along its own axis, '
+         'and D the line of the side of W (a) or W the line of the side of D '
+         '(b); the far vertices of W and D, marked, leave the dashed circle '
+         'of radius R0, and the forces on W, D and C are drawn as arrows')
+
+
+# ---------------------------------------------------------------------------
+# Figure C.6: the domains of the two stresses, with the lower bounds of the
+# slack at their vertices (Tables C.3 and C.6).
+
+# Brackets of cos x and sin x from the Taylor polynomials of Lemma A.8,
+# rounded outward to five decimals (Table C.1).
+BRACKETS = {
+    '0': ((1.0, 1.0), (0.0, 0.0)),
+    '1/10': ((0.99500, 0.99501), (0.09983, 0.09984)),
+    '2/5': ((0.92106, 0.92107), (0.38941, 0.38942)),
+    '1/2': ((0.87758, 0.87761), (0.47942, 0.47943)),
+    '2/3': ((0.78588, 0.78601), (0.61836, 0.61839)),
+    '9/10': ((0.62159, 0.62234), (0.78332, 0.78343)),
+    '7/6': ((0.39313, 0.39664), (0.91943, 0.92002)),
+}
+VALUE = {'0': 0.0, '1/10': 0.1, '2/5': 0.4, '1/2': 0.5, '2/3': 2 / 3,
+         '9/10': 0.9, '7/6': 7 / 6}
+
+
+def check_brackets():
+    for key, ((cl, cu), (sl, su)) in BRACKETS.items():
+        x = VALUE[key]
+        assert cl <= C6(x) <= math.cos(x) <= C4(x) <= cu or x == 0
+        assert sl <= S7(x) <= math.sin(x) <= S5(x) <= su or x == 0
+
+
+def trig_box(*args):
+    """All combinations of bracket ends for the cosines and sines of the
+    signed angles given as (key, sign)."""
+    out = [()]
+    for key, sign in args:
+        (cl, cu), (sl, su) = BRACKETS[key]
+        sines = (sl, su) if sign > 0 else (-su, -sl)
+        out = [o + ((c, s_),) for o in out for c in (cl, cu) for s_ in sines]
+    return out
+
+
+OWN_WEIGHTS = {False: (0.31, 0.44, 0.25), True: (0.42, 0.37, 0.21)}
+OWN_L0 = {False: 0.5061, True: 0.4696}
+OWN_L = {(False, '0'): 0.3983, (True, '0'): 0.4255,
+         (False, '1/2'): 0.4827, (True, '1/2'): 0.5056,
+         (False, '2/3'): 0.5046, (True, '2/3'): 0.5265}
+
+
+def floor6(x):
+    """Round down to six decimals; the rounding to nine decimals first removes
+    the floating-point error of values that are exact decimals."""
+    return math.floor(round(x * 1e6, 3)) / 1e6
+
+
+def ceil6(x):
+    return math.ceil(round(x * 1e6, 3)) / 1e6
+
+
+def own_corner_bound(vk, dk, along_d):
+    """The lower bound of Table C.3 for the slack of the own-axis stress at a
+    corner: the positive part with the lower ends of the brackets (the upper
+    end of sin q where it has a negative coefficient), less the work bound and
+    the bound of the work on C with the upper ends."""
+    al, be, mu = OWN_WEIGHTS[along_d]
+    source = al if along_d else be
+    target = be if along_d else al
+    qk = {('0', '0'): '0', ('0', '1/2'): '1/2', ('2/3', '0'): '2/3',
+          ('2/3', '1/2'): '7/6'}[(vk, dk)]
+    (cvl, cvu), (svl, svu) = BRACKETS[vk]
+    (cdl, cdu), (sdl, sdu) = BRACKETS[dk]
+    (cql, cqu), (sql, squ) = BRACKETS[qk]
+    X = be * cvu + al * cdu
+    Y = max(al * sdu - be * svl, 0.0)
+    if qk != '7/6':
+        L = OWN_L[(along_d, qk)]
+        assert target ** 2 + mu ** 2 + 2 * target * mu * squ <= L ** 2
+        P = (1 + be / 2 * (cvl + svl) + al / 2 * (cdl + sdl)
+             + mu * (cql + sql))
+        work = 1.689 * (OWN_L0[along_d] + L)
+    else:
+        assert (RHO0 + 0.5) * mu * cqu <= (target + mu * sql) / 2
+        P = ((1 + source + mu) / 2 + be / 2 * (cvl + svl)
+             + al / 2 * (cdl + sdl) + mu / 2 * cql - 0.613 * mu * squ)
+        work = 1.689 * OWN_L0[along_d] + 1.113 * target
+    assert source ** 2 + mu ** 2 <= OWN_L0[along_d] ** 2
+    return floor6(P) - ceil6(work) - ceil6(0.113 * (X + Y))
+
+
+SIDE_WEIGHTS = {False: (0.35, 0.40, 0.25), True: (0.43, 0.30, 0.27)}
+
+
+def rot_tangent(p, q, c, s_):
+    return (p * p + q * q + 2 * p * q * s_ + c * c) / (2 * c)
+
+
+def side_terms(along_d, w, sw, cw, d, sd, cd, sq, cq):
+    """The constant and the terms in w, d and q = d - w of the lower bound of
+    the slack of the west-side stress."""
+    al, be, mu = SIDE_WEIGHTS[along_d]
+    K = 1 - 0.613 * be - (1.689 * 0.51 if along_d else 0)
+    Wt = be * cw + (be * sw if w >= 0 else 0) - (
+        0 if along_d else 1.689 * rot_tangent(0.40, 0.25, 12 / 25, sw))
+    Dt = 0.387 * al * (cd + sd) - (
+        1.689 * rot_tangent(0.30, 0.27, 9 / 20, sd) if along_d else 0)
+    Qt = mu * (cq + sq) - (
+        0 if along_d else 1.689 * rot_tangent(0.35, 0.25, 0.5, sq))
+    return K, Wt, Dt, Qt
+
+
+SIDE_VERTICES = [('2/5', -1, '0'), ('2/5', -1, '1/2'), ('0', 1, '0'),
+                 ('0', 1, '1/2'), ('2/5', 1, '2/5'), ('2/5', 1, '1/2')]
+
+
+def side_term_bound(along_d, kind, key, sign=1):
+    """The lower bound of Table C.5 for one term of the west-side bound: the
+    least value over the ends of the brackets, rounded down."""
+    (cl, cu), (sl, su) = BRACKETS[key]
+    sines = (sl, su) if sign > 0 else (-su, -sl)
+    vals = []
+    for c_ in (cl, cu):
+        for s_ in sines:
+            if kind == 'W':
+                w = sign * VALUE[key]
+                vals.append(side_terms(along_d, w, s_, c_, 0, 0, 1, 0, 1)[1])
+            elif kind == 'D':
+                vals.append(side_terms(along_d, 0, 0, 1, 0, s_, c_, 0, 1)[2])
+            else:
+                vals.append(side_terms(along_d, 0, 0, 1, 0, 0, 1, s_, c_)[3])
+    return floor6(min(vals))
+
+
+def side_vertex_bound(wk, ws, dk, along_d):
+    w = ws * VALUE[wk]
+    d = VALUE[dk]
+    q = d - w
+    qk = min(VALUE, key=lambda k: abs(VALUE[k] - q))
+    assert abs(VALUE[qk] - q) < 1e-12
+    K = side_terms(along_d, 0, 0, 1, 0, 0, 1, 0, 1)[0]
+    total = (K + side_term_bound(along_d, 'W', wk, ws)
+             + side_term_bound(along_d, 'D', dk)
+             + side_term_bound(along_d, 'Q', qk))
+    # The joint minimum over the brackets is at least the sum of the terms.
+    best = min(sum(side_terms(along_d, w, sw, cw, d, sd, cd, sq, cq))
+               for (cw, sw), (cd, sd), (cq, sq) in trig_box((wk, ws), (dk, 1),
+                                                           (qk, 1)))
+    assert best >= total - 1e-12
+    return total
+
+
+def domain_panel(f, g, region, verts, title, divider=None):
+    g.polygon([(-2 / 3, 0), (5 / 8, 0), (5 / 8, PI / 4), (-2 / 3, PI / 4)],
+              fill='none', stroke=FAINT, width=1, dash='4 4')
+    g.polygon([(-2 / 3, 0.5), (5 / 8, 0.5), (5 / 8, PI / 4), (-2 / 3, PI / 4)],
+              fill=FILLS[2], stroke='none', opacity=0.45)
+    g.polygon(region, fill=FILLS[1], stroke=ORANGE, width=1.6)
+    if divider:
+        g.line(*divider, stroke=ORANGE, width=1, dash='3 3')
+    g.hline(0.5, stroke=INK, dash='5 4', width=1, a=-2 / 3, b=5 / 8)
+    g.axes([(-2 / 3, '−2/3'), (-0.4, '−2/5'), (0, '0'), (0.4, '2/5'),
+            (5 / 8, '5/8')],
+           [(0, '0'), (0.5, '1/2'), (PI / 4, 'π/4')], xlabel='w',
+           ylabel='d')
+    for (x, y), (v1, v2), (dx, dy, anchor) in verts:
+        g.dot(x, y, r=3.4, fill=ORANGE)
+        t1 = math.floor(v1 * 1e4) / 1e4
+        t2 = math.floor(v2 * 1e4) / 1e4
+        g.text(x, y, f'{t1:.4f}', size=12, italic=False, color=BLUE, dx=dx,
+               dy=dy, anchor=anchor)
+        g.text(x, y, f'{t2:.4f}', size=12, italic=False, color=PURPLE, dx=dx,
+               dy=dy + 14, anchor=anchor)
+    g.text(-2 / 3, PI / 4, title, size=15, italic=False, dx=4, dy=28,
+           anchor='start')
+
+
+def domains():
+    check_brackets()
+    W_, H_ = 900, 330
+    f = pixel_figure(W_, H_)
+    xr, yr = (-0.78, 0.72), (-0.06, 0.92)
+    g1 = Plot(f, 50, 42, 380, 255, xr, yr)
+    g2 = Plot(f, 500, 42, 380, 255, xr, yr)
+    own = {}
+    for vk, dk in (('0', '0'), ('0', '1/2'), ('2/3', '0'), ('2/3', '1/2')):
+        own[(vk, dk)] = tuple(own_corner_bound(vk, dk, ad)
+                              for ad in (False, True))
+        assert min(own[(vk, dk)]) > 0
+    v = lambda k: VALUE[k]
+    verts1 = [((-v(vk), v(dk)), own[(vk, dk)],
+               (8 if vk == '0' else -8, -28, 'start' if vk == '0' else 'end'))
+              for vk, dk in own]
+    domain_panel(f, g1, [(-2 / 3, 0), (0, 0), (0, 0.5), (-2 / 3, 0.5)],
+                 verts1, '(a) W on its own axis')
+    verts2 = []
+    for wk, ws, dk in SIDE_VERTICES:
+        vals = tuple(side_vertex_bound(wk, ws, dk, ad)
+                     for ad in (False, True))
+        assert min(vals) > 0
+        x, y = ws * v(wk), v(dk)
+        place = {(-0.4, 0.0): (-8, -28, 'end'), (-0.4, 0.5): (-8, -28, 'end'),
+                 (0.0, 0.0): (-8, -28, 'end'), (0.0, 0.5): (0, -28, 'middle'),
+                 (0.4, 0.4): (8, -6, 'start'), (0.4, 0.5): (8, -28, 'start')}
+        verts2.append(((x, y), vals, place[(round(x, 3), round(y, 3))]))
+    domain_panel(f, g2, [(-0.4, 0), (0, 0), (0.4, 0.4), (0.4, 0.5),
+                         (-0.4, 0.5)], verts2, '(b) W on the west side',
+                 divider=((0, 0), (0, 0.5)))
+    save(f, 'appendix-c/domains', 'Two panels in the plane of the angles w and d, '
+         'each with the window of the angles (dashed) and the band d above '
+         '1/2 shaded. (a) The rectangle of the stress with W on its own axis, '
+         'w from minus 2/3 to 0 and d from 0 to 1/2; (b) the domain of the '
+         'stress with W on the west side, w from minus 2/5 to 2/5, d from 0 '
+         'to 1/2 and w at most d, split at w = 0. At each vertex the lower '
+         'bounds of the slack for the two separators of W and D are written, '
+         'the first for the secondary axis of W and the second for that of D')
+
+
+# ---------------------------------------------------------------------------
+# Figure C.7: the transverse profiles of Lemma 9.40 against their bounds.
+
+def disk_transverse(front):
+    """The largest |b| of a chart in the ceiling with a + 1/2 >= front."""
+    return math.sqrt(Q0 - front * front) - 0.5
+
+
+def diagonal_profile(d):
+    """The largest |b_D| for D on its own axis at the phase pi + d, with the
+    centre of C at the corner (c0, c0) of its box."""
+    return disk_transverse(1 + (0.5 - C0) * (math.cos(d) + math.sin(d)))
+
+
+def west_side_profile(v):
+    """The largest -b_W for W on the west side of C at the phase pi - v,
+    with c_x = c0: the margin gives a >= (K + beta sin v)/cos v."""
+    K = 0.5 - C0 + (math.cos(v) + math.sin(v)) / 2
+
+    def feasible(beta):
+        a = max((K + beta * math.sin(v)) / math.cos(v), 0.5)
+        return (a + 0.5) ** 2 + (abs(beta) + 0.5) ** 2 <= Q0
+
+    ok = [k / 1000 for k in range(-500, 501) if feasible(k / 1000)]
+    if not ok:
+        return None
+    lo = max(ok)
+    hi = lo + 0.001
+    for _ in range(60):
+        mid = (lo + hi) / 2
+        lo, hi = (mid, hi) if feasible(mid) else (lo, mid)
+    return lo
+
+
+def own_west_profile(v):
+    """The largest |b_W| for W on its own axis at the phase pi - v, with
+    c = (c0, 0)."""
+    return disk_transverse(1 + (0.5 - C0) * math.cos(v) + 0.5 * math.sin(v))
+
+
+def own_west_cubic_profile(v):
+    P = 1 + 0.387 * (1 - v * v / 2) + (v - v ** 3 / 6) / 2
+    return disk_transverse(P)
+
+
+def profiles():
+    W_, H_ = 960, 300
+    f = pixel_figure(W_, H_)
     panels = [
-        ((0, 0), '(a) axial, axial; (+, +)', (1.05, 0.2, 0.95, 0.15, 1, 1)),
-        ((w, 0), '(b) a contact; (+, +)', (1.0, 0.5, 1.0, 0.0, 1, 1)),
-        ((0, -h), '(c) side target; (+, +)', (1.1, 0.1, 1.0, 0.5, 1, 1)),
-        ((w, -h), '(d) opposite signs; (+, −)', (1.0, 0.5, 1.0, 0.1, 1, -1)),
+        (Plot(f, 48, 46, 250, 210, (0, PI / 4 + 0.04), (0, 0.52)),
+         diagonal_profile, 0, PI / 4,
+         [(lambda d: 0.97 - (math.cos(d) + math.sin(d)) / 2, 0, PI / 4,
+           GREEN, '0.97 − (cos d + sin d)/2'),
+          (lambda d: 0.31 - 0.17 * d, 0.5, PI / 4, ORANGE,
+           '31/100 − 17d/100')],
+         [(0, '0'), (0.5, '1/2'), (PI / 4, 'π/4')], 'd', '(a)  D, |b|'),
+        (Plot(f, 368, 46, 250, 210, (0, 0.42), (0, 0.52)),
+         west_side_profile, 0, 0.4,
+         [(lambda v: 0.47 - 2 * v / 3, 0, 0.4, ORANGE, '47/100 − 2v/3')],
+         [(0, '0'), (0.2, '1/5'), (0.4, '2/5')], 'v', '(b)  W on the west '
+         'side, −b'),
+        (Plot(f, 688, 46, 250, 210, (0, 0.52), (0, 0.52)),
+         own_west_profile, 0, 0.5,
+         [(lambda v: 233 / 500 - 0.73 * v, 0, 0.5, ORANGE,
+           '233/500 − 73v/100')],
+         [(0, '0'), (0.25, '1/4'), (0.5, '1/2')], 'v', '(c)  W on its own '
+         'axis, |b|'),
     ]
-    for off, title, (a, uu, A, v, s, t) in panels:
-        assert admissible(a, uu) and admissible(A, v)
-        sigma = pair_panel(f, off, title, a, uu, A, v, s, t)
-        assert sigma >= -1e-12
-    f.save('appc-inward-sectors', 'The canonical pair on the inward axis in '
-           'four sectors, with the shadows of the two squares on the line of '
-           'n_2')
-
-
-# ---------------------------------------------------------------------------
-# Section C.2: the turn profiles.
-
-
-def profile(z):
-    return math.sin(z) - 0.8 * z * math.cos(z) - 0.75 * (1 - math.cos(z))
-
-
-def quintic(z):
-    """q: the Taylor bounds give p(z) >= z q(z)."""
-    return (1 / 5 - 3 * z / 8 + 7 * z ** 2 / 30 + z ** 3 / 32 - z ** 4 / 30
-            - z ** 5 / 960)
-
-
-def quadratic(z):
-    """The quadratic part (9z^2 - 15z + 8)/40 of q."""
-    return (9 * z ** 2 - 15 * z + 8) / 40
-
-
-def factored_error(z):
-    """q(z) - quadratic(z), nonnegative for 0 <= z <= 1."""
-    return z ** 2 / 960 * (5 + (1 - z) * (z ** 2 + 33 * z + 3))
-
-
-def check_profile_bounds():
-    """The identity and the inequalities of the proof of Lemma C.2."""
-    for k in range(158):
-        z = k / 100
-        assert abs(quintic(z) - quadratic(z) - factored_error(z)) < 1e-15
-        assert abs(9 * z ** 2 - 15 * z + 8 - (3 * z - 2.5) ** 2 - 7 / 4) \
-            < 1e-12
-        if z <= 1:
-            assert factored_error(z) >= 0
-            assert profile(z) >= z * quintic(z) - 1e-15
-            assert z * quadratic(z) >= z / 40
-        else:
-            assert profile(z) - z / 20 >= profile(z - 0.01) - (z - 0.01) / 20
-    assert abs(quadratic(1) - 1 / 20) < 1e-15
-
-
-def turn_profile():
-    check_profile_bounds()
-    g = Graph(0, PI / 2, 0, 0.26)
-    g.axes([(0, '0'), (0.5, '0.5'), (1, '1'), (PI / 2, 'π/2')],
-           [(0, '0'), (0.1, '0.1'), (0.2, '0.2')], xname='z')
-    g.curve(lambda z: z / 40, stroke=FAINT, width=1.6)
-    g.curve(lambda z: z * quadratic(z), 0, 1, stroke=ORANGE, width=1.8,
-            dash='6 4')
-    g.curve(lambda z: z / 20, 1, PI / 2, stroke=GREEN, width=1.8,
-            dash='6 4')
-    g.curve(profile, stroke=BLUE, width=2.2)
-    g.dot(1, 1 / 20)
-    g.text(1.28, profile(1.28) + 0.018, 'p(z)', color=BLUE, anchor='end')
-    g.text(0.66, 0.072, 'Lemma C.2 (1)', color=ORANGE, size=14,
-           italic=False)
-    g.text(1.45, 1.45 / 20 + 0.016, 'z/20', color=GREEN, size=14)
-    g.text(1.35, 1.35 / 40 - 0.014, 'z/40', color=FAINT, size=14)
-    g.f.save('appc-turn-profile', 'The turn profile p above the line z/40, '
-             'with the lower bounds of the proof: the bound of part (1) on '
-             '[0, 1] and the line z/20 on [1, pi/2], which meet at z = 1')
-
-
-def profile_split():
-    W, H, gap = 300, 230, 84
-    f = Figure(-58, 2 * W + gap + 24, -44, H + 46, 1, pad=0)
-    # (a) 0 <= z <= 1: the Taylor bound z q(z) is the cubic z quadratic(z)
-    # plus the factored error.
-    a = Graph(0, 1, 0, 0.07, width=W, height=H, fig=f)
-    a.axes([(0, '0'), (0.5, '0.5'), (1, '1')],
-           [(0, '0'), (0.02, '0.02'), (0.04, '0.04'), (0.06, '0.06')],
-           xname='z')
-    zs = [k / 200 for k in range(201)]
-    f.polygon([a.q(z, z * quadratic(z)) for z in zs]
-              + [a.q(z, z * quintic(z)) for z in reversed(zs)],
-              fill=FILLS[3], stroke='none')
-    a.curve(lambda z: z * quintic(z), stroke=PURPLE, width=1.6, dash='6 4')
-    a.curve(lambda z: z * quadratic(z), stroke=ORANGE, width=1.8,
-            dash='6 4')
-    a.curve(profile, stroke=BLUE, width=2.2)
-    a.dot(1, quadratic(1), fill=ORANGE)
-    # a legend in the empty upper left corner
-    rows = [('p(z)', BLUE, None, True),
-            ('z q(z)', PURPLE, '6 4', True),
-            ('z(9z² − 15z + 8)/40', ORANGE, '6 4', True),
-            ('factored error', None, None, False)]
-    for k, (name, color, dash, italic) in enumerate(rows):
-        y = 0.0669 - 0.00588 * k
-        if color is None:
-            f.polygon([a.q(0.03, y - 0.00168), a.q(0.11, y - 0.00168),
-                       a.q(0.11, y + 0.00168), a.q(0.03, y + 0.00168)],
-                      fill=FILLS[3], stroke='none')
-        else:
-            a.points([(0.03, y), (0.11, y)], stroke=color,
-                     width=2.2 if dash is None else 1.8, dash=dash)
-        a.text(0.13, y, name, color=color or PURPLE, size=13, italic=italic,
+    vmax = root(lambda v: west_side_profile(v)
+                if west_side_profile(v) is not None else -1, 0.2, 0.4)
+    panels[1] = panels[1][:3] + (vmax,) + panels[1][4:]
+    for g, fn, a, b, bounds, xticks, xname, title in panels:
+        g.axes(xticks, [(0, '0'), (0.25, '1/4'), (0.5, '1/2')], xlabel=xname)
+        g.curve(fn, a, b, stroke=BLUE, width=2.4)
+        for bf, ba, bb, col, name in bounds:
+            g.curve(bf, ba, bb, stroke=col, width=1.8, dash='6 4')
+            for k in range(201):
+                x = ba + (bb - ba) * k / 200
+                if fn(x) is not None and x <= b:
+                    assert bf(x) > fn(x)
+        g.text(g.xr[0], g.yr[1], title, size=14, italic=False, dx=10, dy=8,
                anchor='start')
-    f.text((W / 2, H + 30), '(a) 0 ≤ z ≤ 1', size=14, italic=False)
-    # (b) 1 <= z <= pi/2: the profile less z/20 increases.
-    b = Graph(1, PI / 2, 0, 0.18, width=W, height=H, fig=f, at=(W + gap, 0))
-    b.axes([(1, '1'), (1.25, '1.25'), (PI / 2, 'π/2')],
-           [(0, '0'), (0.05, '0.05'), (0.1, '0.1'), (0.15, '0.15')],
-           xname='z')
-    b.curve(lambda z: profile(z) - z / 20, stroke=BLUE, width=2.2)
-    b.dot(1, profile(1) - 1 / 20, fill=BLUE)
-    b.text(1.33, profile(1.33) - 1.33 / 20 + 0.011, 'p(z) − z/20',
-           color=BLUE, size=14, anchor='end')
-    f.text((W + gap + W / 2, H + 30), '(b) 1 ≤ z ≤ π/2', size=14,
-           italic=False)
-    f.save('appc-profile-split', 'The two parts of the proof of the turn '
-           'profile bound: on [0, 1] the profile above its Taylor bound '
-           'z q(z), which is a cubic plus a factored error; on [1, pi/2] the '
-           'profile less z/20, increasing')
+    g1, g2, g3 = (p[0] for p in panels)
+    g1.text(0.12, 0.97 - (math.cos(0.12) + math.sin(0.12)) / 2, '0.97 − ω',
+            size=12, italic=False, color=GREEN, dx=4, dy=-14,
+            anchor='start')
+    g1.text(PI / 4, 0.31 - 0.17 * PI / 4, '0.31 − 0.17d', size=12,
+            italic=False, color=ORANGE, dx=-4, dy=-22, anchor='end')
+    g3.curve(own_west_cubic_profile, 0, 0.5, stroke=PURPLE, width=1.4,
+             dash='2 3')
+    g2.dot(vmax, west_side_profile(vmax), r=3.2, fill=BLUE)
+    save(f, 'appendix-c/profiles', 'Three graphs. (a) For D on its own axis, the '
+         'largest transverse coordinate allowed by the disk, falling from '
+         'about 0.46 at d = 0 to about 0.18 at pi over 4, below the bound '
+         '0.97 minus (cos d + sin d)/2 of Lemma C.5 and, on 1/2 to pi over 4, '
+         'just below the line 31/100 minus 17d/100, which it nearly touches '
+         'at both ends. (b) For W on the west side, the largest value of '
+         'minus b, below the line 47/100 minus 2v/3. (c) For W on its own '
+         'axis, the largest value of |b|, below the line 233/500 minus '
+         '73v/100, which it nearly touches at v = 1/2; the dotted curve is '
+         'the bound obtained from the Taylor polynomials')
 
 
-def positive_turn():
-    A = math.sqrt(3) - 0.5
+# ---------------------------------------------------------------------------
+# Figure C.8: the coupled reserve of D and S on the triangle (Lemma C.12).
 
-    def lhs(e):
-        return 0.8 * e - A * math.sin(e) + 0.5 * math.sin(e) - \
-            0.5 * (1 - math.cos(e))
-    g = Graph(0, PI / 12, 0, 0.0055, height=260)
-    g.axes([(0, '0'), (0.1, '0.1'), (0.2, '0.2'), (PI / 12, 'π/12')],
-           [(0, '0'), (0.001, '0.001'), (0.002, '0.002'), (0.003, '0.003'),
-            (0.004, '0.004'), (0.005, '0.005')], xname='e')
-    g.curve(lambda e: e / 840, stroke=FAINT, width=1.6)
-    g.curve(lhs, stroke=BLUE, width=2.2)
+def coupled_reserve(d, s_):
+    return (0.387 * math.cos(s_ - d) + math.sin(s_) * math.cos(d)
+            - 0.613 * math.cos(d) - (0.557 + (s_ - d) / 3) * math.sin(s_))
+
+
+def contour_segments(fn, x0, x1, y0, y1, level, n=80):
+    """The segments of the level set fn = level, by marching squares."""
+    segs = []
+    xs = [x0 + (x1 - x0) * i / n for i in range(n + 1)]
+    ys = [y0 + (y1 - y0) * j / n for j in range(n + 1)]
+    val = [[fn(x, y) - level for y in ys] for x in xs]
+    for i in range(n):
+        for j in range(n):
+            corners = [(xs[i], ys[j], val[i][j]),
+                       (xs[i + 1], ys[j], val[i + 1][j]),
+                       (xs[i + 1], ys[j + 1], val[i + 1][j + 1]),
+                       (xs[i], ys[j + 1], val[i][j + 1])]
+            pts = []
+            for k in range(4):
+                (ax, ay, av), (bx, by, bv) = corners[k], corners[(k + 1) % 4]
+                if (av < 0) != (bv < 0):
+                    t = av / (av - bv)
+                    pts.append((ax + t * (bx - ax), ay + t * (by - ay)))
+            if len(pts) == 2:
+                segs.append(tuple(pts))
+            elif len(pts) == 4:
+                segs += [(pts[0], pts[1]), (pts[2], pts[3])]
+    return segs
+
+
+def overtake():
+    W_, H_ = 470, 400
+    f = pixel_figure(W_, H_)
+    lo, hi = 0.5, 2 / 3
+    g = Plot(f, 70, 52, 330, 300, (0.48, 0.69), (0.48, 0.69))
+    tri = [(lo, lo), (lo, hi), (hi, hi)]
+    g.polygon(tri, fill=FILLS[2], stroke=GREEN, width=1.8)
+    for level in (0.005, 0.01, 0.02, 0.03, 0.04):
+        for a, b in contour_segments(coupled_reserve, lo, hi, lo, hi, level):
+            m = ((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
+            if m[0] <= m[1] + 1e-12:
+                g.line(a, b, stroke=GREEN, width=1)
+    vals = {p: coupled_reserve(*p) for p in ((lo, lo), (lo, hi), (hi, hi))}
+    assert min(vals.values()) > 0.0027
+    for (x, y), val, (dx, dy, anc) in (((lo, lo), vals[(lo, lo)],
+                                        (8, 16, 'start')),
+                                       ((lo, hi), vals[(lo, hi)],
+                                        (8, -12, 'start')),
+                                       ((hi, hi), vals[(hi, hi)],
+                                        (8, 2, 'start'))):
+        g.dot(x, y, r=3.6, fill=GREEN)
+        g.text(x, y, f'{val:.5f}', size=13, italic=False, color=INK, dx=dx,
+               dy=dy, anchor=anc)
+    g.line((0.48, 0.48), (0.69, 0.69), stroke=FAINT, width=1, dash='4 4')
+    g.axes([(lo, '1/2'), (0.6, '0.6'), (hi, '2/3')],
+           [(lo, '1/2'), (0.6, '0.6'), (hi, '2/3')], xlabel='d', ylabel='s')
+    g.text(0.615, 0.585, 's = d', size=13, italic=False, color=FAINT)
+    save(f, 'appendix-c/overtake', 'The triangle of the angles d and s with d '
+         'from 1/2 to s and s up to 2/3, in green, with level lines of the '
+         'reserve of Lemma C.12 at 0.005, 0.01, 0.02, 0.03 and 0.04; the '
+         'reserve is about 0.0027 at the vertex (1/2, 1/2), 0.0076 at '
+         '(1/2, 2/3) and 0.047 at (2/3, 2/3)')
+
+
+# ---------------------------------------------------------------------------
+# Figure C.9: the walls in the plane of the angles (Lemma 9.42 (1)).
+
+def walls():
+    W_, H_ = 860, 330
+    f = pixel_figure(W_, H_)
+    xr = (0.44, 0.84)
+    for k, (yr, name, lo_, hi_, below) in enumerate((
+            ((-0.75, 0.72), 'w', -2 / 3, 5 / 8, True),
+            ((-0.72, 0.75), 's', -5 / 8, 2 / 3, False))):
+        g = Plot(f, 60 + 430 * k, 42, 340, 262, xr, yr)
+        box = [(0.5, lo_), (PI / 4, lo_), (PI / 4, hi_), (0.5, hi_)]
+        g.polygon(box, fill='none', stroke=FAINT, width=1, dash='4 4')
+        wall = [(0.5, 0.5 - PI / 4), (PI / 4, 0.0)]
+        if below:
+            region = [(0.5, lo_), (PI / 4, lo_), (PI / 4, 0.0),
+                      (0.5, 0.5 - PI / 4)]
+        else:
+            region = [(0.5, 0.5 - PI / 4), (PI / 4, 0.0), (PI / 4, hi_),
+                      (0.5, hi_)]
+        g.polygon(region, fill=FILLS[3], stroke='none', opacity=0.8)
+        g.line(*wall, stroke=PURPLE, width=2.2)
+        g.dot(PI / 4, 0.0, r=4, fill=INK)
+        g.text(PI / 4, 0.0, 'model', size=12, italic=False, dx=-8, dy=-12,
+               anchor='end')
+        g.axes([(0.5, '1/2'), (PI / 4, 'π/4')],
+               [(lo_, '−2/3' if k == 0 else '−5/8'), (0, '0'),
+                (hi_, '5/8' if k == 0 else '2/3')], xlabel='d',
+               ylabel=name)
+        g.hline(0, stroke=FAINT, dash='2 4', width=1, a=0.5, b=PI / 4)
+        txt = 'w = d − π/4' if k == 0 else 's = d − π/4'
+        g.text(0.58, 0.58 - PI / 4, txt, size=13, italic=False,
+               color=PURPLE, dx=0, dy=-24 if k == 0 else 24, anchor='start')
+        g.text(0.8, yr[1], '(a)' if k == 0 else '(b)', size=14, italic=False,
+               dx=0, dy=12, anchor='start')
+    save(f, 'appendix-c/walls', 'Two panels in the plane of the angles. (a) d from '
+         '1/2 to pi over 4 against w in its window from minus 2/3 to 5/8: the '
+         'wall w = d minus pi over 4 runs from about (1/2, -0.29) to the '
+         'model point (pi over 4, 0); W and D can be separated along the '
+         'secondary axis of D only below it, in the shaded region. (b) The '
+         'same for s, with the wall s = d minus pi over 4: D and S can be '
+         'separated along the secondary axis of D only above it')
+
+
+# ---------------------------------------------------------------------------
+# Figure C.11: the double separation at D (Lemma 9.42 (2)).
+
+def double_configuration(w, s_, d, c):
+    """W and S on their own axes and D on its own axis, all at equality, with
+    W, D and D, S separated along the secondary axis of D at equality; the
+    transverse coordinate of D balances the excesses of W and S."""
+    tw, td, ts = PI + w, PI + d, 1.5 * PI + s_
+    aw, as_, ad = own_radial(tw, c), own_radial(ts, c), own_radial(td, c)
+    q1, q2 = d - w, d - s_
+
+    def charts(bd):
+        bw = (bd + aw * math.sin(q1) - tau(q1)) / math.cos(q1)
+        bs = (tau(q2) + bd - as_ * math.cos(q2)) / math.sin(q2)
+        return aw, bw, ad, bd, as_, bs
+
+    bd = solve_free(lambda t: (chart_excess(*charts(t)[:2]),
+                               chart_excess(*charts(t)[4:])), -0.2, 0.2)
+    return charts(bd)
+
+
+def double():
+    c = (C0, C0)
+    w, s_, d = -0.35, 0.35, PI / 4
+    tw, td, ts = PI + w, PI + d, 1.5 * PI + s_
+    aw, bw, ad, bd, as_, bs = double_configuration(w, s_, d, c)
+    cw, cd, cs = centre(tw, aw, bw), centre(td, ad, bd), centre(ts, as_, bs)
+    e2 = u(td + PI / 2)
+    assert abs(dot(e2, shift(cd, cw, -1)) - tau(d - w)) < 1e-9
+    assert abs(dot(e2, shift(cs, cd, -1)) - tau(PI / 2 + s_ - d)) < 1e-9
+    FWc = shift(u(tw), e2, -1)
+    FSc = shift(u(ts), e2, 1)
+    FCc = shift(shift((0, 0), u(tw), -1), u(ts), -1)
+    k = 0.42
+    pts = [q for t, a, b in ((tw, aw, bw), (ts, as_, bs), (td, ad, bd))
+           for q in square_corners(centre(t, a, b), math.degrees(t))]
+    pts += [shift(cw, FWc, k + 0.3), shift(cs, FSc, k + 0.3)]
+    xmin = min(min(x for x, y in pts), -R0) - 0.08
+    ymin = min(min(y for x, y in pts), -R0) - 0.08
+    xmax = max(max(x for x, y in pts), R0) + 0.08
+    ymax = max(max(y for x, y in pts), R0) + 0.08
+    f = Figure(xmin, xmax, ymin, ymax, 112)
+    f.circle((0, 0), R0, stroke=INK, width=1.1, dash='6 4')
+    f.square(c, 0, fill=GREY, stroke=FAINT, opacity=0.9)
+    f.text((c[0] - 0.22, c[1] + 0.24), 'C', size=16)
+    for t, a, b, fill, stroke in ((tw, aw, bw, FW, BLUE),
+                                  (ts, as_, bs, FS, GREEN),
+                                  (td, ad, bd, FD, PURPLE)):
+        f.square(centre(t, a, b), math.degrees(t), fill=fill, stroke=stroke,
+                 opacity=0.8, width=1.6)
+    # The two lines of the sides of D across which W and S are separated.
+    m = u(td)
+    for sgn in (-1, 1):
+        p = shift(cd, e2, 0.5 * sgn)
+        f.line(shift(p, m, -1.25), shift(p, m, 1.0), stroke=PURPLE,
+               width=1.2, dash='5 4')
+    for t, a, b in ((tw, aw, bw), (ts, as_, bs)):
+        v = far_corner(t, a, b)
+        r = math.hypot(*v)
+        assert r > R0
+        f.line(shift((0, 0), v, R0 / r), v, stroke=PINK, width=3.2)
+        f.dot(v, r=4.2, fill=PINK)
+    # Forces: on W, n_W - e2; on S, n_S + e2; on D, e2 - e2 = 0; on C.
+    for p0, F, name, extra in ((cw, FWc, 'W', (0.0, 0.12)),
+                               (cs, FSc, 'S', (0.14, 0.0)),
+                               (c, FCc, 'C', (0.1, 0.08))):
+        tip = shift(p0, F, k)
+        arrow(f, p0, tip, color=ORANGE, width=2.4, head=0.09)
+        L = math.hypot(*F)
+        label(f, shift(shift(tip, F, 0.17 / L), extra), 'F', name, size=15,
+              color=ORANGE)
+    for sgn in (-1, 1):
+        arrow(f, cd, shift(cd, e2, 0.36 * sgn), color=ORANGE, width=1.6,
+              head=0.07)
+    label(f, shift(cd, e2, 0.58), 'e', '2', 'D', size=14, color=ORANGE)
+    label(f, shift(cd, e2, -0.6), '−e', '2', 'D', size=14, color=ORANGE)
+    f.text(shift(cw, (-0.2, 0.28)), 'W', size=17, color=BLUE)
+    f.text(shift(cs, (0.3, -0.22)), 'S', size=17, color=GREEN)
+    f.text(shift(cd, (-0.36, -0.08)), 'D', size=17, color=PURPLE)
+    f.dot((0, 0), r=2.5)
+    save(f, 'appendix-c/double', 'The double separation at D, at w = -0.35, '
+         'd = pi over 4 and s = 0.35, with W and S separated from C along '
+         'their own axes and from D across the two sides of D parallel to its '
+         'primary axis (dashed), all at equality; the far vertices of W and S '
+         'leave the dashed circle of radius R0. The two unit forces on D, '
+         'plus and minus its secondary axis, cancel; the forces on W, S and C '
+         'are drawn as arrows')
+
+
+# ---------------------------------------------------------------------------
+# Figure C.10: the cost of a wing (Lemma C.17).
+
+def chart_support(U, V, steps=4000):
+    """The largest U a + V b over the charts in the ceiling, for U > 0: it is
+    taken on the arc of the circle where (a + 1/2, |b| + 1/2) lies, with b of
+    the sign of V."""
+    t0 = math.asin(0.5 / R0)
+    best = -1e9
+    for k in range(steps + 1):
+        t = t0 + (PI / 4 - t0) * k / steps
+        a = R0 * math.cos(t) - 0.5
+        b = R0 * math.sin(t) - 0.5
+        best = max(best, U * a + abs(V) * b)
+    return best
+
+
+def wing_cost(q):
+    return omega(q) - chart_support(1 + math.sin(q), math.cos(q))
+
+
+def folded(q):
+    return PI / 2 - abs(q - PI / 2)
+
+
+def cost():
+    W_, H_ = 640, 330
+    f = pixel_figure(W_, H_)
+    g = Plot(f, 66, 46, 540, 252, (0.45, PI - 0.45), (0, 0.04))
+    line_ = lambda q: -0.73 - 0.65 * folded(q)
+    vertex = lambda q: omega(q) - (1.689 * (81 / 56 + 4 / 7 * math.sin(q))
+                                   - (1 + math.sin(q) + abs(math.cos(q))) / 2)
+    capb = lambda q: omega(q) - 1.113 * (1 + math.sin(q))
+    g.curve(lambda q: wing_cost(q) - line_(q), 0.5, PI - 0.5, stroke=BLUE,
+            width=2.4, n=220)
+    for a, b, fn, col in ((0.5, 1, vertex, GREEN), (1, PI / 2, capb, PURPLE),
+                          (PI / 2, PI - 1, capb, PURPLE),
+                          (PI - 1, PI - 0.5, vertex, GREEN)):
+        g.curve(lambda q, fn=fn: fn(q) - line_(q), a, b, stroke=col,
+                width=1.8, dash='6 4')
+    for k in range(201):
+        q = 0.5 + (PI - 1) * k / 200
+        lower = vertex(q) if (q <= 1 or q >= PI - 1) else capb(q)
+        assert wing_cost(q) >= lower - 1e-9
+        assert lower > line_(q)
+    for x in (1, PI / 2, PI - 1):
+        g.vline(x, lo=0, hi=0.04)
+    g.axes([(0.5, '1/2'), (1, '1'), (PI / 2, 'π/2'), (PI - 1, 'π − 1'),
+            (PI - 0.5, 'π − 1/2')],
+           [(0, '0'), (0.01, '0.01'), (0.02, '0.02'), (0.03, '0.03')],
+           xlabel='q')
+    g.text(0.75, 0.0115, 'far vertex', size=12, italic=False, color=GREEN)
+    g.text(1.29, 0.0172, 'cap', size=12, italic=False, color=PURPLE)
+    g.text(1.43, 0.0265, 'least cost', size=12, italic=False, color=BLUE,
+           anchor='end')
+    save(f, 'appendix-c/cost', 'The cost of a wing less the folded line minus 0.73 '
+         'minus 0.65 times the folded angle, for the phase gap q from 1/2 to '
+         'pi minus 1/2, symmetric about pi over 2: in blue for the least cost '
+         'over the charts in the ceiling, dashed for the lower bounds of the '
+         'proof, from the far vertex with the tangent of the square root up '
+         'to 1 and from the cap between 1 and pi over 2; all are positive, '
+         'the bounds of the proof by at least 0.004')
+
+
+# ---------------------------------------------------------------------------
+# Figure C.12: S on its own axis at a negative angle (Lemma 9.43 (1)).
+
+def south_defect(d, v):
+    U = 0.31 - 0.17 * d
+    A = RHO0 - 0.31 * (U + U * U)
+    th = d + v
+    return (C0 + RHO0 * math.tan(v / 2) - 0.5 + (A - 0.5) * math.cos(th)
+            + (U - 0.5) * math.sin(th))
+
+
+def south_sign():
+    W_, H_ = 900, 320
+    f = pixel_figure(W_, H_)
+    g1 = Plot(f, 66, 46, 330, 238, (0.5, PI / 4 + 0.01), (-0.22, 0.02))
+    g2 = Plot(f, 526, 46, 340, 238, (0, 0.65), (-0.27, 0.02))
+    # (a) the separation along the secondary axis of D.
+    g1.hline(0, stroke=INK, dash=None, width=0.8)
+    bd = lambda d: math.cos(d) / 2 - 0.387 * math.sin(d) - 11 / 40
+    g1.curve(bd, 0.5, PI / 4, stroke=BLUE, width=2.4)
+    g1.dot(0.5, bd(0.5), r=3.4, fill=BLUE)
+    g1.text(0.5, bd(0.5), f'{bd(0.5):.4f}', size=12, italic=False,
+            color=BLUE, dx=8, dy=-10, anchor='start')
+    g1.axes([(0.5, '1/2'), (0.6, '0.6'), (0.7, '0.7'), (PI / 4, 'π/4')],
+            [(-0.2, '−0.2'), (-0.1, '−0.1'), (0, '0')], xlabel='d')
+    g1.text(0.5, 0.02, '(a)', size=14, italic=False, dx=10, dy=10,
+            anchor='start')
+    # (b) the separation along the secondary axis of S.
+    g2.hline(0, stroke=INK, dash=None, width=0.8)
+    for d, col in ((0.5, BLUE), (PI / 4, CYAN)):
+        g2.curve(lambda v, d=d: south_defect(d, v), 0, 0.625, stroke=col,
+                 width=2.4 if d == 0.5 else 1.6)
+    g2.curve(lambda v: -0.387 + 1.113 * 0.55 * v + 0.34 * math.cos(v)
+             - 0.49 * math.sin(v), 0, 0.625, stroke=ORANGE, width=1.6,
+             dash='6 4')
+    g2.curve(lambda v: -0.047 + 0.12215 * v - 0.1134 * v * v, 0, 0.625,
+             stroke=PURPLE, width=1.6, dash='2 3')
     for k in range(101):
-        e = PI / 12 * k / 100
-        assert lhs(e) >= e / 840 - 1e-15
-    g.text(0.2, lhs(0.2) + 0.00045, 'A = √3 − ½, v = 0', color=BLUE,
-           size=14, anchor='start')
-    g.text(0.24, 0.24 / 840 + 0.00017, 'e/840', color=FAINT, size=14)
-    g.f.save('appc-positive-turn', 'The left side of the bound for a '
-             'nonnegative turn in its worst case, against e/840')
+        v = 0.625 * k / 100
+        assert south_defect(PI / 4, v) <= south_defect(0.5, v) <= (
+            -0.387 + 1.113 * 0.55 * v + 0.34 * math.cos(v)
+            - 0.49 * math.sin(v)) <= (-0.047 + 0.12215 * v - 0.1134 * v * v
+                                     + 1e-12) < 0
+    g2.axes([(0, '0'), (0.25, '1/4'), (0.5, '1/2'), (0.625, '5/8')],
+            [(-0.2, '−0.2'), (-0.1, '−0.1'), (0, '0')], xlabel='v')
+    g2.text(0, 0.02, '(b)', size=14, italic=False, dx=10, dy=10,
+            anchor='start')
+    g2.text(0.05, south_defect(0.5, 0.05), 'd = 1/2', size=12, italic=False,
+            color=BLUE, dx=0, dy=16, anchor='start')
+    g2.text(0.33, south_defect(PI / 4, 0.33), 'd = π/4', size=12,
+            italic=False, color=CYAN, dx=0, dy=-12, anchor='start')
+    save(f, 'appendix-c/south-sign', 'Two graphs below zero. (a) For d from 1/2 to '
+         'pi over 4, the bound (cos d - sin d)/2 + c0 sin d - 11/40 of the '
+         'separation of D and S along the secondary axis of D, in blue, and '
+         'the bound cos d/2 - 0.387 sin d - 11/40, dashed, both negative. '
+         '(b) For v from 0 to 5/8, the bound of the separation along the '
+         'secondary axis of S at d = 1/2 and at d = pi over 4, below its '
+         'trigonometric upper bound at d = 1/2, dashed, and the quadratic '
+         'upper bound, dotted, all negative')
 
 
 # ---------------------------------------------------------------------------
-# Section C.4: the side target.
+# Figure C.13: two own wings (Lemma 9.43 (2)).
 
-
-def target_arc():
-    A, v = 1.0, 0.5
-    l2 = label(A, v)
-    x = PI / 8
-    psi = PI / 3 + x - l2
-    n = u(-psi)
-    H = (A + 0.5) * math.cos(psi) + (0.5 - v) * math.sin(psi)
-    corners = square_corners((A, v))
-    assert abs(max(q[0] * n[0] + q[1] * n[1] for q in corners) - H) < 1e-12
-    pt = u(l2 - 0.5)
-    proj = math.cos(PI / 3 + x - 0.5)
-    assert abs(pt[0] * n[0] + pt[1] * n[1] - proj) < 1e-12
-    f = Figure(-1.2, 1.75, -1.35, 1.2, 170)
-    f.circle((0, 0), 1, stroke=FAINT, dash='4 4')
-    f.square((A, v), fill=FILLS[2], stroke=GREEN)
-    f.text((1.3, 0.85), 'T', size=17, color=GREEN)
-    w = 1 / 2
-    f.arc((0, 0), 1, l2 - w, l2 + w, GREEN, width=5)
-    f.line((0, 0), u(l2), stroke=GREEN, width=1, dash='3 3')
-    f.dot(u(l2), r=4, fill=GREEN)
-    f.text(shift(u(l2), (0.05, 0.08)), sb('ℓ', '2'), color=GREEN,
-           anchor='start', size=14)
-    f.dot(pt, r=4.5, fill=ORANGE)
-    f.text(shift(pt, (0.06, 0.07)), 'p', color=ORANGE, anchor='start')
-    # The direction u(-psi) and the two lines perpendicular to it.
-    f.line((0, 0), shift((0, 0), n, 1.15), width=1.6, arrow=True)
-    f.text(shift((0, 0), n, 1.27), 'u(−ψ)', size=14)
-    tvec = (-n[1], n[0])
-    for dist, style, color in ((H, None, INK), (proj, '5 4', ORANGE)):
-        base = shift((0, 0), n, dist)
-        f.line(shift(base, tvec, -0.55), shift(base, tvec, 1.35),
-               stroke=color, width=1.4, dash=style)
-    f.dot(shift((0, 0), n, H), r=3)
-    f.dot(shift((0, 0), n, proj), r=3, fill=ORANGE)
-    f.line(pt, shift((0, 0), n, proj), stroke=ORANGE, width=1, dash='2 3')
-    f.text(shift(shift((0, 0), n, H), tvec, -0.5), 'H(x)', size=14,
-           anchor='start', dx=6)
-    f.dot((0, 0))
-    f.text((-0.06, 0.06), 'o', anchor='end')
-    f.save('appc-target-arc', 'The side target in its own chart: its marker '
-           'arc, the point p in the direction ell_2 minus one half, and the '
-           'support line of T in the direction minus psi, beyond the '
-           'projection of p')
-
-
-def quarter(d):
-    y = 5 * PI / 12 - d
-    return 1.5 * math.cos(y) - d * (0.8 * math.cos(y) + 1.2 * math.sin(y))
-
-
-def quarter_profile():
-    lo, hi = -1 / 6, PI / 12
-    g = Graph(lo, hi, 0.3, 0.4, height=240)
-    g.axes([(lo, '−1/6'), (0, '0'), (0.1, '0.1'), (hi, 'π/12')],
-           [(0.3, '0.3'), (1 / 3, '1/3'), (0.4, '0.4')], xname='d')
-    g.hline(1 / 3, stroke=FAINT, width=1.4, dash='5 4')
-    g.curve(quarter, stroke=BLUE, width=2.2)
-    g.dot(lo, quarter(lo), fill=BLUE)
-    g.dot(hi, quarter(hi), fill=BLUE)
-    g.text(0.02, quarter(0.02) + 0.007, 'Q(d)', color=BLUE)
+def own_wings():
+    W_, H_ = 880, 330
+    f = pixel_figure(W_, H_)
+    g1 = Plot(f, 66, 46, 330, 250, (0, 0.7), (0.85, 1.22))
+    profile = lambda x: 0.5 + 0.387 * math.cos(x) + 0.61 * math.sin(x)
+    line_ = lambda x: RHO0 + 9 / 25 * (x - 12 / 25)
+    lo, hi = 22 / 75, 2 / 3
+    g1.polygon([(lo, 0.85), (hi, 0.85), (hi, 1.22), (lo, 1.22)],
+               fill=FILLS[6], stroke='none', opacity=0.8)
+    g1.curve(profile, 0, 0.7, stroke=BLUE, width=2.4)
+    g1.curve(line_, 0, 0.7, stroke=ORANGE, width=1.6, dash='6 4')
+    g1.hline(RHO0, stroke=FAINT, dash='3 3', width=1)
     for k in range(101):
-        assert quarter(lo + (hi - lo) * k / 100) > 1 / 3
-    # the bounds of the proof of Lemma C.10
-    eps = PI / 12 - 1 / 6
-    assert 7 / 6 * 0.5 - 6 / 5 * 0.8 < 0 and PI / 12 < 1 / 3
-    assert (3.14 - 2) / 12 >= 0.095 - 1e-15 and (22 / 7 - 2) / 12 < 0.1
-    assert math.sin(eps) >= eps - eps ** 3 / 6 and 0.095 - 0.1 ** 3 / 6 > 0.094
-    assert math.cos(eps) >= 1 - eps ** 2 / 2 and 1 - 0.1 ** 2 / 2 >= 0.995
-    assert 49 / 30 * 0.094 > 0.153 and 0.153 + 0.995 / 5 > 1 / 3
-    assert abs(quarter(lo) - 49 / 30 * math.sin(eps) - math.cos(eps) / 5) \
-        < 1e-12
-    assert 1 / 30 + SQRT3 / 20 < 1 / 8 and 3 / 4 - 22 / 7 / 8 > 1 / 3
-    g.f.save('appc-quarter-profile', 'The concave quarter profile Q above the '
-             'line at one third')
-
-
-def side_target():
-    targets = [((1.0, 0.5), 'side state (1, ½)', BLUE),
-               ((A0, U0), sb('(a', '0', ', ') + sb('u', '0', ')'), ORANGE),
-               ((RD, RD), sb('(r', 'd', ', ') + sb('r', 'd', ')'), GREEN),
-               ((tie_a(PI / 4), PI / 5), 'tie state of label π/4', PURPLE)]
-    g = Graph(0, PI / 4, 0, 0.5, height=280)
-    g.axes([(0, '0'), (0.2, '0.2'), (0.4, '0.4'), (0.6, '0.6'),
-            (PI / 4, 'π/4')],
-           [(0, '0'), (0.1, '0.1'), (0.2, '0.2'), (0.3, '0.3'), (0.4, '0.4'),
-            (0.5, '0.5')], xname=sb('ℓ', '1'))
-    for k, ((A, v), name, color) in enumerate(targets):
-        assert admissible(A, v)
-        l2 = side(A, v)
-        assert abs(label(A, v) - l2) < 1e-9
-
-        def fx(x, A=A, v=v, l2=l2):
-            psi = PI / 3 + x - l2
-            return (-0.5 - 2 * PI / 15 + 0.8 * x
-                    + (A + 0.5) * math.cos(psi) + (0.5 - v) * math.sin(psi))
-        for j in range(101):
-            assert fx(PI / 4 * j / 100) > 0
-        g.curve(fx, stroke=color, width=2)
-        g.dot(0, fx(0), fill=color)
-        g.dot(PI / 4, fx(PI / 4), fill=color)
-        y = 0.19 - 0.04 * k
-        g.points([(0.03, y), (0.09, y)], stroke=color, width=2)
-        g.text(0.1, y, name, color=color, size=13, anchor='start')
-    # the bounds of the proof of Lemma C.9 at the left end
-    assert 7 / 9 + 8 * 3.14 / 135 > 5 / 6 and 22 / 21 - 9 / 25 < 0.7
-    assert 1 - 0.7 ** 2 / 2 > 3 / 4 and tie_a(PI / 6) > 5 / 6
-    assert (30 * 3.14 + 17) / 135 > 4 / 5 and abs(
-        tie_a(2 / 3) - (30 * PI + 17) / 135) < 1e-12
-    assert SQRT3 / 2 > 0.865 and 1.3 * 0.865 - 0.1 > 1
-    assert 8 / 21 < 0.381 and 1 - 0.381 ** 2 / 2 > 0.927
-    assert 1.2 * 0.927 - 0.275 * 0.381 > 1
-    g.f.save('appc-side-target', 'The concave lower bound f of the inward sum '
-             'with a side target, as a function of the source label, for four '
-             'side targets')
-
-
-# ---------------------------------------------------------------------------
-# Section C.6: the label regions and their boundary.
-
-
-def admissible_polygon(steps=200):
-    t0 = math.asin(0.5 / math.sqrt(13 / 4))       # the point (sqrt3 - 1/2, 0)
-    t1 = PI / 4                                     # the diagonal corner
-    R = math.sqrt(13 / 4)
-    arc = [(-0.5 + R * math.cos(t0 + (t1 - t0) * k / steps),
-            -0.5 + R * math.sin(t0 + (t1 - t0) * k / steps))
-           for k in range(steps + 1)]
-    return [(0.5, 0.0)] + arc + [(0.5, 0.5)]
-
-
-def label_boundary():
-    adm = admissible_polygon()
-    k = 2 * PI + 7
-    axial_region = clip(clip(adm, 9, 11, k), 0, 1, PI / 5)
-    side_region = clip(clip(adm, -9, -11, -k), -9, 4, -(7 - PI))
-    cap_region = clip(clip(adm, 0, -1, -PI / 5), 9, -4, 7 - PI)
-    f = Figure(0.4, 1.36, -0.08, 0.86, 560)
-    f.polygon(axial_region, fill=FILLS[0], stroke='none')
-    f.polygon(side_region, fill=FILLS[1], stroke='none')
-    f.polygon(cap_region, fill=GREY, stroke='none')
-    f.polygon(adm, stroke=INK, width=1.2)
-    # axes
-    f.line((0.42, 0), (1.34, 0), width=1, arrow=True)
-    f.line((0.45, -0.05), (0.45, 0.84), width=1, arrow=True)
-    f.text((1.34, -0.035), 'a', anchor='end')
-    f.text((0.435, 0.83), 'u', anchor='end')
-    for x in (0.5, 1.0):
-        f.line((x, -0.008), (x, 0.008), width=1)
-        f.text((x, -0.035), f'{x:g}', size=12, italic=False)
-    for y in (0.5,):
-        f.line((0.442, y), (0.458, y), width=1)
-        f.text((0.435, y), f'{y:g}', size=12, italic=False, anchor='end')
-    # the tie line inside the region
-    f.line((A0, U0), ((7 - PI / 5) / 9, PI / 5), stroke=INK, width=1,
-           dash='4 3')
-    # the axial top: the circle below the transition state, then the tie line
-    top = [(axial_top(w), w) for w in [PI / 5 * j / 200 for j in range(201)]]
-    polyline(f, top, stroke=BLUE, width=3.4)
-    # the side top: the circle from the transition state to the diagonal
-    stop = [side_top(S0 + (PI / 4 - S0) * j / 300) for j in range(301)]
-    polyline(f, stop, stroke=ORANGE, width=3.4)
-    # an axial segment of a target, minimised at its right end
-    v = 0.2
-    f.line((0.5, v), (axial_top(v) - 0.02, v), stroke=BLUE, width=1.6,
-           arrow=True)
-    f.dot((axial_top(v), v), r=4.5, fill=BLUE)
-    f.text((0.62, v + 0.025), 'axial segment', size=13, italic=False,
-           color=BLUE)
-    # a side segment of a source, minimised at its top
-    x = 0.45
-    tp, st = (tie_a(x), 0.8 * x), side_top(x)
-    assert abs(side(*tp) - x) < 1e-12 and abs(side(*st) - x) < 1e-9
-    f.line(tp, shift(st, (tp[0] - st[0], tp[1] - st[1]), 0.06),
-           stroke=ORANGE, width=1.6, arrow=True)
-    f.dot(st, r=4.5, fill=ORANGE)
-    f.text(shift(tp, (0.03, -0.02)), 'source', size=13, italic=False,
-           color=ORANGE, anchor='start')
-    # a side segment of a target, minimised at its tie point
-    x = 0.65
-    tp, st = (tie_a(x), 0.8 * x), side_top(x)
-    f.line(st, shift(tp, (st[0] - tp[0], st[1] - tp[1]), 0.08),
-           stroke=ORANGE, width=1.6, arrow=True)
-    open_dot(f, tp, stroke=ORANGE)
-    f.text(shift(tp, (-0.02, 0.0)), 'target', size=13, italic=False,
-           color=ORANGE, anchor='end')
-    # special states
-    for p, s, dx, dy, anchor in (((A0, U0), sb('(a', '0', ', ') +
-                                  sb('u', '0', ')'), 0.02, -0.03, 'start'),
-                                 ((RD, RD), sb('(r', 'd', ', ') +
-                                  sb('r', 'd', ')'), 0.02, 0.025, 'start'),
-                                 ((1.0, 0.5), '(1, ½)', 0.02, 0.0, 'start')):
-        f.dot(p, r=3.6)
-        f.text(shift(p, (dx, dy)), s, size=14, anchor=anchor)
-    f.text((0.75, 0.12), 'axial', size=15, italic=False, color=BLUE)
-    f.text((0.99, 0.62), 'side', size=15, italic=False, color=ORANGE)
-    f.text((0.66, 0.72), 'capped', size=13, italic=False, color=FAINT)
-    f.text((1.23, 0.26), 'φ = 13/4', size=14, anchor='start')
-    f.text((0.975, 0.375), 'tie line', size=12, italic=False, anchor='end')
-    f.save('appc-label-boundary', 'The admissible region in the (a, u)-plane '
-           'with its axial, side and capped parts, the axial top and the side '
-           'top, and the ends of label segments where the inward sum with '
-           'opposite signs is least')
-
-
-# ---------------------------------------------------------------------------
-# Section C.7: two circles.
-
-
-SQRT3 = math.sqrt(3)
-
-
-def radial_form(z, v):
-    """E(z, v) of Definition C.16."""
-    return (4 / 5 * z + 6 / 25 * (z - 5 * v / 4) ** 2
-            - (SQRT3 - 1 - SQRT3 / 6 * v - 5 / 16 * v ** 2) * math.sin(z)
-            - (v + 0.5) * (1 - math.cos(z)))
-
-
-def radial_alpha(z):
-    return 3 / 8 + 5 / 16 * math.sin(z)
-
-
-def radial_affine(z, v):
-    """D(v) = E(z, v) - alpha(z) (v - z/2)^2 of Lemma C.18."""
-    return radial_form(z, v) - radial_alpha(z) * (v - z / 2) ** 2
-
-
-def end_bound0(z):
-    """The lower bound of D(0) in the proof of Lemma C.17."""
-    return (z * (9 / 5 - SQRT3 - (1 / 100 + 3 / 32) * z)
-            + z ** 3 * ((SQRT3 - 1) * (1 / 6 - z ** 2 / 120) - 5 / 64))
-
-
-def top_second(z):
-    """F''(z) of the proof of Lemma C.17."""
-    rho = SQRT3 - 1 - SQRT3 / 6 * 0.3 - 5 / 16 * 0.09
-    return (12 / 25 - 3 / 16
-            + math.sin(z) * (rho - 5 / 32 + 5 / 16 * (0.3 - z / 2) ** 2)
-            - math.cos(z) * (4 / 5 - 5 / 8 * (0.3 - z / 2)))
-
-
-def radial_ends():
-    c = 5 / 8
-    rho = SQRT3 - 1 - SQRT3 / 6 * 0.3 - 5 / 16 * 0.09
-    for k in range(1, 201):
-        z = c * k / 200
-        # Lemma C.17 at v = 0: the bound is positive and below D(0).
-        assert 0 < end_bound0(z) <= radial_affine(z, 0)
-        # Lemma C.17 at v = 3/10: F'' is negative, below the cubic bound.
-        cubic = -3 / 10 + 3 / 16 * z + 3 / 10 * z ** 2 + 5 / 32 * z ** 3
-        h = 1e-4
-        fd = (radial_affine(z + h, 0.3) - 2 * radial_affine(z, 0.3)
-              + radial_affine(z - h, 0.3)) / h ** 2
-        assert abs(fd - top_second(z)) < 1e-5 and top_second(z) < cubic < 0
-        # Lemma C.18: D is affine in v, so E is positive between the heights.
-        for j in range(31):
-            v = 0.3 * j / 30
-            d = ((1 - 10 * v / 3) * radial_affine(z, 0)
-                 + 10 * v / 3 * radial_affine(z, 0.3))
-            assert abs(radial_affine(z, v) - d) < 1e-12
-            assert radial_form(z, v) > 0
-    # the decimal bounds of the proof of Lemma C.17
-    assert 1800 - 1733 == 67 and 1 / 100 + 3 / 32 < 0.104
-    assert 0.067 - c * 0.104 > 0 and 1 / 6 - c ** 2 / 120 > 0.163
-    assert 0.73 * 0.163 - 0.079 > 0 and 5 / 64 < 0.079
-    assert 19 / 20 * 1.733 - 1 - 9 / 320 < 0.6183 and rho < 0.6183
-    assert 0.6183 - 5 / 32 + 5 / 16 * 0.09 < 0.5 and 12 / 25 - 3 / 16 < 0.3
-    assert 3 / 16 * c < 0.118 and 3 / 10 * c ** 2 < 0.118
-    assert 5 / 32 * c ** 3 < 0.039 and -0.3 + 0.118 + 0.118 + 0.039 < 0
-    assert math.sin(c) <= c - c ** 3 / 6 + c ** 5 / 120 < 0.5852
-    assert math.cos(c) >= 1 - c ** 2 / 2 + c ** 4 / 24 - c ** 6 / 720 > 0.8109
-    assert radial_affine(c, 0.3) > 0.515 - 0.6183 * 0.5852 - 0.8 * 0.1891 \
-        - 0.0002 > 0.0016
-    W, H, gap = 300, 230, 84
-    f = Figure(-58, 2 * W + gap + 24, -44, H + 46, 1, pad=0)
-    # (a) At z = 5/8, E is a square plus the affine D, positive at both ends.
-    vmax = 0.36
-    a = Graph(0, vmax, 0, 0.08, width=W, height=H, fig=f)
-    a.axes([(0, '0'), (0.1, '0.1'), (0.2, '0.2'), (0.3, '3/10')],
-           [(0, '0'), (0.02, '0.02'), (0.04, '0.04'), (0.06, '0.06'),
-            (0.08, '0.08')], xname='v')
-    f.line(a.q(0.3, 0), a.q(0.3, 0.08), stroke=FAINT, width=1, dash='4 3')
-    a.curve(lambda v: radial_alpha(c) * (v - c / 2) ** 2, stroke=ORANGE,
-            width=2.2)
-    a.curve(lambda v: radial_affine(c, v), 0, 0.3, stroke=GREEN, width=2.2)
-    a.curve(lambda v: radial_form(c, v), stroke=BLUE, width=2.2)
-    for v in (0, 0.3):
-        a.dot(v, radial_affine(c, v), fill=GREEN)
-    a.text(0.035, radial_form(c, 0.035) + 0.008, 'E(5/8, v)', color=BLUE,
-           size=14, anchor='start')
-    a.text(0.006, 0.0222, 'α (v − 5/16)²', color=ORANGE, size=12,
-           anchor='start')
-    a.text(0.16, radial_affine(c, 0.16) + 0.006, 'D(v)', color=GREEN,
-           size=14, anchor='start')
-    f.text((W / 2, H + 30), '(a) the radial form at z = 5/8', size=14,
-           italic=False)
-    # (b) The two heights: D(0) positive, F concave above its chord.
-    b = Graph(0, c, 0, 0.02, width=W, height=H, fig=f, at=(W + gap, 0))
-    b.axes([(0, '0'), (0.2, '0.2'), (0.4, '0.4'), (c, '5/8')],
-           [(0, '0'), (0.01, '0.01'), (0.02, '0.02')], xname='z')
-    b.points([(0, 0), (c, radial_affine(c, 0.3))], stroke=BLUE, width=1.2,
-             dash='5 4')
-    b.curve(lambda z: radial_affine(z, 0), stroke=ORANGE, width=2.2)
-    b.curve(lambda z: radial_affine(z, 0.3), stroke=BLUE, width=2.2)
-    b.dot(c, radial_affine(c, 0.3), fill=BLUE)
-    b.text(0.5, radial_affine(0.5, 0) + 0.0016, 'D(0)', color=ORANGE,
-           size=14, anchor='end')
-    b.text(0.22, radial_affine(0.22, 0.3) + 0.0016, 'F = D(3/10)', color=BLUE,
-           size=14, anchor='middle')
-    f.text((W + gap + W / 2, H + 30), '(b) the two heights', size=14,
-           italic=False)
-    f.save('appc-radial-ends', 'The radial form at z = 5/8 as a square plus '
-           'an affine function of v that is positive at v = 0 and v = 3/10; '
-           'the two heights on [0, 5/8], the one at v = 3/10 concave and '
-           'above its chord')
-
-
-def circular_pair():
-    l1, l2 = 0.45, 0.3
-    a, uu = side_top(l1)
-    v = 0.8 * l2
-    A = axial_top(v)
-    assert abs(label(a, uu) - l1) < 1e-9 and abs(label(A, v) - l2) < 1e-9
-    assert abs(phi(a, uu) - 13 / 4) < 1e-9 and abs(phi(A, v) - 13 / 4) < 1e-9
-    cs, ct, ddeg, m1, m2 = canonical_pair(a, uu, A, v, 1, -1)
-    z = l1 + l2 - PI / 6
-    Jv = J(a, A, v, z)
-    S = square_corners(cs)
-    T = square_corners(ct, ddeg)
-    R = math.sqrt(13) / 2
-    assert abs(max(math.hypot(*q) for q in S) - R) < 1e-9
-    assert abs(max(math.hypot(*q) for q in T) - R) < 1e-9
-    t_hi = max(q[0] for q in T)
-    assert abs((t_hi - (a - 0.5)) - Jv) < 1e-9 and Jv > 0
-    f = Figure(-1.95, 1.95, -2.45, 1.95, 125)
-    f.circle((0, 0), R, stroke=INK, dash='6 4')
-    f.circle((0, 0), 1, stroke=FAINT, dash='3 4')
-    f.polygon(S, fill=FILLS[0], stroke=BLUE, opacity=0.7)
-    f.polygon(T, fill=FILLS[2], stroke=GREEN, opacity=0.6)
-    f.polygon(S, stroke=BLUE)
-    for q in (max(S, key=lambda q: math.hypot(*q)),
-              max(T, key=lambda q: math.hypot(*q))):
-        f.dot(q, r=4.2, fill=ORANGE)
-    for m, color in ((m1, BLUE), (m2, GREEN)):
-        f.line((0, 0), u(m), stroke=color, width=1, dash='3 3')
-        f.dot(u(m), r=4, fill=color)
-    f.dot((0, 0))
-    f.text((-0.07, -0.1), 'o', anchor='end')
-    f.text(shift(cs, (0.3, -0.3)), 'S', size=17, color=BLUE)
-    f.text(shift(ct, u(math.radians(ddeg) + PI / 2), -0.18), 'T', size=17,
-           color=GREEN)
-    f.text((-1.45, 1.45), 'radius √13/2', size=13, italic=False,
-           anchor='middle')
-    y_sh = -2.1
-    f.line((-1.3, y_sh), (1.75, y_sh), width=1)
-    f.line((-0.95, y_sh + 0.18), (-1.3, y_sh + 0.18), width=1.4, arrow=True)
-    f.text((-1.12, y_sh + 0.31), sb('n', '2'), size=14)
-    f.line((a - 0.5, y_sh + 0.05), (a + 0.5, y_sh + 0.05), stroke=BLUE,
-           width=5)
-    f.line((min(q[0] for q in T), y_sh - 0.05), (t_hi, y_sh - 0.05),
-           stroke=GREEN, width=5)
-    f.line((a - 0.5, y_sh - 0.14), (t_hi, y_sh - 0.14), stroke=ORANGE,
-           width=4)
-    f.text((a - 0.4, y_sh - 0.28), sb('σ', '2') + f' = {Jv:.3f}', size=13,
-           color=ORANGE, anchor='start')
-    f.line((a - 0.5, cs[1] - 0.5), (a - 0.5, y_sh + 0.05), stroke=BLUE,
-           width=1, dash='3 3')
-    xt = max(T, key=lambda q: q[0])
-    f.line(xt, (xt[0], y_sh - 0.05), stroke=GREEN, width=1, dash='3 3')
-    f.save('appc-circular-pair', 'A canonical pair with opposite signs whose '
-           'two states lie on the circle phi = 13/4: both squares have a '
-           'corner on the circle of radius root 13 over 2')
-
-
-# ---------------------------------------------------------------------------
-# Section C.8: minima on the boundary.
-
-
-def turn_margin():
-    lo, hi = 0.2, PI / 3
-    g = Graph(lo, hi, 0.88, 1.3, height=240)
-    g.axes([(lo, '1/5'), (0.4, '0.4'), (0.6, '0.6'), (0.8, '0.8'),
-            (hi, 'π/3')],
-           [(12 / 13, '12/13'), (1.0, '1'), (1.1, '1.1'), (1.2, '1.2'),
-            (1.3, '1.3')], xname='z')
-    g.hline(12 / 13, stroke=FAINT, width=1.4, dash='5 4')
-
-    def m(z):
-        return 44 / 45 * math.sin(z) + 0.8 * math.cos(z)
-    g.curve(m, stroke=BLUE, width=2.2)
-    g.dot(lo, m(lo), fill=BLUE)
-    g.dot(hi, m(hi), fill=BLUE)
-    g.text(0.62, 1.05, '(44/45) sin z + (4/5) cos z', color=BLUE, size=14,
-           anchor='start')
-    # the bounds of the proof of Lemma C.20 at the two ends
-    assert math.sin(lo) >= lo - lo ** 3 / 6 > 0.18
-    assert math.cos(lo) >= 1 - lo ** 2 / 2 and abs(1 - lo ** 2 / 2 - 0.98) < 1e-12
-    assert abs(44 / 45 * 0.18 + 0.8 * 0.98 - 0.96) < 1e-12 and 0.96 > 12 / 13
-    assert SQRT3 / 2 > 0.865 and 44 / 45 * 0.865 + 0.4 > 1.2 > 12 / 13
-    # Proposition C.28: a target on the tie line needs a turn above 1/5
-    assert abs(2.5 * 0.29136 - 0.7284) < 1e-12 and PI / 6 < 0.5239
-    assert 2 * S0 - PI / 6 > 0.7284 - 0.5239 > lo
-    g.f.save('appc-turn-margin', 'The concave turn margin above the line at '
-             '12/13')
-
-
-def junction_g(y):
-    mu = y + PI / 6 - TD
-    return (0.5 - RD - (tie_a(mu) - 0.5) * math.sin(y)
-            + (0.8 * mu + 0.5) * math.cos(y))
-
-
-def junction():
-    lo, hi = ZD, TD + PI / 12
-    g = Graph(0.6, 1.06, 0, 0.12, height=240)
-    g.axes([(lo, sb('z', 'd')), (0.7, '0.7'), (0.8, '0.8'), (0.9, '0.9'),
-            (1.0, '1')],
-           [(0, '0'), (0.05, '0.05'), (0.1, '0.1')], xname='y')
-    g.curve(junction_g, lo, hi, stroke=BLUE, width=2.2)
-    for k in range(101):
-        y = lo + (hi - lo) * k / 100
-        assert junction_g(y) > 0
-        if k:
-            assert junction_g(y) > junction_g(lo + (hi - lo) * (k - 1) / 100)
-    g.dot(lo, junction_g(lo), fill=BLUE)
-    g.text(lo + 0.01, junction_g(lo) + 0.012,
-           sb('g(z', 'd', f') ≈ {junction_g(lo):.4f}', 13), size=13,
-           color=BLUE, anchor='start')
-    g.text(0.93, junction_g(0.93) + 0.012, 'g(y)', color=BLUE, anchor='end')
-    g.f.save('appc-junction', 'The diagonal junction g, increasing from a '
-             'small positive value at z_d')
-
-
-def upper_cases():
-    x0, x1 = S0, PI / 4
-    k = 700
-    f = Figure(x0 - 0.1, x1 + 0.2, -0.09, PI / 4 + 0.05, k)
-    # regions
-    f.polygon([(x0, 0), (x1, 0), (x1, S0), (x0, S0)], fill=FILLS[2],
-              stroke='none')
-    f.polygon([(x0, S0), (x1, S0), (x1, PI / 4), (x0, PI / 4)],
-              fill=FILLS[0], stroke='none')
-    f.polygon([(TD, 0), (x1, 0), (x1, PI / 4), (TD, PI / 4)], fill=FILLS[1],
-              stroke=ORANGE, width=1)
-    # z <= 0: below the line x + mu = pi/6
-    f.polygon([(x0, 0), (PI / 6, 0), (x0, PI / 6 - x0)], fill=GREY,
-              stroke='none')
-    f.polygon([(x0, 0), (x1, 0), (x1, PI / 4), (x0, PI / 4)], stroke=INK,
-              width=1.2)
-    f.line((x0, S0), (x1, S0), width=1.2)
-    # lines of constant turn and the moves along them
-    for z in (0.3, 0.6, 0.9):
-        c = z + PI / 6
-        pa = (max(x0, c - PI / 4), c - max(x0, c - PI / 4))
-        pb = (min(x1, c), c - min(x1, c))
-        f.line(pa, pb, stroke=FAINT, width=1, dash='4 3')
-        start = (c - PI / 4 + 0.02, PI / 4 - 0.02) if c - PI / 4 >= x0 \
-            else (x0 + 0.02, c - x0 - 0.02)
-        if start[1] > S0 + 0.03:
-            end_x = min(TD, c - S0)
-            end = (end_x - 0.004, c - end_x + 0.004)
-            f.line(start, end, stroke=BLUE, width=1.6, arrow=True)
-            f.dot(start, r=3, fill=BLUE)
-    f.text((x0 - 0.012, S0), sb('s', '0'), size=14, anchor='end')
-    f.text((x0 - 0.012, 0), '0', size=13, italic=False, anchor='end')
-    f.text((x0 - 0.012, PI / 4), 'π/4', size=13, italic=False, anchor='end')
-    f.text((x0, -0.035), sb('s', '0'), size=14)
-    f.text((x1 + 0.005, -0.035), sb('t', 'd') + ' ≈ π/4', size=13,
-           anchor='start')
-    f.text(((x0 + x1) / 2, -0.07), 'source label x', size=13, italic=False)
-    f.text((x0 - 0.085, (S0 + PI / 4) / 2), 'μ', size=16)
-    f.text((0.52, 0.165), 'both on the circle:', size=13, italic=False,
-           color=GREEN)
-    f.text((0.52, 0.137), 'Lemma C.22', size=13, italic=False, color=GREEN)
-    f.text((0.474, 0.52), 'target on the tie line:', size=13, italic=False,
-           color=BLUE)
-    f.text((0.474, 0.492), 'Lemma C.27', size=13, italic=False, color=BLUE)
-    f.line((x1 + 0.004, 0.45), (x1 + 0.03, 0.45), stroke=ORANGE, width=1)
-    for j, s in enumerate(('diagonal sources', '(width 0.0013):',
-                           'Lemma C.26, then', 'C.23 or C.25')):
-        f.text((x1 + 0.035, 0.45 - 0.026 * j), s, size=12, italic=False,
-               color=ORANGE, anchor='start')
-    f.line((x1 + 0.004, 0.62), (x1 + 0.03, 0.62), width=1)
-    for j, s in enumerate(('x = ' + sb('t', 'd', '', 12) + ':', 'Lemma C.25')):
-        f.text((x1 + 0.035, 0.62 - 0.026 * j), s, size=12, italic=False,
-               anchor='start')
-    f.text((0.395, 0.03), 'z ≤ 0', size=12, italic=False, color=INK,
-           anchor='start')
-    f.save('appc-upper-cases', 'The plane of the source label x and the '
-           'target label mu, split into the cases of the positivity of the '
-           'upper profile, with lines of constant turn and the moves along '
-           'them')
+        x = lo + (hi - lo) * k / 100
+        assert profile(x) > line_(x)
+    g1.dot(12 / 25, RHO0, r=3.4, fill=ORANGE)
+    g1.axes([(0, '0'), (lo, '22/75'), (12 / 25, '12/25'), (hi, '2/3')],
+            [(0.9, '0.9'), (1.0, '1'), (1.2, '1.2')], xlabel='x')
+    label(f, shift(g1.q(0, RHO0), (-14, 0)), 'ρ', '0', '', size=14)
+    g1.text(0.03, profile(0.03), 'profile', size=12, italic=False,
+            color=BLUE, dx=2, dy=16, anchor='start')
+    g1.text(0.02, line_(0.02), 'line', size=12, italic=False, color=ORANGE,
+            dx=0, dy=-12, anchor='start')
+    g1.text(0, 1.22, '(a)', size=14, italic=False, dx=10, dy=10,
+            anchor='start')
+    # (b) The plane of the angles w and s of two own wings.
+    g2 = Plot(f, 526, 46, 300, 250, (-0.75, 0.1), (-0.1, 0.75))
+    g2.polygon([(-2 / 3, 0), (0, 0), (0, 2 / 3), (-2 / 3, 2 / 3)],
+               fill='none', stroke=FAINT, width=1, dash='4 4')
+    g2.polygon([(-2 / 3, 22 / 75 + 0 * 0), (-22 / 75, 2 / 3), (-2 / 3, 2 / 3)],
+               fill=FILLS[4], stroke=PINK, width=1.6)
+    g2.line((-2 / 3, 22 / 75), (-22 / 75, 2 / 3), stroke=PINK, width=2)
+    g2.dot(0, 0, r=4, fill=INK)
+    g2.text(0, 0, 'model', size=12, italic=False, dx=-6, dy=14, anchor='end')
+    g2.axes([(-2 / 3, '−2/3'), (-22 / 75, '−22/75'), (0, '0')],
+            [(0, '0'), (22 / 75, '22/75'), (2 / 3, '2/3')], xlabel='w',
+            ylabel='s')
+    g2.text(-0.56, 0.6, 's − w ≥ 24/25', size=13, italic=False, color=PINK,
+            dx=0, dy=0, anchor='middle')
+    g2.text(-0.75, 0.75, '(b)', size=14, italic=False, dx=36, dy=10,
+            anchor='start')
+    save(f, 'appendix-c/own-wings', 'Two panels. (a) The profile one half plus '
+         '0.387 cos x plus 0.61 sin x, in blue, above the dashed line of '
+         'slope 9/25 through rho0 at 12/25 on the shaded interval from 22/75 '
+         'to 2/3. (b) The square of the angles w from minus 2/3 to 0 and s '
+         'from 0 to 2/3 of two own wings, with the corner triangle where s '
+         'minus w is at least 24/25, which the lemma excludes')
 
 
 def main():
-    inward_sectors()
-    turn_profile()
-    profile_split()
-    positive_turn()
-    target_arc()
-    quarter_profile()
-    side_target()
-    label_boundary()
-    radial_ends()
-    circular_pair()
-    turn_margin()
-    junction()
-    upper_cases()
+    model_frames()
+    dominance()
+    turn()
+    own_stress()
+    west_stress()
+    domains()
+    profiles()
+    overtake()
+    walls()
+    cost()
+    double()
+    south_sign()
+    own_wings()
 
 
 if __name__ == '__main__':

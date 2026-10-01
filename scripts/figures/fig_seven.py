@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Draw the figures of Chapter 9 (seven squares) as SVG files.
+"""Draw the figures of Chapter 10 (seven squares) as SVG files in
+docs/proof/figures/10-seven/.
 
     python3 scripts/figures/fig_seven.py
 
@@ -188,7 +189,7 @@ def columns():
         f.dot(o, r=2.6)
         f.text(shift(o, (0.08, -0.13)), 'o', size=13, anchor='start')
         f.text(shift(o, (0, -m - 0.14)), names[j], size=13, italic=False)
-    f.save('seven-columns', 'Three column packings: the middle column pushed '
+    f.save('10-seven/columns', 'Three column packings: the middle column pushed '
            'down, spread out and pushed up, between the same two side columns')
 
 
@@ -217,7 +218,7 @@ def states():
     f.text((0.6, 0.64), 'u = a', size=13, color=FAINT, italic=False,
            anchor='end')
     f.text((0.68, 0.22), 'admissible', size=14, italic=False, color=BLUE)
-    f.save('seven-states', 'The admissible states in the (a, u)-plane, the '
+    f.save('10-seven/states', 'The admissible states in the (a, u)-plane, the '
            'side state with the tangent line r = 0, the axial segment and the '
            'transition state')
 
@@ -272,7 +273,7 @@ def labels():
     f.dot((a0, u0), r=3.6)
     f.text((a0 + 0.045, u0 + 0.0), '(' + low('a', 0) + ', ' + low('u', 0)
            + ')', size=13, anchor='start')
-    f.save('seven-labels', 'The three label regions of the admissible states, '
+    f.save('10-seven/labels', 'The three label regions of the admissible states, '
            'axial, side and capped, with level lines of the label')
 
 
@@ -330,7 +331,7 @@ def marker():
     f.text(shift(o2, (-0.05, -0.07)), 'o', anchor='end')
     f.text(shift(o2, u(lab + ARC), 1.12), '1/2', size=12, italic=False,
            color=ORANGE, anchor='start')
-    f.save('seven-marker', 'An exterior square seen from the disk centre with '
+    f.save('10-seven/marker', 'An exterior square seen from the disk centre with '
            'its phase and marker, and the same square in its chart; the arc '
            'of the unit circle of half-width 1/2 about the marker lies in '
            'the closed square')
@@ -395,7 +396,7 @@ def canonical():
     for y in (ys_S[1], ys_T[0]):
         f.line((xl2 - 0.04, y), (xl + 0.2, y), stroke=FAINT, width=0.8,
                dash='3 3')
-    f.save('seven-canonical-pair', 'A canonical pair with its markers a gap g '
+    f.save('10-seven/canonical-pair', 'A canonical pair with its markers a gap g '
            'apart, the four normals of S, and the shadows of the two squares '
            'on the two axes of S')
 
@@ -452,7 +453,7 @@ def octagon():
     f.text(((O[0] - W + PD[0]) / 2, y0 - 0.14),
            low('σ', 2) + ' &lt; 0', size=13, color=BLUE)
     f.text(shift(O, (0.55, -0.55)), 'K', size=17, color=ORANGE)
-    f.save('seven-octagon', 'The canonical pair with the vector Delta between '
+    f.save('10-seven/octagon', 'The canonical pair with the vector Delta between '
            'the centres, and the octagon of differences of the two squares, '
            'whose eight edges are perpendicular to the edge directions of the '
            'two squares; Delta lies outside it beyond one edge')
@@ -501,7 +502,7 @@ def contacts():
         f.text(shift(o, shift(cS, (0.3, -0.3))), 'S', size=16, color=BLUE)
         f.text(shift(o, shift(cT, (-0.3, 0.3))), 'T', size=16, color=GREEN)
         f.text(shift(o, (0.5, 1.62)), f'({j + 1})', size=15, italic=False)
-    f.save('seven-contacts', 'The three kinds of contact as canonical pairs '
+    f.save('10-seven/contacts', 'The three kinds of contact as canonical pairs '
            'at the gap pi/3: two side squares, a side square and an axial '
            'square, an axial square and a side square')
 
@@ -532,7 +533,7 @@ def small_gaps():
     f.text((-0.04, -0.07), 'o', anchor='end')
     f.text(shift(cS, (0.3, -0.3)), 'S', size=17, color=BLUE)
     f.text(shift(cT, (-0.3, 0.35)), 'T', size=17, color=GREEN)
-    f.save('seven-small-gaps', 'The marker arcs of a canonical pair at a gap '
+    f.save('10-seven/small-gaps', 'The marker arcs of a canonical pair at a gap '
            'below 1 overlap around the midpoint of the markers')
 
 
@@ -563,7 +564,7 @@ def leftmost():
     f.line((xl, fmin - 0.06), (0.62, fmin - 0.06), stroke=FAINT, width=1)
     f.text((0.51, fmin - 0.12), 'minimum', size=12, italic=False, color=FAINT)
     f.text((0.05, 0.66), 'f', size=15, color=BLUE, anchor='start')
-    f.save('seven-leftmost', 'A continuous function positive at alpha, '
+    f.save('10-seven/leftmost', 'A continuous function positive at alpha, '
            'nonnegative at beta and somewhere negative, whose minimum is '
            'attained on a stretch; x is the left end of the stretch')
 
@@ -606,7 +607,7 @@ def parallel_pairs():
     f.line((xsep, -1.1), (xsep, 1.45), stroke=INK, width=1.4, dash='6 4')
     f.text((0.6, 1.62), 'd = 0', size=14, italic=False)
     f.text((off + 0.6, 1.62), 'd = π/2', size=14, italic=False)
-    f.save('seven-parallel', 'A parallel canonical pair separated by a '
+    f.save('10-seven/parallel', 'A parallel canonical pair separated by a '
            'horizontal line, and a quarter-turned one separated by a '
            'vertical line')
 
@@ -642,7 +643,7 @@ def nearest_vertex():
     f.dot((0, 0))
     f.text((-0.04, -0.07), 'o', anchor='end')
     f.text(shift(c, (0.3, 0.32)), 'T', size=17, color=GREEN)
-    f.save('seven-nearest-vertex', 'The square T in its own chart, its vertex '
+    f.save('10-seven/nearest-vertex', 'The square T in its own chart, its vertex '
            'nearest to the disk centre at distance delta, and the direction '
            'from that vertex towards the centre')
 
@@ -679,7 +680,7 @@ def gap_profile():
                anchor='start')
     assert abs(sigma(a, u_, A, v, s, t, 1, PI / 3)) < 1e-12
     f.dot((PI / 3, 0), r=4, fill=ORANGE)
-    f.save('seven-gap-profile', 'The four support sums of the pair of a side '
+    f.save('10-seven/gap-profile', 'The four support sums of the pair of a side '
            'column as functions of the gap: positive below pi/3, and the '
            'forward one zero at pi/3')
 
@@ -728,7 +729,7 @@ def ring():
         f.text(pos, name, size=13, italic=False, color=COLORS[k])
     f.dot((0, 0))
     f.text((0.05, -0.1), 'o', anchor='start')
-    f.save('seven-ring', 'The ring of six exterior squares: the markers form '
+    f.save('10-seven/ring', 'The ring of six exterior squares: the markers form '
            'a regular hexagon, the kinds are lower, upper, axial twice, and '
            'consecutive squares touch along the thick edges')
 
@@ -763,7 +764,7 @@ def middle():
     f.text((0, 1.13), '|x| ≤ ½', size=13, italic=False, color=ORANGE)
     f.text((1.45, 1.07), '|y| &lt; 1', size=13, italic=False, color=FAINT,
            anchor='end')
-    f.save('seven-middle', 'The four side squares, the band between them and '
+    f.save('10-seven/middle', 'The four side squares, the band between them and '
            'the strip in the middle; a tilted square containing the disk '
            'centre has a chord through its centre longer than 1 that pokes '
            'into the side squares; an axis-parallel square in the strip')

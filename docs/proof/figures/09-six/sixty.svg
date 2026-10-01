@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="861" height="332" viewBox="0 0 861 332" role="img" aria-label="Three squares turned by an angle between 0 and 60 degrees, each holding one of the points of the circle of radius 9/10 at 0 and 60 degrees">
+<title>Three squares turned by an angle between 0 and 60 degrees, each holding one of the points of the circle of radius 9/10 at 0 and 60 degrees</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<path d="M 164.5 248.3 A 112.5 112.5 0 0 0 85.9 112.2" fill="none" stroke="#9ca3af" stroke-width="1.2" stroke-linecap="round"/>
+<polygon points="123.0,310.6 247.1,295.6 232.2,171.5 108.1,186.5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<line x1="55.5" y1="220.5" x2="168.0" y2="220.5" stroke="#9ca3af" stroke-width="0.9" stroke-dasharray="3 3"/>
+<line x1="55.5" y1="220.5" x2="111.8" y2="123.1" stroke="#9ca3af" stroke-width="0.9" stroke-dasharray="3 3"/>
+<circle cx="168.0" cy="220.5" r="4.2" fill="#dc2626"/>
+<circle cx="111.8" cy="123.1" r="4.2" fill="#1f2937"/>
+<circle cx="55.5" cy="220.5" r="2.8" fill="#1f2937"/>
+<text x="149.2" y="298.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle"><tspan font-style="italic">t</tspan> = 0.12</text>
+<path d="M 433.3 248.3 A 112.5 112.5 0 0 0 354.6 112.2" fill="none" stroke="#9ca3af" stroke-width="1.2" stroke-linecap="round"/>
+<polygon points="403.5,195.7 476.2,94.0 374.5,21.3 301.8,123.0" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<line x1="324.2" y1="220.5" x2="436.7" y2="220.5" stroke="#9ca3af" stroke-width="0.9" stroke-dasharray="3 3"/>
+<line x1="324.2" y1="220.5" x2="380.5" y2="123.1" stroke="#9ca3af" stroke-width="0.9" stroke-dasharray="3 3"/>
+<circle cx="436.7" cy="220.5" r="4.2" fill="#1f2937"/>
+<circle cx="380.5" cy="123.1" r="4.2" fill="#dc2626"/>
+<circle cx="324.2" cy="220.5" r="2.8" fill="#1f2937"/>
+<text x="418.0" y="298.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle"><tspan font-style="italic">t</tspan> = 0.95</text>
+<path d="M 702.0 248.3 A 112.5 112.5 0 0 0 623.4 112.2" fill="none" stroke="#9ca3af" stroke-width="1.2" stroke-linecap="round"/>
+<polygon points="665.4,250.9 773.6,188.4 711.1,80.1 602.9,142.6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<line x1="593.0" y1="220.5" x2="705.5" y2="220.5" stroke="#9ca3af" stroke-width="0.9" stroke-dasharray="3 3"/>
+<line x1="593.0" y1="220.5" x2="649.2" y2="123.1" stroke="#9ca3af" stroke-width="0.9" stroke-dasharray="3 3"/>
+<circle cx="705.5" cy="220.5" r="4.2" fill="#dc2626"/>
+<circle cx="649.2" cy="123.1" r="4.2" fill="#dc2626"/>
+<circle cx="593.0" cy="220.5" r="2.8" fill="#1f2937"/>
+<text x="686.8" y="298.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle"><tspan font-style="italic">t</tspan> = π/6</text>
+</svg>

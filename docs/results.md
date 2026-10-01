@@ -60,36 +60,36 @@ the three middle squares of the optimal packing can take any heights at least
 packings, so `Seven.optimum` has the models `Set.range Seven.columnModel`.
 `Seven.classification_by_slots` parametrizes the family by the four gaps of the
 column, nonnegative with sum `2√3 - 3`. The pair theorem of
-[seven squares](proof/seven.md#theorem-924-marker-separation) is about just two
+[seven squares](proof/10-seven.md#theorem-1024-marker-separation) is about just two
 disjoint squares that avoid the disk centre and satisfy the farthest-vertex
 bound of the disk of radius `√13 / 2`: their markers are at least `π/3` apart
 (`Seven.marker_separation_closed`), and exactly `π/3` apart only if they touch
 as in the optimal packing (`Seven.ordered_chart_contact`).
 
-For six squares `Six.model` has five axis-parallel squares and one turned by
-`π / 4`, `Six.diagonalSquare`, so there are no `Six.centers`. `Six.uniqueness`
-chains four theorems. `Six.Normalization.normalize` puts any packing of squared
-radius at most `Six.qStar` in the frame of the square that contains the disk
-centre (`Six.exists_containing`, by the arcs that the other squares hold on the
-circle of radius `9/10`, as for three to five squares), with the centre of that
-square in a small box (`Six.Normalization.central_box`) and the other five
-labelled by fixed pins, up to a reflection in a diagonal. `Six.wing_separators`
-shows that the turned square is separated from its two neighbours along their
-axes, as in the model. `Six.Stress.stress_bound` shows that at the radius
-`Six.radius` the stress of the model forces the angles of the model and its
-eight contacts, with the angles of the two wings bounded by
+For [six squares](proof/09-six.md) `Six.model` has five axis-parallel squares and
+one turned by `π / 4`, `Six.diagonalSquare`, so there are no `Six.centers`.
+`Six.uniqueness` chains four theorems. `Six.Normalization.normalize` puts any
+packing of squared radius at most `Six.qStar` in the frame of the square that
+contains the disk centre (`Six.exists_containing`, by the arcs that the other
+squares hold on the circle of radius `9/10`, as for three to five squares), with
+the centre of that square in a small box (`Six.Normalization.central_box`) and
+the other five labelled by fixed pins, up to a reflection in a diagonal.
+`Six.wing_separators` shows that the turned square is separated from its two
+neighbours along their axes, as in the model. `Six.Stress.stress_bound` shows
+that at the radius `Six.radius` the stress of the model forces the angles of the
+model and its eight contacts, with the angles of the two wings bounded by
 `Six.WestTail.own_west_bound` and `Six.SouthTail.own_south_bound`. And
 `Six.Equality.model_of_contacts` rebuilds the model from the contacts.
 
 `Five.polygon_uniqueness` needs only interior-disjointness and the closed 12-gon
-of [Definition 8.4](proof/five.md#definition-84-the-12-gon), not the disk
-([Proposition 8.6](proof/five.md#proposition-86-the-12-gon-is-rigid)).
+of [Definition 8.4](proof/08-five.md#definition-84-the-12-gon), not the disk
+([Proposition 8.6](proof/08-five.md#proposition-86-the-12-gon-is-rigid)).
 
 **Polygon relaxations.** Of the arc proofs of
 [three to five squares](proof/README.md#14-outline-of-the-proof), only five
 squares go through a statement that mentions no disk: `Five.polygon_uniqueness`,
 above. The proof for three squares also uses the disk only in
-[§6.2](proof/three.md#62-the-contact-polygon), through two tangent lines
+[§6.2](proof/06-three.md#62-the-contact-polygon), through two tangent lines
 and one strict tangent, but its Lean statements keep the disk. Four squares
 keep the disk constraint throughout: the diamond alone would let the arc of an
 exterior square shrink to nothing.

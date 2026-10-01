@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Draw the new figures of Chapter 7 (four squares) in docs/proof/figures/.
+"""Draw the new figures of Chapter 7 (four squares) in
+docs/proof/figures/07-four/.
 
     python3 scripts/figures/fig_four.py
 
@@ -17,8 +18,8 @@ HALF = math.pi / 2
 
 
 def save(f, name, title):
-    """Save a figure of this chapter; only names with the prefix four-."""
-    assert name.startswith('four-') and name != 'four-directions', name
+    """Save a figure of this chapter, in its directory."""
+    assert name.startswith('07-four/'), name
     f.save(name, title)
 
 
@@ -101,7 +102,7 @@ def exterior_arc():
     f.text(shift(o2, (-0.04, -0.07)), 'o', anchor='end')
     f.text(shift(o2, (0.25, 1.08)), sb('a', 'S', ' = ', 14) +
            sb('b', 'S', ' = ½', 14), size=14, italic=False)
-    save(f, 'four-exterior-arc', 'Left: an exterior square in its chart with '
+    save(f, '07-four/exterior-arc', 'Left: an exterior square in its chart with '
          'a plus b less than 1; its cap on the circle of radius 1/2 runs from '
          'minus V to A and contains the quarter circle from A minus pi/2 to A. '
          'Right: the square with a = b = 1/2, a vertex at o, holds exactly '
@@ -142,7 +143,7 @@ def less_than_quarter():
            anchor='start')
     f.dot((0, 0))
     f.text((-0.04, 0.06), 'o', anchor='end')
-    save(f, 'four-less-than-quarter', 'A square with a = 0.9 and b = 0.05, '
+    save(f, '07-four/less-than-quarter', 'A square with a = 0.9 and b = 0.05, '
          'inside the diamond but outside the disk where phi is at most 2: its '
          'cap on the circle of radius 1/2 is shorter than a quarter circle')
 
@@ -166,7 +167,7 @@ def not_rigid():
            anchor='start')
     f.dot((0, 0))
     f.text((-0.05, -0.08), 'o', anchor='end')
-    save(f, 'four-not-rigid', 'The four side-neighbours of a square centred '
+    save(f, '07-four/not-rigid', 'The four side-neighbours of a square centred '
          'at o, without the centre square: pairwise disjoint, each with '
          '(a, b) = (1, 0) on the edge of the diamond; the circle of radius 1/2 '
          'only touches them, and they stick out of the dashed circle of '
@@ -207,7 +208,7 @@ def containing_quarter():
     f.dot((0, 0))
     f.text((-0.04, -0.06), 'o', anchor='end')
     f.text((0.73, -0.3), 'S', size=17, color=blue)
-    save(f, 'four-containing-quarter', 'A square containing o, in its chart: '
+    save(f, '07-four/containing-quarter', 'A square containing o, in its chart: '
          'it contains the box from (0, 0) to (1/2, 1/2), and with it the '
          'quarter of the circle of radius 1/2 between the chart angles 0 and '
          'pi/2, centred at the chart angle pi/4; thin, the rest of the circle '
@@ -236,7 +237,7 @@ def no_containing():
     f.text((-0.04, 0.06), 'o', anchor='end')
     f.text(shift(t_centre, (0.25, 0.3)), 'T', size=17, color=blue)
     f.text(shift(s_centre, (-0.3, -0.34)), 'S', size=17, color=green)
-    save(f, 'four-no-containing', 'A square T with a vertex at o, and a '
+    save(f, '07-four/no-containing', 'A square T with a vertex at o, and a '
          'dashed square S that contains o in its interior: the two open '
          'squares overlap near o')
 
@@ -281,7 +282,7 @@ def quarter_grid():
            anchor='start')
     f.dot((0, 0))
     f.text((0.06, -0.1), 'o', anchor='start')
-    save(f, 'four-quarter-grid', 'Four squares with a common vertex at o. '
+    save(f, '07-four/quarter-grid', 'Four squares with a common vertex at o. '
          'Their quarter arcs of the circle of radius 1/2 are centred at mu0 '
          'and its quarter turns; in the frame at o with first axis mu0 minus '
          'pi/4 the squares sit at the centres c1 to c4 of the block')

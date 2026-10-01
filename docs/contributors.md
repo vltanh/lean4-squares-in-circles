@@ -118,13 +118,13 @@ Times are rough commit times, in US Central time (UTC−5).
 * **Around 11:00 — the last Bernstein certificates.** Claude Opus 5.5, in
   Claude Code, replaced the two Bernstein certificates that remained in six
   squares, for the transverse bounds of the wing W, by keeping the leading
-  terms of each polynomial, and the polynomial of degree 11 behind Lemma C.18
+  terms of each polynomial, and the polynomial of degree 11 behind Lemma H.18
   of seven squares by a square in the target height plus an affine part that
   is positive at both ends of its range, one end by Taylor bounds and the
   other by concavity and one value.
 * **Around 12:20 — no long fractions.** Claude Opus 5.5, in Claude Code,
   removed every fraction with four or more digits from the proofs of three
-  and five squares, Chapter 9 and Appendices A to D, mostly by better
+  and five squares, seven squares and their appendices, mostly by better
   arguments: the small turns of the forward axis are bounded at the
   transition state, where the force lies between the normals of the circle and
   of the tie line; the transition profile is tested at the diagonal corner,
@@ -142,3 +142,12 @@ Times are rough commit times, in US Central time (UTC−5).
   In seven squares the last tuned constants went: an axial label gives
   `a + u < 1 + 2π/15` straight from the remainder, and the turn profile is at
   least `z/40`.
+* **From 14:35 — the chapter of six squares.** Claude Opus 5.5, in Claude
+  Code, wrote six squares into the textbook as Chapter 9, between five and
+  seven squares, with Appendices B to E for its estimates (the normalization,
+  the separators, the wings, and the tails and the stress of the model) and 69
+  figures computed from the geometry of the proof. The book now reads as if six
+  squares had come first: seven squares became Chapter 10, with its appendices
+  after those of six squares and its separating-axis lemma taken from
+  Chapter 9; the one-variable estimates of both cases share Appendix A; and the
+  chapter files and the figures are sorted by chapter.

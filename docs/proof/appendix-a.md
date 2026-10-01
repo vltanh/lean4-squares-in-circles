@@ -1,26 +1,28 @@
-# Appendix A. One-variable estimates and the marker arc
+# Appendix A. One-variable estimates
 
-[Contents](README.md) · [← 9. Seven squares](seven.md) · [Appendix B →](appendix-b.md)
+[Contents](README.md) · [← 10. Seven squares](10-seven.md) · [Appendix B →](appendix-b.md)
 
 This appendix proves the facts about functions of one real variable on which
-the analysis of seven squares rests, and then uses them to prove the marker
-arc lemma of [Chapter 9](seven.md), [Lemma 9.9](seven.md#lemma-99-the-marker-arc).
+the analysis of six and seven squares rests.
 
 §A.1 derives monotonicity, tangent parabolas and concavity bounds from
 derivatives. §A.2 compares the sine and the cosine and bounds them by their
 Taylor polynomials of degrees 4 to 7. §A.3 bounds a function by its value at
-the point where its derivative changes sign. With these tools an inequality
-between functions of one angle becomes an inequality between polynomials on an
-interval, and that is settled by completing squares, by the signs of a few
-factors and by comparing rational numbers. Chapter 9 and Appendices B to D use
-them in this way throughout. §A.4 proves the marker arc lemma, a typical
-instance: it needs all three tools, together with the elementary estimates of
-[Lemma 3.29](common.md#lemma-329-elementary-estimates).
+the point where its derivative changes sign. §A.4 extends concavity to
+functions of several angles, which are then positive on a box once they are
+positive at its corners, and collects the facts about first harmonics, the
+lengths of turning forces, the square root and small angles that make such
+functions concave. With these tools an inequality between functions of a few
+angles becomes an inequality between polynomials on an interval or a box, and
+that is settled by completing squares, by the signs of a few factors and by
+comparing rational numbers. Chapters 9 and 10 and Appendices B to I use them in
+this way throughout; [Appendix F](appendix-f.md), the proof of the marker arc
+lemma of Chapter 10, is a typical instance.
 
 We use the conventions of §2.1: in particular $\arcsin$ is extended to all of
 $\mathbb R$ (it is odd and nondecreasing) and
 $\arccos x = \frac\pi2 - \arcsin x$. Of the classical bounds on $\pi$ we only
-need $\pi > 3.14$.
+need $\pi < \frac{22}7$, in Lemma A.15.
 
 ## A.1 Monotonicity and concavity
 
@@ -85,7 +87,7 @@ functions such that at every $y \in [l, u]$, $f$ has derivative $d(y)$, $d$ has
 derivative $e(y)$, and $e(y) \ge \kappa$. If some $t \in [l, u]$ satisfies
 $d(t)^2 < 2\kappa f(t)$, then $f(x) > 0$ for every $x \in [l, u]$.
 
-![A convex blue curve f over an interval from l to u, touching at the point (t, f(t)) a dashed orange parabola that stays below it; a green vertical segment from the x-axis up to the lowest point of the parabola shows that this lowest value f(t) minus d(t) squared over 2 kappa is positive](figures/appa-curvature.svg)
+![A convex blue curve f over an interval from l to u, touching at the point (t, f(t)) a dashed orange parabola that stays below it; a green vertical segment from the x-axis up to the lowest point of the parabola shows that this lowest value f(t) minus d(t) squared over 2 kappa is positive](figures/appendix-a/curvature.svg)
 
 *Figure A.1.* Lemmas A.2 and A.3. The function $f$ (blue) has second
 derivative at least $\kappa$ on $[l, u]$, so it lies above its tangent parabola
@@ -133,7 +135,7 @@ and $0 \le l \le u \le \frac\pi2$, and put
 $F(y) = \alpha y + A\sin y + B\cos y$. If $m < F(l)$ and $m < F(u)$, then
 $m < F(x)$ for every $x \in [l, u]$.
 
-![A concave blue arc over an interval from l to u inside zero to pi over 2, above the orange chord joining its end points, and a dashed horizontal level m below both end points](figures/appa-concave.svg)
+![A concave blue arc over an interval from l to u inside zero to pi over 2, above the orange chord joining its end points, and a dashed horizontal level m below both end points](figures/appendix-a/concave.svg)
 
 *Figure A.2.* Lemmas A.4 and A.5, for $F(y) = -\frac y5 + \sin y + \cos y$. On
 $[l, u] \subset [0, \frac\pi2]$ the function is concave, so it lies above its
@@ -154,7 +156,7 @@ have $\sin y \ge 0$ and $\cos y \ge 0$, so $e(y) \le 0$. $\square$
 2. If $\frac\pi4 \le x \le \frac\pi2$, then $\cos x \le \sin x$.
 3. If $0 \le z \le \frac\pi3$, then $\cos z \ge \frac12$.
 
-![The sine rising and the cosine falling on zero to pi over 2; they cross at pi over 4, and the cosine reaches one half at pi over 3](figures/appa-sin-cos.svg)
+![The sine rising and the cosine falling on zero to pi over 2; they cross at pi over 4, and the cosine reaches one half at pi over 3](figures/appendix-a/sin-cos.svg)
 
 *Figure A.3.* Lemma A.6: on $[0, \frac\pi2]$ the sine and the cosine cross at
 $\frac\pi4$, and the cosine stays at least $\frac12$ up to $\frac\pi3$.
@@ -180,7 +182,7 @@ For every $x \ge 0$:
 3. $\cos x \ge 1 - \frac{x^2}2 + \frac{x^4}{24} - \frac{x^6}{720}$;
 4. $\sin x \ge x - \frac{x^3}6 + \frac{x^5}{120} - \frac{x^7}{5040}$.
 
-![Two panels on zero to 3.2. Left: the cosine in blue between its Taylor polynomial of degree 4, dashed orange above, and of degree 6, dashed green below. Right: the sine in blue between its Taylor polynomial of degree 5 above and of degree 7 below. The curves agree near zero and separate beyond about 2](figures/appa-taylor.svg)
+![Two panels on zero to 3.2. Left: the cosine in blue between its Taylor polynomial of degree 4, dashed orange above, and of degree 6, dashed green below. Right: the sine in blue between its Taylor polynomial of degree 5 above and of degree 7 below. The curves agree near zero and separate beyond about 2](figures/appendix-a/taylor.svg)
 
 *Figure A.4.* Lemma A.7 on $[0, 3.2]$: the cosine lies between its Taylor
 polynomials of degrees 6 (below) and 4 (above), the sine between those of
@@ -248,7 +250,7 @@ derivative $d(y)$ at every real $y$, with $d(y) \ge 0$ for $y \in [l, c]$ and
 $d(y) \le 0$ for $y \in [c, u]$. Then $f(x) \le f(c)$ for every
 $x \in [l, u]$.
 
-![Two curves over an interval from l to u, split at c into a green strip on the left and an orange strip on the right. Below, the derivative d in purple: positive at l, touching zero at one point, rising to a hump, crossing zero at c and negative after it. Above, the function f in blue: it rises, flattens where d touches zero (a dashed segment joins the two points), rises again to its peak at c and falls; a dashed horizontal line at the height f(c) lies above the whole graph](figures/appa-peak.svg)
+![Two curves over an interval from l to u, split at c into a green strip on the left and an orange strip on the right. Below, the derivative d in purple: positive at l, touching zero at one point, rising to a hump, crossing zero at c and negative after it. Above, the function f in blue: it rises, flattens where d touches zero (a dashed segment joins the two points), rises again to its peak at c and falls; a dashed horizontal line at the height f(c) lies above the whole graph](figures/appendix-a/peak.svg)
 
 *Figure A.5.* Lemma A.9 for $f(y) = \frac{y^3}3 - \frac{y^4}4$ on
 $[l, u] = [-0.35, 1.25]$ and $c = 1$. The derivative $d(y) = y^2(1 - y)$
@@ -265,469 +267,309 @@ $[c, u]$ by Lemma A.1 (2), so again $f(x) \le f(c)$. $\square$
 *Lean: [`le_at_peak`](../../SquaresInCircles/Common/Analysis.lean#L54).*
 
 In use, $d(y)$ is a product of factors of constant sign on $[l, u]$ and one
-affine factor that vanishes at $c$; Lemma A.14 is an example (Figure A.11).
+affine factor that vanishes at $c$; Lemma F.5 is an example (Figure F.6).
 
-## A.4 Proof of Lemma 9.9
+## A.4 Concave functions and harmonics
 
-We prove the marker arc lemma of Chapter 9, [Lemma 9.9](seven.md#lemma-99-the-marker-arc):
+A function $f$ is *concave* on an interval $[l, u]$ if
+$f((1 - \lambda)x + \lambda y) \ge (1 - \lambda)f(x) + \lambda f(y)$ for all
+$x, y \in [l, u]$ and $\lambda \in [0, 1]$: its graph lies above its chords.
+Lemma A.4 says this for a function with a nonpositive second derivative and
+positive ends; the following lemma states it for concave functions in general
+and carries it over to rectangles. Most estimates of Appendices B to E reduce a
+function of several angles to its values at the corners of a box with it.
 
-> *Let $(a, u)$ be an admissible state and $t$ a real number with
-> $|t - \ell(a, u)| \le \frac12$. Then $|\cos t - a| \le \frac12$ and
-> $|\sin t - u| \le \frac12$.*
+### Lemma A.10 (concave functions)
 
-We recall the notions involved. A state $(a, u)$ is *admissible*
-([Definition 9.4](seven.md#definition-94-states)) if
+Let $l \le u$.
 
-```math
-\tfrac12 \le a , \qquad 0 \le u \le a , \qquad
-\varphi(a, u) = \left(a + \tfrac12\right)^2 + \left(u + \tfrac12\right)^2 \le \tfrac{13}4 ,
-```
+1. If $f$ has a derivative $f'(x)$ at every $x \in [l, u]$, and $f'$ has a
+   derivative $f''(x) \le 0$ at every $x \in [l, u]$, then $f$ is concave on
+   $[l, u]$.
+2. If $f$ is concave on $[l, u]$, $f(l) > m$ and $f(u) > m$, then $f(x) > m$
+   for every $x \in [l, u]$.
+3. Sums of functions concave on $[l, u]$, and their products with nonnegative
+   numbers, are concave there; affine functions are concave on every interval;
+   and if $f$ is concave on $[L, U]$ and $x \mapsto \alpha x + \beta$ maps
+   $[l, u]$ into $[L, U]$, then $x \mapsto f(\alpha x + \beta)$ is concave on
+   $[l, u]$.
+4. Let $f$ be a function on the rectangle $[l, u] \times [L, U]$ such that
+   $x \mapsto f(x, y)$ is concave on $[l, u]$ for every $y \in [L, U]$, and
+   $y \mapsto f(l, y)$ and $y \mapsto f(u, y)$ are concave on $[L, U]$. If $f$
+   is positive at the four corners of the rectangle, it is positive on all of
+   it.
 
-where $\varphi$ is the farthest-vertex function of
-[Definition 3.3](common.md#definition-33-farthest-vertex-function). Its
-*label* ([Definition 9.6](seven.md#definition-96-labels-and-markers)) is
-
-```math
-\ell(a, u) = \min\left(\mathrm{axial}(u), \mathrm{side}(a, u), \tfrac\pi4\right) , \qquad
-\mathrm{axial}(u) = \tfrac54 u , \qquad
-\mathrm{side}(a, u) = \tfrac\pi6 + \tfrac13\left(u - \tfrac12\right) + \tfrac34(1 - a) ,
-```
-
-so $\ell(a, u)$ is at most each of the three terms. For an admissible state,
-$u < \frac{31}{40}$ ([Lemma 9.5](seven.md#lemma-95-admissible-states)), $a < \frac54$
-([Lemma 9.5](seven.md#lemma-95-admissible-states)) and $\ell(a, u) \ge 0$
-([Lemma 9.7](seven.md#lemma-97-the-label)).
-
-![The admissible states in the (a, u)-plane: a region bounded by the segment of the a-axis from one half to root 3 minus one half, the arc of the circle phi equals 13/4 up to the diagonal, the diagonal u equals a, and the vertical line a equals one half. An orange line touches the circle at about (0.85, 0.70); a green vertical segment at a = x + 1/2 rises from the a-axis to the circle; the side state (1, 1/2) is marked on the circle](figures/appa-admissible.svg)
-
-*Figure A.6.* The admissible states (shaded). The line
-$\frac34(a + \frac12) + \frac23(u + \frac12) = \frac{\sqrt{1885}}{24}$ (orange)
-touches the circle $\varphi = \frac{13}4$ at the dot, and the disk lies below
-it (step 3 of Lemma A.11). At $a = x + \frac12$ the circle bounds
-$u + \frac12$ by $\sqrt{13/4 - (x + 1)^2}$ (green; step 1 of Lemma A.17).
-
-In the chart of an exterior square with state $(a, u)$ (Chapter 9) the closed
-square is $[a - \frac12, a + \frac12] \times [u - \frac12, u + \frac12]$ and
-the unit circle $\Gamma_1$ about the disk centre is
-$t \mapsto (\cos t, \sin t)$. So the lemma says that the arc of $\Gamma_1$ of
-half-width $\frac12$ about the direction $\ell(a, u)$ lies in the
-closed square: it stays on the correct side of each of the four edge lines
-(Figure A.7).
-
-![Two panels, each showing an admissible square in its chart with the lines of its near, far, lower and upper edges dashed, the unit circle about o, a dashed ray at the label angle, and a thick orange arc of the circle about that ray. The thin blue part of the circle between two dots is the part inside the square, and it contains the orange arc. Left, the state (1, 1/2), where the orange arc nearly fills the blue part; right, the state (0.9, 0.3)](figures/appa-marker-arc.svg)
-
-*Figure A.7.* The marker arc lemma in the chart, for the side state
-$(1, \frac12)$ (left) and the state $(0.9, 0.3)$, whose label is axial
-(right). The part of $\Gamma_1$ in the closed square (blue, between the dots)
-contains the arc of half-width $\frac12$ about the label (orange). For the
-side state the fit is tight at both ends: the square holds the arc from 0 to
-$\frac\pi3$, of half-width $\frac\pi6 \approx 0.5236$, against $\frac12$.
-
-*Idea of the proof.* The far edge is out of reach. For the lower and upper
-edges we compare the label with $\arcsin(u \mp \frac12)$ using lines of slope
-$\frac54$ (Lemmas A.10 to A.12). For the near edge we need
-$\ell + \arcsin(a - \frac12) + \frac12 < \frac\pi2$. Bounding $\ell$
-by the side term and $u$ by the circle $\varphi = \frac{13}4$ leaves a function
-$E$ of $x = a - \frac12$ alone, the envelope. Its second derivative is at
-most $-\frac18$ (Lemmas A.14 and A.15), so it lies below the parabola that
-shares its value and slope at $x = 0$, where both radicands are squares of
-rationals; that parabola is highest at $x = \frac29$, at the height
-$\frac\pi6 + \frac{353}{648}$ (Lemma A.16). Lemma A.17 concludes.
-
-### Lemma A.10 (a line against the arcsine)
-
-Let $g(y) = \frac54 y - \arcsin y$ for $-1 \le y \le 1$.
-
-1. $g$ is nondecreasing on $[-\frac35, \frac35]$.
-2. $g$ is nonincreasing on $[\frac35, 1]$.
-3. $\arcsin\frac12 = \frac\pi6$.
-
-![The graph of g(y) = 5/4 y minus arcsin y on minus 1 to 1: it falls to a minimum at minus 3/5, rises to a maximum at 3/5 and falls again. An orange band over minus 1/2 to 11/40 with a dashed line at the value at minus 1/2 lies below the graph there; a green band over 1/2 to 1 with a dashed line at the value at 3/5 lies above the graph there](figures/appa-asin-line.svg)
-
-*Figure A.8.* The function $g$ of Lemma A.10. On the range
-$[-\frac12, \frac{11}{40})$ of $y = u - \frac12$ (orange) it stays above
-$g(-\frac12) = \frac\pi6 - \frac58$, which is step 2 of Lemma A.11. On the
-range $[\frac12, 1]$ of $y = u + \frac12$ when $u \le \frac12$ (green) it
-stays below $g(\frac35) = \frac34 - \arcsin\frac35$, which is step 2 of
-Lemma A.12.
-
-*Proof.* The arcsine is continuous on $[-1, 1]$ and has derivative
-$1/\sqrt{1 - y^2}$ at every $y \in (-1, 1)$. So $g$ is continuous on
-$[-1, 1]$, with $g'(y) = \frac54 - 1/\sqrt{1 - y^2}$ for $|y| < 1$.
-(1) If $|y| < \frac35$, then $1 - y^2 > \frac{16}{25}$, so
-$\sqrt{1 - y^2} > \frac45$ and $g'(y) > 0$; apply Lemma A.1 (1).
-(2) If $\frac35 < y < 1$, then $0 < 1 - y^2 < \frac{16}{25}$, so
-$\sqrt{1 - y^2} < \frac45$ and $g'(y) < 0$; apply Lemma A.1 (2).
-(3) $\sin\frac\pi6 = \frac12$ and $-\frac\pi2 \le \frac\pi6 \le \frac\pi2$.
-$\square$
-
-*Lean:
-[`Seven.asin_line_mono`](../../SquaresInCircles/Seven/Exterior.lean#L235),
-[`asin_half`](../../SquaresInCircles/Common/Trigonometry.lean#L717).*
-
-By (1) and (2), $g(\frac35) = \frac34 - \arcsin\frac35$ is the largest value of
-$g$ on $[-\frac35, 1]$. The next two lemmas place the label between the lower
-and the upper edge (Figure A.9).
-
-![The (u, angle)-plane for u from 0 to 31/40. A thin blue shaded band, the labels of the admissible states, starts at the origin, widens towards the right and closes again in a point just below the angle pi/4. An orange curve, arcsin(u - 1/2) + 1/2, runs just below the band; a green curve, arcsin(u + 1/2) - 1/2, runs above it for u up to 1/2 and rises steeply there](figures/appa-transverse.svg)
-
-*Figure A.9.* Lemmas A.11 and A.12. For each $u$ the labels $\ell(a, u)$ of
-the admissible states $(a, u)$ fill the shaded interval. It lies above the
-curve $\arcsin(u - \frac12) + \frac12$ of the lower edge (orange) and, for
-$u \le \frac12$, below the curve $\arcsin(u + \frac12) - \frac12$ of the
-upper edge (green). The closest approach, about 0.005, is at the lower edge
-near $u = 0.72$, where the label is a side label.
-
-### Lemma A.11 (the lower edge)
-
-Let $(a, u)$ be an admissible state. Then
-$\arcsin(u - \frac12) + \frac12 < \ell(a, u)$.
-
-*Proof.* Put $y = u - \frac12$. As $0 \le u < \frac{31}{40}$,
-$-\frac12 \le y < \frac{11}{40}$. We show that $\arcsin y + \frac12$ is
-less than each of the three terms whose minimum is $\ell(a, u)$.
-
-1. *A bound on the arcsine: $\arcsin y < y + 0.0052$.* If
-   $y \ge 0$, then $y < \frac{11}{40} < \frac35$, and
-   [Lemma 3.29](common.md#lemma-329-elementary-estimates) (3) gives
-
-   ```math
-   \arcsin y \le y + \tfrac{y^3}4 \le y + \tfrac14\left(\tfrac{11}{40}\right)^3 < y + 0.0052 .
-   ```
-
-   If $y < 0$, then $\arcsin y \le y$ by Lemma 3.29 (2), as $y \ge -1$.
-2. *The axial term.* Both $-\frac12$ and $y$ lie in $[-\frac35, \frac35]$, and
-   $-\frac12 \le y$. By Lemma A.10 (1) and (3), and as the arcsine is odd,
-
-   ```math
-   \tfrac\pi6 - \tfrac58 = g\left(-\tfrac12\right) \le g(y) = \tfrac54 u - \tfrac58 - \arcsin y ,
-   ```
-
-   that is, $\arcsin y \le \mathrm{axial}(u) - \frac\pi6$. Since
-   $\frac\pi6 > \frac{3.14}6 > \frac12$, we get
-   $\arcsin y + \frac12 < \mathrm{axial}(u)$.
-3. *The side term.* Put $p = a + \frac12$, $q = u + \frac12$ and
-   $L = \frac34 p + \frac23 q$. By the Cauchy–Schwarz inequality, with
-   $\varphi(a, u) = p^2 + q^2 \le \frac{13}4$,
-
-   ```math
-   L^2 \le \left(\tfrac9{16} + \tfrac49\right)\left(p^2 + q^2\right) \le \tfrac{145}{144} \cdot \tfrac{13}4 ,
-   ```
-
-   so $L \le \frac{\sqrt{1885}}{24}$, with equality where the line
-   $L = \frac{\sqrt{1885}}{24}$ touches the circle (Figure A.6). By the
-   definition of the side term, and as $\sqrt{1885} < 43.42$,
-
-   ```math
-   \mathrm{side}(a, u) - y = \tfrac\pi6 - \tfrac23 y - \tfrac34 (a - 1) = \tfrac\pi6 + \tfrac{43}{24} - L
-   > \tfrac\pi6 - \tfrac{43.42 - 43}{24} = \tfrac\pi6 - 0.0175 .
-   ```
-
-   With step 1, and as $\frac\pi6 > \frac{3.14}6 > 0.5233$,
-
-   ```math
-   \mathrm{side}(a, u) - \arcsin y - \tfrac12 > \tfrac\pi6 - 0.0175 - 0.0052 - 0.5 > 0 .
-   ```
-
-4. *The cap.* By step 1, and as $y < \frac{11}{40}$,
-   $\arcsin y + \frac12 < \frac{11}{40} + 0.0052 + \frac12 = 0.7802 < \frac{3.14}4 < \frac\pi4$.
-
-So $\arcsin y + \frac12$ is less than $\mathrm{axial}(u)$,
-$\mathrm{side}(a, u)$ and $\frac\pi4$, hence less than their minimum
-$\ell(a, u)$. $\square$
-
-*Lean:
-[`Seven.marker_lower_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L257),
-[`dot_gt`](../../SquaresInCircles/Common/DiskSupport.lean#L34).*
-
-### Lemma A.12 (the upper edge)
-
-Let $(a, u)$ be an admissible state with $u \le \frac12$. Then
-$\ell(a, u) + \frac12 < \arcsin(u + \frac12)$.
-
-*Proof.*
-
-1. *$\arcsin\frac35 > \frac58$.* By Lemma A.7 (2),
-
-   ```math
-   \sin\tfrac58 \le \tfrac58 - \tfrac16\left(\tfrac58\right)^3 + \tfrac1{120}\left(\tfrac58\right)^5 < 0.5852 < \tfrac35 .
-   ```
-
-   If $\arcsin\frac35 \le \frac58$, then, as
-   $-\frac\pi2 \le \arcsin\frac35 \le \frac58 < \frac\pi2$ and the sine
-   is increasing on $[-\frac\pi2, \frac\pi2]$, we would get
-   $\frac35 = \sin(\arcsin\frac35) \le \sin\frac58 < \frac35$.
-2. Put $y = u + \frac12 \in [\frac12, 1]$. By Lemma A.10 (1) if
-   $y \le \frac35$, and by Lemma A.10 (2) if $y \ge \frac35$,
-   $g(y) \le g(\frac35)$, that is,
-   $\arcsin y \ge \arcsin\frac35 + \frac54(y - \frac35)$. As
-   $\frac54(y - \frac35) = \frac54 u - \frac18$, step 1 gives
-
-   ```math
-   \arcsin y > \tfrac58 + \tfrac54 u - \tfrac18 = \tfrac54 u + \tfrac12 .
-   ```
-
-3. As $\ell(a, u) \le \mathrm{axial}(u) = \frac54 u$, step 2 gives
-   $\arcsin(u + \frac12) > \ell(a, u) + \frac12$. $\square$
-
-*Lean:
-[`Seven.marker_horizontal_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L459).*
-
-### Definition A.13 (the envelope)
-
-Let $J = (-1, \frac45)$. For $x \in J$ we have $1 - x^2 > 0$ and
-$\frac{13}4 - (x + 1)^2 > 0$, since $|x| < 1$, $0 < x + 1 < \frac95$ and
-$(\frac95)^2 = \frac{81}{25} < \frac{13}4$. On $J$ put
+*Proof.* (1) By [Lemma A.1](#lemma-a1-monotonicity-from-the-derivative) (2),
+$f'$ is nonincreasing on $[l, u]$. Let $x < z < y$ in $[l, u]$. By the mean
+value theorem there are $\xi_1 \in (x, z)$ and $\xi_2 \in (z, y)$ with
 
 ```math
-\begin{aligned}
-E(x) &= \tfrac\pi6 + \tfrac1{24} + \tfrac13\sqrt{\tfrac{13}4 - (x + 1)^2} + \arcsin x - \tfrac34 x , \\
-E_1(x) &= \frac1{\sqrt{1 - x^2}} - \frac34 - \frac{x + 1}{3\sqrt{13/4 - (x + 1)^2}} , \\
-E_2(x) &= \frac x{\left(1 - x^2\right)^{3/2}} - \frac{13}{12\left(13/4 - (x + 1)^2\right)^{3/2}} .
-\end{aligned}
+\frac{f(z) - f(x)}{z - x} = f'(\xi_1) \ge f'(\xi_2) = \frac{f(y) - f(z)}{y - z} ,
 ```
 
-$E$ is the *envelope*; $E_1$ and $E_2$ are its first and second derivatives
-on $[0, \frac34]$ (Lemma A.15).
+and multiplying out gives $f(z) \ge \frac{y - z}{y - x}f(x) + \frac{z - x}{y - x}f(y)$,
+which is the chord inequality at $z = (1 - \lambda)x + \lambda y$.
 
-*Lean: [`Seven.arcEnvelope`](../../SquaresInCircles/Seven/Exterior.lean#L286),
-[`Seven.arcEnvelopeDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L289),
-[`Seven.arcEnvelopeSecond`](../../SquaresInCircles/Seven/Exterior.lean#L292).*
+(2) Write $x = (1 - \lambda)l + \lambda u$ with $\lambda \in [0, 1]$; then
+$f(x) \ge (1 - \lambda)f(l) + \lambda f(u) \ge \min(f(l), f(u)) > m$.
 
-The definition of the side term can be written
+(3) The chord inequality is preserved by sums and by nonnegative multiples, is
+an equality for affine functions, and is carried over by the affine
+substitution, since
+$\alpha((1 - \lambda)x + \lambda y) + \beta = (1 - \lambda)(\alpha x + \beta) + \lambda(\alpha y + \beta)$.
+
+(4) Let $(x, y)$ be in the rectangle. By (2) on the two edges, $f(l, y) > 0$
+and $f(u, y) > 0$; by (2) again, along the segment from $(l, y)$ to $(u, y)$,
+$f(x, y) > 0$. $\square$
+
+*Lean: [`concave_of_deriv2`](../../SquaresInCircles/Common/Analysis.lean#L69),
+[`concave_gt_of_endpoints`](../../SquaresInCircles/Common/Analysis.lean#L81),
+[`affine_concave`](../../SquaresInCircles/Common/Analysis.lean#L118),
+[`concave_affine_argument`](../../SquaresInCircles/Common/Analysis.lean#L107),
+[`positive_on_separately_concave_rectangle`](../../SquaresInCircles/Common/Analysis.lean#L127),
+[`monoOn_of_hasDeriv_nonneg`](../../SquaresInCircles/Common/Analysis.lean#L29),
+[`antiOn_of_hasDeriv_nonpos`](../../SquaresInCircles/Common/Analysis.lean#L37).*
+
+In use, (4) is applied one variable at a time: a function of three angles that
+is concave in each of them on a box is positive once it is positive at the
+eight corners.
+
+### Lemma A.11 (first harmonics)
+
+For real numbers $A$ and $B$ let $H(x) = A\cos x + B\sin x$, a *first
+harmonic*.
+
+1. $H'' = -H$. So $H$ is concave on every interval on which $H \ge 0$, and so
+   is $K + H$ for every constant $K$.
+2. If $A, B \ge 0$, then $H \ge 0$ on $[0, \frac\pi2]$. Hence, for every
+   constant $K$ and every interval $[l, u] \subseteq [0, \frac\pi2]$: if
+   $K + H(l) > 0$ and $K + H(u) > 0$, then $K + H(x) > 0$ for every
+   $x \in [l, u]$.
+
+*Proof.* (1) $H' = -A\sin x + B\cos x$ and $H'' = -A\cos x - B\sin x = -H$;
+where $H \ge 0$, $H'' \le 0$, and Lemma A.10 (1) applies. (2) On
+$[0, \frac\pi2]$ both $\cos x$ and $\sin x$ are nonnegative, so $H \ge 0$
+there, and $K + H$ is concave on $[l, u]$ by (1); Lemma A.10 (2) with $m = 0$
+gives the rest, which is also the case $\alpha = 0$ of Lemma A.5. $\square$
+
+*Lean: [`harmonic`](../../SquaresInCircles/Common/Trigonometry.lean#L299),
+[`harmonic_hasDerivAt`](../../SquaresInCircles/Common/Trigonometry.lean#L302),
+[`harmonic_concave`](../../SquaresInCircles/Common/Trigonometry.lean#L315),
+[`harmonic_nonneg`](../../SquaresInCircles/Common/Trigonometry.lean#L309),
+[`harmonic_pos_of_endpoints`](../../SquaresInCircles/Common/Trigonometry.lean#L340),
+[`trig_concave_gt`](../../SquaresInCircles/Common/Trigonometry.lean#L323).*
+
+A typical use: a weighted sum of separating inequalities, after the supports
+of the squares, leaves a function of an angle $x$ of the form
+$K + A\cos x + B\sin x$, plus terms in other angles; when $A, B \ge 0$ and
+$x$ ranges over an interval of $[0, \frac\pi2]$, it suffices to check its two
+end values.
+
+### Lemma A.12 (a harmonic less a radical)
+
+Let $A$, $B$, $p$, $q$, $R$ be real numbers with $R \ge 0$ and $q^2 \le p^2$,
+and let $[l, u]$ be an interval on which $p + q\sin x > 0$ and
 
 ```math
-\mathrm{side}(a, u) = \tfrac\pi6 + \tfrac1{24} + \tfrac13\left(u + \tfrac12\right) - \tfrac34\left(a - \tfrac12\right) . \tag{A.1}
+R\sqrt{p + q\sin x} \le 4\left(A\cos x + B\sin x\right) .
 ```
 
-For an admissible state with $a - \frac12 = x$, the disk bounds $u + \frac12$
-by $\sqrt{13/4 - (x + 1)^2}$, so $E(x)$ bounds
-$\mathrm{side}(a, u) + \arcsin x$ from above; this is where the name comes
-from (Lemma A.17 and Figure A.10).
+Then $f(x) = A\cos x + B\sin x - R\sqrt{p + q\sin x}$ is concave on $[l, u]$.
 
-![For x from 0 to 3/4, a blue shaded region bounded below by a rising curve and above by a curve that meets an orange curve, the graph of E(x) - pi/6, for x beyond about 0.27 and stays below it before; the region ends at x = root 3 - 1. A dashed horizontal line slightly above the orange curve marks the level pi/3 - 1/2](figures/appa-envelope-band.svg)
-
-*Figure A.10.* The envelope. For each $x = a - \frac12$, the values of
-$\mathrm{side}(a, u) + \arcsin x - \frac\pi6$ over the admissible states
-$(a, u)$ fill the shaded interval; it ends at $x = \sqrt3 - 1$, beyond which
-$u$ would have to be negative. The top of the interval lies on the graph of
-$E(x) - \frac\pi6$ (orange) where the circle $\varphi = \frac{13}4$ rather
-than $u \le a$ bounds $u$, that is, for $x \ge \sqrt{13/8} - 1 \approx 0.27$.
-Lemma A.17 needs everything below the dashed level $\frac\pi3 - \frac12$.
-
-### Lemma A.14 (the peak bound)
-
-Let $h(x) = 9\left(x + \frac18\right)^2 (9 - 7x)^3$. Then $h(x) < 676$ for
-every $x \in [0, \frac34]$.
-
-![The graph of h on zero to 3/4, in blue: it rises from about 102 at 0 to its peak, about 596, at x = 123/280, marked by a dot with dotted lines to both axes, and falls to about 363 at 3/4. The strip over zero to 123/280 is shaded green and marked h prime at least 0; the strip over 123/280 to 3/4 is shaded orange and marked h prime at most 0. A dashed horizontal line at 676 lies above the whole graph](figures/appa-peak-bound.svg)
-
-*Figure A.11.* Lemma A.14. The polynomial $h$ on $[0, \frac34]$ (blue). Its
-derivative is nonnegative up to $\frac{123}{280}$ (green) and nonpositive after
-it (orange), so by Lemma A.9 its largest value is the peak
-$h(\frac{123}{280}) \approx 596.1$, below 676 (dashed).
-
-*Proof.* By the product rule, $h$ has at every real $y$ the derivative
+*Proof.* Put $r(x) = \sqrt{p + q\sin x} > 0$, so that $r^2 = p + q\sin x$ and
+$r' = \frac{q\cos x}{2r}$. Differentiating again,
 
 ```math
-h'(y) = 9\left(y + \tfrac18\right)(9 - 7y)^2\left(2(9 - 7y) - 21\left(y + \tfrac18\right)\right)
-= 9\left(y + \tfrac18\right)(9 - 7y)^2\left(\tfrac{123}8 - 35y\right) .
+r'' = -\frac{q\sin x}{2r} - \frac{q^2\cos^2 x}{4r^3}
+= \frac{-2q\sin x\, r^2 - q^2(1 - \sin^2 x)}{4r^3}
+= \frac{-r^4 + p^2 - q^2}{4r^3} = -\frac r4 + \frac{p^2 - q^2}{4r^3} ,
 ```
 
-For $y \in [0, \frac34]$ the factors $y + \frac18$ and $(9 - 7y)^2$ are
-nonnegative, and $\frac{123}8 - 35y = 35\left(\frac{123}{280} - y\right)$ is
-nonnegative for $y \le \frac{123}{280}$ and nonpositive for
-$y \ge \frac{123}{280}$. By Lemma A.9 on $[0, \frac34]$, with the peak
-$c = \frac{123}{280}$, $h(x) \le h(c)$. At the peak
-$c + \frac18 = \frac{79}{140} < \frac47$, so
-$(c + \frac18)^2 < \frac{16}{49} < \frac13$; and
-$9 - 7c = 9 - \frac{123}{40} = \frac{237}{40} < 6$. Hence
+where the third step substitutes $q\sin x = r^2 - p$:
+$-2(r^2 - p)r^2 - q^2 + (r^2 - p)^2 = -r^4 + p^2 - q^2$. So
 
 ```math
-h(c) < 9 \cdot \tfrac13 \cdot 6^3 = 648 < 676 . \qquad \square
+f'' = -\left(A\cos x + B\sin x\right) + \frac R4 r - R\,\frac{p^2 - q^2}{4r^3} \le -\left(A\cos x + B\sin x\right) + \frac R4 r \le 0
 ```
 
-*Lean:
-[`Seven.curvature_peak_lt`](../../SquaresInCircles/Seven/Exterior.lean#L358).*
+on $[l, u]$, by $R \ge 0$, $q^2 \le p^2$ and the hypothesis. Lemma A.10 (1)
+applies. $\square$
 
-For orientation, $h(0) \approx 102.5$, $h(\frac{123}{280}) \approx 596.1$ and
-$h(\frac34) \approx 363.4$.
+*Lean: [`radicalTrig`](../../SquaresInCircles/Common/Trigonometry.lean#L350),
+[`radical_second_identity`](../../SquaresInCircles/Common/Trigonometry.lean#L353),
+[`radical_second_derivative`](../../SquaresInCircles/Common/Trigonometry.lean#L369),
+[`radicalTrig_concave`](../../SquaresInCircles/Common/Trigonometry.lean#L391).*
 
-### Lemma A.15 (the curvature of the envelope)
+The radical is the length of a force that turns with $x$: a force
+$(\alpha + \gamma\sin x, \gamma\cos x)$ has length
+$\sqrt{\alpha^2 + \gamma^2 + 2\alpha\gamma\sin x}$. Multiplied by a radius, it
+enters the far-vertex support of
+[Lemma 9.25](09-six.md#lemma-925-supports-of-a-square-in-a-disk) (1).
 
-Let $0 \le x \le \frac34$. Then
+### Lemma A.13 (a turning vector)
 
-1. $1 - x^2 > 0$ and $\frac{13}4 - (x + 1)^2 > 0$;
-2. $E$ has derivative $E_1(x)$ at $x$;
-3. $E_1$ has derivative $E_2(x)$ at $x$;
-4. $E_2(x) \le -\frac18$.
+Let $a, b \ge 0$ with $a + b > 0$, and let $P$, $Q$, $T$ be real numbers with
+$P = a^2 + b^2$ and $Q^2 + T^2 = 4a^2b^2$. Put
+$\Lambda(x) = P + Q\cos x + T\sin x$, the squared length of the sum of a
+constant vector of length $a$ and a vector of length $b$ that turns with $x$,
+and let $R \ge 0$.
 
-*Proof.* Put $A = \sqrt{1 - x^2}$ and $B = \sqrt{13/4 - (x + 1)^2}$.
-
-1. $x^2 \le \frac9{16}$ and $1 \le x + 1 \le \frac74$ give
-   $1 - x^2 \ge \frac7{16}$ and
-   $\frac{13}4 - (x + 1)^2 \ge \frac{13}4 - \frac{49}{16} = \frac3{16}$.
-2. By (1) and the chain rule, $y \mapsto \sqrt{13/4 - (y + 1)^2}$ has
-   derivative $-(x + 1)/B$ at $x$, and the arcsine has derivative $1/A$. So
-   $E$ has derivative $-\frac{x + 1}{3B} + \frac1A - \frac34 = E_1(x)$.
-3. Likewise $y \mapsto \sqrt{1 - y^2}$ has derivative $-x/A$ at $x$. So
-   $1/A$ has derivative $x/A^3$, and by the quotient rule
-   $(x + 1)/(3B)$ has derivative
-
-   ```math
-   \frac{3B - 3(x + 1) \cdot \left(-(x + 1)/B\right)}{9B^2} = \frac{B^2 + (x + 1)^2}{3B^3} = \frac{13}{12B^3} ,
-   ```
-
-   because $B^2 + (x + 1)^2 = \frac{13}4$. So $E_1$ has derivative
-   $\frac x{A^3} - \frac{13}{12B^3} = E_2(x)$.
-4. By (1), $A > 0$ and $B > 0$, and $A \le 1$ as $A^2 = 1 - x^2 \le 1$. So
-   $\frac18 \le \frac1{8A^3}$, and
+1. $(a - b)^2 \le \Lambda(x) \le (a + b)^2$ for every $x$.
+2. Where $\Lambda(x) > 0$, the function $g = -R\sqrt\Lambda$ has the second
+   derivative
 
    ```math
-   E_2(x) + \tfrac18 \le \frac{x + \frac18}{A^3} - \frac{13}{12B^3}
-   = \frac{12\left(x + \frac18\right)B^3 - 13A^3}{12A^3B^3} .
+   g''(x) = R\,\frac{L^4 - (a^2 - b^2)^2}{4L^3} \le R\,\frac{ab}{a + b}, \qquad L = \sqrt{\Lambda(x)} .
    ```
 
-   We show that the numerator is negative. As
-   $4B^2 = 13 - 4(x + 1)^2 = 9 - 8x - 4x^2$,
+3. If moreover $a \le b$ and $Q\cos x + T\sin x \le -2a^2$, then
+   $g''(x) \le 0$.
 
-   ```math
-   (9 - 7x)A^2 - 4B^2 = (9 - 7x)\left(1 - x^2\right) - \left(9 - 8x - 4x^2\right)
-   = x\left(7x^2 - 5x + 1\right) = x\left(7\left(x - \tfrac5{14}\right)^2 + \tfrac3{28}\right) \ge 0 ,
-   ```
+*Proof.* (1) $(Q\cos x + T\sin x)^2 + (-Q\sin x + T\cos x)^2 = Q^2 + T^2 = 4a^2b^2$,
+so $|Q\cos x + T\sin x| \le 2ab$.
 
-   so $0 < 4B^2 \le (9 - 7x)A^2$, and cubing, $64B^6 \le (9 - 7x)^3 A^6$.
-   With Lemma A.14 and $A^6 > 0$,
+(2) Write $z = Q\cos x + T\sin x$, so that $\Lambda = P + z$,
+$\Lambda' = -Q\sin x + T\cos x$ and $\Lambda'' = -z$. The second derivative of
+$-R\sqrt\Lambda$ is
+$R\,\frac{\Lambda'^2 - 2\Lambda\Lambda''}{4\Lambda\sqrt\Lambda}$, and
 
-   ```math
-   \left(12\left(x + \tfrac18\right)B^3\right)^2 = \tfrac94\left(x + \tfrac18\right)^2 \cdot 64B^6
-   \le \tfrac14 \cdot 9\left(x + \tfrac18\right)^2(9 - 7x)^3 \cdot A^6
-   < \tfrac{676}4 A^6 = \left(13A^3\right)^2 .
-   ```
+```math
+\Lambda'^2 - 2\Lambda\Lambda'' = \left(Q^2 + T^2 - z^2\right) + 2(P + z)z = z^2 + 2Pz + Q^2 + T^2 = (P + z)^2 - \left(P^2 - Q^2 - T^2\right) = L^4 - (a^2 - b^2)^2 ,
+```
 
-   Both $12(x + \frac18)B^3$ and $13A^3$ are positive, so
-   $12(x + \frac18)B^3 < 13A^3$, and $E_2(x) < -\frac18$. $\square$
+as $P^2 - 4a^2b^2 = (a^2 - b^2)^2$. For the bound, by (1) $L \le a + b$, and
 
-*Lean:
-[`Seven.arcEnvelopeSecond_le`](../../SquaresInCircles/Seven/Exterior.lean#L384),
-[`Seven.arc_radicands`](../../SquaresInCircles/Seven/Exterior.lean#L295),
-[`Seven.arcEnvelope_hasDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L300),
-[`Seven.arcEnvelopeDeriv_hasDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L317).*
+```math
+4abL^3 - (a + b)\left(L^4 - (a^2 - b^2)^2\right) = (a + b - L)\left((a + b)L^3 + (a - b)^2L^2 + (a + b)(a - b)^2L + (a + b)^2(a - b)^2\right) \ge 0 ,
+```
 
-The two terms of $E_2$ come from the arcsine, which bends up, and from the
-circle $\varphi = \frac{13}4$, which bends down: $B$ is the value of
-$u + \frac12$ on that circle at $a = x + \frac12$ (Figure A.6). On
-$[0, \frac34]$ the circle wins by at least $\frac18$. For orientation,
-$E_2(0) = -\frac{26}{81} \approx -0.321$, and the largest value of $E_2$ on
-$[0, \frac34]$ is about $-0.209$, near $x = 0.33$.
+as one checks by expanding; divide by $4(a + b)L^3$ and multiply by $R$.
 
-### Lemma A.16 (the envelope bound)
+(3) Here $z^2 + 2Pz + Q^2 + T^2 = (z + 2a^2)(z + 2b^2)$, since
+$2a^2 + 2b^2 = 2P$ and $4a^2b^2 = Q^2 + T^2$. The first factor is at most 0 by
+hypothesis, and the second is at least 0, because $z \ge -2ab \ge -2b^2$ for
+$a \le b$. $\square$
 
-For every $x \in [0, \frac34]$, $E(x) \le \frac\pi6 + \frac{353}{648}$.
+*Lean: [`harmonicArg`](../../SquaresInCircles/Common/Trigonometry.lean#L447),
+[`harmonicRoot`](../../SquaresInCircles/Common/Trigonometry.lean#L450),
+[`harmonicCurvature`](../../SquaresInCircles/Common/Trigonometry.lean#L457),
+[`harmonicRoot_second`](../../SquaresInCircles/Common/Trigonometry.lean#L475),
+[`harmonic_amplitude_bound`](../../SquaresInCircles/Common/Trigonometry.lean#L502),
+[`harmonic_length_bound`](../../SquaresInCircles/Common/Trigonometry.lean#L520),
+[`rotating_length_factor`](../../SquaresInCircles/Common/Trigonometry.lean#L533),
+[`harmonicCurvature_le_harmonic_mean`](../../SquaresInCircles/Common/Trigonometry.lean#L539),
+[`harmonic_mean_mono`](../../SquaresInCircles/Common/Trigonometry.lean#L571),
+[`harmonicCurvature_nonpos_of_opposition`](../../SquaresInCircles/Common/Trigonometry.lean#L582).*
 
-![The graph of E(x) - pi/6 on zero to 3/4 in orange: it starts at 13/24, marked by a dot on the vertical axis, rises slightly, and falls to about 0.47 at 3/4. A dashed purple parabola, 13/24 + x/36 - x squared/16, starts at the same dot with the same slope and stays above the orange curve; its highest point, at x = 2/9, is marked by a purple dot at the height 353/648. A black horizontal line at pi/3 - 1/2 lies just above that point](figures/appa-parabola.svg)
+### Lemma A.14 (tangents of the square root)
 
-*Figure A.12.* Lemma A.16. The envelope $E(x) - \frac\pi6$ (orange) and the
-parabola $\frac{13}{24} + \frac x{36} - \frac{x^2}{16}$ (purple, dashed) have
-the same value and slope at 0 (dot), and the envelope bends down at least as
-fast, so it stays below the parabola. The parabola is highest at
-$x = \frac29$, where it equals $\frac{353}{648} \approx 0.5448$, below the
-level $\frac\pi3 - \frac12 \approx 0.5472$ that Lemma A.17 needs
-(black).
+For $c > 0$ and $y \ge 0$, $\sqrt y \le \frac{y + c^2}{2c}$, with equality
+only for $y = c^2$. For every real $y$, $y \le \left(\frac{y + c^2}{2c}\right)^2$.
 
-*Proof.*
-
-1. *The value and the slope at 0.* At $x = 0$ the radicands are $1$ and
-   $\frac{13}4 - 1 = \frac94 = (\frac32)^2$, and $\arcsin 0 = 0$. So
-
-   ```math
-   E(0) = \tfrac\pi6 + \tfrac1{24} + \tfrac13 \cdot \tfrac32 = \tfrac\pi6 + \tfrac{13}{24} , \qquad
-   E_1(0) = 1 - \tfrac34 - \frac1{3 \cdot \frac32} = \tfrac14 - \tfrac29 = \tfrac1{36} .
-   ```
-
-2. *A parabola above the envelope.* By Lemma A.15, at every
-   $y \in [0, \frac34]$ the function $-E$ has derivative $-E_1(y)$, the
-   function $-E_1$ has derivative $-E_2(y)$, and $-E_2(y) \ge \frac18$.
-   Lemma A.2 with $\kappa = \frac18$, applied to $-E$ at $t = 0$, gives
-   $-E(x) \ge -E(0) - E_1(0)\,x + \frac{x^2}{16}$, that is, by step 1,
-
-   ```math
-   E(x) \le \tfrac\pi6 + \tfrac{13}{24} + \tfrac x{36} - \tfrac{x^2}{16} . \tag{A.2}
-   ```
-
-3. *The top of the parabola.* Since
-   $\frac1{16}(x - \frac29)^2 = \frac{x^2}{16} - \frac x{36} + \frac1{324}$ and
-   $\frac{13}{24} + \frac1{324} = \frac{351}{648} + \frac2{648} = \frac{353}{648}$,
-   completing the square gives
-
-   ```math
-   \tfrac{13}{24} + \tfrac x{36} - \tfrac{x^2}{16} = \tfrac{353}{648} - \tfrac1{16}\left(x - \tfrac29\right)^2 \le \tfrac{353}{648} .
-   ```
-
-   With (A.2), $E(x) \le \frac\pi6 + \frac{353}{648}$. $\square$
+*Proof.* $y + c^2 - 2c\sqrt y = (\sqrt y - c)^2 \ge 0$, and
+$(y + c^2)^2 - 4c^2y = (y - c^2)^2 \ge 0$. $\square$
 
 *Lean:
-[`Seven.arcEnvelope_bound`](../../SquaresInCircles/Seven/Exterior.lean#L419).*
+[`sqrt_le_tangent`](../../SquaresInCircles/Common/Trigonometry.lean#L609),
+[`sq_le_tangent_sq`](../../SquaresInCircles/Common/Trigonometry.lean#L614).*
 
-For orientation: the largest value of $E$ on $[0, \frac34]$ is about
-$\frac\pi6 + 0.54293$, taken near $x = 0.094$, and
-$\frac{353}{648} \approx 0.54475$. The parabola gives away about 0.0018, and
-Lemma A.17 has a little more to spare:
-$\frac\pi3 - \frac12 - \frac{353}{648} \approx 0.0024$.
+The square root is concave, and the right side is its tangent at $c^2$. The
+estimates use it to replace the length of a force, the square root of an
+affine function of one sine, by an affine function of that sine; the point
+$c^2$ is chosen near the squared length that matters.
 
-### Lemma A.17 (the near edge)
+![Left: a first harmonic H(x) = 0.6 cos x + 0.8 sin x on minus pi to pi, concave and drawn in blue where it is nonnegative, convex and grey where it is negative, with a dashed chord below the blue arc. Right: the square root of y and its tangent line at y = c squared = 0.16, which lies above it and touches it there](figures/appendix-a/tools.svg)
 
-Let $(a, u)$ be an admissible state. Then
-$\ell(a, u) + \frac12 < \arccos(a - \frac12)$.
+*Figure A.6.* Left, Lemma A.11: the first harmonic
+$H(x) = 0.6\cos x + 0.8\sin x$ is concave where it is nonnegative (blue), so
+there it lies above its chords (dashed), and convex where it is negative
+(grey). Right, Lemma A.14: the square root (blue) lies below its tangent
+$\frac{y + c^2}{2c}$ at $c^2$ (dashed), here for $c = \frac25$, the tangent
+that §B.5 uses for the length of a force.
 
-*Proof.* Put $x = a - \frac12$. Since $\frac12 \le a < \frac54$,
-$0 \le x < \frac34$.
+### Lemma A.15 (small angles)
 
-1. *The disk bounds $u$.* We have
-   $\varphi(a, u) = (x + 1)^2 + (u + \frac12)^2 \le \frac{13}4$, so
-   $(u + \frac12)^2 \le \frac{13}4 - (x + 1)^2$, which is positive by
-   Lemma A.15 (1). As $u + \frac12 > 0$ and the square root is increasing,
-   $u + \frac12 \le \sqrt{13/4 - (x + 1)^2}$ (Figure A.6).
-2. *The envelope.* By (A.1) and step 1,
-   $\mathrm{side}(a, u) + \arcsin x \le E(x)$, and by Lemma A.16,
-   $\mathrm{side}(a, u) + \arcsin x \le \frac\pi6 + \frac{353}{648}$.
-3. As $\ell(a, u) \le \mathrm{side}(a, u)$ and
-   $\arccos x = \frac\pi2 - \arcsin x$,
+1. If $|t| \le r$, then $\cos t \ge 1 - \frac{r^2}2$ and $|\sin t| \le r$.
+2. $|\cos t| + |\sin t| \ge 1$ for every real $t$; so $\omega(t) \ge \frac12$
+   and $\tau(t) \ge 1$. Moreover $\omega(t) \ge \frac12(\cos t + \sin t)$, and
+   $\omega(t)$ does not change when $t$ is replaced by $-t$, $\pi + t$,
+   $\frac\pi2 + t$ or $\frac\pi2 - t$.
+3. If $0 \le t \le \frac\pi4$, then $\frac7{10} \le \cos t$ and
+   $0 \le \sin t \le \cos t$; and $\cos t + \sin t$ is nondecreasing on
+   $[0, \frac\pi4]$.
+4. If $|t| \le \pi$, then $\cos t \le 1 - \frac{t^2}5$.
 
-   ```math
-   \arccos x - \ell(a, u) - \tfrac12
-   \ge \tfrac\pi2 - \tfrac\pi6 - \tfrac{353}{648} - \tfrac12
-   = \tfrac\pi3 - \tfrac{677}{648} > 0 ,
-   ```
+*Proof.* (1) $\cos t \ge 1 - \frac{t^2}2$ and $|\sin t| \le |t|$ for every
+real $t$ (Lemma A.7). (2) $(|\cos t| + |\sin t|)^2 = 1 + 2|\cos t\sin t| \ge 1$;
+the other claims follow from $|x| \ge x$ and from the formulas for
+$\cos$ and $\sin$ of $-t$, $\pi + t$, $\frac\pi2 \pm t$, which permute
+$|\cos t|$ and $|\sin t|$. (3) The cosine decreases from 1 to $h > \frac7{10}$
+on $[0, \frac\pi4]$, and $\sin t \le \cos t$ is
+[Lemma A.6](#lemma-a6-sine-and-cosine-compared) (1); the derivative
+$\cos t - \sin t$ of $\cos t + \sin t$ is nonnegative there. (4) Both sides
+are even, so let $0 \le t \le \pi$. Then $1 - \cos t = 2\sin^2\frac t2$, and
+on $[0, \frac\pi2]$ the sine is concave (Lemma A.10 (1): its second
+derivative $-\sin$ is nonpositive there), so it lies above its chord from $0$
+to $\frac\pi2$: $\sin x \ge \frac2\pi x$. With $x = \frac t2$,
+$1 - \cos t \ge \frac{2t^2}{\pi^2} \ge \frac{t^2}5$, since
+$\pi^2 < (\frac{22}7)^2 < 10$. $\square$
 
-   because $\frac\pi3 > \frac{3.14}3 > 1.0466$ and $\frac{677}{648} < 1.0448$.
-   $\square$
+*Lean: [`small_angle`](../../SquaresInCircles/Common/Trigonometry.lean#L100),
+[`small_angle_nonneg`](../../SquaresInCircles/Common/Trigonometry.lean#L109),
+[`one_le_abs_cos_add_abs_sin`](../../SquaresInCircles/Common/Trigonometry.lean#L89),
+[`angularWidth_lower`](../../SquaresInCircles/Common/SeparatingAxes.lean#L276),
+[`angularWidth_neg`](../../SquaresInCircles/Common/SeparatingAxes.lean#L258),
+[`angularWidth_pi_add`](../../SquaresInCircles/Common/SeparatingAxes.lean#L261),
+[`angularWidth_half_pi_add`](../../SquaresInCircles/Common/SeparatingAxes.lean#L264),
+[`angularWidth_half_pi_sub`](../../SquaresInCircles/Common/SeparatingAxes.lean#L267),
+[`east_quadrant_trig`](../../SquaresInCircles/Common/Trigonometry.lean#L64),
+[`cos_add_sin_mono`](../../SquaresInCircles/Common/Trigonometry.lean#L79),
+[`cos_le_one_sub_fifth_sq`](../../SquaresInCircles/Common/Trigonometry.lean#L116).*
+
+### Lemma A.16 (half angles)
+
+Let $0 \le t \le \frac45$.
+
+1. $\frac{17}{25} \le \cos t$, $\frac{89}{100}t \le \sin t \le t$ and
+   $1 + \frac{12}{25}t \le \cos t + \sin t$.
+2. The number $\tan\frac t2 = \frac{\sin t}{1 + \cos t}$ satisfies
+   $\tan\frac t2\,(1 + \cos t) = \sin t$ and $\tan\frac t2\,\sin t = 1 - \cos t$,
+   and $\frac t2 \le \tan\frac t2 \le \frac{11}{20}t$.
+3. For every real $d$,
+   $\sin(d - t) + \tan\frac t2\,\cos(d - t) = \sin d - \tan\frac t2\,\cos d$.
+4. If $0 \le q \le t$, then $\cos q - \cos t \ge \frac{89}{200}(t^2 - q^2)$.
+
+*Proof.* (1) From $\cos t \ge 1 - \frac{t^2}2$, $\sin t \ge t - \frac{t^3}6$
+and $\sin t \le t$, with $t^2 \le \frac{16}{25}$:
+$1 - \frac{t^2}2 \ge \frac{17}{25}$, $1 - \frac{t^2}6 \ge \frac{89}{100}$, and
+$\cos t + \sin t - 1 \ge t(1 - \frac t2 - \frac{t^2}6) \ge \frac{12}{25}t$,
+since $1 - \frac25 - \frac{8}{75} > \frac{12}{25}$.
+
+(2) The identities follow from $\sin^2 t = (1 - \cos t)(1 + \cos t)$. For the
+lower bound, $F(x) = 2\sin x - x(1 + \cos x)$ has $F(0) = 0$ and
+$F'(x) = \cos x - 1 + x\sin x$, which vanishes at 0 and has the derivative
+$x\cos x \ge 0$ on $[0, \frac45]$; so $F' \ge 0$ and $F \ge 0$ there
+([Lemma A.1](#lemma-a1-monotonicity-from-the-derivative)), which is
+$\tan\frac t2 \ge \frac t2$. For the upper bound, by Lemma A.7 (2),
+
+```math
+\tfrac{11}{20}t(1 + \cos t) - \sin t \ge \tfrac{11}{20}t\left(2 - \tfrac{t^2}2\right) - t + \tfrac{t^3}6 - \tfrac{t^5}{120} = t\left(\tfrac1{10} - \tfrac{13}{120}t^2 - \tfrac{t^4}{120}\right) \ge 0 ,
+```
+
+as $\frac{13}{120}\cdot\frac{16}{25} + \frac1{120}\cdot\frac{256}{625} < \frac1{10}$.
+
+(3) Expand $\sin(d - t)$ and $\cos(d - t)$ and use the two identities of (2).
+
+(4) $x \mapsto \cos x + \frac{89}{200}x^2$ has the derivative
+$-\sin x + \frac{89}{100}x \le 0$ on $[0, \frac45]$, by (1); so it is
+nonincreasing there, and its values at $q \le t$ compare as claimed. $\square$
 
 *Lean:
-[`Seven.marker_vertical_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L437).*
+[`small_polynomial_trig`](../../SquaresInCircles/Common/Trigonometry.lean#L621),
+[`halfRatio`](../../SquaresInCircles/Common/Trigonometry.lean#L619),
+[`halfRatio_identities`](../../SquaresInCircles/Common/Trigonometry.lean#L640),
+[`halfRatio_lower`](../../SquaresInCircles/Common/Trigonometry.lean#L650),
+[`halfRatio_upper`](../../SquaresInCircles/Common/Trigonometry.lean#L680),
+[`halfRatio_shift`](../../SquaresInCircles/Common/Trigonometry.lean#L709),
+[`cosine_difference_lower`](../../SquaresInCircles/Common/Trigonometry.lean#L694).*
 
-*Proof of [Lemma 9.9](seven.md#lemma-99-the-marker-arc).* Let $(a, u)$ be admissible, write
-$\ell = \ell(a, u)$, and let $|t - \ell| \le \frac12$, so that
-$\ell - \frac12 \le t \le \ell + \frac12$. Put
-$\theta = \arccos(a - \frac12)$. Since $0 \le a - \frac12 \le 1$,
-$0 \le \theta \le \frac\pi2$ and $\cos\theta = a - \frac12$.
-
-1. *$|t| < \theta$.* By Lemma A.17, $t \le \ell + \frac12 < \theta$; and as
-   $\ell \ge 0$, $t \ge \ell - \frac12 \ge -\ell - \frac12 > -\theta$. In
-   particular $t \in (-\frac\pi2, \frac\pi2)$.
-2. *The near and the far edge.* The cosine is even and strictly decreasing on
-   $[0, \pi]$, so by step 1, $\cos t = \cos|t| > \cos\theta = a - \frac12$.
-   Also $\cos t \le 1 \le a + \frac12$. Hence $|\cos t - a| \le \frac12$.
-3. *The lower edge.* By Lemma A.11,
-   $\arcsin(u - \frac12) < \ell - \frac12 \le t$. Both
-   $\arcsin(u - \frac12)$ and $t$ lie in $[-\frac\pi2, \frac\pi2]$, where the
-   sine is strictly increasing, and $-1 \le u - \frac12 \le 1$, so
-   $u - \frac12 = \sin\left(\arcsin(u - \frac12)\right) < \sin t$.
-4. *The upper edge.* If $u > \frac12$, then $\sin t \le 1 < u + \frac12$. If
-   $u \le \frac12$, Lemma A.12 gives
-   $t \le \ell + \frac12 < \arcsin(u + \frac12)$; as in step 3, both
-   sides lie in $[-\frac\pi2, \frac\pi2]$ and $\frac12 \le u + \frac12 \le 1$,
-   so $\sin t < u + \frac12$. With step 3, $|\sin t - u| \le \frac12$.
-   $\square$
-
-*Lean: [`Seven.marker_arc`](../../SquaresInCircles/Seven/Exterior.lean#L486).*

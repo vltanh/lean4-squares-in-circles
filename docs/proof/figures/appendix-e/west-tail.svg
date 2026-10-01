@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="502" height="490" viewBox="0 0 502 490" role="img" aria-label="C, W, S and D at the edge of the west tail: W and S touch C along their own axes and the circle of radius R0 with their far vertices, D touches W and S along their secondary axes, and the far vertex of D lies outside the circle; arrows show the forces of the stress">
+<title>C, W, S and D at the edge of the west tail: W and S touch C along their own axes and the circle of radius R0 with their far vertices, D touches W and S along their secondary axes, and the far vertex of D lies outside the circle; arrows show the forces of the stress</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<circle cx="254.0" cy="236.3" r="199.2" fill="none" stroke="#9ca3af" stroke-width="1.3"/>
+<polygon points="208.3,295.3 326.3,295.3 326.3,177.3 208.3,177.3" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.6" fill-opacity="1"/>
+<polygon points="225.9,139.9 119.2,89.6 68.9,196.3 175.7,246.6" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.6" fill-opacity="1"/>
+<polygon points="223.5,300.4 229.4,418.3 347.2,412.4 341.3,294.5" fill="#fce7f3" stroke="#db2777" stroke-width="1.6" fill-opacity="1"/>
+<polygon points="140.7,230.1 57.2,313.6 140.7,397.0 224.1,313.6" fill="#cffafe" stroke="#0891b2" stroke-width="1.6" fill-opacity="1"/>
+<polygon points="66.6,304.2 66.4,304.4 66.2,304.6 66.0,304.8 65.8,305.0 65.6,305.2 65.4,305.4 65.2,305.6 65.0,305.9 64.7,306.1 64.5,306.3 64.3,306.5 64.1,306.7 63.9,306.9 63.7,307.1 63.5,307.3 63.3,307.5 63.1,307.7 62.9,307.9 62.7,308.1 62.5,308.4 62.2,308.6 62.0,308.8 61.8,309.0 61.6,309.2 61.4,309.4 61.2,309.6 61.0,309.8 60.8,310.0 60.6,310.2 60.4,310.4 60.2,310.6 60.0,310.9 59.7,311.1 59.5,311.3 59.3,311.5 59.1,311.7 58.9,311.9 58.7,312.1 58.5,312.3 58.3,312.5 58.1,312.7 57.9,312.9 57.7,313.2 57.4,313.4 57.2,313.6 57.4,313.8 57.7,314.0 57.9,314.2 58.1,314.4 58.3,314.6 58.5,314.8 58.7,315.0 58.9,315.2 59.1,315.4 59.3,315.7 59.5,315.9 59.7,316.1 60.0,316.3 60.2,316.5 60.4,316.7 60.6,316.9 60.8,317.1 61.0,317.3 61.2,317.5 61.4,317.7 61.6,318.0 61.8,318.2 62.0,318.4 62.2,318.6 62.5,318.8 62.7,319.0 62.9,319.2 63.1,319.4 63.3,319.6 63.5,319.8 63.7,320.0 63.9,320.2 64.1,320.5 64.3,320.7 64.5,320.9 64.7,321.1 65.0,321.3 65.2,321.5 65.4,321.7 65.6,321.9 65.8,322.1 66.0,322.3 66.2,322.5 66.4,322.7 66.6,323.0 66.8,323.2 67.0,323.4 67.3,323.6 67.5,323.8 67.7,324.0 67.9,324.2 68.1,324.4 68.3,324.6 68.5,324.8 68.7,325.0 68.9,325.3 69.1,325.5 69.3,325.7 69.5,325.9 69.8,326.1 70.0,326.3 70.2,326.5 70.4,326.7 70.6,326.9 70.8,327.1 71.0,327.3 71.2,327.5 71.4,327.8 71.6,328.0 71.8,328.2 72.0,328.4 72.3,328.6 72.5,328.8 72.7,329.0 72.9,329.2 73.1,329.4 73.3,329.6 73.5,329.8 73.7,330.0 73.9,330.3 74.1,330.5 74.3,330.7 74.6,330.9 74.8,331.1 75.0,331.3 75.2,331.5 75.4,331.7 75.6,331.9 75.8,332.1 76.0,332.3 76.2,332.6 76.4,332.8 76.6,333.0 76.8,333.2 77.1,333.4 77.3,333.6 77.5,333.8 77.7,334.0 77.9,334.2 78.1,334.4 78.3,334.6 78.5,334.8 78.7,335.1 78.9,335.3 79.1,335.5 79.3,335.7 79.6,335.9 79.8,336.1 80.0,336.3 80.2,336.5 80.4,336.7 80.6,336.9 80.8,337.1 81.0,337.3 81.2,337.6 81.4,337.8 81.6,338.0 81.9,338.2 82.1,338.4 82.3,338.6 82.5,338.8 82.7,339.0 82.9,339.2 83.1,339.4 83.3,339.6 83.5,339.9 83.7,340.1 83.9,340.3 84.1,340.5 84.2,340.5 83.5,339.3 82.8,338.2 82.1,337.0 81.4,335.8 80.7,334.7 80.1,333.5 79.4,332.3 78.8,331.2 78.1,330.0 77.5,328.8 76.9,327.6 76.3,326.4 75.7,325.2 75.1,324.0 74.5,322.8 73.9,321.6 73.3,320.3 72.8,319.1 72.2,317.9 71.7,316.7 71.1,315.4 70.6,314.2 70.1,312.9 69.6,311.7 69.1,310.5 68.6,309.2 68.1,307.9 67.6,306.7 67.1,305.4 66.7,304.2" fill="#dc2626" stroke="none" stroke-width="0" fill-opacity="0.45"/>
+<line x1="232.0" y1="127.0" x2="169.7" y2="259.4" stroke="#1f2937" stroke-width="1.3" stroke-dasharray="6 4"/>
+<line x1="188.5" y1="252.6" x2="56.1" y2="190.3" stroke="#1f2937" stroke-width="1.3" stroke-dasharray="6 4"/>
+<line x1="222.8" y1="286.3" x2="230.1" y2="432.4" stroke="#1f2937" stroke-width="1.3" stroke-dasharray="6 4"/>
+<line x1="209.3" y1="301.2" x2="355.5" y2="293.8" stroke="#1f2937" stroke-width="1.3" stroke-dasharray="6 4"/>
+<line x1="267.3" y1="236.3" x2="325.1" y2="239.7" stroke="#1f2937" stroke-width="1.6"/>
+<path d="M 331.4 240.0 L 322.2 243.3 L 322.7 235.7 z" fill="#1f2937"/>
+<circle cx="267.3" cy="236.3" r="2.6" fill="#1f2937"/>
+<line x1="147.4" y1="168.1" x2="96.2" y2="121.1" stroke="#1f2937" stroke-width="1.6"/>
+<path d="M 91.6 116.8 L 100.8 120.1 L 95.7 125.7 z" fill="#1f2937"/>
+<circle cx="147.4" cy="168.1" r="2.6" fill="#1f2937"/>
+<line x1="140.7" y1="313.6" x2="122.1" y2="330.5" stroke="#1f2937" stroke-width="1.6"/>
+<path d="M 117.5 334.7 L 121.6 325.9 L 126.7 331.4 z" fill="#1f2937"/>
+<circle cx="140.7" cy="313.6" r="2.6" fill="#1f2937"/>
+<line x1="285.3" y1="356.4" x2="297.1" y2="377.4" stroke="#1f2937" stroke-width="1.6"/>
+<path d="M 300.2 382.9 L 292.5 376.9 L 299.1 373.2 z" fill="#1f2937"/>
+<circle cx="285.3" cy="356.4" r="2.6" fill="#1f2937"/>
+<circle cx="254.0" cy="236.3" r="2.4" fill="#9ca3af"/>
+<text x="248.1" y="222.1" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle" font-style="italic">o</text>
+<circle cx="57.2" cy="313.6" r="4" fill="#dc2626"/>
+<text x="45.4" y="333.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#dc2626" text-anchor="middle" dominant-baseline="middle">1.79</text>
+<text x="296.8" y="200.9" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">C</text>
+<text x="133.3" y="135.1" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#9333ea" text-anchor="middle" dominant-baseline="middle" font-style="italic">W</text>
+<text x="320.7" y="377.7" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#db2777" text-anchor="middle" dominant-baseline="middle" font-style="italic">S</text>
+<text x="102.9" y="307.7" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#0891b2" text-anchor="middle" dominant-baseline="middle" font-style="italic">D</text>
+<text x="403.9" y="66.4" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle" font-style="italic">R<tspan dy="4.5" font-size="10.2">0</tspan></text>
+<text x="23.9" y="458.1" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">v = 11/25,  s = 1/20,  d = π/4</text>
+</svg>

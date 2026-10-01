@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="330" viewBox="0 0 860 330" role="img" aria-label="Two panels in the plane of the angles. (a) d from 1/2 to pi over 4 against w in its window from minus 2/3 to 5/8: the wall w = d minus pi over 4 runs from about (1/2, -0.29) to the model point (pi over 4, 0); W and D can be separated along the secondary axis of D only below it, in the shaded region. (b) The same for s, with the wall s = d minus pi over 4: D and S can be separated along the secondary axis of D only above it">
+<title>Two panels in the plane of the angles. (a) d from 1/2 to pi over 4 against w in its window from minus 2/3 to 5/8: the wall w = d minus pi over 4 runs from about (1/2, -0.29) to the model point (pi over 4, 0); W and D can be separated along the secondary axis of D only below it, in the shaded region. (b) The same for s, with the wall s = d minus pi over 4: D and S can be separated along the secondary axis of D only above it</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<polygon points="111.0,273.1 353.6,273.1 353.6,42.9 111.0,42.9" fill="none" stroke="#9ca3af" stroke-width="1" fill-opacity="1" stroke-dasharray="4 4"/>
+<polygon points="111.0,273.1 353.6,273.1 353.6,154.3 111.0,205.2" fill="#f3e8ff" stroke="none" stroke-width="1.5" fill-opacity="0.8"/>
+<line x1="111.0" y1="205.2" x2="353.6" y2="154.3" stroke="#9333ea" stroke-width="2.2"/>
+<circle cx="353.6" cy="154.3" r="4" fill="#1f2937"/>
+<text x="345.6" y="142.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">model</text>
+<line x1="60.0" y1="288.0" x2="400.0" y2="288.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="60.0" y1="288.0" x2="60.0" y2="26.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="111.0" y1="291.0" x2="111.0" y2="285.0" stroke="#1f2937" stroke-width="1"/>
+<text x="111.0" y="302.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">1/2</text>
+<line x1="353.6" y1="291.0" x2="353.6" y2="285.0" stroke="#1f2937" stroke-width="1"/>
+<text x="353.6" y="302.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π/4</text>
+<line x1="57.0" y1="273.1" x2="63.0" y2="273.1" stroke="#1f2937" stroke-width="1"/>
+<text x="54.0" y="273.1" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">−2/3</text>
+<line x1="57.0" y1="154.3" x2="63.0" y2="154.3" stroke="#1f2937" stroke-width="1"/>
+<text x="54.0" y="154.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0</text>
+<line x1="57.0" y1="42.9" x2="63.0" y2="42.9" stroke="#1f2937" stroke-width="1"/>
+<text x="54.0" y="42.9" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">5/8</text>
+<text x="400.0" y="278.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">d</text>
+<text x="68.0" y="30.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">w</text>
+<line x1="111.0" y1="154.3" x2="353.6" y2="154.3" stroke="#9ca3af" stroke-width="1" stroke-dasharray="2 4"/>
+<text x="179.0" y="166.9" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#9333ea" text-anchor="start" dominant-baseline="middle">w = d − π/4</text>
+<text x="366.0" y="38.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">(a)</text>
+<polygon points="541.0,271.1 783.6,271.1 783.6,40.9 541.0,40.9" fill="none" stroke="#9ca3af" stroke-width="1" fill-opacity="1" stroke-dasharray="4 4"/>
+<polygon points="541.0,210.5 783.6,159.7 783.6,40.9 541.0,40.9" fill="#f3e8ff" stroke="none" stroke-width="1.5" fill-opacity="0.8"/>
+<line x1="541.0" y1="210.5" x2="783.6" y2="159.7" stroke="#9333ea" stroke-width="2.2"/>
+<circle cx="783.6" cy="159.7" r="4" fill="#1f2937"/>
+<text x="775.6" y="147.7" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">model</text>
+<line x1="490.0" y1="288.0" x2="830.0" y2="288.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="490.0" y1="288.0" x2="490.0" y2="26.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="541.0" y1="291.0" x2="541.0" y2="285.0" stroke="#1f2937" stroke-width="1"/>
+<text x="541.0" y="302.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">1/2</text>
+<line x1="783.6" y1="291.0" x2="783.6" y2="285.0" stroke="#1f2937" stroke-width="1"/>
+<text x="783.6" y="302.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π/4</text>
+<line x1="487.0" y1="271.1" x2="493.0" y2="271.1" stroke="#1f2937" stroke-width="1"/>
+<text x="484.0" y="271.1" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">−5/8</text>
+<line x1="487.0" y1="159.7" x2="493.0" y2="159.7" stroke="#1f2937" stroke-width="1"/>
+<text x="484.0" y="159.7" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0</text>
+<line x1="487.0" y1="40.9" x2="493.0" y2="40.9" stroke="#1f2937" stroke-width="1"/>
+<text x="484.0" y="40.9" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">2/3</text>
+<text x="830.0" y="278.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">d</text>
+<text x="498.0" y="30.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">s</text>
+<line x1="541.0" y1="159.7" x2="783.6" y2="159.7" stroke="#9ca3af" stroke-width="1" stroke-dasharray="2 4"/>
+<text x="609.0" y="220.3" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#9333ea" text-anchor="start" dominant-baseline="middle">s = d − π/4</text>
+<text x="796.0" y="38.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">(b)</text>
+</svg>

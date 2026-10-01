@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Draw the figures of Chapter 5, two squares, as SVG files in
-docs/proof/figures/ (prefix two-).
+docs/proof/figures/05-two/.
 
     python3 scripts/figures/fig_two.py
 
@@ -63,7 +63,7 @@ def corners():
                sb('c', name), color=color)
     f.dot((0, 0))
     f.text((-0.05, -0.08), 'o', anchor='end')
-    f.save('two-corners', 'The rectangle of two unit squares centred at '
+    f.save('05-two/corners', 'The rectangle of two unit squares centred at '
            'minus one half and one half on the x-axis, inside the dashed '
            'circle of radius R2 about o; the right triangle with legs 1 and '
            'one half joins o to the corner (1, 1/2), which lies on the circle')
@@ -104,7 +104,7 @@ def near():
     f.dot(o)
     f.text((-0.04, 0.07), 'o', anchor='end')
     f.text(frame_point(c, t, 0.26, -0.24), 'S', size=17, color=BLUE)
-    f.save('two-near', 'A unit square inside the dashed circle of radius R2 '
+    f.save('05-two/near', 'A unit square inside the dashed circle of radius R2 '
            'about o, with its farthest vertex on that circle; its centre lies '
            'inside the circle of radius one half about o')
 
@@ -135,7 +135,7 @@ def ab_plane():
     f.text((0.17, 0.15), 'φ ≤ 5/4', size=16, color=BLUE)
     f.text((0.45, 0.37), 'a² + b² = ¼', size=14, color=ORANGE,
            anchor='start')
-    f.save('two-ab-plane', 'The (a, b)-plane where a and b are at least 0: '
+    f.save('05-two/ab-plane', 'The (a, b)-plane where a and b are at least 0: '
            'the part of the disk where phi is at most 5/4 lies inside the '
            'dashed quarter circle of radius one half and meets it only at '
            '(1/2, 0) and (0, 1/2)')
@@ -179,7 +179,7 @@ def edge_midpoint():
         f.dot(o)
         f.text(shift(o, (-0.05, -0.08)), 'o', anchor='end')
         f.text((o[0], -1.33), label, size=14, italic=False)
-    f.save('two-edge-midpoint', 'Two unit squares with centres at distance '
+    f.save('05-two/edge-midpoint', 'Two unit squares with centres at distance '
            'one half from o. Left: o is the midpoint of an edge, and the two '
            'far corners lie on the dashed circle of radius R2. Right: the '
            'centre is off the axes seen from o, and the farthest vertex lies '
@@ -220,7 +220,7 @@ def half_circle():
     f.text((0.78, 0.3), 'S', size=17, color=BLUE)
     f.text(shift((0, 0), u(rad(215)), 0.64), sb('Γ', '1/2', size=16),
            size=16)
-    f.save('two-half-circle', 'A square with (a, b) = (1/2, 0) in its chart: '
+    f.save('05-two/half-circle', 'A square with (a, b) = (1/2, 0) in its chart: '
            'o is the midpoint of its near edge, and the half of the circle of '
            'radius one half about o on the side of the square, from chart '
            'angle minus pi/2 to pi/2, lies in the open square')
@@ -267,7 +267,7 @@ def opposite():
         f.dot(o)
         f.text(shift(o, (-0.06, -0.08)), 'o', anchor='end')
         f.text((o[0], -1.33), label, size=14, italic=False)
-    f.save('two-opposite', 'The half circles held by two squares on the '
+    f.save('05-two/opposite', 'The half circles held by two squares on the '
            'circle of radius one half about o. Left: their centres are less '
            'than pi apart, the half circles share a point p, and the squares '
            'overlap. Right: the centres are opposite, and the squares form '
@@ -305,7 +305,7 @@ def frame():
     f.text((0.03, 0.1), 'o', anchor='start')
     f.text(frame_point(cs, th, 0.2, 0.25), 'S', size=17, color=BLUE)
     f.text(frame_point(ct, th, -0.2, -0.25), 'T', size=17, color=GREEN)
-    f.save('two-frame', 'The two squares in the frame at o turned by theta '
+    f.save('05-two/frame', 'The two squares in the frame at o turned by theta '
            'S (solid axes), where S sits at (1/2, 0) and T at (-1/2, 0); in '
            'the opposite frame, turned by theta S plus pi (dashed axes), T '
            'sits at (1/2, 0)')

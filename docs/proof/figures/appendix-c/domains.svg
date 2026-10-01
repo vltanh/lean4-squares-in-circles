@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="330" viewBox="0 0 900 330" role="img" aria-label="Two panels in the plane of the angles w and d, each with the window of the angles (dashed) and the band d above 1/2 shaded. (a) The rectangle of the stress with W on its own axis, w from minus 2/3 to 0 and d from 0 to 1/2; (b) the domain of the stress with W on the west side, w from minus 2/5 to 2/5, d from 0 to 1/2 and w at most d, split at w = 0. At each vertex the lower bounds of the slack for the two separators of W and D are written, the first for the secondary axis of W and the second for that of D">
+<title>Two panels in the plane of the angles w and d, each with the window of the angles (dashed) and the band d above 1/2 shaded. (a) The rectangle of the stress with W on its own axis, w from minus 2/3 to 0 and d from 0 to 1/2; (b) the domain of the stress with W on the west side, w from minus 2/5 to 2/5, d from 0 to 1/2 and w at most d, split at w = 0. At each vertex the lower bounds of the slack for the two separators of W and D are written, the first for the secondary axis of W and the second for that of D</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<polygon points="78.7,272.4 405.9,272.4 405.9,68.0 78.7,68.0" fill="none" stroke="#9ca3af" stroke-width="1" fill-opacity="1" stroke-dasharray="4 4"/>
+<polygon points="78.7,142.3 405.9,142.3 405.9,68.0 78.7,68.0" fill="#dcfce7" stroke="none" stroke-width="1.5" fill-opacity="0.45"/>
+<polygon points="78.7,272.4 247.6,272.4 247.6,142.3 78.7,142.3" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6" fill-opacity="1"/>
+<line x1="78.7" y1="142.3" x2="405.9" y2="142.3" stroke="#1f2937" stroke-width="1" stroke-dasharray="5 4"/>
+<line x1="50.0" y1="288.0" x2="430.0" y2="288.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="50.0" y1="288.0" x2="50.0" y2="33.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="78.7" y1="291.0" x2="78.7" y2="285.0" stroke="#1f2937" stroke-width="1"/>
+<text x="78.7" y="302.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">−2/3</text>
+<line x1="146.3" y1="291.0" x2="146.3" y2="285.0" stroke="#1f2937" stroke-width="1"/>
+<text x="146.3" y="302.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">−2/5</text>
+<line x1="247.6" y1="291.0" x2="247.6" y2="285.0" stroke="#1f2937" stroke-width="1"/>
+<text x="247.6" y="302.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">0</text>
+<line x1="348.9" y1="291.0" x2="348.9" y2="285.0" stroke="#1f2937" stroke-width="1"/>
+<text x="348.9" y="302.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">2/5</text>
+<line x1="405.9" y1="291.0" x2="405.9" y2="285.0" stroke="#1f2937" stroke-width="1"/>
+<text x="405.9" y="302.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">5/8</text>
+<line x1="47.0" y1="272.4" x2="53.0" y2="272.4" stroke="#1f2937" stroke-width="1"/>
+<text x="44.0" y="272.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0</text>
+<line x1="47.0" y1="142.3" x2="53.0" y2="142.3" stroke="#1f2937" stroke-width="1"/>
+<text x="44.0" y="142.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">1/2</text>
+<line x1="47.0" y1="68.0" x2="53.0" y2="68.0" stroke="#1f2937" stroke-width="1"/>
+<text x="44.0" y="68.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">π/4</text>
+<text x="430.0" y="278.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">w</text>
+<text x="58.0" y="37.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">d</text>
+<circle cx="247.6" cy="272.4" r="3.4" fill="#ea580c"/>
+<text x="255.6" y="244.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle">0.0127</text>
+<text x="255.6" y="258.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#9333ea" text-anchor="start" dominant-baseline="middle">0.0039</text>
+<circle cx="247.6" cy="142.3" r="3.4" fill="#ea580c"/>
+<text x="255.6" y="114.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle">0.0022</text>
+<text x="255.6" y="128.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#9333ea" text-anchor="start" dominant-baseline="middle">0.0016</text>
+<circle cx="78.7" cy="272.4" r="3.4" fill="#ea580c"/>
+<text x="70.7" y="244.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="end" dominant-baseline="middle">0.0338</text>
+<text x="70.7" y="258.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#9333ea" text-anchor="end" dominant-baseline="middle">0.0019</text>
+<circle cx="78.7" cy="142.3" r="3.4" fill="#ea580c"/>
+<text x="70.7" y="114.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="end" dominant-baseline="middle">0.0027</text>
+<text x="70.7" y="128.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#9333ea" text-anchor="end" dominant-baseline="middle">0.0031</text>
+<text x="82.7" y="96.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">(a) W on its own axis</text>
+<polygon points="528.7,272.4 855.9,272.4 855.9,68.0 528.7,68.0" fill="none" stroke="#9ca3af" stroke-width="1" fill-opacity="1" stroke-dasharray="4 4"/>
+<polygon points="528.7,142.3 855.9,142.3 855.9,68.0 528.7,68.0" fill="#dcfce7" stroke="none" stroke-width="1.5" fill-opacity="0.45"/>
+<polygon points="596.3,272.4 697.6,272.4 798.9,168.3 798.9,142.3 596.3,142.3" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6" fill-opacity="1"/>
+<line x1="697.6" y1="272.4" x2="697.6" y2="142.3" stroke="#ea580c" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="528.7" y1="142.3" x2="855.9" y2="142.3" stroke="#1f2937" stroke-width="1" stroke-dasharray="5 4"/>
+<line x1="500.0" y1="288.0" x2="880.0" y2="288.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="500.0" y1="288.0" x2="500.0" y2="33.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="528.7" y1="291.0" x2="528.7" y2="285.0" stroke="#1f2937" stroke-width="1"/>
+<text x="528.7" y="302.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">−2/3</text>
+<line x1="596.3" y1="291.0" x2="596.3" y2="285.0" stroke="#1f2937" stroke-width="1"/>
+<text x="596.3" y="302.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">−2/5</text>
+<line x1="697.6" y1="291.0" x2="697.6" y2="285.0" stroke="#1f2937" stroke-width="1"/>
+<text x="697.6" y="302.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">0</text>
+<line x1="798.9" y1="291.0" x2="798.9" y2="285.0" stroke="#1f2937" stroke-width="1"/>
+<text x="798.9" y="302.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">2/5</text>
+<line x1="855.9" y1="291.0" x2="855.9" y2="285.0" stroke="#1f2937" stroke-width="1"/>
+<text x="855.9" y="302.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">5/8</text>
+<line x1="497.0" y1="272.4" x2="503.0" y2="272.4" stroke="#1f2937" stroke-width="1"/>
+<text x="494.0" y="272.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0</text>
+<line x1="497.0" y1="142.3" x2="503.0" y2="142.3" stroke="#1f2937" stroke-width="1"/>
+<text x="494.0" y="142.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">1/2</text>
+<line x1="497.0" y1="68.0" x2="503.0" y2="68.0" stroke="#1f2937" stroke-width="1"/>
+<text x="494.0" y="68.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">π/4</text>
+<text x="880.0" y="278.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">w</text>
+<text x="508.0" y="37.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">d</text>
+<circle cx="596.3" cy="272.4" r="3.4" fill="#ea580c"/>
+<text x="588.3" y="244.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="end" dominant-baseline="middle">0.0766</text>
+<text x="588.3" y="258.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#9333ea" text-anchor="end" dominant-baseline="middle">0.0655</text>
+<circle cx="596.3" cy="142.3" r="3.4" fill="#ea580c"/>
+<text x="588.3" y="114.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="end" dominant-baseline="middle">0.0322</text>
+<text x="588.3" y="128.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#9333ea" text-anchor="end" dominant-baseline="middle">0.0046</text>
+<circle cx="697.6" cy="272.4" r="3.4" fill="#ea580c"/>
+<text x="689.6" y="244.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="end" dominant-baseline="middle">0.0087</text>
+<text x="689.6" y="258.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#9333ea" text-anchor="end" dominant-baseline="middle">0.0053</text>
+<circle cx="697.6" cy="142.3" r="3.4" fill="#ea580c"/>
+<text x="697.6" y="114.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle">0.0046</text>
+<text x="697.6" y="128.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#9333ea" text-anchor="middle" dominant-baseline="middle">0.0154</text>
+<circle cx="798.9" cy="168.3" r="3.4" fill="#ea580c"/>
+<text x="806.9" y="162.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle">0.0379</text>
+<text x="806.9" y="176.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#9333ea" text-anchor="start" dominant-baseline="middle">0.0318</text>
+<circle cx="798.9" cy="142.3" r="3.4" fill="#ea580c"/>
+<text x="806.9" y="114.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle">0.0384</text>
+<text x="806.9" y="128.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#9333ea" text-anchor="start" dominant-baseline="middle">0.0377</text>
+<text x="532.7" y="96.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">(b) W on the west side</text>
+</svg>

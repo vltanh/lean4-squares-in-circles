@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="533" height="564" viewBox="0 0 533 564" role="img" aria-label="The containing square C, grey, the square W, orange, turned by -0.3 from the west and separated from C along its own axis, and the square D, blue, turned by 0.1 and separated from C along the west side of C and from W along the secondary axis of W; the three separating lines are dashed and labelled with their weights 9/20, 3/10 and 1/4. Thick arrows are the forces F_C, F_W and F_D of the west stress. With every separation tight and W moved to the best place, two vertices, marked, still lie outside the circle of radius R0; the dashed circle through the farthest has radius about 1.80">
+<title>The containing square C, grey, the square W, orange, turned by -0.3 from the west and separated from C along its own axis, and the square D, blue, turned by 0.1 and separated from C along the west side of C and from W along the secondary axis of W; the three separating lines are dashed and labelled with their weights 9/20, 3/10 and 1/4. Thick arrows are the forces F_C, F_W and F_D of the west stress. With every separation tight and W moved to the best place, two vertices, marked, still lie outside the circle of radius R0; the dashed circle through the farthest has radius about 1.80</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<circle cx="364.5" cy="284.0" r="295.5" fill="none" stroke="#1f2937" stroke-width="1.4"/>
+<circle cx="364.5" cy="284.0" r="315.2" fill="none" stroke="#1f2937" stroke-width="1" stroke-dasharray="3 4"/>
+<polygon points="286.9,361.6 461.9,361.6 461.9,186.6 286.9,186.6" fill="#e5e7eb" stroke="#1f2937" stroke-width="1.3" fill-opacity="1"/>
+<polygon points="310.1,111.5 142.9,59.8 91.2,226.9 258.4,278.7" fill="#ffedd5" stroke="#ea580c" stroke-width="1.8" fill-opacity="0.9"/>
+<polygon points="269.4,282.1 95.3,299.5 112.7,473.7 286.9,456.2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8" fill-opacity="0.9"/>
+<line x1="339.0" y1="18.0" x2="175.6" y2="546.5" stroke="#1f2937" stroke-width="1.3" stroke-dasharray="7 4"/>
+<text x="338.2" y="39.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">9/20</text>
+<line x1="286.9" y1="18.0" x2="286.9" y2="546.5" stroke="#1f2937" stroke-width="1.3" stroke-dasharray="7 4"/>
+<text x="292.1" y="532.5" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">3/10</text>
+<line x1="18.0" y1="204.3" x2="515.0" y2="358.0" stroke="#1f2937" stroke-width="1.3" stroke-dasharray="7 4"/>
+<text x="26.8" y="236.8" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">1/4</text>
+<circle cx="374.4" cy="274.1" r="3" fill="#1f2937"/>
+<line x1="374.4" y1="274.1" x2="489.3" y2="295.1" stroke="#1f2937" stroke-width="2.6" marker-end="url(#arrow)"/>
+<text x="521.3" y="300.9" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">F<tspan dy="4.5" font-size="10.2">C</tspan></text>
+<circle cx="200.7" cy="169.2" r="3" fill="#ea580c"/>
+<line x1="200.7" y1="169.2" x2="144.6" y2="110.6" stroke="#ea580c" stroke-width="2.6" marker-end="url(#arrow)"/>
+<text x="129.0" y="94.4" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">F<tspan dy="4.5" font-size="10.2">W</tspan></text>
+<circle cx="191.1" cy="377.9" r="3" fill="#2563eb"/>
+<line x1="191.1" y1="377.9" x2="132.2" y2="415.5" stroke="#2563eb" stroke-width="2.6" marker-end="url(#arrow)"/>
+<text x="115.8" y="425.9" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">F<tspan dy="4.5" font-size="10.2">D</tspan></text>
+<circle cx="142.9" cy="59.8" r="3.6" fill="#db2777"/>
+<circle cx="112.7" cy="473.7" r="3.6" fill="#db2777"/>
+<text x="239.2" y="207.7" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">W</text>
+<text x="234.8" y="416.4" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">D</text>
+<text x="426.9" y="221.6" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">C</text>
+<text x="473.0" y="42.5" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">R<tspan dy="4.2" font-size="9.5">0</tspan></text>
+</svg>
