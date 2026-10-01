@@ -64,10 +64,8 @@ example : ((17:ℝ)/30)^2 < (3+11/5)/16 := by norm_num
 example : (6:ℝ)/5*(237/1000)+(54/125)*(237/1000)^3 < 314/1000 := by norm_num
 example : (6:ℝ)/5*(237/1000)+(54/125)*(23/60)^3 < 314/1000 := by norm_num
 example : (6:ℝ)/5*(1-2*(23/60))+(54/125)*(23/60)^3 < 314/1000 := by norm_num
-example : (2:ℝ)/3 < Real.sqrt 2/2 := by
-  have hs := Real.sq_sqrt (show (0:ℝ) ≤ 2 by norm_num)
-  nlinarith [Real.sqrt_nonneg 2]
-example : ((5:ℝ)/6+1/2)^2+(1/2)^2 > 2 := by norm_num
+example : (3-(1:ℝ)/2)/4 = 5/8 := by norm_num
+example : ((5:ℝ)/8)^2 < 1/2 := by norm_num
 
 -- Seven squares: the outer corners, the side state and its label, the margin
 -- of the marker arc at the near edge (`π/3 > 157/150`), and the polynomial of

@@ -27,10 +27,11 @@ lemma exterior_arc {S : UnitSquare} {o : Point} (C : SquareChart S o)
       (C.a+C.b < 1 → Real.pi/4 < A.halfWidth) := by
   have ha := C.exterior hsort hout
   have hsum := (diamond hφ).1
-  have ha' : C.a < 5/6 := by
-    unfold phi at hφ
-    nlinarith [sq_nonneg C.b,C.nonneg.2]
-  obtain ⟨W,hW,-⟩ := C.cap_arc (r := 1/2) (by norm_num) le_rfl ha (by linarith) (by linarith)
+  -- `(a+1/2)² ≤ 7/4`, so `(2a-1)² < 1/2`
+  have hx : (2*C.a-1)^2 < 1/2 := by
+    have h : (C.a+1/2)^2 ≤ 7/4 := by unfold phi at hφ; nlinarith [C.nonneg.2]
+    nlinarith
+  obtain ⟨W,hW,-⟩ := C.cap_arc (r := 1/2) (by norm_num) le_rfl ha (by nlinarith) (by linarith)
   have hA : Real.pi/4 < capA (1/2) C.a := by
     refine lt_of_not_ge fun h => ?_
     have h' := Real.arccos_le_pi_div_four.mp h

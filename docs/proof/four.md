@@ -178,13 +178,20 @@ a quarter circle.
 1. *Bounds on $a_S$ and $b_S$.* As $S$ is exterior, $a_S \ge \frac12$
    ([Lemma 3.21](common.md#lemma-321-charts) (1)). By Lemma 7.4,
    $a_S + b_S \le 1$, so $b_S \le 1 - a_S \le \frac12$. Moreover
-   $a_S < \frac56$: otherwise, as $b_S \ge 0$,
+   $x = 2a_S - 1 \ge 0$ has $x^2 < \frac12$. Indeed, as $b_S \ge 0$,
+   (7.1) gives
+   $(a_S + \frac12)^2 \le 2 - (b_S + \frac12)^2 \le 2 - \frac14 = \frac74$,
+   and $a_S + \frac12 = \frac{x + 2}2$, so $(x + 2)^2 \le 7$, that is
 
    ```math
-   \varphi(a_S, b_S) \ge \left(\tfrac56 + \tfrac12\right)^2 + \left(0 + \tfrac12\right)^2 = \tfrac{16}9 + \tfrac14 = \tfrac{73}{36} > 2 .
+   x^2 + 4x \le 3 .
    ```
 
-2. *The cap.* Take $r = \frac12$. Since $0 \le a_S - \frac12 < \frac13 < r$,
+   If $x^2 \ge \frac12$, then $4x \le 3 - x^2 \le \frac52$, so
+   $x \le \frac58$ and $x^2 \le \frac{25}{64} < \frac12$, a contradiction.
+   In particular $x < 1$, that is $a_S < 1$.
+
+2. *The cap.* Take $r = \frac12$. Since $0 \le a_S - \frac12 < \frac12 = r$,
    the crossing angles of
    [Definition 3.23](common.md#definition-323-crossing-angles) are defined on
    $\Gamma_{1/2}$, and they are
@@ -203,10 +210,10 @@ a quarter circle.
    w = \min\left(A_S,\ \tfrac12\left(A_S + V_S\right)\right) .
    ```
 
-3. *$A_S > \frac\pi4$.* We have
-   $0 \le 2a_S - 1 < \frac23 < \frac{\sqrt2}2 = \cos\frac\pi4$, the middle
-   inequality because $\frac49 < \frac12$. The arccosine is strictly
-   decreasing on $[-1, 1]$, so $A_S > \frac\pi4$.
+3. *$A_S > \frac\pi4$.* By step 1,
+   $0 \le 2a_S - 1 < \frac{\sqrt2}2 = \cos\frac\pi4$, as
+   $(2a_S - 1)^2 < \frac12$. The arccosine is strictly decreasing on
+   $[-1, 1]$, so $A_S > \frac\pi4$.
 4. *$A_S + V_S \ge \frac\pi2$, strictly if $a_S + b_S < 1$.* As
    $\arccos z = \frac\pi2 - \arcsin z$, we have
    $\frac\pi2 - A_S = \arcsin(2a_S - 1)$. The inequality $a_S + b_S \le 1$
@@ -221,7 +228,7 @@ a quarter circle.
 
 *Remark (why the disk constraint is still needed).* The proof of
 Proposition 7.3 uses (7.1) itself, and not only the diamond, in two places:
-the bound $a_S < \frac56$ of step 1 above, and the equality case of
+the bound $(2a_S - 1)^2 < \frac12$ of step 1 above, and the equality case of
 Lemma 7.4. Neither follows from the diamond. The diamond alone allows $a_S$ up
 to 1, and the arc of $S$ can then be shorter than a quarter circle: for
 $(a_S, b_S) = (0.9, 0.05)$, which satisfies $a_S + b_S < 1$ but not (7.1), a
