@@ -135,7 +135,8 @@ lemma quarter_difference_horizontal {a u A v : ℝ} (h : Admissible a u) (h' : A
   · linarith
   · linarith [h'.u_nonneg,Real.pi_gt_d2]
 
-/-- Either separating coordinate suffices for the quarter-turn label inequality. -/
+/-- A quarter-turned pair separated along an axis of either square has signed
+labels at most `π/6` apart. -/
 theorem quarter_difference_le {a u A v : ℝ} (h : Admissible a u) (h' : Admissible A v)
     (s t : TransverseSign) (hsep : 1 ≤ a+t.coe*v ∨ 1 ≤ A-s.coe*u) :
     s.coe*label a u-t.coe*label A v ≤ Real.pi/6 := by

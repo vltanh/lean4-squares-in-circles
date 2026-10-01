@@ -364,7 +364,9 @@ lemma forward_negative_negative_small {a u A v : ℝ}
   simp only [TransverseSign.coe,neg_one_mul] at hmarker
   linarith [h.remainder_nonneg,pi_lt_22_over_7]
 
-/-- Complete remaining (-,-) sector when the source label is side-selected. -/
+/-- On the forward axis with both signs negative, the support sum is positive at
+the gap `π/3` when the first label is the side term and the second is axial or
+side. -/
 theorem fixed_gap_forward_both_negative_side {a u A v : ℝ}
     (h : Admissible a u) (h' : Admissible A v)
     (hT : label a u=side a u) (hactive : ActiveLabel A v) :

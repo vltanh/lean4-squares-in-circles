@@ -400,7 +400,9 @@ lemma opposite_side_axial_pos {a u A v : ℝ}
       have hprof := side_axial_far_profile ⟨(lt_of_not_ge hzsmall).le,hz7.le⟩
       linarith
 
-/-- Complete A/T sector, including the only possible side--side contact. -/
+/-- On the forward axis with signs `(-, +)` and axial or side labels, the support
+sum is nonnegative at the gap `π/3`, and zero only at the contact of two side
+squares. -/
 theorem fixed_gap_forward_opposite_active {a u A v : ℝ}
     (h : Admissible a u) (h' : Admissible A v)
     (ha : ActiveLabel a u) (hb : ActiveLabel A v) :

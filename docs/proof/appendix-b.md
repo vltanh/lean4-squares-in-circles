@@ -1492,7 +1492,7 @@ $h(A, tv, \pi - d) > -\frac{37}{50}$, and $a \ge \frac12$. So
 $\sigma_0(\frac\pi3) > 1 - \frac{37}{50} = \frac{13}{50}$. $\square$
 
 *Lean:
-[`Seven.fixed_gap_outward`](../../SquaresInCircles/Seven/EasySectors.lean#L17).*
+[`Seven.fixed_gap_outward`](../../SquaresInCircles/Seven/EasySectors.lean#L19).*
 
 ### Proposition B.27 (the backward axis)
 
@@ -1521,7 +1521,7 @@ $\sin(\frac\pi3 - \ell) \ge 0$ and
 $\sigma_3(\frac\pi3) \ge \frac12 + u \ge \frac12$. $\square$
 
 *Lean:
-[`Seven.fixed_gap_backward`](../../SquaresInCircles/Seven/EasySectors.lean#L25).*
+[`Seven.fixed_gap_backward`](../../SquaresInCircles/Seven/EasySectors.lean#L28).*
 
 ### Proposition B.28 (the inward axis with a negative source sign)
 
@@ -1547,7 +1547,7 @@ $a \le \sqrt3 - \frac12 < 1.233$. Hence
 $\sigma_2(\frac\pi3) > \frac12 - 1.233 + \frac79 = \frac{403}{9000}$. $\square$
 
 *Lean:
-[`Seven.fixed_gap_inward_negative`](../../SquaresInCircles/Seven/EasySectors.lean#L52).*
+[`Seven.fixed_gap_inward_negative`](../../SquaresInCircles/Seven/EasySectors.lean#L56).*
 
 ### Proposition B.29 (the forward axis with positive signs)
 
@@ -1623,7 +1623,7 @@ Recall $u \ge \frac45\ell$, because $\ell \le \mathrm{axial}(u)$.
    $\sigma_1(\frac\pi3) > 0$. $\square$
 
 *Lean:
-[`Seven.fixed_gap_forward_positive`](../../SquaresInCircles/Seven/EasySectors.lean#L72),
+[`Seven.fixed_gap_forward_positive`](../../SquaresInCircles/Seven/EasySectors.lean#L76),
 [`cos_add_sin_mono`](../../SquaresInCircles/Common/Trigonometry.lean#L78).*
 
 ## B.8 The capped labels
@@ -1692,12 +1692,12 @@ is affine and the weights are nonnegative, (2) gives
 
 and $7 - 2\pi > 0$. $\square$
 
-*Lean: [`Seven.capVertex`](../../SquaresInCircles/Seven/FixedGap.lean#L49),
-[`Seven.capVertex_admissible`](../../SquaresInCircles/Seven/FixedGap.lean#L52),
-[`Seven.capVertex_label`](../../SquaresInCircles/Seven/FixedGap.lean#L64),
-[`Seven.capVertex_active`](../../SquaresInCircles/Seven/FixedGap.lean#L70),
-[`Seven.cap_vertex_le`](../../SquaresInCircles/Seven/FixedGap.lean#L89),
-[`Seven.exists_le_weighted_sum`](../../SquaresInCircles/Seven/FixedGap.lean#L79).*
+*Lean: [`Seven.capVertex`](../../SquaresInCircles/Seven/FixedGap.lean#L51),
+[`Seven.capVertex_admissible`](../../SquaresInCircles/Seven/FixedGap.lean#L54),
+[`Seven.capVertex_label`](../../SquaresInCircles/Seven/FixedGap.lean#L66),
+[`Seven.capVertex_active`](../../SquaresInCircles/Seven/FixedGap.lean#L72),
+[`Seven.cap_vertex_le`](../../SquaresInCircles/Seven/FixedGap.lean#L91),
+[`Seven.exists_le_weighted_sum`](../../SquaresInCircles/Seven/FixedGap.lean#L81).*
 
 ![A zoom on the capped triangle in the (a, u)-plane: the orange triangle with vertices V0 on the diagonal u = a at the lower left, V1 on the line u = pi/5 to its right, and V2 on the diagonal at the top; the dashed lines u = pi/5 and 9a - 4u = 7 - pi through its edges, the purple tie line through V1, the grey half-plane u > a above the diagonal where there are no states, the words axial below the triangle and side to its right, and a capped state (a, u) inside joined to the three vertices by dashed segments](figures/appb-capped.svg)
 
@@ -1755,9 +1755,9 @@ have the gap property on every axis.
    gap property, and step 2 concludes. $\square$
 
 *Lean:
-[`Seven.fixed_gap_of_active_cases`](../../SquaresInCircles/Seven/FixedGap.lean#L142),
-[`Seven.pairProperty_cap_first`](../../SquaresInCircles/Seven/FixedGap.lean#L110),
-[`Seven.pairProperty_cap_second`](../../SquaresInCircles/Seven/FixedGap.lean#L126).*
+[`Seven.fixed_gap_of_active_cases`](../../SquaresInCircles/Seven/FixedGap.lean#L144),
+[`Seven.pairProperty_cap_first`](../../SquaresInCircles/Seven/FixedGap.lean#L112),
+[`Seven.pairProperty_cap_second`](../../SquaresInCircles/Seven/FixedGap.lean#L128).*
 
 ## B.9 Proof of Proposition 9.17
 
@@ -1789,7 +1789,7 @@ of §B.1. A positive sum gives the gap property by Lemma B.2 (4).
 Every active label is axial or side, so the cases are exhaustive. $\square$
 
 *Lean:
-[`Seven.fixed_gap_active`](../../SquaresInCircles/Seven/FixedGap.lean#L25).*
+[`Seven.fixed_gap_active`](../../SquaresInCircles/Seven/FixedGap.lean#L27).*
 
 *Proof of [Proposition 9.17](seven.md#proposition-917-the-critical-gap).* By Proposition B.32 the hypothesis of
 Proposition B.31 holds, so any two admissible states, with any signs, have the

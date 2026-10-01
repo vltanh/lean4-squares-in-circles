@@ -1152,7 +1152,7 @@ exceeds $-\frac7{10}$. The bound for a side source and an axial target is
 weakest at $w = -\frac13$, where Lemma D.15 changes its method.
 
 *Lean:
-[`Seven.fixed_gap_forward_opposite_active`](../../SquaresInCircles/Seven/OppositeForward.lean#L404).*
+[`Seven.fixed_gap_forward_opposite_active`](../../SquaresInCircles/Seven/OppositeForward.lean#L406).*
 
 ## D.4 Both signs negative
 
@@ -1531,7 +1531,7 @@ which is positive by Lemma D.24 if the label of $(A, v)$ is side, and by Lemma
 D.25 if it is axial. $\square$
 
 *Lean:
-[`Seven.fixed_gap_forward_both_negative_side`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L368).*
+[`Seven.fixed_gap_forward_both_negative_side`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L370).*
 
 Together with the sector $(1, 1)$ of Appendix B, Propositions D.7, D.16 and D.26
 give the pair property on the forward axis for all active labels: for the signs

@@ -15,8 +15,8 @@ noncomputable section
 namespace SquaresInCircles.Seven
 open Boundary
 
-/-- The lower bound of the forward sector with target sign `-1`, in the turn `e`
-and the signed source label `r`. -/
+/-- A lower bound of the forward support sum when the second sign is negative,
+in the turn `e` and the signed first label `r`. -/
 def rawTarget (A v e r : ℝ) : ℝ :=
   1/2+(4/5)*r-(A-1/2)*Real.cos e-v*Real.sin e+|Real.sin e|/2
 

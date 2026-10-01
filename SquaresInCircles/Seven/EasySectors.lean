@@ -13,7 +13,9 @@ noncomputable section
 open Set
 namespace SquaresInCircles.Seven
 
-/-- Outward radial source: no active-label case distinction. -/
+/-- On the outward axis the support sum is positive at the gap `π/3`, for every
+pair of signs and labels: the centre of the second square is near the disk
+centre. -/
 theorem fixed_gap_outward {a u A v : ℝ}
     (h : Admissible a u) (h' : Admissible A v) (s t : TransverseSign) :
     0 < pairSupport a u A v s t 0 gap := by
@@ -21,7 +23,8 @@ theorem fixed_gap_outward {a u A v : ℝ}
   linarith [h.half_le,support_lower (sign_admissible h' t) (Real.pi-gap-s.coe*label a u+
     t.coe*label A v)]
 
-/-- Backward transverse source: the other square's marker point suffices. -/
+/-- On the backward axis the support sum is positive at the gap `π/3`, for every
+pair of signs and labels, by the marker point of the second square. -/
 theorem fixed_gap_backward {a u A v : ℝ}
     (h : Admissible a u) (h' : Admissible A v) (s t : TransverseSign) :
     0 < pairSupport a u A v s t 3 gap := by
@@ -47,8 +50,9 @@ theorem fixed_gap_backward {a u A v : ℝ}
     simp only [TransverseSign.coe,neg_one_mul,sub_neg_eq_add] at hp hs ⊢
     linarith [h.u_nonneg]
 
-/-- The inward radial source is uniformly positive when its transverse sign
-is negative. The other square may have either sign and any label. -/
+/-- On the inward axis the support sum is positive at the gap `π/3` when the
+sign of the first square is negative, for every sign and label of the second,
+by the marker arc of the second square. -/
 theorem fixed_gap_inward_negative {a u A v : ℝ}
     (h : Admissible a u) (h' : Admissible A v) (t : TransverseSign) :
     0 < pairSupport a u A v .negative t 2 gap := by

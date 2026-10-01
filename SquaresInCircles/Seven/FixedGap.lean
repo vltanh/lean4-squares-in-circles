@@ -21,7 +21,9 @@ noncomputable section
 open scoped BigOperators
 namespace SquaresInCircles.Seven
 
-/-- Exhaustive A/T partition, with no omitted axis or sign. -/
+/-- At the gap `π/3`, the support sums of two states with axial or side labels
+are nonnegative on every axis, for every pair of signs, and zero only at a
+contact. -/
 theorem fixed_gap_active (a u A v : ℝ) (s t : TransverseSign) (k : Fin 4)
     (h : Admissible a u) (h' : Admissible A v)
     (ha : ActiveLabel a u) (hb : ActiveLabel A v) :

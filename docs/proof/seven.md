@@ -744,7 +744,7 @@ $\square$
 [`Seven.centerDY`](../../SquaresInCircles/Seven/PairModel.lean#L135),
 [`Seven.reverse_reflected_phase`](../../SquaresInCircles/Seven/CanonicalPair.lean#L15),
 [`Seven.reverse_center_coordinates`](../../SquaresInCircles/Seven/CanonicalPair.lean#L61),
-[`Seven.pairSupport_continuous`](../../SquaresInCircles/Seven/AllGaps.lean#L174).*
+[`Seven.pairSupport_continuous`](../../SquaresInCircles/Seven/AllGaps.lean#L175).*
 
 The reversed pair is the pair seen from $T$: the isometry of the plane that
 turns by $-d$ about the origin and then reflects in the first axis maps $T$
@@ -931,9 +931,9 @@ $\sigma_k(\frac\pi3) \ge 0$, and $\sigma_k(\frac\pi3) = 0$ only if the two
 states with the signs $s$ and $t$ form a contact.
 
 *Lean:
-[`Seven.fixed_gap_nonneg`](../../SquaresInCircles/Seven/FixedGap.lean#L169),
-[`Seven.fixed_gap_zero`](../../SquaresInCircles/Seven/FixedGap.lean#L175),
-[`Seven.fixed_gap_property`](../../SquaresInCircles/Seven/FixedGap.lean#L164),
+[`Seven.fixed_gap_nonneg`](../../SquaresInCircles/Seven/FixedGap.lean#L171),
+[`Seven.fixed_gap_zero`](../../SquaresInCircles/Seven/FixedGap.lean#L177),
+[`Seven.fixed_gap_property`](../../SquaresInCircles/Seven/FixedGap.lean#L166),
 [`Seven.PairProperty`](../../SquaresInCircles/Seven/Contacts.lean#L69),
 [`Seven.gap`](../../SquaresInCircles/Seven/Labels.lean#L15).*
 
@@ -1114,7 +1114,7 @@ $\square$
 
 *Lean:
 [`Seven.opposite_labels_ge`](../../SquaresInCircles/Seven/AllGaps.lean#L71),
-[`Seven.quarter_difference_le`](../../SquaresInCircles/Seven/AllGaps.lean#L139),
+[`Seven.quarter_difference_le`](../../SquaresInCircles/Seven/AllGaps.lean#L140),
 [`Seven.quarter_difference_horizontal`](../../SquaresInCircles/Seven/AllGaps.lean#L117).*
 
 ### Lemma 9.21 (parallel and quarter-turned pairs)
@@ -1147,7 +1147,7 @@ $\sigma_2 = 1 - a - tv \le 0$, then $A - su \ge 1$ or $a + tv \ge 1$, and Lemma
 $d < \frac\pi3 + \frac\pi6 = \frac\pi2$, a contradiction. $\square$
 
 *Lean: [`Seven.parallel_pos`](../../SquaresInCircles/Seven/AllGaps.lean#L86),
-[`Seven.quarter_turn_pos`](../../SquaresInCircles/Seven/AllGaps.lean#L151).*
+[`Seven.quarter_turn_pos`](../../SquaresInCircles/Seven/AllGaps.lean#L152).*
 
 ![Two panels. Left: a parallel pair, S below the first axis and T above it, both axis-parallel, with the horizontal line between them that would separate them. Right: a quarter-turned pair, S and T to its upper left, with the vertical line that would separate them. In both panels the markers of S and T are drawn as rays from o](figures/seven-parallel.svg)
 
@@ -1349,7 +1349,7 @@ $(-\frac\pi2, \pi)$, and Lemma 9.21 (2) gives $f(x) > 0$. Otherwise Lemma 9.22
 gives $f(x) > 0$. Each contradicts $f(x) \le 0$. $\square$
 
 *Lean:
-[`Seven.all_gap_pos_below`](../../SquaresInCircles/Seven/AllGaps.lean#L180).*
+[`Seven.all_gap_pos_below`](../../SquaresInCircles/Seven/AllGaps.lean#L181).*
 
 ![The four support sums of the canonical pair of two side states with signs -1 and 1, as functions of the gap g from 0 to pi/2: all four are positive for g below pi/3; the forward support sum sigma1 decreases to 0 exactly at g = pi/3 and is negative beyond](figures/seven-gap-profile.svg)
 

@@ -215,8 +215,9 @@ private lemma targetH_quarter_gt {A v : ℝ} (h : Admissible A v)
   exact (quarter_profile_gt hd).trans_le
     (le_add_of_nonneg_right (mul_nonneg h.remainder_nonneg hcoef))
 
-/-- Whole-domain support certificate; there is no hypothesis on the source's
-active label or center beyond its ordinary admissibility. -/
+/-- On the inward axis with both signs positive, the support sum is positive at
+the gap `π/3` when the second label is the side term, whatever the first
+state. -/
 theorem fixed_gap_inward_side_target {a u A v : ℝ}
     (h : Admissible a u) (h' : Admissible A v)
     (hT : label A v=side A v) :
