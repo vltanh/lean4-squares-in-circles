@@ -41,13 +41,14 @@ example : optimalPackings 7 = Set.range fun c : Seven.Column => fun i =>
 example : Seven.columnCenters Seven.centeredColumn =
     ![(1,-1/2),(1,1/2),(-1,-1/2),(-1,1/2),(0,-1),(0,0),(0,1)] := rfl
 
--- Three squares: deficit, radial and transverse margins.
-example : (22:ℝ)/42-13/29 = 46/609 := by norm_num
-example : (46:ℝ)/609 < 1/12 := by norm_num
-example : (1/2:ℝ)-1/24-(1/24)^2/4 > 9/20 := by norm_num
-example : (9/20:ℝ)*(3/8)=27/160 := by norm_num
-example : (57/128:ℝ)-(19/8)*(27/160)=57/1280 := by norm_num
-example : (57/1280:ℝ) < 1/16 := by norm_num
+-- Three squares: the arc of a containing square, nearly axial squares, the
+-- angle between their phases, and radial and transverse margins.
+example : (29:ℝ)/2*(13/29) = 13/2 := by norm_num
+example : (8:ℝ)/3*((209/16-8/16)/19-1/2) = 49/114 := by norm_num
+example : (1/2:ℝ)-49/114 = 4/57 := by norm_num
+example : (22:ℝ)/7 < 12*(4/57+13/58) := by norm_num
+example : (1/2:ℝ)-(3/16)/(7/16) = 1/14 := by norm_num
+example : (22:ℝ)/7/6 < 13/29+1/7 := by norm_num
 example : (3/5:ℝ)/5-(4/5)*(2/5)+11/16 < 1/2 := by norm_num
 example : (7/8:ℝ)/5+(3/5)*(2/5)+1/16 < 1/2 := by norm_num
 example : (1/5:ℝ)-11/16 > -1/2 := by norm_num

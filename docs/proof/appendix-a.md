@@ -144,7 +144,7 @@ and $e(y) = -A\sin y - B\cos y$. For $y \in [l, u] \subset [0, \frac\pi2]$ we
 have $\sin y \ge 0$ and $\cos y \ge 0$, so $e(y) \le 0$. $\square$
 
 *Lean:
-[`trig_concave_gt`](../../SquaresInCircles/Common/Trigonometry.lean#L322).*
+[`trig_concave_gt`](../../SquaresInCircles/Common/Trigonometry.lean#L323).*
 
 ## A.2 Sine and cosine
 
@@ -167,9 +167,9 @@ $\cos x \le \cos(\frac\pi2 - x) = \sin x$. (3)
 $\cos z \ge \cos\frac\pi3 = \frac12$. $\square$
 
 *Lean:
-[`sin_le_cos_of_small`](../../SquaresInCircles/Common/Trigonometry.lean#L49),
-[`cos_le_sin_of_quarter`](../../SquaresInCircles/Common/Trigonometry.lean#L53),
-[`cos_ge_half`](../../SquaresInCircles/Common/Trigonometry.lean#L58).*
+[`sin_le_cos_of_small`](../../SquaresInCircles/Common/Trigonometry.lean#L50),
+[`cos_le_sin_of_quarter`](../../SquaresInCircles/Common/Trigonometry.lean#L54),
+[`cos_ge_half`](../../SquaresInCircles/Common/Trigonometry.lean#L59).*
 
 ### Lemma A.7 (Taylor bounds)
 
@@ -214,10 +214,10 @@ are the classical bounds $\sin x \le x$, $\cos x \ge 1 - \frac{x^2}2$ and
 $\sin x \ge x - \frac{x^3}6$; $g_4, g_5, g_6, g_7 \ge 0$ are (1) to (4).
 $\square$
 
-*Lean: [`cos_upper_four`](../../SquaresInCircles/Common/Trigonometry.lean#L199),
-[`sin_upper_five`](../../SquaresInCircles/Common/Trigonometry.lean#L206),
-[`cos_lower_six`](../../SquaresInCircles/Common/Trigonometry.lean#L213),
-[`sin_lower_seven`](../../SquaresInCircles/Common/Trigonometry.lean#L220).*
+*Lean: [`cos_upper_four`](../../SquaresInCircles/Common/Trigonometry.lean#L200),
+[`sin_upper_five`](../../SquaresInCircles/Common/Trigonometry.lean#L207),
+[`cos_lower_six`](../../SquaresInCircles/Common/Trigonometry.lean#L214),
+[`sin_lower_seven`](../../SquaresInCircles/Common/Trigonometry.lean#L221).*
 
 Both sides of (1) and (3) are even functions of $x$, so these two bounds hold
 for every real $x$.
@@ -237,7 +237,7 @@ the cosine decreasing on $[0, \pi] \supset [l, u]$, so
 $\sin l \le \sin x \le \sin u$ and $\cos u \le \cos x \le \cos l$. Now apply
 Lemma A.7 (4) at $l$, (2) at $u$, (3) at $u$ and (1) at $l$. $\square$
 
-*Lean: [`trig_bracket`](../../SquaresInCircles/Common/Trigonometry.lean#L228).*
+*Lean: [`trig_bracket`](../../SquaresInCircles/Common/Trigonometry.lean#L229).*
 
 ## A.3 A peak
 
@@ -363,7 +363,7 @@ $\square$
 
 *Lean:
 [`Seven.asin_line_mono`](../../SquaresInCircles/Seven/MarkerArc.lean#L20),
-[`asin_half`](../../SquaresInCircles/Common/Trigonometry.lean#L716).*
+[`asin_half`](../../SquaresInCircles/Common/Trigonometry.lean#L717).*
 
 By (1) and (2), $g(\frac35) = \frac34 - \arcsin\frac35$ is the largest value of
 $g$ on $[-\frac35, 1]$. The next two lemmas place the label between the lower

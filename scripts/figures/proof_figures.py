@@ -973,15 +973,15 @@ def contact_types():
         f.text((dx + 0.6, 0.9), pair(('a', 'S'), ('b', 'S'), 13) + ' = ' +
                value, size=13, italic=False, color=COLORS[color])
     o = (off, 0.0)
-    f.circle(o, 1 / 16)
+    f.circle(o, 3 / 16)
     for t0, t1 in arcs_in(lambda p: in_open_square(shift(p, o),
                                                    (off + 0.5, 5 / 16)),
-                          1 / 16):
-        f.arc(o, 1 / 16, t0, t1, COLORS[3], width=4)
+                          3 / 16):
+        f.arc(o, 3 / 16, t0, t1, COLORS[3], width=4)
     f.save('contact-types', 'Left: a type A square in its chart, holding '
            'a third of the circle of radius 3/8, centred on its axis. '
            'Right: a type B square, holding a third of that circle and half '
-           'of the small circle of radius 1/16')
+           'of the small circle of radius 3/16')
 
 
 def containing_arc():

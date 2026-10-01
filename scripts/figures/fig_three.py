@@ -362,7 +362,7 @@ def deficit():
     a = b = 0.5 - r * P
     lo, hi = -asin(Q), math.pi / 2 + asin(P)
     L = hi - lo
-    assert 2 * math.pi / 3 - 1 / 12 < L < 2 * math.pi / 3
+    assert math.pi / 2 + 13 / 29 < L < 2 * math.pi / 3
     f = Figure(-0.55, 1.05, -0.5, 1.02, 330)
     f.line((-0.53, 0), (1.0, 0), stroke=FAINT, width=1)
     f.line((0, -0.48), (0, 0.98), stroke=FAINT, width=1)
@@ -381,20 +381,20 @@ def deficit():
            size=15, color=ORANGE)
     q = shift((0, 0), u(hi + 0.04), r)
     f.line(shift(q, (-0.02, 0.01)), (-0.3, 0.5), stroke=RED, width=1)
-    f.text((-0.3, 0.55), '2π/3 − ' + sb('L', 'S', ' &lt; 1/12', 14),
+    f.text((-0.3, 0.55), '2π/3 − ' + sb('L', 'S', ' &lt; π/6 − 13/29', 14),
            size=14, color=RED)
     label_o(f, dx=-0.03, dy=-0.06)
     f.text((a + 0.38, b + 0.42), 'S', size=17, color=BLUE)
     f.save('three-deficit', 'A square containing o with P = Q = 13/58, the '
            'worst case: its arc of the circle of radius 3/8 falls short of a '
-           'third of the circle by less than 1/12')
+           'third of the circle by less than pi/6 - 13/29')
 
 
 def wide_arc():
     r = 7 / 16
     a, b = 11 / 16, 1 / 16
     A = acos((a - 0.5) / r)
-    target = math.pi / 3 + 1 / 24
+    target = math.pi / 3 + 1 / 14
     assert A > target and asin((0.5 - b) / r) == math.pi / 2
     f = Figure(-0.58, 1.3, -0.56, 0.78, 290)
     f.line((-0.56, 0), (1.28, 0), stroke=FAINT, width=1)
@@ -415,7 +415,7 @@ def wide_arc():
         f.line((0, 0), shift((0, 0), u(t), r + 0.2), stroke=PURPLE, width=1,
                dash='4 3')
     angle_mark(f, (0, 0), 0.12, 0, A, 'A', 0.18)
-    f.text(shift((0, 0), u(target), r + 0.23), '±(π/3 + 1/24)', size=13,
+    f.text(shift((0, 0), u(target), r + 0.23), '±(π/3 + 1/14)', size=13,
            color=PURPLE, anchor='end', dx=-4)
     f.dot((0, -r), r=3.6, fill=RED)
     f.line((-0.4, b - 0.5), (1.2, b - 0.5), stroke=RED, width=1, dash='4 4')
@@ -426,7 +426,7 @@ def wide_arc():
     f.save('three-wide-arc', 'A square with a = 11/16 and b = 1/16 in its '
            'chart: the circle of radius 7/16 just touches the line of the '
            'lower edge, and the square holds a full cap of half-width more '
-           'than pi/3 + 1/24')
+           'than pi/3 + 1/14')
 
 
 # 6.5 The T.
@@ -469,7 +469,7 @@ def three_type_b():
                ((-5 / 16, 0.5), 0, GREEN, FILLS[2])]
     for c, d, _, _ in squares:
         assert abs(abs(c[0]) - 0.5) < 1e-12 or abs(abs(c[1]) - 0.5) < 1e-12
-    zoom = 9.0
+    zoom = 4.0
     off = (2.25, 0.0)
     f = Figure(-1.1, 3.3, -0.9, 1.1, 150)
     for c, d, color, fill in squares:
@@ -482,12 +482,13 @@ def three_type_b():
                 f.polygon(clip_square(square_corners(ci, di), cj, dj),
                           fill=RED, stroke=RED, width=1, opacity=0.35)
     label_o(f, dx=0.03, dy=-0.06, anchor='start')
-    f.polygon([(-0.11, -0.11), (0.11, -0.11), (0.11, 0.11), (-0.11, 0.11)],
-              stroke=INK, width=1, dash='2 2')
-    f.line((0.13, 0.05), (off[0] - 1.05, 0.3), width=1, dash='2 2')
-    # The zoom: the squares near o and the half circles of radius 1/16.
-    r = 1 / 16
-    box = [(-0.11, -0.11), (0.11, -0.11), (0.11, 0.11), (-0.11, 0.11)]
+    h = 0.25
+    box = [(-h, -h), (h, -h), (h, h), (-h, h)]
+    f.polygon(box, stroke=INK, width=1, dash='2 2')
+    f.line((h + 0.02, 0.05), (off[0] - zoom * h - 0.06, 0.3), width=1,
+           dash='2 2')
+    # The zoom: the squares near o and the half circles of radius 3/16.
+    r = 3 / 16
     zp = lambda p: shift(off, p, zoom)
     for c, d, color, fill in squares:
         part = clip_square(box, c, d)
@@ -501,9 +502,9 @@ def three_type_b():
             f.arc(off, r * zoom, t0, t1, color, width=width)
     f.dot(off)
     f.text(shift(off, (0.06, -0.08)), 'o', anchor='start')
-    subscript(f, shift(off, (0.62, 0.62)), 'Γ', '1/16', size=15)
+    subscript(f, shift(off, (0.62, 0.62)), 'Γ', '3/16', size=15)
     f.save('three-three-type-b', 'Three squares of type B: each holds a half '
-           'of the circle of radius 1/16 about o, and three half circles '
+           'of the circle of radius 3/16 about o, and three half circles '
            'cannot be disjoint; enlarged on the right')
 
 
@@ -538,7 +539,7 @@ def phases():
         assert abs(math.cos(mid - centre) - 1) < 1e-5
         f.line(shift((0, 0), u(centre), r - 0.05),
                shift((0, 0), u(centre), r + 0.05), width=2)
-    small = 1 / 16
+    small = 3 / 16
     f.circle((0, 0), small)
     for k in (0, 1):
         c = rotate(CENTRES[k], phi)
@@ -548,16 +549,16 @@ def phases():
     for k, d in ((0, (-0.28, -0.3)), (1, (0.3, -0.25)), (2, (-0.3, 0.3))):
         subscript(f, shift(rotate(CENTRES[k], phi), d), 'S', str(k + 1),
                   size=17, color=COLORS[k])
-    q = shift((0, 0), u(rad(-62)), 1 / 16)
+    q = shift((0, 0), u(rad(-62)), small)
     f.line(q, (0.3, -0.62), width=0.8)
-    subscript(f, (0.32, -0.66), 'Γ', '1/16', size=14, anchor='start')
+    subscript(f, (0.32, -0.66), 'Γ', '3/16', size=14, anchor='start')
     q = shift((0, 0), u(rad(-118)), 3 / 8)
     f.line(q, (-0.35, -0.72), width=0.8)
     subscript(f, (-0.37, -0.76), 'Γ', '3/8', size=14, anchor='end')
     f.save('three-phases', 'The T turned about o: the three caps of the circle '
            'of radius 3/8, each a third, with their centres marked, the phases '
            'of the three squares, the two opposite half circles of radius '
-           '1/16 held by the lower squares, and the frame in which the '
+           '3/16 held by the lower squares, and the frame in which the '
            'squares sit at c1, c2, c3')
 
 

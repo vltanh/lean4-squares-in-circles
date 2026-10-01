@@ -988,8 +988,9 @@ $\frac\pi n$. This contradicts Lemma 3.16. $\square$
 ### Lemma 3.29 (elementary estimates)
 
 1. $\pi < \frac{22}7$.
-2. $\arcsin x \ge x$ for $0 \le x \le 1$, and $\arcsin x \le x$ for
-   $-1 \le x \le 0$.
+2. $\arcsin y - \arcsin x \ge y - x$ for $-1 \le x \le y \le 1$. In
+   particular $\arcsin x \ge x$ for $0 \le x \le 1$, and $\arcsin x \le x$
+   for $-1 \le x \le 0$.
 3. $\arcsin x \le x + \frac{x^3}4$ for $0 \le x \le \frac35$.
 4. If $0 \le \theta \le \frac\pi2$, $u, v \in [0, 1]$ and
    $\sin\theta < \frac{u+v}2$, then $2\theta < \arcsin u + \arcsin v$.
@@ -1013,8 +1014,13 @@ $\sin\theta < \frac{u+v}2$ lies left of $\mu$, since the sine increases.
 *Proof.*
 
 1. $\pi < 3.141593 < \frac{22}7 = 3.142857\dots$
-2. For $y \ge 0$, $\sin y \le y$. With $y = \arcsin x \in [0, \frac\pi2]$ this
-   gives $x \le \arcsin x$. The second bound follows, since $\arcsin$ is odd.
+2. The sine changes by at most the change of its argument,
+   $|\sin\alpha - \sin\beta| \le |\alpha - \beta|$, by the mean value
+   theorem, as $|\cos| \le 1$. Put $\alpha = \arcsin y$ and
+   $\beta = \arcsin x$; then $\sin\alpha = y$, $\sin\beta = x$, and
+   $\alpha \ge \beta$ since the arcsine is increasing. So
+   $y - x \le \alpha - \beta$. Taking $x = 0$, or $y = 0$, gives the two
+   particular bounds, as $\arcsin 0 = 0$.
 3. Put $y = x + \frac{x^3}4$. Since $x^2 \le \frac9{25}$,
    $y \le (1 + \frac9{100})x = \frac{109}{100}x \le \frac{327}{500} < \frac\pi2$.
    For $y \ge 0$, $\sin y \ge y - \frac{y^3}6$, and
@@ -1045,11 +1051,12 @@ $\sin\theta < \frac{u+v}2$ lies left of $\mu$, since the sine increases.
    $\frac{5 - \sqrt5}8 < \frac{5 - 11/5}8 = \frac7{20} < \frac9{25}$. Finally
    $\sin\frac\pi5 > 0$. $\square$
 
-*Lean: [`pi_lt_22_over_7`](../../SquaresInCircles/Common/Trigonometry.lean#L34),
-[`arcsin_ge_self`](../../SquaresInCircles/Common/Trigonometry.lean#L721),
-[`arcsin_le_self_of_nonpos`](../../SquaresInCircles/Common/Trigonometry.lean#L724),
-[`arcsin_le_cubic`](../../SquaresInCircles/Common/Trigonometry.lean#L731),
-[`arcsin_sum_gt_of_sin_lt`](../../SquaresInCircles/Common/Trigonometry.lean#L743),
+*Lean: [`pi_lt_22_over_7`](../../SquaresInCircles/Common/Trigonometry.lean#L35),
+[`sub_le_arcsin_sub`](../../SquaresInCircles/Common/Trigonometry.lean#L724),
+[`arcsin_ge_self`](../../SquaresInCircles/Common/Trigonometry.lean#L731),
+[`arcsin_le_self_of_nonpos`](../../SquaresInCircles/Common/Trigonometry.lean#L734),
+[`arcsin_le_cubic`](../../SquaresInCircles/Common/Trigonometry.lean#L739),
+[`arcsin_sum_gt_of_sin_lt`](../../SquaresInCircles/Common/Trigonometry.lean#L751),
 [`Five.sqrt_five_gt`](../../SquaresInCircles/Five/Exterior.lean#L36),
 [`Five.arc_length`](../../SquaresInCircles/Five/Exterior.lean#L64). (The value
 of the cosine in (5) comes from mathlib.)*

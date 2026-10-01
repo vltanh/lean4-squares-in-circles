@@ -23,7 +23,8 @@ second derivative of `-R L` is `R (L⁴ - (a² - b²)²)/(4L³)`, at most
 a polynomial with nonnegative terms, and nonpositive when `a ≤ b` and
 `L² ≤ b² - a²`. A square root lies below its tangents, the half-angle ratio
 `sin t/(1 + cos t) = tan (t/2)` lies between `t/2` and `11t/20` on `[0, 4/5]`,
-and the arcsine is bounded by `x` and `x + x³/4` and is concave on `[0, 1]`.
+and the arcsine grows at least as fast as `x`, lies below `x + x³/4` on
+`[0, 3/5]` and is concave on `[0, 1]`.
 -/
 noncomputable section
 open Set
@@ -718,14 +719,21 @@ lemma asin_half : Real.arcsin (1/2 : ℝ) = Real.pi/6 := by
     (by linarith [Real.pi_pos]) (by linarith [Real.pi_pos])
   simpa only [Real.sin_pi_div_six] using h
 
+/-- The arcsine grows at least as fast as the identity, since the sine is
+1-Lipschitz: `y-x ≤ arcsin y-arcsin x` for `-1 ≤ x ≤ y ≤ 1`. -/
+lemma sub_le_arcsin_sub {x y : ℝ} (hx : -1 ≤ x) (hxy : x ≤ y) (hy : y ≤ 1) :
+    y-x ≤ Real.arcsin y-Real.arcsin x := by
+  have h := Real.abs_sin_sub_sin_le (Real.arcsin y) (Real.arcsin x)
+  rwa [Real.sin_arcsin (by linarith) hy,Real.sin_arcsin hx (by linarith),
+    abs_of_nonneg (sub_nonneg.2 hxy),
+    abs_of_nonneg (sub_nonneg.2 (Real.arcsin_le_arcsin hxy))] at h
+
 lemma arcsin_ge_self {x : ℝ} (hx0 : 0 ≤ x) (hx1 : x ≤ 1) : x ≤ Real.arcsin x := by
-  simpa [Real.sin_arcsin (by linarith) hx1] using Real.sin_le (Real.arcsin_nonneg.mpr hx0)
+  simpa using sub_le_arcsin_sub (x := 0) (by norm_num) hx0 hx1
 
 lemma arcsin_le_self_of_nonpos {x : ℝ} (hx0 : -1 ≤ x) (hx1 : x ≤ 0) :
     Real.arcsin x ≤ x := by
-  have hh := arcsin_ge_self (show 0 ≤ -x by linarith) (show -x ≤ 1 by linarith)
-  rw [Real.arcsin_neg] at hh
-  linarith
+  simpa using sub_le_arcsin_sub (y := 0) hx0 hx1 (by norm_num)
 
 /-- A deliberately non-sharp, polynomial upper bound on `[0,3/5]`. -/
 lemma arcsin_le_cubic {x : ℝ} (hx0 : 0 ≤ x) (hx1 : x ≤ 3/5) :

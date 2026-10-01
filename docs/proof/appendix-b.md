@@ -1624,7 +1624,7 @@ Recall $u \ge \frac45\ell$, because $\ell \le \mathrm{axial}(u)$.
 
 *Lean:
 [`Seven.fixed_gap_forward_positive`](../../SquaresInCircles/Seven/EasySectors.lean#L76),
-[`cos_add_sin_mono`](../../SquaresInCircles/Common/Trigonometry.lean#L78).*
+[`cos_add_sin_mono`](../../SquaresInCircles/Common/Trigonometry.lean#L79).*
 
 ## B.8 The capped labels
 

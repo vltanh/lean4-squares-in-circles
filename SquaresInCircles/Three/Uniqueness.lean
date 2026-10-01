@@ -11,7 +11,7 @@ In the closed disk of radius `5√17/16` no square contains the disk centre, so
 every square holds a cap of the circle of radius `3/8` of at least 120 degrees.
 The budget makes every cap exactly 120 degrees, so every square is of type A or
 type B. Two squares of type A would hold too wide arcs of the circle of radius
-`7/16`, and three of type B too wide arcs of the circle of radius `1/16`. For
+`7/16`, and three of type B too wide arcs of the circle of radius `3/16`. For
 one square of type A and two of type B, the angles between the caps rebuild the
 T.
 
@@ -151,7 +151,7 @@ theorem uniqueness (S : Fin 3 → UnitSquare) (o : Point)
     have hB (i : Fin 3) : (C i).a=1/2 ∧ (C i).b=5/16 :=
       ((hty i).resolve_left fun h => hn ⟨i,h⟩).imp_right And.left
     choose X hX _ using fun i =>
-      (C i).half_arc (r := 1/16) (by norm_num) (hB i).1 (by rw [(hB i).2]; norm_num)
+      (C i).half_arc (r := 3/16) (by norm_num) (hB i).1 (by rw [(hB i).2]; norm_num)
     have h := triple_arc_budget (X 0) (X 1) (X 2) (hd (by decide)) (hd (by decide)) (hd (by decide))
     rw [hX,hX,hX] at h
     linarith [Real.pi_pos]
@@ -162,8 +162,8 @@ theorem uniqueness (S : Fin 3 → UnitSquare) (o : Point)
   obtain ⟨hia,hib,hic⟩ := hB i hik
   obtain ⟨hja,hjb,hjc⟩ := hB j hjk
   -- the two squares of type B have antipodal phases
-  obtain ⟨X,hX,hXc⟩ := (C i).half_arc (r := 1/16) (by norm_num) hia (by rw [hib]; norm_num)
-  obtain ⟨Y,hY,hYc⟩ := (C j).half_arc (r := 1/16) (by norm_num) hja (by rw [hjb]; norm_num)
+  obtain ⟨X,hX,hXc⟩ := (C i).half_arc (r := 3/16) (by norm_num) hia (by rw [hib]; norm_num)
+  obtain ⟨Y,hY,hYc⟩ := (C j).half_arc (r := 3/16) (by norm_num) hja (by rw [hjb]; norm_num)
   have hanti : (C j).phase=(C i).phase+(Real.pi:Direction) := by
     rw [← hXc,← hYc]
     exact X.opposite Y (hd hij) hX hY

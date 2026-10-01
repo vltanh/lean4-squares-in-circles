@@ -7,11 +7,13 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
 # Three squares: the containing square
 
 A square that contains the disk centre holds an arc of the circle of radius
-`3/8` less than `1/12` short of 120 degrees, and the other two squares hold caps
-of at least 120 degrees. A clipped cap would make up more than that deficit, so
-both caps are full and nearly axial. On the circle of radius `7/16` two nearly
-axial squares hold arcs too wide for the angle between their phases, which the
-budget on the circle of radius `3/8` keeps below `2π/3+1/12`.
+`3/8` of length more than `π/2+13/29`, and the other two squares hold caps of
+at least 120 degrees. A clipped cap would make up more than the deficit of that
+arc to 120 degrees, so both caps are full, and the budget leaves no room for a
+full cap with `b > 1/16`: both squares are nearly axial. On the circle of
+radius `7/16` two nearly axial squares hold arcs too wide for the angle between
+their phases, which the budget on the circle of radius `3/8` keeps below
+`5π/6-13/29`.
 -/
 noncomputable section
 open Set
@@ -121,40 +123,35 @@ lemma compensation {P Q u v : ℝ} (hP : 0 ≤ P) (hQ : Q ∈ Icc (0:ℝ) 1)
 
 /-! ## Nearly axial squares -/
 
-/-- `cos (π/3+1/24) > 9/20`. -/
-lemma cos_third_gt : (9:ℝ)/20 < Real.cos (Real.pi/3+1/24) := by
-  rw [Real.cos_add,Real.cos_pi_div_three]
-  have hc := Real.one_sub_sq_div_two_le_cos (x := (1:ℝ)/24)
-  have hs := Real.sin_le (show (0:ℝ) ≤ 1/24 by norm_num)
-  have hs0 := Real.sin_nonneg_of_nonneg_of_le_pi (show (0:ℝ) ≤ 1/24 by norm_num)
-    (by linarith [Real.pi_gt_three])
-  nlinarith [Real.sin_le_one (Real.pi/3)]
+/-- `arccos u ≥ π/3+(1/2-u)` for `-1 ≤ u ≤ 1/2`. -/
+lemma third_le_arccos {u : ℝ} (hu0 : -1 ≤ u) (hu1 : u ≤ 1/2) :
+    Real.pi/3+(1/2-u) ≤ Real.arccos u := by
+  have h := sub_le_arcsin_sub hu0 hu1 (by norm_num)
+  rw [asin_half] at h
+  rw [Real.arccos_eq_pi_div_two_sub_arcsin]
+  linarith
 
 /-- On the circle of radius `7/16` a nearly axial square holds an arc of
-half-width more than `π/3+1/24` centred on its phase. -/
+half-width at least `π/3+1/14` centred on its phase. -/
 lemma wide_arc {S : UnitSquare} {o : Point} (C : SquareChart S o)
     (h : 1/2 ≤ C.a ∧ C.a ≤ 11/16 ∧ C.b ≤ 1/16) :
     ∃ W : OpenArc o (7/16) {p | openSquare S p},
-      Real.pi/3+1/24 < W.halfWidth ∧ W.center=C.phase := by
-  have hA : Real.pi/3+1/24 < capA (7/16) C.a := by
-    calc Real.pi/3+1/24=Real.arccos (Real.cos (Real.pi/3+1/24)) :=
-          (Real.arccos_cos (by positivity) (by linarith [Real.pi_gt_three])).symm
-      _ < capA (7/16) C.a := Real.arccos_lt_arccos (by linarith [h.1])
-          (by linarith [h.2.1,cos_third_gt]) (Real.cos_le_one _)
+      Real.pi/3+1/14 ≤ W.halfWidth ∧ W.center=C.phase := by
   have hV : capV (7/16) C.b=Real.pi/2 :=
     Real.arcsin_of_one_le (by rw [le_div_iff₀ (by norm_num)]; linarith [h.2.2])
   have hA2 : capA (7/16) C.a ≤ Real.pi/2 := Real.arccos_le_pi_div_two.mpr (by linarith [h.1])
   obtain ⟨W,hw,hc⟩ := C.full_cap_arc (by norm_num) (by norm_num) h.1 (by linarith [h.2.1])
     (by linarith [h.2.2]) (hA2.trans_eq hV.symm)
-  exact ⟨W,by rw [hw]; exact hA,hc⟩
+  have hA := third_le_arccos (u := (C.a-1/2)/(7/16)) (by linarith [h.1]) (by linarith [h.2.1])
+  exact ⟨W,by rw [hw,capA]; linarith [h.2.1],hc⟩
 
-/-- Two nearly axial squares whose phases are less than `2π/3+1/12` apart
+/-- Two nearly axial squares whose phases are less than `2π/3+1/7` apart
 overlap. -/
 lemma axial_pair_impossible {S T : UnitSquare} {o : Point}
     (C : SquareChart S o) (D : SquareChart T o)
     (hC : 1/2 ≤ C.a ∧ C.a ≤ 11/16 ∧ C.b ≤ 1/16) (hD : 1/2 ≤ D.a ∧ D.a ≤ 11/16 ∧ D.b ≤ 1/16)
     (hST : Disjoint {p | openSquare S p} {p | openSquare T p})
-    (h : dist C.phase D.phase < 2*Real.pi/3+1/12) : False := by
+    (h : dist C.phase D.phase < 2*Real.pi/3+1/7) : False := by
   obtain ⟨A,hA,hAc⟩ := wide_arc C hC
   obtain ⟨B,hB,hBc⟩ := wide_arc D hD
   have hsep := A.centers_separated B hST
@@ -184,27 +181,27 @@ theorem no_containing (S : Fin 3 → UnitSquare) (o : Point) (hd : InteriorDisjo
   obtain ⟨B,hB,hBc,hBlo⟩ := exterior_cap (C j) (hext j hij) (hP j)
   obtain ⟨G,hG,hGc,hGlo⟩ := exterior_cap (C k) (hext k hik) (hP k)
   have hbudget := triple_arc_budget W B G (hd.pairwise hij) (hd.pairwise hik) (hd.pairwise hjk)
-  -- the deficit of the containing arc
+  -- the length of the arc of the containing square
   have hP0 : 0 ≤ (1/2-(C i).a)/aux := by rw [aux]; linarith
   have hQ0 : 0 ≤ (1/2-(C i).b)/aux := by rw [aux]; linarith
   have hQ1 : (1/2-(C i).b)/aux < 1 := by
     refine Real.arcsin_lt_pi_div_two.mp ?_
     unfold capV at hW
     linarith [Real.arcsin_nonneg.mpr hP0,Real.pi_pos]
-  have hdef : 2*Real.pi/3-1/12 < 2*W.halfWidth := by
+  have hlen : Real.pi/2+13/29 < 2*W.halfWidth := by
     have hPQ : (1/2-(C i).a)/aux ≤ (1/2-(C i).b)/aux := by rw [aux]; linarith [hsort i]
     have h₁ := arcsin_ge_self hP0 (hPQ.trans hQ1.le)
     have h₂ := arcsin_ge_self hQ0 hQ1.le
     rw [hW]
     unfold capV
     rw [aux] at h₁ h₂ ⊢
-    linarith [pi_lt_22_over_7,hsort i]
-  -- each other square has a full, nearly axial cap
+    linarith [hsort i]
+  -- each other square has a full cap, and is nearly axial
   have haxial (l : Fin 3) (hl : i ≠ l) (X : OpenArc o aux {p | openSquare (S l) p})
       (hX : X.halfWidth=(capA aux (C l).a+min (capA aux (C l).a) (capV aux (C l).b))/2)
       (hXW : X.halfWidth+W.halfWidth ≤ 2*Real.pi/3) :
-      capA aux (C l).a ≤ capV aux (C l).b ∧ 1/2 ≤ (C l).a ∧ (C l).a ≤ 11/16 ∧ (C l).b ≤ 1/16 := by
-    obtain ⟨hA,hAπ,-,-,-⟩ := hbd l hl
+      capA aux (C l).a ≤ capV aux (C l).b ∧ (C l).b ≤ 1/16 := by
+    obtain ⟨-,hAπ,-,-,-⟩ := hbd l hl
     have ha := hext l hl
     have hb := (C l).nonneg.2
     have hgap := gap_from_containing (C i) (C l) (hsort i) ho ha (by linarith [(hP l).1])
@@ -222,18 +219,19 @@ theorem no_containing (S : Fin 3 → UnitSquare) (o : Point) (hd : InteriorDisjo
       rw [Real.arccos_eq_pi_div_two_sub_arcsin] at hX
       linarith
     rw [min_eq_left hfull] at hX
-    have hu := Real.cos_lt_cos_of_nonneg_of_le_pi (Real.arccos_nonneg _)
-      (by linarith [Real.pi_gt_three]) (show capA aux (C l).a < Real.pi/3+1/24 by linarith)
-    rw [Real.cos_arccos (x := ((C l).a-1/2)/aux) (by rw [aux]; linarith)
-      (by rw [aux]; linarith [(hP l).2]),aux] at hu
-    have := cos_third_gt
-    exact ⟨hfull,ha,by linarith [(hP l).2],by linarith [(hP l).2]⟩
-  obtain ⟨hBf,hBa⟩ := haxial j hij B hB (by linarith)
-  obtain ⟨hGf,hGa⟩ := haxial k hik G hG (by linarith)
+    -- with `b > 1/16`, `u < 49/114` and the cap exceeds its share of the budget
+    refine ⟨hfull,le_of_not_gt fun hb' => ?_⟩
+    have hA := third_le_arccos (u := ((C l).a-1/2)/(3/8)) (by linarith) (by linarith [(hP l).2])
+    unfold capA aux at hX
+    linarith [(hP l).2,pi_lt_22_over_7]
+  obtain ⟨hBf,hBb⟩ := haxial j hij B hB (by linarith)
+  obtain ⟨hGf,hGb⟩ := haxial k hik G hG (by linarith)
   have hdist := (W.third_distance_bounds B G (hd.pairwise hij) (hd.pairwise hik)
     (hd.pairwise hjk)).2
   rw [hBc,hGc,min_eq_left hBf,min_eq_left hGf] at hdist
   simp only [sub_self,zero_div,chartAngle,neg_zero,ite_self,Real.Angle.coe_zero,add_zero] at hdist
-  exact axial_pair_impossible (C j) (C k) hBa hGa (hd.pairwise hjk) (by linarith)
+  exact axial_pair_impossible (C j) (C k) ⟨hext j hij,by linarith [(hP j).2,(C j).nonneg.2],hBb⟩
+    ⟨hext k hik,by linarith [(hP k).2,(C k).nonneg.2],hGb⟩ (hd.pairwise hjk)
+    (by linarith [pi_lt_22_over_7])
 
 end SquaresInCircles.Three
