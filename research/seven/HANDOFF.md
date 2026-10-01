@@ -7,10 +7,15 @@ have written human-readable replacements. The replacements use geometric
 support, first/second derivatives, a ratio majorant, or explicit factored
 squares. None needs a Bernstein coefficient vector.
 
-This is a completed mathematical research handoff, not a production-code
-integration or a claim of new Lean kernel acceptance. The production proof
-still contains its original Bernstein arguments until a maintainer chooses
-to incorporate these notes.
+That completes the Bernstein-specific handoff, **not the full human-readability
+audit**. A second pass found additional exact but engineered-looking arithmetic
+in `BoundaryProfiles`, `MarkerArc`, `LabelBoundary`, and several state lemmas in
+`Labels`. These are tracked as open items J--N in
+[HUMAN_ANALYTIC_CHECKLIST.md](HUMAN_ANALYTIC_CHECKLIST.md).
+
+This remains a research handoff, not a production-code integration or a claim
+of new Lean kernel acceptance. The production proof still contains its original
+arguments until a maintainer chooses to incorporate the notes.
 
 PR: #8, branch `research/seven-human-analytic`.
 Frozen production baseline: `1dbbd4f106e9860752e9c0c612864196167df103`.
