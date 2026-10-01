@@ -12,9 +12,11 @@ soon as the point of the profile at the height of the bound lies outside the
 disk (`transverse_lt_of_profile`). For the turned square D, at the phase
 `π + d` with `1/2 < d ≤ π/4`, this gives `a > 41/40` and
 `|b| < 31/100 - 17d/100`, the excess of the circle condition being concave in
-`d`. For W at the phase `π - v` it gives `|b| < 233/500 - 73v/100` on its own
-axis and `-b < 47/100 - 2v/3` on the west side of C, the excess being a
-polynomial with positive coefficients in the Bernstein basis.
+`d`. For W at the phase `π - v` it gives `-b < 47/100 - 2v/3` on the west side
+of C and `|b| < 233/500 - 73v/100` on its own axis. There the excess is a
+polynomial in `v`, bounded below by keeping its leading terms: on the west side
+it is at least its value at `v = 0`, and on its own axis it is positive by a
+discriminant for `v ≤ 1/4` and at least its value at `v = 1/2` for `v ≥ 1/4`.
 -/
 
 noncomputable section
@@ -37,22 +39,14 @@ lemma transverse_lt_of_profile {a b L T : ℝ} (hc : ContainedChart a |b|)
 private def leftProfile (v : ℝ) : ℝ :=
   277/200+v/2-(77/400)*v^2-v^3/12
 
-private def leftPositiveSum (u : ℝ) : ℝ :=
-  4009500*(1-u)^5+24748659*u*(1-u)^4+50670036*u^2*(1-u)^3+
-    43013403*u^3*(1-u)^2+13241034*u^4*(1-u)+198508*u^5
-
-private lemma left_circle_obstruction {v : ℝ} (hv : 0≤v ∧ v≤2/3) :
+/-- The excess of the circle condition is at least its value at `v = 0`, its
+linear term `11v/120` outweighing its cubic and quartic terms. -/
+private lemma left_circle_obstruction {v : ℝ} (hv : 0≤v ∧ v≤2/5) :
     Q0<(leftProfile v)^2+(47/100-(2/3)*v+1/2)^2 := by
-  let u := 3*v/2
-  have hu0 : 0≤u := by dsimp [u]; linarith [hv.1]
-  have hu1 : 0≤1-u := by dsimp [u]; linarith [hv.2]
-  have hsum : 0≤leftPositiveSum u := by dsimp [leftPositiveSum]; positivity
-  have hp := mul_nonneg hu0 hsum
-  have hid : (leftProfile v)^2+(47/100-(2/3)*v+1/2)^2-Q0 =
-      1589/200000+u*leftPositiveSum u/65610000 := by
-    dsimp [leftProfile,leftPositiveSum,u,Q0]
-    ring
-  nlinarith only [hid,hp]
+  have h3 := mul_le_mul_of_nonneg_left (pow_le_pow_left₀ hv.1 hv.2 2) hv.1
+  have h4 := mul_le_mul_of_nonneg_left (pow_le_pow_left₀ hv.1 hv.2 3) hv.1
+  dsimp [leftProfile,Q0]
+  linarith only [h3,h4,hv.1,pow_nonneg hv.1 2,pow_nonneg hv.1 5,pow_nonneg hv.1 6]
 
 /-- A square separated from C along the west side of C, at the phase `π - v`
 with `0 ≤ v ≤ 2/5`, has `-b < 47/100 - (2/3) v`. -/
@@ -86,7 +80,7 @@ theorem cardinal_west_negative_transverse {a b cx cy v : ℝ}
     dsimp [leftProfile]
     nlinarith only [hp]
   have hbound := transverse_lt_of_profile hc hL (by linarith [hv.2]) hprofile
-    (left_circle_obstruction ⟨hv.1,by linarith [hv.2]⟩)
+    (left_circle_obstruction hv)
   linarith [neg_le_abs b]
 
 /-! ### W on its own axis -/
@@ -94,22 +88,22 @@ theorem cardinal_west_negative_transverse {a b cx cy v : ℝ}
 private def wingFrontCubic (v : ℝ) : ℝ :=
   1387/1000+v/2-(387/2000)*v^2-v^3/12
 
-private def wingFrontPositive (u : ℝ) : ℝ :=
-  15105600*(1-u)^6+56995200*u*(1-u)^5+235606320*u^2*(1-u)^4+
-  521705280*u^3*(1-u)^3+486585525*u^4*(1-u)^2+
-  159040590*u^5*(1-u)+756125*u^6
-
+/-- The excess of the circle condition is positive: for `v ≤ 1/4` it is at least
+a quadratic without real roots, and for `v ≥ 1/4` it is at least its value at
+`v = 1/2`, its linear term in `1/2 - v` outweighing the quadratic and quintic
+ones. -/
 private lemma own_wing_profile_circle {v : ℝ} (hv : 0≤v ∧ v≤1/2) :
     Q0<(wingFrontCubic v)^2+(233/500-(73/100)*v+1/2)^2 := by
-  let u := 2*v
-  have hu0 : 0≤u := by dsimp [u]; linarith [hv.1]
-  have hu1 : 0≤1-u := by dsimp [u]; linarith [hv.2]
-  have hpos : 0≤wingFrontPositive u := by dsimp [wingFrontPositive]; positivity
-  have hid : (wingFrontCubic v)^2+(233/500-(73/100)*v+1/2)^2-Q0 =
-      1/2000+wingFrontPositive u/2880000000 := by
-    dsimp [wingFrontCubic,wingFrontPositive,u,Q0]
-    ring
-  linarith
+  dsimp [wingFrontCubic,Q0]
+  rcases le_total v (1/4) with hs | hs
+  · have h3 := mul_le_mul_of_nonneg_left hs (sq_nonneg v)
+    have h4 := mul_le_mul_of_nonneg_left (pow_le_pow_left₀ hv.1 hs 2) (sq_nonneg v)
+    linarith only [h3,h4,hv.1,sq_nonneg (v-1/10),pow_nonneg hv.1 5,pow_nonneg hv.1 6]
+  · obtain ⟨h,rfl⟩ : ∃ h, v=1/2-h := ⟨1/2-v,by ring⟩
+    have h0 : 0≤h := by linarith [hv.2]
+    have h2 := mul_nonneg h0 (show 0≤1/4-h by linarith)
+    have h5 := mul_le_mul_of_nonneg_left (pow_le_pow_left₀ h0 (show h≤1/4 by linarith) 4) h0
+    linarith only [h0,h2,h5,pow_nonneg h0 3,pow_nonneg h0 4,pow_nonneg h0 6]
 
 /-- If W is separated from C along its own axis at angle `π - v`, with
 `0 ≤ v ≤ 1/2`, then `|b| < 233/500 - 73v/100`. -/
