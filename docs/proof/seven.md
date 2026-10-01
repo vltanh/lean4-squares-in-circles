@@ -504,7 +504,7 @@ $\overline{Q(a, u)}$.
 
 The proof is given in [Appendix A](appendix-a.md).
 
-*Lean: [`Seven.marker_arc`](../../SquaresInCircles/Seven/MarkerArc.lean#L281).*
+*Lean: [`Seven.marker_arc`](../../SquaresInCircles/Seven/MarkerArc.lean#L276).*
 
 In a chart of an exterior square with an admissible state, the lemma says that
 the closed square contains the arc of the unit circle with half-width
@@ -1035,7 +1035,7 @@ and every $z \in [\alpha, x)$ lies outside $E$, so $f(z) > \underline f = f(x)$.
 $\square$
 
 *Lean:
-[`Seven.leftmost_nonpositive_minimum`](../../SquaresInCircles/Seven/SmoothMinima.lean#L56).*
+[`leftmost_nonpositive_minimum`](../../SquaresInCircles/Common/Analysis.lean#L204).*
 
 ![The graph of a continuous function on an interval from alpha to beta: positive at alpha, nonnegative at beta, dipping below zero with a flat bottom; the leftmost point of the flat bottom is marked x](figures/seven-leftmost.svg)
 
@@ -1309,12 +1309,12 @@ We go through the axes.
 So $c > \delta$ in every case, and $\sigma_k(g) = c - \delta > 0$. $\square$
 
 *Lean:
-[`Seven.smooth_leftmost_support_pos`](../../SquaresInCircles/Seven/SmoothMinima.lean#L387),
-[`Seven.sinusoid_leftmost_minimum`](../../SquaresInCircles/Seven/SmoothMinima.lean#L97),
-[`Seven.stationary_nearest_corner`](../../SquaresInCircles/Seven/SmoothMinima.lean#L212),
-[`Seven.corner_source_margin`](../../SquaresInCircles/Seven/SmoothMinima.lean#L295),
-[`Seven.corner_label_gt`](../../SquaresInCircles/Seven/SmoothMinima.lean#L202),
-[`Seven.cardinal_shift_ne`](../../SquaresInCircles/Seven/SmoothMinima.lean#L152).*
+[`Seven.smooth_leftmost_support_pos`](../../SquaresInCircles/Seven/SmoothMinima.lean#L221),
+[`sinusoid_leftmost_minimum`](../../SquaresInCircles/Common/Analysis.lean#L255),
+[`Seven.stationary_nearest_corner`](../../SquaresInCircles/Seven/SmoothMinima.lean#L46),
+[`Seven.corner_source_margin`](../../SquaresInCircles/Seven/SmoothMinima.lean#L129),
+[`Seven.corner_label_gt`](../../SquaresInCircles/Seven/SmoothMinima.lean#L36),
+[`Seven.cardinal_shift_ne`](../../SquaresInCircles/Seven/SmoothMinima.lean#L24).*
 
 ![The square T in its own chart, the axis-parallel square centred at (A, tv), and the disk centre o at the origin outside it. The vertex of T nearest to o is joined to o by a segment of length delta; the line through that vertex perpendicular to the segment has T on its far side, and the direction u(z) is drawn from the vertex towards o](figures/seven-nearest-vertex.svg)
 

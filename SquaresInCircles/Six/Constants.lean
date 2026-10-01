@@ -1,5 +1,5 @@
 import SquaresInCircles.Common.Basic
-import SquaresInCircles.Six.Analysis
+import SquaresInCircles.Common.Trigonometry
 
 /-!
 # The constants
@@ -34,6 +34,30 @@ noncomputable section
 namespace SquaresInCircles.Six
 
 /-! ### The model -/
+
+lemma trig_bracket_half :
+    (8775:ℝ)/10000 ≤ Real.cos (1/2) ∧ Real.cos (1/2) ≤ 878/1000 ∧
+    (4794:ℝ)/10000 ≤ Real.sin (1/2) ∧ Real.sin (1/2) ≤ 4795/10000 := by
+  have h := trig_bracket (l := 1/2) (u := 1/2) (x := 1/2) (by norm_num)
+    (by linarith [Real.pi_gt_three]) ⟨le_rfl,le_rfl⟩
+  norm_num at h
+  exact ⟨by linarith,by linarith,by linarith,by linarith⟩
+
+lemma trig_bracket_two_thirds :
+    (157:ℝ)/200 ≤ Real.cos (2/3) ∧ Real.cos (2/3) ≤ 787/1000 ∧
+    (309:ℝ)/500 ≤ Real.sin (2/3) ∧ Real.sin (2/3) ≤ 619/1000 := by
+  have h := trig_bracket (l := 2/3) (u := 2/3) (x := 2/3) (by norm_num)
+    (by linarith [Real.pi_gt_three]) ⟨le_rfl,le_rfl⟩
+  norm_num at h
+  exact ⟨by linarith,by linarith,by linarith,by linarith⟩
+
+lemma trig_bracket_seven_sixths :
+    (3931:ℝ)/10000 ≤ Real.cos (7/6) ∧ Real.cos (7/6) ≤ 2/5 ∧
+    (9194:ℝ)/10000 ≤ Real.sin (7/6) ∧ Real.sin (7/6) ≤ 9201/10000 := by
+  have h := trig_bracket (l := 7/6) (u := 7/6) (x := 7/6) (by norm_num)
+    (by linarith [Real.pi_gt_d2]) ⟨le_rfl,le_rfl⟩
+  norm_num at h
+  exact ⟨by linarith,by linarith,by linarith,by linarith⟩
 
 lemma hStar_pos : 0 < hStar := halfDiagonal_pos
 

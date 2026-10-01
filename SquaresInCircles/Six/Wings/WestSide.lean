@@ -1,6 +1,6 @@
 import SquaresInCircles.Six.Wings.Chord
 import SquaresInCircles.Six.Wings.Chart
-import SquaresInCircles.Six.Analysis
+import SquaresInCircles.Common.Trigonometry
 import SquaresInCircles.Six.Normalization.Basic
 
 /-!

@@ -1,6 +1,6 @@
 import SquaresInCircles.Six.Normalization.PinAxes
 import SquaresInCircles.Six.Normalization.Basic
-import SquaresInCircles.Common.Analysis
+import SquaresInCircles.Common.Trigonometry
 
 /-!
 # The separating axes of consecutive exterior squares

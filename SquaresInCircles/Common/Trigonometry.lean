@@ -1,132 +1,296 @@
 import SquaresInCircles.Common.Analysis
-import Mathlib.Analysis.Convex.Jensen
-import Mathlib.Analysis.SpecialFunctions.Sqrt
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
-import Mathlib.Tactic
 import Mathlib.Analysis.Real.Pi.Bounds
+import Mathlib.Analysis.SpecialFunctions.Sqrt
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
 import Mathlib.Analysis.Calculus.Deriv.Inv
-import Mathlib.Analysis.Convex.Deriv
+import Mathlib.Tactic.NormNum.RealSqrt
 
 /-!
-# One-variable tools
+# Trigonometric estimates
 
-The estimates of the six-square proof come down to functions of one angle at a
-time. A function with a nonpositive second derivative on an interval is concave
-there, and a concave function exceeds inside the interval every bound that it
-exceeds at both ends; concavity survives an affine change of the argument, and a
-function on a rectangle that is concave in each variable is positive once it is
-positive at the four corners. A quartic positive at both ends of an interval is
-positive where a quadratic `Q` is nonpositive, since it exceeds its chord by
-`-(x - l)(u - x) Q x`.
-
-The first harmonic `A cos x + B sin x` is minus its own second derivative, so it
-is concave where it is nonnegative, in particular on `[0, π/2]` when
-`A, B ≥ 0`. Subtracting `R √(p + q sin x)` keeps it concave where `q² ≤ p²` and
-the radical is at most four times the harmonic, since the radical has the second
-derivative `-r/4 + (p² - q²)/(4r³)`. The length `L` of a constant vector of
-length `a` plus a turning vector of length `b` has `L² = P + Q cos x + T sin x`
-with `P = a² + b²` and `Q² + T² = 4a²b²`; the second derivative of `-R L` is
-`R (L⁴ - (a² - b²)²)/(4L³)`, at most `R ab/(a + b)`, because
-`4abL³ - (a + b)(L⁴ - (a² - b²)²)` is `a + b - L` times a polynomial with
-nonnegative terms, and nonpositive when `a ≤ b` and `L² ≤ b² - a²`.
-
-For `|t| ≤ r` an angle has `cos t ≥ 1 - r²/2` and `|sin t| ≤ r`; the Taylor
-polynomials of degrees four to seven bracket `cos` on the whole line and `sin`
-for `x ≥ 0`, and on the whole line once chosen by the sign of `x`, which gives
-rational brackets at the points where the estimates are evaluated;
-a square root lies below its tangents; and the half-angle ratio
-`sin t/(1 + cos t) = tan (t/2)` lies between `t/2` and `11t/20` on `[0, 4/5]`.
+Rational bounds for `π`, `sin` and `cos`: on small angles, on quadrants, and
+the Taylor polynomials of degrees four to seven, which bracket `cos` on the
+whole line and `sin` for `x ≥ 0`, and on the whole line once chosen by the sign
+of `x`. The first harmonic `A cos x + B sin x` is minus its own second
+derivative, so it is concave where it is nonnegative, in particular on
+`[0, π/2]` when `A, B ≥ 0`. Subtracting `R √(p + q sin x)` keeps it concave
+where `q² ≤ p²` and the radical is at most four times the harmonic, since the
+radical has the second derivative `-r/4 + (p² - q²)/(4r³)`. The length `L` of a
+constant vector of length `a` plus a turning vector of length `b` has
+`L² = P + Q cos x + T sin x` with `P = a² + b²` and `Q² + T² = 4a²b²`; the
+second derivative of `-R L` is `R (L⁴ - (a² - b²)²)/(4L³)`, at most
+`R ab/(a + b)`, because `4abL³ - (a + b)(L⁴ - (a² - b²)²)` is `a + b - L` times
+a polynomial with nonnegative terms, and nonpositive when `a ≤ b` and
+`L² ≤ b² - a²`. A square root lies below its tangents, the half-angle ratio
+`sin t/(1 + cos t) = tan (t/2)` lies between `t/2` and `11t/20` on `[0, 4/5]`,
+and the arcsine is bounded by `x` and `x + x³/4` and is concave on `[0, 1]`.
 -/
-
 noncomputable section
 open Set
+namespace SquaresInCircles
 
-namespace SquaresInCircles.Six
+/-! ### Angles -/
 
-/-! ### Concavity -/
+lemma pi_lt_22_over_7 : Real.pi < (22:ℝ)/7 := by
+  linarith [Real.pi_lt_d4]
 
-/-- A function whose second derivative is nonpositive on `[l, u]` is concave
-there. -/
-lemma concave_of_deriv2 {f f' f'' : ℝ → ℝ} {l u : ℝ}
-    (hf : ∀ x ∈ Icc l u, HasDerivAt f (f' x) x)
-    (hf' : ∀ x ∈ Icc l u, HasDerivAt f' (f'' x) x)
-    (h : ∀ x ∈ Icc l u, f'' x ≤ 0) : ConcaveOn ℝ (Icc l u) f :=
-  concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc l u)
-    (fun x hx => (hf x hx).continuousAt.continuousWithinAt)
-    (fun x hx => (hf x (interior_subset hx)).hasDerivWithinAt)
-    (fun x hx => (hf' x (interior_subset hx)).hasDerivWithinAt)
-    (fun x hx => h x (interior_subset hx))
+lemma cos_pi_add (x : ℝ) : Real.cos (Real.pi+x) = -Real.cos x := by
+  rw [add_comm,Real.cos_add_pi]
 
-/-- A concave function exceeds inside `[l, u]` every bound that it exceeds at
-both ends. -/
-lemma concave_gt_of_endpoints {f : ℝ → ℝ} {l u x c : ℝ}
-    (hf : ConcaveOn ℝ (Icc l u) f) (hx : l ≤ x ∧ x ≤ u) (hl : c < f l) (hu : c < f u) :
-    c < f x :=
-  (lt_min hl hu).trans_le
-    (hf.min_le_of_mem_Icc ⟨le_rfl,hx.1.trans hx.2⟩ ⟨hx.1.trans hx.2,le_rfl⟩ hx)
+lemma sin_pi_add (x : ℝ) : Real.sin (Real.pi+x) = -Real.sin x := by
+  rw [add_comm,Real.sin_add_pi]
 
-/-- A function concave on `[L, U]`, composed with an affine map from `[l, u]`
-into `[L, U]`, is concave on `[l, u]`. -/
-lemma concave_affine_argument {f : ℝ → ℝ} {L U l u a b : ℝ}
-    (hf : ConcaveOn ℝ (Icc L U) f) (hmap : ∀ x ∈ Icc l u, a*x+b ∈ Icc L U) :
-    ConcaveOn ℝ (Icc l u) (fun x => f (a*x+b)) := by
-  refine ⟨convex_Icc l u,?_⟩
-  intro x hx y hy r s hr hs hrs
-  have h := hf.2 (hmap x hx) (hmap y hy) hr hs hrs
-  have hid : a*(r*x+s*y)+b=r*(a*x+b)+s*(a*y+b) := by
-    linear_combination -b*hrs
-  simpa only [smul_eq_mul,hid] using h
+/-- `cos` and `sin` are nonnegative on `[0, π/2]`. -/
+lemma cos_sin_nonneg {x : ℝ} (hx : 0 ≤ x ∧ x ≤ Real.pi/2) :
+    0 ≤ Real.cos x ∧ 0 ≤ Real.sin x :=
+  ⟨Real.cos_nonneg_of_mem_Icc ⟨by linarith [Real.pi_pos],hx.2⟩,
+    Real.sin_nonneg_of_nonneg_of_le_pi hx.1 (by linarith [Real.pi_pos])⟩
 
-/-- An affine function is concave. -/
-lemma affine_concave (a b l u : ℝ) : ConcaveOn ℝ (Icc l u) (fun x : ℝ => a*x+b) := by
-  refine ⟨convex_Icc l u,fun x _ y _ p q _ _ hpq => ?_⟩
-  simp only [smul_eq_mul]
-  have he : p*(a*x+b)+q*(a*y+b)=a*(p*x+q*y)+b*(p+q) := by ring
-  rw [he,hpq,mul_one]
+lemma sin_le_cos_of_small {x : ℝ} (hx : 0 ≤ x ∧ x ≤ Real.pi/4) : Real.sin x ≤ Real.cos x := by
+  rw [← Real.cos_pi_div_two_sub]
+  exact Real.cos_le_cos_of_nonneg_of_le_pi hx.1 (by linarith [Real.pi_pos]) (by linarith)
 
-/-- A function on `[l, u] × [L, U]`, concave in the first variable and concave
-in the second on the edges `x = l` and `x = u`, is positive if it is positive
-at the four corners. -/
-lemma positive_on_separately_concave_rectangle {f : ℝ → ℝ → ℝ} {l u L U x y : ℝ}
-    (hx : l ≤ x ∧ x ≤ u) (hy : L ≤ y ∧ y ≤ U)
-    (hfirst : ∀ t ∈ Icc L U, ConcaveOn ℝ (Icc l u) (fun z => f z t))
-    (hleft : ConcaveOn ℝ (Icc L U) (f l))
-    (hright : ConcaveOn ℝ (Icc L U) (f u))
-    (hll : 0 < f l L) (hlu : 0 < f l U) (hul : 0 < f u L) (huu : 0 < f u U) : 0 < f x y :=
-  concave_gt_of_endpoints (f := fun z => f z y) (hfirst y hy) hx
-    (concave_gt_of_endpoints (f := f l) hleft hy hll hlu)
-    (concave_gt_of_endpoints (f := f u) hright hy hul huu)
+lemma cos_le_sin_of_quarter {x : ℝ} (hx : Real.pi/4 ≤ x ∧ x ≤ Real.pi/2) :
+    Real.cos x ≤ Real.sin x := by
+  rw [← Real.cos_pi_div_two_sub]
+  exact Real.cos_le_cos_of_nonneg_of_le_pi (by linarith) (by linarith [Real.pi_pos]) (by linarith)
 
-/-- The quartic with the coefficients `a0, …, a4`. -/
-def quartic (a0 a1 a2 a3 a4 x : ℝ) : ℝ :=
-  a0+a1*x+a2*x^2+a3*x^3+a4*x^4
+lemma cos_ge_half {z : ℝ} (hz : 0 ≤ z ∧ z ≤ Real.pi/3) : (1/2 : ℝ) ≤ Real.cos z := by
+  simpa only [Real.cos_pi_div_three] using
+    Real.cos_le_cos_of_nonneg_of_le_pi hz.1 (by linarith [Real.pi_pos]) hz.2
 
-/-- If the quadratic `Q x` of `hcurv` is nonpositive, a quartic positive at `l`
-and `u` is positive at `x ∈ [l, u]`, since it exceeds its chord by
-`-(x - l)(u - x) Q x`. -/
-theorem quartic_positive_of_chord {a0 a1 a2 a3 a4 l u x : ℝ}
-    (hlu : l < u) (hx : l ≤ x ∧ x ≤ u)
-    (hl : 0 < quartic a0 a1 a2 a3 a4 l)
-    (hu : 0 < quartic a0 a1 a2 a3 a4 u)
-    (hcurv : a2+a3*(x+l+u)+a4*(x^2+(l+u)*x+l^2+l*u+u^2) ≤ 0) :
-    0 < quartic a0 a1 a2 a3 a4 x := by
-  have hleft : 0 ≤ u-x := sub_nonneg.mpr hx.2
-  have hright : 0 ≤ x-l := sub_nonneg.mpr hx.1
-  have hcorr := mul_nonpos_of_nonneg_of_nonpos
-    (mul_nonneg (mul_nonneg (sub_nonneg.mpr hlu.le) hright) hleft) hcurv
-  have hid : (u-l)*quartic a0 a1 a2 a3 a4 x =
-      (u-x)*quartic a0 a1 a2 a3 a4 l+(x-l)*quartic a0 a1 a2 a3 a4 u-
-      (u-l)*(x-l)*(u-x)*(a2+a3*(x+l+u)+a4*(x^2+(l+u)*x+l^2+l*u+u^2)) := by
-    dsimp [quartic]
-    ring
-  have hchord : 0 < (u-x)*quartic a0 a1 a2 a3 a4 l+(x-l)*quartic a0 a1 a2 a3 a4 u := by
-    rcases lt_or_eq_of_le hx.2 with hxu | rfl
-    · exact add_pos_of_pos_of_nonneg (mul_pos (sub_pos.mpr hxu) hl)
-        (mul_nonneg hright hu.le)
-    · simpa using mul_pos (sub_pos.mpr hlu) hu
-  by_contra! hbad
-  have hmul := mul_nonpos_of_nonneg_of_nonpos (sub_nonneg.mpr hlu.le) hbad
-  nlinarith only [hid,hcorr,hchord,hmul]
+/-- Rational bounds on `cos t` and `sin t` for `0 ≤ t ≤ π/4`. -/
+lemma east_quadrant_trig {t : ℝ} (ht0 : 0 ≤ t) (ht : t ≤ Real.pi/4) :
+    7/10 ≤ Real.cos t ∧ 0 ≤ Real.sin t ∧ Real.sin t ≤ Real.cos t := by
+  have hc := Real.cos_le_cos_of_nonneg_of_le_pi ht0
+    (show Real.pi/4 ≤ Real.pi by linarith [Real.pi_pos]) ht
+  have hs := Real.sin_le_sin_of_le_of_le_pi_div_two
+    (show -(Real.pi/2) ≤ t by linarith [Real.pi_pos])
+    (show Real.pi/4 ≤ Real.pi/2 by linarith [Real.pi_pos]) ht
+  rw [Real.cos_pi_div_four] at hc
+  rw [Real.sin_pi_div_four] at hs
+  have hsqrt : (7:ℝ)/10 ≤ Real.sqrt 2/2 := by
+    nlinarith [Real.sq_sqrt (show (0:ℝ) ≤ 2 by norm_num),Real.sqrt_nonneg (2:ℝ)]
+  exact ⟨hsqrt.trans hc,
+    Real.sin_nonneg_of_nonneg_of_le_pi ht0 (by linarith [Real.pi_pos]),hs.trans hc⟩
+
+/-- `cos x + sin x` increases on `[0, π/4]`. -/
+lemma cos_add_sin_mono {x y : ℝ} (hx : 0 ≤ x) (hxy : x ≤ y) (hy : y ≤ Real.pi/4) :
+    Real.cos x+Real.sin x ≤ Real.cos y+Real.sin y := by
+  have h := Real.sin_le_sin_of_le_of_le_pi_div_two
+    (show -(Real.pi/2) ≤ x+Real.pi/4 by linarith [Real.pi_pos])
+    (show y+Real.pi/4 ≤ Real.pi/2 by linarith)
+    (show x+Real.pi/4 ≤ y+Real.pi/4 by linarith)
+  simp only [Real.sin_add,Real.sin_pi_div_four,Real.cos_pi_div_four] at h
+  apply (mul_le_mul_iff_right₀ (show 0 < Real.sqrt 2/2 by positivity)).mp
+  nlinarith only [h]
+
+lemma one_le_abs_cos_add_abs_sin (t : ℝ) : 1 ≤ |Real.cos t|+|Real.sin t| := by
+  have hc := abs_nonneg (Real.cos t)
+  have hs := abs_nonneg (Real.sin t)
+  have hu := Real.sin_sq_add_cos_sq t
+  have hp := mul_nonneg hc hs
+  by_contra! h
+  have hprod := mul_pos (sub_pos.mpr h)
+    (show 0 < 1+(|Real.cos t|+|Real.sin t|) by linarith)
+  nlinarith [sq_abs (Real.cos t),sq_abs (Real.sin t)]
+
+/-- A small angle: for `|t| ≤ r`, `1 - r²/2 ≤ cos t` and `|sin t| ≤ r`. -/
+lemma small_angle {t r : ℝ} (ht : |t| ≤ r) :
+    1-r^2/2 ≤ Real.cos t ∧ |Real.sin t| ≤ r := by
+  have ht2 := pow_le_pow_left₀ (abs_nonneg t) ht 2
+  rw [sq_abs] at ht2
+  exact ⟨by nlinarith [Real.one_sub_sq_div_two_le_cos (x := t)],
+    Real.abs_sin_le_abs.trans ht⟩
+
+/-- A small nonnegative angle: for `0 ≤ x ≤ r ≤ 3`, `1 - r²/2 ≤ cos x` and
+`0 ≤ sin x ≤ r`. -/
+lemma small_angle_nonneg {x r : ℝ} (hx : 0 ≤ x ∧ x ≤ r) (hr : r ≤ 3) :
+    1-r^2/2 ≤ Real.cos x ∧ 0 ≤ Real.sin x ∧ Real.sin x ≤ r := by
+  have h := small_angle (show |x| ≤ r by rw [abs_of_nonneg hx.1]; exact hx.2)
+  exact ⟨h.1,Real.sin_nonneg_of_nonneg_of_le_pi hx.1 (by linarith [Real.pi_gt_three]),
+    (le_abs_self _).trans h.2⟩
+
+/-- A quadratic upper bound for `cos` on `[-π, π]`. -/
+lemma cos_le_one_sub_fifth_sq {t : ℝ} (ht : |t| ≤ Real.pi) :
+    Real.cos t ≤ 1-t^2/5 := by
+  have hpi : Real.pi < (22:ℝ)/7 := by linarith [Real.pi_lt_d4]
+  have hp := mul_pos (sub_pos.mpr hpi)
+    (show 0 < (22:ℝ)/7+Real.pi by linarith [Real.pi_pos])
+  have hpi2 : Real.pi^2 < 10 := by nlinarith
+  have hcoeff : (1:ℝ)/5 ≤ 2/Real.pi^2 := by
+    apply (le_div_iff₀ (pow_pos Real.pi_pos 2)).mpr
+    linarith
+  have hm := mul_le_mul_of_nonneg_right hcoeff (sq_nonneg t)
+  have hc := Real.cos_le_one_sub_mul_cos_sq ht
+  nlinarith
+
+lemma sin_zero_between {x : ℝ} (hx : -Real.pi<x ∧ x<Real.pi)
+    (hs : Real.sin x=0) : x=0 := by
+  rcases lt_trichotomy x 0 with h | h | h
+  · have hp := Real.sin_pos_of_pos_of_lt_pi (show 0< -x by linarith) (by linarith [hx.1])
+    rw [Real.sin_neg,hs] at hp
+    linarith
+  · exact h
+  · have hp := Real.sin_pos_of_pos_of_lt_pi h hx.2
+    rw [hs] at hp
+    linarith
+
+lemma cos_one_between {x : ℝ} (hx : -2*Real.pi<x ∧ x<2*Real.pi)
+    (hc : Real.cos x=1) : x=0 := by
+  have hhalf : Real.sin (x/2)=0 := by
+    have he := Real.cos_two_mul (x/2)
+    rw [show 2*(x/2)=x by ring,hc] at he
+    have hu := Real.sin_sq_add_cos_sq (x/2)
+    nlinarith
+  have hh := sin_zero_between (x := x/2)
+    ⟨by linarith [hx.1],by linarith [hx.2]⟩ hhalf
+  linarith
+
+lemma cos_zero_between {x : ℝ} (hx : -Real.pi/2<x ∧ x<Real.pi)
+    (hc : Real.cos x=0) : x=Real.pi/2 := by
+  have hs : Real.sin (x-Real.pi/2)=0 := by
+    rw [Real.sin_sub]
+    simpa using congrArg Neg.neg hc
+  have h := sin_zero_between
+    (x := x-Real.pi/2) ⟨by linarith [hx.1],by linarith [hx.2,Real.pi_pos]⟩ hs
+  linarith
+
+lemma first_octant_polar {x y : ℝ} (hx : 0<x) (hy : 0<y) (hxy : y≤x) :
+    ∃ d b : ℝ, 0<d ∧ 0<b ∧ b≤Real.pi/4 ∧ d^2=x^2+y^2 ∧
+      d*Real.cos b=x ∧ d*Real.sin b=y := by
+  let d := Real.sqrt (x^2+y^2)
+  have hd : 0<d := Real.sqrt_pos.mpr (by nlinarith [sq_nonneg x,sq_nonneg y])
+  have hd2 : d^2=x^2+y^2 := Real.sq_sqrt (by positivity)
+  have hxd : 0<x/d := div_pos hx hd
+  have hxd1 : x/d<1 := (div_lt_one hd).mpr (by nlinarith)
+  let b := Real.arccos (x/d)
+  have hc : Real.cos b=x/d := Real.cos_arccos (by linarith) hxd1.le
+  have hb0 : 0≤b := Real.arccos_nonneg _
+  have hbpi : b≤Real.pi := Real.arccos_le_pi _
+  have hbhalf : b<Real.pi/2 := by
+    have hs := Real.arcsin_pos.mpr hxd
+    dsimp [b,Real.arccos]
+    linarith
+  have hbp : 0<b := by
+    by_contra hn
+    have he : b=0 := le_antisymm (le_of_not_gt hn) hb0
+    rw [he,Real.cos_zero] at hc
+    linarith
+  have hdc : d*Real.cos b=x := by rw [hc]; field_simp
+  have hs0 := Real.sin_nonneg_of_nonneg_of_le_pi hb0 hbpi
+  have hds : d*Real.sin b=y := by
+    have hu := congrArg (fun z : ℝ => d^2*z) (Real.sin_sq_add_cos_sq b)
+    have hc2 := congrArg (fun z : ℝ => z^2) hdc
+    have hn := mul_nonneg hd.le hs0
+    nlinarith
+  have hbq : b≤Real.pi/4 := by
+    by_contra hn
+    have hsin := Real.sin_lt_sin_of_lt_of_le_pi_div_two (by linarith) hbhalf.le
+      (show Real.pi/2-b<b by linarith)
+    rw [Real.sin_pi_div_two_sub] at hsin
+    have hm := mul_lt_mul_of_pos_left hsin hd
+    rw [hdc,hds] at hm
+    linarith
+  exact ⟨d,b,hd,hbp,hbq,hd2,hdc,hds⟩
+
+/-! ### Taylor brackets -/
+
+lemma cos_upper_four {x : ℝ} (hx : 0 ≤ x) : Real.cos x ≤ 1-x^2/2+x^4/24 := by
+  have h := nonneg_of_deriv_nonneg (fun t => 1-t^2/2+t^4/24-Real.cos t) (by fun_prop)
+    (by norm_num) (fun t ht => by
+      simp (disch := fun_prop)
+      linarith [Real.sin_ge_sub_cube ht]) hx
+  linarith
+
+lemma sin_upper_five {x : ℝ} (hx : 0 ≤ x) : Real.sin x ≤ x-x^3/6+x^5/120 := by
+  have h := nonneg_of_deriv_nonneg (fun t => t-t^3/6+t^5/120-Real.sin t) (by fun_prop)
+    (by norm_num) (fun t ht => by
+      simp (disch := fun_prop)
+      linarith [cos_upper_four ht]) hx
+  linarith
+
+lemma cos_lower_six {x : ℝ} (hx : 0 ≤ x) : 1-x^2/2+x^4/24-x^6/720 ≤ Real.cos x := by
+  have h := nonneg_of_deriv_nonneg (fun t => Real.cos t-(1-t^2/2+t^4/24-t^6/720))
+    (by fun_prop) (by norm_num) (fun t ht => by
+      simp (disch := fun_prop)
+      linarith [sin_upper_five ht]) hx
+  linarith
+
+lemma sin_lower_seven {x : ℝ} (hx : 0 ≤ x) : x-x^3/6+x^5/120-x^7/5040 ≤ Real.sin x := by
+  have h := nonneg_of_deriv_nonneg (fun t => Real.sin t-(t-t^3/6+t^5/120-t^7/5040))
+    (by fun_prop) (by norm_num) (fun t ht => by
+      simp (disch := fun_prop)
+      linarith [cos_lower_six ht]) hx
+  linarith
+
+/-- Polynomial brackets of `sin` and `cos` on an interval `[l, u] ⊆ [0, π/2]`. -/
+lemma trig_bracket {l u x : ℝ} (hl : 0 ≤ l) (hu : u ≤ Real.pi/2) (hx : l ≤ x ∧ x ≤ u) :
+    l-l^3/6+l^5/120-l^7/5040 ≤ Real.sin x ∧ Real.sin x ≤ u-u^3/6+u^5/120 ∧
+    1-u^2/2+u^4/24-u^6/720 ≤ Real.cos x ∧ Real.cos x ≤ 1-l^2/2+l^4/24 := by
+  have hx0 : 0 ≤ x := hl.trans hx.1
+  have hu0 : 0 ≤ u := hx0.trans hx.2
+  have hpi := Real.pi_pos
+  exact ⟨(sin_lower_seven hl).trans (Real.sin_le_sin_of_le_of_le_pi_div_two
+      (by linarith) (hx.2.trans hu) hx.1),
+    (Real.sin_le_sin_of_le_of_le_pi_div_two (by linarith) hu hx.2).trans (sin_upper_five hu0),
+    (cos_lower_six hu0).trans (Real.cos_le_cos_of_nonneg_of_le_pi hx0 (by linarith) hx.2),
+    (Real.cos_le_cos_of_nonneg_of_le_pi hl (by linarith) hx.1).trans (cos_upper_four hl)⟩
+
+/-- The Taylor polynomial of degree 6 of `cos`, below it on the whole line. -/
+def cosLower (x : ℝ) : ℝ := 1-x^2/2+x^4/24-x^6/720
+
+/-- The Taylor polynomial of degree 4 of `cos`, above it on the whole line. -/
+def cosUpper (x : ℝ) : ℝ := 1-x^2/2+x^4/24
+
+/-- The Taylor polynomial of degree 7 of `sin`, below it for `x ≥ 0`. -/
+def sinLower (x : ℝ) : ℝ := x-x^3/6+x^5/120-x^7/5040
+
+/-- The Taylor polynomial of degree 5 of `sin`, above it for `x ≥ 0`. -/
+def sinUpper (x : ℝ) : ℝ := x-x^3/6+x^5/120
+
+/-- A Taylor polynomial below `sin` on the whole line: `sinLower` for `x ≥ 0`,
+`sinUpper` for `x < 0`. -/
+def sinBelow (x : ℝ) : ℝ := if 0 ≤ x then sinLower x else sinUpper x
+
+/-- A Taylor polynomial above `sin` on the whole line. -/
+def sinAbove (x : ℝ) : ℝ := if 0 ≤ x then sinUpper x else sinLower x
+
+lemma cosLower_le (x : ℝ) : cosLower x ≤ Real.cos x := by
+  rcases le_total 0 x with hx | hx
+  · exact cos_lower_six hx
+  · have h := cos_lower_six (x := -x) (by linarith)
+    rw [Real.cos_neg] at h
+    dsimp [cosLower]
+    nlinarith only [h]
+
+lemma le_cosUpper (x : ℝ) : Real.cos x ≤ cosUpper x := by
+  rcases le_total 0 x with hx | hx
+  · exact cos_upper_four hx
+  · have h := cos_upper_four (x := -x) (by linarith)
+    rw [Real.cos_neg] at h
+    dsimp [cosUpper]
+    nlinarith only [h]
+
+lemma sinLower_le {x : ℝ} (hx : 0 ≤ x) : sinLower x ≤ Real.sin x := sin_lower_seven hx
+
+lemma le_sinUpper {x : ℝ} (hx : 0 ≤ x) : Real.sin x ≤ sinUpper x := sin_upper_five hx
+
+lemma sinBelow_le (x : ℝ) : sinBelow x ≤ Real.sin x := by
+  by_cases hx : 0 ≤ x
+  · simpa only [sinBelow,ite_eq_left hx] using sinLower_le hx
+  · have h := le_sinUpper (x := -x) (by linarith)
+    rw [Real.sin_neg] at h
+    simp only [sinBelow,ite_eq_right hx,sinUpper] at h ⊢
+    nlinarith only [h]
+
+lemma le_sinAbove (x : ℝ) : Real.sin x ≤ sinAbove x := by
+  by_cases hx : 0 ≤ x
+  · simpa only [sinAbove,ite_eq_left hx] using le_sinUpper hx
+  · have h := sinLower_le (x := -x) (by linarith)
+    rw [Real.sin_neg] at h
+    simp only [sinAbove,ite_eq_right hx,sinLower] at h ⊢
+    nlinarith only [h]
 
 /-! ### First harmonics -/
 
@@ -138,12 +302,6 @@ lemma harmonic_hasDerivAt (A B x : ℝ) :
     HasDerivAt (harmonic A B) (harmonic B (-A) x) x :=
   (((Real.hasDerivAt_cos x).const_mul A).add ((Real.hasDerivAt_sin x).const_mul B)).congr_deriv
     (by simp only [harmonic]; ring)
-
-/-- `cos` and `sin` are nonnegative on `[0, π/2]`. -/
-lemma cos_sin_nonneg {x : ℝ} (hx : 0 ≤ x ∧ x ≤ Real.pi/2) :
-    0 ≤ Real.cos x ∧ 0 ≤ Real.sin x :=
-  ⟨Real.cos_nonneg_of_mem_Icc ⟨by linarith [Real.pi_pos],hx.2⟩,
-    Real.sin_nonneg_of_nonneg_of_le_pi hx.1 (by linarith [Real.pi_pos])⟩
 
 /-- A first harmonic with nonnegative coefficients is nonnegative on
 `[0, π/2]`. -/
@@ -159,17 +317,30 @@ lemma harmonic_concave {A B l u : ℝ} (h : ∀ x ∈ Icc l u, 0 ≤ A*Real.cos 
     (fun x _ => harmonic_hasDerivAt B (-A) x)
     (fun x hx => by have := h x hx; simp only [harmonic]; linarith)
 
+/-- `αx + A sin x + B cos x` with `A, B ≥ 0` is concave on `[0, π/2]`, so on an
+interval there it exceeds any bound that it exceeds at both ends. -/
+lemma trig_concave_gt {α A B m l u x : ℝ} (hA : 0 ≤ A) (hB : 0 ≤ B)
+    (hl : 0 ≤ l) (hu : u ≤ Real.pi/2) (hx : l ≤ x ∧ x ≤ u)
+    (hml : m < α*l+A*Real.sin l+B*Real.cos l) (hmu : m < α*u+A*Real.sin u+B*Real.cos u) :
+    m < α*x+A*Real.sin x+B*Real.cos x := by
+  have hs : Icc l u ⊆ Icc 0 Real.pi := Icc_subset_Icc hl (by linarith [Real.pi_pos])
+  have hc : Icc l u ⊆ Icc (-(Real.pi/2)) (Real.pi/2) :=
+    Icc_subset_Icc (by linarith [Real.pi_pos]) hu
+  have hlin : ConcaveOn ℝ (Icc l u) fun x => α*x :=
+    ⟨convex_Icc l u,fun x _ y _ a b _ _ _ => by simp only [smul_eq_mul]; ring_nf; rfl⟩
+  have hf : ConcaveOn ℝ (Icc l u) fun x => α*x+A*Real.sin x+B*Real.cos x :=
+    (hlin.add ((strictConcaveOn_sin_Icc.concaveOn.subset hs (convex_Icc l u)).smul hA)).add
+      ((strictConcaveOn_cos_Icc.concaveOn.subset hc (convex_Icc l u)).smul hB)
+  exact (lt_min hml hmu).trans_le (hf.min_le_of_mem_Icc
+    (left_mem_Icc.mpr (hx.1.trans hx.2)) (right_mem_Icc.mpr (hx.1.trans hx.2)) hx)
+
 /-- `K + A cos x + B sin x`, with `A, B ≥ 0`, is positive on `[l, u] ⊆ [0, π/2]`
 as soon as it is positive at both ends. -/
 lemma harmonic_pos_of_endpoints {K A B l u x : ℝ} (hA : 0 ≤ A) (hB : 0 ≤ B)
     (hl : 0 ≤ l) (hu : u ≤ Real.pi/2) (hx : l ≤ x ∧ x ≤ u)
     (hleft : 0 < K+A*Real.cos l+B*Real.sin l) (hright : 0 < K+A*Real.cos u+B*Real.sin u) :
     0 < K+A*Real.cos x+B*Real.sin x := by
-  have hc := harmonic_concave (A := A) (B := B) (l := l) (u := u)
-    fun y hy => harmonic_nonneg hA hB ⟨hl.trans hy.1,hy.2.trans hu⟩
-  have h := concave_gt_of_endpoints hc hx (c := -K)
-    (by simp only [harmonic]; linarith) (by simp only [harmonic]; linarith)
-  simp only [harmonic] at h
+  have h := trig_concave_gt (α := 0) (m := -K) hB hA hl hu hx (by linarith) (by linarith)
   linarith
 
 /-! ### Radicals and rotating lengths -/
@@ -431,160 +602,7 @@ theorem harmonicCurvature_nonpos_of_opposition {R a b P Q T x : ℝ}
   exact div_nonpos_of_nonpos_of_nonneg (mul_nonpos_of_nonneg_of_nonpos hR hproduct)
     (mul_nonneg (by linarith) (Real.sqrt_nonneg _))
 
-/-! ### Small angles and quadrants -/
-
-/-- A small angle: for `|t| ≤ r`, `1 - r²/2 ≤ cos t` and `|sin t| ≤ r`. -/
-lemma small_angle {t r : ℝ} (ht : |t| ≤ r) :
-    1-r^2/2 ≤ Real.cos t ∧ |Real.sin t| ≤ r := by
-  have ht2 := pow_le_pow_left₀ (abs_nonneg t) ht 2
-  rw [sq_abs] at ht2
-  exact ⟨by nlinarith [Real.one_sub_sq_div_two_le_cos (x := t)],
-    Real.abs_sin_le_abs.trans ht⟩
-
-/-- A small nonnegative angle: for `0 ≤ x ≤ r ≤ 3`, `1 - r²/2 ≤ cos x` and
-`0 ≤ sin x ≤ r`. -/
-lemma small_angle_nonneg {x r : ℝ} (hx : 0 ≤ x ∧ x ≤ r) (hr : r ≤ 3) :
-    1-r^2/2 ≤ Real.cos x ∧ 0 ≤ Real.sin x ∧ Real.sin x ≤ r := by
-  have h := small_angle (show |x| ≤ r by rw [abs_of_nonneg hx.1]; exact hx.2)
-  exact ⟨h.1,Real.sin_nonneg_of_nonneg_of_le_pi hx.1 (by linarith [Real.pi_gt_three]),
-    (le_abs_self _).trans h.2⟩
-
-lemma cos_pi_add (x : ℝ) : Real.cos (Real.pi+x) = -Real.cos x := by
-  rw [add_comm,Real.cos_add_pi]
-
-lemma sin_pi_add (x : ℝ) : Real.sin (Real.pi+x) = -Real.sin x := by
-  rw [add_comm,Real.sin_add_pi]
-
-lemma one_le_abs_cos_add_abs_sin (t : ℝ) : 1 ≤ |Real.cos t|+|Real.sin t| := by
-  have hc := abs_nonneg (Real.cos t)
-  have hs := abs_nonneg (Real.sin t)
-  have hu := Real.sin_sq_add_cos_sq t
-  have hp := mul_nonneg hc hs
-  by_contra! h
-  have hprod := mul_pos (sub_pos.mpr h)
-    (show 0 < 1+(|Real.cos t|+|Real.sin t|) by linarith)
-  nlinarith [sq_abs (Real.cos t),sq_abs (Real.sin t)]
-
-/-- Rational bounds on `cos t` and `sin t` for `0 ≤ t ≤ π/4`. -/
-lemma east_quadrant_trig {t : ℝ} (ht0 : 0 ≤ t) (ht : t ≤ Real.pi/4) :
-    7/10 ≤ Real.cos t ∧ 0 ≤ Real.sin t ∧ Real.sin t ≤ Real.cos t := by
-  have hc := Real.cos_le_cos_of_nonneg_of_le_pi ht0
-    (show Real.pi/4 ≤ Real.pi by linarith [Real.pi_pos]) ht
-  have hs := Real.sin_le_sin_of_le_of_le_pi_div_two
-    (show -(Real.pi/2) ≤ t by linarith [Real.pi_pos])
-    (show Real.pi/4 ≤ Real.pi/2 by linarith [Real.pi_pos]) ht
-  rw [Real.cos_pi_div_four] at hc
-  rw [Real.sin_pi_div_four] at hs
-  have hsqrt : (7:ℝ)/10 ≤ Real.sqrt 2/2 := by
-    nlinarith [Real.sq_sqrt (show (0:ℝ) ≤ 2 by norm_num),Real.sqrt_nonneg (2:ℝ)]
-  exact ⟨hsqrt.trans hc,
-    Real.sin_nonneg_of_nonneg_of_le_pi ht0 (by linarith [Real.pi_pos]),hs.trans hc⟩
-
-/-- `cos x + sin x` increases on `[0, π/4]`. -/
-lemma cos_add_sin_mono {x y : ℝ} (hx : 0 ≤ x) (hxy : x ≤ y) (hy : y ≤ Real.pi/4) :
-    Real.cos x+Real.sin x ≤ Real.cos y+Real.sin y := by
-  have h := Real.sin_le_sin_of_le_of_le_pi_div_two
-    (show -(Real.pi/2) ≤ x+Real.pi/4 by linarith [Real.pi_pos])
-    (show y+Real.pi/4 ≤ Real.pi/2 by linarith)
-    (show x+Real.pi/4 ≤ y+Real.pi/4 by linarith)
-  simp only [Real.sin_add,Real.sin_pi_div_four,Real.cos_pi_div_four] at h
-  apply (mul_le_mul_iff_right₀ (show 0 < Real.sqrt 2/2 by positivity)).mp
-  nlinarith only [h]
-
-/-- A quadratic upper bound for `cos` on `[-π, π]`. -/
-lemma cos_le_one_sub_fifth_sq {t : ℝ} (ht : |t| ≤ Real.pi) :
-    Real.cos t ≤ 1-t^2/5 := by
-  have hpi : Real.pi < (22:ℝ)/7 := by linarith [Real.pi_lt_d4]
-  have hp := mul_pos (sub_pos.mpr hpi)
-    (show 0 < (22:ℝ)/7+Real.pi by linarith [Real.pi_pos])
-  have hpi2 : Real.pi^2 < 10 := by nlinarith
-  have hcoeff : (1:ℝ)/5 ≤ 2/Real.pi^2 := by
-    apply (le_div_iff₀ (pow_pos Real.pi_pos 2)).mpr
-    linarith
-  have hm := mul_le_mul_of_nonneg_right hcoeff (sq_nonneg t)
-  have hc := Real.cos_le_one_sub_mul_cos_sq ht
-  nlinarith
-
-/-! ### Taylor brackets and tangents -/
-
-/-- The Taylor polynomial of degree 6 of `cos`, below it on the whole line. -/
-def cosLower (x : ℝ) : ℝ := 1-x^2/2+x^4/24-x^6/720
-
-/-- The Taylor polynomial of degree 4 of `cos`, above it on the whole line. -/
-def cosUpper (x : ℝ) : ℝ := 1-x^2/2+x^4/24
-
-/-- The Taylor polynomial of degree 7 of `sin`, below it for `x ≥ 0`. -/
-def sinLower (x : ℝ) : ℝ := x-x^3/6+x^5/120-x^7/5040
-
-/-- The Taylor polynomial of degree 5 of `sin`, above it for `x ≥ 0`. -/
-def sinUpper (x : ℝ) : ℝ := x-x^3/6+x^5/120
-
-/-- A Taylor polynomial below `sin` on the whole line: `sinLower` for `x ≥ 0`,
-`sinUpper` for `x < 0`. -/
-def sinBelow (x : ℝ) : ℝ := if 0 ≤ x then sinLower x else sinUpper x
-
-/-- A Taylor polynomial above `sin` on the whole line. -/
-def sinAbove (x : ℝ) : ℝ := if 0 ≤ x then sinUpper x else sinLower x
-
-lemma cosLower_le (x : ℝ) : cosLower x ≤ Real.cos x := by
-  rcases le_total 0 x with hx | hx
-  · exact cos_lower_six hx
-  · have h := cos_lower_six (x := -x) (by linarith)
-    rw [Real.cos_neg] at h
-    dsimp [cosLower]
-    nlinarith only [h]
-
-lemma le_cosUpper (x : ℝ) : Real.cos x ≤ cosUpper x := by
-  rcases le_total 0 x with hx | hx
-  · exact cos_upper_four hx
-  · have h := cos_upper_four (x := -x) (by linarith)
-    rw [Real.cos_neg] at h
-    dsimp [cosUpper]
-    nlinarith only [h]
-
-lemma sinLower_le {x : ℝ} (hx : 0 ≤ x) : sinLower x ≤ Real.sin x := sin_lower_seven hx
-
-lemma le_sinUpper {x : ℝ} (hx : 0 ≤ x) : Real.sin x ≤ sinUpper x := sin_upper_five hx
-
-lemma sinBelow_le (x : ℝ) : sinBelow x ≤ Real.sin x := by
-  by_cases hx : 0 ≤ x
-  · simpa only [sinBelow,ite_eq_left hx] using sinLower_le hx
-  · have h := le_sinUpper (x := -x) (by linarith)
-    rw [Real.sin_neg] at h
-    simp only [sinBelow,ite_eq_right hx,sinUpper] at h ⊢
-    nlinarith only [h]
-
-lemma le_sinAbove (x : ℝ) : Real.sin x ≤ sinAbove x := by
-  by_cases hx : 0 ≤ x
-  · simpa only [sinAbove,ite_eq_left hx] using le_sinUpper hx
-  · have h := sinLower_le (x := -x) (by linarith)
-    rw [Real.sin_neg] at h
-    simp only [sinAbove,ite_eq_right hx,sinLower] at h ⊢
-    nlinarith only [h]
-
-lemma trig_bracket_half :
-    (8775:ℝ)/10000 ≤ Real.cos (1/2) ∧ Real.cos (1/2) ≤ 878/1000 ∧
-    (4794:ℝ)/10000 ≤ Real.sin (1/2) ∧ Real.sin (1/2) ≤ 4795/10000 := by
-  have h := trig_bracket (l := 1/2) (u := 1/2) (x := 1/2) (by norm_num)
-    (by linarith [Real.pi_gt_three]) ⟨le_rfl,le_rfl⟩
-  norm_num at h
-  exact ⟨by linarith,by linarith,by linarith,by linarith⟩
-
-lemma trig_bracket_two_thirds :
-    (157:ℝ)/200 ≤ Real.cos (2/3) ∧ Real.cos (2/3) ≤ 787/1000 ∧
-    (309:ℝ)/500 ≤ Real.sin (2/3) ∧ Real.sin (2/3) ≤ 619/1000 := by
-  have h := trig_bracket (l := 2/3) (u := 2/3) (x := 2/3) (by norm_num)
-    (by linarith [Real.pi_gt_three]) ⟨le_rfl,le_rfl⟩
-  norm_num at h
-  exact ⟨by linarith,by linarith,by linarith,by linarith⟩
-
-lemma trig_bracket_seven_sixths :
-    (3931:ℝ)/10000 ≤ Real.cos (7/6) ∧ Real.cos (7/6) ≤ 2/5 ∧
-    (9194:ℝ)/10000 ≤ Real.sin (7/6) ∧ Real.sin (7/6) ≤ 9201/10000 := by
-  have h := trig_bracket (l := 7/6) (u := 7/6) (x := 7/6) (by norm_num)
-    (by linarith [Real.pi_gt_d2]) ⟨le_rfl,le_rfl⟩
-  norm_num at h
-  exact ⟨by linarith,by linarith,by linarith,by linarith⟩
+/-! ### Square roots and half angles -/
 
 /-- The tangent majorant of the square root: `√y ≤ (y + c²)/(2c)` for `c > 0`. -/
 lemma sqrt_le_tangent {y c : ℝ} (hc : 0 < c) (hy : 0 ≤ y) : Real.sqrt y ≤ (y+c^2)/(2*c) := by
@@ -595,8 +613,6 @@ lemma sqrt_le_tangent {y c : ℝ} (hc : 0 < c) (hy : 0 ≤ y) : Real.sqrt y ≤ 
 lemma sq_le_tangent_sq {y c : ℝ} (hc : 0 < c) : y ≤ ((y+c^2)/(2*c))^2 := by
   rw [div_pow,le_div_iff₀ (by positivity)]
   nlinarith [sq_nonneg (y-c^2)]
-
-/-! ### The half-angle ratio -/
 
 /-- `sin t/(1 + cos t)`, which is `tan (t/2)`. -/
 def halfRatio (t : ℝ) : ℝ := Real.sin t/(1+Real.cos t)
@@ -695,4 +711,51 @@ lemma halfRatio_shift {w d : ℝ} (hw : 0 ≤ w ∧ w ≤ 4/5) :
   rw [Real.sin_sub,Real.cos_sub]
   linear_combination Real.sin d*h.2+Real.cos d*h.1
 
-end SquaresInCircles.Six
+/-! ### The arcsine -/
+
+lemma asin_half : Real.arcsin (1/2 : ℝ) = Real.pi/6 := by
+  have h := Real.arcsin_sin (x := Real.pi/6)
+    (by linarith [Real.pi_pos]) (by linarith [Real.pi_pos])
+  simpa only [Real.sin_pi_div_six] using h
+
+lemma arcsin_ge_self {x : ℝ} (hx0 : 0 ≤ x) (hx1 : x ≤ 1) : x ≤ Real.arcsin x := by
+  simpa [Real.sin_arcsin (by linarith) hx1] using Real.sin_le (Real.arcsin_nonneg.mpr hx0)
+
+lemma arcsin_le_self_of_nonpos {x : ℝ} (hx0 : -1 ≤ x) (hx1 : x ≤ 0) :
+    Real.arcsin x ≤ x := by
+  have hh := arcsin_ge_self (show 0 ≤ -x by linarith) (show -x ≤ 1 by linarith)
+  rw [Real.arcsin_neg] at hh
+  linarith
+
+/-- A deliberately non-sharp, polynomial upper bound on `[0,3/5]`. -/
+lemma arcsin_le_cubic {x : ℝ} (hx0 : 0 ≤ x) (hx1 : x ≤ 3/5) :
+    Real.arcsin x ≤ x+x^3/4 := by
+  rcases hx0.eq_or_lt with rfl | hx
+  · norm_num
+  have hx3 := pow_pos hx 3
+  have ht : x+x^3/4 ≤ 109/100*x := by nlinarith [mul_nonneg hx0 (sub_nonneg.2 hx1)]
+  rw [Real.arcsin_le_iff_le_sin ⟨by linarith,by linarith⟩
+    ⟨by linarith [Real.pi_pos],by linarith [Real.two_le_pi]⟩]
+  have hcube := pow_le_pow_left₀ (by positivity) ht 3
+  nlinarith [Real.sin_gt_sub_cube (x := x+x^3/4) (by positivity)]
+
+/-- A two-point arcsine comparison, from the concavity of the sine. -/
+lemma arcsin_sum_gt_of_sin_lt {u v θ : ℝ}
+    (hu : u ∈ Icc (0:ℝ) 1) (hv : v ∈ Icc (0:ℝ) 1)
+    (hθ : θ ∈ Icc (0:ℝ) (Real.pi/2)) (hs : Real.sin θ < (u+v)/2) :
+    2*θ < Real.arcsin u+Real.arcsin v := by
+  have hA := Real.arcsin_nonneg.mpr hu.1
+  have hB := Real.arcsin_nonneg.mpr hv.1
+  have hA' := Real.arcsin_le_pi_div_two u
+  have hB' := Real.arcsin_le_pi_div_two v
+  have hc := strictConcaveOn_sin_Icc.concaveOn.2 ⟨hA,by linarith [Real.pi_pos]⟩
+    ⟨hB,by linarith [Real.pi_pos]⟩ (by norm_num : (0:ℝ) ≤ 1/2) (by norm_num : (0:ℝ) ≤ 1/2)
+    (by norm_num)
+  simp only [smul_eq_mul,Real.sin_arcsin (by linarith [hu.1]) hu.2,
+    Real.sin_arcsin (by linarith [hv.1]) hv.2] at hc
+  by_contra hn
+  have := Real.sin_le_sin_of_le_of_le_pi_div_two (by linarith [Real.pi_pos]) hθ.2
+    (show 1/2*Real.arcsin u+1/2*Real.arcsin v ≤ θ by linarith)
+  linarith
+
+end SquaresInCircles

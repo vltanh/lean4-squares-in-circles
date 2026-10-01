@@ -1,6 +1,6 @@
 import SquaresInCircles.Three.Exterior
 import SquaresInCircles.Common.ArcMetric
-import SquaresInCircles.Common.ElementaryTrig
+import SquaresInCircles.Common.Trigonometry
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
 
 /-!

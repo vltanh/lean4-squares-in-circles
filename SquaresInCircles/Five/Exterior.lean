@@ -1,5 +1,5 @@
 import SquaresInCircles.Common.RectangleArcs
-import SquaresInCircles.Common.ElementaryTrig
+import SquaresInCircles.Common.Trigonometry
 
 /-!
 # Five squares: the 12-gon and the exterior arcs
@@ -30,6 +30,22 @@ lemma p5_swap {a b : ℝ} (h : P5 a b) : P5 b a :=
   ⟨⟨by linarith [h.1.2],by linarith [h.1.1]⟩,by linarith [h.2]⟩
 
 def aux : ℝ := 5/6
+
+/-- The crude cosine Taylor bound is sufficient with auxiliary radius `5/6`. -/
+lemma cos_gt_401_500 {t : ℝ} (ht : |t| ≤ Real.pi/5) :
+    (401:ℝ)/500 < Real.cos t := by
+  have habs : |t| < (22:ℝ)/35 := by linarith [pi_lt_22_over_7]
+  have ht' := abs_lt.mp habs
+  have hsq : t^2 < ((22:ℝ)/35)^2 := by nlinarith
+  have hc := Real.one_sub_sq_div_two_le_cos (x := t)
+  linarith
+
+lemma sin_pi_fifth_lt_three_fifths : Real.sin (Real.pi/5) < 3/5 := by
+  have hc := cos_gt_401_500 (t := Real.pi/5)
+    (by rw [abs_of_nonneg (by positivity)])
+  have hu := Real.sin_sq_add_cos_sq (Real.pi/5)
+  by_contra hn
+  nlinarith [Real.cos_le_one (Real.pi/5)]
 
 /-- An arcsine sum, from the cubic bound on `arcsin`. -/
 lemma arcsin_sum {x y : ℝ} (hx0 : 0 ≤ x) (hx1 : x ≤ 1/2)

@@ -1,5 +1,5 @@
 import SquaresInCircles.Seven.Labels
-import SquaresInCircles.Common.Analysis
+import SquaresInCircles.Common.Trigonometry
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
 
 /-!
@@ -14,11 +14,6 @@ arcsine bounds, and the near edge by an envelope whose curvature is at most
 noncomputable section
 open Set
 namespace SquaresInCircles.Seven
-
-lemma asin_half : Real.arcsin (1/2 : ℝ) = Real.pi/6 := by
-  have h := Real.arcsin_sin (x := Real.pi/6)
-    (by linarith [Real.pi_pos]) (by linarith [Real.pi_pos])
-  simpa only [Real.sin_pi_div_six] using h
 
 /-- `(5/4) y - arcsin y` increases on `[-3/5, 3/5]` and decreases on `[3/5, 1]`:
 its derivative is `5/4 - 1/√(1 - y²)`. -/

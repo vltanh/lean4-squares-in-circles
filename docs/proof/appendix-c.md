@@ -614,7 +614,7 @@ The bracket is at least $\frac3{10}\cdot\frac45 - \frac2{15} = \frac8{75} > 0$,
 so $H(\frac\pi4) \ge Q(d) > \frac13$ by Lemma C.10. $\square$
 
 *Lean:
-[`Seven.targetH_quarter_gt`](../../SquaresInCircles/Seven/InwardSideTarget.lean#L188).*
+[`Seven.targetH_quarter_gt`](../../SquaresInCircles/Seven/InwardSideTarget.lean#L185).*
 
 ### Proposition C.12 (side target)
 
@@ -649,7 +649,7 @@ A concave function on an interval is at least the smaller of its values at the
 ends, so $f(\ell_1) > 0$ and $\sigma_2 > 0$. $\square$
 
 *Lean:
-[`Seven.fixed_gap_inward_side_target`](../../SquaresInCircles/Seven/InwardSideTarget.lean#L223).*
+[`Seven.fixed_gap_inward_side_target`](../../SquaresInCircles/Seven/InwardSideTarget.lean#L220).*
 
 ![Graph over the source labels from 0 to pi over 4 of the concave function f for four side targets: the side state (1, 1/2), the transition state, the diagonal corner and the tie state of label pi over 4; every curve is concave and positive, and decreases towards the right end](figures/appc-side-target.svg)
 

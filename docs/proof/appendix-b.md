@@ -1349,13 +1349,13 @@ and $\cos\frac\pi{12} > 0$. $\square$
 [`Seven.Boundary.hasDerivAt_axialX`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L57),
 [`Seven.Boundary.hasDerivAt_axialY`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L52),
 [`Seven.Boundary.ratio`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L17),
-[`Seven.Boundary.ratio_nonneg`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L129),
-[`Seven.Boundary.ratio_zero_lt`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L137),
+[`Seven.Boundary.ratio_nonneg`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L128),
+[`Seven.Boundary.ratio_zero_lt`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L136),
 [`Seven.Boundary.ratioD`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L19),
 [`Seven.Boundary.hasDerivAt_ratio`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L68),
 [`Seven.Boundary.ratio_numerator_pos`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L87),
-[`Seven.Boundary.ratio_derivative_lt_one`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L106),
-[`Seven.Boundary.tan_twelfth_le`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L148).*
+[`Seven.Boundary.ratio_derivative_lt_one`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L105),
+[`Seven.Boundary.tan_twelfth_le`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L147).*
 
 ![Two graphs. Left: the quintic P on the interval from 8/5 to 7/4, a concave blue arch from 2992/25, about 120, at 8/5 up to about 132 and down to 20113/256, about 79, at 7/4, continued in grey beyond both ends, above the orange chord joining its two end points and far above the axis. Right: on the interval from 0 to s0, the increasing blue ratio rho, from rho(0), about 0.25, to about 0.45, below the orange curve tan d for the source label pi/4, which starts just above it at 2 - root 3, about 0.27, and rises to about 0.72](figures/appb-ratio.svg)
 
@@ -1410,9 +1410,9 @@ $\frac45 s_0 + \frac12 = Y_0$ (Lemma B.10), which gives the two values.
 $\square$
 
 *Lean:
-[`Seven.Boundary.circleTarget_decreases`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L161),
-[`Seven.Boundary.circleTarget_transition`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L217),
-[`Seven.Boundary.lineTarget_transition`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L231).*
+[`Seven.Boundary.circleTarget_decreases`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L160),
+[`Seven.Boundary.circleTarget_transition`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L216),
+[`Seven.Boundary.lineTarget_transition`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L230).*
 
 ### Lemma B.24 (the switch angle)
 
@@ -1426,9 +1426,9 @@ $\cos x - \frac49\sin x$ is strictly decreasing, as $\cos$ decreases and $\sin$
 increases there, and it vanishes at $\omega$. $\square$
 
 *Lean:
-[`Seven.Boundary.switch_range`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L237),
-[`Seven.Boundary.switch_zero`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L240),
-[`Seven.Boundary.switch_iff`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L245).*
+[`Seven.Boundary.switch_range`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L236),
+[`Seven.Boundary.switch_zero`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L239),
+[`Seven.Boundary.switch_iff`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L244).*
 
 ### Proposition B.25 (the straight piece)
 
@@ -1446,8 +1446,8 @@ $c = \frac\pi3 - \ell$, the derivative of $L(\ell, \cdot)$ at $y$ is positive.
 With Proposition B.23 this gives the claim. $\square$
 
 *Lean:
-[`Seven.Boundary.lineTarget_derivative_positive`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L264),
-[`Seven.Boundary.lineTarget_low_min`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L277).*
+[`Seven.Boundary.lineTarget_derivative_positive`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L263),
+[`Seven.Boundary.lineTarget_low_min`](../../SquaresInCircles/Seven/TargetBoundaryMonotonicity.lean#L276).*
 
 ![Graphs of the target support against the target label for four source labels 2/5, 0.55, 0.7 and pi/4, in four colours. Each curve decreases slowly (solid) from the target label 0 to s0, where it has a corner marked by a dot, and then increases (dashed) along the tie line up to the switch label or pi/4](figures/appb-targets.svg)
 
@@ -1623,8 +1623,8 @@ Recall $u \ge \frac45\ell$, because $\ell \le \mathrm{axial}(u)$.
    $\sigma_1(\frac\pi3) > 0$. $\square$
 
 *Lean:
-[`Seven.fixed_gap_forward_positive`](../../SquaresInCircles/Seven/EasySectors.lean#L80),
-[`Seven.trig_sum_monotone`](../../SquaresInCircles/Seven/EasySectors.lean#L71).*
+[`Seven.fixed_gap_forward_positive`](../../SquaresInCircles/Seven/EasySectors.lean#L72),
+[`cos_add_sin_mono`](../../SquaresInCircles/Common/Trigonometry.lean#L78).*
 
 ## B.8 The capped labels
 

@@ -1045,14 +1045,13 @@ $\sin\theta < \frac{u+v}2$ lies left of $\mu$, since the sine increases.
    Then $\sin^2\frac\pi5 = 1 - \cos^2\frac\pi5 < 1 - \left(\frac{401}{500}\right)^2 = \frac{89199}{250000} < \frac9{25}$,
    and $\sin\frac\pi5 > 0$. $\square$
 
-*Lean:
-[`pi_lt_22_over_7`](../../SquaresInCircles/Common/ElementaryTrig.lean#L17),
-[`arcsin_ge_self`](../../SquaresInCircles/Common/ElementaryTrig.lean#L20),
-[`arcsin_le_self_of_nonpos`](../../SquaresInCircles/Common/ElementaryTrig.lean#L23),
-[`arcsin_le_cubic`](../../SquaresInCircles/Common/ElementaryTrig.lean#L30),
-[`arcsin_sum_gt_of_sin_lt`](../../SquaresInCircles/Common/ElementaryTrig.lean#L42),
-[`cos_gt_401_500`](../../SquaresInCircles/Common/ElementaryTrig.lean#L61),
-[`sin_pi_fifth_lt_three_fifths`](../../SquaresInCircles/Common/ElementaryTrig.lean#L69).*
+*Lean: [`pi_lt_22_over_7`](../../SquaresInCircles/Common/Trigonometry.lean#L34),
+[`arcsin_ge_self`](../../SquaresInCircles/Common/Trigonometry.lean#L721),
+[`arcsin_le_self_of_nonpos`](../../SquaresInCircles/Common/Trigonometry.lean#L724),
+[`arcsin_le_cubic`](../../SquaresInCircles/Common/Trigonometry.lean#L731),
+[`arcsin_sum_gt_of_sin_lt`](../../SquaresInCircles/Common/Trigonometry.lean#L743),
+[`Five.cos_gt_401_500`](../../SquaresInCircles/Five/Exterior.lean#L35),
+[`Five.sin_pi_fifth_lt_three_fifths`](../../SquaresInCircles/Five/Exterior.lean#L43).*
 
 ## 3.9 Recognising a model
 

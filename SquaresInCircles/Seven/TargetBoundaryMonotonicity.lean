@@ -94,8 +94,7 @@ lemma ratio_numerator_pos {X : ℝ} (hX : 8/5 ≤ X ∧ X ≤ 7/4) :
   have hdd (x : ℝ) : HasDerivAt N' (-10000*x^3+9600*x^2+10230*x-7800) x := by
     convert (show DifferentiableAt ℝ N' x by fun_prop).hasDerivAt using 1
     simp (disch := fun_prop) [N']; ring
-  exact positive_of_second_nonpos (f := N) hX (by fun_prop) (by fun_prop)
-    (fun x _ => hd x) (fun x _ => hdd x)
+  exact positive_of_second_nonpos (f := N) hX (fun x _ => hd x) (fun x _ => hdd x)
     (fun x hx => by
       have ht : 0 ≤ x-8/5 := by linarith [hx.1]
       linarith [pow_nonneg ht 2,pow_nonneg ht 3])

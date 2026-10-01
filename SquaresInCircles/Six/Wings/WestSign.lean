@@ -1,4 +1,4 @@
-import SquaresInCircles.Six.Analysis
+import SquaresInCircles.Common.Trigonometry
 import SquaresInCircles.Six.Separators.Axes
 
 /-!

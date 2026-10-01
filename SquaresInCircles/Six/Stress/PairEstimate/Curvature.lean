@@ -1,5 +1,5 @@
 import SquaresInCircles.Six.Stress.PairStress
-import SquaresInCircles.Six.Analysis
+import SquaresInCircles.Common.Trigonometry
 
 /-!
 # Concavity of the pair gap along lines

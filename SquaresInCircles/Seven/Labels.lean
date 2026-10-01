@@ -1,4 +1,4 @@
-import SquaresInCircles.Common.ElementaryTrig
+import SquaresInCircles.Common.Trigonometry
 import SquaresInCircles.Common.Charts
 
 /-!

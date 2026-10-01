@@ -1,17 +1,31 @@
 import Mathlib.Analysis.Convex.Deriv
+import Mathlib.Analysis.Convex.Jensen
 import Mathlib.Analysis.Convex.SpecificFunctions.Deriv
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
+import Mathlib.Analysis.Calculus.LocalExtr.Basic
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
 
 /-!
-# One-variable estimates
+# One-variable calculus
 
-Analytic tools shared by the estimates for six and seven squares: monotonicity
-and concavity from derivatives, positivity from a curvature bound and one value,
-Taylor bounds of `sin` and `cos` on `[0, ∞)`, and the largest value at a peak.
+A function with a nonnegative derivative increases, and one that increases up
+to a point and decreases after it is largest there. A function with a
+nonpositive second derivative on an interval is concave, and a concave function
+exceeds inside the interval every bound that it exceeds at both ends; concavity
+survives an affine change of the argument, and a function on a rectangle that
+is concave in each variable is positive once it is positive at the four corners.
+A function with second derivative at least `κ` lies above its tangent parabola,
+and a quartic positive at both ends of an interval exceeds its chord where a
+quadratic is nonpositive. A continuous function that is positive at the left
+end of an interval, nonnegative at the right end and somewhere nonpositive has
+a leftmost minimum inside; where the function is a sinusoid there, the minimum
+is stationary and the sinusoid negative.
 -/
 noncomputable section
-open Set
+open Set Filter
+open scoped Topology
 namespace SquaresInCircles
+
+/-! ### Monotonicity -/
 
 lemma monoOn_of_hasDeriv_nonneg {l u : ℝ} {f d : ℝ → ℝ}
     (hc : ContinuousOn f (Icc l u))
@@ -28,6 +42,89 @@ lemma antiOn_of_hasDeriv_nonpos {l u : ℝ} {f d : ℝ → ℝ}
   antitoneOn_of_hasDerivWithinAt_nonpos (convex_Icc l u) hc
     (by simpa only [interior_Icc] using fun x hx => (hd x hx).hasDerivWithinAt)
     (by simpa only [interior_Icc] using hs)
+
+/-- A function that vanishes at `0` and has a nonnegative derivative on `[0, ∞)`
+is nonnegative there. -/
+lemma nonneg_of_deriv_nonneg (f : ℝ → ℝ) (hf : Differentiable ℝ f)
+    (hzero : f 0 = 0) (hder : ∀ x, 0 ≤ x → 0 ≤ deriv f x)
+    {x : ℝ} (hx : 0 ≤ x) : 0 ≤ f x :=
+  hzero ▸ monotoneOn_of_deriv_nonneg (convex_Ici 0) hf.continuous.continuousOn
+    hf.differentiableOn (fun t ht => hder t (interior_subset ht)) self_mem_Ici hx hx
+
+/-- A function increasing up to `c` and decreasing after it is largest at `c`. -/
+lemma le_at_peak {f d : ℝ → ℝ} {l c u x : ℝ}
+    (hc : l ≤ c ∧ c ≤ u) (hx : l ≤ x ∧ x ≤ u)
+    (hf : Continuous f) (hd : ∀ y, HasDerivAt f (d y) y)
+    (hleft : ∀ y ∈ Icc l c, 0 ≤ d y)
+    (hright : ∀ y ∈ Icc c u, d y ≤ 0) : f x ≤ f c := by
+  rcases le_total x c with hxc | hcx
+  · exact monoOn_of_hasDeriv_nonneg hf.continuousOn (fun y _ => hd y)
+      (fun y hy => hleft y ⟨hy.1.le,hy.2.le⟩) ⟨hx.1,hxc⟩ ⟨hc.1,le_rfl⟩ hxc
+  · exact antiOn_of_hasDeriv_nonpos hf.continuousOn (fun y _ => hd y)
+      (fun y hy => hright y ⟨hy.1.le,hy.2.le⟩) ⟨le_rfl,hc.2⟩ ⟨hcx,hx.2⟩ hcx
+
+/-! ### Concavity -/
+
+/-- A function whose second derivative is nonpositive on `[l, u]` is concave
+there. -/
+lemma concave_of_deriv2 {f f' f'' : ℝ → ℝ} {l u : ℝ}
+    (hf : ∀ x ∈ Icc l u, HasDerivAt f (f' x) x)
+    (hf' : ∀ x ∈ Icc l u, HasDerivAt f' (f'' x) x)
+    (h : ∀ x ∈ Icc l u, f'' x ≤ 0) : ConcaveOn ℝ (Icc l u) f :=
+  concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc l u)
+    (fun x hx => (hf x hx).continuousAt.continuousWithinAt)
+    (fun x hx => (hf x (interior_subset hx)).hasDerivWithinAt)
+    (fun x hx => (hf' x (interior_subset hx)).hasDerivWithinAt)
+    (fun x hx => h x (interior_subset hx))
+
+/-- A concave function exceeds inside `[l, u]` every bound that it exceeds at
+both ends. -/
+lemma concave_gt_of_endpoints {f : ℝ → ℝ} {l u x c : ℝ}
+    (hf : ConcaveOn ℝ (Icc l u) f) (hx : l ≤ x ∧ x ≤ u) (hl : c < f l) (hu : c < f u) :
+    c < f x :=
+  (lt_min hl hu).trans_le
+    (hf.min_le_of_mem_Icc ⟨le_rfl,hx.1.trans hx.2⟩ ⟨hx.1.trans hx.2,le_rfl⟩ hx)
+
+/-- A function concave on `[L, U]`, composed with an affine map from `[l, u]`
+into `[L, U]`, is concave on `[l, u]`. -/
+lemma concave_affine_argument {f : ℝ → ℝ} {L U l u a b : ℝ}
+    (hf : ConcaveOn ℝ (Icc L U) f) (hmap : ∀ x ∈ Icc l u, a*x+b ∈ Icc L U) :
+    ConcaveOn ℝ (Icc l u) (fun x => f (a*x+b)) := by
+  refine ⟨convex_Icc l u,?_⟩
+  intro x hx y hy r s hr hs hrs
+  have h := hf.2 (hmap x hx) (hmap y hy) hr hs hrs
+  have hid : a*(r*x+s*y)+b=r*(a*x+b)+s*(a*y+b) := by
+    linear_combination -b*hrs
+  simpa only [smul_eq_mul,hid] using h
+
+/-- An affine function is concave. -/
+lemma affine_concave (a b l u : ℝ) : ConcaveOn ℝ (Icc l u) (fun x : ℝ => a*x+b) := by
+  refine ⟨convex_Icc l u,fun x _ y _ p q _ _ hpq => ?_⟩
+  simp only [smul_eq_mul]
+  have he : p*(a*x+b)+q*(a*y+b)=a*(p*x+q*y)+b*(p+q) := by ring
+  rw [he,hpq,mul_one]
+
+/-- A function on `[l, u] × [L, U]`, concave in the first variable and concave
+in the second on the edges `x = l` and `x = u`, is positive if it is positive
+at the four corners. -/
+lemma positive_on_separately_concave_rectangle {f : ℝ → ℝ → ℝ} {l u L U x y : ℝ}
+    (hx : l ≤ x ∧ x ≤ u) (hy : L ≤ y ∧ y ≤ U)
+    (hfirst : ∀ t ∈ Icc L U, ConcaveOn ℝ (Icc l u) (fun z => f z t))
+    (hleft : ConcaveOn ℝ (Icc L U) (f l))
+    (hright : ConcaveOn ℝ (Icc L U) (f u))
+    (hll : 0 < f l L) (hlu : 0 < f l U) (hul : 0 < f u L) (huu : 0 < f u U) : 0 < f x y :=
+  concave_gt_of_endpoints (f := fun z => f z y) (hfirst y hy) hx
+    (concave_gt_of_endpoints (f := f l) hleft hy hll hlu)
+    (concave_gt_of_endpoints (f := f u) hright hy hul huu)
+
+/-- A function on `[l, u]` with nonpositive second derivative is positive if it
+is positive at both ends. -/
+lemma positive_of_second_nonpos {l u x : ℝ} {f d dd : ℝ → ℝ} (hx : x ∈ Icc l u)
+    (hd : ∀ y ∈ Icc l u, HasDerivAt f (d y) y)
+    (hdd : ∀ y ∈ Icc l u, HasDerivAt d (dd y) y)
+    (hm : ∀ y ∈ Icc l u, dd y ≤ 0)
+    (hl : 0 < f l) (hu : 0 < f u) : 0 < f x :=
+  concave_gt_of_endpoints (concave_of_deriv2 hd hdd hm) hx hl hu
 
 /-- A function on `[l, u]` with second derivative at least `κ` lies above its
 tangent parabola of curvature `κ` at any point. -/
@@ -68,118 +165,134 @@ lemma positive_of_curvature {l u x t κ : ℝ} {f d dd : ℝ → ℝ} (hκ : 0 <
     (hm : ∀ y ∈ Icc l u, κ ≤ dd y) (hval : d t^2 < 2*κ*f t) : 0 < f x := by
   nlinarith [curvature_tangent hx ht hd hdd hm,sq_nonneg (κ*(x-t)+d t)]
 
-/-- A function on `[l, u]` with nonpositive second derivative is positive if it
-is positive at both ends. -/
-lemma positive_of_second_nonpos {l u x : ℝ} {f d dd : ℝ → ℝ}
-    (hx : x ∈ Icc l u) (hf : ContinuousOn f (Icc l u))
-    (hdf : ContinuousOn d (Icc l u))
-    (hd : ∀ y ∈ Icc l u, HasDerivAt f (d y) y)
-    (hdd : ∀ y ∈ Icc l u, HasDerivAt d (dd y) y)
-    (hm : ∀ y ∈ Icc l u, dd y ≤ 0)
-    (hl : 0 < f l) (hu : 0 < f u) : 0 < f x := by
-  have hanti := antitoneOn_of_hasDerivWithinAt_nonpos (convex_Icc l u) hdf
-    (fun y hy => (hdd y (interior_subset hy)).hasDerivWithinAt)
-    (fun y hy => hm y (interior_subset hy))
-  have hconc : ConcaveOn ℝ (Icc l u) f := AntitoneOn.concaveOn_of_deriv (convex_Icc l u) hf
-    (fun y hy => (hd y (interior_subset hy)).differentiableAt.differentiableWithinAt)
-    (fun a ha b hb hab => by
-      rw [(hd a (interior_subset ha)).deriv,(hd b (interior_subset hb)).deriv]
-      exact hanti (interior_subset ha) (interior_subset hb) hab)
-  exact (lt_min hl hu).trans_le (hconc.min_le_of_mem_Icc
-    (left_mem_Icc.mpr (hx.1.trans hx.2)) (right_mem_Icc.mpr (hx.1.trans hx.2)) hx)
+/-- The quartic with the coefficients `a0, …, a4`. -/
+def quartic (a0 a1 a2 a3 a4 x : ℝ) : ℝ :=
+  a0+a1*x+a2*x^2+a3*x^3+a4*x^4
 
-/-- `αx + A sin x + B cos x` with `A, B ≥ 0` is concave on `[0, π/2]`, so on an
-interval there it exceeds any bound that it exceeds at both ends. -/
-lemma trig_concave_gt {α A B m l u x : ℝ} (hA : 0 ≤ A) (hB : 0 ≤ B)
-    (hl : 0 ≤ l) (hu : u ≤ Real.pi/2) (hx : l ≤ x ∧ x ≤ u)
-    (hml : m < α*l+A*Real.sin l+B*Real.cos l) (hmu : m < α*u+A*Real.sin u+B*Real.cos u) :
-    m < α*x+A*Real.sin x+B*Real.cos x := by
-  have hs : Icc l u ⊆ Icc 0 Real.pi := Icc_subset_Icc hl (by linarith [Real.pi_pos])
-  have hc : Icc l u ⊆ Icc (-(Real.pi/2)) (Real.pi/2) :=
-    Icc_subset_Icc (by linarith [Real.pi_pos]) hu
-  have hlin : ConcaveOn ℝ (Icc l u) fun x => α*x :=
-    ⟨convex_Icc l u,fun x _ y _ a b _ _ _ => by simp only [smul_eq_mul]; ring_nf; rfl⟩
-  have hf : ConcaveOn ℝ (Icc l u) fun x => α*x+A*Real.sin x+B*Real.cos x :=
-    (hlin.add ((strictConcaveOn_sin_Icc.concaveOn.subset hs (convex_Icc l u)).smul hA)).add
-      ((strictConcaveOn_cos_Icc.concaveOn.subset hc (convex_Icc l u)).smul hB)
-  exact (lt_min hml hmu).trans_le (hf.min_le_of_mem_Icc
-    (left_mem_Icc.mpr (hx.1.trans hx.2)) (right_mem_Icc.mpr (hx.1.trans hx.2)) hx)
+/-- If the quadratic `Q x` of `hcurv` is nonpositive, a quartic positive at `l`
+and `u` is positive at `x ∈ [l, u]`, since it exceeds its chord by
+`-(x - l)(u - x) Q x`. -/
+theorem quartic_positive_of_chord {a0 a1 a2 a3 a4 l u x : ℝ}
+    (hlu : l < u) (hx : l ≤ x ∧ x ≤ u)
+    (hl : 0 < quartic a0 a1 a2 a3 a4 l)
+    (hu : 0 < quartic a0 a1 a2 a3 a4 u)
+    (hcurv : a2+a3*(x+l+u)+a4*(x^2+(l+u)*x+l^2+l*u+u^2) ≤ 0) :
+    0 < quartic a0 a1 a2 a3 a4 x := by
+  have hleft : 0 ≤ u-x := sub_nonneg.mpr hx.2
+  have hright : 0 ≤ x-l := sub_nonneg.mpr hx.1
+  have hcorr := mul_nonpos_of_nonneg_of_nonpos
+    (mul_nonneg (mul_nonneg (sub_nonneg.mpr hlu.le) hright) hleft) hcurv
+  have hid : (u-l)*quartic a0 a1 a2 a3 a4 x =
+      (u-x)*quartic a0 a1 a2 a3 a4 l+(x-l)*quartic a0 a1 a2 a3 a4 u-
+      (u-l)*(x-l)*(u-x)*(a2+a3*(x+l+u)+a4*(x^2+(l+u)*x+l^2+l*u+u^2)) := by
+    dsimp [quartic]
+    ring
+  have hchord : 0 < (u-x)*quartic a0 a1 a2 a3 a4 l+(x-l)*quartic a0 a1 a2 a3 a4 u := by
+    rcases lt_or_eq_of_le hx.2 with hxu | rfl
+    · exact add_pos_of_pos_of_nonneg (mul_pos (sub_pos.mpr hxu) hl)
+        (mul_nonneg hright hu.le)
+    · simpa using mul_pos (sub_pos.mpr hlu) hu
+  by_contra! hbad
+  have hmul := mul_nonpos_of_nonneg_of_nonpos (sub_nonneg.mpr hlu.le) hbad
+  nlinarith only [hid,hcorr,hchord,hmul]
 
-lemma sin_le_cos_of_small {x : ℝ} (hx : 0 ≤ x ∧ x ≤ Real.pi/4) : Real.sin x ≤ Real.cos x := by
-  rw [← Real.cos_pi_div_two_sub]
-  exact Real.cos_le_cos_of_nonneg_of_le_pi hx.1 (by linarith [Real.pi_pos]) (by linarith)
+/-! ### Leftmost minima -/
 
-lemma cos_le_sin_of_quarter {x : ℝ} (hx : Real.pi/4 ≤ x ∧ x ≤ Real.pi/2) :
-    Real.cos x ≤ Real.sin x := by
-  rw [← Real.cos_pi_div_two_sub]
-  exact Real.cos_le_cos_of_nonneg_of_le_pi (by linarith) (by linarith [Real.pi_pos]) (by linarith)
+/-- A nonpositive value after a positive left endpoint and before a nonnegative
+right endpoint has an interior leftmost minimizer. Every earlier point has
+strictly larger value. -/
+lemma leftmost_nonpositive_minimum {f : ℝ → ℝ} {l u y : ℝ}
+    (hf : Continuous f) (hy : y∈Ico l u) (hbad : f y≤0)
+    (hl : 0<f l) (hu : 0≤f u) :
+    ∃ x, x∈Ioo l u ∧ f x≤0 ∧
+      (∀z∈Icc l u,f x≤f z) ∧
+      (∀z∈Icc l u,z<x → f x<f z) := by
+  have hy' : y∈Icc l u := Ico_subset_Icc_self hy
+  obtain ⟨m,hm,hmin⟩ := isCompact_Icc.exists_isMinOn
+    ⟨y,hy'⟩ hf.continuousOn
+  let K : Set ℝ := Icc l u ∩ {x | f x=f m}
+  have hK : IsCompact K := isCompact_Icc.inter_right
+    (isClosed_eq hf continuous_const)
+  have hn : K.Nonempty := ⟨m,hm,rfl⟩
+  obtain ⟨x,hx,hleft⟩ := hK.exists_isMinOn hn continuous_id.continuousOn
+  have hxval : f x=f m := hx.2
+  have hym : f m≤f y := hmin hy'
+  have hxnon : f x≤0 := hxval.le.trans (hym.trans hbad)
+  have hxl : l<x := by
+    have hle := hx.1.1
+    by_contra hn
+    have he : x=l := le_antisymm (le_of_not_gt hn) hle
+    rw [he] at hxnon
+    linarith
+  have hxu : x<u := by
+    refine lt_of_le_of_ne hx.1.2 fun he => ?_
+    rw [he] at hxval
+    have hyK : y∈K := ⟨hy',le_antisymm (by linarith) hym⟩
+    have hxy : x≤y := hleft hyK
+    linarith [hy.2]
+  refine ⟨x,⟨hxl,hxu⟩,hxnon,?_,?_⟩
+  · intro z hz
+    rw [hxval]
+    exact hmin hz
+  · intro z hz hzx
+    have hle : f x≤f z := hxval.le.trans (hmin hz)
+    by_contra hn
+    have he : f z=f m := by linarith
+    have hk : z∈K := ⟨hz,he⟩
+    have hh : x≤z := hleft hk
+    linarith
 
-lemma cos_ge_half {z : ℝ} (hz : 0 ≤ z ∧ z ≤ Real.pi/3) : (1/2 : ℝ) ≤ Real.cos z := by
-  simpa only [Real.cos_pi_div_three] using
-    Real.cos_le_cos_of_nonneg_of_le_pi hz.1 (by linarith [Real.pi_pos]) hz.2
+lemma absolute_sign_eventually {f : ℝ → ℝ} (hf : Continuous f) {x : ℝ}
+    (hx : f x≠0) :
+    ∀ᶠ y in 𝓝 x, |f y|=(if 0<f x then (1:ℝ) else -1)*f y := by
+  by_cases hpos : 0<f x
+  · filter_upwards [(hf.tendsto x).eventually (lt_mem_nhds hpos)] with y hy
+    simp only [ite_eq_left hpos,one_mul,abs_of_pos hy]
+  · have hneg : f x<0 := lt_of_le_of_ne (le_of_not_gt hpos) hx
+    filter_upwards [(hf.tendsto x).eventually (gt_mem_nhds hneg)] with y hy
+    simp only [ite_eq_right hpos,neg_one_mul,abs_of_neg hy]
 
-/-- A function that vanishes at `0` and has a nonnegative derivative on `[0, ∞)`
-is nonnegative there. -/
-lemma nonneg_of_deriv_nonneg (f : ℝ → ℝ) (hf : Differentiable ℝ f)
-    (hzero : f 0 = 0) (hder : ∀ x, 0 ≤ x → 0 ≤ deriv f x)
-    {x : ℝ} (hx : 0 ≤ x) : 0 ≤ f x :=
-  hzero ▸ monotoneOn_of_deriv_nonneg (convex_Ici 0) hf.continuous.continuousOn
-    hf.differentiableOn (fun t ht => hder t (interior_subset ht)) self_mem_Ici hx hx
-
-/-! Taylor polynomials of `sin` and `cos` of degrees 4 to 7 bound them on
-`[0, ∞)`: each remainder has the derivative of the previous one. -/
-
-lemma cos_upper_four {x : ℝ} (hx : 0 ≤ x) : Real.cos x ≤ 1-x^2/2+x^4/24 := by
-  have h := nonneg_of_deriv_nonneg (fun t => 1-t^2/2+t^4/24-Real.cos t) (by fun_prop)
-    (by norm_num) (fun t ht => by
-      simp (disch := fun_prop)
-      linarith [Real.sin_ge_sub_cube ht]) hx
+lemma sinusoid_leftmost_minimum {f : ℝ → ℝ} {l u x c A B Z : ℝ}
+    (hx : x∈Ioo l u)
+    (hmin : ∀y∈Icc l u,f x≤f y)
+    (hleft : ∀y∈Icc l u,y<x → f x<f y)
+    (hevent : f =ᶠ[𝓝 x] (fun y => c+A*Real.cos (Z-y)+B*Real.sin (Z-y))) :
+    A*Real.sin (Z-x)-B*Real.cos (Z-x)=0 ∧
+      A*Real.cos (Z-x)+B*Real.sin (Z-x)<0 := by
+  let g : ℝ → ℝ := fun y => c+A*Real.cos (Z-y)+B*Real.sin (Z-y)
+  have he0 : f x=g x := hevent.eq_of_nhds
+  have hlocal : IsLocalMin f x := by
+    filter_upwards [Ioo_mem_nhds hx.1 hx.2] with y hy
+    exact hmin y ⟨hy.1.le,hy.2.le⟩
+  have harg : HasDerivAt (fun y : ℝ => Z-y) (-1) x := (hasDerivAt_id' x).const_sub Z
+  have hg : HasDerivAt g (A*Real.sin (Z-x)-B*Real.cos (Z-x)) x := by
+    convert (((harg.cos.const_mul A).const_add c).add (harg.sin.const_mul B)) using 1
+    ring
+  have hf := hg.congr_of_eventuallyEq hevent
+  have hstationary : A*Real.sin (Z-x)-B*Real.cos (Z-x)=0 :=
+    hlocal.hasDerivAt_eq_zero hf
+  refine ⟨hstationary,?_⟩
+  by_contra hn
+  have hnon : 0≤A*Real.cos (Z-x)+B*Real.sin (Z-x) := le_of_not_gt hn
+  obtain ⟨r,hr,hball⟩ := Metric.mem_nhds_iff.mp hevent
+  let e := min (r/2) ((x-l)/2)
+  have hepos : 0<e := lt_min (by positivity) (by linarith [hx.1])
+  have her : e<r := (min_le_left _ _).trans_lt (by linarith)
+  have hex : e≤(x-l)/2 := min_le_right _ _
+  have hy : x-e∈Icc l u := ⟨by linarith,by linarith [hx.2]⟩
+  have hyl : x-e<x := by linarith
+  have hye : f (x-e)=g (x-e) := hball
+    (by rw [Metric.mem_ball,Real.dist_eq,show (x-e)-x=-e by ring,abs_neg,abs_of_pos hepos]; exact her)
+  have hstrict := hleft (x-e) hy hyl
+  rw [he0,hye] at hstrict
+  have hid : g (x-e)-g x=
+      (A*Real.cos (Z-x)+B*Real.sin (Z-x))*(Real.cos e-1) := by
+    have he : Z-(x-e)=(Z-x)+e := by ring
+    dsimp [g]
+    rw [he,Real.cos_add,Real.sin_add]
+    linear_combination (-Real.sin e)*hstationary
+  have hprod := mul_nonpos_of_nonneg_of_nonpos hnon
+    (sub_nonpos.mpr (Real.cos_le_one e))
   linarith
-
-lemma sin_upper_five {x : ℝ} (hx : 0 ≤ x) : Real.sin x ≤ x-x^3/6+x^5/120 := by
-  have h := nonneg_of_deriv_nonneg (fun t => t-t^3/6+t^5/120-Real.sin t) (by fun_prop)
-    (by norm_num) (fun t ht => by
-      simp (disch := fun_prop)
-      linarith [cos_upper_four ht]) hx
-  linarith
-
-lemma cos_lower_six {x : ℝ} (hx : 0 ≤ x) : 1-x^2/2+x^4/24-x^6/720 ≤ Real.cos x := by
-  have h := nonneg_of_deriv_nonneg (fun t => Real.cos t-(1-t^2/2+t^4/24-t^6/720))
-    (by fun_prop) (by norm_num) (fun t ht => by
-      simp (disch := fun_prop)
-      linarith [sin_upper_five ht]) hx
-  linarith
-
-lemma sin_lower_seven {x : ℝ} (hx : 0 ≤ x) : x-x^3/6+x^5/120-x^7/5040 ≤ Real.sin x := by
-  have h := nonneg_of_deriv_nonneg (fun t => Real.sin t-(t-t^3/6+t^5/120-t^7/5040))
-    (by fun_prop) (by norm_num) (fun t ht => by
-      simp (disch := fun_prop)
-      linarith [cos_lower_six ht]) hx
-  linarith
-
-/-- Polynomial brackets of `sin` and `cos` on an interval `[l, u] ⊆ [0, π/2]`. -/
-lemma trig_bracket {l u x : ℝ} (hl : 0 ≤ l) (hu : u ≤ Real.pi/2) (hx : l ≤ x ∧ x ≤ u) :
-    l-l^3/6+l^5/120-l^7/5040 ≤ Real.sin x ∧ Real.sin x ≤ u-u^3/6+u^5/120 ∧
-    1-u^2/2+u^4/24-u^6/720 ≤ Real.cos x ∧ Real.cos x ≤ 1-l^2/2+l^4/24 := by
-  have hx0 : 0 ≤ x := hl.trans hx.1
-  have hu0 : 0 ≤ u := hx0.trans hx.2
-  have hpi := Real.pi_pos
-  exact ⟨(sin_lower_seven hl).trans (Real.sin_le_sin_of_le_of_le_pi_div_two
-      (by linarith) (hx.2.trans hu) hx.1),
-    (Real.sin_le_sin_of_le_of_le_pi_div_two (by linarith) hu hx.2).trans (sin_upper_five hu0),
-    (cos_lower_six hu0).trans (Real.cos_le_cos_of_nonneg_of_le_pi hx0 (by linarith) hx.2),
-    (Real.cos_le_cos_of_nonneg_of_le_pi hl (by linarith) hx.1).trans (cos_upper_four hl)⟩
-
-/-- A function increasing up to `c` and decreasing after it is largest at `c`. -/
-lemma le_at_peak {f d : ℝ → ℝ} {l c u x : ℝ}
-    (hc : l ≤ c ∧ c ≤ u) (hx : l ≤ x ∧ x ≤ u)
-    (hf : Continuous f) (hd : ∀ y, HasDerivAt f (d y) y)
-    (hleft : ∀ y ∈ Icc l c, 0 ≤ d y)
-    (hright : ∀ y ∈ Icc c u, d y ≤ 0) : f x ≤ f c := by
-  rcases le_total x c with hxc | hcx
-  · exact monoOn_of_hasDeriv_nonneg hf.continuousOn (fun y _ => hd y)
-      (fun y hy => hleft y ⟨hy.1.le,hy.2.le⟩) ⟨hx.1,hxc⟩ ⟨hc.1,le_rfl⟩ hxc
-  · exact antiOn_of_hasDeriv_nonpos hf.continuousOn (fun y _ => hd y)
-      (fun y hy => hright y ⟨hy.1.le,hy.2.le⟩) ⟨le_rfl,hc.2⟩ ⟨hcx,hx.2⟩ hcx
 
 end SquaresInCircles

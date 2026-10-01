@@ -1,7 +1,7 @@
 import SquaresInCircles.Common.Contacts
 import SquaresInCircles.Common.Support
 import SquaresInCircles.Common.Charts
-import SquaresInCircles.Common.ElementaryTrig
+import SquaresInCircles.Common.Trigonometry
 import SquaresInCircles.Common.Congruence
 import SquaresInCircles.Six.Constants
 import SquaresInCircles.Common.SeparatingAxes

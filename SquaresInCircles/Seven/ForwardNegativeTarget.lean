@@ -128,7 +128,7 @@ private lemma axial_large_turn {A v z : ℝ} (h : Admissible A v)
     (f := fun y => 1+2*Real.pi/15-(4/5)*y+Real.cos y-(51/20)*(Real.cos (y/2)-Real.sin (y/2)))
     (d := fun y => -4/5-Real.sin y+(51/40)*(Real.sin (y/2)+Real.cos (y/2)))
     (dd := fun y => -Real.cos y+(51/80)*(Real.cos (y/2)-Real.sin (y/2)))
-    hz (by fun_prop) (by fun_prop)
+    hz
     (fun y _ => by
       have hy := (hasDerivAt_id' y).div_const 2
       exact ((((hasDerivAt_const y (1+2*Real.pi/15)).sub

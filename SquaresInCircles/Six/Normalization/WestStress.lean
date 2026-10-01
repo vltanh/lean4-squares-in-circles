@@ -1,5 +1,5 @@
 import SquaresInCircles.Six.Normalization.WestPair
-import SquaresInCircles.Six.Analysis
+import SquaresInCircles.Common.Trigonometry
 import SquaresInCircles.Six.Supports
 
 /-!

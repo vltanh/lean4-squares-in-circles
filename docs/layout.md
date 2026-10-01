@@ -54,8 +54,8 @@ squares the pair theorem, the ring and the middle column over the files
 | `Coordinates.lean` | Points in a rotated frame at the disk centre; a chart in Cartesian coordinates |
 | `RectangleArcs.lean` | Arcs of an exterior square: between its edges, and the cap on small circles |
 | `ArcBudget.lean` | The budget of a packing: some square avoids the disk centre, and the square that contains it can be replaced by its radial sweep |
-| `ElementaryTrig.lean` | Arcsine and cosine estimates with exact rational constants |
-| `Analysis.lean` | Monotonicity and concavity from derivatives, positivity from a curvature bound and one value, Taylor bounds of `sin` and `cos`, the largest value at a peak |
+| `Analysis.lean` | Monotonicity and concavity from derivatives, positivity from a curvature bound and one value, the largest value at a peak, leftmost minima |
+| `Trigonometry.lean` | Bounds for `π`, `sin`, `cos` and `arcsin`: small angles, Taylor brackets, concave first harmonics, radicals and rotating lengths, half angles |
 | `SeparatingAxes.lean` | The separating-axis theorem: disjoint squares are separated along one of their four edge axes, each with its threshold |
 | `Constructions.lean` | Axis-parallel squares centred at given points: membership, disjointness and containment |
 | `Congruence.lean` | Congruence to a model from square-by-square slots; open squares determine closed ones; configurations congruent to a packing are packings; the rigid-motion witness |
@@ -83,14 +83,14 @@ at the disk centre.
 
 ## Six
 
-The proof of six squares is uniqueness at the optimal radius, in 44 files and
-about 19,600 lines, most of them estimates in one variable on whole intervals
+The proof of six squares is uniqueness at the optimal radius, in 43 files and
+about 19,000 lines, most of them estimates in one variable on whole intervals
 of angles:
 
 | part | files | contents |
 | --- | --- | --- |
 | construction | `Constants.lean`, `Construction.lean` | the constants of the model, their identities and rational brackets; the model packs the disk |
-| tools | `Analysis.lean`, `Supports.lean` | concavity, harmonics and Taylor brackets in one variable; the support of a square in the disk |
+| tools | `Supports.lean` | the support of a square in the disk |
 | the central square | `Normalization/CentralSquare.lean` | a square contains the disk centre, by the arcs that the other squares hold on the circle of radius `9/10`; the box of its centre |
 | normalization | the other 8 files of `Normalization/` | charts and the separating axes of the central square; squares in a deep cap; the five pins, the labels, their windows and order; `D` separated from the central square along its own axis; normalized packings and the axes of their pairs |
 | separators | `Separators/` (9 files) | the axes that separate consecutive squares; the angle of `D` exceeds `1/2`; the profile of `D`; walls, missing wings and the signs of the wings |

@@ -228,10 +228,7 @@ lemma upper_target_pos {a u s : ℝ}
       dsimp [f,sideCircleTarget]
       rw [hX,hY]
       linarith
-    have hp := positive_of_second_nonpos ⟨hls,hsc⟩
-      (fun x hx => (hd x hx).continuousAt.continuousWithinAt)
-      (fun x hx => (hdd x hx).continuousAt.continuousWithinAt)
-      hd hdd
+    have hp := positive_of_second_nonpos ⟨hls,hsc⟩ hd hdd
       (fun x hx => sideTarget_concave_second ht' (domain x hx) (hlcut.trans hx.1)) hlo hhi
     simp only [vertexTarget,sideTopA,sideTopU,ite_eq_left hsc,sideA,sideU]
     dsimp [f,sideCircleTarget] at hp

@@ -1,5 +1,5 @@
 import SquaresInCircles.Six.Stress.PairStress
-import SquaresInCircles.Common.Analysis
+import SquaresInCircles.Common.Trigonometry
 
 /-!
 # The pair gap at the vertices of the sectors

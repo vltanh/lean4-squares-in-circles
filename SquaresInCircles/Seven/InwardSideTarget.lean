@@ -178,10 +178,7 @@ private lemma quarter_profile_gt {d : ℝ} (hd : -1/6 ≤ d ∧ d ≤ Real.pi/12
     dsimp [f]
     rw [hid]
     linarith
-  have hh := positive_of_second_nonpos hd
-    (by dsimp [f,quarterProfile]; fun_prop)
-    (by unfold quarterProfileD; fun_prop)
-    (fun x _ => d1 x) (fun x _ => d2 x) hdd hlo hhi
+  have hh := positive_of_second_nonpos hd (fun x _ => d1 x) (fun x _ => d2 x) hdd hlo hhi
   dsimp [f] at hh
   linarith
 
@@ -252,9 +249,7 @@ theorem fixed_gap_inward_side_target {a u A v : ℝ}
     have hh := targetH_quarter_gt h' hT
     dsimp [f,s]
     linarith [Real.pi_gt_d2]
-  have hf := positive_of_second_nonpos
-    ⟨h.label_nonneg,h.label_le_quarter⟩
-    (by dsimp [f,targetH]; fun_prop) (by dsimp [df]; fun_prop)
+  have hf := positive_of_second_nonpos ⟨h.label_nonneg,h.label_le_quarter⟩
     (fun t _ => hd t) (fun t _ => hdd t) hm hlo hhi
   rw [pairSupport_two]
   simp only [TransverseSign.coe,one_mul]

@@ -1,6 +1,6 @@
 import SquaresInCircles.Six.Normalization.Caps
 import SquaresInCircles.Six.Normalization.CentralSquare
-import SquaresInCircles.Six.Analysis
+import SquaresInCircles.Common.Trigonometry
 
 /-!
 # The pins

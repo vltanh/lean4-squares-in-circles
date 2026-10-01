@@ -277,7 +277,7 @@ this gives $h(x) < h(q)$, and since $1 - 2q = \frac7{30}$,
 h(q) = \tfrac65\cdot\tfrac7{30} + \tfrac{12167}{500000} = \tfrac7{25} + \tfrac{12167}{500000} = \tfrac{152167}{500000} < \tfrac{313}{1000} . \qquad \square
 ```
 
-*Lean: [`Five.arcsin_sum`](../../SquaresInCircles/Five/Exterior.lean#L35),
+*Lean: [`Five.arcsin_sum`](../../SquaresInCircles/Five/Exterior.lean#L51),
 [`Five.aux`](../../SquaresInCircles/Five/Exterior.lean#L32).*
 
 ### Lemma 8.8 (the arc length)
@@ -330,7 +330,7 @@ $U + A$ and $U + V$. We show that each of them exceeds $\frac{2\pi}5$.
    with $\theta = \frac\pi5$, gives
    $\frac{2\pi}5 < \arcsin u + \arcsin v = U + V$. $\square$
 
-*Lean: [`Five.arc_length`](../../SquaresInCircles/Five/Exterior.lean#L60).*
+*Lean: [`Five.arc_length`](../../SquaresInCircles/Five/Exterior.lean#L76).*
 
 *Remark.* Only two of the four sums occur. Since $b \ge 0$ and $a \le 1$,
 
@@ -368,7 +368,7 @@ crossing angles $A_S, V_S, U_S$ are the numbers $A, V, U$ of Lemma 8.8 for
 $(a, b) = (a_S, b_S)$, so this length exceeds $\frac{2\pi}5$, and the arc has
 half-width greater than $\frac\pi5$. $\square$
 
-*Lean: [`Five.exterior_arc`](../../SquaresInCircles/Five/Exterior.lean#L102).*
+*Lean: [`Five.exterior_arc`](../../SquaresInCircles/Five/Exterior.lean#L118).*
 
 Unlike the circle $\Gamma_{1/2}$ of Chapter 7, the circle $\Gamma_{5/6}$ can
 leave an exterior square through its upper edge, so we use the general arc of

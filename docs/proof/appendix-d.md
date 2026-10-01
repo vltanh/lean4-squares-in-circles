@@ -1212,7 +1212,7 @@ below the top $\frac12 - u$ of $S$ (inset), so the shadows of $S$ and $T$ on
 $n_1$ overlap.
 
 *Lean:
-[`Seven.forward_negative_negative_small`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L344).*
+[`Seven.forward_negative_negative_small`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L341).*
 
 For $\ell \ge \frac25$ we follow the segments of constant label (Figure D.10),
 and first the circular piece of the upper ends of the side segments.
@@ -1467,7 +1467,7 @@ G_\delta(A, v) - G^{\mathrm{top}}(\ell, \tau) = \bigl(\mathrm{top}_u(\tau) - v\b
 and Lemma D.23 concludes. $\square$
 
 *Lean:
-[`Seven.Boundary.target_side_pos`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L240).*
+[`Seven.Boundary.target_side_pos`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L237).*
 
 ### Lemma D.25 (the axial segment of the target)
 
@@ -1502,7 +1502,7 @@ applied to $(a, u)$ and the tie state, gives
 $\frac12 - u + G_\delta(\mathrm{tie}(\tau), \frac45\tau) > 0$. $\square$
 
 *Lean:
-[`Seven.Boundary.target_axial_pos`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L291).*
+[`Seven.Boundary.target_axial_pos`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L288).*
 
 ### Proposition D.26 (both signs negative)
 
@@ -1531,7 +1531,7 @@ which is positive by Lemma D.24 if the label of $(A, v)$ is side, and by Lemma
 D.25 if it is axial. $\square$
 
 *Lean:
-[`Seven.fixed_gap_forward_both_negative_side`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L371).*
+[`Seven.fixed_gap_forward_both_negative_side`](../../SquaresInCircles/Seven/ForwardBothNegative.lean#L368).*
 
 Together with the sector $(1, 1)$ of Appendix B, Propositions D.7, D.16 and D.26
 give the pair property on the forward axis for all active labels: for the signs

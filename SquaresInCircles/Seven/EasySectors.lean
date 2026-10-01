@@ -68,14 +68,6 @@ theorem fixed_gap_inward_negative {a u A v : ℝ}
   have ha := h.a_le_sqrt_three_sub_half
   linarith [sqrt_three_bounds.2]
 
-lemma trig_sum_monotone : MonotoneOn (fun x : ℝ => Real.cos x+Real.sin x)
-    (Icc 0 (Real.pi/4)) := by
-  apply monoOn_of_hasDeriv_nonneg (d := fun x => Real.cos x-Real.sin x) (by fun_prop)
-  · intro x _
-    exact ((Real.hasDerivAt_cos x).add (Real.hasDerivAt_sin x)).congr_deriv (by ring)
-  · intro x hx
-    exact sub_nonneg.mpr (sin_le_cos_of_small ⟨hx.1.le,hx.2.le⟩)
-
 /-- The forward axis with both signs positive: positive for every label. -/
 theorem fixed_gap_forward_positive {a u A v : ℝ}
     (h : Admissible a u) (h' : Admissible A v) :
@@ -117,9 +109,8 @@ theorem fixed_gap_forward_positive {a u A v : ℝ}
     linarith [h.u_nonneg]
   · have hd := dot_ge (p := -Real.cos z) (r := -Real.sin z) (c := 181/100) h'.phi_le
       (by norm_num) (by unfold targetSq; nlinarith [Real.sin_sq_add_cos_sq z])
-    have hm := trig_sum_monotone ⟨show 0 ≤ Real.pi/6-t by linarith [Real.pi_gt_d2],
-      show Real.pi/6-t ≤ Real.pi/4 by linarith⟩ ⟨by linarith,by linarith⟩
-      (show Real.pi/6-t ≤ z by dsimp [z]; linarith)
+    have hm := cos_add_sin_mono (x := Real.pi/6-t) (y := z) (by linarith [Real.pi_gt_d2])
+      (by dsimp [z]; linarith) (by linarith)
     -- `1/2 + (4/5) t + cos (π/6 - t) + sin (π/6 - t)` is concave in `π/6 - t`
     have hf := trig_concave_gt (α := -4/5) (A := 1) (B := 1) (m := 131/100-2*Real.pi/15)
       (x := Real.pi/6-t) (by norm_num) (by norm_num) (by norm_num) (by linarith [Real.pi_pos])
@@ -132,7 +123,6 @@ theorem fixed_gap_forward_positive {a u A v : ℝ}
       (by
         rw [Real.sin_pi_div_six,Real.cos_pi_div_six]
         linarith [sqrt_three_bounds.1])
-    dsimp at hm
     linarith
 
 end SquaresInCircles.Seven

@@ -1,7 +1,6 @@
 import SquaresInCircles.Common.ArcBudget
 import SquaresInCircles.Common.RectangleArcs
-import SquaresInCircles.Common.ElementaryTrig
-import SquaresInCircles.Common.Analysis
+import SquaresInCircles.Common.Trigonometry
 import SquaresInCircles.Six.Normalization.Basic
 import SquaresInCircles.Common.Angles
 
