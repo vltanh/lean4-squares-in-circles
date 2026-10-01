@@ -87,10 +87,10 @@ example : Three.P3 (1/2) (5/16) := by norm_num [Three.P3]
 example : Three.P3 (11/16) 0 := by norm_num [Three.P3]
 example : Five.P5 1 0 := by
   have h := Real.sq_sqrt (show (0:ℝ) ≤ 5 by norm_num)
-  exact ⟨by norm_num [P8],by nlinarith [Real.sqrt_nonneg 5]⟩
+  exact ⟨by norm_num,by norm_num,by nlinarith [Real.sqrt_nonneg 5]⟩
 example : Five.P5 ((Real.sqrt 5-1)/2) ((Real.sqrt 5-1)/2) := by
   have h := Real.sq_sqrt (show (0:ℝ) ≤ 5 by norm_num)
-  refine ⟨⟨?_,?_⟩,by linarith⟩ <;> nlinarith [Real.sqrt_nonneg 5]
+  refine ⟨?_,?_,by linarith⟩ <;> nlinarith [Real.sqrt_nonneg 5]
 
 -- Public statements.
 example (S : Fin 3 → UnitSquare) (o : Point) (R : ℝ)

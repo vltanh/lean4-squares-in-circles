@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="594" height="306" viewBox="0 0 594 306" role="img" aria-label="Left: a vector n from the centre of a square U is the hypotenuse of a right triangle whose legs p and q lie along the axes of U, and the legs together are longer than n. Right: n along an axis of U, where the second leg vanishes and the first is n itself">
+<title>Left: a vector n from the centre of a square U is the hypotenuse of a right triangle whose legs p and q lie along the axes of U, and the legs together are longer than n. Right: n along an axis of U, where the second leg vanishes and the first is n itself</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<polygon points="90.1,244.9 202.9,203.9 161.9,91.1 49.1,132.1" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<line x1="44.8" y1="197.6" x2="207.2" y2="138.4" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="155.6" y1="249.2" x2="96.4" y2="86.8" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="126.0" y1="168.0" x2="198.5" y2="141.6" stroke="#ea580c" stroke-width="2.6"/>
+<line x1="198.5" y1="141.6" x2="167.0" y2="55.2" stroke="#16a34a" stroke-width="2.6"/>
+<polyline points="190.6,144.5 187.7,136.6 195.6,133.7" fill="none" fill-opacity="1.0" stroke="#1f2937" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="166.3" y="166.1" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">p</text>
+<text x="194.0" y="94.3" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">q</text>
+<text x="126.0" y="278.4" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">|<tspan font-style="italic">p</tspan>| + |<tspan font-style="italic">q</tspan>| > |<tspan font-style="italic">n</tspan>|</text>
+<line x1="126.0" y1="168.0" x2="164.9" y2="61.2" stroke="#1f2937" stroke-width="1.6"/>
+<path d="M 167.0 55.2 L 167.5 65.0 L 160.4 62.4 z" fill="#1f2937"/>
+<text x="171.1" y="44.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">n</text>
+<circle cx="126.0" cy="168.0" r="3.2" fill="#2563eb"/>
+<text x="102.3" y="218.8" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">U</text>
+<polygon points="402.1,244.9 514.9,203.9 473.9,91.1 361.1,132.1" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<line x1="356.8" y1="197.6" x2="519.2" y2="138.4" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="467.6" y1="249.2" x2="408.4" y2="86.8" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="438.0" y1="168.0" x2="550.8" y2="127.0" stroke="#ea580c" stroke-width="4.2"/>
+<text x="499.3" y="161.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">p</text>
+<text x="438.0" y="278.4" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle"><tspan font-style="italic">q</tspan> = 0, |<tspan font-style="italic">p</tspan>| = |<tspan font-style="italic">n</tspan>|</text>
+<line x1="438.0" y1="168.0" x2="544.8" y2="129.1" stroke="#1f2937" stroke-width="1.6"/>
+<path d="M 550.8 127.0 L 543.6 133.6 L 541.0 126.5 z" fill="#1f2937"/>
+<text x="562.0" y="122.9" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">n</text>
+<circle cx="438.0" cy="168.0" r="3.2" fill="#2563eb"/>
+<text x="414.3" y="218.8" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">U</text>
+</svg>

@@ -51,7 +51,7 @@ def chart_runs(a, b, o=(0.0, 0.0), r=R_AUX):
 def twelve_gon_plane():
     """Definition 8.4: the 12-gon in the plane of the local coordinates of o,
     around the region where the square fits in the disk of radius
-    sqrt(5/2), with the octagon dashed."""
+    sqrt(5/2), with the octagon of its first two sides dashed."""
     K = 2.5
     Rk = math.sqrt(K)
     orange, blue = COLORS[1], COLORS[0]
@@ -96,11 +96,10 @@ def twelve_gon_plane():
     f.text((0.2, -0.6), 'φ ≤ 5/2', size=14, color=blue)
     f.text((0.98, 0.5), sb('P', '5', size=16), size=16, color=orange,
            anchor='start')
-    f.text((0.84, 0.84), sb('P', '8', size=14), size=14, anchor='start')
     save(f, 'five-twelve-gon-plane', 'The positions of the disk centre o in '
          'the frame of a square S that keep S in the disk of radius root 5/2 '
-         '(blue), inside the 12-gon P5 (orange), inside the dashed octagon; '
-         'the dots are the points of tangency')
+         '(blue), inside the 12-gon P5 (orange), inside the dashed octagon of '
+         'its first two sides; the dots are the points of tangency')
 
 
 def chart_panel(f, o, a, b, color, title, arc_label, lines=True):
@@ -134,23 +133,23 @@ def chart_panel(f, o, a, b, color, title, arc_label, lines=True):
 
 
 def third_side():
-    """Why P5 needs its third side: at the corner (3/4, 3/4) of the octagon
-    the arc on the circle of radius 5/6 is less than a fifth; at the corner
-    of P5 it is just more."""
+    """Why P5 needs its third side: at the point (3/4, 3/4), where its first
+    two sides meet, the arc on the circle of radius 5/6 is less than a fifth;
+    at the corner of P5 it is just more."""
     dx = 2.55
     f = Figure(-0.95, dx + 1.52, -0.97, 1.42, 128)
+    assert 3 * 0.75 + 0.75 == 3 and 0.75 + 3 * 0.75 == 3
     t0, t1 = chart_panel(f, (0, 0), 0.75, 0.75, COLORS[4],
-                         'corner (¾, ¾) of ' + sb('P', '8', size=14),
-                         '≈ 55°')
+                         'the point (¾, ¾)', '≈ 55°')
     assert 55 < math.degrees(t1 - t0) < 55.2 < 72
     s0, s1 = chart_panel(f, (dx, 0), CX, CY, COLORS[1],
                          'corner of ' + sb('P', '5', size=14),
                          '≈ 72.8°')
     assert 72 < 72.7 < math.degrees(s1 - s0) < 72.9
-    save(f, 'five-third-side', 'Left: a square at the corner (3/4, 3/4) of '
-         'the octagon holds only about 55 degrees of the circle of radius 5/6, '
-         'less than a fifth. Right: at the corner of the 12-gon it holds about '
-         '72.8 degrees, just more than a fifth')
+    save(f, 'five-third-side', 'Left: a square at (3/4, 3/4), where the '
+         'first two sides of the 12-gon meet, holds only about 55 degrees of '
+         'the circle of radius 5/6, less than a fifth. Right: at the corner of '
+         'the 12-gon it holds about 72.8 degrees, just more than a fifth')
 
 
 def arcsine_region():

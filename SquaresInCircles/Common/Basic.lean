@@ -35,6 +35,12 @@ lemma dot_sub_right (v p q : Point) : dot v (sub p q) = dot v p - dot v q := by
 lemma dot_scale_right (v : Point) (t : ℝ) (p : Point) :
     dot v (scale t p) = t * dot v p := by dsimp [dot, scale]; ring
 
+/-- The Cauchy–Schwarz inequality, squared. -/
+lemma cauchy_sq (u v : Point) : (dot u v)^2 ≤ normSq u*normSq v := by
+  have h := sq_nonneg (u.1*v.2-u.2*v.1)
+  dsimp [dot,normSq]
+  linarith
+
 /-- Non-overlap, without a containing disk or any lower-bound assumption. -/
 def InteriorDisjoint {ι : Type*} (S : ι → UnitSquare) : Prop :=
   ∀ i j, i ≠ j → ∀ p, ¬ (openSquare (S i) p ∧ openSquare (S j) p)
@@ -59,6 +65,14 @@ lemma frame_norm (S : UnitSquare) (v : Point) :
 lemma frame_dot (S : UnitSquare) (v w : Point) :
     frameX S v * frameX S w + frameY S v * frameY S w = dot v w := by
   simp only [frameX,frameY,dot]; linear_combination (v.1*w.1+v.2*w.2)*S.unit
+
+/-- The coordinates of a vector in the frame of a square have absolute values
+adding up to at least its length. -/
+lemma width_lower (S : UnitSquare) (n : Point) :
+    Real.sqrt (normSq n) ≤ |frameX S n|+|frameY S n| := by
+  rw [Real.sqrt_le_left (by positivity),← frame_norm S n]
+  nlinarith [sq_abs (frameX S n),sq_abs (frameY S n),abs_nonneg (frameX S n),
+    abs_nonneg (frameY S n)]
 
 lemma frame_distance (S : UnitSquare) (p o : Point) :
     (localX S p - localX S o)^2 + (localY S p - localY S o)^2 = normSq (sub p o) := by

@@ -83,17 +83,6 @@ lemma centers_distance_sq_ge_one (S T : UnitSquare)
   exact hd m ⟨small_disk_in_openSquare S (by rw [heS]; linarith),
     small_disk_in_openSquare T (by rw [heT]; linarith)⟩
 
-lemma cauchy_sq (u v : Point) : (dot u v)^2 ≤ normSq u*normSq v := by
-  have h := sq_nonneg (u.1*v.2-u.2*v.1)
-  dsimp [dot,normSq]
-  linarith
-
-lemma width_lower (S : UnitSquare) (n : Point) :
-    Real.sqrt (normSq n) ≤ |frameX S n|+|frameY S n| := by
-  rw [Real.sqrt_le_left (by positivity),← frame_norm S n]
-  nlinarith [sq_abs (frameX S n),sq_abs (frameY S n),abs_nonneg (frameX S n),
-    abs_nonneg (frameY S n)]
-
 /-- A unit vector with a zero coordinate is one of the four cardinal vectors. -/
 lemma cardinal_of_mul_eq_zero {x y : ℝ} (h1 : x^2+y^2=1) (h0 : x*y=0) :
     (x=1 ∧ y=0) ∨ (x=0 ∧ y=1) ∨ (x= -1 ∧ y=0) ∨ (x=0 ∧ y= -1) := by

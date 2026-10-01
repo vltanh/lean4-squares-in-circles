@@ -483,46 +483,6 @@ def packing_example():
            'of radius R about o')
 
 
-def contact_polygon():
-    g = (math.sqrt(5) - 1) / 2
-    K = math.sqrt(2.5)
-    orange, blue = COLORS[1], COLORS[0]
-    f = Figure(-0.22, 1.62, -0.22, 1.62, 240)
-    # The octagon (its part with a, b >= 0), and the disk inside it.
-    f.polygon([(0, 0), (1, 0), (0.75, 0.75), (0, 1)], fill=FILLS[1],
-              stroke=orange, width=2.2)
-    t0, t1 = math.atan2(0.5, 1.5), math.atan2(1.5, 0.5)
-    arc = [(-0.5 + K * math.cos(t0 + (t1 - t0) * k / 60),
-            -0.5 + K * math.sin(t0 + (t1 - t0) * k / 60)) for k in range(61)]
-    f.polygon([(0, 0)] + arc, fill=FILLS[0], stroke=blue, width=1.6)
-    f.polygon([(0, 0), (1, 0), (0.75, 0.75), (0, 1)], stroke=orange,
-              width=2.2)
-    # The two tangents of the octagon, and the third tangent of five squares.
-    f.line((1.07, -0.2), (0.45, 1.65), width=1, dash='5 4')
-    f.line((-0.2, 1.07), (1.65, 0.45), width=1, dash='5 4')
-    f.line((2 * g + 0.2, -0.2), (-0.2, 2 * g + 0.2), stroke=FAINT, width=1.4,
-           dash='2 3')
-    f.line((-0.2, 0), (1.58, 0), width=1, arrow=True)
-    f.line((0, -0.2), (0, 1.58), width=1, arrow=True)
-    f.text((1.58, -0.08), 'a', anchor='end')
-    f.text((-0.08, 1.56), 'b', anchor='end')
-    for q in ((1, 0), (0, 1)):
-        f.dot(q, r=4)
-    f.dot((g, g), r=3.5, fill=FAINT)
-    f.text((0.5, 1.55), '3a + b = 3', size=13, italic=False, anchor='start')
-    f.text((1.55, 0.36), 'a + 3b = 3', size=13, italic=False, anchor='end')
-    f.text((0.04, 1.24), 'a + b = √5 − 1', size=13, italic=False,
-           anchor='start', color=FAINT)
-    f.text((0.3, 0.3), 'φ ≤ 5/2', size=15, color=blue)
-    f.line((0.95, 0.95), (0.74, 0.74), stroke=orange, width=1)
-    f.text((0.97, 0.99), sb('P', '8', size=16), size=16, color=orange,
-           anchor='start')
-    f.save('contact-polygon', 'The disk where phi is at most 5/2 in the '
-           '(a, b)-plane, inside the octagon cut out by its tangents at '
-           '(1, 0) and (0, 1); a third tangent, used by five squares, cuts '
-           'off the corner')
-
-
 def width_figure():
     d, c = 20, (0.0, 0.0)
     e1, e2 = u(rad(d)), u(rad(d + 90))
@@ -1218,8 +1178,6 @@ def sixteen_gon():
 def diamond():
     orange, blue = COLORS[1], COLORS[0]
     f = Figure(-0.12, 1.15, -0.12, 1.15, 330)
-    f.polygon([(0, 0), (1, 0), (0.75, 0.75), (0, 1)], stroke=INK, width=1,
-              dash='5 4')
     f.polygon([(0, 0), (1, 0), (0, 1)], fill=FILLS[1], stroke=orange,
               width=2)
     f.polygon(quadrant_disk(2), fill=FILLS[0], stroke=blue, width=1.4)
@@ -1229,10 +1187,8 @@ def diamond():
     f.text((0.28, 0.2), 'φ ≤ 2', size=15, color=blue)
     f.text((0.38, 0.75), 'a + b = 1', size=13, italic=False, color=orange,
            anchor='start')
-    f.text((0.79, 0.8), sb('P', '8', size=15), size=15, anchor='start')
     f.save('diamond', 'The disk where phi is at most 2, inside the diamond a '
-           'plus b at most 1, which touches it at (1/2, 1/2); dashed, the '
-           'octagon')
+           'plus b at most 1, which touches it at (1/2, 1/2)')
 
 
 def twelve_gon():
@@ -1305,32 +1261,6 @@ def three_arcs():
     f.save('three-arcs', 'Three disjoint arcs U, V and W of a circle about o; '
            'the angle between the centres of V and W is at least the sum of '
            'their half-widths and at most what the arc U leaves')
-
-
-def octagon_support():
-    p, q = 1.0, 0.6
-    orange, blue = COLORS[1], COLORS[0]
-    top = 0.75 * (p + q)
-    f = Figure(-0.12, 1.3, -0.12, 1.3, 300)
-    quad = [(0, 0), (1, 0), (0.75, 0.75), (0, 1)]
-    f.polygon(quad, fill=FILLS[1], stroke=orange, width=2)
-    for level in (0.4, 0.8):
-        f.line((level / p, 0), (0, level / q), stroke=FAINT, width=1,
-               dash='4 3')
-    f.line((top / p, 0), (0, top / q), stroke=blue,
-           width=1.6)
-    ab_axes(f, 1.27)
-    f.dot((0.75, 0.75), r=4.5, fill=blue)
-    f.text((0.8, 0.82), '(¾, ¾)', size=14, italic=False, anchor='start')
-    n = (p / math.hypot(p, q), q / math.hypot(p, q))
-    f.line((0.2, 0.2), shift((0.2, 0.2), n, 0.3), width=1.6, arrow=True)
-    f.text(shift((0.22, 0.2), n, 0.38), '(p, q)', size=14, anchor='start')
-    f.text((0.56, 1.2), 'pa + qb = ¾(p + q)', size=13, italic=False,
-           color=blue, anchor='start')
-    f.text((0.12, 0.62), sb('P', '8', size=16), size=16, color=orange)
-    f.save('octagon-support', 'The part of the octagon with a, b at least 0, '
-           'a quadrilateral, and level lines of pa + qb; the largest value is '
-           'taken at a vertex, here the corner (3/4, 3/4)')
 
 
 def axis_squares():
@@ -1431,14 +1361,12 @@ def main():
     twelve_gon()
     axis_square()
     three_arcs()
-    octagon_support()
     axis_squares()
     parallel_squares()
     vertex_square()
     directions()
     local_coordinates()
     packing_example()
-    contact_polygon()
     width_figure()
     arc_figure()
     chart_panels()

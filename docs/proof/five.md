@@ -41,8 +41,8 @@ centre square (grey) holds none.
 
 *Lean:
 [`Five.model_packing`](../../SquaresInCircles/Five/Construction.lean#L21),
-[`Five.uniqueness`](../../SquaresInCircles/Five/Uniqueness.lean#L82),
-[`Five.optimum`](../../SquaresInCircles/Five/Uniqueness.lean#L92).*
+[`Five.uniqueness`](../../SquaresInCircles/Five/Uniqueness.lean#L88),
+[`Five.optimum`](../../SquaresInCircles/Five/Uniqueness.lean#L98).*
 
 *Outline of the proof.* Part (1) is the construction, Proposition 8.2 (§8.1).
 Parts (2) and (3) follow, by
@@ -55,17 +55,19 @@ takes four steps.
    every square $S$ in a 12-gon $P_5$ (Lemma 8.5). From then on only the
    12-gon and the disjointness of the squares are used: Proposition 8.6 states
    that five disjoint squares with offsets in $P_5$ are congruent to the plus.
+   The 12-gon keeps every centre within distance 1 of the disk centre
+   (Lemma 8.7).
 2. *Exterior squares* (§8.3). On the circle $\Gamma_{5/6}$, every square that
    avoids the disk centre holds an arc of more than a fifth of the circle
-   (Lemma 8.9).
+   (Lemma 8.10).
 3. *A centred square* (§8.4). The radial sweep of a square that contains the
    disk centre holds a fifth of $\Gamma_{5/6}$, unless the square is centred at
-   the disk centre (Lemma 8.10). The angular budget then forces some square to
-   be centred at the disk centre (Proposition 8.11).
-4. *The plus* (§8.5). The 12-gon keeps every centre within distance 1 of the
-   disk centre (Lemma 8.12), while disjointness keeps the other centres at
-   least 1 from the centred square. So they are at distance exactly 1 from
-   it, and they are its side-neighbours.
+   the disk centre (Lemma 8.11). The angular budget then forces some square to
+   be centred at the disk centre (Proposition 8.12).
+4. *The plus* (§8.5). The other centres are within distance 1 of the disk
+   centre (Lemma 8.7), while disjointness keeps them at least 1 from the
+   centred square. So they are at distance exactly 1 from it, and they are
+   its side-neighbours.
 
 ## 8.1 Construction
 
@@ -111,7 +113,7 @@ square $S$ the numbers $a_S \ge b_S \ge 0$ are the offsets of $o$ from $S$
 lies in the closed disk of radius $R_5$ about $o$ has
 $\varphi(a_S, b_S) \le \frac52$. This section replaces this curved constraint
 by a polygon, and reduces Proposition 8.3 to a statement about the polygon
-alone, Proposition 8.6, which §8.3 to §8.5 prove.
+alone, Proposition 8.6, which Lemma 8.7 and §8.3 to §8.5 prove.
 
 ### Definition 8.4 (the 12-gon)
 
@@ -121,14 +123,16 @@ $P_5$ is the set of points $(a, b)$ of the plane with
 3a + b \le 3, \qquad a + 3b \le 3, \qquad a + b \le \sqrt5 - 1 .
 ```
 
-The first two inequalities define the octagon $P_8$
-([Definition 3.8](common.md#definition-38-the-octagon)): they are the tangent
-half-planes of the disk $\lbrace\varphi \le \frac52\rbrace$ at $(1, 0)$ and
-$(0, 1)$ ([Definition 3.5](common.md#definition-35-tangent-half-plane)), and
-the outer squares of the plus have $(a_S, b_S) = (1, 0)$. The third is the
+The first two inequalities are the tangent half-planes of the disk
+$\lbrace\varphi \le \frac52\rbrace$ at $(1, 0)$ and $(0, 1)$
+([Definition 3.5](common.md#definition-35-tangent-half-plane)): indeed
+$\varphi(1, 0) = \frac94 + \frac14 = \frac52$, and at $(1, 0)$ the inequality
+of Definition 3.5 reads $\frac32(a - 1) + \frac12 b \le 0$, that is
+$3a + b \le 3$; the point $(0, 1)$ is its mirror image. The outer squares of
+the plus have $(a_S, b_S) = (1, 0)$. The third is the
 tangent half-plane at $(g, g)$, where $g = \frac{\sqrt5 - 1}2$ and
 $\varphi(g, g) = 2(g + \frac12)^2 = \frac52$. No square of the plus has these
-offsets, but §8.3 needs this side (Figure 8.6). The set $P_5$ is symmetric in
+offsets, but §8.3 needs this side (Figure 8.7). The set $P_5$ is symmetric in
 $a$ and $b$, and restoring the signs of the two local coordinates of $o$ turns
 its three sides into twelve (Figure 8.3), hence the name.
 
@@ -136,19 +140,20 @@ its three sides into twelve (Figure 8.3), hence the name.
 
 *Figure 8.2.* The part of $P_5$ where $a, b \ge 0$, around the disk
 $\lbrace\varphi \le \frac52\rbrace$, which it touches at $(1, 0)$, $(0, 1)$ and
-$(g, g)$. Its third side cuts the corner $(\frac34, \frac34)$ off the octagon.
+$(g, g)$. Its third side cuts off the corner $(\frac34, \frac34)$ where the
+first two meet.
 
-![The plane of the local coordinates of o in the frame of a square S, with S drawn in grey at the centre: a blue rounded region where S fits in the disk of radius root of 5/2, inside an orange 12-gon with vertices at (1, 0), (0, 1), (-1, 0), (0, -1) and eight corners in between, inside a dashed octagon; dots mark the twelve points where the 12-gon touches the blue region](figures/five-twelve-gon-plane.svg)
+![The plane of the local coordinates of o in the frame of a square S, with S drawn in grey at the centre: a blue rounded region where S fits in the disk of radius root of 5/2, inside an orange 12-gon with vertices at (1, 0), (0, 1), (-1, 0), (0, -1) and eight corners in between, inside the dashed octagon of the first two inequalities; dots mark the twelve points where the 12-gon touches the blue region](figures/five-twelve-gon-plane.svg)
 
 *Figure 8.3.* The same constraints in the plane of the local coordinates
 $(x_S(o), y_S(o))$ of the disk centre, with the square $S$ itself in grey. If
 the closed square $\overline S$ lies in the closed disk of radius $R_5$ about
 $o$, then $o$ lies in the blue region,
 $\varphi(|x_S(o)|, |y_S(o)|) \le \frac52$. The 12-gon (orange) contains that
-region, and the octagon (dashed) contains the 12-gon.
+region; dashed, the octagon cut out by the first two inequalities alone.
 
-*Lean: [`Five.P5`](../../SquaresInCircles/Five/Exterior.lean#L17),
-[`Five.p5_swap`](../../SquaresInCircles/Five/Exterior.lean#L29).*
+*Lean: [`Five.P5`](../../SquaresInCircles/Five/Exterior.lean#L18),
+[`Five.p5_swap`](../../SquaresInCircles/Five/Exterior.lean#L30).*
 
 ### Lemma 8.5 (contact polygon)
 
@@ -167,7 +172,7 @@ where the third uses $g + \frac12 = \frac{\sqrt5}2$. Multiplying by $2$, $2$
 and $\frac2{\sqrt5}$ gives the three inequalities of $P_5$, since
 $2g = \sqrt5 - 1$. $\square$
 
-*Lean: [`Five.p5_of_phi`](../../SquaresInCircles/Five/Exterior.lean#L20).*
+*Lean: [`Five.p5_of_phi`](../../SquaresInCircles/Five/Exterior.lean#L21).*
 
 From here on only the polygon and the disjointness of the squares are used.
 
@@ -182,7 +187,39 @@ The statement mentions no disk. It gives Proposition 8.3 at once (see the end
 of §8.5), and together with
 [Lemma 2.7](preliminaries.md#lemma-27-congruent-configurations) and
 Proposition 8.2 it shows that five disjoint squares with offsets in $P_5$ lie
-in the closed disk of radius $R_5$ about $o$. Its proof occupies §8.3 to §8.5.
+in the closed disk of radius $R_5$ about $o$. Its proof occupies the rest of
+this section and §8.3 to §8.5.
+
+### Lemma 8.7 (the 12-gon lies in the unit disk)
+
+If $a, b \ge 0$ and $(a, b) \in P_5$, then $a^2 + b^2 \le 1$. So every
+square $S$ with $(a_S, b_S) \in P_5$ has its centre within distance 1 of $o$:
+$|c_S - o|^2 = a_S^2 + b_S^2 \le 1$, by
+[Lemma 3.4](common.md#lemma-34-farthest-vertex).
+
+![The part with a, b at least 0 of the 12-gon P5, inside the quarter of the unit circle, touching it at (1, 0) and (0, 1)](figures/dodecagon-disk.svg)
+
+*Figure 8.4.* The part of $P_5$ where $a, b \ge 0$ stays inside the unit
+circle $a^2 + b^2 = 1$, and touches it only at $(1, 0)$ and $(0, 1)$. The
+first two sides alone would not: they meet at $(\frac34, \frac34)$, where
+$a^2 + b^2 = \frac98$.
+
+*Proof.* Let $s = a + b$. If $s \le 1$, then
+$a^2 + b^2 \le a^2 + b^2 + 2ab = s^2 \le 1$. Otherwise
+$1 < s \le \sqrt5 - 1 < \frac75$, since $(\frac{12}5)^2 = \frac{144}{25} > 5$.
+The first two inequalities of $P_5$ read $2s + (a - b) \le 3$ and
+$2s - (a - b) \le 3$, so $|a - b| \le 3 - 2s$, where
+$3 - 2s > 3 - \frac{14}5 > 0$. Hence
+
+```math
+2\left(a^2 + b^2\right) = s^2 + (a - b)^2 \le s^2 + (3 - 2s)^2 = 2 + (5s - 7)(s - 1) < 2 ,
+```
+
+because $s - 1 > 0 > 5s - 7$. $\square$
+
+*Lean:
+[`Five.dodecagon_norm_le`](../../SquaresInCircles/Five/Uniqueness.lean#L25),
+[`Five.center_norm_le`](../../SquaresInCircles/Five/Uniqueness.lean#L43).*
 
 ## 8.3 Exterior squares
 
@@ -199,7 +236,7 @@ $-\frac\pi2$ below $-1$, and that $\arccos z = \frac\pi2 - \arcsin z$ (§2.1).
 We first bound a sum of arcsines, then the length of the arc of an exterior
 square.
 
-### Lemma 8.7 (an arcsine sum)
+### Lemma 8.8 (an arcsine sum)
 
 Let $x$ and $y$ be real numbers with $0 \le x \le \frac12$,
 $-\frac12 \le y \le \frac12$, $x + y \le \frac{237}{1000}$ and
@@ -211,7 +248,7 @@ $3x + y \le 1$. Then
 
 ![The (x, y)-plane with x from 0 to 1/2 and y from -1/2 to 1/2: the region of the lemma is a quadrilateral with vertices (0, -1/2), (1/2, -1/2), the crossing of the lines 3x + y = 1 and x + y = 237/1000, and (0, 237/1000). It is split into three shaded pieces, (i) where y is at least 0, (ii) where y is negative and x at most 23/60, and (iii) where y is negative and x more than 23/60; an orange curve, where the arcsine sum equals pi/10, runs just above the region](figures/five-arcsine-region.svg)
 
-*Figure 8.4.* The region of Lemma 8.7 in the $(x, y)$-plane, split into the
+*Figure 8.5.* The region of Lemma 8.8 in the $(x, y)$-plane, split into the
 three cases of the proof, and the curve (orange) on which
 $\arcsin\frac{6x}5 + \arcsin\frac{6y}5 = \frac\pi{10}$. The region lies below
 the curve. Case (iii) needs the side $3x + y \le 1$: without it the lemma
@@ -277,10 +314,10 @@ this gives $h(x) < h(q)$, and since $1 - 2q = \frac7{30}$,
 h(q) = \tfrac65\cdot\tfrac7{30} + \tfrac{12167}{500000} = \tfrac7{25} + \tfrac{12167}{500000} = \tfrac{152167}{500000} < \tfrac{157}{500} . \qquad \square
 ```
 
-*Lean: [`Five.arcsin_sum`](../../SquaresInCircles/Five/Exterior.lean#L39),
-[`Five.aux`](../../SquaresInCircles/Five/Exterior.lean#L32).*
+*Lean: [`Five.arcsin_sum`](../../SquaresInCircles/Five/Exterior.lean#L40),
+[`Five.aux`](../../SquaresInCircles/Five/Exterior.lean#L33).*
 
-### Lemma 8.8 (the arc length)
+### Lemma 8.9 (the arc length)
 
 Let $a$ and $b$ be real numbers with $a \ge \frac12$, $0 \le b \le a$ and
 $(a, b) \in P_5$, and put
@@ -314,7 +351,7 @@ $U + A$ and $U + V$. We show that each of them exceeds $\frac{2\pi}5$.
    decreasing on $[-1, 1]$, so $A > \arccos(\cos\frac\pi5) = \frac\pi5$.
 2. *$A + V > \frac{2\pi}5$.* Here
    $A + V = \frac\pi2 - (\arcsin\frac{6x}5 + \arcsin\frac{6y}5)$, and
-   Lemma 8.7 applies: $x + y = a + b - 1 \le \sqrt5 - 2 < \frac{237}{1000}$ by
+   Lemma 8.8 applies: $x + y = a + b - 1 \le \sqrt5 - 2 < \frac{237}{1000}$ by
    the third side of $P_5$ (as $2237^2 = 5004169 > 5 \cdot 10^6$), and
    $3x + y = 3a + b - 2 \le 1$ by the first. So the sum of arcsines is less
    than $\frac\pi{10}$, and $A + V > \frac\pi2 - \frac\pi{10} = \frac{2\pi}5$.
@@ -330,7 +367,7 @@ $U + A$ and $U + V$. We show that each of them exceeds $\frac{2\pi}5$.
    with $\theta = \frac\pi5$, gives
    $\frac{2\pi}5 < \arcsin u + \arcsin v = U + V$. $\square$
 
-*Lean: [`Five.arc_length`](../../SquaresInCircles/Five/Exterior.lean#L63).*
+*Lean: [`Five.arc_length`](../../SquaresInCircles/Five/Exterior.lean#L64).*
 
 *Remark.* Only two of the four sums occur. Since $b \ge 0$ and $a \le 1$,
 
@@ -340,19 +377,19 @@ V \le \arcsin\tfrac35 < \tfrac\pi4 < \arccos\tfrac35 \le A ,
 
 because $\frac35 < \frac{\sqrt2}2$. So $\min(A, V) = V$, and the length is
 $A + V$ or $U + V$, according as the circle leaves the square at the top
-through the near edge or through the upper edge (Figure 8.5). Bounding all
+through the near edge or through the upper edge (Figure 8.6). Bounding all
 four sums spares us deciding which.
 
 ![Two panels in chart coordinates, each with the circle of radius 5/6 about o and the dashed lines of the near, lower and upper edges of an exterior square. Left: the square centred at (0.8, 0.4); its highlighted arc runs from the lower edge at minus V to the near edge at A, and the upper edge is above the circle. Right: the square centred at (1, 0); its arc runs from the lower edge at minus V to the upper edge at U, and the near edge crossings at plus and minus A, in grey, lie beyond the arc](figures/five-arc-cases.svg)
 
-*Figure 8.5.* The two cases that occur, in charts on $\Gamma_{5/6}$. Left,
+*Figure 8.6.* The two cases that occur, in charts on $\Gamma_{5/6}$. Left,
 $(a_S, b_S) = (0.8, 0.4)$: the upper edge is out of reach, so
 $U_S = \frac\pi2$, and the arc runs from the lower edge at $-V_S$ to the near
 edge at $A_S$; its length is $A_S + V_S$. Right, $(a_S, b_S) = (1, 0)$, an
 outer square of the plus: the arc runs from $-V_S$ to the upper edge at $U_S$,
 before the near edge is reached at $A_S$ (grey); its length is $U_S + V_S$.
 
-### Lemma 8.9 (exterior arcs)
+### Lemma 8.10 (exterior arcs)
 
 Let $S$ be an exterior square with $(a_S, b_S) \in P_5$. Then $S$ holds an arc
 of $\Gamma_{5/6}$ of half-width greater than $\frac\pi5$.
@@ -364,31 +401,33 @@ $a_S - \frac12 \le \frac12 < \frac56 < 1 \le a_S + \frac12$, and
 [Lemma 3.24](common.md#lemma-324-arcs-of-an-exterior-square) (1) applies on
 $\Gamma_{5/6}$: $S$ holds an arc of $\Gamma_{5/6}$ of length
 $\min(A_S, U_S) + \min(A_S, V_S)$, provided that this number is positive. The
-crossing angles $A_S, V_S, U_S$ are the numbers $A, V, U$ of Lemma 8.8 for
+crossing angles $A_S, V_S, U_S$ are the numbers $A, V, U$ of Lemma 8.9 for
 $(a, b) = (a_S, b_S)$, so this length exceeds $\frac{2\pi}5$, and the arc has
 half-width greater than $\frac\pi5$. $\square$
 
-*Lean: [`Five.exterior_arc`](../../SquaresInCircles/Five/Exterior.lean#L110).*
+*Lean: [`Five.exterior_arc`](../../SquaresInCircles/Five/Exterior.lean#L111).*
 
 Unlike the circle $\Gamma_{1/2}$ of Chapter 7, the circle $\Gamma_{5/6}$ can
 leave an exterior square through its upper edge, so we use the general arc of
 Lemma 3.24 (1) rather than the cap. The third side of $P_5$ is needed here. At
-the corner $(\frac34, \frac34)$ of the octagon, $A = \arccos\frac3{10}$,
+the point $(\frac34, \frac34)$, where the first two sides meet,
+$A = \arccos\frac3{10}$,
 $V = -\arcsin\frac3{10}$ and $U = \frac\pi2$, so the arc of Lemma 3.24 (1) has
 length $\frac\pi2 - 2\arcsin\frac3{10}$, less than $\frac{2\pi}5$ because
-$\arcsin\frac3{10} \ge \frac3{10} > \frac\pi{20}$ (Figure 8.6).
+$\arcsin\frac3{10} \ge \frac3{10} > \frac\pi{20}$ (Figure 8.7).
 
 ![Two panels in chart coordinates with the circle of radius 5/6 about o. Left: the square centred at (3/4, 3/4), whose arc on the circle, between the lines of its near and lower edges, spans about 55 degrees. Right: the square centred at the corner of the 12-gon, about (0.88, 0.35), whose arc spans about 72.8 degrees](figures/five-third-side.svg)
 
-*Figure 8.6.* Why $P_5$ has a third side. Left: a square at the corner
-$(\frac34, \frac34)$ of the octagon holds only about 55° of $\Gamma_{5/6}$,
+*Figure 8.7.* Why $P_5$ has a third side. Left: a square at
+$(\frac34, \frac34)$, where the first two sides meet, holds only about 55° of
+$\Gamma_{5/6}$,
 less than a fifth of the circle. Right: at the corner of $P_5$, where
 $3a + b = 3$ meets $a + b = \sqrt5 - 1$, it holds about 72.8°, just more than
 a fifth.
 
 ## 8.4 A centred square
 
-### Lemma 8.10 (the sweep holds a fifth of the circle)
+### Lemma 8.11 (the sweep holds a fifth of the circle)
 
 Let $S$ be a square with $o \in S^\circ$ and $c_S \ne o$. Then the radial sweep
 $\widehat S$ ([Definition 3.25](common.md#definition-325-radial-sweep)) holds
@@ -402,13 +441,13 @@ Definition 3.25).
 
 ![A square containing o, slid outward along the ray from o through its centre until its centre c* is at distance 1 over root 2 from o; the inscribed disk of the slid square covers a highlighted fifth of the circle of radius 5/6](figures/slid-disk.svg)
 
-*Figure 8.7.* The slid copy of $S$, centred at $c^*$, and its inscribed disk.
+*Figure 8.8.* The slid copy of $S$, centred at $c^*$, and its inscribed disk.
 The disk covers the arc of $\Gamma_{5/6}$ of half-width $\frac\pi5$ about the
 direction of $c_S - o$.
 
 ![Three panels in chart coordinates, each with a square containing o centred at (0.06, 0.035), (0.3, 0.12) and (0.44, 0.38) respectively, its radial sweep shaded as a band running away from o, a dashed slid copy centred at distance 1 over root 2 from o with its inscribed disk, and the circle of radius 5/6 with a highlighted arc of half-width pi/5 inside that disk](figures/five-sweep-positions.svg)
 
-*Figure 8.8.* The construction for three positions of a containing square,
+*Figure 8.9.* The construction for three positions of a containing square,
 drawn in its chart, with the radial sweep shaded. However close $c_S$ is to
 $o$, the slid copy (dashed) has its centre at distance $\frac1{\sqrt2}$ from
 $o$, and its inscribed disk covers the fifth of $\Gamma_{5/6}$ about the
@@ -482,7 +521,7 @@ $\frac{\sqrt2}2 < \frac56$ about $o$ and misses $\Gamma_{5/6}$. The next
 proposition shows that five squares with offsets in $P_5$ must include such a
 square.
 
-### Proposition 8.11 (a centred square)
+### Proposition 8.12 (a centred square)
 
 Let $o$ be a point, and let $S_1, \dots, S_5$ be pairwise disjoint unit squares
 such that $(a_{S_i}, b_{S_i}) \in P_5$ for every $i$. Then one of them is
@@ -490,7 +529,7 @@ centred at $o$.
 
 ![Left: a circle with five coloured arcs laid end to end, four of more than 72 degrees and a fifth of 72 degrees drawn slightly outside, which overlaps the first; the overlap is marked. Right: the plus with the circle of radius 5/6 about o, the four outer squares holding coloured arcs, and the four short gaps between the arcs marked in black](figures/five-budget.svg)
 
-*Figure 8.9.* Left: the contradiction in the proof. Four arcs of more than a
+*Figure 8.10.* Left: the contradiction in the proof. Four arcs of more than a
 fifth of the circle and one of a fifth, laid end to end, overrun the circle, so
 the five sets that hold them cannot be pairwise disjoint. Right: in the plus
 the four outer squares hold arcs of about 73.7° each, and the four gaps between
@@ -498,46 +537,21 @@ them add up to about 65°, less than a fifth; the fifth square is centred at
 $o$ and holds no arc.
 
 *Proof.* Suppose that no $S_i$ is centred at $o$. Every $(a_{S_i}, b_{S_i})$
-lies in $P_5$, hence in the octagon $P_8$. At most one of the squares contains
-$o$; if $S_i$ does, it is not centred at $o$, so its sweep holds an arc of
-$\Gamma_{5/6}$ of half-width $\frac\pi5$ (Lemma 8.10). Every exterior square
-holds an arc of $\Gamma_{5/6}$ of half-width greater than $\frac\pi5$
-(Lemma 8.9). By
+lies in $P_5$, so every centre is within distance 1 of $o$ (Lemma 8.7). At
+most one of the squares contains $o$; if $S_i$ does, it is not centred at $o$,
+so its sweep holds an arc of $\Gamma_{5/6}$ of half-width $\frac\pi5$
+(Lemma 8.11). Every exterior square holds an arc of $\Gamma_{5/6}$ of
+half-width greater than $\frac\pi5$ (Lemma 8.10). By
 [Proposition 3.28](common.md#proposition-328-budget-with-a-sweep), with
 $n = 5$ and $r = \frac56$, these two conditions cannot both hold, a
 contradiction. $\square$
 
 *Lean:
-[`Five.centered_square`](../../SquaresInCircles/Five/Uniqueness.lean#L42).*
+[`Five.centered_square`](../../SquaresInCircles/Five/Uniqueness.lean#L49).*
 
 ## 8.5 The plus
 
-### Lemma 8.12 (the 12-gon lies in the unit disk)
-
-If $a, b \ge 0$ and $(a, b) \in P_5$, then $a^2 + b^2 \le 1$.
-
-![The part with a, b at least 0 of the 12-gon P5, inside the quarter of the unit circle, touching it at (1, 0) and (0, 1)](figures/dodecagon-disk.svg)
-
-*Figure 8.10.* The part of $P_5$ where $a, b \ge 0$ stays inside the unit
-circle $a^2 + b^2 = 1$, and touches it only at $(1, 0)$ and $(0, 1)$. The
-octagon alone would not: its corner $(\frac34, \frac34)$ has
-$a^2 + b^2 = \frac98$.
-
-*Proof.* Let $s = a + b$. If $s \le 1$, then
-$a^2 + b^2 \le a^2 + b^2 + 2ab = s^2 \le 1$. Otherwise
-$1 < s \le \sqrt5 - 1 < \frac75$, since $(\frac{12}5)^2 = \frac{144}{25} > 5$.
-The inequalities of the octagon read $2s + (a - b) \le 3$ and
-$2s - (a - b) \le 3$, so $|a - b| \le 3 - 2s$, where
-$3 - 2s > 3 - \frac{14}5 > 0$. Hence
-
-```math
-2\left(a^2 + b^2\right) = s^2 + (a - b)^2 \le s^2 + (3 - 2s)^2 = 2 + (5s - 7)(s - 1) < 2 ,
-```
-
-because $s - 1 > 0 > 5s - 7$. $\square$
-
-*Lean:
-[`Five.dodecagon_norm_le`](../../SquaresInCircles/Five/Uniqueness.lean#L25).*
+We now finish the proof of Proposition 8.6.
 
 ![Two panels around a grey square S_k centred at o, with the dashed unit circle about o. Left: a green square centred on the unit circle in a diagonal direction of S_k, turned to face o, overlaps S_k in a shaded triangle. Right: the plus turned by 20 degrees, its four outer squares centred on the unit circle and joined to o by radii](figures/five-unit-contacts.svg)
 
@@ -549,13 +563,10 @@ side-neighbours, and four of them form the plus.
 
 *Proof of Proposition 8.6.* Let $S_1, \dots, S_5$ be as in the proposition.
 
-1. *A centred square.* By Proposition 8.11, some square, say $S_k$, has
+1. *A centred square.* By Proposition 8.12, some square, say $S_k$, has
    $c_{S_k} = o$.
-2. *Unit contacts.* Let $i \ne k$. By
-   [Lemma 3.4](common.md#lemma-34-farthest-vertex) and Lemma 8.12, applied to
-   $a_{S_i} \ge b_{S_i} \ge 0$, we have
-   $|c_{S_i} - o|^2 = a_{S_i}^2 + b_{S_i}^2 \le 1$. By
-   [Lemma 3.10](common.md#lemma-310-centres-at-least-1-apart),
+2. *Unit contacts.* Let $i \ne k$. By Lemma 8.7, $|c_{S_i} - o| \le 1$, and
+   by [Lemma 3.10](common.md#lemma-310-centres-at-least-1-apart),
    $|c_{S_i} - c_{S_k}| \ge 1$. As $c_{S_k} = o$, this gives
    $|c_{S_i} - c_{S_k}| = 1$, and by
    [Lemma 3.13](common.md#lemma-313-squares-at-distance-1) the square $S_i$
@@ -575,7 +586,7 @@ side-neighbours, and four of them form the plus.
    plus. No angle has to be computed. $\square$
 
 *Lean:
-[`Five.polygon_uniqueness`](../../SquaresInCircles/Five/Uniqueness.lean#L53).*
+[`Five.polygon_uniqueness`](../../SquaresInCircles/Five/Uniqueness.lean#L61).*
 
 *Proof of Proposition 8.3.* Let $S_1, \dots, S_5$ be a packing of five unit
 squares in the closed disk of radius $R_5$ about $o$. The squares are pairwise
@@ -583,7 +594,7 @@ disjoint, and for every $i$, Lemma 3.4 gives
 $\varphi(a_{S_i}, b_{S_i}) \le R_5^2 = \frac52$, so
 $(a_{S_i}, b_{S_i}) \in P_5$ by Lemma 8.5. Proposition 8.6 applies. $\square$
 
-*Lean: [`Five.uniqueness`](../../SquaresInCircles/Five/Uniqueness.lean#L82).*
+*Lean: [`Five.uniqueness`](../../SquaresInCircles/Five/Uniqueness.lean#L88).*
 
 ## 8.6 Proof of Theorem 8.1
 
@@ -594,6 +605,6 @@ $n = 5$, $R_5 = \sqrt{5/2}$ and $\mathcal M = \lbrace\text{the plus}\rbrace$:
 $\frac94 + \frac14 = \frac52 = R_5^2$; (c) is Proposition 8.3. Parts (1),
 (2), (3) of the theorem are (a), (i) and (ii). $\square$
 
-*Lean: [`Five.optimum`](../../SquaresInCircles/Five/Uniqueness.lean#L92),
+*Lean: [`Five.optimum`](../../SquaresInCircles/Five/Uniqueness.lean#L98),
 [`Optimum.isLeast`](../../SquaresInCircles/Common/Optimum.lean#L61),
 [`Optimum.packing_iff`](../../SquaresInCircles/Common/Optimum.lean#L67).*

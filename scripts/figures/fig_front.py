@@ -1005,64 +1005,6 @@ def contact_polygons():
            'points, and contains that disk')
 
 
-def octagon():
-    """The octagon P8 in the plane of the local coordinates of o, with its
-    eight lines, the square S itself, and the region phi <= 5/2."""
-    f = Figure(-1.55, 1.55, -1.5, 1.55, 150)
-    L = 1.45
-    lines = [(sx * 3, sy * 1, 3) for sx in (1, -1) for sy in (1, -1)] + [
-        (sx * 1, sy * 3, 3) for sx in (1, -1) for sy in (1, -1)]
-    poly = [(-2, -2), (2, -2), (2, 2), (-2, 2)]
-    for p, q, c in lines:
-        poly = clip(poly, p, q, c)
-    verts = {(round(x, 9), round(y, 9)) for x, y in poly}
-    assert verts == {(1, 0), (-1, 0), (0, 1), (0, -1), (0.75, 0.75),
-                     (-0.75, 0.75), (0.75, -0.75), (-0.75, -0.75)}
-    # The region phi(|x|, |y|) <= 5/2: four arcs.
-    region = []
-    K = math.sqrt(2.5)
-    for sx, sy in ((1, 1), (-1, 1), (-1, -1), (1, -1)):
-        t0, t1 = math.asin(0.5 / K), math.pi / 2 - math.asin(0.5 / K)
-        arc = [(-0.5 + K * math.cos(t0 + (t1 - t0) * j / 60),
-                -0.5 + K * math.sin(t0 + (t1 - t0) * j / 60))
-               for j in range(61)]
-        arc = [(sx * x, sy * y) for x, y in arc]
-        region += arc if sx * sy > 0 else arc[::-1]
-    for x, y in region:
-        assert all(p * x + q * y <= c + 1e-9 for p, q, c in lines)
-    for p, q, c in lines:
-        # Two points of the line p x + q y = c inside the window.
-        if abs(q) > abs(p):
-            a, b = (-L, (c + p * L) / q), (L, (c - p * L) / q)
-        else:
-            a, b = ((c + q * L) / p, -L), ((c - q * L) / p, L)
-        f.line(a, b, stroke=FAINT, width=1, dash='4 3')
-    f.polygon(poly, fill=FILLS[1], stroke=ORANGE, width=2)
-    f.polygon(region, fill=FILLS[0], stroke=BLUE, width=1.4)
-    f.polygon(square_corners((0, 0)), stroke=INK, width=1.4, dash='5 3')
-    f.line((-L, 0), (L, 0), stroke=INK, width=0.8)
-    f.line((0, -L), (0, L), stroke=INK, width=0.8)
-    f.text((L, -0.12), sbn('x', 'S', '(o)', 14), anchor='end', size=14)
-    f.text((0.07, L - 0.02), sbn('y', 'S', '(o)', 14), anchor='start',
-           size=14)
-    for q in poly:
-        f.dot(q, r=3, fill=ORANGE)
-    f.text((0.82, 0.86), '(¾, ¾)', size=13, italic=False, anchor='start')
-    f.text((1.04, 0.1), '(1, 0)', size=13, italic=False, anchor='start')
-    f.text((0.2, -0.2), 'S', size=16)
-    f.dot((0, 0), r=2.6)
-    f.text((-0.07, -0.12), sbn('c', 'S'), anchor='end', size=14)
-    assert abs(3 * 0.51 + 1.47 - 3) < 1e-9
-    f.text((0.6, 1.47), '3x + y = 3', size=12, italic=False, anchor='start',
-           color=FAINT)
-    f.text((0.62, 0.52), 'φ ≤ 5/2', size=13, color=BLUE, anchor='end')
-    f.text((-0.95, 0.72), sbn('P', '8', size=16), size=16, color=ORANGE)
-    f.save('front-octagon', 'The octagon P8 in the plane of the local '
-           'coordinates of o: the eight lines, plus or minus 3x plus or minus '
-           'y = 3 and plus or minus x plus or minus 3y = 3, around the region '
-           'phi at most 5/2 and the square S itself')
-
-
 def support_proof():
     """Lemma 3.12: points a fraction t of the way from each centre to its
     extreme vertex, and the two supporting lines."""
@@ -1117,6 +1059,54 @@ def support_proof():
            'squares, and the two supporting lines are at the full widths')
 
 
+def lengths():
+    """Lemma 3.8 (2): the coordinates p, q of a vector n in the frame of a
+    square U have |p| + |q| > |n|, with equality only along a side."""
+    deg = 20.0
+    e1, e2 = u(rad(deg)), u(rad(deg + 90))
+    f = Figure(-0.9, 3.75, -1.0, 1.25, 120)
+    for k, (c, t) in enumerate((((0.0, 0.0), rad(deg + 50)),
+                                ((2.6, 0.0), rad(deg)))):
+        n = u(t)
+        p, q = dot2(n, e1), dot2(n, e2)
+        assert abs(p * p + q * q - 1) < 1e-12
+        f.square(c, deg, fill=FILLS[0], stroke=BLUE)
+        for e in (e1, e2):
+            f.line(shift(c, e, -0.72), shift(c, e, 0.72), stroke=FAINT,
+                   width=1, dash='4 3')
+        corner = shift(c, e1, p)
+        tip = shift(c, n)
+        if k == 0:
+            assert abs(p) + abs(q) > 1 + 0.3
+            f.line(c, corner, stroke=ORANGE, width=2.6)
+            f.line(corner, tip, stroke=GREEN, width=2.6)
+            m = 0.07
+            polyline(f, [shift(corner, e1, -m), shift(shift(corner, e1, -m),
+                                                     e2, m),
+                         shift(corner, e2, m)], width=1)
+            f.text(shift(shift(c, e1, p / 2), e2, -0.1), 'p', color=ORANGE)
+            f.text(shift(shift(corner, e2, q / 2), e1, 0.1), 'q',
+                   color=GREEN)
+            word(f, (0.0, -0.92), '|' + it('p') + '| + |' + it('q') +
+                 '| > |' + it('n') + '|', size=13)
+        else:
+            assert abs(q) < 1e-12 and abs(abs(p) - 1) < 1e-12
+            f.line(c, corner, stroke=ORANGE, width=4.2)
+            f.text(shift(shift(c, e1, 0.5), e2, -0.12), 'p', color=ORANGE)
+            word(f, (2.6, -0.92), it('q') + ' = 0, |' + it('p') + '| = |' +
+                 it('n') + '|', size=13)
+        arrow(f, c, tip, color=INK, width=1.6)
+        f.text(shift(tip, n, 0.1), 'n')
+        f.dot(c, fill=BLUE)
+        f.text(shift(shift(c, e1, -0.33), e2, -0.33), 'U', size=16,
+               color=BLUE)
+    f.save('front-lengths', 'Left: a vector n from the centre of a square U is '
+           'the hypotenuse of a right triangle whose legs p and q lie along '
+           'the axes of U, and the legs together are longer than n. Right: n '
+           'along an axis of U, where the second leg vanishes and the first '
+           'is n itself')
+
+
 def width_graph():
     """The width of a unit square in a unit direction, from 1/2 along a side
     to root 2 over 2 along a diagonal."""
@@ -1165,6 +1155,44 @@ def width_graph():
            'one half when n is parallel to a side, root 2 over 2 along a '
            'diagonal, and in between otherwise, as a function of the angle '
            'between n and a side')
+
+
+def centre_slab():
+    """Lemma 3.26: a centre c_S within distance 1 of o, for a unit vector n;
+    the slab about c_S of half-width w_S(n) + w_T(n) >= 1 contains the unit
+    disk about c_S, and so o."""
+    deg_s, deg_t = 25.0, 10.0
+    cs, o = (0.0, 0.0), (0.62, -0.58)
+    n, perp = (1.0, 0.0), (0.0, 1.0)
+
+    def width(deg):
+        return (abs(math.cos(rad(deg))) + abs(math.sin(rad(deg)))) / 2
+
+    W = width(deg_s) + width(deg_t)
+    co = (cs[0] - o[0], cs[1] - o[1])
+    assert norm(co) <= 1 <= W and abs(dot2(n, co)) <= norm(co)
+    f = Figure(-1.45, 1.45, -1.3, 1.35, 150)
+    L = 1.22
+    f.polygon([(-W, -L), (W, -L), (W, L), (-W, L)], fill=GREY, stroke='none',
+              opacity=0.6)
+    for x in (-W, W):
+        f.line((x, -L), (x, L), width=1.2, dash='5 4')
+    f.circle(cs, 1.0, stroke=INK, width=1, dash='3 3')
+    f.square(cs, deg_s, fill=FILLS[0], stroke=BLUE)
+    f.dot(cs, fill=BLUE)
+    f.text(shift(cs, (-0.05, 0.12)), sb('c', 'S'), anchor='end', color=BLUE)
+    f.text(shift(cs, (-0.3, -0.3)), 'S', size=16, color=BLUE)
+    f.dot(o)
+    f.text(shift(o, (0.06, -0.06)), 'o', anchor='start')
+    arrow(f, (0.0, 1.08), (W, 1.08), color=ORANGE, width=1.4)
+    f.text((W / 2, 1.2), sbn('w', 'S', '(n) + ') + sbn('w', 'T', '(n) ≥ 1'),
+           size=13, color=ORANGE)
+    arrow(f, (-0.25, -1.08), (0.25, -1.08), color=INK, width=1.6)
+    f.text((0.0, -1.2), 'n')
+    f.save('front-centre-slab', 'A square S whose centre is within distance 1 '
+           'of the disk centre o, for a unit vector n: the slab about the '
+           'centre of S of half-width w_S(n) + w_T(n), which is at least 1, '
+           'contains the unit disk about the centre of S, and so o')
 
 
 def shrink():
@@ -1463,46 +1491,6 @@ def caps():
            'with the near edge through o, the square holds a half circle')
 
 
-def support_cases():
-    """Lemma 3.26: the largest value of p a + q b over the quadrilateral
-    P8 with a, b >= 0, in the three cases of the proof."""
-    quad = [(0, 0), (1, 0), (0.75, 0.75), (0, 1)]
-    cases = [((1.0, 0.22), 'p ≥ 3q', (1, 0)),
-             ((0.25, 1.0), 'q ≥ 3p', (0, 1)),
-             ((1.0, 0.6), 'otherwise', (0.75, 0.75))]
-    step = 1.6
-    f = Figure(-0.12, 2 * step + 1.3, -0.3, 1.42, 145)
-    for k, ((p, q), title, best) in enumerate(cases):
-        at = (k * step, 0)
-        vals = [p * x + q * y for x, y in quad]
-        top = max(vals)
-        assert abs(p * best[0] + q * best[1] - top) < 1e-12
-        assert sum(1 for v in vals if abs(v - top) < 1e-12) == 1
-        f.polygon([shift(at, x) for x in quad], fill=FILLS[1], stroke=ORANGE,
-                  width=2)
-        for level in (0.35 * top, 0.7 * top):
-            seg = clip_segment((level / p, 0), (0, level / q), 1.25)
-            f.line(shift(at, seg[0]), shift(at, seg[1]), stroke=FAINT,
-                   width=1, dash='4 3')
-        # The level line through the best vertex, inside the panel.
-        seg = clip_segment((top / p, 0.0), (0.0, top / q), 1.25)
-        f.line(shift(at, seg[0]), shift(at, seg[1]), stroke=BLUE, width=1.6)
-        ab_axes_at(f, at, 1.28)
-        f.dot(shift(at, best), r=4.5, fill=BLUE)
-        n = (p / math.hypot(p, q), q / math.hypot(p, q))
-        arrow(f, shift(at, (0.18, 0.18)), shift(at, shift((0.18, 0.18), n,
-                                                          0.3)),
-              width=1.6, size=8)
-        f.text(shift(at, shift((0.2, 0.18), n, 0.42)), '(p, q)', size=13,
-               anchor='start')
-        f.text((at[0] + 0.62, 1.35), title, size=14,
-               italic=title != 'otherwise')
-    f.save('front-support-cases', 'The quadrilateral where P8 meets a, b at '
-           'least 0, with level lines of pa + qb: the largest value is at the '
-           'vertex (1, 0) when p is at least 3q, at (0, 1) when q is at least '
-           '3p, and at (3/4, 3/4) otherwise')
-
-
 def estimates():
     """Lemma 3.29 (2), (3) and (5): arcsin between x and x + x^3/4, and the
     cosine at least cos(pi/5) = (1 + sqrt 5)/4 on [-pi/5, pi/5]."""
@@ -1682,8 +1670,8 @@ def main():
     lower_bound()
     scheme()
     contact_polygons()
-    octagon()
     support_proof()
+    lengths()
     width_graph()
     shrink()
     arc_overlap()
@@ -1692,7 +1680,7 @@ def main():
     chart_moves()
     cartesian()
     caps()
-    support_cases()
+    centre_slab()
     estimates()
     sine_concave()
     quarter_turn()

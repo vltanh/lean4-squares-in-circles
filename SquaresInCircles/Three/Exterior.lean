@@ -1,4 +1,5 @@
 import SquaresInCircles.Common.RectangleArcs
+import SquaresInCircles.Common.Tangents
 
 /-!
 # Three squares: the contact tangents and the exterior caps

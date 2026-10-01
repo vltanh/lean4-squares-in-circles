@@ -132,7 +132,7 @@ the model $Q(0, 0)$. $\square$
 
 *Lean: [`One.uniqueness`](../../SquaresInCircles/One/Uniqueness.lean#L23),
 [`One.half_add_le_phi`](../../SquaresInCircles/One/Uniqueness.lean#L18),
-[`local_center_norm`](../../SquaresInCircles/Common/Basic.lean#L95).*
+[`local_center_norm`](../../SquaresInCircles/Common/Basic.lean#L109).*
 
 ![Left: the model Q(0, 0), the axis-parallel unit square centred at the origin, with its vertices on the dashed circle of radius R1. Right: a unit square S centred at the disk centre o and turned by the angle theta S, with the axes of the frame at o turned by theta S parallel to its sides and its vertices on the dashed circle of radius R1; an arrow labelled turn by theta S leads from the left picture to the right one](figures/one-congruent.svg)
 

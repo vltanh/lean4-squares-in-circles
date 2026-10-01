@@ -1,48 +1,28 @@
-import SquaresInCircles.Common.Tangents
 import SquaresInCircles.Common.Separation
 
 /-!
-# The common octagon support estimate and safe radial extension
+# Safe radial extension
 
-The support estimate holds for squares at any angle to each other.
-`safe_openRay_of_disjoint` takes the separating functional of
-`support_separator` (`Separation.lean`), for any two squares with disjoint
-interiors.
+If the centres of two squares with disjoint interiors are within distance 1
+of the disk centre, the separating functional of `support_separator`
+(`Separation.lean`) keeps the radial sweep of either square away from the
+other square (`safe_openRay_of_disjoint`): the disk centre is within the sum of
+the two widths of each centre, along every direction.
 -/
 noncomputable section
 namespace SquaresInCircles
 
-/-- The octagon support estimate: for `(a, b)` in `P8` and nonnegative `p, q, u,
-v` with `p² + q² = u² + v²`, `p a + q b ≤ (p + q)/2 + (u + v)/2`. Over the
-quadrilateral `P8 ∩ {a, b ≥ 0}`, `p a + q b` is largest at a vertex. -/
-lemma octagon_support {a b p q u v : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b) (hp : 0 ≤ p) (hq : 0 ≤ q)
-    (hu : 0 ≤ u) (hv : 0 ≤ v) (he : p^2+q^2=u^2+v^2) (h : P8 a b) :
-    p*a+q*b ≤ (p+q)/2+(u+v)/2 := by
-  have hp' : p ≤ u+v := by nlinarith [sq_nonneg q,mul_nonneg hu hv]
-  have hq' : q ≤ u+v := by nlinarith [sq_nonneg p,mul_nonneg hu hv]
-  rcases h with ⟨h₀,h₁⟩
-  by_cases hdom : 3*q ≤ p
-  · nlinarith [mul_le_mul_of_nonneg_left h₀ (show 0 ≤ p/3 by positivity),
-      mul_nonneg (show 0 ≤ p/3-q by linarith) hb]
-  · by_cases hdom' : 3*p ≤ q
-    · nlinarith [mul_le_mul_of_nonneg_left h₁ (show 0 ≤ q/3 by positivity),
-        mul_nonneg (show 0 ≤ q/3-p by linarith) ha]
-    · nlinarith [mul_le_mul_of_nonneg_left h₀ (show 0 ≤ (3*p-q)/8 by linarith),
-        mul_le_mul_of_nonneg_left h₁ (show 0 ≤ (3*q-p)/8 by linarith)]
-
-/-- If `(a_S, b_S)` lies in the octagon, then in every direction `n` the disk
-centre is within the sum of the widths of `S` and of any `T` from `c_S`. -/
-lemma dot_center_le (S T : UnitSquare) (o n : Point) (h : P8 (alpha S o) (beta S o)) :
+/-- If the centre of `S` is within distance 1 of `o`, then in every direction
+`n` the disk centre is within the sum of the widths of `S` and of any `T` from
+`c_S`. -/
+lemma dot_center_le (S T : UnitSquare) (o n : Point) (h : normSq (sub S.center o) ≤ 1) :
     |dot n (sub S.center o)| ≤ width S n+width T n := by
-  have he : |frameX S n|^2+|frameY S n|^2=|frameX T n|^2+|frameY T n|^2 := by
-    simp only [sq_abs,frame_norm]
-  calc |dot n (sub S.center o)|
-      ≤ |frameX S n*frameX S (sub S.center o)|+|frameY S n*frameY S (sub S.center o)| := by
-        rw [← frame_dot S]; exact abs_add_le _ _
-    _ = |frameX S n| * alpha S o+|frameY S n| * beta S o := by
-        rw [abs_mul,abs_mul,abs_frame_centerX,abs_frame_centerY]
-    _ ≤ width S n+width T n := octagon_support (alpha_nonneg _ _) (beta_nonneg _ _)
-        (abs_nonneg _) (abs_nonneg _) (abs_nonneg _) (abs_nonneg _) he h
+  have hn := Real.abs_le_sqrt ((cauchy_sq n (sub S.center o)).trans
+    (mul_le_of_le_one_right (normSq_nonneg n) h))
+  have hS := width_lower S n
+  have hT := width_lower T n
+  unfold width
+  linarith
 
 /-- Union of translates of the *open* square along the ray away from `o`. -/
 def openRay (S : UnitSquare) (o : Point) : Set Point :=
@@ -57,7 +37,7 @@ lemma frame_abs_sum_pos (S : UnitSquare) {n : Point} (hn : n ≠ (0,0)) :
   nlinarith [abs_nonneg (frameX S n),abs_nonneg (frameY S n)]
 
 lemma Separation.center_signs {S T : UnitSquare} (e : Separation S T) (o : Point)
-    (hS : P8 (alpha S o) (beta S o)) (hT : P8 (alpha T o) (beta T o)) :
+    (hS : normSq (sub S.center o) ≤ 1) (hT : normSq (sub T.center o) ≤ 1) :
     dot e.normal (sub S.center o) ≤ 0 ∧ 0 ≤ dot e.normal (sub T.center o) := by
   have h₁ := dot_center_le S T o e.normal hS
   have h₂ := dot_center_le T S o e.normal hT
@@ -78,10 +58,11 @@ lemma dot_open_bound_of_ne (S : UnitSquare) {n : Point} (hn : n ≠ (0,0))
   dsimp [width]
   linarith
 
-/-- Safe extension, directly from ordinary disjointness and the center polygon. -/
+/-- The radial sweep of `S` misses a square `T` with a disjoint interior when both
+centres are within distance 1 of `o`. -/
 theorem safe_openRay_of_disjoint (S T : UnitSquare) (o : Point)
     (hd : ∀ p, ¬ (openSquare S p ∧ openSquare T p))
-    (hS : P8 (alpha S o) (beta S o)) (hT : P8 (alpha T o) (beta T o)) :
+    (hS : normSq (sub S.center o) ≤ 1) (hT : normSq (sub T.center o) ≤ 1) :
     Disjoint (openRay S o) {p | openSquare T p} := by
   obtain ⟨e⟩ := support_separator S T hd
   rw [Set.disjoint_left]

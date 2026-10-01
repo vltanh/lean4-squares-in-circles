@@ -1,4 +1,5 @@
 import SquaresInCircles.Common.RectangleArcs
+import SquaresInCircles.Common.Tangents
 import SquaresInCircles.Common.Trigonometry
 
 /-!
@@ -13,8 +14,8 @@ noncomputable section
 open Set
 namespace SquaresInCircles.Five
 
-/-- The 12-gon: the octagon `P8` and the tangent at `(g, g)`. -/
-def P5 (a b : ℝ) : Prop := P8 a b ∧ a+b ≤ Real.sqrt 5-1
+/-- The 12-gon: the tangents to `phi = 5/2` at `(1, 0)`, `(0, 1)` and `(g, g)`. -/
+def P5 (a b : ℝ) : Prop := 3*a+b ≤ 3 ∧ a+3*b ≤ 3 ∧ a+b ≤ Real.sqrt 5-1
 
 /-- A square in the closed disk of radius `sqrt (5/2)` has its centre in `P5`. -/
 lemma p5_of_phi {a b : ℝ} (h : phi a b ≤ 5/2) : P5 a b := by
@@ -23,11 +24,11 @@ lemma p5_of_phi {a b : ℝ} (h : phi a b ≤ 5/2) : P5 a b := by
   have h₁ := tangent_le (u := 0) (v := 1) h (by norm_num [phi])
   have h₂ := tangent_le (u := (Real.sqrt 5-1)/2) (v := (Real.sqrt 5-1)/2) h
     (by unfold phi; linarith)
-  refine ⟨⟨by linarith,by linarith⟩,le_of_not_gt fun hn => ?_⟩
+  refine ⟨by linarith,by linarith,le_of_not_gt fun hn => ?_⟩
   nlinarith [mul_pos (Real.sqrt_pos.2 (show (0:ℝ) < 5 by norm_num)) (sub_pos.2 hn)]
 
 lemma p5_swap {a b : ℝ} (h : P5 a b) : P5 b a :=
-  ⟨⟨by linarith [h.1.2],by linarith [h.1.1]⟩,by linarith [h.2]⟩
+  ⟨by linarith [h.2.1],by linarith [h.1],by linarith [h.2.2]⟩
 
 def aux : ℝ := 5/6
 
@@ -62,7 +63,7 @@ centre in `P5` are more than `2π/5` apart: each of `2A`, `A+V`, `A+U` and `U+V`
 exceeds it. -/
 lemma arc_length {a b : ℝ} (ha : 1/2 ≤ a) (hb : 0 ≤ b) (hsort : b ≤ a) (h : P5 a b) :
     2*Real.pi/5 < min (capA aux a) (capU aux b)+min (capA aux a) (capV aux b) := by
-  have ha1 : a ≤ 1 := by linarith [h.1.1]
+  have ha1 : a ≤ 1 := by linarith [h.1]
   have hA : capA aux a=Real.pi/2-Real.arcsin ((a-1/2)/aux) :=
     Real.arccos_eq_pi_div_two_sub_arcsin _
   have hV : capV aux b=-Real.arcsin ((b-1/2)/aux) := by
@@ -74,8 +75,8 @@ lemma arc_length {a b : ℝ} (ha : 1/2 ≤ a) (hb : 0 ≤ b) (hsort : b ≤ a) (
           (by rw [aux,Real.cos_pi_div_five]; linarith [sqrt_five_gt]) (Real.cos_le_one _)
   have h₂ : 2*Real.pi/5 < capA aux a+capV aux b := by
     have hf := arcsin_sum (x := a-1/2) (y := b-1/2) (by linarith) (by linarith) (by linarith)
-      (by linarith) (by nlinarith [h.2,Real.sq_sqrt (show (0:ℝ) ≤ 5 by norm_num)])
-      (by linarith [h.1.1])
+      (by linarith) (by nlinarith [h.2.2,Real.sq_sqrt (show (0:ℝ) ≤ 5 by norm_num)])
+      (by linarith [h.1])
     rw [hA,hV]
     linarith
   have h₃ : 2*Real.pi/5 < capA aux a+capU aux b := by
@@ -115,7 +116,7 @@ theorem exterior_arc (S : UnitSquare) (o : Point)
   have ha := C.exterior hsort hout
   have hlen := arc_length ha C.nonneg.2 hsort hC
   obtain ⟨A,hA,-⟩ := C.edge_arc (r := aux) (by norm_num [aux]) ha
-    (by rw [aux]; linarith [hC.1.1,C.nonneg.2]) (by rw [aux]; linarith)
+    (by rw [aux]; linarith [hC.1,C.nonneg.2]) (by rw [aux]; linarith)
     (by linarith [Real.pi_pos])
   exact ⟨A,by rw [hA]; linarith⟩
 

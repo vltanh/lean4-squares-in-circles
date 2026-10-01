@@ -44,10 +44,10 @@ squares the pair theorem, the ring and the middle column over the files
 
 | File | Contents |
 | --- | --- |
-| `Basic.lean` | Vector operations, square frames and vertices, `InteriorDisjoint`, the farthest-vertex bound `phi`, inscribed disks |
+| `Basic.lean` | Vector operations and the Cauchy–Schwarz inequality, square frames and vertices, `InteriorDisjoint`, the farthest-vertex bound `phi`, inscribed disks |
 | `Separation.lean` | Open squares are convex; the Hahn–Banach supporting functional for two squares with disjoint interiors |
-| `Tangents.lean` | The tangent identity for `phi`; the octagon `P8` |
-| `Support.lean` | Octagon support for every normal; the radial sweep stays disjoint from the other squares; a closed square misses a disjoint open one |
+| `Tangents.lean` | The tangent identity for `phi` |
+| `Support.lean` | The radial sweep stays disjoint from the other squares when every centre is within distance 1 of the disk centre; a closed square misses a disjoint open one |
 | `AngularBudget.lean` | `OpenArc` witnesses on circles about the disk centre, and the Haar-measure budget |
 | `ArcMetric.lean` | Midpoint separation of disjoint arcs; circle perimeter inequality; three-arc budget |
 | `Charts.lean` | `SquareChart`: membership seen from the disk centre, sorted coordinates, arcs from chart intervals, the half circle of a square with `a = 1/2` |

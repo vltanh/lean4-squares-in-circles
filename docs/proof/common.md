@@ -13,7 +13,7 @@ for its construction and Corollary 2.10 to conclude.
 | --- | :-: | :-: | :-: | :-: | :-: | :-: |
 | [§3.1](#31-the-disk-centre-seen-from-a-square) the disk centre seen from a square | 3.4 | 3.4 | 3.4 | 3.4 | 3.4 | 3.4 |
 | [§3.2](#32-contact-polygons) contact polygons | | | 3.6 | 3.6 | 3.6 | |
-| [§3.3](#33-two-disjoint-squares) two disjoint squares | | 3.9, 3.10 | | 3.12 | 3.9 to 3.13 | 3.12 |
+| [§3.3](#33-two-disjoint-squares) two disjoint squares | | 3.9, 3.10 | | 3.12 | 3.8 to 3.13 | 3.12 |
 | [§3.4](#34-arcs-and-the-angular-budget) arcs and the angular budget | | 3.17 | 3.16 to 3.18 | 3.16, 3.17, 3.19 | 3.16 | 3.16, 3.19 |
 | [§3.5](#35-charts) charts | 3.21, 3.22 | 3.21, 3.22 | 3.21, 3.22 | 3.21, 3.22 | 3.21 | 3.21, 3.22 |
 | [§3.6](#36-arcs-of-an-exterior-square) arcs of an exterior square | | 3.24 | 3.24 | 3.24 | 3.24 | |
@@ -48,8 +48,8 @@ coordinates of $o$ are nonnegative, and they are $a_S$ and $b_S$ in some order.
 quadrant. From the centre $c_S$, the disk centre $o$ is $a_S$ along one axis
 and $b_S$ along the other.
 
-*Lean: [`alpha`](../../SquaresInCircles/Common/Basic.lean#L81),
-[`beta`](../../SquaresInCircles/Common/Basic.lean#L82),
+*Lean: [`alpha`](../../SquaresInCircles/Common/Basic.lean#L95),
+[`beta`](../../SquaresInCircles/Common/Basic.lean#L96),
 [`SquareChart.transfer`](../../SquaresInCircles/Common/Charts.lean#L69). (The
 formal offsets come in the order of the frame; every statement is symmetric in
 them.)*
@@ -68,7 +68,7 @@ squares has an exterior square.
 outside $S^\circ$ and $a_S \ge \frac12$.
 
 *Lean: [`openSquare`](../../SquaresInCircles/Geometry.lean#L58),
-[`exists_exterior`](../../SquaresInCircles/Common/ArcBudget.lean#L15).*
+[`exists_exterior`](../../SquaresInCircles/Common/ArcBudget.lean#L16).*
 
 ### Definition 3.3 (farthest-vertex function)
 
@@ -81,7 +81,7 @@ For real numbers $a$ and $b$, let
 For a square $S$, $\varphi(a_S, b_S)$ is the squared distance from $o$ to the
 vertex of $S$ farthest from it (Lemma 3.4).
 
-*Lean: [`phi`](../../SquaresInCircles/Common/Basic.lean#L100).*
+*Lean: [`phi`](../../SquaresInCircles/Common/Basic.lean#L114).*
 
 ### Lemma 3.4 (farthest vertex)
 
@@ -115,10 +115,10 @@ each square. Every uniqueness proof starts from these inequalities and from
 then on works only with the pairs $(a_S, b_S)$ and the disjointness of the
 squares.
 
-*Lean: [`phi_le_of_contained`](../../SquaresInCircles/Common/Basic.lean#L109),
-[`Packing.phi_le`](../../SquaresInCircles/Common/Basic.lean#L122),
-[`local_center_norm`](../../SquaresInCircles/Common/Basic.lean#L95),
-[`exists_signed`](../../SquaresInCircles/Common/Basic.lean#L103).*
+*Lean: [`phi_le_of_contained`](../../SquaresInCircles/Common/Basic.lean#L123),
+[`Packing.phi_le`](../../SquaresInCircles/Common/Basic.lean#L136),
+[`local_center_norm`](../../SquaresInCircles/Common/Basic.lean#L109),
+[`exists_signed`](../../SquaresInCircles/Common/Basic.lean#L117).*
 
 ## 3.2 Contact polygons
 
@@ -148,7 +148,7 @@ $(u, v)$ that contains the disk $\lbrace \varphi \le K \rbrace$ (Lemma 3.6).
 $(-\frac12, -\frac12)$. The tangent half-plane at a boundary point $(u, v)$
 contains it.
 
-*Lean: [`tangent_le`](../../SquaresInCircles/Common/Tangents.lean#L20).*
+*Lean: [`tangent_le`](../../SquaresInCircles/Common/Tangents.lean#L19).*
 
 ### Lemma 3.6 (tangent lines)
 
@@ -176,9 +176,9 @@ and $\varphi(a, b) \le K$, the left side is at most 0, so
 
 and the right side is negative if $a \ne u$. $\square$
 
-*Lean: [`tangent_identity`](../../SquaresInCircles/Common/Tangents.lean#L15),
-[`tangent_le`](../../SquaresInCircles/Common/Tangents.lean#L20),
-[`tangent_lt`](../../SquaresInCircles/Common/Tangents.lean#L26).*
+*Lean: [`tangent_identity`](../../SquaresInCircles/Common/Tangents.lean#L14),
+[`tangent_le`](../../SquaresInCircles/Common/Tangents.lean#L19),
+[`tangent_lt`](../../SquaresInCircles/Common/Tangents.lean#L25).*
 
 ### Definition 3.7 (contact polygon)
 
@@ -200,44 +200,62 @@ $\lbrace \varphi \le \frac{425}{256} \rbrace$, $\lbrace \varphi \le 2 \rbrace$
 and $\lbrace \varphi \le \frac52 \rbrace$. The dots are the points of tangency,
 and the dashed lines the tangents there.
 
-*Lean: [`tangent_le`](../../SquaresInCircles/Common/Tangents.lean#L20),
-[`tangent_lt`](../../SquaresInCircles/Common/Tangents.lean#L26).*
-
-### Definition 3.8 (the octagon)
-
-The *octagon* $P_8$ is the set of points $(a, b)$ with
-
-```math
-3a + b \le 3, \qquad a + 3b \le 3 ,
-```
-
-the tangent half-planes of the circle $\varphi = \frac52$ at $(1, 0)$ and
-$(0, 1)$. Indeed $\varphi(1, 0) = \frac94 + \frac14 = \frac52$, and at $(1, 0)$
-the inequality of Definition 3.5 reads $\frac32(a - 1) + \frac12 b \le 0$, that
-is $3a + b \le 3$; the point $(0, 1)$ is its mirror image. The two
-inequalities are symmetric in $a$ and $b$. Applied to the absolute values of
-the two local coordinates of $o$, in either order and with either signs, the
-two lines become eight, hence the name. The 12-gon $P_5$ of five squares lies
-inside $P_8$, and $P_8$ keeps the radial sweep of §3.7 away from the other
-squares.
-
-![The (a, b)-plane: the disk where phi is at most 5/2, inside the octagon P8 cut out by the tangents at (1, 0) and (0, 1); a dotted third tangent cuts off the octagon corner](figures/contact-polygon.svg)
-
-*Figure 3.6.* The disk $\lbrace \varphi \le \frac52 \rbrace$ and the part of
-$P_8$ with $a, b \ge 0$, cut out by the tangents at $(1, 0)$ and $(0, 1)$. The
-dotted third tangent cuts off the corner; five squares add it.
-
-![The plane of the local coordinates x_S(o), y_S(o) of the disk centre. The eight dashed lines, plus or minus 3x plus or minus y = 3 and plus or minus x plus or minus 3y = 3, cut out the octagon P8 with vertices (plus or minus 1, 0), (0, plus or minus 1) and (plus or minus 3/4, plus or minus 3/4). Inside it lies the region where phi(|x|, |y|) is at most 5/2, bounded by four circular arcs through (plus or minus 1, 0) and (0, plus or minus 1), and inside that the dashed unit square S about its centre](figures/front-octagon.svg)
-
-*Figure 3.7.* The octagon in the plane of the local coordinates
-$(x_S(o), y_S(o))$ of the disk centre: $(a_S, b_S) \in P_8$ exactly when this
-point lies in the octagon cut out by the eight lines. Inside it lies the region
-$\varphi(|x_S(o)|, |y_S(o)|) \le \frac52$, where $S$ fits in the disk of radius
-$\sqrt{5/2}$ about $o$ (Lemma 3.4); the dashed square is $S$ itself.
-
-*Lean: [`P8`](../../SquaresInCircles/Common/Tangents.lean#L31).*
+*Lean: [`tangent_le`](../../SquaresInCircles/Common/Tangents.lean#L19),
+[`tangent_lt`](../../SquaresInCircles/Common/Tangents.lean#L25).*
 
 ## 3.3 Two disjoint squares
+
+Two inequalities for the lengths of vectors come first; Lemma 3.13 and the
+radial sweep of §3.7 use both.
+
+### Lemma 3.8 (lengths of vectors)
+
+Let $n$ be a vector.
+
+1. Every vector $d$ has $|\langle n, d\rangle| \le |n|\,|d|$. If moreover
+   $n \ne 0$ and $\langle n, d\rangle = |n|\,|d|$, then
+   $d = \frac{|d|}{|n|}\,n$.
+2. Every square $U$ has
+   $\langle n, e^U_1\rangle^2 + \langle n, e^U_2\rangle^2 = |n|^2$ and
+
+   ```math
+   |n| \le |\langle n, e^U_1\rangle| + |\langle n, e^U_2\rangle| ,
+   ```
+
+   with equality exactly when one of the two inner products vanishes, that
+   is, when $n$ is parallel to a side of $U$.
+
+![Two panels, each with a tilted square U, its two axes from its centre and a vector n from the centre. Left: n points between the axes; the path from the centre along the first axis and then parallel to the second, with legs p and q, reaches the tip of n, and the two legs together are longer than n. Right: n points along the first axis, the second leg vanishes, and the first leg is n itself](figures/front-lengths.svg)
+
+*Figure 3.6.* Part (2). In the frame of $U$ the vector $n$ is the hypotenuse
+of a right triangle with legs $p = \langle n, e^U_1\rangle$ and
+$q = \langle n, e^U_2\rangle$ (left), and $|p| + |q| > |n|$; only when $n$ is
+parallel to a side of $U$ does one leg vanish, and then $|p| + |q| = |n|$
+(right).
+
+*Proof.* (1) Write $n = (n_1, n_2)$ and $d = (d_1, d_2)$. Expanding gives
+Lagrange's identity
+
+```math
+|n|^2|d|^2 - \langle n, d\rangle^2 = \left(n_1 d_2 - n_2 d_1\right)^2 \ge 0 ,
+```
+
+which is the inequality. If $n \ne 0$ and $\langle n, d\rangle = |n|\,|d|$,
+the identity gives $n_1 d_2 = n_2 d_1$, so $d = \lambda n$ for some real
+$\lambda$; then $\lambda|n|^2 = \langle n, d\rangle = |n|\,|d| \ge 0$, so
+$\lambda = \frac{|d|}{|n|}$. (2) The vectors $e^U_1$ and $e^U_2$ are
+orthonormal, so $n = p\,e^U_1 + q\,e^U_2$ with $p = \langle n, e^U_1\rangle$
+and $q = \langle n, e^U_2\rangle$, and $|n|^2 = p^2 + q^2$. Then
+
+```math
+\left(|p| + |q|\right)^2 = p^2 + q^2 + 2|pq| = |n|^2 + 2|pq| \ge |n|^2 ,
+```
+
+with equality exactly when $pq = 0$. $\square$
+
+*Lean: [`cauchy_sq`](../../SquaresInCircles/Common/Basic.lean#L39),
+[`frame_norm`](../../SquaresInCircles/Common/Basic.lean#L61),
+[`width_lower`](../../SquaresInCircles/Common/Basic.lean#L71).*
 
 ### Lemma 3.9 (inscribed disks)
 
@@ -249,7 +267,7 @@ Let $S$ be a square.
 
 ![A square with the dashed disk of radius one half about its centre c, and a smaller shaded disk of radius one half minus alpha about the point o](figures/inscribed-disks.svg)
 
-*Figure 3.8.* The disk of radius $\frac12$ about $c_S$, and the disk of radius
+*Figure 3.7.* The disk of radius $\frac12$ about $c_S$, and the disk of radius
 $\frac12 - \alpha$ about $o$, both inside $S$.
 
 *Proof.* (2) Let $|p - o| < \frac12 - \alpha$. Each local coordinate of $p$
@@ -259,8 +277,8 @@ value. So $|x_S(p)| < \alpha + (\frac12 - \alpha) = \frac12$, and likewise
 $|y_S(p)| < \frac12$. (1) The same argument with $c_S$ in place of $o$, whose
 local coordinates are both 0, and $\alpha = 0$. $\square$
 
-*Lean: [`inscribed_disk_mem`](../../SquaresInCircles/Common/Basic.lean#L128),
-[`small_disk_in_openSquare`](../../SquaresInCircles/Common/Basic.lean#L144).*
+*Lean: [`inscribed_disk_mem`](../../SquaresInCircles/Common/Basic.lean#L142),
+[`small_disk_in_openSquare`](../../SquaresInCircles/Common/Basic.lean#L158).*
 
 ### Lemma 3.10 (centres at least 1 apart)
 
@@ -268,7 +286,7 @@ If $S$ and $T$ are disjoint squares, then $|c_T - c_S| \ge 1$.
 
 ![Two overlapping tilted squares whose centres are less than 1 apart, with their inscribed disks and the midpoint m of the centres lying in both](figures/midpoint.svg)
 
-*Figure 3.9.* If the centres were less than 1 apart, the midpoint $m$ would
+*Figure 3.8.* If the centres were less than 1 apart, the midpoint $m$ would
 lie in both inscribed disks.
 
 *Proof.* Otherwise the midpoint $m$ of the two centres is at distance
@@ -297,12 +315,12 @@ shadow of $S$ on the line of $n$, in units of $|n|$.
 
 ![A tilted square, a unit direction n, and the distance from the centre c to the supporting line through the extreme vertex in that direction](figures/width.svg)
 
-*Figure 3.10.* For a unit vector $n$, the square reaches $w_S(n)$ beyond its
+*Figure 3.9.* For a unit vector $n$, the square reaches $w_S(n)$ beyond its
 centre in the direction $n$.
 
 *Lean: [`width`](../../SquaresInCircles/Common/Separation.lean#L69),
-[`closed_dot_bound`](../../SquaresInCircles/Common/Support.lean#L97),
-[`dot_open_bound_of_ne`](../../SquaresInCircles/Common/Support.lean#L70).*
+[`closed_dot_bound`](../../SquaresInCircles/Common/Support.lean#L78),
+[`dot_open_bound_of_ne`](../../SquaresInCircles/Common/Support.lean#L50).*
 
 ### Lemma 3.12 (supporting line)
 
@@ -319,7 +337,7 @@ Let $S$ and $T$ be disjoint squares.
 
 ![Two disjoint tilted squares, a dashed separating line between them, and their shadows on a line in direction n, which do not overlap](figures/shadows.svg)
 
-*Figure 3.11.* Disjoint squares have disjoint shadows in some direction $n$.
+*Figure 3.10.* Disjoint squares have disjoint shadows in some direction $n$.
 Each shadow reaches $w(n)$ on either side of the shadow of the centre.
 
 *Idea of the proof.* The separation theorem gives a separating line. Pushing
@@ -328,7 +346,7 @@ both squares by their full widths.
 
 ![Two disjoint tilted squares S and T with the direction n pointing from S to T. From each centre a segment runs to the vertex of the square that is extreme in the direction of the other square; a hollow test point sits a fraction t of the way along it. Dashed vertical supporting lines pass through the two extreme vertices and a solid separating line kappa lies between them; below, the widths w_S(n) and w_T(n) are marked on an axis in the direction n](figures/front-support-proof.svg)
 
-*Figure 3.12.* The proof of (1), with $n$ horizontal. The point a fraction $t$
+*Figure 3.11.* The proof of (1), with $n$ horizontal. The point a fraction $t$
 of the way from $c_S$ to the vertex of $S$ that maximises
 $\langle n, \cdot\rangle$ lies in $S^\circ$ (hollow dot), and likewise for $T$
 with the vertex that minimises it, so the separating line
@@ -367,7 +385,7 @@ so $p \ne q$. $\square$
 
 *Lean:
 [`support_separator`](../../SquaresInCircles/Common/Separation.lean#L114),
-[`closed_open_disjoint`](../../SquaresInCircles/Common/Support.lean#L108).*
+[`closed_open_disjoint`](../../SquaresInCircles/Common/Support.lean#L89).*
 
 ### Lemma 3.13 (squares at distance 1)
 
@@ -377,38 +395,31 @@ $\pm e^S_1, \pm e^S_2$.
 
 ![Two tilted squares sharing a full edge, with their centres joined by a segment of length 1](figures/edge-contact.svg)
 
-*Figure 3.13.* At distance exactly 1 the squares share a full edge.
+*Figure 3.12.* At distance exactly 1 the squares share a full edge.
 
 ![Left: an axis-parallel square U with two directions from its centre: along a side, where its supporting line is at distance 1/2, and along a diagonal, where it is at distance root 2 over 2. Right: the graph of the width w_U(n) of U in a unit direction n against the angle between n and a side of U, from 0 to pi: arches between the value 1/2 at 0, pi/2 and pi and the value root 2 over 2 at pi/4 and 3pi/4](figures/front-width-graph.svg)
 
-*Figure 3.14.* The width of a square $U$ in a unit direction $n$, against the
+*Figure 3.13.* The width of a square $U$ in a unit direction $n$, against the
 angle between $n$ and a side of $U$. It is $\frac12$ exactly when $n$ is
 parallel to a side, and more otherwise, up to $\frac{\sqrt2}2$ along a
 diagonal; the proof uses the minimum.
 
 *Proof.* Take $n$ from Lemma 3.12 (1) and put $d = c_T - c_S$, a unit vector.
-For any square $U$,
-
-```math
-\left(|\langle n, e^U_1\rangle| + |\langle n, e^U_2\rangle|\right)^2 \ge \langle n, e^U_1\rangle^2 + \langle n, e^U_2\rangle^2 = |n|^2 ,
-```
-
-so $w_U(n) \ge \frac12|n|$, with equality exactly when one of the two inner
-products vanishes, that is, when $n$ is parallel to a side of $U$. Therefore
+By Lemma 3.8 (2), every square $U$ has $w_U(n) \ge \frac12|n|$, with equality
+exactly when $n$ is parallel to a side of $U$. With Lemma 3.8 (1),
 
 ```math
 |n| \le w_S(n) + w_T(n) \le \langle n, d\rangle \le |n|\,|d| = |n| ,
 ```
 
-and all three inequalities are equalities. Equality in the Cauchy–Schwarz
-inequality, with $\langle n, d\rangle > 0$, makes $d = n/|n|$. Equality in the
-first step makes $w_S(n) = w_T(n) = \frac12|n|$, so $n$ is parallel to a side
+and all three inequalities are equalities. Equality in the last one makes
+$d = n/|n|$, by Lemma 3.8 (1). Equality in the first step makes $w_S(n) = w_T(n) = \frac12|n|$, so $n$ is parallel to a side
 of $S$ and to a side of $T$. So $d$ is a unit vector along an axis of $S$, that
 is, one of $\pm e^S_1, \pm e^S_2$, and the sides of $T$ are parallel to $d$ and
 to its perpendicular, hence to those of $S$. A square with the same axes whose
 centre is one unit away along an axis shares the corresponding edge. $\square$
 
-*Lean: [`unit_contact`](../../SquaresInCircles/Common/Contacts.lean#L105).*
+*Lean: [`unit_contact`](../../SquaresInCircles/Common/Contacts.lean#L94).*
 
 ## 3.4 Arcs and the angular budget
 
@@ -429,7 +440,7 @@ $\Gamma_r$ are measured by the angle $d$ of §2.1.
 
 ![Two directions from o drawn as radii of the circle of radius r, the unit vector u(theta), and the angle d between the two directions](figures/directions.svg)
 
-*Figure 3.15.* Two directions $\theta, \theta'$ seen from $o$, the unit vector
+*Figure 3.14.* Two directions $\theta, \theta'$ seen from $o$, the unit vector
 $u(\theta)$, and the angle $d(\theta, \theta')$ between them.
 
 *Lean: [`circlePoint`](../../SquaresInCircles/Common/AngularBudget.lean#L21),
@@ -445,14 +456,14 @@ $S^\circ$, we say that $S$ *holds* the arc.
 
 ![A circle about o and a square U; a thick arc of the circle inside U with centre direction theta zero and half-width w, and the rest of the circle inside U drawn thin](figures/arc.svg)
 
-*Figure 3.16.* An arc of $U$ with centre $\theta_0$ and half-width $w$ (thick).
+*Figure 3.15.* An arc of $U$ with centre $\theta_0$ and half-width $w$ (thick).
 It need not cover all of $\Gamma_r \cap U$ (thin).
 
 *Lean: [`OpenArc`](../../SquaresInCircles/Common/AngularBudget.lean#L38).*
 
 ![Four disjoint squares around the disk centre, each holding a coloured arc of the circle of radius r; the arcs do not overlap](figures/budget.svg)
 
-*Figure 3.17.* Disjoint squares hold disjoint arcs of the same circle, so the
+*Figure 3.16.* Disjoint squares hold disjoint arcs of the same circle, so the
 arcs share its $2\pi$ of angle.
 
 ### Lemma 3.16 (angular budget)
@@ -484,7 +495,7 @@ arc.
 
 ![The central part of the T of Chapter 6 with the circle of radius 3/8 about o. Each of the three squares holds an open arc of a third of the circle, drawn thin; the arcs meet at three endpoints, drawn hollow. Thick coloured closed arcs of four fifths of each half-width, with filled endpoints, sit inside the open arcs and are separated by gaps; one arc is marked with its half-width w and the shrunken half-width t times w](figures/front-shrink.svg)
 
-*Figure 3.18.* The shrinking step for the T of Chapter 6 on $\Gamma_{3/8}$.
+*Figure 3.17.* The shrinking step for the T of Chapter 6 on $\Gamma_{3/8}$.
 The three squares hold open arcs of half-width $w = \frac\pi3$ (thin), which
 meet at endpoints that lie in none of them (hollow). The closed arcs of
 half-width $t w$ for $t < 1$ (thick, here $t = \frac45$) are disjoint, so their
@@ -509,12 +520,12 @@ opposite centres: $\theta_V = \theta_U + \pi$.
 
 ![Two disjoint arcs U and V of a circle about o, with dashed radii to their centres and the angle between the centres marked as at least w_U + w_V](figures/arc-centres.svg)
 
-*Figure 3.19.* The centres of two disjoint arcs are at least $w_U + w_V$
+*Figure 3.18.* The centres of two disjoint arcs are at least $w_U + w_V$
 apart.
 
 ![A circle about o with two overlapping thick arcs, U drawn just inside the circle and V just outside, their centres marked by dashed radii with the angle delta between them. A dot marks the direction x between the two centres, inside both arcs](figures/front-arc-overlap.svg)
 
-*Figure 3.20.* The proof: if the centres were $\delta < w_U + w_V$ apart, the
+*Figure 3.19.* The proof: if the centres were $\delta < w_U + w_V$ apart, the
 direction $x$ that divides the angle between them in the ratio $w_U : w_V$
 would be within $w_U$ of $\theta_U$ and within $w_V$ of $\theta_V$, and its
 point on $\Gamma_r$ would lie in both $U$ and $V$.
@@ -548,12 +559,12 @@ and in particular $w_U + w_V + w_W \le \pi$.
 
 ![A circle about o with three disjoint coloured arcs U, V and W, dashed radii to their centres, and the angle between the centres of V and W marked](figures/three-arcs.svg)
 
-*Figure 3.21.* The short way from $\theta_V$ to $\theta_W$ crosses half of $V$
+*Figure 3.20.* The short way from $\theta_V$ to $\theta_W$ crosses half of $V$
 and half of $W$. The long way crosses those halves and all of $U$.
 
 ![A circle about o with three directions x_U, x_V, x_W, which cut it into three coloured gaps x_V - x_U, x_W - x_V and x_U + 2 pi - x_W, the last one the longest; an inner arc marks the angle d(theta_U, theta_W), which goes the short way round, through x_V](figures/front-perimeter.svg)
 
-*Figure 3.22.* Representatives $x_U \le x_V \le x_W < x_U + 2\pi$ cut the
+*Figure 3.21.* Representatives $x_U \le x_V \le x_W < x_U + 2\pi$ cut the
 circle into three gaps that add up to $2\pi$. Each angle between two of the
 directions is at most the gap between their representatives: here
 $d(\theta_U, \theta_W)$ is shorter than the gap $x_U + 2\pi - x_W$.
@@ -589,12 +600,12 @@ least $g$ apart.
 
 ![Four radii of a circle about o in the directions theta0, theta0 plus pi/2, theta0 plus pi and theta0 plus 3pi/2](figures/four-directions.svg)
 
-*Figure 3.23.* Four directions pairwise at least $\frac\pi2$ apart: the only
+*Figure 3.22.* Four directions pairwise at least $\frac\pi2$ apart: the only
 way is a quarter grid.
 
 ![Left: six directions p0 to p5 on a circle about o, forming a regular hexagon, with the six gaps between neighbours marked g, the last one, from p5 round to p0, in another colour. Right: the same six directions unrolled onto the real line from p0 to p0 + 2 pi, with a bar over each gap marked at least g](figures/front-gaps.svg)
 
-*Figure 3.24.* The proof for six directions and $g = \frac\pi3$. Sorted, the
+*Figure 3.23.* The proof for six directions and $g = \frac\pi3$. Sorted, the
 directions cut the circle into six gaps, the last one from $p_5$ round to
 $p_0 + 2\pi$. Each gap is at least $g$, since its two ends represent
 directions at least $g$ apart; unrolled, the gaps add up to $2\pi = 6g$, so
@@ -639,7 +650,7 @@ $(1 + m)(a_S, b_S)$. Lemma 3.21 shows that every square has a chart.
 
 ![Left: a tilted square seen from o, with the phase direction and a point on the circle at chart angle t from it. Right: the same square turned into standard position, centred at (a, b), with the point at angle t](figures/chart-panels.svg)
 
-*Figure 3.25.* Left: a square seen from $o$. Right: its chart. Turning by
+*Figure 3.24.* Left: a square seen from $o$. Right: its chart. Turning by
 $-\theta_S$, and reflecting when $\varepsilon_S = -1$, puts the square in
 standard position, centred at $(a_S, b_S)$; the point at angle
 $\theta_S + \varepsilon_S t$ goes to the point at chart angle $t$.
@@ -666,7 +677,7 @@ at $(a_S, b_S)$.
 
 ![Four panels with the same tilted square S and disk centre o. Each shows the two axes of a chart at o, labelled t = 0 and t = pi/2, a curved arrow for the sense of increasing t, and an orange path from o along the first axis and then the second to the centre of S. The panels are a chart (theta, epsilon), with the centre at (X, Y); the reversal (theta, minus epsilon), at (X, minus Y); the half turn (theta plus pi, epsilon), at (minus X, minus Y); and the exchange (theta plus epsilon pi/2, minus epsilon), at (Y, X)](figures/front-chart-moves.svg)
 
-*Figure 3.26.* The three moves of the proof, for one square $S$. Each panel
+*Figure 3.25.* The three moves of the proof, for one square $S$. Each panel
 shows the axes $t = 0$ and $t = \frac\pi2$ of a chart at $o$, with an arrow for
 the sense in which the chart angle $t$ increases, and the chart coordinates of
 $c_S$: $(X, Y)$ for $(\theta, \varepsilon)$, then $(X, -Y)$ after the reversal,
@@ -720,7 +731,7 @@ $(a_S, \varepsilon_S b_S)$ in the frame $\theta_S$.
 
 ![Two panels with a square S, the disk centre o and the frame theta_S at o, with axes u(theta_S) and u(theta_S + pi/2). Left, orientation +1: the chart angle increases counterclockwise, and the path from o reaches the centre by a_S along the first axis and b_S along the second. Right, orientation minus 1: the chart angle increases clockwise, the chart axis t = pi/2 points along minus u(theta_S + pi/2), and the path reaches the centre by a_S along the first axis and minus b_S along the second](figures/front-cartesian.svg)
 
-*Figure 3.27.* The frame $\theta_S$ at $o$ is counterclockwise, while a chart
+*Figure 3.26.* The frame $\theta_S$ at $o$ is counterclockwise, while a chart
 with $\varepsilon_S = -1$ measures the chart angle clockwise (orange), so its
 axis $t = \frac\pi2$ points along $-u(\theta_S + \frac\pi2)$. The centre, at
 $(a_S, b_S)$ in the chart, is at $(a_S, \varepsilon_S b_S)$ in the frame.
@@ -768,7 +779,7 @@ of the notation.
 
 ![An exterior square in its chart. The disk centre o is at the origin and the square is centred at (a, b). The circle of radius r crosses the dashed line of the near edge at the angles plus and minus A, and the dashed line of the lower edge at minus V. The cap, the part of the circle inside the square, is highlighted from minus V to A](figures/chart.svg)
 
-*Figure 3.28.* An exterior square in its chart, with $o$ at the origin. The
+*Figure 3.27.* An exterior square in its chart, with $o$ at the origin. The
 circle $\Gamma_r$ crosses the line of the near edge at the angles $\pm A_S$
 and the line of the lower edge at $-V_S$; it does not reach the upper edge.
 The part of the circle inside the square is highlighted: here $V_S < A_S$, so
@@ -800,13 +811,13 @@ the far edge $x = a_S + \frac12$.
 
 ![An exterior square in its chart with a circle of radius 5/6 about o; the highlighted arc runs from where the circle crosses the lower edge to where it crosses the upper edge, before the near edge](figures/rectangle-interval.svg)
 
-*Figure 3.29.* On a larger circle the arc can leave through the upper edge.
+*Figure 3.28.* On a larger circle the arc can leave through the upper edge.
 Here the circle meets the lines of the lower and the upper edge before the line
 of the near edge (grey dot), and the arc runs from $-V_S$ to $U_S$.
 
 ![Three exterior squares in their charts, each with a circle of radius at most 1/2 about o and the lines of its near and lower edges dashed. Left: the circle crosses the near edge at plus and minus A before reaching the lower edge, and the cap from minus A to A is highlighted. Middle: the circle meets the lower edge first, at minus V, and the cap from minus V to A is highlighted. Right: the near edge passes through o, and the highlighted arc is the half circle from minus pi/2 to pi/2](figures/front-caps.svg)
 
-*Figure 3.30.* Parts (2) and (3), on a circle of radius $r \le \frac12$. Left:
+*Figure 3.29.* Parts (2) and (3), on a circle of radius $r \le \frac12$. Left:
 when $A_S \le V_S$ the cap runs from $-A_S$ to $A_S$ and is centred at the
 phase. Middle: when $V_S < A_S$ the lower edge clips it, and it runs from
 $-V_S$ to $A_S$. Right: when $a_S = \frac12$ and $b_S + r \le \frac12$ the near
@@ -872,78 +883,55 @@ through its centre.
 
 ![A square containing the disk centre that does not reach the circle of radius r. Dotted copies of it slid away from the centre along the ray through its centre fill the radial sweep, which covers a long highlighted arc of the circle](figures/sweep.svg)
 
-*Figure 3.31.* The square $S$ contains $o$ but does not reach the circle
+*Figure 3.30.* The square $S$ contains $o$ but does not reach the circle
 $\Gamma_r$. Sliding it away from $o$ along the ray through its centre (dotted
 copies) sweeps out $\widehat{S}$, which covers the highlighted arc. Five squares
-use exactly this ([Lemma 8.10](five.md#lemma-810-the-sweep-holds-a-fifth-of-the-circle)).
+use exactly this ([Lemma 8.11](five.md#lemma-811-the-sweep-holds-a-fifth-of-the-circle)).
 
-*Lean: [`openRay`](../../SquaresInCircles/Common/Support.lean#L48).*
+*Lean: [`openRay`](../../SquaresInCircles/Common/Support.lean#L28).*
 
 The sweep holds longer arcs than the square itself. The next two lemmas show
-that it still avoids every other square, as long as every square $S$ has
-$(a_S, b_S)$ in the octagon $P_8$ (Definition 3.8).
+that it still avoids every other square, as long as every centre lies within
+distance 1 of $o$, that is, $a_S^2 + b_S^2 \le 1$ for every square $S$
+(Lemma 3.4).
 
-### Lemma 3.26 (octagon support)
+### Lemma 3.26 (centres near the disk centre)
 
-If $(a_S, b_S) \in P_8$, then for every square $T$ and every vector $n$,
+If $|c_S - o| \le 1$, then for every square $T$ and every vector $n$,
 
 ```math
 |\langle n,\ c_S - o\rangle| \le w_S(n) + w_T(n) .
 ```
 
-![The quadrilateral with vertices (0, 0), (1, 0), (3/4, 3/4) and (0, 1), dashed level lines of pa + qb, and the level line through the corner (3/4, 3/4), where the largest value is reached](figures/octagon-support.svg)
+![A square S with its centre c_S, the dashed unit circle about c_S with the disk centre o inside it, and a shaded slab about c_S between two dashed lines at distance w_S(n) + w_T(n) from c_S along a horizontal unit vector n; the slab contains the circle](figures/front-centre-slab.svg)
 
-*Figure 3.32.* Over the quadrilateral $P_8 \cap \lbrace a, b \ge 0 \rbrace$,
-$pa + qb$ is largest at a vertex, here $(\frac34, \frac34)$.
+*Figure 3.31.* Lemma 3.26 for a unit vector $n$. The slab of the points $p$
+with $|\langle n, p - c_S\rangle| \le w_S(n) + w_T(n)$ (shaded) is at least 1
+wide on either side of $c_S$, so it contains the unit disk about $c_S$
+(dashed), and with it $o$.
 
-![Three copies of the quadrilateral with vertices (0, 0), (1, 0), (3/4, 3/4) and (0, 1), each with an arrow in the direction (p, q), dashed level lines of pa + qb and a solid level line through the vertex where pa + qb is largest: (1, 0) when p is at least 3q, (0, 1) when q is at least 3p, and (3/4, 3/4) otherwise](figures/front-support-cases.svg)
+*Proof.* By Lemma 3.8 (1), $|\langle n, c_S - o\rangle| \le |n|\,|c_S - o| \le |n|$.
+By Lemma 3.8 (2), the widths
+$w_S(n) = \frac12\left(|\langle n, e^S_1\rangle| + |\langle n, e^S_2\rangle|\right)$
+and $w_T(n)$ are both at least $\frac12|n|$, so their sum is at least $|n|$.
+$\square$
 
-*Figure 3.33.* The three cases of the proof. Over the quadrilateral
-$P_8 \cap \lbrace a, b \ge 0 \rbrace$ the largest value of $pa + qb$ (solid
-line) is $p$, at $(1, 0)$, when $p \ge 3q$; it is $q$, at $(0, 1)$, when
-$q \ge 3p$; and otherwise it is $\frac34(p + q)$, at $(\frac34, \frac34)$.
-
-*Proof.* Let $p = |\langle n, e^S_1\rangle|$, $q = |\langle n, e^S_2\rangle|$,
-$u = |\langle n, e^T_1\rangle|$ and $v = |\langle n, e^T_2\rangle|$, so that
-$w_S(n) + w_T(n) = \frac{p+q}2 + \frac{u+v}2$ and
-$p^2 + q^2 = u^2 + v^2 = |n|^2$. In the frame of $S$ the coordinates of
-$c_S - o$ are $-x_S(o)$ and $-y_S(o)$, whose absolute values are $a_S$ and
-$b_S$ in some order. So $|\langle n, c_S - o\rangle| \le pa + qb$ for a point
-$(a, b)$ that is $(a_S, b_S)$ or $(b_S, a_S)$; as $P_8$ is symmetric, $(a, b)$
-lies in $P_8$, with $a, b \ge 0$. We show
-$pa + qb \le \max\left(p, q, \frac34(p + q)\right)$.
-
-- If $p \ge 3q$, then $pa + qb \le \frac p3(3a + b) \le p$.
-- If $q \ge 3p$, then symmetrically $pa + qb \le q$.
-- Otherwise both weights below are nonnegative, and
-
-  ```math
-  pa + qb = \frac{3p - q}{8}(3a + b) + \frac{3q - p}{8}(a + 3b) \le \frac{3p - q}8\cdot 3 + \frac{3q - p}8\cdot 3 = \frac34(p + q) .
-  ```
-
-Finally, each of $p$ and $q$ is at most $|n|$, and
-$|n| = \sqrt{u^2 + v^2} \le u + v$. So
-$p \le \frac p2 + \frac{u+v}2 \le \frac{p+q}2 + \frac{u+v}2$, the same holds
-for $q$, and $\frac34(p + q) \le \frac{p+q}2 + \frac{u+v}2$ because
-$\frac{p+q}4 \le \frac{\sqrt2\,|n|}4 \le \frac{u+v}2$. $\square$
-
-*Lean: [`octagon_support`](../../SquaresInCircles/Common/Support.lean#L18),
-[`dot_center_le`](../../SquaresInCircles/Common/Support.lean#L35).*
+*Lean: [`dot_center_le`](../../SquaresInCircles/Common/Support.lean#L18).*
 
 ### Lemma 3.27 (the sweep is safe)
 
-If $S$ and $T$ are disjoint and $(a_S, b_S)$ and $(a_T, b_T)$ both lie in
-$P_8$, then the sweep $\widehat{S}$ does not meet $T^\circ$.
+If $S$ and $T$ are disjoint and their centres are within distance 1 of $o$,
+then the sweep $\widehat{S}$ does not meet $T^\circ$.
 
 ![Two disjoint squares S and T, a dashed separating line between them with n pointing towards T, and the radial sweep of S extending away from T along the ray from o through its centre](figures/safe-sweep.svg)
 
-*Figure 3.34.* The separating line between $S$ and $T$, with $n$ pointing
+*Figure 3.32.* The separating line between $S$ and $T$, with $n$ pointing
 towards $T$. The ray from $o$ through $c_S$ points away from $T$, so the sweep
 of $S$ stays on its side.
 
-*Idea of the proof.* Take the separating line of Lemma 3.12. The octagon forces
-the ray from $o$ through $c_S$ to point away from $T$ across that line, so
-sliding $S$ along the ray only moves it further from $T$.
+*Idea of the proof.* Take the separating line of Lemma 3.12. As both centres
+are near $o$, the ray from $o$ through $c_S$ points away from $T$ across that
+line, so sliding $S$ along the ray only moves it further from $T$.
 
 *Proof.* Take $n$ from Lemma 3.12 (1) and write $W = w_S(n) + w_T(n)$.
 
@@ -968,14 +956,14 @@ sliding $S$ along the ray only moves it further from $T$.
    $\square$
 
 *Lean:
-[`safe_openRay_of_disjoint`](../../SquaresInCircles/Common/Support.lean#L82),
-[`Separation.center_signs`](../../SquaresInCircles/Common/Support.lean#L59).*
+[`safe_openRay_of_disjoint`](../../SquaresInCircles/Common/Support.lean#L63),
+[`Separation.center_signs`](../../SquaresInCircles/Common/Support.lean#L39).*
 
 ### Proposition 3.28 (budget with a sweep)
 
-Let $n \ge 2$, let $S_1, \dots, S_n$ be pairwise disjoint squares with every
-$(a_{S_i}, b_{S_i})$ in $P_8$, and fix a circle $\Gamma_r$. The following cannot
-both hold:
+Let $n \ge 2$, let $S_1, \dots, S_n$ be pairwise disjoint squares whose
+centres are within distance 1 of $o$, and fix a circle $\Gamma_r$. The
+following cannot both hold:
 
 - the sweep of every containing square holds an arc of $\Gamma_r$ of
   half-width at least $\frac\pi n$;
@@ -991,9 +979,9 @@ is exterior (Definition 3.2), and its arc has half-width more than
 $\frac\pi n$. This contradicts Lemma 3.16. $\square$
 
 *Lean:
-[`ray_budget_impossible`](../../SquaresInCircles/Common/ArcBudget.lean#L42),
-[`rayRegions_disjoint`](../../SquaresInCircles/Common/ArcBudget.lean#L27),
-[`exists_exterior`](../../SquaresInCircles/Common/ArcBudget.lean#L15).*
+[`ray_budget_impossible`](../../SquaresInCircles/Common/ArcBudget.lean#L43),
+[`rayRegions_disjoint`](../../SquaresInCircles/Common/ArcBudget.lean#L28),
+[`exists_exterior`](../../SquaresInCircles/Common/ArcBudget.lean#L16).*
 
 ## 3.8 Elementary estimates
 
@@ -1009,7 +997,7 @@ $\frac\pi n$. This contradicts Lemma 3.16. $\square$
 
 ![Left: on the interval from 0 to 1, the graphs of x, of arcsin x above it, and of x + x cubed over 4, which stays above arcsin x up to x = 3/5, marked by a dotted line, and is dashed beyond. Right: on the interval from minus 0.75 to 0.75, the graph of cos t and the dashed level (1 + root 5)/4, which it meets at plus and minus pi/5; the interval between them is shaded, and on it the cosine lies above the level](figures/front-estimates.svg)
 
-*Figure 3.35.* Left, parts (2) and (3): on $[0, \frac35]$ the arcsine lies
+*Figure 3.33.* Left, parts (2) and (3): on $[0, \frac35]$ the arcsine lies
 between $x$ and $x + \frac{x^3}4$; the cubic bound is dashed beyond $\frac35$,
 and fails near $x = 1$. Right, part (5): the cosine takes the value
 $\frac{1 + \sqrt5}4$ at $\pm\frac\pi5$, and it is larger in between
@@ -1017,7 +1005,7 @@ $\frac{1 + \sqrt5}4$ at $\pm\frac\pi5$, and it is larger in between
 
 ![The graph of the sine from 0 to a little beyond pi/2, with the points (arcsin u, u) and (arcsin v, v) on it joined by a chord. The midpoint of the chord, at height (u + v)/2 over mu, lies below the point of the curve over mu. A dashed horizontal line at height (u + v)/2 meets the curve left of mu, and a point theta with sine below that height lies further left](figures/front-sine-concave.svg)
 
-*Figure 3.36.* Part (4). Since the sine is concave, the chord between
+*Figure 3.34.* Part (4). Since the sine is concave, the chord between
 $(\arcsin u, u)$ and $(\arcsin v, v)$ lies below the curve, so at the
 midpoint $\mu$ the sine is at least $\frac{u+v}2$. A $\theta$ with
 $\sin\theta < \frac{u+v}2$ lies left of $\mu$, since the sine increases.
@@ -1062,8 +1050,8 @@ $\sin\theta < \frac{u+v}2$ lies left of $\mu$, since the sine increases.
 [`arcsin_le_self_of_nonpos`](../../SquaresInCircles/Common/Trigonometry.lean#L724),
 [`arcsin_le_cubic`](../../SquaresInCircles/Common/Trigonometry.lean#L731),
 [`arcsin_sum_gt_of_sin_lt`](../../SquaresInCircles/Common/Trigonometry.lean#L743),
-[`Five.sqrt_five_gt`](../../SquaresInCircles/Five/Exterior.lean#L35),
-[`Five.arc_length`](../../SquaresInCircles/Five/Exterior.lean#L63). (The value
+[`Five.sqrt_five_gt`](../../SquaresInCircles/Five/Exterior.lean#L36),
+[`Five.arc_length`](../../SquaresInCircles/Five/Exterior.lean#L64). (The value
 of the cosine in (5) comes from mathlib.)*
 
 ## 3.9 Recognising a model
@@ -1085,12 +1073,12 @@ Lemma 3.31. For four and seven squares, Lemma 3.19 helps to find that frame.
 
 ![A square S and a square T with the same axes, and dashed axes at o parallel to their sides; a path from o along the first axis for c1, then along the second for c2, reaches the centre of T](figures/parallel-squares.svg)
 
-*Figure 3.37.* Part (1): in the frame at $o$ parallel to the sides of $S$, the
+*Figure 3.35.* Part (1): in the frame at $o$ parallel to the sides of $S$, the
 square $T$ sits at the coordinates $(c_1, c_2)$ of $c_T - o$.
 
 ![A square S and the disk centre o with two frames: the frame phi with axes x and y, and the frame phi + pi/2 with axes x prime, along y, and y prime, along minus x. An orange path reaches the centre of S from o by c1 along x prime and c2 along y prime, and a green path by minus c2 along x and c1 along y](figures/front-quarter-turn.svg)
 
-*Figure 3.38.* Part (2) with $k = 1$. The axes $x', y'$ of the frame
+*Figure 3.36.* Part (2) with $k = 1$. The axes $x', y'$ of the frame
 $\phi + \frac\pi2$ are the axes $y, -x$ of the frame $\phi$. A square that
 sits at $c = (c_1, c_2)$ in the frame $\phi + \frac\pi2$ (orange path) sits at
 $\rho(c) = (-c_2, c_1)$ in the frame $\phi$ (green path).
@@ -1125,7 +1113,7 @@ $S_1, \dots, S_n$ is congruent to the model $Q(c_1), \dots, Q(c_n)$.
 
 ![The plus of five squares turned by phi about o, with faint axes of the frame phi. Each square is labelled S_i and has a dot at the image of the model point where it sits, labelled c_k: S1 at c3, S2 at c1, which is o, S3 at c5, S4 at c2 and S5 at c4](figures/front-slots.svg)
 
-*Figure 3.39.* Five disjoint squares that each sit, in a frame $\phi$ at $o$,
+*Figure 3.37.* Five disjoint squares that each sit, in a frame $\phi$ at $o$,
 at one of the points $c_1, \dots, c_5$ of the plus of Chapter 8: here $S_1$ at
 $c_3$, $S_2$ at $c_1$, $S_3$ at $c_5$, $S_4$ at $c_2$ and $S_5$ at $c_4$, so
 that $\sigma(1) = 2$, $\sigma(2) = 4$, $\sigma(3) = 1$, $\sigma(4) = 5$ and

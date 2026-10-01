@@ -133,7 +133,7 @@ Let $b \le a$. The point $(a, b)$ lies in the *16-gon* $P_3$ if
 16a + 13b \le \tfrac{193}{16} \qquad \text{and} \qquad 19a + 8b \le \tfrac{209}{16} . \tag{6.1}
 ```
 
-*Lean: [`Three.P3`](../../SquaresInCircles/Three/Exterior.lean#L18).*
+*Lean: [`Three.P3`](../../SquaresInCircles/Three/Exterior.lean#L19).*
 
 The two lines $16a + 13b = \frac{193}{16}$ and $19a + 8b = \frac{209}{16}$ are
 the tangents to the circle $\varphi = \frac{425}{256}$ at
@@ -181,9 +181,9 @@ squares are nonnegative, so both brackets are at most $0$; and the first
 bracket is negative when $a \ne \frac12$, because then
 $(a - \frac12)^2 > 0$. $\square$
 
-*Lean: [`Three.p3_of_phi`](../../SquaresInCircles/Three/Exterior.lean#L21),
-[`tangent_le`](../../SquaresInCircles/Common/Tangents.lean#L20),
-[`tangent_lt`](../../SquaresInCircles/Common/Tangents.lean#L26).*
+*Lean: [`Three.p3_of_phi`](../../SquaresInCircles/Three/Exterior.lean#L22),
+[`tangent_le`](../../SquaresInCircles/Common/Tangents.lean#L19),
+[`tangent_lt`](../../SquaresInCircles/Common/Tangents.lean#L25).*
 
 From here on, the proof of Proposition 6.3 uses the disk only through
 Lemma 6.5: the inequalities (6.1) for every square, and the strict one for a
@@ -222,7 +222,7 @@ $b \le \frac{57}{64}(\frac12 - u)$.
 An exterior square $S$ is of *type A* if $(a_S, b_S) = (\frac{11}{16}, 0)$,
 and of *type B* if $(a_S, b_S) = (\frac12, \frac5{16})$.
 
-*Lean: [`Three.cap_bounds`](../../SquaresInCircles/Three/Exterior.lean#L63),
+*Lean: [`Three.cap_bounds`](../../SquaresInCircles/Three/Exterior.lean#L64),
 [`Three.cap_types`](../../SquaresInCircles/Three/Uniqueness.lean#L27).*
 
 In the T the upper square is of type A and the two lower squares are of
@@ -284,7 +284,7 @@ and $v = \sin(\arcsin v) = \sin x$, and every inequality in (6.3) is an
 equality. The middle one, $u + \frac12 \le \frac12 + \frac{16}{13}u$, is an
 equality only if $u = 0$, and then $v = \sin\frac\pi6 = \frac12$. $\square$
 
-*Lean: [`Three.truncated_gap`](../../SquaresInCircles/Three/Exterior.lean#L29).*
+*Lean: [`Three.truncated_gap`](../../SquaresInCircles/Three/Exterior.lean#L30).*
 
 ### Lemma 6.8 (exterior caps)
 
@@ -343,8 +343,8 @@ half-width. If $A_S \le V_S$, then $w_S = A_S \ge \frac\pi3$ by (2), and the
 centre is $\theta_S$. If $V_S < A_S$, then
 $w_S = \frac12(A_S + V_S) \ge \frac\pi3$ by (3). $\square$
 
-*Lean: [`Three.cap_bounds`](../../SquaresInCircles/Three/Exterior.lean#L63),
-[`Three.exterior_cap`](../../SquaresInCircles/Three/Exterior.lean#L85).*
+*Lean: [`Three.cap_bounds`](../../SquaresInCircles/Three/Exterior.lean#L64),
+[`Three.exterior_cap`](../../SquaresInCircles/Three/Exterior.lean#L86).*
 
 ### Lemma 6.9 (caps of a third)
 

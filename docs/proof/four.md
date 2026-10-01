@@ -126,12 +126,11 @@ are $\pm\frac12$.
 Let $a$ and $b$ be real numbers with $\varphi(a, b) \le 2$. Then $a + b \le 1$.
 If moreover $a + b \ge 1$, then $a = b = \frac12$.
 
-![The (a, b)-plane: the part with a and b nonnegative of the disk where phi is at most 2, inside the triangle a plus b at most 1, which touches it only at (1/2, 1/2); dashed, the larger quadrilateral of the octagon](figures/diamond.svg)
+![The (a, b)-plane: the part with a and b nonnegative of the disk where phi is at most 2, inside the triangle a plus b at most 1, which touches it only at (1/2, 1/2)](figures/diamond.svg)
 
 *Figure 7.2.* The disk $\lbrace\varphi \le 2\rbrace$ in the $(a, b)$-plane,
 where $a, b \ge 0$, inside the diamond $a + b \le 1$, which touches it only at
-$(\frac12, \frac12)$. Dashed, for comparison, the octagon $P_8$ of five
-squares.
+$(\frac12, \frac12)$.
 
 *Proof.* Expanding both sides gives the identity
 
