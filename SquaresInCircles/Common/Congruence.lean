@@ -10,6 +10,8 @@ as an open and as a closed set. It compares point sets, since a quarter-turn
 of a frame describes the same square. `Represents`
 places one square at an axis-parallel slot of the frame, and
 `congruent_of_slots` turns an assignment of slots into congruence.
+`modelSquare o φ c` is the square at `c` in the frame `φ` at `o`, and
+`orientedSquare t a b` the one at `(a, b)` in the frame `t` at the origin.
 -/
 noncomputable section
 namespace SquaresInCircles
@@ -79,6 +81,49 @@ lemma modelSquare_local (o : Point) (φ : Direction) (c : Point) (x y : ℝ) :
   constructor <;> dsimp [localX,localY,modelSquare,pointInDirection]
   · linear_combination (x-c.1)*hu
   · linear_combination (y-c.2)*hu
+
+/-- The unit square with frame angle `t` whose centre has the coordinates
+`(a, b)` in that frame. -/
+def orientedSquare (t a b : ℝ) : UnitSquare where
+  center := (a*Real.cos t-b*Real.sin t,a*Real.sin t+b*Real.cos t)
+  cosine := Real.cos t
+  sine := Real.sin t
+  unit := Real.cos_sq_add_sin_sq t
+
+/-- The first coordinate of the centre of `orientedSquare t a b`. -/
+def centerX (t a b : ℝ) : ℝ := a*Real.cos t-b*Real.sin t
+/-- The second coordinate of the centre of `orientedSquare t a b`. -/
+def centerY (t a b : ℝ) : ℝ := a*Real.sin t+b*Real.cos t
+
+lemma orientedSquare_localX (t a b : ℝ) (p : Point) :
+    localX (orientedSquare t a b) p=p.1*Real.cos t+p.2*Real.sin t-a := by
+  dsimp [localX,orientedSquare]
+  linear_combination -a*(Real.sin_sq_add_cos_sq t)
+
+lemma orientedSquare_localY (t a b : ℝ) (p : Point) :
+    localY (orientedSquare t a b) p= -p.1*Real.sin t+p.2*Real.cos t-b := by
+  dsimp [localY,orientedSquare]
+  linear_combination -b*(Real.sin_sq_add_cos_sq t)
+
+@[simp] lemma orientedSquare_alpha (t a b : ℝ) : alpha (orientedSquare t a b) (0,0)=|a| := by
+  simp [alpha,orientedSquare_localX]
+
+@[simp] lemma orientedSquare_beta (t a b : ℝ) : beta (orientedSquare t a b) (0,0)=|b| := by
+  simp [beta,orientedSquare_localY]
+
+/-- In its own frame, the centre of `orientedSquare t a b` has first coordinate
+`a`. -/
+lemma oriented_frame_centerX (t a b : ℝ) :
+    frameX (orientedSquare t a b) (sub (orientedSquare t a b).center (0,0))=a := by
+  dsimp [frameX,orientedSquare,sub]
+  linear_combination a*(Real.sin_sq_add_cos_sq t)
+
+lemma orientedSquare_eq_modelSquare (t a b : ℝ) :
+    orientedSquare t a b=modelSquare (0,0) (t : Direction) (a,b) := by
+  unfold orientedSquare modelSquare
+  congr 1
+  simp only [pointInDirection,Real.Angle.cos_coe,Real.Angle.sin_coe]
+  ext <;> ring
 
 lemma Represents.closed {S : UnitSquare} {o : Point} {φ : Direction} {c : Point}
     (h : Represents S o φ c) (x y : ℝ) :

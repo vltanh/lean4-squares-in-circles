@@ -183,7 +183,7 @@ F_\phi(x, y) \in S^\circ \iff |x - c_1| < \tfrac12 \ \text{ and } \ |y - c_2| < 
 in these coordinates it is $Q(c)$.
 
 *Lean: [`pointInDirection`](../../SquaresInCircles/Geometry.lean#L83),
-[`Represents`](../../SquaresInCircles/Common/Congruence.lean#L18).*
+[`Represents`](../../SquaresInCircles/Common/Congruence.lean#L20).*
 
 ### Lemma 2.5 (frames are rigid motions)
 
@@ -211,9 +211,9 @@ $F_\phi(x, y) - o$ with the two vectors returns $x$ and $y$; conversely every
 $p$ equals $F_\phi$ of the pair of those inner products, by expanding $p - o$ in
 the orthonormal basis. Finally $F_\phi(0) = o$. $\square$
 
-*Lean: [`frameEquiv`](../../SquaresInCircles/Common/Congruence.lean#L22),
-[`frameEquiv_zero`](../../SquaresInCircles/Common/Congruence.lean#L42),
-[`frameEquiv_distance`](../../SquaresInCircles/Common/Congruence.lean#L45),
+*Lean: [`frameEquiv`](../../SquaresInCircles/Common/Congruence.lean#L24),
+[`frameEquiv_zero`](../../SquaresInCircles/Common/Congruence.lean#L44),
+[`frameEquiv_distance`](../../SquaresInCircles/Common/Congruence.lean#L47),
 [`pointInDirection_norm`](../../SquaresInCircles/Common/Coordinates.lean#L19).*
 
 ### Definition 2.6 (congruence to a model)
@@ -273,8 +273,8 @@ $S_1, \dots, S_n$ be the configuration.
    $M_l^\circ$, against the disjointness of the model. $\square$
 
 *Lean:
-[`Congruent.packing`](../../SquaresInCircles/Common/Congruence.lean#L122),
-[`frameEquiv_distance`](../../SquaresInCircles/Common/Congruence.lean#L45).*
+[`Congruent.packing`](../../SquaresInCircles/Common/Congruence.lean#L167),
+[`frameEquiv_distance`](../../SquaresInCircles/Common/Congruence.lean#L47).*
 
 ## 2.5 Models of axis-parallel squares
 

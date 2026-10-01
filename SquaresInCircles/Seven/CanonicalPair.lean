@@ -18,29 +18,11 @@ lemma reverse_reflected_phase (a u A v g : ℝ) (s t : TransverseSign) :
   rw [TransverseSign.coe_flip,TransverseSign.coe_flip]
   ring
 
-def rotatedState (a b d : ℝ) : UnitSquare where
-  center := (a*Real.cos d-b*Real.sin d,a*Real.sin d+b*Real.cos d)
-  cosine := Real.cos d
-  sine := Real.sin d
-  unit := Real.cos_sq_add_sin_sq d
-
-lemma rotatedState_local (a b d : ℝ) (p : Point) :
-    localX (rotatedState a b d) p=Real.cos d*p.1+Real.sin d*p.2-a ∧
-    localY (rotatedState a b d) p= -Real.sin d*p.1+Real.cos d*p.2-b := by
-  have hu := Real.sin_sq_add_cos_sq d
-  constructor
-  · dsimp [localX,rotatedState]
-    linear_combination -a*hu
-  · dsimp [localY,rotatedState]
-    linear_combination -b*hu
-
-
+/-- The open squares of the canonical pair are disjoint: `Q(a, su)`, and the
+square at `(A, tv)` in the frame turned by the relative phase. -/
 def CanonicalDisjoint (a u A v g : ℝ) (s t : TransverseSign) : Prop :=
-  ∀ x y : ℝ, ¬ ((|x-a| < 1/2 ∧ |y-s.coe*u| < 1/2) ∧
-    (|Real.cos (relativePhase a u A v g s t)*x+
-       Real.sin (relativePhase a u A v g s t)*y-A| < 1/2 ∧
-     |-Real.sin (relativePhase a u A v g s t)*x+
-       Real.cos (relativePhase a u A v g s t)*y-t.coe*v| < 1/2))
+  ∀ p, ¬ (openSquare (orientedSquare 0 a (s.coe*u)) p ∧
+    openSquare (orientedSquare (relativePhase a u A v g s t) A (t.coe*v)) p)
 
 private lemma first_axes_of_support {a u A v g : ℝ} (s t : TransverseSign)
     (h : ∀ k, 0 < pairSupport a u A v s t k g) :
@@ -94,37 +76,21 @@ lemma canonical_has_separator {a u A v g : ℝ} (s t : TransverseSign)
   have hsecond := first_axes_of_support t.flip s.flip hr
   rw [reverse_reflected_phase] at hsecond
   let d := relativePhase a u A v g s t
-  let S := rotatedState a (s.coe*u) 0
-  let T := rotatedState A (t.coe*v) d
-  have hdisj : ∀ p, ¬ (openSquare S p ∧ openSquare T p) := by
-    intro p hp
-    have hS := rotatedState_local a (s.coe*u) 0 p
-    have hT := rotatedState_local A (t.coe*v) d p
-    apply hd p.1 p.2
-    constructor
-    · have hh := hp.1
-      change |localX S p| < 1/2 ∧ |localY S p| < 1/2 at hh
-      dsimp [S] at hh
-      rw [hS.1,hS.2] at hh
-      simpa using hh
-    · have hh := hp.2
-      change |localX T p| < 1/2 ∧ |localY T p| < 1/2 at hh
-      dsimp [T] at hh
-      rw [hT.1,hT.2] at hh
-      exact hh
+  let S := orientedSquare 0 a (s.coe*u)
+  let T := orientedSquare d A (t.coe*v)
   have hc : relativeC S T = Real.cos d := by
-    norm_num [S,T,rotatedState,relativeC]
+    norm_num [S,T,orientedSquare,relativeC]
   have hs : relativeS S T = Real.sin d := by
-    norm_num [S,T,rotatedState,relativeS]
+    norm_num [S,T,orientedSquare,relativeS]
   have hw : SAT.threshold S T = pairWidth d := by rw [SAT.threshold,hc,hs]; rfl
   have hx : frameX S (sub T.center S.center) = centerDX a u A v g s t := by
-    norm_num [S,T,rotatedState,frameX,sub,centerDX,d]
+    norm_num [S,T,orientedSquare,frameX,sub,centerDX,d]
   have hy : frameY S (sub T.center S.center) = centerDY a u A v g s t := by
-    norm_num [S,T,rotatedState,frameY,sub,centerDY,d]
+    norm_num [S,T,orientedSquare,frameY,sub,centerDY,d]
   have hT := relative_normal S T (sub T.center S.center)
   rw [hc,hs,hx,hy] at hT
   have he := reverse_center_coordinates a u A v g s t
-  have hsep := SAT.separating_axes S T hdisj
+  have hsep := SAT.separating_axes S T hd
   rw [hw,hx,hy,hT.1,hT.2,he.1,he.2,abs_neg] at hsep
   rcases hsep with hsep | hsep | hsep | hsep
   · exact (not_le_of_gt hfirst.1) hsep

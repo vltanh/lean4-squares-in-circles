@@ -233,46 +233,6 @@ lemma chart_center_east_bound {a b t : ℝ} (hc : ContainedChart a |b|) :
 
 /-! ### Oriented squares -/
 
-/-- The unit square with frame angle `t` whose centre has the coordinates
-`(a, b)` in that frame. -/
-def orientedSquare (t a b : ℝ) : UnitSquare where
-  center := (a * Real.cos t - b * Real.sin t, a * Real.sin t + b * Real.cos t)
-  cosine := Real.cos t
-  sine := Real.sin t
-  unit := by nlinarith [Real.sin_sq_add_cos_sq t]
-
-lemma orientedSquare_localX (t a b : ℝ) (p : Point) :
-    localX (orientedSquare t a b) p = p.1 * Real.cos t + p.2 * Real.sin t - a := by
-  dsimp [localX, orientedSquare]
-  linear_combination -a * (Real.sin_sq_add_cos_sq t)
-
-lemma orientedSquare_localY (t a b : ℝ) (p : Point) :
-    localY (orientedSquare t a b) p = -p.1 * Real.sin t + p.2 * Real.cos t - b := by
-  dsimp [localY, orientedSquare]
-  linear_combination -b * (Real.sin_sq_add_cos_sq t)
-
-@[simp] lemma orientedSquare_alpha (t a b : ℝ) :
-    alpha (orientedSquare t a b) (0, 0) = |a| := by
-  simp [alpha, orientedSquare_localX]
-
-@[simp] lemma orientedSquare_beta (t a b : ℝ) :
-    beta (orientedSquare t a b) (0, 0) = |b| := by
-  simp [beta, orientedSquare_localY]
-
-/-- In its own frame, the centre of `orientedSquare t a b` has first coordinate
-`a`. -/
-lemma oriented_frame_centerX (t a b : ℝ) :
-    frameX (orientedSquare t a b) (sub (orientedSquare t a b).center (0,0)) = a := by
-  dsimp [frameX,orientedSquare,sub]
-  linear_combination a*(Real.sin_sq_add_cos_sq t)
-
-lemma orientedSquare_eq_modelSquare (t a b : ℝ) :
-    orientedSquare t a b = modelSquare (0, 0) (t : Direction) (a, b) := by
-  unfold orientedSquare modelSquare
-  congr 1
-  simp only [pointInDirection, Real.Angle.cos_coe, Real.Angle.sin_coe]
-  ext <;> ring
-
 lemma signedB_abs {S : UnitSquare} {o : Point} (C : SquareChart S o) :
     |C.signedB| = C.b := by
   cases h : C.reversed <;>
@@ -492,11 +452,6 @@ lemma angularWidth_three_half_pi_add (t : ℝ) :
 lemma angularWidth_lower (t : ℝ) : (Real.cos t+Real.sin t)/2 ≤ angularWidth t := by
   dsimp [angularWidth]
   linarith [le_abs_self (Real.cos t),le_abs_self (Real.sin t)]
-
-/-- The first coordinate of the centre of `orientedSquare t a b`. -/
-def centerX (t a b : ℝ) : ℝ := a*Real.cos t-b*Real.sin t
-/-- The second coordinate of the centre of `orientedSquare t a b`. -/
-def centerY (t a b : ℝ) : ℝ := a*Real.sin t+b*Real.cos t
 
 /-- The projection of the centre `(cx, cy)` of C on the axis `(cos t, sin t)`. -/
 def centralNormal (t cx cy : ℝ) : ℝ := cx*Real.cos t+cy*Real.sin t

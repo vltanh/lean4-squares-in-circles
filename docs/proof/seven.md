@@ -637,8 +637,8 @@ and the same gap $g$; we write $\sigma'_k(g)$ for its support sums.
 [`Seven.cardinalAngle`](../../SquaresInCircles/Seven/PairModel.lean#L34),
 [`Seven.relativePhase`](../../SquaresInCircles/Seven/PairModel.lean#L129),
 [`Seven.pairSupport`](../../SquaresInCircles/Seven/PairModel.lean#L36),
-[`Seven.rotatedState`](../../SquaresInCircles/Seven/CanonicalPair.lean#L21),
-[`Seven.CanonicalDisjoint`](../../SquaresInCircles/Seven/CanonicalPair.lean#L38).*
+[`orientedSquare`](../../SquaresInCircles/Common/Congruence.lean#L87),
+[`Seven.CanonicalDisjoint`](../../SquaresInCircles/Seven/CanonicalPair.lean#L23).*
 
 ![A canonical pair: the axis-parallel square S and the square T turned by the angle d, the disk centre o at the origin, part of the unit circle, and the two markers as rays from o, g apart. The four normals n0, n1, n2, n3 are drawn at the edges of S. Below the squares, their shadows on the first axis, which leave a gap marked sigma2 less than 0; to the left, their shadows on the second axis, which overlap by sigma1](figures/seven-canonical-pair.svg)
 
@@ -743,7 +743,7 @@ $\square$
 [`Seven.centerDX`](../../SquaresInCircles/Seven/PairModel.lean#L132),
 [`Seven.centerDY`](../../SquaresInCircles/Seven/PairModel.lean#L135),
 [`Seven.reverse_reflected_phase`](../../SquaresInCircles/Seven/CanonicalPair.lean#L15),
-[`Seven.reverse_center_coordinates`](../../SquaresInCircles/Seven/CanonicalPair.lean#L61),
+[`Seven.reverse_center_coordinates`](../../SquaresInCircles/Seven/CanonicalPair.lean#L43),
 [`Seven.pairSupport_continuous`](../../SquaresInCircles/Seven/AllGaps.lean#L175).*
 
 The reversed pair is the pair seen from $T$: the isometry of the plane that
@@ -815,7 +815,7 @@ $\omega(n) \le \langle n, c_T - c_S\rangle = \langle n, \Delta\rangle$. This
 contradiction proves the lemma. $\square$
 
 *Lean:
-[`Seven.canonical_has_separator`](../../SquaresInCircles/Seven/CanonicalPair.lean#L80),
+[`Seven.canonical_has_separator`](../../SquaresInCircles/Seven/CanonicalPair.lean#L62),
 [`SAT.separating_axes`](../../SquaresInCircles/Common/SeparatingAxes.lean#L235),
 [`SAT.all_normals_strict`](../../SquaresInCircles/Common/SeparatingAxes.lean#L219),
 [`SAT.octagonSupport`](../../SquaresInCircles/Common/SeparatingAxes.lean#L17).*
@@ -1400,11 +1400,11 @@ contact: for the pair this is the claim, and for the reversed pair it is the
 claim by Lemma 9.16 (4). $\square$
 
 *Lean:
-[`Seven.marker_separation_closed`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L70),
-[`Seven.ordered_chart_contact`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L95),
+[`Seven.marker_separation_closed`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L72),
+[`Seven.ordered_chart_contact`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L97),
 [`Seven.charts_disjoint_canonical`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L33),
 [`Seven.chartMarker_formula`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L28),
-[`Seven.ordered_gap_not_below`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L57).*
+[`Seven.ordered_gap_not_below`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L59).*
 
 ## 9.6 The ring
 
@@ -1600,7 +1600,7 @@ squares in the closed disk of radius $R_7$ about $o$.
 *Lean:
 [`Seven.congruent_of_containing`](../../SquaresInCircles/Seven/Uniqueness.lean#L58),
 [`Seven.column_centers_separated`](../../SquaresInCircles/Seven/Uniqueness.lean#L46),
-[`congruent_of_slots`](../../SquaresInCircles/Common/Congruence.lean#L99).*
+[`congruent_of_slots`](../../SquaresInCircles/Common/Congruence.lean#L144).*
 
 ## 9.8 Proof of Theorem 9.1
 

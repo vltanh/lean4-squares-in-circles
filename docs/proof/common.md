@@ -753,7 +753,7 @@ $|y - \varepsilon_S b_S| < \frac12$, which is Definition 2.4. $\square$
 *Lean:
 [`SquareChart.cartesian`](../../SquaresInCircles/Common/Coordinates.lean#L41),
 [`SquareChart.unreversed`](../../SquaresInCircles/Common/Coordinates.lean#L34),
-[`chart_represents`](../../SquaresInCircles/Common/Congruence.lean#L148).*
+[`chart_represents`](../../SquaresInCircles/Common/Congruence.lean#L193).*
 
 ## 3.6 Arcs of an exterior square
 
@@ -1144,8 +1144,8 @@ open square (Definition 2.1), and $F_\phi$ is a homeomorphism (Lemma 2.5), so
 $\overline{S_{\sigma(k)}} = F_\phi(\overline{Q(c_k)})$. $\square$
 
 *Lean:
-[`congruent_of_slots`](../../SquaresInCircles/Common/Congruence.lean#L99),
-[`same_open_same_closed`](../../SquaresInCircles/Common/Congruence.lean#L58),
-[`Represents.closed`](../../SquaresInCircles/Common/Congruence.lean#L83). (The
+[`congruent_of_slots`](../../SquaresInCircles/Common/Congruence.lean#L144),
+[`same_open_same_closed`](../../SquaresInCircles/Common/Congruence.lean#L60),
+[`Represents.closed`](../../SquaresInCircles/Common/Congruence.lean#L128). (The
 formal proof reaches a boundary point along the segment from the centre instead
 of taking a closure.)*

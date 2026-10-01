@@ -43,7 +43,9 @@ lemma charts_disjoint_canonical {S T : UnitSquare} {o : Point}
       rw [hang]
       abel
     simpa only [d,relativePhase,Real.Angle.coe_add,Real.Angle.coe_sub] using he.symm
-  intro x y hp
+  rintro ⟨x,y⟩ hp
+  simp only [openSquare,orientedSquare_localX,orientedSquare_localY,Real.cos_zero,Real.sin_zero,
+    mul_one,mul_zero,add_zero,zero_add] at hp
   apply hd (pointInDirection o C.phase x y)
   constructor
   · apply (C.cartesian x y).mpr
@@ -52,7 +54,7 @@ lemma charts_disjoint_canonical {S T : UnitSquare} {o : Point}
   · rw [pointInDirection_transition o C.phase D.phase x y]
     apply (D.cartesian _ _).mpr
     rw [hphase,Real.Angle.cos_coe,Real.Angle.sin_coe,←chartSign_coordinate D]
-    exact hp.2
+    simpa only [d,neg_mul,mul_neg,mul_comm] using hp.2
 
 lemma ordered_gap_not_below {S T : UnitSquare} {o : Point}
     (C : SquareChart S o) (D : SquareChart T o)
