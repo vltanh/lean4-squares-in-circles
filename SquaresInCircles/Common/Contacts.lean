@@ -71,6 +71,15 @@ lemma self_represents (S : UnitSquare) (o : Point) (φ : Direction)
   right
   dsimp [relativeS]; ring
 
+/-- Two squares with the same centre and the same axes have the same interior. -/
+lemma same_axes_open {S T : UnitSquare} (hc : T.center=S.center) (h : SameAxes S T)
+    (p : Point) : openSquare T p ↔ openSquare S p := by
+  obtain ⟨hx,hy⟩ := relative_normal S T (sub p S.center)
+  change |frameX T (sub p T.center)| < 1/2 ∧ |frameY T (sub p T.center)| < 1/2 ↔
+    |frameX S (sub p S.center)| < 1/2 ∧ |frameY S (sub p S.center)| < 1/2
+  rw [hc,hx,hy]
+  exact cardinal_box (relative_unit S T) h
+
 lemma centers_distance_sq_ge_one (S T : UnitSquare)
     (hd : ∀ p, ¬ (openSquare S p ∧ openSquare T p)) :
     1 ≤ normSq (sub T.center S.center) := by

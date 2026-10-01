@@ -114,13 +114,13 @@ lemma pin_polar (i : Fin 5) :
 
 /-- The reflection in the diagonal exchanges the pins of E and N, and of W and
 S, and fixes the pin of D. -/
-lemma pin_diagonal (i : Fin 5) : Six.diagonalPoint (pin i) = pin (mirrorPin i) := by
+lemma pin_diagonal (i : Fin 5) : diagonalPoint (pin i) = pin (mirrorPin i) := by
   have hc := congrArg (fun z : Direction => z.cos) (mirror_pin_angle i)
   have hs := congrArg (fun z : Direction => z.sin) (mirror_pin_angle i)
   simp only [Real.Angle.cos_coe,Real.Angle.sin_coe,Real.cos_pi_div_two_sub,
     Real.sin_pi_div_two_sub] at hc hs
   rw [pin_polar,pin_polar]
-  apply Prod.ext <;> simp only [Six.diagonalPoint,hc,hs]
+  apply Prod.ext <;> simp only [diagonalPoint,hc,hs]
 
 end SquaresInCircles.Six.Normalization
 
@@ -178,16 +178,16 @@ lemma own_margin_diagonal_identity (t a b cx cy:ℝ) :
 
 lemma square_diagonal_membership (t a b:ℝ) (p:Point) :
     openSquare (orientedSquare (Real.pi/2-t) a (-b)) p ↔
-      openSquare (orientedSquare t a b) (Six.diagonalPoint p) := by
+      openSquare (orientedSquare t a b) (diagonalPoint p) := by
   have hx : localX (orientedSquare (Real.pi/2-t) a (-b)) p=
-      localX (orientedSquare t a b) (Six.diagonalPoint p) := by
+      localX (orientedSquare t a b) (diagonalPoint p) := by
     simp only [orientedSquare_localX,Real.cos_pi_div_two_sub,Real.sin_pi_div_two_sub,
-      Six.diagonalPoint]
+      diagonalPoint]
     ring
   have hy : localY (orientedSquare (Real.pi/2-t) a (-b)) p=
-      -localY (orientedSquare t a b) (Six.diagonalPoint p) := by
+      -localY (orientedSquare t a b) (diagonalPoint p) := by
     simp only [orientedSquare_localY,Real.cos_pi_div_two_sub,Real.sin_pi_div_two_sub,
-      Six.diagonalPoint]
+      diagonalPoint]
     ring
   simp only [openSquare,hx,hy,abs_neg]
 

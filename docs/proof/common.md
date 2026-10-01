@@ -294,7 +294,7 @@ $\frac12|c_T - c_S| < \frac12$ from each of them, so by Lemma 3.9 (1) it lies
 in $S^\circ$ and in $T^\circ$. $\square$
 
 *Lean:
-[`centers_distance_sq_ge_one`](../../SquaresInCircles/Common/Contacts.lean#L74).*
+[`centers_distance_sq_ge_one`](../../SquaresInCircles/Common/Contacts.lean#L83).*
 
 ### Definition 3.11 (width)
 
@@ -419,7 +419,7 @@ is, one of $\pm e^S_1, \pm e^S_2$, and the sides of $T$ are parallel to $d$ and
 to its perpendicular, hence to those of $S$. A square with the same axes whose
 centre is one unit away along an axis shares the corresponding edge. $\square$
 
-*Lean: [`unit_contact`](../../SquaresInCircles/Common/Contacts.lean#L94).*
+*Lean: [`unit_contact`](../../SquaresInCircles/Common/Contacts.lean#L103).*
 
 ## 3.4 Arcs and the angular budget
 

@@ -62,6 +62,7 @@ squares the pair theorem, the ring and the middle column over the files
 | `Optimum.lean` | `Optimum`, the statement every case proves; the lower bound, the least radius and the converse of uniqueness for all cases |
 | `Angles.lean` | `m` directions pairwise at least `g` apart have `mg ≤ 2π`, and form a regular polygon when `mg = 2π`; disjoint half circles are opposite; quarter turns of a frame |
 | `Contacts.lean` | Disjoint squares have centres at least 1 apart; at distance exactly 1 they are side-neighbours; squares with parallel sides in one frame |
+| `Frames.lean` | A square read in another frame (`pullSquare`); packings under a change of frame, a relabelling and the reflection in the diagonal; composing congruences; the frame of a square that contains the disk centre |
 
 ## The cases
 

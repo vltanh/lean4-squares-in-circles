@@ -10,9 +10,9 @@ disk of radius `radius` is normalized, possibly after a reflection in a diagonal
 one square contains the disk centre, the pins label the others, and the packing
 is read in a frame of the central square. The stress bound turns the exterior
 squares as in the model and gives the eight contacts, which fix every centre.
-Squares with the same centre whose frames differ by a quarter turn are the same
-square, so the normalized packing is the model with its labels permuted, and the
-diagonal symmetry of the model absorbs the reflection.
+Squares with the same centre and the same axes are the same square
+(`same_axes_open`), so the normalized packing is the model with its labels
+permuted, and the diagonal symmetry of the model absorbs the reflection.
 
 The file ends with `optimum`: the case as an `Optimum`, which also gives the
 lower bound.
@@ -21,26 +21,6 @@ lower bound.
 noncomputable section
 namespace SquaresInCircles.Six
 open Normalization Equality
-
-/-- Two unit squares with the same centre whose frames differ by a multiple of a
-quarter turn have the same interior. -/
-lemma open_of_quarter_turn {S T : UnitSquare} (hc : T.center=S.center)
-    (hf : (T.cosine=S.cosine ∧ T.sine=S.sine) ∨ (T.cosine=-S.sine ∧ T.sine=S.cosine) ∨
-      (T.cosine=-S.cosine ∧ T.sine=-S.sine) ∨ (T.cosine=S.sine ∧ T.sine=-S.cosine))
-    (p : Point) : openSquare T p ↔ openSquare S p := by
-  rcases hf with ⟨h1,h2⟩ | ⟨h1,h2⟩ | ⟨h1,h2⟩ | ⟨h1,h2⟩
-  · have ex : localX T p=localX S p := by simp only [localX,hc,h1,h2]
-    have ey : localY T p=localY S p := by simp only [localY,hc,h1,h2]
-    simp only [openSquare,ex,ey]
-  · have ex : localX T p=localY S p := by simp only [localX,localY,hc,h1,h2]
-    have ey : localY T p=-localX S p := by simp only [localX,localY,hc,h1,h2]; ring
-    simp only [openSquare,ex,ey,abs_neg,and_comm]
-  · have ex : localX T p=-localX S p := by simp only [localX,hc,h1,h2]; ring
-    have ey : localY T p=-localY S p := by simp only [localY,hc,h1,h2]; ring
-    simp only [openSquare,ex,ey,abs_neg]
-  · have ex : localX T p=-localY S p := by simp only [localX,localY,hc,h1,h2]; ring
-    have ey : localY T p=localX S p := by simp only [localX,localY,hc,h1,h2]; ring
-    simp only [openSquare,ex,ey,abs_neg,and_comm]
 
 /-- The order C, N, E, W, S, D of `model` against the order C, E, N, W, D, S of a
 normalized packing. -/
@@ -72,27 +52,26 @@ lemma model_congruent :
     · rfl
     · show openSquare (orientedSquare (Real.pi/2) (1+sStar) (-sStar)) p ↔
         openSquare (axisSquare (sStar,sStar+1)) p
-      exact open_of_quarter_turn (by apply Prod.ext <;> simp [orientedSquare,axisSquare]; ring)
-        (Or.inr (Or.inl (by simp [orientedSquare,axisSquare]))) p
+      exact same_axes_open (by apply Prod.ext <;> simp [orientedSquare,axisSquare]; ring)
+        (Or.inl (by simp [relativeC,orientedSquare,axisSquare])) p
     · show openSquare (orientedSquare 0 (1+sStar) sStar) p ↔
         openSquare (axisSquare (sStar+1,sStar)) p
-      exact open_of_quarter_turn (by apply Prod.ext <;> simp [orientedSquare,axisSquare]; ring)
-        (Or.inl (by simp [orientedSquare,axisSquare])) p
+      exact same_axes_open (by apply Prod.ext <;> simp [orientedSquare,axisSquare]; ring)
+        (Or.inr (by simp [relativeS,orientedSquare,axisSquare])) p
     · show openSquare (orientedSquare Real.pi (1-sStar) (-tStar)) p ↔
         openSquare (axisSquare (sStar-1,tStar)) p
-      exact open_of_quarter_turn (by apply Prod.ext <;> simp [orientedSquare,axisSquare])
-        (Or.inr (Or.inr (Or.inl (by simp [orientedSquare,axisSquare])))) p
+      exact same_axes_open (by apply Prod.ext <;> simp [orientedSquare,axisSquare])
+        (Or.inr (by simp [relativeS,orientedSquare,axisSquare])) p
     · show openSquare (orientedSquare (3*Real.pi/2) (1-sStar) tStar) p ↔
         openSquare (axisSquare (tStar,sStar-1)) p
-      exact open_of_quarter_turn
+      exact same_axes_open
         (by apply Prod.ext <;> simp [orientedSquare,axisSquare,south_cos,south_sin])
-        (Or.inr (Or.inr (Or.inr (by simp [orientedSquare,axisSquare,south_cos,south_sin])))) p
+        (Or.inl (by simp [relativeC,orientedSquare,axisSquare,south_cos])) p
     · show openSquare (orientedSquare (5*Real.pi/4) rhoStar 0) p ↔
         openSquare diagonalSquare p
-      exact open_of_quarter_turn
+      exact same_axes_open
         (by apply Prod.ext <;> simp [orientedSquare,diagonalSquare,cos_diagonal,sin_diagonal,hd])
-        (Or.inr (Or.inr (Or.inl (by simp [orientedSquare,diagonalSquare,cos_diagonal,
-          sin_diagonal])))) p
+        (Or.inr (by simp [relativeS,orientedSquare,diagonalSquare,cos_diagonal,sin_diagonal])) p
   exact congruent_of_origin_sets order ho (fun i => same_open_same_closed _ _ (ho i))
 
 /-- Every packing of six unit squares in a closed disk of radius `radius` is

@@ -145,7 +145,7 @@ theorem pinPacking_of_normalized {S : Fin 6 → UnitSquare} {c : Point} {R : ℝ
       t i-modelPhase i<(windowUpper i:ℝ) :=
     labelled_window i (hc (σ i)) (hav (σ i)) hx0 hy0 hcore.1 hcore.2
       (hsat (σ i) (t i) (ht i)) (liftNear_range _ _) (huniq i)
-  let τ := Six.extendExteriorPerm σ
+  let τ := extendExteriorPerm σ
   have hmodelopen (i : Fin 6) (p : Point) :
       openSquare (pinModel c t a b i) p ↔ openSquare (S (τ i)) p := by
     refine Fin.cases ?_ (fun j => ?_) i
@@ -155,7 +155,7 @@ theorem pinPacking_of_normalized {S : Fin 6 → UnitSquare} {c : Point} {R : ℝ
       closedSquare (pinModel c t a b i) p ↔ closedSquare (S (τ i)) p :=
     same_open_same_closed _ _ (hmodelopen i) p
   have hpack : Packing (pinModel c t a b) (0,0) R :=
-    Six.packing_of_same_sets (Six.packing_relabel hp τ) hmodelopen hmodelclosed
+    packing_of_same_sets (packing_relabel hp τ) hmodelopen hmodelclosed
   let P : PinPacking R := {
     center := c
     phase := t
@@ -172,7 +172,7 @@ theorem pinPacking_of_normalized {S : Fin 6 → UnitSquare} {c : Point} {R : ℝ
       allowed_axis_of_pin i (hc (σ i)) (hav (σ i))
         hx0 hy0 hcore.1 hcore.2 (hpin i) k hk }
   refine ⟨P,?_⟩
-  exact Six.congruent_of_origin_sets τ (fun i p => (hmodelopen i p).symm)
+  exact congruent_of_origin_sets τ (fun i p => (hmodelopen i p).symm)
     (fun i p => (hmodelclosed i p).symm)
 
 /-- Every packing in a disk of squared radius at most `Q0` is congruent to a
@@ -183,7 +183,7 @@ theorem pinPacking_of_ceiling {S : Fin 6 → UnitSquare} {o : Point} {R : ℝ}
   obtain ⟨F⟩ := normalize_frame_of_ceiling hp hQ
   obtain ⟨P,hP⟩ := pinPacking_of_normalized F.packing hQ F.central_eq F.central_inside
     F.cx_nonneg F.cy_nonneg
-  exact ⟨P,Six.congruent_trans F.congruent hP⟩
+  exact ⟨P,congruent_trans F.congruent hP⟩
 
 /-! ### The reflection in the diagonal -/
 
@@ -199,7 +199,7 @@ lemma mirroredPhase_class (i : Fin 5) (t : ℝ) :
 
 lemma mirrored_oriented_open (i : Fin 5) (t a b : ℝ) (p : Point) :
     openSquare (orientedSquare (mirroredPhase i t) a (-b)) p ↔
-      openSquare (orientedSquare t a b) (Six.diagonalPoint p) :=
+      openSquare (orientedSquare t a b) (diagonalPoint p) :=
   (square_phase_open (mirroredPhase_class i t) p).trans (square_diagonal_membership t a b p)
 
 lemma mirrored_window {R : ℝ} (P : PinPacking R) (i : Fin 5) :
@@ -212,27 +212,27 @@ lemma mirrored_window {R : ℝ} (P : PinPacking R) (i : Fin 5) :
 /-- The reflection of a pin packing in the diagonal. -/
 def PinPacking.mirror {R : ℝ} (P : PinPacking R) : PinPacking R := by
   classical
-  let c := Six.diagonalPoint P.center
+  let c := diagonalPoint P.center
   let t : Fin 5 → ℝ := fun i => mirroredPhase i (P.phase (mirrorPin i))
   let a : Fin 5 → ℝ := fun i => P.radial (mirrorPin i)
   let b : Fin 5 → ℝ := fun i => -P.transverse (mirrorPin i)
-  let τ := Six.extendExteriorPerm mirrorPin
+  let τ := extendExteriorPerm mirrorPin
   have hopen (i : Fin 6) (p : Point) :
       openSquare (pinModel c t a b i) p ↔
-        openSquare (Six.reflectDiagonalSquare (P.model (τ i))) p := by
+        openSquare (reflectDiagonalSquare (P.model (τ i))) p := by
     refine Fin.cases ?_ (fun j => ?_) i
-    · simp only [pinModel_zero,τ,Six.extendExteriorPerm_zero,PinPacking.model,
-        Six.reflectDiagonal_open]
-      exact (Six.diagonal_axis_open P.center p).symm
-    · rw [pinModel_succ,Six.reflectDiagonal_open]
+    · simp only [pinModel_zero,τ,extendExteriorPerm_zero,PinPacking.model,
+        reflectDiagonal_open]
+      exact (diagonal_axis_open P.center p).symm
+    · rw [pinModel_succ,reflectDiagonal_open]
       exact mirrored_oriented_open j _ _ _ p
   have hclosed (i : Fin 6) (p : Point) :
       closedSquare (pinModel c t a b i) p ↔
-        closedSquare (Six.reflectDiagonalSquare (P.model (τ i))) p :=
+        closedSquare (reflectDiagonalSquare (P.model (τ i))) p :=
     same_open_same_closed _ _ (hopen i) p
   have hp : Packing (pinModel c t a b) (0,0) R :=
-    Six.packing_of_same_sets
-      (Six.packing_relabel (Six.packing_reflectDiagonal P.packing) τ) hopen hclosed
+    packing_of_same_sets
+      (packing_relabel (packing_reflectDiagonal P.packing) τ) hopen hclosed
   have hbox : (0 ≤ c.1 ∧ c.1 ≤ c0) ∧ (0 ≤ c.2 ∧ c.2 ≤ c0) := ⟨P.box.2,P.box.1⟩
   have hcontained (i : Fin 5) : ContainedChart (a i) |b i| := by
     simpa [a,b,abs_neg] using P.contained (mirrorPin i)
@@ -258,44 +258,39 @@ def PinPacking.mirror {R : ℝ} (P : PinPacking R) : PinPacking R := by
 
 lemma PinPacking.mirror_open {R : ℝ} (P : PinPacking R) (i : Fin 6) (p : Point) :
     openSquare (P.mirror.model i) p ↔
-      openSquare (Six.reflectDiagonalSquare (P.model (Six.extendExteriorPerm mirrorPin i))) p := by
+      openSquare (reflectDiagonalSquare (P.model (extendExteriorPerm mirrorPin i))) p := by
   refine Fin.cases ?_ (fun j => ?_) i
-  · change openSquare (axisSquare (Six.diagonalPoint P.center)) p ↔
-      openSquare (Six.reflectDiagonalSquare (axisSquare P.center)) p
-    rw [Six.reflectDiagonal_open]
-    exact (Six.diagonal_axis_open P.center p).symm
+  · change openSquare (axisSquare (diagonalPoint P.center)) p ↔
+      openSquare (reflectDiagonalSquare (axisSquare P.center)) p
+    rw [reflectDiagonal_open]
+    exact (diagonal_axis_open P.center p).symm
   · change openSquare (orientedSquare (mirroredPhase j (P.phase (mirrorPin j)))
       (P.radial (mirrorPin j)) (-P.transverse (mirrorPin j))) p ↔
-      openSquare (Six.reflectDiagonalSquare
+      openSquare (reflectDiagonalSquare
         (orientedSquare (P.phase (mirrorPin j)) (P.radial (mirrorPin j))
           (P.transverse (mirrorPin j)))) p
-    rw [Six.reflectDiagonal_open]
+    rw [reflectDiagonal_open]
     exact mirrored_oriented_open j _ _ _ p
 
 /-- Reflecting the model of the reflected packing gives back the model, up to
 the relabelling. -/
 lemma PinPacking.congruent_reflected_mirror {R : ℝ} (P : PinPacking R) :
-    Congruent P.model (0,0) (fun i => Six.reflectDiagonalSquare (P.mirror.model i)) := by
-  let τ := Six.extendExteriorPerm mirrorPin
+    Congruent P.model (0,0) (fun i => reflectDiagonalSquare (P.mirror.model i)) := by
+  let τ := extendExteriorPerm mirrorPin
   have ho (i : Fin 6) (p : Point) :
       openSquare (P.model (τ i)) p ↔
-        openSquare (Six.reflectDiagonalSquare (P.mirror.model i)) p := by
-    rw [Six.reflectDiagonal_open,P.mirror_open,Six.reflectDiagonal_open,
-      Six.diagonalPoint_involutive]
-  exact Six.congruent_of_origin_sets τ ho
+        openSquare (reflectDiagonalSquare (P.mirror.model i)) p := by
+    rw [reflectDiagonal_open,P.mirror_open,reflectDiagonal_open,
+      diagonalPoint_involutive]
+  exact congruent_of_origin_sets τ ho
     (fun i => same_open_same_closed _ _ (ho i))
-
-/-- Congruent to `M`, or to the reflection of `M` in the diagonal. -/
-def CongruentOrDiagonal {n : ℕ} (S : Fin n → UnitSquare) (o : Point)
-    (M : Fin n → UnitSquare) : Prop :=
-  Congruent S o M ∨ Congruent S o (fun i => Six.reflectDiagonalSquare (M i))
 
 /-- A pin packing is congruent, possibly after the reflection, to one in which
 the phase of D is at most `5π/4`. -/
 theorem normalize_diagonal_half {R : ℝ} (P : PinPacking R) :
     ∃ Q : PinPacking R, Q.phase 3 ≤ 5*Real.pi/4 ∧ CongruentOrDiagonal P.model (0,0) Q.model := by
   by_cases h : P.phase 3 ≤ 5*Real.pi/4
-  · exact ⟨P,h,Or.inl (Six.congruent_refl P.model)⟩
+  · exact ⟨P,h,Or.inl (congruent_refl P.model)⟩
   · refine ⟨P.mirror,?_,Or.inr P.congruent_reflected_mirror⟩
     change mirroredPhase 3 (P.phase (mirrorPin 3)) ≤ 5*Real.pi/4
     norm_num [mirroredPhase,mirrorPin]
@@ -659,8 +654,8 @@ theorem normalize_of_ceiling {S : Fin 6 → UnitSquare} {o : Point} {R : ℝ}
   let N : NormalizedPacking R := ⟨Q,hD⟩
   refine ⟨N,?_⟩
   rcases hQ' with h | h
-  · exact Or.inl (Six.congruent_trans hP h)
-  · exact Or.inr (Six.congruent_trans hP h)
+  · exact Or.inl (congruent_trans hP h)
+  · exact Or.inr (congruent_trans hP h)
 
 /-- The same for a disk of squared radius at most `qStar`, which is below
 `Q0`. -/

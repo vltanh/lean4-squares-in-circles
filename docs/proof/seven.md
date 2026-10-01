@@ -1562,10 +1562,12 @@ forces $X = 0$. Finally the origin lies in $Q(0, Y)^\circ$, so $|Y| < \frac12$,
 and $S$ sits at $(0, z)$ with $z = Y$. $\square$
 
 *Lean:
-[`Seven.central_square_represents`](../../SquaresInCircles/Seven/Uniqueness/CentralSquare.lean#L113),
-[`Seven.central_strip`](../../SquaresInCircles/Seven/Uniqueness/CentralSquare.lean#L78),
-[`Seven.section_strip_rigidity`](../../SquaresInCircles/Seven/Uniqueness/CentralSquare.lean#L47),
-[`Seven.center_section_forces_cardinal`](../../SquaresInCircles/Seven/Uniqueness/CentralSquare.lean#L20).*
+[`Seven.central_square_represents`](../../SquaresInCircles/Seven/Uniqueness/CentralSquare.lean#L101),
+[`Seven.central_strip`](../../SquaresInCircles/Seven/Uniqueness/CentralSquare.lean#L79),
+[`Seven.section_strip_rigidity`](../../SquaresInCircles/Seven/Uniqueness/CentralSquare.lean#L46),
+[`Seven.center_section_forces_cardinal`](../../SquaresInCircles/Seven/Uniqueness/CentralSquare.lean#L18),
+[`pullSquare`](../../SquaresInCircles/Common/Frames.lean#L21),
+[`pullSquare_open`](../../SquaresInCircles/Common/Frames.lean#L40).*
 
 ![The four side squares of the column packing, the band between them where the absolute value of y is less than 1, and the strip where the absolute value of x is at most 1/2, shaded. A tilted square containing the disk centre o is drawn dashed, with its chord through the centre parallel to the first axis; the chord is longer than 1 and its ends lie inside the side squares. An axis-parallel square in the strip, containing o, is drawn solid](figures/seven-middle.svg)
 
