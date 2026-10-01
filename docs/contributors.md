@@ -93,3 +93,25 @@ Times are rough commit times, in US Central time (UTC−5).
   initial boundary ratio and the bounds on side labels. The other two, longer
   than the computations they replace, were left out. It then rewrote the
   affected parts of the textbook.
+
+## 1 October 2026
+
+* **Around 05:10 — six squares rewritten.** Claude Opus 5.5, in Claude Code,
+  rewrote the proof of six squares as one analytic argument in the style of
+  the other cases: 262 files and about 33,800 lines of Lean became 44 files
+  and about 19,600, and the proof no longer uses seven squares.
+* **From 07:45 — one style for all seven cases.** Claude Opus 5.5, in Claude
+  Code, went over the seven cases for consistency, simplicity and sharing.
+  From three squares on, every case has the same files: its construction,
+  what a square that avoids the disk centre holds, what becomes of the square
+  that contains it, and uniqueness, with the long middle parts of six and
+  seven squares in folders. The tools that six and seven squares had each
+  built for themselves are now one copy in `Common/`: one-variable calculus and
+  trigonometric bounds, squares in a rotated frame, the separating axes of two
+  turned squares, congruence and the diagonal reflection, the chart of a
+  square in a disk and the supports of a square. Tuned constants went: the
+  marker arc of seven squares has half-width 1/2 instead of 801/1600, five
+  squares use the exact cosine of π/5, three squares lose 1/12, 1/24 and
+  9/20, four squares the bound 5/6, and the octagon that kept the radial sweep
+  of five squares disjoint gave way to centres within distance 1 of the disk
+  centre.
