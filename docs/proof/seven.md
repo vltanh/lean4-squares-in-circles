@@ -203,10 +203,10 @@ r(a, u) = 4 - 3a - 2u .
 The *state* of an exterior square $S$ is $(a_S, b_S)$, and its *sign* is
 $\varepsilon_S$.
 
-*Lean: [`Seven.Admissible`](../../SquaresInCircles/Seven/Labels.lean#L22),
+*Lean: [`Seven.Admissible`](../../SquaresInCircles/Seven/Labels.lean#L24),
 [`ExteriorChart`](../../SquaresInCircles/Common/ExteriorCharts.lean#L17),
-[`Seven.remainder`](../../SquaresInCircles/Seven/Labels.lean#L19),
-[`Seven.targetSq`](../../SquaresInCircles/Seven/Labels.lean#L14).*
+[`Seven.remainder`](../../SquaresInCircles/Seven/Labels.lean#L21),
+[`Seven.targetSq`](../../SquaresInCircles/Seven/Labels.lean#L16).*
 
 ### Lemma 9.5 (admissible states)
 
@@ -224,10 +224,11 @@ $\varepsilon_S$.
    particular if $\overline S$ lies in a closed disk of radius $R_7$ about $o$,
    then the state of $S$ is admissible.
 
-*Proof.* (1) Expanding, $(a - 1)^2 - (a + \frac12)^2 = \frac34 - 3a$ and
-$(u - \frac12)^2 - (u + \frac12)^2 = -2u$, and
-$\frac34 + \frac{13}4 = 4$. For an admissible state the three terms on the
-right are nonnegative.
+*Proof.* (1) This is the identity of
+[Lemma 3.6](common.md#lemma-36-tangent-lines) at the point $(1, \frac12)$,
+where $\varphi(1, \frac12) = \frac{13}4$ and the linear terms are
+$3(a - 1) + 2(u - \frac12) = -r(a, u)$. For an admissible state the three terms
+on the right are nonnegative.
 
 (2) As $u \ge 0$, [Lemma 3.4](common.md#lemma-34-farthest-vertex) (2) gives
 $a \le \sqrt{\frac{13}4 - \frac14} - \frac12 = \sqrt3 - \frac12$; and
@@ -246,13 +247,15 @@ $\varphi(a_S, b_S) \le R_7^2 = \frac{13}4$ by
 [Lemma 3.4](common.md#lemma-34-farthest-vertex). $\square$
 
 *Lean:
-[`Seven.remainder_identity`](../../SquaresInCircles/Seven/Labels.lean#L24),
-[`Seven.Admissible.remainder_nonneg`](../../SquaresInCircles/Seven/Labels.lean#L43),
-[`Seven.Admissible.tangent`](../../SquaresInCircles/Seven/Labels.lean#L47),
-[`Seven.Admissible.a_le_sqrt_three_sub_half`](../../SquaresInCircles/Seven/Labels.lean#L52),
-[`Seven.Admissible.a_lt_five_fourths`](../../SquaresInCircles/Seven/Labels.lean#L55),
-[`Seven.Admissible.sum_lt`](../../SquaresInCircles/Seven/Labels.lean#L59),
+[`Seven.remainder_identity`](../../SquaresInCircles/Seven/Labels.lean#L26),
+[`Seven.Admissible.remainder_nonneg`](../../SquaresInCircles/Seven/Labels.lean#L49),
+[`Seven.Admissible.tangent`](../../SquaresInCircles/Seven/Labels.lean#L46),
+[`tangent_le`](../../SquaresInCircles/Common/Tangents.lean#L19),
+[`Seven.Admissible.a_le_sqrt_three_sub_half`](../../SquaresInCircles/Seven/Labels.lean#L53),
+[`Seven.Admissible.a_lt_five_fourths`](../../SquaresInCircles/Seven/Labels.lean#L56),
+[`Seven.Admissible.sum_lt`](../../SquaresInCircles/Seven/Labels.lean#L60),
 [`Seven.Admissible.u_lt`](../../SquaresInCircles/Seven/Labels.lean#L64),
+[`dot_gt`](../../SquaresInCircles/Common/DiskSupport.lean#L34),
 [`coordinate_le_of_phi`](../../SquaresInCircles/Common/Basic.lean#L166),
 [`Seven.sqrt_three_bounds`](../../SquaresInCircles/Seven/Support.lean#L14),
 [`SquareChart.exteriorChart`](../../SquaresInCircles/Common/ExteriorCharts.lean#L49).*
@@ -306,11 +309,11 @@ a_0 = \frac{9M + 11J}{202} - \frac12, \qquad u_0 = \frac{11M - 9J}{202} - \frac1
 and $s_0 = \frac54 u_0$ is its label. Numerically
 $(a_0, u_0) \approx (1.1198, 0.2914)$ and $s_0 \approx 0.3642$.
 
-*Lean: [`Seven.axial`](../../SquaresInCircles/Seven/Labels.lean#L16),
-[`Seven.side`](../../SquaresInCircles/Seven/Labels.lean#L17),
-[`Seven.label`](../../SquaresInCircles/Seven/Labels.lean#L18),
+*Lean: [`Seven.axial`](../../SquaresInCircles/Seven/Labels.lean#L18),
+[`Seven.side`](../../SquaresInCircles/Seven/Labels.lean#L19),
+[`Seven.label`](../../SquaresInCircles/Seven/Labels.lean#L20),
 [`Seven.ActiveLabel`](../../SquaresInCircles/Seven/Contacts.lean#L65),
-[`Seven.chartMarker`](../../SquaresInCircles/Seven/Labels.lean#L207),
+[`Seven.chartMarker`](../../SquaresInCircles/Seven/Labels.lean#L206),
 [`Seven.chartSign`](../../SquaresInCircles/Seven/MarkerSeparation.lean#L20),
 [`Seven.Boundary.a0`](../../SquaresInCircles/Seven/LabelBoundary.lean#L19),
 [`Seven.Boundary.u0`](../../SquaresInCircles/Seven/LabelBoundary.lean#L20),
@@ -368,8 +371,8 @@ $\ell(a, u) \le \mathrm{side}(a, u) \le \frac\pi6 - \frac54(a - 1)$; solve for
 $a$. $\square$
 
 *Lean:
-[`Seven.side_identity_transverse`](../../SquaresInCircles/Seven/Labels.lean#L29),
-[`Seven.side_identity_radial`](../../SquaresInCircles/Seven/Labels.lean#L34),
+[`Seven.side_identity_transverse`](../../SquaresInCircles/Seven/Labels.lean#L31),
+[`Seven.side_identity_radial`](../../SquaresInCircles/Seven/Labels.lean#L36),
 [`Seven.Admissible.side_pos`](../../SquaresInCircles/Seven/Labels.lean#L66),
 [`Seven.Admissible.label_nonneg`](../../SquaresInCircles/Seven/Labels.lean#L72),
 [`Seven.Admissible.label_le_axial`](../../SquaresInCircles/Seven/Labels.lean#L76),
@@ -482,12 +485,13 @@ a contradiction. $\square$
 
 *Lean:
 [`Seven.Admissible.projection_two_one`](../../SquaresInCircles/Seven/Labels.lean#L118),
-[`Seven.side_selected_label_gt`](../../SquaresInCircles/Seven/Labels.lean#L123),
-[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Labels.lean#L146),
-[`Seven.side_selected_a_lt`](../../SquaresInCircles/Seven/Labels.lean#L135),
-[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Labels.lean#L173),
-[`Seven.axial_tie_line`](../../SquaresInCircles/Seven/Labels.lean#L154),
-[`Seven.axial_sum_lt`](../../SquaresInCircles/Seven/Labels.lean#L163).*
+[`dot_gt`](../../SquaresInCircles/Common/DiskSupport.lean#L34),
+[`Seven.side_selected_label_gt`](../../SquaresInCircles/Seven/Labels.lean#L122),
+[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Labels.lean#L145),
+[`Seven.side_selected_a_lt`](../../SquaresInCircles/Seven/Labels.lean#L134),
+[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Labels.lean#L172),
+[`Seven.axial_tie_line`](../../SquaresInCircles/Seven/Labels.lean#L153),
+[`Seven.axial_sum_lt`](../../SquaresInCircles/Seven/Labels.lean#L162).*
 
 ### Lemma 9.9 (the marker arc)
 
@@ -933,7 +937,7 @@ states with the signs $s$ and $t$ form a contact.
 [`Seven.fixed_gap_zero`](../../SquaresInCircles/Seven/FixedGap.lean#L177),
 [`Seven.fixed_gap_property`](../../SquaresInCircles/Seven/FixedGap.lean#L166),
 [`Seven.PairProperty`](../../SquaresInCircles/Seven/Contacts.lean#L69),
-[`Seven.gap`](../../SquaresInCircles/Seven/Labels.lean#L15).*
+[`Seven.gap`](../../SquaresInCircles/Seven/Labels.lean#L17).*
 
 The proof is a case analysis over the four axes, the four pairs of signs and
 the kinds of the two labels, carried out in [Appendix B](appendix-b.md)

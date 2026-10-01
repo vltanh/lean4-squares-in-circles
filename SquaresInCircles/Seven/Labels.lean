@@ -1,5 +1,7 @@
+import SquaresInCircles.Common.Tangents
 import SquaresInCircles.Common.Trigonometry
 import SquaresInCircles.Common.ExteriorCharts
+import SquaresInCircles.Common.DiskSupport
 
 /-!
 # States, labels and markers
@@ -40,14 +42,13 @@ namespace Admissible
 variable {a u : ℝ} (h : Admissible a u)
 include h
 
-lemma remainder_nonneg : 0 ≤ remainder a u := by
-  rw [remainder_identity]
-  linarith [sq_nonneg (a-1), sq_nonneg (u-1/2), h.phi_le]
-
+/-- The tangent half-plane of the circle `φ = 13/4` at the side state `(1, 1/2)`. -/
 lemma tangent : 3*a + 2*u ≤ 4 := by
-  have hw := h.remainder_nonneg
-  dsimp [remainder] at hw
-  linarith
+  linarith [tangent_le (u := 1) (v := 1/2) h.phi_le (by norm_num [phi,targetSq])]
+
+lemma remainder_nonneg : 0 ≤ remainder a u := by
+  unfold remainder
+  linarith [h.tangent]
 
 lemma a_le_sqrt_three_sub_half : a ≤ Real.sqrt 3 - 1/2 :=
   (coordinate_le_of_phi h.u_nonneg h.phi_le).trans_eq (by norm_num [targetSq])
@@ -57,9 +58,8 @@ lemma a_lt_five_fourths : a < 5/4 := by
     Real.sqrt_nonneg 3]
 
 lemma sum_lt : a+u < 31/20 := by
-  have hp := h.phi_le
-  dsimp [phi, targetSq] at hp
-  nlinarith [h.u_nonneg, h.half_le, sq_nonneg (a-u)]
+  linarith [dot_gt (p := -1) (r := -1) (c := 51/20) h.phi_le (by norm_num)
+    (by norm_num [targetSq])]
 
 lemma u_lt : u < 31/40 := by linarith [h.sum_lt, h.u_le]
 
@@ -116,9 +116,8 @@ end Admissible
 
 /-- Projecting the state disk onto the direction `(2, 1)`: `2a + u < 38/15`. -/
 lemma Admissible.projection_two_one {a u : ℝ} (h : Admissible a u) : 2*a+u < 38/15 := by
-  have hp := h.phi_le
-  dsimp [phi,targetSq] at hp
-  nlinarith [sq_nonneg (2*(u+1/2)-(a+1/2)),sq_nonneg (2*a+u-38/15)]
+  linarith [dot_gt (p := -2) (r := -1) (c := 121/30) h.phi_le (by norm_num)
+    (by norm_num [targetSq])]
 
 lemma side_selected_label_gt {a u : ℝ} (h : Admissible a u)
     (hsel : label a u = side a u) : (9 : ℝ)/25 < label a u := by

@@ -12,7 +12,7 @@ for its construction and Corollary 2.10 to conclude.
 | section | Ch. 4 | Ch. 5 | Ch. 6 | Ch. 7 | Ch. 8 | Ch. 9 |
 | --- | :-: | :-: | :-: | :-: | :-: | :-: |
 | [§3.1](#31-the-disk-centre-seen-from-a-square) the disk centre seen from a square | 3.4 | 3.4 | 3.4 | 3.4 | 3.4 | 3.4 |
-| [§3.2](#32-contact-polygons) contact polygons | | | 3.6 | 3.6 | 3.6 | |
+| [§3.2](#32-contact-polygons) contact polygons | | | 3.6 | 3.6 | 3.6 | 3.6 |
 | [§3.3](#33-two-disjoint-squares) two disjoint squares | | 3.9, 3.10 | | 3.12 | 3.8 to 3.13 | 3.12 |
 | [§3.4](#34-arcs-and-the-angular-budget) arcs and the angular budget | | 3.17 | 3.16 to 3.18 | 3.16, 3.17, 3.19 | 3.16 | 3.16, 3.19 |
 | [§3.5](#35-charts) charts | 3.21, 3.22 | 3.21, 3.22 | 3.21, 3.22 | 3.21, 3.22 | 3.21 | 3.21, 3.22 |
