@@ -43,7 +43,7 @@ two.
 3. The packings of seven unit squares in a closed disk of radius $R_7$ are
    exactly the configurations congruent to a column packing.
 
-![The column packing with heights -1, 0, 1 in its dashed circle of radius root 13 over 2: a grey middle square around the disk centre o, one square above and one below it, and two squares on either side; the unit circle about o is divided into six coloured arcs of 60 degrees, one in each square other than the middle one](figures/10-seven/seven.svg)
+![The column packing with heights -1, 0, 1 in its dashed circle of radius root 13 over 2: a grey middle square around the disk centre o, one square above and one below it, and two squares on either side; the unit circle Gamma 1 about o is divided into six coloured arcs of 60 degrees, one in each square other than the middle one](figures/10-seven/seven.svg)
 
 *Figure 10.1.* The column packing with heights $(-1, 0, 1)$ in its circle of
 radius $R_7$ (dashed). The unit circle $\Gamma_1$ about the disk centre $o$
@@ -120,13 +120,13 @@ Let $y_1, y_2, y_3$ be heights as in Theorem 10.1.
 2. The four *slacks*
 
    ```math
-   \eta_0 = y_1 + \sqrt3 - \tfrac12, \qquad \eta_1 = y_2 - y_1 - 1, \qquad \eta_2 = y_3 - y_2 - 1, \qquad \eta_3 = \sqrt3 - \tfrac12 - y_3 ,
+   \zeta_0 = y_1 + \sqrt3 - \tfrac12, \qquad \zeta_1 = y_2 - y_1 - 1, \qquad \zeta_2 = y_3 - y_2 - 1, \qquad \zeta_3 = \sqrt3 - \tfrac12 - y_3 ,
    ```
 
    the room below, between and above the squares of the middle column, are
-   nonnegative with $\eta_0 + \eta_1 + \eta_2 + \eta_3 = 2\sqrt3 - 3$.
-   Conversely, for all nonnegative $\eta_0, \dots, \eta_3$ with this sum there
-   is exactly one choice of heights with these slacks.
+   nonnegative with $\zeta_0 + \zeta_1 + \zeta_2 + \zeta_3 = 2\sqrt3 - 3$.
+   Conversely, for all nonnegative $\zeta_0, \dots, \zeta_3$ with this sum
+   there is exactly one choice of heights with these slacks.
 
 *Proof.* (1) We apply
 [Lemma 2.8](02-preliminaries.md#lemma-28-axis-parallel-squares) (3). Any two of
@@ -142,10 +142,10 @@ $-(\sqrt3 - \frac12) \le y_1 \le y_2 \le y_3 \le \sqrt3 - \frac12$.
 
 (2) The slacks are nonnegative by the four conditions on the heights, and
 their sum telescopes to $2(\sqrt3 - \frac12) - 2 = 2\sqrt3 - 3$. Conversely the
-slacks determine the heights, $y_1 = -(\sqrt3 - \frac12) + \eta_0$,
-$y_2 = y_1 + 1 + \eta_1$, $y_3 = y_2 + 1 + \eta_2$, and these heights satisfy
+slacks determine the heights, $y_1 = -(\sqrt3 - \frac12) + \zeta_0$,
+$y_2 = y_1 + 1 + \zeta_1$, $y_3 = y_2 + 1 + \zeta_2$, and these heights satisfy
 the four conditions, the last one because
-$y_3 = \sqrt3 - \frac12 - \eta_3$ when the slacks add up to $2\sqrt3 - 3$.
+$y_3 = \sqrt3 - \frac12 - \zeta_3$ when the slacks add up to $2\sqrt3 - 3$.
 $\square$
 
 *Lean:
@@ -169,8 +169,7 @@ room in all, shared in any way among its four slacks.
 
 ## 10.2 States, labels and markers
 
-The proof of the following proposition occupies §10.2 to §10.7; it is completed
-at the end of §10.7.
+The proof of the following proposition occupies §10.2 to §10.7.
 
 ### Proposition 10.3 (uniqueness)
 
@@ -182,7 +181,8 @@ congruent to a column packing.
 Throughout, the disk centre $o$ is fixed. For every exterior square $S$
 ([Definition 3.2](03-tools.md#definition-32-containing-and-exterior-squares)) we
 fix a chart $(\theta_S, \varepsilon_S)$
-(([Definition 3.20](03-tools.md#definition-320-chart) and [Lemma 3.21](03-tools.md#lemma-321-charts))): in it, $S$ is the axis-parallel unit
+([Definition 3.20](03-tools.md#definition-320-chart) and
+[Lemma 3.21](03-tools.md#lemma-321-charts)): in it, $S$ is the axis-parallel unit
 square centred at $(a_S, b_S)$, with $a_S \ge \frac12$ and
 $0 \le b_S \le a_S$, and by
 [Lemma 3.22](03-tools.md#lemma-322-cartesian-form-of-a-chart) $S$ sits at
@@ -200,8 +200,8 @@ $\varphi(a, u) \le \frac{13}4$. The *remainder* of $(a, u)$ is
 r(a, u) = 4 - 3a - 2u .
 ```
 
-The *state* of an exterior square $S$ is $(a_S, b_S)$, and its *sign* is
-$\varepsilon_S$.
+The *state* of an exterior square $S$ is $(a_S, b_S)$, and its *sign* is its
+orientation $\varepsilon_S$.
 
 *Lean: [`Seven.Admissible`](../../SquaresInCircles/Seven/Exterior.lean#L33),
 [`ExteriorChart`](../../SquaresInCircles/Common/ExteriorCharts.lean#L17),
@@ -261,7 +261,8 @@ $\varphi(a_S, b_S) \le R_7^2 = \frac{13}4$ by
 [`SquareChart.exteriorChart`](../../SquaresInCircles/Common/ExteriorCharts.lean#L49).*
 
 The identity (1) says that $r \ge 0$ is the tangent half-plane
-(([Definition 3.5](03-tools.md#definition-35-tangent-half-plane) and [Lemma 3.6](03-tools.md#lemma-36-tangent-lines))) of the circle
+([Definition 3.5](03-tools.md#definition-35-tangent-half-plane) and
+[Lemma 3.6](03-tools.md#lemma-36-tangent-lines)) of the circle
 $\varphi = \frac{13}4$ at $(1, \frac12)$, and that among admissible states
 $r = 0$ only at that point (Figure 10.3). In a column packing the four side
 squares have the state $(1, \frac12)$, and the top and bottom squares have the
@@ -288,10 +289,10 @@ For real $a$ and $u$ let
 ```
 
 The number $\ell(a, u)$ is the *label* of $(a, u)$. The label is *axial*,
-*side* or *capped* when the first, second or third term attains the minimum,
-and *active* when it is axial or side. A tie counts for every term that
-attains the minimum, so a label equal to $\frac\pi4$ can be both capped and
-active. The *marker* of an exterior square $S$ is the direction
+*side* or *capped* when the first, second or third term attains the minimum
+(Figure 10.4), and *active* when it is axial or side. A tie counts for every
+term that attains the minimum, so a label equal to $\frac\pi4$ can be both
+capped and active. The *marker* of an exterior square $S$ is the direction
 
 ```math
 \mu_S = \theta_S + \varepsilon_S\,\ell(a_S, b_S) .
@@ -320,7 +321,7 @@ $(a_0, u_0) \approx (1.1198, 0.2914)$ and $s_0 \approx 0.3642$.
 [`Seven.Boundary.s0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L21).*
 
 The label is an angle measured in the chart from the phase $\theta_S$ towards
-the centre of $S$ (Figure 10.5). In the column packing of Figure 10.1 the side
+the centre of $S$ (Figure 10.6). In the column packing of Figure 10.1 the side
 squares have the label $\mathrm{side}(1, \frac12) = \frac\pi6$ and the top and
 bottom squares the label $\mathrm{axial}(0) = 0$; for instance $Q(1, -\frac12)$
 has the chart $(0, -1)$ and the marker $-\frac\pi6$, and the top square has a
@@ -489,6 +490,23 @@ $\square$
 [`Seven.axial_tie_line`](../../SquaresInCircles/Seven/Exterior.lean#L162),
 [`Seven.axial_sum_lt`](../../SquaresInCircles/Seven/Exterior.lean#L172).*
 
+The side term $\ell = \mathrm{side}(a, u)$ and the remainder $r = r(a, u)$ are
+affine coordinates of the $(a, u)$-plane. In them part (1) says that the states
+with a side label lie right of $\ell = \frac9{25}$ and above the parabola
+$r = \frac95(\ell - \frac\pi6)^2$ (Figure 10.5).
+
+![The plane of the side label l and the remainder r near r = 0, l from about 0.33 to 0.83. The states with a side label form an orange region bounded below by a blue curve, the image of the circle phi = 13/4, which touches r = 0 at l = pi/6; on the left the region ends at the transition state, just right of a dashed vertical line at 9/25, and on the right at the vertical l = pi/4, near the corner u = a of the circle. A dashed purple parabola 9/5 (l - pi/6) squared touches r = 0 at the same point and runs just below the blue curve on both sides](figures/10-seven/quadratic.svg)
+
+*Figure 10.5.* Lemma 10.8 (1) in the coordinates
+$(\ell, r) = (\mathrm{side}(a, u), r(a, u))$, which are affine in $(a, u)$,
+for $0 \le r \le 0.17$. The states with a side label (orange) are bounded below
+by the image of the circle $\varphi = \frac{13}4$ (blue), which rests on
+$r = 0$ at the side state $(1, \frac12)$, where $\ell = \frac\pi6$. They lie
+right of $\frac9{25}$, which the transition state $(a_0, u_0)$ just clears,
+and above the parabola $\frac95(\ell - \frac\pi6)^2$ (dashed), which touches
+them at the side state and comes close again at the corner $u = a$ of the
+circle.
+
 ### Lemma 10.9 (the marker arc)
 
 Let $(a, u)$ be an admissible state and $t$ a real number with
@@ -505,21 +523,21 @@ The proof is given in [Appendix F](appendix-f.md).
 
 *Lean: [`Seven.marker_arc`](../../SquaresInCircles/Seven/Exterior.lean#L486).*
 
-In a chart of an exterior square with an admissible state, the lemma says that
-the closed square contains the arc of the unit circle with half-width
-$\frac12$ (about $28.6°$) about the direction of the label, that is,
-about the marker (Figure 10.5). In the column packing of Figure 10.1 each
-exterior square contains the arc of half-width exactly $\frac\pi6$ about its
-marker.
+In the chart of an exterior square with an admissible state, the lemma says
+that the closed square contains the arc of the unit circle of half-width
+$\frac12$ (about $28.6°$) about the label, that is, about the marker
+(Figure 10.6). In the column packing of Figure 10.1 the arc in each exterior
+square has half-width exactly $\frac\pi6$.
 
-![Left: a tilted exterior square seen from the disk centre o, with the dashed phase direction, the marker direction a little further round, and a thick arc of the unit circle about the marker inside the square. Right: the same square in its chart, the axis-parallel square centred at the state (a, u), with the chart axis, the label as an angle from the axis, and the same thick arc of half-width 1/2 inside the square; the whole part of the unit circle inside the square is drawn thin](figures/10-seven/marker.svg)
+![Left: a tilted exterior square S seen from the disk centre o, with the dashed phase direction theta S, the marker direction mu S turned clockwise from it by the angle l, and a thick orange arc of the unit circle about the marker inside the square. Right: the same square in its chart, the axis-parallel square centred at the state (a, u), with the dashed chart axis t = 0, the marker at the angle l from it, and the same thick arc, whose half-width 1/2 is marked as an angle between the marker and one end of the arc; the whole part of the unit circle inside the square is drawn in thin blue](figures/10-seven/marker.svg)
 
-*Figure 10.5.* The marker. Left: an exterior square $S$ seen from $o$, with its
-phase $\theta_S$ (dashed) and its marker $\mu_S = \theta_S + \varepsilon_S\ell$,
-here with $\varepsilon_S = -1$. Right: the same square in its chart, where it
-is $Q(a, u)$ and the marker is at the angle $\ell(a, u)$. The thick arc of the
-unit circle, of half-width $\frac12$ about the marker, lies in the
-closed square (Lemma 10.9); the thin arc is the whole part of the circle in the
+*Figure 10.6.* The marker, for the state $(1, 0.45)$, whose label is side.
+Left: an exterior square $S$ seen from $o$, with its phase $\theta_S$
+(dashed) and its marker $\mu_S = \theta_S + \varepsilon_S\ell$, here with
+$\varepsilon_S = -1$. Right: the same square in its chart, where it is
+$Q(a, u)$ and the marker is at the angle $\ell = \ell(a, u)$. The thick arc of
+the unit circle, of half-width $\frac12$ about the marker, lies in the closed
+square (Lemma 10.9); the thin blue arc is the whole part of the circle in the
 square.
 
 ## 10.3 The canonical pair
@@ -551,9 +569,6 @@ h(a, b, z) = a\cos z + b\sin z + \tfrac12\left(|\cos z| + |\sin z|\right) .
 3. If $(a, |b|)$ is admissible, then $a^2 + b^2 \le (\sqrt3 - \frac12)^2$ and
    $h(a, b, z) \ge 1 - \sqrt3 > -\frac{37}{50}$ for every $z$. In particular
    this holds for $b = su$ when $(a, u)$ is admissible and $s = \pm1$.
-4. (Cauchy–Schwarz on the disk.) Let $X^2 + Y^2 \le \frac{13}4$, $c \ge 0$ and
-   $p, q$ real. If $\frac{13}4(p^2 + q^2) \le c^2$, then $pX + qY \ge -c$; if
-   $\frac{13}4(p^2 + q^2) < c^2$, then $pX + qY > -c$.
 
 *Proof.* (1) Write $p = (a + x, b + y)$ with $|x|, |y| \le \frac12$. Then
 $\langle p, u(z)\rangle = a\cos z + b\sin z + x\cos z + y\sin z$, and
@@ -573,11 +588,7 @@ $\rho = \sqrt{a^2 + b^2} \le \sqrt{\frac{13}4 - \frac14} - \frac12 = \sqrt3 - \f
 By Cauchy–Schwarz $a\cos z + b\sin z \ge -\rho$, and
 $(|\cos z| + |\sin z|)^2 = 1 + 2|\cos z\sin z| \ge 1$, so
 $h(a, b, z) \ge \frac12 - \rho \ge 1 - \sqrt3$, and
-$1 - \sqrt3 > 1 - 1.733 > -\frac{37}{50}$ by Lemma 10.5 (2).
-
-(4) By Cauchy–Schwarz,
-$(pX + qY)^2 \le (p^2 + q^2)(X^2 + Y^2) \le \frac{13}4(p^2 + q^2)$, which is at
-most, or less than, $c^2$. $\square$
+$1 - \sqrt3 > 1 - 1.733 > -\frac{37}{50}$ by Lemma 10.5 (2). $\square$
 
 *Lean: [`point_le_support`](../../SquaresInCircles/Common/DiskSupport.lean#L96),
 [`Seven.marker_arc_support`](../../SquaresInCircles/Seven/Pair/Frame.lean#L50),
@@ -585,17 +596,26 @@ most, or less than, $c^2$. $\square$
 [`Seven.support_lower`](../../SquaresInCircles/Seven/Exterior.lean#L228),
 [`support_ge`](../../SquaresInCircles/Common/DiskSupport.lean#L107),
 [`ExteriorChart.center_sq_le`](../../SquaresInCircles/Common/ExteriorCharts.lean#L41),
-[`dot_ge`](../../SquaresInCircles/Common/DiskSupport.lean#L30),
-[`dot_gt`](../../SquaresInCircles/Common/DiskSupport.lean#L34),
-[`dot_sq_le`](../../SquaresInCircles/Common/DiskSupport.lean#L24),
 [`cauchy_sq`](../../SquaresInCircles/Common/Basic.lean#L41).*
+
+Part (2) is how the marker arcs enter the proofs below: a point of the arc lies
+in the closed square, so its projection on any direction is at most the support
+(Figure 10.7).
+
+![An axis-parallel square Q(a, u) to the right of the disk centre o, with the orange marker arc of the unit circle inside it. A ray from o in a direction u(z), pointing up and slightly right, carries two marked points: the foot of the dashed supporting line of the square perpendicular to the ray, which passes through the upper right vertex, at the distance h(a, u, z); and, nearer to o, the foot of the perpendicular from a point u(x) of the marker arc, at the distance cos(z - x)](figures/10-seven/support.svg)
+
+*Figure 10.7.* Lemma 10.11 (1) and (2) for the state $(1, 0.45)$ and the
+direction $z = 75°$. The line perpendicular to $u(z)$ at the distance
+$h(a, u, z)$ from $o$ supports $\overline{Q(a, u)}$ at a vertex. The point
+$u(x)$ of the marker arc lies in the closed square, so its projection
+$\cos(z - x)$ on $u(z)$ is at most $h(a, u, z)$.
 
 ### Definition 10.12 (canonical pair and support sums)
 
 Let $a, u, A, v, g$ be real numbers and $s, t \in \lbrace 1, -1\rbrace$; in all
 our applications $(a, u)$ and $(A, v)$ are states. For an angle $d$, $R_d$ is
 the rotation of the plane about the origin by $d$,
-$R_d(x, y) = x\,u(d) + y\,u(d + \frac\pi2)$. The *turn* is
+$R_d(x, y) = x\,u(d) + y\,u(d + \frac\pi2)$. The *relative phase* is
 
 ```math
 d = g + s\,\ell(a, u) - t\,\ell(A, v) ,
@@ -614,11 +634,11 @@ with the origin as the disk centre, $S$ sits at $(a, su)$ in the frame $0$ and
 $T$ sits at $(A, tv)$ in the frame $d$, that is, $S = Q_0(a, su)$ and
 $T = Q_d(A, tv)$ in the notation of
 [Definition 9.9](09-six.md#definition-99-squares-in-a-frame). The number $g$ is
-the *gap*: the
-*markers* $s\,\ell(a, u)$ of $S$ and $d + t\,\ell(A, v) = g + s\,\ell(a, u)$ of
-$T$ are $g$ apart. For $k = 0, 1, 2, 3$ let $n_k = u(k\frac\pi2)$, the outer
-normal of the $k$-th edge of $S$. We call $n_0$, $n_1$, $n_2$, $n_3$ the
-*outward*, *forward*, *inward* and *backward* axes: $n_0$ points away from the
+the *gap*: the *markers* $s\,\ell(a, u)$ of $S$ and
+$d + t\,\ell(A, v) = g + s\,\ell(a, u)$ of $T$ are $g$ apart. For
+$k = 0, 1, 2, 3$ let $n_k = u(k\frac\pi2)$, the outer normal of the $k$-th edge
+of $S$ (Figure 10.8). We call $n_0$, $n_1$, $n_2$, $n_3$ the *outward*,
+*forward*, *inward* and *backward* axes: $n_0$ points away from the
 disk centre and $n_2$ towards it, $n_1$ points in the direction of increasing
 angle, towards the marker of $T$, and $n_3$ the other way. The *support sums*
 of the pair are
@@ -641,8 +661,9 @@ and the same gap $g$; we write $\sigma'_k(g)$ for its support sums.
 
 ![A canonical pair: the axis-parallel square S and the square T turned by the angle d, the disk centre o at the origin, part of the unit circle, and the two markers as rays from o, g apart. The four normals n0, n1, n2, n3 are drawn at the edges of S. Below the squares, their shadows on the first axis, which leave a gap marked sigma2 less than 0; to the left, their shadows on the second axis, which overlap by sigma1](figures/10-seven/canonical-pair.svg)
 
-*Figure 10.6.* A canonical pair, with the markers of $S$ and $T$ a gap $g$ apart
-and the four axes $n_0, \dots, n_3$ of $S$. Below and to the left are the
+*Figure 10.8.* The canonical pair of the states $(1.1, 0.2)$ and $(1, 0.4)$
+with the signs $1$ and $-1$ at the gap $g = 1.6$, with the markers of $S$ and
+$T$ and the four axes $n_0, \dots, n_3$ of $S$. Below and to the left are the
 shadows of $\overline S$ (blue) and $\overline T$ (green) on the two axes of
 $S$. By Lemma 10.13 (1) each support sum compares two ends of shadows: $\sigma_1$
 runs from the lower end of the shadow of $T$ to the upper end of the shadow of
@@ -652,8 +673,8 @@ line separates the squares.
 
 ### Lemma 10.13 (support sums)
 
-Let $(S, T)$ be the canonical pair of $a, u, A, v, g, s, t$, with turn $d$,
-and let
+Let $(S, T)$ be the canonical pair of $a, u, A, v, g, s, t$, with relative phase
+$d$, and let
 
 ```math
 \Delta = c_T - c_S = (\Delta_1, \Delta_2) = \left(A\cos d - tv\sin d - a,\ A\sin d + tv\cos d - su\right), \qquad
@@ -676,7 +697,7 @@ W = \tfrac12\left(1 + |\cos d| + |\sin d|\right) .
    \sigma_0(g) = W - \Delta_1, \qquad \sigma_1(g) = W - \Delta_2, \qquad \sigma_2(g) = W + \Delta_1, \qquad \sigma_3(g) = W + \Delta_2 .
    ```
 
-3. The reversed pair has the same turn $d$, and its support sums are
+3. The reversed pair has the same relative phase $d$, and its support sums are
 
    ```math
    \begin{aligned}
@@ -721,7 +742,7 @@ quarter turn exchanges $|\cos|$ and $|\sin|$, the second term is
 So $\sigma_k(g) = W - \langle \Delta, n_k\rangle$, which is (2) for
 $n_k = (1, 0), (0, 1), (-1, 0), (0, -1)$.
 
-(3) The turn of the reversed pair is
+(3) The relative phase of the reversed pair is
 $g + (-t)\ell(A, v) - (-s)\ell(a, u) = d$. Its squares are $S' = Q(A, -tv)$ and
 $T'$ with centre $R_d(a, -su)$, which is
 $(a\cos d + su\sin d,\ a\sin d - su\cos d)$. So by (2) its support sums are
@@ -748,8 +769,16 @@ $\square$
 
 The reversed pair is the pair seen from $T$: the isometry of the plane that
 turns by $-d$ about the origin and then reflects in the first axis maps $T$
-onto $S'$ and $S$ onto $T'$. So the axes of $S'$ are the edge directions of
-$T$, as (3) shows.
+onto $S'$ and $S$ onto $T'$ (Figure 10.9). So the axes of $S'$ are the edge
+directions of $T$, as (3) shows.
+
+![Two panels. Left: the canonical pair of Figure 10.8, the blue axis-parallel square S and the green square T turned by about 134 degrees, with their markers g apart. Right: its reversed pair, a green axis-parallel square S prime and a blue turned square T prime, again with markers g apart; the right panel is the left one turned and reflected, with S and T exchanged](figures/10-seven/reversed.svg)
+
+*Figure 10.9.* The reversed pair. Left, the canonical pair of Figure 10.8.
+Right, its reversed pair, the canonical pair of $(1, 0.4)$ and $(1.1, 0.2)$
+with the signs $1$ and $-1$: $S' = Q(1, 0.4)$ is $T$ turned by $-d$ and
+reflected in the first axis, and $T'$ is $S$ moved in the same way. The gap is
+still $g$.
 
 ### Lemma 10.14 (separating axes)
 
@@ -758,33 +787,36 @@ open squares of the canonical pair are disjoint, then $\sigma_k(g) \le 0$ for
 some $k$, or $\sigma'_k(g) \le 0$ for some $k$.
 
 *Proof.* This is the separating-axis theorem of Chapter 9 for the canonical
-pair $S = Q_0(a, su)$, $T = Q_d(A, tv)$ (Definition 10.12). With $W$ and
-$\Delta = c_T - c_S$ as in Lemma 10.13, $W = \tau(d)$ (Definition 9.9) is the
-threshold of [Lemma 9.11](09-six.md#lemma-911-separating-axes-of-two-squares) for
-the relative turn $d$. As $S$ and $T$ are disjoint, Lemma 9.11 gives
-$\langle p, \Delta\rangle \ge W$ for one of the eight vectors
-$p = \pm u(0), \pm u(\frac\pi2), \pm u(d), \pm u(d + \frac\pi2)$, the axes of
-$S$ and $T$. If $p$ is an axis of $S$, this says $\sigma_k(g) \le 0$ for some
-$k$, by Lemma 10.13 (2); if $p$ is an axis of $T$, it says $\sigma'_k(g) \le 0$
+pair $S = Q_0(a, su)$, $T = Q_d(A, tv)$ (Definition 10.12 and Figure 10.10).
+With $W$ and $\Delta = c_T - c_S$ as in Lemma 10.13, $W = \tau(d)$
+(Definition 9.9) is the threshold of
+[Lemma 9.11](09-six.md#lemma-911-separating-axes-of-two-squares) for the
+relative phase $d$. As $S$ and $T$ are disjoint, Lemma 9.11 gives
+$\langle n, \Delta\rangle \ge W$ for one of the eight vectors
+$n = \pm u(0), \pm u(\frac\pi2), \pm u(d), \pm u(d + \frac\pi2)$, the axes of
+$S$ and $T$. If $n$ is an axis of $S$, this says $\sigma_k(g) \le 0$ for some
+$k$, by Lemma 10.13 (2); if $n$ is an axis of $T$, it says $\sigma'_k(g) \le 0$
 for some $k$, by Lemma 10.13 (3). $\square$
 
 *Lean:
 [`Seven.canonical_has_separator`](../../SquaresInCircles/Seven/Pair/Frame.lean#L177),
 [`oriented_separating_axes`](../../SquaresInCircles/Common/SeparatingAxes.lean#L356).*
 
-![Left: the canonical pair of Figure 10.6 and the vector Delta from the centre of S to the centre of T. Right: the octagon K of differences of the two squares, centred at the origin, with its eight edge lines dashed and their outer normals plus and minus e1, e2, f1, f2; the point Delta lies outside the octagon, beyond the left edge, at the negative distance sigma2](figures/10-seven/octagon.svg)
+![Left: the canonical pair of Figure 10.8 and the vector Delta from the centre of S to the centre of T. Right: the octagon K of differences of the two squares, centred at the origin, with its eight edge lines dashed and their outer normals, the axes n0, n1, n2, n3 of S and plus and minus e1 T, e2 T of T; the point Delta lies outside the octagon, beyond the edge perpendicular to n2, at the negative distance sigma2](figures/10-seven/octagon.svg)
 
-*Figure 10.7.* The separating-axis argument of Lemma 10.14. Left, the pair of
-Figure 10.6 and $\Delta = c_T - c_S$. Right, the octagon $K$ of the differences
+*Figure 10.10.* The separating-axis argument of Lemma 10.14. Left, the pair of
+Figure 10.8 and $\Delta = c_T - c_S$. Right, the octagon $K$ of the differences
 $(p - c_S) - (q - c_T)$ with $p \in \overline S$ and $q \in \overline T$,
 whose support function is the sum $w_S + w_T$ of the widths of the squares
-([Definition 3.11](03-tools.md#definition-311-width)); its edges are
-perpendicular to the axes $\pm e_1, \pm e_2$ of $S$ and $\pm f_1, \pm f_2$ of
-$T$, at distance $W$ from the origin (dashed lines). By Lemma 10.13 the eight
-support sums are the distances from $\Delta$ to these eight lines, measured
-inwards; here $\Delta$ lies beyond the line perpendicular to $n_2 = -e_1$, and
-$\sigma_2 < 0$. The proof of Lemma 9.11 shows that if $\Delta$ lay strictly
-inside all eight lines, no line would separate the squares.
+([Definition 3.11](03-tools.md#definition-311-width)). Its edges are
+perpendicular to the axes $n_0, \dots, n_3$ of $S$ and
+$\pm e^T_1 = \pm u(d)$, $\pm e^T_2 = \pm u(d + \frac\pi2)$ of $T$, at the
+distance $W$ from the origin (dashed lines). By Lemma 10.13 the eight support
+sums are the distances from $\Delta$ to these eight lines, measured inwards;
+here $\Delta$ lies beyond the line perpendicular to $n_2$, and
+$\sigma_2 < 0$. The point $\Delta$ lies inside $K$ exactly when the closed
+squares meet, and strictly inside all eight lines exactly when the open
+squares meet.
 
 ## 10.4 Contacts and the critical gap
 
@@ -803,15 +835,16 @@ $(A, v)$ with signs $s$ and $t$, in this order, form a *contact* if
 [`Seven.OrderedContact`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L19).*
 
 Going counterclockwise round a column packing, these are the three ways in
-which an exterior square touches the next one (Figure 10.8): in (1) the lower
+which an exterior square touches the next one (Figure 10.11): in (1) the lower
 square of a side column touches the upper one, in (2) a side column touches the
 top or bottom square, and in (3) the top or bottom square touches the next side
 column. In the canonical pair at the gap $\frac\pi3$ a contact of kind (1) has
-turn $d = 0$, and contacts of kinds (2) and (3) have turn $d = \frac\pi2$.
+relative phase $d = 0$, and contacts of kinds (2) and (3) have relative phase
+$d = \frac\pi2$.
 
 ![Three canonical pairs at the gap pi/3, each with the unit circle about the disk centre o and the two markers as rays pi/3 apart. First: two side squares, one above the other, sharing a horizontal edge. Second: a side square and a quarter-turned axial square to its left, sharing part of a vertical edge. Third: an axial square and a side square above it, sharing part of a horizontal edge. The shared edges are drawn thick](figures/10-seven/contacts.svg)
 
-*Figure 10.8.* The three kinds of contact, as canonical pairs at the gap
+*Figure 10.11.* The three kinds of contact, as canonical pairs at the gap
 $\frac\pi3$. Left, kind (1): $S = Q(1, -\frac12)$ and $T = Q(1, \frac12)$, a
 side column; $\sigma_1(\frac\pi3) = 0$. Middle, kind (2): $S = Q(1, \frac12)$
 and the axial square $T$ at $(A, 0)$ in the frame $\frac\pi2$, that is
@@ -909,19 +942,33 @@ Appendix A, and Cauchy–Schwarz on the disk
 ([Lemma G.3](appendix-g.md#lemma-g3-cauchyschwarz-on-the-disk)).
 
 The zeros occur only at contacts for the following reason. Where the lower
-bound of a case can vanish, it is a sum of nonnegative terms, among them the
-remainder $r$ of one or both states and the absolute value of a turn between
-the labels, as in Lemma 10.16 (5), and a zero makes all of them vanish. By
-Lemma 10.16 (2), $r = 0$ forces the side state $(1, \frac12)$, whose label is
-$\frac\pi6$; the vanishing turn then fixes the other label, which is either
-$\frac\pi6$, for a second side state, or $0$, which forces transverse
-coordinate 0 and an axial state (Lemma 10.7 (2), Lemma 10.16 (3)). A zero at a
-capped label would pass to a vertex of the capped triangle, which would then be
-a state of a contact with a capped label, and by Lemma 10.16 (1) there is none.
-So $\sigma_k(\frac\pi3)$ vanishes only where two squares touch as in a column
-packing. In a contact of kind (2) or (3) the equality fixes the side state and
-puts the other square on the axis, $v = 0$, but leaves its first coordinate
-free, as the column packings require.
+bound of a case can vanish, it is a sum of nonnegative terms, as in
+Lemma 10.16 (5): the remainder $r$ of one or both states and an absolute value
+such as $|\ell(a, u) - t\,\ell(A, v) - \frac\pi6|$. A zero makes all of them
+vanish. By Lemma 10.16 (2), $r = 0$ forces the side state $(1, \frac12)$,
+whose label is $\frac\pi6$; the absolute value then fixes the other label at
+$\frac\pi6$, for a second side state, or at $0$, which forces an axial state
+(Lemma 10.7 (2) and Lemma 10.16 (3)). A zero at a capped label would pass to a
+vertex of the capped triangle, a state with a capped label, and by
+Lemma 10.16 (1) no contact has one. So $\sigma_k(\frac\pi3)$ vanishes only
+where two squares touch as in a column packing; in a contact of kind (2) or (3)
+the axial square keeps its first coordinate free, as the column packings
+require.
+
+With Lemma 10.14, Proposition 10.17 makes the gap $\frac\pi3$ rigid. If two
+admissible states with their signs do not form a contact, neither do the
+reversed states (Lemma 10.16 (4)), so all eight support sums of the pair and of
+the reversed pair are positive at the gap $\frac\pi3$, and by Lemma 10.14 the
+two squares overlap (Figure 10.12).
+
+![Three canonical pairs at the gap pi/3, each with the unit circle about o and the two markers pi/3 apart. Left: a square S below the first axis and a slightly tilted square T above it, overlapping in a thin wedge along the top edge of S. Middle: a side square S and a nearly upright square T to its upper left, overlapping in a small triangle at the top left corner of S. Right: a square S across the first axis and a slightly tilted square T above it, overlapping in a thin sliver at the top left corner of S. The overlaps are shaded red](figures/10-seven/overlap.svg)
+
+*Figure 10.12.* Three pairs at the gap $\frac\pi3$ that are not contacts, each
+a contact of Figure 10.11 with one state moved. Left, the states
+$(1, \frac12)$ and $(0.9, 0.55)$ with the signs $-1$ and $1$. Middle,
+$(1, \frac12)$ and $(1, 0.15)$ with the signs $1$ and $1$: the second state is
+off the axis. Right, $(1.1, 0.1)$ and $(1, \frac12)$ with the signs $1$ and
+$-1$: the first state is off the axis. In each the squares overlap (shaded).
 
 ## 10.5 Marker separation
 
@@ -938,8 +985,9 @@ position (Lemma 10.22); in each case the value is positive.
 Let $(a, u)$ and $(A, v)$ be admissible, $s, t \in \lbrace 1, -1\rbrace$ and
 $0 \le g < 1$. Then $\sigma_k(g) > 0$ for $k = 0, 1, 2, 3$.
 
-*Proof.* Let $(S, T)$ be the canonical pair, with turn $d$, and put
-$\lambda = s\,\ell(a, u)$, so that the markers are $\lambda$ and $\lambda + g$.
+*Proof.* Let $(S, T)$ be the canonical pair, with relative phase $d$, and put
+$\lambda = s\,\ell(a, u)$, so that the markers are $\lambda$ and $\lambda + g$
+(Figure 10.13).
 Let $m = \lambda + \frac g2$ be their midpoint and
 $\epsilon = \frac{1 - g}2 > 0$. For each
 $x \in \lbrace m - \epsilon, m, m + \epsilon\rbrace$,
@@ -964,7 +1012,7 @@ $\square$
 
 ![A canonical pair at a gap below 1, with the unit circle about o. The marker arc of S, of half-width 1/2 about its marker, is drawn in blue inside S; the marker arc of T, about a marker g further round, in green inside T. The two arcs overlap in a short arc around the midpoint direction m, which lies in both squares](figures/10-seven/small-gaps.svg)
 
-*Figure 10.9.* Small gaps. The marker arcs of $S$ (blue) and $T$ (green), of
+*Figure 10.13.* Small gaps. The marker arcs of $S$ (blue) and $T$ (green), of
 half-width $\frac12$, overlap around the midpoint $m$ of the markers
 when $g < 1$ (here $g = 0.8$). The common arc (orange) lies in both closed
 squares, and no line contains it, so no line perpendicular to an axis
@@ -985,15 +1033,15 @@ bounded and nonempty, so it has a least element $x$. Then
 $f(x) = \underline f \le f(y) \le 0 < f(\alpha)$, so $x \ne \alpha$. If
 $x = \beta$, then $\underline f = f(\beta) \ge 0 \ge f(y) \ge \underline f$, so
 $y \in E$ and $y < x$, against the choice of $x$. So $x \in (\alpha, \beta)$,
-and every $z \in [\alpha, x)$ lies outside $E$, so $f(z) > \underline f = f(x)$.
-$\square$
+and every $z \in [\alpha, x)$ lies outside $E$, so $f(z) > \underline f = f(x)$
+(Figure 10.14). $\square$
 
 *Lean:
 [`leftmost_nonpositive_minimum`](../../SquaresInCircles/Common/Analysis.lean#L190).*
 
 ![The graph of a continuous function on an interval from alpha to beta: positive at alpha, nonnegative at beta, dipping below zero with a flat bottom; the leftmost point of the flat bottom is marked x](figures/10-seven/leftmost.svg)
 
-*Figure 10.10.* A leftmost minimum. The function is positive at $\alpha$,
+*Figure 10.14.* A leftmost minimum. The function is positive at $\alpha$,
 nonnegative at $\beta$ and somewhere nonpositive; its minimum is attained on a
 whole stretch, and $x$ is the left end of that stretch: every point to the left
 of $x$ has a strictly larger value. Step 3 of the proof of Lemma 10.22 needs
@@ -1071,14 +1119,14 @@ $\square$
 ### Lemma 10.21 (parallel and quarter-turned pairs)
 
 Let $(a, u)$ and $(A, v)$ be admissible, $s, t \in \lbrace 1, -1\rbrace$, $g$
-real, and $d$ the turn of the canonical pair.
+real, and $d$ the relative phase of the canonical pair.
 
 1. If $0 < g < \frac\pi3$ and $d = 0$, then $\sigma_k(g) > 0$ for every $k$.
 2. If $g < \frac\pi3$ and $d = \frac\pi2$, then $\sigma_k(g) > 0$ for every
    $k$.
 
 *Proof.* We use Lemma 10.13 (2) and the bounds $\frac12 \le a, A < \frac54$ and
-$0 \le u, v < \frac{31}{40}$ of Lemma 10.5 (2).
+$0 \le u, v < \frac{31}{40}$ of Lemma 10.5 (2) (Figure 10.15).
 
 (1) Here $W = 1$ and $\Delta = (A - a, tv - su)$: the two squares are parallel,
 $T = Q(A, tv)$. Then $\sigma_0 = 1 + a - A$ and $\sigma_2 = 1 + A - a$ are
@@ -1103,12 +1151,12 @@ $d < \frac\pi3 + \frac\pi6 = \frac\pi2$, a contradiction. $\square$
 
 ![Two panels. Left: a parallel pair, S below the first axis and T above it, both axis-parallel, with the horizontal line between them that would separate them. Right: a quarter-turned pair, S and T to its upper left, with the vertical line that would separate them. In both panels the markers of S and T are drawn as rays from o](figures/10-seven/parallel.svg)
 
-*Figure 10.11.* The two degenerate turns. Left, $d = 0$: $S$ and $T$ are
-parallel, and a line $y = \text{const}$ can separate them only if they lie on
-opposite sides of the first axis with $u + v \ge 1$; then the labels add up to
-at least $\frac\pi3$ (Lemma 10.20 (1)), so the markers are at least $\frac\pi3$
-apart. Right, $d = \frac\pi2$: a separating line $x = \text{const}$ needs
-$a + tv \ge 1$ or $A - su \ge 1$, and then the labels differ by at most
+*Figure 10.15.* The two degenerate relative phases. Left, $d = 0$: $S$ and $T$
+are parallel, and a line $y = \text{const}$ can separate them only if they lie
+on opposite sides of the first axis with $u + v \ge 1$; then the labels add up
+to at least $\frac\pi3$ (Lemma 10.20 (1)), so the markers are at least
+$\frac\pi3$ apart. Right, $d = \frac\pi2$: a separating line $x = \text{const}$
+needs $a + tv \ge 1$ or $A - su \ge 1$, and then the labels differ by at most
 $\frac\pi6$ (Lemma 10.20 (2)), which forces $g \ge \frac\pi3$.
 
 ### Lemma 10.22 (smooth minima)
@@ -1116,15 +1164,16 @@ $\frac\pi6$ (Lemma 10.20 (2)), which forces $g \ge \frac\pi3$.
 Let $(a, u)$ and $(A, v)$ be admissible, $s, t \in \lbrace 1, -1\rbrace$ and
 $k \in \lbrace 0, 1, 2, 3\rbrace$. Let $1 \le g < \frac\pi3$ satisfy
 $\sigma_k(g) \le \sigma_k(y)$ for all $y \in [\frac12, \frac\pi3]$ and
-$\sigma_k(g) < \sigma_k(y)$ for all $y \in [\frac12, g)$, and suppose that the turn
-$d$ at the gap $g$ has $\cos d \ne 0$ and $\sin d \ne 0$. Then
+$\sigma_k(g) < \sigma_k(y)$ for all $y \in [\frac12, g)$, and suppose that the
+relative phase $d$ at the gap $g$ has $\cos d \ne 0$ and $\sin d \ne 0$. Then
 $\sigma_k(g) > 0$.
 
 *Idea of the proof.* Near $g$ the support of $T$ is a sinusoid. At a minimum
 that is leftmost it is stationary and negative, which happens only when the
 direction points from the vertex of $T$ nearest the disk centre towards the
-centre (Figure 10.12). Then the support sum is the support of $S$ minus the
-distance $\delta < \frac12$ of that vertex, and the support of $S$ is larger.
+centre (Figures 10.16 and 10.17). Then the support sum is the support of $S$
+minus the distance $\delta < \frac12$ of that vertex, and the support of $S$ is
+larger.
 
 *Proof.* Let $\lambda = \ell(a, u)$ and $\Lambda = \ell(A, v)$, both in
 $[0, \frac\pi4]$ by Lemma 10.7 (2), and let $c = h(a, su, k\frac\pi2)$, the
@@ -1146,8 +1195,9 @@ $g$ on which $\cos(Z - y)$ and $\sin(Z - y)$ keep these signs, and on $J$
 The point $(X, Y)$ is the vertex of $\overline{Q(A, tv)}$ that is extreme in
 the direction $u(z)$.
 
-*Step 2: Fermat's theorem.* The point $g$ is interior to $[\frac12, \frac\pi3]$ and a
-minimum of $\sigma_k$ there, so the derivative of (10.1) vanishes at $g$:
+*Step 2: Fermat's theorem.* The point $g$ is interior to
+$[\frac12, \frac\pi3]$ and a minimum of $\sigma_k$ there, so the derivative of
+(10.1) vanishes at $g$:
 
 ```math
 X\sin z - Y\cos z = 0 . \tag{10.2}
@@ -1163,7 +1213,19 @@ $g - e \ge \frac12$, (10.1), the addition formulas and (10.2) give
 
 so $\sigma_k(g - e) - \sigma_k(g) = H(\cos e - 1)$. The left side is positive,
 because every point of $[\frac12, g)$ has a larger value than $g$, and
-$\cos e - 1 \le 0$. Hence $H < 0$.
+$\cos e - 1 \le 0$. Hence $H < 0$: at $g$ the sinusoid (10.1) is at a trough
+(Figure 10.16).
+
+![The support of the square T in the direction u(z), for z from 0 to 2 pi, drawn in blue: four sinusoidal pieces with corners at 0, pi/2, pi, 3 pi/2 and 2 pi, highest near z = 0.7 and lowest between pi and 3 pi/2. Dashed behind it, the four sinusoids of the vertices of T, each extended over the whole range. The piece between pi and 3 pi/2, which belongs to the vertex nearest to o, is orange, and its trough, at z = pi + beta below the zero line at the depth minus delta, is marked by a dot](figures/10-seven/sinusoids.svg)
+
+*Figure 10.16.* Steps 1 to 3 for the state $(A, v) = (0.85, 0.68)$ and
+$t = 1$. The support $h(A, tv, z)$ of $T$ in the direction $u(z)$ (blue) is
+the largest of the four sinusoids $\langle p, u(z)\rangle$ of its vertices $p$
+(dashed), with corners at the multiples of $\frac\pi2$. As
+$\sigma_k(y) = c + h(A, tv, Z - y)$, a smooth minimum of $\sigma_k$ is a
+smooth minimum of $h$, the trough of one sinusoid. Only the sinusoid of the
+vertex nearest to $o$ (orange) has its trough on the graph of $h$: at
+$z = \pi + \beta$, of depth $-\delta$.
 
 *Step 4: the nearest vertex of $T$.* By (10.2),
 $X = \cos z\,(X\cos z + Y\sin z) + \sin z\,(X\sin z - Y\cos z) = H\cos z$, and
@@ -1207,6 +1269,16 @@ so $(\delta - \frac12)(\delta + \frac52) < 0$. Finally $\Lambda > \frac\pi6$,
 because $v > \frac12$: $\mathrm{axial}(v) > \frac58 > \frac\pi6$, by Lemma 10.7
 (1) $\mathrm{side}(A, v) = \frac\pi6 + \frac56(v - \frac12) + \frac14 r(A, v)$
 exceeds $\frac\pi6$, and $\frac\pi4 > \frac\pi6$.
+
+![The square T in the frame d, the axis-parallel square centred at (A, tv), and the disk centre o at the origin outside it, with the first axis dashed. The vertex of T nearest to o is joined to o by an orange segment of length delta, at the angle beta from the axis; the dashed line through that vertex perpendicular to the segment has T on its far side, and the direction u(z) is drawn at o, pointing away from the vertex](figures/10-seven/nearest-vertex.svg)
+
+*Figure 10.17.* Step 4 for the state $(A, v) = (0.85, 0.68)$ and $t = 1$,
+drawn in the frame $d$, where $T$ is $Q(A, tv)$. At a smooth leftmost minimum
+the direction $u(z)$ points from the vertex of $T$ nearest to $o$, at the
+distance $\delta$ and the angle $\beta$, through $o$, so that
+$z \equiv \pi + t\beta$ (10.3). The line through that vertex perpendicular to
+$u(z)$ supports $T$, and the support of $T$ in the direction $u(z)$ is
+$-\delta$.
 
 *Step 5: the support of $S$ exceeds $\delta$.* It remains to show $c > \delta$.
 By (10.3), since $z = k\frac\pi2 + \pi - g - s\lambda + t\Lambda$, the numbers
@@ -1268,14 +1340,6 @@ So $c > \delta$ in every case, and $\sigma_k(g) = c - \delta > 0$. $\square$
 [`Seven.corner_label_gt`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L44),
 [`Seven.cardinal_shift_ne`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L32).*
 
-![The square T in its own chart, the axis-parallel square centred at (A, tv), and the disk centre o at the origin outside it. The vertex of T nearest to o is joined to o by a segment of length delta; the line through that vertex perpendicular to the segment has T on its far side, and the direction u(z) is drawn from the vertex towards o](figures/10-seven/nearest-vertex.svg)
-
-*Figure 10.12.* Step 4 of the proof of Lemma 10.22, drawn in the frame of $T$.
-At a smooth leftmost minimum the direction $u(z)$ points from the vertex of
-$T$ nearest to the disk centre towards the centre; the line through that
-vertex perpendicular to $u(z)$ supports $T$, and the support of $T$ in the
-direction $u(z)$ is $-\delta$, minus the distance of the vertex.
-
 ### Theorem 10.23 (all gaps)
 
 Let $(a, u)$ and $(A, v)$ be admissible, $s, t \in \lbrace 1, -1\rbrace$ and
@@ -1283,13 +1347,13 @@ $0 \le g < \frac\pi3$. Then $\sigma_k(g) > 0$ for $k = 0, 1, 2, 3$.
 
 *Proof.* Fix the data and $k$, and let $f(y) = \sigma_k(y)$, a continuous
 function (Lemma 10.13 (4)). For $g < 1$ this is Lemma 10.18. Let
-$1 \le g < \frac\pi3$ and suppose $f(g) \le 0$. Now $f(\frac12) > 0$ by
-Lemma 10.18 and $f(\frac\pi3) \ge 0$ by Proposition 10.17, so Lemma 10.19 on
+$1 \le g < \frac\pi3$ and suppose $f(g) \le 0$. Now $f(\frac12) > 0$ by Lemma
+10.18 and $f(\frac\pi3) \ge 0$ by Proposition 10.17, so Lemma 10.19 on
 $[\frac12, \frac\pi3]$ gives $x \in (\frac12, \frac\pi3)$ with $f(x) \le 0$,
-$f(x) \le f(y)$ for all $y \in [\frac12, \frac\pi3]$ and $f(x) < f(y)$ for
-all $y \in [\frac12, x)$; and $x \ge 1$, since $f(x) \le 0$ and Lemma 10.18. Let
-$d = x + s\,\ell(a, u) - t\,\ell(A, v)$ be the turn at the gap $x$. As the
-labels lie in $[0, \frac\pi4]$,
+$f(x) \le f(y)$ for all $y \in [\frac12, \frac\pi3]$ and $f(x) < f(y)$ for all
+$y \in [\frac12, x)$; and $x \ge 1$, since $f(x) \le 0$ and Lemma 10.18. Let
+$d = x + s\,\ell(a, u) - t\,\ell(A, v)$ be the relative phase at the gap $x$. As
+the labels lie in $[0, \frac\pi4]$,
 
 ```math
 -\tfrac\pi2 < 1 - \tfrac\pi2 \le d < \tfrac\pi3 + \tfrac\pi2 < \pi .
@@ -1303,9 +1367,12 @@ gives $f(x) > 0$. Each contradicts $f(x) \le 0$. $\square$
 *Lean:
 [`Seven.all_gap_pos_below`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L436).*
 
+Figure 10.18 shows the four support sums of the pair of a side column as
+functions of the gap.
+
 ![The four support sums of the canonical pair of two side states with signs -1 and 1, as functions of the gap g from 0 to pi/2: all four are positive for g below pi/3; the forward support sum sigma1 decreases to 0 exactly at g = pi/3 and is negative beyond](figures/10-seven/gap-profile.svg)
 
-*Figure 10.13.* The four support sums of the pair of a side column (states
+*Figure 10.18.* The four support sums of the pair of a side column (states
 $(1, \frac12)$ with signs $-1$ and $1$) as functions of the gap
 $g \in [0, \frac\pi2]$. All four are positive below $\frac\pi3$ (Theorem 10.23).
 For $g \le \frac\pi3$, $\sigma_1(g) = \frac32\sin(\frac\pi3 - g)$, which
@@ -1326,9 +1393,9 @@ $d(\mu_S, \mu_T) = |g|$.
 *Step 1: the canonical pair.* Suppose $0 \le g \le \frac\pi3$. Put
 $(a, u) = (a_S, b_S)$, $s = \varepsilon_S$, $(A, v) = (a_T, b_T)$,
 $t = \varepsilon_T$, and let $d = g + s\,\ell(a, u) - t\,\ell(A, v)$ be the
-turn of their canonical pair $(S_0, T_0)$ with gap $g$. Since
-$\mu_T - \mu_S \equiv g$, we have $\theta_T \equiv \theta_S + d$. By
-[Lemma 3.22](03-tools.md#lemma-322-cartesian-form-of-a-chart),
+relative phase of their canonical pair $(S_0, T_0)$ with gap $g$. Since
+$\mu_T - \mu_S \equiv g$, we have $\theta_T \equiv \theta_S + d$
+(Figure 10.19). By [Lemma 3.22](03-tools.md#lemma-322-cartesian-form-of-a-chart),
 $S^\circ = F_{\theta_S}(Q(a, su)^\circ) = F_{\theta_S}(S_0^\circ)$ and
 $T^\circ = F_{\theta_T}(Q(A, tv)^\circ)$. By the addition formulas,
 $F_{\theta_S}(R_d\,p) = F_{\theta_S + d}(p)$ for every point $p$, so
@@ -1358,6 +1425,16 @@ claim by Lemma 10.16 (4). $\square$
 [`Seven.chartMarker_formula`](../../SquaresInCircles/Seven/Pair.lean#L28),
 [`Seven.ordered_gap_not_below`](../../SquaresInCircles/Seven/Pair.lean#L59).*
 
+![Two disjoint tilted squares S and T inside the dashed circle of radius root 13 over 2 about o, S to the right and T above, with the unit circle about o. From o, dashed rays in the phase directions theta S and theta T, and solid rays to the markers mu S and mu T on the unit circle; a small arc marks the angle g between the markers and a larger arc the angle d between the phases](figures/10-seven/pair-markers.svg)
+
+*Figure 10.19.* Theorem 10.24 for two disjoint exterior squares in the disk of
+radius $R_7$ (dashed): $S$ with the state $(1.15, 0.2)$ and the sign $1$, and
+$T$ with the state $(1.1, 0.3)$ and the sign $-1$. Their markers are
+$g \approx 74°$ apart, more than $60°$. Their phases are $d = 110°$ apart, and
+$d = g + \ell(1.15, 0.2) + \ell(1.1, 0.3)$ is the relative phase of their
+canonical pair: read in the frame $\theta_S$, the two squares are the canonical
+pair at the gap $g$ (Step 1).
+
 ## 10.6 The ring
 
 ### Lemma 10.25 (a square contains the centre)
@@ -1378,11 +1455,12 @@ $7 \cdot \frac\pi3 \le 2\pi$, which is false. $\square$
 
 Let $S_1, \dots, S_6$ be pairwise disjoint exterior squares with
 $\varphi(a_{S_i}, b_{S_i}) \le \frac{13}4$ for every $i$. Then there are a
-direction $\theta$, numbers $h, k \in [\frac12, \sqrt3 - \frac12]$ and a
-renumbering of the squares such that in the frame $\theta$ they sit at
+direction $\theta$, numbers $y_1, y_3$ with
+$\frac12 \le -y_1, y_3 \le \sqrt3 - \frac12$ and a renumbering of the
+squares such that in the frame $\theta$ they sit at
 
 ```math
-\left(1, -\tfrac12\right),\quad \left(1, \tfrac12\right),\quad (0, h),\quad \left(-1, \tfrac12\right),\quad \left(-1, -\tfrac12\right),\quad (0, -k) .
+\left(1, -\tfrac12\right),\quad \left(1, \tfrac12\right),\quad (0, y_3),\quad \left(-1, \tfrac12\right),\quad \left(-1, -\tfrac12\right),\quad (0, y_1) .
 ```
 
 *Proof.* *Step 1: a hexagon of contacts.* The states are admissible by Lemma
@@ -1426,9 +1504,9 @@ axial. By [Lemma 3.30](03-tools.md#lemma-330-sitting-at-a-centre) (2), in the
 frame $\theta$ the square $S_i$ sits at that point turned by as many quarter
 turns as $\theta_{S_i}$ is ahead of $\theta$: $S_0$ at $(1, -\frac12)$, $S_1$
 at $(1, \frac12)$, $S_2$ at $(0, a_{S_2})$, $S_3$ at $(-1, \frac12)$, $S_4$ at
-$(-1, -\frac12)$ and $S_5$ at $(0, -a_{S_5})$. Put $h = a_{S_2}$ and
-$k = a_{S_5}$; they lie in $[\frac12, \sqrt3 - \frac12]$ because the states of
-$S_2$ and $S_5$ are axial. $\square$
+$(-1, -\frac12)$ and $S_5$ at $(0, -a_{S_5})$. Put $y_3 = a_{S_2}$ and
+$y_1 = -a_{S_5}$; then $\frac12 \le -y_1, y_3 \le \sqrt3 - \frac12$ because
+the states of $S_2$ and $S_5$ are axial (Figure 10.20). $\square$
 
 *Lean: [`Seven.six_exterior_ring`](../../SquaresInCircles/Seven/Ring.lean#L144),
 [`Seven.hexagon_successor`](../../SquaresInCircles/Seven/Ring.lean#L19),
@@ -1438,15 +1516,16 @@ $S_2$ and $S_5$ are axial. $\square$
 [`Seven.ExteriorRing`](../../SquaresInCircles/Seven/Ring.lean#L94),
 [`regular_polygon`](../../SquaresInCircles/Common/Angles.lean#L80).*
 
-![The six exterior squares of a column packing without the middle square, the unit circle about o, and the six markers as rays from o at 30, 90, 150, 210, 270 and 330 degrees, forming a regular hexagon; each square is labelled lower, upper or axial, and the edges along which consecutive squares touch are drawn thick](figures/10-seven/ring.svg)
+![The six exterior squares of a column packing without the middle square, the unit circle about o, and the six markers as rays from o at 30, 90, 150, 210, 270 and 330 degrees, forming a regular hexagon; each square is labelled lower, upper or axial and with the point where it sits, (1, -1/2), (1, 1/2), (0, y3), (-1, 1/2), (-1, -1/2) and (0, y1), and the edges along which consecutive squares touch are drawn thick](figures/10-seven/ring.svg)
 
-*Figure 10.14.* The ring of Proposition 10.26, drawn in a column packing whose
-middle square (dashed) is left out. The markers form a regular hexagon, and
-going counterclockwise from the lower right the kinds are lower, upper, axial,
-lower, upper, axial. Consecutive squares are contacts, touching along the
-thick edges: a side column, a side column with the top or bottom square, and
-the top or bottom square with the next side column. The heights $h$ and $k$ of
-the axial squares are free.
+*Figure 10.20.* The ring of Proposition 10.26, drawn in the column packing with
+the heights $(-1.15, -0.1, 1.1)$, whose middle square (dashed) is left out. The
+markers form a regular hexagon, and going counterclockwise from the lower right
+the kinds are lower, upper, axial, lower, upper, axial; each square is
+labelled with the point where it sits. Consecutive squares are contacts,
+touching along the thick edges: a side column, a side column with the top or
+bottom square, and the top or bottom square with the next side column. The
+heights $y_3$ and $y_1$ of the axial squares are free.
 
 ## 10.7 The middle column
 
@@ -1460,7 +1539,8 @@ $(0, z)$ in the frame $\theta$ for some $z$ with $|z| < \frac12$.
 *Proof.* We work in the coordinates of the frame $\theta$, that is, we
 identify a point $p$ with $F_\theta^{-1}(p)$. As $F_\theta(q) = o + R_\theta\,q$
 is a rotation followed by a translation
-(([Definition 2.4](02-preliminaries.md#definition-24-frames-at-the-disk-centre) and [Lemma 2.5](02-preliminaries.md#lemma-25-frames-are-rigid-motions))), $S$
+([Definition 2.4](02-preliminaries.md#definition-24-frames-at-the-disk-centre)
+and [Lemma 2.5](02-preliminaries.md#lemma-25-frames-are-rigid-motions)), $S$
 becomes the unit square $S^\ast$ with centre $F_\theta^{-1}(c_S)$ and frame
 $R_{-\theta}e^S_1, R_{-\theta}e^S_2$, in which $F_\theta^{-1}(p)$ has the local
 coordinates that $p$ has in $S$. Write $(X, Y)$ for its centre and
@@ -1475,7 +1555,7 @@ square is the closure of the open one, $\overline{B_i}$ becomes
 $\overline{Q(p_i)}$. The origin lies in $S^{\ast\circ}$.
 
 *Step 1: the band.* Every point $(x, y) \in S^{\ast\circ}$ with $|y| < 1$ has
-$|x| \le \frac12$. Suppose $|x| > \frac12$ and put
+$|x| \le \frac12$ (Figure 10.21). Suppose $|x| > \frac12$ and put
 $\tau = \frac1{2|x|} \in (0, 1)$. The point $(\tau x, \tau y)$ lies on the
 segment from the origin to $(x, y)$,
 so in $S^{\ast\circ}$ by convexity; and $|\tau x| = \frac12$,
@@ -1518,13 +1598,14 @@ and $S$ sits at $(0, z)$ with $z = Y$. $\square$
 [`pullSquare`](../../SquaresInCircles/Common/Frames.lean#L21),
 [`pullSquare_open`](../../SquaresInCircles/Common/Frames.lean#L40).*
 
-![The four side squares of the column packing, the band between them where the absolute value of y is less than 1, and the strip where the absolute value of x is at most 1/2, shaded. A tilted square containing the disk centre o is drawn dashed, with its chord through the centre parallel to the first axis; the chord is longer than 1 and its ends lie inside the side squares. An axis-parallel square in the strip, containing o, is drawn solid](figures/10-seven/middle.svg)
+![The four side squares B1 to B4 of the column packing, the band between them where the absolute value of y is less than 1, and the strip where the absolute value of x is at most 1/2, shaded. A tilted square containing the disk centre o is drawn dashed, with its chord through the centre parallel to the first axis; the chord is longer than 1 and its ends lie inside the side squares. An axis-parallel square in the strip, containing o, is drawn solid](figures/10-seven/middle.svg)
 
-*Figure 10.15.* The square in the middle. The side columns block the band
-$|y| < 1$ beyond $|x| = \frac12$, so the part of the square that contains $o$
-in that band stays in the strip $|x| \le \frac12$. A tilted square (dashed)
-has a chord through its centre longer than 1, which pokes into a side square;
-so the square is axis-parallel and centred on the axis $x = 0$.
+*Figure 10.21.* The square in the middle. The side squares
+$B_1, \dots, B_4$ block the band $|y| < 1$ beyond $|x| = \frac12$, so the part
+of the square that contains $o$ in that band stays in the strip
+$|x| \le \frac12$. A tilted square (dashed) has a chord through its centre
+longer than 1, which pokes into a side square; so the square is axis-parallel
+and centred on the axis $x = 0$.
 
 *Proof of Proposition 10.3.* Let $S_1, \dots, S_7$ be a packing of seven unit
 squares in the closed disk of radius $R_7$ about $o$.
@@ -1534,19 +1615,20 @@ squares in the closed disk of radius $R_7$ about $o$.
    $\varphi(a_{S_i}, b_{S_i}) \le \frac{13}4$ by
    [Lemma 3.4](03-tools.md#lemma-34-farthest-vertex).
 2. By Proposition 10.26, after renumbering, $S_1, \dots, S_6$ sit in a frame
-   $\theta$ at $(1, -\frac12)$, $(1, \frac12)$, $(0, h)$, $(-1, \frac12)$,
-   $(-1, -\frac12)$, $(0, -k)$ with $h, k \in [\frac12, \sqrt3 - \frac12]$.
+   $\theta$ at $(1, -\frac12)$, $(1, \frac12)$, $(0, y_3)$, $(-1, \frac12)$,
+   $(-1, -\frac12)$, $(0, y_1)$ with
+   $\frac12 \le -y_1, y_3 \le \sqrt3 - \frac12$.
 3. By Lemma 10.27, applied to $S_7$ and the four squares at $(\pm1, \pm\frac12)$,
    $S_7$ sits at $(0, z)$ in the frame $\theta$, with $|z| < \frac12$.
-4. The squares at $(0, -k)$, $(0, z)$ and $(0, h)$ are pairwise disjoint, and
-   $-k \le -\frac12 < z < \frac12 \le h$. Two disjoint squares that sit at
-   $(0, x)$ and $(0, y)$ in the same frame, with $x \le y$, have $y \ge x + 1$:
-   otherwise the point $F_\theta(0, \frac{x + y}2)$ lies in both open squares.
-   So $z \ge -k + 1$ and $h \ge z + 1$.
-5. So $(y_1, y_2, y_3) = (-k, z, h)$ are heights as in Theorem 10.1, since
-   $-(\sqrt3 - \frac12) \le -k$ and $h \le \sqrt3 - \frac12$, and each of the
-   seven squares sits in the frame $\theta$ at one of the seven centres of the
-   column packing with these heights. By
+4. The squares at $(0, y_1)$, $(0, z)$ and $(0, y_3)$ are pairwise disjoint,
+   and $y_1 \le -\frac12 < z < \frac12 \le y_3$. Two disjoint squares that sit
+   at $(0, x)$ and $(0, y)$ in the same frame, with $x \le y$, have
+   $y \ge x + 1$: otherwise the point $F_\theta(0, \frac{x + y}2)$ lies in both
+   open squares. So $z \ge y_1 + 1$ and $y_3 \ge z + 1$.
+5. So $y_1$, $y_2 = z$ and $y_3$ are heights as in Theorem 10.1, since
+   $-(\sqrt3 - \frac12) \le y_1$ and $y_3 \le \sqrt3 - \frac12$, and each of
+   the seven squares sits in the frame $\theta$ at one of the seven centres of
+   the column packing with these heights. By
    [Lemma 3.31](03-tools.md#lemma-331-from-slots-to-congruence) the packing is
    congruent to that column packing. $\square$
 
@@ -1569,7 +1651,7 @@ $\square$
 
 By Proposition 10.2 (2), the optimal packings are the configurations congruent
 to the column packing of a quadruple of slacks
-$\eta_0, \eta_1, \eta_2, \eta_3 \ge 0$ with sum $2\sqrt3 - 3$.
+$\zeta_0, \zeta_1, \zeta_2, \zeta_3 \ge 0$ with sum $2\sqrt3 - 3$.
 
 *Lean: [`Seven.optimum`](../../SquaresInCircles/Seven/Uniqueness.lean#L70),
 [`Optimum.isLeast`](../../SquaresInCircles/Common/Optimum.lean#L61),

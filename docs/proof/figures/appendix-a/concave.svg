@@ -25,6 +25,6 @@
 <line x1="97.0" y1="92.3" x2="397.0" y2="158.1" stroke="#ea580c" stroke-width="2"/>
 <circle cx="97.0" cy="92.3" r="3.2" fill="#ea580c"/>
 <circle cx="397.0" cy="158.1" r="3.2" fill="#ea580c"/>
-<text x="234.5" y="45.2" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">αy + A sin y + B cos y</text>
+<text x="234.5" y="45.2" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">αy + A <tspan font-style="normal">sin</tspan> y + B <tspan font-style="normal">cos</tspan> y</text>
 <text x="247.0" y="139.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle">chord</text>
 </svg>

@@ -9,25 +9,30 @@
 <line x1="51.6" y1="371.7" x2="520.9" y2="200.8" stroke="#9ca3af" stroke-width="1" stroke-dasharray="2 4"/>
 <line x1="371.7" y1="520.9" x2="200.8" y2="51.6" stroke="#9ca3af" stroke-width="1" stroke-dasharray="2 4"/>
 <circle cx="286.2" cy="286.2" r="69.4" fill="none" stroke="#9ca3af" stroke-width="1.2"/>
-<path d="M 217.9 274.3 A 69.4 69.4 0 0 0 310.0 351.4" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/>
-<line x1="286.2" y1="286.2" x2="103.7" y2="352.7" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="5 3"/>
-<text x="86.3" y="359.0" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">θ<tspan dy="4.8" font-size="10.9">1</tspan></text>
+<path d="M 217.9 274.3 A 69.4 69.4 0 0 0 241.7 339.4" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/>
+<path d="M 241.7 339.4 A 69.4 69.4 0 0 0 310.0 351.4" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/>
+<line x1="286.2" y1="286.2" x2="60.3" y2="368.5" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="5 3"/>
+<text x="39.4" y="376.1" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">θ<tspan dy="4.8" font-size="10.9">1</tspan></text>
 <line x1="247.6" y1="332.3" x2="235.7" y2="346.5" stroke="#1f2937" stroke-width="2"/>
-<path d="M 310.0 351.4 A 69.4 69.4 0 0 0 330.8 233.1" fill="none" stroke="#ea580c" stroke-width="5" stroke-linecap="round"/>
-<line x1="286.2" y1="286.2" x2="468.8" y2="219.8" stroke="#ea580c" stroke-width="1.2" stroke-dasharray="5 3"/>
-<text x="486.2" y="213.5" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">θ<tspan dy="4.8" font-size="10.9">2</tspan></text>
+<path d="M 310.0 351.4 A 69.4 69.4 0 0 0 354.6 298.3" fill="none" stroke="#ea580c" stroke-width="5" stroke-linecap="round"/>
+<path d="M 354.6 298.3 A 69.4 69.4 0 0 0 330.8 233.1" fill="none" stroke="#ea580c" stroke-width="5" stroke-linecap="round"/>
+<line x1="286.2" y1="286.2" x2="512.2" y2="204.0" stroke="#ea580c" stroke-width="1.2" stroke-dasharray="5 3"/>
+<text x="533.1" y="196.4" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">θ<tspan dy="4.8" font-size="10.9">2</tspan></text>
 <line x1="345.5" y1="296.7" x2="363.7" y2="299.9" stroke="#1f2937" stroke-width="2"/>
-<path d="M 330.8 233.1 A 69.4 69.4 0 0 0 217.9 274.3" fill="none" stroke="#16a34a" stroke-width="5" stroke-linecap="round"/>
-<line x1="286.2" y1="286.2" x2="219.8" y2="103.7" stroke="#16a34a" stroke-width="1.2" stroke-dasharray="5 3"/>
-<text x="213.5" y="86.3" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">θ<tspan dy="4.8" font-size="10.9">3</tspan></text>
+<path d="M 330.8 233.1 A 69.4 69.4 0 0 0 262.5 221.1" fill="none" stroke="#16a34a" stroke-width="5" stroke-linecap="round"/>
+<path d="M 262.5 221.1 A 69.4 69.4 0 0 0 217.9 274.3" fill="none" stroke="#16a34a" stroke-width="5" stroke-linecap="round"/>
+<line x1="286.2" y1="286.2" x2="204.0" y2="60.3" stroke="#16a34a" stroke-width="1.2" stroke-dasharray="5 3"/>
+<text x="198.9" y="46.3" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">θ<tspan dy="4.8" font-size="10.9">3</tspan></text>
 <line x1="265.7" y1="229.8" x2="259.4" y2="212.4" stroke="#1f2937" stroke-width="2"/>
 <circle cx="286.2" cy="286.2" r="34.7" fill="none" stroke="#9ca3af" stroke-width="1.2"/>
-<path d="M 274.4 253.7 A 34.7 34.7 0 1 0 298.1 318.8" fill="none" stroke="#2563eb" stroke-width="3.5" stroke-linecap="round"/>
-<path d="M 298.1 318.8 A 34.7 34.7 0 0 0 274.4 253.7" fill="none" stroke="#ea580c" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M 274.4 253.7 A 34.7 34.7 0 0 0 253.7 298.1" fill="none" stroke="#2563eb" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M 253.7 298.1 A 34.7 34.7 0 0 0 298.1 318.8" fill="none" stroke="#2563eb" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M 298.1 318.8 A 34.7 34.7 0 0 0 318.8 274.4" fill="none" stroke="#ea580c" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M 318.8 274.4 A 34.7 34.7 0 0 0 274.4 253.7" fill="none" stroke="#ea580c" stroke-width="3.5" stroke-linecap="round"/>
 <circle cx="286.2" cy="286.2" r="2.4" fill="#1f2937"/>
 <text x="167.3" y="427.7" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">S<tspan dy="5.1" font-size="11.6">1</tspan></text>
 <text x="448.4" y="355.2" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">S<tspan dy="5.1" font-size="11.6">2</tspan></text>
-<text x="187.2" y="111.2" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">S<tspan dy="5.1" font-size="11.6">3</tspan></text>
+<text x="298.2" y="126.0" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">S<tspan dy="5.1" font-size="11.6">3</tspan></text>
 <line x1="302.5" y1="316.9" x2="341.8" y2="400.9" stroke="#1f2937" stroke-width="0.8"/>
 <text x="345.4" y="408.3" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">Γ<tspan dy="4.2" font-size="9.5">3/16</tspan></text>
 <line x1="253.7" y1="347.5" x2="221.5" y2="419.4" stroke="#1f2937" stroke-width="0.8"/>

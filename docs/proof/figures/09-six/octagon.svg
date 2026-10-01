@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="496" height="484" viewBox="0 0 496 484" role="img" aria-label="The centres of a square V turned by delta that meet a square U fill an octagon whose sides are perpendicular to the eight vectors and touch the circle of radius tau(delta)">
+<title>The centres of a square V turned by delta that meet a square U fill an octagon whose sides are perpendicular to the eight vectors and touch the circle of radius tau(delta)</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<polygon points="385.9,228.4 334.6,122.1 216.6,122.1 110.3,173.4 110.3,291.4 161.6,397.7 279.6,397.7 385.9,346.4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2" fill-opacity="1" stroke-dasharray="5 3"/>
+<circle cx="248.1" cy="259.9" r="137.8" fill="none" stroke="#1f2937" stroke-width="0.9" stroke-dasharray="2 3"/>
+<polygon points="189.1,318.9 307.1,318.9 307.1,200.9 189.1,200.9" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="309.8,206.5 416.1,155.2 364.7,48.9 258.5,100.3" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" fill-opacity="0.85"/>
+<line x1="355.9" y1="301.8" x2="266.0" y2="115.9" stroke="#1f2937" stroke-width="1.1" stroke-dasharray="5 4"/>
+<line x1="385.9" y1="259.9" x2="416.4" y2="259.9" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M 421.3 259.9 L 414.3 262.8 L 414.3 257.0 z" fill="#1f2937"/>
+<text x="439.0" y="259.9" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">e<tspan dy="4.5" font-size="10.2">1</tspan><tspan dx="-5.6" dy="-9.9" font-size="10.2">U</tspan></text>
+<line x1="372.2" y1="200.0" x2="399.6" y2="186.7" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M 404.0 184.6 L 399.0 190.3 L 396.5 185.0 z" fill="#1f2937"/>
+<text x="428.2" y="193.9" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">e<tspan dy="4.5" font-size="10.2">1</tspan><tspan dx="-5.6" dy="-9.9" font-size="10.2">V</tspan></text>
+<line x1="248.1" y1="122.1" x2="248.1" y2="91.6" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M 248.1 86.7 L 251.0 93.7 L 245.2 93.7 z" fill="#1f2937"/>
+<text x="248.1" y="69.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">e<tspan dy="4.5" font-size="10.2">2</tspan><tspan dx="-5.6" dy="-9.9" font-size="10.2">U</tspan></text>
+<line x1="188.2" y1="135.8" x2="174.9" y2="108.4" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M 172.8 104.0 L 178.5 109.0 L 173.2 111.5 z" fill="#1f2937"/>
+<text x="165.1" y="88.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">e<tspan dy="4.5" font-size="10.2">2</tspan><tspan dx="-5.6" dy="-9.9" font-size="10.2">V</tspan></text>
+<line x1="110.3" y1="259.9" x2="79.8" y2="259.9" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M 74.9 259.9 L 81.9 257.0 L 81.9 262.8 z" fill="#1f2937"/>
+<line x1="124.0" y1="319.8" x2="96.6" y2="333.1" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M 92.2 335.2 L 97.2 329.5 L 99.7 334.8 z" fill="#1f2937"/>
+<line x1="248.1" y1="397.7" x2="248.1" y2="428.2" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M 248.1 433.1 L 245.2 426.1 L 251.0 426.1 z" fill="#1f2937"/>
+<line x1="308.0" y1="384.0" x2="321.3" y2="411.4" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M 323.4 415.8 L 317.7 410.8 L 323.0 408.3 z" fill="#1f2937"/>
+<polyline points="248.1,259.9 372.2,200.0" fill="none" fill-opacity="1.0" stroke="#1f2937" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="248.1" cy="259.9" r="2.8" fill="#1f2937"/>
+<circle cx="337.3" cy="127.7" r="3.2" fill="#ea580c"/>
+<text x="274.4" y="227.5" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle"><tspan font-style="italic">τ</tspan>(<tspan font-style="italic">δ</tspan>)</text>
+<text x="212.7" y="295.3" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle" font-style="italic">U</text>
+<text x="325.5" y="103.3" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">V</text>
+</svg>

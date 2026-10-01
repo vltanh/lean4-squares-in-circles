@@ -4,7 +4,7 @@
 <rect width="100%" height="100%" fill="#ffffff"/>
 <circle cx="179.0" cy="190.5" r="148.2" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6 4"/>
 <polygon points="64.0,283.9 179.0,283.9 179.0,168.9 64.0,168.9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
-<text x="121.5" y="226.4" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">M<tspan dy="4.5" font-size="10.2">1</tspan></text>
+<text x="112.3" y="206.9" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">M<tspan dy="4.5" font-size="10.2">1</tspan></text>
 <polygon points="179.0,283.9 294.0,283.9 294.0,168.9 179.0,168.9" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" fill-opacity="1"/>
 <text x="236.5" y="226.4" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">M<tspan dy="4.5" font-size="10.2">2</tspan></text>
 <polygon points="121.5,168.9 236.5,168.9 236.5,53.9 121.5,53.9" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" fill-opacity="1"/>
@@ -14,7 +14,7 @@
 <circle cx="179.0" cy="190.5" r="3.2" fill="#1f2937"/>
 <circle cx="541.2" cy="190.5" r="148.2" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6 4"/>
 <polygon points="500.6,333.0 594.8,267.0 528.9,172.8 434.7,238.8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
-<text x="514.8" y="252.9" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">S<tspan dy="4.5" font-size="10.2">2</tspan></text>
+<text x="496.0" y="242.2" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">S<tspan dy="4.5" font-size="10.2">2</tspan></text>
 <polygon points="594.8,267.0 689.0,201.1 623.1,106.9 528.9,172.8" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" fill-opacity="1"/>
 <text x="609.0" y="187.0" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">S<tspan dy="4.5" font-size="10.2">3</tspan></text>
 <polygon points="481.8,205.8 576.0,139.9 510.0,45.7 415.8,111.6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" fill-opacity="1"/>

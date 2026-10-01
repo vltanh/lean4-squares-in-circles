@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="505" height="414" viewBox="0 0 505 414" role="img" aria-label="C, N and W at the angles n = -1/10 and w = -1/5, N and W on their own axes and separated from each other along the facet -e^W_1, with the three separating lines dashed and the forces F_N and F_W of the pair drawn as arrows at the centres">
+<title>C, N and W at the angles n = -1/10 and w = -1/5, N and W on their own axes and separated from each other along the facet -e^W_1, with the three separating lines dashed and the forces F_N and F_W of the pair drawn as arrows at the centres</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<circle cx="291.0" cy="291.0" r="236.4" fill="none" stroke="#1f2937" stroke-width="1.0" stroke-dasharray="6 4"/>
+<polygon points="221.0,361.0 361.0,361.0 361.0,221.0 221.0,221.0" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.6" fill-opacity="1"/>
+<polygon points="377.1,222.6 391.0,83.3 251.7,69.3 237.8,208.6" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6" fill-opacity="1"/>
+<polygon points="226.0,196.4 88.8,168.6 61.0,305.8 198.2,333.6" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.6" fill-opacity="1"/>
+<line x1="393.8" y1="224.3" x2="221.1" y2="207.0" stroke="#1f2937" stroke-width="1.3" stroke-dasharray="6 4"/>
+<line x1="232.9" y1="162.1" x2="191.2" y2="367.9" stroke="#1f2937" stroke-width="1.3" stroke-dasharray="6 4"/>
+<line x1="218.6" y1="232.8" x2="249.2" y2="81.8" stroke="#1f2937" stroke-width="1.3" stroke-dasharray="6 4"/>
+<line x1="314.4" y1="146.0" x2="343.9" y2="87.1" stroke="#1f2937" stroke-width="2.2"/>
+<path d="M 346.7 81.5 L 346.0 91.2 L 339.3 87.8 z" fill="#1f2937"/>
+<circle cx="314.4" cy="146.0" r="2.8" fill="#1f2937"/>
+<line x1="143.5" y1="251.1" x2="66.4" y2="175.4" stroke="#1f2937" stroke-width="2.2"/>
+<path d="M 61.9 171.0 L 71.0 174.6 L 65.7 180.0 z" fill="#1f2937"/>
+<circle cx="143.5" cy="251.1" r="2.8" fill="#1f2937"/>
+<circle cx="291.0" cy="291.0" r="2.4" fill="#9ca3af"/>
+<text x="302.2" y="305.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle" font-style="italic">o</text>
+<text x="333.0" y="333.0" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">C</text>
+<text x="356.4" y="185.2" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">N</text>
+<text x="178.5" y="293.1" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#9333ea" text-anchor="middle" dominant-baseline="middle" font-style="italic">W</text>
+<text x="360.7" y="73.1" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle"><tspan font-style="italic">F</tspan><tspan dy="4.5" font-size="10.2"><tspan font-style="italic">N</tspan></tspan></text>
+<text x="50.7" y="159.8" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle"><tspan font-style="italic">F</tspan><tspan dy="4.5" font-size="10.2"><tspan font-style="italic">W</tspan></tspan></text>
+<text x="438.0" y="92.2" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle"><tspan font-style="italic">R</tspan><tspan dy="4.8" font-size="10.9">6</tspan></text>
+<text x="25.0" y="32.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle"><tspan font-style="italic">n</tspan> = −1/10,  <tspan font-style="italic">w</tspan> = −1/5</text>
+</svg>

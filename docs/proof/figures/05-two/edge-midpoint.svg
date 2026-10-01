@@ -12,7 +12,7 @@
 <text x="226.8" y="159.5" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle" font-style="italic">c<tspan dy="4.5" font-size="10.2">S</tspan></text>
 <circle cx="165.5" cy="171.4" r="3.2" fill="#1f2937"/>
 <text x="159.6" y="180.8" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
-<text x="165.5" y="328.3" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">(a<tspan dy="4.2" font-size="9.5">S</tspan><tspan dy="-4.2">, </tspan>b<tspan dy="4.2" font-size="9.5">S</tspan><tspan dy="-4.2">)</tspan> = (½, 0)</text>
+<text x="118.0" y="328.3" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">(<tspan font-style="italic">a<tspan dy="4.2" font-size="9.5">S</tspan></tspan><tspan dy="-4.2">, </tspan><tspan font-style="italic">b<tspan dy="4.2" font-size="9.5">S</tspan></tspan><tspan dy="-4.2">) = (½, 0)</tspan></text>
 <circle cx="490.0" cy="171.4" r="131.9" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6 4"/>
 <circle cx="490.0" cy="171.4" r="59.0" fill="none" stroke="#9ca3af" stroke-width="1.2"/>
 <polygon points="479.7,193.5 590.6,153.2 550.2,42.3 439.3,82.7" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
@@ -20,6 +20,6 @@
 <circle cx="514.9" cy="117.9" r="3.2" fill="#2563eb"/>
 <text x="520.8" y="126.2" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle" font-style="italic">c<tspan dy="4.5" font-size="10.2">S</tspan></text>
 <circle cx="490.0" cy="171.4" r="3.2" fill="#1f2937"/>
-<text x="484.1" y="180.8" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
-<text x="490.0" y="328.3" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">a<tspan dy="4.2" font-size="9.5">S</tspan><tspan dy="-4.2"> = </tspan>b<tspan dy="4.2" font-size="9.5">S</tspan><tspan dy="-4.2"> = √2/4</tspan></text>
+<text x="484.1" y="163.1" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
+<text x="445.6" y="328.3" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle"><tspan font-style="italic">a<tspan dy="4.2" font-size="9.5">S</tspan></tspan><tspan dy="-4.2"> = </tspan><tspan font-style="italic">b<tspan dy="4.2" font-size="9.5">S</tspan></tspan><tspan dy="-4.2"> = √2/4</tspan></text>
 </svg>

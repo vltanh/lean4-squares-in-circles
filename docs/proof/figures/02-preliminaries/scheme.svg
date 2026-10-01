@@ -58,7 +58,7 @@
 <line x1="330.0" y1="337.3" x2="418.7" y2="304.5" stroke="#ea580c" stroke-width="1.8"/>
 <circle cx="418.7" cy="304.5" r="4" fill="#ea580c"/>
 <text x="330.0" y="450.5" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle"><tspan font-style="italic">n</tspan> = 6</text>
-<text x="330.0" y="464.5" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle">|<tspan font-style="italic">p</tspan>|² = (s*+3/2)² + (s*+½)² = q*</text>
+<text x="330.0" y="464.5" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle">|<tspan font-style="italic">p</tspan>|² = (<tspan font-style="italic">s</tspan><tspan dy="3.6" font-size="8.2">*</tspan><tspan dy="-3.6"> + 3/2)² + (</tspan><tspan font-style="italic">s</tspan><tspan dy="3.6" font-size="8.2">*</tspan><tspan dy="-3.6"> + ½)² = </tspan><tspan font-style="italic">q</tspan><tspan dy="3.6" font-size="8.2">*</tspan></text>
 <circle cx="560.2" cy="337.3" r="101.0" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6 4"/>
 <polygon points="588.2,393.3 644.2,393.3 644.2,337.3 588.2,337.3" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
 <polygon points="588.2,337.3 644.2,337.3 644.2,281.3 588.2,281.3" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" fill-opacity="1"/>

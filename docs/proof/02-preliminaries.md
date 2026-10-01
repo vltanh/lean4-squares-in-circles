@@ -23,22 +23,23 @@ $u(\theta) = (\cos\theta, \sin\theta)$, and the direction of a nonzero vector
 $v$ is the $\theta$ with $v = |v|\,u(\theta)$. The *angle* $d(\theta, \theta')$
 between two directions is their distance in $\mathbb{R}/2\pi\mathbb{Z}$: the
 least $|x - x'|$ over real representatives $x$ of $\theta$ and $x'$ of
-$\theta'$. It is a number in $[0, \pi]$, it is a metric on the directions, and
-$\cos(\theta - \theta') = \cos d(\theta, \theta')$.
+$\theta'$ (Figure 2.1). It is a number in $[0, \pi]$, it is a metric on the
+directions, and $\cos(\theta - \theta') = \cos d(\theta, \theta')$.
 
-![Left: two directions theta and theta prime drawn as radii of a circle about o; the shorter arc between them, of angle d, is highlighted, and the longer arc, of angle 2 pi minus d, is dashed. Right: the real line with the representatives x - 2 pi, x, x + 2 pi of theta and x' - 2 pi, x' of theta prime; the least distance between two of them, d, lies between x' - 2 pi and x, and the distance from x to x' is 2 pi minus d](figures/02-preliminaries/angle.svg)
+![Left: the unit circle about o with two directions theta and theta prime; the radius to theta is an arrow, the unit vector u(theta), and the radius to theta prime is a line; the shorter arc between them, of angle d, is highlighted, and the longer arc, of angle 2 pi minus d, is dashed. Right: the real line with the representatives x - 2 pi, x, x + 2 pi of theta and x' - 2 pi, x' of theta prime; the least distance between two of them, d, lies between x' - 2 pi and x, and the distance from x to x' is 2 pi minus d](figures/02-preliminaries/angle.svg)
 
-*Figure 2.1.* The angle $d(\theta, \theta')$ goes the shorter way round the
-circle; the longer way is $2\pi - d(\theta, \theta')$. On the line it is the
-least distance between a representative $x$ of $\theta$ and a representative
-$x'$ of $\theta'$, here between $x$ and $x' - 2\pi$.
+*Figure 2.1.* The unit vector $u(\theta)$ (arrow) and the angle
+$d(\theta, \theta')$, which goes the shorter way round the circle; the longer
+way is $2\pi - d(\theta, \theta')$. On the line it is the least distance
+between a representative $x$ of $\theta$ and a representative $x'$ of
+$\theta'$, here between $x$ and $x' - 2\pi$.
 
 We use $\arcsin$ on all of $\mathbb{R}$, extended by $\arcsin x = \frac\pi2$
 for $x \ge 1$ and $\arcsin x = -\frac\pi2$ for $x \le -1$; it is odd and
 nondecreasing, and increasing on $[-1, 1]$. We put
-$\arccos x = \frac\pi2 - \arcsin x$, which on $[-1, 1]$ is the usual arccosine.
-We use freely the classical bounds $3.141592 < \pi < 3.141593$, and weaker ones
-such as $\pi < \frac{22}7$.
+$\arccos x = \frac\pi2 - \arcsin x$, which on $[-1, 1]$ is the usual
+arccosine (Figure 2.2). We use freely the classical bounds
+$3.141592 < \pi < 3.141593$, and weaker ones such as $\pi < \frac{22}7$.
 
 ![The graphs of the extended arcsine, constant at minus pi/2 left of -1, increasing to pi/2 at 1 and constant after, and of the extended arccosine, constant at pi left of -1, decreasing to 0 at 1 and constant after](figures/02-preliminaries/arcsin.svg)
 
@@ -67,7 +68,7 @@ $\theta_S$.
 A *unit square* $S$ is given by a centre $c_S$ and an orthonormal frame
 $e^S_1, e^S_2$ in which $e^S_2$ is $e^S_1$ turned by a quarter turn
 counterclockwise. The *local coordinates* of a point $p$ are its coordinates in
-this frame,
+this frame (Figure 2.3),
 
 ```math
 x_S(p) = \langle p - c_S,\ e^S_1\rangle, \qquad y_S(p) = \langle p - c_S,\ e^S_2\rangle ,
@@ -85,7 +86,7 @@ replaces $(x_S, y_S)$ by $(y_S, -x_S)$ and leaves $S^\circ$ and $\overline{S}$
 unchanged (Figure 2.4); every statement in this book is about these two sets,
 never about the frame itself.
 
-![A tilted unit square with its centre c and frame vectors e1 and e2; a path from c along e1 then along e2 reaches a point p, giving its local coordinates](figures/02-preliminaries/local-coordinates.svg)
+![A tilted unit square S with its centre c_S and frame vectors e1 and e2, drawn over the orange path from c_S along e1 and then along e2 to a point p outside S; the two legs of the path are the local coordinates x_S(p) and y_S(p)](figures/02-preliminaries/local-coordinates.svg)
 
 *Figure 2.3.* The frame of $S$ at its centre $c_S$, and the local coordinates
 of a point $p$. The open square is where both are less than $\frac12$ in
@@ -107,7 +108,7 @@ both are less than $\frac12$ in absolute value in either frame.
 ### Definition 2.2 (axis-parallel square)
 
 For a point $c = (c_1, c_2)$, $Q(c)$ is the unit square with centre $c$ and the
-standard frame $e_1 = (1, 0)$, $e_2 = (0, 1)$, so that
+standard frame $e_1 = (1, 0)$, $e_2 = (0, 1)$ (Figure 2.5), so that
 
 ```math
 Q(c)^\circ = \lbrace (x, y) : |x - c_1| < \tfrac12,\ |y - c_2| < \tfrac12 \rbrace, \qquad
@@ -133,12 +134,12 @@ Two unit squares $S$ and $T$ are *disjoint* if $S^\circ \cap T^\circ$ is
 empty. Let $o$ be a point and $R \ge 0$. A *packing* of $n$ unit squares in the
 closed disk $\overline{D}(o, R)$ is a configuration $S_1, \dots, S_n$ of
 pairwise disjoint unit squares with $\overline{S_i} \subseteq \overline{D}(o, R)$
-for every $i$. The point $o$ is the *disk centre* of the packing.
+for every $i$. The point $o$ is the *disk centre* of the packing (Figure 2.6).
 
-![Three disjoint tilted unit squares inside a dashed circle of radius R about o](figures/02-preliminaries/packing.svg)
+![Three disjoint tilted unit squares S1, S2, S3 inside a dashed circle of radius R about o](figures/02-preliminaries/packing.svg)
 
-*Figure 2.6.* A packing of three unit squares in the closed disk of radius $R$
-about $o$.
+*Figure 2.6.* A packing $S_1, S_2, S_3$ of three unit squares in the closed
+disk of radius $R$ about $o$.
 
 Nothing else is assumed. The squares are placed and turned independently of
 one another; the disk centre may lie anywhere, inside a square or not; and the
@@ -170,17 +171,18 @@ F_\phi(x, y) = o + x\,u(\phi) + y\,u\left(\phi + \tfrac\pi2\right) ,
 ```
 
 whose first axis points in the direction $\phi$. A unit square $S$ *sits at
-$c$ in the frame $\phi$* if $S^\circ = F_\phi\left(Q(c)^\circ\right)$, that
-is, if for all real $x, y$
+$c$ in the frame $\phi$* if $S^\circ = F_\phi\left(Q(c)^\circ\right)$
+(Figure 2.8), that is, if for all real $x, y$
 
 ```math
 F_\phi(x, y) \in S^\circ \iff |x - c_1| < \tfrac12 \ \text{ and } \ |y - c_2| < \tfrac12 .
 ```
 
-![Axes at o turned by the angle phi, and a square aligned with them whose centre is reached by going c1 along the first axis and c2 along the second](figures/02-preliminaries/frame.svg)
+![Axes at o turned by the angle phi, labelled u(phi) and u(phi + pi/2), and a square S aligned with them whose centre is reached by going c1 along the first axis and c2 along the second](figures/02-preliminaries/frame.svg)
 
-*Figure 2.8.* The frame $F_\phi$ at $o$. The square sits at $c = (c_1, c_2)$:
-in these coordinates it is $Q(c)$.
+*Figure 2.8.* The frame $F_\phi$ at $o$, with the axes $u(\phi)$ and
+$u(\phi + \frac\pi2)$. The square $S$ sits at $c = (c_1, c_2)$: in these
+coordinates it is $Q(c)$.
 
 *Lean: [`pointInDirection`](../../SquaresInCircles/Geometry.lean#L83),
 [`Represents`](../../SquaresInCircles/Common/Congruence.lean#L20).*
@@ -194,7 +196,7 @@ the plane with $F_\phi(0) = o$ and
 |F_\phi(p) - F_\phi(q)| = |p - q| \qquad \text{for all points } p, q .
 ```
 
-In particular $|F_\phi(p) - o| = |p|$. Its inverse is
+In particular $|F_\phi(p) - o| = |p|$ (Figure 2.9). Its inverse is
 $p \mapsto \left(\langle p - o, u(\phi)\rangle,\ \langle p - o, u(\phi + \frac\pi2)\rangle\right)$.
 
 ![Left: the plane with origin 0, axes x and y, a few grid lines, the axis-parallel square Q(c), and a point q with the dashed circle of radius |q| about 0. Right: their images under F_phi: the grid turned by phi about o, the square F_phi(Q(c)) with its sides along the turned axes u(phi) and u(phi + pi/2), and the point F_phi(q) on the dashed circle of the same radius about o](figures/02-preliminaries/frame-map.svg)
@@ -234,18 +236,28 @@ S_{\sigma(i)}^\circ = F_\phi\left(M_i^\circ\right), \qquad \overline{S_{\sigma(i
 In words: placed with its origin at $o$, the model is carried onto the
 configuration by one rotation about $o$ and one relabelling. For the model
 $Q(c_1), \dots, Q(c_n)$ this says that each $S_{\sigma(i)}$ sits at $c_i$ in
-the frame $\phi$, for the open and the closed squares alike.
+the frame $\phi$, for the open and the closed squares alike (Figure 2.10).
 
-![The T packing turned about o by an angle phi, inside its dashed circle, with the squares labelled S2, S3 and S1](figures/02-preliminaries/congruent.svg)
+![The T packing turned about o by an angle phi, marked between a dashed horizontal ray and the first axis of the frame, inside its dashed circle; the faint axes of the frame phi pass through o, and the squares S2, S3, S1 each have a dot at their centre labelled c1, c2, c3](figures/02-preliminaries/congruent.svg)
 
-*Figure 2.10.* A packing congruent to the T of Chapter 6. Turning the model by
-$\phi$ about $o$ gives the packing; the square in the slot $c_i$ is
-$S_{\sigma(i)}$, here with $\sigma(1) = 2$, $\sigma(2) = 3$, $\sigma(3) = 1$.
+*Figure 2.10.* A packing congruent to the T of Chapter 6. In the frame $\phi$
+at $o$ (faint axes) the squares $S_2$, $S_3$, $S_1$ sit at the points $c_1$,
+$c_2$, $c_3$ of the model (dots), so $\sigma(1) = 2$, $\sigma(2) = 3$ and
+$\sigma(3) = 1$: turning the model by $\phi$ about $o$ gives the packing.
 
 *Remark.* Congruence allows rotations but not reflections. Every optimal model
-of this book is symmetric under the reflection in a line through the origin,
-so a reflected copy of an optimal packing is also a rotated copy of it, and
-nothing is lost.
+of this book is symmetric under a reflection in a line through the origin, so
+a reflected copy of an optimal packing is also a rotated copy of it, and
+nothing is lost (Figure 2.11).
+
+![Two panels. Left: a packing congruent to the T, its squares S2, S3, S1 with dots at the points c1, c2, c3 of the frame, and a dashed purple line L through o. Right: its mirror image in L, which is again the T, turned about o by another angle; in its frame the squares S3, S2, S1 sit at c1, c2, c3](figures/02-preliminaries/reflection.svg)
+
+*Figure 2.11.* The remark for the T. Left: the packing of Figure 2.10 and a
+line $L$ through $o$ (dashed). Right: its mirror image in $L$. As the T is
+symmetric under the reflection in its axis, the mirror image is again the T,
+turned about $o$ by another angle: in the new frame (faint axes) the squares
+$S_3$, $S_2$, $S_1$ sit at $c_1$, $c_2$, $c_3$, the two lower squares having
+exchanged their slots.
 
 *Lean: [`Congruent`](../../SquaresInCircles/Geometry.lean#L99).*
 
@@ -257,7 +269,7 @@ congruent to it is a packing in $\overline{D}(o, R)$.
 
 ![Left: the T as a model of squares M1, M2, M3 about the origin 0, inside its dashed circle of radius R, with the corner q of M1 on the circle joined to 0. Right: the congruent configuration with disk centre o, turned by phi: the images of M1, M2, M3 are labelled S2, S3, S1, inside the dashed circle of radius R about o, and the image F_phi(q) of the corner is on that circle, joined to o](figures/02-preliminaries/congruence.svg)
 
-*Figure 2.11.* A model in $\overline{D}(0, R)$, left, and a configuration
+*Figure 2.12.* A model in $\overline{D}(0, R)$, left, and a configuration
 congruent to it, right, with $\sigma(1) = 2$, $\sigma(2) = 3$ and
 $\sigma(3) = 1$. A point $q$ of $\overline{M_1}$ is as far from $0$ as its
 image $F_\phi(q) \in \overline{S_2}$ is from $o$, so the configuration lies
@@ -268,7 +280,7 @@ $S_1, \dots, S_n$ be the configuration.
 
 1. *Containment.* A point $p$ of $\overline{S_{\sigma(i)}}$ is $F_\phi(q)$ for
    some $q \in \overline{M_i}$. By Lemma 2.5,
-   $|p - o| = |F_\phi(q) - F_\phi(0)| = |q| \le R$.
+   $|p - o| = |F_\phi(q) - F_\phi(0)| = |q| \le R$ (Figure 2.12).
 2. *Disjointness.* Let $j \ne k$, write $j = \sigma(i)$ and $k = \sigma(l)$, so
    that $i \ne l$, and suppose $p \in S_j^\circ \cap S_k^\circ$. Since
    $F_\phi$ is a bijection, $q = F_\phi^{-1}(p)$ lies in $M_i^\circ$ and in
@@ -292,26 +304,29 @@ The optimal models are checked to be packings by one lemma.
    $R \ge 0$, as soon as any two of the centres differ by at least 1 in one
    coordinate and every centre satisfies the inequality of (2).
 
-![Two axis-parallel squares Q(p) and Q(q), inside a box of half-sides B and C centred at the origin, inside the dashed circle of radius root of B squared plus C squared](figures/02-preliminaries/axis-squares.svg)
+![Two axis-parallel squares Q(p) and Q(q) above an x-axis with the ticks p1 and q1; their centres differ by more than 1 across and a little up, and the dashed vertical lines x = p1 + 1/2, along the right edge of Q(p), and x = q1 - 1/2, along the left edge of Q(q), lie between them](figures/02-preliminaries/axis-squares.svg)
 
-*Figure 2.12.* Every point of the two squares lies in the box
-$[-B, B] \times [-C, C]$, and so in the disk of radius $\sqrt{B^2 + C^2}$,
-which passes through the corners of the box.
+*Figure 2.13.* Part (1), with $q_1 \ge p_1 + 1$: the open square $Q(p)^\circ$
+lies left of the line $x = p_1 + \frac12$ and $Q(q)^\circ$ right of
+$x = q_1 - \frac12$ (dashed), whatever the second coordinates.
 
-![Left, part (1): two axis-parallel squares Q(p) and Q(q) whose centres differ by more than 1 across and a little up; the dashed vertical lines x = p1 + 1/2 and x = q1 - 1/2 lie between them. Right, part (2): an axis-parallel square Q(c) in the second quadrant and the path from the origin 0 to its farthest corner, |x| + 1/2 across and |y| + 1/2 up, inside the dashed circle of radius R](figures/02-preliminaries/axis-lemma.svg)
+![An axis-parallel square Q(c) with centre c = (x, y) in the second quadrant, inside a grey box centred at the origin 0 whose corner is the corner of Q(c) farthest from 0; the path from 0 to that corner goes |x| + 1/2 across and |y| + 1/2 up, and the box lies inside the dashed circle of radius R about 0](figures/02-preliminaries/axis-lemma.svg)
 
-*Figure 2.13.* Left, part (1): with $q_1 \ge p_1 + 1$, the open square
-$Q(p)^\circ$ lies left of the line $x = p_1 + \frac12$ and $Q(q)^\circ$ right
-of $x = q_1 - \frac12$, whatever the second coordinates. Right, part (2): the
-corner of $Q(c)$ farthest from the origin is $|x| + \frac12$ across and
-$|y| + \frac12$ up, for $c = (x, y)$.
+*Figure 2.14.* Part (2), for $c = (x, y)$: every point $p$ of
+$\overline{Q(c)}$ has $|p_1| \le |x| + \frac12$ and
+$|p_2| \le |y| + \frac12$, so $\overline{Q(c)}$ lies in the box of these
+half-sides (grey), whose corners are at distance
+$\sqrt{(|x| + \frac12)^2 + (|y| + \frac12)^2} \le R$ from the origin. The
+corner of $Q(c)$ farthest from the origin is the corner of the box,
+$|x| + \frac12$ across and $|y| + \frac12$ up.
 
-*Proof.* (1) If, say, $q_1 \ge p_1 + 1$, a common point $(x, y)$ of the open
-squares would have $x < p_1 + \frac12 \le q_1 - \frac12 < x$. (2) A point
-$p$ of $\overline{Q(c)}$ has $|p_1| \le |x| + |p_1 - x| \le |x| + \frac12$ and
-likewise $|p_2| \le |y| + \frac12$, so
-$|p|^2 \le (|x| + \frac12)^2 + (|y| + \frac12)^2 \le R^2$. (3) combines (1) and
-(2). $\square$
+*Proof.* (1) If, say, $q_1 \ge p_1 + 1$, a common point $z$ of the open
+squares would have $z_1 < p_1 + \frac12 \le q_1 - \frac12 < z_1$
+(Figure 2.13). (2) A point $p$ of $\overline{Q(c)}$ has
+$|p_1| \le |x| + |p_1 - x| \le |x| + \frac12$ and likewise
+$|p_2| \le |y| + \frac12$, so
+$|p|^2 \le (|x| + \frac12)^2 + (|y| + \frac12)^2 \le R^2$ (Figure 2.14).
+(3) combines (1) and (2). $\square$
 
 *Lean: [`axis_disjoint`](../../SquaresInCircles/Common/Constructions.lean#L29),
 [`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L38).*
@@ -320,11 +335,11 @@ $|p|^2 \le (|x| + \frac12)^2 + (|y| + \frac12)^2 \le R^2$. (3) combines (1) and
 
 For each number of squares, the main theorem names a radius $R_n$ and a set of
 optimal models, and claims two things: no packing fits in a smaller disk, and
-the packings of radius $R_n$ are exactly the configurations congruent to an
-optimal model. The next proposition shows that the first claim follows from
-the second, as soon as every optimal model reaches the circle of radius $R_n$.
-So each case chapter proves only one hard statement: uniqueness at the optimal
-radius.
+the packings in a closed disk of radius $R_n$ are exactly the configurations
+congruent to an optimal model. The next proposition shows that the first claim
+follows from the second, as soon as every optimal model reaches the circle of
+radius $R_n$. So each case chapter proves only one hard statement: uniqueness
+at the optimal radius.
 
 ### Proposition 2.9 (the lower bound)
 
@@ -342,7 +357,7 @@ $R \ge R_n$.
 
 ![Left: the T model about the origin 0 in its dashed circle of radius R_3, with the lower left corner p of its lower left square on the circle, joined to 0. Right: a configuration congruent to it at o, turned by phi, in the dashed circle of radius R_3 about o, and a smaller solid circle of radius R about o; the image F_phi(p) of the corner lies on the dashed circle, outside the smaller one](figures/02-preliminaries/lower-bound.svg)
 
-*Figure 2.14.* Proposition 2.9 for the T of Chapter 6, with $n = 3$. The
+*Figure 2.15.* Proposition 2.9 for the T of Chapter 6, with $n = 3$. The
 corner $p = (-1, -\frac{13}{16})$ has $|p| = R_3$, so the T reaches the
 circle. In every configuration congruent to the T, the corresponding corner
 $F_\phi(p)$ is at distance $R_3$ from $o$, outside every disk
@@ -355,8 +370,8 @@ model $M$ in $\mathcal{M}$: for a direction $\phi$ and a relabelling $\sigma$,
 $\overline{S_{\sigma(i)}} = F_\phi(\overline{M_i})$ for every $i$. Take $i$ and
 a point $p$ of $\overline{M_i}$ with $|p| \ge R_n$. Then $F_\phi(p)$ is a point
 of $\overline{S_{\sigma(i)}}$, and by Lemma 2.5 its distance from $o$ is
-$|p| \ge R_n > R$. So $\overline{S_{\sigma(i)}}$ does not lie in
-$\overline{D}(o, R)$, a contradiction. $\square$
+$|p| \ge R_n > R$ (Figure 2.15). So $\overline{S_{\sigma(i)}}$ does not lie
+in $\overline{D}(o, R)$, a contradiction. $\square$
 
 *Lean: [`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L47),
 [`pointInDirection_norm`](../../SquaresInCircles/Common/Charts.lean#L219).*
@@ -388,14 +403,15 @@ $R_n$ about its disk centre, by (a) and Lemma 2.7. $\square$
 
 Each of Chapters 4 to 10 proves its case theorem by checking (a), (b) and (c).
 Condition (a) is a direct computation with Lemma 2.8, together with one turned
-square for six squares, and (b) is one corner of one square (Figure 2.15); all
+square for six squares, and (b) is one corner of one square (Figure 2.16); all
 the work is in (c).
 
 ![The seven optimal models for n = 1 to 7, each in its dashed circle of radius R_n about its centre, drawn at a common scale; in each, one corner p on the circle is joined to the centre, with its squared distance: 1/4 + 1/4 = 1/2, 1 + 1/4 = 5/4, 1 + 169/256 = 425/256, 1 + 1 = 2, 9/4 + 1/4 = 5/2, (s* + 3/2)^2 + (s* + 1/2)^2 = q* and 9/4 + 1 = 13/4](figures/02-preliminaries/scheme.svg)
 
-*Figure 2.15.* Conditions (a) and (b) for the optimal models of Chapters 4
-to 10: each model lies in its closed disk of radius $R_n$, and the marked
-corner $p$ reaches the circle, with $|p|^2 = R_n^2$.
+*Figure 2.16.* Conditions (a) and (b) for the optimal models of Chapters 4
+to 10, for seven squares the column packing with the heights $(-1, 0, 1)$:
+each model lies in its closed disk of radius $R_n$, and the marked corner $p$
+reaches the circle, with $|p|^2 = R_n^2$.
 
 *Lean: [`Optimum`](../../SquaresInCircles/Common/Optimum.lean#L21),
 [`Optimum.isLeast`](../../SquaresInCircles/Common/Optimum.lean#L61),

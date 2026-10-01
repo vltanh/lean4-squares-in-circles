@@ -11,6 +11,7 @@ import math
 
 from proof_figures import Figure, INK, FAINT, COLORS, FILLS, sb, shift, u
 from fig_appa import Plot, x_axis, y_axis, vtick
+from fig_front import it, NB
 
 BLUE, ORANGE, GREEN, PURPLE = COLORS[0], COLORS[1], COLORS[2], COLORS[3]
 HALF_WIDTH = 1 / 2
@@ -27,9 +28,10 @@ def admissible(a, uu):
 
 
 def marker_arc():
-    states = [(1.0, 0.5, '(1, ½)'), (0.9, 0.3, '(0.9, 0.3)')]
-    panel = 2.15
-    f = Figure(-0.3, panel + 1.72, -1.02, 1.3, 150)
+    states = [(1.0, 0.5, '(1,' + NB + '½)'), (0.9, 0.3, '(0.9,' + NB + '0.3)')]
+    panel = 2.5
+    left = -0.55                         # where the edge lines start
+    f = Figure(left - 0.05, panel + 1.72, -1.02, 1.3, 150)
     for k, (a, uu, name) in enumerate(states):
         assert admissible(a, uu)
         o = (k * panel, 0.0)
@@ -43,22 +45,22 @@ def marker_arc():
             t = lo + (hi - lo) * j / 200
             assert abs(math.cos(t) - a) <= 0.5 and abs(math.sin(t) - uu) <= 0.5
         c = shift(o, (a, uu))
-        f.line(shift(o, (-0.25, 0)), shift(o, (1.7, 0)), stroke=FAINT, width=1)
-        f.text(shift(o, (1.7, 0)), 't = 0', size=12, italic=False,
-               anchor='end', color=FAINT, dy=11)
+        f.line(shift(o, (left, 0)), shift(o, (1.7, 0)), stroke=FAINT, width=1)
+        f.text(shift(o, (1.7, 0)), it('t') + NB + '=' + NB + '0', size=13,
+               italic=False, anchor='end', color=FAINT, dy=12)
         f.square(c, fill=FILLS[0], stroke=BLUE)
         for x0, y0, x1, y1 in ((a - 0.5, -0.98, a - 0.5, 1.12),
                                (a + 0.5, -0.98, a + 0.5, 1.12),
-                               (-0.25, uu - 0.5, 1.7, uu - 0.5),
-                               (-0.25, uu + 0.5, 1.7, uu + 0.5)):
+                               (left, uu - 0.5, 1.7, uu - 0.5),
+                               (left, uu + 0.5, 1.7, uu + 0.5)):
             f.line(shift(o, (x0, y0)), shift(o, (x1, y1)), width=1, dash='4 4')
-        f.text(shift(o, (a - 0.5, -0.98)), 'near', size=12, italic=False,
-               anchor='end', dx=-4, dy=4)
-        f.text(shift(o, (a + 0.5, -0.98)), 'far', size=12, italic=False,
+        f.text(shift(o, (a - 0.5, -0.98)), 'near', size=13, italic=False,
                anchor='start', dx=4, dy=4)
-        f.text(shift(o, (-0.25, uu - 0.5)), 'lower', size=12, italic=False,
+        f.text(shift(o, (a + 0.5, -0.98)), 'far', size=13, italic=False,
+               anchor='start', dx=4, dy=4)
+        f.text(shift(o, (left, uu - 0.5)), 'lower', size=13, italic=False,
                anchor='start', dy=-9)
-        f.text(shift(o, (-0.25, uu + 0.5)), 'upper', size=12, italic=False,
+        f.text(shift(o, (left, uu + 0.5)), 'upper', size=13, italic=False,
                anchor='start', dy=-9)
         f.arc(o, 1.0, -math.pi / 2 - 0.05, math.pi / 2 + 0.3, FAINT,
               width=1.2)
@@ -71,11 +73,15 @@ def marker_arc():
         for t in (lo, hi):
             f.line(o, shift(o, u(t), 1.0), stroke=ORANGE, width=1)
         f.arc(o, 0.3, ell, hi, INK, width=1.2)
+        half = shift(o, u(ell + HALF_WIDTH / 2), 0.4)
+        assert half[0] + 0.03 < o[0] + a - 0.5            # left of the near edge
+        f.text(half, '½', size=14, italic=False)
         f.dot(c, fill=BLUE)
-        f.text(shift(o, (a, uu + 0.5)), '(a, u) = ' + name, size=13,
-               color=BLUE, dy=-10)
+        f.text(shift(o, (a + 0.45, uu + 0.5)), '(' + it('a') + ',' + NB
+               + it('u') + ')' + NB + '=' + NB + name, size=13, italic=False,
+               color=BLUE, anchor='end', dy=-10)
         f.dot(o)
-        f.text(shift(o, (-0.04, -0.07)), 'o', anchor='end')
+        f.text(shift(o, (0.03, -0.08)), 'o', anchor='start')
         f.text(shift(o, (-0.16, -0.92)), sb('Γ', '1', size=16), size=16,
                color=FAINT)
     f.save('appendix-f/marker-arc', 'Two admissible squares in their charts, with '
@@ -137,7 +143,7 @@ def admissible_region():
 # A line against the arcsine (Lemma F.1).
 
 def asin_line():
-    g = lambda y: 1.25 * y - math.asin(max(-1.0, min(1.0, y)))
+    f = lambda y: 1.25 * y - math.asin(max(-1.0, min(1.0, y)))   # f of F.1
     p = Plot(-1.12, 1.18, -0.42, 0.4, 220, 480)
     # The ranges used by the two transverse edges.
     y1, y2 = -0.5, 11 / 40
@@ -148,21 +154,21 @@ def asin_line():
     x_axis(p, -1.08, 1.15, ticks=((-1, '−1'), (-0.6, '−3/5'), (-0.5, ''),
                                   (0.6, '3/5'), (1, '1')), label='y')
     p.line((0, -0.38), (0, 0.38), width=1, arrow=True)
-    p.line((y1, g(y1)), (y2, g(y1)), stroke=ORANGE, width=1.4, dash='5 3')
-    p.line((0.5, g(0.6)), (1, g(0.6)), stroke=GREEN, width=1.4, dash='5 3')
-    p.curve(g, -1, 1, n=800, stroke=BLUE, width=2.4)
-    p.dot((y1, g(y1)), fill=ORANGE)
-    p.dot((0.6, g(0.6)), fill=GREEN)
-    p.dot((-0.6, g(-0.6)), fill=BLUE)
-    p.text((y1, g(y1)), 'π/6 − 5/8', size=13, italic=False, color=ORANGE,
+    p.line((y1, f(y1)), (y2, f(y1)), stroke=ORANGE, width=1.4, dash='5 3')
+    p.line((0.5, f(0.6)), (1, f(0.6)), stroke=GREEN, width=1.4, dash='5 3')
+    p.curve(f, -1, 1, n=800, stroke=BLUE, width=2.4)
+    p.dot((y1, f(y1)), fill=ORANGE)
+    p.dot((0.6, f(0.6)), fill=GREEN)
+    p.dot((-0.6, f(-0.6)), fill=BLUE)
+    p.text((y1, f(y1)), 'π/6 − 5/8', size=13, italic=False, color=ORANGE,
            anchor='end', dx=-6, dy=14)
-    p.text((0.6, g(0.6)), '3/4 − arcsin 3/5', size=13, italic=False,
+    p.text((0.6, f(0.6)), '3/4 − arcsin 3/5', size=13, italic=False,
            color=GREEN, dy=-13)
-    p.text((-0.12, 0.3), 'lower edge', size=12, italic=False, color=ORANGE)
-    p.text((0.75, -0.3), 'upper edge', size=12, italic=False, color=GREEN)
-    p.text((-0.95, g(-0.95)), 'g', size=17, color=BLUE, anchor='start',
+    p.text((-0.26, 0.3), 'lower edge', size=13, italic=False, color=ORANGE)
+    p.text((0.75, -0.3), 'upper edge', size=13, italic=False, color=GREEN)
+    p.text((-0.95, f(-0.95)), 'f', size=17, color=BLUE, anchor='start',
            dx=8, dy=-6)
-    p.save('appendix-f/asin-line', 'The function g(y) = 5/4 y minus arcsin y on '
+    p.save('appendix-f/asin-line', 'The function f(y) = 5/4 y minus arcsin y on '
            '[-1, 1]: it increases on [-3/5, 3/5] and decreases on [3/5, 1]. '
            'On the range of the lower edge it stays above its value at -1/2; '
            'on the range of the upper edge it stays below its value at 3/5')
@@ -210,10 +216,10 @@ def transverse():
     p.line((0.5, 0), (0.5, upper_edge(0.5)), stroke=FAINT, width=1,
            dash='3 3')
     p.text((0.6, 0.69), 'ℓ(a, u)', size=13, color=BLUE)
-    p.text((0.33, 0.17), 'arcsin(u − ½) + ½', size=13,
-           color=ORANGE, anchor='start')
-    p.text((0.06, 1.0), 'arcsin(u + ½) − ½', size=13,
-           color=GREEN, anchor='start')
+    p.text((0.33, 0.17), 'arcsin(' + it('u') + NB + '−' + NB + '½)' + NB + '+'
+           + NB + '½', size=13, italic=False, color=ORANGE, anchor='start')
+    p.text((0.06, 1.0), 'arcsin(' + it('u') + NB + '+' + NB + '½)' + NB + '−'
+           + NB + '½', size=13, italic=False, color=GREEN, anchor='start')
     p.save('appendix-f/transverse', 'For each u, the labels of the admissible '
            'states (a, u) form the shaded interval. It lies above the curve '
            'arcsin(u - 1/2) + 1/2 of the lower edge, and for u at most '
@@ -242,7 +248,7 @@ def envelope_band():
     for x, h in zip(xs, high):
         assert h <= envelope(x) + 1e-12
     level = math.pi / 3 - HALF_WIDTH
-    p = Plot(-0.06, 0.84, 0.1, 0.64, 470, 620)
+    p = Plot(-0.06, 0.99, 0.1, 0.64, 470, 620)
     x_axis(p, -0.03, 0.82, y=0.13, ticks=((0, '0'), (0.25, '¼'), (0.5, '½'),
                                           (0.75, '¾')), label='x')
     p.line((xe, 0.13), (xe, high[-1]), stroke=FAINT, width=1, dash='3 3')
@@ -254,10 +260,11 @@ def envelope_band():
     p.text((0.78, level), 'π/3 − ½', size=13, italic=False,
            anchor='end', dy=-10)
     p.curve(envelope, 0, 0.75, stroke=ORANGE, width=2.4)
-    p.text((0.66, envelope(0.66)), 'E(x) − π/6', size=14, color=ORANGE,
-           anchor='start', dx=8, dy=-2)
-    p.text((0.33, 0.36), 'side(a, u) + arcsin x − π/6', size=13,
-           color=BLUE)
+    p.text((0.75, envelope(0.75)), 'E(x) − π/6', size=14, color=ORANGE,
+           anchor='start', dx=8, dy=4)
+    p.text((0.33, 0.42), 'side(' + it('a') + ',' + NB + it('u') + ')' + NB
+           + '+' + NB + 'arcsin' + NB + it('x') + NB + '−' + NB + 'π/6',
+           size=13, italic=False, color=BLUE)
     p.save('appendix-f/envelope-band', 'For each x = a - 1/2, the values of side(a, '
            'u) + arcsin x - pi/6 over the admissible states (a, u) fill the '
            'shaded interval, which lies below the graph of E(x) - pi/6 and '
@@ -265,7 +272,7 @@ def envelope_band():
 
 
 def peak_bound():
-    """Lemma F.5: h(x) = 9 (x + 1/8)^2 (9 - 7x)^3 rises on [0, 123/280],
+    """Lemma F.5: P(x) = 9 (x + 1/8)^2 (9 - 7x)^3 rises on [0, 123/280],
     falls on [123/280, 3/4], and its peak is below 676."""
     h = lambda x: 9 * (x + 1 / 8) ** 2 * (9 - 7 * x) ** 3
     dh = lambda x: 9 * (x + 1 / 8) * (9 - 7 * x) ** 2 * (123 / 8 - 35 * x)
@@ -288,13 +295,13 @@ def peak_bound():
     pl.line((c, 0), (c, h(c)), stroke=FAINT, width=1, dash='3 3')
     pl.curve(h, 0, w, stroke=BLUE, width=2.4)
     pl.dot((c, h(c)), fill=BLUE)
-    pl.text((c, h(c)), f'h(123/280) ≈ {h(c):.1f}', size=13, italic=False,
-            color=BLUE, dy=-14)
-    pl.text((0.12, h(0.12)), 'h', size=17, color=BLUE, anchor='end', dx=-8,
+    pl.text((c, h(c)), it('P') + f'(123/280){NB}≈{NB}{h(c):.1f}', size=13,
+            italic=False, color=BLUE, dy=-14)
+    pl.text((0.12, h(0.12)), 'P', size=17, color=BLUE, anchor='end', dx=-8,
             dy=-6)
-    pl.text((c / 2, 40), "h′ ≥ 0", size=14, color=GREEN)
-    pl.text(((c + w) / 2, 40), "h′ ≤ 0", size=14, color=ORANGE)
-    pl.save('appendix-f/peak-bound', 'The function h(x) = 9 (x + 1/8) squared '
+    pl.text((c / 2, 40), "P′ ≥ 0", size=14, color=GREEN)
+    pl.text(((c + w) / 2, 40), "P′ ≤ 0", size=14, color=ORANGE)
+    pl.save('appendix-f/peak-bound', 'The function P(x) = 9 (x + 1/8) squared '
             '(9 - 7x) cubed on [0, 3/4]: it increases up to x = 123/280, '
             'where its derivative changes sign, and decreases after it; its '
             'peak, about 596.1, is below 676')
@@ -328,7 +335,8 @@ def envelope_parabola():
     pl.curve(envelope, 0, 0.75, stroke=ORANGE, width=2.4)
     pl.dot((2 / 9, top), fill=PURPLE)
     pl.dot((0, envelope(0)), fill=INK)
-    pl.text((0.555, 0.5225), '13/24 + x/36 − x²/16', size=13,
+    pl.text((0.555, 0.5225), '13/24' + NB + '+' + NB + it('x') + '/36' + NB
+            + '−' + NB + it('x') + '²/16', size=13, italic=False,
             color=PURPLE, anchor='start')
     pl.text((0.5, envelope(0.5)), 'E(x) − π/6', size=14, color=ORANGE,
             anchor='end', dx=-12, dy=10)
@@ -338,13 +346,110 @@ def envelope_parabola():
             'pi/3 - 1/2 lies above both')
 
 
+def margins():
+    """Lemmas F.2 and F.3: by how much the label clears the lower and the
+    upper edge, at the admissible state with the given u where it is closest.
+    The label decreases in a, so it is least at the largest a, on the circle,
+    and largest at a = 1/2."""
+    umax = math.sqrt(TARGET / 2) - 0.5
+    amax = lambda uu: math.sqrt(TARGET - (uu + 0.5) ** 2) - 0.5
+    lower = lambda uu: label(amax(uu), uu) - math.asin(uu - 0.5) - HALF_WIDTH
+    upper = lambda uu: math.asin(uu + 0.5) - HALF_WIDTH - label(0.5, uu)
+    n = 4000
+    us = [umax * k / n for k in range(n + 1)]
+    # the closest states really are at a = amax(u) and a = 1/2
+    for k in range(0, n + 1, 40):
+        uu = us[k]
+        for j in range(41):
+            a = max(0.5, uu) + (amax(uu) - max(0.5, uu)) * j / 40
+            if admissible(a, uu):
+                assert label(a, uu) >= label(amax(uu), uu) - 1e-12
+                assert label(a, uu) <= label(0.5, uu) + 1e-12 or uu > 0.5
+    lo_val, lo_u = min((lower(x), x) for x in us)
+    up_val, up_u = min((upper(x), x) for x in us if x <= 0.5)
+    assert 0.0046 < lo_val < 0.0048 and abs(lo_u - 0.72) < 0.01
+    assert abs(up_u - 0.1) < 1e-3 and abs(up_val - (math.asin(0.6) - 0.625)) < 1e-6
+    a0u = [x for x in us if label(amax(x), x) < 1.25 * x - 1e-12][0]
+    top = 0.1
+    p = Plot(-0.08, 0.9, -0.012, 0.112, 480, 3000)
+    x_axis(p, -0.03, 0.86, ticks=((0, '0'), (0.1, '0.1'), (0.5, '½'),
+                                 (0.775, '31/40')), label='u')
+    y_axis(p, 0, 0.108, ticks=((0.02, '0.02'), (0.04, '0.04'), (0.06, '0.06'),
+                               (0.08, '0.08'), (0.1, '0.10')))
+    p.curve(lower, 0, umax, n=n, ylim=(0, top), stroke=ORANGE, width=2.4)
+    p.curve(upper, 0, 0.5, n=n, ylim=(0, top), stroke=GREEN, width=2.4)
+    p.line((a0u, 0), (a0u, lower(a0u)), stroke=FAINT, width=1, dash='3 3')
+    p.dot((lo_u, lo_val), fill=ORANGE)
+    p.dot((up_u, up_val), fill=GREEN)
+    p.text((lo_u, lo_val), f'{lo_val:.4f}', size=13, italic=False,
+           color=ORANGE, dy=-14)
+    p.text((up_u, up_val), 'arcsin' + NB + '3/5' + NB + '−' + NB + '5/8',
+           size=13, italic=False, color=GREEN, anchor='start', dx=6, dy=12)
+    assert lower(0.62) < 0.03
+    p.text((0.62, 0.04), 'lower edge', size=13, italic=False, color=ORANGE,
+           anchor='start')
+    p.text((0.34, 0.092), 'upper edge', size=13, italic=False, color=GREEN,
+           anchor='end')
+    p.text((a0u, 0.004), 'axial', size=12, italic=False, color=FAINT,
+           anchor='end', dx=-5)
+    p.text((a0u, 0.004), 'side', size=12, italic=False, color=FAINT,
+           anchor='start', dx=5)
+    p.save('appendix-f/margins', 'The margins by which the label clears the '
+           'lower edge, for u from 0 to 31/40, and the upper edge, for u up to '
+           '1/2, at the closest admissible state with the given u. Both stay '
+           'positive; the lower one comes down to about 0.0047 near u = 0.72, '
+           'the upper one to arcsin 3/5 - 5/8 at u = 1/10')
+
+
+def curvature():
+    """Lemma F.6 (4): on [0, 3/4], E_2 lies below the bound of the proof,
+    (x + 1/8)/A^3 - 13/(12 B^3) - 1/8, which lies below -1/8."""
+    A3 = lambda x: (1 - x * x) ** 1.5
+    B3 = lambda x: (TARGET - (x + 1) ** 2) ** 1.5
+    E2 = lambda x: x / A3(x) - 13 / (12 * B3(x))
+    U = lambda x: (x + 1 / 8) / A3(x) - 13 / (12 * B3(x)) - 1 / 8
+    xs = [0.75 * k / 3000 for k in range(3001)]
+    for x in xs:
+        assert E2(x) <= U(x) + 1e-12 and U(x) < -1 / 8
+    assert abs(E2(0) + 26 / 81) < 1e-12
+    e_max, x_max = max((E2(x), x) for x in xs)
+    assert abs(e_max + 0.209) < 0.001 and abs(x_max - 0.33) < 0.01
+    lo = -1.15
+    p = Plot(-0.07, 0.86, -1.24, 0.1, 520, 300)
+    x_axis(p, -0.03, 0.83, y=0, ticks=((0.25, '¼'), (0.5, '½'),
+                                      (0.75, '¾')), label='x')
+    y_axis(p, lo, 0.08, ticks=((-1, '−1'), (-0.5, '−½')))
+    p.line((0, -1 / 8), (0.78, -1 / 8), stroke=INK, width=1.3, dash='6 4')
+    p.text((0.78, -1 / 8), '−1/8', size=13, italic=False, anchor='start',
+           dx=6)
+    p.curve(U, 0, 0.75, ylim=(lo, 0), stroke=PURPLE, width=1.8, dash='7 4')
+    p.curve(E2, 0, 0.75, ylim=(lo, 0), stroke=BLUE, width=2.4)
+    p.dot((0, E2(0)), fill=BLUE)
+    p.text((0, E2(0)), '−26/81', size=13, italic=False, color=BLUE,
+           anchor='end', dx=-7)
+    p.dot((x_max, e_max), fill=BLUE)
+    p.text((x_max, e_max), f'{e_max:.3f}'.replace('-', '−'), size=13,
+           italic=False, color=BLUE, dy=14)
+    p.text((0.6, E2(0.6)), sb(it('E'), '2', size=14), size=14, color=BLUE,
+           anchor='end', dx=-8)
+    xb = next(x for x in xs if x > x_max and U(x) < -0.75)
+    p.text((xb, -0.75), 'bound of step 4', size=13, italic=False,
+           color=PURPLE, anchor='start', dx=10)
+    p.save('appendix-f/curvature', 'The second derivative E2 of the envelope on '
+           '[0, 3/4]: it starts at -26/81, rises to about -0.209 near x = 0.33 and '
+           'falls steeply; it stays below the dashed bound of the proof, which '
+           'stays below the level -1/8')
+
+
 def main():
     admissible_region()
     marker_arc()
     asin_line()
     transverse()
+    margins()
     envelope_band()
     peak_bound()
+    curvature()
     envelope_parabola()
 
 

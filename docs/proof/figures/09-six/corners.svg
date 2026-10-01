@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="573" height="573" viewBox="0 0 573 573" role="img" aria-label="The far corners of E and S and a far vertex of D, each at squared distance q* from the origin, with the legs of the right triangles to them">
+<title>The far corners of E and S and a far vertex of D, each at squared distance q* from the origin, with the legs of the right triangles to them</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<circle cx="286.3" cy="286.3" r="253.3" fill="none" stroke="#1f2937" stroke-width="1.0" stroke-dasharray="6 4"/>
+<polygon points="223.9,348.6 373.9,348.6 373.9,198.6 223.9,198.6" fill="none" stroke="#9ca3af" stroke-width="1.0" fill-opacity="1"/>
+<polygon points="223.9,198.6 373.9,198.6 373.9,48.6 223.9,48.6" fill="none" stroke="#9ca3af" stroke-width="1.0" fill-opacity="1"/>
+<polygon points="373.9,348.6 523.9,348.6 523.9,198.6 373.9,198.6" fill="none" stroke="#9ca3af" stroke-width="1.0" fill-opacity="1"/>
+<polygon points="73.9,298.2 223.9,298.2 223.9,148.2 73.9,148.2" fill="none" stroke="#9ca3af" stroke-width="1.0" fill-opacity="1"/>
+<polygon points="274.3,498.6 424.3,498.6 424.3,348.6 274.3,348.6" fill="none" stroke="#9ca3af" stroke-width="1.0" fill-opacity="1"/>
+<polygon points="168.2,510.4 274.3,404.3 168.2,298.2 62.2,404.3" fill="none" stroke="#9ca3af" stroke-width="1.0" fill-opacity="1"/>
+<polyline points="286.3,286.3 523.9,286.3 523.9,198.6" fill="none" fill-opacity="1.0" stroke="#16a34a" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="286.3,286.3 523.9,198.6" fill="none" fill-opacity="1.0" stroke="#16a34a" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 3"/>
+<circle cx="523.9" cy="198.6" r="4" fill="#16a34a"/>
+<polygon points="523.9,286.3 511.9,286.3 511.9,274.3 523.9,274.3" fill="none" stroke="#16a34a" stroke-width="1.0" fill-opacity="1"/>
+<polyline points="286.3,286.3 286.3,498.6 424.3,498.6" fill="none" fill-opacity="1.0" stroke="#db2777" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="286.3,286.3 424.3,498.6" fill="none" fill-opacity="1.0" stroke="#db2777" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 3"/>
+<circle cx="424.3" cy="498.6" r="4" fill="#db2777"/>
+<polygon points="286.3,498.6 286.3,486.6 298.3,486.6 298.3,498.6" fill="none" stroke="#db2777" stroke-width="1.0" fill-opacity="1"/>
+<polyline points="286.3,286.3 62.2,286.3 62.2,404.3" fill="none" fill-opacity="1.0" stroke="#0891b2" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="286.3,286.3 62.2,404.3" fill="none" fill-opacity="1.0" stroke="#0891b2" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 3"/>
+<circle cx="62.2" cy="404.3" r="4" fill="#0891b2"/>
+<polygon points="62.2,286.3 74.2,286.3 74.2,298.3 62.2,298.3" fill="none" stroke="#0891b2" stroke-width="1.0" fill-opacity="1"/>
+<text x="405.1" y="266.8" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle"><tspan font-style="italic">s</tspan><tspan dy="5.6" font-size="10.5">*</tspan><tspan dy="-5.6"> + 3/2</tspan></text>
+<text x="508.9" y="242.5" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="end" dominant-baseline="middle"><tspan font-style="italic">s</tspan><tspan dy="5.6" font-size="10.5">*</tspan><tspan dy="-5.6"> + ½</tspan></text>
+<text x="296.8" y="430.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#db2777" text-anchor="start" dominant-baseline="middle">3/2 − <tspan font-style="italic">s</tspan><tspan dy="5.6" font-size="10.5">*</tspan></text>
+<text x="355.3" y="516.6" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#db2777" text-anchor="middle" dominant-baseline="middle"><tspan font-style="italic">t</tspan><tspan dy="5.6" font-size="10.5">*</tspan><tspan dy="-5.6"> + ½</tspan></text>
+<text x="136.7" y="307.3" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#0891b2" text-anchor="middle" dominant-baseline="middle"><tspan font-style="italic">d</tspan><tspan dy="5.6" font-size="10.5">*</tspan><tspan dy="-5.6"> + <tspan font-style="italic">h</tspan></tspan></text>
+<text x="72.7" y="345.3" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#0891b2" text-anchor="start" dominant-baseline="middle"><tspan font-style="italic">d</tspan><tspan dy="5.6" font-size="10.5">*</tspan></text>
+<circle cx="286.3" cy="286.3" r="2.8" fill="#1f2937"/>
+<text x="295.3" y="268.3" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">o</text>
+<text x="473.8" y="316.3" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">E</text>
+<text x="343.3" y="461.8" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#db2777" text-anchor="middle" dominant-baseline="middle" font-style="italic">S</text>
+<text x="169.3" y="428.8" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#0891b2" text-anchor="middle" dominant-baseline="middle" font-style="italic">D</text>
+</svg>

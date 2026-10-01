@@ -2,7 +2,7 @@
 <title>A square T in the cap beyond the line x = eta, turned by 0.2, inside the circle of radius R0. From the origin, the four directions u(0.2 + k pi/2), k = 0, 1, 2, 3, that can serve as its primary axis, each labelled with the coordinates (a, b) of the centre of T in that frame: (1.05, 0.08) for the frame facing the cap, drawn in blue, and (0.08, -1.05), (-1.05, -0.08) and (-0.08, 1.05) for the others, drawn grey</title>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
 <rect width="100%" height="100%" fill="#ffffff"/>
-<circle cx="262.8" cy="262.8" r="236.4" fill="none" stroke="#1f2937" stroke-width="1.2"/>
+<circle cx="262.8" cy="262.8" r="236.4" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6 4"/>
 <text x="98.3" y="79.5" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">R<tspan dy="4.2" font-size="9.5">0</tspan></text>
 <line x1="317.0" y1="504.8" x2="317.0" y2="20.8" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="7 4"/>
 <text x="322.6" y="465.8" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">x = η</text>

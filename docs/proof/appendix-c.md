@@ -18,18 +18,19 @@ $D$ and $S$ along a secondary axis
 the own wings ([Lemma 9.43](09-six.md#lemma-943-signs-of-the-own-wings), §C.7).
 Each proof uses only the results before it.
 
-Three kinds of argument recur. A separation of two squares along an axis is a
-linear inequality between their centres
+Three kinds of argument recur: separating inequalities, profiles and
+stresses. A separation of two squares along an axis is a linear inequality
+between their centres
 ([Lemma 9.11](09-six.md#lemma-911-separating-axes-of-two-squares)), and a
-separation from the central square $C$ is one between a centre and the centre
-of $C$ ([Definition 9.12](09-six.md#definition-912-separators-of-the-containing-square)).
+separation from the central square $C$ one between a centre and the centre of
+$C$ ([Definition 9.12](09-six.md#definition-912-separators-of-the-containing-square)).
 Combined with the disk, such an inequality bounds a coordinate of a square by a
-*profile*: a function of the angles. Where one inequality is not enough, a
+*profile*, a function of the angles. Where one inequality is not enough, a
 *stress* ([Definition 9.23](09-six.md#definition-923-stress)) adds several of them
 with weights, and the supports of the squares in the disk bound the works of
-the forces ([Lemmas 9.24 to 9.26](09-six.md#lemma-924-balance)); the bounds are then
-functions of the angles that are concave in each angle, and it remains to
-check them at the vertices of a domain of the angles.
+the forces ([Lemmas 9.24 to 9.26](09-six.md#lemma-924-balance)). The resulting
+bounds are concave in each angle, so it remains to check them at the vertices
+of a domain of the angles.
 
 **Notation.** Throughout, a normalized packing
 ([Definition 9.34](09-six.md#definition-934-normalized-packing)) is fixed, with the
@@ -43,9 +44,9 @@ W = Q_{\pi + w}(a_W, b_W), \qquad D = Q_{\pi + d}(a_D, b_D), \qquad S = Q_{3\pi/
 for the charts in the ceiling of
 [Proposition 9.22](09-six.md#proposition-922-labels), and $e^X_1$, $e^X_2$ for the
 primary and secondary axes of a square $X$
-([Definition 9.9](09-six.md#definition-99-squares-in-a-frame)). The widths
-$\omega(\delta)$ and thresholds $\tau(\delta) = \frac12 + \omega(\delta)$ are those
-of Definition 9.9; for $0 \le \delta \le \frac\pi2$,
+([Definition 9.9](09-six.md#definition-99-squares-in-a-frame); Figure C.1). The
+widths $\omega(\delta)$ and thresholds $\tau(\delta) = \frac12 + \omega(\delta)$
+are those of Definition 9.9; for $0 \le \delta \le \frac\pi2$,
 
 ```math
 \omega(\delta) = \tfrac12\left(\cos\delta + \sin\delta\right), \qquad \tau(\delta) = \tfrac12\left(1 + \cos\delta + \sin\delta\right),
@@ -53,9 +54,19 @@ of Definition 9.9; for $0 \le \delta \le \frac\pi2$,
 
 and $\omega(\delta)$ does not change when $\delta$ is replaced by $-\delta$,
 $\pi + \delta$ or $\frac\pi2 \pm \delta$
-([Lemma A.15](appendix-a.md#lemma-a15-small-angles) (2)). A unit vector $u(\varphi)$
-has the components $(\cos(\varphi - t), \sin(\varphi - t))$ in the frame of a
+([Lemma A.15](appendix-a.md#lemma-a15-small-angles) (2)). A unit vector $u(\theta)$
+has the components $(\cos(\theta - t), \sin(\theta - t))$ in the frame of a
 square of phase $t$.
+
+![The model of six squares in its dashed circle of radius R6: the grey squares C, E, N and the coloured squares W (blue), D (purple, turned by 45 degrees) and S (green). At the centres of W, D and S the two axes of each frame are drawn as arrows: for W pointing left and down, for D down-left and down-right, for S down and right. Faint rays from the centre o mark the phases pi, 5 pi over 4 and 3 pi over 2. A blue dashed line runs along the lower side of W, touched by the top vertex of D, and a green dashed line along the left side of S, touched by the right vertex of D](figures/appendix-c/frames.svg)
+
+*Figure C.1.* The model of [Theorem 9.1](09-six.md#theorem-91-six-squares), with the
+frames of $W$, $D$ and $S$, of phases $\pi$, $\frac{5\pi}4$ and $\frac{3\pi}2$
+(dotted rays). In a normalized packing these phases become $\pi + w$,
+$\pi + d$ and $\frac{3\pi}2 + s$. The dashed lines are the two separations of
+the model between the turned square $D$ and its neighbours: $W$ and $D$ along
+$e^W_2$, and $D$ and $S$ along $e^S_2$, the *wings* of
+[Definition 9.44](09-six.md#definition-944-wings).
 
 **Facts from Chapter 9.** We use the following.
 
@@ -71,11 +82,12 @@ square of phase $t$.
    whenever $(t, a, b)$ is.
 2. (Angles.) $-\frac23 < w < \frac58$, $0 < d \le \frac\pi4$,
    $-\frac58 < s < \frac23$, and the phases increase in the order $W$, $D$, $S$:
-   $w < d < \frac\pi2 + s$. $D$ is separated from $C$ along its own axis, and
-   $W$ and $S$ are each separated from $C$ along their own axis or along their
-   matching side, the west side for $W$ and the south side for $S$; on its
-   matching side, the angle of a square is less than $\frac25$ in absolute value
-   ([Proposition 9.35](09-six.md#proposition-935-normalization),
+   $w < d < \frac\pi2 + s$. $D$ is separated from $C$ along its own axis. As in
+   Definition 9.34, $W$ is *on its matching side* if it is separated from $C$
+   along the west side of $C$, and *on its own axis* otherwise, and then it is
+   separated from $C$ along its own axis; likewise for $S$, with the south
+   side. On its matching side, the angle of a square is less than $\frac25$ in
+   absolute value ([Proposition 9.35](09-six.md#proposition-935-normalization),
    [Lemma 9.30](09-six.md#lemma-930-two-choices)).
 3. (Constants.) By [Lemma 9.5](09-six.md#lemma-95-the-ceiling), $R_0 < 1.689$,
    $\rho_0 < \bar\rho = 1.11282 < 1.113$ and $c_0 < \bar c = 0.11282 < 0.113$, so
@@ -158,8 +170,8 @@ $\tau(\pm x) = \frac12 + \frac12(\cos x + \sin x)$. $\square$
 [`angularWidth_eq`](../../SquaresInCircles/Common/SeparatingAxes.lean#L253).*
 
 The two differences correspond to each other under the reflection in the
-diagonal, which exchanges $W$ and $S$, $c_x$ and $c_y$, and turns $w$ into $-s$
-and $b$ into $-b$.
+diagonal, which exchanges $W$ and $S$ and $c_x$ and $c_y$, and replaces $w$ by
+$-s$ and $b$ by $-b$.
 
 ### Lemma C.2 (the pairs W, D and D, S)
 
@@ -190,21 +202,26 @@ $\tau(\frac\pi2 + s - d) = \tau(d - s)$. $\square$
 [`oriented_pair_threshold`](../../SquaresInCircles/Common/SeparatingAxes.lean#L312),
 [`Six.south_relative_width`](../../SquaresInCircles/Six/Separators/Walls.lean#L136).*
 
-![The model of six squares in its dashed circle of radius R6: the grey squares C, E, N and the coloured squares W (blue), D (purple, turned by 45 degrees) and S (green). At the centres of W, D and S the two axes of each frame are drawn as arrows: for W pointing left and down, for D down-left and down-right, for S down and right. Faint rays from the centre o mark the phases pi, 5 pi over 4 and 3 pi over 2. A blue dashed line runs along the lower side of W, touched by the top vertex of D, and a green dashed line along the left side of S, touched by the right vertex of D](figures/appendix-c/frames.svg)
-
-*Figure C.1.* The model of [Theorem 9.1](09-six.md#theorem-91-six-squares), with the
-frames of $W$, $D$ and $S$ at the phases $\pi$, $\frac{5\pi}4$ and
-$\frac{3\pi}2$. In a normalized packing these phases become $\pi + w$,
-$\pi + d$ and $\frac{3\pi}2 + s$. The dashed lines are the two separations of
-the model between the turned square $D$ and its neighbours: $W$ and $D$ along
-$e^W_2$, and $D$ and $S$ along $e^S_2$, the *wings* of
-[Definition 9.44](09-six.md#definition-944-wings).
-
 The heart of Lemma 9.37 is the following inequality between two projections of
-the difference of two centres. When the phases of two squares differ by $q$,
-the inward primary axis $-e^X_1$ of the first square and the secondary axis
-$e^Y_2$ of the second make the angle $\frac\pi2 - q$; near $q = \frac\pi2$ they
-nearly agree, and for smaller $q$ the inward axis cannot separate at all.
+the difference of two centres. When the phases of two squares $X$ and $Y$
+differ by $q$, the inward primary axis $-e^X_1$ of the first square and the
+secondary axis $e^Y_2$ of the second make the angle $\frac\pi2 - q$, and so do
+$e^Y_1$ and $e^X_2$ (Figure C.2). Near $q = \frac\pi2$ the two axes of each
+pair nearly agree, and for $q \le \frac{11}{10}$ the inward axis cannot
+separate at all (Figure C.3).
+
+![Two panels. (a) Two squares X (cyan) and Y (yellow) in the dashed circle of radius R0, with their phases marked by faint rays from the centre o that make the angle q; at the centre of each square the two axes of its frame are drawn as arrows, and a dotted line along the side of X facing Y separates the two squares. (b) The eight vectors plus and minus e1 and e2 of X and Y drawn from one point: e2 of X and e2 of Y bold black; minus e1 of X and e1 of Y orange, each a small angle away from one of the bold ones, the angles marked by small orange arcs; the other four grey, minus e2 of X and minus e2 of Y dashed](figures/appendix-c/eight.svg)
+
+*Figure C.2.* Lemma 9.37 for two exterior squares $X = Q_t(a, b)$ and
+$Y = Q_{t + q}(A, B)$ with $t = \pi + 0.4$ and the phase gap $q = 1.3$, at
+$(a, b) = (1.02, -0.15)$ and $(A, B) = (1.02, 0.15)$. (a) The squares and their
+frames; here they are separated along $e^X_2$ (dotted) and along $e^Y_2$.
+(b) The eight vectors along which two squares can be separated, drawn from one
+point. Part (2) of the lemma assumes that $-e^X_2$ and $-e^Y_2$ (grey, dashed)
+do not separate, which the pins give for $W$, $D$ and for $D$, $S$; part (1)
+excludes $e^X_1$ and $-e^Y_1$ (grey); and $-e^X_1$ and $e^Y_1$ (orange) make the
+angle $\frac\pi2 - q$ with $e^Y_2$ and $e^X_2$ (bold), so that by Lemma C.3 a
+separation along them is one along these secondary axes.
 
 ### Lemma C.3 (the dominance of the secondary axes)
 
@@ -218,10 +235,10 @@ $a \le \rho_0$, $A \ge a_0$, $|b| \le U_0$ and $|B| \le U_0$.
 *Proof.* Here $\cos q, \sin q \ge 0$ and
 $\tau(q) = \frac12 + \frac12(\cos q + \sin q)$.
 
-(1) By Lemma A.7 (3),
+(1) By Lemma A.7 (3) at $x = \frac{11}{10}$,
 
 ```math
-\cos\tfrac{11}{10} \ge 1 - \tfrac{1.21}2 + \tfrac{1.4641}{24} - \tfrac{1.771561}{720} > 0.4535 > \tfrac9{20} ,
+\cos\tfrac{11}{10} \ge 1 - \tfrac{x^2}2 + \tfrac{x^4}{24} - \tfrac{x^6}{720} > 0.4535 > \tfrac9{20} ,
 ```
 
 and the cosine decreases on $[0, \pi]$, so $\cos q \ge \frac9{20}$. With
@@ -237,7 +254,7 @@ which is more than $1.625 - 1.45 \cdot 1.11282 > 0.0114$.
 The sine increases on $[0, \frac\pi2]$, so
 
 ```math
-\sin q \ge \sin\tfrac{11}{10} \ge \tfrac{11}{10} - \tfrac{1.331}6 > 0.878 > \frac{1 - k^2}{1 + k^2} = 0.8733\ldots
+\sin q \ge \sin\tfrac{11}{10} \ge \tfrac{11}{10} - \tfrac16\left(\tfrac{11}{10}\right)^3 > 0.878 > \frac{1 - k^2}{1 + k^2} = 0.8733\ldots
 ```
 
 Since $\cos^2 q = (1 - \sin q)(1 + \sin q)$,
@@ -271,7 +288,7 @@ $\tau(q)$. $\square$
 
 ![Graph over the phase gap q from 0 to pi over 2. An orange curve, the largest inward primary projection less the threshold, rises from about minus 0.77 at 0 and crosses zero at about q = 1.14, reaching about 0.58 at pi over 2. A blue curve, the least lead of the secondary projection over the inward primary one, rises from about minus 1.15 at 0, crosses zero near 1.05 and stays slightly above zero up to pi over 2, where it returns to zero. The band from 11/10 to pi over 2 is shaded](figures/appendix-c/dominance.svg)
 
-*Figure C.2.* Lemma C.3. In orange, $p(q) - \tau(q)$, where
+*Figure C.3.* Lemma C.3. In orange, $p(q) - \tau(q)$, where
 $p(q) = \rho_0 - a_0\cos q + U_0\sin q$ is the largest value of the inward
 primary projection $a - A\cos q + B\sin q$ allowed by the hypotheses; it is
 negative up to $q \approx 1.14$, so the inward axis separates only for larger
@@ -295,7 +312,8 @@ as $\tau(q) \ge 1$ (Lemma A.15 (2)). In the same way
 $\langle -e^Y_1, c_Y - c_X\rangle = \langle e^Y_1, c_X\rangle - A \le \rho_0 - a_0 < \tau(q)$.
 
 (2) By (1), the vectors other than $-e^X_2$ and $-e^Y_2$ along which $X$ and
-$Y$ can be separated are $-e^X_1$, $e^X_2$, $e^Y_1$ and $e^Y_2$. By Lemma 9.11,
+$Y$ can be separated are $-e^X_1$, $e^X_2$, $e^Y_1$ and $e^Y_2$ (Figure C.2 (b)).
+By Lemma 9.11,
 
 ```math
 \left\langle -e^X_1, c_Y - c_X\right\rangle = a - A\cos q + B\sin q , \qquad \left\langle e^Y_2, c_Y - c_X\right\rangle = B + a\sin q - b\cos q ,
@@ -336,11 +354,11 @@ $e^D_2$ or $e^S_2$. $\square$
 If $W$ is not separated from $C$ along the west side of $C$, it is separated
 along its own axis. Suppose that its angle $w$ is not negative. If $w = 0$, the
 two margins agree, which is impossible. If $w > 0$, $W$ is turned towards $D$,
-and the two margins force it to sit low, in the way of $D$ (Figure C.3): its
-transverse coordinate is bounded below (Lemma C.4). On the other side, $D$ on its
-own axis has a bounded transverse coordinate (Lemma C.5), and the two bounds
-leave no room for a separation of $W$ and $D$ along a secondary axis
-(Lemma C.6), although Lemma 9.37 requires one.
+and the two margins force it to sit low, in the way of $D$ (Figure C.4): its
+transverse coordinate is bounded below (Lemma C.4). And $D$, on its own axis,
+has a bounded transverse coordinate (Lemma C.5); the two bounds leave no room
+for the separation of $W$ and $D$ along a secondary axis that Lemma 9.37
+requires (Lemma C.6).
 
 ### Lemma C.4 (W on its own axis at a positive angle)
 
@@ -364,14 +382,16 @@ and $\sin w > 0$. $\square$
 *Lean:
 [`Six.own_west_transverse_lower`](../../SquaresInCircles/Six/Wings/WestSign.lean#L139).*
 
-![Two panels, each with the grey central square C, the dashed vertical line of its west side and a dashed blue line through a corner of C, the line of the side of C across which W is separated along its own axis. W is drawn in outline where it touches both lines at that corner, and shaded where it has slid along the blue line, with an arrow. In panel (a), w = −0.3, the corner is the upper left one and W slides upwards, away from the purple pin of D below. In panel (b), w = 0.3, the corner is the lower left one and W slides downwards onto the pin of D, across a dotted purple line through the same corner beyond which D lies](figures/appendix-c/turn.svg)
+![Two panels, each with the grey central square C around the disk centre o, the dashed vertical line of the west side of C, a dashed blue line through a corner of C perpendicular to the own axis of W, and a dotted purple line through the lower left corner of C, beyond which D lies. W is drawn in outline where it touches the two dashed lines at that corner, and shaded where it has slid along the blue line, with an arrow. In panel (a), w = −0.3, the corner is the upper left one and W slides upwards, away from the purple pin of D below. In panel (b), w = 0.3, the corner is the lower left one and W slides downwards onto the pin of D, across the dotted purple line](figures/appendix-c/turn.svg)
 
-*Figure C.3.* Lemma C.4, for $c = (c_0, c_0)$. A square $W$ at the angle $w$ that
+*Figure C.4.* Lemma C.4, for $c = (c_0, c_0)$. A square $W$ at the angle $w$ that
 touches both the line of the west side of $C$ and the line across which it is
 separated along its own axis has a vertex at a corner of $C$ (outlined). To be
 separated along its own axis but not along the west side, it must slide along
 its own line past the west side (shaded): upwards, away from $D$, if $w < 0$
-(a), and downwards, towards $D$ and its pin $p_D$, if $w > 0$ (b).
+(a), and downwards, towards $D$ and its pin $p_D$, if $w > 0$ (b). The dotted
+line is the line beyond which $D$ lies when it is separated from $C$ along its
+own axis, drawn for $d = 0.65$.
 
 ### Lemma C.5 (the transverse coordinate of D)
 
@@ -396,7 +416,7 @@ and $|b| + \frac12 \ge \frac{147}{100} - \frac v2 > 0$, and writing $v = 1 + x$
 with $0 \le x \le \frac12$,
 
 ```math
-(1 + \alpha v)^2 + \left(\tfrac{147}{100} - \tfrac v2\right)^2 - Q_0 = 0.0139883524 + 0.1041767048\,x + 0.3999083524\,x^2 > 0 ,
+(1 + \alpha v)^2 + \left(\tfrac{147}{100} - \tfrac v2\right)^2 - Q_0 = 0.013988\ldots + 0.104176\ldots\,x + 0.399908\ldots\,x^2 > 0 ,
 ```
 
 which contradicts $(a + \frac12)^2 + (|b| + \frac12)^2 \le Q_0$. $\square$
@@ -404,20 +424,23 @@ which contradicts $(a + \frac12)^2 + (|b| + \frac12)^2 \le Q_0$. $\square$
 *Lean:
 [`Six.diagonal_transverse_profile`](../../SquaresInCircles/Six/Wings/WestSign.lean#L26).*
 
+Figure C.12 (a) compares this bound (green) with the largest $|b|$ that the
+disk allows.
+
 ### Lemma C.6 (two reserves)
 
-Let $0 \le w \le d \le \frac\pi4$, $q = d - w$ and $T = \tan\frac w2$. Then
+Let $0 \le w \le d \le \frac\pi4$, $q = d - w$ and $k = \tan\frac w2$. Then
 
 1. Against a separation along $e^W_2$:
 
    ```math
-   \bar c + \bar\rho\left(\sin q + T\right) + \left(\tfrac{97}{100} - \tfrac12(\cos d + \sin d)\right)\cos q < \tau(q) ;
+   \bar c + \bar\rho\left(\sin q + k\right) + \left(\tfrac{97}{100} - \tfrac12(\cos d + \sin d)\right)\cos q < \tau(q) ;
    ```
 
 2. Against a separation along $e^D_2$:
 
    ```math
-   \tfrac{97}{100} - \tfrac12(\cos d + \sin d) + \bar\rho\left(\sin q + T\cos q\right) + \bar c\cos q < \tau(q) .
+   \tfrac{97}{100} - \tfrac12(\cos d + \sin d) + \bar\rho\left(\sin q + k\cos q\right) + \bar c\cos q < \tau(q) .
    ```
 
 *Proof.* As $d \le \frac\pi4 < \frac45$, Lemma A.16 applies to $d$ and to $w$, and
@@ -426,13 +449,13 @@ $0 \le q \le d$.
 (1) The right side less the left side is
 
 ```math
-\left(\tfrac12(\cos d + \sin d) - \tfrac{47}{100}\right)\cos q - \left(\bar\rho - \tfrac12\right)\sin q - \bar\rho T + \tfrac12 - \bar c .
+\left(\tfrac12(\cos d + \sin d) - \tfrac{47}{100}\right)\cos q - \left(\bar\rho - \tfrac12\right)\sin q - \bar\rho k + \tfrac12 - \bar c .
 ```
 
 By Lemma A.16 (1),
 $\frac12(\cos d + \sin d) - \frac{47}{100} \ge \frac3{100} + \frac6{25}d \ge 0$,
 and $\cos q \ge \cos d \ge 1 - \frac{d^2}2 \ge 0$. By Lemma A.16 (2),
-$\bar\rho T \le \frac{11}{20}\bar\rho w \le (\bar\rho - \frac12)w$, as
+$\bar\rho k \le \frac{11}{20}\bar\rho w \le (\bar\rho - \frac12)w$, as
 $\frac{11}{20} \cdot 1.11282 = 0.612051 < 0.61282$; and $\sin q \le q$. So the
 difference is at least
 
@@ -440,15 +463,15 @@ difference is at least
 \left(\tfrac3{100} + \tfrac6{25}d\right)\left(1 - \tfrac{d^2}2\right) - \left(\bar\rho - \tfrac12\right)(q + w) + \tfrac12 - \bar c = 0.41718 - 0.37282\,d - 0.015\,d^2 - 0.12\,d^3 ,
 ```
 
-which decreases in $d \ge 0$ and is $0.047884$ at $d = \frac45$.
+which decreases in $d \ge 0$ and is $0.047884$ at $d = \frac45$ (Figure C.5 (a)).
 
-(2) By Lemma A.16 (3), $\sin q + T\cos q = \sin d - T\cos d$. With
+(2) By Lemma A.16 (3), $\sin q + k\cos q = \sin d - k\cos d$. With
 $\bar\rho = 1 + \bar c$, the right side less the left side is the sum of
 
 ```math
 \left(1 - \bar c\right)\cos d - \bar c\sin d - \tfrac{47}{100}
 \qquad\text{and}\qquad
-\left(\tfrac12 - \bar c\right)(\cos q - \cos d) + \tfrac12(\sin q - \sin d) + \bar\rho T\cos d ,
+\left(\tfrac12 - \bar c\right)(\cos q - \cos d) + \tfrac12(\sin q - \sin d) + \bar\rho k\cos d ,
 ```
 
 as one checks by expanding. For $0 \le d \le \frac45$,
@@ -457,13 +480,13 @@ term is at least $0.88718(1 - \frac25d) - 0.11282\,d - 0.47 = 0.41718 - 0.467692
 For the second, Lemma A.16 (4) gives
 $\cos q - \cos d \ge \frac{89}{200}(d^2 - q^2) = \frac{89}{200}w(d + q) \ge \frac{89}{200}wd$;
 the mean value theorem gives $\sin d - \sin q \le d - q = w$; and Lemma A.16 (2)
-gives $T \ge \frac w2$. So the second term is at least
+gives $k \ge \frac w2$. So the second term is at least
 
 ```math
 w\left(\tfrac{89}{200}\left(\tfrac12 - \bar c\right)d - \tfrac12 + \tfrac{\bar\rho}2\cos d\right) \ge w\left(0.172295\,d - 0.5 + 0.55641\left(1 - \tfrac25d\right)\right) = w\left(0.05641 - 0.050269\,d\right) \ge 0
 ```
 
-for $d \le \frac45$. $\square$
+for $d \le \frac45$ (Figure C.5 (b)). $\square$
 
 *Lean:
 [`Six.west_secondary_reserve`](../../SquaresInCircles/Six/Wings/WestSign.lean#L64),
@@ -474,16 +497,25 @@ for $d \le \frac45$. $\square$
 [`cosine_difference_lower`](../../SquaresInCircles/Common/Trigonometry.lean#L694),
 [`small_polynomial_trig`](../../SquaresInCircles/Common/Trigonometry.lean#L621).*
 
+![Two graphs over d from 0 to pi over 4. In each, a light blue band, whose lower edge is a blue curve labelled w = 0, falls from about 0.42 at d = 0 to between about 0.12 and 0.16 in (a) and between about 0.08 and 0.17 in (b) at pi over 4; a dashed orange curve below the band falls from 0.42 to 0.057 in (a) and to 0.050 in (b), where it ends in a marked dot](figures/appendix-c/reserves.svg)
+
+*Figure C.5.* The reserves of Lemma C.6: the right side less the left side of
+(1) in (a) and of (2) in (b), for $0 \le w \le d \le \frac\pi4$. For each $d$
+they fill the shaded band as $w$ runs over $[0, d]$, and they are least at
+$w = 0$ (blue). The bounds of the proof (dashed),
+$0.41718 - 0.37282\,d - 0.015\,d^2 - 0.12\,d^3$ and $0.41718 - 0.467692\,d$,
+stay below them and above $0.04$.
+
 *Proof of Lemma 9.38.* By Lemma 9.30 (2), $W$ is separated from $C$ along its
 own axis: $m_{\mathrm{own}}(W) \ge 0 > m_{\mathrm{west}}(W)$. Suppose that
 $w \ge 0$. If $w = 0$, then $m_{\mathrm{own}}(W) = m_{\mathrm{west}}(W)$ by
 Lemma C.1 (1), a contradiction. So $0 < w < d \le \frac\pi4$. Put $q = d - w$,
-so that $0 < q \le \frac\pi4$, and $T = \tan\frac w2 \ge 0$.
+so that $0 < q \le \frac\pi4$, and $k = \tan\frac w2 \ge 0$.
 
 By Lemma C.4, and as $c_x \ge 0$, $c_y \le \bar c$ and $a_W \le \rho_0 < \bar\rho$,
 
 ```math
--b_W < c_y + T\left(a_W - c_x\right) \le \bar c + \bar\rho T . \tag{C.1}
+-b_W < c_y + k\left(a_W - c_x\right) \le \bar c + \bar\rho k . \tag{C.1}
 ```
 
 By Lemma C.5, applied to $D$, which is separated from $C$ along its own axis,
@@ -494,18 +526,18 @@ threshold $\tau(q)$ (Lemma C.2 (1)). Along $e^W_2$, with $a_D \le \bar\rho$,
 $\sin q \ge 0$, $\cos q > 0$ and (C.1),
 
 ```math
-a_D\sin q + b_D\cos q - b_W < \bar\rho\sin q + \left(\tfrac{97}{100} - \tfrac12(\cos d + \sin d)\right)\cos q + \bar c + \bar\rho T ,
+a_D\sin q + b_D\cos q - b_W < \bar\rho\sin q + \left(\tfrac{97}{100} - \tfrac12(\cos d + \sin d)\right)\cos q + \bar c + \bar\rho k ,
 ```
 
 which is less than $\tau(q)$ by Lemma C.6 (1). Along $e^D_2$, by the first
 inequality of (C.1),
 
 ```math
-b_D + a_W\sin q - b_W\cos q < \tfrac{97}{100} - \tfrac12(\cos d + \sin d) + a_W\left(\sin q + T\cos q\right) + \left(c_y - Tc_x\right)\cos q ,
+b_D + a_W\sin q - b_W\cos q < \tfrac{97}{100} - \tfrac12(\cos d + \sin d) + a_W\left(\sin q + k\cos q\right) + \left(c_y - kc_x\right)\cos q ,
 ```
 
-and $a_W(\sin q + T\cos q) \le \bar\rho(\sin q + T\cos q)$ and
-$c_y - Tc_x \le \bar c$, so this is less than $\tau(q)$ by Lemma C.6 (2). Both
+and $a_W(\sin q + k\cos q) \le \bar\rho(\sin q + k\cos q)$ and
+$c_y - kc_x \le \bar c$, so this is less than $\tau(q)$ by Lemma C.6 (2). Both
 separations fail, a contradiction; hence $w < 0$. $\square$
 
 *Lean:
@@ -551,12 +583,11 @@ Let $(t, a, b)$ be a chart in the ceiling and $U$, $V$, $L$ real numbers.
 4. (The box.) If $c \in [0, c_0]^2$, $X, Y \ge 0$, $g_x \le X$ and $g_y \le Y$,
    then $g_xc_x + g_yc_y \le 0.113\,(X + Y)$.
 
-*Proof.* As $(t, a, -b)$ is also a chart in the ceiling, it suffices to bound
-$Ua - Vb$ in (1) and (2). (1) By Lemma 9.25 (1) with $R = R_0$, for the numbers
-$U$ and $-V$: $Ua - Vb \le R_0\sqrt{U^2 + V^2} - \frac12(|U| + V) \le 1.689L - \frac12(U + V)$.
-(2) By Lemma 9.25 (3), $Ua - Vb \le \rho_0U \le 1.113\,U$. (3) By Lemma 9.25 (2)
-with $\rho = \rho_0 < 1.113$. (4) $g_xc_x \le Xc_x \le 0.113\,X$ since
-$0 \le c_x < 0.113$, and likewise for $y$. $\square$
+*Proof.* This is [Lemma B.16](appendix-b.md#lemma-b16-further-supports) (1),
+(2) and (4), stated as used here. As $(t, a, -b)$ is also a chart in the
+ceiling, it suffices to bound $Ua - Vb$ in (1) and (2), which are the second
+claims of Lemma B.16 (1) and (2); (3) is the first claim of Lemma B.16 (2),
+and (4) is Lemma B.16 (4). $\square$
 
 *Lean:
 [`Six.vertex_linear_upper`](../../SquaresInCircles/Six/Supports.lean#L44),
@@ -600,7 +631,7 @@ $h_d = A_d\cos d + B_d\sin d + A_q\cos(v + d) + B_q\sin(v + d)$, and
 $\sin(v + d) \le \frac58\cos d + \sin d$, so
 
 ```math
-h_d \ge \tfrac3{25}\cos d + \tfrac3{25}\sin d - \tfrac5{32}\left(\tfrac58\cos d + \sin d\right) = \tfrac{143}{6400}\cos d - \tfrac{29}{800}\sin d \ge \tfrac{143}{6400}\cdot\tfrac78 - \tfrac{29}{800}\cdot\tfrac12 = \tfrac{73}{51200} > 0 ,
+h_d \ge \tfrac3{25}\cos d + \tfrac3{25}\sin d - \tfrac5{32}\left(\tfrac58\cos d + \sin d\right) \ge 0.0223\cos d - 0.0363\sin d \ge 0.0223\cdot\tfrac78 - 0.0363\cdot\tfrac12 > 0.001 ,
 ```
 
 and $d \mapsto H(v, d)$ is concave on $[0, \frac12]$. Lemma A.10 (4) gives the
@@ -615,12 +646,13 @@ claim. $\square$
 
 ### Proposition C.9 (W on its own axis)
 
-If $W$ is separated from $C$ along its own axis, then $d > \frac12$.
+If $W$ is on its own axis, that is, not separated from $C$ along the west side
+of $C$, then $d > \frac12$.
 
 *Proof.* Suppose that $d \le \frac12$. By Lemma 9.38, $w < 0$; put $v = -w$, so
 that $0 < v < \frac23$ and $0 < d \le \frac12$, and $q = v + d$, the difference
 of the phases of $W$ and $D$. By Lemma 9.37, $W$ and $D$ are separated along
-$e^W_2$ or along $e^D_2$. Take the stress of Table C.2.
+$e^W_2$ or along $e^D_2$. Take the stress of Table C.2 (Figure C.6).
 
 | edge | normal | threshold | weight, $W$–$D$ along $e^W_2$ | weight, $W$–$D$ along $e^D_2$ |
 | :-: | :-: | :-: | :-: | :-: |
@@ -629,6 +661,16 @@ $e^W_2$ or along $e^D_2$. Take the stress of Table C.2.
 | $W \to D$ | $e^W_2$ or $e^D_2$ | $\tau(q)$ | $\mu = \frac{25}{100}$ | $\mu = \frac{21}{100}$ |
 
 *Table C.2.* The stress at $D$ with $W$ on its own axis.
+
+![Two panels with the grey central square C, the blue square W and the purple square D, inside a dashed arc of the circle of radius R0. In each panel W touches a dashed blue line through a corner of C, D touches a dashed purple line through another corner of C, and a dotted black line separates W and D: in (a) the line of the lower side of W, in (b) the line of the upper side of D. Orange arrows from the centres of W, D and C show the forces; those on W and D point roughly at their far vertices, which are marked in pink just outside the circle; the disk centre o lies in C](figures/appendix-c/own-stress.svg)
+
+*Figure C.6.* The stress of Table C.2 at $v = d = 0.3$, with $C$ at the corner
+$(c_0, c_0)$ of its box: (a) $W$ and $D$ along $e^W_2$, (b) along $e^D_2$. The
+three separations of the stress hold with equality, the free transverse
+coordinate being chosen to keep $W$ and $D$ as far inside as possible; still the
+far vertices of $W$ and $D$ (pink) leave the disk of radius $R_0$. The forces
+(orange, drawn at $1.25$ times their length) point roughly towards these
+vertices.
 
 The squares are separated by this stress: the first two edges are the
 separations of $W$ and $D$ from $C$ along their own axes
@@ -700,8 +742,8 @@ two bounds add up to $-\frac12(1 + \mu(\cos q + \sin q))$, and so
 
 At the corner $(\frac23, \frac12)$, where $q = \frac76$, the force on the other
 square, $(\lambda + \mu\sin q, \pm\mu\cos q)$, satisfies the slope condition of
-the cap: $(\rho_0 + \frac12)\mu\cos\frac76 < 2\mu \cdot 0.39664$, which is
-$0.19832$ along $e^W_2$ and $0.16659$ along $e^D_2$, while
+the cap (Figure C.7): $(\rho_0 + \frac12)\mu\cos\frac76 < 2\mu \cdot 0.39664$,
+which is $0.19832$ along $e^W_2$ and $0.16659$ along $e^D_2$, while
 $\frac12(\lambda + \mu\sin\frac76) \ge 0.26992$, respectively $0.28153$. With
 Lemma C.7 (2) for this force, and $\lambda_C$ the weight of the central edge of
 the carrier,
@@ -733,6 +775,18 @@ $[0, \frac23] \times [0, \frac12]$, by (C.2), and by (C.3) at the corner
 $(\frac23, \frac12)$; the work is $1.689(L_0 + L)$, respectively
 $1.689L_0 + 1.113\lambda$.
 
+![Two panels in the plane of the components U (horizontal) and V (vertical) of a force. In each, a blue arc shows the force on the other square as q runs from 0 to 7/6, with dots at q = 0, 1/2, 2/3 and 7/6: it starts at about (0.31, 0.25) in (a) and (0.37, 0.21) in (b) and turns down towards the U axis; the last dot lies in the shaded cone below a dashed line through the origin, labelled cap](figures/appendix-c/turning.svg)
+
+*Figure C.7.* The force on the other square in the stress of Table C.2,
+$(\lambda + \mu\sin q, \pm\mu\cos q)$ in its frame (drawn with the sign $+$),
+as $q = v + d$ runs from $0$ to $\frac76$: (a) on $D$, with
+$\lambda = \alpha = 0.31$ and $\mu = 0.25$, when $W$ and $D$ are separated along
+$e^W_2$; (b) on $W$, with $\lambda = \beta = 0.37$ and $\mu = 0.21$, along
+$e^D_2$. The force turns towards the primary axis as $q$ grows. At
+$q = \frac76$, the corner $(\frac23, \frac12)$, it lies in the cone
+$V \le U/(2\rho_0 + 1)$ of the cap bound (shaded); at the other corners its
+length is at most the $L$ of Table C.3.
+
 So $\sigma > 0$ at the four corners, hence on the whole rectangle by Lemma C.8,
 in both cases; but $\sigma \le 0$, as the squares are separated by the stress.
 This contradiction proves $d > \frac12$. $\square$
@@ -758,23 +812,13 @@ This contradiction proves $d > \frac12$. $\square$
 [`Six.DiagonalAngle.Own.normFar`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L241),
 [`Six.rotating_norm_sq`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L120).*
 
-![Two panels with the grey central square C, the blue square W and the purple square D, inside a dashed arc of the circle of radius R0. In each panel W touches a dashed blue line through a corner of C, D touches a dashed purple line through another corner of C, and a dotted black line separates W and D: in (a) the line of the lower side of W, in (b) the line of the upper side of D. Orange arrows from the centres of W, D and C show the forces; those on W and D point at their far vertices, which are marked in pink just outside the circle](figures/appendix-c/own-stress.svg)
-
-*Figure C.4.* The stress of Table C.2 at $v = d = 0.3$, with $C$ at the corner
-$(c_0, c_0)$ of its box: (a) $W$ and $D$ along $e^W_2$, (b) along $e^D_2$. The
-three separations of the stress hold with equality, the free transverse
-coordinate being chosen to keep $W$ and $D$ as far inside as possible; still the
-far vertices of $W$ and $D$ (pink) leave the disk of radius $R_0$. The forces
-(orange, drawn at $1.25$ times their length) point at these vertices, where the
-supports of Lemma C.7 are attained.
-
 ### Proposition C.10 (W on the west side of C)
 
 If $W$ is separated from $C$ along the west side of $C$, then $d > \frac12$.
 
 *Proof.* Suppose that $d \le \frac12$. Then $|w| < \frac25$ and $w < d$, and
 $q = d - w$ lies in $[0, \frac9{10}]$. By Lemma 9.37, $W$ and $D$ are separated
-along $e^W_2$ or along $e^D_2$. Take the stress of Table C.4.
+along $e^W_2$ or along $e^D_2$. Take the stress of Table C.4 (Figure C.8).
 
 | edge | normal | threshold | weight, $W$–$D$ along $e^W_2$ | weight, $W$–$D$ along $e^D_2$ |
 | :-: | :-: | :-: | :-: | :-: |
@@ -783,6 +827,12 @@ along $e^W_2$ or along $e^D_2$. Take the stress of Table C.4.
 | $W \to D$ | $e^W_2$ or $e^D_2$ | $\tau(q)$ | $\mu = \frac{25}{100}$ | $\mu = \frac{27}{100}$ |
 
 *Table C.4.* The stress at $D$ with $W$ on the west side of $C$.
+
+![Two panels like those of Figure C.6, now with W turned by −0.2 and touching the dashed vertical blue line of the west side of C; D touches the dashed purple line through the lower left corner of C, and a dotted line separates W and D, along the lower side of W in (a) and the upper side of D in (b). Orange arrows show the forces on W, D and C; the far vertices of W and D, marked in pink, lie just outside the dashed circle](figures/appendix-c/west-stress.svg)
+
+*Figure C.8.* The stress of Table C.4 at $w = -0.2$ and $d = 0.35$, drawn as in
+Figure C.6: (a) along $e^W_2$, (b) along $e^D_2$. With all three separations at
+equality, the far vertices of $W$ and $D$ leave the disk.
 
 The first edge is the separation of $W$ from $C$ along the west side,
 $m_{\mathrm{west}} \ge 0$. The normal $(-1, 0) = u(\pi)$ has the components
@@ -802,8 +852,9 @@ $|F_D|^2 = 0.2578 < 0.51^2$, and
 $|F_W|^2 = \beta^2 + \mu^2 + 2\beta\mu\sin d$, since
 $\sin w\cos q + \cos w\sin q = \sin d$. Each squared length is of the form
 $y = p^2 + r^2 + 2pr\sin x$, and by Lemma A.14 its root is at most
-$(y + c^2)/(2c)$, an affine function of $\sin x$; we take $c = \frac{12}{25}$ for
-$F_W$ and $c = \frac12$ for $F_D$ along $e^W_2$, and $c = \frac9{20}$ for $F_W$
+$(y + y_0)/(2\sqrt{y_0})$, the tangent of the square root at a point $y_0 > 0$,
+an affine function of $\sin x$. We take $y_0 = (\frac{12}{25})^2$ for $F_W$ and
+$y_0 = \frac14$ for $F_D$ along $e^W_2$, and $y_0 = (\frac9{20})^2$ for $F_W$
 along $e^D_2$.
 
 *A lower bound in the angles.* The threshold sum is
@@ -848,21 +899,22 @@ and the fractions are the tangent majorants, for instance
 
 *Concavity.* On each side of $w = 0$, each of $f_W$, $f_D$, $f_Q$ is a
 constant plus a first harmonic, and its harmonic part is nonnegative on the
-interval that matters: for $f_W$ on $[-\frac25, 0]$ and on $[0, \frac25]$, the harmonic part
-$\beta\cos w + B\sin w$ has $|B| \le 0.4$ and $\beta\cos w \ge 0.92\beta$, so it
-is at least $0.92 \cdot 0.4 - 0.4 \cdot 0.351875 > 0$ along $e^W_2$ and
-$0.92 \cdot 0.3 - 0.4 \cdot 0.3 > 0$ along $e^D_2$; for $f_D$ on $[0, \frac12]$,
-along $e^D_2$ the harmonic part is $0.16641\cos d - 0.13761\sin d$, at least
-$0.16641 \cdot \frac78 - 0.13761 \cdot \frac12 > 0$;
-for $f_Q$ on $[0, \frac9{10}]$, along $e^W_2$ it is
+interval that matters. For $f_W$ on $[-\frac25, 0]$ and on $[0, \frac25]$, the
+harmonic part $\beta\cos w + B\sin w$ has $\beta\cos w \ge 0.92\beta$ and
+$|B\sin w| \le 0.4|B|$, with $|B| \le 0.351875$ along $e^W_2$ and $|B| \le 0.3$
+along $e^D_2$, so it is at least $0.92 \cdot 0.4 - 0.4 \cdot 0.351875 > 0$ and
+$0.92 \cdot 0.3 - 0.4 \cdot 0.3 > 0$. For $f_D$ on $[0, \frac12]$, along $e^D_2$
+the harmonic part is $0.16641\cos d - 0.13761\sin d$, at least
+$0.16641 \cdot \frac78 - 0.13761 \cdot \frac12 > 0$. For $f_Q$ on
+$[0, \frac9{10}]$, along $e^W_2$ it is
 $0.25\cos q - 0.045575\sin q \ge 0.25 \cdot 0.595 - 0.045575 \cdot 0.9 > 0$,
-using $\cos q \ge 1 - \frac{0.81}2$ and $\sin q \le q$; the other harmonic
+using $\cos q \ge 1 - \frac{0.81}2$ and $\sin q \le q$. The other harmonic
 parts have nonnegative coefficients. By Lemma A.11 (1) and Lemma A.10 (3), $g$ is
 concave in $w$ for fixed $d$, and in $d$ for fixed $w$, as long as $d - w$ stays
 in $[0, \frac9{10}]$.
 
 *The domain.* The angles lie in the domain $-\frac25 \le w \le \frac25$,
-$0 \le d \le \frac12$, $w \le d$ (Figure C.6). On the rectangle $w \le 0$,
+$0 \le d \le \frac12$, $w \le d$ (Figure C.10). On the rectangle $w \le 0$,
 where $[\sin w]_+ = 0$, $g$ is positive by Lemma A.10 (4) once it is positive at
 $(-\frac25, 0)$, $(-\frac25, \frac12)$, $(0, 0)$ and $(0, \frac12)$. On the part
 $w \ge 0$, a trapezoid, $g$ is concave along the edge $d = w$, where $f_Q(0)$ is
@@ -871,7 +923,15 @@ $(\frac25, \frac25)$; it is concave in $w$ along the edge $d = \frac12$, so it i
 positive there once it is positive at $(0, \frac12)$ and $(\frac25, \frac12)$;
 and for each $w \in [0, \frac25]$ it is concave in $d$ on $[w, \frac12]$, so it
 is positive on the trapezoid. The two formulas agree at $w = 0$. So it suffices
-to check the six vertices.
+to check the six vertices (Figure C.9).
+
+![Two panels in the plane of w (horizontal) and d (vertical), each with the domain of Proposition C.10, from w = −2/5 to 2/5 and d from 0 to 1/2 with w at most d, split by a dashed segment at w = 0, and level lines of the lower bound g, labelled 0.02 to 0.06. In (a) the values fall towards the top of the segment w = 0, where the least value, about 0.0046, is marked at the vertex (0, 1/2); in (b) they fall towards the top left vertex (−2/5, 1/2), where the least value, about 0.0047, is marked](figures/appendix-c/west-bound.svg)
+
+*Figure C.9.* The lower bound $g$ of Proposition C.10 on its domain, with the
+exact cosines and sines: (a) for $W$ and $D$ separated along $e^W_2$, (b) along
+$e^D_2$, with level lines at $0.01, 0.02, \dots, 0.06$. On each side of $w = 0$
+(dashed) it is concave in each angle, and its least value, about $0.0046$ in
+(a) and $0.0047$ in (b), is taken at a vertex.
 
 | along | $K$ | $f_W(-\frac25)$ | $f_W(0)$ | $f_W(\frac25)$ | $f_D(0)$ | $f_D(\frac25)$ | $f_D(\frac12)$ | $f_Q(0)$ | $f_Q(\frac1{10})$ | $f_Q(\frac25)$ | $f_Q(\frac12)$ | $f_Q(\frac9{10})$ |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -920,22 +980,17 @@ contradiction proves $d > \frac12$. $\square$
 [`Six.rotTangent`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L26),
 [`Six.rotTangent_bound`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L35).*
 
-![Two panels like those of Figure C.4, now with W turned by −0.2 and touching the dashed vertical blue line of the west side of C; D touches the dashed purple line through the lower left corner of C, and a dotted line separates W and D, along the lower side of W in (a) and the upper side of D in (b). Orange arrows show the forces on W, D and C; the far vertices of W and D, marked in pink, lie just outside the dashed circle](figures/appendix-c/west-stress.svg)
+![Two panels in the plane of w (horizontal) and d (vertical), each showing the window of the angles as a dashed rectangle from w = −2/3 to 5/8 and d = 0 to pi over 4, with the band d above 1/2 shaded green. Panel (a), W on its own axis: the orange rectangle w from −2/3 to 0, d from 0 to 1/2, with two numbers at each corner. Panel (b), W on the west side: the orange domain w from −2/5 to 2/5, d from 0 to 1/2, w at most d, split by a dotted segment at w = 0, with two numbers at each of its six vertices. A legend above says that the upper, blue number is for W and D separated along the secondary axis of W, and the lower, purple one along that of D](figures/appendix-c/domains.svg)
 
-*Figure C.5.* The stress of Table C.4 at $w = -0.2$ and $d = 0.35$, drawn as in
-Figure C.4: (a) along $e^W_2$, (b) along $e^D_2$. With all three separations at
-equality, the far vertices of $W$ and $D$ leave the disk.
+*Figure C.10.* The domains of the two stresses in the plane of $w$ and $d$, with
+the lower bounds of the slack at their vertices, from Tables C.3 and C.6: the
+upper value (blue) for $W$ and $D$ separated along $e^W_2$, the lower one
+(purple) along $e^D_2$. Both domains lie below the band $d > \frac12$ that
+remains.
 
-![Two panels in the plane of w (horizontal) and d (vertical), each showing the window of the angles as a dashed rectangle from w = −2/3 to 5/8 and d = 0 to pi over 4, with the band d above 1/2 shaded green. Panel (a), W on its own axis: the orange rectangle w from −2/3 to 0, d from 0 to 1/2, with two numbers at each corner. Panel (b), W on the west side: the orange domain w from −2/5 to 2/5, d from 0 to 1/2, w at most d, split by a dotted segment at w = 0, with two numbers at each of its six vertices](figures/appendix-c/domains.svg)
-
-*Figure C.6.* The domains of the two stresses in the plane of $w$ and $d$, with
-the lower bounds of the slack at their vertices: the first (blue) for $W$ and
-$D$ separated along $e^W_2$, the second (purple) along $e^D_2$, from Tables C.3
-and C.6. Both domains lie below the band $d > \frac12$ that remains.
-
-*Proof of Proposition 9.39.* By Lemma 9.30 (2), $W$ is separated from $C$ along
-its own axis or along the west side of $C$. Propositions C.9 and C.10 give
-$d > \frac12$ in either case. $\square$
+*Proof of Proposition 9.39.* If $W$ is separated from $C$ along the west side
+of $C$, Proposition C.10 gives $d > \frac12$; otherwise $W$ is on its own axis,
+and Proposition C.9 does. $\square$
 
 *Lean:
 [`Six.normalized_diagonal_gt_half`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L422),
@@ -957,10 +1012,22 @@ $L^2 + (T + \frac12)^2 > Q_0$. Then $|b| < T$.
 *Proof.* If $|b| \ge T$, then $a + \frac12 \ge L \ge 0$ and
 $|b| + \frac12 \ge T + \frac12 \ge 0$, so
 $(a + \frac12)^2 + (|b| + \frac12)^2 \ge L^2 + (T + \frac12)^2 > Q_0$, which
-contradicts the chart condition. $\square$
+contradicts the chart condition (Figure C.11). $\square$
 
 *Lean:
 [`Six.transverse_lt_of_profile`](../../SquaresInCircles/Six/Separators/Profiles.lean#L29).*
+
+![The plane of a + 1/2 (horizontal, 1.3 to 1.7) against |b| + 1/2 (vertical, 0.5 to 0.8): the dashed circle of radius R0 and the region inside it, shaded, where the far corners of the charts lie. An orange vertical line at a + 1/2 = L, about 1.525, and a dashed orange horizontal line at |b| + 1/2 = T + 1/2 = 0.725 meet on the circle, at a purple dot labelled d = 1/2; the part of the region right of the vertical line, shaded orange, lies below the horizontal line. A short purple curve runs from that dot, just outside the circle, to a second dot labelled d = pi over 4](figures/appendix-c/profile-chart.svg)
+
+*Figure C.11.* Lemma C.11 for $D$ at $d = \frac12$, as used in Lemma 9.40 (1), in
+the plane of $(a + \frac12, |b| + \frac12)$, where the charts in the ceiling lie
+inside the circle of radius $R_0$ (shaded). The separation of $D$ from $C$
+gives $a + \frac12 \ge L = L(\frac12) \approx 1.525$, and the corner
+$(L, T + \frac12)$, with $T = T(\frac12) = \frac9{40}$, lies just outside the
+circle; so the part of the disk right of $a + \frac12 = L$ (orange) lies below
+$|b| + \frac12 = T + \frac12$. As $d$ runs from $\frac12$ to $\frac\pi4$, the
+corner $(L(d), T(d) + \frac12)$ moves along the purple curve, outside the circle
+all the way, which is $E(d) > 0$ in the proof below.
 
 *Proof of Lemma 9.40.* (1) By Proposition 9.39, $\frac12 < d \le \frac\pi4$. $D$
 is separated from $C$ along its own axis, so by Lemma C.1 (3), with
@@ -998,7 +1065,8 @@ E\left(\tfrac12\right) \ge 1.525161^2 + 0.725^2 - Q_0 > 0.00056 , \qquad E\left(
 
 So $E > 0$ on $[\frac12, \frac\pi4]$ (Lemma A.10 (2)), and Lemma C.11 with
 $L = L(d)$ and $T = T(d)$ gives $|b_D| < \frac{31}{100} - \frac{17}{100}d$,
-which is less than $\frac{31}{100} - \frac{17}{200} = \frac9{40}$ as $d > \frac12$.
+which is less than $\frac{31}{100} - \frac{17}{200} = \frac9{40}$ as $d > \frac12$
+(Figure C.12 (a)).
 
 (2) Let $W$ be separated from $C$ along the west side, with $w = -v$ and
 $0 \le v \le \frac25$. By Lemma C.1 (3),
@@ -1018,11 +1086,11 @@ $\frac32 - c_x > 1.387$, $a_W + \frac12 \ge L = 1.387 + \frac v2$. With
 $T = \frac{47}{100} - \frac23v$,
 
 ```math
-L^2 + \left(T + \tfrac12\right)^2 - Q_0 = 0.013489 + \tfrac{281}{3000}\,v + \tfrac{25}{36}\,v^2 > 0 ,
+L^2 + \left(T + \tfrac12\right)^2 - Q_0 = 0.013489 + 0.0936\ldots\,v + 0.694\ldots\,v^2 > 0 ,
 ```
 
 and Lemma C.11 gives $|b_W| < T$, contradicting $-b_W \ge T$. So
-$-b_W < \frac{47}{100} - \frac23v$.
+$-b_W < \frac{47}{100} - \frac23v$ (Figure C.12 (b)).
 
 (3) Let $W$ be separated from $C$ along its own axis, with $w = -v$ and
 $0 \le v \le \frac12$. By Lemma C.1 (3), with $c_y \ge 0$ and
@@ -1037,26 +1105,24 @@ which is positive. Put $T = \frac{233}{500} - \frac{73}{100}v$, so that
 $T + \frac12 = 0.966 - 0.73v > 0$, and
 
 ```math
-G(v) = P(v)^2 + \left(0.966 - 0.73\,v\right)^2 - Q_0 = 0.005745 - 0.02336\,v + 0.246131\,v^2 - \tfrac{637}{1500}v^3 - \tfrac{550693}{12000000}v^4 + 0.03225\,v^5 + \tfrac{v^6}{144} .
+G(v) = P(v)^2 + \left(0.966 - 0.73\,v\right)^2 - Q_0 = 0.005745 - 0.02336\,v + 0.246131\,v^2 - 0.424666\ldots v^3 - 0.045891\ldots v^4 + 0.03225\,v^5 + \tfrac{v^6}{144} .
 ```
 
 For $0 \le v \le \frac14$, use $v^3 \le \frac{v^2}4$, $v^4 \le \frac{v^2}{16}$ and
 drop the last two terms: $G(v) \ge 0.005745 - 0.02336\,v + 0.13709\,v^2$, a
 quadratic with the negative discriminant
 $0.02336^2 - 4 \cdot 0.13709 \cdot 0.005745 < -0.0026$, hence positive. For
-$\frac14 \le v \le \frac12$, put $h = \frac12 - v \in [0, \frac14]$; expanding,
+$\frac14 \le v \le \frac12$, put $y = \frac12 - v \in [0, \frac14]$; expanding,
 
 ```math
-G = 0.000762\ldots + 0.107294\ldots h - 0.412882\ldots h^2 + 0.418462\ldots h^3 + 0.060775\ldots h^4 - 0.053083\ldots h^5 + \tfrac{h^6}{144} ,
+G = 0.000762\ldots + 0.107294\ldots y - 0.412882\ldots y^2 + 0.418462\ldots y^3 + 0.060775\ldots y^4 - 0.053083\ldots y^5 + \tfrac{y^6}{144} ,
 ```
 
-the exact coefficients being $\frac{17569}{23040000}$, $\frac{321883}{3000000}$,
-$-\frac{1981837}{4800000}$, $\frac{7532329}{18000000}$, $\frac{729307}{12000000}$,
-$-\frac{637}{12000}$ and $\frac1{144}$. With $h^2 \le \frac h4$ and
-$h^5 \le \frac h{256}$, and dropping the terms in $h^3$, $h^4$, $h^6$,
-$G \ge 0.00076 + (0.10729 - \frac{0.41289}4 - \frac{0.05309}{256})h > 0.00076 + 0.0038\,h > 0$.
+and with $y^2 \le \frac y4$, $y^5 \le \frac y{256}$ and the terms in $y^3$,
+$y^4$, $y^6$ dropped,
+$G \ge 0.00076 + (0.10729 - \frac{0.41289}4 - \frac{0.05309}{256})y > 0.00076 + 0.0038\,y > 0$.
 So $G > 0$ on $[0, \frac12]$, and Lemma C.11 gives
-$|b_W| < \frac{233}{500} - \frac{73}{100}v$. $\square$
+$|b_W| < \frac{233}{500} - \frac{73}{100}v$ (Figure C.12 (c)). $\square$
 
 *Lean:
 [`Six.normalized_diagonal_profile`](../../SquaresInCircles/Six/Separators/Profiles.lean#L229),
@@ -1075,7 +1141,7 @@ $|b_W| < \frac{233}{500} - \frac{73}{100}v$. $\square$
 
 ![Three graphs. (a) Over d from 0 to pi over 4, a blue curve, the largest transverse coordinate of D allowed by the disk, falls from about 0.46 to about 0.18; above it a dashed green curve, 0.97 minus (cos d + sin d)/2, and on 1/2 to pi over 4 a dashed orange line, 0.31 minus 0.17 d, which the blue curve nearly touches at both ends. (b) Over v from 0 to 2/5, the largest value of minus b for W on the west side falls from about 0.46 to zero near 0.375, below the dashed line 47/100 minus 2v/3. (c) Over v from 0 to 1/2, the largest |b| for W on its own axis falls from about 0.46 to about 0.10, just below the dashed line 233/500 minus 73v/100 throughout](figures/appendix-c/profiles.svg)
 
-*Figure C.7.* The bounds of Lemma 9.40 (dashed) against the exact profiles
+*Figure C.12.* The bounds of Lemma 9.40 (dashed) against the exact profiles
 (blue): the largest transverse coordinate that the separation from $C$ and the
 disk allow, for $C$ at the least favourable corner of its box. (a) $D$, with
 the bound of Lemma C.5 (green) and that of Lemma 9.40 (1) (orange); (b) $W$ on
@@ -1149,10 +1215,10 @@ $\sin\frac12\cos\frac12 \ge 0.47942 \cdot 0.87758$, and with
 $\cos\frac16 \ge 1 - \frac1{72}$,
 
 ```math
-\varrho\left(\tfrac12, \tfrac12\right) > 0.0027 , \qquad \varrho\left(\tfrac12, \tfrac23\right) > 0.0075 , \qquad \varrho\left(\tfrac23, \tfrac23\right) > 0.0466 .
+\varrho\left(\tfrac12, \tfrac12\right) > 0.0027 , \qquad \varrho\left(\tfrac12, \tfrac23\right) > 0.0075 , \qquad \varrho\left(\tfrac23, \tfrac23\right) > 0.0466
 ```
 
-$\square$
+(Figure C.13). $\square$
 
 *Lean:
 [`Six.coupledOwnReserve`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L25),
@@ -1164,9 +1230,9 @@ $\square$
 [`Six.coupled_vertices`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L140),
 [`Six.coupled_trig`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L39).*
 
-![A triangle in the plane of d (horizontal) and s (vertical), with vertices (1/2, 1/2), (1/2, 2/3) and (2/3, 2/3), shaded green and crossed by curved level lines of the reserve. The values are written at the vertices: about 0.0027 at (1/2, 1/2), 0.0076 at (1/2, 2/3) and 0.047 at (2/3, 2/3). A dashed diagonal marks s = d](figures/appendix-c/overtake.svg)
+![A triangle in the plane of d (horizontal) and s (vertical), with vertices (1/2, 1/2), (1/2, 2/3) and (2/3, 2/3), shaded green and crossed by curved level lines of the reserve, labelled 0.005, 0.01, 0.02, 0.03 and 0.04 where they meet the dashed diagonal s = d. The values are written at the vertices: about 0.0027 at (1/2, 1/2), 0.0076 at (1/2, 2/3) and 0.047 at (2/3, 2/3)](figures/appendix-c/overtake.svg)
 
-*Figure C.8.* The reserve $\varrho$ of Lemma C.12 on the triangle
+*Figure C.13.* The reserve $\varrho$ of Lemma C.12 on the triangle
 $\frac12 \le d \le s \le \frac23$, with its level lines at $0.005$, $0.01$,
 $0.02$, $0.03$ and $0.04$ and its values at the vertices. It is least at the
 vertex $(\frac12, \frac12)$.
@@ -1282,32 +1348,32 @@ $0 \le q \le \frac\pi4$. Then
 a\sin q - b\cos q \le a_0\sin q + U_0\cos q .
 ```
 
-*Proof.* Put $s = \sin q$, $c = \cos q$, $l = \frac52 - \rho_0 = a_0 + \frac12$
-and $B_0 = U_0 + \frac12 = \sqrt{Q_0 - l^2} > 0$ (Definition 9.4), so that
-$l^2 + B_0^2 = Q_0$: the point $(l, B_0)$ is where the line $x = l$ meets the
-circle of radius $R_0$. The point $(A, B) = (a + \frac12, |b| + \frac12)$ has
-$A \ge l$ and $A^2 + B^2 \le Q_0$, so by Cauchy–Schwarz
-$lA + B_0B \le \sqrt{Q_0}\sqrt{A^2 + B^2} \le Q_0$, that is,
-$l(A - l) + B_0(B - B_0) \le 0$. Next, $B_0s \le lc$: indeed
-
-```math
-(B_0s)^2 - (lc)^2 = \left(Q_0 - l^2\right)s^2 - l^2\left(1 - s^2\right) = Q_0s^2 - l^2 \le 0 ,
-```
-
-as $R_0s < 1.689 \cdot \frac34 < 1.27 < 1.387 < l$, the sine being at most
-$\sin\frac\pi4 < \frac34$. Multiplying the first inequality by $c \ge 0$,
-
-```math
-B_0\left(s(A - l) + c(B - B_0)\right) \le s(A - l)B_0 - lc(A - l) = (A - l)\left(B_0s - lc\right) \le 0 ,
-```
-
-so $As + Bc \le ls + B_0c$. Subtracting $\frac12(s + c)$ from both sides gives
-$as + |b|c \le a_0s + U_0c$, and $-bc \le |b|c$. $\square$
+*Proof.* Put $l = \frac52 - \rho_0 = a_0 + \frac12 \le a + \frac12$ and
+$B_0 = U_0 + \frac12 = \sqrt{Q_0 - l^2}$ (Definition 9.4): the point $(l, B_0)$
+is where the line $x = l$ meets the circle of radius $R_0$ (Figure C.14). As
+$\sin q \le \sin\frac\pi4 < \frac34$,
+$R_0\sin q < 1.689 \cdot \frac34 < 1.27 < 1.387 < l$. So
+[Lemma B.16](appendix-b.md#lemma-b16-further-supports) (3), applied to the
+chart $(t, a, -b)$ with $s = \sin q$ and $\gamma = \cos q$, gives
+$a\sin q - b\cos q \le (l - \frac12)\sin q + (B_0 - \frac12)\cos q$, which is
+the claim. $\square$
 
 *Lean:
 [`Six.core_secondary_projection`](../../SquaresInCircles/Six/Separators/SmallAngle.lean#L25),
 [`Six.circle_support_above_primary`](../../SquaresInCircles/Six/Supports.lean#L134),
 [`Six.disk_corner_support`](../../SquaresInCircles/Six/Supports.lean#L85).*
+
+![The plane of a + 1/2 against |b| + 1/2: the dashed circle of radius R0, the vertical line a + 1/2 = l with l = a0 + 1/2, and between them the shaded region where the far corners of the charts with a at least a0 lie. At its corner (l, B0) on the circle, three orange arrows point straight up, up and to the right, and diagonally, all above a dotted ray along the radius through the corner; two dashed orange lines through the corner, a horizontal one labelled q = 0 and a falling diagonal one labelled q = pi over 4, leave the whole region below them](figures/appendix-c/core-support.svg)
+
+*Figure C.14.* Lemma C.15 in the plane of $(a + \frac12, |b| + \frac12)$. The
+charts in the ceiling with $a \ge a_0$ have this point in the shaded region,
+right of the line $a + \frac12 = l$ and inside the circle of radius $R_0$. For
+$0 \le q \le \frac\pi4$ the direction $(\sin q, \cos q)$ (arrows, for $q = 0$,
+$\frac\pi8$ and $\frac\pi4$) lies above the radius through the corner
+$(l, B_0)$ (dotted), as $R_0\sin q < l$; so
+$(a + \frac12)\sin q + (|b| + \frac12)\cos q$ is largest on the region at
+that corner, and its level lines through the corner (dashed, for $q = 0$ and
+$q = \frac\pi4$) leave the whole region on one side.
 
 ### Lemma C.16 (small phase gaps)
 
@@ -1333,15 +1399,16 @@ $\square$
 $q = d - w > 0$. By Lemma C.2 (1), $b_D + a_W\sin q - b_W\cos q \ge \tau(q)$.
 As $a_W \ge a_0$ and $b_D \le |b_D| < \frac9{40}$
 (Lemma 9.40 (1)), Lemma C.16 with $z = b_D$ shows that $q \le \frac\pi4$ is
-impossible. So $d - w > \frac\pi4$, that is, $w < d - \frac\pi4$.
+impossible. So $d - w > \frac\pi4$, that is, $w < d - \frac\pi4$
+(Figure C.15 (a)).
 
 Let $D$ and $S$ be separated along $e^D_2$, and put
 $q = \frac\pi2 + s - d > 0$, so that $\cos(d - s) = \sin q$ and
 $\sin(d - s) = \cos q$. By Lemma C.2 (2),
 $a_S\sin q + b_S\cos q - b_D \ge \tau(q)$. Lemma C.16 for the chart
 $(t_S, a_S, -b_S)$ and $z = -b_D < \frac9{40}$ shows that $q \le \frac\pi4$ is
-impossible. So $\frac\pi2 + s - d > \frac\pi4$, that is, $s > d - \frac\pi4$.
-$\square$
+impossible. So $\frac\pi2 + s - d > \frac\pi4$, that is, $s > d - \frac\pi4$
+(Figure C.15 (b)). $\square$
 
 *Lean:
 [`Six.westDiagonal_wall`](../../SquaresInCircles/Six/Separators/Walls.lean#L58),
@@ -1349,31 +1416,33 @@ $\square$
 [`Six.westDiagonal_gap_gt_quarter`](../../SquaresInCircles/Six/Separators/Walls.lean#L28),
 [`Six.diagonalSouth_gap_gt_quarter`](../../SquaresInCircles/Six/Separators/Walls.lean#L42).*
 
-![Two panels in the plane of the angles, d from 1/2 to pi over 4 horizontally. (a) The window of w, from −2/3 to 5/8, as a dashed rectangle, and the purple wall w = d minus pi over 4 rising from about −0.29 at d = 1/2 to the model point (pi over 4, 0); the region below the wall is shaded. (b) The window of s, from −5/8 to 2/3, with the wall s = d minus pi over 4 and the region above it shaded](figures/appendix-c/walls.svg)
+![Two panels in the plane of the angles, d from 1/2 to pi over 4 horizontally. (a) The window of w, from −2/3 to 5/8, as a dashed rectangle, and the purple wall w = d minus pi over 4 rising from about −0.29 at d = 1/2 to the model point (pi over 4, 0); the region below the wall is shaded and labelled: W and D may be separated along the secondary axis of D. (b) The window of s, from −5/8 to 2/3, with the wall s = d minus pi over 4 and the region above it shaded and labelled: D and S may be separated along the secondary axis of D](figures/appendix-c/walls.svg)
 
-*Figure C.9.* The walls of Lemma 9.42 (1) in the plane of the angles, for
+*Figure C.15.* The walls of Lemma 9.42 (1) in the plane of the angles, for
 $\frac12 < d \le \frac\pi4$. (a) $W$ and $D$ can be separated along $e^D_2$ only
 below the wall $w = d - \frac\pi4$ (shaded); elsewhere they are separated along
 $e^W_2$, the west wing. (b) $D$ and $S$ can be separated along $e^D_2$ only above
 the wall $s = d - \frac\pi4$. The model lies on both walls.
 
-For part (2) we need the costs of the squares $W$ and $S$ in a stress whose
-edges carry weight 1. A square on its own axis, separated from $D$ along
-$e^D_2$, has the force $(1, 0)$ from its own axis plus $\pm e^D_2$, which in its
-frame is $(1 + \sin q, \pm\cos q)$ for the phase gap $q$ to $D$.
+For part (2) we need a lower bound for the *cost* of a square on its own axis
+in a stress whose edges have weight 1: the part $\omega(q)$ of the threshold of
+its edge to $D$ less the work of its force. If the square is separated from $D$
+along $e^D_2$, that force is $(1, 0)$, from its own axis, plus $\pm e^D_2$,
+which in its frame is $(1 + \sin q, \pm\cos q)$ for the phase gap $q$ to $D$.
 
 ### Lemma C.17 (the cost of a wing)
 
 Let $(t, a, b)$ be a chart in the ceiling and $\frac12 \le q \le \pi - \frac12$,
-and put $\varphi(q) = \frac\pi2 - |q - \frac\pi2|$. Then
+and let $\hat q = \frac\pi2 - |q - \frac\pi2|$ be the angle $q$ folded at
+$\frac\pi2$. Then
 
 ```math
-\omega(q) - (1 + \sin q)\,a - (\cos q)\,b > -0.73 - 0.65\,\varphi(q) \ge -0.73 - 0.65\,q .
+\omega(q) - (1 + \sin q)\,a - (\cos q)\,b > -0.73 - 0.65\,\hat q \ge -0.73 - 0.65\,q .
 ```
 
-*Proof.* The second inequality holds as $\varphi(q) \le q$.
+*Proof.* The second inequality holds as $\hat q \le q$.
 
-(a) Let $\frac12 \le q \le \frac\pi2$, so that $\varphi(q) = q$ and
+(a) Let $\frac12 \le q \le \frac\pi2$, so that $\hat q = q$ and
 $\omega(q) = \frac12(\cos q + \sin q)$. If $q \le 1$: the force
 $(1 + \sin q, \cos q)$ has the squared length $2 + 2\sin q$, and Lemma A.14 with
 the tangent at $\frac{49}{16}$ gives
@@ -1408,11 +1477,11 @@ side plus $0.73 + 0.65q$ is at least
 \ell(q) = 0.65\,q + \tfrac12\cos q - 0.613\sin q - 0.383 .
 ```
 
-Put $h = q - \frac{13}{10} \in [-\frac3{10}, 0.28]$. Expanding $\cos$ and $\sin$
-of $\frac{13}{10} + h$,
+Put $y = q - \frac{13}{10} \in [-\frac3{10}, 0.28]$. Expanding $\cos$ and $\sin$
+of $\frac{13}{10} + y$,
 
 ```math
-\ell(q) = \ell\left(\tfrac{13}{10}\right) + \left(0.65 + t_B\right)h + t_A\left(\cos h - 1\right) + t_B\left(\sin h - h\right) ,
+\ell(q) = \ell\left(\tfrac{13}{10}\right) + \left(0.65 + t_B\right)y + t_A\left(\cos y - 1\right) + t_B\left(\sin y - y\right) ,
 ```
 
 with $t_A = \frac12\cos\frac{13}{10} - 0.613\sin\frac{13}{10}$ and
@@ -1422,17 +1491,17 @@ $0.96352 \le \sin\frac{13}{10} \le 0.96478$, hence
 $t_A \le 0.137005 - 0.590637 < -\frac9{20}$,
 $-0.66 < -0.650359 \le t_B \le -0.645614$, so $|0.65 + t_B| \le \frac1{200}$, and
 $\ell(\frac{13}{10}) \ge 0.845 + 0.13365 - 0.591411 - 0.383 > \frac1{250}$.
-Moreover $\cos h - 1 \le -\frac{h^2}5$ (Lemma A.15 (4)) and
-$|\sin h - h| \le \frac{|h|^3}6 \le \frac{h^2}{12}$ (Lemma A.7), so
+Moreover $\cos y - 1 \le -\frac{y^2}5$ (Lemma A.15 (4)) and
+$|\sin y - y| \le \frac{|y|^3}6 \le \frac{y^2}{12}$ (Lemma A.7), so
 
 ```math
-\ell(q) \ge \tfrac1{250} - \tfrac{|h|}{200} + \tfrac9{20}\cdot\tfrac{h^2}5 - \tfrac{33}{50}\cdot\tfrac{h^2}{12} \ge \tfrac1{250} - \tfrac1{400} > 0 .
+\ell(q) \ge \tfrac1{250} - \tfrac{|y|}{200} + \tfrac9{20}\cdot\tfrac{y^2}5 - \tfrac{33}{50}\cdot\tfrac{y^2}{12} \ge \tfrac1{250} - \tfrac1{400} > 0 .
 ```
 
 (b) Let $\frac\pi2 < q \le \pi - \frac12$. Apply (a) to $\pi - q$ and the chart
 $(t, a, -b)$: as $\omega(\pi - q) = \omega(q)$, $\sin(\pi - q) = \sin q$ and
 $\cos(\pi - q) = -\cos q$, the left side is unchanged, and
-$\pi - q = \varphi(q)$. $\square$
+$\pi - q = \hat q$ (Figure C.16). $\square$
 
 *Lean:
 [`Six.secondary_cost_first_quadrant`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L135),
@@ -1450,9 +1519,9 @@ $\pi - q = \varphi(q)$. $\square$
 
 ![Graph over q from 1/2 to pi minus 1/2, symmetric about pi over 2: a blue curve, the least cost of a wing less the folded line, with humps of height about 0.035 near 0.75 and pi minus 0.75, dips to about 0.005 near 1.3 and pi minus 1.3, and a peak of about 0.025 at pi over 2. Below it, dashed, the lower bounds of the proof: green from the far vertex on 1/2 to 1 and pi minus 1 to pi minus 1/2, and purple from the cap on 1 to pi minus 1, close to the blue curve there. All curves stay positive](figures/appendix-c/cost.svg)
 
-*Figure C.10.* Lemma C.17: the cost
+*Figure C.16.* Lemma C.17: the cost
 $\omega(q) - (1 + \sin q)a - (\cos q)b$, less the folded line
-$-0.73 - 0.65\varphi(q)$. In blue, the least cost over the charts in the
+$-0.73 - 0.65\hat q$. In blue, the least cost over the charts in the
 ceiling; dashed, the lower bounds of the proof, by the far vertex with the
 tangent of the square root up to $q = 1$ (green) and by the cap from $1$ to
 $\frac\pi2$ (purple), and their reflections. All are positive, those of the
@@ -1480,8 +1549,8 @@ with $\cos d = \cos x\cos y - \sin x\sin y$, $\sin d = \sin x\cos y + \cos x\sin
 2\left(\omega(x) + \omega(y) - \tfrac12 - \omega(d)\right) = \left(\cos x + \sin x - 1\right)(1 - \cos y) + \left(1 - \cos x + \sin x\right)\sin y \ge 0 ,
 ```
 
-by Lemma A.15 (2). Let $x = -v$ with $0 < v \le \frac25$; then $d + v \le \frac\pi2$
-and
+by Lemma A.15 (2) (Figure C.17). Let $x = -v$ with $0 < v \le \frac25$; then
+$d + v \le \frac\pi2$ and
 
 ```math
 2\left(\omega(v) + \omega(d + v) - \tfrac12 - \omega(d)\right) = \sin v\left(1 + \cos d - \sin d\right) - (1 - \cos v)\left(1 + \cos d + \sin d\right) .
@@ -1529,6 +1598,14 @@ $\square$
 [`Six.eighth_cos_upper`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L430),
 [`Six.high_diagonal_width_lower`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L457).*
 
+![Graph over x from minus 2/5 to 2/5 of omega(x) + omega(d − x) − 1/2 − omega(d) for d = 1/2 (blue) and d = pi over 4 (purple): both curves touch zero at x = 0, marked by a dot, and rise on both sides, to about 0.18 and 0.10 at x = −2/5; for negative x a dashed orange curve, labelled bound of the proof, lies just below the purple one](figures/appendix-c/widths.svg)
+
+*Figure C.17.* Lemma C.18 (1): $\omega(x) + \omega(d - x) - \frac12 - \omega(d)$ for
+$|x| \le \frac25$, at $d = \frac12$ (blue) and $d = \frac\pi4$ (purple). It
+vanishes at $x = 0$, the angle of $W$ and $S$ in the model, and is positive
+elsewhere; for $x = -v < 0$ the proof bounds it below by
+$\frac v2(1 - \frac54v - \frac{v^2}6)$ (dashed).
+
 ### Lemma C.19 (the reserves of the double separation)
 
 1. For $0 \le x \le \frac23$,
@@ -1569,7 +1646,7 @@ $P(d') - 0.65d' \le P(0) = 0.387$, so $G(s) + 0.65(d' - s) > P(d')$.
 Let $K_W = 1.657 - 0.325\pi$ and
 $M(d) = K_W + 0.887\cos d + 1.113\sin d - 2.226\cos(\frac\pi4 - \frac d2)$. If
 $d \le \frac23$, the claim with $d' = d$ shows that the left side of (3) is at
-least $M(d)$. By Lemma A.14 with the tangent at $\frac{49}{16}$,
+least $M(d)$ (Figure C.18). By Lemma A.14 with the tangent at $\frac{49}{16}$,
 $2\cos(\frac\pi4 - \frac d2) = \sqrt{2 + 2\sin d} \le \frac{81}{56} + \frac47\sin d$,
 so $M(d) \ge K_W - 1.113 \cdot \frac{81}{56} + 0.887\cos d + 0.477\sin d$, a first
 harmonic with nonnegative coefficients plus a constant, which is positive on
@@ -1610,9 +1687,20 @@ so $N(d) \ge N(\frac23)$, and the bound is at least $M(\frac23) > 0$. $\square$
 [`Six.west_mixed_depth_monotone`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L515),
 [`Six.west_cardinal_own_south_reserve`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L541).*
 
+![Two graphs. (a) Three curves against s from minus 5/8 to 2/3, for d = 1/2 (blue), 2/3 (green) and pi over 4 (purple), falling steeply from about 0.7 at minus 5/8 to a corner at s = 0 and then slowly to their least values, marked by dots: about 0.034 at s = 1/2 for d = 1/2, after which the blue curve rises again, and about 0.02 and 0.05 at s = 2/3 for the others. (b) Against d from 1/2 to pi over 4, the least value falls from about 0.034 to 0.019 at d = 2/3, marked by a dashed vertical line, and rises to about 0.047 at pi over 4; the dashed bound of the proof follows it closely up to 2/3 and stays at about 0.018 beyond](figures/appendix-c/double-reserve.svg)
+
+*Figure C.18.* Lemma C.19 (3). (a) The left side against $s$, for
+$d = \frac12$, $\frac23$ and $\frac\pi4$: it has corners at $s = 0$ and
+$s = d$, and its least value (dots) is at $s = d$, or at $s = \frac23$ when
+$d > \frac23$. (b) That least value against $d$ (blue), which is $M(d)$ up to
+$d = \frac23$, and the bound of the proof (dashed): the tangent bound
+$K_W - 1.113\cdot\frac{81}{56} + 0.887\cos d + 0.477\sin d$ up to $\frac23$, and
+its value at $\frac23$ beyond.
+
 *Proof of Lemma 9.42 (2).* Suppose that $W$ and $D$, and $D$ and $S$, are both
-separated along $e^D_2$. Let $n_W$ be the normal along which $W$ is separated
-from $C$, $e^W_1$ or $(-1, 0)$, and $n_S$ that of $S$, $e^S_1$ or $(0, -1)$.
+separated along $e^D_2$. Let $n_W$ be $(-1, 0)$ if $W$ is on the west side of
+$C$ and $e^W_1$ if it is on its own axis, and $n_S$ be $(0, -1)$ or $e^S_1$ in the
+same way; $W$ and $S$ are separated from $C$ along these normals.
 Take the stress with four edges of weight 1: $C \to W$ along $n_W$ with the
 threshold $\tau(w)$, $C \to S$ along $n_S$ with $\tau(s)$, $W \to D$ along $e^D_2$
 with $\tau(d - w)$, and $D \to S$ along $e^D_2$ with $\tau(d - s)$
@@ -1624,8 +1712,8 @@ F_W = n_W - e^D_2, \qquad F_S = n_S + e^D_2, \qquad F_D = e^D_2 - e^D_2 = 0, \qq
 
 and in the frames of $W$ and $S$, $-e^D_2$ has the components
 $(\sin(d - w), -\cos(d - w))$ and $e^D_2$ the components
-$(\cos(d - s), \sin(d - s))$; $n_W$ is $(1, 0)$ or $(\cos w, -\sin w)$, and
-$n_S$ is $(1, 0)$ or $(\cos s, -\sin s)$. The slack is
+$(\cos(d - s), \sin(d - s))$; $n_W$ is $(\cos w, -\sin w)$ or $(1, 0)$, and
+$n_S$ is $(\cos s, -\sin s)$ or $(1, 0)$. The slack is
 
 ```math
 \sigma = 2 + \omega(w) + \omega(s) + \omega(d - w) + \omega(d - s) - \left\langle F_W, c_W\right\rangle - \left\langle F_S, c_S\right\rangle - \left\langle F_C, c\right\rangle \le 0 .
@@ -1662,15 +1750,16 @@ by Lemma C.19 (1) and (2).
 
 (c) $W$ on the west side, $S$ on its own axis: $|w| < \frac25$ and
 $-\frac58 < s < \frac23$. The force on $S$ is $(1 + \sin q_S, \cos q_S)$ with
-$q_S = \frac\pi2 + s - d \in [\frac12, \pi - \frac12]$, and
-$\varphi(q_S) = \frac\pi2 - |s - d|$; by Lemma C.17,
+$q_S = \frac\pi2 + s - d \in [\frac12, \pi - \frac12]$, folded to
+$\hat q_S = \frac\pi2 - |s - d|$; by Lemma C.17,
 $\omega(q_S) - \langle F_S, c_S\rangle > -0.73 - 0.65(\frac\pi2 - |s - d|)$. The
 force on $C$ is $(1 - \sin s, \cos s)$, with work at most
 $0.113(1 - \sin s + \cos s)$, and Lemma C.18 bounds the terms of $W$. With
 $\omega(s) = \frac12(\cos s + |\sin s|)$, $\sigma$ exceeds the left side of
 Lemma C.19 (3), which is positive.
 
-(d) Both on their own axes: $0 < v < \frac23$ and $-\frac58 < s < \frac23$. By
+(d) Both on their own axes (Figure C.19): $0 < v < \frac23$ and
+$-\frac58 < s < \frac23$. By
 Lemma C.17 in its affine form, the two costs exceed $-0.73 - 0.65(d + v)$ and
 $-0.73 - 0.65(\frac\pi2 + s - d)$, whose sum $-1.46 - 0.65(\frac\pi2 + v + s)$
 does not depend on $d$. The force on $C$ is $(\cos v - \sin s, \cos s - \sin v)$,
@@ -1703,17 +1792,18 @@ In every case $\sigma > 0$, a contradiction. $\square$
 
 ![The double separation at D: the grey square C, the purple square D turned by 45 degrees below left of it, the blue square W above left and the green square S below right, in a dashed circle of radius R0. Two dashed purple lines extend the two sides of D parallel to its primary axis; W touches the upper one and S the lower one. Orange arrows at the centre of D point both ways along its secondary axis and cancel; orange arrows show the forces on W (up and left), S (down and right) and C; the far vertices of W and S, marked in pink, lie outside the circle](figures/appendix-c/double.svg)
 
-*Figure C.11.* The stress of Lemma 9.42 (2) at $w = -0.35$, $d = \frac\pi4$ and
+*Figure C.19.* The stress of Lemma 9.42 (2) at $w = -0.35$, $d = \frac\pi4$ and
 $s = 0.35$, with $W$ and $S$ on their own axes, $C$ at $(c_0, c_0)$, and all four
-separations at equality. The two unit forces on $D$ cancel, and the forces on
-$W$ and $S$ (drawn at $0.42$ times their length) point at far vertices that lie
-well outside the disk.
+separations at equality. The two unit forces on $D$ cancel; the forces on $W$,
+$S$ and $C$ are drawn at $0.42$ times their length, and the far vertices of $W$
+and $S$ lie well outside the disk.
 
 ## C.7 Proof of Lemma 9.43
 
-The first part is the reflection of Lemma 9.38 for $S$, with one difference:
-the angle of $D$ is now known to exceed $\frac12$, and the bounds of Lemma 9.40
-on $D$ are available. The second part adds the separations of $W$ and $S$ from
+The first part is the counterpart of Lemma 9.38 for $S$, but not its mirror
+image: the reflection in the diagonal turns $d$ into $\frac\pi2 - d$, outside
+the range of §C.2. Its proof uses instead that $d > \frac12$ and the bounds of
+Lemma 9.40 on $D$. The second part adds the separations of $W$ and $S$ from
 $C$, which share the centre of $C$.
 
 ### Lemma C.20 (S on its own axis at a negative angle)
@@ -1736,12 +1826,12 @@ and $\sin v > 0$. $\square$
 *Lean:
 [`Six.own_south_transverse_upper`](../../SquaresInCircles/Six/Separators/Signs.lean#L163).*
 
-*Proof of Lemma 9.43 (1).* $S$ is separated from $C$ along its own axis:
-$m_{\mathrm{own}}(S) \ge 0 > m_{\mathrm{south}}(S)$. Suppose that $s \le 0$. If
-$s = 0$, the two margins agree by Lemma C.1 (2), which is impossible. So
-$s = -v$ with $0 < v < \frac58$. By Proposition 9.39, $\frac12 < d \le \frac\pi4$,
-and $\theta = d + v$ lies in $(\frac12, \frac\pi2)$, as
-$\frac\pi4 + \frac58 < \frac\pi2$; so $\cos\theta \ge 0$ and
+*Proof of Lemma 9.43 (1).* By Lemma 9.30 (2), $S$ is separated from $C$ along
+its own axis: $m_{\mathrm{own}}(S) \ge 0 > m_{\mathrm{south}}(S)$. Suppose that
+$s \le 0$. If $s = 0$, the two margins agree by Lemma C.1 (2), which is
+impossible. So $s = -v$ with $0 < v < \frac58$. By Proposition 9.39,
+$\frac12 < d \le \frac\pi4$, and $\theta = d + v$ lies in $(\frac12, \frac\pi2)$,
+as $\frac\pi4 + \frac58 < \frac\pi2$; so $\cos\theta \ge 0$ and
 $\sin\theta \ge \sin\frac12 \ge \frac12 - \frac1{48} = \frac{23}{48}$. The phases of
 $D$ and $S$ differ by $\frac\pi2 - \theta$, so by Lemma C.2 (2), with
 $\cos(d - s) = \cos\theta$ and $\sin(d - s) = \sin\theta$,
@@ -1752,25 +1842,25 @@ $\cos(d - s) = \cos\theta$ and $\sin(d - s) = \sin\theta$,
 
 with the threshold $\tau(\theta) = \frac12(1 + \cos\theta + \sin\theta)$. By
 Proposition 9.41, one of them is at least $\tau(\theta)$. Put
-$T = \tan\frac v2$, so that $0 \le T \le \frac{11}{20} \cdot \frac58 < \frac12$ by
+$k = \tan\frac v2$, so that $0 \le k \le \frac{11}{20} \cdot \frac58 < \frac12$ by
 Lemma A.16 (2), and $U = \frac{31}{100} - \frac{17}{100}d \le \frac9{40}$, so that
 $|b_D| < U$ by Lemma 9.40 (1).
 
-*Along $e^D_2$.* Let $\gamma = \cos d - T\sin d \ge \cos d - \frac12\sin d \ge 0$.
-The identities $T(1 + \cos v) = \sin v$ and $T\sin v = 1 - \cos v$
+*Along $e^D_2$.* Let $\gamma = \cos d - k\sin d \ge \cos d - \frac12\sin d \ge 0$.
+The identities $k(1 + \cos v) = \sin v$ and $k\sin v = 1 - \cos v$
 (Lemma A.16 (2)) give, for all real $x$ and $y$,
 
 ```math
-x\cos\theta + y\sin\theta = \gamma\left(x\cos v + y\sin v\right) + \sin d\left(y - Tx\right) . \tag{C.4}
+x\cos\theta + y\sin\theta = \gamma\left(x\cos v + y\sin v\right) + \sin d\left(y - kx\right) . \tag{C.4}
 ```
 
 By Lemma C.1 (3), $m_{\mathrm{south}}(S) < 0$ reads
 $a_S\cos v + b_S\sin v < \frac12 - c_y + \frac12(\cos v + \sin v)$, and by
-Lemma C.20, $b_S - Ta_S < c_x - Tc_y$. So (C.4) with $(x, y) = (a_S, b_S)$, and
+Lemma C.20, $b_S - ka_S < c_x - kc_y$. So (C.4) with $(x, y) = (a_S, b_S)$, and
 with $(x, y) = (\frac12, \frac12)$ for the threshold, give
 
 ```math
-\left\langle e^D_2, c_S - c_D\right\rangle - \tau(\theta) < \gamma\left(\tfrac12 - c_y\right) + \sin d\left(c_x - Tc_y - \tfrac12(1 - T)\right) - \tfrac12 - b_D .
+\left\langle e^D_2, c_S - c_D\right\rangle - \tau(\theta) < \gamma\left(\tfrac12 - c_y\right) + \sin d\left(c_x - kc_y - \tfrac12(1 - k)\right) - \tfrac12 - b_D .
 ```
 
 Expanding $\gamma$, the right side is
@@ -1782,10 +1872,10 @@ and $\sin d \ge \sin\frac12$, it is less than
 \tfrac12\cos\tfrac12 - \left(\tfrac12 - c_0\right)\sin\tfrac12 - \tfrac{11}{40} < 0.438805 - 0.387 \cdot 0.47942 - 0.275 < -0.021 .
 ```
 
-So $D$ and $S$ are not separated along $e^D_2$.
+So $D$ and $S$ are not separated along $e^D_2$ (Figure C.20 (a)).
 
 *Along $e^S_2$.* By Lemma C.20, with $c_y \ge 0$ and $a_S \le \rho_0$,
-$b_S < c_0 + \rho_0T$. Put $A(d) = \rho_0 - 0.31(U + U^2)$. With $x = -b_D$, the
+$b_S < c_0 + \rho_0k$. Put $A(d) = \rho_0 - 0.31(U + U^2)$. With $x = -b_D$, the
 far corner of $D$ (Lemma 9.26 (1)) gives
 $a_D \le \rho_0 - 0.31(|b_D| + b_D^2) \le \rho_0 - 0.31(x + x^2)$, and
 
@@ -1797,7 +1887,7 @@ as $U \ge |b_D| \ge x$, $1 + U + x \le \frac{29}{20}$ and
 $0.31 \cdot \frac{29}{20} < 0.45 < \frac{23}{48} \le \sin\theta$. So
 
 ```math
-\left\langle e^S_2, c_S - c_D\right\rangle - \tau(\theta) < E(d, v) = c_0 + \rho_0T - \tfrac12 + \left(A(d) - \tfrac12\right)\cos\theta + \left(U - \tfrac12\right)\sin\theta .
+\left\langle e^S_2, c_S - c_D\right\rangle - \tau(\theta) < E(d, v) = c_0 + \rho_0k - \tfrac12 + \left(A(d) - \tfrac12\right)\cos\theta + \left(U - \tfrac12\right)\sin\theta .
 ```
 
 For fixed $v$, $E$ is nonincreasing in $d$ on $[\frac12, \frac\pi4]$: as
@@ -1816,7 +1906,7 @@ and with the brackets of $\cos\frac12$ and $\sin\frac12$,
 0.53\cos\left(\tfrac12 + v\right) - \tfrac{11}{40}\sin\left(\tfrac12 + v\right) = \left(0.53\cos\tfrac12 - \tfrac{11}{40}\sin\tfrac12\right)\cos v - \left(0.53\sin\tfrac12 + \tfrac{11}{40}\cos\tfrac12\right)\sin v \le 0.34\cos v - 0.49\sin v .
 ```
 
-With $c_0 < 0.113$, $\rho_0T \le 1.113 \cdot \frac{11}{20}v$,
+With $c_0 < 0.113$, $\rho_0k \le 1.113 \cdot \frac{11}{20}v$,
 $\cos v \le 1 - \frac{v^2}2 + \frac{v^4}{24}$ and $\sin v \ge v - \frac{v^3}6$,
 
 ```math
@@ -1827,7 +1917,7 @@ and with $v^3 \le \frac58v^2$ and $v^4 \le \frac{25}{64}v^2$ this is at most
 $-0.047 + 0.12215\,v - 0.1134\,v^2$, a quadratic with the negative discriminant
 $0.12215^2 - 4 \cdot 0.1134 \cdot 0.047 < -0.006$. So
 $E(d, v) \le E(\frac12, v) < 0$, and $D$ and $S$ are not separated along $e^S_2$
-either. This contradiction proves $s > 0$. $\square$
+either (Figure C.20 (b)). This contradiction proves $s > 0$. $\square$
 
 *Lean:
 [`Six.own_south_positive`](../../SquaresInCircles/Six/Separators/Signs.lean#L242),
@@ -1843,16 +1933,17 @@ either. This contradiction proves $s > 0$. $\square$
 [`Six.limit_bounds`](../../SquaresInCircles/Six/Separators/Signs.lean#L33),
 [`Six.angle_sum_trig`](../../SquaresInCircles/Six/Separators/Signs.lean#L41).*
 
-![Two graphs below zero. (a) Over d from 1/2 to pi over 4, the bound cos d/2 minus 0.387 sin d minus 11/40 for the separation along the secondary axis of D falls from about −0.022 to about −0.19. (b) Over v from 0 to 5/8: the bound E of the separation along the secondary axis of S at d = 1/2, near −0.05, and at d = pi over 4, near −0.23 to −0.26; above them, the trigonometric bound at d = 1/2, dashed, rising from −0.047 to about −0.015, and the quadratic bound, dotted, just above it; all negative](figures/appendix-c/south-sign.svg)
+![Two graphs below zero. (a) Over d from 1/2 to pi over 4, the bound cos d/2 minus 0.387 sin d minus 11/40 for the separation along the secondary axis of D falls from about −0.022, marked, to about −0.19. (b) Over v from 0 to 5/8, with a legend: the bound E of the separation along the secondary axis of S at d = 1/2, near −0.05, and at d = pi over 4, near −0.23 to −0.26; above them, the trigonometric bound at d = 1/2, dashed, rising from −0.047 to about −0.015, and the quadratic bound, dotted, just above it; all negative](figures/appendix-c/south-sign.svg)
 
-*Figure C.12.* The two cases of the proof of Lemma 9.43 (1). (a) Along
+*Figure C.20.* The two cases of the proof of Lemma 9.43 (1). (a) Along
 $e^D_2$: the bound $\frac12\cos d - 0.387\sin d - \frac{11}{40}$, largest at
 $d = \frac12$. (b) Along $e^S_2$: $E(d, v)$ at $d = \frac12$ (blue) and
 $d = \frac\pi4$ (cyan), below the trigonometric bound at $d = \frac12$ (dashed)
 and the quadratic $-0.047 + 0.12215v - 0.1134v^2$ (dotted).
 
-*Proof of Lemma 9.43 (2).* Let $W$ and $S$ both be separated from $C$ along
-their own axes, and suppose that $s - w \ge \frac{24}{25}$. By Lemma 9.38,
+*Proof of Lemma 9.43 (2).* Let neither $W$ nor $S$ be separated from $C$ along
+its matching side, so that both are separated from $C$ along their own axes,
+and suppose that $s - w \ge \frac{24}{25}$. By Lemma 9.38,
 $w < 0$; put $v = -w$, so that $0 < v < \frac23$, and $s < \frac23$. Then
 $s \ge \frac{24}{25} - v > \frac{22}{75}$ and likewise $v > \frac{22}{75}$. By
 Lemma C.1 (3), the two separations read
@@ -1876,7 +1967,8 @@ a_W + a_S \ge \left(\tfrac12 + 0.387\cos v + 0.61\sin v\right) + \left(\tfrac12 
 ```
 
 On $[\frac{22}{75}, \frac23]$ the function $\frac12 + 0.387\cos x + 0.61\sin x$
-lies above the line $\bar\rho + \frac9{25}(x - \frac{12}{25})$: by Lemma A.5 with
+lies above the line $\bar\rho + \frac9{25}(x - \frac{12}{25})$ (Figure C.21 (a)):
+by Lemma A.5 with
 $\alpha = -\frac9{25}$, it suffices to check the two ends, where, with
 $\cos\frac{22}{75} \ge 0.957285$, $\sin\frac{22}{75} \ge 0.289144$ (the Taylor
 polynomials of degrees 6 and 7) and Table C.1,
@@ -1896,7 +1988,7 @@ $s - w < \frac{24}{25}$. $\square$
 
 ![Two panels. (a) Over x from 0 to 0.7, the blue profile one half plus 0.387 cos x plus 0.61 sin x rises from about 0.89 to about 1.2, crossing a dashed orange line of slope 9/25 through the point (12/25, 1.11282); on the shaded interval from 22/75 to 2/3 the profile lies above the line, touching it nearly at both ends. (b) The square of the angles w from −2/3 to 0 and s from 0 to 2/3, dashed, with the pink corner triangle where s minus w is at least 24/25, bounded by the line from (−2/3, 22/75) to (−22/75, 2/3); the model point is at the corner (0, 0)](figures/appendix-c/own-wings.svg)
 
-*Figure C.13.* Lemma 9.43 (2). (a) The profile
+*Figure C.21.* Lemma 9.43 (2). (a) The profile
 $\frac12 + 0.387\cos x + 0.61\sin x$, a lower bound for the radial coordinate of
 an own wing at the angle $x$, against the line of slope $\frac9{25}$ through
 $\bar\rho$ at $\frac{12}{25}$; on $[\frac{22}{75}, \frac23]$ it lies above the

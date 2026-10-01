@@ -433,7 +433,7 @@ theorem impossible (ds : Bool) {v d aw bw ad bd cx cy : ℝ}
 
 end DiagonalAngle.Own
 
-/-- If W is separated from C along its own axis, then `d > 1/2`. -/
+/-- If W is not separated from C along the west side of C, then `d > 1/2`. -/
 theorem own_west_diagonal_gt_half {R : ℝ} (P : NormalizedPacking R)
     (hown : P.ownAxis 2=true) : 1/2<P.diagonalAngle := by
   by_contra! hd

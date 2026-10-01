@@ -7,22 +7,23 @@ the analysis of six and seven squares rests.
 
 §A.1 derives monotonicity, tangent parabolas and concavity bounds from
 derivatives. §A.2 compares the sine and the cosine and bounds them by their
-Taylor polynomials of degrees 4 to 7. §A.3 bounds a function by its value at
-the point where its derivative changes sign. §A.4 extends concavity to
-functions of several angles, which are then positive on a box once they are
-positive at its corners, and collects the facts about first harmonics, the
-lengths of turning forces, the square root and small angles that make such
-functions concave. With these tools an inequality between functions of a few
-angles becomes an inequality between polynomials on an interval or a box, and
-that is settled by completing squares, by the signs of a few factors and by
-comparing rational numbers. Chapters 9 and 10 and Appendices B to I use them in
-this way throughout; [Appendix F](appendix-f.md), the proof of the marker arc
-lemma of Chapter 10, is a typical instance.
+Taylor polynomials of degrees 4 to 7. §A.3 bounds a function by its value
+where its derivative changes sign. §A.4 carries concavity over to functions of
+several angles, which are then positive on a box once they are positive at its
+corners, and collects facts about first harmonics, the lengths of turning
+forces, the square root, and small and half angles. With these tools an
+inequality between functions of a few angles becomes an inequality between
+polynomials on an interval or a box, settled by completing squares, by the
+signs of a few factors and by comparing rational numbers. Chapters 9 and 10 and
+Appendices B to I use them in this way throughout;
+[Appendix F](appendix-f.md), the proof of the marker arc lemma of Chapter 10,
+is a typical instance.
 
-We use the conventions of §2.1: in particular $\arcsin$ is extended to all of
-$\mathbb R$ (it is odd and nondecreasing) and
-$\arccos x = \frac\pi2 - \arcsin x$. Of the classical bounds on $\pi$ we only
-need $\pi < \frac{22}7$, in Lemma A.15.
+In Lemma A.15, $h = \frac{\sqrt2}2$, and
+$\omega(t) = \frac12(|\cos t| + |\sin t|)$ and $\tau(t) = \frac12 + \omega(t)$
+are the width and the threshold of
+[Definition 9.9](09-six.md#definition-99-squares-in-a-frame); $\pi < \frac{22}7$
+is the only bound on $\pi$ we need.
 
 ## A.1 Monotonicity and concavity
 
@@ -63,16 +64,16 @@ f(x) \ge f(t) + d(t)(x - t) + \tfrac\kappa2 (x - t)^2 .
 *Proof.* Fix $t \in [l, u]$ and put
 
 ```math
-h(y) = f(y) - f(t) - d(t)(y - t) - \tfrac\kappa2 (y - t)^2 , \qquad
-h_1(y) = d(y) - d(t) - \kappa(y - t) .
+g(y) = f(y) - f(t) - d(t)(y - t) - \tfrac\kappa2 (y - t)^2 , \qquad
+g_1(y) = d(y) - d(t) - \kappa(y - t) .
 ```
 
-At every $y \in [l, u]$, $h$ has derivative $h_1(y)$ and $h_1$ has derivative
+At every $y \in [l, u]$, $g$ has derivative $g_1(y)$ and $g_1$ has derivative
 $e(y) - \kappa \ge 0$; in particular both are continuous on $[l, u]$. By
-Lemma A.1 (1), $h_1$ is nondecreasing on $[l, u]$, and $h_1(t) = 0$, so
-$h_1 \le 0$ on $[l, t]$ and $h_1 \ge 0$ on $[t, u]$. By Lemma A.1 again, $h$ is
-nonincreasing on $[l, t]$ and nondecreasing on $[t, u]$. As $h(t) = 0$, we get
-$h \ge 0$ on $[l, u]$, and $h(x) \ge 0$ is the claim. $\square$
+Lemma A.1 (1), $g_1$ is nondecreasing on $[l, u]$, and $g_1(t) = 0$, so
+$g_1 \le 0$ on $[l, t]$ and $g_1 \ge 0$ on $[t, u]$. By Lemma A.1 again, $g$ is
+nonincreasing on $[l, t]$ and nondecreasing on $[t, u]$. As $g(t) = 0$, we get
+$g \ge 0$ on $[l, u]$, and $g(x) \ge 0$ is the claim. $\square$
 
 *Lean: [`curvature_tangent`](../../SquaresInCircles/Common/Analysis.lean#L148).*
 
@@ -94,7 +95,8 @@ derivative at least $\kappa$ on $[l, u]$, so it lies above its tangent parabola
 of curvature $\kappa$ at $t$ (dashed). When $d(t)^2 < 2\kappa f(t)$, the lowest
 value of the parabola, $f(t) - d(t)^2/2\kappa$ (green), is positive.
 
-*Proof.* Let $x \in [l, u]$ and $s = x - t$. By Lemma A.2 and $\kappa > 0$,
+*Proof.* Let $x \in [l, u]$ and $s = x - t$. By Lemma A.2 and $\kappa > 0$
+(Figure A.1),
 
 ```math
 2\kappa f(x) \ge 2\kappa f(t) + 2\kappa d(t) s + \kappa^2 s^2
@@ -135,15 +137,17 @@ and $0 \le l \le u \le \frac\pi2$, and put
 $F(y) = \alpha y + A\sin y + B\cos y$. If $m < F(l)$ and $m < F(u)$, then
 $m < F(x)$ for every $x \in [l, u]$.
 
-![A concave blue arc over an interval from l to u inside zero to pi over 2, above the orange chord joining its end points, and a dashed horizontal level m below both end points](figures/appendix-a/concave.svg)
+![A concave blue arc over an interval from l to u inside zero to pi over 2, the rest of the graph on zero to pi over 2 grey, above the orange chord joining its end points, and a dashed horizontal level m below both end points](figures/appendix-a/concave.svg)
 
-*Figure A.2.* Lemmas A.4 and A.5, for $F(y) = -\frac y5 + \sin y + \cos y$. On
-$[l, u] \subset [0, \frac\pi2]$ the function is concave, so it lies above its
-chord (orange); if both end values exceed $m$, so does every value between.
+*Figure A.2.* Lemmas A.4 and A.5, for $F(y) = -\frac y5 + \sin y + \cos y$,
+$[l, u] = [0.2, 1.4]$ and $m = 0.8$. On $[l, u] \subset [0, \frac\pi2]$ the
+function is concave, so it lies above its chord (orange); if both end values
+exceed $m$, so does every value between.
 
-*Proof.* Apply Lemma A.4 to $F - m$, with $d(y) = \alpha + A\cos y - B\sin y$
-and $e(y) = -A\sin y - B\cos y$. For $y \in [l, u] \subset [0, \frac\pi2]$ we
-have $\sin y \ge 0$ and $\cos y \ge 0$, so $e(y) \le 0$. $\square$
+*Proof.* Apply Lemma A.4 to $F - m$ (Figure A.2), with
+$d(y) = \alpha + A\cos y - B\sin y$ and $e(y) = -A\sin y - B\cos y$. For
+$y \in [l, u] \subset [0, \frac\pi2]$ we have $\sin y \ge 0$ and
+$\cos y \ge 0$, so $e(y) \le 0$. $\square$
 
 *Lean:
 [`trig_concave_gt`](../../SquaresInCircles/Common/Trigonometry.lean#L323).*
@@ -162,8 +166,9 @@ have $\sin y \ge 0$ and $\cos y \ge 0$, so $e(y) \le 0$. $\square$
 $\frac\pi4$, and the cosine stays at least $\frac12$ up to $\frac\pi3$.
 
 *Proof.* The cosine is decreasing on $[0, \pi]$, and
-$\sin y = \cos(\frac\pi2 - y)$. (1) Here $0 \le x \le \frac\pi2 - x \le \pi$,
-so $\sin x = \cos(\frac\pi2 - x) \le \cos x$. (2) Here
+$\sin y = \cos(\frac\pi2 - y)$ (Figure A.3). (1) Here
+$0 \le x \le \frac\pi2 - x \le \pi$, so
+$\sin x = \cos(\frac\pi2 - x) \le \cos x$. (2) Here
 $0 \le \frac\pi2 - x \le x \le \pi$, so
 $\cos x \le \cos(\frac\pi2 - x) = \sin x$. (3)
 $\cos z \ge \cos\frac\pi3 = \frac12$. $\square$
@@ -182,13 +187,13 @@ For every $x \ge 0$:
 3. $\cos x \ge 1 - \frac{x^2}2 + \frac{x^4}{24} - \frac{x^6}{720}$;
 4. $\sin x \ge x - \frac{x^3}6 + \frac{x^5}{120} - \frac{x^7}{5040}$.
 
-![Two panels on zero to 3.2. Left: the cosine in blue between its Taylor polynomial of degree 4, dashed orange above, and of degree 6, dashed green below. Right: the sine in blue between its Taylor polynomial of degree 5 above and of degree 7 below. The curves agree near zero and separate beyond about 2](figures/appendix-a/taylor.svg)
+![Two panels on zero to 3.2, each with the part from zero to pi/2 shaded. Left: the cosine in blue between its Taylor polynomial of degree 4, dashed orange above, and of degree 6, dashed green below. Right: the sine in blue between its Taylor polynomial of degree 5 above and of degree 7 below. On the shaded part the curves cannot be told apart; they separate beyond about 2](figures/appendix-a/taylor.svg)
 
 *Figure A.4.* Lemma A.7 on $[0, 3.2]$: the cosine lies between its Taylor
 polynomials of degrees 6 (below) and 4 (above), the sine between those of
-degrees 7 (below) and 5 (above). On $[0, \frac\pi2]$, where the bounds are
-mostly used, the polynomials cannot be told apart from the functions at this
-scale.
+degrees 7 (below) and 5 (above). On $[0, \frac\pi2]$ (shaded), where the
+bounds are mostly used, the polynomials cannot be told apart from the
+functions at this scale.
 
 *Proof.* Consider the eight functions
 
@@ -213,8 +218,8 @@ $g_k(0) = 0$ for $k \ge 1$. Now $g_0 \ge 0$ everywhere, and if
 $g_{k-1} \ge 0$ on $[0, \infty)$, then Lemma A.1 (3) gives $g_k \ge 0$ on
 $[0, \infty)$. So $g_0, \dots, g_7 \ge 0$ on $[0, \infty)$. For $k \le 3$ these
 are the classical bounds $\sin x \le x$, $\cos x \ge 1 - \frac{x^2}2$ and
-$\sin x \ge x - \frac{x^3}6$; $g_4, g_5, g_6, g_7 \ge 0$ are (1) to (4).
-$\square$
+$\sin x \ge x - \frac{x^3}6$; $g_4, g_5, g_6, g_7 \ge 0$ are (1) to (4)
+(Figure A.4). $\square$
 
 *Lean: [`cos_upper_four`](../../SquaresInCircles/Common/Trigonometry.lean#L200),
 [`sin_upper_five`](../../SquaresInCircles/Common/Trigonometry.lean#L207),
@@ -262,22 +267,23 @@ although it is not concave.
 *Proof.* As $f$ has a derivative everywhere, it is continuous. Let
 $x \in [l, u]$. If $x \le c$, then $f$ is nondecreasing on $[l, c]$ by
 Lemma A.1 (1), so $f(x) \le f(c)$. If $x \ge c$, then $f$ is nonincreasing on
-$[c, u]$ by Lemma A.1 (2), so again $f(x) \le f(c)$. $\square$
+$[c, u]$ by Lemma A.1 (2), so again $f(x) \le f(c)$ (Figure A.5). $\square$
 
 *Lean: [`le_at_peak`](../../SquaresInCircles/Common/Analysis.lean#L54).*
 
 In use, $d(y)$ is a product of factors of constant sign on $[l, u]$ and one
-affine factor that vanishes at $c$; Lemma F.5 is an example (Figure F.6).
+affine factor that vanishes at $c$; Lemma F.5 is an example (Figure F.7).
 
 ## A.4 Concave functions and harmonics
 
 A function $f$ is *concave* on an interval $[l, u]$ if
 $f((1 - \lambda)x + \lambda y) \ge (1 - \lambda)f(x) + \lambda f(y)$ for all
 $x, y \in [l, u]$ and $\lambda \in [0, 1]$: its graph lies above its chords.
-Lemma A.4 says this for a function with a nonpositive second derivative and
-positive ends; the following lemma states it for concave functions in general
-and carries it over to rectangles. Most estimates of Appendices B to E reduce a
-function of several angles to its values at the corners of a box with it.
+Lemma A.4 shows that a function with a nonpositive second derivative is
+positive once its two end values are; the next lemma shows this for every
+concave function and carries it over to rectangles. Most estimates of
+Appendices B to E use it to reduce a function of several angles to its values
+at the corners of a box.
 
 ### Lemma A.10 (concave functions)
 
@@ -320,7 +326,7 @@ $\alpha((1 - \lambda)x + \lambda y) + \beta = (1 - \lambda)(\alpha x + \beta) + 
 
 (4) Let $(x, y)$ be in the rectangle. By (2) on the two edges, $f(l, y) > 0$
 and $f(u, y) > 0$; by (2) again, along the segment from $(l, y)$ to $(u, y)$,
-$f(x, y) > 0$. $\square$
+$f(x, y) > 0$ (Figure A.6). $\square$
 
 *Lean: [`concave_of_deriv2`](../../SquaresInCircles/Common/Analysis.lean#L69),
 [`concave_gt_of_endpoints`](../../SquaresInCircles/Common/Analysis.lean#L81),
@@ -333,6 +339,17 @@ $f(x, y) > 0$. $\square$
 In use, (4) is applied one variable at a time: a function of three angles that
 is concave in each of them on a box is positive once it is positive at the
 eight corners.
+
+![Left: the square between the lines x = l, x = u, y = L and y = U, shaded, with grey level curves of a saddle-shaped function; its values are 1.6 at the lower left and upper right corners and 0.1 at the other two; the vertical edges x = l and x = u are thick blue, and a dashed orange segment at height 0.7 joins them through a point (x, y). Right: the function along that segment, a concave blue arc above its dashed orange chord, from 0.76 at l to 1.36 at u](figures/appendix-a/rectangle.svg)
+
+*Figure A.6.* Lemma A.10 (4) for $f(x, y) = \frac{27}{20} - X^2 - Y^2 + 3XY$,
+with $X = x - \frac12$ and $Y = y - \frac12$, on
+$[l, u] \times [L, U] = [0, 1]^2$. It is concave in $x$ and in $y$ but not
+concave: its level curves, at $0.25, 0.5, \dots, 1.5$, show a saddle at the
+centre. It is positive at the four corners, so on the two vertical edges
+(blue), and then along every horizontal segment (dashed). Right, along
+$y = 0.7$: $f$ lies above its chord, from $f(l, 0.7) = 0.76$ to
+$f(u, 0.7) = 1.36$.
 
 ### Lemma A.11 (first harmonics)
 
@@ -363,7 +380,14 @@ A typical use: a weighted sum of separating inequalities, after the supports
 of the squares, leaves a function of an angle $x$ of the form
 $K + A\cos x + B\sin x$, plus terms in other angles; when $A, B \ge 0$ and
 $x$ ranges over an interval of $[0, \frac\pi2]$, it suffices to check its two
-end values.
+end values (Figure A.7).
+
+![The first harmonic H(x) = 0.6 cos x + 0.8 sin x on minus pi to pi: concave and drawn in blue where it is nonnegative, with a dashed orange chord below the blue arc, and convex and grey where it is negative](figures/appendix-a/harmonic.svg)
+
+*Figure A.7.* Lemma A.11 for the first harmonic
+$H(x) = 0.6\cos x + 0.8\sin x$: it is concave where it is nonnegative (blue),
+so there it lies above its chords (dashed), and convex where it is negative
+(grey).
 
 ### Lemma A.12 (a harmonic less a radical)
 
@@ -402,8 +426,9 @@ applies. $\square$
 
 The radical is the length of a force that turns with $x$: a force
 $(\alpha + \gamma\sin x, \gamma\cos x)$ has length
-$\sqrt{\alpha^2 + \gamma^2 + 2\alpha\gamma\sin x}$. Multiplied by a radius, it
-enters the far-vertex support of
+$\sqrt{\alpha^2 + \gamma^2 + 2\alpha\gamma\sin x}$, with
+$p = \alpha^2 + \gamma^2$ and $q = 2\alpha\gamma$, so that $q^2 \le p^2$.
+Multiplied by a radius, it enters the far-vertex support of
 [Lemma 9.25](09-six.md#lemma-925-supports-of-a-square-in-a-disk) (1).
 
 ### Lemma A.13 (a turning vector)
@@ -411,8 +436,8 @@ enters the far-vertex support of
 Let $a, b \ge 0$ with $a + b > 0$, and let $P$, $Q$, $T$ be real numbers with
 $P = a^2 + b^2$ and $Q^2 + T^2 = 4a^2b^2$. Put
 $\Lambda(x) = P + Q\cos x + T\sin x$, the squared length of the sum of a
-constant vector of length $a$ and a vector of length $b$ that turns with $x$,
-and let $R \ge 0$.
+constant vector of length $a$ and a vector of length $b$ that turns with $x$
+(Figure A.8), and let $R \ge 0$.
 
 1. $(a - b)^2 \le \Lambda(x) \le (a + b)^2$ for every $x$.
 2. Where $\Lambda(x) > 0$, the function $g = -R\sqrt\Lambda$ has the second
@@ -461,6 +486,19 @@ $a \le b$. $\square$
 [`harmonic_mean_mono`](../../SquaresInCircles/Common/Trigonometry.lean#L571),
 [`harmonicCurvature_nonpos_of_opposition`](../../SquaresInCircles/Common/Trigonometry.lean#L582).*
 
+![Left: from o, a constant vector of length a = 2/5 and, from its tip, a vector of length b = 1 turned by the angle x; the tip of their sum runs on the dashed circle of radius b, and its distance L from o is drawn thick. The part of the circle behind the dotted line through o perpendicular to the constant vector is orange. Right: L as a function of x on minus pi to pi, between b - a and a + b; a dashed green parabola touches its peak from below, and the curve is orange where L is at most the square root of b squared minus a squared](figures/appendix-a/turning.svg)
+
+*Figure A.8.* Lemma A.13 for a constant vector of length $a = \frac25$ and a
+turning vector of length $b = 1$:
+$\Lambda(x) = \frac{29}{25} + \frac45\cos x$. Left: the tip of the sum runs on
+the circle of radius $b$ about the tip of the constant vector, so its length
+$L$ lies between $b - a$ and $a + b$, which is (1). Right: $L$ as a function of
+$x$. The parabola $a + b - \frac{ab}{2(a + b)}x^2$ (dashed) touches it at its
+peak and stays below it, as (2) bounds the second derivative of $-RL$ by
+$R\frac{ab}{a + b}$. Where $L \le \sqrt{b^2 - a^2}$ (orange), that is, where
+the tip lies behind the line through $o$ perpendicular to the constant vector
+(dotted, left), $L$ is convex and $-RL$ concave, which is (3).
+
 ### Lemma A.14 (tangents of the square root)
 
 For $c > 0$ and $y \ge 0$, $\sqrt y \le \frac{y + c^2}{2c}$, with equality
@@ -473,17 +511,14 @@ $(y + c^2)^2 - 4c^2y = (y - c^2)^2 \ge 0$. $\square$
 [`sqrt_le_tangent`](../../SquaresInCircles/Common/Trigonometry.lean#L609),
 [`sq_le_tangent_sq`](../../SquaresInCircles/Common/Trigonometry.lean#L614).*
 
-The square root is concave, and the right side is its tangent at $c^2$. The
-estimates use it to replace the length of a force, the square root of an
-affine function of one sine, by an affine function of that sine; the point
-$c^2$ is chosen near the squared length that matters.
+The square root is concave, and the right side is its tangent at $c^2$
+(Figure A.9). The estimates use it to replace the length of a force, the
+square root of an affine function of one sine, by an affine function of that
+sine; the point $c^2$ is chosen near the squared length that matters.
 
-![Left: a first harmonic H(x) = 0.6 cos x + 0.8 sin x on minus pi to pi, concave and drawn in blue where it is nonnegative, convex and grey where it is negative, with a dashed chord below the blue arc. Right: the square root of y and its tangent line at y = c squared = 0.16, which lies above it and touches it there](figures/appendix-a/tools.svg)
+![The square root of y in blue and its tangent line at y = c squared = 0.16, dashed orange, which lies above it and touches it there](figures/appendix-a/root.svg)
 
-*Figure A.6.* Left, Lemma A.11: the first harmonic
-$H(x) = 0.6\cos x + 0.8\sin x$ is concave where it is nonnegative (blue), so
-there it lies above its chords (dashed), and convex where it is negative
-(grey). Right, Lemma A.14: the square root (blue) lies below its tangent
+*Figure A.9.* Lemma A.14: the square root (blue) lies below its tangent
 $\frac{y + c^2}{2c}$ at $c^2$ (dashed), here for $c = \frac25$, the tangent
 that §B.5 uses for the length of a force.
 
@@ -512,7 +547,7 @@ on $[0, \frac\pi2]$ the sine is concave (Lemma A.10 (1): its second
 derivative $-\sin$ is nonpositive there), so it lies above its chord from $0$
 to $\frac\pi2$: $\sin x \ge \frac2\pi x$. With $x = \frac t2$,
 $1 - \cos t \ge \frac{2t^2}{\pi^2} \ge \frac{t^2}5$, since
-$\pi^2 < (\frac{22}7)^2 < 10$. $\square$
+$\pi^2 < (\frac{22}7)^2 < 10$ (Figure A.10). $\square$
 
 *Lean: [`small_angle`](../../SquaresInCircles/Common/Trigonometry.lean#L100),
 [`small_angle_nonneg`](../../SquaresInCircles/Common/Trigonometry.lean#L109),
@@ -525,6 +560,15 @@ $\pi^2 < (\frac{22}7)^2 < 10$. $\square$
 [`east_quadrant_trig`](../../SquaresInCircles/Common/Trigonometry.lean#L64),
 [`cos_add_sin_mono`](../../SquaresInCircles/Common/Trigonometry.lean#L79),
 [`cos_le_one_sub_fifth_sq`](../../SquaresInCircles/Common/Trigonometry.lean#L116).*
+
+![Left: the width omega(t) on minus pi to pi, a curve of period pi/2 with arches between one half and the square root of 2 over 2, above the dashed level one half and above the dashed orange curve (cos t + sin t)/2, which it meets from 0 to pi/2. Right: cos t on minus pi to pi between the dashed parabolas 1 - t^2/2 below and 1 - t^2/5 above; all three meet at 0, and at plus and minus pi the upper parabola passes just above -1](figures/appendix-a/small-angles.svg)
+
+*Figure A.10.* Lemma A.15. Left, (2): the width $\omega(t)$ has period
+$\frac\pi2$ and lies between $\frac12$ and $h$; it is at least
+$\frac12(\cos t + \sin t)$ (dashed), with equality on $[0, \frac\pi2]$.
+Right, (1) and (4): on $[-\pi, \pi]$ the cosine lies between $1 - \frac{t^2}2$
+and $1 - \frac{t^2}5$; at $\pm\pi$ the upper parabola is
+$1 - \frac{\pi^2}5 \approx -0.974$, just above $-1$.
 
 ### Lemma A.16 (half angles)
 
@@ -545,12 +589,13 @@ $1 - \frac{t^2}2 \ge \frac{17}{25}$, $1 - \frac{t^2}6 \ge \frac{89}{100}$, and
 $\cos t + \sin t - 1 \ge t(1 - \frac t2 - \frac{t^2}6) \ge \frac{12}{25}t$,
 since $1 - \frac25 - \frac{8}{75} > \frac{12}{25}$.
 
-(2) The identities follow from $\sin^2 t = (1 - \cos t)(1 + \cos t)$. For the
-lower bound, $F(x) = 2\sin x - x(1 + \cos x)$ has $F(0) = 0$ and
-$F'(x) = \cos x - 1 + x\sin x$, which vanishes at 0 and has the derivative
-$x\cos x \ge 0$ on $[0, \frac45]$; so $F' \ge 0$ and $F \ge 0$ there
+(2) The identities follow from $\sin^2 t = (1 - \cos t)(1 + \cos t)$
+(Figure A.11). For the lower bound, $F(x) = 2\sin x - x(1 + \cos x)$ has
+$F(0) = 0$ and $F'(x) = \cos x - 1 + x\sin x$, which vanishes at 0 and has the
+derivative $x\cos x \ge 0$ on $[0, \frac45]$; so $F' \ge 0$ and $F \ge 0$ there
 ([Lemma A.1](#lemma-a1-monotonicity-from-the-derivative)), which is
-$\tan\frac t2 \ge \frac t2$. For the upper bound, by Lemma A.7 (2),
+$\tan\frac t2 \ge \frac t2$. For the upper bound, by
+$\cos t \ge 1 - \frac{t^2}2$ and Lemma A.7 (2),
 
 ```math
 \tfrac{11}{20}t(1 + \cos t) - \sin t \ge \tfrac{11}{20}t\left(2 - \tfrac{t^2}2\right) - t + \tfrac{t^3}6 - \tfrac{t^5}{120} = t\left(\tfrac1{10} - \tfrac{13}{120}t^2 - \tfrac{t^4}{120}\right) \ge 0 ,
@@ -573,3 +618,13 @@ nonincreasing there, and its values at $q \le t$ compare as claimed. $\square$
 [`halfRatio_shift`](../../SquaresInCircles/Common/Trigonometry.lean#L709),
 [`cosine_difference_lower`](../../SquaresInCircles/Common/Trigonometry.lean#L694).*
 
+![Left: the upper half of the unit circle about o with the point u(t) for t = 4/5; the chord from (-1, 0) to u(t), blue, makes the angle t/2 with the axis and crosses the vertical line through o at the height tan(t/2), marked green; the chord from u(t) to (1, 0), orange, is perpendicular to it, and a dashed segment of length sin t drops from u(t) to the axis. Right: tan(t/2)/t for t from 0 to 4/5, rising from one half and staying below 11/20, both levels dashed](figures/appendix-a/half-angles.svg)
+
+*Figure A.11.* Lemma A.16 (2) for $t = \frac45$. Left: the chord from
+$(-1, 0)$ to $u(t)$ (blue) has the slope
+$\frac{\sin t}{1 + \cos t} = \tan\frac t2$ and crosses the vertical line
+through $o$ at the height $\tan\frac t2$ (green); the chord from $u(t)$ to
+$(1, 0)$ (orange) is perpendicular to it, which is
+$\tan\frac t2\,\sin t = 1 - \cos t$. Right: $\tan\frac t2 / t$ rises from
+$\frac12$ and stays below $\frac{11}{20}$ on $(0, \frac45]$ (dashed), which is
+$\frac t2 \le \tan\frac t2 \le \frac{11}{20}t$.

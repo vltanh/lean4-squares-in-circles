@@ -11,8 +11,10 @@ squares, and the facts that the captions state are checked by assertions.
 import math
 
 from proof_figures import (Figure, INK, FAINT, COLORS, FILLS, square_corners,
-                           in_open_square, arcs_in, u, shift, rad, sb, pair,
+                           in_open_square, arcs_in, u, shift, rad, sb,
                            quadrant_disk, ab_axes)
+from fig_front import it
+from fig_one import label, isb, fit_radius, fit_region
 
 R2 = math.sqrt(5) / 2
 BLUE, ORANGE, GREEN = COLORS[0], COLORS[1], COLORS[2]
@@ -40,20 +42,20 @@ def corners():
     c1, c2 = (-0.5, 0.0), (0.5, 0.0)
     pts = [(x, y) for x in (-1.0, 1.0) for y in (-0.5, 0.5)]
     assert all(abs(math.hypot(*q) - R2) < 1e-12 for q in pts)
-    m = R2 + 0.1
+    m = R2 + 0.17
     f = Figure(-m, m, -m, m, 165)
     f.circle((0, 0), R2, stroke=INK, width=1.2, dash='6 4')
     f.square(c1, fill=FILLS[0], stroke=BLUE)
     f.square(c2, fill=FILLS[1], stroke=ORANGE)
     f.line((-m + 0.03, 0), (m - 0.03, 0), stroke=FAINT, width=1, arrow=True)
     f.line((0, -m + 0.03), (0, m - 0.03), stroke=FAINT, width=1, arrow=True)
-    f.text((m - 0.05, -0.08), 'x', anchor='end', color=FAINT)
-    f.text((-0.06, m - 0.06), 'y', anchor='end', color=FAINT)
+    f.text((m - 0.05, -0.09), 'x', anchor='end', color=FAINT)
+    f.text((-0.06, m - 0.07), 'y', anchor='end', color=FAINT)
     f.line((0, 0), (1, 0), width=2.4)
     f.line((1, 0), (1, 0.5), width=2.4)
     f.line((0, 0), (1, 0.5), width=1.4)
     f.text((0.78, -0.09), '1', italic=False)
-    f.text((1.06, 0.25), '½', italic=False, anchor='start')
+    f.text((0.95, 0.19), '½', italic=False, anchor='end')
     f.text((0.38, 0.3), sb('R', '2'))
     for q in pts:
         f.dot(q, r=3.8)
@@ -124,8 +126,7 @@ def ab_plane():
                  for s in (math.pi / 2 * k / 90 for k in range(91))],
              stroke=ORANGE, width=1.8, dash='6 4')
     f.line((0, 0), (0.62, 0.62), stroke=FAINT, width=1, dash='3 3')
-    f.text((0.63, 0.6), 'a = b', size=13, italic=False, color=FAINT,
-           anchor='start')
+    f.text((0.63, 0.6), 'a = b', size=13, color=FAINT, anchor='start')
     ab_axes(f, 0.7)
     f.dot((0.5, 0), r=4.4)
     f.text((0.52, -0.045), '(½, 0)', size=14, italic=False, anchor='start')
@@ -139,6 +140,42 @@ def ab_plane():
            'the part of the disk where phi is at most 5/4 lies inside the '
            'dashed quarter circle of radius one half and meets it only at '
            '(1/2, 0) and (0, 1/2)')
+
+
+def inscribed_disk():
+    """Lemma 5.4 in the frame of S: the positions of o for which S fits in
+    the closed disk of radius R_2 about o lie in the inscribed disk of S, the
+    closed disk of radius 1/2 about c_S, and reach its circle only at the
+    midpoints of the four edges."""
+    K = 1.25
+    region = fit_region(K)
+    for p in region:
+        assert abs(phi(abs(p[0]), abs(p[1])) - K) < 1e-9
+        assert math.hypot(*p) <= 0.5 + 1e-12
+    mids = [(0.5, 0.0), (0.0, 0.5), (-0.5, 0.0), (0.0, -0.5)]
+    for k in range(720):
+        t = 2 * math.pi * k / 720
+        on_axis = k % 180 == 0
+        assert (abs(fit_radius(K, t) - 0.5) < 1e-12) == on_axis
+    assert all(abs(phi(abs(x), abs(y)) - K) < 1e-12 for x, y in mids)
+    f = Figure(-0.74, 0.74, -0.74, 0.74, 300)
+    f.polygon(region, fill=FILLS[0], stroke=BLUE, width=1.6)
+    f.circle((0, 0), 0.5, stroke=ORANGE, width=1.8, dash='6 4')
+    f.square((0, 0), stroke=INK, width=1.8)
+    t = rad(-35)
+    f.line((0, 0), shift((0, 0), u(t), 0.5), stroke=ORANGE, width=1.2)
+    f.text(shift(shift((0, 0), u(t), 0.3), u(t + math.pi / 2), -0.05), '½',
+           color=ORANGE, italic=False)
+    for q in mids:
+        f.dot(q, r=4.2)
+    f.dot((0, 0))
+    f.text((-0.03, 0.05), sb('c', 'S'), anchor='end')
+    f.text((-0.4, 0.4), 'S', size=17)
+    f.save('05-two/inscribed-disk', 'A unit square S in its own frame and the '
+           'blue region of the points o for which S fits in the closed disk '
+           'of radius R2 about o: a rounded diamond inside the dashed circle '
+           'of radius one half about the centre of S, touching it only at the '
+           'midpoints of the four edges')
 
 
 def edge_midpoint():
@@ -165,20 +202,23 @@ def edge_midpoint():
             f.line(lo, hi, stroke=BLUE, width=3.4)
             fars = [frame_point(c, t, 0.5, s) for s in (-0.5, 0.5)]
             assert all(abs(math.dist(o, q) - R2) < 1e-12 for q in fars)
-            label = pair(('a', 'S'), ('b', 'S'), 14) + ' = (½, 0)'
+            text = ('(' + isb('a', 'S', ', ', 14) +
+                    isb('b', 'S', ') = (½, 0)', 14))
+            spot = shift(o, (-0.05, -0.08))
         else:
             fars = [frame_point(c, t, 0.5, 0.5)]
             assert math.dist(o, fars[0]) ** 2 > 1.25
             assert abs(math.dist(o, fars[0]) ** 2 - phi(x, y)) < 1e-12
-            label = (sb('a', 'S', ' = ', 14) + sb('b', 'S', ' = √2/4', 14))
+            text = isb('a', 'S', ' = ', 14) + isb('b', 'S', ' = √2/4', 14)
+            spot = shift(o, (-0.05, 0.07))
         for q in fars:
             f.dot(q, r=4.2, fill=ORANGE)
         f.dot(c, fill=BLUE)
         f.text(shift(c, (0.05, -0.07)), sb('c', 'S'), color=BLUE,
                anchor='start')
         f.dot(o)
-        f.text(shift(o, (-0.05, -0.08)), 'o', anchor='end')
-        f.text((o[0], -1.33), label, size=14, italic=False)
+        f.text(spot, 'o', anchor='end')
+        label(f, (o[0], -1.33), text, size=14, italic=False)
     f.save('05-two/edge-midpoint', 'Two unit squares with centres at distance '
            'one half from o. Left: o is the midpoint of an edge, and the two '
            'far corners lie on the dashed circle of radius R2. Right: the '
@@ -195,11 +235,11 @@ def half_circle():
     t = rad(52)
     q = shift((0, 0), u(t), r)
     assert in_open_square(q, c)
-    f = Figure(-0.78, 1.22, -0.74, 0.8, 290)
+    f = Figure(-0.78, 1.22, -0.66, 0.66, 290)
     f.square(c, fill=FILLS[0], stroke=BLUE)
     f.line((-0.76, 0), (1.2, 0), stroke=FAINT, width=1)
-    f.text((1.2, 0.05), 't = 0', size=12, italic=False, anchor='end',
-           color=FAINT)
+    label(f, (1.2, 0.05), it('t') + ' = 0', size=13, color=FAINT,
+          italic=False, anchor='end')
     f.circle((0, 0), r)
     for t0, t1 in runs:
         f.arc((0, 0), r, t0, t1, BLUE, width=5)
@@ -210,8 +250,10 @@ def half_circle():
     f.dot(q, r=4, fill=ORANGE)
     for s in (0.5, -0.5):
         f.dot((0, s))
-    f.text((-0.04, 0.56), 't = π/2', size=13, italic=False, anchor='end')
-    f.text((-0.04, -0.57), 't = −π/2', size=13, italic=False, anchor='end')
+    label(f, (-0.04, 0.56), it('t') + ' = π/2', size=13, italic=False,
+          anchor='end')
+    label(f, (-0.04, -0.57), it('t') + ' = −π/2', size=13, italic=False,
+          anchor='end')
     f.dot(c, fill=BLUE)
     f.text(shift(c, (0.04, -0.06)), '(½, 0)', size=14, italic=False,
            color=BLUE, anchor='start')
@@ -263,10 +305,11 @@ def opposite():
             assert not any(in_open_square(q, cs, ds) and
                            in_open_square(q, ct, dt) for q in samples)
             relation = ') = π'
-        label = 'd(' + sb('θ', 'S', ', ', 14) + sb('θ', 'T', relation, 14)
+        text = (it('d') + '(' + isb('θ', 'S', ', ', 14) +
+                isb('θ', 'T', relation, 14))
         f.dot(o)
         f.text(shift(o, (-0.06, -0.08)), 'o', anchor='end')
-        f.text((o[0], -1.33), label, size=14, italic=False)
+        label(f, (o[0], -1.33), text, size=14, italic=False)
     f.save('05-two/opposite', 'The half circles held by two squares on the '
            'circle of radius one half about o. Left: their centres are less '
            'than pi apart, the half circles share a point p, and the squares '
@@ -293,8 +336,8 @@ def frame():
     f.line(o, shift(o, u(th - math.pi / 2), 1.0), width=1.3, dash='5 4',
            arrow=True)
     f.text(shift(o, u(th), 1.48), sb('θ', 'S'), anchor='start')
-    f.text(shift(o, u(th + math.pi), 1.48), sb('θ', 'S', ' + π'),
-           anchor='end')
+    label(f, shift(o, u(th + math.pi), 1.48), sb('θ', 'S', ' + π'),
+          anchor='end')
     f.dot(cs, fill=BLUE)
     f.dot(ct, fill=GREEN)
     f.text(shift(cs, (0.02, -0.1)), '(½, 0)', size=14, italic=False,
@@ -315,6 +358,7 @@ def main():
     corners()
     near()
     ab_plane()
+    inscribed_disk()
     edge_midpoint()
     half_circle()
     opposite()

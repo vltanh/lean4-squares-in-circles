@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="371" height="371" viewBox="0 0 371 371" role="img" aria-label="The stress of one edge between two squares U and V, with the forces n on V and -n on U">
+<title>The stress of one edge between two squares U and V, with the forces n on V and -n on U</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<circle cx="185.7" cy="185.7" r="156.5" fill="none" stroke="#1f2937" stroke-width="1.0" stroke-dasharray="6 4"/>
+<polygon points="45.7,255.7 185.7,255.7 185.7,115.7 45.7,115.7" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="185.7,255.7 325.7,255.7 325.7,115.7 185.7,115.7" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" fill-opacity="1"/>
+<circle cx="45.7" cy="255.7" r="3.2" fill="#1f2937"/>
+<circle cx="45.7" cy="115.7" r="3.2" fill="#1f2937"/>
+<circle cx="325.7" cy="255.7" r="3.2" fill="#1f2937"/>
+<circle cx="325.7" cy="115.7" r="3.2" fill="#1f2937"/>
+<line x1="132.5" y1="185.7" x2="234.0" y2="185.7" stroke="#9ca3af" stroke-width="1.1"/>
+<path d="M 238.9 185.7 L 231.9 188.7 L 231.9 182.8 z" fill="#9ca3af"/>
+<text x="164.7" y="171.7" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">1</text>
+<line x1="255.7" y1="185.7" x2="307.5" y2="185.7" stroke="#ea580c" stroke-width="2.4"/>
+<path d="M 314.5 185.7 L 304.5 189.9 L 304.5 181.5 z" fill="#ea580c"/>
+<text x="294.9" y="168.9" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle"><tspan font-style="italic">n</tspan></text>
+<line x1="115.7" y1="185.7" x2="63.9" y2="185.7" stroke="#2563eb" stroke-width="2.4"/>
+<path d="M 56.9 185.7 L 66.9 181.5 L 66.9 189.9 z" fill="#2563eb"/>
+<text x="76.5" y="168.9" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle">−<tspan font-style="italic">n</tspan></text>
+<circle cx="115.7" cy="185.7" r="2.8" fill="#1f2937"/>
+<circle cx="255.7" cy="185.7" r="2.8" fill="#1f2937"/>
+<circle cx="185.7" cy="185.7" r="2.8" fill="#1f2937"/>
+<text x="185.7" y="203.9" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">o</text>
+<text x="80.7" y="227.7" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">U</text>
+<text x="290.7" y="227.7" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">V</text>
+</svg>

@@ -13,15 +13,15 @@
 <line x1="66.0" y1="284.0" x2="606.0" y2="284.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
 <line x1="66.0" y1="284.0" x2="66.0" y2="32.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
 <line x1="78.0" y1="287.0" x2="78.0" y2="281.0" stroke="#1f2937" stroke-width="1"/>
-<text x="78.0" y="298.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">1/2</text>
+<text x="78.0" y="299.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">1/2</text>
 <line x1="198.5" y1="287.0" x2="198.5" y2="281.0" stroke="#1f2937" stroke-width="1"/>
-<text x="198.5" y="298.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">1</text>
+<text x="198.5" y="299.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">1</text>
 <line x1="336.0" y1="287.0" x2="336.0" y2="281.0" stroke="#1f2937" stroke-width="1"/>
-<text x="336.0" y="298.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π/2</text>
+<text x="336.0" y="299.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π/2</text>
 <line x1="473.5" y1="287.0" x2="473.5" y2="281.0" stroke="#1f2937" stroke-width="1"/>
-<text x="473.5" y="298.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π − 1</text>
+<text x="473.5" y="299.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π − 1</text>
 <line x1="594.0" y1="287.0" x2="594.0" y2="281.0" stroke="#1f2937" stroke-width="1"/>
-<text x="594.0" y="298.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π − 1/2</text>
+<text x="594.0" y="299.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π − 1/2</text>
 <line x1="63.0" y1="284.0" x2="69.0" y2="284.0" stroke="#1f2937" stroke-width="1"/>
 <text x="60.0" y="284.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0</text>
 <line x1="63.0" y1="221.0" x2="69.0" y2="221.0" stroke="#1f2937" stroke-width="1"/>
@@ -30,7 +30,7 @@
 <text x="60.0" y="158.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.02</text>
 <line x1="63.0" y1="95.0" x2="69.0" y2="95.0" stroke="#1f2937" stroke-width="1"/>
 <text x="60.0" y="95.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.03</text>
-<text x="606.0" y="274.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">q</text>
+<text x="600.0" y="273.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">q</text>
 <text x="138.3" y="211.6" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle">far vertex</text>
 <text x="268.4" y="175.6" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#9333ea" text-anchor="middle" dominant-baseline="middle">cap</text>
 <text x="302.1" y="117.1" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="end" dominant-baseline="middle">least cost</text>

@@ -151,3 +151,17 @@ Times are rough commit times, in US Central time (UTC−5).
   after those of six squares and its separating-axis lemma taken from
   Chapter 9; the one-variable estimates of both cases share Appendix A; and the
   chapter files and the figures are sorted by chapter.
+* **From 16:40 — the textbook read through.** Claude Opus 5.5, in Claude
+  Code, audited the textbook for consistency and simplicity and looked at
+  every figure as a browser draws it. One object now has one name across the
+  chapters: the relative phase and the turns of seven squares, the top χ of
+  the axial region, the own axis of a square, and h only for √2/2. Citations
+  point at what they use, and duplicated arguments became citations. Three
+  arguments now match their formal proofs: the hypothesis of Proposition C.9
+  and the proof of Lemma 9.43 (2), and a step of Appendix G that used the
+  converse of Proposition G.16 (5). The last long fractions of the six-square
+  appendices became short decimals. Labels that overlapped, ran off the
+  canvas, were too small or named things differently from the text were
+  fixed, schematic pictures of six squares became computed configurations,
+  and new figures, computed from the geometry and the formulas of the proofs,
+  bring the book from 237 to 331 figures.

@@ -11,7 +11,7 @@
 <circle cx="228.2" cy="90.5" r="2.8" fill="#1f2937"/>
 <circle cx="83.2" cy="90.5" r="2.8" fill="#1f2937"/>
 <circle cx="155.8" cy="163.0" r="3.2" fill="#1f2937"/>
-<text x="163.0" y="174.6" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">0</text>
+<text x="163.0" y="174.6" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">0</text>
 <text x="90.5" y="35.4" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">Q(0, 0)</text>
 <line x1="395.0" y1="163.0" x2="658.9" y2="163.0" stroke="#9ca3af" stroke-width="1"/>
 <circle cx="525.5" cy="163.0" r="102.5" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6 4"/>
@@ -30,5 +30,5 @@
 <text x="518.2" y="174.6" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
 <text x="479.2" y="146.1" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">S</text>
 <line x1="293.5" y1="252.9" x2="387.8" y2="252.9" stroke="#1f2937" stroke-width="1.4" marker-end="url(#arrow)"/>
-<text x="339.9" y="273.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">turn by θ<tspan dy="3.9" font-size="8.8">S</tspan></text>
+<text x="310.6" y="273.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">turn by <tspan font-style="italic">θ<tspan dy="3.9" font-size="8.8">S</tspan></tspan></text>
 </svg>

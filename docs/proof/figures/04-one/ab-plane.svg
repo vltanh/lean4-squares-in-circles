@@ -15,5 +15,5 @@
 <text x="160.8" y="261.1" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle">(−½, −½)</text>
 <text x="133.6" y="210.1" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">φ ≤ ½</text>
 <text x="313.8" y="84.3" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">a, b ≥ 0</text>
-<text x="126.8" y="36.7" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">a + b = 0</text>
+<text x="126.8" y="36.7" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">a + b = 0</text>
 </svg>

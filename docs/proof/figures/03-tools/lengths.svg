@@ -20,7 +20,7 @@
 <line x1="356.8" y1="197.6" x2="519.2" y2="138.4" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 3"/>
 <line x1="467.6" y1="249.2" x2="408.4" y2="86.8" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 3"/>
 <line x1="438.0" y1="168.0" x2="550.8" y2="127.0" stroke="#ea580c" stroke-width="4.2"/>
-<text x="499.3" y="161.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">p</text>
+<text x="477.2" y="170.3" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">p</text>
 <text x="438.0" y="278.4" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle"><tspan font-style="italic">q</tspan> = 0, |<tspan font-style="italic">p</tspan>| = |<tspan font-style="italic">n</tspan>|</text>
 <line x1="438.0" y1="168.0" x2="544.8" y2="129.1" stroke="#1f2937" stroke-width="1.6"/>
 <path d="M 550.8 127.0 L 543.6 133.6 L 541.0 126.5 z" fill="#1f2937"/>

@@ -11,5 +11,5 @@
 <circle cx="222.6" cy="232.5" r="4" fill="#1f2937"/>
 <text x="235.8" y="212.7" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">(½, ½)</text>
 <text x="150.0" y="331.5" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">φ ≤ 2</text>
-<text x="183.0" y="150.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle">a + b = 1</text>
+<text x="183.0" y="150.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle" font-style="italic">a + b = 1</text>
 </svg>

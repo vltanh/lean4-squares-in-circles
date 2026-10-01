@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="635" height="479" viewBox="0 0 635 479" role="img" aria-label="A square S containing o with P = Q = 0.24 and a disjoint square T whose cap on the circle of radius 3/8 is clipped: their arcs of about 118 and 135 degrees leave about 108 degrees free, less than a third of the circle">
+<title>A square S containing o with P = Q = 0.24 and a disjoint square T whose cap on the circle of radius 3/8 is clipped: their arcs of about 118 and 135 degrees leave about 108 degrees free, less than a third of the circle</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<polygon points="317.7,317.7 587.7,317.7 587.7,47.7 317.7,47.7" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="47.7,379.8 317.7,379.8 317.7,109.8 47.7,109.8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" fill-opacity="1"/>
+<circle cx="342.0" cy="293.4" r="101.2" fill="none" stroke="#9ca3af" stroke-width="1.2"/>
+<path d="M 440.3 317.6 A 101.2 101.2 0 0 0 413.6 221.8" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/>
+<path d="M 413.6 221.8 A 101.2 101.2 0 0 0 317.7 195.1" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/>
+<path d="M 317.7 195.1 A 101.2 101.2 0 0 0 241.9 278.0" fill="none" stroke="#16a34a" stroke-width="5" stroke-linecap="round"/>
+<path d="M 241.9 278.0 A 101.2 101.2 0 0 0 289.2 379.8" fill="none" stroke="#16a34a" stroke-width="5" stroke-linecap="round"/>
+<path d="M 289.2 379.8 A 101.2 101.2 0 0 0 380.5 387.0" fill="none" stroke="#db2777" stroke-width="3" stroke-linecap="round"/>
+<path d="M 380.5 387.0 A 101.2 101.2 0 0 0 440.3 317.6" fill="none" stroke="#db2777" stroke-width="3" stroke-linecap="round"/>
+<circle cx="342.0" cy="293.4" r="3.2" fill="#1f2937"/>
+<text x="350.1" y="309.6" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">o</text>
+<text x="549.9" y="80.1" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">S</text>
+<text x="85.5" y="142.2" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">T</text>
+<text x="436.5" y="198.9" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle">≈ 118°</text>
+<text x="207.2" y="272.7" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle">≈ 135°</text>
+<line x1="380.5" y1="387.0" x2="455.4" y2="428.4" stroke="#db2777" stroke-width="1"/>
+<text x="460.8" y="428.4" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#db2777" text-anchor="start" dominant-baseline="middle">free: ≈ 108° &lt; 120°</text>
+</svg>

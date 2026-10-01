@@ -17,11 +17,11 @@
 <text x="294.6" y="173.7" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">c<tspan dy="4.5" font-size="10.2">1</tspan></text>
 <line x1="217.6" y1="235.3" x2="90.7" y2="176.2" stroke="#1f2937" stroke-width="1" stroke-dasharray="3 3"/>
 <circle cx="194.1" cy="224.4" r="3.2" fill="#ea580c"/>
-<text x="79.4" y="170.9" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">μ<tspan dy="4.2" font-size="9.5">0</tspan><tspan dy="-4.2"> + π/2</tspan></text>
+<text x="29.8" y="170.9" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">μ<tspan dy="4.2" font-size="9.5">0</tspan><tspan dy="-4.2"> + π/2</tspan></text>
 <text x="186.2" y="241.4" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">c<tspan dy="4.5" font-size="10.2">2</tspan></text>
 <line x1="247.8" y1="318.4" x2="188.7" y2="445.3" stroke="#1f2937" stroke-width="1" stroke-dasharray="3 3"/>
 <circle cx="236.9" cy="341.9" r="3.2" fill="#16a34a"/>
-<text x="183.4" y="456.6" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">μ<tspan dy="4.2" font-size="9.5">0</tspan><tspan dy="-4.2"> + π</tspan></text>
+<text x="148.5" y="456.6" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">μ<tspan dy="4.2" font-size="9.5">0</tspan><tspan dy="-4.2"> + π</tspan></text>
 <text x="253.9" y="349.8" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">c<tspan dy="4.5" font-size="10.2">3</tspan></text>
 <line x1="330.9" y1="288.2" x2="457.8" y2="347.3" stroke="#1f2937" stroke-width="1" stroke-dasharray="3 3"/>
 <circle cx="354.4" cy="299.1" r="3.2" fill="#9333ea"/>

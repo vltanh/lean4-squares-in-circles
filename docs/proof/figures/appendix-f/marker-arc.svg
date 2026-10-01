@@ -1,57 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="662" height="384" viewBox="0 0 662 384" role="img" aria-label="Two admissible squares in their charts, with the lines of their four edges and the arc of the unit circle of half-width 1/2 about the label; left the side state (1, 1/2), whose arc nearly fills the part of the circle inside the square, right the state (0.9, 0.3), with an axial label">
+<svg xmlns="http://www.w3.org/2000/svg" width="759" height="384" viewBox="0 0 759 384" role="img" aria-label="Two admissible squares in their charts, with the lines of their four edges and the arc of the unit circle of half-width 1/2 about the label; left the side state (1, 1/2), whose arc nearly fills the part of the circle inside the square, right the state (0.9, 0.3), with an axial label">
 <title>Two admissible squares in their charts, with the lines of their four edges and the arc of the unit circle of half-width 1/2 about the label; left the side state (1, 1/2), whose arc nearly fills the part of the circle inside the square, right the state (0.9, 0.3), with an axial label</title>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
 <rect width="100%" height="100%" fill="#ffffff"/>
-<line x1="25.5" y1="213.0" x2="318.0" y2="213.0" stroke="#9ca3af" stroke-width="1"/>
-<text x="318.0" y="224.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="end" dominant-baseline="middle">t = 0</text>
-<polygon points="138.0,213.0 288.0,213.0 288.0,63.0 138.0,63.0" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
-<line x1="138.0" y1="360.0" x2="138.0" y2="45.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4"/>
-<line x1="288.0" y1="360.0" x2="288.0" y2="45.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4"/>
-<line x1="25.5" y1="213.0" x2="318.0" y2="213.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4"/>
-<line x1="25.5" y1="63.0" x2="318.0" y2="63.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4"/>
-<text x="134.0" y="364.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">near</text>
-<text x="292.0" y="364.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">far</text>
-<text x="25.5" y="204.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">lower</text>
-<text x="25.5" y="54.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">upper</text>
-<path d="M 55.5 362.8 A 150.0 150.0 0 1 0 18.7 69.7" fill="none" stroke="#9ca3af" stroke-width="1.2" stroke-linecap="round"/>
-<path d="M 213.0 213.0 A 150.0 150.0 0 0 0 138.0 83.1" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
-<path d="M 213.0 209.5 A 150.0 150.0 0 0 0 141.0 84.9" fill="none" stroke="#ea580c" stroke-width="5" stroke-linecap="round"/>
-<circle cx="213.0" cy="213.0" r="3.4" fill="#2563eb"/>
-<circle cx="138.0" cy="83.1" r="3.4" fill="#2563eb"/>
-<line x1="63.0" y1="213.0" x2="221.5" y2="121.5" stroke="#1f2937" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arrow)"/>
-<text x="231.9" y="115.5" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">ℓ</text>
-<line x1="63.0" y1="213.0" x2="213.0" y2="209.5" stroke="#ea580c" stroke-width="1"/>
-<line x1="63.0" y1="213.0" x2="141.0" y2="84.9" stroke="#ea580c" stroke-width="1"/>
-<path d="M 102.0 190.5 A 45.0 45.0 0 0 0 86.4 174.6" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-linecap="round"/>
-<circle cx="213.0" cy="138.0" r="3.2" fill="#2563eb"/>
-<text x="213.0" y="53.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">(a, u) = (1, ½)</text>
-<circle cx="63.0" cy="213.0" r="3.2" fill="#1f2937"/>
-<text x="57.0" y="223.5" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
-<text x="39.0" y="351.0" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle" font-style="italic">Γ<tspan dy="4.8" font-size="10.9">1</tspan></text>
-<line x1="348.0" y1="213.0" x2="640.5" y2="213.0" stroke="#9ca3af" stroke-width="1"/>
-<text x="640.5" y="224.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="end" dominant-baseline="middle">t = 0</text>
-<polygon points="445.5,243.0 595.5,243.0 595.5,93.0 445.5,93.0" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
-<line x1="445.5" y1="360.0" x2="445.5" y2="45.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4"/>
-<line x1="595.5" y1="360.0" x2="595.5" y2="45.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4"/>
-<line x1="348.0" y1="243.0" x2="640.5" y2="243.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4"/>
-<line x1="348.0" y1="93.0" x2="640.5" y2="93.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4"/>
-<text x="441.5" y="364.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">near</text>
-<text x="599.5" y="364.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">far</text>
-<text x="348.0" y="234.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">lower</text>
-<text x="348.0" y="84.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">upper</text>
-<path d="M 378.0 362.8 A 150.0 150.0 0 1 0 341.2 69.7" fill="none" stroke="#9ca3af" stroke-width="1.2" stroke-linecap="round"/>
-<path d="M 532.5 243.0 A 150.0 150.0 0 0 0 475.5 93.0" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
-<path d="M 534.3 231.7 A 150.0 150.0 0 0 0 481.6 97.9" fill="none" stroke="#ea580c" stroke-width="5" stroke-linecap="round"/>
-<circle cx="532.5" cy="243.0" r="3.4" fill="#2563eb"/>
-<circle cx="475.5" cy="93.0" r="3.4" fill="#2563eb"/>
-<line x1="385.5" y1="213.0" x2="555.8" y2="146.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arrow)"/>
-<text x="566.9" y="141.6" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">ℓ</text>
-<line x1="385.5" y1="213.0" x2="534.3" y2="231.7" stroke="#ea580c" stroke-width="1"/>
-<line x1="385.5" y1="213.0" x2="481.6" y2="97.9" stroke="#ea580c" stroke-width="1"/>
-<path d="M 427.4 196.5 A 45.0 45.0 0 0 0 414.3 178.5" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-linecap="round"/>
-<circle cx="520.5" cy="168.0" r="3.2" fill="#2563eb"/>
-<text x="520.5" y="83.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">(a, u) = (0.9, 0.3)</text>
-<circle cx="385.5" cy="213.0" r="3.2" fill="#1f2937"/>
-<text x="379.5" y="223.5" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
-<text x="361.5" y="351.0" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle" font-style="italic">Γ<tspan dy="4.8" font-size="10.9">1</tspan></text>
+<line x1="25.5" y1="213.0" x2="363.0" y2="213.0" stroke="#9ca3af" stroke-width="1"/>
+<text x="363.0" y="225.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="end" dominant-baseline="middle"><tspan font-style="italic">t</tspan> = 0</text>
+<polygon points="183.0,213.0 333.0,213.0 333.0,63.0 183.0,63.0" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<line x1="183.0" y1="360.0" x2="183.0" y2="45.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="333.0" y1="360.0" x2="333.0" y2="45.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="25.5" y1="213.0" x2="363.0" y2="213.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="25.5" y1="63.0" x2="363.0" y2="63.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="187.0" y="364.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">near</text>
+<text x="337.0" y="364.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">far</text>
+<text x="25.5" y="204.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">lower</text>
+<text x="25.5" y="54.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">upper</text>
+<path d="M 100.5 362.8 A 150.0 150.0 0 0 0 256.8 194.3 A 150.0 150.0 0 0 0 63.7 69.7" fill="none" stroke="#9ca3af" stroke-width="1.2" stroke-linecap="round"/>
+<path d="M 258.0 213.0 A 150.0 150.0 0 0 0 183.0 83.1" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
+<path d="M 258.0 209.5 A 150.0 150.0 0 0 0 186.0 84.9" fill="none" stroke="#ea580c" stroke-width="5" stroke-linecap="round"/>
+<circle cx="258.0" cy="213.0" r="3.4" fill="#2563eb"/>
+<circle cx="183.0" cy="83.1" r="3.4" fill="#2563eb"/>
+<line x1="108.0" y1="213.0" x2="266.5" y2="121.5" stroke="#1f2937" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arrow)"/>
+<text x="276.9" y="115.5" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">ℓ</text>
+<line x1="108.0" y1="213.0" x2="258.0" y2="209.5" stroke="#ea580c" stroke-width="1"/>
+<line x1="108.0" y1="213.0" x2="186.0" y2="84.9" stroke="#ea580c" stroke-width="1"/>
+<path d="M 147.0 190.5 A 45.0 45.0 0 0 0 131.4 174.6" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-linecap="round"/>
+<text x="150.9" y="171.1" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">½</text>
+<circle cx="258.0" cy="138.0" r="3.2" fill="#2563eb"/>
+<text x="325.5" y="53.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="end" dominant-baseline="middle">(<tspan font-style="italic">a</tspan>, <tspan font-style="italic">u</tspan>) = (1, ½)</text>
+<circle cx="108.0" cy="213.0" r="3.2" fill="#1f2937"/>
+<text x="112.5" y="225.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">o</text>
+<text x="84.0" y="351.0" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle" font-style="italic">Γ<tspan dy="4.8" font-size="10.9">1</tspan></text>
+<line x1="400.5" y1="213.0" x2="738.0" y2="213.0" stroke="#9ca3af" stroke-width="1"/>
+<text x="738.0" y="225.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="end" dominant-baseline="middle"><tspan font-style="italic">t</tspan> = 0</text>
+<polygon points="543.0,243.0 693.0,243.0 693.0,93.0 543.0,93.0" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<line x1="543.0" y1="360.0" x2="543.0" y2="45.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="693.0" y1="360.0" x2="693.0" y2="45.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="400.5" y1="243.0" x2="738.0" y2="243.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="400.5" y1="93.0" x2="738.0" y2="93.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="547.0" y="364.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">near</text>
+<text x="697.0" y="364.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">far</text>
+<text x="400.5" y="234.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">lower</text>
+<text x="400.5" y="84.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">upper</text>
+<path d="M 475.5 362.8 A 150.0 150.0 0 0 0 631.8 194.3 A 150.0 150.0 0 0 0 438.7 69.7" fill="none" stroke="#9ca3af" stroke-width="1.2" stroke-linecap="round"/>
+<path d="M 630.0 243.0 A 150.0 150.0 0 0 0 573.0 93.0" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
+<path d="M 631.8 231.7 A 150.0 150.0 0 0 0 579.1 97.9" fill="none" stroke="#ea580c" stroke-width="5" stroke-linecap="round"/>
+<circle cx="630.0" cy="243.0" r="3.4" fill="#2563eb"/>
+<circle cx="573.0" cy="93.0" r="3.4" fill="#2563eb"/>
+<line x1="483.0" y1="213.0" x2="653.3" y2="146.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arrow)"/>
+<text x="664.4" y="141.6" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">ℓ</text>
+<line x1="483.0" y1="213.0" x2="631.8" y2="231.7" stroke="#ea580c" stroke-width="1"/>
+<line x1="483.0" y1="213.0" x2="579.1" y2="97.9" stroke="#ea580c" stroke-width="1"/>
+<path d="M 524.9 196.5 A 45.0 45.0 0 0 0 511.8 178.5" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-linecap="round"/>
+<text x="531.7" y="177.9" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">½</text>
+<circle cx="618.0" cy="168.0" r="3.2" fill="#2563eb"/>
+<text x="685.5" y="83.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="end" dominant-baseline="middle">(<tspan font-style="italic">a</tspan>, <tspan font-style="italic">u</tspan>) = (0.9, 0.3)</text>
+<circle cx="483.0" cy="213.0" r="3.2" fill="#1f2937"/>
+<text x="487.5" y="225.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">o</text>
+<text x="459.0" y="351.0" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle" font-style="italic">Γ<tspan dy="4.8" font-size="10.9">1</tspan></text>
 </svg>

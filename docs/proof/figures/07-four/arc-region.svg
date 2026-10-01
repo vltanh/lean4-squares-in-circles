@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="516" height="380" viewBox="0 0 516 380" role="img" aria-label="The (a, b)-plane right of a = 1/2: the orange quadrilateral where the cap of an exterior square on the circle of radius 1/2 is at least a quarter circle, bounded by the dashed line a = (2 + root 2)/4, where A = pi/4, and the line a + b = 1, where A + V = pi/2; the blue part of the disk where phi is at most 2 lies inside it and meets the line a + b = 1 only at (1/2, 1/2), while the point (0.9, 0.05) lies below the line a + b = 1 but right of the dashed line">
+<title>The (a, b)-plane right of a = 1/2: the orange quadrilateral where the cap of an exterior square on the circle of radius 1/2 is at least a quarter circle, bounded by the dashed line a = (2 + root 2)/4, where A = pi/4, and the line a + b = 1, where A + V = pi/2; the blue part of the disk where phi is at most 2 lies inside it and meets the line a + b = 1 only at (1/2, 1/2), while the point (0.9, 0.05) lies below the line a + b = 1 but right of the dashed line</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<polygon points="250.0,306.0 391.4,306.0 391.4,247.4 250.0,106.0" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6" fill-opacity="1"/>
+<polygon points="250.0,306.0 379.2,306.0 378.3,303.8 377.4,301.5 376.6,299.3 375.7,297.1 374.8,294.8 373.9,292.6 373.0,290.4 372.1,288.2 371.1,286.0 370.2,283.7 369.2,281.5 368.3,279.3 367.3,277.1 366.4,275.0 365.4,272.8 364.4,270.6 363.4,268.4 362.4,266.2 361.3,264.1 360.3,261.9 359.3,259.7 358.2,257.6 357.2,255.4 356.1,253.3 355.0,251.1 353.9,249.0 352.8,246.9 351.7,244.7 350.6,242.6 349.5,240.5 348.4,238.4 347.2,236.3 346.1,234.2 344.9,232.1 343.8,230.0 342.6,227.9 341.4,225.8 340.2,223.7 339.0,221.6 337.8,219.5 336.6,217.5 335.4,215.4 334.1,213.4 332.9,211.3 331.6,209.3 330.4,207.2 329.1,205.2 327.8,203.2 326.5,201.1 325.2,199.1 323.9,197.1 322.6,195.1 321.3,193.1 319.9,191.1 318.6,189.1 317.3,187.1 315.9,185.2 314.5,183.2 313.2,181.2 311.8,179.3 310.4,177.3 309.0,175.4 307.6,173.4 306.2,171.5 304.7,169.5 303.3,167.6 301.9,165.7 300.4,163.8 299.0,161.9 297.5,160.0 296.0,158.1 294.6,156.2 293.1,154.3 291.6,152.4 290.1,150.6 288.6,148.7 287.0,146.8 285.5,145.0 284.0,143.2 282.4,141.3 280.9,139.5 279.3,137.7 277.8,135.8 276.2,134.0 274.6,132.2 273.0,130.4 271.4,128.6 269.8,126.9 268.2,125.1 266.6,123.3 265.0,121.6 263.3,119.8 261.7,118.0 260.0,116.3 258.4,114.6 256.7,112.8 255.1,111.1 253.4,109.4 251.7,107.7 250.0,106.0" fill="#dbeafe" stroke="#2563eb" stroke-width="1.4" fill-opacity="1"/>
+<line x1="202.0" y1="58.0" x2="450.0" y2="306.0" stroke="#ea580c" stroke-width="2"/>
+<line x1="391.4" y1="306.0" x2="391.4" y2="42.0" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="5 4"/>
+<line x1="26.0" y1="306.0" x2="490.0" y2="306.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="50.0" y1="330.0" x2="50.0" y2="26.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
+<text x="490.0" y="330.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">a</text>
+<text x="30.0" y="34.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">b</text>
+<line x1="250.0" y1="310.8" x2="250.0" y2="301.2" stroke="#1f2937" stroke-width="1"/>
+<text x="250.0" y="326.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">½</text>
+<line x1="391.4" y1="310.8" x2="391.4" y2="301.2" stroke="#1f2937" stroke-width="1"/>
+<text x="391.4" y="326.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">(2 + √2)/4</text>
+<line x1="450.0" y1="310.8" x2="450.0" y2="301.2" stroke="#1f2937" stroke-width="1"/>
+<text x="450.0" y="326.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">1</text>
+<line x1="45.2" y1="106.0" x2="54.8" y2="106.0" stroke="#1f2937" stroke-width="1"/>
+<text x="38.0" y="106.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">½</text>
+<text x="399.4" y="50.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">A<tspan dy="4.2" font-size="9.5">S</tspan><tspan dy="-4.2"> = π/4</tspan></text>
+<text x="218.0" y="42.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle" font-style="italic">A<tspan dy="4.2" font-size="9.5">S</tspan><tspan dy="-4.2"> + </tspan>V<tspan dy="4.2" font-size="9.5">S</tspan><tspan dy="-4.2"> = π/2</tspan></text>
+<text x="290.0" y="258.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">φ ≤ 2</text>
+<circle cx="250.0" cy="106.0" r="4" fill="#1f2937"/>
+<text x="238.0" y="106.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">(½, ½)</text>
+<circle cx="410.0" cy="286.0" r="4" fill="#1f2937"/>
+<text x="418.0" y="262.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">(0.9, 0.05)</text>
+</svg>

@@ -6,22 +6,22 @@
 <polygon points="362.3,282.0 361.3,279.9 360.2,277.8 359.2,275.6 358.1,273.5 357.0,271.4 355.9,269.2 354.8,267.1 353.7,265.0 352.6,262.9 351.5,260.8 350.4,258.7 349.3,256.6 348.1,254.5 347.0,252.4 345.9,250.3 344.7,248.2 343.6,246.1 342.4,244.0 341.2,241.9 340.0,239.9 338.9,237.8 337.7,235.7 336.5,233.6 335.3,231.6 334.1,229.5 332.8,227.5 331.6,225.4 330.4,223.4 329.1,221.3 327.9,219.3 326.7,217.3 325.4,215.2 324.1,213.2 322.9,211.2 321.6,209.2 320.3,207.2 319.0,205.1 317.7,203.1 316.4,201.1 315.1,199.1 313.8,197.1 312.5,195.2 311.2,193.2 309.8,191.2 308.5,189.2 307.2,187.2 305.8,185.3 304.5,183.3 303.1,181.3 301.7,179.4 300.4,177.4 299.0,175.5 297.6,173.5 296.2,171.6 294.8,169.7 293.4,167.7 292.0,165.8 290.6,163.9 289.1,162.0 287.7,160.1 286.3,158.2 284.8,156.3 283.4,154.4 281.9,152.5 280.5,150.6 279.0,148.7 277.5,146.8 276.1,144.9 274.6,143.1 273.1,141.2 271.6,139.3 270.1,137.5 268.6,135.6 267.1,133.8 265.6,132.0 264.0,130.1 262.5,128.3 261.0,126.5 259.4,124.6 257.9,122.8 256.3,121.0 254.8,119.2 253.2,117.4 251.6,115.6 250.1,113.8 248.5,112.0 246.9,110.2 245.3,108.4 243.7,106.7 242.1,104.9 240.5,103.1 238.9,101.4 237.3,99.6 235.6,97.9 234.0,96.1 232.4,94.4 230.7,92.7 229.1,90.9 227.4,89.2 225.8,87.5 224.1,85.8 222.4,84.1 220.8,82.4 219.1,80.7 217.4,79.0 216.1,80.3 189.3,140.5" fill="#ffedd5" stroke="none" stroke-width="1.5" fill-opacity="1"/>
 <polygon points="216.1,80.3 155.9,140.5 189.3,140.5" fill="#e5e7eb" stroke="none" stroke-width="1.5" fill-opacity="1"/>
 <polyline points="102.0,370.8 398.9,370.8" fill="none" stroke="#1f2937" stroke-width="0.8" stroke-linejoin="round"/>
-<text x="97.0" y="370.8" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.1</text>
+<text x="97.0" y="370.8" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.1</text>
 <polyline points="102.0,337.2 386.6,337.2" fill="none" stroke="#1f2937" stroke-width="0.8" stroke-linejoin="round"/>
-<text x="97.0" y="337.2" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.2</text>
+<text x="97.0" y="337.2" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.2</text>
 <polyline points="102.0,303.6 372.4,303.6" fill="none" stroke="#1f2937" stroke-width="0.8" stroke-linejoin="round"/>
-<text x="97.0" y="303.6" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.3</text>
+<text x="97.0" y="303.6" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.3</text>
 <polyline points="102.0,270.0 347.6,270.0" fill="none" stroke="#1f2937" stroke-width="0.8" stroke-linejoin="round"/>
-<text x="97.0" y="270.0" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.4</text>
+<text x="97.0" y="270.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.4</text>
 <polyline points="347.6,270.0 351.6,261.0" fill="none" stroke="#1f2937" stroke-width="0.8" stroke-linejoin="round"/>
 <polyline points="102.0,236.4 306.5,236.4" fill="none" stroke="#1f2937" stroke-width="0.8" stroke-linejoin="round"/>
-<text x="97.0" y="236.4" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.5</text>
+<text x="97.0" y="236.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.5</text>
 <polyline points="306.5,236.4 319.8,206.5" fill="none" stroke="#1f2937" stroke-width="0.8" stroke-linejoin="round"/>
 <polyline points="102.0,202.8 265.5,202.8" fill="none" stroke="#1f2937" stroke-width="0.8" stroke-linejoin="round"/>
-<text x="97.0" y="202.8" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.6</text>
+<text x="97.0" y="202.8" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.6</text>
 <polyline points="265.5,202.8 285.7,157.4" fill="none" stroke="#1f2937" stroke-width="0.8" stroke-linejoin="round"/>
 <polyline points="127.2,169.2 224.4,169.2" fill="none" stroke="#1f2937" stroke-width="0.8" stroke-linejoin="round"/>
-<text x="122.2" y="169.2" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.7</text>
+<text x="122.2" y="169.2" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.7</text>
 <polyline points="224.4,169.2 249.4,113.0" fill="none" stroke="#1f2937" stroke-width="0.8" stroke-linejoin="round"/>
 <polyline points="189.3,140.5 362.3,282.0" fill="none" stroke="#1f2937" stroke-width="1.6" stroke-linejoin="round"/>
 <polyline points="155.9,140.5 189.3,140.5" fill="none" stroke="#1f2937" stroke-width="1.6" stroke-linejoin="round"/>
@@ -39,12 +39,12 @@
 <text x="409.5" y="427.5" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">√3 − ½</text>
 <line x1="62.1" y1="194.4" x2="74.7" y2="194.4" stroke="#1f2937" stroke-width="1.2"/>
 <text x="55.8" y="194.4" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">½</text>
-<text x="219.6" y="345.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle">axial: ℓ = 5u/4</text>
-<text x="354.0" y="127.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle">side: ℓ = side(a, u)</text>
+<text x="219.6" y="345.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle">axial: <tspan font-style="italic">ℓ</tspan> = 5<tspan font-style="italic">u</tspan>/4</text>
+<text x="354.0" y="127.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle">side: <tspan font-style="italic">ℓ</tspan> = side(<tspan font-style="italic">a</tspan>, <tspan font-style="italic">u</tspan>)</text>
 <line x1="354.0" y1="135.6" x2="291.0" y2="181.8" stroke="#ea580c" stroke-width="1"/>
-<text x="144.0" y="55.8" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">capped: ℓ = π/4</text>
+<text x="144.0" y="55.8" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">capped: <tspan font-style="italic">ℓ</tspan> = π/4</text>
 <line x1="177.6" y1="64.2" x2="188.1" y2="114.6" stroke="#1f2937" stroke-width="1"/>
 <circle cx="312.0" cy="194.4" r="3.6" fill="#ea580c"/>
 <circle cx="362.3" cy="282.0" r="3.6" fill="#1f2937"/>
-<text x="381.2" y="282.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">(a₀, u₀)</text>
+<text x="381.2" y="282.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">(a<tspan dy="3.9" font-size="8.8">0</tspan><tspan dy="-3.9">, </tspan>u<tspan dy="3.9" font-size="8.8">0</tspan><tspan dy="-3.9">)</tspan></text>
 </svg>

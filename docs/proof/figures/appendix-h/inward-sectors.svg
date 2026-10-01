@@ -15,7 +15,7 @@
 <circle cx="143.0" cy="240.0" r="3.2" fill="#1f2937"/>
 <text x="136.0" y="250.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
 <text x="278.0" y="253.0" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">S</text>
-<text x="149.4" y="137.1" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">T</text>
+<text x="180.8" y="119.6" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">T</text>
 <line x1="28.0" y1="368.0" x2="315.0" y2="368.0" stroke="#1f2937" stroke-width="1"/>
 <line x1="68.0" y1="348.0" x2="33.0" y2="348.0" stroke="#1f2937" stroke-width="1.4" marker-end="url(#arrow)"/>
 <text x="50.0" y="335.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">n<tspan dy="4.5" font-size="10.2">2</tspan></text>
@@ -24,7 +24,7 @@
 <line x1="198.0" y1="270.0" x2="198.0" y2="363.0" stroke="#2563eb" stroke-width="1" stroke-dasharray="3 3"/>
 <line x1="238.9" y1="125.7" x2="238.9" y2="373.0" stroke="#16a34a" stroke-width="1" stroke-dasharray="3 3"/>
 <line x1="198.0" y1="383.0" x2="238.9" y2="383.0" stroke="#ea580c" stroke-width="4"/>
-<text x="218.4" y="398.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">σ<tspan dy="4.5" font-size="10.2">2</tspan> = 0.41</text>
+<text x="218.4" y="400.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">σ<tspan dy="3.9" font-size="8.8">2</tspan><tspan dy="-3.9"> = 0.41</tspan></text>
 <text x="168.0" y="28.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">(a) axial, axial; (+, +)</text>
 <circle cx="448.0" cy="240.0" r="100.0" fill="none" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="4 4"/>
 <polygon points="498.0,240.0 598.0,240.0 598.0,140.0 498.0,140.0" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="0.7"/>
@@ -39,7 +39,7 @@
 <circle cx="448.0" cy="240.0" r="3.2" fill="#1f2937"/>
 <text x="441.0" y="250.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
 <text x="578.0" y="223.0" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">S</text>
-<text x="423.0" y="140.0" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">T</text>
+<text x="448.0" y="110.0" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">T</text>
 <line x1="333.0" y1="368.0" x2="620.0" y2="368.0" stroke="#1f2937" stroke-width="1"/>
 <line x1="373.0" y1="348.0" x2="338.0" y2="348.0" stroke="#1f2937" stroke-width="1.4" marker-end="url(#arrow)"/>
 <text x="355.0" y="335.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">n<tspan dy="4.5" font-size="10.2">2</tspan></text>
@@ -47,7 +47,7 @@
 <line x1="398.0" y1="373.0" x2="498.0" y2="373.0" stroke="#16a34a" stroke-width="5"/>
 <line x1="498.0" y1="240.0" x2="498.0" y2="363.0" stroke="#2563eb" stroke-width="1" stroke-dasharray="3 3"/>
 <line x1="498.0" y1="90.0" x2="498.0" y2="373.0" stroke="#16a34a" stroke-width="1" stroke-dasharray="3 3"/>
-<text x="498.0" y="398.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">σ<tspan dy="4.5" font-size="10.2">2</tspan> = 0</text>
+<text x="513.0" y="400.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">σ<tspan dy="3.9" font-size="8.8">2</tspan><tspan dy="-3.9"> = 0</tspan></text>
 <text x="473.0" y="28.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">(b) a contact; (+, +)</text>
 <circle cx="143.0" cy="645.0" r="100.0" fill="none" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="4 4"/>
 <polygon points="203.0,685.0 303.0,685.0 303.0,585.0 203.0,585.0" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="0.7"/>
@@ -62,7 +62,7 @@
 <circle cx="143.0" cy="645.0" r="3.2" fill="#1f2937"/>
 <text x="136.0" y="655.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
 <text x="283.0" y="668.0" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">S</text>
-<text x="177.4" y="524.8" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">T</text>
+<text x="205.8" y="517.8" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">T</text>
 <line x1="28.0" y1="773.0" x2="315.0" y2="773.0" stroke="#1f2937" stroke-width="1"/>
 <line x1="68.0" y1="753.0" x2="33.0" y2="753.0" stroke="#1f2937" stroke-width="1.4" marker-end="url(#arrow)"/>
 <text x="50.0" y="740.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">n<tspan dy="4.5" font-size="10.2">2</tspan></text>
@@ -71,7 +71,7 @@
 <line x1="203.0" y1="685.0" x2="203.0" y2="768.0" stroke="#2563eb" stroke-width="1" stroke-dasharray="3 3"/>
 <line x1="262.5" y1="554.4" x2="262.5" y2="778.0" stroke="#16a34a" stroke-width="1" stroke-dasharray="3 3"/>
 <line x1="203.0" y1="788.0" x2="262.5" y2="788.0" stroke="#ea580c" stroke-width="4"/>
-<text x="232.8" y="803.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">σ<tspan dy="4.5" font-size="10.2">2</tspan> = 0.60</text>
+<text x="232.8" y="805.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">σ<tspan dy="3.9" font-size="8.8">2</tspan><tspan dy="-3.9"> = 0.60</tspan></text>
 <text x="168.0" y="433.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">(c) side target; (+, +)</text>
 <circle cx="448.0" cy="645.0" r="100.0" fill="none" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="4 4"/>
 <polygon points="498.0,645.0 598.0,645.0 598.0,545.0 498.0,545.0" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="0.7"/>
@@ -86,7 +86,7 @@
 <circle cx="448.0" cy="645.0" r="3.2" fill="#1f2937"/>
 <text x="441.0" y="655.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
 <text x="578.0" y="628.0" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">S</text>
-<text x="420.6" y="547.7" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">T</text>
+<text x="444.7" y="514.5" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">T</text>
 <line x1="333.0" y1="773.0" x2="620.0" y2="773.0" stroke="#1f2937" stroke-width="1"/>
 <line x1="373.0" y1="753.0" x2="338.0" y2="753.0" stroke="#1f2937" stroke-width="1.4" marker-end="url(#arrow)"/>
 <text x="355.0" y="740.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">n<tspan dy="4.5" font-size="10.2">2</tspan></text>
@@ -95,6 +95,6 @@
 <line x1="498.0" y1="645.0" x2="498.0" y2="768.0" stroke="#2563eb" stroke-width="1" stroke-dasharray="3 3"/>
 <line x1="501.3" y1="587.9" x2="501.3" y2="778.0" stroke="#16a34a" stroke-width="1" stroke-dasharray="3 3"/>
 <line x1="498.0" y1="788.0" x2="501.3" y2="788.0" stroke="#ea580c" stroke-width="4"/>
-<text x="499.6" y="803.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">σ<tspan dy="4.5" font-size="10.2">2</tspan> = 0.03</text>
+<text x="513.0" y="805.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">σ<tspan dy="3.9" font-size="8.8">2</tspan><tspan dy="-3.9"> = 0.03</tspan></text>
 <text x="473.0" y="433.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">(d) opposite signs; (+, −)</text>
 </svg>

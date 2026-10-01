@@ -1,14 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="429" height="492" viewBox="0 0 429 492" role="img" aria-label="Two squares of type A whose phases are a third of a turn apart overlap; their arcs of the circle of radius 7/16 overlap too">
-<title>Two squares of type A whose phases are a third of a turn apart overlap; their arcs of the circle of radius 7/16 overlap too</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="429" height="492" viewBox="0 0 429 492" role="img" aria-label="Two squares of type A whose phases are a third of a turn apart overlap; their caps on the circle of radius 3/8 only meet, and their arcs of the circle of radius 7/16 overlap">
+<title>Two squares of type A whose phases are a third of a turn apart overlap; their caps on the circle of radius 3/8 only meet, and their arcs of the circle of radius 7/16 overlap</title>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
 <rect width="100%" height="100%" fill="#ffffff"/>
 <polygon points="369.5,229.4 369.5,39.4 179.5,39.4 179.5,229.4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" fill-opacity="1"/>
 <polygon points="196.1,200.5 31.6,295.5 126.6,460.1 291.1,365.1" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
 <polygon points="179.5,210.2 179.5,229.4 212.8,229.4 196.1,200.5" fill="#ffedd5" stroke="#ea580c" stroke-width="1.4" fill-opacity="1"/>
-<circle cx="274.5" cy="265.0" r="71.2" fill="none" stroke="#e5e7eb" stroke-width="1.2"/>
+<circle cx="274.5" cy="265.0" r="71.2" fill="none" stroke="#9ca3af" stroke-width="1.2"/>
 <circle cx="274.5" cy="265.0" r="83.1" fill="none" stroke="#9ca3af" stroke-width="1.2"/>
-<path d="M 349.6 229.3 A 83.1 83.1 0 0 0 199.4 229.4" fill="none" stroke="#16a34a" stroke-width="6" stroke-linecap="round"/>
-<path d="M 206.1 217.8 A 83.1 83.1 0 0 0 281.2 347.9" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>
+<path d="M 336.2 229.3 A 71.2 71.2 0 0 0 274.5 193.8" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M 274.5 193.8 A 71.2 71.2 0 0 0 212.8 229.4" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M 212.8 229.4 A 71.2 71.2 0 0 0 212.8 300.7" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M 212.8 300.7 A 71.2 71.2 0 0 0 274.6 336.2" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M 349.6 229.3 A 83.1 83.1 0 0 0 274.5 181.9" fill="none" stroke="#16a34a" stroke-width="6" stroke-linecap="round"/>
+<path d="M 274.5 181.9 A 83.1 83.1 0 0 0 199.4 229.4" fill="none" stroke="#16a34a" stroke-width="6" stroke-linecap="round"/>
+<path d="M 206.1 217.8 A 83.1 83.1 0 0 0 202.5 306.6" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>
+<path d="M 202.5 306.6 A 83.1 83.1 0 0 0 281.2 347.9" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>
 <line x1="274.5" y1="265.0" x2="274.5" y2="75.0" stroke="#16a34a" stroke-width="1" stroke-dasharray="4 3"/>
 <line x1="274.5" y1="265.0" x2="110.0" y2="360.0" stroke="#2563eb" stroke-width="1" stroke-dasharray="4 3"/>
 <path d="M 274.5 234.6 A 30.4 30.4 0 0 0 248.2 280.2" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-linecap="round"/>
@@ -19,4 +25,6 @@
 <text x="123.4" y="396.8" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle">type A</text>
 <line x1="352.6" y1="293.4" x2="379.0" y2="331.5" stroke="#1f2937" stroke-width="0.8"/>
 <text x="380.9" y="341.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">Γ<tspan dy="4.2" font-size="9.5">7/16</tspan></text>
+<line x1="315.4" y1="323.4" x2="350.5" y2="382.8" stroke="#1f2937" stroke-width="0.8"/>
+<text x="352.4" y="392.3" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">Γ<tspan dy="4.2" font-size="9.5">3/8</tspan></text>
 </svg>

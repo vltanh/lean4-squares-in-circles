@@ -22,5 +22,5 @@
 <text x="478.6" y="61.4" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="end" dominant-baseline="middle" font-style="italic">f</text>
 <text x="149.6" y="152.6" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">(t, f(t))</text>
 <text x="279.6" y="235.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="end" dominant-baseline="middle">tangent parabola</text>
-<text x="279.6" y="251.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="end" dominant-baseline="middle">of curvature κ at t</text>
+<text x="279.6" y="251.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="end" dominant-baseline="middle">of curvature <tspan font-style="italic">κ</tspan> at <tspan font-style="italic">t</tspan></text>
 </svg>

@@ -6,7 +6,7 @@ This chapter proves the case $n = 2$ of the main theorem: the least radius of a
 closed disk that holds two disjoint unit squares is $R_2 = \frac{\sqrt5}2$,
 half the diagonal of a $2 \times 1$ rectangle, and in a closed disk of that
 radius the two squares always form such a rectangle, centred at the centre of
-the disk. Packings, models and congruence are as in
+the disk (Figure 5.1). Packings, models and congruence are as in
 [Definitions 2.3](02-preliminaries.md#definition-23-packing) and
 [2.6](02-preliminaries.md#definition-26-congruence-to-a-model).
 
@@ -16,11 +16,12 @@ square within $\frac12$ of the disk centre $o$, while the centres of two
 disjoint unit squares are at least 1 apart
 ([Lemma 3.10](03-tools.md#lemma-310-centres-at-least-1-apart)). By the
 parallelogram law both can hold only if both centres are exactly $\frac12$
-from $o$, and then $o$ is the midpoint of an edge of each square. Each square
-then holds the half of the circle of radius $\frac12$ about $o$ that lies on
-its side of the line of that edge. Two disjoint open half circles are opposite
-halves of the circle, so the two squares share their edge through $o$ and lie
-on opposite sides of it: they form the rectangle.
+from $o$, and then the farthest-vertex bound puts $o$ at the midpoint of an
+edge of each square. Each square then holds the half of the circle of radius
+$\frac12$ about $o$ that lies on its side of the line of that edge. Two
+disjoint open half circles are opposite halves of the circle, so the two
+squares share their edge through $o$ and lie on opposite sides of it: they
+form the rectangle.
 
 ## Theorem 5.1 (two squares)
 
@@ -45,24 +46,22 @@ $o$ (dashed).
 [`Two.uniqueness`](../../SquaresInCircles/Two/Uniqueness.lean#L41),
 [`Two.optimum`](../../SquaresInCircles/Two/Uniqueness.lean#L70).*
 
-*Outline of the proof.* Part (1) is a direct check (Proposition 5.2, §5.1).
-The substance of the theorem is uniqueness, Proposition 5.3: two unit squares
-$S$ and $T$ that form a packing in a closed disk of radius $R_2$ about a point
-$o$ are congruent to the rectangle. Its proof runs as follows.
+*Outline of the proof.* Part (1) is the construction, Proposition 5.2
+(§5.1). Parts (2) and (3) follow, by
+[Corollary 2.10](02-preliminaries.md#corollary-210-the-scheme-of-proof) (§5.4),
+from the uniqueness statement, Proposition 5.3: every packing of two unit
+squares in a closed disk of radius $R_2$ is congruent to the rectangle. Its
+proof takes four steps.
 
-1. Both centres are at distance exactly $\frac12$ from $o$ (Lemmas 5.4 and
-   5.5, §5.2).
-2. Hence $(a_S, b_S) = (a_T, b_T) = (\frac12, 0)$: the disk centre is the
-   midpoint of an edge of each square (§5.3, step 1).
-3. Each square holds the half of the circle $\Gamma_{1/2}$ about $o$ on its
-   side of that edge, and two disjoint half circles have opposite centres
-   (§5.3, steps 2 and 3).
-4. So in one frame at $o$ the square $S$ sits at $c_2$ and $T$ at $c_1$, which
-   is the congruence (§5.3, steps 4 and 5).
-
-Parts (2) and (3) then follow from Propositions 5.2 and 5.3 by the scheme of
-proof, [Corollary 2.10](02-preliminaries.md#corollary-210-the-scheme-of-proof)
-(§5.4).
+1. *The centres* (§5.2). Both centres are at distance exactly $\frac12$ from
+   the disk centre $o$ (Lemmas 5.4 and 5.5).
+2. *The edges* (§5.3, step 1). Then the disk centre is the midpoint of an
+   edge of each square.
+3. *The half circles* (§5.3, steps 2 and 3). Each square holds the half of
+   the circle $\Gamma_{1/2}$ about $o$ on its side of that edge, and two
+   disjoint half circles have opposite centres.
+4. *The rectangle* (§5.3, steps 4 and 5). So in one frame at $o$ one square
+   sits at $c_2$ and the other at $c_1$, which is the congruence.
 
 ## 5.1 Construction
 
@@ -100,14 +99,14 @@ applies. $\square$
 
 ### Proposition 5.3 (uniqueness)
 
-Let $o$ be a point of the plane, and let $S$ and $T$ be two unit squares that
-form a packing in the closed disk $\overline{D}(o, R_2)$. Then the
-configuration $S, T$ is congruent to the rectangle.
+Every packing of two unit squares in a closed disk of radius $R_2$ is
+congruent to the rectangle.
 
-The proof occupies §5.2 and §5.3. This section shows that both centres are at
-distance exactly $\frac12$ from $o$, and §5.3 locates the squares from there.
-We first turn the farthest-vertex bound at radius $R_2$ into a bound on the
-distance from the centre of a square to $o$ (Figure 5.3).
+The proof occupies §5.2 and §5.3. Throughout, $o$ is the disk centre. This
+section shows that both centres are at distance exactly $\frac12$ from $o$, and
+§5.3 locates the squares from there. We first turn the farthest-vertex bound
+at radius $R_2$ into a bound on the distance from the centre of a square to $o$
+(Figure 5.3).
 
 ![A tilted unit square S inside the dashed circle of radius R2 about o, with its vertex farthest from o on that circle, joined to o by a segment of length R2; the centre c_S lies inside the orange dashed circle of radius one half about o](figures/05-two/near.svg)
 
@@ -131,9 +130,23 @@ $(\frac12, 0)$ has $b \le a$; this is step 1 of the proof of
 Proposition 5.3.
 
 *Proof.* This is [Lemma 3.4](03-tools.md#lemma-34-farthest-vertex) (3) with
-$\rho = \frac12$, since $\frac14 + \frac12 + \frac12 = \frac54$. $\square$
+$\rho = \frac12$, since $\frac14 + \frac12 + \frac12 = \frac54$ (Figure 5.4).
+$\square$
 
 *Lean: [`radial_sq_le_of_phi`](../../SquaresInCircles/Common/Basic.lean#L159).*
+
+Seen in the frame of a square $S$ whose closed square lies in
+$\overline{D}(o, R_2)$, Lemma 5.4 puts $o$ in the closed disk of radius
+$\frac12$ about $c_S$, the disk inscribed in $\overline S$, and step 1 of the
+proof of Proposition 5.3 shows that $o$ reaches the circle of that disk only at
+the midpoint of an edge (Figure 5.5).
+
+![A unit square S in its own frame and the blue region of the points o for which S fits in the closed disk of radius R2 about o: a rounded diamond inside the dashed circle of radius one half about the centre of S, touching it only at the midpoints of the four edges](figures/05-two/inscribed-disk.svg)
+
+*Figure 5.5.* Lemma 5.4 in the frame of a square $S$. The positions of the
+disk centre $o$ for which $\overline S$ lies in $\overline{D}(o, R_2)$ (blue)
+lie in the closed disk of radius $\frac12$ about $c_S$ (orange, dashed), and
+reach its circle only at the midpoints of the four edges (dots).
 
 ### Lemma 5.5 (both centres at distance one half)
 
@@ -146,12 +159,13 @@ a_S^2 + b_S^2 = a_T^2 + b_T^2 = \tfrac14 ,
 
 that is, both centres are at distance exactly $\frac12$ from $o$.
 
-![Two centres c_S and c_T inside the dashed disk of radius one half about o, the parallelogram with vertices o, c_S, c_S plus c_T minus o, and c_T, and its two diagonals: the segment from c_S to c_T and the dashed segment from o](figures/05-two/parallelogram.svg)
+![Left: two centres c_S and c_T inside the dashed circle of radius one half about o, the parallelogram with sides u from o to c_S and v from o to c_T, and its diagonals, u minus v between the centres in orange and u plus v dashed from o. Right: the equality case, where the centres are opposite points of the circle, 1 apart, with o their midpoint](figures/05-two/parallelogram.svg)
 
-*Figure 5.5.* The parallelogram spanned by $c_S - o$ and $c_T - o$. Its
-squared diagonals add up to twice the squared sides from $o$, so if both
-centres are within $\frac12$ of $o$, the diagonal from $c_S$ to $c_T$ is at
-most 1.
+*Figure 5.6.* Left: the parallelogram with the sides $u = c_S - o$ and
+$v = c_T - o$ at $o$, and its diagonals $u - v = c_S - c_T$ (orange) and
+$u + v$ (dashed). Its squared diagonals add up to twice its squared sides, so
+if both centres lie within $\frac12$ of $o$, the diagonal from $c_S$ to $c_T$
+is at most 1. Right: the equality case $u + v = 0$ of the remark below.
 
 *Proof.* Put $u = c_S - o$ and $v = c_T - o$.
 
@@ -163,7 +177,7 @@ Lemma 5.4 applies to the pairs $(a_S, b_S)$ and $(a_T, b_T)$, and gives
 $|u|^2 \le \frac14$ and $|v|^2 \le \frac14$.
 
 **Step 2. The parallelogram law.** The parallelogram with vertices $o$, $c_S$,
-$c_S + c_T - o$ and $c_T$ (Figure 5.5) has the sides $u$ and $v$ at $o$, and
+$c_S + c_T - o$ and $c_T$ (Figure 5.6) has the sides $u$ and $v$ at $o$, and
 its diagonals are $u - v = c_S - c_T$ and $u + v = c_S + c_T - 2o$. Expanding
 the inner products,
 
@@ -191,19 +205,17 @@ $\square$
 
 *Remark.* Equality throughout also gives $u + v = 0$ and $|c_S - c_T| = 1$:
 the disk centre is the midpoint of the two centres, which are exactly 1 apart,
-as in the rectangle. The proof below does not need this.
+as in the rectangle (Figure 5.6, right). The proof below does not need this.
 
 ## 5.3 The half circles
 
-We now complete the proof of Proposition 5.3. By Lemma 5.5 both centres are at
-distance $\frac12$ from $o$. Step 1 below shows that this places $o$ at the
-midpoint of an edge of each square; the half circles of steps 2 and 3 then fix
-the squares relative to each other, and steps 4 and 5 read off the rectangle.
+We now complete the proof of Proposition 5.3.
 
-*Proof of Proposition 5.3.* The closed squares of $S$ and $T$ lie in
-$\overline{D}(o, R_2)$, so $\varphi(a_S, b_S) \le R_2^2 = \frac54$ and
-$\varphi(a_T, b_T) \le \frac54$ by Lemma 3.4; and $S$ and $T$ are disjoint, as
-the squares of a packing are
+*Proof of Proposition 5.3.* Let $S, T$ be a packing of two unit squares in the
+closed disk of radius $R_2$ about a point $o$. The closed squares of $S$ and
+$T$ lie in $\overline{D}(o, R_2)$, so $\varphi(a_S, b_S) \le R_2^2 = \frac54$
+and $\varphi(a_T, b_T) \le \frac54$ by Lemma 3.4; and $S$ and $T$ are
+disjoint, as the squares of a packing are
 ([Definition 2.3](02-preliminaries.md#definition-23-packing)). By Lemma 5.5,
 
 ```math
@@ -215,7 +227,11 @@ that $(a_S, b_S) = (\frac12, 0)$; the same argument gives
 $(a_T, b_T) = (\frac12, 0)$. Write $a = a_S$ and $b = b_S$, so that
 $a \ge b \ge 0$ (Definition 3.1) and $a^2 + b^2 = \frac14$. Expanding the
 squares,
-$\varphi(a, b) = (a^2 + b^2) + (a + b) + \frac12 = \frac14 + (a + b) + \frac12 \le \frac54$,
+
+```math
+\varphi(a, b) = \left(a^2 + b^2\right) + (a + b) + \tfrac12 = \tfrac34 + (a + b) \le \tfrac54 ,
+```
+
 so $a + b \le \frac12$. On the other hand
 $(a + b)^2 = a^2 + b^2 + 2ab \ge \frac14$ and $a + b \ge 0$, so
 $a + b \ge \frac12$. Hence $a + b = \frac12$, and
@@ -228,11 +244,11 @@ So $a = 0$ or $b = 0$. If $a = 0$, then also $b = 0$, as $0 \le b \le a$,
 which contradicts $a^2 + b^2 = \frac14$. Hence $b = 0$ and
 $a = a + b = \frac12$. By Definition 3.1 the local coordinates of $o$ in the
 frame of $S$ are then $(\pm\frac12, 0)$ or $(0, \pm\frac12)$: the point $o$ is
-the midpoint of an edge of $S$, and likewise of an edge of $T$ (Figure 5.6).
+the midpoint of an edge of $S$, and likewise of an edge of $T$ (Figure 5.7).
 
 ![Two panels, each with a unit square whose centre c_S lies on the grey circle of radius one half about o, inside the dashed circle of radius R2 about o. Left: o is the midpoint of the thick edge of the square, and the two far corners lie on the dashed circle. Right: the centre lies diagonally from o, and the farthest vertex lies outside the dashed circle](figures/05-two/edge-midpoint.svg)
 
-*Figure 5.6.* Step 1. Two unit squares with centres at distance $\frac12$
+*Figure 5.7.* Step 1. Two unit squares with centres at distance $\frac12$
 from $o$ (grey circle). Left, $(a_S, b_S) = (\frac12, 0)$: the point $o$ is
 the midpoint of the thick edge, and the two far corners lie on the circle of
 radius $R_2$ (dashed). Right, $a_S = b_S = \frac{\sqrt2}4$: the farthest
@@ -242,53 +258,35 @@ that circle.
 
 **Step 2. Each square holds a half circle.** Let $(\theta_S, \varepsilon_S)$
 and $(\theta_T, \varepsilon_T)$ be charts of $S$ and $T$
-([Lemma 3.21](03-tools.md#lemma-321-charts)). We show that $S$ holds the arc of
-$\Gamma_{1/2}$ with centre $\theta_S$ and half-width $\frac\pi2$
+([Lemma 3.21](03-tools.md#lemma-321-charts)). By step 1, $S$ is exterior with
+$a_S = \frac12$ and $b_S + \frac12 = \frac12$, so
+[Lemma 3.24](03-tools.md#lemma-324-arcs-of-an-exterior-square) (3) with
+$r = \frac12$ applies: $S$ holds the half of $\Gamma_{1/2}$ centred at
+$\theta_S$, the arc with centre $\theta_S$ and half-width $\frac\pi2$
 ([Definitions 3.14](03-tools.md#definition-314-circles-about-the-disk-centre)
-and [3.15](03-tools.md#definition-315-arc)), the open half of $\Gamma_{1/2}$
-centred at $\theta_S$; in the same way $T$ holds the half of $\Gamma_{1/2}$
-centred at $\theta_T$. By step 1, the condition of Lemma 3.21 (2) for $S$,
-with $r = \frac12$, asks that the chart angles $t$ of an interval satisfy
-
-```math
-\left|\tfrac12\cos t - \tfrac12\right| < \tfrac12 \qquad\text{and}\qquad \left|\tfrac12\sin t - 0\right| < \tfrac12 .
-```
-
-Both hold for $-\frac\pi2 < t < \frac\pi2$: there $0 < \cos t \le 1$, so
-$|\frac12\cos t - \frac12| = \frac12(1 - \cos t) < \frac12$, and
-$\sin^2 t = 1 - \cos^2 t < 1$, so $|\frac12\sin t| < \frac12$. The interval
-$(-\frac\pi2, \frac\pi2)$ has length $\pi \le 2\pi$, so by Lemma 3.21 (2) the
-square $S$ holds an arc of $\Gamma_{1/2}$ with half-width $\frac\pi2$ and
-centre $\theta_S + \varepsilon_S \cdot 0 = \theta_S$. This is the case
-$r = \frac12$ of
-[Lemma 3.24](03-tools.md#lemma-324-arcs-of-an-exterior-square) (3). In the
-chart, $S$ is the square $0 < x < 1$, $|y| < \frac12$, and its half circle is
-the half of $\Gamma_{1/2}$ where $x > 0$, on the side of $S$ of the line of
-the edge through $o$ (Figure 5.7).
+and [3.15](03-tools.md#definition-315-arc)). In the same way $T$ holds the half
+of $\Gamma_{1/2}$ centred at $\theta_T$. In the chart, $S$ is the square
+$0 < x < 1$, $|y| < \frac12$, and its half circle is the half of
+$\Gamma_{1/2}$ where $x > 0$, on the side of $S$ of the line of the edge
+through $o$ (Figure 5.8).
 
 ![A unit square S in its chart, centred at (1/2, 0), with the disk centre o at the midpoint of its left edge, drawn thick; the circle of radius one half about o, whose right half, from chart angle minus pi/2 to pi/2, is highlighted inside the square; a point at chart angle t on it](figures/05-two/half-circle.svg)
 
-*Figure 5.7.* Step 2: a square with $(a_S, b_S) = (\frac12, 0)$ in its chart.
+*Figure 5.8.* Step 2: a square with $(a_S, b_S) = (\frac12, 0)$ in its chart.
 The disk centre $o$ is the midpoint of the near edge (thick), and every point
 of $\Gamma_{1/2}$ at a chart angle $t$ with $|t| < \frac\pi2$ lies in
 $S^\circ$: the half of $\Gamma_{1/2}$ on the side of $S$ (blue), whose ends
 are the two corners of that edge.
 
 **Step 3. The half circles are opposite.** The open squares $S^\circ$ and
-$T^\circ$ are disjoint, and by step 2 they hold arcs of the same circle
-$\Gamma_{1/2}$ with centres $\theta_S$ and $\theta_T$ and half-widths
-$\frac\pi2$. By
-[Lemma 3.17](03-tools.md#lemma-317-disjoint-arcs-have-separated-centres),
-$d(\theta_S, \theta_T) \ge \frac\pi2 + \frac\pi2 = \pi$. The angle between two
-directions is at most $\pi$ (§2.1), so $d(\theta_S, \theta_T) = \pi$.
-Represent the direction $\theta_T - \theta_S$ by a number $\delta$ with
-$-\pi < \delta \le \pi$; by the definition of the angle between two
-directions, $d(\theta_S, \theta_T) = |\delta|$, so $\delta = \pi$ and
-$\theta_T = \theta_S + \pi$ (Figure 5.8).
+$T^\circ$ are disjoint and hold the half circles of step 2, which lie on the
+same circle $\Gamma_{1/2}$. Disjoint half circles have opposite centres
+([Lemma 3.17](03-tools.md#lemma-317-disjoint-arcs-have-separated-centres)), so
+$\theta_T = \theta_S + \pi$ (Figure 5.9).
 
 ![Two panels with the circle of radius one half about o and two squares with o at the midpoint of an edge of each, holding the half circles centred at the directions theta S (blue) and theta T (green). Left: theta T is less than pi from theta S, the half circles share a point p, and the squares overlap. Right: theta T is opposite to theta S, the half circles are complementary, and the squares form the rectangle](figures/05-two/opposite.svg)
 
-*Figure 5.8.* Step 3. Left: if the half circles held by $S$ (blue) and $T$
+*Figure 5.9.* Step 3. Left: if the half circles held by $S$ (blue) and $T$
 (green) had centres less than $\pi$ apart, they would share a point $p$ of
 $\Gamma_{1/2}$, which would lie in both open squares. Right: for disjoint
 squares the centres are opposite, $\theta_T = \theta_S + \pi$, and the squares
@@ -298,29 +296,14 @@ form the rectangle.
 [Lemma 3.22](03-tools.md#lemma-322-cartesian-form-of-a-chart) and step 1, $S$
 sits at $(a_S, \varepsilon_S b_S) = (\frac12, 0) = c_2$ in the frame
 $\theta_S$, and $T$ sits at $(a_T, \varepsilon_T b_T) = (\frac12, 0)$ in the
-frame $\theta_T = \theta_S + \pi$. Since $u(\phi + \pi) = -u(\phi)$ for every
-direction $\phi$, the definition of the frames
-([Definition 2.4](02-preliminaries.md#definition-24-frames-at-the-disk-centre))
-gives, for all real $x$ and $y$,
-
-```math
-F_{\theta_S + \pi}(x, y) = o + x\,u(\theta_S + \pi) + y\,u\left(\theta_S + \tfrac{3\pi}2\right) = o - x\,u(\theta_S) - y\,u\left(\theta_S + \tfrac\pi2\right) = F_{\theta_S}(-x, -y) .
-```
-
-Hence, for all real $x$ and $y$,
-
-```math
-F_{\theta_S}(x, y) \in T^\circ \iff F_{\theta_S + \pi}(-x, -y) \in T^\circ \iff \left|-x - \tfrac12\right| < \tfrac12 \ \text{and}\ |-y| < \tfrac12 \iff (x, y) \in Q(c_1)^\circ ,
-```
-
-because $|-x - \frac12| = |x - (-\frac12)|$ and $|-y| = |y|$. So $T$ sits at
-$c_1 = (-\frac12, 0)$ in the frame $\theta_S$ (Figure 5.9). This is
-[Lemma 3.30](03-tools.md#lemma-330-sitting-at-a-centre) (2) with two quarter
-turns.
+frame $\theta_T = \theta_S + \pi$. By
+[Lemma 3.30](03-tools.md#lemma-330-sitting-at-a-centre) (2) with $k = 2$, $T$
+sits in the frame $\theta_S$ at $(\frac12, 0)$ turned by two quarter turns,
+$(x, y) \mapsto (-x, -y)$, which is $(-\frac12, 0) = c_1$ (Figure 5.10).
 
 ![The rectangle of the squares S and T turned by the angle theta S about o, with the axes of the frame at o turned by theta S drawn solid and the axes of the opposite frame, turned by theta S plus pi, drawn dashed; the centre of S is at (1/2, 0) and the centre of T at (-1/2, 0) in the solid frame](figures/05-two/frame.svg)
 
-*Figure 5.9.* Step 4. In the frame $\theta_S$ (solid axes) the square $S$
+*Figure 5.10.* Step 4. In the frame $\theta_S$ (solid axes) the square $S$
 sits at $(\frac12, 0)$. In the opposite frame $\theta_S + \pi$ (dashed axes)
 the square $T$ sits at $(\frac12, 0)$, which is the point $(-\frac12, 0)$ of
 the frame $\theta_S$.
@@ -341,10 +324,10 @@ $\square$
 
 *Proof of Theorem 5.1.* We apply
 [Corollary 2.10](02-preliminaries.md#corollary-210-the-scheme-of-proof) with
-$n = 2$, $R_2 = \frac{\sqrt5}2 > 0$ and
+$n = 2$, $R_2 = \frac{\sqrt5}2$ and
 $\mathcal M = \lbrace\text{the rectangle}\rbrace$: (a) is Proposition 5.2; (b)
-holds because the corner $(1, \frac12)$ of $\overline{Q(c_2)}$ is at distance
-$\sqrt{1 + \frac14} = R_2$ from the origin (Figure 5.2); (c) is
+holds because the corner $(1, \frac12)$ of $Q(c_2)$ has squared distance
+$1 + \frac14 = \frac54 = R_2^2$ from the origin (Figure 5.2); (c) is
 Proposition 5.3. Parts (1), (2), (3) of the theorem are (a), (i) and (ii).
 $\square$
 

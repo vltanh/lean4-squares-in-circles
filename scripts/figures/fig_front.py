@@ -369,6 +369,11 @@ def optimal_packings():
     H = 2 * top[0] + label_h + 0.28 + 2 * top[1] + label_h
     f = Figure(0, W, -H, 0, s)
     ys = [-top[0], -(2 * top[0] + label_h + 0.28 + top[1])]
+    eq = NB + '=' + NB
+    # The radii, with R and q italic and the numbers upright.
+    radii = {1: '√2/2', 2: '√5/2', 3: '5√17/16', 4: '√2', 5: '√(5/2)',
+             6: '√' + sb(it('q'), '*', NB + '≈' + NB + '1.6885', 14),
+             7: '√13/2'}
     for row, width, R_top, y in zip(rows, widths, top, ys):
         x = (W - width) / 2
         for n in row:
@@ -376,8 +381,8 @@ def optimal_packings():
             x += R
             draw_model(f, centers, R, at=(x, y))
             word(f, (x, y - R_top - 0.2), it('n') + f' = {n}', size=14)
-            f.text((x, y - R_top - 0.45), sbn('R', str(n), ' = ' + name, 14),
-                   size=14)
+            word(f, (x, y - R_top - 0.45),
+                 sb(it('R'), str(n), eq + radii[n], 14), size=14)
             x += R + gap
     f.save('01-introduction/optimal', 'The seven optimal packings, n = 1 to 7, each '
            'in its dashed circle of radius R_n, drawn at a common scale; dots '
@@ -407,13 +412,15 @@ def column_packings():
                                           (0.5, SQRT3), (-0.5, SQRT3))],
                   stroke=FAINT, width=1, dash='3 3')
         draw_model(f, centers, R, at=at, fills=fills, strokes=strokes)
-        f.text(shift(at, (0, -R - 0.24)),
-               '(' + sbn('y', '1', ', ', 13) + sbn('y', '2', ', ', 13) +
-               sbn('y', '3', ') = ', 13) + name, size=13)
-    f.save('01-introduction/columns', 'Four column packings of seven squares in the '
-           'circle of radius root 13 over 2: the side squares are fixed, and '
-           'the three middle squares move along the dotted middle column, '
-           'each on its own')
+        f.text(shift(at, (0.07, -0.11)), 'o', anchor='start', size=14)
+        word(f, shift(at, (0, -R - 0.24)),
+             '(' + sb(it('y'), '1', ',' + NB, 13) +
+             sb(it('y'), '2', ',' + NB, 13) +
+             sb(it('y'), '3', ')' + NB + '=' + NB, 13) + name, size=13)
+    f.save('01-introduction/columns', 'Four column packings of seven squares in '
+           'the circle of radius root 13 over 2 about o: the side squares are '
+           'fixed, and the three middle squares move along the dotted middle '
+           'column, each on its own')
 
 
 def reduction():
@@ -461,6 +468,9 @@ def arc_method():
         at = (k * step, 0)
         f.circle(at, R, stroke=INK, width=1.1, dash='6 4')
         word(f, shift(at, (0, R + 0.2)), title, size=14)
+        # The circle of radius 1/2, labelled on the side away from S.
+        f.text(shift(at, u(rad(40 if k == 0 else -40)), r + 0.17),
+               sb('Γ', '1/2', size=14), size=14)
     # An exterior square with phi <= 2 and o not a vertex.
     a, b, theta = 0.62, 0.3, rad(205)
     assert phi_ab(a, b) <= 2 and a >= 0.5 and a + b < 1
@@ -509,10 +519,23 @@ def arc_method():
            'centre')
 
 
+def marker_arc(f, at, c, deg, m, color):
+    """The arc of the unit circle of half-width 1/2 about the marker m,
+    which lies in the closed square (Lemma 10.9)."""
+    for k in range(41):
+        p = u(m - 0.5 + k / 40)
+        x, y = p[0] - c[0], p[1] - c[1]
+        t = rad(deg)
+        assert abs(math.cos(t) * x + math.sin(t) * y) <= 0.5 + 1e-9
+        assert abs(-math.sin(t) * x + math.cos(t) * y) <= 0.5 + 1e-9
+    f.arc(at, 1, m - 0.5, m + 0.5, color, width=4)
+
+
 def markers():
     """Seven squares: markers of a contact are pi/3 apart; turned closer,
     the squares overlap; in a column packing the six markers form a
-    regular hexagon."""
+    regular hexagon. Each closed square contains the arc of the unit circle
+    of half-width 1/2 about its marker."""
     R, s = math.sqrt(13) / 2, 60
     step = 2 * R + 0.3
     f = Figure(-R, 2 * step + R, -R - 0.1, R + 0.4, s)
@@ -533,6 +556,7 @@ def markers():
             assert phi_ab(a, b) <= 13 / 4 + 1e-12
             m = theta + eps * label(a, b)
             ms.append(m)
+            marker_arc(f, at, c, deg, m, COLORS[col])
             f.line(at, shift(at, u(m), 1.0), stroke=COLORS[col], width=1.4)
             f.dot(shift(at, u(m), 1.0), r=3.4, fill=COLORS[col])
         gap = (ms[1] - ms[0]) % (2 * math.pi)
@@ -557,8 +581,8 @@ def markers():
                touch=False)
     word(f, shift(at, (0, R + 0.25)), 'six markers', size=14)
     f.circle(at, 1)
-    ms = sorted(marker(c, 0) % (2 * math.pi) for c in centers
-                if not in_open_square((0, 0), c))
+    exterior = [c for c in centers if not in_open_square((0, 0), c)]
+    ms = sorted(marker(c, 0) % (2 * math.pi) for c in exterior)
     assert len(ms) == 6
     for k in range(6):
         assert abs(ms[k] - (math.pi / 6 + k * math.pi / 3)) < 1e-12
@@ -567,10 +591,12 @@ def markers():
     for m in ms:
         f.line(at, shift(at, u(m)), stroke=ORANGE, width=1.2)
         f.dot(shift(at, u(m)), r=3.4, fill=ORANGE)
-    f.text(shift(at, (0.1, 0.0)), 'o', anchor='start', size=14)
-    f.save('01-introduction/markers', 'Seven squares and their markers on the unit '
-           'circle. Left: a side square and the top square touch, and their '
-           'markers are exactly pi/3 apart. Middle: turned so that the '
+    # The label of o in the gap between the spokes at -30 and 30 degrees.
+    f.text(shift(at, (0.3, 0.0)), 'o', anchor='start', size=14)
+    f.save('01-introduction/markers', 'Seven squares and their markers on the '
+           'unit circle. Left: a side square and the top square touch, their '
+           'markers are exactly pi/3 apart, and each square contains the arc '
+           'of half-width 1/2 about its marker. Middle: turned so that the '
            'markers are closer, the squares overlap. Right: in a column '
            'packing the six markers form a regular hexagon')
 
@@ -589,9 +615,13 @@ def angle_between():
     thin_arc(f, (0, 0), 1, x, x + (two - d), color=FAINT, width=1.6,
              dash='5 4')
     f.arc((0, 0), 1, xp, xp + d, ORANGE, width=4)
+    # The unit vector u(theta) is the radius to theta of the unit circle.
+    arrow(f, (0, 0), u(x), color=BLUE, width=1.8, size=9)
+    f.text(shift(shift((0, 0), u(x), 0.5), u(x + math.pi / 2), 0.15),
+           'u(θ)', size=14, color=BLUE)
+    f.line((0, 0), u(xp), width=1)
     for t, s in ((x, 'θ'), (xp, 'θ′')):
-        f.line((0, 0), shift((0, 0), u(t), 1), width=1)
-        f.dot(shift((0, 0), u(t), 1))
+        f.dot(u(t))
         f.text(shift((0, 0), u(t), 1.16), s)
     f.text(shift((0, 0), u(xp + d / 2), 0.62), 'd(θ, θ′)', size=14,
            color=ORANGE)
@@ -618,9 +648,10 @@ def angle_between():
             f.line((X(t), y0 + h - 0.06), (X(t), y0 + h + 0.06), stroke=col,
                    width=1.6)
         f.text(((X(lo) + X(hi)) / 2, y0 + h + 0.17), s, size=14, color=col)
-    f.save('02-preliminaries/angle', 'The angle between two directions theta and theta '
-           'prime: the shorter way round the circle, and the least distance '
-           'between real numbers that represent them')
+    f.save('02-preliminaries/angle', 'The unit vector u(theta) and the angle '
+           'between two directions theta and theta prime: the shorter way '
+           'round the unit circle, and the least distance between real '
+           'numbers that represent them')
 
 
 def arcsin_graph():
@@ -644,9 +675,11 @@ def arcsin_graph():
     for x in (-1, 1):
         word(f, shift(P(x, 0), (0.1, -0.17)), str(x).replace('-', '−'),
              size=12)
+    # Below the grid lines: for x < 0 the arccosine runs above pi/2, so it
+    # does not cross the labels.
     for y, s in ((-math.pi / 2, '−π/2'), (math.pi / 2, 'π/2'),
                  (math.pi, 'π')):
-        word(f, shift(P(0, y), (-0.08, 0.12)), s, size=12, anchor='end')
+        word(f, shift(P(0, y), (-0.08, -0.13)), s, size=12, anchor='end')
     word(f, P(1.75, math.pi / 2 + 0.22), 'arcsin', size=14, color=BLUE)
     word(f, P(-1.75, math.pi + 0.22), 'arccos', size=14, color=ORANGE)
     f.save('02-preliminaries/arcsin', 'The extended arcsine, constant at minus and plus '
@@ -807,14 +840,16 @@ def congruence_figure():
     f = Figure(-1.4, o[0] + 1.4, -1.4, 1.5, 115)
     q = (-1.0, -13 / 16)
     assert abs(norm(q) - R) < 1e-12
+    # The names sit off the segment from the centre to q, which crosses the
+    # square of M1 below its centre.
+    offsets = [(-0.08, 0.17), (0.0, 0.0), (0.0, 0.12)]
     for side, M, centre in ((0, lambda p: p, (0, 0)), (1, F, o)):
         f.circle(centre, R, stroke=INK, width=1.2, dash='6 4')
         for k, c in enumerate(centers):
             f.polygon([M(p) for p in square_corners(c)], fill=FILLS[k],
                       stroke=COLORS[k])
             text = sbn('M', str(k + 1)) if side == 0 else sbn('S', names[k])
-            f.text(M(shift(c, (0, 0.12 if k == 2 else 0.0))), text, size=16,
-                   color=COLORS[k])
+            f.text(M(shift(c, offsets[k])), text, size=16, color=COLORS[k])
         f.line(centre, M(q), stroke=ORANGE, width=1.6)
         f.dot(M(q), fill=ORANGE)
         f.dot(centre)
@@ -832,63 +867,46 @@ def congruence_figure():
 
 
 def axis_lemma():
-    """Lemma 2.8: centres 1 apart in one coordinate, and the farthest corner
-    of an axis-parallel square."""
-    p, q = (0.0, 0.0), (1.45, 0.42)
-    assert not interiors_meet(square_corners(p), square_corners(q))
-    o, c = (4.55, -0.45), (-0.7, 0.62)
-    corner = (-(abs(c[0]) + 0.5), abs(c[1]) + 0.5)
-    R = norm(corner) + 0.1
-    f = Figure(-0.75, o[0] + R + 0.1, o[1] - R - 0.12, o[1] + R + 0.12, 92)
-    f.square(p, fill=FILLS[0], stroke=BLUE)
-    f.square(q, fill=FILLS[2], stroke=GREEN)
-    y0 = -0.85
-    f.line((-0.7, y0), (2.3, y0), width=1)
-    x0, x1 = p[0] + 0.5, q[0] - 0.5
-    for x in (x0, x1):
-        f.line((x, y0 - 0.05), (x, 1.2), width=1.1, dash='6 4')
-    for x, s in ((p[0], sbn('p', '1', size=13)), (q[0], sbn('q', '1', size=13))):
-        f.line((x, y0 - 0.04), (x, y0 + 0.04), width=1.2)
-        f.line((x, y0 + 0.04), (x, p[1] if x == p[0] else q[1]),
-               stroke=FAINT, width=1, dash='2 3')
-        f.text((x, y0 - 0.18), s, size=13)
-    f.text((x0, y0 - 0.42), sbn('p', '1', ' + ½', 13), size=13)
-    f.text((x1, y0 - 0.42), sbn('q', '1', ' − ½', 13), size=13)
-    f.dot(p, fill=BLUE)
-    f.dot(q, fill=GREEN)
-    f.text(shift(p, (0, 0.16)), 'Q(p)', size=14, color=BLUE)
-    f.text(shift(q, (0, 0.16)), 'Q(q)', size=14, color=GREEN)
-    word(f, (-0.55, 1.35), '(1)', size=14)
-    # (2): the farthest corner.
-    cc = shift(o, c)
+    """Lemma 2.8 (2): every point of Q(c), c = (x, y), lies in the box
+    |p1| <= |x| + 1/2, |p2| <= |y| + 1/2, and the corner of Q(c) farthest
+    from the origin is the corner of the box on the side of c."""
+    c = (-0.7, 0.62)
+    B, C = abs(c[0]) + 0.5, abs(c[1]) + 0.5
+    corner = (-B, C)
+    R = math.hypot(B, C) + 0.1
     far = max(square_corners(c), key=norm)
     assert abs(far[0] - corner[0]) < 1e-12 and abs(far[1] - corner[1]) < 1e-12
-    f.circle(o, R, stroke=INK, width=1.2, dash='6 4')
-    f.line(shift(o, (-R + 0.05, 0)), shift(o, (R - 0.05, 0)), stroke=FAINT,
-           width=1)
-    f.line(shift(o, (0, -R + 0.05)), shift(o, (0, R - 0.05)), stroke=FAINT,
-           width=1)
-    f.square(cc, fill=FILLS[0], stroke=BLUE)
-    f.dot(cc, fill=BLUE)
-    f.text(shift(cc, (0.1, -0.02)), 'c', color=BLUE, anchor='start')
-    fc = shift(o, corner)
-    f.line(o, (fc[0], o[1]), stroke=ORANGE, width=2.4)
-    f.line((fc[0], o[1]), fc, stroke=ORANGE, width=2.4)
-    f.line(o, fc, stroke=ORANGE, width=1.4, dash='5 3')
-    f.dot(fc, fill=ORANGE)
-    f.text(shift(o, (corner[0] / 2, -0.15)), '|x| + ½', size=13,
-           color=ORANGE)
-    vtext(f, shift(fc, (-0.12, -corner[1] / 2)), '|y| + ½', size=13,
-          color=ORANGE)
-    f.dot(o)
-    f.text(shift(o, (0.08, -0.13)), '0', anchor='start', size=14,
-           italic=False)
-    f.text(shift(o, u(rad(-35)), R + 0.02), 'R', size=14, anchor='start')
-    word(f, shift(o, (-R + 0.1, R - 0.05)), '(2)', size=14)
-    f.save('02-preliminaries/axis-lemma', 'Left: two axis-parallel squares whose centres '
-           'differ by more than 1 across lie on either side of a vertical '
-           'line. Right: the corner of Q(c) farthest from the origin is |x| + '
-           '1/2 across and |y| + 1/2 up')
+    assert all(abs(p[0]) <= B + 1e-12 and abs(p[1]) <= C + 1e-12
+               for p in square_corners(c))
+    assert norm(corner) <= R
+    s = 110
+    f = Figure(-R - 0.08, R + 0.12, -R - 0.08, R + 0.08, s)
+    f.circle((0, 0), R, stroke=INK, width=1.2, dash='6 4')
+    f.line((-R + 0.05, 0), (R - 0.05, 0), stroke=FAINT, width=1)
+    f.line((0, -R + 0.05), (0, R - 0.05), stroke=FAINT, width=1)
+    f.polygon([(-B, -C), (B, -C), (B, C), (-B, C)], stroke=FAINT, width=1.4)
+    f.square(c, fill=FILLS[0], stroke=BLUE)
+    f.dot(c, fill=BLUE)
+    f.text(shift(c, (-0.08, -0.1)), 'c', color=BLUE, anchor='end')
+    f.text((-0.42, 0.93), 'Q(c)', color=BLUE, size=14)
+    f.line((0, 0), (-B, 0), stroke=ORANGE, width=2.4)
+    f.line((-B, 0), corner, stroke=ORANGE, width=2.4)
+    f.line((0, 0), corner, stroke=ORANGE, width=1.4, dash='5 3')
+    f.dot(corner, fill=ORANGE)
+    f.text((-B / 2, -0.15), '|x| + ½', size=13, color=ORANGE)
+    vtext(f, (-B - 0.13, C / 2), '|y| + ½', size=13, color=ORANGE)
+    t = rad(-50)
+    f.line((0, 0), shift((0, 0), u(t), R), width=1)
+    f.text(shift(shift((0, 0), u(t), 0.62 * R), u(t + math.pi / 2), 0.12),
+           'R', size=14)
+    f.dot((0, 0))
+    f.text((0.08, 0.13), '0', anchor='start', size=14, italic=False)
+    f.save('02-preliminaries/axis-lemma', 'An axis-parallel square Q(c) with '
+           'c = (x, y) in the second quadrant, inside the box where the first '
+           'coordinate is at most |x| + 1/2 and the second at most |y| + 1/2 '
+           'in absolute value; its farthest corner from the origin is the '
+           'corner of the box, |x| + 1/2 across and |y| + 1/2 up, inside the '
+           'dashed circle of radius R')
 
 
 def lower_bound():
@@ -935,7 +953,12 @@ def scheme():
                3: ((-1, -13 / 16), '1 + 169/256 = 425/256'),
                4: ((1, 1), '1 + 1 = 2'),
                5: ((1.5, 0.5), '9/4 + ¼ = 5/2'),
-               6: ((S6 + 1.5, S6 + 0.5), '(s*+3/2)² + (s*+½)² = q*'),
+               6: ((S6 + 1.5, S6 + 0.5),
+                   '(' + sb(it('s'), '*', NB + '+' + NB + '3/2)²' + NB + '+'
+                            + NB + '(', 12)
+                   + sb(it('s'), '*', NB + '+' + NB + '½)²' + NB + '=' + NB,
+                        12)
+                   + sb(it('q'), '*', size=12)),
                7: ((1.5, -1), '9/4 + 1 = 13/4')}
     gap, s = 0.62, 56
     rows = [(1, 2, 3, 4), (5, 6, 7)]
@@ -969,6 +992,242 @@ def scheme():
            'distance from the centre, which equals R_n squared')
 
 
+# --------------------------------------------- chapters 1 and 2, added
+
+def disk_constraint():
+    """The disk constraint at the radius root 2 of four squares. Left: a
+    square S with the offsets (a_S, b_S) = (0.62, 0.25) of o, and its vertex
+    farthest from o, at distance root phi(a_S, b_S). Right: the pair
+    (a_S, b_S) in the disk phi <= 2 of the (a, b)-plane, and the tangent
+    a + b = 1 at (1/2, 1/2)."""
+    R, s = math.sqrt(2), 96
+    a, b, deg = 0.62, 0.25, 25
+    e1, e2 = u(rad(deg)), u(rad(deg + 90))
+    c = shift(shift((0, 0), e1, a), e2, b)
+    v = shift(shift(c, e1, 0.5), e2, 0.5)
+    # Definition 3.1 and Lemma 3.4: the offsets of o from c, and the
+    # farthest vertex, at squared distance phi(a, b) <= 2 from o.
+    X, Y = dot2((-c[0], -c[1]), e1), dot2((-c[0], -c[1]), e2)
+    assert abs(max(abs(X), abs(Y)) - a) < 1e-12
+    assert abs(min(abs(X), abs(Y)) - b) < 1e-12
+    far = max(square_corners(c, deg), key=norm)
+    assert norm((far[0] - v[0], far[1] - v[1])) < 1e-12
+    assert abs(norm(v) ** 2 - phi_ab(a, b)) < 1e-12 and phi_ab(a, b) <= 2
+    assert a + b < 1
+    # The (a, b)-plane: the pair (x, y) is drawn at A + k (x, y).
+    k, A = 2.0, (R + 0.75, -1.12)
+    P = lambda x, y: (A[0] + k * x, A[1] + k * y)
+    top = 1.22
+    f = Figure(-R - 0.06, P(top, 0)[0] + 0.12, -R - 0.06, R + 0.06, s)
+    # Left: the square in the disk. F maps frame coordinates of S, with
+    # origin o, to the plane.
+    F = lambda x, y: shift(shift((0, 0), e1, x), e2, y)
+    f.circle((0, 0), R, stroke=INK, width=1.2, dash='6 4')
+    t = rad(205)
+    f.line((0, 0), shift((0, 0), u(t), R), width=1)
+    f.text(shift(shift((0, 0), u(t), 0.6 * R), u(t + math.pi / 2), -0.13),
+           'R', size=15)
+    f.square(c, deg, fill=FILLS[0], stroke=BLUE)
+    f.text(F(a + 0.3, b - 0.3), 'S', size=17, color=BLUE)
+    # The path from o to c_S: a_S along e1, then b_S along e2. The segment
+    # to the farthest vertex runs above it.
+    assert (b + 0.5) / (a + 0.5) > b / a
+    f.line((0, 0), F(a, 0), stroke=ORANGE, width=2.4)
+    f.line(F(a, 0), c, stroke=ORANGE, width=2.4)
+    f.text(F(a / 2, -0.12), sbn('a', 'S', size=14), size=14, color=ORANGE)
+    f.text(F(a - 0.06, b / 2), sbn('b', 'S', size=14), size=14,
+           color=ORANGE, anchor='end')
+    f.line((0, 0), v, width=1.4, dash='5 3')
+    f.dot(v, r=4)
+    # The length of the segment, written along it.
+    x, y = f.p(*shift(shift((0, 0), v, 0.58), (-v[1], v[0]), 0.14 / norm(v)))
+    turn = -math.degrees(math.atan2(v[1], v[0]))
+    f.add(f'<text x="{x:.1f}" y="{y:.1f}" transform="rotate({turn:.1f} '
+          f'{x:.1f} {y:.1f})" font-size="14" font-family="Georgia, '
+          f'\'Times New Roman\', serif" fill="{INK}" text-anchor="middle" '
+          f'dominant-baseline="middle" font-style="italic">√φ('
+          + sb('a', 'S', ',' + NB, 14) + sb('b', 'S', ')', 14) + '</text>')
+    f.dot(c, fill=BLUE)
+    f.text(F(a + 0.07, b - 0.04), sbn('c', 'S', size=14), size=14,
+           color=BLUE, anchor='start')
+    f.dot((0, 0))
+    f.text((-0.05, -0.1), 'o', anchor='end')
+    # Right: the (a, b)-plane.
+    region = quadrant_disk(2.0, 120)
+    f.polygon([P(*x) for x in region], fill=FILLS[0], stroke=BLUE, width=1.4)
+    f.line(P(0, 0), P(top - 0.05, top - 0.05), stroke=FAINT, width=1,
+           dash='2 3')
+    tangent = [(x, 1 - x) for x in (-0.06, 1.06)]
+    f.line(P(*tangent[0]), P(*tangent[1]), width=1.2, dash='6 4')
+    for x, y in region[1:]:
+        assert x + y <= 1 + 1e-12
+    f.dot(P(0.5, 0.5), r=3.4)
+    f.text(shift(P(0.06, 1.0), (0.05, 0.02)), it('a') + NB + '+' + NB +
+           it('b') + NB + '=' + NB + '1', size=14, italic=False,
+           anchor='start')
+    f.text(P(0.15, 0.5), 'φ ≤ 2', size=14, color=BLUE)
+    f.dot(P(a, b), r=4, fill=ORANGE)
+    # Below the diagonal and inside the arc, left of the point.
+    f.text(shift(P(a, b), (-0.1, -0.1)),
+           '(' + sb('a', 'S', ',' + NB, 14) + sb('b', 'S', ')', 14),
+           size=14, color=ORANGE, anchor='end')
+    f.line(P(-0.06, 0), P(top, 0), width=1)
+    f.line(P(0, -0.06), P(0, top), width=1)
+    arrowhead(f, P(top + 0.02, 0), P(0, 0), size=8)
+    arrowhead(f, P(0, top + 0.02), P(0, 0), size=8)
+    f.text(shift(P(top, 0), (0, -0.16)), 'a', anchor='end', size=15)
+    f.text(shift(P(0, top), (-0.1, -0.02)), 'b', anchor='end', size=15)
+    f.text(shift(P(0, 0), (-0.08, -0.13)), '0', size=13, italic=False,
+           anchor='end')
+    f.save('01-introduction/disk-constraint', 'Left: a square S in the dashed '
+           'circle of radius R = root 2 about o; from the centre of S, o is '
+           'a_S along one axis and b_S along the other, and the vertex '
+           'farthest from o is at distance root phi(a_S, b_S). Right: the '
+           'pair (a_S, b_S) in the part of the disk phi at most 2 where a and '
+           'b are nonnegative, with the dashed tangent a + b = 1 at '
+           '(1/2, 1/2)')
+
+
+def two_squares():
+    """Two squares at the radius root 5 over 2: both centres lie in the
+    closed disk of radius 1/2 about o and are at least 1 apart, so they are
+    the ends of a diameter, and each square holds the half of the circle of
+    radius 1/2 on its side."""
+    R2, r, s = math.sqrt(5) / 2, 0.5, 150
+    cs, ct = (0.5, 0.0), (-0.5, 0.0)
+    for c in (cs, ct):
+        assert phi_ab(abs(c[0]), abs(c[1])) <= R2 ** 2 + 1e-12
+        assert abs(norm(c) - r) < 1e-12
+    assert abs(norm((cs[0] - ct[0], cs[1] - ct[1])) - 2 * r) < 1e-12
+    f = Figure(-R2 - 0.06, R2 + 0.06, -R2 - 0.06, R2 + 0.06, s)
+    f.circle((0, 0), R2, stroke=INK, width=1.2, dash='6 4')
+    f.text(shift((0, 0), u(rad(118)), R2 + 0.1), sbn('R', '2', size=15),
+           size=15)
+    f.square(cs, fill=FILLS[0], stroke=BLUE)
+    f.square(ct, fill=FILLS[2], stroke=GREEN)
+    for c, col in ((cs, BLUE), (ct, GREEN)):
+        runs = arcs_in(lambda p: in_open_square(p, c), r)
+        assert len(runs) == 1 and abs(runs[0][1] - runs[0][0] - math.pi) < 0.01
+        f.arc((0, 0), r, runs[0][0], runs[0][1], col, width=5)
+    f.line(ct, cs, width=1.3)
+    f.text((0.25, 0.08), '1', size=14, italic=False)
+    for c, col, name, side in ((cs, BLUE, 'S', 1), (ct, GREEN, 'T', -1)):
+        f.dot(c, r=4.2)
+        f.text(shift(c, (0.12 * side, -0.13)), sbn('c', name, size=14),
+               size=14, color=col)
+        f.text(shift(c, (0.25 * side, 0.27)), name, size=17, color=col)
+    f.text(shift((0, 0), u(rad(116)), r + 0.25), sb('Γ', '1/2', size=14),
+           size=14)
+    f.dot((0, 0))
+    f.text((-0.05, -0.1), 'o', anchor='end')
+    f.save('01-introduction/two', 'Two squares S and T forming a 2 by 1 '
+           'rectangle in the dashed circle of radius root 5 over 2 about o; '
+           'their centres lie on the circle of radius 1/2 about o, at the ends '
+           'of a diameter of length 1, and the two halves of that circle are '
+           'drawn thick, the right half in S and the left half in T')
+
+
+def six_pins():
+    """Six squares, steps 1 and 2: on the circle of radius 9/10 the five
+    squares that avoid o hold arcs of more than a sixth of the circle, so
+    the sixth square contains o; the five pins name the other squares."""
+    centers, R, _ = MODELS[6]
+    names = ['C', 'N', 'E', 'W', 'S', 'D']
+    fills = [GREY] + FILLS[1:6]
+    strokes = [FAINT] + COLORS[1:6]
+    pins = {'E': 0.0, 'N': math.pi / 2, 'W': 11 * math.pi / 12,
+            'D': 5 * math.pi / 4, 'S': 19 * math.pi / 12}
+    r, s = 0.9, 128
+    f = Figure(-R - 0.06, R + 0.06, -R - 0.06, R + 0.06, s)
+    draw_model(f, centers, R, fills=fills, strokes=strokes, touch=False)
+    f.circle((0, 0), r, stroke=INK, width=1.1, dash='1.5 3')
+    total = 0.0
+    for name, c, col in zip(names, centers, strokes):
+        c, deg = placed(c)
+        member = lambda p: in_open_square(p, c, deg)
+        if name == 'C':
+            assert member((0, 0)) and not arcs_in(member, r)
+            continue
+        assert not member((0, 0))
+        run = longest(arcs_in(member, r))
+        assert run[1] - run[0] > math.pi / 3
+        total += run[1] - run[0]
+        f.arc((0, 0), r, run[0], run[1], col, width=5)
+        assert member(shift((0, 0), u(pins[name]), r))
+    assert total > 5 * math.pi / 3 and 2 * math.pi - total < math.pi / 3
+    for name, c, col in zip(names, centers, strokes):
+        c, deg = placed(c)
+        if name != 'C':
+            f.dot(shift((0, 0), u(pins[name]), r), r=4)
+        # The names sit beyond the pins, away from o.
+        pos = {'C': (0.33, 0.33), 'D': (-0.27, -0.27)}.get(name, (0, 0))
+        f.text(shift(c, pos), name, size=17, color=col)
+    f.text((0.06, -0.11), 'o', anchor='start')
+    # In the white corner between N and E, where the circle is dotted.
+    f.text(shift((0, 0), u(rad(45)), 1.08), sb('Γ', '9/10', size=14),
+           size=14)
+    f.save('01-introduction/pins', 'The optimal packing of six squares with '
+           'the dotted circle of radius 9/10 about o: each of the five '
+           'squares that avoid o holds a thick arc of more than a sixth of '
+           'it, the grey square C contains o, and five dots, the pins, lie '
+           'one in each of the squares E, N, W, D and S')
+
+
+def reflection():
+    """The remark after Definition 2.6 for the T: the mirror image of a
+    packing congruent to the T is again congruent to the T, with the two
+    lower squares exchanged."""
+    centers, R, _ = MODELS[3]
+    phi, lam = rad(35), rad(100)
+    psi = 2 * lam - phi + math.pi
+    names = ['2', '3', '1']
+    tau = [1, 0, 2]
+    mirror = lambda p: rotate((p[0], -p[1]), 2 * lam)
+    step = 2 * R + 0.75
+    o2 = (step, 0.0)
+    f = Figure(-R - 0.08, step + R + 0.08, -R - 0.2, R + 0.1, 112)
+    for k, c in enumerate(centers):
+        # The mirror image of the square in the slot c_k is the square of
+        # the model at c_tau(k), turned by psi about o.
+        image = sorted(mirror(rotate(x, phi)) for x in square_corners(c))
+        model = sorted(rotate(x, psi) for x in square_corners(centers[tau[k]]))
+        assert all(norm((p[0] - q[0], p[1] - q[1])) < 1e-9
+                   for p, q in zip(image, model))
+    for at, turn, slot_names in ((0, phi, names),
+                                 (1, psi, [names[t] for t in tau])):
+        o = (at * step, 0.0)
+        f.circle(o, R, stroke=INK, width=1.2, dash='6 4')
+        for t in (turn, turn + math.pi / 2):
+            f.line(shift(o, u(t), -1.25), shift(o, u(t), 1.25), stroke=FAINT,
+                   width=1)
+        for j, c in enumerate(centers):
+            name = slot_names[j]
+            col = names.index(name)
+            f.polygon([shift(o, rotate(x, turn)) for x in square_corners(c)],
+                      fill=FILLS[col], stroke=COLORS[col])
+        for j, c in enumerate(centers):
+            name = slot_names[j]
+            col = names.index(name)
+            f.text(shift(o, rotate(shift(c, (0, 0.17)), turn)),
+                   sbn('S', name, size=16), size=16, color=COLORS[col])
+            f.dot(shift(o, rotate(c, turn)))
+            f.text(shift(o, rotate(shift(c, (0, -0.15)), turn)),
+                   sbn('c', str(j + 1), size=14), size=14)
+        f.line(shift(o, u(lam), -R - 0.05), shift(o, u(lam), R + 0.05),
+               stroke=PURPLE, width=1.6, dash='7 4')
+        f.text(shift(o, u(lam + math.pi), R + 0.1), 'L', size=16,
+               color=PURPLE, anchor='start', dx=6)
+        f.dot(o)
+        f.text(shift(o, (0.06, -0.1)), 'o', anchor='start', size=14)
+    arrow(f, (R + 0.12, R - 0.05), (step - R - 0.12, R - 0.05), width=1.6)
+    word(f, (step / 2, R + 0.08), 'mirror in ' + it('L'), size=14)
+    f.save('02-preliminaries/reflection', 'Left: the packing congruent to the '
+           'T of the previous figure and a dashed line L through o. Right: '
+           'its mirror image in L, which is again the T, turned about o by '
+           'another angle, with the squares S3, S2, S1 at the points c1, c2, '
+           'c3')
+
+
 # -------------------------------------------------------------- chapter 3
 
 def tangent_line(u0, v0):
@@ -990,7 +1249,7 @@ def contact_polygons():
              ('five squares', 2.5, [(1, 0), (0, 1), (g, g)],
               sbn('P', '5', size=16), 'φ ≤ 5/2', (0.72, 0.72))]
     top, step = 1.2, 1.55
-    f = Figure(-0.12, 2 * step + top, -0.3, top + 0.2, 155)
+    f = Figure(-0.12, 2 * step + top, -0.3, top + 0.2, 175)
     for k, (title, K, points, name, disk, where) in enumerate(cases):
         at = (k * step, 0)
         poly = [(0, 0), (2, 0), (2, 2), (0, 2)]
@@ -1078,8 +1337,10 @@ def support_proof():
             f.line((x, h - 0.04), (x, h + 0.04), stroke=col, width=1.6)
         f.text(((lo + hi) / 2, h + 0.12), s_, size=13, color=col)
     f.text((kappa, 0.92), 'κ', size=15)
-    f.text((-1.15, -0.45), 'S', size=17, color=BLUE)
-    f.text((1.45, -0.45), 'T', size=17, color=GREEN)
+    for c, deg, at, name, col in ((s[0], s[1], (-1.0, -0.33), 'S', BLUE),
+                                  (t[0], t[1], (1.2, -0.2), 'T', GREEN)):
+        assert in_open_square(at, c, deg)
+        f.text(at, name, size=17, color=col)
     f.save('03-tools/support-proof', 'Two disjoint squares, a separating line, '
            'and the segments from each centre to its extreme vertex in the '
            'direction n; test points a fraction t of the way lie in the open '
@@ -1119,7 +1380,7 @@ def lengths():
         else:
             assert abs(q) < 1e-12 and abs(abs(p) - 1) < 1e-12
             f.line(c, corner, stroke=ORANGE, width=4.2)
-            f.text(shift(shift(c, e1, 0.5), e2, -0.12), 'p', color=ORANGE)
+            f.text(shift(shift(c, e1, 0.3), e2, -0.13), 'p', color=ORANGE)
             word(f, (2.6, -0.92), it('q') + ' = 0, |' + it('p') + '| = |' +
                  it('n') + '|', size=13)
         arrow(f, c, tip, color=INK, width=1.6)
@@ -1210,7 +1471,7 @@ def centre_slab():
     f.text(shift(cs, (-0.05, 0.12)), sb('c', 'S'), anchor='end', color=BLUE)
     f.text(shift(cs, (-0.3, -0.3)), 'S', size=16, color=BLUE)
     f.dot(o)
-    f.text(shift(o, (0.06, -0.06)), 'o', anchor='start')
+    f.text(shift(o, (-0.06, 0.06)), 'o', anchor='end')
     arrow(f, (0.0, 1.08), (W, 1.08), color=ORANGE, width=1.4)
     f.text((W / 2, 1.2), sbn('w', 'S', '(n) + ') + sbn('w', 'T', '(n) ≥ 1'),
            size=13, color=ORANGE)
@@ -1317,7 +1578,8 @@ def perimeter():
     d_uw = min(abs(xs[2] - xs[0]), 2 * math.pi - abs(xs[2] - xs[0]))
     assert d_uw < gaps[2][1] - gaps[2][0]
     thin_arc(f, (0, 0), 0.42, xs[0], xs[2], color=ORANGE, width=1.6)
-    f.text(shift((0, 0), u((xs[0] + xs[2]) / 2), 0.62),
+    # The label between the radii to x_V and x_W, clear of both.
+    f.text(shift((0, 0), u((xs[1] + xs[2]) / 2), 0.62),
            'd(' + sbn('θ', 'U', ', ', 13) + sbn('θ', 'W', ')', 13), size=13,
            color=ORANGE)
     f.dot((0, 0))
@@ -1347,7 +1609,8 @@ def gaps_figure():
         col = ORANGE if k < m - 1 else PURPLE
         f.arc((0, 0), 1, p + 0.05, p + g - 0.05, col, width=3)
     f.dot((0, 0))
-    f.text((0.05, -0.1), 'o', anchor='start')
+    # The label o between the radii to p1 and p2.
+    f.text(shift((0, 0), u(ps[1] + g / 2), 0.22), 'o', size=14)
     # Unrolled: from p0 to p0 + 2 pi.
     X = lambda t: 1.9 + (t - p0) / (2 * math.pi) * 4.6
     y0 = 0.0
@@ -1361,8 +1624,8 @@ def gaps_figure():
         col = ORANGE if k < m - 1 else PURPLE
         a, b = X(p) + 0.04, X(p + g) - 0.04
         f.line((a, y0 + 0.2), (b, y0 + 0.2), stroke=col, width=3)
-        f.text(((a + b) / 2, y0 + 0.4), '≥ g', size=13, color=col,
-               italic=False)
+        f.text(((a + b) / 2, y0 + 0.4), '≥ ' + it('g'), size=13,
+               color=col, italic=False)
     f.save('03-tools/gaps', 'Six directions pairwise at least g = pi/3 apart, '
            'on the circle and unrolled onto the line from p0 to p0 + 2 pi: '
            'six gaps of at least g add up to 2 pi, so each is exactly g')
@@ -1381,6 +1644,18 @@ def chart_moves():
              ('exchange', alpha + math.pi / 2, -1, (Y, X), ('Y', 'X'))]
     heads = ['(θ, ε)', '(θ, −ε)', '(θ + π, ε)', '(θ + επ/2, −ε)']
     w, h = 3.2, 3.05
+
+    def clearance(p, x, y):
+        """Distance in chart coordinates from p to the boundary of the
+        square centred at (x, y)."""
+        dx = max(x - 0.5 - p[0], p[0] - x - 0.5)
+        dy = max(y - 0.5 - p[1], p[1] - y - 0.5)
+        return (-max(dx, dy) if dx < 0 and dy < 0
+                else math.hypot(max(dx, 0), max(dy, 0)))
+
+    def leg_label(points, x, y):
+        return next(p for p in points if clearance(p, x, y) >= 0.17)
+
     f = Figure(0, 2 * w, -2 * h, 0, 96)
     for k, ((title, theta, eps, (x, y), names), head) in enumerate(
             zip(moves, heads)):
@@ -1389,17 +1664,21 @@ def chart_moves():
         cc = shift(at, c)
         f.square(cc, deg, fill=FILLS[0], stroke=BLUE)
         a1, a2 = chart_axes(f, at, theta, eps)
-        f.text(shift(at, a1, 1.37), 't = 0', size=12, italic=False)
-        f.text(shift(at, a2, 1.2), 't = π/2', size=12, italic=False)
+        chart = lambda p: shift(shift(at, a1, p[0]), a2, p[1])
+        # Each axis label goes beyond the square if the axis runs into it.
+        f.text(shift(at, a1, 1.6 if abs(y) < 0.5 and x > 0 else 1.37),
+               it('t') + ' = 0', size=12, italic=False)
+        f.text(shift(at, a2, 1.6 if abs(x) < 0.5 and y > 0 else 1.2),
+               it('t') + ' = π/2', size=12, italic=False)
         q = shift(at, a1, x)
         f.line(at, q, stroke=ORANGE, width=2.6)
         f.line(q, cc, stroke=ORANGE, width=2.6)
-        n1 = (a2[0] * (-1 if y > 0 else 1), a2[1] * (-1 if y > 0 else 1))
-        f.text(shift(shift(at, a1, x / 2), n1, 0.2), names[0], size=14,
-               color=ORANGE)
-        n2 = (a1[0] * (1 if x > 0 else -1), a1[1] * (1 if x > 0 else -1))
-        f.text(shift(shift(q, a2, y / 2), n2, 0.17), names[1], size=14,
-               color=ORANGE)
+        # Leg labels on the side away from the square, clear of its edges.
+        s1, s2 = (-0.3 if y > 0 else 0.3), (0.17 if x > 0 else -0.17)
+        p1 = leg_label([(x * t, s1) for t in (0.5, 0.65, 0.35)], x, y)
+        p2 = leg_label([(x + s2, y * t) for t in (0.5, 0.3, 0.2)], x, y)
+        f.text(chart(p1), names[0], size=14, color=ORANGE)
+        f.text(chart(p2), names[1], size=14, color=ORANGE)
         f.dot(at)
         f.text(shift(at, (-0.1, -0.12)), 'o', size=14)
         f.dot(cc, fill=BLUE)
@@ -1434,16 +1713,18 @@ def cartesian():
         if eps < 0:
             arrow(f, at, shift(at, u(theta - math.pi / 2), 0.95),
                   color=ORANGE, width=1.3, size=8, dash='4 3')
-            f.text(shift(at, u(theta - math.pi / 2), 1.1), 't = π/2',
-                   size=12, italic=False, color=ORANGE)
+            f.text(shift(at, u(theta - math.pi / 2), 1.1),
+                   it('t') + ' = π/2', size=12, italic=False, color=ORANGE)
         arc_arrow(f, at, 0.3, theta + eps * 0.2,
                   theta + eps * (math.pi / 2 - 0.2), color=ORANGE, width=1.2,
                   size=7)
         q = shift(at, u(theta), a)
         f.line(at, q, stroke=ORANGE, width=2.6)
         f.line(q, cc, stroke=ORANGE, width=2.6)
+        # The label a_S on the side of the first leg away from the square,
+        # below the corner of the square that pokes across it.
         side = u(theta - math.pi / 2) if eps > 0 else u(theta + math.pi / 2)
-        f.text(shift(shift(at, u(theta), a / 2), side, 0.15), sbn('a', 'S'),
+        f.text(shift(shift(at, u(theta), a / 2), side, 0.36), sbn('a', 'S'),
                size=14, color=ORANGE)
         f.text(shift(shift(q, u(theta + math.pi / 2), eps * b / 2),
                      u(theta), 0.1),
@@ -1452,8 +1733,9 @@ def cartesian():
         f.dot(at)
         f.text(shift(at, (-0.08, -0.13)), 'o', size=14)
         f.dot(cc, fill=BLUE)
-        title = 'orientation ' + it(sbn('ε', 'S', ' = +1' if eps > 0
-                                        else ' = −1', 14))
+        title = ('orientation ' + it(sbn('ε', 'S', size=14)) +
+                 f'<tspan dy="{-0.3 * 14:.1f}">{NB}={NB}' +
+                 ('+1' if eps > 0 else '−1') + '</tspan>')
         f.text((at[0] + 0.45, 1.62), title, size=14, italic=False)
     f.save('03-tools/cartesian', 'A square with a chart of phase theta and '
            'orientation +1 or -1, and the frame theta at o: the centre is at '
@@ -1467,10 +1749,12 @@ def caps():
               'the full cap', 0.45, 0.75, 0.1),
              (it(sbn('V', 'S', ' &lt; ', 13)) + it(sbn('A', 'S', ':', 13)) + NB +
               'the lower edge clips it', 0.45, 0.7, 0.35),
-             (it(sbn('a', 'S', ' = ½:', 13)) + NB + 'a half circle', 0.3, 0.5,
-              0.15)]
+             (it(sbn('a', 'S', size=13)) + f'<tspan dy="{-0.3 * 13:.1f}">'
+              f'{NB}={NB}½:{NB}a half circle</tspan>', 0.3, 0.5, 0.15)]
     step = 2.0
-    f = Figure(-0.62, 2 * step + 1.35, -0.72, 1.1, 118)
+    f = Figure(-0.62, 2 * step + 1.35, -0.72, 1.1, 140)
+    # The chart angles of the two ends of each cap.
+    ends = [('', 'A', '−', 'A'), ('', 'A', '−', 'V'), ('π/2', '', '−π/2', '')]
     for k, (title, r, a, b) in enumerate(cases):
         at = (k * step, 0)
         A = math.acos((a - 0.5) / r)
@@ -1501,13 +1785,21 @@ def caps():
         for t in (lo, hi):
             f.line(at, shift(at, u(t), r), width=1)
             f.dot(shift(at, u(t), r), r=3.2)
-        if k < 2:
-            thin_arc(f, at, 0.13, 0, A)
-            f.text(shift(at, u(A / 2), 0.21), sbn('A', 'S', size=13), size=13)
-            thin_arc(f, at, 0.17, -min(A, V), 0)
-            f.text(shift(at, u(-min(A, V) / 2), 0.27),
-                   sbn('A', 'S', size=13) if k == 0 else
-                   sbn('V', 'S', size=13), size=13)
+        # Each end of the cap labelled with its chart angle: left of the
+        # near edge, or below the lower edge for the clipped cap.
+        pre_hi, name_hi, pre_lo, name_lo = ends[k]
+        mark = (lambda pre, name: pre + sbn(name, 'S', size=13) if name
+                else pre)
+        f.text(shift(shift(at, u(hi), r), (-0.08, 0.14)),
+               mark(pre_hi, name_hi), size=13, anchor='end',
+               italic=bool(name_hi))
+        if name_lo == 'V':
+            f.text(shift(shift(at, u(lo), r), (0.05, -0.12)),
+                   mark(pre_lo, name_lo), size=13, anchor='start')
+        else:
+            f.text(shift(shift(at, u(lo), r), (-0.08, -0.14)),
+                   mark(pre_lo, name_lo), size=13, anchor='end',
+                   italic=bool(name_lo))
         f.dot(at)
         f.text(shift(at, (-0.05, 0.08)), 'o', anchor='end', size=14)
         f.dot(shift(at, (a, b)), fill=BLUE)
@@ -1519,27 +1811,39 @@ def caps():
 
 
 def estimates():
-    """Lemma 3.29 (2), (3) and (5): arcsin between x and x + x^3/4, and the
-    cosine at least cos(pi/5) = (1 + sqrt 5)/4 on [-pi/5, pi/5]."""
-    f = Figure(-0.35, 6.45, -0.55, 3.05, 100)
-    # (2) and (3) on [0, 1].
-    P = Plot(f, 0, 0, 2.86, 2.72, (0, 1.1), (0, math.pi / 2 + 0.07))
+    """Lemma 3.29 (2), (3) and (5): 0 <= arcsin x - x <= x^3/4 on [0, 3/5],
+    and the cosine at least cos(pi/5) = (1 + sqrt 5)/4 on [-pi/5, pi/5]."""
+    f = Figure(-0.42, 6.45, -0.55, 3.05, 100)
+    # (2) and (3) on [0, 3/5], as differences from x:
+    # 0 <= arcsin x - x <= x^3/4, with the margin at x = 3/5.
+    top = 0.085
+    P = Plot(f, 0, 0, 2.86, 2.72, (0, 0.8), (0, top))
+    g = lambda x: math.asin(x) - x
     for k in range(101):
         x = k / 100
-        assert x <= math.asin(x) + 1e-15
+        assert 0 <= g(x) + 1e-15
         if x <= 0.6:
-            assert math.asin(x) <= x + x ** 3 / 4 + 1e-15
-    P.curve(lambda x: x, 0, 1, stroke=FAINT, width=1.6)
-    P.curve(lambda x: x + x ** 3 / 4, 0, 0.6, stroke=ORANGE, width=2)
-    P.curve(lambda x: x + x ** 3 / 4, 0.6, 1, stroke=ORANGE, width=1.4,
-            dash='4 4')
-    P.curve(math.asin, 0, 1, n=600, stroke=BLUE, width=2.2)
-    f.line(P.P(0.6, 0), P.P(0.6, 0.75), stroke=INK, width=1, dash='2 3')
-    P.axes('x', '', [(0.6, '3/5'), (1, '1')], [(math.pi / 2, 'π/2')])
-    word(f, P.P(0.88, 1.5), 'arcsin ' + it('x'), size=13, color=BLUE)
-    word(f, P.P(0.95, 0.83), it('x'), size=13, color=FAINT)
-    f.text(P.P(0.47, 0.72), 'x + ' + '<tspan font-size="11">x³/4</tspan>',
-           size=13, color=ORANGE, anchor='end')
+            assert g(x) <= x ** 3 / 4 + 1e-15
+
+    def reach(fn, y, lo=0.0, hi=1.0):
+        """The x in [lo, hi] where the increasing fn reaches y."""
+        for _ in range(60):
+            mid = (lo + hi) / 2
+            lo, hi = (mid, hi) if fn(mid) < y else (lo, mid)
+        return lo
+
+    P.curve(lambda x: x ** 3 / 4, 0, 0.6, stroke=ORANGE, width=2)
+    P.curve(lambda x: x ** 3 / 4, 0.6, reach(lambda x: x ** 3 / 4, top),
+            stroke=ORANGE, width=1.4, dash='4 4')
+    P.curve(g, 0, reach(g, top), n=400, stroke=BLUE, width=2.2)
+    f.line(P.P(0.6, 0), P.P(0.6, 0.6 ** 3 / 4), stroke=INK, width=1,
+           dash='2 3')
+    f.dot(P.P(0.6, g(0.6)), r=3.2, fill=BLUE)
+    f.dot(P.P(0.6, 0.6 ** 3 / 4), r=3.2, fill=ORANGE)
+    P.axes('x', '', [(0.6, '3/5')], [(0.04, '0.04'), (0.08, '0.08')])
+    f.text(P.P(0.64, 0.045), 'arcsin ' + it('x') + ' − ' + it('x'), size=13,
+           color=BLUE, italic=False, anchor='start')
+    f.text(P.P(0.43, 0.029), 'x³/4', size=13, color=ORANGE, anchor='end')
     # (5): the cosine meets (1 + sqrt 5)/4 at -pi/5 and pi/5.
     t5 = math.pi / 5
     c5 = (1 + math.sqrt(5)) / 4
@@ -1638,7 +1942,8 @@ def quarter_turn():
            color=ORANGE)
     f.text(shift(shift((0, 0), a1, rc[0] / 2), a2, -0.14), '−' + sbn('c', '2'),
            size=14, color=GREEN)
-    f.text(shift(shift(q2, a2, rc[1] / 2), a1, -0.12), sbn('c', '1'),
+    # Below the square, which the green leg enters halfway up.
+    f.text(shift(shift(q2, a2, 0.25), a1, -0.12), sbn('c', '1'),
            size=14, color=GREEN, anchor='end')
     f.line((0, 0), (1.2, 0), stroke=FAINT, width=1, dash='3 3')
     thin_arc(f, (0, 0), 0.62, 0, phi)
@@ -1646,7 +1951,8 @@ def quarter_turn():
     f.dot((0, 0))
     f.text((0.08, -0.12), 'o', size=14)
     f.dot(centre, fill=BLUE)
-    f.text(shift(centre, (0.1, 0.1)), 'S', size=17, color=BLUE, anchor='start')
+    f.text(shift(shift(centre, a1, -0.28), a2, 0.27), 'S', size=17,
+           color=BLUE)
     f.save('03-tools/quarter-turn', 'A square sitting at c = (c1, c2) in the '
            'frame phi + pi/2, whose axes are y = x prime and y prime, sits at '
            '(-c2, c1) in the frame phi, whose axes are x and y')
@@ -1674,11 +1980,129 @@ def slots():
         f.dot(F(c), r=3)
         f.text(F(shift(c, (0.0, -0.17))), sbn('c', str(k + 1), size=13),
                size=13)
-    f.text(shift((0, 0), u(phi), 1.62), 'φ', size=14, anchor='start',
-           dx=4)
+    f.text(shift((0, 0), u(phi), 1.73), 'φ', size=14, anchor='start')
+    # The model point c1 = (0, 0) goes to the disk centre o.
+    assert centers[0] == (0, 0)
+    f.text(F((-0.12, 0.0)), 'o', size=14, anchor='end')
     f.save('03-tools/slots', 'The plus in the frame phi at o, with a square '
            'sitting at each of its five points: S1 at c3, S2 at c1, S3 at c5, '
            'S4 at c2 and S5 at c4')
+
+
+def centre_bound():
+    """Lemma 3.4 (2) and (3) for R^2 = 5/4, the case of two squares, where
+    rho = sqrt(R^2 - 1/4) - 1/2 = 1/2: the part of the disk phi <= 5/4 with
+    a, b >= 0 lies in the quarter disk a^2 + b^2 <= 1/4 and left of the line
+    a = 1/2."""
+    K = 1.25
+    rho = math.sqrt(K - 0.25) - 0.5
+    assert abs(rho - 0.5) < 1e-15
+    region = quadrant_disk(K, 200)
+    for a, b in region:
+        assert a <= rho + 1e-12 and a * a + b * b <= rho * rho + 1e-12
+    assert abs(phi_ab(rho, 0) - K) < 1e-12 and abs(phi_ab(0, rho) - K) < 1e-12
+    top = 0.65
+    f = Figure(-0.125, top + 0.06, -0.125, top + 0.04, 420)
+    f.polygon(region, fill=FILLS[0], stroke=BLUE, width=1.6)
+    thin_arc(f, (0, 0), rho, 0, math.pi / 2, color=ORANGE, width=2)
+    f.line((rho, -0.03), (rho, top - 0.025), width=1.2, dash='5 4')
+    f.line((-0.04, 0), (top, 0), width=1)
+    f.line((0, -0.04), (0, top), width=1)
+    arrowhead(f, (top + 0.02, 0), (0, 0), size=8)
+    arrowhead(f, (0, top + 0.02), (0, 0), size=8)
+    f.text((top, -0.05), 'a', anchor='end', size=14)
+    f.text((-0.035, top - 0.01), 'b', anchor='end', size=14)
+    for p in ((rho, 0), (0, rho)):
+        f.dot(p, r=3.6)
+    word(f, (rho, -0.06), '½', size=14)
+    word(f, (-0.04, rho), '½', size=14, anchor='end')
+    f.text((0.17, 0.15), 'φ ≤ 5/4', size=14, color=BLUE)
+    f.text(shift((0, 0), u(math.pi / 3), rho + 0.05), it('a') + '² + ' +
+           it('b') + '² ≤ ¼', size=14, color=ORANGE, italic=False,
+           anchor='start')
+    f.text((rho + 0.025, 0.52), it('a') + ' ≤ ½', size=14, italic=False,
+           anchor='start')
+    f.dot((0, 0), r=2.6)
+    f.save('03-tools/centre-bound', 'The (a, b)-plane: the part with a, b '
+           'at least 0 of the disk where phi is at most 5/4 lies in the '
+           'quarter disk a squared plus b squared at most 1/4, touching it at '
+           '(1/2, 0) and (0, 1/2), and left of the line a = 1/2')
+
+
+def chart_arc():
+    """Lemma 3.21 (2) for a chart with orientation -1: the chart angles in
+    (t1, t2) give the arc of directions theta - t, centred at
+    theta - (t1 + t2)/2."""
+    theta, eps, a, b, r = rad(35), -1, 0.8, 0.3, 0.55
+    c = shift(shift((0, 0), u(theta), a), u(theta + math.pi / 2), eps * b)
+    deg = math.degrees(theta)
+    check_chart(c, deg, theta, eps, a, b)
+    # The interval of chart angles: the run of the circle in Q(a, b).
+    runs = arcs_in(lambda p: in_open_square(p, (a, b)), r, steps=14400)
+    t1, t2 = longest(runs)
+    t1, t2 = t1 - 2 * math.pi, t2 - 2 * math.pi
+    assert len(runs) == 1 and t1 < 0 < t2
+    # In the plane, the same points form the arc of directions theta + eps t.
+    runs = arcs_in(lambda p: in_open_square(p, c, deg), r, steps=14400)
+    p1, p2 = longest(runs)
+    same = lambda x, y: abs((x - y + math.pi) % (2 * math.pi) - math.pi) < 1e-3
+    assert same(p1, theta + eps * t2) and same(p2, theta + eps * t1)
+    mid = (t1 + t2) / 2
+    right = 3.2
+    f = Figure(-0.8, right + 2.05, -0.95, 1.4, 135)
+    # The plane.
+    word(f, (0.35, 1.32), 'the plane', size=14, color=FAINT)
+    f.square(c, deg, fill=FILLS[0], stroke=BLUE)
+    f.circle((0, 0), r)
+    f.arc((0, 0), r, p1, p2, ORANGE, width=5)
+    f.line((0, 0), shift((0, 0), u(theta), 1.45), width=1)
+    f.text(shift((0, 0), u(theta), 1.55), sbn('θ', 'S', size=14), size=14)
+    centre = theta + eps * mid
+    f.line((0, 0), shift((0, 0), u(centre), 1.47), width=1, dash='4 3')
+    f.text(shift((0, 0), u(centre), 1.52), sbn('θ', 'S', ' − (', 13) +
+           sbn('t', '1', ' + ', 13) + sbn('t', '2', ')/2', 13), size=13,
+           anchor='start')
+    for t in (p1, p2):
+        f.line((0, 0), shift((0, 0), u(t), r), width=1)
+        f.dot(shift((0, 0), u(t), r), r=3.2)
+    f.text(shift(shift((0, 0), u(p2), r), (-0.08, 0.17)),
+           sbn('θ', 'S', ' − ', 13) + sbn('t', '1', size=13), size=13,
+           anchor='end')
+    f.text(shift(shift((0, 0), u(p1), r), (-0.1, -0.07)),
+           sbn('θ', 'S', ' − ', 13) + sbn('t', '2', size=13), size=13,
+           anchor='end')
+    arc_arrow(f, (0, 0), 0.22, theta - 0.12, theta - 0.12 - 0.9,
+              color=ORANGE, width=1.2, size=7)
+    f.dot((0, 0))
+    f.text((-0.05, -0.09), 'o', anchor='end')
+    # The chart.
+    o2 = (right, 0)
+    word(f, (right + 0.5, 1.32), 'the chart', size=14, color=FAINT)
+    f.square(shift(o2, (a, b)), fill=FILLS[0], stroke=BLUE)
+    f.line(o2, shift(o2, (1.68, 0)), width=1)
+    f.text(shift(o2, (1.68, 0.08)), it('t') + ' = 0', size=12, italic=False,
+           anchor='end')
+    f.circle(o2, r)
+    f.arc(o2, r, t1, t2, ORANGE, width=5)
+    f.line(o2, shift(o2, u(mid), 1.42), width=1, dash='4 3')
+    f.text(shift(o2, u(mid), 1.47), '(' + sbn('t', '1', ' + ', 13) +
+           sbn('t', '2', ')/2', 13), size=13, anchor='start')
+    for t in (t1, t2):
+        f.line(o2, shift(o2, u(t), r), width=1)
+        f.dot(shift(o2, u(t), r), r=3.2)
+    f.text(shift(shift(o2, u(t1), r), (0.02, -0.12)), sbn('t', '1', size=14),
+           size=14, anchor='start')
+    f.text(shift(shift(o2, u(t2), r), (-0.04, 0.1)), sbn('t', '2', size=14),
+           size=14, anchor='end')
+    f.dot(o2)
+    f.text(shift(o2, (-0.05, -0.09)), 'o', anchor='end')
+    arrow(f, (1.6, -0.62), (2.3, -0.62), width=1.4)
+    word(f, (1.95, -0.77), 'turn by' + NB + '−' + it(sbn('θ', 'S', size=13)) +
+         f'<tspan dy="{-0.3 * 13:.1f}">, reflect</tspan>', size=13)
+    f.save('03-tools/chart-arc', 'A square with a chart of orientation -1, '
+           'in the plane and in its chart: the chart angles from t1 to t2 '
+           'give the arc of the circle from theta - t2 to theta - t1, centred '
+           'at theta - (t1 + t2)/2')
 
 
 def main():
@@ -1696,6 +2120,10 @@ def main():
     axis_lemma()
     lower_bound()
     scheme()
+    disk_constraint()
+    two_squares()
+    six_pins()
+    reflection()
     contact_polygons()
     support_proof()
     lengths()
@@ -1712,6 +2140,8 @@ def main():
     sine_concave()
     quarter_turn()
     slots()
+    centre_bound()
+    chart_arc()
 
 
 if __name__ == '__main__':

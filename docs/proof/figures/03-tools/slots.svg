@@ -24,5 +24,6 @@
 <text x="123.3" y="288.5" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#db2777" text-anchor="middle" dominant-baseline="middle" font-style="italic">S<tspan dy="5.1" font-size="11.6">5</tspan></text>
 <circle cx="131.4" cy="310.9" r="3" fill="#1f2937"/>
 <text x="139.6" y="333.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">c<tspan dy="3.9" font-size="8.8">4</tspan></text>
-<text x="480.1" y="185.4" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">φ</text>
+<text x="490.6" y="180.2" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">φ</text>
+<text x="247.2" y="268.7" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
 </svg>

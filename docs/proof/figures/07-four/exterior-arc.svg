@@ -16,14 +16,14 @@
 <line x1="146.1" y1="219.9" x2="135.4" y2="214.7" stroke="#1f2937" stroke-width="1"/>
 <circle cx="181.2" cy="293.4" r="3.2" fill="#1f2937"/>
 <circle cx="167.6" cy="149.1" r="3.2" fill="#1f2937"/>
-<text x="174.3" y="135.3" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">A<tspan dy="3.9" font-size="8.8">S</tspan></text>
-<text x="191.4" y="307.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">−V<tspan dy="3.9" font-size="8.8">S</tspan></text>
-<text x="154.7" y="252.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">A<tspan dy="3.9" font-size="8.8">S</tspan><tspan dy="-3.9"> − π/2</tspan></text>
+<text x="154.6" y="138.4" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">A<tspan dy="3.9" font-size="8.8">S</tspan></text>
+<text x="153.7" y="305.3" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">−V<tspan dy="3.9" font-size="8.8">S</tspan></text>
+<text x="103.7" y="255.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">A<tspan dy="3.9" font-size="8.8">S</tspan><tspan dy="-3.9"> − π/2</tspan></text>
 <text x="172.7" y="99.6" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">near edge</text>
 <text x="351.2" y="305.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">lower edge</text>
 <circle cx="130.2" cy="225.4" r="3.2" fill="#1f2937"/>
 <text x="123.4" y="215.2" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
-<text x="186.3" y="41.8" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">a<tspan dy="4.2" font-size="9.5">S</tspan><tspan dy="-4.2"> + </tspan>b<tspan dy="4.2" font-size="9.5">S</tspan><tspan dy="-4.2"> &lt; 1</tspan></text>
+<text x="153.3" y="41.8" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle"><tspan font-style="italic">a<tspan dy="4.2" font-size="9.5">S</tspan></tspan><tspan dy="-4.2"> + </tspan><tspan font-style="italic">b<tspan dy="4.2" font-size="9.5">S</tspan></tspan><tspan dy="-4.2"> &lt; 1</tspan></text>
 <line x1="386.9" y1="225.4" x2="682.7" y2="225.4" stroke="#9ca3af" stroke-width="1"/>
 <polygon points="495.7,225.4 665.7,225.4 665.7,55.4 495.7,55.4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
 <circle cx="580.7" cy="140.4" r="3.2" fill="#2563eb"/>
@@ -34,5 +34,5 @@
 <line x1="507.6" y1="213.5" x2="495.7" y2="213.5" stroke="#1f2937" stroke-width="1"/>
 <circle cx="495.7" cy="225.4" r="3.2" fill="#1f2937"/>
 <text x="488.9" y="237.3" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
-<text x="538.2" y="41.8" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">a<tspan dy="4.2" font-size="9.5">S</tspan><tspan dy="-4.2"> = </tspan>b<tspan dy="4.2" font-size="9.5">S</tspan><tspan dy="-4.2"> = ½</tspan></text>
+<text x="503.8" y="41.8" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle"><tspan font-style="italic">a<tspan dy="4.2" font-size="9.5">S</tspan></tspan><tspan dy="-4.2"> = </tspan><tspan font-style="italic">b<tspan dy="4.2" font-size="9.5">S</tspan></tspan><tspan dy="-4.2"> = ½</tspan></text>
 </svg>

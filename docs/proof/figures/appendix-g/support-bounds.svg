@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="770" height="379" viewBox="0 0 770 379" role="img" aria-label="Left: a square Q(a, b) with its centre in the dashed disk of radius root 3 minus 1/2 about o; for a direction u(z) its support line, at the level h(a, b, z), lies beyond the line at the level -37/50. Right: the square of the side state contains its marker arc; its support line in a direction u(z) lies beyond the parallel line through a point u(x) of the arc, at the level cos(z - x)">
+<title>Left: a square Q(a, b) with its centre in the dashed disk of radius root 3 minus 1/2 about o; for a direction u(z) its support line, at the level h(a, b, z), lies beyond the line at the level -37/50. Right: the square of the side state contains its marker arc; its support line in a direction u(z) lies beyond the parallel line through a point u(x) of the arc, at the level cos(z - x)</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<circle cx="180.4" cy="208.4" r="138.0" fill="none" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="5 4"/>
+<line x1="277.4" y1="264.4" x2="68.9" y2="144.0" stroke="#9ca3af" stroke-width="1"/>
+<polygon points="236.4,309.2 348.4,309.2 348.4,197.2 236.4,197.2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<circle cx="292.4" cy="253.2" r="2.6" fill="#2563eb"/>
+<line x1="259.6" y1="157.1" x2="175.6" y2="302.6" stroke="#2563eb" stroke-width="1.4" stroke-dasharray="5 3"/>
+<line x1="294.2" y1="177.1" x2="210.2" y2="322.6" stroke="#ea580c" stroke-width="1.4" stroke-dasharray="5 3"/>
+<circle cx="236.4" cy="197.2" r="3.4" fill="#2563eb"/>
+<line x1="180.4" y1="208.4" x2="125.7" y2="176.8" stroke="#1f2937" stroke-width="1.6"/>
+<path d="M 120.3 173.7 L 129.9 174.9 L 126.2 181.5 z" fill="#1f2937"/>
+<text x="126.3" y="157.7" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle"><tspan font-style="italic">u</tspan>(<tspan font-style="italic">z</tspan>)</text>
+<circle cx="180.4" cy="208.4" r="3.2" fill="#1f2937"/>
+<text x="184.4" y="221.4" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">o</text>
+<text x="250.6" y="150.1" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="end" dominant-baseline="middle"><tspan font-style="italic">h</tspan>(<tspan font-style="italic">a</tspan>, <tspan font-style="italic">b</tspan>, <tspan font-style="italic">z</tspan>)</text>
+<text x="204.2" y="328.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="end" dominant-baseline="middle">−37/50</text>
+<text x="298.4" y="263.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle">(<tspan font-style="italic">a</tspan>, <tspan font-style="italic">b</tspan>)</text>
+<text x="68.4" y="258.8" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="start" dominant-baseline="middle">radius √3 − ½</text>
+<text x="23.6" y="29.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">(a) the bound −37/50</text>
+<path d="M 641.2 273.5 A 112.0 112.0 0 0 0 557.9 96.7" fill="none" stroke="#e5e7eb" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="530.6" y1="266.9" x2="607.2" y2="36.2" stroke="#9ca3af" stroke-width="1"/>
+<polygon points="606.0,208.4 718.0,208.4 718.0,96.4 606.0,96.4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<path d="M 662.0 205.8 A 112.0 112.0 0 0 0 608.3 112.8" fill="none" stroke="#2563eb" stroke-width="4.5" stroke-linecap="round"/>
+<line x1="550.0" y1="208.4" x2="647.0" y2="152.4" stroke="#2563eb" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="647.0" cy="152.4" r="2.8" fill="#2563eb"/>
+<line x1="738.4" y1="103.2" x2="568.3" y2="46.7" stroke="#2563eb" stroke-width="1.4" stroke-dasharray="5 3"/>
+<line x1="721.6" y1="153.6" x2="551.6" y2="97.1" stroke="#ea580c" stroke-width="1.4" stroke-dasharray="5 3"/>
+<circle cx="718.0" cy="96.4" r="3.4" fill="#2563eb"/>
+<circle cx="617.5" cy="119.0" r="3.6" fill="#ea580c"/>
+<text x="623.5" y="111.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle"><tspan font-style="italic">u</tspan>(<tspan font-style="italic">x</tspan>)</text>
+<line x1="550.0" y1="208.4" x2="569.2" y2="150.6" stroke="#1f2937" stroke-width="1.6"/>
+<path d="M 571.2 144.6 L 571.9 154.4 L 564.8 152.0 z" fill="#1f2937"/>
+<text x="565.2" y="142.6" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle"><tspan font-style="italic">u</tspan>(<tspan font-style="italic">z</tspan>)</text>
+<circle cx="550.0" cy="208.4" r="3.2" fill="#1f2937"/>
+<text x="554.0" y="221.4" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">o</text>
+<text x="562.3" y="46.7" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="end" dominant-baseline="middle"><tspan font-style="italic">h</tspan>(<tspan font-style="italic">a</tspan>, <tspan font-style="italic">su</tspan>, <tspan font-style="italic">z</tspan>)</text>
+<text x="545.6" y="97.1" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="end" dominant-baseline="middle">cos(<tspan font-style="italic">z</tspan> − <tspan font-style="italic">x</tspan>)</text>
+<text x="667.6" y="191.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle"><tspan font-style="italic">Q</tspan>(<tspan font-style="italic">a</tspan>, <tspan font-style="italic">su</tspan>)</text>
+<text x="482.8" y="27.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">(b) the marker arc</text>
+</svg>

@@ -12,16 +12,19 @@ import math
 
 from proof_figures import (Figure, INK, FAINT, COLORS, FILLS, GREY,
                            square_corners, in_open_square, arcs_in, u, shift,
-                           rad, sb, clip, convex_hull)
+                           rad, sb, subsup, clip, clip_square, convex_hull)
+from fig_front import it, sbn, RED, RED_FILL, NB
+from fig_appa import Plot, x_axis, y_axis
 
 PI = math.pi
 BLUE, ORANGE, GREEN, PURPLE, PINK = COLORS[:5]
-DIGITS = str.maketrans('0123456789', '₀₁₂₃₄₅₆₇₈₉')
 
 
-def low(base, digits):
-    """A name with a numeric subscript, in Unicode subscript digits."""
-    return base + str(digits).translate(DIGITS)
+def state0(size=14):
+    """The markup of the transition state (a_0, u_0)."""
+    return '(' + sbn('a', '0', ', ', size) + sbn('u', '0', ')', size)
+
+
 L7 = math.sqrt(3) - 0.5          # the column limit sqrt 3 - 1/2
 R7 = math.sqrt(13) / 2           # the optimal radius
 ARC = 1 / 2                      # half-width of the marker arc
@@ -60,7 +63,7 @@ def rot(p, d):
 
 
 def pair(a, u_, A, v, s, t, g):
-    """The canonical pair: centre of S, centre of T, turn d (radians)."""
+    """The canonical pair: centre of S, centre of T, relative phase d."""
     d = g + s * label(a, u_) - t * label(A, v)
     return (a, s * u_), rot((A, t * v), d), d
 
@@ -212,11 +215,9 @@ def states():
     f.text((1.03, 0.54), 'side state (1, ½)', size=13, italic=False,
            anchor='start', color=ORANGE)
     f.dot((a0, u0), r=4)
-    f.text((a0 + 0.045, u0 + 0.02), '(' + low('a', 0) + ', ' + low('u', 0)
-           + ')', size=14, anchor='start')
+    f.text((a0 + 0.045, u0 + 0.02), state0(14), size=14, anchor='start')
     f.text((0.84, 0.8), 'φ = 13/4', size=14, color=BLUE, anchor='start')
-    f.text((0.6, 0.64), 'u = a', size=13, color=FAINT, italic=False,
-           anchor='end')
+    f.text((0.6, 0.64), 'u = a', size=14, color=FAINT, anchor='end')
     f.text((0.68, 0.22), 'admissible', size=14, italic=False, color=BLUE)
     f.save('10-seven/states', 'The admissible states in the (a, u)-plane, the '
            'side state with the tangent line r = 0, the axial segment and the '
@@ -245,7 +246,7 @@ def labels():
         start = (max(0.5, y), y)
         end = first_exit(start, (x_tie, y), inside)
         polyline(f, [start, end], stroke=INK, width=0.8)
-        f.text((start[0] - 0.012, y), f'{c:.1f}', size=11, italic=False,
+        f.text((start[0] - 0.012, y), f'{c:.1f}', size=12, italic=False,
                anchor='end', color=INK)
         if inside((x_tie, y)):
             # the side part: 9a - 4u = 2pi + 7 - 12c, upwards from the tie
@@ -261,18 +262,19 @@ def labels():
     f.polygon(poly, stroke=BLUE, width=1.6)
     plane_axes(f, 1.43, 0.9, ticks_a=((0.5, '½'), (1.0, '1'), (L7, '√3 − ½')),
                ticks_u=((0.5, '½'),))
-    f.text((0.78, 0.14), 'axial: ℓ = 5u/4', size=13, italic=False,
-           color=GREEN)
-    f.text((1.1, 0.66), 'side: ℓ = side(a, u)', size=13, italic=False,
-           color=ORANGE, anchor='start')
+    ell = it('ℓ') + NB + '=' + NB
+    f.text((0.78, 0.14), 'axial:' + NB + ell + '5' + it('u') + '/4', size=13,
+           italic=False, color=GREEN)
+    f.text((1.1, 0.66), 'side:' + NB + ell + 'side(' + it('a') + ',' + NB
+           + it('u') + ')', size=13, italic=False, color=ORANGE,
+           anchor='start')
     f.line((1.1, 0.64), (0.95, 0.53), stroke=ORANGE, width=1)
-    f.text((0.6, 0.83), 'capped: ℓ = π/4', size=13, italic=False,
+    f.text((0.6, 0.83), 'capped:' + NB + ell + 'π/4', size=13, italic=False,
            color=INK, anchor='start')
     f.line((0.68, 0.81), (0.705, 0.69), stroke=INK, width=1)
     f.dot((1.0, 0.5), r=3.6, fill=ORANGE)
     f.dot((a0, u0), r=3.6)
-    f.text((a0 + 0.045, u0 + 0.0), '(' + low('a', 0) + ', ' + low('u', 0)
-           + ')', size=13, anchor='start')
+    f.text((a0 + 0.045, u0 + 0.0), state0(13), size=13, anchor='start')
     f.save('10-seven/labels', 'The three label regions of the admissible states, '
            'axial, side and capped, with level lines of the label')
 
@@ -306,13 +308,13 @@ def marker():
     f.dot(o)
     f.text((-0.05, -0.07), 'o', anchor='end')
     f.text(shift(c, (0.22, -0.28)), 'S', size=17, color=BLUE)
-    f.text((0.35, -0.95), low('Γ', 1), size=15)
+    f.text((0.35, -0.95), sb('Γ', '1'), size=15)
     # right panel: its chart
     o2 = (off, 0.0)
     c2 = shift(o2, (a, u_))
     f.line(o2, shift(o2, (1.72, 0)), stroke=FAINT, width=1, dash='5 4')
-    f.text(shift(o2, (1.72, -0.07)), 't = 0', size=12, italic=False,
-           color=FAINT, anchor='end')
+    f.text(shift(o2, (1.72, -0.07)), it('t') + NB + '=' + NB + '0', size=13,
+           italic=False, color=FAINT, anchor='end')
     f.square(c2, fill=FILLS[0], stroke=BLUE)
     thin_arc(f, o2, 1.0, rad(-75), rad(95))
     member2 = lambda p: in_open_square(shift(p, o2), c2)
@@ -321,16 +323,21 @@ def marker():
     for t in (lab - ARC, lab, lab + ARC):
         assert in_closed(shift(o2, u(t)), c2)
     f.arc(o2, 1.0, lab - ARC, lab + ARC, ORANGE, width=5)
+    for t in (lab - ARC, lab + ARC):
+        f.line(o2, shift(o2, u(t), 1.0), stroke=ORANGE, width=0.9)
     f.line(o2, shift(o2, u(lab), 1.3), stroke=ORANGE, width=1.6)
     f.arc(o2, 0.3, 0, lab, INK, width=1.2)
-    f.text(shift(o2, u(lab / 2), 0.47), 'ℓ(a, u)', size=13)
+    f.text(shift(o2, u(lab / 2), 0.41), 'ℓ', size=14)
+    # the half-width 1/2 of the arc, as an angle at o
+    f.arc(o2, 0.48, lab, lab + ARC, INK, width=1.2)
+    half = shift(o2, u(lab + ARC / 2), 0.58)
+    assert half[0] + 0.03 < c2[0] - 0.5          # left of the square
+    f.text(half, '½', size=14, italic=False)
     f.dot(c2, fill=BLUE)
-    f.text(shift(c2, (0.04, -0.07)), '(a, u)', size=13, anchor='start',
-           color=BLUE)
+    f.text(shift(c2, (0.04, -0.07)), '(' + it('a') + ',' + NB + it('u') + ')',
+           size=13, italic=False, anchor='start', color=BLUE)
     f.dot(o2)
     f.text(shift(o2, (-0.05, -0.07)), 'o', anchor='end')
-    f.text(shift(o2, u(lab + ARC), 1.12), '1/2', size=12, italic=False,
-           color=ORANGE, anchor='start')
     f.save('10-seven/marker', 'An exterior square seen from the disk centre with '
            'its phase and marker, and the same square in its chart; the arc '
            'of the unit circle of half-width 1/2 about the marker lies in '
@@ -354,8 +361,9 @@ def canonical():
     m1, m2 = s * label(a, u_), s * label(a, u_) + g
     for m, color in ((m1, BLUE), (m2, GREEN)):
         f.line((0, 0), u(m), stroke=color, width=1.6)
-    f.arc((0, 0), 0.34, m1, m2, INK, width=1.2)
-    f.text(shift((0, 0), u((m1 + m2) / 2), 0.46), 'g', size=15)
+    f.arc((0, 0), 0.22, m1, m2, INK, width=1.2)
+    # off the bisector, away from the label of n_2
+    f.text(shift((0, 0), u((m1 + m2) / 2 + 0.25), 0.33), 'g', size=15)
     # the four normals of S
     mids = [(cS[0] + 0.5, cS[1]), (cS[0], cS[1] + 0.5), (cS[0] - 0.5, cS[1]),
             (cS[0], cS[1] - 0.5)]
@@ -364,7 +372,7 @@ def canonical():
         f.line(p, q, stroke=INK, width=1.4, arrow=True)
         pos = (q[0] + 0.03, q[1] + 0.13) if k == 2 else shift(
             q, u(k * PI / 2), 0.12)
-        f.text(pos, low('n', k), size=14)
+        f.text(pos, sb('n', str(k), size=14), size=14)
     f.dot((0, 0))
     f.text((-0.04, -0.07), 'o', anchor='end')
     f.text(shift(cS, (0.28, -0.27)), 'S', size=17, color=BLUE)
@@ -383,15 +391,15 @@ def canonical():
                width=0.8, dash='3 3')
     s2 = xs_T[1] - xs_S[0]
     assert abs(s2 - sigma(a, u_, A, v, s, t, 2, g)) < 1e-9 and s2 < 0
-    f.text(((xs_S[0] + xs_T[1]) / 2, yb2 - 0.14), low('σ', 2) + ' &lt; 0',
-           size=14)
+    f.text(((xs_S[0] + xs_T[1]) / 2, yb2 - 0.14),
+           sbn('σ', '2', ' &lt; 0', size=14), size=14)
     xl, xl2 = -1.25, -1.35
     f.line((xl, -0.4), (xl, 1.9), stroke=FAINT, width=1)
     f.line((xl, ys_S[0]), (xl, ys_S[1]), stroke=BLUE, width=5)
     f.line((xl2, ys_T[0]), (xl2, ys_T[1]), stroke=GREEN, width=5)
     s1 = ys_S[1] - ys_T[0]
     assert abs(s1 - sigma(a, u_, A, v, s, t, 1, g)) < 1e-9 and s1 > 0
-    bracket(f, (xl + 0.1, ys_T[0]), (xl + 0.1, ys_S[1]), low('σ', 1),
+    bracket(f, (xl + 0.1, ys_T[0]), (xl + 0.1, ys_S[1]), sb('σ', '1', size=14),
             side=-1, off=0.08, anchor='start')
     for y in (ys_S[1], ys_T[0]):
         f.line((xl2 - 0.04, y), (xl + 0.2, y), stroke=FAINT, width=0.8,
@@ -415,7 +423,9 @@ def octagon():
     f.dot(cS, fill=BLUE)
     f.dot(cT, fill=GREEN)
     f.line(cS, cT, stroke=INK, width=1.6, arrow=True)
-    f.text(shift(cS, (-0.18, 0.43)), 'Δ', size=15)
+    mid = ((cS[0] + cT[0]) / 2, (cS[1] + cT[1]) / 2)
+    nrm = math.hypot(D[0], D[1])
+    f.text(shift(mid, (-D[1] / nrm, D[0] / nrm), -0.15), 'Δ', size=15)
     f.text(shift(cS, (0.28, -0.27)), 'S', size=17, color=BLUE)
     f.text(shift(cT, (-0.05, 0.12)), 'T', size=17, color=GREEN)
     # right panel: the octagon K centred at O
@@ -425,19 +435,19 @@ def octagon():
                      for q in square_corners((0, 0), dg)])
     f.polygon([shift(O, p) for p in K], fill=FILLS[1], stroke=ORANGE,
               width=1.6)
-    normals = [(0, 'e', '1'), (PI / 2, 'e', '2'), (d, 'f', '1'),
-               (d + PI / 2, 'f', '2')]
-    for ang, base, sub in normals:
-        for sgn in (1, -1):
-            n = u(ang + (0 if sgn == 1 else PI))
-            foot = shift(O, n, W)
-            tang = (-n[1], n[0])
-            f.line(shift(foot, tang, -0.95), shift(foot, tang, 0.95),
-                   stroke=FAINT, width=0.9, dash='4 3')
-            f.line(foot, shift(foot, n, 0.3), stroke=INK, width=1.2,
-                   arrow=True)
-            name = ('' if sgn == 1 else '−') + low(base, sub)
-            f.text(shift(foot, n, 0.44), name, size=13)
+    # the axes of S are n_0, ..., n_3; those of T are +-e^T_1, +-e^T_2
+    normals = [(k * PI / 2, sb('n', str(k), size=13)) for k in range(4)]
+    normals += [(d, subsup('e', '1', 'T', 13)), (d + PI, '−' + subsup('e', '1', 'T', 13)),
+                (d + PI / 2, subsup('e', '2', 'T', 13)),
+                (d + 3 * PI / 2, '−' + subsup('e', '2', 'T', 13))]
+    for ang, name in normals:
+        n = u(ang)
+        foot = shift(O, n, W)
+        tang = (-n[1], n[0])
+        f.line(shift(foot, tang, -0.95), shift(foot, tang, 0.95),
+               stroke=FAINT, width=0.9, dash='4 3')
+        f.line(foot, shift(foot, n, 0.3), stroke=INK, width=1.2, arrow=True)
+        f.text(shift(foot, n, 0.45), name, size=13)
     PD = shift(O, D)
     f.dot(O)
     f.line(O, PD, stroke=INK, width=1.4, arrow=True)
@@ -445,13 +455,13 @@ def octagon():
     f.text(shift(PD, (-0.08, 0.1)), 'Δ', size=15, anchor='end')
     # the support sum on the inward axis: the distance to the line x = -W
     s2 = W + D[0]
-    assert abs(s2 - sigma(a, u_, A, v, s, t, 2, g)) < 1e-9
+    assert abs(s2 - sigma(a, u_, A, v, s, t, 2, g)) < 1e-9 and s2 < 0
     y0 = PD[1] - 0.22
     f.line((O[0] - W, y0), (PD[0], y0), stroke=BLUE, width=2.4)
     for x in (O[0] - W, PD[0]):
         f.line((x, y0 - 0.05), (x, y0 + 0.05), stroke=BLUE, width=1.4)
-    f.text(((O[0] - W + PD[0]) / 2, y0 - 0.14),
-           low('σ', 2) + ' &lt; 0', size=13, color=BLUE)
+    f.text((PD[0] - 0.06, y0), sbn('σ', '2', ' &lt; 0', size=13), size=13,
+           color=BLUE, anchor='end')
     f.text(shift(O, (0.55, -0.55)), 'K', size=17, color=ORANGE)
     f.save('10-seven/octagon', 'The canonical pair with the vector Delta between '
            'the centres, and the octagon of differences of the two squares, '
@@ -495,8 +505,8 @@ def contacts():
         m1 = s * label(a, u_)
         for m, color in ((m1, BLUE), (m1 + PI / 3, GREEN)):
             f.line(o, shift(o, u(m), 1.0), stroke=color, width=1.5)
-        f.arc(o, 0.3, m1, m1 + PI / 3, INK, width=1.2)
-        f.text(shift(o, u(m1 + PI / 6), 0.45), 'π/3', size=12, italic=False)
+        f.arc(o, 0.2, m1, m1 + PI / 3, INK, width=1.2)
+        f.text(shift(o, u(m1 + PI / 6), 0.36), 'π/3', size=13, italic=False)
         f.dot(o)
         f.text(shift(o, (-0.05, -0.08)), 'o', anchor='end')
         f.text(shift(o, shift(cS, (0.3, -0.3))), 'S', size=16, color=BLUE)
@@ -527,8 +537,9 @@ def small_gaps():
     lo, hi = lam + g - ARC, lam + ARC
     f.arc((0, 0), 1.0, lo, hi, ORANGE, width=8)
     mid = lam + g / 2
-    f.line((0, 0), u(mid), stroke=ORANGE, width=1.2, dash='4 3')
-    f.text(shift((0, 0), u(mid), 1.12), 'm', size=15, color=ORANGE)
+    f.line((0, 0), shift((0, 0), u(mid), 1.3), stroke=ORANGE, width=1.2,
+           dash='4 3')
+    f.text(shift((0, 0), u(mid), 1.4), 'm', size=15, color=ORANGE)
     f.dot((0, 0))
     f.text((-0.04, -0.07), 'o', anchor='end')
     f.text(shift(cS, (0.3, -0.3)), 'S', size=17, color=BLUE)
@@ -596,17 +607,22 @@ def parallel_pairs():
         for m, color in ((m1, BLUE), (m2, GREEN)):
             f.line(o, shift(o, u(m), 1.0), stroke=color, width=1.5)
         f.arc(o, 0.3, m1, m2, INK, width=1.2)
-        f.text(shift(o, u((m1 + m2) / 2), 0.45), 'g', size=14)
+        # in the left panel the bisector runs along the separating line
+        tg = (m1 + m2) / 2 + (0.3 if dd == 0 else 0.0)
+        f.text(shift(o, u(tg), 0.42), 'g', size=15)
         f.dot(o)
-        f.text(shift(o, (-0.05, -0.08)), 'o', anchor='end')
+        # above the separating line in the left panel, below o in the right
+        f.text(shift(o, (-0.05, 0.08 if dd == 0 else -0.08)), 'o',
+               anchor='end')
         f.text(shift(o, shift(S, (0.3, -0.3))), 'S', size=16, color=BLUE)
         f.text(shift(o, shift(T, (0.3, 0.3))), 'T', size=16, color=GREEN)
     ysep = (cS[1] + 0.5 + cT[1] - 0.5) / 2
     f.line((-0.5, ysep), (1.8, ysep), stroke=INK, width=1.4, dash='6 4')
     xsep = off + (cS2[0] - 0.5 + cT2[0] + 0.5) / 2
     f.line((xsep, -1.1), (xsep, 1.45), stroke=INK, width=1.4, dash='6 4')
-    f.text((0.6, 1.62), 'd = 0', size=14, italic=False)
-    f.text((off + 0.6, 1.62), 'd = π/2', size=14, italic=False)
+    f.text((0.6, 1.62), it('d') + NB + '=' + NB + '0', size=14, italic=False)
+    f.text((off + 0.6, 1.62), it('d') + NB + '=' + NB + 'π/2', size=14,
+           italic=False)
     f.save('10-seven/parallel', 'A parallel canonical pair separated by a '
            'horizontal line, and a quarter-turned one separated by a '
            'vertical line')
@@ -624,28 +640,36 @@ def nearest_vertex():
     corners = square_corners(c)
     assert abs(support(c[0], c[1], math.atan2(n[1], n[0])) + delta) < 1e-12
     assert max(p[0] * n[0] + p[1] * n[1] for p in corners) <= -delta + 1e-12
-    f = Figure(-0.42, 1.45, -0.3, 1.25, 260)
+    beta = math.atan2(V[1], V[0])
+    assert 0 < beta <= PI / 4
+    f = Figure(-0.5, 1.42, -0.4, 1.22, 250)
+    f.line((-0.45, 0), (1.4, 0), stroke=FAINT, width=1, dash='5 4')
     f.square(c, fill=FILLS[2], stroke=GREEN)
     tang = (-n[1], n[0])
-    f.line(shift(V, tang, -0.55), shift(V, tang, 0.75), stroke=INK,
+    f.line(shift(V, tang, -0.6), shift(V, tang, 0.7), stroke=INK,
            width=1.2, dash='5 4')
     f.line((0, 0), V, stroke=ORANGE, width=2.2)
-    f.text(shift((V[0] / 2, V[1] / 2), tang, 0.06), 'δ', size=16,
+    f.text(shift((V[0] / 2, V[1] / 2), tang, -0.07), 'δ', size=16,
            color=ORANGE)
-    f.line(V, shift(V, n, 0.3), stroke=INK, width=1.6, arrow=True)
-    f.text(shift(V, n, 0.36), 'u(z)', size=14, anchor='end')
+    # the direction u(z) = -V / delta, drawn at o
+    f.line((0, 0), shift((0, 0), n, 0.3), stroke=INK, width=1.6, arrow=True)
+    f.text(shift((0, 0), n, 0.38), 'u(z)', size=14, anchor='end')
+    f.arc((0, 0), 0.16, 0, beta, INK, width=1.2)
+    f.text(shift((0, 0), u(beta / 2), 0.25), 'β', size=15)
     f.dot(V, r=4, fill=ORANGE)
-    f.text(shift(V, (0.03, -0.07)), '(A − ½, t(v − ½))', size=13,
-           anchor='start')
+    f.text(shift(V, (0.09, -0.08)), '(' + it('A') + NB + '−' + NB + '½,'
+           + NB + it('t') + '(' + it('v') + NB + '−' + NB + '½))', size=13,
+           italic=False, anchor='start')
     f.dot(c, fill=GREEN)
-    f.text(shift(c, (0.04, 0.07)), '(A, tv)', size=13, anchor='start',
-           color=GREEN)
+    f.text(shift(c, (0.04, 0.07)), '(' + it('A') + ',' + NB + it('tv') + ')',
+           size=13, italic=False, anchor='start', color=GREEN)
     f.dot((0, 0))
-    f.text((-0.04, -0.07), 'o', anchor='end')
+    f.text((0.02, -0.09), 'o', anchor='start')
     f.text(shift(c, (0.3, 0.32)), 'T', size=17, color=GREEN)
     f.save('10-seven/nearest-vertex', 'The square T in its own chart, its vertex '
-           'nearest to the disk centre at distance delta, and the direction '
-           'from that vertex towards the centre')
+           'nearest to the disk centre at distance delta and angle beta, the '
+           'line through that vertex perpendicular to it, and the direction '
+           'u(z) pointing from the vertex past the centre')
 
 
 def gap_profile():
@@ -676,8 +700,8 @@ def gap_profile():
         polyline(f, [(gg, vs * val) for gg, val in pts], stroke=cols[k],
                  width=2)
         gg, val = pts[-1]
-        f.text((gg + 0.03, vs * val), low('σ', k), size=14, color=cols[k],
-               anchor='start')
+        f.text((gg + 0.03, vs * val), sb('σ', str(k), size=14), size=14,
+               color=cols[k], anchor='start')
     assert abs(sigma(a, u_, A, v, s, t, 1, PI / 3)) < 1e-12
     f.dot((PI / 3, 0), r=4, fill=ORANGE)
     f.save('10-seven/gap-profile', 'The four support sums of the pair of a side '
@@ -722,13 +746,19 @@ def ring():
             hi = min(max(y for _, y in P), max(y for _, y in Q))
             assert hi > lo
             f.line((xe, lo), (xe, hi), stroke=INK, width=4)
-    for c, name, k in zip(cs, kinds, cols):
-        pos = shift(c, (0.0, 0.3 if c[1] > 0 else -0.3))
-        if c[0] == 0:
-            pos = shift(c, (0.0, 0.3 if c[1] > 0 else -0.3))
-        f.text(pos, name, size=13, italic=False, color=COLORS[k])
+    # each square with its kind and the point where it sits (Proposition 10.26)
+    places = ['(1,' + NB + '−½)', '(1,' + NB + '½)',
+              '(0,' + NB + sb(it('y'), '3', ')', 13),
+              '(−1,' + NB + '½)', '(−1,' + NB + '−½)',
+              '(0,' + NB + sb(it('y'), '1', ')', 13)]
+    for c, name, place, k in zip(cs, kinds, places, cols):
+        top = 0.32 if c[1] > 0 else -0.26      # the outer part of the square
+        f.text(shift(c, (0.0, top)), name, size=13, italic=False,
+               color=COLORS[k])
+        f.text(shift(c, (0.0, top - 0.14)), place, size=13,
+               italic=False, color=COLORS[k])
     f.dot((0, 0))
-    f.text((0.05, -0.1), 'o', anchor='start')
+    f.text((0.13, 0.0), 'o')                 # between the rays at -30 and 30
     f.save('10-seven/ring', 'The ring of six exterior squares: the markers form '
            'a regular hexagon, the kinds are lower, upper, axial twice, and '
            'consecutive squares touch along the thick edges')
@@ -761,28 +791,336 @@ def middle():
     f.dot(p1, r=3.4, fill=PINK)
     f.dot((0, 0))
     f.text((0.05, -0.1), 'o', anchor='start')
-    f.text((0, 1.13), '|x| ≤ ½', size=13, italic=False, color=ORANGE)
-    f.text((1.45, 1.07), '|y| &lt; 1', size=13, italic=False, color=FAINT,
-           anchor='end')
+    for k, c in enumerate(sides):
+        f.text(shift(c, (0.25 * c[0], 0.27 * (1 if c[1] > 0 else -1))),
+               sb('B', str(k + 1), size=15), size=15, color=BLUE)
+    f.text((0, 1.13), '|' + it('x') + '|' + NB + '≤' + NB + '½', size=13,
+           italic=False, color=ORANGE)
+    f.text((1.45, 1.07), '|' + it('y') + '|' + NB + '&lt;' + NB + '1', size=13,
+           italic=False, color=FAINT, anchor='end')
     f.save('10-seven/middle', 'The four side squares, the band between them and '
            'the strip in the middle; a tilted square containing the disk '
            'centre has a chord through its centre longer than 1 that pokes '
            'into the side squares; an axis-parallel square in the strip')
 
 
+def remainder(a, u_):
+    return 4 - 3 * a - 2 * u_
+
+
+def runs_in_box(pts, box):
+    """The maximal runs of a sampled curve inside the box (x0, x1, y0, y1)."""
+    x0, x1, y0, y1 = box
+    runs, run = [], []
+    for x, y in pts:
+        if x0 <= x <= x1 and y0 <= y <= y1:
+            run.append((x, y))
+        elif run:
+            runs.append(run)
+            run = []
+    if run:
+        runs.append(run)
+    return [r for r in runs if len(r) > 1]
+
+
+def quadratic():
+    """Lemma 10.8 (1): in the coordinates (side(a, u), r(a, u)), which are
+    affine in (a, u), the states with a side label lie right of 9/25 and above
+    the parabola 9/5 (l - pi/6)^2."""
+    poly = region_polygon(400)
+    tie = 2 * PI + 7
+    sd = clip(clip(poly, -9, -11, -tie), -9, 4, -(7 - PI))
+    img = [(side(a, u_), remainder(a, u_)) for a, u_ in sd]
+    par = lambda l: 1.8 * (l - PI / 6) ** 2
+    # every admissible state with a side label: l > 9/25 and r >= par(l)
+    for i in range(301):
+        for j in range(301):
+            a = 0.5 + (L7 - 0.5) * i / 300
+            u_ = a * j / 300
+            if admissible(a, u_) and side(a, u_) <= min(axial(u_), PI / 4):
+                assert side(a, u_) > 9 / 25
+                assert remainder(a, u_) >= par(side(a, u_)) - 1e-12
+    a0, u0 = transition_state()
+    s0, r0 = side(a0, u0), remainder(a0, u0)
+    corner = math.sqrt(13 / 8) - 0.5
+    top = 0.17                             # the strip shown: 0 <= r <= top
+    box = (0.32, 0.83, -0.005, top)
+    p = Plot(0.27, 0.9, -0.03, 0.19, 820, 2000)
+    p.polygon(clip(img, 0, 1, top), fill=FILLS[1], stroke='none')
+    for k in range(len(img)):              # the edges of the region in the strip
+        q0, q1 = img[k], img[(k + 1) % len(img)]
+        if max(q0[1], q1[1]) <= top + 1e-12:
+            p.line(q0, q1, stroke=ORANGE, width=1.4)
+        elif min(q0[1], q1[1]) < top:
+            lo, hi = (q0, q1) if q0[1] < q1[1] else (q1, q0)
+            w = (top - lo[1]) / (hi[1] - lo[1])
+            p.line(lo, (lo[0] + w * (hi[0] - lo[0]), top), stroke=ORANGE,
+                   width=1.4)
+    circle = [(side(-0.5 + R7 * math.cos(t), -0.5 + R7 * math.sin(t)),
+               remainder(-0.5 + R7 * math.cos(t), -0.5 + R7 * math.sin(t)))
+              for t in (2 * PI * k / 20000 for k in range(20001))]
+    for run in runs_in_box(circle, box):
+        p.polyline(run, stroke=BLUE, width=1.8)
+    p.curve(par, 0.32, 0.83, stroke=PURPLE, width=1.8, dash='7 4')
+    x_axis(p, 0.3, 0.87, ticks=((9 / 25, '9/25'), (PI / 6, 'π/6'),
+                                (PI / 4, 'π/4')), label='ℓ')
+    y_axis(p, -0.005, 0.185, x=0.3, ticks=((0.05, '0.05'), (0.1, '0.10'),
+                                           (0.15, '0.15')), label='r')
+    p.line((9 / 25, 0), (9 / 25, top), stroke=FAINT, width=1, dash='3 3')
+    p.dot((PI / 6, 0), fill=ORANGE)
+    p.dot((s0, r0), fill=INK)
+    p.text((s0, r0), state0(13), size=13, italic=False, anchor='start', dx=8,
+           dy=4)
+    p.dot((side(corner, corner), remainder(corner, corner)), fill=INK, r=2.8)
+    p.text((side(corner, corner), remainder(corner, corner)), 'u = a',
+           size=13, anchor='end', dx=-8, dy=-8)
+    p.text((0.66, 0.135), 'side labels', size=13, italic=False, color=ORANGE)
+    p.text((0.765, 0.158), 'φ = 13/4', size=13, color=BLUE, anchor='end')
+    p.text((0.745, 0.072), '9/5 (ℓ − π/6)²', size=13, color=PURPLE,
+           anchor='start')
+    p.save('10-seven/quadratic', 'The states with a side label in the '
+           'coordinates side label and remainder: a curved triangle whose lower '
+           'edge is the image of the circle phi = 13/4, resting on r = 0 at the '
+           'side state; it lies right of 9/25 and above the dashed parabola '
+           '9/5 (l - pi/6) squared')
+
+
+def support_figure():
+    """Lemma 10.11 (1) and (2): the support of Q(a, u) in the direction u(z)
+    is attained at a vertex, and the points u(x) of the marker arc, which lie
+    in the closed square, have smaller projections cos(z - x)."""
+    a, u_ = 1.0, 0.45
+    lab = label(a, u_)
+    z = rad(75)
+    x = lab + 0.45
+    assert admissible(a, u_) and abs(x - lab) <= ARC
+    h = support(a, u_, z)
+    V = (a + 0.5, u_ + 0.5)
+    assert abs(V[0] * math.cos(z) + V[1] * math.sin(z) - h) < 1e-12
+    for q in square_corners((a, u_)):
+        assert q[0] * math.cos(z) + q[1] * math.sin(z) <= h + 1e-12
+    P = u(x)
+    assert in_closed(P, (a, u_)) and math.cos(z - x) < h
+    f = Figure(-0.42, 1.72, -0.22, 1.62, 205)
+    thin_arc(f, (0, 0), 1.0, rad(-12), rad(118))
+    f.square((a, u_), fill=FILLS[0], stroke=BLUE)
+    f.arc((0, 0), 1.0, lab - ARC, lab + ARC, ORANGE, width=5)
+    H = shift((0, 0), u(z), h)
+    F = shift((0, 0), u(z), math.cos(z - x))
+    tang = (-math.sin(z), math.cos(z))
+    f.line(shift(V, tang, -0.25), shift(H, tang, 0.06), stroke=INK, width=1.2,
+           dash='6 4')
+    f.line((0, 0), shift((0, 0), u(z), 1.55), stroke=INK, width=1.3,
+           arrow=True)
+    f.text(shift((0, 0), u(z), 1.6), 'u(z)', size=14, anchor='start')
+    f.line(P, F, stroke=ORANGE, width=1, dash='2 3')
+    f.dot(H, r=3.4)
+    f.dot(F, r=3.4, fill=ORANGE)
+    f.dot(V, r=3.6, fill=BLUE)
+    f.dot(P, r=3.6, fill=ORANGE)
+    f.text(shift(H, (-0.06, -0.05)), 'h(a, u, z)', size=14, anchor='end')
+    f.text(shift(F, (-0.05, 0.0)), 'cos(' + it('z') + NB + '−' + NB + it('x')
+           + ')', size=14, italic=False, anchor='end', color=ORANGE)
+    f.text(shift(P, (0.07, 0.04)), 'u(x)', size=14, anchor='start',
+           color=ORANGE)
+    f.dot((a, u_), fill=BLUE)
+    f.text((a + 0.04, u_ - 0.07), '(' + it('a') + ',' + NB + it('u') + ')',
+           size=13, italic=False, anchor='start', color=BLUE)
+    f.text((a + 0.33, u_ - 0.33), 'Q(a, u)', size=15, color=BLUE)
+    f.dot((0, 0))
+    f.text((-0.04, -0.08), 'o', anchor='end')
+    f.text(shift((0, 0), u(rad(-8)), 1.13), sb('Γ', '1'), size=15)
+    f.save('10-seven/support', 'The closed square Q(a, u) with its marker arc, '
+           'a direction u(z), the supporting line perpendicular to it through '
+           'the extreme vertex at height h(a, u, z), and a point u(x) of the '
+           'marker arc whose projection cos(z - x) is smaller')
+
+
+def reversed_pair():
+    """Lemma 10.13 (3): the reversed pair is the canonical pair seen from T,
+    its image under the rotation by -d followed by the reflection in the first
+    axis."""
+    a, u_, A, v, s, t, g = (CP[k] for k in ('a', 'u_', 'A', 'v', 's', 't', 'g'))
+    cS, cT, d = pair(a, u_, A, v, s, t, g)
+    cS2, cT2, d2 = pair(A, v, a, u_, -t, -s, g)
+    assert abs(d2 - d) < 1e-12
+    iso = lambda p: (rot(p, -d)[0], -rot(p, -d)[1])
+    dg = math.degrees(d)
+    key = lambda P: sorted((round(x, 9), round(y, 9)) for x, y in P)
+    assert key(map(iso, square_corners(cT, dg))) == key(square_corners(cS2))
+    assert key(map(iso, square_corners(cS))) == key(square_corners(cT2, dg))
+    off = 3.15
+    f = Figure(-1.25, off + 1.72, -0.6, 1.95, 118)
+    panels = [((0.0, 0.0), cS, 0.0, BLUE, FILLS[0], 'S', cT, dg, GREEN,
+               FILLS[2], 'T', s * label(a, u_)),
+              ((off, 0.0), cS2, 0.0, GREEN, FILLS[2], 'S′', cT2, dg, BLUE,
+               FILLS[0], 'T′', -t * label(A, v))]
+    for o, c1, d1, col1, fill1, n1, c2, dd2, col2, fill2, n2, m1 in panels:
+        thin_arc(f, o, 1.0, rad(-40), rad(160))
+        f.square(shift(o, c1), d1, fill=fill1, stroke=col1)
+        f.square(shift(o, c2), dd2, fill=fill2, stroke=col2)
+        for m, col in ((m1, col1), (m1 + g, col2)):
+            f.line(o, shift(o, u(m), 1.0), stroke=col, width=1.5)
+        f.arc(o, 0.25, m1, m1 + g, INK, width=1.2)
+        f.text(shift(o, u(m1 + g / 2 + 0.3), 0.37), 'g', size=15)
+        f.dot(o)
+        f.text(shift(o, (-0.04, -0.09)), 'o', anchor='end')
+        f.text(shift(o, shift(c1, (0.28, -0.27))), n1, size=17, color=col1)
+        f.text(shift(o, shift(c2, (-0.02, 0.12))), n2, size=17, color=col2)
+    f.save('10-seven/reversed', 'Left: a canonical pair S, T with its markers a '
+           'gap g apart. Right: its reversed pair, in which S prime is the image '
+           'of T and T prime the image of S under one rotation and reflection '
+           'about o, with the same gap')
+
+
+def overlap_pairs():
+    """Proposition 10.17 and Lemma 10.14: at the gap pi/3, two admissible
+    states that do not form a contact give overlapping squares."""
+    specs = [((1.0, 0.5, -1), (0.9, 0.55, 1)),     # kind (1), T moved
+             ((1.0, 0.5, 1), (1.0, 0.15, 1)),      # kind (2), T off the axis
+             ((1.1, 0.1, 1), (1.0, 0.5, -1))]      # kind (3), S off the axis
+    off = 2.55
+    f = Figure(-0.75, 2 * off + 1.72, -1.15, 1.85, 108)
+    for j, ((a, u_, s), (B, v, t)) in enumerate(specs):
+        assert admissible(a, u_) and admissible(B, v)
+        o = (j * off, 0.0)
+        cS, cT, d = pair(a, u_, B, v, s, t, PI / 3)
+        dg = math.degrees(d)
+        for k in range(4):
+            assert sigma(a, u_, B, v, s, t, k, PI / 3) > 0
+            assert sigma(B, v, a, u_, -t, -s, k, PI / 3) > 0
+        PS, PT = square_corners(cS), square_corners(cT, dg)
+        assert overlap(PS, PT)
+        thin_arc(f, o, 1.0, rad(-68), rad(112))
+        f.square(shift(o, cS), fill=FILLS[0], stroke=BLUE, opacity=0.85)
+        f.square(shift(o, cT), dg, fill=FILLS[2], stroke=GREEN, opacity=0.85)
+        common = clip_square(PS, cT, dg)
+        f.polygon([shift(o, q) for q in common], fill=RED_FILL, stroke=RED,
+                  width=1.4)
+        m1 = s * label(a, u_)
+        for m, color in ((m1, BLUE), (m1 + PI / 3, GREEN)):
+            f.line(o, shift(o, u(m), 1.0), stroke=color, width=1.5)
+        f.arc(o, 0.16, m1, m1 + PI / 3, INK, width=1.2)
+        f.text(shift(o, u(m1 + PI / 6), 0.27), 'π/3', size=13, italic=False)
+        f.dot(o)
+        f.text(shift(o, (-0.05, -0.08)), 'o', anchor='end')
+        f.text(shift(o, shift(cS, (0.3, -0.3))), 'S', size=16, color=BLUE)
+        f.text(shift(o, shift(cT, (-0.3, 0.3))), 'T', size=16, color=GREEN)
+        f.text(shift(o, (0.5, 1.72)), f'({j + 1})', size=15, italic=False)
+    f.save('10-seven/overlap', 'Three canonical pairs at the gap pi/3 obtained '
+           'from the three kinds of contact by moving one state slightly; in '
+           'each the two squares overlap in a small shaded region')
+
+
+def sinusoids():
+    """Lemma 10.22: the support h(A, tv, z) of T is the largest of four
+    sinusoids, one per vertex; its only smooth minimum is the trough of the
+    sinusoid of the vertex nearest to o, at z = pi + t beta, of depth -delta."""
+    A, v, t = 0.85, 0.68, 1
+    assert admissible(A, v)
+    c = (A, t * v)
+    verts = square_corners(c)
+    sin_of = lambda q: (lambda z: q[0] * math.cos(z) + q[1] * math.sin(z))
+    hz = lambda z: support(A, t * v, z)
+    for k in range(721):
+        z = 2 * PI * k / 720
+        assert abs(hz(z) - max(sin_of(q)(z) for q in verts)) < 1e-12
+    V = (A - 0.5, t * (v - 0.5))
+    delta = math.hypot(*V)
+    beta = math.atan2(abs(V[1]), V[0])
+    zmin = PI + t * beta
+    assert abs(hz(zmin) + delta) < 1e-12
+    assert all(hz(2 * PI * k / 7200) >= -delta - 1e-12 for k in range(7200))
+    p = Plot(-0.45, 7.05, -0.98, 2.1, 68, 150)
+    bot = -0.8
+    x_axis(p, -0.1, 6.95, y=bot, ticks=((0, '0'), (PI / 2, 'π/2'), (PI, 'π'),
+                                       (PI + beta, 'π + β'),
+                                       (3 * PI / 2, '3π/2'), (2 * PI, '2π')),
+           label='z')
+    y_axis(p, bot, 2.05, ticks=((0, '0'), (1, '1')))
+    p.line((0, 0), (2 * PI, 0), stroke=FAINT, width=1)
+    for q in verts:
+        nearest = abs(q[0] - V[0]) < 1e-12 and abs(q[1] - V[1]) < 1e-12
+        p.curve(sin_of(q), 0, 2 * PI, stroke=ORANGE if nearest else FAINT,
+                width=1.2, dash='5 4', ylim=(bot, 2.0))
+    p.curve(hz, 0, 2 * PI, n=1440, stroke=BLUE, width=2.4)
+    lo, hi = PI, 3 * PI / 2
+    p.curve(hz, lo, hi, n=360, stroke=ORANGE, width=2.6)
+    for k in range(5):
+        p.dot((k * PI / 2, hz(k * PI / 2)), fill=BLUE, r=3)
+    p.line((0, -delta), (zmin, -delta), stroke=FAINT, width=1, dash='3 3')
+    p.line((zmin, -delta), (zmin, bot), stroke=FAINT, width=1, dash='3 3')
+    p.dot((zmin, -delta), fill=ORANGE, r=4)
+    p.text((0, -delta), '−δ', size=14, anchor='end', dx=-8, color=ORANGE)
+    p.text((0.75, hz(0.75)), 'h(A, tv, z)', size=14, color=BLUE,
+           anchor='start', dx=8, dy=-8)
+    p.save('10-seven/sinusoids', 'The support of the square T in the direction '
+           'u(z) as z runs once round: the largest of four sinusoids, one for '
+           'each vertex, with corners at the multiples of pi/2. Its only '
+           'smooth minimum is the trough of the sinusoid of the nearest vertex, '
+           'at z = pi + beta, of depth minus delta')
+
+
+def pair_markers():
+    """Theorem 10.24, step 1: two disjoint exterior squares with their phases
+    and markers; the markers are g apart and the phases d apart, d the
+    relative phase of their canonical pair."""
+    (a, b, eS, thS), (A, B, eT, thT) = ((1.15, 0.2, 1, rad(-15)),
+                                       (1.1, 0.3, -1, rad(95)))
+    assert admissible(a, b) and admissible(A, B)
+    cS = rot((a, eS * b), thS)
+    cT = rot((A, eT * B), thT)
+    dS, dT = math.degrees(thS), math.degrees(thT)
+    assert not overlap(square_corners(cS, dS), square_corners(cT, dT))
+    muS, muT = thS + eS * label(a, b), thT + eT * label(A, B)
+    g = muT - muS
+    d = g + eS * label(a, b) - eT * label(A, B)
+    assert PI / 3 <= g < PI and abs(d - (thT - thS)) < 1e-12
+    m = R7 + 0.06
+    f = Figure(-m, m, -m, m, 150)
+    f.circle((0, 0), R7, stroke=INK, width=1.2, dash='6 4')
+    f.circle((0, 0), 1.0)
+    f.square(cS, dS, fill=FILLS[0], stroke=BLUE)
+    f.square(cT, dT, fill=FILLS[2], stroke=GREEN)
+    for th, mu, col, nm in ((thS, muS, BLUE, 'S'), (thT, muT, GREEN, 'T')):
+        f.line((0, 0), u(th), stroke=INK, width=1.1, dash='5 4')
+        f.text(shift((0, 0), u(th), 1.12), sb('θ', nm), size=15)
+        f.line((0, 0), u(mu), stroke=col, width=1.8)
+        f.dot(u(mu), r=3.2, fill=col)
+        f.text(shift((0, 0), u(mu), 1.13), sb('μ', nm), size=15, color=col)
+    f.arc((0, 0), 0.3, muS, muT, INK, width=1.2)
+    f.text(shift((0, 0), u((muS + muT) / 2 - 0.1), 0.4), 'g', size=15)
+    f.arc((0, 0), 0.5, thS, thT, INK, width=1.0)
+    f.text(shift((0, 0), u((thS + thT) / 2 + 0.25), 0.6), 'd', size=15)
+    f.dot((0, 0))
+    f.text((0.03, -0.09), 'o', anchor='start')
+    f.text(shift(cS, (0.2, -0.3)), 'S', size=17, color=BLUE)
+    f.text(shift(cT, (-0.25, 0.25)), 'T', size=17, color=GREEN)
+    f.save('10-seven/pair-markers', 'Two disjoint exterior squares S and T in the '
+           'disk of radius root 13 over 2, with their phases dashed and their '
+           'markers on the unit circle; the markers are g apart, more than '
+           'pi/3, and the phases are d apart')
+
+
 def main():
     columns()
     states()
     labels()
+    quadratic()
     marker()
+    support_figure()
     canonical()
+    reversed_pair()
     octagon()
     contacts()
+    overlap_pairs()
     small_gaps()
     leftmost()
     parallel_pairs()
+    sinusoids()
     nearest_vertex()
     gap_profile()
+    pair_markers()
     ring()
     middle()
 

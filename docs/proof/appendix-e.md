@@ -78,7 +78,15 @@ So $(a + \frac12)^2 + (|b| + \frac12)^2 \le Q_0$ and $\frac12 \le a \le \rho_0$
 for each of the three centres
 ([Lemma 9.10](09-six.md#lemma-910-charts-in-the-ceiling)). The west tail is
 $v \ge \frac{11}{25}$ for $W$ on its own axis, the south tail $s \ge \frac{11}{25}$
-for $S$ on its own axis; we show that neither occurs.
+for $S$ on its own axis; we show that neither occurs (Figure E.1).
+
+![Two panels in the plane of the angles v (horizontal) and s (vertical). Left, W on its own axis: an orange box for v from 11/25 to 2/3 and s from -2/5 to 3/5 labelled Lemma E.4, a purple box for v from 0 to 11/25 and s from 11/25 to 2/3 labelled Lemma E.6, and a grey rectangle for v from 0 to 11/25 and s from -2/5 to 11/25. Right, W on the west side: a green box for v from -2/5 to 2/5 and s from 11/25 to 2/3 labelled Lemma E.5, above a grey rectangle for s from -2/5 to 11/25](figures/appendix-e/tails-map.svg)
+
+*Figure E.1.* The cases of the proof of Proposition 9.47 in the plane of $v$ and
+$s$, for $W$ on its own axis (left) and on the west side of $C$ (right): the
+west tail is excluded by Lemma E.4, for $S$ of either kind, and the south tail
+by Lemma E.5 or Lemma E.6. What remains (grey) is the range of the angles in
+§E.2 and §E.3.
 
 ### Lemma E.1 (the separations in coordinates)
 
@@ -162,19 +170,19 @@ is $\lambda_3e^W_2 - \lambda_4e^S_2$, and so on. The supports of
 and of [Lemma 9.26](09-six.md#lemma-926-supports-in-the-ceiling) bound the works
 on $W$, $D$ and $S$, and the box $[0, c_0]^2$ the work on $C$. What remains is a
 function of the angles that must be at most $0$, and is shown to be positive.
-Figure E.1 shows what goes wrong at the edge of the west tail.
+Figure E.2 shows what goes wrong at the edge of the west tail.
 
-![Four unit squares near the disk centre inside a faint circle of radius R0: the central square C slightly right of the centre, W to its left turned clockwise by about 25 degrees with its upper left corner on the circle, S below C turned slightly with its lower right corner on the circle, and the turned square D in the lower left corner between them, touching W and S along dashed separating lines, with its far vertex outside the circle and the part of D beyond the circle shaded red; arrows from the centres show the forces of the stress](figures/appendix-e/west-tail.svg)
+![Four unit squares near the disk centre inside a dashed circle of radius R0: the central square C slightly right of the centre, W to its left turned clockwise by about 25 degrees with its upper left corner on the circle, S below C turned slightly with its lower right corner on the circle, and the turned square D in the lower left corner between them, touching W and S; the four separating lines are dashed; the far vertex of D lies outside the circle, and the part of D beyond the circle is shaded red; arrows from the centres show the forces of the stress](figures/appendix-e/west-tail.svg)
 
-*Figure E.1.* At the edge of the west tail, $v = \frac{11}{25}$, with
+*Figure E.2.* At the edge of the west tail, $v = \frac{11}{25}$, with
 $s = \frac1{20}$, $d = \frac\pi4$ and $c = (c_0, 0)$. The squares $W$ and $S$,
 separated from $C$ along their own axes, are pushed out until their far
-vertices meet the circle of radius $R_0$ (grey), and $D$ touches both along the
-secondary axes of $W$ and $S$ (dashed separating lines). Then the far vertex of
-$D$ lies at distance $1.79 > R_0$ from the disk centre (red). The arrows are the
-forces of the stress with the weights $\frac8{15}$, $\frac15$, $\frac16$,
-$\frac1{10}$ on $C$–$W$, $C$–$S$, $W$–$D$, $D$–$S$. Lemma E.4 shows that the
-four separations cannot hold together anywhere in the tail.
+vertices meet the circle of radius $R_0$, and $D$ touches both along the
+secondary axes of $W$ and $S$ (dashed lines: the four separations). Then the
+far vertex of $D$ lies at distance $1.79 > R_0$ from the disk centre (red). The
+arrows are the forces of the stress with the weights $\frac8{15}$, $\frac15$,
+$\frac16$, $\frac1{10}$ on $C$–$W$, $C$–$S$, $W$–$D$, $D$–$S$. Lemma E.4 shows
+that the four separations cannot hold together anywhere in the tail.
 
 ### Lemma E.3 (the west minorant)
 
@@ -212,14 +220,14 @@ in $[0, \frac\pi2]$. On the box, $\cos v \ge 1 - \frac{v^2}2 \ge \frac79$ and
 $\sin v \le v \le \frac23$; $\cos x \ge 1 - \frac{x^2}2 \ge \frac{41}{50}$ and
 $0 \le \sin x \le x \le \frac35$; $\cos d \ge 0$ and
 $\sin d \ge \sin\frac12 \ge S_7(\frac12) > \frac{23}{48}$. Write
-$e = \frac5{72}\bar\rho < 0.07729$.
+$\alpha = \frac5{72}\bar\rho < 0.07729$.
 
 1. *In $v$.* Expanding $\cos(v + d)$, $\sin(v + d)$ and $\sin(v + \sigma_kx)$,
    the coefficients of $\cos v$ and $\sin v$ are
 
    ```math
-   \tfrac8{15}\left(\tfrac12 - \bar c\right) + \tfrac1{12}(\cos d + \sin d) - e\,\sigma_k\sin x \ge 0.2064 - \tfrac35e > 0, \qquad
-   \tfrac4{15} + \tfrac1{12}(\cos d - \sin d) - e\cos x \ge \tfrac4{15} - \tfrac1{12} - e > 0 .
+   \tfrac8{15}\left(\tfrac12 - \bar c\right) + \tfrac1{12}(\cos d + \sin d) - \alpha\sigma_k\sin x \ge 0.2064 - \tfrac35\alpha > 0, \qquad
+   \tfrac4{15} + \tfrac1{12}(\cos d - \sin d) - \alpha\cos x \ge \tfrac4{15} - \tfrac1{12} - \alpha > 0 .
    ```
 
 2. *In $x$.* As
@@ -231,14 +239,14 @@ $e = \frac5{72}\bar\rho < 0.07729$.
    the coefficients of $\cos x$ and $\sin x$ are
 
    ```math
-   g_k + \tfrac1{20}(\cos d + \sin d) - e\sin v \ge \tfrac1{10} - e > 0, \qquad
-   h_k + \sigma_k\left(\tfrac1{20}(\sin d - \cos d) - e\cos v\right) .
+   g_k + \tfrac1{20}(\cos d + \sin d) - \alpha\sin v \ge \tfrac1{10} - \alpha > 0, \qquad
+   h_k + \sigma_k\left(\tfrac1{20}(\sin d - \cos d) - \alpha\cos v\right) .
    ```
 
    For $k = 0$ and $k = 1$ the second is at least
-   $h_k + \frac1{20}(\frac{23}{48} - 1) - e \ge 0.12256 - 0.0261 - 0.0773 > 0$;
+   $h_k + \frac1{20}(\frac{23}{48} - 1) - \alpha \ge 0.12256 - 0.0261 - 0.0773 > 0$;
    for $k = 2$ it is at least
-   $h_2 - \frac1{20} + \frac79e > 0.048 - 0.05 + 0.06 > 0$.
+   $h_2 - \frac1{20} + \frac79\alpha > 0.048 - 0.05 + 0.06 > 0$.
 3. *In $d$.* The coefficients of $\cos d$ and $\sin d$ are
 
    ```math
@@ -269,14 +277,15 @@ weighted threshold sum exceeds the supports by about $5.1 \cdot 10^{-4}$ when
 $R_0$, $\rho_0$, $c_0$ and the lengths of the forces are kept exact (the weights
 add up to $1$); the decimals $\bar R$, $\bar\rho$, $\bar c$, $0.5588$ and the
 tangents leave $m_0 \approx 4.0 \cdot 10^{-4}$, and the Taylor polynomials
-$3.5 \cdot 10^{-4}$ (Figure E.2).
+$3.5 \cdot 10^{-4}$ (Figure E.3).
 
 ![Three boxes drawn in perspective, one for each case k = 0, 1, 2, with axes v from 11/25 to 2/3, x from 0 to x_k and d from 1/2 to 11/14; each corner carries the Taylor lower bound of the minorant there, all positive, and the corner v = 2/3, x = 0, d = 11/14 is marked in orange with the smallest value 0.00035](figures/appendix-e/west-box.svg)
 
-*Figure E.2.* The boxes of Lemma E.3 for the three separators of $S$: on its own
+*Figure E.3.* The boxes of Lemma E.3 for the three separators of $S$: on its own
 axis ($k = 0$), or along the south side of $C$ with $s \ge 0$ ($k = 1$) or
-$s \le 0$ ($k = 2$). The minorant is concave along every edge, so its least
-value on the box is at a corner; the orange corner is the tight one.
+$s \le 0$ ($k = 2$). The minorant is concave in each variable, so its least
+value on a box is at a corner; the orange corner is the tight one. On the
+front faces, $x = 0$, the three minorants agree.
 
 *Lean:
 [`Six.WestTail.minorant`](../../SquaresInCircles/Six/Tails/West.lean#L73),
@@ -348,7 +357,8 @@ We bound the four works.
    ```
 
    and by Lemma A.14 with $c = \frac6{25}$ the length of the force is at most
-   $\frac{1073}{5400} + \frac5{72}\sin(v + s)$. So Lemma 9.25 (2), with
+   $\bigl(\frac{17}{450} + (\frac6{25})^2\bigr)/\frac{12}{25} + \frac5{72}\sin(v + s)$,
+   that is, $\frac{1073}{5400} + \frac5{72}\sin(v + s)$. So Lemma 9.25 (2), with
    $\rho_0 < \bar\rho$, gives
    $Ua_D + Vb_D \le \bar\rho\left(\frac{1073}{5400} + \frac5{72}\sin(v + s)\right)$.
 4. *$C$.* For $k = 0$,
@@ -406,6 +416,19 @@ $c_y \le \bar c$. Then the inequality of Lemma E.1 (1) for the west side of $C$,
 that of Lemma E.1 (2) for the own axis of $S$ and the two of Lemma E.1 (3) do
 not all hold.
 
+Figure E.4 shows the four separations at the edge of this tail.
+
+![Four unit squares near the disk centre inside a dashed circle of radius R0: the central square C slightly above the centre; W to its left, not turned, against the west side of C, with its upper left corner on the circle; S below and right of C, turned counterclockwise by about 25 degrees, with its lower right corner on the circle; and the turned square D below W and left of S, touching both; the four separating lines are dashed; the lowest vertex of D lies outside the circle, and the part of D beyond it is shaded red; arrows from the centres show the forces of the stress](figures/appendix-e/south-tail.svg)
+
+*Figure E.4.* At the edge of the south tail, $s = \frac{11}{25}$, with $v = 0$,
+$d = \frac\pi4$ and $c = (0, c_0)$. $W$ is separated from $C$ along the west
+side of $C$ and $S$ along its own axis; both are pushed out until their far
+vertices meet the circle of radius $R_0$, and $D$ touches both along their
+secondary axes (dashed lines: the four separations). The far vertex of $D$ lies
+at distance $1.77 > R_0$ (red). The arrows are the forces of the stress with
+the weights $\frac35$, $1$, $\frac25$, $\frac3{10}$ on $C$–$W$, $C$–$S$, $W$–$D$,
+$D$–$S$.
+
 *Proof.* Suppose they all hold, and take the weights $\lambda_1 = \frac35$,
 $\lambda_2 = 1$, $\lambda_3 = \frac25$, $\lambda_4 = \frac3{10}$. Adding the
 four inequalities gives
@@ -430,7 +453,7 @@ $V = \lambda_3\cos(d + v) - \lambda_4\sin(d - s)$.
    We take $c = \frac{18}{25}$, except $c = \frac{21}{25}$ when $\sigma = -1$
    and $x > \frac3{20}$: the length runs from about $0.58$ at $v = \frac25$ to
    $0.84$ at $v = -\frac25$, and one tangent is not close enough over the whole
-   range (Figure E.3).
+   range (Figure E.5).
 2. *$S$.* As $\sqrt{1 + \lambda_4^2} < 1.0441$,
    $a_S + \lambda_4b_S \le 1.0441\bar R - \frac{13}{20}$.
 3. *$D$.* As in Lemma E.4,
@@ -516,17 +539,16 @@ they are all positive, which contradicts $p \le 0$. $\square$
 *Table E.2.* Taylor lower bounds of $p$ at the corners of the three boxes of
 Lemma E.5, rounded down. At $x = 0$ the value does not depend on $\sigma$.
 
-![Graph over v from -2/5 to 2/5 of the length of the force on W, the square root of 13/25 minus 12/25 sin v, falling from about 0.84 to 0.58, with two dashed tangent lines in sin v: the one at c = 18/25 touches near v = 0 and lies well above the curve at v = -2/5, the one at c = 21/25 touches near v = -0.4; the bound used, the first tangent for v > -3/20 and the second below, is drawn thick; a second panel below shows the excess of each tangent over the length, times 1000](figures/appendix-e/south-tangents.svg)
+![Graph over v from -2/5 to 2/5 of the length of the force on W, the square root of 13/25 minus 12/25 sin v, falling from about 0.84 to 0.58, with two dashed tangent lines in sin v: the one at c = 18/25 touches near v = 0 and lies above the curve at v = -2/5, the one at c = 21/25 touches near v = -0.4; the bound used, the first tangent for v > -3/20 and the second below, is drawn thick; a second panel below shows the excess of each tangent over the length, times 1000](figures/appendix-e/south-tangents.svg)
 
-*Figure E.3.* Lemma E.5 (1): the length $\sqrt{\frac{13}{25} - \frac{12}{25}\sin v}$
+*Figure E.5.* Lemma E.5 (1): the length $\sqrt{\frac{13}{25} - \frac{12}{25}\sin v}$
 of the force on $W$ (blue) and its tangent majorants of Lemma A.14 at
 $c = \frac{18}{25}$ and $c = \frac{21}{25}$ (dashed), as functions of $v$, and
 below their excess over the length. The proof uses the first for
 $v \ge -\frac3{20}$ and the second for $v \le -\frac3{20}$ (thick orange). The
-first tangent alone would exceed the
-length by $0.0101$ at $v = -\frac25$, which costs $0.017$ in $p$ and makes the
-corners of Table E.2 with $\sigma = -1$, $x = \frac25$, $s = \frac23$,
-$d = \frac12$ negative.
+first tangent alone would exceed the length by $0.0101$ at $v = -\frac25$,
+which costs $0.017$ in $p$ and makes the corners of Table E.2 with
+$\sigma = -1$, $x = \frac25$, $s = \frac23$, $d = \frac12$ negative.
 
 *Lean:
 [`Six.SouthTail.side_impossible`](../../SquaresInCircles/Six/Tails/South.lean#L680),
@@ -554,17 +576,16 @@ axes of $W$ and $S$ and the two of Lemma E.1 (3) do not all hold.
 
 *Proof.* Suppose they all hold, and take the weights $\lambda_1 = \frac58$,
 $\lambda_2 = 1$, $\lambda_3 = \frac25$, $\lambda_4 = \frac3{10}$. The force on
-$W$ is
-$(\lambda_1, -\lambda_3)$, of length $\sqrt{0.550625} < 0.7421$, so
+$W$ is $(\lambda_1, -\lambda_3)$, of length $\frac{\sqrt{881}}{40} < 0.7421$, so
 $\lambda_1a_W - \lambda_3b_W \le 0.7421\bar R - \frac{41}{80}$ by Lemma 9.25 (1);
 the work on $S$ is bounded as in Lemma E.5 (2). The work on $C$ is
 $(\lambda_1\cos v - \sin s)c_x + (\cos s - \lambda_1\sin v)c_y$, and as
 $\cos s - \lambda_1\sin v \ge \frac79 - \frac58\cdot\frac{11}{25} > 0$, the
-same argument bounds it by
+argument of Lemma E.5 (4) bounds it by
 $\bar c(\cos s - \lambda_1\sin v) + y(\lambda_1\cos v - \sin s)$ with $y = 0$ or
 $y = \bar c$. We keep the work $Ua_D + Vb_D$ on $D$, with $U$ and $V$ as in
-Lemma E.5. Adding the four inequalities and collecting terms as
-before, with $\lambda_1 + 1 + \lambda_3 + \lambda_4 = \frac{93}{40}$, they imply
+Lemma E.5. Adding the four inequalities and collecting terms as before, with
+$\lambda_1 + 1 + \lambda_3 + \lambda_4 = \frac{93}{40}$, they imply
 $q(v, s, d) \le 0$, where
 
 ```math
@@ -609,8 +630,8 @@ the work $Ua_D + Vb_D$ is subtracted. We show $q > 0$ in three steps.
    $d = \frac12$ and $d = \frac{11}{14}$, the Taylor lower bounds of $\hat q$ in
    Table E.3 are positive; by Lemma A.11 (2), $\hat q > 0$ there for all $d$.
 3. *The corner $v = s = \frac{11}{25}$.* Here the far vertex is too weak:
-   $\hat q$ is negative at $d = \frac{11}{14}$ (about $-0.0067$ for $y = 0$).
-   We use instead that the force on $D$ is nearly radial. Let
+   $\hat q$ is negative at $d = \frac{11}{14}$ (about $-0.0067$ for $y = 0$;
+   Figure E.6). We use instead that the force on $D$ is nearly radial. Let
    $\gamma = \frac{11}{25}$, $A' = \frac25\sin\gamma + \frac3{10}\cos\gamma$
    and $B' = \frac25\cos\gamma + \frac3{10}\sin\gamma$; by Lemma A.8,
    $0.44 \le A' \le 0.45$ and $0.48 \le B' \le 0.49$. Expanding,
@@ -629,7 +650,7 @@ the work $Ua_D + Vb_D$ is subtracted. We show $q > 0$ in three steps.
 
    So the force lies in the narrow cone of Lemma 9.26 (2), and
    $Ua_D + Vb_D \le \rho_0U + \frac1{160} \le \bar\rho U + \frac1{160}$
-   (Figure E.4). With $\frac12 - \bar\rho = -(\frac12 + \bar c)$, this gives
+   (Figure E.7). With $\frac12 - \bar\rho = -(\frac12 + \bar c)$, this gives
    $q(\gamma, \gamma, d) \ge P(d)$, where
 
    ```math
@@ -671,12 +692,23 @@ $\square$
 *Table E.3.* Taylor lower bounds of $\hat q$ at the three corners of Lemma E.6
 (2), rounded down.
 
-![The plane of the components U and V of the force on D, with the narrow cone between the U-axis and the line V = 2U/5, the band of U between 3/5 and 7/10 marked by two vertical lines, and a short blue arc of the force (U(d), V(d)) for d from 1/2 to 11/14 lying inside the shaded part of the band](figures/appendix-e/south-cone.svg)
+![Two panels over d from 1/2 to 11/14, for y = 0 and for y = c-bar. In each, a grey curve, the least value of q over the possible centres of D, decreases from about 0.063 to 0.033 (left) and from 0.047 to 0.018 (right); a blue curve, the cone bound P, runs just below it and ends at 0.0266 and 0.0108; an orange curve, the far-vertex bound, starts with the blue one and falls below zero, ending at -0.0067 and -0.0225](figures/appendix-e/south-corner.svg)
 
-*Figure E.4.* Lemma E.6 (3): at the corner $v = s = \frac{11}{25}$ the force
+*Figure E.6.* Lemma E.6 at the corner $v = s = \frac{11}{25}$, as functions of
+$d$, for $y = 0$ (left) and $y = \bar c$ (right): the least value of $q$ over
+the centres of $D$ that the lemma allows (grey), the bound $\hat q$ of step 2,
+from the far vertex of $D$ (orange), and the bound $P$ of step 3, from the
+narrow cone (blue). The first turns negative before $d = \frac{11}{14}$; the
+second decreases and stays positive. The values are exact; the text uses
+their Taylor lower bounds.
+
+![The plane of the components U and V of the force on D, with the narrow cone between the dashed lines V = 2U/5 and V = -2U/5, the band of U between 3/5 and 7/10 marked by two vertical lines and shaded inside the cone, and a short blue arc of the force (U(d), V(d)) for d from 1/2 to 11/14 in the shaded part, above the U-axis](figures/appendix-e/south-cone.svg)
+
+*Figure E.7.* Lemma E.6 (3): at the corner $v = s = \frac{11}{25}$ the force
 $(U, V)$ on $D$, for $\frac12 \le d \le \frac{11}{14}$ (blue arc), lies in the
 part $\frac35 \le U \le \frac7{10}$, $|V| \le \frac25U$ of the narrow cone of
-Lemma 9.26 (2), where the support exceeds $\rho_0U$ by at most $\frac1{160}$.
+Lemma 9.26 (2) (shaded), where the support exceeds $\rho_0U$ by at most
+$\frac1{160}$.
 
 *Lean:
 [`Six.SouthTail.own_impossible`](../../SquaresInCircles/Six/Tails/South.lean#L641),
@@ -700,7 +732,7 @@ Lemma 9.26 (2), where the support exceeds $\rho_0U$ by at most $\frac1{160}$.
 *Proof of Proposition 9.47.* By
 [Proposition 9.45](09-six.md#proposition-945-the-wings) both wings hold: $W$ and
 $D$ are separated along $e^W_2$, and $D$ and $S$ along $e^S_2$. By Lemma E.2 (1),
-$\frac12 \le d \le \frac{11}{14}$.
+$\frac12 \le d \le \frac{11}{14}$. Figure E.1 shows the cases.
 
 *The west tail.* Let $W$ be separated from $C$ along its own axis. If $W$ is
 also separated from $C$ along the west side, then $|w| < \frac25$ by Lemma E.2
@@ -734,8 +766,8 @@ $s < \frac{11}{25}$. $\square$
 In this section a facet $f$ and the kinds of $N$ and $W$ (on its own axis, or on
 its matching side) are fixed, and $\Pi$, $F_N$, $F_W$, $\phi_f$, $\psi_f$, $V$,
 $B_f$ and $P$ are as in
-[Definition 9.48](09-six.md#definition-948-the-value-of-a-pair). The facets
-$-e^W_1$ and $-e^N_2$ are the facets *of the model*. We write
+[Definition 9.48](09-six.md#definition-948-the-value-of-a-pair) (Figure E.8).
+The facets $-e^W_1$ and $-e^N_2$ are the facets *of the model*. We write
 $\mathcal D = [n_-, n_+] \times [w_-, w_+]$ for the domain of the pair of
 Proposition 9.50, $q = n - w$, and
 
@@ -749,10 +781,11 @@ and $n = w$ cut $\mathcal D$, the gap is a sum of first harmonics, linear terms
 and the lengths of two forces (Lemma E.7); along a line in $n$, a line in $w$,
 or the diagonal $n = w$, each force is a constant vector plus a turning one, and
 Lemma A.13 bounds the curvature of its length, so the gap is concave there
-(Lemma E.11). A function with this property is nonnegative on the rectangle once
-it is nonnegative at finitely many points (Lemma E.12); and at those points the
-gap is evaluated with Taylor polynomials and rational constants, with an error
-of at most $5 \cdot 10^{-4}$ (Lemmas E.13 to E.16).
+(Lemma E.11, Figure E.10). A function with this property is nonnegative on the
+rectangle once it is nonnegative at finitely many points (Lemma E.12,
+Figure E.11); and at those points the gap is evaluated with Taylor polynomials
+and rational constants, with an error of at most $5 \cdot 10^{-4}$ (Lemmas E.13
+to E.16).
 
 We use the brackets $0.3687847 < r_* < 0.3687848$,
 $0.8896968 < m_* < 0.889697$, $0.07097 < \beta_* < 0.07098$ and
@@ -762,6 +795,18 @@ $s_*$ and $m_* = (1 + r_*)(t_* + \frac12)/(\frac32 - s_*)$ is increasing in
 $s_*$ and in $t_*$; and $1.68854 < R_6 < 1.68855$, $R_6^2 = q_* < Q_0$,
 $1.11281 < \rho_* < \rho_0 < \bar\rho$ and $0.11281 < c_0 < \bar c$
 (Lemmas 9.2 and 9.5).
+
+![The containing square C at the disk centre, N above it turned slightly clockwise and W to its left turned clockwise; a dashed line along the lower edge of N and a dashed line along the right edge of W, which goes on up to the upper left corner of N; a dashed circle of radius R6 through the upper left corner of W; and two arrows at the centres of N and W, F_N pointing up and to the right and F_W pointing up and to the left](figures/appendix-e/pair-stress.svg)
+
+*Figure E.8.* The edges of Definition 9.48 at $n = -\frac1{10}$ and
+$w = -\frac15$, for $N$ and $W$ on their own axes and the facet $-e^W_1$, with
+$C = Q(0, 0)$. $N$ is separated from $C$ along $e^N_1$, and $W$ from $C$ along
+$e^W_1$ and from $N$ along $-e^W_1$, all three tightly (dashed lines: the lower
+edge of $N$, and the right edge of $W$, which serves twice); the far vertex of
+$W$ is on the circle of radius $R_6$. The arrows are the forces
+$F_N = e^N_1 - r_*e^W_1$ and $F_W = (1 + r_*)e^W_1 - m_*e^W_2$, the last term
+from the edge from $W$ to $D$; read in the frames of $N$ and $W$, their
+components are those of Definition 9.48.
 
 ### Lemma E.7 (the gap on a sector)
 
@@ -902,10 +947,10 @@ A *line in $n$* is a segment on which $w$ is constant and $n = x$ varies; a
 
 ### Lemma E.9 (the forces along lines)
 
-Along a line in $n$, a line in $w$ or the diagonal, each of $F_N$ and $F_W$ is
-either constant or the sum of a constant vector of length $a$ and a vector of
-length $b$ that turns with $x$ at unit speed, as in Table E.4. So its squared
-length is $\Lambda(x) = a^2 + b^2 + Q\cos x + T\sin x$ with
+Along a line in $n$, a line in $w$ or the diagonal, each of $F_N$ and $F_W$
+either has constant length or is the sum of a constant vector of length $a$ and
+a vector of length $b$ that turns with $x$ at unit speed, as in Table E.4. So
+its squared length is $\Lambda(x) = a^2 + b^2 + Q\cos x + T\sin x$ with
 $Q^2 + T^2 = 4a^2b^2$, as in Lemma A.13.
 
 | force, facet | kind | line in $n$ | line in $w$ | diagonal |
@@ -923,8 +968,20 @@ $Q^2 + T^2 = 4a^2b^2$, as in Lemma A.13.
 | $F_W$; $-e^N_2$ | own | $\sqrt{1 + m_*^2}$, $r_*$ | $\sqrt{1 + m_*^2}$, $r_*$ | const |
 | | matching | $\sqrt{1 + m_*^2 + 2m_*\sin w}$, $r_*$ | $m_*$, $\sqrt{1 + r_*^2 + 2r_*\cos n}$ | $\sqrt{r_*^2 + m_*^2}$, $1$ |
 
-*Table E.4.* The forces along the lines: "const" if the force is constant,
-otherwise the lengths $a$ of the constant part and $b$ of the turning part.
+*Table E.4.* The forces along the lines: "const" if the length of the force is
+constant, otherwise the lengths $a$ of the constant part and $b$ of the turning
+part.
+
+![Two panels in the frame of W. Left: as w runs over a line, the force F_W on W on its matching side for the facet -e^W_1 is the constant vector (r*, -m*) plus a turning unit vector, whose tip runs on an arc of the unit circle about the end of the constant vector; the length runs from 1.38 to 1.82. Right: along a line in n for the facet e^N_1 with W on its own axis, F_W is the constant vector (1, -m*) plus a short turning vector of length r* that points against it, its tip on an arc of a small circle](figures/appendix-e/pair-turning.svg)
+
+*Figure E.9.* Lemma E.9 in the frame of $W$. Left: along a line in $w$, with
+$W$ on its matching side and $f = -e^W_1$, $F_W = (r_*, -m_*) + u(-w)$, the
+constant part (grey) plus a turning unit vector (purple), drawn in black at
+$w = -\frac25, 0, \frac25$. Right: along a line in $n$, with $W$ on its own axis
+and $f = e^N_1$, $F_W = (1, -m_*) + r_*u(\frac\pi2 + n - w)$ for
+$w = -\frac15$, drawn in black at $n = -\frac3{10}$; the turning part points
+against the constant part, the case (3) of Lemma A.13, so $-R_6|F_W|$ is
+concave there.
 
 *Proof.* With $u(\theta) = (\cos\theta, \sin\theta)$, the vectors of Definition
 9.48 are $\kappa(t) = u(-t)$ on the matching side and $(1, 0)$ on the own axis;
@@ -934,8 +991,8 @@ $f = -e^W_1, -e^W_2, e^N_1, -e^N_2$. Along a line in $n$, $u(-n)$ and every
 $u(-q + \theta)$ turn at the speed $-1$, and every $u(q + \theta)$ at the speed
 $1$; along a line in $w$, $u(-w)$ and every $u(q + \theta)$ turn at the speed
 $-1$, and every $u(-q + \theta)$ at the speed $1$; along the diagonal $q = 0$
-and only $\kappa$ turns. Vectors that turn at the same
-speed add up to one turning vector of constant length; the rest is constant.
+and only $\kappa$ turns. Vectors that turn at the same speed add up to one
+turning vector of constant length; the rest is constant.
 For example, along a line in $w$ with $W$ on its matching side and $f = e^N_1$,
 
 ```math
@@ -947,9 +1004,13 @@ $|1 + r_*u(\frac\pi2 + n)|^2 = 1 + r_*^2 - 2r_*\sin n$; along a line in $n$
 with $N$ on its matching side and $f = -e^W_1$,
 $F_N = u(-n) + r_*u(-n + w - \frac\pi2)$ has the constant length
 $\sqrt{1 + r_*^2 + 2r_*\sin w}$. The other entries are found in the same way.
-Finally $|c + b\,u(\pm x + \theta)|^2 = a^2 + b^2 + 2ab\cos(\pm x + \theta - \theta_c)$
-for a vector $c$ of length $a$ and direction $\theta_c$, which is of the stated
-form. $\square$
+Finally,
+
+```math
+|a\,u(\theta_0) + b\,u(\pm x + \theta)|^2 = a^2 + b^2 + 2ab\cos(\pm x + \theta - \theta_0) ,
+```
+
+which is of the stated form (Figure E.9). $\square$
 
 *Lean:
 [`Six.Stress.Pair.Sweep`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L240),
@@ -961,27 +1022,18 @@ form. $\square$
 [`Six.Stress.Pair.northHarmonic_amplitude`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L354),
 [`Six.Stress.Pair.westHarmonic_amplitude`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L360).*
 
-![Two panels in the frame of W. Left: as w runs over a line, the force F_W on W on its matching side for the facet -e^W_1 is the constant vector (r*, -m*) plus a turning unit vector, whose tip runs on an arc of the unit circle about the end of the constant vector; the length runs from 1.38 to 1.82. Right: along a line in n for the facet e^N_1 with W on its own axis, F_W is the constant vector (1, -m*) plus a short turning vector of length r* that points against it, its tip on an arc of a small circle](figures/appendix-e/pair-turning.svg)
-
-*Figure E.5.* Lemma E.9 in the frame of $W$, for $n = 0$. Left: along a line in
-$w$, with $W$ on its matching side and $f = -e^W_1$,
-$F_W = (r_*, -m_*) + u(-w)$; the dots mark $w = -\frac25, 0, \frac25$. Right:
-along a line in $n$, with $W$ on its own axis and $f = e^N_1$,
-$F_W = (1, -m_*) + r_*u(\frac\pi2 + n - w)$ for $w = -\frac15$; the turning part
-points against the constant part, which is the case (3) of Lemma A.13, so
-$-R_6|F_W|$ is concave there.
-
 ### Lemma E.10 (curvature of the forces)
 
 Along a segment in $\mathcal D$ of a line in $n$, a line in $w$ or the
 diagonal, the second derivatives in $x$ of $-R_f|F_N|$ and of $-R_6|F_W|$ exist
 and satisfy:
 
-1. that of $-R_f|F_N|$ is at most $\frac{23}{50}$; it is $0$ where $F_N$ is
-   constant in Table E.4; and along a line in $w$ with $f = -e^W_1$, at the
-   points where $w \le 0$, it is at most $\frac3{10}$;
+1. that of $-R_f|F_N|$ is at most $\frac{23}{50}$; it is $0$ where the length
+   of $F_N$ is constant in Table E.4; and along a line in $w$ with
+   $f = -e^W_1$, at the points where $w \le 0$, it is at most $\frac3{10}$;
 2. that of $-R_6|F_W|$ is at most $\chi_W$, given by the table (the entries
-   $0$ are where $F_W$ is constant, except for $e^N_1$ along a line in $n$)
+   $0$ are where the length of $F_W$ is constant, except for $e^N_1$ along a
+   line in $n$)
 
    | facet | line in $n$ | line in $w$, own | line in $w$, matching | diagonal, own | diagonal, matching |
    | --- | :-: | :-: | :-: | :-: | :-: |
@@ -1021,8 +1073,8 @@ $1$; and $m_* < \frac9{10}$ against $\sqrt{1 + r_*^2 + \frac35r_*} < \frac76$
 values of $\frac{17}{10}\frac{\bar a\bar b}{\bar a + \bar b}$ are $0.511 < \frac35$,
 $0.494 < \frac12$, $0.838 < \frac{21}{25}$, $0.586 < \frac35$, $0.864 < \frac9{10}$
 and $0.924 < 1$. It remains to treat $f = e^N_1$ along a line in $n$, where the
-entry is $0$. There the constant part is $c = (1, -m_*)$ on the own axis and
-$c = \kappa_W(w) - (0, m_*)$ on the matching side, and the turning part is
+entry is $0$. There the constant part of $F_W$ is $(1, -m_*)$ on the own axis
+and $\kappa_W(w) - (0, m_*)$ on the matching side, and the turning part is
 $r_*\psi_f(q) = r_*(-\sin q, \cos q)$. Their inner product is
 $-r_*(\sin q + m_*\cos q)$, respectively $-r_*(\sin n + m_*\cos q)$, and it is at
 most $-r_*^2$: on the own axis $q \ge n \ge -\frac3{10}$ and, if $q \le 0$,
@@ -1030,8 +1082,8 @@ $|q| \le \frac3{10}$, so $\sin q + m_*\cos q \ge -\frac3{10} + 0.8896\cdot0.955 
 while for $q \ge 0$ it is at least $m_*\cdot\frac{31}{49} > r_*$; on the matching
 side, if $n \le 0$, then $|q| \le \frac7{10}$ and
 $\sin n + m_*\cos q \ge -\frac3{10} + 0.8896\cdot0.755 > r_*$, and if $n \ge 0$ it
-is at least $\frac{31}{49}m_* > r_*$. So
-$Q\cos x + T\sin x = 2\langle c, r_*\psi_f\rangle \le -2r_*^2$. As
+is at least $\frac{31}{49}m_* > r_*$. So $Q\cos x + T\sin x$, twice this inner
+product, is at most $-2r_*^2$. As
 $\Lambda = a^2 + b^2 + Q\cos x + T\sin x > 0$ with $b = r_*$, this also gives
 $a > b$, and Lemma A.13 (3), with the roles of $a$ and $b$ exchanged (the lemma
 depends on them only through $a^2 + b^2$ and $4a^2b^2$), shows that the second
@@ -1066,9 +1118,9 @@ constant. So the second derivative of $G$ is
 ```
 
 along the three kinds of lines, where $\chi_N$ and $\chi_W$ are the second
-derivatives of $-R_f|F_N|$ and $-R_6|F_W|$. Table E.5 bounds the three terms by
+derivatives of $-R_f|F_N|$ and $-R_6|F_W|$. Table E.5 bounds the terms by
 Lemmas E.8 and E.10; the sum is at most $0$ in every case, and Lemma A.10 (1)
-gives the concavity. $\square$
+gives the concavity (Figure E.10). $\square$
 
 | line | facet | kind | $-H$ terms | $\chi_N$ | $\chi_W$ | sum at most |
 | --- | --- | --- | :-: | :-: | :-: | :-: |
@@ -1093,6 +1145,16 @@ gives the concavity. $\square$
 and E.10. In the first column of bounds, the first term bounds $-H_N$ or $-H_W$
 and the second $-H_Q$ (or $-H_W$ on the diagonal).
 
+![Graph over w from -2/5 to 2/5 of the gap along the three lines in w at n = -1/4 (blue), n = 0 (green) and n = 1/4 (orange), for N and W on their matching sides and the facet -e^W_1: each curve has corners where w = 0 or w = n, dots there and at the two ends, and dashed chords between consecutive dots, which lie below the curve; the green curve falls to 0 at the origin](figures/appendix-e/pair-lines.svg)
+
+*Figure E.10.* Lemmas E.11 and E.12 at work: the gap along the lines in $w$ at
+$n = -\frac14$, $0$ and $\frac14$, for $N$ and $W$ on their matching sides and
+$f = -e^W_1$. The points $w = 0$ and $w = n$ cut each line into pieces that lie
+in one sector; on each piece the gap is concave, so it lies above its chord
+(dashed). Its least value on the line is therefore at a dot, an end or a cut,
+and all of these are points of Lemma E.12: the cut $w = n$ is an end of the
+diagonal, or the origin.
+
 *Lean:
 [`Six.Stress.Pair.sweepCurvature`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L662),
 [`Six.Stress.Pair.sweepCurvature_nonpos`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L672),
@@ -1103,21 +1165,21 @@ and the second $-H_Q$ (or $-H_W$ on the diagonal).
 
 ### Lemma E.12 (sweeping a rectangle)
 
-Let $\mathcal R = [n_-, n_+] \times [w_-, w_+]$ contain the origin, let
-$z_- = \max(n_-, w_-)$ and $z_+ = \min(n_+, w_+)$, and let $g$ be a function on
-$\mathcal R$ that is concave on every segment in $\mathcal R$ of a line in $n$,
-a line in $w$ or the diagonal on which each of $n$, $w$ and $n - w$ keeps one
-sign. If $g \ge 0$ at the points $(x, y)$ with $x \in \lbrace n_-, 0, n_+\rbrace$
-and $y \in \lbrace w_-, 0, w_+\rbrace$ and at $(z_-, z_-)$ and $(z_+, z_+)$, then
-$g \ge 0$ on $\mathcal R$.
+Let $n_- \le 0 \le n_+$ and $w_- \le 0 \le w_+$, let $z_- = \max(n_-, w_-)$
+and $z_+ = \min(n_+, w_+)$, and let $g$ be a function on the rectangle
+$[n_-, n_+] \times [w_-, w_+]$ that is concave on every segment in it of a line
+in $n$, a line in $w$ or the diagonal on which each of $n$, $w$ and $n - w$
+keeps one sign. If $g \ge 0$ at the points $(x, y)$ with
+$x \in \lbrace n_-, 0, n_+\rbrace$ and $y \in \lbrace w_-, 0, w_+\rbrace$ and at
+$(z_-, z_-)$ and $(z_+, z_+)$, then $g \ge 0$ on the rectangle.
 
-*Proof.* (a) *One variable.* Let $l \le r$ and $k$ be real, and let $f$ be a
-function on $[l, r]$ that is concave on every closed interval on which neither
-$y$ nor $y - k$ changes sign. If $f \ge 0$ at $l$ and $r$, and at $0$ and at $k$
-when these lie in $[l, r]$, then $f \ge 0$ on $[l, r]$: the points $0$ and $k$
-cut $[l, r]$ into at most three closed intervals of this kind, whose ends are
-among $l$, $r$, $0$ and $k$, and a concave function on an interval is at least
-the smaller of its two end values.
+*Proof.* (a) *One variable.* Let $l \le r$ and $k$ be real, and let a function
+of $y \in [l, r]$ be concave on every closed interval on which neither $y$ nor
+$y - k$ changes sign. If it is nonnegative at $l$ and $r$, and at $0$ and $k$
+when these lie in $[l, r]$, then it is nonnegative on $[l, r]$: the points $0$
+and $k$ cut $[l, r]$ into at most three closed intervals of this kind, whose
+ends are among $l$, $r$, $0$ and $k$, and a concave function on an interval is
+at least the smaller of its two end values.
 
 (b) *The diagonal.* On $[z_-, z_+]$ the function $z \mapsto g(z, z)$ is concave
 on each side of $0$ (where $n - w = 0$ keeps its sign), and (a) with $k = 0$
@@ -1132,41 +1194,51 @@ by (b), since then $z_- \le x \le z_+$. So $g(x, y) \ge 0$ on the three lines.
 (d) *All lines in $n$.* Let $y \in [w_-, w_+]$. On $[n_-, n_+]$ the function
 $x \mapsto g(x, y)$ is concave on every interval on which $x$ and $x - y$ keep
 their signs, and (a) applies with $k = y$: its values at $n_-$, $0$ and $n_+$
-are nonnegative by (c), and at $x = y$, if $y \in [n_-, n_+]$, by (b).
-$\square$
+are nonnegative by (c), and at $x = y$, if $y \in [n_-, n_+]$, by (b)
+(Figure E.11). $\square$
 
 *Lean:
 [`Six.Stress.Pair.two_wall_nonneg`](../../SquaresInCircles/Six/Stress/PairEstimate.lean#L33),
 [`Six.Stress.Pair.rectangle_nonneg`](../../SquaresInCircles/Six/Stress/PairEstimate.lean#L78),
 [`Six.Stress.Pair.exists_hasSign`](../../SquaresInCircles/Six/Stress/PairEstimate.lean#L22).*
 
-![Four rectangles, one for each choice of N and W on their own axes or matching sides, in the plane of n (horizontal) and w (vertical): each is cut by the lines n = 0, w = 0 and n = w into sign sectors; the diagonal segment is drawn thick, three vertical segments at n = n-, 0, n+ in blue, and one horizontal segment in orange with small marks where it crosses n = 0 and n = w; black dots mark the corner and axis points and the two ends of the diagonal](figures/appendix-e/pair-domain.svg)
+![Four rectangles, one for each choice of N and W on their own axes or matching sides, in the plane of n (horizontal) and w (vertical), with the bounds of the domain marked on the axes: each is cut by the lines n = 0, w = 0 and n = w into sign sectors; the diagonal segment is drawn thick, three vertical segments at n = n-, 0, n+ in blue, and one horizontal segment in orange with small marks where it crosses n = 0 and n = w; black dots mark the corner and axis points, and open dots the two ends of the diagonal](figures/appendix-e/pair-domain.svg)
 
-*Figure E.6.* The domains of the pair, cut into sectors by the lines $n = 0$,
-$w = 0$ and $n = w$, and the order of Lemma E.12: the diagonal (thick), the three
-lines in $w$ (blue), then any line in $n$ (orange), each concave between the
-marks where it crosses the sector boundaries. The gap is checked at the dots.
+*Figure E.11.* The domains of the pair, cut into sectors by the lines $n = 0$,
+$w = 0$ and $n = w$, and the order of Lemma E.12: the diagonal (thick), the
+three lines in $w$ (blue), then any line in $n$ (orange), each concave between
+the marks where it crosses the sector boundaries. The gap is checked at the
+dots: the corner and axis points (filled) and the ends of the diagonal (open).
 When $W$ is on its own axis, $w_+ = 0$ and only six of the nine corner and axis
 points are distinct.
 
 At finitely many points we compare the gap with an approximation in which the
-sine and the cosine are polynomials and the constants are decimals. The bounds of
-Lemma A.7 have two more terms of the same kind.
+sine and the cosine are polynomials and the constants are decimals. The next
+lemma extends the Taylor bounds of Lemma A.7 by one term each.
 
 ### Lemma E.13 (Taylor bounds of degrees 8 and 9)
 
-For $t \ge 0$, $\cos t \le C_6(t) + \frac{t^8}{40320}$ and
-$\sin t \le S_7(t) + \frac{t^9}{362880}$. Hence, for $|t| \le \frac67$,
+For $t \ge 0$, $\cos t \le C_6(t) + \frac{t^8}{8!}$ and
+$\sin t \le S_7(t) + \frac{t^9}{9!}$. Hence, for $|t| \le \frac67$,
 $|\cos t - C_6(t)| \le 10^{-5}$ and $|\sin t - S_7(t)| \le 10^{-5}$.
 
-*Proof.* Let $g_8(t) = C_6(t) + \frac{t^8}{40320} - \cos t$ and
-$g_9(t) = S_7(t) + \frac{t^9}{362880} - \sin t$. Then $g_8(0) = g_9(0) = 0$,
+*Proof.* Let $g_8(t) = C_6(t) + \frac{t^8}{8!} - \cos t$ and
+$g_9(t) = S_7(t) + \frac{t^9}{9!} - \sin t$. Then $g_8(0) = g_9(0) = 0$,
 $g_9' = g_8$, and $g_8'(t) = \sin t - S_7(t) \ge 0$ for $t \ge 0$ by Lemma A.7
 (4). By [Lemma A.1](appendix-a.md#lemma-a1-monotonicity-from-the-derivative)
 (3), $g_8 \ge 0$ and then $g_9 \ge 0$ on $[0, \infty)$. For $0 \le t \le \frac67$
-this gives $0 \le \cos t - C_6(t) \le (\frac67)^8/40320 < 7.3 \cdot 10^{-6}$ and
-$0 \le \sin t - S_7(t) \le (\frac67)^9/362880 < 7 \cdot 10^{-7}$, with Lemma A.7;
-for $-\frac67 \le t \le 0$ use that $C_6$ is even and $S_7$ odd. $\square$
+this gives $0 \le \cos t - C_6(t) \le (\frac67)^8/8! < 7.3 \cdot 10^{-6}$ and
+$0 \le \sin t - S_7(t) \le (\frac67)^9/9! < 7 \cdot 10^{-7}$, with Lemma A.7;
+for $-\frac67 \le t \le 0$ use that $C_6$ is even and $S_7$ odd (Figure E.12).
+$\square$
+
+![Graph over t from -6/7 to 6/7, in millionths: the error of the cosine polynomial, blue, flat near zero and rising to 7.17 at both ends; the error of the sine polynomial, orange, odd, from -0.68 to 0.68; and a dashed red line at 10, that is at 10^-5, well above both](figures/appendix-e/taylor-error.svg)
+
+*Figure E.12.* Lemma E.13: the errors $\cos t - C_6(t)$ (blue) and
+$\sin t - S_7(t)$ (orange) for $|t| \le \frac67$, in units of $10^{-6}$. They
+are the next Taylor terms $\frac{t^8}{8!}$ and $\frac{t^9}{9!}$ up to
+$1\%$, and at most $7.2 \cdot 10^{-6}$ and $6.9 \cdot 10^{-7}$, at $t = \pm\frac67$,
+against the bound $10^{-5}$ (dashed).
 
 *Lean:
 [`Six.Stress.Pair.cos_upper_eight`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L28),
@@ -1176,10 +1248,10 @@ for $-\frac67 \le t \le 0$ use that $C_6$ is even and $S_7$ odd. $\square$
 ### Definition E.14 (the approximate gap)
 
 Let $\tilde r = 0.36878$, $\tilde m = 0.8897$ and $\tilde\beta = 0.071$. The
-*approximation* of a quantity of Definition 9.48 is obtained by replacing $\cos t$ and
-$\sin t$ by $C_6(t)$ and $S_7(t)$, $r_*$, $m_*$ and $c_0$ by $\tilde r$,
-$\tilde m$ and $\bar c$, and $\beta_*$ by $\tilde\beta$; we mark it with a
-tilde. So $\tilde\kappa(t) = (C_6(t), -S_7(t))$ on the matching side,
+*approximation* of a quantity of Definition 9.48 is obtained by replacing
+$\cos t$ and $\sin t$ by $C_6(t)$ and $S_7(t)$, $r_*$, $m_*$ and $c_0$ by
+$\tilde r$, $\tilde m$ and $\bar c$, and $\beta_*$ by $\tilde\beta$; we mark
+it with a tilde. So $\tilde\kappa(t) = (C_6(t), -S_7(t))$ on the matching side,
 $\tilde\tau(t) = \frac12 + \frac12(|C_6(t)| + |S_7(t)|)$,
 $\tilde F_N = \tilde\kappa_N(n) + \tilde r\tilde\phi_f(q)$,
 $\tilde F_W = \tilde\kappa_W(w) + \tilde r\tilde\psi_f(q) - (0, \tilde m)$, and
@@ -1229,15 +1301,18 @@ E' > 0, \qquad X + Y < E'^2, \qquad 4XY < \left(E'^2 - X - Y\right)^2 . \tag{E.2
 (Lemma E.13), and $|r_* - \tilde r|$, $|m_* - \tilde m|$, $|c_0 - \bar c|$ are
 below $10^{-5}$ by the brackets above. We add up the errors.
 
-1. *Forces.* Each coordinate of $\kappa$, $\phi_f$, $\psi_f$ is within $10^{-5}$
-   of its approximation and at most $1$ in absolute value; so
-   $|r_*x - \tilde rX| \le |r_* - \tilde r|\,|x| + \tilde r\,|x - X| < 2 \cdot 10^{-5}$,
-   and each coordinate of $F_N$ and $F_W$ is within
+1. *Forces.* Each coordinate $x$ of $\kappa$, $\phi_f$, $\psi_f$ is within
+   $10^{-5}$ of its approximation $\tilde x$ and at most $1$ in absolute value;
+   so $|r_*x - \tilde r\tilde x| \le |r_* - \tilde r|\,|x| + \tilde r\,|x - \tilde x|$,
+   which is less than $2 \cdot 10^{-5}$, and each coordinate of $F_N$ and $F_W$
+   is within
    $10^{-5} + 2 \cdot 10^{-5} + 10^{-5} = 4 \cdot 10^{-5}$ of its approximation
    (the last term from $m_*$).
-2. *Lengths.* If $|x - X|, |y - Y| \le \eta$ and $L = \sqrt{X^2 + Y^2}$, then
-   $x^2 + y^2 \le L^2 + 2(|X| + |Y|)\eta + 2\eta^2 \le (L + 2\eta)^2$, as
-   $|X|, |Y| \le L$. So $|F| \le |\tilde F| + 8 \cdot 10^{-5}$ for both forces.
+2. *Lengths.* If each coordinate of $F$ is within $\xi$ of that of $\tilde F$,
+   then $|F|^2 \le |\tilde F|^2 + 2(|\tilde F_1| + |\tilde F_2|)\xi + 2\xi^2$,
+   which is at most $(|\tilde F| + 2\xi)^2$ as
+   $|\tilde F_1|, |\tilde F_2| \le |\tilde F|$. With $\xi = 4 \cdot 10^{-5}$,
+   $|F| \le |\tilde F| + 8 \cdot 10^{-5}$ for both forces.
    For $0 \le R \le \frac{17}{10}$ and $R^2 \le S$ this gives
    $R|F| \le \sqrt{S|\tilde F|^2} + 1.36 \cdot 10^{-4}$; we use it with
    $(R, S) = (R_6, Q_0)$ and $(\rho_*, \bar\rho^2)$.
@@ -1290,10 +1365,9 @@ the facets of the model, where it is $0$.
 $F_W = (1 + r_*, -m_*)$, $P = 0$ and $\tau(0) = 1$. These are the forces of
 the stress of the model on $N$ and $W$, in their frames, whose works on the
 centres equal their far-vertex bounds (Proposition 9.27 (2)): with the centres
-at
-$(a, b) = (s_* + 1, -s_*)$ in the frame of $N$ and $(1 - s_*, -t_*)$ in that of
-$W$, $V(F_N) = 1 + s_* + r_*s_*$ and
-$V(F_W) = (1 + r_*)(1 - s_*) + m_*t_*$. So
+at $(a, b) = (s_* + 1, -s_*)$ in the frame of $N$ and $(1 - s_*, -t_*)$ in that
+of $W$, $V(F_N) = 1 + s_* + r_*s_*$ and $V(F_W) = (1 + r_*)(1 - s_*) + m_*t_*$.
+So
 
 ```math
 \Pi(0, 0) = 2 + r_* + \tfrac12m_* - (1 + s_* + r_*s_*) - (1 + r_*)(1 - s_*) - m_*t_* = m_*\left(\tfrac12 - t_*\right) = \beta_* ,
@@ -1342,10 +1416,9 @@ $w = 0$ not on that of $W$ ("either"). The entries $0$ are the exact values of
 $G$ at the origin for the facets of the model.
 
 The smallest entry, $0.00063$ at $n = 0$, $w = -\frac{11}{25}$ for
-$f = -e^N_2$, is where the decimals of $r_*$ matter: the gap itself is
-$6.6 \cdot 10^{-4}$ there, and the budget of Lemma E.15 leaves $1.3 \cdot 10^{-4}$
-of $\tilde G$. Figure E.7 shows the gap of the two facets of the model on the
-domain where it is smallest.
+$f = -e^N_2$, is the tightest: the gap itself is $6.6 \cdot 10^{-4}$ there, and
+$\tilde G$ exceeds $5 \cdot 10^{-4}$ by $1.3 \cdot 10^{-4}$. Figure E.13 shows the
+gap of the two facets of the model on the domain where it is smallest.
 
 *Lean:
 [`Six.Stress.Pair.gap_vertices`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L395),
@@ -1354,13 +1427,13 @@ domain where it is smallest.
 [`Six.radius_mul_north_length`](../../SquaresInCircles/Six/Constants.lean#L281),
 [`Six.radius_mul_west_length`](../../SquaresInCircles/Six/Constants.lean#L294).*
 
-![Two heat maps of the gap over the domain of the pair for N and W on their own axes, n from -3/10 to 5/12 horizontally and w from -11/25 to 0 vertically: light where the gap is near 0 and darker where it is larger, with contour lines; for the facet -e^W_1 (left) the gap vanishes at the origin, at the top edge, and grows away from it; for -e^N_2 (right) it also vanishes at the origin and nearly vanishes at the point n = 0, w = -11/25 at the bottom edge, marked with a dot](figures/appendix-e/pair-gap.svg)
+![Two heat maps of the gap over the domain of the pair for N and W on their own axes, n from -3/10 to 5/12 horizontally and w from -11/25 to 0 vertically, with a colour scale below: white where the gap is below 0.01 and darker blue where it is larger, with contour lines; for the facet -e^W_1 (left) the gap vanishes at the origin, at the top edge, and grows away from it; for -e^N_2 (right) it also vanishes at the origin and nearly vanishes at the point n = 0, w = -11/25 at the bottom edge, marked with a dot](figures/appendix-e/pair-gap.svg)
 
-*Figure E.7.* The gap $G$ for $N$ and $W$ on their own axes, for the facets
-$-e^W_1$ (left) and $-e^N_2$ (right), with contour lines at $0.01$, $0.02$,
-$0.04$, $0.08$, $0.16$ and $0.32$.
-It vanishes only at the origin, where both facets are tight, and comes within
-$6.6 \cdot 10^{-4}$ of $0$ at $(0, -\frac{11}{25})$ for $-e^N_2$ (dot).
+*Figure E.13.* The gap $G$ for $N$ and $W$ on their own axes, for the facets
+$-e^W_1$ (left) and $-e^N_2$ (right), shaded between the contour lines at
+$0.01$, $0.02$, $0.04$, $0.08$, $0.16$ and $0.32$ (scale below). It vanishes
+only at the origin (red dot), where both facets are tight, and comes within
+$6.6 \cdot 10^{-4}$ of $0$ at $(0, -\frac{11}{25})$ for $-e^N_2$ (orange dot).
 
 *Proof of Proposition 9.50.* Fix the facet $f$ and the kinds of $N$ and $W$.
 The domain $\mathcal D$ contains the origin. By Lemma E.11 the gap is concave
@@ -1386,12 +1459,23 @@ $\delta$, $L$, $\sigma$, $\Delta$ and $\mathcal R$ are as in
 [Definition 9.51](09-six.md#definition-951-the-diagonal-value). The square $D$ is
 held by the two wings, and the force of the stress of the model on it is the
 sum of $m_*e^W_2$, from $W$–$D$, and $-m_*e^S_2$, from $D$–$S$. In the frame of
-$D$ it makes the angle $-\delta$ with the primary axis, and the support
-$\sigma(L, \delta)$ bounds its work ([Lemma 9.52](09-six.md#lemma-952-the-diagonal-bound)):
-the work is largest with the centre of $D$ at the corner $(\rho_*, 0)$ of the
-region of its possible centres when the force is nearly radial, and with a far
-vertex of $D$ on the circle otherwise (Figure E.8). We first write $\Delta$ in
-these terms, then treat the two cases.
+$D$ it makes the angle $-\delta$ with the primary axis (Figure E.14), and the
+support $\sigma(L, \delta)$ bounds its work
+([Lemma 9.52](09-six.md#lemma-952-the-diagonal-bound)): the work is largest with
+the centre of $D$ at the corner $(\rho_*, 0)$ of the region of its possible
+centres when the force is nearly radial, and with a far vertex of $D$ on the
+circle otherwise (Figure E.15). We first write $\Delta$ in these terms, then
+treat the two cases.
+
+![The turned square D between W, above it, and S, to its right, inside part of a dashed circle about the disk centre; the bottom edge of W and the left edge of S are extended as dashed lines, and D touches both. At the centre of D two thin arrows, purple pointing down and pink pointing left, add up, by a dashed parallelogram, to a thick black arrow pointing down and to the left; a dashed cyan ray from the centre of D, the primary axis e1 of D, makes a small angle delta with the black arrow, marked by an arc](figures/appendix-e/diagonal-force.svg)
+
+*Figure E.14.* The force of the stress of the model on $D$ at
+$w = -\frac7{20}$, $s = -\frac3{20}$ and $d = \frac34$, so that
+$\beta = -\frac1{10}$ and $\delta \approx 0.215$; $W$ and $S$ sit at their
+places in the model, turned by $w$ and $s$, and $D$ touches both wings
+(dashed). The forces $m_*e^W_2$ of $W$–$D$ (purple) and $-m_*e^S_2$ of $D$–$S$
+(pink) add up to $L(\cos\delta, -\sin\delta)$ in the frame of $D$ (black),
+turned by $-\delta$ from the primary axis $e^D_1$ (cyan).
 
 ### Lemma E.17 (the turned square)
 
@@ -1468,16 +1552,17 @@ $\cos(\frac\pi4 + x) + \sin(\frac\pi4 + x) = 2h\cos x$. So
 [`Six.Stress.diagonalCap`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L169),
 [`Six.Stress.diagonalVertex`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L174).*
 
-![Two panels in the frame of D, with the disk centre at the origin, the circle of radius R6 and the region of the possible centres of D, bounded by four arcs that meet in corners on the axes. Left, the cap case: the force on D points within the narrow angle between the normals of the two arcs at the corner (rho*, 0), and the square D is drawn with its centre at that corner, two vertices on the circle. Right, the vertex case: the force points more steeply, the best centre lies on an arc, and the square D has its far vertex on the circle in the direction of the force](figures/appendix-e/diagonal-support.svg)
+![Two panels in the frame of D, with the disk centre at the origin, the dashed circle of radius R6 and the region of the possible centres of D, bounded by four arcs that meet in corners on the axes. Left, the cap case: the force on D points within the narrow angle between the normals of the two arcs at the corner (rho*, 0), and the square D is drawn with its centre at that corner, two vertices on the circle. Right, the vertex case: the force points more steeply, the best centre lies on an arc, and the square D has its far vertex on the circle in the direction of the force](figures/appendix-e/diagonal-support.svg)
 
-*Figure E.8.* The support $\sigma(L, \delta)$ of the force $L(\cos\delta, -\sin\delta)$
-on $D$ (Definition 9.51), in the frame of $D$. The centres of the unit squares of
-this frame in the disk of radius $R_6$ form the region bounded by the four arcs
-$(|a| + \frac12)^2 + (|b| + \frac12)^2 = R_6^2$ (grey). Left: if
+*Figure E.15.* The support $\sigma(L, \delta)$ of the force
+$L(\cos\delta, -\sin\delta)$ on $D$ (Definition 9.51), in the frame of $D$, for
+$\delta = 0.15$ (left) and $\delta = \frac12$ (right). The centres of the unit
+squares of this frame in the disk of radius $R_6$ form the region bounded by the
+four arcs $(|a| + \frac12)^2 + (|b| + \frac12)^2 = R_6^2$ (grey). Left: if
 $2R_6|\sin\delta| \le 1$, the force lies in the angle of the normals at the
 corner $(\rho_*, 0)$ (dashed), and the work is largest there:
-$\sigma = \rho_*L\cos\delta$. Right: otherwise it is largest where the far vertex
-of $D$ lies on the circle in the direction of the force:
+$\sigma = \rho_*L\cos\delta$. Right: otherwise it is largest where the far
+vertex of $D$ lies on the circle in the direction of the force:
 $\sigma = L(R_6 - \frac12(\cos\delta + |\sin\delta|))$.
 
 ### Lemma E.18 (the lines and the base)
@@ -1530,19 +1615,18 @@ $|\beta| \le \frac12Z$,
 \mathcal R_{\mathrm{cap}} \ge \tfrac{23}{100}Z - \tfrac{43}{100}|\beta| \ge \left(\tfrac{23}{100} - \tfrac{43}{200}\right)Z = \tfrac3{200}Z .
 ```
 
-*If $\beta \ge 0$:* then $\beta \le \frac25$. Let
-$q = \frac16\beta^2 + \frac12\delta^2$, so that
-$q \le \frac{4}{150} + \frac12(\frac{71}{100})^2 < \frac7{25}$. As
+*If $\beta \ge 0$:* then $\beta \le \frac25$. As
 $\sin\beta \ge \beta - \frac{\beta^3}6$, $\cos\delta \ge 1 - \frac{\delta^2}2$ and
 $(\beta - \sin\beta)(1 - \cos\delta) \ge 0$,
 
 ```math
-\sin\beta\cos\delta \ge \sin\beta + \beta\cos\delta - \beta \ge \beta\left(1 - \tfrac{\beta^2}6\right) - \beta\tfrac{\delta^2}2 = \beta(1 - q) .
+\sin\beta\cos\delta \ge \sin\beta + \beta\cos\delta - \beta \ge \beta\left(1 - \tfrac{\beta^2}6 - \tfrac{\delta^2}2\right) \ge \tfrac{18}{25}\beta ,
 ```
 
-So
-$T\sin\beta\cos\delta - \frac{49}{50}\beta \ge \beta(1.39 \cdot \frac{18}{25} - \frac{49}{50}) \ge 0$,
-and $\mathcal R_{\mathrm{cap}} \ge \frac{23}{100}Z \ge \frac3{200}Z$.
+as $\frac{\beta^2}6 + \frac{\delta^2}2 \le \frac2{75} + \frac12(\frac{71}{100})^2$,
+which is less than $\frac7{25}$. So
+$T\sin\beta\cos\delta \ge 1.39 \cdot \frac{18}{25}\beta \ge \frac{49}{50}\beta$, and
+$\mathcal R_{\mathrm{cap}} \ge \frac{23}{100}Z \ge \frac3{200}Z$.
 
 If $\mathcal R_{\mathrm{cap}} = 0$, then $Z = 0$, so $w = s = 0$, $\beta = 0$,
 $\delta = d - \frac\pi4$ and
@@ -1550,6 +1634,18 @@ $\mathcal R_{\mathrm{cap}} = \Psi = K_*(\rho_* - 1)\left(1 - \cos(d - \frac\pi4)
 So $\cos(d - \frac\pi4) = 1$, and Lemma A.15 (4) gives
 $\frac15(d - \frac\pi4)^2 \le 1 - \cos(d - \frac\pi4) = 0$, that is,
 $d = \frac\pi4$. $\square$
+
+For $\beta < 0$ the bound is of the right order: along the line $s = -w$ at
+$d = \frac\pi4$ the remainder grows only like $0.04|w|$ (Figure E.16).
+
+![Graph over w from -11/25 to 2/5 of the remainder along the line s = -w at d = pi/4: for negative w it rises slowly, to about 0.05 at w = -11/25, above a dashed line of slope 3/100 from the origin; for positive w it rises steeply, above a dashed line of slope 46/100; it vanishes at the origin, marked with a dot](figures/appendix-e/cap-line.svg)
+
+*Figure E.16.* Lemma E.19 along the line $s = -w$ at $d = \frac\pi4$, where
+$\delta = 0$ (the cap case) and $\beta = w$: the remainder (blue) and the bounds
+of the proof (dashed), $\frac3{200}(|w| + |s|)$ and, for $\beta \ge 0$,
+$\frac{23}{100}(|w| + |s|)$. For $\beta < 0$ the lines of the two pairs,
+$\ell(w) + \ell(-s) = \frac{36}{25}|w|$, barely exceed the gain of the support,
+about $1.40|\sin w|$.
 
 *Lean:
 [`Six.Stress.diagonal_cap_lower`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L214),
@@ -1573,7 +1669,7 @@ with $p(t) = 0.919 - \frac12(\cos t + \sin t)$. Here
 $t \le \frac27 + x \le \frac27 + \frac{11}{25} < \frac34 < \frac\pi4$, so
 $\cos t + \sin t$ is nondecreasing in $t$ (Lemma A.15 (3)), and $p(t) \le p(l)$
 for $0 \le l \le t$. Also $x \ge t - \frac27 > 0$. We cut the range of $t$ into
-three pieces $[l, u]$.
+three pieces $[l, u]$ (Figure E.17).
 
 1. *$[l, u] = [\frac{29}{100}, \frac{11}{25}]$ and $[\frac{11}{25}, \frac12]$.* By
    Lemma A.8, $0 \le p(l) \le \frac9{25}$ (Table E.7). As
@@ -1617,12 +1713,13 @@ ends and of $l$; they are positive. $\square$
 $C_6 \le \cos \le C_4$ and $S_7 \le \sin \le S_5$ at $l$, and Taylor lower bounds
 of the end values of $F_l$, rounded down.
 
-![Graph over t from 0.29 to 0.75 of the three concave lower bounds F_l of the vertex minorant, one on each piece, each positive at both of its ends and dipping close to zero near t = 0.44 and t = 0.5; the least value of the minorant over the admissible x and y at each t is drawn above them](figures/appendix-e/vertex-minorant.svg)
+![Graph over t from 29/100 to 3/4 of the three concave lower bounds F_l of the vertex minorant, one on each piece, each positive at both of its ends and dipping close to zero near t = 11/25 and t = 1/2, with dashed continuations that turn negative just outside the pieces; the least value of the minorant over the admissible x and y at each t is drawn above them](figures/appendix-e/vertex-minorant.svg)
 
-*Figure E.9.* Lemma E.20: the least value of $\Phi(x, y, t)$ over the admissible
-$x$ and $y$ (blue), and the three concave lower bounds $F_l$ on their pieces
-(orange). Each bound turns negative soon after the right end of its piece,
-which is why three pieces are needed.
+*Figure E.17.* Lemma E.20: the least value of $\Phi(x, y, t)$ over the
+admissible $x$ and $y$ (blue), and the three concave lower bounds $F_l$ on their
+pieces (orange). Continued beyond their pieces (dashed), the first two turn
+negative soon after $u$, and the third just before $l$; so three pieces are
+needed.
 
 *Lean:
 [`Six.Stress.vertexMinorant`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L318),
@@ -1662,10 +1759,9 @@ $K_*\mathcal B \ge \frac54 \cdot \frac{17}{20} = \frac{17}{16}$. We claim
 $-\frac{49}{50}\beta + K_*\mathcal B\sin\beta \ge \frac{49}{50}y - K_*\mathcal By$.
 If $\beta \le 0$, this follows from $\sin\beta \ge \beta = -y$. If
 $\beta \ge 0$, then $\beta \le \frac12$ and
-$\sin\beta \ge \beta - \frac{\beta^3}6 \ge \frac{23}{24}\beta$,
-so
-$K_*\mathcal B(\sin\beta + \beta) \ge \frac{17}{16} \cdot \frac{47}{24}\beta > \frac{49}{25}\beta$,
-which is the claim. Hence
+$\sin\beta \ge \beta - \frac{\beta^3}6 \ge \frac{23}{24}\beta$, so
+$K_*\mathcal B(\sin\beta + \beta) \ge \frac{17}{16} \cdot \frac{47}{24}\beta$, which
+exceeds $\frac{49}{25}\beta$: this is the claim. Hence
 
 ```math
 \mathcal R_{\mathrm{vertex}} \ge \tfrac{46}{100}M + \tfrac{49}{50}y + K_*\left(\mathcal A - \mathcal By + \rho_* - 1\right) .
@@ -1687,20 +1783,22 @@ $\rho_* > 1.112$; and $\Phi(x, y, t) > 0$ by Lemma E.20, whose hypotheses are
 [`Six.Stress.diamond_bound`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L459),
 [`Six.Stress.max_bound`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L476).*
 
-![Three heat maps of the remainder over the box of w from -11/25 to 2/5 (horizontal) and s from -2/5 to 11/25 (vertical), for d = pi/4, d = 0.65 and d = 1/2; light near zero and darker where larger, with contour lines; dashed lines of slope -1 separate the cap case, a band around a line w + s = const, from the vertex case on either side; for d = pi/4 the remainder vanishes only at the origin, marked with a dot](figures/appendix-e/diagonal-remainder.svg)
+![Three heat maps of the remainder over the box of w from -11/25 to 2/5 (horizontal) and s from -2/5 to 11/25 (vertical), for d = pi/4, d = 0.65 and d = 1/2, with a colour scale below: white below 0.05 and darker blue for larger values, with contour lines; red dashed lines of slope -1 separate the cap case, a band around a line w + s = const, from the vertex case on either side; for d = pi/4 the remainder vanishes only at the origin, marked with a dot](figures/appendix-e/diagonal-remainder.svg)
 
-*Figure E.10.* The remainder $\mathcal R(w, s, d)$ over the box of $w$ and $s$,
-for $d = \frac\pi4$, $0.65$ and $\frac12$, with contour lines at multiples of
-$0.05$. Between the dashed lines, $2R_6|\sin\delta| \le 1$ (the cap case of
-Lemma E.19); outside them the vertex case of Lemma E.21. The remainder vanishes
-only at the model, $w = s = 0$, $d = \frac\pi4$ (dot).
+*Figure E.18.* The remainder $\mathcal R(w, s, d)$ over the box of $w$ and $s$,
+for $d = \frac\pi4$, $0.65$ and $\frac12$, shaded between contour lines at
+multiples of $0.05$ (scale below). Between the dashed lines,
+$2R_6|\sin\delta| \le 1$ (the cap case of Lemma E.19); outside them the vertex
+case of Lemma E.21. The remainder vanishes only at the model, $w = s = 0$,
+$d = \frac\pi4$ (dot).
 
 *Proof of Proposition 9.53.* By Definition 9.51 and Lemma E.17 (5),
 $\mathcal R = \mathcal R_{\mathrm{cap}}$ in the cap case and
 $\mathcal R = \mathcal R_{\mathrm{vertex}}$ in the vertex case. In the cap case
 $\mathcal R \ge \frac3{200}(|w| + |s|) \ge 0$, with equality only for
 $w = s = 0$ and $d = \frac\pi4$ (Lemma E.19); in the vertex case
-$2R_6|\sin\delta| > 1$ and $\mathcal R > 0$ (Lemma E.21). $\square$
+$2R_6|\sin\delta| > 1$ and $\mathcal R > 0$ (Lemma E.21). Figure E.18 shows
+the two cases. $\square$
 
 *Lean:
 [`Six.Stress.remainder_nonnegative`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L541),

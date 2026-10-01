@@ -21,15 +21,15 @@ it on its own. Every case is proved in the same way. An analysis of the
 packings at the optimal radius shows that they are all congruent to the
 optimal models, and the lower bound follows because every optimal model
 reaches the circle. For three to five squares the analysis measures the arcs
-of a small circle about the disk centre that the squares occupy. For six
-squares the arcs find the square that contains the disk centre and five fixed
-points label the others; then a weighted sum of separating inequalities, whose
+of a small circle about the disk centre that the squares hold. For six squares
+the arcs find the square that contains the disk centre and five fixed points
+label the others; then a weighted sum of separating inequalities, whose
 weights balance at the optimal packing, bounds the radius, with estimates
 uniform over whole intervals of the angles of the squares. For seven squares
-the analysis attaches to each square a direction, its marker, and shows that
-the markers of two disjoint squares are at least $\frac\pi3$ apart. Every
-result is proved in Lean 4 with mathlib, and each numbered statement names the
-declarations that prove it.
+the analysis attaches to each square that avoids the disk centre a direction,
+its marker, and shows that the markers of two disjoint squares are at least
+$\frac\pi3$ apart. Every result is proved in Lean 4 with mathlib, and each
+numbered statement names the declarations that prove it.
 
 ## Contents
 
@@ -55,7 +55,7 @@ declarations that prove it.
   - [3.6 Arcs of an exterior square](03-tools.md#36-arcs-of-an-exterior-square)
   - [3.7 The radial sweep](03-tools.md#37-the-radial-sweep)
   - [3.8 Elementary estimates](03-tools.md#38-elementary-estimates)
-  - [3.9 Recognising a model](03-tools.md#39-recognising-a-model)
+  - [3.9 Recognizing a model](03-tools.md#39-recognizing-a-model)
 - [4. One square](04-one.md)
   - [Theorem 4.1 (one square)](04-one.md#theorem-41-one-square)
   - [4.1 Construction](04-one.md#41-construction)
@@ -199,7 +199,8 @@ placed about the origin, and a packing is *congruent* to it if one rotation
 about the disk centre and one relabelling of the squares carry the model,
 placed at the disk centre, onto the packing. Write $Q(c)$ for the
 axis-parallel unit square centred at $c$ (Definition 2.2), and $Q^\diamond(c)$
-for the unit square centred at $c$ and turned by $\frac\pi4$.
+for the unit square centred at $c$ and turned by $\frac\pi4$. Table 1.1 lists
+the optimal radii and models, and Figure 1.1 draws them.
 
 | $n$ | $R_n$ | $R_n \approx$ | centres $c_1, \dots, c_n$ of the optimal models | the optimal packing |
 | :-: | :-: | :-: | --- | --- |
@@ -208,23 +209,23 @@ for the unit square centred at $c$ and turned by $\frac\pi4$.
 | 3 | $\frac{5\sqrt{17}}{16}$ | 1.2885 | $(-\frac12, -\frac5{16})$, $(\frac12, -\frac5{16})$, $(0, \frac{11}{16})$ | the T |
 | 4 | $\sqrt2$ | 1.4142 | $(\frac12, \frac12)$, $(-\frac12, \frac12)$, $(-\frac12, -\frac12)$, $(\frac12, -\frac12)$ | the $2 \times 2$ block |
 | 5 | $\sqrt{5/2}$ | 1.5811 | $(0, 0)$, $(1, 0)$, $(0, 1)$, $(-1, 0)$, $(0, -1)$ | the plus |
-| 6 | $\sqrt{q_*}$ | 1.6885 | $(s_*, s_*)$, $(s_*, s_* + 1)$, $(s_* + 1, s_*)$, $(s_* - 1, t_*)$, $(t_*, s_* - 1)$, and $Q^\diamond(-d_*, -d_*)$ | a square with four neighbours, two of them pushed along its sides, and a turned square between those two |
+| 6 | $\sqrt{q_*}$ | 1.6885 | $(s_*, s_*)$, $(s_*, s_* + 1)$, $(s_* + 1, s_*)$, $(s_* - 1, t_*)$, $(t_*, s_* - 1)$, $(-d_*, -d_*)$ | a square with four neighbours, two of them pushed along its sides, and a turned square between those two |
 | 7 | $\frac{\sqrt{13}}2$ | 1.8028 | $(1, -\frac12)$, $(1, \frac12)$, $(-1, -\frac12)$, $(-1, \frac12)$, $(0, y_1)$, $(0, y_2)$, $(0, y_3)$ | the column packings |
 
 *Table 1.1.* The optimal radii and the optimal models $Q(c_1), \dots, Q(c_n)$.
-For $n \le 6$ there is one optimal model; for $n = 6$ its sixth square is
-$Q^\diamond(-d_*, -d_*)$, and the numbers $s_* \approx 0.0842$,
+For $n \le 6$ there is one optimal model; for $n = 6$ its sixth square is the
+turned square $Q^\diamond(-d_*, -d_*)$, and the numbers $s_* \approx 0.0842$,
 $t_* \approx 0.4202$, $d_* \approx 0.7869$ and $q_* \approx 2.8512$ are given
-in closed form in Theorem 9.1. For $n = 7$ the optimal models are
-the *column packings*, one for each choice of heights with
-$y_1 + 1 \le y_2$, $y_2 + 1 \le y_3$ and
-$-(\sqrt3 - \frac12) \le y_1$, $y_3 \le \sqrt3 - \frac12$.
+in closed form in Theorem 9.1. For $n = 7$ the optimal models are the *column
+packings*, one for each choice of heights with $y_1 + 1 \le y_2$,
+$y_2 + 1 \le y_3$ and $-(\sqrt3 - \frac12) \le y_1$, $y_3 \le \sqrt3 - \frac12$.
 
 ![The seven optimal packings side by side at a common scale, each in its dashed circle of radius R_n: one square; two squares forming a 2 by 1 rectangle; the T of three squares; the 2 by 2 block of four; the plus of five; six squares, a square with four neighbours, two of them pushed along its sides, and a square turned by 45 degrees between those two; and seven squares, two columns of two beside a column of three. Dots mark the corners that lie on the circles](figures/01-introduction/optimal.svg)
 
 *Figure 1.1.* The optimal packings of $n = 1, \dots, 7$ unit squares, each in
-its circle of radius $R_n$, at a common scale. Dots mark the corners on the
-circle; for $n = 6$ two of them are vertices of the turned square.
+its circle of radius $R_n$, at a common scale; for $n = 7$ the column packing
+with the heights $(-1, 0, 1)$. Dots mark the corners on the circle; for
+$n = 6$ two of them are vertices of the turned square.
 
 #### Theorem 1.1 (main theorem)
 
@@ -250,15 +251,15 @@ lower bound of (1) here, and part (3) gives (2). $\square$
 unique up to a rotation about the disk centre and a relabelling of the
 squares. Reflections are not needed, since every optimal model is symmetric
 under a reflection in a line through the origin; for $n = 6$ it is the
-diagonal $y = x$. (ii) For $n = 7$ the optimum
-is not unique. The four side squares are fixed, but each of the three middle
-squares can move along the middle column on its own, as long as their centres
-stay at least 1 apart and within $\sqrt3 - \frac12$ of the disk centre; the
-total slack is $2\sqrt3 - 3 \approx 0.464$. So the optimal packings form a
-three-parameter family, and infinitely many of them are pairwise not
-congruent (Figure 1.2). (iii) The cases $n \ge 8$ are not treated here.
+diagonal $y = x$. (ii) For $n = 7$ the optimum is not unique. The four side
+squares are fixed, but each of the three middle squares can move along the
+middle column on its own, as long as their centres stay at least 1 apart and
+within $\sqrt3 - \frac12$ of the disk centre; the total slack is
+$2\sqrt3 - 3 \approx 0.464$. So the optimal packings form a three-parameter
+family, and infinitely many of them are pairwise not congruent (Figure 1.2).
+(iii) The cases $n \ge 8$ are not treated here.
 
-![Four optimal packings of seven unit squares in the circle of radius root 13 over 2. In each, the four side squares are the same, and the three middle squares sit at different heights along the dotted middle column: centred at -1, 0, 1; pushed to the bottom; with only the bottom square moved down; and with the middle square moved up and the top square at the top of its range](figures/01-introduction/columns.svg)
+![Four optimal packings of seven unit squares in the circle of radius root 13 over 2 about o. In each, the four side squares are the same, and the three middle squares sit at different heights along the dotted middle column: centred at -1, 0, 1; with the lower two pushed to the bottom; with only the bottom square moved down; and with the middle square moved up and the top square near the top of its range](figures/01-introduction/columns.svg)
 
 *Figure 1.2.* Four optimal packings of seven squares, with middle heights
 $(-1, 0, 1)$, $(\frac12 - \sqrt3, \frac32 - \sqrt3, 1)$, $(-1.2, 0, 1)$ and
@@ -280,10 +281,10 @@ exactly and does not show that the T itself is optimal. Four squares were
 Problem 6 of the 4th International Mathematics Summer Camp (IMSC 2026), whose
 official solution [7] proves the radius; an unpublished note by Wei Zhao [8]
 also proves that the block is the only optimal packing, by the argument of
-[Chapter 7](07-four.md). The argument here was reached without the note, but both
-came out of work with Claude, so the two may not be independent. We found no
-earlier proof for five, six or seven squares, whose packings in Table 1.1 were
-listed only as the best known ones.
+[Chapter 7](07-four.md). The argument here was reached without the note, but
+both came out of work with Claude, so the two may not be independent. We found
+no earlier proof for five, six or seven squares, whose packings in Table 1.1
+were listed only as the best known ones.
 
 Proof assistants have verified packing theorems in other settings: the Kepler
 conjecture [3] and the optimal sphere packing in dimension 8 [4]. We found no
@@ -299,8 +300,8 @@ the closed disk of radius $R_n$; (b) each optimal model reaches the circle of
 radius $R_n$; (c) every packing of $n$ unit squares in a closed disk of radius
 $R_n$ is congruent to an optimal model. Facts (a) and (b) are direct
 computations. The lower bound is not proved separately: a packing in a smaller
-disk would also be a packing at the radius $R_n$, so by (c) it would be an
-optimal packing, and by (b) it would not fit in the smaller disk
+disk would also be a packing at the radius $R_n$, so by (c) it would be
+congruent to an optimal model, and by (b) it would not fit in the smaller disk
 (Proposition 2.9, Figure 1.3). All the work is in (c), uniqueness at the
 optimal radius.
 
@@ -308,16 +309,29 @@ optimal radius.
 
 *Figure 1.3.* The plus, turned about $o$, reaches its circle of radius $R_5$
 at eight corners, so it does not fit in a smaller disk: the parts highlighted
-in red stick out. Every packing at the radius $R_5$ is a copy of it, so no packing
-fits in a smaller disk.
+in red stick out. Every packing at the radius $R_5$ is a copy of it, so no
+packing fits in a smaller disk.
 
-**The disk constraint.** Seen from the disk centre $o$, a square $S$ is
-described by two numbers $a_S \ge b_S \ge 0$, the offsets of $o$ from the
-centre of $S$ along its axes (Definition 3.1), and $S$ lies in the closed disk
-of radius $R$ about $o$ only if its farthest vertex does:
+**The disk constraint.** Whether a square $S$ fits in a disk about $o$
+depends only on two numbers $a_S \ge b_S \ge 0$, the offsets of $o$ from the
+centre of $S$ along the axes of $S$ (Definition 3.1): $S$ lies in the closed
+disk of radius $R$ about $o$ exactly when its vertex farthest from $o$ does,
+that is, when
 $\varphi(a_S, b_S) = (a_S + \frac12)^2 + (b_S + \frac12)^2 \le R^2$
-(Lemma 3.4). Every uniqueness proof uses the disk only through these
-inequalities, one for each square.
+(Lemma 3.4, Figure 1.4). Every uniqueness proof uses the disk only through
+these inequalities, one for each square.
+
+![Left: a square S in the dashed circle of radius R = root 2 about o; from the centre c_S of S, the disk centre o is a_S along one axis of S and b_S along the other, and a dashed segment of length root phi(a_S, b_S) joins o to the vertex of S farthest from it. Right: the (a, b)-plane with the part, where a and b are nonnegative, of the disk phi at most 2, the dotted diagonal a = b, the point (a_S, b_S) below the diagonal inside the disk, and the dashed tangent line a + b = 1 touching the disk at (1/2, 1/2)](figures/01-introduction/disk-constraint.svg)
+
+*Figure 1.4.* The disk constraint at the radius $R = \sqrt2$ of four squares,
+for a square with $(a_S, b_S) = (0.62, 0.25)$. Left: from the centre $c_S$,
+the disk centre $o$ is $a_S$ along one axis of $S$ and $b_S$ along the other;
+the vertex of $S$ farthest from $o$ (dot) is at distance
+$\sqrt{\varphi(a_S, b_S)} \le \sqrt2$. Right: in the $(a, b)$-plane the
+constraint puts $(a_S, b_S)$ in the disk $\lbrace \varphi \le 2 \rbrace$ of
+radius $\sqrt2$ about $(-\frac12, -\frac12)$ (blue). Its tangent $a + b = 1$
+at $(\frac12, \frac12)$ (dashed) bounds the contact polygon of four squares,
+the diamond $a + b \le 1$ (Table 1.2).
 
 **One and two squares** (Chapters 4 and 5). At the radius $R_1$ the
 inequality forces $a_S = b_S = 0$: the square is centred at the disk centre.
@@ -325,20 +339,29 @@ At the radius $R_2$ it keeps both centres within $\frac12$ of the disk centre,
 while the centres of disjoint squares are at least 1 apart; so both centres are
 exactly $\frac12$ away, and each square holds the half of a small circle about
 the disk centre that faces it. Disjoint half circles are opposite, and that is
-the rectangle.
+the rectangle (Figure 1.5).
+
+![Two squares S and T forming a 2 by 1 rectangle in the dashed circle of radius R_2 about o. Their centres c_S and c_T lie on the circle of radius 1/2 about o, at the ends of a horizontal diameter of length 1; the right half of that circle is drawn thick in S and the left half in T](figures/01-introduction/two.svg)
+
+*Figure 1.5.* Two squares at the radius $R_2$. Both centres lie within
+$\frac12$ of $o$ and at least 1 apart, so they are the ends of a diameter of
+the circle $\Gamma_{1/2}$ of radius $\frac12$ about $o$. Each square holds the
+half of $\Gamma_{1/2}$ on its side (thick), these half circles are opposite,
+and the squares form the rectangle.
 
 **Three to five squares** (Chapters 6 to 8). These cases share one method,
 run once at the optimal radius. Take a packing in the closed disk of radius
 $R_n$.
 
 1. *The contact polygon.* The inequality $\varphi(a_S, b_S) \le R_n^2$ is
-   curved. The tangent lines of the circle $\varphi = R_n^2$ at the positions
-   of the squares of the optimal packing turn it into a polygon
-   (Lemma 3.6). From here on the disk is forgotten, except for four squares.
+   curved. The tangent lines of the circle $\varphi = R_n^2$ at the pairs
+   $(a_S, b_S)$ of the optimal packing, and for five squares at one more
+   point, turn it into a polygon (Lemma 3.6, Figure 1.4). From here on the
+   disk is forgotten, except for four squares.
 2. *Exterior squares.* On a small auxiliary circle about the disk centre,
    every square that does not contain the centre holds an arc of at least
    $\frac{2\pi}n$, and for three and four squares exactly $\frac{2\pi}n$ only
-   in the positions of the optimal packing.
+   in the positions of the optimal packing (Figure 1.6).
 3. *The containing square.* At most one square contains the disk centre. Its
    own arc can be short, and each case deals with it separately.
 4. *The budget.* The arcs of disjoint squares cannot take up more than the
@@ -347,9 +370,9 @@ $R_n$.
    five squares the budget leaves only a square centred at the disk centre,
    and that forces the plus.
 
-![Two panels, each with a square in the dashed circle of radius root 2 and the circle of radius 1/2 about the disk centre o. Left: a square outside o, without a vertex at o, holds a highlighted arc of more than 90 degrees of the small circle. Right: a square containing o holds the highlighted quarter of the small circle that faces its centre](figures/01-introduction/arc-method.svg)
+![Two panels, each with a square in the dashed circle of radius root 2 and the circle of radius 1/2 about the disk centre o. Left: a square that avoids o, without a vertex at o, holds a highlighted arc of more than 90 degrees of the small circle, labelled Gamma 1/2. Right: a square containing o holds the highlighted quarter of the small circle that faces its centre](figures/01-introduction/arc-method.svg)
 
-*Figure 1.4.* The method of arcs for four squares and the circle
+*Figure 1.6.* The method of arcs for four squares and the circle
 $\Gamma_{1/2}$. A square that avoids $o$, without a vertex at $o$, holds more
 than a quarter of the circle; a square containing $o$ holds the quarter facing
 its centre. Four disjoint arcs of at least a quarter are exact quarters, and
@@ -375,48 +398,61 @@ separating inequalities. Take a packing in a closed disk of radius $R_6$.
 
 1. *The containing square.* On the circle $\Gamma_{9/10}$ every square that
    avoids the disk centre holds an arc of more than a sixth of the circle, so
-   one square contains the disk centre; read in its frame, its centre lies in
-   a small box.
+   one square contains the disk centre (Figure 1.7); read in its frame, its
+   centre lies in a small box.
 2. *Pins.* Five fixed points at distance $\frac9{10}$ from the disk centre,
    the *pins*, label the other squares $E$, $N$, $W$, $D$, $S$ in
    counterclockwise order. Each holds its pin, points in a window of
-   directions, and is separated from the containing square along its own axis
-   or along the matching side of the containing square.
+   directions, and is separated from the containing square only along its own
+   axis or along a side of the containing square that faces its pin.
 3. *Stresses.* A weighted sum of separating inequalities is a sum of works of
    forces on the centres, and the disk bounds each work. In the optimal
    packing eight pairs of squares touch, and weights on these contacts
-   balance: the forces cancel on the containing square and push each other
-   square straight at its points on the circle (Figure 1.5).
+   balance: the forces cancel on the containing square, push $E$, $N$, $W$
+   and $S$ along the radii to their corners on the circle and push the turned
+   square $D$ along the diagonal (Figure 1.8).
 4. *The separators.* Further stresses, with estimates uniform over whole
    intervals of the angles of the squares, show that the turned square is
-   separated from its two neighbours as in the optimal packing, and bound the
-   angles of the squares. These estimates fill Appendices B to E.
+   separated from the containing square along its own axis and from its two
+   neighbours as in the optimal packing, and bound the angles of the squares.
+   These estimates fill Appendices B to E.
 5. *Equality.* With these separators the stress of the optimal packing leaves
    no room at the radius $R_6$: every square is turned as in the optimal
    packing, the eight contacts hold, and they fix every centre.
 
-![The six-square model in its dashed circle with the eight edges of its stress drawn as thin arrows between the centres, labelled with their weights, and the force on each square as a thick arrow; the forces on the four axis-parallel neighbours point at their corners on the circle, and the force on the turned square along the diagonal](figures/09-six/stress.svg)
+![The optimal packing of six squares with the dotted circle of radius 9/10 about o. The grey central square C contains o and misses the circle; each of the five other squares, N, E, S, D and W, holds a thick arc of the circle, of more than 60 degrees, and the five pins, drawn as dots on the circle, lie one in each of these arcs](figures/01-introduction/pins.svg)
 
-*Figure 1.5.* The stress of the optimal packing of six squares. The weights
-($1$, $r_*$ and $m_*$) make the forces cancel on the central square and push
-each other square at its points on the circle, where the disk bounds its work;
-the bounds add up exactly to the thresholds.
+*Figure 1.7.* Steps 1 and 2 in the optimal packing. On $\Gamma_{9/10}$
+(dotted) each square that avoids $o$ holds an arc of more than a sixth of the
+circle (thick). Six such arcs do not fit, so one square, $C$ (grey), contains
+$o$. The five pins (dots) lie one in each of the other squares and name them
+$E$, $N$, $W$, $D$, $S$.
+
+![The six-square model in its dashed circle with the eight edges of its stress drawn as thin arrows between the centres, labelled with their weights, and the forces as thick arrows: none on the central square, the forces on its four axis-parallel neighbours parallel to the dotted radii to their corners on the circle, and the force on the turned square pointing along the diagonal, away from the disk centre](figures/09-six/stress.svg)
+
+*Figure 1.8.* The stress of the optimal packing of six squares: its eight
+edges (thin arrows) with their weights $1$, $r_*$ and $m_*$, and the forces
+(thick arrows). The forces cancel on the central square $C$, push $E$, $N$,
+$W$ and $S$ along the radii to their corners on the circle (dotted) and push
+$D$ along the diagonal, midway between its two vertices on the circle. The disk bounds the
+work of each force, and these bounds add up exactly to the weighted sum of the
+thresholds.
 
 **Seven squares** (Chapter 10 and Appendices F to I). This case compares pairs
 of squares rather than arcs of one circle. Take a packing in the closed disk
 of radius $R_7$.
 
 1. *Markers.* Each square that avoids the disk centre gets a marker, a
-   direction from the disk centre computed from the position of the centre
-   relative to the square, and holds an arc of the unit circle about its
-   marker.
-2. *The pair theorem.* Two disjoint such squares have markers at least
+   direction from the disk centre computed from the position of the disk
+   centre relative to the square. The closed square contains the arc of the
+   unit circle of half-width $\frac12$ about its marker.
+2. *Marker separation.* Two disjoint such squares have markers at least
    $\frac\pi3$ apart, and exactly $\frac\pi3$ apart only if they touch as in
-   an optimal packing. The proof puts the pair in a normal position, writes
-   the overlaps of their shadows on the four edge directions in closed form,
-   and shows that they are positive for every gap below $\frac\pi3$ and
-   vanish at $\frac\pi3$ only at those contacts. The case analysis at the gap
-   $\frac\pi3$ fills Appendices G to I.
+   an optimal packing (Figure 1.9). The proof reads the pair in the frame of
+   one square, writes the overlaps of their shadows on the edge directions in
+   closed form, and shows that these are positive for every gap below
+   $\frac\pi3$ and vanish at $\frac\pi3$ only at those contacts. The case
+   analysis at the gap $\frac\pi3$ fills Appendices G to I.
 3. *The ring.* Seven markers do not fit, so some square contains the disk
    centre. The markers of the other six form a regular hexagon, and going
    round it each square touches the next as in an optimal packing: two side
@@ -425,12 +461,13 @@ of radius $R_7$.
    centre to the middle column. The three squares of that column need only
    stay 1 apart, so each can move along it on its own.
 
-![Markers of seven squares: two touching squares, a side square and the top square, with their markers drawn as directions from the disk centre exactly pi/3 apart; the same pair turned so that their markers are closer, where the squares overlap; and a column packing whose six exterior squares have markers forming a regular hexagon](figures/01-introduction/markers.svg)
+![Markers of seven squares, on the unit circle about the disk centre. Left: two touching squares, a side square and the top square, with their markers drawn as directions from the disk centre exactly pi/3 apart and, about each marker, a thick arc of the unit circle inside its square. Middle: the same pair turned so that their markers are closer, where the squares and their arcs overlap. Right: a column packing whose six exterior squares have markers forming a regular hexagon](figures/01-introduction/markers.svg)
 
-*Figure 1.6.* Markers of seven squares. A side square and the top square that
-touch as in an optimal packing have markers exactly $\frac\pi3$ apart; turned
-closer, the squares overlap. In every column packing the six markers form a
-regular hexagon.
+*Figure 1.9.* Markers of seven squares. A side square and the top square that
+touch as in an optimal packing have markers exactly $\frac\pi3$ apart, and
+each contains the arc of half-width $\frac12$ of the unit circle about its
+marker (thick); turned closer, the squares overlap. In every column packing
+the six markers form a regular hexagon.
 
 ### 1.5 This text and the formalization
 
@@ -439,18 +476,19 @@ each of Chapters 4 to 10 proves one case, and the appendices hold the long
 computations: Appendix A the one-variable estimates, Appendices B to E those of
 six squares and Appendices F to I those of seven squares. Definitions, lemmas,
 propositions, theorems and corollaries are numbered together within each
-chapter; figures and tagged equations are numbered separately. Sections are
-cited as §3.4. Proofs end with $\square$.
+chapter; figures, tables and tagged equations are numbered separately.
+Sections are cited as §3.4. Proofs end with $\square$.
 
 Every numbered statement ends with a line *Lean: …* naming the Lean 4
-declarations [5, 6] that state it, linked to their source. The proofs in this
-text follow the formal proofs, but are written for a human reader: where a
-formal proof closes an inequality by an automatic procedure, the text gives an
-explicit identity, sum of squares or certificate that can be checked by hand
-or with a computer algebra system. The formal proofs themselves are checked by
-the Lean kernel; the [verification](../verification.md) page explains how to
-build them and audit their axioms. The figures are computed from the same
-geometry by the scripts in [`scripts/figures/`](../../scripts/figures).
+declarations [5, 6] that state and prove it, linked to their source. The proofs
+in this text follow the formal proofs, but are written for a human reader:
+where a formal proof closes an inequality by an automatic procedure, the text
+gives an explicit identity, sum of squares or chain of elementary estimates
+that can be checked by hand or with a computer algebra system. The formal
+proofs themselves are checked by the Lean kernel; the
+[verification](../verification.md) page explains how to build them and audit
+their axioms. The figures are computed from the same geometry by the scripts
+in [`scripts/figures/`](../../scripts/figures).
 
 ### References
 

@@ -3,10 +3,10 @@
 [Contents](README.md) · [← 7. Four squares](07-four.md) · [9. Six squares →](09-six.md)
 
 Five unit squares fit in a closed disk of radius $\sqrt{5/2}$ as a *plus*: one
-square centred at the disk centre and its four side-neighbours. This chapter
-proves that no smaller closed disk holds five unit squares, and that every
-packing of five unit squares in a closed disk of radius $\sqrt{5/2}$ is
-congruent to the plus.
+square centred at the disk centre and its four side-neighbours (Figure 8.1).
+This chapter proves that no smaller closed disk holds five unit squares, and
+that every packing of five unit squares in a closed disk of radius
+$\sqrt{5/2}$ is congruent to the plus.
 
 The proof again measures arcs of a circle about the disk centre, now the
 circle $\Gamma_{5/6}$ of radius $\frac56$. Every square that avoids the disk
@@ -95,11 +95,15 @@ $\square$
 [`Five.radius`](../../SquaresInCircles/Geometry.lean#L170).*
 
 The eight outer corners, $(\pm\frac32, \pm\frac12)$ and
-$(\pm\frac12, \pm\frac32)$, lie on the circle of radius $R_5$.
+$(\pm\frac12, \pm\frac32)$, lie on the circle of radius $R_5$ (Figure 8.2).
+
+![The plus in its dashed circle of radius root 5/2 about o: the grey centre square Q(c1), centred at o, and its four neighbours, centred at c2 to c5; the eight outer corners, among them (3/2, 1/2) and (1/2, 3/2), are marked on the circle](figures/08-five/construction.svg)
+
+*Figure 8.2.* The plus and the circle of radius $R_5$ about the origin $o$
+(dashed). The centre square $Q(c_1)$, grey, is centred at $c_1 = o$; the eight
+outer corners (dots) lie on the circle, and all the other corners inside it.
 
 ## 8.2 The 12-gon
-
-The rest of the chapter, up to §8.6, proves that the optimal packing is unique.
 
 ### Proposition 8.3 (uniqueness)
 
@@ -123,29 +127,26 @@ $P_5$ is the set of points $(a, b)$ of the plane with
 3a + b \le 3, \qquad a + 3b \le 3, \qquad a + b \le \sqrt5 - 1 .
 ```
 
-The first two inequalities are the tangent half-planes of the disk
-$\lbrace\varphi \le \frac52\rbrace$ at $(1, 0)$ and $(0, 1)$
-([Definition 3.5](03-tools.md#definition-35-tangent-half-plane)): indeed
-$\varphi(1, 0) = \frac94 + \frac14 = \frac52$, and at $(1, 0)$ the inequality
-of Definition 3.5 reads $\frac32(a - 1) + \frac12 b \le 0$, that is
-$3a + b \le 3$; the point $(0, 1)$ is its mirror image. The outer squares of
-the plus have $(a_S, b_S) = (1, 0)$. The third is the
-tangent half-plane at $(g, g)$, where $g = \frac{\sqrt5 - 1}2$ and
-$\varphi(g, g) = 2(g + \frac12)^2 = \frac52$. No square of the plus has these
-offsets, but §8.3 needs this side (Figure 8.7). The set $P_5$ is symmetric in
-$a$ and $b$, and restoring the signs of the two local coordinates of $o$ turns
-its three sides into twelve (Figure 8.3), hence the name.
+The three inequalities are the tangent half-planes
+([Definition 3.5](03-tools.md#definition-35-tangent-half-plane)) of the disk
+$\lbrace\varphi \le \frac52\rbrace$ at $(1, 0)$, the offsets of the outer
+squares of the plus, at its mirror image $(0, 1)$, and at $(g, g)$, where
+$g = \frac{\sqrt5 - 1}2$ (Lemma 8.5, Figure 8.3). No square of the plus has
+the offsets $(g, g)$, but §8.3 needs this third side (Figure 8.8). The set
+$P_5$ is symmetric in $a$ and $b$, and restoring the signs of the two local
+coordinates of $o$ turns its three sides into twelve (Figure 8.4), hence the
+name.
 
-![The part with a, b at least 0 of the 12-gon P5, around the disk where phi is at most 5/2, touching it at (1, 0), (0, 1) and (g, g)](figures/08-five/twelve-gon.svg)
+![The part with a, b at least 0 of the 12-gon P5, around the disk where phi is at most 5/2, touching it at (1, 0), (0, 1) and (g, g); the first two sides, extended dashed, meet at the corner (3/4, 3/4), which the third side cuts off](figures/08-five/twelve-gon.svg)
 
-*Figure 8.2.* The part of $P_5$ where $a, b \ge 0$, around the disk
+*Figure 8.3.* The part of $P_5$ where $a, b \ge 0$, around the disk
 $\lbrace\varphi \le \frac52\rbrace$, which it touches at $(1, 0)$, $(0, 1)$ and
 $(g, g)$. Its third side cuts off the corner $(\frac34, \frac34)$ where the
-first two meet.
+first two meet (dashed).
 
-![The plane of the local coordinates of o in the frame of a square S, with S drawn in grey at the centre: a blue rounded region where S fits in the disk of radius root of 5/2, inside an orange 12-gon with vertices at (1, 0), (0, 1), (-1, 0), (0, -1) and eight corners in between, inside the dashed octagon of the first two inequalities; dots mark the twelve points where the 12-gon touches the blue region](figures/08-five/twelve-gon-plane.svg)
+![The plane of the local coordinates of o in the frame of a square S, with S drawn in grey at the centre: a blue rounded region where S fits in the disk of radius root of 5/2, inside an orange 12-gon with vertices at (1, 0), (0, 1), (-1, 0), (0, -1) and eight corners in between, inside the dashed octagon of the first two inequalities; dots mark the eight points where the 12-gon touches the blue region](figures/08-five/twelve-gon-plane.svg)
 
-*Figure 8.3.* The same constraints in the plane of the local coordinates
+*Figure 8.4.* The same constraints in the plane of the local coordinates
 $(x_S(o), y_S(o))$ of the disk centre, with the square $S$ itself in grey. If
 the closed square $\overline S$ lies in the closed disk of radius $R_5$ about
 $o$, then $o$ lies in the blue region,
@@ -161,16 +162,17 @@ If $a$ and $b$ are real numbers with $\varphi(a, b) \le \frac52$, then
 $(a, b) \in P_5$.
 
 *Proof.* The points $(1, 0)$, $(0, 1)$ and $(g, g)$ satisfy
-$\varphi = \frac52$, so [Lemma 3.6](03-tools.md#lemma-36-tangent-lines) puts
-$(a, b)$ in the tangent half-plane at each of them:
+$\varphi = \frac52$: $\varphi(1, 0) = \varphi(0, 1) = \frac94 + \frac14$ and
+$\varphi(g, g) = 2(g + \frac12)^2 = \frac52$, as $g + \frac12 = \frac{\sqrt5}2$.
+So [Lemma 3.6](03-tools.md#lemma-36-tangent-lines) puts $(a, b)$ in the tangent
+half-plane at each of them:
 
 ```math
 \tfrac32(a - 1) + \tfrac12 b \le 0, \qquad \tfrac12 a + \tfrac32(b - 1) \le 0, \qquad \tfrac{\sqrt5}2\left(a + b - 2g\right) \le 0 ,
 ```
 
-where the third uses $g + \frac12 = \frac{\sqrt5}2$. Multiplying by $2$, $2$
-and $\frac2{\sqrt5}$ gives the three inequalities of $P_5$, since
-$2g = \sqrt5 - 1$. $\square$
+and multiplying by $2$, $2$ and $\frac2{\sqrt5}$ gives the three inequalities
+of $P_5$, since $2g = \sqrt5 - 1$. $\square$
 
 *Lean: [`Five.p5_of_phi`](../../SquaresInCircles/Five/Exterior.lean#L21).*
 
@@ -197,12 +199,12 @@ square $S$ with $(a_S, b_S) \in P_5$ has its centre within distance 1 of $o$:
 $|c_S - o|^2 = a_S^2 + b_S^2 \le 1$, by
 [Lemma 3.4](03-tools.md#lemma-34-farthest-vertex).
 
-![The part with a, b at least 0 of the 12-gon P5, inside the quarter of the unit circle, touching it at (1, 0) and (0, 1)](figures/08-five/dodecagon-disk.svg)
+![The part with a, b at least 0 of the 12-gon P5, inside the quarter of the unit circle, touching it at (1, 0) and (0, 1); its first two sides, extended dashed, meet at (3/4, 3/4), outside the circle](figures/08-five/dodecagon-disk.svg)
 
-*Figure 8.4.* The part of $P_5$ where $a, b \ge 0$ stays inside the unit
+*Figure 8.5.* The part of $P_5$ where $a, b \ge 0$ stays inside the unit
 circle $a^2 + b^2 = 1$, and touches it only at $(1, 0)$ and $(0, 1)$. The
-first two sides alone would not: they meet at $(\frac34, \frac34)$, where
-$a^2 + b^2 = \frac98$.
+first two sides alone would not: they meet at $(\frac34, \frac34)$ (dashed),
+where $a^2 + b^2 = \frac98$.
 
 *Proof.* Let $s = a + b$. If $s \le 1$, then
 $a^2 + b^2 \le a^2 + b^2 + 2ab = s^2 \le 1$. Otherwise
@@ -215,7 +217,7 @@ $3 - 2s > 3 - \frac{14}5 > 0$. Hence
 2\left(a^2 + b^2\right) = s^2 + (a - b)^2 \le s^2 + (3 - 2s)^2 = 2 + (5s - 7)(s - 1) < 2 ,
 ```
 
-because $s - 1 > 0 > 5s - 7$. $\square$
+because $s - 1 > 0 > 5s - 7$ (Figure 8.5). $\square$
 
 *Lean:
 [`Five.dodecagon_norm_le`](../../SquaresInCircles/Five/Uniqueness.lean#L25),
@@ -247,7 +249,7 @@ $-\frac12 \le y \le \frac12$, $x + y \le \sqrt5 - 2$ and $3x + y \le 1$. Then
 
 ![The (x, y)-plane with x from 0 to 1/2 and y from -1/2 to 1/2: the region of the lemma is a quadrilateral with vertices (0, -1/2), (1/2, -1/2), the crossing of the lines 3x + y = 1 and x + y = root 5 - 2, and (0, root 5 - 2). It is split into two shaded pieces, (i) where x is at most 2/5 and (ii) where x is more than 2/5; an orange curve, where the arcsine sum equals pi/10, runs just above the region](figures/08-five/arcsine-region.svg)
 
-*Figure 8.5.* The region of Lemma 8.8 in the $(x, y)$-plane, split into the
+*Figure 8.6.* The region of Lemma 8.8 in the $(x, y)$-plane, split into the
 two cases of the proof, and the curve (orange) on which
 $\arcsin\frac{6x}5 + \arcsin\frac{6y}5 = \frac\pi{10}$. The region lies below
 the curve. Case (ii) needs the side $3x + y \le 1$: without it the lemma
@@ -265,7 +267,7 @@ $0 \le z \le \frac12$ we have $0 \le \frac{6z}5 \le \frac35$, and
 
 for $-\frac12 \le z < 0$, Lemma 3.29 (2) gives
 $\arcsin\frac{6z}5 \le \frac65 z$. We use (8.1) for $z = x$ and distinguish
-two cases.
+two cases (Figure 8.6).
 
 (i) *$x \le \frac25$.* If $y \ge 0$, then (8.1) holds for $z = y$ as well,
 and $x^3 + y^3 \le (x + y)^3 < (\frac25)^3$. If $y < 0$, then
@@ -350,12 +352,12 @@ V \le \arcsin\tfrac35 < \tfrac\pi4 < \arccos\tfrac35 \le A ,
 
 because $\frac35 < \frac{\sqrt2}2$. So $\min(A, V) = V$, and the length is
 $A + V$ or $U + V$, according as the circle leaves the square at the top
-through the near edge or through the upper edge (Figure 8.6). Bounding all
+through the near edge or through the upper edge (Figure 8.7). Bounding all
 four sums spares us deciding which.
 
 ![Two panels in chart coordinates, each with the circle of radius 5/6 about o and the dashed lines of the near, lower and upper edges of an exterior square. Left: the square centred at (0.8, 0.4); its highlighted arc runs from the lower edge at minus V to the near edge at A, and the upper edge is above the circle. Right: the square centred at (1, 0); its arc runs from the lower edge at minus V to the upper edge at U, and the near edge crossings at plus and minus A, in grey, lie beyond the arc](figures/08-five/arc-cases.svg)
 
-*Figure 8.6.* The two cases that occur, in charts on $\Gamma_{5/6}$. Left,
+*Figure 8.7.* The two cases that occur, in charts on $\Gamma_{5/6}$. Left,
 $(a_S, b_S) = (0.8, 0.4)$: the upper edge is out of reach, so
 $U_S = \frac\pi2$, and the arc runs from the lower edge at $-V_S$ to the near
 edge at $A_S$; its length is $A_S + V_S$. Right, $(a_S, b_S) = (1, 0)$, an
@@ -386,15 +388,27 @@ the point $(\frac34, \frac34)$, where the first two sides meet,
 $A = \arccos\frac3{10}$, $V = -\arcsin\frac3{10}$ and $U = \frac\pi2$, so the
 arc of Lemma 3.24 (1) has length $\frac\pi2 - 2\arcsin\frac3{10}$, less than
 $\frac{2\pi}5$ because $\arcsin\frac3{10} \ge \frac3{10} > \frac\pi{20}$
-(Figure 8.7).
+(Figure 8.8). Over the whole octagon of the first two sides, the arc is
+shorter than a fifth of the circle only beyond the third side (Figure 8.9).
 
 ![Two panels in chart coordinates with the circle of radius 5/6 about o. Left: the square centred at (3/4, 3/4), whose arc on the circle, between the lines of its near and lower edges, spans about 55 degrees. Right: the square centred at the corner of the 12-gon, about (0.88, 0.35), whose arc spans about 72.8 degrees](figures/08-five/third-side.svg)
 
-*Figure 8.7.* Why $P_5$ has a third side. Left: a square at
+*Figure 8.8.* Why $P_5$ has a third side. Left: a square at
 $(\frac34, \frac34)$, where the first two sides meet, holds only about 55° of
 $\Gamma_{5/6}$, less than a fifth of the circle. Right: at the corner of
 $P_5$, where $3a + b = 3$ meets $a + b = \sqrt5 - 1$, it holds about 72.8°,
 just more than a fifth.
+
+![The pairs (a, b) with a at least 1/2 and b at most a in the octagon of the first two sides of P5, with thin level curves of the length of the arc at 76, 80 and 84 degrees, horizontal in the lower part and parallel to the third side in the upper part, a dashed curve between the two parts, and the level 72 degrees in red, just beyond the third side; the red corner cut off by the third side contains (3/4, 3/4), where the length is 55 degrees, and the corner of P5 is marked 72.8 degrees](figures/08-five/arc-map.svg)
+
+*Figure 8.9.* The length $\min(A_S, U_S) + \min(A_S, V_S)$ of the arc of an
+exterior square on $\Gamma_{5/6}$, over the pairs $(a_S, b_S)$ with
+$b_S \le a_S$ in the octagon of the first two sides of $P_5$. Below the dashed
+curve, where the upper near corner $(a_S - \frac12, b_S + \frac12)$ of $S$ lies
+inside $\Gamma_{5/6}$ in the chart, the circle leaves $S$ through its upper
+edge and the length is $U_S + V_S$; above it, the length is $A_S + V_S$. The
+length is below $72°$ only in the red corner, which the third side of $P_5$
+cuts off; on $P_5$ it is smallest, about $72.8°$, at the corner of $P_5$.
 
 ## 8.4 A centred square
 
@@ -405,22 +419,21 @@ $\widehat S$ ([Definition 3.25](03-tools.md#definition-325-radial-sweep)) holds
 an arc of $\Gamma_{5/6}$ of half-width $\frac\pi5$.
 
 *Idea of the proof.* Slide $S$ away from $o$ along the ray through its centre
-until the centre is at distance $\frac1{\sqrt2}$ from $o$. The slid square lies
+until the centre is at distance $\frac{\sqrt2}2$ from $o$. The slid square lies
 in $\widehat S$, and its inscribed disk covers a fifth of $\Gamma_{5/6}$, even
-when $S$ itself does not reach the circle (see the figure of
-Definition 3.25).
+when $S$ itself does not reach the circle (Figures 8.10 and 8.11).
 
-![A square containing o, slid outward along the ray from o through its centre until its centre c* is at distance 1 over root 2 from o; the inscribed disk of the slid square covers a highlighted fifth of the circle of radius 5/6](figures/08-five/slid-disk.svg)
+![A square containing o, slid outward along the ray from o through its centre until its centre c* is at distance root 2 over 2 from o; the inscribed disk of the slid square covers a highlighted fifth of the circle of radius 5/6](figures/08-five/slid-disk.svg)
 
-*Figure 8.8.* The slid copy of $S$, centred at $c^*$, and its inscribed disk.
+*Figure 8.10.* The slid copy of $S$, centred at $c^*$, and its inscribed disk.
 The disk covers the arc of $\Gamma_{5/6}$ of half-width $\frac\pi5$ about the
 direction of $c_S - o$.
 
-![Three panels in chart coordinates, each with a square containing o centred at (0.06, 0.035), (0.3, 0.12) and (0.44, 0.38) respectively, its radial sweep shaded as a band running away from o, a dashed slid copy centred at distance 1 over root 2 from o with its inscribed disk, and the circle of radius 5/6 with a highlighted arc of half-width pi/5 inside that disk](figures/08-five/sweep-positions.svg)
+![Three panels in chart coordinates, each with a square containing o centred at (0.06, 0.035), (0.3, 0.12) and (0.44, 0.38) respectively, its radial sweep shaded as a band running away from o, a dashed slid copy centred at distance root 2 over 2 from o with its inscribed disk, and the circle of radius 5/6 with a highlighted arc of half-width pi/5 inside that disk](figures/08-five/sweep-positions.svg)
 
-*Figure 8.9.* The construction for three positions of a containing square,
+*Figure 8.11.* The construction for three positions of a containing square,
 drawn in its chart, with the radial sweep shaded. However close $c_S$ is to
-$o$, the slid copy (dashed) has its centre at distance $\frac1{\sqrt2}$ from
+$o$, the slid copy (dashed) has its centre at distance $\frac{\sqrt2}2$ from
 $o$, and its inscribed disk covers the fifth of $\Gamma_{5/6}$ about the
 direction of $c_S$.
 
@@ -433,9 +446,9 @@ direction of $c_S$.
    $(a_S, b_S) = \ell(\cos\delta, \sin\delta)$ for
    $\ell = (a_S^2 + b_S^2)^{1/2}$ and some real $\delta$, and
    $0 < \ell^2 < \frac14 + \frac14 = \frac12$.
-2. *Sliding.* Put $m = \frac1{\sqrt2\,\ell} - 1$, which is positive, so that
+2. *Sliding.* Put $m = \frac{\sqrt2}{2\ell} - 1$, which is positive, so that
    $(1 + m)(a_S, b_S) = c^*$, where
-   $c^* = \frac1{\sqrt2}(\cos\delta, \sin\delta)$. For a real $t$ let
+   $c^* = \frac{\sqrt2}2(\cos\delta, \sin\delta)$. For a real $t$ let
    $p_t = \frac56(\cos t, \sin t)$. If both coordinates of $p_t - c^*$ are
    less than $\frac12$ in absolute value, then by the chart
    condition ([Definition 3.20](03-tools.md#definition-320-chart)) with
@@ -448,21 +461,21 @@ direction of $c_S$.
    $\cos t\cos\delta + \sin t\sin\delta = \cos(t - \delta)$,
 
    ```math
-   |p_t - c^*|^2 = \tfrac{25}{36} + \tfrac12 - 2\cdot\tfrac56\cdot\tfrac1{\sqrt2}\cos(t - \delta) = \tfrac{43}{36} - \tfrac53\cdot\tfrac1{\sqrt2}\cos(t - \delta) .
+   |p_t - c^*|^2 = \tfrac{25}{36} + \tfrac12 - 2\cdot\tfrac56\cdot\tfrac{\sqrt2}2\cos(t - \delta) = \tfrac{43}{36} - \tfrac53\cdot\tfrac{\sqrt2}2\cos(t - \delta) .
    ```
 
    The cosine is even and decreasing on $[0, \pi]$, so by
    [Lemma 3.29](03-tools.md#lemma-329-elementary-estimates) (5),
    $\cos(t - \delta) \ge \cos\frac\pi5 = \frac{1 + \sqrt5}4$. Moreover
-   $\frac1{\sqrt2}\cdot\frac{1 + \sqrt5}4 > \frac{17}{30}$, because both
+   $\frac{\sqrt2}2\cdot\frac{1 + \sqrt5}4 > \frac{17}{30}$, because both
    sides are positive and
 
    ```math
-   \left(\tfrac1{\sqrt2}\cdot\tfrac{1 + \sqrt5}4\right)^2 = \tfrac{6 + 2\sqrt5}{32} = \tfrac{3 + \sqrt5}{16} > \tfrac{3 + 11/5}{16} = \tfrac{13}{40} > \tfrac{289}{900} = \left(\tfrac{17}{30}\right)^2 ,
+   \left(\tfrac{\sqrt2}2\cdot\tfrac{1 + \sqrt5}4\right)^2 = \tfrac{6 + 2\sqrt5}{32} = \tfrac{3 + \sqrt5}{16} > \tfrac{3 + 11/5}{16} = \tfrac{13}{40} > \tfrac{289}{900} = \left(\tfrac{17}{30}\right)^2 ,
    ```
 
    as $\sqrt5 > \frac{11}5$ and $13 \cdot 900 = 11700 > 11560 = 40 \cdot 289$.
-   Hence
+   Hence, with a small margin (Figure 8.12),
 
    ```math
    |p_t - c^*|^2 < \tfrac{43}{36} - \tfrac53\cdot\tfrac{17}{30} = \tfrac{43}{36} - \tfrac{17}{18} = \tfrac14 .
@@ -471,6 +484,15 @@ direction of $c_S$.
    So $|p_t - c^*| < \frac12$, both coordinates of $p_t - c^*$ are less than
    $\frac12$ in absolute value, and by step 2 the point of $\Gamma_{5/6}$ in
    the direction $\theta_S + \varepsilon_S t$ lies in $\widehat S$.
+
+   ![The graph of the squared distance from p_t to c* against t minus delta, a valley with its minimum near 0.016 at 0; on the shaded interval from minus pi/5 to pi/5 it stays below the dashed level 1/4, which it reaches just outside the interval; at the ends of the interval the margin to 1/4 is about 0.009](figures/08-five/sweep-margin.svg)
+
+   *Figure 8.12.* Step 3: the squared distance
+   $|p_t - c^*|^2 = \frac{43}{36} - \frac53\cdot\frac{\sqrt2}2\cos(t - \delta)$
+   against $t - \delta$. On $|t - \delta| \le \frac\pi5$ (shaded) it stays below
+   $\frac14$, by about $0.009$ at the ends; it reaches $\frac14$ only at
+   $|t - \delta| \approx 36.7°$, just beyond $\frac\pi5 = 36°$.
+
 4. *The arc.* Let $\theta$ be a direction with
    $d(\theta, \theta_S + \varepsilon_S\delta) < \frac\pi5$. Then
    $\theta = \theta_S + \varepsilon_S\delta + s$ for a real $s$ with
@@ -500,7 +522,7 @@ centred at $o$.
 
 ![Left: a circle with five coloured arcs laid end to end, four of more than 72 degrees and a fifth of 72 degrees drawn slightly outside, which overlaps the first; the overlap is marked. Right: the plus with the circle of radius 5/6 about o, the four outer squares holding coloured arcs, and the four short gaps between the arcs marked in black](figures/08-five/budget.svg)
 
-*Figure 8.10.* Left: the contradiction in the proof. Four arcs of more than a
+*Figure 8.13.* Left: the contradiction in the proof. Four arcs of more than a
 fifth of the circle and one of a fifth, laid end to end, overrun the circle, so
 the five sets that hold them cannot be pairwise disjoint. Right: in the plus
 the four outer squares hold arcs of about 73.7° each, and the four gaps between
@@ -515,7 +537,7 @@ so its sweep holds an arc of $\Gamma_{5/6}$ of half-width $\frac\pi5$
 half-width greater than $\frac\pi5$ (Lemma 8.10). By
 [Proposition 3.28](03-tools.md#proposition-328-budget-with-a-sweep), with
 $n = 5$ and $r = \frac56$, these two conditions cannot both hold, a
-contradiction. $\square$
+contradiction (Figure 8.13). $\square$
 
 *Lean:
 [`Five.centered_square`](../../SquaresInCircles/Five/Uniqueness.lean#L49).*
@@ -526,7 +548,7 @@ We now finish the proof of Proposition 8.6.
 
 ![Two panels around a grey square S_k centred at o, with the dashed unit circle about o. Left: a green square centred on the unit circle in a diagonal direction of S_k, turned to face o, overlaps S_k in a shaded triangle. Right: the plus turned by 20 degrees, its four outer squares centred on the unit circle and joined to o by radii](figures/08-five/unit-contacts.svg)
 
-*Figure 8.11.* The last step of the proof of Proposition 8.6, around a square
+*Figure 8.14.* The last step of the proof of Proposition 8.6, around a square
 $S_k$ centred at $o$, with the unit circle about $o$ dashed. Left: a square
 whose centre is at distance 1 from $o$ but not on an axis of $S_k$ overlaps
 $S_k$. Right: the squares at distance 1 that do not overlap $S_k$ are its
@@ -542,7 +564,7 @@ side-neighbours, and four of them form the plus.
    $|c_{S_i} - c_{S_k}| = 1$, and by
    [Lemma 3.13](03-tools.md#lemma-313-squares-at-distance-1) the square $S_i$
    has its sides parallel to those of $S_k$, and $c_{S_i} - c_{S_k}$ is one of
-   $\pm e^{S_k}_1$, $\pm e^{S_k}_2$ (Figure 8.11).
+   $\pm e^{S_k}_1$, $\pm e^{S_k}_2$ (Figure 8.14).
 3. *The plus.* Let $\phi$ be the direction of $e^{S_k}_1$. By
    [Lemma 3.30](03-tools.md#lemma-330-sitting-at-a-centre) (1), in the frame
    $\phi$ the square $S_k$ sits at the coordinates of $c_{S_k} - o = 0$ in
@@ -554,7 +576,7 @@ side-neighbours, and four of them form the plus.
    $c_1, \dots, c_5$ in the frame $\phi$, and
    [Lemma 3.31](03-tools.md#lemma-331-from-slots-to-congruence), which uses only
    that the squares are pairwise disjoint, shows that they are congruent to the
-   plus. No angle has to be computed. $\square$
+   plus. $\square$
 
 *Lean:
 [`Five.polygon_uniqueness`](../../SquaresInCircles/Five/Uniqueness.lean#L61).*
@@ -572,9 +594,10 @@ $(a_{S_i}, b_{S_i}) \in P_5$ by Lemma 8.5. Proposition 8.6 applies. $\square$
 *Proof of Theorem 8.1.* We apply
 [Corollary 2.10](02-preliminaries.md#corollary-210-the-scheme-of-proof) with
 $n = 5$, $R_5 = \sqrt{5/2}$ and $\mathcal M = \lbrace\text{the plus}\rbrace$:
-(a) is Proposition 8.2; (b) the corner $(\frac32, \frac12)$ of $Q(c_2)$ has
-$\frac94 + \frac14 = \frac52 = R_5^2$; (c) is Proposition 8.3. Parts (1),
-(2), (3) of the theorem are (a), (i) and (ii). $\square$
+(a) is Proposition 8.2; (b) holds because the corner $(\frac32, \frac12)$ of
+$Q(c_2)$ has squared distance $\frac94 + \frac14 = \frac52 = R_5^2$ from the
+origin; (c) is Proposition 8.3. Parts (1), (2), (3) of the theorem are (a),
+(i) and (ii). $\square$
 
 *Lean: [`Five.optimum`](../../SquaresInCircles/Five/Uniqueness.lean#L98),
 [`Optimum.isLeast`](../../SquaresInCircles/Common/Optimum.lean#L61),

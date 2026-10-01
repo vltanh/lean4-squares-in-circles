@@ -15,9 +15,9 @@ assembles the proof (§G.9). Appendix H treats the remaining sectors of the
 inward axis and Appendix I those of the forward axis.
 
 We use the notation of Chapter 10. A *state* is a pair $(a, u)$ with
-$\frac12 \le a$ and $0 \le u \le a$, *admissible* if
-$\varphi(a, u) = (a + \frac12)^2 + (u + \frac12)^2 \le \frac{13}4$
-([Definition 10.4](10-seven.md#definition-104-states)); its remainder is $r(a, u) = 4 - 3a - 2u$
+$\frac12 \le a$ and $0 \le u \le a$; it is *admissible* if
+$\varphi(a, u) = (a + \frac12)^2 + (u + \frac12)^2 \le \frac{13}4$, and its
+*remainder* is $r(a, u) = 4 - 3a - 2u$
 ([Definition 10.4](10-seven.md#definition-104-states)). The label is
 $\ell(a, u) = \min(\mathrm{axial}(u), \mathrm{side}(a, u), \frac\pi4)$ with
 $\mathrm{axial}(u) = \frac54 u$ and
@@ -125,15 +125,15 @@ state and a side state with target sign $-1$).
 | $0$, outward | all | any, any | positive | Proposition G.26 |
 | $3$, backward | all | any, any | positive | Proposition G.27 |
 | $2$, inward | $(-1, 1)$, $(-1, -1)$ | any, any | positive | Proposition G.28 |
-| $2$, inward | $(1, 1)$ | axial, axial | positive | ([Proposition H.6](appendix-h.md#proposition-h6-two-axial-labels)) |
-| $2$, inward | $(1, 1)$ | side, axial | zero only at contact (2) | ([Proposition H.7](appendix-h.md#proposition-h7-side-source-axial-target)) |
-| $2$, inward | $(1, 1)$ | any, side | positive | ([Proposition H.12](appendix-h.md#proposition-h12-side-target)) |
-| $2$, inward | $(1, -1)$ | active, active | zero only at contact (2) | ([Theorem H.32](appendix-h.md#theorem-h32-opposite-signs-with-active-labels)) |
+| $2$, inward | $(1, 1)$ | axial, axial | positive | [Proposition H.6](appendix-h.md#proposition-h6-two-axial-labels) |
+| $2$, inward | $(1, 1)$ | side, axial | zero only at contact (2) | [Proposition H.7](appendix-h.md#proposition-h7-side-source-axial-target) |
+| $2$, inward | $(1, 1)$ | any, side | positive | [Proposition H.12](appendix-h.md#proposition-h12-side-target) |
+| $2$, inward | $(1, -1)$ | active, active | zero only at contact (2) | [Theorem H.32](appendix-h.md#theorem-h32-opposite-signs-with-active-labels) |
 | $1$, forward | $(1, 1)$ | any, any | positive | Proposition G.29 |
-| $1$, forward | $(1, -1)$ | any, active | zero only at contact (3) | ([Proposition I.7](appendix-i.md#proposition-i7-target-sign-negative)) |
-| $1$, forward | $(-1, -1)$ | axial, active | zero only at contact (3) | ([Proposition I.7](appendix-i.md#proposition-i7-target-sign-negative)) |
-| $1$, forward | $(-1, -1)$ | side, active | positive | ([Proposition I.26](appendix-i.md#proposition-i26-both-signs-negative)) |
-| $1$, forward | $(-1, 1)$ | active, active | zero only at contact (1) | ([Proposition I.16](appendix-i.md#proposition-i16-opposite-signs)) |
+| $1$, forward | $(1, -1)$ | any, active | zero only at contact (3) | [Proposition I.7](appendix-i.md#proposition-i7-target-sign-negative) |
+| $1$, forward | $(-1, -1)$ | axial, active | zero only at contact (3) | [Proposition I.7](appendix-i.md#proposition-i7-target-sign-negative) |
+| $1$, forward | $(-1, -1)$ | side, active | positive | [Proposition I.26](appendix-i.md#proposition-i26-both-signs-negative) |
+| $1$, forward | $(-1, 1)$ | active, active | zero only at contact (1) | [Proposition I.16](appendix-i.md#proposition-i16-opposite-signs) |
 
 The rows cover every sector in which both labels are active (Proposition G.32),
 and Proposition G.31 reduces capped labels to active ones: a capped state is a
@@ -144,20 +144,20 @@ active, and every support sum is affine in a state of constant label.
 
 ### Lemma G.3 (Cauchy–Schwarz on the disk)
 
-Let $X, Y$ be real numbers with $X^2 + Y^2 \le \frac{13}4$, and let $p, r, c$ be
+Let $X, Y$ be real numbers with $X^2 + Y^2 \le \frac{13}4$, and let $p, q, c$ be
 real numbers with $c \ge 0$.
 
-1. $(pX + rY)^2 \le \frac{13}4(p^2 + r^2)$.
-2. If $\frac{13}4(p^2 + r^2) \le c^2$, then $pX + rY \ge -c$. If
-   $\frac{13}4(p^2 + r^2) < c^2$, then $pX + rY > -c$.
+1. $(pX + qY)^2 \le \frac{13}4(p^2 + q^2)$.
+2. If $\frac{13}4(p^2 + q^2) \le c^2$, then $pX + qY \ge -c$. If
+   $\frac{13}4(p^2 + q^2) < c^2$, then $pX + qY > -c$.
 
 For an admissible state $(A, v)$ the point $(X, Y) = (A + \frac12, v + \frac12)$
 satisfies $X^2 + Y^2 = \varphi(A, v) \le \frac{13}4$, so the lemma bounds linear
 forms in $A + \frac12$ and $v + \frac12$ from below.
 
 *Proof.* (1) By Lagrange's identity,
-$(pX + rY)^2 + (pY - rX)^2 = (p^2 + r^2)(X^2 + Y^2) \le \frac{13}4(p^2 + r^2)$.
-(2) By (1), $|pX + rY| \le \sqrt{\frac{13}4(p^2 + r^2)}$, which is at most $c$,
+$(pX + qY)^2 + (pY - qX)^2 = (p^2 + q^2)(X^2 + Y^2) \le \frac{13}4(p^2 + q^2)$.
+(2) By (1), $|pX + qY| \le \sqrt{\frac{13}4(p^2 + q^2)}$, which is at most $c$,
 or less than $c$, respectively. $\square$
 
 *Lean: [`dot_ge`](../../SquaresInCircles/Common/DiskSupport.lean#L30),
@@ -176,12 +176,13 @@ or less than $c$, respectively. $\square$
    \cos(z - x) \le h(a, su, z) .
    ```
 
-Part (1) says that the square $Q(a, b)$ has a point beyond the line
-$\langle\cdot, u(z)\rangle = -\frac{37}{50}$ in every direction $u(z)$, because
-its centre lies within $\sqrt3 - \frac12 < \frac{31}{25}$ of the origin.
-Part (2) says that the support of $Q(a, su)$ is at least that of each point
+Part (1) says that in every direction $u(z)$ the square $Q(a, b)$ has a point
+beyond the line $\langle\cdot, u(z)\rangle = -\frac{37}{50}$: its centre lies
+within $\sqrt3 - \frac12$ of the origin, and the square reaches at least
+$\frac12$ beyond its centre, so $h(a, b, z) \ge 1 - \sqrt3$. Part (2) says
+that the support of $Q(a, su)$ is at least that of each point
 $u(x) = (\cos x, \sin x)$ of the marker arc about the direction
-$s\,\ell(a, u)$.
+$s\,\ell(a, u)$, because the closed square contains the arc (Figure G.2).
 
 *Proof.* Part (1) is [Lemma 10.11](10-seven.md#lemma-1011-the-support-function) (3). In part (2), $|su| = u$, and the
 inequality is Lemma 10.11 (2). $\square$
@@ -189,6 +190,18 @@ inequality is Lemma 10.11 (2). $\square$
 *Lean: [`Seven.support_lower`](../../SquaresInCircles/Seven/Exterior.lean#L228),
 [`Seven.sign_admissible`](../../SquaresInCircles/Seven/Pair/Frame.lean#L44),
 [`Seven.marker_arc_support`](../../SquaresInCircles/Seven/Pair/Frame.lean#L50).*
+
+![Two panels. Left: a blue square Q(a, b) with its centre (a, b) inside a dashed circle of radius root 3 minus 1/2 about the disk centre o, an arrow u(z) from o pointing up and to the left, away from the square, and two dashed lines perpendicular to u(z): the blue support line of the square through its vertex farthest along u(z), labelled h(a, b, z), and, farther back, an orange line labelled -37/50, which cuts through the square. Right: the side square Q(a, su), the thick blue marker arc of the unit circle inside it, an orange point u(x) on the arc, an arrow u(z) from o, and two dashed lines perpendicular to u(z): the orange line through u(x), labelled cos(z - x), and beyond it the blue support line of the square through its far corner, labelled h(a, su, z)](figures/appendix-g/support-bounds.svg)
+
+*Figure G.2.* Lemma G.4. The dashed lines are perpendicular to $u(z)$ and are
+labelled by the value of $\langle\cdot, u(z)\rangle$ on them. (a) The square
+$Q(1, -0.4)$ and $z = \frac{5\pi}6$: the centre lies in the disk of radius
+$\sqrt3 - \frac12$ about $o$, and the support line of the square, at
+$h(1, -0.4, z) \approx -0.383$, lies beyond the line at $-\frac{37}{50}$.
+(b) The side square $Q(1, \frac12)$, with $s = 1$, contains its marker arc
+(thick), of half-width $\frac12$ about $\ell = \frac\pi6$; for
+$x = \frac\pi6 + 0.4$ and $z = 1.25$ its support line lies beyond the line
+through $u(x)$, at $\cos(z - x)$.
 
 ### Lemma G.5 (support sums in closed form)
 
@@ -215,20 +228,21 @@ $d = g + s\,\ell(a, u) - t\,\ell(A, v)$.
    \end{aligned}
    ```
 
-3. Let $c = (c_1, c_2) = (A\cos d - tv\sin d,\ A\sin d + tv\cos d)$ and
+3. Let $\Delta_1 = A\cos d - tv\sin d - a$,
+   $\Delta_2 = A\sin d + tv\cos d - su$ and
    $W = \frac12(1 + |\cos d| + |\sin d|)$. Then
 
    ```math
-   \sigma_0(g) = W - (c_1 - a), \quad \sigma_1(g) = W - (c_2 - su), \quad
-   \sigma_2(g) = W + (c_1 - a), \quad \sigma_3(g) = W + (c_2 - su).
+   \sigma_0(g) = W - \Delta_1, \quad \sigma_1(g) = W - \Delta_2, \quad
+   \sigma_2(g) = W + \Delta_1, \quad \sigma_3(g) = W + \Delta_2 .
    ```
 
-In (3), $c$ is the centre of $T$ in the chart of $S$, since $T$ sits at
-$(A, tv)$ in the frame turned by $d$, and $(a, su)$ is the centre of $S$. The
-number $W$ is the sum of the half-widths of $S$ and $T$ in the directions $n_k$:
-$\frac12$ for $S$ and $\frac12(|\cos d| + |\sin d|)$ for $T$. So $\sigma_k(g)$
-is $W$ minus the offset of the centre of $T$ from that of $S$ along $n_k$, as
-Figure G.1 shows.
+In (3), $\Delta = (\Delta_1, \Delta_2) = c_T - c_S$ is the offset of the centre
+$c_T = R_d(A, tv)$ of $T$ from the centre $c_S = (a, su)$ of $S$, as in
+[Lemma 10.13](10-seven.md#lemma-1013-support-sums), and $W$ is the sum of the
+half-widths of $S$ and $T$ in the directions $n_k$: $\frac12$ for $S$ and
+$\frac12(|\cos d| + |\sin d|)$ for $T$. So $\sigma_k(g)$ is $W$ minus the
+offset of the centres along $n_k$, as Figure G.1 shows.
 
 *Proof.* (1) For $\theta = k\frac\pi2$ one of $|\cos\theta|$, $|\sin\theta|$ is
 $1$ and the other $0$, so
@@ -248,10 +262,10 @@ and $\sin(\frac{5\pi}2 - d) = \cos d$. With these and part (2) for $w = d$, part
 
 ```math
 \begin{aligned}
-\sigma_0(g) &= a + \tfrac12 - A\cos d + tv\sin d + \tfrac12(|\cos d| + |\sin d|) = W - (c_1 - a),\\
-\sigma_1(g) &= \tfrac12 + su - A\sin d - tv\cos d + \tfrac12(|\sin d| + |\cos d|) = W - (c_2 - su),\\
-\sigma_2(g) &= \tfrac12 - a + A\cos d - tv\sin d + \tfrac12(|\cos d| + |\sin d|) = W + (c_1 - a),\\
-\sigma_3(g) &= \tfrac12 - su + A\sin d + tv\cos d + \tfrac12(|\sin d| + |\cos d|) = W + (c_2 - su).
+\sigma_0(g) &= a + \tfrac12 - A\cos d + tv\sin d + \tfrac12(|\cos d| + |\sin d|) = W - \Delta_1,\\
+\sigma_1(g) &= \tfrac12 + su - A\sin d - tv\cos d + \tfrac12(|\sin d| + |\cos d|) = W - \Delta_2,\\
+\sigma_2(g) &= \tfrac12 - a + A\cos d - tv\sin d + \tfrac12(|\cos d| + |\sin d|) = W + \Delta_1,\\
+\sigma_3(g) &= \tfrac12 - su + A\sin d + tv\cos d + \tfrac12(|\sin d| + |\cos d|) = W + \Delta_2 .
 \end{aligned}
 ```
 
@@ -316,7 +330,7 @@ $e = \ell + \ell' - \frac\pi6 \in [-\frac\pi6, \frac\pi3]$.
 
 ## G.3 The label regions and their boundary
 
-Two of the three terms of the label agree along a line:
+Any two of the three terms of the label agree along a line:
 
 ```math
 12\left(\mathrm{side}(a, u) - \mathrm{axial}(u)\right) = 2\pi + 7 - 9a - 11u, \qquad
@@ -329,13 +343,13 @@ where $9a + 11u \ge 2\pi + 7$ and $9a - 4u \ge 7 - \pi$; and capped where
 $u \ge \frac\pi5$ and $9a - 4u \le 7 - \pi$. We call the line
 $9a + 11u = 2\pi + 7$ the *tie line*. Inside the admissible region, bounded by
 the lines $a = \frac12$, $u = 0$, $u = a$ and the circle $\varphi = \frac{13}4$,
-these conditions cut out the three regions of Figure G.2. The tie line meets the
+these conditions cut out the three regions of Figure G.3. The tie line meets the
 circle at the *transition state* $(a_0, u_0)$, and the diagonal $u = a$ meets it
 at the *diagonal corner* $(r_d, r_d)$ (Definition G.9).
 
 ![The admissible states in the (a, u)-plane: the region between the lines a = 1/2, u = 0 and u = a and the circle phi = 13/4, split into a large blue axial region at the bottom and left, a green side region between a purple tie line and the circle at the upper right, and a small orange capped triangle at the top left against the diagonal. The tie line runs from the transition state (a0, u0) on the circle up to the vertex V1 of the triangle; the side state (1, 1/2) lies on the circle in the side region, the diagonal corner (rd, rd) at the top, and the axial states (a, 0) form the bottom edge](figures/appendix-g/regions.svg)
 
-*Figure G.2.* The label regions. The label is axial in the blue region, side in
+*Figure G.3.* The label regions. The label is axial in the blue region, side in
 the green one and capped in the orange triangle $V_0V_1V_2$ of Lemma G.30. The
 tie line (purple) separates the axial region from the side region and meets the
 circle $\varphi = \frac{13}4$ at the transition state
@@ -386,7 +400,7 @@ Let $(a, u)$ be admissible and $\ell = \ell(a, u)$.
    $(u + \frac12)^2 \le \frac{13}4$; the state $(\gamma(u), u)$ lies on
    $\varphi = \frac{13}4$.
 2. The *tie line* over $u$ is $\lambda(u) = \frac19(2\pi + 7 - 11u)$, and the
-   *top of the axial region* over $u$ is $\mu(u) = \min(\gamma(u), \lambda(u))$.
+   *top of the axial region* over $u$ is $\chi(u) = \min(\gamma(u), \lambda(u))$.
 3. For a label value $\tau$, the *tie state* of label $\tau$ is
    $(\alpha(\tau), \frac45\tau)$ with
    $\alpha(\tau) = \lambda(\frac45\tau) = \frac{2\pi + 7}9 - \frac{44}{45}\tau$,
@@ -410,12 +424,13 @@ $9X + 11Y = M$. The points of this line are $\frac M{202}(9, 11) + y\,(11, -9)$,
 at squared distance $\frac{M^2}{202} + 202y^2$ from the origin, so the line
 meets the circle where $y = \pm\frac J{202}$; $(X_0, Y_0)$ is the point with
 $y = \frac J{202}$. The diagonal $u = a$ meets the circle where
-$2(a + \frac12)^2 = \frac{13}4$, at $a = r_d$. The tie state and the diagonal
-state have the side label $\tau$: indeed
-$12\,\mathrm{side}(x, x) = 2\pi + 7 - 5x$, so
-$\mathrm{side}(\delta(\tau), \delta(\tau)) = \tau$ and $t_d$ is the side label
-of $(r_d, r_d)$, and Proposition G.16 (5) below gives
-$\mathrm{side}(\alpha(\tau), \frac45\tau) = \tau = \mathrm{axial}(\frac45\tau)$.
+$2(a + \frac12)^2 = \frac{13}4$, at $a = r_d$ (Figure G.4). The tie state and
+the diagonal state have the side label $\tau$, since
+$12\,\mathrm{side}(a, u) = 2\pi + 7 - 9a + 4u$. For the diagonal state this is
+$2\pi + 7 - 5\delta(\tau) = 12\tau$, so $t_d$ is the side label of $(r_d, r_d)$.
+For the tie state it is $2\pi + 7 - 9\alpha(\tau) + \frac{16}5\tau$, which is
+$\frac{44}5\tau + \frac{16}5\tau = 12\tau$; its axial label is
+$\frac54\cdot\frac45\tau = \tau$ too.
 
 *Lean:
 [`Seven.Boundary.circle`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L33),
@@ -432,6 +447,17 @@ $\mathrm{side}(\alpha(\tau), \frac45\tau) = \tau = \mathrm{axial}(\frac45\tau)$.
 [`Seven.Boundary.s0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L21),
 [`Seven.Boundary.rd`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L22),
 [`Seven.Boundary.td`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L23).*
+
+![The quarter circle X squared plus Y squared equals 13/4 in the (X, Y)-plane, with the admissible states shaded grey inside it, right of X = 1 and above Y = 1/2. A purple tie line 9X + 11Y = M crosses the circle twice; a dashed segment of length M over root 202 runs from the origin 0, perpendicular to the line, to its point y = 0, where an arrow along (11, -9) starts; the line meets the circle at y = -J/202 near the top and at y = J/202, the transition point (X0, Y0), on the right. The dashed diagonal X = Y meets the circle at the diagonal corner (rd + 1/2, rd + 1/2)](figures/appendix-g/transition.svg)
+
+*Figure G.4.* Definition G.9 in the coordinates $X = a + \frac12$,
+$Y = u + \frac12$, in which the admissible states (grey) lie in the disk
+$X^2 + Y^2 \le \frac{13}4$. The tie line $9X + 11Y = M$ (purple) consists of
+the points $\frac M{202}(9, 11) + y\,(11, -9)$; its point $y = 0$ is the foot
+of the perpendicular from $0$, at the distance $M/\sqrt{202}$ (dashed), and it
+meets the circle at $y = \pm\frac J{202}$, the transition state
+$(X_0, Y_0)$ being the point with $y = \frac J{202}$. The diagonal $X = Y$
+meets the circle at the diagonal corner.
 
 ### Lemma G.10 (the transition state)
 
@@ -514,14 +540,14 @@ Let $0 \le u \le v \le r_d$.
    and $(\gamma(u), u)$ is admissible.
 2. $\gamma(v) \le \gamma(u)$ and $\gamma(u) - \gamma(v) \le v - u$.
 3. $\gamma(u_0) = a_0$. If $u \le u_0$, then $\gamma(u) \le \lambda(u)$, so
-   $\mu(u) = \gamma(u)$; if $u \ge u_0$, then $\lambda(u) \le \gamma(u)$, so
-   $\mu(u) = \lambda(u)$.
+   $\chi(u) = \gamma(u)$; if $u \ge u_0$, then $\lambda(u) \le \gamma(u)$, so
+   $\chi(u) = \lambda(u)$.
 4. If $v \le u_0$, then $\gamma(u) - \gamma(v) \le \frac12(v - u)$.
 5. If $(a, w)$ is an admissible state, then $(w + \frac12)^2 < \frac{13}4$ and
    $a \le \gamma(w)$.
 
-So the axial region lies below the graph of $\mu$, which follows the circle up
-to $u_0$ and the tie line beyond (Figure G.2).
+So the axial region lies below the graph of $\chi$, which follows the circle up
+to $u_0$ and the tie line beyond (Figures G.3 and G.5).
 
 *Proof.* (1) Since
 $(r_d + \frac12)^2 - (u + \frac12)^2 = (r_d - u)(r_d + u + 1) \ge 0$, we have
@@ -577,7 +603,16 @@ $\square$
 [`Seven.Boundary.circle_displacement_half`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L352),
 [`Seven.Boundary.a_le_circle`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L103).*
 
-### Definition G.13 (the circle parametrised by the side label)
+![Graphs over u from 0 to rd, with a on the vertical axis: the black circle gamma, decreasing from root 3 minus 1/2 to rd, and the steeper purple tie line lambda, which crosses it at u0 at the height a0; their minimum chi, drawn thick blue, follows the circle up to u0 and the tie line beyond. Below chi the axial region is shaded, from a = 1/2 up, for u up to pi/5, cut off on the right by the dashed diagonal a = u. A dashed orange line of slope -1/2 through (u0, a0) lies just above the circle on [0, u0]](figures/appendix-g/axial-top.svg)
+
+*Figure G.5.* Lemma G.12 and Proposition G.15, over the $u$-axis. The circle
+$\gamma$ (black) and the tie line $\lambda$ (purple) cross at $u_0$, where both
+equal $a_0$; their minimum $\chi$ (thick) is the circle up to $u_0$ and the tie
+line beyond. The axial states fill the shaded region below $\chi$ with
+$u \le \frac\pi5$. On $[0, u_0]$ the circle stays below the line of slope
+$-\frac12$ through $(u_0, a_0)$ (dashed), which is Lemma G.12 (4).
+
+### Definition G.13 (the circle parametrized by the side label)
 
 Let $N = \frac{97}{144}$. For $s_0 \le \tau \le t_d$ put
 
@@ -585,7 +620,7 @@ Let $N = \frac{97}{144}$. For $s_0 \le \tau \le t_d$ put
 D(\tau) = \tfrac\pi6 + \tfrac{19}{24} - \tau, \qquad
 Z(\tau) = \sqrt{\tfrac{13}4N - D(\tau)^2}, \qquad
 X(\tau) = \tfrac1N\left(\tfrac34 D(\tau) + \tfrac13 Z(\tau)\right), \qquad
-Y(\tau) = \tfrac1N\left(-\tfrac13 D(\tau) + \tfrac34 Z(\tau)\right),
+Y(\tau) = \tfrac1N\left(-\tfrac13 D(\tau) + \tfrac34 Z(\tau)\right) .
 ```
 
 The *top* of the side label $\tau$ is the state $(\hat a(\tau), \hat u(\tau))$
@@ -601,7 +636,7 @@ $\mathrm{side}(a, u) = \frac\pi6 + \frac{19}{24} - (\frac34 X - \frac13 Y)$. The
 vectors $(\frac34, -\frac13)$ and $(\frac13, \frac34)$ are orthogonal, both of
 squared length $N$, so $\frac34 X - \frac13 Y$ and $\frac13 X + \frac34 Y$ are
 $\sqrt N$ times the coordinates of $(X, Y)$ along the unit vectors in their
-directions (Figure G.3). So the line of side label $\tau$ is
+directions (Figure G.6). So the line of side label $\tau$ is
 $\frac34 X - \frac13 Y = D(\tau)$, and it meets the circle
 $X^2 + Y^2 = \frac{13}4$ where
 $(\frac13 X + \frac34 Y)^2 = \frac{13}4 N - D(\tau)^2$; the point
@@ -619,9 +654,9 @@ $\frac13 X + \frac34 Y = Z(\tau) > 0$.
 [`Seven.Boundary.sideTopA`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L40),
 [`Seven.Boundary.sideTopU`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L39).*
 
-![The quarter circle X squared plus Y squared equals 13/4 in the (X, Y)-plane with the diagonal X = Y; from the origin, two short arrows along (3/4, -1/3) and (1/3, 3/4); an orange segment from the origin along the first direction of length D/root N to the foot of a purple line of constant side label, and a blue segment along that line of length Z/root N up to the point (X(tau), Y(tau)) on the circle; a thick green arc of the circle from the transition point (X0, Y0) up to the diagonal point (rd + 1/2, rd + 1/2)](figures/appendix-g/parametrisation.svg)
+![The quarter circle X squared plus Y squared equals 13/4 in the (X, Y)-plane with the diagonal X = Y; from the origin, two short arrows along (3/4, -1/3) and (1/3, 3/4); an orange segment from the origin, under the first arrow, of length D/root N to the foot of a purple line of constant side label, and a blue segment along that line of length Z/root N up to the point (X(tau), Y(tau)) on the circle; a thick green arc of the circle from the transition point (X0, Y0) up to the diagonal point (rd + 1/2, rd + 1/2)](figures/appendix-g/parametrization.svg)
 
-*Figure G.3.* The parametrisation of Definition G.13 at $\tau = 0.6$, in the
+*Figure G.6.* The parametrization of Definition G.13 at $\tau = 0.6$, in the
 coordinates $X = a + \frac12$, $Y = u + \frac12$. The line of side label $\tau$
 (purple) is perpendicular to $(\frac34, -\frac13)$ at the distance
 $D(\tau)/\sqrt N$ from the origin, and the point $(X(\tau), Y(\tau))$ lies on it
@@ -629,9 +664,10 @@ at the distance $Z(\tau)/\sqrt N$ from the foot. As $\tau$ increases from $s_0$
 to $t_d$, the line moves towards the origin and the point runs along the circle
 from $(X_0, Y_0)$ to $(r_d + \frac12, r_d + \frac12)$ (green arc).
 
-### Lemma G.14 (the parametrisation)
+### Lemma G.14 (the parametrization)
 
-Let $s_0 \le \tau \le t_d$ and write $D, Z, X, Y$ for their values at $\tau$.
+Let $s_0 \le \tau \le t_d$ and write $D, Z, X, Y$ for their values at $\tau$
+(Figure G.7).
 
 1. $\frac12 < D < 1$ and $Z > 0$; $X^2 + Y^2 = \frac{13}4$,
    $\frac34 X - \frac13 Y = D$ and $\frac13 X + \frac34 Y = Z$; and
@@ -736,24 +772,32 @@ $\square$
 [`Seven.Boundary.hasDerivAt_Y`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L283),
 [`Seven.Boundary.hasDerivAt_Y_prime`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L295).*
 
+![Graphs over the label tau from s0 to td, with dashed levels at 1/2, 1, 5/4 and 7/5: X in blue decreasing from X0 to rd + 1/2, Y in green increasing from Y0 to the same value, where the two meet at td (black dot), Z in purple increasing between 1 and 7/5, and D in orange decreasing between 1/2 and 1; all four are nearly straight](figures/appendix-g/circle-functions.svg)
+
+*Figure G.7.* The functions of Definition G.13 on $[s_0, t_d]$ (Lemma G.14):
+$D$ decreases with slope $-1$ and stays in $(\frac12, 1)$; $Z$ increases and
+stays in $(1, \frac75)$; $Y$ increases from $Y_0$, and $X$ decreases from $X_0$,
+stays above $Y$ and above $\frac54$, and meets $Y$ at $t_d$, at the diagonal
+corner.
+
 ## G.4 Segments of constant label
 
 A support sum at the gap $\frac\pi3$ depends on a state through its coordinates
 and its label. At a fixed label it is affine in the state, so it is extreme at
 the ends of the set of admissible states with that label. For an axial label
 $\tau$ this set is the horizontal segment $u = \frac45\tau$,
-$\frac12 \le a \le \mu(\frac45\tau)$ (Proposition G.15). For a side label $\tau$
-it is a segment of slope $\frac94$ in the $(a, u)$-plane, from the tie state of
-label $\tau$ up to the top $(\hat a(\tau), \hat u(\tau))$ (Proposition G.16 and
-Figure G.4).
+$\frac12 \le a \le \chi(\frac45\tau)$ (Proposition G.15 and Figure G.5). For a
+side label $\tau$ it is a segment of slope $\frac94$ in the $(a, u)$-plane, from
+the tie state of label $\tau$ up to the top $(\hat a(\tau), \hat u(\tau))$
+(Proposition G.16 and Figure G.8).
 
 ### Proposition G.15 (the axial region)
 
-1. If $(a, u)$ is admissible and its label is axial, then $a \le \mu(u)$.
-2. If $0 \le u \le \frac\pi5$, the state $(\mu(u), u)$ is admissible and its
+1. If $(a, u)$ is admissible and its label is axial, then $a \le \chi(u)$.
+2. If $0 \le u \le \frac\pi5$, the state $(\chi(u), u)$ is admissible and its
    label is axial, equal to $\frac54 u$.
-3. If $0 \le u \le v \le \frac\pi5$, then $\mu(v) \le \mu(u)$ and
-   $\mu(u) - \mu(v) \le \frac{11}9(v - u)$.
+3. If $0 \le u \le v \le \frac\pi5$, then $\chi(v) \le \chi(u)$ and
+   $\chi(u) - \chi(v) \le \frac{11}9(v - u)$.
 
 *Proof.* (1) By Lemma G.12 (5), $a \le \gamma(u)$, and by Lemma G.8 (1),
 $9a + 11u \le 2\pi + 7$, that is, $a \le \lambda(u)$.
@@ -762,26 +806,37 @@ $9a + 11u \le 2\pi + 7$, that is, $a \le \lambda(u)$.
 $(\gamma(u), u)$ is admissible, $u \le \gamma(u)$ and $\gamma(u) > \frac12$.
 Next $u \le \lambda(u)$, because $20u \le 4\pi < 2\pi + 7$; and
 $\lambda(u) \ge \frac12$, because $11u \le \frac{11\pi}5 = 2\pi + \frac\pi5$ and
-$\frac\pi5 < \frac52$. So $\mu(u) \ge u$ and $\mu(u) \ge \frac12$, and from
-$\frac12 \le \mu(u) \le \gamma(u)$ we get
-$\varphi(\mu(u), u) \le \varphi(\gamma(u), u) = \frac{13}4$: the state
-$(\mu(u), u)$ is admissible. Its label is axial: $\mu(u) \le \lambda(u)$ means
-$9\mu(u) + 11u \le 2\pi + 7$, that is,
-$\mathrm{axial}(u) \le \mathrm{side}(\mu(u), u)$; and
+$\frac\pi5 < \frac52$. So $\chi(u) \ge u$ and $\chi(u) \ge \frac12$, and from
+$\frac12 \le \chi(u) \le \gamma(u)$ we get
+$\varphi(\chi(u), u) \le \varphi(\gamma(u), u) = \frac{13}4$: the state
+$(\chi(u), u)$ is admissible. Its label is axial: $\chi(u) \le \lambda(u)$ means
+$9\chi(u) + 11u \le 2\pi + 7$, that is,
+$\mathrm{axial}(u) \le \mathrm{side}(\chi(u), u)$; and
 $\mathrm{axial}(u) = \frac54 u \le \frac\pi4$.
 
 (3) By Lemma G.12 (2), $\gamma$ is nonincreasing on $[0, r_d]$, and so is
-$\lambda$; hence so is their minimum $\mu$. If $\mu(v) = \gamma(v)$, then by
+$\lambda$; hence so is their minimum $\chi$. If $\chi(v) = \gamma(v)$, then by
 Lemma G.12 (2)
-$\mu(u) \le \gamma(u) \le \gamma(v) + (v - u) \le \mu(v) + \frac{11}9(v - u)$.
-If $\mu(v) = \lambda(v)$, then
-$\mu(u) \le \lambda(u) = \lambda(v) + \frac{11}9(v - u)$. $\square$
+$\chi(u) \le \gamma(u) \le \gamma(v) + (v - u) \le \chi(v) + \frac{11}9(v - u)$.
+If $\chi(v) = \lambda(v)$, then
+$\chi(u) \le \lambda(u) = \lambda(v) + \frac{11}9(v - u)$. $\square$
 
 *Lean:
 [`Seven.Boundary.axial_upper`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L113),
 [`Seven.Boundary.axialTop_state`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L120),
 [`Seven.Boundary.axialTop_antitone`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L328),
 [`Seven.Boundary.axialTop_displacement`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L336).*
+
+![A zoom on the side region in the (a, u)-plane: the green region between the purple tie line at the bottom left, the circle phi = 13/4 at the right and the diagonal at the top left, with the orange capped triangle at its left corner. Green segments of slope 9/4 cross it from the tie line to the circle, labelled by their side labels 0.42, 0.48, pi/6, 0.6, 0.66, 0.72, and two unlabelled ones of the labels 0.76 and td, the second ending at the diagonal corner; the segment of label pi/6 ends at the side state (1, 1/2), and the orange segment of label pi/4 is the edge V1 V2 of the capped triangle. The transition state (a0, u0) is the lower right corner and the diagonal corner (rd, rd) the top](figures/appendix-g/segments.svg)
+
+*Figure G.8.* The side region is swept by the segments of constant side label
+(Proposition G.16), from the transition state, where the segment of label $s_0$
+degenerates to a point, to the edge $V_1V_2$ of label $\frac\pi4$. Each segment
+runs from its tie state on the tie line (purple dots) to its top (black dots),
+on the circle for $\tau \le t_d$ and on the diagonal for $\tau \ge t_d$; as
+$t_d \approx 0.7841$ is just below $\frac\pi4 \approx 0.7854$, only $V_1V_2$
+ends on the diagonal here. The segment of label $\frac\pi6$ ends at the side
+state $(1, \frac12)$; the two unlabelled ones have the labels $0.76$ and $t_d$.
 
 ### Proposition G.16 (segments of constant side label)
 
@@ -824,9 +879,9 @@ $\frac13(u - u_0) + \frac34(a_0 - a) \ge 0$, and
 $\tau = \ell(a, u) \le \frac\pi4$.
 
 (3) Let $w = \frac45\tau$. Then $u_0 = \frac45 s_0 \le w \le \frac\pi5 < r_d$,
-so $\mu(w) = \lambda(w) = \alpha(\tau)$ by Lemma G.12 (3). By Proposition G.15
+so $\chi(w) = \lambda(w) = \alpha(\tau)$ by Lemma G.12 (3). By Proposition G.15
 (2), $(\alpha(\tau), w)$ is admissible with the axial label $\frac54 w = \tau$,
-and by (5) its side label is $\tau$ too.
+and its side label is $\tau$ too (Definition G.9).
 
 (4) First let $\tau \le t_d$ and write $X, Y, Z$ for their values at $\tau$. By
 Lemma G.14, $\hat u = Y - \frac12 \ge u_0 > 0$, $\hat u \le \hat a$ since
@@ -885,15 +940,6 @@ and its values at $\tau$ and $\tau'$ give the claim. $\square$
 [`Seven.Boundary.tie_of_side`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L284),
 [`Seven.Boundary.sideA_displacement`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L375).*
 
-![A zoom on the side region in the (a, u)-plane: the green region between the purple tie line at the bottom left, the circle phi = 13/4 at the right and the diagonal at the top left, with the orange capped triangle at its left corner. Green segments of slope 9/4 cross it from the tie line to the circle, labelled by their side labels 0.42, 0.48, pi/6, 0.6, 0.66, 0.72; the segment of label pi/6 ends at the side state (1, 1/2), two further segments end on the diagonal, and the orange segment of label pi/4 is the edge V1 V2 of the capped triangle. The transition state (a0, u0) is the lower right corner and the diagonal corner (rd, rd) the top](figures/appendix-g/segments.svg)
-
-*Figure G.4.* The side region is swept by the segments of constant side label
-(Proposition G.16), from the transition state, where the segment of label $s_0$
-degenerates to a point, to the edge $V_1V_2$ of label $\frac\pi4$. Each segment
-runs from its tie state on the tie line (purple dots) to its top (black dots),
-on the circle for $\tau \le t_d$ and on the diagonal for $\tau \ge t_d$. The
-segment of label $\frac\pi6$ ends at the side state $(1, \frac12)$.
-
 ### Lemma G.17 (the slope along the tie line)
 
 Let $s_0 \le \tau \le \frac\pi4$, and let $x$ be real with $\cos x > 0$,
@@ -911,7 +957,7 @@ of
 ```
 
 the support $-(A - \frac12)\sin x + (v + \frac12)\cos x$ of a target $(A, v)$
-that moves along the tie line with its label.
+that moves along the tie line with its label. Figure G.9 shows the left side.
 
 *Proof.* Since $\alpha' = -\frac{44}{45}$, the derivative above is
 
@@ -938,6 +984,14 @@ using $\tau \le \frac\pi4$ and $\pi < \frac{22}7$. $\square$
 *Lean:
 [`Seven.Boundary.tie_slope_pos`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L269).*
 
+![Graphs over x from 0 to omega of the left side of Lemma G.17 for the labels s0, 0.5, 0.6, 0.7 and pi/4, in five colours, all between about 0.1 and 0.6 and crossing near x = 0.9; the curve for pi/4 falls from about 0.59 to about 0.10 at omega, where it meets the dashed lower bound (115/72 - 77 pi/180) cos x](figures/appendix-g/slope.svg)
+
+*Figure G.9.* The left side of Lemma G.17 for $x \in [0, \omega]$,
+$\omega = \arctan\frac94$, and five labels $\tau$; all stay positive. For
+$\tau > \frac{43}{72}$, where $\frac{43}{90} - \frac45\tau < 0$, the proof
+bounds it below by $(\frac{115}{72} - \frac{77\pi}{180})\cos x$ (dashed), with
+equality for $\tau = \frac\pi4$ at $x = \omega$.
+
 ## G.5 Profiles along the boundary
 
 Where a sector is reduced to the boundary of the label regions, what remains is
@@ -950,12 +1004,12 @@ G.19 is $\sigma_2(\frac\pi3)$ for the signs $(1, -1)$ with the source at the
 diagonal corner and the target at the transition state.
 
 We use the Taylor brackets of [Lemma A.8](appendix-a.md#lemma-a8-polynomial-brackets): for
-$0 \le l \le x \le h \le \frac\pi2$,
+$0 \le x_- \le x \le x_+ \le \frac\pi2$,
 
 ```math
-l - \tfrac{l^3}6 + \tfrac{l^5}{120} - \tfrac{l^7}{5040} \le \sin x \le h - \tfrac{h^3}6 + \tfrac{h^5}{120},
+x_- - \tfrac{x_-^3}6 + \tfrac{x_-^5}{120} - \tfrac{x_-^7}{5040} \le \sin x \le x_+ - \tfrac{x_+^3}6 + \tfrac{x_+^5}{120},
 \qquad
-1 - \tfrac{h^2}2 + \tfrac{h^4}{24} - \tfrac{h^6}{720} \le \cos x \le 1 - \tfrac{l^2}2 + \tfrac{l^4}{24} .
+1 - \tfrac{x_+^2}2 + \tfrac{x_+^4}{24} - \tfrac{x_+^6}{720} \le \cos x \le 1 - \tfrac{x_-^2}2 + \tfrac{x_-^4}{24} .
 ```
 
 ### Lemma G.18 (the transition profile)
@@ -985,7 +1039,17 @@ G(\tau) = \tfrac12 - \delta(\tau) - \left(a_0 - \tfrac12\right)\sin\theta(\tau) 
 Since $\frac12 - \hat u(\tau)$ is $1 - Y(\tau)$ for $\tau \le t_d$ and
 $\frac12 - \delta(\tau)$ for $\tau \ge t_d$, $F$ and $G$ are the expression of
 (4) with the source at the top of its segment. Their minimum is small, about
-$8\cdot 10^{-4}$ near $\tau = 0.72$ (Figure G.5).
+$8\cdot 10^{-4}$ near $\tau = 0.72$, where the two squares nearly touch
+(Figures G.10 and G.11).
+
+![A canonical pair with both signs -1 in the chart of the source S: S is the blue axis-parallel square below the horizontal axis through o, and the green target T, turned by about 39 degrees, sits above it with its lowest corner on the dashed top edge y = 1/2 - u of S; dashed rays from o to the two markers, pi/3 apart, and an arrow n1 pointing up beside S. A magnified inset, 250 times, around that corner shows the corner of T reaching below the top edge of S by a small orange gap marked sigma1 about 0.0008](figures/appendix-g/transition-pair.svg)
+
+*Figure G.10.* The pair at which the bound of Lemma G.18 is tightest: the
+source, with sign $-1$, at the top of the side segment of label
+$\tau \approx 0.7227$, on the circle $\varphi = \frac{13}4$, and the target,
+with sign $-1$, at the transition state, at the gap $\frac\pi3$. The lowest
+corner of $T$ lies only $\sigma_1(\frac\pi3) = F(\tau) \approx 8\cdot 10^{-4}$
+below the top edge of $S$ (inset, magnified 250 times).
 
 *Proof.* By Lemma G.14 (4), $F$ is twice differentiable on $[s_0, t_d]$ with
 
@@ -1009,7 +1073,7 @@ lies, by $3.1415 < \pi < 3.1416$ and Lemmas G.10 and G.11, between
 \tfrac{3.1416}6 - \tfrac7{12} + \tfrac5{12}(0.77476) + \tfrac54(0.29137) < 0.6273 ,
 ```
 
-and the Taylor brackets with $l = 0.6272$ and $h = 0.6273$ give
+and the Taylor brackets with $x_- = 0.6272$ and $x_+ = 0.6273$ give
 $0.5868 < \sin\theta_1 < 0.587$ and $0.8096 < \cos\theta_1 < 0.8098$. With
 $a_0 - \frac12 \in (0.61979, 0.6198)$ and $Y_0 \in (0.79136, 0.79137)$
 (Lemma G.10),
@@ -1031,14 +1095,9 @@ $0 \le \cos\theta \le \cos\theta_1 < 0.81$; with $a_0 - \frac12 > \frac35$ and
 $Y_0 < \frac45$ this gives
 $F'' > \frac78 + \frac35\cdot\frac12 - \frac45\cdot 0.81 > \frac12$. Now apply
 [Lemma A.3](appendix-a.md#lemma-a3-positivity-from-curvature) on $[\frac25, t_d]$ with the curvature bound
-$\kappa = \frac12$ at the point $\tau^* = t_d$: by (1),
-$F'(\tau^*)^2 < 0.044^2 < 0.002 < 2\kappa F(\tau^*)$, so $F > 0$ on
-$[\frac25, t_d]$. Indeed, for every $\tau$ in the interval,
-
-```math
-F(\tau) \ge F(\tau^*) + F'(\tau^*)(\tau - \tau^*) + \tfrac\kappa2(\tau - \tau^*)^2
-\ge F(\tau^*) - \frac{F'(\tau^*)^2}{2\kappa} > 0 .
-```
+$\kappa = \frac12$ at the point $t_d$: by (1),
+$F'(t_d)^2 < 0.044^2 < 0.002 < 2\kappa F(t_d)$, so $F > 0$ on
+$[\frac25, t_d]$ (Figure G.11).
 
 (3) For $t_d \le \tau \le \frac\pi4$, the angle $\theta$ lies in
 $[0, \frac\pi2]$ (it is at least $\frac\pi3 - \frac\pi4 + s_0 > 0$ and at most
@@ -1066,6 +1125,13 @@ $G(\ell) > 0$ by (3). $\square$
 [`Seven.Boundary.hasDerivAt_transitionF`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L53),
 [`Seven.Boundary.hasDerivAt_transitionFD`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L62).*
 
+![Graph of the transition profile F on the interval from 2/5 to td, a convex blue curve falling from about 0.053 to a minimum of about 0.0008 near 0.72 and rising slightly up to td, continued by a short green piece G on the tiny interval from td to pi/4, above a dashed orange parabola that touches the curve at the black dot at td and dips nearly to 0 near 0.7](figures/appendix-g/transition-profile.svg)
+
+*Figure G.11.* The transition profile of Lemma G.18. The curvature bound
+$F'' > \frac12$ puts $F$ above the parabola of curvature $\frac12$ through its
+value and slope at $t_d$ (dashed), whose minimum, about $3\cdot 10^{-4}$, is
+positive; beyond $t_d$ the profile $G$ (green) increases.
+
 ### Lemma G.19 (the diagonal junction)
 
 Let $\theta_d = t_d + s_0 - \frac\pi6$. Then $0.6246 < \theta_d < 0.6248$ and
@@ -1077,7 +1143,7 @@ Let $\theta_d = t_d + s_0 - \frac\pi6$. Then $0.6246 < \theta_d < 0.6248$ and
 *Proof.* $\theta_d = \frac7{12} - \frac5{12}r_d + s_0$, which by Lemmas G.10 and
 G.11 lies between $\frac7{12} - \frac5{12}(0.77476) + 0.3642 > 0.6246$ and
 $\frac7{12} - \frac5{12}(0.77475) + 0.36422 < 0.6248$. The Taylor brackets with
-$h = 0.6248$ give
+$x_- = 0$ and $x_+ = 0.6248$ give
 
 ```math
 0 \le \sin\theta_d \le 0.6248 - \tfrac{0.6248^3}6 + \tfrac{0.6248^5}{120} < 0.585,
@@ -1110,8 +1176,9 @@ $0.004$. $\square$
 *Proof.* (1) By [Lemma A.5](appendix-a.md#lemma-a5-concave-trigonometric-sums), the function
 $\frac{51}{40}\sin x + \frac{11}{40}\cos x$ is concave on $[0, \frac\pi2]$,
 which contains the interval (since $\frac\pi{12} < \frac25$), so it suffices to
-check the two ends. At $x = \frac\pi3$ it is $\frac1{80}(51\sqrt3 + 11)$, more
-than $\frac1{80}(51\cdot\frac53 + 11) = \frac65$, as $\sqrt3 > 1.73 > \frac53$.
+check the two ends (Figure G.12). At $x = \frac\pi3$ it is
+$\frac1{80}(51\sqrt3 + 11)$, which is more than
+$\frac1{80}(51\cdot\frac53 + 11) = \frac65$ as $\sqrt3 > 1.73 > \frac53$.
 The right end is $x_1 = \frac{7\pi}{12} - \frac25 = \frac\pi2 - \epsilon$ with
 $\epsilon = \frac25 - \frac\pi{12}$, and $0 < \epsilon < \frac3{20}$ by
 $3 < \pi < \frac{22}7$. So $\cos x_1 = \sin\epsilon \ge 0$ and
@@ -1144,14 +1211,13 @@ which is positive as $\pi > 3$. $\square$
 [`Seven.Boundary.diagonalK_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L248),
 [`Seven.Boundary.diagonalSlope_gt`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L229).*
 
-![Two graphs. Left: the transition profile F on the interval from 2/5 to td, a convex blue curve falling from about 0.053 to a minimum just above 0 near 0.72 and rising slightly up to td, continued by a short green piece on the tiny interval from td to pi/4, above a dashed orange parabola that touches the curve at the black dot at td and dips nearly to 0 near 0.7. Right: the profile K on the interval from 2/5 to pi/4, an increasing blue curve from about 0.052, marked by a dot at 2/5, to 0.085](figures/appendix-g/profiles.svg)
+![Two graphs. Left: the concave function 51/40 sin x + 11/40 cos x, blue on the interval from pi/3 to x1 = 7 pi/12 - 2/5 and grey on either side, with a maximum near 1.31, above the dashed level 6/5. Right: the profile K on the interval from 2/5 to pi/4, an increasing blue curve from about 0.052 at 2/5, above the orange mark at pi/5 - 0.585 there, to about 0.085](figures/appendix-g/diagonal-profile.svg)
 
-*Figure G.5.* Left: the transition profile of Lemma G.18. The curvature bound
-$F'' > \frac12$ puts $F$ above the parabola of curvature $\frac12$ through its
-value and slope at the diagonal corner $t_d$ (dashed), whose minimum, about
-$3\cdot 10^{-4}$, is positive; beyond $t_d$ the profile $G$ (green) increases.
-Right: the profile $K$ of Lemma G.20, increasing from its positive value at
-$\frac25$ (dot).
+*Figure G.12.* Lemma G.20. (a) On $[\frac\pi3, x_1]$, with
+$x_1 = \frac{7\pi}{12} - \frac25$, the concave function
+$\frac{51}{40}\sin x + \frac{11}{40}\cos x$ exceeds $\frac65$ at both ends, so
+everywhere. (b) The profile $K$ increases from $K(\frac25) > \frac\pi5 - 0.585$
+(orange mark).
 
 ## G.6 The target support on the axial boundary
 
@@ -1163,7 +1229,7 @@ $-(A - \frac12)\sin d + (v + \frac12)\cos d$, and Appendix I bounds it below by
 moving the target to the boundary of the label regions. This section studies
 that function along the upper boundary of the axial region: the circular piece
 from $(\sqrt3 - \frac12, 0)$ to the transition state, where it decreases, and
-the tie line beyond, where it increases up to a switch label.
+the tie line beyond, where it increases up to a switch label (Figure G.15).
 
 ### Definition G.21 (targets on the boundary)
 
@@ -1171,8 +1237,8 @@ For labels $\ell, \ell'$ put $d = \frac\pi3 - \ell + \ell'$ and define
 
 ```math
 \begin{aligned}
-\xi(\ell') &= \sqrt{\tfrac{13}4 - \left(\tfrac12 + \tfrac45\ell'\right)^2}, \qquad \eta(\ell') = \tfrac12 + \tfrac45\ell',\\
-C(\ell, \ell') &= -\left(\xi(\ell') - 1\right)\sin d + \eta(\ell')\cos d,\\
+\xi(\ell') &= \sqrt{\tfrac{13}4 - \left(\tfrac12 + \tfrac45\ell'\right)^2}, \qquad \zeta(\ell') = \tfrac12 + \tfrac45\ell',\\
+C(\ell, \ell') &= -\left(\xi(\ell') - 1\right)\sin d + \zeta(\ell')\cos d,\\
 L(\ell, \ell') &= -\left(\alpha(\ell') - \tfrac12\right)\sin d + \left(\tfrac45\ell' + \tfrac12\right)\cos d,\\
 H(\ell, \ell') &= -\left(\hat a(\ell') - \tfrac12\right)\sin d + \left(\hat u(\ell') + \tfrac12\right)\cos d,
 \end{aligned}
@@ -1182,7 +1248,7 @@ the last for $s_0 \le \ell' \le \frac\pi4$. Let $\omega = \arctan\frac94$, and
 call $\omega - \frac\pi3 + \ell$ the *switch label* of $\ell$.
 
 For $0 \le \ell' \le s_0$ the state
-$(\xi(\ell') - \frac12, \eta(\ell') - \frac12)$ is
+$(\xi(\ell') - \frac12, \zeta(\ell') - \frac12)$ is
 $(\gamma(\frac45\ell'), \frac45\ell')$, the point of the circular piece of the
 axial boundary with the axial label $\ell'$ (Lemma G.12 (3) and Proposition G.15
 (2)), so $C(\ell, \ell')$ is the target part above for that target. Likewise $L$
@@ -1200,18 +1266,19 @@ side label $\ell'$. At the switch label, $d = \omega$.
 
 ### Lemma G.22 (a derivative ratio)
 
-Let $0 \le \ell' \le s_0$, and write $\xi, \eta$ for $\xi(\ell'), \eta(\ell')$.
+Let $0 \le \ell' \le s_0$, and write $\xi, \zeta$ for
+$\xi(\ell'), \zeta(\ell')$.
 
-1. $\frac85 < \xi < \frac74$, $\frac12 \le \eta \le Y_0$ and
-   $\xi^2 + \eta^2 = \frac{13}4$.
-2. $\xi$ and $\eta$ are differentiable, with $\xi' = -\frac45\cdot\frac\eta\xi$
-   and $\eta' = \frac45$.
-3. The function $\rho = \frac{\xi(\frac95 - \xi)}{\eta(\xi - \frac45)}$ is
+1. $\frac85 < \xi < \frac74$, $\frac12 \le \zeta \le Y_0$ and
+   $\xi^2 + \zeta^2 = \frac{13}4$.
+2. $\xi$ and $\zeta$ are differentiable, with
+   $\xi' = -\frac45\cdot\frac\zeta\xi$ and $\zeta' = \frac45$.
+3. The function $\rho = \frac{\xi(\frac95 - \xi)}{\zeta(\xi - \frac45)}$ is
    nonnegative, and $\rho(0) < 2 - \sqrt3$.
 4. The derivative of $\rho$ is
 
    ```math
-   \rho' = \frac{4\left(25\xi^4 - 65\xi^3 + 25\xi^2\eta^2 + 36\xi^2 - 40\xi\eta^2 + 36\eta^2\right)}{5\xi\eta^2(5\xi - 4)^2} ,
+   \rho' = \frac{4\left(25\xi^4 - 65\xi^3 + 25\xi^2\zeta^2 + 36\xi^2 - 40\xi\zeta^2 + 36\zeta^2\right)}{5\xi\zeta^2(5\xi - 4)^2} ,
    \qquad
    1 - \rho' = \frac{P(\xi)}{5\xi(5\xi - 4)^2(13 - 4\xi^2)} ,
    ```
@@ -1229,21 +1296,30 @@ The number $2 - \sqrt3$ is $\tan\frac\pi{12}$ (see the proof of (5)), so (3)
 and (5) give $\rho(0) < \tan x$ for $\frac\pi{12} \le x < \frac\pi2$.
 Proposition G.23 uses this with $x$ the angle $d$ of the target support at
 $\ell' = 0$, and then (4) to keep $\rho$ below $\tan d$ as $\ell'$ grows
-(Figure G.6).
+(Figure G.13).
+
+![Graphs over the target label from 0 to s0, for the source label pi/4: the blue ratio rho, increasing from rho(0), about 0.25, to about 0.45, and the orange curve tan d, which starts just above it at 2 - root 3 = tan(pi/12), about 0.27, and rises to about 0.72](figures/appendix-g/ratio.svg)
+
+*Figure G.13.* Lemma G.22 and Proposition G.23 for the source label
+$\ell = \frac\pi4$, where the angle $d = \frac\pi{12} + \ell'$ is smallest. The
+ratio $\rho$ (blue) starts at $\rho(0) \approx 0.2525$, just below
+$\tan\frac\pi{12} = 2 - \sqrt3 \approx 0.2679$, and stays below $\tan d$
+(orange); this is $E > 0$ in the proof of Proposition G.23. For a smaller
+source label, $d$ and $\tan d$ are larger.
 
 *Proof.* (1) Let $w = \frac45\ell' \in [0, u_0]$ (as $s_0 = \frac54 u_0$). Then
-$\xi = \gamma(w) + \frac12$ and $\eta = w + \frac12$, so
-$\xi^2 + \eta^2 = \frac{13}4$ (Lemma G.12 (1)) and
-$\frac12 \le \eta \le u_0 + \frac12 = Y_0$. By Lemma G.12 (2) and (3),
+$\xi = \gamma(w) + \frac12$ and $\zeta = w + \frac12$, so
+$\xi^2 + \zeta^2 = \frac{13}4$ (Lemma G.12 (1)) and
+$\frac12 \le \zeta \le u_0 + \frac12 = Y_0$. By Lemma G.12 (2) and (3),
 $\gamma(w) \ge \gamma(u_0) = a_0$, so $\xi \ge a_0 + \frac12 > \frac85$; and
 since $(\gamma(w), w)$ is admissible, Lemma G.7 gives
 $\xi \le \sqrt3 < 1.733 < \frac74$.
 
-(2) The radicand $\frac{13}4 - \eta^2 = \xi^2$ is positive, and the chain rule
-gives $\xi' = -\frac{\eta\eta'}\xi = -\frac45\cdot\frac\eta\xi$.
+(2) The radicand $\frac{13}4 - \zeta^2 = \xi^2$ is positive, and the chain rule
+gives $\xi' = -\frac{\zeta\zeta'}\xi = -\frac45\cdot\frac\zeta\xi$.
 
-(3) Since $\frac45 < \xi < \frac74 < \frac95$ and $\eta > 0$, $\rho \ge 0$. At
-$\ell' = 0$, $\xi = \sqrt3$ and $\eta = \frac12$; multiplying the numerator and
+(3) Since $\frac45 < \xi < \frac74 < \frac95$ and $\zeta > 0$, $\rho \ge 0$. At
+$\ell' = 0$, $\xi = \sqrt3$ and $\zeta = \frac12$; multiplying the numerator and
 the denominator of $\rho(0)$ by $5$, and using
 $(2 - \sqrt3)(5\sqrt3 - 4) = 14\sqrt3 - 23$,
 
@@ -1259,19 +1335,19 @@ $\rho(0) \approx 0.2525$ and $2 - \sqrt3 \approx 0.2679$.
 
 (4) The formula for $\rho'$ follows from the quotient rule with (2): the
 numerator $\xi(\frac95 - \xi)$ of $\rho$ has derivative $\xi'(\frac95 - 2\xi)$
-and the denominator $\eta(\xi - \frac45)$ has derivative
-$\frac45(\xi - \frac45) + \eta\xi'$. Substituting $\xi' = -\frac{4\eta}{5\xi}$
+and the denominator $\zeta(\xi - \frac45)$ has derivative
+$\frac45(\xi - \frac45) + \zeta\xi'$. Substituting $\xi' = -\frac{4\zeta}{5\xi}$
 and expanding,
 
 ```math
-\xi'\left(\tfrac95 - 2\xi\right)\eta\left(\xi - \tfrac45\right) - \xi\left(\tfrac95 - \xi\right)\left(\tfrac45\left(\xi - \tfrac45\right) + \eta\xi'\right)
-= \frac{4\left(25\xi^4 - 65\xi^3 + 25\xi^2\eta^2 + 36\xi^2 - 40\xi\eta^2 + 36\eta^2\right)}{125\xi} ,
+\xi'\left(\tfrac95 - 2\xi\right)\zeta\left(\xi - \tfrac45\right) - \xi\left(\tfrac95 - \xi\right)\left(\tfrac45\left(\xi - \tfrac45\right) + \zeta\xi'\right)
+= \frac{4\left(25\xi^4 - 65\xi^3 + 25\xi^2\zeta^2 + 36\xi^2 - 40\xi\zeta^2 + 36\zeta^2\right)}{125\xi} ,
 ```
 
 and dividing by the squared denominator
-$\eta^2(\xi - \frac45)^2 = \frac1{25}\eta^2(5\xi - 4)^2$ gives the displayed
+$\zeta^2(\xi - \frac45)^2 = \frac1{25}\zeta^2(5\xi - 4)^2$ gives the displayed
 quotient. To compare $\rho'$ with $1$, substitute
-$\eta^2 = \frac{13}4 - \xi^2$ in that quotient: its numerator becomes
+$\zeta^2 = \frac{13}4 - \xi^2$ in that quotient: its numerator becomes
 $4(-25\xi^3 + \frac{325}4\xi^2 - 130\xi + 117)$ and its denominator
 $\frac54\xi(5\xi - 4)^2(13 - 4\xi^2)$, so
 
@@ -1290,10 +1366,10 @@ The formula for $1 - \rho'$ follows, because
 
 and the first right side minus the second is $P(X)$. The denominator
 $5\xi(5\xi - 4)^2(13 - 4\xi^2)$ is positive, since $\xi > \frac85$ and
-$13 - 4\xi^2 = 4\eta^2 > 0$.
+$13 - 4\xi^2 = 4\zeta^2 > 0$.
 
 It remains to show that $P > 0$ on $[\frac85, \frac74]$, which contains $\xi$
-by (1). The quintic is concave there (Figure G.6): its derivatives are
+by (1). The quintic is concave there (Figure G.14): its derivatives are
 
 ```math
 P'(X) = -2500X^4 + 3200X^3 + 5115X^2 - 7800X + 3120, \qquad
@@ -1309,8 +1385,7 @@ P''\left(\tfrac85 + t\right) = -7816 - 35850t - 38400t^2 - 10000t^3 ,
 which is negative for $t \ge 0$. At the ends of the interval,
 $P(\frac85) = 119.68$ and $P(\frac74) > 78.5$ are positive. By
 [Lemma A.4](appendix-a.md#lemma-a4-positivity-from-concavity), applied to $P$ with its derivatives $P'$ and $P''$,
-$P > 0$ on $[\frac85, \frac74]$; its proof shows more: $P$ lies above its
-chord, so $P > 78.5$ there. Hence $1 - \rho' > 0$.
+$P > 0$ on $[\frac85, \frac74]$. Hence $1 - \rho' > 0$.
 
 (5) Since $\frac\pi{12} = \frac\pi3 - \frac\pi4$, the subtraction formulas give
 
@@ -1345,17 +1420,11 @@ and $\cos\frac\pi{12} > 0$. $\square$
 [`Seven.Boundary.ratio_derivative_lt_one`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L105),
 [`Seven.Boundary.tan_twelfth_le`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L147).*
 
-![Two graphs. Left: the quintic P on the interval from 8/5 to 7/4, a concave blue arch from 119.68 at 8/5 up to about 132 and down to about 78.6 at 7/4, continued in grey beyond both ends, above the orange chord joining its two end points and far above the axis. Right: on the interval from 0 to s0, the increasing blue ratio rho, from rho(0), about 0.25, to about 0.45, below the orange curve tan d for the source label pi/4, which starts just above it at 2 - root 3, about 0.27, and rises to about 0.72](figures/appendix-g/ratio.svg)
+![Graph of the quintic P on the interval from 8/5 to 7/4: a concave blue arch from 119.68 at 8/5 up to about 132 and down to about 78.6 at 7/4, continued in grey beyond both ends, above the orange chord joining its two end points and far above the axis](figures/appendix-g/quintic.svg)
 
-*Figure G.6.* Lemma G.22. (a) The quintic $P$ (blue) is concave on
+*Figure G.14.* The quintic $P$ of Lemma G.22 (blue) is concave on
 $[\frac85, \frac74]$, so it lies above its chord (orange) through the positive
 end values $P(\frac85) = 119.68$ and $P(\frac74) \approx 78.57$.
-(b) The ratio $\rho$ (blue) and $\tan d$ (orange) on $[0, s_0]$ for the source
-label $\ell = \frac\pi4$, where the angle $d = \frac\pi{12} + \ell'$ is
-smallest. At $\ell' = 0$, $\rho(0) \approx 0.2525$ lies just below
-$\tan\frac\pi{12} = 2 - \sqrt3 \approx 0.2679$, and $\rho$ stays below
-$\tan d$; this is $E > 0$ in the proof of Proposition G.23. For a smaller
-source label, $d$ and $\tan d$ are larger.
 
 ### Proposition G.23 (the circular piece)
 
@@ -1373,11 +1442,11 @@ $d \le \frac\pi3 - \frac25 + s_0 < 1.0115$. So $\sin d, \cos d \ge 0$. By Lemma
 G.22 (2), since $d' = 1$,
 
 ```math
-\frac{\partial C}{\partial\ell'} = \tfrac45\cdot\tfrac\eta\xi\sin d - (\xi - 1)\cos d + \tfrac45\cos d - \eta\sin d
-= -\frac{\eta\left(\xi - \frac45\right)}\xi\,E, \qquad E = \sin d - \rho\cos d .
+\frac{\partial C}{\partial\ell'} = \tfrac45\cdot\tfrac\zeta\xi\sin d - (\xi - 1)\cos d + \tfrac45\cos d - \zeta\sin d
+= -\frac{\zeta\left(\xi - \frac45\right)}\xi\,E, \qquad E = \sin d - \rho\cos d .
 ```
 
-The factor $\frac\eta\xi(\xi - \frac45)$ is positive, so it suffices that
+The factor $\frac\zeta\xi(\xi - \frac45)$ is positive, so it suffices that
 $E > 0$. By Lemma G.22 (3) and (4), $E' = (1 - \rho')\cos d + \rho\sin d \ge 0$,
 so $E$ is nondecreasing on $[0, s_0]$
 ([Lemma A.1](appendix-a.md#lemma-a1-monotonicity-from-the-derivative) (1)). At $\ell' = 0$ the angle is
@@ -1390,10 +1459,10 @@ E(0) = \sin d_0 - \rho(0)\cos d_0 \ge \left(2 - \sqrt3 - \rho(0)\right)\cos d_0 
 ```
 
 So $E \ge E(0) > 0$ on $[0, s_0]$; as $\cos d > 0$, this says that $\rho$ stays
-below $\tan d$ (Figure G.6 (b)).
+below $\tan d$ (Figure G.13).
 
 At $\ell' = s_0$: $\xi(s_0) = \gamma(u_0) + \frac12 = a_0 + \frac12$ and
-$\eta(s_0) = Y_0$ (Lemma G.12 (3)), and $\alpha(s_0) = a_0$ and
+$\zeta(s_0) = Y_0$ (Lemma G.12 (3)), and $\alpha(s_0) = a_0$ and
 $\frac45 s_0 + \frac12 = Y_0$ (Lemma G.10), which gives the two values.
 $\square$
 
@@ -1439,7 +1508,7 @@ With Proposition G.23 this gives the claim. $\square$
 
 ![Graphs of the target support against the target label for four source labels 2/5, 0.55, 0.7 and pi/4, in four colours. Each curve decreases slowly (solid) from the target label 0 to s0, where it has a corner marked by a dot, and then increases (dashed) along the tie line up to the switch label or pi/4](figures/appendix-g/targets.svg)
 
-*Figure G.7.* The target part of the forward sum with the signs $(-1, -1)$, for
+*Figure G.15.* The target part of the forward sum with the signs $(-1, -1)$, for
 a target on the upper boundary of the axial region: $C(\ell, \ell')$ on the
 circular piece $0 \le \ell' \le s_0$ (solid, Proposition G.23) and
 $L(\ell, \ell')$ on the tie line from $s_0$ up to the switch label or
@@ -1448,24 +1517,25 @@ is at the transition state, $\ell' = s_0$.
 
 ## G.7 The easy sectors
 
-Four sectors hold for all labels and give positive sums (Figure G.8). On the
-outward axis the far edge of $S$ is out of reach of $T$; on the backward axis
-$T$ contains its marker point, which lies beyond the lower edge of $S$; on the
-inward axis with a negative source sign the marker arc of $T$ reaches past the
-near edge of $S$; and on the forward axis with positive signs a Cauchy–Schwarz
-bound on the disk $\varphi \le \frac{13}4$ suffices.
+Four sectors hold for all labels and give positive sums (Figure G.16). On the
+outward axis some point of $T$ lies short of the far edge of $S$; on the
+backward axis $T$ contains its marker point, which lies above the lower edge of
+$S$; on the inward axis with a negative source sign the marker arc of $T$
+reaches past the near edge of $S$; and on the forward axis with positive signs
+a Cauchy–Schwarz bound on the disk $\varphi \le \frac{13}4$ suffices.
 
-![Four panels, each with the disk centre o, a faint unit circle and a blue source square S and a green target square T of a canonical pair at the gap pi/3. (a) Outward axis: the side square Q(1, 1/2) and the square Q(0, 1) above it; a dashed circle of radius 31/25 about o contains the centre of T, an orange dashed line x = 37/50 and a blue dashed line x = a + 1/2 through the far edge of S, and an orange bracket from the leftmost point of T to that edge. (b) Backward axis with source sign 1: the same squares; the marker point of T on the unit circle above o, and an orange segment from it down to the dashed line y = u - 1/2 of the lower edge of S. (c) Inward axis with source sign -1: the side column, S below the axis and T above it; the marker arc of T drawn thick on the unit circle, and an orange segment from the dashed near-edge line x = a - 1/2 of S to the lower end of the arc. (d) Forward axis with both signs 1: the pair of Figure G.1 with the shadows of S and T on a vertical line and an orange bracket over their overlap](figures/appendix-g/easy.svg)
+![Four panels, each with the disk centre o, a faint unit circle and a blue source square S and a green target square T of a canonical pair at the gap pi/3. (a) Outward axis: the side square Q(1, 1/2) and the square Q(0, 1) above it; a dashed circle of radius 31/25 about o, marked as containing the centre c_T of T, an orange dashed line x = 37/50 and a blue dashed line x = a + 1/2 through the far edge of S, and an orange bracket from the leftmost point of T to that edge. (b) Backward axis with source sign 1: the same squares; the marker point of T on the unit circle above o, and an orange segment from it down to the dashed line y = u - 1/2 of the lower edge of S. (c) Inward axis with source sign -1: the side column, S below the axis and T above it; the marker arc of T drawn thick on the unit circle, and an orange segment from the dashed near-edge line x = a - 1/2 of S to the lower end of the arc. (d) Forward axis with both signs 1: the pair of Figure G.1 with the shadows of S and T on a vertical line and an orange bracket over their overlap](figures/appendix-g/easy.svg)
 
-*Figure G.8.* The easy sectors. (a) Proposition G.26: $T$ has a point to the
-left of $x = \frac{37}{50}$, since its centre lies in the dashed disk of radius
-$\frac{31}{25}$, while $S$ reaches $x = a + \frac12 \ge 1$. (b) Proposition
-G.27: the marker point of $T$ lies in $T$, above the lower edge of $S$; the
-orange segment is a lower bound for $\sigma_3(\frac\pi3)$. (c) Proposition G.28:
-the end of the marker arc of $T$ nearest to the axis lies to the right of the
-near edge of $S$; the orange segment is a lower bound for $\sigma_2(\frac\pi3)$.
-(d) Proposition G.29: the shadows on the forward axis overlap. In (a) to (c) the
-pairs are contacts of the second and first kinds; the propositions hold for all
+*Figure G.16.* The easy sectors. (a) Proposition G.26: $T$ has a point to the
+left of $x = \frac{37}{50}$, since its centre $c_T$ lies in the dashed disk of
+radius $\frac{31}{25}$, while $S$ reaches $x = a + \frac12 \ge 1$.
+(b) Proposition G.27: the marker point of $T$ lies in $T$, above the lower edge
+of $S$; the orange segment is a lower bound for $\sigma_3(\frac\pi3)$.
+(c) Proposition G.28: the end of the marker arc of $T$ on the side of $S$ lies
+to the right of the near edge of $S$; the orange segment is a lower bound for
+$\sigma_2(\frac\pi3)$. (d) Proposition G.29: the shadows on the forward axis
+overlap. The pairs in (a) and (b) form a contact of kind (2) and the pair in
+(c) one of kind (1), yet these sums are positive; the propositions hold for all
 admissible states.
 
 ### Proposition G.26 (the outward axis)
@@ -1575,7 +1645,7 @@ Recall $u \ge \frac45\ell$, because $\ell \le \mathrm{axial}(u)$.
    ```
 
 4. *If instead $z < \frac\pi4$*, apply Lemma G.3 to
-   $(X, Y) = (A + \frac12, v + \frac12)$ with $p = -\cos z$, $r = -\sin z$ and
+   $(X, Y) = (A + \frac12, v + \frac12)$ with $p = -\cos z$, $q = -\sin z$ and
    $c = \frac{11}6$, which is allowed since $\frac{13}4 < (\frac{11}6)^2$, that
    is, $117 < 121$:
    $-(A + \frac12)\cos z - (v + \frac12)\sin z \ge -\frac{11}6$. Hence
@@ -1608,18 +1678,27 @@ Recall $u \ge \frac45\ell$, because $\ell \le \mathrm{axial}(u)$.
    while $m < \frac43 - \frac{2(3.14)}{15} < 0.915$. At $\frac\pi6$,
    $k(\frac\pi6) = -\frac{2\pi}{15} + \frac12 + \frac{\sqrt3}2 > m$ because
    $\sqrt3 > \frac53$. So $k(x) > m$, that is,
-   $\sigma_1(\frac\pi3) > 0$. $\square$
+   $\sigma_1(\frac\pi3) > 0$ (Figure G.17). $\square$
 
 *Lean:
 [`Seven.fixed_gap_forward_positive`](../../SquaresInCircles/Seven/Pair/EasySectors.lean#L76),
 [`cos_add_sin_mono`](../../SquaresInCircles/Common/Trigonometry.lean#L79).*
 
+![Two panels. Left: the square of the source label l and the target label l′, from 0 to pi/4, split by the vertical line l = 5/16 and, left of it, by the line l′ = l + pi/12, where the turn z equals pi/4, into three regions: step 1 on the right (blue, sigma1 > 1/100), step 3 above the line (green, sigma1 > 7/80) and step 4 below it (orange). Right: the concave function k on [0, 0.69], blue on [1/5, pi/6] with dots at both ends, above the dashed orange level m = 4/3 - 2 pi/15](figures/appendix-g/forward-bound.svg)
+
+*Figure G.17.* Proposition G.29. (a) The steps of the proof in the square of the
+labels $\ell$, $\ell'$: step 1 for $\ell \ge \frac5{16}$, and for
+$\ell < \frac5{16}$ step 3 where the turn $z = \frac\pi6 - \ell + \ell'$ is at
+least $\frac\pi4$ and step 4 where it is less. (b) Step 4: the concave function
+$k$ exceeds $m = \frac43 - \frac{2\pi}{15}$ at both ends of
+$[\frac15, \frac\pi6]$, so on the whole interval.
+
 ## G.8 The capped labels
 
-A label equal to $\frac\pi4$ is the same for every capped state, so a support
-sum at a capped state is an affine function of that state. The capped states
-fill the triangle of Figure G.9, whose vertices are admissible with active
-labels; an affine function on the triangle is at least its least value at a
+Every capped state has the label $\frac\pi4$, so, with the other state fixed, a
+support sum is an affine function of the capped state. The capped states fill
+the triangle of Figure G.18, whose vertices are admissible with active labels,
+and an affine function on the triangle is at least its least value at a
 vertex. This reduces the capped labels to active ones.
 
 ### Lemma G.30 (the capped triangle)
@@ -1692,9 +1771,9 @@ and $7 - 2\pi > 0$. $\square$
 [`Seven.cap_vertex_le`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L91),
 [`Seven.exists_le_weighted_sum`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L81).*
 
-![A zoom on the capped triangle in the (a, u)-plane: the orange triangle with vertices V0 on the diagonal u = a at the lower left, V1 on the line u = pi/5 to its right, and V2 on the diagonal at the top; the dashed lines u = pi/5 and 9a - 4u = 7 - pi through its edges, the purple tie line through V1, the grey half-plane u > a above the diagonal where there are no states, the words axial below the triangle and side to its right, and a capped state (a, u) inside joined to the three vertices by dashed segments](figures/appendix-g/capped.svg)
+![A zoom on the capped triangle in the (a, u)-plane: the orange triangle with vertices V0 on the diagonal u = a at the lower left, V1 on the line u = pi/5 to its right, and V2 on the diagonal at the top; the dashed lines u = pi/5 and 9a - 4u = 7 - pi through its edges, the purple tie line ending at V1 from below, the grey half-plane u > a above the diagonal where there are no states, the words axial below the triangle and side to its right, and a capped state (a, u) inside joined to the three vertices by dashed segments](figures/appendix-g/capped.svg)
 
-*Figure G.9.* The capped triangle $V_0V_1V_2$ of Lemma G.30. Its edges lie on
+*Figure G.18.* The capped triangle $V_0V_1V_2$ of Lemma G.30. Its edges lie on
 the line $u = \frac\pi5$, where $\mathrm{axial}(u) = \frac\pi4$, on the line
 $9a - 4u = 7 - \pi$, where $\mathrm{side}(a, u) = \frac\pi4$, and on the
 diagonal. A capped state $(a, u)$ is the convex combination of the vertices with
@@ -1770,11 +1849,11 @@ of §G.1. A positive sum gives the gap property by Lemma G.2 (4).
   [Proposition H.12](appendix-h.md#proposition-h12-side-target); if it is axial and the source label is
   axial, [Proposition H.6](appendix-h.md#proposition-h6-two-axial-labels); if it is axial and the source label
   is side, [Proposition H.7](appendix-h.md#proposition-h7-side-source-axial-target).
-- $k = 2$, $(s, t) = (1, -1)$: ([Theorem H.32](appendix-h.md#theorem-h32-opposite-signs-with-active-labels)).
+- $k = 2$, $(s, t) = (1, -1)$: [Theorem H.32](appendix-h.md#theorem-h32-opposite-signs-with-active-labels).
 - $k = 1$, $(s, t) = (1, 1)$: Proposition G.29.
-- $k = 1$, $(s, t) = (1, -1)$: ([Proposition I.7](appendix-i.md#proposition-i7-target-sign-negative)), with
+- $k = 1$, $(s, t) = (1, -1)$: [Proposition I.7](appendix-i.md#proposition-i7-target-sign-negative), with
   the source sign $1$ and an active target label.
-- $k = 1$, $(s, t) = (-1, 1)$: ([Proposition I.16](appendix-i.md#proposition-i16-opposite-signs)).
+- $k = 1$, $(s, t) = (-1, 1)$: [Proposition I.16](appendix-i.md#proposition-i16-opposite-signs).
 - $k = 1$, $(s, t) = (-1, -1)$: if the source label is axial,
   [Proposition I.7](appendix-i.md#proposition-i7-target-sign-negative) with the source sign $-1$; if it
   is side, [Proposition I.26](appendix-i.md#proposition-i26-both-signs-negative).

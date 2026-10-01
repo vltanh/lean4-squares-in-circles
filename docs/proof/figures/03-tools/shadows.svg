@@ -15,8 +15,8 @@
 <line x1="26.5" y1="324.0" x2="553.5" y2="324.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
 <text x="553.5" y="310.4" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">n</text>
 <line x1="281.5" y1="307.0" x2="281.5" y2="26.5" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6 4"/>
-<text x="208.5" y="341.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">w<tspan dy="4.2" font-size="9.5">S</tspan></text>
-<text x="358.3" y="341.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">w<tspan dy="4.2" font-size="9.5">T</tspan></text>
+<text x="208.5" y="342.7" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">w<tspan dy="4.2" font-size="9.5">S</tspan><tspan dy="-4.2">(n)</tspan></text>
+<text x="358.3" y="342.7" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">w<tspan dy="4.2" font-size="9.5">T</tspan><tspan dy="-4.2">(n)</tspan></text>
 <text x="77.5" y="57.1" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">S</text>
 <text x="502.5" y="69.0" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">T</text>
 </svg>

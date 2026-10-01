@@ -16,7 +16,7 @@
 <circle cx="212.4" cy="152.4" r="3.6" fill="#ea580c"/>
 <circle cx="152.4" cy="212.4" r="3.6" fill="#ea580c"/>
 <circle cx="212.4" cy="272.4" r="3.6" fill="#ea580c"/>
-<text x="272.4" y="255.6" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">Γ<tspan dy="4.2" font-size="9.5">½</tspan></text>
+<text x="229.2" y="246.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">Γ<tspan dy="4.2" font-size="9.5">1/2</tspan></text>
 <text x="355.6" y="100.5" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">√2</text>
 <circle cx="212.4" cy="212.4" r="3.2" fill="#1f2937"/>
 <text x="206.4" y="222.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>

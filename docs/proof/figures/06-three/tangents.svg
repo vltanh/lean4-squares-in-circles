@@ -8,7 +8,7 @@
 <polyline points="191.7,18.0 519.3,421.2" fill="none" stroke="#ea580c" stroke-width="2" stroke-linejoin="round"/>
 <polyline points="290.4,18.0 460.2,421.2" fill="none" stroke="#ea580c" stroke-width="2" stroke-linejoin="round"/>
 <line x1="51.6" y1="365.2" x2="376.4" y2="40.4" stroke="#9ca3af" stroke-width="1" stroke-dasharray="5 4"/>
-<text x="365.2" y="37.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="end" dominant-baseline="middle">b = a</text>
+<text x="365.2" y="37.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="end" dominant-baseline="middle"><tspan font-style="italic">b</tspan> = <tspan font-style="italic">a</tspan></text>
 <line x1="29.2" y1="365.2" x2="522.0" y2="365.2" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
 <line x1="51.6" y1="410.0" x2="51.6" y2="29.2" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
 <text x="522.0" y="384.8" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">a</text>
@@ -17,8 +17,8 @@
 <text x="317.6" y="196.9" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">B = (½, 5/16)</text>
 <circle cx="436.6" cy="365.2" r="4.2" fill="#1f2937"/>
 <text x="425.4" y="387.6" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">A = (11/16, 0)</text>
-<text x="222.4" y="62.8" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="end" dominant-baseline="middle" font-style="italic">16a + 13b = 193/16</text>
-<text x="351.2" y="102.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle" font-style="italic">19a + 8b = 209/16</text>
+<text x="202.8" y="62.8" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="end" dominant-baseline="middle">16<tspan font-style="italic">a</tspan> + 13<tspan font-style="italic">b</tspan> = 193/16</text>
+<text x="351.2" y="102.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle">19<tspan font-style="italic">a</tspan> + 8<tspan font-style="italic">b</tspan> = 209/16</text>
 <text x="163.6" y="320.4" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">φ ≤ 425/256</text>
 <circle cx="396.6" cy="270.2" r="2.6" fill="#ea580c"/>
 </svg>

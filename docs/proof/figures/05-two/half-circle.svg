@@ -1,25 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="616" height="483" viewBox="0 0 616 483" role="img" aria-label="A square with (a, b) = (1/2, 0) in its chart: o is the midpoint of its near edge, and the half of the circle of radius one half about o on the side of the square, from chart angle minus pi/2 to pi/2, lies in the open square">
+<svg xmlns="http://www.w3.org/2000/svg" width="616" height="419" viewBox="0 0 616 419" role="img" aria-label="A square with (a, b) = (1/2, 0) in its chart: o is the midpoint of its near edge, and the half of the circle of radius one half about o on the side of the square, from chart angle minus pi/2 to pi/2, lies in the open square">
 <title>A square with (a, b) = (1/2, 0) in its chart: o is the midpoint of its near edge, and the half of the circle of radius one half about o on the side of the square, from chart angle minus pi/2 to pi/2, lies in the open square</title>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
 <rect width="100%" height="100%" fill="#ffffff"/>
-<polygon points="244.2,395.0 534.2,395.0 534.2,105.0 244.2,105.0" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
-<line x1="23.8" y1="250.0" x2="592.2" y2="250.0" stroke="#9ca3af" stroke-width="1"/>
-<text x="592.2" y="235.5" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="end" dominant-baseline="middle">t = 0</text>
-<circle cx="244.2" cy="250.0" r="145.0" fill="none" stroke="#9ca3af" stroke-width="1.2"/>
-<path d="M 244.3 395.0 A 145.0 145.0 0 0 0 244.2 105.0" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/>
-<line x1="244.2" y1="395.0" x2="244.2" y2="105.0" stroke="#1f2937" stroke-width="2.6"/>
-<line x1="244.2" y1="250.0" x2="333.5" y2="135.7" stroke="#1f2937" stroke-width="1"/>
-<path d="M 293.5 250.0 A 49.3 49.3 0 0 0 274.6 211.2" fill="none" stroke="#ea580c" stroke-width="1.6" stroke-linecap="round"/>
-<text x="309.4" y="218.2" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">t</text>
-<circle cx="333.5" cy="135.7" r="4" fill="#ea580c"/>
-<circle cx="244.2" cy="105.0" r="3.2" fill="#1f2937"/>
-<circle cx="244.2" cy="395.0" r="3.2" fill="#1f2937"/>
-<text x="232.6" y="87.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">t = π/2</text>
-<text x="232.6" y="415.3" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">t = −π/2</text>
-<circle cx="389.2" cy="250.0" r="3.2" fill="#2563eb"/>
-<text x="400.8" y="267.4" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle">(½, 0)</text>
-<circle cx="244.2" cy="250.0" r="3.2" fill="#1f2937"/>
-<text x="232.6" y="270.3" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
-<text x="470.4" y="163.0" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">S</text>
-<text x="92.2" y="356.5" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">Γ<tspan dy="4.8" font-size="10.9">1/2</tspan></text>
+<polygon points="244.2,354.4 534.2,354.4 534.2,64.4 244.2,64.4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<line x1="23.8" y1="209.4" x2="592.2" y2="209.4" stroke="#9ca3af" stroke-width="1"/>
+<text x="564.0" y="194.9" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="start" dominant-baseline="middle"><tspan font-style="italic">t</tspan> = 0</text>
+<circle cx="244.2" cy="209.4" r="145.0" fill="none" stroke="#9ca3af" stroke-width="1.2"/>
+<path d="M 244.3 354.4 A 145.0 145.0 0 0 0 389.2 209.3 A 145.0 145.0 0 0 0 244.2 64.4" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/>
+<line x1="244.2" y1="354.4" x2="244.2" y2="64.4" stroke="#1f2937" stroke-width="2.6"/>
+<line x1="244.2" y1="209.4" x2="333.5" y2="95.1" stroke="#1f2937" stroke-width="1"/>
+<path d="M 293.5 209.4 A 49.3 49.3 0 0 0 274.6 170.6" fill="none" stroke="#ea580c" stroke-width="1.6" stroke-linecap="round"/>
+<text x="309.4" y="177.6" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">t</text>
+<circle cx="333.5" cy="95.1" r="4" fill="#ea580c"/>
+<circle cx="244.2" cy="64.4" r="3.2" fill="#1f2937"/>
+<circle cx="244.2" cy="354.4" r="3.2" fill="#1f2937"/>
+<text x="191.4" y="47.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle"><tspan font-style="italic">t</tspan> = π/2</text>
+<text x="183.9" y="374.7" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle"><tspan font-style="italic">t</tspan> = −π/2</text>
+<circle cx="389.2" cy="209.4" r="3.2" fill="#2563eb"/>
+<text x="400.8" y="226.8" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle">(½, 0)</text>
+<circle cx="244.2" cy="209.4" r="3.2" fill="#1f2937"/>
+<text x="232.6" y="229.7" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
+<text x="470.4" y="122.4" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">S</text>
+<text x="92.2" y="315.9" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">Γ<tspan dy="4.8" font-size="10.9">1/2</tspan></text>
 </svg>

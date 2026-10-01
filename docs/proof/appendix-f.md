@@ -6,15 +6,15 @@ This appendix proves the marker arc lemma of [Chapter 10](10-seven.md),
 [Lemma 10.9](10-seven.md#lemma-109-the-marker-arc): a square whose state is
 admissible holds an arc of half-width $\frac12$ of the unit circle about its
 marker. The proof is a typical use of the one-variable estimates of
-[Appendix A](appendix-a.md): the tangent parabolas and the curvature bounds of
-§A.1, the Taylor bounds of §A.2 and the peak of §A.3, together with the
-elementary estimates of
+[Appendix A](appendix-a.md): the monotonicity criterion and the tangent
+parabolas of §A.1, the Taylor bounds of §A.2 and the peak of §A.3, together
+with the elementary estimates of
 [Lemma 3.29](03-tools.md#lemma-329-elementary-estimates). Of the classical bounds
 on $\pi$ we use $\pi > 3.14$.
 
 ## F.1 Proof of Lemma 10.9
 
-We prove the marker arc lemma of Chapter 10, [Lemma 10.9](10-seven.md#lemma-109-the-marker-arc):
+We prove [Lemma 10.9](10-seven.md#lemma-109-the-marker-arc):
 
 > *Let $(a, u)$ be an admissible state and $t$ a real number with
 > $|t - \ell(a, u)| \le \frac12$. Then $|\cos t - a| \le \frac12$ and
@@ -39,9 +39,9 @@ where $\varphi$ is the farthest-vertex function of
 ```
 
 so $\ell(a, u)$ is at most each of the three terms. For an admissible state,
-$u < \frac{31}{40}$ ([Lemma 10.5](10-seven.md#lemma-105-admissible-states)), $a < \frac54$
-([Lemma 10.5](10-seven.md#lemma-105-admissible-states)) and $\ell(a, u) \ge 0$
-([Lemma 10.7](10-seven.md#lemma-107-the-label)).
+$u < \frac{31}{40}$ and $a < \frac54$
+([Lemma 10.5](10-seven.md#lemma-105-admissible-states)), and
+$\ell(a, u) \ge 0$ ([Lemma 10.7](10-seven.md#lemma-107-the-label)).
 
 ![The admissible states in the (a, u)-plane: a region bounded by the segment of the a-axis from one half to root 3 minus one half, the arc of the circle phi equals 13/4 up to the diagonal, the diagonal u equals a, and the vertical line a equals one half. An orange line touches the circle at about (0.85, 0.70); a green vertical segment at a = x + 1/2 rises from the a-axis to the circle; the side state (1, 1/2) is marked on the circle](figures/appendix-f/admissible.svg)
 
@@ -59,7 +59,7 @@ half-width $\frac12$ about the direction $\ell(a, u)$ lies in the
 closed square: it stays on the correct side of each of the four edge lines
 (Figure F.2).
 
-![Two panels, each showing an admissible square in its chart with the lines of its near, far, lower and upper edges dashed, the unit circle about o, a dashed ray at the label angle, and a thick orange arc of the circle about that ray. The thin blue part of the circle between two dots is the part inside the square, and it contains the orange arc. Left, the state (1, 1/2), where the orange arc nearly fills the blue part; right, the state (0.9, 0.3)](figures/appendix-f/marker-arc.svg)
+![Two panels, each showing an admissible square in its chart with the lines of its near, far, lower and upper edges dashed, the unit circle about o, a dashed ray at the label angle l, and a thick orange arc of the circle about that ray, whose half-width 1/2 is marked as an angle at o. The thin blue part of the circle between two dots is the part inside the square, and it contains the orange arc. Left, the state (1, 1/2), where the orange arc nearly fills the blue part; right, the state (0.9, 0.3)](figures/appendix-f/marker-arc.svg)
 
 *Figure F.2.* The marker arc lemma in the chart, for the side state
 $(1, \frac12)$ (left) and the state $(0.9, 0.3)$, whose label is axial
@@ -67,6 +67,7 @@ $(1, \frac12)$ (left) and the state $(0.9, 0.3)$, whose label is axial
 contains the arc of half-width $\frac12$ about the label (orange). For the
 side state the fit is tight at both ends: the square holds the arc from 0 to
 $\frac\pi3$, of half-width $\frac\pi6 \approx 0.5236$, against $\frac12$.
+For $(0.9, 0.3)$ the arc ends close to the lower and the upper edge.
 
 *Idea of the proof.* The far edge is out of reach. For the lower and upper
 edges we compare the label with $\arcsin(u \mp \frac12)$ using lines of slope
@@ -81,28 +82,28 @@ $\frac\pi6 + \frac{353}{648}$ (Lemma F.7). Lemma F.8 concludes.
 
 ### Lemma F.1 (a line against the arcsine)
 
-Let $g(y) = \frac54 y - \arcsin y$ for $-1 \le y \le 1$.
+Let $f(y) = \frac54 y - \arcsin y$ for $-1 \le y \le 1$ (Figure F.3).
 
-1. $g$ is nondecreasing on $[-\frac35, \frac35]$.
-2. $g$ is nonincreasing on $[\frac35, 1]$.
+1. $f$ is nondecreasing on $[-\frac35, \frac35]$.
+2. $f$ is nonincreasing on $[\frac35, 1]$.
 3. $\arcsin\frac12 = \frac\pi6$.
 
-![The graph of g(y) = 5/4 y minus arcsin y on minus 1 to 1: it falls to a minimum at minus 3/5, rises to a maximum at 3/5 and falls again. An orange band over minus 1/2 to 11/40 with a dashed line at the value at minus 1/2 lies below the graph there; a green band over 1/2 to 1 with a dashed line at the value at 3/5 lies above the graph there](figures/appendix-f/asin-line.svg)
+![The graph of f(y) = 5/4 y minus arcsin y on minus 1 to 1: it falls to a minimum at minus 3/5, rises to a maximum at 3/5 and falls again. An orange band over minus 1/2 to 11/40 with a dashed line at the value at minus 1/2 lies below the graph there; a green band over 1/2 to 1 with a dashed line at the value at 3/5 lies above the graph there](figures/appendix-f/asin-line.svg)
 
-*Figure F.3.* The function $g$ of Lemma F.1. On the range
+*Figure F.3.* The function $f$ of Lemma F.1. On the range
 $[-\frac12, \frac{11}{40})$ of $y = u - \frac12$ (orange) it stays above
-$g(-\frac12) = \frac\pi6 - \frac58$, which is step 2 of Lemma F.2. On the
+$f(-\frac12) = \frac\pi6 - \frac58$, which is step 2 of Lemma F.2. On the
 range $[\frac12, 1]$ of $y = u + \frac12$ when $u \le \frac12$ (green) it
-stays below $g(\frac35) = \frac34 - \arcsin\frac35$, which is step 2 of
+stays below $f(\frac35) = \frac34 - \arcsin\frac35$, which is step 2 of
 Lemma F.3.
 
 *Proof.* The arcsine is continuous on $[-1, 1]$ and has derivative
-$1/\sqrt{1 - y^2}$ at every $y \in (-1, 1)$. So $g$ is continuous on
-$[-1, 1]$, with $g'(y) = \frac54 - 1/\sqrt{1 - y^2}$ for $|y| < 1$.
+$1/\sqrt{1 - y^2}$ at every $y \in (-1, 1)$. So $f$ is continuous on
+$[-1, 1]$, with $f'(y) = \frac54 - 1/\sqrt{1 - y^2}$ for $|y| < 1$.
 (1) If $|y| < \frac35$, then $1 - y^2 > \frac{16}{25}$, so
-$\sqrt{1 - y^2} > \frac45$ and $g'(y) > 0$; apply Lemma A.1 (1).
+$\sqrt{1 - y^2} > \frac45$ and $f'(y) > 0$; apply Lemma A.1 (1).
 (2) If $\frac35 < y < 1$, then $0 < 1 - y^2 < \frac{16}{25}$, so
-$\sqrt{1 - y^2} < \frac45$ and $g'(y) < 0$; apply Lemma A.1 (2).
+$\sqrt{1 - y^2} < \frac45$ and $f'(y) < 0$; apply Lemma A.1 (2).
 (3) $\sin\frac\pi6 = \frac12$ and $-\frac\pi2 \le \frac\pi6 \le \frac\pi2$.
 $\square$
 
@@ -110,8 +111,8 @@ $\square$
 [`Seven.asin_line_mono`](../../SquaresInCircles/Seven/Exterior.lean#L235),
 [`asin_half`](../../SquaresInCircles/Common/Trigonometry.lean#L717).*
 
-By (1) and (2), $g(\frac35) = \frac34 - \arcsin\frac35$ is the largest value of
-$g$ on $[-\frac35, 1]$. The next two lemmas place the label between the lower
+By (1) and (2), $f(\frac35) = \frac34 - \arcsin\frac35$ is the largest value of
+$f$ on $[-\frac35, 1]$. The next two lemmas place the label between the lower
 and the upper edge (Figure F.4).
 
 ![The (u, angle)-plane for u from 0 to 31/40. A thin blue shaded band, the labels of the admissible states, starts at the origin, widens towards the right and closes again in a point just below the angle pi/4. An orange curve, arcsin(u - 1/2) + 1/2, runs just below the band; a green curve, arcsin(u + 1/2) - 1/2, runs above it for u up to 1/2 and rises steeply there](figures/appendix-f/transverse.svg)
@@ -121,7 +122,7 @@ the admissible states $(a, u)$ fill the shaded interval. It lies above the
 curve $\arcsin(u - \frac12) + \frac12$ of the lower edge (orange) and, for
 $u \le \frac12$, below the curve $\arcsin(u + \frac12) - \frac12$ of the
 upper edge (green). The closest approach, about 0.005, is at the lower edge
-near $u = 0.72$, where the label is a side label.
+near $u = 0.72$, where the label is a side label (Figure F.5).
 
 ### Lemma F.2 (the lower edge)
 
@@ -145,7 +146,7 @@ less than each of the three terms whose minimum is $\ell(a, u)$.
    $-\frac12 \le y$. By Lemma F.1 (1) and (3), and as the arcsine is odd,
 
    ```math
-   \tfrac\pi6 - \tfrac58 = g\left(-\tfrac12\right) \le g(y) = \tfrac54 u - \tfrac58 - \arcsin y ,
+   \tfrac\pi6 - \tfrac58 = f\left(-\tfrac12\right) \le f(y) = \tfrac54 u - \tfrac58 - \arcsin y ,
    ```
 
    that is, $\arcsin y \le \mathrm{axial}(u) - \frac\pi6$. Since
@@ -204,7 +205,7 @@ $\ell(a, u) + \frac12 < \arcsin(u + \frac12)$.
    $\frac35 = \sin(\arcsin\frac35) \le \sin\frac58 < \frac35$.
 2. Put $y = u + \frac12 \in [\frac12, 1]$. By Lemma F.1 (1) if
    $y \le \frac35$, and by Lemma F.1 (2) if $y \ge \frac35$,
-   $g(y) \le g(\frac35)$, that is,
+   $f(y) \le f(\frac35)$, that is,
    $\arcsin y \ge \arcsin\frac35 + \frac54(y - \frac35)$. As
    $\frac54(y - \frac35) = \frac54 u - \frac18$, step 1 gives
 
@@ -217,6 +218,24 @@ $\ell(a, u) + \frac12 < \arcsin(u + \frac12)$.
 
 *Lean:
 [`Seven.marker_horizontal_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L459).*
+
+The label does not increase with $a$, so for a given $u$ it comes closest to
+the lower edge at the largest admissible $a$, on the circle
+$\varphi = \frac{13}4$, and closest to the upper edge at $a = \frac12$.
+Figure F.5 shows the two margins.
+
+![The margins, for u from 0 to 31/40, by which the label clears the lower edge (orange) and, for u up to 1/2, the upper edge (green), on a vertical scale from 0 to 0.1. The lower margin rises from about 0.024 at u = 0 to a corner near u = 0.29, where the label of the closest state turns from axial to side, then falls to its minimum, about 0.0047, near u = 0.72. The upper margin starts at the same value, dips to its minimum arcsin 3/5 - 5/8 at u = 0.1 and then rises steeply](figures/appendix-f/margins.svg)
+
+*Figure F.5.* Lemmas F.2 and F.3 in detail: the least of
+$\ell(a, u) - \arcsin(u - \frac12) - \frac12$ (lower edge, orange) and of
+$\arcsin(u + \frac12) - \frac12 - \ell(a, u)$ (upper edge, green) over the
+admissible states $(a, u)$ with a given $u$. The lower margin is smallest,
+about $0.0047$, near $u = 0.72$, where the closest state lies on the circle
+with a side label; left of the dotted line, at the transition state
+$u_0 \approx 0.29$ of [Definition 10.6](10-seven.md#definition-106-labels-and-markers),
+that label is axial. The upper margin is smallest at $u = \frac1{10}$, where it is
+$\arcsin\frac35 - \frac58 \approx 0.0185$, the number that step 1 of
+Lemma F.3 shows to be positive.
 
 ### Definition F.4 (the envelope)
 
@@ -247,12 +266,11 @@ The definition of the side term can be written
 
 For an admissible state with $a - \frac12 = x$, the disk bounds $u + \frac12$
 by $\sqrt{13/4 - (x + 1)^2}$, so $E(x)$ bounds
-$\mathrm{side}(a, u) + \arcsin x$ from above; this is where the name comes
-from (Lemma F.8 and Figure F.5).
+$\mathrm{side}(a, u) + \arcsin x$ from above (Lemma F.8 and Figure F.6).
 
 ![For x from 0 to 3/4, a blue shaded region bounded below by a rising curve and above by a curve that meets an orange curve, the graph of E(x) - pi/6, for x beyond about 0.27 and stays below it before; the region ends at x = root 3 - 1. A dashed horizontal line slightly above the orange curve marks the level pi/3 - 1/2](figures/appendix-f/envelope-band.svg)
 
-*Figure F.5.* The envelope. For each $x = a - \frac12$, the values of
+*Figure F.6.* The envelope. For each $x = a - \frac12$, the values of
 $\mathrm{side}(a, u) + \arcsin x - \frac\pi6$ over the admissible states
 $(a, u)$ fill the shaded interval; it ends at $x = \sqrt3 - 1$, beyond which
 $u$ would have to be negative. The top of the interval lies on the graph of
@@ -262,20 +280,21 @@ Lemma F.8 needs everything below the dashed level $\frac\pi3 - \frac12$.
 
 ### Lemma F.5 (the peak bound)
 
-Let $h(x) = 9\left(x + \frac18\right)^2 (9 - 7x)^3$. Then $h(x) < 676$ for
+Let $P(x) = 9\left(x + \frac18\right)^2 (9 - 7x)^3$. Then $P(x) < 676$ for
 every $x \in [0, \frac34]$.
 
-![The graph of h on zero to 3/4, in blue: it rises from about 102 at 0 to its peak, about 596, at x = 123/280, marked by a dot with dotted lines to both axes, and falls to about 363 at 3/4. The strip over zero to 123/280 is shaded green and marked h prime at least 0; the strip over 123/280 to 3/4 is shaded orange and marked h prime at most 0. A dashed horizontal line at 676 lies above the whole graph](figures/appendix-f/peak-bound.svg)
+![The graph of P on zero to 3/4, in blue: it rises from about 102 at 0 to its peak, about 596, at x = 123/280, marked by a dot with dotted lines to both axes, and falls to about 363 at 3/4. The strip over zero to 123/280 is shaded green and marked P prime at least 0; the strip over 123/280 to 3/4 is shaded orange and marked P prime at most 0. A dashed horizontal line at 676 lies above the whole graph](figures/appendix-f/peak-bound.svg)
 
-*Figure F.6.* Lemma F.5. The polynomial $h$ on $[0, \frac34]$ (blue). Its
-derivative is nonnegative up to $\frac{123}{280}$ (green) and nonpositive after
-it (orange), so by Lemma A.9 its largest value is the peak
-$h(\frac{123}{280}) \approx 596.1$, below 676 (dashed).
+*Figure F.7.* Lemma F.5. The polynomial $P$ on $[0, \frac34]$ (blue), from
+$P(0) \approx 102.5$ to $P(\frac34) \approx 363.4$. Its derivative is
+nonnegative up to $\frac{123}{280}$ (green) and nonpositive after it (orange),
+so by Lemma A.9 its largest value is the peak
+$P(\frac{123}{280}) \approx 596.1$, below 676 (dashed).
 
-*Proof.* By the product rule, $h$ has at every real $y$ the derivative
+*Proof.* By the product rule, $P$ has at every real $y$ the derivative
 
 ```math
-h'(y) = 9\left(y + \tfrac18\right)(9 - 7y)^2\left(2(9 - 7y) - 21\left(y + \tfrac18\right)\right)
+P'(y) = 9\left(y + \tfrac18\right)(9 - 7y)^2\left(2(9 - 7y) - 21\left(y + \tfrac18\right)\right)
 = 9\left(y + \tfrac18\right)(9 - 7y)^2\left(\tfrac{123}8 - 35y\right) .
 ```
 
@@ -283,20 +302,17 @@ For $y \in [0, \frac34]$ the factors $y + \frac18$ and $(9 - 7y)^2$ are
 nonnegative, and $\frac{123}8 - 35y = 35\left(\frac{123}{280} - y\right)$ is
 nonnegative for $y \le \frac{123}{280}$ and nonpositive for
 $y \ge \frac{123}{280}$. By Lemma A.9 on $[0, \frac34]$, with the peak
-$c = \frac{123}{280}$, $h(x) \le h(c)$. At the peak
+$c = \frac{123}{280}$, $P(x) \le P(c)$ (Figure F.7). At the peak
 $c + \frac18 = \frac{79}{140} < \frac47$, so
 $(c + \frac18)^2 < \frac{16}{49} < \frac13$; and
 $9 - 7c = 9 - \frac{123}{40} = \frac{237}{40} < 6$. Hence
 
 ```math
-h(c) < 9 \cdot \tfrac13 \cdot 6^3 = 648 < 676 . \qquad \square
+P(c) < 9 \cdot \tfrac13 \cdot 6^3 = 648 < 676 . \qquad \square
 ```
 
 *Lean:
 [`Seven.curvature_peak_lt`](../../SquaresInCircles/Seven/Exterior.lean#L358).*
-
-For orientation, $h(0) \approx 102.5$, $h(\frac{123}{280}) \approx 596.1$ and
-$h(\frac34) \approx 363.4$.
 
 ### Lemma F.6 (the curvature of the envelope)
 
@@ -362,9 +378,15 @@ Let $0 \le x \le \frac34$. Then
 The two terms of $E_2$ come from the arcsine, which bends up, and from the
 circle $\varphi = \frac{13}4$, which bends down: $B$ is the value of
 $u + \frac12$ on that circle at $a = x + \frac12$ (Figure F.1). On
-$[0, \frac34]$ the circle wins by at least $\frac18$. For orientation,
-$E_2(0) = -\frac{26}{81} \approx -0.321$, and the largest value of $E_2$ on
-$[0, \frac34]$ is about $-0.209$, near $x = 0.33$.
+$[0, \frac34]$ the circle wins by at least $\frac18$ (Figure F.8).
+
+![The graph of E2 on zero to 3/4 in blue, below the x-axis: it starts at minus 26/81, rises to about minus 0.209 near x = 0.33 and then falls steeply, leaving the frame at about minus 1.15. A dashed purple curve, the bound of step 4, runs just above it, and a dashed black horizontal line at minus 1/8 lies above both](figures/appendix-f/curvature.svg)
+
+*Figure F.8.* Lemma F.6 (4). The second derivative $E_2$ of the envelope
+(blue) starts at $E_2(0) = -\frac{26}{81} \approx -0.321$, is largest, about
+$-0.209$, near $x = 0.33$, and falls steeply towards $x = \frac34$. Step 4
+bounds it by $(x + \frac18)/A^3 - 13/(12B^3) - \frac18$ (dashed) and shows,
+with Lemma F.5, that this bound stays below $-\frac18$.
 
 ### Lemma F.7 (the envelope bound)
 
@@ -372,7 +394,7 @@ For every $x \in [0, \frac34]$, $E(x) \le \frac\pi6 + \frac{353}{648}$.
 
 ![The graph of E(x) - pi/6 on zero to 3/4 in orange: it starts at 13/24, marked by a dot on the vertical axis, rises slightly, and falls to about 0.47 at 3/4. A dashed purple parabola, 13/24 + x/36 - x squared/16, starts at the same dot with the same slope and stays above the orange curve; its highest point, at x = 2/9, is marked by a purple dot at the height 353/648. A black horizontal line at pi/3 - 1/2 lies just above that point](figures/appendix-f/parabola.svg)
 
-*Figure F.7.* Lemma F.7. The envelope $E(x) - \frac\pi6$ (orange) and the
+*Figure F.9.* Lemma F.7. The envelope $E(x) - \frac\pi6$ (orange) and the
 parabola $\frac{13}{24} + \frac x{36} - \frac{x^2}{16}$ (purple, dashed) have
 the same value and slope at 0 (dot), and the envelope bends down at least as
 fast, so it stays below the parabola. The parabola is highest at
@@ -409,7 +431,7 @@ level $\frac\pi3 - \frac12 \approx 0.5472$ that Lemma F.8 needs
    \tfrac{13}{24} + \tfrac x{36} - \tfrac{x^2}{16} = \tfrac{353}{648} - \tfrac1{16}\left(x - \tfrac29\right)^2 \le \tfrac{353}{648} .
    ```
 
-   With (F.2), $E(x) \le \frac\pi6 + \frac{353}{648}$. $\square$
+   With (F.2), $E(x) \le \frac\pi6 + \frac{353}{648}$ (Figure F.9). $\square$
 
 *Lean:
 [`Seven.arcEnvelope_bound`](../../SquaresInCircles/Seven/Exterior.lean#L419).*
@@ -451,9 +473,9 @@ $0 \le x < \frac34$.
 *Lean:
 [`Seven.marker_vertical_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L437).*
 
-*Proof of [Lemma 10.9](10-seven.md#lemma-109-the-marker-arc).* Let $(a, u)$ be admissible, write
-$\ell = \ell(a, u)$, and let $|t - \ell| \le \frac12$, so that
-$\ell - \frac12 \le t \le \ell + \frac12$. Put
+*Proof of [Lemma 10.9](10-seven.md#lemma-109-the-marker-arc).* Let $(a, u)$
+be admissible, write $\ell = \ell(a, u)$, and let $|t - \ell| \le \frac12$,
+so that $\ell - \frac12 \le t \le \ell + \frac12$. Put
 $\theta = \arccos(a - \frac12)$. Since $0 \le a - \frac12 \le 1$,
 $0 \le \theta \le \frac\pi2$ and $\cos\theta = a - \frac12$.
 

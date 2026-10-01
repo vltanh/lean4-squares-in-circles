@@ -35,6 +35,6 @@
 <line x1="451.5" y1="322.3" x2="451.5" y2="308.7" stroke="#16a34a" stroke-width="1.6"/>
 <text x="393.2" y="295.1" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">w<tspan dy="3.9" font-size="8.8">T</tspan><tspan dy="-3.9">(n)</tspan></text>
 <text x="299.8" y="23.1" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">κ</text>
-<text x="94.5" y="256.0" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">S</text>
-<text x="536.5" y="256.0" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">T</text>
+<text x="120.0" y="235.6" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">S</text>
+<text x="494.0" y="213.5" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">T</text>
 </svg>

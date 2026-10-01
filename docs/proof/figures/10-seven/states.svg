@@ -22,8 +22,8 @@
 <circle cx="312.0" cy="194.4" r="4" fill="#ea580c"/>
 <text x="324.6" y="177.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle">side state (1, ½)</text>
 <circle cx="362.3" cy="282.0" r="4" fill="#1f2937"/>
-<text x="381.2" y="273.6" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">(a₀, u₀)</text>
+<text x="381.2" y="273.6" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">(a<tspan dy="4.2" font-size="9.5">0</tspan><tspan dy="-4.2">, </tspan>u<tspan dy="4.2" font-size="9.5">0</tspan><tspan dy="-4.2">)</tspan></text>
 <text x="244.8" y="68.4" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle" font-style="italic">φ = 13/4</text>
-<text x="144.0" y="135.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="end" dominant-baseline="middle">u = a</text>
+<text x="144.0" y="135.6" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="end" dominant-baseline="middle" font-style="italic">u = a</text>
 <text x="177.6" y="312.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle">admissible</text>
 </svg>

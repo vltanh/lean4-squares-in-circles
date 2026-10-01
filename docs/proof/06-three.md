@@ -2,19 +2,19 @@
 
 [Contents](README.md) · [← 5. Two squares](05-two.md) · [7. Four squares →](07-four.md)
 
-This chapter determines the least radius of a closed disk that holds a packing
-of three unit squares, and all the packings that attain it. The radius is
-$R_3 = \frac{5\sqrt{17}}{16}$, about $1.288$, and the optimal packing is unique
-up to congruence: it is the *T*, two squares side by side with a third centred
-on top of them (Figure 6.1).
+Three unit squares fit in a closed disk of radius
+$R_3 = \frac{5\sqrt{17}}{16}$, about $1.288$, as a *T*: two squares side by
+side with a third centred on top of them (Figure 6.1). This chapter proves that
+no smaller closed disk holds three unit squares, and that every packing of
+three unit squares in a closed disk of radius $R_3$ is congruent to the T.
 
-The proof works on the circle $\Gamma_{3/8}$ of radius $\frac38$ about the disk
-centre $o$. In the T each square holds exactly a third of this circle. In an
-arbitrary packing in the closed disk of radius $R_3$ we show that no square
-contains $o$, and that every square then holds an arc of at least a third of
-$\Gamma_{3/8}$, exactly a third only in the position of a square of the T.
-Disjoint squares hold disjoint arcs, so every arc is exactly a third, and the
-three positions fit together only as the T.
+The proof measures how much of the circle $\Gamma_{3/8}$ of radius $\frac38$
+about the disk centre $o$ each square holds. In the T each square holds exactly
+a third of this circle. In an arbitrary packing in the closed disk of radius
+$R_3$ we show that no square contains $o$, and that every square then holds an
+arc of at least a third of $\Gamma_{3/8}$, exactly a third only in the position
+of a square of the T. Disjoint squares hold disjoint arcs, so every arc is
+exactly a third, and the three positions fit together only as the T.
 
 ## Theorem 6.1 (three squares)
 
@@ -44,15 +44,17 @@ exactly $\frac{2\pi}3$, one in each square.
 [`Three.uniqueness`](../../SquaresInCircles/Three/Uniqueness.lean#L121),
 [`Three.optimum`](../../SquaresInCircles/Three/Uniqueness.lean#L194).*
 
-*Outline of the proof.* Part (1) is a direct check, Proposition 6.2 in §6.1.
-The core of the chapter is Proposition 6.3, stated at the start of §6.2: every
-packing of three unit squares in a closed disk of radius $R_3$ is congruent to
-the T. Parts (2) and (3) follow from the two propositions by Corollary 2.10
-(§6.6). The proof of Proposition 6.3 has four steps.
+*Outline of the proof.* Part (1) is the construction, Proposition 6.2 (§6.1).
+Parts (2) and (3) follow, by
+[Corollary 2.10](02-preliminaries.md#corollary-210-the-scheme-of-proof) (§6.6),
+from the uniqueness statement, Proposition 6.3: every packing of three unit
+squares in a closed disk of radius $R_3$ is congruent to the T. Its proof takes
+four steps.
 
-1. *The contact polygon* (§6.2). The disk puts the pair $(a_S, b_S)$ of every
-   square $S$ in a 16-gon $P_3$, whose sides touch the disk constraint at the
-   pairs of the squares of the T. After this step the disk is not used.
+1. *The contact polygon* (§6.2). The disk puts the offsets $(a_S, b_S)$ of
+   every square $S$ in a 16-gon $P_3$ (Lemma 6.5), whose sides touch the disk
+   $\lbrace \varphi \le R_3^2 \rbrace$ at the offsets of the squares of the T.
+   After this step the disk is not used.
 2. *Exterior squares* (§6.3). A square that does not contain $o$ holds an arc
    of $\Gamma_{3/8}$, its cap, of at least a third of the circle, and exactly a
    third only in two positions: type A, the position of the upper square of
@@ -60,8 +62,8 @@ the T. Parts (2) and (3) follow from the two propositions by Corollary 2.10
 3. *The containing square* (§6.4). A square that contains $o$ would hold an
    arc of $\Gamma_{3/8}$ of length more than $\frac\pi2 + \frac{13}{29}$,
    nearly a third. The other two squares would then have to hold full caps and
-   be nearly of type A, and two such squares overlap. So no square contains
-   $o$.
+   be nearly axial, close to type A, and two such squares overlap. So no
+   square contains $o$.
 4. *The T* (§6.5). Three disjoint caps of at least a third are exactly a third
    each. Two squares of type A, or three of type B, would overlap; so one
    square is of type A and two are of type B, and the angles between the three
@@ -94,7 +96,7 @@ centre $(x, y)$ has $(|x| + \frac12)^2 + (|y| + \frac12)^2 = R_3^2$:
 So [Lemma 2.8](02-preliminaries.md#lemma-28-axis-parallel-squares) (3) applies.
 The same two sums are the squared distances from the origin of the corners
 $(\pm1, -\frac{13}{16})$ of $Q(c_1)$ and $Q(c_2)$ and of the corners
-$(\pm\frac12, \frac{19}{16})$ of $Q(c_3)$. $\square$
+$(\pm\frac12, \frac{19}{16})$ of $Q(c_3)$ (Figure 6.2). $\square$
 
 *Lean:
 [`Three.model_packing`](../../SquaresInCircles/Three/Construction.lean#L22),
@@ -110,9 +112,8 @@ congruent to the T.
 
 *Lean: [`Three.uniqueness`](../../SquaresInCircles/Three/Uniqueness.lean#L121).*
 
-The proof occupies §6.2 to §6.5 and is completed at the end of §6.5.
-Throughout, $o$ is the disk centre, and every square $S$ comes with its offsets
-$a_S \ge b_S \ge 0$
+The proof occupies §6.2 to §6.5. Throughout, $o$ is the disk centre, and every
+square $S$ comes with its offsets $a_S \ge b_S \ge 0$
 ([Definition 3.1](03-tools.md#definition-31-position-of-the-disk-centre)) and
 with a chart $(\theta_S, \varepsilon_S)$
 ([Definition 3.20](03-tools.md#definition-320-chart)), which exists by
@@ -138,10 +139,11 @@ Let $b \le a$. The point $(a, b)$ lies in the *16-gon* $P_3$ if
 
 The two lines $16a + 13b = \frac{193}{16}$ and $19a + 8b = \frac{209}{16}$ are
 the tangents to the circle $\varphi = \frac{425}{256}$ at
-$(\frac12, \frac5{16})$ and at $(\frac{11}{16}, 0)$ (Lemma 6.5). Their mirror
-images in the diagonal $a = b$ bound the part with $a \le b$, and restoring the
-signs of the two local coordinates of $o$ turns these four lines into sixteen,
-whence the name. Only points with $b \le a$ occur below.
+$(\frac12, \frac5{16})$ and at $(\frac{11}{16}, 0)$ (Lemma 6.5, Figure 6.4).
+Their mirror images in the diagonal $a = b$ bound the part with $a \le b$, and
+restoring the signs of the two local coordinates of $o$ turns these four lines
+into sixteen, whence the name (Figure 6.3). Only points with $b \le a$ occur
+below.
 
 ![The part with a, b at least 0 of the 16-gon P3 in the (a, b)-plane, hugging the disk where phi is at most 425/256; the disk touches it at the points A, (11/16, 0) and (0, 11/16), and B, (1/2, 5/16) and (5/16, 1/2)](figures/06-three/sixteen-gon.svg)
 
@@ -216,7 +218,7 @@ v - \tfrac12 - \tfrac{16}{13}u = \tfrac8{39}\left(\tfrac{193}{16} - 16a - 13b\ri
 ```
 
 So the inequalities (6.1) say that $v \ge \frac12 + \frac{16}{13}u$ and
-$b \le \frac{57}{64}(\frac12 - u)$.
+$b \le \frac{57}{64}(\frac12 - u)$ (Figure 6.6).
 
 ### Definition 6.6 (the two types)
 
@@ -227,17 +229,18 @@ and of *type B* if $(a_S, b_S) = (\frac12, \frac5{16})$.
 [`Three.cap_types`](../../SquaresInCircles/Three/Uniqueness.lean#L27).*
 
 In the T the upper square is of type A and the two lower squares are of
-type B. For a square of type A, $o$ lies on an axis of $S$, at distance
-$\frac3{16}$ beyond the midpoint of an edge; then $u_S = \frac12$ and
+type B (Figure 6.5). For a square of type A, $o$ lies on an axis of $S$, at
+distance $\frac3{16}$ beyond the midpoint of an edge; then $u_S = \frac12$ and
 $A_S = \frac\pi3$. For a square of type B, $o$ lies on an edge of $S$, at
 distance $\frac5{16}$ from its midpoint; then $u_S = 0$ and $v_S = \frac12$, so
 $A_S = \frac\pi2$ and $V_S = \frac\pi6$.
 
-![Left: a type A square in its chart, centred on the axis through o, holding a third of the circle of radius 3/8. Right: a type B square with o on the line of its left edge, holding a third of that circle and half of the circle of radius 3/16](figures/06-three/contact-types.svg)
+![Left: a type A square in its chart, centred on the axis through o, holding a third of the circle of radius 3/8, whose centre, marked by a tick, is at the chart angle 0. Right: a type B square with o on the line of its left edge, holding a third of that circle, with its centre at the chart angle pi/6, and half of the circle of radius 3/16](figures/06-three/contact-types.svg)
 
 *Figure 6.5.* The two types, each in its chart. Each square holds exactly a
-third of $\Gamma_{3/8}$. The square of type B also holds half of
-$\Gamma_{3/16}$, which §6.5 uses.
+third of $\Gamma_{3/8}$, centred (tick) at the chart angle $0$ for type A and
+$\frac\pi6$ for type B (Lemma 6.9). The square of type B also holds half of
+$\Gamma_{3/16}$ (purple), which §6.5 uses.
 
 ### Lemma 6.7 (a trigonometric inequality)
 
@@ -255,8 +258,9 @@ with equality only if $u = 0$ and $v = \frac12$.
 $(u_S, v_S)$ of the exterior squares with $(a_S, b_S) \in P_3$, bounded by the
 lines (6.1), by $u = 0$ ($a_S = \frac12$) and by $v = \frac43$ ($b_S = 0$). It
 lies above the curve $\arccos u + \arcsin v = \frac{2\pi}3$, meeting it only at
-$B$ (Lemma 6.7), and to the left of the line $\arccos u = \frac\pi3$, meeting
-it only at $A$. The dashed curve $v = \sqrt{1 - u^2}$, where $A_S = V_S$,
+$B$ (Lemma 6.7; the dotted line $v = \frac12 + u$ between them is the middle
+term of (6.3)), and to the left of the line $\arccos u = \frac\pi3$, meeting it
+only at $A$. The dashed curve $v = \sqrt{1 - u^2}$, where $A_S = V_S$,
 separates the clipped caps below it from the full caps above it
 (Lemma 6.8 (4)).
 
@@ -342,7 +346,7 @@ applies with $r = \frac38$. It gives the arc of the chart angles from
 $-\min(A_S, V_S)$ to $A_S$, which by Lemma 3.21 (2) has the stated centre and
 half-width. If $A_S \le V_S$, then $w_S = A_S \ge \frac\pi3$ by (2), and the
 centre is $\theta_S$. If $V_S < A_S$, then
-$w_S = \frac12(A_S + V_S) \ge \frac\pi3$ by (3). $\square$
+$w_S = \frac12(A_S + V_S) \ge \frac\pi3$ by (3) (Figure 6.7). $\square$
 
 *Lean: [`Three.cap_bounds`](../../SquaresInCircles/Three/Exterior.lean#L64),
 [`Three.exterior_cap`](../../SquaresInCircles/Three/Exterior.lean#L86).*
@@ -376,12 +380,12 @@ P_S = \frac{\frac12 - a_S}{3/8}, \qquad Q_S = \frac{\frac12 - b_S}{3/8}, \qquad 
 
 In the chart of $S$, the lines of the left and the lower edge of $S$ are at
 the distances $\frac38 P_S$ and $\frac38 Q_S$ from $o$, and the other two edges
-are out of reach of $\Gamma_{3/8}$.
+are out of reach of $\Gamma_{3/8}$ (Figure 6.8).
 
 The idea is as follows. The square $S$ holds an arc of $\Gamma_{3/8}$ of
 length $L_S$, a quarter of the circle and a bit more (Lemma 6.10). Each of the
 other two squares holds a cap of at least a third (Lemma 6.8), so $L_S$ is at
-most a third, while the first inequality (6.1) makes
+most a third, while the strict first inequality (6.1) of Lemma 6.5 makes
 $L_S > \frac\pi2 + \frac{13}{29}$: the deficit $\frac{2\pi}3 - L_S$ of the arc
 of $S$ with respect to a third of the circle is less than
 $\frac\pi6 - \frac{13}{29}$, about $0.075$. So the three arcs nearly fill the
@@ -389,8 +393,9 @@ circle, and that leaves no freedom:
 
 - neither of the other two caps can be clipped, or it would more than make up
   the deficit (Lemmas 6.11 to 6.13);
-- both caps are then full, and too short for a square with $b > \frac1{16}$,
-  so both squares are nearly of type A;
+- both caps are then full, and the budget leaves no room for the full cap of
+  a square with $b > \frac1{16}$: both squares are *nearly axial*, with
+  $\frac12 \le a \le \frac{11}{16}$ and $b \le \frac1{16}$, close to type A;
 - their phases are then less than $\frac{5\pi}6 - \frac{13}{29}$ apart, but on
   the larger circle $\Gamma_{7/16}$ two nearly axial squares hold arcs too wide
   for that (Lemma 6.14).
@@ -405,10 +410,12 @@ of half-width $\frac12 L_S$, where
 L_S = \tfrac\pi2 + \arcsin P_S + \arcsin Q_S . \tag{6.4}
 ```
 
-![A square containing o in its chart, centred at (a_S, b_S), and the highlighted arc of the circle of radius 3/8 inside it, running from its lower edge round to its left edge](figures/06-three/containing-arc.svg)
+![A square containing o in its chart, centred at (a_S, b_S), and the highlighted arc of the circle of radius 3/8 inside it, running from the chart angle minus arcsin Q_S on its lower edge round to pi/2 plus arcsin P_S on its left edge; the angle L_S between the two ends is marked at o](figures/06-three/containing-arc.svg)
 
-*Figure 6.8.* The arc of length $L_S$ runs from the lower edge of $S$ round to
-its left edge; the far edges are out of reach.
+*Figure 6.8.* The arc of length $L_S$ runs from the chart angle
+$-\arcsin Q_S$ on the lower edge of $S$ round to $\frac\pi2 + \arcsin P_S$ on
+its left edge, here for $(a_S, b_S) = (\frac25, \frac14)$; the far edges are
+out of reach.
 
 *Proof.* **1. A sine bound.** Let $Q > 0$ and let $P$ be real. We show that
 every $t$ with $-\arcsin Q < t < \frac\pi2 + \arcsin P$ has $\sin t > -Q$. If
@@ -452,7 +459,7 @@ with $b_T \le \frac12$. Then
 
 In words: the near edge of $T$ is at least as far from $o$ as the disk
 $D(o, \frac12 - a_S)$ reaches, and this disk lies in $S^\circ$ by
-[Lemma 3.9](03-tools.md#lemma-39-inscribed-disks) (2).
+[Lemma 3.9](03-tools.md#lemma-39-inscribed-disks) (2) (Figure 6.9).
 
 ![A containing square S with the shaded disk of radius one half minus a_S about o inside it, and a square T to its right; below, the radius of the disk and the distance from o to the near edge of T are compared](figures/06-three/radial-gap.svg)
 
@@ -489,7 +496,8 @@ $S$ and $T$ overlap (shaded).
   $A = \arccos\frac{a_T - 1/2}\rho$ and $V = \arcsin\frac{1/2 - b_T}\rho$ of
   $T$ on $\Gamma_\rho$ satisfy $A > 0$, as $\frac{a_T - 1/2}\rho < 1$, and
   $V \ge 0$.
-- The two arcs lie in the disjoint sets $S^\circ$ and $T^\circ$, so by
+- *Contradiction.* The two arcs lie in the disjoint sets $S^\circ$ and
+  $T^\circ$, so by
   [Lemma 3.17](03-tools.md#lemma-317-disjoint-arcs-have-separated-centres) the
   angle between their centres is at least $\pi$ plus a positive half-width,
   more than $\pi$. But no two directions are more than $\pi$ apart.
@@ -569,7 +577,8 @@ $T$ over a third of the circle are
 \tfrac{2\pi}3 - L_S = \tfrac\pi6 - \arcsin P - \arcsin Q, \qquad 2w_T - \tfrac{2\pi}3 = \arcsin v - \arcsin u - \tfrac\pi6 ,
 ```
 
-and Lemma 6.13 says that the excess is larger than the deficit.
+and Lemma 6.13 says that the excess is larger than the deficit
+(Figure 6.11).
 
 ![Graphs over the t-axis from 0 to 13/32. The upper, orange curve f(t) minus pi/6 increases from 0 to about 0.63; the lower, blue curve, the largest deficit, increases from 0 to about 0.1 and stays below it. Points P and u on the t-axis, with P less than u, are marked, with the blue curve at P below the orange curve at P, which is below the orange curve at u](figures/06-three/compensation.svg)
 
@@ -591,18 +600,20 @@ $f(P) - \frac\pi6$, which lies above the blue curve at $P$.
 3. Two disjoint squares $T$ and $U$ as in (2) have
    $d(\theta_T, \theta_U) \ge \frac{2\pi}3 + \frac17$.
 
-![A square in its chart centred at (11/16, 1/16), the circle of radius 7/16 about o, which just touches the dashed line of the lower edge at its lowest point, and the full cap of the square on that circle, from minus A to A; dashed purple rays at plus and minus (pi/3 + 1/14) lie just inside the cap; the circle of radius 3/8 is drawn in grey](figures/06-three/wide-arc.svg)
+![A square in its chart centred at (11/16, 1/16), the circle of radius 7/16 about o, which just touches the dashed line of the lower edge at its lowest point, and the full cap of the square on that circle, from minus A to A; dashed purple rays at plus and minus (pi/3 + 1/14) lie just inside the cap; the circle of radius 3/8 is drawn dashed](figures/06-three/wide-arc.svg)
 
 *Figure 6.12.* The extreme case $(a_T, b_T) = (\frac{11}{16}, \frac1{16})$ of
 Lemma 6.14 (2), in the chart of $T$. The circle $\Gamma_{7/16}$ just touches
 the line of the lower edge, so the cap of $T$ on it is full, with half-width
 $A = \arccos\frac37$, just larger than $\frac\pi3 + \frac1{14}$ (purple).
-Grey: $\Gamma_{3/8}$.
+Dashed: $\Gamma_{3/8}$.
 
-![Two squares T and U whose axes pass close to o, in directions an angle Delta apart; their overlap is shaded and contains the point z](figures/06-three/near-axis-overlap.svg)
+![Two squares T and U with b = 0.03 whose axes pass close to o, in directions 122 degrees apart; their overlap is shaded and contains the point z](figures/06-three/near-axis-overlap.svg)
 
-*Figure 6.13.* Two nearly axial squares whose phases are only a little over
-$\frac{2\pi}3$ apart overlap near $o$: the point $z$ lies in both.
+*Figure 6.13.* Two nearly axial squares, with $(a, b) = (0.6, 0.03)$, whose
+phases are $122°$ apart, more than $\frac{2\pi}3$ but less than
+$\frac{2\pi}3 + \frac17$: they overlap near $o$, and the point $z$ lies in
+both.
 
 *Proof.* (1) We have $\arccos u = \frac\pi2 - \arcsin u$ and
 $\arcsin\frac12 = \frac\pi6$, and
@@ -621,11 +632,11 @@ because $0 \le a_T - \frac12 \le \frac3{16} < \frac7{16} \le \frac12$ and
 $b_T \le \frac12$; so $T$ holds its cap on $\Gamma_{7/16}$, which is full:
 centred at $\theta_T$, with half-width $A$. Finally
 $0 \le \frac{a_T - 1/2}{7/16} \le \frac37$, so by (1)
-$A \ge \frac\pi3 + \frac12 - \frac37 = \frac\pi3 + \frac1{14}$.
+$A \ge \frac\pi3 + \frac12 - \frac37 = \frac\pi3 + \frac1{14}$ (Figure 6.12).
 
 (3) By (2) and Lemma 3.17, $d(\theta_T, \theta_U)$ is at least the sum of the
 half-widths of the two arcs of (2), which is at least
-$\frac{2\pi}3 + \frac17$. $\square$
+$\frac{2\pi}3 + \frac17$ (Figure 6.13). $\square$
 
 *Lean:
 [`Three.third_le_arccos`](../../SquaresInCircles/Three/Containing.lean#L127),
@@ -668,16 +679,26 @@ $Q < 1$, hence $0 < P \le Q < 1$. By (6.5) and $P \le Q$,
 \tfrac{13}2 < 16P + 13Q = \tfrac{29}2(P + Q) - \tfrac32(Q - P) \le \tfrac{29}2(P + Q) ,
 ```
 
-so $P + Q > \frac{13}{29}$. Since $\arcsin x \ge x$ for $0 \le x \le 1$
-(Lemma 3.29 (2)),
+so $P + Q > \frac{13}{29}$ (Figure 6.14). Since $\arcsin x \ge x$ for
+$0 \le x \le 1$ (Lemma 3.29 (2)), the arc of $S$ falls short of a third of the
+circle by less than $\frac\pi6 - \frac{13}{29}$ (Figure 6.15):
 
 ```math
 L_S \ge \tfrac\pi2 + P + Q > \tfrac\pi2 + \tfrac{13}{29} .
 ```
 
+![The plane of P and Q: the orange line 16P + 13Q = 13/2, the blue curve where L_S = 2 pi/3 and the dashed diagonal Q = P bound a thin shaded sliver, which runs from (0, 1/2) to the diagonal; the dotted line P + Q = 13/29 runs below it and touches it at its corner P = Q = 13/58](figures/06-three/pq-plane.svg)
+
+*Figure 6.14.* Step 1 in the plane of $(P, Q)$. The strict inequality (6.5)
+(above the orange line), the bound $L_S \le \frac{2\pi}3$ (below the blue
+curve $\arcsin P + \arcsin Q = \frac\pi6$) and $P \le Q$ (above the dashed
+diagonal) leave the shaded sliver. It lies above the dotted line
+$P + Q = \frac{13}{29}$, which touches it only at its corner
+$P = Q = \frac{13}{58}$, a point that (6.5) excludes.
+
 ![A square containing o in its chart, centred near (0.42, 0.42) so that o is close to its lower left corner, the circle of radius 3/8 about o, and the arc of the circle inside the square, from its lower edge round to its left edge, highlighted; a short red piece continues the arc beyond the left edge to a third of the circle](figures/06-three/deficit.svg)
 
-*Figure 6.14.* Step 1 in its extreme case $P = Q = \frac{13}{58}$, where
+*Figure 6.15.* Step 1 in its extreme case $P = Q = \frac{13}{58}$, where
 (6.5) becomes an equality and $L_S$ is smallest: the arc of $S$ (orange) falls
 short of a third of $\Gamma_{3/8}$ by the red piece,
 $\frac{2\pi}3 - L_S < \frac\pi6 - \frac{13}{29}$.
@@ -701,12 +722,21 @@ $v_T < 1$, (6.5), and $v_T \ge \frac12 + \frac{16}{13}u_T$. With (6.4),
 ```
 
 With $w_U \ge \frac\pi3$ this gives
-$\frac12 L_S + w_T + w_U > \frac{2\pi}3 + \frac\pi3 = \pi$, against (6.6). So
-the cap of $T$ is full: by Lemma 6.8 (4) it is centred at $\theta_T$, and
-$w_T = A_T$. In the same way the cap of $U$ is full, centred at $\theta_U$, and
-$w_U = A_U$.
+$\frac12 L_S + w_T + w_U > \frac{2\pi}3 + \frac\pi3 = \pi$, against (6.6)
+(Figure 6.16). So the cap of $T$ is full: by Lemma 6.8 (4) it is centred at
+$\theta_T$, and $w_T = A_T$. In the same way the cap of $U$ is full, centred at
+$\theta_U$, and $w_U = A_U$.
 
-**3. Both squares are nearly of type A: $b_T \le \frac1{16}$.** Suppose that
+![A square S containing o near its lower left corner and a square T touching it on the left, with the circle of radius 3/8 about o: S holds a blue arc of about 118 degrees, T a green arc of about 135 degrees, clipped by its lower edge, and the free rest of the circle, about 108 degrees, is red](figures/06-three/clipped-cap.svg)
+
+*Figure 6.16.* Step 2 in a configuration where its conclusion fails: $S$, with
+$P_S = Q_S = 0.24$, contains $o$, and the square $T$ beside it, with
+$(a_T, b_T) = (0.59, 0.18)$, has a clipped cap; both lie in the closed disk of
+radius $R_3$ about $o$. The arc of $S$ (blue, about $118°$) and the cap of $T$
+(green, about $135°$) leave about $108°$ of $\Gamma_{3/8}$ free (red), less
+than the third that the cap of $U$ needs.
+
+**3. Both squares are nearly axial: $b_T \le \frac1{16}$.** Suppose that
 $b_T > \frac1{16}$. By (6.2), the second inequality (6.1) says
 $b_T \le \frac{57}{64}(\frac12 - u_T)$, so
 $\frac12 - u_T \ge \frac{64}{57}b_T > \frac4{57}$, and by Lemma 6.14 (1),
@@ -725,9 +755,20 @@ Together, $\frac\pi3 + \frac4{57} < \frac{5\pi}{12} - \frac{13}{58}$, that is
 
 so $\pi > \frac{16}5 > \frac{22}7$, against $\pi < \frac{22}7$
 ([Lemma 3.29](03-tools.md#lemma-329-elementary-estimates) (1)). So
-$b_T \le \frac1{16}$, and with
+$b_T \le \frac1{16}$ (Figure 6.17), and with
 $\frac12 \le a_T \le \frac{11}{16}$ (Lemma 6.8 (1)), $T$ satisfies the
 hypotheses of Lemma 6.14 (2). The same holds for $U$.
+
+![The part of P3 with a at least 1/2 in the (a, b)-plane, a quadrilateral from B = (1/2, 5/16) down to A = (11/16, 0); right of the vertical line where A_T = 5 pi/12 - 13/58, shaded purple, only a small red triangle at A remains, below the dashed line b = 1/16](figures/06-three/axial-window.svg)
+
+*Figure 6.17.* Step 3 in the $(a, b)$-plane, near the type A point
+$A = (\frac{11}{16}, 0)$. The orange region is the part of $P_3$ with
+$a \ge \frac12$, where the offsets of an exterior square lie (Lemma 6.8 (1)).
+A full cap with $A_T \le \frac{5\pi}{12} - \frac{13}{58}$, as the budget
+requires, needs
+$a_T \ge \frac12 + \frac38\cos(\frac{5\pi}{12} - \frac{13}{58})$, about
+$0.675$ (shaded purple), and $P_3$ leaves only the red triangle at $A$, below
+$b = \frac1{16}$ (dashed).
 
 **4. The phases of $T$ and $U$ are close.** Lemma 3.18, applied to the arc of
 $S$ and the caps of $T$ and $U$, which are centred at $\theta_T$ and
@@ -766,7 +807,7 @@ $\chi = \phi - \varepsilon\frac\pi2$.
 
 ![The T turned about o by 20 degrees in its dashed circle, with its squares S1, S2, S3; dashed rays from o in the phase directions theta1, theta2 and theta3 of the three squares; the circle of radius 3/8 split into three coloured caps of 120 degrees with black ticks at their centres; and the small circle of radius 3/16 split into two opposite coloured halves held by S1 and S2](figures/06-three/phases.svg)
 
-*Figure 6.15.* The T turned about $o$. The phases $\theta_1$, $\theta_2$,
+*Figure 6.18.* The T turned about $o$. The phases $\theta_1$, $\theta_2$,
 $\theta_3$ of $S_1$, $S_2$, $S_3$ (dashed rays) satisfy
 $\theta_2 = \theta_1 + \pi$ and $\theta_3 = \theta_1 - \frac\pi2$, with
 $\varepsilon_1 = 1$ and $\varepsilon_2 = -1$. The caps on $\Gamma_{3/8}$ are
@@ -776,11 +817,9 @@ halves of $\Gamma_{3/16}$. The dotted lines through $o$ are the axes of the
 frame $\theta_3 - \frac\pi2$, in which $S_1$, $S_2$, $S_3$ sit at $c_1$,
 $c_2$, $c_3$.
 
-*Proof.* For directions $\alpha$ and $\beta$ we have
-$\cos(\beta - \alpha) = \cos d(\alpha, \beta)$, since
-$d(\alpha, \beta) = |\beta - \alpha + 2k\pi|$ for some integer $k$ and the
-cosine is even and $2\pi$-periodic. So any two of the three directions differ
-by an angle whose cosine is $\cos\frac{2\pi}3 = -\frac12$. If
+*Proof.* For directions $\alpha$ and $\beta$,
+$\cos(\beta - \alpha) = \cos d(\alpha, \beta)$ (§2.1), so any two of the three
+directions differ by an angle whose cosine is $\cos\frac{2\pi}3 = -\frac12$. If
 $\varepsilon' = \varepsilon$, the first two directions differ by
 $\psi - \phi = \pi$, and $\cos\pi = -1$. So $\varepsilon' = -\varepsilon$. Put
 $\delta = \chi - \phi$. Then $\chi$ differs from the first two directions by
@@ -834,18 +873,19 @@ $(\frac12, \frac5{16})$ to $(-\frac12, -\frac5{16}) = c_1$. $\square$
 [`represents_cardinal`](../../SquaresInCircles/Common/Angles.lean#L123).*
 
 The proof of Proposition 6.3 rules out two squares of type A and three of
-type B; Figures 6.16 and 6.17 show why such squares overlap.
+type B; Figures 6.19 and 6.20 show why such squares overlap.
 
-![Two squares of type A, one centred above o and one centred down and to the left of o, a third of a turn apart, with dashed axes from o; their overlap near the upper left of o is shaded; the circle of radius 7/16 carries a green arc of the upper square and a blue arc of the other, which overlap near the direction 150 degrees](figures/06-three/two-type-a.svg)
+![Two squares of type A, one centred above o and one centred down and to the left of o, a third of a turn apart, with dashed axes from o; their overlap near the upper left of o is shaded; on the circle of radius 3/8 their caps, green and blue, meet at the direction 150 degrees, and on the circle of radius 7/16 their arcs overlap around that direction](figures/06-three/two-type-a.svg)
 
-*Figure 6.16.* Two squares of type A whose phases are exactly $\frac{2\pi}3$
-apart overlap (shaded), as step 2 of the proof below shows in general. So do
-their arcs on $\Gamma_{7/16}$, each of half-width
-$\arccos\frac37 \ge \frac\pi3 + \frac1{14}$ (Lemma 6.14 (2)).
+*Figure 6.19.* Two squares of type A whose phases are exactly $\frac{2\pi}3$
+apart overlap (shaded), as step 2 of the proof below shows in general. Their
+caps on $\Gamma_{3/8}$ only meet, but their arcs on $\Gamma_{7/16}$, each of
+half-width $\arccos\frac37 \ge \frac\pi3 + \frac1{14}$ (Lemma 6.14 (2)),
+overlap.
 
 ![Left: three squares of type B, the two lower squares of the T with o on their common edge, and a third square above them with o on its lower edge; the strip where the third square overlaps the other two is shaded red. Right: the neighbourhood of o enlarged four times, with the circle of radius 3/16 about o and the half circles held by the three squares: the left half by the first, the right half by the second and the upper half by the third, which overlaps both](figures/06-three/three-type-b.svg)
 
-*Figure 6.17.* Three squares of type B, as in step 3 of the proof below. Each
+*Figure 6.20.* Three squares of type B, as in step 3 of the proof below. Each
 holds a half of $\Gamma_{3/16}$ (right, enlarged four times), and three half
 circles cannot be disjoint; here the third square overlaps the other two
 (red).
@@ -871,13 +911,13 @@ $w_i \ge \frac\pi3$. The caps lie in the pairwise disjoint sets $S_i^\circ$.
    centred at their phases, which by step 1 are exactly $\frac{2\pi}3$ apart.
    But a square of type A has $\frac12 \le a_S = \frac{11}{16}$ and
    $b_S = 0 \le \frac1{16}$, so Lemma 6.14 (3) puts the phases of two disjoint
-   such squares at least $\frac{2\pi}3 + \frac17$ apart (Figure 6.16).
+   such squares at least $\frac{2\pi}3 + \frac17$ apart (Figure 6.19).
 3. **At most two squares are of type B.** A square $S$ of type B holds the half
    of $\Gamma_{3/16}$ centred at $\theta_S$, by Lemma 3.24 (3), since
    $a_S = \frac12$ and $b_S + \frac3{16} = \frac12$. Three squares of type B
    would give three pairwise disjoint sets holding arcs of half-width
    $\frac\pi2$ on $\Gamma_{3/16}$, and $3 \cdot \frac\pi2 > \pi$ contradicts
-   Lemma 3.18 (Figure 6.17).
+   Lemma 3.18 (Figure 6.20).
 4. **The phases.** By steps 2 and 3, one square is of type A and two are of
    type B. Congruence allows a relabelling, so we may number the squares so
    that $S_3$ is of type A; write $\theta_i = \theta_{S_i}$ and
@@ -888,7 +928,7 @@ $w_i \ge \frac\pi3$. The caps lie in the pairwise disjoint sets $S_i^\circ$.
    $\theta_2 + \varepsilon_2\frac\pi6$ and $\theta_3$, are pairwise
    $\frac{2\pi}3$ apart. Lemma 6.16, with $\phi = \theta_1$, $\psi = \theta_2$
    and $\chi = \theta_3$, gives $\varepsilon_2 = -\varepsilon_1$ and
-   $\theta_3 = \theta_1 - \varepsilon_1\frac\pi2$ (Figure 6.15).
+   $\theta_3 = \theta_1 - \varepsilon_1\frac\pi2$ (Figure 6.18).
 5. **The T.** Consider the frame $\theta_3 - \frac\pi2$. By Lemma 6.17 (1),
    $S_3$ sits at $c_3$ in it. For $i = 1, 2$ we have
    $\theta_i - \varepsilon_i\frac\pi2 = \theta_3$: for $i = 1$ this is step 4,

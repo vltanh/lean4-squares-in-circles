@@ -14,8 +14,7 @@ stress, which puts $D$ on its own axis,
 [Proposition 9.33](09-six.md#proposition-933-the-west-stress) (§B.5).
 
 We use the notation of Chapter 9: $h = \frac{\sqrt2}2$, the constants of the
-model ([Lemma 9.2](09-six.md#lemma-92-the-constants)) and of the ceiling
-([Definition 9.4](09-six.md#definition-94-the-ceiling),
+ceiling ([Definition 9.4](09-six.md#definition-94-the-ceiling),
 [Lemma 9.5](09-six.md#lemma-95-the-ceiling)), with the decimals
 $\bar R = 1.6886$, $\bar\rho = 1.11282$ and $\bar c = 0.11282$; the squares
 $Q_t(a, b)$, the charts in the ceiling and the widths $\omega(\delta)$ and
@@ -67,6 +66,15 @@ and east of its west side, so only the support lines whose normal points east
 can separate them. For these, the depth $L$ forces a normal close to the
 vertical (Figure B.1). The next lemma says this at the two eastern vertices of
 $C$.
+
+![Two graphs, for regimes (i) and (ii) of Lemma 9.14, of the support g of C along a unit normal, against the direction of the normal from south through east to north. A dashed level L marks the shallow lines; the graph dips below it only near the ends: in regime (i), thick orange near the south and thick blue near the north, inside shaded bands of 25 and 12 degrees; in regime (ii), only near the south, inside a shaded band of 45 degrees](figures/appendix-b/support.svg)
+
+*Figure B.1.* The support $g(n)$ of $C$ along the unit normals $n$ that point
+east, for $c = (0.16, 0.03)$ in regime (i) (left) and $c = (0.3, 0.2)$ in
+regime (ii) (right). The support line is shallow where $g \le L$ (dashed). The
+shallow normals (thick) lie in the bands that Lemma B.1 allows (shaded): in
+regime (i) within $12°$ of the north and $25°$ of the south, in regime (ii)
+only within $45°$ of the south.
 
 ### Lemma B.1 (support lines at the eastern vertices)
 
@@ -128,11 +136,11 @@ has its normal within $\arcsin\frac{21}{100} \approx 12°$ of the north, and one
 with a normal in the fourth quadrant within $\arcsin\frac{43}{100} \approx 25°$
 of the south. In regime (ii) the first quadrant has no shallow normal at all,
 since both coordinates of the north-east vertex exceed $L$, and the fourth
-quadrant has none closer to the east than to the south.
+quadrant has none closer to the east than to the south (Figures B.1 and B.2).
 
 ![Two panels, regimes (i) and (ii) of Lemma 9.14. In each, the containing square C near the origin o, the dashed circle of radius rho0 - 1/2, the dotted circle of radius 9/10 with the free arc in green, and the green rectangle of the points q allowed by the lemma. Thin lines are the shallow support lines of C: grey ones with a normal pointing west pass west of the rectangle; in regime (i) blue ones with a normal in the first quadrant pass above it and orange ones with a normal in the fourth quadrant below it; in regime (ii) only orange lines, nearly horizontal, remain below it](figures/appendix-b/shallow.svg)
 
-*Figure B.1.* Lemma 9.14 in its two regimes, for $c = (0.16, 0.03)$ (left)
+*Figure B.2.* Lemma 9.14 in its two regimes, for $c = (0.16, 0.03)$ (left)
 and $c = (0.3, 0.2)$ (right). The thin lines are the shallow support lines of
 $C$, at distance at most $L = \rho_0 - \frac12$ (dashed circle) from the
 origin; the green rectangle holds the points $q$ of the lemma, and the green
@@ -232,7 +240,7 @@ $\cos s + \sin s$; and the far corner ranges over the part $B \ge \frac12$ of
 the disk $A^2 + B^2 \le Q_0$. A linear function on that part is largest at the
 corner $(\rho_0 + \frac12, \frac12)$ while its direction lies below the
 direction of the corner, and at the point of the circle in its direction
-beyond it.
+beyond it (Figure B.3).
 
 ### Definition B.2 (the cap depth)
 
@@ -298,6 +306,18 @@ whose far edge has both corners on the circle, attains it, and for
 $s > \vartheta$ the square whose far vertex lies on the circle in the direction
 of the normal.
 
+![Left: the plane of the far corner (A, B), with the part of the disk of radius R0 where A and B are at least one half shaded, and its corner (rho0 + 1/2, 1/2) marked on the circle in the direction theta. For the direction s = 0.12, blue, the dashed line perpendicular to it through the corner keeps the shaded part on one side; for s = 0.6, orange, the dashed tangent at the point of the circle in that direction does. Right: the two squares turned by these angles that reach deepest into a cap, outlined: the blue one with both corners of its far edge on the circle, the orange one with its far vertex on the circle on the axis; each touches its dashed line x = cap(s) with a vertex](figures/appendix-b/deepest.svg)
+
+*Figure B.3.* Definition B.2 and Lemma B.3, for $s = 0.12 < \vartheta$ (blue)
+and $s = 0.6 > \vartheta$ (orange). Left: the far corner
+$(|a| + \frac12, |b| + \frac12)$ lies in the shaded part of the disk
+$A^2 + B^2 \le Q_0$, and $A\cos s + B\sin s$ is largest there at the corner
+$(\rho_0 + \frac12, \frac12)$ when $s \le \vartheta$, and at the point of the
+circle in the direction $s$ when $s > \vartheta$ (dashed: the level lines
+through these points). Right: the squares that attain the cap depth, turned by
+$0.12$ with $(a, b) = (\rho_0, 0)$ and by $-0.6$ with its far vertex at
+$(R_0, 0)$; each reaches back to the line $x = \mathrm{cap}(s)$ (dashed).
+
 ### Lemma B.4 (the cap depth at large angles)
 
 Let $0 \le s \le \frac\pi4$ and $\eta \le \mathrm{cap}(s)$.
@@ -344,11 +364,11 @@ In both cases $\eta < \frac12$. $\square$
 [`Six.Normalization.cap_angle_small`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L26).*
 
 The thresholds are close: $\mathrm{cap}$ falls through $\frac12$ at about
-$0.20207$ and through $r_0$ at about $0.38320$ (Figure B.2).
+$0.20207$ and through $r_0$ at about $0.38320$ (Figure B.4).
 
 ![The graph of the cap depth for s from 0 to pi/4: a blue branch, (rho0 - 1/2) cos s - 1/2 sin s, from rho0 - 1/2 at s = 0 down to the switch angle theta, where an orange branch, R0 - cos s - sin s, takes over, the two touching there; dashed, each branch continued a little beyond the switch. The graph crosses the dashed level 1/2 at about 0.2021, marked, just before the tick 0.203, and the dashed level r0 at about 0.3832, just before the tick 2/5](figures/appendix-b/cap-depth.svg)
 
-*Figure B.2.* The cap depth of Definition B.2: the depth of the deepest cap
+*Figure B.4.* The cap depth of Definition B.2: the depth of the deepest cap
 that holds a square turned by $s$ against the normal of its line. Below the
 switch angle $\vartheta$ (blue) the square touches the circle with both
 corners of its far edge, beyond it (orange) with its far vertex; the two
@@ -365,9 +385,10 @@ $\eta + \frac12 \le a \le \rho_0$, $|b| \le U_0$ and $|b| < \frac12$.
 
 *Proof.* By the reflection we may assume $0 \le t \le \frac\pi4$. By Lemmas
 B.3 and B.4 (1), $t < \frac25$. So $\cos t \ge 1 - \frac{t^2}2 \ge \frac{23}{25}$,
-$0 \le \sin t \le t < \frac25$, $\sin t \le \cos t$ and
-$1 \le \cos t + \sin t \le \sqrt2 < \frac32$
-([Lemma A.15](appendix-a.md#lemma-a15-small-angles)), and the hypothesis reads
+$0 \le \sin t \le t < \frac25$, $\sin t \le \cos t$
+([Lemma A.15](appendix-a.md#lemma-a15-small-angles) (3)) and
+$1 \le \cos t + \sin t \le \sqrt2 < \frac32$ (Lemma A.15 (2), and
+$(\cos t + \sin t)^2 = 1 + 2\sin t\cos t \le 2$), and the hypothesis reads
 
 ```math
 \eta + \tfrac12\left(\cos t + \sin t\right) \le a\cos t - b\sin t \le a\cos t + |b|\sin t . \tag{B.2}
@@ -419,7 +440,7 @@ Under the hypotheses of Lemma B.5, $T$ holds the point $(\eta + \frac12, 0)$.
 put $H = \eta + \frac12$ and $\sigma = \sin t \in [0, \frac25)$. By Lemma B.5,
 $\frac78 < r_0 + \frac12 \le H \le a \le \rho_0 < \frac98$. In the frame of $T$
 the point $(H, 0)$ has the local coordinates $(H\cos t - a, -H\sigma - b)$,
-and we show that both lie in $(-\frac12, \frac12)$.
+and we show that both lie in $(-\frac12, \frac12)$ (Figure B.5).
 
 The first: $H\cos t - a \le H - a \le 0$, and
 $H\cos t - a \ge \frac78\cdot\frac{23}{25} - \rho_0 > -0.31$. The second:
@@ -456,7 +477,7 @@ a contradiction. $\square$
 
 ![The part of the disk of radius R0 beyond the dashed line x = eta, for the deepest cap eta = r0, shaded, with four squares drawn in it as outlines: two parallel to the axes and pushed up and down as far as the disk allows, and two turned by 0.3 and by minus 0.38, also pushed sideways. All four contain the point (eta + 1/2, 0), marked by a dot on the first axis](figures/appendix-b/piercing.svg)
 
-*Figure B.3.* Lemma B.6 for the deepest cap, $\eta = r_0$: four squares in
+*Figure B.5.* Lemma B.6 for the deepest cap, $\eta = r_0$: four squares in
 the cap, two parallel to the axes and pushed up and down as far as the disk
 allows, and two turned by $0.3$ and by $-0.38$ and pushed sideways. All of them
 hold the point $(\eta + \frac12, 0)$. Pushed further, a square would have its
@@ -478,7 +499,7 @@ $-\frac\pi2 - v$ for some $|v| \le \frac\pi4$: take its representative in
 $(-\pi, \pi]$ and the nearest of the directions $0$, $\pm\frac\pi2$, $\pi$. The
 last three cases turn the frame of $T$ by a quarter, a half and three
 quarters of a turn, which does not change the square, but puts the cap in front
-of a coordinate that cannot reach it (Figure B.4).
+of a coordinate that cannot reach it (Figure B.6).
 
 - If $t \equiv \frac\pi2 - v$, then $\cos t = \sin v$ and $\sin t = \cos v$, so
   $x_t(a, b) = a\sin v - b\cos v = x_{-v}(-b, a)$, and $\omega(t) = \omega(-v)$
@@ -505,7 +526,7 @@ $|t - v| < \frac{3\pi}4 + \frac25 < 2\pi$, so $t = v$. $\square$
 
 ![A square T in the cap beyond the dashed line x = eta, turned by 0.2, inside the circle of radius R0. From the origin, the four directions u(0.2 + k pi/2), k = 0, 1, 2, 3, that can serve as its primary axis, each labelled with the coordinates (a, b) of the centre of T in that frame: (1.05, 0.08) for the frame facing the cap, drawn in blue, and (0.08, -1.05), (-1.05, -0.08) and (-0.08, 1.05) for the others, drawn grey](figures/appendix-b/faces.svg)
 
-*Figure B.4.* Lemma B.7. A square $T$ in a deep cap, at the phase $0.2$ with
+*Figure B.6.* Lemma B.7. A square $T$ in a deep cap, at the phase $0.2$ with
 $(a, b) = (1.05, 0.08)$. Each of the four directions
 $u(0.2 + k\frac\pi2)$, $k = 0, 1, 2, 3$, can serve as its primary axis, since a
 quarter turn of the frame does not change the square; beside each is the pair
@@ -595,20 +616,20 @@ $(\frac{395}8)^2/829 > 2.94$. (3) $1.54^2 + 0.696^2 = 2.856016$. $\square$
 [`Six.western_flank_quadratic`](../../SquaresInCircles/Six/Normalization/Pins.lean#L672).*
 
 So a far corner cannot lie beyond any point of the two lines, nor beyond the
-point (3): these three obstacles lie just outside the disk (Figure B.5). Each
+point (3): these three obstacles lie just outside the disk (Figure B.7). Each
 of the next proofs puts the far corner beyond one of them.
 
-![The plane of the far corner (A, B) = (a + 1/2, |b| + 1/2) of a chart in the ceiling, whose possible positions fill the blue region inside the circle A^2 + B^2 = Q0. Three obstacles lie outside the circle: an orange segment on the dashed line 4A + B = 7, a green segment on the dashed line 27A + 10B = 395/8, and the purple point (1.54, 0.696)](figures/appendix-b/far-lines.svg)
+![The plane of the far corner (A, B) = (a + 1/2, |b| + 1/2) of a chart in the ceiling, whose possible positions fill the blue region inside the circle A^2 + B^2 = Q0. Three obstacles lie outside the circle, tagged (1) to (3): an orange segment on the dashed line 4A + B = 7, a green segment on the dashed line 27A + 10B = 395/8, and the purple point (1.54, 0.696)](figures/appendix-b/far-lines.svg)
 
-*Figure B.5.* The obstacles of Lemma B.8 in the plane of the far corner
-$(A, B) = (a + \frac12, |b| + \frac12)$, which ranges over the blue region,
-inside the circle $A^2 + B^2 = Q_0$. The lines $4A + B = 7$ (orange) and
+*Figure B.7.* The obstacles (1) to (3) of Lemma B.8 in the plane of the far
+corner $(A, B) = (a + \frac12, |b| + \frac12)$, which ranges over the blue
+region, inside the circle $A^2 + B^2 = Q_0$. The lines $4A + B = 7$ (orange) and
 $27A + 10B = \frac{395}8$ (green) pass outside the circle, at the distances
-$\frac7{\sqrt{17}} \approx 1.6977$ and $\approx 1.7149$ from the origin,
-against $R_0 \approx 1.6885$; the thick segments are the points used by the
-transverse obstruction (Lemma B.12) and on the western flank (Lemma B.14).
-The point $(1.54, 0.696)$ (purple), used for the pin of $W$ (Lemma B.15), lies
-only about $0.0014$ outside.
+$\frac7{\sqrt{17}} \approx 1.6977$ and $\approx 1.7149$ from the origin, against
+$R_0 \approx 1.6885$; the thick segments are the points used by the transverse
+obstruction (Lemma B.12) and on the western flank (Lemma B.14). The point
+$(1.54, 0.696)$ (purple), used for the pin of $W$ (Lemma B.15), lies only about
+$0.0014$ outside.
 
 ### Lemma B.9 (radial profiles)
 
@@ -670,9 +691,9 @@ against $a \le \rho_0$. Put $K = \frac12 - \rho_0$, so $K > -0.61282$, and
 recall $r_0 > 0.387$ and $\cos\frac\pi4 = \sin\frac\pi4 = h > 0.7071$. Each
 profile, less $\rho_0$, is $K$ plus a first harmonic $A\cos s + B\sin s$ with
 $A, B \ge 0$; by [Lemma A.11](appendix-a.md#lemma-a11-first-harmonics) (2) it is positive on an
-interval $[l, \frac\pi4]$ once it is positive at both ends. At the left ends
-we bound $\cos$ and $\sin$ below by their Taylor polynomials of degrees 6 and 7
-([Lemma A.7](appendix-a.md#lemma-a7-taylor-bounds) (3), (4)).
+interval $[l, \frac\pi4]$ once it is positive at both ends. At $\frac5{12}$ and
+$\frac23$ we bound $\cos$ and $\sin$ below by their Taylor polynomials of
+degrees 6 and 7 ([Lemma A.7](appendix-a.md#lemma-a7-taylor-bounds) (3), (4)).
 
 (1) Let $t \ge \frac3{10}$. By Lemma B.9 (1), and as $\cos + \sin$ does not
 decrease on $[0, \frac\pi4]$ ([Lemma A.15](appendix-a.md#lemma-a15-small-angles) (3)),
@@ -681,8 +702,8 @@ decrease on $[0, \frac\pi4]$ ([Lemma A.15](appendix-a.md#lemma-a15-small-angles)
 a - \rho_0 \ge K + \tfrac12\left(\cos\tfrac3{10} + \sin\tfrac3{10}\right) > -0.61282 + \tfrac12(0.955 + 0.2955) > 0.0124 ,
 ```
 
-with $\cos\frac3{10} \ge 1 - \frac9{200}$ and
-$\sin\frac3{10} \ge \frac3{10} - \frac9{2000}$. Let next $t \le -\frac5{12}$,
+with $\cos\frac3{10} \ge 1 - \frac{0.3^2}2 = 0.955$ and
+$\sin\frac3{10} \ge 0.3 - \frac{0.3^3}6 = 0.2955$. Let next $t \le -\frac5{12}$,
 and put $s = -t \in [\frac5{12}, \frac\pi4]$. By Lemma B.9 (2),
 $a - \rho_0 \ge f(s) = K + \frac12\cos s + r_0\sin s$, and, with
 $\cos\frac5{12} > 0.914443$ and $\sin\frac5{12} > 0.404714$,
@@ -713,11 +734,11 @@ $\square$
 
 The margins are small: the profiles cross $\rho_0$ at about $-0.4095$ and
 $0.2631$ near the east axis, and at about $-0.6625$ near the west axis
-(Figure B.6).
+(Figure B.8).
 
 ![Two graphs over the angles from minus pi/4 to pi/4. Left, near the east axis: the least radial coordinate a allowed by the separation along the own axis, a blue curve with a corner at 0, rises above the dashed level rho0 outside the green window from minus 5/12 to 3/10. Right, near the west axis: the blue curve rises above rho0 left of minus 2/3, and on the right it meets the dashed orange curve of the largest a for a square that holds the pin p_W before 5/8](figures/appendix-b/profiles.svg)
 
-*Figure B.6.* The radial profiles of Lemma B.9, the least radial coordinate
+*Figure B.8.* The radial profiles of Lemma B.9, the least radial coordinate
 allowed by the separation along the own axis (blue), against $a \le \rho_0$
 (dashed), with the windows of Lemma 9.20 shaded. Left, the phase $t$ near the
 east axis: the profile exceeds $\rho_0$ outside $(-0.4095, 0.2631)$. Right, the
@@ -780,10 +801,11 @@ $(L\cos t - a, -L\sin t - b)$. In both parts $|t| \le \frac5{12}$, so
 $\cos t > \frac56$, and $\frac12 \le a \le \rho_0$; hence
 $\frac9{10}\cos t - a > \frac34 - \rho_0 > -\frac12$.
 
-(1) The window is Lemma B.11 (1). As $c_y \le c_0 < \frac18$, Lemma B.9 (5)
-gives $a + \frac12 \ge 1 + (\frac12 + c_x)\cos t + \frac38|\sin t|$. In
-particular $a \ge \frac12 + \frac12\cos t > \frac{11}{12}$, so the first
-coordinate of $p_E$ is negative; and Lemma B.12 with $x = c_x$ gives
+(1) The window is Lemma B.11 (1) (Figure B.9). As $c_y \le c_0 < \frac18$,
+Lemma B.9 (5) gives
+$a + \frac12 \ge 1 + (\frac12 + c_x)\cos t + \frac38|\sin t|$. In particular
+$a \ge \frac12 + \frac12\cos t > \frac{11}{12}$, so the first coordinate of
+$p_E$ is negative; and Lemma B.12 with $x = c_x$ gives
 
 ```math
 \left|\tfrac9{10}\sin t + b\right| \le \tfrac9{10}|\sin t| + |b| \le (1 + c_x)|\sin t| + |b| < \tfrac12 .
@@ -802,14 +824,15 @@ because $(L, 0)$ is held. $\square$
 Part (2) is used for squares in a deep cap beyond the east side of $C$, which
 by Lemma 9.17 hold the point $(1 + c_x, 0)$.
 
-![Two copies of the disk of radius R0 with the containing square C, grey, and a square T, orange, separated from C along its own axis by the dashed support line of C. Left, T at the phase 0.262, with C = Q(0, 0); right, T at the phase -0.409, with C = Q(0, c0). Each T is pushed out to the circle, and each holds the east pin p_E at (9/10, 0), marked by a dot](figures/appendix-b/east-pin.svg)
+![Two copies of the disk of radius R0 with the containing square C, grey, and a square T, orange, separated from C along its own axis by the dashed support line of C. Left, T at the largest phase 0.2630, with C = Q(0, 0); right, T at the smallest phase -0.4095, with C = Q(0, c0). Each T is pushed out to the circle, and each holds the east pin p_E at (9/10, 0), marked by a dot](figures/appendix-b/east-pin.svg)
 
-*Figure B.7.* Squares at the two ends of the east window, separated from $C$
-along their own axis by the dashed support line of $C$: left at the phase
-$0.262$ with $C = Q(0, 0)$, right at $-0.409$ with $C = Q(0, c_0)$, the
-centres of $C$ that make the profiles of Lemma B.9 (1) and (2) exact. Both are
-pushed out to the circle of radius $R_0$, with $b \approx 0$, and both hold
-the east pin $p_E$ on $\Gamma_{9/10}$ (dotted).
+*Figure B.9.* Lemma B.13 (1) at the two extreme phases near the east axis,
+where the profiles of Lemma B.9 (1) and (2) reach $\rho_0$ (Figure B.8): left
+the phase $0.2630$ with $C = Q(0, 0)$, right $-0.4095$ with $C = Q(0, c_0)$,
+the centres of $C$ that make these profiles exact. Each square is separated
+from $C$ along its own axis by the dashed support line of $C$, is pushed out to
+the circle of radius $R_0$ with $b = 0$, and holds the east pin $p_E$ on
+$\Gamma_{9/10}$ (dotted).
 
 ### Lemma B.14 (the western flank)
 
@@ -879,11 +902,11 @@ a \ge a\cos w + \tfrac12(1 - \cos w) \ge \eta + \tfrac12 + \tfrac12\sin w > \tfr
 On this flank the phase of $T$ lies between $\pi - \frac23$ and the direction
 $\pi - \frac\pi{12}$ of $p_W$, so the sixty-degree lemma does not apply; the
 pin is held because a square that misses it on the north side would reach
-too far out (Figure B.8).
+too far out (Figure B.10).
 
 ![Two panels with the arc of the circle of radius R0 and the dotted circle of radius 9/10 through the pins p_W and p_D. Left: a square T at the phase pi - 0.5, separated from C = Q(c0, 0) along its own axis by the dashed line, pushed sideways as far as the disk allows; it holds p_W. Dashed purple, the same square moved across until it just misses p_W: its far vertex, marked, lies outside the circle. Right: a square T at the phase pi - 0.3 beyond the dashed line x = -eta of the west side of C; it holds p_W](figures/appendix-b/flank.svg)
 
-*Figure B.8.* The western flank, Lemma B.14. Left, case (1): a square at the
+*Figure B.10.* The western flank, Lemma B.14. Left, case (1): a square at the
 phase $\pi - 0.5$, separated from $C = Q(c_0, 0)$ along its own axis (dashed),
 pushed sideways as far as the disk allows; it holds $p_W$. Moved across until
 it just misses $p_W$ (dashed purple), it would put its far vertex outside the
@@ -925,9 +948,9 @@ $\frac{11\pi}{12} < t \le \frac{5\pi}4 = \frac{11\pi}{12} + \frac\pi3$, and
 [Lemma 9.19](09-six.md#lemma-919-sixty-degrees) with $q = \frac{11\pi}{12}$ shows
 that $T$ holds $\frac9{10}u(\frac{11\pi}{12}) = p_W$ or
 $\frac9{10}u(\frac{5\pi}4) = p_D$. If $T$ holds $p_W$, then $v < \frac58$ by
-Lemma B.15. Finally, the claim for a square in a deep cap beyond the west side
-of $C$ is Lemma B.14 (2) with $w = -v$, as $\omega(\pi + v) = \omega(v)$.
-$\square$
+Lemma B.15 (Figure B.11). Finally, the claim for a square in a deep cap beyond
+the west side of $C$ is Lemma B.14 (2) with $w = -v$, as
+$\omega(\pi + v) = \omega(v)$. $\square$
 
 *Lean:
 [`Six.own_east_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L645),
@@ -938,6 +961,14 @@ $\square$
 [`Six.own_west_pin_upper`](../../SquaresInCircles/Six/Normalization/Pins.lean#L553),
 [`Six.west_cap_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L772),
 [`Six.sixty_pin_cover`](../../SquaresInCircles/Six/Normalization/Pins.lean#L317).*
+
+![The directions pi + v around the west side of o, for v from -pi/4 to pi/4, cut into four coloured sectors at v = -2/3, -pi/12 and 5/8, with the pins p_W and p_D on the dotted circle of radius 9/10. A legend reads: v at most -2/3, none (Lemma B.11); v at most -pi/12, the square holds p_W (Lemma B.14); v below 5/8, it holds p_W or p_D (Lemma 9.19); v at least 5/8, it holds p_D (Lemmas 9.19 and B.15)](figures/appendix-b/west-phases.svg)
+
+*Figure B.11.* The proof of Lemma 9.20 (2), for a square separated from $C$
+along its own axis at the phase $\pi + v$, $|v| \le \frac\pi4$. Lemma B.11
+excludes $v \le -\frac23$; up to $v = -\frac\pi{12}$, the direction of $p_W$,
+the square holds $p_W$ by Lemma B.14; beyond it, Lemma 9.19 gives $p_W$ or
+$p_D$, and from $v = \frac58$ on Lemma B.15 rules out $p_W$.
 
 ## B.4 Proof of Lemma 9.26
 
@@ -964,7 +995,7 @@ We prove [Lemma 9.26](09-six.md#lemma-926-supports-in-the-ceiling):
 
 The centre $(a, b)$ of a chart in the ceiling ranges over the region bounded
 by the lines $a = \frac12$ and $|b| = a$ and by the circle
-$(a + \frac12)^2 + (|b| + \frac12)^2 = Q_0$ (Figure B.9). Part (1) puts this
+$(a + \frac12)^2 + (|b| + \frac12)^2 = Q_0$ (Figure B.12). Part (1) puts this
 region inside a parabola that touches the circle at its tip $(\rho_0, 0)$, and
 the bounds (2) for forces close to the primary axis follow from it by
 completing squares. For part (3) recall from
@@ -991,35 +1022,30 @@ Ua + Vb \le Ua + |V|\,|b| \le \rho_0 U - \tfrac{31}{100}U\left(|b| + b^2\right) 
 ```
 
 In each case $U \ge 0$, and we bound the sum of the last two terms of (B.6).
+In the last three cases it is at most $\mu|V|\,|b| - \nu b^2$ for the numbers
+$\mu$ and $\nu$ below, and this is at most $\kappa V^2$ whenever
+$\mu^2 \le 4\kappa\nu$, since $2xy \le x^2 + y^2$ gives
+$\mu|V|\,|b| \le \kappa V^2 + \frac{\mu^2}{4\kappa}b^2$.
 
 - If $|V| \le \frac{31}{100}U$, it is at most $-\frac{31}{100}Ub^2 \le 0$, so
   $Ua + Vb \le \rho_0 U \le \bar\rho U$.
 - If $U \ge \frac75$ and $|V| \le \frac12 U$, then
-  $\frac{31}{100}U \ge \frac{31}{50}|V|$ and
-  $\frac{31}{100}U \ge \frac{217}{500}$, so it is at most
-
-  ```math
-  \tfrac{19}{50}|V|\,|b| - \tfrac{217}{500}b^2 = \tfrac1{12}V^2 - \tfrac1{12}\left(|V| - \tfrac{57}{25}|b|\right)^2 - \tfrac1{1250}b^2 \le \tfrac1{12}V^2 .
-  ```
-
+  $\frac{31}{100}U \ge \frac{31}{50}|V|$ and $\frac{31}{100}U \ge 0.434$, so it
+  is at most $\frac{19}{50}|V|\,|b| - 0.434\,b^2$, and
+  $(\frac{19}{50})^2 = 0.1444 < 0.1446 < \frac4{12}\cdot 0.434$ gives the bound
+  $\frac1{12}V^2$.
 - If $U \ge \frac{33}{20}$ and $|V| \le \frac35 U$, then
   $\frac{31}{100}U \ge \frac{31}{60}|V|$ and
-  $\frac{31}{100}U \ge \frac{1023}{2000} > \frac12$, so it is at most
-
-  ```math
-  \tfrac{29}{60}|V|\,|b| - \tfrac12 b^2 = \tfrac3{25}V^2 - \tfrac12\left(|b| - \tfrac{29}{60}|V|\right)^2 - \tfrac{23}{7200}V^2 \le \tfrac3{25}V^2 .
-  ```
-
+  $\frac{31}{100}U \ge 0.31\cdot 1.65 > \frac12$, so it is at most
+  $\frac{29}{60}|V|\,|b| - \frac12 b^2$, and
+  $(\frac{29}{60})^2 < 0.24 = \frac{12}{25}\cdot\frac12$ gives the bound
+  $\frac3{25}V^2$.
 - If $\frac35 \le U \le \frac7{10}$ and $|V| \le \frac25 U$, then
-  $\frac{31}{100}U \ge \frac{31}{40}|V|$ and
-  $\frac{31}{100}U \ge \frac{93}{500}$, so it is at most
-
-  ```math
-  \tfrac9{40}|V|\,|b| - \tfrac{93}{500}b^2 = \tfrac7{100}V^2 - \tfrac7{100}\left(|V| - \tfrac{45}{28}|b|\right)^2 - \tfrac{291}{56000}b^2 \le \tfrac7{100}V^2 ,
-  ```
-
-  and $|V| \le \frac25\cdot\frac7{10} = \frac7{25}$, so
-  $\frac7{100}V^2 \le \frac{343}{62500} < \frac1{160}$.
+  $\frac{31}{100}U \ge \frac{31}{40}|V|$ and $\frac{31}{100}U \ge 0.186$, so it
+  is at most $\frac9{40}|V|\,|b| - 0.186\,b^2$, and
+  $(\frac9{40})^2 < 0.051 < \frac{28}{100}\cdot 0.186$ gives the bound
+  $\frac7{100}V^2$. As $|V| \le \frac25\cdot\frac7{10} = \frac7{25}$, this is
+  less than $0.0055 < \frac1{160}$.
 
 In the first three cases $\rho_0 U \le \bar\rho U$ completes the bound.
 
@@ -1058,15 +1084,15 @@ $Yc_y \le 0$, and $y = 0$ will do. $\square$
 The number $\frac{31}{100}$ is just below the slope
 $\frac{1/2}{\rho_0 + 1/2} > 0.31001$ of the circle at the tip, where the
 parabola of (1) touches it; the cones of (2) are the forces whose support
-lines meet the parabola near the tip (Figure B.9). In (3), the force
+lines meet the parabola near the tip (Figure B.12). In (3), the force
 $(z + \sin q, \cos q - 1)$ is $z$ times the primary axis plus the chord from
 $(0, 1)$ to $(\sin q, \cos q)$ of the unit circle; for $z = 0$ its
 length is the chord $2\sin\frac q2$, which the majorant $M$ equals
-(Figure B.10).
+(Figure B.13).
 
 ![The centres (a, b) of the charts in the ceiling, a blue region bounded by the lines a = 1/2 and |b| = a and by the circle of the far corner, and around it the dashed parabola a + 0.31(|b| + b^2) = rho0, which touches it at (rho0, 0). Four support lines, one for the extreme force of each cone of Lemma 9.26 (2), listed in a legend, fan out from the tip; each lies beyond the parabola and comes close to it near a dot](figures/appendix-b/centres.svg)
 
-*Figure B.9.* The centres $(a, b)$ of the charts in the ceiling (blue), inside
+*Figure B.12.* The centres $(a, b)$ of the charts in the ceiling (blue), inside
 the parabola $a + \frac{31}{100}(|b| + b^2) = \rho_0$ (dashed) of Lemma 9.26
 (1). For the extreme force of each cone of (2) the line
 $Ua + Vb = \text{bound}$ is drawn: $V = \frac{31}{100}U$ (black),
@@ -1077,7 +1103,7 @@ with the slope of the parabola there.
 
 ![For z = 0, 0.5, 1 and 1.5, the length of the force (z + sin q, cos q - 1) as a function of q from 0 to pi, solid, and its majorant (2 + z^2/4) sin(q/2) + z cos(q/2), dashed in the same colour just above it; for z = 0 the two coincide, as the chord 2 sin(q/2)](figures/appendix-b/chord.svg)
 
-*Figure B.10.* The chord majorant of Lemma 9.26 (3): the length
+*Figure B.13.* The chord majorant of Lemma 9.26 (3): the length
 $\sqrt{(z + \sin q)^2 + (1 - \cos q)^2}$ of the force (solid) and its majorant
 $(2 + \frac{z^2}4)\sin\frac q2 + z\cos\frac q2$ (dashed) for
 $z = 0, 0.5, 1, 1.5$ and $0 \le q \le \pi$. They agree for $z = 0$, and the
@@ -1141,7 +1167,19 @@ most $0$ if $v < 0$ and at most $\kappa v$ if $v \ge 0$. $\square$
 
 Part (3) is the analogue of Lemma 9.25 (3) for the part $A \ge l$ of the disk:
 a force at the angle $\arcsin s$ from the secondary axis does the most work at
-the corner $(l, \sqrt{Q_0 - l^2})$ of that part as long as $R_0 s \le l$.
+the corner $(l, \sqrt{Q_0 - l^2})$ of that part as long as $R_0 s \le l$
+(Figure B.14).
+
+![The plane of the far corner near the line A = l, l = 5/2 - rho0: the part of the disk of radius R0 right of the dashed line and above B = 1/2 is shaded, and its corner (l, square root of Q0 - l^2) on the circle is marked. From the corner, two forces, straight up (s = 0, green) and at 45 degrees (s = h, orange), each with the dashed line through the corner perpendicular to it; the shaded part lies below both. The tangent to the circle at the corner is grey](figures/appendix-b/corner.svg)
+
+*Figure B.14.* Lemma B.16 (3) for $l = \frac52 - \rho_0 = a_0 + \frac12$. The
+far corner $(A, B)$ of a chart with $a + \frac12 \ge l$ lies in the shaded part
+of the disk $A^2 + B^2 \le Q_0$. For a force $(s, \gamma)$ with
+$R_0 s \le l$, turned from the secondary axis by no more than the corner
+$(l, \sqrt{Q_0 - l^2})$, the line through the corner perpendicular to the
+force (dashed) leaves the whole part on one side, so the work is largest at
+the corner; drawn for $s = 0$ (green) and $s = h$ (orange). The tangent at the
+corner (grey) is the limiting case $R_0 s = l$.
 
 ## B.5 Proof of Proposition 9.33
 
@@ -1162,7 +1200,7 @@ and $D$ ([Lemma 9.25](09-six.md#lemma-925-supports-of-a-square-in-a-disk)), and
 the box $[0, c_0]^2$ the work on $C$, as in
 [Lemma 9.26](09-six.md#lemma-926-supports-in-the-ceiling) (4); and what remains
 is a function of the two angles $t$ and $u$ that would have to be at most 0,
-but is positive on the whole triangle of angles. The function is concave in the
+but is positive on the whole region of angles. The function is concave in the
 right directions ([Lemmas A.11](appendix-a.md#lemma-a11-first-harmonics) and
 [A.12](appendix-a.md#lemma-a12-a-harmonic-less-a-radical)), so its values at seven points
 decide. In this section $t$ and $u$ are the angles of $W$ and $D$, as in the
@@ -1173,8 +1211,8 @@ $u - t \in [0, \frac{16}{15}]$, so by
 [Lemma 9.31](09-six.md#lemma-931-turned-pairs) they are separated along
 $e^W_2 = (\sin t, -\cos t)$ or along $e^D_2 = (\sin u, -\cos u)$, from $W$ to
 $D$. Let $z = t$ in the first case and $z = u$ in the second, and
-$n_z = (\sin z, -\cos z)$. The three separations form the stress of
-Table B.1 ([Definition 9.23](09-six.md#definition-923-stress)). Indeed, the
+$n_z = (\sin z, -\cos z)$. The three separations form the stress of Table B.1
+([Definition 9.23](09-six.md#definition-923-stress), Figure B.15). Indeed, the
 margin $m_{\mathrm{own}} \ge 0$ of $W$
 ([Definition 9.12](09-six.md#definition-912-separators-of-the-containing-square))
 says $\langle e^W_1, c_W - c\rangle \ge \tau(\pi + t) = \tau(t)$, as
@@ -1193,6 +1231,18 @@ $\delta = u - t$.
 *Table B.1.* The west stress: its three edges, with $z = t$ if $W$ and $D$ are
 separated along the secondary axis of $W$ and $z = u$ if along that of $D$.
 
+![The containing square C, grey, the square W, orange, turned by -0.3 from the west and separated from C along its own axis, and the square D, blue, turned by 0.1 and separated from C along the west side of C and from W along the secondary axis of W; the three separating lines are dashed and labelled with their weights 9/20, 3/10 and 1/4. Thick arrows are the forces F_C, F_W and F_D of the west stress. With every separation tight and W placed as well as possible, two vertices, marked, still lie outside the dashed circle of radius R0; the dotted circle through the farther one has radius about 1.80](figures/appendix-b/west-stress.svg)
+
+*Figure B.15.* The situation of Proposition 9.33 for $t = -0.3$, $u = 0.1$ and
+$z = t$, with $c = (\frac12 c_0, \frac12 c_0)$: $W$ (orange) separated from $C$
+along its own axis, $D$ (blue) along the west side of $C$ and from $W$ along
+$e^W_2$; the separating lines are dashed, with the weights of Table B.1. All
+three separations are tight, and $W$ is placed along its secondary axis so as
+to bring its far vertices and those of $D$ as close to the origin as possible;
+still two vertices (pink) lie outside the circle of radius $R_0$ (dashed), the
+farther at distance about $1.80$ (dotted circle). The arrows are the forces $F_C$,
+$F_W$ and $F_D$ of Lemma B.18, drawn at $0.9$ times their length.
+
 ### Definition B.17 (the west stress)
 
 For real numbers $t$, $u$, $r$ and $s$ let
@@ -1210,7 +1260,7 @@ and
 \Phi_W(t, u) = \Phi\left(t, u; \sqrt{\tfrac{53}{200}}, \sqrt{\tfrac{61}{400} - \tfrac3{20}\sin t}\right), \qquad \Phi_D(t, u) = \Phi\left(t, u; \sqrt{\tfrac{53}{200} + \tfrac9{40}\sin(u - t)}, \sqrt{\tfrac{61}{400} - \tfrac3{20}\sin u}\right) .
 ```
 
-The *triangle* $\Delta$ is the set of the pairs $(t, u)$ with
+The *region* $\Delta$ is the set of the pairs $(t, u)$ with
 $-\frac23 \le t \le u$ and $-\frac25 \le u \le \frac25$.
 
 *Lean:
@@ -1257,8 +1307,8 @@ $0 \le u - t \le \frac{16}{15} < \frac\pi2$.
    U = \langle F_W, e^W_1\rangle = \tfrac9{20} + \tfrac14\sin(z - t), \qquad V = \langle F_W, e^W_2\rangle = -\tfrac14\cos(z - t) ,
    ```
 
-   so $|F_W|^2 = U^2 + V^2 = \frac{53}{200} + \frac9{40}\sin(z - t)$. The
-   square $W$ lies in the closed disk of radius $R_0$
+   so $|F_W|^2 = U^2 + V^2 = \frac{53}{200} + \frac9{40}\sin(z - t)$
+   (Figure B.16). The square $W$ lies in the closed disk of radius $R_0$
    ([Lemma 9.10](09-six.md#lemma-910-charts-in-the-ceiling) (2)), its work is
    $Ua + Vb$, and Lemma 9.25 (1) with $|U| + |V| \ge U - V$ gives
 
@@ -1318,22 +1368,20 @@ $\Phi_W(t, u) \le 0$; for $z = u$ they are those of $\Phi_D$. $\square$
 [`Six.west_cardinal_separator`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L723),
 [`center_le_vertexSupport`](../../SquaresInCircles/Common/DiskSupport.lean#L70).*
 
+![Left: the force on W in the frame of W, the sum of 9/20 along its primary axis e1 and an orange vector of length 1/4 whose tip runs on the dashed circle; for z = t the force points down and to the right, and as u - t grows to 16/15 its tip moves along the orange arc. Right: the force on D, the sum of 3/10 to the west and an orange vector of length 1/4 turned by z, its tip on the orange arc for z from -2/3 to 2/5](figures/appendix-b/forces.svg)
+
+*Figure B.16.* The forces of Lemma B.18 as forces that turn. Left: in the frame
+of $W$, $F_W$ is $\frac9{20}e^W_1$ plus a vector of length $\frac14$ (orange)
+turned by $z - t$: for $z = t$ it is $(\frac9{20}, -\frac14)$, of length
+$\sqrt{53/200}$, and for $z = u$ its tip runs along the arc as $u - t$ grows to
+$\frac{16}{15}$. Right: $F_D$ is $\frac3{10}$ to the west plus a vector of
+length $\frac14$ turned by $z$, its tip on the arc for
+$-\frac23 \le z \le \frac25$. Their lengths are the radicals of Definition B.17.
+
 The forces add up to zero, and on $W$ and $D$ they point outwards, roughly
 at the far vertices, where the bound of Lemma 9.25 (1) is attained
-(Figure B.11). The separations are tight in the figure, and yet the squares
-do not fit: the stress shows that this is so for all angles of the triangle.
-
-![The containing square C, grey, the square W, orange, turned by -0.3 from the west and separated from C along its own axis, and the square D, blue, turned by 0.1 and separated from C along the west side of C and from W along the secondary axis of W; the three separating lines are dashed and labelled with their weights 9/20, 3/10 and 1/4. Thick arrows are the forces F_C, F_W and F_D of the west stress. With every separation tight and W placed as well as possible, two vertices, marked, still lie outside the circle of radius R0; the dashed circle through the farther one has radius about 1.80](figures/appendix-b/west-stress.svg)
-
-*Figure B.11.* The situation of Proposition 9.33 for $t = -0.3$, $u = 0.1$ and
-$z = t$, with $c = (\frac12 c_0, \frac12 c_0)$: $W$ (orange) separated from $C$
-along its own axis, $D$ (blue) along the west side of $C$ and from $W$ along
-$e^W_2$; the separating lines are dashed, with the weights of Table B.1. All
-three separations are tight, and $W$ is placed along its secondary axis so as
-to bring its far vertices and those of $D$ as close to the origin as possible;
-still two vertices (pink) lie outside the circle of radius $R_0$, the farther
-at distance about $1.80$ (dashed circle). The arrows are the forces $F_C$,
-$F_W$ and $F_D$, drawn at $0.9$ times their length.
+(Figure B.15). The separations are tight in the figure, and yet the squares
+do not fit: the stress shows that this is so for all angles of the region $\Delta$.
 
 ### Lemma B.19 (the terms)
 
@@ -1350,7 +1398,7 @@ G(x; R) &= \tfrac14\left(\cos x + \sin x\right) - R\sqrt{\tfrac{53}{200} + \tfra
 Let $J(x; R)$ be $J_-(x; R)$ for $x \le 0$ and $J_+(x; R)$ for $x \ge 0$, and
 $H(x; R)$ likewise; the two expressions agree at $x = 0$.
 
-1. On the triangle,
+1. On $\Delta$,
 
    ```math
    \Phi_W(t, u) = K_W + J(t; R_0) + H(u; 0) + G(u - t; 0) , \qquad \Phi_D(t, u) = K_D + J(t; 0) + H(u; R_0) + G(u - t; R_0) ,
@@ -1363,7 +1411,14 @@ $H(x; R)$ likewise; the two expressions agree at $x = 0$.
    $H_+(\cdot; R)$ on $[0, \frac25]$, and $G(\cdot; R)$ on
    $[0, \frac{16}{15}]$.
 
-*Proof.* (1) On the triangle, $-\frac23 \le t \le \frac25$ and
+![Three graphs, for the terms J, H and G of the west stress on their intervals -2/3 to 2/5, -2/5 to 2/5 and 0 to 16/15: in blue four times the harmonic part, in orange the radical with R = 1.6886, and the gap between them shaded green; the blue curve lies above the orange one everywhere, with a corner at 0 for J and H](figures/appendix-b/margins.svg)
+
+*Figure B.17.* The hypothesis of Lemma A.12 checked in the proof of (2), with
+$\bar R$ in the place of $R$: on each interval four times the harmonic part
+(blue) exceeds the radical (orange), so each term is concave there. For $J$
+and $H$ the harmonic part changes at $0$, hence the corners.
+
+*Proof.* (1) On $\Delta$, $-\frac23 \le t \le \frac25$ and
 $-\frac25 \le u \le \frac25$, so $\sin t$ has the sign of $t$ and $\sin u$
 that of $u$. For $t \le 0$ the terms of $\Phi$ in $t$ are
 $\frac9{40}(\cos t - \sin t) - \frac9{20}c_0\cos t = \alpha\cos t - \frac9{40}\sin t$,
@@ -1382,9 +1437,9 @@ Lemma A.12, with $q^2 \le p^2$: $(\frac3{20})^2 = 0.0225 < (\frac{61}{400})^2$
 and $(\frac9{40})^2 = 0.050625 < (\frac{53}{200})^2 = 0.070225$. The
 radicands are positive: $\frac{61}{400} - \frac3{20}\sin x > 0$ always, and
 $\sin x \ge 0$ on $[0, \frac{16}{15}]$. It remains to check
-$R\sqrt{p + q\sin x} \le 4(A\cos x + B\sin x)$ on each interval, and for the
-first three functions it suffices to check it with $\bar R > R_0 \ge R$ in the
-place of $R$. We use $c_0 < \bar c$, so that
+$R\sqrt{p + q\sin x} \le 4(A\cos x + B\sin x)$ on each interval
+(Figure B.17), and for the first three functions it suffices to check it with
+$\bar R > R_0 \ge R$ in the place of $R$. We use $c_0 < \bar c$, so that
 $4\alpha = \frac9{10} - \frac95c_0 > 0.6969$, and the bounds of
 [Lemma A.15](appendix-a.md#lemma-a15-small-angles).
 
@@ -1410,10 +1465,9 @@ $4\alpha = \frac9{10} - \frac95c_0 > 0.6969$, and the bounds of
   the left side is less than $\frac12\bar R < 0.85$, and the right side is
   at least $4\cdot\frac3{10}\cdot\frac{23}{25} > 1.1$.
 - $G$ on $[0, \frac{16}{15}]$. Here $\sin x \ge 0$, and
-  [Lemma A.8](appendix-a.md#lemma-a8-polynomial-brackets) with
-  $\ell = \frac{16}{15}$ gives
-  $\cos x \ge 1 - \frac{\ell^2}2 + \frac{\ell^4}{24} - \frac{\ell^6}{720} > 0.483$,
-  so $\cos x > \frac{12}{25}$. Both $R_0\sqrt{\frac{53}{200} + \frac9{40}\sin x}$
+  [Lemma A.8](appendix-a.md#lemma-a8-polynomial-brackets) on
+  $[0, \frac{16}{15}]$ gives $\cos x \ge 0.483004 > \frac{12}{25}$, the bracket
+  of Table B.2. Both $R_0\sqrt{\frac{53}{200} + \frac9{40}\sin x}$
   and $\cos x + \sin x$ are nonnegative, and their squares compare:
 
   ```math
@@ -1450,20 +1504,22 @@ Lemma A.12 applies in each case. $\square$
 
 So in $\Phi_W$ the length of the force on $W$ is the constant
 $\sqrt{53/200}$, and that of the force on $D$ enters the term in $t$; in
-$\Phi_D$ the lengths enter the terms in $u - t$ and $u$ (Figure B.12). At
-$x = 0$ the slopes of $J$ and $H$ jump up, from $-\frac9{40}$ to $\alpha$ and
-from $-\frac3{10}$ to $0$: they are concave on either side of $0$ but not
-across it. This is why the triangle is cut along $t = 0$ and $u = 0$.
+$\Phi_D$ the lengths enter the terms in $u - t$ and $u$ (Figure B.18). At
+$x = 0$ the coefficient of $\sin x$ jumps up, from $-\frac9{40}$ to $\alpha$ in
+$J$ and from $-\frac3{10}$ to $0$ in $H$, and so do the slopes: $J$ and $H$ are
+concave on either side of $0$ but not across it. This is why $\Delta$ is
+cut along $t = 0$ and $u = 0$.
 
-![Six graphs in two rows and three columns: the terms J(t) on -2/3 to 2/5, H(u) on -2/5 to 2/5 and G(d) on 0 to 16/15 of the west stress, each on its own vertical scale, with its range written above it. The top row has the terms of Phi_W, where the length of the force on D enters J (R = R0) and H and G are plain harmonics (R = 0); the bottom row has those of Phi_D, where the lengths enter H and G. Each curve lies above its dashed chords on either side of 0, where J and H have a convex corner](figures/appendix-b/terms.svg)
+![Six graphs in two rows and three columns: the terms J(t) on -2/3 to 2/5, H(u) on -2/5 to 2/5 and G(u - t) on 0 to 16/15 of the west stress, each on its own vertical scale, with its range written above it. The top row has the terms of Phi_W, J(t; R0), H(u; 0) and G(u - t; 0); the bottom row has those of Phi_D, J(t; 0), H(u; R0) and G(u - t; R0). The curves with a radical are orange, the plain harmonics blue. Each curve lies above its dashed chords on either side of 0, where J and H have a convex corner](figures/appendix-b/terms.svg)
 
-*Figure B.12.* The terms of Lemma B.19, each on its own vertical scale (its
+*Figure B.18.* The terms of Lemma B.19, each on its own vertical scale (its
 range above it): top, those of $\Phi_W$, namely $J(t; R_0)$, $H(u; 0)$ and
-$G(d; 0)$; bottom, those of $\Phi_D$, namely $J(t; 0)$, $H(u; R_0)$ and
-$G(d; R_0)$. Each lies above its chords (dashed) on either side of $0$; at $0$,
+$G(u - t; 0)$; bottom, those of $\Phi_D$, namely $J(t; 0)$, $H(u; R_0)$ and
+$G(u - t; R_0)$; orange where the term has a radical, blue where it is a first
+harmonic. Each lies above its chords (dashed) on either side of $0$; at $0$,
 $J$ and $H$ have a convex corner.
 
-### Lemma B.20 (positivity on the triangle)
+### Lemma B.20 (positivity on the region)
 
 Let $K$ be a number and $J$, $H$, $G$ functions such that $J$ is concave on
 $[-\frac23, 0]$ and on $[0, \frac25]$, $H$ on $[-\frac25, 0]$ and on
@@ -1474,12 +1530,12 @@ $F(t, u) = K + J(t) + H(u) + G(u - t)$. If $F$ is positive at the seven points
 v_1 = \left(-\tfrac23, -\tfrac25\right), \quad v_2 = \left(-\tfrac25, -\tfrac25\right), \quad v_3 = \left(-\tfrac23, 0\right), \quad v_4 = (0, 0), \quad v_5 = \left(-\tfrac23, \tfrac25\right), \quad v_6 = \left(0, \tfrac25\right), \quad v_7 = \left(\tfrac25, \tfrac25\right),
 ```
 
-then $F$ is positive on the triangle $\Delta$.
+then $F$ is positive on the region $\Delta$.
 
 *Proof.* The lines $u = 0$ and $t = 0$ cut $\Delta$ into three parts: where
 $u \le 0$, the quadrilateral $v_1v_2v_4v_3$; where $t \le 0 \le u$, the
 rectangle $v_3v_4v_6v_5$; and where $t \ge 0$, the triangle $v_4v_7v_6$
-(Figure B.13). Inside each part $J$ and $H$ keep one concave piece, and
+(Figure B.19). Inside each part $J$ and $H$ keep one concave piece, and
 $u - t$ stays in $[0, \frac{16}{15}]$, so by
 [Lemma A.10](appendix-a.md#lemma-a10-concave-functions) (3) $F$ is concave in $t$ for fixed
 $u$, concave in $u$ along each vertical edge $t = -\frac23$ and $t = 0$ (there
@@ -1503,6 +1559,17 @@ diagonal $t = u$, where $F(u, u) = K + J(u) + H(u) + G(0)$. We use Lemma A.10
 [`Six.triangle_positive`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L113),
 [`concave_gt_of_endpoints`](../../SquaresInCircles/Common/Analysis.lean#L81),
 [`concave_affine_argument`](../../SquaresInCircles/Common/Analysis.lean#L107).*
+
+![The region of the angles (t, u) with -2/3 at most t, t at most u, and u between -2/5 and 2/5, cut by the lines u = 0 and t = 0 into three parts, shaded differently: u negative, t negative and u positive, and t positive. The seven vertices v1 to v7 of the parts are marked, each labelled with the values of the two west stresses there, Phi_W first and Phi_D second, all positive; dotted horizontal segments inside the parts indicate directions in which the stresses are concave](figures/appendix-b/region.svg)
+
+*Figure B.19.* The region $\Delta$ of the angles $(t, u)$, cut into its
+three parts, and the seven vertices with the values $\Phi_W / \Phi_D$ there.
+Along each horizontal segment (dotted) inside a part, the stresses are concave
+in $t$; along the vertical edges $t = -\frac23$ and $t = 0$ and along the
+diagonal they are concave in $u$, piece by piece. So their values at the
+vertices bound them below on the whole region (Lemma B.20). The smallest
+value is $\Phi_W(v_5) \approx 0.0027$, where $W$ is turned furthest from
+$D$.
 
 ### Lemma B.21 (the seven vertices)
 
@@ -1580,16 +1647,13 @@ stresses coincide.
 [`sin_lower_seven`](../../SquaresInCircles/Common/Trigonometry.lean#L221),
 [`sin_upper_five`](../../SquaresInCircles/Common/Trigonometry.lean#L207).*
 
-![The triangle of the angles (t, u) with -2/3 at most t, t at most u, and u between -2/5 and 2/5, cut by the lines u = 0 and t = 0 into three parts, shaded differently: u negative, t negative and u positive, and t positive. The seven vertices v1 to v7 of the parts are marked, each labelled with the values of the two west stresses there, Phi_W first and Phi_D second, all positive; dotted horizontal segments indicate directions in which the stresses are concave](figures/appendix-b/triangle.svg)
+![The region of the angles (t, u), twice: left with level curves of Phi_W, right with level curves of Phi_D, at 0.025, 0.05, 0.1 and 0.15, labelled where they meet the top or the left edge; the cuts t = 0 and u = 0 are dashed and the seven vertices marked. Each stress is smallest at a circled vertex: (-2/3, 2/5) for Phi_W and (-2/3, 0) for Phi_D](figures/appendix-b/stress-map.svg)
 
-*Figure B.13.* The triangle $\Delta$ of the angles $(t, u)$, cut into its
-three parts, and the seven vertices with the values $\Phi_W / \Phi_D$ there.
-Along each horizontal segment (dotted) inside a part, the stresses are concave
-in $t$; along the vertical edges $t = -\frac23$ and $t = 0$ and along the
-diagonal they are concave in $u$, piece by piece. So their values at the
-vertices bound them below on the whole triangle (Lemma B.20). The smallest
-value is $\Phi_W(v_5) \approx 0.0027$, where $W$ is turned furthest from
-$D$.
+*Figure B.20.* $\Phi_W$ (left) and $\Phi_D$ (right) on the region $\Delta$,
+with level curves at $0.025$, $0.05$, $0.1$ and $0.15$. Both are positive on
+the whole region, and each is smallest at a vertex (circled), as the
+concavity of Lemma B.20 predicts: $\Phi_W(v_5) \approx 0.0027$ and
+$\Phi_D(v_3) \approx 0.0104$.
 
 *Proof of [Proposition 9.33](09-six.md#proposition-933-the-west-stress).*
 Suppose that $W$ and $D$ are disjoint. By Lemma 9.31 they are separated along
@@ -1599,7 +1663,7 @@ $\Phi_W$ and $\Phi_D$ has the form of Lemma B.20, with
 $J = J(\cdot; R_0)$, $H = H(\cdot; 0)$, $G = G(\cdot; 0)$ for $\Phi_W$ and
 $J = J(\cdot; 0)$, $H = H(\cdot; R_0)$, $G = G(\cdot; R_0)$ for $\Phi_D$, and
 by Lemma B.21 both are positive at the seven vertices. By Lemma B.20 both are
-positive on $\Delta$, a contradiction. $\square$
+positive on $\Delta$ (Figure B.20), a contradiction. $\square$
 
 *Lean:
 [`Six.west_cardinal_impossible`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L788),

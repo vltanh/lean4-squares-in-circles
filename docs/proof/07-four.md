@@ -3,10 +3,10 @@
 [Contents](README.md) · [← 6. Three squares](06-three.md) · [8. Five squares →](08-five.md)
 
 Four unit squares fit in a closed disk of radius $\sqrt2$ as a $2 \times 2$
-block, with the disk centre at the common vertex of the four squares. This
-chapter proves that no smaller closed disk holds four unit squares, and that
-every packing of four unit squares in a closed disk of radius $\sqrt2$ is
-congruent to the block.
+block, with the disk centre at the common vertex of the four squares
+(Figure 7.1). This chapter proves that no smaller closed disk holds four unit
+squares, and that every packing of four unit squares in a closed disk of
+radius $\sqrt2$ is congruent to the block.
 
 The proof measures how much of the circle $\Gamma_{1/2}$ of radius $\frac12$
 about the disk centre each square holds. The disk forces every square to hold
@@ -49,8 +49,8 @@ circles, one in each square.
 Parts (2) and (3) follow, by
 [Corollary 2.10](02-preliminaries.md#corollary-210-the-scheme-of-proof) (§7.5),
 from the uniqueness statement, Proposition 7.3: every packing of four unit
-squares in a closed disk of radius $\sqrt2$ is congruent to the block. Its
-proof takes three steps.
+squares in a closed disk of radius $R_4$ is congruent to the block. Its proof
+takes three steps.
 
 1. *The diamond* (§7.2). The disk puts the offsets $(a_S, b_S)$ of every
    square $S$ in the half-plane $a + b \le 1$, and on its edge only when the
@@ -68,17 +68,25 @@ proof takes three steps.
 
 ### Proposition 7.2 (construction)
 
-The block is a packing in the closed disk of radius $\sqrt2$ about the origin.
+The block is a packing in the closed disk of radius $R_4$ about the origin.
+
+![The 2 by 2 block of the squares centred at c1 = (1/2, 1/2), c2 = (-1/2, 1/2), c3 = (-1/2, -1/2) and c4 = (1/2, -1/2), inside the dashed circle of radius root 2 about o; a right triangle with legs 1 along the x-axis and 1 upwards joins o to the corner (1, 1), which lies on the circle like the other three outer corners](figures/07-four/construction.svg)
+
+*Figure 7.2.* The centres $c_1, \dots, c_4$ go round the origin $o$
+counterclockwise, and any two of them differ by 1 in at least one coordinate.
+The corner $(1, 1)$, at the end of the hypotenuse of the right triangle with
+legs 1 and 1, is at distance $\sqrt{1 + 1} = R_4$ from $o$; by symmetry, so
+are the other three outer corners.
 
 *Proof.* Any two of the centres $c_1, \dots, c_4$ differ by 1 in at least one
 coordinate, and every centre $(x, y)$ has
 
 ```math
-\left(|x| + \tfrac12\right)^2 + \left(|y| + \tfrac12\right)^2 = 1 + 1 = 2 .
+\left(|x| + \tfrac12\right)^2 + \left(|y| + \tfrac12\right)^2 = 1 + 1 = 2 = R_4^2 .
 ```
 
-[Lemma 2.8](02-preliminaries.md#lemma-28-axis-parallel-squares) (3) applies.
-$\square$
+So [Lemma 2.8](02-preliminaries.md#lemma-28-axis-parallel-squares) (3)
+applies. $\square$
 
 *Lean:
 [`Four.model_packing`](../../SquaresInCircles/Four/Construction.lean#L21),
@@ -86,30 +94,24 @@ $\square$
 [`Four.centers`](../../SquaresInCircles/Geometry.lean#L159),
 [`Four.radius`](../../SquaresInCircles/Geometry.lean#L156).*
 
-The four outer corners $(\pm1, \pm1)$ of the block lie on the circle of radius
-$\sqrt2$.
-
 ## 7.2 The diamond
-
-The rest of the chapter, up to §7.5, proves that the optimal packing is unique.
 
 ### Proposition 7.3 (uniqueness)
 
-Every packing of four unit squares in a closed disk of radius $\sqrt2$ is
+Every packing of four unit squares in a closed disk of radius $R_4$ is
 congruent to the block.
 
 The proof occupies §7.2 to §7.4. Throughout, $o$ is the disk centre, and for a
 square $S$ the numbers $a_S \ge b_S \ge 0$ are the offsets of $o$ from $S$
 ([Definition 3.1](03-tools.md#definition-31-position-of-the-disk-centre)). By
 [Lemma 3.4](03-tools.md#lemma-34-farthest-vertex), a square $S$ whose closed
-square lies in the closed disk of radius $\sqrt2$ about $o$ satisfies
+square lies in the closed disk of radius $R_4$ about $o$ satisfies
 
 ```math
 \varphi(a_S, b_S) \le 2 . \tag{7.1}
 ```
 
-This section replaces (7.1) by a linear inequality, §7.3 finds arcs that the
-squares hold on $\Gamma_{1/2}$, and §7.4 assembles the block.
+This section replaces (7.1) by a linear inequality.
 
 The tangent half-plane of the disk $\lbrace\varphi \le 2\rbrace$ at the point
 $(\frac12, \frac12)$ of its boundary
@@ -117,9 +119,16 @@ $(\frac12, \frac12)$ of its boundary
 $a + b \le 1$. It is the contact polygon of four squares
 ([Definition 3.7](03-tools.md#definition-37-contact-polygon)), and we call it the
 *diamond*: restoring the signs of the two local coordinates of $o$ turns it
-into the square $|x| + |y| \le 1$, which stands on a vertex. A square with
-$a_S = b_S = \frac12$ has $o$ as a vertex, since both local coordinates of $o$
-are $\pm\frac12$.
+into the square $|x| + |y| \le 1$, which stands on a vertex (Figure 7.3). A
+square with $a_S = b_S = \frac12$ has $o$ as a vertex, since both local
+coordinates of $o$ are $\pm\frac12$.
+
+![A unit square S in its own frame, the blue region of the points o for which S fits in the closed disk of radius root 2 about o, and the orange square where the absolute values of x and y add up to at most 1, standing on a vertex, which contains the region and touches it only at the four vertices of S](figures/07-four/diamond-frame.svg)
+
+*Figure 7.3.* The diamond in the frame of a square $S$, with $o$ at the point
+$(x, y)$ of local coordinates. The positions of $o$ that satisfy (7.1) (blue)
+lie in the square $|x| + |y| \le 1$ (orange), and reach its boundary only at
+the four vertices of $S$, where $a_S = b_S = \frac12$.
 
 ### Lemma 7.4 (the diamond)
 
@@ -128,7 +137,7 @@ If moreover $a + b \ge 1$, then $a = b = \frac12$.
 
 ![The (a, b)-plane: the part with a and b nonnegative of the disk where phi is at most 2, inside the triangle a plus b at most 1, which touches it only at (1/2, 1/2)](figures/07-four/diamond.svg)
 
-*Figure 7.2.* The disk $\lbrace\varphi \le 2\rbrace$ in the $(a, b)$-plane,
+*Figure 7.4.* The disk $\lbrace\varphi \le 2\rbrace$ in the $(a, b)$-plane,
 where $a, b \ge 0$, inside the diamond $a + b \le 1$, which touches it only at
 $(\frac12, \frac12)$.
 
@@ -141,7 +150,7 @@ $(\frac12, \frac12)$.
 which is the identity of [Lemma 3.6](03-tools.md#lemma-36-tangent-lines) at the
 point $(u, v) = (\frac12, \frac12)$, where $\varphi(\frac12, \frac12) = 2$. The
 left side is at most 0 and the last two terms are nonnegative, so
-$a + b - 1 \le 0$. If moreover $a + b \ge 1$, then
+$a + b - 1 \le 0$ (Figure 7.4). If moreover $a + b \ge 1$, then
 $0 \ge \varphi(a, b) - 2 \ge (a - \frac12)^2 + (b - \frac12)^2$, so both
 squares vanish. $\square$
 
@@ -165,7 +174,7 @@ greater than $\frac\pi4$ if $a_S + b_S < 1$.
 
 ![Two panels in chart coordinates with the circle of radius 1/2 about o. Left: an exterior square centred at (0.72, 0.1); its highlighted cap runs from the lower edge at minus V to the near edge at A, and two radii at the angles A and A minus pi/2, with a right-angle mark at o, bound a quarter circle inside the cap. Right: the square centred at (1/2, 1/2), with a vertex at o, holding exactly the quarter circle between the angles 0 and pi/2](figures/07-four/exterior-arc.svg)
 
-*Figure 7.3.* Left: an exterior square in its chart, with
+*Figure 7.5.* Left: an exterior square in its chart, with
 $(a_S, b_S) = (0.72, 0.1)$. Its cap on $\Gamma_{1/2}$ runs from $-V_S$, on the
 line of the lower edge, to $A_S$, on the line of the near edge, and contains
 the quarter circle from $A_S - \frac\pi2$ to $A_S$: this is the inequality
@@ -219,12 +228,23 @@ a quarter circle.
    $\frac\pi2 - A_S = \arcsin(2a_S - 1)$. The inequality $a_S + b_S \le 1$
    says that $2a_S - 1 \le 1 - 2b_S$, and both numbers lie in $[0, 1]$, where
    the arcsine is strictly increasing. So $\frac\pi2 - A_S \le V_S$, with
-   strict inequality if $a_S + b_S < 1$.
+   strict inequality if $a_S + b_S < 1$ (Figure 7.5).
 5. *Conclusion.* By steps 3 and 4 both terms of the minimum in step 2 are at
    least $\frac\pi4$, so $w \ge \frac\pi4$. If $a_S + b_S < 1$, both terms are
-   greater than $\frac\pi4$, and so is $w$. $\square$
+   greater than $\frac\pi4$, and so is $w$ (Figure 7.6). $\square$
 
 *Lean: [`Four.exterior_arc`](../../SquaresInCircles/Four/Exterior.lean#L24).*
+
+![The (a, b)-plane right of a = 1/2: the orange quadrilateral where the cap of an exterior square on the circle of radius 1/2 is at least a quarter circle, bounded by the dashed line a = (2 + root 2)/4, where A = pi/4, and the line a + b = 1, where A + V = pi/2; the blue part of the disk where phi is at most 2 lies inside it and meets the line a + b = 1 only at (1/2, 1/2), while the point (0.9, 0.05) lies below the line a + b = 1 but right of the dashed line](figures/07-four/arc-region.svg)
+
+*Figure 7.6.* Lemma 7.5 in the $(a, b)$-plane, for exterior squares. The
+half-width $w$ of step 2 is at least $\frac\pi4$ exactly when
+$A_S \ge \frac\pi4$ and $A_S + V_S \ge \frac\pi2$, that is, left of the
+dashed line $a = \frac{2 + \sqrt2}4$ and below the line $a + b = 1$
+(orange). The part of the disk $\lbrace\varphi \le 2\rbrace$ with
+$a \ge \frac12$ (blue) lies in this region and meets the line $a + b = 1$
+only at $(\frac12, \frac12)$. The point $(0.9, 0.05)$ of the remark below lies
+in the diamond but right of the dashed line.
 
 *Remark (why the disk constraint is still needed).* The proof of
 Proposition 7.3 uses (7.1) itself, and not only the diamond, in two places:
@@ -234,24 +254,24 @@ to 1, and the arc of $S$ can then be shorter than a quarter circle: for
 $(a_S, b_S) = (0.9, 0.05)$, which satisfies $a_S + b_S < 1$ but not (7.1), a
 point $\frac12(\cos t, \sin t)$ of the chart lies in $S$ exactly when
 $\cos t > 0.8$, so the points of $\Gamma_{1/2}$ in $S$ form an arc of
-half-width $\arccos 0.8 < \frac\pi4$ (Figure 7.4). Nor does the diamond force
-the block: the four squares $Q(\pm1, 0)$ and $Q(0, \pm1)$ are pairwise
-disjoint, and seen from the origin each has $(a_S, b_S) = (1, 0)$, on the edge
-of the diamond (Figure 7.5). This is why, unlike the proofs for three and five
-squares, this proof keeps (7.1) next to its contact polygon.
+half-width $\arccos 0.8 < \frac\pi4$ (Figures 7.6 and 7.7). Nor does the
+diamond force the block: the four squares $Q(\pm1, 0)$ and $Q(0, \pm1)$ are
+pairwise disjoint, and seen from the origin each has $(a_S, b_S) = (1, 0)$, on
+the edge of the diamond (Figure 7.8). This is why, unlike the proofs for three
+and five squares, this proof keeps (7.1) next to its contact polygon.
 
 ![A square in its chart centred at (0.9, 0.05), with the circle of radius 1/2 about o: the highlighted arc of the circle inside the square is bounded by the radii at the angles plus and minus A, which lie inside the dashed radii at plus and minus pi/4](figures/07-four/less-than-quarter.svg)
 
-*Figure 7.4.* The square with $(a_S, b_S) = (0.9, 0.05)$ lies in the diamond
+*Figure 7.7.* The square with $(a_S, b_S) = (0.9, 0.05)$ lies in the diamond
 but outside the disk $\lbrace\varphi \le 2\rbrace$. It holds only the arc of
 $\Gamma_{1/2}$ between $\pm A_S$, where $A_S = \arccos 0.8$, which is shorter
 than the quarter circle between the dashed radii at $\pm\frac\pi4$.
 
 ![Four axis-parallel squares centred at (1, 0), (0, 1), (-1, 0) and (0, -1) around the origin o, with the circle of radius 1/2 about o touching each of them at the midpoint of its near edge, and the dashed circle of radius root 2, which the squares stick out of](figures/07-four/not-rigid.svg)
 
-*Figure 7.5.* Four disjoint squares, each with $(a_S, b_S) = (1, 0)$ on the
+*Figure 7.8.* Four disjoint squares, each with $(a_S, b_S) = (1, 0)$ on the
 edge of the diamond, that do not form the block. The circle $\Gamma_{1/2}$ only
-touches them, and they do not fit in the dashed circle of radius $\sqrt2$.
+touches them, and they do not fit in the dashed circle of radius $R_4$.
 
 ### Lemma 7.6 (a quarter circle at the disk centre)
 
@@ -262,7 +282,7 @@ half-width $\frac\pi4$.
 
 ![A square containing o, in its chart: the shaded box from (0, 0) to (1/2, 1/2) lies inside the square, and the quarter of the circle of radius 1/2 between the chart angles 0 and pi/2 is drawn thick inside the box; a dashed ray at the chart angle pi/4 bisects it, and the rest of the circle inside the square is drawn thin](figures/07-four/containing-quarter.svg)
 
-*Figure 7.6.* A square $S$ that contains $o$, in its chart. It contains the
+*Figure 7.9.* A square $S$ that contains $o$, in its chart. It contains the
 box $(0, \frac12) \times (0, \frac12)$ (shaded), and with it the quarter of
 $\Gamma_{1/2}$ between the chart angles $0$ and $\frac\pi2$ (thick), centred at
 the chart angle $\frac\pi4$, that is, at the direction $\mu_S$. Thin: the rest
@@ -278,8 +298,9 @@ $\frac12$, so
 ```
 
 So every chart angle in $(0, \frac\pi2)$ gives a point of $S$ on
-$\Gamma_{1/2}$, and [Lemma 3.21](03-tools.md#lemma-321-charts) (2), with
-$(l, h) = (0, \frac\pi2)$, gives the arc of half-width $\frac\pi4$ and centre
+$\Gamma_{1/2}$ (Figure 7.9), and
+[Lemma 3.21](03-tools.md#lemma-321-charts) (2), applied to this interval,
+gives the arc of half-width $\frac\pi4$ and centre
 $\theta_S + \varepsilon_S\frac\pi4 = \mu_S$. $\square$
 
 *Lean: [`Four.quarter_arc`](../../SquaresInCircles/Four/Containing.lean#L21),
@@ -293,12 +314,13 @@ Let $S$ be a square with $a_S = b_S = \frac12$, let $(\theta_S, \varepsilon_S)$
 be a chart of $S$, and let $\mu_S = \theta_S + \varepsilon_S\frac\pi4$. Then
 $S$ sits at $(\frac12, \frac12)$ in the frame $\mu_S - \frac\pi4$.
 
-![A tilted square with a vertex at o, the quarter of the circle of radius 1/2 between its two edges from o highlighted, and the bisecting direction mu_S dashed](figures/07-four/vertex-square.svg)
+![A tilted square with a vertex at o and arrows along its two edges from o, labelled mu_S minus pi/4 and mu_S plus pi/4; the quarter of the circle of radius 1/2 between them is highlighted, the bisecting direction mu_S is dashed, and the centre of the square is marked (1/2, 1/2)](figures/07-four/vertex-square.svg)
 
-*Figure 7.7.* A square with a vertex at $o$. Its two edges from $o$ point in the
-directions $\mu_S \pm \frac\pi4$, and $S$ holds the quarter of $\Gamma_{1/2}$
-between them. In the frame at $o$ whose first axis points along the edge in the
-direction $\mu_S - \frac\pi4$, the square is $Q(\frac12, \frac12)$.
+*Figure 7.10.* A square with a vertex at $o$. Its two edges from $o$ point in
+the directions $\mu_S \pm \frac\pi4$ (arrows), and $S$ holds the quarter of
+$\Gamma_{1/2}$ between them, centred at $\mu_S$ (dashed). In the frame
+$\mu_S - \frac\pi4$, whose axes are the two arrows, the square is
+$Q(\frac12, \frac12)$.
 
 *Proof.* By [Lemma 3.22](03-tools.md#lemma-322-cartesian-form-of-a-chart), $S$
 sits at $(a_S, \varepsilon_S b_S) = (\frac12, \varepsilon_S\frac12)$ in the
@@ -308,30 +330,30 @@ $\theta_S = \mu_S + \frac\pi4 = (\mu_S - \frac\pi4) + \frac\pi2$, so $S$ sits
 at $(\frac12, -\frac12)$ in the frame $(\mu_S - \frac\pi4) + \frac\pi2$. By
 [Lemma 3.30](03-tools.md#lemma-330-sitting-at-a-centre) (2) with $k = 1$, it
 sits in the frame $\mu_S - \frac\pi4$ at $(\frac12, -\frac12)$ turned by a
-quarter turn, $(x, y) \mapsto (-y, x)$, which is $(\frac12, \frac12)$.
-$\square$
+quarter turn, $(x, y) \mapsto (-y, x)$, which is $(\frac12, \frac12)$
+(Figure 7.10). $\square$
 
 *Lean:
 [`Four.vertex_represents`](../../SquaresInCircles/Four/Uniqueness.lean#L26).*
 
-The proof of Proposition 7.3 now assembles these lemmas. Figure 7.8 shows why
+The proof of Proposition 7.3 now assembles these lemmas. Figure 7.11 shows why
 no square can contain the disk centre once the disk centre is a vertex of
-another square, and Figure 7.9 the configuration that the proof arrives at.
+another square, and Figure 7.12 the configuration that the proof arrives at.
 
 ![A tilted square T with a vertex at o, and a dashed square S, tilted differently, that contains o in its interior; the part of T inside S near o is shaded](figures/07-four/no-containing.svg)
 
-*Figure 7.8.* Step 3 of the proof. If $o$ is a vertex of $T$, every square $S$
+*Figure 7.11.* Step 3 of the proof. If $o$ is a vertex of $T$, every square $S$
 with $o \in S^\circ$ overlaps $T$ near $o$ (shaded), so disjoint squares
 cannot do this.
 
 ![Four squares with a common vertex at o forming a tilted 2 by 2 block, the circle of radius 1/2 about o split into four coloured quarter arcs, dashed rays from o through the four centres labelled mu0, mu0 + pi/2, mu0 + pi and mu0 + 3pi/2, the centres labelled c1 to c4, and two arrows at o along the edges between the squares, the first labelled mu0 - pi/4](figures/07-four/quarter-grid.svg)
 
-*Figure 7.9.* Steps 4 and 5 of the proof. The quarter arcs are centred at
+*Figure 7.12.* Steps 4 and 5 of the proof. The quarter arcs are centred at
 $\mu_0$ and its quarter turns, and in the frame at $o$ turned by
 $\mu_0 - \frac\pi4$ (arrows) the four squares sit at $c_1, \dots, c_4$.
 
 *Proof of Proposition 7.3.* Let $S_1, \dots, S_4$ be a packing of four unit
-squares in the closed disk of radius $\sqrt2$ about a point $o$. Fix a chart
+squares in the closed disk of radius $R_4$ about a point $o$. Fix a chart
 $(\theta_i, \varepsilon_i)$ of each $S_i$, write $a_i, b_i$ for
 $a_{S_i}, b_{S_i}$, and put $\mu_i = \theta_i + \varepsilon_i\frac\pi4$. Every
 square satisfies (7.1), and the squares are pairwise disjoint.
@@ -353,12 +375,11 @@ square satisfies (7.1), and the squares are pairwise disjoint.
    cannot both contain $o$
    ([Definition 3.2](03-tools.md#definition-32-containing-and-exterior-squares)),
    so any other square $S_k$, $k \ne i$, is exterior. By step 2,
-   $a_k = b_k = \frac12$:
-   both local coordinates of $o$ in the frame of $S_k$ are $\pm\frac12$, so
-   $o \in \overline{S_k}$. By
+   $a_k = b_k = \frac12$: both local coordinates of $o$ in the frame of $S_k$
+   are $\pm\frac12$, so $o \in \overline{S_k}$. By
    [Lemma 3.12](03-tools.md#lemma-312-supporting-line) (2), applied to the
    disjoint squares $S_k$ and $S_i$, the point $o$ of $\overline{S_k}$ does not
-   lie in $S_i^\circ$, a contradiction (Figure 7.8).
+   lie in $S_i^\circ$, a contradiction (Figure 7.11).
 4. *The quarter arcs lie on a grid of quarter turns.* By steps 2 and 3,
    $a_i = b_i = \frac12$ for every $i$: the disk centre is a vertex of all
    four squares. By Lemma 7.6 each $S_i$ holds the arc of $\Gamma_{1/2}$ with
@@ -381,7 +402,7 @@ square satisfies (7.1), and the squares are pairwise disjoint.
    frame $\phi$ at $(\frac12, \frac12)$ turned by $k - 1$ quarter turns. For
    $k = 1, 2, 3, 4$ these points are $(\frac12, \frac12)$,
    $(-\frac12, \frac12)$, $(-\frac12, -\frac12)$ and $(\frac12, -\frac12)$,
-   that is, $c_k$ (Figure 7.9). So each of the four squares sits at one of
+   that is, $c_k$ (Figure 7.12). So each of the four squares sits at one of
    $c_1, \dots, c_4$ in the frame $\phi$, and
    [Lemma 3.31](03-tools.md#lemma-331-from-slots-to-congruence) shows that the
    packing is congruent to the block. $\square$
@@ -393,9 +414,10 @@ square satisfies (7.1), and the squares are pairwise disjoint.
 *Proof of Theorem 7.1.* We apply
 [Corollary 2.10](02-preliminaries.md#corollary-210-the-scheme-of-proof) with
 $n = 4$, $R_4 = \sqrt2$ and $\mathcal M = \lbrace\text{the block}\rbrace$:
-(a) is Proposition 7.2; (b) the corner $(1, 1)$ of $Q(c_1)$ has
-$1^2 + 1^2 = 2 = R_4^2$; (c) is Proposition 7.3. Parts (1), (2), (3) of the
-theorem are (a), (i) and (ii). $\square$
+(a) is Proposition 7.2; (b) holds because the corner $(1, 1)$ of $Q(c_1)$ has
+squared distance $1 + 1 = 2 = R_4^2$ from the origin (Figure 7.2); (c) is
+Proposition 7.3. Parts (1), (2), (3) of the theorem are (a), (i) and (ii).
+$\square$
 
 *Lean: [`Four.optimum`](../../SquaresInCircles/Four/Uniqueness.lean#L98),
 [`Optimum.isLeast`](../../SquaresInCircles/Common/Optimum.lean#L61),

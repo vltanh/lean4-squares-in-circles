@@ -8,13 +8,13 @@
 <polygon points="197.2,242.0 337.2,242.0 337.2,102.0 197.2,102.0" fill="#ffedd5" stroke="#ea580c" stroke-width="1.2" fill-opacity="1" stroke-dasharray="4 3"/>
 <polygon points="141.2,342.8 421.2,342.8 421.2,62.8 141.2,62.8" fill="none" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
 <circle cx="197.2" cy="242.0" r="140.0" fill="none" stroke="#9ca3af" stroke-width="1.2"/>
-<path d="M 294.4 342.8 A 140.0 140.0 0 0 0 141.2 113.7" fill="none" stroke="#ea580c" stroke-width="1.8" stroke-linecap="round"/>
+<path d="M 294.4 342.8 A 140.0 140.0 0 0 0 313.6 164.2 A 140.0 140.0 0 0 0 141.2 113.7" fill="none" stroke="#ea580c" stroke-width="1.8" stroke-linecap="round"/>
 <path d="M 337.2 242.0 A 140.0 140.0 0 0 0 197.2 102.0" fill="none" stroke="#ea580c" stroke-width="5" stroke-linecap="round"/>
 <line x1="197.2" y1="242.0" x2="385.3" y2="53.9" stroke="#1f2937" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arrow)"/>
-<path d="M 236.4 242.0 A 39.2 39.2 0 0 0 224.9 214.3" fill="none" stroke="#1f2937" stroke-width="1.1" stroke-linecap="round"/>
-<text x="254.1" y="218.4" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π/4</text>
+<path d="M 224.9 214.3 A 39.2 39.2 0 0 0 197.2 202.8" fill="none" stroke="#1f2937" stroke-width="1.1" stroke-linecap="round"/>
+<text x="221.8" y="182.5" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π/4</text>
 <circle cx="281.2" cy="202.8" r="3.2" fill="#2563eb"/>
-<text x="289.6" y="216.8" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle" font-style="italic">(a<tspan dy="3.9" font-size="8.8">S</tspan><tspan dy="-3.9">, </tspan>b<tspan dy="3.9" font-size="8.8">S</tspan><tspan dy="-3.9">)</tspan></text>
+<text x="260.8" y="223.8" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle" font-style="italic">(a<tspan dy="3.9" font-size="8.8">S</tspan><tspan dy="-3.9">, </tspan>b<tspan dy="3.9" font-size="8.8">S</tspan><tspan dy="-3.9">)</tspan></text>
 <text x="345.6" y="113.2" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle">(½, ½)</text>
 <circle cx="337.2" cy="102.0" r="2.4" fill="#ea580c"/>
 <circle cx="197.2" cy="242.0" r="3.2" fill="#1f2937"/>

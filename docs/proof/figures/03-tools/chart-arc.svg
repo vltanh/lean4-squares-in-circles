@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="853" height="353" viewBox="0 0 853 353" role="img" aria-label="A square with a chart of orientation -1, in the plane and in its chart: the chart angles from t1 to t2 give the arc of the circle from theta - t2 to theta - t1, centred at theta - (t1 + t2)/2">
+<title>A square with a chart of orientation -1, in the plane and in its chart: the chart angles from t1 to t2 give the arc of the circle from theta - t2 to theta - t1, centred at theta - (t1 + t2)/2</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="173.2" y="28.8" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle">the plane</text>
+<polygon points="221.1,272.2 331.7,194.8 254.3,84.2 143.7,161.7" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<circle cx="126.0" cy="207.0" r="74.2" fill="none" stroke="#9ca3af" stroke-width="1.2"/>
+<path d="M 194.9 234.7 A 74.2 74.2 0 0 0 167.2 145.2" fill="none" stroke="#ea580c" stroke-width="5" stroke-linecap="round"/>
+<line x1="126.0" y1="207.0" x2="286.3" y2="94.7" stroke="#1f2937" stroke-width="1"/>
+<text x="297.4" y="87.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">θ<tspan dy="4.2" font-size="9.5">S</tspan></text>
+<line x1="126.0" y1="207.0" x2="315.6" y2="148.4" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="322.0" y="146.4" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">θ<tspan dy="3.9" font-size="8.8">S</tspan><tspan dy="-3.9"> − (</tspan>t<tspan dy="3.9" font-size="8.8">1</tspan><tspan dy="-3.9"> + </tspan>t<tspan dy="3.9" font-size="8.8">2</tspan><tspan dy="-3.9">)/2</tspan></text>
+<line x1="126.0" y1="207.0" x2="194.9" y2="234.7" stroke="#1f2937" stroke-width="1"/>
+<circle cx="194.9" cy="234.7" r="3.2" fill="#1f2937"/>
+<line x1="126.0" y1="207.0" x2="167.2" y2="145.2" stroke="#1f2937" stroke-width="1"/>
+<circle cx="167.2" cy="145.2" r="3.2" fill="#1f2937"/>
+<text x="156.4" y="122.3" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">θ<tspan dy="3.9" font-size="8.8">S</tspan><tspan dy="-3.9"> − </tspan>t<tspan dy="3.9" font-size="8.8">1</tspan></text>
+<text x="181.4" y="244.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">θ<tspan dy="3.9" font-size="8.8">S</tspan><tspan dy="-3.9"> − </tspan>t<tspan dy="3.9" font-size="8.8">2</tspan></text>
+<polyline points="152.2,193.0 152.4,193.3 152.6,193.7 152.7,194.0 152.9,194.4 153.1,194.7 153.2,195.1 153.4,195.5 153.5,195.8 153.7,196.2 153.8,196.5 153.9,196.9 154.1,197.3 154.2,197.6 154.3,198.0 154.4,198.4 154.5,198.8 154.6,199.1 154.7,199.5 154.8,199.9 154.9,200.3 155.0,200.7 155.1,201.0 155.2,201.4 155.2,201.8 155.3,202.2 155.4,202.6 155.4,203.0 155.5,203.3 155.5,203.7 155.6,204.1 155.6,204.5 155.6,204.9 155.6,205.3 155.7,205.7 155.7,206.1 155.7,206.4 155.7,206.8 155.7,207.2 155.7,207.6 155.7,208.0 155.7,208.4 155.6,208.8 155.6,209.2 155.6,209.6 155.6,209.9 155.5,210.3 155.5,210.7 155.4,211.1 155.4,211.5 155.3,211.9 155.2,212.3 155.2,212.6 155.1,213.0 155.0,213.4 154.9,213.8 154.8,214.2 154.7,214.5 154.6,214.9 154.5,215.3 154.4,215.7" fill="none" fill-opacity="1.0" stroke="#ea580c" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 153.2 218.8 L 152.6 211.2 L 158.2 213.1 z" fill="#ea580c"/>
+<circle cx="126.0" cy="207.0" r="3.2" fill="#1f2937"/>
+<text x="119.2" y="219.2" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
+<text x="625.5" y="28.8" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle">the chart</text>
+<polygon points="598.5,234.0 733.5,234.0 733.5,99.0 598.5,99.0" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" fill-opacity="1"/>
+<line x1="558.0" y1="207.0" x2="784.8" y2="207.0" stroke="#1f2937" stroke-width="1"/>
+<text x="784.8" y="196.2" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle"><tspan font-style="italic">t</tspan> = 0</text>
+<circle cx="558.0" cy="207.0" r="74.2" fill="none" stroke="#9ca3af" stroke-width="1.2"/>
+<path d="M 627.2 234.0 A 74.2 74.2 0 0 0 598.5 144.8" fill="none" stroke="#ea580c" stroke-width="5" stroke-linecap="round"/>
+<line x1="558.0" y1="207.0" x2="740.5" y2="148.3" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="746.9" y="146.3" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">(t<tspan dy="3.9" font-size="8.8">1</tspan><tspan dy="-3.9"> + </tspan>t<tspan dy="3.9" font-size="8.8">2</tspan><tspan dy="-3.9">)/2</tspan></text>
+<line x1="558.0" y1="207.0" x2="627.2" y2="234.0" stroke="#1f2937" stroke-width="1"/>
+<circle cx="627.2" cy="234.0" r="3.2" fill="#1f2937"/>
+<line x1="558.0" y1="207.0" x2="598.5" y2="144.8" stroke="#1f2937" stroke-width="1"/>
+<circle cx="598.5" cy="144.8" r="3.2" fill="#1f2937"/>
+<text x="629.9" y="250.2" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">t<tspan dy="4.2" font-size="9.5">1</tspan></text>
+<text x="593.1" y="131.3" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">t<tspan dy="4.2" font-size="9.5">2</tspan></text>
+<circle cx="558.0" cy="207.0" r="3.2" fill="#1f2937"/>
+<text x="551.2" y="219.2" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
+<line x1="342.0" y1="290.7" x2="430.2" y2="290.7" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M 436.5 290.7 L 427.5 294.5 L 427.5 286.9 z" fill="#1f2937"/>
+<text x="389.2" y="310.9" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">turn by −<tspan font-style="italic">θ<tspan dy="3.9" font-size="8.8">S</tspan></tspan><tspan dy="-3.9">, reflect</tspan></text>
+</svg>

@@ -14,15 +14,15 @@
 <line x1="62.0" y1="292.0" x2="562.0" y2="292.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
 <line x1="62.0" y1="292.0" x2="62.0" y2="30.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
 <line x1="62.0" y1="295.0" x2="62.0" y2="289.0" stroke="#1f2937" stroke-width="1"/>
-<text x="62.0" y="306.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">0</text>
+<text x="62.0" y="307.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">0</text>
 <line x1="218.2" y1="295.0" x2="218.2" y2="289.0" stroke="#1f2937" stroke-width="1"/>
-<text x="218.2" y="306.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">1/2</text>
+<text x="218.2" y="307.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">1/2</text>
 <line x1="374.3" y1="295.0" x2="374.3" y2="289.0" stroke="#1f2937" stroke-width="1"/>
-<text x="374.3" y="306.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">1</text>
+<text x="374.3" y="307.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">1</text>
 <line x1="405.6" y1="295.0" x2="405.6" y2="289.0" stroke="#1f2937" stroke-width="1"/>
-<text x="405.6" y="306.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">11/10</text>
+<text x="405.6" y="307.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">11/10</text>
 <line x1="552.6" y1="295.0" x2="552.6" y2="289.0" stroke="#1f2937" stroke-width="1"/>
-<text x="552.6" y="306.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π/2</text>
+<text x="552.6" y="307.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π/2</text>
 <line x1="59.0" y1="258.8" x2="65.0" y2="258.8" stroke="#1f2937" stroke-width="1"/>
 <text x="56.0" y="258.8" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">−1</text>
 <line x1="59.0" y1="192.3" x2="65.0" y2="192.3" stroke="#1f2937" stroke-width="1"/>
@@ -31,6 +31,6 @@
 <text x="56.0" y="125.8" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0</text>
 <line x1="59.0" y1="59.3" x2="65.0" y2="59.3" stroke="#1f2937" stroke-width="1"/>
 <text x="56.0" y="59.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.5</text>
-<text x="562.0" y="282.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">q</text>
-<text x="479.0" y="43.3" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">q ≥ 11/10</text>
+<text x="556.0" y="281.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">q</text>
+<text x="479.0" y="43.3" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle"><tspan font-style="italic">q</tspan> ≥ 11/10</text>
 </svg>

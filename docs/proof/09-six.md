@@ -84,15 +84,15 @@ corners of $N$, $E$, $W$ and $S$, and two vertices of $D$.
 
 *Remarks.* (i) The model is symmetric under the reflection
 $(x, y) \mapsto (y, x)$ in the diagonal, which exchanges $N$ with $E$ and $W$
-with $S$ and maps $C$ and $D$ to themselves. So, as in the other cases, a reflected copy of the
-model is a rotated copy of it with the labels changed
+with $S$ and maps $C$ and $D$ to themselves. So, as in the other cases, a
+reflected copy of the model is a rotated copy of it with the labels changed
 ([Definition 2.6](02-preliminaries.md#definition-26-congruence-to-a-model)).
 
 (ii) Eight pairs of squares touch in the model (Figure 9.1), and the constants
 are fixed by four conditions: the far corners of $E$ and $W$ and the far
-vertices of $D$ lie on one circle, and $D$ touches $W$ (§9.1). Friedman's page
-([§1.3](README.md#13-background)) lists this packing, which Friedman found in
-1997, with the exact radius found by David Ellsworth in 2023,
+vertices of $D$ lie on one circle, and $D$ touches $W$ (§9.1, Figure 9.4).
+Friedman's page ([§1.3](README.md#13-background)) lists this packing, which
+Friedman found in 1997, with the exact radius found by David Ellsworth in 2023,
 
 ```math
 R_6 = \frac1{534}\sqrt{19706163 + 13275064\sqrt2 - 40\sqrt{443374242065 + 313512226176\sqrt2}} ;
@@ -107,7 +107,7 @@ the two values agree, and $q_* = R_6^2$ is the least root of the quartic
 (iii) Unlike the optimal packings of three, four and five squares, this one is
 not held by arcs of one circle alone: on $\Gamma_{9/10}$ its five outer squares
 hold arcs of only about $67.5°$ to $68°$, and the arcs leave about $21°$ of the
-circle free (Figure 9.3). The proof uses the arcs only to find the central
+circle free (Figure 9.6). The proof uses the arcs only to find the central
 square; the rest is done by stresses.
 
 *Outline of the proof.* Part (1) is the construction, Proposition 9.3 (§9.1).
@@ -139,12 +139,14 @@ closed disk of radius $R_6$ is congruent to the model. Its proof has six steps.
 5. *The separators* (§9.6 and §9.7). Further stresses show that the turned
    square is separated from $W$ and from $S$ along their secondary axes, as in
    the model (Proposition 9.45), and bound the angles of $W$ and $S$
-   (Proposition 9.47). Their estimates fill Appendices B to E.
+   (Proposition 9.47).
 6. *The stress of the model* (§9.8 and §9.9). At the radius $R_6$ the stress
    of the model, with its edges along the separating axes of the packing,
    leaves no room: the angles are those of the model (Theorem 9.54), eight
    separating inequalities are tight, and they fix every centre
    (Proposition 9.58).
+
+The longer estimates of these steps are proved in Appendices B to E.
 
 ## 9.1 Construction
 
@@ -181,7 +183,10 @@ affine in $s_*$ with the coefficient $30h - 20 > 0$, $q_*$ increases with
 $s_* > 0$, and $1.68854^2 < 2.85117$, $2.85118 < 1.68855^2$. Finally
 $d_* = \frac12 + h - t_* > 0.78$.
 
-(2) The first expression is $2s_*^2 + 4s_* + \frac52 = q_*$. For the other two,
+(2) The three expressions are the squared distances from the origin of the
+far corners of $E$ and $W$ and of a far vertex of $D$ in the model
+(Figure 9.2). The first is $2s_*^2 + 4s_* + \frac52 = q_*$. For the
+other two,
 write $t_*$, $d_*$ and $q_*$ through $s = s_*$ and $h$. The differences with
 $q_*$ are then combinations of $p(s)$, which vanishes at $s_*$, and of
 $h^2 - \frac12$:
@@ -200,6 +205,13 @@ bracket follows from that of $q_*$. Put $x = 2hd_* > 0$. By (2),
 $x^2 + x + \frac12 = 2d_*^2 + 2hd_* + \frac12 = q_*$, as $4h^2 = 2$. So
 $0 = (\rho_*^2 + \rho_*) - (x^2 + x) = (\rho_* - x)(\rho_* + x + 1)$, and the
 second factor is positive. $\square$
+
+![The model, faint, in its dashed circle of radius R6, and three right triangles from the origin o: to the far corner of E, with the legs s* + 3/2 along the x-axis and s* + 1/2 up; to the far corner of S, with the legs 3/2 - s* down the y-axis and t* + 1/2 along the lower edge of S; and to a far vertex of D, with the legs d* + h along the negative x-axis and d* down; the three hypotenuses are dashed radii of the circle](figures/09-six/corners.svg)
+
+*Figure 9.2.* Lemma 9.2 (2) in the model: the squared distances from
+the origin of the far corner of $E$, of the far corner of $S$ (by symmetry,
+the same as that of $W$) and of a far vertex of $D$, with the legs of the
+right triangles; the three points lie on the circle of radius $R_6$.
 
 *Lean: [`Six.sStar_polynomial`](../../SquaresInCircles/Six/Constants.lean#L101),
 [`Six.sStar_bounds`](../../SquaresInCircles/Six/Constants.lean#L121),
@@ -253,7 +265,7 @@ lie above the line $y = t_* - \frac12$, as $s_* + \frac12 > t_* - \frac12$, and
 those of $E$, $S$ to the right of $x = t_* - \frac12$; so none of them meets
 $D^\circ$. Finally, every point of $C^\circ$ has $x + y > 2s_* - 1$, so
 $x + y + 2d_* > 2(s_* + d_*) - 1 > \frac{18}{25}$, as $s_* + d_* > 0.871$; and
-$\frac{18}{25} > h$, so the point is not in $D^\circ$.
+$\frac{18}{25} > h$, so the point is not in $D^\circ$ (Figure 9.3).
 
 *The points on the circle.* By Lemma 9.2 (2), the corners
 $(s_* + \frac32, s_* + \frac12)$ and $(s_* + \frac12, s_* + \frac32)$ of $E$ and
@@ -262,15 +274,16 @@ $W$ and $S$ are at squared distance $q_*$ from the origin, and so are the two
 vertices of $D$ farthest from it, $(-d_* - h, -d_*)$ and $(-d_*, -d_* - h)$.
 $\square$
 
-![Two panels. Left: the model with the three lines that separate D from its neighbours: the vertical line x = t* - 1/2 and the horizontal line y = t* - 1/2, which keep D left of S and E and below W and N, and the line x + y = 2s* - 1, which keeps D away from C; D, a diamond, sits in the corner they cut out. Right: an enlargement of the corner of W, D and S, with the vertex of D on the lower edge of W and the vertex on the left edge of S, and the lengths t*, s*, d* marked](figures/09-six/construction.svg)
+![Two panels. Left: the model with the three lines that separate D from its neighbours, dashed: the vertical line x = t* - 1/2 and the horizontal line y = t* - 1/2, which keep D left of S and E and below W and N, and the line x + y = 2s* - 1, which keeps D away from C; D, a diamond, sits in the corner they cut out, and a dashed grey square marks the corner between W and S. Right: that corner enlarged, with the top vertex of D, at (-d*, t* - 1/2), on the lower edge of W, the right vertex, at (t* - 1/2, -d*), on the left edge of S, and the half-diagonal h of D dashed from its centre up to the top vertex](figures/09-six/construction.svg)
 
-*Figure 9.2.* The proof of Proposition 9.3. Left: $D^\circ$ lies left of
+*Figure 9.3.* The proof of Proposition 9.3. Left: $D^\circ$ lies left of
 $x = t_* - \frac12$, below $y = t_* - \frac12$ and below the line
 $x + y = 2s_* - 1$ (dashed), and the other open squares lie beyond these lines.
-Right: the corner between $W$ and $S$, enlarged. The top vertex
-$(-d_*, t_* - \frac12)$ of $D$ lies on the lower edge of $W$, and the right
-vertex $(t_* - \frac12, -d_*)$ on the left edge of $S$; this is
-$d_* = \frac12 + h - t_*$.
+Right: the corner between $W$ and $S$ (grey square on the left), enlarged.
+The top vertex $(-d_*, t_* - \frac12)$ of $D$ lies on the lower edge of $W$,
+and the right vertex $(t_* - \frac12, -d_*)$ on the left edge of $S$. The
+half-diagonal $h$ of $D$ (dashed) runs from its centre $(-d_*, -d_*)$ to the
+top vertex, so $-d_* + h = t_* - \frac12$: this is $d_* = \frac12 + h - t_*$.
 
 *Remark (where the constants come from).* Place $C = Q(s, s)$,
 $E = Q(s + 1, s)$, $W = Q(s - 1, t)$ and $D$ turned by $\frac\pi4$ with centre
@@ -286,7 +299,18 @@ $(8 + 12h)\,t = 1 + 6h + 20s$; multiplied by $3h - 2$, with
 $(8 + 12h)(3h - 2) = 2$ and $h^2 = \frac12$, it becomes the formula of $t_*$ in
 Theorem 9.1. Substituting it back leaves the quadratic $p(s) = 0$, whose
 smaller root is $s_*$. $N$ and $S$ are the mirror images of $E$ and $W$ in the
-diagonal.
+diagonal. With only the first three contacts, the circle through the far
+corners of $E$ and $W$ grows with $s$ while the far vertices of $D$ come in,
+and they meet at $s_*$ (Figure 9.4).
+
+![Two panels. Left: the configuration of the remark for the shift s = 0.04: the central square C = Q(s, s), E and N beside it, W with its far corner on the dashed circle through the far corner of E, S its mirror image, and the turned square D touching W and S, with its two far vertices on a larger dotted circle. Right: against s from 0 to about 0.09, the radius of the circle through the far corners of E and W, rising from about 1.58, and the distance of the far vertices of D, falling from about 2.26; the two curves cross at s = s*, at the height R6, and dots mark their values at s = 0.04](figures/09-six/constants.svg)
+
+*Figure 9.4.* The balance behind the constants. For each shift $s$ the
+far corner of $W$ is put on the circle through that of $E$, and $D$ touches $W$
+(and $S$). Left, $s = 0.04$: the far vertices of $D$ lie at distance about
+$1.95$, outside that circle, of radius about $1.63$. Right: the two distances
+against $s$, while $D$ stays clear of $C$ ($s \le 0.09$); they are equal at
+$s_*$, where both are $R_6$.
 
 *Lean: [`Six.model_packing`](../../SquaresInCircles/Six/Construction.lean#L160),
 [`Six.axisCenters_separated`](../../SquaresInCircles/Six/Construction.lean#L29),
@@ -299,8 +323,8 @@ diagonal.
 ## 9.2 The containing square
 
 From here to the end of §9.7 the packing lies in a closed disk whose squared
-radius is at most a rational ceiling $Q_0$, just above $q_*$; only §9.8 uses
-the radius $R_6$ itself.
+radius is at most a rational ceiling $Q_0$, just above $q_*$; only §9.8 and
+§9.9 use the radius $R_6$ itself.
 
 ### Definition 9.4 (the ceiling)
 
@@ -311,7 +335,7 @@ Let $Q_0 = 2.85118$, $R_0 = \sqrt{Q_0}$, and
 ```
 
 We write $\bar R = 1.6886$, $\bar\rho = 1.11282$ and $\bar c = 0.11282$ for
-these decimals.
+the decimal upper bounds of $R_0$, $\rho_0$ and $c_0$ (Lemma 9.5).
 
 *Lean: [`Six.Q0`](../../SquaresInCircles/Six/Constants.lean#L318),
 [`Six.R0`](../../SquaresInCircles/Six/Constants.lean#L321),
@@ -340,7 +364,7 @@ by (3) and Lemma 9.2 (3), $\rho_* < \rho_0$. (2) Square the brackets:
 $1.6885^2 < Q_0 < 1.6886^2$ and $1.61281^2 < Q_0 - \frac14 < 1.61282^2$. The
 brackets of $c_0$, $r_0$ and $a_0$ follow. For $U_0$, expanding with (3) gives
 $Q_0 - (\frac52 - \rho_0)^2 = 6\rho_0 - \frac{23}4 < 0.92692 < 0.963^2$.
-(3) are the definitions. $\square$
+(3) follows from the definitions. $\square$
 
 The numbers $\rho_0$, $c_0$, $r_0$, $a_0$ and $U_0$ have a meaning that the
 next sections explain. By [Lemma 3.4](03-tools.md#lemma-34-farthest-vertex), the
@@ -370,6 +394,15 @@ radial coordinate is at least $a_0$ and its transverse coordinate at most $U_0$
 Let $T$ be an exterior square with $\varphi(a_T, b_T) \le Q_0$. Then $T$ holds
 an arc of the circle $\Gamma_{9/10}$ about $o$ of half-width more than
 $\frac{14}{25}$, which exceeds $\frac\pi6$.
+
+![The region of the (a, b)-plane where an exterior square lies in the disk of squared radius Q0: a at least 1/2, b between 0 and a, inside the circle phi = Q0, which meets the a-axis at rho0; level lines of the length of the arc it holds on the circle of radius 9/10, at 66, 70, 75, 80 and 90 degrees, horizontal near the side a = 1/2 and slanting near the side b = a; the minimum, about 65.1 degrees, marked at the top corner of the region, where b = a meets the circle](figures/09-six/arc-region.svg)
+
+*Figure 9.5.* The length of the arc of $\Gamma_{9/10}$ held by an exterior
+square, $\min(A, U) + \min(A, V)$ of Lemma 3.24 (1), over the offsets
+$(a, b)$ allowed by the ceiling, with level lines at $66°$, $70°$, $75°$, $80°$
+and $90°$. The length exceeds $2\cdot\frac{14}{25} \approx 64.2°$ everywhere;
+it is smallest, about $65.1°$, at the corner of the region where $a = b$ on
+the circle $\varphi = Q_0$ (red dot).
 
 *Proof.* Write $a = a_T$ and $b = b_T$, so that $a \ge \frac12$ and
 $0 \le b \le a$ ([Definition 3.2](03-tools.md#definition-32-containing-and-exterior-squares)),
@@ -439,26 +472,18 @@ $b \le \frac7{10}$, since $2(b + \frac12)^2 \le \varphi(a, b) \le Q_0$.
      $\arcsin X < 0.77$. Hence $\arcsin X - V < 0.77 - \frac13 < \frac9{20}$.
 
 So $T$ holds an arc of half-width more than $\frac{14}{25}$, by Lemma 3.24 (1)
-with $w = \frac{14}{25}$; and $\frac{14}{25} > \frac\pi6$ as $\pi < 3.36$.
+with $w = \frac{14}{25}$ (Figure 9.5); and $\frac{14}{25} > \frac\pi6$ as
+$\pi < 3.36$.
 $\square$
 
 ![The model with the circle of radius 9/10 about o, drawn dotted. Each of the five outer squares holds a coloured arc of it: about 68 degrees for N and E, 67.6 degrees for W and S, and 67.5 degrees for D; the central square C, grey, does not reach the circle, and five short gaps separate the arcs](figures/09-six/arcs.svg)
 
-*Figure 9.3.* The arcs of $\Gamma_{9/10}$ in the model. The squares $N$ and $E$
+*Figure 9.6.* The arcs of $\Gamma_{9/10}$ in the model. The squares $N$ and $E$
 hold arcs of about $68.0°$, $W$ and $S$ of about $67.6°$, and $D$ of about
 $67.5°$, each more than the $64.2°$ of Lemma 9.6 and the $60°$ of a sixth of
 the circle. The central square misses the circle. $W$ and $N$, and $S$ and
 $E$, meet on the circle; the gaps around $D$ and between $E$ and $N$ are about
 $6.2°$ and $9.0°$.
-
-![The region of the (a, b)-plane where an exterior square lies in the disk of squared radius Q0: a between 1/2 and rho0, b between 0 and a, inside the circle; level lines of the length of the arc it holds on the circle of radius 9/10, at 66, 70, 75, 80 and 90 degrees, and the minimum, a little above 64.2 degrees, marked at the lower right corner of the region](figures/09-six/arc-region.svg)
-
-*Figure 9.4.* The length of the arc of $\Gamma_{9/10}$ held by an exterior
-square, $\min(A, U) + \min(A, V)$ of Lemma 3.24 (1), over the offsets
-$(a, b)$ allowed by the ceiling, with level lines at $66°$, $70°$, $75°$, $80°$
-and $90°$. The length exceeds $2\cdot\frac{14}{25} \approx 64.2°$ everywhere;
-it is smallest, about $65.1°$, at the corner of the region where $a = b$ on
-the circle $\varphi = Q_0$ (red dot).
 
 *Lean: [`Six.exterior_arc`](../../SquaresInCircles/Six/Exterior.lean#L169),
 [`Six.arc_length`](../../SquaresInCircles/Six/Exterior.lean#L144).*
@@ -515,10 +540,10 @@ For real numbers $t$, $a$ and $b$, $Q_t(a, b)$ is the unit square that sits at
 $(a, b)$ in the frame $t$ at the origin
 ([Definition 2.4](02-preliminaries.md#definition-24-frames-at-the-disk-centre)): its
 centre is $a\,u(t) + b\,u(t + \frac\pi2)$ and its frame is $u(t)$,
-$u(t + \frac\pi2)$. We call $t$ its *phase*, $a$ its *radial coordinate*, $b$
-its *transverse coordinate*, $e_1 = u(t)$ its *primary axis* and
-$e_2 = u(t + \frac\pi2)$ its *secondary axis*. The centre has the Cartesian
-coordinates
+$u(t + \frac\pi2)$ (Figure 9.7). We call $t$ its *phase*, $a$ its
+*radial coordinate*, $b$ its *transverse coordinate*, $e_1 = u(t)$ its *own
+axis* (or *primary axis*) and $e_2 = u(t + \frac\pi2)$ its *secondary axis*.
+The centre has the Cartesian coordinates
 
 ```math
 x_t(a, b) = a\cos t - b\sin t, \qquad y_t(a, b) = a\sin t + b\cos t .
@@ -535,6 +560,13 @@ Finally, for a real number $\delta$,
 ```math
 \omega(\delta) = \tfrac12\left(|\cos\delta| + |\sin\delta|\right), \qquad \tau(\delta) = \tfrac12 + \omega(\delta) .
 ```
+
+![A turned square, orange, whose centre is reached from the origin o by a blue path: a along the dashed ray u(t), at the angle t from the horizontal, then b along u(t + pi/2); at the centre, arrows for the axes e1, parallel to u(t), and e2, parallel to u(t + pi/2)](figures/09-six/frame.svg)
+
+*Figure 9.7.* The square $Q_t(a, b)$, here with $t = 0.5$, $a = 1.05$ and
+$b = 0.3$: its centre lies $a$ along $u(t)$ and $b$ along $u(t + \frac\pi2)$
+from the origin, and its frame is its own axis $e_1$ and its secondary axis
+$e_2$.
 
 *Lean: [`orientedSquare`](../../SquaresInCircles/Common/Congruence.lean#L87),
 [`centerX`](../../SquaresInCircles/Common/Congruence.lean#L94),
@@ -640,8 +672,21 @@ $\Omega(n) \le \langle n, \Delta\rangle$, a contradiction. So
 $\langle p, \Delta\rangle \ge \tau(\delta)$ for some $p \in P$. $\square$
 
 This is the separating-axis theorem for two squares; Chapter 10 uses it in
-the form of [Lemma 10.14](10-seven.md#lemma-1014-separating-axes). Figure 9.5
-shows the eight vectors for a square $T$ and the containing square $C$.
+the form of [Lemma 10.14](10-seven.md#lemma-1014-separating-axes). In terms of
+the centres, $U$ and $V$ are disjoint exactly when $c_V - c_U$ lies outside
+the open octagon of the points $x$ with $\langle n, x\rangle < \tau(\delta)$
+for all eight vectors $n$; its sides touch the circle of radius $\tau(\delta)$
+about $0$ (Figure 9.8).
+
+![An axis-parallel square U, grey, at the centre of a shaded octagon with dashed sides, and the dotted circle of radius tau(delta) inscribed in the octagon; eight arrows, the vectors plus or minus e1 and e2 of U and of V, stand on the sides of the octagon where they touch the circle, four of them labelled. A square V turned by 0.45, orange, touches a corner of U; its centre is a point of the side of the octagon perpendicular to e1 of V, and the dashed line through that corner of U, perpendicular to e1 of V, separates the two squares](figures/09-six/octagon.svg)
+
+*Figure 9.8.* Lemma 9.11 for two squares $U$ and $V$ turned by
+$\delta = 0.45$ against each other. With $c_U$ at the centre, the octagon
+(shaded) is the set of the centres $c_V$ for which $V^\circ$ meets $U^\circ$:
+its sides are perpendicular to the eight vectors (arrows) and touch the circle
+of radius $\tau(\delta) \approx 1.168$ (dotted). Here $V$ touches a corner of
+$U$, $c_V$ lies on the side perpendicular to $e^V_1$, and the two squares are
+separated along $e^V_1$ (dashed line).
 
 *Lean:
 [`oriented_separating_axes`](../../SquaresInCircles/Common/SeparatingAxes.lean#L356),
@@ -688,9 +733,10 @@ with $a \ge \frac12$ be disjoint from $C$. Then one of the seven margins of $T$
 against $C$ is nonnegative.
 
 *Proof.* Apply Lemma 9.11 to $U = C = Q_0(c_x, c_y)$ and $V = T$, so that
-$\delta = t$. The vectors $\pm e^C_1 = (\pm1, 0)$ and $\pm e^C_2 = (0, \pm1)$
-give the four sides: $\langle (1, 0), c_T - c\rangle = x_t(a, b) - c_x$, and so
-on. The vectors $e^T_1$ and $\pm e^T_2$ give $m_{\mathrm{own}}$ and
+$\delta = t$ (Figure 9.9). The vectors $\pm e^C_1 = (\pm1, 0)$ and
+$\pm e^C_2 = (0, \pm1)$ give the four sides:
+$\langle (1, 0), c_T - c\rangle = x_t(a, b) - c_x$, and so on. The vectors
+$e^T_1$ and $\pm e^T_2$ give $m_{\mathrm{own}}$ and
 $m^\pm_{\mathrm{sec}}$, as $\langle u(t), c_T\rangle = a$ and
 $\langle u(t + \frac\pi2), c_T\rangle = b$. The last vector, $-e^T_1$, does not
 separate: $\langle c, u(t)\rangle \le c_x|\cos t| + c_y|\sin t| \le \omega(t)$,
@@ -698,15 +744,14 @@ as $c_x, c_y \le \frac12$, so
 $\langle -e^T_1, c_T - c\rangle = \langle c, u(t)\rangle - a \le \omega(t) - \frac12 < \tau(t)$.
 $\square$
 
-![Two panels with the containing square C, grey, around the origin o, and a turned square T, orange. Left: T to the right of C, beyond the dashed line of the east side of C. Right: T to the left of C, turned by about 26 degrees; the dashed line perpendicular to the own axis e1 of T passes through the corner of C farthest along e1, and T lies beyond it](figures/09-six/separators.svg)
+![Two panels with the containing square C, grey, around the origin o, and a turned square T, orange. Left, along the east side of C: T to the right of C, beyond the dashed line of the east side of C. Right, along the own axis of T: T to the left of C, turned by about 26 degrees, with its own axis e1 drawn as an arrow; the dashed line perpendicular to e1 passes through the corner of C farthest along e1, and T lies beyond it](figures/09-six/separators.svg)
 
-*Figure 9.5.* Two of the separators of Lemma 9.13. Left: $T$ lies beyond the
+*Figure 9.9.* Two of the separators of Lemma 9.13. Left: $T$ lies beyond the
 east side of $C$. Right: $C$ lies behind the line perpendicular to the own axis
 $e_1$ of $T$ through its farthest point along $e_1$, and $T$ lies beyond it:
 $T$ is separated from $C$ along its own axis. The secondary axis of $T$ and the
-other sides of $C$ work in the same way. The eighth way, along $-e_1$, would
-put $C$, and with it the origin, beyond the near edge of $T$, which an exterior
-square does not allow.
+other sides of $C$ work in the same way. The eighth way, along $-e_1$, never
+occurs: it would put $C$, and with it the origin, beyond the far edge of $T$.
 
 *Lean:
 [`Six.Normalization.central_separators_complete`](../../SquaresInCircles/Six/Normalization/Basic.lean#L320),
@@ -744,9 +789,9 @@ this is more than the whole circle.
 
 *Proof.* The reflection $(x, y) \mapsto (y, x)$ maps the packing to a packing
 in the same disk, with $Q(c_y, c_x)$ in the place of $C$; so we may assume
-$c_y \le c_x$, and suppose $c_x > c_0$. Let the *free arc* be the set of points
-$q = \frac9{10}u(\theta)$ with $-\frac14 < \theta < \frac9{20}$ if
-$c_y \le c_0$, and $0 < \theta < \frac7{10}$ if $c_y > c_0$. Its points
+$c_y \le c_x$, and suppose $c_x > c_0$. Let the *free arc* (Figure 9.10) be the
+set of points $q = \frac9{10}u(\theta)$ with $-\frac14 < \theta < \frac9{20}$
+if $c_y \le c_0$, and $0 < \theta < \frac7{10}$ if $c_y > c_0$. Its points
 satisfy the hypotheses of Lemma 9.14: $q_1 = \frac9{10}\cos\theta > 0$, and
 $q_2 = \frac9{10}\sin\theta$ lies in $[-\frac9{40}, \frac25]$ in the first case
 and in $[0, \frac35]$ in the second, since $\sin\theta \ge \theta$ for
@@ -785,14 +830,15 @@ sets. By [Lemma 3.16](03-tools.md#lemma-316-angular-budget),
 $\frac7{20} + 5\cdot\frac{14}{25} < \pi$; but the left side is
 $\frac{63}{20} > \pi$. $\square$
 
-![Two panels, each with the containing square C = Q(cx, cy) for cx just above c0, the origin o inside it, the circle of radius 9/10 dotted, and the free arc east of C drawn thick: left, cy at most c0 and the arc from -1/4 to 9/20; right, cy above c0 and the arc from 0 to 7/10. Dashed support lines of C at distance rho0 - 1/2 from the origin, in several directions, all pass between C and the free arc](figures/09-six/free-arc.svg)
+![Two panels, each with the containing square C = Q(c), the origin o inside it, the circle of radius 9/10 dotted, the east side of C dashed, and the free arc east of C drawn thick and red: left, c = (0.24, 0.05), so cy is at most c0, and the arc from -1/4 to 9/20; right, c = (0.24, 0.2), so cy is above c0, and the arc from 0 to 7/10. Blue dashed lines, support lines of C at distance rho0 - 1/2 from the origin, two on the left and one on the right, pass between C and the free arc, and the sides beyond them are shaded](figures/09-six/free-arc.svg)
 
-*Figure 9.6.* The free arc in the proof of Proposition 9.15, for
-$c_x$ slightly above $c_0$: left $c_y \le c_0$, right $c_y > c_0$. The
-dashed lines are support lines of $C$ at distance at most $\rho_0 - \frac12$
-from the origin, the only lines along which another square can be separated
-from $C$ by one of its own axes; none of them reaches the free arc, and the
-east side of $C$ is too far out for any square.
+*Figure 9.10.* The free arc (red) in the proof of Proposition 9.15, for
+$c = (0.24, 0.05)$, left, and $c = (0.24, 0.2)$, right. A square separated
+from $C$ along its own or its secondary axis lies beyond a support line of $C$
+at distance at most $\rho_0 - \frac12$ from the origin; the lines of this kind
+closest to the free arc are dashed blue, the sides beyond them shaded, and
+none reaches the arc (Lemma 9.14). The east side of $C$ (black, dashed) is too
+far out for any square.
 
 *Lean:
 [`Six.Normalization.central_box`](../../SquaresInCircles/Six/Containing.lean#L335),
@@ -817,8 +863,8 @@ be disjoint from $C = Q(c)$. Then:
 
 *Proof.* (1) The offsets of the origin from $C$ are $c_x, c_y \le c_0$, so by
 [Lemma 3.9](03-tools.md#lemma-39-inscribed-disks) (2) the open disk of radius
-$\frac12 - c_0 = r_0$ about the origin lies in $C^\circ$; and no point of
-$\overline T$ lies in $C^\circ$
+$\frac12 - c_0 = r_0$ about the origin lies in $C^\circ$ (Figure 9.11); and no
+point of $\overline T$ lies in $C^\circ$
 ([Lemma 3.12](03-tools.md#lemma-312-supporting-line) (2)). In the frame $t$ the
 closed square $\overline T$ is $[a - \frac12, a + \frac12] \times [b - \frac12, b + \frac12]$,
 with $a - \frac12 \ge 0$, so its point nearest to the origin is at squared
@@ -833,18 +879,21 @@ $a - \frac12$, and $a \ge r_0 + \frac12 = a_0$. Then
 $(|b| + \frac12)^2 \le Q_0 - (a_0 + \frac12)^2 = Q_0 - (\frac52 - \rho_0)^2$,
 which is $|b| \le U_0$; and $a \le \rho_0$ is Lemma 9.10 (2).
 
-(2) Both secondary margins would need
+(2) A nonnegative secondary margin needs
 $|b - \langle c, u(t + \frac\pi2)\rangle| \ge \tau(t) \ge 1$
-([Lemma A.15](appendix-a.md#lemma-a15-small-angles) (2)). But $|b| \le U_0 < 0.463$
-and $|\langle c, u(t + \frac\pi2)\rangle| \le c_x + c_y < 0.226$. $\square$
+([Lemma A.15](appendix-a.md#lemma-a15-small-angles) (2)). But
+$|b| \le U_0 < 0.463$ and
+$|\langle c, u(t + \frac\pi2)\rangle| \le c_x + c_y < 0.226$. $\square$
 
-![The containing square C = Q(c) with c in the small box [0, c0] squared drawn near the origin, the open disk of radius r0 about the origin inside C, and two exterior squares beside C whose near edges stay outside that disk; the radial coordinate a of one of them is marked, at least a0](figures/09-six/core.svg)
+![The containing square C = Q(c), grey, with c = (c0, c0) at the far corner of the small box [0, c0] squared, drawn darker at the origin o; the open disk of radius r0 about the origin, shaded red, lies inside C and touches its left and bottom sides, with a radius r0 drawn to the left side. Beyond these sides the squares W and S avoid the disk; along the own axis of S, dashed, its near edge, a dot, lies outside the disk, and its centre lies 1/2 further, at the radial coordinate a](figures/09-six/core.svg)
 
-*Figure 9.7.* The core. Wherever $c$ lies in the box $[0, c_0]^2$ (shaded,
-enlarged), the open disk of radius $r_0 \approx 0.387$ about the origin lies in
-$C^\circ$. The other squares avoid it, so their near edges are at least $r_0$
-from the origin, and their centres at least $a_0 = r_0 + \frac12$ along their
-own axes.
+*Figure 9.11.* The core, with $C$ in its farthest position $c = (c_0, c_0)$,
+the corner of the box $[0, c_0]^2$ (dark grey). For every $c$ in the box the
+open disk of radius $r_0 = \frac12 - c_0 \approx 0.387$ about the origin lies
+in $C^\circ$; here it touches the left and bottom sides of $C$. The other
+squares avoid it, so their near edges are at least $r_0$ from the origin, and
+their centres at least $a_0 = r_0 + \frac12$ along their own axes (dashed, for
+$S$).
 
 *Lean:
 [`Six.Normalization.avoidsCore_of_disjoint`](../../SquaresInCircles/Six/Normalization/Basic.lean#L109),
@@ -871,16 +920,18 @@ The proof is given in [Appendix B](appendix-b.md#b2-proof-of-lemma-917).
 
 A *deep cap* is the part of the disk beyond a line at distance at least $r_0$
 from its centre. The lemma says that a square in a deep cap is nearly square
-to the line, reaches across it at its middle, and has its own axis pointing
-into the cap. For $\eta \ge \frac12$, which is the case of the east and north
-sides of $C$, the angle is less than $0.203$ (Figure 9.8).
+to the line, contains the point $(\eta + \frac12, 0)$ on the axis of the cap,
+and has its own axis pointing into the cap. For $\eta \ge \frac12$, which is
+the case of the east and north sides of $C$, the angle is less than $0.203$
+(Figure 9.12).
 
-![Left: the disk of squared radius Q0 cut by a vertical line x = eta at the depth r0; a square in the cap beyond it, turned by a small angle t, touches the line with a corner and contains the point (eta + 1/2, 0), marked. Right: the graph of the depth of the deepest cap that holds a square turned by t, against t from 0 to pi/4, falling from rho0 - 1/2 through 1/2 at about t = 0.2 and r0 at about t = 0.4](figures/09-six/caps.svg)
+![Left: the disk of squared radius Q0 cut by the vertical line x = eta, with eta = 0.45; a square turned by t = 0.15 lies in the shaded cap beyond the line and contains the point (eta + 1/2, 0), marked. Right: the graph of the depth eta of the deepest cap that holds a square turned by t, against t from 0 to pi/4, falling from rho0 - 1/2; its crossings with the dashed levels 1/2 and r0 are marked, just before the ticks t = 0.203 and t = 2/5](figures/09-six/caps.svg)
 
-*Figure 9.8.* Left: a square in a deep cap beyond $x = \eta$ holds the point
-$(\eta + \frac12, 0)$. Right: the depth of the deepest cap that holds a square
-turned by $t$ against the normal of the line; it falls below $\frac12$ before
-$t = 0.203$ and below $r_0$ before $t = \frac25$, which gives (1) and (2).
+*Figure 9.12.* Left: a square in a deep cap beyond $x = \eta$ holds the point
+$(\eta + \frac12, 0)$; here $\eta = 0.45$ and $t = 0.15$. Right: the depth of
+the deepest cap that holds a square turned by $t$ against the normal of the
+line; it falls below $\frac12$ before $t = 0.203$ and below $r_0$ before
+$t = \frac25$, which gives (1) and (2).
 
 *Lean:
 [`Six.Normalization.deep_cap_bounds`](../../SquaresInCircles/Six/Normalization/Caps.lean#L330),
@@ -901,19 +952,20 @@ p_E = \tfrac9{10}u(0), \qquad p_N = \tfrac9{10}u\left(\tfrac\pi2\right), \qquad 
 The reflection $(x, y) \mapsto (y, x)$ in the diagonal exchanges $p_E$ and
 $p_N$, and $p_W$ and $p_S$, and fixes $p_D$.
 
-The reflection maps the direction $\theta$ to $\frac\pi2 - \theta$, which
-exchanges $0$ and $\frac\pi2$, and $\frac{11\pi}{12}$ and
-$\frac{19\pi}{12} - 2\pi$, and fixes $\frac{5\pi}4 - 2\pi$. In the model each
-square other than $C$ holds the pin of its name (Figure 9.9): the pins sit near
-the middle of the arcs of Figure 9.3, $p_W$ and $p_S$ turned by $\frac\pi{12}$
+Indeed, the reflection maps the direction $\theta$ to $\frac\pi2 - \theta$,
+and $\frac\pi2 - \frac{11\pi}{12} = \frac{19\pi}{12} - 2\pi$,
+$\frac\pi2 - \frac{5\pi}4 = \frac{5\pi}4 - 2\pi$. In the model each square
+other than $C$ holds the pin of its name (Figure 9.13): the pins sit near the
+middle of the arcs of Figure 9.6, $p_W$ and $p_S$ turned by $\frac\pi{12}$
 towards $D$, whose pin lies on the diagonal.
 
 ![The model with the dotted circle of radius 9/10 about o and the five pins on it, at 0, 90, 165, 225 and 285 degrees, each drawn as a dot inside the square of its name E, N, W, D, S; the chords between consecutive pins are drawn thin](figures/09-six/pins.svg)
 
-*Figure 9.9.* The five pins in the model, on $\Gamma_{9/10}$: $p_E$, $p_N$,
+*Figure 9.13.* The five pins in the model, on $\Gamma_{9/10}$: $p_E$, $p_N$,
 $p_W$, $p_D$, $p_S$ at $0°$, $90°$, $165°$, $225°$ and $285°$. Consecutive pins
-are $\frac\pi3$ apart from $W$ to $S$, and $\frac\pi2$ and $\frac{5\pi}{12}$
-apart round the other way; the chords between them are used in §9.6.
+are $\frac\pi3$ apart from $W$ to $D$ and from $D$ to $S$, and
+$\frac{5\pi}{12}$, $\frac\pi2$, $\frac{5\pi}{12}$ apart from $S$ to $E$, $E$ to
+$N$ and $N$ to $W$; the chords between them are used in §9.5 and §9.6.
 
 *Lean:
 [`Six.Normalization.pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L32),
@@ -964,11 +1016,11 @@ by (1). Suppose finally that $a - \frac12 \ge \frac9{10}\cos v$. By (3),
 $a - \frac12 < \frac9{10}\cos(\frac\pi3 - v)$, and by (4) with $z = v$,
 $|b| + \frac12 < 1 - \frac9{10}\sin(\frac\pi3 - v)$, so
 $\frac9{10}\sin(\frac\pi3 - v) - \frac12 < -|b| \le b$: again $P_2$ lies in the
-square. $\square$
+square (Figure 9.14). $\square$
 
-![Three panels, each with the dotted circle of radius 9/10 about o, two points on it at directions q and q + 60 degrees, and a square in the disk turned by an angle between them: one square contains the first point, one the second, and one, turned by 30 degrees, both](figures/09-six/sixty.svg)
+![Three panels, each with an arc of the circle of radius 9/10 about o, the two points of it in the directions 0 and 60 degrees joined to o by dashed lines, and a square in the disk turned by an angle between them, written below; the points it holds are red: the square turned by 0.12 holds the first point, the one turned by 0.95 the second, and the one turned by 30 degrees both](figures/09-six/sixty.svg)
 
-*Figure 9.10.* Lemma 9.19 for $q = 0$. Three squares in the disk of squared
+*Figure 9.14.* Lemma 9.19 for $q = 0$. Three squares in the disk of squared
 radius $Q_0$, with $|b| < \frac12$ and turned by $0.12$, $0.95$ and
 $\frac\pi6$, and the two points of $\Gamma_{9/10}$ in the directions $0$ and
 $\frac\pi3$; each square holds one of them (red), the last one both. To avoid
@@ -1048,14 +1100,9 @@ $p_E \leftrightarrow p_N$ and $p_W \leftrightarrow p_S$, turns (E) into (N) and
 sides. The east side is the line $x = \eta$ with
 $\eta = \frac12 + c_x \ge \frac12$, and the margin says that $T$ lies beyond it.
 By Lemma 9.17 (3), $t \equiv v$ with $|v| < \frac25$, and then by Lemma 9.17 (1)
-and (2), $|v| < 0.203$ and $T$ contains the point $(L, 0)$,
-$L = \eta + \frac12 \ge 1$. It then contains $p_E$: in its frame, $p_E$ has the
-coordinates $(\frac9{10}\cos v - a, -\frac9{10}\sin v - b)$ and $(L, 0)$ the
-coordinates $(L\cos v - a, -L\sin v - b)$; the second coordinate of $p_E$ lies
-between $-b$ and that of $(L, 0)$, both in $(-\frac12, \frac12)$, and the first
-lies in $(-\frac12, \frac12)$ because
-$\frac9{10}\cos v \le \frac9{10} < a + \frac12$ and
-$a - \frac12 \le \rho_0 - \frac12 < \frac9{10}\cos 0.203$. This is (E). The west
+and (2), $|v| < 0.203$ and $T$ contains the point $(\eta + \frac12, 0)$, with
+$\eta + \frac12 \ge 1$. So $T$ contains $p_E$, by
+[Lemma B.13](appendix-b.md#lemma-b13-the-east-pin) (2). This is (E). The west
 side is the line $x = -\eta$ with $\eta = \frac12 - c_x \ge r_0$; turned by
 $\pi$, the picture becomes that of a deep cap beyond $x = \eta$, and Lemma 9.17
 (3) gives $t \equiv \pi + v$ with $|v| < \frac25$. If $v \le -\frac\pi{12}$, the
@@ -1098,6 +1145,13 @@ along some axis, and only along the axes allowed for $X$ in Table 9.1.
 *Table 9.1.* The labels, their pins, the phases of the model, the windows of the
 phases and the allowed separators from $C$.
 
+![The plane around the origin with the five windows of Table 9.1 drawn as coloured sectors of directions, one for each of E, N, W, D and S, each containing the direction of its pin and the phase of the model; the sectors of W, D and S overlap where the angles can be shared, and the model's phases are marked by rays](figures/09-six/windows.svg)
+
+*Figure 9.15.* The windows of the phases (Table 9.1), drawn as sectors of
+directions, with the phases of the model (solid rays) and the pins (dots). The
+window of $D$ is wide and overlaps those of $W$ and $S$: the pins alone do not
+order these three squares; §9.5 does.
+
 *Proof.* *Labels.* By Proposition 9.21 each of the five squares holds a pin,
 and two disjoint squares cannot hold the same pin, since it would lie in both
 open squares. Choosing one pin for each square gives an injective map from the
@@ -1115,7 +1169,7 @@ $t_D - \frac{5\pi}4 = v - \frac\pi4 \in (-\frac\pi3, 0]$. In case (S), likewise,
 $t_S - \frac{3\pi}2 \in (-\frac58, \frac23)$, or $X = D$ and
 $t_D - \frac{5\pi}4 = v + \frac\pi4 \in [0, \frac\pi3)$. In every case the
 representative in the window is the one in $[\theta_X - \pi, \theta_X + \pi]$,
-since the windows lie inside $(-\pi, \pi)$.
+since the windows lie inside $(-\pi, \pi)$ (Figure 9.15).
 
 *Allowed axes.* By Lemma 9.16 (2) no square is separated from $C$ along its
 secondary axis, and the own axis is allowed for all. If $X$ is separated along
@@ -1126,13 +1180,6 @@ separated along the north side. If $X$ is separated along the west side, it
 lies beyond $x = c_x - \frac12 < 0$, and the pins $p_E$, $p_N$ and $p_S$ have
 nonnegative first coordinates; so $X$ is $W$ or $D$. Likewise only $D$ and $S$
 can be separated along the south side. $\square$
-
-![The plane around the origin with the five windows of Table 9.1 drawn as coloured sectors of directions, one for each of E, N, W, D and S, each containing the direction of its pin and the phase of the model; the sectors of W, D and S overlap where the angles can be shared, and the model's phases are marked by rays](figures/09-six/windows.svg)
-
-*Figure 9.11.* The windows of the phases (Table 9.1), drawn as sectors of
-directions, with the phases of the model (solid rays) and the pins (dots). The
-window of $D$ is wide and overlaps those of $W$ and $S$: the pins alone do not
-order these three squares; §9.5 does.
 
 *Lean:
 [`Six.Normalization.pinPacking_of_ceiling`](../../SquaresInCircles/Six/Normalization/Complete.lean#L180),
@@ -1210,6 +1257,21 @@ bound $\sigma_k$ for it a *support*. The forces add up to zero, so the identity
 does not depend on $o$; we always take $o$ to be the disk centre, where the
 supports come from the disk.
 
+The simplest stress has one edge (Figure 9.16). If two axis-parallel
+squares $U$ and $V$ in a closed disk of radius $R$ are separated along
+$n = (1, 0)$, the forces are $n$ on $V$ and $-n$ on $U$, the centre bound of
+Lemma 9.25 (2) below bounds each work by
+$\rho = \sqrt{R^2 - \frac14} - \frac12$, and Lemma 9.24 gives $1 \le 2\rho$,
+that is $R \ge \frac{\sqrt5}2$, the radius of two squares in
+[Chapter 5](05-two.md).
+
+![Two unit squares U and V side by side, forming a 2 by 1 rectangle, in the dashed circle of radius root 5 over 2 about o; a thin grey arrow with the weight 1 joins the centre of U to that of V, and thick arrows show the forces, n on V pointing right and -n on U pointing left; the four outer corners of the rectangle lie on the circle](figures/09-six/one-edge.svg)
+
+*Figure 9.16.* The stress of one edge, from $U$ to $V$ along
+$n = (1, 0)$, with the weight $1$ and the threshold $\tau(0) = 1$. The work of
+each force is at most $\rho$, so $1 \le 2\rho$; at $R = \frac{\sqrt5}2$, where
+$\rho = \frac12$, both bounds are attained, by the $2 \times 1$ rectangle.
+
 *Lean: the instances
 [`Six.west_force_balance`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L640),
 [`Six.Stress.edge_work_identity`](../../SquaresInCircles/Six/Stress/StressBound.lean#L79),
@@ -1258,21 +1320,22 @@ because $B \ge \beta$ and $\alpha V \le \beta U$. So
 $UA + VB \le U\alpha + V\beta$, that is
 $U|a| + V|b| \le \rho U$, and $Ua - Vb \le U|a| + V|b|$. $\square$
 
-The three bounds are attained in different places (Figure 9.12). The far
+The three bounds are attained in different places (Figure 9.17). The far
 vertex bound (1) is attained when the far vertex of the square lies on the
 circle in the direction of the force; it is the bound for a force that is far
 from both axes of the square. The centre bound (2) is attained when the centre
 lies at distance $\rho$ in the direction of the force, which is possible only
 along an axis of the square. The cap bound (3) says that for a force close to
-the primary axis, $V \le \frac U{2\rho + 1}$, the work is largest when the
+the own axis, $V \le \frac U{2\rho + 1}$, the work is largest when the
 square touches the circle with the two corners of its far edge.
 
-![Three panels, each with the circle of radius R0 and a square in the disk, a force drawn as an arrow at the centre of the disk and the line perpendicular to it through the farthest point of the square: left, a force far from both axes, the square touching the circle with its far vertex in the direction of the force; middle, a force along the primary axis, the square touching the circle with both corners of its far edge and its centre at distance rho0; right, a force tilted slightly from the primary axis, still largest at the same position](figures/09-six/supports.svg)
+![Three panels, each with the right part of the dashed circle of radius R0 about o, an axis-parallel square in the disk, a force F drawn as an arrow from o, and the dashed line perpendicular to F through the point of the square farthest along F. Left, the far vertex: F at about 31 degrees, and the square touching the circle with its far vertex in the direction of F. Middle, the centre: F along the first axis, the square touching the circle with both corners of its far edge, and its centre at the distance rho0 from o, marked. Right, the cap: F tilted by about 11 degrees from the first axis, and the work still largest at the same square](figures/09-six/supports.svg)
 
-*Figure 9.12.* The supports of Lemma 9.25. Left, the far vertex bound: the
-square reaches out in the direction of the force with a vertex. Middle, a force
-along an axis: the centre is at distance $\rho_0$ and the square touches the
-circle with a whole edge. Right, a force close to the axis: the cap bound,
+*Figure 9.17.* The supports of Lemma 9.25, in the disk of radius $R_0$. Left,
+the far vertex bound: the square reaches out in the direction of the force
+with a vertex. Middle, a force along an axis: the centre is at the distance
+$\rho_0$ and the square touches the circle with both corners of its far edge.
+Right, a force close to the axis, here with $V = \frac15U$: the cap bound,
 attained at the same square.
 
 *Lean:
@@ -1328,7 +1391,7 @@ Let
 r_* = \frac{s_* + \frac12}{s_* + \frac32}, \qquad k_* = \frac{t_* + \frac12}{\frac32 - s_*}, \qquad m_* = (1 + r_*)k_*, \qquad K_* = 2hm_*, \qquad \beta_* = m_*\left(\tfrac12 - t_*\right) ,
 ```
 
-so that $r_* \approx 0.36878$, $k_* \approx 0.65000$, $m_* \approx 0.88970$,
+so that $r_* \approx 0.36878$, $k_* \approx 0.64999$, $m_* \approx 0.88970$,
 $K_* \approx 1.25822$ and $\beta_* \approx 0.07097$. In the model, give the
 weight $1$ to the four edges from $C$ to $E$, $N$, $W$ and $S$, with the
 normals $(1, 0)$, $(0, 1)$, $(-1, 0)$ and $(0, -1)$; the weight $r_*$ to the
@@ -1346,7 +1409,7 @@ $S$.
 3. $2\beta_* + K_*(1 - \rho_*) = 0$.
 
 *Proof.* (1) Adding $\lambda_e n_e$ at the target and $-\lambda_e n_e$ at the
-source of each edge,
+source of each edge (Figure 9.18),
 
 ```math
 F_C = 0, \quad F_E = (1, r_*), \quad F_N = (r_*, 1), \quad F_W = (1 + r_*)(-1, k_*), \quad F_S = (1 + r_*)(k_*, -1), \quad F_D = -m_*(1, 1) .
@@ -1378,13 +1441,14 @@ $\rho = \rho_*$.
 2\beta_* + K_*(1 - \rho_*) = m_*\left(1 - 2t_* + 2h - 4h^2 d_*\right) = m_*\left(1 - 2t_* + 2h - 2d_*\right) = 0 . \qquad \square
 ```
 
-![The model in its dashed circle with the eight edges of its stress drawn as thin arrows between the centres, labelled with their weights 1, r* and m*, and the resulting force on each square drawn as a thick arrow from its centre: none on C, and on E, N, W and S arrows pointing at the corners of these squares on the circle; on D an arrow along the diagonal, away from the origin, towards the midpoint of its two vertices on the circle](figures/09-six/stress.svg)
+![The model in its dashed circle with the eight edges of its stress drawn as thin arrows between the centres, labelled with their weights 1, r* and m*, and the resulting force on each square drawn as a thick arrow from its centre: none on C; on E, N, W and S arrows parallel to the dotted radii from o to the corners of these squares on the circle; on D an arrow along the diagonal, away from the origin, towards the midpoint of its two vertices on the circle](figures/09-six/stress.svg)
 
-*Figure 9.13.* The stress of the model. The edges (thin, with their weights)
+*Figure 9.18.* The stress of the model. The edges (thin, with their weights)
 push $C$ in four opposite directions, so it feels no force; each of $E$, $N$,
-$W$ and $S$ is pushed straight at its corner on the circle, and $D$ along the
-diagonal. Every support bound is attained, so the threshold sum equals the sum
-of the supports: in the model nothing can move outwards.
+$W$ and $S$ is pushed along the radius through its corner on the circle
+(dotted), and $D$ along the diagonal. Every support bound is attained, so the
+threshold sum equals the sum of the supports: in the model nothing can move
+outwards.
 
 Proposition 9.27 already proves a weak form of the theorem: if six squares,
 five of them parallel and one turned by $\frac\pi4$, were separated along the
@@ -1393,9 +1457,17 @@ of Lemma 9.25 at the radius $R$ would give
 $4 + 2r_* + m_*(1 + 2h) \le 2V_1(R) + 2V_2(R) + K_*\rho(R)$, where
 $V_1(R) = R|F_E| - \frac12(1 + r_*)$ and
 $V_2(R) = R|F_W| - \frac12(1 + r_* + m_*)$; the right side increases with $R$
-and equals the left side at $R_6$, so $R \ge R_6$. The rest of the chapter
-removes the two assumptions: that the squares are turned as in the model, and
-that they are separated along the same axes. Most of the work is the second.
+and equals the left side at $R_6$, so $R \ge R_6$ (Figure 9.19). The rest
+of the chapter removes the two assumptions: that the squares are turned as in
+the model, and that they are separated along the same axes. Most of the work
+is the second.
+
+![Against the radius R from 1.55 to 1.85, the threshold sum of the stress of the model, a horizontal line at about 6.886, and the sum of the supports at the radius R, an increasing line; they cross at R = R6, marked](figures/09-six/stress-radius.svg)
+
+*Figure 9.19.* The weak form: the threshold sum
+$4 + 2r_* + m_*(1 + 2h) \approx 6.886$ of the stress of the model and the sum
+$2V_1(R) + 2V_2(R) + K_*\rho(R)$ of the supports at the radius $R$. They meet
+at $R_6$; below it the supports cannot pay for the thresholds.
 
 *Lean: [`Six.rStar`](../../SquaresInCircles/Six/Constants.lean#L194),
 [`Six.kStar`](../../SquaresInCircles/Six/Constants.lean#L196),
@@ -1516,7 +1588,8 @@ of radius $r_0$ about the origin, with $0 \le t' - t \le \frac{16}{15}$. Then
 $U$ and $V$ are separated along $e^U_2$ or along $e^V_2$.
 
 *Proof.* As in the proof of Lemma 9.16 (1), avoiding the disk gives
-$a, a' \ge a_0 > \frac78$ and $|b|, |b'| < \frac12$; and $a, a' \le \rho_0$.
+$a, a' \ge a_0 > \frac78$ and $|b|, |b'| < \frac12$; and $a, a' \le \rho_0$
+(Figure 9.20).
 Put $\delta = t' - t$, so that $0 \le \sin\delta$ and
 $\cos\delta \ge \cos\frac{16}{15} > \frac{12}{25}$ (Lemma A.7 (3)), and
 $\tau(\delta) = \frac12 + \frac12(\cos\delta + \sin\delta)$. We show that six of
@@ -1534,6 +1607,16 @@ the eight vectors of Lemma 9.11 do not separate, using the coordinates there.
 - *$-e^V_2$.* $-(b' + a\sin\delta - b\cos\delta) \le -b' + \frac12\cos\delta < \tau(\delta)$.
 
 So the separating vector is $e^U_2$ or $e^V_2$. $\square$
+
+![The core disk of radius r0 about o, red, inside a thin blue annulus between the circles of radii a0 and rho0, the three radii labelled; two squares U, orange, and V, green, turned by 0.75 against each other, with their centres, dots, in the annulus; the dashed line along the lower edge of U, perpendicular to the secondary axis e2 of U, drawn as an arrow, separates them, and a vertex of V touches it](figures/09-six/annulus.svg)
+
+*Figure 9.20.* Lemma 9.31. Squares that avoid the core (red) have their
+centres in the annulus $a_0 \le |c| \le \rho_0$ (blue), of width less than
+$0.23$; so when they are turned by at most $\frac{16}{15}$ against each other,
+the projections of their centres on an own axis differ by less than
+$\tau(\delta) \ge 1$, and the order of the phases excludes $-e^U_2$ and
+$-e^V_2$. Here $t' - t = 0.75$, and $U$ and $V$ are separated along $e^U_2$
+(dashed).
 
 *Lean:
 [`Six.turned_pair_secondary`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L103),
@@ -1563,7 +1646,17 @@ $\pi - \frac23 \le t \le \frac{5\pi}4$,
 
 as $\frac{13\pi}{12} - t \in [-\frac\pi6, \frac\pi{12} + \frac23] \subset (-\frac\pi2, \frac\pi2)$;
 both $t_D$ and $t_W$ are such phases. So the chord from $p_D$ to $p_W$ has a
-negative projection on both $e^D_2$ and $e^W_2$, a contradiction. $\square$
+negative projection on both $e^D_2$ and $e^W_2$ (Figure 9.21), a
+contradiction. $\square$
+
+![The squares C, W and D of the model, faint, the dotted circle of radius 9/10 with the pins p_W and p_D, and the chord from p_D to p_W drawn as an arrow; at the midpoint of the chord a shaded fan of the directions u(t + pi/2) for the phases t from pi - 2/3 to 5 pi/4, containing the vectors e2 of W and of D of the model, drawn as arrows; the whole fan lies on the far side of the dashed line through the midpoint perpendicular to the chord](figures/09-six/pin-order.svg)
+
+*Figure 9.21.* Lemma 9.32. The directions $u(t + \frac\pi2)$ for
+$\pi - \frac23 \le t \le \frac{5\pi}4$ (the fan, with the secondary axes
+$e^W_2$ and $e^D_2$ of the model) all make an obtuse angle with the chord from
+$p_D$ to $p_W$: they point to the side of the dashed line perpendicular to the
+chord away from $p_W$. So, with $t_D \le t_W$, neither secondary axis could
+separate $D$ from $W$.
 
 *Lean:
 [`Six.west_before_diagonal`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L176),
@@ -1598,18 +1691,21 @@ inequalities, from $C$ to $W$ along the own axis of $W$, from $C$ to $D$ along
 $(-1, 0)$ and between $W$ and $D$ along that secondary axis, are summed with the
 weights $\frac9{20}$, $\frac3{10}$ and $\frac14$. The supports of the three
 forces, by the box of $c$ for $C$ and by the far vertex for $W$ and $D$, add up
-to less than the thresholds for every pair of angles in the triangle of the
-proposition (Figure 9.14).
+to less than the thresholds for every pair of angles allowed by the
+proposition (Figure 9.22).
 
-![The containing square C with a square W to its left, separated from C along its own axis and turned down by a small angle, and a square D below and left of C, separated from C along the west side of C: the three separating lines are dashed and the three forces of the west stress drawn as arrows at the centres; beside it, the triangle of the angles t and u, cut by t = 0 and u = 0 into three parts, with its seven vertices marked](figures/09-six/west-stress.svg)
+![Two panels. Left: the containing square C, grey, around the origin o; W, purple, to its upper left, turned by -0.3 and separated from C along its own axis; D, cyan, to its lower left, turned by 0.15 and separated from C along the west side of C, with a vertex on the lower edge of W, so that W and D are separated along the secondary axis of W. The three separating lines are dashed, the forces of the west stress are arrows at the centres of C, W and D, and the squares need the dashed circle of radius 1.807, larger than the dotted circle of radius R0. Right: the quadrilateral of the angles t and u allowed by the proposition, cut by t = 0 and u = 0 into three parts, with its seven vertices and the point (-0.3, 0.15) of the left panel marked](figures/09-six/west-stress.svg)
 
-*Figure 9.14.* The situation of Proposition 9.33, which the west stress
-excludes. Left: $W$ on its own axis and $D$ on the west side of $C$, with the
-three separating lines (dashed) and the forces of the stress on $C$, $W$ and $D$
-(arrows). Right: the triangle $-\frac23 \le t \le u$,
-$-\frac25 \le u \le \frac25$ of their angles, cut into three parts on which the
-stress is concave in each angle; it is positive at the seven vertices, and
-therefore everywhere (Appendix B).
+*Figure 9.22.* The situation of Proposition 9.33, which the west stress
+excludes. Left: $W$ on its own axis at $t = -0.3$, $D$ on the west side of $C$
+at $u = 0.15$, and $W$, $D$ separated along the secondary axis of $W$, all
+three separations tight (dashed lines), with the forces of the stress on $C$,
+$W$ and $D$ (arrows); these squares need a disk of radius about $1.807$
+(dashed), more than $R_0$ (dotted). Right: the region
+$-\frac23 \le t \le u$, $-\frac25 \le u \le \frac25$ of the angles, with the
+point of the left panel, cut into three parts on which the stress is concave
+in each angle; it is positive at the seven vertices, and therefore everywhere
+(Appendix B).
 
 ### Definition 9.34 (normalized packing)
 
@@ -1622,10 +1718,11 @@ windows. Its *angles* $e$, $n$, $w$, $d$, $s$ are defined by
 t_E = e, \qquad t_N = \tfrac\pi2 + n, \qquad t_W = \pi + w, \qquad t_D = \pi + d, \qquad t_S = \tfrac{3\pi}2 + s .
 ```
 
-In the model all five angles are $0$ except $d = \frac\pi4$. A square of a
-normalized packing is *on its matching side* if it is separated from $C$ along
-its matching side (Lemma 9.30), and *on its own axis* otherwise; by Lemma 9.30
-a square on its own axis is separated from $C$ along its own axis.
+In the model all five angles are $0$ except $d = \frac\pi4$ (Figure 9.23). A
+square of a normalized packing is *on its matching side* if it is separated
+from $C$ along its matching side (Lemma 9.30), and *on its own axis*
+otherwise; by Lemma 9.30 a square on its own axis is separated from $C$ along
+its own axis.
 
 *Lean:
 [`Six.Normalization.NormalizedPacking`](../../SquaresInCircles/Six/Normalization/Complete.lean#L605),
@@ -1705,14 +1802,15 @@ $0.203$. $\square$
 [`Six.Normalization.NormalizedPacking.east_cardinal_angle_small`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L42),
 [`Six.Normalization.NormalizedPacking.north_cardinal_angle_small`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L54).*
 
-![A normalized packing that is not the model: the containing square C with its centre in the small box, and the five other squares E, N, W, D, S at angles within their windows, each holding its pin on the dotted circle of radius 9/10; E, N and W are on their matching sides, D and S on their own axes, and the angles e, n, w, d, s are marked as small arcs from the directions 0, 90, 180, 180 and 270 degrees](figures/09-six/normalized.svg)
+![A normalized packing that is not the model: the containing square C with its centre in the small box, and the five other squares E, N, W, D, S at angles within their windows, each holding its pin on the dotted circle of radius 9/10; E, N and W are on their matching sides, D and S on their own axes. At each square a short dotted ray points in the direction 0, 90, 180, 180 or 270 degrees, an arrow along the own axis of the square, and a small arc between them is labelled with the angle e, n, w, d or s](figures/09-six/normalized.svg)
 
-*Figure 9.15.* The notation of Definition 9.34: the angles $e$, $n$, $w$,
-$d$, $s$ measured from the directions $0$, $\frac\pi2$, $\pi$, $\pi$ and
-$\frac{3\pi}2$, on six disjoint squares that hold their pins and have their
-angles in their windows. This configuration needs a disk of radius about
-$1.86$: within the ceiling the squares can hardly move away from the model, and
-the figure would not show the angles.
+*Figure 9.23.* The notation of Definition 9.34, on six disjoint squares that
+hold their pins and have their phases in their windows. At each square the
+angle runs from the direction $0$, $\frac\pi2$, $\pi$, $\pi$ or $\frac{3\pi}2$
+(dotted) to the own axis of the square (arrow); here $e = 0.18$, $n = -0.12$,
+$w = -0.22$, $d = 0.66$ and $s = 0.2$. These squares need a disk of radius
+about $1.86$: within the ceiling the squares can hardly move away from the
+model, and the angles would not show.
 
 ## 9.6 The separators of neighbours
 
@@ -1747,7 +1845,7 @@ chord between their pins. If that chord has a positive inner product with $e$,
 then $-e$ does not separate; so it suffices to compute the chords.
 
 (1) The chord from $p_W$ to $p_N$ is $\ell_1 u(\frac{5\pi}{24})$, and the
-chord from $p_S$ to $p_E$ is $\ell_1 u(\frac{7\pi}{24})$, with
+chord from $p_S$ to $p_E$ is $\ell_1 u(\frac{7\pi}{24})$ (Figure 9.24), with
 $\ell_1 = \frac95\sin\frac{5\pi}{24} > 0$. With the phases $\pi + w$ and
 $\frac\pi2 + n$, the vectors $-e^W_1 = u(w)$, $-e^W_2 = u(\frac\pi2 + w)$,
 $e^N_1 = u(\frac\pi2 + n)$ and $-e^N_2 = u(n)$ have the inner products
@@ -1771,9 +1869,9 @@ $e^D_2$ and $e^S_2 = u(s)$ are $-\frac9{10}\cos(d + \frac\pi{12}) < 0$,
 $\frac9{10}\sin(d + \frac\pi{12}) > 0$ and $\frac9{10}\cos(s + \frac\pi{12}) > 0$.
 $\square$
 
-![The model with its five pins on the dotted circle of radius 9/10, the chord from the pin of W to the pin of N and the chord from the pin of S to the pin of E drawn as arrows, and at the squares W, N, S and E the four axes that each chord selects, drawn as short arrows pointing roughly along the chord](figures/09-six/chords.svg)
+![The model with its five pins on the dotted circle of radius 9/10, the chord from the pin of W to the pin of N and the chord from the pin of S to the pin of E drawn as arrows, and in each of the squares W, N, S and E a pair of short arrows along (1, 0) and (0, 1): the vectors of the frames of W and N, or of S and E, that have a positive inner product with the chord](figures/09-six/chords.svg)
 
-*Figure 9.16.* Lemma 9.36 (1). The chord from $p_W$ to $p_N$ has a positive
+*Figure 9.24.* Lemma 9.36 (1). The chord from $p_W$ to $p_N$ has a positive
 inner product with the four vectors $-e^W_1$, $-e^W_2$, $e^N_1$, $-e^N_2$
 (short arrows), so $W$ and $N$, which hold these pins, can only be separated
 along one of them; likewise for $S$ and $E$.
@@ -1901,13 +1999,25 @@ $e^D_2$.
 [`Six.MissingWestWing`](../../SquaresInCircles/Six/Separators/Walls.lean#L333),
 [`Six.MissingSouthWing`](../../SquaresInCircles/Six/Separators/Walls.lean#L341).*
 
+![Three panels with the squares W, D and S, each with the separating lines of the pairs W, D and D, S dashed. Left, the model: W and D separated along the secondary axis of W, a horizontal line, and D and S along the secondary axis of S, a vertical line. Middle, a missing west wing, with w = -0.47, d = 0.57 and s = 0.19: W and D separated along the secondary axis of D, the line of the upper left edge of D, and D and S along the secondary axis of S. Right, a missing south wing, with w = -0.45, d = 0.6 and s = 0.4: W and D separated along the secondary axis of W, and D and S along the secondary axis of D, the line of the lower right edge of D](figures/09-six/wings.svg)
+
+*Figure 9.25.* The wings. Left, the model: $W$ and $D$ are separated along the
+secondary axis of $W$, and $D$ and $S$ along that of $S$ (dashed). Middle, a
+missing west wing ($w = -0.47$, $d = 0.57$, $s = 0.19$): $W$ and $D$ are
+separated along the secondary axis of $D$ instead. Right, a missing south wing
+($w = -0.45$, $d = 0.6$, $s = 0.4$): $D$ and $S$ are separated along the
+secondary axis of $D$. Lemma 9.42 (1) puts the angles of a missing wing beyond
+the walls $w = d - \frac\pi4$ and $s = d - \frac\pi4$, and Appendix D shows by
+stresses that no configuration of this kind fits in the disk of squared radius
+$Q_0$ together with $C$.
+
 ### Proposition 9.45 (the wings)
 
 Both wings hold: $W$ and $D$ are separated along $e^W_2$, and $D$ and $S$ along
 $e^S_2$.
 
 The proof, after Proposition 9.46, reduces this to the exclusion of a missing
-wing (Figure 9.17).
+wing (Figure 9.25).
 
 *Lean:
 [`Six.wing_separators`](../../SquaresInCircles/Six/Wings/Separators.lean#L133),
@@ -1936,16 +2046,6 @@ $e^S_2$, they are separated along $e^D_2$ by Proposition 9.41, $W$ and $D$ are
 then separated along $e^W_2$ by Lemma 9.37 and Lemma 9.42 (2), and the south
 wing is missing. $\square$
 
-![Three panels around the corner of W, D and S. Left: the model, with W and D separated along the secondary axis of W, a horizontal line, and D and S along the secondary axis of S, a vertical line, both drawn dashed. Middle: a configuration with a missing west wing, W turned up and D turned so that the line separating them is perpendicular to an axis of D, and D and S separated along the secondary axis of S. Right: a missing south wing, its mirror image](figures/09-six/wings.svg)
-
-*Figure 9.17.* The wings. Left, the model: $W$ and $D$ are separated along the
-secondary axis of $W$, and $D$ and $S$ along that of $S$ (dashed). Middle, a
-missing west wing: $W$ and $D$ are separated along the secondary axis of $D$
-instead. Right, a missing south wing, its mirror image. Lemma 9.42 (1) puts the
-angles of a missing wing beyond the walls $w = d - \frac\pi4$ and
-$s = d - \frac\pi4$, and Appendix D shows by stresses that no configuration
-of this kind fits in the disk of squared radius $Q_0$ together with $C$.
-
 ## 9.7 The tails
 
 The stress of the model in §9.8 needs the angles in a bounded range. For $W$
@@ -1953,7 +2053,7 @@ and $S$ on their matching sides, Proposition 9.35 (3) gives $|w|, |s| < \frac25$
 On their own axes they turn away from $D$ (Lemmas 9.38 and 9.43), and the
 windows allow them to turn up to $\frac23$; the next proposition cuts these
 tails off. Its proof is again a stress, on four edges: from $C$ to $W$ and to
-$S$, and the two wings of Proposition 9.45.
+$S$, and the two wings of Proposition 9.45 (Figure 9.26).
 
 ### Proposition 9.47 (the tails)
 
@@ -1962,15 +2062,16 @@ $S$ is separated from $C$ along its own axis, then $s < \frac{11}{25}$.
 
 The proof is given in [Appendix E](appendix-e.md#e1-proof-of-proposition-947).
 
-![The containing square C with W on its own axis, turned up by the angle 11/25, away from D, D in the corner, and S on the south side of C; the separating lines of C and W, C and S, and of the two wings are dashed, and the forces of the tail stress are drawn as arrows](figures/09-six/tails.svg)
+![The containing square C, grey, with its centre at (c0, 0); W, purple, on its own axis, turned up by the angle 11/25, away from D; S, pink, on its own axis, turned by 0.05; and D, cyan, at d = 0.6 in the corner, with a vertex on the lower edge of W and one on the left edge of S. The four separating lines of the tail stress are dashed: of C and W, perpendicular to the own axis of W; of C and S, perpendicular to the own axis of S; and of the two wings. The forces of the stress are arrows at the four centres, and the squares need the dashed circle of radius 1.713, a little larger than the dotted circle of radius R0](figures/09-six/tails.svg)
 
-*Figure 9.18.* $W$ on its own axis at the angle $w = -\frac{11}{25}$, with the
-wings and the separations from $C$ of the tail stress (the purple line: $W$
-from $C$ along its own axis; the arrows: the forces on $W$ and $D$). The more
-$W$ turns away from $D$, the farther out it must go along its own axis to clear
-$C$; these squares need a disk of radius about $1.763$ (dashed), more than
-$R_0$ (dotted), and the stress shows that at angles beyond $-\frac{11}{25}$
-none fits within the ceiling.
+*Figure 9.26.* The tail stress at $w = -\frac{11}{25}$, with $c = (c_0, 0)$,
+$s = 0.05$ and $d = 0.6$: $W$ and $S$ on their own axes, and the two wings,
+all four separations tight (dashed lines), with the forces of the stress
+(arrows) for the weights $\frac8{15}$, $\frac15$, $\frac16$ and $\frac1{10}$
+of Appendix E. The more $W$ turns away from $D$, the farther out it must go
+along its own axis to clear $C$; these squares need a disk of radius about
+$1.713$ (dashed), more than $R_0$ (dotted), and the stress shows that for
+$w \le -\frac{11}{25}$ none fits within the ceiling.
 
 *Lean:
 [`Six.WestTail.own_west_bound`](../../SquaresInCircles/Six/Tails/West.lean#L451),
@@ -2051,7 +2152,17 @@ the forces of Proposition 9.27 read in the frames of $N$ and $W$. The value
 $\Pi$ is the part of the thresholds that belongs to the pair, less the supports
 of the two forces, and less a penalty for the work of the forces on $C$: when
 $N$ or $W$ turns on its own axis, its edge from $C$ turns with it, and the force
-on $C$ no longer vanishes.
+on $C$ no longer vanishes. Figure 9.27 shows these edges and forces at
+angles other than those of the model.
+
+![The containing square C, grey, around the origin o; N, orange, above it, turned by 0.15 and separated from C along its own axis, its lower edge on a dashed line through the upper left corner of C; W, purple, to the left, turned by -0.2 and separated from C along the west side of C, a dashed vertical line; and N separated from W along the facet -e1 of W, the dashed line of the right edge of W, which a vertex of N touches. On each dashed line a short arrow shows the normal of the edge with its weight, 1, 1 or r*, and thick arrows show the forces F_N and F_W at the centres of N and W](figures/09-six/pair.svg)
+
+*Figure 9.27.* The edges of Definition 9.48 at $n = 0.15$, with $N$ on its
+own axis, and $w = -0.2$, with $W$ on its matching side, for the facet
+$f = -e^W_1$; all three separations are tight (dashed lines). The short arrows
+are the normals of the edges, with their weights; the thick arrows are the
+forces $F_N$ and $F_W$, the latter with the term $-m_* e^W_2$ of the edge from
+$W$ to $D$.
 
 ### Lemma 9.49 (the pair bound)
 
@@ -2130,7 +2241,16 @@ $w \in [-\frac25, \frac25]$ otherwise. Then, for each facet $f$,
 At $n = w = 0$ the value is $\beta_*$ for the two facets of the model, and
 larger than $\beta_*$ for the other two.
 
-The proof is given in [Appendix E](appendix-e.md#e2-proof-of-proposition-950).
+The proof is given in [Appendix E](appendix-e.md#e2-proof-of-proposition-950);
+Figure 9.28 shows the bound along $w$.
+
+![Against w, the least value of the value of the pair less beta*, over n, the four facets and both choices for N: one curve, labelled own axis, for W on its own axis and w from -11/25 to 0, and one, labelled matching side, for W on its matching side and w from -2/5 to 2/5; both lie above the dashed broken line l(w), meet it at w = 0, marked, and the first nearly meets it again at w = -11/25](figures/09-six/pair-bound.svg)
+
+*Figure 9.28.* Proposition 9.50 along $w$: the least value of
+$\Pi(n, w) - \frac{|n|}{1000} - \beta_*$ over $n$, the four facets and both
+choices for $N$, with $W$ on its own axis or on its matching side, lies above
+the line $\ell(w)$ (dashed). They meet at $w = 0$ (red dot), and nearly at
+$w = -\frac{11}{25}$.
 
 *Lean:
 [`Six.Stress.Pair.lower_bound`](../../SquaresInCircles/Six/Stress/PairEstimate.lean#L124),
@@ -2198,7 +2318,8 @@ m_*\left(\sin(d - w) + \cos(d - s),\ \cos(d - w) - \sin(d - s)\right) = L\left(\
 by the sum formulas: with $d - w = \delta + \frac\pi4 - \beta$ and
 $d - s = \delta + \frac\pi4 + \beta$, both components are
 $2m_*\sin(\frac\pi4 - \beta) = K_*(\cos\beta - \sin\beta)$ times $\cos\delta$
-and $-\sin\delta$. On the domain $|\sin\delta| \le \cos\delta$ and $L > 0$, and
+and $-\sin\delta$ (Figure 9.29). On the domain
+$|\sin\delta| \le \cos\delta$ and $L > 0$, and
 the work $L(a_D\cos\delta - b_D\sin\delta)$ is at most $\sigma(L, \delta)$: by
 the cap bound of Lemma 9.25 (3) at $R = R_6$, where $\rho = \rho_*$, when
 $2R_6|\sin\delta| \le 1$, which is the same as
@@ -2208,6 +2329,14 @@ $\sin\delta < 0$); and by the far vertex bound (1) otherwise. As
 $\tau(d - w) + \tau(d - s) = 1 + \omega(d - w) + \omega(d - s)$, this is
 $m_*(1 + \omega(d - w) + \omega(d - s)) \le \sigma(L, \delta) + m_*(b_S - b_W)$,
 which is the claim. $\square$
+
+![Two panels. Left: the turned square D, cyan, at d = 0.75, between W, purple, at w = -0.3 above it and S, pink, at s = -0.1 to its right, with C faint near the origin o; a vertex of D lies on the dashed line of the lower edge of W and another on the dashed line of the left edge of S, and a dotted ray marks the own axis e1 of D. Right: in the frame of D, with e1 to the right and e2 up, the forces m* e2 of W and -m* e2 of S drawn from one point, their sum F_D as a thick arrow, and the angle delta from e1 down to F_D](figures/09-six/diagonal.svg)
+
+*Figure 9.29.* Lemma 9.52 at $w = -0.3$, $s = -0.1$ and $d = 0.75$,
+with both wings tight (dashed lines, left). Right, in the frame of $D$: the
+wing forces $m_* e^W_2$ and $-m_* e^S_2$ add up to
+$F_D = L(\cos\delta, -\sin\delta)$, here with $\delta \approx 0.165$ and
+$L \approx 1.377$.
 
 *Lean:
 [`Six.Stress.diagonal_work`](../../SquaresInCircles/Six/Stress/StressBound.lean#L306),
@@ -2220,7 +2349,15 @@ which is the claim. $\square$
 On the domain of the diagonal, $\mathcal R(w, s, d) \ge 0$, and
 $\mathcal R(w, s, d) = 0$ only for $w = s = 0$ and $d = \frac\pi4$.
 
-The proof is given in [Appendix E](appendix-e.md#e3-proof-of-proposition-953).
+The proof is given in [Appendix E](appendix-e.md#e3-proof-of-proposition-953);
+Figure 9.30 shows the remainder, least over $d$.
+
+![Level lines at 0.02, 0.05, 0.1 and 0.15 of the remainder of the diagonal, least over d from 1/2 to pi/4, on the box of w from -11/25 to 2/5 and s from -2/5 to 11/25; it vanishes only at the origin, marked](figures/09-six/remainder.svg)
+
+*Figure 9.30.* Proposition 9.53: level lines of the remainder
+$\mathcal R(w, s, d)$, least over $\frac12 \le d \le \frac\pi4$, on the
+domain of the diagonal. It pays for the lines $\ell$ of the two pairs and
+vanishes only at the model (red dot).
 
 *Lean:
 [`Six.Stress.remainder_nonnegative`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L541),
@@ -2264,15 +2401,7 @@ $S$, $E$. $\square$
 
 The weights of the model work only when the packing is separated as the model
 is, and they leave no slack there: the stress bound is the precise sense in
-which the model is optimal (Figure 9.19).
-
-![Two panels. Left: the domain of the pair estimate in the plane of the angles n and w, a rectangle cut by the lines n = 0, w = 0 and n = w into sign sectors, with the lower bound beta* + l(w) + |n|/1000 drawn as level lines and its minimum beta* at the origin. Right: the remainder of the diagonal as a function of w and s at d = pi/4, nonnegative, with its single zero at the origin](figures/09-six/stress-bound.svg)
-
-*Figure 9.19.* The two estimates behind Theorem 9.54. Left: the value of the
-pair $N$, $W$ on its domain, for the facet $-e^W_1$ with both squares on their
-matching sides, is at least $\beta_* + \ell(w) + \frac{|n|}{1000}$. Right: the
-remainder $\mathcal R(w, s, \frac\pi4)$ of the diagonal; it pays for the line
-$\ell$ of the two pairs and vanishes only at the model.
+which the model is optimal (Figures 9.28 and 9.30).
 
 *Lean:
 [`Six.Stress.stress_bound`](../../SquaresInCircles/Six/Stress/StressBound.lean#L435),
@@ -2350,7 +2479,20 @@ $X^2 + Y^2 = 0$ and $a = |a|$, $b = |b|$. $\square$
 
 This is Lemma 9.25 (1) for a force with positive components, with its case of
 equality: the far vertex must be the point of the circle in the direction of the
-force.
+force. In terms of the centre: the centres of the axis-parallel unit squares
+in the disk fill a region bounded by four circular arcs, and the work is
+largest at the single point of it where the force is an outward normal
+(Figure 9.31).
+
+![The model in its dashed circle of radius R6, its squares drawn as faint outlines; the region of the possible centres of an axis-parallel unit square in the disk, shaded blue, bounded by four circular arcs that meet in corners on the axes, and the region for a square turned by 45 degrees, shaded cyan, with its corners on the diagonals. The centres of E, N, W and S are dots on the boundary of the blue region, each with its force drawn as an arrow along the outward normal there and with the dashed tangent line; the centre of D is a dot at a corner of the cyan region, with its force along the diagonal](figures/09-six/centres.svg)
+
+*Figure 9.31.* Lemma 9.57 and Proposition 9.58. The centre of an
+axis-parallel unit square in the disk of radius $R_6$ lies in the region
+bounded by four circular arcs (blue), that of a square turned by $\frac\pi4$
+in the same region turned by $\frac\pi4$ (cyan). Over its region, the work of
+each force of the stress of the model is largest exactly at the centre of the
+model (dots), where the force is an outward normal, for $D$ at a corner; the
+dashed lines are the level lines of the work through these centres.
 
 ### Proposition 9.58 (the contacts fix the model)
 
@@ -2361,7 +2503,8 @@ $(|a_X| + \frac12)^2 + (|b_X| + \frac12)^2 \le q_*$ for each $X$. Then
 (a_E, a_N, a_W, a_D, a_S) = (1 + s_*, 1 + s_*, 1 - s_*, \rho_*, 1 - s_*), \qquad (b_E, b_N, b_W, b_D, b_S) = (s_*, -s_*, -t_*, 0, t_*), \qquad c = (s_*, s_*) .
 ```
 
-*Proof.* Add the eight contacts with the weights of the stress of the model:
+*Proof.* Add the eight contacts with the weights of the stress of the model
+(Figure 9.32):
 1 for the first four, $r_*$ for the next two and $m_*$ for the last two. The
 coordinates of $c$ cancel, and
 
@@ -2399,9 +2542,9 @@ $\square$
 [`Six.radius_mul_north_length`](../../SquaresInCircles/Six/Constants.lean#L281),
 [`Six.radius_mul_west_length`](../../SquaresInCircles/Six/Constants.lean#L294).*
 
-![The model with the eight contacts drawn as thick segments and dots, the forces of the stress as arrows at the centres of E, N, W, S and D, and the far corners of these squares on the dashed circle; each arrow passes through its corner, where the bound of Lemma 9.57 is attained](figures/09-six/contacts.svg)
+![The model with the eight contacts drawn as thick segments and dots, the forces of the stress as arrows at the centres of E, N, W, S and D, and the far corners of E, N, W and S and the far vertices of D on the dashed circle; each arrow of E, N, W and S is parallel to the dotted radius through the corner of its square, where the bound of Lemma 9.57 is attained](figures/09-six/contacts.svg)
 
-*Figure 9.20.* Proposition 9.58. The eight contacts, summed with the weights
+*Figure 9.32.* Proposition 9.58. The eight contacts, summed with the weights
 of the stress, bound the sum of the works of the five forces from below; the
 disk bounds each work from above, by the far corner in the direction of the
 force (and the centre of $D$ on the diagonal). The two bounds meet, so each

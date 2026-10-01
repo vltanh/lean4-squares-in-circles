@@ -9,13 +9,13 @@ missing ([Definition 9.44](09-six.md#definition-944-wings)). In the model the
 turned square $D$ sits in the corner between $W$ and $S$, with its top vertex on
 the lower side of $W$ and its right vertex on the left side of $S$: $W$ and $D$
 are separated along the secondary axis $e^W_2$ of $W$, and $D$ and $S$ along the
-secondary axis $e^S_2$ of $S$. These are the two wings. The west wing is
-*missing* if $W$ and $D$ are separated along $e^D_2$ while $D$ and $S$ are
-separated along $e^S_2$; the south wing is missing if $D$ and $S$ are separated
-along $e^D_2$ while $W$ and $D$ are separated along $e^W_2$. In a missing wing
-the line of a side of $D$, not of a side of its neighbour, separates the two
-squares, and this costs room. We show that it costs more room than the disk of
-squared radius $Q_0$ has.
+secondary axis $e^S_2$ of $S$. These are the two wings (Figure D.2). The west
+wing is *missing* if $W$ and $D$ are separated along $e^D_2$ while $D$ and $S$
+are separated along $e^S_2$; the south wing is missing if $D$ and $S$ are
+separated along $e^D_2$ while $W$ and $D$ are separated along $e^W_2$. In a
+missing wing the line of a side of $D$, not of a side of its neighbour,
+separates the two squares, and this costs room. We show that it costs more room
+than the disk of squared radius $Q_0$ has.
 
 §D.1 writes the separations of $W$, $D$, $S$ and the central square $C$ as
 inequalities between the coordinates of the squares, collects the facts of
@@ -78,16 +78,27 @@ harmonic* is a function $A\cos x + B\sin x$ (Lemma A.11).
 ## D.1 The wings in coordinates
 
 We read $W$, $D$ and $S$ at the phases $\pi - v$, $\pi + d$ and
-$\frac{3\pi}2 + s$, so that $v = -w$ is the angle by which $W$ turns towards
-$D$, and we write
+$\frac{3\pi}2 + s$, so that $v = -w$ and $s$ are the angles by which $W$ and
+$S$ turn away from $D$, and we write
 
 ```math
 q = d + v, \qquad r = d - s
 ```
 
 for the two gaps: the phase of $D$ exceeds that of $W$ by $q$ and falls short of
-that of $S$ by $\frac\pi2 - r$. In the model $v = s = 0$ and $d = \frac\pi4$, so
-$q = r = \frac\pi4$.
+that of $S$ by $\frac\pi2 - r$ (Figure D.1). In the model $v = s = 0$ and
+$d = \frac\pi4$, so $q = r = \frac\pi4$.
+
+![Two panels. Left: the central square C at the disk centre o and the squares W, D and S in the lower left part of the disk, each with the two axes of its frame drawn as short arrows from its centre and labelled e1 and e2 with the name of the square. Right: from a point o, the primary axes of W, D and S as arrows in their colours, and dashed the directions of phase pi and 3 pi/2; arcs mark the angle v from the first dashed direction up to the axis of W, the angle d from it down to the axis of D, the angle s from the second dashed direction to the axis of S, the gap q from W to D, and the angle pi/2 - r from D to S](figures/appendix-d/angles.svg)
+
+*Figure D.1.* The angles and the frames of wing data, at $v = 0.3$, $s = 0.25$
+and $d = 0.65$, with $W$ and $D$ separated along $e^W_2$ and $D$ and $S$ along
+$e^S_2$, in the smallest disk that allows these and the separations of $W$ and
+$S$ from $C$ along their own axes (radius $1.709$, pink; the circle of radius
+$R_0$ is dashed). (a) The frames: $e^X_1 = u(t_X)$ points away from $o$, and
+$e^X_2$ is a quarter turn further. (b) The phases: $W$ and $S$ are turned by
+$v$ and $s$ away from $D$, whose phase is $\pi + d$; the gaps are $q = d + v$
+and $\frac\pi2 - r = \frac\pi2 - d + s$.
 
 ### Definition D.1 (wing data)
 
@@ -242,9 +253,9 @@ $\square$
 [`Six.Wings.south_side_angle`](../../SquaresInCircles/Six/Wings/Chart.lean#L301),
 [`Six.Wings.own_angle_sum`](../../SquaresInCircles/Six/Wings/Chart.lean#L305).*
 
-![Three panels, each with the central square C at the disk centre o and the squares W, D and S in the lower left part of the disk. In the first, the model, the turned square D touches the lower side of W with its top vertex and the left side of S with its right vertex, and these two sides are drawn as thick blue and green lines. In the second, S is turned and separated from D by the line of the lower right side of D, drawn in purple, and the squares cross the dashed circle of radius R0. The third is the mirror image of the second in the diagonal](figures/appendix-d/wings.svg)
+![Three panels, each with the central square C at the disk centre o and the squares W, D and S in the lower left part of the disk. In the first, the model, the turned square D touches the lower side of W with its top vertex and the left side of S with its right vertex, and these two sides are drawn as thick blue and green lines, labelled (D.6) and (D.8). In the second, S is turned and separated from D by the line of the lower right side of D, drawn in purple and labelled (D.9), and the squares cross the dashed circle of radius R0. The third is the mirror image of the second in the diagonal, with the lines (D.7) and (D.8)](figures/appendix-d/wings.svg)
 
-*Figure D.1.* The wings. (a) The model (Theorem 9.1), without $E$ and $N$: the
+*Figure D.2.* The wings. (a) The model (Theorem 9.1), without $E$ and $N$: the
 top vertex of $D$ lies on the lower side of $W$, along which (D.6) separates $W$
 and $D$, and its right vertex on the left side of $S$, along which (D.8)
 separates $D$ and $S$; the dashed circle has the radius $R_6$. (b) A missing
@@ -264,10 +275,10 @@ square $T$ we write a force $F$ in the frame of $T$, as
 $(U, V) = (\langle F, e^T_1\rangle, \langle F, e^T_2\rangle)$; its work on the
 centre $c_T = a_Te^T_1 + b_Te^T_2$ is $Ua_T + Vb_T$. For $C$ we write the force
 as $(X, Y)$ in the standard frame; its work is $Xc_x + Yc_y$. Table D.1 lists
-the forces of the separating inequalities. In each row $\lambda$ times the left
-side of the inequality is the sum of the works of its two forces, as one checks
-term by term; this is the balance of [Lemma 9.24](09-six.md#lemma-924-balance) in
-coordinates.
+the forces of the separating inequalities, and Figure D.3 draws them. In each
+row $\lambda$ times the left side of the inequality is the sum of the works of
+its two forces, as one checks term by term; this is the balance of
+[Lemma 9.24](09-six.md#lemma-924-balance) in coordinates.
 
 | inequality | separation | forces on $W$, $D$, $S$ (in their frames) | force on $C$ |
 | :-: | --- | --- | --- |
@@ -283,6 +294,14 @@ coordinates.
 
 *Table D.1.* The forces of the separating inequalities with the weight
 $\lambda$.
+
+![Four panels, for the squares C, W, D and S. Each shows the axes of the frame of its square dashed, the first pointing right and the second up, the unit circle, and an arrow for the unit force that each separating inequality puts on the square, labelled (D.1) to (D.9) and coloured by the other square of the separation: blue for W, purple for D, green for S and black for C](figures/appendix-d/forces.svg)
+
+*Figure D.3.* The forces of Table D.1 for $\lambda = 1$, at $v = 0.3$,
+$s = 0.25$ and $d = 0.65$, so that $q = 0.95$ and $r = 0.4$: on each square
+the unit force of each separating inequality in which it takes part, in the
+frame of $W$, $D$ or $S$ and in the standard frame for $C$, coloured by the
+other square of the pair. A stress adds these arrows with its weights.
 
 So a weighted sum of separating inequalities reads
 
@@ -362,18 +381,19 @@ which is (D.7). $\square$
 
 Geometrically, the reflection is the reflection in the diagonal
 ([Lemma 9.29](09-six.md#lemma-929-the-reflection-in-the-diagonal)): it exchanges
-$W$ and $S$ and maps the angle $d$ of $D$ to $\frac\pi2 - d$. The reflection of
-a normalized packing has $\frac\pi4 \le d' < \frac\pi2 - \frac12$, outside the
-range of a normalized packing; this is why the cases below are stated for wing
-data with explicit ranges of the angles.
+$W$ and $S$ and maps the angle $d$ of $D$ to $\frac\pi2 - d$ (Figure D.2 (b)
+and (c)). The reflection of a normalized packing has
+$\frac\pi4 \le d' < \frac\pi2 - \frac12$, outside the range of a normalized
+packing; this is why the cases below are stated for wing data with explicit
+ranges of the angles.
 
 ## D.2 The chord term
 
 Let $D$ be separated from $W$ along $e^W_2$ and from $S$ along $e^D_2$, as in a
 missing south wing, with the weight $1$ on both separations, and from $C$ along
 its own axis with a weight $z \ge 0$. By Table D.1 the force on $D$ is
-$(z + \sin q, \cos q - 1)$, and the chord (Ch) bounds its work. The threshold
-$\frac12 + \omega(q)$ of (D.6), which is at least
+$(z + \sin q, \cos q - 1)$ (Figure D.4), and the chord (Ch) bounds its work.
+The threshold $\frac12 + \omega(q)$ of (D.6), which is at least
 $\frac12 + \frac12(\cos q + \sin q)$, less this bound is at least
 
 ```math
@@ -392,6 +412,14 @@ $H'_{L, M}(q) = \cos q - \frac L2\cos\frac q2 + \frac M2\sin\frac q2$ and
 ```math
 H''_{L, M}(q) = -\sin q + \tfrac L4\sin\tfrac q2 + \tfrac M4\cos\tfrac q2 .
 ```
+
+![In the frame of D, for q = 1 and z = 9/20: a blue unit arrow of (D.6) from the centre of D at the angle q from the second axis, a purple unit arrow of (D.9) straight down from its tip, a short black arrow of (D.1) to the right, and the orange total force F from the centre; a dashed chord of the unit circle joins the top of the circle to the tip of the blue arrow](figures/appendix-d/chord.svg)
+
+*Figure D.4.* The force on $D$ in its frame, for $q = 1$ and $z = \frac9{20}$.
+The unit force $(\sin q, \cos q)$ of (D.6) and the force $(0, -1)$ of (D.9)
+add up to the chord of the unit circle from $(0, 1)$ to $(\sin q, \cos q)$, of
+length $2\sin\frac q2$, and with $(z, 0)$ of (D.1) they give
+$F = (z + \sin q, \cos q - 1)$.
 
 The weights $z$ used below are at most $\frac9{20}$, and we put
 
@@ -433,7 +461,7 @@ At a point $q_0 \ge 0$, Lemma A.7 gives
 G(q_0) \le -S_7(q_0) + \tfrac{L_*}4S_5\left(\tfrac{q_0}2\right) + \tfrac{M_*}4C_4\left(\tfrac{q_0}2\right) ,
 ```
 
-and Table D.2 lists these bounds.
+and Table D.2 lists these bounds (Figure D.5).
 
 | $q_0$ | $\frac12$ | $1$ | $\frac32$ | $\frac{157}{200}$ | $\frac53$ |
 | --- | :-: | :-: | :-: | :-: | :-: |
@@ -466,17 +494,12 @@ Lemma A.10 (1), and $H'_{L, M}$ is nonincreasing by Lemma A.1. $\square$
 [`Six.Wings.chord_second_high`](../../SquaresInCircles/Six/Wings/Chord.lean#L113),
 [`Six.Wings.chord_second_nonpositive`](../../SquaresInCircles/Six/Wings/Chord.lean#L122).*
 
-![Left: in the frame of D, a blue arrow from the centre of D at the angle q from the second axis, a purple arrow of unit length straight down from its tip, a short black arrow to the right, and the orange total force from the centre; a dashed chord of the unit circle joins the top of the circle to the tip of the blue arrow. Right: the curvature of the chord term on the interval from 1/2 to 5/3, a purple curve for the largest weights and a blue one below it for the weight 3/8, both below a dashed orange broken line and, from 157/200 on, below a dashed green horizontal line, with five black dots on or just above the purple curve](figures/appendix-d/chord.svg)
+![The second derivative of the chord term on q from 1/2 to 5/3: a purple curve for the largest weights, z = 9/20, and a blue one below it for z = 3/8, both below a dashed orange broken line and, from 157/200 on, below a dashed green horizontal line, with five black dots on or just above the purple curve](figures/appendix-d/curvature.svg)
 
-*Figure D.2.* The chord term. Left: the force on $D$ in its frame for $q = 1$
-and $z = \frac9{20}$; the unit force $(\sin q, \cos q)$ of (D.6) and the force
-$(0, -1)$ of (D.9) add up to the chord of the unit circle from $(0, 1)$ to
-$(\sin q, \cos q)$, of length $2\sin\frac q2$, and with $(z, 0)$ of (D.1) they
-give $F = (z + \sin q, \cos q - 1)$. Right: $H''_{L_*, M_*}$ (purple) and
+*Figure D.5.* Lemma D.4: $H''_{L_*, M_*}$ (purple, $z = \frac9{20}$) and
 $H''_{L, M}$ for $z = \frac38$ (blue) on $[\frac12, \frac53]$, below the
 envelope $\frac3{40} - \frac3{10}\min(q, 1)$ (orange) and the level
-$-\frac{19}{100}$ (green) of Lemma D.4; the dots are the Taylor bounds of Table
-D.2.
+$-\frac{19}{100}$ (green); the dots are the Taylor bounds of Table D.2.
 
 ## D.3 The gap of W and D
 
@@ -562,24 +585,19 @@ and with $U(v) \ge U(V)$, $\sin 1 \ge 1 - \frac16 = \frac56$ and
 $\cos 1 \le C_4(1) = \frac{13}{24}$ the bracket is at least
 $\frac{31}{100}k(1 + 2U(V))\frac56 - \frac{13}{24}k + \frac{17}{100}$. For the
 matching side, $k = \frac23$, $V = \frac25$ and $U(V) = \frac{61}{300}$, and the
-bracket is at least $\frac{1381}{27000} > 0$; for the own axis,
-$k = \frac{73}{100}$, $V = \frac12$ and $U(V) = \frac{101}{1000}$, and it is at
-least $\frac{2521}{2000000} > 0$. So $F(U(v), v, 1) \le F(U(V), V, 1)$. Finally,
-with $\rho_0 - \frac12 < \bar\rho - \frac12 = \mu_+$,
-$\sin 1 \le \frac{101}{120}$ and $\cos 1 \ge \frac{389}{720}$ (the factors
-$A(U(V))$ and $U(V) - \frac12$ are positive and negative), and with
-$\frac{61}{300} + (\frac{61}{300})^2 = \frac{22021}{90000}$ and
-$\frac{101}{1000} + (\frac{101}{1000})^2 = \frac{111201}{1000000}$,
+bracket is at least $0.051 > 0$; for the own axis, $k = \frac{73}{100}$,
+$V = \frac12$ and $U(V) = 0.101$, and it is at least $0.00126 > 0$. So
+$F(U(v), v, 1) \le F(U(V), V, 1)$. Finally, as $\rho_0 - \frac12 < \mu_+$,
+$A(U) > 0$, $U - \frac12 < 0$, $\sin 1 \le \frac{101}{120}$ and
+$\cos 1 \ge \frac{389}{720}$,
 
 ```math
-\begin{aligned}
-F\left(\tfrac{61}{300}, \tfrac25, 1\right) &< \left(\mu_+ - \tfrac{31}{100}\cdot\tfrac{22021}{90000}\right)\tfrac{101}{120} - \tfrac{89}{300}\cdot\tfrac{389}{720} - \tfrac{73}{250} = -\tfrac{359371}{1080000000} , \\
-F\left(\tfrac{101}{1000}, \tfrac12, 1\right) &< \left(\mu_+ - \tfrac{31}{100}\cdot\tfrac{111201}{1000000}\right)\tfrac{101}{120} - \tfrac{399}{1000}\cdot\tfrac{389}{720} - \tfrac{11}{40} = -\tfrac{45538331}{12000000000} ,
-\end{aligned}
+F(U, V, 1) < \left(\mu_+ - \tfrac{31}{100}\left(U + U^2\right)\right)\tfrac{101}{120} + \left(U - \tfrac12\right)\tfrac{389}{720} - \tfrac9{25} + \tfrac{17}{100}V ,
 ```
 
-about $-0.00033$ and $-0.0038$. So $F(U(v), v, q) < 0$, a contradiction.
-$\square$
+which is $-0.000332\ldots$ at $(U, V) = (\frac{61}{300}, \frac25)$ and
+$-0.00379\ldots$ at $(U, V) = (0.101, \frac12)$. So $F(U(v), v, q) < 0$, a
+contradiction (Figure D.6). $\square$
 
 *Lean:
 [`Six.westDiagonal_gap_gt_one`](../../SquaresInCircles/Six/Wings/WestGap.lean#L161),
@@ -597,7 +615,7 @@ $\square$
 
 ![Two graphs over q from 0 to 1, each with three increasing curves below the dashed zero line: left for W on its own axis with v = 0, 1/4, 1/2, right for W on the west side of C with v = 0, 1/5, 2/5; the curves for larger v start lower and end higher, and the highest end, at q = 1, is marked by an orange dot just below zero](figures/appendix-d/gap.svg)
 
-*Figure D.3.* The bound $F(U(v), v, q)$ of the margin of (D.7) in the proof of
+*Figure D.6.* The bound $F(U(v), v, q)$ of the margin of (D.7) in the proof of
 Lemma D.5, for $0 \le q \le 1$, computed with $\rho_0$ itself: left with the
 profile of $W$ on its own axis, right with that of $W$ on the west side of $C$.
 Each curve increases in $q$, and the value at $q = 1$ increases in $v$; the
@@ -607,8 +625,8 @@ largest (orange dot) is still negative.
 
 When $W$ is on its own axis, a missing west wing is first confined to a small
 range of the angles $v$ and $d$, by four stresses on the separations of $C$ from
-$W$ and from $D$ along their own axes and of $W$ and $D$ along $e^D_2$. Their
-profile is the following.
+$W$ and from $D$ along their own axes and of $W$ and $D$ along $e^D_2$
+(Figure D.7). Their profile is the following.
 
 ### Lemma D.6 (the profile of W and D)
 
@@ -647,6 +665,16 @@ using $\frac12 - \bar c = \mu_-$ gives $P(v, d) \le 0$. $\square$
 *Lean:
 [`Six.Wings.WestRange.profile`](../../SquaresInCircles/Six/Wings/WestRange.lean#L38),
 [`Six.Wings.WestRange.profile_nonpos`](../../SquaresInCircles/Six/Wings/WestRange.lean#L204).*
+
+![The squares C, W, D and S of a missing west wing with W on its own axis, W turned up by about 30 degrees, in the lower left part of the disk: the separating lines of the stress in colour, along the side of W facing C, along the upper right side of D facing C, and along the upper left side of D facing W; in grey the separations of S. Orange arrows show the forces on W, D and C; there is none on S](figures/appendix-d/range.svg)
+
+*Figure D.7.* The stress of Lemma D.6, with the weights $b = \frac{13}6$ and
+$z = \frac{12}5$ of Proposition D.7 (1), on a missing west wing with $W$ and
+$S$ on their own axes, at $v = 0.55$, $s = 0.1$ and $d = 0.55$, in the
+smallest disk that allows its separations (radius $1.698$, pink; the circle of
+radius $R_0$ is dashed). The forces are $(b + \sin q, -\cos q)$ on $W$, close
+to its own axis, $(z, 1)$ on $D$, and $(b\cos v + z\cos d, z\sin d - b\sin v)$
+on $C$.
 
 The profile is a constant plus a first harmonic in each of four directions: in
 $v$ at fixed $d$, in $d$ at fixed $v$, in $d$ along a line $q = k$, and in $q$
@@ -769,7 +797,8 @@ Taylor polynomials, rounded down.
 its own axis, Lemma D.2 gives (D.2), (D.7), $0 < v < \frac23$ and
 $\frac12 < d \le \frac\pi4 < \frac{11}{14}$, and Lemma D.5 gives $q > 1$. Part
 (1) gives $d > \frac35$, and then parts (2) and (3) give $q > \frac{53}{50}$ and
-$v < \frac{31}{50}$, and part (4) gives $d > \frac{16}{25}$. $\square$
+$v < \frac{31}{50}$, and part (4) gives $d > \frac{16}{25}$ (Figure D.8).
+$\square$
 
 *Lean:
 [`Six.Wings.WestRange.profile_west`](../../SquaresInCircles/Six/Wings/WestRange.lean#L44),
@@ -793,16 +822,17 @@ $v < \frac{31}{50}$, and part (4) gives $d > \frac{16}{25}$. $\square$
 [`Six.Wings.WestRange.diagonal_gt`](../../SquaresInCircles/Six/Wings/WestRange.lean#L368),
 [`Six.Wings.own_west_range`](../../SquaresInCircles/Six/Wings/Separators.lean#L72).*
 
-![Two plots of angle domains. Left, in the plane of s and d: a grey region left of a purple line from s = 1/2 − π/4 at d = 1/2 to s = 0 at d = π/4, the wall, and a green region to its right, with dashed vertical lines at s = 0, 2/5 and 12/25. Right, in the plane of v and d: a grey triangle under the wall, a yellow band where d + v is at most 1, and coloured pieces labelled (1) to (4) for the four parts of Proposition D.7, which leave a small green quadrilateral at the top right with three marked points](figures/appendix-d/walls.svg)
+![Two plots of angle domains. Left, in the plane of s and d: a grey region left of a purple line from s = 1/2 − π/4 at d = 1/2 to s = 0 at d = π/4, the wall, and a green region to its right, with dashed vertical lines at s = 0, 2/5 and 12/25. Right, in the plane of v and d: a grey triangle under the wall, a yellow band where q = d + v is at most 1, and four pieces labelled (1) to (4) for the four parts of Proposition D.7, shaded from white to blue, which leave a small green quadrilateral at the top right with three marked points](figures/appendix-d/walls.svg)
 
-*Figure D.4.* The walls and the range. Left: the angles $(s, d)$ of a missing
+*Figure D.8.* The walls and the range. Left: the angles $(s, d)$ of a missing
 south wing; the wall of Lemma 9.42 excludes $s \le d - \frac\pi4$ (grey), and
 the dashed lines $s = 0$, $\frac25$ and $\frac{12}{25}$ bound the angles of $S$
 on its own axis and on the south side of $C$ and separate Propositions D.11 and
 D.12. Right: the angles $(v, d)$ of a missing west wing with $W$ on its own
 axis; the wall $v \le \frac\pi4 - d$ (grey), the gap $q \le 1$ of Lemma D.5
-(yellow) and the parts (1) to (4) of Proposition D.7 leave the green domain of
-§D.9, with the three points of Lemma D.18.
+(yellow) and the parts (1) to (4) of Proposition D.7, each shaded by the
+profile $P$ of its stress, the smaller over the two faces $y$, leave the green
+domain of §D.9, with the three points of Lemma D.18.
 
 ## D.5 W on the west side of C
 
@@ -847,9 +877,17 @@ as $B\sin x \ge 0$ on each piece. $\square$
 [`Six.Wings.WestSide.southTerm_positive_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L78).*
 
 The force $(4\cos x, 3 - 4\sin x)$ has the length $\sqrt{25 - 24\sin x}$, and
-$T(x)$ is what it leaves of a threshold after its far vertex; it occurs for the
-force on $S$ in Proposition D.10 and, with $x = v$ and the force
-$(4\cos v, 4\sin v - 3)$, for the force on $W$ in Proposition D.11.
+the threshold $4\tau(x)$ of its separation less the far-vertex bound of its
+work is $\frac72 + T(x)$ (Figure D.9). It is the force on $S$ in Proposition
+D.10, and, with $x = v$ and its second component negated, the force on $W$ in
+Proposition D.11.
+
+![The graph of T(x) on x from -2/5 to 2/5, in blue: on the left half it rises slowly from about -4.65 to about -4.44, on the right half steeply to about -3.00, with a corner at 0; on each half it lies above its dashed orange chord, and dots mark the values at -2/5, 0 and 2/5](figures/appendix-d/far-term.svg)
+
+*Figure D.9.* Lemma D.8: the function $T$ is concave on $[-\frac25, 0]$ and
+on $[0, \frac25]$, above its chords (dashed), but its slope jumps up at $0$,
+from about $0.05$ to about $4.05$. Propositions D.10 and D.11 therefore check
+the three points $-\frac25$, $0$ and $\frac25$.
 
 ### Lemma D.9 (brackets)
 
@@ -907,10 +945,10 @@ $\lvert x\rvert \ge x$ and $\lvert x\rvert \ge -x$ to replace it by
 $\frac12(2\cos v + 3\sin q - 2\sin v + 3\cos q)$,
 $\frac12(3\cos r + 3 - 3\sin r)$ and $\frac12(4\cos s + 3 - 4\sin s)$. The box
 gives $2c_x + 4c_y \le 6c_0$. Collecting the terms, the weighted sum becomes
-$\Gamma(v, s, d) \le 0$, where
+$\Pi(v, s, d) \le 0$, where
 
 ```math
-\Gamma(v, s, d) = 9 - 6c_0 + 2\cos v + T(s) + \Delta(d - s) + 3(\cos q + \sin q) - R_0\sqrt{13 + 12\sin d},
+\Pi(v, s, d) = 9 - 6c_0 + 2\cos v + T(s) + \Delta(d - s) + 3(\cos q + \sin q) - R_0\sqrt{13 + 12\sin d},
 \qquad \Delta(x) = 3\cos x - R_0\sqrt{18 - 18\sin x} ,
 ```
 
@@ -933,14 +971,14 @@ $d \mapsto 3(\cos q + \sin q) - R_0\sqrt{13 + 12\sin d}$ is concave on
 $[\frac12, \frac\pi4]$, by Lemma A.12 with these $A$ and $B$, $R = R_0$ and the
 radicand $13 + 12\sin d$: there
 $R_0\sqrt{13 + 12\sin d} \le 5R_0 < 8.45 < 12 \le 12(\cos q + \sin q)$, by Lemma
-A.15 (2). So $\Gamma$ is concave in $d$. In $v$, $2\cos v + 3(\cos q + \sin q)$
+A.15 (2). So $\Pi$ is concave in $d$. In $v$, $2\cos v + 3(\cos q + \sin q)$
 is a first harmonic, at least $2\cdot\frac{23}{25} + 3 > 0$, hence concave
-(Lemma A.11 (1)), and the rest of $\Gamma$ does not depend on $v$. In $s$, $T$ is
+(Lemma A.11 (1)), and the rest of $\Pi$ does not depend on $v$. In $s$, $T$ is
 concave on $[-\frac25, 0]$ and on $[0, \frac25]$ (Lemma D.8), and so is
 $s \mapsto \Delta(d - s)$ (Lemma A.10 (3)). By Lemma A.10 (2), applied in $d$,
-then in $v$, then in $s$ on each half, $\Gamma > 0$ on the box
+then in $v$, then in $s$ on each half, $\Pi > 0$ on the box
 $[0, \frac25] \times [-\frac25, \frac25] \times [\frac12, \frac\pi4]$ once
-$\Gamma > 0$ at the twelve points with $v \in \lbrace 0, \frac25\rbrace$,
+$\Pi > 0$ at the twelve points with $v \in \lbrace 0, \frac25\rbrace$,
 $s \in \lbrace -\frac25, 0, \frac25\rbrace$ and
 $d \in \lbrace \frac12, \frac\pi4\rbrace$.
 
@@ -960,13 +998,13 @@ radicand at the bracket, for instance $18 - 18\cdot 0.783 = 3.906 < 1.977^2$.
 | $\cos r$ | $\ge 0.995$, $0.877$, $0.621$, $0.926$, $0.707$, $0.375$ at $r = \frac1{10}, \frac12, \frac9{10}, \frac\pi4 - \frac25, \frac\pi4, \frac\pi4 + \frac25$ |
 | $\sqrt{18 - 18\sin r}$ | $\le 4.028$, $3.062$, $1.977$, $3.355$, $2.297$, $1.155$ at the same $r$ |
 
-*Table D.5.* Bounds of the terms of $\Gamma$ at the twelve points.
+*Table D.5.* Bounds of the terms of $\Pi$ at the twelve points.
 
-With $R_0 < \bar R$ and $c_0 < \bar c$, $\Gamma$ is at least $9 - 6\bar c$ plus
+With $R_0 < \bar R$ and $c_0 < \bar c$, $\Pi$ is at least $9 - 6\bar c$ plus
 the lower bounds of $2\cos v$, $4\cos s + 4\max(-\sin s, 0)$,
 $3(\cos q + \sin q)$ and $3\cos r$, less $\bar R$ times the upper bounds of the
 three roots. Table D.6 lists these lower bounds; all are positive, a
-contradiction. $\square$
+contradiction (Figure D.10). $\square$
 
 | $(v, s)$ | $d = \frac12$ | $d = \frac\pi4$ |
 | :-: | :-: | :-: |
@@ -977,7 +1015,7 @@ contradiction. $\square$
 | $(\frac25, 0)$ | $0.08126$ | $0.04032$ |
 | $(\frac25, \frac25)$ | $0.24759$ | $0.35431$ |
 
-*Table D.6.* Lower bounds of $\Gamma$ at the twelve points, rounded down.
+*Table D.6.* Lower bounds of $\Pi$ at the twelve points, rounded down.
 
 *Lean:
 [`Six.Wings.WestSide.MissingWest.impossible`](../../SquaresInCircles/Six/Wings/WestSide.lean#L456),
@@ -998,13 +1036,13 @@ contradiction. $\square$
 
 ![Left: the squares C, W, D and S of a missing west wing in the lower left part of the disk, W slightly turned, with the separating lines of the stress in colour, a grey dashed line between C and D, and orange arrows for the forces on the four squares; the squares reach the pink circle, just outside the dashed circle of radius R0. Right: the rectangle of the angles s and d, shaded from white near s = 0 to blue at s = −2/5, with two lower bounds written at each of its six marked points](figures/appendix-d/side-west.svg)
 
-*Figure D.5.* Proposition D.10. Left: a missing west wing with $W$ and $S$ on
+*Figure D.10.* Proposition D.10. Left: a missing west wing with $W$ and $S$ on
 the sides of $C$, at $v = 0.3$, $s = 0$ and $d = 0.75$, in the smallest disk
 that allows its separations (radius $1.722$, pink; the circle of radius $R_0$ is
 dashed): the separating lines of the stress, with the weights $2$, $4$, $3$,
 $3$, in colour, the separation (D.1), which the stress does not use, in grey,
 and the forces of the stress on $C$, $W$, $D$ and $S$ (orange). Right: the
-domain of $(s, d)$, shaded by the minimum over $v$ of $\Gamma$, with the bounds
+domain of $(s, d)$, shaded by the minimum over $v$ of $\Pi$, with the bounds
 of Table D.6 for $v = 0$ and $v = \frac25$.
 
 ### Proposition D.11 (W on the west side: a missing south wing with s ≤ 12/25)
@@ -1045,21 +1083,21 @@ $\cos x + \sin x$ is nondecreasing on $[0, \frac\pi4]$ (Lemma A.15 (3)),
 6\omega(r) \ge 3(\cos r + \sin r) \ge 3\left(\cos\left(d - \tfrac{12}{25}\right) + \sin\left(d - \tfrac{12}{25}\right)\right) .
 ```
 
-So $\Gamma(v, d) \le 0$, where
+So $\Pi(v, d) \le 0$, where
 
 ```math
-\Gamma(v, d) = 8 - 4c_0 - 3R_0 + T(v) + \chi(d + v) + 3\left(\cos\left(d - \tfrac{12}{25}\right) + \sin\left(d - \tfrac{12}{25}\right)\right) .
+\Pi(v, d) = 8 - 4c_0 - 3R_0 + T(v) + \chi(d + v) + 3\left(\cos\left(d - \tfrac{12}{25}\right) + \sin\left(d - \tfrac{12}{25}\right)\right) .
 ```
 
 *Concavity.* $\chi$ is concave on $[0, \frac65]$: as
 $\sin q = 2\sin\frac q2\cos\frac q2$,
 $\chi''(q) = \sin\frac q2(\frac32R_0 - 6\cos\frac q2) \le 0$, because
 $\cos\frac q2 \ge 1 - \frac12(\frac35)^2 = \frac{41}{50}$ and
-$6\cdot\frac{41}{50} > \frac32\bar R$. The last term of $\Gamma$ is a
+$6\cdot\frac{41}{50} > \frac32\bar R$. The last term of $\Pi$ is a
 nonnegative first harmonic of $d - \frac{12}{25} \in [0, \frac\pi2]$, concave by
-Lemma A.11 (1). So $\Gamma$ is concave in $d$ on $[\frac12, \frac\pi4]$, and
+Lemma A.11 (1). So $\Pi$ is concave in $d$ on $[\frac12, \frac\pi4]$, and
 concave in $v$ on $[-\frac25, 0]$ and on $[0, \frac25]$ (Lemma D.8), and it
-suffices to show $\Gamma > 0$ at the six points with
+suffices to show $\Pi > 0$ at the six points with
 $v \in \lbrace -\frac25, 0, \frac25\rbrace$ and
 $d \in \lbrace \frac12, \frac\pi4\rbrace$.
 
@@ -1083,7 +1121,7 @@ increases on $[0, \frac\pi4]$),
 ```
 
 With $R_0 < \bar R$ and $c_0 < \bar c$ these give the lower bounds of Table D.7,
-all positive, a contradiction. $\square$
+all positive, a contradiction (Figure D.11). $\square$
 
 | $v$ | $d = \frac12$ | $d = \frac\pi4$ |
 | :-: | :-: | :-: |
@@ -1091,7 +1129,7 @@ all positive, a contradiction. $\square$
 | $0$ | $0.02128$ | $0.03220$ |
 | $\frac25$ | $0.47881$ | $0.34618$ |
 
-*Table D.7.* Lower bounds of $\Gamma$ at the six points, rounded down.
+*Table D.7.* Lower bounds of $\Pi$ at the six points, rounded down.
 
 *Lean:
 [`Six.Wings.WestSide.SmallSouth.impossible`](../../SquaresInCircles/Six/Wings/WestSide.lean#L768),
@@ -1115,12 +1153,12 @@ all positive, a contradiction. $\square$
 
 ![Left: the squares of a missing south wing with W and S on the sides of C; D is separated from S by the line of its lower right side, and orange arrows show the forces of the stress. Right: the rectangle of the angles v and d, shaded from white along v = 0 to blue at the sides, with a lower bound at each of its six marked points](figures/appendix-d/side-small.svg)
 
-*Figure D.6.* Proposition D.11. Left: a missing south wing with $W$ and $S$ on
+*Figure D.11.* Proposition D.11. Left: a missing south wing with $W$ and $S$ on
 the sides of $C$, at $v = 0$, $s = 0.2$ and $d = 0.75$, in the smallest disk
 that allows its separations (radius $1.739$): the separating lines of the
 stress, with the weights $4$, $3$, $3$, in colour, the separations (D.1) and
 (D.5), not used, in grey, and the forces of the stress. Right: the domain of
-$(v, d)$, shaded by $\Gamma$, with the bounds of Table D.7.
+$(v, d)$, shaded by $\Pi$, with the bounds of Table D.7.
 
 ### Proposition D.12 (W on the west side: a missing south wing with s ≥ 12/25)
 
@@ -1168,7 +1206,7 @@ $(c - 1)(6c + 6 - 3\bar R) \le 0$; and $\sin r \le \frac{107}{350}$,
 $\cos r \le 1$. So
 
 ```math
-\tfrac{\partial\Pi}{\partial d} = 3\cos q - 3\bar R\cos\tfrac q2 + \left(3\bar\rho - \tfrac32\right)\sin r + \tfrac32\cos r \le 3 - 3\bar R + \left(3\bar\rho - \tfrac32\right)\tfrac{107}{350} + \tfrac32 = -\tfrac{65739}{17500000} < 0 ,
+\tfrac{\partial\Pi}{\partial d} = 3\cos q - 3\bar R\cos\tfrac q2 + \left(3\bar\rho - \tfrac32\right)\sin r + \tfrac32\cos r \le 3 - 3\bar R + \left(3\bar\rho - \tfrac32\right)\tfrac{107}{350} + \tfrac32 = -0.00375\ldots < 0 ,
 ```
 
 and $\Pi(v, s, d) \ge \Pi(v, s, \frac{11}{14})$ (Lemma A.1).
@@ -1196,7 +1234,7 @@ $s \in \lbrace \frac{12}{25}, \frac23\rbrace$.
 $\sin r$ by $S_7$ (here $r = \frac{11}{14} - s \ge \frac5{42} > 0$), $\sin v$ by
 $S_7(v)$ for $v \ge 0$ and by $S_5(v)$ for $v < 0$, and $\sin\frac q2$ and
 $\cos r$, which have negative coefficients, by $S_5$ and $C_4$, gives the lower
-bounds of Table D.8, all positive, a contradiction. $\square$
+bounds of Table D.8, all positive, a contradiction (Figure D.12). $\square$
 
 | $v$ | $s = \frac{12}{25}$ | $s = \frac23$ |
 | :-: | :-: | :-: |
@@ -1234,7 +1272,7 @@ polynomials, rounded down.
 
 ![Left: the squares of a missing south wing with W on the west side of C and S turned on its own axis; a long orange arrow shows the force on S, close to its own axis. Right: the rectangle of the angles v and s at d = 11/14, shaded from white along v = 0 to blue at v = −2/5, with a lower bound at each of its six marked points](figures/appendix-d/side-large.svg)
 
-*Figure D.7.* Proposition D.12. Left: a missing south wing with $W$ on the west
+*Figure D.12.* Proposition D.12. Left: a missing south wing with $W$ on the west
 side of $C$ and $S$ on its own axis, at $v = 0$, $s = 0.55$ and $d = 0.75$
 (radius $1.704$): the stress with the weights $4$, $10$, $3$, $3$ and its
 forces; the large force on $S$ lies close to its own axis, in the cone where its
@@ -1249,26 +1287,26 @@ $C$, and let the south wing be missing. With the weight $1$ on the separations
 of $S$ from $C$ and from $D$, the force on $S$ is the sum of two unit vectors at
 the angles $-s$ and $r = d - s$ in its frame, so it points in the direction of
 their bisector, at the angle $\frac d2 - s$, and its length $2\cos\frac d2$
-depends on $d$ only. A second-order support makes the angle of $S$ drop out of
-the stress altogether.
+depends on $d$ only (Figure D.13). A second-order support makes the angle of
+$S$ drop out of the stress altogether.
 
 ### Lemma D.13 (the force on S)
 
 For real $s$ and $d$ let $U = \cos s + \cos(d - s)$, $V = \sin(d - s) - \sin s$
-and $C(d) = \sin\frac d2 - 2\mu_+\cos\frac d2$.
+and $\xi(d) = \sin\frac d2 - 2\mu_+\cos\frac d2$.
 
 1. If $\frac12 \le d \le \frac{11}{14}$, $s \le \frac25$ and
    $d - s \le \frac{11}{14}$, then $U \ge \frac{33}{20}$,
    $\lvert V\rvert \le \frac35U$ and
 
    ```math
-   -\mu_+U + \tfrac12\left(\lvert\sin s\rvert + \sin(d - s)\right) - \tfrac3{25}V^2 \ge C(d) - \tfrac1{250} .
+   -\mu_+U + \tfrac12\left(\lvert\sin s\rvert + \sin(d - s)\right) - \tfrac3{25}V^2 \ge \xi(d) - \tfrac1{250} .
    ```
 
 2. If $\frac{11}{14} \le d \le \frac{34}{35}$, $0 \le s \le \frac25$ and
    $0 \le d - s \le \frac47$, then $U \ge \frac74$,
    $\lvert V\rvert \le \frac{31}{100}U$ and
-   $-\mu_+U + \frac12(\sin s + \sin(d - s)) \ge C(d)$.
+   $-\mu_+U + \frac12(\sin s + \sin(d - s)) \ge \xi(d)$.
 
 *Proof.* Put $x = \frac d2 - s$ and $c = \cos\frac d2$. The sum formulas give
 
@@ -1286,7 +1324,7 @@ $x \ge \frac14 - \frac25$, so $\cos x \ge 1 - \frac12(\frac{15}{28})^2 > 0.8565$
 and $\lvert\sin x\rvert \le S_5(\frac{15}{28}) < 0.5105 < \frac35\cdot 0.8565$;
 as $c \ge 0$, $\lvert V\rvert \le \frac35U$.
 
-For the inequality put $P = \frac{12}{25}c^2$ and $C = C(d)$. As
+For the inequality put $P = \frac{12}{25}c^2$ and $\xi = \xi(d)$. As
 $\frac d2 \in [\frac14, \frac{11}{28}]$,
 $c \ge C_6(\frac{11}{28}) > \frac{23}{25}$, so $P > \frac25$, and
 $t = \sin\frac d2$ satisfies $0 \le t \le S_5(\frac{11}{28}) < 0.383$. Since
@@ -1294,7 +1332,7 @@ $c \ge \frac{23}{25}$,
 $1 - c \le \frac{25}{48}(1 - c)(1 + c) = \frac{25}{48}t^2$, and therefore
 
 ```math
-2P + C = \tfrac{24}{25}\left(1 - t^2\right) - 2\mu_+c + t \le \tfrac{24}{25} - 2\mu_+ + t - \left(\tfrac{24}{25} - \tfrac{25}{24}\mu_+\right)t^2 ,
+2P + \xi = \tfrac{24}{25}\left(1 - t^2\right) - 2\mu_+c + t \le \tfrac{24}{25} - 2\mu_+ + t - \left(\tfrac{24}{25} - \tfrac{25}{24}\mu_+\right)t^2 ,
 ```
 
 which increases in $t$ on $[0, 0.383]$ (the vertex of the parabola lies beyond
@@ -1302,13 +1340,13 @@ $t = 1$) and equals $0.0701\ldots < \frac3{40}$ at $t = 0.383$. If
 $\sin s \ge 0$, the left side of the inequality is
 
 ```math
--2\mu_+c\cos x + \sin\tfrac d2\cos x - \tfrac{12}{25}c^2\sin^2x = C\cos x - P\sin^2x ,
+-2\mu_+c\cos x + \sin\tfrac d2\cos x - \tfrac{12}{25}c^2\sin^2x = \xi\cos x - P\sin^2x ,
 ```
 
 and with $y = \cos x - 1 \le 0$
 
 ```math
-C\cos x - P\sin^2x - C = Py^2 + (2P + C)y \ge \tfrac25y^2 + \tfrac3{40}y = \tfrac25\left(y + \tfrac3{32}\right)^2 - \tfrac9{2560} > -\tfrac1{250} .
+\xi\cos x - P\sin^2x - \xi = Py^2 + (2P + \xi)y \ge \tfrac25y^2 + \tfrac3{40}y = \tfrac25\left(y + \tfrac3{32}\right)^2 - \tfrac9{2560} > -\tfrac1{250} .
 ```
 
 If $\sin s < 0$, then $-\frac27 \le s < 0$, and the left side is
@@ -1321,8 +1359,8 @@ N'(x) = c\left(\left(2\mu_+ - \tfrac{24}{25}c\cos x\right)\sin x + \cos x\right)
 
 as $c\cos x \le 1 < \frac{25}{24}\cdot 2\mu_+$; and
 $\frac d2 \le x \le \frac{11}{28} + \frac27 < \frac\pi2$. So
-$N(x) \ge N(\frac d2) = C\cos\frac d2 - P\sin^2\frac d2$, which is the value of
-the first case at $x = \frac d2$, and at least $C - \frac1{250}$.
+$N(x) \ge N(\frac d2) = \xi\cos\frac d2 - P\sin^2\frac d2$, which is the value
+of the first case at $x = \frac d2$, and at least $\xi - \frac1{250}$.
 
 (2) Here $s^2 + (d - s)^2 \le (\frac25)^2 + (\frac47)^2$, so
 $U \ge 2 - \frac12(\frac4{25} + \frac{16}{49}) > \frac74$. Both $\sin s$ and
@@ -1330,8 +1368,8 @@ $\sin(d - s)$ lie in $[0, \sin\frac47]$, so
 $\lvert V\rvert \le \sin\frac47 \le S_5(\frac47) < 0.5409$, and
 $0.5409 < \frac{31}{100}\cdot\frac74$. Finally
 $c \ge 1 - \frac12(\frac12)^2 = \frac78$, as $\frac d2 \le \frac12$, so
-$C \le 1 - \frac74\mu_+ < 0$, and
-$-\mu_+U + \frac12(\sin s + \sin(d - s)) = C\cos x \ge C$. $\square$
+$\xi \le 1 - \frac74\mu_+ < 0$, and
+$-\mu_+U + \frac12(\sin s + \sin(d - s)) = \xi\cos x \ge \xi$. $\square$
 
 *Lean:
 [`Six.Wings.SouthSide.southRadial`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L34),
@@ -1355,6 +1393,17 @@ $-\mu_+U + \frac12(\sin s + \sin(d - s)) = C\cos x \ge C$. $\square$
 [`Six.Wings.SouthSide.contribution_of_nonpositive`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L244),
 [`Six.Wings.SouthSide.south_angle_lower`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L257),
 [`Six.Wings.SouthSide.south_angle_lower_high`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L283).*
+
+![Two panels. Left: in the frame of S, for s = 0.2 and d = 0.75, a black unit arrow of (D.5) at the angle s below the first axis, a purple unit arrow of (D.9) at the angle r above it, and their sum (U, V), of length 2 cos(d/2), in orange along the bisector, with the dashed parallelogram. Right: the plane of (U, V) with the part U at least 33/20 and V at most 3U/5 of the third cone shaded green, and the dashed line V = 0.31 U; the forces of part (1) fill a blue crescent inside the green part that nearly touches its corner, and those of part (2) a small orange region below the dashed line](figures/appendix-d/south-force.svg)
+
+*Figure D.13.* Lemma D.13. Left: the force on $S$ for $s = 0.2$ and
+$d = 0.75$, the sum of the unit forces of (D.5) and (D.9), at the angles $-s$
+and $r = d - s$. Right: all the forces $(U, V)$ of (1), for
+$\frac12 \le d \le \frac{11}{14}$, lie in the third cone of (K)
+($U \ge \frac{33}{20}$, $V \le \frac35U$, green; the edge $V = -\frac35U$ lies
+below the picture), and those of (2), for
+$\frac{11}{14} \le d \le \frac{34}{35}$, in the first cone
+($\lvert V\rvert \le \frac{31}{100}U$, below the dashed line).
 
 ### Proposition D.14 (W on its own axis, S on the south side: a missing south wing)
 
@@ -1386,14 +1435,14 @@ Lemma D.13 (the work is at most $\bar\rho U + kV^2$); for $C$ a face of the box
 §D.2, with $\bar\rho - \frac12 = \mu_+$, the weighted sum becomes
 
 ```math
-P_y(v, d) + \left(\omega(q) - \tfrac12(\cos q + \sin q)\right) + \left(-\mu_+U + \tfrac12\left(\lvert\sin s\rvert + \sin r\right) - kV^2 - C(d)\right) \le 0 ,
+P_y(v, d) + \left(\omega(q) - \tfrac12(\cos q + \sin q)\right) + \left(-\mu_+U + \tfrac12\left(\lvert\sin s\rvert + \sin r\right) - kV^2 - \xi(d)\right) \le 0 ,
 ```
 
 where $L = \bar R(2 + \frac{(3/8)^2}4)$, $M = \frac38\bar R$,
 $K_0 = \frac{41}{20} + \frac38 + \frac52 - 2.281\bar R$ and
 
 ```math
-P_y(v, d) = K_0 - y + \tfrac{41}{20}\left(\mu_-\cos v + \left(\tfrac12 + y\right)\sin v\right) + \tfrac38\left(\mu_-\cos d + \left(\tfrac12 - y\right)\sin d\right) + H_{L, M}(q) + C(d) .
+P_y(v, d) = K_0 - y + \tfrac{41}{20}\left(\mu_-\cos v + \left(\tfrac12 + y\right)\sin v\right) + \tfrac38\left(\mu_-\cos d + \left(\tfrac12 - y\right)\sin d\right) + H_{L, M}(q) + \xi(d) .
 ```
 
 The first bracket is nonnegative, and by Lemma D.13 the second is at least
@@ -1410,10 +1459,10 @@ $[0, \frac23]$,
 \partial^2_vP_y = -\tfrac{41}{20}\left(\mu_-\cos v + \left(\tfrac12 + y\right)\sin v\right) + H''_{L, M}(q) < 0 .
 ```
 
-In $d$, with $C''(d) = \frac{\mu_+}2\cos\frac d2 - \frac14\sin\frac d2$,
+In $d$, with $\xi''(d) = \frac{\mu_+}2\cos\frac d2 - \frac14\sin\frac d2$,
 
 ```math
-\partial^2_dP_y = -\tfrac38\left(\mu_-\cos d + \left(\tfrac12 - y\right)\sin d\right) + H''_{L, M}(q) + C''(d) \le -\tfrac38\cdot\tfrac43\mu_- - \tfrac3{40} + \tfrac{\mu_+}2 - \tfrac14\left(\tfrac14 - \tfrac1{384}\right) < -0.024 ,
+\partial^2_dP_y = -\tfrac38\left(\mu_-\cos d + \left(\tfrac12 - y\right)\sin d\right) + H''_{L, M}(q) + \xi''(d) \le -\tfrac38\cdot\tfrac43\mu_- - \tfrac3{40} + \tfrac{\mu_+}2 - \tfrac14\left(\tfrac14 - \tfrac1{384}\right) < -0.024 ,
 ```
 
 on $[\frac12, \frac{34}{35}]$: there $\frac12 - y \ge \mu_-$, $\sin d \ge 0$,
@@ -1433,7 +1482,8 @@ $0$ at $d = \frac{34}{35}$. By concavity in $v$ (Lemma A.10 (2)) the same holds
 for every $v \in [0, \frac23]$ at these three values of $d$, and then by
 concavity in $d$, $P_y > \frac1{100} > \frac1{250}$ on
 $[0, \frac23] \times [\frac12, \frac{11}{14}]$ and $P_y > 0$ on
-$[0, \frac23] \times [\frac{11}{14}, \frac{34}{35}]$, a contradiction. $\square$
+$[0, \frac23] \times [\frac{11}{14}, \frac{34}{35}]$, a contradiction
+(Figure D.14). $\square$
 
 | $y$ | $v$ | $d = \frac12$ | $d = \frac{11}{14}$ | $d = \frac{34}{35}$ |
 | :-: | :-: | :-: | :-: | :-: |
@@ -1470,7 +1520,7 @@ $\frac\pi4 \le d < \frac\pi2 - \frac35$.
 
 ![Left: the squares of a missing south wing with W turned on its own axis and S on the south side of C, the separating lines of the stress, two of them along sides of D, and orange arrows for the forces. Right: the rectangle of the angles v and d from 1/2 to 34/35, shaded green, lighter along the top edge, with a dashed line at d = 11/14 and two lower bounds at each of six marked points](figures/appendix-d/own-side.svg)
 
-*Figure D.8.* Proposition D.14. Left: a missing south wing with $W$ on its own
+*Figure D.14.* Proposition D.14. Left: a missing south wing with $W$ on its own
 axis and $S$ on the south side of $C$, at $v = 0.2$, $s = 0.1$ and $d = 0.75$
 (radius $1.742$): the stress with the weights $\frac{41}{20}$, $1$, $\frac38$,
 $1$, $1$ and its forces; the force on $S$ is the sum of two unit forces and
@@ -1487,13 +1537,13 @@ $v + s < \frac{24}{25}$. The two stresses of this section and the next differ by
 the order of $v$ and $s$. Both use the *wing harmonic*
 
 ```math
-h(x) = \mu_-\cos x + \mu_+\sin x ,
+\zeta(x) = \mu_-\cos x + \mu_+\sin x ,
 ```
 
 which is what the separation of $W$ (or $S$) from $C$ along its own axis leaves
 after its threshold and the corner of the box: the threshold
 $\frac12 + \frac12(\cos v + \sin v)$ less $\bar c$ times the components
-$(\cos v, -\sin v)$ of the force on $C$ is $\frac12 + h(v)$.
+$(\cos v, -\sin v)$ of the force on $C$ is $\frac12 + \zeta(v)$.
 
 ### Proposition D.15 (own wings with v ≤ s: a missing south wing)
 
@@ -1537,7 +1587,7 @@ $\sin v \le \frac{12}{25}$, both components of $F_C$ are positive. Collecting
 the terms, the weighted sum becomes $\Pi(v, s, d) \le 0$, where
 
 ```math
-\Pi(v, s, d) = K_2 + 1.82\,h(v) + 1.59\,h(s) + 1.09\,H_{L, 0}(q) + J_1(r), \qquad J_1(r) = -\mu_+\cos r + \tfrac12\sin r ,
+\Pi(v, s, d) = K_2 + 1.82\,\zeta(v) + 1.59\,\zeta(s) + 1.09\,H_{L, 0}(q) + J_1(r), \qquad J_1(r) = -\mu_+\cos r + \tfrac12\sin r ,
 ```
 
 with $L = \frac{2.076}{1.09}\bar R = 3.2160\ldots \le L_*$ and
@@ -1556,7 +1606,7 @@ $d^4 \le (\frac{11}{14})^2d^2$, $d^5 \le (\frac{11}{14})^2d^3$ and
 $d^3 \ge \frac12d^2$,
 
 ```math
-f(d) \le 1.59 - \kappa + \mu_+d + c_2d^2, \qquad c_2 = -0.795 + \tfrac\kappa8 + \tfrac{1.59}{24}\cdot\tfrac{121}{196} - \tfrac{\mu_+}{12}\left(1 - \tfrac{121}{3920}\right) = -0.58449\ldots ,
+f(d) \le 1.59 - \kappa + \mu_+d + c_2d^2, \qquad c_2 = -0.795 + \tfrac\kappa8 + \tfrac{1.59}{24}\left(\tfrac{11}{14}\right)^2 - \tfrac{\mu_+}{12}\left(1 - \tfrac1{20}\left(\tfrac{11}{14}\right)^2\right) = -0.58449\ldots ,
 ```
 
 and the right side is at most
@@ -1565,7 +1615,15 @@ and the right side is at most
 1.59 - \kappa + \frac{\mu_+^2}{4\lvert c_2\rvert} = -0.16276\ldots + 0.16062\ldots < 0 .
 ```
 
-So $\Pi(v, s, d) \ge \Pi(v, s, \frac{11}{14})$.
+So $\Pi(v, s, d) \ge \Pi(v, s, \frac{11}{14})$ (Figure D.15).
+
+![Graph over d from 1/2 to 11/14: the bound f(d) of the derivative of the profile in d, in blue, falls from about -0.009 to about -0.062; above it the dashed orange parabola that bounds it, whose highest point, about -0.0021, is marked; both stay below the dashed zero line](figures/appendix-d/monotone.svg)
+
+*Figure D.15.* The monotonicity in $d$ in the proof of Proposition D.15: the
+bound $f(d)$ of $\partial_d\Pi$ (blue) and the parabola
+$1.59 - \kappa + \mu_+d + c_2d^2$ above it (orange); the top of the parabola,
+$1.59 - \kappa + \mu_+^2/4\lvert c_2\rvert = -0.0021\ldots$, is still
+negative.
 
 *The angle $s$.* At $d = \frac{11}{14}$, expanding $J_1(\frac{11}{14} - s)$,
 $\Pi$ is a constant plus $A\cos s + B\sin s$ with
@@ -1607,7 +1665,8 @@ vertices.
 *The four vertices.* Replacing $\cos v$, $\cos s$ by $C_6$, $\sin v$, $\sin s$,
 $\sin q$, $\sin r$ by $S_7$, and $\sin\frac q2$ and $\cos r$, which have
 negative coefficients, by $S_5$ and $C_4$, gives at $d = \frac{11}{14}$ the
-lower bounds of Table D.10, all positive, a contradiction. $\square$
+lower bounds of Table D.10, all positive, a contradiction (Figure D.16).
+$\square$
 
 | $(v, s)$ | $(0, 0)$ | $(0, \frac23)$ | $(\frac{22}{75}, \frac23)$ | $(\frac{12}{25}, \frac{12}{25})$ |
 | --- | :-: | :-: | :-: | :-: |
@@ -1642,7 +1701,7 @@ rounded down.
 
 ![Left: the squares of a missing south wing with W and S turned on their own axes, S turned further than W, with the separating lines and the forces of the stress. Right: a quadrilateral of the angles v and s with the vertices (0, 0), (0, 2/3), (22/75, 2/3) and (12/25, 12/25), shaded green, lighter near its vertices, with a lower bound at each vertex](figures/appendix-d/south-turned.svg)
 
-*Figure D.9.* Proposition D.15. Left: a missing south wing with $W$ and $S$ on
+*Figure D.16.* Proposition D.15. Left: a missing south wing with $W$ and $S$ on
 their own axes, at $v = 0.15$, $s = 0.35$ and $d = 0.75$ (radius $1.717$): the
 stress with the weights $1.82$, $1.59$, $1.09$, $1$ and its forces. Right: the
 quadrilateral of $(v, s)$ at $d = \frac{11}{14}$, shaded by $\Pi$, with the
@@ -1658,13 +1717,13 @@ term of that support brings the *transverse term* $J$ below.
 
 Let $J(r) = -\mu_+\cos r + \frac12\sin r - \frac1{12}\sin^2r$.
 
-1. $h(x) \ge \mu_- + \frac49x$ for $0 \le x \le \frac{12}{25}$.
+1. $\zeta(x) \ge \mu_- + \frac49x$ for $0 \le x \le \frac{12}{25}$.
 2. $J''(r) \le \mu_+ - \frac16 - \frac r3$ for $0 \le r \le 1$.
 3. $\cos d + \sin d \ge \frac43$ for $\frac12 \le d \le \frac{163}{175}$.
 
-*Proof.* (1) The function $h(x) - \mu_- - \frac49x$ is concave on
-$[0, \frac{12}{25}]$, as $h'' = -h \le 0$ there (Lemma A.11 (1)); it vanishes at
-$0$, and at $\frac{12}{25}$ it is at least
+*Proof.* (1) The function $\zeta(x) - \mu_- - \frac49x$ is concave on
+$[0, \frac{12}{25}]$, as $\zeta'' = -\zeta \le 0$ there (Lemma A.11 (1)); it
+vanishes at $0$, and at $\frac{12}{25}$ it is at least
 
 ```math
 \mu_-C_6\left(\tfrac{12}{25}\right) + \mu_+S_7\left(\tfrac{12}{25}\right) - \mu_- - \tfrac49\cdot\tfrac{12}{25} = 0.6264\ldots - 0.6005\ldots > 0 .
@@ -1712,6 +1771,13 @@ $\square$
 [`Six.Wings.WestTurned.transverse_third_upper`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L64),
 [`Six.Wings.WestTurned.transverse_second_upper`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L81),
 [`Six.Wings.WestTurned.diagonal_trig_lower`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L120).*
+
+![Three graphs. (1) Over x from 0 to 12/25, the wing harmonic, in blue, concave and above the dashed orange line mu- + 4x/9, which it meets at 0. (2) Over r from 0 to 1, the second derivative of J, in blue, falling from about 0.45 to about -0.02, below the dashed orange line mu+ - 1/6 - r/3, which it meets at 0. (3) Over d from 1/2 to 163/175, cos d + sin d, in blue, a concave arch with its top at pi/4, above the dashed orange level 4/3](figures/appendix-d/bounds.svg)
+
+*Figure D.17.* The three bounds of Lemma D.16 (dashed): (1) a line through
+$\zeta(0)$ under the concave wing harmonic $\zeta$; (2) the line through
+$J''(0)$ of slope $-\frac13$, above $J''$ as $J''' \le -\frac13$; (3) the
+level $\frac43$ under $\cos d + \sin d$.
 
 ### Proposition D.17 (own wings with s ≤ v: a missing south wing)
 
@@ -1804,7 +1870,7 @@ $\sin v$, $\sin s$, $\sin q$, $\sin r$ by $S_7$, $\sin\frac q2$, $\cos\frac q2$,
 $\cos r$ (negative coefficients) by $S_5$, $C_4$, $C_4$, and write
 $-\frac1{12}\sin^2r = -\frac1{24} + \frac1{24}\cos 2r$ with $\cos 2r$ replaced
 by $C_6(2r)$. Table D.11 lists the resulting lower bounds, all positive, a
-contradiction. $\square$
+contradiction (Figure D.18). $\square$
 
 | $y$ | $d$ | $(0, 0)$ | $(\frac23, 0)$ | $(\frac23, \frac{22}{75})$ | $(\frac{12}{25}, \frac{12}{25})$ |
 | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -1842,7 +1908,7 @@ $v < s$, whose reflection has $\frac\pi4 \le d < \frac\pi2 - \frac{16}{25}$.
 
 ![Left: the squares of a missing south wing with W and S turned on their own axes, W turned further than S, with the separating lines and the forces of the stress. Right: a quadrilateral of the angles v and s with the vertices (0, 0), (2/3, 0), (2/3, 22/75) and (12/25, 12/25), shaded green, with two lower bounds at each vertex](figures/appendix-d/west-turned.svg)
 
-*Figure D.10.* Proposition D.17. Left: a missing south wing with $W$ and $S$ on
+*Figure D.18.* Proposition D.17. Left: a missing south wing with $W$ and $S$ on
 their own axes, at $v = 0.35$, $s = 0.15$ and $d = 0.75$ (radius $1.732$): the
 stress with the weights $\frac94$, $\frac34$, $\frac9{20}$, $1$, $1$ and its
 forces. Right: the quadrilateral of $(v, s)$, shaded by the minimum of $\Pi_y$
@@ -1883,10 +1949,10 @@ on $C$ of the force $\frac{41}{20}(\cos v, -\sin v)$, form, up to constants, the
 *base profile*
 
 ```math
-B(v, s, d) = \tfrac{41}{20}h(v) + g(v + d) + \delta(d - s), \qquad g(q) = \tfrac12\cos q - \mu_+\sin q, \qquad \delta(x) = \cos x - \sigma\cos\tfrac x2 + \sigma\sin\tfrac x2 ,
+B(v, s, d) = \tfrac{41}{20}\zeta(v) + g(v + d) + \delta(d - s), \qquad g(q) = \tfrac12\cos q - \mu_+\sin q, \qquad \delta(x) = \cos x - \sigma\cos\tfrac x2 + \sigma\sin\tfrac x2 ,
 ```
 
-with the wing harmonic $h$ of §D.7.
+with the wing harmonic $\zeta$ of §D.7.
 
 ### Lemma D.18 (the base profile)
 
@@ -1921,12 +1987,13 @@ nonincreasing on $[0, \frac65]$, and
 \delta'(x) \ge \delta'\left(\tfrac65\right) = -\sin\tfrac65 + \tfrac\sigma2\left(\sin\tfrac35 + \cos\tfrac35\right) \ge -S_5\left(\tfrac65\right) + \tfrac\sigma2\left(S_7\left(\tfrac35\right) + C_6\left(\tfrac35\right)\right) = 0.7278\ldots .
 ```
 
-(3) Here $d - s \in [\frac4{25}, \frac{11}{14} + \frac25] \subset [0, \frac65]$.
-*The wall.* Along $v = \frac{53}{50} - d$,
-$B = \frac{41}{20}h(\frac{53}{50} - d) + g(\frac{53}{50}) + \delta(d - s)$ is
-concave in $d$: $h$ is concave on $[0, \frac23]$, being a nonnegative first
-harmonic there (Lemma A.11 (1)), and $\delta$ by (2). So $K + B > 0$ along the
-wall, from its ends $(\frac{21}{50}, \frac{16}{25})$ and
+(3) Here $d - s \in [\frac4{25}, \frac{11}{14} + \frac25] \subset [0, \frac65]$,
+and the argument runs along the wall, the top and the segments between them
+(Figure D.19). *The wall.* Along $v = \frac{53}{50} - d$,
+$B = \frac{41}{20}\zeta(\frac{53}{50} - d) + g(\frac{53}{50}) + \delta(d - s)$
+is concave in $d$: $\zeta$ is concave on $[0, \frac23]$, being a nonnegative
+first harmonic there (Lemma A.11 (1)), and $\delta$ by (2). So $K + B > 0$
+along the wall, from its ends $(\frac{21}{50}, \frac{16}{25})$ and
 $(\frac{48}{175}, \frac{11}{14})$. *The top.* Along $v = \frac{31}{50}$, $B$ is
 nondecreasing in $d$: as $\frac{31}{50} + d$ lies between $\frac{63}{50}$ and
 $\frac{31}{50} + \frac{11}{14} < \frac\pi2$, we have
@@ -1937,7 +2004,8 @@ $\cos(\frac{31}{50} + d) \le C_4(\frac{63}{50}) < \frac8{25}$, and by (2)
 ```
 
 So $K + B > 0$ along the top, from $(\frac{31}{50}, \frac{16}{25})$. *The
-segments.* At a fixed $d$, $\frac{41}{20}h(v) + g(v + d)$ is the first harmonic
+segments.* At a fixed $d$, $\frac{41}{20}\zeta(v) + g(v + d)$ is the first
+harmonic
 
 ```math
 \left(\tfrac{41}{20}\mu_- + \tfrac12\cos d - \mu_+\sin d\right)\cos v + \left(\tfrac{41}{20}\mu_+ - \tfrac12\sin d - \mu_+\cos d\right)\sin v ,
@@ -1978,6 +2046,15 @@ top. $\square$
 [`Six.Wings.WestDiagonal.wall_concave`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L191),
 [`Six.Wings.WestDiagonal.top_monotone`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L216),
 [`Six.Wings.WestDiagonal.positive_of_three_points`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L245).*
+
+![Two panels. Left: over x from 0 to 6/5, the derivative of delta, in blue, falling from about 1.19 to about 0.73 and staying above the dashed orange level 7/10; the Taylor bound 0.7278 at 6/5 is marked. Right: the domain of (v, d) of section D.9, a green quadrilateral: its left edge, the wall, drawn purple, its right edge, the top, drawn orange with an arrow pointing up, and green horizontal segments across it; black dots mark the three points of the lemma, and an open circle the fourth corner](figures/appendix-d/base.svg)
+
+*Figure D.19.* Lemma D.18. Left, (2): $\delta'$ decreases on $[0, \frac65]$,
+so $\delta$ is concave, and stays above $\frac7{10}$. Right, (3): from the
+three points (dots), $K + B$ is positive along the wall (purple), where it is
+concave in $d$, along the top (orange), where it does not decrease in $d$, and
+then on each segment at fixed $d$ (green), where it is concave in $v$; the
+fourth corner (open circle) needs no check.
 
 ### Proposition D.19 (W on its own axis, S on the south side: a missing west wing)
 
@@ -2028,7 +2105,8 @@ Lemma D.18 (3), with $K = K_4 + \frac32\cos x + \sigma_\pm\sin x$, gives
 $\Pi > 0$ on the domain. At the points we replace $\cos v$, $\cos q$, $\cos r$,
 $\cos x$ by $C_6$, $\sin v$, $\sin\frac r2$, $\sin x$ by $S_7$, and $\sin q$,
 $\cos\frac r2$, which have negative coefficients, by $S_5$ and $C_4$. Table D.12
-lists the resulting lower bounds, all positive, a contradiction. $\square$
+lists the resulting lower bounds, all positive, a contradiction (Figure D.20).
+$\square$
 
 | $(v, d)$ | $s = 0$ | $s = \frac25$ | $s = -\frac25$ |
 | --- | :-: | :-: | :-: |
@@ -2066,6 +2144,18 @@ rounded down.
 [`Six.Wings.WestDiagonal.SideSouth.boundary_positive`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L363),
 [`Six.Wings.WestDiagonal.SideSouth.positive`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L385).*
 
+![Three panels. The first two show missing west wings with W turned on its own axis: D is separated from W by the line of its own upper left side and from S by a side of S, with S on the south side of C in the first panel and turned on its own axis in the second, and orange arrows for the forces. The third shows the small quadrilateral domain of the angles v and d, shaded green, with three marked points and two lower bounds at each](figures/appendix-d/diagonal.svg)
+
+*Figure D.20.* Propositions D.19 and D.20. (a) A missing west wing with $W$ on
+its own axis and $S$ on the south side of $C$, at $v = 0.45$, $s = 0$ and
+$d = 0.72$ (radius $1.696$), with the weights $\frac{41}{20}$, $\frac32$, $1$,
+$1$; (b) the same with $S$ on its own axis and $s = 0.2$ (radius $1.700$), with
+the weights $\frac{41}{20}$, $2$, $1$, $1$. The separations of $D$ from $W$ and
+from $S$ are along the secondary axes of $D$ and of $S$. (c) The domain of
+$(v, d)$ left by Proposition D.7, shaded by the minimum over $s$ of the profiles
+of both propositions, with the three points of Lemma D.18 and the smallest
+bounds there in Tables D.12 and D.13, for (a) and for (b).
+
 ### Proposition D.20 (W and S on their own axes: a missing west wing)
 
 There are no wing data with a missing west wing that satisfy (D.2) and (D.4),
@@ -2097,18 +2187,18 @@ $\frac85\cdot\frac{22}{25} - \frac{41}{20}\cdot\frac{31}{50} > 0$. Collecting
 the terms, the weighted sum becomes $\Pi \le 0$, where
 
 ```math
-\Pi = 2 - \tfrac{41}{20}\mu_+ + B(v, s, d) + \gamma\left(1 + h(s)\right) - \bar R\ell_\gamma .
+\Pi = 2 - \tfrac{41}{20}\mu_+ + B(v, s, d) + \gamma\left(1 + \zeta(s)\right) - \bar R\ell_\gamma .
 ```
 
 *Positivity.* $\Pi$ is concave in $s$ on $[0, \frac{12}{25}]$, by Lemma D.18 (2)
-and the concavity of $h$. So at each of the three points of Lemma D.18 (3),
+and the concavity of $\zeta$. So at each of the three points of Lemma D.18 (3),
 positivity at the ends of a piece gives positivity on the piece, and then Lemma
 D.18 (3), with
-$K = 2 - \frac{41}{20}\mu_+ + \gamma(1 + h(s)) - \bar R\ell_\gamma$, gives
+$K = 2 - \frac{41}{20}\mu_+ + \gamma(1 + \zeta(s)) - \bar R\ell_\gamma$, gives
 $\Pi > 0$ on the domain. At the points we replace $\cos v$, $\cos q$, $\cos r$,
 $\cos s$ by $C_6$, $\sin v$, $\sin\frac r2$, $\sin s$ by $S_7$, and $\sin q$,
 $\cos\frac r2$ by $S_5$ and $C_4$. Table D.13 lists the resulting lower bounds,
-all positive, a contradiction. $\square$
+all positive, a contradiction (Figure D.20). $\square$
 
 | $(v, d)$ | $\gamma = \frac85$: $s = 0$, $\frac3{20}$ | $\gamma = 2$: $s = \frac3{20}$, $\frac3{10}$ | $\gamma = \frac{13}5$: $s = \frac3{10}$, $\frac{12}{25}$ |
 | --- | :-: | :-: | :-: |
@@ -2146,18 +2236,6 @@ pieces, by Taylor polynomials, rounded down.
 [`Six.Wings.WestDiagonal.OwnSouth.boundary_positive`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L606),
 [`Six.Wings.WestDiagonal.OwnSouth.positive`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L627).*
 
-![Three panels. The first two show missing west wings with W turned on its own axis: D is separated from W by the line of its own upper left side and from S by a side of S, with S on the south side of C in the first panel and turned on its own axis in the second, and orange arrows for the forces. The third shows the small quadrilateral domain of the angles v and d, shaded green, with three marked points and two lower bounds at each](figures/appendix-d/diagonal.svg)
-
-*Figure D.11.* Propositions D.19 and D.20. (a) A missing west wing with $W$ on
-its own axis and $S$ on the south side of $C$, at $v = 0.45$, $s = 0$ and
-$d = 0.72$ (radius $1.696$), with the weights $\frac{41}{20}$, $\frac32$, $1$,
-$1$; (b) the same with $S$ on its own axis and $s = 0.2$ (radius $1.700$), with
-the weights $\frac{41}{20}$, $2$, $1$, $1$. The separations of $D$ from $W$ and
-from $S$ are along the secondary axes of $D$ and of $S$. (c) The domain of
-$(v, d)$ left by Proposition D.7, shaded by the minimum over $s$ of the profiles
-of both propositions, with the three points of Lemma D.18 and the smallest
-bounds there in Tables D.12 and D.13, for (a) and for (b).
-
 ## D.10 Proof of Proposition 9.46
 
 [Proposition 9.46](09-six.md#proposition-946-no-missing-wing) states that in a
@@ -2168,12 +2246,12 @@ normalized packing neither the west wing nor the south wing is missing.
 $s < \frac23$ (Lemma D.2 (3)), and that a square on its own axis has a positive
 angle and one on its matching side an angle below $\frac25$ in absolute value
 (Lemma D.2 (4)). The propositions of §D.5 to §D.9 are applied on the ranges of
-$d$ shown in Figure D.12; two of them are applied to the reflection of the wing
+$d$ shown in Figure D.21; two of them are applied to the reflection of the wing
 data (Lemma D.3), whose angle of $D$ lies in $[\frac\pi4, \frac\pi2 - \frac12)$.
 
 ![Seven horizontal bars over the axis of d, one for each of Propositions D.10, D.11, D.12, D.14, D.15, D.17 and D.19 with D.20: each grey bar is the range of d of the proposition, a blue part inside it the range used for normalized packings, and for Propositions D.14 and D.17 an orange part from π/4 to π/2 − 3/5 or π/2 − 16/25 the range used for the reflections](figures/appendix-d/ranges.svg)
 
-*Figure D.12.* For each case, the range of the angle $d$ on which its
+*Figure D.21.* For each case, the range of the angle $d$ on which its
 proposition is proved (grey), the part used for normalized packings (blue) and
 the part used for the reflections of missing west wings (orange). The upper ends
 $\frac{34}{35}$ and $\frac{163}{175}$ lie just beyond $\frac\pi2 - \frac35$ and

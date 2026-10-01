@@ -8,8 +8,8 @@
 <line x1="261.0" y1="203.8" x2="153.0" y2="203.8" stroke="#1f2937" stroke-width="4"/>
 <line x1="99.0" y1="203.8" x2="192.5" y2="257.8" stroke="#2563eb" stroke-width="1.5"/>
 <line x1="99.0" y1="203.8" x2="192.5" y2="149.8" stroke="#16a34a" stroke-width="1.5"/>
-<path d="M 127.1 220.0 A 32.4 32.4 0 0 0 127.1 187.6" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-linecap="round"/>
-<text x="147.6" y="203.8" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π/3</text>
+<path d="M 117.7 214.6 A 21.6 21.6 0 0 0 117.7 193.0" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-linecap="round"/>
+<text x="137.9" y="203.8" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π/3</text>
 <circle cx="99.0" cy="203.8" r="3.2" fill="#1f2937"/>
 <text x="93.6" y="212.4" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
 <text x="239.4" y="290.2" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">S</text>
@@ -21,8 +21,8 @@
 <line x1="428.4" y1="95.8" x2="428.4" y2="149.8" stroke="#1f2937" stroke-width="4"/>
 <line x1="374.4" y1="203.8" x2="467.9" y2="149.8" stroke="#2563eb" stroke-width="1.5"/>
 <line x1="374.4" y1="203.8" x2="374.4" y2="95.8" stroke="#16a34a" stroke-width="1.5"/>
-<path d="M 402.5 187.6 A 32.4 32.4 0 0 0 374.4 171.4" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-linecap="round"/>
-<text x="398.7" y="161.7" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π/3</text>
+<path d="M 393.1 193.0 A 21.6 21.6 0 0 0 374.4 182.2" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-linecap="round"/>
+<text x="393.8" y="170.1" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π/3</text>
 <circle cx="374.4" cy="203.8" r="3.2" fill="#1f2937"/>
 <text x="369.0" y="212.4" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
 <text x="514.8" y="182.2" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">S</text>
@@ -34,8 +34,8 @@
 <line x1="757.8" y1="149.8" x2="703.8" y2="149.8" stroke="#1f2937" stroke-width="4"/>
 <line x1="649.8" y1="203.8" x2="757.8" y2="203.8" stroke="#2563eb" stroke-width="1.5"/>
 <line x1="649.8" y1="203.8" x2="703.8" y2="110.2" stroke="#16a34a" stroke-width="1.5"/>
-<path d="M 682.2 203.8 A 32.4 32.4 0 0 0 666.0 175.7" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-linecap="round"/>
-<text x="691.9" y="179.5" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π/3</text>
+<path d="M 671.4 203.8 A 21.6 21.6 0 0 0 660.6 185.1" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-linecap="round"/>
+<text x="683.5" y="184.3" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">π/3</text>
 <circle cx="649.8" cy="203.8" r="3.2" fill="#1f2937"/>
 <text x="644.4" y="212.4" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">o</text>
 <text x="790.2" y="236.2" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">S</text>

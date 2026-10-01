@@ -7,23 +7,23 @@
 <line x1="287.6" y1="420.6" x2="164.8" y2="24.6" stroke="#1f2937" stroke-width="1.6"/>
 <circle cx="246.6" cy="288.6" r="3.2" fill="#1f2937"/>
 <line x1="328.2" y1="84.0" x2="354.6" y2="84.0" stroke="#1f2937" stroke-width="1.8"/>
-<text x="361.2" y="84.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">|V| ≤ 0.31U</text>
+<text x="361.2" y="84.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">|<tspan font-style="italic">V</tspan>| ≤ 0.31<tspan font-style="italic">U</tspan></text>
 <line x1="302.9" y1="420.6" x2="144.5" y2="24.6" stroke="#9333ea" stroke-width="1.6"/>
 <circle cx="229.6" cy="240.7" r="3.2" fill="#9333ea"/>
 <line x1="328.2" y1="113.7" x2="354.6" y2="113.7" stroke="#9333ea" stroke-width="1.8"/>
-<text x="361.2" y="113.7" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">3/5 ≤ U ≤ 7/10, |V| ≤ 2U/5</text>
+<text x="361.2" y="113.7" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">3/5 ≤ <tspan font-style="italic">U</tspan> ≤ 7/10, |<tspan font-style="italic">V</tspan>| ≤ 2<tspan font-style="italic">U</tspan>/5</text>
 <line x1="321.6" y1="419.3" x2="124.3" y2="24.6" stroke="#ea580c" stroke-width="1.6"/>
 <circle cx="205.7" cy="187.5" r="3.2" fill="#ea580c"/>
 <line x1="328.2" y1="143.4" x2="354.6" y2="143.4" stroke="#ea580c" stroke-width="1.8"/>
-<text x="361.2" y="143.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">U ≥ 7/5, |V| ≤ U/2</text>
+<text x="361.2" y="143.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle"><tspan font-style="italic">U</tspan> ≥ 7/5, |<tspan font-style="italic">V</tspan>| ≤ <tspan font-style="italic">U</tspan>/2</text>
 <line x1="321.6" y1="374.3" x2="111.8" y2="24.6" stroke="#16a34a" stroke-width="1.6"/>
 <circle cx="176.4" cy="134.2" r="3.2" fill="#16a34a"/>
 <line x1="328.2" y1="173.1" x2="354.6" y2="173.1" stroke="#16a34a" stroke-width="1.8"/>
-<text x="361.2" y="173.1" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">U ≥ 33/20, |V| ≤ 3U/5</text>
+<text x="361.2" y="173.1" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle"><tspan font-style="italic">U</tspan> ≥ 33/20, |<tspan font-style="italic">V</tspan>| ≤ 3<tspan font-style="italic">U</tspan>/5</text>
 <polyline points="328.2,202.8 354.6,202.8" fill="none" stroke="#1f2937" stroke-width="1.6" stroke-linejoin="round" stroke-opacity="1" stroke-dasharray="6 4"/>
 <text x="361.2" y="202.8" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">a + 0.31(|b| + b²) = ρ<tspan dy="3.6" font-size="8.2">0</tspan></text>
 <circle cx="246.6" cy="288.6" r="3.2" fill="#1f2937"/>
-<text x="253.2" y="305.1" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">ρ<tspan dy="4.2" font-size="9.5">0</tspan></text>
+<text x="233.4" y="308.4" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">ρ<tspan dy="4.2" font-size="9.5">0</tspan></text>
 <line x1="27.9" y1="288.6" x2="321.6" y2="288.6" stroke="#9ca3af" stroke-width="1" marker-end="url(#arrow)"/>
 <text x="321.6" y="301.8" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">a</text>
 <line x1="44.4" y1="546.0" x2="44.4" y2="31.2" stroke="#9ca3af" stroke-width="1" marker-end="url(#arrow)"/>

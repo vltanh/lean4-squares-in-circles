@@ -7,7 +7,8 @@
 <circle cx="339.0" cy="143.7" r="3.2" fill="#1f2937"/>
 <line x1="198.0" y1="195.0" x2="112.0" y2="72.1" stroke="#1f2937" stroke-width="1"/>
 <circle cx="112.0" cy="72.1" r="3.2" fill="#1f2937"/>
-<line x1="198.0" y1="195.0" x2="261.4" y2="171.9" stroke="#2563eb" stroke-width="2.4" marker-end="url(#arrow)"/>
+<line x1="198.0" y1="195.0" x2="255.8" y2="174.0" stroke="#2563eb" stroke-width="2.4"/>
+<path d="M 261.4 171.9 L 252.7 180.0 L 249.5 171.4 z" fill="#2563eb"/>
 <text x="253.5" y="190.1" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle" font-style="italic">u(θ)</text>
 <path d="M 237.5 180.6 A 42.0 42.0 0 0 0 173.9 160.6" fill="none" stroke="#ea580c" stroke-width="1.8" stroke-linecap="round"/>
 <text x="217.4" y="133.5" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">d(θ, θ′)</text>

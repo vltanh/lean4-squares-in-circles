@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="484" height="484" viewBox="0 0 484 484" role="img" aria-label="The optimal packing of six squares with the dotted circle of radius 9/10 about o: each of the five squares that avoid o holds a thick arc of more than a sixth of it, the grey square C contains o, and five dots, the pins, lie one in each of the squares E, N, W, D and S">
+<title>The optimal packing of six squares with the dotted circle of radius 9/10 about o: each of the five squares that avoid o holds a thick arc of more than a sixth of it, the grey square C contains o, and five dots, the pins, lie one in each of the squares E, N, W, D and S</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<circle cx="241.8" cy="241.8" r="216.1" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="188.6,295.0 316.6,295.0 316.6,167.0 188.6,167.0" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="188.6,167.0 316.6,167.0 316.6,39.0 188.6,39.0" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="316.6,295.0 444.6,295.0 444.6,167.0 316.6,167.0" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="60.6,252.0 188.6,252.0 188.6,124.0 60.6,124.0" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="231.6,423.0 359.6,423.0 359.6,295.0 231.6,295.0" fill="#fce7f3" stroke="#db2777" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="141.1,433.0 231.6,342.5 141.1,252.0 50.6,342.5" fill="#cffafe" stroke="#0891b2" stroke-width="1.5" fill-opacity="1"/>
+<circle cx="241.8" cy="241.8" r="2.6" fill="#1f2937"/>
+<circle cx="241.8" cy="241.8" r="115.2" fill="none" stroke="#1f2937" stroke-width="1.1" stroke-dasharray="1.5 3"/>
+<path d="M 316.6 154.1 A 115.2 115.2 0 0 0 188.5 139.7" fill="none" stroke="#ea580c" stroke-width="5" stroke-linecap="round"/>
+<path d="M 344.0 295.0 A 115.2 115.2 0 0 0 329.4 167.0" fill="none" stroke="#16a34a" stroke-width="5" stroke-linecap="round"/>
+<path d="M 188.5 139.7 A 115.2 115.2 0 0 0 127.1 252.1" fill="none" stroke="#9333ea" stroke-width="5" stroke-linecap="round"/>
+<path d="M 231.7 356.6 A 115.2 115.2 0 0 0 344.0 295.0" fill="none" stroke="#db2777" stroke-width="5" stroke-linecap="round"/>
+<path d="M 128.8 264.4 A 115.2 115.2 0 0 0 219.3 354.8" fill="none" stroke="#0891b2" stroke-width="5" stroke-linecap="round"/>
+<text x="294.8" y="188.8" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle" font-style="italic">C</text>
+<circle cx="241.8" cy="126.6" r="4" fill="#1f2937"/>
+<text x="252.6" y="103.0" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">N</text>
+<circle cx="357.0" cy="241.8" r="4" fill="#1f2937"/>
+<text x="380.6" y="231.0" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">E</text>
+<circle cx="130.5" cy="212.0" r="4" fill="#1f2937"/>
+<text x="124.6" y="188.0" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#9333ea" text-anchor="middle" dominant-baseline="middle" font-style="italic">W</text>
+<circle cx="271.6" cy="353.1" r="4" fill="#1f2937"/>
+<text x="295.6" y="359.0" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#db2777" text-anchor="middle" dominant-baseline="middle" font-style="italic">S</text>
+<circle cx="160.4" cy="323.3" r="4" fill="#1f2937"/>
+<text x="106.5" y="377.1" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#0891b2" text-anchor="middle" dominant-baseline="middle" font-style="italic">D</text>
+<text x="249.5" y="255.9" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">o</text>
+<text x="339.6" y="144.1" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">Γ<tspan dy="4.2" font-size="9.5">9/10</tspan></text>
+</svg>
