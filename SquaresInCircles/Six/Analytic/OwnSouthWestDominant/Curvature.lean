@@ -1,16 +1,14 @@
 import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Profile
 
 /-!
-# Coordinate concavity on the west-dominant geometric domain
+# Concavity of the west-dominant profile
 
-For s<=v the relations r=d-s>=0 and q+r=2d+v-s>=1 are retained.
-The chord and transverse curvature envelopes then give a uniform negative
-bound for the d curvature. For the s curvature, the affine OWN-wing reserve
-and s+r=d>=1/2 give another strictly negative constant. The v curvature is
-already a negative harmonic plus the nonpositive chord curvature.
-
-These are inequalities on whole intervals. No finite angular cover is used.
-Compilation and kernel acceptance remain unverified.
+On `0 ≤ v ≤ 2/3`, `0 ≤ s ≤ 12/25` and `1/2 ≤ d ≤ 11/14` the profile is concave
+in each angle. In `v` the harmonic and the chord term both have nonpositive
+curvature. In `s` the line below the wing harmonic and the bound on `J''` give
+a negative curvature, because `s + (d - s) = d ≥ 1/2`. In `d` the harmonic and
+the two curvature envelopes give a negative curvature when `s ≤ v`, because
+then `(d + v) + (d - s) ≥ 1` with `d - s ≥ 0`.
 -/
 
 noncomputable section

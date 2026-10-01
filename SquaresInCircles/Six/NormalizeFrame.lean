@@ -3,18 +3,21 @@ import SquaresInCircles.Common.Contacts
 import SquaresInCircles.Common.Angles
 
 /-!
-# Initial normalization of an arbitrary packing
+# The frame of the central square
 
-Translate the disk center to zero, align with the containing square, and use
-only a quarter-turn to put its center in the nonnegative quadrant. This stage
-uses no reflection. The square at index zero is replaced by an axisSquare
-with exactly the same open and closed point sets, not a bounding-box surrogate.
+Move the disk centre to the origin, turn the frame to the axes of the square
+that contains it, and turn further by a multiple of a quarter turn so that the
+centre of that square has nonnegative coordinates; only rotations are used.
+The square that contains the disk centre becomes the square of index `0`, and
+it is replaced by the axis-parallel square with the same open and closed point
+sets.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six
 
-/-- The exact inverse image of a square under a positively oriented rigid frame. -/
+/-- The square `S` read in the frame `φ` at `o`: its inverse image under the
+frame map. -/
 def pullSquare (o : Point) (φ : Direction) (S : UnitSquare) : UnitSquare where
   center := (frameEquiv o φ).symm S.center
   cosine := φ.cos*S.cosine+φ.sin*S.sine
@@ -61,7 +64,7 @@ lemma packing_pull {n : ℕ} {S : Fin n → UnitSquare} {o : Point} {R : ℝ}
 lemma packing_relabel {n : ℕ} {S : Fin n → UnitSquare} {o : Point} {R : ℝ}
     (hp : Packing S o R) (σ : Equiv.Perm (Fin n)) :
     Packing (fun i => S (σ i)) o R :=
-  ⟨hp.1,fun i => hp.2.1 (σ i),fun i j hij => hp.disjoint _ _ (σ.injective.ne hij)⟩
+  ⟨hp.1,fun i => hp.2.1 (σ i),fun _ _ hij => hp.disjoint _ _ (σ.injective.ne hij)⟩
 
 lemma packing_of_same_sets {n : ℕ} {S T : Fin n → UnitSquare} {o : Point} {R : ℝ}
     (hp : Packing S o R)
@@ -80,7 +83,8 @@ lemma quarter_nonnegative (c : Point) :
   · exact ⟨3,by simpa [turnPoint] using And.intro hy (neg_nonneg.mpr hx.le)⟩
   · exact ⟨2,by simpa [turnPoint] using And.intro (neg_nonneg.mpr hx.le) (neg_nonneg.mpr hy.le)⟩
 
-/-- Aligning and quarter-turning the containing square needs no reflection. -/
+/-- A frame at `o` along the axes of `C` in which the centre of `C` has
+nonnegative coordinates. -/
 lemma containing_frame (C : UnitSquare) (o : Point) :
     ∃ (φ : Direction) (c : Point), Represents C o φ c ∧ 0 ≤ c.1 ∧ 0 ≤ c.2 := by
   obtain ⟨θ,hcos,hsin⟩ := frame_angle C
@@ -94,6 +98,9 @@ lemma containing_frame (C : UnitSquare) (o : Point) :
     simpa [φ] using hrep
   exact ⟨φ,turnPoint k c,represents_quarter k hrep',hk.1,hk.2⟩
 
+/-- A copy of the packing, congruent to it, in the disk about the origin, whose
+square of index `0` is axis-parallel, contains the origin, and has its centre
+in `[0, 1/2)²`. -/
 structure NormalizedFrame (S : Fin 6 → UnitSquare) (o : Point) (R : ℝ) where
   squares : Fin 6 → UnitSquare
   center : Point
@@ -106,7 +113,8 @@ structure NormalizedFrame (S : Fin 6 → UnitSquare) (o : Point) (R : ℝ) where
   cy_lt_half : center.2 < 1/2
   congruent : Congruent S o squares
 
-/-- The starting geometric normalization, from an actual containing square. -/
+/-- A packing with a square that contains the disk centre has a normalized
+frame. -/
 theorem normalize_with_containing {S : Fin 6 → UnitSquare} {o : Point} {R : ℝ}
     (hp : Packing S o R) {k : Fin 6} (hk : openSquare (S k) o) :
     Nonempty (NormalizedFrame S o R) := by
@@ -148,7 +156,8 @@ theorem normalize_with_containing {S : Fin 6 → UnitSquare} {o : Point} {R : �
     lt_of_le_of_lt (le_abs_self c.1) hbounds.1,
     lt_of_le_of_lt (le_abs_self c.2) hbounds.2,hcong⟩⟩
 
-/-- Every candidate-sized packing admits the initial nonnegative central frame. -/
+/-- A packing in a disk of squared radius at most `Q0` has a normalized
+frame. -/
 theorem normalize_frame_of_ceiling {S : Fin 6 → UnitSquare} {o : Point} {R : ℝ}
     (hp : Packing S o R) (hR : R^2 ≤ Normalization.Q0) :
     Nonempty (NormalizedFrame S o R) := by

@@ -2,13 +2,17 @@ import SquaresInCircles.Six.Analytic.CardinalWidthTriangle
 import SquaresInCircles.Six.Stress.Support
 
 /-!
-# Radial support of the cardinal-plus-D-secondary resultants
+# Forces on W and S of length independent of their angles
 
-The equal-weight W and S resultants have squared lengths 2+2 sin(d) and
-2+2 cos(d), independently of the helper angles. Their half-angle formulas
-are proved from the unit-circle identities. The sum is at most 4 cos(pi/8),
-with cos(pi/8)<231/250 proved by squaring. These are actual center supports,
-not an assumption that the force is on a cap branch.
+Let `1/2 ≤ d ≤ π/4`. With weight one on C–W, along the west side of C, and on
+W–D, along the secondary axis of D, the force on W is
+`(cos w + sin (d - w), -sin w - cos (d - w))` in its frame, of length
+`2 cos (π/4 - d/2)` whatever `w`. Likewise, with C–S along the south side of C
+and D–S along the secondary axis of D, the force on S has length
+`2 cos (d/2)`. The centre of a square in the disk lies within `rho0` of the
+origin, so the work of a force is at most `1113/1000` times its length. The two
+lengths sum to `4 cos (π/8) cos (π/8 - d/2) ≤ 4 cos (π/8)`, and
+`cos (π/8) ≤ 231/250`.
 -/
 
 noncomputable section

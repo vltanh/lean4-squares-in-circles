@@ -1,15 +1,17 @@
 import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Chord
 
 /-!
-# Whole-domain transverse and wing curvature reserves
+# The transverse term and the wing harmonic
 
-The smooth support penalty gives
- J(r)=-B cos r+(1/2)sin r-sin(r)^2/12, B=30641/50000.
-Its third derivative is at most -2/5 on [0,4/5]. A four-term cubic identity,
-not a numerical cover, proves this; hence J''(r)<=B-1/6-(2/5)r.
-The OWN-wing harmonic is above its explicit affine chord A+(49/100)s on
-[0,12/25]. These two estimates retain d=s+r>=1/2 in the s curvature.
-Compilation remains unverified.
+The angle `r = d - s` between D and S enters the west-dominant profile
+through `J(r) = -B cos r + (1/2) sin r - sin² r/12` with `B = 30641/50000`: up
+to a constant, the threshold of D–S less the smooth axial bound on the support
+of S. Its third derivative is at most `-2/5` on `[0, 4/5]`, by a cubic in
+`sin r` with nonnegative Bernstein coefficients, so
+`J''(r) ≤ B - 1/6 - (2/5) r` there. The harmonic `A cos s + B sin s`, with
+`A = 19359/50000`, is concave on `[0, 12/25]` and above the line
+`A + (49/100) s` at both ends, hence on the whole interval; and
+`cos d + sin d ≥ 4/3` on `[1/2, 11/14]`.
 -/
 
 noncomputable section

@@ -2,17 +2,17 @@ import SquaresInCircles.Six.Analytic.WestMixed.Reduction
 import SquaresInCircles.Six.Analytic.RadicalPolynomialMajorant
 
 /-!
-# A continuous-weight analytic stress for two OWN wings
+# A stress with a varying weight for W and S on their primary axes
 
-The CW, WD and DS weights are fixed at 41/20,1,211/200. The CS weight is
-38/25+3s on the entire interval 0<=s<=12/25. It is not selected from a table.
-WestMixed.Reduction leaves three geometric v,d boundary points while retaining
-s. Multiplication by the positive fifth power of this weight removes the S
-radical using the global polynomial majorant. Each boundary polynomial exceeds
-the same explicit coarse polynomial below. Its positivity follows at once
-from s<=1/2, with a positive tail coefficient 7437/256.
-There is no subdivision of s and no generated stress certificate.
-Compilation and kernel acceptance remain unverified.
+With the weight `γ(s) = 38/25 + 3s` on the separation of C and S, the threshold
+sum of the stress of `OwnWestOwnSouth.Support` minus its support bounds is
+`profile v s d`, whose only radical, `√(γ(s)² + ν²)` with `ν = 211/200`, comes
+from the support of S. For each `s` in `[0, 12/25]`, `WestMixed.Reduction`
+reduces its positivity to three points `(v, d)`. There `γ(s)⁵` times the
+profile is at least a polynomial in `s`, by the majorant of
+`RadicalPolynomialMajorant` and Taylor bounds; each of the three polynomials
+exceeds `coarse s` coefficient by coefficient, and `coarse s` is positive for
+`0 ≤ s ≤ 1/2`.
 -/
 
 noncomputable section
@@ -22,6 +22,7 @@ open WestMixed
 def gamma (s : ℝ) : ℝ := 38/25+3*s
 def constantTerm : ℝ := 3959823/5000000
 
+/-- The threshold sum of the stress minus its support bounds. -/
 def profile (v s d : ℝ) : ℝ :=
   constantTerm+base v s d+gamma s*(1+wing s)-
     CandidateWestTail.radiusBound*Real.sqrt ((gamma s)^2+nu^2)
@@ -69,7 +70,7 @@ private lemma polynomial_le {v s d : ℝ} (hv : 0 ≤ v) (hs : 0 ≤ s)
   dsimp [lowerPolynomial,profile]
   nlinarith only [hm,hR]
 
-/-- A single readable polynomial common to all three boundary points. -/
+/-- A polynomial below the three boundary ones, positive on `[0, 1/2]`. -/
 def coarse (s : ℝ) : ℝ :=
   1/50+s+3*s^2+16*s^3+68*s^4+144*s^5+34*s^6-
     302*s^7-307*s^8-17*s^9-s^12-s^13
@@ -102,8 +103,8 @@ lemma coarse_positive {s : ℝ} (hs : 0 ≤ s ∧ s ≤ 12/25) : 0 < coarse s :=
 private def vertexV (i : Fin 3) : ℝ := ![21/50,48/175,31/50] i
 private def vertexD (i : Fin 3) : ℝ := ![16/25,11/14,16/25] i
 
-/-- After expansion, each difference has only nonnegative monomial coefficients.
-This is a coefficient comparison on one whole interval, not a cell checker. -/
+/-- For `s ≥ 0`, `coarse s` is at most each boundary polynomial: the differences
+have nonnegative coefficients. -/
 lemma coarse_le_boundary (i : Fin 3) {s : ℝ} (hs : 0 ≤ s) :
     coarse s ≤ lowerPolynomial (vertexV i) s (vertexD i) := by
   apply sub_nonneg.mp
@@ -125,7 +126,8 @@ lemma boundary_positive (i : Fin 3) {s : ℝ} (hs : 0 ≤ s ∧ s ≤ 12/25) :
   have hm := mul_nonpos_of_nonneg_of_nonpos hg h
   linarith
 
-/-- The complete scalar bound with a continuously varying, positive CS weight. -/
+/-- The profile is positive for `0 ≤ s ≤ 12/25`, `16/25 ≤ d ≤ 11/14` and
+`53/50 - d ≤ v ≤ 31/50`. -/
 theorem positive {v s d : ℝ} (hs : 0 ≤ s ∧ s ≤ 12/25)
     (hd : 16/25 ≤ d ∧ d ≤ 11/14) (hv : 53/50-d ≤ v ∧ v ≤ 31/50) :
     0 < profile v s d := by

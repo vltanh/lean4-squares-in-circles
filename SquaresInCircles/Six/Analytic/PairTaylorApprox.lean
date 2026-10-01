@@ -1,12 +1,13 @@
 import SquaresInCircles.Seven.Analysis
 
 /-!
-# Explicit Taylor errors used at the forced pair endpoints
+# Taylor polynomials of `sin` and `cos` on `|x| ≤ 6/7`
 
-The seventh-order sine and sixth-order cosine polynomials are valid on the
-whole pair-angle range. Their errors are bounded by the next terms, obtained
-by differentiating the nonnegative remainders. These are analytic inequalities,
-not values supplied by a trigonometric evaluator.
+The Taylor polynomials `sinP` of degree 7 and `cosP` of degree 6 approximate
+`sin` and `cos` within `10⁻⁶` and `10⁻⁵` on `|x| ≤ 6/7`. On `[0, ∞)` they are
+lower bounds, and with the next terms `x⁹/9!` and `x⁸/8!` added they are upper
+bounds, each remainder having the derivative of the previous one. Lipschitz
+bounds for absolute values, positive parts and products are added.
 -/
 
 noncomputable section

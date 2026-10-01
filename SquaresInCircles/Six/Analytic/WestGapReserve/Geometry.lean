@@ -2,13 +2,13 @@ import SquaresInCircles.Six.Analytic.WestGapReserve.Support
 import SquaresInCircles.Six.Analytic.LowDWestSource.Geometry
 
 /-!
-# A strictly stronger phase restriction for an actual OWN-W D source
+# A wider gap between W and D
 
-The previous analytic arguments give q>1 and d>3/5. The three-edge support
-obstruction rules out q<=53/50 on that entire remaining low-gap rectangle.
-Thus an actual D-sourced W/D inequality with OWN W has q>53/50. S is not used,
-so this restriction is available for either S bit before missing-west closure.
-Compilation and kernel acceptance remain unverified.
+If W is separated from the central square along its own axis, and W and D along
+the secondary axis of D, then `d - w > 53/50`. Such a separation already has
+`d - w > 1` and `d > 3/5`, and `scalar_impossible` excludes `d - w ≤ 53/50` on
+the rest of the rectangle. The square S plays no part, so the bound holds for
+either separator of S.
 -/
 
 noncomputable section

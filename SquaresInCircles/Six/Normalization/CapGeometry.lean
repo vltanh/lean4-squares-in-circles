@@ -3,21 +3,21 @@ import SquaresInCircles.Six.Normalization.CoreGeometry
 import SquaresInCircles.Six.Normalization.SecondarySeparation
 
 /-!
-# Deep caps in the actual square geometry
+# Squares in a deep cap
 
-This is K1 and the chart part of K3. The hypotheses concern the original
-`closedSquare` and `inDisk` predicates. No strong-central-box conclusion,
-pin, separator classification, or Python certificate is assumed. A nearest
-side frame is represented by an angle in `[0, pi/4]`; local reflection for
-negative angles is handled in `CapPiercing`.
-
-These proof bodies are not yet compiler-validated.
+`orientedSquare t a b` is the unit square with frame angle `t` whose centre has
+the coordinates `(a, b)` in that frame. Let it lie in the closed disk of radius
+`R0` and in the deep cap `x ≥ h`, `h ≥ coreRadius`, with `0 ≤ t ≤ π/4`. A
+vertex of the square gives `h + (cos t + sin t)/2 ≤ a cos t - b sin t`, and
+with the containment in the disk this forces `t < 2/5`, `|b| < a`,
+`h + 1/2 ≤ a ≤ rho0` and `|b| < 1/2`; the square also avoids the core disk.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Normalization
 
-/-- A square specified by a real frame angle and its center's frame coordinates. -/
+/-- The unit square with frame angle `t` whose centre has the coordinates
+`(a, b)` in that frame. -/
 def orientedSquare (t a b : ℝ) : UnitSquare where
   center := (a * Real.cos t - b * Real.sin t, a * Real.sin t + b * Real.cos t)
   cosine := Real.cos t
@@ -42,14 +42,16 @@ lemma orientedSquare_localY (t a b : ℝ) (p : Point) :
     beta (orientedSquare t a b) (0, 0) = |b| := by
   simp [beta, orientedSquare_localY]
 
-/-- Exact far-corner containment, extracted from the original disk predicate. -/
+/-- A square in the closed disk of radius `R0` has
+`(|a| + 1/2)² + (|b| + 1/2)² ≤ Q0`. -/
 lemma orientedSquare_containment {t a b : ℝ}
     (hdisk : ∀ p, closedSquare (orientedSquare t a b) p → inDisk (0, 0) R0 p) :
     (|a| + 1 / 2) ^ 2 + (|b| + 1 / 2) ^ 2 ≤ Q0 := by
   have h := phi_le_of_contained (orientedSquare t a b) (0, 0) R0 hdisk
   simpa only [orientedSquare_alpha, orientedSquare_beta, phi, R0_sq] using h
 
-/-- K1 follows by applying the cap hypothesis to the appropriate square vertex. -/
+/-- A square in the half-plane `x ≥ h`: its vertex `(-1/2, 1/2)` in the frame
+of the square gives `h + (cos t + sin t)/2 ≤ a cos t - b sin t`. -/
 lemma orientedSquare_cap_support {t a b h : ℝ}
     (hcap : ∀ p, closedSquare (orientedSquare t a b) p → h ≤ p.1) :
     h + (Real.cos t + Real.sin t) / 2 ≤ a * Real.cos t - b * Real.sin t := by
@@ -70,7 +72,7 @@ lemma coordinate_le_rho0 {a b : ℝ}
   dsimp [rho0]
   linarith
 
-/-- Fixed rational bounds after the angle has been reduced below `2/5`. -/
+/-- Rational bounds on `cos t` and `sin t` for `0 ≤ t ≤ 2/5`. -/
 lemma small_cap_trig {t : ℝ} (ht0 : 0 ≤ t) (ht : t ≤ 2 / 5) :
     23 / 25 ≤ Real.cos t ∧ 0 ≤ Real.sin t ∧ Real.sin t ≤ 2 / 5 ∧
       1 ≤ Real.cos t + Real.sin t ∧ Real.cos t + Real.sin t ≤ 3 / 2 := by
@@ -88,7 +90,7 @@ lemma small_cap_trig {t : ℝ} (ht0 : 0 ≤ t) (ht : t ≤ 2 / 5) :
     nlinarith [Real.sin_sq_add_cos_sq t, sq_nonneg (Real.cos t - Real.sin t)]
   exact ⟨hc, hs0, hs, hw, hu⟩
 
-/-- A deep east-cap square must have a positive first frame coordinate. -/
+/-- A square in a deep cap has `a > 0`. -/
 lemma deep_cap_primary_pos {a b h t : ℝ}
     (hh : coreRadius ≤ h) (ht0 : 0 ≤ t) (ht : t ≤ 2 / 5)
     (hbox : (|a| + 1 / 2) ^ 2 + (|b| + 1 / 2) ^ 2 ≤ Q0)
@@ -104,7 +106,7 @@ lemma deep_cap_primary_pos {a b h t : ℝ}
   have ha' := mul_nonpos_of_nonpos_of_nonneg ha hc0
   nlinarith [rho0_upper, coreRadius_gt_77_200, htr.2.2.2.1]
 
-/-- The closest cap frame is necessarily the chart's primary frame. -/
+/-- A square in a deep cap has `|b| < a`. -/
 lemma deep_cap_primary_dominates {a b h t : ℝ}
     (hh : coreRadius ≤ h) (ht0 : 0 ≤ t) (ht : t ≤ 2 / 5)
     (hbox : (|a| + 1 / 2) ^ 2 + (|b| + 1 / 2) ^ 2 ≤ Q0)
@@ -146,7 +148,7 @@ lemma deep_cap_half_le {a b h t : ℝ}
     (show 0 ≤ Real.cos t + Real.sin t by linarith [htr.2.2.2.1])
   nlinarith [coreRadius_pos]
 
-/-- The cap excludes the origin-centered core without reference to a central square. -/
+/-- A square in a deep cap avoids the core disk about the origin. -/
 lemma oriented_cap_avoidsCore {a b h t : ℝ}
     (ha : 1 / 2 ≤ a) (hh : coreRadius ≤ h)
     (hcap : ∀ p, closedSquare (orientedSquare t a b) p → h ≤ p.1) :
@@ -164,7 +166,9 @@ lemma oriented_cap_avoidsCore {a b h t : ℝ}
   unfold AvoidsCore
   linarith
 
-/-- K3, with containment and cap membership as geometric rather than scalar inputs. -/
+/-- A square in the closed disk of radius `R0` and in the half-plane `x ≥ h`,
+with `h ≥ coreRadius` and `0 ≤ t ≤ π/4`, has `t < 2/5`, `|b| < a`,
+`h + 1/2 ≤ a ≤ rho0`, `|b| ≤ U0` and `|b| < 1/2`. -/
 theorem deep_cap_chart_bounds {a b h t : ℝ}
     (ht0 : 0 ≤ t) (ht : t ≤ Real.pi / 4) (hh : coreRadius ≤ h)
     (hdisk : ∀ p, closedSquare (orientedSquare t a b) p → inDisk (0, 0) R0 p)

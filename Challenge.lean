@@ -10,9 +10,9 @@ proves; Comparator checks that statements and definitions are identical.
 
 A packing of `n` unit squares in a disk places `n` squares of side 1 in the
 closed disk, each at its own position and rotation, so that no point is interior
-to two squares. For `n = 1, …, 5` and `n = 7` the theorems give the least radius
-of such a disk, and every packing that attains it, up to a rotation about the
-disk centre and a relabelling of the squares:
+to two squares. For `n = 1, …, 7` the theorems give the least radius of such a
+disk, and every packing that attains it, up to a rotation about the disk centre
+and a relabelling of the squares:
 
 | `n` | least radius | the optimal packings |
 | :-: | :-: | --- |
@@ -21,11 +21,11 @@ disk centre and a relabelling of the squares:
 | 3 | `5√17 / 16` | the T: two squares side by side, and one centred on top of them |
 | 4 | `√2` | the 2 × 2 block |
 | 5 | `√(5/2)` | the plus: a square and its four side-neighbours |
+| 6 | `√qStar ≈ 1.6885` | a square with four neighbours, two of them pushed along its sides, and a sixth square turned by `π/4` in the corner between those two |
 | 7 | `√13 / 2` | two columns of two squares, and between them a column of three, each of which can move along the middle axis |
 
-The theorems assume `1 ≤ n ≤ 5` or `n = 7`. For every other `n`, `n = 6`
-included, `optimalRadius n` is the placeholder `0`, `optimalPackings n` is
-empty, and nothing is claimed.
+The theorems assume `1 ≤ n ≤ 7`. For every other `n`, `optimalRadius n` is the
+placeholder `0`, `optimalPackings n` is empty, and nothing is claimed.
 
 A unit square is a centre and an orthonormal frame; in the coordinates of its
 frame it is `[-1/2, 1/2]²`, closed (`closedSquare`) or open (`openSquare`). A
@@ -123,8 +123,9 @@ def Congruent {n : ℕ} (S : Fin n → UnitSquare) (o : Point) (M : Fin n → Un
 
 /-! ### The optimal radii and the optimal models
 
-Every model is made of axis-parallel unit squares, with centres given in the
-frame of the disk centre, which is the origin. -/
+The models are given in the frame of the disk centre, which is the origin.
+Every model is made of axis-parallel unit squares, except that the model for
+six squares has one square turned by `π / 4`. -/
 
 namespace One
 
@@ -197,6 +198,59 @@ def model : Fin 5 → UnitSquare := fun i => axisSquare (centers i)
 
 end Five
 
+namespace Six
+
+/-- `√2 / 2`, half the diagonal of a unit square. -/
+def hStar : ℝ := Real.sqrt 2 / 2
+
+/-- The linear coefficient of the quadratic `s ^ 2 - AStar * s + BStar`, whose
+smaller root is `sStar`. -/
+def AStar : ℝ := (1466 + 1940 * hStar) / 267
+
+/-- The constant coefficient of the quadratic `s ^ 2 - AStar * s + BStar`. -/
+def BStar : ℝ := (327 + 432 * hStar) / 712
+
+/-- The discriminant of `s ^ 2 - AStar * s + BStar`. -/
+def discriminant : ℝ := AStar ^ 2 - 4 * BStar
+
+/-- The smaller root of `s ^ 2 - AStar * s + BStar`, about `0.0842`: the central
+square of the model is centred at `(sStar, sStar)`. -/
+def sStar : ℝ := 2 * BStar / (AStar + Real.sqrt discriminant)
+
+/-- About `0.4202`: the squares left of and below the central square are
+centred at `(sStar - 1, tStar)` and `(tStar, sStar - 1)`. -/
+def tStar : ℝ := (-20 + 30 * hStar) * sStar + 7 / 2 - 9 * hStar / 2
+
+/-- About `0.7869`: the turned square of the model is centred at
+`(-dStar, -dStar)`. -/
+def dStar : ℝ := 1 / 2 + hStar - tStar
+
+/-- The square of the optimal radius, about `2.8512`. -/
+def qStar : ℝ := 2 * sStar ^ 2 + 4 * sStar + 5 / 2
+
+/-- The optimal radius for six unit squares, about `1.6885`: the distance from
+the disk centre to the six points of the model on the circle. -/
+def radius : ℝ := Real.sqrt qStar
+
+/-- The unit square centred at `(-dStar, -dStar)` and turned by `π / 4`. -/
+def diagonalSquare : UnitSquare where
+  center := (-dStar, -dStar)
+  cosine := hStar
+  sine := hStar
+  unit := by
+    dsimp [hStar]
+    nlinarith [Real.sq_sqrt (show (0 : ℝ) ≤ 2 by norm_num)]
+
+/-- The optimal packing: a central square, one square on top of it and one to
+its right, one to its left and one below it, pushed up and right by
+`tStar - sStar`, and the turned square in the corner between those two. -/
+def model : Fin 6 → UnitSquare :=
+  ![axisSquare (sStar, sStar), axisSquare (sStar, sStar + 1),
+    axisSquare (sStar + 1, sStar), axisSquare (sStar - 1, tStar),
+    axisSquare (tStar, sStar - 1), diagonalSquare]
+
+end Six
+
 namespace Seven
 
 /-- The optimal radius for seven unit squares: the distance from the disk centre
@@ -233,19 +287,20 @@ def columnModel (c : Column) : Fin 7 → UnitSquare :=
 
 end Seven
 
-/-- The optimal radius for `n` unit squares, for `1 ≤ n ≤ 5` and `n = 7`. Every
-other `n` gets the placeholder `0`, about which nothing is claimed. -/
+/-- The optimal radius for `n` unit squares, for `1 ≤ n ≤ 7`. Every other `n`
+gets the placeholder `0`, about which nothing is claimed. -/
 def optimalRadius : ℕ → ℝ
   | 1 => One.radius
   | 2 => Two.radius
   | 3 => Three.radius
   | 4 => Four.radius
   | 5 => Five.radius
+  | 6 => Six.radius
   | 7 => Seven.radius
   | _ => 0
 
 /-- The optimal packings of `n` unit squares, as models about the origin: one
-packing for `n ≤ 5`, and for `n = 7` every position of the three middle
+packing for `n ≤ 6`, and for `n = 7` every position of the three middle
 squares. Every other `n` gets the placeholder `∅`, about which nothing is
 claimed. -/
 def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
@@ -254,6 +309,7 @@ def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
   | 3 => {Three.model}
   | 4 => {Four.model}
   | 5 => {Five.model}
+  | 6 => {Six.model}
   | 7 => Set.range Seven.columnModel
   | _ => ∅
 
@@ -262,16 +318,16 @@ def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
 /-- `optimalRadius n` is the least radius of a disk that holds `n` unit squares
 with disjoint interiors: some packing of `n` unit squares fits in a disk of
 that radius, and none fits in a disk of smaller radius. -/
-theorem optimal_radius (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7) :
+theorem optimal_radius (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 7) :
     IsLeast {R | ∃ (S : Fin n → UnitSquare) (o : Point), Packing S o R} (optimalRadius n) := by
   sorry
 
 /-- The packings in a disk of radius `optimalRadius n` are exactly the
 configurations congruent to an optimal model: the model, turned about the disk
-centre and relabelled. For `n ≤ 5` the optimal packing is therefore unique up
+centre and relabelled. For `n ≤ 6` the optimal packing is therefore unique up
 to rotation and relabelling, and for `n = 7` the optimal packings are exactly
 the column packings. -/
-theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7)
+theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 7)
     (S : Fin n → UnitSquare) (o : Point) :
     Packing S o (optimalRadius n) ↔ ∃ M ∈ optimalPackings n, Congruent S o M := by
   sorry

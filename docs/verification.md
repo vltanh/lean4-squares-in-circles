@@ -21,11 +21,12 @@ which the Palomar registry uses. Every proof is complete and rests on
   `[propext, Classical.choice, Quot.sound]`: an unproved lemma would add
   `sorryAx`, and `native_decide`, which trusts the compiler,
   `Lean.ofReduceBool`. The audit also prints `Packing`, `Congruent`,
-  `axisSquare`, `optimalRadius`, `optimalPackings`, `Optimum`, the column
-  packings and the theorem signatures for inspection.
+  `axisSquare`, `optimalRadius`, `optimalPackings`, `Optimum`, the model of
+  six squares with its turned square, the column packings and the theorem
+  signatures for inspection.
 - `SanityChecks.lean` must elaborate without errors. It checks the radius and
   model tables, re-proves the rational margins and polygon contact points the
-  proofs use, restates the public theorems, checks each model of `n ≤ 5`
+  proofs use, restates the public theorems, checks each model of `n ≤ 6`
   congruent to itself, and checks column packings of seven squares, one with a
   single middle square moved.
 - `scripts/verify-comparator.sh` (Linux, bubblewrap) checks the library against

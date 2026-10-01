@@ -3,17 +3,16 @@ import SquaresInCircles.Six.Analytic.SecondaryReduction
 import SquaresInCircles.Six.Stress.Reverse
 
 /-!
-# A cardinal W rules out the second mixed source below s=12/25
+# Cardinal W, missing south wing: small angles of S
 
-Only CW, WD and DS enter the stress. There is no cardinal-S hypothesis.
-The conclusion therefore includes every cardinal/cardinal case and all
-OWN-S cases below the stated bound. A remaining missing-south configuration
-with cardinal W must be in the large positive OWN-S tail.
-
-Every source inequality is taken from the actual MissingSouthWing predicate;
-no support branch is assumed. The generic stress sum uses the universal vertex
-supports and the scalar concavity theorem from Scalar.lean. Compilation remains
-deferred; this does not assert completion of the remaining tail.
+Let W be separated from C along the west side of C, and let the south wing be
+missing, with the angle of S at most `12/25`. Then the stress with the weights
+`4, 3, 3` on the edges C–W, W–D, along the secondary axis of W, and D–S, along
+the secondary axis of D, separates C, W, D and S, whatever the separator of S.
+The works of the forces on W, D and S are bounded by their far-vertex
+supports and the work on C by the box of its centre, and the threshold sum
+minus these bounds is at least `gap w d`, which is positive. So a missing
+south wing with W cardinal has S on its own axis, at an angle above `12/25`.
 -/
 
 noncomputable section
@@ -179,7 +178,8 @@ lemma gap_le_defect {w s d : ℝ}
   rw [Real.cos_neg,Real.sin_neg,neg_neg,hnorm,mul_neg,sub_neg_eq_add]
   linarith only [hwidth,hpos]
 
-/-- No source-index or cardinal-S assumption is hidden in the result. -/
+/-- With W cardinal and the angle of S at most `12/25`, the south wing is not
+missing. -/
 theorem not_missing_south {R : ℝ} (P : NormalizedPacking R)
     (hW : P.ownBits 2=false) (hS : P.helperAngle 4 ≤ 12/25) : ¬ MissingSouthWing P := by
   intro hmissing
@@ -240,21 +240,8 @@ theorem not_missing_south {R : ℝ} (P : NormalizedPacking R)
   have hlow := gap_le_defect hw hS hd hr
   linarith [positive hw hd]
 
-theorem south_wing {R : ℝ} (P : NormalizedPacking R)
-    (hW : P.ownBits 2=false) (hS : P.helperAngle 4 ≤ 12/25) :
-    Seven.SAT.threshold (P.square 3) (P.square 4) ≤
-      dot (normalY (P.square 4)) (sub (P.square 4).center (P.square 3).center) := by
-  by_contra h
-  exact not_missing_south P hW hS (missing_south_of_failure P h)
-
-/-- Both-cardinal sources are now excluded without the old fixed-row tables. -/
-theorem not_missing_south_both_cardinal {R : ℝ} (P : NormalizedPacking R)
-    (hW : P.ownBits 2=false) (hS : P.ownBits 4=false) : ¬ MissingSouthWing P := by
-  apply not_missing_south P hW
-  have h := (abs_lt.mp (P.cardinal_angle 4 hS)).2
-  linarith
-
-/-- The still-open cardinal-W case is confined to the large positive OWN-S tail. -/
+/-- A missing south wing with W cardinal has S on its own axis, at an angle
+above `12/25`. -/
 theorem remaining_case_requires_south_tail {R : ℝ} {P : NormalizedPacking R}
     (h : MissingSouthWing P) (hW : P.ownBits 2=false) :
     P.ownBits 4=true ∧ 12/25 < P.helperAngle 4 := by

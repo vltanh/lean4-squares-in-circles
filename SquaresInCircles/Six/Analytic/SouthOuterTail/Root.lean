@@ -1,15 +1,15 @@
 import SquaresInCircles.Six.Analytic.CandidateWestTail.Support
 
 /-!
-# One polynomial majorant for the final west resultant
+# A polynomial majorant of the west force
 
-The west resultant has squared length 13/25-(12/25)t, where |t|<=2/5.
-Expand at a=18/25 and put e=1/625-(12/25)t. The cubic square-root majorant
-P=a+e/(2a)-e^2/(8a^3)+e^3/(16a^5) is valid throughout this interval, including
-negative e. Its squared error is an explicit nonnegative polynomial and P>=1/2.
-The bounds -21/50<=P'<=0 and P''>=-1/4 follow from |e|<=1/5. This is a
-single whole-interval argument, not a numerical partition or root oracle.
-Compilation and kernel acceptance remain unverified.
+In the south tail, the force on a square W separated from C along the west
+side of C has squared length `13/25 - (12/25) t`, with `t` the sine of its
+angle. With `a = 18/25` and `e = 1/625 - (12/25) t`, so that the radicand is
+`a² + e`, the cubic Taylor polynomial
+`P = a + e/(2a) - e²/(8a³) + e³/(16a⁵)` of the square root bounds it above on
+`|t| ≤ 2/5`: `P² - (a² + e)` is `e⁴` times a positive quadratic, and `P ≥ 1/2`.
+From `|e| ≤ 1/5`, `-21/50 ≤ P' ≤ 0` and `P'' ≥ -1/4`, so `P` decreases.
 -/
 
 noncomputable section
@@ -56,7 +56,7 @@ lemma root_square_error (t : ℝ) :
   dsimp [rootPolynomial,rootOffset,rootBase,rootRate]
   ring
 
-/-- The upper bound is proved by its squared error, not assumed from a Taylor series. -/
+/-- On `|t| ≤ 2/5` the square root is at most its cubic Taylor polynomial `P`. -/
 theorem root_upper {t : ℝ} (ht : -(2/5) ≤ t ∧ t ≤ 2/5) :
     Real.sqrt (13/25-rootRate*t) ≤ rootPolynomial t := by
   have hr : 0 ≤ 13/25-rootRate*t := by dsimp [rootRate]; linarith [ht.2]

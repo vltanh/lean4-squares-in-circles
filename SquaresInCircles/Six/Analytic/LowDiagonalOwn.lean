@@ -2,13 +2,17 @@ import SquaresInCircles.Six.Analytic.LowDiagonalEndpoints
 import SquaresInCircles.Six.Analytic.CanonicalWestSign
 
 /-!
-# The low-diagonal tail for OWN W is excluded analytically
+# The low diagonal
 
-Freeze all center coordinates, prove separate concavity before maximizing
-supports, and use the four original rectangle corners. The negative mixed
-sine coefficient is compensated by the central-edge terms, as proved in
-CompensatedTrigConcavity. The endpoint cap is invoked only with its proved
-slope inequality. No old SD-Ws/SD-Ds checker or partition is imported.
+If W is separated from C along its own axis, then `d > 1/2`. Otherwise
+`0 ≤ v ≤ 2/3` and `0 ≤ d ≤ 1/2`; D is separated from C along its own axis in
+every normalized packing, and W–D is separated along the secondary axis of W or
+of D (`DW_secondary_exists`). In both cases the weighted sum of the separating
+inequalities of C–W, C–D and W–D makes `lowFrozen` nonpositive. But at fixed
+centres `lowFrozen` is concave in `v` and in `d` on that rectangle, the
+negative coefficient of `sin (v + d)` being compensated by the central terms
+(`compensated_frozen_positive`), and it is positive at the corners, hence
+positive.
 -/
 
 noncomputable section
@@ -48,8 +52,8 @@ private lemma low_secondary_trig {v d : ℝ}
   exact ⟨h v ⟨hv.1,by linarith [hv.2]⟩,h d ⟨hd.1,by linarith [hd.2]⟩,
     h (v+d) ⟨by linarith [hv.1,hd.1],by linarith [hv.2,hd.2]⟩⟩
 
-/-- Each frozen stress is a nonnegative linear combination of three actual
-separator gaps. The source flag selects W-secondary or D-secondary. -/
+/-- The weighted sum of the separating inequalities of C–W, C–D and W–D:
+`lowFrozen` is nonpositive. -/
 lemma low_secondary_frozen_nonpositive (ds : Bool) {v d aw bw ad bd cx cy : ℝ}
     (hv : 0≤v ∧ v≤2/3) (hd : 0≤d ∧ d≤1/2)
     (hCW : 0≤centralMargin .own (Real.pi-v) aw bw cx cy)
@@ -93,7 +97,8 @@ lemma low_secondary_frozen_nonpositive (ds : Bool) {v d aw bw ad bd cx cy : ℝ}
     dsimp [lowFrozen,lowWForce,lowDForce,lowAlpha,lowBeta,lowMu,dot]
     nlinarith only [hW,hD,hWD]
 
-/-- Neither forward secondary source fits the low-diagonal OWN-W rectangle. -/
+/-- For `0 ≤ v ≤ 2/3` and `0 ≤ d ≤ 1/2`, the separating inequalities of C–W,
+C–D and W–D are inconsistent. -/
 theorem low_diagonal_own_secondary_impossible (ds : Bool) {v d aw bw ad bd cx cy : ℝ}
     (hv : 0≤v ∧ v≤2/3) (hd : 0≤d ∧ d≤1/2)
     (hW : ContainedChart aw |bw|) (hD : ContainedChart ad |bd|)
@@ -112,7 +117,7 @@ theorem low_diagonal_own_secondary_impossible (ds : Bool) {v d aw bw ad bd cx cy
   have hnegative := low_secondary_frozen_nonpositive ds hv hd hCW hCD hWD
   linarith
 
-/-- The analytic d>1/2 tail for every packing whose W helper is canonically OWN. -/
+/-- If W is separated from C along its own axis, then `d > 1/2`. -/
 theorem own_west_diagonal_gt_half {R : ℝ} (P : NormalizedPacking R)
     (hown : P.ownBits 2=true) : 1/2<P.diagonalAngle := by
   by_contra! hd

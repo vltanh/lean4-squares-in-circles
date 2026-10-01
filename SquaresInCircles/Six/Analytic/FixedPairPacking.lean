@@ -2,20 +2,23 @@ import SquaresInCircles.Six.Analytic.FixedPairCoordinates
 import SquaresInCircles.Six.Stress.CandidateRadius
 
 /-!
-# Fixed-pair work from actual packing inequalities
+# The pair bound for a packing
 
-The three real separator inequalities and the candidate-radius support bounds
-imply the pair upper bound. The transverse term is left explicit for the later
-D-edge assembly. No candidate D-edge, tail, pair-envelope, or bit-dependent
-Domain theorem is imported or assumed here.
+The separating inequalities of the edges C–N, C–W and N–W, with weights one, one
+and `rStar`, the support of N and W in the disk and the box `[0, cStar]²` for
+the centre `c` of C bound the value of the pair stress by
+`c.1 - c.2 + mStar (bw + 1/2)`, where `bw` is the transverse coordinate of W. In
+a normalized packing in a disk of squared radius at most `qStar` the central
+edges are separated along the axes chosen by the normalization, the primary axis
+of the outer square or the matching side of C, and the edge N–W along the source
+axis given by the pins.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.FixedPair
 open Stress Normalization
 
-/-- The exact central-force correction makes this valid without individually
-balancing the two central normals. -/
+/-- The three separating inequalities and the disk bound the value of the pair
+stress by `c.1 - c.2 + mStar (bw + 1/2)`. -/
 theorem pair_work_bound (no wo : Bool) (u : Fin 4)
     {n w an bn aw bw : ℝ} {c : Point}
     (hc : (0≤c.1 ∧ c.1≤cStar) ∧ (0≤c.2 ∧ c.2≤cStar))
@@ -59,7 +62,9 @@ lemma northwest_threshold (n w an bn aw bw : ℝ) :
   have h : (Real.pi/2+n)-(Real.pi+w)=(n-w)-Real.pi/2 := by ring
   rw [h,width_sub_half_pi]
 
-/-- The actual cardinal-preferred central normal. -/
+/-- The axis that separates C from the outer square `i`: the primary axis of the
+square if it is separated along its own axis, else the normal of the
+matching side of C. -/
 def chosenCenterAxis {R : ℝ} (P : NormalizedPacking R) (i : Fin 5) : Point :=
   if P.ownBits i then primary (P.phase i) else primary (cardinalCenter (matchingCardinal i))
 
@@ -110,8 +115,9 @@ lemma preferred_northwest_axis {R : ℝ} (P : NormalizedPacking R) (u : Fin 4) :
   fin_cases u <;> simp [preferredPairAxis,unsignedPairAxis,NWsigns,sourceAxis,
     P.square_def,hn,hw,normalX,normalY,orientedSquare,primary,secondary]
 
-/-- The selected N/W source is a consequence of the packing's interior pins.
-No restriction to equality-compatible sources is made. -/
+/-- In a normalized packing in a disk of squared radius at most `qStar`, the
+value of the pair stress at the angles of N and W, for some source axis, is
+at most `c.1 - c.2 + mStar (bw + 1/2)`. -/
 theorem actual_northwest_pair {R : ℝ} (P : NormalizedPacking R)
     (hR : R^2≤Six.qStar) : ∃ u : Fin 4,
       value (P.ownBits 1) (P.ownBits 2) u (P.helperAngle 1) (P.helperAngle 2)≤

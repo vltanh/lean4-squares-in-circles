@@ -1,23 +1,21 @@
 import SquaresInCircles.Six.Analytic.DoubleSecondaryCases
 
 /-!
-# No actual normalized packing has both diagonal edges sourced by D
+# No double separation at D
 
-The four canonical W/S cases now use whole-domain analytic inequalities:
-OWN/OWN uses two affine secondary costs; cardinal/cardinal uses the exact
-radial length sum; and the mixed cases use the proved one-variable depth
-reserves. Every case uses the same four actual edge inequalities and cancels
-D exactly. The former double-secondary hard tables are not imported.
-
-This does not yet exclude a single D-sourced edge, or prove that every D/S
-separator is secondary. Those independent classification tasks remain visible.
+In a normalized packing, W–D and D–S are not both separated along the
+secondary axis of D. For each of the four ways in which W and S are separated
+from C, along their own axes or along the matching sides of C, the weighted sum
+of the four separating inequalities makes `doubleSecondaryGap` nonpositive,
+while the gap is positive: for two own wings by `DoubleSecondaryOwn.lean`, and
+otherwise by `DoubleSecondaryCases.lean`.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic
 open Normalization
 
-/-- Analytic exclusion of the entire double-D-secondary case. -/
+/-- W–D and D–S are not both separated along the secondary axis of D. -/
 theorem double_Dsecondary_impossible {R : ℝ} (P : NormalizedPacking R)
     (hWD : Seven.SAT.threshold (P.square 2) (P.square 3)≤
       dot (normalY (P.square 3)) (sub (P.square 3).center (P.square 2).center))
@@ -72,21 +70,5 @@ theorem double_Dsecondary_impossible {R : ℝ} (P : NormalizedPacking R)
       rw [hW,hS] at hnegative
       exact not_lt_of_ge hnegative hpositive
     · exact double_Dsecondary_own_impossible P hW hS hWD hDS
-
-/-- When both selected edges are secondary, at least one has the candidate
-wing source. This is a consequence, not a replacement for classifying D/S. -/
-theorem one_candidate_secondary {R : ℝ} (P : NormalizedPacking R)
-    (k l : Fin 8) (hk : k=2 ∨ k=6) (hl : l=2 ∨ l=6)
-    (hWD : Seven.SAT.threshold (P.square 2) (P.square 3)≤
-      dot (Stress.pairNormal k (P.square 2) (P.square 3))
-        (sub (P.square 3).center (P.square 2).center))
-    (hDS : Seven.SAT.threshold (P.square 3) (P.square 4)≤
-      dot (Stress.pairNormal l (P.square 3) (P.square 4))
-        (sub (P.square 4).center (P.square 3).center)) : k=2 ∨ l=6 := by
-  rcases hk with rfl | rfl
-  · exact Or.inl rfl
-  · rcases hl with rfl | rfl
-    · exact False.elim (double_Dsecondary_impossible P hWD hDS)
-    · exact Or.inr rfl
 
 end SquaresInCircles.Six.Analytic

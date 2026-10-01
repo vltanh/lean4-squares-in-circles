@@ -1,12 +1,12 @@
 import SquaresInCircles.Six.NormalizeFrame
 
 /-!
-# The permitted diagonal reflection
+# The reflection in the diagonal
 
-Reflection is a point-set operation on the original square predicates. It
-preserves the disk centered at zero. Proposition A uses it temporarily to
-prove a symmetric bound; the later D normalization may use it once globally.
-No horizontal reflection or altered D-angle domain is introduced.
+The reflection `(x, y) ↦ (y, x)` maps a unit square to a unit square, with the
+reflected open and closed point sets, and fixes every disk about the origin, so
+it maps packings to packings. An axis-parallel square goes to the axis-parallel
+square about the reflected centre.
 -/
 
 noncomputable section

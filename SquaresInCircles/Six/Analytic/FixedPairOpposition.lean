@@ -1,14 +1,16 @@
 import SquaresInCircles.Six.Analytic.FixedPairRadicands
 
 /-!
-# Why the alternate N-primary source has nonpositive n-curvature
+# The west force for an edge along the primary axis of N
 
-Its short r-vector opposes the remaining west force. The only case distinctions
-are the actual sign of n or n-w and the W central bit. Second-order cosine
-bounds suffice; the smallest displayed reserve is
-(889/1000)*(151/200)-3/10-37/100 = 239/200000.
+When the edge N–W is along the primary axis of N (source `2`), the west force
+along the slice in `n` is a fixed vector plus `rStar` times a turning unit
+vector that points against it: `rStar ≤ sin (n - w) + mStar cos (n - w)` if W is
+separated from C along its own axis, and `rStar ≤ sin n + mStar cos (n - w)`
+otherwise. So the west term of the minorant is concave in `n`. Both inequalities
+follow from `mStar > 889/1000` and second-order bounds for the cosine, on each
+side of `n - w = 0` or of `n = 0`.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.FixedPair
 open Stress Normalization
@@ -71,7 +73,8 @@ lemma westWave_alternate_two_wave (wo : Bool) (n w : ℝ) :
     Real.cos_sub,Real.sin_sub]
   all_goals ring
 
-/-- No positive n-curvature contribution from the alternate west force. -/
+/-- For source `2`, the west term has nonpositive curvature along the slice in
+`n`. -/
 theorem west_alternate_two_curvature_nonpos {no wo : Bool} {n w : ℝ}
     (hd : Domain no wo n w) :
     (westWave wo 2 0 n w).curvature Six.radius n≤0 := by

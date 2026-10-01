@@ -2,14 +2,13 @@ import SquaresInCircles.Six.Analytic.HalfAngleControl
 import SquaresInCircles.Six.Normalization.CapBounds
 
 /-!
-# A uniform affine lower bound for the equal-weight secondary cap cost
+# The cost in the cap case
 
-The cap cost is -rho + cos(q)/2 -(rho-1/2) sin(q). Replace rho by the
-proved upper bound 1113/1000. Around q0=13/10 its trigonometric addition
-formula, the whole-interval sine error, and the cosine quadratic give
-  F(q) >= 1/500 + 7 h^2/200 - |h|/200 > 0,
-where h=q-q0. The last inequality is the displayed square (14|h|-1)^2.
-The point q0 is a Taylor center, not a sampled or subdivided proof domain.
+In the cap case the cost is `-rho0 + (cos q)/2 - (rho0 - 1/2) sin q`, with
+`rho0 ≤ 1113/1000`. With `91/125 + (13/20) q` added it is positive on
+`1 ≤ q ≤ π/2`. Expanded about `13/10`, with `h = q - 13/10`, the addition
+formulas, `|sin h - h| ≤ h²/12` and `cos h ≤ 1 - h²/5` bound it below by
+`1/500 + 7h²/200 - |h|/200`, which is positive since `(14|h| - 1)² ≥ 0`.
 -/
 
 noncomputable section
@@ -60,7 +59,7 @@ lemma secondary_cap_line_expansion (h : ℝ) :
   rw [Real.cos_add,Real.sin_add]
   ring
 
-/-- A completed-square certificate for the entire cap-side interval. -/
+/-- The cap case: `secondaryCapLine` is positive on `[1, π/2]`. -/
 theorem secondary_cap_line_positive {q : ℝ} (hq : 1≤q ∧ q≤Real.pi/2) :
     0< secondaryCapLine q := by
   let h := q-13/10

@@ -1,13 +1,15 @@
 import SquaresInCircles.Six.Analytic.LowDiagonalStress
 
 /-!
-# The four original corners for each low-diagonal secondary source
+# The low diagonal: the corners
 
-No angle is found by search. The rectangle is [0,2/3] x [0,1/2], dictated by
-the broad W window and the proposed d<=1/2 tail. Three corners use universal
-vertex supports. At (2/3,1/2), the relevant force satisfies the genuine cap
-slope condition; that condition is proved before invoking cap_linear_upper.
-All root and trigonometric endpoint bounds below are explicit fractions.
+`lowFrozen` is positive at the four corners `(v, d) = (0, 0)`, `(0, 1/2)`,
+`(2/3, 0)` and `(2/3, 1/2)` of the angle rectangle, for all centres in their
+charts and in the central box. At the first three corners both forces take the
+far-vertex bound, with rational bounds for their lengths checked by squaring.
+At `(2/3, 1/2)` the force whose direction depends on the angles satisfies the
+slope condition of the cap bound and takes that bound. Taylor polynomials
+bracket `cos` and `sin` at `1/2`, `2/3` and `7/6`.
 -/
 
 noncomputable section
@@ -50,7 +52,7 @@ lemma low_secondary_corner_zero (ds : Bool) {aw bw ad bd cx cy : ℝ}
   have h := low_vertex_endpoint_lower ds (v := 0) (d := 0)
     (L0 := lowNormFixed ds) (L := lowNormZero ds)
     (X := lowBeta ds+lowAlpha ds) (Y := 0)
-    hW hD hc (by norm_num) (by norm_num)
+    hW hD hc (by norm_num)
     (low_fixed_norm_bound ds).1
     (by cases ds <;> norm_num [lowNormZero]) (low_fixed_norm_bound ds).2
     (by cases ds <;> norm_num [lowVariable,lowAlpha,lowBeta,lowMu,lowNormZero])
@@ -67,7 +69,7 @@ lemma low_secondary_corner_half (ds : Bool) {aw bw ad bd cx cy : ℝ}
     (L0 := lowNormFixed ds) (L := lowNormHalf ds)
     (X := lowBeta ds+lowAlpha ds*Real.cos (1/2))
     (Y := lowAlpha ds*Real.sin (1/2))
-    hW hD hc (by simp only [zero_add]; linarith) (by simp only [zero_add]; linarith)
+    hW hD hc (by simp only [zero_add]; linarith)
     (low_fixed_norm_bound ds).1
     (by cases ds <;> norm_num [lowNormHalf]) (low_fixed_norm_bound ds).2
     (by cases ds <;> norm_num [lowVariable,lowAlpha,lowBeta,lowMu,lowNormHalf] <;> nlinarith)
@@ -84,7 +86,7 @@ lemma low_secondary_corner_far (ds : Bool) {aw bw ad bd cx cy : ℝ}
   have h := low_vertex_endpoint_lower ds (v := (2:ℝ)/3) (d := 0)
     (L0 := lowNormFixed ds) (L := lowNormFar ds)
     (X := lowBeta ds*Real.cos (2/3)+lowAlpha ds) (Y := 0)
-    hW hD hc (by simp only [add_zero]; linarith) (by simp only [add_zero]; linarith)
+    hW hD hc (by simp only [add_zero]; linarith)
     (low_fixed_norm_bound ds).1
     (by cases ds <;> norm_num [lowNormFar]) (low_fixed_norm_bound ds).2
     (by cases ds <;> norm_num [lowVariable,lowAlpha,lowBeta,lowMu,lowNormFar] <;> nlinarith)
@@ -119,7 +121,7 @@ lemma low_secondary_corner_mixed (ds : Bool) {aw bw ad bd cx cy : ℝ}
   rw [hq] at h
   cases ds <;> norm_num [lowAlpha,lowBeta,lowMu,lowVariable,lowFixed,lowNormFixed] at h <;> linarith
 
-/-- All endpoint inequalities are proved explicitly; this is not a row-checker result. -/
+/-- `lowFrozen` is positive at the four corners of `[0, 2/3] × [0, 1/2]`. -/
 theorem low_secondary_corners (ds : Bool) {aw bw ad bd cx cy : ℝ}
     (hW : ContainedChart aw |bw|) (hD : ContainedChart ad |bd|)
     (hc : (0≤cx ∧ cx≤c0) ∧ (0≤cy ∧ cy≤c0)) :

@@ -2,15 +2,14 @@ import SquaresInCircles.Six.Analytic.MovingPinPolynomial
 import SquaresInCircles.Six.Normalization.CentralSAT
 
 /-!
-# The OWN moving pin, without a finite-cover certificate
+# The moving pin of an own separator
 
-The normal coordinate follows directly from OWN separation. For the transverse
-coordinate use MovingPinPolynomial: failure would put the far corner outside
-Q0. The proof works on the larger symmetric interval |t| <= 5/12; no special
-subdivision, numerical root or sampled minimum is needed.
-
-The strong central box is an explicit geometric hypothesis of this local
-lemma. Its unconditional construction is a separate conversion obligation.
+Let a square at angle `t` with `|t| ≤ 5/12` be separated from C along its own
+axis, with the centre of C in `[0, c0]²`. Then the square contains the point
+`(1 + cx, 0)`. Along the axis of the square the point lies inside by the
+separator, which gives `a + 1/2 ≥ 1 + (1/2 + cx) cos t + 77 |sin t|/200`, and by
+`a ≤ ρ0`; across it, a point outside would put the far corner of the square
+outside the disk.
 -/
 
 noncomputable section
@@ -27,7 +26,7 @@ lemma moving_pin_trig {t : ℝ} (ht : |t| ≤ 5/12) :
   refine ⟨⟨?_,Real.cos_le_one t⟩,abs_nonneg _,hs.trans ht⟩
   nlinarith [Real.one_sub_sq_div_two_le_cos (x := t)]
 
-/-- OWN supplies the radial lower bound used in the transverse obstruction. -/
+/-- The own separator bounds the radial coordinate below. -/
 lemma own_radial_lower {t a b cx cy : ℝ}
     (hcy0 : 0 ≤ cy) (hcy1 : cy ≤ 23/200) (hc : 0 ≤ Real.cos t)
     (hown : 0 ≤ centralMargin .own t a b cx cy) :
@@ -38,8 +37,8 @@ lemma own_radial_lower {t a b cx cy : ℝ}
   rw [abs_of_nonneg hc] at hown
   nlinarith only [hy,hgap,hown]
 
-/-- The two moving-pin coordinates are controlled by transparent inequalities.
-In particular the transverse conclusion does not assume the old scalar check. -/
+/-- A square at angle `|t| ≤ 5/12` separated from C along its own axis contains
+the point `(1 + cx, 0)`. -/
 theorem own_moving_pin {t a b cx cy : ℝ}
     (ht : |t| ≤ 5/12) (hc : ContainedChart a |b|)
     (hx0 : 0 ≤ cx) (hy0 : 0 ≤ cy) (hx : cx ≤ c0) (hy : cy ≤ c0)
@@ -53,8 +52,8 @@ theorem own_moving_pin {t a b cx cy : ℝ}
   have hunit : (Real.cos t)^2+|Real.sin t|^2=1 := by
     rw [sq_abs]
     nlinarith [Real.sin_sq_add_cos_sq t]
-  have htrans := own_transverse_obstruction
-    (abs_nonneg b) hx0 hx1 htr.1.1 htr.1.2 htr.2.1 htr.2.2 hunit hrad hc.containment
+  have htrans := own_transverse_obstruction (u := |b|)
+    hx0 hx1 htr.1.1 htr.1.2 htr.2.1 htr.2.2 hunit hrad hc.containment
   have htri := abs_add_le ((1+cx)*Real.sin t) b
   rw [abs_mul,abs_of_nonneg (show 0 ≤ 1+cx by linarith)] at htri
   have hY : |(1+cx)*Real.sin t+b| < 1/2 := by linarith

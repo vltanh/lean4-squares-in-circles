@@ -1,12 +1,14 @@
 import SquaresInCircles.Six.Stress.Reverse
 
 /-!
-# Complete directed square axes
+# Directed axes of a pair of squares
 
-The common SAT threshold is identified with the sum of actual projection
-half-widths on every signed side normal. Interior pins determine the direction
-of an available separating axis. All eight possibilities are retained until
-that orientation has been proved.
+Along each of the eight directed axes `±e₁`, `±e₂` of two squares S and T, the
+half-widths of S and T add up to the separating-axis threshold of the pair. So
+an axis along which the centre difference reaches the threshold separates the
+open squares, and every chord from a point of S to a point of T has a positive
+projection on it. Conversely, a chord with a positive projection directs an
+undirected separation along the axis.
 -/
 
 noncomputable section
@@ -101,7 +103,8 @@ lemma pairNormal_ne (S T : UnitSquare) (i : Fin 8) : Stress.pairNormal i S T ≠
   · exact normalY_ne T
   · exact neg_normal_ne (normalY_ne T)
 
-/-- The threshold includes the source half-width exactly once. -/
+/-- Along each directed axis of the pair, the two half-widths add up to the
+threshold. -/
 lemma pairNormal_widths (S T : UnitSquare) (i : Fin 8) :
     width S (Stress.pairNormal i S T)+width T (Stress.pairNormal i S T)=
       Seven.SAT.threshold S T := by
@@ -135,11 +138,8 @@ lemma pairNormal_widths (S T : UnitSquare) (i : Fin 8) :
     rw [width_scale_neg,width_scale_neg]
     exact hTY
 
-lemma threshold_pos (S T : UnitSquare) : 0 < Seven.SAT.threshold S T := by
-  dsimp [Seven.SAT.threshold]
-  positivity
-
-/-- A selected normal cannot point against the chord of two interior pins. -/
+/-- A separating directed axis has a positive inner product with every chord from
+a point of the open square S to a point of the open square T. -/
 theorem selected_axis_points_to_pin (S T : UnitSquare) {p q : Point}
     (hp : openSquare S p) (hq : openSquare T q) (i : Fin 8)
     (hsep : Seven.SAT.threshold S T ≤
@@ -150,7 +150,8 @@ theorem selected_axis_points_to_pin (S T : UnitSquare) {p q : Point}
   rw [dot_sub_right]
   linarith
 
-/-- Orient an undirected SAT inequality using the actual interior-pin chord. -/
+/-- A separation along `±n` is a separation along `n` if some chord from S to T
+has a positive inner product with `n`. -/
 lemma orient_axis_from_pins {S T : UnitSquare} {n p q : Point}
     (hn : n≠(0,0)) (hp : openSquare S p) (hq : openSquare T q)
     (hchord : 0 < dot n (sub q p))

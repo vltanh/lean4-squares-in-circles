@@ -2,27 +2,35 @@ import SquaresInCircles.Six.Analytic.WestStressMinorant
 import SquaresInCircles.Six.Normalization.CapBounds
 
 /-!
-# The W-secondary west-cardinal stress and the two exact source expressions
+# The west stress along the secondary axis of W
 
-The multipliers are fixed at (3/10,9/20,1/4). A single affine upper bound for
-sqrt(61/400-(3/20)z) follows from an explicitly completed square and proves
-W-secondary positivity by WestStressMinorant. For D-secondary the W-force
-norm has the PLUS mixed term 53/200+(9/40)sin(u-t). It is not dominated by
-W-secondary; its separate analytic curvature proof is in WestStressDConcavity.
+Let W and D be at the phases `π + t` and `π + u`. The west stress has the
+weights `3/10` on the separation of C and D along the west side of C, `9/20` on
+that of C and W along the primary axis of W, and `1/4` on that of W and D along
+the secondary axis of W or of D. Its threshold sum minus the bounds on the
+works of its forces is `westStressW t u` in the first case and
+`westStressD t u` in the second. The first is positive on the domain
+`-2/3 ≤ t ≤ u`, `-2/5 ≤ u ≤ 2/5`: with `R0 < 8443/5000`, `c0 ≤ 113/1000` and
+`√(61/400 - 3z/20) ≤ 99/250 - 13z/80`, a completed square, it is at least the
+minorant of `WestStressMinorant`.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic
 open Normalization
 
+/-- The bound on the work of the force on C, for its centre in `[0, c0]²`. -/
 def westCentralSupport (t:ℝ) : ℝ :=
   c0*(3/10+(9/20)*Real.cos t+(9/20)*max (Real.sin t) 0)
 
+/-- The threshold sum of the west stress minus the bounds on the works, with W
+and D separated along the secondary axis of W. -/
 def westStressW (t u:ℝ) : ℝ :=
   17/20+(3/10)*Real.cos u+(3/10)*max (-Real.sin u) 0+
     (9/40)*(Real.cos t+|Real.sin t|)+(1/4)*(Real.cos (u-t)+Real.sin (u-t))-
     westCentralSupport t-R0*Real.sqrt (53/200)-R0*Real.sqrt (61/400-(3/20)*Real.sin t)
 
+/-- The same with W and D separated along the secondary axis of D. -/
 def westStressD (t u:ℝ) : ℝ :=
   17/20+(3/10)*Real.cos u+(3/10)*max (-Real.sin u) 0+
     (9/40)*(Real.cos t+|Real.sin t|)+(1/4)*(Real.cos (u-t)+Real.sin (u-t))-
@@ -56,8 +64,9 @@ lemma west_angle_bounds {t:ℝ} (ht:-2/3≤t ∧ t≤2/5) :
   exact ⟨by nlinarith [Real.one_sub_sq_div_two_le_cos (x:=t)],
     by linarith,by linarith⟩
 
-/-- One completed square proves the radical majorant throughout the domain. -/
-lemma west_affine_radical {z:ℝ} (hz:z≤2/5) (hz0:-1≤z) :
+/-- `√(61/400 - 3z/20) ≤ 99/250 - 13z/80` for `z ≤ 2/5`: the difference of the
+squares is a completed square plus `7/338000`. -/
+lemma west_affine_radical {z:ℝ} (hz:z≤2/5) :
     Real.sqrt (61/400-(3/20)*z)≤99/250-(13/80)*z := by
   have hpos : 0≤99/250-(13/80)*z := by linarith
   have hid : (99/250-(13/80)*z)^2-(61/400-(3/20)*z) =
@@ -80,7 +89,7 @@ private lemma radicals_bound {t:ℝ} (ht:-2/3≤t ∧ t≤2/5) :
     R0*Real.sqrt (53/200)+R0*Real.sqrt (61/400-(3/20)*Real.sin t) ≤
       (8443/5000)*(103/200)+(8443/5000)*(99/250-(13/80)*Real.sin t) := by
   have htr := west_angle_bounds ht
-  have hroot := west_affine_radical htr.2.2 (by linarith [htr.2.1])
+  have hroot := west_affine_radical htr.2.2
   have ha := mul_le_mul west_radius_bound.le west_root_bound
     (Real.sqrt_nonneg _) (by norm_num : (0:ℝ)≤8443/5000)
   have hb := mul_le_mul west_radius_bound.le hroot
@@ -93,7 +102,7 @@ lemma west_sin_nonpos {t:ℝ} (ht:-2/3≤t ∧ t≤0) : Real.sin t≤0 := by
   rw [Real.sin_neg] at h
   linarith
 
-/-- The W-secondary stress is positive on the whole ordered triangle. -/
+/-- `westStressW` is positive on the domain `-2/3 ≤ t ≤ u`, `-2/5 ≤ u ≤ 2/5`. -/
 theorem westStressW_positive {t u:ℝ}
     (ht:-2/3≤t) (hu0:-2/5≤u) (hu1:u≤2/5) (htu:t≤u) : 0<westStressW t u := by
   have htb : -2/3≤t ∧ t≤2/5 := ⟨ht,htu.trans hu1⟩

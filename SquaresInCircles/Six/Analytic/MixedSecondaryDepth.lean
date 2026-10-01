@@ -2,12 +2,14 @@ import SquaresInCircles.Six.Analytic.RadialSecondarySupport
 import SquaresInCircles.Six.Analytic.SecondaryCostFolded
 
 /-!
-# Depth reserves for the two mixed double-D-secondary cases
+# Two reserves for W and S separated from D along the secondary axis of D
 
-The OWN-W/cardinal-S case has a direct fourth-degree Taylor reserve on the
-whole interval. The cardinal-W/OWN-S case minimizes the helper potential at
-d or the original endpoint 2/3. Its first piece is concave; its second piece
-is monotone. Only d=1/2 and d=2/3 require explicit endpoint fractions.
+Inequalities in the angle `d` of D, `1/2 ≤ d ≤ π/4`, for the two cases where one
+of W and S is separated from C along its own axis and the other along a side of
+C. The first, `southMixedDepth d > -19/10`, follows from Taylor bounds of degree
+four. In the second, the term in the angle `s` of S is at least its value at
+`s = d`, or at `s = 2/3` when `d > 2/3`; the rest is concave on `[1/2, 2/3]`,
+where it is positive at both ends, and increasing on `[2/3, π/4]`.
 -/
 
 noncomputable section
@@ -140,7 +142,8 @@ lemma west_mixed_depth_monotone :
     dsimp [f']
     linarith
 
-/-- The mixed cardinal-W/OWN-S bound after minimizing in the actual S range. -/
+/-- The reserve for W separated from C along the west side of C and S along its
+own axis, for every angle `s` of S in `[-5/8, 2/3]`. -/
 theorem west_cardinal_own_south_reserve {s d : ℝ}
     (hs : -5/8≤ s ∧ s≤2/3) (hd : 1/2≤d ∧ d≤Real.pi/4) :
     0<westMixedConstant+(Real.cos d+Real.sin d)/2-

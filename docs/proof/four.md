@@ -82,9 +82,9 @@ $\square$
 
 *Lean:
 [`Four.model_packing`](../../SquaresInCircles/Four/Construction.lean#L21),
-[`Four.model`](../../SquaresInCircles/Geometry.lean#L161),
-[`Four.centers`](../../SquaresInCircles/Geometry.lean#L158),
-[`Four.radius`](../../SquaresInCircles/Geometry.lean#L155).*
+[`Four.model`](../../SquaresInCircles/Geometry.lean#L162),
+[`Four.centers`](../../SquaresInCircles/Geometry.lean#L159),
+[`Four.radius`](../../SquaresInCircles/Geometry.lean#L156).*
 
 The four outer corners $(\pm1, \pm1)$ of the block lie on the circle of radius
 $\sqrt2$.

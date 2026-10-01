@@ -1,13 +1,15 @@
 import SquaresInCircles.Six.Analytic.WestGapReserve.Scalar
 
 /-!
-# Three actual inequalities force the larger west phase gap
+# A wider gap between W and D: the supports
 
-The W resultant is not assumed axial. Its universal far-vertex bound and a
-single global tangent to the square root supply the exact scalar profile.
-Both central force coordinates are positive on the full short-gap rectangle,
-so the same central corner bounds the sum. No finite checker is used.
-Compilation and kernel acceptance remain unverified.
+The separations C–W, C–D and W–D, with weights `27/100`, `57/25` and `1`,
+against the vertex supports of W and D and the box of the central square. The
+length `√(β² + 1 + 2β sin q)` of the force on W, with `β = 27/100`, is bounded
+by its tangent at `31/25`, and both coordinates of the force on the central
+square are nonnegative on the rectangle. The weighted thresholds exceed the sum
+of the bounds by the profile, which is positive, so the three separations cannot
+all hold.
 -/
 
 noncomputable section
@@ -119,7 +121,8 @@ lemma profile_eq_defect {v d : ℝ}
   rw [hw,hD,hQ,show v+d-d=v by ring]
   ring
 
-/-- This is a contradiction from three real separators and their disk bounds. -/
+/-- The separations C–W, C–D and W–D are incompatible when `1 ≤ d + v ≤ 53/50`
+and `3/5 ≤ d ≤ 11/14`. -/
 theorem scalar_impossible {v d aw bw ad bd cx cy : ℝ}
     (hq : 1 ≤ v+d ∧ v+d ≤ 53/50) (hd : 3/5 ≤ d ∧ d ≤ 11/14)
     (hW : ContainedChart aw |bw|) (hD : ContainedChart ad |bd|)

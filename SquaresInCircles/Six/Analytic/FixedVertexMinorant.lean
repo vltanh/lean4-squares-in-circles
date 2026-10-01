@@ -3,20 +3,17 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
 import Mathlib.Analysis.Real.Pi.Bounds
 
 /-!
-# Vertex minorant for the fixed-central-weight pair
+# A vertex minorant on the diamond
 
-The fixed-pair line has coefficients 18/25 and 13/50, not 73/100 and 13/50.
-After the diamond change of coordinates the new coefficients are 46/100 and
-98/100. The old vertex minorant cannot simply be reused: its coarse constants
-lose the middle endpoint reserve after this change.
-
-Use the analytic candidate bounds R <= 8443/5000 and rho >= 1391/1250.
-The resulting minorant has coefficients 9/25 and 77/100. Concavity in the
-angle and minimization on the two actual diamond boundary segments reduce it
-to two explicit quartics. Their common middle endpoint is
-6588879/8575000000 > 0. No subdivision or numerical truth premise is used.
+A positive multiple of `fixedVertexMinorant x y t` bounds the diagonal remainder
+from below in the vertex case of the support of D, with the radius and `rhoStar`
+replaced by `8443/5000` and `1391/1250`. It is positive on the diamond
+`x, y ≥ 0`, `x + y ≤ 11/25`, for `29/100 ≤ t ≤ 2/7 + x`. In `t` it is a constant
+plus `A cos t + B sin t` with `A, B ≥ 0`, concave on the first quadrant, so the
+two ends suffice: at `t = 29/100` the bound is direct, and at `t = 2/7 + x` the
+minorant is at least one of two quartics in `t`, each positive at the ends of
+its interval and above its chord.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic
 
@@ -140,7 +137,8 @@ private lemma fixed_minorant_right {x y : ℝ}
     dsimp [fixedBase,fixedPenalty] at *
     nlinarith only [hM,hY,hC,hS,hpositive]
 
-/-- Positivity on the entire diamond and its full angle interval. -/
+/-- The minorant is positive on the diamond `x, y ≥ 0`, `x + y ≤ 11/25`, for
+`29/100 ≤ t ≤ 2/7 + x`. -/
 theorem fixedVertexMinorant_positive {x y t : ℝ}
     (hx : 0≤x) (hy : 0≤y) (hdiamond : x+y≤11/25)
     (ht : 29/100≤t ∧ t≤2/7+x) : 0<fixedVertexMinorant x y t := by

@@ -1,13 +1,13 @@
 import SquaresInCircles.Six.Analytic.HighChordCurvature
 
 /-!
-# Uniform transverse curvature in the reflected two-OWN domain
+# The transverse term of the reflected case
 
-The reflected transverse argument lies in [61/200,23/35], contained in
-[3/10,2/3]. For J(r)=-B cos r+sin r/2-sin(r)^2/12, the third derivative is
-negative throughout [0,2/3]. A single Taylor inequality at 3/10 therefore
-gives J''<=31/100 on the full required interval.
-Compilation and kernel acceptance remain unverified.
+The term `J(r) = -B cos r + sin r/2 - sin² r/12` of the reflected stress,
+written with `cos 2r` so that its derivatives are sinusoids. The third
+derivative is nonpositive on `[0, 2/3]`, so `J''` decreases there, and a Taylor
+bound at `3/10` gives `J'' ≤ 31/100` on `[3/10, 2/3]`, the range of the argument
+`d - s`.
 -/
 
 noncomputable section

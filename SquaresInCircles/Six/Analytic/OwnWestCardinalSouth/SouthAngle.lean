@@ -1,18 +1,17 @@
 import SquaresInCircles.Six.Analytic.OwnWestCardinalSouth.Cone
 
 /-!
-# Eliminate the cardinal-S angle analytically
+# Own W, cardinal S: the angle of S
 
-Put t=d/2 and x=t-s. The smooth S support leaves
- G=-B(cos s+cos(d-s))+(|sin s|+sin(d-s))/2
-       -(3/25)(sin(d-s)-sin s)^2, B=30641/50000.
-For s>=0 this is P cos(x)^2+C cos(x)-P, where
- P=(12/25)cos(t)^2 and C=-2B cos(t)+sin(t).
-On the full diagonal interval, P>=2/5 and 2P+C<=3/40. A completed square
-therefore gives G>=C-1/250. For s<=0 the corresponding expression is
-increasing in x, so its value at s=0 gives the same lower bound.
-This removes an entire angular variable without a grid or a minimizer oracle.
-Compilation and kernel acceptance remain unverified.
+With the support of the cone, the terms of S in the weighted sum are
+`G = -B U + (|sin s| + sin (d-s))/2 - (3/25) V²`, where `U` and `V` are the
+components of the force on S and `B = 30641/50000`. Put `x = d/2 - s`. For
+`s ≥ 0` the half-angle forms give `G = C cos x - P sin² x`, with
+`P = (12/25) cos² (d/2)` and `C = -2B cos (d/2) + sin (d/2)`. For
+`1/2 ≤ d ≤ 11/14` we have `P ≥ 2/5` and `2P + C ≤ 3/40`, and a completed
+square gives `G ≥ C - 1/250`. For `s ≤ 0` the corresponding expression
+increases with `x`, so its value at `s = 0` gives the same bound. So
+`G ≥ C - 1/250` for either sign of `s`, and the angle of S drops out.
 -/
 
 noncomputable section
@@ -58,7 +57,8 @@ lemma half_quadratic_lower {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 11/14) :
   dsimp [halfQuadratic]
   nlinarith only [hp]
 
-/-- The only coefficient reserve in the south-angle elimination. -/
+/-- `2P + C ≤ 3/40` on the diagonal interval: the reserve of the completed
+square. -/
 lemma half_coefficient_upper {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 11/14) :
     2*halfQuadratic d+halfLinear d ≤ 3/40 := by
   have ht := half_trig_bounds hd
@@ -114,7 +114,8 @@ lemma negative_expression_monotone {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 11/14) :
     convert ((((Real.hasDerivAt_cos x).const_mul (-2*southB*Real.cos (d/2))).add
       ((Real.hasDerivAt_sin x).const_mul (Real.cos (d/2)))).sub
       (((Real.hasDerivAt_sin x).pow 2).const_mul (halfQuadratic d))) using 1 <;>
-      (try funext y) <;> dsimp [negativeExpression] <;> ring
+      (try funext y) <;> dsimp [negativeExpression]
+    ring
   apply Seven.monoOn_of_hasDeriv_nonneg (fun y _ => (hf y).continuousAt.continuousWithinAt)
     (fun x _ => hf x)
   intro x hx
@@ -157,7 +158,8 @@ lemma contribution_of_nonpositive {s d : ℝ} (hs : Real.sin s ≤ 0) :
   dsimp [negativeExpression,halfQuadratic]
   ring
 
-/-- A single bound handles both signs of the actual cardinal-S angle. -/
+/-- The terms of S in the weighted sum are at least `C - 1/250`, for either
+sign of `s`. -/
 theorem south_angle_lower {s d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 11/14)
     (hs : s ≤ 2/5) (hr : d-s ≤ 11/14) :
     halfLinear d-1/250 ≤ southContribution s d := by

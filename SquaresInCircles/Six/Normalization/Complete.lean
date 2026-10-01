@@ -1,27 +1,27 @@
 import SquaresInCircles.Six.Normalization.WestCardinalStress
-import SquaresInCircles.Six.Normalization.MovingPins
-import SquaresInCircles.Six.Normalization.NearestPoint
+import SquaresInCircles.Six.Normalization.CardinalGeometry
+import SquaresInCircles.Six.Analytic.OwnMovingPin
+import SquaresInCircles.Six.Normalization.ActualMarkers
 
 /-!
-# The analytic normalization interface
+# Normalized packings
 
-Every input is an actual packing and a radius ceiling. Strong-core forbidden
-arcs precede pins and sectors; pin covering and windows are analytic geometry;
-W/D order is a direct four-axis argument; and Appendix A uses the two-source
-analytic stress proof. No finite-cover or generated stress-table check is a
-mathematical premise of this normalization chain.
-
-The one global diagonal reflection remains recorded. The already proved core
-exclusions are supplied explicitly to Appendix A. No downstream A2 result is
-used. This closes the analytic normalization source, not the remaining analytic
-D-edge classification/pair envelope or the final compiler/kernel validation.
+A normalized packing is a pin packing in which the phase of D is at most
+`5π/4`. Then D is separated from C along its own axis: if D were separated
+along the west side of C, W could not be, so W would be separated along its
+own axis, and `WestCardinal.impossible` excludes that pair. The accessors
+read off the angles of the squares from their cardinal directions, their
+separators from C, and the order of their phases. Every packing of six unit
+squares in a disk of squared radius at most `Q0` is congruent to a normalized
+packing or to its reflection in the diagonal.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Normalization
 open Certificates
 
-/-- N27's west-cardinal exclusion with all upstream geometric inputs explicit. -/
+/-- With the phase of D at most `5π/4`, D is not separated from C along the west
+side of C. -/
 theorem PinPacking.D_west_negative {R : ℝ} (P : PinPacking R)
     (hD : P.phase 3 ≤ 5*Real.pi/4) :
     centralMargin .west (P.phase 3) (P.radial 3) (P.transverse 3) P.center.1 P.center.2 < 0 := by
@@ -55,7 +55,8 @@ theorem PinPacking.D_west_negative {R : ℝ} (P : PinPacking R)
   · simpa only [huEq] using hwestD
   · simpa only [htEq,huEq] using P.exterior_disjoint 2 3 (by decide)
 
-/-- D is canonically OWN; west-cardinal ties are excluded analytically. -/
+/-- With the phase of D at most `5π/4`, D is separated from C along its own
+axis. -/
 theorem PinPacking.D_own {R : ℝ} (P : PinPacking R)
     (hD : P.phase 3 ≤ 5*Real.pi/4) :
     P.canonicalOwn 3 = true ∧
@@ -66,8 +67,7 @@ theorem PinPacking.D_own {R : ℝ} (P : PinPacking R)
     exact hneg
   exact ⟨hbit,P.own_of_canonicalOwn hD 3 hbit⟩
 
-/-- The model includes only the recorded D half-window choice; the conclusions
-below are proved, not additional assumptions on the original packing. -/
+/-- A pin packing in which the phase of D is at most `5π/4`. -/
 structure NormalizedPacking (R : ℝ) extends PinPacking R where
   diagonal_half : phase 3 ≤ 5*Real.pi/4
 
@@ -81,27 +81,6 @@ def ownBits : Fin 5 → Bool := P.toPinPacking.canonicalOwn
 def helperAngle (i : Fin 5) : ℝ := P.phase i-cardinalCenter (matchingCardinal i)
 
 def diagonalAngle : ℝ := P.phase 3-Real.pi
-
-def diagonalDeviation : ℝ := P.phase 3-5*Real.pi/4
-
-lemma central_box : (0 ≤ P.center.1 ∧ P.center.1 ≤ c0) ∧
-    (0 ≤ P.center.2 ∧ P.center.2 ≤ c0) := P.box
-
-lemma coarse_box : 0 ≤ P.center.1 ∧ P.center.1 < 23/200 ∧
-    0 ≤ P.center.2 ∧ P.center.2 < 23/200 :=
-  ⟨P.box.1.1,P.box.1.2.trans_lt c0_lt_23_200,
-    P.box.2.1,P.box.2.2.trans_lt c0_lt_23_200⟩
-
-lemma chart_bounds (i : Fin 5) :
-    aMin ≤ P.radial i ∧ P.radial i ≤ rho0 ∧ |P.transverse i| ≤ U0 ∧
-      |P.transverse i| < 1/2 ∧
-      (177/200 < P.radial i ∧ P.radial i < 223/200 ∧ |P.transverse i| < 117/250) :=
-  P.toPinPacking.chart_bounds i
-
-lemma pins (i : Fin 5) : openSquare (P.model i.succ) (fixedPin i) := P.pin i
-
-lemma axial_label (i : Fin 5) : Seven.label (P.radial i) |P.transverse i|=5*|P.transverse i|/4 :=
-  P.toPinPacking.affine_label i
 
 lemma primary_order :
     P.phase 0 < P.phase 1 ∧ P.phase 1 < P.phase 2 ∧ P.phase 2 < P.phase 3 ∧
@@ -129,38 +108,12 @@ lemma cardinal_separator (i : Fin 5) (hi : P.ownBits i=false) :
 lemma cardinal_angle (i : Fin 5) (hi : P.ownBits i=false) : |P.helperAngle i| < 2/5 :=
   P.toPinPacking.matching_cardinal_angle i (P.cardinal_separator i hi)
 
-lemma one_helper_per_side (i j : Fin 5) (hside : matchingCardinal i=matchingCardinal j)
-    (hi : P.ownBits i=false) (hj : P.ownBits j=false) : i=j :=
-  P.toPinPacking.one_helper_per_side i j hside (P.cardinal_separator i hi) (P.cardinal_separator j hj)
-
-lemma moving_pins : openSquare (P.model 1) (1+P.center.1,0) ∧
-    openSquare (P.model 2) (0,1+P.center.2) :=
-  P.toPinPacking.moving_pins P.diagonal_half
-
-lemma east_west_budget (hE : P.ownBits 0=false) (hW : P.ownBits 2=false) :
-    |P.helperAngle 0|+|P.helperAngle 2| < 4*c0 := by
-  have h0 : matchingCardinal 0 = .east := rfl
-  have h2 : matchingCardinal 2 = .west := rfl
-  simpa only [helperAngle,h0,h2,cardinalCenter,sub_zero] using
-    P.toPinPacking.east_west_budget (P.cardinal_separator 0 hE) (P.cardinal_separator 2 hW)
-
-lemma north_south_budget (hN : P.ownBits 1=false) (hS : P.ownBits 4=false) :
-    |P.helperAngle 1|+|P.helperAngle 4| < 4*c0 := by
-  have h1 : matchingCardinal 1 = .north := rfl
-  have h4 : matchingCardinal 4 = .south := rfl
-  simpa only [helperAngle,h1,h4,cardinalCenter] using
-    P.toPinPacking.north_south_budget (P.cardinal_separator 1 hN) (P.cardinal_separator 4 hS)
-
 lemma diagonal_own : P.ownBits 3=true := (P.toPinPacking.D_own P.diagonal_half).1
-
-lemma marker_separation (i j : Fin 5) (hij : i≠j) :
-    Real.pi/3 < dist (P.toPinPacking.affineMarker i) (P.toPinPacking.affineMarker j) :=
-  P.toPinPacking.marker_separation i j hij
 
 end NormalizedPacking
 
-/-- Construct the analytic normalization of the original packing. The optional
-diagonal reflection is an explicit output, not an extra free symmetry later. -/
+/-- A packing in a disk of squared radius at most `Q0` is congruent to a
+normalized packing or to its reflection in the diagonal. -/
 theorem normalize_of_ceiling {S : Fin 6 → UnitSquare} {o : Point} {R : ℝ}
     (hp : Packing S o R) (hQ : R^2 ≤ Q0) :
     ∃ P : NormalizedPacking R, CongruentOrDiagonal S o P.model := by
@@ -172,7 +125,8 @@ theorem normalize_of_ceiling {S : Fin 6 → UnitSquare} {o : Point} {R : ℝ}
   · exact Or.inl (Six.congruent_trans hP h)
   · exact Or.inr (Six.congruent_trans hP h)
 
-/-- Candidate-sized packings lie inside the rational normalization ceiling. -/
+/-- The same for a disk of squared radius at most `qStar`, which is below
+`Q0`. -/
 theorem normalize_of_candidate {S : Fin 6 → UnitSquare} {o : Point} {R : ℝ}
     (hp : Packing S o R) (hR : R^2 ≤ Six.qStar) :
     ∃ P : NormalizedPacking R, CongruentOrDiagonal S o P.model :=

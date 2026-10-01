@@ -1,13 +1,14 @@
 import SquaresInCircles.Six.Normalization.Markers
 
 /-!
-# Containment bounds every square center, before any normalization
+# The distance of a centre from the disk centre
 
-The proof uses only the far-corner containment inequality. This strengthens
-the useful interface for Lemma A(e): east-cardinal separation is impossible
-when cx>c0 for ANY side frame, without first constructing a nearest cap frame.
+A square in the disk of squared radius `Q0` has `phi a b ≤ Q0` at its far
+corner, and then `a² + b² ≤ rho0²`: its centre lies within `rho0` of the disk
+centre. So its projection on every unit vector is at most `rho0`, and if the
+centre of C has `cx > c0 = rho0 - 1`, the square is not separated from C along
+the east side of C, whatever its angle.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Normalization
 
@@ -22,7 +23,8 @@ lemma radial_sq_le_of_phi {a b : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b)
     (show 0 < rho0 + a + b by linarith [rho0_gt_one])
   nlinarith [mul_nonneg ha hb]
 
-/-- The center bound used by the manuscript's T1 and D4 arguments. -/
+/-- A square in the disk of squared radius `Q0` has its centre within `rho0`
+of `o`. -/
 theorem center_radius_sq {S : UnitSquare} {o : Point}
     (hc : phi (alpha S o) (beta S o) ≤ Q0) :
     normSq (sub S.center o) ≤ rho0 ^ 2 := by
@@ -51,7 +53,8 @@ lemma chart_center_east_bound {a b t : ℝ} (hc : ContainedChart a |b|) :
   have hu := (abs_le.mp hh).2
   nlinarith
 
-/-- Lemma A(e) without an artificial phase restriction. -/
+/-- If `cx > c0`, a square in the disk is not separated from C along the east
+side of C, at any angle `t`. -/
 theorem east_separator_negative {a b t cx : ℝ} (hc : ContainedChart a |b|)
     (hx : c0 < cx) :
     a * Real.cos t - b * Real.sin t -

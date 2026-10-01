@@ -2,12 +2,14 @@ import SquaresInCircles.Six.Normalization.Complete
 import SquaresInCircles.Six.Stress.CandidateRadiusConstants
 
 /-!
-# The exact candidate-radius interface for downstream stresses
+# The central box at the optimal radius
 
-The elementary constant algebra lives in CandidateRadiusConstants, independent
-of normalization. This file contains only the actual-packing upgrade: the
-already established E/N separator alternatives imply the sharper central box.
-The normalization chain still needs its human-analytic conversion.
+In a disk of squared radius at most `Six.qStar` each of the five other squares
+satisfies `(a + 1/2)² + (|b| + 1/2)² ≤ Six.qStar`, and the centre of C lies
+in the box `[0, cStar]²`. If its first coordinate exceeded `cStar`, the square
+E could be separated from C neither along its own axis, as `a ≤ rhoStar`,
+nor along the east side of C, as every projection of its centre is at most
+`rhoStar`. The diagonal reflection gives the second coordinate.
 -/
 
 noncomputable section
@@ -59,8 +61,7 @@ lemma PinPacking.sharp_east_center {R : ℝ} (P : PinPacking R) (hR : R^2 ≤ Si
     P.center.1 ≤ cStar := by
   by_contra! hx
   have hc := Stress.PinPacking.contained_at_candidate P hR 0
-  have ha := sharp_coordinate_bound
-    (show 0 ≤ P.radial 0 by linarith [(P.contained 0).half_le]) (abs_nonneg _) hc
+  have ha := sharp_coordinate_bound (abs_nonneg _) hc
   have hw := P.window 0
   norm_num [Certificates.phaseCenter,Certificates.windowLower,Certificates.windowUpper] at hw
   have ht : |P.phase 0| ≤ Real.pi/4 := by
@@ -87,22 +88,12 @@ lemma PinPacking.sharp_east_center {R : ℝ} (P : PinPacking R) (hR : R^2 ≤ Si
     dsimp [cStar] at hx
     linarith
 
-/-- The exact candidate-radius box used in tight A2 stresses is derived, not assumed. -/
+/-- In a disk of squared radius at most `Six.qStar` the centre of C lies in
+`[0, cStar]²`. -/
 theorem PinPacking.sharp_central_box {R : ℝ} (P : PinPacking R) (hR : R^2 ≤ Six.qStar) :
     (0 ≤ P.center.1 ∧ P.center.1 ≤ cStar) ∧ (0 ≤ P.center.2 ∧ P.center.2 ≤ cStar) := by
   have hx := Stress.PinPacking.sharp_east_center P hR
   have hy := Stress.PinPacking.sharp_east_center P.mirror hR
   exact ⟨⟨P.box.1.1,hx⟩,⟨P.box.2.1,hy⟩⟩
-
-/-- Exterior containment at the exact candidate radius for support applications. -/
-lemma PinPacking.contained_in_candidate_disk {R : ℝ} (P : PinPacking R)
-    (hR : R^2 ≤ Six.qStar) (i : Fin 5) :
-    ∀ p, closedSquare (orientedSquare (P.phase i) (P.radial i) (P.transverse i)) p →
-      inDisk (0,0) Six.radius p := by
-  intro p hp
-  have h := P.packing.2.1 i.succ p hp
-  change normSq (sub p (0,0)) ≤ Six.radius^2
-  rw [Six.radius_sq]
-  exact h.trans hR
 
 end SquaresInCircles.Six.Stress

@@ -2,24 +2,20 @@ import SquaresInCircles.Six.Analytic.RectangleWallReduction
 import SquaresInCircles.Six.Analytic.FixedPairPolynomialBound
 
 /-!
-# The actual endpoint inequalities of the pair concavity reduction
+# The pair gap at the endpoints
 
-There are nine rectangle/axis vertices and two additional diagonal boundary
-vertices for each central-bit choice. The origin is handled by the exact
-candidate identity for the two equality-compatible sources. Every other value
-is reduced, by the previously proved uniform Taylor error, to three explicit
-rational polynomial comparisons after two sign-checked squarings.
-
-The finite cases below are only the four source axes, four central-bit choices,
-and these geometrically forced vertices. No stress table, interval subdivision,
-external success flag, or `decide` inequality certificate is used. `norm_num`
-proves the displayed rational comparisons. Compilation remains deferred.
+The concavity reduction leaves the gap to be checked at the points of the domain
+rectangle whose coordinates are endpoints of their intervals or zero, and at the
+points where the diagonal `n = w` meets a side or an axis. At the origin the gap
+is zero for the sources `0` and `3`, which carry the contact N–W of the model,
+by `pairBase_vertex_identity`. At every other such point, and at the origin for
+the other two sources, `EndpointAlgebra` holds by rational arithmetic, so the
+gap is positive there. This gives `EndpointCondition` for every source axis and
+every choice of separators of N and W.
 -/
-
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.FixedPair
-open Stress Normalization Polynomial PairTaylor
+open Stress Normalization FixedPair.Polynomial PairTaylor
 
 def northEndpoint (no : Bool) : Fin 3 → ℝ := ![(northLo no:ℝ),0,(northHi no:ℝ)]
 def westEndpoint (wo : Bool) : Fin 3 → ℝ := ![(westLo wo:ℝ),0,(westHi wo:ℝ)]
@@ -27,8 +23,8 @@ def westEndpoint (wo : Bool) : Fin 3 → ℝ := ![(westLo wo:ℝ),0,(westHi wo:�
 def diagonalEndpoint (no wo : Bool) : Fin 3 → ℝ :=
   ![max (northLo no:ℝ) (westLo wo:ℝ),0,min (northHi no:ℝ) (westHi wo:ℝ)]
 
-/-- This tactic performs only constant rational arithmetic at a point already
-specified by the geometric reduction. It has no search or subdivision step. -/
+/-- Unfolds `EndpointAlgebra` at an endpoint and checks it by rational
+arithmetic. -/
 macro "pair_endpoint_rational" : tactic =>
   `(tactic| norm_num [EndpointAlgebra,budget,linearPart,squareN,squareW,
     northSquare,westSquare,northScale,northVector,westVector,baseVector,
@@ -37,7 +33,7 @@ macro "pair_endpoint_rational" : tactic =>
     PairTaylor.sinP,PairTaylor.cosP,line,northEndpoint,westEndpoint,diagonalEndpoint,
     northLo,northHi,westLo,westHi] at *)
 
-/-- The corner comparisons, one lemma for each choice of the two central bits. -/
+/-- `EndpointAlgebra` at the corners, one lemma for each choice of separators. -/
 private lemma corner_algebra_ff (u : Fin 4) (i j : Fin 3)
     (h : i≠1 ∨ j≠1 ∨ u=1 ∨ u=2) :
     EndpointAlgebra false false u (northEndpoint false i) (westEndpoint false j) := by
@@ -62,7 +58,8 @@ private lemma corner_algebra_tt (u : Fin 4) (i j : Fin 3)
   fin_cases u <;> fin_cases i <;> fin_cases j
   all_goals pair_endpoint_rational
 
-/-- Rational endpoint comparisons away from the candidate-origin equality. -/
+/-- `EndpointAlgebra` holds at the corners and axis points of the rectangle,
+except at the origin for the sources `0` and `3`. -/
 lemma corner_algebra (no wo : Bool) (u : Fin 4) (i j : Fin 3)
     (h : i≠1 ∨ j≠1 ∨ u=1 ∨ u=2) :
     EndpointAlgebra no wo u (northEndpoint no i) (westEndpoint wo j) := by
@@ -142,7 +139,8 @@ lemma west_boundary_index (wo : Bool) {w : ℝ}
   · exact ⟨1,rfl⟩
   · exact ⟨2,rfl⟩
 
-/-- Only the two actual diagonal boundary intersections and zero are needed. -/
+/-- A point of the diagonal on a side or an axis of the rectangle is one of the
+three diagonal endpoints. -/
 lemma diagonal_boundary_index (no wo : Bool) {z : ℝ}
     (hd : Domain no wo z z)
     (hb : AxisBoundary (northLo no) (northHi no) z ∨
@@ -171,7 +169,7 @@ lemma diagonal_boundary_index (no wo : Bool) {z : ℝ}
         min_eq_right (by linarith [hr.1.2])
       simpa only [diagonalEndpoint,hm,Matrix.cons_val_two,Matrix.tail_cons,Matrix.head_cons] using h
 
-/-- All endpoints required by the analytic rectangle/wall reduction are proved. -/
+/-- The gap is nonnegative at all the endpoints of the concavity reduction. -/
 theorem endpoint_condition (no wo : Bool) (u : Fin 4) : EndpointCondition no wo u := by
   constructor
   · intro n w hn hw

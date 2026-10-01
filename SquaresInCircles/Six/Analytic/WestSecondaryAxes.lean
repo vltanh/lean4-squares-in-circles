@@ -2,15 +2,16 @@ import SquaresInCircles.Six.Analytic.PairCoordinates
 import SquaresInCircles.Six.Analytic.PairProjectionBounds
 
 /-!
-# Only two forward secondary axes can separate W and a west-cardinal D
+# Secondary axes for two squares in the west
 
-On 0 <= u-t <= 16/15 the degree-six cosine bound is greater than 12/25.
-The common primary projection inequality rules out both primary axes, with
-both signs retained. Short transverse coordinates rule out the two reversed
-secondary directions. These are the four geometric SAT axes, not an inventory
-of numerically certified stresses.
+Let two disjoint squares lie in the disk and outside the core disk, at phases
+`π + t` and `π + u` with `-2/3 ≤ t ≤ u ≤ 2/5`. Then they are separated along the
+positive direction of the secondary axis of one of them. Since
+`0 ≤ u - t ≤ 16/15`, the Taylor bound of degree six gives `cos (u - t) ≥ 12/25`;
+the projection bound for primary axes then rules out both primary axes, and the
+short transverse coordinates rule out the negative directions of the two
+secondary axes.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic
 open Normalization
@@ -32,8 +33,9 @@ private lemma forward_of_abs {H x:ℝ} (h:H≤|x|) (hn:-x<H) : H≤x := by
   · rw [abs_of_neg (lt_of_not_ge hx)] at h
     linarith
 
-/-- Under the actual normalization bounds, disjointness leaves only the
-positive W-secondary or positive D-secondary normal. -/
+/-- Two disjoint squares in the disk and outside the core, at phases `π + t` and
+`π + u` with `-2/3 ≤ t ≤ u ≤ 2/5`, are separated along the positive secondary
+axis of one of them. -/
 theorem west_secondary_axes {t u a b A B:ℝ}
     (hW:ContainedChart a |b|) (hD:ContainedChart A |B|)
     (hWcore:AvoidsCore a |b|) (hDcore:AvoidsCore A |B|)

@@ -1,11 +1,15 @@
 import SquaresInCircles.Six.Analytic.NorthMarker
 
 /-!
-# Real lifts for the analytic forbidden-arc argument
+# Lifted markers of the squares above and below C
 
-All markers are the genuine three-branch Seven markers. These lemmas use only
-closed marker-point membership and elementary trigonometric signs. No pin,
-small-core conclusion, numerical cover, or preferred source is assumed.
+A square at the phase `t` with centre `(a, b)` in its frame has the lifted
+marker `t ± label a |b|`, with the sign of `b`, and the label is at most
+`(5/4)|b|`. At the phases `π/2 + t` and `-π/2 + t` with `|t| ≤ π/4` the lift
+lies in `[0, π]` and `[-π, 0]`. Such a square separated from C along the west
+side of C has its marker in the left half-plane, beyond `π/2` or `-π/2`. A
+square below C separated from C along its negative secondary axis has an
+offset `|b| ≥ 1/2`, and its marker is at most `-π/4 - 5/8`.
 -/
 
 noncomputable section
@@ -83,7 +87,7 @@ lemma sin_nonpos_octant {t : ℝ} (ht0 : t ≤ 0) (ht : -Real.pi/4 ≤ t) : Real
   rw [Real.sin_neg] at h
   linarith
 
-/-- Signed cap premises in the chart's own nearest frame. -/
+/-- The containment of a chart, with `|a|` in place of `a`. -/
 lemma chart_corner {a b : ℝ} (h : ContainedChart a |b|) :
     (|a|+1/2)^2+(|b|+1/2)^2 ≤ Q0 := by
   simpa only [abs_of_nonneg (show 0 ≤ a by linarith [h.half_le])] using h.containment

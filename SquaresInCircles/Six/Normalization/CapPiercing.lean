@@ -2,20 +2,20 @@ import SquaresInCircles.Six.Normalization.CapGeometry
 import SquaresInCircles.Six.Normalization.PiercingPolynomial
 
 /-!
-# K4: a common open piercing point for every square in a deep cap
+# A point in every square of a deep cap
 
-The theorem uses actual square membership, not a bounding-box surrogate. Its
-negative-angle case is a local reflection of one cap and its piercing point;
-no global normalized packing, marker order, or reflection budget is changed.
-The uniqueness corollary uses the original `InteriorDisjoint` predicate.
-
-All source proof bodies remain pending compiler validation.
+A square in the disk of radius `R0` about the origin, at the phase `t` with
+`|t| ≤ π/4`, that lies in the half-plane `x ≥ h` with `h ≥ coreRadius`, contains
+the point `(h + 1/2, 0)` in its interior. The chart bounds of a square in a deep
+cap and a bound on its transverse offset put the point strictly between both
+pairs of its edges; a negative `t` is reduced to a positive one by the
+reflection in the `x`-axis.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Normalization
 
-/-- K4 in a nonnegative nearest side frame. -/
+/-- The case `0 ≤ t ≤ π/4`. -/
 theorem cap_piercing_nonneg {a b h t : ℝ}
     (ht0 : 0 ≤ t) (ht : t ≤ Real.pi / 4) (hh : coreRadius ≤ h)
     (hdisk : ∀ p, closedSquare (orientedSquare t a b) p → inDisk (0, 0) R0 p)
@@ -75,7 +75,8 @@ lemma reflect_y_inDisk (p : Point) :
     inDisk (0, 0) R0 (p.1, -p.2) ↔ inDisk (0, 0) R0 p := by
   simp only [inDisk, normSq, sub, sub_zero, neg_sq]
 
-/-- K4 with either sign of the nearest-frame angle; all hypotheses are geometric. -/
+/-- A square in the disk of radius `R0`, at the phase `t` with `|t| ≤ π/4`, that
+lies in the half-plane `x ≥ h` with `h ≥ coreRadius` contains `(h + 1/2, 0)`. -/
 theorem cap_piercing {a b h t : ℝ}
     (ht : |t| ≤ Real.pi / 4) (hh : coreRadius ≤ h)
     (hdisk : ∀ p, closedSquare (orientedSquare t a b) p → inDisk (0, 0) R0 p)
@@ -96,37 +97,5 @@ theorem cap_piercing {a b h t : ℝ}
     have hp := cap_piercing_nonneg (show 0 ≤ -t by linarith) ht' hh hdisk' hcap'
     have hr := (orientedSquare_reflect_open t a b (h + 1 / 2, 0)).mp hp
     simpa only [neg_zero] using hr
-
-/-- Two squares in one deep cap cannot have disjoint interiors.
-Both squares are in nearest side frames, and no pin inclusion is assumed. -/
-theorem cap_squares_overlap {a b t A B T h : ℝ}
-    (ht : |t| ≤ Real.pi / 4) (hT : |T| ≤ Real.pi / 4) (hh : coreRadius ≤ h)
-    (hdisk : ∀ p, closedSquare (orientedSquare t a b) p → inDisk (0, 0) R0 p)
-    (hcap : ∀ p, closedSquare (orientedSquare t a b) p → h ≤ p.1)
-    (hDisk : ∀ p, closedSquare (orientedSquare T A B) p → inDisk (0, 0) R0 p)
-    (hCap : ∀ p, closedSquare (orientedSquare T A B) p → h ≤ p.1) :
-    ∃ p, openSquare (orientedSquare t a b) p ∧ openSquare (orientedSquare T A B) p :=
-  ⟨(h + 1 / 2, 0), cap_piercing ht hh hdisk hcap, cap_piercing hT hh hDisk hCap⟩
-
-/-- The one-helper-per-side deduction in a cap's local frame. -/
-theorem cap_helper_unique {ι : Type*} {S : ι → UnitSquare} (hd : InteriorDisjoint S)
-    {i j : ι} {a b t A B T h : ℝ}
-    (hi : S i = orientedSquare t a b) (hj : S j = orientedSquare T A B)
-    (ht : |t| ≤ Real.pi / 4) (hT : |T| ≤ Real.pi / 4) (hh : coreRadius ≤ h)
-    (hdisk : ∀ p, closedSquare (S i) p → inDisk (0, 0) R0 p)
-    (hcap : ∀ p, closedSquare (S i) p → h ≤ p.1)
-    (hDisk : ∀ p, closedSquare (S j) p → inDisk (0, 0) R0 p)
-    (hCap : ∀ p, closedSquare (S j) p → h ≤ p.1) : i = j := by
-  have hdisk' : ∀ p, closedSquare (orientedSquare t a b) p → inDisk (0, 0) R0 p := by
-    simpa only [hi] using hdisk
-  have hcap' : ∀ p, closedSquare (orientedSquare t a b) p → h ≤ p.1 := by
-    simpa only [hi] using hcap
-  have hDisk' : ∀ p, closedSquare (orientedSquare T A B) p → inDisk (0, 0) R0 p := by
-    simpa only [hj] using hDisk
-  have hCap' : ∀ p, closedSquare (orientedSquare T A B) p → h ≤ p.1 := by
-    simpa only [hj] using hCap
-  by_contra hij
-  obtain ⟨p, hp, hP⟩ := cap_squares_overlap ht hT hh hdisk' hcap' hDisk' hCap'
-  exact hd i j hij p ⟨by simpa only [hi] using hp, by simpa only [hj] using hP⟩
 
 end SquaresInCircles.Six.Normalization

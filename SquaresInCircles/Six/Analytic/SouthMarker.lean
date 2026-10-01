@@ -2,15 +2,16 @@ import SquaresInCircles.Six.Analytic.MarkerSupport
 import SquaresInCircles.Six.Analytic.EndpointReduction
 
 /-!
-# Analytic south-marker bounds for the bad-core case
+# Marker bounds for the south quadrant
 
-For OWN, the side branch is bounded by a single Cauchy--Schwarz estimate on
-(sin t+1,u+1/2). For a south cap, split only at t=6/25: below this angle the
-universal pi/4 label bound suffices; above it one quartic chord inequality
-proves the axial-label bound. This is not a subdivision search.
-
-These are the scalar statements used by the geometric quadrant analysis.
-They keep containment and the actual separator consequence explicit.
+Let `(a, u)` be a contained chart and `0 ≤ t ≤ π/4`. If `a ≥ 1/2 + sin t`, the
+far corner gives `sin t + u < 89/100`, by Cauchy–Schwarz on
+`(1 + sin t, u + 1/2)`, and the side term of the label then gives
+`t + label a u < π/2 - 27/50`. The same holds in the cap
+`(u + 1/2) sin t ≤ (a - 1/2) cos t`: for `t ≤ 6/25` by `label a u ≤ π/4`, and
+above by the axial term, since a quartic, positive on `[6/25, 4/5]` by its
+chord, gives `t + 5u/4 < 103/100`. In the cap
+`(u + 1/2) cos t ≤ (a - 1/2) sin t` instead `t - label a u > 27/50`.
 -/
 
 noncomputable section
@@ -26,8 +27,7 @@ lemma octant_cos_lower {t : ℝ} (ht0 : 0 ≤ t) (ht1 : t ≤ Real.pi/4) :
     nlinarith [Real.sq_sqrt (show (0:ℝ) ≤ 2 by norm_num),Real.sqrt_nonneg (2:ℝ)]
   exact hroot.trans hc
 
-/-- The OWN case: the troublesome side-label envelope follows from one
-weighted disk inequality, with no maximizer search. -/
+/-- If `a ≥ 1/2 + sin t`, then `t + label a u < π/2 - 27/50`. -/
 theorem own_south_marker {a u t : ℝ} (h : ContainedChart a u)
     (ht0 : 0 ≤ t) (ht1 : t ≤ Real.pi/4) (ha : 1/2+Real.sin t ≤ a) :
     t+Seven.label a u < Real.pi/2-27/50 := by
@@ -75,8 +75,8 @@ lemma south_cap_quartic {t : ℝ} (ht : 6/25 ≤ t ∧ t ≤ 4/5) : 0 < capQuart
   · have ht2 := pow_le_pow_left₀ (by linarith : 0 ≤ t) ht.2 2
     nlinarith [ht.1]
 
-/-- A cap whose depth is merely nonnegative has a sufficient south-marker
-bound. No strong central box is used in this scalar lemma. -/
+/-- In the cap `(u + 1/2) sin t ≤ (a - 1/2) cos t`,
+`t + label a u < π/2 - 27/50`. -/
 theorem cap_south_marker {a u t : ℝ} (h : ContainedChart a u)
     (ht0 : 0 ≤ t) (ht1 : t ≤ Real.pi/4)
     (hcap : (u+1/2)*Real.sin t ≤ (a-1/2)*Real.cos t) :
@@ -118,8 +118,8 @@ theorem cap_south_marker {a u t : ℝ} (h : ContainedChart a u)
     dsimp [Seven.axial] at hl
     linarith [Real.pi_gt_d2]
 
-/-- The opposite sign of the east-cap transverse coordinate is even simpler:
-cos t >= 7/10 and sin t <= t give a linear upper bound for u. -/
+/-- In the cap `(u + 1/2) cos t ≤ (a - 1/2) sin t`, `t - label a u > 27/50`:
+`cos t ≥ 7/10` and `sin t ≤ t` bound `u` linearly. -/
 theorem positive_offset_cap_marker {a u t : ℝ} (h : ContainedChart a u)
     (ht0 : 0 ≤ t) (ht1 : t ≤ Real.pi/4)
     (hcap : (u+1/2)*Real.cos t ≤ (a-1/2)*Real.sin t) :

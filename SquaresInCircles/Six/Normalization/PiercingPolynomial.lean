@@ -1,13 +1,15 @@
 import SquaresInCircles.Six.Normalization.Constants
 
 /-!
-# An algebraic replacement for the two-variable piercing leaf S5
+# The transverse coordinate of a square beyond a side
 
-The estimate deliberately enlarges the parameter rectangle to
-`77/200 ≤ h ≤ 5/8`, `0 ≤ s ≤ 2/5`. Here `s` is a sine VALUE, not an angle.
-It proves the obstruction used in K4(iv) after weakening `1/cos(t) ≥ 1`.
-No interval certificate or sampled value is an assumption of these lemmas.
-Compiler validation remains pending.
+Let a square, with centre `(a, b)` in its frame, lie in the disk of squared
+radius `Q0` and beyond the line at depth `h`, where `77/200 ≤ h ≤ 5/8`, at an
+angle with cosine `c ≤ 1` and sine `0 ≤ s ≤ 2/5`. Then
+`b < 1/2 - (h + 1/2) s` (`piercing_transverse_upper`). Otherwise its far
+vertex would be at squared distance at least `(h + 1 + V s)^2 + V^2` from the
+origin, where `V = 1 - (h + 1/2) s`, and this exceeds `(h + 1)^2 + 1 > Q0`:
+the difference is `s` times a polynomial that is positive on the rectangle.
 -/
 
 noncomputable section
@@ -53,9 +55,8 @@ lemma piercing_polynomial_gt_ceiling {h s : ℝ}
   norm_num [Q0] at *
   nlinarith
 
-/-- K4(iv): the putative transverse failure contradicts disk containment.
-`c` and `s` need only the displayed real inequalities, so this lemma also
-records exactly which trigonometric facts the geometric application consumes. -/
+/-- A square in the disk beyond the line at depth `h`, at an angle with cosine
+`c` and sine `s`, has transverse coordinate below `1/2 - (h + 1/2) s`. -/
 theorem piercing_transverse_upper {a b h c s : ℝ}
     (hh0 : 77 / 200 ≤ h) (hh : h ≤ 5 / 8)
     (hc : c ≤ 1) (hs0 : 0 ≤ s) (hs : s ≤ 2 / 5)

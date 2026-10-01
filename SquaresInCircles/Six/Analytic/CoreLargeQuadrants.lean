@@ -1,18 +1,26 @@
 import SquaresInCircles.Six.Analytic.CoreLargeEast
 
 /-!
-# The north and south quadrants when c0 < cy <= cx < 1/2
+# The north and south quadrants when the centre of C is far out
 
-North OWN uses the whole-octant transverse estimate u <= 4t/5, and the other
-north alternatives are excluded or point west. South OWN uses the weighted
-far-corner bound of SouthMarker; the south cap uses its explicit quartic chord
-argument. There is no numerical subdivision of a parameter domain.
+Let the centre `(x, y)` of C have `c0 < x < 1/2` and `0 ≤ y ≤ x`. A square at
+the phase `-π/2 + t`, `|t| ≤ π/4`, separated from C has its marker below
+`-27/50`; if also `c0 < y`, a square at the phase `π/2 + t` has it at least
+`π/2`. In the north, a separation along the primary axis, the positive
+secondary axis or the west side of C gives the bound, and the others are
+impossible. In the south the marker is low unless `b > 0` and `t > 0`; then a
+separation along the primary axis or the south side of C is bounded by the
+far-corner and cap estimates of `SouthMarker`, one along the negative secondary
+axis or the west side of C by those of `MarkerLifts`, and the others are
+impossible.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic
 open Normalization
 
+/-- For `c0 < y ≤ x < 1/2`, a square at the phase `π/2 + t`, `|t| ≤ π/4`,
+separated from C has its marker at least `π/2`. -/
 theorem north_large_marker {a b t x y : ℝ} (h : ContainedChart a |b|)
     (ht : |t| ≤ Real.pi/4) (hy : c0 < y) (hxy : y ≤ x) (hx1 : x < 1/2)
     (hsep : ∃ k, 0 ≤ centralMargin k (Real.pi/2+t) a b x y) :
@@ -39,8 +47,8 @@ theorem north_large_marker {a b t x y : ℝ} (h : ContainedChart a |b|)
     exact False.elim (by linarith)
   · exact False.elim ((not_le_of_gt (north_south_negative h ht hy1)) hk)
 
-/-- The south bound holds throughout the ordered nonnegative central square;
-the large-center hypothesis is not needed for this particular quadrant. -/
+/-- For `c0 < x < 1/2` and `0 ≤ y ≤ x`, a square at the phase `-π/2 + t`,
+`|t| ≤ π/4`, separated from C has its marker below `-27/50`. -/
 theorem south_large_marker {a b t x y : ℝ} (h : ContainedChart a |b|)
     (ht : |t| ≤ Real.pi/4) (hx : c0 < x) (hx1 : x < 1/2)
     (hy0 : 0 ≤ y) (hxy : y ≤ x)

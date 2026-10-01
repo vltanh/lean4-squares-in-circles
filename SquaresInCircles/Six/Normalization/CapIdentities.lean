@@ -2,10 +2,15 @@ import SquaresInCircles.Six.Normalization.Constants
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
 
 /-!
-# Exact cap-branch identity I1 and the opposite-cardinal budget deduction
+# The cap depth
 
-The scalar tilt estimate K5 is not proved by this file. Its use in the final
-lemma is explicit, together with BOTH opposite-cardinal cap hypotheses.
+A square in the disk of squared radius `Q0` that lies beyond a line, whose
+normal makes an angle `t ∈ [0, π/4]` with an axis of the square, keeps the line
+within `capDepth t` of the centre. The depth has two branches:
+`(ρ0 - 1/2) cos t - (1/2) sin t`, with the far corner of the square at the point
+`(ρ0 + 1/2, 1/2)` of the circle, and `R0 - cos t - sin t`, with the far corner on
+the circle in the direction of the normal. They switch at the angle
+`arcsin (1/(2R0))`, whose sine is `1/(2R0)` and cosine `(ρ0 + 1/2)/R0`.
 -/
 
 noncomputable section
@@ -46,52 +51,5 @@ lemma cos_capSwitch : Real.cos capSwitch = (rho0 + 1 / 2) / R0 := by
     nlinarith [R0_sq, rho0_identity]
   rw [capSwitch, Real.cos_arcsin, hid, Real.sqrt_sq]
   exact div_nonneg (by linarith [rho0_gt_one]) R0_pos.le
-
-lemma capFirst_switch : capFirst capSwitch = (rho0 ^ 2 - 1 / 2) / R0 := by
-  have hn : R0 ≠ 0 := ne_of_gt R0_pos
-  rw [capFirst, cos_capSwitch, sin_capSwitch]
-  field_simp [hn] <;> ring
-
-lemma capSecond_switch : capSecond capSwitch = (rho0 ^ 2 - 1 / 2) / R0 := by
-  have hn : R0 ≠ 0 := ne_of_gt R0_pos
-  rw [capSecond, cos_capSwitch, sin_capSwitch]
-  field_simp [hn]
-  nlinarith [R0_sq, rho0_sq]
-
-/-- I1 is an exact identity, not a numerical equality test. -/
-lemma cap_branches_agree : capFirst capSwitch = capSecond capSwitch :=
-  capFirst_switch.trans capSecond_switch.symm
-
-lemma capDepth_zero : capDepth 0 = rho0 - 1 / 2 := by
-  simp [capDepth, capFirst, capSwitch_nonneg]
-
-/-- K5, when established, implies N26 only with both cardinal cap conditions.
-The two zero-angle case is handled separately to retain the strict conclusion. -/
-lemma opposite_cardinal_angle_budget {x e w : ℝ}
-    (hE : 1 / 2 + x ≤ capDepth |e|)
-    (hW : 1 / 2 - x ≤ capDepth |w|)
-    (he : |e| ≤ 2 / 5) (hw : |w| ≤ 2 / 5)
-    (htilt : ∀ t : ℝ, 0 < t → t ≤ 2 / 5 →
-      capDepth t < rho0 - 1 / 2 - t / 2) :
-    |e| + |w| < 4 * c0 := by
-  have hweak (t : ℝ) (ht : 0 ≤ t) (ht' : t ≤ 2 / 5) :
-      capDepth t ≤ rho0 - 1 / 2 - t / 2 := by
-    rcases ht.eq_or_lt with hzero | hpos
-    · subst t
-      simp [capDepth_zero]
-    · exact (htilt t hpos ht').le
-  by_cases he0 : e = 0
-  · by_cases hw0 : w = 0
-    · subst e
-      subst w
-      simpa using mul_pos (by norm_num : (0 : ℝ) < 4) c0_pos
-    · have hs := htilt |w| (abs_pos.mpr hw0) hw
-      have h0 := hweak |e| (abs_nonneg e) he
-      dsimp [c0]
-      linarith
-  · have hs := htilt |e| (abs_pos.mpr he0) he
-    have h0 := hweak |w| (abs_nonneg w) hw
-    dsimp [c0]
-    linarith
 
 end SquaresInCircles.Six.Normalization

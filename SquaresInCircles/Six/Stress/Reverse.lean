@@ -2,17 +2,24 @@ import SquaresInCircles.Six.Stress.Support
 import SquaresInCircles.Seven.SeparatingAxes
 
 /-!
-# Finite reverse stresses
+# Stresses
 
-The algebraic incidence identity is proved once. Every application supplies
-actual selected separator inequalities and proved support bounds. Thresholds
-may be weakened, but their inequalities must still be proved at the call site.
-Equality propagation is part of the theorem, not a separate rigidity oracle.
+A stress on `n` squares is a list of `m` edges, each with a source, a target, a
+normal, a weight and a threshold. It separates a configuration if the centre of
+each target lies at least the threshold beyond the centre of its source along
+the normal. The force on a square is the sum of the weighted normals of the
+edges into it minus that of the edges out of it. Summing by squares instead of
+edges gives `balance`, and with nonnegative weights the threshold sum of a
+separating stress is at most any upper bound for the total work of the forces
+on the centres (`bound`). Two squares with disjoint interiors are separated
+along one of the eight directed axes of the pair (`directed_pair_separator`).
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Stress
 
+/-- A stress on `n` squares with `m` edges: the source, target, normal, weight
+and threshold of each edge. -/
 structure System (n m : ℕ) where
   source : Fin m → Fin n
   target : Fin m → Fin n
@@ -23,6 +30,8 @@ structure System (n m : ℕ) where
 namespace System
 variable {n m : ℕ}
 
+/-- The force on square `i`: the weighted normals of the edges into `i` minus
+those of the edges out of `i`. -/
 def force (E : System n m) (i : Fin n) : Point :=
   ((∑ e, if E.target e=i then E.weight e*(E.normal e).1 else 0)-
      ∑ e, if E.source e=i then E.weight e*(E.normal e).1 else 0,
@@ -31,6 +40,7 @@ def force (E : System n m) (i : Fin n) : Point :=
 
 def thresholdSum (E : System n m) : ℝ := ∑ e, E.weight e*E.threshold e
 
+/-- The squares `S` satisfy the separating inequality of every edge. -/
 def Separates (E : System n m) (S : Fin n → UnitSquare) : Prop :=
   ∀ e, E.threshold e ≤ dot (E.normal e) (sub (S (E.target e)).center (S (E.source e)).center)
 
@@ -51,7 +61,8 @@ private lemma incidence_sum (f : Fin m → Fin n) (w : Fin m → ℝ) (p : Fin n
     _ = ∑ e, ∑ i, if f e=i then w e*p i else 0 := Finset.sum_comm
     _ = ∑ e, w e*p (f e) := by simp
 
-/-- The force on each square is exactly the incidence sum of the chosen edges. -/
+/-- For any points `p i`, the sum of the works `⟨force i, p i⟩` is the weighted
+sum over the edges of the normal components of `p (target e) - p (source e)`. -/
 theorem balance (E : System n m) (p : Fin n → Point) :
     (∑ i, dot (E.force i) (p i)) =
       ∑ e, E.weight e*dot (E.normal e) (sub (p (E.target e)) (p (E.source e))) := by
@@ -81,7 +92,8 @@ lemma threshold_le_forces (E : System n m) (S : Fin n → UnitSquare)
   rw [E.balance]
   exact Finset.sum_le_sum (fun e _ => mul_le_mul_of_nonneg_left (hs e) (hn e))
 
-/-- The reverse-stress inequality for any supplied valid upper supports. -/
+/-- With nonnegative weights, the threshold sum of a separating stress is at
+most the sum of any upper bounds `U` for the works of the forces. -/
 theorem bound (E : System n m) (S : Fin n → UnitSquare) (U : Fin n → ℝ)
     (hn : E.Nonnegative) (hs : E.Separates S)
     (hu : ∀ i, dot (E.force i) (S i).center ≤ U i) : E.thresholdSum ≤ ∑ i, U i :=
@@ -92,46 +104,10 @@ theorem defect_nonpos (E : System n m) (S : Fin n → UnitSquare) (U : Fin n →
     (hu : ∀ i, dot (E.force i) (S i).center ≤ U i) :
     E.thresholdSum-(∑ i, U i) ≤ 0 := sub_nonpos.mpr (E.bound S U hn hs hu)
 
-/-- Equality in the reverse stress forces every support inequality to be tight. -/
-theorem support_tight (E : System n m) (S : Fin n → UnitSquare) (U : Fin n → ℝ)
-    (hn : E.Nonnegative) (hs : E.Separates S)
-    (hu : ∀ i, dot (E.force i) (S i).center ≤ U i)
-    (heq : E.thresholdSum = ∑ i, U i) (i : Fin n) :
-    dot (E.force i) (S i).center = U i := by
-  have hb := E.threshold_le_forces S hn hs
-  have hnslack (j : Fin n) : 0 ≤ U j-dot (E.force j) (S j).center := sub_nonneg.mpr (hu j)
-  have hsingle : U i-dot (E.force i) (S i).center ≤
-      ∑ j, (U j-dot (E.force j) (S j).center) :=
-    Finset.single_le_sum (fun j _ => hnslack j) (Finset.mem_univ i)
-  rw [Finset.sum_sub_distrib] at hsingle
-  linarith [hu i]
-
-/-- Positive edge multipliers also force the corresponding separating contact. -/
-theorem separator_tight (E : System n m) (S : Fin n → UnitSquare) (U : Fin n → ℝ)
-    (hn : E.Nonnegative) (hs : E.Separates S)
-    (hu : ∀ i, dot (E.force i) (S i).center ≤ U i)
-    (heq : E.thresholdSum = ∑ i, U i) (e : Fin m) (hw : 0 < E.weight e) :
-    dot (E.normal e) (sub (S (E.target e)).center (S (E.source e)).center) = E.threshold e := by
-  let slack : Fin m → ℝ := fun j => E.weight j*
-    (dot (E.normal j) (sub (S (E.target j)).center (S (E.source j)).center)-E.threshold j)
-  have hnonneg (j : Fin m) : 0 ≤ slack j := mul_nonneg (hn j) (sub_nonneg.mpr (hs j))
-  have hsum : (∑ j, slack j) ≤ 0 := by
-    have hf := Finset.sum_le_sum (fun i (_ : i ∈ Finset.univ) => hu i)
-    rw [E.balance] at hf
-    have hid : (∑ j, slack j) =
-        (∑ j, E.weight j*dot (E.normal j)
-          (sub (S (E.target j)).center (S (E.source j)).center))-E.thresholdSum := by
-      simp only [slack,mul_sub,Finset.sum_sub_distrib,thresholdSum]
-    rw [hid]
-    linarith
-  have hone := Finset.single_le_sum (fun j (_ : j ∈ Finset.univ) => hnonneg j) (Finset.mem_univ e)
-  have hzero : slack e=0 := by linarith [hnonneg e]
-  dsimp [slack] at hzero
-  exact sub_eq_zero.mp ((mul_eq_zero.mp hzero).resolve_left (ne_of_gt hw))
-
 end System
 
-/-- The eight directed source axes; signs are retained rather than guessed. -/
+/-- The eight directed axes of a pair of squares: each frame axis of `S` and of
+`T`, in both directions. -/
 def pairNormal (i : Fin 8) (S T : UnitSquare) : Point :=
   ![normalX S,scale (-1) (normalX S),normalY S,scale (-1) (normalY S),
     normalX T,scale (-1) (normalX T),normalY T,scale (-1) (normalY T)] i

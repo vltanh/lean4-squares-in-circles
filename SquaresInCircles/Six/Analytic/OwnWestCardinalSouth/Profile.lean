@@ -1,14 +1,18 @@
 import SquaresInCircles.Six.Analytic.OwnWestCardinalSouth.SouthAngle
 
 /-!
-# A two-variable profile for the last missing-south bit family
+# Own W, cardinal S: the profile
 
-Use weights 2,1,3/10,1,1 on CW,CS,CD,WD,DS. The south-angle elimination
-leaves only v and d. The new radial-chord curvature is at least 9/200 below
-the previously proved z=9/20 curvature envelope, so it is at most -3/25.
-That bound and the half-angle sine reserve make the d curvature negative;
-the v curvature is a negative harmonic plus the same chord curvature.
-Four geometric corners therefore suffice. Compilation remains unverified.
+Give the edges C–W, C–S, C–D, W–D and D–S the weights `2, 1, 3/10, 1, 1`.
+Once the angle of S is eliminated, the weighted sum leaves a `profile` in the
+angle `v` of W and the angle `d` of D. It comes in two versions, for the two
+ends `0` and `5641/50000` of the range of the second coordinate of the centre
+of C. Both are concave in each variable on `0 ≤ v ≤ 2/3`, `1/2 ≤ d ≤ 11/14`.
+The chord term of the edge W–D has second derivative at most `-3/25` on
+`1/2 ≤ q ≤ 3/2`, by comparison of coefficients with the envelope of
+`OwnSouthWestDominant.chordSecond`. In `v` the west term is a nonnegative
+harmonic, whose second derivative is its negative; in `d` the half-angle terms
+are absorbed by `sin (d/2) ≥ 95/384`.
 -/
 
 noncomputable section
@@ -48,15 +52,18 @@ lemma chord_hasDeriv (q : ℝ) : HasDerivAt chord (chordFirst q) q := by
   convert (((Real.hasDerivAt_sin q).sub
     ((((hasDerivAt_id q).div_const 2).sin).const_mul chordSin)).sub
     ((((hasDerivAt_id q).div_const 2).cos).const_mul chordCos)) using 1 <;>
-    (try funext x) <;> dsimp [chord,chordFirst] <;> ring
+    (try funext x) <;> dsimp [chord,chordFirst]
+  ring
 
 lemma chord_first_hasDeriv (q : ℝ) : HasDerivAt chordFirst (chordSecond q) q := by
   convert (((Real.hasDerivAt_cos q).sub
     ((((hasDerivAt_id q).div_const 2).cos).const_mul (chordSin/2))).add
     ((((hasDerivAt_id q).div_const 2).sin).const_mul (chordCos/2))) using 1 <;>
-    (try funext x) <;> dsimp [chordFirst,chordSecond] <;> ring
+    (try funext x) <;> dsimp [chordFirst,chordSecond]
+  ring
 
-/-- A coefficient comparison transfers the whole-interval curvature envelope. -/
+/-- `chordSecond q ≤ -3/25` on `[1/2, 3/2]`: it lies `9/200` below the
+envelope of `OwnSouthWestDominant.chordSecond`. -/
 lemma chord_second_upper {q : ℝ} (hq : 1/2 ≤ q ∧ q ≤ 3/2) :
     chordSecond q ≤ -(3/25) := by
   have hs := Real.sin_nonneg_of_nonneg_of_le_pi
@@ -79,38 +86,43 @@ lemma west_hasDeriv (upper : Bool) (v : ℝ) :
     HasDerivAt (westTerm upper) (westFirst upper v) v := by
   convert (((Real.hasDerivAt_cos v).const_mul wingCos).add
     ((Real.hasDerivAt_sin v).const_mul (1/2+centerY upper))).const_mul westWeight using 1 <;>
-    (try funext x) <;> dsimp [westTerm,westFirst] <;> ring
+    (try funext x) <;> dsimp [westTerm,westFirst]
+  ring
 
 lemma west_first_hasDeriv (upper : Bool) (v : ℝ) :
     HasDerivAt (westFirst upper) (-westTerm upper v) v := by
   convert (((Real.hasDerivAt_sin v).const_mul (-wingCos)).add
     ((Real.hasDerivAt_cos v).const_mul (1/2+centerY upper))).const_mul westWeight using 1 <;>
-    (try funext x) <;> dsimp [westTerm,westFirst] <;> ring
+    (try funext x) <;> dsimp [westTerm,westFirst]
+  ring
 
 lemma diagonal_hasDeriv (upper : Bool) (d : ℝ) :
     HasDerivAt (diagonalTerm upper) (diagonalFirst upper d) d := by
   convert (((Real.hasDerivAt_cos d).const_mul wingCos).add
     ((Real.hasDerivAt_sin d).const_mul (1/2-centerY upper))).const_mul diagonalWeight using 1 <;>
-    (try funext x) <;> dsimp [diagonalTerm,diagonalFirst] <;> ring
+    (try funext x) <;> dsimp [diagonalTerm,diagonalFirst]
+  ring
 
 lemma diagonal_first_hasDeriv (upper : Bool) (d : ℝ) :
     HasDerivAt (diagonalFirst upper) (-diagonalTerm upper d) d := by
   convert (((Real.hasDerivAt_sin d).const_mul (-wingCos)).add
     ((Real.hasDerivAt_cos d).const_mul (1/2-centerY upper))).const_mul diagonalWeight using 1 <;>
-    (try funext x) <;> dsimp [diagonalTerm,diagonalFirst] <;> ring
+    (try funext x) <;> dsimp [diagonalTerm,diagonalFirst]
+  ring
 
 lemma half_linear_hasDeriv (d : ℝ) :
     HasDerivAt halfLinear (southB*Real.sin (d/2)+(1/2)*Real.cos (d/2)) d := by
   convert (((((hasDerivAt_id d).div_const 2).cos).const_mul (-2*southB)).add
-    (((hasDerivAt_id d).div_const 2).sin)) using 1 <;> (try funext x) <;> dsimp [halfLinear] <;>
-    ring
+    (((hasDerivAt_id d).div_const 2).sin)) using 1 <;> (try funext x) <;> dsimp [halfLinear]
+  ring
 
 lemma half_linear_first_hasDeriv (d : ℝ) :
     HasDerivAt (fun x => southB*Real.sin (x/2)+(1/2)*Real.cos (x/2))
       ((southB/2)*Real.cos (d/2)-(1/4)*Real.sin (d/2)) d := by
   convert (((((hasDerivAt_id d).div_const 2).sin).const_mul southB).add
     ((((hasDerivAt_id d).div_const 2).cos).const_mul (1/2))) using 1 <;> (try funext x) <;>
-    dsimp <;> ring
+    dsimp
+  ring
 
 private lemma west_nonnegative (upper : Bool) {v : ℝ}
     (hv : 0 ≤ v ∧ v ≤ 2/3) : 0 ≤ westTerm upper v := by
@@ -153,7 +165,8 @@ lemma profile_west_concave (upper : Bool) {d : ℝ}
   have hff (v : ℝ) : HasDerivAt f' (f'' v) v := by
     have hq := (chord_first_hasDeriv (d+v)).comp v ((hasDerivAt_id v).const_add d)
     convert (west_first_hasDeriv upper v).add hq using 1 <;> (try funext x) <;>
-      dsimp [f',f''] <;> ring
+      dsimp [f',f'']
+    ring
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc 0 (2/3))
     (f' := f') (f'' := f'') (fun x _ => (hf x).continuousAt.continuousWithinAt)
   · intro v _; exact (hf v).hasDerivWithinAt

@@ -1,14 +1,16 @@
 import SquaresInCircles.Six.Normalization.CenterRadius
 
 /-!
-# Uniform projection estimates for the W/D ordering argument
+# Projection bounds for the order of W and D
 
-The primary estimate uses the center-radius bound and the single rational
-inequality (277/200)(1519/3200) > 1113/1000-1/2. The cosine lower bound
-1519/3200 is exactly 1-(41/40)^2/2.
-
-The forward transverse estimate uses |b|,|B| <= 117/250 < 1/2. There are no
-support-branch choices and no scalar checks indexed by a partition.
+Let a contained square have local centre `(A, B)` with `A ≥ 177/200` and
+`|B| ≤ 1/2`, let `177/200 ≤ a ≤ rho0`, and let the relative phase `e` have
+`cos e ≥ 1519/3200`. Then the primary projection `A cos e + B sin e - a` has
+absolute value below the threshold `1/2 + (cos e + |sin e|)/2`, by the
+centre-radius bound and `(277/200)(1519/3200) > 1113/1000 - 1/2`. With
+transverse coordinates of absolute value at most `117/250`, the forward
+transverse projection is below its threshold as well. On `0 ≤ e ≤ 41/40`,
+`cos e ≥ 1 - (41/40)²/2 = 1519/3200`.
 -/
 
 noncomputable section

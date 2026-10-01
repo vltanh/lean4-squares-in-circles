@@ -2,15 +2,15 @@ import SquaresInCircles.Six.Analytic.HighDiagonalProfile
 import SquaresInCircles.Six.Analytic.FrozenTrigStress
 
 /-!
-# Coupled central profiles when the OWN S angle overtakes D
+# A reserve on the triangle `1/2 ≤ d ≤ s ≤ 2/3`
 
-The two OWN inequalities cancel cx after multiplication by sin(s), cos(d).
-Using cy<=c0 and aS<=rho0 gives a lower bound on aD+aS. The required scalar
-reserve is proved on the whole geometric triangle 1/2<=d<=s<=2/3:
-  aD+aS > 217/100 + (s-d)/3.
-Concavity in d sends the point to d=1/2 or d=s. Each resulting boundary is
-concave in s. Only the three original vertices are evaluated by rational
-Taylor inequalities; there is no subdivision or numerical certificate.
+When D and S are separated from C along their own axes, at angles
+`1/2 ≤ d ≤ s ≤ 2/3`, the sum of their radial coordinates exceeds
+`217/100 + (s - d)/3`; the trigonometric part of this bound is
+`coupledOwnReserve d s`, positive on the triangle. It is concave in `d`, so it
+is enough to check the sides `d = 1/2` and `d = s`; each of them is concave in
+`s`, and positive at the three vertices by brackets of `sin` and `cos` at `1/2`
+and `2/3`.
 -/
 
 noncomputable section
@@ -177,7 +177,7 @@ private lemma coupled_vertices :
   · norm_num [coupledOwnReserve]
     linarith
 
-/-- The whole original triangle reduces to its three original vertices. -/
+/-- The reserve is positive on the triangle `1/2 ≤ d ≤ s ≤ 2/3`. -/
 theorem coupled_own_reserve_positive {d s : ℝ}
     (hd : 1/2≤d) (hds : d≤ s) (hs : s≤2/3) : 0<coupledOwnReserve d s := by
   have hleft : 0<coupledOwnReserve (1/2) s := by

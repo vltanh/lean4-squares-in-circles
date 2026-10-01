@@ -1,20 +1,23 @@
 import SquaresInCircles.Six.Stress.StrictSupport
 
 /-!
-# Unique support maximizers needed for equality reconstruction
+# Equality in the support bounds
 
-A far-vertex support equality forces that vertex to the unique support point of
-the disk. The axial cap equality forces the transverse center coordinate to
-zero. These are statements about the original contained square, not properties
-assumed of a normalized or optimal configuration.
+For `g ≠ 0`, a point of the disk of radius `R` at which the linear form
+`⟨g, ·⟩` reaches `R |g|` is the point `(R/|g|) g`. So if the far-vertex
+support of a contained square is attained, its far vertex is that point, and
+the centre of the square is determined. On a positive axis the support of the
+force `(l, 0)` is `rhoAt R * l`.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Equality
 open Stress
 
+/-- For `g ≠ 0`, a point `p` of the disk of radius `R` with `⟨g, p⟩ = R |g|`
+is `(R/|g|) g`. -/
 lemma disk_support_point_unique {g p : Point} {R : ℝ}
-    (hR : 0 ≤ R) (hg : g≠(0,0)) (hp : normSq p≤R^2)
+    (hg : g≠(0,0)) (hp : normSq p≤R^2)
     (he : dot g p=R*vectorLength g) : p=scale (R/vectorLength g) g := by
   let L := vectorLength g
   have hL0 : 0<L := Real.sqrt_pos.mpr (normSq_pos_of_ne hg)
@@ -42,11 +45,11 @@ lemma disk_support_point_unique {g p : Point} {R : ℝ}
     field_simp [ne_of_gt hL0]
     nlinarith only [hy]
 
-/-- Choose the supporting corner by its two local signs. The hypotheses allow
-zero projections, but active candidate vertex forces have both projections
-nonzero, so the sign choice is then unique as well. -/
+/-- If the far-vertex support of a contained square is attained, then with the
+signs `sx`, `sy` of the force in the frame of the square, the centre is
+`(R/|g|) g` minus the half-diagonal to the vertex of those signs. -/
 theorem center_eq_of_vertex_support {S : UnitSquare} {g : Point} {R sx sy : ℝ}
-    (hR : 0≤R) (hg : g≠(0,0))
+    (hg : g≠(0,0))
     (hcontain : ∀ p, closedSquare S p → inDisk (0,0) R p)
     (hsx : |sx|=1) (hsy : |sy|=1)
     (hx : sx*frameX S g=|frameX S g|)
@@ -69,7 +72,7 @@ theorem center_eq_of_vertex_support {S : UnitSquare} {g : Point} {R sx sy : ℝ}
     dsimp [vertexSupport,width] at he
     nlinarith [hx,hy]
   have hnorm : normSq p≤R^2 := by simpa [inDisk,sub] using hcontain p hp
-  have hpoint := disk_support_point_unique hR hg hnorm hdot
+  have hpoint := disk_support_point_unique hg hnorm hdot
   have hpx := congrArg Prod.fst hpoint
   have hpy := congrArg Prod.snd hpoint
   apply Prod.ext
@@ -80,71 +83,11 @@ theorem center_eq_of_vertex_support {S : UnitSquare} {g : Point} {R sx sy : ℝ}
     dsimp [sub,scale]
     linarith
 
-lemma rotate_frame_coordinates (S : UnitSquare) (p : Point) :
-    rotate S (frameX S p,frameY S p)=p := by
-  apply Prod.ext
-  · dsimp [rotate,frameX,frameY]
-    linear_combination p.1*S.unit
-  · dsimp [rotate,frameX,frameY]
-    linear_combination p.2*S.unit
-
-lemma rhoAt_identity {R : ℝ} (hR : 1≤R) : (rhoAt R+1/2)^2+1/4=R^2 := by
-  have hs := Real.sq_sqrt (show 0≤R^2-1/4 by nlinarith [sq_nonneg (R-1)])
-  dsimp [rhoAt]
-  nlinarith
-
-lemma rhoAt_pos {R : ℝ} (hR : 1≤R) : 0<rhoAt R := by
-  have hs := Real.sqrt_lt_sqrt (show (0:ℝ)≤(1/2)^2 by norm_num)
-    (show (1/2:ℝ)^2<R^2-1/4 by nlinarith [sq_nonneg (R-1)])
-  rw [Real.sqrt_sq (by norm_num)] at hs
-  dsimp [rhoAt]
-  linarith
-
-/-- On the axial cap, the active primary bound leaves no transverse slack. -/
-theorem center_eq_of_primary_cap {S : UnitSquare} {R : ℝ}
-    (hR : 1≤R) (hcontain : ∀ p, closedSquare S p → inDisk (0,0) R p)
-    (ha : frameX S S.center=rhoAt R) : S.center=rotate S (rhoAt R,0) := by
-  have hc := phi_le_of_contained S (0,0) R hcontain
-  rw [alpha_frame_center,beta_frame_center,ha,abs_of_pos (rhoAt_pos hR)] at hc
-  have hid := rhoAt_identity hR
-  have hbabs : |frameY S S.center|=0 := by
-    dsimp [phi] at hc
-    nlinarith [abs_nonneg (frameY S S.center),sq_nonneg |frameY S S.center|]
-  have hb := abs_eq_zero.mp hbabs
-  calc
-    S.center=rotate S (frameX S S.center,frameY S S.center) :=
-      (rotate_frame_coordinates S S.center).symm
-    _=rotate S (rhoAt R,0) := by rw [ha,hb]
-
+/-- On a positive axis the support of `(l, 0)` is `rhoAt R * l`. -/
 lemma scalarSupport_positive_axis {R l : ℝ} (hl : 0≤l) :
     scalarSupport R l 0=rhoAt R*l := by
   unfold scalarSupport orderedSupport
-  simp only [abs_zero,abs_of_nonneg hl,if_pos hl,zero_pow (by decide : (2:ℕ)≠0),
-    add_zero,Real.sqrt_sq hl,mul_zero,if_pos hl]
-
-lemma primary_force_components (S : UnitSquare) (l : ℝ) :
-    frameX S (scale l (normalX S))=l ∧ frameY S (scale l (normalX S))=0 := by
-  constructor
-  · dsimp [frameX,scale,normalX]
-    linear_combination l*S.unit
-  · dsimp [frameY,scale,normalX]
-    ring
-
-/-- Equality of exact support for a positive primary force determines the
-whole center, not just its primary projection. -/
-theorem center_eq_of_axial_support {S : UnitSquare} {R l : ℝ}
-    (hR : 1≤R) (hl : 0<l)
-    (hcontain : ∀ p, closedSquare S p → inDisk (0,0) R p)
-    (he : dot (scale l (normalX S)) S.center =
-      exactSupport R S (scale l (normalX S))) :
-    S.center=rotate S (rhoAt R,0) := by
-  have hcomponents := primary_force_components S l
-  rw [exactSupport,hcomponents.1,hcomponents.2,scalarSupport_positive_axis hl.le] at he
-  have hproj : dot (scale l (normalX S)) S.center=l*frameX S S.center := by
-    dsimp [dot,scale,normalX,frameX]
-    ring
-  rw [hproj] at he
-  have ha : frameX S S.center=rhoAt R := by nlinarith [hl]
-  exact center_eq_of_primary_cap hR hcontain ha
+  simp only [abs_zero,abs_of_nonneg hl,zero_pow (by decide : (2:ℕ)≠0),
+    add_zero,Real.sqrt_sq hl,mul_zero,ite_eq_left hl]
 
 end SquaresInCircles.Six.Equality

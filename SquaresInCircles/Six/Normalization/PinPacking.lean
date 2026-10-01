@@ -4,21 +4,24 @@ import SquaresInCircles.Six.Analytic.PinWindows
 import SquaresInCircles.Six.CongruenceTools
 
 /-!
-# The pin-labelled packing, constructed by analytic geometry
+# The pin-labelled packing
 
-The strong box is established before pins or sectors. Analytic.PinWindows
-supplies geometric covering, and the finite pin bijection gives uniqueness.
-That uniqueness, not a second numerical test, excludes the wrong primary
-quadrants and gives all five labelled windows. The allowed central axes are
-then derived directly from the fixed pin coordinates and the strong core.
-No certificate-success hypothesis or finite-cover computation is used here.
+A `PinPacking` is a packing about the origin in the frame of its central square,
+whose centre lies in the box `[0, c0]²`; the other five squares are labelled E,
+N, W, D and S by the fixed pins they hold. Each of them holds its own pin, has
+its phase in the window of its label, and is separated from the central square
+along one of the axes allowed for its label. Every packing in a disk of squared
+radius at most `Q0` is congruent to one. Each exterior square holds a pin, and
+disjoint squares cannot share one, so each holds exactly one pin, which gives
+its label; holding no other pin puts its phase in the window, and the
+coordinates of the pins give the allowed axes.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Normalization
 open Certificates
 
-/-- Central square first, followed by E,N,W,D,S. -/
+/-- The central square, followed by E, N, W, D and S. -/
 def pinModel (c : Point) (t a b : Fin 5 → ℝ) : Fin 6 → UnitSquare :=
   Fin.cases (axisSquare c) (fun i => orientedSquare (t i) (a i) (b i))
 
@@ -28,7 +31,7 @@ def pinModel (c : Point) (t a b : Fin 5 → ℝ) : Fin 6 → UnitSquare :=
 @[simp] lemma pinModel_succ (c : Point) (t a b : Fin 5 → ℝ) (i : Fin 5) :
     pinModel c t a b i.succ = orientedSquare (t i) (a i) (b i) := rfl
 
-/-- A lift around a prescribed center, using only the existing angle quotient. -/
+/-- The real lift of a direction within `π` of `c`. -/
 def liftNear (c : ℝ) (m : Direction) : ℝ := c+(m-(c:Direction)).toReal
 
 lemma liftNear_class (c : ℝ) (m : Direction) : (liftNear c m : Direction) = m := by
@@ -62,24 +65,6 @@ variable {R : ℝ} (P : PinPacking R)
 
 def model : Fin 6 → UnitSquare := pinModel P.center P.phase P.radial P.transverse
 
-lemma chart_bounds (i : Fin 5) :
-    aMin ≤ P.radial i ∧ P.radial i ≤ rho0 ∧ |P.transverse i| ≤ U0 ∧
-      |P.transverse i| < 1/2 ∧
-      (177/200 < P.radial i ∧ P.radial i < 223/200 ∧ |P.transverse i| < 117/250) :=
-  ⟨(P.contained i).aMin_le (P.avoidsCore i),(P.contained i).a_le_rho0,
-    (P.contained i).u_le_U0 (P.avoidsCore i),(P.contained i).u_lt_half (P.avoidsCore i),
-    (P.contained i).bounds (P.avoidsCore i)⟩
-
-lemma affine_label (i : Fin 5) :
-    Seven.label (P.radial i) |P.transverse i| = 5*|P.transverse i|/4 :=
-  (P.contained i).label_eq_axial (P.avoidsCore i)
-
-lemma central_inside : openSquare (P.model 0) (0,0) := by
-  have hx : P.center.1 < 1/2 := by linarith [P.box.1.2,c0_lt_23_200]
-  have hy : P.center.2 < 1/2 := by linarith [P.box.2.2,c0_lt_23_200]
-  simpa [model,pinModel_zero,axisSquare_open,openAxisSquare,abs_neg,
-    abs_of_nonneg P.box.1.1,abs_of_nonneg P.box.2.1] using And.intro hx hy
-
 lemma exterior_disjoint : InteriorDisjoint
     (fun i : Fin 5 => orientedSquare (P.phase i) (P.radial i) (P.transverse i)) := by
   intro i j hij
@@ -87,7 +72,9 @@ lemma exterior_disjoint : InteriorDisjoint
 
 end PinPacking
 
-/-- Construct all pin and window fields from a nonnegative central frame. -/
+/-- A packing about the origin whose square `0` is axis-parallel, contains the
+origin and has its centre in the closed first quadrant is congruent to a
+pin-labelled packing. -/
 theorem pinPacking_of_normalized {S : Fin 6 → UnitSquare} {c : Point} {R : ℝ}
     (hp : Packing S (0,0) R) (hQ : R^2 ≤ Q0) (haxis : S 0 = axisSquare c)
     (hinside : openSquare (S 0) (0,0)) (hx0 : 0 ≤ c.1) (hy0 : 0 ≤ c.2) :
@@ -175,7 +162,8 @@ theorem pinPacking_of_normalized {S : Fin 6 → UnitSquare} {c : Point} {R : ℝ
   exact Six.congruent_of_origin_sets τ (fun i p => (hmodelopen i p).symm)
     (fun i p => (hmodelclosed i p).symm)
 
-/-- Construct the analytic pin-labelled model of an arbitrary packing. -/
+/-- Every packing in a disk of squared radius at most `Q0` is congruent to a
+pin-labelled packing. -/
 theorem pinPacking_of_ceiling {S : Fin 6 → UnitSquare} {o : Point} {R : ℝ}
     (hp : Packing S o R) (hQ : R^2 ≤ Q0) :
     ∃ P : PinPacking R, Congruent S o P.model := by

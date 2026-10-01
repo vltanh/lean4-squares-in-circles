@@ -1,12 +1,13 @@
 import SquaresInCircles.Six.Analytic.CardinalLowDiagonalConcavity
 
 /-!
-# The six sign/order vertices, with visible rational endpoint bounds
+# Cardinal W, low D: the six vertices
 
-The only positive arguments are 1/10,2/5,1/2,9/10: the differences at the
-actual rectangle/order vertices. Negative 2/5 is handled by sine/cosine parity.
-Every radical bound is obtained by squaring an explicit nonnegative fraction.
-No generated box certificate or sampled derivative enters these proofs.
+`cardLowGap` is positive at the six vertices of its domain, and so on the whole
+domain. The angles that occur at the vertices are `0`, `1/10`, `2/5`, `1/2` and
+`9/10`, and `-2/5`, reduced to `2/5` by parity. Taylor bounds bracket their
+sines and cosines, and each radical is bounded below by squaring an explicit
+fraction.
 -/
 
 noncomputable section
@@ -95,7 +96,8 @@ private lemma cardLow_relative_root_tenth :
   apply sineRoot_lower_of_squared (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num)
   nlinarith [cardLow_tenth_bracket.2.2]
 
-/-- The six distinct vertices dictated by w=0 and d=w, for both actual sources. -/
+/-- `cardLowSmooth` is positive at the six vertices of the domain, for either
+source. -/
 theorem cardLow_vertices (ds : Bool) :
     0<cardLowSmooth ds false (-2/5) 0 ∧
     0<cardLowSmooth ds false (-2/5) (1/2) ∧
@@ -124,7 +126,8 @@ theorem cardLow_vertices (ds : Bool) :
     cardLowAlpha,cardLowBeta,cardLowMu,Real.cos_neg,Real.sin_neg]
   all_goals linarith
 
-/-- Whole-domain positivity, with the geometric order condition retained. -/
+/-- `cardLowGap` is positive on the domain `-2/5 ≤ w ≤ 2/5`, `0 ≤ d ≤ 1/2`,
+`w ≤ d`. -/
 theorem cardinal_low_diagonal_positive (ds : Bool) {w d : ℝ}
     (hw : -2/5≤w ∧ w≤2/5) (hd : 0≤d ∧ d≤1/2) (hwd : w≤d) :
     0<cardLowGap ds w d := by

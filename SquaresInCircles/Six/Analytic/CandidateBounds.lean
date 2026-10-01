@@ -1,23 +1,22 @@
 import SquaresInCircles.Six.Stress.CandidateStressConstants
 
 /-!
-# Rational bounds from the exact candidate equations
+# Rational bounds for the constants of the model
 
-The small root is bounded by evaluating its defining quadratic at one rational
-point and using its negative slope on the small-root interval. The remaining
-bounds follow by multiplication and division of positive quantities.
-
-This is ordinary algebra: no interval evaluator or finite certificate is
-imported. The displayed rational bounds are deliberately coarser than decimal
-approximations of the candidate.
+`sStar > 421/5000`, since the quadratic `s² - AStar s + BStar` is positive at
+`421/5000` and decreasing up to its smaller root, and `tStar > 21/50` by its
+affine formula in `sStar`. Products and quotients of positive rational bounds
+then bound the ratios `rStar` and `kStar` of the stress of the model, the length
+`2 hStar mStar` of its force on D, the cap offset `rhoStar`, the optimal radius
+`radius` and the product `2 hStar mStar rhoStar`.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic
 open Stress
 
-/-- The defining quadratic is positive at 421/5000 and decreases until its
-small root. The already proved s<1/5 rules out the other root. -/
+/-- `sStar > 421/5000`: the quadratic is positive at `421/5000` and decreasing
+on `[0, 1/5]`, which contains `sStar`. -/
 theorem candidate_offset_lower : (421 : ℝ) / 5000 < Six.sStar := by
   have hp : 0 < (421 / 5000 : ℝ) ^ 2 - Six.AStar * (421 / 5000) + Six.BStar := by
     dsimp [Six.AStar, Six.BStar]
@@ -29,7 +28,7 @@ theorem candidate_offset_lower : (421 : ℝ) / 5000 < Six.sStar := by
       linarith [Six.sStar_lt_fifth, Six.AStar_bounds.1])
   nlinarith [Six.sStar_polynomial]
 
-/-- The west/south offset exceeds 21/50, by its displayed affine formula. -/
+/-- `tStar > 21/50`, by its affine formula in `sStar`. -/
 theorem candidate_transverse_lower : (21 : ℝ) / 50 < Six.tStar := by
   have hcoef : (1213 : ℝ) / 1000 ≤ -20 + 30 * Six.hStar := by
     linarith [Six.hStar_lower]
@@ -40,7 +39,7 @@ theorem candidate_transverse_lower : (21 : ℝ) / 50 < Six.tStar := by
   dsimp [Six.tStar]
   nlinarith only [hp, hh]
 
-/-- Simple fractions for the two slope ratios defining the outer stress. -/
+/-- Rational bounds for the ratios `rStar` and `kStar`. -/
 theorem candidate_ratio_bounds :
     (73 : ℝ) / 198 < rStar ∧ rStar < 117 / 317 ∧
       (115 : ℝ) / 177 < kStar ∧ kStar < 922 / 1415 := by
@@ -54,7 +53,7 @@ theorem candidate_ratio_bounds :
   · rw [kStar, div_lt_iff₀ kStar_den_pos]
     linarith [Six.sStar_lt_17_200, Six.tStar_bounds.2]
 
-/-- Bounds on K=sqrt(2)m, obtained by multiplying positive rational bounds. -/
+/-- Bounds for the length `2 hStar mStar = √2 mStar` of the force on D. -/
 theorem diagonal_scale_bounds :
     (251 : ℝ) / 200 < 2 * Six.hStar * mStar ∧
       2 * Six.hStar * mStar < 253 / 200 := by
@@ -80,7 +79,7 @@ theorem diagonal_scale_bounds :
     (by norm_num : (0 : ℝ) ≤ 70711 / 50000)
   constructor <;> nlinarith only [hlo, hhi]
 
-/-- A slightly stronger lower bound than the normalization-only interface needs. -/
+/-- `rhoStar > 111/100`. -/
 theorem candidate_cap_radius_lower : (111 : ℝ) / 100 < rhoStar := by
   have hs : 21 / 250 < Six.sStar := by linarith [candidate_offset_lower]
   have hp := mul_nonneg (show 0 ≤ Six.sStar - 21 / 250 by linarith)
@@ -94,7 +93,7 @@ theorem candidate_cap_radius_lower : (111 : ℝ) / 100 < rhoStar := by
   dsimp [rhoStar, rhoAt]
   linarith
 
-/-- The only circle-radius estimates needed by the analytic vertex argument. -/
+/-- `8/5 < radius < 1689/1000`. -/
 theorem candidate_radius_bounds :
     (8 : ℝ) / 5 < Six.radius ∧ Six.radius < 1689 / 1000 := by
   constructor
@@ -105,7 +104,7 @@ theorem candidate_radius_bounds :
       simpa only [Six.radius_sq, Normalization.Q0] using Six.qStar_lt_Q0
     nlinarith [sq_nonneg (Six.radius - 1689 / 1000)]
 
-/-- Replacement for the former zero-dimensional diagonalConstantClaim check. -/
+/-- Bounds for the work `2 hStar mStar rhoStar` of the force on D. -/
 theorem diagonal_constant_bounds :
     (139 : ℝ) / 100 < 2 * Six.hStar * mStar * rhoStar ∧
       2 * Six.hStar * mStar * rhoStar < 141 / 100 := by

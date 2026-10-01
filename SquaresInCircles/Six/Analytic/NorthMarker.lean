@@ -2,12 +2,16 @@ import SquaresInCircles.Six.Analytic.CoreProfiles
 import SquaresInCircles.Six.Analytic.BasicExclusions
 
 /-!
-# North OWN markers in the large-center case
+# North markers when the centre of C is high
 
-For a nonnegative tilt, a >= 1/2+(rho0-1/2) cos t forces u <= (4/5)t by
-far-corner containment. The squared-radius difference has a positive linear
-term which dominates its only possibly negative quadratic term throughout
-0 <= t <= 4/5. For a negative tilt the OWN margin is impossible outright.
+Let the centre `(x, y)` of C satisfy `c0 < y ≤ x ≤ 1/2`. A contained square
+with phase `π/2 + t`, `|t| ≤ π/4`, that is separated from C along its own axis
+has `t ≥ 0`, and its marker is at least `π/2`. The own margin gives
+`a ≥ 1/2 + (rho0 - 1/2) cos t`, and then `u ≤ (4/5) t`, since otherwise the
+far corner would be at squared distance more than `Q0` from the disk centre:
+the excess has a positive linear term in `t` that dominates its only negative
+quadratic term on `0 ≤ t ≤ 4/5`. So the label is at most `t`. A contained
+square with `a ≥ 1` also has `u < 3/10`.
 -/
 
 noncomputable section

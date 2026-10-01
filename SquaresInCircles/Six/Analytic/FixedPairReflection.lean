@@ -1,14 +1,16 @@
 import SquaresInCircles.Six.Analytic.FixedPairPacking
 
 /-!
-# The E/S pair is the same local calculation
+# The pair E, S by reflection
 
-The swap below transforms vectors in the scalar work identity; it is not a
-second global normalization of the packing. The actual E/S separator is
-selected before the coordinate swap. In particular the recorded D half-window
-and the orientation trace are unchanged.
+The reflection in the diagonal `y = x` exchanges N with E and W with S. So E at
+the angle `-e` plays the role of N and S at the angle `-s` that of W, with their
+transverse coordinates negated: the separating inequalities of C–E, C–S and E–S
+become those of a pair N, W, and the bound of `FixedPairPacking` applies. In the
+sum of the bounds for the two pairs the coordinates of the centre of C cancel,
+leaving `mStar (1 + bW - bS)`, where `bW` and `bS` are the transverse
+coordinates of W and S.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.FixedPair
 open Stress Normalization
@@ -25,14 +27,15 @@ lemma reflected_east_center (e a b : ℝ) :
     (orientedSquare (Real.pi/2-e) a (-b)).center=
       Six.diagonalPoint (orientedSquare e a b).center := by
   apply Prod.ext <;>
-    simp [orientedSquare,Six.diagonalPoint,Real.cos_pi_div_two_sub,Real.sin_pi_div_two_sub] <;> ring
+    simp [orientedSquare,Six.diagonalPoint,Real.cos_pi_div_two_sub,Real.sin_pi_div_two_sub]
+  ring
 
 lemma reflected_south_center (s a b : ℝ) :
     (orientedSquare (Real.pi-s) a (-b)).center=
       Six.diagonalPoint (orientedSquare (3*Real.pi/2+s) a b).center := by
   apply Prod.ext <;>
     simp [orientedSquare,Six.diagonalPoint,Real.cos_pi_sub,Real.sin_pi_sub,
-      Real.cos_add,Real.sin_add,south_cos,south_sin] <;> ring
+      Real.cos_add,Real.sin_add,south_cos,south_sin]
 
 lemma width_neg (t : ℝ) : angularWidth (-t)=angularWidth t := by
   simp [angularWidth,Real.cos_neg,Real.sin_neg,abs_neg]
@@ -77,9 +80,10 @@ lemma preferred_eastsouth_swap {R : ℝ} (P : NormalizedPacking R) (v : Fin 4) :
   fin_cases v <;> apply Prod.ext <;>
     simp [sourceAxis,preferredPairAxis,unsignedPairAxis,ESsigns,P.square_def,
       he,hs,normalX,normalY,primary,secondary,orientedSquare,scale,Six.diagonalPoint,
-      Real.cos_add,Real.sin_add,Real.cos_neg,Real.sin_neg,south_cos,south_sin] <;> ring
+      Real.cos_add,Real.sin_add,Real.cos_neg,Real.sin_neg,south_cos,south_sin]
 
-/-- E/S with its genuine selected source, keeping the local transverse sign. -/
+/-- The pair bound for E and S: for some source axis, the value of the pair
+stress at `-e`, `-s` is at most `c.2 - c.1 + mStar (1/2 - bS)`. -/
 theorem actual_eastsouth_pair {R : ℝ} (P : NormalizedPacking R)
     (hR : R^2≤Six.qStar) : ∃ v : Fin 4,
       value (P.ownBits 0) (P.ownBits 4) v (-P.helperAngle 0) (-P.helperAngle 4)≤
@@ -121,9 +125,8 @@ theorem actual_eastsouth_pair {R : ℝ} (P : NormalizedPacking R)
   · rw [preferred_eastsouth_swap,hNE,hWS,← swap_sub,swap_dot,P.square_def 4,P.square_def 0,hs,he]
     exact hsel
 
-/-- Central coordinate terms cancel between the two actual pairs. The residual
-transverse work is precisely the quantity the two candidate D-edges control.
-This theorem does not assert that those D-edges have already been proved. -/
+/-- For some source axes, the values of the two pair stresses sum to at most
+`mStar (1 + bW - bS)`. -/
 theorem actual_pair_sum {R : ℝ} (P : NormalizedPacking R)
     (hR : R^2≤Six.qStar) : ∃ u v : Fin 4,
       value (P.ownBits 1) (P.ownBits 2) u (P.helperAngle 1) (P.helperAngle 2)+

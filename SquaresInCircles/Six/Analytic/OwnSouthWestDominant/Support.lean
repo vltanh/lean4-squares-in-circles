@@ -1,15 +1,17 @@
 import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Scalar
 
 /-!
-# Exact supports for the west-dominant five-edge stress
+# The west-dominant stress
 
-The central y force may have either sign, and both are retained. W uses one
-far-vertex support. D uses the radial-chord identity with z=9/20. S uses the
-smooth axial estimate with penalty sin(r)^2/12, whose force-cone hypotheses
-are proved here. The five weighted inequalities are actual CW, CS, CD, WD
-and D-sourced DS inequalities. Their defect is exactly the analytic profile.
-There is no assumed candidate south edge or internal finite checker.
-Compilation and kernel acceptance remain unverified.
+The stress has weights `9/4`, `3/4`, `9/20`, `1` and `1` on the separations
+C–W, C–S and C–D along the own axes of W, S and D, W–D along the secondary axis
+of W, and D–S along the secondary axis of D. The support of W is bounded by its
+far vertex, that of D by the radial-chord majorant with `z = 9/20`, that of S
+by the smooth axial bound, whose force lies in the cone `U ≥ 7/5`,
+`|V| ≤ U/2`, and that of C by the box of its centre, with the second coordinate
+at the end chosen by the sign of the force. The threshold sum less these bounds
+is exactly the profile, so the positivity of the profile contradicts the five
+separations.
 -/
 
 noncomputable section
@@ -66,7 +68,7 @@ lemma diagonal_support {a b q : ℝ} (hc : ContainedChart a |b|)
   dsimp [diagonalUpper]
   linarith
 
-/-- The actual S force lies in the universal smooth-support cone. -/
+/-- The force on S lies in the cone of the smooth axial bound. -/
 lemma south_force_cone {r : ℝ} (hr : 0 ≤ r ∧ r ≤ Real.pi/4) :
     7/5 ≤ southWeight+Real.cos r ∧ |Real.sin r| ≤ (southWeight+Real.cos r)/2 := by
   have hroot : (707:ℝ)/1000 ≤ Real.sqrt 2/2 := by
@@ -160,7 +162,8 @@ lemma profile_eq_defect (upper : Bool) {v s d : ℝ}
   rw [hw,hs',hd',hq',hr']
   ring
 
-/-- Five genuine real inequalities contradict the positive analytic defect. -/
+/-- The five separating inequalities of the west-dominant stress are
+incompatible on its domain. -/
 theorem scalar_impossible {v s d aw bw ad bd asouth bsouth cx cy : ℝ}
     (hv : v ≤ 2/3) (hs : 0 ≤ s) (horder : s ≤ v) (hsum : v+s ≤ 24/25)
     (hd : 1/2 ≤ d ∧ d ≤ Real.pi/4)

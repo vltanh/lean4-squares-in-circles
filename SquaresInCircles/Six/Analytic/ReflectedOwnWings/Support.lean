@@ -3,14 +3,17 @@ import SquaresInCircles.Six.Analytic.RadialChordSupport
 import SquaresInCircles.Six.Analytic.SoftAxialSupport
 
 /-!
-# Five real inequalities supply the reflected two-OWN obstruction
+# The reflected case: the stress
 
-The stress weights are 9/4,3/4,9/20,1,1. Its supports are the west vertex,
-the diagonal radial-chord bound, and the smooth south support with penalty
-sin(r)^2/12. The force-cone hypotheses follow from 0<=r<=2/3. The central
-y sign is retained rather than assumed. Since the reflected q may exceed
-pi/2, its width is bounded below, not replaced by a first-quadrant formula.
-Compilation and kernel acceptance remain unverified.
+In the reflected frame, the separators of C with W, S and D along their own
+axes, of W and D along the secondary axis of W, and of D and S along the
+secondary axis of D, with weights `9/4`, `3/4`, `9/20`, `1` and `1`, bound the
+threshold sum. The works of the forces are bounded by supports: on W by its
+far-vertex support, on D by the radial chord bound, on S by the soft axial
+support with the penalty `sin² r/12`, and on C by the face of the box chosen by
+the sign of the force. At `q = d + v`, which may exceed `π/2`, the width is
+bounded below by `(cos q + sin q)/2`. What is left is at least the value, which
+is positive.
 -/
 
 noncomputable section
@@ -138,7 +141,8 @@ lemma value_le_defect (upper : Bool) {v s d : ℝ}
     ring
   linarith
 
-/-- These are scalar hypotheses in the reflected frame, not an assumed reflected packing. -/
+/-- On the reflected domain the five separators of the reflected frame, with the
+containment of W, D and S and the box of C, cannot all hold. -/
 theorem scalar_impossible {v s d aw bw ad bd asouth bsouth cx cy : ℝ}
     (hs : 48/175 ≤ s ∧ s ≤ 12/25) (horder : s ≤ v) (hv : v ≤ 2/3)
     (hsum : v+s ≤ 24/25) (hd : 157/200 ≤ d ∧ d ≤ 163/175)

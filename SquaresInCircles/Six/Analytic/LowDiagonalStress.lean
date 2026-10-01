@@ -3,13 +3,18 @@ import SquaresInCircles.Six.Analytic.FrozenPrimaryEndpoints
 import SquaresInCircles.Six.Normalization.CapSupport
 
 /-!
-# Low-diagonal secondary stresses before support maximization
+# The low diagonal: the stress
 
-False denotes the W-secondary source, with weights (31,44,25)/100 on
-C-D,C-W,W-D. True denotes the D-secondary source, with (42,37,21)/100.
-The local centers and the central center are frozen while varying v=-w,d.
-Only endpoint supports are maximized. The mixed endpoint uses the genuine
-constrained-disk slope condition, not coordinate dominance.
+Let W and D be separated from C along their own axes, with `0 ≤ d ≤ 1/2`. The
+stress has weights `lowAlpha`, `lowBeta` and `lowMu` on C–D, C–W and W–D:
+`31/100`, `44/100` and `25/100` when W–D is separated along the secondary axis
+of W (`ds = false`), and `42/100`, `37/100` and `21/100` when it is separated
+along that of D (`ds = true`). `lowFrozen` is its threshold sum minus the works
+of the forces, with the centres held fixed while the angles `v = -w` and `d`
+vary; it is a `frozenTrig` in `v` and `d`. At the corners of the angle
+rectangle the works are bounded by the far-vertex support, given bounds for the
+lengths of the forces, or by the cap bound `rho0 U` for a force `(U, -V)` with
+`(rho0 + 1/2) V ≤ U/2` (`cap_linear_upper`).
 -/
 
 noncomputable section
@@ -31,16 +36,13 @@ def lowDForce (ds : Bool) (q : ℝ) : Point :=
   if ds then (lowAlpha ds,lowMu ds)
   else (lowAlpha ds+lowMu ds*Real.sin q,lowMu ds*Real.cos q)
 
+/-- The threshold sum minus the works of the forces on W, D and C. -/
 def lowFrozen (ds : Bool) (v d aw bw ad bd cx cy : ℝ) : ℝ :=
   1/2+(lowBeta ds/2)*(Real.cos v+Real.sin v)+(lowAlpha ds/2)*(Real.cos d+Real.sin d)+
     (lowMu ds/2)*(Real.cos (v+d)+Real.sin (v+d))-
     dot (lowWForce ds (v+d)) (aw,bw)-dot (lowDForce ds (v+d)) (ad,bd)-
     ((lowBeta ds*Real.cos v+lowAlpha ds*Real.cos d)*cx+
       (lowAlpha ds*Real.sin d-lowBeta ds*Real.sin v)*cy)
-
-lemma low_weights (ds : Bool) :
-    0≤lowAlpha ds ∧ 0≤lowBeta ds ∧ 0≤lowMu ds ∧ lowAlpha ds+lowBeta ds+lowMu ds=1 := by
-  cases ds <;> norm_num [lowAlpha,lowBeta,lowMu]
 
 lemma low_frozen_formula (ds : Bool) (v d aw bw ad bd cx cy : ℝ) :
     lowFrozen ds v d aw bw ad bd cx cy=
@@ -56,7 +58,8 @@ lemma low_rotating_norm (p mu q : ℝ) :
     (p+mu*Real.sin q)^2+(mu*Real.cos q)^2=p^2+mu^2+2*p*mu*Real.sin q := by
   linear_combination mu^2*(Real.sin_sq_add_cos_sq q)
 
-/-- The cap support is used only under the full constrained-circle slope test. -/
+/-- The cap bound: if `(rho0 + 1/2) V ≤ U/2`, the work `U a - V b` is at most
+`rho0 U`, and so at most `1113/1000 U`. -/
 lemma cap_linear_upper {a b U V : ℝ} (hc : ContainedChart a |b|)
     (hU : 0≤U) (hV : 0≤V) (hslope : (rho0+1/2)*V≤U/2) :
     U*a-V*b≤(1113/1000)*U := by
@@ -68,12 +71,13 @@ lemma cap_linear_upper {a b U V : ℝ} (hc : ContainedChart a |b|)
   have hrad := mul_le_mul_of_nonneg_right rho0_upper.le hU
   nlinarith
 
-/-- One vertex-support rule for both fixed-source choices. L0 and L are root
-upper bounds proved at the original rectangle corners by squaring. -/
+/-- A lower bound for `lowFrozen` from the far-vertex supports, given upper
+bounds `L0` and `L` for the lengths of the force of fixed direction and of the
+other force. -/
 lemma low_vertex_endpoint_lower (ds : Bool) {v d aw bw ad bd cx cy L0 L X Y : ℝ}
     (hW : ContainedChart aw |bw|) (hD : ContainedChart ad |bd|)
     (hc : (0≤cx ∧ cx≤c0) ∧ (0≤cy ∧ cy≤c0))
-    (hcos : 0≤Real.cos (v+d)) (hsin : 0≤Real.sin (v+d))
+    (hcos : 0≤Real.cos (v+d))
     (hL0 : 0≤L0) (hL : 0≤L)
     (hn0 : (lowFixed ds)^2+(lowMu ds)^2≤L0^2)
     (hn : (lowVariable ds)^2+(lowMu ds)^2+
@@ -100,8 +104,8 @@ lemma low_vertex_endpoint_lower (ds : Bool) {v d aw bw ad bd cx cy L0 L X Y : �
     dsimp [lowFrozen,lowWForce,lowDForce,lowAlpha,lowBeta,lowMu,dot] at hcentral ⊢
     nlinarith only [hWb,hDb,hcentral]
 
-/-- The mixed corner uses the proved cap slope; the other force remains on its
-universally valid vertex upper bound. No branch is selected by U>|V|. -/
+/-- The same with the cap bound for the force whose direction depends on the
+angles, under its slope condition. -/
 lemma low_cap_endpoint_lower (ds : Bool) {v d aw bw ad bd cx cy L0 X Y : ℝ}
     (hW : ContainedChart aw |bw|) (hD : ContainedChart ad |bd|)
     (hc : (0≤cx ∧ cx≤c0) ∧ (0≤cy ∧ cy≤c0))

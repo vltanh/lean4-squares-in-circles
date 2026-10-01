@@ -2,13 +2,15 @@ import SquaresInCircles.Six.Analytic.WestCoreBounds.Scalar
 import SquaresInCircles.Six.Analytic.AxialConeSupport
 
 /-!
-# The two three-edge core profiles are genuine support obstructions
+# Bounds for W and D: the stress
 
-W lies in a proved axial force cone because its actual gap is at least one.
-For the large-tilt stress D is also axial; for the low-diagonal stress its
-universal vertex support uses one exact rational square-root upper bound.
-The central y sign is retained explicitly. No S inequality is used.
-Compilation and kernel acceptance remain unverified.
+The separators of C and W and of C and D along their own axes, and of W and D
+along the secondary axis of D, with weights `β`, `δ` and `1`, bound the profile
+above by zero. Since `1 ≤ v + d ≤ π/2`, the force on W lies in an axial cone,
+and its work is bounded by the axial cone support. The work on D is bounded by
+the axial cone support for the first weights and by the far-vertex support for
+the second, and the work on C on the face of the box chosen by the sign of the
+force.
 -/
 
 noncomputable section
@@ -66,7 +68,8 @@ lemma diagonal_support (large : Bool) {a b : ℝ} (hc : ContainedChart a |b|) :
     dsimp [diagonalUpper]
     nlinarith only [h,hm]
 
-/-- Every application obtains a real supporting face, rather than assuming its sign. -/
+/-- The centre of C is bounded on the face of the box chosen by the sign of the
+second component of the force. -/
 lemma center_support (large : Bool) {v d cx cy : ℝ}
     (hv : 0 ≤ v ∧ v ≤ Real.pi/2) (hd : 0 ≤ d ∧ d ≤ Real.pi/2)
     (hx : cx ≤ CandidateWestTail.coreUpper)
@@ -87,7 +90,8 @@ lemma center_support (large : Bool) {v d cx cy : ℝ}
     dsimp [centerUpper,face]
     nlinarith only [hx',hy']
 
-/-- The same actual CW, CD and D-sourced WD inequalities supply either profile. -/
+/-- The separators of C and W, of C and D, and of W and D along the secondary
+axis of D make either profile nonpositive on some face of the box. -/
 theorem value_nonpositive (large : Bool) {v d aw bw ad bd cx cy : ℝ}
     (hv : 0 ≤ v ∧ v ≤ Real.pi/2) (hd : 0 ≤ d ∧ d ≤ Real.pi/2)
     (hq : 1 ≤ v+d ∧ v+d ≤ Real.pi/2)

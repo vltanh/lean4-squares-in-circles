@@ -3,14 +3,16 @@ import SquaresInCircles.Six.Stress.SupportFormula
 import SquaresInCircles.Six.Normalization.CapSupport
 
 /-!
-# Exact analytic reduction of the diagonal contribution
+# The term of the turned square
 
-The force direction and length are derived algebraically. The cap branch is
-selected by 2 R |sin delta| <= 1, not by coordinate dominance. Dominance is
-proved separately only to identify the larger coordinate in the support.
-
-The scalar reduction does not use the common pair lower bound. In particular
-PairLowerBound and its computational certificates are no longer imported here.
+Let W, D and S be at the phases `π + w`, `π + d` and `3π/2 + s`, on the
+domain `-11/25 ≤ w ≤ 2/5`, `-2/5 ≤ s ≤ 11/25`, `1/2 ≤ d ≤ π/4`. With
+`β = (w - s)/2` and `δ = d - π/4 - (w + s)/2`, the force on D has length
+`K (cos β - sin β)`, where `K = 2 hStar mStar`, and makes the angle `-δ` with
+the axis of D; the angular parts of the thresholds of W–D and D–S, with the
+weight `mStar`, add up to `K cos β cos δ`. So these thresholds less the
+support of D in the disk of the optimal radius are the cap expression when
+`2 Six.radius |sin δ| ≤ 1`, and the vertex expression otherwise.
 -/
 
 noncomputable section
@@ -55,7 +57,7 @@ lemma diagonal_parameters {w s d : ℝ} (h : DiagonalDomain w s d) :
 lemma abs_sin_le_abs_value (x : ℝ) : |Real.sin x|≤|x| := by
   simpa using Real.abs_sin_sub_sin_le x 0
 
-lemma cos_lower_from_abs {x a : ℝ} (ha : 0≤a) (hx : |x|≤a) : 1-a^2/2≤Real.cos x := by
+lemma cos_lower_from_abs {x a : ℝ} (hx : |x|≤a) : 1-a^2/2≤Real.cos x := by
   have hsq := pow_le_pow_left₀ (abs_nonneg x) hx 2
   rw [sq_abs] at hsq
   linarith [Real.one_sub_sq_div_two_le_cos (x := x)]
@@ -66,9 +68,9 @@ lemma diagonal_trig_signs {w s d : ℝ} (h : DiagonalDomain w s d) :
     |Real.sin (diagonalDelta w s d)|≤Real.cos (diagonalDelta w s d) := by
   have hp := diagonal_parameters h
   have hb : |diagonalBeta w s|≤11/25 := abs_le.mpr ⟨by linarith [hp.1.1],by linarith [hp.1.2]⟩
-  have hcb := cos_lower_from_abs (by norm_num : (0:ℝ)≤11/25) hb
+  have hcb := cos_lower_from_abs hb
   have hsb := (abs_sin_le_abs_value (diagonalBeta w s)).trans hb
-  have hcd := cos_lower_from_abs (by norm_num : (0:ℝ)≤71/100) hp.2.1
+  have hcd := cos_lower_from_abs hp.2.1
   have hsd := (abs_sin_le_abs_value (diagonalDelta w s d)).trans hp.2.1
   have hsb' := (abs_le.mp hsb).2
   exact ⟨by linarith,by linarith,by linarith⟩
@@ -91,8 +93,8 @@ lemma diagonal_force_formula (w s d : ℝ) :
   have hs : d-s=Real.pi/4+diagonalDelta w s d+diagonalBeta w s := by
     dsimp [diagonalDelta,diagonalBeta]
     ring
-  have hsin : Real.sin (Real.pi/4)=Six.hStar := by simp [Six.hStar,halfDiagonal]
-  have hcos : Real.cos (Real.pi/4)=Six.hStar := by simp [Six.hStar,halfDiagonal]
+  have hsin : Real.sin (Real.pi/4)=Six.hStar := by simp [Six.hStar]
+  have hcos : Real.cos (Real.pi/4)=Six.hStar := by simp [Six.hStar]
   apply Prod.ext <;>
     simp only [diagonalLocalForce,hw,hs,Real.sin_sub,Real.cos_sub,Real.sin_add,Real.cos_add,
       hsin,hcos,diagonalK] <;> ring
@@ -108,8 +110,8 @@ lemma diagonal_threshold_formula {w s d : ℝ} (h : DiagonalDomain w s d) :
   have hs : d-s=Real.pi/4+diagonalDelta w s d+diagonalBeta w s := by
     dsimp [diagonalDelta,diagonalBeta]
     ring
-  have hsin : Real.sin (Real.pi/4)=Six.hStar := by simp [Six.hStar,halfDiagonal]
-  have hcos : Real.cos (Real.pi/4)=Six.hStar := by simp [Six.hStar,halfDiagonal]
+  have hsin : Real.sin (Real.pi/4)=Six.hStar := by simp [Six.hStar]
+  have hcos : Real.cos (Real.pi/4)=Six.hStar := by simp [Six.hStar]
   rw [hw,hs]
   simp only [Real.sin_sub,Real.cos_sub,Real.sin_add,Real.cos_add,hsin,hcos,diagonalK]
   ring
@@ -128,7 +130,8 @@ lemma diagonal_force_length {w s d : ℝ} (h : DiagonalDomain w s d) :
         (Real.sin_sq_add_cos_sq (diagonalDelta w s d))
   rw [hsq,Real.sqrt_sq hscale.le]
 
-/-- Exact two-branch expression, with the constrained-disk support condition. -/
+/-- The thresholds less the support of D: the cap expression when
+`2 Six.radius |sin δ| ≤ 1`, and the vertex expression otherwise. -/
 theorem diagonal_value_formula {w s d : ℝ} (h : DiagonalDomain w s d) :
     diagonalValue w s d=
       if 2*Six.radius*|Real.sin (diagonalDelta w s d)|≤1
@@ -162,12 +165,12 @@ theorem diagonal_value_formula {w s d : ℝ} (h : DiagonalDomain w s d) :
   by_cases hb : 2*Six.radius*|Real.sin z|≤1
   · have hb' : 2*Six.radius*(L*|Real.sin z|)≤L := hswitch.mpr hb
     have hb'' : 2*Six.radius*|Real.sin (diagonalDelta w s d)|≤1 := hb
-    rw [if_pos hb',if_pos hb'']
+    rw [ite_eq_left hb',ite_eq_left hb'']
     dsimp [diagonalCap,L,b,z,rhoStar]
     ring
   · have hb' : ¬2*Six.radius*(L*|Real.sin z|)≤L := fun h => hb (hswitch.mp h)
     have hb'' : ¬2*Six.radius*|Real.sin (diagonalDelta w s d)|≤1 := hb
-    rw [if_neg hb',if_neg hb'']
+    rw [ite_eq_right hb',ite_eq_right hb'']
     dsimp [diagonalVertex,L,b,z]
     ring
 

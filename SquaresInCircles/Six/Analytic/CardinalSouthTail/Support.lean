@@ -3,19 +3,18 @@ import SquaresInCircles.Six.Analytic.CandidateWestTail.Support
 import SquaresInCircles.Six.Analytic.OwnWingProfileSharpening
 
 /-!
-# Exact support bounds for the large-south four-edge argument
+# The large south tail: the supports
 
-W uses its far-vertex support and the global tangent inequality
-sqrt(25-24*z)<=5-(12/5)*z. D has equal incident weights, so its resultant
-has length 6*sin(q/2). S uses the axial support: its radial force is at
-least 10, while its transverse force has absolute value at most 3. The
-far-corner quadratic proves that support without assuming a cap branch.
-
-For s>=12/25 the central x-force 4-10*sin(s) is negative. Keeping that
-sign, rather than maximizing the CW and CS center terms independently, is
-essential. These estimates produce the scalar profile in Scalar.lean.
-Only ordinary real identities and inequalities are used. Compilation remains
-unverified; no external computation is a theorem premise.
+The weights `4`, `10`, `3`, `3` on C–W, C–S, W–D and D–S put the force
+`(4 cos v, 4 sin v - 3)` on W, a force of length `6 sin(q/2)` on D, where
+`q = d + v`, and on S a force with radial component `10 + 3 cos r` and
+transverse component `3 sin r`, where `r = d - s`. The supports of W and D
+are bounded by their far vertices, using `√(25 - 24 sin v) ≤ 5 - (12/5) sin v`,
+and that of S by `rho0` times its radial force, from the far-corner
+quadratic. For `s ≥ 12/25` the first component `4 - 10 sin s` of the force on
+C is negative, so the centre of C contributes at most `10 c0 cos s`. The
+threshold sum less these bounds is the defect, and the profile is a lower
+bound for it.
 -/
 
 noncomputable section
@@ -79,7 +78,9 @@ lemma diagonal_support {a b q : ℝ} (hc : ContainedChart a |b|)
   dsimp [diagonalUpper]
   nlinarith only [h,hw]
 
-/-- The axial support follows from the far-corner quadratic for either sign of b. -/
+/-- The support of S: its force has radial component at least `10` and
+transverse component at most `3`, so the far-corner quadratic bounds the
+support by `rho0` times the radial component. -/
 lemma south_support {a b r : ℝ} (hc : ContainedChart a |b|)
     (hr : 0 ≤ Real.cos r) :
     (10+3*Real.cos r)*a+3*Real.sin r*b ≤ rho0*(10+3*Real.cos r) := by
@@ -147,7 +148,7 @@ private lemma sine_term_lower {negative : Bool} {v : ℝ}
     dsimp [coefficient]
     nlinarith only [hp]
 
-/-- Rational weakening preserves the sign of every multiplied trigonometric term. -/
+/-- The profile is a lower bound for the defect on the large-tail domain. -/
 lemma profile_le_defect (negative : Bool) {v s d : ℝ}
     (hv : vLower negative ≤ v ∧ v ≤ vUpper negative)
     (hs : 12/25 ≤ s ∧ s ≤ 2/3) (hd : 1/2 ≤ d ∧ d ≤ 11/14) :

@@ -2,21 +2,23 @@ import SquaresInCircles.Six.Analytic.OwnWestCardinalSouth.Support
 import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Geometry
 
 /-!
-# No normalized packing has a missing south wing
+# No missing south wing
 
-The last bit family is W OWN and S cardinal. Its D-sourced DS inequality
-supplies r=d-s<pi/4, exactly the source-dependent hypothesis of the smooth
-S support cone. The five actual inequalities then contradict the analytic
-profile. The other bit families were excluded independently.
-Consequently the candidate S-sourced DS inequality is now unconditional on
-NormalizedPacking, without importing Classification or a finite checker.
-Compilation and kernel acceptance remain unverified.
+In a normalized packing D and S are separated along the secondary axis of S,
+as in the model. Suppose instead that the south wing is missing, with W on its
+own axis and S cardinal. The separation of D and S along the secondary axis of
+D gives `d - s < π/4`, which puts the force on S in its cone, and the five
+separating inequalities of the edges C–W, C–S, C–D, W–D and D–S, read in the
+angles `v = -w`, `s` and `d`, contradict the weighted sum. A missing south
+wing has W on its own axis by `CardinalSouthTail` and S cardinal by
+`OwnSouthWestDominant`, so it does not occur.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.OwnWestCardinalSouth
 open Normalization
 
+/-- With W on its own axis and S cardinal, the south wing is not missing. -/
 theorem not_missing_south {R : ℝ} (P : NormalizedPacking R)
     (hW : P.ownBits 2=true) (hS : P.ownBits 4=false) : ¬ MissingSouthWing P := by
   intro hmissing
@@ -61,7 +63,7 @@ theorem not_missing_south {R : ℝ} (P : NormalizedPacking R)
       P.center.1 P.center.2 at h
     rw [hSphase] at h
     simp only [centralMargin,Normalization.centerY,angularWidth,Real.cos_add,Real.sin_add,
-      south_cos,south_sin,zero_mul,one_mul,neg_one_mul,zero_add,add_zero,zero_sub,neg_neg,
+      south_cos,south_sin,zero_mul,neg_one_mul,add_zero,zero_sub,neg_neg,
       abs_neg] at h
     dsimp [angularWidth]
     nlinarith only [h]
@@ -101,13 +103,14 @@ end SquaresInCircles.Six.Analytic.OwnWestCardinalSouth
 namespace SquaresInCircles.Six.Analytic
 open Normalization
 
-/-- The full missing-south exclusion is independent of the fixed-row classification. -/
+/-- No normalized packing has a missing south wing. -/
 theorem not_missing_south {R : ℝ} (P : NormalizedPacking R) : ¬ MissingSouthWing P := by
   intro h
   exact OwnWestCardinalSouth.not_missing_south P
     (CardinalSouthTail.missing_south_requires_own_west h) h.south_cardinal h
 
-/-- Every normalized packing has the actual candidate south separating inequality. -/
+/-- In a normalized packing D and S are separated along the secondary axis of
+S. -/
 theorem candidate_south_separator {R : ℝ} (P : NormalizedPacking R) :
     Seven.SAT.threshold (P.square 3) (P.square 4) ≤
       dot (normalY (P.square 4)) (sub (P.square 4).center (P.square 3).center) := by

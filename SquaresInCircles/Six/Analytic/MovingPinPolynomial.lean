@@ -1,17 +1,18 @@
 import SquaresInCircles.Six.Normalization.Constants
 
 /-!
-# An analytic obstruction to failure of the OWN moving pin
+# The transverse coordinate of a square on its own axis
 
-Write v = |sin t| and c = cos t. OWN separation gives
-  a + 1/2 >= 1 + (1/2+x)c + (77/200)v.
-Failure of the moving pin's transverse condition gives
-  |b| + 1/2 >= 1 - (1+x)v.
-
-Increasing x from zero only increases the sum of these two squares. At x=0,
-c >= 5/6 and c^2+v^2=1 imply c >= 1-(6/11)v^2. The resulting quartic is
-bounded below by its constant, linear and cubic terms. Their value at v=5/12
-already exceeds Q0. This is one whole-interval argument, not a cell cover.
+Let a square in the disk of squared radius `Q0` be separated from C along its
+own axis, at a phase `t` with `c = cos t ≥ 5/6` and `v = |sin t| ≤ 5/12`, and
+let `x ∈ [0, 23/200]` be the first coordinate of the centre of C. The
+separation gives `a + 1/2 ≥ 1 + (1/2 + x) c + (77/200) v` for its radial
+coordinate, and then its transverse coordinate `u` has `u + (1 + x) v < 1/2`.
+Otherwise the far corner would be at squared distance at least `A² + B²` from
+the centre, where `A = 1 + (1/2 + x) c + (77/200) v` and `B = 1 - (1 + x) v`. This
+increases with `x`, and at `x = 0` the bound `c ≥ 1 - (6/11) v²` leaves a
+quartic in `v` that exceeds `Q0` on `[0, 5/12]` by its constant, linear and
+cubic terms.
 -/
 
 noncomputable section
@@ -36,10 +37,10 @@ lemma moving_pin_polynomial {v : ℝ} (hv0 : 0 ≤ v) (hv1 : v ≤ 5/12) :
   rw [hid]
   linarith
 
-/-- A real-algebra lemma: a failed transverse condition is incompatible with
-far-corner containment, throughout the full interval 0 <= v <= 5/12. -/
+/-- The radial bound of a separation along the own axis keeps the transverse
+coordinate below `1/2 - (1 + x) v`. -/
 theorem own_transverse_obstruction {a u x c v : ℝ}
-    (hu : 0 ≤ u) (hx0 : 0 ≤ x) (hx1 : x ≤ 23/200)
+    (hx0 : 0 ≤ x) (hx1 : x ≤ 23/200)
     (hc0 : 5/6 ≤ c) (hc1 : c ≤ 1)
     (hv0 : 0 ≤ v) (hv1 : v ≤ 5/12) (hunit : c^2+v^2=1)
     (hown : 1+(1/2+x)*c+(77/200)*v ≤ a+1/2)

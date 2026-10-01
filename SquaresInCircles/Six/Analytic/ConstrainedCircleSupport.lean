@@ -1,13 +1,14 @@
 import SquaresInCircles.Six.Normalization.CapSupport
 
 /-!
-# Circle support with a lower primary coordinate
+# The support of a square with a lower bound on its radial offset
 
-This is the constrained support needed for the small-diagonal-angle reduction.
-The circular branch and the constrained boundary branch are distinguished by
-R0*s <= l, where l is the proved lower bound on the shifted primary coordinate.
-No coordinate-dominance shortcut or unsupported support-branch substitution is
-used. The transverse root is certified by the same real circle inequality.
+Let a square with chart `(a, b)` lie in the disk of squared radius `Q0`, with
+`a + 1/2 ≥ l > 0`, so that its far corner `(A, B) = (a + 1/2, |b| + 1/2)` lies
+in the part `A ≥ l` of the disk. For a unit force `(s, c)` with `s, c ≥ 0` and
+`R0 s ≤ l`, the maximum of `s A + c B` on that part is at its corner
+`(l, √(Q0 - l²))`, so the work `a s + b c` is at most
+`(l - 1/2) s + (√(Q0 - l²) - 1/2) c`.
 -/
 
 noncomputable section
@@ -24,8 +25,8 @@ lemma constrained_root_bounds {a b l : ℝ}
   have hs := Real.sq_sqrt (show 0≤Q0-l^2 by linarith)
   linarith
 
-/-- On the constrained branch, the maximizing point lies on A=l. The slope
-condition follows from the unit normal and R0*s<=l, rather than being assumed. -/
+/-- If `R0 s ≤ l`, the work of the unit force `(s, c)` is at most its value at
+the corner of the disk on the line `A = l`. -/
 theorem circle_support_above_primary {a b l s c : ℝ}
     (hl : 0<l) (ha : l≤a+1/2)
     (hbox : (a+1/2)^2+(|b|+1/2)^2≤Q0)
@@ -54,15 +55,5 @@ theorem circle_support_above_primary {a b l s c : ℝ}
   have hbproj := mul_le_mul_of_nonneg_right (le_abs_self b) hc
   change a*s+b*c≤(l-1/2)*s+(B-1/2)*c
   nlinarith only [hcorner,hbproj]
-
-/-- The unconstrained circular support is valid on either branch. -/
-theorem circle_support_unconstrained {a b s c : ℝ}
-    (hbox : (a+1/2)^2+(|b|+1/2)^2≤Q0)
-    (hc : 0≤c) (hu : s^2+c^2=1) :
-    a*s+b*c≤R0-(s+c)/2 := by
-  have hround := disk_linear_support
-    (A := a+1/2) (B := |b|+1/2) (c := s) (s := c) hu hbox
-  have hbproj := mul_le_mul_of_nonneg_right (le_abs_self b) hc
-  nlinarith only [hround,hbproj]
 
 end SquaresInCircles.Six.Analytic

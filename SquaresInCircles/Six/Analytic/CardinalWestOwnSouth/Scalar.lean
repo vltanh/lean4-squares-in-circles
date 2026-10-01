@@ -1,13 +1,12 @@
 import SquaresInCircles.Six.Analytic.CardinalWestOwnSouth.Profile
 
 /-!
-# Four high-diagonal geometric corners
+# Cardinal W, own S: positivity of the profile
 
-The reflected rectangle is 0<=v<=2/3, 157/200<=d<=34/35.
-The exact lower Taylor polynomials at all four corners exceed 1/2500 for
-either central y face. Coordinate concavity then proves positivity everywhere.
-These are the endpoints of the full rectangle, not a sampled angular cover.
-Compilation and kernel acceptance remain unverified.
+The profile is positive on the rectangle `0 ≤ v ≤ 2/3`, `157/200 ≤ d ≤ 34/35`.
+At the four corners, Taylor polynomials of `sin` and `cos` bound it below by
+more than `1/2500`, at either end of the range of the central coordinate, and
+concavity in each variable carries positivity to the whole rectangle.
 -/
 
 noncomputable section

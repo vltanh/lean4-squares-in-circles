@@ -2,13 +2,13 @@ import SquaresInCircles.Six.Analytic.DiagonalHalfBound
 import SquaresInCircles.Six.Analytic.LowDiagonalEndpoints
 
 /-!
-# A small transverse coordinate for high D
+# High D: a small transverse coordinate
 
-Once d>1/2 is proved, the actual OWN separator and containment give
-  aD>=128/125, |bD|<23/100.
-A secondary projection with phase gap at most 1/2 then cannot separate D
-from an exterior square. This uses actual chart bounds and a direct rational
-sine/cosine reserve, not an angle-grid certificate.
+For `1/2 ≤ d ≤ π/4`, the separation of D from the central square along its own
+axis and the containment of D give `a ≥ 128/125` and `|b| < 23/100`. Then the
+secondary axis of D separates D from S only if their phases differ by more than
+`1/2`: for a smaller difference the projection stays below the threshold, by
+rational bounds on `sin` and `cos`.
 -/
 
 noncomputable section
@@ -74,7 +74,8 @@ lemma short_secondary_projection {a b x q : ℝ}
   rw [angularWidth,abs_of_nonneg hcos0,abs_of_nonneg hsin0]
   nlinarith only [hA,hB,hx,hs,hcos]
 
-/-- D-secondary on D/S needs a phase gap strictly greater than 1/2. -/
+/-- If D and S are separated along the secondary axis of D, their phases differ
+by more than `1/2`. -/
 theorem DS_Dsecondary_gap_gt_half {R : ℝ} (P : NormalizedPacking R)
     (hsep : Seven.SAT.threshold (P.square 3) (P.square 4)≤
       dot (normalY (P.square 3)) (sub (P.square 4).center (P.square 3).center)) :
@@ -90,22 +91,5 @@ theorem DS_Dsecondary_gap_gt_half {R : ℝ} (P : NormalizedPacking R)
     frameY (P.square 3) (sub (P.square 4).center (P.square 3).center) at hsep
   rw [P.square_def 3,P.square_def 4,oriented_pair_threshold,pair_frameY_left] at hsep
   linarith
-
-/-- The symmetric destination-frame projection gives the same gap bound on W/D. -/
-theorem WD_Dsecondary_gap_gt_half {R : ℝ} (P : NormalizedPacking R)
-    (hsep : Seven.SAT.threshold (P.square 2) (P.square 3)≤
-      dot (normalY (P.square 3)) (sub (P.square 3).center (P.square 2).center)) :
-    1/2<P.phase 3-P.phase 2 := by
-  by_contra! hq
-  have hnonneg := P.primary_order.2.2.1.le
-  have hb := (P.contained 2).u_le_U0 (P.avoidsCore 2)
-  have hx := (NormalizedPacking.high_diagonal_profile P).2
-  have hbound := short_secondary_projection (P.contained 2).a_le_rho0
-    ((neg_le_abs _).trans hb) ((le_abs_self _).trans hx.le)
-    ⟨sub_nonneg.mpr hnonneg,hq⟩
-  change Seven.SAT.threshold (P.square 2) (P.square 3)≤
-    frameY (P.square 3) (sub (P.square 3).center (P.square 2).center) at hsep
-  rw [P.square_def 2,P.square_def 3,oriented_pair_threshold,pair_frameY_right] at hsep
-  nlinarith only [hbound,hsep]
 
 end SquaresInCircles.Six.Analytic

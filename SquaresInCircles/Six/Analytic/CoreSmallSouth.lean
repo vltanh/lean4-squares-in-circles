@@ -2,12 +2,18 @@ import SquaresInCircles.Six.Analytic.CoreSmallNorth
 import SquaresInCircles.Six.Normalization.OwnEastExclusion
 
 /-!
-# The remaining quadrants when 0 <= cy <= c0 < cx
+# South and east markers when the centre of C is right of the box
 
-The south marker budget is 2/3. The east quadrant has no admissible separator:
-its north/south cardinal alternatives would make the short chart axis face a
-deep cap; OWN, CE and both secondary alternatives are excluded analytically.
-These arguments do not assume pin assignment or the sought strong box.
+Let the centre `(x, y)` of C satisfy `c0 < x < 1/2` and `0 ≤ y ≤ c0`. A
+contained square with phase `-π/2 + t`, `|t| ≤ π/4`, that is separated from C
+along a central axis has its marker below `-π/2 + 2/3`: the own axis and the
+south side of C bound its radial coordinate, one secondary axis and the west
+side of C bound the marker directly, and the other axes do not separate. A
+contained square with phase `t`, `|t| ≤ π/4`, is not separated from C along
+any central axis: the own axis, the east side of C and the secondary axes have
+negative margins, the west side of C leaves no room in the east quadrant, and
+beyond the north or south side of C the square would have to face a cap of
+the disk too shallow for it.
 -/
 
 noncomputable section
@@ -82,6 +88,8 @@ lemma south_small_cap {a b t y : ℝ} (h : ContainedChart a |b|)
       dsimp [liftedMarker]
       linarith
 
+/-- A square of the south quadrant that is separated from C along a central
+axis has its marker below `-π/2 + 2/3`. -/
 theorem south_small_marker {a b t x y : ℝ} (h : ContainedChart a |b|)
     (ht : |t| ≤ Real.pi/4) (hx : c0 < x) (hx1 : x < 1/2)
     (hy0 : 0 ≤ y) (hy : y ≤ c0)
@@ -103,7 +111,7 @@ theorem south_small_marker {a b t x y : ℝ} (h : ContainedChart a |b|)
     dsimp [centerX]
     linarith
 
-/-- A1's east quadrant is empty: every SAT alternative is excluded. -/
+/-- No square of the east quadrant is separated from C along a central axis. -/
 theorem east_small_impossible {a b t x y : ℝ} (h : ContainedChart a |b|)
     (ht : |t| ≤ Real.pi/4) (hx : c0 < x) (hx1 : x < 1/2)
     (hy0 : 0 ≤ y) (hy : y ≤ c0)

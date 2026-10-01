@@ -3,13 +3,17 @@ import SquaresInCircles.Six.Analytic.CapChart
 import SquaresInCircles.Six.Normalization.CapPiercing
 
 /-!
-# Cardinal caps contain their fixed pins
+# Caps contain fixed pins
 
-A four-quadrant argument first finds the genuine cap-facing primary direction;
-short-axis and backwards-facing directions are excluded geometrically. East
-then uses contraction of the cap piercing point. West uses the sixty-degree
-lemma and the same one-quadratic flank argument as OWN. No pin/window fact is
-assumed in obtaining a cap-facing frame.
+A square in a deep cap, the half-plane `x ≥ h` with `h ≥ coreRadius`, has a lift
+of its primary phase within `2/5` of the cap normal: of the four quadrants of
+the phase, the two transverse ones and the opposite one are impossible. If the
+cap is at least `1/2` deep, the square contains the east pin and its phase is
+within `1/4` of the normal: it contains the point `(h + 1/2, 0)` of the axis,
+and with it the pin at distance `9/10`. A square in a deep cap facing east also
+contains the pin at angle `-π/12` or the one at `π/4`, which turned by `π` are
+the W and D pins: by the sixty-degree lemma, and on the left flank by the
+profile of a square separated along its own axis.
 -/
 
 noncomputable section
@@ -41,7 +45,8 @@ lemma opposite_cap_impossible {v a b h:ℝ} (hc:ContainedChart a |b|)
   dsimp [angularWidth] at hwidth
   nlinarith
 
-/-- A deep cap determines a primary phase within 2/5 of its cardinal normal. -/
+/-- A square in a deep cap has a lift of its primary phase within `2/5` of the
+cap normal. -/
 theorem positive_cap_direction {t a b h:ℝ} (hc:ContainedChart a |b|)
     (hh:coreRadius≤h) (hm:h+angularWidth t≤centerX t a b) :
     ∃ v : ℝ, |v|<2/5 ∧ (t:Direction)=(v:Direction) ∧ h+angularWidth v≤centerX v a b := by
@@ -79,8 +84,8 @@ theorem positive_cap_direction {t a b h:ℝ} (hc:ContainedChart a |b|)
       nlinarith
     exact False.elim (negative_transverse_cap_impossible hcb hv hh htrans)
 
-/-- A cap of depth at least 1/2 contains the east fixed pin, with its stronger
-quarter-angle bound obtained before assigning a label. -/
+/-- A square in a cap at least `1/2` deep contains the east pin, and its phase
+is within `1/4` of the cap normal. -/
 theorem east_cap_fixed_pin {t a b h:ℝ} (hc:ContainedChart a |b|)
     (hb:|b|<1/2) (hh:1/2≤h) (hm:h+angularWidth t≤centerX t a b) :
     ∃ v : ℝ, |v|<1/4 ∧ (t:Direction)=(v:Direction) ∧
@@ -97,21 +102,14 @@ theorem east_cap_fixed_pin {t a b h:ℝ} (hc:ContainedChart a |b|)
     (show 9/10≤h+1/2 by linarith) hp
   exact ⟨v,hquarter,he,(square_phase_open he _).mpr hfixed⟩
 
-lemma west_cap_identity (v a b cx cy:ℝ) :
-    centralMargin .west (Real.pi+v) a b cx cy =
-      centerX v a b-angularWidth v-(1/2-cx) := by
-  rw [add_comm Real.pi v]
-  simp only [centralMargin,centerX,angularWidth,Real.cos_add_pi,Real.sin_add_pi,abs_neg]
-  ring
-
 lemma west_cap_rotated_identity (t a b cx cy:ℝ) :
     centralMargin .west t a b cx cy =
       centerX (t-Real.pi) a b-angularWidth (t-Real.pi)-(1/2-cx) := by
   simp only [centralMargin,centerX,angularWidth,Real.cos_sub_pi,Real.sin_sub_pi,abs_neg]
   ring
 
-/-- The left flank of a positive cap uses exactly the already proved profile
-obstruction; the b<0 premise follows from a hypothetical transverse failure. -/
+/-- On the left flank, `v ≤ -π/12`, a square in a deep cap contains the pin at
+angle `-π/12`. -/
 lemma west_cap_left_pin {v a b h:ℝ} (hc:ContainedChart a |b|) (hb:|b|<1/2)
     (hh:coreRadius≤h) (hv:|v|<2/5) (hleft:v≤-Real.pi/12)
     (hm:h+angularWidth v≤centerX v a b) :
@@ -141,7 +139,8 @@ lemma west_cap_left_pin {v a b h:ℝ} (hc:ContainedChart a |b|) (hb:|b|<1/2)
     (show 0≤1-Real.cos (-v) by linarith [Real.cos_le_one (-v)])
   nlinarith
 
-/-- The two western pins cover the cap after rotating its normal to east. -/
+/-- A square in a deep cap contains the pin at angle `-π/12` or the one at
+`π/4`; turned by `π`, these are the W and D pins. -/
 theorem west_cap_fixed_pins {v a b h:ℝ} (hc:ContainedChart a |b|) (hb:|b|<1/2)
     (hh:coreRadius≤h) (hv:|v|<2/5) (hm:h+angularWidth v≤centerX v a b) :
     openSquare (orientedSquare v a b) (polarPin (9/10) (-Real.pi/12)) ∨

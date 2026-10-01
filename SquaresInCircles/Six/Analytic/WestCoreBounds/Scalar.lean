@@ -1,16 +1,14 @@
 import SquaresInCircles.Six.Analytic.WestCoreBounds.Profile
 
 /-!
-# Two exact three-edge scalar obstructions
+# Bounds for W and D: positivity
 
-The first uses weights 17/3,14/3,1 and excludes v>=31/50 on the whole
-rectangle 31/50<=v<=2/3, 3/5<=d<=11/14. Both resultants are axial.
-The second uses weights 207/100,56/25,1 and excludes d<=16/25 after the
-new v<31/50 and q>53/50 restrictions. Its domain is the quadrilateral
-  3/5<=d<=16/25, 53/50-d<=v<=31/50.
-Its D support is a universal vertex bound. Each proof evaluates exactly the
-four geometric vertices, for either central y face, using Taylor inequalities.
-Compilation and kernel acceptance remain unverified.
+Two profiles, with the weights `17/3`, `14/3`, `1` and `207/100`, `56/25`, `1`.
+For both faces of the box, the first is positive on the rectangle
+`31/50 ≤ v ≤ 2/3`, `3/5 ≤ d ≤ 11/14`, and the second on the quadrilateral
+`3/5 ≤ d ≤ 16/25`, `53/50 - d ≤ v ≤ 31/50`. The harmonic reductions of the
+profile leave the four vertices of each domain, where Taylor polynomials of
+`sin` and `cos` give the sign.
 -/
 
 noncomputable section
@@ -101,9 +99,11 @@ theorem low_positive (upper : Bool) {v d : ℝ}
   have hbalance : beta false*(1/2+face upper)/2 ≤ delta false*(1/2-face upper) := by
     cases upper <;> norm_num [beta,delta,face]
   have hleft : 0 < value false upper (53/50-3/5) (3/5) := by
-    convert (low_vertices upper).1 using 1 <;> norm_num
+    convert (low_vertices upper).1 using 1
+    norm_num
   have hright : 0 < value false upper (53/50-16/25) (16/25) := by
-    convert (low_vertices upper).2.1 using 1 <;> norm_num
+    convert (low_vertices upper).2.1 using 1
+    norm_num
   have hwall := extend_gap_wall hc hbalance (K := constantTerm false)
     (by norm_num) (by linarith [Real.pi_gt_d2]) hd hleft hright
   have htop := extend_diagonal hc

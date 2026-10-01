@@ -3,17 +3,16 @@ import SquaresInCircles.Six.Analytic.SecondaryReduction
 import SquaresInCircles.Six.Stress.Reverse
 
 /-!
-# Actual-packing exclusion of the cardinal/cardinal mixed west-wing case
+# A missing west wing with side separators
 
-One fixed stress has weights (2,4,3,3) on C--W,C--S,W--D,D--S. Its pair
-normals are D-secondary and S-secondary. Every exterior support is the
-universally valid far-vertex support, weakened only by an explicit signed
-projection bound on the width. No cap condition is guessed.
-
-The scalar minorant is positive by the preceding whole-domain concavity proof.
-This closes the cardinal/cardinal subcase of MissingWestWing. It does not
-assert the remaining OWN subcases or the other mixed-source exclusion.
-Compilation and kernel acceptance remain deferred.
+When W and S are separated from C along the west and south sides of C, there is
+no missing west wing. The stress with weights `2`, `4`, `3`, `3` on the
+separators of C and W, of C and S, of W and D along the secondary axis of D, and
+of D and S along the secondary axis of S separates C, W, D and S. The force on C
+is `(2, 4)`, and the work of the force `F` on each exterior square is at most
+its far-vertex support `R0 |F| - width`, with the width bounded below by half
+the sum or the difference of the two frame components of the force. The
+threshold sum minus these bounds is the gap, which is positive.
 -/
 
 noncomputable section
@@ -56,7 +55,7 @@ lemma system_nonnegative (w s d : ℝ) : (system w s d).Nonnegative := by
 lemma system_forces (w s d : ℝ) (i : Fin 4) :
     (system w s d).force i = ![(2,4),forceW d,forceD s d,forceS s] i := by
   fin_cases i <;> apply Prod.ext <;>
-    simp [Stress.System.force,system,forceW,forceD,forceS,Fin.sum_univ_succ] <;> ring
+    simp [Stress.System.force,system,forceW,forceD,forceS,Fin.sum_univ_succ]
 
 private lemma forceW_norm (d : ℝ) : normSq (forceW d)=13+12*Real.sin d := by
   dsimp [normSq,forceW]
@@ -138,8 +137,7 @@ private lemma sin_abs_difference (x : ℝ) : |x|-x=2*max (-x) 0 := by
   · rw [abs_of_neg (lt_of_not_ge hx),max_eq_left (by linarith)]
     ring
 
-/-- The defect of the actual incidence system is exactly the proved scalar
-minorant after its signed universal support bounds, not a new support branch. -/
+/-- The threshold sum of the stress minus the support bounds is the gap. -/
 lemma system_gap {w s d : ℝ}
     (hw : -(2/5) ≤ w ∧ w ≤ 0) (hs : -(2/5) ≤ s ∧ s ≤ 2/5)
     (hd : 1/2 ≤ d ∧ d ≤ Real.pi/4) :
@@ -180,8 +178,8 @@ lemma system_gap {w s d : ℝ}
   dsimp [gap,southTerm,diagonalTerm,westTerm,upperW,upperD,upperS]
   nlinarith only [hpos]
 
-/-- The cardinal/cardinal part of the genuine MissingWestWing predicate is
-impossible on the full normalized domain, including source ties. -/
+/-- There is no missing west wing when W and S are separated from C along the
+matching sides of C. -/
 theorem not_missing_west {R : ℝ} (P : NormalizedPacking R)
     (hW : P.ownBits 2=false) (hS : P.ownBits 4=false) : ¬ MissingWestWing P := by
   intro hmissing
@@ -250,14 +248,5 @@ theorem not_missing_west {R : ℝ} (P : NormalizedPacking R)
     (system_nonnegative w s d) hsep hu
   rw [system_gap hw hs hd] at hnonpos
   linarith [positive hw hs hd]
-
-/-- The candidate west wing is therefore forced when both central wing choices
-are cardinal. The other central-bit combinations remain separate obligations. -/
-theorem west_wing {R : ℝ} (P : NormalizedPacking R)
-    (hW : P.ownBits 2=false) (hS : P.ownBits 4=false) :
-    Seven.SAT.threshold (P.square 2) (P.square 3) ≤
-      dot (normalY (P.square 2)) (sub (P.square 3).center (P.square 2).center) := by
-  by_contra h
-  exact not_missing_west P hW hS (missing_west_of_failure P h)
 
 end SquaresInCircles.Six.Analytic.MixedCardinalWest

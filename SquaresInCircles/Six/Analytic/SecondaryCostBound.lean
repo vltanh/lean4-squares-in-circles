@@ -2,16 +2,18 @@ import SquaresInCircles.Six.Analytic.SecondaryCostTangent
 import SquaresInCircles.Six.Analytic.LowDiagonalEndpoints
 
 /-!
-# An affine lower bound on the equal-weight secondary support cost
+# The cost of a square under two equal weights
 
-For q in [1/2,1], the universal vertex expression is concave and its two
-original endpoint inequalities are explicit rational Taylor/root bounds.
-For q>=1 in the first quadrant, sin(q)>=5/6 proves the genuine cap slope
-condition; SecondaryCostTangent supplies its whole-interval lower bound.
-Reflection across pi/2 handles q up to pi-1/2 without changing the square.
-
-No support branch is guessed from coordinate dominance. The exported theorem
-bounds the actual linear work of a contained center, not a numerical proxy.
+A square with equal weights on its own axis and on the secondary axis of a
+square at phase gap `q` has the force `(1 + sin q, cos q)` in its frame. For a
+contained square with local centre `(a, b)` and `1/2 ≤ q ≤ π - 1/2`, the cost
+`(|cos q| + |sin q|)/2 - (1 + sin q) a - (cos q) b` exceeds
+`-91/125 - (13/20) q`. For `q ≤ 1` the far-vertex support applies: with
+`√(2 + 2 sin q) = 2 cos (π/4 - q/2)` the bound is concave in `q`, and it holds
+at `q = 1/2` and `q = 1`. For `1 ≤ q ≤ π/2` we have `sin q ≥ 5/6`, which puts
+the force in the cap case, treated in `SecondaryCostTangent`. Beyond `π/2`
+the reflection `q ↦ π - q`, `b ↦ -b` gives the bound at `π - q`, which is
+stronger.
 -/
 
 noncomputable section
@@ -150,8 +152,8 @@ lemma secondary_cost_first_quadrant {a b q : ℝ} (hc : ContainedChart a |b|)
     dsimp [secondaryCapLine] at hpositive
     nlinarith only [hp,hpositive]
 
-/-- The same affine bound on the whole relevant semicircle. Beyond pi/2 the
-reflected angle only strengthens the requested decreasing affine lower line. -/
+/-- The affine bound on `[1/2, π - 1/2]`; beyond `π/2` it follows from the
+bound at `π - q`. -/
 theorem secondary_cost_affine_lower {a b q : ℝ} (hc : ContainedChart a |b|)
     (hq : 1/2≤q ∧ q≤Real.pi-1/2) :
     -91/125-(13/20)*q<angularWidth q-((1+Real.sin q)*a+Real.cos q*b) := by

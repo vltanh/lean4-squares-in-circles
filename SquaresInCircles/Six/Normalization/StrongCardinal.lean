@@ -1,23 +1,22 @@
 import SquaresInCircles.Six.Normalization.Complete
 
 /-!
-# N25+: the cardinal E/N bound required by the repaired downstream proof
+# E and N along the sides of C
 
-The supplied closure revision uses |e|, |n| < 203/1000 for CARDINAL E/N.
-This is not a new assumption on PinPacking. We derive it from the existing
-cap support inequality and nonnegative central coordinates.
-
-The scalar step uses sin(203/1000) >= x-x^3/6 and the unit-circle identity
-instead of importing the supplied S7b certificate. Together with rho0 < 1113/1000,
-these give a rational cap reserve 754573/12000000000 > 0. It is deliberately
-weaker than the upload's reported S7b margin, but proves the same angle bound.
-Compilation remains deferred; these are ordinary Lean proof bodies.
+If E is separated from C along the east side of C, its angle from the east
+direction is less than `203/1000` in absolute value, and likewise for N and the
+north side. The cap depth `capDepth t` at the angle `t` of the square is at
+least the depth of the side, `1/2 + cx ≥ 1/2` for E. For `203/1000 ≤ t < 1/4`
+the cap depth is `(ρ0 - 1/2) cos t - sin t/2`; the Taylor bound
+`sin x ≥ x - x³/6` at `x = 203/1000`, the resulting `cos t ≤ 49/50` and
+`ρ0 < 1113/1000` make it less than `1/2`.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Normalization
 
-/-- A cap of depth at least 1/2 cannot have an angle of 203/1000 or more. -/
+/-- A cap depth of at least `1/2` at an angle `t ≤ π/4` forces
+`t < 203/1000`. -/
 theorem cap_angle_lt_203_1000 {height t : ℝ}
     (hh : 1 / 2 ≤ height) (hcap : height ≤ capDepth t)
     (htpi : t ≤ Real.pi / 4) : t < 203 / 1000 := by
@@ -41,10 +40,11 @@ theorem cap_angle_lt_203_1000 {height t : ℝ}
     nlinarith [Real.sin_sq_add_cos_sq t]
   have hm := mul_le_mul_of_nonneg_left hc
     (show 0 ≤ rho0 - 1 / 2 by linarith [rho0_lower])
-  rw [capDepth, if_pos hlow, capFirst] at hcap
+  rw [capDepth, ite_eq_left hlow, capFirst] at hcap
   nlinarith [rho0_upper]
 
-/-- N25+ for E, with its actual east-cardinal separator hypothesis. -/
+/-- If E is separated from C along the east side of C, its angle is less than
+`203/1000` in absolute value. -/
 theorem PinPacking.east_cardinal_angle_203 {R : ℝ} (P : PinPacking R)
     (hE : 0 ≤ centralMargin .east (P.phase 0) (P.radial 0) (P.transverse 0)
       P.center.1 P.center.2) : |P.phase 0| < 203 / 1000 := by
@@ -57,7 +57,8 @@ theorem PinPacking.east_cardinal_angle_203 {R : ℝ} (P : PinPacking R)
     (show (1 : ℝ) / 2 ≤ 1 / 2 + P.center.1 by linarith [P.box.1.1]) hcap
   linarith [Real.pi_gt_d2]
 
-/-- N25+ for N. No bound of this strength is asserted for OWN helpers. -/
+/-- If N is separated from C along the north side of C, its angle from the north
+direction is less than `203/1000` in absolute value. -/
 theorem PinPacking.north_cardinal_angle_203 {R : ℝ} (P : PinPacking R)
     (hN : 0 ≤ centralMargin .north (P.phase 1) (P.radial 1) (P.transverse 1)
       P.center.1 P.center.2) : |P.phase 1 - Real.pi / 2| < 203 / 1000 := by
@@ -70,14 +71,16 @@ theorem PinPacking.north_cardinal_angle_203 {R : ℝ} (P : PinPacking R)
     (show (1 : ℝ) / 2 ≤ 1 / 2 + P.center.2 by linarith [P.box.2.1]) hcap
   linarith [Real.pi_gt_d2]
 
-/-- The canonical cardinal bit supplies exactly the hypothesis required by N25+. -/
+/-- The bound for E in a normalized packing where E is separated from C along
+the east side of C. -/
 theorem NormalizedPacking.east_cardinal_angle_203 {R : ℝ} (P : NormalizedPacking R)
     (hE : P.ownBits 0 = false) : |P.helperAngle 0| < 203 / 1000 := by
   have h0 : matchingCardinal 0 = .east := rfl
   simpa only [NormalizedPacking.helperAngle, h0, cardinalCenter, sub_zero]
     using P.toPinPacking.east_cardinal_angle_203 (P.cardinal_separator 0 hE)
 
-/-- The N25+ endpoint consumed by the R22-d and Pattern-28/29 reserves. -/
+/-- The bound for N in a normalized packing where N is separated from C along
+the north side of C. -/
 theorem NormalizedPacking.north_cardinal_angle_203 {R : ℝ} (P : NormalizedPacking R)
     (hN : P.ownBits 1 = false) : |P.helperAngle 1| < 203 / 1000 := by
   have h1 : matchingCardinal 1 = .north := rfl

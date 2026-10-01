@@ -2,18 +2,25 @@ import SquaresInCircles.Six.Candidate
 import SquaresInCircles.Common.Constructions
 
 /-!
-# Attainment by the six-square candidate
+# Six squares: construction
 
-This proves only that the displayed candidate is a packing. Optimality is a
-separate obligation: no lower bound for an arbitrary packing is assumed here.
-The diagonal square is handled as a genuinely rotated square, not by replacing
-it with an axis-parallel square or a bounding box.
+A central square with a neighbour on each side, and a sixth square turned by
+`π/4` in the corner between the left and lower neighbours, pack the disk of the
+optimal radius `radius`. The five axis-parallel squares are pairwise separated
+along a coordinate axis and have their farthest corners in the disk. The open
+turned square is the diamond `|x + dStar| + |y + dStar| < hStar`, with its two
+farthest vertices on the circle; it lies left of `x = tStar - 1/2` and below
+`y = tStar - 1/2`, which bound the four neighbours, and below the line
+`x + y = 2 * sStar - 1`, which bounds the central square. The radius and the
+model are defined with the statement, in `Geometry.lean`.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six
 
-/-- Converse to the farthest-vertex bound for the actual square predicate. -/
+/-- If `phi` of the local coordinates of `o` is at most `R ^ 2`, the closed
+square lies in the closed disk of radius `R` about `o`: the converse of the
+farthest-vertex bound. -/
 lemma inDisk_of_phi_le {S : UnitSquare} {o : Point} {R : ℝ}
     (hphi : phi (alpha S o) (beta S o) ≤ R ^ 2)
     {p : Point} (hp : closedSquare S p) : inDisk o R p := by
@@ -38,7 +45,8 @@ lemma inDisk_of_phi_le {S : UnitSquare} {o : Point} {R : ℝ}
   dsimp [phi] at hphi
   nlinarith [sq_abs (localX S p - localX S o), sq_abs (localY S p - localY S o)]
 
-/-- The five parallel squares, in C,N,E,W,S order. -/
+/-- The centres of the five axis-parallel squares of the model, in the order
+C, N, E, W, S. -/
 def axisCenters : Fin 5 → Point :=
   ![(sStar, sStar), (sStar, sStar + 1), (sStar + 1, sStar),
     (sStar - 1, tStar), (tStar, sStar - 1)]
@@ -101,7 +109,8 @@ lemma diagonal_contained (p : Point) (hp : closedSquare diagonalSquare p) :
     linear_combination 4 * dStar ^ 2 * hStar_sq
   exact he.le
 
-/-- Strict coordinate upper bounds for points in the rotated square's interior. -/
+/-- The interior of the turned square lies left of `x = tStar - 1/2` and below
+`y = tStar - 1/2`. -/
 lemma diagonal_open_upper {p : Point} (hp : openSquare diagonalSquare p) :
     p.1 < tStar - 1 / 2 ∧ p.2 < tStar - 1 / 2 := by
   have hx : p.1 + dStar = hStar *
@@ -172,8 +181,7 @@ lemma parallel_diagonal_disjoint (i : Fin 5) :
 
 @[simp] lemma model_last : model (Fin.last 5) = diagonalSquare := rfl
 
-/-- Attainment at the candidate radius, using the original unrestricted
-`Packing` predicate with pairwise disjoint open interiors. -/
+/-- The model packs the closed disk of radius `radius`. -/
 theorem model_packing : Packing model (0, 0) radius := by
   refine ⟨radius_pos.le, ?_, ?_⟩
   · intro i
@@ -201,9 +209,5 @@ theorem model_packing : Packing model (0, 0) radius := by
           exact congrArg Fin.castSucc he
         apply parallel_packing.disjoint i' j' hij p
         simpa only [model_castSucc] using hp
-
-/-- A concrete witness for the upper-bound half of the six-square theorem. -/
-theorem attainment : ∃ S : Fin 6 → UnitSquare, Packing S (0, 0) radius :=
-  ⟨model, model_packing⟩
 
 end SquaresInCircles.Six

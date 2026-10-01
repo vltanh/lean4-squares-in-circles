@@ -2,16 +2,14 @@ import SquaresInCircles.Six.Analytic.PairProjectionBounds
 import SquaresInCircles.Six.Analytic.PinProjections
 
 /-!
-# Analytic W/D order
+# W comes before D
 
-Assume the primary directions were reversed and write e=t-T. The broad windows
-imply 0 <= e <= 41/40. The elementary cosine lower bound rules out both primary
-axes. The sixty-degree pin identity forces both transverse separators to point
-from W to D, but their forward projections are strictly below the threshold.
-Thus none of the four actual separating axes can separate the squares.
-
-The stated chart bounds, pins and broad windows are ordinary hypotheses. Their
-construction for every packing is not assumed to be analytic by this lemma.
+Two disjoint squares in the windows of W and D, each holding its pin and with
+the given bounds on their coordinates, have the phase of W below that of D. If
+not, the difference `e` of the phases lies in `[0, 41/40]`, and no edge axis of
+either square separates them: the primary axes by a lower bound on `cos e`, and
+the secondary axes because the pins make them point from W to D, where the
+projections fall short of the threshold.
 -/
 
 noncomputable section

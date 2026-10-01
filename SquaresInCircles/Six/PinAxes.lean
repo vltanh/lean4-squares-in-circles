@@ -2,11 +2,17 @@ import SquaresInCircles.Six.PinChords
 import SquaresInCircles.Six.PreferredAxes
 
 /-!
-# Pin-oriented downstream source inventories
+# Pair axes oriented by the pins
 
-N/W is oriented W-to-N, E/S is S-to-E, and the diagonal edges are W-to-D
-and D-to-S. Their signs agree with the audited direct-stress data. Primary
-D/W and S/D sign switches are derived, not silently discarded.
+A directed axis that separates two squares has positive projection on the
+chord from the pin of the first square to the pin of the second. In their
+windows, all four axes of W and N, directed from W to N by `NWsigns`, and all
+four axes of S and E, directed from S to E by `ESsigns`, have positive
+projection on the chord of the pins, so each pair is separated along one of
+its four directed axes. For W and D the chord rules out the negated secondary
+axes, and for D and S it also rules out the primary axis of D. The file also
+gives the five exterior squares of a normalized packing, the angles of their
+phases from the cardinal directions, and their windows.
 -/
 
 noncomputable section
@@ -80,19 +86,6 @@ lemma ES_chord_positive {s e : ℝ}
   · exact hE.2
   · exact hE.1
 
-private lemma positive_sin_forces_positive {t : ℝ} (ht : -Real.pi≤t)
-    (hs : 0<Real.sin t) : 0<t := by
-  by_contra! h
-  have hh := Real.sin_nonneg_of_nonneg_of_le_pi (show 0≤-t by linarith)
-    (show -t≤Real.pi by linarith)
-  rw [Real.sin_neg] at hh
-  linarith
-
-private lemma negative_sin_forces_negative {t : ℝ} (ht : t≤Real.pi)
-    (hs : Real.sin t<0) : t<0 := by
-  by_contra! h
-  linarith [Real.sin_nonneg_of_nonneg_of_le_pi h ht]
-
 namespace Normalization.NormalizedPacking
 variable {R : ℝ} (P : NormalizedPacking R)
 
@@ -122,7 +115,8 @@ lemma pair_disjoint (i j : Fin 5) (hij : i≠j) :
     ∀ p, ¬ (openSquare (P.square i) p ∧ openSquare (P.square j) p) :=
   P.toPinPacking.exterior_disjoint i j hij
 
-/-- Exactly the four N/W source normals in the manuscript, all oriented W-to-N. -/
+/-- W and N are separated along one of their four axes, directed from W to N by
+`NWsigns`. -/
 theorem NW_source : ∃ i : Fin 4,
     Seven.SAT.threshold (P.square 2) (P.square 1) ≤
       dot (preferredPairAxis NWsigns (P.square 2) (P.square 1) i)
@@ -135,7 +129,8 @@ theorem NW_source : ∃ i : Fin 4,
   rw [h2,h1]
   exact NW_chord_positive P.helper_windows.2.2.1 P.helper_windows.2.1 _ _ _ _ i
 
-/-- Exactly the four E/S source normals in the manuscript, all oriented S-to-E. -/
+/-- S and E are separated along one of their four axes, directed from S to E by
+`ESsigns`. -/
 theorem ES_source : ∃ i : Fin 4,
     Seven.SAT.threshold (P.square 4) (P.square 0) ≤
       dot (preferredPairAxis ESsigns (P.square 4) (P.square 0) i)
@@ -172,7 +167,8 @@ lemma DW_chord_positive_secondary :
       WD_secondary_projection]
     exact mul_pos (by norm_num) hcd
 
-/-- Negative secondary D/W orientations are impossible. -/
+/-- W and D are separated along one of their eight directed axes other than the
+negated secondary axes. -/
 theorem DW_source : ∃ i : Fin 8,
     Seven.SAT.threshold (P.square 2) (P.square 3) ≤
       dot (Stress.pairNormal i (P.square 2) (P.square 3))
@@ -211,7 +207,8 @@ lemma DS_chord_signs :
   exact ⟨mul_neg_of_neg_of_pos (by norm_num) hds.2,
     mul_pos (by norm_num) hds.1,mul_pos (by norm_num) hsc⟩
 
-/-- D/S retains both primary S signs, but only -e_D, +f_D and +f_S. -/
+/-- D and S are separated along one of their eight directed axes other than the
+primary axis of D and the negated secondary axes. -/
 theorem DS_source : ∃ i : Fin 8,
     Seven.SAT.threshold (P.square 3) (P.square 4) ≤
       dot (Stress.pairNormal i (P.square 3) (P.square 4))
@@ -230,74 +227,6 @@ theorem DS_source : ∃ i : Fin 8,
     change 0<dot (scale (-1) (normalY (P.square 4))) _ at hp
     rw [dot_scale_neg] at hp
     linarith [P.DS_chord_signs.2.2]
-
-/-- The S-primary sign switch is the exact pin wall s=-pi/12. -/
-lemma DS_primary_sign {i : Fin 8}
-    (hi : Seven.SAT.threshold (P.square 3) (P.square 4) ≤
-      dot (Stress.pairNormal i (P.square 3) (P.square 4))
-        (sub (P.square 4).center (P.square 3).center)) :
-    (i=4 → -Real.pi/12<P.helperAngle 4) ∧
-    (i=5 → P.helperAngle 4< -Real.pi/12) := by
-  have hp := selected_axis_points_to_pin _ _ (P.pin 3) (P.pin 4) i hi
-  have hs := P.helper_windows.2.2.2
-  have hS : P.phase 4=3*Real.pi/2+P.helperAngle 4 := P.phase_from_deviation 4
-  constructor
-  · intro h; subst i
-    change 0<dot (primary (P.phase 4)) _ at hp
-    rw [hS,DS_primary_S_projection] at hp
-    have hh := positive_sin_forces_positive
-      (show -Real.pi≤P.helperAngle 4+Real.pi/12 by linarith [hs.1,Real.pi_gt_d2])
-      (show 0<Real.sin (P.helperAngle 4+Real.pi/12) by nlinarith)
-    linarith
-  · intro h; subst i
-    change 0<dot (scale (-1) (primary (P.phase 4))) _ at hp
-    rw [dot_scale_neg,hS,DS_primary_S_projection] at hp
-    have hh := negative_sin_forces_negative
-      (show P.helperAngle 4+Real.pi/12≤Real.pi by linarith [hs.2,Real.pi_gt_d2])
-      (show Real.sin (P.helperAngle 4+Real.pi/12)<0 by nlinarith)
-    linarith
-
-/-- D-primary D/W switches at d=pi/12; W-primary switches at w=pi/12. -/
-lemma DW_primary_sign {i : Fin 8}
-    (hi : Seven.SAT.threshold (P.square 2) (P.square 3) ≤
-      dot (Stress.pairNormal i (P.square 2) (P.square 3))
-        (sub (P.square 3).center (P.square 2).center)) :
-    (i=0 → Real.pi/12<P.helperAngle 2) ∧ (i=1 → P.helperAngle 2<Real.pi/12) ∧
-    (i=4 → Real.pi/12<P.diagonalAngle) ∧ (i=5 → P.diagonalAngle<Real.pi/12) := by
-  have hp := selected_axis_points_to_pin _ _ (P.pin 2) (P.pin 3) i hi
-  have hw := P.helper_windows.2.2.1
-  have hd := P.diagonal_angle_range
-  have hW : P.phase 2=Real.pi+P.helperAngle 2 := P.phase_from_deviation 2
-  have hD : P.phase 3=Real.pi+P.diagonalAngle := by dsimp [diagonalAngle]; ring
-  refine ⟨?_,?_,?_,?_⟩
-  · intro h; subst i
-    change 0<dot (primary (P.phase 2)) _ at hp
-    rw [hW,WD_primary_projection] at hp
-    have hh := positive_sin_forces_positive
-      (show -Real.pi≤P.helperAngle 2-Real.pi/12 by linarith [hw.1,Real.pi_gt_d2])
-      (show 0<Real.sin (P.helperAngle 2-Real.pi/12) by nlinarith)
-    linarith
-  · intro h; subst i
-    change 0<dot (scale (-1) (primary (P.phase 2))) _ at hp
-    rw [dot_scale_neg,hW,WD_primary_projection] at hp
-    have hh := negative_sin_forces_negative
-      (show P.helperAngle 2-Real.pi/12≤Real.pi by linarith [hw.2,Real.pi_gt_d2])
-      (show Real.sin (P.helperAngle 2-Real.pi/12)<0 by nlinarith)
-    linarith
-  · intro h; subst i
-    change 0<dot (primary (P.phase 3)) _ at hp
-    rw [hD,WD_primary_projection] at hp
-    have hh := positive_sin_forces_positive
-      (show -Real.pi≤P.diagonalAngle-Real.pi/12 by linarith [hd.1,Real.pi_pos])
-      (show 0<Real.sin (P.diagonalAngle-Real.pi/12) by nlinarith)
-    linarith
-  · intro h; subst i
-    change 0<dot (scale (-1) (primary (P.phase 3))) _ at hp
-    rw [dot_scale_neg,hD,WD_primary_projection] at hp
-    have hh := negative_sin_forces_negative
-      (show P.diagonalAngle-Real.pi/12≤Real.pi by linarith [hd.2,Real.pi_pos])
-      (show Real.sin (P.diagonalAngle-Real.pi/12)<0 by nlinarith)
-    linarith
 
 end Normalization.NormalizedPacking
 end SquaresInCircles.Six

@@ -3,20 +3,22 @@ import SquaresInCircles.Six.Analytic.FixedDiagonalRemainder
 import SquaresInCircles.Six.Stress.StrictSupport
 
 /-!
-# Actual diagonal work for the fixed-pair proof
+# The work of the diagonal square
 
-Both hypotheses below are original geometric separator inequalities. Their
-classification is deliberately a separate task; neither is inserted into
-NormalizedPacking. Adding the two inequalities exposes exactly the transverse
-work left by FixedPair.actual_pair_sum. The strict form uses the already
-proved strict support theorem at a smaller radius, not a positivity oracle.
+If W–D and D–S are separated along the second axes of W and of S, as in the
+model, the sum of the two separating inequalities with the weight `m*` and the
+support of D in the disk of radius `R₆` bound the diagonal term:
+`diagonalValue w s d ≤ m*(-1 - b_W + b_S)`, where `b_W` and `b_S` are the
+transverse coordinates of W and S. In a strictly smaller disk the bound is
+strict, by the strict support of D, whose force is nonzero.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.FixedPair
 open Stress Normalization
 
-/-- The two candidate D edges, as actual oriented separating inequalities. -/
+/-- W and D are separated along the second axis of W, and D and S along the second
+axis of S, as in the model. -/
 def CandidateDSeparators {R : ℝ} (P : NormalizedPacking R) : Prop :=
   Seven.SAT.threshold (P.square 2) (P.square 3)≤
       dot (normalY (P.square 2)) (sub (P.square 3).center (P.square 2).center) ∧
@@ -26,7 +28,8 @@ def CandidateDSeparators {R : ℝ} (P : NormalizedPacking R) : Prop :=
 lemma width_half_pi_sub (x : ℝ) : angularWidth (Real.pi/2-x)=angularWidth x := by
   simp [angularWidth,Real.cos_pi_div_two_sub,Real.sin_pi_div_two_sub,add_comm]
 
-/-- Threshold sum before applying a support bound to D. -/
+/-- The sum of the separating inequalities of W–D and D–S, with the weight
+`m*`. -/
 lemma diagonal_edge_work {R : ℝ} (P : NormalizedPacking R) (h : CandidateDSeparators P) :
     mStar*(1+angularWidth (P.diagonalAngle-P.helperAngle 2)+
         angularWidth (P.diagonalAngle-P.helperAngle 4))≤
@@ -63,7 +66,8 @@ lemma diagonal_candidate_box {R : ℝ} (P : NormalizedPacking R) (hR : R^2≤Six
   rw [P.square_def,orientedSquare_alpha,orientedSquare_beta] at h
   simpa only [Six.radius_sq,phi] using h
 
-/-- Exact support bounds the diagonal work left over by the two pair terms. -/
+/-- The support of D bounds the diagonal term by the transverse coordinates of W
+and S. -/
 theorem actual_diagonal_work {R : ℝ} (P : NormalizedPacking R)
     (hR : R^2≤Six.qStar) (h : CandidateDSeparators P) :
     diagonalValue (P.helperAngle 2) (P.helperAngle 4) P.diagonalAngle≤
@@ -84,7 +88,7 @@ lemma diagonal_force_nonzero {w s d : ℝ} (hd : DiagonalDomain w s d) :
   exact mul_pos (mul_pos diagonalK_pos (diagonal_trig_signs hd).1)
     (diagonal_trig_signs hd).2.1
 
-/-- The same work inequality is strict at a strictly smaller radius. -/
+/-- In a disk strictly smaller than the optimal one the bound is strict. -/
 theorem actual_diagonal_work_strict {R : ℝ} (P : NormalizedPacking R)
     (hR : R^2<Six.qStar) (h : CandidateDSeparators P)
     (hd : DiagonalDomain (P.helperAngle 2) (P.helperAngle 4) P.diagonalAngle) :
@@ -102,16 +106,5 @@ theorem actual_diagonal_work_strict {R : ℝ} (P : NormalizedPacking R)
     radius_gt_half (diagonal_force_nonzero hd) hbox'
   dsimp [diagonalValue]
   nlinarith only [hedge,hsupp]
-
-/-- No domain theorem or candidate-graph classification is smuggled into this
-sum: both D-edge hypotheses are visible in the statement. -/
-theorem actual_candidate_work {R : ℝ} (P : NormalizedPacking R)
-    (hR : R^2≤Six.qStar) (h : CandidateDSeparators P) : ∃ u v : Fin 4,
-    value (P.ownBits 1) (P.ownBits 2) u (P.helperAngle 1) (P.helperAngle 2)+
-      value (P.ownBits 0) (P.ownBits 4) v (-P.helperAngle 0) (-P.helperAngle 4)+
-      diagonalValue (P.helperAngle 2) (P.helperAngle 4) P.diagonalAngle≤0 := by
-  obtain ⟨u,v,hpair⟩ := actual_pair_sum P hR
-  have hdiag := actual_diagonal_work P hR h
-  exact ⟨u,v,by linarith⟩
 
 end SquaresInCircles.Six.Analytic.FixedPair

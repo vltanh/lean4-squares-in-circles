@@ -1,14 +1,15 @@
 import SquaresInCircles.Six.Analytic.FrozenPrimaryEndpoints
 
 /-!
-# Cardinal W cannot separate from D on positive D-primary
+# Cardinal W is not separated from D along the axis of D
 
-Use the single stress (1/20,11/20,2/5) on C-D,C-W,W-D. The D force is axial;
-the W force has squared length 37/80-(11/25)cos d, independent of W's phase.
-Universal radial support therefore reduces the contradiction to one quarter-
-circle inequality. A chord lower bound for sine and one increasing quadratic
-prove it on the whole domain. No angle subdivision or curvature certificate
-is needed, and no W-angle tail is assumed.
+If W is separated from the central square along its west side, then W and D are
+not separated along the primary axis of D. Take weights `1/20`, `11/20` and
+`2/5` on C–D, C–W and W–D. The force on D points along its own axis, and the
+force on W has squared length `37/80 - (11/25) cos d`, whatever the angle of W;
+as both centres lie within `rho0` of the origin, the contradiction reduces to
+one inequality in `d ∈ [0, π/4]`. It follows from the chord bound
+`sin d ≥ (7/3)(1 - cos d)` and a quadratic in `cos d`.
 -/
 
 noncomputable section
@@ -23,7 +24,8 @@ lemma quarter_circle_chord {c s : ℝ} (hc : 7/10≤c ∧ c≤1) (hs : 0≤ s)
     (show 0<(7/3)*(1-c)+s by linarith)
   nlinarith
 
-/-- A visible quadratic identity controls the entire radial endpoint family. -/
+/-- The scalar inequality: after squaring, the difference is a positive constant
+plus `cos d - 707/1000` times a positive factor. -/
 lemma cardinal_destination_scalar {c s L : ℝ}
     (hc : 707/1000≤c ∧ c≤1) (hs : 0≤ s) (hu : c^2+s^2=1)
     (hL : 0≤L) (hLs : L^2=37/80-(11/25)*c) :
@@ -63,8 +65,8 @@ lemma angularWidth_ge_half (t : ℝ) : 1/2≤angularWidth t := by
   dsimp [angularWidth]
   linarith
 
-/-- The scalar stress is connected directly to the actual normalized packing.
-The argument uses cardinal W and OWN D, and no selected edge other than +eD. -/
+/-- If W is separated from the central square along its west side, then W and D
+are not separated along the primary axis of D. -/
 theorem normalized_cardinalW_destination_primary_excluded {R : ℝ}
     (P : NormalizedPacking R) (hWcard : P.ownBits 2=false) :
     ¬ Seven.SAT.threshold (P.square 2) (P.square 3)≤

@@ -1,14 +1,13 @@
 import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Vertices
 
 /-!
-# Exact endpoint margins for the west-dominant profile
+# Positivity of the west-dominant profile
 
-The preceding concavity proof leaves four vertices of the shared-angle polygon
-and two diagonal endpoints. The Boolean is the supporting central y face.
-Every displayed Taylor lower polynomial is strictly greater than 1/30 at these
-vertices. Their evaluation is ordinary rational arithmetic after the analytic
-reduction, not a generated stress table or a searched partition.
-Compilation and kernel acceptance remain unverified.
+Taylor polynomials of `sin` and `cos` bound the profile below by a polynomial
+in the three angles, and at the four vertices of the domain, with `d = 1/2` or
+`d = 11/14` and for either bound on the centre of C, this polynomial exceeds
+`1/30`. With the reduction to the vertices the profile is positive on the
+whole west-dominant domain.
 -/
 
 noncomputable section
@@ -49,7 +48,6 @@ private lemma polynomial_le (upper : Bool) {v s d : ℝ}
       wingCos,wingSin,centerY,chordSin,chordCos,Bool.false_eq_true,ite_false,ite_true] <;>
     linarith only [cv,sv,cs,ss,cd,sd,sq,sh,ch,cr,sr,crr]
 
-/-- The four coordinates are the vertices proved sufficient in Vertices.lean. -/
 private def vertexV (i : Fin 4) : ℝ := ![0,2/3,2/3,12/25] i
 private def vertexS (i : Fin 4) : ℝ := ![0,0,22/75,12/25] i
 private def diagonalEndpoint (upper : Bool) : ℝ := if upper then 11/14 else 1/2
@@ -79,7 +77,8 @@ lemma endpoint_vertices (face endpoint : Bool) : FourVertices face (diagonalEndp
   have h3 := vertex_positive face endpoint 3
   exact ⟨h0,h1,h2,h3⟩
 
-/-- Strict positivity on the whole west-dominant domain, for both central faces. -/
+/-- The west-dominant profile is positive on its whole domain, for either bound
+on the centre of C. -/
 theorem positive (upper : Bool) {v s d : ℝ}
     (hv : v ≤ 2/3) (hs : 0 ≤ s) (horder : s ≤ v) (hsum : v+s ≤ 24/25)
     (hd : 1/2 ≤ d ∧ d ≤ 11/14) : 0 < profile upper v s d := by

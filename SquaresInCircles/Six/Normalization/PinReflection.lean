@@ -1,28 +1,28 @@
 import SquaresInCircles.Six.Normalization.PinPacking
 
 /-!
-# The single global diagonal normalization
+# The reflection in the diagonal
 
-The reflection swaps E/N and W/S and fixes D. Its point-set identities preserve
-the pins, windows and strong central box. Allowed axes are rederived from the
-analytic fixed-pin coordinate lemma, without invoking any window certificate.
-The returned congruence records the reflection rather than treating it as a
-rotation. The final candidate symmetry must absorb this recorded case later.
+The reflection in the line `y = x` exchanges the pins of E and N, and of W and
+S, and fixes the pin of D. It maps a pin packing to a pin packing: C goes to the
+axis-parallel square at the reflected centre, and the square at the phase `t`
+with chart `(a, b)` to the square at the phase `π/2 - t`, shifted by `2π` into
+the window of its new label, with chart `(a, -b)`; the pins, windows, box and
+separators carry over. So every pin packing is congruent, or congruent after
+the reflection, to one in which the phase of D is at most `5π/4`.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Normalization
 open Certificates
 
-/-- E/N and W/S are exchanged; D is fixed. -/
+/-- The relabelling by the reflection: E and N, and W and S, are exchanged, and
+D is fixed. -/
 def mirrorPin : Equiv.Perm (Fin 5) where
   toFun := ![1,0,4,3,2]
   invFun := ![1,0,4,3,2]
   left_inv i := by fin_cases i <;> rfl
   right_inv i := by fin_cases i <;> rfl
-
-@[simp] lemma mirrorPin_twice (i : Fin 5) : mirrorPin (mirrorPin i) = i := by
-  fin_cases i <;> rfl
 
 def pinAngle : Fin 5 → ℝ :=
   ![0,Real.pi/2,(11/12)*Real.pi,(5/4)*Real.pi,(19/12)*Real.pi]
@@ -49,7 +49,8 @@ lemma fixedPin_diagonal (i : Fin 5) : Six.diagonalPoint (fixedPin i) = fixedPin 
   rw [fixedPin_polar,fixedPin_polar]
   apply Prod.ext <;> simp only [Six.diagonalPoint,hc,hs]
 
-/-- The real lifts return to the same labelled windows after reflection. -/
+/-- The phase `π/2 - t` of a reflected square, shifted by `2π` for W, D and S so
+that it lies in the window of its new label. -/
 def mirroredPhase (i : Fin 5) (t : ℝ) : ℝ :=
   Real.pi/2-t + if i=0 ∨ i=1 then 0 else 2*Real.pi
 
@@ -92,7 +93,7 @@ lemma mirrored_window {R : ℝ} (P : PinPacking R) (i : Fin 5) :
   fin_cases i <;> norm_num [mirroredPhase,mirrorPin,phaseCenter,windowLower,windowUpper] at * <;>
     constructor <;> linarith [h.1,h.2]
 
-/-- Reflect a pin packing with explicit transformed coordinates and labels. -/
+/-- The reflection of a pin packing in the diagonal. -/
 def PinPacking.mirror {R : ℝ} (P : PinPacking R) : PinPacking R := by
   classical
   let c := Six.diagonalPoint P.center
@@ -155,8 +156,8 @@ lemma PinPacking.mirror_open {R : ℝ} (P : PinPacking R) (i : Fin 6) (p : Point
     rw [Six.reflectDiagonal_open]
     exact mirrored_oriented_open j _ _ _ p
 
-/-- Reflecting the reflected labelled model recovers the original point sets,
-up to the recorded pin permutation. -/
+/-- Reflecting the model of the reflected packing gives back the model, up to
+the relabelling. -/
 lemma PinPacking.congruent_reflected_mirror {R : ℝ} (P : PinPacking R) :
     Congruent P.model (0,0) (fun i => Six.reflectDiagonalSquare (P.mirror.model i)) := by
   let τ := Six.extendExteriorPerm mirrorPin
@@ -168,11 +169,13 @@ lemma PinPacking.congruent_reflected_mirror {R : ℝ} (P : PinPacking R) :
   exact Six.congruent_of_origin_sets τ ho
     (fun i => same_open_same_closed _ _ (ho i))
 
-/-- The possible reflection is retained explicitly for the final equality argument. -/
+/-- Congruent to `M`, or to the reflection of `M` in the diagonal. -/
 def CongruentOrDiagonal {n : ℕ} (S : Fin n → UnitSquare) (o : Point)
     (M : Fin n → UnitSquare) : Prop :=
   Congruent S o M ∨ Congruent S o (fun i => Six.reflectDiagonalSquare (M i))
 
+/-- A pin packing is congruent, possibly after the reflection, to one in which
+the phase of D is at most `5π/4`. -/
 theorem normalize_D_half {R : ℝ} (P : PinPacking R) :
     ∃ Q : PinPacking R, Q.phase 3 ≤ 5*Real.pi/4 ∧ CongruentOrDiagonal P.model (0,0) Q.model := by
   by_cases h : P.phase 3 ≤ 5*Real.pi/4

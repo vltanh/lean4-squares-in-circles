@@ -2,11 +2,11 @@ import SquaresInCircles.Six.Analytic.PairTaylorApprox
 import SquaresInCircles.Six.Stress.Support
 
 /-!
-# Explicit perturbation and square-root comparisons
+# Perturbed lengths and sums of roots
 
-A coordinate error e changes a two-dimensional length by at most 2e. The
-endpoint comparison of two positive roots uses two squarings with every sign
-condition stated. Neither lemma assumes values from a numerical evaluator.
+Errors of at most `e` in the coordinates of a plane vector raise its length by
+at most `2e`. A sum `√X + √Y` lies below `E` when `X + Y < E²` and
+`4XY < (E² - X - Y)²`, by squaring twice.
 -/
 
 noncomputable section
@@ -28,7 +28,8 @@ lemma sub_difference {a b A B e f : ℝ}
   rw [he]
   linarith
 
-/-- Uniform error control for a force length, including zero approximating vectors. -/
+/-- Errors of at most `e` in the coordinates raise the length of a vector by at
+most `2e`. -/
 theorem length_le_of_coordinate_errors {x y X Y e : ℝ}
     (he : 0≤e) (hx : |x-X|≤e) (hy : |y-Y|≤e) :
     Real.sqrt (x^2+y^2)≤Real.sqrt (X^2+Y^2)+2*e := by
@@ -62,7 +63,7 @@ theorem length_le_of_coordinate_errors {x y X Y e : ℝ}
     (show 0<Real.sqrt (x^2+y^2)+(L+2*e) by linarith)
   nlinarith
 
-/-- Exact rational endpoint test for the sum of two positive square roots. -/
+/-- `√X + √Y < E` when `X + Y < E²` and `4XY < (E² - X - Y)²`. -/
 theorem two_root_sum_lt {E X Y : ℝ}
     (hE : 0<E) (hX : 0≤X) (hY : 0≤Y)
     (hsum : X+Y<E^2) (hdisc : 4*X*Y<(E^2-X-Y)^2) :
@@ -91,7 +92,7 @@ lemma scaled_root_eq {A X : ℝ} (hA : 0≤A) (hX : 0≤X) :
     rw [mul_pow,hx]
   rw [← hprod,Real.sqrt_sq (mul_nonneg hA (Real.sqrt_nonneg X))]
 
-/-- A version in the form occurring in the pair minorant. -/
+/-- The same test for `A √X + B √Y` with `A, B ≥ 0`. -/
 theorem scaled_two_roots_lt {E A B X Y : ℝ}
     (hE : 0<E) (hA : 0≤A) (hB : 0≤B) (hX : 0≤X) (hY : 0≤Y)
     (hsum : A^2*X+B^2*Y<E^2)

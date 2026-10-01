@@ -1,13 +1,17 @@
 import SquaresInCircles.Six.Analytic.QuadrantGeometry
 
 /-!
-# Elementary separator exclusions before the strong central box
+# Central separators that cannot occur
 
-The excluded secondary directions would require |b| >= 17/20, contradicting
-containment's |b| < 7/10. The remaining outward secondary direction has a
-large genuine marker displacement, handled on all three label branches.
+Let an outer square lie in the disk, at angle `|t| ≤ π/4` in its quadrant, and
+let the centre `(x, y)` of C lie in `[0, 1/2]²`. Containment gives `|b| < 7/10`.
+The square is not separated from C along one direction of its secondary axis,
+since that would need `|b| ≥ 17/20`; for E the other direction is excluded as
+well when `y ≤ 23/200`. Nor is N separated from C along the south side of C, or
+S along the north side. Along the other direction of the secondary axis,
+separation needs `b ≥ 1/2`, and then the marker of the square is displaced:
+`t + signedLabel a b > 0`.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic
 open Normalization

@@ -2,13 +2,14 @@ import SquaresInCircles.Six.Analytic.EndpointReduction
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
 /-!
-# A curvature identity for the radical terms in Appendix A
+# Concavity of a trigonometric function less a radical
 
-For r(x)=sqrt(p+q sin x), direct differentiation gives
-r''(x)=-r(x)/4+(p^2-q^2)/(4 r(x)^3).
-Consequently A cos x+B sin x-R r(x) is concave whenever p^2>=q^2,
-R>=0 and R r(x)<=4(A cos x+B sin x). The identity and the sufficient
-inequality are proved on the whole interval; no derivative boxes are checked.
+For `r(x) = √(p + q sin x)`, `r'' = -r/4 + (p² - q²)/(4r³)`. So the second
+derivative of `A cos x + B sin x - R r(x)` is
+`-(A cos x + B sin x) + R r/4 - R (p² - q²)/(4r³)`, which is nonpositive where
+`q² ≤ p²`, `R ≥ 0` and `R r(x) ≤ 4 (A cos x + B sin x)`; there the function is
+concave. Concavity is kept by affine changes of the argument, and a concave
+function positive at both ends of an interval is positive on it.
 -/
 
 noncomputable section
@@ -52,7 +53,9 @@ lemma radical_second_derivative {p q x:ℝ} (hx:0<p+q*Real.sin x) :
     (by nlinarith [Real.sin_sq_add_cos_sq x])] at hformula
   exact hformula
 
-/-- Concavity follows from an explicit algebraic upper bound on curvature. -/
+/-- `A cos x + B sin x - R √(p + q sin x)` is concave on `[l, u]` if `R ≥ 0`,
+`q² ≤ p²`, and on `[l, u]` the radicand is positive and
+`R √(p + q sin x) ≤ 4 (A cos x + B sin x)`. -/
 theorem radicalTrig_concave {A B p q R l u:ℝ}
     (hR:0≤R) (hpq:q^2≤p^2)
     (hroot:∀x∈Set.Icc l u,0<p+q*Real.sin x)
@@ -92,8 +95,8 @@ theorem radicalTrig_concave {A B p q R l u:ℝ}
     dsimp [dd]
     nlinarith
 
-/-- Affine changes of argument preserve concavity when their image remains
-inside the proved domain. In particular this handles x -> u-x. -/
+/-- A function concave on `[L, U]`, composed with an affine map from `[l, u]`
+into `[L, U]`, is concave on `[l, u]`. -/
 lemma concave_affine_argument {f:ℝ→ℝ} {L U l u a b:ℝ}
     (hf:ConcaveOn ℝ (Set.Icc L U) f)
     (hmap:∀x∈Set.Icc l u,a*x+b∈Set.Icc L U) :

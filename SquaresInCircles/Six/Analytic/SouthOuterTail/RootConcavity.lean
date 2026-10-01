@@ -1,14 +1,13 @@
 import SquaresInCircles.Six.Analytic.SouthOuterTail.Root
 
 /-!
-# Concavity of the cardinal-wing tail slice
+# Concavity in the angle of W on the west side of C
 
-For x in [0,2/5], the west-root correction is P(sign*sin x). Its two
-polynomial derivative bounds suffice: no square-root differentiation is
-needed. A>=21/25 and B>=0 on the negative-angle branch, or B>=-7/20 on the
-positive branch, make the entire slice concave. Both estimates use the same
-whole interval, not a branch-and-bound cover.
-Compilation and kernel acceptance remain unverified.
+The slice `K + a cos x + b sin x - R P(σ sin x)` of the south tail profile, with
+`σ = ±1`, `R = 8443/5000` and the polynomial majorant `P`, is concave on
+`[0, 2/5]` when `a ≥ 21/25` and `b ≥ 0` for `σ = -1`, or `b ≥ -7/20` for `σ = 1`.
+Its second derivative, by the chain rule, is nonpositive by the bounds on `P'`
+and `P''`.
 -/
 
 noncomputable section
@@ -79,16 +78,16 @@ lemma cardinal_slice_concave (negative : Bool) {a b K : ℝ}
       (show 0 ≤ rootSecond (rootSign negative*Real.sin x)+1/4 by linarith [hp.2.2])
       (sq_nonneg (Real.cos x))
     cases negative
-    · simp only [rootSign,Bool.false_eq_true,if_false,one_mul] at hp hQ hb
+    · simp only [rootSign,Bool.false_eq_true,ite_false,one_mul] at hp hQ hb
       have hP := mul_nonpos_of_nonpos_of_nonneg hp.2.1 hs0
       have hB := mul_nonneg (show 0 ≤ b+7/20 by linarith) hs0
-      simp only [f'',rootSign,Bool.false_eq_true,if_false,one_mul,
+      simp only [f'',rootSign,Bool.false_eq_true,ite_false,one_mul,
         CandidateWestTail.radiusBound]
       nlinarith only [hc,hA,hC2,hQ,hP,hB,hs1]
-    · simp only [rootSign,if_true,neg_one_mul] at hp hQ hb
+    · simp only [rootSign,ite_true,neg_one_mul] at hp hQ hb
       have hP := mul_nonneg (show 0 ≤ rootFirst (-Real.sin x)+21/50 by linarith [hp.1]) hs0
       have hB := mul_nonneg hb hs0
-      simp only [f'',rootSign,if_true,neg_one_mul,CandidateWestTail.radiusBound]
+      simp only [f'',rootSign,ite_true,neg_one_mul,CandidateWestTail.radiusBound]
       nlinarith only [hc,hA,hC2,hQ,hP,hB,hs1]
 
 end SquaresInCircles.Six.Analytic.SouthOuterTail

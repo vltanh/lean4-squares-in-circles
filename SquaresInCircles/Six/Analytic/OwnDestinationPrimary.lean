@@ -1,19 +1,24 @@
 import SquaresInCircles.Six.Analytic.FrozenPrimaryExclusion
 
 /-!
-# Positive D-primary is impossible when W is OWN
+# W–D is not separated along the own axis of D
 
-Use the two edges C-W and W-D with weights 10 and 3. Local centers are frozen,
-so the residual is a sum of positive-coefficient trigonometric functions of
-v=-w and v+d. All four original rectangle corners are bounded by the universal
-vertex support. No D-primary pin-sign restriction is needed for this stronger
-whole-rectangle statement.
+If W is separated from C along its own axis, then W–D is not separated along
+the own axis of D, with D beyond W. For `w ≥ 0` the frames of W and D are at
+most `π/3` apart and `oriented_destination_primary_excluded` applies. For
+`w < 0` take weights `10` and `3` on C–W and W–D: at fixed centres the stress
+is a `frozenTrig` in `v = -w` and `d` with nonnegative coefficients, hence
+concave, and it is positive at the four corners of `[0, 2/3] × [0, π/4]`, by
+the far-vertex support of W and the bound `rho0` on the first coordinate of D.
+This contradicts the weighted sum of the two separating inequalities.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic
 open Normalization
 
+/-- The threshold sum minus the works of the forces on W, D and C, at fixed
+centres. -/
 def destinationPrimaryFrozen (v d aw bw ad cx cy : ℝ) : ℝ :=
   frozenTrig (13/2-10*aw-3*ad)
     (10*(1/2-cx)) (10*(1/2+cy)) 0 0
@@ -133,7 +138,8 @@ lemma destination_primary_frozen_nonpositive {v d aw bw ad bd cx cy : ℝ}
   dsimp [destinationPrimaryFrozen,frozenTrig]
   nlinarith only [hW,hE]
 
-/-- Complete OWN-W positive-D-primary exclusion, with no stress-table premise. -/
+/-- If W is separated from C along its own axis, then W–D is not separated along
+the own axis of D, with D beyond W. -/
 theorem normalized_ownW_destination_primary_excluded {R : ℝ}
     (P : NormalizedPacking R) (hown : P.ownBits 2=true) :
     ¬ Seven.SAT.threshold (P.square 2) (P.square 3)≤
@@ -146,7 +152,7 @@ theorem normalized_ownW_destination_primary_excluded {R : ℝ}
       rw [abs_of_nonneg (sub_nonneg.mpr P.primary_order.2.2.1.le),hwphase,hdphase]
       linarith [P.diagonal_angle_range.2,Real.pi_pos]
     exact not_le_of_gt (oriented_destination_primary_excluded (P.contained 2) (P.contained 3)
-      (P.avoidsCore 2) (P.avoidsCore 3) hq) hsep
+      (P.avoidsCore 2) hq) hsep
   · have hv : 0≤-P.helperAngle 2 ∧ -P.helperAngle 2≤2/3 := by
       constructor <;> linarith [P.helper_windows.2.2.1.1]
     have hd := P.diagonal_angle_range

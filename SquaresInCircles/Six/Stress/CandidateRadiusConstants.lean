@@ -2,12 +2,14 @@ import SquaresInCircles.Six.Candidate
 import SquaresInCircles.Six.Stress.ExactSupport
 
 /-!
-# Candidate-radius constants independent of normalization
+# The radial bound at the optimal radius
 
-These definitions and elementary bounds have been separated from the packing
-normalization interface. They use only the candidate algebra and geometric
-support definitions; no normalization certificate or fixed-stress table is
-imported to prove an inequality about a constant.
+`rhoStar = √(Six.radius² - 1/4) - 1/2` is the largest radial coordinate of a
+unit square in the disk of the optimal radius, and `cStar = rhoStar - 1`. They
+satisfy `rhoStar² + rhoStar + 1/2 = Six.qStar` and
+`11/10 < rhoStar < rho0`. A square with `(a + 1/2)² + (u + 1/2)² ≤ Six.qStar`
+and `a, u ≥ 0` has `a ≤ rhoStar` and `a² + u² ≤ rhoStar²`, so every
+projection of its centre is at most `rhoStar`.
 -/
 
 noncomputable section
@@ -57,9 +59,7 @@ lemma rhoStar_lt_rho0 : rhoStar < rho0 := by
 
 lemma rhoStar_upper : rhoStar < 1113 / 1000 := rhoStar_lt_rho0.trans rho0_upper
 lemma cStar_pos : 0 < cStar := by dsimp [cStar]; linarith [rhoStar_gt_11_10]
-lemma cStar_lt_c0 : cStar < c0 := by dsimp [cStar, c0]; linarith [rhoStar_lt_rho0]
-
-lemma sharp_coordinate_bound {a u : ℝ} (ha : 0 ≤ a) (hu : 0 ≤ u)
+lemma sharp_coordinate_bound {a u : ℝ} (hu : 0 ≤ u)
     (hc : (a + 1 / 2) ^ 2 + (u + 1 / 2) ^ 2 ≤ Six.qStar) : a ≤ rhoStar := by
   have hs : (a + 1 / 2) ^ 2 ≤ Six.radius ^ 2 - 1 / 4 := by
     rw [Six.radius_sq]

@@ -3,14 +3,14 @@ import Mathlib.Analysis.Real.Pi.Bounds
 import Mathlib.Tactic
 
 /-!
-# Whole-interval estimates for the canonical central-margin difference
+# The half-angle ratio
 
-The ratio sin(t)/(1+cos(t)) is used without an inverse trigonometric function.
-On [0,4/5] it lies between t/2 and 11t/20. The lower inequality follows from
-two monotonicity arguments; the upper one is an explicit fifth-degree Taylor
-inequality with nonnegative remainder. The cosine-difference bound is the
-integrated linear sine lower bound, proved by monotonicity of cos(t)+89t²/200.
-No interval partition, numerical minimization or certificate is used.
+The ratio `sin t/(1 + cos t) = tan (t/2)`, its identities with `sin t` and
+`cos t`, and the bounds `t/2 ≤ sin t/(1 + cos t) ≤ 11t/20` on `[0, 4/5]`: the
+lower bound by two monotonicity arguments, the upper one by a Taylor bound of
+`sin` of degree five. Also `cos q - cos d ≥ 89 (d² - q²)/200` for
+`0 ≤ q ≤ d ≤ 4/5`, since `cos x + 89x²/200` decreases there, and
+`sin d - sin q ≤ d - q`.
 -/
 
 noncomputable section
@@ -53,7 +53,8 @@ lemma halfRatio_lower {t : ℝ} (ht : 0≤t ∧ t≤4/5) : t/2≤halfRatio t := 
   let H : ℝ→ℝ := fun x => Real.cos x-1+x*Real.sin x
   have hHd (x : ℝ) : HasDerivAt H (x*Real.cos x) x := by
     convert ((Real.hasDerivAt_cos x).sub_const 1).fun_add
-      ((hasDerivAt_id x).fun_mul (Real.hasDerivAt_sin x)) using 1 <;> dsimp [H] <;> ring
+      ((hasDerivAt_id x).fun_mul (Real.hasDerivAt_sin x)) using 1 <;> dsimp [H]
+    ring
   have hHm : MonotoneOn H (Set.Icc 0 (4/5)) := by
     apply Seven.monoOn_of_hasDeriv_nonneg (by dsimp [H]; fun_prop)
       (fun x _ => hHd x)
@@ -67,7 +68,8 @@ lemma halfRatio_lower {t : ℝ} (ht : 0≤t ∧ t≤4/5) : t/2≤halfRatio t := 
   have hFd (x : ℝ) : HasDerivAt F (H x) x := by
     convert ((Real.hasDerivAt_sin x).const_mul 2).fun_sub
       ((hasDerivAt_id x).fun_mul ((Real.hasDerivAt_cos x).const_add 1)) using 1 <;>
-      dsimp [F,H] <;> ring
+      dsimp [F,H]
+    ring
   have hFm : MonotoneOn F (Set.Icc 0 (4/5)) :=
     Seven.monoOn_of_hasDeriv_nonneg (by dsimp [F]; fun_prop)
       (fun x _ => hFd x) (fun x hx => hHnonneg ⟨hx.1.le,hx.2.le⟩)
@@ -95,7 +97,8 @@ lemma cosine_difference_lower {q d : ℝ} (hq : 0≤q) (hqd : q≤d) (hd : d≤4
   let f : ℝ→ℝ := fun x => Real.cos x+(89/200)*x^2
   have hfd (x : ℝ) : HasDerivAt f (-Real.sin x+(89/100)*x) x := by
     convert (Real.hasDerivAt_cos x).fun_add (((hasDerivAt_id x).fun_pow 2).const_mul (89/200))
-      using 1 <;> dsimp [f] <;> ring
+      using 1 <;> dsimp [f]
+    ring
   have hanti : AntitoneOn f (Set.Icc 0 (4/5)) := by
     apply Seven.antiOn_of_hasDeriv_nonpos (by dsimp [f]; fun_prop) (fun x _ => hfd x)
     intro x hx

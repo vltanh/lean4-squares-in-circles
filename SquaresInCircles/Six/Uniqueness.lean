@@ -1,69 +1,47 @@
-import SquaresInCircles.Six.LowerBound
+import SquaresInCircles.Six.Analytic.CompleteReduction
+import SquaresInCircles.Six.Construction
+import SquaresInCircles.Six.Containing
 import SquaresInCircles.Six.Equality.AnalyticReconstruction
 import SquaresInCircles.Common.Optimum
 
 /-!
-# The unrestricted six-square equality theorem
+# Six squares: uniqueness
 
-CompleteReduction supplies the reduction input analytically. The fixed-pair
-closure retains the actual separating sources. Eight candidate-frame contact
-inequalities and exact disk supports then determine all centers. Point-set
-reconstruction and the candidate's diagonal symmetry absorb the single
-recorded reflection without changing Congruent.
+A packing of six unit squares in the closed disk of radius `radius` is first
+normalized: one square contains the disk centre, five fixed pins label the
+others, and the packing is read in a frame of the central square, possibly
+after a reflection in a diagonal. The reduction then supplies the separating
+axes and the angle domains of the stress; at the optimal radius the eight
+contacts of the stress are tight and fix every centre, and the diagonal
+symmetry of the model absorbs the reflection.
 
-This endpoint no longer uses a Classification module, the legacy pair-envelope
-checker, or BalancedClosure. No external-script success is a theorem premise.
-Compilation, the elaborated dependency audit and kernel acceptance remain
-separate, unexecuted validation steps.
+The file ends with `optimum`: the case as an `Optimum`, which also gives the
+lower bound.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six
 
-/-- Every six-square packing at the candidate radius is the candidate, up to
-the original rotation, translation and relabeling congruence. -/
-theorem uniqueness {S : Fin 6 → UnitSquare} {o : Point}
-    (hp : Packing S o Six.radius) : Congruent S o Six.model := by
-  have hR : Six.radius^2≤Six.qStar := by rw [radius_sq]
-  obtain ⟨P,htrace⟩ := Normalization.normalize_of_candidate hp hR
+/-- Every packing of six unit squares in a closed disk of radius `radius` is
+congruent to `model`. -/
+theorem uniqueness (S : Fin 6 → UnitSquare) (o : Point)
+    (hp : Packing S o radius) : Congruent S o model := by
+  obtain ⟨P,htrace⟩ := Normalization.normalize_of_candidate hp radius_sq.le
   exact Equality.AnalyticReconstruction.original_congruent_of_reduction
-    P hR (Analytic.FixedPair.complete_reduction P) htrace
+    P radius_sq.le (Analytic.FixedPair.complete_reduction P) htrace
 
-/-- An inhabitant of the unchanged unrestricted uniqueness goal. -/
-theorem uniqueness_goal : Goals.Uniqueness := by
-  intro S o hp
-  exact uniqueness hp
-
-/-- The upper-right corner of the east square lies on the candidate circle. -/
-theorem model_reaches : ∃ (i : Fin 6) (p : Point),
-    closedSquare (Six.model i) p ∧ Six.radius^2≤normSq p := by
-  refine ⟨2,(sStar+3/2,sStar+1/2),?_,?_⟩
-  · change closedSquare (axisSquare (sStar+1,sStar)) (sStar+3/2,sStar+1/2)
-    constructor
-    · have e : localX (axisSquare (sStar+1,sStar)) (sStar+3/2,sStar+1/2)=1/2 := by
-        dsimp [localX,axisSquare]
-        ring
-      rw [e]
-      norm_num
-    · have e : localY (axisSquare (sStar+1,sStar)) (sStar+3/2,sStar+1/2)=1/2 := by
-        dsimp [localY,axisSquare]
-        ring
-      rw [e]
-      norm_num
+/-- The corner `(sStar + 3/2, sStar + 1/2)` of the square to the right of the
+central one lies on the circle of radius `radius`. -/
+lemma model_reaches : ∃ (i : Fin 6) (p : Point),
+    closedSquare (model i) p ∧ radius ^ 2 ≤ normSq p := by
+  refine ⟨2,(sStar+3/2,sStar+1/2),(axisSquare_closed _ _).2 ?_,?_⟩
+  · constructor <;> norm_num
   · dsimp [normSq]
     nlinarith [radius_sq,east_radius_identity]
 
-/-- The six-square case in the same public `Optimum` interface as cases 1–5
-and 7. No problem predicate or equality notion has been changed. -/
+/-- The optimum for six squares: `radius`, attained only by the configurations
+congruent to `model`. -/
 def optimum : Optimum 6 :=
-  Optimum.ofUnique Six.model model_packing model_reaches
-    (fun S o hp => uniqueness hp)
-
-/-- Lower bound, explicit attainment, and equality classification together. -/
-theorem characterization :
-    (∀ (S : Fin 6 → UnitSquare) (o : Point) (R : ℝ), Packing S o R → Six.radius≤R) ∧
-    Packing Six.model (0,0) Six.radius ∧
-    (∀ (S : Fin 6 → UnitSquare) (o : Point), Packing S o Six.radius → Congruent S o Six.model) :=
-  ⟨fun _ _ _ hp => lower_bound hp,model_packing,fun _ _ hp => uniqueness hp⟩
+  .ofUnique model model_packing model_reaches uniqueness
 
 end SquaresInCircles.Six

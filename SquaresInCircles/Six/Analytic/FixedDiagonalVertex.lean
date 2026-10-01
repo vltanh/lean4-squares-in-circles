@@ -1,15 +1,23 @@
 import SquaresInCircles.Six.Analytic.FixedVertexMinorant
 import SquaresInCircles.Six.Analytic.PairSharpConstants
 import SquaresInCircles.Six.Analytic.FixedPair
-import SquaresInCircles.Six.Stress.DiagonalRemainder
+import SquaresInCircles.Six.Stress.DiagonalCapBound
+import SquaresInCircles.Six.Analytic.CandidateBounds
+import SquaresInCircles.Six.Analytic.EndpointReduction
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
+import Mathlib.Analysis.Real.Pi.Bounds
 
 /-!
-# The diagonal vertex branch for the new fixed-pair line
+# The diagonal remainder in the vertex case
 
-The pair line contributes 23 Z/100 - 98 beta/100. The new minorant proves
-this expression positive on the genuine vertex branch, using the exact
-candidate algebra to sharpen only the radius and cap-radius constants.
-The rectangle/angle domain remains explicit: this is not its classification.
+On the domain `DiagonalDomain w s d` of the angles of W, S and D, let
+`β = (w - s)/2` and `δ = d - π/4 - (w + s)/2`. In the vertex case
+`2R₆|sin δ| ≥ 1` of the support of D, the pair lines `line w` and `line (-s)`,
+the vertex term of D and `2 pairBase` have a positive sum. The pair lines add up
+to `(23/100)(|w| + |s|) - (98/100)β`, and with `R₆ ≤ 8443/5000` and
+`ρ(R₆) ≥ 1391/1250` the sum is at least a positive multiple of
+`fixedVertexMinorant`. This is positive on the diamond
+`|w + s|/2 + |β| ≤ 11/25`, where the vertex case has `|δ| ≥ 29/100`.
 -/
 
 noncomputable section
@@ -143,7 +151,8 @@ private lemma fixed_max_bound (w s : ℝ) :
   · rw [max_eq_right h]; exact hb
   · rw [max_eq_left (le_of_not_ge h)]; exact ha
 
-/-- The actual vertex contribution absorbs the changed pair-line coefficients. -/
+/-- In the vertex case, with the vertex term of D for the diagonal term, the
+remainder is positive. -/
 theorem fixed_diagonal_vertex_positive {w s d : ℝ} (hd : DiagonalDomain w s d)
     (hv : 1≤2*Six.radius*|Real.sin (diagonalDelta w s d)|) :
     0<line w+line (-s)+diagonalVertex w s d+2*pairBase := by

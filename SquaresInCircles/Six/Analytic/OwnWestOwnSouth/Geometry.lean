@@ -3,20 +3,23 @@ import SquaresInCircles.Six.Analytic.OwnWestCardinalWing.Geometry
 import SquaresInCircles.Six.Analytic.CanonicalSouthSign
 
 /-!
-# The two-OWN missing-west case when the west tilt dominates
+# W and S on their primary axes, with W turned at least as far
 
-Here s<=v=-w. The actual shared-center angle budget v+s<24/25 gives
-s<12/25, exactly the whole interval of the continuous-weight scalar argument.
-The refined v,d bounds follow from the actual D-sourced west edge. All four
-separators are retained from the original packing; none is replaced by a
-selected index or a candidate-edge assumption.
-Compilation and kernel acceptance remain unverified.
+Let W and S be separated from C along their primary axes, at the phases `π - v`
+and `3π/2 + s` with `s ≤ v`. Then there is no missing west wing, with W and D
+separated along the secondary axis of D but not of W, and D and S along the
+secondary axis of S. Otherwise `v + s < 24/25` and `s > 0` give
+`0 ≤ s < 12/25`, the bounds for W and D give `16/25 ≤ d ≤ 11/14` and
+`53/50 - d ≤ v ≤ 31/50`, and the four separating inequalities contradict the
+stress of `OwnWestOwnSouth.Support`.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.OwnWestOwnSouth
 open Normalization
 
+/-- If W and S are separated from C along their primary axes and S is turned no
+further than W, there is no missing west wing. -/
 theorem not_missing_west_of_order {R : ℝ} (P : NormalizedPacking R)
     (hW : P.ownBits 2=true) (hS : P.ownBits 4=true)
     (horder : P.helperAngle 4 ≤ -P.helperAngle 2) : ¬ MissingWestWing P := by
@@ -59,8 +62,7 @@ theorem not_missing_west_of_order {R : ℝ} (P : NormalizedPacking R)
     have h := P.own_separator 4 hS
     rw [hSphase] at h
     simp only [centralMargin,centralNormal,angularWidth,Real.cos_add,Real.sin_add,
-      south_cos,south_sin,zero_mul,one_mul,neg_one_mul,zero_add,add_zero,zero_sub,neg_neg,
-      abs_neg] at h
+      south_cos,south_sin,zero_mul,neg_one_mul,add_zero,zero_sub,neg_neg,abs_neg] at h
     dsimp [angularWidth]
     nlinarith only [h]
   have hWD : 1/2+angularWidth (v+d) ≤

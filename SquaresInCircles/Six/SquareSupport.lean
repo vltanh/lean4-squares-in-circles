@@ -1,13 +1,15 @@
 import SquaresInCircles.Common.Contacts
 
 /-!
-# Projection bounds on actual squares
+# Projections of a square
 
-These bounds are shared by central SAT, pin-based separator orientation, and
-reverse stresses. Closed-square bounds are non-strict; open-square bounds are
-strict for every nonzero normal. The distinction is essential at contacts.
+Along a direction `n`, a closed square projects into the closed interval of
+half-length `width S n` about the projection of its centre, and for `n ≠ 0` the
+open square projects into the open interval. So if `n` separates two squares,
+`width S n + width T n ≤ ⟨n, c_T - c_S⟩`, then every point of the open square S
+projects below every point of the open square T: a point inside each square
+fixes the direction of a separating normal.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six
 
@@ -21,10 +23,6 @@ lemma projection_local (S : UnitSquare) (n p : Point) :
     dot n (sub p S.center) = frameX S n * localX S p + frameY S n * localY S p := by
   have hh := frame_dot S n (sub p S.center)
   exact hh.symm
-
-lemma width_nonneg (S : UnitSquare) (n : Point) : 0 ≤ width S n := by
-  dsimp [width]
-  positivity
 
 lemma width_pos (S : UnitSquare) {n : Point} (hn : n ≠ (0,0)) : 0 < width S n := by
   have hp := normSq_pos_of_ne hn
@@ -70,7 +68,8 @@ lemma open_projection_bounds (S : UnitSquare) {n p : Point} (hn : n ≠ (0,0))
   rw [dot_sub_right] at hh
   constructor <;> linarith [hh.1,hh.2]
 
-/-- Interior pins fix the direction of a separating normal. -/
+/-- If `n` separates S from T, every point of the open square S projects below
+every point of the open square T. -/
 lemma separator_orients_pins {S T : UnitSquare} {n p q : Point}
     (hn : n ≠ (0,0)) (hp : openSquare S p) (hq : openSquare T q)
     (hsep : width S n + width T n ≤ dot n (sub T.center S.center)) :

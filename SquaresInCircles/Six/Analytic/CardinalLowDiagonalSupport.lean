@@ -1,12 +1,15 @@
 import SquaresInCircles.Six.Analytic.CardinalLowDiagonalEndpoints
 
 /-!
-# Support comparison for the cardinal-W low-diagonal stress
+# Cardinal W, low D: the supports
 
-The sign of every transverse force component is proved on the full ordered
-low-D domain. The support bounds are the universal far-vertex inequalities;
-no cap approximation is used here. The D-sourced W norm depends on d, not on
-w or d-w. Its exact mixed term is retained.
+`cardLowFrozen` is the excess of the weighted thresholds of the three
+separations over the weighted projections they bound, at fixed centres. On the
+domain `-2/5 ≤ w ≤ 2/5`, `0 ≤ d ≤ 1/2`, `w ≤ d` it is at least `cardLowGap`: the
+forces on W and D are bounded by their vertex supports, and the central terms by
+the box of the central square. With `β` and `μ` the weights on C–W and W–D, the
+squared length of the force on W is `β² + μ² + 2βμ sin w` when W is the source
+and `β² + μ² + 2βμ sin d` when D is.
 -/
 
 noncomputable section
@@ -66,8 +69,7 @@ lemma cardinal_low_trig {w d : ℝ}
   have hcq := Real.one_sub_sq_div_two_le_cos (x := d-w)
   exact ⟨by linarith,hsw,⟨hdt.1,hdt.2.1⟩,⟨by nlinarith,hqt.2.1⟩⟩
 
-/-- The purely angle-dependent analytic gap is a valid lower bound on the
-actual stress, with the central support correction included once. -/
+/-- On the domain, `cardLowFrozen` is at least `cardLowGap`. -/
 theorem cardLowGap_le_frozen (ds : Bool) {w d aw bw ad bd cx cy : ℝ}
     (hw : -2/5≤w ∧ w≤2/5) (hd : 0≤d ∧ d≤1/2) (hwd : w≤d)
     (hW : ContainedChart aw |bw|) (hD : ContainedChart ad |bd|)

@@ -1,12 +1,17 @@
 import SquaresInCircles.Six.Analytic.MarkerLifts
 
 /-!
-# The north half of the small-secondary-center forbidden arc
+# North markers when the centre of C is right of the box
 
-The single budget is 3/8. Together with the south budget 2/3 it leaves an arc
-of length pi-25/24 > 2*pi/3. OWN uses the affine Taylor/completed-square bounds
-in CoreProfiles; a north cap uses the actual signed cap inequalities. All seven
-SAT alternatives and both coordinate signs are included explicitly.
+Let the centre `(x, y)` of C satisfy `c0 < x < 1/2` and `0 ≤ y ≤ 1/2`. A
+contained square with phase `π/2 + t`, `|t| ≤ π/4`, that is separated from C
+along a central axis has its marker above `π/2 - 3/8`. The own axis and the
+north side of C bound its radial coordinate below, by the profiles of
+`CoreProfiles` and the cap bounds, and so bound its marker; the outward
+secondary axis and the west side of C bound the marker directly; the other
+secondary axis and the east and south sides of C do not separate. With the
+bound `-π/2 + 2/3` of the south quadrant, this leaves an arc of length
+`π - 25/24 > 2π/3` free of markers.
 -/
 
 noncomputable section
@@ -88,7 +93,8 @@ lemma north_small_cap {a b t y : ℝ} (h : ContainedChart a |b|)
       dsimp [liftedMarker]
       linarith
 
-/-- The north bound includes every actual central separator, not merely OWN. -/
+/-- A square of the north quadrant that is separated from C along a central
+axis has its marker above `π/2 - 3/8`. -/
 theorem north_small_marker {a b t x y : ℝ} (h : ContainedChart a |b|)
     (ht : |t| ≤ Real.pi/4) (hx : c0 < x) (hx1 : x < 1/2)
     (hy0 : 0 ≤ y) (hy1 : y ≤ 1/2)

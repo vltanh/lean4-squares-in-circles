@@ -2,18 +2,18 @@ import Mathlib.Analysis.Real.Sqrt
 import Mathlib.Tactic
 
 /-!
-# A denominator-free analytic square-root majorant
+# A polynomial majorant of a square root
 
-For a>0, multiply the cubic Taylor upper bound for sqrt(1+b^2/a^2) by a^6.
-No series theorem or interval check is needed: positivity of the numerator and
-its squared error are the two explicit identities below. This allows a
-continuously varying stress weight to be handled by one ordinary polynomial.
-Compilation and kernel acceptance remain unverified.
+For `a ≥ 0`, `a⁵ √(a² + b²) ≤ a⁶ + a⁴b²/2 - a²b⁴/8 + b⁶/16`: the right side is
+`a⁶` times the cubic Taylor polynomial of `√(1 + x)` at `x = b²/a²`. It is
+nonnegative, being `a⁶ + (b²/16)((b² - a²)² + 7a⁴)`, and its square exceeds
+`a¹⁰ (a² + b²)` by `(b⁸/256)((b² - 2a²)² + 16a⁴)`.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.RadicalPolynomialMajorant
 
+/-- `a⁶` times the cubic Taylor polynomial of `√(1 + x)` at `x = b²/a²`. -/
 def numerator (a b : ℝ) : ℝ :=
   a^6+(b^2*a^4)/2-(b^4*a^2)/8+b^6/16
 
@@ -28,7 +28,7 @@ lemma square_error (a b : ℝ) :
   dsimp [numerator]
   ring
 
-/-- A global exact inequality, not the result of evaluating a certificate. -/
+/-- `a⁵ √(a² + b²) ≤ numerator a b` for `a ≥ 0`. -/
 theorem scaled_sqrt_upper (a b : ℝ) (ha : 0 ≤ a) :
     a^5*Real.sqrt (a^2+b^2) ≤ numerator a b := by
   have hN : 0 ≤ numerator a b := by rw [positive_form]; positivity

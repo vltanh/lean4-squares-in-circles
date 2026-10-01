@@ -1,12 +1,14 @@
 import SquaresInCircles.Six.Normalization.Markers
 
 /-!
-# Weighted containment bounds for genuine Seven markers
+# Lower bounds for the label
 
-The linear estimate a+(3/4)u < 5/4 follows from Cauchy--Schwarz with the
-fixed normal (1,3/4), applied to the far corner (a+1/2,u+1/2). It gives a
-lower bound for the SIDE term of the genuine three-branch marker. No branch
-is discarded when using the resulting lower estimate.
+Cauchy–Schwarz with the normal `(1, 3/4)` at the far corner
+`(a + 1/2, u + 1/2)` gives `a + (3/4) u < 5/4` for a contained chart, and so a
+lower bound for the side term of the label; with the axial term `(5/4) u` and
+the cap `π/4` this bounds the label below. For `0 ≤ t ≤ π/4`, an offset
+`u ≥ 1/2 + sin t` gives a label above `t + 27/50`, and
+`(1/2 - u) cos t ≤ (a - 1/2) sin t` gives `t + label a u > 27/50`.
 -/
 
 noncomputable section
@@ -53,8 +55,8 @@ lemma sine_nine_tenths {t : ℝ} (ht0 : 0 ≤ t) (ht1 : t ≤ 1/2) :
   have h3 := mul_le_mul_of_nonneg_right h2 ht0
   nlinarith [Real.sin_ge_sub_cube ht0]
 
-/-- If the transverse offset is at least 1/2+sin t, then the genuine marker
-is more than 27/50 behind the primary direction throughout the first octant. -/
+/-- For `0 ≤ t ≤ π/4`, an offset `u ≥ 1/2 + sin t` gives a label above
+`t + 27/50`. -/
 theorem marker_offset_ahead {a u t : ℝ} (h : ContainedChart a u)
     (ht0 : 0 ≤ t) (ht1 : t ≤ Real.pi/4) (hu : 1/2+Real.sin t ≤ u) :
     t+27/50 < Seven.label a u := by
@@ -72,8 +74,8 @@ theorem marker_offset_ahead {a u t : ℝ} (h : ContainedChart a u)
   · linarith [Real.pi_gt_d2]
   · linarith [Real.pi_gt_d2]
 
-/-- The reverse transverse cap condition forces t+label > 27/50.
-All three branches of the genuine label are bounded separately. -/
+/-- For `0 ≤ t ≤ π/4`, the condition `(1/2 - u) cos t ≤ (a - 1/2) sin t` gives
+`t + label a u > 27/50`. -/
 theorem marker_offset_behind {a u t : ℝ} (h : ContainedChart a u)
     (ht0 : 0 ≤ t) (ht1 : t ≤ Real.pi/4)
     (hcap : (1/2-u)*Real.cos t ≤ (a-1/2)*Real.sin t) :

@@ -1,12 +1,15 @@
 import SquaresInCircles.Six.Analytic.WestMixed.Reduction
 
 /-!
-# Common support facts for the two remaining OWN-W mixed families
+# Own W, missing west wing: the supports of W and C
 
-The W force is (41/20+sin q,-cos q), with 1<=q<=pi/2. Its axial force cone
-is proved from cos q<=cos 1<=13/24, not selected without justification.
-The central support helper preserves both actual force signs as hypotheses.
-Compilation and kernel acceptance remain unverified.
+With the weight `41/20` on the edge C–W, along the own axis of W, and `1` on
+the edge W–D, along the secondary axis of D, the force on W is
+`(41/20 + sin q, -cos q)` in its frame, where `q` is the phase gap of W and D.
+For `1 ≤ q ≤ π/2` we have `cos q ≤ cos 1 ≤ 13/24`, so the force lies in the
+axial cone `|V| ≤ (31/100) U`, where the support of W is at most `rho0 U`. A
+force on C with nonnegative components `X` and `Y` has support at most
+`c (X + Y)` when both coordinates of the centre of C are at most `c`.
 -/
 
 noncomputable section

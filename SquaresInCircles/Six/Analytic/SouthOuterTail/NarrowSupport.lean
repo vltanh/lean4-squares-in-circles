@@ -1,15 +1,13 @@
 import SquaresInCircles.Six.Analytic.OwnWingProfileSharpening
 
 /-!
-# A radial support estimate for the final OWN/OWN corner
+# The support of a nearly radial force
 
-The far-vertex estimate is unnecessarily large when the diagonal force is
-nearly radial. On 3/5 <= U <= 7/10 and |V| <= 2U/5, the far-corner quadratic
-instead gives U*a+V*b <= rho0*U+1/160.
-
-The proof is one completed square, with no choice of a numerical support cell.
-The cone will be derived from the actual force at the single geometric corner
-v=s=11/25; the whole diagonal-angle interval remains intact.
+A square in the disk of squared radius `Q0`, with local centre `(a, b)`, has
+`U a + V b ≤ ρ0 U + 1/160` for every force `(U, V)` with `3/5 ≤ U ≤ 7/10` and
+`|V| ≤ 2U/5`, which is sharper than the far-vertex bound for such forces. It
+follows from the bound `a + (31/100)(|b| + b²) ≤ ρ0` of the far corner and a
+completed square in `|b|` and `|V|`.
 -/
 
 noncomputable section
@@ -21,7 +19,7 @@ lemma narrow_support_square (x y : ℝ) :
       (93/500)*(x-(75/124)*y)^2+(97/49600)*y^2 := by
   ring
 
-/-- A uniform smooth bound, derived from the disk rather than a support-branch premise. -/
+/-- The support of a nearly radial force exceeds `ρ0 U` by at most `1/160`. -/
 theorem narrow_support {a b U V : ℝ} (hc : ContainedChart a |b|)
     (hU : 3/5 ≤ U ∧ U ≤ 7/10) (hV : |V| ≤ (2/5)*U) :
     U*a+V*b ≤ rho0*U+1/160 := by

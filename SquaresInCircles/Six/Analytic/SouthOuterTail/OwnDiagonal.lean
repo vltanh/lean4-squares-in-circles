@@ -2,14 +2,13 @@ import SquaresInCircles.Six.Analytic.SouthOuterTail.OwnRaw
 import SquaresInCircles.Six.Analytic.SouthOuterTail.NarrowSupport
 
 /-!
-# The one exceptional wing corner needs no diagonal partition
+# The south tail with W on its own axis: the corner `v = s = 11/25`
 
-At v=s=11/25 the diagonal force is (U(d),V(d)). Exact Taylor bounds on the
-fixed wing angle, together with one concavity argument for cos d+sin d, prove
-3/5<=U<=7/10 and 0<=V<=2U/5 for every 1/2<=d<=11/14.
-The narrow radial support therefore applies everywhere on that interval.
-After this support bound, the remaining first-harmonic term decreases in d;
-its minimum is the single endpoint 11/14.
+At the corner `v = s = 11/25` the force on D is `(U(d), V(d))`, linear in `cos d`
+and `sin d`. Taylor bounds at `11/25` and the concavity of `cos d + sin d` give
+`3/5 ≤ U ≤ 7/10` and `0 ≤ V ≤ 2U/5` for every `d ∈ [1/2, 11/14]`, so the support
+of a nearly radial force applies. The term `specialTerm` that remains after it
+has a nonpositive derivative, so it is smallest at `d = 11/14`.
 -/
 
 noncomputable section
@@ -69,7 +68,8 @@ lemma diagonal_trig_bounds {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 11/14) :
   exact ⟨⟨hcl,by nlinarith only [hcm,hcu]⟩,
     ⟨by nlinarith only [hslm,hsl],by nlinarith only [hsum,hsu]⟩,hcs⟩
 
-/-- The support cone is a conclusion of geometry over the whole d interval. -/
+/-- At the corner the force on D is nearly radial, for every
+`d ∈ [1/2, 11/14]`. -/
 lemma force_cone {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 11/14) :
     (3/5 ≤ forceU d ∧ forceU d ≤ 7/10) ∧
     (0 ≤ forceV d ∧ |forceV d| ≤ (2/5)*forceU d) := by

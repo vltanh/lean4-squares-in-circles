@@ -2,20 +2,21 @@ import Mathlib.Analysis.Real.Sqrt
 import Mathlib.Tactic
 
 /-!
-# Exact constants for the six-square normalization
+# The constants of the normalization
 
-Source: `research/six/NORMALIZATION_PROOF.md`, section 0 and Lemma B.
-`Q0` is a rational upper ceiling, not the optimal candidate squared radius.
-No numerical certificate, floating-point value, or new axiom is used here.
-
-This file is part of the unverified n=6 formalization draft. See
-`research/six/lean/STATUS.md` for the actual build/acceptance record.
+The normalization works in disks of squared radius at most
+`Q0 = 142559/50000`, just above the square of the optimal radius. With
+`R0 = √Q0`, `ρ0 = √(Q0 - 1/4) - 1/2` is the largest radial offset of a square in
+such a disk, `c0 = ρ0 - 1` bounds the coordinates of the centre of C,
+`coreRadius = 3/2 - ρ0` is the radius of a disk about the origin inside C, and
+`aMin = 2 - ρ0` and `U0` bound the chart of an exterior square that avoids that
+disk. Each constant gets rational bounds.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Normalization
 
-/-- The rational ceiling used only in the normalization argument. -/
+/-- The rational ceiling on the squared radius, just above `qStar`. -/
 def Q0 : ℝ := 142559 / 50000
 
 def R0 : ℝ := Real.sqrt Q0
@@ -24,14 +25,13 @@ def rho0 : ℝ := Real.sqrt (Q0 - 1 / 4) - 1 / 2
 
 def c0 : ℝ := rho0 - 1
 
-/-- Radius of the origin-centered disk inside the strong central box. -/
+/-- The radius of a disk about the origin inside C, for the centre of C in
+`[0, c0]²`. -/
 def coreRadius : ℝ := 3 / 2 - rho0
 
 def aMin : ℝ := 2 - rho0
 
 def U0 : ℝ := Real.sqrt (Q0 - (5 / 2 - rho0) ^ 2) - 1 / 2
-
-def X0 : ℝ := Real.sqrt (Q0 - 9 / 4) - 1 / 2
 
 lemma Q0_pos : 0 < Q0 := by norm_num [Q0]
 
@@ -41,7 +41,7 @@ lemma R0_nonneg : 0 ≤ R0 := Real.sqrt_nonneg _
 
 lemma R0_sq : R0 ^ 2 = Q0 := Real.sq_sqrt Q0_pos.le
 
-/-- Identity I4 in the normalization manuscript. -/
+/-- The corners `(ρ0 + 1/2, ±1/2)` lie on the circle of radius `R0`. -/
 lemma rho0_identity : (rho0 + 1 / 2) ^ 2 + 1 / 4 = Q0 := by
   have hs := Real.sq_sqrt (show 0 ≤ Q0 - 1 / 4 by norm_num [Q0])
   dsimp [rho0]
@@ -102,20 +102,6 @@ lemma U0_radicand_pos : 0 < Q0 - (5 / 2 - rho0) ^ 2 := by
   rw [U0_radicand]
   linarith [rho0_gt_one]
 
-/-- Identity I3 in the normalization manuscript. -/
-lemma U0_identity : (5 / 2 - rho0) ^ 2 + (U0 + 1 / 2) ^ 2 = Q0 := by
-  have hs := Real.sq_sqrt U0_radicand_pos.le
-  dsimp [U0]
-  nlinarith
-
-lemma U0_pos : 0 < U0 := by
-  have hs : Real.sqrt ((1 / 2 : ℝ) ^ 2) <
-      Real.sqrt (Q0 - (5 / 2 - rho0) ^ 2) :=
-    Real.sqrt_lt_sqrt (by positivity) (by rw [U0_radicand]; linarith [rho0_gt_one])
-  rw [Real.sqrt_sq (by norm_num)] at hs
-  dsimp [U0]
-  linarith
-
 lemma U0_lt_117_250 : U0 < (117 : ℝ) / 250 := by
   have hs : Real.sqrt (Q0 - (5 / 2 - rho0) ^ 2) <
       Real.sqrt ((121 / 125 : ℝ) ^ 2) :=
@@ -126,16 +112,5 @@ lemma U0_lt_117_250 : U0 < (117 : ℝ) / 250 := by
   linarith
 
 lemma U0_lt_half : U0 < 1 / 2 := by linarith [U0_lt_117_250]
-
-/-- Identity I2 in the normalization manuscript. -/
-lemma X0_identity : 9 / 4 + (X0 + 1 / 2) ^ 2 = Q0 := by
-  have hs := Real.sq_sqrt (show 0 ≤ Q0 - 9 / 4 by norm_num [Q0])
-  dsimp [X0]
-  nlinarith
-
-/-- The strict coarse core follows from the closed strong box, not conversely. -/
-lemma coarse_core_of_strong {x : ℝ} (hx0 : 0 ≤ x) (hx : x ≤ c0) :
-    0 ≤ x ∧ x < 23 / 200 :=
-  ⟨hx0, lt_of_le_of_lt hx c0_lt_23_200⟩
 
 end SquaresInCircles.Six.Normalization

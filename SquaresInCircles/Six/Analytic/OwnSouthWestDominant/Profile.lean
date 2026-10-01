@@ -1,15 +1,16 @@
 import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Transverse
 
 /-!
-# The west-dominant five-edge profile
+# The west-dominant profile
 
-Weights on CW, CS, CD, WD and DS are 9/4, 3/4, 9/20, 1 and 1.
-The Boolean records which endpoint of the central y interval supports the
-actual force. Both alternatives will be proved over the entire domain.
-The support estimates use the radial-chord majorant and the smooth quadratic
-axial support; their scalar expression is separated into three harmonics,
-a chord term and a transverse term. All derivatives are displayed below.
-Compilation and kernel acceptance remain unverified.
+The squares W, D and S have the phases `π - v`, `π + d` and `3π/2 + s`.
+The stress with weights `9/4`, `3/4`, `9/20`, `1` and `1` on C–W, C–S, C–D,
+W–D and D–S leaves, once the supports are bounded, the profile: a constant,
+harmonics in `v`, `s` and `d`, the chord term in `d + v` and the transverse
+term in `d - s`. The Boolean `upper` says whether the second coordinate of the
+centre of C is bounded by `5641/50000` or by `0`, according to the sign of
+the second component of the force on C. This file defines the profile and
+the first two derivatives of its slices in each angle.
 -/
 
 noncomputable section

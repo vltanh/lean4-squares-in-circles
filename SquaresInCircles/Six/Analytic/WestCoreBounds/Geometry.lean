@@ -1,19 +1,22 @@
 import SquaresInCircles.Six.Analytic.WestCoreBounds.Support
 
 /-!
-# A compact actual domain for an OWN-W D-sourced separator
+# Bounds for W and D
 
-The three-edge analytic profiles first give v<31/50, and then d>16/25
-using the previously proved q>53/50. Every inequality is taken from the
-original normalized packing. Neither the S bit nor a candidate D-edge graph
-is a premise. These are genuine geometric improvements, not checked cells.
-Compilation and kernel acceptance remain unverified.
+Let W be separated from C along its own axis, and W and D along the secondary
+axis of D, and let `v` be the angle of W from the west direction and `d` that of
+D. The bounds `0 ≤ v ≤ 2/3`, `3/5 ≤ d ≤ 11/14` and `v + d > 53/50` improve to
+`v < 31/50`, and then to `d > 16/25`: on the domains left out, the first and
+then the second profile would be positive, against the separators.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.WestCoreBounds
 open Normalization
 
+/-- If W is separated from C along its own axis and W and D are separated along
+the secondary axis of D, then the angle of W from the west direction is less
+than `31/50` and that of D exceeds `16/25`. -/
 theorem own_west_domain {R : ℝ} (P : NormalizedPacking R) (hW : P.ownBits 2=true)
     (hsep : Seven.SAT.threshold (P.square 2) (P.square 3) ≤
       dot (normalY (P.square 3)) (sub (P.square 3).center (P.square 2).center)) :

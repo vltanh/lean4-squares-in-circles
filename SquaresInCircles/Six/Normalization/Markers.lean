@@ -2,21 +2,28 @@ import SquaresInCircles.Six.Normalization.CapGeometry
 import SquaresInCircles.Seven.MarkerArc
 
 /-!
-# Genuine signed Seven markers used before the strong central box
+# Signed markers
 
-This is T4 and Lemma A(a)--(d) of NORMALIZATION_PROOF.md. No axial-label,
-small-core, pin, sector or canonical-separator assumption is made here.
-`liftedMarker` is a real lift; periodic conversion to the existing Direction
-marker is handled separately. Source completion is distinct from compilation.
+The marker of an exterior square at the phase `t` with chart `(a, b)` lifts to
+the real number `liftedMarker t a b = t ± label a |b|`, with the sign of `b`. It
+lies within `π/4` of `t`, and between `t - 5|b|/4` and `t` when `b ≤ 0`. A
+contained chart has `|b| < 7/10`, and `|b| ≥ 1/2` forces a label of at least
+`5/8`. The point of the unit circle at the marker lies in the closed square, by
+the marker arc of `Seven.MarkerArc`; so a square west of the line
+`x = c_x - 1/2` has its marker in the open western half-plane, and when
+`c_x < 1/2` a square whose phase is within `π/4` of `0` is not west of that
+line.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Normalization
 
-/-- The real signed displacement of the genuine three-branch Seven marker. -/
+/-- The label of the state `(a, |b|)`, with the sign of `b`. -/
 def signedLabel (a b : ℝ) : ℝ :=
   if b < 0 then -Seven.label a |b| else Seven.label a |b|
 
+/-- The marker of the square at the phase `t` with chart `(a, b)`, as a real
+number. -/
 def liftedMarker (t a b : ℝ) : ℝ := t + signedLabel a b
 
 lemma signedLabel_of_neg {a b : ℝ} (hb : b < 0) :
@@ -47,14 +54,6 @@ lemma liftedMarker_bounds {t a b : ℝ} (ha : Seven.Admissible a |b|) :
   dsimp [liftedMarker]
   constructor <;> linarith
 
-lemma liftedMarker_of_nonneg {t a b : ℝ} (ha : Seven.Admissible a |b|)
-    (hb : 0 ≤ b) :
-    t ≤ liftedMarker t a b ∧ liftedMarker t a b ≤ t + 5 * b / 4 := by
-  rw [liftedMarker, signedLabel_of_nonneg hb, abs_of_nonneg hb] at *
-  have hu := ha.label_le_axial
-  dsimp [Seven.axial] at hu
-  constructor <;> linarith [ha.label_nonneg]
-
 lemma liftedMarker_of_nonpos {t a b : ℝ} (ha : Seven.Admissible a |b|)
     (hb : b ≤ 0) :
     t - 5 * |b| / 4 ≤ liftedMarker t a b ∧ liftedMarker t a b ≤ t := by
@@ -66,7 +65,7 @@ lemma liftedMarker_of_nonpos {t a b : ℝ} (ha : Seven.Admissible a |b|)
     dsimp [Seven.axial] at hu
     constructor <;> linarith [ha.label_nonneg]
 
-/-- T1's transverse estimate does not need the strong core. -/
+/-- A contained chart has transverse offset `u < 7/10`. -/
 lemma ContainedChart.u_lt_seven_tenths {a u : ℝ} (h : ContainedChart a u) :
     u < 7 / 10 := by
   have hm := mul_nonneg (sub_nonneg.mpr h.u_le)
@@ -76,8 +75,8 @@ lemma ContainedChart.u_lt_seven_tenths {a u : ℝ} (h : ContainedChart a u) :
   by_contra! hu
   nlinarith [sq_nonneg (u - 7 / 10)]
 
-/-- A(b): a transverse offset at least 1/2 forces label at least 5/8.
-The side term is bounded directly by a rational far-corner estimate. -/
+/-- A transverse offset `u ≥ 1/2` forces a label of at least `5/8`: the far
+corner gives `a < 861/1000`, which keeps the side term above `5/8`. -/
 lemma ContainedChart.large_offset_label {a u : ℝ} (h : ContainedChart a u)
     (hu : 1 / 2 ≤ u) : 5 / 8 ≤ Seven.label a u := by
   have ha : a < 861 / 1000 := by
@@ -110,7 +109,7 @@ lemma marker_circle_localY (t a b z : ℝ) :
   rw [Real.cos_add, Real.sin_add]
   linear_combination Real.sin z * (Real.sin_sq_add_cos_sq t)
 
-/-- T4: the genuine marker point belongs to the CLOSED square. -/
+/-- The point of the unit circle at the marker lies in the closed square. -/
 theorem marker_point_mem {t a b : ℝ} (h : ContainedChart a |b|) :
     closedSquare (orientedSquare t a b)
       (Real.cos (liftedMarker t a b), Real.sin (liftedMarker t a b)) := by
@@ -129,13 +128,8 @@ theorem marker_point_mem {t a b : ℝ} (h : ContainedChart a |b|) :
   · rw [signedLabel_of_nonneg (le_of_not_gt hb)]
     simpa only [abs_of_nonneg (le_of_not_gt hb)] using hm
 
-/-- Closed half-planes containing the square also contain its marker point. -/
-theorem marker_halfplane {t a b nx ny h : ℝ} (hc : ContainedChart a |b|)
-    (hplane : ∀ p, closedSquare (orientedSquare t a b) p → nx * p.1 + ny * p.2 ≤ h) :
-    nx * Real.cos (liftedMarker t a b) + ny * Real.sin (liftedMarker t a b) ≤ h :=
-  hplane _ (marker_point_mem hc)
-
-/-- A(c): west-cardinal separation forces the marker into the western half-circle. -/
+/-- A square west of the line `x = c_x - 1/2` has its marker in the open western
+half-plane. -/
 theorem west_cap_marker_cos_neg {t a b cx : ℝ} (hc : ContainedChart a |b|)
     (hx : cx < 1 / 2)
     (hcap : ∀ p, closedSquare (orientedSquare t a b) p → p.1 ≤ cx - 1 / 2) :
@@ -144,7 +138,8 @@ theorem west_cap_marker_cos_neg {t a b cx : ℝ} (hc : ContainedChart a |b|)
   dsimp only at hm
   linarith
 
-/-- The west-cardinal alternative cannot occur in the east primary quadrant. -/
+/-- For `c_x < 1/2`, a square whose phase is within `π/4` of `0` is not west of
+the line `x = c_x - 1/2`. -/
 theorem no_west_cap_in_east_quadrant {t a b cx : ℝ}
     (hc : ContainedChart a |b|) (ht : |t| ≤ Real.pi / 4) (hx : cx < 1 / 2)
     (hcap : ∀ p, closedSquare (orientedSquare t a b) p → p.1 ≤ cx - 1 / 2) : False := by
@@ -154,12 +149,5 @@ theorem no_west_cap_in_east_quadrant {t a b cx : ℝ}
     constructor <;> linarith
   have hcos := Real.cos_nonneg_of_mem_Icc hdom
   linarith [west_cap_marker_cos_neg hc hx hcap]
-
-/-- A(d), in the convenient west-quadrant lift. -/
-lemma west_quadrant_marker_range {t a b : ℝ} (hc : ContainedChart a |b|)
-    (ht : 3 * Real.pi / 4 ≤ t ∧ t ≤ 5 * Real.pi / 4) :
-    Real.pi / 2 ≤ liftedMarker t a b ∧ liftedMarker t a b ≤ 3 * Real.pi / 2 := by
-  have hm := liftedMarker_bounds (t := t) hc.seven_admissible
-  constructor <;> linarith [ht.1, ht.2]
 
 end SquaresInCircles.Six.Normalization

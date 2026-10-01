@@ -1,18 +1,18 @@
 import SquaresInCircles.Six.Analytic.FixedPairConcavity
 
 /-!
-# The exact target gap on closed sign sectors
+# The gap of the pair
 
-Subtracting the proposed envelope is affine on each of the three genuine
-sign walls. This file connects the smooth concavity proof to the exact
-minorant, including points on the walls. No differentiation of an absolute
-value at zero is used.
+The gap is the minorant minus `pairBase`, the line `line w` and `|n|/1000`. On a
+sign sector the line and `|n|` are linear, so the gap is the sector formula
+minus an affine function of `n` and `w`, and it is concave on every closed
+segment of a slice that lies in one sector, walls included.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.FixedPair
 open Stress Normalization
 
+/-- The minorant minus `pairBase`, the line `line w` and `|n|/1000`. -/
 def gap (no wo : Bool) (u : Fin 4) (n w : ℝ) : ℝ :=
   minorant no wo u n w-pairBase-line w-(1/1000)*|n|
 
@@ -59,8 +59,8 @@ private lemma sub_affine_concave {s : Set ℝ} {f : ℝ → ℝ}
       _=_ := by rw [hab]; ring
   linarith
 
-/-- Coordinate and diagonal concavity of the target gap, on every closed
-segment lying in a geometric sign sector and in the explicit pair domain. -/
+/-- The gap is concave on every closed segment of a slice that lies in the
+domain and in one sign sector. -/
 theorem gap_slice_concave {no wo pn pw pq : Bool} (u : Fin 4) (k : Fin 3)
     {n w l r : ℝ}
     (hd : ∀ x ∈ Set.Icc l r, Domain no wo (sliceN k n w x) (sliceW k n w x))

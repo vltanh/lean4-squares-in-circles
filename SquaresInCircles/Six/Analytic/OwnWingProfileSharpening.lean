@@ -2,17 +2,16 @@ import SquaresInCircles.Six.Analytic.TransverseProfileBounds
 import SquaresInCircles.Six.Analytic.SharpFrontProfile
 
 /-!
-# A sharper OWN-wing profile on the small phase-gap domain
+# The transverse coordinate of W
 
-If the W/D gap is at most one and d>=1/2, the negative W deviation v satisfies
-0<=v<=1/2. On exactly that forced interval, a cubic Taylor lower profile and a
-single explicit sextic identity yield |bW| < 233/500 - 73v/100.
-
-The polynomial is positive by its displayed factors in u and 1-u, where u=2v.
-There is no interval subdivision, generated stress table or external success
-premise. The coefficients are part of an ordinary `ring` identity. The second
-lemma below is a global quadratic relation between radial and transverse
-coordinates, derived from the far-corner circle itself.
+Let W be separated from C along its own axis, at angle `π - v` with
+`0 ≤ v ≤ 1/2`. Then its transverse coordinate satisfies
+`|b| < 233/500 - 73v/100`. The separator and Taylor bounds give
+`a + 1/2 ≥ 1387/1000 + v/2 - 387v²/2000 - v³/12`, and a larger `|b|` would put
+the far corner outside the disk: the sum of the squares exceeds `Q0` by `1/2000`
+plus a polynomial in `u = 2v` with positive coefficients in the Bernstein basis
+of degree six. Also, every contained state satisfies
+`a + 31 (|b| + b²)/100 ≤ ρ0`.
 -/
 
 noncomputable section
@@ -54,8 +53,8 @@ private lemma own_wing_front_cubic_positive {v : ℝ} (hv : 0 ≤ v ∧ v ≤ 1/
   dsimp [wingFrontCubic]
   nlinarith
 
-/-- The stronger signed-angle profile needed only when the total W/D gap is
-small. It uses the actual OWN inequality, not a candidate D-edge assumption. -/
+/-- If W is separated from C along its own axis at angle `π - v`, with
+`0 ≤ v ≤ 1/2`, then `|b| < 233/500 - 73v/100`. -/
 theorem own_west_transverse_small_angle {v a b cx cy : ℝ}
     (hc : ContainedChart a |b|) (hx : cx ≤ c0) (hy0 : 0 ≤ cy)
     (hv : 0 ≤ v ∧ v ≤ 1/2)
@@ -83,8 +82,7 @@ theorem own_west_transverse_small_angle {v a b cx cy : ℝ}
     (show 0 ≤ |b|+1/2+(483/500-(73/100)*v) by linarith [abs_nonneg b])
   nlinarith [hc.containment,own_wing_profile_circle hv]
 
-/-- A whole-domain quadratic strengthening of a purely radial support bound.
-This is obtained before choosing a cap or vertex force direction. -/
+/-- Every contained state satisfies `a + 31 (|b| + b²)/100 ≤ ρ0`. -/
 theorem radial_transverse_quadratic {a b : ℝ} (hc : ContainedChart a |b|) :
     a+(31/100)*(|b|+b^2) ≤ rho0 := by
   have ha := hc.a_le_rho0

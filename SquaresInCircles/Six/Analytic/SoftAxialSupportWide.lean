@@ -1,13 +1,12 @@
 import SquaresInCircles.Six.Analytic.SoftAxialSupport
 
 /-!
-# A wider smooth-support cone
+# A wider cone for the smooth support bound
 
-For U>=33/20 and |V|<=3U/5, the radial-transverse quadratic gives
-  U*a+V*b <= rho0*U+(3/25)*V^2.
-The proof is one completed square with positive rational remainder. This
-slightly wider cone accommodates the negative cardinal-S angles without a
-support-branch subdivision. Compilation remains unverified.
+For `U ≥ 33/20` and `|V| ≤ 3U/5`, the bound `a + (31/100)(|b| + b²) ≤ rho0`
+gives `U a + V b ≤ rho0 U + (3/25) V²`, by one completed square with a positive
+remainder. The wider cone holds the force on S when S is separated from the
+central square along the south side of C.
 -/
 
 noncomputable section

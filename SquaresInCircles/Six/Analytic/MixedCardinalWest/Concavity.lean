@@ -4,18 +4,17 @@ import SquaresInCircles.Six.Normalization.SecondarySeparation
 import SquaresInCircles.Seven.Analysis
 
 /-!
-# One analytic stress for the cardinal/cardinal mixed west-wing case
+# A missing west wing with side separators: concavity
 
-Use weights 2,4,0,3,3 on C--W,C--S,C--D,W--D,D--S, with the last two
-normals D-secondary and S-secondary. The universal far-vertex support has the
-following signed-projection minorant. Its only nonsmooth wall is s=0.
-
-The two equal outer weights give the radical sqrt(18-18 sin(d-s)). Its
-concavity criterion factors as (1-sin x)(144(1+sin x)-18 Q0)>=0, so there
-is no subdivision near a support switch. Coordinate concavity reduces the
-whole physical box to its twelve geometrically forced vertices. This file
-proves concavity; endpoint positivity and actual packing transport are separate.
-Compilation remains deferred.
+When W and S are separated from C along the west and south sides of C, a stress
+with weights `2`, `4`, `3` and `3` on the separators of C and W, of C and S, of
+W and D along the secondary axis of D, and of D and S along the secondary axis
+of S leaves the gap `gap w s d`, a sum of sinusoids in the angles `w`, `s`, `d`
+of W, S and D and of radicals `R0 √(p + q sin x)`. Each radical term is concave
+by the curvature criterion for `A cos x + B sin x - R √(p + q sin x)`; for the
+term of D the criterion factors as `(1 - sin x)(144 (1 + sin x) - 18 Q0) ≥ 0`.
+So the gap is concave in `d` on `[1/2, π/4]`, in `w` on `[-2/5, 0]`, and in `s`
+on each side of the corner `s = 0` of `max (-sin s) 0`.
 -/
 
 noncomputable section
@@ -68,7 +67,8 @@ private lemma first_quadrant_trig {x : ℝ} (hx : 0 ≤ x ∧ x ≤ 6/5) :
   rw [abs_of_pos hc,abs_of_nonneg hs] at hw
   exact ⟨hc,hs,hs1,hw⟩
 
-/-- Equal outer weights make the entire D-resultant curvature elementary. -/
+/-- The term of D is concave on `[0, 6/5]`: with equal weights on the two
+separators of D its curvature criterion factors. -/
 lemma diagonalTerm_concave :
     ConcaveOn ℝ (Set.Icc 0 (6/5)) diagonalTerm := by
   have hh : ConcaveOn ℝ (Set.Icc 0 (6/5)) (radicalTrig 3 0 18 (-18) R0) := by
@@ -137,7 +137,7 @@ lemma southTerm_negative_concave :
   intro x hx
   dsimp [radicalTrig,southTerm]
   rw [max_eq_left (show 0 ≤ -Real.sin x by linarith [hsin x hx])]
-  ring
+  ring_nf
 
 lemma southTerm_positive_concave :
     ConcaveOn ℝ (Set.Icc 0 (2/5)) southTerm := by
@@ -149,7 +149,7 @@ lemma southTerm_positive_concave :
     (by linarith [hx.2,Real.pi_gt_d2])
   dsimp [radicalTrig,southTerm]
   rw [max_eq_right (show -Real.sin x ≤ 0 by linarith)]
-  ring
+  ring_nf
 
 lemma westTerm_diagonal_concave {w : ℝ} (hw : -(2/5) ≤ w ∧ w ≤ 0) :
     ConcaveOn ℝ (Set.Icc (1/2) (Real.pi/4)) (westTerm w) := by
@@ -230,6 +230,6 @@ lemma gap_south_concave {w d l u : ℝ}
   apply concave_congr_on h
   intro s _
   dsimp [gap,K]
-  ring
+  ring_nf
 
 end SquaresInCircles.Six.Analytic.MixedCardinalWest

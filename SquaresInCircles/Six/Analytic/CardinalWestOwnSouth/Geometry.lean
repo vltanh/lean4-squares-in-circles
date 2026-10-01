@@ -3,17 +3,20 @@ import SquaresInCircles.Six.Analytic.OwnWingFrontier
 import SquaresInCircles.Six.Analytic.CanonicalSouthSign
 
 /-!
-# A missing west wing must have OWN W
+# A missing west wing has W separated along its own axis
 
-For cardinal W and OWN S, use the scalar change of variables
- (v,s,d)=(old s,-old w,pi/2-old d),
- swap the two central coordinates, and negate each transverse coordinate.
-This is not a reflection of NormalizedPacking: the new diagonal window is
-proved explicitly from old d>3/5 and old d<=pi/4. The old one-radian D-sourced
-west gap gives the new d-s<4/7. All five reflected inequalities are derived
-below from the original actual witnesses.
-The both-cardinal case was already excluded. No finite classification is used.
-Compilation and kernel acceptance remain unverified.
+If W and D are not separated along the secondary axis of W, a missing west wing,
+then D is separated from W along its own secondary axis and S from D along the
+secondary axis of S, and W is separated from the central square along its own
+axis. Suppose instead that W is separated along the west side of C. If S is
+separated along the south side of C, `MixedCardinalWest` excludes the missing
+wing; here S is separated along its own axis. Read in the reflection in the
+diagonal, with the angle of S, `-w` and `π/2 - d` as the new angles `v`, `s` and
+`d`, the two central coordinates exchanged and the transverse coordinates
+negated, the five separations are the inequalities of `scalar_impossible`. The
+new `d` lies in `[157/200, 34/35]` because the old one has `3/5 < d ≤ π/4`, and
+the new `d - s` is below `4/7` because the phases of W and D are more than one
+radian apart.
 -/
 
 noncomputable section
@@ -112,7 +115,8 @@ end SquaresInCircles.Six.Analytic.CardinalWestOwnSouth
 namespace SquaresInCircles.Six.Analytic
 open Normalization
 
-/-- Both S bits are covered; no missing-west configuration has cardinal W. -/
+/-- A missing west wing does not occur with W separated from the central square
+along its west side, whichever way S is separated. -/
 theorem not_missing_west_of_cardinal_west {R : ℝ} (P : NormalizedPacking R)
     (hW : P.ownBits 2=false) : ¬ MissingWestWing P := by
   intro h

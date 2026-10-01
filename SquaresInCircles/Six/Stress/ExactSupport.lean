@@ -1,29 +1,34 @@
 import SquaresInCircles.Six.Stress.Support
 
 /-!
-# Exact cap/vertex center support
+# The support of a square in a disk
 
-This is the support formula used by the repaired A2 stresses. The radius is a
-parameter, so it can be instantiated at the exact candidate radius rather than
-silently replacing it by Q0. A cap branch is selected only after proving its
-slope condition from 2 R V <= sqrt(U^2+V^2). Coordinate dominance alone does
-not select that branch.
+Let a centre have local coordinates `(a, b)` with
+`(|a| + 1/2)^2 + (|b| + 1/2)^2 ≤ R^2`, and let a force have local components
+`(x, y)`. Then `x a + y b ≤ scalarSupport R x y` (`scalar_center_support`).
+With `U ≥ V` the larger and the smaller of `|x|` and `|y|`, the support is
+`rhoAt R * U` when `2 R V ≤ sqrt (U^2 + V^2)`, the cap case: in `A = |a| + 1/2`,
+`B = |b| + 1/2` the maximum over the disk with `B ≥ 1/2` is then at the corner
+`(sqrt (R^2 - 1/4), 1/2)`. Otherwise it is the far-vertex value
+`R sqrt (U^2 + V^2) - (U + V)/2`, by Cauchy–Schwarz.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Stress
 
+/-- `sqrt (R^2 - 1/4) - 1/2`, the largest first coordinate of the centre of a
+unit square in the disk of radius `R` whose second coordinate is `0`. -/
 def rhoAt (R : ℝ) : ℝ := Real.sqrt (R^2-1/4)-1/2
 
+/-- The support for a force with components `U ≥ V ≥ 0`: the cap value or the
+far-vertex value. -/
 def orderedSupport (R U V : ℝ) : ℝ :=
   if 2*R*V ≤ Real.sqrt (U^2+V^2) then rhoAt R*U
   else R*Real.sqrt (U^2+V^2)-(U+V)/2
 
+/-- The support for a force with local components `(x, y)`. -/
 def scalarSupport (R x y : ℝ) : ℝ :=
   if |y| ≤ |x| then orderedSupport R |x| |y| else orderedSupport R |y| |x|
-
-def exactSupport (R : ℝ) (S : UnitSquare) (g : Point) : ℝ :=
-  scalarSupport R (frameX S g) (frameY S g)
 
 private lemma corner_support {A B a b c s q : ℝ}
     (ha : 0 < a) (hB : b ≤ B) (hc : 0 ≤ c)
@@ -77,8 +82,8 @@ lemma ordered_center_support {R a b U V : ℝ}
     dsimp [dot,vectorLength,normSq] at hround
     nlinarith
 
-/-- The scalar support bound in an arbitrary side frame, with sign and axis
-sorting handled explicitly. -/
+/-- The support bound for a centre with local coordinates `(a, b)` and a force
+with local components `(x, y)`. -/
 theorem scalar_center_support {R a b x y : ℝ}
     (hR : 1/2 < R) (hbox : (|a|+1/2)^2+(|b|+1/2)^2 ≤ R^2) :
     x*a+y*b ≤ scalarSupport R x y := by
@@ -93,27 +98,5 @@ theorem scalar_center_support {R a b x y : ℝ}
   · have hbox' : (|b|+1/2)^2+(|a|+1/2)^2 ≤ R^2 := by linarith
     have hh := ordered_center_support hR (abs_nonneg y) (abs_nonneg x) hbox'
     linarith
-
-lemma alpha_frame_center (S : UnitSquare) : alpha S (0,0)=|frameX S S.center| := by
-  have h : localX S (0,0) = -frameX S S.center := by
-    dsimp [localX,frameX]
-    ring
-  simp only [alpha,h,abs_neg]
-
-lemma beta_frame_center (S : UnitSquare) : beta S (0,0)=|frameY S S.center| := by
-  have h : localY S (0,0) = -frameY S S.center := by
-    dsimp [localY,frameY]
-    ring
-  simp only [beta,h,abs_neg]
-
-/-- The exact support is a proved upper bound on an actual contained center. -/
-theorem center_le_exactSupport {S : UnitSquare} {R : ℝ}
-    (hR : 1/2 < R) (hcontain : ∀ p, closedSquare S p → inDisk (0,0) R p) (g : Point) :
-    dot g S.center ≤ exactSupport R S g := by
-  have hc := phi_le_of_contained S (0,0) R hcontain
-  rw [alpha_frame_center,beta_frame_center] at hc
-  have hh := scalar_center_support (x := frameX S g) (y := frameY S g) hR hc
-  rw [frame_dot] at hh
-  exact hh
 
 end SquaresInCircles.Six.Stress

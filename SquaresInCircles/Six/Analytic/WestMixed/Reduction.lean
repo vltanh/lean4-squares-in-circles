@@ -1,15 +1,16 @@
 import SquaresInCircles.Six.Analytic.WestMixed.Diagonal
 
 /-!
-# Three boundary points, with no partition of the south variable
+# Own W, missing west wing: three boundary points
 
-The remaining actual domain is
-  16/25<=d<=11/14, 53/50-d<=v<=31/50, -2/5<=s<=12/25.
-For fixed s, concavity in v leaves v=53/50-d and v=31/50. The first boundary
-is concave in d; the second is increasing in d because the diagonal derivative
-is at least 7/10. Thus only (v,d)=(21/50,16/25), (31/50,16/25),
-(48/175,11/14) remain. An arbitrary south-only summand can be retained.
-Compilation and kernel acceptance remain unverified.
+On the domain `16/25 ≤ d ≤ 11/14`, `53/50 - d ≤ v ≤ 31/50`,
+`-2/5 ≤ s ≤ 12/25`, the function `K + base v s d`, for a constant `K` that may
+depend on `s`, is positive as soon as it is positive at the three points
+`(v, d) = (21/50, 16/25)`, `(31/50, 16/25)` and `(48/175, 11/14)`. For fixed
+`s` and `d` it is concave in `v`, so it is smallest on the edge
+`v = 53/50 - d` or on the edge `v = 31/50`. Along the first edge it is concave
+in `d`, and along the second it increases with `d`, because the derivative of
+`diagonalWave` is at least `7/10`.
 -/
 
 noncomputable section
@@ -34,7 +35,9 @@ private lemma wing_concave : ConcaveOn ℝ (Set.Icc 0 (2/3)) wing := by
     · simp only [f']; ring
   have hff (v : ℝ) : HasDerivAt f' (f'' v) v := by
     convert ((Real.hasDerivAt_sin v).const_mul (-A)).add
-      ((Real.hasDerivAt_cos v).const_mul B) using 1 <;> dsimp [f',f''] <;> ring
+      ((Real.hasDerivAt_cos v).const_mul B) using 1
+    dsimp [f',f'']
+    ring
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc 0 (2/3))
     (f' := f') (f'' := f'') (fun v _ => (hf v).continuousAt.continuousWithinAt)
   · intro v _; exact (hf v).hasDerivWithinAt
@@ -72,10 +75,14 @@ lemma west_concave {s d : ℝ} (hd : 16/25 ≤ d ∧ d ≤ 11/14) :
   have hf (v : ℝ) : HasDerivAt (fun x => base x s d) (f' v) v := by
     simp_rw [ident]
     convert (((Real.hasDerivAt_cos v).const_mul a).const_add (diagonalWave (d-s))).add
-      ((Real.hasDerivAt_sin v).const_mul b) using 1 <;> dsimp [f'] <;> ring
+      ((Real.hasDerivAt_sin v).const_mul b) using 1
+    dsimp [f']
+    ring
   have hff (v : ℝ) : HasDerivAt f' (f'' v) v := by
     convert ((Real.hasDerivAt_sin v).const_mul (-a)).add
-      ((Real.hasDerivAt_cos v).const_mul b) using 1 <;> dsimp [f',f''] <;> ring
+      ((Real.hasDerivAt_cos v).const_mul b) using 1
+    dsimp [f',f'']
+    ring
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc 0 (31/50))
     (f' := f') (f'' := f'') (by dsimp [base,wing,gapWave,diagonalWave]; fun_prop)
   · intro v _; exact (hf v).hasDerivWithinAt
@@ -143,7 +150,8 @@ lemma top_monotone {s : ℝ} (hs : -(2/5) ≤ s ∧ s ≤ 12/25) :
   dsimp [B]
   linarith [Real.sin_le_one (31/50+d)]
 
-/-- The south-only term K may be an explicit function of s in an application. -/
+/-- Positivity on the domain from the three boundary points; the constant `K`
+may depend on `s`. -/
 theorem positive_of_three_points {K v s d : ℝ}
     (hs : -(2/5) ≤ s ∧ s ≤ 12/25) (hd : 16/25 ≤ d ∧ d ≤ 11/14)
     (hv : 53/50-d ≤ v ∧ v ≤ 31/50)
@@ -153,9 +161,11 @@ theorem positive_of_three_points {K v s d : ℝ}
     0 < K+base v s d := by
   have hwallc := (concave_constant K (16/25) (11/14)).add (wall_concave hs)
   have hl : 0 < K+base (53/50-16/25) s (16/25) := by
-    convert hleft using 1 <;> norm_num
+    convert hleft using 1
+    norm_num
   have hu : 0 < K+base (53/50-11/14) s (11/14) := by
-    convert hright using 1 <;> norm_num
+    convert hright using 1
+    norm_num
   have hwall := positive_on_concave_interval hwallc hd hl hu
   have hm := top_monotone hs (by norm_num : (16:ℝ)/25 ∈ Set.Icc (16/25) (11/14)) hd hd.1
   have htop' : 0 < K+base (31/50) s d := by linarith

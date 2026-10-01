@@ -1,13 +1,18 @@
 import SquaresInCircles.Six.Analytic.DoubleSecondaryStress
 
 /-!
-# The three remaining double-D-secondary central-bit combinations
+# Double separation at D: wings along the sides of C
 
-Both cardinal helpers use one cosine-sum radial bound. OWN W/cardinal S uses
-the affine secondary cost and a whole-interval polynomial depth reserve.
-Cardinal W/OWN S keeps the folded secondary cost, whose helper minimum is
-proved analytically at d or the actual endpoint 2/3. Together with the earlier
-OWN/OWN theorem this covers all four central choices without any stress table.
+The gap of a double separation at D is positive when W or S, or both, are
+separated from C along the matching sides of C. Such a wing has a force of
+length `2 cos (π/4 - d/2)` for W or `2 cos (d/2)` for S, whatever its angle,
+with work at most `1113/1000` times that length, and the widths of its two
+edges sum to at least `1/2 + angularWidth d` (`cardinal_width_triangle`); for
+two such wings the lengths sum to at most `4 cos (π/8)`. A wing separated along
+its own axis keeps the affine lower bound for its cost, for S in terms of
+`π/2 - |s - d|`. The two mixed cases close with a lower bound in `d`
+(`south_mixed_depth_lower`) and one in `s` and `d`
+(`west_cardinal_own_south_reserve`).
 -/
 
 noncomputable section

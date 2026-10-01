@@ -2,21 +2,22 @@ import SquaresInCircles.Six.Normalization.CardinalWindows
 import SquaresInCircles.Six.Analytic.WestDiagonalOrder
 
 /-!
-# D4 and N18 from analytic pair geometry
+# The cyclic order of the exterior squares
 
-The four exact pair-coordinate identities live in Analytic.PairCoordinates.
-W/D order now follows from the actual pins, chart bounds and broad windows by
-the whole-domain four-axis proof. The six-variable finite-cover application and
-its root-membership/reification helpers have been removed from this module.
-The earlier construction of PinPacking remains a separate conversion task.
+With D in its half window `phase 3 ≤ 5π/4`, the angles of the five exterior
+squares increase in the order E, N, W, D, S, within one turn
+(`PinPacking.cyclic_primary_order`), and D has angle `π + d` with
+`-2/5 < d ≤ π/4`. Four of the five inequalities follow from the windows of the
+pins. The windows of W and D overlap; for them, the pins, the bounds on the
+charts and the disjointness of the two squares give `phase 2 < phase 3`
+(`Analytic.west_before_diagonal`).
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Normalization
 open Certificates
 
-/-- D4 with no interval certificate: two primary bounds and two pin-oriented
-transverse bounds exclude a reversal of the actual primary directions. -/
+/-- The angle of W is less than that of D. -/
 theorem PinPacking.west_before_diagonal {R : ℝ} (P : PinPacking R)
     (hD : P.phase 3 ≤ 5*Real.pi/4) : P.phase 2 < P.phase 3 := by
   have hw := P.window 2
@@ -38,7 +39,7 @@ theorem PinPacking.west_before_diagonal {R : ℝ} (P : PinPacking R)
     ⟨by linarith [hd.1,Real.pi_gt_d2],hD⟩ hpW hpD
     (P.exterior_disjoint 2 3 (by decide))
 
-/-- The normalized D window needed by the retained Appendix A and A2. -/
+/-- In its half window, D has angle `π + d` with `-2/5 < d ≤ π/4`. -/
 lemma PinPacking.diagonal_deviation {R : ℝ} (P : PinPacking R)
     (hD : P.phase 3 ≤ 5*Real.pi/4) :
     -2/5 < P.phase 3-Real.pi ∧ P.phase 3-Real.pi ≤ Real.pi/4 := by
@@ -46,7 +47,7 @@ lemma PinPacking.diagonal_deviation {R : ℝ} (P : PinPacking R)
   norm_num [windowLower,windowUpper,phaseCenter] at h
   constructor <;> linarith [h.1,h.2,Real.pi_gt_d2]
 
-/-- N18: the other four links use only the stated broad windows. -/
+/-- The angles of E, N, W, D and S increase, within one turn. -/
 theorem PinPacking.cyclic_primary_order {R : ℝ} (P : PinPacking R)
     (hD : P.phase 3 ≤ 5*Real.pi/4) :
     P.phase 0 < P.phase 1 ∧ P.phase 1 < P.phase 2 ∧

@@ -1,13 +1,15 @@
 import SquaresInCircles.Six.Analytic.FixedPair
 
 /-!
-# Exact smooth formulas on the geometric sign sectors
+# The pair minorant on the sign sectors
 
-The only walls are n=0, w=0 and n=w. The displayed root arguments are the
-squared norms of the actual fixed-pair forces. This is a symbolic identity,
-not a cap-branch assumption or a numerical subdivision.
+The signs of `n`, `w` and `n - w` cut the pair domain into sectors. On a sector
+each `|sin x|` and `max (sin x) 0` is a fixed multiple of `sin x`, and the
+cosines are positive, so the minorant is a constant plus trigonometric
+polynomials of degree one in `n`, `w` and `n - w`, minus the radii `northRadius`
+and `radius` times the lengths of the forces on N and W. Their squares `northSq`
+and `westSq` are explicit in the angles.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.FixedPair
 open Stress Normalization
@@ -16,6 +18,7 @@ def sign (p : Bool) : ℝ := if p then 1 else -1
 def positivePart (p : Bool) : ℝ := if p then 1 else 0
 def HasSign (p : Bool) (x : ℝ) : Prop := if p then 0≤x else x≤0
 
+/-- The sign sector of `(n, w)`, given by the signs of `n`, `w` and `n - w`. -/
 def Sector (pn pw pq : Bool) (n w : ℝ) : Prop :=
   HasSign pn n ∧ HasSign pw w ∧ HasSign pq (n-w)
 
@@ -122,11 +125,12 @@ def westTrig (wo pw : Bool) (w : ℝ) : ℝ :=
 def differenceTrig (u : Fin 4) (pq : Bool) (q : ℝ) : ℝ :=
   differenceCosCoeff u*Real.cos q+differenceSinCoeff u pq*Real.sin q
 
+/-- The smooth expression of the minorant on a sign sector. -/
 def formula (no wo : Bool) (u : Fin 4) (pn pw pq : Bool) (n w : ℝ) : ℝ :=
   constant no wo u+northTrig no u pn n+westTrig wo pw w+differenceTrig u pq (n-w)-
     northRadius u*Real.sqrt (northSq no u n w)-Six.radius*Real.sqrt (westSq wo u n w)
 
-/-- Exact sector formula, valid across either genuine center-support branch. -/
+/-- On each sign sector of the domain the minorant equals `formula`. -/
 theorem minorant_eq_formula {no wo : Bool} {u : Fin 4} {pn pw pq : Bool} {n w : ℝ}
     (hd : Domain no wo n w) (hs : Sector pn pw pq n w) :
     minorant no wo u n w=formula no wo u pn pw pq n w := by

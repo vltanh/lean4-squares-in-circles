@@ -2,17 +2,20 @@ import SquaresInCircles.Common.Basic
 import Mathlib.Tactic
 
 /-!
-# The finite counting step after five-pin covering
+# Pin labels
 
-This proves the counting paragraph of Lemma C. The geometric covering theorem
-is an explicit input, not an axiom hidden in the definition of a packing.
+If each of five squares with pairwise disjoint interiors holds one of five
+pins in its open square, the squares and the pins correspond one to one: no
+pin lies in two squares, so the squares hold distinct pins, and all five pins
+are used.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Normalization
 
-/-- Every square meeting the finite pin set and pairwise disjoint interiors
-force a bijective pin assignment. Each square contains exactly its one pin. -/
+/-- If each of five interior-disjoint squares holds a pin, a permutation `σ`
+labels them: the square `σ j` holds the pin `j`, no other square holds the
+pin `j`, and the square `σ j` holds no other pin. -/
 theorem pin_labels_of_covering (S : Fin 5 → UnitSquare) (pins : Fin 5 → Point)
     (hd : InteriorDisjoint S)
     (hcover : ∀ i, ∃ j, openSquare (S i) (pins j)) :

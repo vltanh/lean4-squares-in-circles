@@ -3,20 +3,28 @@ import SquaresInCircles.Six.Normalization.CapPiercing
 import SquaresInCircles.Six.Construction
 
 /-!
-# N22, N25 and N26 in the actual labelled frame
+# Squares beyond a side of the central square
 
-The local cap lemmas are transported by exact cardinal-coordinate identities.
-Both opposite-cardinal hypotheses are retained in N26. Uniqueness uses a point
-in both OPEN squares, not disjoint bounding boxes or disjoint closed squares.
+In the frame turned to a side of the central square, a nonnegative margin along
+that side says that the square lies beyond the line of the side, at distance
+`cardinalDepth` from the origin (`cardinal_margin_local`). Such a square
+contains in its interior the point of the axis half a unit beyond that line
+(`PinPacking.cardinal_piercing`). Hence two exterior squares with the same
+matching side, W and D, are not both separated along it
+(`PinPacking.one_helper_per_side`), and the depth of the side is at most the
+cap depth at the angle of the square (`PinPacking.cardinal_cap_depth`).
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Normalization
 open Certificates
 
+/-- The four sides of the central square among the seven axes. -/
 def IsCardinal (k : CentralAxis) : Prop :=
   k=.east ∨ k=.north ∨ k=.west ∨ k=.south
 
+/-- The distance from the origin to the line of a side of the central square
+centred at `c`. -/
 def cardinalDepth (c : Point) : CentralAxis → ℝ
   | .east => 1/2+c.1
   | .north => 1/2+c.2
@@ -24,6 +32,8 @@ def cardinalDepth (c : Point) : CentralAxis → ℝ
   | .south => 1/2-c.2
   | _ => 0
 
+/-- The point of the axis through the origin half a unit beyond a side of the
+central square. -/
 def cardinalPiercingPoint (c : Point) : CentralAxis → Point
   | .east => (1+c.1,0)
   | .north => (0,1+c.2)
@@ -34,6 +44,8 @@ def cardinalPiercingPoint (c : Point) : CentralAxis → Point
 lemma matchingCardinal_isCardinal (i : Fin 5) : IsCardinal (matchingCardinal i) := by
   fin_cases i <;> simp [matchingCardinal,IsCardinal]
 
+/-- The case of `PinPacking.cardinal_angle` for each exterior square and its
+matching side. -/
 def matchingCase : Fin 5 → Fin 6 := ![0,1,2,3,5]
 
 @[simp] lemma matchingCase_pin (i : Fin 5) : cardinalCasePin (matchingCase i) = i := by
@@ -63,9 +75,9 @@ lemma cardinal_margin_local (k : CentralAxis) (hk : IsCardinal k) (c : Point) (t
       centerX (t-cardinalCenter k) a b-angularWidth (t-cardinalCenter k)-cardinalDepth c k := by
   rcases hk with rfl | rfl | rfl | rfl
   all_goals simp only [centralMargin,cardinalCenter,cardinalDepth,centerX,centerY,angularWidth,
-    Real.cos_sub,Real.sin_sub,Real.cos_zero,Real.sin_zero,Real.cos_pi,Real.sin_pi,
+    Real.cos_sub,Real.sin_sub,Real.cos_pi,Real.sin_pi,
     Real.cos_pi_div_two,Real.sin_pi_div_two,south_sin,south_cos,abs_neg,
-    mul_zero,mul_one,mul_neg_one,zero_mul,one_mul,zero_add,add_zero,sub_zero,
+    mul_zero,mul_one,mul_neg_one,zero_add,add_zero,sub_zero,
     zero_sub,neg_neg]
   all_goals ring
 
@@ -78,9 +90,9 @@ lemma cardinal_piercing_coordinates (k : CentralAxis) (hk : IsCardinal k)
   rcases hk with rfl | rfl | rfl | rfl
   all_goals constructor <;> simp only [orientedSquare_localX,orientedSquare_localY,
     cardinalCenter,cardinalDepth,cardinalPiercingPoint,Real.cos_sub,Real.sin_sub,
-    Real.cos_zero,Real.sin_zero,Real.cos_pi,Real.sin_pi,Real.cos_pi_div_two,
+    Real.cos_pi,Real.sin_pi,Real.cos_pi_div_two,
     Real.sin_pi_div_two,south_sin,south_cos,mul_zero,mul_one,mul_neg_one,zero_mul,
-    one_mul,zero_add,add_zero,sub_zero,zero_sub,neg_neg]
+    zero_add,add_zero,sub_zero,zero_sub,neg_neg]
   all_goals ring
 
 lemma cardinal_depth_bounds {c : Point}
@@ -107,7 +119,8 @@ lemma local_cap_of_cardinal_margin {t a b : ℝ} {c : Point} {k : CentralAxis}
   have hb := (closed_center_coordinate_bounds hp).1.1
   linarith
 
-/-- K4 transported to the original cardinal direction. -/
+/-- A square separated from the central square along the matching side contains
+the point half a unit beyond that side. -/
 theorem PinPacking.cardinal_piercing {R : ℝ} (P : PinPacking R) (i : Fin 5)
     (hi : 0 ≤ centralMargin (matchingCardinal i) (P.phase i) (P.radial i) (P.transverse i)
       P.center.1 P.center.2) :
@@ -123,7 +136,8 @@ theorem PinPacking.cardinal_piercing {R : ℝ} (P : PinPacking R) (i : Fin 5)
   have hcoords := cardinal_piercing_coordinates k hk P.center (P.phase i) (P.radial i) (P.transverse i)
   simpa only [openSquare,hcoords.1,hcoords.2] using hp
 
-/-- N22 for all matching cardinal sides, including the possible W/D collision. -/
+/-- Two exterior squares with the same matching side, such as W and D, are not
+both separated along it. -/
 theorem PinPacking.one_helper_per_side {R : ℝ} (P : PinPacking R) (i j : Fin 5)
     (hside : matchingCardinal i=matchingCardinal j)
     (hi : 0 ≤ centralMargin (matchingCardinal i) (P.phase i) (P.radial i) (P.transverse i)
@@ -136,7 +150,8 @@ theorem PinPacking.one_helper_per_side {R : ℝ} (P : PinPacking R) (i j : Fin 5
   rw [← hside] at hpj
   exact P.exterior_disjoint i j hij _ ⟨hpi,hpj⟩
 
-/-- The local cap support inequality with its actual global depth. -/
+/-- The depth of the matching side is at most the cap depth at the angle of the
+square. -/
 theorem PinPacking.cardinal_cap_depth {R : ℝ} (P : PinPacking R) (i : Fin 5)
     (hi : 0 ≤ centralMargin (matchingCardinal i) (P.phase i) (P.radial i) (P.transverse i)
       P.center.1 P.center.2) :
@@ -151,33 +166,5 @@ theorem PinPacking.cardinal_cap_depth {R : ℝ} (P : PinPacking R) (i : Fin 5)
       using (P.contained i).containment
   · dsimp [centerX,angularWidth] at hm
     linarith
-
-/-- N26 east/west, with BOTH cardinal assumptions. -/
-theorem PinPacking.east_west_budget {R : ℝ} (P : PinPacking R)
-    (hE : 0 ≤ centralMargin .east (P.phase 0) (P.radial 0) (P.transverse 0) P.center.1 P.center.2)
-    (hW : 0 ≤ centralMargin .west (P.phase 2) (P.radial 2) (P.transverse 2) P.center.1 P.center.2) :
-    |P.phase 0|+|P.phase 2-Real.pi| < 4*c0 := by
-  have he := P.cardinal_cap_depth 0 hE
-  have hw := P.cardinal_cap_depth 2 hW
-  have hae := P.matching_cardinal_angle 0 hE
-  have haw := P.matching_cardinal_angle 2 hW
-  have h0 : matchingCardinal 0 = .east := rfl
-  have h2 : matchingCardinal 2 = .west := rfl
-  rw [h0] at he hae
-  rw [h2] at hw haw
-  simp only [cardinalCenter,cardinalDepth,sub_zero] at he hw hae haw
-  exact opposite_cardinal_angle_budget_of_caps he hw hae.le haw.le
-
-/-- N26 north/south, again only for two cardinal helpers. -/
-theorem PinPacking.north_south_budget {R : ℝ} (P : PinPacking R)
-    (hN : 0 ≤ centralMargin .north (P.phase 1) (P.radial 1) (P.transverse 1) P.center.1 P.center.2)
-    (hS : 0 ≤ centralMargin .south (P.phase 4) (P.radial 4) (P.transverse 4) P.center.1 P.center.2) :
-    |P.phase 1-Real.pi/2|+|P.phase 4-3*Real.pi/2| < 4*c0 := by
-  have hn := P.cardinal_cap_depth 1 hN
-  have hs := P.cardinal_cap_depth 4 hS
-  have han := P.matching_cardinal_angle 1 hN
-  have has := P.matching_cardinal_angle 4 hS
-  simp only [matchingCardinal,cardinalCenter,cardinalDepth] at hn hs han has
-  exact opposite_cardinal_angle_budget_of_caps hn hs han.le has.le
 
 end SquaresInCircles.Six.Normalization

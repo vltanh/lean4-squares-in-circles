@@ -2,11 +2,14 @@ import SquaresInCircles.Six.Normalization.CentralSAT
 import SquaresInCircles.Seven.SeparatingAxes
 
 /-!
-# Exact coordinates of the four pair axes
+# Coordinates of a pair of turned squares
 
-This module contains only identities and the actual geometric separating-axis
-alternative. It imports neither a normalized packing nor a scalar certificate.
-The names are retained in Normalization for compatibility with the stress code.
+For the squares `orientedSquare t a b` and `orientedSquare T A B`, with the
+relative turn `q = T - t`, the separating threshold is `1/2 + angularWidth q`.
+The difference of the centres has the coordinates
+`(A cos q - B sin q - a, A sin q + B cos q - b)` in the frame of the first
+square and `(A - a cos q - b sin q, B + a sin q - b cos q)` in the frame of the
+second.
 -/
 
 noncomputable section
@@ -60,26 +63,5 @@ lemma pair_frameY_right (t a b T A B : ℝ) :
   dsimp [frameY,orientedSquare,sub]
   rw [Real.cos_sub,Real.sin_sub]
   linear_combination B*(Real.sin_sq_add_cos_sq T)
-
-def pairMargin (i : Fin 4) (t a b T A B : ℝ) : ℝ :=
-  let d := T-t
-  let h := 1/2+angularWidth d
-  ![|A*Real.cos d-B*Real.sin d-a|-h,
-    |A*Real.sin d+B*Real.cos d-b|-h,
-    |A-a*Real.cos d-b*Real.sin d|-h,
-    |B+a*Real.sin d-b*Real.cos d|-h] i
-
-lemma pair_separators_complete {t a b T A B : ℝ}
-    (hd : ∀ p, ¬ (openSquare (orientedSquare t a b) p ∧
-      openSquare (orientedSquare T A B) p)) :
-    ∃ i : Fin 4, 0 ≤ pairMargin i t a b T A B := by
-  have h := Seven.SAT.separating_axes (orientedSquare t a b) (orientedSquare T A B) hd
-  rw [oriented_pair_threshold,pair_frameX_left,pair_frameY_left,
-    pair_frameX_right,pair_frameY_right] at h
-  rcases h with h | h | h | h
-  · exact ⟨0,by dsimp [pairMargin]; linarith⟩
-  · exact ⟨1,by dsimp [pairMargin]; linarith⟩
-  · exact ⟨2,by dsimp [pairMargin]; linarith⟩
-  · exact ⟨3,by dsimp [pairMargin]; linarith⟩
 
 end SquaresInCircles.Six.Normalization

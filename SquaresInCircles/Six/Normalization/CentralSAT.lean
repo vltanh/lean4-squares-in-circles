@@ -3,28 +3,31 @@ import SquaresInCircles.Six.SquareSupport
 import SquaresInCircles.Seven.SeparatingAxes
 
 /-!
-# T2: complete directed central separating axes
+# Separating axes of the central square
 
-The seven alternatives are derived from Seven's geometric SAT theorem. The
-only omitted direction is the opposite primary direction, ruled out using
-origin containment and a>=1/2. No pin or reduced two-choice theorem is assumed.
+Let an exterior square have frame angle `t` and centre `(a, b)` in its frame,
+with `a ≥ 1/2`, and let the central square be axis-parallel with centre
+`(cx, cy)` in `[0, 1/2]²`. If their interiors are disjoint, one of seven
+margins is nonnegative (`central_separators_complete`): along the own axis of
+the square, pointing away from the central square; along its secondary axis,
+in either direction; or along one of the four sides of the central square. The
+own axis pointing the other way is impossible, since `a ≥ 1/2` and the central
+square contains the origin. The threshold is `1/2 + angularWidth t`. A
+nonnegative margin along a side puts the whole closed square beyond that side.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Normalization
 
+/-- The seven axes along which an exterior square can be separated from the
+central square: its own axis, its secondary axis in either direction, and the
+four sides of the central square. -/
 inductive CentralAxis where
   | own | secPlus | secMinus | east | west | north | south
   deriving DecidableEq, Repr
 
-def CentralAxis.all : List CentralAxis :=
-  [.own,.secPlus,.secMinus,.east,.west,.north,.south]
-
-lemma CentralAxis.mem_all (k : CentralAxis) : k ∈ CentralAxis.all := by
-  cases k <;> simp [CentralAxis.all]
-
-instance : Fintype CentralAxis := Fintype.ofList CentralAxis.all CentralAxis.mem_all
-
+/-- `(|cos t| + |sin t|)/2`, the half-width along a coordinate axis of a unit
+square at angle `t`. -/
 def angularWidth (t : ℝ) : ℝ := (|Real.cos t|+|Real.sin t|)/2
 
 def centerX (t a b : ℝ) : ℝ := a*Real.cos t-b*Real.sin t
@@ -33,6 +36,9 @@ def centerY (t a b : ℝ) : ℝ := a*Real.sin t+b*Real.cos t
 def centralNormal (t cx cy : ℝ) : ℝ := cx*Real.cos t+cy*Real.sin t
 def centralTransverse (t cx cy : ℝ) : ℝ := -cx*Real.sin t+cy*Real.cos t
 
+/-- The separating inequality of the exterior square and the central square
+along the axis `k`, as a margin: it is nonnegative when they are separated
+along `k`. -/
 def centralMargin (k : CentralAxis) (t a b cx cy : ℝ) : ℝ :=
   match k with
   | .own => a-1/2-centralNormal t cx cy-angularWidth t
@@ -72,7 +78,8 @@ lemma secondary_difference (t a b cx cy : ℝ) :
   dsimp [frameY,orientedSquare,sub,centralTransverse]
   linear_combination b*(Real.sin_sq_add_cos_sq t)
 
-/-- Ordinary interior-disjointness supplies one of the seven margins. -/
+/-- An exterior square with interior disjoint from the central square has a
+nonnegative margin along one of the seven axes. -/
 theorem central_separators_complete {t a b cx cy : ℝ}
     (ha : 1/2 ≤ a) (hx0 : 0 ≤ cx) (hy0 : 0 ≤ cy)
     (hx : cx ≤ 1/2) (hy : cy ≤ 1/2)
@@ -120,7 +127,7 @@ lemma oriented_x_width (t a b : ℝ) : width (orientedSquare t a b) (1,0) = angu
   simp [width,frameX,frameY,orientedSquare,angularWidth,abs_neg]
 
 lemma oriented_y_width (t a b : ℝ) : width (orientedSquare t a b) (0,1) = angularWidth t := by
-  simp [width,frameX,frameY,orientedSquare,angularWidth,abs_neg,add_comm]
+  simp [width,frameX,frameY,orientedSquare,angularWidth,add_comm]
 
 lemma closed_center_coordinate_bounds {t a b : ℝ} {p : Point}
     (hp : closedSquare (orientedSquare t a b) p) :
@@ -128,18 +135,6 @@ lemma closed_center_coordinate_bounds {t a b : ℝ} {p : Point}
     (centerY t a b-angularWidth t ≤ p.2 ∧ p.2 ≤ centerY t a b+angularWidth t) := by
   have hx := Six.closed_projection_bounds (orientedSquare t a b) (1,0) hp
   have hy := Six.closed_projection_bounds (orientedSquare t a b) (0,1) hp
-  rw [oriented_x_width] at hx
-  rw [oriented_y_width] at hy
-  simpa [dot,orientedSquare,centerX,centerY] using And.intro hx hy
-
-lemma open_center_coordinate_bounds {t a b : ℝ} {p : Point}
-    (hp : openSquare (orientedSquare t a b) p) :
-    (centerX t a b-angularWidth t < p.1 ∧ p.1 < centerX t a b+angularWidth t) ∧
-    (centerY t a b-angularWidth t < p.2 ∧ p.2 < centerY t a b+angularWidth t) := by
-  have hx := Six.open_projection_bounds (orientedSquare t a b)
-    (n := (1,0)) (by norm_num) hp
-  have hy := Six.open_projection_bounds (orientedSquare t a b)
-    (n := (0,1)) (by norm_num) hp
   rw [oriented_x_width] at hx
   rw [oriented_y_width] at hy
   simpa [dot,orientedSquare,centerX,centerY] using And.intro hx hy

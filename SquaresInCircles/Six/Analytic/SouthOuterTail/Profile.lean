@@ -1,15 +1,19 @@
 import SquaresInCircles.Six.Analytic.SouthOuterTail.RootConcavity
 
 /-!
-# Whole-domain reduction of the final OWN-S upper tail
+# The south tail profile
 
-The four weights CW,CS,WD,DS are 3/5,1,2/5,3/10. Kind 0 is OWN W,
-kind 1 is cardinal W with v>=0, and kind 2 is cardinal W with v<=0.
-The two central x faces are retained. The d and s slices are positive first
-harmonics. The OWN-W x slice is also a positive harmonic; the two cardinal
-slices use the proved polynomial-root concavity. Thus only the endpoints of
-the complete physical rectangles remain, not a numerical cell cover.
-Compilation and kernel acceptance remain unverified.
+The south tail is the case of S separated from C along its own axis, at an
+angle `s ∈ [11/25, 2/3]`, with D at an angle `d ∈ [1/2, 11/14]`. The stress with
+weights `3/5`, `1`, `2/5` and `3/10` on C–W, C–S, W–D and D–S, after the support
+bounds, is the function `profile k upper x s d` of the angles. W is separated
+from C along its own axis (`k = 0`) or along the west side of C at an angle of
+either sign (`k = 1, 2`), and `upper` selects the end of the range of the first
+coordinate of the centre of C. In `s` and in `d` the profile is a first
+harmonic with nonnegative coefficients, so its minimum over an interval is at
+an end; in `x` this holds for `k = 0`, and for `k = 1, 2` the profile is
+concave. So it is positive on the box once it is positive at the ends of the
+three intervals.
 -/
 
 noncomputable section

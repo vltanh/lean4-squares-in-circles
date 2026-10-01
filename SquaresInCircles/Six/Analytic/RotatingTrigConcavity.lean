@@ -2,12 +2,14 @@ import SquaresInCircles.Six.Analytic.RotatingLength
 import SquaresInCircles.Six.Analytic.CompensatedTrigConcavity
 
 /-!
-# A trigonometric sum minus one rotating-vector length
+# A trigonometric sum minus a rotating length
 
-The sharp harmonic-mean curvature bound is compensated by the actual
-trigonometric terms. The hypotheses are whole-interval analytic inequalities,
-not sampled derivatives. The unequal fixed lengths guarantee a nonzero
-resultant everywhere, so no hidden root singularity is crossed.
+Let `T x = A cos x + B sin x + G cos (x + c) + H sin (x + c)`. The function
+`C + T x - R √(p² + q² + 2pq sin x)` is concave on an interval where
+`T ≥ R pq/(p + q)`: the second derivative of `T` is `-T`, and that of the root
+term is at most `R pq/(p + q)`. For `p ≠ q` the radicand is positive everywhere.
+An upper bound `L²` for the radicand gives the lower bound `-R L` for the root
+term.
 -/
 
 noncomputable section
@@ -23,7 +25,7 @@ lemma sineRoot_arg_positive {p q x : ℝ} (hp : 0≤p) (hq : 0≤q) (hne : p≠q
     0<harmonicArg (p^2+q^2) 0 (2*p*q) x :=
   harmonic_arg_positive hp hq hne rfl (by ring)
 
-/-- Concavity of the whole expression, even if the root term itself is convex. -/
+/-- The function is concave where `T ≥ R pq/(p + q)`. -/
 theorem rotating_trig_concave {C A B G H c R p q L l u : ℝ}
     (hR : 0≤R) (hp : 0≤p) (hq : 0≤q) (hpq : 0<p+q) (hne : p≠q)
     (hL : R*p*q/(p+q)≤L)
@@ -74,7 +76,7 @@ theorem rotating_trig_concave {C A B G H c R p q L l u : ℝ}
     dsimp [f'']
     linarith
 
-/-- A root upper bound proved by squaring yields a lower bound on its negative. -/
+/-- An upper bound `L²` for the radicand gives the lower bound `-R L`. -/
 lemma sineRoot_lower_of_squared {R p q x L : ℝ}
     (hR : 0≤R) (hL : 0≤L) (hp : 0≤p) (hq : 0≤q) (hne : p≠q)
     (hsq : p^2+q^2+2*p*q*Real.sin x≤L^2) : -R*L≤ sineRoot R p q x := by

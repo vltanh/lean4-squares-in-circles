@@ -2,14 +2,16 @@ import SquaresInCircles.Six.Analytic.HighDiagonalSupport
 import SquaresInCircles.Six.Analytic.HalfAngleControl
 
 /-!
-# Two whole-domain scalar reserves for a negative OWN south angle
+# A negative angle of S: two reserves
 
-Write v=-s, 2/25 <= v <= 5/8, and 1/2 <= d <= pi/4. Both reserves increase
-with d by first-quadrant sine/cosine monotonicity, so d=1/2 is the sole
-boundary to examine. One reserve has a positive quadratic Taylor minorant.
-For the other, set t=sin(v)/(1+cos(v)); after multiplying by 1+t^2 the
-boundary expression is a cubic. Shifting by t=1/25 gives coefficient bounds
-p0>1/4000, p1>=1, p2>=-1, p3>=0. Thus no subdivision of v is needed.
+Let `-v` be the angle of S, with `2/25 ≤ v ≤ 5/8`, let `1/2 ≤ d ≤ π/4` be the
+angle of D, and let `t = sin v/(1 + cos v)`. Two inequalities in `v` and `d`,
+one for each separator of D and S, hold with a positive reserve. Both reserves
+increase with `d`, by the monotonicity of `sin` and `cos` in the first quadrant,
+so it is enough to take `d = 1/2`. There the first is a positive quadratic in
+`1/2 + v` after Taylor bounds, and the second, multiplied by `1 + t²`, is a
+cubic in `x = t - 1/25` with coefficients `p₀ > 1/4000`, `p₁ ≥ 1`, `p₂ ≥ -1` and
+`p₃ ≥ 0`, positive on `0 ≤ x ≤ 1`.
 -/
 
 noncomputable section
@@ -54,7 +56,7 @@ lemma south_tail_trig {v d : ℝ}
   exact ⟨by nlinarith only [hs,hl],Real.cos_nonneg_of_mem_Icc
     ⟨by linarith [h.1,Real.pi_pos],h.2⟩⟩
 
-/-- This is the reserve against the S-sourced separating normal. -/
+/-- The reserve for the separator of D and S along the secondary axis of S. -/
 theorem south_wing_tail_reserve {v d : ℝ}
     (hv : 2/25 ≤ v ∧ v ≤ 5/8) (hd : 1/2 ≤ d ∧ d ≤ Real.pi/4) :
     coreCeiling+(55641/50000)*halfRatio v+(21/20)*Real.cos (d+v)+
@@ -92,7 +94,8 @@ theorem south_wing_tail_reserve {v d : ℝ}
   dsimp [coreCeiling]
   nlinarith only [hbase,hB,hsin,hcos]
 
-/-- A fixed supporting line on the shifted far-corner disk. -/
+/-- The constant of a supporting line `a + (21/50) b = 7009/6250` of the disk of
+far corners. -/
 def southSupportCeiling : ℝ := 7009/6250
 
 def southDualSlope : ℝ := 21/50
@@ -181,8 +184,7 @@ private lemma southDGap_positive {v d : ℝ}
   dsimp [southDGap] at *
   nlinarith only [hbase,hS,hC,hL]
 
-/-- Reserve against the D-sourced normal, with the canonical transverse
-constraint and the shared-center diagonal loss retained. -/
+/-- The reserve for the separator of D and S along the secondary axis of D. -/
 theorem south_diagonal_tail_reserve {v d : ℝ}
     (hv : 2/25 ≤ v ∧ v ≤ 5/8) (hd : 1/2 ≤ d ∧ d ≤ Real.pi/4) :
     southSupportCeiling*(Real.cos (d+v)+halfRatio v*Real.sin (d+v))+

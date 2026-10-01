@@ -1,12 +1,15 @@
 import SquaresInCircles.Six.Analytic.TransverseProfileBounds
 
 /-!
-# A sharper front profile for the D-secondary reduction
+# A transverse bound for a square separated along its own axis
 
-The actual central box gives 1/2-cx,1/2-cy > 387/1000. On the full interval
-0<=d<=1/2 a single sextic identity proves |b|<58/125-47d/100.
-The displayed polynomial has positive coefficients in d and 1-2d; no angle
-subdivision, sampled values or certificate engine are used.
+For a square at the phase `π + d` separated from C along its own axis, the
+box of the centre of C gives `a + 1/2 ≥ 1 + (387/1000)(cos d + sin d)`. If
+the square is contained and `0 ≤ d ≤ 1/2`, this forces
+`|b| < 58/125 - (47/100) d`: Taylor bounds give a cubic lower bound for
+`a + 1/2`, and the excess of the resulting circle condition over `Q0` is a
+positive constant plus `2d` times a quintic with positive coefficients in the
+Bernstein basis in `2d`. Also `rho0 < 55641/50000` and `U0 < 463/1000`.
 -/
 
 noncomputable section
@@ -49,7 +52,8 @@ private lemma sharp_front_circle {d : ℝ} (hd : 0≤d ∧ d≤1/2) :
     ring
   nlinarith only [hp,hid]
 
-/-- A pure profile implication used with the genuine central OWN inequality. -/
+/-- A contained square with `a + 1/2 ≥ 1 + (387/1000)(cos d + sin d)`, for
+`0 ≤ d ≤ 1/2`, has `|b| < 58/125 - (47/100) d`. -/
 theorem sharp_front_transverse {a b d : ℝ} (hd : 0≤d ∧ d≤1/2)
     (hprofile : 1+(387/1000)*(Real.cos d+Real.sin d)≤a+1/2)
     (hbox : (a+1/2)^2+(|b|+1/2)^2≤Q0) : |b|<58/125-(47/100)*d := by
@@ -68,28 +72,5 @@ theorem sharp_front_transverse {a b d : ℝ} (hd : 0≤d ∧ d≤1/2)
     (show 0≤|b|+1/2+(241/250-(47/100)*d) by linarith [abs_nonneg b])
   have hbad := sharp_front_circle hd
   nlinarith only [hA,hB,hbox,hbad]
-
-lemma own_sharp_front_profile {a b cx cy d : ℝ}
-    (hx : cx≤c0) (hy : cy≤c0) (hd : 0≤d ∧ d≤1/2)
-    (hown : 0≤centralMargin .own (Real.pi+d) a b cx cy) :
-    1+(387/1000)*(Real.cos d+Real.sin d)≤a+1/2 := by
-  have hc0 : 0≤Real.cos d := Real.cos_nonneg_of_mem_Icc
-    ⟨by linarith [hd.1,Real.pi_pos],by linarith [hd.2,Real.pi_gt_d2]⟩
-  have hs0 := Real.sin_nonneg_of_nonneg_of_le_pi hd.1 (by linarith [hd.2,Real.pi_gt_d2])
-  have hcx : 0≤1/2-cx-387/1000 := by dsimp [c0] at hx; linarith [rho0_upper]
-  have hcy : 0≤1/2-cy-387/1000 := by dsimp [c0] at hy; linarith [rho0_upper]
-  have hX := mul_nonneg hcx hc0
-  have hY := mul_nonneg hcy hs0
-  have hcpi : Real.cos (Real.pi+d)=-Real.cos d := by rw [add_comm,Real.cos_add_pi]
-  have hspi : Real.sin (Real.pi+d)=-Real.sin d := by rw [add_comm,Real.sin_add_pi]
-  simp only [centralMargin,centralNormal,angularWidth,hcpi,hspi,
-    abs_neg,abs_of_nonneg hc0,abs_of_nonneg hs0] at hown
-  nlinarith only [hown,hX,hY]
-
-lemma own_sharp_front_transverse {a b cx cy d : ℝ}
-    (hc : ContainedChart a |b|) (hx : cx≤c0) (hy : cy≤c0) (hd : 0≤d ∧ d≤1/2)
-    (hown : 0≤centralMargin .own (Real.pi+d) a b cx cy) :
-    |b|<58/125-(47/100)*d :=
-  sharp_front_transverse hd (own_sharp_front_profile hx hy hd hown) hc.containment
 
 end SquaresInCircles.Six.Analytic

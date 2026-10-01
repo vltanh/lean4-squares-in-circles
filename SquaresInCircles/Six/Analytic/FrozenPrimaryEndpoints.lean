@@ -4,17 +4,18 @@ import SquaresInCircles.Six.Stress.Support
 import SquaresInCircles.Seven.Analysis
 
 /-!
-# Four original corners of the OWN-W inward-primary stress
+# The inward stress at the corners
 
-The multiplier triple is (19/50,43/100,19/100) on C-D,C-W,W-D.
-At fixed centers the stress is concave in v=-w and d. Only the original
-rectangle corners (0 or 2/3, 0 or pi/4) are needed. The axial corner uses the
-primary radius bound, not an invalid vertex/cap substitution. At the other
-three corners the universally valid signed vertex bound suffices.
-
-The root upper bounds are the displayed fractions 26/100,281/1000,405/1000.
-They follow by squaring and fixed-angle Taylor bounds. There is no interval
-partition, support-wall differentiation, or generated checker in this proof.
+Let W and D be at the phases `π - v` and `π + d`. The weights `43/100`,
+`19/50` and `19/100` on the separations C–W and C–D along the own axes of W
+and D, and W–D along the own axis of W directed inwards, give a stress which,
+with the centres fixed, is a constant plus harmonics in `v`, `d` and `v + d`.
+It is positive at the four corners `v ∈ {0, 2/3}`, `d ∈ {0, π/4}`. At
+`v = d = 0` the bound `a ≤ rho0` on the radial coordinate of D suffices; at
+the other three corners the support of D is bounded by the vertex bound with
+radius `1689/1000` and force lengths at most `26/100`, `281/1000` and
+`405/1000`, from Taylor bounds at `2/3` and the value `cos(π/4) = √2/2`. The
+centre of C is bounded by its box.
 -/
 
 noncomputable section
@@ -59,7 +60,8 @@ lemma inward_primary_norm_identity (q : ℝ) :
       361/2000-(361/2500)*Real.cos q := by
   nlinarith [Real.sin_sq_add_cos_sq q]
 
-/-- A single endpoint support rule; L,X,Y are proved bounds, not a certificate. -/
+/-- A lower bound for the inward stress at fixed angles, from a bound `L` on
+the length of the force on D and bounds `X`, `Y` on the force on C. -/
 lemma inward_primary_endpoint_lower {v d aw ad bd cx cy L X Y : ℝ}
     (haw : aw≤rho0) (hc : (0≤cx ∧ cx≤c0) ∧ (0≤cy ∧ cy≤c0))
     (hD : ContainedChart ad |bd|)

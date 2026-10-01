@@ -2,17 +2,14 @@ import SquaresInCircles.Six.PinAxes
 import SquaresInCircles.Six.Normalization.CenterRadius
 
 /-!
-# A uniform primary-axis exclusion before the D-edge classification
+# Outward axes do not separate
 
-Every exterior center lies in the radius-rho0 disk, while its own primary
-coordinate is at least aMin. Therefore another center can advance by at most
-rho0-aMin < 1/2 in that outward primary direction. A square-pair threshold is
-at least 1/2, so that direction cannot separate the pair. The same argument
-excludes the negative primary direction of the destination square.
-
-This applies to every normalized exterior pair. It replaces these elementary
-branches without a stress table, any narrower candidate angle domain, or any
-assumption about the two surviving diagonal secondary edges.
+Every exterior centre lies within `ρ0` of the disk centre, and its coordinate
+along its primary axis is at least `aMin = 2 - ρ0`. So the centre of another
+square lies less than `ρ0 - aMin < 1/2` further out along that axis, while the
+threshold of a pair of squares is at least `1/2`. Hence two exterior squares are
+never separated along the outward primary axis of the first, nor along the
+inward primary axis of the second.
 -/
 
 noncomputable section
@@ -71,8 +68,9 @@ lemma normalized_primary_lower {R : ℝ} (P : NormalizedPacking R) (i : Fin 5) :
   rw [he]
   exact (P.contained i).aMin_le (P.avoidsCore i)
 
-/-- Source 0 is the outward primary of the source square; source 5 is the
-negative primary of the destination. Neither is possible for any exterior pair. -/
+/-- Two exterior squares are not separated along the pair normals `0` and `5`,
+the outward primary axis of the first and the inward primary axis of the
+second. -/
 theorem normalized_outward_axes_excluded {R : ℝ} (P : NormalizedPacking R)
     (i j : Fin 5) (k : Fin 8)
     (hsep : Seven.SAT.threshold (P.square i) (P.square j)≤
@@ -95,31 +93,5 @@ theorem normalized_outward_axes_excluded {R : ℝ} (P : NormalizedPacking R)
       dot (scale (-1) (normalX (P.square j)))
         (sub (P.square j).center (P.square i).center) at hsep
     linarith
-
-/-- Four genuinely possible directed W/D sources, before the remaining primary
-and secondary stress reductions. Nothing asserts yet that only source 2 survives. -/
-theorem analytic_DW_four_sources {R : ℝ} (P : NormalizedPacking R) :
-    ∃ k : Fin 8,
-      Seven.SAT.threshold (P.square 2) (P.square 3)≤
-        dot (Stress.pairNormal k (P.square 2) (P.square 3))
-          (sub (P.square 3).center (P.square 2).center) ∧
-      (k=1 ∨ k=2 ∨ k=4 ∨ k=6) := by
-  obtain ⟨k,hk,h3,h7⟩ := P.DW_source
-  have he := normalized_outward_axes_excluded P 2 3 k hk
-  refine ⟨k,hk,?_⟩
-  fin_cases k <;> simp_all
-
-/-- The same four-source reduction for D/S. In particular negative S-primary
-requires no stress-table row: it is the universally excluded destination axis. -/
-theorem analytic_DS_four_sources {R : ℝ} (P : NormalizedPacking R) :
-    ∃ k : Fin 8,
-      Seven.SAT.threshold (P.square 3) (P.square 4)≤
-        dot (Stress.pairNormal k (P.square 3) (P.square 4))
-          (sub (P.square 4).center (P.square 3).center) ∧
-      (k=1 ∨ k=2 ∨ k=4 ∨ k=6) := by
-  obtain ⟨k,hk,h0,h3,h7⟩ := P.DS_source
-  have he := normalized_outward_axes_excluded P 3 4 k hk
-  refine ⟨k,hk,?_⟩
-  fin_cases k <;> simp_all
 
 end SquaresInCircles.Six.Analytic

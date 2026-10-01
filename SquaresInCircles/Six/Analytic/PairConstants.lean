@@ -1,10 +1,12 @@
 import SquaresInCircles.Six.Analytic.CandidateBounds
 
 /-!
-# Candidate constants for the analytic pair argument
+# Bounds on the constants of the pair stress
 
-All bounds follow from the exact candidate quadratic and positive products.
-No normalization or numerical evaluator is imported to prove a constant.
+Rational bounds on the weights `rStar` and `mStar`, on `cStar`, `rhoStar` and
+the optimal radius, and `Six.radius rStar/(1 + rStar) < 457/1000`. They follow
+from the rational bounds on `rStar`, `kStar` and the radius by multiplying
+positive quantities.
 -/
 
 noncomputable section
@@ -45,19 +47,6 @@ lemma north_curvature_reserve : Six.radius*rStar/(1+rStar)<457/1000 := by
   have hp := mul_le_mul candidate_radius_bounds.2.le hratio hnonneg
     (by norm_num : (0:ℝ)≤1689/1000)
   have hb : Six.radius*rStar/(1+rStar)≤(1689/1000:ℝ)*(37/137) := by
-    simpa only [mul_div_assoc] using hp
-  norm_num at hb
-  linarith
-
-lemma alternate_north_curvature_reserve : rhoStar*rStar/(1+rStar)<301/1000 := by
-  have hr := pair_multiplier_bounds
-  have hratio : rStar/(1+rStar)≤(37:ℝ)/137 := by
-    apply (div_le_iff₀ one_add_rStar_pos).mpr
-    linarith [hr.2.1]
-  have hnonneg : 0≤rStar/(1+rStar) := div_nonneg rStar_pos.le one_add_rStar_pos.le
-  have hp := mul_le_mul rhoStar_upper.le hratio hnonneg
-    (by norm_num : (0:ℝ)≤1113/1000)
-  have hb : rhoStar*rStar/(1+rStar)≤(1113/1000:ℝ)*(37/137) := by
     simpa only [mul_div_assoc] using hp
   norm_num at hb
   linarith

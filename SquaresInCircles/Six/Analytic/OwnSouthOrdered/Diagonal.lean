@@ -1,15 +1,15 @@
 import SquaresInCircles.Six.Analytic.OwnSouthOrdered.Chord
 
 /-!
-# Diagonal monotonicity without a partition
+# Ordered own wings: the angle of D
 
-The chord derivative is decreasing; the opposite-wing derivative is increasing.
-Since v,s >= 0, the full d derivative is bounded by its v=s=0 expression.
-Taylor inequalities reduce that expression to
-  -53/320 + (613/1000)d - (461/800)d^2,
-whose completed-square remainder is -47973/18440000.
-Thus the whole domain reduces to d=11/14. No grid or root finder is involved.
-Compilation remains unverified.
+`profile v s d` bounds the defect of the stress from below
+(`profile_le_defect`). It decreases in `d` on `[1/2, 11/14]`, so its least
+value is at `d = 11/14`. Its derivative in `d` is
+`chordDerivative (d + v) + southDerivative (d - s)`, whose first term decreases
+and second term increases in its argument; for `v, s ≥ 0` it is at most its
+value at `v = s = 0`, which Taylor bounds reduce to
+`-53/320 + 613/1000 d - 461/800 d^2`, negative by completing the square.
 -/
 
 noncomputable section
@@ -18,12 +18,18 @@ namespace SquaresInCircles.Six.Analytic.OwnSouthOrdered
 def wingCos : ℝ := 19359/50000
 def wingSin : ℝ := 30641/50000
 
+/-- `(cos x + sin x)/2 - coreUpper (cos x - sin x)`: the width term of an own
+wing at angle `x` minus its part of the bound on the work of C. -/
 def wing (x : ℝ) : ℝ := wingCos*Real.cos x+wingSin*Real.sin x
 
+/-- `(cos x + sin x)/2 - rhoBound cos x`: the terms of the stress in
+`x = d - s`. -/
 def southTerm (x : ℝ) : ℝ := -wingSin*Real.cos x+(1/2)*Real.sin x
 
 def southDerivative (x : ℝ) : ℝ := wingSin*Real.sin x+(1/2)*Real.cos x
 
+/-- A lower bound for the defect of the stress, in the angles `v`, `s` and
+`d`. -/
 def profile (v s d : ℝ) : ℝ :=
   -83178077/125000000+westWeight*wing v+southWeight*wing s+
     chord (d+v)+southTerm (d-s)
@@ -64,7 +70,8 @@ lemma south_derivative_monotone :
   dsimp [wingSin]
   linarith
 
-/-- The only scalar reserve needed for the diagonal derivative. -/
+/-- The derivative of the profile in `d` at `v = s = 0` is negative on
+`[1/2, 11/14]`. -/
 lemma diagonal_comparison_negative {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 11/14) :
     (159/100)*Real.cos d+wingSin*Real.sin d-
       (chordCoefficient/2)*Real.cos (d/2) < 0 := by

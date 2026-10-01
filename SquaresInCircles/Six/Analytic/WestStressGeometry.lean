@@ -3,13 +3,18 @@ import SquaresInCircles.Six.Analytic.CapChart
 import SquaresInCircles.Six.Stress.Support
 
 /-!
-# The actual three-square geometry behind the analytic Appendix A stress
+# D is not separated from C along the west side of C
 
-The multipliers are (3/10,9/20,1/4), on C--D, C--W and W--D. The central
-force and both exterior forces are computed exactly. Universal vertex support
-is used; selected signed projections give valid lower bounds for the widths,
-so no unproved cap-branch or absolute-value sign is assumed. The two remaining
-secondary normals give precisely the expressions proved positive above.
+Let W and D be at the phases `π + t` and `π + u`, with `-2/3 ≤ t ≤ u` and
+`-2/5 ≤ u ≤ 2/5`, let W be separated from C along its primary axis and D along
+the west side of C, and let W and D be disjoint, hence separated along the
+secondary axis of W or of D, at the angle `z = t` or `z = u`. The weights
+`3/10`, `9/20` and `1/4` on these three separations give forces whose works are
+at most the support of the box `[0, c0]²` for C and the vertex supports of W
+and D, with their widths bounded below by signed projections. So the threshold
+sum minus these bounds, `westGeometricDefect t u z`, is nonpositive; but at
+`z = t` and `z = u` it is `westStressW t u` and `westStressD t u`, which are
+positive.
 -/
 
 noncomputable section
@@ -35,6 +40,8 @@ def westWidthW (t z:ℝ) : ℝ := 9/40+(1/8)*(Real.sin (z-t)+Real.cos (z-t))
 def westWidthD (u z:ℝ) : ℝ :=
   (3/20)*Real.cos u-(3/20)*Real.sin u+(1/8)*(Real.sin (u-z)+Real.cos (u-z))
 
+/-- The threshold sum of the west stress minus the bounds on the works, with W
+and D separated along the normal `(sin z, -cos z)`. -/
 def westGeometricDefect (t u z:ℝ) : ℝ :=
   westThreshold t u-westCentralSupport t-
     R0*Real.sqrt (53/200+(9/40)*Real.sin (z-t))-
@@ -129,7 +136,7 @@ lemma west_cardinal_separator {c:Point} {u A B:ℝ}
   simp only [west_cos_pi_add,west_sin_pi_add] at h ⊢
   linarith
 
-/-- Any actual selected forward secondary normal has nonpositive defect. -/
+/-- The three separating inequalities make the defect nonpositive. -/
 theorem west_geometric_defect_nonpos {c:Point} {t u z a b A B:ℝ}
     (hc:(0≤c.1 ∧ c.1≤c0) ∧ (0≤c.2 ∧ c.2≤c0))
     (hW:ContainedChart a |b|) (hD:ContainedChart A |B|)
@@ -186,8 +193,8 @@ lemma west_defect_source_form {t u:ℝ}
     angularWidth,abs_of_nonneg hct,abs_of_nonneg hcu,abs_of_nonneg hcδ,abs_of_nonneg hsδ]
   all_goals linarith only [habs]
 
-/-- Analytic Appendix A on its entire compact triangle. The two explicit core
-premises are already outputs of normalization before this theorem is applied. -/
+/-- For `-2/3 ≤ t ≤ u` and `-2/5 ≤ u ≤ 2/5`, W separated from C along its
+primary axis and D along the west side of C cannot be disjoint. -/
 theorem west_cardinal_impossible {c:Point} {t u a b A B:ℝ}
     (hc:(0≤c.1 ∧ c.1≤c0) ∧ (0≤c.2 ∧ c.2≤c0))
     (hW:ContainedChart a |b|) (hD:ContainedChart A |B|)

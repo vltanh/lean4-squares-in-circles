@@ -2,15 +2,17 @@ import SquaresInCircles.Six.Analytic.SoftAxialSupportWide
 import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Curvature
 
 /-!
-# The cardinal-S resultant stays in one smooth-support cone
+# Own W, cardinal S: the force on S
 
-With equal CS and D-sourced DS weights, its local components are
- U=cos s+cos(d-s), V=sin(d-s)-sin s.
-The source restriction d-s<=pi/4 and the cardinal upper bound s<=2/5 imply
- U>=33/20 and |V|<=3U/5 throughout the domain. The first bound uses
- s^2+(d-s)^2<=137/196. For the second, write x=d/2-s and use the single
- interval |x|<=15/28 with explicit sine and cosine bounds.
-No support-branch assumption or finite cover is used. Compilation is deferred.
+Let S be separated from C along the south side of C, and from D along the
+secondary axis of D. Equal weights on the two edges give S the force with the
+components `U = cos s + cos (d-s)` and `V = sin (d-s) - sin s` in its frame,
+that is `2 cos (d/2)` times `cos (d/2-s)` and `sin (d/2-s)`. For
+`1/2 ≤ d ≤ π/4`, `s ≤ 2/5` and `d - s ≤ π/4` the force lies in the cone
+`U ≥ 33/20`, `|V| ≤ 3U/5`: the first bound follows from `cos x ≥ 1 - x²/2` and
+`s² + (d-s)² ≤ 137/196`, the second from `|sin x| ≤ (3/5) cos x` for
+`|x| ≤ 15/28`. In this cone a contained square has support at most
+`rho0 U + (3/25) V²`.
 -/
 
 noncomputable section
@@ -70,6 +72,7 @@ private lemma half_angle_ratio {x : ℝ} (hx : -(15/28) ≤ x ∧ x ≤ 15/28) :
   have hsin : |Real.sin x| ≤ 511/1000 := abs_le.mpr ⟨by linarith,hu⟩
   linarith
 
+/-- The force on S lies in the cone `U ≥ 33/20`, `|V| ≤ 3U/5`. -/
 lemma south_force_cone {s d : ℝ}
     (hd : 1/2 ≤ d ∧ d ≤ Real.pi/4) (hs : s ≤ 2/5) (hr : d-s ≤ Real.pi/4) :
     33/20 ≤ southRadial s d ∧ |southTransverse s d| ≤ (3/5)*southRadial s d := by
@@ -94,6 +97,8 @@ lemma south_force_cone {s d : ℝ}
   rw [hUI,hVI,abs_mul,abs_of_nonneg hpos]
   nlinarith only [hp]
 
+/-- The support of S, with `rho0` replaced by its rational bound
+`55641/50000`. -/
 lemma south_support {a b s d : ℝ} (hc : ContainedChart a |b|)
     (hd : 1/2 ≤ d ∧ d ≤ Real.pi/4) (hs : s ≤ 2/5) (hr : d-s ≤ Real.pi/4) :
     southRadial s d*a+southTransverse s d*b ≤

@@ -2,12 +2,15 @@ import SquaresInCircles.Six.Analytic.PairConstants
 import SquaresInCircles.Six.Stress.VertexEnvelope
 
 /-!
-# Rational constants at the geometric pair endpoints
+# Sharp bounds for the constants of the model
 
-The new lower bound for s comes from one evaluation of its exact defining
-quadratic and its negative slope on the small-root interval. Every other
-bound is a positive product, a division with a proved positive denominator,
-or the defining circle/cap identity. No numerical root estimate is assumed.
+Rational brackets of width about `10⁻⁷` for `sStar`, `tStar`, `rStar`,
+`kStar`, `mStar`, `Six.radius`, `rhoStar` and `cStar`, and an upper bound for
+`pairBase = mStar (1/2 - tStar)`. The lower bound for `sStar` comes from the
+sign of its quadratic at `8424567/10⁸` and the negative slope of the quadratic
+below its smaller root. The other bounds follow by products, by quotients with
+positive denominators, and from the identities `Six.radius² = qStar` and
+`(rhoStar + 1/2)² + 1/4 = qStar`.
 -/
 
 noncomputable section

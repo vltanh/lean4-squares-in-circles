@@ -3,14 +3,15 @@ import SquaresInCircles.Six.Analytic.PairSharpConstants
 import SquaresInCircles.Six.Analytic.PairPerturbation
 
 /-!
-# Rational-polynomial data for the forced endpoints
+# A polynomial model of the pair gap
 
-The constants are justified in PairSharpConstants. Sin and cos are replaced
-by the displayed seventh/sixth degree polynomials, whose uniform errors are
-proved in PairTaylorApprox. The final error estimate is proved in the next
-module; this file does not assert any endpoint positivity.
+The gap is compared with a model in which the sine and the cosine are the Taylor
+polynomials `sinP` and `cosP` of degrees seven and six, the constants `rStar`,
+`mStar` and `cStar` are rationals within `3/10⁷` of them, and the radii are
+rational upper bounds. The model is a part `linearPart`, linear in the forces,
+minus the scaled lengths of the north and west vectors; `budget` sets aside
+`1/5000` of the linear part for the errors of the model.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.FixedPair.Polynomial
 open Stress Normalization PairTaylor
@@ -54,8 +55,7 @@ def linearPart (no wo : Bool) (u : Fin 4) (n w : ℝ) : ℝ :=
     ((westVector wo u n w).1-(westVector wo u n w).2)/2-
     penaltyP no wo n w-baseUpper-line w-(1/1000)*|n|
 
-/-- 1/5000 is paid for the whole-domain analytic perturbation bound, not a
-numerical tolerance for accepting an unresolved case. -/
+/-- The linear part minus `1/5000`, which pays for the errors of the model. -/
 def budget (no wo : Bool) (u : Fin 4) (n w : ℝ) : ℝ := linearPart no wo u n w-1/5000
 
 def northSquare (no : Bool) (u : Fin 4) (n w : ℝ) : ℝ :=
@@ -90,13 +90,5 @@ lemma circle_bounds : 0≤Six.radius ∧ Six.radius≤circleUpper ∧ 0≤circle
   ⟨Six.radius_pos.le,pair_radius_sharp_bounds.2.le,by norm_num [circleUpper],by norm_num [circleUpper]⟩
 
 lemma base_bound : pairBase≤baseUpper := pair_base_sharp_upper.le
-
-lemma squareN_nonneg (no : Bool) (u : Fin 4) (n w : ℝ) : 0≤ squareN no u n w := by
-  dsimp [squareN,northSquare]
-  positivity
-
-lemma squareW_nonneg (wo : Bool) (u : Fin 4) (n w : ℝ) : 0≤ squareW wo u n w := by
-  dsimp [squareW,westSquare]
-  positivity
 
 end SquaresInCircles.Six.Analytic.FixedPair.Polynomial

@@ -2,13 +2,15 @@ import SquaresInCircles.Six.Analytic.CapChart
 import SquaresInCircles.Six.Analytic.SouthMarker
 
 /-!
-# Exact formulas for the east, north and south primary quadrants
+# Central margins in the north and south quadrants
 
-Only the three geometrically distinguished primary quadrants are used; the
-west quadrant is handled by the universal pi/4 marker displacement. These
-identities retain all signs of b and of the local angle.
+For a square at phase `π/2 + t` or `-π/2 + t`, the margins of its separating
+inequalities with C, along its own axis, along either direction of its secondary
+axis and along the north and south sides of C, are explicit in `t`, in the local
+coordinates `(a, b)` of the square and in the centre `(x, y)` of C. For
+`|t| ≤ π/4` also `cos t ≥ 7/10`, `|sin t| ≤ cos t` and `cos t + |sin t| ≥ 1`,
+and a square in the disk has `a cos t - b sin t ≥ 0`.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic
 open Normalization
@@ -38,10 +40,6 @@ lemma signed_sine_product {x k t : ℝ} (hx0 : 0 ≤ x) (hx1 : x ≤ k) :
 
 @[simp] lemma width_north (t : ℝ) : angularWidth (Real.pi/2+t)=angularWidth t := by
   simp [angularWidth,Real.cos_add,Real.sin_add,abs_neg,add_comm]
-
-@[simp] lemma width_south (t : ℝ) : angularWidth (-Real.pi/2+t)=angularWidth t := by
-  rw [show -Real.pi/2+t=t-Real.pi/2 by ring]
-  simp [angularWidth,Real.cos_sub,Real.sin_sub,abs_neg,add_comm]
 
 lemma north_own (t a b x y : ℝ) :
     centralMargin .own (Real.pi/2+t) a b x y =

@@ -2,14 +2,13 @@ import SquaresInCircles.Six.Analytic.HighDiagonalProfile
 import SquaresInCircles.Six.Normalization.OwnEastExclusion
 
 /-!
-# Cardinal width terms contain a whole diagonal width
+# A triangle inequality for angular widths
 
-For |x|<=2/5 and 1/2<=d<=pi/4,
-  width(x)+width(d-x) >= 1/2+width(d).
-For x>=0 this follows from an explicit product decomposition. For x<0 the
-reverse-angle case is bounded by sin(v)-(5/2)(1-cos(v)), which is nonnegative
-throughout [0,2/5] by one Taylor polynomial. These are the two sign cases,
-not a subdivision of the helper rectangle.
+For `|x| ≤ 2/5` and `1/2 ≤ d ≤ π/4`,
+`1/2 + angularWidth d ≤ angularWidth x + angularWidth (d - x)`. For `x ≥ 0` the
+difference is a sum of two nonnegative products, by the addition formulas. For
+`x = -v < 0` it follows from `sin d ≤ cos d` and `sin v ≥ (5/2)(1 - cos v)`,
+which holds on `[0, 2/5]` by Taylor bounds.
 -/
 
 noncomputable section

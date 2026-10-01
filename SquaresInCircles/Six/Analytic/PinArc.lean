@@ -2,13 +2,17 @@ import SquaresInCircles.Six.Analytic.PinProjections
 import SquaresInCircles.Six.Normalization.ChartBounds
 
 /-!
-# Two pins sixty degrees apart cover their primary-direction arc
+# Two pins `π/3` apart
 
-This replaces the separate numerical normal/transverse tests in the middle
-part of the W/D pin-covering argument. The only cases are which of the two
-pins can fail its near-face inequality. Missing both pins would force the
-far-corner squared radius above Q0, by one displayed completed square.
-No subdivision or certificate is used.
+Let an exterior square in the disk, at angle `t` with coordinates `(a, b)` and
+`|b| < 1/2`, lie between the directions `q` and `q + π/3`, and let `v = t - q`.
+Then one of the two points at distance `9/10` from the disk centre in these
+directions lies in the open square. Since `t` is within `π/6` of one direction,
+that point lies beyond the near edge of the square; the two side tests cannot
+both fail, as `sin v + sin (π/3 - v) ≤ 1`; and a failed near-edge test of one
+point with a failed side test of the other would put the far corner outside the
+disk: `(19/10 - 9v/20)² + (2/35 + 9v/10)² - Q0` is the completed square
+`81 (v - 50/63)²/80 + 304609/2450000`.
 -/
 
 noncomputable section
@@ -32,7 +36,7 @@ lemma polar_mem_iff (r q t a b : ℝ) :
       |r*Real.cos (q-t)-a|<1/2 ∧ |r*Real.sin (q-t)-b|<1/2 := by
   simp only [openSquare,polar_localX,polar_localY]
 
-/-- A coarse chord bound sufficient on the entire sixty-degree interval. -/
+/-- The chord bound `1 - v/2 ≤ cos v` on `[0, π/3]`. -/
 lemma cos_sixty_chord {v : ℝ} (hv0 : 0≤v) (hv1 : v≤Real.pi/3) :
     1-v/2≤Real.cos v := by
   by_cases hv : v≤1
@@ -50,8 +54,8 @@ lemma sixty_sine_sum (v : ℝ) :
         Real.sin (Real.pi/6-(v-Real.pi/6)) := by congr 1 <;> congr 1 <;> ring
     _ = _ := by rw [Real.sin_add,Real.sin_sub (Real.pi/6),Real.sin_pi_div_six]; ring
 
-/-- The far-corner obstruction is a single positive quadratic on the whole
-real line. Its minimum reserve is 304609/2450000. -/
+/-- By a completed square, the quadratic exceeds `Q0` by at least
+`304609/2450000`. -/
 lemma sixty_cross_quadratic (v : ℝ) :
     Q0 < (19/10-(9/20)*v)^2+(2/35+(9/10)*v)^2 := by
   have hid : (19/10-(9/20)*v)^2+(2/35+(9/10)*v)^2-Q0 =
@@ -82,8 +86,8 @@ private lemma near_thirty_cos {v : ℝ} (hv0 : 0≤v) (hv1 : v≤Real.pi/6) :
   have hp := pow_le_pow_left₀ hv0 hv 2
   nlinarith [Real.one_sub_sq_div_two_le_cos (x:=v)]
 
-/-- At least one near-normal condition holds because a primary axis between
-the pins is at most thirty degrees from one of them. -/
+/-- One of the two points lies beyond the near edge, since the angle of the
+square is within `π/6` of its direction. -/
 lemma sixty_one_normal {a b v : ℝ} (hc : ContainedChart a |b|)
     (hv0 : 0≤v) (hv1 : v≤Real.pi/3) :
     a-1/2<(9/10)*Real.cos v ∨ a-1/2<(9/10)*Real.cos (Real.pi/3-v) := by
@@ -95,8 +99,8 @@ lemma sixty_one_normal {a b v : ℝ} (hc : ContainedChart a |b|)
     have hz1 : Real.pi/3-v≤Real.pi/6 := by linarith
     nlinarith [near_thirty_cos hz0 hz1,rho0_upper]
 
-/-- Two local pins at offsets -v and pi/3-v: closed disk containment and the
-strict transverse bound alone prevent both from being missed. -/
+/-- In the chart of the square, one of the points at distance `9/10` and angles
+`-v` and `π/3 - v` lies in the open square. -/
 theorem sixty_coordinates_cover {a b v : ℝ} (hc : ContainedChart a |b|)
     (hb : |b|<1/2) (hv0 : 0≤v) (hv1 : v≤Real.pi/3) :
     (|(9/10)*Real.cos v-a|<1/2 ∧ |-(9/10)*Real.sin v-b|<1/2) ∨
@@ -143,7 +147,8 @@ theorem sixty_coordinates_cover {a b v : ℝ} (hc : ContainedChart a |b|)
     constructor <;> apply abs_lt.mpr <;> constructor <;>
       linarith [hbb.1,hbb.2]
 
-/-- Geometric form of the sixty-degree lemma, in an arbitrary real phase lift. -/
+/-- A square at an angle between `q` and `q + π/3` contains one of the points at
+distance `9/10` in the directions `q` and `q + π/3`. -/
 theorem sixty_pin_cover {t q a b : ℝ} (hc : ContainedChart a |b|)
     (hb : |b|<1/2) (ht : q≤t ∧ t≤q+Real.pi/3) :
     openSquare (orientedSquare t a b) (polarPin (9/10) q) ∨

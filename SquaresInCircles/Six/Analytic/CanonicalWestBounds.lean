@@ -2,24 +2,23 @@ import SquaresInCircles.Six.Analytic.HalfAngleControl
 import SquaresInCircles.Six.Normalization.CentralSAT
 
 /-!
-# Canonical OWN W cannot turn toward D
+# Bounds for W turned towards D
 
-This module contains the scalar part of that geometric exclusion. A D-own
-square in the first southwest octant obeys
-  |bD| + (cos d + sin d)/2 < 97/100.
-The proof is one displayed positive quadratic in cos d + sin d - 1.
-
-For 0<=w<=d<=pi/4, the canonical OWN/cardinal margin difference supplies a
-lower bound on bW in terms of halfRatio w. Both possible forward secondary
-separators then have a strictly negative margin. The two reserves below use
-whole-interval Taylor and monotonicity inequalities, not selected cells.
+If D, at the phase `π + d` with `0 ≤ d ≤ π/4`, is separated from C along its
+primary axis, then `|b| + (cos d + sin d)/2 < 97/100` for its chart `(a, b)`:
+the separation gives `a ≥ 1/2 + (77/200)(cos d + sin d)`, and a larger `|b|`
+would put the far corner outside the disk, by a quadratic in
+`cos d + sin d - 1` with positive coefficients. For `0 ≤ w ≤ d ≤ π/4`, two
+inequalities follow from Taylor bounds and monotonicity, one against each
+secondary axis along which W, at the phase `π + w`, and D could be separated.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic
 open Normalization
 
-/-- A stronger transverse bound for D, derived from its actual OWN separator. -/
+/-- A square at the phase `π + d`, `0 ≤ d ≤ π/4`, separated from C along its
+primary axis has `|b| + (cos d + sin d)/2 < 97/100`. -/
 theorem diagonal_transverse_profile {a b cx cy d : ℝ}
     (hc : ContainedChart a |b|) (hx : cx≤c0) (hy : cy≤c0)
     (hd : 0≤d ∧ d≤Real.pi/4)
@@ -56,7 +55,8 @@ theorem diagonal_transverse_profile {a b cx cy d : ℝ}
     nlinarith [sq_nonneg (v-1)]
   nlinarith [hc.containment]
 
-/-- Reserve against the W-secondary separator on the entire ordered octant. -/
+/-- The inequality against a separation of W and D along the secondary axis of
+W. -/
 theorem canonical_west_secondary_reserve {w d : ℝ}
     (hw : 0≤w) (hwd : w≤d) (hd : d≤Real.pi/4) :
     113/1000+(1113/1000)*(Real.sin (d-w)+halfRatio w)+
@@ -102,7 +102,8 @@ theorem canonical_west_secondary_reserve {w d : ℝ}
   dsimp [A] at hC
   nlinarith only [hC,hS,hT,hp,hfactor,hid]
 
-/-- Reserve against the D-secondary separator on the same whole domain. -/
+/-- The inequality against a separation of W and D along the secondary axis of
+D. -/
 theorem canonical_diagonal_secondary_reserve {w d : ℝ}
     (hw : 0≤w) (hwd : w≤d) (hd : d≤Real.pi/4) :
     (97/100-(Real.cos d+Real.sin d)/2)+

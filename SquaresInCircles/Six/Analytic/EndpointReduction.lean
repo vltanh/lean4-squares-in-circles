@@ -4,19 +4,20 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
 import Mathlib.Tactic
 
 /-!
-# Two analytic endpoint reductions
+# Two endpoint reductions
 
-The first lemma uses the displayed second derivative of A cos t + B sin t.
-The second uses an explicit quartic chord identity. Neither theorem searches
-for a partition: the application must supply its mathematically chosen
-interval and prove the endpoint and sign inequalities.
+A combination `A cos t + B sin t` with `A, B ≥ 0` is concave on intervals in
+`[0, π/2]`, so a strict lower bound at both ends of such an interval holds
+inside it. A quartic that is positive at `l` and `u` is positive on `[l, u]`
+when a quadratic `Q` is nonpositive there: the quartic exceeds its chord
+through the two endpoint values by `-(x - l)(u - x) Q x`.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic
 
-/-- A positive linear combination of sine and cosine is concave on a first-
-quadrant interval. Consequently a lower bound at both endpoints holds inside. -/
+/-- `A cos t + B sin t`, with `A, B ≥ 0`, is concave on an interval in
+`[0, π/2]`, so a strict lower bound at both ends holds inside. -/
 theorem trig_lower_of_endpoints {A B C l u t : ℝ}
     (hA : 0 ≤ A) (hB : 0 ≤ B) (hl : 0 ≤ l) (hu : u ≤ Real.pi / 2)
     (ht : l ≤ t ∧ t ≤ u)
@@ -28,10 +29,14 @@ theorem trig_lower_of_endpoints {A B C l u t : ℝ}
   let f'' : ℝ → ℝ := fun x => -A * Real.cos x - B * Real.sin x
   have hd (x : ℝ) : HasDerivAt f (f' x) x := by
     convert ((Real.hasDerivAt_cos x).const_mul A).add
-      ((Real.hasDerivAt_sin x).const_mul B) using 1 <;> dsimp [f, f'] <;> ring
+      ((Real.hasDerivAt_sin x).const_mul B) using 1
+    dsimp [f, f']
+    ring
   have hdd (x : ℝ) : HasDerivAt f' (f'' x) x := by
     convert ((Real.hasDerivAt_sin x).const_mul (-A)).add
-      ((Real.hasDerivAt_cos x).const_mul B) using 1 <;> dsimp [f', f''] <;> ring
+      ((Real.hasDerivAt_cos x).const_mul B) using 1
+    dsimp [f', f'']
+    ring
   have hconc : ConcaveOn ℝ (Set.Icc l u) f := by
     apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc l u)
       (f' := f') (f'' := f'') (by dsimp [f]; fun_prop)
@@ -55,13 +60,13 @@ theorem trig_lower_of_endpoints {A B C l u t : ℝ}
   have hmin := hconc.min_le_of_mem_Icc ⟨le_rfl, hlu⟩ ⟨hlu, le_rfl⟩ ht
   exact (lt_min hleft hright).trans_le hmin
 
-/-- A polynomial written explicitly, not a reified expression for evaluation. -/
+/-- The quartic with the coefficients `a0, …, a4`. -/
 def quartic (a0 a1 a2 a3 a4 x : ℝ) : ℝ :=
   a0 + a1 * x + a2 * x ^ 2 + a3 * x ^ 3 + a4 * x ^ 4
 
-/-- The exact difference from the endpoint chord factors into three distances
-and a quadratic. A nonpositive quadratic makes the polynomial lie above its
-chord. This is an algebraic concavity argument, not a list of tested points. -/
+/-- If the quadratic `Q x` of `hcurv` is nonpositive, a quartic positive at `l`
+and `u` is positive at `x ∈ [l, u]`, since it exceeds its chord by
+`-(x - l)(u - x) Q x`. -/
 theorem quartic_positive_of_chord {a0 a1 a2 a3 a4 l u x : ℝ}
     (hlu : l < u) (hx : l ≤ x ∧ x ≤ u)
     (hl : 0 < quartic a0 a1 a2 a3 a4 l)

@@ -2,13 +2,15 @@ import SquaresInCircles.Common.Basic
 import SquaresInCircles.Six.Normalization.Constants
 
 /-!
-# Exact algebra of the six-square candidate
+# The constants of the six-square model
 
-The exact candidate definitions now belong to Geometry.lean, alongside the
-other public models, and are mirrored in Challenge.lean. This file proves their
-algebraic identities and rational bounds. The definitions are unchanged apart
-from expanding the definitional alias halfDiagonal inside hStar.
-`qStar` and `radius` remain distinct from the normalization ceiling `Q0`.
+Rational bounds and algebraic identities for the constants of the model:
+`h = √2/2`, the coefficients `A` and `B` of the quadratic `p(s) = s² - A s + B`,
+its smaller root `s*`, and `t*`, `d*` and `q*`. The far corners of E and W and
+the far vertices of D lie at squared distance `q*` from the centre: for E by
+the definition of `q*`, for W and D by combinations of `p(s*) = 0` and
+`h² = 1/2`. The squared radius `q*` lies below the ceiling `Q0` of the
+normalization.
 -/
 
 noncomputable section
@@ -31,12 +33,6 @@ lemma hStar_upper : hStar < (707106782 : ℝ) / 1000000000 := by
   rw [Real.sqrt_sq (by norm_num)] at hs
   dsimp [hStar]
   linarith
-
-lemma hStar_eq_inv_sqrt_two : hStar = 1 / Real.sqrt 2 := by
-  have hn : Real.sqrt 2 ≠ 0 := ne_of_gt (Real.sqrt_pos.mpr (by norm_num))
-  dsimp [hStar]
-  field_simp [hn]
-  nlinarith [Real.sq_sqrt (show (0 : ℝ) ≤ 2 by norm_num)]
 
 lemma AStar_bounds : 10 < AStar ∧ AStar < 11 := by
   dsimp [AStar]
@@ -61,7 +57,7 @@ lemma sStar_lt_fifth : sStar < 1 / 5 := by
   rw [sStar, div_lt_iff₀ candidate_den_pos]
   linarith [BStar_bounds.2, AStar_bounds.1, Real.sqrt_nonneg discriminant]
 
-/-- The selected radical is the small root of the exact candidate quadratic. -/
+/-- `s*` is a root of `s² - A s + B`. -/
 lemma sStar_polynomial : sStar ^ 2 - AStar * sStar + BStar = 0 := by
   have hd : AStar + Real.sqrt discriminant ≠ 0 := ne_of_gt candidate_den_pos
   have hs : sStar * (AStar + Real.sqrt discriminant) = 2 * BStar := by
@@ -128,7 +124,8 @@ lemma qStar_pos : 0 < qStar := by
   dsimp [qStar]
   nlinarith [sStar_pos, sq_nonneg sStar]
 
-/-- The strict inequality needed to apply the normalization theorem. -/
+/-- The squared optimal radius lies below the ceiling `Q0` of the
+normalization. -/
 lemma qStar_lt_Q0 : qStar < Normalization.Q0 := by
   have hm := mul_nonneg
     (show 0 ≤ 842457 / 10000000 - sStar by linarith [sStar_bounds.2])

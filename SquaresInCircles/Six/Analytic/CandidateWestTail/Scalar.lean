@@ -1,34 +1,31 @@
 import SquaresInCircles.Six.Analytic.LowDWestSource.Scalar
 
 /-!
-# A whole-domain scalar obstruction for the candidate west tail
+# The west tail: the minorant
 
-The stress has central weights 109/200 and 47/250 and wing weights 169/1000
-and 49/500. A global affine majorant of the diagonal resultant, rather than a
-support-branch partition, leaves a sum of first harmonics. Three kinds encode
-OWN S, nonnegative cardinal S, and negative cardinal S. The latter uses x=-s.
-
-Each coordinate slice is a constant plus A cos x+B sin x with A,B>=0 on the
-entire physical rectangle. Thus its minimum is at a corner. The 24 corners
-below are exactly two endpoints in each of three coordinates and three
-geometric central/sign choices; they are not a searched subdivision or a
-stress-row table. Each endpoint uses the displayed Taylor polynomials.
-
-The rational diagonal bound d<=11/14 only enlarges d<=pi/4. The OWN S bound
-s<=3/5 will be supplied by the shared-center OWN/OWN budget in Geometry.lean.
-Compilation and kernel acceptance remain deferred.
+`minorant k v x d` bounds from below the defect of the west-tail stress of
+`Support.lean`, in `v = -w`, `x = |s|` and `d`; `k` records how S is separated
+from C: along its own axis (`k = 0`), or along the south side of C with
+`s ≥ 0` (`k = 1`) or `s ≤ 0` (`k = 2`). It is positive on the box
+`11/25 ≤ v ≤ 2/3`, `0 ≤ x ≤ xMax k`, `1/2 ≤ d ≤ 11/14`. In each of the three
+variables it is a constant plus `A cos + B sin` with `A, B ≥ 0` throughout the
+box, hence concave, so it is enough to check the eight corners of the box;
+there Taylor polynomials bound it below by positive rationals.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.CandidateWestTail
 
-/-- 0: OWN S; 1: cardinal S>=0; 2: cardinal S<=0, with x=-s. -/
+/-- The sign of `s = side k * x` in the three cases for S: separated from C
+along its own axis (`k = 0`), or along the south side of C with `s ≥ 0`
+(`k = 1`) or `s ≤ 0` (`k = 2`). -/
 def side (k : Fin 3) : ℝ := ![1,1,-1] k
 def xMax (k : Fin 3) : ℝ := ![3/5,3/5,2/5] k
 def gCoeff (k : Fin 3) : ℝ := ![47/500,47/250,47/250] k
 def hCoeff (k : Fin 3) : ℝ := ![18001/156250,7336967/50000000,2063033/50000000] k
 def offset (k : Fin 3) : ℝ := ![0,-47/500,-47/500] k
 
+/-- A lower bound for the defect of the stress (`minorant_le_defect`). -/
 def minorant (k : Fin 3) (v x d : ℝ) : ℝ :=
   -27197287317/50000000000+offset k+
     (2110131/10000000)*Real.cos v+(109/400)*Real.sin v+
@@ -228,7 +225,7 @@ private def vEnd (i : Fin 2) : ℝ := ![11/25,2/3] i
 private def xEnd (k : Fin 3) (i : Fin 2) : ℝ := ![0,xMax k] i
 private def dEnd (i : Fin 2) : ℝ := ![1/2,11/14] i
 
-/-- Explicit rational endpoint arithmetic after the concavity reduction. -/
+/-- The minorant is positive at the corners of the box. -/
 private lemma corners (k : Fin 3) (i j l : Fin 2) :
     0 < minorant k (vEnd i) (xEnd k j) (dEnd l) := by
   have h := polynomial_le k (vEnd i) (xEnd k j) (dEnd l)
@@ -237,7 +234,8 @@ private lemma corners (k : Fin 3) (i j l : Fin 2) :
     offset,side,vEnd,xEnd,xMax,dEnd] at h ⊢
   all_goals linarith
 
-/-- The full rectangle follows from concavity in each of its three coordinates. -/
+/-- The minorant is positive on the box: it is concave in each variable and
+positive at the corners. -/
 theorem positive (k : Fin 3) {v x d : ℝ}
     (hv : 11/25 ≤ v ∧ v ≤ 2/3) (hx : 0 ≤ x ∧ x ≤ xMax k)
     (hd : 1/2 ≤ d ∧ d ≤ 11/14) : 0 < minorant k v x d := by

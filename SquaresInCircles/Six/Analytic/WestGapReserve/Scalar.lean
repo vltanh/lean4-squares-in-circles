@@ -1,23 +1,22 @@
 import SquaresInCircles.Six.Analytic.CandidateWestTail.Support
 
 /-!
-# A stronger D-sourced west gap
+# A wider gap between W and D: the profile
 
-Use the three actual CW, CD and D-sourced WD inequalities with weights
-27/100, 57/25 and 1. The W far-vertex resultant is bounded by one global
-square-root tangent at 31/25, not by an unjustified axial support.
-Writing q=d+v leaves the full rectangle
-  1<=q<=53/50, 3/5<=d<=11/14.
-Every coordinate slice of the resulting minorant is a constant plus a
-positive sine/cosine combination. Its four corner Taylor lower bounds exceed
-1/400. Hence no packing can realize this entire short-gap rectangle.
-Compilation and kernel acceptance remain unverified.
+W is separated from the central square along its own axis, and W and D along the
+secondary axis of D. With weights `27/100`, `57/25` and `1` on C–W, C–D and W–D,
+the weighted thresholds exceed the support bounds by the profile below, in
+`q = d + v` and `d`, with `v = -w`. In each variable the profile is a constant
+plus a positive combination of a sine and a cosine, concave on `[0, π/2]`, so on
+the rectangle `1 ≤ q ≤ 53/50`, `3/5 ≤ d ≤ 11/14` it is least at a corner; at the
+four corners Taylor polynomials bound it below by more than `1/400`.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.WestGapReserve
 
-/-- The rational minorant after the two vertex supports. -/
+/-- The excess of the weighted thresholds over the support bounds, in
+`q = d + v` and `d`. -/
 def profile (q d : ℝ) : ℝ :=
   -376881562797/155000000000+
   (27/100)*((19359/50000)*Real.cos (q-d)+(30641/50000)*Real.sin (q-d))+
@@ -97,7 +96,8 @@ private lemma extend_diagonal {q d : ℝ} (hd : 3/5 ≤ d ∧ d ≤ 11/14)
     hd (C := -dK q) (by linarith) (by linarith)
   linarith
 
-/-- Positivity on the whole two-variable rectangle. -/
+/-- The profile is positive on the rectangle `1 ≤ q ≤ 53/50`,
+`3/5 ≤ d ≤ 11/14`. -/
 theorem positive {q d : ℝ} (hq : 1 ≤ q ∧ q ≤ 53/50)
     (hd : 3/5 ≤ d ∧ d ≤ 11/14) : 0 < profile q d := by
   have hl := extend_diagonal hd four_corners.1 four_corners.2.1

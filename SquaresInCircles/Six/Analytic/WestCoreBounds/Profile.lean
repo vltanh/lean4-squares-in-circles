@@ -1,13 +1,16 @@
 import SquaresInCircles.Six.Analytic.WestGapReserve.Geometry
 
 /-!
-# Common whole-domain endpoint reductions for the three-edge west stress
+# Bounds for W and D: the profile
 
-Both new geometric restrictions use the same three actual inequalities.
-The radial supports leave a first harmonic in each variable. A uniform
-Pythagorean estimate bounds the only potentially adverse coefficient by 4/5.
-The second reduction follows the genuine boundary v+d=53/50, not a subdivision.
-Compilation and kernel acceptance remain unverified.
+The profile of a stress with weights `b`, `z` and `1` on the separators of C and
+W, of C and D, and of W and D along the secondary axis of D is a constant plus
+`b (A cos v + (1/2 + y) sin v)`, `z (A cos d + (1/2 - y) sin d)` and
+`cos (v + d)/2 - B sin (v + d)`. For fixed `d` it is `k + a cos v + e sin v`
+with `a, e ≥ 0`, since `sin x/2 + B cos x ≤ 4/5` by Pythagoras, and on an
+interval inside `[0, π/2]` such a harmonic is positive when it is positive at
+the ends. The same holds in `d` for fixed `v`, and in `d` along the line
+`v + d = 53/50`.
 -/
 
 noncomputable section

@@ -1,13 +1,14 @@
 import SquaresInCircles.Six.Analytic.CardinalLowDiagonalFormula
 
 /-!
-# The sign/order geometry of the cardinal-W low-D domain
+# Cardinal W, low D: reduction to six vertices
 
-For w<=0 the domain is its original rectangle. For w>=0 it is the quadrilateral
-0<=w<=2/5, w<=d<=1/2. Coordinate concavity and the actual diagonal edge d=w
-reduce these regions to six distinct original vertices. The D-sourced radical
-need not be concave by itself: its curvature is compensated by the pair-width
-terms before the endpoint reduction.
+The domain `-2/5 ≤ w ≤ 2/5`, `0 ≤ d ≤ 1/2`, `w ≤ d` is a rectangle for `w ≤ 0`
+and the quadrilateral `0 ≤ w ≤ 2/5`, `w ≤ d ≤ 1/2` for `w ≥ 0`. On each part
+`cardLowGap` agrees with `cardLowSmooth`, which is concave in `w`, in `d`, and
+along the edge `d = w`; so `cardLowGap` is positive as soon as it is positive at
+the six vertices. When D is the source, the radical term in `d` need not be
+concave, and the sinusoidal terms in `d` and `d - w` compensate its curvature.
 -/
 
 noncomputable section
@@ -90,7 +91,8 @@ lemma cardLowSmooth_diagonal_concave (ds : Bool) :
     rw [sub_self]
     ring
 
-/-- Six exact geometric endpoint proofs suffice for either source. -/
+/-- Positivity at the six vertices of the domain gives positivity of
+`cardLowGap` on the whole domain, for either source. -/
 theorem cardLow_positive_of_vertices (ds : Bool) {w d : ℝ}
     (hw : -2/5≤w ∧ w≤2/5) (hd : 0≤d ∧ d≤1/2) (hwd : w≤d)
     (hL0 : 0<cardLowSmooth ds false (-2/5) 0)

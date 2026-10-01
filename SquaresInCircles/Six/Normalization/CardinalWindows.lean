@@ -2,22 +2,24 @@ import SquaresInCircles.Six.Normalization.PinReflection
 import SquaresInCircles.Six.Analytic.CardinalFrame
 
 /-!
-# Analytic cardinal-helper angle bounds
+# Separation along a side of the central square
 
-The six previous finite-cover checks are removed. A single geometric argument
-excludes a cap facing the short transverse coordinate; the remaining primary
-frame obeys the proved cap profile. The finite cases below only express the
-four cardinal rotations and the labelled phase conventions.
-
-The hypotheses of PinPacking (including its broad windows and strong core)
-still need their separate analytic construction. This change removes the six
-additional cardinal-angle certificates, not every normalization certificate.
+An exterior square separated from the central square along one of its sides
+has its frame within `2/5` of the direction of that side
+(`PinPacking.cardinal_angle`): turned to that direction, the square lies beyond
+a line at distance at least `coreRadius` from the origin, and
+`primary_cap_angle` bounds its angle. So D, in its half window, is not
+separated along the south side, and every exterior square is separated along
+its own axis or along the matching side: east for E, north for N, west for W
+and D, south for S (`PinPacking.two_choice`). `canonicalOwn` records which,
+counting a square separated along both as separated along the side.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Normalization
 open Certificates
 
+/-- The direction of a side of the central square. -/
 def cardinalCenter : CentralAxis → ℝ
   | .east => 0
   | .north => Real.pi/2
@@ -25,7 +27,11 @@ def cardinalCenter : CentralAxis → ℝ
   | .south => 3*Real.pi/2
   | _ => 0
 
+/-- The exterior squares in the six cases of `PinPacking.cardinal_angle`:
+E, N, W, D, D, S. -/
 def cardinalCasePin : Fin 6 → Fin 5 := ![0,1,2,3,3,4]
+/-- The sides of the central square in those cases: east, north, west, west,
+south, south. -/
 def cardinalCaseAxis : Fin 6 → CentralAxis := ![.east,.north,.west,.west,.south,.south]
 
 private def caseDepth (j : Fin 6) (cx cy : ℝ) : ℝ :=
@@ -39,7 +45,8 @@ private lemma cosine_south : Real.cos (3*Real.pi/2) = 0 := by
   rw [show 3*Real.pi/2=Real.pi+Real.pi/2 by ring,Real.cos_add]
   simp
 
-/-- This is a cardinal-coordinate identity, not an inequality check. -/
+/-- The margin along a side of the central square, in the frame turned to that
+side. -/
 private lemma case_margin_identity (j : Fin 6) (t a b cx cy : ℝ) :
     centralMargin (cardinalCaseAxis j) t a b cx cy =
       a*Real.cos (t-cardinalCenter (cardinalCaseAxis j))-
@@ -49,22 +56,13 @@ private lemma case_margin_identity (j : Fin 6) (t a b cx cy : ℝ) :
   fin_cases j
   all_goals simp only [cardinalCaseAxis,cardinalCenter,centralMargin,centerX,centerY,
     angularWidth,caseDepth,Fin.reduceFinMk,Matrix.cons_val,Real.cos_sub,Real.sin_sub,
-    Real.cos_zero,Real.sin_zero,
     Real.cos_pi,Real.sin_pi,Real.cos_pi_div_two,Real.sin_pi_div_two,
-    sine_south,cosine_south,abs_neg,mul_zero,mul_one,mul_neg_one,zero_mul,
-    one_mul,zero_add,add_zero,sub_zero,zero_sub,neg_neg]
+    sine_south,cosine_south,abs_neg,mul_zero,mul_one,mul_neg_one,
+    zero_add,add_zero,sub_zero,zero_sub,neg_neg]
   all_goals ring
 
-lemma PinPacking.window_near_center {R : ℝ} (P : PinPacking R) (i : Fin 5) :
-    -Real.pi ≤ P.phase i-phaseCenter i ∧ P.phase i-phaseCenter i ≤ Real.pi := by
-  have h := P.window i
-  have hb : -Real.pi ≤ (windowLower i : ℝ) ∧ (windowUpper i : ℝ) ≤ Real.pi := by
-    fin_cases i <;> constructor <;> norm_num [windowLower,windowUpper] <;>
-      linarith [Real.pi_gt_d2]
-  constructor <;> linarith [h.1,h.2,hb.1,hb.2]
-
-/-- N25 for every relevant labelled cardinal helper. The proof uses no
-certificate result: its only phase input is the broad labelled window. -/
+/-- A square separated from the central square along a side has its angle
+within `2/5` of the direction of that side. -/
 theorem PinPacking.cardinal_angle {R : ℝ} (P : PinPacking R) (j : Fin 6)
     (hk : 0 ≤ centralMargin (cardinalCaseAxis j)
       (P.phase (cardinalCasePin j)) (P.radial (cardinalCasePin j))
@@ -101,7 +99,8 @@ theorem PinPacking.cardinal_angle {R : ℝ} (P : PinPacking R) (j : Fin 6)
     linarith
   exact Analytic.primary_cap_angle ha hb hh ht hbox hcap
 
-/-- The one global D reflection rules out its south-cardinal alternative. -/
+/-- In its half window, D is not separated from the central square along the
+south side. -/
 theorem PinPacking.D_south_negative {R : ℝ} (P : PinPacking R)
     (hD : P.phase 3 ≤ 5*Real.pi/4) :
     centralMargin .south (P.phase 3) (P.radial 3) (P.transverse 3) P.center.1 P.center.2 < 0 := by
@@ -111,9 +110,12 @@ theorem PinPacking.D_south_negative {R : ℝ} (P : PinPacking R)
   norm_num [cardinalCasePin,cardinalCaseAxis,cardinalCenter] at hl
   linarith [Real.pi_gt_d2]
 
+/-- The side of the central square matching each exterior square: east for E,
+north for N, west for W and D, south for S. -/
 def matchingCardinal : Fin 5 → CentralAxis := ![.east,.north,.west,.west,.south]
 
-/-- N21 after the D half-window choice and the label-specific SAT alternatives. -/
+/-- Each exterior square is separated from the central square along the
+matching side or along its own axis. -/
 theorem PinPacking.two_choice {R : ℝ} (P : PinPacking R)
     (hD : P.phase 3 ≤ 5*Real.pi/4) (i : Fin 5) :
     0 ≤ centralMargin (matchingCardinal i) (P.phase i) (P.radial i) (P.transverse i)
@@ -130,8 +132,9 @@ theorem PinPacking.two_choice {R : ℝ} (P : PinPacking R)
   rcases hlast with ⟨rfl,rfl⟩
   linarith [P.D_south_negative hD]
 
-/-- A logical case distinction on a real margin, not numerical verification.
-Cardinal is preferred on ties. -/
+/-- Whether square `i` is not separated from the central square along the
+matching side, so that it is separated along its own axis
+(`PinPacking.own_of_canonicalOwn`). -/
 def PinPacking.canonicalOwn {R : ℝ} (P : PinPacking R) (i : Fin 5) : Bool :=
   decide (centralMargin (matchingCardinal i) (P.phase i) (P.radial i) (P.transverse i)
     P.center.1 P.center.2 < 0)

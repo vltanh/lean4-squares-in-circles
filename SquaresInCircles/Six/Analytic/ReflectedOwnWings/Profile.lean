@@ -1,14 +1,15 @@
 import SquaresInCircles.Six.Analytic.ReflectedOwnWings.Transverse
 
 /-!
-# Coordinate concavity for the last reflected two-OWN case
+# The reflected case: the value and its concavity
 
-The scalar reflection gives 157/200<=d<=163/175, not the original diagonal
-half-window. Here 48/175<=s<=12/25 and 0<=v<=2/3. The chord curvature is
-at most -19/100, the transverse curvature at most 31/100, the south harmonic
-at least 9/25, and the diagonal harmonic at least (9/20)A. These explicit
-reserves prove all coordinate concavity statements on the enlarged domain.
-Compilation and kernel acceptance remain unverified.
+The value of the reflected stress is a constant plus first harmonics in `v`, `s`
+and `d`, the chord term `sin q - L sin (q/2) - M cos (q/2)` at `q = d + v` and
+the transverse term at `d - s`. A first harmonic is minus its own second
+derivative, so the value is concave in each variable on `0 ≤ v ≤ 2/3`,
+`48/175 ≤ s ≤ 12/25` and `157/200 ≤ d ≤ 163/175`: there the chord curvature is
+at most `-19/100`, the transverse curvature at most `31/100`, the harmonic in
+`s` at least `9/25` and the harmonic in `d` at least `9A/20`.
 -/
 
 noncomputable section

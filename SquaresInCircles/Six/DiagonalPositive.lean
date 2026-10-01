@@ -1,13 +1,13 @@
 import SquaresInCircles.Six.CanonicalMargins
 
 /-!
-# P7: the normalized D deviation is strictly positive
+# The angle of D is positive
 
-The normalization already gives -2/5<d<=pi/4. On its possible negative part
-we can use a coarser polynomial proof than the manuscript's full [-pi/4,0]
-calculus. The fixed D pin gives b>13/100+(47/100)v for v=-d; this contradicts
-the exact OWN-versus-west identity. No certificate or extra D-angle premise is
-used.
+In a normalized packing `-2/5 < d ≤ π/4`, and `d ≠ 0`. For `d = -v < 0`, the D
+pin gives `b > 13/100 + (47/100) v`. D is separated from the central square
+along its own axis and not along the west side of C, so the difference of the
+two margins, `(1 - cos v)(a - cx) - sin v (b + cy)`, is positive; the bound on
+`b` and polynomial bounds on `sin v` and `cos v` make it negative.
 -/
 
 noncomputable section
@@ -55,7 +55,8 @@ lemma diagonal_pin_transverse_lower {a b v : ℝ}
     (show 0 ≤ hStar-7/10 by linarith [hStar_lower]) hsum0
   nlinarith
 
-/-- The polynomial reserve underlying P7 on the actual normalized range. -/
+/-- For `0 < v ≤ 2/5`, a square at phase `π - v` with `a ≤ rho0` that holds the
+D pin has `(1 - cos v)(a - x) - sin v (b + y) < 0` for `x, y ≥ 0`. -/
 lemma negative_diagonal_gap {a b x y v : ℝ}
     (hv0 : 0 < v) (hv : v ≤ 2/5) (ha : a ≤ rho0)
     (hx : 0 ≤ x) (hy : 0 ≤ y)
@@ -78,7 +79,7 @@ lemma negative_diagonal_gap {a b x y v : ℝ}
 namespace Normalization.NormalizedPacking
 variable {R : ℝ} (P : NormalizedPacking R)
 
-/-- P7, from actual pin membership and the cardinal-preferred D bit. -/
+/-- The angle of D is positive. -/
 theorem diagonal_angle_pos : 0 < P.diagonalAngle := by
   have hown := P.diagonal_own
   have hne : P.diagonalAngle ≠ 0 := by

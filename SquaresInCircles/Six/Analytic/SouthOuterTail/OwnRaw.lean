@@ -1,14 +1,15 @@
 import SquaresInCircles.Six.Analytic.SouthOuterTail.Profile
 
 /-!
-# Retain the actual diagonal center during the two wing reductions
+# The south tail with W on its own axis: the angles of W and S
 
-The OWN-W proof uses CW weight 5/8, CS weight 1, WD weight 2/5 and DS weight
-3/10. The change from 3/5 is intentional. With 1/2<=aD<=1113/1000 and
-|bD|<=23/100, the raw stress is a positive first harmonic in each wing angle.
-Thus v in [0,11/25] and s in [11/25,2/3] reduce to four corners while the
-same actual diagonal coordinates are retained. Only then are disk supports
-used. This avoids the false OWN-W corner of the earlier scalar majorant.
+When W is separated from C along its own axis, the stress of the south tail
+takes the weights `5/8`, `1`, `2/5` and `3/10` on C–W, C–S, W–D and D–S. With the
+local centre `(a, b)` of D kept as it is, `1/2 ≤ a ≤ 1113/1000` and
+`|b| ≤ 23/100`, the stress `raw` is a first harmonic with nonnegative
+coefficients in the angle `v` of W and in the angle `s` of S, for every
+`d ∈ [1/2, 11/14]`. So it is positive on `v ∈ [0, 11/25]`, `s ∈ [11/25, 2/3]` once
+it is positive at the four corners.
 -/
 
 noncomputable section
@@ -73,7 +74,8 @@ private lemma diagonal_trig {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 11/14) :
     Real.sin_nonneg_of_nonneg_of_le_pi (by linarith [hd.1])
       (by linarith [hd.2,Real.pi_gt_d2])⟩
 
-/-- All four coefficients have uniform positive reserves on the entire rectangle. -/
+/-- The coefficients of `cos v`, `sin v`, `cos s` and `sin s` in `raw` are
+nonnegative. -/
 lemma raw_coefficients (upper : Bool) {d a b : ℝ}
     (hd : 1/2 ≤ d ∧ d ≤ 11/14)
     (ha : 1/2 ≤ a ∧ a ≤ 1113/1000) (hb : -(23/100) ≤ b ∧ b ≤ 23/100) :

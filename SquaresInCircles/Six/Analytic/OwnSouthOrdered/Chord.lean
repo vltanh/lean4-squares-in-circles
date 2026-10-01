@@ -1,15 +1,18 @@
 import SquaresInCircles.Six.Analytic.CardinalSouthTail.Support
 
 /-!
-# The asymmetric chord in the ordered two-OWN south argument
+# Ordered own wings: the force on D
 
-The W/D and D/S weights are 109/100 and 1. Their D resultant has squared
-length (9/100)^2+(109/25)*sin(q/2)^2. On the geometrically forced interval
-1/2 <= q <= 443/350, a single affine function of sin(q/2) majorizes the root.
-Its squared error is a concave quadratic, so its two endpoints suffice.
-The chord contribution left in the stress has negative second derivative.
-No angular subdivision, finite-cover checker, or numerical premise is used.
-Compilation and kernel acceptance remain unverified.
+Let the wings W and S of D be separated from C along their own axes, with
+angles `0 ≤ v ≤ s`, where `v = -w`, and let W–D be separated along the
+secondary axis of W and D–S along the secondary axis of D. The stress of this
+case has weights `91/50`, `159/100`, `109/100` and `1` on C–W, C–S, W–D and
+D–S. The force on D is `(109/100 sin q, 109/100 cos q - 1)` in its frame, where
+`q = d + v` is the angle from W to D, and its squared length is
+`(9/100)^2 + 109/25 sin (q/2)^2`. For `1/2 ≤ q ≤ 443/350` the length is at most
+`rootIntercept + rootSlope * sin (q/2)`: the difference of the squares is a
+concave quadratic in `sin (q/2)`, positive at both ends. The terms of the
+stress that depend on `q`, collected in `chord`, are concave on `[1/2, 4/3]`.
 -/
 
 noncomputable section
@@ -23,8 +26,11 @@ def pairWeight : ℝ := 109/100
 def rootIntercept : ℝ := 111/10000
 def rootSlope : ℝ := 20751/10000
 
+/-- `CandidateWestTail.radiusBound * rootSlope`, the coefficient of `sin (q/2)`
+in the support of D. -/
 def chordCoefficient : ℝ := 175200693/50000000
 
+/-- The terms of the stress that depend on the angle `q` from W to D. -/
 def chord (q : ℝ) : ℝ :=
   (109/100)*Real.sin q-chordCoefficient*Real.sin (q/2)
 
@@ -51,7 +57,8 @@ lemma half_sine_bounds {q : ℝ} (hq : 1/2 ≤ q ∧ q ≤ 443/350) :
 private def rootError (t : ℝ) : ℝ :=
   (rootIntercept+rootSlope*t)^2-(9/100)^2-(109/25)*t^2
 
-/-- One quadratic chord identity controls the entire half-sine interval. -/
+/-- The affine majorant squared exceeds the squared length of the force on D:
+the difference is a concave quadratic, positive at both ends of the range. -/
 private lemma root_error_positive {t : ℝ} (ht : 95/384 ≤ t ∧ t ≤ 3/5) :
     0 < rootError t := by
   let l : ℝ := 95/384

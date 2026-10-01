@@ -4,16 +4,20 @@ import SquaresInCircles.Six.Normalization.ChartInterop
 import Mathlib.Data.Fin.Embedding
 
 /-!
-# The noncircular N0 input package
+# The central square and the five markers
 
-All fields here are constructed from the original `Packing` predicate and the
-radius ceiling. In particular marker separation and the cyclic gaps are
-proved, not supplied as extra hypotheses of the unrestricted problem.
+In a packing of six squares in a disk of squared radius at most `Q0`, one square
+contains the disk centre `o`. The other five are exterior; each has a sorted
+chart with `φ(a, b) ≤ Q0` and an admissible state, and their markers are
+pairwise more than `π/3` apart. So every open arc of length more than `2π/3`
+contains a marker.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Normalization
 
+/-- A square containing `o`, and sorted charts of the other five squares, which
+are exterior, contained and admissible, with markers more than `π/3` apart. -/
 structure ExteriorInput (S : Fin 6 → UnitSquare) (o : Point) where
   central : Fin 6
   central_inside : openSquare (S central) o
@@ -28,17 +32,10 @@ structure ExteriorInput (S : Fin 6 → UnitSquare) (o : Point) where
 namespace ExteriorInput
 variable {S : Fin 6 → UnitSquare} {o : Point}
 
-/-- This is a definition of notation, not an added marker hypothesis. -/
+/-- The marker of the `i`-th exterior square. -/
 def markers (D : ExteriorInput S o) (i : Fin 5) : Direction := Seven.chartMarker (D.chart i)
 
-lemma cyclic_gaps (D : ExteriorInput S o) :
-    ∃ (σ : Equiv.Perm (Fin 5)) (p : Fin 5 → ℝ),
-      (∀ i, (p i : Direction) = D.markers (σ i)) ∧ Monotone p ∧
-      (∀ i, Real.pi / 3 < successiveGaps p i ∧
-        successiveGaps p i < 2 * Real.pi / 3) ∧
-      (∑ i, successiveGaps p i) = 2 * Real.pi :=
-  five_marker_gaps D.markers D.separated
-
+/-- Every open arc of length more than `2π/3` contains a marker. -/
 lemma no_empty_arc (D : ExteriorInput S o) {l u : ℝ}
     (hlen : 2 * Real.pi / 3 < u - l)
     (hempty : ∀ i t, l < t → t < u → (t : Direction) ≠ D.markers i) : False :=
@@ -46,7 +43,9 @@ lemma no_empty_arc (D : ExteriorInput S o) {l u : ℝ}
 
 end ExteriorInput
 
-/-- Every candidate-sized six-square packing supplies the genuine N0 data. -/
+/-- A packing of six squares in a disk of squared radius at most `Q0` has a
+square containing the disk centre and five exterior squares with separated
+markers. -/
 theorem exterior_input_of_ceiling {S : Fin 6 → UnitSquare} {o : Point} {R : ℝ}
     (hp : Packing S o R) (hQ : R ^ 2 ≤ Q0) : Nonempty (ExteriorInput S o) := by
   classical
@@ -62,10 +61,5 @@ theorem exterior_input_of_ceiling {S : Fin 6 → UnitSquare} {o : Point} {R : �
   intro i j hij
   apply strict_marker_separation (C i) (C j) (ha i) (ha j) (hc i) (hc j)
   exact hp.disjoint _ _ (Fin.succAbove_right_injective.ne hij)
-
-/-- The candidate's exact radius supplies the required strict rational ceiling. -/
-theorem exterior_input_of_candidate {S : Fin 6 → UnitSquare} {o : Point} {R : ℝ}
-    (hp : Packing S o R) (hR : R ^ 2 ≤ Six.qStar) : Nonempty (ExteriorInput S o) :=
-  exterior_input_of_ceiling hp (hR.trans Six.qStar_lt_Q0.le)
 
 end SquaresInCircles.Six.Normalization

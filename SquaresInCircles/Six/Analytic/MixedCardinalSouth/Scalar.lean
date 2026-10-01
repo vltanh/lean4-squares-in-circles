@@ -1,18 +1,18 @@
 import SquaresInCircles.Six.Analytic.MixedCardinalWest.Concavity
 
 /-!
-# A scalar obstruction to the second mixed source when W is cardinal
+# Cardinal W, missing south wing: the scalar bound
 
-Weights (4,0,0,3,3) on CW,CS,CD,WD,DS leave only the CW central edge.
-The D resultant has norm 6 sin((d-w)/2), rather than a general radical.
-For a missing south wing, its D-sourced gap is above pi/4. If s<=12/25,
-the S width is bounded below by the value at s=12/25 by ordinary trigonometric
-monotonicity. This leaves a two-variable scalar, concave in each coordinate,
-with only the geometric wall w=0. Six endpoint estimates suffice.
-
-The endpoint bounds are exact Taylor/rational comparisons, not a searched
-cover. The result does not yet eliminate the large positive OWN-S tail.
-Compilation remains deferred.
+With the weights `4, 3, 3` on the edges C–W, W–D and D–S, the force on D has
+length `6 sin ((d-w)/2)`. When D and S are separated along the secondary axis
+of D, their phase gap `π/2 + s - d` is at least `π/4`, and then for
+`s ≤ 12/25` the term `cos (d-s) + sin (d-s)` of S is at least its value at
+`s = 12/25`, since `cos x + sin x` increases on `[0, π/4]`. What remains is a
+function `gap w d` of the angles of W and D, concave in `d`, and concave in
+`w` on each side of `w = 0`. Taylor bounds of `sin` and `cos` and rational
+bounds of the radicals make it positive at the six points with
+`w ∈ {-2/5, 0, 2/5}` and `d ∈ {1/2, π/4}`, and so on all of
+`[-2/5, 2/5] × [1/2, π/4]`.
 -/
 
 noncomputable section
@@ -272,8 +272,7 @@ lemma endpoint_positive (i : Fin 3) (j : Fin 2) : 0 < gap (westEnd i) (diagonalE
   rw [Real.cos_neg,Real.sin_neg,neg_neg,mul_neg,sub_neg_eq_add]
   linarith only [hc,hs,hq,hwidth,hmul,hr,hC,hp,hroot']
 
-/-- Whole-domain positivity. Six endpoint fractions follow from the actual
-wall w=0 and the two physical diagonal endpoints, not from a mesh. -/
+/-- `gap w d` is positive on `[-2/5, 2/5] × [1/2, π/4]`. -/
 theorem positive {w d : ℝ}
     (hw : -(2/5) ≤ w ∧ w ≤ 2/5) (hd : 1/2 ≤ d ∧ d ≤ Real.pi/4) : 0 < gap w d := by
   have he (i : Fin 3) : 0 < gap (westEnd i) d := by
@@ -292,8 +291,8 @@ theorem positive {w d : ℝ}
       (gap_west_concave hd (by norm_num) le_rfl westTerm_positive_concave)
       ⟨le_of_not_ge hw0,hw.2⟩ (he 1) (he 2)
 
-/-- For the actual D-sourced S edge its complementary gap lies below pi/4.
-The width is monotone there, so s<=12/25 implies this single endpoint bound. -/
+/-- For `s ≤ 12/25` and a phase gap `π/2 + s - d ≥ π/4`, the term
+`cos (d-s) + sin (d-s)` is at least its value at `s = 12/25`. -/
 lemma south_width_lower {s d : ℝ}
     (hd : 1/2 ≤ d ∧ d ≤ Real.pi/4) (hs : s ≤ 12/25)
     (hgap : Real.pi/4 ≤ Real.pi/2+s-d) :
@@ -304,7 +303,7 @@ lemma south_width_lower {s d : ℝ}
   · linarith
   · linarith
 
-/-- The half-angle form used above is exactly the chord norm. -/
+/-- `√(18 - 18 cos q) = 6 sin (q/2)` for `0 ≤ q ≤ 6/5`. -/
 lemma chord_norm {q : ℝ} (hq : 0 ≤ q ∧ q ≤ 6/5) :
     Real.sqrt (18-18*Real.cos q)=6*Real.sin (q/2) := (sin_half_root hq).symm
 

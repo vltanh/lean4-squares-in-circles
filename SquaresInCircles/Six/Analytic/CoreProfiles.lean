@@ -1,12 +1,17 @@
 import SquaresInCircles.Six.Analytic.MarkerSupport
 
 /-!
-# Analytic marker budgets when the smaller central coordinate is small
+# Marker budgets for the squares above and below C
 
-We deliberately use the weaker budgets 3/8 and 2/3. Their sum is 25/24 < pi/3,
-so they still leave a forbidden arc longer than 2*pi/3. The profile estimates
-are proved by a single affine Taylor bound and explicit completed squares.
-They do not reproduce any numerical partition of the sharp profiles.
+A contained square with `0 ≤ t ≤ 4/5` has `t + (5/4) u < 3/8` when
+`a ≥ 1 + t/3`, and `t + (5/4) u < 2/3` when `a ≥ 177/200 + (3/8) t`: otherwise
+its far corner would leave the disk, by a completed square. For a square above
+or below C, at the angle `t` from the vertical, these bound how far its
+marker turns, since the label is at most `(5/4) u`; the two budgets add up to
+`25/24 < π/3`. The lower bounds on `a` come from the separation of the square
+from C, along its own axis or along a side of C, through one Taylor bound
+affine in `t` or through `sin t ≥ (9/10) t`; a square turned the other way
+bounds `(5/4) u - t` in the same way.
 -/
 
 noncomputable section
@@ -65,7 +70,8 @@ lemma south_marker_budget {a u t : ℝ} (h : ContainedChart a u)
     (show 0 ≤ u+1/2+(31/30-(4/5)*t) by linarith [h.u_nonneg])
   nlinarith [h.containment,south_quadratic t]
 
-/-- North OWN tilted towards E; the whole octant uses one affine bound. -/
+/-- The budget `3/8` from `a ≥ 1/2 + (1/2) cos t + (61/100) sin t`, the bound
+of a separation along the own axis of a square above C turned towards E. -/
 lemma north_own_towards {a u t : ℝ} (h : ContainedChart a u)
     (ht0 : 0 ≤ t) (ht1 : t ≤ Real.pi/4)
     (ha : 1/2+(1/2)*Real.cos t+(61/100)*Real.sin t ≤ a) :
@@ -76,7 +82,8 @@ lemma north_own_towards {a u t : ℝ} (h : ContainedChart a u)
   apply north_marker_budget h ht0 ht
   linarith
 
-/-- North OWN tilted away from E. -/
+/-- The budget `3/8` for `(5/4) u - t` from `a ≥ 1/2 + (1/2) cos t`, for a
+square above C turned away from E. -/
 lemma north_own_away {a u t : ℝ} (h : ContainedChart a u)
     (ht0 : 0 ≤ t) (ht1 : t ≤ Real.pi/4)
     (ha : 1/2+(1/2)*Real.cos t ≤ a) :
@@ -99,7 +106,7 @@ lemma north_own_away {a u t : ℝ} (h : ContainedChart a u)
     nlinarith only [hq,ht0,h4]
   nlinarith [h.containment]
 
-/-- A north cap tilted towards E. -/
+/-- The budget `3/8` from `a ≥ 1 + (u + 1/2) sin t`, for `0 ≤ t ≤ 1/4`. -/
 lemma north_cap_towards {a u t : ℝ} (h : ContainedChart a u)
     (ht0 : 0 ≤ t) (ht1 : t ≤ 1/4)
     (ha : 1+(u+1/2)*Real.sin t ≤ a) :
@@ -112,7 +119,9 @@ lemma north_cap_towards {a u t : ℝ} (h : ContainedChart a u)
   apply north_marker_budget h ht0 (by linarith)
   nlinarith
 
-/-- South OWN tilted towards E. -/
+/-- The budget `2/3` from `a ≥ 1/2 + (77/200) cos t + (61/100) sin t`, the
+bound of a separation along the own axis of a square below C turned towards
+E. -/
 lemma south_own_towards {a u t : ℝ} (h : ContainedChart a u)
     (ht0 : 0 ≤ t) (ht1 : t ≤ Real.pi/4)
     (ha : 1/2+(77/200)*Real.cos t+(61/100)*Real.sin t ≤ a) :
@@ -123,7 +132,8 @@ lemma south_own_towards {a u t : ℝ} (h : ContainedChart a u)
   apply south_marker_budget h ht0 ht
   linarith
 
-/-- A south cap tilted towards E. -/
+/-- The budget `2/3` from `a ≥ 2 - rho0 + (u + 1/2) sin t`, for
+`0 ≤ t ≤ 2/5`. -/
 lemma south_cap_towards {a u t : ℝ} (h : ContainedChart a u)
     (ht0 : 0 ≤ t) (ht1 : t ≤ 2/5)
     (ha : 2-rho0+(u+1/2)*Real.sin t ≤ a) :
@@ -136,7 +146,8 @@ lemma south_cap_towards {a u t : ℝ} (h : ContainedChart a u)
   apply south_marker_budget h ht0 (by linarith)
   nlinarith [rho0_upper]
 
-/-- South OWN tilted away from E. -/
+/-- The budget `2/3` for `(5/4) u - t` from `a ≥ 1/2 + (77/200) cos t`, for a
+square below C turned away from E. -/
 lemma south_own_away {a u t : ℝ} (h : ContainedChart a u)
     (ht0 : 0 ≤ t) (ht1 : t ≤ Real.pi/4)
     (ha : 1/2+(77/200)*Real.cos t ≤ a) :

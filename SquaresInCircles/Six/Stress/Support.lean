@@ -2,11 +2,13 @@ import SquaresInCircles.Six.SquareSupport
 import SquaresInCircles.Common.Support
 
 /-!
-# Geometric support inequalities used by the n=6 stresses
+# The far-vertex support
 
-The support bounds are proved from actual closed-square containment. In
-particular the vertex bound is valid in every force direction, including zero;
-it is not the invalid cap estimate selected merely by coordinate dominance.
+A square in the closed disk of radius `R` about the origin has centre `c` with
+`⟨n, c⟩ ≤ R |n| - width S n` for every vector `n`, where
+`width S n = (|⟨n, e₁⟩| + |⟨n, e₂⟩|)/2` for the frame `e₁`, `e₂` of the square:
+some vertex lies `width S n` beyond the centre along `n`, and as it lies in the
+disk, Cauchy–Schwarz bounds its projection by `R |n|` (`dot_le_radius`).
 -/
 
 noncomputable section
@@ -14,10 +16,9 @@ namespace SquaresInCircles.Six.Stress
 
 def vectorLength (v : Point) : ℝ := Real.sqrt (normSq v)
 
+/-- The far-vertex support `R |v| - width S v`. -/
 def vertexSupport (R : ℝ) (S : UnitSquare) (v : Point) : ℝ :=
   R*vectorLength v-width S v
-
-def boxSupport (h : ℝ) (v : Point) : ℝ := h*(max v.1 0+max v.2 0)
 
 lemma vectorLength_nonneg (v : Point) : 0 ≤ vectorLength v := Real.sqrt_nonneg _
 lemma vectorLength_sq (v : Point) : vectorLength v^2=normSq v := Real.sq_sqrt (normSq_nonneg v)
@@ -37,7 +38,7 @@ lemma dot_le_radius {v p : Point} {R : ℝ} (hR : 0 ≤ R) (hp : normSq p ≤ R^
     (show 0 < dot v p+R*vectorLength v by linarith)
   nlinarith
 
-/-- A genuine vertex realizes the support width in the chosen direction. -/
+/-- Some vertex of the square lies `width S n` beyond its centre along `n`. -/
 lemma exists_support_vertex (S : UnitSquare) (n : Point) :
     ∃ p, closedSquare S p ∧ dot n p=dot n S.center+width S n := by
   obtain ⟨u,hu,hxu⟩ := exists_signed (frameX S n) (c := (1:ℝ)/2) (by norm_num)
@@ -54,7 +55,8 @@ lemma exists_support_vertex (S : UnitSquare) (n : Point) :
   dsimp [width]
   linarith
 
-/-- Every contained square obeys the full far-vertex support inequality. -/
+/-- A square in the closed disk of radius `R` about the origin has
+`⟨n, c⟩ ≤ R |n| - width S n` for every `n`. -/
 theorem center_le_vertexSupport {S : UnitSquare} {R : ℝ}
     (hR : 0 ≤ R) (hcontain : ∀ p, closedSquare S p → inDisk (0,0) R p) (n : Point) :
     dot n S.center ≤ vertexSupport R S n := by
@@ -71,22 +73,5 @@ lemma scalar_box_support {x h v : ℝ} (hx : 0 ≤ x ∧ x ≤ h) : x*v ≤ h*ma
     exact mul_le_mul_of_nonneg_right hx.2 hv
   · rw [max_eq_right (le_of_not_ge hv),mul_zero]
     exact mul_nonpos_of_nonneg_of_nonpos hx.1 (le_of_not_ge hv)
-
-lemma center_le_boxSupport {c : Point} {h : ℝ}
-    (hc : (0 ≤ c.1 ∧ c.1 ≤ h) ∧ (0 ≤ c.2 ∧ c.2 ≤ h)) (v : Point) :
-    dot v c ≤ boxSupport h v := by
-  have hx := scalar_box_support (v := v.1) hc.1
-  have hy := scalar_box_support (v := v.2) hc.2
-  dsimp [dot,boxSupport]
-  nlinarith
-
-/-- Discarding a nonnegative half-width term produces the weaker primary
-support used in some rows of Appendix A. -/
-lemma center_le_primaryVertexSupport {S : UnitSquare} {R : ℝ}
-    (hR : 0 ≤ R) (hcontain : ∀ p, closedSquare S p → inDisk (0,0) R p) (n : Point) :
-    dot n S.center ≤ R*vectorLength n-|frameX S n|/2 := by
-  have hh := center_le_vertexSupport hR hcontain n
-  dsimp [vertexSupport,width] at hh
-  linarith [abs_nonneg (frameY S n)]
 
 end SquaresInCircles.Six.Stress

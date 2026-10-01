@@ -1,13 +1,16 @@
 import SquaresInCircles.Six.Analytic.DiagonalCoreBounds
 
 /-!
-# Nonnegative W has only the candidate W-secondary source
+# Separation along the secondary axis of D at a small angle
 
-The W core constraint forces the maximum of its small-gap projection to the
-boundary a=aMin. This is a proved constrained-circle branch, not a substitution
-based on coordinate dominance. The analytic D bound |bD|<229/1000 then excludes
-D-secondary throughout 0<=w<=d<=pi/4. Thus every remaining noncandidate W/D
-source is confined to the genuine sign half w<0.
+Let a square lie in the disk and outside the core disk, with centre `(a, b)` in
+its frame, and let `0 ≤ q ≤ π/4`. Then
+`a sin q - b cos q ≤ aMin sin q + U0 cos q`: over the centres allowed by the
+disk and the core, the maximum is at the corner `(aMin, U0)` where the line
+`a = aMin` meets the circle, since `R0 sin q ≤ 5/2 - rho0`. With the bound
+`|b_D| < 229/1000` on the transverse coordinate of D, it follows that W or S,
+at an angle `q` from D, is not separated from D along the secondary axis of D
+(`nonnegative_W_Dsecondary_excluded`).
 -/
 
 noncomputable section
@@ -61,43 +64,5 @@ lemma nonnegative_W_Dsecondary_excluded {a b bd q : ℝ}
   have hB := mul_le_mul_of_nonneg_right normalization_transverse_upper_sharp.le ht.2.1
   rw [angularWidth,abs_of_nonneg ht.2.1,abs_of_nonneg ht.1]
   nlinarith only [hproj,hA,hB,hbd,ht.2.2.1,ht.2.2.2]
-
-/-- A D-secondary separator forces a negative W deviation. -/
-theorem D_secondary_forces_negative_W {R : ℝ} (P : NormalizedPacking R)
-    (hsep : Seven.SAT.threshold (P.square 2) (P.square 3)≤
-      dot (normalY (P.square 3)) (sub (P.square 3).center (P.square 2).center)) :
-    P.helperAngle 2<0 := by
-  by_contra! hw
-  have hwphase : P.phase 2=Real.pi+P.helperAngle 2 := P.phase_from_deviation 2
-  have hdphase : P.phase 3=Real.pi+P.diagonalAngle := by
-    dsimp [NormalizedPacking.diagonalAngle]
-    ring
-  have hq : 0≤P.diagonalAngle-P.helperAngle 2 ∧
-      P.diagonalAngle-P.helperAngle 2≤Real.pi/4 := by
-    have hord := P.primary_order.2.2.1
-    rw [hwphase,hdphase] at hord
-    exact ⟨by linarith,by linarith [P.diagonal_angle_range.2]⟩
-  have hbD := (normalized_diagonal_core_bounds P).2.2
-  have hbound := nonnegative_W_Dsecondary_excluded (P.contained 2) (P.avoidsCore 2) hq
-    ((le_abs_self (P.transverse 3)).trans_lt hbD)
-  change Seven.SAT.threshold (P.square 2) (P.square 3)≤
-    frameY (P.square 3) (sub (P.square 3).center (P.square 2).center) at hsep
-  rw [P.square_def 2,P.square_def 3,pair_frameY_right,oriented_pair_threshold,hwphase,hdphase] at hsep
-  have hdiff : (Real.pi+P.diagonalAngle)-(Real.pi+P.helperAngle 2)=
-      P.diagonalAngle-P.helperAngle 2 := by ring
-  rw [hdiff] at hsep
-  linarith
-
-/-- No source selection is assumed: every actual selected source is W-secondary
-on the nonnegative-W half of the normalized domain. -/
-theorem DW_selected_source_nonnegative_W {R : ℝ} (P : NormalizedPacking R)
-    (hw : 0≤P.helperAngle 2) (k : Fin 8)
-    (hsep : Seven.SAT.threshold (P.square 2) (P.square 3)≤
-      dot (Stress.pairNormal k (P.square 2) (P.square 3))
-        (sub (P.square 3).center (P.square 2).center)) : k=2 := by
-  rcases DW_selected_secondary P k hsep with hk | hk
-  · exact hk
-  · subst k
-    linarith [D_secondary_forces_negative_W P hsep]
 
 end SquaresInCircles.Six.Analytic

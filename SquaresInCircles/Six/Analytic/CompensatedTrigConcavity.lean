@@ -3,14 +3,17 @@ import SquaresInCircles.Seven.Analysis
 import Mathlib.Analysis.Real.Pi.Bounds
 
 /-!
-# Concavity with a compensated negative mixed sine term
+# Separate concavity with a negative mixed sine term
 
-The low-D secondary stresses have a negative sin(v+d) coefficient. Central
-edge terms dominate its second derivative throughout the original rectangle
-0<=v<=2/3, 0<=d<=1/2. The rational conditions cover both secondary sources;
-only the four original corners remain. No support switch is differentiated.
+`frozenTrig` is a constant plus terms `A cos x + B sin x` in `v`, in `d` and in
+`v + d`. On the rectangle `0 ≤ v ≤ 2/3`, `0 ≤ d ≤ 1/2` the coefficient of
+`sin (v + d)` may be negative, down to `-613/4000`: if the coefficients of the
+terms in `v` and in `d` are large enough, the second derivative in each variable
+is still nonpositive, since `sin (v + d) ≤ sin v + (1/2) cos v` and
+`sin (v + d) ≤ (5/8) cos d + sin d` there. A function that is concave in each
+variable separately and positive at the four corners of the rectangle is
+positive on it.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic
 
@@ -108,7 +111,8 @@ private lemma compensated_d_curvature {A B G H v d : ℝ}
     nlinarith only [h5,h6]
   nlinarith only [h1,h2,h3,h4,hq,hcd,hsdu]
 
-/-- One compensation estimate covers both low-diagonal secondary stresses. -/
+/-- Under the bounds on its coefficients, `frozenTrig` is positive on
+`[0, 2/3] × [0, 1/2]` as soon as it is positive at the four corners. -/
 theorem compensated_frozen_positive {C Av Bv Ad Bd Aq Bq v d : ℝ}
     (hAv : 2849/20000≤Av) (hBv : 37/200≤Bv)
     (hAd : 2387/20000≤Ad) (hBd : 2387/20000≤Bd)

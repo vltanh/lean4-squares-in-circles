@@ -1,15 +1,15 @@
 import SquaresInCircles.Six.Analytic.WestMixed.Reduction
 
 /-!
-# The remaining cardinal-S mixed-west scalar
+# W along its own axis, S along a side: positivity
 
-All stresses use the same weights 41/20,38/25,1,211/200 on CW,CS,WD,DS.
-The square-root tangent for S and the common half-angle D majorant leave
-positive first harmonics. The only south split is its actual sign wall.
-Concavity handles each entire south half-interval, while WestMixed.Reduction
-handles the entire v,d domain. The resulting geometric endpoint margins are
-proved by exact Taylor polynomials and rational arithmetic.
-Compilation and kernel acceptance remain unverified.
+The profile of the stress with weights `41/20`, `38/25`, `1` and `211/200` is
+positive on `16/25 ≤ d ≤ 11/14`, `53/50 - d ≤ v ≤ 31/50` and `|s| ≤ 2/5`, where
+`v`, `s` and `d` are the angles of W, S and D. For each sign of `s` the profile
+is concave in `x = |s|` on `[0, 2/5]`, and the reduction in `(v, d)` leaves the
+points `(21/50, 16/25)`, `(48/175, 11/14)` and `(31/50, 16/25)`. At these
+points, with `x = 0` or `x = 2/5`, Taylor polynomials of `sin` and `cos` bound
+the profile below by `1/1000`.
 -/
 
 noncomputable section
@@ -145,7 +145,7 @@ lemma boundary_positive (negative : Bool) (i : Fin 3) {x : ℝ}
   exact positive_on_concave_interval (f := fun x => profile negative (vertexV i) x (vertexD i))
     (south_concave negative hd) hx h0 h1
 
-/-- The full scalar domain, including both signs of the cardinal angle. -/
+/-- The profile is positive on its whole domain, for either sign of `s`. -/
 theorem positive (negative : Bool) {v x d : ℝ}
     (hx : 0 ≤ x ∧ x ≤ 2/5) (hd : 16/25 ≤ d ∧ d ≤ 11/14)
     (hv : 53/50-d ≤ v ∧ v ≤ 31/50) : 0 < profile negative v x d := by

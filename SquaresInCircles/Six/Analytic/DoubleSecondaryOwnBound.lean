@@ -2,23 +2,25 @@ import SquaresInCircles.Six.Analytic.SecondaryCostBound
 import SquaresInCircles.Six.Analytic.HighDiagonalProfile
 
 /-!
-# Whole-domain double-D-secondary exclusion with OWN W and S
+# Double separation at D: the gap for own wings
 
-Use equal multipliers on C-W, C-S, W-D and D-S and zero multiplier on C-D.
-The two D-secondary forces cancel exactly, so no D support is needed. The
-remaining two exterior costs obey SecondaryCostBound. Their affine q terms
-sum using qW+qS=pi/2+v+s and eliminate d altogether.
-
-The central support is counted once. Its two components are nonnegative on
-the original helper ranges, and its cost gives coefficients 387/1000 and
-613/1000. A one-variable concavity bound and the sign s=0 finish the argument.
-There is no 53-cell subdivision or generated stress table in this proof.
+When W and S are separated from C along their own axes, the gap is positive for
+`0 ≤ v ≤ 2/3`, `-5/8 ≤ s ≤ 2/3` and `1/2 ≤ d ≤ π/4` with `π/2 + s - d ≥ 1/2`.
+For each wing, `angularWidth q` minus the work of its force is above
+`-91/125 - 13/20 q`, where `q` is its angle with D
+(`secondary_cost_affine_lower`); the two angles `d + v` and `π/2 + s - d` sum
+to `π/2 + v + s`, so `d` drops out. The work of the force on C is at most
+`113/1000` times the sum of its two components, which are nonnegative. What
+remains is `ownWingCost v + ownWingCost s` plus a constant; `ownWingCost` is
+above `249/1000` on `[0, 2/3]` by concavity, and for `s < 0` the terms in `s`
+are at least `387/1000`, as `cos s - sin s ≥ 1`.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic
 open Normalization
 
+/-- The terms of the gap in the angle `x` of an own wing. -/
 def ownWingCost (x : ℝ) : ℝ :=
   (387/1000)*Real.cos x+(613/1000)*Real.sin x-(13/20)*x
 
@@ -55,14 +57,16 @@ lemma helper_trig_bounds {x : ℝ} (hx : |x|≤2/3) :
   rw [sin_abs_angle (hx.trans (by linarith [Real.pi_gt_d2] : (2:ℝ)/3≤Real.pi))] at hs
   exact ⟨by norm_num at hsq; linarith,hs.trans hx⟩
 
+/-- `doubleSecondaryGap` for W and S separated from C along their own axes, in
+`v = -w`. -/
 def doubleOwnSecondaryGap (v s d aw bw aS bS cx cy : ℝ) : ℝ :=
   2+angularWidth v+angularWidth s+angularWidth (d+v)+angularWidth (Real.pi/2+s-d)-
     ((1+Real.sin (d+v))*aw-Real.cos (d+v)*bw)-
     ((1+Real.sin (Real.pi/2+s-d))*aS+Real.cos (Real.pi/2+s-d)*bS)-
     ((Real.cos v-Real.sin s)*cx+(Real.cos s-Real.sin v)*cy)
 
-/-- Strict positivity over the entire original OWN helper ranges. The
-additional qS>=1/2 fact is proved geometrically from high D at the call site. -/
+/-- The gap for own wings is positive on the angle ranges of the normalization,
+when the angle `π/2 + s - d` between D and S is at least `1/2`. -/
 theorem double_own_secondary_gap_positive {v s d aw bw aS bS cx cy : ℝ}
     (hv : 0≤v ∧ v≤2/3) (hs : -5/8≤ s ∧ s≤2/3)
     (hd : 1/2≤d ∧ d≤Real.pi/4) (hqs : 1/2≤Real.pi/2+s-d)

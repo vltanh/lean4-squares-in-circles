@@ -1,22 +1,18 @@
 import SquaresInCircles.Six.Analytic.MixedCardinalSouth.Scalar
 
 /-!
-# A whole-domain obstruction for the large positive south tail
+# The large south tail: the profile
 
-For the mixed south source use CW, CS, WD, DS with weights 4, 10, 3, 3.
-Here W is cardinal, S is OWN, v=-w, and 12/25<=s<=2/3. The support calculation
-is kept separate in Geometry.lean. Its rational minorant is `profile` below.
-
-There are no angle cells. The d derivative is negative on the whole domain:
-the chord derivative is at most -2067/1000, while the remaining derivative is
-at most (1839/1000)*(107/350)+3/2, which is smaller. Thus d=11/14 is worst.
-The s slices are positive sine/cosine combinations plus a constant. The v
-slices are concave on each side of the geometric sign wall v=0. Six distinct
-corners remain: v in {-2/5,0,2/5}, s in {12/25,2/3}, d=11/14. All six
-inequalities follow from explicit Taylor bounds and rational arithmetic.
-
-The Boolean only records the sign of v; it is not a certificate selector.
-Compilation and kernel acceptance remain unverified.
+With W, D and S at the phases `π - v`, `π + d` and `3π/2 + s`, the
+profile is a lower bound, with rational coefficients, for the defect of the
+large-tail stress. It is positive for `|v| ≤ 2/5`, `12/25 ≤ s ≤ 2/3` and
+`1/2 ≤ d ≤ 11/14`. Its derivative in `d` is nonpositive: the part
+`3 cos(d + v) - (5067/1000) cos((d + v)/2)` is at most `-2067/1000`, and the
+rest at most `(1839/1000)(107/350) + 3/2`. So `d = 11/14` is the worst case.
+In `s` it is a constant plus a harmonic with nonnegative coefficients, and in
+`v` it is concave on each side of `v = 0`. This leaves six corners,
+`v ∈ {-2/5, 0, 2/5}` and `s ∈ {12/25, 2/3}`, where Taylor bounds give
+positivity. The Boolean `negative` records the sign of `v`.
 -/
 
 noncomputable section
@@ -59,7 +55,7 @@ private lemma coefficient_sine_lower {negative : Bool} {v : ℝ}
     dsimp [coefficient]
     linarith [hv.1]
 
-/-- The diagonal derivative is nonpositive everywhere, not only at a mesh. -/
+/-- The derivative of the profile in `d` is nonpositive. -/
 lemma diagonal_derivative_nonpositive {v s d : ℝ}
     (hv : -(2/5) ≤ v ∧ v ≤ 2/5)
     (hs : 12/25 ≤ s ∧ s ≤ 2/3) (hd : 1/2 ≤ d ∧ d ≤ 11/14) :
@@ -232,7 +228,7 @@ private lemma endpointPolynomial_le {negative : Bool} {v s : ℝ}
   cases negative <;> dsimp [endpointPolynomial,profile,coefficient,cosUpper,sinFive] <;>
     nlinarith only [cs,ss,cv,sv,sq,sh,cr,sr]
 
-/-- These are the physical interval endpoints, with v=0 shared by the two signs. -/
+/-- The profile is positive at the corners of the domain with `d = 11/14`. -/
 private lemma corner (negative : Bool) (v s : ℝ)
     (hv : v=vLower negative ∨ v=vUpper negative)
     (hs : s=12/25 ∨ s=2/3) : 0 < profile negative v s (11/14) := by
@@ -242,7 +238,7 @@ private lemma corner (negative : Bool) (v s : ℝ)
       (by norm_num [vLower,vUpper]) (by norm_num))
     norm_num [endpointPolynomial,coefficient,vLower,vUpper,cosLower,cosUpper,sinLower,sinFive]
 
-/-- The entire large-south rectangle is excluded by one explicit scalar profile. -/
+/-- The profile is positive on the large-tail domain. -/
 theorem positive (negative : Bool) {v s d : ℝ}
     (hv : vLower negative ≤ v ∧ v ≤ vUpper negative)
     (hs : 12/25 ≤ s ∧ s ≤ 2/3) (hd : 1/2 ≤ d ∧ d ≤ 11/14) :

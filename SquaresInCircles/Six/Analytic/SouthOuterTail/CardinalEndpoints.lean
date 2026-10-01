@@ -1,18 +1,15 @@
 import SquaresInCircles.Six.Analytic.SouthOuterTail.Profile
 
 /-!
-# The cardinal-W final-tail rectangles
+# The south tail with W on the west side of C
 
-Only the two cardinal kinds of Profile are used here. The OWN-W rectangle
-has a negative corner and is deliberately NOT asserted positive. Its repair
-uses a separate radial support argument.
-
-For cardinal W, coordinate concavity leaves the physical endpoints
-x in {0,2/5}, s in {11/25,2/3}, d in {1/2,11/14}, and the two central x
-faces. The root polynomial is decreasing, so a lower Taylor bound on its
-argument supplies an upper bound on the root term. Every remaining comparison
-is rational arithmetic at these geometrically forced endpoints. There is no
-angular subdivision or imported numerical result.
+When W is separated from C along the west side of C, the south tail profile is
+positive on the whole box `x ∈ [0, 2/5]`, `s ∈ [11/25, 2/3]`, `d ∈ [1/2, 11/14]`,
+for both ends of the range of the centre of C. By the reduction to the ends of
+the intervals it is enough to check the eight corners. There `cos` and `sin`
+are bounded by their Taylor polynomials, and the root term, which decreases in
+its argument, by the polynomial majorant at a Taylor lower bound of the
+argument; the resulting bounds at the corners are rational.
 -/
 
 noncomputable section
@@ -43,12 +40,12 @@ private lemma cos_lower (x : ℝ) : cosLower x ≤ Real.cos x := by
 private lemma sin_bracket (x : ℝ) :
     sinLower x ≤ Real.sin x ∧ Real.sin x ≤ sinUpper x := by
   by_cases hx : 0 ≤ x
-  · simp only [sinLower,sinUpper,if_pos hx]
+  · simp only [sinLower,sinUpper,ite_eq_left hx]
     exact ⟨Seven.sin_lower_seven hx,Seven.sin_upper_five hx⟩
   · have hl := Seven.sin_lower_seven (x := -x) (by linarith)
     have hu := Seven.sin_upper_five (x := -x) (by linarith)
     simp only [Real.sin_neg] at hl hu
-    simp only [sinLower,sinUpper,if_neg hx]
+    simp only [sinLower,sinUpper,ite_eq_right hx]
     constructor <;> nlinarith only [hl,hu]
 
 private lemma root_at_endpoint (negative right : Bool) :
@@ -114,7 +111,8 @@ private lemma endpoint_positive (negative upper xb sb db : Bool) :
   (polynomial_positive negative upper xb sb db).trans_le
     (polynomial_le negative upper xb (sEnd sb) (dEnd db))
 
-/-- Positivity on both full cardinal-W rectangles, not just their corners. -/
+/-- With W on the west side of C, the south tail profile is positive on the
+whole box. -/
 theorem positive_cardinal (negative upper : Bool) {x s d : ℝ}
     (hx : 0 ≤ x ∧ x ≤ 2/5) (hs : 11/25 ≤ s ∧ s ≤ 2/3)
     (hd : 1/2 ≤ d ∧ d ≤ 11/14) :

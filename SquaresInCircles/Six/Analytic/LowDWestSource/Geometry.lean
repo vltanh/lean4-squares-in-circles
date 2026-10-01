@@ -2,15 +2,19 @@ import SquaresInCircles.Six.Analytic.LowDWestSource.Scalar
 import SquaresInCircles.Six.Stress.Reverse
 
 /-!
-# Connect the low-D quadrilateral stress to the actual packing
+# W and D separated along the secondary axis of D
 
-The west cap support is justified by its slope inequality, not merely by
-coordinate dominance. Both signs of the central y-force are retained. The
-positive scalar bound is the four-vertex analytic result in Scalar.lean.
-
-The conclusion is a strict improvement of the missing-west domain: any actual
-D-sourced W/D edge forces d>3/5. It does not assume or assert that the remaining
-mixed-source region is empty. Compilation and kernel acceptance are deferred.
+If W and D are separated along the secondary axis of D, at the phase `π + d`,
+then `d > 3/5`. When W is separated from C along the west side of C, its phase
+is within `2/5` of `π`, and the phase gap of more than one radian between W and
+D gives this at once. When W, at the phase `π - v`, is separated from C along
+its primary axis and `d ≤ 3/5`, the gap and the windows put `(v, d)` in the
+quadrilateral `1/2 ≤ d ≤ 3/5`, `1 - d ≤ v ≤ 2/3`. There the weights `39/100`
+and `43/100` on the separations of C from W and D along their primary axes and
+`18/100` on that of W and D give forces whose works are at most the support of
+the box `[0, c0]²` for C, for either sign of the second component of its force,
+the cap support of W and the vertex support of D; and the threshold sum
+exceeds these bounds by the minorant of `LowDWestSource.Scalar`.
 -/
 
 noncomputable section
@@ -86,8 +90,9 @@ private lemma cap_slope {v d : ℝ}
     (by norm_num : (0:ℝ) ≤ 1613/1000)
   exact ⟨hV0,by nlinarith [ht.2]⟩
 
-/-- The west support is the axial branch, with its genuine supporting-line
-condition proved on this domain. -/
+/-- The work of the force on W is at most its cap support
+`ρ0 (39/100 + (18/100) sin (v + d))`: on the quadrilateral the force meets the
+slope condition of the cap case. -/
 lemma west_support {v d a b : ℝ} (hc : ContainedChart a |b|)
     (hd : 1/2 ≤ d ∧ d ≤ 3/5) (hv : 1-d ≤ v ∧ v ≤ 2/3) :
     dot (forceW v d) (orientedSquare (Real.pi-v) a b).center ≤
@@ -113,6 +118,8 @@ lemma west_support {v d a b : ℝ} (hc : ContainedChart a |b|)
   change U*a-V*b ≤ rho0*U
   linarith only [hcorner,hb]
 
+/-- The work of the force on D is at most its vertex support
+`R0 √(2173/10000) - 61/200`. -/
 lemma diagonal_support {d a b : ℝ} (hc : ContainedChart a |b|) :
     dot (forceD d) (orientedSquare (Real.pi+d) a b).center ≤
       R0*Real.sqrt (2173/10000)-61/200 := by
@@ -168,7 +175,8 @@ private lemma defect_eq_raw (b : Bool) {v d : ℝ}
       raw,angularWidth,abs_of_nonneg tv.1,abs_of_nonneg tv.2,
       abs_of_nonneg td.1,abs_of_nonneg td.2,abs_of_nonneg tq.1,abs_of_nonneg tq.2] <;> ring
 
-/-- Actual C/W/D disjointness contradicts the analytic quadrilateral stress. -/
+/-- If W is separated from C along its primary axis and `d ≤ 3/5`, then W and D
+are not separated along the secondary axis of D. -/
 theorem own_low_diagonal_impossible {R : ℝ} (P : NormalizedPacking R)
     (hW : P.ownBits 2=true) (hdhigh : P.diagonalAngle ≤ 3/5)
     (hsep : Seven.SAT.threshold (P.square 2) (P.square 3) ≤
@@ -263,7 +271,7 @@ end SquaresInCircles.Six.Analytic.LowDWestSource
 namespace SquaresInCircles.Six.Analytic
 open Normalization
 
-/-- A D-sourced west separator has a high diagonal in both canonical W cases. -/
+/-- If W and D are separated along the secondary axis of D, then `d > 3/5`. -/
 theorem DW_Dsecondary_diagonal_gt_three_fifths {R : ℝ} (P : NormalizedPacking R)
     (hsep : Seven.SAT.threshold (P.square 2) (P.square 3) ≤
       dot (normalY (P.square 3)) (sub (P.square 3).center (P.square 2).center)) :

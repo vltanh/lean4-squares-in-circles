@@ -1,15 +1,14 @@
 import SquaresInCircles.Six.Normalization.ChartBounds
 
 /-!
-# Lemma B6: exclude both secondary central separators
+# Outer squares are not separated from C along a secondary axis
 
-The strong central box and B3's transverse bound suffice. The proof uses the
-coarser `U0 + 2*c0 < 1`, avoiding an additional square-root scalar leaf.
-These are the genuine signed secondary margins from T2. The strong box is
-an explicit hypothesis, not an assumption that Proposition A is complete.
-Compiler validation remains pending.
+Let the centre `(cx, cy)` of C lie in the box `[0, c0]²` and let an outer square
+have transverse coordinate `|b| ≤ U0`. Since `U0 + 2 c0 < 1`, the centres of the
+two squares are less than one apart along the secondary axis of the outer
+square, while `|cos t| + |sin t| ≥ 1`. So neither direction of that axis
+separates the outer square from C.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Normalization
 
@@ -36,8 +35,7 @@ lemma transverse_distance_lt_one {b cx cy t : ℝ}
   apply abs_lt.mpr
   constructor <;> nlinarith [U0_lt_117_250, c0_lt_23_200]
 
-/-- Both secondary SAT margins are strictly negative, including signed `b`.
-There is no preferred-cardinal or pin hypothesis in this lemma. -/
+/-- Both margins of separation along the secondary axis are negative. -/
 theorem secondary_separators_fail {b cx cy t : ℝ}
     (hb : |b| ≤ U0) (hx0 : 0 ≤ cx) (hy0 : 0 ≤ cy)
     (hx : cx ≤ c0) (hy : cy ≤ c0) :
@@ -48,15 +46,5 @@ theorem secondary_separators_fail {b cx cy t : ℝ}
   have hd := abs_lt.mp (transverse_distance_lt_one (t := t) hb hx0 hy0 hx hy)
   have hw := one_le_abs_cos_add_abs_sin t
   constructor <;> linarith
-
-/-- B6 after the same explicit geometric core premise as B1--B5. -/
-theorem ContainedChart.secondary_separators_fail {a b cx cy t : ℝ}
-    (hc : ContainedChart a |b|) (hcore : AvoidsCore a |b|)
-    (hx0 : 0 ≤ cx) (hy0 : 0 ≤ cy) (hx : cx ≤ c0) (hy : cy ≤ c0) :
-    b - 1 / 2 - (-cx * Real.sin t + cy * Real.cos t) -
-        (|Real.cos t| + |Real.sin t|) / 2 < 0 ∧
-      (-cx * Real.sin t + cy * Real.cos t) - 1 / 2 - b -
-        (|Real.cos t| + |Real.sin t|) / 2 < 0 :=
-  Normalization.secondary_separators_fail (hc.u_le_U0 hcore) hx0 hy0 hx hy
 
 end SquaresInCircles.Six.Normalization

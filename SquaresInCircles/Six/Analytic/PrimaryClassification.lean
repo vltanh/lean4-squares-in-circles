@@ -3,17 +3,15 @@ import SquaresInCircles.Six.Analytic.CardinalDestinationPrimary
 import SquaresInCircles.Six.Analytic.OwnDestinationPrimary
 
 /-!
-# Every actual W/D separator is a forward secondary source
+# W and D are separated along a second axis
 
-All primary directions are now excluded analytically for both W central bits.
-The outward/inward radial argument handles two directions uniformly. Small
-phase gaps handle the two remaining directions for w>=0. For w<0, explicit
-frozen-center stresses settle OWN W and the inward-primary cardinal case;
-the destination-primary cardinal case has a single radial quadratic proof.
-Negative secondary directions are excluded by the actual interior-pin chord.
-
-This replaces the primary-axis portion of the former fixed-row classification.
-It does NOT yet force W-secondary over D-secondary or prove the d>1/2 tail.
+W and D are separated along one of the eight directed axes `±e₁`, `±e₂` of the
+two squares, and only the axes `e₂` of W and of D are possible. The axes `e₁`
+of W and `-e₁` of D are excluded by the radial coordinates, the axes `-e₂` by
+the chord between the pins of W and D, and the axes `-e₁` of W and `e₁` of D
+case by case. For W on the west side of C the axis `-e₁` of W is excluded here:
+by a phase gap of at most `π/3` when the angle of W is nonnegative, and
+otherwise by a stress with the centres frozen, using `a_W + c_x ≥ 1`.
 -/
 
 noncomputable section
@@ -60,7 +58,8 @@ private lemma cardinal_inward_frozen_nonpositive {v d aw bw ad bd cx cy : ℝ}
   dsimp [cardinalInwardFrozen,frozenTrig]
   nlinarith only [hD,hE,haxial]
 
-/-- The last inward-primary case, with a genuine cardinal W separator. -/
+/-- If W is separated from C along the west side of C, W and D are not separated
+along `-e₁` of W. -/
 theorem normalized_cardinalW_inward_primary_excluded {R : ℝ}
     (P : NormalizedPacking R) (hcard : P.ownBits 2=false) :
     ¬ Seven.SAT.threshold (P.square 2) (P.square 3)≤
@@ -74,7 +73,7 @@ theorem normalized_cardinalW_inward_primary_excluded {R : ℝ}
       rw [abs_of_nonneg (sub_nonneg.mpr P.primary_order.2.2.1.le),hwphase,hdphase]
       linarith [P.diagonal_angle_range.2,Real.pi_pos]
     exact not_le_of_gt (oriented_inward_primary_excluded (P.contained 2) (P.contained 3)
-      (P.avoidsCore 2) (P.avoidsCore 3) hq) hsep
+      (P.avoidsCore 3) hq) hsep
   · have hwbound := abs_lt.mp (P.cardinal_angle 2 hcard)
     have hv : 0≤-P.helperAngle 2 ∧ -P.helperAngle 2≤2/5 := by
       constructor <;> linarith [hwbound.1,hwbound.2]
@@ -93,8 +92,8 @@ theorem normalized_cardinalW_inward_primary_excluded {R : ℝ}
       (by simpa only [P.square_def,hwphase',hdphase] using hsep)
     linarith
 
-/-- A theorem about any selected W/D axis, not just the existence of one good
-source. Every exclusion consumes the actual inequality and interior pins. -/
+/-- Every directed axis that separates W and D is `e₂` of W (`k = 2`) or `e₂` of D
+(`k = 6`). -/
 theorem DW_selected_secondary {R : ℝ} (P : NormalizedPacking R) (k : Fin 8)
     (hsep : Seven.SAT.threshold (P.square 2) (P.square 3)≤
       dot (Stress.pairNormal k (P.square 2) (P.square 3))
@@ -129,7 +128,7 @@ theorem DW_selected_secondary {R : ℝ} (P : NormalizedPacking R) (k : Fin 8)
   · exact Or.inr rfl
   · exact False.elim (hneg7 rfl)
 
-/-- Analytic replacement for the preliminary primary-axis classification. -/
+/-- W and D are separated along `e₂` of W or `e₂` of D. -/
 theorem DW_secondary_exists {R : ℝ} (P : NormalizedPacking R) : ∃ k : Fin 8,
     Seven.SAT.threshold (P.square 2) (P.square 3)≤
       dot (Stress.pairNormal k (P.square 2) (P.square 3))

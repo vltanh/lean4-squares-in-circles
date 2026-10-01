@@ -1,17 +1,13 @@
 import SquaresInCircles.Six.Analytic.RadicalTrigConcavity
 
 /-!
-# Freeze centers before reducing stress angles
+# Stresses with fixed centres
 
-A separating stress is evaluated at fixed local center coordinates and fixed
-central coordinates. When its angle-dependent terms are positive combinations
-of sine and cosine on the first quadrant, they are concave before taking any
-support supremum. Thus rectangle corners suffice without differentiating a
-piecewise cap/vertex support or splitting at its walls.
-
-The endpoint hypotheses in this general theorem are explicit obligations.
-Applications below provide ordinary analytic endpoint proofs; no computation
-or external certificate is hidden in this reduction.
+With the centres of the squares fixed, a weighted sum of separating
+inequalities is a function of the angles alone. When it is a constant plus
+harmonics `A cos x + B sin x`, with `A, B ≥ 0`, in `v`, `d` and `v + d`, and
+`v + d ≤ π/2`, it is concave in each of `v` and `d`. So it is positive on a
+rectangle of angles as soon as it is positive at the four corners.
 -/
 
 noncomputable section
@@ -54,7 +50,9 @@ lemma positive_trig_affine_concave {A B l u a b : ℝ} (hA : 0≤A) (hB : 0≤B)
       (fun x => A*Real.cos (a*x+b)+B*Real.sin (a*x+b)) :=
   concave_affine_argument (positive_trig_concave hA hB) hmap
 
-/-- Separate concavity sends a rectangle to exactly its four original corners. -/
+/-- A function on `[l, u] × [L, U]`, concave in the first variable and concave
+in the second on the edges `x = l` and `x = u`, is positive if it is positive
+at the four corners. -/
 lemma positive_on_separately_concave_rectangle {f : ℝ → ℝ → ℝ} {l u L U x y : ℝ}
     (hx : l≤x ∧ x≤u) (hy : L≤y ∧ y≤U)
     (hfirst : ∀ t∈Set.Icc L U, ConcaveOn ℝ (Set.Icc l u) (fun z => f z t))
@@ -65,8 +63,8 @@ lemma positive_on_separately_concave_rectangle {f : ℝ → ℝ → ℝ} {l u L 
     (positive_on_concave_interval (f := f l) hleft hy hll hlu)
     (positive_on_concave_interval (f := f u) hright hy hul huu)
 
-/-- The common three-angle form: v, d and v+d. All coefficients are fixed
-when the square centers are frozen. Its only domain condition is geometric. -/
+/-- A constant plus harmonics in `v`, `d` and `v + d`: the form of a stress
+with fixed centres. -/
 def frozenTrig (C Av Bv Ad Bd Aq Bq v d : ℝ) : ℝ :=
   C+(Av*Real.cos v+Bv*Real.sin v)+(Ad*Real.cos d+Bd*Real.sin d)+
     (Aq*Real.cos (v+d)+Bq*Real.sin (v+d))
@@ -99,7 +97,8 @@ lemma frozenTrig_concave_d {C Av Bv Ad Bd Aq Bq V D v : ℝ}
   intro x _
   simp only [frozenTrig,Pi.add_apply,one_mul,add_zero,add_comm x v]
 
-/-- No support-wall case is required: the proof precedes support maximization. -/
+/-- With nonnegative coefficients and `V + D ≤ π/2`, positivity at the four
+corners of `[0, V] × [0, D]` gives positivity on the whole rectangle. -/
 theorem frozenTrig_positive {C Av Bv Ad Bd Aq Bq V D v d : ℝ}
     (hAv : 0≤Av) (hBv : 0≤Bv) (hAd : 0≤Ad) (hBd : 0≤Bd) (hAq : 0≤Aq) (hBq : 0≤Bq)
     (hV : 0≤V) (hD : 0≤D) (hsum : V+D≤Real.pi/2)

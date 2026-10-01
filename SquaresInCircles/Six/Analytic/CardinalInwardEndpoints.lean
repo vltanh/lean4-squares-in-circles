@@ -1,12 +1,15 @@
 import SquaresInCircles.Six.Analytic.FrozenPrimaryEndpoints
 
 /-!
-# Cardinal-W inward-primary endpoint bounds
+# Cardinal W: the inward primary axis
 
-A cardinal cap with transverse coordinate below 1/2 implies a+cx>=1.
-Using that weaker but exact geometric inequality makes the residual for
-weights (13/20,1/20,3/10) concave before support maximization. The only
-endpoints are v=-w in {0,2/5} and d in {0,pi/4}.
+If W is separated from the central square along its west side and `|b| ≤ 1/2`,
+then `a + cx ≥ 1`. With this bound and weights `13/20`, `1/20` and `3/10` on
+C–D, C–W and W–D, the stress for W and D separated along the inward primary axis
+of W is, at fixed centres, a constant plus a positive combination of the sines
+and cosines of `d` and `v + d`, with `v = -w`; so it is concave in each angle.
+At the four corners `v ∈ {0, 2/5}`, `d ∈ {0, π/4}` it is positive, by the vertex
+support of D and Taylor bounds, and so it is positive on the whole rectangle.
 -/
 
 noncomputable section

@@ -2,17 +2,17 @@ import SquaresInCircles.Six.Analytic.SouthTailScalar
 import SquaresInCircles.Six.Analytic.SecondaryReduction
 
 /-!
-# Close the lower OWN-S tail with actual canonical separators
+# S separated along its own axis has angle above `-2/25`
 
-A canonical OWN south square with s<=-2/25 gives an upper bound on its signed
-transverse coordinate. Against the S-sourced pair normal, use the high-D
-radial tangent profile. Against the D-sourced normal, combine one explicit
-supporting line of S's far-corner disk with that canonical bound, retaining
-both shared central coordinates until they are cancelled. The two resulting
-scalar contradictions are the whole-domain reserves of SouthTailScalar.
-
-No candidate D-edge assumption, stress table or second global reflection is
-used. In particular this tail is available before either mixed-wing exclusion.
+Let S be separated from the central square along its own axis and not along the
+south side of C, at angle `-v` with `2/25 ≤ v ≤ 5/8`. The difference of the two
+margins bounds its transverse coordinate: `b < cx + halfRatio v (a - cy)`, with
+`halfRatio v = tan (v/2)`. D and S are separated along the secondary axis of D
+or of S. Along that of S, the tangent bound of D and the bound on `b` give a
+contradiction. Along that of D, so do a supporting line of the far-corner disk
+of S, the bound on `b` and the tangent bound of D, in a combination where the
+central coordinates cancel. Both contradictions are the scalar reserves of
+`SouthTailScalar`.
 -/
 
 noncomputable section
@@ -80,7 +80,9 @@ lemma diagonal_tail_projection {a b d v : ℝ} (hc : ContainedChart a |b|)
   have hsign := mul_le_mul_of_nonneg_right (neg_le_abs b) hs
   nlinarith only [hB,hA,hbase,hsign]
 
-/-- Algebraic form of the two-square obstruction, before the source choice. -/
+/-- With S at angle `-v` separated along its own axis and not along the south
+side of C, and D separated along its own axis, D and S are separated along
+neither secondary axis. -/
 theorem negative_own_south_impossible {v d a b A B cx cy : ℝ}
     (hv : 2/25 ≤ v ∧ v ≤ 5/8) (hd : 1/2 ≤ d ∧ d ≤ Real.pi/4)
     (hS : ContainedChart a |b|) (hD : ContainedChart A |B|)
@@ -108,7 +110,7 @@ theorem negative_own_south_impossible {v d a b A B cx cy : ℝ}
     (by linarith [hd.1]) (by linarith [hd.2,Real.pi_pos])
   have hX := mul_nonneg (sub_nonneg.mpr hx.2) hcd
   have hY := mul_nonneg (sub_nonneg.mpr hy.2) hsd0
-  have hprofile := own_diagonal_profile hx.2 hy.2 hd hownD
+  have hprofile := own_diagonal_profile hd hownD
   have haD : diagonalBase d ≤ A := by linarith
   rcases hsep with hsep | hsep
   · let k := Real.sin z-southDualSlope*Real.cos z
@@ -161,8 +163,8 @@ theorem negative_own_south_impossible {v d a b A B cx cy : ℝ}
     have hr := south_wing_tail_reserve hv hd
     nlinarith only [hsep,hproj,hbs,hr]
 
-/-- The lower OWN-S tail is a consequence of the actual normalized packing,
-independent of the candidate-wing graph and without reflecting the D window. -/
+/-- If S is separated from the central square along its own axis and not along
+the south side of C, the angle of S exceeds `-2/25`. -/
 theorem normalized_own_south_lower_tail {R : ℝ} (P : NormalizedPacking R)
     (hS : P.ownBits 4=true) : -2/25 < P.helperAngle 4 := by
   by_contra! htail

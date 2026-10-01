@@ -1,12 +1,14 @@
 import SquaresInCircles.Six.Analytic.WestStressDConcavity
 
 /-!
-# The seven geometric endpoint values for D-secondary
+# The west stress along the secondary axis of D at the vertices
 
-The root upper bounds are displayed rational numbers and proved by squaring.
-The trigonometric bounds are the global analytic Taylor inequalities from
-Seven.Analysis. This is endpoint arithmetic after a whole-domain concavity
-proof, not verification of a numerically selected grid.
+`westStressD` is positive at the seven vertices `(-2/3, -2/5)`, `(-2/5, -2/5)`,
+`(-2/3, 0)`, `(0, 0)`, `(-2/3, 2/5)`, `(0, 2/5)` and `(2/5, 2/5)` of the parts
+of its domain where `sin t` and `sin u` have fixed signs. There its radicals
+are at most rational numbers, by squaring, and its sines and cosines are
+bounded by Taylor polynomials at the rational angles `2/5`, `2/3`, `4/15` and
+`16/15`.
 -/
 
 noncomputable section
@@ -34,7 +36,7 @@ private lemma D_lower_from_roots {t u p q:ℝ} (ht:-2/3≤t ∧ t≤2/5)
   dsimp [D_vertex_expression,westStressD]
   nlinarith
 
-/-- Explicit endpoint bounds for the two radicals. -/
+/-- Rational upper bounds for the two radicals at the vertices. -/
 private lemma D_root_endpoints :
     Real.sqrt (53/200+(9/40)*Real.sin (4/15))≤57/100 ∧
     Real.sqrt (53/200:ℝ)≤103/200 ∧
@@ -81,8 +83,7 @@ private lemma D_minorant_endpoints :
     max_eq_right hn25,max_eq_left hs23,max_eq_left hs25]
   all_goals linarith
 
-/-- Every vertex has a proved positive reserve; the smallest displayed rational
-minorant is 2507096063/344452500000, at (-2/3,0). -/
+/-- `westStressD` is positive at the seven vertices. -/
 theorem westStressD_vertices :
     0<westStressD (-2/3) (-2/5) ∧
     0<westStressD (-2/5) (-2/5) ∧
@@ -95,15 +96,15 @@ theorem westStressD_vertices :
   obtain ⟨h0,h1,h2,h3,h4,h5,h6⟩ := D_minorant_endpoints
   refine ⟨?_,?_,?_,?_,?_,?_,?_⟩
   · exact h0.trans_le (D_lower_from_roots (by norm_num)
-      (by convert w415 using 1 <;> norm_num) dn)
+      (by convert w415 using 1; norm_num) dn)
   · exact h1.trans_le (D_lower_from_roots (by norm_num)
       (by simpa using w0) dn)
   · exact h2.trans_le (D_lower_from_roots (by norm_num)
-      (by convert w23 using 1 <;> norm_num) (by simpa using d0))
+      (by convert w23 using 1; norm_num) (by simpa using d0))
   · exact h3.trans_le (D_lower_from_roots (by norm_num)
       (by simpa using w0) (by simpa using d0))
   · exact h4.trans_le (D_lower_from_roots (by norm_num)
-      (by convert w1615 using 1 <;> norm_num) dp)
+      (by convert w1615 using 1; norm_num) dp)
   · exact h5.trans_le (D_lower_from_roots (by norm_num)
       (by simpa using w25) dp)
   · exact h6.trans_le (D_lower_from_roots (by norm_num)

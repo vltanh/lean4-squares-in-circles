@@ -2,13 +2,16 @@ import SquaresInCircles.Six.Analytic.OwnWestOwnSouth.Scalar
 import SquaresInCircles.Six.Analytic.WestMixed.Support
 
 /-!
-# Actual supports for the continuous-weight two-OWN stress
+# The supports for W and S on their primary axes
 
-The CS multiplier gamma(s)=38/25+3s is positive on the whole domain. The
-resulting S support is the actual vertex support, not an assumed maximizer.
-Both central force components are nonnegative by the displayed angle bounds.
-Thus the polynomial scalar proof applies to four genuine separator inequalities.
-Compilation and kernel acceptance remain unverified.
+The stress has the weights `41/20` and `γ(s) = 38/25 + 3s` on the separations of
+C from W and S along their primary axes, `1` on that of W and D along the
+secondary axis of D, and `211/200` on that of D and S along the secondary axis
+of S. The force on C has nonnegative components, so its work is at most the
+support of the box; the works on W, D and S are at most the cap support of W
+and the vertex supports of D and S. The threshold sum minus these bounds is the
+profile of `OwnWestOwnSouth.Scalar`, which is positive, so the four separations
+are incompatible.
 -/
 
 noncomputable section
@@ -89,7 +92,8 @@ lemma profile_eq_defect {v s d : ℝ} (hs : 0 ≤ s ∧ s ≤ 12/25)
   rw [hW,hS,hQ,hR]
   ring
 
-/-- The south weight varies continuously, and its nonnegativity is proved here. -/
+/-- The four separating inequalities are incompatible for `0 ≤ s ≤ 12/25`,
+`16/25 ≤ d ≤ 11/14` and `53/50 - d ≤ v ≤ 31/50`. -/
 theorem scalar_impossible {v s d aw bw ad bd asouth bsouth cx cy : ℝ}
     (hs : 0 ≤ s ∧ s ≤ 12/25) (hd : 16/25 ≤ d ∧ d ≤ 11/14)
     (hv : 53/50-d ≤ v ∧ v ≤ 31/50)

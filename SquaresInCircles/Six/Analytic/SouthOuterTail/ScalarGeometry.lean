@@ -1,19 +1,22 @@
 import SquaresInCircles.Six.Analytic.SouthOuterTail.Support
 
 /-!
-# Four genuine separating inequalities exclude the final south tail
+# The south tail is empty
 
-The two theorems below take ordinary chart containment and the actual CW, CS,
-WD, DS inequalities. They do not assume a scalar stress value or a checker
-result. W OWN uses the raw-center reduction with weight 5/8; W cardinal uses
-the two sign rectangles with weight 3/5. The remaining weights are 1,2/5,3/10.
+Let W, S and D lie in the disk, S at an angle `s ∈ [11/25, 2/3]` and D at an
+angle `d ∈ [1/2, 11/14]`. Let W be separated from C along its own axis or the
+west side of C, S along its own axis, and W–D and D–S along the second axes of
+W and of S, as in the model. The sum of the four separating inequalities with
+the weights `5/8` (W on its own axis) or `3/5` (W on the west side of C), `1`,
+`2/5` and `3/10`, together with the support bounds of W, S and D, makes the
+stress of the south tail nonpositive, while it is positive.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.SouthOuterTail
 open Normalization
 
-/-- The OWN/OWN case, retaining the same diagonal center through both wing reductions. -/
+/-- The south tail with W on its own axis is empty. -/
 theorem own_impossible {v s d aw bw asouth bsouth ad bd cx cy : ℝ}
     (hv : 0 ≤ v ∧ v ≤ 11/25) (hs : 11/25 ≤ s ∧ s ≤ 2/3)
     (hd : 1/2 ≤ d ∧ d ≤ 11/14)
@@ -55,7 +58,8 @@ theorem own_impossible {v s d aw bw asouth bsouth ad bd cx cy : ℝ}
 
 def cardinalSign (negative : Bool) : ℝ := if negative then -1 else 1
 
-/-- The two cardinal-W sign cases, with no OWN-W or diagonal-center guess. -/
+/-- The south tail with W on the west side of C, at an angle of either sign, is
+empty. -/
 theorem cardinal_impossible (negative : Bool) {x s d aw bw asouth bsouth ad bd cx cy : ℝ}
     (hxangle : 0 ≤ x ∧ x ≤ 2/5) (hs : 11/25 ≤ s ∧ s ≤ 2/3)
     (hd : 1/2 ≤ d ∧ d ≤ 11/14)

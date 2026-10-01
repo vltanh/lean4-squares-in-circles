@@ -2,26 +2,29 @@ import SquaresInCircles.Six.Analytic.SecondaryDominance
 import SquaresInCircles.Six.Analytic.DoubleSecondaryExclusion
 
 /-!
-# Selecting a D/S secondary source without a stress table
+# D and S along a secondary axis when s ≤ d
 
-If s<=d, the actual D/S phase gap lies in [0,pi/2]. Small-gap primary sources
-are impossible. At larger gaps each primary can be replaced by a proved
-stronger secondary projection. At q=pi/2 this replacement may be an equality,
-so no false claim is made that every primary source must be strictly excluded.
-Every cardinal S satisfies s<2/5<d, hence is covered unconditionally.
+`SouthSecondaryChoice` says that D and S are separated along the secondary axis
+of D or along that of S. If the angle `s` of S is at most the angle `d` of D,
+their phases differ by `q` in `[0, π/2]`. The separating axis is not outward,
+and it points from the pin of D towards the pin of S; this leaves one direction
+of each of the four axes of D and S. A primary axis cannot separate for
+`q ≤ 11/10`, by a cosine bound; for `q ≥ 11/10` the projection on the secondary
+axis of the other square is at least the projection on the primary axis, so that
+secondary axis separates as well.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic
 open Normalization
 
+/-- D and S are separated along the secondary axis of D or along that of S. -/
 def SouthSecondaryChoice {R : ℝ} (P : NormalizedPacking R) : Prop :=
   (Seven.SAT.threshold (P.square 3) (P.square 4)≤
     dot (normalY (P.square 3)) (sub (P.square 4).center (P.square 3).center)) ∨
   (Seven.SAT.threshold (P.square 3) (P.square 4)≤
     dot (normalY (P.square 4)) (sub (P.square 4).center (P.square 3).center))
 
-/-- The choice is derived from the actual SAT inequality and the interior pins. -/
+/-- If `s ≤ d`, D and S are separated along a secondary axis. -/
 theorem south_secondary_choice_of_angle {R : ℝ} (P : NormalizedPacking R)
     (hs : P.helperAngle 4≤P.diagonalAngle) : SouthSecondaryChoice P := by
   obtain ⟨k,hsep,_,_,_⟩ := P.DS_source
@@ -93,27 +96,5 @@ theorem south_secondary_choice_of_angle {R : ℝ} (P : NormalizedPacking R)
   · exact False.elim (hout.2 rfl)
   · exact Or.inr hsep
   · exact False.elim (hk7 rfl)
-
-/-- Every cardinal S admits an actual forward secondary source. -/
-theorem south_secondary_choice_cardinal {R : ℝ} (P : NormalizedPacking R)
-    (hS : P.ownBits 4=false) : SouthSecondaryChoice P := by
-  apply south_secondary_choice_of_angle P
-  have hs := (abs_lt.mp (P.cardinal_angle 4 hS)).2
-  linarith [normalized_diagonal_gt_half P]
-
-/-- When s<=d, the full pair of selected D edges contains a candidate wing
-source. The two remaining mixed-source cases are not assumed away. -/
-theorem one_wing_secondary_of_angle {R : ℝ} (P : NormalizedPacking R)
-    (hs : P.helperAngle 4≤P.diagonalAngle) :
-    (Seven.SAT.threshold (P.square 2) (P.square 3)≤
-      dot (normalY (P.square 2)) (sub (P.square 3).center (P.square 2).center)) ∨
-    (Seven.SAT.threshold (P.square 3) (P.square 4)≤
-      dot (normalY (P.square 4)) (sub (P.square 4).center (P.square 3).center)) := by
-  obtain ⟨k,hWD,hk⟩ := DW_secondary_exists P
-  rcases hk with rfl | rfl
-  · exact Or.inl hWD
-  · rcases south_secondary_choice_of_angle P hs with hDS | hDS
-    · exact False.elim (double_Dsecondary_impossible P hWD hDS)
-    · exact Or.inr hDS
 
 end SquaresInCircles.Six.Analytic

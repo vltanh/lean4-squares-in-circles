@@ -3,11 +3,13 @@ import SquaresInCircles.Six.Normalization.PinData
 import SquaresInCircles.Six.DiagonalReflection
 
 /-!
-# Point-set and phase bookkeeping before the pin-labelled model exists
+# Pins, phases and the diagonal reflection
 
-These identities use the fixed five pins directly. They do not construct a
-PinPacking, invoke a window certificate, or consume the global D reflection.
-The four cases below are the four primary quadrants, not a numerical cover.
+The fixed pins in polar form, and their exchange by the reflection in the
+diagonal. Squares and separation margins do not depend on the lift of a phase,
+and the reflection preserves membership in a square and the margin along its own
+axis. Every phase lies within `π/4` of one of the four axes, and two lifts of
+one direction less than `2π` apart are equal.
 -/
 
 noncomputable section
@@ -77,8 +79,8 @@ lemma square_diagonal_membership (t a b:ℝ) (p:Point) :
     ring
   simp only [openSquare,hx,hy,abs_neg]
 
-/-- A real primary phase has exactly one of four quadrant descriptions, up to
-harmless boundary overlaps. The west case includes both ends of the principal lift. -/
+/-- Every phase lies within `π/4` of one of the four axes: it is `v`, `π/2 - v`,
+`π + v` or `-π/2 - v` as a direction, for some `|v| ≤ π/4`. -/
 theorem four_primary_quadrants (t:ℝ) :
     (∃ v : ℝ, |v|≤Real.pi/4 ∧ (t:Direction)=(v:Direction)) ∨
     (∃ v, |v|≤Real.pi/4 ∧ (t:Direction)=(Real.pi/2-v:ℝ)) ∨
@@ -131,7 +133,8 @@ lemma phase_eq_of_short_difference {t u:ℝ} (he:(t:Direction)=(u:Direction))
   simp only [hz,Int.cast_zero,mul_zero] at hk
   linarith
 
-/-- The pin-centred lift is unique once the new phase is strictly inside it. -/
+/-- Two lifts of one direction, within `π` of `c` and strictly within `π` of
+`c`, are equal. -/
 lemma phase_eq_in_centered_window {t u c:ℝ}
     (ht:-Real.pi≤t-c ∧ t-c≤Real.pi) (hu:|u-c|<Real.pi)
     (he:(t:Direction)=(u:Direction)) : t=u := by

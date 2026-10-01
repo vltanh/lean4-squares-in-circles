@@ -3,23 +3,22 @@ import SquaresInCircles.Six.Analytic.CoupledWingBudgetSharp
 import SquaresInCircles.Six.Analytic.CardinalSouthTail.Geometry
 
 /-!
-# An actual missing-south configuration cannot have 0 <= -w <= s
+# A missing south wing with ordered own wings
 
-Every inequality below comes from the normalized packing and the two source
-witnesses in MissingSouthWing. No candidate south separator is assumed.
-The shared-center angle bound gives v+s<24/25. The four-edge scalar theorem
-then excludes the entire ordered two-OWN domain.
-
-Together with the existing cardinal-W exclusion, a remaining missing-south
-configuration with OWN S must satisfy W OWN and 0< s<-w. This is a strict
-reduction of the remaining cases, not a claim that the opposite ordering or
-the cardinal-S case is already excluded. Compilation remains unverified.
+Let W and S be separated from C along their own axes, with `-w ≤ s`. Then W–D,
+along the secondary axis of W, and D–S, along the secondary axis of D, are not
+both separated; in particular `MissingSouthWing` fails. With `v = -w`, the
+normalization gives `0 ≤ v ≤ s ≤ 2/3` and `1/2 ≤ d ≤ π/4`, and two own wings
+sharing the central square have `v + s < 24/25`. In the frames of the squares
+the four separating inequalities are those of `scalar_impossible`.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.OwnSouthOrdered
 open Normalization
 
+/-- With W and S separated from C along their own axes and `-w ≤ s`, the south
+wing of D is not missing. -/
 theorem not_missing_south_of_order {R : ℝ} (P : NormalizedPacking R)
     (hW : P.ownBits 2=true) (hS : P.ownBits 4=true)
     (horder : -P.helperAngle 2 ≤ P.helperAngle 4) : ¬ MissingSouthWing P := by
@@ -83,16 +82,3 @@ theorem not_missing_south_of_order {R : ℝ} (P : NormalizedPacking R)
     (P.box.2.2.trans CandidateWestTail.ceiling_bounds.2.2.2) hCW hCS hWD hDS
 
 end SquaresInCircles.Six.Analytic.OwnSouthOrdered
-
-namespace SquaresInCircles.Six.Analytic
-open Normalization
-
-/-- In the remaining two-OWN case the west tilt is strictly larger. -/
-lemma MissingSouthWing.south_lt_neg_west {R : ℝ} {P : NormalizedPacking R}
-    (h : MissingSouthWing P) (hS : P.ownBits 4=true) :
-    P.helperAngle 4 < -P.helperAngle 2 := by
-  have hW := CardinalSouthTail.missing_south_requires_own_west h
-  by_contra! horder
-  exact OwnSouthOrdered.not_missing_south_of_order P hW hS horder h
-
-end SquaresInCircles.Six.Analytic

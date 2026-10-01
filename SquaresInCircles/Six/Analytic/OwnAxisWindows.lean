@@ -4,12 +4,15 @@ import SquaresInCircles.Six.Analytic.PinArc
 import SquaresInCircles.Seven.Analysis
 
 /-!
-# OWN primary-axis windows, before assigning pins
+# Windows for squares separated along their own axis
 
-Each radial profile is a positive sine/cosine combination. Concavity reduces
-the excluded outer subinterval to its two natural endpoints. The W-pin upper
-bound uses monotonicity and one explicit far-corner contradiction. All rational
-constants below are shown in the proof; none is a certificate result.
+A square separated from the central square along its own axis has its radial
+coordinate at least `1/2` plus a positive combination of `cos t` and `sin t`,
+and at most `rho0`. Such a combination is concave on `[0, π/2]`, so it exceeds
+`rho0 - 1/2` on an interval once it does at both ends. Near the east axis this
+confines the angle to `(-5/12, 3/10)`, and near the west axis it keeps the angle
+above `-2/3`. A square near the west axis that holds the W pin has its angle
+below `5/8`, by monotonicity and the far-corner circle.
 -/
 
 noncomputable section
@@ -50,7 +53,8 @@ lemma own_east_negative_profile {v a b cx cy : ℝ}
   rw [Real.cos_neg,Real.sin_neg,abs_neg,abs_of_nonneg hc,abs_of_nonneg hs] at ho
   nlinarith
 
-/-- The full OWN-E octant reduces to the manuscript's asymmetric window. -/
+/-- A square at phase `t`, `|t| ≤ π/4`, separated from the central square along
+its own axis has `-5/12 < t < 3/10`. -/
 theorem own_east_window {t a b cx cy : ℝ} (hc : ContainedChart a |b|)
     (hx0 : 0≤cx) (hy0 : 0≤cy) (hy : cy≤c0) (ht : |t|≤Real.pi/4)
     (ho : 0≤centralMargin .own t a b cx cy) : -5/12<t ∧ t<3/10 := by
@@ -141,7 +145,8 @@ lemma own_west_lower_window {t a b cx cy : ℝ} (hc : ContainedChart a |b|)
     (t:=-t) ⟨by linarith,by linarith⟩ hl hu
   linarith [hc.a_le_rho0,rho0_upper]
 
-/-- The W pin itself sharpens the positive OWN-W endpoint to 5/8. -/
+/-- A square at phase `π + t`, `|t| ≤ π/4`, separated from the central square
+along its own axis and holding the W pin has `t < 5/8`. -/
 theorem own_west_pin_upper {t a b cx cy : ℝ} (hc : ContainedChart a |b|)
     (hx : cx≤c0) (hy : cy≤c0) (ht : |t|≤Real.pi/4)
     (ho : 0≤centralMargin .own (Real.pi+t) a b cx cy)

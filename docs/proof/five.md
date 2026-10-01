@@ -88,9 +88,9 @@ $\square$
 
 *Lean:
 [`Five.model_packing`](../../SquaresInCircles/Five/Construction.lean#L21),
-[`Five.model`](../../SquaresInCircles/Geometry.lean#L176),
-[`Five.centers`](../../SquaresInCircles/Geometry.lean#L173),
-[`Five.radius`](../../SquaresInCircles/Geometry.lean#L169).*
+[`Five.model`](../../SquaresInCircles/Geometry.lean#L177),
+[`Five.centers`](../../SquaresInCircles/Geometry.lean#L174),
+[`Five.radius`](../../SquaresInCircles/Geometry.lean#L170).*
 
 The eight outer corners, $(\pm\frac32, \pm\frac12)$ and
 $(\pm\frac12, \pm\frac32)$, lie on the circle of radius $R_5$.

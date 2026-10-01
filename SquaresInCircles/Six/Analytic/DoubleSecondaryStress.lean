@@ -2,12 +2,13 @@ import SquaresInCircles.Six.Analytic.MixedSecondaryDepth
 import SquaresInCircles.Six.Analytic.DoubleSecondaryOwn
 
 /-!
-# The equal-weight double-D-secondary stress for all W/S central bits
+# The stress of a double separation at D
 
-The four selected edges have multiplier one; D's two transverse forces cancel
-exactly. The central resultant is retained and bounded once in the subsequent
-scalar proof. This file derives the nonpositive stress directly from the four
-actual separating inequalities, without classifying or guessing the bits.
+In a double separation at D, W–D and D–S are both separated along the
+secondary axis of D. With weight one on these two edges and on C–W and C–S,
+where W and S are separated from C along their own axes or along the matching
+sides of C, the two forces on D cancel. The weighted sum of the four separating
+inequalities then says that `doubleSecondaryGap` is nonpositive.
 -/
 
 noncomputable section
@@ -17,6 +18,8 @@ open Normalization
 def wingBaseX (own : Bool) (t : ℝ) : ℝ := if own then 1 else Real.cos t
 def wingBaseY (own : Bool) (t : ℝ) : ℝ := if own then 0 else -Real.sin t
 
+/-- The threshold sum minus the works of the forces on W, S and C; `wo` and
+`so` record whether W and S are separated from C along their own axes. -/
 def doubleSecondaryGap (wo so : Bool) (w s d aw bw aS bS cx cy : ℝ) : ℝ :=
   2+angularWidth w+angularWidth s+angularWidth (d-w)+angularWidth (Real.pi/2+s-d)-
     ((wingBaseX wo w+Real.sin (d-w))*aw+(wingBaseY wo w-Real.cos (d-w))*bw)-
@@ -25,17 +28,7 @@ def doubleSecondaryGap (wo so : Bool) (w s d aw bw aS bS cx cy : ℝ) : ℝ :=
     (((if wo then Real.cos w else 1)-(if so then Real.sin s else 0))*cx+
       ((if wo then Real.sin w else 0)+(if so then Real.cos s else 1))*cy)
 
-lemma double_secondary_own_formula (v s d aw bw aS bS cx cy : ℝ) :
-    doubleSecondaryGap true true (-v) s d aw bw aS bS cx cy=
-      doubleOwnSecondaryGap v s d aw bw aS bS cx cy := by
-  simp only [doubleSecondaryGap,doubleOwnSecondaryGap,wingBaseX,wingBaseY,
-    ite_true,Real.cos_neg,Real.sin_neg,sub_neg_eq_add]
-  have he : angularWidth (-v)=angularWidth v := by
-    simp [angularWidth,Real.cos_neg,Real.sin_neg,abs_neg]
-  rw [he]
-  ring
-
-/-- Frozen-center work is nonpositive for either central choice on each wing. -/
+/-- The gap is nonpositive, whichever separators W and S have from C. -/
 lemma double_secondary_frozen_nonpositive (wo so : Bool) {w s d aw bw ad bd aS bS cx cy : ℝ}
     (hCW : 0≤centralMargin (if wo then .own else .west) (Real.pi+w) aw bw cx cy)
     (hCS : 0≤centralMargin (if so then .own else .south) (3*Real.pi/2+s) aS bS cx cy)

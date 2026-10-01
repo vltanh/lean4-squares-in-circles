@@ -2,17 +2,20 @@ import SquaresInCircles.Seven.Uniqueness.ContactCycle
 import SquaresInCircles.Six.Normalization.Constants
 
 /-!
-# A central square for a six-square packing below the Seven threshold
+# The central square
 
-This is the N0 input, not a normalization assumption. The existing Six
-exterior-ring theorem for Seven forces a corner at squared radius 13/4.
+In a packing of six unit squares in a disk of squared radius less than `13/4`,
+exactly one square contains the disk centre in its open interior. Otherwise all
+six squares would be exterior, and by the ring theorem of seven squares one of
+them would have a corner at squared distance `13/4` from the centre. Removing
+the central square leaves five exterior squares.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six
 
-/-- Six squares strictly below the exterior-ring threshold have a square
-containing the disk center in its open interior. -/
+/-- In a disk of squared radius less than `13/4`, one of six squares contains
+the disk centre in its open interior. -/
 theorem exists_containing {S : Fin 6 → UnitSquare} {o : Point} {R : ℝ}
     (hp : Packing S o R) (hR : R ^ 2 < 13 / 4) :
     ∃ i, openSquare (S i) o := by
@@ -45,7 +48,8 @@ theorem exists_unique_containing {S : Fin 6 → UnitSquare} {o : Point} {R : ℝ
   by_contra hji
   exact hp.disjoint j i hji o ⟨hj, hi⟩
 
-/-- The rational normalization ceiling lies strictly below that threshold. -/
+/-- The same in a disk of squared radius at most `Q0`, which is less than
+`13/4`. -/
 theorem exists_unique_containing_of_ceiling {S : Fin 6 → UnitSquare}
     {o : Point} {R : ℝ} (hp : Packing S o R) (hR : R ^ 2 ≤ Normalization.Q0) :
     ∃! i, openSquare (S i) o :=

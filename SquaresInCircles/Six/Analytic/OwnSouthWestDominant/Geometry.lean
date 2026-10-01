@@ -3,14 +3,16 @@ import SquaresInCircles.Six.Analytic.OwnSouthOrdered.Geometry
 import SquaresInCircles.Six.Analytic.CanonicalSouthSign
 
 /-!
-# Complete the two-OWN missing-south exclusion
+# A missing south wing has S separated along the south side of C
 
-The five-edge contradiction applies to the actual normalized packing when
-0<=s<=-w. The complementary ordering was proved in OwnSouthOrdered.
-Together with the cardinal-W argument this rules out MissingSouthWing whenever
-S is OWN. A remaining missing-south configuration must therefore have W OWN
-and S cardinal. No table-dependent classification theorem is used.
-Compilation and kernel acceptance remain unverified.
+In a missing south wing D and S are not separated along the secondary axis of
+S; they are along that of D, and W and D along that of W. Let W and S, at the
+phases `π - v` and `3π/2 + s`, be separated from C along their own axes, with
+`0 ≤ s ≤ v`. With the separation of C and D along the own axis of D, these are
+the five separations of the west-dominant stress, which exclude a missing
+south wing. The order `v ≤ s` is excluded in `OwnSouthOrdered`, and a W
+separated from C along the west side of C in `CardinalSouthTail`. So in a
+missing south wing S is separated from C along the south side of C.
 -/
 
 noncomputable section
@@ -94,7 +96,8 @@ end SquaresInCircles.Six.Analytic.OwnSouthWestDominant
 namespace SquaresInCircles.Six.Analytic
 open Normalization
 
-/-- Both tilt orderings are excluded; cardinal W was excluded independently. -/
+/-- If S is separated from C along its own axis, the south wing is not
+missing. -/
 theorem not_missing_south_of_own_south {R : ℝ} (P : NormalizedPacking R)
     (hS : P.ownBits 4=true) : ¬ MissingSouthWing P := by
   intro hmissing
@@ -104,7 +107,7 @@ theorem not_missing_south_of_own_south {R : ℝ} (P : NormalizedPacking R)
   · exact OwnSouthWestDominant.not_missing_south_of_order P hW hS
       (le_of_not_ge horder) hmissing
 
-/-- The only remaining missing-south bit family is OWN W / cardinal S. -/
+/-- In a missing south wing S is separated from C along the south side of C. -/
 lemma MissingSouthWing.south_cardinal {R : ℝ} {P : NormalizedPacking R}
     (h : MissingSouthWing P) : P.ownBits 4=false := by
   cases hS : P.ownBits 4

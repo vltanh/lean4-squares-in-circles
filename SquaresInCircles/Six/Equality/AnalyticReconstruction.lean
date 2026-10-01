@@ -2,15 +2,14 @@ import SquaresInCircles.Six.Equality.AnalyticContacts
 import SquaresInCircles.Six.Equality.Reflection
 
 /-!
-# Reconstruction independent of the legacy balanced-closure theorem
+# Reconstruction of the model
 
-The only remaining geometric premise is the explicit ReductionHypotheses.
-SelectedPairWork retains the actual sources; AnalyticContacts and the eight
-contact calculation fix the signed coordinates and central center. This file
-compares the resulting open/closed point sets with the unchanged candidate.
-
-No fixed-row classifier, CommonDomain or pair certificate is imported here.
-The theorem is conditional until the outstanding geometric reduction is supplied.
+A normalized packing in a disk of squared radius at most `q*` that satisfies
+`ReductionHypotheses` has the phases and coordinates of the model. Its squares
+then have the centres of the model and the same open and closed point sets, so
+it is congruent to the model, with the labels permuted. The diagonal symmetry of
+the model carries this to the original packing, also when the normalization
+reflected it in the diagonal.
 -/
 
 noncomputable section
@@ -40,20 +39,22 @@ lemma exterior_centers {R : ℝ} (P : NormalizedPacking R)
   fin_cases i
   · show (P.square 0).center=centers 0
     rw [P.square_def,hf.east,hc.east_radial,hc.east_transverse]
-    apply Prod.ext <;> simp [orientedSquare,centers] <;> ring
+    apply Prod.ext <;> simp [orientedSquare,centers]
+    ring
   · show (P.square 1).center=centers 1
     rw [P.square_def,hf.north,hc.north_radial,hc.north_transverse]
-    apply Prod.ext <;> simp [orientedSquare,centers] <;> ring
+    apply Prod.ext <;> simp [orientedSquare,centers]
+    ring
   · show (P.square 2).center=centers 2
     rw [P.square_def,hf.west,hc.west_radial,hc.west_transverse]
-    apply Prod.ext <;> simp [orientedSquare,centers] <;> ring
+    apply Prod.ext <;> simp [orientedSquare,centers]
   · show (P.square 3).center=centers 3
     rw [P.square_def,hf.diagonal,hc.diagonal_radial,hc.diagonal_transverse]
     apply Prod.ext <;>
       simp [orientedSquare,centers,cos_diagonal,sin_diagonal,rho_times_half]
   · show (P.square 4).center=centers 4
     rw [P.square_def,hf.south,hc.south_radial,hc.south_transverse]
-    apply Prod.ext <;> simp [orientedSquare,centers,south_cos,south_sin] <;> ring
+    apply Prod.ext <;> simp [orientedSquare,centers,south_cos,south_sin]
 
 private lemma cardinal_open (S : UnitSquare)
     (h : (S.cosine=1 ∧ S.sine=0) ∨ (S.cosine=0 ∧ S.sine=1) ∨
@@ -75,7 +76,8 @@ private lemma opposite_open (S T : UnitSquare)
     ring
   simp only [openSquare,hx,hy,abs_neg]
 
-/-- Candidate order C,N,E,W,S,D versus normalized order C,E,N,W,D,S. -/
+/-- The order C, N, E, W, S, D of the model against the order C, E, N, W, D, S
+of a normalized packing. -/
 def order : Equiv.Perm (Fin 6) where
   toFun := ![0,2,1,3,5,4]
   invFun := ![0,2,1,3,5,4]
@@ -126,7 +128,8 @@ lemma model_open {R : ℝ} (P : NormalizedPacking R)
     · rw [P.square_def,hf.diagonal]
       simp [orientedSquare,Six.diagonalSquare,sin_diagonal]
 
-/-- Exact point-set reconstruction from the explicit analytic reduction. -/
+/-- Under `ReductionHypotheses`, a normalized packing in a disk of squared
+radius at most `q*` is congruent to the model. -/
 theorem normalized_congruent_of_reduction {R : ℝ} (P : NormalizedPacking R)
     (hR : R^2 ≤ Six.qStar) (h : ReductionHypotheses P) :
     Congruent P.model (0,0) Six.model := by
@@ -137,8 +140,8 @@ theorem normalized_congruent_of_reduction {R : ℝ} (P : NormalizedPacking R)
   exact Six.congruent_of_origin_sets order ho
     (fun i => same_open_same_closed _ _ (ho i))
 
-/-- Both orientation cases of the already-recorded normalization are discharged
-using the candidate's actual diagonal symmetry. -/
+/-- The original packing is congruent to the model, whether or not its
+normalization used the reflection in the diagonal. -/
 theorem original_congruent_of_reduction {S : Fin 6 → UnitSquare} {o : Point} {R : ℝ}
     (P : NormalizedPacking R) (hR : R^2 ≤ Six.qStar) (h : ReductionHypotheses P)
     (htrace : CongruentOrDiagonal S o P.model) : Congruent S o Six.model :=

@@ -3,20 +3,21 @@ import SquaresInCircles.Six.Analytic.ReflectedOwnWings.Geometry
 import SquaresInCircles.Six.Analytic.CandidateWestTail.Geometry
 
 /-!
-# The last independent analytic reduction obligation
+# The south tail of a normalized packing
 
-Both candidate D separators are now supplied by the analytic missing-wing
-exclusions. Their already proved west-tail consequence bounds an OWN west
-angle. The four actual scalar inequalities below then invoke the complete
-cardinal or OWN tail argument, proving s<11/25 with no finite classifier.
-The original Packing predicate and normalization record are unchanged.
+If S is separated from C along its own axis, its angle is below `11/25`. W–D
+and D–S are separated along the second axes of W and of S, the angle of D lies
+in `[1/2, 11/14]`, and the angle of W in `(-2/5, 2/5)` when W is separated from
+C along the west side of C, or in `(-11/25, 0)` when W is on its own axis, by
+the west tail. In the coordinates of the normalization the four separating
+inequalities are those of the south tail, which is empty.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.SouthOuterTail
 open Normalization
 
-/-- The canonical OWN-S upper tail, proved from actual geometry rather than a table. -/
+/-- If S is separated from C along its own axis, its angle is below `11/25`. -/
 theorem normalized_own_south_upper_tail {R : ℝ} (P : NormalizedPacking R)
     (hS : P.ownBits 4=true) : P.helperAngle 4 < 11/25 := by
   by_contra! htail
@@ -49,7 +50,7 @@ theorem normalized_own_south_upper_tail {R : ℝ} (P : NormalizedPacking R)
     have h := P.own_separator 4 hS
     rw [hSphase] at h
     simp only [centralMargin,centralNormal,angularWidth,Real.cos_add,Real.sin_add,
-      south_cos,south_sin,zero_mul,one_mul,neg_one_mul,zero_add,add_zero,abs_neg] at h
+      south_cos,south_sin,zero_mul,neg_one_mul,add_zero,abs_neg] at h
     simp only [zero_sub,neg_neg] at h
     dsimp [angularWidth]
     nlinarith only [h]

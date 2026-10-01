@@ -2,13 +2,15 @@ import SquaresInCircles.Six.Analytic.FixedPairSlices
 import SquaresInCircles.Six.Analytic.FixedPairTrig
 
 /-!
-# Nonzero forces and safe curvature interfaces
+# Positive radicands and curvature bounds for the pair
 
-Every actual fixed-pair force has first coordinate greater than 1/2 on the
-stated domain. Thus none of the square-root derivatives is evaluated at a zero
-resultant. The bounds below are independent of a grid or numerical tolerance.
+On the pair domain both forces have first coordinate more than `1/2`, so their
+squared lengths, the radicands of the minorant, are positive along every slice.
+Two curvature bounds for a `Wave` follow. Rational bounds `A`, `B` on the two
+lengths bound the curvature at the radius `radius` by
+`(1689/1000) A B / (A + B)`. If the turning vector points against the fixed one,
+minus the length is concave.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.FixedPair
 open Stress Normalization
@@ -90,9 +92,8 @@ lemma Wave.base_nonneg {W : Wave} (hr : 0<W.rotor)
   rw [← ha] at hh
   nlinarith [sq_nonneg W.cosine,sq_nonneg W.sine]
 
-/-- A rational upper bound on the two vector lengths suffices for a uniform
-curvature bound. The numerical comparison is an explicit scalar hypothesis,
-proved by rational algebra at each of the few source cases below. -/
+/-- Rational bounds `A`, `B` on the turning and the fixed length bound the
+curvature at the radius `radius` by any `M ≥ (1689/1000) A B / (A + B)`. -/
 lemma Wave.curvature_le_rational {W : Wave} {x A B M : ℝ}
     (hr : 0<W.rotor)
     (ha : W.cosine^2+W.sine^2=4*W.rotor^2*W.baseSq)
@@ -109,8 +110,8 @@ lemma Wave.curvature_le_rational {W : Wave} {x A B M : ℝ}
     simpa only [mul_div_assoc,mul_assoc] using hprod
   exact h.trans (hstep.trans hm)
 
-/-- The positive current radicand itself implies that an opposing base is at
-least as long as the rotor. There is no extra unproved length ordering. -/
+/-- If the turning vector points against the fixed one,
+`cosine cos x + sine sin x ≤ -2 rotor²`, the curvature is nonpositive. -/
 lemma Wave.curvature_nonpos_of_opposition {W : Wave} {R x : ℝ}
     (hR : 0≤R) (hr : 0<W.rotor)
     (ha : W.cosine^2+W.sine^2=4*W.rotor^2*W.baseSq)

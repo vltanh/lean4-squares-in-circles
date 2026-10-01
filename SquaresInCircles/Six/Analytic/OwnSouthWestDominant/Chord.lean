@@ -2,16 +2,15 @@ import SquaresInCircles.Six.Analytic.RadialChordSupport
 import SquaresInCircles.Six.Analytic.SoftAxialSupport
 
 /-!
-# A curvature envelope for the west-dominant chord
+# The chord term of the west-dominant profile
 
-The CD weight is 9/20 and the two secondary weights are equal. The analytic
-radial-chord majorant leaves H(q)=sin q-L sin(q/2)-M cos(q/2).
-Taylor inequalities give H''<=p(q), where p is the explicit convex quintic
-below. Its endpoint chords imply the single envelope
-  H''(q) <= 3/40-(3/10)*min(q,1),  1/2<=q<=3/2.
-The two pieces are analytic curvature comparisons, not a searched angle cover.
-They will combine with q+r>=1 in the west-dominant geometry.
-Compilation remains unverified.
+The angle `q = d + v` between W and D enters the west-dominant profile
+through `H(q) = sin q - L sin(q/2) - M cos(q/2)`: up to a constant, the
+threshold of W–D less the radial-chord bound on the support of D, with weight
+`9/20` on C–D and the rational radius `8443/5000`. Taylor bounds give
+`H''(q) ≤ p(q)` for an explicit quintic `p`, convex on `[1/2, 3/2]`. Comparing
+`p` with the envelope at `1/2`, `1` and `3/2` gives
+`H''(q) ≤ 3/40 - (3/10) min(q, 1)` there, and in particular `H'' ≤ 0`.
 -/
 
 noncomputable section
@@ -111,7 +110,8 @@ private lemma envelope_concave (A B : ℝ) {l u : ℝ}
     have h := interior_subset hq
     exact neg_nonpos.mpr (p_second_nonnegative ⟨hl.trans h.1,h.2.trans hu⟩)
 
-/-- A continuous two-piece affine envelope, proved from three rational endpoints. -/
+/-- The curvature of the chord term is at most `3/40 - (3/10) min(q, 1)` on
+`[1/2, 3/2]`. -/
 lemma chord_second_envelope {q : ℝ} (hq : 1/2 ≤ q ∧ q ≤ 3/2) :
     chordSecond q ≤ 3/40-(3/10)*min q 1 := by
   have hp := polynomial_upper hq
@@ -132,15 +132,5 @@ lemma chord_second_nonpositive {q : ℝ} (hq : 1/2 ≤ q ∧ q ≤ 3/2) :
   have h := chord_second_envelope hq
   have hm : (1:ℝ)/2 ≤ min q 1 := le_min hq.1 (by norm_num)
   linarith
-
-lemma chord_concave : ConcaveOn ℝ (Set.Icc (1/2) (3/2)) chord := by
-  apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc (1/2) (3/2))
-    (f' := chordFirst) (f'' := chordSecond)
-    (fun x _ => (chord_hasDeriv x).continuousAt.continuousWithinAt)
-  · intro q _; exact (chord_hasDeriv q).hasDerivWithinAt
-  · intro q _; exact (chord_first_hasDeriv q).hasDerivWithinAt
-  · intro q hq
-    have h : q ∈ Set.Icc (1/2:ℝ) (3/2) := interior_subset hq
-    exact chord_second_nonpositive h
 
 end SquaresInCircles.Six.Analytic.OwnSouthWestDominant

@@ -70,8 +70,8 @@ with equality:
 ```
 
 *Lean: [`One.model_packing`](../../SquaresInCircles/One/Construction.lean#L17),
-[`One.model`](../../SquaresInCircles/Geometry.lean#L118),
-[`One.radius`](../../SquaresInCircles/Geometry.lean#L112),
+[`One.model`](../../SquaresInCircles/Geometry.lean#L119),
+[`One.radius`](../../SquaresInCircles/Geometry.lean#L113),
 [`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L34).*
 
 ## 4.2 Uniqueness

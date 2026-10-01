@@ -2,13 +2,18 @@ import SquaresInCircles.Six.Analytic.CapFixedPins
 import SquaresInCircles.Six.Normalization.SecondarySeparation
 
 /-!
-# Analytic five-pin covering with the location information retained
+# The pins covered by an exterior square
 
-The four alternatives are the actual primary quadrants. OWN uses its radial
-profiles; cardinal alternatives first obtain their cap-facing primary frame.
-Reflection is a local point-set identity, not a change to the globally chosen
-packing. Keeping which pins are covered will let the five-pin bijection rule
-out the wrong labelled quadrants without additional scalar certificates.
+Let an exterior square lie in the disk and avoid the core, and let it be
+separated from C, with the centre of C in `[0, c0]²`. Then its phase lies in
+a window about one of the four directions of the sides of C, and it covers
+the matching pins: pin `0` to the east, pin `1` to the north, pin `2` or `3` to
+the west and pin `4` or `3` to the south, with finer conditions for the last
+two. A separation along the second axis of the square is impossible. For a
+separation along its own axis the radial bounds of the square locate it, for
+one along a side of C the cap beyond that side, and the north and south cases
+are the east and west cases reflected in the diagonal. In particular the
+square covers one of the five pins.
 -/
 
 noncomputable section
@@ -202,8 +207,7 @@ lemma south_west_diagonal_margin (t a b cx cy:ℝ) :
     Real.sin_pi_div_two_sub]
   ring
 
-/-- Complete analytic pin location from actual central separation and the
-already proved strong core. SEC directions are excluded by B6. -/
+/-- An exterior square separated from C lies in one of the four pin locations. -/
 theorem pin_location_of_separation {t a b cx cy:ℝ} (hc:ContainedChart a |b|)
     (hcore:AvoidsCore a |b|) (hx0:0≤cx) (hy0:0≤cy) (hx:cx≤c0) (hy:cy≤c0)
     (hs:∃ k,0≤centralMargin k t a b cx cy) : PinLocation t a b := by
@@ -227,7 +231,7 @@ theorem pin_location_of_separation {t a b cx cy:ℝ} (hc:ContainedChart a |b|)
       simpa only [south_west_diagonal_margin] using hk
     exact Or.inr (Or.inr (Or.inr (west_data_diagonal (west_cap_data hcn hbn hy hr))))
 
-/-- Lemma C with no certificate premise. -/
+/-- An exterior square separated from C covers one of the five pins. -/
 theorem five_pin_cover {t a b cx cy:ℝ} (hc:ContainedChart a |b|) (hcore:AvoidsCore a |b|)
     (hx0:0≤cx) (hy0:0≤cy) (hx:cx≤c0) (hy:cy≤c0)
     (hs:∃ k,0≤centralMargin k t a b cx cy) :

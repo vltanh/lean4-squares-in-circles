@@ -1,17 +1,18 @@
 import SquaresInCircles.Six.Analytic.OwnSouthOrdered.Scalar
 
 /-!
-# Four actual separators supply the ordered OWN-south obstruction
+# Ordered own wings: the stress
 
-Use weights 91/50, 159/100, 109/100, 1 on CW, CS, WD and D-sourced DS.
-W uses its universal far-vertex support. D uses the asymmetric chord bound.
-S is on an analytically justified axial support: |sin r| <= (31/100)
-(159/100+cos r) for |r| <= pi/4. Both shared central force coordinates are
-nonnegative and are bounded together by the central box.
-
-The exact weighted-sum identity leaves the scalar profile proved in Scalar.
-No canonical D-edge conclusion or finite checker is a premise. Compilation
-and kernel acceptance remain unverified.
+The weighted sum of the separating inequalities of C–W, C–S, W–D and D–S
+bounds the threshold sum by the works of the forces. The force on W is
+`(91/50, -109/100)` in its frame and takes the far-vertex bound; the force on D
+takes the far-vertex bound with the affine majorant of its length. The force on
+S is `(159/100 + cos r, sin r)` with `r = d - s`; for `|r| ≤ π/4` its slope is
+at most `31/100`, and since `a + 31/100 |b| ≤ rho0` its work is at most
+`rho0 (159/100 + cos r)`. The force on C has nonnegative components, so the
+central box bounds its work. The defect left over is at least the profile,
+which is positive, so the four inequalities are inconsistent
+(`scalar_impossible`).
 -/
 
 noncomputable section
@@ -165,7 +166,8 @@ lemma profile_le_defect {v s d : ℝ}
   rw [hw,hs',hq']
   nlinarith only [hr]
 
-/-- Four real inequalities, not selected source indices, give the contradiction. -/
+/-- On the ordered domain, the four separating inequalities, in the coordinates
+of the squares, are inconsistent. -/
 theorem scalar_impossible {v s d aw bw ad bd asouth bsouth cx cy : ℝ}
     (hv : 0 ≤ v) (hvs : v ≤ s) (hs : s ≤ 2/3) (hsum : v+s ≤ 24/25)
     (hd : 1/2 ≤ d ∧ d ≤ Real.pi/4)

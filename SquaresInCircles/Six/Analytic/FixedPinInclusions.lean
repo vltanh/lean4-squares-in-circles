@@ -2,15 +2,17 @@ import SquaresInCircles.Six.Analytic.OwnAxisWindows
 import SquaresInCircles.Six.Analytic.CoreProfiles
 
 /-!
-# Fixed-pin inclusion from analytic profiles
+# Fixed pins in E and W
 
-For E, contract the already proved moving pin towards the origin in the
-transverse coordinate; its normal coordinate remains inside the square.
-For the western flank, a missed pin forces two affine far-corner lower bounds.
-One completed square proves their incompatibility with containment. The middle
-western arc is handled by PinArc's sixty-degree theorem.
+A square E separated from C along its own axis contains the pin `(9/10, 0)`: it
+contains a point `(L, 0)` of the axis with `L ≥ 9/10`, and moving that point
+towards the origin keeps it inside the square. A square W separated from C along
+its own axis, at angle `t` with `|t| ≤ π/4`, contains the pin at angle `11π/12`
+or the one at `5π/4`. For `t ≥ -π/12` this is the sixty-degree cover
+`sixty_pin_cover`. For `t ≤ -π/12`, a square that misses the pin at `11π/12` has
+its far corner beyond two affine bounds in `t`, and a completed square shows
+that these contradict containment.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic
 open Normalization
@@ -37,7 +39,8 @@ lemma contract_transverse {L b s : ℝ} (hL : 9/10≤L)
       (sub_nonneg.mpr hL) (le_of_not_ge hs)
     constructor <;> nlinarith [hbb.1,hbb.2,hff.1,hff.2]
 
-/-- Contracting the axis piercing point gives the fixed pin of radius 9/10. -/
+/-- A square at angle `|t| ≤ 5/12` that contains a point `(L, 0)` with
+`L ≥ 9/10` contains the pin `(9/10, 0)`. -/
 theorem fixed_east_of_axis_point {t a b L : ℝ} (hc : ContainedChart a |b|)
     (hb : |b|<1/2) (ht : |t|≤5/12) (hL : 9/10≤L)
     (hp : openSquare (orientedSquare t a b) (L,0)) :
@@ -59,7 +62,8 @@ theorem fixed_east_of_axis_point {t a b L : ℝ} (hc : ContainedChart a |b|)
   rw [polar_mem_iff]
   simpa only [zero_sub,Real.cos_neg,Real.sin_neg,mul_neg,neg_sub,abs_neg] using And.intro hX hY'
 
-/-- OWN in the east octant both has the stated window and contains qE. -/
+/-- A square E separated from C along its own axis has its angle in
+`(-5/12, 3/10)` and contains the pin `(9/10, 0)`. -/
 theorem own_east_fixed_pin {t a b cx cy : ℝ} (hc : ContainedChart a |b|)
     (hb : |b|<1/2) (hx0 : 0≤cx) (hy0 : 0≤cy) (hx : cx≤c0) (hy : cy≤c0)
     (ht : |t|≤Real.pi/4) (ho : 0≤centralMargin .own t a b cx cy) :
@@ -76,8 +80,8 @@ lemma western_flank_quadratic (v : ℝ) :
   have h := sq_nonneg (v-2307/3316)
   nlinarith only [hid,h]
 
-/-- The left flank of the W/D arc contains qW. The profile is needed only
-when b<0; this lets the same proof handle OWN and west-cap squares. -/
+/-- A square at phase `-v`, with `π/12 ≤ v ≤ 2/3`, contains the pin at angle
+`-π/12` if its centre obeys the radial profile whenever `b < 0`. -/
 theorem western_left_pin {v a b : ℝ} (hc : ContainedChart a |b|)
     (hb : |b|<1/2) (hv0 : Real.pi/12≤v) (hv1 : v≤2/3)
     (hprofile : b<0 → 1/2+(77/200)*Real.cos v+(1/2)*Real.sin v≤a) :
@@ -134,7 +138,8 @@ lemma own_west_left_pin {t a b cx cy : ℝ} (hc : ContainedChart a |b|)
   rw [hphase,hpin,polar_rotate]
   simpa only [neg_neg] using hlocal
 
-/-- OWN on the western primary octant has one of the two western pins. -/
+/-- A square W separated from C along its own axis, at angle `|t| ≤ π/4`,
+contains the pin at angle `11π/12` or the one at `5π/4`. -/
 theorem own_west_fixed_pins {t a b cx cy : ℝ} (hc : ContainedChart a |b|)
     (hb : |b|<1/2) (hx : cx≤c0) (hy0 : 0≤cy) (ht : |t|≤Real.pi/4)
     (ho : 0≤centralMargin .own (Real.pi+t) a b cx cy) :

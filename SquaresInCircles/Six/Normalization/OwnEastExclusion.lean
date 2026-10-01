@@ -1,13 +1,14 @@
 import SquaresInCircles.Six.Normalization.CapSupport
 
 /-!
-# Proposition A0: OWN is impossible in the east quadrant when `cx > c0`
+# No own separator in the east quadrant when `cx > c0`
 
-This is the strict-boundary hand input used by the supplied forbidden-arc
-certificate. The proof also permits the stated staircase tolerance
-`cy ≤ cx + 1/10`. It assumes neither pins, axial markers, nor the strong box.
-It proves one separator exclusion, not the complete forbidden-marker lemma.
-Compiler validation remains pending.
+Let the centre of C have `cx > c0` and `0 ≤ cy ≤ cx + 1/10`. Then a square at an
+angle `t` with `|t| ≤ π/4` and radial coordinate `a ≤ ρ0` is not separated from
+C along its own axis: the margin
+`a - 1/2 - (cx cos t + cy sin t) - (|cos t| + |sin t|)/2` is negative. With
+`c = cos |t|` and `s = sin |t|` this reduces to a lower bound for a linear form
+on the arc of the unit circle where `0 ≤ s ≤ c`.
 -/
 
 noncomputable section
@@ -28,8 +29,8 @@ lemma east_quadrant_trig {t : ℝ} (ht0 : 0 ≤ t) (ht : t ≤ Real.pi / 4) :
     Real.sin_nonneg_of_nonneg_of_le_pi ht0 (by linarith [Real.pi_pos]),
     hs.trans hc⟩
 
-/-- A rational lower bound for a linear form on the first octant of the circle.
-The coefficient `9/10` accounts for the diagonal staircase tolerance. -/
+/-- A lower bound for a linear form on the arc of the unit circle where
+`0 ≤ s ≤ c`; the coefficient `9/10 - A` comes from `cy ≤ cx + 1/10`. -/
 lemma east_linear_support_gt {A k c s : ℝ}
     (hk : k < 63 / 100) (hA : k < A)
     (hc : 7 / 10 ≤ c) (hs : 0 ≤ s) (hcs : s ≤ c)
@@ -54,7 +55,8 @@ lemma east_linear_support_gt {A k c s : ℝ}
       (show 0 < 1 - c by linarith)
     nlinarith
 
-/-- A0, with its strict premise and the exact secondary-coordinate tolerance. -/
+/-- When `cx > c0` and `0 ≤ cy ≤ cx + 1/10`, the margin of the own separator of
+a square in the east quadrant is negative. -/
 theorem own_east_margin_negative {a cx cy t : ℝ}
     (ha : a ≤ rho0) (hx : c0 < cx) (hy0 : 0 ≤ cy) (hy : cy ≤ cx + 1 / 10)
     (ht : |t| ≤ Real.pi / 4) :

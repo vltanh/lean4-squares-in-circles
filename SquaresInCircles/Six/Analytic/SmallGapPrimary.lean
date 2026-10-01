@@ -1,13 +1,14 @@
 import SquaresInCircles.Six.Analytic.OutwardAxes
 
 /-!
-# Primary separators cannot occur across a sixty-degree phase gap
+# The first axes across a phase gap of at most `π/3`
 
-The near-edge radial lower bound and the transverse bound below 1/2 suffice.
-For the two nontrivial primary directions, the threshold's transverse term
-absorbs the other center's transverse projection, while cos(q)>=1/2 leaves a
-uniform radial reserve. The two outward directions are already excluded by
-OutwardAxes. This is a whole-domain geometric argument with no fixed rows.
+Two exterior squares in the disk that avoid the core, with phases at most `π/3`
+apart, are not separated along the axis `-e₁` of the first square, nor along the
+axis `e₁` of the second. Since `cos q ≥ 1/2`, the radial coordinates, at most
+`ρ0` for one square and at least `aMin` for the other, and the transverse
+coordinate of absolute value below `1/2` keep the projection of the centre
+difference below the threshold `1/2 + (|cos q| + |sin q|)/2`.
 -/
 
 noncomputable section
@@ -40,10 +41,11 @@ lemma destination_primary_small_gap {a b A q : ℝ}
     hA ha (by simpa only [abs_neg] using hb) hq
   nlinarith only [h]
 
-/-- The negative primary of the first square, uniformly on the small-gap set. -/
+/-- Across a phase gap of at most `π/3`, the axis `-e₁` of the first square does
+not separate. -/
 lemma oriented_inward_primary_excluded {t T a b A B : ℝ}
     (hc : ContainedChart a |b|) (hC : ContainedChart A |B|)
-    (hcore : AvoidsCore a |b|) (hCore : AvoidsCore A |B|)
+    (hCore : AvoidsCore A |B|)
     (hq : |T-t|≤Real.pi/3) :
     dot (scale (-1) (normalX (orientedSquare t a b)))
       (sub (orientedSquare T A B).center (orientedSquare t a b).center)<
@@ -60,10 +62,11 @@ lemma oriented_inward_primary_excluded {t T a b A B : ℝ}
   rw [hid,hproj,oriented_pair_threshold]
   linarith
 
-/-- The positive primary of the second square, on the same full small-gap set. -/
+/-- Across a phase gap of at most `π/3`, the axis `e₁` of the second square does
+not separate. -/
 lemma oriented_destination_primary_excluded {t T a b A B : ℝ}
     (hc : ContainedChart a |b|) (hC : ContainedChart A |B|)
-    (hcore : AvoidsCore a |b|) (hCore : AvoidsCore A |B|)
+    (hcore : AvoidsCore a |b|)
     (hq : |T-t|≤Real.pi/3) :
     dot (normalX (orientedSquare T A B))
       (sub (orientedSquare T A B).center (orientedSquare t a b).center)<
@@ -74,34 +77,5 @@ lemma oriented_destination_primary_excluded {t T a b A B : ℝ}
       (sub (orientedSquare T A B).center (orientedSquare t a b).center)<_
   rw [pair_frameX_right,oriented_pair_threshold]
   exact h
-
-/-- In particular nonnegative W leaves only forward secondary W/D axes.
-This statement is independent of W's central bit and of any candidate table. -/
-theorem normalized_DW_nonnegative_secondary {R : ℝ} (P : NormalizedPacking R)
-    (hw : 0≤P.helperAngle 2) : ∃ k : Fin 8,
-      Seven.SAT.threshold (P.square 2) (P.square 3)≤
-        dot (Stress.pairNormal k (P.square 2) (P.square 3))
-          (sub (P.square 3).center (P.square 2).center) ∧ (k=2 ∨ k=6) := by
-  obtain ⟨k,hk,hcases⟩ := analytic_DW_four_sources P
-  have ht : P.phase 2<P.phase 3 := P.primary_order.2.2.1
-  have hq : |P.phase 3-P.phase 2|≤Real.pi/3 := by
-    rw [abs_of_nonneg (sub_nonneg.mpr ht.le)]
-    have hwphase : P.phase 2=Real.pi+P.helperAngle 2 := P.phase_from_deviation 2
-    have hd := P.diagonal_angle_range
-    dsimp [NormalizedPacking.diagonalAngle] at hd
-    linarith [Real.pi_pos]
-  have hn := oriented_inward_primary_excluded (P.contained 2) (P.contained 3)
-    (P.avoidsCore 2) (P.avoidsCore 3) hq
-  have hN := oriented_destination_primary_excluded (P.contained 2) (P.contained 3)
-    (P.avoidsCore 2) (P.avoidsCore 3) hq
-  refine ⟨k,hk,?_⟩
-  rcases hcases with rfl | rfl | rfl | rfl
-  · change Seven.SAT.threshold (P.square 2) (P.square 3)≤
-      dot (scale (-1) (normalX (P.square 2))) _ at hk
-    exact False.elim (not_le_of_gt hn hk)
-  · exact Or.inl rfl
-  · change Seven.SAT.threshold (P.square 2) (P.square 3)≤dot (normalX (P.square 3)) _ at hk
-    exact False.elim (not_le_of_gt hN hk)
-  · exact Or.inr rfl
 
 end SquaresInCircles.Six.Analytic

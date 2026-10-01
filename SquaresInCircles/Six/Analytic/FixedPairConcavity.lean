@@ -2,15 +2,18 @@ import SquaresInCircles.Six.Analytic.FixedPairCurvature
 import SquaresInCircles.Six.Analytic.FixedPairNegativeCardinal
 
 /-!
-# Concavity on the six geometric sign sectors
+# Concavity of the pair minorant along slices
 
-The three slice directions are n, w and n=w. All square-root radicands are
-positive. For cardinal w<=0, the W-primary source uses the sharper negative-
-cardinal north-root bound; for w>=0 it uses the positive width reserve. This
-is the existing sign wall, not a numerical subdivision. The uniform strict
-curvature reserve is 1/500 throughout the full cardinal interval [-2/5,2/5].
+Along a slice the sector formula is a smooth function of the parameter,
+`primitiveSlice`, with explicit first and second derivatives. Inside a sign
+sector of the domain the second derivative is at most `-1/500`: each
+trigonometric term contributes at most minus its lower bound from
+`FixedPairTrig`, and each radical term at most its curvature bound, case by case
+over the four source axes and the three slice directions. For a W separated
+along a side of C and source `0`, the cases `w ≤ 0` and `w ≥ 0` use the sharper
+north bound and the sharper west bound respectively. So the formula is concave
+on every closed segment of a slice that lies in one sector.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.FixedPair
 open Stress Normalization
@@ -113,7 +116,7 @@ lemma primitiveSlice_deriv {no wo : Bool} (u : Fin 4) (pn pw pq : Bool)
   convert hh using 1
   all_goals first
     | rfl
-    | (fin_cases k <;> simp [primitiveSliceD,nSpeed,wSpeed,sliceN,sliceW] <;> ring)
+    | ((fin_cases k <;> simp [primitiveSliceD,nSpeed,wSpeed,sliceN,sliceW]); ring)
 
 lemma primitiveSlice_second {no wo : Bool} (u : Fin 4) (pn pw pq : Bool)
     (k : Fin 3) {n w x : ℝ}
@@ -132,13 +135,14 @@ lemma primitiveSlice_second {no wo : Bool} (u : Fin 4) (pn pw pq : Bool)
   convert hh using 1
   all_goals first
     | rfl
-    | (funext y; fin_cases k <;>
-        simp [primitiveSliceD,nSpeed,wSpeed,sliceN,sliceW] <;> ring)
+    | (funext y; (fin_cases k <;>
+        simp [primitiveSliceD,nSpeed,wSpeed,sliceN,sliceW]); ring)
     | (fin_cases k <;>
         simp [sliceCurvature,nSpeed,wSpeed,sliceN,sliceW,trigValue,
           northTrig,westTrig,differenceTrig,Wave.curvature] <;> ring)
 
-/-- A single strict curvature reserve covers every source/bit case. -/
+/-- Inside a sign sector of the domain, the second derivative of the formula
+along any slice is at most `-1/500`. -/
 theorem sliceCurvature_negative {no wo pn pw pq : Bool} (u : Fin 4) (k : Fin 3)
     {n w x : ℝ} (hd : Domain no wo (sliceN k n w x) (sliceW k n w x))
     (hs : Sector pn pw pq (sliceN k n w x) (sliceW k n w x)) :
@@ -237,8 +241,8 @@ theorem sliceCurvature_negative {no wo pn pw pq : Bool} (u : Fin 4) (k : Fin 3)
       have htW := westTrig_own_lower hd hs
       linarith
 
-/-- Concavity on every closed coordinate/diagonal segment contained in one
-geometric sign sector; this includes the sign walls and all endpoints. -/
+/-- The sector formula is concave on every closed segment of a slice that lies
+in the domain and in the sector. -/
 theorem formula_slice_concave {no wo pn pw pq : Bool} (u : Fin 4) (k : Fin 3)
     {n w l r : ℝ}
     (hd : ∀ x ∈ Set.Icc l r, Domain no wo (sliceN k n w x) (sliceW k n w x))

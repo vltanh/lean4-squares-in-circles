@@ -1,14 +1,21 @@
-import SquaresInCircles.Six.Analytic.SmallDiagonalCardinalExclusion
+import SquaresInCircles.Six.Analytic.FrozenTrigStress
+import SquaresInCircles.Six.Analytic.SharpFrontProfile
+import SquaresInCircles.Six.Stress.Support
+import SquaresInCircles.Six.Analytic.TransverseProfileBounds
+import SquaresInCircles.Six.Analytic.ConstrainedCircleSupport
+import SquaresInCircles.Six.Analytic.PrimaryClassification
+import SquaresInCircles.Six.Analytic.DiagonalHalfBound
 
 /-!
-# Quantitative D bounds after the analytic d>1/2 reduction
+# The coordinates of D
 
-On [1/2,pi/4], cos d+sin d is increasing. D's actual OWN separator therefore
-imposes the radial profile at 1/2 throughout this interval. The previous
-whole-interval scalar profile then gives |bD|<229/1000, and an explicit Taylor
-endpoint gives aD>41/40. Neither conclusion assumes a final D-edge source.
+In a normalized packing D is separated from C along its own axis, at phase
+`π + d` with `1/2 < d ≤ π/4`. For `0 ≤ d ≤ π/4` that separation and the box of
+the centre of C give the radial profile
+`1 + (387/1000)(cos d + sin d) ≤ a + 1/2`, and `cos d + sin d` increases on
+`[1/2, π/4]`, so the profile holds with `d = 1/2`. Taylor bounds at `1/2` then
+give `a > 41/40`, and the containment of D in the disk gives `|b| < 229/1000`.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic
 open Normalization
@@ -55,7 +62,8 @@ lemma own_transverse_after_half {a b cx cy d : ℝ}
     hprofile hc.containment
   nlinarith only [h]
 
-/-- These bounds are outputs for every actual normalized packing. -/
+/-- In a normalized packing, D has angle `d > 1/2`, radial coordinate more than
+`41/40` and transverse coordinate less than `229/1000` in absolute value. -/
 theorem normalized_diagonal_core_bounds {R : ℝ} (P : NormalizedPacking R) :
     1/2<P.diagonalAngle ∧ 41/40<P.radial 3 ∧ |P.transverse 3|<229/1000 := by
   have hd := normalized_diagonal_gt_half P

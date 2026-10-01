@@ -1,13 +1,18 @@
 import SquaresInCircles.Six.Analytic.HighDiagonalAffineTransverse
 
 /-!
-# A tangent profile that retains the shared central coordinates
+# High D: a tangent bound that keeps the central coordinates
 
-The rational box constant 5641/50000 is an upper bound on c0. The OWN
-constraint on D gives a lower radial profile. The far-corner circle then
-bounds not only |bD|, but |bD| + 2 times every increase above that profile.
-This is a whole-interval concavity argument with the two physical endpoints
-1/2 and pi/4. No grid or external arithmetic result is a proof premise.
+For `1/2 ≤ d ≤ π/4`, the separation of D from the central square along its own
+axis puts its radial coordinate `a` beyond `diagonalBase d`, by the excess
+`(5641/50000 - cx) cos d + (5641/50000 - cy) sin d`, where `5641/50000 > c0`.
+The far-corner circle then bounds `|b| + 2 (a - diagonalBase d)` by
+`diagonalBudget d = 773/2500 - (17/100) d`: the far corner
+`(diagonalBase d + 1/2, diagonalBudget d + 1/2)` lies outside the circle of
+squared radius `Q0`, by a concave function of `d` that is positive at `1/2` and
+`π/4`, and the distance to the origin grows along the line of slope `-2` through
+it, since `diagonalBase d + 1/2 ≥ 2 (diagonalBudget d + 1/2)`. The bound keeps
+the central coordinates, which D shares with the other separations.
 -/
 
 noncomputable section
@@ -149,9 +154,9 @@ lemma diagonal_base_bounds {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ Real.pi/4) :
   dsimp [diagonalBase]
   constructor <;> linarith
 
-/-- The coefficient 2 is a valid one-sided support slope on the full high-D
-profile. Increasing the radial coordinate must decrease |b| by at least twice
-as much. The coefficient is justified by the far-corner circle below. -/
+/-- Beyond the profile, each increase of the radial coordinate costs twice as
+much of the transverse budget:
+`|b| + 2 (a - diagonalBase d) < diagonalBudget d`. -/
 theorem diagonal_tangent_budget {a b d : ℝ} (hc : ContainedChart a |b|)
     (hd : 1/2 ≤ d ∧ d ≤ Real.pi/4) (ha : diagonalBase d ≤ a) :
     |b|+2*(a-diagonalBase d) < diagonalBudget d := by
@@ -177,9 +182,9 @@ theorem diagonal_tangent_budget {a b d : ℝ} (hc : ContainedChart a |b|)
   rw [hA] at hc
   nlinarith [hc.containment,sq_nonneg z]
 
-/-- OWN supplies the radial profile with its actual shared-center excess. -/
+/-- The separation of D along its own axis puts its radial coordinate beyond the
+profile, with the excess of the central coordinates below `coreCeiling`. -/
 lemma own_diagonal_profile {a b cx cy d : ℝ}
-    (hx : cx ≤ coreCeiling) (hy : cy ≤ coreCeiling)
     (hd : 1/2 ≤ d ∧ d ≤ Real.pi/4)
     (hown : 0 ≤ centralMargin .own (Real.pi+d) a b cx cy) :
     diagonalBase d+(coreCeiling-cx)*Real.cos d+(coreCeiling-cy)*Real.sin d ≤ a := by
@@ -195,7 +200,8 @@ lemma own_diagonal_profile {a b cx cy d : ℝ}
   dsimp [diagonalBase,coreCeiling]
   nlinarith only [hown]
 
-/-- The shared center cannot be optimized independently for D and a wing. -/
+/-- The transverse budget of D, with twice the excess of the central coordinates
+below `coreCeiling` counted against it. -/
 theorem diagonal_shared_center_budget {a b cx cy d : ℝ}
     (hc : ContainedChart a |b|) (hx : cx ≤ coreCeiling) (hy : cy ≤ coreCeiling)
     (hd : 1/2 ≤ d ∧ d ≤ Real.pi/4)
@@ -208,19 +214,8 @@ theorem diagonal_shared_center_budget {a b cx cy d : ℝ}
     (by linarith [hd.1]) (by linarith [hd.2,Real.pi_pos])
   have hX := mul_nonneg (sub_nonneg.mpr hx) hcos
   have hY := mul_nonneg (sub_nonneg.mpr hy) hsin
-  have ha := own_diagonal_profile hx hy hd hown
+  have ha := own_diagonal_profile hd hown
   have hb := diagonal_tangent_budget hc hd (by linarith)
   linarith
-
-lemma normalized_diagonal_shared_center_budget {R : ℝ} (P : NormalizedPacking R) :
-    |P.transverse 3|+2*(coreCeiling-P.center.1)*Real.cos P.diagonalAngle+
-      2*(coreCeiling-P.center.2)*Real.sin P.diagonalAngle < diagonalBudget P.diagonalAngle := by
-  have hphase : P.phase 3=Real.pi+P.diagonalAngle := by
-    dsimp [NormalizedPacking.diagonalAngle]
-    ring
-  exact diagonal_shared_center_budget (P.contained 3)
-    (P.box.1.2.trans c0_lt_coreCeiling.le) (P.box.2.2.trans c0_lt_coreCeiling.le)
-    ⟨(normalized_diagonal_gt_half P).le,P.diagonal_angle_range.2⟩
-    (by simpa only [hphase] using P.own_separator 3 P.diagonal_own)
 
 end SquaresInCircles.Six.Analytic

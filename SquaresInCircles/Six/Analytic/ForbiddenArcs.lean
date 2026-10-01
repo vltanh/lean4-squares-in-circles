@@ -1,13 +1,15 @@
 import SquaresInCircles.Six.Analytic.CoreLargeQuadrants
 
 /-!
-# Complete analytic forbidden arcs for Proposition A
+# Arcs without markers when the central square is off centre
 
-Small cy uses (-pi/2+2/3, pi/2-3/8); large cy uses (-27/50, pi/2).
-Both widths exceed 2*pi/3 by explicit rational comparisons with pi. The
-partition is into the geometric E/N/S/W quadrants, not a numerical grid.
-The modular lemma checks every representative of the marker, not only its
-chosen real lift.
+Let the central square be centred at `(x, y)` with `c0 < x < 1/2`. If
+`0 ≤ y ≤ c0`, no exterior square separated from it has its marker in the open
+arc `(-π/2 + 2/3, π/2 - 3/8)`; if `c0 < y ≤ x`, none has its marker in
+`(-27/50, π/2)`. Both arcs are longer than `2π/3`. The proof follows the angle
+of the square through the quarter turns about the directions of the sides of
+the central square. A bound on the real lift of a marker keeps every
+representative of its direction out of the arc (`marker_no_representative`).
 -/
 
 noncomputable section
@@ -30,7 +32,8 @@ lemma small_arc_near_east : -Real.pi/2 ≤ smallArcLeft ∧ smallArcRight ≤ Re
 
 lemma large_arc_near_east : -Real.pi/2 ≤ -(27:ℝ)/50 := by linarith [Real.pi_gt_d2]
 
-/-- A1: no source or sign remains inside the small-center forbidden arc. -/
+/-- If `c0 < x < 1/2` and `0 ≤ y ≤ c0`, the marker of a square separated from
+the central square lies outside the arc `(smallArcLeft, smallArcRight)`. -/
 theorem small_core_marker_outside {a b t x y : ℝ} (h : ContainedChart a |b|)
     (hx : c0 < x) (hx1 : x < 1/2) (hy0 : 0 ≤ y) (hy : y ≤ c0)
     (hsep : ∃ k, 0 ≤ centralMargin k t a b x y) :
@@ -68,7 +71,8 @@ theorem small_core_marker_outside {a b t x y : ℝ} (h : ContainedChart a |b|)
     dsimp [smallArcRight]
     linarith [hm.1]
 
-/-- A2: the whole ordered large-center region, with no central-grid partition. -/
+/-- If `c0 < y ≤ x < 1/2`, the marker of a square separated from the central
+square lies outside the arc `(-27/50, π/2)`. -/
 theorem large_core_marker_outside {a b t x y : ℝ} (h : ContainedChart a |b|)
     (hy : c0 < y) (hxy : y ≤ x) (hx1 : x < 1/2)
     (hsep : ∃ k, 0 ≤ centralMargin k t a b x y) :
@@ -103,7 +107,8 @@ theorem large_core_marker_outside {a b t x y : ℝ} (h : ContainedChart a |b|)
   · right
     linarith [hm.1]
 
-/-- Real lift exclusion gives genuine circular-arc exclusion. -/
+/-- If the real lift of the marker lies outside an arc `(l, u)` within
+`[-π/2, π/2]`, no representative of the marker direction lies in the arc. -/
 theorem marker_no_representative {a b t l u v : ℝ} (h : ContainedChart a |b|)
     (ht : |t| ≤ Real.pi) (hl : -Real.pi/2 ≤ l) (hu : u ≤ Real.pi/2)
     (hout : liftedMarker t a b ≤ l ∨ u ≤ liftedMarker t a b)

@@ -3,13 +3,15 @@ import SquaresInCircles.Six.Analytic.WestSecondaryAxes
 import SquaresInCircles.Six.Analytic.RadicalTrigConcavity
 
 /-!
-# Concavity of the D-secondary stress components
+# Concavity of the west stress along the secondary axis of D
 
-The positive mixed W-force term is retained. The radical curvature identity
-reduces its concavity to R0*sqrt(53/200+(9/40)sin d)<=cos d+sin d, which
-follows from cos d>=12/25 and the unit-circle identity. The D-force term has
-root at most 1/2 and an even simpler curvature bound. The only interval splits
-are the signs of the two original angles, where absolute values change form.
+Where `sin t` and `sin u` have fixed signs, `westStressD t u` is a constant plus
+`westJ t`, `westH u` and `westG (u - t)`, each of the form
+`A cos x + B sin x - R √(p + q sin x)`, and each is concave by the curvature
+bound of `RadicalTrigConcavity`: `westJ` has no radical, the radical of `westH`
+is at most `1/2`, and `westG` has `R0 √(53/200 + (9/40) sin x) ≤ cos x + sin x`
+because `cos x ≥ 12/25` on `[0, 16/15]`. So `westStressD` is concave in `t`, in
+`u` and along the diagonal `t = u`.
 -/
 
 noncomputable section
@@ -25,6 +27,8 @@ def westH (positive:Bool) (u:ℝ) : ℝ :=
 
 def westG (d:ℝ) : ℝ := radicalTrig (1/4) (1/4) (53/200) (9/40) R0 d
 
+/-- `westStressD` where `sin t` has the sign `pt` and `sin u` the sign `pu`,
+as a sum of terms in `t`, in `u` and in `u - t`. -/
 def westDForm (pt pu:Bool) (t u:ℝ) : ℝ :=
   17/20-(3/10)*c0+westJ pt t+westH pu u+westG (u-t)
 
@@ -164,7 +168,8 @@ lemma westH_positive_concave : ConcaveOn ℝ (Set.Icc 0 (2/5)) (westH true) := b
   · intro x hx
     simp
 
-/-- The first coordinate follows J and the reversed affine argument of G. -/
+/-- `westDForm` is concave in `t` on an interval where `westJ` is concave and
+`u - t` stays in `[0, 16/15]`. -/
 lemma westDForm_concave_t (pt pu:Bool) (u l h:ℝ)
     (hj:ConcaveOn ℝ (Set.Icc l h) (westJ pt))
     (hδ:∀x∈Set.Icc l h,u-x∈Set.Icc 0 (16/15)) :
@@ -178,7 +183,8 @@ lemma westDForm_concave_t (pt pu:Bool) (u l h:ℝ)
   dsimp [westDForm]
   congr 1 <;> ring_nf
 
-/-- The second coordinate follows H and the translated argument of G. -/
+/-- `westDForm` is concave in `u` on an interval where `westH` is concave and
+`u - t` stays in `[0, 16/15]`. -/
 lemma westDForm_concave_u (pt pu:Bool) (t l h:ℝ)
     (hh:ConcaveOn ℝ (Set.Icc l h) (westH pu))
     (hδ:∀x∈Set.Icc l h,x-t∈Set.Icc 0 (16/15)) :

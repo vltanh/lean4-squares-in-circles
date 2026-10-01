@@ -3,23 +3,18 @@ import SquaresInCircles.Six.Analytic.OwnWingProfileSharpening
 import SquaresInCircles.Six.Analytic.HighDiagonalAffineTransverse
 
 /-!
-# A full one-radian exclusion for a D-sourced west edge
+# W and D along the second axis of D
 
-Use x = -bW and q = d+v, where v = -w. The far-corner circle gives
-  aW + (31/100) * (x+x^2) <= rho0.
-The existing OWN/cardinal profiles bound x by an affine function U(v), and
-  bD < 31/100 - (17/100)*d.
-Their combination bounds the separator defect by
-  F(U,v,q) = (rho0-1/2-(31/100)*(U+U^2))*sin q
-              +(U-1/2)*cos q-19/100-(17/100)*q+(17/100)*v.
-For 0 <= q <= 1, F increases in q. At q=1 its affine-profile restriction
-increases in v, as a single factored difference shows. Only the two forced
-endpoints (v,q)=(1/2,1), (2/5,1) are evaluated. Their rational upper bounds
-are respectively -43720331/12000000000 and -195751/1080000000.
-
-No interval cover, sampled minimum or candidate-edge hypothesis is used.
-This strengthens a phase restriction; it does not exclude the entire mixed
-case or supply the remaining OWN-wing tails. Compilation remains deferred.
+If W and D are separated along the second axis of D, the phase of D exceeds
+that of W by more than one radian. Let `v = -w`, `q = d + v` the phase gap and
+`x = -b_W`. The far corner of W gives `a_W + (31/100)(x + x²) ≤ ρ0`, the
+separation of W from C bounds `x` by an affine function `U(v)`, and
+`b_D < 31/100 - (17/100) d`. If `q ≤ 1`, the separation then exceeds the
+threshold by less than
+`F = A(U) sin q + (U - 1/2) cos q - 19/100 - (17/100)(q - v)`, with
+`A(U) = ρ0 - 1/2 - (31/100)(U + U²)`. On `[0, 1]` it increases in `q`, at `q = 1`
+it increases in `v` along `U(v)`, and its values at `v = 1/2` (W on its own
+axis) and `v = 2/5` (W on the west side of C) are negative.
 -/
 
 noncomputable section
@@ -43,7 +38,7 @@ private lemma trig_one_bounds {q : ℝ} (hq : 0 ≤ q ∧ q ≤ 1) :
     Real.sin_nonneg_of_nonneg_of_le_pi hq.1 (by linarith [hq.2,Real.pi_gt_d2]),
     by nlinarith⟩
 
-/-- The signed coordinate x=-b need not be nonnegative. -/
+/-- The far-corner bound with the signed coordinate `-b` in place of `|b|`. -/
 private lemma signed_radial_quadratic {a b : ℝ} (hc : ContainedChart a |b|) :
     a+(31/100)*(-b+(-b)^2) ≤ rho0 := by
   have h := radial_transverse_quadratic hc
@@ -86,7 +81,8 @@ private lemma westDefect_mono_q {U v : ℝ}
   have hn := mul_nonneg (show 0 ≤ 1/2-U by linarith [hU.2]) hs0
   nlinarith
 
-/-- At q=1, one factorization replaces the whole affine-profile interval. -/
+/-- At `q = 1` the bound increases in `v` along an affine profile
+`U = U₀ - k v`. -/
 private lemma westDefect_profile_endpoint {U0 k V v : ℝ}
     (hk : 0 ≤ k) (hv : 0 ≤ v ∧ v ≤ V)
     (hUmin : 0 ≤ U0-k*V)
@@ -171,8 +167,8 @@ private lemma west_secondary_defect_upper {a b z d v U : ℝ}
   dsimp [westDefect]
   nlinarith only [hp,hm,hz]
 
-/-- A D-sourced W/D separator needs a phase gap strictly greater than one radian.
-This retains both canonical W cases and uses no candidate-edge conclusion. -/
+/-- If W and D are separated along the second axis of D, their phases differ by
+more than one radian. -/
 theorem DW_Dsecondary_gap_gt_one {R : ℝ} (P : NormalizedPacking R)
     (hsep : Seven.SAT.threshold (P.square 2) (P.square 3) ≤
       dot (normalY (P.square 3)) (sub (P.square 3).center (P.square 2).center)) :
@@ -218,13 +214,5 @@ theorem DW_Dsecondary_gap_gt_one {R : ℝ} (P : NormalizedPacking R)
       ((neg_le_abs _).trans htrans.le) hz'
     have hn := westDefect_own_negative hv hq
     nlinarith only [hsep,hf,hn]
-
-lemma MissingWestWing.phase_wall_one {R : ℝ} {P : NormalizedPacking R}
-    (h : MissingWestWing P) : P.helperAngle 2 < P.diagonalAngle-1 := by
-  have hg := DW_Dsecondary_gap_gt_one P h.from_diagonal
-  rw [P.phase_from_deviation 2,
-    show cardinalCenter (matchingCardinal 2)=Real.pi from rfl] at hg
-  dsimp [NormalizedPacking.diagonalAngle]
-  linarith
 
 end SquaresInCircles.Six.Analytic

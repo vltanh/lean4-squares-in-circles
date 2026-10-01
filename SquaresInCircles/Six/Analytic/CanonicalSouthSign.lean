@@ -3,22 +3,19 @@ import SquaresInCircles.Six.Analytic.OwnWingProfileSharpening
 import SquaresInCircles.Six.Analytic.HighDiagonalAffineTransverse
 
 /-!
-# Canonical OWN S has positive deviation
+# S separated along its primary axis turns away from D
 
-This is not obtained by reflecting W while preserving D's half-window. For
-s=-v<0, the actual south cardinal margin and the OWN/cardinal difference imply
-  bS < cx + halfRatio(v) * (aS-cy).
-The two forward secondary D/S sources are excluded directly in that frame.
-
-For the D source, a positive combination of those two inequalities cancels
-v exactly. For the S source, the high-D transverse profile and far-corner
-quadratic give a scalar upper bound which decreases in d. At d=1/2, the
-remaining whole-interval inequality follows from Taylor bounds and one
-completed square. No grid, stress table or candidate-edge premise is used.
-
-Thus the former conditional OWN-S lower tail is proved with the stronger
-conclusion s>0. The upper tail and the mixed positive-S cases remain separate.
-Compilation remains deferred.
+If S is not separated from C along the south side of C, then it is along its
+primary axis, and its phase is `3π/2 + s` with `s > 0`. At `s = 0` the two
+margins would agree. For `s = -v < 0` their difference gives
+`b < c_x + halfRatio v (a - c_y)`, with `halfRatio v = tan (v/2)`, for the chart
+`(a, b)` of S and the centre `(c_x, c_y)` of C; and D, at the phase `π + d` with
+`1/2 ≤ d ≤ π/4`, is separated from S along the secondary axis of D or of S.
+Along that of D, a positive combination of this bound and the south margin
+eliminates `v`. Along that of S, the bound `|b_D| < 31/100 - 17d/100` on the
+transverse coordinate of D and its far-corner quadratic leave an expression
+that decreases in `d` and is negative at `d = 1/2`, by Taylor bounds and a
+completed square.
 -/
 
 noncomputable section
@@ -200,8 +197,8 @@ private lemma Dsource_canonical_south {v d a b cx cy z : ℝ}
   have hcap : a*Real.cos v+b*Real.sin v ≤
       1/2-cy+(Real.cos v+Real.sin v)/2 := by
     simp only [centralMargin,centerY,angularWidth,Real.cos_sub,Real.sin_sub,
-      south_cos,south_sin,zero_mul,one_mul,neg_one_mul,zero_add,add_zero,
-      sub_zero,zero_sub,neg_neg,abs_neg,abs_of_nonneg hcV,abs_of_nonneg hsV] at hcard
+      south_cos,south_sin,zero_mul,neg_one_mul,zero_add,sub_zero,abs_neg,
+      abs_of_nonneg hcV,abs_of_nonneg hsV] at hcard
     linarith
   have hp := mul_le_mul_of_nonneg_left hcap ha
   have htB := mul_le_mul_of_nonneg_left
@@ -233,7 +230,8 @@ private lemma Dsource_canonical_south {v d a b cx cy z : ℝ}
   have hz' : z ≤ 9/40 := hz.trans (limit_bounds hd).2.1
   nlinarith only [hp,htB,hproj,hboundary,hcxM,hcyM,hcMon,hcHalf,hsin,hz']
 
-/-- This closes the OWN-S lower tail with the stronger strict sign. -/
+/-- If S is not separated from C along the south side of C, its phase exceeds
+`3π/2`. -/
 theorem canonical_own_south_positive {R : ℝ} (P : NormalizedPacking R)
     (hown : P.ownBits 4=true) : 0 < P.helperAngle 4 := by
   have hcard := (P.toPinPacking.canonicalOwn_eq_true 4).mp hown
@@ -246,8 +244,7 @@ theorem canonical_own_south_positive {R : ℝ} (P : NormalizedPacking R)
   by_cases hs0 : P.helperAngle 4=0
   · rw [hSphase,hs0,add_zero,hmc] at hS hcard
     simp only [centralMargin,centralNormal,centerY,angularWidth,south_cos,south_sin,
-      mul_zero,mul_neg_one,zero_mul,neg_one_mul,add_zero,zero_add,sub_zero,
-      neg_neg,abs_zero,abs_neg,abs_one] at hS hcard
+      mul_zero,mul_neg_one,add_zero,zero_add,abs_zero,abs_neg,abs_one] at hS hcard
     linarith
   have hsneg : P.helperAngle 4 < 0 := lt_of_le_of_ne hs hs0
   let v := -P.helperAngle 4

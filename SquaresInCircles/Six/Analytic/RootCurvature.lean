@@ -4,12 +4,12 @@ import Mathlib.Analysis.Convex.Deriv
 import Mathlib.Tactic
 
 /-!
-# Differentiating a negative square root
+# The second derivative of a square root
 
-Every denominator is justified by a strictly positive current radicand. The
-quotient calculation is a separate rational identity before square roots are
-substituted, avoiding a circular square-root rewrite. Applications supply
-whole-interval curvature bounds, not sampled derivative values.
+Where `f > 0`, with derivative `d` and second derivative `dd`, the derivative
+`-r d/(2√f)` of `-r√f` has the derivative `r(d² - 2f dd)/(4f√f)`; the quotient
+rule reduces to a rational identity in `√f`. A function with an explicit
+nonpositive second derivative on a closed interval is concave there.
 -/
 
 noncomputable section
@@ -36,8 +36,8 @@ lemma hasDerivAt_negative_sqrt {f d : ℝ → ℝ} {r x dd : ℝ}
     | rfl
     | exact negative_sqrt_quotient_identity hpos (Real.sq_sqrt hx.le)
 
-/-- Closed-endpoint differentiability and an explicit second derivative give
-concavity on the entire interval. -/
+/-- A function with a nonpositive second derivative on a closed interval is
+concave there. -/
 lemma concaveOn_of_explicit_second {l u : ℝ} {f d dd : ℝ → ℝ}
     (hf : ∀ x ∈ Set.Icc l u, HasDerivAt f (d x) x)
     (hd : ∀ x ∈ Set.Icc l u, HasDerivAt d (dd x) x)

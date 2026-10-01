@@ -2,24 +2,23 @@ import SquaresInCircles.Six.Analytic.CardinalSouthTail.Support
 import SquaresInCircles.Six.Analytic.MixedCardinalSouth.Geometry
 
 /-!
-# Close the entire cardinal-W missing-south branch
+# A missing south wing has W separated along its own axis
 
-The old MixedCardinalSouth argument handles s<=12/25. A larger s is
-necessarily canonical OWN-S. Four actual inequalities, CW, CS, WD, DS, then
-contradict the large-tail profile with weights 4,10,3,3. No candidate D/S
-inequality is assumed: the D-sourced separator comes from MissingSouthWing.
-
-Consequently every missing south wing has W OWN. This removes the former
-cardinal-W / large-OWN-S exception, without asserting that the unrestricted
-OWN-W case or the independent south upper tail has been solved.
-Compilation and kernel acceptance remain unverified.
+Let W be separated from C along the west side of C. For a missing south
+wing, `MixedCardinalSouth` leaves only the case where S, at the phase
+`3π/2 + s`, is separated from C along its own axis and `s > 12/25`. There
+the separations C–W (along the west side of C), C–S (along the axis of S),
+W–D and D–S (along the secondary axes of W and D), with weights `4`,
+`10`, `3`, `3`, contradict the positivity of the large-tail profile. So in a
+missing south wing W is separated from C along its own axis.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.CardinalSouthTail
 open Normalization
 
-/-- The four scalar separators are incompatible on the entire large-tail domain. -/
+/-- The four separating inequalities of the large-tail stress are incompatible
+on its domain. -/
 theorem scalar_impossible (negative : Bool)
     {v s d aw bw ad bd asouth bsouth cx cy : ℝ}
     (hv : vLower negative ≤ v ∧ v ≤ vUpper negative)
@@ -56,7 +55,8 @@ theorem scalar_impossible (negative : Bool)
     (profile_le_defect negative hv hs hd)
   linarith
 
-/-- The large positive OWN-S case is excluded using its actual central separator. -/
+/-- With W separated along the west side of C, S along its own axis and
+`s ≥ 12/25`, the south wing is not missing. -/
 theorem not_missing_south_of_large_own {R : ℝ} (P : NormalizedPacking R)
     (hW : P.ownBits 2=false) (hS : P.ownBits 4=true)
     (hlarge : 12/25 ≤ P.helperAngle 4) : ¬ MissingSouthWing P := by
@@ -126,22 +126,15 @@ theorem not_missing_south_of_large_own {R : ℝ} (P : NormalizedPacking R)
   · exact finish true (by
       simpa [vLower,vUpper] using And.intro hvraw.1 (le_of_not_ge hv0))
 
-/-- No missing-south configuration survives with cardinal W, for either S bit. -/
+/-- With W separated from C along the west side of C, the south wing is not
+missing. -/
 theorem not_missing_south {R : ℝ} (P : NormalizedPacking R)
     (hW : P.ownBits 2=false) : ¬ MissingSouthWing P := by
   intro hmissing
   obtain ⟨hS,hs⟩ := MixedCardinalSouth.remaining_case_requires_south_tail hmissing hW
   exact not_missing_south_of_large_own P hW hS hs.le hmissing
 
-/-- The actual candidate south separator is now available for every cardinal W. -/
-theorem south_wing_of_cardinal_west {R : ℝ} (P : NormalizedPacking R)
-    (hW : P.ownBits 2=false) :
-    Seven.SAT.threshold (P.square 3) (P.square 4) ≤
-      dot (normalY (P.square 4)) (sub (P.square 4).center (P.square 3).center) := by
-  by_contra h
-  exact not_missing_south P hW (missing_south_of_failure P h)
-
-/-- The former large-S exception has been removed from the remaining domain. -/
+/-- In a missing south wing, W is separated from C along its own axis. -/
 theorem missing_south_requires_own_west {R : ℝ} {P : NormalizedPacking R}
     (hmissing : MissingSouthWing P) : P.ownBits 2=true := by
   cases hW : P.ownBits 2

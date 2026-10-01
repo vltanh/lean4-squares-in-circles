@@ -1,17 +1,15 @@
 import SquaresInCircles.Six.Analytic.ReflectedOwnWings.Profile
 
 /-!
-# Exact vertices of the reflected two-OWN polygon
+# The reflected case: positivity of the value
 
-The reflected domain is
-  48/175<=s<=v<=2/3, v+s<=24/25, 157/200<=d<=163/175.
-For each d the four polygon vertices are
-  (48/175,48/175), (2/3,48/175), (2/3,22/75), (12/25,12/25).
-Separate slice concavity, including the actual boundary v+s=24/25, reduces
-positivity to those vertices. Diagonal concavity then leaves its two endpoints.
-The exact Taylor lower polynomial is greater than 1/500 at all these endpoints
-for both central support faces. There is no angle-box subdivision.
-Compilation and kernel acceptance remain unverified.
+The value is positive on `48/175 ≤ s ≤ v ≤ 2/3`, `v + s ≤ 24/25`,
+`157/200 ≤ d ≤ 163/175`, for both faces of the box. For fixed `d` the domain in
+`(v, s)` is the quadrilateral with vertices `(48/175, 48/175)`, `(2/3, 48/175)`,
+`(2/3, 22/75)` and `(12/25, 12/25)`. Concavity along its edges `s = v`,
+`v = 2/3` and `v + s = 24/25`, and then in `v`, reduces positivity to the
+vertices, and concavity in `d` to the two ends of its interval. At these eight
+points Taylor polynomials of `sin` and `cos` bound the value below by `1/500`.
 -/
 
 noncomputable section
@@ -79,9 +77,11 @@ lemma positive_of_four_vertices (upper : Bool) {v s d : ℝ}
       (by norm_num : (2:ℝ)/3 ∈ Set.Icc 0 (2/3)) ⟨horder,hv⟩
     exact (lt_min hleft hright).trans_le hvmin
   · have hl : 0 < value upper (24/25-22/75) (22/75) d := by
-      convert he.2.2.1 using 1 <;> norm_num
+      convert he.2.2.1 using 1
+      norm_num
     have hu : 0 < value upper (24/25-12/25) (12/25) d := by
-      convert he.2.2.2 using 1 <;> norm_num
+      convert he.2.2.2 using 1
+      norm_num
     have hright := positive_on_concave_interval (sum_wall_concave upper hd)
       ⟨le_of_not_ge hcut,hs.2⟩ hl hu
     have hvmin := hcv.min_le_of_mem_Icc
@@ -152,7 +152,7 @@ lemma vertex_positive (upper : Bool) (i : Fin 4) {d : ℝ}
   exact positive_on_concave_interval (diagonal_concave upper hv hs) hd
     (endpoint_positive upper false i) (endpoint_positive upper true i)
 
-/-- Positivity on the full enlarged reflected domain. -/
+/-- The value of the reflected stress is positive on its whole domain. -/
 theorem positive (upper : Bool) {v s d : ℝ}
     (hs : 48/175 ≤ s ∧ s ≤ 12/25) (horder : s ≤ v) (hv : v ≤ 2/3)
     (hsum : v+s ≤ 24/25) (hd : 157/200 ≤ d ∧ d ≤ 163/175) :

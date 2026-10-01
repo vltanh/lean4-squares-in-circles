@@ -3,11 +3,11 @@
 [![Lean build](https://github.com/vltanh/lean4-squares-in-circles/actions/workflows/lean.yml/badge.svg)](https://github.com/vltanh/lean4-squares-in-circles/actions/workflows/lean.yml)
 [![Doc links](https://github.com/vltanh/lean4-squares-in-circles/actions/workflows/docs.yml/badge.svg)](https://github.com/vltanh/lean4-squares-in-circles/actions/workflows/docs.yml)
 
-Machine-checked proofs, for `n = 1, …, 5` and `n = 7`, of the least radius of
-a disk holding `n` non-overlapping unit squares, and of every packing that
-attains it, up to rotation about the disk centre and relabelling: exactly one
-for `n ≤ 5`, and for `n = 7` a family in which each of the three middle squares
-slides along the middle column.
+Machine-checked proofs, for `n = 1, …, 7`, of the least radius of a disk
+holding `n` non-overlapping unit squares, and of every packing that attains it,
+up to rotation about the disk centre and relabelling: exactly one for `n ≤ 6`,
+and for `n = 7` a family in which each of the three middle squares slides along
+the middle column.
 
 | n | optimal radius | ≈ | an optimal packing |
 | :-: | :-: | :-: | :-: |
@@ -16,6 +16,7 @@ slides along the middle column.
 | 3 | `5√17 / 16` | 1.2885 | <img src="https://erich-friedman.github.io/packing/squincir/3.gif" width="100" alt="three unit squares in a circle"><br>the T |
 | 4 | `√2` | 1.4142 | <img src="https://erich-friedman.github.io/packing/squincir/4.gif" width="100" alt="four unit squares in a circle"><br>the 2×2 block |
 | 5 | `√(5/2)` | 1.5811 | <img src="https://erich-friedman.github.io/packing/squincir/5.gif" width="100" alt="five unit squares in a circle"><br>the plus |
+| 6 | `√q*`, `q*` a quartic irrational | 1.6885 | <img src="https://erich-friedman.github.io/packing/squincir/6.gif" width="100" alt="six unit squares in a circle"><br>a central square with four neighbours, two pushed along its sides, and a sixth square turned 45° in the corner between them |
 | 7 | `√13 / 2` | 1.8028 | <img src="https://erich-friedman.github.io/packing/squincir/7.gif" width="100" alt="seven unit squares in a circle"><br>three in a line between two pairs; not unique, each square of the line can move along it |
 
 Pictures by Erich Friedman, from the [Squares in Circles](https://erich-friedman.github.io/packing/squincir/)
@@ -83,8 +84,9 @@ def Packing {n : ℕ} (S : Fin n → UnitSquare) (o : Point) (R : ℝ) : Prop :=
 
 ### Congruence
 
-The optimal packings are given as models: configurations of axis-parallel
-squares with the disk centre at the origin. `Congruent S o M` says that the
+The optimal packings are given as models: configurations of squares with the
+disk centre at the origin, all axis-parallel except one square of the model for
+six squares. `Congruent S o M` says that the
 configuration `S` is the model `M`, placed at `o`, turned by one angle about
 `o`, and relabelled. It compares point sets, since a quarter turn of a frame
 describes the same square. `pointInDirection o φ x y` is the point with
@@ -131,18 +133,50 @@ def Seven.columnModel (c : Column) : Fin 7 → UnitSquare :=
   fun i => axisSquare (columnCenters c i)
 ```
 
+### Six squares
+
+The model for six squares has five axis-parallel squares and one turned by
+`π / 4`. Its constants come from a quadratic over `ℚ(√2)`, chosen so that the
+far corners of four squares and two vertices of the turned square lie on one
+circle while the turned square touches its two neighbours:
+
+```lean
+def Six.hStar : ℝ := Real.sqrt 2 / 2
+def Six.AStar : ℝ := (1466 + 1940 * hStar) / 267
+def Six.BStar : ℝ := (327 + 432 * hStar) / 712
+def Six.discriminant : ℝ := AStar ^ 2 - 4 * BStar
+def Six.sStar : ℝ := 2 * BStar / (AStar + Real.sqrt discriminant)   -- ≈ 0.0842
+def Six.tStar : ℝ := (-20 + 30 * hStar) * sStar + 7 / 2 - 9 * hStar / 2   -- ≈ 0.4202
+def Six.dStar : ℝ := 1 / 2 + hStar - tStar   -- ≈ 0.7869
+def Six.qStar : ℝ := 2 * sStar ^ 2 + 4 * sStar + 5 / 2   -- ≈ 2.8512
+def Six.radius : ℝ := Real.sqrt qStar   -- ≈ 1.6885
+
+def Six.diagonalSquare : UnitSquare where
+  center := (-dStar, -dStar)
+  cosine := hStar
+  sine := hStar
+  unit := by
+    dsimp [hStar]
+    nlinarith [Real.sq_sqrt (show (0 : ℝ) ≤ 2 by norm_num)]
+
+def Six.model : Fin 6 → UnitSquare :=
+  ![axisSquare (sStar, sStar), axisSquare (sStar, sStar + 1),
+    axisSquare (sStar + 1, sStar), axisSquare (sStar - 1, tStar),
+    axisSquare (tStar, sStar - 1), diagonalSquare]
+```
+
 ## Results
 
 More on each theorem: [docs/results.md](docs/results.md).
 
-For `1 ≤ n ≤ 5` and `n = 7`, the root file `SquaresInCircles.lean` proves, in
-namespace `SquaresInCircles`:
+For `1 ≤ n ≤ 7`, the root file `SquaresInCircles.lean` proves, in namespace
+`SquaresInCircles`:
 
 ```lean
-theorem optimal_radius (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7) :
+theorem optimal_radius (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 7) :
     IsLeast {R | ∃ (S : Fin n → UnitSquare) (o : Point), Packing S o R} (optimalRadius n)
 
-theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7)
+theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 7)
     (S : Fin n → UnitSquare) (o : Point) :
     Packing S o (optimalRadius n) ↔ ∃ M ∈ optimalPackings n, Congruent S o M
 ```
@@ -150,7 +184,7 @@ theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7)
 `optimal_radius`: `optimalRadius n` is the least radius of a disk holding `n`
 unit squares; some packing attains it, and none fits in a smaller disk.
 `optimal_packings`: the packings of that radius are exactly the configurations
-congruent to a model in `optimalPackings n`, which holds one model for `n ≤ 5`
+congruent to a model in `optimalPackings n`, which holds one model for `n ≤ 6`
 and every column packing for `n = 7`:
 
 ```lean
@@ -160,12 +194,15 @@ def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
   | 3 => {Three.model}
   | 4 => {Four.model}
   | 5 => {Five.model}
+  | 6 => {Six.model}
   | 7 => Set.range Seven.columnModel
   | _ => ∅
 ```
 
 Each of `One.model`, …, `Five.model` is `fun i => axisSquare (centers i)`,
-the axis-parallel squares at the `centers` of its case:
+the axis-parallel squares at the `centers` of its case, and `Six.model` has
+five axis-parallel squares and one turned by `π / 4`
+([below](#six-squares)):
 
 | n | `optimalRadius n` | centres of the optimal models |
 | :-: | --- | --- |
@@ -174,6 +211,7 @@ the axis-parallel squares at the `centers` of its case:
 | 3 | `5 * Real.sqrt 17 / 16` | `![(-1/2,-5/16),(1/2,-5/16),(0,11/16)]` |
 | 4 | `Real.sqrt 2` | `![(1/2,1/2),(-1/2,1/2),(-1/2,-1/2),(1/2,-1/2)]` |
 | 5 | `Real.sqrt (5 / 2)` | `![(0,0),(1,0),(0,1),(-1,0),(0,-1)]` |
+| 6 | `Real.sqrt Six.qStar` | `(s,s)`, `(s,s+1)`, `(s+1,s)`, `(s-1,t)`, `(t,s-1)` and the turned square at `(-d,-d)`, for `s, t, d = Six.sStar, Six.tStar, Six.dStar` |
 | 7 | `Real.sqrt 13 / 2` | `Seven.columnCenters c` for every `c : Seven.Column` |
 
 Every case proves one `Optimum` (`Common/Optimum.lean`): the radius, the
@@ -193,7 +231,7 @@ with the [preliminaries](docs/proof/preliminaries.md), the shared
 [two](docs/proof/two.md), [three](docs/proof/three.md),
 [four](docs/proof/four.md), [five](docs/proof/five.md),
 [seven](docs/proof/seven.md)), and four appendices of computations for seven
-squares.
+squares. Six squares do not have their chapter yet.
 
 - **One and two squares.** The farthest corner of a square is at least half a
   diagonal from the disk centre, so in the disk of radius `√2 / 2` the square
@@ -216,6 +254,16 @@ squares.
   pairwise at least `π/3` apart, so one square contains the disk centre, and
   the markers of the other six form a regular hexagon, which rebuilds the
   packing up to the heights of the three middle squares.
+- **Six squares.** Seven squares come first, because six squares build on
+  them: in the disk of radius `R₆ ≈ 1.6885`, the markers rule out six squares
+  that all avoid the disk centre, so one square contains it, and five fixed
+  points near the centre label the other five. A weighted sum of separating
+  inequalities, with weights that balance at the optimal packing, bounds the
+  radius; most of the proof shows that an arbitrary packing is separated as
+  the optimal one is, with estimates uniform over whole intervals of angles.
+  At the optimal radius every inequality is tight, and eight contacts rebuild
+  the packing, the only one in the library with a square turned against the
+  others.
 - **The lower bound** is shared by all cases: a packing in a smaller disk also
   packs the optimal one, so it is congruent to a model, whose outer corners
   reach the circle of the optimal radius.
@@ -238,8 +286,10 @@ More on each earlier result, with references:
   argument used here: each square holds at least a quarter of a small circle
   about the disk centre. Our proof was written without the note, but both came
   from work with Claude, so they may not be independent.
-- **Five and seven squares.** We found no earlier proof; in July 2026
-  Friedman's page listed his packings of 1997 as the best known.
+- **Five, six and seven squares.** We found no earlier proof; in July 2026
+  Friedman's page listed his packings of 1997 as the best known. For six
+  squares it gives the exact radius found by David Ellsworth in 2023, which
+  agrees with the one here.
 
 We found no proof-assistant verification of any optimal square or circle
 packing.
@@ -249,7 +299,7 @@ packing.
 More on each file: [docs/layout.md](docs/layout.md).
 
 ```text
-SquaresInCircles.lean      the main theorems, for all six cases
+SquaresInCircles.lean      the main theorems, for all seven cases
 Challenge.lean             the statement alone, for the Palomar registry
 SquaresInCircles/
 ├── Geometry.lean          the statement: squares, disks, Packing, Congruent,
@@ -258,11 +308,14 @@ SquaresInCircles/
 ├── One/  Two/             Construction, Uniqueness
 ├── Three/ Five/           Construction, Exterior, Containing, Uniqueness
 ├── Four/                  Construction, Exterior, Uniqueness
+├── Six/                   Construction, the normalization, the stresses and
+│                          their scalar estimates, Equality/, Uniqueness
 └── Seven/                 Construction, the pair theorem, Uniqueness, and
                            Uniqueness/ for the ring and the middle square
 ```
 
-Each case imports only `Common/` and its own folder.
+Each case imports only `Common/` and its own folder, except six squares, which
+also import the marker separation and the ring of `Seven/`.
 
 ## Verification
 
@@ -309,6 +362,6 @@ Apache-2.0, matching mathlib and the Lean ecosystem.
 
 ## Contributors
 
-The proofs and the Lean code were written by AI models, ChatGPT 6 Pro and
-Claude Opus 5 and 5.5, with the repository owner directing and reviewing the
-work. Who did what, and when: [docs/contributors.md](docs/contributors.md).
+The proofs and the Lean code were written by AI models, ChatGPT (6 Pro, and
+its latest model for a first proof of six squares) and Claude Opus 5 and 5.5,
+with the repository owner directing and reviewing the work. Who did what, and when: [docs/contributors.md](docs/contributors.md).

@@ -1,15 +1,17 @@
 import SquaresInCircles.Six.Analytic.CardinalWestOwnSouth.Scalar
 
 /-!
-# Actual supports for the reflected cardinal-W / OWN-S case
+# Cardinal W, own S: the supports
 
-The reflected cardinal-S variables obey 0<=s<=2/5 and 0<=d-s<=4/7.
-Consequently its resultant U=cos s+cos(d-s), V=sin(d-s)-sin s has
-U>=7/4 and |V|<=541/1000<31U/100. Its support is exactly bounded by rho0 U,
-with no quadratic penalty. The remaining S angle disappears because the
-coefficient of cos(d/2-s) is negative.
-The W/D phase may exceed pi/2; its width is only bounded below here, never
-incorrectly replaced by an unsigned formula. Compilation remains unverified.
+The five separations of the reflected case, with their weights, against the
+supports of the squares. W is bounded by its vertex support and D by a
+half-angle majorant of the length of its force. For S, `0 ≤ s ≤ 2/5` and
+`0 ≤ d - s ≤ 4/7`, so its force
+`(U, V) = (cos s + cos (d - s), sin (d - s) - sin s)` has `U ≥ 7/4` and
+`|V| ≤ 541/1000 < 31U/100`, and its support is at most `rho0 U`. The angle `s`
+then enters only through a factor `cos (d/2 - s) ≤ 1` of a nonpositive term, and
+drops out. The weighted thresholds exceed the sum of the bounds by at least the
+profile, which is positive, so the five separations cannot all hold.
 -/
 
 noncomputable section
@@ -188,7 +190,7 @@ lemma profile_le_defect (upper : Bool) {v s d : ℝ}
     ring
   linarith
 
-/-- These are reflected scalar inequalities; no reflected NormalizedPacking is postulated. -/
+/-- The five separations of the reflected case cannot all hold. -/
 theorem scalar_impossible {v s d aw bw ad bd asouth bsouth cx cy : ℝ}
     (hv : 0 ≤ v ∧ v ≤ 2/3) (hs : 0 ≤ s ∧ s ≤ 2/5)
     (hd : 157/200 ≤ d ∧ d ≤ 34/35) (hr : 0 ≤ d-s ∧ d-s ≤ 4/7)

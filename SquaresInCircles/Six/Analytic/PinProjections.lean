@@ -1,12 +1,13 @@
 import SquaresInCircles.Six.Analytic.PinDirectedAxes
 
 /-!
-# The W and D pins have the same transverse order in both frames
+# The pins of W and D on a secondary axis
 
-The pins are separated by pi/3. Subtracting their transverse projections gives
-(9/10) cos(13*pi/12 - t), which is positive on both relevant primary windows.
-This explains the orientation exclusion in the W/D proof without numerical
-pin coordinates or a table of permitted directions.
+The pins of W and D lie on the circle of radius `9/10` at the angles `11π/12`
+and `5π/4`, `π/3` apart. On the secondary axis of a square at the phase `t`
+their projections differ by `(9/10) cos (13π/12 - t)`, which is positive for
+`π - 2/3 ≤ t ≤ 5π/4`: in the frames of W and of D, the pin of D comes after the
+pin of W along the secondary axis.
 -/
 
 noncomputable section

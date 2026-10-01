@@ -1,17 +1,13 @@
 import SquaresInCircles.Six.Analytic.MixedCardinalWest.Concavity
 
 /-!
-# The twelve endpoints forced by coordinate concavity
+# A missing west wing with side separators: positivity
 
-The west endpoints are {-2/5,0}, the south endpoints are {-2/5,0,2/5},
-and the diagonal endpoints are {1/2,pi/4}. The middle south endpoint is forced
-by the absolute-value wall s=0; these points are not a subdivision mesh.
-
-All bounds below follow from displayed low-degree Taylor inequalities and
-squaring rational radical bounds. The least resulting rational reserve is
-8839/250000>0. There is no interval evaluator, searched cover, or external
-success premise. Together with Concavity.lean this proves positivity on the
-entire cardinal mixed-west box. Compilation remains deferred.
+The gap is positive on `-2/5 ≤ w ≤ 0`, `-2/5 ≤ s ≤ 2/5`, `1/2 ≤ d ≤ π/4`. By
+concavity in `d`, then in `w`, then in `s` on each side of `s = 0`, it is enough
+to check the twelve points with `w ∈ {-2/5, 0}`, `s ∈ {-2/5, 0, 2/5}` and
+`d ∈ {1/2, π/4}`. There Taylor bounds of `sin` and `cos`, and upper bounds of
+the radicals by squaring, leave a rational reserve of at least `8839/250000`.
 -/
 
 noncomputable section
@@ -82,7 +78,7 @@ private lemma quarter_shift_bounds :
   · nlinarith only [hm]
   · nlinarith only [hc]
 
-/-- Each comparison here is a single squared rational inequality. -/
+/-- Upper bounds of the radicals at the twelve points, each by squaring. -/
 private lemma endpoint_root_bounds :
     Real.sqrt (13+12*Real.sin (1/2)) ≤ 1083/250 ∧
     Real.sqrt (13+12*Real.sin (Real.pi/4)) ≤ 4637/1000 ∧
@@ -151,7 +147,8 @@ private lemma endpoint_trig (i : Fin 2) (j : Fin 3) (k : Fin 2) :
   have hquarter := half_root_bounds.1
   obtain ⟨hqcm,hqsp,hqcp,hqsm,hqsum⟩ := quarter_shift_bounds
   refine ⟨?_,?_,?_,?_,?_⟩
-  · fin_cases i <;> norm_num [westCosLower,westEnd] <;> linarith
+  · fin_cases i <;> norm_num [westCosLower,westEnd]
+    linarith
   · fin_cases j <;> norm_num [southCosLower,southEnd] <;> linarith
   · fin_cases j
     · have e : Real.sin (-2/5 : ℝ) = -Real.sin (2/5) := by
@@ -180,8 +177,8 @@ private def rationalReserve (i : Fin 2) (j : Fin 3) (k : Fin 2) : ℝ :=
     3*westSumLower i k+3*diagonalCosLower j k-
     (1689/1000)*(westRootUpper k+diagonalRootUpper j k+southRootUpper j)
 
-/-- Only twelve endpoint fractions, forced by the two intervals and s=0.
-The weakest displayed lower bound is 8839/250000, not a sampled minimum. -/
+/-- At each of the twelve points the rational reserve is at least
+`8839/250000`. -/
 private lemma rationalReserve_positive (i : Fin 2) (j : Fin 3) (k : Fin 2) :
     (8839:ℝ)/250000 ≤ rationalReserve i j k := by
   fin_cases i <;> fin_cases j <;> fin_cases k <;>
@@ -206,8 +203,8 @@ lemma endpoint_positive (i : Fin 2) (j : Fin 3) (k : Fin 2) :
   dsimp [gap,southTerm,diagonalTerm,westTerm,rationalReserve] at *
   nlinarith
 
-/-- The full compact domain is covered by coordinate concavity, not by
-checking boxes. The sole split s<=0 or s>=0 is its absolute-value wall. -/
+/-- The gap is positive on the whole domain, by concavity in each variable; the
+interval of `s` is split at the corner `s = 0`. -/
 theorem positive {w s d : ℝ}
     (hw : -(2/5) ≤ w ∧ w ≤ 0)
     (hs : -(2/5) ≤ s ∧ s ≤ 2/5)

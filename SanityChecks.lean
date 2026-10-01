@@ -15,9 +15,11 @@ example : optimalRadius 2 = Real.sqrt 5 / 2 := rfl
 example : optimalRadius 3 = 5 * Real.sqrt 17 / 16 := rfl
 example : optimalRadius 4 = Real.sqrt 2 := rfl
 example : optimalRadius 5 = Real.sqrt (5 / 2) := rfl
+example : optimalRadius 6 = Real.sqrt Six.qStar := rfl
 example : optimalRadius 7 = Real.sqrt 13 / 2 := rfl
 
--- The model table: axis-parallel squares at these centres.
+-- The model table: axis-parallel squares at these centres, and for six squares
+-- five of them and one turned by `π / 4`.
 example : optimalPackings 1 = {fun i => axisSquare (![(0,0)] i)} := rfl
 example : optimalPackings 2 = {fun i => axisSquare (![(-1/2,0),(1/2,0)] i)} := rfl
 example : optimalPackings 3 =
@@ -26,6 +28,13 @@ example : optimalPackings 4 =
     {fun i => axisSquare (![(1/2,1/2),(-1/2,1/2),(-1/2,-1/2),(1/2,-1/2)] i)} := rfl
 example : optimalPackings 5 =
     {fun i => axisSquare (![(0,0),(1,0),(0,1),(-1,0),(0,-1)] i)} := rfl
+example : optimalPackings 6 = {(![axisSquare (Six.sStar,Six.sStar),
+    axisSquare (Six.sStar,Six.sStar+1), axisSquare (Six.sStar+1,Six.sStar),
+    axisSquare (Six.sStar-1,Six.tStar), axisSquare (Six.tStar,Six.sStar-1),
+    Six.diagonalSquare] : Fin 6 → UnitSquare)} := rfl
+example : Six.diagonalSquare.center = (-Six.dStar,-Six.dStar) ∧
+    Six.diagonalSquare.cosine = Real.sqrt 2 / 2 ∧ Six.diagonalSquare.sine = Real.sqrt 2 / 2 :=
+  ⟨rfl,rfl,rfl⟩
 example : optimalPackings 7 = Set.range fun c : Seven.Column => fun i =>
     axisSquare (![(1,-1/2),(1,1/2),(-1,-1/2),(-1,1/2),(0,c.bottom),(0,c.middle),(0,c.top)] i) :=
   rfl
@@ -88,24 +97,24 @@ example : Five.P5 ((Real.sqrt 5-1)/2) ((Real.sqrt 5-1)/2) := by
 example (S : Fin 3 → UnitSquare) (o : Point) (R : ℝ)
     (hp : Packing S o R) : Three.radius ≤ R := Three.optimum.optimality S o R hp
 example : IsLeast {R | ∃ (S : Fin 7 → UnitSquare) (o : Point), Packing S o R}
-    (Real.sqrt 13 / 2) := optimal_radius 7 (Or.inr rfl)
-example (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5) (S : Fin n → UnitSquare) (o : Point)
+    (Real.sqrt 13 / 2) := optimal_radius 7 (by norm_num)
+example (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 6) (S : Fin n → UnitSquare) (o : Point)
     (hp : Packing S o (optimalRadius n)) : ∃ M, optimalPackings n = {M} ∧ Congruent S o M := by
-  obtain ⟨M,hM,h⟩ := (optimal_packings n (Or.inl hn) S o).mp hp
-  obtain ⟨h1,h5⟩ := hn
+  obtain ⟨M,hM,h⟩ := (optimal_packings n ⟨hn.1,by omega⟩ S o).mp hp
+  obtain ⟨h1,h6⟩ := hn
   refine ⟨M,?_,h⟩
   interval_cases n <;> exact (Set.mem_singleton_iff.mp hM) ▸ rfl
 example (S : Fin 4 → UnitSquare) (o : Point) (hp : Packing S o (optimalRadius 4)) :
     Congruent S o Four.model := by
-  obtain ⟨M,hM,h⟩ := (optimal_packings 4 (Or.inl ⟨by norm_num,by norm_num⟩) S o).mp hp
+  obtain ⟨M,hM,h⟩ := (optimal_packings 4 (by norm_num) S o).mp hp
   exact (show M = Four.model from hM) ▸ h
 example (S : Fin 7 → UnitSquare) (o : Point) (hp : Packing S o (optimalRadius 7)) :
     ∃ c : Seven.Column, Congruent S o (Seven.columnModel c) := by
-  obtain ⟨_,⟨c,rfl⟩,h⟩ := (optimal_packings 7 (Or.inr rfl) S o).mp hp
+  obtain ⟨_,⟨c,rfl⟩,h⟩ := (optimal_packings 7 (by norm_num) S o).mp hp
   exact ⟨c,h⟩
 example (S : Fin 7 → UnitSquare) (o : Point) (R : ℝ)
     (hp : Packing S o R) : Seven.radius ≤ R := Seven.optimum.optimality S o R hp
-example (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 5 ∨ n = 7) :
+example (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 7) :
     (optimum n hn).radius = optimalRadius n := (optimum_spec n hn).1
 
 -- The models, each congruent to itself.
@@ -117,6 +126,8 @@ example : Congruent Four.model (0,0) Four.model :=
   Four.uniqueness Four.model (0,0) Four.model_packing
 example : Congruent Five.model (0,0) Five.model :=
   Five.uniqueness Five.model (0,0) Five.model_packing
+example : Congruent Six.model (0,0) Six.model :=
+  Six.uniqueness Six.model (0,0) Six.model_packing
 example : ∃ c : Seven.Column, Congruent Seven.model (0,0) (Seven.columnModel c) :=
   Seven.uniqueness Seven.model (0,0) Seven.model_packing
 

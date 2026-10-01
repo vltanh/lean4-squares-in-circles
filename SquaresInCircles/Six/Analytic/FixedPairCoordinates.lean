@@ -2,14 +2,16 @@ import SquaresInCircles.Six.Analytic.FixedPair
 import SquaresInCircles.Six.PinAxes
 
 /-!
-# Actual coordinates of the fixed-weight N/W stress
+# The pair stress in the coordinates of a packing
 
-This file imports the analytic normalization and pin-oriented four-axis
-inventory, but not CandidateGraph, CommonDomain or any fixed-row checker.
-Both central weights are one. Their nonzero central resultant is accounted
-for explicitly; it must not be replaced by the variable-weight balance.
+N has phase `π/2 + n` and W has phase `π + w`; the edge N–W is along one of four
+source axes, the axes of W and of N oriented from W towards N. Projected to the
+frames of N and W, the resultants of the normals of the edges are the forces
+`northForce` and `westForce`. So the work of the edges C–N, C–W and N–W is the
+work of these forces on the local centres of N and W, plus `mStar` times the
+transverse coordinate of W, plus the work `c.1 - c.2` of the central force at
+zero angle and the work of its excess on the centre `c` of C.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.FixedPair
 open Stress Normalization
@@ -23,8 +25,8 @@ def northNormal (own : Bool) (n : ℝ) : Point :=
 def westNormal (own : Bool) (w : ℝ) : Point :=
   if own then (-Real.cos w,-Real.sin w) else (-1,0)
 
-/-- W-to-N: negative W-primary, negative W-secondary, N-primary,
-negative N-secondary. These are the actual pin-oriented source choices. -/
+/-- The four source axes, oriented from W to N: minus the primary and minus the
+secondary axis of W, the primary and minus the secondary axis of N. -/
 def sourceAxis (n w : ℝ) : Fin 4 → Point :=
   ![scale (-1) (primary (Real.pi+w)),scale (-1) (secondary (Real.pi+w)),
     primary (Real.pi/2+n),scale (-1) (secondary (Real.pi/2+n))]
@@ -122,7 +124,8 @@ lemma center_dot_project (t a b : ℝ) (g : Point) :
   dsimp [dot,project,orientedSquare]
   ring
 
-/-- Negative central work, including its exact excess over (1,-1). -/
+/-- Minus the work of the two central normals on `c` is `c.1 - c.2` plus the
+work of `centralExcess`. -/
 lemma central_work (no wo : Bool) (n w : ℝ) (c : Point) :
     -dot (add (northNormal no n) (westNormal wo w)) c=
       c.1-c.2+dot (centralExcess no wo n w) c := by
@@ -134,8 +137,8 @@ lemma west_secondary_center (w a b : ℝ) :
   rw [center_dot_project,project_secondary]
   simp [dot]
 
-/-- The three selected edge works have exactly these two exterior resultants
-and the accounted-for central remainder. No diagonal edge is assumed here. -/
+/-- The work of the edges C–N, C–W and N–W, written with the local centres of N
+and W and the centre `c` of C. -/
 theorem edge_work_identity (no wo : Bool) (u : Fin 4)
     (n w an bn aw bw : ℝ) (c : Point) :
     dot (northNormal no n) (sub (orientedSquare (Real.pi/2+n) an bn).center c)+

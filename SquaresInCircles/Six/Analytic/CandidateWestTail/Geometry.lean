@@ -2,23 +2,23 @@ import SquaresInCircles.Six.Analytic.CandidateWestTail.Support
 import SquaresInCircles.Six.Analytic.CanonicalSouthSign
 
 /-!
-# The candidate D graph supplies the OWN-W outer tail
+# The west tail
 
-The scalar stress consumes four actual separators: CW, CS, WD and DS. CD is
-not weighted. For two OWN wings the already proved shared-center budget gives
-s-w<1, so a putative -w>=11/25 has s<14/25<3/5. Cardinal S instead has |s|<2/5.
-These are consequences, not additional assumptions on NormalizedPacking.
-
-The result is conditional only on the two candidate D separators. It removes
-the need to prove the west tail independently of the mixed-source exclusion;
-it does not silently supply those still-unproved candidate separators.
+If W–D and D–S are separated along the secondary axes of W and of S, as in the
+model, and W is separated from C along its own axis, then `w > -11/25`.
+Otherwise `11/25 ≤ v ≤ 2/3` with `v = -w`, and the four separating inequalities
+of C–W, C–S, W–D and D–S contradict the positivity of the minorant, with
+`d ≤ π/4 < 11/14`. When S is separated from C along its own axis, two own wings
+sharing the central square have `s - w < 1`, so `s < 14/25 < 3/5`; when S is
+separated along the south side of C, `|s| < 2/5`.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.CandidateWestTail
 open Normalization
 
-/-- Four genuine scalar separators contradict the positive whole-domain stress. -/
+/-- For `11/25 ≤ v ≤ 2/3`, the four separating inequalities, in the coordinates
+of the squares, are inconsistent. -/
 theorem scalar_impossible (k : Fin 3) {v x d aw bw ad bd asouth bsouth cx cy : ℝ}
     (hv : 11/25 ≤ v ∧ v ≤ 2/3) (hx : 0 ≤ x ∧ x ≤ xMax k)
     (hd : 1/2 ≤ d ∧ d ≤ 11/14)
@@ -55,8 +55,8 @@ theorem scalar_impossible (k : Fin 3) {v x d aw bw ad bd asouth bsouth cx cy : �
   have hpositive := (positive k hv hx hd).trans_le (minorant_le_defect k v x d)
   linarith
 
-/-- The OWN-W lower tail follows from the actual candidate graph at Q0.
-There is no additional pair-domain or tail assumption. -/
+/-- If W–D and D–S are separated as in the model and W is separated from C
+along its own axis, then `w > -11/25`. -/
 theorem normalized_own_west_tail_of_edges {R : ℝ} (P : NormalizedPacking R)
     (hedges : FixedPair.CandidateDSeparators P) (hW : P.ownBits 2=true) :
     -11/25 < P.helperAngle 2 := by

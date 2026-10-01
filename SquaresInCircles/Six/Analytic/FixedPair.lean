@@ -2,25 +2,34 @@ import SquaresInCircles.Six.Analytic.PairConstants
 import SquaresInCircles.Six.Stress.VertexEnvelope
 
 /-!
-# A fixed-central-weight adjacent-pair stress
+# The pair N, W with unit central weights
 
-Both central edge weights are one. The outer weights remain the candidate's
-r and m. The central-force excess is paid using the exact candidate box.
-The cardinal W/S interval is the full [-2/5,2/5] supplied by normalization;
-no extra -1/6 tail bound is required. The OWN helper interval remains an
-explicit domain-reduction obligation.
+A stress on the adjacent squares N and W: weight one on the central edges C–N
+and C–W, `rStar` on the edge N–W along one of four source axes (`0` and `1` the
+primary and secondary axes of W, `2` and `3` those of N), and `mStar` on the
+edge W–D. Its value is the threshold sum minus the supports of the forces on N
+and W and a penalty, which bounds the work of the change of the central force
+from its value `(1, -1)` at zero angle against a centre of C in `[0, cStar]²`.
+The minorant replaces the supports by the larger vertex expression
+`northVertex`, or, for the force on N and the sources `1` and `2`, by `rhoStar`
+times its length; for the sources `0` and `3` it equals `pairBase` at zero
+angle.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.FixedPair
 open Stress Normalization
 
+/-- The angle domain of the pair; `no` and `wo` record whether N and W are
+separated from C along their own axes. -/
 def Domain (no wo : Bool) (n w : ℝ) : Prop :=
   (if no then -3/10≤n ∧ n≤5/12 else -203/1000≤n ∧ n≤203/1000) ∧
   (if wo then -11/25≤w ∧ w≤2/25 else -2/5≤w ∧ w≤2/5)
 
+/-- The piecewise linear function of `w` in the lower bound for the pair. -/
 def line (w : ℝ) : ℝ := (18/25)*max (-w) 0-(13/50)*max w 0
 
+/-- A bound for the work of the change of the central force on a centre in
+`[0, cStar]²`. -/
 def penalty (no wo : Bool) (n w : ℝ) : ℝ :=
   (if no then cStar*(max (Real.sin n) 0+1-Real.cos n) else 0)+
   (if wo then cStar*max (Real.sin w) 0 else 0)
@@ -36,6 +45,8 @@ def westForce (wo : Bool) (u : Fin 4) (n w : ℝ) : Point :=
 def threshold (n w : ℝ) : ℝ :=
   (1/2+angularWidth n)+(1/2+angularWidth w)+rStar*(1/2+angularWidth (n-w))+mStar/2
 
+/-- The threshold sum minus the supports of the forces on N and W and the
+penalty. -/
 def value (no wo : Bool) (u : Fin 4) (n w : ℝ) : ℝ :=
   threshold n w-scalarSupport Six.radius (northForce no u n w).1 (northForce no u n w).2-
     scalarSupport Six.radius (westForce wo u n w).1 (westForce wo u n w).2-penalty no wo n w
@@ -91,7 +102,8 @@ lemma orderedSupport_le_radial {U V : ℝ} (hV : 0≤V) (hUV : V≤U) :
     rw [hid] at hh
     exact hh
 
-/-- Only the N force of the two strict sources uses this radial upper support. -/
+/-- The support of a square in the disk of radius `radius` is at most `rhoStar`
+times the length of the force. -/
 lemma scalarSupport_le_radial (x y : ℝ) :
     scalarSupport Six.radius x y≤rhoStar*Real.sqrt (x^2+y^2) := by
   unfold scalarSupport
@@ -105,6 +117,8 @@ def northRadius (u : Fin 4) : ℝ := if u=0 ∨ u=3 then Six.radius else rhoStar
 def northUpper (u : Fin 4) (g : Point) : ℝ :=
   if u=0 ∨ u=3 then northVertex g.1 g.2 else rhoStar*Real.sqrt (g.1^2+g.2^2)
 
+/-- The value with each support replaced by `northVertex`, or for the force on N
+and the sources `1` and `2` by `rhoStar` times its length. -/
 def minorant (no wo : Bool) (u : Fin 4) (n w : ℝ) : ℝ :=
   threshold n w-northUpper u (northForce no u n w)-
     northVertex (westForce wo u n w).1 (westForce wo u n w).2-penalty no wo n w
@@ -141,11 +155,12 @@ lemma minorant_zero (no wo : Bool) {u : Fin 4} (hu : u=0 ∨ u=3) :
     minorant no wo u 0 0=pairBase := by
   have hN := (pair_candidate_forces no false hu).1
   have hW := (pair_candidate_forces false wo hu).2
-  simp only [minorant,northUpper,if_pos hu,northForce_zero,westForce_zero,
+  simp only [minorant,northUpper,ite_eq_left hu,northForce_zero,westForce_zero,
     hN,hW,threshold_zero,penalty_zero,sub_zero]
   exact pairBase_vertex_identity
 
-/-- Excess central force relative to the zero-angle resultant (1,-1). -/
+/-- The force of the two central edges on C minus its value `(1, -1)` at zero
+angle. -/
 def centralExcess (no wo : Bool) (n w : ℝ) : Point :=
   ((if no then Real.sin n else 0)+(if wo then Real.cos w-1 else 0),
    (if no then 1-Real.cos n else 0)+(if wo then Real.sin w else 0))

@@ -1,13 +1,17 @@
 import SquaresInCircles.Six.Analytic.SouthOuterTail.OwnDiagonal
 
 /-!
-# Complete the OWN-W final-tail scalar inequality
+# The south tail with W on its own axis
 
-Three wing corners use the ordinary far-vertex bound and concavity in d.
-The fourth, v=s=11/25, uses NarrowSupport and monotonicity in d instead.
-All constants and Taylor endpoint inequalities are explicit. The reduction
-keeps the actual diagonal coordinates until after reducing v and s, so a
-support bound valid only at a corner is never used on the full rectangle.
+The stress `raw` is positive for `v ∈ [0, 11/25]`, `s ∈ [11/25, 2/3]` and
+`d ∈ [1/2, 11/14]`, and every local centre `(a, b)` of D in the disk with
+`|b| ≤ 23/100`. By the first harmonics in `v` and `s` it is enough to take the
+four corners. At three of them the far-vertex support of D, with the length
+`√(μ² + ν² + 2μν z) ≤ 61/120 + z/5` of its force (`μ = 2/5`, `ν = 3/10`,
+`z = sin (v + s)`), leaves a first harmonic in `d` with nonnegative
+coefficients, positive at `d = 1/2` and `d = 11/14` by Taylor bounds. At the
+corner `v = s = 11/25` the support of a nearly radial force leaves a term
+decreasing in `d`, positive at `d = 11/14`.
 -/
 
 noncomputable section
@@ -167,7 +171,7 @@ lemma raw_special_corner_positive (upper : Bool) {d a b : ℝ}
     linarith
   exact hs.trans_le (special_le_raw upper hd hc)
 
-/-- The full OWN/OWN tail rectangle, with the same diagonal center retained throughout. -/
+/-- With W on its own axis, the stress of the south tail is positive. -/
 theorem positive_raw (upper : Bool) {v s d a b : ℝ}
     (hv : 0 ≤ v ∧ v ≤ 11/25) (hs : 11/25 ≤ s ∧ s ≤ 2/3)
     (hd : 1/2 ≤ d ∧ d ≤ 11/14) (hc : ContainedChart a |b|)

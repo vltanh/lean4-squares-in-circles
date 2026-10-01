@@ -1,17 +1,14 @@
 import SquaresInCircles.Six.Normalization.CapSupport
 
 /-!
-# A deep cap must face the square's primary coordinate
+# A deep cap faces the primary axis
 
-The transverse center coordinate is smaller than 1/2. If a cap were faced
-by that coordinate, the ordinary cap-angle bound would give |sin t|<2/5,
-and hence cap depth at most (rho0-1/2)*2/5 < coreRadius: a contradiction.
-
-For a primary phase outside [-pi/4,pi/4], a quarter-turn of the SIDE FRAME
-exchanges the two local coordinates and produces exactly this obstruction.
-This is not a global reflection of the packing. There are only the three
-geometric cases: primary octant, upper adjacent octant, lower adjacent octant.
-No numerical covering or certificate is used.
+A square with frame coordinates `(a, b)`, `|b| < 1/2`, that lies in a cap of
+depth at least `coreRadius` and has its phase within `3π/4` of the cap normal,
+has its phase within `2/5` of it. Within `π/4` this is the cap angle bound.
+Beyond, a quarter turn of the frame exchanges the two coordinates, so the cap
+faces the short coordinate; the cap angle bound gives `|sin t| < 2/5`, and the
+cap is at most `(rho0 - 1/2) · 2/5` deep, less than `coreRadius`.
 -/
 
 noncomputable section
@@ -45,8 +42,8 @@ private theorem short_axis_cap_impossible {a b h t : ℝ}
   rw [abs_of_nonneg hc] at hcap
   nlinarith [coreRadius_gt_77_200, rho0_upper]
 
-/-- The broad phase interval is reduced to the true cap-facing primary frame.
-All hypotheses are ordinary scalar geometry, with no certificate-success input. -/
+/-- A square with `|b| < 1/2` in a deep cap, with phase `|t| ≤ 3π/4`, has
+`|t| < 2/5`. -/
 theorem primary_cap_angle {a b h t : ℝ}
     (ha : |a| ≤ rho0) (hb : |b| < 1 / 2)
     (hh : coreRadius ≤ h) (ht : |t| ≤ 3 * Real.pi / 4)

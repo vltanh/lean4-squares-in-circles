@@ -1,13 +1,15 @@
 import SquaresInCircles.Six.Analytic.PinLocations
 
 /-!
-# Labelled windows and central axes without certificates
+# Windows and central axes from the pins
 
-Once the five-pin bijection is known, a square in a wrong primary quadrant
-would contain a second pin. Thus the location data from the covering proof
-also gives the labelled windows; no separate multidimensional window search
-is required. Forbidden cardinal axes follow from the signs of the fixed pin
-coordinates, and SEC directions fail by the previously proved strong-core bound.
+The pin covering places the phase of a square in its quadrant, together with
+the pins the square may hold there. A square that holds pin `i` and no other
+pin has its phase in the window of `i`, since the pins it does not hold cut
+the quadrant down to that window. A square that holds pin `i` is separated
+from C only along an axis allowed for `i`: by the coordinates of the pins, a
+square beyond a side of C that does not face pin `i` cannot hold that pin, and
+the secondary axes never separate a square that avoids the core.
 -/
 
 noncomputable section
@@ -28,8 +30,8 @@ private lemma window_transport (i:Fin 5) {t u:ℝ}
   have htu := phase_eq_in_centered_window ht (window_inside_pi i hu) he
   simpa only [htu] using hu
 
-/-- Labelled angular windows use the exact unique-pin fact supplied by the
-finite bijection, not an assumed canonical sector. -/
+/-- A square at a pin location that holds pin `i` and no other pin has its phase
+in the window of `i`. -/
 theorem window_for_unique_pin {t a b:ℝ} (i:Fin 5) (hloc:PinLocation t a b)
     (ht:-Real.pi≤t-phaseCenter i ∧ t-phaseCenter i≤Real.pi)
     (huniq:∀ j:Fin 5,openSquare (orientedSquare t a b) (fixedPin j) → j=i) :
@@ -77,7 +79,8 @@ theorem window_for_unique_pin {t a b:ℝ} (i:Fin 5) (hloc:PinLocation t a b)
       norm_num [windowLower,windowUpper,phaseCenter]
       constructor <;> linarith [hv.1,Real.pi_lt_d2]
 
-/-- D2 for an actual strong-core square with its assigned unique pin. -/
+/-- A contained square that avoids the core, is separated from C, and holds pin
+`i` and no other pin, has its phase in the window of `i`. -/
 theorem labelled_window {t a b cx cy:ℝ} (i:Fin 5) (hc:ContainedChart a |b|)
     (hcore:AvoidsCore a |b|) (hx0:0≤cx) (hy0:0≤cy) (hx:cx≤c0) (hy:cy≤c0)
     (hs:∃ k,0≤centralMargin k t a b cx cy)
@@ -132,16 +135,18 @@ lemma non_west_pin_x (i:Fin 5) (hiW:i≠2) (hiD:i≠3) : 0≤(fixedPin i).1 := b
   rw [fixed_pin_coordinates]
   have h := pin_trig_signs
   revert hiW hiD
-  fin_cases i <;> norm_num <;> nlinarith [h.2.1]
+  fin_cases i <;> norm_num
+  nlinarith [h.2.1]
 
 lemma non_south_pin_y (i:Fin 5) (hiD:i≠3) (hiS:i≠4) : 0≤(fixedPin i).2 := by
   rw [fixed_pin_coordinates]
   have h := pin_trig_signs
   revert hiD hiS
-  fin_cases i <;> norm_num <;> nlinarith [h.2.1]
+  fin_cases i <;> norm_num
+  nlinarith [h.2.1]
 
-/-- D1 follows directly from the pin coordinates and strong-core SEC exclusion.
-It does not need a window theorem or a relaxed-margin certificate. -/
+/-- A square that holds pin `i` is separated from C only along an axis allowed
+for `i`. -/
 theorem allowed_axis_of_pin {t a b cx cy:ℝ} (i:Fin 5) (hc:ContainedChart a |b|)
     (hcore:AvoidsCore a |b|) (hx0:0≤cx) (hy0:0≤cy) (hx:cx≤c0) (hy:cy≤c0)
     (hpin:openSquare (orientedSquare t a b) (fixedPin i))

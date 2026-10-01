@@ -3,14 +3,15 @@ import SquaresInCircles.Six.Equality.SupportMaximizers
 import SquaresInCircles.Six.Construction
 
 /-!
-# Equality of the active local supports fixes every exterior center
+# Centres at which the supports are attained
 
-The supporting disk point is unique. The feasible center is therefore unique
-on each active vertex branch, and the axial cap leaves zero transverse slack.
-The two signs below cover E/N and W/S without assuming their center coordinates.
-
-Only exact candidate algebra and geometric support theorems are imported here.
-The legacy balanced-closure adapter imports this module, not conversely.
+A square in the disk of radius `R` attains the vertex support in a direction
+`(x, y)` only with its far vertex at the point of the circle in that direction,
+since that point is the only maximizer of the linear form on the disk. At the
+forces of the stress of the model this fixes the local centres in the disk of
+the optimal radius: `(1 + sStar, ±sStar)` for E and N, and
+`(1 - sStar, ±tStar)` for W and S. For D the force is axial, and the cap
+support is attained only at `(rhoStar, 0)`.
 -/
 
 noncomputable section
@@ -33,9 +34,9 @@ lemma scalar_vertex_center {R a b x y sx sy l : ℝ} {p : Point}
     simpa [S,dot,vertexSupport,vectorLength,width,frameX,frameY,axisSquare,normSq] using heq
   have hfx : sx*frameX S (x,y)=|frameX S (x,y)| := by simpa [S,frameX,axisSquare] using hx
   have hfy : sy*frameY S (x,y)=|frameY S (x,y)| := by simpa [S,frameY,axisSquare] using hy
-  have hc := center_eq_of_vertex_support hR hg hcontain hsx hsy hfx hfy he
+  have hc := center_eq_of_vertex_support hg hcontain hsx hsy hfx hfy he
   have hdot := radius_length_eq_dot_of_ray hl hR hp hgp
-  have hpoint := disk_support_point_unique hR hg hp.le hdot.symm
+  have hpoint := disk_support_point_unique hg hp.le hdot.symm
   rw [← hpoint] at hc
   simpa [S,axisSquare,rotate] using hc
 
@@ -68,7 +69,9 @@ lemma west_full_support {sgn : ℝ} (hs : sgn=1 ∨ sgn= -1) :
   rw [h,hyabs,hysq,abs_of_pos one_add_rStar_pos]
   simp [northVertex]
 
-/-- E and N have the same radial coordinate and opposite transverse signs. -/
+/-- A square in the disk of the optimal radius that attains the support for the
+force `(1, ±rStar)` has the local centre `(1 + sStar, ±sStar)`, as E and N
+in the model. -/
 theorem north_center_unique {a b sgn : ℝ} (hs : sgn=1 ∨ sgn= -1)
     (hbox : (|a|+1/2)^2+(|b|+1/2)^2≤Six.radius^2)
     (heq : a+sgn*rStar*b=scalarSupport Six.radius 1 (sgn*rStar)) :
@@ -103,7 +106,9 @@ theorem north_center_unique {a b sgn : ℝ} (hs : sgn=1 ∨ sgn= -1)
   dsimp [p,sub] at hx hy
   exact ⟨by linarith,by nlinarith only [hy]⟩
 
-/-- W and S have the candidate reflected local centers. -/
+/-- A square in the disk of the optimal radius that attains the support for the
+force `(1 + rStar, ±mStar)` has the local centre `(1 - sStar, ±tStar)`, as W
+and S in the model. -/
 theorem west_center_unique {a b sgn : ℝ} (hs : sgn=1 ∨ sgn= -1)
     (hbox : (|a|+1/2)^2+(|b|+1/2)^2≤Six.radius^2)
     (heq : (1+rStar)*a+sgn*mStar*b=scalarSupport Six.radius (1+rStar) (sgn*mStar)) :
@@ -143,7 +148,8 @@ theorem west_center_unique {a b sgn : ℝ} (hs : sgn=1 ∨ sgn= -1)
   dsimp [p,sub] at hx hy
   exact ⟨by linarith,by nlinarith only [hy]⟩
 
-/-- D's positive primary force attains the axial cap only at b=0. -/
+/-- A square in the disk of the optimal radius that attains the support for an
+axial force has the local centre `(rhoStar, 0)`, as D in the model. -/
 theorem diagonal_center_unique {a b : ℝ}
     (hbox : (|a|+1/2)^2+(|b|+1/2)^2≤Six.radius^2)
     (heq : diagonalK*a=scalarSupport Six.radius diagonalK 0) :

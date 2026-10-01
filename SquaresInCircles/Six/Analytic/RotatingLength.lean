@@ -2,12 +2,15 @@ import SquaresInCircles.Six.Analytic.RootCurvature
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
 
 /-!
-# Uniform curvature of a translated rotating vector
+# The length of a rotating sum
 
-For lengths a,b, the second derivative of minus R times the resultant length
-is at most R*a*b/(a+b). The proof is a positive-factor identity in the actual
-resultant length, not an interval search. Equal lengths are allowed wherever
-the resultant is nonzero. An opposing short vector gives nonpositive curvature.
+For two vectors of lengths `a` and `b`, one fixed and one turning with `x`, the
+squared length `L²` of their sum is `P + Q cos x + T sin x` with `P = a² + b²`
+and `Q² + T² = 4a²b²`. Where `L > 0`, the second derivative of `-R L` is
+`R (L⁴ - (a² - b²)²)/(4L³)`, which is at most `R ab/(a + b)`, because
+`4abL³ - (a + b)(L⁴ - (a² - b²)²)` is `a + b - L` times a polynomial with
+nonnegative terms. When `a ≤ b` and `L² ≤ b² - a²` the second derivative is
+nonpositive.
 -/
 
 noncomputable section
@@ -49,7 +52,8 @@ lemma harmonicRoot_second {R P Q T x : ℝ} (hx : 0<harmonicArg P Q T x) :
   have hd : HasDerivAt (fun y => -Q*Real.sin y+T*Real.cos y)
       (-Q*Real.cos x-T*Real.sin x) x := by
     convert ((Real.hasDerivAt_sin x).const_mul (-Q)).add
-      ((Real.hasDerivAt_cos x).const_mul T) using 1 <;> ring
+      ((Real.hasDerivAt_cos x).const_mul T) using 1
+    ring
   have hh := hasDerivAt_negative_sqrt (r := R) hf hd hx
   have hid : (-Q*Real.sin x+T*Real.cos x)^2-
       2*harmonicArg P Q T x*(-Q*Real.cos x-T*Real.sin x) =
@@ -102,7 +106,8 @@ lemma rotating_length_factor (a b L : ℝ) :
     4*a*b*L^3-(a+b)*(L^4-(a^2-b^2)^2) =
       (a+b-L)*((a+b)*L^3+(a-b)^2*L^2+(a+b)*(a-b)^2*L+(a+b)^2*(a-b)^2) := by ring
 
-/-- Sharp uniform bound, conditional only on a positive current radicand. -/
+/-- Where the squared length is positive, the second derivative of `-R` times
+the length is at most `R ab/(a + b)`. -/
 theorem harmonicCurvature_le_harmonic_mean {R a b P Q T x : ℝ}
     (hR : 0≤R) (ha : 0≤a) (hb : 0≤b) (hab : 0<a+b)
     (hP : P=a^2+b^2) (hQT : Q^2+T^2=4*a^2*b^2)
@@ -145,7 +150,8 @@ lemma harmonic_mean_mono {a b A B : ℝ}
   apply (div_le_div_iff₀ hab hAB).mpr
   nlinarith only [hp,hq]
 
-/-- The short rotor opposes the base strongly enough to give nonpositive curvature. -/
+/-- If `a ≤ b` and `Q cos x + T sin x ≤ -2a²`, so that the squared length is at
+most `b² - a²`, the second derivative is nonpositive. -/
 theorem harmonicCurvature_nonpos_of_opposition {R a b P Q T x : ℝ}
     (hR : 0≤R) (ha : 0≤a) (hb : a≤b)
     (hP : P=a^2+b^2) (hQT : Q^2+T^2=4*a^2*b^2)

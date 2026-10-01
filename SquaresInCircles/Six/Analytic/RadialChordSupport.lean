@@ -1,18 +1,16 @@
 import SquaresInCircles.Six.Analytic.CandidateWestTail.Support
 
 /-!
-# An analytic support bound for a radial force added to a chord
+# A force on D with a radial part
 
-Equal incident secondary weights give the local resultant
-  (sin q, cos q - 1).
-Adding a nonnegative CD weight z gives (z + sin q, cos q - 1).
-The displayed half-angle majorant has a nonnegative square difference on the
-whole interval 0 <= q <= pi. In particular, adding the CD inequality need not
-be weakened by the triangle inequality z + 2 sin(q/2), which loses its useful
-radial direction.
-
-This is a single symbolic identity and a universal disk-support argument, not
-a subdivision or finite certificate. Compilation remains unverified.
+With weight one on W–D, along the secondary axis of W, and on D–S, along the
+secondary axis of D, the force on D is `(sin q, cos q - 1)` in its frame, where
+`q` is the angle from W to D; a weight `z ≥ 0` on C–D, along the own axis of D,
+adds `(z, 0)`. For `0 ≤ q ≤ π` the length of `(z + sin q, cos q - 1)` is at
+most `majorant z q = (2 + z^2/4) sin (q/2) + z cos (q/2)`, whose square exceeds
+the squared length by `z^3/2 sin (q/2) cos (q/2) + z^4/16 sin (q/2)^2`. With
+this majorant for the length, the far-vertex support bounds the work of the
+force.
 -/
 
 noncomputable section
@@ -22,7 +20,7 @@ open Normalization
 def majorant (z q : ℝ) : ℝ :=
   (2+z^2/4)*Real.sin (q/2)+z*Real.cos (q/2)
 
-/-- The error is visibly nonnegative in the first-quadrant half-angle. -/
+/-- The square of the majorant minus the squared length of the force. -/
 lemma square_identity (z q : ℝ) :
     majorant z q ^ 2-((z+Real.sin q)^2+(Real.cos q-1)^2) =
       (z^3/2)*Real.sin (q/2)*Real.cos (q/2)+
@@ -47,7 +45,7 @@ lemma majorant_nonnegative {z q : ℝ} (hz : 0 ≤ z)
   dsimp [majorant]
   positivity
 
-/-- Whole-domain radical majorization without choosing a support branch. -/
+/-- The majorant bounds the length of the force for `0 ≤ q ≤ π`. -/
 lemma length_le_majorant {z q : ℝ} (hz : 0 ≤ z)
     (hq : 0 ≤ q ∧ q ≤ Real.pi) :
     Real.sqrt ((z+Real.sin q)^2+(Real.cos q-1)^2) ≤ majorant z q := by
@@ -66,7 +64,8 @@ lemma length_le_majorant {z q : ℝ} (hz : 0 ≤ z)
   have hm := majorant_nonnegative hz hq
   nlinarith only [he,herr,hroot,hn,hm]
 
-/-- The far-vertex support keeps the direction of the added radial force. -/
+/-- The far-vertex support of D, with the majorant in place of the length of
+the force. -/
 lemma support {a b z q : ℝ} (hC : ContainedChart a |b|)
     (hz : 0 ≤ z) (hq : 0 ≤ q ∧ q ≤ Real.pi) :
     (z+Real.sin q)*a+(Real.cos q-1)*b ≤

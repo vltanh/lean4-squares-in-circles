@@ -2,21 +2,15 @@ import SquaresInCircles.Six.Analytic.OneRadianWestGap
 import SquaresInCircles.Six.Analytic.EndpointReduction
 
 /-!
-# A four-vertex obstruction for a D-sourced west edge below d = 3/5
+# A minorant on the low-diagonal quadrilateral
 
-Write v=-w. The already proved one-radian gap forces 1-d <= v, so the
-remaining low-D domain is the quadrilateral
-  1/2 <= d <= 3/5,  1-d <= v <= 2/3.
-Use weights (39,43,18)/100 on CW, CD and WD. W is on the genuine axial
-support branch; D has a constant vertex resultant. The two possible signs of
-the central y-force are bounded separately, not by discarding its negative
-W contribution.
-
-After rational weakening, each coordinate slice and the boundary v=1-d is a
-positive sine/cosine combination. Concavity therefore leaves precisely four
-geometric vertices. The endpoint proof uses explicit Taylor inequalities.
-No subdivision, numerical certificate, or generated stress table is used.
-Compilation is deferred; these are written proof bodies, not a build log.
+The minorant of the stress of `LowDWestSource.Geometry`, a constant plus a
+combination of the cosines and sines of `v`, `d` and `v + d`, is positive on the
+quadrilateral `1/2 ≤ d ≤ 3/5`, `1 - d ≤ v ≤ 2/3`, for both of its choices of
+coefficients. In `v` for fixed `d`, and along the edges `v = 2/3` and
+`v = 1 - d`, it has the form `K + A cos x + B sin x` with `A, B ≥ 0`, by
+`(9/100) sin x + (5517/50000) cos x ≤ 3/20`; so it is concave there, and
+positive once it is at the four vertices, where Taylor bounds prove it.
 -/
 
 noncomputable section
@@ -26,6 +20,8 @@ open Normalization
 def vSin (centralY : Bool) : ℝ := if centralY then 2379/10000 else 39/200
 def dSin (centralY : Bool) : ℝ := if centralY then 16641/100000 else 43/200
 
+/-- The minorant; `centralY` records whether the second component of the force
+on C is nonnegative. -/
 def minorant (centralY : Bool) (v d : ℝ) : ℝ :=
   -2082409/5000000+(15093/100000)*Real.cos v+vSin centralY*Real.sin v+
     (16641/100000)*Real.cos d+dSin centralY*Real.sin d+
@@ -35,8 +31,8 @@ private lemma coefficient_bounds (b : Bool) :
     3/20 < vSin b ∧ vSin b ≤ 2379/10000 ∧ 3/20 < dSin b := by
   cases b <;> norm_num [vSin,dSin]
 
-/-- A uniform bound on the only coefficient combination which might look
-negative after expanding the difference angle. -/
+/-- `(9/100) sin x + (5517/50000) cos x ≤ 3/20`, since
+`(9/100)² + (5517/50000)² < (3/20)²`. -/
 private lemma harmonic_bound (x : ℝ) :
     (9/100)*Real.sin x+(5517/50000)*Real.cos x ≤ 3/20 := by
   have hid : ((9/100)*Real.sin x+(5517/50000)*Real.cos x)^2+
@@ -145,7 +141,8 @@ private lemma wall_positive (b : Bool) {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 3/5) 
     norm_num only [show (1:ℝ)-3/5=2/5 by norm_num]
     exact (endpoints b).2.2.2
 
-/-- Positive on the entire physical quadrilateral, not on a sampled cover. -/
+/-- The minorant is positive on the quadrilateral `1/2 ≤ d ≤ 3/5`,
+`1 - d ≤ v ≤ 2/3`. -/
 theorem positive (b : Bool) {v d : ℝ}
     (hd : 1/2 ≤ d ∧ d ≤ 3/5) (hv : 1-d ≤ v ∧ v ≤ 2/3) :
     0 < minorant b v d := by

@@ -1,15 +1,16 @@
 import SquaresInCircles.Six.Analytic.FixedPairRadicands
 
 /-!
-# The negative-cardinal half of the pair domain
+# The north force for a W separated along a side of C
 
-For source W-primary and w<=0, the north rotating force never points near the
-angle maximizing its whole-circle curvature. Its resultant length is at most
-7/6, and the squared length difference is at least 37/50. This improves the
-north curvature bound from 457/1000 to 3/10 on the entire negative-cardinal
-half, without introducing a tail or a numerical subdivision.
+If `L² = P + Q cos x + T sin x`, the second derivative of `-R L` is
+`(R/4)(L - D/L³)` with `D = P² - Q² - T²`, so it is at most `(R/4)(B - D₀/B³)`
+whenever `L ≤ B` and `D ≥ D₀ ≥ 0`. When W is separated from C along a side of C,
+the edge N–W is along the primary axis of W (source `0`) and `w ≤ 0`, the north
+force along the slice in `w` has length at most `7/6` and `D ≥ 37/50`. Its
+curvature is then at most `3/10`, below the bound `457/1000` that holds on the
+whole circle.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic
 
@@ -50,7 +51,8 @@ lemma harmonicCurvature_le_length_ceiling {R P Q T x D D0 B : ℝ}
 namespace FixedPair
 open Stress Normalization
 
-/-- This estimate uses only the sign wall w=0, not a newly chosen subdivision. -/
+/-- For W separated along a side of C, source `0` and `w ≤ 0`, the north term
+has curvature at most `3/10` along the slice in `w`. -/
 theorem negative_cardinal_north_curvature {no : Bool} {n w : ℝ}
     (hd : Domain no false n w) (hw : w≤0) :
     (northWave no 0 1 n w).curvature (northRadius 0) w≤3/10 := by

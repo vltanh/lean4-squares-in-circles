@@ -1,14 +1,18 @@
 import SquaresInCircles.Six.Analytic.OwnWestCardinalSouth.Scalar
 
 /-!
-# The actual OWN-W / cardinal-S five-edge contradiction
+# Own W, cardinal S: the weighted sum
 
-Weights 2,1,3/10,1,1 multiply CW, CS, CD, W-sourced WD and D-sourced DS.
-The S resultant is handled by the single proved smooth-support cone. Its
-angle is then eliminated by SouthAngle.lean. W and D use their exact global
-support bounds. Both signs of the central y force are retained.
-No candidate S-sourced DS inequality or finite-checker result is assumed.
-Compilation and kernel acceptance remain unverified.
+Let W be separated from C along its own axis, S along the south side of C, W
+from D along the secondary axis of W, and D from S along the secondary axis of
+D. With the weights `2, 1, 3/10, 1, 1` on the edges C–W, C–S, C–D, W–D and
+D–S, the separating inequalities bound the threshold sum by the works of the
+forces. The works on W and D are bounded by their far-vertex supports, with
+the radial-chord majorant for the length of the force on D, the work on S by
+the support of its cone, and the work on C by the box of its centre, at the
+end of the range of the second coordinate that the sign of the force on C
+selects. The threshold sum minus these bounds is at least the profile, which
+is positive, so the five separating inequalities cannot hold together.
 -/
 
 noncomputable section
@@ -119,7 +123,8 @@ lemma profile_le_defect (upper : Bool) {v s d : ℝ}
     ring
   linarith
 
-/-- Every premise here is an actual central or pair-separation inequality. -/
+/-- The five separating inequalities, in the local coordinates of W, D, S and
+the centre `(cx, cy)` of C, contradict the containment of the squares. -/
 theorem scalar_impossible {v s d aw bw ad bd asouth bsouth cx cy : ℝ}
     (hv : 0 ≤ v ∧ v ≤ 2/3) (hs : -(2/5) ≤ s ∧ s ≤ 2/5)
     (hd : 1/2 ≤ d ∧ d ≤ Real.pi/4) (hr : d-s ≤ Real.pi/4)

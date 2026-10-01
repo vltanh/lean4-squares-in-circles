@@ -1,13 +1,12 @@
 import SquaresInCircles.Six.Analytic.OwnWestCardinalSouth.Profile
 
 /-!
-# Four exact corners for the last missing-south scalar
+# Own W, cardinal S: positivity of the profile
 
-After eliminating s, the rectangle is 0<=v<=2/3, 1/2<=d<=11/14.
-Each coordinate slice is concave. The four corner Taylor lower bounds exceed
-1/40 for each of the two supporting central y faces. This is evaluation of
-the endpoints forced by the preceding analytic proof, not an angular cover.
-Compilation and kernel acceptance remain unverified.
+Both versions of the profile are positive on the rectangle `0 ≤ v ≤ 2/3`,
+`1/2 ≤ d ≤ 11/14`. They are concave in each variable, so it suffices that they
+are positive at the four corners, and there Taylor polynomials of `sin` and
+`cos` bound them below by more than `1/40`.
 -/
 
 noncomputable section
@@ -59,7 +58,7 @@ lemma endpoint_positive (face west diagonal : Bool) :
   have hm := endpoint_margin face west diagonal
   linarith
 
-/-- Whole-rectangle positivity for either supporting central y face. -/
+/-- The profile is positive on the rectangle `[0, 2/3] × [1/2, 11/14]`. -/
 theorem positive (upper : Bool) {v d : ℝ}
     (hv : 0 ≤ v ∧ v ≤ 2/3) (hd : 1/2 ≤ d ∧ d ≤ 11/14) :
     0 < profile upper v d := by

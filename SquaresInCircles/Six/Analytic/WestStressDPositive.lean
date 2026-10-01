@@ -1,12 +1,13 @@
 import SquaresInCircles.Six.Analytic.WestStressDEndpoints
 
 /-!
-# D-secondary positivity on the full ordered angle triangle
+# The west stress along the secondary axis of D is positive
 
-The negative triangle, mixed-sign rectangle and positive triangle are forced
-by the two absolute-value walls. Concavity in one variable sends points to
-an outer edge or the diagonal; a second concavity argument reaches the seven
-original vertices. No new rational subdivision is introduced.
+`westStressD` is positive on the domain `-2/3 ≤ t ≤ u`, `-2/5 ≤ u ≤ 2/5`. On
+each of its parts `t ≤ u ≤ 0`, `t ≤ 0 ≤ u` and `0 ≤ t ≤ u` it is concave in
+`t`, so it is positive if it is on the edges `t = -2/3`, `t = 0` and `t = u`
+that bound the part; it is concave in `u` along the first two edges and along
+the diagonal, which reduces these edges to the seven vertices.
 -/
 
 noncomputable section
@@ -66,7 +67,7 @@ private lemma D_positive_diagonal {u:ℝ} (hu:0≤u ∧ u≤2/5) :
   · rw [westDForm_eq true true (by norm_num) (by norm_num) (by norm_num) (by norm_num)]
     exact westStressD_vertices.2.2.2.2.2.2
 
-/-- Positivity of the correct D-secondary expression on the entire domain. -/
+/-- `westStressD` is positive on the domain `-2/3 ≤ t ≤ u`, `-2/5 ≤ u ≤ 2/5`. -/
 theorem westStressD_positive {t u:ℝ}
     (ht:-2/3≤t) (hu0:-2/5≤u) (hu1:u≤2/5) (htu:t≤u) : 0<westStressD t u := by
   by_cases huSign:u≤0

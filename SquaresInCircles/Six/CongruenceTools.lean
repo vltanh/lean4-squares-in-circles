@@ -1,12 +1,13 @@
 import SquaresInCircles.Six.NormalizeFrame
 
 /-!
-# Congruence bookkeeping for the normalization chain
+# Composing congruences
 
-All transformations preserve both open and closed point sets. A relabeling of
-the five exterior squares extends to six squares by fixing the central index.
-No change to the repository's orientation-preserving Congruent definition is
-made here.
+Congruence about the origin is reflexive, and a congruence about `o` followed
+by one about the origin is a congruence about `o`: the rotations add and the
+relabellings compose. A relabelling of the five exterior squares extends to the
+six squares by fixing the central square, and two configurations with the same
+open and closed squares after a relabelling are congruent.
 -/
 
 noncomputable section
@@ -35,7 +36,8 @@ lemma congruent_refl {n : ℕ} (M : Fin n → UnitSquare) : Congruent M (0,0) M 
   intro i p
   simp [pointInDirection]
 
-/-- Fix index zero and relabel the five exterior indices. -/
+/-- A relabelling of the five exterior squares, extended by fixing the central
+square `0`. -/
 def extendExteriorPerm (σ : Equiv.Perm (Fin 5)) : Equiv.Perm (Fin 6) where
   toFun := Fin.cases 0 (fun i => (σ i).succ)
   invFun := Fin.cases 0 (fun i => (σ.symm i).succ)
@@ -46,9 +48,6 @@ def extendExteriorPerm (σ : Equiv.Perm (Fin 5)) : Equiv.Perm (Fin 6) where
 
 @[simp] lemma extendExteriorPerm_zero (σ : Equiv.Perm (Fin 5)) :
     extendExteriorPerm σ 0 = 0 := rfl
-
-@[simp] lemma extendExteriorPerm_succ (σ : Equiv.Perm (Fin 5)) (i : Fin 5) :
-    extendExteriorPerm σ i.succ = (σ i).succ := rfl
 
 lemma congruent_of_origin_sets {n : ℕ} {S M : Fin n → UnitSquare}
     (σ : Equiv.Perm (Fin n))

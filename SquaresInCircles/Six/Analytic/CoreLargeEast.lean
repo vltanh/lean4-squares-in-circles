@@ -1,12 +1,15 @@
 import SquaresInCircles.Six.Analytic.CoreSmallSouth
 
 /-!
-# East markers when both central coordinates exceed c0
+# The east quadrant when the centre of C is far out
 
-After excluding CE, OWN, CN, CW and SEC+, only the outward secondary separator
-and the south cap remain. Each sign of the nearest-frame angle and transverse
-coordinate is treated analytically. The genuine SIDE marker branch is retained
-through MarkerSupport's weighted-disk estimate.
+Let the centre `(x, y)` of C have `c0 < x < 1/2` and `0 ≤ y ≤ x`. An exterior
+square at the phase `t`, `|t| ≤ π/4`, separated from C has its marker below
+`-27/50`. It is not separated from C along its primary axis, its positive
+secondary axis, or the east, west or north side of C. Along its negative
+secondary axis or the south side of C, its transverse coordinate is negative
+and at least `1/2` or `1/2 + sin t` in size, or the square lies in a cap, and
+the marker bounds for these cases put the marker below `-27/50`.
 -/
 
 noncomputable section
@@ -94,7 +97,8 @@ lemma east_south_cap_marker {a b t y : ℝ} (h : ContainedChart a |b|)
       rw [liftedMarker,signedLabel_of_nonneg hb0]
       linarith
 
-/-- Every surviving east-quadrant marker lies strictly below -27/50. -/
+/-- For `c0 < x < 1/2` and `0 ≤ y ≤ x`, a square at the phase `t`, `|t| ≤ π/4`,
+separated from C has its marker below `-27/50`. -/
 theorem east_large_marker {a b t x y : ℝ} (h : ContainedChart a |b|)
     (ht : |t| ≤ Real.pi/4) (hx : c0 < x) (hx1 : x < 1/2)
     (hy0 : 0 ≤ y) (hxy : y ≤ x)

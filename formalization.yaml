@@ -5,24 +5,30 @@
 version: "v0.4"
 
 project:
-  name: "Optimal packings of one to five, and seven, unit squares in a disk"
+  name: "Optimal packings of one to seven unit squares in a disk"
   description: >-
-    For n = 1, 2, 3, 4, 5 and 7: the least radius of a closed disk holding n
-    unit squares with disjoint interiors, each placed and rotated freely, and
-    every packing that attains it. The radii are √2/2, √5/2, 5√17/16, √2,
-    √(5/2) and √13/2. Up to rotation about the disk centre and relabelling, the
-    optimal packing is unique for n ≤ 5: the square, the 2 × 1 rectangle, the
-    T, the 2 × 2 block and the plus. For n = 7 the optimal packings form a
-    three-parameter family: two columns of two squares and, between them, a
-    column of three whose heights vary independently, at least 1 apart and
-    within √3 − 1/2 of the disk centre. The proofs for three to five squares
-    bound the arcs the squares occupy on a small circle about the disk centre;
-    for seven squares, each square avoiding the disk centre gets a direction
-    from it, and in the optimal disk two disjoint such squares get directions
-    at least π/3 apart. We found no earlier proof for five or seven squares,
-    and no exact one for three, where a computer-assisted enclosure of the
-    radius and the optimal arrangements was known. Four squares, uniqueness
-    included, were settled by hand in 2026, by the same idea as here.
+    For n = 1, …, 7: the least radius of a closed disk holding n unit squares
+    with disjoint interiors, each placed and rotated freely, and every packing
+    that attains it. The radii are √2/2, √5/2, 5√17/16, √2, √(5/2), √q* ≈
+    1.68854 and √13/2, where q* is a quartic irrational. Up to rotation about
+    the disk centre and relabelling, the optimal packing is unique for n ≤ 6:
+    the square, the 2 × 1 rectangle, the T, the 2 × 2 block, the plus, and for
+    six squares a central square with four neighbours, two of them pushed
+    along its sides, and a sixth square turned by π/4 between those two. For
+    n = 7 the optimal packings form a three-parameter family: two columns of
+    two squares and, between them, a column of three whose heights vary
+    independently, at least 1 apart and within √3 − 1/2 of the disk centre.
+    The proofs for three to five squares bound the arcs the squares occupy on
+    a small circle about the disk centre; for seven squares, each square
+    avoiding the disk centre gets a direction from it, and in the optimal disk
+    two disjoint such squares get directions at least π/3 apart. Six squares
+    build on that: one square contains the disk centre, five fixed points
+    label the others, and a weighted sum of separating inequalities, with
+    estimates uniform in the angles of the squares, forces the optimal
+    radius. We found no earlier proof for five, six or seven squares, and no
+    exact one for three, where a computer-assisted enclosure of the radius and
+    the optimal arrangements was known. Four squares, uniqueness included,
+    were settled by hand in 2026, by the same idea as here.
   # People only; AI contributions are recorded under automation.
   authors:
     - "The-Anh Vu-Le"
@@ -49,7 +55,9 @@ sources:
       radii and packings proved optimal here. On 2026-07-23 it listed one and
       two squares as trivial, four as proved at the International Math Summer
       Camp in 2026, and three, five and seven as found by Friedman in 1997,
-      that is, as the best known.
+      that is, as the best known. On 2026-09-30 it listed six squares as found
+      by Friedman in 1997, with an exact radius found by David Ellsworth in
+      2023, which agrees with the radius here.
   - title: "Optimal packings of one and two unit squares in a circle"
     type: "folklore"
     relationship: "independently-proves"
@@ -121,10 +129,10 @@ related_formalizations:
 status:
   scope: >-
     The least radius and all the optimal packings of n unit squares in a disk
-    for n = 1, …, 5 and n = 7, stated by the two theorems of Challenge.lean,
-    optimal_radius and optimal_packings. Six squares and n ≥ 8 are not
-    treated; for those n, optimalRadius and optimalPackings hold placeholders
-    about which no theorem says anything.
+    for n = 1, …, 7, stated by the two theorems of Challenge.lean,
+    optimal_radius and optimal_packings. n ≥ 8 is not treated; for those n,
+    optimalRadius and optimalPackings hold placeholders about which no theorem
+    says anything.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: ["propext", "Classical.choice", "Quot.sound"]
@@ -143,19 +151,33 @@ status:
 automation:
   methods:
     - method: "agent"
-      models: ["ChatGPT 6 Pro"]
+      models: ["ChatGPT 6 Pro", "ChatGPT (its latest model, September 2026)"]
       framework: "ChatGPT"
       tool_setup: >-
         ChatGPT with its built-in tools, which can run code, prompted by the
-        repository owner; it never compiled its Lean code. It wrote the
-        complete proofs, mathematics and Lean, of three, four, five and seven
-        squares, which Claude then compiled and modified: a first certificate
-        proof of three squares; the occupied-arc proofs, on an idea of Claude
-        Opus 5, written first for five squares and then, on request,
+        repository owner; it never compiled its Lean code. ChatGPT 6 Pro wrote
+        the complete proofs, mathematics and Lean, of three, four, five and
+        seven squares, which Claude then compiled and modified: a first
+        certificate proof of three squares; the occupied-arc proofs, on an idea
+        of Claude Opus 5, written first for five squares and then, on request,
         generalized to three and four in one framework; their uniqueness
         proofs; and the optimality and classification proofs of seven squares.
         They reached the repository as pull requests #2 to #5 and commits
-        co-authored by ChatGPT.
+        co-authored by ChatGPT. For six squares, ChatGPT's latest model
+        proved the optimum together with Claude Opus 5.5 Max in the Claude
+        chat, with numerical certificates (pull request #6), in which Claude
+        wrote the normalization; ChatGPT 6 Pro then turned the certificates
+        into the analytical proof formalized here and wrote the whole Lean
+        proof (pull request #7).
+    - method: "agent"
+      models: ["Claude Opus 5.5"]
+      framework: "Claude"
+      tool_setup: >-
+        The Claude chat, at Max effort, prompted by the repository owner. For
+        six squares it proved the optimum together with ChatGPT's latest
+        model and wrote the certificate-style proof of the normalization in
+        pull request #6, which ChatGPT 6 Pro turned into the analytical proof
+        formalized here.
     - method: "agent"
       models: ["Claude Opus 5", "Claude Opus 5.5"]
       framework: "Claude Code"
@@ -168,12 +190,15 @@ automation:
         documentation and its figures; and prepared this submission.
   notes: >-
     ChatGPT 6 Pro wrote the proofs of three, four, five and seven squares in
-    full, in mathematics and in Lean, without compiling them; Claude Opus 5
-    and 5.5, in Claude Code, compiled, repaired and modified them, and wrote
-    the proofs of one and two squares. The repository owner directed and
-    reviewed the work and decided its scope and naming. docs/contributors.md
-    gives a dated account, and the commits name the models that co-authored
-    them.
+    full, in mathematics and in Lean, without compiling them. For six squares,
+    ChatGPT's latest model and Claude Opus 5.5 Max, both in chat, proved the
+    optimum together with numerical certificates, Claude writing the
+    normalization; ChatGPT 6 Pro turned this proof into an analytical one and
+    wrote the Lean, without compiling it. Claude Opus 5 and 5.5, in Claude
+    Code, compiled, repaired and modified all of these, and wrote the proofs
+    of one and two squares. The repository owner directed and reviewed the
+    work and decided its scope and naming. docs/contributors.md gives a dated
+    account, and the commits name the models that co-authored them.
 
 fidelity:
   divergences: >-
@@ -200,7 +225,7 @@ review:
 alignment:
   namespace: "SquaresInCircles"
   statements:
-    - source: "The least radius of a disk that holds n unit squares, for n = 1 to 5 and 7"
+    - source: "The least radius of a disk that holds n unit squares, for n = 1 to 7"
       lean: "SquaresInCircles.optimal_radius"
       module: "SquaresInCircles"
       status: "proved"

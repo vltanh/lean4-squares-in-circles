@@ -2,16 +2,15 @@ import SquaresInCircles.Six.Analytic.CanonicalWestSign
 import SquaresInCircles.Six.Analytic.EndpointReduction
 
 /-!
-# A coupled angle budget for two OWN wings
+# The angles of W and S on their own axes
 
-The same central coordinates occur in both OWN inequalities. They cannot be
-optimized independently. Keeping those coordinates until the inequalities are
-added gives a stronger joint radial profile. A single concave function on the
-geometrically forced interval [1/3,2/3] then proves s-w<1.
-
-This is a necessary consequence of the actual central separators and disk
-containment. It is not the still-unproved individual 11/25 tail bound, and does
-not assume either candidate D-edge. No finite cover or stress table is used.
+If W and S are both separated from C along their own axes, at angles `w` and
+`s`, then `s - w < 1`. The two separating inequalities share the centre of C,
+and their sum gives
+`a_W + a_S ≥ 1 + (387/1000)(cos v + cos s) + (61/100)(sin v + sin s)` with
+`v = -w ≥ 0`. If `v + s ≥ 1`, both angles lie in `[1/3, 2/3]`, where the concave
+function `1/2 + (387/1000) cos x + (61/100) sin x` exceeds `47/50 + (9/25) x`, by
+its values at the ends; then `a_W + a_S > 2ρ0`, against `a_W, a_S ≤ ρ0`.
 -/
 
 noncomputable section
@@ -34,8 +33,9 @@ private lemma wingLineGap_concave :
     · dsimp only [f']; ring
   have hff (x : ℝ) : HasDerivAt f' (f'' x) x := by
     convert ((((Real.hasDerivAt_sin x).const_mul (-(387/1000))).add
-      ((Real.hasDerivAt_cos x).const_mul (61/100))).sub_const (9/25)) using 1 <;>
-      dsimp [f',f''] <;> ring
+      ((Real.hasDerivAt_cos x).const_mul (61/100))).sub_const (9/25)) using 1
+    dsimp [f',f'']
+    ring
   have hcont : ContinuousOn wingLineGap (Set.Icc (1/3) (2/3)) :=
     fun x _ => (hf x).continuousAt.continuousWithinAt
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc (1/3) (2/3))
@@ -62,7 +62,7 @@ private lemma wingLineGap_endpoints : 0 < wingLineGap (1/3) ∧ 0 < wingLineGap 
     dsimp [wingLineGap]
     nlinarith only [hc,hs]
 
-/-- The chord comparison on the interval forced by v+s>=1 and v,s<=2/3. -/
+/-- On `[1/3, 2/3]` the radial profile of a wing lies above `47/50 + (9/25) x`. -/
 lemma coupled_wing_affine_profile {x : ℝ} (hx : 1/3 ≤ x ∧ x ≤ 2/3) :
     47/50+(9/25)*x < 1/2+(387/1000)*Real.cos x+(61/100)*Real.sin x := by
   have h := positive_on_concave_interval wingLineGap_concave hx
@@ -79,7 +79,8 @@ private lemma wing_small_trig {x : ℝ} (hx : 0 ≤ x ∧ x ≤ 2/3) :
     (by linarith [hx.2,Real.pi_gt_d2])
   exact ⟨by nlinarith,hsin,(Real.sin_le hx.1).trans hx.2⟩
 
-/-- A shared-center lower bound. Keeping both center terms is essential. -/
+/-- The sum of the separating inequalities of W and S along their own axes, which
+share the centre of C, bounds `a_W + a_S` below. -/
 lemma coupled_own_wing_radial_sum {v s aw bw aS bS cx cy : ℝ}
     (hv : 0 ≤ v ∧ v ≤ 2/3) (hs : 0 ≤ s ∧ s ≤ 2/3)
     (hx : cx ≤ c0) (hy : cy ≤ c0)
@@ -106,8 +107,8 @@ lemma coupled_own_wing_radial_sum {v s aw bw aS bS cx cy : ℝ}
     abs_of_nonneg hcs0,abs_of_nonneg hss0] at hS
   nlinarith only [hW,hS,hX,hY,hC,hT]
 
-/-- The full normalized OWN/OWN pair has s-w<1. This does not assert separate
-bounds on w and s, and therefore does not silently prove FixedPair.Domain. -/
+/-- If W and S are both separated from C along their own axes, then
+`s - w < 1`. -/
 theorem normalized_own_wing_angle_sum {R : ℝ} (P : NormalizedPacking R)
     (hW : P.ownBits 2=true) (hS : P.ownBits 4=true) :
     P.helperAngle 4-P.helperAngle 2 < 1 := by

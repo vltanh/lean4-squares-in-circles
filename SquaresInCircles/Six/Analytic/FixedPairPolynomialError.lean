@@ -1,13 +1,14 @@
 import SquaresInCircles.Six.Analytic.FixedPairPolynomial
 
 /-!
-# Whole-domain error control for the endpoint polynomial
+# The errors of the polynomial model
 
-The displayed bounds apply on the full pair domain. They come from the proved
-Taylor remainders and candidate constants, followed by triangle inequalities.
-They are not a collection of sampled or interval-certified endpoint values.
+On the whole pair domain each coordinate of the north and the west force differs
+from its model by at most `7/500000` and `3/200000`, the threshold sum by at
+most `1/40000` and the penalty by at most `1/200000`. The bounds combine the
+errors of the Taylor polynomials on `|t| ≤ 6/7` with those of the rational
+constants, by the triangle inequality.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.FixedPair.Polynomial
 open Stress Normalization PairTaylor

@@ -1,18 +1,18 @@
 import SquaresInCircles.Six.Analytic.OwnWingProfileSharpening
 
 /-!
-# Axial support without a selected cap branch
+# Support of a force near the axis
 
-The far-corner quadratic implies a+(31/100)|b|<=rho0. Therefore every force
-with U>=0 and |V|<=31U/100 has support at most rho0 U. The force-cone
-hypothesis is explicit and must be proved by each geometric application.
-Compilation and kernel acceptance remain unverified.
+For a square in the disk the far-corner inequality gives
+`a + (31/100)|b| ≤ rho0`. So a force `(U, V)` with `U ≥ 0` and
+`|V| ≤ (31/100) U` does work at most `rho0 U` on the centre:
+`U a + V b ≤ rho0 U`.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic
 open Normalization
 
+/-- A force in the cone `|V| ≤ (31/100) U` has support at most `rho0 U`. -/
 theorem axial_cone_support {a b U V : ℝ} (hc : ContainedChart a |b|)
     (hU : 0 ≤ U) (hV : |V| ≤ (31/100)*U) :
     U*a+V*b ≤ rho0*U := by

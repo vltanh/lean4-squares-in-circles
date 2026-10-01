@@ -2,14 +2,16 @@ import SquaresInCircles.Six.Analytic.CardinalLowDiagonalSupport
 import SquaresInCircles.Six.Analytic.LowDiagonalOwn
 
 /-!
-# Every normalized packing has d>1/2, without the former low-D tables
+# The angle of D exceeds 1/2
 
-OWN W uses the compensated frozen-center concavity argument. Cardinal W uses
-the two analytic rotating-length stresses on the six sign/order vertices.
-All primary directions have already been excluded by PrimaryClassification.
-The final statement therefore has no selected-axis or W-bit hypothesis.
+In a normalized packing the angle `d` of D is more than `1/2`. Suppose
+`d ≤ 1/2`; then W and D are separated along a secondary axis of W or of D. If W
+is separated from C along its own axis, `own_west_diagonal_gt_half` applies. If
+W is separated along the west side of C, a stress on the edges C–W, C–D and W–D
+has a slack `cardLowFrozen` that the three separating inequalities make
+nonpositive, while the support of W and D in the disk and the box of the centre
+of C bound it below by the positive `cardLowGap`.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic
 open Normalization
@@ -60,7 +62,9 @@ lemma cardinal_low_frozen_nonpositive (ds : Bool) {w d aw bw ad bd cx cy : ℝ}
     dsimp [cardLowFrozen,cardLowWForce,cardLowDForce,cardLowAlpha,cardLowBeta,cardLowMu,dot]
     nlinarith only [hW,hD,hWD]
 
-/-- Either secondary source contradicts cardinal W on the whole low-D region. -/
+/-- If W is separated along the west side of C, `w ≤ d ≤ 1/2`, and W and D are
+separated along a secondary axis of W or of D, these separations contradict
+the containment in the disk. -/
 theorem cardinal_low_diagonal_impossible (ds : Bool) {w d aw bw ad bd cx cy : ℝ}
     (hw : -2/5≤w ∧ w≤2/5) (hd : 0≤d ∧ d≤1/2) (hwd : w≤d)
     (hW : ContainedChart aw |bw|) (hD : ContainedChart ad |bd|)
@@ -78,7 +82,7 @@ theorem cardinal_low_diagonal_impossible (ds : Bool) {w d aw bw ad bd cx cy : �
   have hn := cardinal_low_frozen_nonpositive ds hw hd hwd hCW hCD hWD
   linarith
 
-/-- The low-diagonal tail in the cardinal-W case. -/
+/-- If W is separated along the west side of C, the angle of D exceeds `1/2`. -/
 theorem cardinal_west_diagonal_gt_half {R : ℝ} (P : NormalizedPacking R)
     (hcard : P.ownBits 2=false) : 1/2<P.diagonalAngle := by
   by_contra! hd
@@ -111,7 +115,7 @@ theorem cardinal_west_diagonal_gt_half {R : ℝ} (P : NormalizedPacking R)
       (by simpa only [hDphase] using P.own_separator 3 P.diagonal_own)
     simpa only [P.square_def,hWphase,hDphase,ite_true] using hsep
 
-/-- Analytic replacement for the complete low-D classification/tail bound. -/
+/-- In a normalized packing the angle of D exceeds `1/2`. -/
 theorem normalized_diagonal_gt_half {R : ℝ} (P : NormalizedPacking R) :
     1/2<P.diagonalAngle := by
   cases hbit : P.ownBits 2

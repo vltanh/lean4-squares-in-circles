@@ -1,19 +1,14 @@
 import SquaresInCircles.Six.Analytic.CoupledWingBudget
 
 /-!
-# A sharper shared-center budget for two OWN wings
+# A sharper bound on the angles of W and S on their own axes
 
-Write v=-w and suppose v+s>=24/25. The individual normalization windows
-v,s<=2/3 then put both angles in [22/75,2/3]. On this one interval the
-concave radial profile lies strictly above 941/1000+(9/25)*x. Its second
-derivative is explicitly negative, and its two endpoint inequalities follow
-from the sixth/seventh-order Taylor bounds already used by the analytic proof.
-
-Adding the two affine inequalities contradicts the shared-center radial sum
-and aW,aS<1113/1000. Thus s-w<24/25. No D-edge, angle subdivision, fixed
-stress row, numerical success flag, or individual tail bound is assumed.
-This strengthens, rather than replaces, the earlier one-radian budget API.
-Compilation and kernel acceptance remain unverified.
+If W and S are both separated from C along their own axes, then `s - w < 24/25`.
+With `v = -w`, if `v + s ≥ 24/25`, the windows `v, s ≤ 2/3` put both angles in
+`[22/75, 2/3]`. There the concave function
+`1/2 + (387/1000) cos x + (61/100) sin x` exceeds `941/1000 + (9/25) x`, by the
+Taylor bounds at the ends, and the sum of the two separating inequalities
+forces `a_W + a_S > 2ρ0`, against `a_W, a_S ≤ ρ0`.
 -/
 
 noncomputable section
@@ -37,8 +32,9 @@ private lemma coupledSharpGap_concave :
     · dsimp only [f']; ring
   have hff (x : ℝ) : HasDerivAt f' (f'' x) x := by
     convert ((((Real.hasDerivAt_sin x).const_mul (-(387/1000))).add
-      ((Real.hasDerivAt_cos x).const_mul (61/100))).sub_const (9/25)) using 1 <;>
-      dsimp [f',f''] <;> ring
+      ((Real.hasDerivAt_cos x).const_mul (61/100))).sub_const (9/25)) using 1
+    dsimp [f',f'']
+    ring
   have hcont : ContinuousOn coupledSharpGap (Set.Icc (22/75) (2/3)) :=
     fun x _ => (hf x).continuousAt.continuousWithinAt
   apply concaveOn_of_hasDerivWithinAt2_nonpos (convex_Icc (22/75) (2/3))
@@ -68,7 +64,8 @@ private lemma coupledSharpGap_endpoints :
     dsimp [coupledSharpGap]
     nlinarith only [hc,hs]
 
-/-- A single affine minorant on the interval forced by a putative large sum. -/
+/-- On `[22/75, 2/3]` the radial profile of a wing lies above
+`941/1000 + (9/25) x`. -/
 lemma coupled_wing_sharp_affine_profile {x : ℝ}
     (hx : 22/75 ≤ x ∧ x ≤ 2/3) :
     941/1000+(9/25)*x <
@@ -78,7 +75,8 @@ lemma coupled_wing_sharp_affine_profile {x : ℝ}
   dsimp [coupledSharpGap] at h
   linarith
 
-/-- Actual central separators force a total OWN-wing tilt below 24/25. -/
+/-- If W and S are both separated from C along their own axes, then
+`s - w < 24/25`. -/
 theorem normalized_own_wing_angle_sum_lt_twenty_four_twenty_fifths
     {R : ℝ} (P : NormalizedPacking R)
     (hW : P.ownBits 2=true) (hS : P.ownBits 4=true) :

@@ -1,22 +1,26 @@
 import SquaresInCircles.Six.Analytic.FixedCandidateClosure
 
 /-!
-# Actual separator witnesses survive the analytic scalar closure
+# The selected axes of the pairs N, W and E, S
 
-Existence of two small scalar values is not, by itself, enough for contact
-reconstruction: the same source indices must still satisfy the actual pair
-separating inequalities. This module retains those witnesses throughout.
-
-No fixed-row classification or pair-envelope certificate is imported. The
-geometric reduction remains the explicit `ReductionHypotheses` premise.
-Compilation is deferred; these are source proof bodies, not kernel-audit output.
+Select a directed axis `u` that separates W and N, and `v` that separates S
+and E, among the axes directed by the pins. Together with the separations of
+N, W, E and S from C and the containment of the squares in the disk, the
+inequality along each selected axis bounds the value of the pair; for E and S
+it is read in the reflection in the diagonal, which exchanges them with N and
+W. With the separations of W, D and of D, S along the axes of the model,
+`candidateWork` is at most `0`, and under `ReductionHypotheses` it is also at
+least `0`. So it vanishes for the same selected axes: all the angles are those
+of the model, `u` and `v` are axes of the contacts of the model, and `R` is
+`Six.radius`.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.FixedPair
 open Stress Normalization
 
-/-- The two selected axes are actual separating axes of the labelled packing. -/
+/-- `u` separates W and N, and `v` separates S and E, among the axes directed by
+the pins. -/
 def SelectedPairs {R : ℝ} (P : NormalizedPacking R) (u v : Fin 4) : Prop :=
   Seven.SAT.threshold (P.square 2) (P.square 1) ≤
     dot (preferredPairAxis NWsigns (P.square 2) (P.square 1) u)
@@ -31,7 +35,8 @@ lemma selected_pairs_exist {R : ℝ} (P : NormalizedPacking R) :
   obtain ⟨v,hv⟩ := P.ES_source
   exact ⟨u,v,hu,hv⟩
 
-/-- N/W work for a specified actual source, rather than an opaque existential. -/
+/-- The value of the pair N, W on a separating axis `u` is bounded by the
+centres. -/
 lemma northwest_work_of_selected {R : ℝ} (P : NormalizedPacking R)
     (hR : R^2 ≤ Six.qStar) (u : Fin 4)
     (hsel : Seven.SAT.threshold (P.square 2) (P.square 1) ≤
@@ -60,7 +65,8 @@ lemma northwest_work_of_selected {R : ℝ} (P : NormalizedPacking R)
   · simpa only [Six.radius_sq,phi] using hNbox
   · simpa only [Six.radius_sq,phi] using hWbox
 
-/-- E/S work retains the source chosen before the local coordinate reflection. -/
+/-- The same for the pair E, S on a separating axis `v`, read in the reflection
+in the diagonal. -/
 lemma eastsouth_work_of_selected {R : ℝ} (P : NormalizedPacking R)
     (hR : R^2 ≤ Six.qStar) (v : Fin 4)
     (hsel : Seven.SAT.threshold (P.square 4) (P.square 0) ≤
@@ -118,8 +124,9 @@ lemma candidate_work_of_selected {R : ℝ} (P : NormalizedPacking R)
   dsimp [candidateWork]
   linarith
 
-/-- Rigidity for these same selected sources. No new source is chosen after
-passing to equality. The unresolved reduction remains an explicit premise. -/
+/-- Under `ReductionHypotheses`, selected axes `u` and `v` force the model: the
+angles are those of the model, `u` and `v` are axes of its contacts,
+`candidateWork` vanishes, and `R` is `Six.radius`. -/
 theorem rigidity_of_selected {R : ℝ} (P : NormalizedPacking R)
     (hR : R^2 ≤ Six.qStar) (h : ReductionHypotheses P)
     (u v : Fin 4) (hsel : SelectedPairs P u v) :
@@ -153,7 +160,8 @@ theorem rigidity_of_selected {R : ℝ} (P : NormalizedPacking R)
   exact ⟨⟨he,hn,hw,hs,hd⟩,equality_sources_at_origin _ _ u hu,
     equality_sources_at_origin _ _ v hv,hzero,radius_of_reduction P hR h⟩
 
-/-- Candidate data with its genuine geometric witnesses attached. -/
+/-- Separating axes `u` and `v` exist, and they satisfy the conclusions of
+`rigidity_of_selected`. -/
 theorem candidate_data_with_selection {R : ℝ} (P : NormalizedPacking R)
     (hR : R^2 ≤ Six.qStar) (h : ReductionHypotheses P) : ∃ u v : Fin 4,
     SelectedPairs P u v ∧

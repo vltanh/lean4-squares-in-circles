@@ -1,12 +1,13 @@
 import SquaresInCircles.Six.Analytic.PairCoordinates
 
 /-!
-# Interior pins determine the direction of a separator
+# Pins orient the separating axes
 
-If p is in S and q is in T and n.p < n.q, the reverse direction of n cannot
-separate the squares. The proof uses strict open-square projection bounds.
-The two secondary-axis threshold identities then permit the same argument
-on either square's own transverse axis.
+If the open squares `S` and `T` contain points `p` and `q` with
+`⟨n, p⟩ < ⟨n, q⟩`, then a separation of `S` and `T` along `n` points from `S`
+to `T`. The separating threshold of two squares is the sum of their widths
+along the secondary axis of either square, so the same holds for these two
+axes.
 -/
 
 noncomputable section

@@ -1,17 +1,14 @@
 import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Curvature
 
 /-!
-# The four vertices of the west-dominant shared-angle polygon
+# Reduction to the vertices of the west-dominant domain
 
-For fixed d, the admissible polygon is
-  0 <= s <= v <= 2/3, v+s <= 24/25.
-Concavity in v first leaves the equal-tilt boundary, the fixed west endpoint,
-and the shared-angle boundary. Each boundary is a sum of concave one-variable
-slices. Its four vertices are exactly
-  (0,0), (2/3,0), (2/3,22/75), (12/25,12/25).
-The diagonal concavity then leaves d=1/2 and d=11/14. This module proves the
-geometric endpoint reduction separately from evaluating those endpoints.
-Compilation and kernel acceptance remain unverified.
+For fixed `d` the angles range over the quadrilateral `0 ≤ s ≤ v ≤ 2/3`,
+`v + s ≤ 24/25`, with vertices `(v, s) = (0, 0)`, `(2/3, 0)`, `(2/3, 22/75)`
+and `(12/25, 12/25)`. By concavity in `v` the profile is smallest on the edge
+`v = s` or on one of the edges `v = 2/3` and `v + s = 24/25`, and along each
+edge it is a sum of concave slices, so it is positive if it is positive at the
+four vertices. Concavity in `d` then reduces `d` to `1/2` and `11/14`.
 -/
 
 noncomputable section
@@ -69,7 +66,8 @@ private lemma sum_wall_concave (upper : Bool) {d : ℝ}
     simpa only [one_mul,add_zero] using hs0
   exact ((concave_constant (constantTerm+diagonalTerm upper d) (22/75) (12/25)).add hw).add hs
 
-/-- The polygon reduction follows from its actual boundaries, not a subdivision. -/
+/-- For fixed `d`, positivity at the four vertices gives positivity on the whole
+quadrilateral. -/
 theorem positive_of_four_vertices (upper : Bool) {v s d : ℝ}
     (hv : v ≤ 2/3) (hs : 0 ≤ s) (horder : s ≤ v) (hsum : v+s ≤ 24/25)
     (hd : 1/2 ≤ d ∧ d ≤ 11/14) (hvertices : FourVertices upper d) :
@@ -110,7 +108,8 @@ theorem positive_of_four_vertices (upper : Bool) {v s d : ℝ}
       (show s ≤ v ∧ v ≤ 24/25-s by constructor <;> linarith)
     exact (lt_min hequal htop).trans_le hm
 
-/-- Eight geometric vertices suffice for either supporting central box face. -/
+/-- Positivity at the four vertices for `d = 1/2` and for `d = 11/14` gives
+positivity on the whole domain. -/
 theorem positive_of_diagonal_endpoints (upper : Bool) {v s d : ℝ}
     (hv : v ≤ 2/3) (hs : 0 ≤ s) (horder : s ≤ v) (hsum : v+s ≤ 24/25)
     (hd : 1/2 ≤ d ∧ d ≤ 11/14)

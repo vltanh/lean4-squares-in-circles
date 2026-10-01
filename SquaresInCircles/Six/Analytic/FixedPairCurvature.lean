@@ -1,13 +1,16 @@
 import SquaresInCircles.Six.Analytic.FixedPairOpposition
 
 /-!
-# Curvature bounds for the four geometric pair sources
+# Curvature bounds for the radical terms of the pair
 
-The finite source cases only identify the rotating and fixed vector lengths.
-A single whole-circle theorem bounds each root. The exceptional alternate
-n-slice uses the proved opposition inequality, not a loose positive bound.
+Along every slice the north term of the minorant has curvature at most
+`457/1000`, by the harmonic-mean bound for a turning vector of length `rStar` on
+a fixed unit vector. The west term has curvature zero where its force does not
+turn, and otherwise a rational bound from bounds on the turning and the fixed
+length: `51/100` along `n` for source `3`, `491/1000` along `w` when W is
+separated from C along its own axis, `westWCap u` along `w` when W is separated
+along a side of C, and `831/1000` along `n = w`.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.FixedPair
 open Stress Normalization
@@ -39,10 +42,6 @@ lemma north_curvature_bound (no : Bool) (u : Fin 4) (k : Fin 3) (n w x : ℝ) :
     have hm' : northRadius u*rStar/(1+rStar)≤Six.radius*rStar/(1+rStar) := by
       simpa only [mul_div_assoc] using hm
     exact hh'.trans (hm'.trans north_curvature_reserve.le)
-
-lemma north_n_cardinal_first {u : Fin 4} (hu : u=0 ∨ u=1) (n w x : ℝ) :
-    (northWave false u 0 n w).curvature (northRadius u) x=0 := by
-  rcases hu with rfl | rfl <;> simp [northWave,Wave.constant_curvature]
 
 lemma north_n_own_last {u : Fin 4} (hu : u=2 ∨ u=3) (n w x : ℝ) :
     (northWave true u 0 n w).curvature (northRadius u) x=0 := by
@@ -112,7 +111,8 @@ lemma west_n_third_bound {no wo : Bool} {n w : ℝ} (hd : Domain no wo n w) :
   · norm_num
   · norm_num
 
-/-- Only r rotates on the own-W w-slice; its fixed base has length at most 27/20. -/
+/-- When W is separated along its own axis, the west term has curvature at most
+`491/1000` along `w`: the fixed vector has length at most `27/20`. -/
 lemma west_w_own_bound {no : Bool} {n w : ℝ} (hd : Domain no true n w) (u : Fin 4) :
     (westWave true u 1 n w).curvature Six.radius w≤491/1000 := by
   by_cases hu : u=0 ∨ u=1
@@ -132,7 +132,8 @@ lemma west_w_own_bound {no : Bool} {n w : ℝ} (hd : Domain no true n w) (u : Fi
     · norm_num
     · norm_num
 
-/-- The four entries are the four source axes, not numerical subintervals. -/
+/-- Bounds on the curvature of the west term along `w`, one for each source
+axis, when W is separated along a side of C. -/
 def westWCap : Fin 4 → ℝ := ![831/1000,582/1000,43/50,23/25]
 private def westWRotorCap : Fin 4 → ℝ := ![1,1,893/1000,893/1000]
 private def westWBaseCap : Fin 4 → ℝ := ![967/1000,21/40,7/6,137/100]

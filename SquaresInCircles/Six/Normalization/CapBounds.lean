@@ -3,12 +3,14 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
 import Mathlib.Analysis.Real.Pi.Bounds
 
 /-!
-# Analytic cap bounds without numerical certificate assumptions
+# Bounds on the cap depth
 
-This supplies K5 and the angle deductions K3/K6 from the supplied
-normalization manuscript. The deliberately coarser rational estimates below
-replace its scalar checks S1, S7, S8a and S8b. They are ordinary Lean proof
-bodies, not an interval-oracle interface. Compiler validation remains pending.
+Rational bounds `3/2 < R0 < 1689/1000` and `29/100 < capSwitch < 2/5`, and the
+angle bounds they give: a cap of depth at least `coreRadius` that holds a
+square forces `t < 2/5`, and one of depth at least `1/2` forces `t < 1/4`.
+Both follow from the monotonicity of `cos t + sin t` on `[0, π/4]` and Taylor
+bounds at `2/5` and `1/4`. The file also proves `cos t ≤ 1 - t²/5` for
+`|t| ≤ π`.
 -/
 
 noncomputable section
@@ -48,7 +50,7 @@ lemma capSwitch_lt_two_fifths : capSwitch < (2 : ℝ) / 5 := by
   have hl := Real.sin_ge_sub_cube (x := (2 : ℝ) / 5) (by norm_num)
   nlinarith
 
-/-- A weak quadratic cosine upper bound sufficient for K5's low branch. -/
+/-- A quadratic upper bound for `cos` on `[-π, π]`. -/
 lemma cos_le_one_sub_fifth_sq {t : ℝ} (ht : |t| ≤ Real.pi) :
     Real.cos t ≤ 1 - t ^ 2 / 5 := by
   have hpi : Real.pi < (22 : ℝ) / 7 := by linarith [Real.pi_lt_d4]
@@ -62,42 +64,7 @@ lemma cos_le_one_sub_fifth_sq {t : ℝ} (ht : |t| ≤ Real.pi) :
   have hc := Real.cos_le_one_sub_mul_cos_sq ht
   nlinarith
 
-lemma capFirst_tilt_budget {t : ℝ} (ht0 : 0 < t) (ht : t ≤ 2 / 5) :
-    capFirst t < rho0 - 1 / 2 - t / 2 := by
-  have hp : 0 ≤ rho0 - 1 / 2 := by linarith [rho0_lower]
-  have hc := cos_le_one_sub_fifth_sq
-    (t := t) (by rw [abs_of_pos ht0]; linarith [Real.pi_gt_d2])
-  have hm := mul_le_mul_of_nonneg_left hc hp
-  have hs := Real.sin_ge_sub_cube ht0.le
-  have hcoef : 0 < (rho0 - 1 / 2) / 5 - t / 12 := by
-    linarith [rho0_lower]
-  have hstrict := mul_pos (pow_pos ht0 2) hcoef
-  dsimp [capFirst]
-  nlinarith
-
-lemma capSecond_tilt_budget {t : ℝ}
-    (hlo : capSwitch ≤ t) (ht : t ≤ 2 / 5) :
-    capSecond t < rho0 - 1 / 2 - t / 2 := by
-  have ht0 : 0 ≤ t := le_trans capSwitch_nonneg hlo
-  have hsquare := mul_nonneg (sub_nonneg.mpr ht)
-    (show 0 ≤ (2 : ℝ) / 5 + t by linarith)
-  have hcoef : (41 : ℝ) / 150 ≤ 1 / 2 - t / 2 - t ^ 2 / 6 := by
-    nlinarith
-  have hm := mul_nonneg ht0 (sub_nonneg.mpr hcoef)
-  have hs := Real.sin_ge_sub_cube ht0
-  have hc := Real.one_sub_sq_div_two_le_cos (x := t)
-  dsimp [capSecond]
-  nlinarith [capSwitch_gt_29_100, rho0_lower, R0_lt_1689_1000]
-
-/-- K5, with no assumed scalar leaf or computational certificate. -/
-theorem capDepth_tilt_budget {t : ℝ} (ht0 : 0 < t) (ht : t ≤ 2 / 5) :
-    capDepth t < rho0 - 1 / 2 - t / 2 := by
-  unfold capDepth
-  split_ifs with h
-  · exact capFirst_tilt_budget ht0 ht
-  · exact capSecond_tilt_budget (le_of_not_ge h) ht
-
-/-- The trigonometric width is monotone before its diagonal maximum. -/
+/-- `cos x + sin x` increases on `[0, π/4]`. -/
 lemma cos_add_sin_mono {x y : ℝ} (hx : 0 ≤ x) (hxy : x ≤ y)
     (hy : y ≤ Real.pi / 4) :
     Real.cos x + Real.sin x ≤ Real.cos y + Real.sin y := by
@@ -118,13 +85,14 @@ lemma capSecond_two_fifths_lt_core : capSecond (2 / 5) < coreRadius := by
 lemma capDepth_lt_core_of_two_fifths_le {t : ℝ}
     (ht : 2 / 5 ≤ t) (htpi : t ≤ Real.pi / 4) : capDepth t < coreRadius := by
   have hbranch : ¬ t ≤ capSwitch := by linarith [capSwitch_lt_two_fifths]
-  rw [capDepth, if_neg hbranch]
+  rw [capDepth, ite_eq_right hbranch]
   have hm := cos_add_sin_mono (x := (2 : ℝ) / 5) (by norm_num) ht htpi
   have he := capSecond_two_fifths_lt_core
   dsimp [capSecond] at *
   linarith
 
-/-- The angle part of K3, after the cap support inequality K2. -/
+/-- A cap of depth at least `coreRadius` that holds a square forces
+`t < 2/5`. -/
 theorem cap_angle_lt_two_fifths {height t : ℝ}
     (hh : coreRadius ≤ height) (hcap : height ≤ capDepth t)
     (htpi : t ≤ Real.pi / 4) : t < 2 / 5 := by
@@ -150,7 +118,7 @@ lemma capSecond_lt_half_of_quarter_le {t : ℝ}
   dsimp [capSecond]
   nlinarith [R0_lt_1689_1000]
 
-/-- K6; the quarter-angle conclusion does not assume a pin or sector. -/
+/-- A cap of depth at least `1/2` that holds a square forces `t < 1/4`. -/
 theorem cap_angle_lt_quarter {height t : ℝ}
     (hh : 1 / 2 ≤ height) (hcap : height ≤ capDepth t)
     (htpi : t ≤ Real.pi / 4) : t < 1 / 4 := by
@@ -159,14 +127,5 @@ theorem cap_angle_lt_quarter {height t : ℝ}
   split_ifs at hcap
   · linarith [capFirst_lt_half_of_quarter_le ht htpi]
   · linarith [capSecond_lt_half_of_quarter_le ht htpi]
-
-/-- N26's scalar deduction with K5 now proved, retaining both cap hypotheses. -/
-theorem opposite_cardinal_angle_budget_of_caps {x e w : ℝ}
-    (hE : 1 / 2 + x ≤ capDepth |e|)
-    (hW : 1 / 2 - x ≤ capDepth |w|)
-    (he : |e| ≤ 2 / 5) (hw : |w| ≤ 2 / 5) :
-    |e| + |w| < 4 * c0 :=
-  opposite_cardinal_angle_budget hE hW he hw
-    (fun _ ht ht' => capDepth_tilt_budget ht ht')
 
 end SquaresInCircles.Six.Normalization

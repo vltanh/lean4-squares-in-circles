@@ -1,13 +1,16 @@
 import SquaresInCircles.Six.Analytic.TwoWallReduction
 
 /-!
-# The geometric endpoint inventory of a rectangle cut by n=0,w=0,n=w
+# A rectangle cut by `n = 0`, `w = 0` and `n = w`
 
-Coordinate concavity first reaches a vertical side, an axis, or the diagonal.
-A second coordinate or diagonal step reaches rectangle corners, axis
-intersections, or diagonal/boundary intersections. No rational subdivision
-points are selected by a numerical search. The cardinal helper interval is
-[-2/5,2/5], so no separate -1/6 cardinal tail assumption is introduced.
+Let `f` be concave in `n`, in `w`, and along the diagonal `n = w`, on every
+segment of a rectangle on which the signs of `n`, `w` and `n - w` are fixed.
+Then `f ≥ 0` on the rectangle once it holds at the points whose coordinates are
+both ends of the rectangle or `0`, and at the points of the diagonal with one
+such coordinate: a segment in `n` reaches a side, the axis `n = 0` or the
+diagonal, and a segment in `w` or along the diagonal reaches the listed points.
+The angles `n` of N and `w` of W lie in such a rectangle, so the gap of the
+fixed pair is nonnegative once it is nonnegative at these points.
 -/
 
 noncomputable section
@@ -24,6 +27,8 @@ def SectorSliceConcave (f : ℝ → ℝ → ℝ) (nl nr wl wr : ℝ) : Prop :=
     (∀ x ∈ Set.Icc l r, Sector pn pw pq (sliceN k n w x) (sliceW k n w x)) →
     ConcaveOn ℝ (Set.Icc l r) (fun x => f (sliceN k n w x) (sliceW k n w x))
 
+/-- A function concave on the slices of each sector is nonnegative on the
+rectangle once it is nonnegative at the corner, axis and diagonal points. -/
 theorem rectangle_wall_nonnegative {f : ℝ → ℝ → ℝ} {nl nr wl wr n w : ℝ}
     (hconc : SectorSliceConcave f nl nr wl wr)
     (hcorner : ∀ x y, AxisBoundary nl nr x → AxisBoundary wl wr y → 0≤f x y)
@@ -106,8 +111,8 @@ def EndpointCondition (no wo : Bool) (u : Fin 4) : Prop :=
     (AxisBoundary (northLo no) (northHi no) z ∨
       AxisBoundary (westLo wo) (westHi wo) z) → 0≤gap no wo u z z)
 
-/-- The common bound is reduced to the geometric endpoint inequalities, which
-are proved separately. No endpoint positivity is asserted by this reduction. -/
+/-- The gap is nonnegative on its domain once it is nonnegative at the corner,
+axis and diagonal points of the rectangle. -/
 theorem nonnegative_of_endpoints {no wo : Bool} {u : Fin 4}
     (he : EndpointCondition no wo u) {n w : ℝ} (hd : Domain no wo n w) :
     0≤gap no wo u n w := by

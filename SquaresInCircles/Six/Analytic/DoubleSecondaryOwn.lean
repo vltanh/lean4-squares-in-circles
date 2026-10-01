@@ -1,13 +1,14 @@
 import SquaresInCircles.Six.Analytic.DoubleSecondaryOwnBound
 
 /-!
-# The double-D-secondary hard case is impossible for actual OWN W and S
+# No double separation at D with own wings
 
-All four separating inequalities are retained. Equal edge multipliers cancel
-D's transverse coordinate exactly. The positive bound is the whole-domain
-analytic theorem DoubleSecondaryOwnBound, not a replay of the former hard
-stress table. The required lower gap on D/S follows from the proved high-D
-transverse profile. No D/S source classification is assumed silently.
+In a normalized packing with W and S separated from C along their own axes,
+W–D and D–S are not both separated along the secondary axis of D. The weighted
+sum of the four separating inequalities makes the gap for own wings
+nonpositive, while it is positive on the angle ranges of the normalization; the
+angle `π/2 + s - d` between D and S exceeds `1/2` because D–S is separated
+along the secondary axis of D (`DS_Dsecondary_gap_gt_half`).
 -/
 
 noncomputable section
@@ -34,7 +35,7 @@ lemma double_own_secondary_frozen_nonpositive {v s d aw bw ad bd aS bS cx cy : �
     simp [angularWidth,Real.cos_add,Real.sin_add,south_cos,south_sin,abs_neg,add_comm]
   simp only [centralMargin,centralNormal,hw,Real.cos_pi_sub,Real.sin_pi_sub] at hCW
   simp only [centralMargin,centralNormal,hs,Real.cos_add,Real.sin_add,
-    south_cos,south_sin,zero_mul,one_mul,neg_one_mul,zero_add,add_zero] at hCS
+    south_cos,south_sin,zero_mul,neg_one_mul,add_zero] at hCS
   change Seven.SAT.threshold (orientedSquare (Real.pi-v) aw bw)
       (orientedSquare (Real.pi+d) ad bd)≤
     frameY (orientedSquare (Real.pi+d) ad bd)
@@ -52,7 +53,8 @@ lemma double_own_secondary_frozen_nonpositive {v s d aw bw ad bd aS bS cx cy : �
   dsimp [doubleOwnSecondaryGap]
   nlinarith only [hCW,hCS,hWD,hDS]
 
-/-- The whole OWN-W/OWN-S double-D-secondary case is excluded analytically. -/
+/-- With W and S separated from C along their own axes, W–D and D–S are not
+both separated along the secondary axis of D. -/
 theorem double_Dsecondary_own_impossible {R : ℝ} (P : NormalizedPacking R)
     (hWown : P.ownBits 2=true) (hSown : P.ownBits 4=true)
     (hWD : Seven.SAT.threshold (P.square 2) (P.square 3)≤

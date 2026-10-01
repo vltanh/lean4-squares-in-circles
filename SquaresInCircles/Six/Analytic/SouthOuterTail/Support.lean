@@ -2,12 +2,13 @@ import SquaresInCircles.Six.Analytic.SouthOuterTail.CardinalEndpoints
 import SquaresInCircles.Six.Analytic.SouthOuterTail.OwnEndpoints
 
 /-!
-# Support ingredients for the final four-edge tail argument
+# Supports in the south tail
 
-These estimates concern actual signed chart coordinates. The radial and
-transverse components of each resultant are kept explicit. Root majorants are
-proved from squared identities. The central x endpoint is selected from the
-sign of its actual force; it is not an extra assumption on the packing.
+Far-vertex bounds for the supports of S, W and D in the south tail. The
+lengths of the forces are bounded by rational numbers, by the polynomial
+majorant for W on the west side of C, and by `61/120 + sin (v + s)/5` for D,
+each from its square. The centre of C enters linearly, and is replaced by an
+end of its range, chosen by the sign of its coefficient.
 -/
 
 noncomputable section

@@ -1,12 +1,15 @@
 import SquaresInCircles.Six.Normalization.CapBounds
 
 /-!
-# K2: the cap profile from containment, with its genuine branch condition
+# The depth of a cap that holds a square
 
-The disk maximization is proved algebraically. On the circular branch use
-Cauchy--Schwarz; on the constrained branch use the supporting line at
-`(rho0 + 1/2, 1/2)`. Merely knowing which force coordinate is larger is not
-used as a branch test. These source proofs still require compiler validation.
+A square in the closed disk of radius `R0` whose frame makes the angle
+`t ∈ [0, π/4]` with the axis of the cap `x ≥ h`, and which lies in that cap,
+has `h ≤ capDepth t`. Up to the switch angle `capSwitch = arcsin (1/(2 R0))`
+the far corner projects on the direction `(cos t, sin t)` at most as far as
+`(rho0 + 1/2, 1/2)`, by the tangent of the circle there, which gives
+`h ≤ (rho0 - 1/2) cos t - (1/2) sin t`; beyond it Cauchy–Schwarz on the disk
+gives `h ≤ R0 - cos t - sin t`. A signed angle `|t| ≤ π/4` reduces to `|t|`.
 -/
 
 noncomputable section
@@ -25,8 +28,8 @@ lemma disk_linear_support {A B c s : ℝ}
     (show 0 < A * c + B * s + R0 by linarith [R0_nonneg])
   nlinarith [R0_sq]
 
-/-- A disk support constrained by `B ≥ b`, in the corner branch.
-The explicit slope condition, rather than coordinate dominance, selects it. -/
+/-- On the disk `A² + B² ≤ Q0` with `B ≥ b`, the linear form `A c + B s`, with
+`c ≥ 0`, is largest at the point `(a, b)` of the circle when `a s ≤ b c`. -/
 lemma disk_corner_support {A B a b c s : ℝ}
     (ha : 0 < a) (hB : b ≤ B) (hc : 0 ≤ c)
     (hcircle : a ^ 2 + b ^ 2 = Q0) (hbox : A ^ 2 + B ^ 2 ≤ Q0)
@@ -58,8 +61,9 @@ lemma cap_low_branch_slope {t : ℝ} (ht0 : 0 ≤ t) (ht : t ≤ capSwitch) :
       field_simp [ne_of_gt R0_pos]
     _ ≤ (1 / 2) * Real.cos t := mul_le_mul_of_nonneg_left hc (by norm_num)
 
-/-- K2 in a nearest side frame with a nonnegative angle. The cap half-plane
-hypothesis is its exact support inequality K1, not a pin assumption. -/
+/-- A square with `h + (cos t + sin t)/2 ≤ a cos t - b sin t`, the support
+inequality of a square in the cap `x ≥ h`, has `h ≤ capDepth t`, for
+`0 ≤ t ≤ π/4`. -/
 theorem cap_support_bound {a b height t : ℝ}
     (ht0 : 0 ≤ t) (ht : t ≤ Real.pi / 4)
     (hbox : (|a| + 1 / 2) ^ 2 + (|b| + 1 / 2) ^ 2 ≤ Q0)
@@ -106,7 +110,7 @@ lemma sin_abs_angle {t : ℝ} (ht : |t| ≤ Real.pi) :
     rw [Real.sin_neg] at hsin
     rw [abs_of_neg htneg, Real.sin_neg, abs_of_nonpos (by linarith)]
 
-/-- K2 for a signed nearest side angle; no global symmetry is consumed. -/
+/-- The cap depth bound for a signed angle `|t| ≤ π/4`. -/
 theorem cap_support_bound_signed {a b height t : ℝ}
     (ht : |t| ≤ Real.pi / 4)
     (hbox : (|a| + 1 / 2) ^ 2 + (|b| + 1 / 2) ^ 2 ≤ Q0)
@@ -126,37 +130,5 @@ theorem cap_support_bound_signed {a b height t : ℝ}
   · rw [Real.cos_abs, sin_abs_angle hangle]
     rw [abs_of_nonneg hc] at hcap
     nlinarith
-
-lemma capFirst_le_axis {t : ℝ} (hs : 0 ≤ Real.sin t) :
-    capFirst t ≤ rho0 - 1 / 2 := by
-  have hm := mul_le_mul_of_nonneg_left (Real.cos_le_one t)
-    (show 0 ≤ rho0 - 1 / 2 by linarith [rho0_gt_one])
-  dsimp [capFirst]
-  linarith
-
-lemma capDepth_le_axis {t : ℝ} (ht0 : 0 ≤ t) (ht : t ≤ Real.pi / 4) :
-    capDepth t ≤ rho0 - 1 / 2 := by
-  unfold capDepth
-  split_ifs with hbranch
-  · exact capFirst_le_axis (Real.sin_nonneg_of_nonneg_of_le_pi ht0
-      (by linarith [Real.pi_pos]))
-  · have hm := cos_add_sin_mono capSwitch_nonneg (le_of_not_ge hbranch) ht
-    have hc : capSecond t ≤ capFirst capSwitch := by
-      rw [cap_branches_agree]
-      dsimp [capSecond]
-      linarith
-    have hs : 0 ≤ Real.sin capSwitch := by rw [sin_capSwitch]; exact switch_sine_bounds.1.le
-    exact hc.trans (capFirst_le_axis hs)
-
-/-- Proposition A, step (e): an excessively deep east cap is impossible. -/
-theorem no_east_cap_of_core_violation {a b t x : ℝ}
-    (hx : c0 < x) (ht : |t| ≤ Real.pi / 4)
-    (hbox : (|a| + 1 / 2) ^ 2 + (|b| + 1 / 2) ^ 2 ≤ Q0)
-    (hcap : 1 / 2 + x + (|Real.cos t| + |Real.sin t|) / 2 ≤
-      a * Real.cos t - b * Real.sin t) : False := by
-  have hb := cap_support_bound_signed ht hbox hcap
-  have hz := capDepth_le_axis (abs_nonneg t) ht
-  dsimp [c0] at hx
-  linarith
 
 end SquaresInCircles.Six.Normalization

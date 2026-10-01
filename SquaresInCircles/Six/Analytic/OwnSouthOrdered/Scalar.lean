@@ -1,16 +1,17 @@
 import SquaresInCircles.Six.Analytic.OwnSouthOrdered.Diagonal
 
 /-!
-# Four vertices for the ordered two-OWN missing-south stress
+# Ordered own wings: the profile is positive
 
-The domain is 0 <= v <= s <= 2/3, v+s <= 24/25, 1/2 <= d <= 11/14.
-Diagonal monotonicity first fixes d=11/14. Concavity in s leaves its two
-physical boundaries s=v and s=min(2/3,24/25-v). Along each of the three
-boundary segments, the expression is a positive first harmonic plus the
-concave chord. Only (0,0), (0,2/3), (22/75,2/3), (12/25,12/25) remain.
-All four Taylor lower bounds exceed 1/500. The split at 22/75 is the
-intersection of the fixed south endpoint with the shared-angle boundary,
-not an angle-grid subdivision. Compilation remains unverified.
+The profile is positive on `0 ≤ v ≤ s ≤ 2/3`, `v + s ≤ 24/25`,
+`1/2 ≤ d ≤ 11/14`. By the monotonicity in `d` it suffices to take `d = 11/14`.
+For fixed `v` the profile is a constant plus `A cos s + B sin s` with
+`A, B ≥ 0`, concave in `s`, so its least value is at `s = v` or at
+`s = min (2/3) (24/25 - v)`. On each of the edges `s = v`, `s = 2/3` and
+`s = 24/25 - v` it is a constant plus a nonnegative first harmonic in `v` plus
+`chord`, again concave, which leaves the vertices `(0, 0)`, `(0, 2/3)`,
+`(22/75, 2/3)` and `(12/25, 12/25)`. There Taylor polynomials bound it below by
+positive rationals.
 -/
 
 noncomputable section
@@ -184,7 +185,7 @@ lemma four_vertices :
     cosLower,cosUpper,sinLower,sinUpper] at h0 h1 h2 h3
   exact ⟨by linarith,by linarith,by linarith,by linarith⟩
 
-/-- Positivity on the entire ordered shared-angle domain. -/
+/-- The profile is positive on the ordered domain. -/
 theorem positive {v s d : ℝ} (hv : 0 ≤ v) (hvs : v ≤ s)
     (hs : s ≤ 2/3) (hsum : v+s ≤ 24/25)
     (hd : 1/2 ≤ d ∧ d ≤ 11/14) : 0 < profile v s d := by

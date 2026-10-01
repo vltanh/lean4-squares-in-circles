@@ -1,12 +1,12 @@
 import SquaresInCircles.Six.Analytic.FixedPairGap
 
 /-!
-# Concavity with two prescribed walls
+# Concavity between two walls
 
-An interval cut at 0 and k has at most four pieces. At a point x the containing
-piece has endpoints chosen by max/min from the original endpoints and those
-two walls. Concavity reduces the lower-bound question to those endpoints.
-The cuts are supplied by the geometry, not chosen by a numerical search.
+The walls `0` and `k` cut an interval `[l, r]` into at most four pieces, on each
+of which `y` and `y - k` keep their signs. A function concave on every such
+piece is nonnegative on `[l, r]` once it is nonnegative at `l`, `r`, `0` and `k`
+inside the interval: each point lies in a piece whose ends are among these.
 -/
 
 noncomputable section
@@ -38,7 +38,7 @@ lemma exists_hasSign (x : ℝ) : ∃ p : Bool, HasSign p x := by
   · exact ⟨true,h⟩
   · exact ⟨false,(lt_of_not_ge h).le⟩
 
-/-- No point of [l,r] is missed, including either wall and both outer endpoints. -/
+/-- Nonnegativity at the ends and at the walls gives it on all of `[l, r]`. -/
 theorem two_wall_nonnegative {l r k x : ℝ} {f : ℝ → ℝ}
     (hx : l≤x ∧ x≤r)
     (hconc : ∀ p q : Bool, ∀ a b : ℝ,

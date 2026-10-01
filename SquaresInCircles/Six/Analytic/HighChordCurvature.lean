@@ -1,14 +1,13 @@
 import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Chord
 
 /-!
-# A high-angle chord curvature bound
+# Curvature of the chord term at high angles
 
-On 157/200<=q<=5/3, every radial-chord expression with the two coefficients
-bounded by those for z=9/20 has second derivative at most -19/100.
-Taylor inequalities give one explicit quintic majorant. Its second derivative
-is nonnegative on the entire interval, so its two endpoints bound its maximum.
-There are no angular cells or generated numerical certificates.
-Compilation and kernel acceptance remain unverified.
+On `157/200 ≤ q ≤ 5/3`, the chord term `sin q - L sin (q/2) - M cos (q/2)` has
+second derivative at most `-19/100` whenever `L` and `M` are at most the
+coefficients of the west-dominant chord. For those coefficients Taylor bounds
+give a quintic majorant of the second derivative; the majorant is convex on the
+interval, so it is largest at an endpoint, where it is below `-19/100`.
 -/
 
 noncomputable section
@@ -81,7 +80,8 @@ private lemma polynomial_strict_upper {q : ℝ} (hq : 157/200 ≤ q ∧ q ≤ 5/
     (by norm_num [polynomial]) (by norm_num [polynomial])
   linarith
 
-/-- The coefficient range is explicit; no approximate square-root evaluation is used. -/
+/-- The second derivative of the chord term is at most `-19/100` on
+`[157/200, 5/3]`, for `L ≤ 27701483/8000000` and `M ≤ 75987/100000`. -/
 theorem upper {L M q : ℝ}
     (hL : L ≤ 27701483/8000000) (hM : M ≤ 75987/100000)
     (hq : 157/200 ≤ q ∧ q ≤ 5/3) :

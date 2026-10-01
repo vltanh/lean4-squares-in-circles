@@ -1,15 +1,15 @@
 import SquaresInCircles.Six.Analytic.FixedPairPolynomialError
 
 /-!
-# From explicit endpoint algebra to the actual analytic pair gap
+# The pair gap from the polynomial model
 
-The full perturbation loss is at most
-25/10^6 + 14/10^6 + 15/10^6 + 5/10^6 + 476/10^7 + 51/10^6,
-which is strictly below the paid 1/5000. The error estimate is global on the
-stated pair domain. Only its values at the geometrically forced endpoints
-are used to close the concavity argument.
+On the whole domain the gap is at least the budget minus the scaled lengths of
+the two model vectors: the linear part loses at most `59/10⁶` and the two
+radical terms at most `119/2500000` and `51/10⁶`, together less than the
+`1/5000` set aside. So the gap is positive wherever `EndpointAlgebra` holds:
+three polynomial inequalities which, after two squarings, say that the budget
+exceeds the sum of the two scaled lengths.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.FixedPair.Polynomial
 open Stress Normalization PairTaylor
@@ -73,8 +73,8 @@ private lemma west_root_upper {no wo : Bool} {n w : ℝ}
     circleUpper*(Real.sqrt (westSquare wo u n w)+2*(3/200000)) at hp
   nlinarith only [hp,hcost]
 
-/-- Uniform analytic error control. This is valid at every point of Domain,
-not a statement inferred from endpoint samples. -/
+/-- On the domain the gap is at least the budget minus the scaled lengths of the
+two model vectors. -/
 theorem polynomial_lower_bound {no wo : Bool} {n w : ℝ}
     (hd : Domain no wo n w) (u : Fin 4) :
     budget no wo u n w-northScale u*Real.sqrt (northSquare no u n w)-
@@ -86,16 +86,16 @@ theorem polynomial_lower_bound {no wo : Bool} {n w : ℝ}
   dsimp [budget]
   linarith
 
-/-- Three explicit scalar inequalities after two sign-checked squarings.
-This is an ordinary real proposition, not the result of a certificate engine. -/
+/-- The budget is positive and exceeds `√squareN + √squareW`, written without
+square roots. -/
 def EndpointAlgebra (no wo : Bool) (u : Fin 4) (n w : ℝ) : Prop :=
   0<budget no wo u n w ∧
     squareN no u n w+squareW wo u n w<(budget no wo u n w)^2 ∧
     4*squareN no u n w*squareW wo u n w<
       ((budget no wo u n w)^2-squareN no u n w-squareW wo u n w)^2
 
-/-- Exact polynomial/rational endpoint algebra implies positivity of the
-actual gap through the proved Taylor and perturbation inequalities. -/
+/-- The gap is positive at every point of the domain where `EndpointAlgebra`
+holds. -/
 theorem positive_of_endpoint_algebra {no wo : Bool} {u : Fin 4} {n w : ℝ}
     (hd : Domain no wo n w) (he : EndpointAlgebra no wo u n w) : 0<gap no wo u n w := by
   have hroots := scaled_two_roots_lt he.1 (northScale_bounds u).2.2.1 circle_bounds.2.2.1

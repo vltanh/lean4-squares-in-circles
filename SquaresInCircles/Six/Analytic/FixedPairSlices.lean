@@ -2,17 +2,23 @@ import SquaresInCircles.Six.Analytic.FixedPairFormula
 import SquaresInCircles.Six.Analytic.RotatingLength
 
 /-!
-# The coordinate and diagonal slices of the fixed pair
+# The forces of the pair along slices
 
-The only slice directions are the two coordinates and n=w. The data below
-are exact rotating-vector identities for the four geometric source axes.
-They are not sampled derivatives or a numerical partition.
+The pair domain is cut by three families of slices: `n` varies, `w` varies, or
+`n = w` varies. Along a slice each force on N and W is a fixed vector plus a
+vector of fixed length that turns with the parameter, so its squared length is a
+`Wave`: a constant plus a trigonometric polynomial of degree one whose amplitude
+is twice the product of the two lengths. The second derivative of minus `R`
+times the length is then at most `R A B / (A + B)` for any bounds `A`, `B` on
+the two lengths, by the harmonic-mean bound of `RotatingLength`.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.FixedPair
 open Stress
 
+/-- The squared length `rotor² + baseSq + cosine cos x + sine sin x` of a fixed
+vector of squared length `baseSq` plus a vector of length `rotor` that turns
+with `x`. -/
 structure Wave where
   rotor : ℝ
   baseSq : ℝ
@@ -24,8 +30,10 @@ def Wave.parameter (W : Wave) : ℝ := W.rotor^2+W.baseSq
 def Wave.arg (W : Wave) (x : ℝ) : ℝ := harmonicArg W.parameter W.cosine W.sine x
 def Wave.curvature (W : Wave) (R x : ℝ) : ℝ := harmonicCurvature R W.parameter W.cosine W.sine x
 
-def sliceN (k : Fin 3) (n w x : ℝ) : ℝ := if k=1 then n else x
-def sliceW (k : Fin 3) (n w x : ℝ) : ℝ := if k=0 then w else x
+/-- The angle `n` along slice `k`, and `sliceW` the angle `w`: `n` varies for
+`k = 0`, `w` for `k = 1`, and both together for `k = 2`. -/
+def sliceN (k : Fin 3) (n _w x : ℝ) : ℝ := if k=1 then n else x
+def sliceW (k : Fin 3) (_n w x : ℝ) : ℝ := if k=0 then w else x
 
 def northWave (no : Bool) (u : Fin 4) (k : Fin 3) (n w : ℝ) : Wave :=
   if k=0 then
@@ -102,8 +110,6 @@ lemma northWave_arg (no : Bool) (u : Fin 4) (k : Fin 3) (n w x : ℝ) :
   all_goals norm_num [northWave,Wave.arg,Wave.parameter,Wave.constant,harmonicArg,
     northSq,sliceN,sliceW,Real.sin_sub,Real.cos_sub]
   all_goals ring_nf
-  all_goals simp only [sin_sq_replace x,sin_sq_replace n,sin_sq_replace w]
-  all_goals ring
 
 lemma westWave_arg (wo : Bool) (u : Fin 4) (k : Fin 3) (n w x : ℝ) :
     (westWave wo u k n w).arg x=westSq wo u (sliceN k n w x) (sliceW k n w x) := by
@@ -111,8 +117,6 @@ lemma westWave_arg (wo : Bool) (u : Fin 4) (k : Fin 3) (n w x : ℝ) :
   all_goals norm_num [westWave,Wave.arg,Wave.parameter,Wave.constant,harmonicArg,
     westSq,sliceN,sliceW,Real.sin_sub,Real.cos_sub]
   all_goals ring_nf
-  all_goals simp only [sin_sq_replace x,sin_sq_replace n,sin_sq_replace w]
-  all_goals ring
 
 lemma northWave_amplitude (no : Bool) (u : Fin 4) (k : Fin 3) (n w : ℝ) :
     (northWave no u k n w).cosine^2+(northWave no u k n w).sine^2=

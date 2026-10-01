@@ -2,13 +2,16 @@ import SquaresInCircles.Six.Analytic.OwnWestCardinalWing.Scalar
 import SquaresInCircles.Six.Analytic.WestMixed.Support
 
 /-!
-# Four actual separators supply the cardinal-S mixed-west scalar
+# W along its own axis, S along a side: the stress
 
-The W force uses the proved axial cone. D uses the global half-angle majorant.
-The S root uses one tangent at 37/20, whose validity follows from a square.
-Both central force components are positive on the refined actual domain.
-No candidate W-sourced inequality or classification theorem is a premise.
-Compilation and kernel acceptance remain unverified.
+The separators of C and W along the own axis of W, of C and S along the south
+side of C, of W and D along the secondary axis of D, and of D and S along the
+secondary axis of S, with weights `41/20`, `38/25`, `1` and `211/200`. The work
+of the force on W is bounded by the axial cone support, on D by the far-vertex
+support with the half-angle bound on the length of the force, and on S by the
+far-vertex support with the tangent to the square root at `37/20`. Both
+components of the force on C are nonnegative, so its work is bounded at the
+corner of the box. The threshold sum minus these bounds is the profile.
 -/
 
 noncomputable section
@@ -96,10 +99,11 @@ lemma profile_eq_defect (negative : Bool) {v x d : ℝ}
     WestMixed.beta,gamma,nu,A,B,waveCoefficient,rootSlope,rootError,halfDifference,
     CandidateWestTail.radiusBound,CandidateWestTail.rhoBound,CandidateWestTail.coreUpper]
   rw [hW,hQ,hR,hS]
-  cases negative <;> simp only [side,sineCoefficient,Bool.false_eq_true,if_true,if_false,
+  cases negative <;> simp only [side,sineCoefficient,Bool.false_eq_true,ite_true,ite_false,
     neg_one_mul,one_mul,Real.cos_neg,Real.sin_neg] <;> ring
 
-/-- The candidate south inequality and the actual D-sourced west inequality suffice. -/
+/-- On the domain of the profile the four separators, with the containment of W,
+D and S and the box of C, cannot all hold. -/
 theorem scalar_impossible {v s d aw bw ad bd asouth bsouth cx cy : ℝ}
     (hs : -(2/5) ≤ s ∧ s ≤ 2/5) (hd : 16/25 ≤ d ∧ d ≤ 11/14)
     (hv : 53/50-d ≤ v ∧ v ≤ 31/50)
@@ -132,12 +136,12 @@ theorem scalar_impossible {v s d aw bw ad bd asouth bsouth cx cy : ℝ}
   by_cases hs0 : 0 ≤ s
   · have hp := positive false ⟨hs0,hs.2⟩ hd hv
     rw [profile_eq_defect false ⟨hs0,hs.2⟩ hd hv] at hp
-    simp only [side,Bool.false_eq_true,if_false,one_mul] at hp
+    simp only [side,Bool.false_eq_true,ite_false,one_mul] at hp
     exact (not_lt_of_ge hn) hp
   · have hx' : 0 ≤ -s ∧ -s ≤ 2/5 := by constructor <;> linarith [hs.1]
     have hp := positive true hx' hd hv
     rw [profile_eq_defect true hx' hd hv] at hp
-    simp only [side,if_true,neg_one_mul,neg_neg] at hp
+    simp only [side,ite_true,neg_one_mul,neg_neg] at hp
     linarith
 
 end SquaresInCircles.Six.Analytic.OwnWestCardinalWing

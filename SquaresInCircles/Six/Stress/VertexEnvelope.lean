@@ -2,18 +2,21 @@ import SquaresInCircles.Six.Stress.BalancedPair
 import SquaresInCircles.Six.Equality.SupportMaximizers
 
 /-!
-# A smooth lower bound near the candidate and its exact base value
+# The far-vertex bound at the model
 
-The signed far-vertex expression is an upper support in every direction; no
-unproved sign or cap-branch selection is used to replace the exact support.
-At the candidate it agrees with the exact support, by explicit feasible
-supporting centers and the active-radius identities.
+The support `σ_R(x, y)` of a square in the disk of radius `R ≥ 1` is at most the
+far-vertex bound `R√(x² + y²) - (|x| + |y|)/2`, and so at most
+`northVertex x y = R₆√(x² + y²) - (x - y)/2` at the optimal radius, for every
+force. For the forces `(1, -r*)` on N and `(1 + r*, -m*)` on W of the model, in
+their frames, the two agree, since the far corners of N and W lie on the circle
+in the direction of the force. Hence `2 + r* + m*/2` minus the two supports is
+`pairBase`, and `2 pairBase + 2h m*(1 - ρ(R₆)) = 0`.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Stress
 
-lemma orderedSupport_le_vertex {R U V : ℝ} (hR : 1≤R) (hU : 0≤U) (hV : 0≤V) :
+lemma orderedSupport_le_vertex {R U V : ℝ} (hR : 1≤R) :
     orderedSupport R U V ≤ R*Real.sqrt (U^2+V^2)-(U+V)/2 := by
   have hrad : 0≤R^2-1/4 := by nlinarith [sq_nonneg (R-1)]
   have hid := Real.sq_sqrt hrad
@@ -31,23 +34,20 @@ lemma scalarSupport_le_vertex {R x y : ℝ} (hR : 1≤R) :
     scalarSupport R x y ≤ R*Real.sqrt (x^2+y^2)-(|x|+|y|)/2 := by
   unfold scalarSupport
   split_ifs
-  · simpa only [sq_abs] using orderedSupport_le_vertex hR (abs_nonneg x) (abs_nonneg y)
-  · have h := orderedSupport_le_vertex hR (abs_nonneg y) (abs_nonneg x)
+  · simpa only [sq_abs] using orderedSupport_le_vertex (U := |x|) (V := |y|) hR
+  · have h := orderedSupport_le_vertex (U := |y|) (V := |x|) hR
     simpa only [sq_abs,add_comm] using h
 
 def northVertex (x y : ℝ) : ℝ := Six.radius*Real.sqrt (x^2+y^2)-(x-y)/2
 
-/-- The smooth expression used in the local pair proof is always an upper
-support, whether or not the force currently has the candidate signs. -/
+/-- At the optimal radius the support is at most `northVertex`, for every
+force. -/
 lemma scalarSupport_le_northVertex (x y : ℝ) :
     scalarSupport Six.radius x y ≤ northVertex x y := by
   have h := scalarSupport_le_vertex (x := x) (y := y)
     (show 1≤Six.radius by linarith [radius_gt_three_halves])
   dsimp [northVertex]
   linarith [le_abs_self x,neg_le_abs y]
-
-@[simp] lemma scalarSupport_neg_first (R x y : ℝ) : scalarSupport R (-x) y=scalarSupport R x y := by
-  simp [scalarSupport,abs_neg]
 
 @[simp] lemma scalarSupport_neg_second (R x y : ℝ) : scalarSupport R x (-y)=scalarSupport R x y := by
   simp [scalarSupport,abs_neg]
@@ -134,22 +134,11 @@ lemma pairBase_vertex_identity :
   dsimp [pairBase]
   ring
 
-lemma pairValue_candidate (no wo : Bool) {u : Fin 4} (hu : u=0 ∨ u=3) :
-    pairValue no wo u 0 0=pairBase := by
-  have hf := pair_candidate_forces no wo hu
-  rw [pairValue,pairThreshold_zero,hf.1,hf.2,
-    candidate_north_exact_support,candidate_west_exact_support]
-  exact pairBase_vertex_identity
-
-/-- This identity anchors all scalar lower bounds at the exact candidate. -/
+/-- In the model, `2 pairBase` cancels the cap term `2h m*(1 - ρ(R₆))` of D. -/
 lemma pairBase_diagonal_identity :
     2*pairBase+(2*Six.hStar*mStar)*(1-rhoStar)=0 := by
   rw [rhoStar_eq_two_h_d]
   dsimp [pairBase,Six.dStar]
   linear_combination (-4*mStar*(1/2+Six.hStar-Six.tStar))*Six.hStar_sq
-
-lemma pairBase_pos : 0<pairBase := by
-  dsimp [pairBase]
-  exact mul_pos mStar_pos (by linarith [Six.tStar_bounds.2])
 
 end SquaresInCircles.Six.Stress

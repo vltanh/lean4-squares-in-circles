@@ -1,14 +1,16 @@
 import SquaresInCircles.Six.Analytic.FixedPairFormula
 
 /-!
-# Whole-domain trigonometric reserves for the fixed pair
+# Lower bounds for the trigonometric terms of the pair
 
-The cardinal helper uses its full [-2/5,2/5] interval. Its nonnegative half
-has the stronger reserve used with the whole-circle root bound; the negative
-half is combined with the improved root curvature in FixedPairNegativeCardinal.
-The split is the genuine sign wall w=0, not a searched numerical subdivision.
+On a sign sector of the pair domain the terms `northTrig`, `westTrig` and
+`differenceTrig` of the sector formula are bounded below, from
+`cos x ≥ 1 - x²/2`, `cos x + |sin x| ≥ 1` and the signs of the sector. Each term
+is minus its own second derivative, so these lower bounds bound its curvature
+from above, as the concavity of the minorant requires. When W is separated from
+C along a side of C, the bound for `w ≥ 0` is stronger than the one on the whole
+interval `[-2/5, 2/5]`.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.FixedPair
 open Stress Normalization
@@ -52,9 +54,9 @@ lemma northTrig_lower {no wo pn pw pq : Bool} {u : Fin 4} {n w : ℝ}
   have hsn : 0≤(sign pn+1)*Real.sin n := by nlinarith [hsign.1,neg_le_abs (Real.sin n)]
   cases no
   · by_cases hu : u=0 ∨ u=3
-    · simp only [northTrig,northCosCoeff,northSinCoeff,Bool.false_eq_true,ite_false,if_pos hu]
+    · simp only [northTrig,northCosCoeff,northSinCoeff,Bool.false_eq_true,ite_false,ite_eq_left hu]
       nlinarith
-    · simp only [northTrig,northCosCoeff,northSinCoeff,Bool.false_eq_true,ite_false,if_neg hu]
+    · simp only [northTrig,northCosCoeff,northSinCoeff,Bool.false_eq_true,ite_false,ite_eq_right hu]
       nlinarith [hsign.1]
   · have hmax : cStar*max (Real.sin n) 0=cStar*(positivePart pn*Real.sin n) := by
       rw [hsign.2]
@@ -70,7 +72,7 @@ lemma northTrig_cardinal_candidate {wo pn pw pq : Bool} {u : Fin 4} {n w : ℝ}
   have hc := cos_lower_of_abs_le hn
   have hsign := sign_sin hs.1 (by linarith [Real.pi_gt_d2] : |n|≤Real.pi)
   have hp : 0≤(sign pn+1)*Real.sin n := by nlinarith [hsign.1,neg_le_abs (Real.sin n)]
-  simp only [northTrig,northCosCoeff,northSinCoeff,Bool.false_eq_true,ite_false,if_pos hu]
+  simp only [northTrig,northCosCoeff,northSinCoeff,Bool.false_eq_true,ite_false,ite_eq_left hu]
   nlinarith
 
 lemma westTrig_own_lower {no pn pw pq : Bool} {n w : ℝ}
@@ -96,7 +98,8 @@ lemma westTrig_own_lower {no pn pw pq : Bool} {n w : ℝ}
     simp only [westTrig,westCosCoeff,westSinCoeff,ite_true,sign,positivePart]
     nlinarith
 
-/-- Uniform reserve on the entire cardinal interval. -/
+/-- When W is separated along a side of C, `westTrig` is at least `23/25` on the
+whole interval `[-2/5, 2/5]`. -/
 lemma westTrig_cardinal_coarse {no pn pw pq : Bool} {n w : ℝ}
     (hd : Domain no false n w) (hs : Sector pn pw pq n w) :
     23/25≤westTrig false pw w := by
@@ -110,7 +113,8 @@ lemma westTrig_cardinal_coarse {no pn pw pq : Bool} {n w : ℝ}
   simp only [westTrig,westCosCoeff,westSinCoeff,Bool.false_eq_true,ite_false]
   nlinarith
 
-/-- The positive cardinal half has the stronger width reserve. -/
+/-- When W is separated along a side of C and `w ≥ 0`, `westTrig` exceeds
+`493/500`. -/
 lemma westTrig_cardinal_lower {no pn pw pq : Bool} {n w : ℝ}
     (hd : Domain no false n w) (hs : Sector pn pw pq n w) (hw0 : 0≤w) :
     493/500<westTrig false pw w := by
@@ -136,7 +140,7 @@ lemma differenceTrig_candidate {no wo pn pw pq : Bool} {u : Fin 4} {n w : ℝ}
   have hm := mul_nonneg rStar_pos.le hnonneg
   have hc := mul_le_mul_of_nonneg_left hcos rStar_pos.le
   have he : u≠1 := by rcases hu with rfl | rfl <;> decide
-  simp only [differenceTrig,differenceCosCoeff,differenceSinCoeff,if_pos hu,if_neg he]
+  simp only [differenceTrig,differenceCosCoeff,differenceSinCoeff,ite_eq_left hu,ite_eq_right he]
   nlinarith [pair_coarse_constants]
 
 lemma differenceTrig_candidate_negative {no wo pn pw pq : Bool} {u : Fin 4} {n w : ℝ}
@@ -155,7 +159,7 @@ lemma differenceTrig_candidate_negative {no wo pn pw pq : Bool} {u : Fin 4} {n w
   have hprod : rStar*(sign pq*Real.sin (n-w))=rStar*(-Real.sin (n-w)) := by
     rw [← hsign.1]
   have he : u≠1 := by rcases hu with rfl | rfl <;> decide
-  simp only [differenceTrig,differenceCosCoeff,differenceSinCoeff,if_pos hu,if_neg he]
+  simp only [differenceTrig,differenceCosCoeff,differenceSinCoeff,ite_eq_left hu,ite_eq_right he]
   nlinarith [hsign.1]
 
 lemma differenceTrig_cardinal_west {no pn pw pq : Bool} {u : Fin 4} {n w : ℝ}
@@ -177,7 +181,7 @@ lemma differenceTrig_cardinal_west {no pn pw pq : Bool} {u : Fin 4} {n w : ℝ}
     have hm := mul_nonneg rStar_pos.le hh
     have hc := mul_le_mul_of_nonneg_left hcos rStar_pos.le
     have he : u≠1 := by rcases hu with rfl | rfl <;> decide
-    simp only [differenceTrig,differenceCosCoeff,differenceSinCoeff,if_pos hu,if_neg he]
+    simp only [differenceTrig,differenceCosCoeff,differenceSinCoeff,ite_eq_left hu,ite_eq_right he]
     nlinarith [pair_coarse_constants]
 
 lemma differenceTrig_alternate_one {no wo pn pw pq : Bool} {n w : ℝ}

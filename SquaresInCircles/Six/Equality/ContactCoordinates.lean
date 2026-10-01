@@ -1,25 +1,24 @@
 import SquaresInCircles.Six.Equality.LocalCenters
 
 /-!
-# Eight candidate-frame contacts determine all six centers
+# The eight contacts fix the model
 
-This is a scalar geometric theorem. Four central contacts and four exterior
-contacts, with their original directions, are summed with the exact positive
-candidate multipliers. Each of five contained exterior squares has its exact
-support upper bound. The sum of those bounds equals the weighted threshold,
-so every bound is tight. Unique disk support then fixes all exterior centers;
-the opposite central inequalities fix the central center.
-
-No angle-domain classification, balanced-closure theorem, finite cover or
-certificate result is imported. The argument does not require an assumed
-coordinate equality or a separate rigidity oracle.
+Let the six squares be turned as in the model, with C at `c` and E, N, W, D, S
+at the local coordinates `(a i, b i)`, in the disk of radius `radius` and
+separated as the eight contacts of the model require. With the weights of the
+stress of the model, the separating inequalities bound the works of the
+exterior forces below by `4 + 2 rStar + mStar + diagonalK`, and the supports of
+the five exterior squares add up to that number. So each square attains its
+support, at a unique centre, which fixes its local coordinates; the contacts of
+C with E and W, and with N and S, then give `c = (sStar, sStar)`.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Equality.ContactCoordinates
 open Stress Normalization
 
-/-- E,N,W,D,S signed side-frame coordinates, after the angles are fixed. -/
+/-- The eight contacts of the model, for C at `c` and E, N, W, D, S turned as in
+the model, at the local coordinates `(a i, b i)`. -/
 structure Contacts (c : Point) (a b : Fin 5 → ℝ) : Prop where
   east : 1+c.1 ≤ a 0
   north : 1+c.2 ≤ a 1
@@ -30,6 +29,7 @@ structure Contacts (c : Point) (a b : Fin 5 → ℝ) : Prop where
   westDiagonal : 1/2+Six.hStar ≤ Six.hStar*(a 3+b 3)-b 2
   diagonalSouth : 1/2+Six.hStar ≤ b 4+Six.hStar*(a 3-b 3)
 
+/-- The local coordinates of E, N, W, D, S in the model. -/
 structure Coordinates (a b : Fin 5 → ℝ) : Prop where
   east_radial : a 0=1+Six.sStar
   east_transverse : b 0=Six.sStar
@@ -68,7 +68,8 @@ private lemma total_upper_identity :
   dsimp [northUpper,westUpper]
   nlinarith only [hp,hd]
 
-/-- The eight real contacts yield the lower bound on the five support works. -/
+/-- The weighted sum of the eight contacts: the works of the exterior forces add
+up to at least `4 + 2 rStar + mStar + diagonalK`. -/
 lemma work_lower {c : Point} {a b : Fin 5 → ℝ} (h : Contacts c a b) :
     4+2*rStar+mStar+diagonalK ≤
       (a 0+rStar*b 0)+(a 1-rStar*b 1)+
@@ -80,8 +81,7 @@ lemma work_lower {c : Point} {a b : Fin 5 → ℝ} (h : Contacts c a b) :
   dsimp [diagonalK]
   nlinarith only [h.east,h.north,h.west,h.south,hNW,hES,hWD,hDS]
 
-/-- Equality propagates to every individual exterior support without invoking
-an equality case of either a search procedure or a global pattern theorem. -/
+/-- Each exterior square attains its support. -/
 theorem support_tight {c : Point} {a b : Fin 5 → ℝ}
     (h : Contacts c a b)
     (hbox : ∀ i, (|a i|+1/2)^2+(|b i|+1/2)^2 ≤ Six.radius^2) :
@@ -123,7 +123,8 @@ theorem support_tight {c : Point} {a b : Fin 5 → ℝ}
     change diagonalK*a 3=rhoStar*diagonalK
     rw [hdq,mul_comm]
 
-/-- A finite contact graph and actual disk containment fix all local coordinates. -/
+/-- The eight contacts and the disk fix the local coordinates of the exterior
+squares. -/
 theorem coordinates_of_contacts {c : Point} {a b : Fin 5 → ℝ}
     (h : Contacts c a b)
     (hbox : ∀ i, (|a i|+1/2)^2+(|b i|+1/2)^2 ≤ Six.radius^2) : Coordinates a b := by
@@ -140,8 +141,7 @@ theorem coordinates_of_contacts {c : Point} {a b : Fin 5 → ℝ}
   exact ⟨ce.1,by simpa using ce.2,cn.1,by simpa using cn.2,
     cw.1,by simpa using cw.2,cs.1,by simpa using cs.2,cd.1,cd.2⟩
 
-/-- Opposite central inequalities determine the central center once the exterior
-radial coordinates have been fixed. No independent center-rigidity premise. -/
+/-- The contacts of C with E and W, and with N and S, fix the centre of C. -/
 theorem center_of_contacts {c : Point} {a b : Fin 5 → ℝ}
     (h : Contacts c a b) (hc : Coordinates a b) : c=(Six.sStar,Six.sStar) := by
   apply Prod.ext

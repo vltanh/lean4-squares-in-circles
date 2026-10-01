@@ -2,23 +2,23 @@ import SquaresInCircles.Six.Analytic.CanonicalWestBounds
 import SquaresInCircles.Six.Analytic.PrimaryClassification
 
 /-!
-# Canonical OWN W has negative deviation
+# W separated along its primary axis turns away from D
 
-The cardinal-preferred convention supplies strict negativity of the west
-cardinal margin. Subtracting it from the nonnegative OWN margin gives a
-transverse lower bound involving sin(w)/(1+cos(w)). When w>=0 this contradicts
-BOTH surviving W/D secondary separators by the analytic reserves in
-CanonicalWestBounds. At w=0 the two central margins agree exactly.
-
-No candidate D-edge choice, tail table or pair-envelope domain is assumed.
-The global D half-window is used explicitly; this theorem is not reflected to
-S while silently keeping that half-window.
+If W is not separated from C along the west side of C, then it is along its
+primary axis, and its phase is `π + w` with `w < 0`. At `w = 0` the two margins
+would agree. For `w > 0` their difference gives
+`b > -c_y - halfRatio w (a - c_x)`, with `halfRatio w = tan (w/2)`, for the
+chart `(a, b)` of W and the centre `(c_x, c_y)` of C. With D at the phase
+`π + d`, `w ≤ d ≤ π/4`, separated from C along its primary axis, this
+contradicts both separations of W and D along a secondary axis, by the
+inequalities of `CanonicalWestBounds`.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic
 open Normalization
 
+/-- At the phase `π + w`, the primary margin minus the west margin. -/
 lemma west_own_cardinal_difference (w a b cx cy : ℝ) :
     centralMargin .own (Real.pi+w) a b cx cy-
       centralMargin .west (Real.pi+w) a b cx cy=
@@ -56,8 +56,9 @@ private lemma canonical_west_coarse_transverse {w a b cx cy : ℝ}
   have hcy : cy≤113/1000 := by dsimp [c0] at hy; linarith [rho0_upper]
   linarith
 
-/-- A scalar two-square contradiction; the full packing is used only to
-supply one of the two actual secondary inequalities. -/
+/-- For `0 ≤ w ≤ d ≤ π/4`, if W is separated from C along its primary axis but
+not along the west side of C, and D along its primary axis, then W and D are not
+separated along a secondary axis. -/
 theorem canonical_west_nonnegative_impossible {w d aw bw ad bd cx cy : ℝ}
     (hw : 0≤w) (hwd : w≤d) (hd : d≤Real.pi/4)
     (hW : ContainedChart aw |bw|) (hD : ContainedChart ad |bd|)
@@ -105,8 +106,8 @@ theorem canonical_west_nonnegative_impossible {w d aw bw ad bd cx cy : ℝ}
     have hbound := canonical_diagonal_secondary_reserve hw hwd hd
     nlinarith only [hsec,hbound,hDtrans,hWrad,hbwcos,hccos]
 
-/-- The positive-side OWN-W tail is eliminated without a stress table. In
-fact the canonical choice yields the stronger strict sign w<0. -/
+/-- If W is not separated from C along the west side of C, its phase is less
+than `π`. -/
 theorem canonical_own_west_negative {R : ℝ} (P : NormalizedPacking R)
     (hown : P.ownBits 2=true) : P.helperAngle 2<0 := by
   by_contra! hw

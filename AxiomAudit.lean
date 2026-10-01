@@ -7,7 +7,7 @@ unproved lemma would add `sorryAx`, and a proof by `native_decide`, which
 trusts the compiler, would add `Lean.ofReduceBool`.
 -/
 
--- All six cases in one statement, which depends on every case.
+-- All seven cases in one statement, which depends on every case.
 #print axioms SquaresInCircles.optimal_radius
 #print axioms SquaresInCircles.optimal_packings
 #print axioms SquaresInCircles.optimal_packings_rigid
@@ -34,6 +34,15 @@ trusts the compiler, would add `Lean.ofReduceBool`.
 #print axioms SquaresInCircles.Three.no_containing
 #print axioms SquaresInCircles.Three.compensation
 #print axioms SquaresInCircles.Three.axial_pair_impossible
+
+-- Six squares: the model, the central square and the normalization, the
+-- analytical reduction, the radius bound, and uniqueness.
+#print axioms SquaresInCircles.Six.model_packing
+#print axioms SquaresInCircles.Six.exists_containing
+#print axioms SquaresInCircles.Six.Normalization.strict_marker_separation
+#print axioms SquaresInCircles.Six.Normalization.normalize_of_candidate
+#print axioms SquaresInCircles.Six.Analytic.FixedPair.complete_reduction
+#print axioms SquaresInCircles.Six.uniqueness
 
 -- Seven squares: the marker arc, the gap of pi/3 (nonnegative, zero only at
 -- contacts), all smaller gaps, the pair theorem, the regular hexagon of
@@ -68,6 +77,8 @@ trusts the compiler, would add `Lean.ofReduceBool`.
 #check @SquaresInCircles.optimal_packings_rigid
 #check @SquaresInCircles.Five.polygon_uniqueness
 #check @SquaresInCircles.Seven.column_packing
+#print SquaresInCircles.Six.model
+#print SquaresInCircles.Six.diagonalSquare
 #print SquaresInCircles.Seven.Column
 #print SquaresInCircles.Seven.columnCenters
 #print SquaresInCircles.Seven.columnModel

@@ -2,19 +2,22 @@ import SquaresInCircles.Six.Analytic.OwnWestCardinalWing.Support
 import SquaresInCircles.Six.Analytic.CardinalWestOwnSouth.Geometry
 
 /-!
-# A missing west wing must have two OWN wings
+# A missing west wing has S along its own axis
 
-Cardinal W has already been excluded. For OWN W and cardinal S, the actual
-D-sourced west edge supplies the refined core bounds; the four genuine CW,
-CS, WD and DS inequalities then contradict the single analytic stress.
-Neither candidate W separation nor any finite classification is assumed.
-Compilation and kernel acceptance remain unverified.
+Let W be separated from C along its own axis and S along the south side of C. A
+missing west wing bounds the angles of W and D by `53/50 - d ≤ v ≤ 31/50` and
+`16/25 ≤ d ≤ 11/14`, and its separators of W and D along the secondary axis of D
+and of D and S along the secondary axis of S, with the separators of C and W and
+of C and S, contradict the positivity of the profile. Since W is separated from
+C along its own axis in every missing west wing, so is S.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.OwnWestCardinalWing
 open Normalization
 
+/-- There is no missing west wing when W is separated from C along its own axis
+and S along the south side of C. -/
 theorem not_missing_west {R : ℝ} (P : NormalizedPacking R)
     (hW : P.ownBits 2=true) (hS : P.ownBits 4=false) : ¬ MissingWestWing P := by
   intro hmissing
@@ -54,7 +57,7 @@ theorem not_missing_west {R : ℝ} (P : NormalizedPacking R)
       P.center.1 P.center.2 at h
     rw [hSphase] at h
     simp only [centralMargin,Normalization.centerY,angularWidth,Real.cos_add,Real.sin_add,
-      south_cos,south_sin,zero_mul,one_mul,neg_one_mul,zero_add,add_zero,abs_neg] at h
+      south_cos,south_sin,zero_mul,neg_one_mul,add_zero,abs_neg] at h
     simp only [zero_sub,neg_neg] at h
     dsimp [angularWidth]
     nlinarith only [h]
@@ -89,6 +92,7 @@ theorem not_missing_west_of_cardinal_south {R : ℝ} (P : NormalizedPacking R)
   intro h
   exact OwnWestCardinalWing.not_missing_west P h.west_own hS h
 
+/-- In a missing west wing, S is separated from C along its own axis. -/
 lemma MissingWestWing.south_own {R : ℝ} {P : NormalizedPacking R}
     (h : MissingWestWing P) : P.ownBits 4=true := by
   cases hS : P.ownBits 4

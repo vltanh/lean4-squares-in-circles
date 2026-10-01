@@ -1,20 +1,19 @@
 import SquaresInCircles.Six.Normalization.Input
 import SquaresInCircles.Six.Analytic.ForbiddenArcs
 import SquaresInCircles.Six.DiagonalReflection
-import SquaresInCircles.Six.Goals
+import SquaresInCircles.Six.Construction
+import SquaresInCircles.Six.Containing
 
 /-!
-# Proposition A: the analytic strong central box, before pins and sectors
+# The strong central box
 
-The forbidden arcs are proved on whole geometric quadrants by algebra,
-trigonometric bounds, completed squares and one explicit quartic chord
-argument. No central-coordinate subdivision, certificate checker, pin,
-sector, or A2 conclusion is used. The existing genuine Seven marker-gap
-inequality then contradicts the empty arc.
-
-A temporary diagonal reflection proves the symmetric bound on the ORIGINAL
-packing. It imposes no D-angle convention and does not spend the later global
-D normalization. Compilation is distinct from this source proof.
+In a packing of six squares in a disk about `(0, 0)` of squared radius at most
+`Q0`, let the square containing the disk centre be axis-parallel, with centre
+`(cx, cy)` in `[0, 1/2)²`. Then `cx ≤ c0` and `cy ≤ c0`. If `cx > c0` and
+`cy ≤ cx`, every other square is separated from it along some axis, and the
+forbidden arcs leave no marker in an open arc of length more than `2π/3` on the
+east side, against the gaps between the five markers. The case `cy > c0` follows
+by the reflection in the diagonal.
 -/
 
 noncomputable section
@@ -71,7 +70,8 @@ private theorem bad_east_center_impossible {S : Fin 6 → UnitSquare} {R cx cy :
       large_arc_near_east le_rfl hout ⟨hvl,hvu⟩
     exact he.trans (hmarker i).symm
 
-/-- N23 for an actual packing with an axis-parallel central point set. -/
+/-- If the square containing the disk centre is axis-parallel, with centre in
+`[0, 1/2)²`, then its centre lies in `[0, c0]²`. -/
 theorem strong_central_box {S : Fin 6 → UnitSquare} {R cx cy : ℝ}
     (hp : Packing S (0,0) R) (hQ : R^2 ≤ Q0)
     (hcentral : ∀ p, openSquare (S 0) p ↔ openSquare (axisSquare (cx,cy)) p)
@@ -89,24 +89,5 @@ theorem strong_central_box {S : Fin 6 → UnitSquare} {R cx cy : ℝ}
     have hp' := Six.packing_reflectDiagonal hp
     have hcentral' := Six.reflected_central_axis hcentral
     exact bad_east_center_impossible hp' hQ hcentral' hy hy1 hx0 horder
-
-/-- Unconditional strong-box endpoint, now through only analytic marker lemmas. -/
-theorem strongCentralBox : Six.Goals.StrongCentralBox := by
-  intro S c R hp hR haxis hinside hcx hcy
-  have hbounds : |c.1| < 1/2 ∧ |c.2| < 1/2 := by
-    simpa [haxis,axisSquare_open,openAxisSquare,abs_neg] using hinside
-  apply strong_central_box hp (hR.trans Six.qStar_lt_Q0.le)
-    (fun p => by rw [haxis]) hcx hcy
-  · exact (le_abs_self c.1).trans_lt hbounds.1
-  · exact (le_abs_self c.2).trans_lt hbounds.2
-
-/-- N16 follows from the closed strong box, not conversely. -/
-theorem coarse_central_box {S : Fin 6 → UnitSquare} {R cx cy : ℝ}
-    (hp : Packing S (0,0) R) (hQ : R^2 ≤ Q0)
-    (hcentral : ∀ p, openSquare (S 0) p ↔ openSquare (axisSquare (cx,cy)) p)
-    (hx0 : 0 ≤ cx) (hy0 : 0 ≤ cy) (hx1 : cx < 1/2) (hy1 : cy < 1/2) :
-    0 ≤ cx ∧ cx < 23/200 ∧ 0 ≤ cy ∧ cy < 23/200 := by
-  have h := strong_central_box hp hQ hcentral hx0 hy0 hx1 hy1
-  exact ⟨hx0,h.1.trans_lt c0_lt_23_200,hy0,h.2.trans_lt c0_lt_23_200⟩
 
 end SquaresInCircles.Six.Normalization

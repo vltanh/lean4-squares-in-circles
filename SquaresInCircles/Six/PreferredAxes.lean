@@ -1,20 +1,23 @@
 import SquaresInCircles.Six.DirectedAxes
 
 /-!
-# Four source axes after pin orientation
+# Pair axes directed by a table of signs
 
-An orientation table is used only after every one of its normals has positive
-projection on the interior-pin chord. The theorem then derives a selected
-separator from the original geometric SAT disjunction. No axis is discarded
-on the strength of a numerical source preference.
+Two squares with disjoint interiors are separated along one of their four
+axes, in one of its two directions. Direct each axis by a table of signs. If
+every directed axis has positive projection on `q - p`, for a point `p` of the
+first open square and `q` of the second, then one of the directed axes
+separates the squares.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six
 
+/-- The four axes of a pair: the two axes of `S`, then those of `T`. -/
 def unsignedPairAxis (S T : UnitSquare) (i : Fin 4) : Point :=
   ![normalX S,normalY S,normalX T,normalY T] i
 
+/-- The axes of the pair, negated where `sign` is false. -/
 def preferredPairAxis (sign : Fin 4 → Bool) (S T : UnitSquare) (i : Fin 4) : Point :=
   if sign i then unsignedPairAxis S T i else scale (-1) (unsignedPairAxis S T i)
 
@@ -50,7 +53,8 @@ lemma unsigned_separators_complete (S T : UnitSquare)
   · exact ⟨2,by simpa [unsignedPairAxis,normalX,frameX,dot] using h⟩
   · exact ⟨3,by simpa [unsignedPairAxis,normalY,frameY,dot] using h⟩
 
-/-- Pin orientation preserves completeness of the four-axis source list. -/
+/-- If every directed axis has positive projection on `q - p`, with `p` in the
+first open square and `q` in the second, one of them separates the squares. -/
 theorem preferred_separators_complete (sign : Fin 4 → Bool) (S T : UnitSquare)
     {p q : Point} (hp : openSquare S p) (hq : openSquare T q)
     (hpos : ∀ i, 0 < dot (preferredPairAxis sign S T i) (sub q p))

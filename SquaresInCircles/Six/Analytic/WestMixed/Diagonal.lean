@@ -2,16 +2,17 @@ import SquaresInCircles.Six.Analytic.WestCoreBounds.Geometry
 import SquaresInCircles.Six.Analytic.OwnSouthWestDominant.Chord
 
 /-!
-# A single half-angle support for the mixed-west diagonal
+# Own W, missing west wing: the support of D
 
-The two secondary weights are 1 and 211/200. Writing
- u=cos(r/2)-sin(r/2) gives the exact squared resultant
- (11/200)^2+(211/100)u^2.
-On 0<=r<=6/5 we have u>=13/50. One increasing quadratic then proves the
-uniform root bound (7263/5000)u+1/250. This is not an angular partition.
-The resulting diagonal wave is concave and its derivative is at least 7/10
-on the entire interval, by its single right-endpoint Taylor inequality.
-Compilation and kernel acceptance remain unverified.
+With the weight `1` on the edge W–D, along the secondary axis of D, and
+`ν = 211/200` on the edge D–S, along the secondary axis of S, the force on D
+has the components `(ν cos r, 1 - ν sin r)` in its frame, where `r = d - s`. Its
+squared length is `(ν - 1)² + 2ν u²` with `u = cos (r/2) - sin (r/2)`, and on
+`0 ≤ r ≤ 6/5` we have `u ≥ 13/50`, so one quadratic inequality bounds the
+length by `(7263/5000) u + 1/250`. This bounds the far-vertex support of D by
+trigonometric terms in `r` and `r/2`. The resulting `diagonalWave` is concave
+on `[0, 6/5]`, and its derivative, which decreases, is at least `7/10` there,
+by its value at `r = 6/5`.
 -/
 
 noncomputable section

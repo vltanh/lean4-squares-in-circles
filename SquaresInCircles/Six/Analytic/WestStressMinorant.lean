@@ -2,17 +2,16 @@ import SquaresInCircles.Six.Analytic.EndpointReduction
 import SquaresInCircles.Six.Analytic.OwnAxisWindows
 
 /-!
-# A single analytic minorant for the west-cardinal exclusion
+# A minorant for the west stress
 
-The domain is -2/3 <= t <= u <= 2/5 with u >= -2/5. Its intersections with
-the coordinate sign regions have seven vertices. Separate trigonometric
-concavity reduces the minorant to exactly these geometric vertices, not to a
-searched partition. Their positive bounds follow from the displayed degree-six
-cosine and degree-seven/five sine inequalities at explicit rational angles.
-
-The constants come from the single stress (3/10,9/20,1/4), the bounds
-R0 < 8443/5000 and c0 < 113/1000, and one affine radical majorant. That
-connection is proved in WestStressBounds, separately from this scalar lemma.
+The function `westMinorant K L t u`, a constant plus `(3/10) cos u + L sin u`,
+`(3483/20000) cos t + K sin t` and `(cos (u - t) + sin (u - t))/4`, is positive
+on the parts `t ≤ u ≤ 0`, `t ≤ 0 ≤ u` and `0 ≤ t ≤ u` of the domain
+`-2/3 ≤ t ≤ u`, `-2/5 ≤ u ≤ 2/5`, with the coefficients `K` and `L` that the
+signs of `sin t` and `sin u` select there. In `t`, in `u` and along the diagonal
+`t = u` it has the form `C + A cos x + B sin x` with `A ≥ 0` and `B sin x ≥ 0`,
+which is concave, so it is positive once it is at the seven vertices of the
+three parts; there Taylor bounds of `sin` and `cos` at rational angles prove it.
 -/
 
 noncomputable section
@@ -70,8 +69,7 @@ private lemma trig_positive_negative {C A B l u x:ℝ}
     (by simpa only [Real.cos_neg,Real.sin_neg,neg_mul_neg] using hleft)
   simpa only [Real.cos_neg,Real.sin_neg,neg_mul_neg] using h
 
-/-- These are the seven vertices forced by the order and sign boundaries.
-Each endpoint exceeds 1/20000; no endpoint was selected by a box search. -/
+/-- The minorant is positive at the seven vertices. -/
 private lemma vertex_bounds :
     0<westMinorant kNeg (-3/10) (-2/3) (-2/5) ∧
     0<westMinorant kNeg (-3/10) (-2/5) (-2/5) ∧
@@ -178,7 +176,7 @@ private lemma positive_diagonal {u:ℝ} (hu:0≤u ∧ u≤2/5) :
   exact trig_positive (by norm_num [aW]) (by norm_num [kPos])
     (by norm_num) (by linarith [Real.pi_gt_d2]) hu he0' he1
 
-/-- The negative triangle: the t-edges are the far edge and the diagonal. -/
+/-- Positivity on `t ≤ u ≤ 0`, from the edge `t = -2/3` and the diagonal. -/
 lemma westMinorant_negative {t u:ℝ}
     (ht:-2/3≤t) (hu:-2/5≤u ∧ u≤0) (htu:t≤u) :
     0<westMinorant (19759/400000) (-3/10) t u := by
@@ -190,7 +188,7 @@ lemma westMinorant_negative {t u:ℝ}
   exact trig_positive_negative hc.1 hc.2.1
     (by linarith [Real.pi_gt_d2]) hu.2 ⟨ht,htu⟩ hleft hright
 
-/-- The mixed rectangle: the t-edges are the far edge and t=0. -/
+/-- Positivity on `t ≤ 0 ≤ u`, from the edges `t = -2/3` and `t = 0`. -/
 lemma westMinorant_mixed {t u:ℝ}
     (ht:-2/3≤t ∧ t≤0) (hu:0≤u ∧ u≤2/5) :
     0<westMinorant (19759/400000) 0 t u := by
@@ -202,7 +200,7 @@ lemma westMinorant_mixed {t u:ℝ}
   exact trig_positive_negative hc.1 hc.2.1
     (by linarith [Real.pi_gt_d2]) (by norm_num) ht hleft hright
 
-/-- The positive triangle: the t-edges are t=0 and the diagonal. -/
+/-- Positivity on `0 ≤ t ≤ u ≤ 2/5`, from the edge `t = 0` and the diagonal. -/
 lemma westMinorant_positive {t u:ℝ}
     (ht:0≤t) (hu:u≤2/5) (htu:t≤u) :
     0<westMinorant (179419/400000) 0 t u := by

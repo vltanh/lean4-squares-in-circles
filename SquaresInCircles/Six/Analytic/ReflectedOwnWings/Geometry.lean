@@ -3,22 +3,28 @@ import SquaresInCircles.Six.Analytic.OwnWestOwnSouth.Geometry
 import SquaresInCircles.Six.Analytic.OwnWestCardinalSouth.Geometry
 
 /-!
-# Both candidate diagonal separators now follow analytically
+# The separators of the turned square
 
-Only the two-OWN missing-west case with the south tilt larger remains.
-Reflect its scalar coordinates, not its NormalizedPacking record. The actual
-west-source bounds prove the enlarged reflected diagonal and south intervals.
-The reflected five inequalities are derived from the original witnesses below.
-The analytic scalar contradiction closes this ordering. Together with the
-other bit/order cases, both missing-wing exclusions are now unconditional.
-No finite classification or candidate W-source conclusion is a premise.
-Compilation and kernel acceptance remain unverified.
+Suppose W and D are not separated along the secondary axis of W, a missing west
+wing. Then W and D are separated along the secondary axis of D, D and S along
+the secondary axis of S, and W and S, like D, are separated from C along their
+own axes. When the angle `v` of S from the south direction is at least the angle
+`s` of W from the west direction, read the packing in the reflection in the
+diagonal: W and S, and the two coordinates of the centre of C, are exchanged,
+the transverse coordinates are negated, and the angle `δ` of D becomes
+`d = π/2 - δ`. The five separators become those of the reflected stress, which
+cannot all hold; the other order is the unreflected case. So W and D are
+separated along the secondary axis of W, and both separators of D in the model
+hold.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Analytic.ReflectedOwnWings
 open Normalization
 
+/-- There is no missing west wing when W and S are separated from C along their
+own axes and the angle of S from the south direction is at least that of W from
+the west direction. -/
 theorem not_missing_west_of_order {R : ℝ} (P : NormalizedPacking R)
     (hW : P.ownBits 2=true) (hS : P.ownBits 4=true)
     (horder : -P.helperAngle 2 ≤ P.helperAngle 4) : ¬ MissingWestWing P := by
@@ -102,7 +108,7 @@ end SquaresInCircles.Six.Analytic.ReflectedOwnWings
 namespace SquaresInCircles.Six.Analytic
 open Normalization
 
-/-- The two-OWN orderings and both cardinal-wing cases exhaust the actual geometry. -/
+/-- No normalized packing has a missing west wing. -/
 theorem not_missing_west {R : ℝ} (P : NormalizedPacking R) : ¬ MissingWestWing P := by
   intro h
   have hW := h.west_own
@@ -111,14 +117,16 @@ theorem not_missing_west {R : ℝ} (P : NormalizedPacking R) : ¬ MissingWestWin
   · exact OwnWestOwnSouth.not_missing_west_of_order P hW hS horder h
   · exact ReflectedOwnWings.not_missing_west_of_order P hW hS (le_of_not_ge horder) h
 
-/-- The actual candidate W-sourced separating inequality holds in every normalized packing. -/
+/-- In every normalized packing W and D are separated along the secondary axis
+of W. -/
 theorem candidate_west_separator {R : ℝ} (P : NormalizedPacking R) :
     Seven.SAT.threshold (P.square 2) (P.square 3) ≤
       dot (normalY (P.square 2)) (sub (P.square 3).center (P.square 2).center) := by
   by_contra h
   exact not_missing_west P (missing_west_of_failure P h)
 
-/-- Both candidate edges are now obtained from analytic exclusions, not the finite classifier. -/
+/-- In every normalized packing W and D are separated along the secondary axis
+of W, and D and S along the secondary axis of S, as in the model. -/
 theorem candidate_diagonal_separators {R : ℝ} (P : NormalizedPacking R) :
     FixedPair.CandidateDSeparators P :=
   ⟨candidate_west_separator P,candidate_south_separator P⟩

@@ -2,20 +2,22 @@ import SquaresInCircles.Six.Analytic.SelectedPairWork
 import SquaresInCircles.Six.Equality.ContactCoordinates
 
 /-!
-# The analytic closure supplies the eight real contacts
+# The eight contacts
 
-This is the missing geometric equality bridge. Sources are chosen on the
-original labelled packing and retained by SelectedPairWork. After analytic
-angle/source rigidity, their normals are the two actual cardinal contact
-normals. The two D-wing inequalities are supplied by the explicit reduction.
-No legacy BalancedClosure or CommonDomain is used.
+Under `ReductionHypotheses`, a normalized packing in a disk of squared radius at
+most `q*` has radius `√q*`, and its exterior squares have the phases of the
+model. The separations of the stress are then the eight contact inequalities of
+`ContactCoordinates`: C with E, N, W and S along the sides of C, N–W and E–S
+along the axes selected for these pairs, which are now axes of the model, and
+W–D and D–S along the secondary axes of W and S. With the containment of the
+squares they fix the coordinates of all six squares.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.Equality.AnalyticContacts
 open Stress Normalization Analytic Analytic.FixedPair
 
-/-- Literal side frames, not equality of UnitSquare records. -/
+/-- The phases of the model: E, N, W and S along the four axes, D at `5π/4`. -/
 structure Frame {R : ℝ} (P : NormalizedPacking R) : Prop where
   east : P.phase 0=0
   north : P.phase 1=Real.pi/2
@@ -45,8 +47,8 @@ private lemma source_at_origin {u : Fin 4} (hu : u=0 ∨ u=3) :
 private lemma cos_quarter : Real.cos (Real.pi/4)=Six.hStar := by simp [Six.hStar]
 private lemma sin_quarter : Real.sin (Real.pi/4)=Six.hStar := by simp [Six.hStar]
 
-/-- The contacts used by coordinate rigidity are consequences of the actual
-packing, not additional assumptions on its normalized coordinates. -/
+/-- With the phases of the model, the selected separations are the eight contact
+inequalities. -/
 theorem contacts_of_selected {R : ℝ} (P : NormalizedPacking R)
     (hD : CandidateDSeparators P) (u v : Fin 4) (hsel : SelectedPairs P u v)
     (ha : P.helperAngle 0=0 ∧ P.helperAngle 1=0 ∧ P.helperAngle 2=0 ∧
@@ -112,8 +114,9 @@ theorem contacts_of_selected {R : ℝ} (P : NormalizedPacking R)
   · rw [angularWidth,cos_quarter,sin_quarter,abs_of_pos Six.hStar_pos] at hDS
     nlinarith only [hDS]
 
-/-- Complete coordinate rigidity conditional only on the same explicit
-classification/domain reduction as the analytic radius theorem. -/
+/-- Under `ReductionHypotheses`, a normalized packing in a disk of squared
+radius at most `q*` has the phases, the coordinates and the central square of
+the model, and radius `√q*`. -/
 theorem coordinates_of_reduction {R : ℝ} (P : NormalizedPacking R)
     (hR : R^2 ≤ Six.qStar) (h : ReductionHypotheses P) :
     Frame P ∧ ContactCoordinates.Coordinates P.radial P.transverse ∧

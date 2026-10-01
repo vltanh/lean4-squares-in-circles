@@ -103,8 +103,9 @@ def Congruent {n : ℕ} (S : Fin n → UnitSquare) (o : Point) (M : Fin n → Un
 
 /-! ### The optimal radii and the optimal models
 
-Every model is made of axis-parallel unit squares, with centres given in the
-frame of the disk centre, which is the origin. -/
+The models are given in the frame of the disk centre, which is the origin.
+Every model is made of axis-parallel unit squares, except that the model for
+six squares has one square turned by `π / 4`. -/
 
 namespace One
 
@@ -177,6 +178,59 @@ def model : Fin 5 → UnitSquare := fun i => axisSquare (centers i)
 
 end Five
 
+namespace Six
+
+/-- `√2 / 2`, half the diagonal of a unit square. -/
+def hStar : ℝ := Real.sqrt 2 / 2
+
+/-- The linear coefficient of the quadratic `s ^ 2 - AStar * s + BStar`, whose
+smaller root is `sStar`. -/
+def AStar : ℝ := (1466 + 1940 * hStar) / 267
+
+/-- The constant coefficient of the quadratic `s ^ 2 - AStar * s + BStar`. -/
+def BStar : ℝ := (327 + 432 * hStar) / 712
+
+/-- The discriminant of `s ^ 2 - AStar * s + BStar`. -/
+def discriminant : ℝ := AStar ^ 2 - 4 * BStar
+
+/-- The smaller root of `s ^ 2 - AStar * s + BStar`, about `0.0842`: the central
+square of the model is centred at `(sStar, sStar)`. -/
+def sStar : ℝ := 2 * BStar / (AStar + Real.sqrt discriminant)
+
+/-- About `0.4202`: the squares left of and below the central square are
+centred at `(sStar - 1, tStar)` and `(tStar, sStar - 1)`. -/
+def tStar : ℝ := (-20 + 30 * hStar) * sStar + 7 / 2 - 9 * hStar / 2
+
+/-- About `0.7869`: the turned square of the model is centred at
+`(-dStar, -dStar)`. -/
+def dStar : ℝ := 1 / 2 + hStar - tStar
+
+/-- The square of the optimal radius, about `2.8512`. -/
+def qStar : ℝ := 2 * sStar ^ 2 + 4 * sStar + 5 / 2
+
+/-- The optimal radius for six unit squares, about `1.6885`: the distance from
+the disk centre to the six points of the model on the circle. -/
+def radius : ℝ := Real.sqrt qStar
+
+/-- The unit square centred at `(-dStar, -dStar)` and turned by `π / 4`. -/
+def diagonalSquare : UnitSquare where
+  center := (-dStar, -dStar)
+  cosine := hStar
+  sine := hStar
+  unit := by
+    dsimp [hStar]
+    nlinarith [Real.sq_sqrt (show (0 : ℝ) ≤ 2 by norm_num)]
+
+/-- The optimal packing: a central square, one square on top of it and one to
+its right, one to its left and one below it, pushed up and right by
+`tStar - sStar`, and the turned square in the corner between those two. -/
+def model : Fin 6 → UnitSquare :=
+  ![axisSquare (sStar, sStar), axisSquare (sStar, sStar + 1),
+    axisSquare (sStar + 1, sStar), axisSquare (sStar - 1, tStar),
+    axisSquare (tStar, sStar - 1), diagonalSquare]
+
+end Six
+
 namespace Seven
 
 /-- The optimal radius for seven unit squares: the distance from the disk centre
@@ -213,59 +267,20 @@ def columnModel (c : Column) : Fin 7 → UnitSquare :=
 
 end Seven
 
-namespace Six
-
-/-- Half the diagonal of a unit square. -/
-def hStar : ℝ := Real.sqrt 2 / 2
-
-def AStar : ℝ := (1466 + 1940 * hStar) / 267
-
-def BStar : ℝ := (327 + 432 * hStar) / 712
-
-def discriminant : ℝ := AStar ^ 2 - 4 * BStar
-
-/-- The small positive root, written in its numerically stable radical form. -/
-def sStar : ℝ := 2 * BStar / (AStar + Real.sqrt discriminant)
-
-def tStar : ℝ := (-20 + 30 * hStar) * sStar + 7 / 2 - 9 * hStar / 2
-
-def dStar : ℝ := 1 / 2 + hStar - tStar
-
-/-- Exact squared radius of the six-square model. -/
-def qStar : ℝ := 2 * sStar ^ 2 + 4 * sStar + 5 / 2
-
-def radius : ℝ := Real.sqrt qStar
-
-/-- The one diagonal square in the six-square model. -/
-def diagonalSquare : UnitSquare where
-  center := (-dStar, -dStar)
-  cosine := hStar
-  sine := hStar
-  unit := by
-    dsimp [hStar]
-    nlinarith [Real.sq_sqrt (show (0 : ℝ) ≤ 2 by norm_num)]
-
-/-- The exact model in C,N,E,W,S,D order. -/
-def model : Fin 6 → UnitSquare :=
-  ![axisSquare (sStar, sStar), axisSquare (sStar, sStar + 1),
-    axisSquare (sStar + 1, sStar), axisSquare (sStar - 1, tStar),
-    axisSquare (tStar, sStar - 1), diagonalSquare]
-
-end Six
-
-/-- The optimal radius for `n` unit squares, for `1 ≤ n ≤ 5` and `n = 7`. Every
-other `n` gets the placeholder `0`, about which nothing is claimed. -/
+/-- The optimal radius for `n` unit squares, for `1 ≤ n ≤ 7`. Every other `n`
+gets the placeholder `0`, about which nothing is claimed. -/
 def optimalRadius : ℕ → ℝ
   | 1 => One.radius
   | 2 => Two.radius
   | 3 => Three.radius
   | 4 => Four.radius
   | 5 => Five.radius
+  | 6 => Six.radius
   | 7 => Seven.radius
   | _ => 0
 
 /-- The optimal packings of `n` unit squares, as models about the origin: one
-packing for `n ≤ 5`, and for `n = 7` every position of the three middle
+packing for `n ≤ 6`, and for `n = 7` every position of the three middle
 squares. Every other `n` gets the placeholder `∅`, about which nothing is
 claimed. -/
 def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
@@ -274,6 +289,7 @@ def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
   | 3 => {Three.model}
   | 4 => {Four.model}
   | 5 => {Five.model}
+  | 6 => {Six.model}
   | 7 => Set.range Seven.columnModel
   | _ => ∅
 

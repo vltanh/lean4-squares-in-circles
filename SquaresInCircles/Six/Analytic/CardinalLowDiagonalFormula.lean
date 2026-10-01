@@ -2,13 +2,18 @@ import SquaresInCircles.Six.Analytic.RotatingTrigConcavity
 import SquaresInCircles.Six.Analytic.LowDiagonalEndpoints
 
 /-!
-# Cardinal-W low-diagonal stress components
+# Cardinal W, low D: the stress
 
-The two choices are the actual forward W-secondary and D-secondary axes.
-The weights are (35,40,25)/100 and (43,30,27)/100 on C-D,C-W,W-D.
-Universal signed vertex support gives the expressions below. In the D-sourced
-case its constant force length is bounded by 5078/10000 by squaring.
-The only nonsmooth wall is w=0; the order wall d=w is retained in the domain.
+W is separated from the central square along its west side, `d ≤ 1/2`, and W and
+D are separated along the secondary axis of W or of D; `ds` says that D is the
+source. The weights on C–D, C–W and W–D are `35/100`, `40/100`, `25/100` when W
+is the source and `43/100`, `30/100`, `27/100` when D is. With the vertex
+supports of W and D, the stress is at least `cardLowGap`: a constant plus
+functions of `w`, of `d` and of `d - w`, in which the length of each rotating
+force enters through `sineRoot`. When D is the source its force is constant, of
+length less than `5078/10000`. The term `|sin w|` cuts the domain at `w = 0`.
+The functions of `w` and of `d - w` are concave, and so is the function of `d`
+when W is the source.
 -/
 
 noncomputable section
@@ -111,7 +116,7 @@ lemma cardLowH_concave (ds : Bool) :
     apply h.congr
     intro x _
     dsimp [cardLowH,cardLowMu]
-    ring
+    ring_nf
 
 lemma cardLowG_false_concave {l u : ℝ} (hl : 0≤l) (hu : u≤1/2) :
     ConcaveOn ℝ (Set.Icc l u) (cardLowG false) := by
@@ -122,6 +127,6 @@ lemma cardLowG_false_concave {l u : ℝ} (hl : 0≤l) (hu : u≤1/2) :
   apply h.congr
   intro x _
   dsimp [cardLowG,cardLowAlpha]
-  ring
+  ring_nf
 
 end SquaresInCircles.Six.Analytic

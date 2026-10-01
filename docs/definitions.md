@@ -120,6 +120,7 @@ def Two.radius : ℝ := Real.sqrt 5 / 2
 def Three.radius : ℝ := 5 * Real.sqrt 17 / 16
 def Four.radius : ℝ := Real.sqrt 2
 def Five.radius : ℝ := Real.sqrt (5 / 2)
+def Six.radius : ℝ := Real.sqrt qStar
 def Seven.radius : ℝ := Real.sqrt 13 / 2
 
 def optimalRadius : ℕ → ℝ
@@ -128,19 +129,21 @@ def optimalRadius : ℕ → ℝ
   | 3 => Three.radius
   | 4 => Four.radius
   | 5 => Five.radius
+  | 6 => Six.radius
   | 7 => Seven.radius
   | _ => 0
 ```
 
 Each value is the distance from the disk centre to the outermost corners of the
-optimal packing. Their squares `1/2`, `5/4`, `425/256`, `2`, `5/2` and `13/4`
-are rational (`One.radius_sq`, …, `Five.radius_sq`, `Seven.radius_sq`). The
-proofs work with the squared radius, so the contact inequalities stay
-polynomial, which is what `nlinarith` needs. That no smaller radius works is
-proved once for all cases (`Optimum.optimality`): a packing in a smaller disk
-would also lie in the optimal disk, so it would be congruent to an optimal
-model, and the outermost corners of that model would lie outside the smaller
-disk.
+optimal packing. Their squares are rational, `1/2`, `5/4`, `425/256`, `2`, `5/2`
+and `13/4` (`One.radius_sq`, …, `Five.radius_sq`, `Seven.radius_sq`), except for
+six squares, where `Six.qStar ≈ 2.85118` is a root of a quartic
+([below](#six-squares)). The proofs work with the squared radius, so the contact
+inequalities stay polynomial, which is what `nlinarith` needs. That no smaller
+radius works is proved once for all cases (`Optimum.optimality`): a packing in a
+smaller disk would also lie in the optimal disk, so it would be congruent to an
+optimal model, and the outermost corners of that model would lie outside the
+smaller disk.
 
 ## Congruence
 
@@ -167,11 +170,12 @@ about the origin. `Congruent S o M` says that in one such frame, after
 relabelling by `σ`, square `σ i` is exactly the model square `M i`, both as an
 open and as a closed set. It compares point sets rather than `UnitSquare`
 records, because a quarter-turn of a frame describes the same square. No
-reflection is needed, since each optimal model is symmetric under one.
+reflection is needed, since each optimal model is symmetric under one; for six
+squares it is the reflection in the diagonal `y = x`.
 
 ## The optimal packings
 
-Every optimal model is made of axis-parallel unit squares:
+Every optimal model but one is made of axis-parallel unit squares:
 
 ```lean
 def axisSquare (c : Point) : UnitSquare where
@@ -194,7 +198,54 @@ centres:
 | 5 | `(0, 0)`, `(±1, 0)`, `(0, ±1)` | the plus |
 
 These are `One.centers`, …, `Five.centers`, and the models `One.model`, …,
-`Five.model`. For `n = 7` the optimum is not unique: between two columns of two
+`Five.model`.
+
+### Six squares
+
+For `n = 6` the optimal packing is unique too, but one of its squares is turned
+by `π / 4`. Its model is built from four constants: `sStar`, the smaller root of
+a quadratic over `ℚ(√2)`, and `tStar`, `dStar` and `qStar`, polynomials in
+`sStar` and `hStar = √2 / 2`:
+
+```lean
+def Six.hStar : ℝ := Real.sqrt 2 / 2
+def Six.AStar : ℝ := (1466 + 1940 * hStar) / 267
+def Six.BStar : ℝ := (327 + 432 * hStar) / 712
+def Six.discriminant : ℝ := AStar ^ 2 - 4 * BStar
+def Six.sStar : ℝ := 2 * BStar / (AStar + Real.sqrt discriminant)
+def Six.tStar : ℝ := (-20 + 30 * hStar) * sStar + 7 / 2 - 9 * hStar / 2
+def Six.dStar : ℝ := 1 / 2 + hStar - tStar
+def Six.qStar : ℝ := 2 * sStar ^ 2 + 4 * sStar + 5 / 2
+def Six.radius : ℝ := Real.sqrt qStar
+
+def Six.diagonalSquare : UnitSquare where
+  center := (-dStar, -dStar)
+  cosine := hStar
+  sine := hStar
+  unit := by
+    dsimp [hStar]
+    nlinarith [Real.sq_sqrt (show (0 : ℝ) ≤ 2 by norm_num)]
+
+def Six.model : Fin 6 → UnitSquare :=
+  ![axisSquare (sStar, sStar), axisSquare (sStar, sStar + 1),
+    axisSquare (sStar + 1, sStar), axisSquare (sStar - 1, tStar),
+    axisSquare (tStar, sStar - 1), diagonalSquare]
+```
+
+Numerically `sStar ≈ 0.08425`, `tStar ≈ 0.42023`, `dStar ≈ 0.78688`,
+`qStar ≈ 2.85118` and `Six.radius ≈ 1.68854`. The model is a central square at
+`(sStar, sStar)`, with one neighbour on top and one to its right, one neighbour
+to its left and one below it, pushed up and to the right by
+`tStar - sStar ≈ 0.336`, and the turned square at `(-dStar, -dStar)` in the
+corner between the last two. The corners of the other four squares farthest
+from the disk centre, and two vertices of the turned square, lie on the circle
+of radius `Six.radius`; `sStar` is the value for which these reach one circle
+while the turned square touches its two neighbours. The radius agrees with
+David Ellsworth's closed form on Friedman's page.
+
+### Seven squares
+
+For `n = 7` the optimum is not unique: between two columns of two
 squares, each of the three squares of the middle column can move along it on
 its own. A `Column` records their three heights:
 
@@ -232,6 +283,7 @@ def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
   | 3 => {Three.model}
   | 4 => {Four.model}
   | 5 => {Five.model}
+  | 6 => {Six.model}
   | 7 => Set.range Seven.columnModel
   | _ => ∅
 ```

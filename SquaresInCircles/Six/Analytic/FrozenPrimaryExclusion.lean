@@ -2,14 +2,14 @@ import SquaresInCircles.Six.Analytic.FrozenPrimaryEndpoints
 import SquaresInCircles.Six.Analytic.SmallGapPrimary
 
 /-!
-# Analytic exclusion of the inward W-primary D-edge for OWN W
+# No inward separation along the own axis of W
 
-For w<=0, freeze both local centers and the central coordinates. The three
-stress contributions are nonnegative-coefficient trigonometric functions of
--v=w, d and v+d. Concavity and the four proved endpoint bounds contradict
-the three actual separating inequalities. The w>=0 region uses the uniform
-sixty-degree primary exclusion instead. No support switch is differentiated
-and no previously certified fixed row is used.
+If W is separated from C along its own axis, then W and D are not separated
+along the own axis of W directed inwards. Let W and D be at the phases `π + w`
+and `π + d`. For `w ≥ 0` the phases differ by at most `π/3`, and the exclusion
+for small phase gaps applies. For `w < 0` the inward stress is nonpositive by
+the three separations, but with the centres fixed it is concave in `v = -w`
+and in `d`, and positive at the corners of `[0, 2/3] × [0, π/4]`.
 -/
 
 noncomputable section
@@ -93,7 +93,9 @@ lemma inward_primary_frozen_nonpositive {v d aw bw ad bd cx cy : ℝ}
   dsimp [inwardPrimaryFrozen,frozenTrig]
   nlinarith only [hW,hD,hE]
 
-/-- Whole-domain negative-W exclusion using actual geometry at Q0. -/
+/-- For `0 ≤ v ≤ 2/3` and `0 ≤ d ≤ π/4` the separations C–W and C–D along the
+own axes of W and D exclude a separation of W and D along the own axis of W
+directed inwards. -/
 theorem inward_primary_own_negative_impossible {v d aw bw ad bd cx cy : ℝ}
     (hv : 0≤v ∧ v≤2/3) (hd : 0≤d ∧ d≤Real.pi/4)
     (hW : ContainedChart aw |bw|) (hD : ContainedChart ad |bd|)
@@ -111,7 +113,8 @@ theorem inward_primary_own_negative_impossible {v d aw bw ad bd cx cy : ℝ}
   have hneg := inward_primary_frozen_nonpositive hv hd hCW hCD hWD
   linarith
 
-/-- The entire OWN-W inward-primary branch is eliminated, not just a scalar row. -/
+/-- If W is separated from C along its own axis, then W and D are not separated
+along the own axis of W directed inwards. -/
 theorem normalized_ownW_inward_primary_excluded {R : ℝ} (P : NormalizedPacking R)
     (hown : P.ownBits 2=true) :
     ¬ Seven.SAT.threshold (P.square 2) (P.square 3)≤
@@ -127,7 +130,7 @@ theorem normalized_ownW_inward_primary_excluded {R : ℝ} (P : NormalizedPacking
       rw [abs_of_nonneg (sub_nonneg.mpr P.primary_order.2.2.1.le),hwphase,hdphase]
       linarith [P.diagonal_angle_range.2,Real.pi_pos]
     have hn := oriented_inward_primary_excluded (P.contained 2) (P.contained 3)
-      (P.avoidsCore 2) (P.avoidsCore 3) hq
+      (P.avoidsCore 3) hq
     exact not_le_of_gt hn hsep
   · have hnegative : P.helperAngle 2<0 := lt_of_not_ge hw
     have hv : 0≤-P.helperAngle 2 ∧ -P.helperAngle 2≤2/3 := by

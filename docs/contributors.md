@@ -63,3 +63,22 @@ Times are rough commit times, in US Central time (UTC−5).
   [Palomar](https://palomar-registry.org/) registry: the statement gathered in
   `Geometry.lean`, `Challenge.lean`, `comparator.json`, `formalization.yaml`
   and the checks that run them.
+
+## 26 to 30 September 2026
+
+* **Six squares.** ChatGPT's latest model at the time, in the chat on the
+  ChatGPT website, and Claude Opus 5.5 Max, in the Claude chat, proved the
+  six-square optimum together, with numerical certificates
+  ([PR #6](https://github.com/vltanh/lean4-squares-in-circles/pull/6)).
+  Claude wrote its normalization, which puts every packing near the optimum
+  into a standard frame. ChatGPT 6 Pro then turned the certificates into an
+  analytical proof and wrote the whole proof in Lean, without compiling it
+  ([PR #7](https://github.com/vltanh/lean4-squares-in-circles/pull/7)).
+
+## 30 September 2026
+
+* **From 17:55 — six squares compiled.** Claude Opus 5.5, in Claude Code,
+  compiled the analytical proof: 968 errors in 197 of its 284 modules, nearly
+  all from changes in Lean and mathlib, and two wrong constants in scalar
+  bounds, whose corrected values still close the proofs. It then added the
+  case to the library.

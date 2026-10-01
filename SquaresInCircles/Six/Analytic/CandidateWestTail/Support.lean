@@ -2,13 +2,18 @@ import SquaresInCircles.Six.Analytic.CandidateWestTail.Scalar
 import SquaresInCircles.Six.Stress.Support
 
 /-!
-# Support estimates for the candidate west-tail stress
+# The west tail: the stress
 
-Two explicit affine radical majorants are proved by completing a square. They
-are global in the sine argument. The W/S supports are universal far-vertex
-bounds; D uses the independent center-radius bound. No cap branch is selected
-or assumed in this argument. The signed central force is retained until its
-negative y component and positive x component have been proved.
+The stress has weights `beta`, `gamma`, `mu` and `nu` on C–W, C–S, W–D and D–S,
+with W separated from C along its own axis, S along its own axis or the south
+side of C, W–D along the secondary axis of W and D–S along the secondary axis
+of S. The works of the forces on W and S are bounded by the far-vertex support,
+and the work of the force on D by `rho0` times its length, as the centre of D
+lies within `rho0` of the origin. The lengths of the forces on S and D are at
+most affine functions of a sine, by completing a square, on the whole range of
+the sine. The force on C has a nonnegative first and a nonpositive second
+component, so the central box bounds its work. The constants bracket `R0`,
+`rho0` and `c0` (`ceiling_bounds`).
 -/
 
 noncomputable section
@@ -52,7 +57,8 @@ lemma ceiling_bounds : R0 ≤ radiusBound ∧ rho0 ≤ rhoBound ∧
   exact ⟨hr,hu,by dsimp [coreLower,c0]; linarith,
     by dsimp [coreUpper,c0,rhoBound] at *; linarith⟩
 
-/-- The usual far-vertex support, proved directly in signed side coordinates. -/
+/-- The far-vertex support for a centre with local coordinates `(a, b)` and any
+force `(U, V)`. -/
 lemma local_vertex_support {a b : ℝ} (hc : ContainedChart a |b|) (U V : ℝ) :
     U*a+V*b ≤ R0*Real.sqrt (U^2+V^2)-(|U|+|V|)/2 := by
   have hC := Stress.dot_le_radius (v := (|U|,|V|)) (p := (a+1/2,|b|+1/2))
@@ -76,7 +82,8 @@ private lemma west_root : Real.sqrt (beta^2+mu^2) ≤ westNormUpper := by
   dsimp [westNormUpper]
   nlinarith
 
-/-- The radical majorant is one completed square on the whole sine range. -/
+/-- An affine majorant for the length of the force on D, by completing a
+square. -/
 lemma diagonal_root {z : ℝ} (hz : -1 ≤ z ∧ z ≤ 1) :
     Real.sqrt (mu^2+nu^2+2*mu*nu*z) ≤ diagonalIntercept+diagonalSlope*z := by
   have hr : 0 ≤ mu^2+nu^2+2*mu*nu*z := by dsimp [mu,nu]; linarith [hz.1]
@@ -225,7 +232,8 @@ private lemma width_lower (x : ℝ) : (Real.cos x+Real.sin x)/2 ≤ angularWidth
   dsimp [angularWidth]
   linarith [le_abs_self (Real.cos x),le_abs_self (Real.sin x)]
 
-/-- Replacing |sin(d-s)| by sin(d-s) weakens the bound without assuming s<=d. -/
+/-- The minorant is at most the defect, as
+`angularWidth x ≥ (cos x + sin x)/2`. -/
 lemma minorant_le_defect (k : Fin 3) (v x d : ℝ) :
     minorant k v x d ≤ defect k v (side k*x) d := by
   have hv := width_lower v

@@ -2,13 +2,16 @@ import SquaresInCircles.Six.Analytic.SecondaryCostBound
 import SquaresInCircles.Six.Analytic.DoubleSecondaryOwnBound
 
 /-!
-# The reflected secondary cost and the OWN-wing penalty
+# The folded cost and the penalty of an own wing
 
-For q beyond pi/2, keep the stronger bound at pi-q rather than weakening it
-back to q. The reflected angle is pi/2-|q-pi/2|. In the mixed-cardinal case
-this produces |s-d|, whose minimum is at s=d or at the original endpoint 2/3.
-The monotonicity proof uses the explicit derivative bounds -0.387 <= G' <=
-0.613, not a subdivision or a numerical minimizer.
+With the folded angle `π/2 - |q - π/2|` in place of `q`, the bound of
+`SecondaryCostBound` holds on all of `[1/2, π - 1/2]`: beyond `π/2` it is the
+bound at `π - q`. In the mixed cases the folded angle brings in a penalty
+`(13/20) |s - d|`. For `-5/8 ≤ s ≤ 2/3` and `0 ≤ d ≤ π/4` the potential
+`G s = (387/1000) cos s + |sin s|/2 + (113/1000) sin s` plus this penalty is
+smallest at `s = d`: on `[0, π/4]` the derivative of `G` lies between
+`-387/1000` and `613/1000`, and on `[-5/8, 0]` we have `G s ≥ 387/1000 = G 0`.
+For `d ≥ 2/3` it is smallest at `s = 2/3`.
 -/
 
 noncomputable section
@@ -87,7 +90,7 @@ lemma positiveWing_plus_monotone :
         constructor <;> linarith [hx.1,hx.2,Real.pi_pos])
     linarith [Real.sin_le_one x]
 
-/-- In the interior, the minimum of G(s)+13|s-d|/20 is at s=d. -/
+/-- `G s + (13/20) |s - d|` is at least `G d`, for `0 ≤ d ≤ π/4`. -/
 lemma own_wing_penalty_lower {s d : ℝ}
     (hs : -5/8≤ s ∧ s≤2/3) (hd : 0≤d ∧ d≤Real.pi/4) :
     positiveWing d≤ownWingPotential s+(13/20)*|s-d| := by
@@ -108,7 +111,8 @@ lemma own_wing_penalty_lower {s d : ℝ}
     rw [abs_of_nonpos (by linarith [hd.1]),positiveWing]
     linarith [lt_of_not_ge hs0]
 
-/-- Beyond the allowed helper endpoint, the minimum stays at s=2/3. -/
+/-- For `d ≥ 2/3`, `G s + (13/20) |s - d|` is at least its value at
+`s = 2/3`. -/
 lemma own_wing_penalty_endpoint {s d : ℝ}
     (hs : -5/8≤ s ∧ s≤2/3) (hd : 2/3≤d) :
     positiveWing (2/3)+(13/20)*(d-2/3)≤ownWingPotential s+(13/20)*|s-d| := by

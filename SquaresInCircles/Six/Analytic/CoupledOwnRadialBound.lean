@@ -1,13 +1,16 @@
 import SquaresInCircles.Six.Analytic.CoupledOwnProfiles
 
 /-!
-# From the coupled central profiles to secondary separation
+# The radial sum of D and S on their own axes
 
-The two OWN inequalities imply aD+aS>217/100+(s-d)/3 on the overtaking
-triangle. Containment gives 3a+|b|<167/50 for each square by one Cauchy
-completed square. Together these imply a strict lower bound on the sum of
-the two secondary works. This avoids declaring a primary direction impossible
-when it is tied with a secondary at the right-angle boundary.
+Let D and S have the local centres `(a, b)` and `(A, B)`. If they are separated
+from C along their own axes, at angles `1/2 ≤ d ≤ s ≤ 2/3`, then
+`a + A > 217/100 + (s - d)/3`: multiplying the two separating inequalities by
+`sin s` and `cos d` and adding them cancels the first coordinate of the centre
+of C. Containment in the disk gives `3a + |b| < 167/50` for each square, by
+Cauchy–Schwarz. With `r = s - d`, together they make the separations of D and S
+along their second axes, `A cos r - B sin r - b` and `B + a cos r + b sin r`, sum
+to more than twice their threshold `(1 + cos r + sin r)/2`.
 -/
 
 noncomputable section
@@ -28,7 +31,7 @@ lemma chart_three_radial_support {a b : ℝ} (hc : ContainedChart a |b|) :
   nlinarith
 
 lemma coupled_own_radial_sum {a b A B cx cy d s : ℝ}
-    (hD : ContainedChart a |b|) (hS : ContainedChart A |B|)
+    (hS : ContainedChart A |B|)
     (hy : cy≤c0) (hd : 1/2≤d) (hds : d≤ s) (hs : s≤2/3)
     (hCD : 0≤centralMargin .own (Real.pi+d) a b cx cy)
     (hCS : 0≤centralMargin .own (3*Real.pi/2+s) A B cx cy) :
@@ -79,9 +82,8 @@ lemma coupled_own_radial_sum {a b A B cx cy d s : ℝ}
   dsimp [coupledOwnReserve] at hreserve
   nlinarith only [hcombined,hAp,hsumprod,hreserve]
 
-/-- The two forward secondary works have sum strictly larger than their two
-common thresholds. The domain is the narrow geometric excess r=s-d, not a
-searched interval around an approximate optimizer. -/
+/-- For `r ∈ [0, 1/6]` and `a + A > 217/100 + r/3`, the separations of D and S
+along their second axes sum to more than twice their threshold. -/
 lemma overtaking_secondary_sum {a b A B r : ℝ}
     (hD : ContainedChart a |b|) (hS : ContainedChart A |B|)
     (hr : 0≤r ∧ r≤1/6) (hsum : 217/100+r/3<a+A) :

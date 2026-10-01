@@ -2,16 +2,16 @@ import SquaresInCircles.Six.Analytic.DiagonalCoreBounds
 import SquaresInCircles.Six.Analytic.EndpointReduction
 
 /-!
-# An affine transverse bound on the full high-diagonal interval
+# High D: an affine bound on the transverse coordinate
 
-The scalar obstruction is concave: after the identity
-(cos d+sin d)^2=1+sin(2d), its second derivative is a negative combination of
-cos d+sin d and sin(2d), plus the small constant 2(17/100)^2. Thus only the
-actual endpoints 1/2 and pi/4 are needed. Their strict reserves follow from
-Taylor bounds and sqrt(2)>707/500, pi<22/7.
-
-The result |bD|<31/100-17d/100 is a consequence of the actual OWN separator and
-containment. It is not an extra hypothesis on the normalized model.
+For `1/2 ≤ d ≤ π/4`, the separation of D from the central square along its own
+axis gives `a + 1/2 ≥ 1 + (387/1000)(cos d + sin d)`, and the containment of D
+then gives `|b| < 31/100 - (17/100) d`, because the point
+`(1 + (387/1000)(cos d + sin d), 81/100 - (17/100) d)` lies outside the circle
+of squared radius `Q0`. By `(cos d + sin d)^2 = 1 + sin (2d)`, the second
+derivative of its excess is a negative combination of `cos d + sin d` and
+`sin (2d)` plus the constant `2 (17/100)^2`, so the excess is concave, and it is
+positive at `1/2` and `π/4`, by Taylor bounds, `√2 > 707/500` and `π < 22/7`.
 -/
 
 noncomputable section
@@ -102,7 +102,9 @@ private lemma highDepthCircle_right : 0 < highDepthCircle (Real.pi/4) := by
   norm_num [L,T,Q0] at hLs hTs ⊢
   nlinarith only [hLs,hTs]
 
-/-- One concavity argument covers the whole physical diagonal interval. -/
+/-- For `1/2 ≤ d ≤ π/4` the point
+`(1 + (387/1000)(cos d + sin d), 81/100 - (17/100) d)` lies outside the circle
+of squared radius `Q0`. -/
 lemma high_diagonal_profile_circle {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ Real.pi/4) :
     Q0 < (1+(387/1000)*(Real.cos d+Real.sin d))^2+(81/100-(17/100)*d)^2 := by
   have h := positive_on_concave_interval highDepthCircle_concave hd
@@ -129,7 +131,7 @@ lemma high_diagonal_transverse_of_profile {a b d : ℝ}
     (show 0 ≤ |b|+1/2+(81/100-(17/100)*d) by linarith [abs_nonneg b])
   nlinarith [hc.containment,high_diagonal_profile_circle hd]
 
-/-- A stronger consequence of the actual high-D OWN constraint. -/
+/-- In a normalized packing, `|b| < 31/100 - (17/100) d` for D. -/
 theorem normalized_diagonal_transverse_affine {R : ℝ} (P : NormalizedPacking R) :
     |P.transverse 3| < 31/100-(17/100)*P.diagonalAngle := by
   have hd : 1/2 ≤ P.diagonalAngle ∧ P.diagonalAngle ≤ Real.pi/4 :=
@@ -158,10 +160,5 @@ theorem normalized_diagonal_transverse_affine {R : ℝ} (P : NormalizedPacking R
   simp only [centralMargin,centralNormal,angularWidth,Real.cos_add_pi,Real.sin_add_pi,
     abs_neg,abs_of_nonneg hcos,abs_of_nonneg hsin] at hown
   nlinarith only [hown,hX,hY]
-
-lemma normalized_diagonal_transverse_lt_nine_fortieths {R : ℝ} (P : NormalizedPacking R) :
-    |P.transverse 3| < 9/40 := by
-  have h := normalized_diagonal_transverse_affine P
-  linarith [normalized_diagonal_gt_half P]
 
 end SquaresInCircles.Six.Analytic

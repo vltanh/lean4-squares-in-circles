@@ -2,13 +2,15 @@ import SquaresInCircles.Six.DiagonalPositive
 import SquaresInCircles.Six.DirectedAxes
 
 /-!
-# Exact fixed-pin chords
+# Chords between the fixed pins
 
-All identities are derived from the actual radius-9/10 pins. They supply the
-sign tests for directed source axes without replacing open-square membership
-by sampled center positions.
+The five fixed pins lie on the circle of radius `9/10` about the disk centre, at
+the angles `0`, `π/2`, `11π/12`, `5π/4` and `19π/12`. The chords W–D and D–S
+have length `9/10`, the chords N–W and E–S have length `(9/5) sin (5π/24)`, and
+the reflection in the diagonal `y = x` exchanges the two chords of each pair.
+The projections of the chords W–D and D–S on the axes of a square at a given
+angle give the signs used to orient separating axes.
 -/
-
 noncomputable section
 namespace SquaresInCircles.Six
 open Normalization Normalization.Certificates
@@ -23,16 +25,6 @@ private lemma cos_pi_add' (x : ℝ) : Real.cos (Real.pi+x) = -Real.cos x := by
 private lemma sin_pi_add' (x : ℝ) : Real.sin (Real.pi+x) = -Real.sin x := by
   rw [add_comm,Real.sin_add_pi]
 
-lemma dot_primary_polar (r t z : ℝ) : dot (primary t) (polar r z)=r*Real.cos (z-t) := by
-  dsimp [dot,primary,polar]
-  rw [Real.cos_sub]
-  ring
-
-lemma dot_secondary_polar (r t z : ℝ) : dot (secondary t) (polar r z)=r*Real.sin (z-t) := by
-  dsimp [dot,secondary,polar]
-  rw [Real.sin_sub]
-  ring
-
 lemma centered_chord (r m u : ℝ) :
     sub (polar r (m+u)) (polar r (m-u)) =
       scale (2*r*Real.sin u) (-Real.sin m,Real.cos m) := by
@@ -42,7 +34,7 @@ lemma centered_chord (r m u : ℝ) :
 lemma sub_reverse (p q : Point) : sub p q=scale (-1) (sub q p) := by
   apply Prod.ext <;> dsimp [sub,scale] <;> ring
 
-/-- The W-to-D chord is exactly the rotated radius-9/10 vector. -/
+/-- The chord from the pin of W to the pin of D. -/
 lemma pin_chord_WD : sub (fixedPin 3) (fixedPin 2)=
     ((9/10)*Real.sin (Real.pi/12),-(9/10)*Real.cos (Real.pi/12)) := by
   have h := centered_chord (9/10) (13*Real.pi/12) (Real.pi/6)
@@ -53,7 +45,8 @@ lemma pin_chord_WD : sub (fixedPin 3) (fixedPin 2)=
     show (2:ℝ)*(9/10)*(1/2)=9/10 by norm_num] at h
   simpa [fixedPin,polar,scale] using h
 
-/-- D-to-S follows from the exact diagonal symmetry of the pin set. -/
+/-- The chord from the pin of D to the pin of S, the reflection of the chord
+W–D in the diagonal. -/
 lemma pin_chord_DS : sub (fixedPin 4) (fixedPin 3)=
     ((9/10)*Real.cos (Real.pi/12),-(9/10)*Real.sin (Real.pi/12)) := by
   have h := congrArg diagonalPoint pin_chord_WD
@@ -66,7 +59,7 @@ lemma pin_chord_DS : sub (fixedPin 4) (fixedPin 3)=
   rw [sub_reverse (fixedPin 4) (fixedPin 3),h]
   apply Prod.ext <;> dsimp [scale] <;> ring
 
-/-- N-W and E-S have the same positive length. -/
+/-- The common length of the chords N–W and E–S. -/
 def adjacentChordLength : ℝ := (9/5)*Real.sin (5*Real.pi/24)
 
 lemma adjacentChordLength_pos : 0 < adjacentChordLength := by
@@ -96,14 +89,6 @@ lemma pin_chord_ES : sub (fixedPin 0) (fixedPin 4)=
   rw [h,show 7*Real.pi/24=Real.pi/2-5*Real.pi/24 by ring]
   apply Prod.ext <;> simp [diagonalPoint,polar,Real.cos_pi_div_two_sub,Real.sin_pi_div_two_sub]
 
-lemma WD_primary_projection (t : ℝ) :
-    dot (primary (Real.pi+t)) (sub (fixedPin 3) (fixedPin 2))=
-      (9/10)*Real.sin (t-Real.pi/12) := by
-  rw [pin_chord_WD]
-  dsimp [dot,primary]
-  rw [cos_pi_add',sin_pi_add',Real.sin_sub]
-  ring
-
 lemma WD_secondary_projection (t : ℝ) :
     dot (secondary (Real.pi+t)) (sub (fixedPin 3) (fixedPin 2))=
       (9/10)*Real.cos (t-Real.pi/12) := by
@@ -126,14 +111,6 @@ lemma DS_secondary_D_projection (d : ℝ) :
   rw [pin_chord_DS]
   dsimp [dot,secondary]
   rw [cos_pi_add',sin_pi_add',Real.sin_add]
-  ring
-
-lemma DS_primary_S_projection (s : ℝ) :
-    dot (primary (3*Real.pi/2+s)) (sub (fixedPin 4) (fixedPin 3))=
-      (9/10)*Real.sin (s+Real.pi/12) := by
-  rw [pin_chord_DS]
-  dsimp [dot,primary]
-  rw [Real.cos_add,Real.sin_add,south_cos,south_sin,Real.sin_add]
   ring
 
 lemma DS_secondary_S_projection (s : ℝ) :
