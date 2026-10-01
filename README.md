@@ -306,8 +306,7 @@ SquaresInCircles/
 │                          the optimal radii and models
 ├── Common/                tools shared by several cases
 ├── One/  Two/             Construction, Uniqueness
-├── Three/ Five/           Construction, Exterior, Containing, Uniqueness
-├── Four/                  Construction, Exterior, Uniqueness
+├── Three/ Four/ Five/     Construction, Exterior, Containing, Uniqueness
 ├── Six/                   Construction, Normalization/, Separators/, Wings/,
 │                          Tails/, Stress/, Equality/, Uniqueness
 └── Seven/                 Construction, the pair theorem, Uniqueness, and

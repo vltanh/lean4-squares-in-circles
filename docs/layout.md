@@ -34,8 +34,8 @@ disk) and `Uniqueness.lean`, which ends with the case's `optimum`, an `Optimum`
 (`Common/Optimum.lean`) bundling the construction, a point of each model on the
 circle, and uniqueness; `Optimum.lean` derives every lower bound from
 uniqueness. Three to five squares add `Exterior.lean` (the contact polygon, and
-the arcs of the squares that avoid the disk centre), and three and five squares
-`Containing.lean` (the square that contains it). Six squares spread their
+the arcs of the squares that avoid the disk centre) and `Containing.lean` (the
+square that contains it). Six squares spread their
 normalization, separators and estimates over the files [below](#six), and seven
 squares the pair theorem, the ring and the middle column over the files
 [below](#seven). Each case imports only `Common/` and its own folder.
@@ -69,7 +69,7 @@ squares the pair theorem, the ring and the middle column over the files
 | --- | --- | --- | --- | --- | --- | --- |
 | `Construction.lean` | the centred square | the 2×1 rectangle | the T | the 2×2 block | the plus | the column packings |
 | `Exterior.lean` | | | the 16-gon; caps of at least `120°` on the circle of radius `3/8`, and their two tight types | the diamond; arcs of at least `90°` on the circle of radius `1/2` | the 12-gon; arcs over `72°` on the circle of radius `5/6` | |
-| `Containing.lean` | | | no square contains `o` | | the sweep of a square that contains `o` holds `72°`, unless the square is centred at `o` | |
+| `Containing.lean` | | | no square contains `o` | a square whose closed square contains `o` holds a quarter circle | the sweep of a square that contains `o` holds `72°`, unless the square is centred at `o` | |
 | `Uniqueness.lean` | centred at `o` | both centres `1/2` from `o`; opposite half circles | caps of exactly `120°`; one square of type A and two of type B rebuild the T | `o` a vertex of every square; a quarter grid of arcs | a square centred at `o`, the others its side-neighbours; closed 12-gon rigidity | a square contains `o`; the ring and the middle column; congruence to a column packing |
 
 Each case has a `radius`, its `centers` (the optimal packing in the frame of

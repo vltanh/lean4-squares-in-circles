@@ -42,8 +42,8 @@ circles, one in each square.
 
 *Lean:
 [`Four.model_packing`](../../SquaresInCircles/Four/Construction.lean#L21),
-[`Four.uniqueness`](../../SquaresInCircles/Four/Uniqueness.lean#L69),
-[`Four.optimum`](../../SquaresInCircles/Four/Uniqueness.lean#L117).*
+[`Four.uniqueness`](../../SquaresInCircles/Four/Uniqueness.lean#L50),
+[`Four.optimum`](../../SquaresInCircles/Four/Uniqueness.lean#L98).*
 
 *Outline of the proof.* Part (1) is the construction, Proposition 7.2 (§7.1).
 Parts (2) and (3) follow, by
@@ -282,8 +282,8 @@ $\Gamma_{1/2}$, and [Lemma 3.21](common.md#lemma-321-charts) (2), with
 $(l, h) = (0, \frac\pi2)$, gives the arc of half-width $\frac\pi4$ and centre
 $\theta_S + \varepsilon_S\frac\pi4 = \mu_S$. $\square$
 
-*Lean: [`Four.quarter_arc`](../../SquaresInCircles/Four/Uniqueness.lean#L31),
-[`Four.vertexMid`](../../SquaresInCircles/Four/Uniqueness.lean#L26).*
+*Lean: [`Four.quarter_arc`](../../SquaresInCircles/Four/Containing.lean#L21),
+[`Four.vertexMid`](../../SquaresInCircles/Four/Containing.lean#L16).*
 
 ## 7.4 The block
 
@@ -312,7 +312,7 @@ quarter turn, $(x, y) \mapsto (-y, x)$, which is $(\frac12, \frac12)$.
 $\square$
 
 *Lean:
-[`Four.vertex_represents`](../../SquaresInCircles/Four/Uniqueness.lean#L45).*
+[`Four.vertex_represents`](../../SquaresInCircles/Four/Uniqueness.lean#L26).*
 
 The proof of Proposition 7.3 now assembles these lemmas. Figure 7.8 shows why
 no square can contain the disk centre once the disk centre is a vertex of
@@ -386,7 +386,7 @@ square satisfies (7.1), and the squares are pairwise disjoint.
    [Lemma 3.31](common.md#lemma-331-from-slots-to-congruence) shows that the
    packing is congruent to the block. $\square$
 
-*Lean: [`Four.uniqueness`](../../SquaresInCircles/Four/Uniqueness.lean#L69).*
+*Lean: [`Four.uniqueness`](../../SquaresInCircles/Four/Uniqueness.lean#L50).*
 
 ## 7.5 Proof of Theorem 7.1
 
@@ -397,6 +397,6 @@ $n = 4$, $R_4 = \sqrt2$ and $\mathcal M = \lbrace\text{the block}\rbrace$:
 $1^2 + 1^2 = 2 = R_4^2$; (c) is Proposition 7.3. Parts (1), (2), (3) of the
 theorem are (a), (i) and (ii). $\square$
 
-*Lean: [`Four.optimum`](../../SquaresInCircles/Four/Uniqueness.lean#L117),
+*Lean: [`Four.optimum`](../../SquaresInCircles/Four/Uniqueness.lean#L98),
 [`Optimum.isLeast`](../../SquaresInCircles/Common/Optimum.lean#L61),
 [`Optimum.packing_iff`](../../SquaresInCircles/Common/Optimum.lean#L67).*
