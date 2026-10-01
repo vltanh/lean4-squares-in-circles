@@ -35,13 +35,16 @@ trusts the compiler, would add `Lean.ofReduceBool`.
 #print axioms SquaresInCircles.Three.compensation
 #print axioms SquaresInCircles.Three.axial_pair_impossible
 
--- Six squares: the model, the central square and the normalization, the
--- analytical reduction, the radius bound, and uniqueness.
+-- Six squares: the model, the central square and the box of its centre, the
+-- normalization, the separators of the turned square, the stress bound at the
+-- optimal radius, the eight contacts, and uniqueness.
 #print axioms SquaresInCircles.Six.model_packing
 #print axioms SquaresInCircles.Six.exists_containing
-#print axioms SquaresInCircles.Six.Normalization.strict_marker_separation
-#print axioms SquaresInCircles.Six.Normalization.normalize_of_candidate
-#print axioms SquaresInCircles.Six.Analytic.FixedPair.complete_reduction
+#print axioms SquaresInCircles.Six.Normalization.central_box
+#print axioms SquaresInCircles.Six.Normalization.normalize
+#print axioms SquaresInCircles.Six.wing_separators
+#print axioms SquaresInCircles.Six.Stress.stress_bound
+#print axioms SquaresInCircles.Six.Equality.model_of_contacts
 #print axioms SquaresInCircles.Six.uniqueness
 
 -- Seven squares: the marker arc, the gap of pi/3 (nonnegative, zero only at
@@ -51,7 +54,7 @@ trusts the compiler, would add `Lean.ofReduceBool`.
 #print axioms SquaresInCircles.Seven.fixed_gap_nonneg
 #print axioms SquaresInCircles.Seven.fixed_gap_zero
 #print axioms SquaresInCircles.Seven.all_gap_pos_below
-#print axioms SquaresInCircles.Seven.SAT.separating_axes
+#print axioms SquaresInCircles.SAT.separating_axes
 #print axioms SquaresInCircles.Seven.marker_separation_closed
 #print axioms SquaresInCircles.Seven.ordered_chart_contact
 #print axioms SquaresInCircles.Seven.six_directions_hexagon

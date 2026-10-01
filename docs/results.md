@@ -68,19 +68,18 @@ as in the optimal packing (`Seven.ordered_chart_contact`).
 
 For six squares `Six.model` has five axis-parallel squares and one turned by
 `π / 4`, `Six.diagonalSquare`, so there are no `Six.centers`. `Six.uniqueness`
-goes through three steps, each a theorem of its own:
-`Six.Normalization.normalize_of_candidate` puts any packing of squared radius
-at most `Six.qStar` in a frame of the square that contains the disk centre,
-with the other five labelled by fixed pins (up to a reflection in a diagonal);
-`Six.Analytic.FixedPair.complete_reduction` shows that such a normalized
-packing is separated as the optimal one is and has its angles in the domains
-of the stress estimate; and
-`Six.Equality.AnalyticReconstruction.original_congruent_of_reduction` turns
-the tight stress at the radius `Six.radius` into congruence to `Six.model`.
-The case builds on seven squares: `Six.exists_containing` uses the ring of
-`Seven.six_exterior_ring` to find the square that contains the disk centre,
-and `Six.Normalization.strict_marker_separation` sharpens the pair theorem of
-seven squares below the radius `√13 / 2`.
+chains four theorems. `Six.Normalization.normalize` puts any packing of squared
+radius at most `Six.qStar` in the frame of the square that contains the disk
+centre (`Six.exists_containing`, by the arcs that the other squares hold on the
+circle of radius `9/10`, as for three to five squares), with the centre of that
+square in a small box (`Six.Normalization.central_box`) and the other five
+labelled by fixed pins, up to a reflection in a diagonal. `Six.wing_separators`
+shows that the turned square is separated from its two neighbours along their
+axes, as in the model. `Six.Stress.stress_bound` shows that at the radius
+`Six.radius` the stress of the model forces the angles of the model and its
+eight contacts, with the angles of the two wings bounded by
+`Six.WestTail.own_west_bound` and `Six.SouthTail.own_south_bound`. And
+`Six.Equality.model_of_contacts` rebuilds the model from the contacts.
 
 `Five.polygon_uniqueness` needs only interior-disjointness and the closed 12-gon
 of [Definition 8.4](proof/five.md#definition-84-the-12-gon), not the disk

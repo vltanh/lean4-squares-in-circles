@@ -35,11 +35,10 @@ disk) and `Uniqueness.lean`, which ends with the case's `optimum`, an `Optimum`
 circle, and uniqueness; `Optimum.lean` derives every lower bound from
 uniqueness. Three to five squares add `Exterior.lean` (the contact polygon, and
 the arcs of the squares that avoid the disk centre), and three and five squares
-`Containing.lean` (the square that contains it). Seven squares spread the pair
-theorem, the ring and the middle column over the files [below](#seven), and
-six squares their normalization, stresses and estimates over the files
-[below](#six). Each case imports only `Common/` and its own folder, except six
-squares, which also import the pair theorem and the ring of seven squares.
+`Containing.lean` (the square that contains it). Six squares spread their
+normalization, separators and estimates over the files [below](#six), and seven
+squares the pair theorem, the ring and the middle column over the files
+[below](#seven). Each case imports only `Common/` and its own folder.
 
 ## `Common/`
 
@@ -56,6 +55,8 @@ squares, which also import the pair theorem and the ring of seven squares.
 | `RectangleArcs.lean` | Arcs of an exterior square: between its edges, and the cap on small circles |
 | `ArcBudget.lean` | The budget of a packing: some square avoids the disk centre, and the square that contains it can be replaced by its radial sweep |
 | `ElementaryTrig.lean` | Arcsine and cosine estimates with exact rational constants |
+| `Analysis.lean` | Monotonicity and concavity from derivatives, positivity from a curvature bound and one value, Taylor bounds of `sin` and `cos`, the largest value at a peak |
+| `SeparatingAxes.lean` | The separating-axis theorem: disjoint squares are separated along one of their four edge axes, each with its threshold |
 | `Constructions.lean` | Axis-parallel squares centred at given points: membership, disjointness and containment |
 | `Congruence.lean` | Congruence to a model from square-by-square slots; open squares determine closed ones; configurations congruent to a packing are packings; the rigid-motion witness |
 | `Optimum.lean` | `Optimum`, the statement every case proves; the lower bound, the least radius and the converse of uniqueness for all cases |
@@ -80,11 +81,29 @@ packs the disk of that radius. Seven squares instead have the column packings
 their `Construction.lean` also defines `centers` and `model`, the column centred
 at the disk centre.
 
+## Six
+
+The proof of six squares is uniqueness at the optimal radius, in 44 files and
+about 19,600 lines, most of them estimates in one variable on whole intervals
+of angles:
+
+| part | files | contents |
+| --- | --- | --- |
+| construction | `Constants.lean`, `Construction.lean` | the constants of the model, their identities and rational brackets; the model packs the disk |
+| tools | `Analysis.lean`, `Supports.lean` | concavity, harmonics and Taylor brackets in one variable; the support of a square in the disk |
+| the central square | `Normalization/CentralSquare.lean` | a square contains the disk centre, by the arcs that the other squares hold on the circle of radius `9/10`; the box of its centre |
+| normalization | the other 8 files of `Normalization/` | charts and the separating axes of the central square; squares in a deep cap; the five pins, the labels, their windows and order; `D` separated from the central square along its own axis; normalized packings and the axes of their pairs |
+| separators | `Separators/` (9 files) | the axes that separate consecutive squares; the angle of `D` exceeds `1/2`; the profile of `D`; walls, missing wings and the signs of the wings |
+| wings | `Wings/` (11 files) | no wing is missing: `D` is separated from `W` and from `S` along their axes, case by case |
+| tails | `Tails/West.lean`, `Tails/South.lean` | the angles of `W` and `S` when they are separated along their own axes |
+| the stress bound | `Stress/` (6 files) | the pair and diagonal estimates; at the optimal radius the stress forces the angles of the model and its eight contacts |
+| equality | `Equality/Contacts.lean`, `Equality/Reflection.lean`, `Uniqueness.lean` | the eight contacts fix every centre; the diagonal reflection; congruence to the model and the optimum |
+
 ## Seven
 
 The proof of seven squares is uniqueness at the optimal radius, in five steps
 ([seven.md](proof/seven.md)). Steps 1 to 3, the states and markers, the marker
-arc and the pair theorem, take 24 files beside `Construction.lean`; steps 4 and
+arc and the pair theorem, take 22 files beside `Construction.lean`; steps 4 and
 5, the ring of six squares and the middle column, take `Uniqueness.lean` and
 the 2 files in `Seven/Uniqueness/`:
 
@@ -92,26 +111,9 @@ the 2 files in `Seven/Uniqueness/`:
 | --- | --- | --- |
 | construction | `Construction.lean` | the column packings pack the disk; the four gaps of a column |
 | states and markers | `Labels.lean`, `Support.lean`, `PairModel.lean` | states, labels and markers; the support function; the support sums of a canonical pair |
-| the marker arc | `Analysis.lean`, `MarkerArc.lean` | monotonicity, curvature, Taylor bounds and peaks in one variable; the arc of half-width `801/1600` |
+| the marker arc | `MarkerArc.lean` | the arc of half-width `801/1600` |
 | tools for the sectors | `Contacts.lean`, `LabelBoundary.lean`, `BoundarySegments.lean`, `BoundaryProfiles.lean`, `TargetBoundaryMonotonicity.lean` | contacts; the boundary of the label regions, segments of constant label, and profiles along the boundary |
 | the gap of `π/3` | `EasySectors.lean`, `InwardAxialTarget.lean`, `InwardSideTarget.lean`, `InwardOppositeMinima.lean`, `InwardOpposite.lean`, `ForwardNegativeTarget.lean`, `ForwardBothNegative.lean`, `OppositeForward.lean`, `FixedGap.lean` | the outward, backward, inward and forward axes, sector by sector, with their zeros, and their assembly |
 | all gaps | `SmoothMinima.lean`, `AllGaps.lean` | leftmost and smooth minima of a support sum; every gap below `π/3` |
-| the pair theorem | `SeparatingAxes.lean`, `CanonicalPair.lean`, `MarkerSeparation.lean` | the separating-axis theorem; canonical pairs; markers at least `π/3` apart, and contacts at exactly `π/3` |
+| the pair theorem | `CanonicalPair.lean`, `MarkerSeparation.lean` | canonical pairs; markers at least `π/3` apart, and contacts at exactly `π/3` |
 | the ring and the middle column | `Uniqueness/ContactCycle.lean`, `Uniqueness/CentralSquare.lean`, `Uniqueness.lean` | the regular hexagon of markers and the ring of six squares; the square in the middle; a square contains the disk centre, congruence to a column packing, and the optimum |
-
-## Six
-
-The proof of six squares is uniqueness at the optimal radius. It is by far the
-largest case, 265 files and about 34,000 lines, most of them one-variable
-estimates on whole angle intervals:
-
-| part | files | contents |
-| --- | --- | --- |
-| construction | `Candidate.lean`, `Construction.lean` | the constants of the model and their identities; the model packs the disk |
-| the central square | `Containing.lean`, `NormalizeFrame.lean`, `DiagonalReflection.lean`, `CongruenceTools.lean` | a square contains the disk centre (by the ring of seven squares); the frame of that square; the diagonal reflection |
-| normalization | `Normalization/` (29 files), `SquareSupport.lean`, `DirectedAxes.lean`, `PreferredAxes.lean`, `PinAxes.lean`, `PinChords.lean`, `CanonicalMargins.lean`, `DiagonalPositive.lean`, and the core, cap, pin and west-stress files of `Analytic/` | the central box, the charts, the five pins and labels, their windows and order, and the separators from the central square |
-| stresses | `Stress/` (12 files) | the reverse-stress inequality, the support of a square in a disk, the stress of the model, and the diagonal force |
-| the stress bound | `Analytic/FixedPair*.lean`, `Analytic/Pair*.lean`, `Analytic/FixedDiagonal*.lean`, `Analytic/SelectedPairWork.lean` and their tools | the pair and diagonal estimates that turn the stress into `R ≥ R₆` |
-| the reduction | the rest of `Analytic/` (204 files in all), with a folder per case of a missing wing or a tail, and `Analytic/CompleteReduction.lean` | the separators between `W`, `D` and `S` and the angle domains of the stress bound |
-| equality | `Equality/` (6 files), `Uniqueness.lean` | the eight contacts fix every centre; the reflection is absorbed; congruence to the model and the optimum |
-

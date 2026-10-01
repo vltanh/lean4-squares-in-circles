@@ -1,5 +1,5 @@
 import SquaresInCircles.Seven.Contacts
-import SquaresInCircles.Seven.SeparatingAxes
+import SquaresInCircles.Common.SeparatingAxes
 
 /-!
 # The canonical pair

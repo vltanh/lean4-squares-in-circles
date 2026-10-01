@@ -1,49 +1,24 @@
-import SquaresInCircles.Six.Candidate
+import SquaresInCircles.Six.Normalization.Basic
 import SquaresInCircles.Common.Constructions
 
 /-!
-# Six squares: construction
+# The six-square model
 
-A central square with a neighbour on each side, and a sixth square turned by
-`π/4` in the corner between the left and lower neighbours, pack the disk of the
-optimal radius `radius`. The five axis-parallel squares are pairwise separated
-along a coordinate axis and have their farthest corners in the disk. The open
-turned square is the diamond `|x + dStar| + |y + dStar| < hStar`, with its two
-farthest vertices on the circle; it lies left of `x = tStar - 1/2` and below
-`y = tStar - 1/2`, which bound the four neighbours, and below the line
-`x + y = 2 * sStar - 1`, which bounds the central square. The radius and the
-model are defined with the statement, in `Geometry.lean`.
+The model packs the disk of radius `radius = √q*`, whose circle passes through
+the far corners of E and W and the far vertices of D (`Constants`):
+the five axis-parallel squares are pairwise separated along a coordinate axis
+and have their farthest corners in the disk, and the turned square is the
+diamond `|x + d*| + |y + d*| < h`, with its two farthest vertices on the circle;
+it lies left of `x = t* - 1/2` and below `y = t* - 1/2`, which bound the four
+neighbours, and below the line `x + y = 2 s* - 1`, which bounds the central
+square. The radius and the model are defined with the statement, in
+`Geometry.lean`.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six
 
-/-- If `phi` of the local coordinates of `o` is at most `R ^ 2`, the closed
-square lies in the closed disk of radius `R` about `o`: the converse of the
-farthest-vertex bound. -/
-lemma inDisk_of_phi_le {S : UnitSquare} {o : Point} {R : ℝ}
-    (hphi : phi (alpha S o) (beta S o) ≤ R ^ 2)
-    {p : Point} (hp : closedSquare S p) : inDisk o R p := by
-  have hx : |localX S p - localX S o| ≤ alpha S o + 1 / 2 := by
-    have hh := abs_add_le (localX S p) (-localX S o)
-    rw [abs_neg, ← sub_eq_add_neg] at hh
-    dsimp [alpha]
-    linarith [hp.1]
-  have hy : |localY S p - localY S o| ≤ beta S o + 1 / 2 := by
-    have hh := abs_add_le (localY S p) (-localY S o)
-    rw [abs_neg, ← sub_eq_add_neg] at hh
-    dsimp [beta]
-    linarith [hp.2]
-  have hxp := mul_nonneg (sub_nonneg.mpr hx)
-    (show 0 ≤ alpha S o + 1 / 2 + |localX S p - localX S o| by
-      linarith [alpha_nonneg S o, abs_nonneg (localX S p - localX S o)])
-  have hyp := mul_nonneg (sub_nonneg.mpr hy)
-    (show 0 ≤ beta S o + 1 / 2 + |localY S p - localY S o| by
-      linarith [beta_nonneg S o, abs_nonneg (localY S p - localY S o)])
-  change normSq (sub p o) ≤ R ^ 2
-  rw [← frame_distance S]
-  dsimp [phi] at hphi
-  nlinarith [sq_abs (localX S p - localX S o), sq_abs (localY S p - localY S o)]
+/-! ### The packing -/
 
 /-- The centres of the five axis-parallel squares of the model, in the order
 C, N, E, W, S. -/
@@ -57,16 +32,16 @@ lemma axisCenters_separated (i j : Fin 5) (hij : i ≠ j) :
   all_goals try exact False.elim (hij rfl)
   all_goals dsimp [axisCenters, AxisSeparated]
   all_goals first
-    | exact Or.inl (by linarith [sStar_lt_fifth, tStar_bounds.1])
-    | exact Or.inr (Or.inl (by linarith [sStar_lt_fifth, tStar_bounds.1]))
-    | exact Or.inr (Or.inr (Or.inl (by linarith [sStar_lt_fifth, tStar_bounds.1])))
-    | exact Or.inr (Or.inr (Or.inr (by linarith [sStar_lt_fifth, tStar_bounds.1])))
+    | exact Or.inl (by linarith [sStar_bounds.2, tStar_bounds.1])
+    | exact Or.inr (Or.inl (by linarith [sStar_bounds.2, tStar_bounds.1]))
+    | exact Or.inr (Or.inr (Or.inl (by linarith [sStar_bounds.2, tStar_bounds.1])))
+    | exact Or.inr (Or.inr (Or.inr (by linarith [sStar_bounds.2, tStar_bounds.1])))
 
 lemma axisCenters_contained (i : Fin 5) :
     (|(axisCenters i).1| + 1 / 2) ^ 2 +
       (|(axisCenters i).2| + 1 / 2) ^ 2 ≤ radius ^ 2 := by
   have hs : 0 < sStar + 1 := by linarith [sStar_pos]
-  have hw : sStar - 1 < 0 := by linarith [sStar_lt_fifth]
+  have hw : sStar - 1 < 0 := by linarith [sStar_bounds.2]
   have ht : 0 < tStar := by linarith [tStar_bounds.1]
   rw [radius_sq]
   fin_cases i
@@ -142,8 +117,8 @@ lemma central_diagonal_disjoint :
   have hm := mul_lt_mul_of_pos_left hxy hStar_pos
   have ht := mul_lt_mul_of_pos_left
     (show (18 : ℝ) / 25 < 2 * (sStar + dStar) - 1 by
-      linarith [central_diagonal_clearance]) hStar_pos
-  have hv : (1 : ℝ) / 2 < hStar * (18 / 25) := by linarith [hStar_lower]
+      unfold dStar; linarith [sStar_bounds.1, hStar_bounds.1, tStar_bounds.2]) hStar_pos
+  have hv : (1 : ℝ) / 2 < hStar * (18 / 25) := by linarith [hStar_bounds.1]
   have hl : localX diagonalSquare p = hStar * (p.1 + p.2 + 2 * dStar) := by
     dsimp [localX, diagonalSquare]
     ring

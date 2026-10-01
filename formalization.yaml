@@ -18,14 +18,14 @@ project:
     n = 7 the optimal packings form a three-parameter family: two columns of
     two squares and, between them, a column of three whose heights vary
     independently, at least 1 apart and within √3 − 1/2 of the disk centre.
-    The proofs for three to five squares bound the arcs the squares occupy on
-    a small circle about the disk centre; for seven squares, each square
-    avoiding the disk centre gets a direction from it, and in the optimal disk
-    two disjoint such squares get directions at least π/3 apart. Six squares
-    build on that: one square contains the disk centre, five fixed points
-    label the others, and a weighted sum of separating inequalities, with
-    estimates uniform in the angles of the squares, forces the optimal
-    radius. We found no earlier proof for five, six or seven squares, and no
+    The proofs for three to six squares bound the arcs the squares occupy on
+    a small circle about the disk centre. For six squares this puts one
+    square at the disk centre; five fixed points label the others, and a
+    weighted sum of separating inequalities, with estimates uniform in the
+    angles of the squares, forces the optimal radius. For seven squares, each
+    square avoiding the disk centre gets a direction from it, and in the
+    optimal disk two disjoint such squares get directions at least π/3 apart.
+    We found no earlier proof for five, six or seven squares, and no
     exact one for three, where a computer-assisted enclosure of the radius and
     the optimal arrangements was known. Four squares, uniqueness included,
     were settled by hand in 2026, by the same idea as here.

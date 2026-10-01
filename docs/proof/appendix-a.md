@@ -44,9 +44,9 @@ $\xi \in (x, y)$ with $f(y) - f(x) = f'(\xi)(y - x) \ge 0$. (2) Apply (1) to
 $-f$. (3) For $x > 0$, (1) on $[0, x]$ gives $f(x) \ge f(0) = 0$. $\square$
 
 *Lean:
-[`Seven.monoOn_of_hasDeriv_nonneg`](../../SquaresInCircles/Seven/Analysis.lean#L16),
-[`Seven.antiOn_of_hasDeriv_nonpos`](../../SquaresInCircles/Seven/Analysis.lean#L24),
-[`Seven.nonneg_of_deriv_nonneg`](../../SquaresInCircles/Seven/Analysis.lean#L123).*
+[`monoOn_of_hasDeriv_nonneg`](../../SquaresInCircles/Common/Analysis.lean#L16),
+[`antiOn_of_hasDeriv_nonpos`](../../SquaresInCircles/Common/Analysis.lean#L24),
+[`nonneg_of_deriv_nonneg`](../../SquaresInCircles/Common/Analysis.lean#L123).*
 
 ### Lemma A.2 (tangent parabolas)
 
@@ -72,8 +72,7 @@ $h_1 \le 0$ on $[l, t]$ and $h_1 \ge 0$ on $[t, u]$. By Lemma A.1 again, $h$ is
 nonincreasing on $[l, t]$ and nondecreasing on $[t, u]$. As $h(t) = 0$, we get
 $h \ge 0$ on $[l, u]$, and $h(x) \ge 0$ is the claim. $\square$
 
-*Lean:
-[`Seven.curvature_tangent`](../../SquaresInCircles/Seven/Analysis.lean#L34).*
+*Lean: [`curvature_tangent`](../../SquaresInCircles/Common/Analysis.lean#L34).*
 
 With $\kappa = 0$, Lemma A.2 says that a function with a nonnegative second
 derivative lies above its tangent lines; applied to $-f$, that a function with
@@ -101,7 +100,7 @@ value of the parabola, $f(t) - d(t)^2/2\kappa$ (green), is positive.
 ```
 
 *Lean:
-[`Seven.positive_of_curvature`](../../SquaresInCircles/Seven/Analysis.lean#L64).*
+[`positive_of_curvature`](../../SquaresInCircles/Common/Analysis.lean#L64).*
 
 ### Lemma A.4 (positivity from concavity)
 
@@ -125,7 +124,7 @@ f(x) \ge \frac{(u - x) f(l) + (x - l) f(u)}{u - l} \ge \min\left(f(l), f(u)\righ
 ```
 
 *Lean:
-[`Seven.positive_of_second_nonpos`](../../SquaresInCircles/Seven/Analysis.lean#L73).*
+[`positive_of_second_nonpos`](../../SquaresInCircles/Common/Analysis.lean#L73).*
 
 ### Lemma A.5 (concave trigonometric sums)
 
@@ -144,8 +143,7 @@ chord (orange); if both end values exceed $m$, so does every value between.
 and $e(y) = -A\sin y - B\cos y$. For $y \in [l, u] \subset [0, \frac\pi2]$ we
 have $\sin y \ge 0$ and $\cos y \ge 0$, so $e(y) \le 0$. $\square$
 
-*Lean:
-[`Seven.trig_concave_gt`](../../SquaresInCircles/Seven/Analysis.lean#L93).*
+*Lean: [`trig_concave_gt`](../../SquaresInCircles/Common/Analysis.lean#L93).*
 
 ## A.2 Sine and cosine
 
@@ -168,9 +166,9 @@ $\cos x \le \cos(\frac\pi2 - x) = \sin x$. (3)
 $\cos z \ge \cos\frac\pi3 = \frac12$. $\square$
 
 *Lean:
-[`Seven.sin_le_cos_of_small`](../../SquaresInCircles/Seven/Analysis.lean#L108),
-[`Seven.cos_le_sin_of_quarter`](../../SquaresInCircles/Seven/Analysis.lean#L112),
-[`Seven.cos_ge_half`](../../SquaresInCircles/Seven/Analysis.lean#L117).*
+[`sin_le_cos_of_small`](../../SquaresInCircles/Common/Analysis.lean#L108),
+[`cos_le_sin_of_quarter`](../../SquaresInCircles/Common/Analysis.lean#L112),
+[`cos_ge_half`](../../SquaresInCircles/Common/Analysis.lean#L117).*
 
 ### Lemma A.7 (Taylor bounds)
 
@@ -215,11 +213,10 @@ are the classical bounds $\sin x \le x$, $\cos x \ge 1 - \frac{x^2}2$ and
 $\sin x \ge x - \frac{x^3}6$; $g_4, g_5, g_6, g_7 \ge 0$ are (1) to (4).
 $\square$
 
-*Lean:
-[`Seven.cos_upper_four`](../../SquaresInCircles/Seven/Analysis.lean#L132),
-[`Seven.sin_upper_five`](../../SquaresInCircles/Seven/Analysis.lean#L139),
-[`Seven.cos_lower_six`](../../SquaresInCircles/Seven/Analysis.lean#L146),
-[`Seven.sin_lower_seven`](../../SquaresInCircles/Seven/Analysis.lean#L153).*
+*Lean: [`cos_upper_four`](../../SquaresInCircles/Common/Analysis.lean#L132),
+[`sin_upper_five`](../../SquaresInCircles/Common/Analysis.lean#L139),
+[`cos_lower_six`](../../SquaresInCircles/Common/Analysis.lean#L146),
+[`sin_lower_seven`](../../SquaresInCircles/Common/Analysis.lean#L153).*
 
 Both sides of (1) and (3) are even functions of $x$, so these two bounds hold
 for every real $x$.
@@ -239,7 +236,7 @@ the cosine decreasing on $[0, \pi] \supset [l, u]$, so
 $\sin l \le \sin x \le \sin u$ and $\cos u \le \cos x \le \cos l$. Now apply
 Lemma A.7 (4) at $l$, (2) at $u$, (3) at $u$ and (1) at $l$. $\square$
 
-*Lean: [`Seven.trig_bracket`](../../SquaresInCircles/Seven/Analysis.lean#L161).*
+*Lean: [`trig_bracket`](../../SquaresInCircles/Common/Analysis.lean#L161).*
 
 ## A.3 A peak
 
@@ -264,7 +261,7 @@ $x \in [l, u]$. If $x \le c$, then $f$ is nondecreasing on $[l, c]$ by
 Lemma A.1 (1), so $f(x) \le f(c)$. If $x \ge c$, then $f$ is nonincreasing on
 $[c, u]$ by Lemma A.1 (2), so again $f(x) \le f(c)$. $\square$
 
-*Lean: [`Seven.le_at_peak`](../../SquaresInCircles/Seven/Analysis.lean#L174).*
+*Lean: [`le_at_peak`](../../SquaresInCircles/Common/Analysis.lean#L174).*
 
 In use, $d(y)$ is a product of factors of constant sign on $[l, u]$ and one
 affine factor that vanishes at $c$; Lemma A.14 is an example (Figure A.11).

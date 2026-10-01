@@ -246,6 +246,16 @@ squares. Six squares do not have their chapter yet.
   so every inequality is tight, and the tight configurations are rebuilt into
   the optimal packing. A square containing the disk centre needs a separate
   argument, which for three squares is the hardest part of the proof.
+- **Six squares.** As for three to five squares, every square that avoids the
+  disk centre holds an arc of a small circle about it, here of radius `9/10`,
+  and six such arcs do not fit, so one square contains the disk centre; five
+  fixed points near the centre label the other five. A weighted sum of
+  separating inequalities, with weights that balance at the optimal packing,
+  bounds the radius; most of the proof shows that an arbitrary packing is
+  separated as the optimal one is, with estimates uniform over whole intervals
+  of angles. At the optimal radius every inequality is tight, and eight
+  contacts rebuild the packing, the only one in the library with a square
+  turned against the others.
 - **Seven squares.** Each square that avoids the disk centre gets a marker, a
   direction from the disk centre. In the disk of radius `√13 / 2`, two
   disjoint such squares have markers at least `π/3` apart, and exactly `π/3`
@@ -254,16 +264,6 @@ squares. Six squares do not have their chapter yet.
   pairwise at least `π/3` apart, so one square contains the disk centre, and
   the markers of the other six form a regular hexagon, which rebuilds the
   packing up to the heights of the three middle squares.
-- **Six squares.** Seven squares come first, because six squares build on
-  them: in the disk of radius `R₆ ≈ 1.6885`, the markers rule out six squares
-  that all avoid the disk centre, so one square contains it, and five fixed
-  points near the centre label the other five. A weighted sum of separating
-  inequalities, with weights that balance at the optimal packing, bounds the
-  radius; most of the proof shows that an arbitrary packing is separated as
-  the optimal one is, with estimates uniform over whole intervals of angles.
-  At the optimal radius every inequality is tight, and eight contacts rebuild
-  the packing, the only one in the library with a square turned against the
-  others.
 - **The lower bound** is shared by all cases: a packing in a smaller disk also
   packs the optimal one, so it is congruent to a model, whose outer corners
   reach the circle of the optimal radius.
@@ -308,14 +308,13 @@ SquaresInCircles/
 ├── One/  Two/             Construction, Uniqueness
 ├── Three/ Five/           Construction, Exterior, Containing, Uniqueness
 ├── Four/                  Construction, Exterior, Uniqueness
-├── Six/                   Construction, the normalization, the stresses and
-│                          their scalar estimates, Equality/, Uniqueness
+├── Six/                   Construction, Normalization/, Separators/, Wings/,
+│                          Tails/, Stress/, Equality/, Uniqueness
 └── Seven/                 Construction, the pair theorem, Uniqueness, and
                            Uniqueness/ for the ring and the middle square
 ```
 
-Each case imports only `Common/` and its own folder, except six squares, which
-also import the marker separation and the ring of `Seven/`.
+Each case imports only `Common/` and its own folder.
 
 ## Verification
 

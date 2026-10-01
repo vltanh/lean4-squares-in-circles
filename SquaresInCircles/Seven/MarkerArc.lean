@@ -1,5 +1,5 @@
 import SquaresInCircles.Seven.Labels
-import SquaresInCircles.Seven.Analysis
+import SquaresInCircles.Common.Analysis
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
 
 /-!

@@ -816,9 +816,9 @@ contradiction proves the lemma. $\square$
 
 *Lean:
 [`Seven.canonical_has_separator`](../../SquaresInCircles/Seven/CanonicalPair.lean#L80),
-[`Seven.SAT.separating_axes`](../../SquaresInCircles/Seven/SeparatingAxes.lean#L235),
-[`Seven.SAT.all_normals_strict`](../../SquaresInCircles/Seven/SeparatingAxes.lean#L219),
-[`Seven.SAT.octagonSupport`](../../SquaresInCircles/Seven/SeparatingAxes.lean#L17).*
+[`SAT.separating_axes`](../../SquaresInCircles/Common/SeparatingAxes.lean#L235),
+[`SAT.all_normals_strict`](../../SquaresInCircles/Common/SeparatingAxes.lean#L219),
+[`SAT.octagonSupport`](../../SquaresInCircles/Common/SeparatingAxes.lean#L17).*
 
 ![Left: the canonical pair of Figure 9.6 and the vector Delta from the centre of S to the centre of T. Right: the octagon K of differences of the two squares, centred at the origin, with its eight edge lines dashed and their outer normals plus and minus e1, e2, f1, f2; the point Delta lies outside the octagon, beyond the left edge, at the negative distance sigma2](figures/seven-octagon.svg)
 

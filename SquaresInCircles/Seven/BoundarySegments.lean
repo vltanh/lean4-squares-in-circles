@@ -1,6 +1,6 @@
 import SquaresInCircles.Seven.LabelBoundary
 import SquaresInCircles.Seven.Support
-import SquaresInCircles.Seven.Analysis
+import SquaresInCircles.Common.Analysis
 
 /-!
 # Segments of constant label
