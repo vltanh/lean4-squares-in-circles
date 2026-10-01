@@ -52,7 +52,7 @@ squares the pair theorem, the ring and the middle column over the files
 | `ArcMetric.lean` | Midpoint separation of disjoint arcs; circle perimeter inequality; three-arc budget |
 | `Charts.lean` | `SquareChart`: membership seen from the disk centre, sorted coordinates, arcs from chart intervals, the half circle of a square with `a = 1/2` |
 | `Coordinates.lean` | Points in a rotated frame at the disk centre; a chart in Cartesian coordinates |
-| `RectangleArcs.lean` | Arcs of an exterior square: between its edges, and the cap on small circles |
+| `RectangleArcs.lean` | Arcs of an exterior square: between its edges, bounded by the four sums `2A`, `A + U`, `A + V`, `U + V`, and the cap on small circles |
 | `ArcBudget.lean` | The budget of a packing: some square avoids the disk centre, and the square that contains it can be replaced by its radial sweep |
 | `Analysis.lean` | Monotonicity and concavity from derivatives, positivity from a curvature bound and one value, the largest value at a peak, leftmost minima |
 | `Trigonometry.lean` | Bounds for `π`, `sin`, `cos` and `arcsin`: small angles, Taylor brackets, concave first harmonics, radicals and rotating lengths, half angles |

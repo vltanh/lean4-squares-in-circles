@@ -326,11 +326,13 @@ $(a, b) \in P_5$, and put
 A = \arccos\tfrac65\left(a - \tfrac12\right), \qquad V = \arcsin\tfrac65\left(\tfrac12 - b\right), \qquad U = \arcsin\tfrac65\left(b + \tfrac12\right) .
 ```
 
-Then
+Then each of the four sums
 
 ```math
-\min(A, U) + \min(A, V) > \tfrac{2\pi}5 .
+2A, \qquad A + U, \qquad A + V, \qquad U + V
 ```
+
+exceeds $\frac{2\pi}5$.
 
 *Proof.* From $3a + b \le 3$ and $b \ge 0$ we get $a \le 1$. Put
 $x = a - \frac12$ and $y = b - \frac12$. Then $0 \le x \le \frac12$ and, as
@@ -341,8 +343,7 @@ $\arccos z = \frac\pi2 - \arcsin z$ and the arcsine is odd,
 A = \tfrac\pi2 - \arcsin\tfrac{6x}5, \qquad V = -\arcsin\tfrac{6y}5 .
 ```
 
-The number $\min(A, U) + \min(A, V)$ is one of the four sums $2A$, $A + V$,
-$U + A$ and $U + V$. We show that each of them exceeds $\frac{2\pi}5$.
+We bound the four sums in turn.
 
 1. *$2A > \frac{2\pi}5$.* By
    [Lemma 3.29](common.md#lemma-329-elementary-estimates) (5),
@@ -367,9 +368,12 @@ $U + A$ and $U + V$. We show that each of them exceeds $\frac{2\pi}5$.
    with $\theta = \frac\pi5$, gives
    $\frac{2\pi}5 < \arcsin u + \arcsin v = U + V$. $\square$
 
-*Lean: [`Five.arc_length`](../../SquaresInCircles/Five/Exterior.lean#L64).*
+*Lean: [`Five.arc_length`](../../SquaresInCircles/Five/Exterior.lean#L63).*
 
-*Remark.* Only two of the four sums occur. Since $b \ge 0$ and $a \le 1$,
+*Remark.* Only two of the four sums occur as the length
+$\min(A, U) + \min(A, V)$ of the arc of
+[Lemma 3.24](common.md#lemma-324-arcs-of-an-exterior-square) (1). Since
+$b \ge 0$ and $a \le 1$,
 
 ```math
 V \le \arcsin\tfrac35 < \tfrac\pi4 < \arccos\tfrac35 \le A ,
@@ -399,31 +403,29 @@ of $\Gamma_{5/6}$ of half-width greater than $\frac\pi5$.
 $0 \le b_S \le a_S$, and $a_S \le 1$ by $3a_S + b_S \le 3$. So
 $a_S - \frac12 \le \frac12 < \frac56 < 1 \le a_S + \frac12$, and
 [Lemma 3.24](common.md#lemma-324-arcs-of-an-exterior-square) (1) applies on
-$\Gamma_{5/6}$: $S$ holds an arc of $\Gamma_{5/6}$ of length
-$\min(A_S, U_S) + \min(A_S, V_S)$, provided that this number is positive. The
-crossing angles $A_S, V_S, U_S$ are the numbers $A, V, U$ of Lemma 8.9 for
-$(a, b) = (a_S, b_S)$, so this length exceeds $\frac{2\pi}5$, and the arc has
+$\Gamma_{5/6}$ with $w = \frac\pi5$: the crossing angles $A_S, V_S, U_S$ are
+the numbers $A, V, U$ of Lemma 8.9 for $(a, b) = (a_S, b_S)$, so each of the
+four sums exceeds $\frac{2\pi}5$, and $S$ holds an arc of $\Gamma_{5/6}$ of
 half-width greater than $\frac\pi5$. $\square$
 
-*Lean: [`Five.exterior_arc`](../../SquaresInCircles/Five/Exterior.lean#L111).*
+*Lean: [`Five.exterior_arc`](../../SquaresInCircles/Five/Exterior.lean#L110).*
 
 Unlike the circle $\Gamma_{1/2}$ of Chapter 7, the circle $\Gamma_{5/6}$ can
 leave an exterior square through its upper edge, so we use the general arc of
 Lemma 3.24 (1) rather than the cap. The third side of $P_5$ is needed here. At
 the point $(\frac34, \frac34)$, where the first two sides meet,
-$A = \arccos\frac3{10}$,
-$V = -\arcsin\frac3{10}$ and $U = \frac\pi2$, so the arc of Lemma 3.24 (1) has
-length $\frac\pi2 - 2\arcsin\frac3{10}$, less than $\frac{2\pi}5$ because
-$\arcsin\frac3{10} \ge \frac3{10} > \frac\pi{20}$ (Figure 8.7).
+$A = \arccos\frac3{10}$, $V = -\arcsin\frac3{10}$ and $U = \frac\pi2$, so the
+arc of Lemma 3.24 (1) has length $\frac\pi2 - 2\arcsin\frac3{10}$, less than
+$\frac{2\pi}5$ because $\arcsin\frac3{10} \ge \frac3{10} > \frac\pi{20}$
+(Figure 8.7).
 
 ![Two panels in chart coordinates with the circle of radius 5/6 about o. Left: the square centred at (3/4, 3/4), whose arc on the circle, between the lines of its near and lower edges, spans about 55 degrees. Right: the square centred at the corner of the 12-gon, about (0.88, 0.35), whose arc spans about 72.8 degrees](figures/five-third-side.svg)
 
 *Figure 8.7.* Why $P_5$ has a third side. Left: a square at
 $(\frac34, \frac34)$, where the first two sides meet, holds only about 55° of
-$\Gamma_{5/6}$,
-less than a fifth of the circle. Right: at the corner of $P_5$, where
-$3a + b = 3$ meets $a + b = \sqrt5 - 1$, it holds about 72.8°, just more than
-a fifth.
+$\Gamma_{5/6}$, less than a fifth of the circle. Right: at the corner of
+$P_5$, where $3a + b = 3$ meets $a + b = \sqrt5 - 1$, it holds about 72.8°,
+just more than a fifth.
 
 ## 8.4 A centred square
 

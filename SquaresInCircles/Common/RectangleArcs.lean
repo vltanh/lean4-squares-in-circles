@@ -7,8 +7,9 @@ In a chart an exterior square is the unit square centred at `(a, b)` with
 `1/2 ≤ a`. A circle of radius `r` about the disk centre crosses the line of its
 near edge at the chart angles `± capA r a`, and the lines of its lower and upper
 edges at `-capV r b` and `capU r b`. While the circle does not reach the far
-edge, the square holds every chart angle between these crossings. Membership is
-in the open square, so disjoint squares hold disjoint arcs.
+edge, the square holds every chart angle between these crossings, an arc whose
+length is one of `2A`, `A+U`, `A+V` and `U+V`. Membership is in the open
+square, so disjoint squares hold disjoint arcs.
 -/
 noncomputable section
 open Set
@@ -65,6 +66,21 @@ lemma SquareChart.edge_arc {S : UnitSquare} {o : Point} (C : SquareChart S o) {r
       Real.pi_pos])
     fun t ht => cap_mem hr hfar hx ht
   exact ⟨W,by rw [hw]; ring,by rw [hc]; congr 1; ring⟩
+
+/-- An exterior square holds an arc of half-width more than `w ≥ 0` if each of
+`2A`, `A+U`, `A+V` and `U+V` exceeds `2w`: the length of its arc is one of
+them. -/
+lemma SquareChart.edge_arc_gt {S : UnitSquare} {o : Point} (C : SquareChart S o) {r w : ℝ}
+    (hr : 0 < r) (ha : 1/2 ≤ C.a) (ha1 : C.a-1/2 ≤ r) (hfar : r < C.a+1/2) (hw : 0 ≤ w)
+    (hA : w < capA r C.a) (hAU : 2*w < capA r C.a+capU r C.b)
+    (hAV : 2*w < capA r C.a+capV r C.b) (hUV : 2*w < capU r C.b+capV r C.b) :
+    ∃ W : OpenArc o r {p | openSquare S p}, w < W.halfWidth := by
+  have h : 2*w < min (capA r C.a) (capU r C.b)+min (capA r C.a) (capV r C.b) := by
+    rcases min_cases (capA r C.a) (capU r C.b) with ⟨hu,-⟩ | ⟨hu,-⟩ <;>
+      rcases min_cases (capA r C.a) (capV r C.b) with ⟨hv,-⟩ | ⟨hv,-⟩ <;>
+      rw [hu,hv] <;> linarith
+  obtain ⟨W,hW,-⟩ := C.edge_arc hr ha ha1 hfar (by linarith)
+  exact ⟨W,by rw [hW]; linarith⟩
 
 /-- The cap: on a circle of radius at most `1/2` the upper edge is out of
 reach, and the square holds the chart angles from `-min A V` to `A`. -/

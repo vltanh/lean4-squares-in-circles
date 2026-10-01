@@ -785,9 +785,9 @@ and the line of the lower edge at $-V_S$; it does not reach the upper edge.
 The part of the circle inside the square is highlighted: here $V_S < A_S$, so
 the lower edge clips it, and it runs from $-V_S$ to $A_S$.
 
-*Lean: [`capA`](../../SquaresInCircles/Common/RectangleArcs.lean#L20),
-[`capV`](../../SquaresInCircles/Common/RectangleArcs.lean#L21),
-[`capU`](../../SquaresInCircles/Common/RectangleArcs.lean#L22).*
+*Lean: [`capA`](../../SquaresInCircles/Common/RectangleArcs.lean#L21),
+[`capV`](../../SquaresInCircles/Common/RectangleArcs.lean#L22),
+[`capU`](../../SquaresInCircles/Common/RectangleArcs.lean#L23).*
 
 ### Lemma 3.24 (arcs of an exterior square)
 
@@ -798,7 +798,10 @@ the far edge $x = a_S + \frac12$.
    point of $S$ on $\Gamma_r$. So if
    $L = \min(A_S, U_S) + \min(A_S, V_S) > 0$, then $S$ holds an arc of
    $\Gamma_r$ of half-width $\frac L2$ and centre
-   $\theta_S + \varepsilon_S\frac{\min(A_S, U_S) - \min(A_S, V_S)}2$.
+   $\theta_S + \varepsilon_S\frac{\min(A_S, U_S) - \min(A_S, V_S)}2$. In
+   particular, if $w \ge 0$ and each of the four sums $2A_S$, $A_S + U_S$,
+   $A_S + V_S$ and $U_S + V_S$ exceeds $2w$, then $S$ holds an arc of
+   $\Gamma_r$ of half-width more than $w$.
 2. *The cap.* If moreover $r \le \frac12$, $a_S - \frac12 < r$ and
    $b_S \le \frac12$, then $S$ holds the arc of chart angles from
    $-\min(A_S, V_S)$ to $A_S$, of half-width
@@ -844,7 +847,10 @@ $|t| < A_S \le \frac\pi2$.
   $t < U_S$.
 
 So $|r\sin t - b_S| < \frac12$ too, and Lemma 3.21 (2) turns the interval,
-of length $L \le \pi$, into the arc.
+of length $L \le \pi$, into the arc. Each of the two minima in $L$ is one of
+its two arguments, so $L$ is one of the four sums; if all of them exceed
+$2w \ge 0$, then $L > 2w \ge 0$, and the arc has half-width
+$\frac L2 > w$.
 
 (2) Here $b_S + \frac12 \ge \frac12 \ge r$, so $U_S = \frac\pi2 \ge A_S$ and
 $\min(A_S, U_S) = A_S$. Also $A_S > 0$, because $\frac{a_S - 1/2}r < 1$, and
@@ -857,10 +863,11 @@ from $-A_S$ to $A_S$, and its centre is the phase.
 because $\frac{1/2 - b_S}r \ge 1$. By (2), $S$ holds the cap of half-width
 $\frac\pi2$ centred at $\theta_S$. $\square$
 
-*Lean: [`cap_mem`](../../SquaresInCircles/Common/RectangleArcs.lean#L26),
-[`SquareChart.edge_arc`](../../SquaresInCircles/Common/RectangleArcs.lean#L53),
-[`SquareChart.cap_arc`](../../SquaresInCircles/Common/RectangleArcs.lean#L71),
-[`SquareChart.full_cap_arc`](../../SquaresInCircles/Common/RectangleArcs.lean#L87),
+*Lean: [`cap_mem`](../../SquaresInCircles/Common/RectangleArcs.lean#L27),
+[`SquareChart.edge_arc`](../../SquaresInCircles/Common/RectangleArcs.lean#L54),
+[`SquareChart.edge_arc_gt`](../../SquaresInCircles/Common/RectangleArcs.lean#L73),
+[`SquareChart.cap_arc`](../../SquaresInCircles/Common/RectangleArcs.lean#L87),
+[`SquareChart.full_cap_arc`](../../SquaresInCircles/Common/RectangleArcs.lean#L103),
 [`SquareChart.half_arc`](../../SquaresInCircles/Common/Charts.lean#L193).*
 
 ## 3.7 The radial sweep
@@ -1058,7 +1065,7 @@ $\sin\theta < \frac{u+v}2$ lies left of $\mu$, since the sine increases.
 [`arcsin_le_cubic`](../../SquaresInCircles/Common/Trigonometry.lean#L739),
 [`arcsin_sum_gt_of_sin_lt`](../../SquaresInCircles/Common/Trigonometry.lean#L751),
 [`Five.sqrt_five_gt`](../../SquaresInCircles/Five/Exterior.lean#L36),
-[`Five.arc_length`](../../SquaresInCircles/Five/Exterior.lean#L64). (The value
+[`Five.arc_length`](../../SquaresInCircles/Five/Exterior.lean#L63). (The value
 of the cosine in (5) comes from mathlib.)*
 
 ## 3.9 Recognising a model

@@ -58,11 +58,11 @@ lemma arcsin_sum {x y : ℝ} (hx0 : 0 ≤ x) (hx1 : x ≤ 1/2)
       have hprod := mul_nonneg (sub_nonneg.mpr hq) (sub_nonneg.mpr hxsq)
       linarith
 
-/-- On the circle of radius `5/6` the crossings of an exterior square with
-centre in `P5` are more than `2π/5` apart: each of `2A`, `A+V`, `A+U` and `U+V`
-exceeds it. -/
+/-- On the circle of radius `5/6` an exterior square with centre in `P5` has
+each of `2A`, `A+U`, `A+V` and `U+V` above `2π/5`. -/
 lemma arc_length {a b : ℝ} (ha : 1/2 ≤ a) (hb : 0 ≤ b) (hsort : b ≤ a) (h : P5 a b) :
-    2*Real.pi/5 < min (capA aux a) (capU aux b)+min (capA aux a) (capV aux b) := by
+    Real.pi/5 < capA aux a ∧ 2*(Real.pi/5) < capA aux a+capU aux b ∧
+      2*(Real.pi/5) < capA aux a+capV aux b ∧ 2*(Real.pi/5) < capU aux b+capV aux b := by
   have ha1 : a ≤ 1 := by linarith [h.1]
   have hA : capA aux a=Real.pi/2-Real.arcsin ((a-1/2)/aux) :=
     Real.arccos_eq_pi_div_two_sub_arcsin _
@@ -103,8 +103,7 @@ lemma arc_length {a b : ℝ} (ha : 1/2 ≤ a) (hb : 0 ≤ b) (hsort : b ≤ a) (
         (by rw [aux]; linarith)
       unfold capU capV
       linarith
-  rcases min_cases (capA aux a) (capU aux b) with ⟨hu,-⟩ | ⟨hu,-⟩ <;>
-    rcases min_cases (capA aux a) (capV aux b) with ⟨hv,-⟩ | ⟨hv,-⟩ <;> rw [hu,hv] <;> linarith
+  exact ⟨h₁,by linarith,by linarith,by linarith⟩
 
 /-- An exterior square with its centre in `P5` holds an arc of the circle of
 radius `5/6` longer than 72 degrees. -/
@@ -114,10 +113,8 @@ theorem exterior_arc (S : UnitSquare) (o : Point)
   obtain ⟨C,hsort⟩ := sorted_square_chart S o
   have hC := C.transfer P5 p5_swap h
   have ha := C.exterior hsort hout
-  have hlen := arc_length ha C.nonneg.2 hsort hC
-  obtain ⟨A,hA,-⟩ := C.edge_arc (r := aux) (by norm_num [aux]) ha
-    (by rw [aux]; linarith [hC.1,C.nonneg.2]) (by rw [aux]; linarith)
-    (by linarith [Real.pi_pos])
-  exact ⟨A,by rw [hA]; linarith⟩
+  obtain ⟨h₁,h₂,h₃,h₄⟩ := arc_length ha C.nonneg.2 hsort hC
+  exact C.edge_arc_gt (by norm_num [aux]) ha (by rw [aux]; linarith [hC.1,C.nonneg.2])
+    (by rw [aux]; linarith) (by positivity) h₁ h₂ h₃ h₄
 
 end SquaresInCircles.Five

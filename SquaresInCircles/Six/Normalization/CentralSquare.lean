@@ -406,12 +406,14 @@ private lemma capAV_low {a b : ℝ} (ha : 1 / 2 ≤ a) (hb : 0 ≤ b) (hb2 : b �
       linarith
     linarith
 
-/-- On the circle of radius `9/10`, the chart angles held by an exterior square
-with `(a + 1/2)² + (b + 1/2)² ≤ Q0` span more than `28/25`. -/
+/-- On the circle of radius `9/10`, an exterior square with
+`(a + 1/2)² + (b + 1/2)² ≤ Q0` has each of `2A`, `A + U`, `A + V` and `U + V`
+above `28/25`. -/
 lemma arc_length {a b : ℝ} (ha : 1 / 2 ≤ a) (hb : 0 ≤ b) (hsort : b ≤ a)
     (hQ : (a + 1 / 2) ^ 2 + (b + 1 / 2) ^ 2 ≤ Q0) :
-    28 / 25 < min (capA (9 / 10) a) (capU (9 / 10) b) +
-      min (capA (9 / 10) a) (capV (9 / 10) b) := by
+    14 / 25 < capA (9 / 10) a ∧ 2 * (14 / 25) < capA (9 / 10) a + capU (9 / 10) b ∧
+      2 * (14 / 25) < capA (9 / 10) a + capV (9 / 10) b ∧
+      2 * (14 / 25) < capU (9 / 10) b + capV (9 / 10) b := by
   have hrho := rho0_bounds
   have harho : a ≤ rho0 := by
     have hs : (a + 1 / 2) ^ 2 ≤ Q0 - 1 / 4 := by nlinarith
@@ -428,9 +430,7 @@ lemma arc_length {a b : ℝ} (ha : 1 / 2 ≤ a) (hb : 0 ≤ b) (hsort : b ≤ a)
       · exact capAV_high hb2 hsort hQ
       · exact capAV_low ha hb hb2 (by linarith) hQ
     linarith [Real.pi_gt_d4]
-  rcases min_cases (capA (9 / 10) a) (capU (9 / 10) b) with ⟨hu, -⟩ | ⟨hu, -⟩ <;>
-    rcases min_cases (capA (9 / 10) a) (capV (9 / 10) b) with ⟨hv, -⟩ | ⟨hv, -⟩ <;>
-    rw [hu, hv] <;> linarith
+  exact ⟨by linarith, by linarith, by linarith, by linarith⟩
 
 /-- An exterior square in the disk of squared radius `Q0` holds an arc of the
 circle of radius `9/10` of half-width more than `14/25`. -/
@@ -440,11 +440,9 @@ theorem exterior_arc (S : UnitSquare) (o : Point) (hQ : phi (alpha S o) (beta S 
   obtain ⟨C, hsort⟩ := sorted_square_chart S o
   have ha := C.exterior hsort hout
   have hC : (C.a + 1 / 2) ^ 2 + (C.b + 1 / 2) ^ 2 ≤ Q0 := chart_phi C hQ
-  have hlen := arc_length ha C.nonneg.2 hsort hC
   have ha1 : C.a ≤ 7 / 5 := by norm_num [Q0] at hC; nlinarith [C.nonneg.2]
-  obtain ⟨A, hA, -⟩ := C.edge_arc (r := 9 / 10) (by norm_num) ha (by linarith) (by linarith)
-    (by linarith)
-  exact ⟨A, by rw [hA]; linarith⟩
+  obtain ⟨h₁, h₂, h₃, h₄⟩ := arc_length ha C.nonneg.2 hsort hC
+  exact C.edge_arc_gt (by norm_num) ha (by linarith) (by linarith) (by norm_num) h₁ h₂ h₃ h₄
 
 /-- In a disk of squared radius at most `Q0`, one of six disjoint squares
 contains the disk centre: otherwise their six arcs, each of half-width more
