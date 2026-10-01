@@ -446,8 +446,8 @@ $\frac\pi{12} < \frac9{25}$.
 h(A, v, -\psi(x)) = A\cos\psi(x) - v\sin\psi(x) + \tfrac12\left(\cos\psi(x) + \sin\psi(x)\right) = H(x) .
 ```
 
-The direction $\ell_2 - \frac12$ is within $\frac12 < \frac{801}{1600}$ of the
-marker direction $\ell_2$, so by the marker arc lemma ([Lemma 9.9](seven.md#lemma-99-the-marker-arc)) the
+The direction $\ell_2 - \frac12$ is within $\frac12$ of the marker direction
+$\ell_2$, so by the marker arc lemma ([Lemma 9.9](seven.md#lemma-99-the-marker-arc)) the
 point $u(\ell_2 - \frac12)$ of the unit circle lies in the closed square
 $\overline{Q(A, v)}$, and therefore ([Lemma 9.11](seven.md#lemma-911-the-support-function))
 

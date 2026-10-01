@@ -11,7 +11,7 @@ import math
 from proof_figures import Figure, INK, FAINT, COLORS, FILLS, sb, shift, u
 
 BLUE, ORANGE, GREEN, PURPLE = COLORS[0], COLORS[1], COLORS[2], COLORS[3]
-HALF_WIDTH = 801 / 1600
+HALF_WIDTH = 1 / 2
 TARGET = 13 / 4
 
 
@@ -377,7 +377,7 @@ def marker_arc():
                color=FAINT)
     f.save('appa-marker-arc', 'Two admissible squares in their charts, with '
            'the lines of their four edges and the arc of the unit circle of '
-           'half-width 801/1600 about the label; left the side state (1, 1/2), '
+           'half-width 1/2 about the label; left the side state (1, 1/2), '
            'whose arc nearly fills the part of the circle inside the square, '
            'right the state (0.9, 0.3), with an axial label')
 
@@ -501,14 +501,14 @@ def transverse():
     p.line((0.5, 0), (0.5, upper_edge(0.5)), stroke=FAINT, width=1,
            dash='3 3')
     p.text((0.6, 0.69), 'ℓ(a, u)', size=13, color=BLUE)
-    p.text((0.33, 0.17), 'arcsin(u − ½) + 801/1600', size=13,
+    p.text((0.33, 0.17), 'arcsin(u − ½) + ½', size=13,
            color=ORANGE, anchor='start')
-    p.text((0.06, 1.0), 'arcsin(u + ½) − 801/1600', size=13,
+    p.text((0.06, 1.0), 'arcsin(u + ½) − ½', size=13,
            color=GREEN, anchor='start')
     p.save('appa-transverse', 'For each u, the labels of the admissible '
            'states (a, u) form the shaded interval. It lies above the curve '
-           'arcsin(u - 1/2) + 801/1600 of the lower edge, and for u at most '
-           '1/2 below the curve arcsin(u + 1/2) - 801/1600 of the upper edge')
+           'arcsin(u - 1/2) + 1/2 of the lower edge, and for u at most '
+           '1/2 below the curve arcsin(u + 1/2) - 1/2 of the upper edge')
 
 
 # The envelope (Definition A.13 and Lemmas A.14 to A.16).
@@ -542,7 +542,7 @@ def envelope_band():
     p.polygon(list(zip(xs, low)) + list(zip(reversed(xs), reversed(high))),
               fill=FILLS[0], stroke=BLUE, width=1)
     p.line((0, level), (0.78, level), stroke=INK, width=1.2, dash='6 4')
-    p.text((0.78, level), 'π/3 − 801/1600', size=13, italic=False,
+    p.text((0.78, level), 'π/3 − ½', size=13, italic=False,
            anchor='end', dy=-10)
     p.curve(envelope, 0, 0.75, stroke=ORANGE, width=2.4)
     p.text((0.66, envelope(0.66)), 'E(x) − π/6', size=14, color=ORANGE,
@@ -593,7 +593,7 @@ def peak_bound():
 def envelope_parabola():
     """Lemma A.16: the envelope minus pi/6 below the parabola with its value
     13/24 and slope 1/36 at 0 and curvature -1/8, whose top 353/648 at 2/9 is
-    below the level pi/3 - 801/1600 of Lemma A.17."""
+    below the level pi/3 - 1/2 of Lemma A.17."""
     par = lambda x: 13 / 24 + x / 36 - x * x / 16
     top = 353 / 648
     slope = 1 - 0.75 - 1 / (3 * math.sqrt(TARGET - 1))
@@ -610,7 +610,7 @@ def envelope_parabola():
     y_axis(pl, 0.466, 0.555, x=0, ticks=((0.48, '0.48'), (0.5, '0.50'),
                                          (0.52, '0.52'), (top, '353/648')))
     pl.line((0, level), (0.8, level), stroke=INK, width=1.3)
-    pl.text((0.8, level), 'π/3 − 801/1600', size=13, italic=False,
+    pl.text((0.8, level), 'π/3 − ½', size=13, italic=False,
             anchor='end', dy=-10)
     pl.line((0, top), (2 / 9, top), stroke=FAINT, width=1, dash='3 3')
     pl.line((2 / 9, 0.466), (2 / 9, top), stroke=FAINT, width=1, dash='3 3')
@@ -625,7 +625,7 @@ def envelope_parabola():
     pl.save('appa-parabola', 'The envelope minus pi/6 on [0, 3/4] below the '
             'parabola 13/24 + x/36 - x squared/16, which has the same value '
             'and slope at 0 and is highest, at 353/648, at x = 2/9; the level '
-            'pi/3 - 801/1600 lies above both')
+            'pi/3 - 1/2 lies above both')
 
 
 def main():

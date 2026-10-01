@@ -169,7 +169,7 @@ or less than $c$, respectively. $\square$
    $h(a, b, z) > -\frac{37}{50}$ for every real $z$.
 2. Let $(a, u)$ be admissible and $s$ a sign. Then $(a, |su|) = (a, u)$ is
    admissible, and for every real $x$ with
-   $|x - s\,\ell(a, u)| \le \frac{801}{1600}$ and every real $z$,
+   $|x - s\,\ell(a, u)| \le \frac12$ and every real $z$,
 
    ```math
    \cos(z - x) \le h(a, su, z) .
@@ -1532,17 +1532,16 @@ $(-1, t)$, $\sigma_2(\frac\pi3) > 0$.
 $\ell' = \ell(A, v)$, and by Lemma B.5 (1),
 $\sigma_2(\frac\pi3) = \frac12 - a + h(A, tv, z)$ with
 $z = 2\pi - \frac\pi3 + \ell + t\ell'$. Apply Lemma B.4 (2) with
-$x = t\ell' - \frac{801}{1600}$, the end of the marker arc of the target on the
-side of the source: $z - x = 2\pi - y$ with
-$y = \frac\pi3 - \ell - \frac{801}{1600}$, so
+$x = t\ell' - \frac12$, the end of the marker arc of the target on the side of
+the source: $z - x = 2\pi - y$ with $y = \frac\pi3 - \ell - \frac12$, so
 
 ```math
 \sigma_2\left(\tfrac\pi3\right) \ge \tfrac12 - a + \cos y .
 ```
 
 Since $0 \le \ell \le \frac\pi4$ and $3.14 < \pi < 3.1416$, $y$ lies between
-$\frac\pi{12} - \frac{801}{1600} > -0.24$ and
-$\frac\pi3 - \frac{801}{1600} < 0.547$, so $y^2 < \frac49$ and
+$\frac\pi{12} - \frac12 > -0.24$ and $\frac\pi3 - \frac12 < 0.548$, so
+$y^2 < \frac49$ and
 $\cos y \ge 1 - \frac{y^2}2 > \frac79$. By Lemma B.7,
 $a \le \sqrt3 - \frac12 < 1.233$. Hence
 $\sigma_2(\frac\pi3) > \frac12 - 1.233 + \frac79 = \frac{403}{9000}$. $\square$

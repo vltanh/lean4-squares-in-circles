@@ -271,7 +271,7 @@ affine factor that vanishes at $c$; Lemma A.14 is an example (Figure A.11).
 We prove the marker arc lemma of Chapter 9, [Lemma 9.9](seven.md#lemma-99-the-marker-arc):
 
 > *Let $(a, u)$ be an admissible state and $t$ a real number with
-> $|t - \ell(a, u)| \le \frac{801}{1600}$. Then $|\cos t - a| \le \frac12$ and
+> $|t - \ell(a, u)| \le \frac12$. Then $|\cos t - a| \le \frac12$ and
 > $|\sin t - u| \le \frac12$.*
 
 We recall the notions involved. A state $(a, u)$ is *admissible*
@@ -309,7 +309,7 @@ In the chart of an exterior square with state $(a, u)$ (Chapter 9) the closed
 square is $[a - \frac12, a + \frac12] \times [u - \frac12, u + \frac12]$ and
 the unit circle $\Gamma_1$ about the disk centre is
 $t \mapsto (\cos t, \sin t)$. So the lemma says that the arc of $\Gamma_1$ of
-half-width $\frac{801}{1600}$ about the direction $\ell(a, u)$ lies in the
+half-width $\frac12$ about the direction $\ell(a, u)$ lies in the
 closed square: it stays on the correct side of each of the four edge lines
 (Figure A.7).
 
@@ -318,15 +318,14 @@ closed square: it stays on the correct side of each of the four edge lines
 *Figure A.7.* The marker arc lemma in the chart, for the side state
 $(1, \frac12)$ (left) and the state $(0.9, 0.3)$, whose label is axial
 (right). The part of $\Gamma_1$ in the closed square (blue, between the dots)
-contains the arc of half-width $\frac{801}{1600}$ about the label (orange). For
-the side state the fit is tight at both ends: the square holds the arc from 0
-to $\frac\pi3$, of half-width $\frac\pi6 \approx 0.5236$, against
-$\frac{801}{1600} = 0.500625$.
+contains the arc of half-width $\frac12$ about the label (orange). For the
+side state the fit is tight at both ends: the square holds the arc from 0 to
+$\frac\pi3$, of half-width $\frac\pi6 \approx 0.5236$, against $\frac12$.
 
 *Idea of the proof.* The far edge is out of reach. For the lower and upper
 edges we compare the label with $\arcsin(u \mp \frac12)$ using lines of slope
 $\frac54$ (Lemmas A.10 to A.12). For the near edge we need
-$\ell + \arcsin(a - \frac12) + \frac{801}{1600} < \frac\pi2$. Bounding $\ell$
+$\ell + \arcsin(a - \frac12) + \frac12 < \frac\pi2$. Bounding $\ell$
 by the side term and $u$ by the circle $\varphi = \frac{13}4$ leaves a function
 $E$ of $x = a - \frac12$ alone, the envelope. Its second derivative is at
 most $-\frac18$ (Lemmas A.14 and A.15), so it lies below the parabola that
@@ -369,23 +368,23 @@ By (1) and (2), $g(\frac35) = \frac34 - \arcsin\frac35$ is the largest value of
 $g$ on $[-\frac35, 1]$. The next two lemmas place the label between the lower
 and the upper edge (Figure A.9).
 
-![The (u, angle)-plane for u from 0 to 31/40. A thin blue shaded band, the labels of the admissible states, starts at the origin, widens towards the right and closes again in a point just below the angle pi/4. An orange curve, arcsin(u - 1/2) + 801/1600, runs just below the band; a green curve, arcsin(u + 1/2) - 801/1600, runs above it for u up to 1/2 and rises steeply there](figures/appa-transverse.svg)
+![The (u, angle)-plane for u from 0 to 31/40. A thin blue shaded band, the labels of the admissible states, starts at the origin, widens towards the right and closes again in a point just below the angle pi/4. An orange curve, arcsin(u - 1/2) + 1/2, runs just below the band; a green curve, arcsin(u + 1/2) - 1/2, runs above it for u up to 1/2 and rises steeply there](figures/appa-transverse.svg)
 
 *Figure A.9.* Lemmas A.11 and A.12. For each $u$ the labels $\ell(a, u)$ of
 the admissible states $(a, u)$ fill the shaded interval. It lies above the
-curve $\arcsin(u - \frac12) + \frac{801}{1600}$ of the lower edge (orange) and,
-for $u \le \frac12$, below the curve $\arcsin(u + \frac12) - \frac{801}{1600}$
-of the upper edge (green). The closest approach, about 0.004, is at the lower
-edge near $u = 0.72$, where the label is a side label.
+curve $\arcsin(u - \frac12) + \frac12$ of the lower edge (orange) and, for
+$u \le \frac12$, below the curve $\arcsin(u + \frac12) - \frac12$ of the
+upper edge (green). The closest approach, about 0.005, is at the lower edge
+near $u = 0.72$, where the label is a side label.
 
 ### Lemma A.11 (the lower edge)
 
 Let $(a, u)$ be an admissible state. Then
-$\arcsin(u - \frac12) + \frac{801}{1600} < \ell(a, u)$.
+$\arcsin(u - \frac12) + \frac12 < \ell(a, u)$.
 
 *Proof.* Put $y = u - \frac12$. As $0 \le u < \frac{31}{40}$,
-$-\frac12 \le y < \frac{11}{40}$. We show that $\arcsin y + \frac{801}{1600}$
-is less than each of the three terms whose minimum is $\ell(a, u)$.
+$-\frac12 \le y < \frac{11}{40}$. We show that $\arcsin y + \frac12$ is
+less than each of the three terms whose minimum is $\ell(a, u)$.
 
 1. *A bound on the arcsine: $\arcsin y \le y + \frac{1331}{256000}$.* If
    $y \ge 0$, then $y < \frac{11}{40} < \frac35$, and
@@ -404,8 +403,8 @@ is less than each of the three terms whose minimum is $\ell(a, u)$.
    ```
 
    that is, $\arcsin y \le \mathrm{axial}(u) - \frac\pi6$. Since
-   $\frac\pi6 > \frac{3.14}6 > \frac{801}{1600} = 0.500625$, we get
-   $\arcsin y + \frac{801}{1600} < \mathrm{axial}(u)$.
+   $\frac\pi6 > \frac{3.14}6 > \frac12$, we get
+   $\arcsin y + \frac12 < \mathrm{axial}(u)$.
 3. *The side term.* Put $p = a + \frac12$, $q = u + \frac12$ and
    $L = \frac34 p + \frac23 q$. By Lagrange's identity, the equality form of
    the Cauchy–Schwarz inequality,
@@ -432,23 +431,23 @@ is less than each of the three terms whose minimum is $\ell(a, u)$.
    With step 1,
 
    ```math
-   \mathrm{side}(a, u) - \arcsin y - \tfrac{801}{1600}
-   > \tfrac\pi6 - \tfrac7{400} - \tfrac{1331}{256000} - \tfrac{801}{1600}
-   = \tfrac\pi6 - \tfrac{133971}{256000} > 0 ,
+   \mathrm{side}(a, u) - \arcsin y - \tfrac12
+   > \tfrac\pi6 - \tfrac7{400} - \tfrac{1331}{256000} - \tfrac12
+   = \tfrac\pi6 - \tfrac{133811}{256000} > 0 ,
    ```
 
    because $\frac\pi6 > \frac{3.14}6 > 0.52333$ and
-   $\frac{133971}{256000} = 0.52332421875$.
+   $\frac{133811}{256000} = 0.52269921875$.
 4. *The cap.* By step 1, and as $y < \frac{11}{40}$,
 
    ```math
-   \arcsin y + \tfrac{801}{1600} \le y + \tfrac{1331}{256000} + \tfrac{801}{1600}
-   < \tfrac{11}{40} + \tfrac{1331}{256000} + \tfrac{801}{1600} = \tfrac{199891}{256000} ,
+   \arcsin y + \tfrac12 \le y + \tfrac{1331}{256000} + \tfrac12
+   < \tfrac{11}{40} + \tfrac{1331}{256000} + \tfrac12 = \tfrac{199731}{256000} ,
    ```
 
-   and $\frac{199891}{256000} < 0.781 < \frac{3.14}4 < \frac\pi4$.
+   and $\frac{199731}{256000} < 0.781 < \frac{3.14}4 < \frac\pi4$.
 
-So $\arcsin y + \frac{801}{1600}$ is less than $\mathrm{axial}(u)$,
+So $\arcsin y + \frac12$ is less than $\mathrm{axial}(u)$,
 $\mathrm{side}(a, u)$ and $\frac\pi4$, hence less than their minimum
 $\ell(a, u)$. $\square$
 
@@ -458,7 +457,7 @@ $\ell(a, u)$. $\square$
 ### Lemma A.12 (the upper edge)
 
 Let $(a, u)$ be an admissible state with $u \le \frac12$. Then
-$\ell(a, u) + \frac{801}{1600} < \arcsin(u + \frac12)$.
+$\ell(a, u) + \frac12 < \arcsin(u + \frac12)$.
 
 *Proof.*
 
@@ -484,8 +483,8 @@ $\ell(a, u) + \frac{801}{1600} < \arcsin(u + \frac12)$.
    ```
 
 3. As $\ell(a, u) \le \mathrm{axial}(u) = \frac54 u$ and
-   $\frac{101}{200} = \frac{808}{1600} > \frac{801}{1600}$, step 2 gives
-   $\arcsin(u + \frac12) > \ell(a, u) + \frac{801}{1600}$. $\square$
+   $\frac{101}{200} > \frac12$, step 2 gives
+   $\arcsin(u + \frac12) > \ell(a, u) + \frac12$. $\square$
 
 *Lean:
 [`Seven.marker_horizontal_endpoint`](../../SquaresInCircles/Seven/MarkerArc.lean#L254).*
@@ -522,7 +521,7 @@ by $\sqrt{13/4 - (x + 1)^2}$, so $E(x)$ bounds
 $\mathrm{side}(a, u) + \arcsin x$ from above; this is where the name comes
 from (Lemma A.17 and Figure A.10).
 
-![For x from 0 to 3/4, a blue shaded region bounded below by a rising curve and above by a curve that meets an orange curve, the graph of E(x) - pi/6, for x beyond about 0.27 and stays below it before; the region ends at x = root 3 - 1. A dashed horizontal line slightly above the orange curve marks the level pi/3 - 801/1600](figures/appa-envelope-band.svg)
+![For x from 0 to 3/4, a blue shaded region bounded below by a rising curve and above by a curve that meets an orange curve, the graph of E(x) - pi/6, for x beyond about 0.27 and stays below it before; the region ends at x = root 3 - 1. A dashed horizontal line slightly above the orange curve marks the level pi/3 - 1/2](figures/appa-envelope-band.svg)
 
 *Figure A.10.* The envelope. For each $x = a - \frac12$, the values of
 $\mathrm{side}(a, u) + \arcsin x - \frac\pi6$ over the admissible states
@@ -530,8 +529,7 @@ $(a, u)$ fill the shaded interval; it ends at $x = \sqrt3 - 1$, beyond which
 $u$ would have to be negative. The top of the interval lies on the graph of
 $E(x) - \frac\pi6$ (orange) where the circle $\varphi = \frac{13}4$ rather
 than $u \le a$ bounds $u$, that is, for $x \ge \sqrt{13/8} - 1 \approx 0.27$.
-Lemma A.17 needs everything below the dashed level
-$\frac\pi3 - \frac{801}{1600}$.
+Lemma A.17 needs everything below the dashed level $\frac\pi3 - \frac12$.
 
 ### Lemma A.14 (the peak bound)
 
@@ -644,14 +642,14 @@ $[0, \frac34]$ is about $-0.209$, near $x = 0.33$.
 
 For every $x \in [0, \frac34]$, $E(x) \le \frac\pi6 + \frac{353}{648}$.
 
-![The graph of E(x) - pi/6 on zero to 3/4 in orange: it starts at 13/24, marked by a dot on the vertical axis, rises slightly, and falls to about 0.47 at 3/4. A dashed purple parabola, 13/24 + x/36 - x squared/16, starts at the same dot with the same slope and stays above the orange curve; its highest point, at x = 2/9, is marked by a purple dot at the height 353/648. A black horizontal line at pi/3 - 801/1600 lies just above that point](figures/appa-parabola.svg)
+![The graph of E(x) - pi/6 on zero to 3/4 in orange: it starts at 13/24, marked by a dot on the vertical axis, rises slightly, and falls to about 0.47 at 3/4. A dashed purple parabola, 13/24 + x/36 - x squared/16, starts at the same dot with the same slope and stays above the orange curve; its highest point, at x = 2/9, is marked by a purple dot at the height 353/648. A black horizontal line at pi/3 - 1/2 lies just above that point](figures/appa-parabola.svg)
 
 *Figure A.12.* Lemma A.16. The envelope $E(x) - \frac\pi6$ (orange) and the
 parabola $\frac{13}{24} + \frac x{36} - \frac{x^2}{16}$ (purple, dashed) have
 the same value and slope at 0 (dot), and the envelope bends down at least as
 fast, so it stays below the parabola. The parabola is highest at
 $x = \frac29$, where it equals $\frac{353}{648} \approx 0.5448$, below the
-level $\frac\pi3 - \frac{801}{1600} \approx 0.5466$ that Lemma A.17 needs
+level $\frac\pi3 - \frac12 \approx 0.5472$ that Lemma A.17 needs
 (black).
 
 *Proof.*
@@ -691,13 +689,13 @@ level $\frac\pi3 - \frac{801}{1600} \approx 0.5466$ that Lemma A.17 needs
 For orientation: the largest value of $E$ on $[0, \frac34]$ is about
 $\frac\pi6 + 0.54293$, taken near $x = 0.094$, and
 $\frac{353}{648} \approx 0.54475$. The parabola gives away about 0.0018, and
-Lemma A.17 has about as much to spare:
-$\frac\pi3 - \frac{801}{1600} - \frac{353}{648} \approx 0.0018$.
+Lemma A.17 has a little more to spare:
+$\frac\pi3 - \frac12 - \frac{353}{648} \approx 0.0024$.
 
 ### Lemma A.17 (the near edge)
 
 Let $(a, u)$ be an admissible state. Then
-$\ell(a, u) + \frac{801}{1600} < \arccos(a - \frac12)$.
+$\ell(a, u) + \frac12 < \arccos(a - \frac12)$.
 
 *Proof.* Put $x = a - \frac12$. Since $\frac12 \le a < \frac54$,
 $0 \le x < \frac34$.
@@ -714,37 +712,37 @@ $0 \le x < \frac34$.
    $\arccos x = \frac\pi2 - \arcsin x$,
 
    ```math
-   \arccos x - \ell(a, u) - \tfrac{801}{1600}
-   \ge \tfrac\pi2 - \tfrac\pi6 - \tfrac{353}{648} - \tfrac{801}{1600}
-   = \tfrac\pi3 - \tfrac{135481}{129600} > 0 ,
+   \arccos x - \ell(a, u) - \tfrac12
+   \ge \tfrac\pi2 - \tfrac\pi6 - \tfrac{353}{648} - \tfrac12
+   = \tfrac\pi3 - \tfrac{677}{648} > 0 ,
    ```
 
-   because $\frac\pi3 > \frac{3.14}3 = \frac{135648}{129600}$. $\square$
+   because $\frac\pi3 > \frac{3.14}3 = \frac{157}{150}$ and
+   $157 \cdot 648 = 101736 > 101550 = 677 \cdot 150$. $\square$
 
 *Lean:
 [`Seven.marker_vertical_endpoint`](../../SquaresInCircles/Seven/MarkerArc.lean#L232).*
 
 *Proof of [Lemma 9.9](seven.md#lemma-99-the-marker-arc).* Let $(a, u)$ be admissible, write
-$\ell = \ell(a, u)$, and let $|t - \ell| \le \frac{801}{1600}$, so that
-$\ell - \frac{801}{1600} \le t \le \ell + \frac{801}{1600}$. Put
+$\ell = \ell(a, u)$, and let $|t - \ell| \le \frac12$, so that
+$\ell - \frac12 \le t \le \ell + \frac12$. Put
 $\theta = \arccos(a - \frac12)$. Since $0 \le a - \frac12 \le 1$,
 $0 \le \theta \le \frac\pi2$ and $\cos\theta = a - \frac12$.
 
-1. *$|t| < \theta$.* By Lemma A.17, $t \le \ell + \frac{801}{1600} < \theta$;
-   and as $\ell \ge 0$,
-   $t \ge \ell - \frac{801}{1600} \ge -\ell - \frac{801}{1600} > -\theta$. In
+1. *$|t| < \theta$.* By Lemma A.17, $t \le \ell + \frac12 < \theta$; and as
+   $\ell \ge 0$, $t \ge \ell - \frac12 \ge -\ell - \frac12 > -\theta$. In
    particular $t \in (-\frac\pi2, \frac\pi2)$.
 2. *The near and the far edge.* The cosine is even and strictly decreasing on
    $[0, \pi]$, so by step 1, $\cos t = \cos|t| > \cos\theta = a - \frac12$.
    Also $\cos t \le 1 \le a + \frac12$. Hence $|\cos t - a| \le \frac12$.
 3. *The lower edge.* By Lemma A.11,
-   $\arcsin(u - \frac12) < \ell - \frac{801}{1600} \le t$. Both
+   $\arcsin(u - \frac12) < \ell - \frac12 \le t$. Both
    $\arcsin(u - \frac12)$ and $t$ lie in $[-\frac\pi2, \frac\pi2]$, where the
    sine is strictly increasing, and $-1 \le u - \frac12 \le 1$, so
    $u - \frac12 = \sin\left(\arcsin(u - \frac12)\right) < \sin t$.
 4. *The upper edge.* If $u > \frac12$, then $\sin t \le 1 < u + \frac12$. If
    $u \le \frac12$, Lemma A.12 gives
-   $t \le \ell + \frac{801}{1600} < \arcsin(u + \frac12)$; as in step 3, both
+   $t \le \ell + \frac12 < \arcsin(u + \frac12)$; as in step 3, both
    sides lie in $[-\frac\pi2, \frac\pi2]$ and $\frac12 \le u + \frac12 \le 1$,
    so $\sin t < u + \frac12$. With step 3, $|\sin t - u| \le \frac12$.
    $\square$

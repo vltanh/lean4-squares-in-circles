@@ -775,7 +775,7 @@ def marker_point():
     f.circle((0, 0), 1.0, stroke=FAINT, width=1)
     f.square(cS, 0, fill=FILLS[0], stroke=BLUE, opacity=0.85)
     f.square(cT, math.degrees(d), fill=FILLS[2], stroke=GREEN, opacity=0.85)
-    f.arc((0, 0), 1.0, mT - 801 / 1600, mT + 801 / 1600, GREEN, width=5)
+    f.arc((0, 0), 1.0, mT - 1 / 2, mT + 1 / 2, GREEN, width=5)
     f.line((0, 0), u(mT), stroke=GREEN, width=1.2, dash='5 3')
     f.line((0, 0), p, stroke=INK, width=1)
     f.arc((0, 0), 0.32, 0, theta, INK, width=1.1)

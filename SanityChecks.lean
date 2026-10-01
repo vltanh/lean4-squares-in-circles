@@ -69,8 +69,8 @@ example : (2:ℝ)/3 < Real.sqrt 2/2 := by
 example : ((5:ℝ)/6+1/2)^2+(1/2)^2 > 2 := by norm_num
 
 -- Seven squares: the outer corners, the side state and its label, the margin
--- of the marker arc at the near edge, and the discriminant certificate of the
--- inward sector at its endpoint.
+-- of the marker arc at the near edge (`π/3 > 157/150`), and the polynomial of
+-- the inward sector at its endpoint.
 example : (3/2:ℝ)^2+1 = 13/4 := by norm_num
 example : (1/2:ℝ)^2+3 = 13/4 := by norm_num
 example : Seven.Admissible 1 (1/2) := ⟨by norm_num,by norm_num,by norm_num,by norm_num [phi,Seven.targetSq]⟩
@@ -79,8 +79,7 @@ example : Seven.label 1 (1/2) = Real.pi/6 := by
   unfold Seven.label Seven.axial
   rw [hs,min_eq_right (show Real.pi/6 ≤ 5*(1/2)/4 by linarith [Real.pi_lt_d4]),
     min_eq_left (show Real.pi/6 ≤ Real.pi/4 by linarith [Real.pi_pos])]
-example : (87061:ℝ) < (2951/10)^2 := by norm_num
-example : ((2951:ℝ)/10-86)/384+801/1600 < 157/150 := by norm_num
+example : (353:ℝ)/648+1/2 < 157/150 := by norm_num
 example : (0:ℝ) < Seven.radialPolynomial (5/8) := Seven.radialPolynomial_pos (by norm_num)
 
 -- Contact points of the polygon relaxations.

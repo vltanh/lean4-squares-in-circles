@@ -406,7 +406,7 @@ def target_arc():
     f.circle((0, 0), 1, stroke=FAINT, dash='4 4')
     f.square((A, v), fill=FILLS[2], stroke=GREEN)
     f.text((1.3, 0.85), 'T', size=17, color=GREEN)
-    w = 801 / 1600
+    w = 1 / 2
     f.arc((0, 0), 1, l2 - w, l2 + w, GREEN, width=5)
     f.line((0, 0), u(l2), stroke=GREEN, width=1, dash='3 3')
     f.dot(u(l2), r=4, fill=GREEN)

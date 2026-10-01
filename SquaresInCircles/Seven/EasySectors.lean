@@ -53,11 +53,11 @@ theorem fixed_gap_inward_negative {a u A v : ℝ}
     (h : Admissible a u) (h' : Admissible A v) (t : TransverseSign) :
     0 < pairSupport a u A v .negative t 2 gap := by
   rw [pairSupport_two]
-  let y := gap-label a u-801/1600
-  have hp := marker_arc_support h' t (x := t.coe*label A v-801/1600)
+  let y := gap-label a u-1/2
+  have hp := marker_arc_support h' t (x := t.coe*label A v-1/2)
     (by norm_num) (2*Real.pi-gap-TransverseSign.negative.coe*label a u+t.coe*label A v)
   rw [show 2*Real.pi-gap-TransverseSign.negative.coe*label a u+t.coe*label A v-
-      (t.coe*label A v-801/1600) = 2*Real.pi-y by simp [y,TransverseSign.coe]; ring,
+      (t.coe*label A v-1/2) = 2*Real.pi-y by simp [y,TransverseSign.coe]; ring,
     Real.cos_two_pi_sub] at hp
   have hb : -(2/3 : ℝ) < y ∧ y < 2/3 := by
     obtain ⟨h0,h1⟩ := h.label_mem

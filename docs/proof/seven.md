@@ -493,7 +493,7 @@ a contradiction. $\square$
 ### Lemma 9.9 (the marker arc)
 
 Let $(a, u)$ be an admissible state and $t$ a real number with
-$|t - \ell(a, u)| \le \frac{801}{1600}$. Then
+$|t - \ell(a, u)| \le \frac12$. Then
 
 ```math
 |\cos t - a| \le \tfrac12 , \qquad |\sin t - u| \le \tfrac12 ,
@@ -508,18 +508,18 @@ The proof is given in [Appendix A](appendix-a.md).
 
 In a chart of an exterior square with an admissible state, the lemma says that
 the closed square contains the arc of the unit circle with half-width
-$\frac{801}{1600}$ (about $28.7°$) about the direction of the label, that is,
+$\frac12$ (about $28.6°$) about the direction of the label, that is,
 about the marker (Figure 9.5). In the column packing of Figure 9.1 each
 exterior square contains the arc of half-width exactly $\frac\pi6$ about its
 marker.
 
-![Left: a tilted exterior square seen from the disk centre o, with the dashed phase direction, the marker direction a little further round, and a thick arc of the unit circle about the marker inside the square. Right: the same square in its chart, the axis-parallel square centred at the state (a, u), with the chart axis, the label as an angle from the axis, and the same thick arc of half-width 801/1600 inside the square; the whole part of the unit circle inside the square is drawn thin](figures/seven-marker.svg)
+![Left: a tilted exterior square seen from the disk centre o, with the dashed phase direction, the marker direction a little further round, and a thick arc of the unit circle about the marker inside the square. Right: the same square in its chart, the axis-parallel square centred at the state (a, u), with the chart axis, the label as an angle from the axis, and the same thick arc of half-width 1/2 inside the square; the whole part of the unit circle inside the square is drawn thin](figures/seven-marker.svg)
 
 *Figure 9.5.* The marker. Left: an exterior square $S$ seen from $o$, with its
 phase $\theta_S$ (dashed) and its marker $\mu_S = \theta_S + \varepsilon_S\ell$,
 here with $\varepsilon_S = -1$. Right: the same square in its chart, where it
 is $Q(a, u)$ and the marker is at the angle $\ell(a, u)$. The thick arc of the
-unit circle, of half-width $\frac{801}{1600}$ about the marker, lies in the
+unit circle, of half-width $\frac12$ about the marker, lies in the
 closed square (Lemma 9.9); the thin arc is the whole part of the circle in the
 square.
 
@@ -546,7 +546,7 @@ h(a, b, z) = a\cos z + b\sin z + \tfrac12\left(|\cos z| + |\sin z|\right) .
    $h(a, b, z) = \max_{p \in \overline{Q(a, b)}} \langle p, u(z)\rangle$ is the
    support function of the closed square.
 2. Let $(a, u)$ be admissible, $s \in \lbrace 1, -1\rbrace$, and $x$ real with
-   $|x - s\,\ell(a, u)| \le \frac{801}{1600}$. Then
+   $|x - s\,\ell(a, u)| \le \frac12$. Then
    $u(x) \in \overline{Q(a, su)}$, and $h(a, su, z) \ge \cos(z - x)$ for every
    $z$.
 3. If $(a, |b|)$ is admissible, then $a^2 + b^2 < (\frac{31}{25})^2$ and
@@ -563,7 +563,7 @@ $x$ and $y$ are $\pm\frac12$ with the signs of $\cos z$ and $\sin z$.
 
 (2) For $s = 1$, Lemma 9.9 with $t = x$ gives $u(x) \in \overline{Q(a, u)}$.
 For $s = -1$, apply Lemma 9.9 to $t = -x$, which has
-$|t - \ell(a, u)| = |x + \ell(a, u)| \le \frac{801}{1600}$: then
+$|t - \ell(a, u)| = |x + \ell(a, u)| \le \frac12$: then
 $|\cos x - a| \le \frac12$ and $|{-\sin x} - u| \le \frac12$, so
 $u(x) \in \overline{Q(a, -u)}$. In both cases (1) gives
 $h(a, su, z) \ge \langle u(x), u(z)\rangle = \cos(z - x)$.
@@ -744,7 +744,7 @@ $\square$
 [`Seven.centerDY`](../../SquaresInCircles/Seven/PairModel.lean#L135),
 [`Seven.reverse_reflected_phase`](../../SquaresInCircles/Seven/CanonicalPair.lean#L15),
 [`Seven.reverse_center_coordinates`](../../SquaresInCircles/Seven/CanonicalPair.lean#L61),
-[`Seven.pairSupport_continuous`](../../SquaresInCircles/Seven/AllGaps.lean#L169).*
+[`Seven.pairSupport_continuous`](../../SquaresInCircles/Seven/AllGaps.lean#L174).*
 
 The reversed pair is the pair seen from $T$: the isometry of the plane that
 turns by $-d$ about the origin and then reflects in the first axis maps $T$
@@ -972,25 +972,27 @@ free, as the column packings require.
 ## 9.5 Marker separation
 
 We now show that for admissible states every support sum is positive at every
-gap in $[0, \frac\pi3)$ (Theorem 9.23). For gaps up to 1 the marker arcs of
+gap in $[0, \frac\pi3)$ (Theorem 9.23). For gaps below 1 the marker arcs of
 Lemma 9.9 do it (Lemma 9.18). For larger gaps, a nonpositive value would give
-a leftmost minimum inside $(1, \frac\pi3)$ (Lemma 9.19), and at such a minimum
+a leftmost minimum inside $(\frac12, \frac\pi3)$ (Lemma 9.19), at a gap of at
+least 1 by Lemma 9.18, and at such a minimum
 the pair is parallel, quarter-turned (Lemmas 9.20 and 9.21) or in general
 position (Lemma 9.22); in each case the value is positive.
 
 ### Lemma 9.18 (small gaps)
 
 Let $(a, u)$ and $(A, v)$ be admissible, $s, t \in \lbrace 1, -1\rbrace$ and
-$0 \le g \le 1$. Then $\sigma_k(g) > 0$ for $k = 0, 1, 2, 3$.
+$0 \le g < 1$. Then $\sigma_k(g) > 0$ for $k = 0, 1, 2, 3$.
 
 *Proof.* Let $(S, T)$ be the canonical pair, with turn $d$, and put
 $\lambda = s\,\ell(a, u)$, so that the markers are $\lambda$ and $\lambda + g$.
-Let $m = \lambda + \frac g2$ be their midpoint and $\epsilon = \frac1{3200}$.
-For each $x \in \lbrace m - \epsilon, m, m + \epsilon\rbrace$,
+Let $m = \lambda + \frac g2$ be their midpoint and
+$\epsilon = \frac{1 - g}2 > 0$. For each
+$x \in \lbrace m - \epsilon, m, m + \epsilon\rbrace$,
 
 ```math
-|x - \lambda| \le \tfrac g2 + \epsilon \le \tfrac{1601}{3200} < \tfrac{801}{1600} , \qquad
-|(x - d) - t\,\ell(A, v)| = \left|x - m - \tfrac g2\right| \le \tfrac{1601}{3200} ,
+|x - \lambda| \le \tfrac g2 + \epsilon = \tfrac12 , \qquad
+|(x - d) - t\,\ell(A, v)| = \left|x - m - \tfrac g2\right| \le \tfrac12 ,
 ```
 
 so by Lemma 9.11 (2) $u(x) \in \overline{Q(a, su)} = \overline S$ and
@@ -1004,13 +1006,13 @@ lie on one line. But a line meets the unit circle in at most two points.
 $\square$
 
 *Lean:
-[`Seven.small_gap_support_pos`](../../SquaresInCircles/Seven/AllGaps.lean#L20).*
+[`Seven.small_gap_support_pos`](../../SquaresInCircles/Seven/AllGaps.lean#L21).*
 
-![A canonical pair at a gap below 1, with the unit circle about o. The marker arc of S, of half-width 801/1600 about its marker, is drawn in blue inside S; the marker arc of T, about a marker g further round, in green inside T. The two arcs overlap in a short arc around the midpoint direction m, which lies in both squares](figures/seven-small-gaps.svg)
+![A canonical pair at a gap below 1, with the unit circle about o. The marker arc of S, of half-width 1/2 about its marker, is drawn in blue inside S; the marker arc of T, about a marker g further round, in green inside T. The two arcs overlap in a short arc around the midpoint direction m, which lies in both squares](figures/seven-small-gaps.svg)
 
 *Figure 9.9.* Small gaps. The marker arcs of $S$ (blue) and $T$ (green), of
-half-width $\frac{801}{1600}$, overlap around the midpoint $m$ of the markers
-when $g \le 1$ (here $g = 0.8$). The common arc (orange) lies in both closed
+half-width $\frac12$, overlap around the midpoint $m$ of the markers
+when $g < 1$ (here $g = 0.8$). The common arc (orange) lies in both closed
 squares, and no line contains it, so no line perpendicular to an axis
 separates the squares.
 
@@ -1111,9 +1113,9 @@ conclusion $(-t)\ell(A, v) - (-s)\ell(a, u) \le \frac\pi6$ is the claim.
 $\square$
 
 *Lean:
-[`Seven.opposite_labels_ge`](../../SquaresInCircles/Seven/AllGaps.lean#L66),
-[`Seven.quarter_difference_le`](../../SquaresInCircles/Seven/AllGaps.lean#L134),
-[`Seven.quarter_difference_horizontal`](../../SquaresInCircles/Seven/AllGaps.lean#L112).*
+[`Seven.opposite_labels_ge`](../../SquaresInCircles/Seven/AllGaps.lean#L71),
+[`Seven.quarter_difference_le`](../../SquaresInCircles/Seven/AllGaps.lean#L139),
+[`Seven.quarter_difference_horizontal`](../../SquaresInCircles/Seven/AllGaps.lean#L117).*
 
 ### Lemma 9.21 (parallel and quarter-turned pairs)
 
@@ -1144,8 +1146,8 @@ $\sigma_2 = 1 - a - tv \le 0$, then $A - su \ge 1$ or $a + tv \ge 1$, and Lemma
 9.20 (2) gives $s\,\ell(a, u) - t\,\ell(A, v) \le \frac\pi6$, so that
 $d < \frac\pi3 + \frac\pi6 = \frac\pi2$, a contradiction. $\square$
 
-*Lean: [`Seven.parallel_pos`](../../SquaresInCircles/Seven/AllGaps.lean#L81),
-[`Seven.quarter_turn_pos`](../../SquaresInCircles/Seven/AllGaps.lean#L146).*
+*Lean: [`Seven.parallel_pos`](../../SquaresInCircles/Seven/AllGaps.lean#L86),
+[`Seven.quarter_turn_pos`](../../SquaresInCircles/Seven/AllGaps.lean#L151).*
 
 ![Two panels. Left: a parallel pair, S below the first axis and T above it, both axis-parallel, with the horizontal line between them that would separate them. Right: a quarter-turned pair, S and T to its upper left, with the vertical line that would separate them. In both panels the markers of S and T are drawn as rays from o](figures/seven-parallel.svg)
 
@@ -1160,9 +1162,9 @@ $\frac\pi6$ (Lemma 9.20 (2)), which forces $g \ge \frac\pi3$.
 ### Lemma 9.22 (smooth minima)
 
 Let $(a, u)$ and $(A, v)$ be admissible, $s, t \in \lbrace 1, -1\rbrace$ and
-$k \in \lbrace 0, 1, 2, 3\rbrace$. Let $1 < g < \frac\pi3$ satisfy
-$\sigma_k(g) \le \sigma_k(y)$ for all $y \in [1, \frac\pi3]$ and
-$\sigma_k(g) < \sigma_k(y)$ for all $y \in [1, g)$, and suppose that the turn
+$k \in \lbrace 0, 1, 2, 3\rbrace$. Let $1 \le g < \frac\pi3$ satisfy
+$\sigma_k(g) \le \sigma_k(y)$ for all $y \in [\frac12, \frac\pi3]$ and
+$\sigma_k(g) < \sigma_k(y)$ for all $y \in [\frac12, g)$, and suppose that the turn
 $d$ at the gap $g$ has $\cos d \ne 0$ and $\sin d \ne 0$. Then
 $\sigma_k(g) > 0$.
 
@@ -1192,7 +1194,7 @@ $g$ on which $\cos(Z - y)$ and $\sin(Z - y)$ keep these signs, and on $J$
 The point $(X, Y)$ is the vertex of $\overline{Q(A, tv)}$ that is extreme in
 the direction $u(z)$.
 
-*Step 2: Fermat's theorem.* The point $g$ is interior to $[1, \frac\pi3]$ and a
+*Step 2: Fermat's theorem.* The point $g$ is interior to $[\frac12, \frac\pi3]$ and a
 minimum of $\sigma_k$ there, so the derivative of (9.3) vanishes at $g$:
 
 ```math
@@ -1201,14 +1203,14 @@ X\sin z - Y\cos z = 0 . \tag{9.4}
 
 *Step 3: the comparison to the left.* Let $H = X\cos z + Y\sin z$, so that
 $\sigma_k(g) = c + H$. For $e > 0$ so small that $g - e \in J$ and
-$g - e \ge 1$, (9.3), the addition formulas and (9.4) give
+$g - e \ge \frac12$, (9.3), the addition formulas and (9.4) give
 
 ```math
 \sigma_k(g - e) = c + X\cos(z + e) + Y\sin(z + e) = c + H\cos e + (Y\cos z - X\sin z)\sin e = c + H\cos e ,
 ```
 
 so $\sigma_k(g - e) - \sigma_k(g) = H(\cos e - 1)$. The left side is positive,
-because every point of $[1, g)$ has a larger value than $g$, and
+because every point of $[\frac12, g)$ has a larger value than $g$, and
 $\cos e - 1 \le 0$. Hence $H < 0$.
 
 *Step 4: the nearest vertex of $T$.* By (9.4),
@@ -1328,16 +1330,17 @@ Let $(a, u)$ and $(A, v)$ be admissible, $s, t \in \lbrace 1, -1\rbrace$ and
 $0 \le g < \frac\pi3$. Then $\sigma_k(g) > 0$ for $k = 0, 1, 2, 3$.
 
 *Proof.* Fix the data and $k$, and let $f(y) = \sigma_k(y)$, a continuous
-function (Lemma 9.13 (4)). For $g \le 1$ this is Lemma 9.18. Let
-$1 < g < \frac\pi3$ and suppose $f(g) \le 0$. Now $f(1) > 0$ by Lemma 9.18 and
-$f(\frac\pi3) \ge 0$ by Proposition 9.17, so Lemma 9.19 on $[1, \frac\pi3]$
-gives $x \in (1, \frac\pi3)$ with $f(x) \le 0$, $f(x) \le f(y)$ for all
-$y \in [1, \frac\pi3]$ and $f(x) < f(y)$ for all $y \in [1, x)$. Let
+function (Lemma 9.13 (4)). For $g < 1$ this is Lemma 9.18. Let
+$1 \le g < \frac\pi3$ and suppose $f(g) \le 0$. Now $f(\frac12) > 0$ by
+Lemma 9.18 and $f(\frac\pi3) \ge 0$ by Proposition 9.17, so Lemma 9.19 on
+$[\frac12, \frac\pi3]$ gives $x \in (\frac12, \frac\pi3)$ with $f(x) \le 0$,
+$f(x) \le f(y)$ for all $y \in [\frac12, \frac\pi3]$ and $f(x) < f(y)$ for
+all $y \in [\frac12, x)$; and $x \ge 1$, since $f(x) \le 0$ and Lemma 9.18. Let
 $d = x + s\,\ell(a, u) - t\,\ell(A, v)$ be the turn at the gap $x$. As the
 labels lie in $[0, \frac\pi4]$,
 
 ```math
--\tfrac\pi2 < 1 - \tfrac\pi2 < d < \tfrac\pi3 + \tfrac\pi2 < \pi .
+-\tfrac\pi2 < 1 - \tfrac\pi2 \le d < \tfrac\pi3 + \tfrac\pi2 < \pi .
 ```
 
 If $\sin d = 0$, then $d = 0$, and Lemma 9.21 (1) gives $f(x) > 0$. If
@@ -1346,7 +1349,7 @@ $(-\frac\pi2, \pi)$, and Lemma 9.21 (2) gives $f(x) > 0$. Otherwise Lemma 9.22
 gives $f(x) > 0$. Each contradicts $f(x) \le 0$. $\square$
 
 *Lean:
-[`Seven.all_gap_pos_below`](../../SquaresInCircles/Seven/AllGaps.lean#L175).*
+[`Seven.all_gap_pos_below`](../../SquaresInCircles/Seven/AllGaps.lean#L180).*
 
 ![The four support sums of the canonical pair of two side states with signs -1 and 1, as functions of the gap g from 0 to pi/2: all four are positive for g below pi/3; the forward support sum sigma1 decreases to 0 exactly at g = pi/3 and is negative beyond](figures/seven-gap-profile.svg)
 

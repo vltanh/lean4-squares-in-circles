@@ -386,9 +386,9 @@ lemma corner_source_margin {a u A v g d b : ℝ} (s t : TransverseSign) (k : Fin
 positive. Degenerate constant pieces are already excluded by leftmostness. -/
 theorem smooth_leftmost_support_pos {a u A v g : ℝ} (s t : TransverseSign) (k : Fin 4)
     (h : Admissible a u) (h' : Admissible A v)
-    (hg : 1<g ∧ g<gap)
-    (hmin : ∀y∈Icc 1 gap,pairSupport a u A v s t k g≤pairSupport a u A v s t k y)
-    (hleft : ∀y∈Icc 1 gap,y<g → pairSupport a u A v s t k g<pairSupport a u A v s t k y)
+    (hg : g∈Ioo (1/2) gap) (hg1 : 1≤g)
+    (hmin : ∀y∈Icc (1/2) gap,pairSupport a u A v s t k g≤pairSupport a u A v s t k y)
+    (hleft : ∀y∈Icc (1/2) gap,y<g → pairSupport a u A v s t k g<pairSupport a u A v s t k y)
     (hc : Real.cos (relativePhase a u A v g s t)≠0) (hs : Real.sin (relativePhase a u A v g s t)≠0) :
     0<pairSupport a u A v s t k g := by
   obtain ⟨hC,hS⟩ := cardinal_shift_ne k hc hs
@@ -421,7 +421,7 @@ theorem smooth_leftmost_support_pos {a u A v g : ℝ} (s t : TransverseSign) (k 
   change H<0 at hneg
   obtain ⟨d,b,hd,hdhalf,hb,hbq,hA,hv,hH,hcos,hsin⟩ :=
     stationary_nearest_corner t h' hCe hSe rfl rfl hstat rfl hneg
-  have hsource := corner_source_margin s t k h h' ⟨hg.1.le,hg.2.le⟩
+  have hsource := corner_source_margin s t k h h' ⟨hg1,hg.2.le⟩
     ⟨hd,hdhalf⟩ ⟨hb,hbq⟩ hA hv (by rw [hphase]; exact hcos) (by rw [hphase]; exact hsin)
   have heq := hevent.eq_of_nhds
   change pairSupport a u A v s t k g=

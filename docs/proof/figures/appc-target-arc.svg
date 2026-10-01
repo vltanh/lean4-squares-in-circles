@@ -5,7 +5,7 @@
 <circle cx="222.0" cy="222.0" r="170.0" fill="none" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="4 4"/>
 <polygon points="307.0,222.0 477.0,222.0 477.0,52.0 307.0,52.0" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" fill-opacity="1"/>
 <text x="443.0" y="77.5" font-size="17" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">T</text>
-<path d="M 392.0 218.1 A 170.0 170.0 0 0 0 310.4 76.8" fill="none" stroke="#16a34a" stroke-width="5" stroke-linecap="round"/>
+<path d="M 392.0 218.0 A 170.0 170.0 0 0 0 310.5 76.8" fill="none" stroke="#16a34a" stroke-width="5" stroke-linecap="round"/>
 <line x1="222.0" y1="222.0" x2="369.2" y2="137.0" stroke="#16a34a" stroke-width="1" stroke-dasharray="3 3"/>
 <circle cx="369.2" cy="137.0" r="4" fill="#16a34a"/>
 <text x="377.7" y="123.4" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="start" dominant-baseline="middle" font-style="italic">ℓ<tspan dy="4.5" font-size="10.2">2</tspan></text>

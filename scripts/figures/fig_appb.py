@@ -721,7 +721,7 @@ def easy():
                    sb('σ', '3', size=13), size=13, color=ORANGE,
                    anchor='start')
         elif k == 2:
-            half = 801 / 1600
+            half = 1 / 2
             g.arc((0, 0), 1.0, lt - half, lt + half, GREEN, width=4.5)
             y = lt - half
             p = u(y)

@@ -1177,7 +1177,7 @@ $(-1, -1)$, $\sigma_1(\frac\pi3) > 0$.
 
 *Proof.* By (D.1), $\sigma_1 = \frac12 - u + h(A, -v, z)$ with
 $z = \frac{7\pi}6 + \ell - \lambda$. Let $x = -\lambda - \frac12$. Then
-$\lvert x - (-1)\lambda\rvert = \frac12 \le \frac{801}{1600}$, so by the marker
+$\lvert x - (-1)\lambda\rvert = \frac12$, so by the marker
 arc ([Lemma 9.11](seven.md#lemma-911-the-support-function)), applied to $(A, v)$ with the sign $-1$,
 $h(A, -v, z) \ge \cos(z - x)$. Let $\theta = \frac\pi3 - \ell - \frac12$. Then
 $z - x = \frac{7\pi}6 + \ell + \frac12 = 2\pi - (\frac\pi2 + \theta)$, so

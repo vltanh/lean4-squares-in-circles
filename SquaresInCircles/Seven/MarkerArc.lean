@@ -6,7 +6,7 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
 # The marker arc
 
 For an admissible state, the closed square holds the arc of the unit circle of
-half-width `801/1600` about its label: each of the four edge lines stays out
+half-width `1/2` about its label: each of the four edge lines stays out
 of the way, the far one trivially. The transverse edges are controlled by
 arcsine bounds, and the near edge by an envelope whose curvature is at most
 `-1/8`, hence below a parabola through its value and slope at `0`.
@@ -45,7 +45,7 @@ lemma asin_line_mono :
     linarith [(le_div_iff₀ (hr hy')).mpr (show 5/4*Real.sqrt (1-y^2) ≤ 1 by linarith)]
 
 lemma marker_lower_endpoint {a u : ℝ} (h : Admissible a u) :
-    Real.arcsin (u-1/2)+801/1600 < label a u := by
+    Real.arcsin (u-1/2)+1/2 < label a u := by
   have hasin : Real.arcsin (u-1/2) ≤ u-1/2+1331/256000 := by
     by_cases h0 : 0 ≤ u-1/2
     · have hb := arcsin_le_cubic h0 (by linarith [h.u_lt])
@@ -69,10 +69,10 @@ lemma marker_lower_endpoint {a u : ℝ} (h : Admissible a u) :
     dsimp [targetSq] at hh
     have hs := sq_nonneg ((2/3)*(a+1/2)-(3/4)*(u+1/2))
     nlinarith
-  have hT : Real.arcsin (u-1/2)+801/1600 < side a u := by
+  have hT : Real.arcsin (u-1/2)+1/2 < side a u := by
     dsimp [side]
     linarith
-  have hcap : Real.arcsin (u-1/2)+801/1600 < Real.pi/4 := by
+  have hcap : Real.arcsin (u-1/2)+1/2 < Real.pi/4 := by
     linarith [h.u_lt]
   unfold label
   exact lt_min (lt_min (by linarith) hT) hcap
@@ -230,7 +230,7 @@ lemma arcEnvelope_bound {x : ℝ} (hx : 0 ≤ x ∧ x ≤ 3/4) :
   nlinarith [sq_nonneg (x-2/9)]
 
 lemma marker_vertical_endpoint {a u : ℝ} (h : Admissible a u) :
-    label a u+801/1600 < Real.arccos (a-1/2) := by
+    label a u+1/2 < Real.arccos (a-1/2) := by
   let x := a-1/2
   have hx : 0 ≤ x ∧ x ≤ 3/4 := by
     dsimp [x]; constructor <;> linarith [h.half_le,h.a_lt_five_fourths]
@@ -247,12 +247,12 @@ lemma marker_vertical_endpoint {a u : ℝ} (h : Admissible a u) :
   have hb := arcEnvelope_bound hx
   have hl := h.label_le_side
   have hpi := Real.pi_gt_d4
-  change label a u+801/1600 < Real.arccos x
+  change label a u+1/2 < Real.arccos x
   rw [Real.arccos_eq_pi_div_two_sub_arcsin]
   linarith
 
 lemma marker_horizontal_endpoint {a u : ℝ} (h : Admissible a u) (hu : u ≤ 1/2) :
-    label a u+801/1600 < Real.arcsin (u+1/2) := by
+    label a u+1/2 < Real.arcsin (u+1/2) := by
   have hs : Real.sin (63/100 : ℝ) < 3/5 := by
     have hb := sin_upper_five (x := 63/100) (by norm_num)
     norm_num at hb ⊢
@@ -276,10 +276,10 @@ lemma marker_horizontal_endpoint {a u : ℝ} (h : Admissible a u) (hu : u ≤ 1/
   dsimp [axial] at hl
   linarith
 
-/-- The marker arc: chart angles within `801/1600` of the label stay in the
+/-- The marker arc: chart angles within `1/2` of the label stay in the
 closed square. -/
 theorem marker_arc {a u t : ℝ} (h : Admissible a u)
-    (ht : |t-label a u| ≤ 801/1600) :
+    (ht : |t-label a u| ≤ 1/2) :
     |Real.cos t-a| ≤ 1/2 ∧ |Real.sin t-u| ≤ 1/2 := by
   have hl := marker_lower_endpoint h
   have hv := marker_vertical_endpoint h

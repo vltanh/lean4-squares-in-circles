@@ -5,10 +5,11 @@ import SquaresInCircles.Seven.FixedGap
 # All marker gaps below `π/3`
 
 The support sums of an admissible pair are positive for every gap in
-`[0, π/3)`. For gaps up to 1 the two marker arcs share three points of the unit
+`[0, π/3)`. For gaps below 1 the two marker arcs share an arc of the unit
 circle, which a weakly separating line would contain. For larger gaps a
-nonpositive value, with the sum nonnegative at `π/3`, forces a leftmost minimum
-inside `[1, π/3]`. There the relative phase lies in `(-π/2, π)`. At `0` the
+nonpositive value, with the sum positive at `1/2` and nonnegative at `π/3`,
+forces a leftmost minimum inside `(1/2, π/3)`, at a gap of at least 1 by the
+small gaps. There the relative phase lies in `(-π/2, π)`. At `0` the
 squares are parallel, and side by side across the axis their labels would add up
 to at least `π/3`; at `π/2` they are quarter-turned, and a separating side would
 bring their labels within `π/6`. Otherwise the minimum is smooth and positive.
@@ -16,22 +17,26 @@ bring their labels within `π/6`. Otherwise the minimum is smooth and positive.
 noncomputable section
 namespace SquaresInCircles.Seven
 
-/-- Small gaps: the marker arcs share three points of the unit circle. -/
+/-- Small gaps: the marker arcs share an arc of the unit circle. -/
 lemma small_gap_support_pos {a u A v g : ℝ} (s t : TransverseSign) (k : Fin 4)
-    (h : Admissible a u) (h' : Admissible A v) (hg : 0≤g ∧ g≤1) :
+    (h : Admissible a u) (h' : Admissible A v) (hg : 0≤g ∧ g<1) :
     0<pairSupport a u A v s t k g := by
   let p := s.coe*label a u
   let r := t.coe*label A v
   let z := cardinalAngle k-p-g/2
+  let ε := (1-g)/2
   let h1 := support a (s.coe*u) (cardinalAngle k)
   let h2 := support A (t.coe*v) (cardinalAngle k+Real.pi-g-p+r)
-  have hb (e : ℝ) (he : |e|≤1/3200) : Real.cos (z-e)≤h1 ∧ -Real.cos (z-e)≤h2 := by
+  have hε : 0<ε := by dsimp [ε]; linarith [hg.2]
+  have hb (e : ℝ) (he : |e|≤ε) : Real.cos (z-e)≤h1 ∧ -Real.cos (z-e)≤h2 := by
     have he' := abs_le.mp he
+    dsimp only [ε] at he'
     have hfirst := marker_arc_support h s (x := p+g/2+e)
-      (abs_le.mpr ⟨by linarith [hg.1,hg.2,he'.1,he'.2],by linarith [hg.1,hg.2,he'.1,he'.2]⟩)
-      (cardinalAngle k)
+      (abs_le.mpr ⟨by dsimp only [p]; linarith [hg.1,he'.1],
+        by dsimp only [p]; linarith [hg.1,he'.2]⟩) (cardinalAngle k)
     have hsecond := marker_arc_support h' t (x := r-g/2+e)
-      (abs_le.mpr ⟨by linarith [hg.1,hg.2,he'.1,he'.2],by linarith [hg.1,hg.2,he'.1,he'.2]⟩)
+      (abs_le.mpr ⟨by dsimp only [r]; linarith [hg.1,he'.1],
+        by dsimp only [r]; linarith [hg.1,he'.2]⟩)
       (cardinalAngle k+Real.pi-g-p+r)
     rw [show cardinalAngle k-(p+g/2+e) = z-e by dsimp [z]; ring] at hfirst
     rw [show cardinalAngle k+Real.pi-g-p+r-(r-g/2+e) = (z-e)+Real.pi by dsimp [z]; ring,
@@ -39,23 +44,23 @@ lemma small_gap_support_pos {a u A v g : ℝ} (s t : TransverseSign) (k : Fin 4)
     exact ⟨hfirst,hsecond⟩
   by_contra hn
   have hsum : h1+h2≤0 := le_of_not_gt hn
-  have heq (e : ℝ) (he : |e|≤1/3200) : Real.cos (z-e)=h1 := by
+  have heq (e : ℝ) (he : |e|≤ε) : Real.cos (z-e)=h1 := by
     have hh := hb e he
     linarith
-  have h0 := heq 0 (by norm_num)
-  have hp := heq (1/3200) (by norm_num)
-  have hm := heq (-1/3200) (by norm_num)
+  have h0 := heq 0 (by rw [abs_zero]; exact hε.le)
+  have hp := heq ε (abs_of_pos hε).le
+  have hm := heq (-ε) (by rw [abs_neg,abs_of_pos hε])
   rw [sub_zero] at h0
-  rw [show z-(-1/3200) = z+1/3200 by ring,Real.cos_add] at hm
+  rw [sub_neg_eq_add,Real.cos_add] at hm
   rw [Real.cos_sub] at hp
-  have hsin0 : 0<Real.sin (1/3200:ℝ) := Real.sin_pos_of_pos_of_lt_pi
-    (by norm_num) (by linarith [Real.pi_gt_d2])
-  have hcos1 : Real.cos (1/3200:ℝ) < 1 := by
-    have hu := Real.sin_sq_add_cos_sq (1/3200:ℝ)
-    nlinarith [Real.cos_le_one (1/3200:ℝ)]
-  have hsz : Real.sin z = 0 := (mul_eq_zero.mp (show Real.sin z*Real.sin (1/3200) = 0 by
+  have hsin0 : 0<Real.sin ε := Real.sin_pos_of_pos_of_lt_pi hε
+    (by dsimp [ε]; linarith [hg.1,Real.pi_gt_three])
+  have hcos1 : Real.cos ε < 1 := by
+    have hu := Real.sin_sq_add_cos_sq ε
+    nlinarith [Real.cos_le_one ε]
+  have hsz : Real.sin z = 0 := (mul_eq_zero.mp (show Real.sin z*Real.sin ε = 0 by
     linear_combination (hp-hm)/2)).resolve_right hsin0.ne'
-  have hcz : Real.cos z = 0 := (mul_eq_zero.mp (show Real.cos z*(Real.cos (1/3200)-1) = 0 by
+  have hcz : Real.cos z = 0 := (mul_eq_zero.mp (show Real.cos z*(Real.cos ε-1) = 0 by
     linear_combination (hp+hm)/2-h0)).resolve_right (by linarith)
   have hu := Real.sin_sq_add_cos_sq z
   rw [hsz,hcz] at hu
@@ -175,17 +180,18 @@ lemma pairSupport_continuous (a u A v : ℝ) (s t : TransverseSign) (k : Fin 4) 
 theorem all_gap_pos_below {a u A v g : ℝ} (s t : TransverseSign) (k : Fin 4)
     (h : Admissible a u) (h' : Admissible A v) (hg : 0 ≤ g ∧ g < gap) :
     0 < pairSupport a u A v s t k g := by
-  by_cases hg1 : g≤1
+  by_cases hg1 : g<1
   · exact small_gap_support_pos s t k h h' ⟨hg.1,hg1⟩
   by_contra hn
   obtain ⟨x,hx,hxnon,hmin,hbefore⟩ := leftmost_nonpositive_minimum
-    (pairSupport_continuous a u A v s t k) ⟨(lt_of_not_ge hg1).le,hg.2⟩ (le_of_not_gt hn)
-    (small_gap_support_pos s t k h h' (g := 1) ⟨by norm_num,le_rfl⟩)
+    (pairSupport_continuous a u A v s t k) ⟨by linarith,hg.2⟩ (le_of_not_gt hn)
+    (small_gap_support_pos s t k h h' (g := 1/2) ⟨by norm_num,by norm_num⟩)
     (fixed_gap_nonneg s t k h h')
+  have hx1 : 1 ≤ x := le_of_not_gt fun hlt =>
+    (small_gap_support_pos s t k h h' ⟨by linarith [hx.1],hlt⟩).not_ge hxnon
   have hd : -Real.pi/2 < relativePhase a u A v x s t ∧ relativePhase a u A v x s t < Real.pi := by
     obtain ⟨h0,h1⟩ := h.label_mem
     obtain ⟨h2,h3⟩ := h'.label_mem
-    have := hx.1
     have := hx.2
     simp only [relativePhase,gap] at *
     cases s <;> cases t <;> simp only [TransverseSign.coe] <;> constructor <;>
@@ -197,7 +203,7 @@ theorem all_gap_pos_below {a u A v g : ℝ} (s t : TransverseSign) (k : Fin 4)
   by_cases hc : Real.cos (relativePhase a u A v x s t) = 0
   · have hq := quarter_turn_pos s t k h h' hx.2 (cos_zero_between hd hc)
     linarith
-  · have hp := smooth_leftmost_support_pos s t k h h' hx hmin hbefore hc hs
+  · have hp := smooth_leftmost_support_pos s t k h h' hx hx1 hmin hbefore hc hs
     linarith
 
 end SquaresInCircles.Seven

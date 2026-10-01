@@ -45,7 +45,7 @@ lemma sign_admissible {a u : ℝ} (h : Admissible a u) (s : TransverseSign) :
 /-- A point of the marker arc about the signed label lies in the closed square,
 so its support in every direction is at most that of the square. -/
 lemma marker_arc_support {a u x : ℝ} (h : Admissible a u) (s : TransverseSign)
-    (hx : |x-s.coe*label a u| ≤ 801/1600) (z : ℝ) :
+    (hx : |x-s.coe*label a u| ≤ 1/2) (z : ℝ) :
     Real.cos (z-x) ≤ support a (s.coe*u) z := by
   rw [Real.cos_sub]
   cases s

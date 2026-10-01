@@ -50,12 +50,12 @@
 <text x="311.3" y="652.4" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">S</text>
 <text x="246.8" y="486.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">T</text>
 <text x="194.8" y="384.1" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">(c) inward axis, s = −1</text>
-<path d="M 278.0 566.8 A 104.0 104.0 0 0 0 228.1 480.4" fill="none" stroke="#16a34a" stroke-width="4.5" stroke-linecap="round"/>
-<circle cx="278.0" cy="566.8" r="3.6" fill="#16a34a"/>
-<line x1="174.0" y1="569.2" x2="278.0" y2="566.8" stroke="#16a34a" stroke-width="1" stroke-dasharray="3 3"/>
+<path d="M 278.0 566.7 A 104.0 104.0 0 0 0 228.1 480.4" fill="none" stroke="#16a34a" stroke-width="4.5" stroke-linecap="round"/>
+<circle cx="278.0" cy="566.7" r="3.6" fill="#16a34a"/>
+<line x1="174.0" y1="569.2" x2="278.0" y2="566.7" stroke="#16a34a" stroke-width="1" stroke-dasharray="3 3"/>
 <line x1="226.0" y1="694.0" x2="226.0" y2="413.2" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="4 3"/>
 <text x="221.8" y="423.6" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="end" dominant-baseline="middle">x = a − ½</text>
-<line x1="226.0" y1="563.7" x2="278.0" y2="563.7" stroke="#ea580c" stroke-width="2.2"/>
+<line x1="226.0" y1="563.6" x2="278.0" y2="563.6" stroke="#ea580c" stroke-width="2.2"/>
 <text x="252.0" y="549.1" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">≤ σ<tspan dy="3.9" font-size="8.8">2</tspan></text>
 <text x="217.7" y="467.9" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="end" dominant-baseline="middle">marker arc of T</text>
 <line x1="174.0" y1="569.2" x2="264.1" y2="621.2" stroke="#2563eb" stroke-width="1" stroke-dasharray="3 3"/>

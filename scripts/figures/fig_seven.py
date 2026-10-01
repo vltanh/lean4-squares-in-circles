@@ -23,7 +23,7 @@ def low(base, digits):
     return base + str(digits).translate(DIGITS)
 L7 = math.sqrt(3) - 0.5          # the column limit sqrt 3 - 1/2
 R7 = math.sqrt(13) / 2           # the optimal radius
-ARC = 801 / 1600                 # half-width of the marker arc
+ARC = 1 / 2                      # half-width of the marker arc
 
 
 # ---------------------------------------------------------------- the model
@@ -328,11 +328,11 @@ def marker():
            color=BLUE)
     f.dot(o2)
     f.text(shift(o2, (-0.05, -0.07)), 'o', anchor='end')
-    f.text(shift(o2, u(lab + ARC), 1.12), '801/1600', size=12, italic=False,
+    f.text(shift(o2, u(lab + ARC), 1.12), '1/2', size=12, italic=False,
            color=ORANGE, anchor='start')
     f.save('seven-marker', 'An exterior square seen from the disk centre with '
            'its phase and marker, and the same square in its chart; the arc '
-           'of the unit circle of half-width 801/1600 about the marker lies in '
+           'of the unit circle of half-width 1/2 about the marker lies in '
            'the closed square')
 
 
