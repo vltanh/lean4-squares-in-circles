@@ -273,7 +273,7 @@ $S_1, \dots, S_n$ be the configuration.
    $M_l^\circ$, against the disjointness of the model. $\square$
 
 *Lean:
-[`Congruent.packing`](../../SquaresInCircles/Common/Congruence.lean#L167),
+[`Congruent.packing`](../../SquaresInCircles/Common/Congruence.lean#L171),
 [`frameEquiv_distance`](../../SquaresInCircles/Common/Congruence.lean#L47).*
 
 ## 2.5 Models of axis-parallel squares

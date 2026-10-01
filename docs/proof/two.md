@@ -343,7 +343,7 @@ $\square$
 *Lean: [`Two.uniqueness`](../../SquaresInCircles/Two/Uniqueness.lean#L47),
 [`SquareChart.half_arc`](../../SquaresInCircles/Common/Charts.lean#L193),
 [`OpenArc.opposite`](../../SquaresInCircles/Common/Angles.lean#L32),
-[`represents_quarter`](../../SquaresInCircles/Common/Angles.lean#L103).*
+[`represents_quarter`](../../SquaresInCircles/Common/Angles.lean#L112).*
 
 ## 5.4 Proof of Theorem 5.1
 

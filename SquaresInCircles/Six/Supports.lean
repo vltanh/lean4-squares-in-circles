@@ -64,7 +64,8 @@ lemma exists_support_vertex (S : UnitSquare) (n : Point) :
     constructor
     · simpa only [p,localX_rotated,hu] using (le_rfl : (1:ℝ)/2 ≤ 1/2)
     · simpa only [p,localY_rotated,hv] using (le_rfl : (1:ℝ)/2 ≤ 1/2)
-  have hproj := Six.projection_local S n p
+  have hproj : dot n (sub p S.center)=frameX S n*localX S p+frameY S n*localY S p :=
+    (frame_dot S n _).symm
   dsimp [p] at hproj
   rw [localX_rotated,localY_rotated,dot_sub_right] at hproj
   refine ⟨p,hp,?_⟩

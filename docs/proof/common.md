@@ -753,7 +753,7 @@ $|y - \varepsilon_S b_S| < \frac12$, which is Definition 2.4. $\square$
 *Lean:
 [`SquareChart.cartesian`](../../SquaresInCircles/Common/Coordinates.lean#L41),
 [`SquareChart.unreversed`](../../SquaresInCircles/Common/Coordinates.lean#L34),
-[`chart_represents`](../../SquaresInCircles/Common/Congruence.lean#L193).*
+[`chart_represents`](../../SquaresInCircles/Common/Congruence.lean#L197).*
 
 ## 3.6 Arcs of an exterior square
 
@@ -1115,8 +1115,8 @@ $\square$
 
 *Lean: [`self_represents`](../../SquaresInCircles/Common/Contacts.lean#L67),
 [`same_axes_represents`](../../SquaresInCircles/Common/Contacts.lean#L50),
-[`represents_quarter`](../../SquaresInCircles/Common/Angles.lean#L103),
-[`represents_cardinal`](../../SquaresInCircles/Common/Angles.lean#L114).*
+[`represents_quarter`](../../SquaresInCircles/Common/Angles.lean#L112),
+[`represents_cardinal`](../../SquaresInCircles/Common/Angles.lean#L123).*
 
 ### Lemma 3.31 (from slots to congruence)
 
@@ -1144,8 +1144,8 @@ open square (Definition 2.1), and $F_\phi$ is a homeomorphism (Lemma 2.5), so
 $\overline{S_{\sigma(k)}} = F_\phi(\overline{Q(c_k)})$. $\square$
 
 *Lean:
-[`congruent_of_slots`](../../SquaresInCircles/Common/Congruence.lean#L144),
+[`congruent_of_slots`](../../SquaresInCircles/Common/Congruence.lean#L148),
 [`same_open_same_closed`](../../SquaresInCircles/Common/Congruence.lean#L60),
-[`Represents.closed`](../../SquaresInCircles/Common/Congruence.lean#L128). (The
+[`Represents.closed`](../../SquaresInCircles/Common/Congruence.lean#L132). (The
 formal proof reaches a boundary point along the segment from the centre instead
 of taking a closure.)*

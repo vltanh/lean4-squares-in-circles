@@ -56,7 +56,7 @@ squares the pair theorem, the ring and the middle column over the files
 | `ArcBudget.lean` | The budget of a packing: some square avoids the disk centre, and the square that contains it can be replaced by its radial sweep |
 | `Analysis.lean` | Monotonicity and concavity from derivatives, positivity from a curvature bound and one value, the largest value at a peak, leftmost minima |
 | `Trigonometry.lean` | Bounds for `π`, `sin`, `cos` and `arcsin`: small angles, Taylor brackets, concave first harmonics, radicals and rotating lengths, half angles |
-| `SeparatingAxes.lean` | The separating-axis theorem: disjoint squares are separated along one of their four edge axes, each with its threshold |
+| `SeparatingAxes.lean` | The separating-axis theorem: disjoint squares are separated along one of their four edge axes, each with its threshold; for two oriented squares, the threshold `1/2 + angularWidth d` and the offset of the centres in either frame |
 | `Constructions.lean` | Axis-parallel squares centred at given points: membership, disjointness and containment |
 | `Congruence.lean` | Congruence to a model from square-by-square slots; open squares determine closed ones; configurations congruent to a packing are packings; the rigid-motion witness; the square at given coordinates in a rotated frame (`modelSquare`, `orientedSquare`) |
 | `Optimum.lean` | `Optimum`, the statement every case proves; the lower bound, the least radius and the converse of uniqueness for all cases |

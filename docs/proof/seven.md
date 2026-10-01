@@ -587,8 +587,8 @@ most, or less than, $c^2$. $\square$
 
 *Lean:
 [`Seven.point_le_support`](../../SquaresInCircles/Seven/Support.lean#L18),
-[`Seven.marker_arc_support`](../../SquaresInCircles/Seven/PairModel.lean#L47),
-[`Seven.sign_admissible`](../../SquaresInCircles/Seven/PairModel.lean#L41),
+[`Seven.marker_arc_support`](../../SquaresInCircles/Seven/PairModel.lean#L48),
+[`Seven.sign_admissible`](../../SquaresInCircles/Seven/PairModel.lean#L42),
 [`Seven.support_lower`](../../SquaresInCircles/Seven/Support.lean#L55),
 [`Seven.dot_ge`](../../SquaresInCircles/Seven/Support.lean#L45),
 [`Seven.dot_gt`](../../SquaresInCircles/Seven/Support.lean#L49),
@@ -633,10 +633,10 @@ regarded as functions of the gap $g$, all other data being fixed. The
 and the same gap $g$; we write $\sigma'_k(g)$ for its support sums.
 
 *Lean:
-[`Seven.TransverseSign`](../../SquaresInCircles/Seven/PairModel.lean#L16),
-[`Seven.cardinalAngle`](../../SquaresInCircles/Seven/PairModel.lean#L34),
-[`Seven.relativePhase`](../../SquaresInCircles/Seven/PairModel.lean#L129),
-[`Seven.pairSupport`](../../SquaresInCircles/Seven/PairModel.lean#L36),
+[`Seven.TransverseSign`](../../SquaresInCircles/Seven/PairModel.lean#L17),
+[`Seven.cardinalAngle`](../../SquaresInCircles/Seven/PairModel.lean#L35),
+[`Seven.relativePhase`](../../SquaresInCircles/Seven/PairModel.lean#L131),
+[`Seven.pairSupport`](../../SquaresInCircles/Seven/PairModel.lean#L37),
 [`orientedSquare`](../../SquaresInCircles/Common/Congruence.lean#L87),
 [`Seven.CanonicalDisjoint`](../../SquaresInCircles/Seven/CanonicalPair.lean#L23).*
 
@@ -739,11 +739,12 @@ $\square$
 
 *Lean:
 [`Seven.pair_support_axis_values`](../../SquaresInCircles/Seven/PairModel.lean#L140),
-[`Seven.pairWidth`](../../SquaresInCircles/Seven/PairModel.lean#L138),
-[`Seven.centerDX`](../../SquaresInCircles/Seven/PairModel.lean#L132),
-[`Seven.centerDY`](../../SquaresInCircles/Seven/PairModel.lean#L135),
+[`angularWidth`](../../SquaresInCircles/Common/SeparatingAxes.lean#L250),
+[`Seven.centerDX`](../../SquaresInCircles/Seven/PairModel.lean#L134),
+[`Seven.centerDY`](../../SquaresInCircles/Seven/PairModel.lean#L137),
 [`Seven.reverse_reflected_phase`](../../SquaresInCircles/Seven/CanonicalPair.lean#L15),
-[`Seven.reverse_center_coordinates`](../../SquaresInCircles/Seven/CanonicalPair.lean#L43),
+[`pair_frameX_right`](../../SquaresInCircles/Common/SeparatingAxes.lean#L336),
+[`pair_frameY_right`](../../SquaresInCircles/Common/SeparatingAxes.lean#L344),
 [`Seven.pairSupport_continuous`](../../SquaresInCircles/Seven/AllGaps.lean#L175).*
 
 The reversed pair is the pair seen from $T$: the isometry of the plane that
@@ -815,10 +816,11 @@ $\omega(n) \le \langle n, c_T - c_S\rangle = \langle n, \Delta\rangle$. This
 contradiction proves the lemma. $\square$
 
 *Lean:
-[`Seven.canonical_has_separator`](../../SquaresInCircles/Seven/CanonicalPair.lean#L62),
-[`SAT.separating_axes`](../../SquaresInCircles/Common/SeparatingAxes.lean#L235),
-[`SAT.all_normals_strict`](../../SquaresInCircles/Common/SeparatingAxes.lean#L219),
-[`SAT.octagonSupport`](../../SquaresInCircles/Common/SeparatingAxes.lean#L17).*
+[`Seven.canonical_has_separator`](../../SquaresInCircles/Seven/CanonicalPair.lean#L30),
+[`oriented_separating_axes`](../../SquaresInCircles/Common/SeparatingAxes.lean#L356),
+[`SAT.separating_axes`](../../SquaresInCircles/Common/SeparatingAxes.lean#L205),
+[`SAT.all_normals_strict`](../../SquaresInCircles/Common/SeparatingAxes.lean#L189),
+[`SAT.octagonSupport`](../../SquaresInCircles/Common/SeparatingAxes.lean#L22).*
 
 ![Left: the canonical pair of Figure 9.6 and the vector Delta from the centre of S to the centre of T. Right: the octagon K of differences of the two squares, centred at the origin, with its eight edge lines dashed and their outer normals plus and minus e1, e2, f1, f2; the point Delta lies outside the octagon, beyond the left edge, at the negative distance sigma2](figures/seven-octagon.svg)
 
@@ -1600,7 +1602,7 @@ squares in the closed disk of radius $R_7$ about $o$.
 *Lean:
 [`Seven.congruent_of_containing`](../../SquaresInCircles/Seven/Uniqueness.lean#L58),
 [`Seven.column_centers_separated`](../../SquaresInCircles/Seven/Uniqueness.lean#L46),
-[`congruent_of_slots`](../../SquaresInCircles/Common/Congruence.lean#L144).*
+[`congruent_of_slots`](../../SquaresInCircles/Common/Congruence.lean#L148).*
 
 ## 9.8 Proof of Theorem 9.1
 

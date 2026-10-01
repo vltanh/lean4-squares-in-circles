@@ -1,11 +1,16 @@
 import SquaresInCircles.Common.Contacts
+import SquaresInCircles.Common.Angles
+import SquaresInCircles.Common.Trigonometry
 
 /-!
 # The separating-axis theorem
 
 Strict overlap on the two edge axes of each of two squares implies overlap
 along every normal. With `support_separator`, disjoint squares are separated
-along one of their four edge axes.
+along one of their four edge axes (`SAT.separating_axes`). For two oriented
+squares, the second turned by `d` from the first, the threshold is
+`1/2 + angularWidth d` and the offset of the centres has explicit coordinates
+in either frame (`oriented_separating_axes`).
 -/
 noncomputable section
 namespace SquaresInCircles.SAT
@@ -74,68 +79,33 @@ lemma octagon_first_quadrant {c s : ℝ} (hc : 0 < c) (hs : 0 ≤ s)
       rw [he₁,he₂] at hlt
       exact lt_of_mul_lt_mul_left hlt hc.le
 
-def qturn (p : Point) : Point := (-p.2,p.1)
-def qturns : ℕ → Point → Point
-  | 0,p => p
-  | n+1,p => qturn (qturns n p)
-
-lemma qturn_axisInside {c s : ℝ} {d : Point} (hd : axisInside c s d) :
-    axisInside c s (qturn d) := by
-  have h₁ : c*(-d.2)+s*d.1 = -(-s*d.1+c*d.2) := by ring
-  have h₂ : -s*(-d.2)+c*d.1 = c*d.1+s*d.2 := by ring
-  simpa only [axisInside,qturn,abs_neg,h₁,h₂] using
-    And.intro hd.2.1 (And.intro hd.1 (And.intro hd.2.2.2 hd.2.2.1))
-
-lemma qturn_support (c s : ℝ) (n : Point) :
-    octagonSupport c s (qturn n) = octagonSupport c s n := by
-  have h₁ : c*(-n.2)+s*n.1 = -(-s*n.1+c*n.2) := by ring
-  have h₂ : -s*(-n.2)+c*n.1 = c*n.1+s*n.2 := by ring
-  simp only [octagonSupport,qturn,h₁,h₂,abs_neg]
-  ring
-
-lemma qturns_facts (k : ℕ) (c s : ℝ) (n d : Point) :
-    (axisInside c s d → axisInside c s (qturns k d)) ∧
-    octagonSupport c s (qturns k n) = octagonSupport c s n ∧
-    dot (qturns k n) (qturns k d) = dot n d ∧
-    normSq (qturns k n) = normSq n := by
-  induction k with
-  | zero => exact ⟨id,rfl,rfl,rfl⟩
-  | succ k ih =>
-    refine ⟨fun h => qturn_axisInside (ih.1 h), ?_, ?_, ?_⟩
-    · rw [qturns,qturn_support,ih.2.1]
-    · calc
-        _ = dot (qturns k n) (qturns k d) := by dsimp [qturns,qturn,dot]; ring
-        _ = dot n d := ih.2.2.1
-    · calc
-        _ = normSq (qturns k n) := by dsimp [qturns,qturn,normSq]; ring
-        _ = normSq n := ih.2.2.2
-
-lemma qturn_first_quadrant (n : Point) :
-    ∃ k : Fin 4, 0 ≤ (qturns k.val n).1 ∧ 0 ≤ (qturns k.val n).2 := by
-  by_cases hx : 0 ≤ n.1 <;> by_cases hy : 0 ≤ n.2
-  · exact ⟨0,hx,hy⟩
-  · refine ⟨1,?_,?_⟩ <;> dsimp [qturns,qturn] <;> linarith
-  · refine ⟨3,?_,?_⟩ <;> dsimp [qturns,qturn] <;> linarith
-  · refine ⟨2,?_,?_⟩ <;> dsimp [qturns,qturn] <;> linarith
+/-- A quarter turn of both `n` and `d` keeps the octagon, its support function
+and the pairing of `n` with `d`. -/
+lemma turnPoint_facts (k : Fin 4) (c s : ℝ) (n d : Point) :
+    (axisInside c s d → axisInside c s (turnPoint k d)) ∧
+    octagonSupport c s (turnPoint k n) = octagonSupport c s n ∧
+    dot (turnPoint k n) (turnPoint k d) = dot n d ∧
+    normSq (turnPoint k n) = normSq n := by
+  have h₁ (x y : ℝ) : |c*(-y)+s*x| = |-s*x+c*y| := by rw [← abs_neg]; ring_nf
+  have h₂ (x y : ℝ) : |-s*(-y)+c*x| = |c*x+s*y| := by ring_nf
+  have h₃ (x y : ℝ) : |c*y+s*(-x)| = |-s*x+c*y| := by ring_nf
+  have h₄ (x y : ℝ) : |-s*y+c*(-x)| = |c*x+s*y| := by rw [← abs_neg]; ring_nf
+  fin_cases k <;> simp only [turnPoint,Fin.zero_eta,Fin.mk_one,Fin.reduceFinMk,Matrix.cons_val,
+    axisInside,octagonSupport,dot,normSq,abs_neg,h₁,h₂,h₃,h₄] <;>
+    refine ⟨fun h => ?_,?_,?_,?_⟩ <;> first | trivial | ring1 | tauto
 
 lemma octagon_strict {c s : ℝ} (hc : 0 < c) (hs : 0 ≤ s)
     (hunit : c^2+s^2=1) {d n : Point} (hd : axisInside c s d) (hn : n ≠ (0,0)) :
     dot n d < octagonSupport c s n := by
-  obtain ⟨k,hx,hy⟩ := qturn_first_quadrant n
-  have hf := qturns_facts k.val c s n d
-  have hpos : 0 < (qturns k.val n).1+(qturns k.val n).2 := by
+  obtain ⟨k,hx,hy⟩ := quarter_nonnegative n
+  obtain ⟨hk,hsup,hdot,hnorm⟩ := turnPoint_facts k c s n d
+  have hpos : 0 < (turnPoint k n).1+(turnPoint k n).2 := by
+    have h := normSq_pos_of_ne hn
+    rw [← hnorm,normSq] at h
     by_contra hh
-    have hx0 : (qturns k.val n).1=0 := by linarith
-    have hy0 : (qturns k.val n).2=0 := by linarith
-    have hn0 : normSq n=0 := by
-      rw [← hf.2.2.2]
-      simp [normSq,hx0,hy0]
-    apply hn
-    apply Prod.ext <;> dsimp [normSq] at hn0 ⊢ <;>
-      nlinarith [sq_nonneg n.1,sq_nonneg n.2]
-  have hh := octagon_first_quadrant hc hs hunit (qturns k.val d)
-    (qturns k.val n) (hf.1 hd) hx hy hpos
-  simpa only [hf.2.1,hf.2.2.1] using hh
+    nlinarith
+  rw [← hsup,← hdot]
+  exact octagon_first_quadrant hc hs hunit _ _ (hk hd) hx hy hpos
 
 def AxisInside (c s : ℝ) (d : Point) : Prop :=
   let H := (1+|c|+|s|)/2
@@ -270,3 +240,126 @@ theorem separating_axes (S T : UnitSquare)
   exact (not_lt_of_ge e.separates) hlt
 
 end SquaresInCircles.SAT
+
+namespace SquaresInCircles
+
+/-! ### Two oriented squares -/
+
+/-- `(|cos t| + |sin t|)/2`, the half-width along a coordinate axis of a unit
+square at angle `t`. -/
+def angularWidth (t : ℝ) : ℝ := (|Real.cos t|+|Real.sin t|)/2
+
+/-- The half-width of a square at an angle in `[0, π/2]`. -/
+lemma angularWidth_eq {x : ℝ} (hx : 0 ≤ x ∧ x ≤ Real.pi/2) :
+    angularWidth x=(Real.cos x+Real.sin x)/2 := by
+  obtain ⟨hc,hs⟩ := cos_sin_nonneg hx
+  simp only [angularWidth,abs_of_nonneg hc,abs_of_nonneg hs]
+
+lemma angularWidth_neg (t : ℝ) : angularWidth (-t)=angularWidth t := by
+  simp [angularWidth,Real.cos_neg,Real.sin_neg,abs_neg]
+
+lemma angularWidth_pi_add (t : ℝ) : angularWidth (Real.pi+t)=angularWidth t := by
+  simp [angularWidth,Real.cos_add,Real.sin_add,abs_neg]
+
+lemma angularWidth_half_pi_add (t : ℝ) : angularWidth (Real.pi/2+t)=angularWidth t := by
+  simp [angularWidth,Real.cos_add,Real.sin_add,abs_neg,add_comm]
+
+lemma angularWidth_half_pi_sub (t : ℝ) : angularWidth (Real.pi/2-t)=angularWidth t := by
+  simp [angularWidth,Real.cos_pi_div_two_sub,Real.sin_pi_div_two_sub,add_comm]
+
+lemma angularWidth_three_half_pi_add (t : ℝ) :
+    angularWidth (3*Real.pi/2+t)=angularWidth t := by
+  rw [show 3*Real.pi/2+t=Real.pi+(Real.pi/2+t) by ring,angularWidth_pi_add,
+    angularWidth_half_pi_add]
+
+/-- The half-width is at least the mean of `cos t` and `sin t`. -/
+lemma angularWidth_lower (t : ℝ) : (Real.cos t+Real.sin t)/2 ≤ angularWidth t := by
+  dsimp [angularWidth]
+  linarith [le_abs_self (Real.cos t),le_abs_self (Real.sin t)]
+
+lemma oriented_x_width (t a b : ℝ) : width (orientedSquare t a b) (1,0)=angularWidth t := by
+  simp [width,frameX,frameY,orientedSquare,angularWidth,abs_neg]
+
+lemma oriented_y_width (t a b : ℝ) : width (orientedSquare t a b) (0,1)=angularWidth t := by
+  simp [width,frameX,frameY,orientedSquare,angularWidth,add_comm]
+
+/-- Each coordinate of a point of the closed square is within `angularWidth t`
+of that of the centre. -/
+lemma closed_center_coordinate_bounds {t a b : ℝ} {p : Point}
+    (hp : closedSquare (orientedSquare t a b) p) :
+    (centerX t a b-angularWidth t ≤ p.1 ∧ p.1 ≤ centerX t a b+angularWidth t) ∧
+    (centerY t a b-angularWidth t ≤ p.2 ∧ p.2 ≤ centerY t a b+angularWidth t) := by
+  have hx := abs_le.mp (closed_dot_bound (orientedSquare t a b) (1,0) hp)
+  have hy := abs_le.mp (closed_dot_bound (orientedSquare t a b) (0,1) hp)
+  rw [oriented_x_width] at hx
+  rw [oriented_y_width] at hy
+  simp only [dot,sub,orientedSquare,one_mul,zero_mul,add_zero,zero_add] at hx hy
+  exact ⟨⟨by dsimp [centerX]; linarith,by dsimp [centerX]; linarith⟩,
+    ⟨by dsimp [centerY]; linarith,by dsimp [centerY]; linarith⟩⟩
+
+lemma oriented_relativeC (t a b T A B : ℝ) :
+    relativeC (orientedSquare t a b) (orientedSquare T A B)=Real.cos (T-t) := by
+  simp only [relativeC,orientedSquare,Real.cos_sub]
+  ring
+
+lemma oriented_relativeS (t a b T A B : ℝ) :
+    relativeS (orientedSquare t a b) (orientedSquare T A B)=Real.sin (T-t) := by
+  simp only [relativeS,orientedSquare,Real.sin_sub]
+  ring
+
+/-- The threshold of two oriented squares, the second turned by `T - t` from the
+first. -/
+lemma oriented_pair_threshold (t a b T A B : ℝ) :
+    SAT.threshold (orientedSquare t a b) (orientedSquare T A B)=1/2+angularWidth (T-t) := by
+  rw [SAT.threshold,oriented_relativeC,oriented_relativeS]
+  dsimp [angularWidth]
+  ring
+
+/-- The offset of the centres in the frame of the first square. -/
+lemma pair_frameX_left (t a b T A B : ℝ) :
+    frameX (orientedSquare t a b)
+      (sub (orientedSquare T A B).center (orientedSquare t a b).center)=
+      A*Real.cos (T-t)-B*Real.sin (T-t)-a := by
+  dsimp [frameX,orientedSquare,sub]
+  rw [Real.cos_sub,Real.sin_sub]
+  linear_combination -a*(Real.sin_sq_add_cos_sq t)
+
+lemma pair_frameY_left (t a b T A B : ℝ) :
+    frameY (orientedSquare t a b)
+      (sub (orientedSquare T A B).center (orientedSquare t a b).center)=
+      A*Real.sin (T-t)+B*Real.cos (T-t)-b := by
+  dsimp [frameY,orientedSquare,sub]
+  rw [Real.cos_sub,Real.sin_sub]
+  linear_combination -b*(Real.sin_sq_add_cos_sq t)
+
+/-- The offset of the centres in the frame of the second square. -/
+lemma pair_frameX_right (t a b T A B : ℝ) :
+    frameX (orientedSquare T A B)
+      (sub (orientedSquare T A B).center (orientedSquare t a b).center)=
+      A-a*Real.cos (T-t)-b*Real.sin (T-t) := by
+  dsimp [frameX,orientedSquare,sub]
+  rw [Real.cos_sub,Real.sin_sub]
+  linear_combination A*(Real.sin_sq_add_cos_sq T)
+
+lemma pair_frameY_right (t a b T A B : ℝ) :
+    frameY (orientedSquare T A B)
+      (sub (orientedSquare T A B).center (orientedSquare t a b).center)=
+      B+a*Real.sin (T-t)-b*Real.cos (T-t) := by
+  dsimp [frameY,orientedSquare,sub]
+  rw [Real.cos_sub,Real.sin_sub]
+  linear_combination B*(Real.sin_sq_add_cos_sq T)
+
+/-- Two oriented squares with disjoint interiors, the second turned by
+`d = T - t` from the first, are separated along an axis of one of them: in the
+frame of the first square or of the second, a coordinate of the offset of the
+centres reaches the threshold `1/2 + angularWidth d` in absolute value. -/
+theorem oriented_separating_axes {t a b T A B : ℝ}
+    (hd : ∀ p, ¬ (openSquare (orientedSquare t a b) p ∧ openSquare (orientedSquare T A B) p)) :
+    1/2+angularWidth (T-t) ≤ |A*Real.cos (T-t)-B*Real.sin (T-t)-a| ∨
+    1/2+angularWidth (T-t) ≤ |A*Real.sin (T-t)+B*Real.cos (T-t)-b| ∨
+    1/2+angularWidth (T-t) ≤ |A-a*Real.cos (T-t)-b*Real.sin (T-t)| ∨
+    1/2+angularWidth (T-t) ≤ |B+a*Real.sin (T-t)-b*Real.cos (T-t)| := by
+  simpa only [oriented_pair_threshold,pair_frameX_left,pair_frameY_left,pair_frameX_right,
+    pair_frameY_right] using SAT.separating_axes _ _ hd
+
+end SquaresInCircles

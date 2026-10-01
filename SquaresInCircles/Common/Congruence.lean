@@ -118,6 +118,10 @@ lemma oriented_frame_centerX (t a b : ℝ) :
   dsimp [frameX,orientedSquare,sub]
   linear_combination a*(Real.sin_sq_add_cos_sq t)
 
+/-- At the phase `0` the oriented square is axis-parallel. -/
+lemma orientedSquare_zero (a b : ℝ) : orientedSquare 0 a b=axisSquare (a,b) := by
+  simp [orientedSquare,axisSquare]
+
 lemma orientedSquare_eq_modelSquare (t a b : ℝ) :
     orientedSquare t a b=modelSquare (0,0) (t : Direction) (a,b) := by
   unfold orientedSquare modelSquare

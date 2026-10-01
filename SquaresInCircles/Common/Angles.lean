@@ -100,6 +100,15 @@ def quarterShift : Fin 4 → Direction :=
 def turnPoint : Fin 4 → Point → Point :=
   ![(fun p => p),(fun p => (-p.2,p.1)),(fun p => (-p.1,-p.2)),(fun p => (p.2,-p.1))]
 
+/-- Some quarter turn takes a point to the closed first quadrant. -/
+lemma quarter_nonnegative (c : Point) :
+    ∃ k : Fin 4, 0 ≤ (turnPoint k c).1 ∧ 0 ≤ (turnPoint k c).2 := by
+  rcases le_or_gt 0 c.1 with hx | hx <;> rcases le_or_gt 0 c.2 with hy | hy
+  · exact ⟨0,by simpa [turnPoint] using And.intro hx hy⟩
+  · exact ⟨1,by simpa [turnPoint] using And.intro (neg_nonneg.mpr hy.le) hx⟩
+  · exact ⟨3,by simpa [turnPoint] using And.intro hy (neg_nonneg.mpr hx.le)⟩
+  · exact ⟨2,by simpa [turnPoint] using And.intro (neg_nonneg.mpr hx.le) (neg_nonneg.mpr hy.le)⟩
+
 lemma represents_quarter {S : UnitSquare} {o : Point} {φ : Direction} {c : Point}
     (k : Fin 4) (h : Represents S o (φ+quarterShift k) c) :
     Represents S o φ (turnPoint k c) := by

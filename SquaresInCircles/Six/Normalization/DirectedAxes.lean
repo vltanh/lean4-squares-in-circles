@@ -22,38 +22,6 @@ def pairNormal (i : Fin 8) (S T : UnitSquare) : Point :=
   ![normalX S,scale (-1) (normalX S),normalY S,scale (-1) (normalY S),
     normalX T,scale (-1) (normalX T),normalY T,scale (-1) (normalY T)] i
 
-lemma directed_pair_separator (S T : UnitSquare)
-    (hd : ∀ p, ¬ (openSquare S p ∧ openSquare T p)) :
-    ∃ i : Fin 8, SAT.threshold S T ≤ dot (pairNormal i S T) (sub T.center S.center) := by
-  have hs := SAT.separating_axes S T hd
-  rcases hs with hs | hs | hs | hs
-  · by_cases h : 0 ≤ frameX S (sub T.center S.center)
-    · rw [abs_of_nonneg h] at hs
-      exact ⟨0,by simpa [pairNormal,normalX,frameX,dot] using hs⟩
-    · rw [abs_of_neg (lt_of_not_ge h)] at hs
-      exact ⟨1,by simp [pairNormal,normalX,frameX,dot,scale] at hs ⊢; linarith⟩
-  · by_cases h : 0 ≤ frameY S (sub T.center S.center)
-    · rw [abs_of_nonneg h] at hs
-      exact ⟨2,by simpa [pairNormal,normalY,frameY,dot] using hs⟩
-    · rw [abs_of_neg (lt_of_not_ge h)] at hs
-      exact ⟨3,by simp [pairNormal,normalY,frameY,dot,scale] at hs ⊢; linarith⟩
-  · by_cases h : 0 ≤ frameX T (sub T.center S.center)
-    · rw [abs_of_nonneg h] at hs
-      exact ⟨4,by simpa [pairNormal,normalX,frameX,dot] using hs⟩
-    · rw [abs_of_neg (lt_of_not_ge h)] at hs
-      exact ⟨5,by simp [pairNormal,normalX,frameX,dot,scale] at hs ⊢; linarith⟩
-  · by_cases h : 0 ≤ frameY T (sub T.center S.center)
-    · rw [abs_of_nonneg h] at hs
-      exact ⟨6,by simpa [pairNormal,normalY,frameY,dot] using hs⟩
-    · rw [abs_of_neg (lt_of_not_ge h)] at hs
-      exact ⟨7,by simp [pairNormal,normalY,frameY,dot,scale] at hs ⊢; linarith⟩
-
-lemma width_scale_neg (S : UnitSquare) (v : Point) :
-    width S (scale (-1) v)=width S v := by
-  have hx : frameX S (scale (-1) v)=-frameX S v := by dsimp [frameX,scale]; ring
-  have hy : frameY S (scale (-1) v)=-frameY S v := by dsimp [frameY,scale]; ring
-  simp only [width,hx,hy,abs_neg]
-
 lemma dot_scale_neg (v p : Point) : dot (scale (-1) v) p = -dot v p := by
   dsimp [dot,scale]
   ring
@@ -157,19 +125,19 @@ lemma pairNormal_widths (S T : UnitSquare) (i : Fin 8) :
   fin_cases i
   · exact hS
   · show width S (scale (-1) (normalX S))+width T (scale (-1) (normalX S))=_
-    rw [width_scale_neg,width_scale_neg]
+    rw [width_neg,width_neg]
     exact hS
   · exact hSY
   · show width S (scale (-1) (normalY S))+width T (scale (-1) (normalY S))=_
-    rw [width_scale_neg,width_scale_neg]
+    rw [width_neg,width_neg]
     exact hSY
   · exact hT
   · show width S (scale (-1) (normalX T))+width T (scale (-1) (normalX T))=_
-    rw [width_scale_neg,width_scale_neg]
+    rw [width_neg,width_neg]
     exact hT
   · exact hTY
   · show width S (scale (-1) (normalY T))+width T (scale (-1) (normalY T))=_
-    rw [width_scale_neg,width_scale_neg]
+    rw [width_neg,width_neg]
     exact hTY
 
 /-- A separating directed axis has a positive inner product with every chord from
@@ -198,10 +166,6 @@ lemma orient_axis_from_pins {S T : UnitSquare} {n p q : Point}
     have ht := open_projection_bounds T hn hq
     rw [dot_sub_right] at hchord
     linarith [hs.1,ht.2]
-
-end SquaresInCircles.Six
-
-namespace SquaresInCircles.Six
 
 /-- The four axes of a pair: the two axes of `S`, then those of `T`. -/
 def unsignedPairAxis (S T : UnitSquare) (i : Fin 4) : Point :=
@@ -242,6 +206,20 @@ lemma unsigned_separators_complete (S T : UnitSquare)
   · exact ⟨1,by simpa [unsignedPairAxis,normalY,frameY,dot] using h⟩
   · exact ⟨2,by simpa [unsignedPairAxis,normalX,frameX,dot] using h⟩
   · exact ⟨3,by simpa [unsignedPairAxis,normalY,frameY,dot] using h⟩
+
+/-- Two squares with disjoint interiors are separated along one of the eight
+directed axes of the pair. -/
+lemma directed_pair_separator (S T : UnitSquare)
+    (hd : ∀ p, ¬ (openSquare S p ∧ openSquare T p)) :
+    ∃ i : Fin 8, SAT.threshold S T ≤ dot (pairNormal i S T) (sub T.center S.center) := by
+  obtain ⟨i,hi⟩ := unsigned_separators_complete S T hd
+  rcases le_abs'.mp hi with h | h
+  · obtain ⟨j,hj⟩ := preferred_is_pairNormal (fun _ => false) S T i
+    refine ⟨j,?_⟩
+    simp only [← hj,preferredPairAxis,Bool.false_eq_true,ite_false,dot_scale_neg]
+    linarith
+  · obtain ⟨j,hj⟩ := preferred_is_pairNormal (fun _ => true) S T i
+    exact ⟨j,by simpa only [← hj,preferredPairAxis,ite_true] using h⟩
 
 /-- If every directed axis has positive projection on `q - p`, with `p` in the
 first open square and `q` in the second, one of them separates the squares. -/

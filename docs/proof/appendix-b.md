@@ -185,8 +185,8 @@ of the marker arc about the direction $s\,\ell(a, u)$.
 inequality is Lemma 9.11 (2). $\square$
 
 *Lean: [`Seven.support_lower`](../../SquaresInCircles/Seven/Support.lean#L55),
-[`Seven.sign_admissible`](../../SquaresInCircles/Seven/PairModel.lean#L41),
-[`Seven.marker_arc_support`](../../SquaresInCircles/Seven/PairModel.lean#L47).*
+[`Seven.sign_admissible`](../../SquaresInCircles/Seven/PairModel.lean#L42),
+[`Seven.marker_arc_support`](../../SquaresInCircles/Seven/PairModel.lean#L48).*
 
 ### Lemma B.5 (support sums in closed form)
 
@@ -256,16 +256,16 @@ and $\sin(\frac{5\pi}2 - d) = \cos d$. With these and part (2) for $w = d$, part
 $\square$
 
 *Lean:
-[`Seven.pairSupport_zero`](../../SquaresInCircles/Seven/PairModel.lean#L76),
-[`Seven.pairSupport_one`](../../SquaresInCircles/Seven/PairModel.lean#L82),
-[`Seven.pairSupport_two`](../../SquaresInCircles/Seven/PairModel.lean#L89),
-[`Seven.pairSupport_three`](../../SquaresInCircles/Seven/PairModel.lean#L96),
-[`Seven.support_three_half_sub`](../../SquaresInCircles/Seven/PairModel.lean#L62),
-[`Seven.support_two_pi_sub`](../../SquaresInCircles/Seven/PairModel.lean#L70),
+[`Seven.pairSupport_zero`](../../SquaresInCircles/Seven/PairModel.lean#L77),
+[`Seven.pairSupport_one`](../../SquaresInCircles/Seven/PairModel.lean#L83),
+[`Seven.pairSupport_two`](../../SquaresInCircles/Seven/PairModel.lean#L90),
+[`Seven.pairSupport_three`](../../SquaresInCircles/Seven/PairModel.lean#L97),
+[`Seven.support_three_half_sub`](../../SquaresInCircles/Seven/PairModel.lean#L63),
+[`Seven.support_two_pi_sub`](../../SquaresInCircles/Seven/PairModel.lean#L71),
 [`Seven.pair_support_axis_values`](../../SquaresInCircles/Seven/PairModel.lean#L140),
-[`Seven.centerDX`](../../SquaresInCircles/Seven/PairModel.lean#L132),
-[`Seven.centerDY`](../../SquaresInCircles/Seven/PairModel.lean#L135),
-[`Seven.pairWidth`](../../SquaresInCircles/Seven/PairModel.lean#L138).*
+[`Seven.centerDX`](../../SquaresInCircles/Seven/PairModel.lean#L134),
+[`Seven.centerDY`](../../SquaresInCircles/Seven/PairModel.lean#L137),
+[`angularWidth`](../../SquaresInCircles/Common/SeparatingAxes.lean#L250).*
 
 ### Lemma B.6 (the inward sum with a positive source sign)
 
@@ -290,7 +290,7 @@ $e \in [-\frac\pi6, \frac\pi3]$ if $t = -1$. In both cases $\cos e \ge 0$, so
 $|\cos e| = \cos e$. $\square$
 
 *Lean:
-[`Seven.pairSupport_inward`](../../SquaresInCircles/Seven/PairModel.lean#L107).*
+[`Seven.pairSupport_inward`](../../SquaresInCircles/Seven/PairModel.lean#L108).*
 
 *Remark (the turns of the sectors).* In each sector Appendices C and D write
 $\sigma_k(\frac\pi3)$ through a *turn*, the relative phase

@@ -94,14 +94,6 @@ lemma packing_of_same_sets {n : ℕ} {S T : Fin n → UnitSquare} {o : Point} {R
   intro i j hij p hi
   exact hp.disjoint i j hij p ⟨(hopen i p).mp hi.1,(hopen j p).mp hi.2⟩
 
-lemma quarter_nonnegative (c : Point) :
-    ∃ k : Fin 4, 0 ≤ (turnPoint k c).1 ∧ 0 ≤ (turnPoint k c).2 := by
-  rcases le_or_gt 0 c.1 with hx | hx <;> rcases le_or_gt 0 c.2 with hy | hy
-  · exact ⟨0,by simpa [turnPoint] using And.intro hx hy⟩
-  · exact ⟨1,by simpa [turnPoint] using And.intro (neg_nonneg.mpr hy.le) hx⟩
-  · exact ⟨3,by simpa [turnPoint] using And.intro hy (neg_nonneg.mpr hx.le)⟩
-  · exact ⟨2,by simpa [turnPoint] using And.intro (neg_nonneg.mpr hx.le) (neg_nonneg.mpr hy.le)⟩
-
 /-- A frame at `o` along the axes of `C` in which the centre of `C` has
 nonnegative coordinates. -/
 lemma containing_frame (C : UnitSquare) (o : Point) :

@@ -88,7 +88,7 @@ lemma parallel_pos {a u A v g : ℝ} (s t : TransverseSign) (k : Fin 4)
     (hd : relativePhase a u A v g s t = 0) :
     0 < pairSupport a u A v s t k g := by
   obtain ⟨e0,e1,e2,e3⟩ := pair_support_axis_values a u A v g s t
-  simp only [pairWidth,centerDX,centerDY,hd,Real.cos_zero,Real.sin_zero,
+  simp only [angularWidth,centerDX,centerDY,hd,Real.cos_zero,Real.sin_zero,
     abs_zero,abs_one,mul_zero,mul_one] at e0 e1 e2 e3
   have := h.a_lt_five_fourths
   have := h'.a_lt_five_fourths
@@ -154,7 +154,7 @@ lemma quarter_turn_pos {a u A v g : ℝ} (s t : TransverseSign) (k : Fin 4)
     (hd : relativePhase a u A v g s t = Real.pi/2) :
     0 < pairSupport a u A v s t k g := by
   obtain ⟨e0,e1,e2,e3⟩ := pair_support_axis_values a u A v g s t
-  simp only [pairWidth,centerDX,centerDY,hd,Real.cos_pi_div_two,Real.sin_pi_div_two,
+  simp only [angularWidth,centerDX,centerDY,hd,Real.cos_pi_div_two,Real.sin_pi_div_two,
     abs_zero,abs_one,mul_zero,mul_one] at e0 e1 e2 e3
   have hsep (hh : 1 ≤ a+t.coe*v ∨ 1 ≤ A-s.coe*u) : False := by
     have hq := quarter_difference_le h h' s t hh

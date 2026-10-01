@@ -1,115 +1,27 @@
 import SquaresInCircles.Six.Normalization.Pins
+import SquaresInCircles.Six.Normalization.DirectedAxes
 
 /-!
 # The pair W, D
 
-For two turned squares the separating threshold is `1/2 + angularWidth d`,
-where `d` is the relative turn, and the difference of the centres has explicit
-coordinates in either frame. Along the secondary axis of either square the
-threshold is the sum of the two half-widths, so points of the two open squares
-determine the direction of a separation along it. Two disjoint contained
-squares that avoid the core, the second turned from the first by
-`d ∈ [0, 16/15]`, are separated along the secondary axis of one of them, from
-the first to the second (`turned_pair_secondary`): `cos d ≥ 12/25` keeps the
-projections on the primary axes below the threshold, by the distance bound of a
-centre, and the short transverse coordinates keep the backward projections
-below it. The pins of W and D, `π/3` apart, order the secondary axes of squares
-near the west from W to D; so W comes before D (`west_before_diagonal`).
+Two disjoint contained squares that avoid the core, the second turned from the
+first by `d ∈ [0, 16/15]`, are separated along the secondary axis of one of
+them, from the first to the second (`turned_pair_secondary`): `cos d ≥ 12/25`
+keeps the projections on the primary axes below the threshold
+`1/2 + angularWidth d`, by the distance bound of a centre, and the short
+transverse coordinates keep the backward projections below it. The pins of W
+and D, `π/3` apart, order the secondary axes of squares near the west from W to
+D; so W comes before D (`west_before_diagonal`).
 -/
 
 noncomputable section
-namespace SquaresInCircles.Six.Normalization
-
-lemma oriented_relativeC (t a b T A B : ℝ) :
-    relativeC (orientedSquare t a b) (orientedSquare T A B) = Real.cos (T-t) := by
-  simp only [relativeC,orientedSquare,Real.cos_sub]
-  ring
-
-lemma oriented_relativeS (t a b T A B : ℝ) :
-    relativeS (orientedSquare t a b) (orientedSquare T A B) = Real.sin (T-t) := by
-  simp only [relativeS,orientedSquare,Real.sin_sub]
-  ring
-
-lemma oriented_pair_threshold (t a b T A B : ℝ) :
-    SAT.threshold (orientedSquare t a b) (orientedSquare T A B) =
-      1/2+angularWidth (T-t) := by
-  rw [SAT.threshold,oriented_relativeC,oriented_relativeS]
-  dsimp [angularWidth]
-  ring
-
-lemma pair_frameX_left (t a b T A B : ℝ) :
-    frameX (orientedSquare t a b)
-      (sub (orientedSquare T A B).center (orientedSquare t a b).center) =
-      A*Real.cos (T-t)-B*Real.sin (T-t)-a := by
-  dsimp [frameX,orientedSquare,sub]
-  rw [Real.cos_sub,Real.sin_sub]
-  linear_combination -a*(Real.sin_sq_add_cos_sq t)
-
-lemma pair_frameY_left (t a b T A B : ℝ) :
-    frameY (orientedSquare t a b)
-      (sub (orientedSquare T A B).center (orientedSquare t a b).center) =
-      A*Real.sin (T-t)+B*Real.cos (T-t)-b := by
-  dsimp [frameY,orientedSquare,sub]
-  rw [Real.cos_sub,Real.sin_sub]
-  linear_combination -b*(Real.sin_sq_add_cos_sq t)
-
-lemma pair_frameX_right (t a b T A B : ℝ) :
-    frameX (orientedSquare T A B)
-      (sub (orientedSquare T A B).center (orientedSquare t a b).center) =
-      A-a*Real.cos (T-t)-b*Real.sin (T-t) := by
-  dsimp [frameX,orientedSquare,sub]
-  rw [Real.cos_sub,Real.sin_sub]
-  linear_combination A*(Real.sin_sq_add_cos_sq T)
-
-lemma pair_frameY_right (t a b T A B : ℝ) :
-    frameY (orientedSquare T A B)
-      (sub (orientedSquare T A B).center (orientedSquare t a b).center) =
-      B+a*Real.sin (T-t)-b*Real.cos (T-t) := by
-  dsimp [frameY,orientedSquare,sub]
-  rw [Real.cos_sub,Real.sin_sub]
-  linear_combination B*(Real.sin_sq_add_cos_sq T)
-
-end SquaresInCircles.Six.Normalization
-
 namespace SquaresInCircles.Six
 open Normalization
 
 /-! ### Pins orient the secondary axes -/
 
-lemma normalY_ne_zero (S : UnitSquare) : normalY S ≠ (0,0) := by
-  intro h
-  have hx := congrArg Prod.fst h
-  have hy := congrArg Prod.snd h
-  dsimp [normalY] at hx hy
-  nlinarith [S.unit]
-
 lemma dot_normalY (S : UnitSquare) (v : Point) : dot (normalY S) v=frameY S v := by
   dsimp [dot,normalY,frameY]
-
-lemma threshold_secondary_left (S T : UnitSquare) :
-    SAT.threshold S T = width S (normalY S)+width T (normalY S) := by
-  have hxx : frameX S (normalY S)=0 := by dsimp [frameX,normalY]; ring
-  have hxy : frameY S (normalY S)=1 := by dsimp [frameY,normalY]; nlinarith [S.unit]
-  have hyx : frameX T (normalY S)=relativeS S T := by
-    dsimp [frameX,normalY,relativeS]
-    ring
-  have hyy : frameY T (normalY S)=relativeC S T := by
-    dsimp [frameY,normalY,relativeC]
-    ring
-  rw [width,width,hxx,hxy,hyx,hyy]
-  simp only [abs_zero,abs_one,SAT.threshold]
-  ring
-
-lemma threshold_secondary_right (S T : UnitSquare) :
-    SAT.threshold S T = width S (normalY T)+width T (normalY T) := by
-  have hc : relativeC T S=relativeC S T := by dsimp [relativeC]; ring
-  have hs : relativeS T S= -relativeS S T := by dsimp [relativeS]; ring
-  have he : SAT.threshold T S=SAT.threshold S T := by
-    simp only [SAT.threshold,hc,hs,abs_neg]
-  rw [← he,threshold_secondary_left]
-  ring
-
-open Normalization
 
 lemma polar_transverse_projection (r q t a b : ℝ) :
     dot (normalY (orientedSquare t a b)) (polar r q) = r*Real.sin (q-t) := by
@@ -139,8 +51,6 @@ lemma west_diagonal_pin_order {t a b : ℝ}
   exact sub_pos.mp hpos
 
 /-! ### Two squares turned by less than `16/15` -/
-
-open Normalization
 
 lemma primary_projection_bound {A B a c s : ℝ}
     (hchart : ContainedChart A |B|)
@@ -222,9 +132,7 @@ theorem turned_pair_secondary {t T a b A B:ℝ}
   have hreverseD := forward_transverse_bound
     (A:=a) (B:=b) (b:=B) (c:=Real.cos (T-t)) (s:=Real.sin (T-t))
     (by linarith [hW.half_le]) hw.2.2.le hd'.2.2.le hcos htr.2.1
-  have hs := SAT.separating_axes (orientedSquare t a b) (orientedSquare T A B) hd
-  rw [oriented_pair_threshold,pair_frameX_left,pair_frameY_left,
-    pair_frameX_right,pair_frameY_right] at hs
+  have hs := oriented_separating_axes hd
   have hwidth : angularWidth (T-t)=(Real.cos (T-t)+Real.sin (T-t))/2 := by
     simp only [angularWidth,abs_of_nonneg hcos,abs_of_nonneg htr.2.1]
   rw [hwidth] at hs
@@ -282,9 +190,13 @@ theorem west_before_diagonal {t a b T A B : ℝ}
   have hthr := oriented_pair_threshold T A B t a b
   rcases turned_pair_secondary hD hW hDcore hWcore (by linarith) (by linarith [ht.2,hT.1])
     (fun p hp => hd p ⟨hp.2,hp.1⟩) with h | h
-  · rw [← hthr,threshold_secondary_left,← dot_normalY] at h
-    linarith [Six.separator_orients_pins (normalY_ne_zero _) hpD hpW h]
-  · rw [← hthr,threshold_secondary_right,← dot_normalY] at h
-    linarith [Six.separator_orients_pins (normalY_ne_zero _) hpD hpW h]
+  · have hp := axis_points_to_pin _ _ hpD hpW 2 (by rw [hthr]; exact h)
+    change 0 < dot (normalY _) _ at hp
+    rw [dot_sub_right] at hp
+    linarith
+  · have hp := axis_points_to_pin _ _ hpD hpW 6 (by rw [hthr]; exact h)
+    change 0 < dot (normalY _) _ at hp
+    rw [dot_sub_right] at hp
+    linarith
 
 end SquaresInCircles.Six

@@ -1,5 +1,6 @@
 import SquaresInCircles.Seven.Support
 import SquaresInCircles.Seven.MarkerArc
+import SquaresInCircles.Common.SeparatingAxes
 
 /-!
 # Support sums of a canonical pair
@@ -124,7 +125,8 @@ lemma pairSupport_inward {a u A v : ℝ} (t : TransverseSign)
 
 /-! The support sums in the frame of the first square: the relative phase `d`
 of the second square and the coordinates of its centre give each sum as the
-half-width of the pair on that axis minus the offset of the centres. -/
+threshold `1/2 + angularWidth d` of the pair minus the offset of the centres
+along that axis. -/
 
 def relativePhase (a u A v g : ℝ) (s t : TransverseSign) : ℝ :=
   g+s.coe*label a u-t.coe*label A v
@@ -135,13 +137,15 @@ def centerDX (a u A v g : ℝ) (s t : TransverseSign) : ℝ :=
 def centerDY (a u A v g : ℝ) (s t : TransverseSign) : ℝ :=
   A*Real.sin (relativePhase a u A v g s t)+t.coe*v*Real.cos (relativePhase a u A v g s t)-s.coe*u
 
-def pairWidth (d : ℝ) : ℝ := (1+|Real.cos d|+|Real.sin d|)/2
-
 lemma pair_support_axis_values (a u A v g : ℝ) (s t : TransverseSign) :
-    pairSupport a u A v s t 0 g=pairWidth (relativePhase a u A v g s t)-centerDX a u A v g s t ∧
-    pairSupport a u A v s t 1 g=pairWidth (relativePhase a u A v g s t)-centerDY a u A v g s t ∧
-    pairSupport a u A v s t 2 g=pairWidth (relativePhase a u A v g s t)+centerDX a u A v g s t ∧
-    pairSupport a u A v s t 3 g=pairWidth (relativePhase a u A v g s t)+centerDY a u A v g s t := by
+    pairSupport a u A v s t 0 g=
+      1/2+angularWidth (relativePhase a u A v g s t)-centerDX a u A v g s t ∧
+    pairSupport a u A v s t 1 g=
+      1/2+angularWidth (relativePhase a u A v g s t)-centerDY a u A v g s t ∧
+    pairSupport a u A v s t 2 g=
+      1/2+angularWidth (relativePhase a u A v g s t)+centerDX a u A v g s t ∧
+    pairSupport a u A v s t 3 g=
+      1/2+angularWidth (relativePhase a u A v g s t)+centerDY a u A v g s t := by
   let d := relativePhase a u A v g s t
   have he (c : ℝ) : c-g-s.coe*label a u+t.coe*label A v=c-d := by
     dsimp [d,relativePhase]
@@ -150,7 +154,7 @@ lemma pair_support_axis_values (a u A v g : ℝ) (s t : TransverseSign) :
     support_three_half_sub,support_two_pi_sub,
     show 5*Real.pi/2-d=(Real.pi/2-d)+2*Real.pi by ring]
   simp only [support,Real.cos_pi_sub,Real.sin_pi_sub,Real.cos_add_two_pi,Real.sin_add_two_pi,
-    Real.cos_pi_div_two_sub,Real.sin_pi_div_two_sub,abs_neg,pairWidth,centerDX,centerDY,d]
+    Real.cos_pi_div_two_sub,Real.sin_pi_div_two_sub,abs_neg,angularWidth,centerDX,centerDY,d]
   refine ⟨?_,?_,?_,?_⟩ <;> ring
 
 end SquaresInCircles.Seven
