@@ -56,13 +56,13 @@ example : (2/5:ℝ)+1/16 < 1/2 := by norm_num
 -- Four and five squares: radical and Taylor margins.
 example : ((109:ℝ)/100)^3/6 < 1/4 := by norm_num
 example : (5:ℝ) < (2237/1000)^2 := by norm_num
-example : ((707:ℝ)/1000)^2 < 1/2 := by norm_num
-example : (401:ℝ)/500 < 1-((22:ℝ)/35)^2/2 := by norm_num
-example : (1:ℝ) < (401/500)^2+(3/5)^2 := by norm_num
-example : (17:ℝ)/30 < (707/1000)*(401/500) := by norm_num
-example : (6:ℝ)/5*(237/1000)+(54/125)*(237/1000)^3 < 313/1000 := by norm_num
-example : (6:ℝ)/5*(237/1000)+(54/125)*(23/60)^3 < 313/1000 := by norm_num
-example : (6:ℝ)/5*(1-2*(23/60))+(54/125)*(23/60)^3 < 313/1000 := by norm_num
+example : ((11:ℝ)/5)^2 < 5 := by norm_num
+example : (3:ℝ)/5 < (1+11/5)/4 := by norm_num
+example : (5-(11:ℝ)/5)/8 < (3/5)^2 := by norm_num
+example : ((17:ℝ)/30)^2 < (3+11/5)/16 := by norm_num
+example : (6:ℝ)/5*(237/1000)+(54/125)*(237/1000)^3 < 314/1000 := by norm_num
+example : (6:ℝ)/5*(237/1000)+(54/125)*(23/60)^3 < 314/1000 := by norm_num
+example : (6:ℝ)/5*(1-2*(23/60))+(54/125)*(23/60)^3 < 314/1000 := by norm_num
 example : (2:ℝ)/3 < Real.sqrt 2/2 := by
   have hs := Real.sq_sqrt (show (0:ℝ) ≤ 2 by norm_num)
   nlinarith [Real.sqrt_nonneg 2]

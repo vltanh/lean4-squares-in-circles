@@ -151,7 +151,5 @@ def halfDiagonal : ℝ := Real.sqrt 2/2
 lemma halfDiagonal_pos : 0 < halfDiagonal := by unfold halfDiagonal; positivity
 lemma halfDiagonal_sq : halfDiagonal^2=1/2 := by
   rw [halfDiagonal,div_pow,Real.sq_sqrt (by norm_num)]; norm_num
-lemma halfDiagonal_gt_707 : (707:ℝ)/1000 < halfDiagonal := by
-  nlinarith [halfDiagonal_sq,halfDiagonal_pos]
 
 end SquaresInCircles

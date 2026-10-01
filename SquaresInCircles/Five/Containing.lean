@@ -42,8 +42,17 @@ theorem containing_arc {S : UnitSquare} {o : Point} (C : SquareChart S o)
       refine ⟨halfDiagonal/ℓ-1,by rw [sub_nonneg,le_div_iff₀ hℓ]; linarith,?_⟩
       have he : (1+(halfDiagonal/ℓ-1))*ℓ=halfDiagonal := by field_simp; ring
       rw [← hc,← hs,← mul_assoc,← mul_assoc,he]
-      have hcos := cos_gt_401_500 (t := t-δ) (abs_le.mpr ⟨by linarith [ht.1],by linarith [ht.2]⟩)
-      have hprod := mul_lt_mul_of_pos_left hcos halfDiagonal_pos
+      -- `cos (t-δ) ≥ cos (π/5) = (1+√5)/4`, and `(1+√5)/(4√2) > 17/30` by squaring
+      have hcos : Real.cos (Real.pi/5) ≤ Real.cos (t-δ) := by
+        rw [← Real.cos_abs (t-δ)]
+        exact Real.cos_le_cos_of_nonneg_of_le_pi (abs_nonneg _) (by linarith [Real.pi_pos])
+          (abs_le.mpr ⟨by linarith [ht.1],by linarith [ht.2]⟩)
+      have hkey : 17/30 < halfDiagonal*Real.cos (Real.pi/5) := by
+        rw [Real.cos_pi_div_five]
+        refine lt_of_pow_lt_pow_left₀ 2 (mul_pos halfDiagonal_pos (by positivity)).le ?_
+        rw [mul_pow,halfDiagonal_sq]
+        nlinarith [Real.sq_sqrt (show (0:ℝ) ≤ 5 by norm_num),sqrt_five_gt]
+      have hprod := mul_le_mul_of_nonneg_left hcos halfDiagonal_pos.le
       have hid : (aux*Real.cos t-halfDiagonal*Real.cos δ)^2+
           (aux*Real.sin t-halfDiagonal*Real.sin δ)^2 =
           aux^2+halfDiagonal^2-2*aux*(halfDiagonal*Real.cos (t-δ)) := by
@@ -53,7 +62,7 @@ theorem containing_arc {S : UnitSquare} {o : Point} (C : SquareChart S o)
       have hsq : (aux*Real.cos t-halfDiagonal*Real.cos δ)^2+
           (aux*Real.sin t-halfDiagonal*Real.sin δ)^2 < 1/4 := by
         rw [hid,aux]
-        linarith [halfDiagonal_gt_707,halfDiagonal_sq]
+        linarith [halfDiagonal_sq]
       exact ⟨abs_lt_of_sq_lt_sq (by nlinarith) (by norm_num),
         abs_lt_of_sq_lt_sq (by nlinarith) (by norm_num)⟩)
   exact ⟨A,by rw [hA]; ring⟩

@@ -1005,15 +1005,15 @@ $\frac\pi n$. This contradicts Lemma 3.16. $\square$
 3. $\arcsin x \le x + \frac{x^3}4$ for $0 \le x \le \frac35$.
 4. If $0 \le \theta \le \frac\pi2$, $u, v \in [0, 1]$ and
    $\sin\theta < \frac{u+v}2$, then $2\theta < \arcsin u + \arcsin v$.
-5. $\cos t > \frac{401}{500}$ for $|t| \le \frac\pi5$, and
-   $\sin\frac\pi5 < \frac35$.
+5. $\cos\frac\pi5 = \frac{1 + \sqrt5}4$ and $\sin\frac\pi5 < \frac35$.
 
-![Left: on the interval from 0 to 1, the graphs of x, of arcsin x above it, and of x + x cubed over 4, which stays above arcsin x up to x = 3/5, marked by a dotted line, and is dashed beyond. Right: on the interval from minus 0.75 to 0.75, the graphs of cos t and of 1 - t squared over 2 just below it, and the dashed level 401/500; the interval from minus pi/5 to pi/5 is shaded, and on it both curves lie above the level](figures/front-estimates.svg)
+![Left: on the interval from 0 to 1, the graphs of x, of arcsin x above it, and of x + x cubed over 4, which stays above arcsin x up to x = 3/5, marked by a dotted line, and is dashed beyond. Right: on the interval from minus 0.75 to 0.75, the graph of cos t and the dashed level (1 + root 5)/4, which it meets at plus and minus pi/5; the interval between them is shaded, and on it the cosine lies above the level](figures/front-estimates.svg)
 
 *Figure 3.35.* Left, parts (2) and (3): on $[0, \frac35]$ the arcsine lies
 between $x$ and $x + \frac{x^3}4$; the cubic bound is dashed beyond $\frac35$,
-and fails near $x = 1$. Right, part (5): for $|t| \le \frac\pi5$ (shaded) the
-cosine lies above $1 - \frac{t^2}2$, which lies just above $\frac{401}{500}$.
+and fails near $x = 1$. Right, part (5): the cosine takes the value
+$\frac{1 + \sqrt5}4$ at $\pm\frac\pi5$, and it is larger in between
+(shaded).
 
 ![The graph of the sine from 0 to a little beyond pi/2, with the points (arcsin u, u) and (arcsin v, v) on it joined by a chord. The midpoint of the chord, at height (u + v)/2 over mu, lies below the point of the curve over mu. A dashed horizontal line at height (u + v)/2 meets the curve left of mu, and a point theta with sine below that height lies further left](figures/front-sine-concave.svg)
 
@@ -1040,18 +1040,31 @@ $\sin\theta < \frac{u+v}2$ lies left of $\mu$, since the sine increases.
    $\frac12(\sin\arcsin u + \sin\arcsin v) = \frac{u+v}2 > \sin\theta$. The
    sine increases on $[0, \frac\pi2]$, which contains $\theta$ and $\mu$, so
    $\mu > \theta$.
-5. $\cos t \ge 1 - \frac{t^2}2$, and $|t| \le \frac\pi5 < \frac{22}{35}$ by (1),
-   so $\cos t > 1 - \frac12\left(\frac{22}{35}\right)^2 = \frac{983}{1225} > \frac{401}{500}$.
-   Then $\sin^2\frac\pi5 = 1 - \cos^2\frac\pi5 < 1 - \left(\frac{401}{500}\right)^2 = \frac{89199}{250000} < \frac9{25}$,
-   and $\sin\frac\pi5 > 0$. $\square$
+5. Let $c = \cos\frac\pi5$. As $\frac{3\pi}5 = \pi - \frac{2\pi}5$, we have
+   $\cos\frac{3\pi}5 = -\cos\frac{2\pi}5$, and the formulas for the cosine of
+   a triple and a double angle turn this into $4c^3 - 3c = -(2c^2 - 1)$, that
+   is,
+
+   ```math
+   4c^3 + 2c^2 - 3c - 1 = (c + 1)\left(4c^2 - 2c - 1\right) = 0 .
+   ```
+
+   Since $c > 0$, $c$ is the positive root $\frac{1 + \sqrt5}4$ of
+   $4c^2 - 2c - 1$ (in mathlib, `Real.cos_pi_div_five`). Then
+   $\sin^2\frac\pi5 = 1 - c^2 = 1 - \frac{6 + 2\sqrt5}{16} = \frac{5 - \sqrt5}8$,
+   which is less than $\frac9{25}$ because $\sqrt5 > \frac{11}5$, as
+   $\left(\frac{11}5\right)^2 = \frac{121}{25} < 5$: indeed
+   $\frac{5 - \sqrt5}8 < \frac{5 - 11/5}8 = \frac7{20} < \frac9{25}$. Finally
+   $\sin\frac\pi5 > 0$. $\square$
 
 *Lean: [`pi_lt_22_over_7`](../../SquaresInCircles/Common/Trigonometry.lean#L34),
 [`arcsin_ge_self`](../../SquaresInCircles/Common/Trigonometry.lean#L721),
 [`arcsin_le_self_of_nonpos`](../../SquaresInCircles/Common/Trigonometry.lean#L724),
 [`arcsin_le_cubic`](../../SquaresInCircles/Common/Trigonometry.lean#L731),
 [`arcsin_sum_gt_of_sin_lt`](../../SquaresInCircles/Common/Trigonometry.lean#L743),
-[`Five.cos_gt_401_500`](../../SquaresInCircles/Five/Exterior.lean#L35),
-[`Five.sin_pi_fifth_lt_three_fifths`](../../SquaresInCircles/Five/Exterior.lean#L43).*
+[`Five.sqrt_five_gt`](../../SquaresInCircles/Five/Exterior.lean#L35),
+[`Five.arc_length`](../../SquaresInCircles/Five/Exterior.lean#L63). (The value
+of the cosine in (5) comes from mathlib.)*
 
 ## 3.9 Recognising a model
 

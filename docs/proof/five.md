@@ -218,9 +218,9 @@ the curve. Case (iii) needs the side $3x + y \le 1$: without it the lemma
 would fail near $x = \frac12$, where the curve passes below the line
 $x + y = \frac{237}{1000}$ (dotted).
 
-*Proof.* Since $\pi > 3.14$, it suffices to show that the sum is less than
-$\frac{313}{1000}$. For $0 \le z \le \frac12$ we have
-$0 \le \frac{6z}5 \le \frac35$, and
+*Proof.* Since $\pi > 3.14$, we have $\frac\pi{10} > \frac{157}{500}$, and it
+suffices to show that the sum is less than $\frac{157}{500}$. For
+$0 \le z \le \frac12$ we have $0 \le \frac{6z}5 \le \frac35$, and
 [Lemma 3.29](common.md#lemma-329-elementary-estimates) (3) gives
 
 ```math
@@ -236,7 +236,7 @@ $x^3 + y^3 = s^3 - 3xys \le s^3$,
 ```math
 \begin{aligned}
 \arcsin\tfrac{6x}5 + \arcsin\tfrac{6y}5 &\le \tfrac65 s + \tfrac{54}{125}\left(x^3 + y^3\right) \le \tfrac65 s + \tfrac{54}{125}s^3 \\
-&< \tfrac65\cdot\tfrac{237}{1000} + \tfrac{54}{125}\cdot\tfrac1{64} = \tfrac{711}{2500} + \tfrac{27}{4000} = \tfrac{5823}{20000} < \tfrac{313}{1000} .
+&< \tfrac65\cdot\tfrac{237}{1000} + \tfrac{54}{125}\cdot\tfrac1{64} = \tfrac{711}{2500} + \tfrac{27}{4000} = \tfrac{5823}{20000} < \tfrac{157}{500} .
 \end{aligned}
 ```
 
@@ -258,7 +258,7 @@ Let $q = \frac{23}{60}$, so that
 $x^3 \le q^3$, the right side of (8.2) is at most
 
 ```math
-\tfrac{711}{2500} + \tfrac{12167}{500000} = \tfrac{154367}{500000} < \tfrac{156500}{500000} = \tfrac{313}{1000} .
+\tfrac{711}{2500} + \tfrac{12167}{500000} = \tfrac{154367}{500000} < \tfrac{157000}{500000} = \tfrac{157}{500} .
 ```
 
 (iii) *$y < 0$ and $x > q$.* Now we use $3x + y \le 1$, that is,
@@ -274,10 +274,10 @@ the second factor is at least $\frac{12}5 - \frac{81}{250} > 0$. As $x > q$,
 this gives $h(x) < h(q)$, and since $1 - 2q = \frac7{30}$,
 
 ```math
-h(q) = \tfrac65\cdot\tfrac7{30} + \tfrac{12167}{500000} = \tfrac7{25} + \tfrac{12167}{500000} = \tfrac{152167}{500000} < \tfrac{313}{1000} . \qquad \square
+h(q) = \tfrac65\cdot\tfrac7{30} + \tfrac{12167}{500000} = \tfrac7{25} + \tfrac{12167}{500000} = \tfrac{152167}{500000} < \tfrac{157}{500} . \qquad \square
 ```
 
-*Lean: [`Five.arcsin_sum`](../../SquaresInCircles/Five/Exterior.lean#L51),
+*Lean: [`Five.arcsin_sum`](../../SquaresInCircles/Five/Exterior.lean#L39),
 [`Five.aux`](../../SquaresInCircles/Five/Exterior.lean#L32).*
 
 ### Lemma 8.8 (the arc length)
@@ -309,9 +309,9 @@ $U + A$ and $U + V$. We show that each of them exceeds $\frac{2\pi}5$.
 
 1. *$2A > \frac{2\pi}5$.* By
    [Lemma 3.29](common.md#lemma-329-elementary-estimates) (5),
-   $0 \le \frac{6x}5 \le \frac35 < \frac{401}{500} < \cos\frac\pi5$. The
-   arccosine is strictly decreasing on $[-1, 1]$, so
-   $A > \arccos(\cos\frac\pi5) = \frac\pi5$.
+   $0 \le \frac{6x}5 \le \frac35 < \frac{1 + \sqrt5}4 = \cos\frac\pi5$, the
+   middle inequality because $\sqrt5 > \frac75$. The arccosine is strictly
+   decreasing on $[-1, 1]$, so $A > \arccos(\cos\frac\pi5) = \frac\pi5$.
 2. *$A + V > \frac{2\pi}5$.* Here
    $A + V = \frac\pi2 - (\arcsin\frac{6x}5 + \arcsin\frac{6y}5)$, and
    Lemma 8.7 applies: $x + y = a + b - 1 \le \sqrt5 - 2 < \frac{237}{1000}$ by
@@ -330,7 +330,7 @@ $U + A$ and $U + V$. We show that each of them exceeds $\frac{2\pi}5$.
    with $\theta = \frac\pi5$, gives
    $\frac{2\pi}5 < \arcsin u + \arcsin v = U + V$. $\square$
 
-*Lean: [`Five.arc_length`](../../SquaresInCircles/Five/Exterior.lean#L76).*
+*Lean: [`Five.arc_length`](../../SquaresInCircles/Five/Exterior.lean#L63).*
 
 *Remark.* Only two of the four sums occur. Since $b \ge 0$ and $a \le 1$,
 
@@ -368,7 +368,7 @@ crossing angles $A_S, V_S, U_S$ are the numbers $A, V, U$ of Lemma 8.8 for
 $(a, b) = (a_S, b_S)$, so this length exceeds $\frac{2\pi}5$, and the arc has
 half-width greater than $\frac\pi5$. $\square$
 
-*Lean: [`Five.exterior_arc`](../../SquaresInCircles/Five/Exterior.lean#L118).*
+*Lean: [`Five.exterior_arc`](../../SquaresInCircles/Five/Exterior.lean#L110).*
 
 Unlike the circle $\Gamma_{1/2}$ of Chapter 7, the circle $\Gamma_{5/6}$ can
 leave an exterior square through its upper edge, so we use the general arc of
@@ -441,18 +441,24 @@ direction of $c_S$.
    |p_t - c^*|^2 = \tfrac{25}{36} + \tfrac12 - 2\cdot\tfrac56\cdot\tfrac1{\sqrt2}\cos(t - \delta) = \tfrac{43}{36} - \tfrac53\cdot\tfrac1{\sqrt2}\cos(t - \delta) .
    ```
 
-   By [Lemma 3.29](common.md#lemma-329-elementary-estimates) (5),
-   $\cos(t - \delta) > \frac{401}{500}$, and
-   $\frac1{\sqrt2} > \frac{707}{1000}$ because $707^2 = 499849 < 500000$.
+   The cosine is even and decreasing on $[0, \pi]$, so by
+   [Lemma 3.29](common.md#lemma-329-elementary-estimates) (5),
+   $\cos(t - \delta) \ge \cos\frac\pi5 = \frac{1 + \sqrt5}4$. Moreover
+   $\frac1{\sqrt2}\cdot\frac{1 + \sqrt5}4 > \frac{17}{30}$, because both
+   sides are positive and
+
+   ```math
+   \left(\tfrac1{\sqrt2}\cdot\tfrac{1 + \sqrt5}4\right)^2 = \tfrac{6 + 2\sqrt5}{32} = \tfrac{3 + \sqrt5}{16} > \tfrac{3 + 11/5}{16} = \tfrac{13}{40} > \tfrac{289}{900} = \left(\tfrac{17}{30}\right)^2 ,
+   ```
+
+   as $\sqrt5 > \frac{11}5$ and $13 \cdot 900 = 11700 > 11560 = 40 \cdot 289$.
    Hence
 
    ```math
-   |p_t - c^*|^2 < \tfrac{43}{36} - \tfrac53\cdot\tfrac{707}{1000}\cdot\tfrac{401}{500} = \tfrac{43}{36} - \tfrac{283507}{300000} < \tfrac{43}{36} - \tfrac{17}{18} = \tfrac14 ,
+   |p_t - c^*|^2 < \tfrac{43}{36} - \tfrac53\cdot\tfrac{17}{30} = \tfrac{43}{36} - \tfrac{17}{18} = \tfrac14 .
    ```
 
-   where $\frac{283507}{300000} > \frac{17}{18}$ because
-   $18 \cdot 283507 = 5103126 > 5100000 = 17 \cdot 300000$. So
-   $|p_t - c^*| < \frac12$, both coordinates of $p_t - c^*$ are less than
+   So $|p_t - c^*| < \frac12$, both coordinates of $p_t - c^*$ are less than
    $\frac12$ in absolute value, and by step 2 the point of $\Gamma_{5/6}$ in
    the direction $\theta_S + \varepsilon_S t$ lies in $\widehat S$.
 4. *The arc.* Let $\theta$ be a direction with

@@ -1505,7 +1505,7 @@ def support_cases():
 
 def estimates():
     """Lemma 3.29 (2), (3) and (5): arcsin between x and x + x^3/4, and the
-    cosine above 1 - t^2/2 and 401/500."""
+    cosine at least cos(pi/5) = (1 + sqrt 5)/4 on [-pi/5, pi/5]."""
     f = Figure(-0.35, 6.45, -0.55, 3.05, 100)
     # (2) and (3) on [0, 1].
     P = Plot(f, 0, 0, 2.86, 2.72, (0, 1.1), (0, math.pi / 2 + 0.07))
@@ -1525,28 +1525,28 @@ def estimates():
     word(f, P.P(0.95, 0.83), it('x'), size=13, color=FAINT)
     f.text(P.P(0.47, 0.72), 'x + ' + '<tspan font-size="11">x³/4</tspan>',
            size=13, color=ORANGE, anchor='end')
-    # (5) on [-pi/5, pi/5].
+    # (5): the cosine meets (1 + sqrt 5)/4 at -pi/5 and pi/5.
     t5 = math.pi / 5
+    c5 = (1 + math.sqrt(5)) / 4
+    assert abs(math.cos(t5) - c5) < 1e-15 and math.sin(t5) < 3 / 5
     Q = Plot(f, 3.6, 0, 2.6, 2.6, (-0.8, 0.8), (0.7, 1.02))
     for k in range(201):
         t = -t5 + 2 * t5 * k / 200
-        assert math.cos(t) >= 1 - t * t / 2 > 401 / 500
+        assert math.cos(t) >= c5 - 1e-15
     f.polygon([Q.P(-t5, 0.7), Q.P(t5, 0.7), Q.P(t5, 1.02), Q.P(-t5, 1.02)],
               fill=GREY, stroke='none', opacity=0.5)
-    assert 1 - 0.75 ** 2 / 2 > 0.7
-    Q.curve(lambda t: 401 / 500, -0.75, 0.75, stroke=INK, width=1,
-            dash='4 3')
-    Q.curve(lambda t: 1 - t * t / 2, -0.75, 0.75, stroke=ORANGE, width=2)
+    assert math.cos(0.75) > 0.7
+    Q.curve(lambda t: c5, -0.75, 0.75, stroke=INK, width=1, dash='4 3')
     Q.curve(math.cos, -0.75, 0.75, stroke=BLUE, width=2.2)
-    Q.axes('t', '', [(-t5, '−π/5'), (t5, 'π/5')], [(401 / 500, '401/500'),
-                                                  (1, '1')],
-           x_at=-0.8, y_at=0.7)
+    for t in (-t5, t5):
+        f.dot(Q.P(t, c5), r=3.2)
+    Q.axes('t', '', [(-t5, '−π/5'), (t5, 'π/5')],
+           [(c5, '(1 + √5)/4'), (1, '1')], x_at=-0.8, y_at=0.7)
     word(f, Q.P(0.36, 0.975), 'cos ' + it('t'), size=13, color=BLUE)
-    word(f, Q.P(0.0, 0.88), '1 − ' + it('t') + '²/2', size=13, color=ORANGE)
     f.save('front-estimates', 'Left: the arcsine between x and x + x cubed '
-           'over 4 on the interval from 0 to 3/5. Right: on the shaded '
-           'interval from -pi/5 to pi/5 the cosine lies above 1 - t squared '
-           'over 2, and both lie above 401/500')
+           'over 4 on the interval from 0 to 3/5. Right: the cosine meets '
+           'the level (1 + root 5)/4 at -pi/5 and pi/5 and lies above it in '
+           'between')
 
 
 def sine_concave():

@@ -31,21 +31,9 @@ lemma p5_swap {a b : ℝ} (h : P5 a b) : P5 b a :=
 
 def aux : ℝ := 5/6
 
-/-- The crude cosine Taylor bound is sufficient with auxiliary radius `5/6`. -/
-lemma cos_gt_401_500 {t : ℝ} (ht : |t| ≤ Real.pi/5) :
-    (401:ℝ)/500 < Real.cos t := by
-  have habs : |t| < (22:ℝ)/35 := by linarith [pi_lt_22_over_7]
-  have ht' := abs_lt.mp habs
-  have hsq : t^2 < ((22:ℝ)/35)^2 := by nlinarith
-  have hc := Real.one_sub_sq_div_two_le_cos (x := t)
-  linarith
-
-lemma sin_pi_fifth_lt_three_fifths : Real.sin (Real.pi/5) < 3/5 := by
-  have hc := cos_gt_401_500 (t := Real.pi/5)
-    (by rw [abs_of_nonneg (by positivity)])
-  have hu := Real.sin_sq_add_cos_sq (Real.pi/5)
-  by_contra hn
-  nlinarith [Real.cos_le_one (Real.pi/5)]
+/-- `11/5 < √5`, which bounds `cos (π/5) = (1+√5)/4` from below. -/
+lemma sqrt_five_gt : (11:ℝ)/5 < Real.sqrt 5 := by
+  rw [Real.lt_sqrt (by norm_num)]; norm_num
 
 /-- An arcsine sum, from the cubic bound on `arcsin`. -/
 lemma arcsin_sum {x y : ℝ} (hx0 : 0 ≤ x) (hx1 : x ≤ 1/2)
@@ -54,21 +42,20 @@ lemma arcsin_sum {x y : ℝ} (hx0 : 0 ≤ x) (hx1 : x ≤ 1/2)
     Real.arcsin (x/aux)+Real.arcsin (y/aux) < Real.pi/10 := by
   rw [show x/aux=6/5*x by rw [aux]; ring,show y/aux=6/5*y by rw [aux]; ring]
   have hFx := arcsin_le_cubic (x := 6/5*x) (by positivity) (by linarith)
-  have hrat : Real.arcsin (6/5*x)+Real.arcsin (6/5*y) < 313/1000 := by
-    by_cases hy : 0 ≤ y
-    · have hFy := arcsin_le_cubic (x := 6/5*y) (by positivity) (by linarith)
-      have hcross := mul_nonneg (mul_nonneg hx0 hy) (add_nonneg hx0 hy)
-      have hsumcube : (x+y)^3 ≤ (237/1000:ℝ)^3 := by gcongr
+  have hπ := Real.pi_gt_d2
+  by_cases hy : 0 ≤ y
+  · have hFy := arcsin_le_cubic (x := 6/5*y) (by positivity) (by linarith)
+    have hcross := mul_nonneg (mul_nonneg hx0 hy) (add_nonneg hx0 hy)
+    have hsumcube : (x+y)^3 ≤ (237/1000:ℝ)^3 := by gcongr
+    linarith
+  · have hFy := arcsin_le_self_of_nonpos (x := 6/5*y) (by linarith) (by linarith)
+    by_cases hxq : x ≤ 23/60
+    · have hc : x^3 ≤ (23/60:ℝ)^3 := by gcongr
       linarith
-    · have hFy := arcsin_le_self_of_nonpos (x := 6/5*y) (by linarith) (by linarith)
-      by_cases hxq : x ≤ 23/60
-      · have hc : x^3 ≤ (23/60:ℝ)^3 := by gcongr
-        linarith
-      · have hq : 23/60 ≤ x := (lt_of_not_ge hxq).le
-        have hxsq : x^2+x*(23/60)+(23/60:ℝ)^2 ≤ 3/4 := by nlinarith
-        have hprod := mul_nonneg (sub_nonneg.mpr hq) (sub_nonneg.mpr hxsq)
-        linarith
-  linarith [Real.pi_gt_d2]
+    · have hq : 23/60 ≤ x := (lt_of_not_ge hxq).le
+      have hxsq : x^2+x*(23/60)+(23/60:ℝ)^2 ≤ 3/4 := by nlinarith
+      have hprod := mul_nonneg (sub_nonneg.mpr hq) (sub_nonneg.mpr hxsq)
+      linarith
 
 /-- On the circle of radius `5/6` the crossings of an exterior square with
 centre in `P5` are more than `2π/5` apart: each of `2A`, `A+V`, `A+U` and `U+V`
@@ -80,12 +67,11 @@ lemma arc_length {a b : ℝ} (ha : 1/2 ≤ a) (hb : 0 ≤ b) (hsort : b ≤ a) (
     Real.arccos_eq_pi_div_two_sub_arcsin _
   have hV : capV aux b=-Real.arcsin ((b-1/2)/aux) := by
     rw [capV,← Real.arcsin_neg]; congr 1; ring
-  have h₁ : Real.pi/5 < capA aux a := by
-    have hc := cos_gt_401_500 (t := Real.pi/5) (by rw [abs_of_pos (by positivity)])
+  have h₁ : Real.pi/5 < capA aux a :=
     calc Real.pi/5=Real.arccos (Real.cos (Real.pi/5)) :=
           (Real.arccos_cos (by positivity) (by linarith [Real.pi_pos])).symm
-      _ < capA aux a := Real.arccos_lt_arccos (by rw [aux]; linarith) (by rw [aux]; linarith)
-          (Real.cos_le_one _)
+      _ < capA aux a := Real.arccos_lt_arccos (by rw [aux]; linarith)
+          (by rw [aux,Real.cos_pi_div_five]; linarith [sqrt_five_gt]) (Real.cos_le_one _)
   have h₂ : 2*Real.pi/5 < capA aux a+capV aux b := by
     have hf := arcsin_sum (x := a-1/2) (y := b-1/2) (by linarith) (by linarith) (by linarith)
       (by linarith) (by nlinarith [h.2,Real.sq_sqrt (show (0:ℝ) ≤ 5 by norm_num)])
@@ -104,10 +90,16 @@ lemma arc_length {a b : ℝ} (ha : 1/2 ≤ a) (hb : 0 ≤ b) (hsort : b ≤ a) (
         show capA aux a ≤ Real.pi/2 from Real.arccos_le_pi_div_two.mpr
           (show 0 ≤ (a-1/2)/aux by rw [aux]; linarith)]
     · rw [aux] at htop
+      -- `sin² (π/5) = (5-√5)/8 < 9/25`
+      have hs : Real.sin (Real.pi/5) < 3/5 := by
+        have h := Real.sin_sq_add_cos_sq (Real.pi/5)
+        rw [Real.cos_pi_div_five] at h
+        nlinarith [Real.sq_sqrt (show (0:ℝ) ≤ 5 by norm_num),sqrt_five_gt,
+          Real.sin_pos_of_pos_of_lt_pi (x := Real.pi/5) (by positivity) (by linarith [Real.pi_pos])]
       have hh := arcsin_sum_gt_of_sin_lt (u := (b+1/2)/aux) (v := (1/2-b)/aux)
         (by rw [aux]; constructor <;> linarith) (by rw [aux]; constructor <;> linarith)
         (show Real.pi/5 ∈ Icc (0:ℝ) (Real.pi/2) by constructor <;> linarith [Real.pi_pos])
-        (by rw [aux]; linarith [sin_pi_fifth_lt_three_fifths])
+        (by rw [aux]; linarith)
       unfold capU capV
       linarith
   rcases min_cases (capA aux a) (capU aux b) with ⟨hu,-⟩ | ⟨hu,-⟩ <;>
