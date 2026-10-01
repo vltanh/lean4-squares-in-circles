@@ -139,7 +139,10 @@ lemma ratio_initial_sign {θ : ℝ} (hθ : Real.pi/12 ≤ θ ∧ θ < Real.pi/2)
     ring
   have hprod : 0 ≤ Real.cos (Real.pi/12)*
       (Real.sin θ-(2-Real.sqrt 3)*Real.cos θ) := by rw [hid]; exact hs
-  have hnon := nonneg_of_mul_nonneg_left hprod hca
+  have hnon : 0 ≤ Real.sin θ-(2-Real.sqrt 3)*Real.cos θ := by
+    by_contra hn
+    have hmneg := mul_neg_of_pos_of_neg hca (lt_of_not_ge hn)
+    linarith
   have hstrict := mul_pos (sub_pos.mpr ratio_zero_lt_twelfth_tangent) hc
   nlinarith
 
