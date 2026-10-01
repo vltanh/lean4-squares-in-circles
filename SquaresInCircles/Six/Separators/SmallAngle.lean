@@ -8,7 +8,7 @@ its frame, and let `0 ≤ q ≤ π/4`. Then
 `a sin q - b cos q ≤ aMin sin q + U0 cos q`: over the centres allowed by the
 disk and the core, the maximum is at the corner `(aMin, U0)` where the line
 `a = aMin` meets the circle, since `R0 sin q ≤ 5/2 - rho0`. With the bound
-`|b_D| < 229/1000` on the transverse coordinate of D, it follows that W or S,
+`|b_D| < 9/40` on the transverse coordinate of D, it follows that W or S,
 at an angle `q` from D, is not separated from D along the secondary axis of D
 (`diagonal_secondary_excluded`).
 -/
@@ -43,7 +43,7 @@ lemma core_secondary_projection {a b q : ℝ}
 
 lemma diagonal_secondary_excluded {a b bd q : ℝ}
     (hc : ContainedChart a |b|) (hcore : AvoidsCore a |b|)
-    (hq : 0≤q ∧ q≤Real.pi/4) (hbd : bd<229/1000) :
+    (hq : 0≤q ∧ q≤Real.pi/4) (hbd : bd<9/40) :
     a*Real.sin q-b*Real.cos q+bd<1/2+angularWidth q := by
   have ht := quarter_trig_bounds hq
   have hproj := core_secondary_projection hc hcore hq

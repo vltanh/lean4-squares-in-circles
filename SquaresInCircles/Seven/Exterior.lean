@@ -123,9 +123,9 @@ lemma selected (_h : Admissible a u) :
 
 end Admissible
 
-/-- Projecting the state disk onto the direction `(2, 1)`: `2a + u < 38/15`. -/
-lemma Admissible.projection_two_one {a u : ℝ} (h : Admissible a u) : 2*a+u < 38/15 := by
-  linarith [dot_gt (p := -2) (r := -1) (c := 121/30) h.phi_le (by norm_num)
+/-- Projecting the state disk onto the direction `(2, 1)`: `2a + u < 2.532`. -/
+lemma Admissible.projection_two_one {a u : ℝ} (h : Admissible a u) : 2*a+u < 2.532 := by
+  linarith [dot_gt (p := -2) (r := -1) (c := 4.032) h.phi_le (by norm_num)
     (by norm_num [targetSq])]
 
 lemma side_selected_label_gt {a u : ℝ} (h : Admissible a u)
@@ -138,8 +138,8 @@ lemma side_selected_label_gt {a u : ℝ} (h : Admissible a u)
   by_contra hn
   linarith [Real.pi_gt_d2]
 
-/-- At `a ≥ 9/8` the side label forces `u > 29/100`, and the corner
-`(9/8, 29/100)` lies outside the disk. -/
+/-- At `a ≥ 9/8` the side label forces `u > 0.29`, and the corner
+`(9/8, 0.29)` lies outside the disk. -/
 lemma side_selected_a_lt {a u : ℝ} (h : Admissible a u)
     (hsel : label a u = side a u) : a < 9/8 := by
   have hl := side_selected_label_gt h hsel
@@ -148,7 +148,7 @@ lemma side_selected_a_lt {a u : ℝ} (h : Admissible a u)
   dsimp [side] at hl
   dsimp [phi,targetSq] at hp
   by_contra hn
-  have hu : (29 : ℝ)/100 < u := by linarith [Real.pi_lt_d4]
+  have hu : (0.29 : ℝ) < u := by linarith [Real.pi_lt_d4]
   nlinarith
 
 lemma side_selected_a_gt {a u : ℝ} (h : Admissible a u)
@@ -166,16 +166,20 @@ lemma axial_tie_line {a u : ℝ} (h : Admissible a u)
   dsimp [side,axial] at hh
   linarith
 
-/-- At `a + u ≥ 113/80` the tie line forces `u < 23/80`, and the disk misses
-the region `a ≥ 113/80 - u`, `u < 23/80`. -/
+/-- An axial label: `15 (a + u) = (9a + 11u) + 2 (4 - r)` with `9a + 11u ≤ 2π + 7`,
+and the remainder `r` vanishes only at the side state `(1, 1/2)`, where the
+label is not axial. -/
 lemma axial_sum_lt {a u : ℝ} (h : Admissible a u)
-    (hsel : label a u = axial u) : a+u < (113 : ℝ)/80 := by
+    (hsel : label a u = axial u) : a+u < 1+2*Real.pi/15 := by
   have ht := axial_tie_line h hsel
   by_contra hn
-  have hu : u < 23/80 := by linarith [Real.pi_lt_d4]
+  have hr : remainder a u ≤ 0 := by unfold remainder; linarith
+  have he := remainder_identity a u
   have hp := h.phi_le
-  dsimp [phi,targetSq] at hp
-  nlinarith [h.u_nonneg]
+  have ha : a = 1 := by nlinarith [sq_nonneg (u-1/2)]
+  have hu : u = 1/2 := by nlinarith [sq_nonneg (a-1)]
+  rw [ha,hu] at ht
+  linarith [Real.pi_lt_d2]
 
 /-- A side label above `π/6` costs a remainder quadratic in the excess. -/
 lemma side_remainder_quadratic {a u : ℝ} (h : Admissible a u)
@@ -267,8 +271,8 @@ lemma marker_lower_endpoint {a u : ℝ} (h : Admissible a u) :
     rw [neg_div,Real.arcsin_neg,asin_half] at hm
     dsimp [axial]
     linarith
-  -- the side term, by Cauchy–Schwarz on the disk: `(3/4)(a+1/2)+(2/3)(u+1/2) < 43/24+7/400`
-  have hcs := dot_gt (p := -3/4) (r := -2/3) (c := 43/24+7/400) h.phi_le (by norm_num)
+  -- the side term, by Cauchy–Schwarz on the disk: `(3/4)(a+1/2)+(2/3)(u+1/2) < 43/24+0.0175`
+  have hcs := dot_gt (p := -3/4) (r := -2/3) (c := 43/24+0.0175) h.phi_le (by norm_num)
     (by norm_num [targetSq])
   have hT : Real.arcsin (u-1/2)+1/2 < side a u := by
     dsimp [side]

@@ -97,7 +97,7 @@ theorem fixed_gap_forward_positive {a u A v : ℝ}
       (Real.pi+z)
     simp [support,Real.cos_add,Real.sin_add,abs_neg] at hl
     linarith
-  have hz : 21/100 ≤ z ∧ z ≤ Real.pi/2 := by
+  have hz : 1/5 ≤ z ∧ z ≤ Real.pi/2 := by
     dsimp [z]
     constructor <;> linarith [Real.pi_gt_d2,Real.pi_pos]
   have hc : 0 ≤ Real.cos z := Real.cos_nonneg_of_mem_Icc ⟨by linarith [Real.pi_pos],hz.2⟩
@@ -111,18 +111,18 @@ theorem fixed_gap_forward_positive {a u A v : ℝ}
     have hunit : Real.sin z+Real.cos z < 3/2 := by
       nlinarith [Real.sin_sq_add_cos_sq z,sq_nonneg (Real.sin z-Real.cos z)]
     linarith [h.u_nonneg]
-  · have hd := dot_ge (p := -Real.cos z) (r := -Real.sin z) (c := 181/100) h'.phi_le
+  · have hd := dot_ge (p := -Real.cos z) (r := -Real.sin z) (c := 11/6) h'.phi_le
       (by norm_num) (by unfold targetSq; nlinarith [Real.sin_sq_add_cos_sq z])
     have hm := cos_add_sin_mono (x := Real.pi/6-t) (y := z) (by linarith [Real.pi_gt_d2])
       (by dsimp [z]; linarith) (by linarith)
     -- `1/2 + (4/5) t + cos (π/6 - t) + sin (π/6 - t)` is concave in `π/6 - t`
-    have hf := trig_concave_gt (α := -4/5) (A := 1) (B := 1) (m := 131/100-2*Real.pi/15)
+    have hf := trig_concave_gt (α := -4/5) (A := 1) (B := 1) (m := 4/3-2*Real.pi/15)
       (x := Real.pi/6-t) (by norm_num) (by norm_num) (by norm_num) (by linarith [Real.pi_pos])
-      (show 21/100 ≤ Real.pi/6-t ∧ Real.pi/6-t ≤ Real.pi/6 by
+      (show 1/5 ≤ Real.pi/6-t ∧ Real.pi/6-t ≤ Real.pi/6 by
         constructor <;> linarith [Real.pi_gt_d2])
       (by
-        have hs := Real.sin_ge_sub_cube (show (0:ℝ) ≤ 21/100 by norm_num)
-        have hc := Real.one_sub_sq_div_two_le_cos (x := (21/100:ℝ))
+        have hs := Real.sin_ge_sub_cube (show (0:ℝ) ≤ 1/5 by norm_num)
+        have hc := Real.one_sub_sq_div_two_le_cos (x := (1/5:ℝ))
         linarith [Real.pi_gt_d2])
       (by
         rw [Real.sin_pi_div_six,Real.cos_pi_div_six]

@@ -13,9 +13,8 @@ nonpositive second derivative on an interval is concave, and a concave function
 exceeds inside the interval every bound that it exceeds at both ends; concavity
 survives an affine change of the argument, and a function on a rectangle that
 is concave in each variable is positive once it is positive at the four corners.
-A function with second derivative at least `κ` lies above its tangent parabola,
-and a quartic positive at both ends of an interval exceeds its chord where a
-quadratic is nonpositive. A continuous function that is positive at the left
+A function with second derivative at least `κ` lies above its tangent parabola.
+A continuous function that is positive at the left
 end of an interval, nonnegative at the right end and somewhere nonpositive has
 a leftmost minimum inside; where the function is a sinusoid there, the minimum
 is stationary and the sinusoid negative.
@@ -182,37 +181,6 @@ lemma positive_of_curvature {l u x t κ : ℝ} {f d dd : ℝ → ℝ} (hκ : 0 <
     (hdd : ∀ y ∈ Icc l u, HasDerivAt d (dd y) y)
     (hm : ∀ y ∈ Icc l u, κ ≤ dd y) (hval : d t^2 < 2*κ*f t) : 0 < f x := by
   nlinarith [curvature_tangent hx ht hd hdd hm,sq_nonneg (κ*(x-t)+d t)]
-
-/-- The quartic with the coefficients `a0, …, a4`. -/
-def quartic (a0 a1 a2 a3 a4 x : ℝ) : ℝ :=
-  a0+a1*x+a2*x^2+a3*x^3+a4*x^4
-
-/-- If the quadratic `Q x` of `hcurv` is nonpositive, a quartic positive at `l`
-and `u` is positive at `x ∈ [l, u]`, since it exceeds its chord by
-`-(x - l)(u - x) Q x`. -/
-theorem quartic_positive_of_chord {a0 a1 a2 a3 a4 l u x : ℝ}
-    (hlu : l < u) (hx : l ≤ x ∧ x ≤ u)
-    (hl : 0 < quartic a0 a1 a2 a3 a4 l)
-    (hu : 0 < quartic a0 a1 a2 a3 a4 u)
-    (hcurv : a2+a3*(x+l+u)+a4*(x^2+(l+u)*x+l^2+l*u+u^2) ≤ 0) :
-    0 < quartic a0 a1 a2 a3 a4 x := by
-  have hleft : 0 ≤ u-x := sub_nonneg.mpr hx.2
-  have hright : 0 ≤ x-l := sub_nonneg.mpr hx.1
-  have hcorr := mul_nonpos_of_nonneg_of_nonpos
-    (mul_nonneg (mul_nonneg (sub_nonneg.mpr hlu.le) hright) hleft) hcurv
-  have hid : (u-l)*quartic a0 a1 a2 a3 a4 x =
-      (u-x)*quartic a0 a1 a2 a3 a4 l+(x-l)*quartic a0 a1 a2 a3 a4 u-
-      (u-l)*(x-l)*(u-x)*(a2+a3*(x+l+u)+a4*(x^2+(l+u)*x+l^2+l*u+u^2)) := by
-    dsimp [quartic]
-    ring
-  have hchord : 0 < (u-x)*quartic a0 a1 a2 a3 a4 l+(x-l)*quartic a0 a1 a2 a3 a4 u := by
-    rcases lt_or_eq_of_le hx.2 with hxu | rfl
-    · exact add_pos_of_pos_of_nonneg (mul_pos (sub_pos.mpr hxu) hl)
-        (mul_nonneg hright hu.le)
-    · simpa using mul_pos (sub_pos.mpr hlu) hu
-  by_contra! hbad
-  have hmul := mul_nonpos_of_nonneg_of_nonpos (sub_nonneg.mpr hlu.le) hbad
-  nlinarith only [hid,hcorr,hchord,hmul]
 
 /-! ### Leftmost minima -/
 

@@ -32,8 +32,7 @@ theorem westDiagonal_gap_gt_quarter {R : ℝ} (P : NormalizedPacking R)
   by_contra! hsmall
   have hbound := diagonal_secondary_excluded (P.contained 2) (P.avoidsCore 2)
     ⟨sub_nonneg.mpr P.primary_order.2.2.1.le,hsmall⟩
-    (((le_abs_self _).trans_lt (normalized_diagonal_transverse_small P)).trans
-      (by norm_num))
+    ((le_abs_self _).trans_lt (normalized_diagonal_transverse_small P))
   change _≤frameY (P.square 3) (sub (P.square 3).center (P.square 2).center) at hsep
   rw [P.square_def 2,P.square_def 3,oriented_pair_threshold,pair_frameY_right] at hsep
   linarith
@@ -49,8 +48,7 @@ theorem diagonalSouth_gap_gt_quarter {R : ℝ} (P : NormalizedPacking R)
     (by simpa only [abs_neg] using P.contained 4)
     (by simpa only [abs_neg] using P.avoidsCore 4)
     ⟨sub_nonneg.mpr P.primary_order.2.2.2.1.le,hsmall⟩
-    (((neg_le_abs _).trans_lt (normalized_diagonal_transverse_small P)).trans
-      (by norm_num))
+    ((neg_le_abs _).trans_lt (normalized_diagonal_transverse_small P))
   change _≤frameY (P.square 3) (sub (P.square 4).center (P.square 3).center) at hsep
   rw [P.square_def 3,P.square_def 4,oriented_pair_threshold,pair_frameY_left] at hsep
   linarith
@@ -151,11 +149,7 @@ lemma doubleSecondaryGap_pos_side_side {w s d aw bw aS bS cx cy : ℝ}
   have hSwidth := cardinal_width_triangle hs hd
   have hlength := radial_length_sum_bound d
   have hwidth := high_diagonal_width_lower hd
-  have hcenter : cx+cy≤226/1000 := by
-    have hx := hc.1.2
-    have hy := hc.2.2
-    dsimp [c0] at hx hy
-    linarith [rho0_bounds.2]
+  have hcenter : cx+cy≤0.226 := by linarith [hc.1.2,hc.2.2,c0_bounds.2]
   dsimp [doubleSecondaryGap,wingBaseX,wingBaseY]
   rw [south_relative_width]
   rw [angularWidth_eq (x := d) ⟨by linarith [hd.1],by linarith [hd.2,Real.pi_pos]⟩]
@@ -189,7 +183,8 @@ lemma doubleSecondaryGap_pos_own_side {v s d aw bw aS bS cx cy : ℝ}
   rw [Real.cos_neg,Real.sin_neg,sub_neg_eq_add,hvwidth,south_relative_width]
   rw [angularWidth_eq (x := d) ⟨by linarith [hd.1],by linarith [hd.2,Real.pi_pos]⟩] at hSwidth
   dsimp [ownWingCost,southMixedDepth] at hwing hdepth
-  nlinarith only [hWcost,hSwork,hSwidth,hcentral,hwing,hdepth]
+  nlinarith only [hWcost,hSwork,hSwidth,hcentral,hwing,hdepth,trig_bracket_two_thirds.1,
+    trig_bracket_two_thirds.2.2.1]
 
 /-- W along the west side of C and S on its own axis. -/
 lemma doubleSecondaryGap_pos_side_own {w s d aw bw aS bS cx cy : ℝ}
@@ -257,11 +252,12 @@ lemma doubleSecondaryGap_pos_own_own {v s d aw bw aS bS cx cy : ℝ}
   · have hsins := Real.sin_nonneg_of_nonneg_of_le_pi hs0
       (by linarith [hs.2,Real.pi_gt_d2])
     have hsline := ownWingCost_lower ⟨hs0,hs.2⟩
-    have hconstant : 0<2-182/125-(13/40)*Real.pi+2*(249/1000) := by
-      linarith [Real.pi_lt_d2]
+    have hconstant : 0<2-2*(73/100)-(13/40)*Real.pi+2*ownWingCost (2/3) := by
+      dsimp [ownWingCost]
+      linarith [Real.pi_lt_d4,trig_bracket_two_thirds.1,trig_bracket_two_thirds.2.2.1]
     rw [show angularWidth s=(Real.cos s+Real.sin s)/2 by
       rw [angularWidth,abs_of_nonneg hcoss,abs_of_nonneg hsins]]
-    dsimp [ownWingCost] at hsline
+    dsimp [ownWingCost] at hsline hconstant
     nlinarith only [hcostW,hcostS,hcentral,hvline,hsline,hconstant]
   · have hsins : Real.sin s≤0 := by
       have h := Real.sin_nonneg_of_nonneg_of_le_pi (show 0≤-s by linarith)
@@ -270,12 +266,14 @@ lemma doubleSecondaryGap_pos_own_own {v s d aw bw aS bS cx cy : ℝ}
       linarith
     have hsum := one_le_abs_cos_add_abs_sin s
     rw [abs_of_nonneg hcoss,abs_of_nonpos hsins] at hsum
-    have hsline : 387/1000≤(387/1000)*(Real.cos s-Real.sin s)-(13/20)*s := by
+    have hsline : 0.387≤0.387*(Real.cos s-Real.sin s)-(13/20)*s := by
       linarith [lt_of_not_ge hs0]
-    have hconstant : 0<2-182/125-(13/40)*Real.pi+249/1000+387/1000 := by
-      linarith [Real.pi_lt_d2]
+    have hconstant : 0<2-2*(73/100)-(13/40)*Real.pi+ownWingCost (2/3)+0.387 := by
+      dsimp [ownWingCost]
+      linarith [Real.pi_lt_d2,trig_bracket_two_thirds.1,trig_bracket_two_thirds.2.2.1]
     rw [show angularWidth s=(Real.cos s-Real.sin s)/2 by
       rw [angularWidth,abs_of_nonneg hcoss,abs_of_nonpos hsins]; ring]
+    dsimp [ownWingCost] at hconstant
     nlinarith only [hcostW,hcostS,hcentral,hvline,hsline,hconstant]
 
 /-- W–D and D–S are not both separated along the secondary axis of D. -/

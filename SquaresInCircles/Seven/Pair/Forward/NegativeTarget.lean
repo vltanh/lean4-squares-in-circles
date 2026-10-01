@@ -107,7 +107,7 @@ private lemma axial_small_turn {A v z : ℝ} (h : Admissible A v) (hA : label A 
       linarith [mul_le_mul_of_nonneg_left hy2.le (show 0 ≤ X0-1 by linarith),
         mul_le_mul_of_nonneg_left hy1 (show 0 ≤ Y0 by linarith)])
   simp only [Real.cos_zero,Real.sin_zero] at hM
-  have hz53 := mul_le_mul_of_nonneg_left (show z ≤ 53/100 by linarith [Real.pi_lt_d2])
+  have hz53 := mul_le_mul_of_nonneg_left (show z ≤ 0.53 by linarith [Real.pi_lt_d2])
     (show 0 ≤ 4/5-Y0 by linarith)
   linarith [Real.pi_gt_d4]
 
@@ -308,7 +308,7 @@ lemma negative_target_axial_pos {A v e r : ℝ}
     have hm := mul_nonneg (show (0:ℝ) ≤ 3/20 by norm_num) (sub_nonneg.mpr hsin)
     rw [abs_of_nonneg hs0]
     have hsum := axial_sum_lt h hA
-    linarith [Real.pi_gt_d2]
+    linarith
   · have hs0 := Real.sin_nonneg_of_nonneg_of_le_pi (show 0 ≤ -e by linarith)
       (by linarith [he.1,Real.pi_pos])
     have hp := axial_target_support h hA ⟨show 0 ≤ -e by linarith,by linarith [he.1]⟩

@@ -266,32 +266,38 @@ lemma diagonal_cone (X : Chart) {z : ℝ} (hz : 100/31 ≤ z) :
   have h := cone_support X.diagonal (U := z) (V := 1) (by linarith) (by rw [abs_one]; linarith)
   linarith
 
-/-- The far-vertex support of W for the force `(27/100 + sin q, -cos q)`, whose
-length `√(β² + 1 + 2β sin q)`, `β = 27/100`, lies below its tangent at
-`31/25`. -/
-lemma west_vertex (X : Chart) (q : ℝ) :
-    (27/100+Real.sin q)*X.aW-Real.cos q*X.bW ≤
-      (radiusBound*(5221/4960)-27/200)+
-        (radiusBound*(27/124)-1/2)*Real.sin q+(-(1/2))*Real.cos q := by
-  have hr : 0 ≤ 5221/4960+(27/124)*Real.sin q := by nlinarith [Real.neg_one_le_sin q]
-  have h := vertex_support X.west (U := 27/100+Real.sin q) (V := -Real.cos q) hr
-    (by nlinarith [Real.sin_sq_add_cos_sq q,sq_nonneg (Real.sin q-4647/5400)])
-  linarith [le_abs_self (27/100+Real.sin q),neg_le_abs (-Real.cos q)]
+/-- The far-vertex support of W for the force `(β + sin q, -cos q)`, whose
+length `√(β² + 1 + 2β sin q)` lies below the tangent `(y + c²)/(2c)` of the
+square root `√y` at `c`. -/
+lemma west_vertex (X : Chart) {β c : ℝ} (hc : 0 < c) (q : ℝ) :
+    (β+Real.sin q)*X.aW-Real.cos q*X.bW ≤
+      (radiusBound*((β^2+1+c^2)/(2*c))-β/2)+
+        (radiusBound*(β/c)-1/2)*Real.sin q+(-(1/2))*Real.cos q := by
+  have hy : (β+Real.sin q)^2+(-Real.cos q)^2=β^2+1+2*β*Real.sin q := by
+    linear_combination Real.sin_sq_add_cos_sq q
+  have h := vertex_support X.west (U := β+Real.sin q) (V := -Real.cos q)
+    (div_nonneg (by nlinarith [sq_nonneg (β+Real.sin q),sq_nonneg (Real.cos q)]) (by linarith))
+    (hy.trans_le (sq_le_tangent_sq hc))
+  have e : (β^2+1+2*β*Real.sin q+c^2)/(2*c)=(β^2+1+c^2)/(2*c)+β/c*Real.sin q := by
+    field_simp; ring
+  rw [e] at h
+  linarith [le_abs_self (β+Real.sin q),neg_le_abs (-Real.cos q)]
 
 /-! ### The four rows -/
 
 /-- With W on its own axis and separated from D along the secondary axis of D,
-the angle of D exceeds `3/5`: the weights `39/18` and `43/18` on C–W and C–D,
-the cone support of W and the far-vertex support of D. -/
+the angle of D exceeds `3/5`: the weights `13/6` and `12/5` on C–W and C–D,
+the cone support of W and the far-vertex support of D, whose force `(12/5, 1)`
+has length `13/5`. -/
 theorem diagonal_gt_three_fifths {X : Chart} (hW : X.WestOwn) (hWD : X.WestDiagonal)
     (hv : X.v ≤ 2/3) (hd : 1/2 ≤ X.d) (hgap : 1 ≤ X.d+X.v) : 3/5 < X.d := by
   by_contra! hd'
   have hq : X.d+X.v ≤ Real.pi/2 := by linarith [Real.pi_gt_d2]
-  obtain ⟨y,hy,hn⟩ := profile_nonpos (b := 39/18) (z := 43/18) (by norm_num) (by norm_num)
+  obtain ⟨y,hy,hn⟩ := profile_nonpos (b := 13/6) (z := 12/5) (by norm_num) (by norm_num)
     hW hWD (by linarith) (by linarith) hq (west_cone X.west (by norm_num) ⟨hgap,hq⟩)
-    (diagonal_vertex X (r := 259/100) (by norm_num) (by norm_num) (by norm_num))
+    (diagonal_vertex X (r := 13/5) (by norm_num) (by norm_num) (by norm_num))
   rw [sub_zero] at hn
-  have hy' : 0 ≤ y ∧ y ≤ 5641/50000 := by rcases hy with rfl | rfl <;> norm_num [coreUpper]
+  have hy' : 0 ≤ y ∧ y ≤ 1/8 := by rcases hy with rfl | rfl <;> norm_num [coreUpper]
   have hc1 := cos_upper_four (x := 1) (by norm_num)
   have hs1 := sin_lower_seven (x := 1) (by norm_num)
   have hc0 := Real.cos_nonneg_of_mem_Icc (x := 1)
@@ -310,15 +316,17 @@ theorem diagonal_gt_three_fifths {X : Chart} (hW : X.WestOwn) (hWD : X.WestDiago
         coreUpper])))
 
 /-- With W on its own axis and separated from D along the secondary axis of D,
-and `3/5 ≤ d ≤ 11/14`, the gap `d + v` exceeds `53/50`: the weights `27/100` and
-`57/25` on C–W and C–D and the far-vertex supports of W and D. -/
+and `3/5 ≤ d ≤ 11/14`, the gap `d + v` exceeds `53/50`: the weights `2/7` and
+`12/5` on C–W and C–D and the far-vertex supports of W, with the tangent at
+`5/4` to the length of its force, and of D. -/
 theorem gap_gt {X : Chart} (hW : X.WestOwn) (hWD : X.WestDiagonal) (hv : 0 ≤ X.v)
     (hd : 3/5 ≤ X.d ∧ X.d ≤ 11/14) (hgap : 1 ≤ X.d+X.v) : 53/50 < X.d+X.v := by
   by_contra! hq
-  obtain ⟨y,hy,hn⟩ := profile_nonpos (b := 27/100) (z := 57/25) (by norm_num) (by norm_num)
-    hW hWD hv (by linarith) (by linarith [Real.pi_gt_d2]) (west_vertex X (X.d+X.v))
-    (diagonal_vertex X (r := 2489659/1000000) (by norm_num) (by norm_num) (by norm_num))
-  have hy' : 0 ≤ y ∧ y ≤ 5641/50000 := by rcases hy with rfl | rfl <;> norm_num [coreUpper]
+  obtain ⟨y,hy,hn⟩ := profile_nonpos (b := 2/7) (z := 12/5) (by norm_num) (by norm_num)
+    hW hWD hv (by linarith) (by linarith [Real.pi_gt_d2])
+    (west_vertex X (c := 5/4) (by norm_num) (X.d+X.v))
+    (diagonal_vertex X (r := 13/5) (by norm_num) (by norm_num) (by norm_num))
+  have hy' : 0 ≤ y ∧ y ≤ 1/8 := by rcases hy with rfl | rfl <;> norm_num [coreUpper]
   exact absurd hn (not_le.mpr (positive_gap (k₁ := 1) (k₂ := 53/50) (d₁ := 3/5) (d₂ := 11/14)
     (by norm_num) (by norm_num) ⟨hy'.1,by linarith⟩ (by norm_num) hd ⟨hgap,hq⟩ (by norm_num)
     (by linarith [Real.pi_gt_d2]) (by norm_num) (by linarith [Real.pi_gt_d2])
@@ -342,7 +350,7 @@ theorem west_lt {X : Chart} (hW : X.WestOwn) (hWD : X.WestDiagonal) (hv : X.v �
     hW hWD (by linarith) (by linarith) hq (west_cone X.west (by norm_num) ⟨hgap,hq⟩)
     (diagonal_cone X (z := 14/3) (by norm_num))
   rw [sub_zero] at hn
-  have hy' : 0 ≤ y ∧ y ≤ 5641/50000 := by rcases hy with rfl | rfl <;> norm_num [coreUpper]
+  have hy' : 0 ≤ y ∧ y ≤ 1/8 := by rcases hy with rfl | rfl <;> norm_num [coreUpper]
   exact absurd hn (not_le.mpr (positive_rectangle (t₁ := 31/50) (t₂ := 2/3) (d₁ := 3/5)
     (d₂ := 11/14) (by norm_num) (by norm_num) ⟨hy'.1,by linarith⟩ (by norm_num) hd ⟨hv',hv⟩
     (by norm_num) (by linarith [Real.pi_gt_d2]) (by norm_num) (by linarith [Real.pi_gt_d2])
@@ -355,17 +363,17 @@ theorem west_lt {X : Chart} (hW : X.WestOwn) (hWD : X.WestDiagonal) (hv : X.v �
 
 /-- With W on its own axis and separated from D along the secondary axis of D,
 `v ≤ 31/50` and `d + v ≥ 53/50`, the angle of D exceeds `16/25`: the weights
-`207/100` and `56/25` on C–W and C–D, the cone support of W and the far-vertex
-support of D. -/
+`25/12` and `9/4` on C–W and C–D, the cone support of W and the far-vertex
+support of D, whose force `(9/4, 1)` has length `√97/4 < 2.4623`. -/
 theorem diagonal_gt {X : Chart} (hW : X.WestOwn) (hWD : X.WestDiagonal) (hv : X.v ≤ 31/50)
     (hd : 3/5 ≤ X.d) (hgap : 53/50 ≤ X.d+X.v) : 16/25 < X.d := by
   by_contra! hd'
   have hq : X.d+X.v ≤ Real.pi/2 := by linarith [Real.pi_gt_d2]
-  obtain ⟨y,hy,hn⟩ := profile_nonpos (b := 207/100) (z := 56/25) (by norm_num) (by norm_num)
+  obtain ⟨y,hy,hn⟩ := profile_nonpos (b := 25/12) (z := 9/4) (by norm_num) (by norm_num)
     hW hWD (by linarith) (by linarith) hq (west_cone X.west (by norm_num) ⟨by linarith,hq⟩)
-    (diagonal_vertex X (r := 61327/25000) (by norm_num) (by norm_num) (by norm_num))
+    (diagonal_vertex X (r := 2.4623) (by norm_num) (by norm_num) (by norm_num))
   rw [sub_zero] at hn
-  have hy' : 0 ≤ y ∧ y ≤ 5641/50000 := by rcases hy with rfl | rfl <;> norm_num [coreUpper]
+  have hy' : 0 ≤ y ∧ y ≤ 1/8 := by rcases hy with rfl | rfl <;> norm_num [coreUpper]
   have hk := cos_sin_nonneg (x := 53/50) ⟨by norm_num,by linarith [Real.pi_gt_d2]⟩
   have hk1 := (Real.cos_le_cos_of_nonneg_of_le_pi (x := 1) (y := 53/50) (by norm_num)
     (by linarith [Real.pi_gt_d2]) (by norm_num)).trans (cos_upper_four (x := 1) (by norm_num))

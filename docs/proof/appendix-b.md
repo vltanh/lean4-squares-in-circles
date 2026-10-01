@@ -186,7 +186,7 @@ $s\,\ell(a, u)$.
 *Proof.* Part (1) is [Lemma 9.11](seven.md#lemma-911-the-support-function) (3). In part (2), $|su| = u$, and the
 inequality is Lemma 9.11 (2). $\square$
 
-*Lean: [`Seven.support_lower`](../../SquaresInCircles/Seven/Exterior.lean#L224),
+*Lean: [`Seven.support_lower`](../../SquaresInCircles/Seven/Exterior.lean#L228),
 [`Seven.sign_admissible`](../../SquaresInCircles/Seven/Pair/Frame.lean#L44),
 [`Seven.marker_arc_support`](../../SquaresInCircles/Seven/Pair/Frame.lean#L50).*
 
@@ -355,14 +355,14 @@ $a + u < \frac{31}{20}$. Moreover $1.73 < \sqrt3 < 1.733$.
 *Lean:
 [`Seven.Admissible.a_le_sqrt_three_sub_half`](../../SquaresInCircles/Seven/Exterior.lean#L62),
 [`Seven.Admissible.sum_lt`](../../SquaresInCircles/Seven/Exterior.lean#L69),
-[`Seven.sqrt_three_bounds`](../../SquaresInCircles/Seven/Exterior.lean#L218).*
+[`Seven.sqrt_three_bounds`](../../SquaresInCircles/Seven/Exterior.lean#L222).*
 
 ### Lemma B.8 (axial and side labels)
 
 Let $(a, u)$ be admissible and $\ell = \ell(a, u)$.
 
 1. If the label is axial, then $9a + 11u \le 2\pi + 7$ and
-   $a + u < \frac{113}{80}$.
+   $a + u < 1 + \frac{2\pi}{15}$.
 2. If the label is side, then $\frac9{25} < \ell$, $\frac7{10} < a < \frac98$,
    and $\frac95\left(\ell - \frac\pi6\right)^2 \le r(a, u)$.
 3. In every case $a \le 1 + \frac{2\pi}{15} - \frac45\ell$.
@@ -372,11 +372,11 @@ Let $(a, u)$ be admissible and $\ell = \ell(a, u)$.
 
 *Lean:
 [`Seven.axial_tie_line`](../../SquaresInCircles/Seven/Exterior.lean#L162),
-[`Seven.axial_sum_lt`](../../SquaresInCircles/Seven/Exterior.lean#L171),
+[`Seven.axial_sum_lt`](../../SquaresInCircles/Seven/Exterior.lean#L172),
 [`Seven.side_selected_label_gt`](../../SquaresInCircles/Seven/Exterior.lean#L131),
 [`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Exterior.lean#L154),
 [`Seven.side_selected_a_lt`](../../SquaresInCircles/Seven/Exterior.lean#L143),
-[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Exterior.lean#L181),
+[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Exterior.lean#L185),
 [`Seven.Admissible.radial_label_bound`](../../SquaresInCircles/Seven/Exterior.lean#L110).*
 
 ### Definition B.9 (boundary curves and special states)
@@ -574,7 +574,7 @@ $\square$
 [`Seven.Boundary.circle_switch_right`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L88),
 [`Seven.Boundary.axialTop_left`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L97),
 [`Seven.Boundary.axialTop_right`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L100),
-[`Seven.Boundary.circle_displacement_half`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L353),
+[`Seven.Boundary.circle_displacement_half`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L352),
 [`Seven.Boundary.a_le_circle`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L103).*
 
 ### Definition B.13 (the circle parametrised by the side label)
@@ -697,7 +697,7 @@ $N > \frac23$. Second,
 $(X + Y)^2 \le 2(X^2 + Y^2) = \frac{13}2 < (\frac{51}{20})^2$, so
 
 ```math
-Z = \tfrac{13}{24}(X + Y) - \tfrac5{24}(X - Y) \le \tfrac{13}{24}(X + Y) < \tfrac{13}{24}\cdot\tfrac{51}{20} = \tfrac{221}{160} < \tfrac75 .
+Z = \tfrac{13}{24}(X + Y) - \tfrac5{24}(X - Y) \le \tfrac{13}{24}(X + Y) < \tfrac{13}{24}\cdot\tfrac{51}{20} < \tfrac75 .
 ```
 
 (4) $Z$ is differentiable because its radicand is positive, and the chain rule
@@ -780,8 +780,8 @@ $\mu(u) \le \lambda(u) = \lambda(v) + \frac{11}9(v - u)$. $\square$
 *Lean:
 [`Seven.Boundary.axial_upper`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L113),
 [`Seven.Boundary.axialTop_state`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L120),
-[`Seven.Boundary.axialTop_antitone`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L329),
-[`Seven.Boundary.axialTop_displacement`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L337).*
+[`Seven.Boundary.axialTop_antitone`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L328),
+[`Seven.Boundary.axialTop_displacement`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L336).*
 
 ### Proposition B.16 (segments of constant side label)
 
@@ -876,14 +876,14 @@ and its values at $\tau$ and $\tau'$ give the claim. $\square$
 
 *Lean:
 [`Seven.Boundary.side_state_transition_bounds`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L143),
-[`Seven.Boundary.side_segment`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L290),
-[`Seven.Boundary.side_radial_upper`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L399),
+[`Seven.Boundary.side_segment`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L289),
+[`Seven.Boundary.side_radial_upper`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L398),
 [`Seven.Boundary.tie_state`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L251),
 [`Seven.Boundary.sideTop_state`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L241),
 [`Seven.Boundary.circle_state_at_label`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L182),
 [`Seven.Boundary.diagonal_state`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L219),
-[`Seven.Boundary.tie_of_side`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L285),
-[`Seven.Boundary.sideA_displacement`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L376).*
+[`Seven.Boundary.tie_of_side`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L284),
+[`Seven.Boundary.sideA_displacement`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L375).*
 
 ![A zoom on the side region in the (a, u)-plane: the green region between the purple tie line at the bottom left, the circle phi = 13/4 at the right and the diagonal at the top left, with the orange capped triangle at its left corner. Green segments of slope 9/4 cross it from the tie line to the circle, labelled by their side labels 0.42, 0.48, pi/6, 0.6, 0.66, 0.72; the segment of label pi/6 ends at the side state (1, 1/2), two further segments end on the diagonal, and the orange segment of label pi/4 is the edge V1 V2 of the capped triangle. The transition state (a0, u0) is the lower right corner and the diagonal corner (rd, rd) the top](figures/appb-segments.svg)
 
@@ -930,7 +930,7 @@ $\frac94(\frac{43}{90} - \frac45\tau)\cos x$, and the sum is at least
 ```math
 \left(\tfrac{13}{10} - \alpha(\tau) + \tfrac94\left(\tfrac{43}{90} - \tfrac45\tau\right)\right)\cos x
 = \left(\tfrac{115}{72} - \tfrac{2\pi}9 - \tfrac{37}{45}\tau\right)\cos x
-\ge \left(\tfrac{115}{72} - \tfrac{77\pi}{180}\right)\cos x > \tfrac{91}{360}\cos x > 0 ,
+\ge \left(\tfrac{115}{72} - \tfrac{77\pi}{180}\right)\cos x > 0 ,
 ```
 
 using $\tau \le \frac\pi4$ and $\pi < \frac{22}7$. $\square$
@@ -1134,7 +1134,7 @@ $\sin(\frac\pi2 - \epsilon) \le 1$ and, as $\epsilon^3 < \frac1{40}$,
 ```math
 \cos\left(\tfrac\pi2 - \epsilon\right) = \sin\epsilon \ge \epsilon - \tfrac{\epsilon^3}6 > \tfrac{11}{80} - \tfrac1{240} = \tfrac2{15},
 \qquad
-K\left(\tfrac25\right) > \tfrac\pi5 - \tfrac{12}{25} + \tfrac{51}{40}\cdot\tfrac2{15} - \tfrac{11}{40} = \tfrac\pi5 - \tfrac{117}{200} ,
+K\left(\tfrac25\right) > \tfrac\pi5 - \tfrac{12}{25} + \tfrac{51}{40}\cdot\tfrac2{15} - \tfrac{11}{40} = \tfrac\pi5 - 0.585 ,
 ```
 
 which is positive as $\pi > 3$. $\square$
@@ -1503,7 +1503,7 @@ $|\frac\pi6 - \ell| \le \frac\pi6 < \frac35$ because $0 \le \ell \le \frac\pi4$
 ([Lemma 9.7](seven.md#lemma-97-the-label)); so
 $\sin(\frac\pi3 + \ell) > 1 - \frac9{50} = \frac{41}{50}$. With
 $u < \frac{31}{40}$ ([Lemma 9.5](seven.md#lemma-95-admissible-states)), $\sigma_3(\frac\pi3)$ exceeds
-$\frac12 - \frac{31}{40} + \frac{41}{50} = \frac{109}{200}$.
+$\frac12 - \frac{31}{40} + \frac{41}{50} > \frac12$.
 If $s = -1$, then $\frac\pi3 - \ell \in [\frac\pi{12}, \frac\pi3]$, so
 $\sin(\frac\pi3 - \ell) \ge 0$ and
 $\sigma_3(\frac\pi3) \ge \frac12 + u \ge \frac12$. $\square$
@@ -1556,7 +1556,7 @@ Recall $u \ge \frac45\ell$, because $\ell \le \mathrm{axial}(u)$.
    $\sigma_1(\frac\pi3) > \frac12 + \frac14 - \frac{37}{50} = \frac1{100}$.
 
 2. *If $\ell < \frac5{16}$*, then, using $\pi > 3.14$,
-   $\frac{21}{100} < \frac\pi6 - \frac5{16} < z$ and
+   $\frac15 < \frac\pi6 - \frac5{16} < z$ and
    $z \le \frac\pi6 + \frac\pi4 < \frac\pi2$, so $\cos z, \sin z \ge 0$ and the
    absolute values in the closed form can be dropped.
 
@@ -1576,13 +1576,13 @@ Recall $u \ge \frac45\ell$, because $\ell \le \mathrm{axial}(u)$.
 
 4. *If instead $z < \frac\pi4$*, apply Lemma B.3 to
    $(X, Y) = (A + \frac12, v + \frac12)$ with $p = -\cos z$, $r = -\sin z$ and
-   $c = \frac{181}{100}$, which is allowed since
-   $\frac{13}4 \le (\frac{181}{100})^2 = 3.2761$:
-   $-(A + \frac12)\cos z - (v + \frac12)\sin z \ge -\frac{181}{100}$. Hence
+   $c = \frac{11}6$, which is allowed since $\frac{13}4 < (\frac{11}6)^2$, that
+   is, $117 < 121$:
+   $-(A + \frac12)\cos z - (v + \frac12)\sin z \ge -\frac{11}6$. Hence
 
    ```math
    \sigma_1\left(\tfrac\pi3\right) = \tfrac12 + u - \left(A + \tfrac12\right)\cos z - \left(v + \tfrac12\right)\sin z + \cos z + \sin z
-   \ge \tfrac12 + u - \tfrac{181}{100} + \cos z + \sin z .
+   \ge \tfrac12 + u - \tfrac{11}6 + \cos z + \sin z .
    ```
 
    The function $\cos + \sin$ is nondecreasing on $[0, \frac\pi4]$, where its
@@ -1591,23 +1591,23 @@ Recall $u \ge \frac45\ell$, because $\ell \le \mathrm{axial}(u)$.
    $u \ge \frac45\ell = \frac{2\pi}{15} - \frac45 x$,
 
    ```math
-   \sigma_1\left(\tfrac\pi3\right) \ge \tfrac12 + \tfrac{2\pi}{15} - \tfrac{181}{100} + k(x), \qquad
+   \sigma_1\left(\tfrac\pi3\right) \ge \tfrac12 + \tfrac{2\pi}{15} - \tfrac{11}6 + k(x), \qquad
    k(x) = -\tfrac45 x + \sin x + \cos x ,
    ```
 
-   where $\frac{21}{100} < x \le \frac\pi6$. By [Lemma A.5](appendix-a.md#lemma-a5-concave-trigonometric-sums), $k$
-   is concave on $[0, \frac\pi2]$, so on $[\frac{21}{100}, \frac\pi6]$ it
-   exceeds $m = \frac{131}{100} - \frac{2\pi}{15}$ as soon as it does at both
-   ends. At $\frac{21}{100}$, by $\sin x \ge x - \frac{x^3}6$ and
+   where $\frac15 < x \le \frac\pi6$. By [Lemma A.5](appendix-a.md#lemma-a5-concave-trigonometric-sums), $k$
+   is concave on $[0, \frac\pi2]$, so on $[\frac15, \frac\pi6]$ it
+   exceeds $m = \frac43 - \frac{2\pi}{15}$ as soon as it does at both
+   ends. At $\frac15$, by $\sin x \ge x - \frac{x^3}6$ and
    $\cos x \ge 1 - \frac{x^2}2$,
 
    ```math
-   k\left(\tfrac{21}{100}\right) \ge -0.168 + \left(0.21 - \tfrac{0.21^3}6\right) + \left(1 - \tfrac{0.21^2}2\right) > 1.018 ,
+   k\left(\tfrac15\right) \ge -0.16 + \left(0.2 - \tfrac{0.2^3}6\right) + \left(1 - \tfrac{0.2^2}2\right) > 1.018 ,
    ```
 
-   while $m < 1.31 - \frac{2(3.14)}{15} < 0.8914$. At $\frac\pi6$,
+   while $m < \frac43 - \frac{2(3.14)}{15} < 0.915$. At $\frac\pi6$,
    $k(\frac\pi6) = -\frac{2\pi}{15} + \frac12 + \frac{\sqrt3}2 > m$ because
-   $\sqrt3 > 1.73 > \frac{81}{50}$. So $k(x) > m$, that is,
+   $\sqrt3 > \frac53$. So $k(x) > m$, that is,
    $\sigma_1(\frac\pi3) > 0$. $\square$
 
 *Lean:

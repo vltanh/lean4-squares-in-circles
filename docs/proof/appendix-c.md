@@ -55,7 +55,7 @@ admissible state $(a, u)$:
 - $\frac12 \le a \le \sqrt3 - \frac12$ and $u < \frac{31}{40}$
   ([Lemma 9.5](seven.md#lemma-95-admissible-states));
 - a side label exceeds $\frac9{25}$ ([Lemma 9.8](seven.md#lemma-98-side-and-axial-labels)), and an
-  axial label forces $a + u < \frac{113}{80}$ ([Lemma 9.8](seven.md#lemma-98-side-and-axial-labels));
+  axial label forces $a + u < 1 + \frac{2\pi}{15}$ ([Lemma 9.8](seven.md#lemma-98-side-and-axial-labels));
 - the side state $(1, \frac12)$ has the label $\frac\pi6$ ([Lemma 9.16](seven.md#lemma-916-contacts)),
   and an admissible state $(A, 0)$ is an axial state
   ([Lemma 9.16](seven.md#lemma-916-contacts)).
@@ -140,7 +140,7 @@ Let $(a, u)$ be admissible and $\ell = \ell(a, u)$.
 *Lean:
 [`Seven.Admissible.radial_label_bound`](../../SquaresInCircles/Seven/Exterior.lean#L110),
 [`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Exterior.lean#L154),
-[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Exterior.lean#L181).*
+[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Exterior.lean#L185).*
 
 ## C.2 Two profiles of the turn
 
@@ -148,48 +148,43 @@ Let $(a, u)$ be admissible and $\ell = \ell(a, u)$.
 
 For real $z$ let $p(z) = \sin z - \frac45 z\cos z - \frac34(1 - \cos z)$.
 
-1. If $0 \le z \le 1$, then
-   $p(z) - \frac z{50} \ge z\left(\frac9{40}\left(z - \frac56\right)^2 + \frac{19}{800}\right)$.
-2. If $0 \le z \le \frac\pi2$, then $p(z) \ge \frac z{50}$.
+1. If $0 \le z \le 1$, then $p(z) \ge \frac z{40}\left(9z^2 - 15z + 8\right)$.
+2. If $0 \le z \le \frac\pi2$, then $p(z) \ge \frac z{40}$.
 
 *Proof.* (1) Let $0 \le z \le 1$. We use $\sin z \ge z - \frac{z^3}6$, the
 upper Taylor bound of $\cos z$ multiplied by $\frac45 z \ge 0$, and the lower
 Taylor bound of $\cos z$:
 
 ```math
-p(z) - \tfrac z{50} \ge \left(z - \tfrac{z^3}6\right) - \tfrac45 z\left(1 - \tfrac{z^2}2 + \tfrac{z^4}{24}\right)
-- \tfrac34\left(\tfrac{z^2}2 - \tfrac{z^4}{24} + \tfrac{z^6}{720}\right) - \tfrac z{50} = z\,q(z),
+p(z) \ge \left(z - \tfrac{z^3}6\right) - \tfrac45 z\left(1 - \tfrac{z^2}2 + \tfrac{z^4}{24}\right)
+- \tfrac34\left(\tfrac{z^2}2 - \tfrac{z^4}{24} + \tfrac{z^6}{720}\right) = z\,q(z),
 ```
 
 ```math
-q(z) = \tfrac9{50} - \tfrac{3z}8 + \tfrac{7z^2}{30} + \tfrac{z^3}{32} - \tfrac{z^4}{30} - \tfrac{z^5}{960} .
+q(z) = \tfrac15 - \tfrac{3z}8 + \tfrac{7z^2}{30} + \tfrac{z^3}{32} - \tfrac{z^4}{30} - \tfrac{z^5}{960} .
 ```
 
-We split $q$ into a completed square and an error that factors:
+We split $q$ into a quadratic and an error that factors:
 
 ```math
-q(z) = \tfrac9{40}\left(z - \tfrac56\right)^2 + \tfrac{19}{800} + \tfrac{z^2}{960}\left(5 + (1 - z)\left(z^2 + 33z + 3\right)\right) .
+q(z) = \tfrac1{40}\left(9z^2 - 15z + 8\right) + \tfrac{z^2}{960}\left(5 + (1 - z)\left(z^2 + 33z + 3\right)\right) .
 ```
 
-Indeed, as $\frac9{40}\cdot\frac{25}{36} + \frac{19}{800} = \frac5{32} + \frac{19}{800} = \frac9{50}$,
-
-```math
-\tfrac9{40}\left(z - \tfrac56\right)^2 + \tfrac{19}{800} = \tfrac9{50} - \tfrac{3z}8 + \tfrac{9z^2}{40} ;
-```
-
-and as $5 + (1 - z)(z^2 + 33z + 3) = 8 + 30z - 32z^2 - z^3$, the error is
-$\frac{z^2}{120} + \frac{z^3}{32} - \frac{z^4}{30} - \frac{z^5}{960}$. The two
-add up to $q(z)$, because $\frac9{40} + \frac1{120} = \frac7{30}$. For
+Indeed, the quadratic is $\frac15 - \frac{3z}8 + \frac{9z^2}{40}$; as
+$5 + (1 - z)(z^2 + 33z + 3) = 8 + 30z - 32z^2 - z^3$, the error is
+$\frac{z^2}{120} + \frac{z^3}{32} - \frac{z^4}{30} - \frac{z^5}{960}$; and the
+two add up to $q(z)$, because $\frac9{40} + \frac1{120} = \frac7{30}$. For
 $0 \le z \le 1$ the error is nonnegative, since $1 - z \ge 0$ and
 $z^2 + 33z + 3 > 0$; multiplying by $z \ge 0$,
 
 ```math
-p(z) - \tfrac z{50} \ge z\,q(z) \ge z\left(\tfrac9{40}\left(z - \tfrac56\right)^2 + \tfrac{19}{800}\right) .
+p(z) \ge z\,q(z) \ge \tfrac z{40}\left(9z^2 - 15z + 8\right) .
 ```
 
-(2) For $0 \le z \le 1$ this follows from (1), whose right side is
-nonnegative. On $[1, \frac\pi2]$ let $f(y) = p(y) - \frac y{20}$. Since the
-derivative of $y\cos y$ is $\cos y - y\sin y$,
+(2) For $0 \le z \le 1$ this follows from (1), as
+$9z^2 - 15z + 8 = (3z - \frac52)^2 + \frac74 > 1$. On $[1, \frac\pi2]$ let
+$f(y) = p(y) - \frac y{20}$. Since the derivative of $y\cos y$ is
+$\cos y - y\sin y$,
 
 ```math
 f'(y) = \tfrac15\cos y + \left(\tfrac45y - \tfrac34\right)\sin y - \tfrac1{20}
@@ -202,35 +197,30 @@ $\cos y + \sin y - 1 \ge \cos^2 y + \sin^2 y - 1 = 0$. So all three terms of
 $f'(y)$ are nonnegative, the middle one because $y \ge 1$, and $f$ is
 nondecreasing on $[1, \frac\pi2]$
 ([Lemma A.1](appendix-a.md#lemma-a1-monotonicity-from-the-derivative) (1)). At $y = 1$, part (1) gives
-
-```math
-p(1) \ge \tfrac1{50} + \tfrac9{40}\cdot\tfrac1{36} + \tfrac{19}{800} = \tfrac1{50} + \tfrac3{100} = \tfrac1{20},
-```
-
-that is, $f(1) \ge 0$. Hence for $1 \le z \le \frac\pi2$, $f(z) \ge f(1) \ge 0$
-and $p(z) \ge \frac z{20} \ge \frac z{50}$. $\square$
+$p(1) \ge \frac1{40}(9 - 15 + 8) = \frac1{20}$, that is, $f(1) \ge 0$. Hence
+for $1 \le z \le \frac\pi2$, $f(z) \ge f(1) \ge 0$ and
+$p(z) \ge \frac z{20} \ge \frac z{40}$. $\square$
 
 *Lean:
 [`Seven.inward_small_turn_bound`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L21),
-[`Seven.inward_turn_profile`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L33).*
+[`Seven.inward_turn_profile`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L34).*
 
-![Graph over the interval from 0 to pi over 2: the turn profile p rises from 0, flattens near 0.037 around z = 0.5 and climbs to 0.25 at pi over 2. Below it, on the interval from 0 to 1, the bound of part (1), close to p up to about 0.6, rises to 1/20 at z = 1, where it meets the line z/20, which continues below p up to pi over 2; at the bottom the line z/50](figures/appc-turn-profile.svg)
+![Graph over the interval from 0 to pi over 2: the turn profile p rises from 0, flattens near 0.037 around z = 0.5 and climbs to 0.25 at pi over 2. Below it, on the interval from 0 to 1, the bound of part (1), close to p up to about 0.6, rises to 1/20 at z = 1, where it meets the line z/20, which continues below p up to pi over 2; at the bottom the line z/40](figures/appc-turn-profile.svg)
 
 *Figure C.2.* The turn profile $p$ of Lemma C.2 (blue) and the line
-$\frac z{50}$ (grey). The proof bounds $p$ below by
-$\frac z{50} + z(\frac9{40}(z - \frac56)^2 + \frac{19}{800})$ on $[0, 1]$
-(orange, dashed), which follows $p$ closely up to about $z = 0.6$, and by
+$\frac z{40}$ (grey). The proof bounds $p$ below by
+$\frac z{40}(9z^2 - 15z + 8)$ on $[0, 1]$ (orange, dashed), which follows $p$
+closely up to about $z = 0.6$, and by
 $\frac z{20}$ on $[1, \frac\pi2]$ (green, dashed). The two bounds meet at
 $(1, \frac1{20})$ (dot).
 
-![Two graphs. Left, on the interval from 0 to 1: p(z) − z/50 in blue rises to about 0.027, stays nearly level up to about 0.7 and climbs to about 0.044 at z = 1; just below it the Taylor bound z q(z), dashed, ending near 0.035; below that the completed square, dashed, least near 0.019 and ending at 0.03 (dot); the band between the last two is shaded. Right, on the interval from 1 to pi over 2: p(z) − z/20 increases from about 0.014 at z = 1 (dot) to about 0.17](figures/appc-profile-split.svg)
+![Two graphs. Left, on the interval from 0 to 1: p(z) in blue rises to about 0.037 near z = 0.5, stays nearly level up to about 0.7 and climbs to about 0.064 at z = 1; just below it the Taylor bound z q(z), dashed, ending near 0.055; below that the cubic z(9z² − 15z + 8)/40, dashed, nearly level at about 0.034 between 0.4 and 0.7 and ending at 1/20 (dot); the band between the last two is shaded. Right, on the interval from 1 to pi over 2: p(z) − z/20 increases from about 0.014 at z = 1 (dot) to about 0.17](figures/appc-profile-split.svg)
 
 *Figure C.3.* The two parts of the proof of Lemma C.2. (a) On $[0, 1]$:
-$p(z) - \frac z{50}$ (blue) and its Taylor bound $z\,q(z)$ (purple, dashed),
-which is the completed square $z(\frac9{40}(z - \frac56)^2 + \frac{19}{800})$
-(orange, dashed) plus the factored error
-$\frac{z^3}{960}(5 + (1 - z)(z^2 + 33z + 3))$ (shaded). At $z = 1$ the completed
-square is $\frac3{100}$ (dot). (b) On $[1, \frac\pi2]$: $p(z) - \frac z{20}$
+$p(z)$ (blue) and its Taylor bound $z\,q(z)$ (purple, dashed), which is the
+cubic $\frac z{40}(9z^2 - 15z + 8)$ (orange, dashed) plus the factored error
+$\frac{z^3}{960}(5 + (1 - z)(z^2 + 33z + 3))$ (shaded). At $z = 1$ the cubic is
+$\frac1{20}$ (dot). (b) On $[1, \frac\pi2]$: $p(z) - \frac z{20}$
 increases from its value at 1, about $0.014$, which part (1) shows to be
 nonnegative.
 
@@ -257,7 +247,7 @@ $\frac95 - \sqrt3 - \frac e4 > \frac95 - \frac{26}{15} - \frac{11}{168} = \frac1
 $\square$
 
 *Lean:
-[`Seven.inward_positive_turn_bound`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L61).*
+[`Seven.inward_positive_turn_bound`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L62).*
 
 ![Graph over the interval from 0 to pi over 12: the left side of Lemma C.3 for A = root 3 minus one half and v = 0 rises from 0 to about 0.005 near e = 0.15 and falls to about 0.003 at pi over 12, well above the line e/840, which ends near 0.0003](figures/appc-positive-turn.svg)
 
@@ -300,7 +290,7 @@ and the bracket is at least $\frac e{840}$ by Lemma C.3, which applies since
 $A \le \sqrt3 - \frac12$ and $v \ge 0$. $\square$
 
 *Lean:
-[`Seven.inward_axial_positive_turn`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L84).*
+[`Seven.inward_axial_positive_turn`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L85).*
 
 ### Lemma C.5 (two axial labels, nonpositive turn)
 
@@ -326,13 +316,12 @@ Expanding shows the identity
 ```
 
 with $p$ the turn profile of Lemma C.2. Every term is nonnegative, and the
-third is positive: $p(z) \ge \frac z{50}$ by Lemma C.2 (2);
-$a \le \sqrt3 - \frac12 < \frac54$; $a + u < \frac{113}{80} = 1.4125$ for the
-axial label $\ell_1$, while $1 + \frac{2\pi}{15} > 1 + \frac{2\cdot 3.14}{15} > 1.418$;
-and $A \ge \frac12$. So $\sigma_2 > 0$. $\square$
+third is positive: $p(z) \ge \frac z{40}$ by Lemma C.2 (2);
+$a \le \sqrt3 - \frac12 < \frac54$; $a + u < 1 + \frac{2\pi}{15}$ for the
+axial label $\ell_1$; and $A \ge \frac12$. So $\sigma_2 > 0$. $\square$
 
 *Lean:
-[`Seven.inward_axial_nonpositive_turn`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L103).*
+[`Seven.inward_axial_nonpositive_turn`](../../SquaresInCircles/Seven/Pair/Inward/AxialTarget.lean#L104).*
 
 ### Proposition C.6 (two axial labels)
 
@@ -390,8 +379,8 @@ $\lvert\sin e\rvert = \sin z$ and $\cos e = \cos z$, (C.1) and (C.3) give
 and hence, by expanding,
 
 ```math
-\sigma_2 - \tfrac2{15}r(a, u) - \tfrac z{840} = \left(p(z) - \tfrac z{50}\right) + \left(A - \tfrac12\right)\sin z
-+ \left(v - \tfrac12 - \tfrac45z + \tfrac34\right)(1 - \cos z) + \left(\tfrac1{50} - \tfrac1{840}\right)z .
+\sigma_2 - \tfrac2{15}r(a, u) - \tfrac z{840} = \left(p(z) - \tfrac z{40}\right) + \left(A - \tfrac12\right)\sin z
++ \left(v - \tfrac12 - \tfrac45z + \tfrac34\right)(1 - \cos z) + \left(\tfrac1{40} - \tfrac1{840}\right)z .
 ```
 
 Each term is nonnegative, by Lemma C.2 (2), by $A \ge \frac12$ and by the
@@ -989,19 +978,19 @@ of $n_2$ is $\sigma_2 = J > 0$.
 
 ### Lemma C.20 (a turn margin)
 
-For $\frac{19}{100} \le z \le \frac\pi3$,
+For $\frac15 \le z \le \frac\pi3$,
 $\frac{44}{45}\sin z + \frac45\cos z > \frac{12}{13}$.
 
 *Proof.* The function is concave on $[0, \frac\pi2]$, as a combination with
 nonnegative coefficients of $\sin$ and $\cos$, which are concave there
 ([Lemma A.5](appendix-a.md#lemma-a5-concave-trigonometric-sums)). So it suffices to check the ends, where
-$\sin\frac{19}{100} \ge \frac{19}{100} - \frac16(\frac{19}{100})^3 > 0.18$,
-$\cos\frac{19}{100} \ge 1 - \frac12(\frac{19}{100})^2 > 0.98$ and
+$\sin\frac15 \ge \frac15 - \frac16(\frac15)^3 > 0.18$,
+$\cos\frac15 \ge 1 - \frac12(\frac15)^2 = 0.98$ and
 $\frac{\sqrt3}2 > 0.865$:
 
 ```math
 \begin{aligned}
-\tfrac{44}{45}\sin\tfrac{19}{100} + \tfrac45\cos\tfrac{19}{100} &> \tfrac{44}{45}\cdot 0.18 + \tfrac45\cdot 0.98 = 0.96 > \tfrac{12}{13}, \\
+\tfrac{44}{45}\sin\tfrac15 + \tfrac45\cos\tfrac15 &> \tfrac{44}{45}\cdot 0.18 + \tfrac45\cdot 0.98 = 0.96 > \tfrac{12}{13}, \\
 \tfrac{44}{45}\sin\tfrac\pi3 + \tfrac45\cos\tfrac\pi3 &= \tfrac{44}{45}\cdot\tfrac{\sqrt3}2 + \tfrac25 > \tfrac{44}{45}\cdot 0.865 + 0.4 > 1.2 > \tfrac{12}{13} .
 \end{aligned}
 ```
@@ -1011,7 +1000,7 @@ $\square$
 *Lean:
 [`Seven.line_to_circle_turn_margin`](../../SquaresInCircles/Seven/Pair/Inward/OppositeMinima.lean#L199).*
 
-![Graph over the interval from 0.19 to pi over 3 of the concave function 44/45 sin z + 4/5 cos z, which rises from about 0.97 to about 1.25 with a maximum in between, above the horizontal line at 12/13](figures/appc-turn-margin.svg)
+![Graph over the interval from 1/5 to pi over 3 of the concave function 44/45 sin z + 4/5 cos z, which rises from about 0.98 to about 1.25 with a maximum in between, above the horizontal line at 12/13](figures/appc-turn-margin.svg)
 
 *Figure C.11.* The turn margin of Lemma C.20 against $\frac{12}{13}$ (grey).
 
@@ -1169,7 +1158,7 @@ a sum of nonnegative terms, as $0 \le \sin z, \cos z \le 1$. $\square$
 
 ### Lemma C.27 (a circular source moves up)
 
-Let $\frac{19}{100} \le z \le \frac\pi3$ and $s_0 \le x \le x' \le t_d$, with
+Let $\frac15 \le z \le \frac\pi3$ and $s_0 \le x \le x' \le t_d$, with
 $\mu(z, x') \ge s_0$ and $\mu(z, x) \le \frac\pi4$. Then $U(z, x') \le U(z, x)$.
 
 *Proof.* For $y \in \lbrace x, x'\rbrace$ we have
@@ -1216,7 +1205,7 @@ $x' = \min(t_d, z + \frac\pi6 - s_0)$. Then $x \le x' \le t_d$ (as
 $\mu(z, x) > s_0$ means $x < z + \frac\pi6 - s_0$) and $\mu(z, x') \ge s_0$.
 Since $x \ge s_0$ and $\mu(z, x) > s_0$, the turn
 $z = \mu(z, x) + x - \frac\pi6$ exceeds
-$2s_0 - \frac\pi6 > \frac{18}{25} - \frac{11}{21} > \frac{19}{100}$. By Lemma
+$2s_0 - \frac\pi6 = \frac52u_0 - \frac\pi6 > 0.7284 - 0.5239 > \frac15$. By Lemma
 C.27, $U(z, x') \le U(z, x)$. If $t_d \le z + \frac\pi6 - s_0$, then $x' = t_d$,
 $\mu(z, t_d) \in [s_0, \mu(z, x)] \subset [0, \frac\pi4]$, and $U(z, t_d) > 0$
 by Lemma C.25. Otherwise $x' = z + \frac\pi6 - s_0 \in [s_0, t_d]$ and

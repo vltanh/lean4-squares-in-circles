@@ -263,17 +263,18 @@ def profile(z):
 
 
 def quintic(z):
-    """q: the Taylor bounds give p(z) - z/50 >= z q(z)."""
-    return (9 / 50 - 3 * z / 8 + 7 * z ** 2 / 30 + z ** 3 / 32 - z ** 4 / 30
+    """q: the Taylor bounds give p(z) >= z q(z)."""
+    return (1 / 5 - 3 * z / 8 + 7 * z ** 2 / 30 + z ** 3 / 32 - z ** 4 / 30
             - z ** 5 / 960)
 
 
-def completed_square(z):
-    return 9 / 40 * (z - 5 / 6) ** 2 + 19 / 800
+def quadratic(z):
+    """The quadratic part (9z^2 - 15z + 8)/40 of q."""
+    return (9 * z ** 2 - 15 * z + 8) / 40
 
 
 def factored_error(z):
-    """q(z) - completed_square(z), nonnegative for 0 <= z <= 1."""
+    """q(z) - quadratic(z), nonnegative for 0 <= z <= 1."""
     return z ** 2 / 960 * (5 + (1 - z) * (z ** 2 + 33 * z + 3))
 
 
@@ -281,14 +282,16 @@ def check_profile_bounds():
     """The identity and the inequalities of the proof of Lemma C.2."""
     for k in range(158):
         z = k / 100
-        assert abs(quintic(z) - completed_square(z) - factored_error(z)) \
-            < 1e-15
+        assert abs(quintic(z) - quadratic(z) - factored_error(z)) < 1e-15
+        assert abs(9 * z ** 2 - 15 * z + 8 - (3 * z - 2.5) ** 2 - 7 / 4) \
+            < 1e-12
         if z <= 1:
             assert factored_error(z) >= 0
-            assert profile(z) - z / 50 >= z * quintic(z) - 1e-15
+            assert profile(z) >= z * quintic(z) - 1e-15
+            assert z * quadratic(z) >= z / 40
         else:
             assert profile(z) - z / 20 >= profile(z - 0.01) - (z - 0.01) / 20
-    assert abs(1 / 50 + completed_square(1) - 1 / 20) < 1e-15
+    assert abs(quadratic(1) - 1 / 20) < 1e-15
 
 
 def turn_profile():
@@ -296,9 +299,9 @@ def turn_profile():
     g = Graph(0, PI / 2, 0, 0.26)
     g.axes([(0, '0'), (0.5, '0.5'), (1, '1'), (PI / 2, 'π/2')],
            [(0, '0'), (0.1, '0.1'), (0.2, '0.2')], xname='z')
-    g.curve(lambda z: z / 50, stroke=FAINT, width=1.6)
-    g.curve(lambda z: z / 50 + z * completed_square(z), 0, 1, stroke=ORANGE,
-            width=1.8, dash='6 4')
+    g.curve(lambda z: z / 40, stroke=FAINT, width=1.6)
+    g.curve(lambda z: z * quadratic(z), 0, 1, stroke=ORANGE, width=1.8,
+            dash='6 4')
     g.curve(lambda z: z / 20, 1, PI / 2, stroke=GREEN, width=1.8,
             dash='6 4')
     g.curve(profile, stroke=BLUE, width=2.2)
@@ -307,8 +310,8 @@ def turn_profile():
     g.text(0.66, 0.072, 'Lemma C.2 (1)', color=ORANGE, size=14,
            italic=False)
     g.text(1.45, 1.45 / 20 + 0.016, 'z/20', color=GREEN, size=14)
-    g.text(1.35, 1.35 / 50 - 0.014, 'z/50', color=FAINT, size=14)
-    g.f.save('appc-turn-profile', 'The turn profile p above the line z/50, '
+    g.text(1.35, 1.35 / 40 - 0.014, 'z/40', color=FAINT, size=14)
+    g.f.save('appc-turn-profile', 'The turn profile p above the line z/40, '
              'with the lower bounds of the proof: the bound of part (1) on '
              '[0, 1] and the line z/20 on [1, pi/2], which meet at z = 1')
 
@@ -316,30 +319,31 @@ def turn_profile():
 def profile_split():
     W, H, gap = 300, 230, 84
     f = Figure(-58, 2 * W + gap + 24, -44, H + 46, 1, pad=0)
-    # (a) 0 <= z <= 1: the Taylor bound z q(z) is the completed square plus
-    # the factored error.
-    a = Graph(0, 1, 0, 0.05, width=W, height=H, fig=f)
-    a.axes([(0, '0'), (0.5, '0.5'), (5 / 6, '5/6'), (1, '1')],
-           [(0, '0'), (0.02, '0.02'), (0.04, '0.04')], xname='z')
+    # (a) 0 <= z <= 1: the Taylor bound z q(z) is the cubic z quadratic(z)
+    # plus the factored error.
+    a = Graph(0, 1, 0, 0.07, width=W, height=H, fig=f)
+    a.axes([(0, '0'), (0.5, '0.5'), (1, '1')],
+           [(0, '0'), (0.02, '0.02'), (0.04, '0.04'), (0.06, '0.06')],
+           xname='z')
     zs = [k / 200 for k in range(201)]
-    f.polygon([a.q(z, z * completed_square(z)) for z in zs]
+    f.polygon([a.q(z, z * quadratic(z)) for z in zs]
               + [a.q(z, z * quintic(z)) for z in reversed(zs)],
               fill=FILLS[3], stroke='none')
     a.curve(lambda z: z * quintic(z), stroke=PURPLE, width=1.6, dash='6 4')
-    a.curve(lambda z: z * completed_square(z), stroke=ORANGE, width=1.8,
+    a.curve(lambda z: z * quadratic(z), stroke=ORANGE, width=1.8,
             dash='6 4')
-    a.curve(lambda z: profile(z) - z / 50, stroke=BLUE, width=2.2)
-    a.dot(1, completed_square(1), fill=ORANGE)
+    a.curve(profile, stroke=BLUE, width=2.2)
+    a.dot(1, quadratic(1), fill=ORANGE)
     # a legend in the empty upper left corner
-    rows = [('p(z) − z/50', BLUE, None, True),
+    rows = [('p(z)', BLUE, None, True),
             ('z q(z)', PURPLE, '6 4', True),
-            ('completed square', ORANGE, '6 4', False),
+            ('z(9z² − 15z + 8)/40', ORANGE, '6 4', True),
             ('factored error', None, None, False)]
     for k, (name, color, dash, italic) in enumerate(rows):
-        y = 0.0478 - 0.0042 * k
+        y = 0.0669 - 0.00588 * k
         if color is None:
-            f.polygon([a.q(0.03, y - 0.0012), a.q(0.11, y - 0.0012),
-                       a.q(0.11, y + 0.0012), a.q(0.03, y + 0.0012)],
+            f.polygon([a.q(0.03, y - 0.00168), a.q(0.11, y - 0.00168),
+                       a.q(0.11, y + 0.00168), a.q(0.03, y + 0.00168)],
                       fill=FILLS[3], stroke='none')
         else:
             a.points([(0.03, y), (0.11, y)], stroke=color,
@@ -359,9 +363,9 @@ def profile_split():
     f.text((W + gap + W / 2, H + 30), '(b) 1 ≤ z ≤ π/2', size=14,
            italic=False)
     f.save('appc-profile-split', 'The two parts of the proof of the turn '
-           'profile bound: on [0, 1] the profile less z/50 above its Taylor '
-           'bound z q(z), which is the completed square plus a factored '
-           'error; on [1, pi/2] the profile less z/20, increasing')
+           'profile bound: on [0, 1] the profile above its Taylor bound '
+           'z q(z), which is a cubic plus a factored error; on [1, pi/2] the '
+           'profile less z/20, increasing')
 
 
 def positive_turn():
@@ -769,9 +773,9 @@ def circular_pair():
 
 
 def turn_margin():
-    lo, hi = 0.19, PI / 3
+    lo, hi = 0.2, PI / 3
     g = Graph(lo, hi, 0.88, 1.3, height=240)
-    g.axes([(lo, '0.19'), (0.4, '0.4'), (0.6, '0.6'), (0.8, '0.8'),
+    g.axes([(lo, '1/5'), (0.4, '0.4'), (0.6, '0.6'), (0.8, '0.8'),
             (hi, 'π/3')],
            [(12 / 13, '12/13'), (1.0, '1'), (1.1, '1.1'), (1.2, '1.2'),
             (1.3, '1.3')], xname='z')
@@ -786,9 +790,12 @@ def turn_margin():
            anchor='start')
     # the bounds of the proof of Lemma C.20 at the two ends
     assert math.sin(lo) >= lo - lo ** 3 / 6 > 0.18
-    assert math.cos(lo) >= 1 - lo ** 2 / 2 > 0.98
+    assert math.cos(lo) >= 1 - lo ** 2 / 2 and abs(1 - lo ** 2 / 2 - 0.98) < 1e-12
     assert abs(44 / 45 * 0.18 + 0.8 * 0.98 - 0.96) < 1e-12 and 0.96 > 12 / 13
     assert SQRT3 / 2 > 0.865 and 44 / 45 * 0.865 + 0.4 > 1.2 > 12 / 13
+    # Proposition C.28: a target on the tie line needs a turn above 1/5
+    assert abs(2.5 * 0.29136 - 0.7284) < 1e-12 and PI / 6 < 0.5239
+    assert 2 * S0 - PI / 6 > 0.7284 - 0.5239 > lo
     g.f.save('appc-turn-margin', 'The concave turn margin above the line at '
              '12/13')
 

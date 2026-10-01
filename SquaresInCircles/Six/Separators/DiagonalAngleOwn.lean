@@ -50,14 +50,14 @@ private lemma diagonal_trig {v d : ℝ}
     cos_sin_nonneg ⟨by linarith,by linarith [Real.pi_gt_d2]⟩⟩
 
 private lemma compensated_v_curvature {A B G H v d : ℝ}
-    (hA : 2849/20000≤A) (hB : 37/200≤B) (hG : 0≤G) (hH : -(613/4000)≤H)
+    (hA : 1/10≤A) (hB : 1/6≤B) (hG : 0≤G) (hH : -(5/32)≤H)
     (hv : 0≤v ∧ v≤2/3) (hd : 0≤d ∧ d≤1/2) :
     0≤A*Real.cos v+B*Real.sin v+G*Real.cos (v+d)+H*Real.sin (v+d) := by
   obtain ⟨⟨hcv,hsv,_⟩,⟨hcd,hsd,hsdu⟩,⟨hcq,hsq⟩⟩ := diagonal_trig hv hd
   have h1 := mul_nonneg (sub_nonneg.mpr hA) hcv
   have h2 := mul_nonneg (sub_nonneg.mpr hB) hsv
   have h3 := mul_nonneg hG hcq
-  have h4 := mul_nonneg (show 0≤H+613/4000 by linarith) hsq
+  have h4 := mul_nonneg (show 0≤H+5/32 by linarith) hsq
   have h5 := mul_nonneg hsv (sub_nonneg.mpr (Real.cos_le_one d))
   have h6 := mul_nonneg hcv (sub_nonneg.mpr hsdu)
   have hq : Real.sin (v+d)≤Real.sin v+(1/2)*Real.cos v := by
@@ -66,7 +66,7 @@ private lemma compensated_v_curvature {A B G H v d : ℝ}
   nlinarith only [h1,h2,h3,h4,hq,hcv,hsv]
 
 private lemma compensated_d_curvature {A B G H v d : ℝ}
-    (hA : 2387/20000≤A) (hB : 2387/20000≤B) (hG : 0≤G) (hH : -(613/4000)≤H)
+    (hA : 3/25≤A) (hB : 3/25≤B) (hG : 0≤G) (hH : -(5/32)≤H)
     (hv : 0≤v ∧ v≤2/3) (hd : 0≤d ∧ d≤1/2) :
     0≤A*Real.cos d+B*Real.sin d+G*Real.cos (v+d)+H*Real.sin (v+d) := by
   obtain ⟨⟨_,_,hsvu⟩,⟨hcd,hsd,hsdu⟩,⟨hcq,hsq⟩⟩ := diagonal_trig hv hd
@@ -74,7 +74,7 @@ private lemma compensated_d_curvature {A B G H v d : ℝ}
   have h1 := mul_nonneg (sub_nonneg.mpr hA) hcd0
   have h2 := mul_nonneg (sub_nonneg.mpr hB) hsd
   have h3 := mul_nonneg hG hcq
-  have h4 := mul_nonneg (show 0≤H+613/4000 by linarith) hsq
+  have h4 := mul_nonneg (show 0≤H+5/32 by linarith) hsq
   have h5 := mul_nonneg (sub_nonneg.mpr hsvu) hcd0
   have h6 := mul_nonneg (sub_nonneg.mpr (Real.cos_le_one v)) hsd
   have hq : Real.sin (v+d)≤(5/8)*Real.cos d+Real.sin d := by
@@ -85,9 +85,8 @@ private lemma compensated_d_curvature {A B G H v d : ℝ}
 /-- Under the bounds on its coefficients, `threeHarmonics` is positive on
 `[0, 2/3] × [0, 1/2]` as soon as it is positive at the four corners. -/
 theorem threeHarmonics_positive {C Av Bv Ad Bd Aq Bq v d : ℝ}
-    (hAv : 2849/20000≤Av) (hBv : 37/200≤Bv)
-    (hAd : 2387/20000≤Ad) (hBd : 2387/20000≤Bd)
-    (hAq : 0≤Aq) (hBq : -(613/4000)≤Bq)
+    (hAv : 1/10≤Av) (hBv : 1/6≤Bv) (hAd : 3/25≤Ad) (hBd : 3/25≤Bd)
+    (hAq : 0≤Aq) (hBq : -(5/32)≤Bq)
     (hv : 0≤v ∧ v≤2/3) (hd : 0≤d ∧ d≤1/2)
     (h00 : 0<threeHarmonics C Av Bv Ad Bd Aq Bq 0 0)
     (h0D : 0<threeHarmonics C Av Bv Ad Bd Aq Bq 0 (1/2))
@@ -182,7 +181,7 @@ lemma vertex_endpoint_lower (ds : Bool) {v d aw bw ad bd cx cy L0 L X Y : ℝ}
     (hcy : alpha ds*Real.sin d-beta ds*Real.sin v≤Y) :
     1+(beta ds/2)*(Real.cos v+Real.sin v)+(alpha ds/2)*(Real.cos d+Real.sin d)+
       mu ds*(Real.cos (v+d)+Real.sin (v+d))-
-      (1689/1000)*(L0+L)-(113/1000)*(X+Y)≤slack ds v d aw bw ad bd cx cy := by
+      1.689*(L0+L)-0.113*(X+Y)≤slack ds v d aw bw ad bd cx cy := by
   have hD' : ContainedChart ad |-bd| := by simpa only [abs_neg] using hD
   have hcentral := coarse_central_work hc hX hY hcx hcy
   cases ds
@@ -214,8 +213,8 @@ lemma cap_endpoint_lower (ds : Bool) {v d aw bw ad bd cx cy L0 X Y : ℝ}
     (1+sourceWeight ds+mu ds)/2+
       (beta ds/2)*(Real.cos v+Real.sin v)+(alpha ds/2)*(Real.cos d+Real.sin d)+
       (mu ds/2)*(Real.cos (v+d)+Real.sin (v+d))-
-      (1689/1000)*L0-(1113/1000)*(targetWeight ds+mu ds*Real.sin (v+d))-
-      (113/1000)*(X+Y)≤slack ds v d aw bw ad bd cx cy := by
+      1.689*L0-1.113*(targetWeight ds+mu ds*Real.sin (v+d))-
+      0.113*(X+Y)≤slack ds v d aw bw ad bd cx cy := by
   have hD' : ContainedChart ad |-bd| := by simpa only [abs_neg] using hD
   have hcentral := coarse_central_work hc hX hY hcx hcy
   cases ds
@@ -232,13 +231,14 @@ lemma cap_endpoint_lower (ds : Bool) {v d aw bw ad bd cx cy L0 X Y : ℝ}
       dot] at hcentral ⊢
     nlinarith only [hWb,hDb,hcentral]
 
-/-! Rational bounds for the lengths of the forces on the source and, at the
-corners `v + d = 0`, `1/2` and `2/3`, on the target. -/
+/-! Decimal bounds for the lengths of the forces on the source and, at the
+corners `v + d = 0`, `1/2` and `2/3`, on the target: the corners leave a margin
+of about `0.002`, so the lengths need four digits. -/
 
-def sourceNorm (ds : Bool) : ℝ := if ds then 4696/10000 else 5061/10000
-def normZero (ds : Bool) : ℝ := if ds then 4255/10000 else 3983/10000
-def normHalf (ds : Bool) : ℝ := if ds then 5056/10000 else 4827/10000
-def normFar (ds : Bool) : ℝ := if ds then 5265/10000 else 5046/10000
+def sourceNorm (ds : Bool) : ℝ := if ds then 0.4696 else 0.5061
+def normZero (ds : Bool) : ℝ := if ds then 0.4255 else 0.3983
+def normHalf (ds : Bool) : ℝ := if ds then 0.5056 else 0.4827
+def normFar (ds : Bool) : ℝ := if ds then 0.5265 else 0.5046
 
 lemma sourceNorm_bound (ds : Bool) :
     0≤sourceNorm ds ∧ (sourceWeight ds)^2+(mu ds)^2≤(sourceNorm ds)^2 := by
@@ -302,9 +302,8 @@ lemma corner_mixed (ds : Bool) {aw bw ad bd cx cy : ℝ}
   obtain ⟨hdcl,hdcu,hdsl,hdsu⟩ := trig_bracket_half
   obtain ⟨hqcl,hqcu,hqsl,hqsu⟩ := trig_bracket_seven_sixths
   have hq : (2:ℝ)/3+1/2=7/6 := by norm_num
-  have hroot := mul_le_mul
-    (show rho0+1/2≤1613/1000 by linarith [rho0_bounds.2]) hqcu
-    (show 0≤Real.cos (7/6) by linarith) (by norm_num : (0:ℝ)≤1613/1000)
+  have hroot := mul_le_mul (show rho0+1/2≤2 by linarith [rho0_bounds.2]) hqcu
+    (show 0≤Real.cos (7/6) by linarith) (by norm_num)
   have hslope : (rho0+1/2)*(mu ds*Real.cos (2/3+1/2))≤
       (targetWeight ds+mu ds*Real.sin (2/3+1/2))/2 := by
     rw [hq]
@@ -331,7 +330,9 @@ theorem corners (ds : Bool) {aw bw ad bd cx cy : ℝ}
   ⟨corner_zero ds hW hD hc,corner_half ds hW hD hc,
     corner_far ds hW hD hc,corner_mixed ds hW hD hc⟩
 
-/-- The slack is positive on `[0, 2/3] × [0, 1/2]`. -/
+/-- The slack is positive on `[0, 2/3] × [0, 1/2]`: its coefficients satisfy
+the bounds of `threeHarmonics_positive` since `c_x, c_y ≤ c0` and the radial
+coordinates are at most `ρ0`. -/
 lemma slack_positive (ds : Bool) {v d aw bw ad bd cx cy : ℝ}
     (hv : 0≤v ∧ v≤2/3) (hd : 0≤d ∧ d≤1/2)
     (hW : ContainedChart aw |bw|) (hD : ContainedChart ad |bd|)
@@ -340,11 +341,11 @@ lemma slack_positive (ds : Bool) {v d aw bw ad bd cx cy : ℝ}
     0<slack ds v d aw bw ad bd cx cy := by
   obtain ⟨h00,h0D,hV0,hVD⟩ := corners ds hW hD hc
   rw [slack_formula] at h00 h0D hV0 hVD ⊢
-  have hcx : 77/200≤1/2-cx := by linarith [hc.1.2,c0_bounds.2]
-  have hcy : 77/200≤1/2-cy := by linarith [hc.2.2,c0_bounds.2]
-  have hplus : 1/2≤1/2+cy := by linarith [hc.2.1]
-  have haw : aw≤1113/1000 := by linarith [hW.a_le_rho0,rho0_bounds.2]
-  have had : ad≤1113/1000 := by linarith [hD.a_le_rho0,rho0_bounds.2]
+  obtain ⟨⟨-,hcx⟩,hcy0,hcy⟩ := hc
+  have hc0 := c0_bounds.2
+  have haw := hW.a_le_rho0
+  have had := hD.a_le_rho0
+  have hrho := rho0_bounds.2
   apply threeHarmonics_positive
     (by cases ds <;> dsimp [beta] <;> linarith)
     (by cases ds <;> dsimp [beta] <;> linarith)

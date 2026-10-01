@@ -52,19 +52,19 @@ def beta (ds : Bool) : ℝ := if ds then 30/100 else 40/100
 def mu (ds : Bool) : ℝ := if ds then 27/100 else 25/100
 
 def constant (ds : Bool) : ℝ :=
-  1-(613/1000)*beta ds-(if ds then (1689/1000)*(5078/10000) else 0)
+  1-0.613*beta ds-(if ds then 1.689*(51/100) else 0)
 /-- The terms of the gap in `w`, with `|sin w| = sin w` if `positive`. -/
 def westTerm (ds positive : Bool) (w : ℝ) : ℝ :=
   beta ds*Real.cos w+(if positive then beta ds*Real.sin w else 0)-
-    (if ds then 0 else (1689/1000)*rotTangent (40/100) (25/100) (12/25) w)
+    (if ds then 0 else 1.689*rotTangent (40/100) (25/100) (12/25) w)
 /-- The terms of the gap in `d`. -/
 def diagonalTerm (ds : Bool) (d : ℝ) : ℝ :=
-  alpha ds*(387/1000)*(Real.cos d+Real.sin d)-
-    (if ds then (1689/1000)*rotTangent (30/100) (27/100) (9/20) d else 0)
+  alpha ds*0.387*(Real.cos d+Real.sin d)-
+    (if ds then 1.689*rotTangent (30/100) (27/100) (9/20) d else 0)
 /-- The terms of the gap in `q = d - w`. -/
 def relativeTerm (ds : Bool) (q : ℝ) : ℝ :=
   mu ds*(Real.cos q+Real.sin q)-
-    (if ds then 0 else (1689/1000)*rotTangent (35/100) (25/100) (1/2) q)
+    (if ds then 0 else 1.689*rotTangent (35/100) (25/100) (1/2) q)
 
 /-- The gap after the supports, for a sign of `w`. -/
 def signedGap (ds positive : Bool) (w d : ℝ) : ℝ :=
@@ -86,8 +86,8 @@ lemma westTerm_concave (ds positive : Bool) :
     ConcaveOn ℝ (Set.Icc (-2/5) (2/5)) (westTerm ds positive) := by
   refine ((harmonic_concave (A := beta ds)
     (B := (if positive then beta ds else 0)-
-      (if ds then 0 else (1689/1000)*((40/100)*(25/100)/(12/25)))) fun x hx => ?_).add_const
-    (-(if ds then 0 else (1689/1000)*(((40/100)^2+(25/100)^2+(12/25)^2)/(2*(12/25)))))).congr
+      (if ds then 0 else 1.689*((40/100)*(25/100)/(12/25)))) fun x hx => ?_).add_const
+    (-(if ds then 0 else 1.689*(((40/100)^2+(25/100)^2+(12/25)^2)/(2*(12/25)))))).congr
     fun x _ => by cases ds <;> cases positive <;> simp [westTerm,rotTangent_eq,harmonic] <;> ring
   have hc := (small_angle (abs_le.mpr ⟨by linarith [hx.1],hx.2⟩)).1
   have hs := abs_le.mp ((Real.abs_sin_le_abs (x := x)).trans
@@ -95,10 +95,10 @@ lemma westTerm_concave (ds positive : Bool) :
   cases ds <;> cases positive <;> norm_num [beta] <;> linarith [hs.1,hs.2]
 
 lemma diagonalTerm_concave (ds : Bool) : ConcaveOn ℝ (Set.Icc 0 (1/2)) (diagonalTerm ds) := by
-  refine ((harmonic_concave (A := alpha ds*(387/1000))
-    (B := alpha ds*(387/1000)-
-      (if ds then (1689/1000)*((30/100)*(27/100)/(9/20)) else 0)) fun x hx => ?_).add_const
-    (-(if ds then (1689/1000)*(((30/100)^2+(27/100)^2+(9/20)^2)/(2*(9/20))) else 0))).congr
+  refine ((harmonic_concave (A := alpha ds*0.387)
+    (B := alpha ds*0.387-
+      (if ds then 1.689*((30/100)*(27/100)/(9/20)) else 0)) fun x hx => ?_).add_const
+    (-(if ds then 1.689*(((30/100)^2+(27/100)^2+(9/20)^2)/(2*(9/20))) else 0))).congr
     fun x _ => by cases ds <;> simp [diagonalTerm,rotTangent_eq,harmonic] <;> ring
   have ht := small_angle_nonneg (r := 9/10) ⟨hx.1,by linarith [hx.2]⟩ (by norm_num)
   have hs : Real.sin x≤1/2 := (Real.sin_le hx.1).trans hx.2
@@ -106,9 +106,9 @@ lemma diagonalTerm_concave (ds : Bool) : ConcaveOn ℝ (Set.Icc 0 (1/2)) (diagon
 
 lemma relativeTerm_concave (ds : Bool) : ConcaveOn ℝ (Set.Icc 0 (9/10)) (relativeTerm ds) := by
   refine ((harmonic_concave (A := mu ds)
-    (B := mu ds-(if ds then 0 else (1689/1000)*((35/100)*(25/100)/(1/2))))
+    (B := mu ds-(if ds then 0 else 1.689*((35/100)*(25/100)/(1/2))))
     fun x hx => ?_).add_const
-    (-(if ds then 0 else (1689/1000)*(((35/100)^2+(25/100)^2+(1/2)^2)/(2*(1/2)))))).congr
+    (-(if ds then 0 else 1.689*(((35/100)^2+(25/100)^2+(1/2)^2)/(2*(1/2)))))).congr
     fun x _ => by cases ds <;> simp [relativeTerm,rotTangent_eq,harmonic] <;> ring
   have ht := small_angle_nonneg hx (by norm_num)
   cases ds <;> norm_num [mu] <;> nlinarith [ht.1,ht.2.1,ht.2.2]
@@ -252,7 +252,7 @@ lemma trig_bounds {w d : ℝ}
     (hw : -2/5≤w ∧ w≤2/5) (hd : 0≤d ∧ d≤1/2) (hwd : w≤d) :
     0≤Real.cos w ∧ -(2/5)≤Real.sin w ∧
     (0≤Real.cos d ∧ 0≤Real.sin d) ∧
-    (119/200≤Real.cos (d-w) ∧ 0≤Real.sin (d-w)) := by
+    (1/2≤Real.cos (d-w) ∧ 0≤Real.sin (d-w)) := by
   have hsw := (abs_le.mp ((Real.abs_sin_le_abs (x := w)).trans
     (abs_le.mpr ⟨by linarith [hw.1],hw.2⟩))).1
   have hdt := small_angle_nonneg (r := 9/10) ⟨hd.1,by linarith [hd.2]⟩ (by norm_num)
@@ -304,7 +304,7 @@ theorem gap_le_slack (ds : Bool) {w d aw bw ad bd cx cy : ℝ}
       (rotating_force_norm (30/100) (27/100) w d)
     have hWb := vertex_linear_upper hW (by nlinarith [hqt.1]) hWt.1 hWt.2
     have hDb := vertex_linear_upper hD' (U := (43:ℝ)/100) (V := (27:ℝ)/100)
-      (L := (5078:ℝ)/10000) (by norm_num) (by norm_num) (by norm_num)
+      (L := (51:ℝ)/100) (by norm_num) (by norm_num) (by norm_num)
     dsimp [alpha,beta] at hcentral
     unfold gap
     split_ifs with h

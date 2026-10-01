@@ -14,9 +14,10 @@ disk (`transverse_lt_of_profile`). For the turned square D, at the phase
 `|b| < 31/100 - 17d/100`, the excess of the circle condition being concave in
 `d`. For W at the phase `π - v` it gives `-b < 47/100 - 2v/3` on the west side
 of C and `|b| < 233/500 - 73v/100` on its own axis. There the excess is a
-polynomial in `v`, bounded below by keeping its leading terms: on the west side
-it is at least its value at `v = 0`, and on its own axis it is positive by a
-discriminant for `v ≤ 1/4` and at least its value at `v = 1/2` for `v ≥ 1/4`.
+polynomial in `v`: on the west side the profile `1.387 + v/2` leaves a
+quadratic with positive coefficients, and on its own axis, with the Taylor
+polynomials of `cos v` and `sin v`, the excess is positive by a discriminant for
+`v ≤ 1/4` and at least its value at `v = 1/2` for `v ≥ 1/4`.
 -/
 
 noncomputable section
@@ -36,17 +37,14 @@ lemma transverse_lt_of_profile {a b L T : ℝ} (hc : ContainedChart a |b|)
 
 /-! ### W on the west side of C -/
 
-private def leftProfile (v : ℝ) : ℝ :=
-  277/200+v/2-(77/400)*v^2-v^3/12
+private def leftProfile (v : ℝ) : ℝ := 1.387+v/2
 
-/-- The excess of the circle condition is at least its value at `v = 0`, its
-linear term `11v/120` outweighing its cubic and quartic terms. -/
+/-- The excess of the circle condition is a quadratic in `v` with positive
+coefficients. -/
 private lemma left_circle_obstruction {v : ℝ} (hv : 0≤v ∧ v≤2/5) :
     Q0<(leftProfile v)^2+(47/100-(2/3)*v+1/2)^2 := by
-  have h3 := mul_le_mul_of_nonneg_left (pow_le_pow_left₀ hv.1 hv.2 2) hv.1
-  have h4 := mul_le_mul_of_nonneg_left (pow_le_pow_left₀ hv.1 hv.2 3) hv.1
   dsimp [leftProfile,Q0]
-  linarith only [h3,h4,hv.1,pow_nonneg hv.1 2,pow_nonneg hv.1 5,pow_nonneg hv.1 6]
+  linarith only [hv.1,sq_nonneg v]
 
 /-- A square separated from C along the west side of C, at the phase `π - v`
 with `0 ≤ v ≤ 2/5`, has `-b < 47/100 - (2/3) v`. -/
@@ -63,22 +61,17 @@ theorem cardinal_west_negative_transverse {a b cx cy v : ℝ}
   have hcube := mul_nonneg hv.1 (show 0≤1/10-v^2/6 by nlinarith)
   have hsinLow := Real.sin_ge_sub_cube hv.1
   have hs : (9/10)*v≤Real.sin v := by nlinarith only [hcube,hsinLow]
-  have hprod := mul_le_mul (show 211/300≤1/2-b by linarith [hv.2]) hs
+  have hprod := mul_le_mul (show 7/10≤1/2-b by linarith [hv.2]) hs
     (show 0≤(9/10)*v by linarith [hv.1]) (show 0≤1/2-b by linarith)
   have hcprod := mul_nonneg (show 0≤a-1/2 by linarith [hc.half_le])
     (show 0≤1-Real.cos v by linarith [Real.cos_le_one v])
   simp only [centralMargin,centerX,angularWidth,Real.cos_pi_sub,Real.sin_pi_sub,
     abs_neg,abs_of_nonneg hc0,abs_of_nonneg hs0] at hcard
+  -- `a + 1/2 ≥ 3/2 - c_x + (1/2 - b) sin v`
   have hprofile : leftProfile v≤a+1/2 := by
-    have hcu := Real.cos_le_one v
-    have hsu := Real.sin_le hv.1
-    have hcl := Real.one_sub_sq_div_two_le_cos (x := v)
     dsimp [leftProfile]
-    nlinarith [hcard,hprod,hcprod,hcu,hsu,c0_bounds.2,hv.1]
-  have hL : 0≤leftProfile v := by
-    have hp := mul_nonneg hv.1 (show 0≤1/2-(77/400)*v-v^2/12 by nlinarith [hv.2])
-    dsimp [leftProfile]
-    nlinarith only [hp]
+    linarith only [hcard,hprod,hcprod,hx,c0_bounds.2,hv.1]
+  have hL : 0≤leftProfile v := by dsimp [leftProfile]; linarith [hv.1]
   have hbound := transverse_lt_of_profile hc hL (by linarith [hv.2]) hprofile
     (left_circle_obstruction hv)
   linarith [neg_le_abs b]
@@ -86,7 +79,7 @@ theorem cardinal_west_negative_transverse {a b cx cy v : ℝ}
 /-! ### W on its own axis -/
 
 private def wingFrontCubic (v : ℝ) : ℝ :=
-  1387/1000+v/2-(387/2000)*v^2-v^3/12
+  1+0.387*(1-v^2/2)+(v-v^3/6)/2
 
 /-- The excess of the circle condition is positive: for `v ≤ 1/4` it is at least
 a quadratic without real roots, and for `v ≥ 1/4` it is at least its value at
@@ -116,8 +109,8 @@ theorem own_west_transverse_small_angle {v a b cx cy : ℝ}
     ⟨by linarith [hv.1,Real.pi_pos],by linarith [hv.2,Real.pi_gt_d2]⟩
   have hsin := Real.sin_nonneg_of_nonneg_of_le_pi hv.1
     (by linarith [hv.2,Real.pi_gt_d2])
-  have hx' : 387/1000≤1/2-cx := by dsimp [c0] at hx; linarith [rho0_bounds.2]
-  have hX := mul_nonneg (show 0≤1/2-cx-387/1000 by linarith) hcos
+  have hx' : 0.387≤1/2-cx := by dsimp [c0] at hx; linarith [rho0_bounds.2]
+  have hX := mul_nonneg (show 0≤1/2-cx-0.387 by linarith) hcos
   have hY := mul_nonneg hy0 hsin
   simp only [centralMargin,centralNormal,angularWidth,Real.cos_pi_sub,Real.sin_pi_sub,
     abs_neg,abs_of_nonneg hcos,abs_of_nonneg hsin] at hown
@@ -136,51 +129,49 @@ theorem own_west_transverse_small_angle {v a b cx cy : ℝ}
 /-! ### The turned square D -/
 
 /-- A square at the phase `π + d`, `0 ≤ d ≤ π/4`, separated from C along its
-own axis has `a + 1/2 ≥ 1 + (387/1000)(cos d + sin d)`. -/
+own axis has `a + 1/2 ≥ 1 + 0.387 (cos d + sin d)`. -/
 lemma own_front_profile {a b cx cy d : ℝ}
     (hx : cx≤c0) (hy : cy≤c0) (hd : 0≤d ∧ d≤Real.pi/4)
     (hown : 0≤centralMargin .own (Real.pi+d) a b cx cy) :
-    1+(387/1000)*(Real.cos d+Real.sin d)≤a+1/2 := by
+    1+0.387*(Real.cos d+Real.sin d)≤a+1/2 := by
   have hc0 : 0≤Real.cos d := Real.cos_nonneg_of_mem_Icc
     ⟨by linarith [hd.1,Real.pi_pos],by linarith [hd.2,Real.pi_pos]⟩
   have hs0 := Real.sin_nonneg_of_nonneg_of_le_pi hd.1 (by linarith [hd.2,Real.pi_pos])
-  have hX := mul_nonneg (show 0≤1/2-cx-387/1000 by dsimp [c0] at hx; linarith [rho0_bounds.2])
-    hc0
-  have hY := mul_nonneg (show 0≤1/2-cy-387/1000 by dsimp [c0] at hy; linarith [rho0_bounds.2])
-    hs0
+  have hX := mul_nonneg (show 0≤1/2-cx-0.387 by dsimp [c0] at hx; linarith [rho0_bounds.2]) hc0
+  have hY := mul_nonneg (show 0≤1/2-cy-0.387 by dsimp [c0] at hy; linarith [rho0_bounds.2]) hs0
   simp only [centralMargin,centralNormal,angularWidth,add_comm Real.pi d,
     Real.cos_add_pi,Real.sin_add_pi,abs_neg,abs_of_nonneg hc0,abs_of_nonneg hs0] at hown
   nlinarith only [hown,hX,hY]
 
 private def diagonalCircleExcess (d : ℝ) : ℝ :=
-  1+(387/1000)^2-Q0+2*(387/1000)*(Real.cos d+Real.sin d)+
-    (387/1000)^2*Real.sin (2*d)+(81/100-(17/100)*d)^2
+  1+0.387^2-Q0+2*0.387*(Real.cos d+Real.sin d)+
+    0.387^2*Real.sin (2*d)+(81/100-(17/100)*d)^2
 
 private lemma diagonalCircleExcess_identity (d : ℝ) : diagonalCircleExcess d =
-    (1+(387/1000)*(Real.cos d+Real.sin d))^2+(31/100-(17/100)*d+1/2)^2-Q0 := by
+    (1+0.387*(Real.cos d+Real.sin d))^2+(31/100-(17/100)*d+1/2)^2-Q0 := by
   dsimp [diagonalCircleExcess]
   rw [Real.sin_two_mul]
   nlinarith only [Real.sin_sq_add_cos_sq d]
 
 private lemma diagonalCircleExcess_concave :
     ConcaveOn ℝ (Set.Icc (1/2) (Real.pi/4)) diagonalCircleExcess := by
-  let f' : ℝ → ℝ := fun x => 2*(387/1000)*(Real.cos x-Real.sin x)+
-    2*(387/1000)^2*Real.cos (2*x)-2*(17/100)*(81/100-(17/100)*x)
-  let f'' : ℝ → ℝ := fun x => -2*(387/1000)*(Real.sin x+Real.cos x)-
-    4*(387/1000)^2*Real.sin (2*x)+2*(17/100)^2
+  let f' : ℝ → ℝ := fun x => 2*0.387*(Real.cos x-Real.sin x)+
+    2*0.387^2*Real.cos (2*x)-2*(17/100)*(81/100-(17/100)*x)
+  let f'' : ℝ → ℝ := fun x => -2*0.387*(Real.sin x+Real.cos x)-
+    4*0.387^2*Real.sin (2*x)+2*(17/100)^2
   have hf (x : ℝ) : HasDerivAt diagonalCircleExcess (f' x) x := by
     have htr := ((Real.hasDerivAt_cos x).fun_add (Real.hasDerivAt_sin x)).const_mul
-      (2*(387/1000))
-    have htwo := (((hasDerivAt_id x).const_mul 2).sin).const_mul ((387/1000)^2)
+      (2*0.387)
+    have htwo := (((hasDerivAt_id x).const_mul 2).sin).const_mul (0.387^2)
     have hsq := ((hasDerivAt_const x (81/100)).fun_sub
       ((hasDerivAt_id x).const_mul (17/100))).fun_pow 2
-    convert ((htr.const_add (1+(387/1000)^2-Q0)).fun_add htwo).fun_add hsq using 1
+    convert ((htr.const_add (1+0.387^2-Q0)).fun_add htwo).fun_add hsq using 1
     · funext y; dsimp [diagonalCircleExcess]
     · dsimp [f']; ring
   have hff (x : ℝ) : HasDerivAt f' (f'' x) x := by
     have htr := ((Real.hasDerivAt_cos x).fun_sub (Real.hasDerivAt_sin x)).const_mul
-      (2*(387/1000))
-    have htwo := (((hasDerivAt_id x).const_mul 2).cos).const_mul (2*(387/1000)^2)
+      (2*0.387)
+    have htwo := (((hasDerivAt_id x).const_mul 2).cos).const_mul (2*0.387^2)
     have hlin := ((hasDerivAt_const x (81/100)).fun_sub
       ((hasDerivAt_id x).const_mul (17/100))).const_mul (-2*(17/100))
     convert (htr.fun_add htwo).fun_add hlin using 1
@@ -202,31 +193,30 @@ private lemma diagonalCircleExcess_concave :
 private lemma diagonalCircleExcess_left : 0<diagonalCircleExcess (1/2) := by
   have hc := cos_lower_six (x := (1:ℝ)/2) (by norm_num)
   have hs := sin_lower_seven (x := (1:ℝ)/2) (by norm_num)
-  let L : ℝ := 1+(387/1000)*
+  let L : ℝ := 1+0.387*
     ((1-(1/2)^2/2+(1/2)^4/24-(1/2)^6/720)+
      ((1/2)-(1/2)^3/6+(1/2)^5/120-(1/2)^7/5040))
   have hL0 : 0<L := by norm_num [L]
-  have hL : L≤1+(387/1000)*(Real.cos (1/2)+Real.sin (1/2)) := by
+  have hL : L≤1+0.387*(Real.cos (1/2)+Real.sin (1/2)) := by
     dsimp [L]
     nlinarith only [hc,hs]
   have hprod := mul_nonneg (sub_nonneg.mpr hL)
-    (show 0≤1+(387/1000)*(Real.cos (1/2)+Real.sin (1/2))+L by linarith)
+    (show 0≤1+0.387*(Real.cos (1/2)+Real.sin (1/2))+L by linarith)
   rw [diagonalCircleExcess_identity]
   norm_num [L,Q0] at hprod ⊢
   nlinarith only [hprod]
 
 private lemma diagonalCircleExcess_right : 0<diagonalCircleExcess (Real.pi/4) := by
-  have hroot : (707:ℝ)/500≤Real.sqrt 2 := by
+  have hroot : (1.414:ℝ)≤Real.sqrt 2 := by
     nlinarith [Real.sq_sqrt (show (0:ℝ)≤2 by norm_num),Real.sqrt_nonneg (2:ℝ)]
-  have hpi : Real.pi≤22/7 := by linarith [Real.pi_lt_d4]
-  let L : ℝ := 1+(387/1000)*(707/500)
-  let T : ℝ := 81/100-(17/100)*(11/14)
+  let L : ℝ := 1+0.387*1.414
+  let T : ℝ := 81/100-(17/100)*(3.1416/4)
   have hL0 : 0<L := by norm_num [L]
   have hT0 : 0<T := by norm_num [T]
-  have hL : L≤1+(387/1000)*Real.sqrt 2 := by dsimp [L]; linarith
-  have hT : T≤81/100-(17/100)*(Real.pi/4) := by dsimp [T]; linarith
+  have hL : L≤1+0.387*Real.sqrt 2 := by dsimp [L]; linarith
+  have hT : T≤81/100-(17/100)*(Real.pi/4) := by dsimp [T]; linarith [Real.pi_lt_d4]
   have hLs := mul_nonneg (sub_nonneg.mpr hL)
-    (show 0≤1+(387/1000)*Real.sqrt 2+L by linarith)
+    (show 0≤1+0.387*Real.sqrt 2+L by linarith)
   have hTs := mul_nonneg (sub_nonneg.mpr hT)
     (show 0≤81/100-(17/100)*(Real.pi/4)+T by linarith)
   rw [diagonalCircleExcess_identity,Real.cos_pi_div_four,Real.sin_pi_div_four]

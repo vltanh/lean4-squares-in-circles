@@ -6,7 +6,7 @@ import SquaresInCircles.Six.Normalization.DirectedAxes
 
 The five exterior squares E, N, W, D, S of a normalized packing sit at the
 phases `θ + t` of the directions `0`, `π/2`, `π`, `5π/4`, `3π/2`. E or N
-separated from C along the side of C has its angle below `203/1000`, by the
+separated from C along the side of C has its angle below `0.203`, by the
 depth of the cap. D is separated from C along its own axis and not along the
 west side of C; at a phase `π - v` with `v ≥ 0` the D pin forces `b > 13/100`,
 which makes the own margin of D at most its west margin, so the angle of D is
@@ -21,55 +21,44 @@ noncomputable section
 namespace SquaresInCircles.Six.Normalization
 
 /-- A cap depth of at least `1/2` at an angle `t ≤ π/4` forces
-`t < 203/1000`. -/
-theorem cap_angle_lt_203_1000 {height t : ℝ}
+`t < 0.203`: on `[0.203, 1/4]` the cap depth is `capFirst t`, below
+`1/2` by the Taylor brackets of `cos` and `sin` at `0.203`. -/
+theorem cap_angle_small {height t : ℝ}
     (hh : 1 / 2 ≤ height) (hcap : height ≤ capDepth t)
-    (htpi : t ≤ Real.pi / 4) : t < 203 / 1000 := by
+    (htpi : t ≤ Real.pi / 4) : t < 0.203 := by
   have htq := cap_angle_lt_quarter hh hcap htpi
   by_contra! ht
   have hlow : t ≤ capSwitch := by linarith [capSwitch_gt_29_100]
-  have hsbase := Real.sin_ge_sub_cube (x := (203 : ℝ) / 1000) (by norm_num)
-  have hsmono := Real.sin_le_sin_of_le_of_le_pi_div_two
-    (show -(Real.pi / 2) ≤ (203 : ℝ) / 1000 by linarith [Real.pi_pos])
-    (show t ≤ Real.pi / 2 by linarith [Real.pi_pos]) ht
-  have hs : (1209634573 : ℝ) / 6000000000 ≤ Real.sin t := by
-    nlinarith
-  have hc : Real.cos t ≤ 49 / 50 := by
-    by_contra! hcos
-    have hp := mul_pos
-      (show 0 < Real.cos t - 49 / 50 by linarith)
-      (show 0 < Real.cos t + 49 / 50 by linarith)
-    have hsq := mul_nonneg
-      (show 0 ≤ Real.sin t - 1209634573 / 6000000000 by linarith)
-      (show 0 ≤ Real.sin t + 1209634573 / 6000000000 by linarith)
-    nlinarith [Real.sin_sq_add_cos_sq t]
+  obtain ⟨hs, -, -, hc⟩ := trig_bracket (by norm_num) (by linarith [Real.pi_gt_three])
+    ⟨ht, htq.le⟩
+  norm_num at hs hc
   have hm := mul_le_mul_of_nonneg_left hc
     (show 0 ≤ rho0 - 1 / 2 by linarith [rho0_bounds.1])
   rw [capDepth, ite_eq_left hlow, capFirst] at hcap
-  nlinarith [rho0_bounds.2]
+  linarith [rho0_bounds.2]
 
 /-- If E is separated from C along the east side of C, its angle is less than
-`203/1000` in absolute value. -/
-theorem NormalizedPacking.east_cardinal_angle_203 {R : ℝ} (P : NormalizedPacking R)
-    (hE : P.ownAxis 0 = false) : |P.deviation 0| < 203 / 1000 := by
+`0.203` in absolute value. -/
+theorem NormalizedPacking.east_cardinal_angle_small {R : ℝ} (P : NormalizedPacking R)
+    (hE : P.ownAxis 0 = false) : |P.deviation 0| < 0.203 := by
   have hm := P.cardinal_separator 0 hE
   have hcap := P.cardinal_cap_depth 0 hm
   have hangle := P.matching_cardinal_angle 0 hm
   simp only [NormalizedPacking.deviation,matchingCardinal,cardinalCenter,cardinalDepth,
     sub_zero,Matrix.cons_val_zero] at hcap hangle ⊢
-  exact cap_angle_lt_203_1000 (show (1:ℝ)/2 ≤ 1/2+P.center.1 by linarith [P.box.1.1]) hcap
+  exact cap_angle_small (show (1:ℝ)/2 ≤ 1/2+P.center.1 by linarith [P.box.1.1]) hcap
     (by linarith [Real.pi_gt_d2])
 
 /-- If N is separated from C along the north side of C, its angle from the north
-direction is less than `203/1000` in absolute value. -/
-theorem NormalizedPacking.north_cardinal_angle_203 {R : ℝ} (P : NormalizedPacking R)
-    (hN : P.ownAxis 1 = false) : |P.deviation 1| < 203 / 1000 := by
+direction is less than `0.203` in absolute value. -/
+theorem NormalizedPacking.north_cardinal_angle_small {R : ℝ} (P : NormalizedPacking R)
+    (hN : P.ownAxis 1 = false) : |P.deviation 1| < 0.203 := by
   have hm := P.cardinal_separator 1 hN
   have hcap := P.cardinal_cap_depth 1 hm
   have hangle := P.matching_cardinal_angle 1 hm
   simp only [NormalizedPacking.deviation,matchingCardinal,cardinalCenter,cardinalDepth,
     Matrix.cons_val_one,Matrix.cons_val_zero] at hcap hangle ⊢
-  exact cap_angle_lt_203_1000 (show (1:ℝ)/2 ≤ 1/2+P.center.2 by linarith [P.box.2.1]) hcap
+  exact cap_angle_small (show (1:ℝ)/2 ≤ 1/2+P.center.2 by linarith [P.box.2.1]) hcap
     (by linarith [Real.pi_gt_d2])
 
 end SquaresInCircles.Six.Normalization

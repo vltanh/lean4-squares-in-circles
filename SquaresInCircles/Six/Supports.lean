@@ -39,14 +39,14 @@ lemma vertex_support {a b U V r : ℝ} (hc : ContainedChart a |b|) (hr : 0 ≤ r
     (Real.sqrt_nonneg _) (by norm_num [radiusBound])
   linarith
 
-/-- The far-vertex support with the ceiling `1689/1000`, for a force `(U, -V)`
+/-- The far-vertex support with the ceiling `1.689`, for a force `(U, -V)`
 with `V ≥ 0` of length at most `L`. -/
 lemma vertex_linear_upper {a b U V L : ℝ} (hc : ContainedChart a |b|)
     (hV : 0≤V) (hL : 0≤L) (hNorm : U^2+V^2≤L^2) :
-    U*a-V*b≤(1689/1000)*L-(U+V)/2 := by
+    U*a-V*b≤(1.689)*L-(U+V)/2 := by
   have h := local_vertex_support hc U (-V)
   have hs : Real.sqrt (U^2+(-V)^2) ≤ L := Real.sqrt_le_iff.mpr ⟨hL,by rw [neg_sq]; exact hNorm⟩
-  have hm := mul_le_mul (show R0 ≤ 1689/1000 by linarith [R0_bounds.2]) hs
+  have hm := mul_le_mul (show R0 ≤ 1.689 by linarith [R0_bounds.2]) hs
     (Real.sqrt_nonneg _) (by norm_num)
   rw [abs_neg,abs_of_nonneg hV] at h
   linarith [le_abs_self U]
@@ -97,24 +97,24 @@ lemma disk_corner_support {A B a b c s : ℝ}
     (mul_pos ha (show 0 < A * c + B * s - (a * c + b * s) by linarith))
 
 /-- The cap bound: if `(ρ0 + 1/2) V ≤ U/2`, the work `U a - V b` is at most
-`ρ0 U`, and so at most `1113/1000 U`. -/
+`ρ0 U`, and so at most `1.113 U`. -/
 lemma cap_linear_upper {a b U V : ℝ} (hc : ContainedChart a |b|)
     (hU : 0≤U) (hV : 0≤V) (hslope : (rho0+1/2)*V≤U/2) :
-    U*a-V*b≤(1113/1000)*U := by
+    U*a-V*b≤(1.113)*U := by
   have hh := disk_corner_support (A := a+1/2) (B := |b|+1/2)
     (a := rho0+1/2) (b := (1:ℝ)/2) (c := U) (s := V)
     (by linarith [rho0_bounds.1]) (by linarith [abs_nonneg b]) hU
     (by nlinarith [rho0_identity]) hc.containment (by linarith)
   have hsign := mul_le_mul_of_nonneg_left (neg_le_abs b) hV
-  have hrad := mul_le_mul_of_nonneg_right (show rho0 ≤ 1113/1000 by linarith [rho0_bounds.2]) hU
+  have hrad := mul_le_mul_of_nonneg_right (show rho0 ≤ 1.113 by linarith [rho0_bounds.2]) hU
   nlinarith
 
-/-- The centre lies within `ρ0 < 1113/1000` of the origin. -/
+/-- The centre lies within `ρ0 < 1.113` of the origin. -/
 lemma chart_radial_work {a b : ℝ} (hc : ContainedChart a |b|) (g : Point) :
-    dot g (a,b)≤(1113/1000)*vectorLength g := by
+    dot g (a,b)≤(1.113)*vectorLength g := by
   have h := dot_le_radius (v := g) (p := (a,b))
     (show 0≤rho0 by linarith [rho0_bounds.1]) hc.center_sq_le
-  have hr := mul_le_mul_of_nonneg_right (show rho0 ≤ 1113/1000 by linarith [rho0_bounds.2])
+  have hr := mul_le_mul_of_nonneg_right (show rho0 ≤ 1.113 by linarith [rho0_bounds.2])
     (vectorLength_nonneg g)
   exact h.trans hr
 
@@ -191,10 +191,10 @@ lemma soft_support {a b U V : ℝ} (hc : ContainedChart a |b|)
   have hm := mul_nonneg (show 0 ≤ U by linarith)
     (show 0 ≤ rho0-a-(31/100)*(|b|+b^2) by linarith)
   have hlinear := mul_nonneg (show 0 ≤ (31/100)*U-(31/50)*|V| by linarith) (abs_nonneg b)
-  have hquadratic := mul_nonneg (show 0 ≤ (31/100)*U-217/500 by linarith) (sq_nonneg b)
+  have hquadratic := mul_nonneg (sub_nonneg.mpr hU) (sq_nonneg b)
   have hprod : V*b ≤ |V| * |b| := by simpa only [abs_mul] using le_abs_self (V*b)
-  have hsq : 0 ≤ (217/500)*|b|^2-(19/50)*|b| * |V|+|V|^2/12 := by
-    nlinarith [sq_nonneg (|b|-(95/217)*|V|),sq_nonneg |V|]
+  have hsq : 0 ≤ (31/100)*(7/5)*|b|^2-(19/50)*|b| * |V|+|V|^2/12 := by
+    nlinarith [sq_nonneg (|V|-(57/25)*|b|),sq_nonneg |b|]
   rw [sq_abs,sq_abs] at hsq
   have hR := mul_le_mul_of_nonneg_right ceiling_bounds.2.1
     (show 0 ≤ U by linarith)
@@ -209,10 +209,10 @@ lemma wide_support {a b U V : ℝ} (hc : ContainedChart a |b|)
   have hm := mul_nonneg (show 0 ≤ U by linarith)
     (show 0 ≤ rho0-a-(31/100)*(|b|+b^2) by linarith)
   have hlinear := mul_nonneg (show 0 ≤ (31/100)*U-(31/60)*|V| by linarith) (abs_nonneg b)
-  have hquadratic := mul_nonneg (show 0 ≤ (31/100)*U-1023/2000 by linarith) (sq_nonneg b)
+  have hquadratic := mul_nonneg (show 0 ≤ (31/100)*U-1/2 by linarith) (sq_nonneg b)
   have hprod : V*b ≤ |V| * |b| := by simpa only [abs_mul] using le_abs_self (V*b)
-  have hsq : 0 ≤ (1023/2000)*|b|^2-(29/60)*|b| * |V|+(3/25)*|V|^2 := by
-    nlinarith [sq_nonneg (|b|-(1450/3069)*|V|),sq_nonneg |V|]
+  have hsq : 0 ≤ |b|^2/2-(29/60)*|b| * |V|+(3/25)*|V|^2 := by
+    nlinarith [sq_nonneg (|b|-(29/60)*|V|),sq_nonneg |V|]
   rw [sq_abs,sq_abs] at hsq
   have hR := mul_le_mul_of_nonneg_right ceiling_bounds.2.1
     (show 0 ≤ U by linarith)
@@ -226,10 +226,10 @@ theorem narrow_support {a b U V : ℝ} (hc : ContainedChart a |b|)
   have hrad := radial_transverse_quadratic hc
   have hm := mul_nonneg hU0 (show 0≤rho0-a-(31/100)*(|b|+b^2) by linarith)
   have hlinear := mul_nonneg (show 0≤(31/100)*U-(31/40)*|V| by linarith [hV]) (abs_nonneg b)
-  have hquadratic := mul_nonneg (show 0≤(31/100)*U-93/500 by linarith [hU.1]) (sq_nonneg b)
+  have hquadratic := mul_nonneg (sub_nonneg.mpr hU.1) (sq_nonneg b)
   have hproduct : V*b≤|V| *|b| := by simpa only [abs_mul] using le_abs_self (V*b)
-  have hsq : 0≤(93/500)*|b|^2-(9/40)*|b| *|V|+(7/100)*|V|^2 := by
-    nlinarith [sq_nonneg (|b|-(75/124)*|V|),sq_nonneg |V|]
+  have hsq : 0≤(31/100)*(3/5)*|b|^2-(9/40)*|b| *|V|+(7/100)*|V|^2 := by
+    nlinarith [sq_nonneg (|V|-(45/28)*|b|),sq_nonneg |b|]
   rw [sq_abs,sq_abs] at hsq
   have hsoft : U*a+V*b≤rho0*U+(7/100)*V^2 := by
     nlinarith only [hm,hlinear,hquadratic,hproduct,hsq]
@@ -253,9 +253,9 @@ square, whose centre lies in the box `[0, c0]²`. -/
 lemma coarse_central_work {cx cy gx gy X Y : ℝ}
     (hc : (0≤cx ∧ cx≤c0) ∧ (0≤cy ∧ cy≤c0))
     (hX : 0≤X) (hY : 0≤Y) (hx : gx≤X) (hy : gy≤Y) :
-    gx*cx+gy*cy≤(113/1000)*(X+Y) := by
-  have hcx : cx≤113/1000 := by dsimp [c0] at hc; linarith [rho0_bounds.2]
-  have hcy : cy≤113/1000 := by dsimp [c0] at hc; linarith [rho0_bounds.2]
+    gx*cx+gy*cy≤(0.113)*(X+Y) := by
+  have hcx : cx≤0.113 := by dsimp [c0] at hc; linarith [rho0_bounds.2]
+  have hcy : cy≤0.113 := by dsimp [c0] at hc; linarith [rho0_bounds.2]
   have h1 := mul_le_mul_of_nonneg_right hx hc.1.1
   have h2 := mul_le_mul_of_nonneg_right hy hc.2.1
   have h3 := mul_le_mul_of_nonneg_left hcx hX

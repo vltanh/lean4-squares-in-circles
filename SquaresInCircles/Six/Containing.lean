@@ -59,7 +59,7 @@ variable {L X Y q1 q2 x w : ℝ}
 /-- With `X > L`, a unit vector `(x, w)` of the first quadrant with
 `X x + w/2 ≤ L` has `x ≤ 21/100`: a support line at the north-east corner within
 `L ≈ 0.613` of the origin is nearly horizontal. -/
-private lemma first_quadrant_steep (hL : 6128 / 10000 < L) (hL' : L < 6129 / 10000)
+private lemma first_quadrant_steep (hL : 1 / 2 < L) (hL' : L < 0.6129)
     (hX : L < X) (hx : 0 ≤ x) (hw : 0 ≤ w) (hn : x ^ 2 + w ^ 2 = 1)
     (h : X * x + w / 2 ≤ L) : x ≤ 21 / 100 := by
   rcases hx.eq_or_lt with hx0 | hx0
@@ -73,7 +73,7 @@ private lemma first_quadrant_steep (hL : 6128 / 10000 < L) (hL' : L < 6129 / 100
 
 /-- With `X > L` and `Y ≥ 1 - L`, a unit vector `(x, w)` with
 `X x + Y w ≤ L` has `x ≤ 43/100`: the same at the south-east corner `(X, -Y)`. -/
-private lemma fourth_quadrant_steep (hL : 6128 / 10000 < L) (hL' : L < 6129 / 10000)
+private lemma fourth_quadrant_steep (hL : 1 / 2 < L) (hL' : L < 0.6129)
     (hX : L < X) (hY : 1 - L ≤ Y) (hx : 0 ≤ x) (hw : 0 ≤ w) (hn : x ^ 2 + w ^ 2 = 1)
     (h : X * x + Y * w ≤ L) : x ≤ 43 / 100 := by
   rcases hx.eq_or_lt with hx0 | hx0
@@ -146,8 +146,8 @@ lemma shallow_support {cx cy q1 q2 x y : ℝ} (hcx : c0 < cx) (hcx1 : cx < 1 / 2
         (Y := 1 / 2 - cy) (by linarith) (by linarith) (by linarith) (by linarith) hx hw hn'
         (by nlinarith)
       have hw9 : 9 / 10 ≤ -y := by nlinarith
-      nlinarith [mul_nonneg hx (show 0 ≤ cx + 1 / 2 - q1 + 2873 / 10000 by linarith),
-        mul_nonneg hw (show 0 ≤ q2 + 1 / 2 - cy - 1621 / 10000 by linarith)]
+      nlinarith [mul_nonneg hx (show 0 ≤ cx + 1 / 2 - q1 + 3 / 10 by linarith),
+        mul_nonneg hw (show 0 ≤ q2 + 1 / 2 - cy - 3 / 20 by linarith)]
     · rw [hc0] at hcy0
       rcases lt_or_ge (-y) x with hwx | hwx
       · have hflat := fourth_quadrant_flat (L := rho0 - 1 / 2) (X := cx + 1 / 2)

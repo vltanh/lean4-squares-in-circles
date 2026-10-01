@@ -64,9 +64,10 @@ lemma u_lt_half (hc : AvoidsCore a u) : u < 1 / 2 := by
     have hp := mul_pos (sub_pos.mpr hs)
       (show 0 < coreRadius + (a + u - 1) by linarith [coreRadius_pos])
     nlinarith [mul_nonneg hx hy]
+  have hr : 3 / 8 < coreRadius := by linarith [coreRadius_bounds.1]
   have ht := h.containment
   norm_num [Q0] at ht
-  nlinarith [coreRadius_bounds.1, sq_nonneg (coreRadius - 77 / 200)]
+  nlinarith [mul_lt_mul'' hr hr (by norm_num) (by norm_num)]
 
 /-- A square that avoids the core has `a ≥ aMin`: its nearest point is on its
 near edge. -/
@@ -96,14 +97,9 @@ lemma u_le_U0 (hc : AvoidsCore a u) : u ≤ U0 := by
   dsimp [U0]
   linarith
 
-/-- Rational bounds for a square that avoids the core: `177/200 < a < 223/200`
-and `u < 117/250`. -/
-lemma bounds (hc : AvoidsCore a u) :
-    177 / 200 < a ∧ a < 223 / 200 ∧ u < 117 / 250 := by
-  have ha := h.aMin_le hc
-  have hu := h.u_le_U0 hc
-  exact ⟨by linarith [aMin_bounds.1],by linarith [h.a_le_rho0,rho0_bounds.2],
-    by linarith [U0_upper]⟩
+/-- A square that avoids the core has `a > 7/8` and `u < 1/2`. -/
+lemma bounds (hc : AvoidsCore a u) : 7 / 8 < a ∧ u < 1 / 2 :=
+  ⟨by linarith [h.aMin_le hc, aMin_bounds.1], h.u_lt_half hc⟩
 
 end ContainedChart
 

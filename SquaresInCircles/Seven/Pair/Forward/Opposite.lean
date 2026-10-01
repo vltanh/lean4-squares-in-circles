@@ -98,7 +98,7 @@ lemma sideSide_margin_pos {w : ℝ}
   · let z := -w
     have hz : 0 < z := by dsimp [z]; linarith [lt_of_le_of_ne (not_lt.mp h) hne]
     have hzu : z ≤ Real.pi/3 := by dsimp [z]; linarith [hw.1]
-    have hz9 : z < 9/8 := by linarith
+    have hz32 : z < 3/2 := by linarith
     have hc := cos_ge_half ⟨hz.le,hzu⟩
     have hs0 := Real.sin_nonneg_of_nonneg_of_le_pi hz.le (by linarith [hzu,Real.pi_pos])
     have hsU := Real.sin_le hz.le

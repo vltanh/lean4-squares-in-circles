@@ -131,3 +131,14 @@ Times are rough commit times, in US Central time (UTC−5).
   where X/Z = 12/13 exactly; elsewhere the leading terms suffice, or concavity
   and one value. Brackets of irrational constants are written as short
   decimals, in the proofs and in the Lean.
+* **Around 14:20 — the constants of six and seven squares.** Claude Opus 5.5,
+  in Claude Code, went on to the Lean of six squares, where some 600 lines
+  carried long fractions: the brackets of the model constants and the ceiling
+  `Q0 = 2.85118` are decimals with as few digits as their uses need, tuned
+  weights became simple ones (41/20 and 3/8, 8/15, 1/5, 1/6 and 1/10, 12/5 and
+  13/6), and several estimates were reargued, among them the curvature of the
+  chord term by its convexity, the vertex case of the diagonal estimate by
+  concave pieces, and the west stress along the axis of W with exact lengths.
+  In seven squares the last tuned constants went: an axial label gives
+  `a + u < 1 + 2π/15` straight from the remainder, and the turn profile is at
+  least `z/40`.

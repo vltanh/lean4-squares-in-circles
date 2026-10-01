@@ -8,12 +8,15 @@ The gap is positive at the corners of the domain, at the points where its sides
 meet the axes, and at the points where the diagonal `n = w` meets a side or an
 axis, except at the origin for the facets of the model, where it vanishes. In a
 model of the gap the sine and cosine are their Taylor polynomials of degrees
-seven and six, within `10⁻⁶` and `10⁻⁵` on `|t| ≤ 6/7`, the constants `rStar`,
-`mStar`, `c0` are rationals within `3·10⁻⁷`, and the radii and `pairBase` are
-rational upper bounds. On the whole domain the coordinates of the forces move by
-less than `1.5·10⁻⁵`, their lengths by twice that, and the thresholds and the
-penalty by less, together less than the `1/5000` set aside. At each point the
-model is checked by rational arithmetic, after two squarings remove its roots.
+seven and six, within `10⁻⁵` on `|t| ≤ 6/7`; `rStar` and `mStar` are decimals
+within `10⁻⁵`, `c0` is replaced by its ceiling `coreUpper`, the squared radius by
+the ceiling `Q0`, `rhoStar` by `rhoBound` and `pairBase` by `0.071`. On the whole
+domain the coordinates of the forces move by at most `4·10⁻⁵`, their lengths by
+twice that, and the thresholds and the penalty by at most `5·10⁻⁵`, together less
+than the `5·10⁻⁴` set aside. The margin is smallest, about `6.6·10⁻⁴`, at the
+corner `n = 0`, `w = -11/25` for N–W along the second axis of N, which is what
+needs `rStar` to five decimals. At each point the model is checked by rational
+arithmetic, after two squarings remove its roots.
 -/
 
 noncomputable section
@@ -42,9 +45,9 @@ lemma sin_upper_nine {x : ℝ} (hx : 0≤x) : Real.sin x≤sinLower x+x^9/362880
   linarith
 
 lemma trig_error {x : ℝ} (hx : |x|≤6/7) :
-    |Real.sin x-sinLower x|≤1/1000000 ∧ |Real.cos x-cosLower x|≤1/100000 := by
+    |Real.sin x-sinLower x|≤1e-5 ∧ |Real.cos x-cosLower x|≤1e-5 := by
   have key {y : ℝ} (hy0 : 0≤y) (hy : y≤6/7) :
-      |Real.sin y-sinLower y|≤1/1000000 ∧ |Real.cos y-cosLower y|≤1/100000 := by
+      |Real.sin y-sinLower y|≤1e-5 ∧ |Real.cos y-cosLower y|≤1e-5 := by
     have h9 := pow_le_pow_left₀ hy0 hy 9
     have h8 := pow_le_pow_left₀ hy0 hy 8
     have hs := sin_lower_seven hy0
@@ -65,14 +68,11 @@ lemma trig_error {x : ℝ} (hx : |x|≤6/7) :
 
 /-! ### The model of the gap -/
 
-/-- Rationals within `3·10⁻⁷` of `rStar`, `mStar` and `c0`. -/
-def rA : ℝ := 3687848/10000000
-def mA : ℝ := 8896970/10000000
-def cA : ℝ := 1128175/10000000
-/-- Upper bounds for `radius`, `rhoStar` and `pairBase`. -/
-def radiusA : ℝ := 16885431/10000000
-def rhoA : ℝ := 11128167/10000000
-def baseA : ℝ := 709742/10000000
+/-- Decimals within `10⁻⁵` of `rStar` and `mStar`. -/
+def rA : ℝ := 0.36878
+def mA : ℝ := 0.8897
+/-- An upper bound for `pairBase`. -/
+def baseA : ℝ := 0.071
 
 /-! The models of the normals, of the forces on N and W, of the thresholds and of
 the penalty, with `sinLower` and `cosLower` in place of `sin` and `cos`. -/
@@ -100,29 +100,30 @@ def westForceP (wo : Bool) (f : Facet) (n w : ℝ) : Point :=
 def widthP (t : ℝ) : ℝ := 1/2+(|cosLower t|+|sinLower t|)/2
 
 def penaltyP (no wo : Bool) (n w : ℝ) : ℝ :=
-  (if no then cA*(max (sinLower n) 0+1-cosLower n) else 0)+(if wo then cA*max (sinLower w) 0 else 0)
+  (if no then coreUpper*(max (sinLower n) 0+1-cosLower n) else 0)+
+    (if wo then coreUpper*max (sinLower w) 0 else 0)
 
-/-- The model of the linear part of the gap, less the `1/5000` set aside for the
+/-- The model of the linear part of the gap, less the `5·10⁻⁴` set aside for the
 errors of the model. -/
 def linearP (no wo : Bool) (f : Facet) (n w : ℝ) : ℝ :=
   widthP n+widthP w+rA*widthP (n-w)+mA/2+
     (if f.model then ((northForceP no f n w).1-(northForceP no f n w).2)/2 else 0)+
     ((westForceP wo f n w).1-(westForceP wo f n w).2)/2-penaltyP no wo n w-baseA-line w-
-    |n|/1000-1/5000
+    |n|/1000-5e-4
 
-/-- The model of `northRadius f`. -/
-def scaleP (f : Facet) : ℝ := if f.model then radiusA else rhoA
+/-- The model of the square of `northRadius f`. -/
+def scaleSq (f : Facet) : ℝ := if f.model then Q0 else rhoBound^2
 
 /-- The model exceeds the scaled lengths of the two model forces, written without
 roots. -/
 def ModelCheck (no wo : Bool) (f : Facet) (n w : ℝ) : Prop :=
   0<linearP no wo f n w ∧
-    scaleP f^2*((northForceP no f n w).1^2+(northForceP no f n w).2^2)+
-      radiusA^2*((westForceP wo f n w).1^2+(westForceP wo f n w).2^2)<linearP no wo f n w^2 ∧
-    4*(scaleP f^2*((northForceP no f n w).1^2+(northForceP no f n w).2^2))*
-      (radiusA^2*((westForceP wo f n w).1^2+(westForceP wo f n w).2^2))<
-      (linearP no wo f n w^2-scaleP f^2*((northForceP no f n w).1^2+(northForceP no f n w).2^2)-
-        radiusA^2*((westForceP wo f n w).1^2+(westForceP wo f n w).2^2))^2
+    scaleSq f*((northForceP no f n w).1^2+(northForceP no f n w).2^2)+
+      Q0*((westForceP wo f n w).1^2+(westForceP wo f n w).2^2)<linearP no wo f n w^2 ∧
+    4*(scaleSq f*((northForceP no f n w).1^2+(northForceP no f n w).2^2))*
+      (Q0*((westForceP wo f n w).1^2+(westForceP wo f n w).2^2))<
+      (linearP no wo f n w^2-scaleSq f*((northForceP no f n w).1^2+(northForceP no f n w).2^2)-
+        Q0*((westForceP wo f n w).1^2+(westForceP wo f n w).2^2))^2
 
 /-! ### The errors of the model -/
 
@@ -157,21 +158,30 @@ lemma product_error {a b x y : ℝ} : |a*x-b*y|≤|a-b| * |x|+|b| * |x-y| := by
   rw [show a*x-b*y=(a-b)*x+b*(x-y) by ring,← abs_mul,← abs_mul]
   exact abs_add_le _ _
 
-lemma constants_close : |rStar-rA|≤1/10000000 ∧ |mStar-mA|≤3/10000000 ∧
-    |c0-cA|≤2/10000000 := by
+/-- `R` times a length within `e` of `√M`, for `R ≤ 17/10` with `R² ≤ S`, is at most
+`√(S M) + (17/10) e`. -/
+lemma scaled_length_le {R S L M e : ℝ} (hR : 0≤R) (hR1 : R≤17/10) (hRS : R^2≤S) (hM : 0≤M)
+    (he : 0≤e) (hL : L≤Real.sqrt M+e) : R*L≤Real.sqrt (S*M)+(17/10)*e := by
+  have h : R*Real.sqrt M≤Real.sqrt (S*M) := by
+    rw [← Real.sqrt_sq hR,← Real.sqrt_mul (sq_nonneg R)]
+    exact Real.sqrt_le_sqrt (mul_le_mul_of_nonneg_right hRS hM)
+  nlinarith [mul_le_mul_of_nonneg_left hL hR]
+
+lemma constants_close : |rStar-rA|≤1e-5 ∧ |mStar-mA|≤1e-5 ∧ |c0-coreUpper|≤1e-5 := by
   have hr := rStar_bounds
   have hm := mStar_bounds
   have hc := c0_bounds
+  have hu := ceiling_bounds.2.2.2
   refine ⟨abs_le.mpr ⟨?_,?_⟩,abs_le.mpr ⟨?_,?_⟩,abs_le.mpr ⟨?_,?_⟩⟩ <;>
-    simp only [rA,mA,cA] <;> linarith
+    simp only [rA,mA,coreUpper] at hu ⊢ <;> linarith
 
 /-- On `|t| ≤ 6/7` the coordinates of the normals differ from their models by at
 most `10⁻⁵`, and are at most `1` in absolute value. -/
 lemma normal_error (f : Facet) (own : Bool) {t q : ℝ} (ht : |t|≤6/7) (hq : |q|≤6/7) :
-    (|(central own t).1-(centralP own t).1|≤1/100000 ∧
-      |(central own t).2-(centralP own t).2|≤1/100000) ∧
-    (|(f.north q).1-(northP f q).1|≤1/100000 ∧ |(f.north q).2-(northP f q).2|≤1/100000) ∧
-    (|(f.west q).1-(westP f q).1|≤1/100000 ∧ |(f.west q).2-(westP f q).2|≤1/100000) ∧
+    (|(central own t).1-(centralP own t).1|≤1e-5 ∧
+      |(central own t).2-(centralP own t).2|≤1e-5) ∧
+    (|(f.north q).1-(northP f q).1|≤1e-5 ∧ |(f.north q).2-(northP f q).2|≤1e-5) ∧
+    (|(f.west q).1-(westP f q).1|≤1e-5 ∧ |(f.west q).2-(westP f q).2|≤1e-5) ∧
     (|(f.north q).1|≤1 ∧ |(f.north q).2|≤1) ∧
     (|(f.west q).1|≤1 ∧ |(f.west q).2|≤1) := by
   obtain ⟨hst,hct⟩ := trig_error ht
@@ -186,10 +196,10 @@ lemma normal_error (f : Facet) (own : Bool) {t q : ℝ} (ht : |t|≤6/7) (hq : |
     first | assumption | linarith
 
 lemma force_error {no wo : Bool} {f : Facet} {n w : ℝ} (hd : Domain no wo n w) :
-    (|(northForce no f n w).1-(northForceP no f n w).1|≤7/500000 ∧
-      |(northForce no f n w).2-(northForceP no f n w).2|≤7/500000) ∧
-    (|(westForce wo f n w).1-(westForceP wo f n w).1|≤3/200000 ∧
-      |(westForce wo f n w).2-(westForceP wo f n w).2|≤3/200000) := by
+    (|(northForce no f n w).1-(northForceP no f n w).1|≤4e-5 ∧
+      |(northForce no f n w).2-(northForceP no f n w).2|≤4e-5) ∧
+    (|(westForce wo f n w).1-(westForceP wo f n w).1|≤4e-5 ∧
+      |(westForce wo f n w).2-(westForceP wo f n w).2|≤4e-5) := by
   obtain ⟨hn,hw,hq⟩ := domain_abs hd
   obtain ⟨⟨hN1,hN2⟩,⟨hn1,hn2⟩,-,⟨hb1,hb2⟩,-⟩ :=
     normal_error f no (t := n) (q := n-w) (by linarith) hq
@@ -197,12 +207,12 @@ lemma force_error {no wo : Bool} {f : Facet} {n w : ℝ} (hd : Domain no wo n w)
     normal_error f wo (t := w) (q := n-w) (by linarith) hq
   obtain ⟨hr,hm,-⟩ := constants_close
   have hrA : |rA|≤37/100 := by norm_num [rA]
-  have p (x X : ℝ) (hx : |x|≤1) (he : |x-X|≤1/100000) : |rStar*x-rA*X|≤38/10000000 := by
+  have p (x X : ℝ) (hx : |x|≤1) (he : |x-X|≤1e-5) : |rStar*x-rA*X|≤2e-5 := by
     have := product_error (a := rStar) (b := rA) (x := x) (y := X)
     have := mul_le_mul hr hx (abs_nonneg _) (by norm_num)
     have := mul_le_mul hrA he (abs_nonneg _) (by norm_num)
     linarith
-  have t (a b A B e : ℝ) (ha : |a-A|≤1/100000) (hb : |b-B|≤e) : |a+b-(A+B)|≤1/100000+e := by
+  have t (a b A B e : ℝ) (ha : |a-A|≤1e-5) (hb : |b-B|≤e) : |a+b-(A+B)|≤1e-5+e := by
     rw [show a+b-(A+B)=(a-A)+(b-B) by ring]
     exact (abs_add_le _ _).trans (by linarith)
   refine ⟨⟨?_,?_⟩,⟨?_,?_⟩⟩
@@ -216,7 +226,7 @@ lemma force_error {no wo : Bool} {f : Facet} {n w : ℝ} (hd : Domain no wo n w)
         ((centralP wo w).2+rA*(westP f (n-w)).2))-(mStar-mA) by ring]
     exact (abs_sub _ _).trans (by linarith)
 
-lemma width_error {t : ℝ} (ht : |t|≤6/7) : |(1/2+angularWidth t)-widthP t|≤11/2000000 := by
+lemma width_error {t : ℝ} (ht : |t|≤6/7) : |(1/2+angularWidth t)-widthP t|≤1e-5 := by
   obtain ⟨hs,hc⟩ := trig_error ht
   have h1 := (abs_abs_sub_abs_le_abs_sub (Real.cos t) (cosLower t)).trans hc
   have h2 := (abs_abs_sub_abs_le_abs_sub (Real.sin t) (sinLower t)).trans hs
@@ -226,7 +236,7 @@ lemma width_error {t : ℝ} (ht : |t|≤6/7) : |(1/2+angularWidth t)-widthP t|�
   linarith [abs_add_le (|Real.cos t|-|cosLower t|) (|Real.sin t|-|sinLower t|)]
 
 lemma threshold_error {no wo : Bool} {n w : ℝ} (hd : Domain no wo n w) :
-    |threshold n w-(widthP n+widthP w+rA*widthP (n-w)+mA/2)|≤1/40000 := by
+    |threshold n w-(widthP n+widthP w+rA*widthP (n-w)+mA/2)|≤5e-5 := by
   obtain ⟨hn,hw,hq⟩ := domain_abs hd
   have en := width_error (show |n|≤6/7 by linarith)
   have ew := width_error (show |w|≤6/7 by linarith)
@@ -251,7 +261,7 @@ lemma threshold_error {no wo : Bool} {n w : ℝ} (hd : Domain no wo n w) :
   linarith
 
 lemma penalty_error {no wo : Bool} {n w : ℝ} (hd : Domain no wo n w) :
-    |penalty no wo n w-penaltyP no wo n w|≤1/200000 := by
+    |penalty no wo n w-penaltyP no wo n w|≤5e-5 := by
   obtain ⟨hn,hw,-⟩ := domain_abs hd
   obtain ⟨hsn,hcn⟩ := trig_error (show |n|≤6/7 by linarith)
   obtain ⟨hsw,-⟩ := trig_error (show |w|≤6/7 by linarith)
@@ -262,23 +272,25 @@ lemma penalty_error {no wo : Bool} {n w : ℝ} (hd : Domain no wo n w) :
   have hm1 := max_le (Real.sin_le_one n) zero_le_one
   have hw0 := le_max_right (Real.sin w) 0
   have hw1 := max_le (Real.sin_le_one w) zero_le_one
-  have b1 : |max (Real.sin n) 0+1-Real.cos n|≤3 :=
-    abs_le.mpr ⟨by linarith [Real.cos_le_one n],by linarith [Real.neg_one_le_cos n]⟩
+  have hcos := (small_angle hn).1
+  have b1 : |max (Real.sin n) 0+1-Real.cos n|≤2 :=
+    abs_le.mpr ⟨by linarith [Real.cos_le_one n],by linarith⟩
   have b2 : |max (Real.sin w) 0|≤1 := abs_le.mpr ⟨by linarith,hw1⟩
-  have hcA : |cA|≤113/1000 := by norm_num [cA]
-  have e1 : |c0*(max (Real.sin n) 0+1-Real.cos n)-cA*(max (sinLower n) 0+1-cosLower n)|≤
-      3/1000000 := by
-    have := product_error (a := c0) (b := cA) (x := max (Real.sin n) 0+1-Real.cos n)
+  have hcA : |coreUpper|≤1/5 := by norm_num [coreUpper]
+  have e1 : |c0*(max (Real.sin n) 0+1-Real.cos n)-
+      coreUpper*(max (sinLower n) 0+1-cosLower n)|≤3e-5 := by
+    have := product_error (a := c0) (b := coreUpper) (x := max (Real.sin n) 0+1-Real.cos n)
       (y := max (sinLower n) 0+1-cosLower n)
     have := mul_le_mul hc b1 (abs_nonneg _) (by norm_num)
-    have he : |max (Real.sin n) 0+1-Real.cos n-(max (sinLower n) 0+1-cosLower n)|≤11/1000000 := by
+    have he : |max (Real.sin n) 0+1-Real.cos n-(max (sinLower n) 0+1-cosLower n)|≤2e-5 := by
       rw [show max (Real.sin n) 0+1-Real.cos n-(max (sinLower n) 0+1-cosLower n)=
         (max (Real.sin n) 0-max (sinLower n) 0)-(Real.cos n-cosLower n) by ring]
       exact (abs_sub _ _).trans (by linarith)
     have := mul_le_mul hcA he (abs_nonneg _) (by norm_num)
     linarith
-  have e2 : |c0*max (Real.sin w) 0-cA*max (sinLower w) 0|≤2/1000000 := by
-    have := product_error (a := c0) (b := cA) (x := max (Real.sin w) 0) (y := max (sinLower w) 0)
+  have e2 : |c0*max (Real.sin w) 0-coreUpper*max (sinLower w) 0|≤2e-5 := by
+    have := product_error (a := c0) (b := coreUpper) (x := max (Real.sin w) 0)
+      (y := max (sinLower w) 0)
     have := mul_le_mul hc b2 (abs_nonneg _) (by norm_num)
     have := mul_le_mul hcA hmw (abs_nonneg _) (by norm_num)
     linarith
@@ -288,62 +300,56 @@ lemma penalty_error {no wo : Bool} {n w : ℝ} (hd : Domain no wo n w) :
   · linarith
   · linarith
   · rw [show c0*(max (Real.sin n) 0+1-Real.cos n)+c0*max (Real.sin w) 0-
-      (cA*(max (sinLower n) 0+1-cosLower n)+cA*max (sinLower w) 0)=
-      (c0*(max (Real.sin n) 0+1-Real.cos n)-cA*(max (sinLower n) 0+1-cosLower n))+
-      (c0*max (Real.sin w) 0-cA*max (sinLower w) 0) by ring]
+      (coreUpper*(max (sinLower n) 0+1-cosLower n)+coreUpper*max (sinLower w) 0)=
+      (c0*(max (Real.sin n) 0+1-Real.cos n)-coreUpper*(max (sinLower n) 0+1-cosLower n))+
+      (c0*max (Real.sin w) 0-coreUpper*max (sinLower w) 0) by ring]
     exact (abs_add_le _ _).trans (by linarith)
 
-/-- On the domain the gap is at least the model less the scaled lengths of the two
-model forces. -/
+/-- On the domain the gap is at least the model less the roots of the scaled squared
+lengths of the two model forces. -/
 theorem gap_ge_model {no wo : Bool} {f : Facet} {n w : ℝ} (hd : Domain no wo n w) :
-    linearP no wo f n w-scaleP f*Real.sqrt ((northForceP no f n w).1^2+(northForceP no f n w).2^2)-
-      radiusA*Real.sqrt ((westForceP wo f n w).1^2+(westForceP wo f n w).2^2)≤
+    linearP no wo f n w-
+      Real.sqrt (scaleSq f*((northForceP no f n w).1^2+(northForceP no f n w).2^2))-
+      Real.sqrt (Q0*((westForceP wo f n w).1^2+(westForceP wo f n w).2^2))≤
       gap no wo f n w := by
   obtain ⟨⟨hN1,hN2⟩,⟨hW1,hW2⟩⟩ := force_error (f := f) hd
   have hT := abs_le.mp (threshold_error hd)
   have hP := abs_le.mp (penalty_error hd)
-  have hB := pairBase_bounds.2
+  have hB : pairBase≤baseA := by simp only [baseA]; linarith [pairBase_bounds.2]
   have hR := radius_bounds
-  have hρ := rhoStar_bounds
+  have hR2 : radius^2≤Q0 := by rw [radius_sq]; exact qStar_lt_Q0.le
+  have hρ0 : 0≤rhoStar := by linarith [rhoStar_bounds.1]
+  have hρ2 : rhoStar^2≤rhoBound^2 := pow_le_pow_left₀ hρ0
+    (rhoStar_lt_rho0.le.trans ceiling_bounds.2.1) 2
   have lN := length_le (by norm_num) hN1 hN2
   have lW := length_le (by norm_num) hW1 hW2
-  have hNr := Real.sqrt_nonneg ((northForceP no f n w).1^2+(northForceP no f n w).2^2)
-  have hWr := Real.sqrt_nonneg ((westForceP wo f n w).1^2+(westForceP wo f n w).2^2)
-  have hWl := mul_le_mul (show radius≤radiusA by simp only [radiusA]; linarith) lW
-    (Real.sqrt_nonneg _) (by norm_num [radiusA])
-  have hNl (R S : ℝ) (hR0 : 0≤R) (hRS : R≤S) (hS : S≤17/10) :
-      R*Real.sqrt ((northForce no f n w).1^2+(northForce no f n w).2^2)≤
-        S*Real.sqrt ((northForceP no f n w).1^2+(northForceP no f n w).2^2)+119/2500000 := by
-    nlinarith [mul_le_mul hRS lN (Real.sqrt_nonneg _) (hR0.trans hRS)]
+  have hWl := scaled_length_le radius_pos.le (by linarith) hR2 (by positivity) (by norm_num) lW
   have e1 := abs_le.mp hN1
   have e2 := abs_le.mp hN2
   have e3 := abs_le.mp hW1
   have e4 := abs_le.mp hW2
-  unfold gap value northBound vertexBound linearP scaleP
+  unfold gap value northBound vertexBound linearP scaleSq
   split_ifs
-  · have := hNl radius radiusA radius_pos.le (by simp only [radiusA]; linarith)
-      (by norm_num [radiusA])
-    simp only [baseA] at *
-    nlinarith
-  · have := hNl rhoStar rhoA (by linarith) (by simp only [rhoA]; linarith) (by norm_num [rhoA])
-    simp only [baseA] at *
-    nlinarith
+  · have := scaled_length_le radius_pos.le (by linarith) hR2 (by positivity) (by norm_num) lN
+    linarith
+  · have := scaled_length_le hρ0 (by linarith [rhoStar_bounds.2]) hρ2 (by positivity)
+      (by norm_num) lN
+    linarith
 
 /-- The gap is positive wherever the model check holds. -/
 theorem gap_pos_of_check {no wo : Bool} {f : Facet} {n w : ℝ} (hd : Domain no wo n w)
     (h : ModelCheck no wo f n w) : 0<gap no wo f n w := by
-  have hs : 0≤scaleP f := by unfold scaleP; split_ifs <;> norm_num [radiusA,rhoA]
-  have hroot (A X : ℝ) (hA : 0≤A) (hX : 0≤X) : A*Real.sqrt X=Real.sqrt (A^2*X) := by
-    rw [Real.sqrt_mul (sq_nonneg A),Real.sqrt_sq hA]
-  have hlt := two_roots_lt h.1 (by positivity) (by positivity) h.2.1 h.2.2
-  rw [← hroot _ _ hs (by positivity),← hroot _ _ (by norm_num [radiusA]) (by positivity)] at hlt
+  have hQ : 0≤Q0 := by norm_num [Q0]
+  have hs : 0≤scaleSq f := by unfold scaleSq; split_ifs; exacts [hQ,sq_nonneg _]
+  have hlt := two_roots_lt h.1 (mul_nonneg hs (by positivity))
+    (mul_nonneg hQ (by positivity)) h.2.1 h.2.2
   linarith [gap_ge_model (f := f) hd]
 
 /-- Unfolds the model check at a rational point and decides it. -/
 macro "model_check" : tactic =>
   `(tactic| norm_num [ModelCheck,linearP,northForceP,westForceP,centralP,northP,westP,widthP,
-    penaltyP,scaleP,Facet.model,rA,mA,cA,radiusA,rhoA,baseA,sinLower,cosLower,line,nLow,nHigh,wLow,
-    wHigh])
+    penaltyP,scaleSq,Facet.model,rA,mA,baseA,Q0,rhoBound,coreUpper,sinLower,cosLower,line,nLow,
+    nHigh,wLow,wHigh])
 
 /-- The model check at the corners and axis points other than the origin. -/
 macro "corner_checks" : tactic =>

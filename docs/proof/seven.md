@@ -257,7 +257,7 @@ $\varphi(a_S, b_S) \le R_7^2 = \frac{13}4$ by
 [`Seven.Admissible.u_lt`](../../SquaresInCircles/Seven/Exterior.lean#L73),
 [`dot_gt`](../../SquaresInCircles/Common/DiskSupport.lean#L34),
 [`coordinate_le_of_phi`](../../SquaresInCircles/Common/Basic.lean#L166),
-[`Seven.sqrt_three_bounds`](../../SquaresInCircles/Seven/Exterior.lean#L218),
+[`Seven.sqrt_three_bounds`](../../SquaresInCircles/Seven/Exterior.lean#L222),
 [`SquareChart.exteriorChart`](../../SquaresInCircles/Common/ExteriorCharts.lean#L49).*
 
 The identity (1) says that $r \ge 0$ is the tangent half-plane
@@ -313,7 +313,7 @@ $(a_0, u_0) \approx (1.1198, 0.2914)$ and $s_0 \approx 0.3642$.
 [`Seven.side`](../../SquaresInCircles/Seven/Exterior.lean#L28),
 [`Seven.label`](../../SquaresInCircles/Seven/Exterior.lean#L29),
 [`Seven.ActiveLabel`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L65),
-[`Seven.chartMarker`](../../SquaresInCircles/Seven/Exterior.lean#L215),
+[`Seven.chartMarker`](../../SquaresInCircles/Seven/Exterior.lean#L219),
 [`Seven.chartSign`](../../SquaresInCircles/Seven/Pair.lean#L20),
 [`Seven.Boundary.a0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L19),
 [`Seven.Boundary.u0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L20),
@@ -395,7 +395,7 @@ Let $(a, u)$ be an admissible state.
    ```
 
 2. If the label is axial, $\ell(a, u) = \mathrm{axial}(u)$, then
-   $9a + 11u \le 2\pi + 7$ and $a + u < \frac{113}{80}$.
+   $9a + 11u \le 2\pi + 7$ and $a + u < 1 + \frac{2\pi}{15}$.
 
 *Proof.* We use $3.14 < \pi < 3.1416$.
 
@@ -404,13 +404,13 @@ have $12\ell = 2\pi + 7 + 4u - 9a$, and since $\ell \le \mathrm{axial}(u)$ we
 have $u \ge \frac45\ell$.
 
 *The label exceeds $\frac9{25}$.* Every admissible state has
-$2a + u < \frac{38}{15}$: with $X = a + \frac12$ and $Y = u + \frac12$,
+$2a + u < 2.532$: with $X = a + \frac12$ and $Y = u + \frac12$,
 
 ```math
-(2X + Y)^2 + (2Y - X)^2 = 5\left(X^2 + Y^2\right) = 5\,\varphi(a, u) \le \tfrac{65}4 < \left(\tfrac{121}{30}\right)^2 ,
+(2X + Y)^2 + (2Y - X)^2 = 5\left(X^2 + Y^2\right) = 5\,\varphi(a, u) \le \tfrac{65}4 < 4.032^2 ,
 ```
 
-so $2X + Y < \frac{121}{30}$, that is $2a + u < \frac{121}{30} - \frac32 = \frac{38}{15}$.
+so $2X + Y < 4.032$, that is $2a + u < 2.532$.
 This is the disk $\varphi \le \frac{13}4$ seen in the direction $(2, 1)$.
 Now suppose $\ell \le \frac9{25}$. Then $9a = 2\pi + 7 - 12\ell + 4u$ and
 $u \ge \frac45\ell$ give
@@ -419,7 +419,7 @@ $u \ge \frac45\ell$ give
 9(2a + u) = 4\pi + 14 - 24\ell + 17u \ge 4\pi + 14 - \tfrac{52}5\ell \ge 4\pi + 14 - \tfrac{52}5 \cdot \tfrac9{25} > 12.56 + 14 - 3.744 > 22.8 ,
 ```
 
-so $2a + u > \frac{22.8}9 = \frac{38}{15}$, a contradiction.
+so $2a + u > \frac{22.8}9 > 2.533$, a contradiction.
 
 *The bound $a < \frac98$.* Suppose $a \ge \frac98$. From
 $\mathrm{side}(a, u) > \frac9{25}$,
@@ -468,20 +468,16 @@ w \ge \tfrac78 \cdot \tfrac{52}{25}D^2 = \tfrac{91}{50}D^2 \ge \tfrac95 D^2 .
 
 (2) Now $\ell(a, u) = \mathrm{axial}(u) \le \mathrm{side}(a, u)$, and
 $12(\mathrm{axial}(u) - \mathrm{side}(a, u)) = 9a + 11u - 2\pi - 7$, so
-$9a + 11u \le 2\pi + 7$. Suppose $a + u \ge \frac{113}{80}$. Then
-$2u = (9a + 11u) - 9(a + u) \le 2\pi + 7 - 9 \cdot \frac{113}{80} < 13.2832 - 12.7125 < 0.575$,
-so $u < \frac{23}{80}$, and $\varphi(a, u)$ is at least its value at the corner
-$(\frac98, \frac{23}{80})$:
+$9a + 11u \le 2\pi + 7$. As $3a + 2u = 4 - r(a, u)$,
 
 ```math
-\begin{aligned}
-\varphi(a, u) - \left(\tfrac{13}8\right)^2 - \left(\tfrac{63}{80}\right)^2 &= \left(a - \tfrac98\right)^2 + \left(u - \tfrac{23}{80}\right)^2 \\
-&\quad + \tfrac{13}4\left(a + u - \tfrac{113}{80}\right) + \tfrac{67}{40}\left(\tfrac{23}{80} - u\right) \ge 0 .
-\end{aligned}
+15(a + u) = (9a + 11u) + 2(3a + 2u) \le 2\pi + 7 + 8 - 2r(a, u) ,
 ```
 
-As $(\frac{13}8)^2 + (\frac{63}{80})^2 > 2.64 + 0.62 > \frac{13}4$, this is a
-contradiction. $\square$
+that is, $a + u \le 1 + \frac{2\pi}{15} - \frac2{15}r(a, u)$. Finally
+$r(a, u) > 0$: by Lemma 9.5 (1), the only admissible state with
+$r(a, u) = 0$ is $(1, \frac12)$, where $9a + 11u = \frac{29}2 > 2\pi + 7$.
+$\square$
 
 *Lean:
 [`Seven.Admissible.projection_two_one`](../../SquaresInCircles/Seven/Exterior.lean#L127),
@@ -489,9 +485,9 @@ contradiction. $\square$
 [`Seven.side_selected_label_gt`](../../SquaresInCircles/Seven/Exterior.lean#L131),
 [`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Exterior.lean#L154),
 [`Seven.side_selected_a_lt`](../../SquaresInCircles/Seven/Exterior.lean#L143),
-[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Exterior.lean#L181),
+[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Exterior.lean#L185),
 [`Seven.axial_tie_line`](../../SquaresInCircles/Seven/Exterior.lean#L162),
-[`Seven.axial_sum_lt`](../../SquaresInCircles/Seven/Exterior.lean#L171).*
+[`Seven.axial_sum_lt`](../../SquaresInCircles/Seven/Exterior.lean#L172).*
 
 ### Lemma 9.9 (the marker arc)
 
@@ -507,7 +503,7 @@ $\overline{Q(a, u)}$.
 
 The proof is given in [Appendix A](appendix-a.md).
 
-*Lean: [`Seven.marker_arc`](../../SquaresInCircles/Seven/Exterior.lean#L482).*
+*Lean: [`Seven.marker_arc`](../../SquaresInCircles/Seven/Exterior.lean#L486).*
 
 In a chart of an exterior square with an admissible state, the lemma says that
 the closed square contains the arc of the unit circle with half-width
@@ -586,7 +582,7 @@ most, or less than, $c^2$. $\square$
 *Lean: [`point_le_support`](../../SquaresInCircles/Common/DiskSupport.lean#L96),
 [`Seven.marker_arc_support`](../../SquaresInCircles/Seven/Pair/Frame.lean#L50),
 [`Seven.sign_admissible`](../../SquaresInCircles/Seven/Pair/Frame.lean#L44),
-[`Seven.support_lower`](../../SquaresInCircles/Seven/Exterior.lean#L224),
+[`Seven.support_lower`](../../SquaresInCircles/Seven/Exterior.lean#L228),
 [`support_ge`](../../SquaresInCircles/Common/DiskSupport.lean#L107),
 [`ExteriorChart.center_sq_le`](../../SquaresInCircles/Common/ExteriorCharts.lean#L41),
 [`dot_ge`](../../SquaresInCircles/Common/DiskSupport.lean#L30),
@@ -1038,7 +1034,7 @@ and every $z \in [\alpha, x)$ lies outside $E$, so $f(z) > \underline f = f(x)$.
 $\square$
 
 *Lean:
-[`leftmost_nonpositive_minimum`](../../SquaresInCircles/Common/Analysis.lean#L222).*
+[`leftmost_nonpositive_minimum`](../../SquaresInCircles/Common/Analysis.lean#L190).*
 
 ![The graph of a continuous function on an interval from alpha to beta: positive at alpha, nonnegative at beta, dipping below zero with a flat bottom; the leftmost point of the flat bottom is marked x](figures/seven-leftmost.svg)
 
@@ -1059,27 +1055,24 @@ Let $(a, u)$ and $(A, v)$ be admissible and $s, t \in \lbrace 1, -1\rbrace$.
 *Proof.* (1) By Lemma 9.5 (2), $u, v < \frac{31}{40}$, so $u + v \ge 1$ gives
 $u, v > \frac9{40}$. Each label is one of its three terms (Lemma 9.7 (2)), so it
 suffices to show that a term of the first label plus a term of the second is
-at least $\frac\pi3$. Besides $\mathrm{axial}(u) = \frac54 u$ we use two lower
-bounds for the side term, and the same bounds for $(A, v)$:
-
-```math
-\mathrm{side}(a, u) \ge \tfrac\pi6 + \tfrac56\left(u - \tfrac12\right), \qquad
-\mathrm{side}(a, u) > \tfrac\pi6 + \tfrac{13}{12}u - \tfrac{139}{240} ;
-```
-
-the first by Lemma 9.7 (1) and $r \ge 0$, the second from
-$a < \frac{31}{20} - u$ (Lemma 9.5 (2)). Then:
+at least $\frac\pi3$. By Lemma 9.7 (1) and $r \ge 0$,
+$\mathrm{side}(a, u) \ge \frac\pi6 + \frac56(u - \frac12)$, and likewise for
+$(A, v)$. Then:
 
 - two axial terms: $\frac54(u + v) \ge \frac54 > \frac\pi3$;
 - two side terms: at least $\frac\pi3 + \frac56(u + v - 1) \ge \frac\pi3$;
 - two capped terms: $\frac\pi2$;
-- an axial and a side term: with $u \ge 1 - v$ and $v < \frac{31}{40}$,
+- an axial and a side term: with $u \ge 1 - v$ and the definition of the side
+  term,
 
   ```math
-  \tfrac54 u + \mathrm{side}(A, v) > \tfrac54(1 - v) + \tfrac\pi6 + \tfrac{13}{12}v - \tfrac{139}{240} = \tfrac\pi6 + \tfrac{161}{240} - \tfrac v6 > \tfrac\pi6 + \tfrac{13}{24} ,
+  \tfrac54 u + \mathrm{side}(A, v) \ge \tfrac54(1 - v) + \mathrm{side}(A, v) = \tfrac\pi6 + \tfrac1{12}(22 - 9A - 11v) ,
   ```
 
-  which exceeds $\frac\pi3$ as $\pi < \frac{13}4$; and symmetrically for
+  and by Lemma 9.5 (2),
+  $9A + 11v = 9(A + v) + 2v < 9\cdot\frac{31}{20} + 2\cdot\frac{31}{40} = \frac{31}2$.
+  So the sum exceeds $\frac\pi6 + \frac{13}{24}$, which is more than
+  $\frac\pi3$ as $\pi < \frac{13}4$; and symmetrically for
   $\mathrm{side}(a, u) + \frac54 v$;
 - an axial and a capped term:
   $\frac54 u + \frac\pi4 > \frac9{32} + \frac\pi4 > \frac\pi3$, as
@@ -1314,7 +1307,7 @@ So $c > \delta$ in every case, and $\sigma_k(g) = c - \delta > 0$. $\square$
 
 *Lean:
 [`Seven.smooth_leftmost_support_pos`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L229),
-[`sinusoid_leftmost_minimum`](../../SquaresInCircles/Common/Analysis.lean#L273),
+[`sinusoid_leftmost_minimum`](../../SquaresInCircles/Common/Analysis.lean#L241),
 [`Seven.stationary_nearest_corner`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L54),
 [`Seven.corner_source_margin`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L137),
 [`Seven.corner_label_gt`](../../SquaresInCircles/Seven/Pair/SmallerGaps.lean#L44),

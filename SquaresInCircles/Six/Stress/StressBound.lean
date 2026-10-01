@@ -331,7 +331,7 @@ lemma angle_domains {R : ℝ} (P : NormalizedPacking R) :
   have hn : Pair.nLow (P.ownAxis 1)≤P.deviation 1 ∧
       P.deviation 1≤Pair.nHigh (P.ownAxis 1) := by
     cases h : P.ownAxis 1
-    · have := abs_lt.mp (P.north_cardinal_angle_203 h)
+    · have := abs_lt.mp (P.north_cardinal_angle_small h)
       constructor <;> simp only [Pair.nLow,Pair.nHigh,Bool.false_eq_true,ite_false] <;> linarith
     · have := P.deviation_windows.2.1
       constructor <;> simp only [Pair.nLow,Pair.nHigh,ite_true] <;> linarith
@@ -347,7 +347,7 @@ lemma angle_domains {R : ℝ} (P : NormalizedPacking R) :
   have he : Pair.nLow (P.ownAxis 0)≤-P.deviation 0 ∧
       -P.deviation 0≤Pair.nHigh (P.ownAxis 0) := by
     cases h : P.ownAxis 0
-    · have := abs_lt.mp (P.east_cardinal_angle_203 h)
+    · have := abs_lt.mp (P.east_cardinal_angle_small h)
       constructor <;> simp only [Pair.nLow,Pair.nHigh,Bool.false_eq_true,ite_false] <;> linarith
     · have := P.deviation_windows.1
       constructor <;> simp only [Pair.nLow,Pair.nHigh,ite_true] <;> linarith

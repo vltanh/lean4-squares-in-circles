@@ -52,11 +52,13 @@ lemma west_diagonal_pin_order {t a b : ℝ}
 
 /-! ### Two squares turned by less than `16/15` -/
 
+/-- The primary projection of a centre on the axis of the other square stays
+within the threshold: `(A + 1/2) cos d ≥ (11/8)(12/25)` exceeds `ρ0 - 1/2`. -/
 lemma primary_projection_bound {A B a c s : ℝ}
     (hchart : ContainedChart A |B|)
-    (hA : 177/200 ≤ A) (hB : |B| ≤ 1/2)
-    (ha0 : 177/200 ≤ a) (ha1 : a ≤ rho0)
-    (hc : 1519/3200 ≤ c) (hunit : c^2+s^2=1) :
+    (hA : 7/8 ≤ A) (hB : |B| ≤ 1/2)
+    (ha0 : 7/8 ≤ a) (ha1 : a ≤ rho0)
+    (hc : 12/25 ≤ c) (hunit : c^2+s^2=1) :
     |A*c+B*s-a| < 1/2+(c+|s|)/2 := by
   have hc0 : 0 ≤ c := by linarith
   have hp := projection_abs_le_rho0 hchart.center_sq_le hunit
@@ -67,21 +69,19 @@ lemma primary_projection_bound {A B a c s : ℝ}
     linarith
   have hBu := mul_le_mul_of_nonneg_right hB (abs_nonneg s)
   have hAc := mul_le_mul_of_nonneg_right
-    (show (277:ℝ)/200 ≤ A+1/2 by linarith) hc0
-  have hC := mul_le_mul_of_nonneg_left hc (show (0:ℝ) ≤ 277/200 by norm_num)
-  have hnum : (1113:ℝ)/1000-1/2 < (277/200)*(1519/3200) := by norm_num
+    (show (11:ℝ)/8 ≤ A+1/2 by linarith) hc0
   apply abs_lt.mpr
   constructor
-  · nlinarith only [hBs,hBu,hAc,hC,hnum,ha1,rho0_bounds.2]
+  · nlinarith only [hBs,hBu,hAc,hc,ha1,rho0_bounds.2]
   · nlinarith only [hpu,ha0,rho0_bounds.2,hc0,abs_nonneg s]
 
 lemma forward_transverse_bound {A B b c s : ℝ}
-    (hA : 0 ≤ A) (hB : |B| ≤ 117/250) (hb : |b| ≤ 117/250)
+    (hA : 0 ≤ A) (hB : |B| ≤ 1/2) (hb : |b| < 1/2)
     (hc : 0 ≤ c) (hs : 0 ≤ s) :
     -A*s+B*c-b < 1/2+(c+s)/2 := by
   have hAv := mul_nonneg hA hs
   have hBc := mul_le_mul_of_nonneg_right ((le_abs_self B).trans hB) hc
-  have hbm := (neg_le_abs b).trans hb
+  have hbm := (neg_le_abs b).trans_lt hb
   nlinarith only [hAv,hBc,hbm,hc,hs]
 
 lemma west_difference_trig {d:ℝ} (hd:0≤d ∧ d≤16/15) :
@@ -114,24 +114,24 @@ theorem turned_pair_secondary {t T a b A B:ℝ}
   have hw := hW.bounds hWcore
   have hd' := hD.bounds hDcore
   have hprimaryW0 := primary_projection_bound hD hd'.1.le
-    (hD.u_lt_half hDcore).le hw.1.le hW.a_le_rho0
+    hd'.2.le hw.1.le hW.a_le_rho0
     (c:=Real.cos (T-t)) (s:=-Real.sin (T-t)) (by linarith [htr.1])
     (by simpa only [neg_sq] using htr.2.2)
   have hprimaryW : |A*Real.cos (T-t)-B*Real.sin (T-t)-a|<
       1/2+(Real.cos (T-t)+Real.sin (T-t))/2 := by
     rw [abs_neg,abs_of_nonneg htr.2.1,mul_neg,← sub_eq_add_neg] at hprimaryW0
     exact hprimaryW0
-  have hprimaryD := primary_projection_bound hW hw.1.le (hW.u_lt_half hWcore).le
+  have hprimaryD := primary_projection_bound hW hw.1.le hw.2.le
     hd'.1.le hD.a_le_rho0 (c:=Real.cos (T-t)) (s:=Real.sin (T-t))
     (by linarith [htr.1]) htr.2.2
   rw [abs_of_nonneg htr.2.1] at hprimaryD
   have hreverseW := forward_transverse_bound
     (A:=A) (B:=-B) (b:=-b) (c:=Real.cos (T-t)) (s:=Real.sin (T-t))
-    (by linarith [hD.half_le]) (by simpa only [abs_neg] using hd'.2.2.le)
-    (by simpa only [abs_neg] using hw.2.2.le) hcos htr.2.1
+    (by linarith [hD.half_le]) (by simpa only [abs_neg] using hd'.2.le)
+    (by simpa only [abs_neg] using hw.2) hcos htr.2.1
   have hreverseD := forward_transverse_bound
     (A:=a) (B:=b) (b:=B) (c:=Real.cos (T-t)) (s:=Real.sin (T-t))
-    (by linarith [hW.half_le]) hw.2.2.le hd'.2.2.le hcos htr.2.1
+    (by linarith [hW.half_le]) hw.2.le hd'.2 hcos htr.2.1
   have hs := oriented_separating_axes hd
   have hwidth : angularWidth (T-t)=(Real.cos (T-t)+Real.sin (T-t))/2 := by
     simp only [angularWidth,abs_of_nonneg hcos,abs_of_nonneg htr.2.1]

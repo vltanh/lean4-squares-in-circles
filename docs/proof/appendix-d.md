@@ -167,7 +167,7 @@ the following facts from Chapter 9.
   by (D.3) and $r \ge 0$.
 - If the label is axial, then $u = \frac45\ell \le \frac\pi5$;
   $9a + 11u \le 2\pi + 7$, which is $\mathrm{axial}(u) \le \mathrm{side}(a, u)$
-  multiplied by 12 ([Lemma 9.8](seven.md#lemma-98-side-and-axial-labels)); and $a + u < \frac{113}{80}$
+  multiplied by 12 ([Lemma 9.8](seven.md#lemma-98-side-and-axial-labels)); and $a + u < 1 + \frac{2\pi}{15}$
   ([Lemma 9.8](seven.md#lemma-98-side-and-axial-labels)).
 
 **The boundary of the label regions.** From Appendix B we use the following
@@ -438,10 +438,8 @@ $z = \frac\pi6$ (Figure D.4).
    ```
 
    At $z = \frac\pi2$ the force vanishes, $\gamma = 0$, and
-
-   ```math
-   m_2\left(\tfrac\pi2\right) = 1 - \tfrac{4\pi}{15} > 1 - \tfrac{88}{105} = \tfrac{17}{105} > 0 . \qquad\square
-   ```
+   $m_2(\frac\pi2) = 1 - \frac{4\pi}{15}$, which is positive as
+   $\pi < \frac{15}4$. $\square$
 
 ![Two panels. Left: the plane of forces, with the shaded cone between the ray of the normal (X0, Y0) of the circle at the transition state, of slope about 0.49, and the ray of the normal (9, 11) of the tie line; the black arc of forces (cos z, 1 − sin z) runs inside the cone from (1, 1) at z = 0 to (√3/2, 1/2) at z = π/6, and dotted beyond it, leaving the cone near z = 0.66 and ending at the origin at z = π/2. Right: the (A, v)-plane near the transition state, with the axial region (blue) below the dashed tie line and inside the circle, and the level lines through the transition state of the forms for z = 0 and z = π/6 (orange), which leave the axial region on one side.](figures/appd-transition-force.svg)
 
@@ -490,8 +488,7 @@ If $e \ge 0$, then $\sin e \ge 0$, as $e \le \frac\pi3$, and expanding shows
 \beta = \left(1 + \tfrac{2\pi}{15} - A - v\right) + \left(A - \tfrac12\right)(1 - \cos e) + \left(\tfrac{13}{20} - v\right)\sin e + \tfrac3{20}(e - \sin e) + \tfrac{13}{20}e .
 ```
 
-The first term is positive: $A + v < \frac{113}{80}$ ([Lemma 9.8](seven.md#lemma-98-side-and-axial-labels)) and
-$\frac{2\pi}{15} > \frac{33}{80}$, as $\pi > \frac{99}{32}$. The others are
+The first term is positive by [Lemma 9.8](seven.md#lemma-98-side-and-axial-labels) (2). The others are
 nonnegative, as $A \ge \frac12$, $v \le \frac\pi5 < \frac{13}{20}$ and
 $0 \le \sin e \le e$.
 
@@ -591,15 +588,14 @@ from $(a_0, u_0)$ along the line $a_0 - A = \frac{12}{25}(v - u_0)$ of Lemma
 D.4, so that $v$ grows by $t$, changes $E$ by $k(z)\,t$. The function $k$
 increases on $[0, 1]$, by [Lemma A.1](appendix-a.md#lemma-a1-monotonicity-from-the-derivative): there
 $k'(y) = \cos y - \frac{12}{25}\sin y \ge \frac12 - \frac{12}{25} = \frac1{50}$,
-as $\cos y \ge 1 - \frac{y^2}2 \ge \frac12$ and $\sin y \le 1$. Also
-$k(0) = -\frac{28}{375}$, and by (D.2)
+as $\cos y \ge 1 - \frac{y^2}2 \ge \frac12$ and $\sin y \le 1$. At
+$\frac1{10}$, by (D.2),
 
 ```math
-k(z) \ge \tfrac{12}{25}\left(\tfrac25 - \tfrac{z^2}2\right) + z - \tfrac{z^3}6 - \tfrac4{15} = z - \tfrac{28}{375} - \tfrac6{25}z^2 - \tfrac{z^3}6 ,
+k\left(\tfrac1{10}\right) \ge \tfrac{12}{25}\left(C_2\left(\tfrac1{10}\right) - \tfrac35\right) + S_3\left(\tfrac1{10}\right) - \tfrac4{15} > 0.48\cdot 0.395 + 0.0998 - 0.2667 > 0 .
 ```
 
-which at $z = \frac1{10}$ exceeds $0.1 - 0.0747 - 0.0024 - 0.0002 > 0$. So
-$k(z) > 0$ for $z \ge \frac1{10}$. Every $z$ in $(0, 1)$ has $z < \frac1{10}$,
+So $k(z) > 0$ for $z \ge \frac1{10}$. Every $z$ in $(0, 1)$ has $z < \frac1{10}$,
 or $z \ge \frac1{10}$ and $\cos z \ge \frac35$, or $\cos z < \frac35$, and we
 treat these three cases in turn (Figure D.6).
 
@@ -661,10 +657,10 @@ treat these three cases in turn (Figure D.6).
    ```math
    E(A, v) \ge L_0(z) + \left(\tfrac35 - \cos z\right) + \tfrac{79}{100}\left(\sin z - \tfrac4{15}\right)
    = \tfrac7{15} - \tfrac45z + \tfrac{79}{100}\left(\sin z - \tfrac4{15}\right)
-   > \tfrac7{15} - \tfrac45 + \tfrac{79}{100}\cdot\tfrac8{15} = \tfrac{11}{125} . \qquad\square
+   > \tfrac7{15} - \tfrac45 + \tfrac{79}{100}\cdot\tfrac8{15} > 0 . \qquad\square
    ```
 
-![Two panels sharing the z-axis from 0 to 1, cut by vertical lines at z = 1/10 and at z = arccos 3/5; the three ranges are numbered 1, 2 and 3. Top: the least value of the expression of Lemma D.6 over the admissible states with side label (blue), from 0 at z = 0 up to about 0.16 at z = 1; the dashed green value at the transition state, slightly above it below z = 0.08 and equal to it after; the orange bound g of the disk alone, a small positive arch below the blue curve that falls to 0 near z = 0.12. Bottom: the purple curve k(z), increasing from −28/375 at z = 0 through 0 near z = 0.076 to about 0.55 at z = 1.](figures/appd-side-profile.svg)
+![Two panels sharing the z-axis from 0 to 1, cut by vertical lines at z = 1/10 and at z = arccos 3/5; the three ranges are numbered 1, 2 and 3. Top: the least value of the expression of Lemma D.6 over the admissible states with side label (blue), from 0 at z = 0 up to about 0.16 at z = 1; the dashed green value at the transition state, slightly above it below z = 0.08 and equal to it after; the orange bound g of the disk alone, a small positive arch below the blue curve that falls to 0 near z = 0.12. Bottom: the purple curve k(z), increasing from about −0.075 at z = 0 through 0 near z = 0.076 to about 0.55 at z = 1.](figures/appd-side-profile.svg)
 
 *Figure D.6.* Lemma D.6. Top: the least value of
 $\beta_{\mathrm{side}}(A, v; -z)$ over the admissible states with side label
@@ -814,8 +810,8 @@ N(z) - z\left(212 + 636z - 160z^3\right)
 = 800\left(\cos z - \tfrac12\right)\sin z + 960z\left(\cos z - \tfrac12\right) + 1800\bigl(\cos z - C_2(z)\bigr) + 1180(z - \sin z) + 960z\bigl(\sin z - S_3(z)\bigr),
 ```
 
-a sum of nonnegative terms by (D.2). Finally $z \le \frac\pi3 < \frac98$, so
-$160z^2 < \frac{405}2 < 636$ and $212 + z(636 - 160z^2) > 0$; hence $N(z) > 0$.
+a sum of nonnegative terms by (D.2). Finally $z \le \frac\pi3 < \frac32$, so
+$160z^2 < 360 < 636$ and $212 + z(636 - 160z^2) > 0$; hence $N(z) > 0$.
 $\square$
 
 *Lean:
@@ -924,10 +920,10 @@ $z \ge 0$ ([Lemma A.1](appendix-a.md#lemma-a1-monotonicity-from-the-derivative))
 the slope of $f$ stays above $-\frac1{10}$, and for $0 \le z \le \frac\pi3$
 
 ```math
-f(z) \ge 1 - \tfrac{4\pi}{15} - \tfrac z{10} \ge 1 - \tfrac{4\pi}{15} - \tfrac\pi{30} = 1 - \tfrac{3\pi}{10} > 1 - \tfrac{33}{35} = \tfrac2{35} > 0 .
+f(z) \ge 1 - \tfrac{4\pi}{15} - \tfrac z{10} \ge 1 - \tfrac{4\pi}{15} - \tfrac\pi{30} = 1 - \tfrac{3\pi}{10} > 0 ,
 ```
 
-The value $1 - \frac{4\pi}{15}$ of $f$ at 0 exceeds the largest loss
+as $\pi < \frac{10}3$. The value $1 - \frac{4\pi}{15}$ of $f$ at 0 exceeds the largest loss
 $\frac\pi{30}$ that this slope allows on $[0, \frac\pi3]$ (Figure D.8).
 
 (2) Both labels are axial, so

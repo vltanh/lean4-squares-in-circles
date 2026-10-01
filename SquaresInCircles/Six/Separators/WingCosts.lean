@@ -8,7 +8,7 @@ and D–S are both separated along the secondary axis of D. A square with equal
 weights on its own axis and on the secondary axis of D, at phase gap `q`, has
 the force `(1 + sin q, cos q)`; its cost
 `(|cos q| + |sin q|)/2 - (1 + sin q) a - (cos q) b` exceeds
-`-91/125 - (13/20) q` for `1/2 ≤ q ≤ π/2`: by the far-vertex support, with the
+`-73/100 - (13/20) q` for `1/2 ≤ q ≤ π/2`: by the far-vertex support, with the
 length `√(2 + 2 sin q)` below its tangent at `49/16`, for `q ≤ 1`, and by the
 cap support and a Taylor expansion at `13/10` beyond. Beyond `π/2` the
 reflection `q ↦ π - q` folds the angle back. A square separated from C along the
@@ -30,16 +30,16 @@ lemma sine_error_on_half {h : ℝ} (hh : |h|≤1/2) :
   have he := abs_le.mp ((Real.abs_sub_sin_le h).trans hc)
   constructor <;> linarith [he.1,he.2]
 
-/-- The cost bound in the cap case, plus `91/125 + (13/20) q`. -/
+/-- The cost bound in the cap case, plus `73/100 + (13/20) q`. -/
 def secondaryCapLine (q : ℝ) : ℝ :=
-  91/125-1113/1000+(13/20)*q+Real.cos q/2-(613/1000)*Real.sin q
+  73/100-1.113+(13/20)*q+Real.cos q/2-0.613*Real.sin q
 
-private def tangentA : ℝ := Real.cos (13/10)/2-(613/1000)*Real.sin (13/10)
-private def tangentB : ℝ := -Real.sin (13/10)/2-(613/1000)*Real.cos (13/10)
+private def tangentA : ℝ := Real.cos (13/10)/2-0.613*Real.sin (13/10)
+private def tangentB : ℝ := -Real.sin (13/10)/2-0.613*Real.cos (13/10)
 
 private lemma secondary_tangent_constants :
     tangentA≤-9/20 ∧ -33/50≤tangentB ∧ tangentB≤0 ∧
-      |13/20+tangentB|≤1/200 ∧ 1/500≤ secondaryCapLine (13/10) := by
+      |13/20+tangentB|≤1/200 ∧ 1/250≤ secondaryCapLine (13/10) := by
   have hcl := cos_lower_six (x := (13:ℝ)/10) (by norm_num)
   have hcu := cos_upper_four (x := (13:ℝ)/10) (by norm_num)
   have hsl := sin_lower_seven (x := (13:ℝ)/10) (by norm_num)
@@ -61,7 +61,9 @@ lemma secondary_cap_line_expansion (h : ℝ) :
   rw [Real.cos_add,Real.sin_add]
   ring
 
-/-- The cap case: `secondaryCapLine` is positive on `[1, π/2]`. -/
+/-- The cap case: `secondaryCapLine` is positive on `[1, π/2]`. About `13/10`
+it is its value, at least `1/250`, plus a linear term of slope at most `1/200`
+and terms of second order whose sum is nonnegative. -/
 theorem secondary_cap_line_positive {q : ℝ} (hq : 1≤q ∧ q≤Real.pi/2) :
     0< secondaryCapLine q := by
   let h := q-13/10
@@ -92,23 +94,21 @@ theorem secondary_cap_line_positive {q : ℝ} (hq : 1≤q ∧ q≤Real.pi/2) :
       tangentA*(Real.cos h-1)+tangentB*(Real.sin h-h) := by
     have he : q=13/10+h := by dsimp [h]; ring
     rw [he,secondary_cap_line_expansion]
-  have hsquare := sq_nonneg (14*|h|-1)
-  have hsqabs := sq_abs h
-  nlinarith only [hid,hbase,hAsq,hBsq,hlin,hsquare,hsqabs]
+  linarith only [hid,hbase,hAsq,hBsq,hlin,hh,sq_nonneg h]
 
 /-- The vertex case: with the tangent at `49/16` of the length `√(2 + 2 sin q)`,
-the cost bound plus `91/125 + (13/20) q` is a linear function plus a first
+the cost bound plus `73/100 + (13/20) q` is a linear function plus a first
 harmonic with nonnegative coefficients, positive at `q = 1/2` and `q = 1`. -/
 private lemma secondary_vertex_positive {q : ℝ} (hq : 1/2≤q ∧ q≤1) :
-    0<91/125+(13/20)*q+1/2+Real.cos q+Real.sin q-
-      (1689/1000)*((2+2*Real.sin q+(7/4)^2)/(2*(7/4))) := by
+    0<73/100+(13/20)*q+1/2+Real.cos q+Real.sin q-
+      1.689*((2+2*Real.sin q+(7/4)^2)/(2*(7/4))) := by
   have hl := trig_bracket (l := 1/2) (u := 1/2) (x := 1/2) (by norm_num)
     (by linarith [Real.pi_gt_three]) ⟨le_rfl,le_rfl⟩
   have hu := trig_bracket (l := 1) (u := 1) (x := 1) (by norm_num)
     (by linarith [Real.pi_gt_three]) ⟨le_rfl,le_rfl⟩
   norm_num at hl hu
-  have h := trig_concave_gt (α := 13/20) (A := 1-(1689/1000)*(4/7)) (B := 1)
-    (m := (1689/1000)*(81/56)-91/125-1/2) (by norm_num) (by norm_num) (by norm_num)
+  have h := trig_concave_gt (α := 13/20) (A := 1-1.689*(4/7)) (B := 1)
+    (m := 1.689*(81/56)-73/100-1/2) (by norm_num) (by norm_num) (by norm_num)
     (by linarith [Real.pi_gt_three]) hq (by linarith) (by linarith)
   ring_nf at h ⊢
   linarith
@@ -126,16 +126,15 @@ private lemma secondary_cap_slope {q : ℝ} (hq : 1≤q ∧ q≤Real.pi/2) :
   have hsq := mul_nonneg (sub_nonneg.mpr hslo)
     (show 0≤Real.sin q+5/6 by linarith)
   have hchi : Real.cos q≤5/9 := by nlinarith [Real.sin_sq_add_cos_sq q]
-  have hm := mul_le_mul (show rho0+1/2≤1613/1000 by linarith [rho0_bounds.2])
-    hchi hc0 (by norm_num : (0:ℝ)≤1613/1000)
-  nlinarith
+  have hm := mul_le_mul_of_nonneg_right rho0_bounds.2.le hc0
+  linarith
 
 /-- The cost `(|cos q| + |sin q|)/2 - (1 + sin q) a - (cos q) b` of a square with
 equal weights on its own axis and on the secondary axis of D, at phase gap
-`q ∈ [1/2, π/2]`, exceeds `-91/125 - (13/20) q`. -/
+`q ∈ [1/2, π/2]`, exceeds `-73/100 - (13/20) q`. -/
 lemma secondary_cost_first_quadrant {a b q : ℝ} (hc : ContainedChart a |b|)
     (hq : 1/2≤q ∧ q≤Real.pi/2) :
-    -91/125-(13/20)*q<angularWidth q-((1+Real.sin q)*a+Real.cos q*b) := by
+    -73/100-(13/20)*q<angularWidth q-((1+Real.sin q)*a+Real.cos q*b) := by
   have hcos := Real.cos_nonneg_of_mem_Icc
     (show q∈Set.Icc (-(Real.pi/2)) (Real.pi/2) by
       constructor <;> linarith [hq.1,hq.2,Real.pi_pos])
@@ -167,7 +166,7 @@ lemma foldedSecondaryAngle_le (q : ℝ) : foldedSecondaryAngle q≤q := by
 /-- The cost bound on `[1/2, π - 1/2]`, with the folded angle. -/
 lemma secondary_cost_folded_lower {a b q : ℝ} (hc : ContainedChart a |b|)
     (hq : 1/2≤q ∧ q≤Real.pi-1/2) :
-    -91/125-(13/20)*foldedSecondaryAngle q<
+    -73/100-(13/20)*foldedSecondaryAngle q<
       angularWidth q-((1+Real.sin q)*a+Real.cos q*b) := by
   by_cases hhalf : q≤Real.pi/2
   · have hh := secondary_cost_first_quadrant hc ⟨hq.1,hhalf⟩
@@ -185,18 +184,18 @@ lemma secondary_cost_folded_lower {a b q : ℝ} (hc : ContainedChart a |b|)
     rw [he]
     nlinarith only [hh]
 
-/-- The affine bound `-91/125 - (13/20) q` on `[1/2, π - 1/2]`. -/
+/-- The affine bound `-73/100 - (13/20) q` on `[1/2, π - 1/2]`. -/
 lemma secondary_cost_affine_lower {a b q : ℝ} (hc : ContainedChart a |b|)
     (hq : 1/2≤q ∧ q≤Real.pi-1/2) :
-    -91/125-(13/20)*q<angularWidth q-((1+Real.sin q)*a+Real.cos q*b) := by
+    -73/100-(13/20)*q<angularWidth q-((1+Real.sin q)*a+Real.cos q*b) := by
   linarith [secondary_cost_folded_lower hc hq,foldedSecondaryAngle_le q]
 
 /-- The terms of an own wing S in the gap with W on the west side of C. -/
 def ownWingPotential (s : ℝ) : ℝ :=
-  (387/1000)*Real.cos s+|Real.sin s|/2+(113/1000)*Real.sin s
+  0.387*Real.cos s+|Real.sin s|/2+0.113*Real.sin s
 
 /-- `ownWingPotential s` for `s ≥ 0`. -/
-def positiveWing (s : ℝ) : ℝ := (387/1000)*Real.cos s+(613/1000)*Real.sin s
+def positiveWing (s : ℝ) : ℝ := 0.387*Real.cos s+0.613*Real.sin s
 
 lemma ownWingPotential_nonnegative_angle {s : ℝ} (hs : 0≤ s ∧ s≤Real.pi/4) :
     ownWingPotential s=positiveWing s := by
@@ -206,7 +205,7 @@ lemma ownWingPotential_nonnegative_angle {s : ℝ} (hs : 0≤ s ∧ s≤Real.pi/
   ring
 
 lemma ownWingPotential_negative_lower {s : ℝ} (hs : -5/8≤ s ∧ s≤0) :
-    387/1000≤ownWingPotential s := by
+    0.387≤ownWingPotential s := by
   have hc := Real.cos_nonneg_of_mem_Icc
     (show s∈Set.Icc (-(Real.pi/2)) (Real.pi/2) by
       constructor <;> linarith [hs.1,hs.2,Real.pi_gt_d2])
@@ -222,8 +221,8 @@ lemma positiveWing_minus_antitone :
     AntitoneOn (fun x : ℝ => positiveWing x-(13/20)*x) (Set.Icc 0 (Real.pi/4)) := by
   apply antiOn_of_hasDeriv_nonpos (by dsimp [positiveWing]; fun_prop)
   · intro x _
-    exact (((Real.hasDerivAt_cos x).const_mul (387/1000)).fun_add
-      ((Real.hasDerivAt_sin x).const_mul (613/1000))).fun_sub
+    exact (((Real.hasDerivAt_cos x).const_mul 0.387).fun_add
+      ((Real.hasDerivAt_sin x).const_mul 0.613)).fun_sub
       ((hasDerivAt_id' x).const_mul (13/20))
   · intro x hx
     have hs := Real.sin_nonneg_of_nonneg_of_le_pi hx.1.le
@@ -234,8 +233,8 @@ lemma positiveWing_plus_monotone :
     MonotoneOn (fun x : ℝ => positiveWing x+(13/20)*x) (Set.Icc 0 (Real.pi/4)) := by
   apply monoOn_of_hasDeriv_nonneg (by dsimp [positiveWing]; fun_prop)
   · intro x _
-    exact (((Real.hasDerivAt_cos x).const_mul (387/1000)).fun_add
-      ((Real.hasDerivAt_sin x).const_mul (613/1000))).fun_add
+    exact (((Real.hasDerivAt_cos x).const_mul 0.387).fun_add
+      ((Real.hasDerivAt_sin x).const_mul 0.613)).fun_add
       ((hasDerivAt_id' x).const_mul (13/20))
   · intro x hx
     have hc := Real.cos_nonneg_of_mem_Icc
@@ -277,19 +276,21 @@ lemma own_wing_penalty_endpoint {s d : ℝ}
 
 /-- The terms of the gap in the angle `x` of an own wing. -/
 def ownWingCost (x : ℝ) : ℝ :=
-  (387/1000)*Real.cos x+(613/1000)*Real.sin x-(13/20)*x
+  0.387*Real.cos x+0.613*Real.sin x-(13/20)*x
 
-/-- `ownWingCost` exceeds `249/1000` on `[0, 2/3]`, by concavity. -/
-lemma ownWingCost_lower {x : ℝ} (hx : 0≤x ∧ x≤2/3) : 249/1000<ownWingCost x := by
-  have hconc := (harmonic_concave (A := 387/1000) (B := 613/1000) (l := 0) (u := 2/3)
+/-- `ownWingCost` is concave, so on `[0, 2/3]` it is least at an end: at `2/3`. -/
+lemma ownWingCost_lower {x : ℝ} (hx : 0≤x ∧ x≤2/3) : ownWingCost (2/3)≤ownWingCost x := by
+  have hconc := (harmonic_concave (A := 0.387) (B := 0.613) (l := 0) (u := 2/3)
     fun t ht => harmonic_nonneg (by norm_num) (by norm_num)
       ⟨ht.1,by linarith [ht.2,Real.pi_gt_d2]⟩).add (affine_concave (-(13/20)) 0 0 (2/3))
-  have h := concave_gt_of_endpoints hconc hx (c := 249/1000) (by norm_num [harmonic])
-    (by simp only [Pi.add_apply,harmonic]
-        linarith [trig_bracket_two_thirds.1,trig_bracket_two_thirds.2.2.1])
+  have h := hconc.min_le_of_mem_Icc (show (0:ℝ)∈Set.Icc 0 (2/3) by norm_num)
+    (show (2/3:ℝ)∈Set.Icc 0 (2/3) by norm_num) hx
   simp only [Pi.add_apply,harmonic] at h
   dsimp [ownWingCost]
-  linarith
+  rcases min_le_iff.mp h with h | h
+  · norm_num at h
+    linarith [trig_bracket_two_thirds.2.1,trig_bracket_two_thirds.2.2.2]
+  · linarith
 
 /-- For `|x| ≤ 2/5` and `1/2 ≤ d ≤ π/4`, the widths of the two edges of a wing on
 a side of C satisfy `1/2 + aw(d) ≤ aw(x) + aw(d - x)`. -/
@@ -401,42 +402,44 @@ lemma south_cardinal_secondary_norm (s d : ℝ) :
     ring
   nlinarith [Real.sin_sq_add_cos_sq s,Real.sin_sq_add_cos_sq (d-s)]
 
-/-- The work of the force on W on the west side of C is at most `1113/1000` times
+/-- The work of the force on W on the west side of C is at most `1.113` times
 its length. -/
 lemma west_cardinal_secondary_work {a b w d : ℝ}
     (hc : ContainedChart a |b|) (hd : 1/2≤d ∧ d≤Real.pi/4) :
     (Real.cos w+Real.sin (d-w))*a+(-Real.sin w-Real.cos (d-w))*b≤
-      (1113/1000)*westRadialLength d := by
+      1.113*westRadialLength d := by
   have h := chart_radial_work hc (Real.cos w+Real.sin (d-w),-Real.sin w-Real.cos (d-w))
   dsimp [dot,vectorLength,normSq] at h
   rw [west_cardinal_secondary_norm,west_radial_length hd] at h
-  exact h
+  linarith
 
-/-- The work of the force on S on the south side of C is at most `1113/1000`
-times its length. -/
+/-- The work of the force on S on the south side of C is at most `1.113` times
+its length. -/
 lemma south_cardinal_secondary_work {a b s d : ℝ}
     (hc : ContainedChart a |b|) (hd : 1/2≤d ∧ d≤Real.pi/4) :
     (Real.cos s+Real.sin (Real.pi/2+s-d))*a+
-      (-Real.sin s+Real.cos (Real.pi/2+s-d))*b≤(1113/1000)*southRadialLength d := by
+      (-Real.sin s+Real.cos (Real.pi/2+s-d))*b≤1.113*southRadialLength d := by
   have h := chart_radial_work hc (Real.cos s+Real.cos (d-s),-Real.sin s+Real.sin (d-s))
   dsimp [dot,vectorLength,normSq] at h
   rw [south_cardinal_secondary_norm,south_radial_length hd] at h
   have he : Real.pi/2+s-d=Real.pi/2-(d-s) := by ring
-  simpa only [he,Real.sin_pi_div_two_sub,Real.cos_pi_div_two_sub] using h
+  rw [he,Real.sin_pi_div_two_sub,Real.cos_pi_div_two_sub]
+  linarith
 
-lemma eighth_cos_upper : Real.cos (Real.pi/8)≤231/250 := by
+/-- `cos (π/8) ≤ 0.924`, as `cos² (π/8) = (2 + √2)/4` and `√2 ≤ 1.415`. -/
+lemma eighth_cos_upper : Real.cos (Real.pi/8)≤0.924 := by
   have hhalf := Real.cos_two_mul (Real.pi/8)
   rw [show 2*(Real.pi/8)=Real.pi/4 by ring,Real.cos_pi_div_four] at hhalf
-  have hroot : Real.sqrt (2:ℝ)/2≤7072/10000 := by
+  have hroot : Real.sqrt (2:ℝ)≤1.415 := by
     nlinarith [Real.sq_sqrt (show (0:ℝ)≤2 by norm_num),Real.sqrt_nonneg (2:ℝ)]
   by_contra! h
   have hp := mul_pos (sub_pos.mpr h)
-    (show 0<Real.cos (Real.pi/8)+231/250 by linarith)
+    (show 0<Real.cos (Real.pi/8)+0.924 by linarith)
   nlinarith
 
 /-- The two lengths sum to `4 cos (π/8) cos (π/8 - d/2) ≤ 4 cos (π/8)`. -/
 lemma radial_length_sum_bound (d : ℝ) :
-    westRadialLength d+southRadialLength d≤4*(231/250) := by
+    westRadialLength d+southRadialLength d≤4*0.924 := by
   have hcos := Real.cos_nonneg_of_mem_Icc
     (show Real.pi/8∈Set.Icc (-(Real.pi/2)) (Real.pi/2) by
       constructor <;> linarith [Real.pi_pos])
@@ -459,23 +462,23 @@ lemma high_diagonal_width_lower {d : ℝ} (hd : 1/2≤d ∧ d≤Real.pi/4) :
 /-- The terms in `d` of the gap with W on its own axis and S on the south side of
 C. -/
 def southMixedDepth (d : ℝ) : ℝ :=
-  (Real.cos d+Real.sin d)/2-(1113/1000)*southRadialLength d-(13/20)*d
+  (Real.cos d+Real.sin d)/2-1.113*southRadialLength d-(13/20)*d
 
 /-! With W on the west side of C and S on its own axis the reserve is
-`westMixedConstant + (cos d + sin d)/2 - (1113/1000) westRadialLength d` plus the
+`westMixedConstant + (cos d + sin d)/2 - 1.113 westRadialLength d` plus the
 terms of S. It is at least `westMixedBase d` for `d ≤ 2/3`, and beyond `2/3` it
 grows with `westMixedDepth d`. -/
 
-def westMixedConstant : ℝ := 5/2-113/1000-91/125-(13/40)*Real.pi
+def westMixedConstant : ℝ := 5/2-0.113-73/100-(13/40)*Real.pi
 
 def westMixedBase (d : ℝ) : ℝ :=
-  westMixedConstant+(887/1000)*Real.cos d+(1113/1000)*Real.sin d-
-    (1113/1000)*westRadialLength d
+  westMixedConstant+0.887*Real.cos d+1.113*Real.sin d-1.113*westRadialLength d
 
 def westMixedDepth (d : ℝ) : ℝ :=
-  (Real.cos d+Real.sin d)/2-(1113/1000)*westRadialLength d+(13/20)*d
+  (Real.cos d+Real.sin d)/2-1.113*westRadialLength d+(13/20)*d
 
-/-- `southMixedDepth d > -19/10` on `[1/2, π/4]`, by Taylor bounds. -/
+/-- `southMixedDepth d > -19/10` on `[1/2, π/4]`, by the Taylor polynomials of
+`cos d`, `sin d` and `cos (d/2)` and `d ≤ 4/5`. -/
 lemma south_mixed_depth_lower {d : ℝ} (hd : 1/2≤d ∧ d≤Real.pi/4) :
     -(19/10)< southMixedDepth d := by
   have hd0 : 0≤d := by linarith [hd.1]
@@ -483,14 +486,11 @@ lemma south_mixed_depth_lower {d : ℝ} (hd : 1/2≤d ∧ d≤Real.pi/4) :
   have hc := Real.one_sub_sq_div_two_le_cos (x := d)
   have hs := Real.sin_ge_sub_cube hd0
   have hu := cos_upper_four (x := d/2) (by linarith)
-  have hsq := mul_nonneg (sub_nonneg.mpr hd1) (show 0≤4/5+d by linarith)
-  have hd2 : d^2≤16/25 := by nlinarith
-  have hcube := mul_le_mul hd1 hd2 (sq_nonneg d) (by norm_num : (0:ℝ)≤4/5)
-  have hfour := mul_nonneg (sub_nonneg.mpr hd2) (show 0≤16/25+d^2 by positivity)
-  have hd3 : d^3≤64/125 := by nlinarith only [hcube]
-  have hd4 : d^4≤256/625 := by nlinarith only [hfour]
-  have hpoly : -(19/10)< -863/500-(3/20)*d+(113/4000)*d^2-d^3/12-(371/64000)*d^4 := by
-    nlinarith [sq_nonneg d]
+  have hd2 := pow_le_pow_left₀ hd0 hd1 2
+  have hd3 := pow_le_pow_left₀ hd0 hd1 3
+  have hd4 := pow_le_pow_left₀ hd0 hd1 4
+  have hpoly : -(19/10)<(1-d^2/2+(d-d^3/6))/2-2*1.113*(1-(d/2)^2/2+(d/2)^4/24)-(13/20)*d := by
+    nlinarith only [hd.1,hd1,hd2,hd3,hd4]
   dsimp [southMixedDepth,southRadialLength]
   nlinarith only [hc,hs,hu,hpoly]
 
@@ -503,8 +503,8 @@ lemma west_mixed_base_positive {d : ℝ} (hd : 1/2≤d ∧ d≤2/3) : 0<westMixe
     exact sqrt_le_tangent (by norm_num) (by linarith [Real.neg_one_le_sin d])
   obtain ⟨hc5,-,hs5,-⟩ := trig_bracket_half
   obtain ⟨hc6,-,hs6,-⟩ := trig_bracket_two_thirds
-  have h := harmonic_pos_of_endpoints (K := westMixedConstant-(1113/1000)*(81/56))
-    (A := 887/1000) (B := (1113/1000)*(3/7)) (by norm_num) (by norm_num) (by norm_num)
+  have h := harmonic_pos_of_endpoints (K := westMixedConstant-1.113*(81/56))
+    (A := 0.887) (B := 1.113*(3/7)) (by norm_num) (by norm_num) (by norm_num)
     (by linarith [Real.pi_gt_three]) hd
     (by dsimp [westMixedConstant]; linarith [Real.pi_lt_d4])
     (by dsimp [westMixedConstant]; linarith [Real.pi_lt_d4])
@@ -515,12 +515,12 @@ lemma west_mixed_base_positive {d : ℝ} (hd : 1/2≤d ∧ d≤2/3) : 0<westMixe
 lemma west_mixed_depth_monotone :
     MonotoneOn westMixedDepth (Set.Icc (2/3) (Real.pi/4)) := by
   let f' : ℝ→ℝ := fun d => (Real.cos d-Real.sin d)/2-
-    (1113/1000)*Real.sin (Real.pi/4-d/2)+13/20
+    1.113*Real.sin (Real.pi/4-d/2)+13/20
   have hu (d : ℝ) : HasDerivAt (fun x : ℝ => Real.pi/4-x/2) (-1/2) d :=
     (((hasDerivAt_id' d).div_const 2).const_sub (Real.pi/4)).congr_deriv (by norm_num)
   have hD (d : ℝ) : HasDerivAt westMixedDepth (f' d) d := by
     convert ((((Real.hasDerivAt_cos d).fun_add (Real.hasDerivAt_sin d)).div_const 2).fun_sub
-      (((Real.hasDerivAt_cos (Real.pi/4-d/2)).comp d (hu d)).const_mul (1113/500))).fun_add
+      (((Real.hasDerivAt_cos (Real.pi/4-d/2)).comp d (hu d)).const_mul (2*1.113))).fun_add
       ((hasDerivAt_id d).const_mul (13/20)) using 1
     · funext y; dsimp [westMixedDepth,westRadialLength]; ring
     · dsimp [f']; ring
@@ -541,7 +541,7 @@ own axis, for every angle `s` of S in `[-5/8, 2/3]`. -/
 theorem west_cardinal_own_south_reserve {s d : ℝ}
     (hs : -5/8≤ s ∧ s≤2/3) (hd : 1/2≤d ∧ d≤Real.pi/4) :
     0<westMixedConstant+(Real.cos d+Real.sin d)/2-
-      (1113/1000)*westRadialLength d+ownWingPotential s+(13/20)*|s-d| := by
+      1.113*westRadialLength d+ownWingPotential s+(13/20)*|s-d| := by
   by_cases hsmall : d≤2/3
   · have hwing := own_wing_penalty_lower hs ⟨by linarith [hd.1],hd.2⟩
     have hp := west_mixed_base_positive ⟨hd.1,hsmall⟩

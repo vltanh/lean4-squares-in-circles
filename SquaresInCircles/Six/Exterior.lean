@@ -92,7 +92,7 @@ private lemma capAV_high {a b : ℝ} (hb2 : 1 / 2 ≤ b) (hsort : b ≤ a)
 
 /-- The near and lower edges of a square below the centre line, `b ≤ 1/2`. -/
 private lemma capAV_low {a b : ℝ} (ha : 1 / 2 ≤ a) (hb : 0 ≤ b) (hb2 : b ≤ 1 / 2)
-    (ha1 : a ≤ 1113 / 1000) (hQ : (a + 1 / 2) ^ 2 + (b + 1 / 2) ^ 2 ≤ Q0) :
+    (ha1 : a ≤ 1.113) (hQ : (a + 1 / 2) ^ 2 + (b + 1 / 2) ^ 2 ≤ Q0) :
     Real.arcsin ((a - 1 / 2) / (9 / 10)) - capV (9 / 10) b ≤ 9 / 20 := by
   norm_num [Q0] at hQ
   have hV : (1 / 2 - b) / (9 / 10) ≤ capV (9 / 10) b :=
@@ -106,8 +106,8 @@ private lemma capAV_low {a b : ℝ} (ha : 1 / 2 ≤ a) (hb : 0 ≤ b) (hb2 : b �
     have hx3 : (a - 1 / 2) ^ 3 ≤ (27 / 50) ^ 2 * (a - 1 / 2) := by
       nlinarith [mul_le_mul_of_nonneg_left hx2 hx0]
     -- `1.09 (a + 1/2) + (b + 1/2) ≤ 2.495` on the disk below `b = 1/2`
-    have hlin : 109 / 100 * (a + 1 / 2) + (b + 1 / 2) ≤ 2495 / 1000 := by
-      nlinarith [sq_nonneg (109 / 100 * (a + 1 / 2) - 2495 / 1000 + (b + 1 / 2))]
+    have hlin : 109 / 100 * (a + 1 / 2) + (b + 1 / 2) ≤ 2.495 := by
+      nlinarith [sq_nonneg (109 / 100 * (a + 1 / 2) - 2.495 + (b + 1 / 2))]
     have hX' : Real.arcsin ((a - 1 / 2) / (9 / 10)) ≤
         (a - 1 / 2) / (9 / 10) + (27 / 50) ^ 2 * (a - 1 / 2) / (4 * (9 / 10) ^ 3) := by
       have he : ((a - 1 / 2) / (9 / 10)) ^ 3 / 4 = (a - 1 / 2) ^ 3 / (4 * (9 / 10) ^ 3) := by
@@ -124,9 +124,9 @@ private lemma capAV_low {a b : ℝ} (ha : 1 / 2 ≤ a) (hb : 0 ≤ b) (hb2 : b �
       rw [div_le_iff₀ (by norm_num)]
       linarith
     linarith
-  · -- a far square sits low: `b + 1/2 < 0.6926`
-    have hlow : b + 1 / 2 ≤ 6926 / 10000 := by nlinarith
-    have hvlow : 3415 / 10000 ≤ (1 / 2 - b) / (9 / 10) := by
+  · -- a far square sits low: `b + 1/2 ≤ 7/10`
+    have hlow : b + 1 / 2 ≤ 7 / 10 := by nlinarith
+    have hvlow : 1 / 3 ≤ (1 / 2 - b) / (9 / 10) := by
       rw [le_div_iff₀ (by norm_num)]; linarith
     have hasin : Real.arcsin ((a - 1 / 2) / (9 / 10)) ≤ 77 / 100 := by
       have hs := Real.sin_ge_sub_cube (x := 77 / 100) (by norm_num)

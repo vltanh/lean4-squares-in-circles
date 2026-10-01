@@ -514,7 +514,8 @@ def profiles():
     # Lemma B.20: K increases and is positive at 2/5.
     assert all(diagonal_K(x) < diagonal_K(y) for x, y in
                zip(grid(0.4, PI / 4), grid(0.4, PI / 4)[1:]))
-    assert diagonal_K(0.4) > PI / 5 - 117 / 200 > 0
+    assert abs(-12 / 25 + 51 / 40 * 2 / 15 - 11 / 40 + 0.585) < 1e-12
+    assert diagonal_K(0.4) > PI / 5 - 0.585 > 0
     f = Figure(0, 10.0, 0, 4.0, 70)
     g = Plot(f, (0.9, 0.7, 4.3, 2.9), (0.38, 0.81), (-0.004, 0.056))
     g.axes([(0.4, '2/5'), (PI / 4, 'π/4')],

@@ -91,42 +91,40 @@ lemma southTerm_positive_concave :
 
 /-- Brackets of `cos` and `sin` at `2/5`, `9/10` and `1/10`; those at `1/2` are
 `trig_bracket_half`. -/
-lemma trig_two_fifths : (921:ℝ)/1000 ≤ Real.cos (2/5) ∧ (389:ℝ)/1000 ≤ Real.sin (2/5) ∧
-    Real.sin ((2:ℝ)/5) ≤ 39/100 :=
+lemma trig_two_fifths : (0.921:ℝ) ≤ Real.cos (2/5) ∧ (0.389:ℝ) ≤ Real.sin (2/5) ∧
+    Real.sin ((2:ℝ)/5) ≤ 0.39 :=
   ⟨by nlinarith only [cos_lower_six (x := (2:ℝ)/5) (by norm_num)],
     by nlinarith only [sin_lower_seven (x := (2:ℝ)/5) (by norm_num)],
     by nlinarith only [sin_upper_five (x := (2:ℝ)/5) (by norm_num)]⟩
 
-lemma trig_nine_tenths : (621:ℝ)/1000 ≤ Real.cos (9/10) ∧ (783:ℝ)/1000 ≤ Real.sin (9/10) :=
+lemma trig_nine_tenths : (0.621:ℝ) ≤ Real.cos (9/10) ∧ (0.783:ℝ) ≤ Real.sin (9/10) :=
   ⟨by nlinarith only [cos_lower_six (x := (9:ℝ)/10) (by norm_num)],
     by nlinarith only [sin_lower_seven (x := (9:ℝ)/10) (by norm_num)]⟩
 
-lemma trig_tenth : (199:ℝ)/200 ≤ Real.cos (1/10) ∧ (99:ℝ)/1000 ≤ Real.sin (1/10) :=
+lemma trig_tenth : (0.995:ℝ) ≤ Real.cos (1/10) ∧ (0.099:ℝ) ≤ Real.sin (1/10) :=
   ⟨by nlinarith only [Real.one_sub_sq_div_two_le_cos (x := (1:ℝ)/10)],
     by nlinarith only [sin_lower_seven (x := (1:ℝ)/10) (by norm_num)]⟩
 
-lemma half_root_bounds : (707:ℝ)/1000 ≤ Real.sqrt 2/2 ∧
-    Real.sqrt 2/2 ≤ 177/250 := by
+lemma half_root_bounds : (0.707:ℝ) ≤ Real.sqrt 2/2 ∧ Real.sqrt 2/2 ≤ 0.708 := by
   have hs := Real.sq_sqrt (show (0:ℝ) ≤ 2 by norm_num)
   have hn := Real.sqrt_nonneg (2:ℝ)
   constructor <;> nlinarith
 
+/-- Brackets at `π/4 ± 2/5`, from those at `2/5` and `√2/2 ≥ 0.707`. -/
 lemma quarter_shift_bounds :
-    (375417:ℝ)/1000000 ≤ Real.cos (Real.pi/4+2/5) ∧
-    (92617:ℝ)/100000 ≤ Real.sin (Real.pi/4+2/5) ∧
-    (92617:ℝ)/100000 ≤ Real.cos (Real.pi/4-2/5) ∧
-    (375417:ℝ)/1000000 ≤ Real.sin (Real.pi/4-2/5) ∧
-    (651147:ℝ)/500000 ≤ Real.cos (Real.pi/4+2/5)+Real.sin (Real.pi/4+2/5) := by
+    (0.375:ℝ) ≤ Real.cos (Real.pi/4+2/5) ∧ (0.926:ℝ) ≤ Real.sin (Real.pi/4+2/5) ∧
+    (0.926:ℝ) ≤ Real.cos (Real.pi/4-2/5) ∧ (0.375:ℝ) ≤ Real.sin (Real.pi/4-2/5) ∧
+    (1.302:ℝ) ≤ Real.cos (Real.pi/4+2/5)+Real.sin (Real.pi/4+2/5) := by
   have hm := mul_le_mul half_root_bounds.1
-    (show (531:ℝ)/1000 ≤ Real.cos (2/5)-Real.sin (2/5) by
+    (show (0.531:ℝ) ≤ Real.cos (2/5)-Real.sin (2/5) by
       linarith [trig_two_fifths.1,trig_two_fifths.2.2])
-    (by norm_num : (0:ℝ) ≤ 531/1000) (by positivity : 0 ≤ Real.sqrt 2/2)
+    (by norm_num) (by positivity : 0 ≤ Real.sqrt 2/2)
   have hp := mul_le_mul half_root_bounds.1
-    (show (131:ℝ)/100 ≤ Real.cos (2/5)+Real.sin (2/5) by
+    (show (1.31:ℝ) ≤ Real.cos (2/5)+Real.sin (2/5) by
       linarith [trig_two_fifths.1,trig_two_fifths.2.1])
-    (by norm_num : (0:ℝ) ≤ 131/100) (by positivity : 0 ≤ Real.sqrt 2/2)
+    (by norm_num) (by positivity : 0 ≤ Real.sqrt 2/2)
   have hc := mul_le_mul half_root_bounds.1 trig_two_fifths.1
-    (by norm_num : (0:ℝ) ≤ 921/1000) (by positivity : 0 ≤ Real.sqrt 2/2)
+    (by norm_num) (by positivity : 0 ≤ Real.sqrt 2/2)
   rw [Real.cos_add,Real.sin_add,Real.cos_sub,Real.sin_sub,
     Real.cos_pi_div_four,Real.sin_pi_div_four]
   constructor
@@ -298,16 +296,16 @@ lemma gap_south_concave {w d l u : ℝ}
 
 /-- Upper bounds of the radicals at the twelve points, each by squaring. -/
 private lemma endpoint_root_bounds :
-    Real.sqrt (13+12*Real.sin (1/2)) ≤ 1083/250 ∧
-    Real.sqrt (13+12*Real.sin (Real.pi/4)) ≤ 4637/1000 ∧
-    Real.sqrt (18-18*Real.sin (9/10)) ≤ 1977/1000 ∧
-    Real.sqrt (18-18*Real.sin (1/2)) ≤ 3063/1000 ∧
-    Real.sqrt (18-18*Real.sin (1/10)) ≤ 1007/250 ∧
-    Real.sqrt (18-18*Real.sin (Real.pi/4+2/5)) ≤ 1153/1000 ∧
-    Real.sqrt (18-18*Real.sin (Real.pi/4)) ≤ 2297/1000 ∧
-    Real.sqrt (18-18*Real.sin (Real.pi/4-2/5)) ≤ 3353/1000 ∧
-    Real.sqrt (25-24*Real.sin (-(2/5))) ≤ 2931/500 ∧
-    Real.sqrt (25-24*Real.sin (2/5)) ≤ 1979/500 := by
+    Real.sqrt (13+12*Real.sin (1/2)) ≤ 4.331 ∧
+    Real.sqrt (13+12*Real.sin (Real.pi/4)) ≤ 4.637 ∧
+    Real.sqrt (18-18*Real.sin (9/10)) ≤ 1.977 ∧
+    Real.sqrt (18-18*Real.sin (1/2)) ≤ 3.062 ∧
+    Real.sqrt (18-18*Real.sin (1/10)) ≤ 4.028 ∧
+    Real.sqrt (18-18*Real.sin (Real.pi/4+2/5)) ≤ 1.155 ∧
+    Real.sqrt (18-18*Real.sin (Real.pi/4)) ≤ 2.297 ∧
+    Real.sqrt (18-18*Real.sin (Real.pi/4-2/5)) ≤ 3.355 ∧
+    Real.sqrt (25-24*Real.sin (-(2/5))) ≤ 5.862 ∧
+    Real.sqrt (25-24*Real.sin (2/5)) ≤ 3.958 := by
   refine ⟨?_,?_,?_,?_,?_,?_,?_,?_,?_,?_⟩ <;> refine Real.sqrt_le_iff.mpr ⟨by norm_num,?_⟩
   · nlinarith only [trig_bracket_half.2.2.2]
   · rw [Real.sin_pi_div_four]
@@ -323,24 +321,23 @@ private lemma endpoint_root_bounds :
     nlinarith only [trig_two_fifths.2.2]
   · nlinarith only [trig_two_fifths.2.1]
 
-/-! The twelve points `(westEnd i, southEnd j, diagonalEnd k)`, with rational
+/-! The twelve points `(westEnd i, southEnd j, diagonalEnd k)`, with decimal
 bounds for the values of `cos`, `sin` and the radicals there. -/
 
 def westEnd : Fin 2 → ℝ := ![-2/5,0]
 def southEnd : Fin 3 → ℝ := ![-2/5,0,2/5]
 def diagonalEnd : Fin 2 → ℝ := ![1/2,Real.pi/4]
 
-private def westCosLower : Fin 2 → ℝ := ![921/1000,1]
-private def southCosLower : Fin 3 → ℝ := ![921/1000,1,921/1000]
-private def southNegativeLower : Fin 3 → ℝ := ![389/1000,0,0]
-private def westSumLower : Fin 2 → Fin 2 → ℝ :=
-  ![![351/250,651147/500000],![339/250,707/500]]
+private def westCosLower : Fin 2 → ℝ := ![0.921,1]
+private def southCosLower : Fin 3 → ℝ := ![0.921,1,0.921]
+private def southNegativeLower : Fin 3 → ℝ := ![0.389,0,0]
+private def westSumLower : Fin 2 → Fin 2 → ℝ := ![![1.404,1.302],![1.356,1.414]]
 private def diagonalCosLower : Fin 3 → Fin 2 → ℝ :=
-  ![![621/1000,375417/1000000],![877/1000,707/1000],![199/200,92617/100000]]
-private def westRootUpper : Fin 2 → ℝ := ![1083/250,4637/1000]
+  ![![0.621,0.375],![0.877,0.707],![0.995,0.926]]
+private def westRootUpper : Fin 2 → ℝ := ![4.331,4.637]
 private def diagonalRootUpper : Fin 3 → Fin 2 → ℝ :=
-  ![![1977/1000,1153/1000],![3063/1000,2297/1000],![1007/250,3353/1000]]
-private def southRootUpper : Fin 3 → ℝ := ![2931/500,5,1979/500]
+  ![![1.977,1.155],![3.062,2.297],![4.028,3.355]]
+private def southRootUpper : Fin 3 → ℝ := ![5.862,5,3.958]
 
 private lemma endpoint_trig (i : Fin 2) (j : Fin 3) (k : Fin 2) :
     westCosLower i ≤ Real.cos (westEnd i) ∧
@@ -383,18 +380,19 @@ private lemma endpoint_roots (j : Fin 3) (k : Fin 2) :
       norm_num [diagonalEnd,southEnd,diagonalRootUpper] at * <;> linarith
   · fin_cases j <;> norm_num [southEnd,southRootUpper] at * <;> linarith
 
+/-- The gap at a point with the bounds of the tables, `coreUpper` for `c0` and
+`radiusBound` for `R0`. -/
 private def rationalReserve (i : Fin 2) (j : Fin 3) (k : Fin 2) : ℝ :=
-  9-6*(113/1000)+2*westCosLower i+4*southCosLower j+4*southNegativeLower j+
+  9-6*coreUpper+2*westCosLower i+4*southCosLower j+4*southNegativeLower j+
     3*westSumLower i k+3*diagonalCosLower j k-
-    (1689/1000)*(westRootUpper k+diagonalRootUpper j k+southRootUpper j)
+    radiusBound*(westRootUpper k+diagonalRootUpper j k+southRootUpper j)
 
-/-- At each of the twelve points the rational reserve is at least
-`8839/250000`. -/
 private lemma rationalReserve_positive (i : Fin 2) (j : Fin 3) (k : Fin 2) :
-    (8839:ℝ)/250000 ≤ rationalReserve i j k := by
+    0 < rationalReserve i j k := by
   fin_cases i <;> fin_cases j <;> fin_cases k <;>
     norm_num [rationalReserve,westCosLower,southCosLower,southNegativeLower,
-      westSumLower,diagonalCosLower,westRootUpper,diagonalRootUpper,southRootUpper]
+      westSumLower,diagonalCosLower,westRootUpper,diagonalRootUpper,southRootUpper,
+      radiusBound,coreUpper]
 
 lemma endpoint_positive (i : Fin 2) (j : Fin 3) (k : Fin 2) :
     0 < gap (westEnd i) (southEnd j) (diagonalEnd k) := by
@@ -404,12 +402,9 @@ lemma endpoint_positive (i : Fin 2) (j : Fin 3) (k : Fin 2) :
       Real.sqrt (18-18*Real.sin (diagonalEnd k-southEnd j))+
       Real.sqrt (25-24*Real.sin (southEnd j)) ≤
       westRootUpper k+diagonalRootUpper j k+southRootUpper j := by linarith
-  have hprod := mul_le_mul (show R0 ≤ 1689/1000 by linarith [R0_bounds.2]) hroots
-    (show 0 ≤ Real.sqrt (13+12*Real.sin (diagonalEnd k))+
-      Real.sqrt (18-18*Real.sin (diagonalEnd k-southEnd j))+
-      Real.sqrt (25-24*Real.sin (southEnd j)) by positivity)
-    (by norm_num : (0:ℝ) ≤ 1689/1000)
-  have hc : c0 ≤ 113/1000 := by dsimp [c0]; linarith [rho0_bounds.2]
+  have hprod := mul_le_mul ceiling_bounds.1 hroots (by positivity)
+    (by norm_num [radiusBound] : (0:ℝ) ≤ radiusBound)
+  have hc := ceiling_bounds.2.2.2
   have hres := rationalReserve_positive i j k
   dsimp [gap,southTerm,diagonalTerm,westTerm,rationalReserve] at *
   nlinarith
@@ -629,44 +624,42 @@ lemma chord_norm {q : ℝ} (hq : 0 ≤ q ∧ q ≤ 6/5) :
     Real.sqrt_sq (by positivity)]
 
 private lemma shifted_trig :
-    375417/1000000 ≤ Real.cos (Real.pi/4+2/5) ∧
-    92617/100000 ≤ Real.sin (Real.pi/4+2/5) ∧
-    92617/100000 ≤ Real.cos (Real.pi/4-2/5) ∧
-    375417/1000000 ≤ Real.sin (Real.pi/4-2/5) ∧
-    707/1000 ≤ Real.cos (Real.pi/4) ∧ 707/1000 ≤ Real.sin (Real.pi/4) := by
+    (0.375:ℝ) ≤ Real.cos (Real.pi/4+2/5) ∧ (0.926:ℝ) ≤ Real.sin (Real.pi/4+2/5) ∧
+    (0.926:ℝ) ≤ Real.cos (Real.pi/4-2/5) ∧ (0.375:ℝ) ≤ Real.sin (Real.pi/4-2/5) ∧
+    (0.707:ℝ) ≤ Real.cos (Real.pi/4) ∧ (0.707:ℝ) ≤ Real.sin (Real.pi/4) := by
   obtain ⟨h1,h2,h3,h4,-⟩ := quarter_shift_bounds
   rw [Real.cos_pi_div_four,Real.sin_pi_div_four]
   exact ⟨h1,h2,h3,h4,half_root_bounds.1,half_root_bounds.1⟩
 
+/-- `cos x + sin x` at the two ends `x = 1/2 - 12/25` and `x = π/4 - 12/25` of
+`d - 12/25`; at the second it exceeds its value `5/4` at `3/10`, as it increases
+on `[0, π/4]`. -/
 private lemma width_endpoints :
-    101979/100000 ≤ Real.cos ((1:ℝ)/50)+Real.sin ((1:ℝ)/50) ∧
-    627/500 ≤ Real.cos (Real.pi/4-12/25)+Real.sin (Real.pi/4-12/25) := by
+    (1.019:ℝ) ≤ Real.cos ((1:ℝ)/50)+Real.sin ((1:ℝ)/50) ∧
+    (5/4:ℝ) ≤ Real.cos (Real.pi/4-12/25)+Real.sin (Real.pi/4-12/25) := by
   constructor
   · nlinarith only [Real.one_sub_sq_div_two_le_cos (x := (1:ℝ)/50),
       Real.sin_ge_sub_cube (x := (1:ℝ)/50) (by norm_num)]
-  · have hr : (707:ℝ)/500 ≤ Real.sqrt 2 := by
-      nlinarith [Real.sq_sqrt (show (0:ℝ) ≤ 2 by norm_num),Real.sqrt_nonneg (2:ℝ)]
-    have hc : (8869:ℝ)/10000 ≤ Real.cos (12/25) := by
-      nlinarith only [cos_lower_six (x := (12:ℝ)/25) (by norm_num)]
-    have hp := mul_le_mul hr hc (by norm_num : (0:ℝ) ≤ 8869/10000) (Real.sqrt_nonneg (2:ℝ))
-    rw [Real.cos_sub,Real.sin_sub,Real.cos_pi_div_four,Real.sin_pi_div_four]
-    nlinarith only [hp]
+  · have hm := cos_add_sin_mono (x := 3/10) (y := Real.pi/4-12/25) (by norm_num)
+      (by linarith [Real.pi_gt_d2]) (by linarith)
+    nlinarith only [hm,Real.one_sub_sq_div_two_le_cos (x := (3:ℝ)/10),
+      Real.sin_ge_sub_cube (x := (3:ℝ)/10) (by norm_num)]
 
-/-! The six points `(westEnd i, diagonalEnd j)`, with rational bounds for the
+/-! The six points `(westEnd i, diagonalEnd j)`, with decimal bounds for the
 values there. -/
 
 def westEnd : Fin 3 → ℝ := ![-2/5,0,2/5]
 def diagonalEnd : Fin 2 → ℝ := ![1/2,Real.pi/4]
-private def cosBound : Fin 3 → ℝ := ![921/1000,1,921/1000]
-private def positiveSinBound : Fin 3 → ℝ := ![0,0,389/1000]
-private def westRootBound : Fin 3 → ℝ := ![1979/500,5,2931/500]
+private def cosBound : Fin 3 → ℝ := ![0.921,1,0.921]
+private def positiveSinBound : Fin 3 → ℝ := ![0,0,0.389]
+private def westRootBound : Fin 3 → ℝ := ![3.958,5,5.862]
 private def gapSinBound : Fin 3 → Fin 2 → ℝ :=
-  ![![783/1000,92617/100000],![479/1000,707/1000],![99/1000,375417/1000000]]
+  ![![0.783,0.926],![0.479,0.707],![0.099,0.375]]
 private def gapRootBound : Fin 3 → Fin 2 → ℝ :=
-  ![![653/250,3353/1000],![186/125,2297/1000],![3/10,1153/1000]]
+  ![![2.612,3.355],![1.488,2.297],![0.3,1.155]]
 private def gapCosBound : Fin 3 → Fin 2 → ℝ :=
-  ![![621/1000,375417/1000000],![877/1000,707/1000],![199/200,92617/100000]]
-private def widthBound : Fin 2 → ℝ := ![101979/100000,627/500]
+  ![![0.621,0.375],![0.877,0.707],![0.995,0.926]]
+private def widthBound : Fin 2 → ℝ := ![1.019,5/4]
 
 private lemma endpoint_bounds (i : Fin 3) (j : Fin 2) :
     cosBound i ≤ Real.cos (westEnd i) ∧
@@ -701,14 +694,17 @@ private lemma endpoint_bounds (i : Fin 3) (j : Fin 2) :
   · have hh := width_endpoints
     fin_cases j <;> norm_num [diagonalEnd,widthBound] at * <;> linarith
 
+/-- The gap at a point with the bounds of the tables, `coreUpper` for `c0` and
+`radiusBound` for `R0`. -/
 private def reserve (i : Fin 3) (j : Fin 2) : ℝ :=
-  8-4*(113/1000)-3*(1689/1000)+4*cosBound i+4*positiveSinBound i-
-    (1689/1000)*westRootBound i+3*gapSinBound i j-
-    (1689/1000)*gapRootBound i j+3*widthBound j
+  8-4*coreUpper-3*radiusBound+4*cosBound i+4*positiveSinBound i-
+    radiusBound*westRootBound i+3*gapSinBound i j-
+    radiusBound*gapRootBound i j+3*widthBound j
 
-private lemma reserve_positive (i : Fin 3) (j : Fin 2) : (9569:ℝ)/500000 ≤ reserve i j := by
+private lemma reserve_positive (i : Fin 3) (j : Fin 2) : 0 < reserve i j := by
   fin_cases i <;> fin_cases j <;>
-    norm_num [reserve,cosBound,positiveSinBound,westRootBound,gapSinBound,gapRootBound,widthBound]
+    norm_num [reserve,cosBound,positiveSinBound,westRootBound,gapSinBound,gapRootBound,widthBound,
+      radiusBound,coreUpper]
 
 lemma endpoint_positive (i : Fin 3) (j : Fin 2) : 0 < gap (westEnd i) (diagonalEnd j) := by
   obtain ⟨hc,hs,hrW,hq,hrD,hwidth⟩ := endpoint_bounds i j
@@ -721,10 +717,10 @@ lemma endpoint_positive (i : Fin 3) (j : Fin 2) : 0 < gap (westEnd i) (diagonalE
     (show 3+Real.sqrt (25+24*Real.sin (westEnd i))+
       Real.sqrt (18-18*Real.cos (diagonalEnd j-westEnd i)) ≤
       3+westRootBound i+gapRootBound i j by linarith) R0_nonneg
-  have hr := mul_le_mul_of_nonneg_right (show R0 ≤ 1689/1000 by linarith [R0_bounds.2])
+  have hr := mul_le_mul_of_nonneg_right ceiling_bounds.1
     (show 0 ≤ 3+westRootBound i+gapRootBound i j by
       fin_cases i <;> fin_cases j <;> norm_num [westRootBound,gapRootBound])
-  have hC : c0 ≤ 113/1000 := by dsimp [c0]; linarith [rho0_bounds.2]
+  have hC := ceiling_bounds.2.2.2
   have hp := reserve_positive i j
   dsimp [reserve] at hp
   have hroot' : 6*R0*Real.sin ((diagonalEnd j-westEnd i)/2)=
@@ -815,18 +811,22 @@ end SmallSouth
 namespace LargeSouth
 
 /-! On each side of `v = 0` the angle `v` lies in `[vLower, vUpper]`, and the
-profile has the coefficient `coefficient` of `sin v`. -/
+profile has the coefficient `coefficient` of `sin v`: the far-vertex support of
+W contributes `(12/5) R̄ sin v`, and the threshold of C–W with the half-sum of
+the components of the force on W contributes `2 (|sin v| - sin v)`. -/
 
 def vLower (negative : Bool) : ℝ := if negative then -(2/5) else 0
 def vUpper (negative : Bool) : ℝ := if negative then 0 else 2/5
-def coefficient (negative : Bool) : ℝ := if negative then 67/1250 else 4
+def coefficient (negative : Bool) : ℝ :=
+  if negative then (12/5)*radiusBound-4 else (12/5)*radiusBound
 
-/-- A lower bound for the defect (`profile_le_defect`). -/
+/-- A lower bound for the defect (`profile_le_defect`): the defect with `c0`
+replaced by `coreUpper` and `|sin (d - s)|` by `sin (d - s)`. -/
 def profile (negative : Bool) (v s d : ℝ) : ℝ :=
-  -263/40+(387/100)*Real.cos s+5*Real.sin s+
+  13-5*radiusBound-10*rhoBound+(5-10*coreUpper)*Real.cos s+5*Real.sin s+
     4*Real.cos v+coefficient negative*Real.sin v+
-    3*Real.sin (d+v)-(5067/500)*Real.sin ((d+v)/2)-
-    (1839/1000)*Real.cos (d-s)+(3/2)*Real.sin (d-s)
+    3*Real.sin (d+v)-6*radiusBound*Real.sin ((d+v)/2)-
+    (3*rhoBound-3/2)*Real.cos (d-s)+(3/2)*Real.sin (d-s)
 
 lemma v_bounds {negative : Bool} {v : ℝ}
     (hv : vLower negative ≤ v ∧ v ≤ vUpper negative) :
@@ -841,25 +841,26 @@ private lemma q_bounds {v d : ℝ}
 
 private lemma coefficient_sine_lower {negative : Bool} {v : ℝ}
     (hv : vLower negative ≤ v ∧ v ≤ vUpper negative) :
-    -(67/3125) ≤ coefficient negative*Real.sin v := by
+    -(1/10) ≤ coefficient negative*Real.sin v := by
   cases negative
   · simp only [vLower,vUpper,Bool.false_eq_true,ite_false] at hv
     have hs := Real.sin_nonneg_of_nonneg_of_le_pi hv.1
       (by linarith [hv.2,Real.pi_gt_d2])
-    dsimp [coefficient]
+    dsimp [coefficient,radiusBound]
     linarith
   · simp only [vLower,vUpper,ite_true] at hv
     have hs := Real.sin_le (show 0 ≤ -v by linarith [hv.2])
     rw [Real.sin_neg] at hs
-    dsimp [coefficient]
+    dsimp [coefficient,radiusBound]
     linarith [hv.1]
 
-/-- The derivative of the profile in `d` is nonpositive. -/
+/-- The derivative of the profile in `d` is nonpositive: `3 cos q - 3 R̄ cos (q/2)`
+is at most `3 - 3 R̄`, and `sin (d - s) ≤ 11/14 - 12/25`. -/
 lemma diagonal_derivative_nonpositive {v s d : ℝ}
     (hv : -(2/5) ≤ v ∧ v ≤ 2/5)
     (hs : 12/25 ≤ s ∧ s ≤ 2/3) (hd : 1/2 ≤ d ∧ d ≤ 11/14) :
-    3*Real.cos (d+v)-(5067/1000)*Real.cos ((d+v)/2)+
-      (1839/1000)*Real.sin (d-s)+(3/2)*Real.cos (d-s) ≤ 0 := by
+    3*Real.cos (d+v)-3*radiusBound*Real.cos ((d+v)/2)+
+      (3*rhoBound-3/2)*Real.sin (d-s)+(3/2)*Real.cos (d-s) ≤ 0 := by
   have hq := q_bounds hv hd
   have hc0 : 0 ≤ Real.cos ((d+v)/2) := Real.cos_nonneg_of_mem_Icc
     ⟨by linarith [hq.1,Real.pi_pos],by linarith [hq.2,Real.pi_gt_d2]⟩
@@ -869,16 +870,18 @@ lemma diagonal_derivative_nonpositive {v s d : ℝ}
     nlinarith only [h,Real.sin_sq_add_cos_sq ((d+v)/2)]
   have hp := mul_nonpos_of_nonpos_of_nonneg
     (show Real.cos ((d+v)/2)-1 ≤ 0 by linarith [Real.cos_le_one ((d+v)/2)])
-    (show 0 ≤ 6*(Real.cos ((d+v)/2)+1)-5067/1000 by linarith)
-  have hchord : 3*Real.cos (d+v)-(5067/1000)*Real.cos ((d+v)/2) ≤
-      -(2067/1000) := by nlinarith only [hid,hp]
-  have hrlo : -(1/6) ≤ d-s := by linarith [hd.1,hs.2]
-  have hrhi : d-s ≤ 107/350 := by linarith [hd.2,hs.1]
+    (show 0 ≤ 6*(Real.cos ((d+v)/2)+1)-3*radiusBound by norm_num [radiusBound]; linarith)
+  have hchord : 3*Real.cos (d+v)-3*radiusBound*Real.cos ((d+v)/2) ≤ 3-3*radiusBound := by
+    nlinarith only [hid,hp]
+  have hrhi : d-s ≤ 11/14-12/25 := by linarith [hd.2,hs.1]
   have hmono := Real.sin_le_sin_of_le_of_le_pi_div_two
     (show -(Real.pi/2) ≤ d-s by linarith [Real.pi_gt_d2])
-    (show (107:ℝ)/350 ≤ Real.pi/2 by linarith [Real.pi_gt_d2]) hrhi
-  have hsin : Real.sin (d-s) ≤ 107/350 :=
+    (show (11/14-12/25:ℝ) ≤ Real.pi/2 by linarith [Real.pi_gt_d2]) hrhi
+  have hsin : Real.sin (d-s) ≤ 11/14-12/25 :=
     hmono.trans (Real.sin_le (by norm_num))
+  have hr := mul_le_mul_of_nonneg_left hsin (show 0 ≤ 3*rhoBound-3/2 by norm_num [rhoBound])
+  have hR : 3-3*radiusBound+(3*rhoBound-3/2)*(11/14-12/25)+3/2 ≤ 0 := by
+    norm_num [radiusBound,rhoBound]
   linarith [Real.cos_le_one (d-s)]
 
 lemma profile_at_upper_diagonal {negative : Bool} {v s d : ℝ}
@@ -886,14 +889,14 @@ lemma profile_at_upper_diagonal {negative : Bool} {v s d : ℝ}
     (hs : 12/25 ≤ s ∧ s ≤ 2/3) (hd : 1/2 ≤ d ∧ d ≤ 11/14) :
     profile negative v s (11/14) ≤ profile negative v s d := by
   let D : ℝ → ℝ := fun x =>
-    3*Real.cos (x+v)-(5067/1000)*Real.cos ((x+v)/2)+
-      (1839/1000)*Real.sin (x-s)+(3/2)*Real.cos (x-s)
+    3*Real.cos (x+v)-3*radiusBound*Real.cos ((x+v)/2)+
+      (3*rhoBound-3/2)*Real.sin (x-s)+(3/2)*Real.cos (x-s)
   have hf (x : ℝ) : HasDerivAt (profile negative v s) (D x) x := by
-    let K := -263/40+(387/100)*Real.cos s+5*Real.sin s+
+    let K := 13-5*radiusBound-10*rhoBound+(5-10*coreUpper)*Real.cos s+5*Real.sin s+
       4*Real.cos v+coefficient negative*Real.sin v
     have h := (((((((hasDerivAt_id' x).add_const v).sin).const_mul 3).fun_sub
-      (((((hasDerivAt_id' x).add_const v).div_const 2).sin).const_mul (5067/500))).fun_sub
-      ((((hasDerivAt_id' x).sub_const s).cos).const_mul (1839/1000))).fun_add
+      (((((hasDerivAt_id' x).add_const v).div_const 2).sin).const_mul (6*radiusBound))).fun_sub
+      ((((hasDerivAt_id' x).sub_const s).cos).const_mul (3*rhoBound-3/2))).fun_add
       ((((hasDerivAt_id' x).sub_const s).sin).const_mul (3/2))).const_add K
     convert h using 1
     · funext y
@@ -915,16 +918,16 @@ lemma profile_v_concave (negative : Bool) {s d : ℝ}
     ConcaveOn ℝ (Set.Icc (vLower negative) (vUpper negative))
       (fun v => profile negative v s d) := by
   let f' : ℝ → ℝ := fun v => -4*Real.sin v+coefficient negative*Real.cos v+
-    3*Real.cos (d+v)-(5067/1000)*Real.cos ((d+v)/2)
+    3*Real.cos (d+v)-3*radiusBound*Real.cos ((d+v)/2)
   let f'' : ℝ → ℝ := fun v => -4*Real.cos v-coefficient negative*Real.sin v-
-    3*Real.sin (d+v)+(5067/2000)*Real.sin ((d+v)/2)
+    3*Real.sin (d+v)+(3/2)*radiusBound*Real.sin ((d+v)/2)
   have hf (v : ℝ) : HasDerivAt (fun x => profile negative x s d) (f' v) v := by
-    let K := -263/40+(387/100)*Real.cos s+5*Real.sin s-
-      (1839/1000)*Real.cos (d-s)+(3/2)*Real.sin (d-s)
+    let K := 13-5*radiusBound-10*rhoBound+(5-10*coreUpper)*Real.cos s+5*Real.sin s-
+      (3*rhoBound-3/2)*Real.cos (d-s)+(3/2)*Real.sin (d-s)
     have h := (((((Real.hasDerivAt_cos v).const_mul 4).fun_add
       ((Real.hasDerivAt_sin v).const_mul (coefficient negative))).fun_add
       ((((hasDerivAt_id' v).const_add d).sin).const_mul 3)).fun_sub
-      (((((hasDerivAt_id' v).const_add d).div_const 2).sin).const_mul (5067/500))).const_add K
+      (((((hasDerivAt_id' v).const_add d).div_const 2).sin).const_mul (6*radiusBound))).const_add K
     convert h using 1
     · funext y
       simp only [profile,K]
@@ -935,7 +938,7 @@ lemma profile_v_concave (negative : Bool) {s d : ℝ}
     exact (((((Real.hasDerivAt_sin v).const_mul (-4)).fun_add
       ((Real.hasDerivAt_cos v).const_mul (coefficient negative))).fun_add
       ((((hasDerivAt_id' v).const_add d).cos).const_mul 3)).fun_sub
-      (((((hasDerivAt_id' v).const_add d).div_const 2).cos).const_mul (5067/1000))).congr_deriv
+      (((((hasDerivAt_id' v).const_add d).div_const 2).cos).const_mul (3*radiusBound))).congr_deriv
       (by simp only [f'']; ring)
   refine concave_of_deriv2 (fun x _ => hf x) (fun x _ => hff x) fun v hmem => ?_
   have hraw := v_bounds hmem
@@ -944,36 +947,38 @@ lemma profile_v_concave (negative : Bool) {s d : ℝ}
   have hsin := Real.sin_nonneg_of_nonneg_of_le_pi hq.1
     (by linarith [hq.2,Real.pi_gt_d2])
   have hb := coefficient_sine_lower hmem
+  have hR : (3/2)*radiusBound*Real.sin ((d+v)/2) ≤ 3 := by
+    norm_num [radiusBound]; linarith [Real.sin_le_one ((d+v)/2)]
   dsimp [f'']
-  linarith [Real.sin_le_one ((d+v)/2)]
+  linarith
 
 private lemma extend_s {negative : Bool} {v s d : ℝ}
     (hs : 12/25 ≤ s ∧ s ≤ 2/3)
     (hleft : 0 < profile negative v (12/25) d)
     (hright : 0 < profile negative v (2/3) d) :
     0 < profile negative v s d := by
-  let A := 387/100-(1839/1000)*Real.cos d+(3/2)*Real.sin d
-  let B := 5-(1839/1000)*Real.sin d-(3/2)*Real.cos d
-  let K := -263/40+4*Real.cos v+coefficient negative*Real.sin v+
-    3*Real.sin (d+v)-(5067/500)*Real.sin ((d+v)/2)
+  let A := 5-10*coreUpper-(3*rhoBound-3/2)*Real.cos d+(3/2)*Real.sin d
+  let B := 5-(3*rhoBound-3/2)*Real.sin d-(3/2)*Real.cos d
+  let K := 13-5*radiusBound-10*rhoBound+4*Real.cos v+coefficient negative*Real.sin v+
+    3*Real.sin (d+v)-6*radiusBound*Real.sin ((d+v)/2)
   have hid (x : ℝ) : profile negative v x d=K+A*Real.cos x+B*Real.sin x := by
     dsimp [profile,K,A,B]
     rw [Real.cos_sub,Real.sin_sub]
     ring
   have hA : 0 ≤ A := by
-    dsimp [A]
+    dsimp [A,coreUpper,rhoBound]
     linarith [Real.cos_le_one d,Real.neg_one_le_sin d]
   have hB : 0 ≤ B := by
-    dsimp [B]
+    dsimp [B,rhoBound]
     linarith [Real.sin_le_one d,Real.cos_le_one d]
   rw [hid] at hleft hright ⊢
   exact harmonic_pos_of_endpoints hA hB (by norm_num) (by linarith [Real.pi_gt_d2]) hs hleft hright
 
 private def endpointPolynomial (negative : Bool) (v s : ℝ) : ℝ :=
-  -263/40+(387/100)*cosLower s+5*sinBelow s+
+  13-5*radiusBound-10*rhoBound+(5-10*coreUpper)*cosLower s+5*sinBelow s+
     4*cosLower v+coefficient negative*sinBelow v+
-    3*sinBelow (11/14+v)-(5067/500)*sinUpper ((11/14+v)/2)-
-    (1839/1000)*cosUpper (11/14-s)+(3/2)*sinBelow (11/14-s)
+    3*sinBelow (11/14+v)-6*radiusBound*sinUpper ((11/14+v)/2)-
+    (3*rhoBound-3/2)*cosUpper (11/14-s)+(3/2)*sinBelow (11/14-s)
 
 private lemma endpointPolynomial_le {negative : Bool} {v s : ℝ} (hq : 0 ≤ 11/14+v) :
     endpointPolynomial negative v s ≤ profile negative v s (11/14) := by
@@ -985,7 +990,8 @@ private lemma endpointPolynomial_le {negative : Bool} {v s : ℝ} (hq : 0 ≤ 11
   have sh := le_sinUpper (x := (11/14+v)/2) (by linarith)
   have cr := le_cosUpper (11/14-s)
   have sr := sinBelow_le (11/14-s)
-  cases negative <;> dsimp [endpointPolynomial,profile,coefficient] <;>
+  cases negative <;>
+    dsimp [endpointPolynomial,profile,coefficient,radiusBound,rhoBound,coreUpper] <;>
     nlinarith only [cs,ss,cv,sv,sq,sh,cr,sr]
 
 /-- The profile is positive at the corners of the domain with `d = 11/14`. -/
@@ -996,7 +1002,7 @@ private lemma corner (negative : Bool) (v s : ℝ)
   all_goals
     apply lt_of_lt_of_le _ (endpointPolynomial_le (by norm_num [vLower,vUpper]))
     norm_num [endpointPolynomial,coefficient,vLower,vUpper,cosLower,cosUpper,sinBelow,
-      sinLower,sinUpper]
+      sinLower,sinUpper,radiusBound,rhoBound,coreUpper]
 
 /-- The profile is positive on its domain. -/
 theorem positive (negative : Bool) {v s d : ℝ}
@@ -1083,7 +1089,7 @@ private lemma sine_term_lower {negative : Bool} {v : ℝ}
     have hs := Real.sin_nonneg_of_nonneg_of_le_pi hv.1
       (by linarith [hv.2,Real.pi_gt_d2])
     rw [abs_of_nonneg hs]
-    dsimp [coefficient,radiusBound]
+    dsimp [coefficient]
     linarith
   · simp only [vLower,vUpper,ite_true] at hv
     have hs := Real.sin_nonneg_of_nonneg_of_le_pi
@@ -1091,7 +1097,7 @@ private lemma sine_term_lower {negative : Bool} {v : ℝ}
       (show -v ≤ Real.pi by linarith [hv.1,Real.pi_gt_d2])
     rw [Real.sin_neg] at hs
     rw [abs_of_nonpos (by linarith : Real.sin v ≤ 0)]
-    dsimp [coefficient,radiusBound]
+    dsimp [coefficient]
     linarith
 
 /-- The profile is a lower bound for the defect on its domain. -/
@@ -1102,19 +1108,14 @@ lemma profile_le_defect (negative : Bool) {v s d : ℝ}
   have hraw := v_bounds hv
   have hq : 0 ≤ d+v ∧ d+v ≤ Real.pi/2 := by
     constructor <;> linarith [hraw.1,hraw.2,hd.1,hd.2,Real.pi_gt_d2]
-  have hsh := (cos_sin_nonneg (x := (d+v)/2) ⟨by linarith,by linarith⟩).2
-  have hcr := Real.cos_nonneg_of_mem_Icc
-    (show d-s ∈ Set.Icc (-(Real.pi/2)) (Real.pi/2) by
-      constructor <;> linarith [hs.1,hs.2,hd.1,hd.2,Real.pi_gt_d2])
-  have hC := mul_nonneg (show 0 ≤ 1113/1000-rho0 by linarith [rho0_bounds.2]) (south_trig hs).1
+  have hC := mul_le_mul_of_nonneg_right ceiling_bounds.2.2.2 (south_trig hs).1
   have hV := sine_term_lower hv
   have hW : angularWidth v=(Real.cos v+|Real.sin v|)/2 := by
     rw [angularWidth,abs_of_nonneg (by linarith [cos_small hraw] : 0 ≤ Real.cos v)]
-  dsimp [profile,defect,totalThreshold,westUpper,diagonalUpper,c0,
-    radiusBound,rhoBound] at hV ⊢
+  dsimp [profile,defect,totalThreshold,westUpper,diagonalUpper]
   rw [hW,angularWidth_eq (x := s) ⟨by linarith [hs.1],by linarith [hs.2,Real.pi_gt_d2]⟩,
     angularWidth_eq hq]
-  linarith [angularWidth_lower (d-s),hC,hV,hsh,hcr]
+  linarith [angularWidth_lower (d-s),hC,hV]
 
 /-- With W separated from C along the west side of C and S along its own axis at
 an angle `s ≥ 12/25`, the separations of a missing south wing are

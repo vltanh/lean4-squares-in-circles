@@ -15,9 +15,10 @@ a corner of the cap, and at most the far-vertex value
 lines of the two pairs plus the thresholds less this support plus `2 pairBase`,
 is nonnegative and vanishes only at `w = s = 0`, `d = π/4`. In the cap case it
 is at least `(3/200)(|w| + |s|)`, by Taylor bounds in `β` and `δ`. In the vertex
-case `|δ| ≥ 29/100`, so `|w + s|` is large, and a minorant concave in `|δ|` is
-positive at both ends of its range, at one end through two quartics above their
-chords.
+case `|δ| ≥ 29/100`, so `|w + s| ≥ 2|δ| - 4/7` is large; with the radius and
+`rhoStar` replaced by `1.689` and `1.112`, the remainder is bounded below on three
+pieces of the range of `|δ|` by first harmonics in `|δ|` plus affine functions,
+which are concave and positive at the ends of their pieces.
 -/
 
 noncomputable section
@@ -259,14 +260,12 @@ theorem diagonal_cap_lower {w s d : ℝ} (hdom : DiagonalDomain w s d) :
   · have hb0 : 0≤b := (lt_of_not_ge hb).le
     have hb1 : b≤2/5 := hparams.1.2
     have hbsq : b^2≤4/25 := by nlinarith only [hb0,hb1]
-    have hzsq : z^2≤5041/10000 := by
+    have hzsq : z^2≤(71/100)^2 := by
       have hh := pow_le_pow_left₀ (abs_nonneg z) hparams.2.1 2
-      rw [sq_abs] at hh
-      norm_num at hh
-      exact hh
+      rwa [sq_abs] at hh
     let q := b^2/6+z^2/2
     have hq0 : 0≤q := by positivity
-    have hq1 : q≤16723/60000 := by dsimp [q]; linarith
+    have hq1 : q≤7/25 := by dsimp [q]; linarith
     have hTq := mul_le_mul hT.2.le hq1 hq0 (by norm_num : (0:ℝ)≤141/100)
     have hcoef : 0≤T-98/100-T*q := by linarith [hT.1]
     have hsinlo := Real.sin_ge_sub_cube hb0
@@ -315,148 +314,73 @@ theorem diagonal_cap_zero {w s d : ℝ} (hdom : DiagonalDomain w s d)
 /-! ### The vertex case -/
 
 /-- A minorant of the remainder in the vertex case, in `x = |w + s|/2`, `y = |β|`
-and `t = |δ|`, with the radius and `rhoStar` replaced by `8443/5000` and
-`1391/1250`; in `t` a constant plus `A cos t + B sin t` with `A, B ≥ 0`. -/
+and `t = |δ|`, with the radius and `rhoStar` replaced by `1.689` and `1.112`. -/
 def vertexMinorant (x y t : ℝ) : ℝ :=
-  (9/25)*max x y+(77/100)*y+
-    (3/2+y/2)*Real.cos t+(1/2+y/2)*Real.sin t-
-    (8443/5000)*(1+y)+1391/1250-1
+  (9/25)*max x y+(77/100)*y+(3/2+y/2)*Real.cos t+(1/2+y/2)*Real.sin t-1.689*(1+y)+1.112-1
 
-private def minorantPenalty (t : ℝ) : ℝ := 4593/5000-(Real.cos t+Real.sin t)/2
-private def minorantBase (t : ℝ) : ℝ := (3/2)*Real.cos t+(1/2)*Real.sin t-7879/5000
-
-private lemma minorant_decomposition (x y t : ℝ) :
-    vertexMinorant x y t=minorantBase t+(9/25)*max x y-minorantPenalty t*y := by
-  dsimp [vertexMinorant,minorantBase,minorantPenalty]
-  ring
-
-private lemma minorant_penalty_bounds {t : ℝ} (ht : 2/7≤t ∧ t≤3/4) :
-    0≤minorantPenalty t ∧ minorantPenalty t≤9/25 := by
-  have ht0 : 0≤t := by linarith [ht.1]
-  have hsq := mul_nonneg (sub_nonneg.mpr ht.2)
-    (show 0≤3/4+t by linarith [ht.1])
-  have hcoef : 0≤1/2-t/2-t^2/6 := by nlinarith [ht.2]
-  have hp := mul_nonneg ht0 hcoef
-  have hs := Real.sin_ge_sub_cube ht0
-  have hc := Real.one_sub_sq_div_two_le_cos (x := t)
-  have hlow : 1+t/2≤Real.cos t+Real.sin t := by nlinarith only [hp,hs,hc]
-  have hhigh : Real.cos t+Real.sin t≤3/2 := by
-    nlinarith [Real.sin_sq_add_cos_sq t,sq_nonneg (Real.cos t-Real.sin t)]
-  dsimp [minorantPenalty]
-  constructor <;> linarith [hlow,hhigh,ht.1]
-
-private lemma minorant_base_left : 0<minorantBase (29/100) := by
-  have hs := Real.sin_ge_sub_cube (x := (29:ℝ)/100) (by norm_num)
-  have hc := Real.one_sub_sq_div_two_le_cos (x := (29:ℝ)/100)
-  dsimp [minorantBase]
-  nlinarith only [hs,hc]
-
-private def smallBoundary (x : ℝ) : ℝ :=
-  (3/2+x/2)*(1-(2/7+x)^2/2)+
-    (1/2+x/2)*((2/7+x)-(2/7+x)^3/6)-7879/5000-(2793/5000)*x
-
-private def largeBoundary (x : ℝ) : ℝ :=
-  (43/25-x/2)*(1-(2/7+x)^2/2)+
-    (18/25-x/2)*((2/7+x)-(2/7+x)^3/6)-
-    7879/5000+(9/25)*x-(4593/5000)*(11/25-x)
-
-private lemma small_boundary_pos {x : ℝ} (hx : 0≤x ∧ x≤11/50) :
-    0<smallBoundary x := by
-  have hid : smallBoundary x=
-      quartic (-2067/35000) (10449/35000) (-5/28) (-13/42) (-1/12) (2/7+x) := by
-    dsimp [smallBoundary,quartic]
-    ring
-  rw [hid]
-  apply quartic_positive_of_chord (l := (2:ℝ)/7) (u := (177:ℝ)/350)
-  · norm_num
-  · constructor <;> linarith [hx.1,hx.2]
-  · norm_num [quartic]
-  · norm_num [quartic]
-  · have hT : 0≤2/7+x := by linarith [hx.1]
-    nlinarith [sq_nonneg (2/7+x)]
-
-private lemma large_boundary_pos {x : ℝ} (hx : 11/50≤x ∧ x≤11/25) :
-    0<largeBoundary x := by
-  have hid : largeBoundary x=
-      quartic (-52767/109375) (57451/35000) (-501/350)
-        (223/2100) (1/12) (2/7+x) := by
-    dsimp [largeBoundary,quartic]
-    ring
-  rw [hid]
-  apply quartic_positive_of_chord (l := (177:ℝ)/350) (u := (127:ℝ)/175)
-  · norm_num
-  · constructor <;> linarith [hx.1,hx.2]
-  · norm_num [quartic]
-  · norm_num [quartic]
-  · have hT0 : 0≤2/7+x := by linarith [hx.1]
-    have hT1 : 2/7+x≤3/4 := by linarith [hx.2]
-    have hsq := mul_nonneg (sub_nonneg.mpr hT1)
-      (show 0≤3/4+(2/7+x) by linarith)
-    nlinarith
-
-private lemma minorant_left {x y : ℝ} (hy : 0≤y) :
-    0<vertexMinorant x y (29/100) := by
-  have hp := minorant_penalty_bounds (t := (29:ℝ)/100) (by constructor <;> norm_num)
-  have hM := mul_nonneg (show (0:ℝ)≤9/25 by norm_num)
-    (sub_nonneg.mpr (le_max_right x y))
-  have hY := mul_nonneg (sub_nonneg.mpr hp.2) hy
-  rw [minorant_decomposition]
-  nlinarith only [minorant_base_left,hM,hY]
-
-private lemma minorant_right {x y : ℝ}
-    (hx : 0≤x) (hy : 0≤y) (hdiamond : x+y≤11/25) :
-    0<vertexMinorant x y (2/7+x) := by
-  let t := 2/7+x
-  have hxb : x≤11/25 := by linarith
-  have ht : 2/7≤t ∧ t≤3/4 := by dsimp [t]; constructor <;> linarith
-  have hp := minorant_penalty_bounds ht
-  have hc := Real.one_sub_sq_div_two_le_cos (x := t)
-  have hs := Real.sin_ge_sub_cube (show 0≤t by linarith [ht.1])
-  rw [minorant_decomposition]
-  change 0<minorantBase t+(9/25)*max x y-minorantPenalty t*y
-  by_cases hsmall : x≤11/50
-  · have hM1 := mul_nonneg (sub_nonneg.mpr hp.2) (sub_nonneg.mpr (le_max_left x y))
-    have hM2 := mul_nonneg hp.1 (sub_nonneg.mpr (le_max_right x y))
-    have hC := mul_le_mul_of_nonneg_left hc (show 0≤3/2+x/2 by linarith)
-    have hS := mul_le_mul_of_nonneg_left hs (show 0≤1/2+x/2 by linarith)
-    have hpositive := small_boundary_pos ⟨hx,hsmall⟩
-    have hid : smallBoundary x=(3/2+x/2)*(1-t^2/2)+
-        (1/2+x/2)*(t-t^3/6)-7879/5000-(2793/5000)*x := rfl
-    rw [hid] at hpositive
-    dsimp [minorantBase,minorantPenalty] at *
-    nlinarith only [hM1,hM2,hC,hS,hpositive]
-  · have hM := mul_nonneg (show (0:ℝ)≤9/25 by norm_num)
-      (sub_nonneg.mpr (le_max_left x y))
-    have hY := mul_nonneg hp.1 (show 0≤11/25-x-y by linarith)
-    have hC := mul_le_mul_of_nonneg_left hc (show 0≤43/25-x/2 by linarith)
-    have hS := mul_le_mul_of_nonneg_left hs (show 0≤18/25-x/2 by linarith)
-    have hpositive := large_boundary_pos ⟨(lt_of_not_ge hsmall).le,hxb⟩
-    have hid : largeBoundary x=(43/25-x/2)*(1-t^2/2)+
-        (18/25-x/2)*(t-t^3/6)-7879/5000+(9/25)*x-(4593/5000)*(11/25-x) := rfl
-    rw [hid] at hpositive
-    dsimp [minorantBase,minorantPenalty] at *
-    nlinarith only [hM,hY,hC,hS,hpositive]
-
-/-- The minorant is positive on the diamond `x, y ≥ 0`, `x + y ≤ 11/25`, for
-`29/100 ≤ t ≤ 2/7 + x`. -/
-theorem vertexMinorant_pos {x y t : ℝ}
-    (hx : 0≤x) (hy : 0≤y) (hdiamond : x+y≤11/25)
+/-- The minorant is positive for `y ≥ 0`, `x + y ≤ 11/25` and `29/100 ≤ t ≤ 2/7 + x`.
+It is `(3/2) cos t + (1/2) sin t - 1.577 + (9/25) max x y - p y` with
+`p = 0.919 - (cos t + sin t)/2`, which decreases in `t`. On each of the pieces
+`[29/100, 11/25]`, `[11/25, 1/2]` and `[1/2, 3/4]` freeze `p` at the left end; as
+`x ≥ t - 2/7`, the minorant is at least `(3/2) cos t + (1/2) sin t - 1.577` plus
+`(9/25 - p) (t - 2/7)` on the first two pieces, and plus
+`(9/25) (t - 2/7) - p (11/25 - (t - 2/7))` on the third, where `y ≤ 11/25 - x`. These
+are concave in `t` and positive at the ends of their pieces. -/
+theorem vertexMinorant_pos {x y t : ℝ} (hy : 0≤y) (hdiamond : x+y≤11/25)
     (ht : 29/100≤t ∧ t≤2/7+x) : 0<vertexMinorant x y t := by
-  have hleft := minorant_left (x := x) hy
-  have hright := minorant_right hx hy hdiamond
-  have hh := harmonic_pos_of_endpoints
-    (K := -((8443/5000)*(1+y)-1391/1250+1-(9/25)*max x y-(77/100)*y))
-    (A := 3/2+y/2) (B := 1/2+y/2) (l := (29:ℝ)/100) (u := 2/7+x)
-    (by linarith) (by linarith) (by norm_num)
-    (by linarith [Real.pi_gt_d2]) ht
-    (by dsimp [vertexMinorant] at hleft; linarith)
-    (by dsimp [vertexMinorant] at hright; linarith)
-  dsimp [vertexMinorant]
-  linarith
+  have hpi := Real.pi_gt_d2
+  have hM1 := le_max_left x y
+  have hM2 := le_max_right x y
+  have hV : vertexMinorant x y t=(3/2)*Real.cos t+(1/2)*Real.sin t-1.577+(9/25)*max x y-
+      (0.919-(Real.cos t+Real.sin t)/2)*y := by
+    dsimp [vertexMinorant]
+    ring
+  have hp (l : ℝ) (hl : 0≤l) (hlt : l≤t) :
+      (0.919-(Real.cos t+Real.sin t)/2)*y≤(0.919-(Real.cos l+Real.sin l)/2)*y :=
+    mul_le_mul_of_nonneg_right (by linarith [cos_add_sin_mono hl hlt (by linarith)]) hy
+  obtain ⟨s1,s1',c1,c1'⟩ := trig_bracket (l := 29/100) (u := 29/100) (x := 29/100)
+    (by norm_num) (by linarith) ⟨le_rfl,le_rfl⟩
+  obtain ⟨s2,s2',c2,c2'⟩ := trig_bracket (l := 11/25) (u := 11/25) (x := 11/25)
+    (by norm_num) (by linarith) ⟨le_rfl,le_rfl⟩
+  obtain ⟨s3,s3',c3,c3'⟩ := trig_bracket (l := 1/2) (u := 1/2) (x := 1/2)
+    (by norm_num) (by linarith) ⟨le_rfl,le_rfl⟩
+  obtain ⟨s4,-,c4,-⟩ := trig_bracket (l := 3/4) (u := 3/4) (x := 3/4)
+    (by norm_num) (by linarith) ⟨le_rfl,le_rfl⟩
+  norm_num at s1 s1' c1 c1' s2 s2' c2 c2' s3 s3' c3 c3' s4 c4
+  rw [hV]
+  have hx0 : 0≤x-(t-2/7) := by linarith
+  rcases le_total t (11/25) with h1 | h1
+  · have hq := hp (29/100) (by norm_num) ht.1
+    set p := 0.919-(Real.cos (29/100)+Real.sin (29/100))/2 with hpdef
+    have hp0 : 0≤p := by linarith
+    have hp1 : 0≤9/25-p := by linarith
+    have hc := trig_concave_gt (α := 9/25-p) (A := 1/2) (B := 3/2) (m := 1.577+(9/25-p)*(2/7))
+      (l := 29/100) (u := 11/25) (x := t) (by norm_num) (by norm_num) (by norm_num)
+      (by linarith) ⟨ht.1,h1⟩ (by linarith) (by linarith)
+    linarith [mul_nonneg hp0 (sub_nonneg.mpr hM2),mul_nonneg hp1 (sub_nonneg.mpr hM1),
+      mul_nonneg hp1 hx0]
+  rcases le_total t (1/2) with h2 | h2
+  · have hq := hp (11/25) (by norm_num) h1
+    set p := 0.919-(Real.cos (11/25)+Real.sin (11/25))/2 with hpdef
+    have hp0 : 0≤p := by linarith
+    have hp1 : 0≤9/25-p := by linarith
+    have hc := trig_concave_gt (α := 9/25-p) (A := 1/2) (B := 3/2) (m := 1.577+(9/25-p)*(2/7))
+      (l := 11/25) (u := 1/2) (x := t) (by norm_num) (by norm_num) (by norm_num)
+      (by linarith) ⟨h1,h2⟩ (by linarith) (by linarith)
+    linarith [mul_nonneg hp0 (sub_nonneg.mpr hM2),mul_nonneg hp1 (sub_nonneg.mpr hM1),
+      mul_nonneg hp1 hx0]
+  · have hq := hp (1/2) (by norm_num) h2
+    set p := 0.919-(Real.cos (1/2)+Real.sin (1/2))/2 with hpdef
+    have hp0 : 0≤p := by linarith
+    have hc := trig_concave_gt (α := 9/25+p) (A := 1/2) (B := 3/2)
+      (m := 1.577+(9/25+p)*(2/7)+(11/25)*p) (l := 1/2) (u := 3/4) (x := t) (by norm_num)
+      (by norm_num) (by norm_num) (by linarith) ⟨h2,by linarith⟩ (by linarith) (by linarith)
+    linarith [mul_nonneg hp0 (show 0≤11/25-x-y by linarith),
+      mul_nonneg (show 0≤9/25+p by linarith) hx0]
 
 private lemma vertex_expression_pos {K R rho x b t : ℝ}
-    (hKlo : 5/4≤K) (hKhi : K≤253/200)
-    (hRlo : 8/5≤R) (hRhi : R≤8443/5000) (hrho : 1391/1250≤rho)
+    (hKlo : 5/4≤K) (hKhi : K≤127/100)
+    (hRlo : 8/5≤R) (hRhi : R≤1.689) (hrho : 1.112≤rho)
     (hx : 0≤x) (hdiamond : x+|b|≤11/25)
     (ht : 29/100≤t ∧ t≤2/7+x) :
     0<(46/100)*max x |b|-(98/100)*b+
@@ -518,13 +442,13 @@ private lemma vertex_expression_pos {K R rho x b t : ℝ}
   have hid : (46/100)*M+(98/100)*y+K*(A-B*y+rho-1)-
       K*vertexMinorant x y t =
       (46/100-(9/25)*K)*M+(98/100-(77/100)*K)*y+
-      K*(8443/5000-R)*(1+y)+K*(rho-1391/1250) := by
+      K*(1.689-R)*(1+y)+K*(rho-1.112) := by
     dsimp [A,B,M,vertexMinorant]
     ring
   have hminorant : K*vertexMinorant x y t≤
       (46/100)*M+(98/100)*y+K*(A-B*y+rho-1) := by
     nlinarith only [hid,hM,hY,hRad,hRho]
-  have hpos := mul_pos hK0 (vertexMinorant_pos hx hy0 hdiamond ht)
+  have hpos := mul_pos hK0 (vertexMinorant_pos hy0 hdiamond ht)
   have hresult := hpos.trans_le (hminorant.trans htrig)
   have he : (3*Real.cos b-Real.sin b)*Real.cos t/2+
       (Real.cos b-Real.sin b)*Real.sin t/2-R*(Real.cos b-Real.sin b)+rho-1=
@@ -575,8 +499,8 @@ theorem diagonal_vertex_pos {w s d : ℝ} (hd : DiagonalDomain w s d)
   have hR := radius_bounds
   have hK := diagonalK_bounds
   have hsin := Real.abs_sin_le_abs (x := z)
-  have hprod := mul_le_mul hR.2.le hsin (abs_nonneg (Real.sin z))
-    (by norm_num : (0:ℝ)≤16885431/10000000)
+  have hprod := mul_le_mul (show Six.radius≤17/10 by linarith [hR.2]) hsin
+    (abs_nonneg (Real.sin z)) (by norm_num)
   have htlo : 29/100≤t := by
     change 1≤2*Six.radius*|Real.sin z| at hv
     dsimp [t]

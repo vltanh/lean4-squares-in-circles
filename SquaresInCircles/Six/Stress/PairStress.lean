@@ -158,14 +158,14 @@ lemma central_excess_support {c : Point}
 /-! ### The domain of the pair estimate -/
 
 /-- The ends of the ranges of `n` and `w`, by the separators of N and W from C. -/
-def nLow (no : Bool) : ℝ := if no then -3/10 else -203/1000
-def nHigh (no : Bool) : ℝ := if no then 5/12 else 203/1000
+def nLow (no : Bool) : ℝ := if no then -3/10 else -1/4
+def nHigh (no : Bool) : ℝ := if no then 5/12 else 1/4
 def wLow (wo : Bool) : ℝ := if wo then -11/25 else -2/5
 def wHigh (wo : Bool) : ℝ := if wo then 0 else 2/5
 
 /-- The angles of N and W in the pair estimate: `n` in `[-3/10, 5/12]` for N
-separated along its own axis, else in `[-203/1000, 203/1000]`; `w` in
-`[-11/25, 0]` for W separated along its own axis, else in `[-2/5, 2/5]`. -/
+separated along its own axis, else in `[-1/4, 1/4]`; `w` in `[-11/25, 0]` for W
+separated along its own axis, else in `[-2/5, 2/5]`. -/
 def Domain (no wo : Bool) (n w : ℝ) : Prop :=
   (nLow no≤n ∧ n≤nHigh no) ∧ (wLow wo≤w ∧ w≤wHigh wo)
 

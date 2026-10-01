@@ -274,11 +274,10 @@ lemma tie_slope_pos {s x : ℝ} (hs : s0 ≤ s ∧ s ≤ Real.pi/4) (hC : 0 < Re
     linarith [transition_coarse.2.1,tieA_s0]
   rcases le_total 0 (43/90-(4/5)*s) with hb | hb
   · nlinarith [mul_nonneg hb hS,mul_pos (show 0 < 13/10-tieA s by linarith) hC]
-  · have hcoef : (91:ℝ)/360 ≤ (13/10-tieA s)+(9/4)*(43/90-(4/5)*s) := by
+  · have hcoef : 0 < (13/10-tieA s)+(9/4)*(43/90-(4/5)*s) := by
       dsimp [tieA]
       linarith [hs.2,pi_lt_22_over_7]
-    nlinarith [mul_nonneg (neg_nonneg.mpr hb) (sub_nonneg.mpr hCS),
-      mul_pos (show 0 < (13/10-tieA s)+(9/4)*(43/90-(4/5)*s) by linarith) hC]
+    nlinarith [mul_nonneg (neg_nonneg.mpr hb) (sub_nonneg.mpr hCS),mul_pos hcoef hC]
 
 /-- A state with side label `t` lies on the line of slope `4/9` through the
 axial tie `(tieA t, 4t/5)`. -/

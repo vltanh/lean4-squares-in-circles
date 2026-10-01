@@ -80,7 +80,7 @@ lemma corner_angle_bounds :
 /-- The value and the slope of the transition profile at the diagonal corner, where
 `1 - Y = 1/2 - r_d` and `X/Z = 12/13`. -/
 lemma corner_point :
-    1/500 < transitionF td ∧ 0 < transitionFD td ∧ transitionFD td < 11/250 := by
+    0.002 < transitionF td ∧ 0 < transitionFD td ∧ transitionFD td < 0.044 := by
   have ht : s0 ≤ td ∧ td ≤ td :=
     ⟨by linarith [transition_coarse.2.2.2.2.2,td_bounds.1],le_rfl⟩
   obtain ⟨hX,hY⟩ := side_at_diagonal
@@ -139,7 +139,7 @@ lemma transition_curvature {t : ℝ} (ht : 2/5 ≤ t ∧ t ≤ td) :
     simpa only [Real.sin_pi_div_six] using hh
   have hc0 : 0 ≤ Real.cos (transitionAngle t) := Real.cos_nonneg_of_mem_Icc
     ⟨by linarith [hangle.1,Real.pi_pos],hangle.2.le⟩
-  have hcos : Real.cos (transitionAngle t) < 81/100 := by
+  have hcos : Real.cos (transitionAngle t) < 0.81 := by
     have hc := (Real.cos_le_cos_of_nonneg_of_le_pi (by norm_num)
       (by linarith [hangle.2,Real.pi_pos]) h1).trans (cos_upper_four (by norm_num))
     norm_num at hc
@@ -147,7 +147,7 @@ lemma transition_curvature {t : ℝ} (ht : 2/5 ≤ t ∧ t ≤ td) :
   have hlow : (3:ℝ)/10 < (a0-1/2)*Real.sin (transitionAngle t) := by
     have ha : (3:ℝ)/5 < a0-1/2 := by linarith
     linarith [mul_nonneg (sub_nonneg.mpr hsin) (show 0 ≤ a0-1/2 by linarith)]
-  have hu : Y0*Real.cos (transitionAngle t) ≤ (4/5)*(81/100) := by
+  have hu : Y0*Real.cos (transitionAngle t) ≤ (4/5)*0.81 := by
     have hy : Y0 < 4/5 := by dsimp [u0] at hs; linarith
     have hh := mul_le_mul_of_nonneg_right hy.le hc0
     linarith

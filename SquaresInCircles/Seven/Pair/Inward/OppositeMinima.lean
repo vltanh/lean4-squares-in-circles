@@ -197,12 +197,12 @@ lemma inward_circular_pos {a u A v z : ℝ}
   linarith
 
 lemma line_to_circle_turn_margin {z : ℝ}
-    (hz : 19/100 ≤ z ∧ z ≤ Real.pi/3) :
+    (hz : 1/5 ≤ z ∧ z ≤ Real.pi/3) :
     (12:ℝ)/13 < (44/45)*Real.sin z+(4/5)*Real.cos z := by
   have h := trig_concave_gt (α := 0) (A := 44/45) (B := 4/5) (m := 12/13) (by norm_num)
     (by norm_num) (by norm_num) (by linarith [Real.pi_pos]) hz
-    (by have := Real.sin_ge_sub_cube (show (0:ℝ) ≤ 19/100 by norm_num)
-        have := Real.one_sub_sq_div_two_le_cos (x := (19/100:ℝ))
+    (by have := Real.sin_ge_sub_cube (show (0:ℝ) ≤ 1/5 by norm_num)
+        have := Real.one_sub_sq_div_two_le_cos (x := (1/5:ℝ))
         linarith)
     (by rw [Real.sin_pi_div_three,Real.cos_pi_div_three]; linarith [sqrt_three_bounds.1])
   linarith
@@ -371,7 +371,7 @@ lemma diagonal_source_reduction {z t l : ℝ}
   nlinarith
 
 lemma circular_source_line_reduction {z t r : ℝ}
-    (hz : 19/100≤z ∧ z≤Real.pi/3)
+    (hz : 1/5≤z ∧ z≤Real.pi/3)
     (ht : s0≤t ∧ t≤r) (hr : r≤td)
     (hs : s0≤otherLabel z r ∧ otherLabel z t≤Real.pi/4) :
     oppositeUpper z r≤oppositeUpper z t := by
@@ -432,7 +432,7 @@ theorem opposite_upper_pos {z t : ℝ}
         have hh : r≤z+Real.pi/6-s0 := min_le_right _ _
         dsimp [otherLabel]
         linarith
-      have hzlow : 19/100≤z := by
+      have hzlow : 1/5≤z := by
         have hsc := transition_bounds
         have hh : s0<otherLabel z t := lt_of_not_ge hcircle
         dsimp [otherLabel,s0] at hh ht

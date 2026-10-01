@@ -11,10 +11,12 @@ would agree; for `s = -v < 0` their difference gives
 or of S. Along that of D, a positive combination of this bound and the south
 margin eliminates `v`. Along that of S, the bound `|b_D| < 31/100 - 17d/100` and
 the far-corner quadratic of D leave an expression that decreases in `d` and is
-negative at `d = 1/2`, by Taylor bounds and a completed square. If W and S are
-both separated from C along their own axes, the sum of their separating
-inequalities, which share the centre of C, bounds `a_W + a_S` below by a
-concave profile of their angles, and `a_W, a_S ≤ ρ0` gives `s - w < 24/25`.
+negative at `d = 1/2`, where Taylor bounds leave a quadratic in `v` with
+negative discriminant. If W and S are both separated from C along their own
+axes, the sum of their separating inequalities, which share the centre of C,
+bounds `a_W + a_S` below by a concave profile of their angles; on
+`[22/75, 2/3]` the profile lies above the line of slope `9/25` through `ρ0` at
+`12/25`, and `a_W, a_S ≤ ρ0` gives `s - w < 24/25`.
 -/
 
 noncomputable section
@@ -71,13 +73,13 @@ private lemma diagonal_projection_upper {a b d v : ℝ}
 private lemma southDefect_antitone_d {v : ℝ} (hv : 0 ≤ v ∧ v ≤ 5/8) :
     AntitoneOn (fun d => southDefect d v) (Set.Icc (1/2) (Real.pi/4)) := by
   let derivF : ℝ → ℝ := fun d =>
-    ((527/10000)*(1+2*transverseLimit d)+transverseLimit d-1/2)*Real.cos (d+v)-
+    ((31/100)*(17/100)*(1+2*transverseLimit d)+transverseLimit d-1/2)*Real.cos (d+v)-
       (radialLimit d-1/2+17/100)*Real.sin (d+v)
   have hU (d : ℝ) : HasDerivAt transverseLimit (-(17/100)) d := by
     have h := ((hasDerivAt_id' d).const_mul (17/100 : ℝ)).const_sub (31/100 : ℝ)
     simp only [mul_one] at h
     exact h
-  have hA (d : ℝ) : HasDerivAt radialLimit ((527/10000)*(1+2*transverseLimit d)) d := by
+  have hA (d : ℝ) : HasDerivAt radialLimit ((31/100)*(17/100)*(1+2*transverseLimit d)) d := by
     have h := (((hU d).fun_add ((hU d).fun_pow 2)).const_mul (31/100 : ℝ)).const_sub rho0
     refine h.congr_deriv ?_
     norm_num
@@ -96,7 +98,8 @@ private lemma southDefect_antitone_d {v : ℝ} (hv : 0 ≤ v ∧ v ≤ 5/8) :
   obtain ⟨hu0,hu,ha⟩ := limit_bounds ⟨hd.1.le,hd.2.le⟩
   obtain ⟨hcos,hsin⟩ := angle_sum_trig ⟨hd.1.le,hd.2.le⟩ hv
   have hleft := mul_nonpos_of_nonpos_of_nonneg
-    (show (527/10000)*(1+2*transverseLimit d)+transverseLimit d-1/2 ≤ 0 by linarith) hcos
+    (show (31/100)*(17/100)*(1+2*transverseLimit d)+transverseLimit d-1/2 ≤ 0 by linarith)
+    hcos
   have hright := mul_nonneg (show 0 ≤ radialLimit d-1/2+17/100 by linarith)
     (show 0 ≤ Real.sin (d+v) by linarith)
   dsimp [derivF]
@@ -112,38 +115,39 @@ private lemma southDefect_left_negative {v : ℝ} (hv : 0 ≤ v ∧ v ≤ 5/8) :
   have hs0 := Real.sin_nonneg_of_nonneg_of_le_pi hv.1
     (by linarith [hv.2,Real.pi_gt_d2])
   have hcosSum := (angle_sum_trig (d := 1/2) ⟨le_rfl,by linarith [Real.pi_gt_d2]⟩ hv).1
-  have hA : radialLimit (1/2)-1/2 ≤ 84409/160000 := by
+  -- the coefficients `0.53` of `cos (1/2 + v)` and `-11/40` of `sin (1/2 + v)`
+  have hA : radialLimit (1/2)-1/2 ≤ 0.53 := by
     dsimp [radialLimit,transverseLimit]
     linarith [rho0_bounds.2]
   have hAs := mul_le_mul_of_nonneg_right hA hcosSum
-  have hT := mul_le_mul_of_nonneg_right (show rho0 ≤ 1113/1000 by linarith [rho0_bounds.2]) ht0
-  have hTv := mul_le_mul_of_nonneg_left ht (show (0:ℝ) ≤ 1113/1000 by norm_num)
+  have hT := mul_le_mul_of_nonneg_right (show rho0 ≤ 1.113 by linarith [rho0_bounds.2]) ht0
+  have hTv := mul_le_mul_of_nonneg_left ht (show (0:ℝ) ≤ 1.113 by norm_num)
   have hch := cos_upper_four (x := (1:ℝ)/2) (by norm_num)
   have hcl := Real.one_sub_sq_div_two_le_cos (x := (1:ℝ)/2)
   have hsl := Real.sin_ge_sub_cube (x := (1:ℝ)/2) (by norm_num)
-  have hcoefC : (84409/160000)*Real.cos (1/2)-(11/40)*Real.sin (1/2) ≤ 83/250 := by
+  have hcoefC : 0.53*Real.cos (1/2)-(11/40)*Real.sin (1/2) ≤ 0.34 := by
     nlinarith only [hch,hsl]
-  have hcoefS : 493/1000 ≤ (84409/160000)*Real.sin (1/2)+(11/40)*Real.cos (1/2) := by
+  have hcoefS : 0.49 ≤ 0.53*Real.sin (1/2)+(11/40)*Real.cos (1/2) := by
     nlinarith only [hcl,hsl]
   have hcM := mul_le_mul_of_nonneg_right hcoefC hc0
   have hsM := mul_le_mul_of_nonneg_right hcoefS hs0
-  have htrig : (84409/160000)*Real.cos (1/2+v)-(11/40)*Real.sin (1/2+v) ≤
-      (83/250)*Real.cos v-(493/1000)*Real.sin v := by
+  have htrig : 0.53*Real.cos (1/2+v)-(11/40)*Real.sin (1/2+v) ≤
+      0.34*Real.cos v-0.49*Real.sin v := by
     rw [Real.cos_add,Real.sin_add]
     nlinarith only [hcM,hsM]
   have hupper : southDefect (1/2) v ≤
-      -387/1000+(12243/20000)*v+(83/250)*Real.cos v-(493/1000)*Real.sin v := by
-    have hc : c0 ≤ 113/1000 := by dsimp [c0]; linarith [rho0_bounds.2]
+      -0.387+1.113*((11/20)*v)+0.34*Real.cos v-0.49*Real.sin v := by
+    have hc : c0 ≤ 0.113 := by dsimp [c0]; linarith [rho0_bounds.2]
     dsimp [southDefect,transverseLimit] at *
     nlinarith only [hc,hAs,hT,hTv,htrig]
+  -- the Taylor bounds leave a quadratic with negative discriminant
   have hcv := cos_upper_four hv.1
   have hsv := Real.sin_ge_sub_cube hv.1
   have hv2 : v^2 ≤ 25/64 := by
     nlinarith [mul_nonneg (sub_nonneg.mpr hv.2) (show 0 ≤ (5:ℝ)/8+v by linarith [hv.1])]
-  have hv3 := mul_le_mul hv.2 hv2 (sq_nonneg v) (by norm_num : (0:ℝ) ≤ 5/8)
-  have hv4 := mul_le_mul hv2 hv2 (sq_nonneg v) (by norm_num : (0:ℝ) ≤ 25/64)
-  have hcomplete := sq_nonneg ((83/500)*v-2383/40000)
-  nlinarith only [hupper,hcv,hsv,hv3,hv4,hcomplete]
+  have hv3 := mul_le_mul_of_nonneg_left hv.2 (sq_nonneg v)
+  have hv4 := mul_le_mul_of_nonneg_left hv2 (sq_nonneg v)
+  nlinarith only [hupper,hcv,hsv,hv3,hv4,sq_nonneg (v-1/2),hv.1,hv.2]
 
 private lemma southDefect_negative {d v : ℝ}
     (hd : 1/2 ≤ d ∧ d ≤ Real.pi/4) (hv : 0 ≤ v ∧ v ≤ 5/8) : southDefect d v < 0 := by
@@ -226,7 +230,7 @@ private lemma south_diagonal_secondary_excluded {v d a b cx cy z : ℝ}
     (show d ≤ Real.pi/2 by linarith [hd.2,Real.pi_pos]) hd.1
   have hcHalf := cos_upper_four (x := (1:ℝ)/2) (by norm_num)
   have hsHalf := Real.sin_ge_sub_cube (x := (1:ℝ)/2) (by norm_num)
-  have hcore : 387/1000 ≤ 1/2-c0 := by dsimp [c0]; linarith [rho0_bounds.2]
+  have hcore : 0.387 ≤ 1/2-c0 := by dsimp [c0]; linarith [rho0_bounds.2]
   have hsin := mul_le_mul hcore
     (show 23/48 ≤ Real.sin d by nlinarith) (by norm_num : (0:ℝ) ≤ 23/48)
     (show 0 ≤ 1/2-c0 by linarith)
@@ -302,7 +306,7 @@ lemma coupled_own_wing_radial_sum {v s aw bw aS bS cx cy : ℝ}
     (hx : cx ≤ c0) (hy : cy ≤ c0)
     (hW : 0 ≤ centralMargin .own (Real.pi-v) aw bw cx cy)
     (hS : 0 ≤ centralMargin .own (3*Real.pi/2+s) aS bS cx cy) :
-    1+(387/1000)*(Real.cos v+Real.cos s)+(61/100)*(Real.sin v+Real.sin s) ≤ aw+aS := by
+    1+0.387*(Real.cos v+Real.cos s)+0.61*(Real.sin v+Real.sin s) ≤ aw+aS := by
   obtain ⟨hcv,hsv0,hsv⟩ := small_angle_nonneg hv (by norm_num)
   obtain ⟨hcs,hss0,hss⟩ := small_angle_nonneg hs (by norm_num)
   have hcv0 : 0 ≤ Real.cos v := by linarith
@@ -311,8 +315,8 @@ lemma coupled_own_wing_radial_sum {v s aw bw aS bS cx cy : ℝ}
     (show 0 ≤ Real.cos v-Real.sin s by linarith)
   have hY := mul_nonneg (sub_nonneg.mpr hy)
     (show 0 ≤ Real.cos s-Real.sin v by linarith)
-  have hL : 387/1000 ≤ 1/2-c0 := by dsimp [c0]; linarith [rho0_bounds.2]
-  have hU : 61/100 ≤ 1/2+c0 := by dsimp [c0]; linarith [rho0_bounds.1]
+  have hL : 0.387 ≤ 1/2-c0 := by dsimp [c0]; linarith [rho0_bounds.2]
+  have hU : 0.61 ≤ 1/2+c0 := by dsimp [c0]; linarith [rho0_bounds.1]
   have hC := mul_nonneg (sub_nonneg.mpr hL)
     (show 0 ≤ Real.cos v+Real.cos s by linarith)
   have hT := mul_nonneg (sub_nonneg.mpr hU) (add_nonneg hsv0 hss0)
@@ -323,18 +327,20 @@ lemma coupled_own_wing_radial_sum {v s aw bw aS bS cx cy : ℝ}
     abs_of_nonneg hcs0,abs_of_nonneg hss0] at hS
   nlinarith only [hW,hS,hX,hY,hC,hT]
 
-/-- On `[22/75, 2/3]` the radial profile of an own wing lies above
-`941/1000 + (9/25) x`: it is concave there and above the line at both ends. -/
+/-- On `[22/75, 2/3]` the radial profile of an own wing lies above the line of
+slope `9/25` through `ρ0` at the midpoint `12/25`: it is concave there and above
+the line at both ends. -/
 private lemma own_wing_profile_line {x : ℝ} (hx : 22/75 ≤ x ∧ x ≤ 2/3) :
-    941/1000+(9/25)*x < 1/2+(387/1000)*Real.cos x+(61/100)*Real.sin x := by
+    rho0+(9/25)*(x-12/25) < 1/2+0.387*Real.cos x+0.61*Real.sin x := by
   have hl := trig_bracket (l := 22/75) (u := 22/75) (x := 22/75) (by norm_num)
     (by linarith [Real.pi_gt_three]) ⟨le_rfl,le_rfl⟩
   have hu := trig_bracket (l := 2/3) (u := 2/3) (x := 2/3) (by norm_num)
     (by linarith [Real.pi_gt_three]) ⟨le_rfl,le_rfl⟩
   norm_num at hl hu
-  have h := trig_concave_gt (α := -(9/25)) (A := 61/100) (B := 387/1000)
-    (m := 441/1000) (by norm_num) (by norm_num) (by norm_num)
-    (by linarith [Real.pi_gt_three]) hx (by linarith) (by linarith)
+  have h := trig_concave_gt (α := -(9/25)) (A := 0.61) (B := 0.387)
+    (m := rho0-1/2-(9/25)*(12/25)) (by norm_num) (by norm_num) (by norm_num)
+    (by linarith [Real.pi_gt_three]) hx (by linarith [rho0_bounds.2])
+    (by linarith [rho0_bounds.2])
   linarith
 
 /-- If W and S are both separated from C along their own axes, then
@@ -363,6 +369,6 @@ theorem normalized_own_wing_angle_sum {R : ℝ} (P : NormalizedPacking R)
     (by simpa only [hSphase] using P.own_separator 4 hS)
   have hleft := own_wing_profile_line ⟨by linarith,hv.2⟩
   have hright := own_wing_profile_line ⟨by linarith,hsupper⟩
-  linarith [(P.contained 2).a_le_rho0,(P.contained 4).a_le_rho0,rho0_bounds.2]
+  linarith [(P.contained 2).a_le_rho0,(P.contained 4).a_le_rho0]
 
 end SquaresInCircles.Six

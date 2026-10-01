@@ -6,23 +6,45 @@ import SquaresInCircles.Six.Wings.Chart
 If W–D and D–S are separated along the secondary axes of W and of S, as in the
 model, and W is separated from C along its own axis, then `w > -11/25`.
 Otherwise `v = -w` lies in `[11/25, 2/3]`, and the separating inequalities of
-C–W, C–S, W–D and D–S, with the weights `109/200`, `47/250`, `169/1000` and
-`49/500`, contradict the supports of the squares. W and S take the far-vertex
-support; the centre of D lies within `ρ0` of the origin, and the length of its
-force is at most an affine function of `sin (v + s)`, by a completed square, as
-is the length of the force on S on the south side of C; the box of the centre
-of C bounds its work. What remains is a minorant that is, in each of `v`, `|s|`
-and `d`, a constant plus a first harmonic with nonnegative coefficients on the
-box `[11/25, 2/3] × [0, 3/5] × [1/2, 11/14]`, so it is positive once it is
-positive at the eight corners, where Taylor polynomials bound it below. The
-index `k` records the separator of S from C: its own axis (`k = 0`, with
-`0 < s < 3/5` since `s - w < 24/25`), or the south side of C with `s ≥ 0`
-(`k = 1`) or `s ≤ 0` (`k = 2`), with `|s| < 2/5`.
+C–W, C–S, W–D and D–S, with the weights `8/15`, `1/5`, `1/6` and `1/10`,
+contradict the supports of the squares. W and S take the far-vertex support;
+the centre of D lies within `ρ0` of the origin, and the length of its force, the
+square root of an affine function of `sin (v + s)`, is at most the tangent at
+`(6/25)²`, as is the length of the force on S on the south side of C, at
+`(2/9)²`; the box of the centre of C bounds its work. What remains is a
+minorant that is, in each of `v`, `|s|` and `d`, a constant plus a first
+harmonic with nonnegative coefficients on the box
+`[11/25, 2/3] × [0, 3/5] × [1/2, 11/14]`, so it is positive once it is positive
+at the eight corners, where Taylor polynomials bound it below. The corner
+`v = 2/3`, `s = 0`, `d = 11/14` is tight: weights of sum `1` leave at most
+`5·10⁻⁴` there, and these, after the tangents and the Taylor polynomials,
+`3·10⁻⁴`. The index `k` records the separator of S from C: its own axis
+(`k = 0`, with `0 < s < 3/5` since `s - w < 24/25`), or the south side of C
+with `s ≥ 0` (`k = 1`) or `s ≤ 0` (`k = 2`), with `|s| < 2/5`.
 -/
 
 noncomputable section
 namespace SquaresInCircles.Six.WestTail
 open Normalization Wings
+
+/-! ### The weights and the lengths of the forces
+
+The weights `beta`, `gamma`, `mu` and `nu` on C–W, C–S, W–D and D–S. The force
+on W has length at most `westNormUpper`; with `z` the sine of the angle between
+the two forces on D, or on S on the south side of C, their lengths are at most
+`diagonalIntercept + diagonalSlope z` and `southNormUpper + southSlope z`, the
+tangents of the square roots at `(6/25)²` and `(2/9)²`. -/
+
+def beta : ℝ := 8/15
+def gamma : ℝ := 1/5
+def mu : ℝ := 1/6
+def nu : ℝ := 1/10
+/-- A ceiling for `√(beta² + mu²) = √281/30`. -/
+def westNormUpper : ℝ := 0.5588
+def southNormUpper : ℝ := (gamma^2+nu^2+(2/9)^2)/(2*(2/9))
+def southSlope : ℝ := -(gamma*nu/(2/9))
+def diagonalIntercept : ℝ := (mu^2+nu^2+(6/25)^2)/(2*(6/25))
+def diagonalSlope : ℝ := mu*nu/(6/25)
 
 /-! ### The minorant -/
 
@@ -32,22 +54,28 @@ along its own axis (`k = 0`), or along the south side of C with `s ≥ 0`
 def side (k : Fin 3) : ℝ := ![1,1,-1] k
 
 /-! In case `k` the angle `x = |s|` lies in `[0, xMax k]`, and the minorant has
-the coefficients `gCoeff k` and `hCoeff k` of `cos x` and `sin x` and the
-constant `offset k`. -/
+the coefficients `gCoeff k` and `hCoeff k` of `cos x` and `sin x`, from the
+threshold of C–S, the support of S and the box of C, and the constant
+`constantTerm + offset k`. -/
 
 def xMax (k : Fin 3) : ℝ := ![3/5,3/5,2/5] k
-def gCoeff (k : Fin 3) : ℝ := ![47/500,47/250,47/250] k
-def hCoeff (k : Fin 3) : ℝ := ![18001/156250,7336967/50000000,2063033/50000000] k
-def offset (k : Fin 3) : ℝ := ![0,-47/500,-47/500] k
+def gCoeff (k : Fin 3) : ℝ := ![gamma/2,gamma,gamma] k
+def hCoeff (k : Fin 3) : ℝ :=
+  ![gamma*(1/2+coreLower),-radiusBound*southSlope,gamma+radiusBound*southSlope] k
+def offset (k : Fin 3) : ℝ := ![0,-gamma/2,-gamma/2] k
+
+/-- The halves `beta + gamma + mu + nu` of the thresholds and of the far-vertex
+supports of W and S, less the bounds of the works on W, S and D. -/
+def constantTerm : ℝ :=
+  beta+gamma+mu+nu-radiusBound*(westNormUpper+southNormUpper)-rhoBound*diagonalIntercept
 
 /-- A lower bound for the defect of the stress (`minorant_le_defect`). -/
 def minorant (k : Fin 3) (v x d : ℝ) : ℝ :=
-  -27197287317/50000000000+offset k+
-    (2110131/10000000)*Real.cos v+(109/400)*Real.sin v+
+  constantTerm+offset k+beta*A*Real.cos v+(beta/2)*Real.sin v+
     gCoeff k*Real.cos x+hCoeff k*Real.sin x+
-    (169/2000)*(Real.cos (v+d)+Real.sin (v+d))+
-    (49/1000)*(Real.cos (d-side k*x)+Real.sin (d-side k*x))-
-    (9514611/125000000)*Real.sin (v+side k*x)
+    (mu/2)*(Real.cos (v+d)+Real.sin (v+d))+
+    (nu/2)*(Real.cos (d-side k*x)+Real.sin (d-side k*x))-
+    rhoBound*diagonalSlope*Real.sin (v+side k*x)
 
 private lemma trig_x {k : Fin 3} {x : ℝ} (hx : 0 ≤ x ∧ x ≤ xMax k) :
     41/50 ≤ Real.cos x ∧ 0 ≤ Real.sin x ∧ Real.sin x ≤ 3/5 := by
@@ -62,32 +90,28 @@ private lemma trig_d {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 11/14) :
   exact ⟨by linarith,by linarith⟩
 
 private def vA (k : Fin 3) (x d : ℝ) : ℝ :=
-  2110131/10000000+(169/2000)*(Real.cos d+Real.sin d)-
-    (9514611/125000000)*side k*Real.sin x
+  beta*A+(mu/2)*(Real.cos d+Real.sin d)-rhoBound*diagonalSlope*side k*Real.sin x
 private def vB (x d : ℝ) : ℝ :=
-  109/400+(169/2000)*(Real.cos d-Real.sin d)-(9514611/125000000)*Real.cos x
+  beta/2+(mu/2)*(Real.cos d-Real.sin d)-rhoBound*diagonalSlope*Real.cos x
 private def vK (k : Fin 3) (x d : ℝ) : ℝ :=
-  -27197287317/50000000000+offset k+gCoeff k*Real.cos x+hCoeff k*Real.sin x+
-    (49/1000)*(Real.cos (d-side k*x)+Real.sin (d-side k*x))
+  constantTerm+offset k+gCoeff k*Real.cos x+hCoeff k*Real.sin x+
+    (nu/2)*(Real.cos (d-side k*x)+Real.sin (d-side k*x))
 
 private def xA (k : Fin 3) (v d : ℝ) : ℝ :=
-  gCoeff k+(49/1000)*(Real.cos d+Real.sin d)-(9514611/125000000)*Real.sin v
+  gCoeff k+(nu/2)*(Real.cos d+Real.sin d)-rhoBound*diagonalSlope*Real.sin v
 private def xB (k : Fin 3) (v d : ℝ) : ℝ :=
-  hCoeff k+side k*((49/1000)*(Real.sin d-Real.cos d)-(9514611/125000000)*Real.cos v)
+  hCoeff k+side k*((nu/2)*(Real.sin d-Real.cos d)-rhoBound*diagonalSlope*Real.cos v)
 private def xK (k : Fin 3) (v d : ℝ) : ℝ :=
-  -27197287317/50000000000+offset k+
-    (2110131/10000000)*Real.cos v+(109/400)*Real.sin v+
-    (169/2000)*(Real.cos (v+d)+Real.sin (v+d))
+  constantTerm+offset k+beta*A*Real.cos v+(beta/2)*Real.sin v+
+    (mu/2)*(Real.cos (v+d)+Real.sin (v+d))
 
 private def dA (k : Fin 3) (v x : ℝ) : ℝ :=
-  (169/2000)*(Real.cos v+Real.sin v)+(49/1000)*(Real.cos x-side k*Real.sin x)
+  (mu/2)*(Real.cos v+Real.sin v)+(nu/2)*(Real.cos x-side k*Real.sin x)
 private def dB (k : Fin 3) (v x : ℝ) : ℝ :=
-  (169/2000)*(Real.cos v-Real.sin v)+(49/1000)*(Real.cos x+side k*Real.sin x)
+  (mu/2)*(Real.cos v-Real.sin v)+(nu/2)*(Real.cos x+side k*Real.sin x)
 private def dK (k : Fin 3) (v x : ℝ) : ℝ :=
-  -27197287317/50000000000+offset k+
-    (2110131/10000000)*Real.cos v+(109/400)*Real.sin v+
-    gCoeff k*Real.cos x+hCoeff k*Real.sin x-
-    (9514611/125000000)*Real.sin (v+side k*x)
+  constantTerm+offset k+beta*A*Real.cos v+(beta/2)*Real.sin v+
+    gCoeff k*Real.cos x+hCoeff k*Real.sin x-rhoBound*diagonalSlope*Real.sin (v+side k*x)
 
 private lemma v_identity (k : Fin 3) (v x d : ℝ) :
     minorant k v x d=vK k x d+vA k x d*Real.cos v+vB x d*Real.sin v := by
@@ -111,23 +135,25 @@ private lemma v_coefficients (k : Fin 3) {x d : ℝ}
     0 ≤ vA k x d ∧ 0 ≤ vB x d := by
   have tx := trig_x hx
   have td := trig_d hd
-  fin_cases k <;> dsimp [vA,vB,side] <;> constructor <;>
-    nlinarith [Real.sin_le_one x,Real.cos_le_one x,Real.sin_le_one d]
+  fin_cases k <;> dsimp [vA,vB,side,beta,A,coreUpper,mu,nu,rhoBound,diagonalSlope] <;>
+    constructor <;> nlinarith [Real.sin_le_one x,Real.cos_le_one x,Real.sin_le_one d]
 
 private lemma x_coefficients (k : Fin 3) {v d : ℝ}
     (hv : 11/25 ≤ v ∧ v ≤ 2/3) (hd : 1/2 ≤ d ∧ d ≤ 11/14) :
     0 ≤ xA k v d ∧ 0 ≤ xB k v d := by
   have tv := small_angle_nonneg ⟨by linarith [hv.1],hv.2⟩ (show (2:ℝ)/3 ≤ 3 by norm_num)
   have td := trig_d hd
-  fin_cases k <;> dsimp [xA,xB,gCoeff,hCoeff,side] <;> constructor <;>
-    nlinarith [Real.cos_le_one v,Real.cos_le_one d,Real.sin_le_one d]
+  fin_cases k <;>
+    dsimp [xA,xB,gCoeff,hCoeff,side,gamma,coreLower,radiusBound,southSlope,mu,nu,rhoBound,
+      diagonalSlope] <;>
+    constructor <;> nlinarith [Real.cos_le_one v,Real.cos_le_one d,Real.sin_le_one d]
 
 private lemma d_coefficients (k : Fin 3) {v x : ℝ}
     (hv : 11/25 ≤ v ∧ v ≤ 2/3) (hx : 0 ≤ x ∧ x ≤ xMax k) :
     0 ≤ dA k v x ∧ 0 ≤ dB k v x := by
   have tv := small_angle_nonneg ⟨by linarith [hv.1],hv.2⟩ (show (2:ℝ)/3 ≤ 3 by norm_num)
   have tx := trig_x hx
-  fin_cases k <;> dsimp [dA,dB,side] <;> constructor <;> nlinarith
+  fin_cases k <;> dsimp [dA,dB,side,mu,nu] <;> constructor <;> nlinarith
 
 private lemma extend_v (k : Fin 3) {v x d : ℝ}
     (hv : 11/25 ≤ v ∧ v ≤ 2/3) (hx : 0 ≤ x ∧ x ≤ xMax k)
@@ -158,12 +184,11 @@ private lemma extend_d (k : Fin 3) {v x d : ℝ}
   exact harmonic_pos_of_endpoints h.1 h.2 (by norm_num) (by linarith [Real.pi_gt_d2]) hd hleft hright
 
 private def polynomialLower (k : Fin 3) (v x d : ℝ) : ℝ :=
-  -27197287317/50000000000+offset k+
-    (2110131/10000000)*cosLower v+(109/400)*sinBelow v+
+  constantTerm+offset k+beta*A*cosLower v+(beta/2)*sinBelow v+
     gCoeff k*cosLower x+hCoeff k*sinBelow x+
-    (169/2000)*(cosLower (v+d)+sinBelow (v+d))+
-    (49/1000)*(cosLower (d-side k*x)+sinBelow (d-side k*x))-
-    (9514611/125000000)*sinAbove (v+side k*x)
+    (mu/2)*(cosLower (v+d)+sinBelow (v+d))+
+    (nu/2)*(cosLower (d-side k*x)+sinBelow (d-side k*x))-
+    rhoBound*diagonalSlope*sinAbove (v+side k*x)
 
 private lemma polynomial_le (k : Fin 3) (v x d : ℝ) :
     polynomialLower k v x d ≤ minorant k v x d := by
@@ -176,11 +201,12 @@ private lemma polynomial_le (k : Fin 3) (v x d : ℝ) :
   have cr := cosLower_le (d-side k*x)
   have sr := sinBelow_le (d-side k*x)
   have sz := le_sinAbove (v+side k*x)
-  have hg : 0 ≤ gCoeff k := by fin_cases k <;> norm_num [gCoeff]
-  have hh : 0 ≤ hCoeff k := by fin_cases k <;> norm_num [hCoeff]
+  have hg : 0 ≤ gCoeff k := by fin_cases k <;> norm_num [gCoeff,gamma]
+  have hh : 0 ≤ hCoeff k := by
+    fin_cases k <;> norm_num [hCoeff,gamma,nu,coreLower,radiusBound,southSlope]
   have gx := mul_le_mul_of_nonneg_left cx hg
   have hx := mul_le_mul_of_nonneg_left sx hh
-  dsimp [polynomialLower,minorant]
+  dsimp [polynomialLower,minorant,beta,A,coreUpper,mu,nu,rhoBound,diagonalSlope]
   linarith only [cv,sv,gx,hx,cq,sq,cr,sr,sz]
 
 private def vEnd (i : Fin 2) : ℝ := ![11/25,2/3] i
@@ -192,8 +218,10 @@ private lemma corners (k : Fin 3) (i j l : Fin 2) :
     0 < minorant k (vEnd i) (xEnd k j) (dEnd l) := by
   have h := polynomial_le k (vEnd i) (xEnd k j) (dEnd l)
   fin_cases k <;> fin_cases i <;> fin_cases j <;> fin_cases l
-  all_goals norm_num [polynomialLower,cosLower,sinBelow,sinAbove,gCoeff,hCoeff,
-    offset,side,vEnd,xEnd,xMax,dEnd,sinLower,sinUpper] at h ⊢
+  all_goals norm_num [polynomialLower,constantTerm,beta,gamma,mu,nu,A,coreUpper,coreLower,
+    radiusBound,rhoBound,westNormUpper,southNormUpper,southSlope,diagonalIntercept,
+    diagonalSlope,cosLower,sinBelow,sinAbove,gCoeff,hCoeff,offset,side,vEnd,xEnd,xMax,dEnd,
+    sinLower,sinUpper] at h ⊢
   all_goals linarith
 
 /-- The minorant is positive on the box: it is concave in each variable and
@@ -213,44 +241,27 @@ theorem positive (k : Fin 3) {v x d : ℝ}
 
 /-! ### The stress -/
 
-/-! The weights `beta`, `gamma`, `mu` and `nu` on C–W, C–S, W–D and D–S. The force
-on W has length at most `westNormUpper`; with `z` the sine of the angle between
-the two forces on D, or on S on the south side of C, their lengths are at most
-`diagonalIntercept + diagonalSlope z` and `southNormUpper + southSlope z`. -/
-
-def beta : ℝ := 109/200
-def gamma : ℝ := 47/250
-def mu : ℝ := 169/1000
-def nu : ℝ := 49/500
-def westNormUpper : ℝ := 285301/500000
-def southNormUpper : ℝ := 21201/100000
-def southSlope : ℝ := -869/10000
-def diagonalIntercept : ℝ := 199877/1000000
-def diagonalSlope : ℝ := 171/2500
-
 private lemma west_root : Real.sqrt (beta^2+mu^2) ≤ westNormUpper :=
   (Real.sqrt_le_left (by norm_num [westNormUpper])).mpr (by norm_num [beta,mu,westNormUpper])
 
-/-- An affine majorant for the length of the force on D, by completing a
-square. -/
+/-- An affine majorant for the length of the force on D: the tangent of the
+square root at `(6/25)²`. -/
 lemma diagonal_root {z : ℝ} (hz : -1 ≤ z ∧ z ≤ 1) :
     Real.sqrt (mu^2+nu^2+2*mu*nu*z) ≤ diagonalIntercept+diagonalSlope*z := by
-  have ha : 0 ≤ diagonalIntercept+diagonalSlope*z := by
-    dsimp [diagonalIntercept,diagonalSlope]; linarith [hz.1]
-  refine (Real.sqrt_le_left ha).mpr ?_
-  have hs := sq_nonneg (diagonalSlope*z+diagonalIntercept-(2*mu*nu)/(2*diagonalSlope))
-  norm_num [diagonalSlope,diagonalIntercept,mu,nu] at hs ⊢
-  nlinarith only [hs]
+  have h := sqrt_le_tangent (c := 6/25) (by norm_num)
+    (show 0 ≤ mu^2+nu^2+2*mu*nu*z by dsimp [mu,nu]; linarith [hz.1])
+  convert h using 1
+  dsimp [diagonalIntercept,diagonalSlope]
+  ring
 
-/-- The same for the force on S on the south side of C. -/
+/-- The same for the force on S on the south side of C, at `(2/9)²`. -/
 lemma south_root {z : ℝ} (hz : -1 ≤ z ∧ z ≤ 1) :
     Real.sqrt (gamma^2+nu^2-2*gamma*nu*z) ≤ southNormUpper+southSlope*z := by
-  have ha : 0 ≤ southNormUpper+southSlope*z := by
-    dsimp [southNormUpper,southSlope]; linarith [hz.2]
-  refine (Real.sqrt_le_left ha).mpr ?_
-  have hs := sq_nonneg (southSlope*z+southNormUpper-(-2*gamma*nu)/(2*southSlope))
-  norm_num [southSlope,southNormUpper,gamma,nu] at hs ⊢
-  nlinarith only [hs]
+  have h := sqrt_le_tangent (c := 2/9) (by norm_num)
+    (show 0 ≤ gamma^2+nu^2-2*gamma*nu*z by dsimp [gamma,nu]; linarith [hz.2])
+  convert h using 1
+  dsimp [southNormUpper,southSlope]
+  ring
 
 /-! The works `southWork` and `centerWork` of the forces on S and on C, the
 force `(diagonalU, diagonalV)` on D, and the bounds `westUpper`, `southUpper`,
@@ -389,8 +400,8 @@ lemma minorant_le_defect (k : Fin 3) (v x d : ℝ) :
     fin_cases k <;> simp [side,angularWidth,Real.cos_neg,Real.sin_neg,abs_neg]
   fin_cases k
   all_goals simp only [defect,totalThreshold,hs]
-  all_goals norm_num [minorant,centerUpper,westUpper,diagonalUpper,southUpper,
-    beta,gamma,mu,nu,radiusBound,rhoBound,coreUpper,coreLower,
+  all_goals norm_num [minorant,constantTerm,centerUpper,westUpper,diagonalUpper,southUpper,
+    beta,gamma,mu,nu,A,radiusBound,rhoBound,coreUpper,coreLower,
     westNormUpper,southNormUpper,southSlope,diagonalIntercept,diagonalSlope,
     offset,gCoeff,hCoeff,side,Real.cos_neg,Real.sin_neg] at hu ⊢
   all_goals nlinarith only [hv,hx,hq,hu]
@@ -420,11 +431,11 @@ theorem scalar_impossible (k : Fin 3) {v x d aw bw ad bd asouth bsouth cx cy : �
     · simp only [ite_eq_left hk] at hCS
       simp only [totalThreshold,diagonalU,diagonalV,southWork,centerWork,ite_eq_left hk]
       dsimp [beta,gamma,mu,nu]
-      linear_combination (109/200)*hCW+(47/250)*hCS+(169/1000)*hWD+(49/500)*hDS
+      linear_combination (8/15)*hCW+(1/5)*hCS+(1/6)*hWD+(1/10)*hDS
     · simp only [ite_eq_right hk] at hCS
       simp only [totalThreshold,diagonalU,diagonalV,southWork,centerWork,ite_eq_right hk]
       dsimp [beta,gamma,mu,nu]
-      linear_combination (109/200)*hCW+(47/250)*hCS+(169/1000)*hWD+(49/500)*hDS
+      linear_combination (8/15)*hCW+(1/5)*hCS+(1/6)*hWD+(1/10)*hDS
   have hw := west_support hW
   have hs := south_support k (s := side k*x) hS
   have hd' := diagonal_support (v := v) (s := side k*x) (d := d) hD

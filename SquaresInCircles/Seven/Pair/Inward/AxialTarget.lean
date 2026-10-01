@@ -7,7 +7,7 @@ In the turn `e = label a u - t label A v - π/6` the support sum is
 `1/2 - a - A sin e + |sin e|/2 + (1/2 - t v) cos e`. A nonnegative turn is at
 most `π/12`, and the label inequality of the source bounds `1 - a - v` below. A
 negative turn `-z` is controlled by the profile
-`sin z - (4/5) z cos z - (3/4)(1 - cos z) ≥ z/50`. For two axial labels the sum
+`sin z - (4/5) z cos z - (3/4)(1 - cos z) ≥ z/40`. For two axial labels the sum
 is positive, for either target sign when the turn is nonpositive; for a side
 source it is at least the remainder plus a multiple of the turn, which vanish
 together only at the contact of a side square with the top or bottom square.
@@ -16,10 +16,10 @@ noncomputable section
 open Set
 namespace SquaresInCircles.Seven
 
-/-- A negative turn `-z` with `z ≤ 1`: the Taylor bounds of the profile exceed `z/50` by
-`z ((9/40)(z - 5/6)² + 19/800) + (z³/960)(5 + (1 - z)(z² + 33z + 3))`. -/
+/-- A negative turn `-z` with `z ≤ 1`: the Taylor bounds of the profile are
+`z (9z² - 15z + 8)/40 + (z³/960)(5 + (1 - z)(z² + 33z + 3))`. -/
 lemma inward_small_turn_bound {z : ℝ} (hz : 0 ≤ z ∧ z ≤ 1) :
-    z/50+z*((9/40)*(z-5/6)^2+19/800) ≤
+    z*(9*z^2-15*z+8)/40 ≤
       Real.sin z-(4/5)*z*Real.cos z-(3/4)*(1-Real.cos z) := by
   have hs := Real.sin_ge_sub_cube hz.1
   have hcu := mul_le_mul_of_nonneg_left (cos_upper_four hz.1) hz.1
@@ -28,13 +28,14 @@ lemma inward_small_turn_bound {z : ℝ} (hz : 0 ≤ z ∧ z ≤ 1) :
     (add_nonneg (by norm_num) (mul_nonneg (sub_nonneg.mpr hz.2) (by nlinarith [hz.1])))
   linarith
 
-/-- The profile of a negative turn `-z`. Past `z = 1` the profile less `z/20` increases:
-its slope is `(3/20) cos z + (4/5)(z - 1) sin z + (cos z + sin z - 1)/20`. -/
+/-- The profile of a negative turn `-z`. Up to `z = 1` the Taylor bound is at least
+`z/40`, as `9z² - 15z + 8 = (3z - 5/2)² + 7/4`. Past `z = 1` the profile less `z/20`
+increases: its slope is `(3/20) cos z + (4/5)(z - 1) sin z + (cos z + sin z - 1)/20`. -/
 lemma inward_turn_profile {z : ℝ} (hz : 0 ≤ z ∧ z ≤ Real.pi/2) :
-    z/50 ≤ Real.sin z-(4/5)*z*Real.cos z-(3/4)*(1-Real.cos z) := by
+    z/40 ≤ Real.sin z-(4/5)*z*Real.cos z-(3/4)*(1-Real.cos z) := by
   rcases le_total z 1 with hz1 | hz1
   · linarith [inward_small_turn_bound ⟨hz.1,hz1⟩,
-      mul_nonneg hz.1 (show 0 ≤ (9/40)*(z-5/6)^2+19/800 by positivity)]
+      mul_nonneg hz.1 (show 0 ≤ (3*z-5/2)^2+3/4 by positivity)]
   have hm : MonotoneOn (fun y => Real.sin y-(4/5)*y*Real.cos y-(3/4)*(1-Real.cos y)-y/20)
       (Icc 1 (Real.pi/2)) := by
     apply monoOn_of_hasDeriv_nonneg
@@ -99,7 +100,7 @@ lemma inward_axial_positive_turn {a u A v : ℝ}
   linarith
 
 /-- Two axial labels and a nonpositive turn, for either target sign: the profile
-of the turn and the axial bound `a + u < 113/80` make the sum positive. -/
+of the turn and the axial bound `a + u < 1 + 2π/15` make the sum positive. -/
 lemma inward_axial_nonpositive_turn {a u A v : ℝ} (t : TransverseSign)
     (h : Admissible a u) (h' : Admissible A v)
     (hA : label a u = axial u) (hB : label A v = axial v)
@@ -120,8 +121,7 @@ lemma inward_axial_nonpositive_turn {a u A v : ℝ} (t : TransverseSign)
   have hc : 0 < Real.cos z := Real.cos_pos_of_mem_Ioo
     ⟨by linarith [Real.pi_pos],by linarith [Real.pi_pos]⟩
   have hp := inward_turn_profile ⟨hz.1,by linarith [Real.pi_pos]⟩
-  have h0 := mul_pos hc (show 0 < 1+2*Real.pi/15-a-u by
-    linarith [axial_sum_lt h hA,Real.pi_gt_d2])
+  have h0 := mul_pos hc (show 0 < 1+2*Real.pi/15-a-u by linarith [axial_sum_lt h hA])
   have h1 := mul_nonneg (sub_nonneg.mpr (Real.cos_le_one z)) (show 0 ≤ 5/4-a by
     linarith [h.a_le_sqrt_three_sub_half,sqrt_three_bounds.2])
   have h2 := mul_nonneg (show 0 ≤ A-1/2 by linarith [h'.half_le]) hs

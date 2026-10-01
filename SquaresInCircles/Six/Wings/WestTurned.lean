@@ -12,13 +12,13 @@ S and a face `y` of the box for C, leave the profile: a constant, harmonics in
 `v`, `s` and `d`, the chord term in `d + v` and the transverse term
 `J(r) = -B cos r + (1/2) sin r - sin² r/12` in `r = d - s`. On
 `0 ≤ s ≤ v ≤ 2/3`, `v + s ≤ 24/25`, `1/2 ≤ d ≤ 163/175` it is concave in each
-angle: in `v` by the chord curvature; in `s` because `J''' ≤ -2/5` on `[0, 1]`
-and the harmonic in `s` lies above a line; in `d` because
+angle: in `v` by the chord curvature; in `s` because `J''' ≤ -1/3` on `[0, 1]`
+and the harmonic in `s` lies above the line `A + 4s/9`; in `d` because
 `(d + v) + (d - s) ≥ 1`. So it is positive once it is at the four vertices of
 the domain in `(v, s)` for the two ends of `d`, where Taylor polynomials exceed
 `1/500`. The domain holds for a missing south wing and, read in the reflection
 in the diagonal, for a missing west wing with W and S on their own axes and
-`v ≤ s`.
+`v ≤ s`, where the reflected angle of D is below `π/2 - 16/25 < 163/175`.
 -/
 
 noncomputable section
@@ -58,40 +58,33 @@ lemma transverseSecond_hasDerivAt (r : ℝ) :
     ((((hasDerivAt_id' r).const_mul 2).cos).const_mul (1/6))).congr_deriv
     (by simp only [transverseThird]; ring)
 
-/-- `J''' ≤ -2/5` on `[0, 1]`: for `sin r ≤ 3/4` by `cos r ≥ 1 - (31/50) sin² r`
-and a cubic in `sin r`, and otherwise because `cos r ((2/3) sin r - 1/2)` is
-small. -/
+/-- `J''' ≤ -1/3` on `[0, 1]`: with `x = sin r`, for `x ≤ 3/4` because
+`cos r ≥ 1 - x` and `(2/3)(x - 1/2)² + (B - 1/2) x ≥ 0`, and otherwise because
+`cos r ≤ 2/3` and `(2/3) x - 1/2 ≤ 1/6`. -/
 lemma transverse_third_upper {r : ℝ} (hr : 0 ≤ r ∧ r ≤ 1) :
-    transverseThird r ≤ -(2/5) := by
+    transverseThird r ≤ -(1/3) := by
   obtain ⟨hc,hs⟩ := cos_sin_nonneg (x := r) ⟨hr.1,by linarith [Real.pi_gt_d2]⟩
   have hid := Real.sin_two_mul r
-  have hB := mul_nonneg (show 0 ≤ B-61/100 by norm_num [B]) hs
   have hpy := Real.sin_sq_add_cos_sq r
+  have hs1 := Real.sin_le_one r
+  have hB : 3/5 ≤ B := by norm_num [B]
+  dsimp [transverseThird]
+  rw [hid]
   rcases le_total (Real.sin r) (3/4) with hx | hx
-  · have hcos : 1-(31/50)*Real.sin r^2 ≤ Real.cos r := by
-      nlinarith [mul_nonneg hs (sub_nonneg.mpr hx)]
-    have hp := mul_nonpos_of_nonneg_of_nonpos
-      (show 0 ≤ Real.cos r-(1-(31/50)*Real.sin r^2) by linarith)
-      (show (2/3)*Real.sin r-1/2 ≤ 0 by linarith)
-    have hcubic : 0 ≤ 1/10-(17/300)*Real.sin r-(31/100)*Real.sin r^2+(31/75)*Real.sin r^3 := by
-      nlinarith [sq_nonneg (Real.sin r-29/50),mul_nonneg hs (sq_nonneg (Real.sin r-29/50))]
-    dsimp [transverseThird]
-    nlinarith only [hp,hB,hid,hcubic]
-  · have hs1 := (Real.sin_le_sin_of_le_of_le_pi_div_two (by linarith [Real.pi_gt_d2])
-      (by linarith [Real.pi_gt_d2]) hr.2).trans (sin_upper_five (x := 1) (by norm_num))
-    have hc2 : Real.cos r ≤ 331/500 := by nlinarith
-    have hp := mul_le_mul_of_nonneg_left
-      (show (2/3)*Real.sin r-1/2 ≤ 31/500 by norm_num at hs1; linarith) hc
-    dsimp [transverseThird,B]
-    nlinarith only [hp,hid,hc2,hx,hc]
+  · have hcos : 1-Real.sin r ≤ Real.cos r := by nlinarith
+    have hp := mul_le_mul_of_nonneg_right hcos (show 0 ≤ 1/2-(2/3)*Real.sin r by linarith)
+    nlinarith [sq_nonneg (Real.sin r-1/2)]
+  · have hc2 : Real.cos r ≤ 2/3 := by nlinarith
+    have hp := mul_le_mul_of_nonneg_left (show (2/3)*Real.sin r-1/2 ≤ 1/6 by linarith) hc
+    nlinarith
 
 lemma transverse_second_upper {r : ℝ} (hr : 0 ≤ r ∧ r ≤ 1) :
-    transverseSecond r ≤ B-1/6-(2/5)*r := by
-  have hd (x : ℝ) : HasDerivAt (fun x => -(transverseSecond x+(2/5)*x))
-      (-(transverseThird x+2/5)) x :=
+    transverseSecond r ≤ B-1/6-(1/3)*r := by
+  have hd (x : ℝ) : HasDerivAt (fun x => -(transverseSecond x+(1/3)*x))
+      (-(transverseThird x+1/3)) x :=
     (((transverseSecond_hasDerivAt x).fun_add
-      ((hasDerivAt_id' x).const_mul (2/5))).fun_neg).congr_deriv (by ring)
-  have hm : MonotoneOn (fun x => -(transverseSecond x+(2/5)*x)) (Set.Icc 0 1) := by
+      ((hasDerivAt_id' x).const_mul (1/3))).fun_neg).congr_deriv (by ring)
+  have hm : MonotoneOn (fun x => -(transverseSecond x+(1/3)*x)) (Set.Icc 0 1) := by
     apply monoOn_of_hasDeriv_nonneg
       (fun x _ => (hd x).continuousAt.continuousWithinAt) (fun x _ => hd x)
     intro x hx
@@ -101,26 +94,26 @@ lemma transverse_second_upper {r : ℝ} (hr : 0 ≤ r ∧ r ≤ 1) :
   dsimp only at h
   linarith
 
-/-- The harmonic `A cos s + B sin s` lies above `A + (49/100) s` on `[0, 12/25]`,
+/-- The harmonic `A cos s + B sin s` lies above `A + (4/9) s` on `[0, 12/25]`,
 being concave there and above the line at both ends. -/
 lemma wing_affine_lower {s : ℝ} (hs : 0 ≤ s ∧ s ≤ 12/25) :
-    A+(49/100)*s ≤ harmonic A B s := by
-  have hc : ConcaveOn ℝ (Set.Icc 0 (12/25)) (fun x => harmonic A B x-A-(49/100)*x) :=
-    concave_of_deriv2 (f' := fun x => harmonic B (-A) x-49/100)
+    A+(4/9)*s ≤ harmonic A B s := by
+  have hc : ConcaveOn ℝ (Set.Icc 0 (12/25)) (fun x => harmonic A B x-A-(4/9)*x) :=
+    concave_of_deriv2 (f' := fun x => harmonic B (-A) x-4/9)
       (f'' := fun x => harmonic (-A) (-B) x)
       (fun x _ => ((harmonic_hasDerivAt A B x).sub_const A).sub
-        ((hasDerivAt_id' x).const_mul (49/100)) |>.congr_deriv (by ring))
+        ((hasDerivAt_id' x).const_mul (4/9)) |>.congr_deriv (by ring))
       (fun x _ => ((harmonic_hasDerivAt B (-A) x).sub_const _).congr_deriv (by simp [harmonic]))
       (fun x ⟨h1,h2⟩ => by
         obtain ⟨hc,hs⟩ := cos_sin_nonneg (x := x) ⟨h1,by linarith [Real.pi_gt_d2]⟩
         simp only [harmonic,A,B]
         nlinarith)
-  have hright : 0 ≤ harmonic A B (12/25)-A-(49/100)*(12/25) := by
+  have hright : 0 ≤ harmonic A B (12/25)-A-(4/9)*(12/25) := by
     have hcos := cos_lower_six (x := (12:ℝ)/25) (by norm_num)
     have hsin := sin_lower_seven (x := (12:ℝ)/25) (by norm_num)
     simp only [harmonic,A,B]
     nlinarith only [hcos,hsin]
-  have h := (le_min (show (0:ℝ) ≤ harmonic A B 0-A-(49/100)*0 by norm_num [harmonic]) hright).trans
+  have h := (le_min (show (0:ℝ) ≤ harmonic A B 0-A-(4/9)*0 by norm_num [harmonic]) hright).trans
     (hc.min_le_of_mem_Icc (by norm_num) (by norm_num) hs)
   linarith
 
@@ -137,8 +130,14 @@ lemma diagonal_trig_lower {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 163/175) :
 
 /-! ### The profile and its concavity -/
 
-/-- The constant term of the profile. -/
-def constantTerm : ℝ := 20670077/250000000
+/-- A bound for the length `√97/4` of the force `(9/4, -1)` on W. -/
+def westLength : ℝ := 2.4623
+
+/-- The constant term of the profile: the halves of the weights in the
+thresholds and in the far-vertex supports of W and D, less `R̄` times the length
+of the force on W and `ρ̄` times the radial component `3/4` of the force on S. -/
+def constantTerm : ℝ :=
+  (9/4+3/4+9/20+1+1)/2+(9/4+1)/2+(9/20+1)/2-radiusBound*westLength-(3/4)*rhoBound
 
 /-- The terms of the profile in `v` and in `s`, for the face `y` of the box. -/
 def westPart (y d v : ℝ) : ℝ := harmonic ((9/4)*A) ((9/4)*(1/2+y)) v+chord chordSin chordCos (d+v)
@@ -303,8 +302,8 @@ lemma lower_le {y v s d : ℝ} (hy : 0 ≤ y ∧ y ≤ 1/2) :
     mul_le_mul_of_nonneg_left ss (show 0 ≤ (3/4)*B by positivity),
     mul_le_mul_of_nonneg_left cd (show 0 ≤ (9/20)*A by positivity),
     mul_le_mul_of_nonneg_left sd (show 0 ≤ (9/20)*(1/2-y) by linarith),
-    mul_le_mul_of_nonneg_left sh (show (0:ℝ) ≤ chordSin by norm_num [chordSin]),
-    mul_le_mul_of_nonneg_left ch (show (0:ℝ) ≤ chordCos by norm_num [chordCos]),
+    mul_le_mul_of_nonneg_left sh (show (0:ℝ) ≤ chordSin by norm_num [chordSin,radiusBound]),
+    mul_le_mul_of_nonneg_left ch (show (0:ℝ) ≤ chordCos by norm_num [chordCos,radiusBound]),
     mul_le_mul_of_nonneg_left cr hB]
 
 /-- The profile is positive on `0 ≤ s ≤ v ≤ 2/3`, `v + s ≤ 24/25`,
@@ -321,8 +320,8 @@ theorem positive {y v s d : ℝ} (hy : y = 0 ∨ y = coreUpper)
     refine ⟨lt_of_lt_of_le ?_ (lower_le hy''),lt_of_lt_of_le ?_ (lower_le hy''),
       lt_of_lt_of_le ?_ (lower_le hy''),lt_of_lt_of_le ?_ (lower_le hy'')⟩ <;>
     rcases hd with rfl | rfl <;> rcases hy with rfl | rfl <;>
-      norm_num [lower,constantTerm,A,B,chordSin,chordCos,coreUpper,
-        cosLower,cosUpper,sinBelow,sinAbove,sinLower,sinUpper]
+      norm_num [lower,constantTerm,westLength,A,B,chordSin,chordCos,radiusBound,rhoBound,
+        coreUpper,cosLower,cosUpper,sinBelow,sinAbove,sinLower,sinUpper]
   have h1 := vertex (1/2) (Or.inl rfl)
   have h2 := vertex (163/175) (Or.inr rfl)
   exact concave_gt_of_endpoints (diagonal_concave hy' hv hs horder hsum) hd
@@ -340,7 +339,7 @@ which the separations make nonpositive. -/
 def defect (y v s d : ℝ) : ℝ :=
   (9/4)*(1/2+angularWidth v)+(3/4)*(1/2+angularWidth s)+(9/20)*(1/2+angularWidth d)+
     (1/2+angularWidth (d+v))+(1/2+angularWidth (d-s))-
-    (radiusBound*(123111/50000)-(9/4+1)/2)-
+    (radiusBound*westLength-(9/4+1)/2)-
     (radiusBound*chordMajorant (9/20) (d+v)-
       (9/20+Real.sin (d+v)+1-Real.cos (d+v))/2)-
     (rhoBound*(3/4+Real.cos (d-s))+Real.sin (d-s)^2/12)-
@@ -356,8 +355,7 @@ lemma profile_le_defect {y v s d : ℝ} (hv : 0 ≤ v ∧ v ≤ 2/3) (hs : 0 ≤
   have hQ := angularWidth_lower (d+v)
   rw [profile,westPart,southPart,transverse_eq]
   simp only [defect,forceX,forceY,harmonic,chord,chordMajorant,constantTerm,A,B,
-    chordSin,chordCos,radiusBound,rhoBound,
-    coreUpper,hW,hS,hD,hR]
+    chordSin,chordCos,radiusBound,rhoBound,coreUpper,hW,hS,hD,hR]
   linarith
 
 /-- The separations of a missing south wing with W and S on their own axes and
@@ -371,18 +369,16 @@ theorem impossible {X : Chart} (hW : X.WestOwn) (hS : X.SouthOwn) (h : X.Missing
   have hCD := X.diagonal_own
   simp only [Chart.WestOwn,Chart.SouthOwn,Chart.WestWing,Chart.SouthDiagonal] at hW hS hWD hDS
   have hv0 : 0 ≤ X.v := hs.trans horder
-  have hw := vertex_support X.west (U := 9/4) (V := -1) (r := 123111/50000) (by norm_num)
-    (by norm_num)
+  have hw := vertex_support X.west (U := 9/4) (V := -1) (r := westLength)
+    (by norm_num [westLength]) (by norm_num [westLength])
   have hdiag := chord_support X.diagonal (z := 9/20) (by norm_num)
     (show 0 ≤ X.d+X.v ∧ X.d+X.v ≤ Real.pi by constructor <;> linarith [Real.pi_gt_d2])
   obtain ⟨hcr,hsr⟩ := cos_sin_nonneg (x := X.d-X.s) ⟨by linarith,by linarith [Real.pi_pos]⟩
-  have hc4 : Real.sqrt 2/2 ≤ Real.cos (X.d-X.s) := by
-    rw [← Real.cos_pi_div_four]
-    exact Real.cos_le_cos_of_nonneg_of_le_pi (by linarith) (by linarith [Real.pi_pos]) hr
-  have hsqrt : (7071/10000:ℝ) ≤ Real.sqrt 2/2 := by
-    nlinarith [Real.sq_sqrt (show (0:ℝ) ≤ 2 by norm_num),Real.sqrt_nonneg (2:ℝ)]
-  have hsin : Real.sin (X.d-X.s) ≤ 7072/10000 := by
-    nlinarith [Real.sin_sq_add_cos_sq (X.d-X.s)]
+  have hsc := sin_le_cos_of_small (x := X.d-X.s) ⟨by linarith,hr⟩
+  have hpy := Real.sin_sq_add_cos_sq (X.d-X.s)
+  have hsq := mul_nonneg (sub_nonneg.mpr hsc) (add_nonneg hsr hcr)
+  have hc7 : 7/10 ≤ Real.cos (X.d-X.s) := by nlinarith
+  have hs3 : Real.sin (X.d-X.s) ≤ 3/4 := by nlinarith
   have hsouth := soft_support X.south (U := 3/4+Real.cos (X.d-X.s)) (V := Real.sin (X.d-X.s))
     (by linarith) (by rw [abs_of_nonneg hsr]; linarith)
   obtain ⟨hcv,-⟩ := cos_sin_nonneg (x := X.v) ⟨hv0,by linarith [Real.pi_gt_d2]⟩

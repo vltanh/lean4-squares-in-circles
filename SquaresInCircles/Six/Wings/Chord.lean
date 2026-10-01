@@ -7,9 +7,12 @@ With weight `z` on C–D and `1` on W–D and D–S the force on D is
 `(z + sin q, cos q - 1)`, of length at most `(2 + z²/4) sin (q/2) + z cos (q/2)`
 (`chord_support`); this leaves in the stresses the chord term
 `sin q - L sin (q/2) - M cos (q/2)`, with `L = R̄ (2 + z²/4)` and `M = R̄ z`. Its
-second derivative is bounded by one quintic on `[1/2, 5/3]`, which the
-endpoint lemma for concave functions bounds by `3/40 - (3/10) min (q, 1)` and,
-beyond `157/200`, by `-19/100`.
+second derivative, the curvature, grows with `L` and `M`, and is minus the chord
+term of `L/4` and `M/4`. At `chordSin` and `chordCos`, the values for the
+largest weight `9/20`, it is therefore convex on `[1/2, 5/3]`, where
+`sin q ≥ q - q³/6` exceeds `(L/16) sin (q/2) + (M/16) cos (q/2)`; it lies below
+its chords, and Taylor polynomials at the ends bound it by
+`3/40 - (3/10) min (q, 1)` on `[1/2, 3/2]` and, beyond `157/200`, by `-19/100`.
 -/
 
 noncomputable section
@@ -21,9 +24,10 @@ with `L = R̄ (2 + z²/4)` and `M = R̄ z`. -/
 def chord (L M q : ℝ) : ℝ := Real.sin q-L*Real.sin (q/2)-M*Real.cos (q/2)
 def chordFirst (L M q : ℝ) : ℝ := Real.cos q-(L/2)*Real.cos (q/2)+(M/2)*Real.sin (q/2)
 
-/-- `R̄ (2 + z²/4)` and `R̄ z` for `z = 9/20`, the largest weight on C–D. -/
-def chordSin : ℝ := 27701483/8000000
-def chordCos : ℝ := 75987/100000
+/-- `R̄ (2 + z²/4)` and `R̄ z` for `z = 9/20`, the largest weight on C–D, with the
+ceiling `R̄ = 1.6886` of the radius. -/
+def chordSin : ℝ := 1.6886*(2+(9/20)^2/4)
+def chordCos : ℝ := 1.6886*(9/20)
 
 /-- The second derivative of `sin q - L sin (q/2) - M cos (q/2)`. -/
 def chordSecond (L M q : ℝ) : ℝ := -Real.sin q+(L/4)*Real.sin (q/2)+(M/4)*Real.cos (q/2)
@@ -39,91 +43,80 @@ lemma chordFirst_hasDerivAt (L M q : ℝ) :
     ((((hasDerivAt_id' q).div_const 2).sin).const_mul (M/2))).congr_deriv
     (by simp only [chordSecond]; ring)
 
-private def p (q : ℝ) : ℝ :=
-  19/100-(567/1000)*q-(23/1000)*q^2+(149/1000)*q^3+(1/2000)*q^4-(19/2500)*q^5
-private def pFirst (q : ℝ) : ℝ :=
-  -567/1000-(23/500)*q+(447/1000)*q^2+(1/500)*q^3-(19/500)*q^4
-private def pSecond (q : ℝ) : ℝ :=
-  -23/500+(447/500)*q+(3/500)*q^2-(19/125)*q^3
-
-private lemma polynomial_upper {L M q : ℝ} (hL : L ≤ chordSin) (hM : M ≤ chordCos)
-    (hq : 1/2 ≤ q ∧ q ≤ 5/3) : chordSecond L M q ≤ p q := by
-  have hq0 : 0 ≤ q := by linarith [hq.1]
-  obtain ⟨hc,hs⟩ := cos_sin_nonneg (x := q/2) ⟨by linarith,by linarith [Real.pi_gt_d2]⟩
+/-- Below `chordSin` and `chordCos` the curvature is at most its value at
+`chordSin` and `chordCos`. -/
+private lemma second_le_top {L M q : ℝ} (hL : L ≤ chordSin) (hM : M ≤ chordCos)
+    (hq : 0 ≤ q ∧ q ≤ 5/3) : chordSecond L M q ≤ chordSecond chordSin chordCos q := by
+  obtain ⟨hc,hs⟩ := cos_sin_nonneg (x := q/2)
+    ⟨by linarith [hq.1],by linarith [hq.2,Real.pi_gt_d2]⟩
   have hLs := mul_le_mul_of_nonneg_right hL hs
   have hMc := mul_le_mul_of_nonneg_right hM hc
-  have hl := sin_lower_seven hq0
-  have hu := sin_upper_five (x := q/2) (by linarith)
-  have hcu := cos_upper_four (x := q/2) (by linarith)
-  have hsq := mul_nonneg (sub_nonneg.mpr hq.2) (show 0 ≤ 5/3+q by linarith)
-  have h7 := mul_nonneg (show 0 ≤ 25/9-q^2 by nlinarith only [hsq])
-    (show 0 ≤ q^5 by positivity)
-  have h3 : 0 ≤ q^3 := by positivity
-  have h5 : 0 ≤ q^5 := by positivity
-  dsimp [chordSecond,chordSin,chordCos,p] at *
-  nlinarith only [hl,hu,hcu,h7,hq0,h3,h5,hLs,hMc,sq_nonneg q,sq_nonneg (q^2)]
+  simp only [chordSecond]
+  linarith
 
-private lemma p_hasDeriv (q : ℝ) : HasDerivAt p (pFirst q) q := by
-  have h := ((((((hasDerivAt_id' q).const_mul (-(567/1000))).const_add (19/100)).fun_add
-    (((hasDerivAt_id' q).pow 2).const_mul (-(23/1000)))).fun_add
-    (((hasDerivAt_id' q).pow 3).const_mul (149/1000))).fun_add
-    (((hasDerivAt_id' q).pow 4).const_mul (1/2000))).fun_add
-    (((hasDerivAt_id' q).pow 5).const_mul (-(19/2500)))
-  have e : p = fun x : ℝ => 19/100 + -(567/1000) * x + -(23/1000) * x^2 +
-      149/1000 * x^3 + 1/2000 * x^4 + -(19/2500) * x^5 := by
-    funext x; simp only [p]; ring
+/-- An affine function less the curvature at `chordSin`, `chordCos` is concave on
+`[l, u] ⊆ [1/2, 5/3]`: its second derivative, the curvature at `chordSin/4`,
+`chordCos/4`, is negative, as `sin q ≥ q - q³/6`. -/
+private lemma top_concave (a c : ℝ) {l u : ℝ} (hl : 1/2 ≤ l) (hu : u ≤ 5/3) :
+    ConcaveOn ℝ (Set.Icc l u) (fun q => a+c*q-chordSecond chordSin chordCos q) := by
+  have e : (fun q => a+c*q-chordSecond chordSin chordCos q) =
+      fun q => a+c*q+chord (chordSin/4) (chordCos/4) q := by
+    funext q; simp only [chordSecond,chord]; ring
   rw [e]
-  exact h.congr_deriv (by simp only [pFirst]; norm_num; ring)
+  refine concave_of_deriv2 (f' := fun q => c+chordFirst (chordSin/4) (chordCos/4) q)
+    (f'' := chordSecond (chordSin/4) (chordCos/4))
+    (fun q _ => ((((hasDerivAt_id' q).const_mul c).const_add a).add
+      (chord_hasDerivAt _ _ q)).congr_deriv (by ring))
+    (fun q _ => (chordFirst_hasDerivAt _ _ q).const_add c) (fun q ⟨h1,h2⟩ => ?_)
+  have hq0 : 0 ≤ q := by linarith
+  have hs := Real.sin_ge_sub_cube hq0
+  have hh := Real.sin_le (show 0 ≤ q/2 by linarith)
+  have hc := Real.cos_le_one (q/2)
+  have h3 := mul_nonneg hq0 (show 0 ≤ 25/9-q^2 by nlinarith)
+  simp only [chordSecond,chordSin,chordCos]
+  nlinarith
 
-private lemma p_first_hasDeriv (q : ℝ) : HasDerivAt pFirst (pSecond q) q := by
-  have h := (((((hasDerivAt_id' q).const_mul (-(23/500))).const_add (-(567/1000))).fun_add
-    (((hasDerivAt_id' q).pow 2).const_mul (447/1000))).fun_add
-    (((hasDerivAt_id' q).pow 3).const_mul (1/500))).fun_add
-    (((hasDerivAt_id' q).pow 4).const_mul (-(19/500)))
-  have e : pFirst = fun x : ℝ => -(567/1000) + -(23/500) * x + 447/1000 * x^2 +
-      1/500 * x^3 + -(19/500) * x^4 := by
-    funext x; simp only [pFirst]; ring
-  rw [e]
-  exact h.congr_deriv (by simp only [pSecond]; norm_num; ring)
-
-private lemma envelope_concave (a c : ℝ) {l u : ℝ} (hl : 1/2 ≤ l) (hu : u ≤ 5/3) :
-    ConcaveOn ℝ (Set.Icc l u) (fun q => a+c*q-p q) :=
-  concave_of_deriv2 (f' := fun q => c-pFirst q) (f'' := fun q => -pSecond q)
-    (fun q _ => ((((hasDerivAt_id' q).const_mul c).const_add a).fun_sub
-      (p_hasDeriv q)).congr_deriv (by ring))
-    (fun q _ => ((hasDerivAt_const q c).fun_sub (p_first_hasDeriv q)).congr_deriv (by ring))
-    fun q ⟨h1,h2⟩ => by
-      have hq0 : 0 ≤ q := by linarith
-      have hsq := mul_nonneg (show 0 ≤ 5/3-q by linarith) (show 0 ≤ 5/3+q by linarith)
-      have h3 := mul_nonneg (show 0 ≤ 25/9-q^2 by nlinarith only [hsq]) hq0
-      have hlq : 1/2 ≤ q := by linarith
-      simp only [pSecond]
-      nlinarith only [h3,hlq,sq_nonneg q]
+/-- The curvature at `chordSin`, `chordCos` lies below its Taylor polynomials. -/
+private lemma top_endpoint {a c q : ℝ} (hq : 0 ≤ q)
+    (h : -sinLower q+(chordSin/4)*sinUpper (q/2)+(chordCos/4)*cosUpper (q/2) < a+c*q) :
+    0 < a+c*q-chordSecond chordSin chordCos q := by
+  have hs := sinLower_le hq
+  have hh := mul_le_mul_of_nonneg_left (le_sinUpper (x := q/2) (by linarith))
+    (show (0:ℝ) ≤ chordSin/4 by norm_num [chordSin])
+  have hc := mul_le_mul_of_nonneg_left (le_cosUpper (q/2))
+    (show (0:ℝ) ≤ chordCos/4 by norm_num [chordCos])
+  simp only [chordSecond]
+  linarith
 
 /-- The curvature of the chord term is at most `3/40 - (3/10) min(q, 1)` on
 `[1/2, 3/2]`. -/
 lemma chord_second_envelope {L M q : ℝ} (hL : L ≤ chordSin) (hM : M ≤ chordCos)
     (hq : 1/2 ≤ q ∧ q ≤ 3/2) : chordSecond L M q ≤ 3/40-(3/10)*min q 1 := by
-  have hp := polynomial_upper hL hM ⟨hq.1,by linarith [hq.2]⟩
+  have hp := second_le_top hL hM ⟨by linarith [hq.1],by linarith [hq.2]⟩
   by_cases hq1 : q ≤ 1
   · rw [min_eq_left hq1]
     have h := concave_gt_of_endpoints (c := 0)
-      (envelope_concave (3/40) (-(3/10)) (l := 1/2) (u := 1) (by norm_num) (by norm_num))
-      ⟨hq.1,hq1⟩ (by norm_num [p]) (by norm_num [p])
+      (top_concave (3/40) (-(3/10)) (l := 1/2) (u := 1) (by norm_num) (by norm_num))
+      ⟨hq.1,hq1⟩
+      (top_endpoint (by norm_num) (by norm_num [sinLower,sinUpper,cosUpper,chordSin,chordCos]))
+      (top_endpoint (by norm_num) (by norm_num [sinLower,sinUpper,cosUpper,chordSin,chordCos]))
     linarith
   · rw [min_eq_right (le_of_not_ge hq1)]
     have h := concave_gt_of_endpoints (c := 0)
-      (envelope_concave (-(9/40)) 0 (l := 1) (u := 3/2) (by norm_num) (by norm_num))
-      ⟨le_of_not_ge hq1,hq.2⟩ (by norm_num [p]) (by norm_num [p])
+      (top_concave (-(9/40)) 0 (l := 1) (u := 3/2) (by norm_num) (by norm_num))
+      ⟨le_of_not_ge hq1,hq.2⟩
+      (top_endpoint (by norm_num) (by norm_num [sinLower,sinUpper,cosUpper,chordSin,chordCos]))
+      (top_endpoint (by norm_num) (by norm_num [sinLower,sinUpper,cosUpper,chordSin,chordCos]))
     linarith
 
 /-- The curvature of the chord term is at most `-19/100` on `[157/200, 5/3]`. -/
 lemma chord_second_high {L M q : ℝ} (hL : L ≤ chordSin) (hM : M ≤ chordCos)
     (hq : 157/200 ≤ q ∧ q ≤ 5/3) : chordSecond L M q ≤ -(19/100) := by
-  have hp := polynomial_upper hL hM ⟨by linarith [hq.1],hq.2⟩
+  have hp := second_le_top hL hM ⟨by linarith [hq.1],hq.2⟩
   have h := concave_gt_of_endpoints (c := 0)
-    (envelope_concave (-(19/100)) 0 (l := 157/200) (u := 5/3) (by norm_num) (by norm_num))
-    hq (by norm_num [p]) (by norm_num [p])
+    (top_concave (-(19/100)) 0 (l := 157/200) (u := 5/3) (by norm_num) (by norm_num)) hq
+    (top_endpoint (by norm_num) (by norm_num [sinLower,sinUpper,cosUpper,chordSin,chordCos]))
+    (top_endpoint (by norm_num) (by norm_num [sinLower,sinUpper,cosUpper,chordSin,chordCos]))
   linarith
 
 lemma chord_second_nonpositive {L M q : ℝ} (hL : L ≤ chordSin) (hM : M ≤ chordCos)

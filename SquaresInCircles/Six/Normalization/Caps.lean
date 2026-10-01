@@ -370,20 +370,20 @@ private lemma piercing_polynomial_lower {h s : ℝ}
   linarith
 
 private lemma piercing_polynomial_gt_ceiling {h s : ℝ}
-    (hh0 : 77 / 200 ≤ h) (hh : h ≤ 5 / 8)
+    (hh0 : 3 / 8 ≤ h) (hh : h ≤ 5 / 8)
     (hs0 : 0 ≤ s) (hs : s ≤ 2 / 5) :
     Q0 < (h + 1 + (1 - (h + 1 / 2) * s) * s) ^ 2 +
       (1 - (h + 1 / 2) * s) ^ 2 := by
   have hp := piercing_polynomial_lower (by linarith : 0 ≤ h) hh hs0 hs
   have hm := mul_nonneg (sub_nonneg.mpr hh0)
-    (show 0 ≤ h + 77 / 200 + 2 by linarith)
+    (show 0 ≤ h + 3 / 8 + 2 by linarith)
   norm_num [Q0] at *
   nlinarith
 
 /-- A square in the disk beyond the line at depth `h`, at an angle with cosine
 `c` and sine `s`, has transverse coordinate below `1/2 - (h + 1/2) s`. -/
 private theorem piercing_transverse_upper {a b h c s : ℝ}
-    (hh0 : 77 / 200 ≤ h) (hh : h ≤ 5 / 8)
+    (hh0 : 3 / 8 ≤ h) (hh : h ≤ 5 / 8)
     (hc : c ≤ 1) (hs0 : 0 ≤ s) (hs : s ≤ 2 / 5)
     (ha : h + 1 / 2 ≤ a)
     (hbox : (a + 1 / 2) ^ 2 + (|b| + 1 / 2) ^ 2 ≤ Q0)
@@ -431,12 +431,12 @@ theorem cap_piercing {a b h t : ℝ} (ht : |t| ≤ Real.pi / 4) (hh : coreRadius
   intro b t ht0 ht hbox hm
   obtain ⟨ht', hab, hdepth, haR, hbU, hbhalf⟩ := deep_cap_bounds_nonneg ht0 ht hh hbox hm
   have htr := small_cap_trig ht0 ht'.le
-  have hh0 : 77 / 200 ≤ h := by linarith [coreRadius_bounds.1]
+  have hh0 : 3 / 8 ≤ h := by linarith [coreRadius_bounds.1]
   have hh' : h ≤ 5 / 8 := by linarith [rho0_bounds.2]
   have ha0 : 0 ≤ a := by linarith
   have hZ : 0 ≤ h + 1 / 2 := by linarith
   have hnormal_lower := mul_le_mul
-    (show (177 : ℝ) / 200 ≤ h + 1 / 2 by linarith)
+    (show (7 : ℝ) / 8 ≤ h + 1 / 2 by linarith)
     htr.1 (by norm_num : (0 : ℝ) ≤ 23 / 25) hZ
   have hnormal_upper := mul_le_mul_of_nonneg_left (Real.cos_le_one t) hZ
   have htrans_upper := piercing_transverse_upper hh0 hh' (Real.cos_le_one t)

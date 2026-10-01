@@ -30,9 +30,9 @@ namespace SquaresInCircles.Six.SouthTail
 open Normalization Wings
 
 /-! The weights are `beta` on C–W for W on the west side of C, `omega` for W on
-its own axis, `1` on C–S, `mu` on W–D and `nu` on D–S. The rationals
-`southRootUpper` and `westRootUpper` lie above `√(1 + ν²)` and `√(ω² + μ²)`, the
-lengths of the forces on S and on W on its own axis, and `kappa` is the
+its own axis, `1` on C–S, `mu` on W–D and `nu` on D–S. The decimals
+`southRootUpper` and `westRootUpper` lie above `√(1 + ν²)` and `√(ω² + μ²)`,
+the lengths of the forces on S and on W on its own axis, and `kappa` is the
 coefficient of `sin (v + s)` in the support of D. -/
 
 def beta : ℝ := 3/5
@@ -40,8 +40,8 @@ def omega : ℝ := 5/8
 def mu : ℝ := 2/5
 def nu : ℝ := 3/10
 def kappa : ℝ := radiusBound/5
-def southRootUpper : ℝ := 1044031/1000000
-def westRootUpper : ℝ := 371021/500000
+def southRootUpper : ℝ := 1.0441
+def westRootUpper : ℝ := 0.7421
 
 /-- An end of the range `[0, c̄]` of the first coordinate of the centre of C. -/
 def face (upper : Bool) : ℝ := if upper then coreUpper else 0
@@ -90,12 +90,15 @@ lemma diagonal_norm (v s d : ℝ) :
   linear_combination mu^2*(Real.sin_sq_add_cos_sq (d+v))+
     nu^2*(Real.sin_sq_add_cos_sq (d-s))-2*mu*nu*ht
 
+/-- The length of the force on D lies below the tangent of the square root at
+`(3/5)²`. -/
 lemma diagonal_root_upper {z : ℝ} (hz : -(1:ℝ)≤z ∧ z≤1) :
     Real.sqrt (mu^2+nu^2+2*mu*nu*z)≤61/120+z/5 := by
-  refine (Real.sqrt_le_left (by linarith [hz.1])).mpr ?_
-  have he := sq_nonneg (z/5-11/120)
+  have h := sqrt_le_tangent (c := 3/5) (by norm_num)
+    (show 0≤mu^2+nu^2+2*mu*nu*z by dsimp [mu,nu]; linarith [hz.1])
+  convert h using 1
   dsimp [mu,nu]
-  nlinarith only [he]
+  ring
 
 lemma diagonal_vertex_support {a b : ℝ} (hc : ContainedChart a |b|) (v s d : ℝ) :
     diagonalU v s d*a+diagonalV v s d*b≤
@@ -357,20 +360,21 @@ private lemma raw_s_form (upper : Bool) (v s d a b : ℝ) :
   rw [Real.cos_sub,Real.sin_sub]
   ring
 
+/-- A unit vector does work at most `0.955 > √(0.73² + 0.613²)` against
+`(0.73, 0.613)`, by Cauchy–Schwarz. -/
 private lemma unit_harmonic_upper {x y : ℝ} (hxy : x^2+y^2=1) :
-    (73/100)*x+(613/1000)*y≤191/200 := by
-  have hid : ((73/100)*x+(613/1000)*y)^2+((73/100)*y-(613/1000)*x)^2=
-      (73/100:ℝ)^2+(613/1000:ℝ)^2 := by
-    linear_combination ((73/100:ℝ)^2+(613/1000:ℝ)^2)*hxy
+    0.73*x+0.613*y≤0.955 := by
+  have hid : (0.73*x+0.613*y)^2+(0.73*y-0.613*x)^2=(0.73:ℝ)^2+(0.613:ℝ)^2 := by
+    linear_combination ((0.73:ℝ)^2+(0.613:ℝ)^2)*hxy
   by_contra! h
-  have hp := mul_pos (sub_pos.mpr h) (show 0<(73/100)*x+(613/1000)*y+191/200 by linarith)
-  nlinarith [sq_nonneg ((73/100)*y-(613/1000)*x)]
+  have hp := mul_pos (sub_pos.mpr h) (show 0<0.73*x+0.613*y+0.955 by linarith)
+  nlinarith [sq_nonneg (0.73*y-0.613*x)]
 
-/-- For `1/2 ≤ a ≤ 1113/1000` and `|b| ≤ 23/100`, the coefficients of `cos v`,
+/-- For `1/2 ≤ a ≤ 1.113` and `|b| ≤ 23/100`, the coefficients of `cos v`,
 `sin v`, `cos s` and `sin s` in `raw` are nonnegative. -/
 private lemma raw_coefficients (upper : Bool) {d a b : ℝ}
     (hd : 1/2≤d ∧ d≤11/14)
-    (ha : 1/2≤a ∧ a≤1113/1000) (hb : -(23/100)≤b ∧ b≤23/100) :
+    (ha : 1/2≤a ∧ a≤1.113) (hb : -(23/100)≤b ∧ b≤23/100) :
     (0≤omega*(1/2-face upper)+mu*((1/2-b)*Real.cos d+(1/2-a)*Real.sin d) ∧
       0≤omega*B+mu*(-(1/2-b)*Real.sin d+(1/2-a)*Real.cos d)) ∧
     (0≤A+nu*((1/2-a)*Real.cos d+(1/2+b)*Real.sin d) ∧
@@ -379,17 +383,17 @@ private lemma raw_coefficients (upper : Bool) {d a b : ℝ}
   have hc : 0≤Real.cos d := by linarith [ht.1]
   have hs : 0≤Real.sin d := by linarith [ht.2.1]
   have hamin : 0≤a-1/2 := by linarith [ha.1]
-  have has : (a-1/2)*Real.sin d≤613/1000 := by
+  have has : (a-1/2)*Real.sin d≤0.613 := by
     nlinarith only [mul_le_mul_of_nonneg_left (Real.sin_le_one d) hamin,ha.2]
-  have hac : (a-1/2)*Real.cos d≤613/1000 := by
+  have hac : (a-1/2)*Real.cos d≤0.613 := by
     nlinarith only [mul_le_mul_of_nonneg_left (Real.cos_le_one d) hamin,ha.2]
-  have hbc := mul_nonneg (show 0≤(1/2-b)-27/100 by linarith [hb.2]) hc
+  have hbc := mul_nonneg (show 0≤(1/2-b)-0.27 by linarith [hb.2]) hc
   have hbs := mul_nonneg (show 0≤1/2+b by linarith [hb.1]) hs
-  have v1 := mul_nonneg (show 0≤73/100-(1/2-b) by linarith [hb.1]) hs
-  have v2 := mul_nonneg (show 0≤613/1000-(a-1/2) by linarith [ha.2]) hc
+  have v1 := mul_nonneg (show 0≤0.73-(1/2-b) by linarith [hb.1]) hs
+  have v2 := mul_nonneg (show 0≤0.613-(a-1/2) by linarith [ha.2]) hc
   have vu := unit_harmonic_upper (Real.sin_sq_add_cos_sq d)
-  have s1 := mul_nonneg (show 0≤73/100-(1/2+b) by linarith [hb.2]) hc
-  have s2 := mul_nonneg (show 0≤613/1000-(a-1/2) by linarith [ha.2]) hs
+  have s1 := mul_nonneg (show 0≤0.73-(1/2+b) by linarith [hb.2]) hc
+  have s2 := mul_nonneg (show 0≤0.613-(a-1/2) by linarith [ha.2]) hs
   have su := unit_harmonic_upper (x := Real.cos d) (y := Real.sin d)
     (by nlinarith only [Real.sin_sq_add_cos_sq d])
   refine ⟨⟨?_,?_⟩,⟨?_,?_⟩⟩
@@ -484,7 +488,7 @@ lemma force_rotation (d : ℝ) :
     simp only [Real.sin_add,Real.cos_add,Real.sin_sub,Real.cos_sub] <;> ring
 
 lemma rotation_bounds :
-    11/25≤rotationA ∧ rotationA≤443/1000 ∧ 489/1000≤rotationB ∧ rotationB≤49/100 := by
+    0.44≤rotationA ∧ rotationA≤0.45 ∧ 0.48≤rotationB ∧ rotationB≤0.49 := by
   have h := trig_bracket (l := 11/25) (u := 11/25) (x := 11/25) (by norm_num)
     (by linarith [Real.pi_gt_three]) ⟨le_rfl,le_rfl⟩
   norm_num at h
@@ -492,7 +496,7 @@ lemma rotation_bounds :
   refine ⟨?_,?_,?_,?_⟩ <;> linarith [h.1,h.2.1,h.2.2.1,h.2.2.2]
 
 lemma diagonal_trig_bounds {d : ℝ} (hd : 1/2≤d ∧ d≤11/14) :
-    (69/100≤Real.cos d ∧ Real.cos d≤879/1000) ∧ 4/3<Real.cos d+Real.sin d := by
+    (69/100≤Real.cos d ∧ Real.cos d≤9/10) ∧ 4/3<Real.cos d+Real.sin d := by
   have ht := d_trig hd
   obtain ⟨-,-,-,hcu⟩ := trig_bracket (by norm_num) (by linarith [Real.pi_gt_d2]) hd
   have hl := cosLower_le (1/2)
@@ -513,21 +517,19 @@ lemma force_cone {d : ℝ} (hd : 1/2≤d ∧ d≤11/14) :
   have hs : 0≤Real.sin d := by linarith [ht.2.1]
   have hr := rotation_bounds
   have hi := force_rotation d
-  have u1 := mul_nonneg (show 0≤rotationA-11/25 by linarith [hr.1]) hc
-  have u2 := mul_nonneg (show 0≤rotationB-489/1000 by linarith [hr.2.2.1]) hs
-  have ulo : 3/5≤forceU d := by nlinarith only [u1,u2,hi.1,ht.2.1,ht'.2]
+  have a1 := mul_nonneg (show 0≤rotationA-0.44 by linarith [hr.1]) hc
+  have a2 := mul_nonneg (show 0≤rotationA-0.44 by linarith [hr.1]) hs
+  have a3 := mul_nonneg (show 0≤0.45-rotationA by linarith [hr.2.1]) hs
+  have b1 := mul_nonneg (show 0≤rotationB-0.48 by linarith [hr.2.2.1]) hc
+  have b2 := mul_nonneg (show 0≤rotationB-0.48 by linarith [hr.2.2.1]) hs
+  have b3 := mul_nonneg (show 0≤0.49-rotationB by linarith [hr.2.2.2]) hc
+  have ulo : 3/5≤forceU d := by nlinarith only [a1,b2,hi.1,ht.2.1,ht'.2]
   have uhi : forceU d≤7/10 := by
     dsimp [forceU,mu,nu]
     linarith [Real.sin_le_one (d+corner),Real.cos_le_one (d-corner)]
-  have v1 := mul_nonneg (show 0≤rotationB-489/1000 by linarith [hr.2.2.1]) hc
-  have v2 := mul_nonneg (show 0≤443/1000-rotationA by linarith [hr.2.1]) hs
-  have vlo : 0≤forceV d := by nlinarith only [v1,v2,hi.2,ht'.1.1,ht.2.2]
-  have w1 := mul_nonneg
-    (show 0≤(2/5)*rotationA-rotationB+157/500 by linarith [hr.1,hr.2.2.2]) hc
-  have w2 := mul_nonneg
-    (show 0≤(2/5)*rotationB+rotationA-1589/2500 by linarith [hr.1,hr.2.2.1]) hs
+  have vlo : 0≤forceV d := by nlinarith only [b1,a3,hi.2,ht'.1.1,ht.2.2]
   have vhi : forceV d≤(2/5)*forceU d := by
-    nlinarith only [w1,w2,hi.1,hi.2,ht'.1.2,ht.2.1]
+    nlinarith only [a1,a2,b2,b3,hi.1,hi.2,ht'.1.2,ht.2.1]
   exact ⟨⟨ulo,uhi⟩,by rwa [abs_of_nonneg vlo]⟩
 
 /-- The terms in `d` of the stress at the corner, after the narrow-cone support
@@ -551,18 +553,18 @@ lemma special_hasDeriv (d : ℝ) : HasDerivAt specialTerm (specialFirst d) d := 
 
 lemma special_derivative_nonpositive {d : ℝ} (hd : 1/2≤d ∧ d≤11/14) :
     specialFirst d≤0 := by
-  have hq : 47/50≤d+corner ∧ d+corner≤429/350 := by
+  have hq : 47/50≤d+corner ∧ d+corner≤11/14+11/25 := by
     dsimp [corner]
     constructor <;> linarith [hd.1,hd.2]
   have hl := cosLower_le (47/50)
   have hl' := sinBelow_le (47/50)
-  have hu := cosLower_le (429/350)
-  have hu' := sinBelow_le (429/350)
+  have hu := cosLower_le (11/14+11/25)
+  have hu' := sinBelow_le (11/14+11/25)
   norm_num [cosLower,sinBelow,sinLower,sinUpper] at hl hl' hu hu'
   have hf := harmonic_pos_of_endpoints (K := -2/3) (A := B) (B := 1/2) (by norm_num [B])
     (by norm_num) (by norm_num) (by linarith [Real.pi_gt_d2]) hq
     (by dsimp [B]; linarith) (by dsimp [B]; linarith)
-  have hs : Real.sin (d-corner)≤121/350 := by
+  have hs : Real.sin (d-corner)≤11/14-11/25 := by
     have h := Real.sin_le (show 0≤d-corner by dsimp [corner]; linarith [hd.1])
     dsimp [corner] at h ⊢
     linarith [hd.2]
@@ -593,10 +595,10 @@ private lemma raw_special_corner (upper : Bool) {d a b : ℝ}
   have hend : 0<specialValue upper (11/14) := by
     obtain ⟨st,-,ct,-⟩ := trig_bracket (l := 11/25) (u := 11/25) (x := 11/25)
       (by norm_num) (by linarith [Real.pi_gt_three]) ⟨le_rfl,le_rfl⟩
-    have cq := cosLower_le (429/350)
-    have sq := le_sinAbove (429/350)
-    have cr := cos_upper_four (x := (121:ℝ)/350) (by norm_num)
-    have sr := sinBelow_le (121/350)
+    have cq := cosLower_le (11/14+11/25)
+    have sq := le_sinAbove (11/14+11/25)
+    have cr := cos_upper_four (x := (11/14-11/25:ℝ)) (by norm_num)
+    have sr := sinBelow_le (11/14-11/25)
     norm_num [cosLower,sinBelow,sinAbove,sinLower,sinUpper] at st ct cq sq cr sr
     cases upper <;>
       norm_num [specialValue,specialTerm,constant,corner,omega,face,coreUpper,A,B,mu,nu,

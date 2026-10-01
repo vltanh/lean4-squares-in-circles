@@ -4,7 +4,7 @@ import SquaresInCircles.Common.Trigonometry
 /-!
 # Six squares: the constants
 
-The constants of the six-square proof, each with one rational bracket.
+The constants of the six-square proof, each with one decimal bracket.
 
 The model (defined with the statement, in `Geometry.lean`) is built from
 `h = √2/2` and the smaller root `s*` of `s² - A s + B`; `t*`, `d*` and the
@@ -16,18 +16,21 @@ C, `r* = (s* + 1/2)/(s* + 3/2)` on N–W and E–S, and `m* = (1 + r*) k*`, with
 `diagonalK = 2h m*`, the centre of D lies at distance `ρ* = √(q* - 1/4) - 1/2`
 from the disk centre, and `pairBase = m* (1/2 - t*)`. The forces of the model
 point at the far corners of N and W on the circle, which gives their lengths,
-and `2 pairBase + diagonalK (1 - ρ*) = 0` because `ρ* = 2h d*`. Each constant
-gets one bracket of width at most `6·10⁻⁷`: `s*` from the sign of its
-quadratic, the others from it by products, quotients and square roots.
+and `2 pairBase + diagonalK (1 - ρ*) = 0` because `ρ* = 2h d*`. The brackets
+have as many decimals as their uses need: seven or eight for `h`, `s*`, `t*`,
+`r*`, `k*` and `m*`, from which the others are computed, and at most five for
+the rest. `s*` comes from the sign of its quadratic, the others from it by
+products, quotients and square roots.
 
-The normalization works below the rational ceiling `Q0 = 142559/50000 > q*` on
-the squared radius. With `R0 = √Q0`, the number `ρ0 = √(Q0 - 1/4) - 1/2` is
-the largest radial coordinate of a square in the disk, `c0 = ρ0 - 1` bounds the
-centre of the central square C, `coreRadius = 3/2 - ρ0` is the radius of a disk
-about the origin inside C, `aMin = 2 - ρ0` is the least radial coordinate of a
-square outside that disk and `U0` its largest transverse coordinate. The
-rationals `radiusBound`, `rhoBound`, `coreLower` and `coreUpper` stand for
-`R0`, `ρ0` and `c0` in the estimates, and `A` and `B` for `1/2 ∓ coreUpper`.
+The normalization works below the ceiling `Q0 = 2.85118` on the squared radius,
+less than `3·10⁻⁶` above `q*`. With `R0 = √Q0`, the number
+`ρ0 = √(Q0 - 1/4) - 1/2` is the largest radial coordinate of a square in the
+disk, `c0 = ρ0 - 1` bounds the centre of the central square C,
+`coreRadius = 3/2 - ρ0` is the radius of a disk about the origin inside C,
+`aMin = 2 - ρ0` is the least radial coordinate of a square outside that disk and
+`U0` its largest transverse coordinate. The decimals `radiusBound`, `rhoBound`,
+`coreLower` and `coreUpper` stand for `R0`, `ρ0` and `c0`, rounded, in the
+estimates, and `A` and `B` for `1/2 ∓ coreUpper`.
 -/
 
 noncomputable section
@@ -36,24 +39,24 @@ namespace SquaresInCircles.Six
 /-! ### The model -/
 
 lemma trig_bracket_half :
-    (8775:ℝ)/10000 ≤ Real.cos (1/2) ∧ Real.cos (1/2) ≤ 878/1000 ∧
-    (4794:ℝ)/10000 ≤ Real.sin (1/2) ∧ Real.sin (1/2) ≤ 4795/10000 := by
+    0.8775 ≤ Real.cos (1/2) ∧ Real.cos (1/2) ≤ 0.878 ∧
+    0.4794 ≤ Real.sin (1/2) ∧ Real.sin (1/2) ≤ 0.4795 := by
   have h := trig_bracket (l := 1/2) (u := 1/2) (x := 1/2) (by norm_num)
     (by linarith [Real.pi_gt_three]) ⟨le_rfl,le_rfl⟩
   norm_num at h
   exact ⟨by linarith,by linarith,by linarith,by linarith⟩
 
 lemma trig_bracket_two_thirds :
-    (157:ℝ)/200 ≤ Real.cos (2/3) ∧ Real.cos (2/3) ≤ 787/1000 ∧
-    (309:ℝ)/500 ≤ Real.sin (2/3) ∧ Real.sin (2/3) ≤ 619/1000 := by
+    0.785 ≤ Real.cos (2/3) ∧ Real.cos (2/3) ≤ 0.787 ∧
+    0.618 ≤ Real.sin (2/3) ∧ Real.sin (2/3) ≤ 0.619 := by
   have h := trig_bracket (l := 2/3) (u := 2/3) (x := 2/3) (by norm_num)
     (by linarith [Real.pi_gt_three]) ⟨le_rfl,le_rfl⟩
   norm_num at h
   exact ⟨by linarith,by linarith,by linarith,by linarith⟩
 
 lemma trig_bracket_seven_sixths :
-    (3931:ℝ)/10000 ≤ Real.cos (7/6) ∧ Real.cos (7/6) ≤ 2/5 ∧
-    (9194:ℝ)/10000 ≤ Real.sin (7/6) ∧ Real.sin (7/6) ≤ 9201/10000 := by
+    0.3931 ≤ Real.cos (7/6) ∧ Real.cos (7/6) ≤ 0.4 ∧
+    0.9194 ≤ Real.sin (7/6) ∧ Real.sin (7/6) ≤ 0.9201 := by
   have h := trig_bracket (l := 7/6) (u := 7/6) (x := 7/6) (by norm_num)
     (by linarith [Real.pi_gt_d2]) ⟨le_rfl,le_rfl⟩
   norm_num at h
@@ -68,14 +71,8 @@ lemma cos_quarter : Real.cos (Real.pi/4)=hStar := by simp [hStar]
 
 lemma sin_quarter : Real.sin (Real.pi/4)=hStar := by simp [hStar]
 
-lemma hStar_bounds : (707106781:ℝ)/1000000000 < hStar ∧ hStar < 707106782/1000000000 := by
-  have hl : Real.sqrt ((1414213562/1000000000:ℝ)^2) < Real.sqrt 2 :=
-    Real.sqrt_lt_sqrt (by positivity) (by norm_num)
-  have hu : Real.sqrt 2 < Real.sqrt ((1414213564/1000000000:ℝ)^2) :=
-    Real.sqrt_lt_sqrt (by norm_num) (by norm_num)
-  rw [Real.sqrt_sq (by norm_num)] at hl hu
-  dsimp [hStar]
-  constructor <;> linarith
+lemma hStar_bounds : 0.70710678 < hStar ∧ hStar < 0.70710679 := by
+  constructor <;> nlinarith [hStar_sq,hStar_pos]
 
 private lemma AStar_bounds : 10 < AStar ∧ AStar < 11 := by
   dsimp [AStar]
@@ -121,34 +118,27 @@ lemma sStar_polynomial : sStar^2-AStar*sStar+BStar=0 := by
 
 /-- `s*` is the root of the quadratic below `1/5`, where the quadratic changes
 sign between the two ends of the bracket. -/
-lemma sStar_bounds : (8424567:ℝ)/100000000 < sStar ∧ sStar < 842457/10000000 := by
-  have pl : 0 < (8424567/100000000:ℝ)^2-AStar*(8424567/100000000)+BStar := by
+lemma sStar_bounds : 0.08424567 < sStar ∧ sStar < 0.0842457 := by
+  have hs := sStar_lt_fifth
+  have hA := AStar_bounds.1
+  have hp (x : ℝ) : x^2-AStar*x+BStar=(x-sStar)*(x+sStar-AStar) := by
+    linear_combination sStar_polynomial
+  have pl : 0 < 0.08424567^2-AStar*0.08424567+BStar := by
     dsimp [AStar,BStar]
     linarith [hStar_bounds.1,hStar_bounds.2]
-  have pu : (842457/10000000:ℝ)^2-AStar*(842457/10000000)+BStar < 0 := by
+  have pu : 0.0842457^2-AStar*0.0842457+BStar < 0 := by
     dsimp [AStar,BStar]
     linarith [hStar_bounds.1,hStar_bounds.2]
-  constructor
-  · by_contra! hl
-    have hm := mul_nonpos_of_nonneg_of_nonpos (show 0 ≤ 8424567/100000000-sStar by linarith)
-      (show 8424567/100000000+sStar-AStar ≤ 0 by linarith [sStar_lt_fifth,AStar_bounds.1])
-    nlinarith [sStar_polynomial]
-  · by_contra! hu
-    have hm := mul_nonpos_of_nonneg_of_nonpos (show 0 ≤ sStar-842457/10000000 by linarith)
-      (show sStar+842457/10000000-AStar ≤ 0 by linarith [sStar_lt_fifth,AStar_bounds.1])
-    nlinarith [sStar_polynomial]
+  rw [hp] at pl pu
+  exact ⟨by linarith [neg_of_mul_pos_left pl (by linarith)],
+    by linarith [pos_of_mul_neg_left pu (by linarith)]⟩
 
-lemma tStar_bounds : (4202266:ℝ)/10000000 < tStar ∧ tStar < 4202267/10000000 := by
-  have hs := sStar_bounds
-  have hc0 : 0 ≤ -20+30*hStar := by linarith [hStar_bounds.1]
-  have hlo := mul_le_mul
-    (show (121320343:ℝ)/100000000 ≤ -20+30*hStar by linarith [hStar_bounds.1])
-    hs.1.le (by norm_num) hc0
-  have hhi := mul_le_mul
-    (show -20+30*hStar ≤ (60660173:ℝ)/50000000 by linarith [hStar_bounds.2])
-    hs.2.le sStar_pos.le (by norm_num)
+lemma tStar_bounds : 0.4202266 < tStar ∧ tStar < 0.4202267 := by
+  obtain ⟨hh1,hh2⟩ := hStar_bounds
+  obtain ⟨hs1,hs2⟩ := sStar_bounds
   dsimp [tStar]
-  constructor <;> nlinarith [hStar_bounds.1,hStar_bounds.2]
+  constructor <;> nlinarith [mul_pos (sub_pos.mpr hh1) (sub_pos.mpr hs1),
+    mul_pos (sub_pos.mpr hh1) (sub_pos.mpr hs2)]
 
 lemma dStar_pos : 0 < dStar := by
   dsimp [dStar]
@@ -158,22 +148,17 @@ lemma qStar_pos : 0 < qStar := by
   dsimp [qStar]
   nlinarith [sStar_pos,sq_nonneg sStar]
 
-lemma qStar_bounds :
-    (14255886729137489:ℝ)/5000000000000000 < qStar ∧
-      qStar < (142558873796849:ℝ)/50000000000000 := by
-  have hs := sStar_bounds
-  have hl := mul_nonneg (sub_nonneg.mpr hs.1.le)
-    (show 0 ≤ sStar+8424567/100000000 by linarith [sStar_pos])
-  have hu := mul_nonneg (sub_nonneg.mpr hs.2.le)
-    (show 0 ≤ 842457/10000000+sStar by linarith [sStar_pos])
+lemma qStar_bounds : 2.85117 < qStar ∧ qStar < 2.85118 := by
+  obtain ⟨hs1,hs2⟩ := sStar_bounds
   dsimp [qStar]
-  constructor <;> nlinarith
+  constructor <;> nlinarith [mul_pos (sub_pos.mpr hs1) (sub_pos.mpr hs1),
+    mul_pos (sub_pos.mpr hs2) sStar_pos]
 
 lemma radius_pos : 0 < radius := Real.sqrt_pos.mpr qStar_pos
 
 lemma radius_sq : radius^2=qStar := Real.sq_sqrt qStar_pos.le
 
-lemma radius_bounds : (16885429:ℝ)/10000000 < radius ∧ radius < 16885431/10000000 := by
+lemma radius_bounds : 1.68854 < radius ∧ radius < 1.68855 := by
   have hq := qStar_bounds
   constructor
   · rw [radius,Real.lt_sqrt (by norm_num)]; linarith
@@ -184,21 +169,24 @@ lemma east_radius_identity : qStar=(sStar+1/2)^2+(sStar+3/2)^2 := by
   dsimp [qStar]
   ring
 
-/-- The far corner `(3/2 - s*, t* + 1/2)` of W, reflected, lies on the circle. -/
+/-- The far corner `(3/2 - s*, t* + 1/2)` of W, reflected, lies on the circle:
+with `h² = 1/2`, the two sides differ by `1200 h - 849` times the quadratic of
+`s*`. -/
 lemma west_radius_identity : qStar=(3/2-sStar)^2+(tStar+1/2)^2 := by
   have hp := sStar_polynomial
   have hh := hStar_sq
   dsimp [qStar,tStar,AStar,BStar] at *
   linear_combination (1200*hStar-849)*hp-
-    ((320400*sStar^2-3200120*sStar+266409)/356)*hh
+    ((30*sStar-9/2)^2-1200*(1940*sStar/267-432/712))*hh
 
-/-- The far vertices of D lie on the circle. -/
+/-- The far vertices of D lie on the circle: with `h² = 1/2`, the two sides differ
+by `2400 h - 1698` times the quadratic of `s*`. -/
 lemma diagonal_radius_identity : qStar=2*dStar^2+2*hStar*dStar+1/2 := by
   have hp := sStar_polynomial
   have hh := hStar_sq
   dsimp [qStar,dStar,tStar,AStar,BStar] at *
   linear_combination (2400*hStar-1698)*hp-
-    ((320400*sStar^2-3232160*sStar+271927)/178)*hh
+    (2*(11/2-30*sStar)*(13/2-30*sStar)-2400*(1940*sStar/267-432/712))*hh
 
 /-! ### The stress of the model -/
 
@@ -221,13 +209,13 @@ def pairBase : ℝ := mStar*(1/2-tStar)
 lemma rStar_den_pos : 0 < sStar+3/2 := by linarith [sStar_pos]
 lemma kStar_den_pos : 0 < 3/2-sStar := by linarith [sStar_bounds.2]
 
-lemma rStar_bounds : (3687847:ℝ)/10000000 < rStar ∧ rStar < 3687848/10000000 := by
+lemma rStar_bounds : 0.3687847 < rStar ∧ rStar < 0.3687848 := by
   have hs := sStar_bounds
   constructor
   · rw [rStar,lt_div_iff₀ rStar_den_pos]; linarith
   · rw [rStar,div_lt_iff₀ rStar_den_pos]; linarith
 
-lemma kStar_bounds : (6499903:ℝ)/10000000 < kStar ∧ kStar < 6499904/10000000 := by
+lemma kStar_bounds : 0.6499903 < kStar ∧ kStar < 0.6499904 := by
   have hs := sStar_bounds
   have ht := tStar_bounds
   constructor
@@ -238,43 +226,32 @@ lemma rStar_pos : 0 < rStar := by linarith [rStar_bounds.1]
 lemma kStar_pos : 0 < kStar := by linarith [kStar_bounds.1]
 lemma one_add_rStar_pos : 0 < 1+rStar := by linarith [rStar_bounds.1]
 
-lemma mStar_bounds : (8896967:ℝ)/10000000 < mStar ∧ mStar < 8896970/10000000 := by
-  have hr := rStar_bounds
-  have hk := kStar_bounds
-  have hl := mul_lt_mul'' (show (13687847:ℝ)/10000000 < 1+rStar by linarith) hk.1
-    (by norm_num) (by norm_num)
-  have hu := mul_lt_mul'' (show 1+rStar < (13687848:ℝ)/10000000 by linarith) hk.2
-    one_add_rStar_pos.le kStar_pos.le
+lemma mStar_bounds : 0.8896967 < mStar ∧ mStar < 0.889697 := by
+  obtain ⟨hr1,hr2⟩ := rStar_bounds
+  obtain ⟨hk1,hk2⟩ := kStar_bounds
   dsimp [mStar]
-  constructor <;> norm_num at hl hu ⊢ <;> linarith
+  constructor <;> nlinarith [mul_pos (sub_pos.mpr hr1) (sub_pos.mpr hk1),
+    mul_pos (sub_pos.mpr hr2) (sub_pos.mpr hk2)]
 
 lemma mStar_pos : 0 < mStar := by linarith [mStar_bounds.1]
 
-lemma diagonalK_bounds :
-    (12582211:ℝ)/10000000 < diagonalK ∧ diagonalK < 12582217/10000000 := by
-  have hm := mStar_bounds
-  have hl := mul_lt_mul''
-    (show (1414213562:ℝ)/1000000000 < 2*hStar by linarith [hStar_bounds.1])
-    hm.1 (by norm_num) (by norm_num)
-  have hu := mul_lt_mul''
-    (show 2*hStar < (1414213564:ℝ)/1000000000 by linarith [hStar_bounds.2])
-    hm.2 (by linarith [hStar_pos]) mStar_pos.le
+lemma diagonalK_bounds : 1.258 < diagonalK ∧ diagonalK < 1.259 := by
+  obtain ⟨hh1,hh2⟩ := hStar_bounds
+  obtain ⟨hm1,hm2⟩ := mStar_bounds
   dsimp [diagonalK]
-  constructor <;> norm_num at hl hu ⊢ <;> linarith
+  constructor <;> nlinarith [mul_pos (sub_pos.mpr hh1) (sub_pos.mpr hm1),
+    mul_pos (sub_pos.mpr hh2) (sub_pos.mpr hm2)]
 
 lemma diagonalK_pos : 0 < diagonalK := by linarith [diagonalK_bounds.1]
 
-lemma pairBase_bounds : (709739:ℝ)/10000000 < pairBase ∧ pairBase < 709742/10000000 := by
-  have hm := mStar_bounds
-  have ht := tStar_bounds
-  have hl := mul_lt_mul'' hm.1 (show (797733:ℝ)/10000000 < 1/2-tStar by linarith)
-    (by norm_num) (by norm_num)
-  have hu := mul_lt_mul'' hm.2 (show 1/2-tStar < (797734:ℝ)/10000000 by linarith)
-    mStar_pos.le (by linarith)
+lemma pairBase_bounds : 0.07097 < pairBase ∧ pairBase < 0.07098 := by
+  obtain ⟨hm1,hm2⟩ := mStar_bounds
+  obtain ⟨ht1,ht2⟩ := tStar_bounds
   dsimp [pairBase]
-  constructor <;> norm_num at hl hu ⊢ <;> linarith
+  constructor <;> nlinarith [mul_pos (sub_pos.mpr hm1) (sub_pos.mpr ht2),
+    mul_pos (sub_pos.mpr hm2) (sub_pos.mpr ht1)]
 
-lemma rhoStar_bounds : (11128165:ℝ)/10000000 < rhoStar ∧ rhoStar < 11128167/10000000 := by
+lemma rhoStar_bounds : 1.11281 < rhoStar ∧ rhoStar < 1.11282 := by
   have hq := qStar_bounds
   have hR := radius_sq
   constructor
@@ -337,8 +314,8 @@ lemma pairBase_diagonal_identity : 2*pairBase+diagonalK*(1-rhoStar)=0 := by
 
 /-! ### The ceiling of the normalization -/
 
-/-- The rational ceiling on the squared radius, just above `qStar`. -/
-def Q0 : ℝ := 142559/50000
+/-- The ceiling on the squared radius, just above `qStar`. -/
+def Q0 : ℝ := 2.85118
 
 /-- The radius of the disk of squared radius `Q0`. -/
 def R0 : ℝ := Real.sqrt Q0
@@ -374,13 +351,12 @@ lemma R0_sq : R0^2=Q0 := Real.sq_sqrt Q0_pos.le
 
 lemma R0_pos : 0 < R0 := Real.sqrt_pos.mpr Q0_pos
 
-lemma R0_bounds : (16885:ℝ)/10000 < R0 ∧ R0 < 8443/5000 := by
-  have hl : Real.sqrt ((16885/10000:ℝ)^2) < Real.sqrt Q0 :=
-    Real.sqrt_lt_sqrt (by positivity) (by norm_num [Q0])
-  have hu : Real.sqrt Q0 < Real.sqrt ((8443/5000:ℝ)^2) :=
-    Real.sqrt_lt_sqrt Q0_pos.le (by norm_num [Q0])
-  rw [Real.sqrt_sq (by norm_num)] at hl hu
-  exact ⟨hl,hu⟩
+lemma R0_bounds : 1.6885 < R0 ∧ R0 < 1.6886 := by
+  constructor
+  · rw [R0,Real.lt_sqrt (by norm_num)]
+    norm_num [Q0]
+  · rw [R0,Real.sqrt_lt' (by norm_num)]
+    norm_num [Q0]
 
 /-- The corners `(ρ0 + 1/2, ±1/2)` lie on the circle of radius `R0`. -/
 lemma rho0_identity : (rho0+1/2)^2+1/4=Q0 := by
@@ -391,20 +367,24 @@ lemma rho0_identity : (rho0+1/2)^2+1/4=Q0 := by
 lemma rho0_sq : rho0^2+rho0+1/2=Q0 := by
   nlinarith [rho0_identity]
 
-lemma rho0_bounds : (11128174:ℝ)/10000000 < rho0 ∧ rho0 < 11128175/10000000 := by
+lemma rho0_bounds : 1.11281 < rho0 ∧ rho0 < 1.11282 := by
   constructor
   · rw [rho0,lt_sub_iff_add_lt,Real.lt_sqrt (by norm_num)]
     norm_num [Q0]
   · rw [rho0,sub_lt_iff_lt_add,Real.sqrt_lt' (by norm_num)]
     norm_num [Q0]
 
-lemma c0_bounds : (1128174:ℝ)/10000000 < c0 ∧ c0 < 1128175/10000000 := by
+/-- The model lies inside the ceiling: `ρ* < ρ0`, as `q* < Q0`. -/
+lemma rhoStar_lt_rho0 : rhoStar < rho0 := by
+  nlinarith [rhoStar_identity,rho0_sq,qStar_lt_Q0,rhoStar_bounds.1,rho0_bounds.1]
+
+lemma c0_bounds : 0.11281 < c0 ∧ c0 < 0.11282 := by
   dsimp [c0]
   constructor <;> linarith [rho0_bounds.1,rho0_bounds.2]
 
 lemma c0_pos : 0 < c0 := by linarith [c0_bounds.1]
 
-lemma coreRadius_bounds : (3871825:ℝ)/10000000 < coreRadius ∧ coreRadius < 3871826/10000000 := by
+lemma coreRadius_bounds : 0.387 < coreRadius ∧ coreRadius < 0.388 := by
   dsimp [coreRadius]
   constructor <;> linarith [rho0_bounds.1,rho0_bounds.2]
 
@@ -418,7 +398,7 @@ lemma aMin_eq_coreRadius_add_half : aMin=coreRadius+1/2 := by
   dsimp [aMin,coreRadius]
   ring
 
-lemma aMin_bounds : (8871825:ℝ)/10000000 < aMin ∧ aMin < 8871826/10000000 := by
+lemma aMin_bounds : 0.887 < aMin ∧ aMin < 0.888 := by
   dsimp [aMin]
   constructor <;> linarith [rho0_bounds.1,rho0_bounds.2]
 
@@ -429,23 +409,20 @@ lemma U0_radicand_pos : 0 < Q0-(5/2-rho0)^2 := by
   rw [U0_radicand]
   linarith [rho0_bounds.1]
 
-lemma U0_upper : U0 < 463/1000 := by
-  have hs : Real.sqrt (Q0-(5/2-rho0)^2) < Real.sqrt ((963/1000:ℝ)^2) :=
-    Real.sqrt_lt_sqrt U0_radicand_pos.le (by rw [U0_radicand]; nlinarith [rho0_bounds.2])
-  rw [Real.sqrt_sq (by norm_num)] at hs
-  dsimp [U0]
-  linarith
+lemma U0_upper : U0 < 0.463 := by
+  rw [U0,sub_lt_iff_lt_add,Real.sqrt_lt' (by norm_num),U0_radicand]
+  linarith [rho0_bounds.2]
 
-/-! ### Rational ceilings -/
+/-! ### Decimal ceilings -/
 
-/-- A rational ceiling for `R0`. -/
-def radiusBound : ℝ := 8443/5000
-/-- A rational ceiling for `ρ0`. -/
-def rhoBound : ℝ := 55641/50000
-/-- A rational ceiling for `c0`. -/
-def coreUpper : ℝ := 5641/50000
-/-- A rational floor for `c0`. -/
-def coreLower : ℝ := 141/1250
+/-- `R0` rounded up. -/
+def radiusBound : ℝ := 1.6886
+/-- `ρ0` rounded up. -/
+def rhoBound : ℝ := 1.11282
+/-- `c0` rounded up. -/
+def coreUpper : ℝ := 0.11282
+/-- `c0` rounded down. -/
+def coreLower : ℝ := 0.1128
 
 lemma ceiling_bounds : R0 ≤ radiusBound ∧ rho0 ≤ rhoBound ∧ coreLower ≤ c0 ∧ c0 ≤ coreUpper := by
   dsimp [radiusBound,rhoBound,coreLower,coreUpper]
@@ -457,8 +434,8 @@ namespace Wings
 /-- `1/2 - coreUpper` and `1/2 + coreUpper`: the coefficients that the half-width
 of a square and the box of the centre of C leave in the separating inequalities
 of the wings. -/
-def A : ℝ := 19359/50000
-def B : ℝ := 30641/50000
+def A : ℝ := 0.38718
+def B : ℝ := 0.61282
 
 end Wings
 

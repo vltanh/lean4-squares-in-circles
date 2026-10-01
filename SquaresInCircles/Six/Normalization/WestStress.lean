@@ -15,12 +15,16 @@ supports of W and D. So the threshold sum minus these bounds is nonpositive; but
 at `z = t` and `z = u` it is `westStressW t u` and `westStressD t u`, which are
 positive (`west_cardinal_impossible`). Both are positive on the triangle of
 `(t, u)` by one argument (`triangle_positive`): where the signs of `sin t` and
-`sin u` are constant, each is, or is at least, a constant plus concave terms in
-`t`, in `u` and in `u - t`, so it is concave in `t` and along the edges of the
-three parts of the triangle, and it is positive at their seven vertices, by
-Taylor bounds at rational angles. A term `A cos x + B sin x` is concave where it
-is nonnegative, and `A cos x + B sin x - R √(p + q sin x)` where the curvature
-bound of `radicalTrig_concave` holds.
+`sin u` are constant, each is a constant plus concave terms in `t`, in `u` and
+in `u - t`, so it is concave in `t` and along the edges of the three parts of
+the triangle, and it is positive at their seven vertices, by Taylor bounds at
+rational angles and brackets of the lengths of the forces there. Along the axis
+of W the force on W has a constant length and that on D enters the term in `t`;
+along the axis of D their lengths enter the terms in `u - t` and `u`. A term
+`A cos x + B sin x` is concave where it is nonnegative, and
+`A cos x + B sin x - R √(p + q sin x)` where the curvature bound of
+`radicalTrig_concave` holds: on `[-2/3, 0]` the length of the force on D lies
+below its tangent, and on `[0, 2/5]` below `2/5`.
 -/
 
 noncomputable section
@@ -28,29 +32,28 @@ open Set
 namespace SquaresInCircles.Six
 open Normalization
 
-open Normalization
-
 /-- The bound on the work of the force on C, for its centre in `[0, c0]²`. -/
 def westCentralSupport (t:ℝ) : ℝ :=
   c0*(3/10+(9/20)*Real.cos t+(9/20)*max (Real.sin t) 0)
 
-/-- The threshold sum of the west stress minus the bounds on the works, with W
-and D separated along the secondary axis of W. -/
-def westStressW (t u:ℝ) : ℝ :=
+/-- The threshold sum of the west stress minus the bounds on the works, for forces
+of lengths `r` on W and `s` on D. -/
+def westStress (t u r s:ℝ) : ℝ :=
   17/20+(3/10)*Real.cos u+(3/10)*max (-Real.sin u) 0+
     (9/40)*(Real.cos t+|Real.sin t|)+(1/4)*(Real.cos (u-t)+Real.sin (u-t))-
-    westCentralSupport t-R0*Real.sqrt (53/200)-R0*Real.sqrt (61/400-(3/20)*Real.sin t)
+    westCentralSupport t-R0*r-R0*s
+
+/-- The west stress with W and D separated along the secondary axis of W. -/
+def westStressW (t u:ℝ) : ℝ :=
+  westStress t u (Real.sqrt (53/200)) (Real.sqrt (61/400-(3/20)*Real.sin t))
 
 /-- The same with W and D separated along the secondary axis of D. -/
 def westStressD (t u:ℝ) : ℝ :=
-  17/20+(3/10)*Real.cos u+(3/10)*max (-Real.sin u) 0+
-    (9/40)*(Real.cos t+|Real.sin t|)+(1/4)*(Real.cos (u-t)+Real.sin (u-t))-
-    westCentralSupport t-R0*Real.sqrt (53/200+(9/40)*Real.sin (u-t))-
-    R0*Real.sqrt (61/400-(3/20)*Real.sin u)
+  westStress t u (Real.sqrt (53/200+(9/40)*Real.sin (u-t)))
+    (Real.sqrt (61/400-(3/20)*Real.sin u))
 
-lemma west_root_bound : Real.sqrt (53/200:ℝ)≤103/200 := by
-  have h := Real.sqrt_le_sqrt (show (53:ℝ)/200≤((103:ℝ)/200)^2 by norm_num)
-  rwa [Real.sqrt_sq (by norm_num)] at h
+lemma west_root_bound : Real.sqrt (53/200:ℝ)≤0.515 :=
+  Real.sqrt_le_iff.mpr ⟨by norm_num,by norm_num⟩
 
 lemma west_angle_bounds {t:ℝ} (ht:-2/3≤t ∧ t≤2/5) :
     7/9≤Real.cos t ∧ -2/3≤Real.sin t ∧ Real.sin t≤2/5 := by
@@ -61,37 +64,20 @@ lemma west_angle_bounds {t:ℝ} (ht:-2/3≤t ∧ t≤2/5) :
   exact ⟨by linarith [h.1],by linarith [(abs_le.mp h.2).1],
     hs.trans (Real.sin_le (by norm_num))⟩
 
-/-- `√(61/400 - 3z/20) ≤ 99/250 - 13z/80` for `z ≤ 2/5`: the difference of the
-squares is a completed square plus `7/338000`. -/
+/-- The length of the force on D lies below its tangent where its square is
+`(2/5)²`: `√(61/400 - 3z/20) ≤ 25/64 - 3z/16`. -/
 lemma west_affine_radical {z:ℝ} (hz:z≤2/5) :
-    Real.sqrt (61/400-(3/20)*z)≤99/250-(13/80)*z := by
-  have hpos : 0≤99/250-(13/80)*z := by linarith
-  have hid : (99/250-(13/80)*z)^2-(61/400-(3/20)*z) =
-      (169/6400)*(z+1704/4225)^2+7/338000 := by ring
-  have hs : 61/400-(3/20)*z≤(99/250-(13/80)*z)^2 := by
-    nlinarith [sq_nonneg (z+1704/4225)]
-  have hh := Real.sqrt_le_sqrt hs
-  rwa [Real.sqrt_sq hpos] at hh
+    Real.sqrt (61/400-(3/20)*z)≤25/64-(3/16)*z := by
+  have h := sqrt_le_tangent (y:=61/400-(3/20)*z) (c:=2/5) (by norm_num) (by linarith)
+  rwa [show (61/400-(3/20)*z+(2/5)^2)/(2*(2/5))=25/64-(3/16)*z by ring] at h
 
 lemma westCentralSupport_upper {t:ℝ} (ht:-2/3≤t ∧ t≤2/5) :
-    westCentralSupport t ≤ (113/1000)*(3/10+(9/20)*Real.cos t+
+    westCentralSupport t ≤ coreUpper*(3/10+(9/20)*Real.cos t+
       (9/20)*max (Real.sin t) 0) := by
   have htr := west_angle_bounds ht
   have hnonneg : 0≤3/10+(9/20)*Real.cos t+(9/20)*max (Real.sin t) 0 := by
     nlinarith [le_max_right (Real.sin t) 0]
-  have hc : c0≤113/1000 := by dsimp [c0]; linarith [rho0_bounds.2]
-  exact mul_le_mul_of_nonneg_right hc hnonneg
-
-private lemma radicals_bound {t:ℝ} (ht:-2/3≤t ∧ t≤2/5) :
-    R0*Real.sqrt (53/200)+R0*Real.sqrt (61/400-(3/20)*Real.sin t) ≤
-      (8443/5000)*(103/200)+(8443/5000)*(99/250-(13/80)*Real.sin t) := by
-  have htr := west_angle_bounds ht
-  have hroot := west_affine_radical htr.2.2
-  have ha := mul_le_mul R0_bounds.2.le west_root_bound
-    (Real.sqrt_nonneg _) (by norm_num : (0:ℝ)≤8443/5000)
-  have hb := mul_le_mul R0_bounds.2.le hroot
-    (Real.sqrt_nonneg _) (by norm_num : (0:ℝ)≤8443/5000)
-  linarith
+  exact mul_le_mul_of_nonneg_right ceiling_bounds.2.2.2 hnonneg
 
 lemma west_sin_nonpos {t:ℝ} (ht:-2/3≤t ∧ t≤0) : Real.sin t≤0 :=
   Real.sin_nonpos_of_nonpos_of_neg_pi_le ht.2 (by linarith [ht.1,Real.pi_gt_three])
@@ -199,131 +185,40 @@ theorem triangle_positive
 
 end Triangle
 
-/-! ### The stress along the secondary axis of W -/
+/-! ### The terms of the two stresses -/
 
-private def cW : ℝ := -3611073/5000000
-private def aW : ℝ := 3483/20000
-private def kNeg : ℝ := 19759/400000
-private def kPos : ℝ := 179419/400000
+/-- The term of a west stress in `t`, where the sign of `sin t` is `positive`,
+less `R` times the length of the force on D. -/
+def westJ (R:ℝ) (positive:Bool) (t:ℝ) : ℝ :=
+  radicalTrig (9/40-(9/20)*c0) (if positive then 9/40-(9/20)*c0 else -9/40)
+    (61/400) (-3/20) R t
 
-/-- A rational minorant of `westStressW`: where the signs of `sin t` and
-`sin u` are constant, a constant plus `aW cos t + K sin t`, `(3/10) cos u + L sin u` and
-`(cos (u - t) + sin (u - t))/4`, positive on the three parts of the triangle. -/
-private lemma west_minorant_positive :
-    (∀ {t u}, -2/3 ≤ t → t ≤ u → -2/5 ≤ u → u ≤ 0 →
-      0 < cW + (aW*Real.cos t+kNeg*Real.sin t) + ((3/10)*Real.cos u+(-3/10)*Real.sin u) +
-        ((1/4)*Real.cos (u-t)+(1/4)*Real.sin (u-t))) ∧
-    (∀ {t u}, -2/3 ≤ t → t ≤ 0 → 0 ≤ u → u ≤ 2/5 →
-      0 < cW + (aW*Real.cos t+kNeg*Real.sin t) + ((3/10)*Real.cos u+0*Real.sin u) +
-        ((1/4)*Real.cos (u-t)+(1/4)*Real.sin (u-t))) ∧
-    (∀ {t u}, 0 ≤ t → t ≤ u → u ≤ 2/5 →
-      0 < cW + (aW*Real.cos t+kPos*Real.sin t) + ((3/10)*Real.cos u+0*Real.sin u) +
-        ((1/4)*Real.cos (u-t)+(1/4)*Real.sin (u-t))) := by
-  have c23 := cos_lower_six (x:=(2:ℝ)/3) (by norm_num)
-  have s23 := sin_lower_seven (x:=(2:ℝ)/3) (by norm_num)
-  have u23 := sin_upper_five (x:=(2:ℝ)/3) (by norm_num)
-  have c25 := cos_lower_six (x:=(2:ℝ)/5) (by norm_num)
-  have s25 := sin_lower_seven (x:=(2:ℝ)/5) (by norm_num)
-  have u25 := sin_upper_five (x:=(2:ℝ)/5) (by norm_num)
-  have c415 := cos_lower_six (x:=(4:ℝ)/15) (by norm_num)
-  have s415 := sin_lower_seven (x:=(4:ℝ)/15) (by norm_num)
-  have c1615 := cos_lower_six (x:=(16:ℝ)/15) (by norm_num)
-  have s1615 := sin_lower_seven (x:=(16:ℝ)/15) (by norm_num)
-  norm_num at c23 s23 u23 c25 s25 u25 c415 s415 c1615 s1615
-  apply triangle_positive (C := cW) (Jn := fun x => aW*Real.cos x+kNeg*Real.sin x)
-    (Jp := fun x => aW*Real.cos x+kPos*Real.sin x)
-    (Hn := fun x => (3/10)*Real.cos x+(-3/10)*Real.sin x)
-    (Hp := fun x => (3/10)*Real.cos x+0*Real.sin x)
-    (G := fun x => (1/4)*Real.cos x+(1/4)*Real.sin x)
-  · apply harmonic_concave
-    intro x hx
-    have h := west_angle_bounds (t:=x) ⟨hx.1,by linarith [hx.2]⟩
-    dsimp [aW,kNeg]
-    nlinarith
-  · apply harmonic_concave
-    intro x hx
-    have h := west_angle_bounds (t:=x) ⟨by linarith [hx.1],hx.2⟩
-    have hs := Real.sin_nonneg_of_nonneg_of_le_pi hx.1 (by linarith [hx.2,Real.pi_gt_d2])
-    dsimp [aW,kPos]
-    nlinarith
-  · apply harmonic_concave
-    intro x hx
-    have h := west_angle_bounds (t:=x) ⟨by linarith [hx.1],by linarith [hx.2]⟩
-    have hs := west_sin_nonpos (t:=x) ⟨by linarith [hx.1],hx.2⟩
-    nlinarith
-  · apply harmonic_concave
-    intro x hx
-    have h := west_angle_bounds (t:=x) ⟨by linarith [hx.1],hx.2⟩
-    nlinarith
-  · apply harmonic_concave
-    intro x hx
-    have h := west_difference_trig hx
-    nlinarith
-  · simp
-  · simp
-  all_goals norm_num [cW,aW,kNeg,kPos,Real.cos_neg,Real.sin_neg]
-  all_goals linarith
+/-- The term in `u`, where the sign of `sin u` is `positive`, less `R` times the
+length of the force on D. -/
+def westH (R:ℝ) (positive:Bool) (u:ℝ) : ℝ :=
+  radicalTrig (3/10) (if positive then 0 else -3/10) (61/400) (-3/20) R u
 
-/-- `westStressW` is positive on the domain `-2/3 ≤ t ≤ u`, `-2/5 ≤ u ≤ 2/5`: with
-`R0 < 8443/5000`, `c0 ≤ 113/1000` and the affine bound on its second radical it
-is at least the minorant. -/
-theorem westStressW_positive {t u:ℝ}
-    (ht:-2/3≤t) (hu0:-2/5≤u) (hu1:u≤2/5) (htu:t≤u) : 0<westStressW t u := by
-  have htb : -2/3≤t ∧ t≤2/5 := ⟨ht,htu.trans hu1⟩
-  have hc := westCentralSupport_upper htb
-  have hr := radicals_bound htb
-  obtain ⟨hN,hM,hP⟩ := west_minorant_positive
-  by_cases ht0:t≤0
-  · have hs := west_sin_nonpos ⟨ht,ht0⟩
-    by_cases hu0':u≤0
-    · have hsu := west_sin_nonpos ⟨by linarith,hu0'⟩
-      have hm := hN ht htu hu0 hu0'
-      dsimp [cW,aW,kNeg] at hm
-      unfold westStressW
-      rw [abs_of_nonpos hs,max_eq_right hs,max_eq_left (by linarith : 0≤-Real.sin u)] at *
-      nlinarith [hc,hr]
-    · have hsu := Real.sin_nonneg_of_nonneg_of_le_pi
-        (show 0≤u by linarith) (show u≤Real.pi by linarith [Real.pi_gt_d2])
-      have hm := hM ht ht0 (by linarith) hu1
-      dsimp [cW,aW,kNeg] at hm
-      unfold westStressW
-      rw [abs_of_nonpos hs,max_eq_right hs,max_eq_right (by linarith : -Real.sin u≤0)] at *
-      nlinarith [hc,hr]
-  · have hst := Real.sin_nonneg_of_nonneg_of_le_pi (show 0≤t by linarith)
-      (show t≤Real.pi by linarith [Real.pi_gt_d2])
-    have hsu := Real.sin_nonneg_of_nonneg_of_le_pi (show 0≤u by linarith)
-      (show u≤Real.pi by linarith [Real.pi_gt_d2])
-    have hm := hP (by linarith) htu hu1
-    dsimp [cW,aW,kPos] at hm
-    unfold westStressW
-    rw [abs_of_nonneg hst,max_eq_left hst,max_eq_right (by linarith : -Real.sin u≤0)] at *
-    nlinarith [hc,hr]
+/-- The term in `u - t`, less `R` times the length of the force on W. -/
+def westG (R d:ℝ) : ℝ := radicalTrig (1/4) (1/4) (53/200) (9/40) R d
 
-/-! ### The stress along the secondary axis of D -/
+/-- `westStressW` where `sin t` has the sign `pt` and `sin u` the sign `pu`: the
+force on W has a constant length, and that on D enters the term in `t`. -/
+def westWForm (pt pu:Bool) (t u:ℝ) : ℝ :=
+  17/20-(3/10)*c0-R0*Real.sqrt (53/200)+westJ R0 pt t+westH 0 pu u+westG 0 (u-t)
 
-open Normalization
-
-/-- The term of `westStressD` in `t`, where the sign of `sin t` is `positive`. -/
-def westJ (positive:Bool) (t:ℝ) : ℝ :=
-  (9/40-(9/20)*c0)*Real.cos t+
-    (if positive then 9/40-(9/20)*c0 else -9/40)*Real.sin t
-
-/-- The term of `westStressD` in `u`, where the sign of `sin u` is `positive`. -/
-def westH (positive:Bool) (u:ℝ) : ℝ :=
-  radicalTrig (3/10) (if positive then 0 else -3/10) (61/400) (-3/20) R0 u
-
-/-- The term of `westStressD` in `u - t`. -/
-def westG (d:ℝ) : ℝ := radicalTrig (1/4) (1/4) (53/200) (9/40) R0 d
-
-/-- `westStressD` where `sin t` has the sign `pt` and `sin u` the sign `pu`,
-as a sum of terms in `t`, in `u` and in `u - t`. -/
+/-- `westStressD` where `sin t` has the sign `pt` and `sin u` the sign `pu`: the
+lengths of the forces on D and W enter the terms in `u` and `u - t`. -/
 def westDForm (pt pu:Bool) (t u:ℝ) : ℝ :=
-  17/20-(3/10)*c0+westJ pt t+westH pu u+westG (u-t)
+  17/20-(3/10)*c0+westJ 0 pt t+westH R0 pu u+westG R0 (u-t)
 
-lemma westDForm_eq {t u:ℝ} (pt pu:Bool)
+/-- Where the signs of `sin t` and `sin u` are `pt` and `pu`, the west stress is
+a constant plus its terms in `t`, `u` and `u - t`, less the lengths of the
+forces. -/
+lemma westStress_eq {t u r s:ℝ} (pt pu:Bool)
     (ht:-2/3≤t ∧ t≤2/5) (hu:-2/5≤u ∧ u≤2/5)
     (htsign:if pt then 0≤t else t≤0) (husign:if pu then 0≤u else u≤0) :
-    westDForm pt pu t u=westStressD t u := by
+    westStress t u r s=
+      17/20-(3/10)*c0+westJ 0 pt t+westH 0 pu u+westG 0 (u-t)-R0*r-R0*s := by
   have hsinT : if pt then 0≤Real.sin t else Real.sin t≤0 := by
     cases pt
     · exact west_sin_nonpos ⟨ht.1,htsign⟩
@@ -336,56 +231,97 @@ lemma westDForm_eq {t u:ℝ} (pt pu:Bool)
         (by linarith [hu.2,Real.pi_gt_d2])
   cases pt <;> cases pu
   all_goals simp only [Bool.false_eq_true,ite_false,ite_true] at hsinT hsinU
-  all_goals simp only [westDForm,westJ,westH,westG,radicalTrig,westStressD,
+  all_goals simp only [westStress,westJ,westH,westG,radicalTrig,
     westCentralSupport,Bool.false_eq_true,ite_false,ite_true]
   all_goals first
     | rw [abs_of_nonpos hsinT,max_eq_right hsinT,max_eq_left (by linarith : 0≤-Real.sin u)]
     | rw [abs_of_nonpos hsinT,max_eq_right hsinT,max_eq_right (by linarith : -Real.sin u≤0)]
     | rw [abs_of_nonneg hsinT,max_eq_left hsinT,max_eq_left (by linarith : 0≤-Real.sin u)]
     | rw [abs_of_nonneg hsinT,max_eq_left hsinT,max_eq_right (by linarith : -Real.sin u≤0)]
-  all_goals ring_nf
+  all_goals ring
+
+lemma westWForm_eq {t u:ℝ} (pt pu:Bool)
+    (ht:-2/3≤t ∧ t≤2/5) (hu:-2/5≤u ∧ u≤2/5)
+    (htsign:if pt then 0≤t else t≤0) (husign:if pu then 0≤u else u≤0) :
+    westWForm pt pu t u=westStressW t u := by
+  rw [westStressW,westStress_eq pt pu ht hu htsign husign]
+  simp only [westWForm,westJ,westH,westG,radicalTrig]
+  ring
+
+lemma westDForm_eq {t u:ℝ} (pt pu:Bool)
+    (ht:-2/3≤t ∧ t≤2/5) (hu:-2/5≤u ∧ u≤2/5)
+    (htsign:if pt then 0≤t else t≤0) (husign:if pu then 0≤u else u≤0) :
+    westDForm pt pu t u=westStressD t u := by
+  rw [westStressD,westStress_eq pt pu ht hu htsign husign]
+  simp only [westDForm,westJ,westH,westG,radicalTrig]
+  ring
+
+/-! ### Concavity of the terms -/
 
 lemma westJ_coefficient_pos : 0<9/40-(9/20)*c0 := by linarith [c0_bounds.2]
 
-private lemma westJ_concave_aux (B l u:ℝ)
-    (hcos:∀x∈Set.Icc l u,0≤Real.cos x)
-    (hsin:∀x∈Set.Icc l u,0≤B*Real.sin x) :
-    ConcaveOn ℝ (Set.Icc l u)
-      (fun x=>(9/40-(9/20)*c0)*Real.cos x+B*Real.sin x) := by
-  have h := radicalTrig_concave (A:=9/40-(9/20)*c0) (B:=B)
-    (p:=1) (q:=0) (R:=0) (l:=l) (u:=u) (by norm_num) (by norm_num)
-    (by intro x hx; norm_num)
-    (by
-      intro x hx
-      have hp := mul_nonneg westJ_coefficient_pos.le (hcos x hx)
-      have hs := hsin x hx
-      simp only [zero_mul,add_zero]
-      nlinarith)
-  refine h.congr ?_
-  intro x _
-  simp only [radicalTrig]
-  ring
+/-- On `[-2/3, 0]` the length of the force on D, times `R0`, stays below four
+times the harmonic of the term in `t`: the length lies below its tangent, and
+`cos x ≥ 1 - sin² x`. -/
+private lemma radicals_bound {x:ℝ} (hx:x∈Icc (-2/3:ℝ) 0) :
+    R0*Real.sqrt (61/400-(3/20)*Real.sin x)≤
+      4*((9/40-(9/20)*c0)*Real.cos x+(-9/40)*Real.sin x) := by
+  have htr := west_angle_bounds (t:=x) ⟨hx.1,by linarith [hx.2]⟩
+  have hs := west_sin_nonpos hx
+  have hc0 : 0≤Real.cos x := by linarith [htr.1]
+  have hcos : 1-Real.sin x^2≤Real.cos x := by
+    nlinarith [Real.sin_sq_add_cos_sq x,mul_nonneg hc0 (sub_nonneg.mpr (Real.cos_le_one x))]
+  have hR := mul_le_mul_of_nonneg_left (west_affine_radical (z:=Real.sin x) (by linarith))
+    R0_nonneg
+  have hR' := mul_le_mul_of_nonneg_right R0_bounds.2.le
+    (show 0≤25/64-(3/16)*Real.sin x by linarith)
+  have hcc := mul_le_mul_of_nonneg_right c0_bounds.2.le hc0
+  nlinarith [mul_nonneg (show 0≤Real.sin x+2/3 by linarith [htr.2.1]) (neg_nonneg.mpr hs)]
 
-lemma westJ_negative_concave : ConcaveOn ℝ (Set.Icc (-2/3) 0) (westJ false) := by
-  apply westJ_concave_aux (-9/40) (-2/3) 0
+/-- The term in `t`, less `R ≤ R0` times the length of the force on D, is
+concave where `R0` times that length is at most four times its harmonic. -/
+private lemma westJ_concave_aux {R:ℝ} (hR:0≤R ∧ R≤R0) (B l u:ℝ)
+    (hsin:∀x∈Icc l u,Real.sin x≤2/5)
+    (hbound:∀x∈Icc l u,R0*Real.sqrt (61/400-(3/20)*Real.sin x)≤
+      4*((9/40-(9/20)*c0)*Real.cos x+B*Real.sin x)) :
+    ConcaveOn ℝ (Icc l u) (radicalTrig (9/40-(9/20)*c0) B (61/400) (-3/20) R) := by
+  apply radicalTrig_concave hR.1 (by norm_num : ((-3:ℝ)/20)^2≤((61:ℝ)/400)^2)
   · intro x hx
-    have h := west_angle_bounds ⟨hx.1,by linarith [hx.2]⟩
-    linarith [h.1]
+    linarith [hsin x hx]
   · intro x hx
-    have hs := west_sin_nonpos hx
-    nlinarith
+    have hm := mul_le_mul_of_nonneg_right hR.2
+      (Real.sqrt_nonneg (61/400-(3/20)*Real.sin x))
+    have hb := hbound x hx
+    rw [show (61:ℝ)/400+(-3/20)*Real.sin x=61/400-(3/20)*Real.sin x by ring]
+    linarith
 
-lemma westJ_positive_concave : ConcaveOn ℝ (Set.Icc 0 (2/5)) (westJ true) := by
-  apply westJ_concave_aux (9/40-(9/20)*c0) 0 (2/5)
+lemma westJ_negative_concave {R:ℝ} (hR:0≤R ∧ R≤R0) :
+    ConcaveOn ℝ (Icc (-2/3) 0) (westJ R false) := by
+  apply westJ_concave_aux hR (-9/40) (-2/3) 0
   · intro x hx
-    have h := west_angle_bounds ⟨by linarith [hx.1],hx.2⟩
-    linarith [h.1]
+    linarith [west_sin_nonpos hx]
   · intro x hx
-    exact mul_nonneg westJ_coefficient_pos.le
-      (Real.sin_nonneg_of_nonneg_of_le_pi hx.1 (by linarith [hx.2,Real.pi_gt_d2]))
+    exact radicals_bound hx
 
-lemma westG_concave : ConcaveOn ℝ (Set.Icc 0 (16/15)) westG := by
-  apply radicalTrig_concave R0_nonneg (by norm_num : ((9:ℝ)/40)^2≤((53:ℝ)/200)^2)
+lemma westJ_positive_concave {R:ℝ} (hR:0≤R ∧ R≤R0) :
+    ConcaveOn ℝ (Icc 0 (2/5)) (westJ R true) := by
+  apply westJ_concave_aux hR (9/40-(9/20)*c0) 0 (2/5)
+  · intro x hx
+    exact (Real.sin_le hx.1).trans hx.2
+  · intro x hx
+    have htr := west_angle_bounds (t:=x) ⟨by linarith [hx.1],hx.2⟩
+    have hs := Real.sin_nonneg_of_nonneg_of_le_pi hx.1 (by linarith [hx.2,Real.pi_gt_d2])
+    have hc : 0≤Real.cos x := by linarith [htr.1]
+    have hw : 1≤Real.cos x+Real.sin x := by
+      simpa only [abs_of_nonneg hc,abs_of_nonneg hs] using one_le_abs_cos_add_abs_sin x
+    have hroot : Real.sqrt (61/400-(3/20)*Real.sin x)≤2/5 :=
+      Real.sqrt_le_iff.mpr ⟨by norm_num,by nlinarith⟩
+    have hR := mul_le_mul_of_nonneg_left hroot R0_nonneg
+    have hA := mul_le_mul_of_nonneg_left hw westJ_coefficient_pos.le
+    nlinarith [R0_bounds.2,c0_bounds.2]
+
+lemma westG_concave {R:ℝ} (hR:0≤R ∧ R≤R0) : ConcaveOn ℝ (Icc 0 (16/15)) (westG R) := by
+  apply radicalTrig_concave hR.1 (by norm_num : ((9:ℝ)/40)^2≤((53:ℝ)/200)^2)
   · intro x hx
     have h := (west_difference_trig hx).2.1
     linarith
@@ -410,17 +346,18 @@ lemma westG_concave : ConcaveOn ℝ (Set.Icc 0 (16/15)) westG := by
       have hmul := mul_pos (sub_pos.mpr hbad)
         (show 0<R0*Real.sqrt (53/200+(9/40)*Real.sin x)+(Real.cos x+Real.sin x) by linarith)
       nlinarith
+    have hm := mul_le_mul_of_nonneg_right hR.2 (Real.sqrt_nonneg (53/200+(9/40)*Real.sin x))
     nlinarith
 
-private lemma westH_concave_aux (B l u:ℝ)
-    (hsmall:∀x∈Set.Icc l u,|x|≤2/5)
-    (hsign:∀x∈Set.Icc l u,0≤B*Real.sin x) :
-    ConcaveOn ℝ (Set.Icc l u) (radicalTrig (3/10) B (61/400) (-3/20) R0) := by
-  have hb (x:ℝ) (hx:x∈Set.Icc l u) :
+private lemma westH_concave_aux {R:ℝ} (hR:0≤R ∧ R≤R0) (B l u:ℝ)
+    (hsmall:∀x∈Icc l u,|x|≤2/5)
+    (hsign:∀x∈Icc l u,0≤B*Real.sin x) :
+    ConcaveOn ℝ (Icc l u) (radicalTrig (3/10) B (61/400) (-3/20) R) := by
+  have hb (x:ℝ) (hx:x∈Icc l u) :
       23/25≤Real.cos x ∧ -2/5≤Real.sin x ∧ Real.sin x≤2/5 := by
     have h := small_angle (hsmall x hx)
     exact ⟨by linarith [h.1],by linarith [(abs_le.mp h.2).1],(abs_le.mp h.2).2⟩
-  apply radicalTrig_concave R0_nonneg (by norm_num : ((-3:ℝ)/20)^2≤((61:ℝ)/400)^2)
+  apply radicalTrig_concave hR.1 (by norm_num : ((-3:ℝ)/20)^2≤((61:ℝ)/400)^2)
   · intro x hx
     have h := hb x hx
     linarith [h.2.2]
@@ -430,73 +367,76 @@ private lemma westH_concave_aux (B l u:ℝ)
       have hh := Real.sqrt_le_sqrt
         (show 61/400+(-3/20)*Real.sin x≤((1:ℝ)/2)^2 by linarith [h.2.1])
       rwa [Real.sqrt_sq (by norm_num)] at hh
-    have hm := mul_le_mul (show R0≤17/10 by linarith [R0_bounds.2]) hroot
+    have hm := mul_le_mul (show R≤17/10 by linarith [hR.2,R0_bounds.2]) hroot
       (Real.sqrt_nonneg _) (by norm_num : (0:ℝ)≤17/10)
     have hn := hsign x hx
     nlinarith [h.1]
 
-lemma westH_negative_concave : ConcaveOn ℝ (Set.Icc (-2/5) 0) (westH false) := by
-  apply westH_concave_aux (-3/10) (-2/5) 0
+lemma westH_negative_concave {R:ℝ} (hR:0≤R ∧ R≤R0) :
+    ConcaveOn ℝ (Icc (-2/5) 0) (westH R false) := by
+  apply westH_concave_aux hR (-3/10) (-2/5) 0
   · intro x hx
     exact abs_le.mpr ⟨by linarith [hx.1],by linarith [hx.2]⟩
   · intro x hx
     have h := west_sin_nonpos (t:=x) ⟨by linarith [hx.1],hx.2⟩
     nlinarith
 
-lemma westH_positive_concave : ConcaveOn ℝ (Set.Icc 0 (2/5)) (westH true) := by
-  apply westH_concave_aux 0 0 (2/5)
+lemma westH_positive_concave {R:ℝ} (hR:0≤R ∧ R≤R0) :
+    ConcaveOn ℝ (Icc 0 (2/5)) (westH R true) := by
+  apply westH_concave_aux hR 0 0 (2/5)
   · intro x hx
     exact abs_le.mpr ⟨by linarith [hx.1],hx.2⟩
   · intro x hx
     simp
 
-open Normalization
+/-! ### The vertices -/
 
+/-- The west stress with `c0` and `R0` raised to `coreUpper` and `radiusBound`,
+and the lengths of the forces on W and D to `p` and `q`. -/
 private def diagonalVertexExpression (t u p q:ℝ) : ℝ :=
-  17/20-(113/1000)*(3/10)+(3/10)*Real.cos u+(3/10)*max (-Real.sin u) 0+
-    (3483/20000)*Real.cos t+(9/40)*|Real.sin t|-(1017/20000)*max (Real.sin t) 0+
-    (1/4)*(Real.cos (u-t)+Real.sin (u-t))-(8443/5000)*(p+q)
+  17/20+(3/10)*Real.cos u+(3/10)*max (-Real.sin u) 0+
+    (9/40)*(Real.cos t+|Real.sin t|)+(1/4)*(Real.cos (u-t)+Real.sin (u-t))-
+    coreUpper*(3/10+(9/20)*Real.cos t+(9/20)*max (Real.sin t) 0)-radiusBound*(p+q)
 
-private lemma diagonal_lower_from_roots {t u p q:ℝ} (ht:-2/3≤t ∧ t≤2/5)
-    (hp:Real.sqrt (53/200+(9/40)*Real.sin (u-t))≤p)
-    (hq:Real.sqrt (61/400-(3/20)*Real.sin u)≤q) :
-    diagonalVertexExpression t u p q≤westStressD t u := by
+private lemma diagonal_lower_from_roots {t u p q r s:ℝ} (ht:-2/3≤t ∧ t≤2/5)
+    (hr:0≤r) (hp:r≤p) (hs:0≤s) (hq:s≤q) :
+    diagonalVertexExpression t u p q≤westStress t u r s := by
   have hc := westCentralSupport_upper ht
-  have hRp := mul_le_mul R0_bounds.2.le hp (Real.sqrt_nonneg _)
-    (by norm_num : (0:ℝ)≤8443/5000)
-  have hRq := mul_le_mul R0_bounds.2.le hq (Real.sqrt_nonneg _)
-    (by norm_num : (0:ℝ)≤8443/5000)
-  dsimp [diagonalVertexExpression,westStressD]
-  nlinarith
+  have hR := R0_nonneg.trans ceiling_bounds.1
+  have hRp := mul_le_mul ceiling_bounds.1 hp hr hR
+  have hRq := mul_le_mul ceiling_bounds.1 hq hs hR
+  dsimp [diagonalVertexExpression,westStress]
+  linarith
 
-/-- Rational upper bounds for the two radicals at the vertices. -/
+/-- Upper brackets for the lengths of the forces at the vertices. -/
 private lemma diagonal_root_endpoints :
-    Real.sqrt (53/200+(9/40)*Real.sin (4/15))≤57/100 ∧
-    Real.sqrt (53/200:ℝ)≤103/200 ∧
-    Real.sqrt (53/200+(9/40)*Real.sin (2/3))≤637/1000 ∧
-    Real.sqrt (53/200+(9/40)*Real.sin (16/15))≤17/25 ∧
-    Real.sqrt (53/200+(9/40)*Real.sin (2/5))≤297/500 ∧
-    Real.sqrt (61/400-(3/20)*Real.sin (-2/5))≤23/50 ∧
-    Real.sqrt (61/400:ℝ)≤391/1000 ∧
-    Real.sqrt (61/400-(3/20)*Real.sin (2/5))≤307/1000 := by
+    Real.sqrt (53/200+(9/40)*Real.sin (4/15))≤0.57 ∧
+    Real.sqrt (53/200+(9/40)*Real.sin (2/3))≤0.64 ∧
+    Real.sqrt (53/200+(9/40)*Real.sin (16/15))≤0.7 ∧
+    Real.sqrt (53/200+(9/40)*Real.sin (2/5))≤0.6 ∧
+    Real.sqrt (61/400-(3/20)*Real.sin (-2/3))≤0.496 ∧
+    Real.sqrt (61/400-(3/20)*Real.sin (-2/5))≤0.46 ∧
+    Real.sqrt (61/400:ℝ)≤0.391 ∧
+    Real.sqrt (61/400-(3/20)*Real.sin (2/5))≤0.31 := by
   have s415 := sin_upper_five (x:=(4:ℝ)/15) (by norm_num)
   have s23 := sin_upper_five (x:=(2:ℝ)/3) (by norm_num)
   have s1615 := sin_upper_five (x:=(16:ℝ)/15) (by norm_num)
   have s25 := sin_upper_five (x:=(2:ℝ)/5) (by norm_num)
   have l25 := sin_lower_seven (x:=(2:ℝ)/5) (by norm_num)
   norm_num at s415 s23 s1615 s25 l25
-  refine ⟨?_,west_root_bound,?_,?_,?_,?_,?_,?_⟩
+  refine ⟨?_,?_,?_,?_,?_,?_,?_,?_⟩
   all_goals refine Real.sqrt_le_iff.mpr ⟨by norm_num,?_⟩
   all_goals (norm_num <;> linarith)
 
-private lemma diagonal_minorant_endpoints :
-    0<diagonalVertexExpression (-2/3) (-2/5) (57/100) (23/50) ∧
-    0<diagonalVertexExpression (-2/5) (-2/5) (103/200) (23/50) ∧
-    0<diagonalVertexExpression (-2/3) 0 (637/1000) (391/1000) ∧
-    0<diagonalVertexExpression 0 0 (103/200) (391/1000) ∧
-    0<diagonalVertexExpression (-2/3) (2/5) (17/25) (307/1000) ∧
-    0<diagonalVertexExpression 0 (2/5) (297/500) (307/1000) ∧
-    0<diagonalVertexExpression (2/5) (2/5) (103/200) (307/1000) := by
+/-- The lower bounds of `westStressW` at the seven vertices are positive. -/
+private lemma west_minorant_positive :
+    0<diagonalVertexExpression (-2/3) (-2/5) 0.515 0.496 ∧
+    0<diagonalVertexExpression (-2/5) (-2/5) 0.515 0.46 ∧
+    0<diagonalVertexExpression (-2/3) 0 0.515 0.496 ∧
+    0<diagonalVertexExpression 0 0 0.515 0.391 ∧
+    0<diagonalVertexExpression (-2/3) (2/5) 0.515 0.496 ∧
+    0<diagonalVertexExpression 0 (2/5) 0.515 0.391 ∧
+    0<diagonalVertexExpression (2/5) (2/5) 0.515 0.31 := by
   have c23 := cos_lower_six (x:=(2:ℝ)/3) (by norm_num)
   have s23 := sin_lower_seven (x:=(2:ℝ)/3) (by norm_num)
   have c25 := cos_lower_six (x:=(2:ℝ)/5) (by norm_num)
@@ -511,10 +451,62 @@ private lemma diagonal_minorant_endpoints :
   have hn23 : -Real.sin ((2:ℝ)/3)≤0 := by linarith
   have hn25 : -Real.sin ((2:ℝ)/5)≤0 := by linarith
   refine ⟨?_,?_,?_,?_,?_,?_,?_⟩
-  all_goals norm_num [diagonalVertexExpression,Real.cos_neg,Real.sin_neg,
-    abs_neg,abs_of_nonneg hs23,abs_of_nonneg hs25,max_eq_right hn23,
+  all_goals norm_num [diagonalVertexExpression,coreUpper,radiusBound,Real.cos_neg,
+    Real.sin_neg,abs_neg,abs_of_nonneg hs23,abs_of_nonneg hs25,max_eq_right hn23,
     max_eq_right hn25,max_eq_left hs23,max_eq_left hs25]
   all_goals linarith
+
+/-- The lower bounds of `westStressD` at the seven vertices are positive. -/
+private lemma diagonal_minorant_endpoints :
+    0<diagonalVertexExpression (-2/3) (-2/5) 0.57 0.46 ∧
+    0<diagonalVertexExpression (-2/5) (-2/5) 0.515 0.46 ∧
+    0<diagonalVertexExpression (-2/3) 0 0.64 0.391 ∧
+    0<diagonalVertexExpression 0 0 0.515 0.391 ∧
+    0<diagonalVertexExpression (-2/3) (2/5) 0.7 0.31 ∧
+    0<diagonalVertexExpression 0 (2/5) 0.6 0.31 ∧
+    0<diagonalVertexExpression (2/5) (2/5) 0.515 0.31 := by
+  have c23 := cos_lower_six (x:=(2:ℝ)/3) (by norm_num)
+  have s23 := sin_lower_seven (x:=(2:ℝ)/3) (by norm_num)
+  have c25 := cos_lower_six (x:=(2:ℝ)/5) (by norm_num)
+  have s25 := sin_lower_seven (x:=(2:ℝ)/5) (by norm_num)
+  have c415 := cos_lower_six (x:=(4:ℝ)/15) (by norm_num)
+  have s415 := sin_lower_seven (x:=(4:ℝ)/15) (by norm_num)
+  have c1615 := cos_lower_six (x:=(16:ℝ)/15) (by norm_num)
+  have s1615 := sin_lower_seven (x:=(16:ℝ)/15) (by norm_num)
+  norm_num at c23 s23 c25 s25 c415 s415 c1615 s1615
+  have hs23 : 0≤Real.sin ((2:ℝ)/3) := by linarith
+  have hs25 : 0≤Real.sin ((2:ℝ)/5) := by linarith
+  have hn23 : -Real.sin ((2:ℝ)/3)≤0 := by linarith
+  have hn25 : -Real.sin ((2:ℝ)/5)≤0 := by linarith
+  refine ⟨?_,?_,?_,?_,?_,?_,?_⟩
+  all_goals norm_num [diagonalVertexExpression,coreUpper,radiusBound,Real.cos_neg,
+    Real.sin_neg,abs_neg,abs_of_nonneg hs23,abs_of_nonneg hs25,max_eq_right hn23,
+    max_eq_right hn25,max_eq_left hs23,max_eq_left hs25]
+  all_goals linarith
+
+/-- `westStressW` is positive at the seven vertices. -/
+theorem westStressW_vertices :
+    0<westStressW (-2/3) (-2/5) ∧
+    0<westStressW (-2/5) (-2/5) ∧
+    0<westStressW (-2/3) 0 ∧
+    0<westStressW 0 0 ∧
+    0<westStressW (-2/3) (2/5) ∧
+    0<westStressW 0 (2/5) ∧
+    0<westStressW (2/5) (2/5) := by
+  obtain ⟨-,-,-,-,d23,dn,d0,dp⟩ := diagonal_root_endpoints
+  obtain ⟨h0,h1,h2,h3,h4,h5,h6⟩ := west_minorant_positive
+  have w := west_root_bound
+  have hw := Real.sqrt_nonneg (53/200:ℝ)
+  refine ⟨?_,?_,?_,?_,?_,?_,?_⟩
+  · exact h0.trans_le (diagonal_lower_from_roots (by norm_num) hw w (Real.sqrt_nonneg _) d23)
+  · exact h1.trans_le (diagonal_lower_from_roots (by norm_num) hw w (Real.sqrt_nonneg _) dn)
+  · exact h2.trans_le (diagonal_lower_from_roots (by norm_num) hw w (Real.sqrt_nonneg _) d23)
+  · exact h3.trans_le (diagonal_lower_from_roots (by norm_num) hw w (Real.sqrt_nonneg _)
+      (by simpa using d0))
+  · exact h4.trans_le (diagonal_lower_from_roots (by norm_num) hw w (Real.sqrt_nonneg _) d23)
+  · exact h5.trans_le (diagonal_lower_from_roots (by norm_num) hw w (Real.sqrt_nonneg _)
+      (by simpa using d0))
+  · exact h6.trans_le (diagonal_lower_from_roots (by norm_num) hw w (Real.sqrt_nonneg _) dp)
 
 /-- `westStressD` is positive at the seven vertices. -/
 theorem westStressD_vertices :
@@ -525,23 +517,60 @@ theorem westStressD_vertices :
     0<westStressD (-2/3) (2/5) ∧
     0<westStressD 0 (2/5) ∧
     0<westStressD (2/5) (2/5) := by
-  obtain ⟨w415,w0,w23,w1615,w25,dn,d0,dp⟩ := diagonal_root_endpoints
+  obtain ⟨w415,w23,w1615,w25,-,dn,d0,dp⟩ := diagonal_root_endpoints
   obtain ⟨h0,h1,h2,h3,h4,h5,h6⟩ := diagonal_minorant_endpoints
+  have w0 := west_root_bound
+  have hw := Real.sqrt_nonneg
   refine ⟨?_,?_,?_,?_,?_,?_,?_⟩
-  · exact h0.trans_le (diagonal_lower_from_roots (by norm_num)
-      (by convert w415 using 1; norm_num) dn)
-  · exact h1.trans_le (diagonal_lower_from_roots (by norm_num)
-      (by simpa using w0) dn)
-  · exact h2.trans_le (diagonal_lower_from_roots (by norm_num)
-      (by convert w23 using 1; norm_num) (by simpa using d0))
-  · exact h3.trans_le (diagonal_lower_from_roots (by norm_num)
-      (by simpa using w0) (by simpa using d0))
-  · exact h4.trans_le (diagonal_lower_from_roots (by norm_num)
-      (by convert w1615 using 1; norm_num) dp)
-  · exact h5.trans_le (diagonal_lower_from_roots (by norm_num)
-      (by simpa using w25) dp)
-  · exact h6.trans_le (diagonal_lower_from_roots (by norm_num)
-      (by simpa using w0) dp)
+  · exact h0.trans_le (diagonal_lower_from_roots (by norm_num) (hw _)
+      (by convert w415 using 1; norm_num) (hw _) dn)
+  · exact h1.trans_le (diagonal_lower_from_roots (by norm_num) (hw _)
+      (by simpa using w0) (hw _) dn)
+  · exact h2.trans_le (diagonal_lower_from_roots (by norm_num) (hw _)
+      (by convert w23 using 1; norm_num) (hw _) (by simpa using d0))
+  · exact h3.trans_le (diagonal_lower_from_roots (by norm_num) (hw _)
+      (by simpa using w0) (hw _) (by simpa using d0))
+  · exact h4.trans_le (diagonal_lower_from_roots (by norm_num) (hw _)
+      (by convert w1615 using 1; norm_num) (hw _) dp)
+  · exact h5.trans_le (diagonal_lower_from_roots (by norm_num) (hw _)
+      (by simpa using w25) (hw _) dp)
+  · exact h6.trans_le (diagonal_lower_from_roots (by norm_num) (hw _)
+      (by simpa using w0) (hw _) dp)
+
+/-! ### The two stresses are positive -/
+
+/-- `westStressW` is positive on the domain `-2/3 ≤ t ≤ u`, `-2/5 ≤ u ≤ 2/5`: on
+each part where the signs of `sin t` and `sin u` are constant it is `westWForm`,
+whose terms are concave, and it is positive at the seven vertices. -/
+theorem westStressW_positive {t u:ℝ}
+    (ht:-2/3≤t) (hu0:-2/5≤u) (hu1:u≤2/5) (htu:t≤u) : 0<westStressW t u := by
+  obtain ⟨v1,v2,v3,v4,v5,v6,v7⟩ := westStressW_vertices
+  rw [← westWForm_eq false false (by norm_num) (by norm_num) (by norm_num) (by norm_num)] at v1 v2
+  rw [← westWForm_eq false false (by norm_num) (by norm_num) (by norm_num) (by norm_num)] at v3 v4
+  rw [← westWForm_eq false true (by norm_num) (by norm_num) (by norm_num) (by norm_num)] at v5 v6
+  rw [← westWForm_eq true true (by norm_num) (by norm_num) (by norm_num) (by norm_num)] at v7
+  have hJ : westJ R0 false 0 = westJ R0 true 0 := by simp [westJ,radicalTrig]
+  have hH : westH 0 false 0 = westH 0 true 0 := by simp [westH,radicalTrig]
+  have hv6 : 0 < westWForm false true 0 (2/5) := v6
+  rw [show westWForm false false (-2/3) 0 = westWForm false true (-2/3) 0 by
+    simp only [westWForm,hH]] at v3
+  obtain ⟨hN,hM,hP⟩ := triangle_positive (C := 17/20-(3/10)*c0-R0*Real.sqrt (53/200))
+    (westJ_negative_concave ⟨R0_nonneg,le_rfl⟩) (westJ_positive_concave ⟨R0_nonneg,le_rfl⟩)
+    (westH_negative_concave ⟨le_rfl,R0_nonneg⟩) (westH_positive_concave ⟨le_rfl,R0_nonneg⟩)
+    (westG_concave ⟨le_rfl,R0_nonneg⟩) hJ hH
+    (by norm_num [westWForm] at v1 ⊢; linarith) (by norm_num [westWForm] at v2 ⊢; linarith)
+    (by norm_num [westWForm,hH] at v3 ⊢; linarith) (by norm_num [westWForm] at v4 ⊢; linarith)
+    (by norm_num [westWForm] at v5 ⊢; linarith) (by norm_num [westWForm] at hv6 ⊢; linarith)
+    (by norm_num [westWForm] at v7 ⊢; linarith)
+  by_cases huSign:u≤0
+  · rw [← westWForm_eq false false ⟨ht,by linarith⟩ ⟨hu0,hu1⟩ (show t≤0 by linarith) huSign]
+    exact hN ht htu hu0 huSign
+  · by_cases htSign:t≤0
+    · rw [← westWForm_eq false true ⟨ht,by linarith⟩ ⟨hu0,hu1⟩ htSign (show 0≤u by linarith)]
+      exact hM ht htSign (by linarith) hu1
+    · rw [← westWForm_eq true true ⟨ht,by linarith⟩ ⟨hu0,hu1⟩ (show 0≤t by linarith)
+        (show 0≤u by linarith)]
+      exact hP (by linarith) htu hu1
 
 /-- `westStressD` is positive on the domain `-2/3 ≤ t ≤ u`, `-2/5 ≤ u ≤ 2/5`: on
 each part where the signs of `sin t` and `sin u` are constant it is `westDForm`,
@@ -553,14 +582,15 @@ theorem westStressD_positive {t u:ℝ}
   rw [← westDForm_eq false false (by norm_num) (by norm_num) (by norm_num) (by norm_num)] at v3 v4
   rw [← westDForm_eq false true (by norm_num) (by norm_num) (by norm_num) (by norm_num)] at v5 v6
   rw [← westDForm_eq true true (by norm_num) (by norm_num) (by norm_num) (by norm_num)] at v7
-  have hJ : westJ false 0 = westJ true 0 := by simp [westJ]
-  have hH : westH false 0 = westH true 0 := by simp [westH,radicalTrig]
+  have hJ : westJ 0 false 0 = westJ 0 true 0 := by simp [westJ,radicalTrig]
+  have hH : westH R0 false 0 = westH R0 true 0 := by simp [westH,radicalTrig]
   have hv6 : 0 < westDForm false true 0 (2/5) := v6
   rw [show westDForm false false (-2/3) 0 = westDForm false true (-2/3) 0 by
     simp only [westDForm,hH]] at v3
   obtain ⟨hN,hM,hP⟩ := triangle_positive (C := 17/20-(3/10)*c0)
-    westJ_negative_concave westJ_positive_concave westH_negative_concave
-    westH_positive_concave westG_concave hJ hH
+    (westJ_negative_concave ⟨le_rfl,R0_nonneg⟩) (westJ_positive_concave ⟨le_rfl,R0_nonneg⟩)
+    (westH_negative_concave ⟨R0_nonneg,le_rfl⟩) (westH_positive_concave ⟨R0_nonneg,le_rfl⟩)
+    (westG_concave ⟨R0_nonneg,le_rfl⟩) hJ hH
     (by norm_num [westDForm] at v1 ⊢; linarith) (by norm_num [westDForm] at v2 ⊢; linarith)
     (by norm_num [westDForm,hH] at v3 ⊢; linarith) (by norm_num [westDForm] at v4 ⊢; linarith)
     (by norm_num [westDForm] at v5 ⊢; linarith) (by norm_num [westDForm] at hv6 ⊢; linarith)
@@ -617,11 +647,11 @@ lemma west_force_balance (c W D:Point) (t z:ℝ) :
 lemma west_forceW_norm (t z:ℝ) : normSq (westForceW t z)=53/200+(9/40)*Real.sin (z-t) := by
   dsimp [normSq,westForceW]
   rw [Real.sin_sub]
-  linear_combination (81/400)*(Real.sin_sq_add_cos_sq t)+(1/16)*(Real.sin_sq_add_cos_sq z)
+  linear_combination (9/20)^2*(Real.sin_sq_add_cos_sq t)+(1/4)^2*(Real.sin_sq_add_cos_sq z)
 
 lemma west_forceD_norm (z:ℝ) : normSq (westForceD z)=61/400-(3/20)*Real.sin z := by
   dsimp [normSq,westForceD]
-  linear_combination (1/16)*(Real.sin_sq_add_cos_sq z)
+  linear_combination (1/4)^2*(Real.sin_sq_add_cos_sq z)
 
 lemma west_forceW_frameX (t z a b:ℝ) :
     frameX (orientedSquare (Real.pi+t) a b) (westForceW t z)=9/20+(1/4)*Real.sin (z-t) := by
@@ -749,7 +779,7 @@ lemma west_defect_at_secondary_axes {t u:ℝ}
       ring
   constructor
   all_goals simp only [westGeometricDefect,westThreshold,westWidthW,westWidthD,
-    westStressW,westStressD,sub_self,Real.sin_zero,Real.cos_zero,mul_zero,add_zero,
+    westStressW,westStressD,westStress,sub_self,Real.sin_zero,Real.cos_zero,mul_zero,add_zero,
     angularWidth,abs_of_nonneg hct,abs_of_nonneg hcu,abs_of_nonneg hcδ,abs_of_nonneg hsδ]
   all_goals linarith only [habs]
 

@@ -15,15 +15,15 @@ separated from C along a side lies in a deep cap beyond it and faces it; beyond
 a side at least `1/2` deep it contains the point `(h + 1/2, 0)` and with it the
 pin. A square separated along its own axis is confined by concave profiles of
 its radial coordinate against `a ≤ ρ0`: near the east axis its phase lies in
-`(-5/12, 3/10)` and a completed square in its transverse coordinate keeps the
-east pin inside; near the west axis it holds the pin of W or of D, by the
-sixty-degree lemma (two points `π/3` apart at distance `9/10`) or, on the left
-flank, by a completed square. North and south are the reflections of east and
-west in the diagonal, and the secondary axes never separate. Disjoint squares
-hold distinct pins, so each holds exactly one, which is its label; holding no
-other pin puts its phase in the window of its label (`labelled_window`), and the
-coordinates of the pins give the axes along which it may be separated
-(`allowed_axis_of_pin`).
+`(-5/12, 3/10)` and it keeps the east pin inside, since otherwise its far corner
+would lie beyond a line that misses the disk; near the west axis it holds the
+pin of W or of D, by the sixty-degree lemma (two points `π/3` apart at distance
+`9/10`) or, on the left flank, by such a line. North and south are the
+reflections of east and west in the diagonal, and the secondary axes never
+separate. Disjoint squares hold distinct pins, so each holds exactly one, which
+is its label; holding no other pin puts its phase in the window of its label
+(`labelled_window`), and the coordinates of the pins give the axes along which
+it may be separated (`allowed_axis_of_pin`).
 -/
 
 noncomputable section
@@ -225,14 +225,12 @@ lemma sixty_sine_sum (v : ℝ) :
         Real.sin (Real.pi/6-(v-Real.pi/6)) := by congr 1 <;> congr 1 <;> ring
     _ = _ := by rw [Real.sin_add,Real.sin_sub (Real.pi/6),Real.sin_pi_div_six]; ring
 
-/-- By a completed square, the quadratic exceeds `Q0` by at least
-`304609/2450000`. -/
+/-- The point `(A, B) = (19/10 - 9v/20, 2/35 + 9v/10)` runs along the line
+`A + B/2 = 27/14`, which misses the disk: `A² + B² ≥ (4/5)(27/14)² > Q0`. -/
 lemma sixty_cross_quadratic (v : ℝ) :
     Q0 < (19/10-(9/20)*v)^2+(2/35+(9/10)*v)^2 := by
-  have hid : (19/10-(9/20)*v)^2+(2/35+(9/10)*v)^2-Q0 =
-      (81/80)*(v-50/63)^2+304609/2450000 := by norm_num [Q0]; ring
-  have h := sq_nonneg (v-50/63)
-  nlinarith only [hid,h]
+  norm_num [Q0]
+  nlinarith [sq_nonneg ((19/10-(9/20)*v)-2*(2/35+(9/10)*v))]
 
 /-- The far corner of a contained square does not reach both `1 + (9/10) cos v`
 and `1 - (9/10) sin (π/3 - v)`: the core of the sixty-degree lemma. -/
@@ -330,35 +328,27 @@ theorem sixty_pin_cover {t q a b : ℝ} (hc : ContainedChart a |b|)
 
 open Normalization
 
-private def radialMinorant (v : ℝ) : ℝ := 3/2+(77/200)*v-(3/11)*v^2
+/-- A lower bound for the radial term `1 + c/2 + 3v/8` when `c ≥ 1 - v/4`. -/
+private def radialMinorant (v : ℝ) : ℝ := 3/2+v/4
 
-lemma moving_pin_polynomial {v : ℝ} (hv0 : 0 ≤ v) (hv1 : v ≤ 5/12) :
-    Q0 < (radialMinorant v)^2+(1-v)^2 := by
-  have h3 := pow_le_pow_left₀ hv0 hv1 3
-  have hrem : 0 ≤ (1+5929/40000-9/11 : ℝ)*v^2+(9/121)*v^4 := by
-    exact add_nonneg (mul_nonneg (by norm_num) (sq_nonneg v))
-      (mul_nonneg (by norm_num) (pow_nonneg hv0 4))
-  have hid : (radialMinorant v)^2+(1-v)^2 =
-      13/4-(169/200)*v-(231/1100)*v^3+
-        ((1+5929/40000-9/11)*v^2+(9/121)*v^4) := by
-    dsimp [radialMinorant]
-    ring
-  have hnum : Q0 < (13/4 : ℝ)-(169/200)*(5/12)-(231/1100)*(5/12)^3 := by
-    norm_num [Q0]
-  rw [hid]
-  linarith
+/-- The point `(A, B) = (3/2 + v/4, 1 - v)` runs along the line `4A + B = 7`,
+which misses the disk: `A² + B² ≥ 49/17 > Q0`. -/
+lemma moving_pin_polynomial (v : ℝ) : Q0 < (radialMinorant v)^2+(1-v)^2 := by
+  dsimp [radialMinorant]
+  norm_num [Q0]
+  nlinarith [sq_nonneg ((3/2+v/4)-4*(1-v))]
 
 /-- The radial bound of a separation along the own axis keeps the transverse
 coordinate below `1/2 - (1 + x) v`. -/
 theorem own_transverse_obstruction {a u x c v : ℝ}
-    (hx0 : 0 ≤ x) (hx1 : x ≤ 23/200)
+    (hx0 : 0 ≤ x) (hx1 : x ≤ 1/8)
     (hc0 : 5/6 ≤ c) (hc1 : c ≤ 1)
     (hv0 : 0 ≤ v) (hv1 : v ≤ 5/12) (hunit : c^2+v^2=1)
-    (hown : 1+(1/2+x)*c+(77/200)*v ≤ a+1/2)
+    (hown : 1+(1/2+x)*c+(3/8)*v ≤ a+1/2)
     (hbox : (a+1/2)^2+(u+1/2)^2 ≤ Q0) :
     u+(1+x)*v < 1/2 := by
   by_contra! hfail
-  let A0 : ℝ := 1+c/2+(77/200)*v
+  let A0 : ℝ := 1+c/2+(3/8)*v
   let B0 : ℝ := 1-v
   let A : ℝ := A0+x*c
   let B : ℝ := B0-x*v
@@ -368,7 +358,7 @@ theorem own_transverse_obstruction {a u x c v : ℝ}
     dsimp [B0]
     constructor <;> linarith
   have hxv := mul_le_mul
-    (show 1+x ≤ (223:ℝ)/200 by linarith) hv1 hv0 (by norm_num)
+    (show 1+x ≤ (9:ℝ)/8 by linarith) hv1 hv0 (by norm_num)
   have hA : 0 ≤ A := by
     have hxc := mul_nonneg hx0 hc
     dsimp [A]
@@ -391,17 +381,17 @@ theorem own_transverse_obstruction {a u x c v : ℝ}
     nlinarith only [hid,hxx,sq_nonneg x,hAB]
   have hcp := mul_nonneg (show 0 ≤ 1-c by linarith)
     (show 0 ≤ c-5/6 by linarith)
-  have hcos : 1-(6/11)*v^2 ≤ c := by nlinarith only [hcp,hunit]
-  have hv2 := pow_le_pow_left₀ hv0 hv1 2
+  have hcos : 1-v/4 ≤ c := by
+    nlinarith only [hcp,hunit,hv0,mul_nonneg hv0 (sub_nonneg.mpr hv1)]
   have hL : 0 ≤ radialMinorant v := by
     dsimp [radialMinorant]
-    nlinarith only [hv0,hv2]
+    linarith
   have hLA : radialMinorant v ≤ A0 := by
     dsimp [radialMinorant,A0]
     linarith
   have hcmp := mul_nonneg (sub_nonneg.mpr hLA)
     (show 0 ≤ A0+radialMinorant v by linarith)
-  have hbad := moving_pin_polynomial hv0 hv1
+  have hbad := moving_pin_polynomial v
   change Q0 < (radialMinorant v)^2+B0^2 at hbad
   nlinarith only [hcmp,hbase,hbad]
 
@@ -415,11 +405,11 @@ lemma moving_pin_trig {t : ℝ} (ht : |t| ≤ 5/12) :
 
 /-- The own separator bounds the radial coordinate below. -/
 lemma own_radial_lower {t a b cx cy : ℝ}
-    (hcy0 : 0 ≤ cy) (hcy1 : cy ≤ 23/200) (hc : 0 ≤ Real.cos t)
+    (hcy0 : 0 ≤ cy) (hcy1 : cy ≤ 1/8) (hc : 0 ≤ Real.cos t)
     (hown : 0 ≤ centralMargin .own t a b cx cy) :
-    1+(1/2+cx)*Real.cos t+(77/200)*|Real.sin t| ≤ a+1/2 := by
+    1+(1/2+cx)*Real.cos t+(3/8)*|Real.sin t| ≤ a+1/2 := by
   have hy := mul_le_mul_of_nonneg_left (neg_le_abs (Real.sin t)) hcy0
-  have hgap := mul_nonneg (show 0 ≤ 23/200-cy by linarith) (abs_nonneg (Real.sin t))
+  have hgap := mul_nonneg (show 0 ≤ 1/8-cy by linarith) (abs_nonneg (Real.sin t))
   dsimp [centralMargin,centralNormal,angularWidth] at hown
   rw [abs_of_nonneg hc] at hown
   nlinarith only [hy,hgap,hown]
@@ -447,111 +437,119 @@ lemma own_east_positive_profile {t a b cx cy : ℝ}
 lemma own_east_negative_profile {v a b cx cy : ℝ}
     (hx0 : 0≤cx) (hy : cy≤c0) (hv0 : 0≤v) (hv1 : v≤Real.pi/4)
     (ho : 0≤centralMargin .own (-v) a b cx cy) :
-    1/2+(1/2)*Real.cos v+(387/1000)*Real.sin v≤a := by
+    1/2+(1/2)*Real.cos v+coreRadius*Real.sin v≤a := by
   have hc : 0≤Real.cos v := Real.cos_nonneg_of_mem_Icc
     ⟨by linarith [Real.pi_pos],by linarith [Real.pi_pos]⟩
   have hs := Real.sin_nonneg_of_nonneg_of_le_pi hv0 (by linarith [Real.pi_pos])
   have hcx := mul_nonneg hx0 hc
-  have hcy : cy≤113/1000 := by dsimp [c0] at hy; linarith [rho0_bounds.2]
-  have hprod := mul_nonneg (sub_nonneg.mpr hcy) hs
+  have hcy := mul_le_mul_of_nonneg_right hy hs
+  have hr : coreRadius=1/2-c0 := by linarith [c0_add_coreRadius]
   dsimp [centralMargin,centralNormal,angularWidth] at ho
   rw [Real.cos_neg,Real.sin_neg,abs_neg,abs_of_nonneg hc,abs_of_nonneg hs] at ho
-  nlinarith
+  rw [hr]
+  linarith
 
 /-- A square at phase `t`, `|t| ≤ π/4`, separated from the central square along
-its own axis has `-5/12 < t < 3/10`. -/
+its own axis has `-5/12 < t < 3/10`: beyond these angles its radial profile
+exceeds `ρ0`. -/
 theorem own_east_window {t a b cx cy : ℝ} (hc : ContainedChart a |b|)
     (hx0 : 0≤cx) (hy0 : 0≤cy) (hy : cy≤c0) (ht : |t|≤Real.pi/4)
     (ho : 0≤centralMargin .own t a b cx cy) : -5/12<t ∧ t<3/10 := by
   have htb := abs_le.mp ht
   have ha := hc.a_le_rho0
   have hq := quarter_trig_lower
+  have hr := coreRadius_bounds.1
+  have hρ := rho0_bounds.2
   constructor
   · by_contra! hbad
     have hp := own_east_negative_profile (a:=a) (b:=b) hx0 hy
       (show 0≤-t by linarith) (show -t≤Real.pi/4 by linarith)
       (by simpa only [neg_neg] using ho)
-    have hl : (613:ℝ)/1000<(1/2)*Real.cos (5/12)+(387/1000)*Real.sin (5/12) := by
-      have hs := Real.sin_ge_sub_cube (x:=(5:ℝ)/12) (by norm_num)
-      have hc := Real.one_sub_sq_div_two_le_cos (x:=(5:ℝ)/12)
+    have hl : 0<1/2-rho0+(1/2)*Real.cos (5/12)+coreRadius*Real.sin (5/12) := by
+      have hs := sin_lower_seven (x:=(5:ℝ)/12) (by norm_num)
+      have hc := cos_lower_six (x:=(5:ℝ)/12) (by norm_num)
       norm_num at hs hc
-      linarith
-    have hu : (613:ℝ)/1000<(1/2)*Real.cos (Real.pi/4)+(387/1000)*Real.sin (Real.pi/4) := by
-      linarith [hq.1,hq.2]
-    have h := harmonic_pos_of_endpoints (K:=-(613/1000)) (A:=(1:ℝ)/2) (B:=(387:ℝ)/1000)
-      (by norm_num) (by norm_num) (by norm_num : (0:ℝ)≤5/12)
+      nlinarith [mul_le_mul_of_nonneg_left hs coreRadius_pos.le]
+    have hu : 0<1/2-rho0+(1/2)*Real.cos (Real.pi/4)+coreRadius*Real.sin (Real.pi/4) := by
+      nlinarith [mul_le_mul_of_nonneg_left hq.2 coreRadius_pos.le]
+    have h := harmonic_pos_of_endpoints (A:=(1:ℝ)/2) (by norm_num) coreRadius_pos.le
+      (by norm_num : (0:ℝ)≤5/12)
       (by linarith [Real.pi_pos] : Real.pi/4≤Real.pi/2)
-      (x:=-t) ⟨by linarith,by linarith⟩ (by linarith) (by linarith)
-    linarith [rho0_bounds.2]
+      (x:=-t) ⟨by linarith,by linarith⟩ hl hu
+    linarith
   · by_contra! hbad
     have hp := own_east_positive_profile hx0 hy0
       (show 0≤t by linarith) htb.2 ho
-    have hl : (613:ℝ)/1000<(1/2)*Real.cos (3/10)+(1/2)*Real.sin (3/10) := by
+    have hl : 0<1/2-rho0+(1/2)*Real.cos (3/10)+(1/2)*Real.sin (3/10) := by
       have hs := Real.sin_ge_sub_cube (x:=(3:ℝ)/10) (by norm_num)
       have hc := Real.one_sub_sq_div_two_le_cos (x:=(3:ℝ)/10)
       norm_num at hs hc
       linarith
-    have hu : (613:ℝ)/1000<(1/2)*Real.cos (Real.pi/4)+(1/2)*Real.sin (Real.pi/4) := by
+    have hu : 0<1/2-rho0+(1/2)*Real.cos (Real.pi/4)+(1/2)*Real.sin (Real.pi/4) := by
       linarith [hq.1,hq.2]
-    have h := harmonic_pos_of_endpoints (K:=-(613/1000)) (A:=(1:ℝ)/2) (B:=(1:ℝ)/2)
+    have h := harmonic_pos_of_endpoints (A:=(1:ℝ)/2) (B:=(1:ℝ)/2)
       (by norm_num) (by norm_num) (by norm_num : (0:ℝ)≤3/10)
       (by linarith [Real.pi_pos] : Real.pi/4≤Real.pi/2)
-      ⟨hbad,htb.2⟩ (by linarith) (by linarith)
-    linarith [rho0_bounds.2]
+      ⟨hbad,htb.2⟩ hl hu
+    linarith
 
 lemma own_west_negative_profile {v a b cx cy : ℝ}
     (hx : cx≤c0) (hy0 : 0≤cy) (hv0 : 0≤v) (hv1 : v≤Real.pi/4)
     (ho : 0≤centralMargin .own (Real.pi-v) a b cx cy) :
-    1/2+(387/1000)*Real.cos v+(1/2)*Real.sin v≤a := by
+    1/2+coreRadius*Real.cos v+(1/2)*Real.sin v≤a := by
   have hc : 0≤Real.cos v := Real.cos_nonneg_of_mem_Icc
     ⟨by linarith [Real.pi_pos],by linarith [Real.pi_pos]⟩
   have hs := Real.sin_nonneg_of_nonneg_of_le_pi hv0 (by linarith [Real.pi_pos])
-  have hcx : cx≤113/1000 := by dsimp [c0] at hx; linarith [rho0_bounds.2]
-  have hp := mul_nonneg (sub_nonneg.mpr hcx) hc
+  have hcx := mul_le_mul_of_nonneg_right hx hc
   have hcy := mul_nonneg hy0 hs
+  have hr : coreRadius=1/2-c0 := by linarith [c0_add_coreRadius]
   dsimp [centralMargin,centralNormal,angularWidth] at ho
   rw [Real.cos_pi_sub,Real.sin_pi_sub,abs_neg,abs_of_nonneg hc,abs_of_nonneg hs] at ho
-  nlinarith
+  rw [hr]
+  linarith
 
 lemma own_west_positive_profile {t a b cx cy : ℝ}
     (hx : cx≤c0) (hy : cy≤c0) (ht0 : 0≤t) (ht1 : t≤Real.pi/4)
     (ho : 0≤centralMargin .own (Real.pi+t) a b cx cy) :
-    1/2+(387/1000)*(Real.cos t+Real.sin t)≤a := by
+    1/2+coreRadius*(Real.cos t+Real.sin t)≤a := by
   have hc : 0≤Real.cos t := Real.cos_nonneg_of_mem_Icc
     ⟨by linarith [Real.pi_pos],by linarith [Real.pi_pos]⟩
   have hs := Real.sin_nonneg_of_nonneg_of_le_pi ht0 (by linarith [Real.pi_pos])
-  have hcx : cx≤113/1000 := by dsimp [c0] at hx; linarith [rho0_bounds.2]
-  have hcy : cy≤113/1000 := by dsimp [c0] at hy; linarith [rho0_bounds.2]
-  have hp := mul_nonneg (sub_nonneg.mpr hcx) hc
-  have hq := mul_nonneg (sub_nonneg.mpr hcy) hs
+  have hcx := mul_le_mul_of_nonneg_right hx hc
+  have hcy := mul_le_mul_of_nonneg_right hy hs
+  have hr : coreRadius=1/2-c0 := by linarith [c0_add_coreRadius]
   dsimp [centralMargin,centralNormal,angularWidth] at ho
-  have hcpi : Real.cos (Real.pi+t)=-Real.cos t := by rw [add_comm]; exact Real.cos_add_pi t
-  have hspi : Real.sin (Real.pi+t)=-Real.sin t := by rw [add_comm]; exact Real.sin_add_pi t
-  rw [hcpi,hspi,abs_neg,abs_neg,abs_of_nonneg hc,abs_of_nonneg hs] at ho
-  nlinarith
+  rw [cos_pi_add,sin_pi_add,abs_neg,abs_neg,abs_of_nonneg hc,abs_of_nonneg hs] at ho
+  rw [hr]
+  linarith
 
+/-- A square at phase `π + t`, `|t| ≤ π/4`, separated from the central square
+along its own axis has `t > -2/3`: beyond it its radial profile exceeds `ρ0`. -/
 lemma own_west_lower_window {t a b cx cy : ℝ} (hc : ContainedChart a |b|)
     (hx : cx≤c0) (hy0 : 0≤cy) (ht : |t|≤Real.pi/4)
     (ho : 0≤centralMargin .own (Real.pi+t) a b cx cy) : -2/3<t := by
   by_contra! hbad
   have htb := abs_le.mp ht
+  have hr := coreRadius_bounds.1
   have hp := own_west_negative_profile (v:=-t) hx hy0
     (by linarith) (by linarith) (by simpa only [sub_neg_eq_add] using ho)
-  have hl : (613:ℝ)/1000<(387/1000)*Real.cos (2/3)+(1/2)*Real.sin (2/3) := by
+  have hl : 0<1/2-rho0+coreRadius*Real.cos (2/3)+(1/2)*Real.sin (2/3) := by
     have hs := sin_lower_seven (x:=(2:ℝ)/3) (by norm_num)
     have hc := cos_lower_six (x:=(2:ℝ)/3) (by norm_num)
     norm_num at hs hc
-    linarith
-  have hu : (613:ℝ)/1000<(387/1000)*Real.cos (Real.pi/4)+(1/2)*Real.sin (Real.pi/4) := by
-    linarith [quarter_trig_lower.1,quarter_trig_lower.2]
-  have h := harmonic_pos_of_endpoints (K:=-(613/1000)) (A:=(387:ℝ)/1000) (B:=(1:ℝ)/2)
-    (by norm_num) (by norm_num) (by norm_num : (0:ℝ)≤2/3)
+    nlinarith [mul_le_mul_of_nonneg_left hc coreRadius_pos.le,rho0_bounds.2]
+  have hu : 0<1/2-rho0+coreRadius*Real.cos (Real.pi/4)+(1/2)*Real.sin (Real.pi/4) := by
+    nlinarith [mul_le_mul_of_nonneg_left quarter_trig_lower.1 coreRadius_pos.le,
+      quarter_trig_lower.2,rho0_bounds.2]
+  have h := harmonic_pos_of_endpoints (B:=(1:ℝ)/2) coreRadius_pos.le
+    (by norm_num) (by norm_num : (0:ℝ)≤2/3)
     (by linarith [Real.pi_pos] : Real.pi/4≤Real.pi/2)
-    (x:=-t) ⟨by linarith,by linarith⟩ (by linarith) (by linarith)
-  linarith [hc.a_le_rho0,rho0_bounds.2]
+    (x:=-t) ⟨by linarith,by linarith⟩ hl hu
+  linarith [hc.a_le_rho0]
 
 /-- A square at phase `π + t`, `|t| ≤ π/4`, separated from the central square
-along its own axis and holding the W pin has `t < 5/8`. -/
+along its own axis and holding the W pin has `t < 5/8`: otherwise its far corner
+lies beyond `(1.54, 0.696)`, outside the disk. -/
 theorem own_west_pin_upper {t a b cx cy : ℝ} (hc : ContainedChart a |b|)
     (hx : cx≤c0) (hy : cy≤c0) (ht : |t|≤Real.pi/4)
     (ho : 0≤centralMargin .own (Real.pi+t) a b cx cy)
@@ -560,29 +558,25 @@ theorem own_west_pin_upper {t a b cx cy : ℝ} (hc : ContainedChart a |b|)
   by_contra! hbad
   have htb := abs_le.mp ht
   have hrad := own_west_positive_profile hx hy (by linarith) htb.2 ho
-  have hcs0 : (279:ℝ)/200<Real.cos (5/8)+Real.sin (5/8) := by
-    have hs := sin_lower_seven (x:=(5:ℝ)/8) (by norm_num)
-    have hc := cos_lower_six (x:=(5:ℝ)/8) (by norm_num)
-    norm_num at hs hc
-    linarith
   have hcs := cos_add_sin_mono (x:=(5:ℝ)/8) (by norm_num) hbad htb.2
-  have hs0 : (387:ℝ)/500<Real.sin (133/150) := by
-    have h := sin_lower_seven (x:=(133:ℝ)/150) (by norm_num)
-    norm_num at h
-    linarith
-  have hangle : (133:ℝ)/150≤Real.pi/12+t := by linarith [Real.pi_gt_d2]
+  have hc58 := cos_lower_six (x:=(5:ℝ)/8) (by norm_num)
+  have hs58 := sin_lower_seven (x:=(5:ℝ)/8) (by norm_num)
+  have hangle : 3.14/12+5/8≤Real.pi/12+t := by linarith [Real.pi_gt_d2]
   have hs := Real.sin_le_sin_of_le_of_le_pi_div_two
-    (show -(Real.pi/2)≤(133:ℝ)/150 by linarith [Real.pi_pos])
+    (show -(Real.pi/2)≤3.14/12+5/8 by linarith [Real.pi_pos])
     (show Real.pi/12+t≤Real.pi/2 by linarith [Real.pi_pos]) hangle
+  have hs0 := sin_lower_seven (x:=3.14/12+5/8) (by norm_num)
+  norm_num at hc58 hs58 hs0
   rw [polar_mem_iff] at hpin
   have harg : 11*Real.pi/12-(Real.pi+t)=-(Real.pi/12+t) := by ring
   rw [harg,Real.sin_neg,mul_neg] at hpin
   have hb := (abs_lt.mp hpin.2).1
-  have hA : 1+(387/1000)*(279/200)≤a+1/2 := by nlinarith
-  have hB : (9/10)*(387/500)≤|b|+1/2 := by
-    have hn := neg_le_abs b
-    nlinarith
-  have hbadQ : Q0<(1+(387/1000)*(279/200))^2+((9/10)*(387/500))^2 := by norm_num [Q0]
+  have hA : (1.54:ℝ)≤a+1/2 := by
+    have h1 := mul_le_mul_of_nonneg_left hcs coreRadius_pos.le
+    have h2 := mul_le_mul_of_nonneg_left (add_le_add hc58 hs58) coreRadius_pos.le
+    nlinarith [coreRadius_bounds.1]
+  have hB : (0.696:ℝ)≤|b|+1/2 := by linarith [neg_le_abs b]
+  have hbadQ : Q0<1.54^2+0.696^2 := by norm_num [Q0]
   linarith [corner_sq_le (by norm_num) (by norm_num) hA hB hc.containment]
 
 open Normalization
@@ -673,18 +667,18 @@ theorem own_east_pin {t a b cx cy : ℝ} (hc : ContainedChart a |b|)
   rw [polar_mem_iff]
   simpa only [zero_sub,Real.cos_neg,Real.sin_neg,mul_neg] using And.intro hX hY
 
+/-- The point `(A, B) = (11/8 + v/3, 49/40 - 9v/10)` runs along a line that
+misses the disk: `27A + 10B` does not depend on `v`. -/
 lemma western_flank_quadratic (v : ℝ) :
-    Q0<(277/200+v/3)^2+(49/40-(9/10)*v)^2 := by
-  have hid : (277/200+v/3)^2+(49/40-(9/10)*v)^2-Q0 =
-      (829/900)*(v-2307/3316)^2+20199561/165800000 := by norm_num [Q0]; ring
-  have h := sq_nonneg (v-2307/3316)
-  nlinarith only [hid,h]
+    Q0<(11/8+v/3)^2+(49/40-(9/10)*v)^2 := by
+  norm_num [Q0]
+  nlinarith [sq_nonneg (10*(11/8+v/3)-27*(49/40-(9/10)*v))]
 
 /-- A square at phase `-v`, with `π/12 ≤ v ≤ 2/3`, contains the pin at angle
 `-π/12` if its centre obeys the radial profile whenever `b < 0`. -/
 theorem western_left_pin {v a b : ℝ} (hc : ContainedChart a |b|)
     (hb : |b|<1/2) (hv0 : Real.pi/12≤v) (hv1 : v≤2/3)
-    (hprofile : b<0 → 1/2+(77/200)*Real.cos v+(1/2)*Real.sin v≤a) :
+    (hprofile : b<0 → 1/2+(3/8)*Real.cos v+(1/2)*Real.sin v≤a) :
     openSquare (orientedSquare (-v) a b) (polar (9/10) (-Real.pi/12)) := by
   have hδ0 : 0≤v-Real.pi/12 := by linarith
   have hδ1 : v-Real.pi/12≤5/12 := by linarith [Real.pi_gt_d2]
@@ -702,14 +696,14 @@ theorem western_left_pin {v a b : ℝ} (hc : ContainedChart a |b|)
     have hbneg : b<0 := by nlinarith
     have hp := hprofile hbneg
     have hv : 0≤v := by linarith [Real.pi_pos]
-    have haff := trig_affine_lower (A:=(77:ℝ)/200) (B:=(1:ℝ)/2)
+    have haff := trig_affine_lower (A:=(3:ℝ)/8) (B:=(1:ℝ)/2)
       (r:=(2:ℝ)/3) (by norm_num) (by norm_num) hv hv1
-    have hA : 277/200+v/3≤a+1/2 := by nlinarith
+    have hA : 11/8+v/3≤a+1/2 := by nlinarith
     have hB : 49/40-(9/10)*v≤|b|+1/2 := by
       have hs := Real.sin_le hδ0
       rw [abs_of_neg hbneg]
       nlinarith [Real.pi_gt_d2]
-    have hA0 : 0≤277/200+v/3 := by linarith
+    have hA0 : 0≤11/8+v/3 := by linarith
     have hB0 : 0≤49/40-(9/10)*v := by linarith
     linarith [corner_sq_le hA0 hB0 hA hB hc.containment,western_flank_quadratic v]
   rw [polar_mem_iff]
@@ -728,7 +722,8 @@ lemma own_west_left_pin {t a b cx cy : ℝ} (hc : ContainedChart a |b|)
   have hcos : 0≤Real.cos (-t) := Real.cos_nonneg_of_mem_Icc
     ⟨by linarith [Real.pi_pos],by linarith [(abs_le.mp ht).1,Real.pi_pos]⟩
   have hlocal := western_left_pin (v:=-t) hc hb (by linarith) (by linarith)
-    (fun _ => by nlinarith)
+    (fun _ => by nlinarith [mul_nonneg (show 0≤coreRadius-3/8 by
+      linarith [coreRadius_bounds.1]) hcos])
   have hphase : Real.pi+t=t+Real.pi := by ring
   have hpin : 11*Real.pi/12=(-Real.pi/12)+Real.pi := by ring
   rw [hphase,hpin,polar_rotate]
@@ -798,8 +793,8 @@ lemma west_cap_left_pin {v a b h:ℝ} (hc:ContainedChart a |b|) (hb:|b|<1/2)
   have hprod := mul_nonneg (show 0≤a-1/2 by linarith [hc.half_le])
     (show 0≤1-Real.cos (-v) by linarith [Real.cos_le_one (-v)])
   have hbprod := mul_nonpos_of_nonpos_of_nonneg hbneg.le hsin
-  have hcore : (77:ℝ)/200<h := by linarith [coreRadius_bounds.1]
-  have hcprod := mul_nonneg (show 0≤(77:ℝ)/200 by norm_num)
+  have hcore : (3:ℝ)/8<h := by linarith [coreRadius_bounds.1]
+  have hcprod := mul_nonneg (show 0≤(3:ℝ)/8 by norm_num)
     (show 0≤1-Real.cos (-v) by linarith [Real.cos_le_one (-v)])
   nlinarith
 

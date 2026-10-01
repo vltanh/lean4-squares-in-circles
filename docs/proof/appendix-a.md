@@ -44,9 +44,9 @@ $\xi \in (x, y)$ with $f(y) - f(x) = f'(\xi)(y - x) \ge 0$. (2) Apply (1) to
 $-f$. (3) For $x > 0$, (1) on $[0, x]$ gives $f(x) \ge f(0) = 0$. $\square$
 
 *Lean:
-[`monoOn_of_hasDeriv_nonneg`](../../SquaresInCircles/Common/Analysis.lean#L30),
-[`antiOn_of_hasDeriv_nonpos`](../../SquaresInCircles/Common/Analysis.lean#L38),
-[`nonneg_of_deriv_nonneg`](../../SquaresInCircles/Common/Analysis.lean#L48).*
+[`monoOn_of_hasDeriv_nonneg`](../../SquaresInCircles/Common/Analysis.lean#L29),
+[`antiOn_of_hasDeriv_nonpos`](../../SquaresInCircles/Common/Analysis.lean#L37),
+[`nonneg_of_deriv_nonneg`](../../SquaresInCircles/Common/Analysis.lean#L47).*
 
 ### Lemma A.2 (tangent parabolas)
 
@@ -72,7 +72,7 @@ $h_1 \le 0$ on $[l, t]$ and $h_1 \ge 0$ on $[t, u]$. By Lemma A.1 again, $h$ is
 nonincreasing on $[l, t]$ and nondecreasing on $[t, u]$. As $h(t) = 0$, we get
 $h \ge 0$ on $[l, u]$, and $h(x) \ge 0$ is the claim. $\square$
 
-*Lean: [`curvature_tangent`](../../SquaresInCircles/Common/Analysis.lean#L149).*
+*Lean: [`curvature_tangent`](../../SquaresInCircles/Common/Analysis.lean#L148).*
 
 With $\kappa = 0$, Lemma A.2 says that a function with a nonnegative second
 derivative lies above its tangent lines; applied to $-f$, that a function with
@@ -100,7 +100,7 @@ value of the parabola, $f(t) - d(t)^2/2\kappa$ (green), is positive.
 ```
 
 *Lean:
-[`positive_of_curvature`](../../SquaresInCircles/Common/Analysis.lean#L179).*
+[`positive_of_curvature`](../../SquaresInCircles/Common/Analysis.lean#L178).*
 
 ### Lemma A.4 (positivity from concavity)
 
@@ -124,7 +124,7 @@ f(x) \ge \frac{(u - x) f(l) + (x - l) f(u)}{u - l} \ge \min\left(f(l), f(u)\righ
 ```
 
 *Lean:
-[`positive_of_second_nonpos`](../../SquaresInCircles/Common/Analysis.lean#L140).*
+[`positive_of_second_nonpos`](../../SquaresInCircles/Common/Analysis.lean#L139).*
 
 ### Lemma A.5 (concave trigonometric sums)
 
@@ -262,7 +262,7 @@ $x \in [l, u]$. If $x \le c$, then $f$ is nondecreasing on $[l, c]$ by
 Lemma A.1 (1), so $f(x) \le f(c)$. If $x \ge c$, then $f$ is nonincreasing on
 $[c, u]$ by Lemma A.1 (2), so again $f(x) \le f(c)$. $\square$
 
-*Lean: [`le_at_peak`](../../SquaresInCircles/Common/Analysis.lean#L55).*
+*Lean: [`le_at_peak`](../../SquaresInCircles/Common/Analysis.lean#L54).*
 
 In use, $d(y)$ is a product of factors of constant sign on $[l, u]$ and one
 affine factor that vanishes at $c$; Lemma A.14 is an example (Figure A.11).
@@ -362,7 +362,7 @@ $\sqrt{1 - y^2} < \frac45$ and $g'(y) < 0$; apply Lemma A.1 (2).
 $\square$
 
 *Lean:
-[`Seven.asin_line_mono`](../../SquaresInCircles/Seven/Exterior.lean#L231),
+[`Seven.asin_line_mono`](../../SquaresInCircles/Seven/Exterior.lean#L235),
 [`asin_half`](../../SquaresInCircles/Common/Trigonometry.lean#L717).*
 
 By (1) and (2), $g(\frac35) = \frac34 - \arcsin\frac35$ is the largest value of
@@ -437,7 +437,7 @@ $\mathrm{side}(a, u)$ and $\frac\pi4$, hence less than their minimum
 $\ell(a, u)$. $\square$
 
 *Lean:
-[`Seven.marker_lower_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L253),
+[`Seven.marker_lower_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L257),
 [`dot_gt`](../../SquaresInCircles/Common/DiskSupport.lean#L34).*
 
 ### Lemma A.12 (the upper edge)
@@ -471,7 +471,7 @@ $\ell(a, u) + \frac12 < \arcsin(u + \frac12)$.
    $\arcsin(u + \frac12) > \ell(a, u) + \frac12$. $\square$
 
 *Lean:
-[`Seven.marker_horizontal_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L455).*
+[`Seven.marker_horizontal_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L459).*
 
 ### Definition A.13 (the envelope)
 
@@ -490,9 +490,9 @@ E_2(x) &= \frac x{\left(1 - x^2\right)^{3/2}} - \frac{13}{12\left(13/4 - (x + 1)
 $E$ is the *envelope*; $E_1$ and $E_2$ are its first and second derivatives
 on $[0, \frac34]$ (Lemma A.15).
 
-*Lean: [`Seven.arcEnvelope`](../../SquaresInCircles/Seven/Exterior.lean#L282),
-[`Seven.arcEnvelopeDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L285),
-[`Seven.arcEnvelopeSecond`](../../SquaresInCircles/Seven/Exterior.lean#L288).*
+*Lean: [`Seven.arcEnvelope`](../../SquaresInCircles/Seven/Exterior.lean#L286),
+[`Seven.arcEnvelopeDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L289),
+[`Seven.arcEnvelopeSecond`](../../SquaresInCircles/Seven/Exterior.lean#L292).*
 
 The definition of the side term can be written
 
@@ -548,7 +548,7 @@ h(c) < 9 \cdot \tfrac13 \cdot 6^3 = 648 < 676 . \qquad \square
 ```
 
 *Lean:
-[`Seven.curvature_peak_lt`](../../SquaresInCircles/Seven/Exterior.lean#L354).*
+[`Seven.curvature_peak_lt`](../../SquaresInCircles/Seven/Exterior.lean#L358).*
 
 For orientation, $h(0) \approx 102.5$, $h(\frac{123}{280}) \approx 596.1$ and
 $h(\frac34) \approx 363.4$.
@@ -609,10 +609,10 @@ Let $0 \le x \le \frac34$. Then
    $12(x + \frac18)B^3 < 13A^3$, and $E_2(x) < -\frac18$. $\square$
 
 *Lean:
-[`Seven.arcEnvelopeSecond_le`](../../SquaresInCircles/Seven/Exterior.lean#L380),
-[`Seven.arc_radicands`](../../SquaresInCircles/Seven/Exterior.lean#L291),
-[`Seven.arcEnvelope_hasDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L296),
-[`Seven.arcEnvelopeDeriv_hasDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L313).*
+[`Seven.arcEnvelopeSecond_le`](../../SquaresInCircles/Seven/Exterior.lean#L384),
+[`Seven.arc_radicands`](../../SquaresInCircles/Seven/Exterior.lean#L295),
+[`Seven.arcEnvelope_hasDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L300),
+[`Seven.arcEnvelopeDeriv_hasDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L317).*
 
 The two terms of $E_2$ come from the arcsine, which bends up, and from the
 circle $\varphi = \frac{13}4$, which bends down: $B$ is the value of
@@ -667,7 +667,7 @@ level $\frac\pi3 - \frac12 \approx 0.5472$ that Lemma A.17 needs
    With (A.2), $E(x) \le \frac\pi6 + \frac{353}{648}$. $\square$
 
 *Lean:
-[`Seven.arcEnvelope_bound`](../../SquaresInCircles/Seven/Exterior.lean#L415).*
+[`Seven.arcEnvelope_bound`](../../SquaresInCircles/Seven/Exterior.lean#L419).*
 
 For orientation: the largest value of $E$ on $[0, \frac34]$ is about
 $\frac\pi6 + 0.54293$, taken near $x = 0.094$, and
@@ -704,7 +704,7 @@ $0 \le x < \frac34$.
    $\square$
 
 *Lean:
-[`Seven.marker_vertical_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L433).*
+[`Seven.marker_vertical_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L437).*
 
 *Proof of [Lemma 9.9](seven.md#lemma-99-the-marker-arc).* Let $(a, u)$ be admissible, write
 $\ell = \ell(a, u)$, and let $|t - \ell| \le \frac12$, so that
@@ -730,4 +730,4 @@ $0 \le \theta \le \frac\pi2$ and $\cos\theta = a - \frac12$.
    so $\sin t < u + \frac12$. With step 3, $|\sin t - u| \le \frac12$.
    $\square$
 
-*Lean: [`Seven.marker_arc`](../../SquaresInCircles/Seven/Exterior.lean#L482).*
+*Lean: [`Seven.marker_arc`](../../SquaresInCircles/Seven/Exterior.lean#L486).*

@@ -11,7 +11,7 @@ along its own axis, since otherwise `s < 2/5 < d`, and `r = s - d` lies in
 `[0, 1/6]`. Multiplying the separating inequalities of D and S from C by
 `sin s` and `cos d` and adding them cancels the first coordinate of the centre
 of C, and leaves a reserve that is concave in `d` and in `s` on the triangle
-`1/2 ≤ d ≤ s ≤ 2/3`: so `a_D + a_S > 217/100 + r/3`. Then the projections of
+`1/2 ≤ d ≤ s ≤ 2/3`: so `a_D + a_S > 2.17 + r/3`. Then the projections of
 the difference of the centres on the two secondary axes sum to more than twice
 the threshold `(1 + cos r + sin r)/2`, and one of the two axes separates.
 -/
@@ -21,23 +21,23 @@ namespace SquaresInCircles.Six
 open Normalization
 
 /-- The trigonometric part of the bound on `a_D + a_S` for D and S on their own
-axes. -/
+axes, with `1/2 - c_y ≥ 0.387`, `a_S ≤ 1.113` and `0.557 = 2.17 - 1.113 - 1/2`. -/
 def coupledOwnReserve (d s : ℝ) : ℝ :=
-  (387/1000)*Real.cos (s-d)+Real.sin s*Real.cos d-
-    (613/1000)*Real.cos d-(557/1000+(s-d)/3)*Real.sin s
+  0.387*Real.cos (s-d)+Real.sin s*Real.cos d-
+    0.613*Real.cos d-(0.557+(s-d)/3)*Real.sin s
 
-private def coupledA (s : ℝ) : ℝ := (387/1000)*Real.cos s+Real.sin s-613/1000
-private def coupledB (s : ℝ) : ℝ := (387/1000)*Real.sin s
+private def coupledA (s : ℝ) : ℝ := 0.387*Real.cos s+Real.sin s-0.613
+private def coupledB (s : ℝ) : ℝ := 0.387*Real.sin s
 
 private lemma coupled_formula (d s : ℝ) :
     coupledOwnReserve d s=coupledA s*Real.cos d+coupledB s*Real.sin d+
-      (Real.sin s/3)*d-(557/1000+s/3)*Real.sin s := by
+      (Real.sin s/3)*d-(0.557+s/3)*Real.sin s := by
   dsimp [coupledOwnReserve,coupledA,coupledB]
   rw [Real.cos_sub]
   ring
 
 private lemma coupled_trig {x : ℝ} (hx : 1/2≤x ∧ x≤2/3) :
-    7/9≤Real.cos x ∧ 4794/10000≤Real.sin x := by
+    7/9≤Real.cos x ∧ 9/20≤Real.sin x := by
   obtain ⟨hs,-,hc,-⟩ := trig_bracket (by norm_num) (by linarith [Real.pi_gt_d2]) hx
   norm_num at hs hc
   exact ⟨by linarith,by linarith⟩
@@ -50,7 +50,7 @@ private lemma coupled_concave_d {s : ℝ} (hs : 1/2≤ s ∧ s≤2/3) :
   have htrig := harmonic_concave (A := coupledA s) (B := coupledB s) (l := 1/2) (u := s)
     fun x hx => harmonic_nonneg hA hB ⟨by linarith [hx.1],by linarith [hx.2,hs.2,Real.pi_gt_d2]⟩
   have hlinear := affine_concave (Real.sin s/3)
-    (-(557/1000+s/3)*Real.sin s) (1/2) s
+    (-(0.557+s/3)*Real.sin s) (1/2) s
   apply (htrig.add hlinear).congr
   intro d _
   simp only [Pi.add_apply,harmonic]
@@ -58,9 +58,9 @@ private lemma coupled_concave_d {s : ℝ} (hs : 1/2≤ s ∧ s≤2/3) :
   ring
 
 private def coupledLeft (s : ℝ) : ℝ :=
-  ((387/1000)*Real.cos (1/2))*Real.cos s+
-    ((387/1000)*Real.sin (1/2)+Real.cos (1/2)-557/1000)*Real.sin s-
-    (613/1000)*Real.cos (1/2)-((s-1/2)/3)*Real.sin s
+  (0.387*Real.cos (1/2))*Real.cos s+
+    (0.387*Real.sin (1/2)+Real.cos (1/2)-0.557)*Real.sin s-
+    0.613*Real.cos (1/2)-((s-1/2)/3)*Real.sin s
 
 private lemma coupled_left_formula (s : ℝ) : coupledOwnReserve (1/2) s=coupledLeft s := by
   dsimp [coupledOwnReserve,coupledLeft]
@@ -68,8 +68,8 @@ private lemma coupled_left_formula (s : ℝ) : coupledOwnReserve (1/2) s=coupled
   ring
 
 private lemma coupled_left_concave : ConcaveOn ℝ (Set.Icc (1/2) (2/3)) coupledLeft := by
-  let A := (387/1000)*Real.cos (1/2)
-  let B := (387/1000)*Real.sin (1/2)+Real.cos (1/2)-557/1000
+  let A := 0.387*Real.cos (1/2)
+  let B := 0.387*Real.sin (1/2)+Real.cos (1/2)-0.557
   let f' : ℝ→ℝ := fun s => -A*Real.sin s+B*Real.cos s-
     Real.sin s/3-((s-1/2)/3)*Real.cos s
   let f'' : ℝ→ℝ := fun s => -A*Real.cos s-B*Real.sin s-
@@ -81,7 +81,7 @@ private lemma coupled_left_concave : ConcaveOn ℝ (Set.Icc (1/2) (2/3)) coupled
   have hf (s : ℝ) : HasDerivAt coupledLeft (f' s) s := by
     have h := ((((Real.hasDerivAt_cos s).const_mul A).fun_add
       ((Real.hasDerivAt_sin s).const_mul B)).sub_const
-      ((613/1000)*Real.cos (1/2))).fun_sub ((hu s).fun_mul (Real.hasDerivAt_sin s))
+      (0.613*Real.cos (1/2))).fun_sub ((hu s).fun_mul (Real.hasDerivAt_sin s))
     refine h.congr_deriv ?_
     simp only [f']
     ring
@@ -102,7 +102,7 @@ private lemma coupled_left_concave : ConcaveOn ℝ (Set.Icc (1/2) (2/3)) coupled
   nlinarith only [hAc,hBs,hupper,ht.1]
 
 private def coupledDiagonal (s : ℝ) : ℝ :=
-  387/1000+Real.sin (2*s)/2-(613/1000)*Real.cos s-(557/1000)*Real.sin s
+  0.387+Real.sin (2*s)/2-0.613*Real.cos s-0.557*Real.sin s
 
 private lemma coupled_diagonal_formula (s : ℝ) : coupledOwnReserve s s=coupledDiagonal s := by
   simp only [coupledOwnReserve,coupledDiagonal,sub_self,Real.cos_zero,Real.sin_two_mul]
@@ -110,20 +110,20 @@ private lemma coupled_diagonal_formula (s : ℝ) : coupledOwnReserve s s=coupled
 
 private lemma coupled_diagonal_concave :
     ConcaveOn ℝ (Set.Icc (1/2) (2/3)) coupledDiagonal := by
-  let f' : ℝ→ℝ := fun s => Real.cos (2*s)+(613/1000)*Real.sin s-(557/1000)*Real.cos s
-  let f'' : ℝ→ℝ := fun s => -2*Real.sin (2*s)+(613/1000)*Real.cos s+(557/1000)*Real.sin s
+  let f' : ℝ→ℝ := fun s => Real.cos (2*s)+0.613*Real.sin s-0.557*Real.cos s
+  let f'' : ℝ→ℝ := fun s => -2*Real.sin (2*s)+0.613*Real.cos s+0.557*Real.sin s
   have hu (s : ℝ) : HasDerivAt (fun x : ℝ => 2*x) 2 s := by
     simpa using (hasDerivAt_id s).const_mul 2
   have hf (s : ℝ) : HasDerivAt coupledDiagonal (f' s) s := by
-    have h := (((((hu s).sin).div_const 2).const_add (387/1000)).fun_sub
-      ((Real.hasDerivAt_cos s).const_mul (613/1000))).fun_sub
-      ((Real.hasDerivAt_sin s).const_mul (557/1000))
+    have h := (((((hu s).sin).div_const 2).const_add 0.387).fun_sub
+      ((Real.hasDerivAt_cos s).const_mul 0.613)).fun_sub
+      ((Real.hasDerivAt_sin s).const_mul 0.557)
     refine h.congr_deriv ?_
     simp only [f']
     ring
   have hff (s : ℝ) : HasDerivAt f' (f'' s) s := by
-    have h := (((hu s).cos).fun_add ((Real.hasDerivAt_sin s).const_mul (613/1000))).fun_sub
-      ((Real.hasDerivAt_cos s).const_mul (557/1000))
+    have h := (((hu s).cos).fun_add ((Real.hasDerivAt_sin s).const_mul 0.613)).fun_sub
+      ((Real.hasDerivAt_cos s).const_mul 0.557)
     refine h.congr_deriv ?_
     simp only [f'']
     ring
@@ -143,11 +143,11 @@ private lemma coupled_vertices :
     0<coupledOwnReserve (2/3) (2/3) := by
   obtain ⟨hc5l,hc5u,hs5l,hs5u⟩ := trig_bracket_half
   obtain ⟨hc6l,hc6u,hs6l,hs6u⟩ := trig_bracket_two_thirds
-  have hprod5 := mul_le_mul hs5l hc5l (by norm_num : (0:ℝ)≤8775/10000)
+  have hprod5 := mul_le_mul hs5l hc5l (by norm_num)
     (show 0≤Real.sin (1/2) by linarith)
-  have hprod6 := mul_le_mul hs6l hc6l (by norm_num : (0:ℝ)≤157/200)
+  have hprod6 := mul_le_mul hs6l hc6l (by norm_num)
     (show 0≤Real.sin (2/3) by linarith)
-  have hprod56 := mul_le_mul hs6l hc5l (by norm_num : (0:ℝ)≤8775/10000)
+  have hprod56 := mul_le_mul hs6l hc5l (by norm_num)
     (show 0≤Real.sin (2/3) by linarith)
   have hcr := Real.one_sub_sq_div_two_le_cos (x := (1:ℝ)/6)
   refine ⟨?_,?_,?_⟩
@@ -175,28 +175,29 @@ theorem coupled_own_reserve_positive {d s : ℝ}
     ⟨hd,hds⟩ hleft hdiag
   exact h
 
-/-- A square in the disk has `3a + |b| < 167/50`, by Cauchy–Schwarz. -/
+/-- A square in the disk has `3a + |b| < 3.34`, by Cauchy–Schwarz:
+`3(a + 1/2) + (|b| + 1/2) ≤ √(10 Q0) < 5.34`. -/
 lemma chart_three_radial_support {a b : ℝ} (hc : ContainedChart a |b|) :
-    3*a+|b|<167/50 := by
+    3*a+|b|<3.34 := by
   have hsq := sq_nonneg ((a+1/2)-3*(|b|+1/2))
   have hC := hc.containment
   have hpos : 0≤3*(a+1/2)+(|b|+1/2) := by linarith [hc.half_le,abs_nonneg b]
   have hbound : (3*(a+1/2)+(|b|+1/2))^2≤10*Q0 := by nlinarith only [hC,hsq]
   by_contra! h
   have hp := mul_nonneg
-    (show 0≤3*(a+1/2)+(|b|+1/2)-267/50 by linarith)
-    (show 0≤3*(a+1/2)+(|b|+1/2)+267/50 by linarith)
+    (show 0≤3*(a+1/2)+(|b|+1/2)-5.34 by linarith)
+    (show 0≤3*(a+1/2)+(|b|+1/2)+5.34 by linarith)
   norm_num [Q0] at hbound
   nlinarith
 
 /-- D and S separated from C along their own axes at `1/2 ≤ d ≤ s ≤ 2/3` have
-`a_D + a_S > 217/100 + (s - d)/3`. -/
+`a_D + a_S > 2.17 + (s - d)/3`. -/
 lemma coupled_own_radial_sum {a b A B cx cy d s : ℝ}
     (hS : ContainedChart A |B|)
     (hy : cy≤c0) (hd : 1/2≤d) (hds : d≤ s) (hs : s≤2/3)
     (hCD : 0≤centralMargin .own (Real.pi+d) a b cx cy)
     (hCS : 0≤centralMargin .own (3*Real.pi/2+s) A B cx cy) :
-    217/100+(s-d)/3<a+A := by
+    2.17+(s-d)/3<a+A := by
   have hcd := Real.cos_nonneg_of_mem_Icc
     (show d∈Set.Icc (-(Real.pi/2)) (Real.pi/2) by
       constructor <;> linarith [hd,hds,hs,Real.pi_gt_d2])
@@ -223,11 +224,11 @@ lemma coupled_own_radial_sum {a b A B cx cy d s : ℝ}
     nlinarith only [hCS]
   have hDp := mul_nonneg hDgap hss
   have hSp := mul_nonneg hSgap hcd
-  have hcy : 387/1000≤1/2-cy := by dsimp [c0] at hy; linarith [rho0_bounds.2]
+  have hcy : 0.387≤1/2-cy := by dsimp [c0] at hy; linarith [rho0_bounds.2]
   have hcyprod := mul_nonneg (sub_nonneg.mpr hcy) hcr
   rw [Real.cos_sub] at hcyprod
   have hcombined : (Real.cos d+Real.sin s)/2+Real.sin s*Real.cos d+
-      (387/1000)*Real.cos (s-d)≤a*Real.sin s+A*Real.cos d := by
+      0.387*Real.cos (s-d)≤a*Real.sin s+A*Real.cos d := by
     rw [Real.cos_sub]
     linarith only [hDp,hSp,hcyprod]
   have hcoslower : 7/9≤Real.cos d := by
@@ -235,7 +236,7 @@ lemma coupled_own_radial_sum {a b A B cx cy d s : ℝ}
     nlinarith only [hc,mul_nonneg (show 0≤2/3-d by linarith) (show 0≤2/3+d by linarith)]
   have hsinupper := Real.sin_le (show 0≤ s by linarith)
   have hdiff : 0≤Real.cos d-Real.sin s := by linarith
-  have hAupper : A≤1113/1000 := by linarith [hS.a_le_rho0,rho0_bounds.2]
+  have hAupper : A≤1.113 := by linarith [hS.a_le_rho0,rho0_bounds.2]
   have hAp := mul_le_mul_of_nonneg_right hAupper hdiff
   have hreserve := coupled_own_reserve_positive hd hds hs
   by_contra! hsum
@@ -243,18 +244,18 @@ lemma coupled_own_radial_sum {a b A B cx cy d s : ℝ}
   dsimp [coupledOwnReserve] at hreserve
   nlinarith only [hcombined,hAp,hsumprod,hreserve]
 
-/-- For `r ∈ [0, 1/6]` and `a + A > 217/100 + r/3`, the separations of D and S
+/-- For `r ∈ [0, 1/6]` and `a + A > 2.17 + r/3`, the separations of D and S
 along their secondary axes sum to more than twice their threshold. -/
 lemma overtaking_secondary_sum {a b A B r : ℝ}
     (hD : ContainedChart a |b|) (hS : ContainedChart A |B|)
-    (hr : 0≤r ∧ r≤1/6) (hsum : 217/100+r/3<a+A) :
+    (hr : 0≤r ∧ r≤1/6) (hsum : 2.17+r/3<a+A) :
     1+Real.cos r+Real.sin r<
       (A*Real.cos r-B*Real.sin r-b)+(B+a*Real.cos r+b*Real.sin r) := by
   let T := a+A
   let U := |b|+|B|
   let delta := T-U-2
-  have hTlo : 217/100<T := by dsimp [T]; linarith [hr.1]
-  have hThi : T≤2226/1000 := by
+  have hTlo : 2.17<T := by dsimp [T]; linarith [hr.1]
+  have hThi : T≤9/4 := by
     dsimp [T]
     linarith [hD.a_le_rho0,hS.a_le_rho0,rho0_bounds.2]
   have hdelta : (4/3)*r<delta := by
@@ -268,8 +269,8 @@ lemma overtaking_secondary_sum {a b A B r : ℝ}
   have hc1 := Real.cos_le_one r
   have hcp := mul_nonneg (sub_nonneg.mpr hThi) (sub_nonneg.mpr hc1)
   have hcLower := mul_le_mul_of_nonneg_left (Real.one_sub_sq_div_two_le_cos (x := r))
-    (by norm_num : (0:ℝ)≤1226/1000)
-  have hsp := mul_nonneg (show 0≤T-217/100 by linarith) hs0
+    (by norm_num : (0:ℝ)≤5/4)
+  have hsp := mul_nonneg (show 0≤T-2.17 by linarith) hs0
   have hdp := mul_pos (sub_pos.mpr hdelta) (show 0<1-Real.sin r by linarith [hr.2])
   have hrem := mul_nonneg hr.1 (sub_nonneg.mpr hs1)
   have hdiff : -U≤B-b := by
@@ -277,8 +278,7 @@ lemma overtaking_secondary_sum {a b A B r : ℝ}
     linarith [neg_le_abs B,le_abs_self b]
   have hdiffprod := mul_nonneg (sub_nonneg.mpr hdiff)
     (show 0≤1-Real.sin r by linarith [hr.2])
-  have hpolynomial := mul_nonneg hr.1
-    (show 0≤151/300-(5839/3000)*r by linarith [hr.2])
+  have hpolynomial := mul_nonneg hr.1 (show 0≤1/2-2*r by linarith [hr.2])
   have he :
       T*Real.cos r-U*(1-Real.sin r)-(1+Real.cos r+Real.sin r)=
       (T-1)*(Real.cos r-1)+(T-3)*Real.sin r+delta*(1-Real.sin r) := by

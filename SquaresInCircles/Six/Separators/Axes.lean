@@ -101,7 +101,8 @@ lemma one_sub_sin_le_cos {q : ℝ} (hq : 11/10≤q ∧ q≤Real.pi/2) :
   have hl := Real.sin_ge_sub_cube (x := (11:ℝ)/10) (by norm_num)
   norm_num at hl
   have hs1 : 0≤1-Real.sin q := sub_nonneg.mpr (Real.sin_le_one q)
-  have hfactor := mul_nonneg hs1 (show 0≤2669*Real.sin q-2331 by linarith)
+  have hfactor := mul_nonneg hs1
+    (show 0≤(1+(13/50)^2)*Real.sin q-(1-(13/50)^2) by linarith)
   by_contra! h
   have hp := mul_pos (show 0<1-Real.sin q-(13/50)*Real.cos q by linarith)
     (show 0<1-Real.sin q+(13/50)*Real.cos q by linarith)

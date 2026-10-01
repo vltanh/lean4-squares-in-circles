@@ -610,9 +610,11 @@ def side_profile():
         assert disk_bound(z) >= z * (1 / 5 - 13 / 8 * z - z * z / 6) \
             > z * (1 / 5 - 2 * z) > 0
     z = 0.1
-    assert z - 28 / 375 - 6 / 25 * z * z - z ** 3 / 6 <= tangent_force(z)
-    assert 28 / 375 < 0.0747 and abs(6 / 25 * z * z - 0.0024) < 1e-15 \
-        and z ** 3 / 6 < 0.0002 and 0.1 - 0.0747 - 0.0024 - 0.0002 > 0
+    k_low = 12 / 25 * (1 - z * z / 2 - 0.6) + z - z ** 3 / 6 - 4 / 15
+    assert k_low <= tangent_force(z) and abs(1 - z * z / 2 - 0.6 - 0.395) < 1e-12
+    assert abs(12 / 25 - 0.48) < 1e-15 and z - z ** 3 / 6 > 0.0998
+    assert 4 / 15 < 0.2667 and 0.48 * 0.395 + 0.0998 - 0.2667 > 0
+    assert tangent_force(0) < 0
     assert 2 / 15 + 1 / 40 < 3 / 10 - 1 / 8 and 0.1 / 8 > 1 / 100
     assert U0 + 0.5 > 4 / 5 - 1 / 100 and A0 - 0.5 > 3 / 5
     zk = root(tangent_force, 0, 1)
@@ -652,7 +654,7 @@ def side_profile():
     pb.curve(tangent_force, 0, 1, stroke=PURPLE, width=2)
     pb.dot(0, tangent_force(0), r=3, fill=PURPLE)
     pb.dot(zk, 0, r=3, fill=PURPLE)
-    pb.text(0.11, -0.055, 'k(0) = −28/375', size=12, italic=False,
+    pb.text(0.11, -0.055, 'k(0) ≈ −0.075', size=12, italic=False,
             color=PURPLE, anchor='start')
     pb.text(0.45, 0.42, 'k(z)', size=13, color=PURPLE, anchor='end')
     f.save('appd-side-profile', 'Top: the expression of Lemma D.6 minimised '

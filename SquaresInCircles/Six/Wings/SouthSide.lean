@@ -6,21 +6,22 @@ import SquaresInCircles.Six.Wings.Chart
 
 Let W be separated from C along its own axis, S along the south side of C, W
 from D along the secondary axis of W and D from S along the secondary axis of
-D. Weights `2037/1000`, `1`, `391/1000`, `1`, `1` on C–W, C–S, C–D, W–D and D–S
-give S the force `U = cos s + cos (d - s)`, `V = sin (d - s) - sin s`, that is
+D. Weights `41/20`, `1`, `3/8`, `1`, `1` on C–W, C–S, C–D, W–D and D–S give S
+the force `U = cos s + cos (d - s)`, `V = sin (d - s) - sin s`, that is
 `2 cos (d/2)` times `cos (d/2 - s)` and `sin (d/2 - s)`. For `d ≤ 11/14` it lies
 in the wide cone, where the support is `ρ̄ U + (3/25) V²`; with
 `x = d/2 - s` the terms of S are then `C cos x - P sin² x`, with
 `P = (12/25) cos² (d/2)` and `C = -2B cos (d/2) + sin (d/2)`, and a completed
-square bounds them below by `C - 1/250`. For `d ≥ 157/200`, `0 ≤ s` and
+square bounds them below by `C - 1/250`. For `d > 11/14`, `0 ≤ s` and
 `d - s ≤ 4/7` the force lies in the axial cone, the support is `ρ̄ U` and the
 terms of S are `C cos x ≥ C`. Either way the angle of S drops out, and the far
-vertex of W, the chord support of D and the face of the box for C leave a
-profile in `v` and `d`, concave in each, which exceeds `1/250` on
-`[0, 2/3] × [1/2, 11/14]` and is positive on `[0, 2/3] × [11/14, 34/35]`, by
-Taylor polynomials at the corners. The first range holds for a missing south
-wing, the second, read in the reflection in the diagonal, for a missing west
-wing with W on the west side of C and S on its own axis.
+vertex of W, whose force has length `√(1 + (41/20)²) < 2.281`, the chord
+support of D and the face of the box for C leave a profile in `v` and `d`,
+concave in each, which exceeds `1/250` on `[0, 2/3] × [1/2, 11/14]` and is
+positive on `[0, 2/3] × [11/14, 34/35]`, by Taylor polynomials at the corners.
+The first range holds for a missing south wing, the second, read in the
+reflection in the diagonal, for a missing west wing with W on the west side of
+C and S on its own axis.
 -/
 
 noncomputable section
@@ -50,7 +51,7 @@ lemma south_half_angle (s d : ℝ) :
 
 private lemma square_sum_bound {s d : ℝ}
     (hd : 1/2 ≤ d ∧ d ≤ 11/14) (hs : s ≤ 2/5) (hr : d-s ≤ 11/14) :
-    s^2+(d-s)^2 ≤ 137/196 := by
+    s^2+(d-s)^2 ≤ (11/14)^2+(2/7)^2 := by
   have hr0 : 0 ≤ d-s := by linarith [hd.1,hs]
   by_cases hs0 : 0 ≤ s
   · have hp := mul_nonneg hs0 hr0
@@ -68,20 +69,18 @@ private lemma half_angle_ratio {x : ℝ} (hx : -(15/28) ≤ x ∧ x ≤ 15/28) :
     |Real.sin x| ≤ (3/5)*Real.cos x := by
   have hsq := mul_nonneg (show 0 ≤ 15/28-x by linarith [hx.2])
     (show 0 ≤ 15/28+x by linarith [hx.1])
-  have hc : 1343/1568 ≤ Real.cos x := by
+  have hc : 1-(15/28)^2/2 ≤ Real.cos x := by
     nlinarith only [hsq,Real.one_sub_sq_div_two_le_cos (x := x)]
   have sine_upper (y : ℝ) (hy : -(15/28) ≤ y ∧ y ≤ 15/28) :
-      Real.sin y ≤ 511/1000 := by
-    have hm := Real.sin_le_sin_of_le_of_le_pi_div_two
+      Real.sin y ≤ 15/28-(15/28)^3/6+(15/28)^5/120 :=
+    (Real.sin_le_sin_of_le_of_le_pi_div_two
       (show -(Real.pi/2) ≤ y by linarith [hy.1,Real.pi_gt_d2])
-      (show (15:ℝ)/28 ≤ Real.pi/2 by linarith [Real.pi_gt_d2]) hy.2
-    have hu := sin_upper_five (x := (15:ℝ)/28) (by norm_num)
-    nlinarith only [hm,hu]
+      (show (15:ℝ)/28 ≤ Real.pi/2 by linarith [Real.pi_gt_d2]) hy.2).trans
+      (sin_upper_five (by norm_num))
   have hu := sine_upper x hx
   have hl := sine_upper (-x) (by constructor <;> linarith [hx.1,hx.2])
   rw [Real.sin_neg] at hl
-  have hsin : |Real.sin x| ≤ 511/1000 := abs_le.mpr ⟨by linarith,hu⟩
-  linarith
+  exact abs_le.mpr ⟨by linarith,by linarith⟩
 
 /-- The force on S lies in the cone `U ≥ 33/20`, `|V| ≤ 3U/5`. -/
 lemma south_force_cone {s d : ℝ}
@@ -122,9 +121,8 @@ lemma south_force_axial {s d : ℝ} (hs : 0 ≤ s ∧ s ≤ 2/5) (hr : 0 ≤ d-s
   have hmono := Real.sin_le_sin_of_le_of_le_pi_div_two
     (show -(Real.pi/2) ≤ d-s by linarith [hr.1,Real.pi_pos])
     (show (4:ℝ)/7 ≤ Real.pi/2 by linarith [Real.pi_gt_d2]) hr.2
-  have ht := sin_upper_five (x := (4:ℝ)/7) (by norm_num)
-  have hr1 : Real.sin (d-s) ≤ 541/1000 := by nlinarith only [hmono,ht]
-  have hV : |southTransverse s d| ≤ 541/1000 := by
+  have hr1 := hmono.trans (sin_upper_five (by norm_num))
+  have hV : |southTransverse s d| ≤ 4/7-(4/7)^3/6+(4/7)^5/120 := by
     dsimp [southTransverse]
     exact abs_le.mpr ⟨by linarith,by linarith⟩
   exact ⟨hU,by linarith⟩
@@ -151,7 +149,7 @@ def negativeExpression (d x : ℝ) : ℝ :=
     halfQuadratic d*Real.sin x^2
 
 lemma half_trig_bounds {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 11/14) :
-    23/25 ≤ Real.cos (d/2) ∧ 0 ≤ Real.sin (d/2) ∧ Real.sin (d/2) ≤ 383/1000 := by
+    23/25 ≤ Real.cos (d/2) ∧ 0 ≤ Real.sin (d/2) ∧ Real.sin (d/2) ≤ 0.383 := by
   obtain ⟨hs,hs',hc,-⟩ := trig_bracket (l := 1/4) (u := 11/28) (x := d/2) (by norm_num)
     (by linarith [Real.pi_gt_d2]) ⟨by linarith [hd.1],by linarith [hd.2]⟩
   norm_num at hs hs' hc
@@ -166,7 +164,8 @@ lemma half_quadratic_lower {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 11/14) :
   nlinarith only [hp]
 
 /-- `2P + C ≤ 3/40` on the diagonal interval: the reserve of the completed
-square. -/
+square. With `t = sin (d/2)`, `cos (d/2) ≥ 1 - (25/48) t²` makes `2P + C` at
+most a concave quadratic in `t`, which increases up to `t = 0.383`. -/
 lemma half_coefficient_upper {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 11/14) :
     2*halfQuadratic d+halfLinear d ≤ 3/40 := by
   have ht := half_trig_bounds hd
@@ -176,20 +175,8 @@ lemma half_coefficient_upper {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 11/14) :
     (show 0 ≤ (25/48)*(1+Real.cos (d/2))-1 by linarith [ht.1])
   have hcos : 1-(25/48)*Real.sin (d/2)^2 ≤ Real.cos (d/2) := by
     nlinarith only [hfactor,Real.sin_sq_add_cos_sq (d/2)]
-  have hB := mul_nonneg (show 0 ≤ B-153/250 by norm_num [B])
-    (show 0 ≤ Real.cos (d/2) by linarith [ht.1])
-  have hpoly : 2*halfQuadratic d+halfLinear d ≤
-      -33/125+Real.sin (d/2)-(129/400)*Real.sin (d/2)^2 := by
-    dsimp [halfQuadratic,halfLinear]
-    nlinarith only [hcos,hB,Real.sin_sq_add_cos_sq (d/2)]
-  have hmono := mul_nonneg
-    (show 0 ≤ 383/1000-Real.sin (d/2) by linarith [ht.2.2])
-    (show 0 ≤ 1-(129/400)*(Real.sin (d/2)+383/1000) by linarith [ht.2.2])
-  nlinarith only [hpoly,hmono]
-
-lemma quadratic_reserve (z : ℝ) :
-    (2/5)*(z-1)^2+(3/40)*(z-1)+1/250 =
-      (2/5)*(z-29/32)^2+31/64000 := by ring
+  dsimp [halfQuadratic,halfLinear,B]
+  nlinarith only [hcos,ht.2.2,Real.sin_sq_add_cos_sq (d/2),sq_nonneg (Real.sin (d/2)-0.383)]
 
 lemma positive_expression_lower {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 11/14) (x : ℝ) :
     halfLinear d-1/250 ≤ positiveExpression d x := by
@@ -202,8 +189,7 @@ lemma positive_expression_lower {d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 11/14) (x : 
     (show 0 ≤ 3/40-(2*halfQuadratic d+halfLinear d) by linarith)
     (show 0 ≤ 1-Real.cos x by linarith)
   have hres : 0 ≤ (2/5)*(Real.cos x-1)^2+(3/40)*(Real.cos x-1)+1/250 := by
-    rw [quadratic_reserve]
-    positivity
+    nlinarith only [sq_nonneg (Real.cos x-29/32)]
   have hid : positiveExpression d x-halfLinear d =
       halfQuadratic d*(Real.cos x-1)^2+
       (2*halfQuadratic d+halfLinear d)*(Real.cos x-1) := by
@@ -292,9 +278,9 @@ theorem south_angle_lower {s d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ 11/14)
     rw [hid] at hm
     exact (positive_expression_lower hd _).trans hm
 
-/-- For `157/200 ≤ d ≤ 34/35` the terms of S with the support `rho0 U` are at
+/-- For `11/14 ≤ d ≤ 34/35` the terms of S with the support `rho0 U` are at
 least `C`. -/
-lemma south_angle_lower_high {s d : ℝ} (hd : 157/200 ≤ d ∧ d ≤ 34/35) :
+lemma south_angle_lower_high {s d : ℝ} (hd : 11/14 ≤ d ∧ d ≤ 34/35) :
     halfLinear d ≤ -B*southRadial s d+(Real.sin s+Real.sin (d-s))/2 := by
   have hsq := mul_nonneg (show 0 ≤ 1/2-d/2 by linarith [hd.2])
     (show 0 ≤ 1/2+d/2 by linarith [hd.1])
@@ -320,20 +306,25 @@ lemma south_angle_lower_high {s d : ℝ} (hd : 157/200 ≤ d ∧ d ≤ 34/35) :
 
 /-! ### The profile -/
 
-/-- `R̄ (2 + z²/4)` and `R̄ z` for the weight `z = 391/1000` on C–D. -/
-def chordL : ℝ := 68834774283/20000000000
-def chordM : ℝ := 3301213/5000000
+/-- `R̄ (2 + z²/4)` and `R̄ z` for the weight `z = 3/8` on C–D. -/
+def chordL : ℝ := radiusBound*(2+(3/8)^2/4)
+def chordM : ℝ := radiusBound*(3/8)
+
+/-- The constant term of the profile: the halves `41/20 + 3/8 + 5/2` of the
+thresholds and of the far-vertex supports, less `R̄` times the bound `2.281` on
+the length of the force on W. -/
+def constantTerm : ℝ := 41/20+3/8+5/2-radiusBound*2.281
 
 /-- The threshold sum less the supports once the angle of S is eliminated, for
 the face `y` of the box. -/
 def profile (y v d : ℝ) : ℝ :=
-  (137023941021/125000000000-y)+harmonic ((2037/1000)*A) ((2037/1000)*(1/2+y)) v+
-    harmonic ((391/1000)*A) ((391/1000)*(1/2-y)) d+chord chordL chordM (d+v)+halfLinear d
+  (constantTerm-y)+harmonic ((41/20)*A) ((41/20)*(1/2+y)) v+
+    harmonic ((3/8)*A) ((3/8)*(1/2-y)) d+chord chordL chordM (d+v)+halfLinear d
 
 lemma chord_second_upper {q : ℝ} (hq : 1/2 ≤ q ∧ q ≤ 5/3) :
     chordSecond chordL chordM q ≤ -(3/40) := by
-  have hL : chordL ≤ chordSin := by norm_num [chordL,chordSin]
-  have hM : chordM ≤ chordCos := by norm_num [chordM,chordCos]
+  have hL : chordL ≤ chordSin := by norm_num [chordL,chordSin,radiusBound]
+  have hM : chordM ≤ chordCos := by norm_num [chordM,chordCos,radiusBound]
   rcases le_total q 1 with hq1 | hq1
   · have h := chord_second_envelope hL hM ⟨hq.1,by linarith⟩
     have hm : (1:ℝ)/2 ≤ min q 1 := le_min hq.1 (by norm_num)
@@ -342,15 +333,15 @@ lemma chord_second_upper {q : ℝ} (hq : 1/2 ≤ q ∧ q ≤ 5/3) :
 
 lemma profile_west_concave {y d : ℝ} (hy : 0 ≤ y ∧ y ≤ 1/2) (hd : 1/2 ≤ d ∧ d ≤ 34/35) :
     ConcaveOn ℝ (Set.Icc 0 (2/3)) (fun v => profile y v d) := by
-  have e : (fun v => profile y v d) = fun v => ((137023941021/125000000000-y)+
-      harmonic ((391/1000)*A) ((391/1000)*(1/2-y)) d+halfLinear d)+
-      (harmonic ((2037/1000)*A) ((2037/1000)*(1/2+y)) v+chord chordL chordM (d+v)) := by
+  have e : (fun v => profile y v d) = fun v => ((constantTerm-y)+
+      harmonic ((3/8)*A) ((3/8)*(1/2-y)) d+halfLinear d)+
+      (harmonic ((41/20)*A) ((41/20)*(1/2+y)) v+chord chordL chordM (d+v)) := by
     funext v; simp only [profile]; ring
   rw [e]
   refine concave_of_deriv2
-    (f' := fun v => harmonic ((2037/1000)*(1/2+y)) (-((2037/1000)*A)) v+
+    (f' := fun v => harmonic ((41/20)*(1/2+y)) (-((41/20)*A)) v+
       chordFirst chordL chordM (d+v))
-    (f'' := fun v => -harmonic ((2037/1000)*A) ((2037/1000)*(1/2+y)) v+
+    (f'' := fun v => -harmonic ((41/20)*A) ((41/20)*(1/2+y)) v+
       chordSecond chordL chordM (d+v))
     (fun v _ => (((harmonic_hasDerivAt _ _ v).add ((chord_hasDerivAt _ _ (d+v)).comp v
       ((hasDerivAt_id' v).const_add d))).const_add _).congr_deriv (by simp))
@@ -359,15 +350,15 @@ lemma profile_west_concave {y d : ℝ} (hy : 0 ≤ y ∧ y ≤ 1/2) (hd : 1/2 �
     (fun v ⟨h1,h2⟩ => ?_)
   obtain ⟨hc,hs⟩ := cos_sin_nonneg (x := v) ⟨h1,by linarith [Real.pi_gt_d2]⟩
   have hq := chord_second_upper (show 1/2 ≤ d+v ∧ d+v ≤ 5/3 by constructor <;> linarith)
-  have hp : 0 ≤ harmonic ((2037/1000)*A) ((2037/1000)*(1/2+y)) v := by
+  have hp : 0 ≤ harmonic ((41/20)*A) ((41/20)*(1/2+y)) v := by
     simp only [harmonic,A]; nlinarith
   linarith
 
 lemma profile_diagonal_concave {y v : ℝ} (hy : 0 ≤ y ∧ y ≤ coreUpper)
     (hv : 0 ≤ v ∧ v ≤ 2/3) : ConcaveOn ℝ (Set.Icc (1/2) (34/35)) (profile y v) := by
-  have e : profile y v = fun d => ((137023941021/125000000000-y)+
-      harmonic ((2037/1000)*A) ((2037/1000)*(1/2+y)) v)+
-      (harmonic ((391/1000)*A) ((391/1000)*(1/2-y)) d+chord chordL chordM (d+v)+
+  have e : profile y v = fun d => ((constantTerm-y)+
+      harmonic ((41/20)*A) ((41/20)*(1/2+y)) v)+
+      (harmonic ((3/8)*A) ((3/8)*(1/2-y)) d+chord chordL chordM (d+v)+
         halfLinear d) := by
     funext d; simp only [profile]; ring
   have hhalf (d : ℝ) : HasDerivAt halfLinear (B*Real.sin (d/2)+(1/2)*Real.cos (d/2)) d :=
@@ -379,9 +370,9 @@ lemma profile_diagonal_concave {y v : ℝ} (hy : 0 ≤ y ∧ y ≤ coreUpper)
       ((((hasDerivAt_id' d).div_const 2).cos).const_mul (1/2))).congr_deriv (by ring)
   rw [e]
   refine concave_of_deriv2
-    (f' := fun d => harmonic ((391/1000)*(1/2-y)) (-((391/1000)*A)) d+
+    (f' := fun d => harmonic ((3/8)*(1/2-y)) (-((3/8)*A)) d+
       chordFirst chordL chordM (d+v)+(B*Real.sin (d/2)+(1/2)*Real.cos (d/2)))
-    (f'' := fun d => -harmonic ((391/1000)*A) ((391/1000)*(1/2-y)) d+
+    (f'' := fun d => -harmonic ((3/8)*A) ((3/8)*(1/2-y)) d+
       chordSecond chordL chordM (d+v)+((B/2)*Real.cos (d/2)-(1/4)*Real.sin (d/2)))
     (fun d _ => ((((harmonic_hasDerivAt _ _ d).add ((chord_hasDerivAt _ _ (d+v)).comp d
       ((hasDerivAt_id' d).add_const v))).add (hhalf d)).const_add _).congr_deriv (by simp))
@@ -410,8 +401,8 @@ lemma profile_diagonal_concave {y v : ℝ} (hy : 0 ≤ y ∧ y ≤ coreUpper)
 
 /-- Taylor polynomials below the profile. -/
 def lower (y v d : ℝ) : ℝ :=
-  (137023941021/125000000000-y)+(2037/1000)*A*cosLower v+(2037/1000)*(1/2+y)*sinBelow v+
-    (391/1000)*A*cosLower d+(391/1000)*(1/2-y)*sinBelow d+
+  (constantTerm-y)+(41/20)*A*cosLower v+(41/20)*(1/2+y)*sinBelow v+
+    (3/8)*A*cosLower d+(3/8)*(1/2-y)*sinBelow d+
     sinBelow (d+v)-chordL*sinAbove ((d+v)/2)-chordM*cosUpper ((d+v)/2)-
     2*B*cosUpper (d/2)+sinBelow (d/2)
 
@@ -428,27 +419,27 @@ lemma lower_le {y v d : ℝ} (hy : 0 ≤ y ∧ y ≤ 1/2) :
   have st := sinBelow_le (d/2)
   have hA : (0:ℝ) ≤ A := by norm_num [A]
   simp only [lower,profile,harmonic,chord,halfLinear]
-  nlinarith [mul_le_mul_of_nonneg_left cv (show 0 ≤ (2037/1000)*A by positivity),
-    mul_le_mul_of_nonneg_left sv (show 0 ≤ (2037/1000)*(1/2+y) by linarith),
-    mul_le_mul_of_nonneg_left cd (show 0 ≤ (391/1000)*A by positivity),
-    mul_le_mul_of_nonneg_left sd (show 0 ≤ (391/1000)*(1/2-y) by linarith),
-    mul_le_mul_of_nonneg_left sh (show (0:ℝ) ≤ chordL by norm_num [chordL]),
-    mul_le_mul_of_nonneg_left ch (show (0:ℝ) ≤ chordM by norm_num [chordM]),
+  nlinarith [mul_le_mul_of_nonneg_left cv (show 0 ≤ (41/20)*A by positivity),
+    mul_le_mul_of_nonneg_left sv (show 0 ≤ (41/20)*(1/2+y) by linarith),
+    mul_le_mul_of_nonneg_left cd (show 0 ≤ (3/8)*A by positivity),
+    mul_le_mul_of_nonneg_left sd (show 0 ≤ (3/8)*(1/2-y) by linarith),
+    mul_le_mul_of_nonneg_left sh (show (0:ℝ) ≤ chordL by norm_num [chordL,radiusBound]),
+    mul_le_mul_of_nonneg_left ch (show (0:ℝ) ≤ chordM by norm_num [chordM,radiusBound]),
     mul_le_mul_of_nonneg_left ct (show (0:ℝ) ≤ 2*B by norm_num [B])]
 
 /-- At `v ∈ {0, 2/3}` and `d ∈ {1/2, 11/14, 34/35}` the Taylor polynomials exceed
-`1/100`, `1/100` and `1/2500`. -/
+`1/100`, `1/100` and `0`. -/
 lemma corners {y w : ℝ} (hy : y = 0 ∨ y = coreUpper) (hw : w = 0 ∨ w = 2/3) :
-    1/100 < lower y w (1/2) ∧ 1/100 < lower y w (11/14) ∧ 1/2500 < lower y w (34/35) := by
+    1/100 < lower y w (1/2) ∧ 1/100 < lower y w (11/14) ∧ 0 < lower y w (34/35) := by
   rcases hy with rfl | rfl <;> rcases hw with rfl | rfl <;>
-    norm_num [lower,A,B,chordL,chordM,coreUpper,cosLower,cosUpper,
+    norm_num [lower,constantTerm,A,B,chordL,chordM,radiusBound,coreUpper,cosLower,cosUpper,
       sinBelow,sinAbove,sinLower,sinUpper]
 
-/-- At `d ∈ {1/2, 11/14, 34/35}` the profile exceeds `1/100`, `1/100` and
-`1/2500` for every `v`, by concavity in `v`. -/
+/-- At `d ∈ {1/2, 11/14, 34/35}` the profile exceeds `1/100`, `1/100` and `0` for
+every `v`, by concavity in `v`. -/
 lemma section_lower {y v : ℝ} (hy : y = 0 ∨ y = coreUpper)
     (hv : 0 ≤ v ∧ v ≤ 2/3) :
-    1/100 < profile y v (1/2) ∧ 1/100 < profile y v (11/14) ∧ 1/2500 < profile y v (34/35) := by
+    1/100 < profile y v (1/2) ∧ 1/100 < profile y v (11/14) ∧ 0 < profile y v (34/35) := by
   have hy' : 0 ≤ y ∧ y ≤ 1/2 := by
     rcases hy with rfl | rfl <;> norm_num [coreUpper]
   have l0 (d : ℝ) := lower_le hy' (v := 0) (d := d)
@@ -483,17 +474,17 @@ theorem positive {y v d : ℝ} (hy : y = 0 ∨ y = coreUpper)
 /-! ### The stress -/
 
 /-- The force on C. -/
-def forceX (v d : ℝ) : ℝ := (2037/1000)*Real.cos v+(391/1000)*Real.cos d
-def forceY (v d : ℝ) : ℝ := -(2037/1000)*Real.sin v+1+(391/1000)*Real.sin d
+def forceX (v d : ℝ) : ℝ := (41/20)*Real.cos v+(3/8)*Real.cos d
+def forceY (v d : ℝ) : ℝ := -(41/20)*Real.sin v+1+(3/8)*Real.sin d
 
 /-- The threshold sum less the supports of W, D and the face `y` of the box, and
 the bound `ρ̄ U + k V²` on the work of the force on S. -/
 def defect (y v s d k : ℝ) : ℝ :=
-  (2037/1000)*(1/2+angularWidth v)+(1/2+angularWidth s)+(391/1000)*(1/2+angularWidth d)+
+  (41/20)*(1/2+angularWidth v)+(1/2+angularWidth s)+(3/8)*(1/2+angularWidth d)+
     (1/2+angularWidth (d+v))+(1/2+angularWidth (d-s))-
-    (radiusBound*(56730553/25000000)-(2037/1000+1)/2)-
-    (radiusBound*chordMajorant (391/1000) (d+v)-
-      (391/1000+Real.sin (d+v)+1-Real.cos (d+v))/2)-
+    (radiusBound*2.281-(41/20+1)/2)-
+    (radiusBound*chordMajorant (3/8) (d+v)-
+      (3/8+Real.sin (d+v)+1-Real.cos (d+v))/2)-
     (rhoBound*southRadial s d+k*southTransverse s d^2)-
     (coreUpper*forceX v d+y*forceY v d)
 
@@ -510,7 +501,7 @@ lemma defect_sub_profile {y v s d k : ℝ} (hv : 0 ≤ v ∧ v ≤ 2/3) (hs : |s
     ⟨by linarith [(abs_le.mp hs).1,Real.pi_gt_d2],by linarith [(abs_le.mp hs).2,Real.pi_gt_d2]⟩
   have hS : angularWidth s=(Real.cos s+|Real.sin s|)/2 := by
     simp only [angularWidth,abs_of_nonneg hcs]
-  simp only [defect,profile,harmonic,chord,chordMajorant,forceX,forceY,southRadial,
+  simp only [defect,profile,constantTerm,harmonic,chord,chordMajorant,forceX,forceY,southRadial,
     southTransverse,A,B,chordL,chordM,radiusBound,rhoBound,
     coreUpper,hw,hS,hD,hR]
   ring
@@ -527,9 +518,9 @@ theorem impossible {X : Chart} (hW : X.WestOwn) (hS : X.SouthSide) (h : X.Missin
   have hCD := X.diagonal_own
   simp only [Chart.WestOwn,Chart.SouthSide,Chart.WestWing,Chart.SouthDiagonal] at hW hS hWD hDS
   obtain ⟨hs1,hs2⟩ := abs_le.mp hs
-  have hw := vertex_support X.west (U := 2037/1000) (V := -1) (r := 56730553/25000000)
+  have hw := vertex_support X.west (U := 41/20) (V := -1) (r := 2.281)
     (by norm_num) (by norm_num)
-  have hdiag := chord_support X.diagonal (z := 391/1000) (by norm_num)
+  have hdiag := chord_support X.diagonal (z := 3/8) (by norm_num)
     (show 0 ≤ X.d+X.v ∧ X.d+X.v ≤ Real.pi by constructor <;> linarith [Real.pi_gt_d2])
   obtain ⟨hcv,-⟩ := cos_sin_nonneg (x := X.v) ⟨hv.1,by linarith [Real.pi_gt_d2]⟩
   obtain ⟨hcd,-⟩ := cos_sin_nonneg (x := X.d) ⟨by linarith,by linarith [Real.pi_gt_d2]⟩

@@ -102,21 +102,21 @@ private lemma westDefect_profile_endpoint {U0 k V v : ℝ}
     ring
   linarith
 
+/-- The bound at `q = 1` at the ends `v = 1/2` and `v = 2/5` of the two profiles
+`U(v)`, from the Taylor values `sin 1 ≤ 101/120` and `cos 1 ≥ 389/720`. -/
 private lemma westDefect_endpoint_bounds :
-    westDefect (101/1000) (1/2) 1 < 0 ∧
-      westDefect (61/300) (2/5) 1 < 0 := by
-  obtain ⟨hc,hs0,hs⟩ := trig_one_bounds (q := 1) ⟨by norm_num,le_rfl⟩
-  have ownA : 0 ≤ rho0-1/2-(31/100)*((101/1000)+(101/1000)^2) := by
-    linarith [rho0_bounds.1]
-  have cardA : 0 ≤ rho0-1/2-(31/100)*((61/300)+(61/300)^2) := by
-    linarith [rho0_bounds.1]
-  have ownS := mul_le_mul_of_nonneg_left hs ownA
-  have cardS := mul_le_mul_of_nonneg_left hs cardA
-  have ownC := mul_le_mul_of_nonpos_left hc
-    (show (101/1000:ℝ)-1/2 ≤ 0 by norm_num)
-  have cardC := mul_le_mul_of_nonpos_left hc
-    (show (61/300:ℝ)-1/2 ≤ 0 by norm_num)
-  constructor <;> dsimp [westDefect] <;> nlinarith [rho0_bounds.2]
+    westDefect (233/500-(73/100)*(1/2)) (1/2) 1 < 0 ∧
+      westDefect (47/100-(2/3)*(2/5)) (2/5) 1 < 0 := by
+  obtain ⟨hc,-,hs⟩ := trig_one_bounds (q := 1) ⟨by norm_num,le_rfl⟩
+  have bound {U : ℝ} (v : ℝ) (hU : 0 ≤ U ∧ U ≤ 1/2) : westDefect U v 1 ≤
+      (rho0-1/2-(31/100)*(U+U^2))*(101/120)+(U-1/2)*(389/720)-19/100-17/100+(17/100)*v := by
+    have hA := mul_le_mul_of_nonneg_left hs
+      (show 0 ≤ rho0-1/2-(31/100)*(U+U^2) by nlinarith [rho0_bounds.1])
+    have hC := mul_le_mul_of_nonpos_left hc (show U-1/2 ≤ 0 by linarith)
+    dsimp [westDefect]
+    linarith
+  constructor <;> refine (bound _ (by norm_num)).trans_lt ?_ <;> norm_num <;>
+    linarith [rho0_bounds.2]
 
 private lemma westDefect_own_negative {v q : ℝ}
     (hv : 0 ≤ v ∧ v ≤ 1/2) (hq : 0 ≤ q ∧ q ≤ 1) :
@@ -127,9 +127,7 @@ private lemma westDefect_own_negative {v q : ℝ}
   have hvmono := westDefect_profile_endpoint
     (U0 := 233/500) (k := 73/100) (V := 1/2) (by norm_num) hv
     (by norm_num) (by norm_num)
-  have he := westDefect_endpoint_bounds.1
-  norm_num at hvmono
-  exact hqmono.trans_lt (hvmono.trans_lt he)
+  exact hqmono.trans_lt (hvmono.trans_lt westDefect_endpoint_bounds.1)
 
 private lemma westDefect_cardinal_negative {v q : ℝ}
     (hv : 0 ≤ v ∧ v ≤ 2/5) (hq : 0 ≤ q ∧ q ≤ 1) :
@@ -140,9 +138,7 @@ private lemma westDefect_cardinal_negative {v q : ℝ}
   have hvmono := westDefect_profile_endpoint
     (U0 := 47/100) (k := 2/3) (V := 2/5) (by norm_num) hv
     (by norm_num) (by norm_num)
-  have he := westDefect_endpoint_bounds.2
-  norm_num at hvmono
-  exact hqmono.trans_lt (hvmono.trans_lt he)
+  exact hqmono.trans_lt (hvmono.trans_lt westDefect_endpoint_bounds.2)
 
 private lemma west_secondary_defect_upper {a b z d v U : ℝ}
     (hc : ContainedChart a |b|) (hq : 0 ≤ d+v ∧ d+v ≤ 1)
