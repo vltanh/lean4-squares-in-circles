@@ -22,21 +22,21 @@ BLUE, ORANGE, GREEN, PURPLE = COLORS[0], COLORS[1], COLORS[2], COLORS[3]
 
 # The labels and the boundary of the label regions.
 
-def axial(v):
-    return 5 * v / 4
+def axial(b):
+    return 5 * b / 4
 
 
-def side(a, v):
-    return PI / 6 + (v - 0.5) / 3 + 3 * (1 - a) / 4
+def side(a, b):
+    return PI / 6 + (b - 0.5) / 3 + 3 * (1 - a) / 4
 
 
-def label(a, v):
-    return min(axial(v), side(a, v), PI / 4)
+def label(a, b):
+    return min(axial(b), side(a, b), PI / 4)
 
 
-def admissible(a, v):
-    return (a >= 0.5 and 0 <= v <= a
-            and (a + 0.5) ** 2 + (v + 0.5) ** 2 <= 13 / 4)
+def admissible(a, b):
+    return (a >= 0.5 and 0 <= b <= a
+            and (a + 0.5) ** 2 + (b + 0.5) ** 2 <= 13 / 4)
 
 
 def support(x, y, z):
@@ -48,8 +48,8 @@ def support(x, y, z):
 M = 2 * PI + 17
 J = math.sqrt(202 * 13 / 4 - M ** 2)
 X0, Y0 = (9 * M + 11 * J) / 202, (11 * M - 9 * J) / 202
-A0, U0 = X0 - 0.5, Y0 - 0.5
-S0 = 5 * U0 / 4
+A0, B0 = X0 - 0.5, Y0 - 0.5
+S0 = 5 * B0 / 4
 RD = math.sqrt(13 / 8) - 0.5
 TD = PI / 6 + 7 / 12 - 5 * RD / 12
 NN = 97 / 144
@@ -59,16 +59,16 @@ CAP = [(PI / 5, PI / 5), ((7 - PI / 5) / 9, PI / 5),
        ((7 - PI) / 5, (7 - PI) / 5)]
 
 
-def circle(v):
-    return math.sqrt(13 / 4 - (v + 0.5) ** 2) - 0.5
+def circle(b):
+    return math.sqrt(13 / 4 - (b + 0.5) ** 2) - 0.5
 
 
-def axial_line(v):
-    return (2 * PI + 7 - 11 * v) / 9
+def axial_line(b):
+    return (2 * PI + 7 - 11 * b) / 9
 
 
-def axial_top(v):
-    return min(circle(v), axial_line(v))
+def axial_top(b):
+    return min(circle(b), axial_line(b))
 
 
 def tie_a(t):
@@ -231,12 +231,12 @@ def bracket(f, p, q, normal, text, color=ORANGE, size=15, off=0.15):
           anchor='middle')
 
 
-def canonical(a, v, s, A, w, t, gap=PI / 3):
+def canonical(a, b, s, A, B, t, gap=PI / 3):
     """The canonical pair: the centre of S, the centre of T and its turn d."""
-    d = gap + s * label(a, v) - t * label(A, w)
-    c = (A * math.cos(d) - t * w * math.sin(d),
-         A * math.sin(d) + t * w * math.cos(d))
-    return (a, s * v), c, d
+    d = gap + s * label(a, b) - t * label(A, B)
+    c = (A * math.cos(d) - t * B * math.sin(d),
+         A * math.sin(d) + t * B * math.cos(d))
+    return (a, s * b), c, d
 
 
 def sums(S, T):
@@ -271,10 +271,10 @@ def level_line(f, z, level, t0, t1, stroke, dash='5 3', width=1.4):
 # Figure: the four support sums of a canonical pair.
 
 def pair_axes():
-    a, v, A, w = 0.95, 0.35, 1.0, 0.2
-    cs, ct, d = canonical(a, v, 1, A, w, 1)
+    a, b, A, B = 0.95, 0.35, 1.0, 0.2
+    cs, ct, d = canonical(a, b, 1, A, B, 1)
     assert abs(math.degrees(d) - 71) < 1
-    ls, lt = label(a, v), d + label(A, w)
+    ls, lt = label(a, b), d + label(A, B)
     names = ['outward', 'forward', 'inward', 'backward']
     W, H = 3.15, 3.1
     f = Figure(0, 2 * W, 0, 2 * H, 108)
@@ -334,19 +334,19 @@ def pair_axes():
 def support_bounds():
     W = 3.3
     f = Figure(-1.45, W + 1.8, -1.36, 1.7, 112)
-    # (a) A square with (a, |b|) admissible, centre within root 3 - 1/2.
-    a, b, z = 1.0, -0.4, 5 * PI / 6
-    assert admissible(a, abs(b)) and math.hypot(a, b) <= ROOT3 - 0.5
-    h = support(a, b, z)
+    # (a) A square with (a, |y|) admissible, centre within root 3 - 1/2.
+    a, y, z = 1.0, -0.4, 5 * PI / 6
+    assert admissible(a, abs(y)) and math.hypot(a, y) <= ROOT3 - 0.5
+    h = support(a, y, z)
     assert h > -37 / 50 and abs(h + 0.383) < 1e-3
-    Q = square_corners((a, b))
+    Q = square_corners((a, y))
     top = max(Q, key=lambda p: p[0] * u(z)[0] + p[1] * u(z)[1])
     assert abs(top[0] * u(z)[0] + top[1] * u(z)[1] - h) < 1e-12
     f.circle((0, 0), ROOT3 - 0.5, stroke=FAINT, width=1.2, dash='5 4')
     f.line(shift((0, 0), u(z), -1.0), shift((0, 0), u(z), 1.15),
            stroke=FAINT, width=1)
     f.polygon(Q, fill=FILLS[0], stroke=BLUE)
-    f.dot((a, b), r=2.6, fill=BLUE)
+    f.dot((a, y), r=2.6, fill=BLUE)
     hi, _ = level_line(f, z, h, -0.75, 0.75, BLUE)
     _, lo = level_line(f, z, -37 / 50, -0.75, 0.75, ORANGE)
     f.dot(top, r=3.4, fill=BLUE)
@@ -355,25 +355,25 @@ def support_bounds():
           size=14, anchor='middle', dx=6, dy=-16)
     f.dot((0, 0))
     mtext(f, (0, 0), 'o', size=14, italic=True, dx=4, dy=13)
-    mtext(f, hi, lab(it('h'), '(', it('a'), ', ', it('b'), ', ', it('z'),
+    mtext(f, hi, lab(it('h'), '(', it('a'), ', ', it('y'), ', ', it('z'),
                      ')'), size=13, color=BLUE, anchor='end', dx=-9, dy=-7)
     mtext(f, lo, '−37/50', size=13, color=ORANGE, anchor='end', dx=-6,
           dy=6)
-    mtext(f, (a, b), lab('(', it('a'), ', ', it('b'), ')'), size=13,
+    mtext(f, (a, y), lab('(', it('a'), ', ', it('y'), ')'), size=13,
           color=BLUE, dx=6, dy=10)
     mtext(f, (-1.0, -0.45), 'radius √3 − ½', size=12, color=FAINT)
     mtext(f, (-1.4, 1.6), '(a) the bound −37/50', size=13)
     # (b) The marker arc lies in the square, so it is below the support.
     g = Shifted(f, W, 0)
-    a, v, s = 1.0, 0.5, 1
-    ell = label(a, v)
+    a, b, s = 1.0, 0.5, 1
+    ell = label(a, b)
     x, z = ell + 0.4, 1.25
     assert abs(x - s * ell) <= 0.5
     for t in grid(ell - 0.5, ell + 0.5, 50):
-        assert abs(math.cos(t) - a) <= 0.5 and abs(math.sin(t) - v) <= 0.5
-    hz = support(a, s * v, z)
+        assert abs(math.cos(t) - a) <= 0.5 and abs(math.sin(t) - b) <= 0.5
+    hz = support(a, s * b, z)
     assert hz > math.cos(z - x)
-    Q = square_corners((a, s * v))
+    Q = square_corners((a, s * b))
     top = max(Q, key=lambda p: p[0] * u(z)[0] + p[1] * u(z)[1])
     g.arc((0, 0), 1.0, -0.62, 1.5, GREY, width=1.4)
     g.line(shift((0, 0), u(z), -0.55), shift((0, 0), u(z), 1.62),
@@ -393,16 +393,16 @@ def support_bounds():
            size=14, anchor='end', dx=-6, dy=-2)
     g.dot((0, 0))
     g.text((0, 0), 'o', size=14, italic=True, dx=4, dy=13)
-    g.text(hi, lab(it('h'), '(', it('a'), ', ', it('su'), ', ', it('z'),
+    g.text(hi, lab(it('h'), '(', it('a'), ', ', it('sb'), ', ', it('z'),
                    ')'), size=13, color=BLUE, anchor='end', dx=-6)
     g.text(lo, lab('cos(', it('z'), ' − ', it('x'), ')'), size=13,
            color=ORANGE, anchor='end', dx=-6)
-    g.text((1.05, 0.15), lab(it('Q'), '(', it('a'), ', ', it('su'), ')'),
+    g.text((1.05, 0.15), lab(it('Q'), '(', it('a'), ', ', it('sb'), ')'),
            size=13, color=BLUE)
     g.text((-0.6, 1.62), '(b) the marker arc', size=13)
-    f.save('appendix-g/support-bounds', 'Left: a square Q(a, b) with its centre in '
+    f.save('appendix-g/support-bounds', 'Left: a square Q(a, y) with its centre in '
            'the dashed disk of radius root 3 minus 1/2 about o; for a '
-           'direction u(z) its support line, at the level h(a, b, z), lies '
+           'direction u(z) its support line, at the level h(a, y, z), lies '
            'beyond the line at the level -37/50. Right: the square of the side '
            'state contains its marker arc; its support line in a direction '
            'u(z) lies beyond the parallel line through a point u(x) of the '
@@ -412,8 +412,8 @@ def support_bounds():
 # Figure: the label regions.
 
 def region_polygons():
-    low = [(circle(v), v) for v in grid(0, U0, 60)]
-    high = [(circle(v), v) for v in grid(U0, RD, 60)]
+    low = [(circle(b), b) for b in grid(0, B0, 60)]
+    high = [(circle(b), b) for b in grid(B0, RD, 60)]
     axial_reg = [(0.5, 0.0)] + low + [CAP[1], CAP[0], (0.5, 0.5)]
     side_reg = high + [CAP[2], CAP[1]]
     return axial_reg, side_reg, list(CAP)
@@ -425,27 +425,27 @@ def regions():
     f.polygon(axial_reg, fill=FILLS[0], stroke='none')
     f.polygon(side_reg, fill=FILLS[2], stroke='none')
     f.polygon(cap, fill=FILLS[1], stroke='none')
-    pts = [(circle(v), v) for v in grid(0, RD, 160)]
+    pts = [(circle(b), b) for b in grid(0, RD, 160)]
     polyline(f, pts, width=1.5)
     f.line((0.5, 0), (0.5, 0.5), width=1.5)
     f.line((0.5, 0.5), (RD, RD), width=1.5)
-    f.line((A0, U0), cap[1], stroke=PURPLE, width=1.8)
+    f.line((A0, B0), cap[1], stroke=PURPLE, width=1.8)
     f.line(cap[0], cap[1], stroke=ORANGE, width=1.5, dash='5 3')
     f.line(cap[1], cap[2], stroke=ORANGE, width=1.5, dash='5 3')
     f.line((0.5, 0), (ROOT3 - 0.5, 0), stroke=BLUE, width=4.5)
     f.line((0.36, 0), (1.32, 0), width=1, arrow=True)
     mtext(f, (1.32, -0.035), 'a', size=15, anchor='end', italic=True)
     f.line((0.4, -0.06), (0.4, 0.86), width=1, arrow=True)
-    mtext(f, (0.385, 0.85), 'u', size=15, anchor='end', italic=True)
+    mtext(f, (0.385, 0.85), 'b', size=15, anchor='end', italic=True)
     for x, s in ((0.5, '½'), (1.0, '1'), (ROOT3 - 0.5, '√3 − ½')):
         f.line((x, 0), (x, -0.012), width=1)
         mtext(f, (x, -0.042), s, size=12, anchor='middle')
     f.line((0.4, 0.5), (0.412, 0.5), width=1)
     mtext(f, (0.39, 0.5), '½', size=12, anchor='end')
     f.line((0.412, 0.5), (0.5, 0.5), stroke=FAINT, width=0.8, dash='2 3')
-    f.dot((A0, U0), r=4, fill=PURPLE)
-    mtext(f, (A0 + 0.018, U0 + 0.012), lab('(', sub('a', '0', ', '),
-                                           sub('u', '0', ')')),
+    f.dot((A0, B0), r=4, fill=PURPLE)
+    mtext(f, (A0 + 0.018, B0 + 0.012), lab('(', sub('a', '0', ', '),
+                                           sub('b', '0', ')')),
           size=13, color=PURPLE)
     f.dot((RD, RD), r=4.4)
     mtext(f, (RD + 0.018, RD + 0.006), lab('(', sub('r', 'd', ', '),
@@ -465,14 +465,14 @@ def regions():
     mtext(f, (0.6, 0.025), lab('axial states (', it('a'), ', 0)'), size=12,
           color=BLUE)
     mtext(f, (1.17, 0.38), lab(it('φ'), ' = 13/4'), size=13)
-    mtext(f, (0.535, 0.56), lab(it('u'), ' = ', it('a')), size=12,
+    mtext(f, (0.535, 0.56), lab(it('b'), ' = ', it('a')), size=12,
           anchor='end')
-    mtext(f, (0.905, 0.4), lab('9', it('a'), ' + 11', it('u'), ' = 2π + 7'),
+    mtext(f, (0.905, 0.4), lab('9', it('a'), ' + 11', it('b'), ' = 2π + 7'),
           size=12, color=PURPLE, anchor='end')
-    f.save('appendix-g/regions', 'The admissible states in the (a, u)-plane, split '
+    f.save('appendix-g/regions', 'The admissible states in the (a, b)-plane, split '
            'into the axial, side and capped label regions by the tie line '
-           '9a + 11u = 2 pi + 7 and the cap lines u = pi/5 and '
-           '9a - 4u = 7 - pi, with the transition state (a0, u0), the '
+           '9a + 11b = 2 pi + 7 and the cap lines b = pi/5 and '
+           '9a - 4b = 7 - pi, with the transition state (a0, b0), the '
            'diagonal corner (rd, rd), the side state (1, 1/2), the axial '
            'states (a, 0) and the vertices V0, V1, V2 of the capped triangle')
 
@@ -482,7 +482,7 @@ def regions():
 def transition():
     R = math.sqrt(13) / 2
     f = Figure(-0.22, 2.0, -0.2, 1.98, 250)
-    # The admissible states in the coordinates X = a + 1/2, Y = u + 1/2.
+    # The admissible states in the coordinates X = a + 1/2, Y = b + 1/2.
     region = ([(1.0, 0.5), (ROOT3, 0.5)]
               + [(math.sqrt(R * R - y * y), y) for y in grid(0.5, RD + 0.5)]
               + [(1.0, 1.0)])
@@ -538,7 +538,7 @@ def transition():
     f.dot((0, 0))
     mtext(f, (0, 0), '0', size=13, anchor='end', dx=-5, dy=11)
     f.save('appendix-g/transition', 'The quarter circle X squared plus Y squared '
-           'equals 13/4 in the coordinates X = a + 1/2, Y = u + 1/2, with the '
+           'equals 13/4 in the coordinates X = a + 1/2, Y = b + 1/2, with the '
            'admissible states shaded; the tie line 9X + 11Y = M, the dashed '
            'perpendicular from 0 to its point y = 0, the direction (11, -9) '
            'along it, and its two points on the circle, y = J/202 at the '
@@ -546,49 +546,49 @@ def transition():
            'X = Y meets the circle at the diagonal corner')
 
 
-# Figure: the circle and the tie line over the u-axis (Lemma G.12).
+# Figure: the circle and the tie line over the b-axis (Lemma G.12).
 
 def axial_top_figure():
     f = Figure(0, 7.4, 0, 4.6, 80)
     g = Plot(f, (0.9, 0.7, 6.0, 3.5), (0, 0.84), (0.45, 1.55))
-    # The axial region: 1/2 <= a, u <= a, a <= chi(u), u <= pi/5.
-    top = [(v, axial_top(v)) for v in grid(0, PI / 5, 120)]
+    # The axial region: 1/2 <= a, b <= a, a <= chi(b), b <= pi/5.
+    top = [(b, axial_top(b)) for b in grid(0, PI / 5, 120)]
     region = ([(0, 0.5), (0.5, 0.5), (PI / 5, PI / 5)] + top[::-1])
     f.polygon([g.P(*p) for p in region], fill=FILLS[0], stroke='none')
-    for v in grid(0, U0, 60):
-        assert circle(v) <= axial_line(v) + 1e-12
-        assert circle(v) <= A0 + (U0 - v) / 2 + 1e-12
-    for v in grid(U0, RD, 60):
-        assert axial_line(v) <= circle(v) + 1e-12
-    g.axes([(0, '0'), (U0, sub('u', '0')), (PI / 5, 'π/5'),
+    for b in grid(0, B0, 60):
+        assert circle(b) <= axial_line(b) + 1e-12
+        assert circle(b) <= A0 + (B0 - b) / 2 + 1e-12
+    for b in grid(B0, RD, 60):
+        assert axial_line(b) <= circle(b) + 1e-12
+    g.axes([(0, '0'), (B0, sub('b', '0')), (PI / 5, 'π/5'),
             (RD, sub('r', 'd'))],
            [(0.5, '½'), (A0, sub('a', '0')), (ROOT3 - 0.5, '√3 − ½')],
-           'u', 'a')
-    g.vline(U0, 0.45, A0)
-    g.hline(A0, 0, U0)
+           'b', 'a')
+    g.vline(B0, 0.45, A0)
+    g.hline(A0, 0, B0)
     g.vline(PI / 5, PI / 5, axial_top(PI / 5))
-    g.graph(lambda v: v, 0.45, 0.82, stroke=FAINT, width=1, dash='4 3')
-    g.graph(lambda v: A0 + (U0 - v) / 2, 0, U0, stroke=ORANGE, width=1.4,
+    g.graph(lambda b: b, 0.45, 0.82, stroke=FAINT, width=1, dash='4 3')
+    g.graph(lambda b: A0 + (B0 - b) / 2, 0, B0, stroke=ORANGE, width=1.4,
             dash='6 3')
     g.graph(circle, 0, RD, stroke=INK, width=1.4)
     g.graph(axial_line, 0, RD, stroke=PURPLE, width=1.4)
     g.graph(axial_top, 0, RD, n=300, stroke=BLUE, width=3.2)
-    f.dot(g.P(U0, A0), r=3.6, fill=PURPLE)
+    f.dot(g.P(B0, A0), r=3.6, fill=PURPLE)
     mtext(f, g.P(0.7, circle(0.7)), it('γ'), size=16, dy=-14)
     mtext(f, g.P(0.06, axial_line(0.06)), it('λ'), size=16, color=PURPLE,
           dx=-4, dy=-12)
     mtext(f, g.P(0.47, axial_top(0.47)), it('χ'), size=16, color=BLUE,
           dx=2, dy=18)
     mtext(f, g.P(0.01, 1.29), 'slope −½', size=12, color=ORANGE)
-    mtext(f, g.P(0.75, 0.75), lab(it('a'), ' = ', it('u')), size=12,
+    mtext(f, g.P(0.75, 0.75), lab(it('a'), ' = ', it('b')), size=12,
           color=FAINT, dx=8, dy=6)
     mtext(f, g.P(0.2, 0.75), 'axial', size=15, color=BLUE, anchor='middle')
-    f.save('appendix-g/axial-top', 'Graphs over u from 0 to rd: the circle gamma '
+    f.save('appendix-g/axial-top', 'Graphs over b from 0 to rd: the circle gamma '
            'decreasing from root 3 minus 1/2 to rd, the tie line lambda, '
-           'crossing it at u0 at the height a0, and their minimum chi in bold, '
-           'which follows the circle up to u0 and the tie line beyond; below '
-           'it the shaded axial region up to u = pi/5, and a dashed line of '
-           'slope -1/2 through (u0, a0) above the circle on [0, u0]')
+           'crossing it at b0 at the height a0, and their minimum chi in bold, '
+           'which follows the circle up to b0 and the tie line beyond; below '
+           'it the shaded axial region up to b = pi/5, and a dashed line of '
+           'slope -1/2 through (b0, a0) above the circle on [0, b0]')
 
 
 # Figure: the circle parametrized by the side label.
@@ -654,7 +654,7 @@ def parametrization():
     mtext(f, (1.0, 1.66), lab(it('X'), '² + ', it('Y'), '² = 13/4'),
           size=13)
     f.save('appendix-g/parametrization', 'The circle X^2 + Y^2 = 13/4 in the '
-           'coordinates X = a + 1/2, Y = u + 1/2, a line of constant side '
+           'coordinates X = a + 1/2, Y = b + 1/2, a line of constant side '
            'label, 3X/4 - Y/3 = D(tau), and the orthogonal frame of the '
            'vectors (3/4, -1/3) and (1/3, 3/4); the point (X(tau), Y(tau)) '
            'where the line meets the circle, with its coordinates D/root N '
@@ -702,11 +702,11 @@ def segments():
     f = Figure(0.62, 1.3, 0.2, 0.83, 740)
     f.polygon(side_reg, fill=FILLS[2], stroke='none')
     f.polygon(cap, fill=FILLS[1], stroke='none')
-    pts = [(circle(v), v) for v in grid(0.24, RD, 160)]
+    pts = [(circle(b), b) for b in grid(0.24, RD, 160)]
     polyline(f, pts, width=1.5)
     f.line((0.635, 0.635), (RD, RD), width=1.5)
-    f.line((A0, U0), cap[1], stroke=PURPLE, width=1.8)
-    f.line((A0, U0), (axial_line(0.25), 0.25), stroke=PURPLE, width=1,
+    f.line((A0, B0), cap[1], stroke=PURPLE, width=1.8)
+    f.line((A0, B0), (axial_line(0.25), 0.25), stroke=PURPLE, width=1,
            dash='2 3')
     f.line(cap[0], cap[1], stroke=ORANGE, width=1.5, dash='5 3')
     taus = [(0.42, '0.42'), (0.48, '0.48'), (PI / 6, 'π/6'), (0.6, '0.6'),
@@ -726,9 +726,9 @@ def segments():
     top = side_top(PI / 6)
     assert abs(top[0] - 1) < 1e-12 and abs(top[1] - 0.5) < 1e-12
     mtext(f, (0.705, 0.668), 'π/4', size=12, anchor='middle', color=ORANGE)
-    f.dot((A0, U0), r=4.2, fill=PURPLE)
-    mtext(f, (A0 + 0.014, U0 + 0.004), lab('(', sub('a', '0', ', '),
-                                           sub('u', '0', '),'), ' ', it('τ'),
+    f.dot((A0, B0), r=4.2, fill=PURPLE)
+    mtext(f, (A0 + 0.014, B0 + 0.004), lab('(', sub('a', '0', ', '),
+                                           sub('b', '0', '),'), ' ', it('τ'),
                                            ' = ', sub('s', '0')),
           size=13, color=PURPLE)
     f.dot((RD, RD), r=4.4)
@@ -739,9 +739,9 @@ def segments():
     f.dot((1.0, 0.5), r=4.2, fill=GREEN)
     mtext(f, (1.014, 0.505), '(1, ½)', size=13, color=GREEN)
     mtext(f, (1.12, 0.62), lab(it('φ'), ' = 13/4'), size=13)
-    mtext(f, (0.69, 0.75), lab(it('u'), ' = ', it('a')), size=12,
+    mtext(f, (0.69, 0.75), lab(it('b'), ' = ', it('a')), size=12,
           anchor='end')
-    mtext(f, (0.9, 0.3), lab('tie line 9', it('a'), ' + 11', it('u'),
+    mtext(f, (0.9, 0.3), lab('tie line 9', it('a'), ' + 11', it('b'),
                              ' = 2π + 7'), size=12, color=PURPLE)
     mtext(f, (CAP[1][0] - 0.008, CAP[1][1] - 0.02), sub('V', '1', size=14),
           size=14, color=ORANGE, anchor='end')
@@ -750,7 +750,7 @@ def segments():
     f.line((0.63, 0.25), (1.29, 0.25), width=1, arrow=True)
     mtext(f, (1.29, 0.232), 'a', size=15, anchor='end', italic=True)
     f.line((0.64, 0.24), (0.64, 0.82), width=1, arrow=True)
-    mtext(f, (0.652, 0.815), 'u', size=15, italic=True)
+    mtext(f, (0.652, 0.815), 'b', size=15, italic=True)
     for x in (0.8, 1.0, 1.2):
         f.line((x, 0.25), (x, 0.244), width=1)
         mtext(f, (x, 0.25), f'{x:g}', size=12, anchor='middle', dy=14)
@@ -758,9 +758,9 @@ def segments():
         f.line((0.64, y), (0.634, y), width=1)
         mtext(f, (0.64, y), f'{y:g}', size=12, anchor='end', dx=-8)
     f.save('appendix-g/segments', 'The side region foliated by the segments of '
-           'constant side label tau, of slope 9/4 in the (a, u)-plane; each '
+           'constant side label tau, of slope 9/4 in the (a, b)-plane; each '
            'runs from the tie line up to the circle phi = 13/4 or, beyond the '
-           'diagonal corner, to the diagonal u = a; the segment of label '
+           'diagonal corner, to the diagonal b = a; the segment of label '
            'pi/6 ends at the side state (1, 1/2) and the segment of label '
            'pi/4 is the edge V1 V2 of the capped triangle')
 
@@ -832,9 +832,9 @@ def transition_min():
 def transition_pair():
     tau = transition_min()
     assert abs(tau - 0.7227) < 1e-3 and abs(transition_F(tau) - 8e-4) < 1e-5
-    a, v = side_top(tau)
-    assert abs(label(a, v) - tau) < 1e-12 and abs(label(A0, U0) - S0) < 1e-12
-    cs, ct, d = canonical(a, v, -1, A0, U0, -1)
+    a, b = side_top(tau)
+    assert abs(label(a, b) - tau) < 1e-12 and abs(label(A0, B0) - S0) < 1e-12
+    cs, ct, d = canonical(a, b, -1, A0, B0, -1)
     S, T = square_corners(cs), square_corners(ct, math.degrees(d))
     sig = sums(S, T)
     assert abs(sig[1] - transition_F(tau)) < 1e-12 and min(sig) > 0
@@ -855,7 +855,7 @@ def transition_pair():
     mtext(f, shift(ct, (0.05, 0.12)), 'T', size=16, color=GREEN, italic=True)
     f.line((-0.32, cs[1] + 0.5), (1.6, cs[1] + 0.5), stroke=BLUE, width=0.9,
            dash='3 3')
-    mtext(f, (-0.32, cs[1] + 0.5), lab(it('y'), ' = ½ − ', it('u')),
+    mtext(f, (-0.32, cs[1] + 0.5), lab(it('y'), ' = ½ − ', it('b')),
           size=12, color=BLUE, dy=12)
     arrow(f, (1.5, cs[1] - 0.2), (1.5, cs[1] + 0.25), width=1.5, size=9)
     mtext(f, (1.5, cs[1] + 0.25), sub('n', '1', size=14), size=14, dx=6,
@@ -1134,13 +1134,13 @@ def easy():
     configs = [((1.0, 0.5, 1), (1.0, 0.0, 1)), ((1.0, 0.5, 1), (1.0, 0.0, 1)),
                ((1.0, 0.5, -1), (1.0, 0.5, 1)),
                ((0.95, 0.35, 1), (1.0, 0.2, 1))]
-    for k, ((a, v, s), (A, w, t)) in enumerate(configs):
+    for k, ((a, b, s), (A, B, t)) in enumerate(configs):
         col, row = k % 2, 1 - k // 2
         g = Shifted(f, col * W + 1.5, row * H + 1.4)
-        cs, ct, d = canonical(a, v, s, A, w, t)
+        cs, ct, d = canonical(a, b, s, A, B, t)
         S, T = draw_pair(g, cs, ct, d)
         sig = sums(S, T)
-        ls, lt = s * label(a, v), d + t * label(A, w)
+        ls, lt = s * label(a, b), d + t * label(A, B)
         g.text(shift(cs, (0.32, -0.3)), 'S', size=15, color=BLUE,
                anchor='middle', italic=True)
         g.text((0.2, 1.78), titles[k], size=13, anchor='middle')
@@ -1170,15 +1170,15 @@ def easy():
                    dash='2 3')
         elif k == 1:
             m = u(lt)
-            assert sig[3] >= m[1] - (s * v - 0.5) - 1e-12
+            assert sig[3] >= m[1] - (s * b - 0.5) - 1e-12
             g.text(shift(ct, (-0.3, 0.3)), 'T', size=15, color=GREEN,
                    anchor='middle', italic=True)
             g.line((0, 0), m, stroke=GREEN, width=1, dash='3 3')
             g.dot(m, r=3.6, fill=GREEN)
             g.text(shift(m, (0.07, 0.12)), 'marker', size=12, color=GREEN)
-            y0 = s * v - 0.5
+            y0 = s * b - 0.5
             g.line((-0.9, y0), (1.7, y0), stroke=BLUE, width=1.2, dash='4 3')
-            g.text((-0.9, y0 - 0.13), lab(it('y'), ' = ', it('u'), ' − ½'),
+            g.text((-0.9, y0 - 0.13), lab(it('y'), ' = ', it('b'), ' − ½'),
                    size=12, color=BLUE)
             g.line((m[0] + 0.02, m[1]), (m[0] + 0.02, y0), stroke=ORANGE,
                    width=2.2)
@@ -1320,7 +1320,7 @@ def capped():
         assert abs(label(*q) - PI / 4) < 1e-12 and admissible(*q)
         f.line(p, q, stroke=INK, width=0.9, dash='3 3')
     f.dot(p, r=3.8)
-    mtext(f, (p[0] - 0.005, p[1] + 0.002), lab('(', it('a'), ', ', it('u'),
+    mtext(f, (p[0] - 0.005, p[1] + 0.002), lab('(', it('a'), ', ', it('b'),
                                                ')'), size=14, anchor='end')
     labels = [(sub('V', '0', size=14), (-0.008, 0.008), 'end'),
               (sub('V', '1', size=14), (-0.012, -0.012), 'end'),
@@ -1328,22 +1328,22 @@ def capped():
     for q, (s, off, anc) in zip(cap, labels):
         f.dot(q, r=4, fill=ORANGE)
         mtext(f, shift(q, off), s, size=14, anchor=anc, color=ORANGE)
-    mtext(f, (0.8, PI / 5 + 0.008), lab(it('u'), ' = π/5'), size=12,
+    mtext(f, (0.8, PI / 5 + 0.008), lab(it('b'), ' = π/5'), size=12,
           color=ORANGE, anchor='end')
     mtext(f, (0.81, 0.785),
-          lab('9', it('a'), ' − 4', it('u'), ' = 7 − π'), size=12,
+          lab('9', it('a'), ' − 4', it('b'), ' = 7 − π'), size=12,
           color=ORANGE)
-    mtext(f, (0.66, 0.672), lab(it('u'), ' = ', it('a')), size=12,
+    mtext(f, (0.66, 0.672), lab(it('b'), ' = ', it('a')), size=12,
           anchor='end')
-    mtext(f, (0.59, 0.795), lab(it('u'), ' &gt; ', it('a'), ': no states'),
+    mtext(f, (0.59, 0.795), lab(it('b'), ' &gt; ', it('a'), ': no states'),
           size=12)
     mtext(f, (0.772, 0.588), 'tie line', size=12, color=PURPLE)
     mtext(f, (0.655, 0.6), 'axial', size=13, color=BLUE, anchor='middle')
     mtext(f, (0.8, 0.68), 'side', size=13, color=GREEN, anchor='middle')
     f.save('appendix-g/capped', 'The capped triangle with vertices V0, V1, V2, cut '
-           'out by the line u = pi/5 where the axial label is pi/4, the line '
-           '9a - 4u = 7 - pi where the side label is pi/4, and the diagonal '
-           'u = a; a capped state (a, u) is a convex combination of the '
+           'out by the line b = pi/5 where the axial label is pi/4, the line '
+           '9a - 4b = 7 - pi where the side label is pi/4, and the diagonal '
+           'b = a; a capped state (a, b) is a convex combination of the '
            'three vertices')
 
 

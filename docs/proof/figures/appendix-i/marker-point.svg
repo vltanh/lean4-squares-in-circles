@@ -28,7 +28,7 @@
 <text x="632.9" y="187.9" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle"><tspan>gap</tspan></text>
 <polygon points="469.5,258.8 663.0,258.8 663.0,133.0 469.5,133.0" fill="none" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
 <text x="566.2" y="115.8" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle">magnified</text>
-<text x="463.5" y="175.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="end" dominant-baseline="middle"><tspan>top of </tspan><tspan font-style="italic">S</tspan><tspan>: ½ − </tspan><tspan font-style="italic">u</tspan></text>
+<text x="463.5" y="175.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="end" dominant-baseline="middle"><tspan>top of </tspan><tspan font-style="italic">S</tspan><tspan>: ½ − </tspan><tspan font-style="italic">b</tspan></text>
 <text x="463.5" y="200.7" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="end" dominant-baseline="middle"><tspan>height sin </tspan><tspan font-style="italic">θ</tspan></text>
 <circle cx="71.8" cy="329.8" r="2.8" fill="#1f2937"/>
 <text x="61.0" y="346.9" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle"><tspan font-style="italic">o</tspan></text>

@@ -11,7 +11,7 @@
 <path d="M 261.4 171.9 L 252.7 180.0 L 249.5 171.4 z" fill="#2563eb"/>
 <text x="253.5" y="190.1" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle" font-style="italic">u(θ)</text>
 <path d="M 237.5 180.6 A 42.0 42.0 0 0 0 173.9 160.6" fill="none" stroke="#ea580c" stroke-width="1.8" stroke-linecap="round"/>
-<text x="217.4" y="133.5" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">d(θ, θ′)</text>
+<text x="217.4" y="133.5" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">∠(θ, θ′)</text>
 <text x="353.0" y="138.6" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">θ</text>
 <text x="103.4" y="59.8" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">θ′</text>
 <text x="70.5" y="322.5" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">Γ<tspan dy="4.8" font-size="10.9">r</tspan></text>

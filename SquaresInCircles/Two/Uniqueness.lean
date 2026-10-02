@@ -6,10 +6,10 @@ import SquaresInCircles.Common.Optimum
 /-!
 # Two squares: uniqueness
 
-At the optimal radius both centres are exactly `1/2` from the disk centre, so
-each square sits at `(1/2, 0)` in its sorted chart and holds the half of a small
-circle about `o` around its phase. Disjoint half circles are opposite, so a half
-turn puts both squares in one frame, at `(1/2, 0)` and `(-1/2, 0)`.
+At the optimal radius both centres are exactly `1/2` from the disk centre, `1`
+apart, with the disk centre as their midpoint. Squares with centres `1` apart
+share an edge; with their frames turned to have the step between the centres
+as first axis, they sit at `(-1/2, 0)` and `(1/2, 0)` in the frame along it.
 
 The file ends with `optimum`: the case as an `Optimum`, which also gives the
 lower bound.
@@ -25,45 +25,55 @@ lemma normSq_parallelogram (c d o : Point) :
   ring
 
 /-- In a disk of radius at most `sqrt 5 / 2`, both centres are exactly `1/2`
-from the disk centre. -/
+from the disk centre; they are `1` apart, and the disk centre is their
+midpoint. -/
 lemma centers_at_half (S : Fin 2 → UnitSquare) (o : Point) (hd : InteriorDisjoint S)
     (hφ : ∀ i, phi (alpha (S i) o) (beta (S i) o) ≤ 5/4) :
-    ∀ i, alpha (S i) o^2+beta (S i) o^2=1/4 := by
+    (∀ i, alpha (S i) o^2+beta (S i) o^2=1/4) ∧ normSq (sub (S 1).center (S 0).center)=1 ∧
+      sub (S 0).center o=scale (-1/2) (sub (S 1).center (S 0).center) ∧
+      sub (S 1).center o=scale (1/2) (sub (S 1).center (S 0).center) := by
   have hnear (i : Fin 2) := radial_sq_le_of_phi (ρ := 1/2) (alpha_nonneg _ _) (beta_nonneg _ _)
     ((hφ i).trans_eq (by norm_num))
   simp only [← local_center_norm] at hnear ⊢
+  obtain ⟨hu,hv⟩ := Fin.forall_fin_two.mp hnear
   have hfar := centers_distance_sq_ge_one (S 0) (S 1) (hd 0 1 (by decide))
   have hpar := normSq_parallelogram (S 1).center (S 0).center o
   have hmid := normSq_nonneg (sub (add (S 1).center (S 0).center) (scale 2 o))
-  exact Fin.forall_fin_two.mpr ⟨by linarith [hnear 0,hnear 1],by linarith [hnear 0,hnear 1]⟩
+  -- equality throughout, so the diagonal `u + v` vanishes
+  have hsum : sub (add (S 1).center (S 0).center) (scale 2 o)=(0,0) :=
+    not_ne_iff.mp fun h => by linarith [normSq_pos_of_ne h]
+  simp only [sub,add,scale,Prod.mk.injEq] at hsum
+  refine ⟨Fin.forall_fin_two.mpr ⟨by linarith,by linarith⟩,by linarith,?_,?_⟩ <;>
+    ext <;> simp only [sub,scale] <;> linarith
+
+/-- The coordinates of a multiple of a vector in the frame of a square. -/
+lemma frame_scale (S : UnitSquare) (s : ℝ) (v : Point) :
+    (frameX S (scale s v),frameY S (scale s v))=(s*frameX S v,s*frameY S v) := by
+  simp only [frameX,frameY,scale]; ext <;> ring
 
 /-- At the optimal radius the two squares form the rectangle. -/
 theorem uniqueness (S : Fin 2 → UnitSquare) (o : Point)
     (hp : Packing S o radius) : Congruent S o model := by
-  have hφ (i : Fin 2) : phi (alpha (S i) o) (beta (S i) o) ≤ 5/4 := radius_sq ▸ hp.phi_le i
-  have hhalf := centers_at_half S o hp.disjoint hφ
-  -- so each square sits at `(1/2, 0)` in its sorted chart
-  have hC (i : Fin 2) : ∃ C : SquareChart (S i) o, C.a=1/2 ∧ C.b=0 := by
-    obtain ⟨C,hs⟩ := sorted_square_chart (S i) o
-    have h1 := chart_phi C (hφ i)
-    have h2 := C.transfer (fun a b => a^2+b^2=1/4) (fun h => by linarith) (hhalf i)
-    obtain ⟨ha,hb⟩ := C.nonneg
-    unfold phi at h1
-    exact ⟨C,by nlinarith,by nlinarith⟩
-  choose C ha hb using hC
-  -- and holds a half circle about its phase; disjoint half circles are opposite
-  obtain ⟨A,hA,hAc⟩ := (C 0).half_arc (r := 1/2) (by norm_num) (ha 0) (by rw [hb 0]; norm_num)
-  obtain ⟨B,hB,hBc⟩ := (C 1).half_arc (r := 1/2) (by norm_num) (ha 1) (by rw [hb 1]; norm_num)
-  have hanti := A.opposite B (hp.disjoint.pairwise (by decide)) hA hB
-  rw [hAc,hBc] at hanti
-  have r1 := chart_represents (C 1)
-  rw [hanti,show (Real.pi:Direction)=quarterShift 2 from rfl] at r1
-  apply congruent_of_slots (φ := (C 0).phase) hp.disjoint
-  intro i
-  fin_cases i
-  · exact ⟨1,by simpa [centers,SquareChart.signedB,ha,hb] using chart_represents (C 0)⟩
-  · exact ⟨0,by simpa [centers,turnPoint,SquareChart.signedB,ha,hb,neg_div] using
-      represents_quarter 2 r1⟩
+  obtain ⟨-,hunit,e0,e1⟩ := centers_at_half S o hp.disjoint fun i => radius_sq ▸ hp.phi_le i
+  -- the squares share an edge: `S 1` has the axes of `S 0`, one unit along an axis
+  obtain ⟨haxes,hslots⟩ := unit_contact (S 0) (S 1) (hp.disjoint 0 1 (by decide)) hunit
+  set d := sub (S 1).center (S 0).center
+  -- so the step `d` is along a side of each square
+  have hd (i : Fin 2) : frameX (S i) d=0 ∨ frameY (S i) d=0 := by
+    obtain ⟨hX,hY⟩ := relative_normal (S 0) (S 1) d
+    fin_cases i <;> rcases haxes with h|h <;>
+      rcases hslots with ⟨hx,hy⟩|⟨hx,hy⟩|⟨hx,hy⟩|⟨hx,hy⟩ <;> simp [hX,hY,h,hx,hy]
+  -- turned by quarter turns, the frame of each square has `d` as first axis: `U c`
+  have hd1 : d.1^2+d.2^2=1 := hunit
+  let U (c : Point) : UnitSquare := ⟨c,d.1,d.2,hd1⟩
+  have hU (c : Point) : frameX (U c) d=1 ∧ frameY (U c) d=0 :=
+    ⟨by simp only [U,frameX]; linear_combination hd1,by simp only [U,frameY]; ring⟩
+  -- in the frame along `d` the squares sit at `c - o = ∓d/2`, that is at `(∓1/2, 0)`
+  obtain ⟨u,huc,hus⟩ := frame_angle (U o)
+  refine congruent_of_slots (φ := u) hp.disjoint fun i => ⟨i,fun x y => ?_⟩
+  rw [← same_axes_open (S := S i) (T := U (S i).center) rfl (hd i),
+    self_represents (U (S i).center) o u huc hus]
+  fin_cases i <;> simp [U,e0,e1,frame_scale,hU,centers,neg_div]
 
 /-- The optimum for two squares: `radius`, attained only by the configurations
 congruent to `model`. -/

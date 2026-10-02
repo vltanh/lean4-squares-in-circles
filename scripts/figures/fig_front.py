@@ -623,9 +623,9 @@ def angle_between():
     for t, s in ((x, 'θ'), (xp, 'θ′')):
         f.dot(u(t))
         f.text(shift((0, 0), u(t), 1.16), s)
-    f.text(shift((0, 0), u(xp + d / 2), 0.62), 'd(θ, θ′)', size=14,
+    f.text(shift((0, 0), u(xp + d / 2), 0.62), '∠(θ, θ′)', size=14,
            color=ORANGE)
-    word(f, shift((0, 0), u(x + (two - d) / 2), 0.7), '2π − ' + it('d'),
+    word(f, shift((0, 0), u(x + (two - d) / 2), 0.53), '2π − ∠(θ, θ′)',
          size=13, color=FAINT)
     f.dot((0, 0))
     f.text((0.06, -0.1), 'o', anchor='start', size=14)
@@ -640,8 +640,8 @@ def angle_between():
     for t, s, col in ticks:
         f.line((X(t), y0 - 0.09), (X(t), y0 + 0.09), stroke=col, width=2)
         f.text((X(t), y0 - 0.25), s, color=col, size=13)
-    for lo, hi, s, col in ((xp - two, x, 'd', ORANGE),
-                           (x, xp, '2π − ' + it('d'), FAINT)):
+    for lo, hi, s, col in ((xp - two, x, '∠(θ, θ′)', ORANGE),
+                           (x, xp, '2π − ∠(θ, θ′)', FAINT)):
         h = 0.3
         f.line((X(lo), y0 + h), (X(hi), y0 + h), stroke=col, width=1.6)
         for t in (lo, hi):
@@ -1091,24 +1091,25 @@ def disk_constraint():
 def two_squares():
     """Two squares at the radius root 5 over 2: both centres lie in the
     closed disk of radius 1/2 about o and are at least 1 apart, so they are
-    the ends of a diameter, and each square holds the half of the circle of
-    radius 1/2 on its side."""
+    the ends of a diameter, 1 apart, and the squares share a full edge."""
     R2, r, s = math.sqrt(5) / 2, 0.5, 150
     cs, ct = (0.5, 0.0), (-0.5, 0.0)
     for c in (cs, ct):
         assert phi_ab(abs(c[0]), abs(c[1])) <= R2 ** 2 + 1e-12
         assert abs(norm(c) - r) < 1e-12
     assert abs(norm((cs[0] - ct[0], cs[1] - ct[1])) - 2 * r) < 1e-12
+    S, T = square_corners(cs), square_corners(ct)
+    assert not interiors_meet(S, T)
+    edge = [(0.0, -0.5), (0.0, 0.5)]
+    assert all(q in S and q in T for q in edge)
     f = Figure(-R2 - 0.06, R2 + 0.06, -R2 - 0.06, R2 + 0.06, s)
     f.circle((0, 0), R2, stroke=INK, width=1.2, dash='6 4')
     f.text(shift((0, 0), u(rad(118)), R2 + 0.1), sbn('R', '2', size=15),
            size=15)
     f.square(cs, fill=FILLS[0], stroke=BLUE)
     f.square(ct, fill=FILLS[2], stroke=GREEN)
-    for c, col in ((cs, BLUE), (ct, GREEN)):
-        runs = arcs_in(lambda p: in_open_square(p, c), r)
-        assert len(runs) == 1 and abs(runs[0][1] - runs[0][0] - math.pi) < 0.01
-        f.arc((0, 0), r, runs[0][0], runs[0][1], col, width=5)
+    f.circle((0, 0), r, stroke=INK, width=1.1, dash='5 4')
+    f.line(*edge, width=3.4)
     f.line(ct, cs, width=1.3)
     f.text((0.25, 0.08), '1', size=14, italic=False)
     for c, col, name, side in ((cs, BLUE, 'S', 1), (ct, GREEN, 'T', -1)):
@@ -1122,9 +1123,9 @@ def two_squares():
     f.text((-0.05, -0.1), 'o', anchor='end')
     f.save('01-introduction/two', 'Two squares S and T forming a 2 by 1 '
            'rectangle in the dashed circle of radius root 5 over 2 about o; '
-           'their centres lie on the circle of radius 1/2 about o, at the ends '
-           'of a diameter of length 1, and the two halves of that circle are '
-           'drawn thick, the right half in S and the left half in T')
+           'their centres lie on the dashed circle of radius 1/2 about o, at '
+           'the ends of a diameter of length 1, and the edge the squares '
+           'share, through o, is drawn thick')
 
 
 def six_pins():
@@ -1580,7 +1581,7 @@ def perimeter():
     thin_arc(f, (0, 0), 0.42, xs[0], xs[2], color=ORANGE, width=1.6)
     # The label between the radii to x_V and x_W, clear of both.
     f.text(shift((0, 0), u((xs[1] + xs[2]) / 2), 0.62),
-           'd(' + sbn('θ', 'U', ', ', 13) + sbn('θ', 'W', ')', 13), size=13,
+           '∠(' + sbn('θ', 'U', ', ', 13) + sbn('θ', 'W', ')', 13), size=13,
            color=ORANGE)
     f.dot((0, 0))
     f.text((0.05, -0.1), 'o', anchor='start')

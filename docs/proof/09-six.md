@@ -2265,15 +2265,15 @@ $w = -\frac{11}{25}$.
 For real $w$, $s$ and $d$ let
 
 ```math
-\beta = \tfrac12(w - s), \qquad \delta = d - \tfrac\pi4 - \tfrac12(w + s), \qquad L = K_*(\cos\beta - \sin\beta) ,
+\Xi = \tfrac12(w - s), \qquad \Theta = d - \tfrac\pi4 - \tfrac12(w + s), \qquad L = K_*(\cos\Xi - \sin\Xi) ,
 ```
 
-let $\sigma(L, \delta) = \rho_* L\cos\delta$ if $2R_6|\sin\delta| \le 1$, and
-$\sigma(L, \delta) = L\left(R_6 - \frac12(\cos\delta + |\sin\delta|)\right)$
+let $\sigma(L, \Theta) = \rho_* L\cos\Theta$ if $2R_6|\sin\Theta| \le 1$, and
+$\sigma(L, \Theta) = L\left(R_6 - \frac12(\cos\Theta + |\sin\Theta|)\right)$
 otherwise, and put
 
 ```math
-\Delta(w, s, d) = m_*\left(\omega(d - w) + \omega(d - s)\right) - \sigma(L, \delta) .
+\Delta(w, s, d) = m_*\left(\omega(d - w) + \omega(d - s)\right) - \sigma(L, \Theta) .
 ```
 
 The *domain of the diagonal* is the box $-\frac{11}{25} \le w \le \frac25$,
@@ -2312,30 +2312,30 @@ Multiply both by $m_*$ and add. The terms in $D$ are the work of the force
 $F_D = m_*(e^W_2 - e^S_2)$, whose components in the frame of $D$ are
 
 ```math
-m_*\left(\sin(d - w) + \cos(d - s),\ \cos(d - w) - \sin(d - s)\right) = L\left(\cos\delta, -\sin\delta\right) ,
+m_*\left(\sin(d - w) + \cos(d - s),\ \cos(d - w) - \sin(d - s)\right) = L\left(\cos\Theta, -\sin\Theta\right) ,
 ```
 
-by the sum formulas: with $d - w = \delta + \frac\pi4 - \beta$ and
-$d - s = \delta + \frac\pi4 + \beta$, both components are
-$2m_*\sin(\frac\pi4 - \beta) = K_*(\cos\beta - \sin\beta)$ times $\cos\delta$
-and $-\sin\delta$ (Figure 9.29). On the domain
-$|\sin\delta| \le \cos\delta$ and $L > 0$, and
-the work $L(a_D\cos\delta - b_D\sin\delta)$ is at most $\sigma(L, \delta)$: by
+by the sum formulas: with $d - w = \Theta + \frac\pi4 - \Xi$ and
+$d - s = \Theta + \frac\pi4 + \Xi$, both components are
+$2m_*\sin(\frac\pi4 - \Xi) = K_*(\cos\Xi - \sin\Xi)$ times $\cos\Theta$
+and $-\sin\Theta$ (Figure 9.29). On the domain
+$|\sin\Theta| \le \cos\Theta$ and $L > 0$, and
+the work $L(a_D\cos\Theta - b_D\sin\Theta)$ is at most $\sigma(L, \Theta)$: by
 the cap bound of Lemma 9.25 (3) at $R = R_6$, where $\rho = \rho_*$, when
-$2R_6|\sin\delta| \le 1$, which is the same as
-$(\rho_* + \frac12)|\sin\delta| \le \frac12\cos\delta$ because
+$2R_6|\sin\Theta| \le 1$, which is the same as
+$(\rho_* + \frac12)|\sin\Theta| \le \frac12\cos\Theta$ because
 $4R_6^2 = 4(\rho_* + \frac12)^2 + 1$ (after a reflection of the frame of $D$ if
-$\sin\delta < 0$); and by the far vertex bound (1) otherwise. As
+$\sin\Theta < 0$); and by the far vertex bound (1) otherwise. As
 $\tau(d - w) + \tau(d - s) = 1 + \omega(d - w) + \omega(d - s)$, this is
-$m_*(1 + \omega(d - w) + \omega(d - s)) \le \sigma(L, \delta) + m_*(b_S - b_W)$,
+$m_*(1 + \omega(d - w) + \omega(d - s)) \le \sigma(L, \Theta) + m_*(b_S - b_W)$,
 which is the claim. $\square$
 
-![Two panels. Left: the turned square D, cyan, at d = 0.75, between W, purple, at w = -0.3 above it and S, pink, at s = -0.1 to its right, with C faint near the origin o; a vertex of D lies on the dashed line of the lower edge of W and another on the dashed line of the left edge of S, and a dotted ray marks the own axis e1 of D. Right: in the frame of D, with e1 to the right and e2 up, the forces m* e2 of W and -m* e2 of S drawn from one point, their sum F_D as a thick arrow, and the angle delta from e1 down to F_D](figures/09-six/diagonal.svg)
+![Two panels. Left: the turned square D, cyan, at d = 0.75, between W, purple, at w = -0.3 above it and S, pink, at s = -0.1 to its right, with C faint near the origin o; a vertex of D lies on the dashed line of the lower edge of W and another on the dashed line of the left edge of S, and a dotted ray marks the own axis e1 of D. Right: in the frame of D, with e1 to the right and e2 up, the forces m* e2 of W and -m* e2 of S drawn from one point, their sum F_D as a thick arrow, and the angle Theta from e1 down to F_D](figures/09-six/diagonal.svg)
 
 *Figure 9.29.* Lemma 9.52 at $w = -0.3$, $s = -0.1$ and $d = 0.75$,
 with both wings tight (dashed lines, left). Right, in the frame of $D$: the
 wing forces $m_* e^W_2$ and $-m_* e^S_2$ add up to
-$F_D = L(\cos\delta, -\sin\delta)$, here with $\delta \approx 0.165$ and
+$F_D = L(\cos\Theta, -\sin\Theta)$, here with $\Theta \approx 0.165$ and
 $L \approx 1.377$.
 
 *Lean:

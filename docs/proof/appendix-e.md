@@ -1454,66 +1454,66 @@ $\Pi(0, 0) = \beta_* + G(0, 0) > \beta_*$ for the other two. $\square$
 
 ## E.3 Proof of Proposition 9.53
 
-In this section $w$, $s$, $d$ lie in the domain of the diagonal, and $\beta$,
-$\delta$, $L$, $\sigma$, $\Delta$ and $\mathcal R$ are as in
+In this section $w$, $s$, $d$ lie in the domain of the diagonal, and $\Xi$,
+$\Theta$, $L$, $\sigma$, $\Delta$ and $\mathcal R$ are as in
 [Definition 9.51](09-six.md#definition-951-the-diagonal-value). The square $D$ is
 held by the two wings, and the force of the stress of the model on it is the
 sum of $m_*e^W_2$, from $W$–$D$, and $-m_*e^S_2$, from $D$–$S$. In the frame of
-$D$ it makes the angle $-\delta$ with the primary axis (Figure E.14), and the
-support $\sigma(L, \delta)$ bounds its work
+$D$ it makes the angle $-\Theta$ with the primary axis (Figure E.14), and the
+support $\sigma(L, \Theta)$ bounds its work
 ([Lemma 9.52](09-six.md#lemma-952-the-diagonal-bound)): the work is largest with
 the centre of $D$ at the corner $(\rho_*, 0)$ of the region of its possible
 centres when the force is nearly radial, and with a far vertex of $D$ on the
 circle otherwise (Figure E.15). We first write $\Delta$ in these terms, then
 treat the two cases.
 
-![The turned square D between W, above it, and S, to its right, inside part of a dashed circle about the disk centre; the bottom edge of W and the left edge of S are extended as dashed lines, and D touches both. At the centre of D two thin arrows, purple pointing down and pink pointing left, add up, by a dashed parallelogram, to a thick black arrow pointing down and to the left; a dashed cyan ray from the centre of D, the primary axis e1 of D, makes a small angle delta with the black arrow, marked by an arc](figures/appendix-e/diagonal-force.svg)
+![The turned square D between W, above it, and S, to its right, inside part of a dashed circle about the disk centre; the bottom edge of W and the left edge of S are extended as dashed lines, and D touches both. At the centre of D two thin arrows, purple pointing down and pink pointing left, add up, by a dashed parallelogram, to a thick black arrow pointing down and to the left; a dashed cyan ray from the centre of D, the primary axis e1 of D, makes a small angle Theta with the black arrow, marked by an arc](figures/appendix-e/diagonal-force.svg)
 
 *Figure E.14.* The force of the stress of the model on $D$ at
 $w = -\frac7{20}$, $s = -\frac3{20}$ and $d = \frac34$, so that
-$\beta = -\frac1{10}$ and $\delta \approx 0.215$; $W$ and $S$ sit at their
+$\Xi = -\frac1{10}$ and $\Theta \approx 0.215$; $W$ and $S$ sit at their
 places in the model, turned by $w$ and $s$, and $D$ touches both wings
 (dashed). The forces $m_*e^W_2$ of $W$–$D$ (purple) and $-m_*e^S_2$ of $D$–$S$
-(pink) add up to $L(\cos\delta, -\sin\delta)$ in the frame of $D$ (black),
-turned by $-\delta$ from the primary axis $e^D_1$ (cyan).
+(pink) add up to $L(\cos\Theta, -\sin\Theta)$ in the frame of $D$ (black),
+turned by $-\Theta$ from the primary axis $e^D_1$ (cyan).
 
 ### Lemma E.17 (the turned square)
 
-1. $-\frac{11}{25} \le \beta \le \frac25$, $|\delta| \le \frac{71}{100}$,
+1. $-\frac{11}{25} \le \Xi \le \frac25$, $|\Theta| \le \frac{71}{100}$,
    $0 \le d - w \le \frac\pi2$ and $0 \le d - s \le \frac\pi2$; and
-   $d - w = \frac\pi4 + \delta - \beta$, $d - s = \frac\pi4 + \delta + \beta$.
-2. $\cos\beta - \sin\beta > 0$, $\cos\delta > 0$ and $|\sin\delta| \le \cos\delta$;
+   $d - w = \frac\pi4 + \Theta - \Xi$, $d - s = \frac\pi4 + \Theta + \Xi$.
+2. $\cos\Xi - \sin\Xi > 0$, $\cos\Theta > 0$ and $|\sin\Theta| \le \cos\Theta$;
    in particular $L > 0$.
 3. In the frame of $D = Q_{\pi + d}(a_D, b_D)$, with $W$ at the phase $\pi + w$
    and $S$ at $\frac{3\pi}2 + s$, the force $m_*(e^W_2 - e^S_2)$ has the
    components
 
    ```math
-   m_*\left(\sin(d - w) + \cos(d - s),\ \cos(d - w) - \sin(d - s)\right) = L\left(\cos\delta, -\sin\delta\right) .
+   m_*\left(\sin(d - w) + \cos(d - s),\ \cos(d - w) - \sin(d - s)\right) = L\left(\cos\Theta, -\sin\Theta\right) .
    ```
 
-4. $m_*\left(\omega(d - w) + \omega(d - s)\right) = K_*\cos\beta\cos\delta$.
-5. If $2R_6|\sin\delta| \le 1$ (the *cap case*), then
-   $\Delta = K_*\left((1 - \rho_*)\cos\beta + \rho_*\sin\beta\right)\cos\delta$;
+4. $m_*\left(\omega(d - w) + \omega(d - s)\right) = K_*\cos\Xi\cos\Theta$.
+5. If $2R_6|\sin\Theta| \le 1$ (the *cap case*), then
+   $\Delta = K_*\left((1 - \rho_*)\cos\Xi + \rho_*\sin\Xi\right)\cos\Theta$;
    otherwise (the *vertex case*)
 
    ```math
-   \Delta = K_*\left(\tfrac12(3\cos\beta - \sin\beta)\cos\delta + \tfrac12(\cos\beta - \sin\beta)|\sin\delta| - R_6(\cos\beta - \sin\beta)\right) .
+   \Delta = K_*\left(\tfrac12(3\cos\Xi - \sin\Xi)\cos\Theta + \tfrac12(\cos\Xi - \sin\Xi)|\sin\Theta| - R_6(\cos\Xi - \sin\Xi)\right) .
    ```
 
-*Proof.* (1) $\beta = \frac12(w - s)$ lies between
+*Proof.* (1) $\Xi = \frac12(w - s)$ lies between
 $\frac12(-\frac{11}{25} - \frac{11}{25})$ and $\frac12(\frac25 + \frac25)$. As
 $\frac12 - \frac\pi4 \le d - \frac\pi4 \le 0$ with $\frac\pi4 - \frac12 < 0.2855$,
 and $|w + s| \le \frac{21}{25}$, we get
-$-0.2855 - \frac{21}{50} \le \delta \le \frac{21}{50}$. Also
+$-0.2855 - \frac{21}{50} \le \Theta \le \frac{21}{50}$. Also
 $d - w \ge \frac12 - \frac25$, $d - w \le \frac\pi4 + \frac{11}{25} < \frac\pi2$,
-and the same for $d - s$. The two identities are the definitions of $\beta$ and
-$\delta$.
+and the same for $d - s$. The two identities are the definitions of $\Xi$ and
+$\Theta$.
 
-(2) $|\beta| \le \frac{11}{25}$ gives
-$\cos\beta \ge 1 - \frac12(\frac{11}{25})^2 > \frac{11}{25} \ge |\sin\beta|$,
-and $|\delta| \le \frac{71}{100}$ gives
-$\cos\delta \ge 1 - \frac12(\frac{71}{100})^2 > \frac{71}{100} \ge |\sin\delta|$.
+(2) $|\Xi| \le \frac{11}{25}$ gives
+$\cos\Xi \ge 1 - \frac12(\frac{11}{25})^2 > \frac{11}{25} \ge |\sin\Xi|$,
+and $|\Theta| \le \frac{71}{100}$ gives
+$\cos\Theta \ge 1 - \frac12(\frac{71}{100})^2 > \frac{71}{100} \ge |\sin\Theta|$.
 
 (3) Turning by $-(\pi + d)$, the vector $e^W_2 = u(\frac{3\pi}2 + w)$ becomes
 $u(\frac\pi2 - (d - w)) = (\sin(d - w), \cos(d - w))$, and
@@ -1522,13 +1522,13 @@ With (1), $\sin(\frac\pi4 + x) = h(\cos x + \sin x)$ and
 $\cos(\frac\pi4 + x) = h(\cos x - \sin x)$, the first component is
 
 ```math
-m_*h\left(\cos(\delta - \beta) + \sin(\delta - \beta) + \cos(\delta + \beta) - \sin(\delta + \beta)\right) = 2hm_*\left(\cos\delta\cos\beta - \cos\delta\sin\beta\right) = L\cos\delta ,
+m_*h\left(\cos(\Theta - \Xi) + \sin(\Theta - \Xi) + \cos(\Theta + \Xi) - \sin(\Theta + \Xi)\right) = 2hm_*\left(\cos\Theta\cos\Xi - \cos\Theta\sin\Xi\right) = L\cos\Theta ,
 ```
 
 and the second is
 
 ```math
-m_*h\left(\cos(\delta - \beta) - \sin(\delta - \beta) - \cos(\delta + \beta) - \sin(\delta + \beta)\right) = 2hm_*\left(\sin\delta\sin\beta - \sin\delta\cos\beta\right) = -L\sin\delta ,
+m_*h\left(\cos(\Theta - \Xi) - \sin(\Theta - \Xi) - \cos(\Theta + \Xi) - \sin(\Theta + \Xi)\right) = 2hm_*\left(\sin\Theta\sin\Xi - \sin\Theta\cos\Xi\right) = -L\sin\Theta ,
 ```
 
 as $K_* = 2hm_*$.
@@ -1537,10 +1537,10 @@ as $K_* = 2hm_*$.
 $\cos(\frac\pi4 + x) + \sin(\frac\pi4 + x) = 2h\cos x$. So
 
 ```math
-\omega(d - w) + \omega(d - s) = h\left(\cos(\delta - \beta) + \cos(\delta + \beta)\right) = 2h\cos\beta\cos\delta .
+\omega(d - w) + \omega(d - s) = h\left(\cos(\Theta - \Xi) + \cos(\Theta + \Xi)\right) = 2h\cos\Xi\cos\Theta .
 ```
 
-(5) Insert (4) and $L = K_*(\cos\beta - \sin\beta)$ into Definition 9.51. $\square$
+(5) Insert (4) and $L = K_*(\cos\Xi - \sin\Xi)$ into Definition 9.51. $\square$
 
 *Lean:
 [`Six.Stress.diagonal_parameters`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L58),
@@ -1554,23 +1554,23 @@ $\cos(\frac\pi4 + x) + \sin(\frac\pi4 + x) = 2h\cos x$. So
 
 ![Two panels in the frame of D, with the disk centre at the origin, the dashed circle of radius R6 and the region of the possible centres of D, bounded by four arcs that meet in corners on the axes. Left, the cap case: the force on D points within the narrow angle between the normals of the two arcs at the corner (rho*, 0), and the square D is drawn with its centre at that corner, two vertices on the circle. Right, the vertex case: the force points more steeply, the best centre lies on an arc, and the square D has its far vertex on the circle in the direction of the force](figures/appendix-e/diagonal-support.svg)
 
-*Figure E.15.* The support $\sigma(L, \delta)$ of the force
-$L(\cos\delta, -\sin\delta)$ on $D$ (Definition 9.51), in the frame of $D$, for
-$\delta = 0.15$ (left) and $\delta = \frac12$ (right). The centres of the unit
+*Figure E.15.* The support $\sigma(L, \Theta)$ of the force
+$L(\cos\Theta, -\sin\Theta)$ on $D$ (Definition 9.51), in the frame of $D$, for
+$\Theta = 0.15$ (left) and $\Theta = \frac12$ (right). The centres of the unit
 squares of this frame in the disk of radius $R_6$ form the region bounded by the
 four arcs $(|a| + \frac12)^2 + (|b| + \frac12)^2 = R_6^2$ (grey). Left: if
-$2R_6|\sin\delta| \le 1$, the force lies in the angle of the normals at the
+$2R_6|\sin\Theta| \le 1$, the force lies in the angle of the normals at the
 corner $(\rho_*, 0)$ (dashed), and the work is largest there:
-$\sigma = \rho_*L\cos\delta$. Right: otherwise it is largest where the far
+$\sigma = \rho_*L\cos\Theta$. Right: otherwise it is largest where the far
 vertex of $D$ lies on the circle in the direction of the force:
-$\sigma = L(R_6 - \frac12(\cos\delta + |\sin\delta|))$.
+$\sigma = L(R_6 - \frac12(\cos\Theta + |\sin\Theta|))$.
 
 ### Lemma E.18 (the lines and the base)
 
 For all real $w$ and $s$,
 
 ```math
-\ell(w) + \ell(-s) = \tfrac{23}{100}\left(|w| + |s|\right) - \tfrac{49}{50}\beta , \qquad 2|\beta| \le |w| + |s| ,
+\ell(w) + \ell(-s) = \tfrac{23}{100}\left(|w| + |s|\right) - \tfrac{49}{50}\Xi , \qquad 2|\Xi| \le |w| + |s| ,
 ```
 
 and $2\beta_* = K_*(\rho_* - 1)$.
@@ -1579,7 +1579,7 @@ and $2\beta_* = K_*(\rho_* - 1)$.
 $\ell(w) = -\frac{18}{25}w$; in both cases
 $\ell(w) = \frac{23}{100}|w| - \frac{49}{100}w$. In the same way
 $\ell(-s) = \frac{23}{100}|s| + \frac{49}{100}s$, and the sum is the claim, as
-$w - s = 2\beta$. Next, $2|\beta| = |w - s| \le |w| + |s|$. The last identity is
+$w - s = 2\Xi$. Next, $2|\Xi| = |w - s| \le |w| + |s|$. The last identity is
 Proposition 9.27 (3). $\square$
 
 *Lean:
@@ -1593,57 +1593,57 @@ Proposition 9.27 (3). $\square$
 On the domain of the diagonal let
 
 ```math
-\mathcal R_{\mathrm{cap}} = \ell(w) + \ell(-s) + K_*\left((1 - \rho_*)\cos\beta + \rho_*\sin\beta\right)\cos\delta + 2\beta_* .
+\mathcal R_{\mathrm{cap}} = \ell(w) + \ell(-s) + K_*\left((1 - \rho_*)\cos\Xi + \rho_*\sin\Xi\right)\cos\Theta + 2\beta_* .
 ```
 
 Then $\mathcal R_{\mathrm{cap}} \ge \frac3{200}(|w| + |s|)$, and
 $\mathcal R_{\mathrm{cap}} = 0$ only for $w = s = 0$ and $d = \frac\pi4$.
 
 *Proof.* Put $Z = |w| + |s|$, $T = K_*\rho_*$ and
-$\Psi = K_*(\rho_* - 1)(1 - \cos\beta\cos\delta)$. Then $1.39 < T < 1.41$, and
-$\Psi \ge 0$ as $\rho_* > 1$ and $0 < \cos\beta\cos\delta \le 1$. By Lemma E.18,
+$\Psi = K_*(\rho_* - 1)(1 - \cos\Xi\cos\Theta)$. Then $1.39 < T < 1.41$, and
+$\Psi \ge 0$ as $\rho_* > 1$ and $0 < \cos\Xi\cos\Theta \le 1$. By Lemma E.18,
 
 ```math
-\mathcal R_{\mathrm{cap}} = \tfrac{23}{100}Z - \tfrac{49}{50}\beta + T\sin\beta\cos\delta + \Psi .
+\mathcal R_{\mathrm{cap}} = \tfrac{23}{100}Z - \tfrac{49}{50}\Xi + T\sin\Xi\cos\Theta + \Psi .
 ```
 
-*If $\beta \le 0$:* then $\beta \le \sin\beta \le 0$ and $0 < \cos\delta \le 1$, so
-$T\sin\beta\cos\delta \ge T\sin\beta \ge T\beta \ge 1.41\,\beta$, and, by
-$|\beta| \le \frac12Z$,
+*If $\Xi \le 0$:* then $\Xi \le \sin\Xi \le 0$ and $0 < \cos\Theta \le 1$, so
+$T\sin\Xi\cos\Theta \ge T\sin\Xi \ge T\Xi \ge 1.41\,\Xi$, and, by
+$|\Xi| \le \frac12Z$,
 
 ```math
-\mathcal R_{\mathrm{cap}} \ge \tfrac{23}{100}Z - \tfrac{43}{100}|\beta| \ge \left(\tfrac{23}{100} - \tfrac{43}{200}\right)Z = \tfrac3{200}Z .
+\mathcal R_{\mathrm{cap}} \ge \tfrac{23}{100}Z - \tfrac{43}{100}|\Xi| \ge \left(\tfrac{23}{100} - \tfrac{43}{200}\right)Z = \tfrac3{200}Z .
 ```
 
-*If $\beta \ge 0$:* then $\beta \le \frac25$. As
-$\sin\beta \ge \beta - \frac{\beta^3}6$, $\cos\delta \ge 1 - \frac{\delta^2}2$ and
-$(\beta - \sin\beta)(1 - \cos\delta) \ge 0$,
+*If $\Xi \ge 0$:* then $\Xi \le \frac25$. As
+$\sin\Xi \ge \Xi - \frac{\Xi^3}6$, $\cos\Theta \ge 1 - \frac{\Theta^2}2$ and
+$(\Xi - \sin\Xi)(1 - \cos\Theta) \ge 0$,
 
 ```math
-\sin\beta\cos\delta \ge \sin\beta + \beta\cos\delta - \beta \ge \beta\left(1 - \tfrac{\beta^2}6 - \tfrac{\delta^2}2\right) \ge \tfrac{18}{25}\beta ,
+\sin\Xi\cos\Theta \ge \sin\Xi + \Xi\cos\Theta - \Xi \ge \Xi\left(1 - \tfrac{\Xi^2}6 - \tfrac{\Theta^2}2\right) \ge \tfrac{18}{25}\Xi ,
 ```
 
-as $\frac{\beta^2}6 + \frac{\delta^2}2 \le \frac2{75} + \frac12(\frac{71}{100})^2$,
+as $\frac{\Xi^2}6 + \frac{\Theta^2}2 \le \frac2{75} + \frac12(\frac{71}{100})^2$,
 which is less than $\frac7{25}$. So
-$T\sin\beta\cos\delta \ge 1.39 \cdot \frac{18}{25}\beta \ge \frac{49}{50}\beta$, and
+$T\sin\Xi\cos\Theta \ge 1.39 \cdot \frac{18}{25}\Xi \ge \frac{49}{50}\Xi$, and
 $\mathcal R_{\mathrm{cap}} \ge \frac{23}{100}Z \ge \frac3{200}Z$.
 
-If $\mathcal R_{\mathrm{cap}} = 0$, then $Z = 0$, so $w = s = 0$, $\beta = 0$,
-$\delta = d - \frac\pi4$ and
+If $\mathcal R_{\mathrm{cap}} = 0$, then $Z = 0$, so $w = s = 0$, $\Xi = 0$,
+$\Theta = d - \frac\pi4$ and
 $\mathcal R_{\mathrm{cap}} = \Psi = K_*(\rho_* - 1)\left(1 - \cos(d - \frac\pi4)\right)$.
 So $\cos(d - \frac\pi4) = 1$, and Lemma A.15 (4) gives
 $\frac15(d - \frac\pi4)^2 \le 1 - \cos(d - \frac\pi4) = 0$, that is,
 $d = \frac\pi4$. $\square$
 
-For $\beta < 0$ the bound is of the right order: along the line $s = -w$ at
+For $\Xi < 0$ the bound is of the right order: along the line $s = -w$ at
 $d = \frac\pi4$ the remainder grows only like $0.04|w|$ (Figure E.16).
 
 ![Graph over w from -11/25 to 2/5 of the remainder along the line s = -w at d = pi/4: for negative w it rises slowly, to about 0.05 at w = -11/25, above a dashed line of slope 3/100 from the origin; for positive w it rises steeply, above a dashed line of slope 46/100; it vanishes at the origin, marked with a dot](figures/appendix-e/cap-line.svg)
 
 *Figure E.16.* Lemma E.19 along the line $s = -w$ at $d = \frac\pi4$, where
-$\delta = 0$ (the cap case) and $\beta = w$: the remainder (blue) and the bounds
-of the proof (dashed), $\frac3{200}(|w| + |s|)$ and, for $\beta \ge 0$,
-$\frac{23}{100}(|w| + |s|)$. For $\beta < 0$ the lines of the two pairs,
+$\Theta = 0$ (the cap case) and $\Xi = w$: the remainder (blue) and the bounds
+of the proof (dashed), $\frac3{200}(|w| + |s|)$ and, for $\Xi \ge 0$,
+$\frac{23}{100}(|w| + |s|)$. For $\Xi < 0$ the lines of the two pairs,
 $\ell(w) + \ell(-s) = \frac{36}{25}|w|$, barely exceed the gain of the support,
 about $1.40|\sin w|$.
 
@@ -1651,7 +1651,7 @@ about $1.40|\sin w|$.
 [`Six.Stress.diagonal_cap_lower`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L214),
 [`Six.Stress.diagonal_cap_zero`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L285).*
 
-In the vertex case $|\delta|$ is not small, so $|w + s|$ is large, and the lines
+In the vertex case $|\Theta|$ is not small, so $|w + s|$ is large, and the lines
 of the two pairs pay for the loss of the support.
 
 ### Lemma E.20 (the vertex minorant)
@@ -1727,41 +1727,41 @@ needed.
 
 ### Lemma E.21 (the vertex case)
 
-On the domain of the diagonal, if $2R_6|\sin\delta| \ge 1$, then
+On the domain of the diagonal, if $2R_6|\sin\Theta| \ge 1$, then
 
 ```math
-\mathcal R_{\mathrm{vertex}} = \ell(w) + \ell(-s) + K_*\left(\tfrac12(3\cos\beta - \sin\beta)\cos\delta + \tfrac12(\cos\beta - \sin\beta)|\sin\delta| - R_6(\cos\beta - \sin\beta)\right) + 2\beta_* > 0 .
+\mathcal R_{\mathrm{vertex}} = \ell(w) + \ell(-s) + K_*\left(\tfrac12(3\cos\Xi - \sin\Xi)\cos\Theta + \tfrac12(\cos\Xi - \sin\Xi)|\sin\Theta| - R_6(\cos\Xi - \sin\Xi)\right) + 2\beta_* > 0 .
 ```
 
-*Proof.* Let $x = \frac12|w + s|$, $y = |\beta|$ and $t = |\delta|$, so that
-$\cos\delta = \cos t$ and $|\sin\delta| = \sin t$ (as $t \le \frac{71}{100}$).
+*Proof.* Let $x = \frac12|w + s|$, $y = |\Xi|$ and $t = |\Theta|$, so that
+$\cos\Theta = \cos t$ and $|\sin\Theta| = \sin t$ (as $t \le \frac{71}{100}$).
 
 1. $x + y = \max(|w|, |s|) \le \frac{11}{25}$, as
    $|\alpha| + |\alpha'| = \max(|\alpha + \alpha'|, |\alpha - \alpha'|)$ for
-   $\alpha = \frac12(w + s)$, $\alpha' = \beta$; and
+   $\alpha = \frac12(w + s)$, $\alpha' = \Xi$; and
    $2\max(x, y) \le |w| + |s|$.
-2. $t \ge \frac{29}{100}$: $1 \le 2R_6|\sin\delta| \le \frac{17}5t$.
+2. $t \ge \frac{29}{100}$: $1 \le 2R_6|\sin\Theta| \le \frac{17}5t$.
 3. $t \le \frac27 + x$: $t \le |d - \frac\pi4| + x \le \frac\pi4 - \frac12 + x$,
    and $\pi < \frac{22}7$.
 
 By Lemma E.18 and (1),
 
 ```math
-\mathcal R_{\mathrm{vertex}} \ge \tfrac{46}{100}M - \tfrac{49}{50}\beta + K_*\left(\mathcal A\cos\beta + \mathcal B\sin\beta + \rho_* - 1\right), \qquad M = \max(x, y),
+\mathcal R_{\mathrm{vertex}} \ge \tfrac{46}{100}M - \tfrac{49}{50}\Xi + K_*\left(\mathcal A\cos\Xi + \mathcal B\sin\Xi + \rho_* - 1\right), \qquad M = \max(x, y),
 ```
 
 where $\mathcal A = \frac32\cos t + \frac12\sin t - R_6$ and
 $\mathcal B = R_6 - \frac12(\cos t + \sin t)$. Now
 $\frac32\cos t + \frac12\sin t \le \sqrt{\frac52} < \frac85 < R_6$, so
-$\mathcal A \le 0$ and $\mathcal A\cos\beta \ge \mathcal A$; and
+$\mathcal A \le 0$ and $\mathcal A\cos\Xi \ge \mathcal A$; and
 $\cos t + \sin t \le \sqrt2 < \frac32$, so $\mathcal B \ge \frac{17}{20}$ and
 $K_*\mathcal B \ge \frac54 \cdot \frac{17}{20} = \frac{17}{16}$. We claim
-$-\frac{49}{50}\beta + K_*\mathcal B\sin\beta \ge \frac{49}{50}y - K_*\mathcal By$.
-If $\beta \le 0$, this follows from $\sin\beta \ge \beta = -y$. If
-$\beta \ge 0$, then $\beta \le \frac12$ and
-$\sin\beta \ge \beta - \frac{\beta^3}6 \ge \frac{23}{24}\beta$, so
-$K_*\mathcal B(\sin\beta + \beta) \ge \frac{17}{16} \cdot \frac{47}{24}\beta$, which
-exceeds $\frac{49}{25}\beta$: this is the claim. Hence
+$-\frac{49}{50}\Xi + K_*\mathcal B\sin\Xi \ge \frac{49}{50}y - K_*\mathcal By$.
+If $\Xi \le 0$, this follows from $\sin\Xi \ge \Xi = -y$. If
+$\Xi \ge 0$, then $\Xi \le \frac12$ and
+$\sin\Xi \ge \Xi - \frac{\Xi^3}6 \ge \frac{23}{24}\Xi$, so
+$K_*\mathcal B(\sin\Xi + \Xi) \ge \frac{17}{16} \cdot \frac{47}{24}\Xi$, which
+exceeds $\frac{49}{25}\Xi$: this is the claim. Hence
 
 ```math
 \mathcal R_{\mathrm{vertex}} \ge \tfrac{46}{100}M + \tfrac{49}{50}y + K_*\left(\mathcal A - \mathcal By + \rho_* - 1\right) .
@@ -1788,7 +1788,7 @@ $\rho_* > 1.112$; and $\Phi(x, y, t) > 0$ by Lemma E.20, whose hypotheses are
 *Figure E.18.* The remainder $\mathcal R(w, s, d)$ over the box of $w$ and $s$,
 for $d = \frac\pi4$, $0.65$ and $\frac12$, shaded between contour lines at
 multiples of $0.05$ (scale below). Between the dashed lines,
-$2R_6|\sin\delta| \le 1$ (the cap case of Lemma E.19); outside them the vertex
+$2R_6|\sin\Theta| \le 1$ (the cap case of Lemma E.19); outside them the vertex
 case of Lemma E.21. The remainder vanishes only at the model, $w = s = 0$,
 $d = \frac\pi4$ (dot).
 
@@ -1797,7 +1797,7 @@ $\mathcal R = \mathcal R_{\mathrm{cap}}$ in the cap case and
 $\mathcal R = \mathcal R_{\mathrm{vertex}}$ in the vertex case. In the cap case
 $\mathcal R \ge \frac3{200}(|w| + |s|) \ge 0$, with equality only for
 $w = s = 0$ and $d = \frac\pi4$ (Lemma E.19); in the vertex case
-$2R_6|\sin\delta| > 1$ and $\mathcal R > 0$ (Lemma E.21). Figure E.18 shows
+$2R_6|\sin\Theta| > 1$ and $\mathcal R > 0$ (Lemma E.21). Figure E.18 shows
 the two cases. $\square$
 
 *Lean:

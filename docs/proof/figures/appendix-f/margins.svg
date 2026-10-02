@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="514" height="416" viewBox="0 0 514 416" role="img" aria-label="The margins by which the label clears the lower edge, for u from 0 to 31/40, and the upper edge, for u up to 1/2, at the closest admissible state with the given u. Both stay positive; the lower one comes down to about 0.0047 near u = 0.72, the upper one to arcsin 3/5 - 5/8 at u = 1/10">
-<title>The margins by which the label clears the lower edge, for u from 0 to 31/40, and the upper edge, for u up to 1/2, at the closest admissible state with the given u. Both stay positive; the lower one comes down to about 0.0047 near u = 0.72, the upper one to arcsin 3/5 - 5/8 at u = 1/10</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="514" height="416" viewBox="0 0 514 416" role="img" aria-label="The margins by which the label clears the lower edge, for b from 0 to 31/40, and the upper edge, for b up to 1/2, at the closest admissible state with the given b. Both stay positive; the lower one comes down to about 0.0047 near b = 0.72, the upper one to arcsin 3/5 - 5/8 at b = 1/10">
+<title>The margins by which the label clears the lower edge, for b from 0 to 31/40, and the upper edge, for b up to 1/2, at the closest admissible state with the given b. Both stay positive; the lower one comes down to about 0.0047 near b = 0.72, the upper one to arcsin 3/5 - 5/8 at b = 1/10</title>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
 <rect width="100%" height="100%" fill="#ffffff"/>
 <line x1="46.0" y1="358.0" x2="473.2" y2="358.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
@@ -11,7 +11,7 @@
 <text x="300.4" y="373.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">½</text>
 <line x1="432.4" y1="362.0" x2="432.4" y2="354.0" stroke="#1f2937" stroke-width="1"/>
 <text x="432.4" y="373.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">31/40</text>
-<text x="473.2" y="346.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">u</text>
+<text x="473.2" y="346.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">b</text>
 <line x1="60.4" y1="358.0" x2="60.4" y2="34.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
 <line x1="56.4" y1="298.0" x2="64.4" y2="298.0" stroke="#1f2937" stroke-width="1"/>
 <text x="53.4" y="298.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.02</text>

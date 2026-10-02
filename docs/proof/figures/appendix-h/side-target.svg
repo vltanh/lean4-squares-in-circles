@@ -46,7 +46,7 @@
 <polyline points="130.8,179.3 170.6,179.3" fill="none" stroke="#2563eb" stroke-width="2.2" stroke-linejoin="round"/>
 <text x="178.6" y="179.3" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle">side state (1, ½)</text>
 <polyline points="130.8,199.4 170.6,199.4" fill="none" stroke="#ea580c" stroke-width="2.2" stroke-linejoin="round"/>
-<text x="178.6" y="199.4" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle">transition state <tspan font-style="italic">(a<tspan dy="3.9" font-size="8.8">0</tspan><tspan dy="-3.9">, </tspan>u<tspan dy="3.9" font-size="8.8">0</tspan><tspan dy="-3.9">)</tspan></tspan></text>
+<text x="178.6" y="199.4" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle">transition state <tspan font-style="italic">(a<tspan dy="3.9" font-size="8.8">0</tspan><tspan dy="-3.9">, </tspan>b<tspan dy="3.9" font-size="8.8">0</tspan><tspan dy="-3.9">)</tspan></tspan></text>
 <polyline points="130.8,219.6 170.6,219.6" fill="none" stroke="#16a34a" stroke-width="2.2" stroke-linejoin="round"/>
 <text x="178.6" y="219.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="start" dominant-baseline="middle">diagonal corner <tspan font-style="italic">(r<tspan dy="3.9" font-size="8.8">d</tspan><tspan dy="-3.9">, </tspan>r<tspan dy="3.9" font-size="8.8">d</tspan><tspan dy="-3.9">)</tspan></tspan></text>
 <polyline points="130.8,239.8 170.6,239.8" fill="none" stroke="#9333ea" stroke-width="2.2" stroke-linejoin="round"/>

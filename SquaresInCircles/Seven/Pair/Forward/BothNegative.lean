@@ -45,27 +45,17 @@ lemma sideTarget_derivatives {t s : ℝ} (hs : s0 ≤ s ∧ s ≤ td) :
       ring
 
 lemma sideTarget_concave_second {t s : ℝ}
-    (ht : 2/5 ≤ t ∧ t ≤ Real.pi/4)
-    (hs : s0 ≤ s ∧ s ≤ td) (hcut : switchLabel t ≤ s) :
+    (ht : 2/5 ≤ t ∧ t ≤ Real.pi/4) (hs : s0 ≤ s ∧ s ≤ td) :
     sideCircleTargetDD t s ≤ 0 := by
   let d := gap-t+s
-  have hd : 0 < d ∧ d < Real.pi/2 := by
+  have hd : Real.pi/6 < d ∧ d < Real.pi/2 := by
     have hc := transition_coarse
     dsimp [d,gap]
-    constructor <;> linarith [ht.1,ht.2,hs.1,hs.2,td_bounds.2,pi_lt_22_over_7,Real.pi_gt_d2]
+    constructor <;> linarith [ht.1,ht.2,hs.1,hs.2,td_bounds.2,pi_lt_22_over_7]
   have hC := Real.cos_nonneg_of_mem_Icc ⟨by linarith [hd.1,Real.pi_pos],hd.2.le⟩
-  have hS := Real.sin_nonneg_of_nonneg_of_le_pi hd.1.le (by linarith [hd.2,Real.pi_pos])
-  have hCS : Real.cos d-(4/9)*Real.sin d ≤ 0 := by
-    have hle : switchAngle ≤ d := by dsimp [switchLabel,d] at *; linarith
-    have hsin := Real.sin_le_sin_of_le_of_le_pi_div_two
-      (by linarith [switch_range.1,Real.pi_pos]) hd.2.le hle
-    have hcos := Real.cos_le_cos_of_nonneg_of_le_pi switch_range.1.le
-      (by linarith [hd.2,Real.pi_pos]) hle
-    linarith [switch_zero]
-  have hSbig : 4/5 < Real.sin d := by
-    have hm := mul_nonneg (show 0 ≤ (4/9)*Real.sin d-Real.cos d by linarith)
-      (show 0 ≤ (4/9)*Real.sin d+Real.cos d by positivity)
-    exact lt_of_pow_lt_pow_left₀ 2 hS (by linarith [Real.sin_sq_add_cos_sq d])
+  have hS : 1/2 < Real.sin d := by
+    rw [← Real.sin_pi_div_six]
+    exact Real.sin_lt_sin_of_lt_of_le_pi_div_two (by linarith [Real.pi_pos]) hd.2.le hd.1
   have hb := circle_bounds hs
   have hZ0 : 0 < Z s := Z_pos hs
   have hZlow : 1 < Z s := hb.2.2.2.2.2.1
@@ -80,10 +70,8 @@ lemma sideTarget_concave_second {t s : ℝ}
     (by unfold targetSq; linarith [Real.sin_sq_add_cos_sq d])
   have hm := mul_nonneg (sq_nonneg (1/Z s-1))
     (show 0 ≤ Y s*Real.cos d-X s*Real.sin d+2 by linarith)
-  have hdot : 0 ≤ X s*Real.cos d+Y s*Real.sin d := by
-    have hX0 : 0 ≤ X s := by linarith [hb.2.2.2.1]
-    have hY0 : 0 ≤ Y s := hb.1.le
-    positivity
+  have hdot : 0 ≤ X s*Real.cos d+Y s*Real.sin d :=
+    add_nonneg (mul_nonneg (by linarith [hb.2.2.2.1]) hC) (mul_nonneg hb.1.le (by linarith))
   have hterm : 0 ≤ D s*(X s*Real.cos d+Y s*Real.sin d)/(Z s)^3 := by
     have hD0 : 0 ≤ D s := by linarith [(D_range hs).1]
     positivity
@@ -105,24 +93,6 @@ lemma sideTarget_at_transition (t : ℝ) : sideCircleTarget t s0=circleTarget t 
   dsimp [sideCircleTarget]
   rw [hx,hy]
   ring
-
-lemma sideTarget_at_switch {t s : ℝ} (hs : s0 ≤ s ∧ s ≤ td)
-    (he : s=switchLabel t) : sideCircleTarget t s=lineTarget t s := by
-  have hline := tie_of_side (circle_label hs)
-  have hangle : gap-t+s=switchAngle := by rw [he]; dsimp [switchLabel]; ring
-  dsimp [sideCircleTarget,lineTarget]
-  rw [hangle]
-  have hid : -(X s-1)*Real.sin switchAngle+Y s*Real.cos switchAngle-
-      (-(tieA s-1/2)*Real.sin switchAngle+((4/5)*s+1/2)*Real.cos switchAngle) =
-      (sideU s-(4/5)*s)*(Real.cos switchAngle-(4/9)*Real.sin switchAngle) := by
-    have hX : X s=tieA s+(4/9)*(Y s-1/2-(4/5)*s)+1/2 := by
-      dsimp [sideA,sideU] at hline
-      linarith
-    dsimp [sideU]
-    rw [hX]
-    ring
-  rw [switch_zero,mul_zero] at hid
-  linarith
 
 lemma diagonal_target_pos {a u s : ℝ}
     (h : Admissible a u) (hT : label a u=side a u)
@@ -165,54 +135,17 @@ lemma diagonal_target_pos {a u s : ℝ}
 
 lemma upper_target_pos {a u s : ℝ}
     (h : Admissible a u) (hT : label a u=side a u)
-    (ht : 2/5 ≤ label a u)
-    (hs : s0 ≤ s ∧ s ≤ Real.pi/4) (hcut : switchLabel (label a u) ≤ s) :
+    (ht : 2/5 ≤ label a u) (hs : s0 ≤ s ∧ s ≤ Real.pi/4) :
     0 < 1/2-u+vertexTarget (label a u) s := by
   let t := label a u
-  have ht' : 2/5 ≤ t ∧ t ≤ Real.pi/4 := ⟨ht,h.label_le_quarter⟩
-  have htrans : 0 < 1/2-u+circleTarget t s0 := by
-    rw [circleTarget_transition]
-    linarith [transition_actual_pos h hT ht]
-  by_cases hdiag : td ≤ s
-  · have hpos := diagonal_target_pos h hT ht ⟨hdiag,hs.2⟩
-    by_cases he : s=td
-    · subst s
-      have hdia := diagonal_td
-      simp only [vertexTarget,sideTopA,sideTopU,ite_eq_left le_rfl]
-      rw [side_at_diagonal.1,side_at_diagonal.2]
-      rw [hdia] at hpos
-      linarith
-    · have hn : ¬ s ≤ td := not_le.mpr (lt_of_le_of_ne hdiag (Ne.symm he))
-      simp only [vertexTarget,sideTopA,sideTopU,ite_eq_right hn]
-      linarith
-  · have hsc : s ≤ td := (lt_of_not_ge hdiag).le
-    let l := max s0 (switchLabel t)
-    have hls : l ≤ s := max_le hs.1 hcut
-    have hlt : l ≤ td := hls.trans hsc
-    have hl0 : s0 ≤ l := le_max_left _ _
-    have hlcut : switchLabel t ≤ l := le_max_right _ _
-    let f : ℝ → ℝ := fun x => 1/2-u+sideCircleTarget t x
-    let df : ℝ → ℝ := sideCircleTargetD t
-    let dd : ℝ → ℝ := sideCircleTargetDD t
-    have domain (x : ℝ) (hx : x ∈ Icc l td) : x ∈ Icc s0 td := ⟨hl0.trans hx.1,hx.2⟩
-    have hd (x : ℝ) (hx : x ∈ Icc l td) : HasDerivAt f (df x) x :=
-      (sideTarget_derivatives (t := t) (domain x hx)).1.const_add (1/2-u)
-    have hdd (x : ℝ) (hx : x ∈ Icc l td) : HasDerivAt df (dd x) x :=
-      (sideTarget_derivatives (t := t) (domain x hx)).2
-    have hlo : 0 < f l := by
-      by_cases hc : switchLabel t ≤ s0
-      · have he : l=s0 := max_eq_left hc
-        rw [he]
-        dsimp [f]
-        rw [sideTarget_at_transition]
-        exact htrans
-      · have he : l=switchLabel t := max_eq_right (le_of_not_ge hc)
-        have hline := lineTarget_low_min ht'
-          ⟨hl0,by linarith [hlt,td_bounds.2]⟩ (by rw [he])
-        have heq := sideTarget_at_switch ⟨hl0,hlt⟩ he
-        dsimp [f]
-        rw [heq]
-        linarith
+  by_cases hsc : s ≤ td
+  · let f : ℝ → ℝ := fun x => 1/2-u+sideCircleTarget t x
+    have hd (x : ℝ) (hx : x ∈ Icc s0 td) : HasDerivAt f (sideCircleTargetD t x) x :=
+      (sideTarget_derivatives hx).1.const_add (1/2-u)
+    have hlo : 0 < f s0 := by
+      dsimp [f]
+      rw [sideTarget_at_transition,circleTarget_transition]
+      linarith [transition_actual_pos h hT ht]
     have hhi : 0 < f td := by
       have hh := diagonal_target_pos h hT ht ⟨le_rfl,td_bounds.2.le⟩
       have hX : X td=rd+1/2 := by
@@ -223,16 +156,18 @@ lemma upper_target_pos {a u s : ℝ}
         have hb := side_at_diagonal.2
         dsimp [sideU] at hb
         linarith
-      have hdia := diagonal_td
-      rw [hdia] at hh
+      rw [diagonal_td] at hh
       dsimp [f,sideCircleTarget]
       rw [hX,hY]
       linarith
-    have hp := positive_of_second_nonpos ⟨hls,hsc⟩ hd hdd
-      (fun x hx => sideTarget_concave_second ht' (domain x hx) (hlcut.trans hx.1)) hlo hhi
+    have hp := positive_of_second_nonpos ⟨hs.1,hsc⟩ hd
+      (fun x hx => (sideTarget_derivatives hx).2)
+      (fun x hx => sideTarget_concave_second ⟨ht,h.label_le_quarter⟩ hx) hlo hhi
     simp only [vertexTarget,sideTopA,sideTopU,ite_eq_left hsc,sideA,sideU]
     dsimp [f,sideCircleTarget] at hp
     linarith
+  · simp only [vertexTarget,sideTopA,sideTopU,ite_eq_right hsc]
+    linarith [diagonal_target_pos h hT ht ⟨(lt_of_not_ge hsc).le,hs.2⟩]
 
 lemma target_side_pos {a u A v : ℝ}
     (h : Admissible a u) (hT : label a u=side a u) (ht : 2/5 ≤ label a u)
@@ -267,8 +202,7 @@ lemma target_side_pos {a u A v : ℝ}
       linarith [transition_actual_pos h hT ht]
     change 0 < 1/2-u-(A-1/2)*Real.sin d+(v+1/2)*Real.cos d
     linarith
-  · have hc' : switchLabel t ≤ s := (lt_of_not_ge hc).le
-    have hp := upper_target_pos h hT ht hs hc'
+  · have hp := upper_target_pos h hT ht hs
     have hcoef : Real.cos d-(4/9)*Real.sin d ≤ 0 := by
       by_contra hn
       have hle := (switch_iff hd).mp (le_of_lt (lt_of_not_ge hn))

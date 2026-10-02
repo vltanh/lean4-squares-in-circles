@@ -598,7 +598,7 @@ $f(P) - \frac\pi6$, which lies above the blue curve at $P$.
    $b_T \le \frac1{16}$. Then $T$ holds an arc of $\Gamma_{7/16}$ centred at
    its phase $\theta_T$, of half-width at least $\frac\pi3 + \frac1{14}$.
 3. Two disjoint squares $T$ and $U$ as in (2) have
-   $d(\theta_T, \theta_U) \ge \frac{2\pi}3 + \frac17$.
+   $\angle(\theta_T, \theta_U) \ge \frac{2\pi}3 + \frac17$.
 
 ![A square in its chart centred at (11/16, 1/16), the circle of radius 7/16 about o, which just touches the dashed line of the lower edge at its lowest point, and the full cap of the square on that circle, from minus A to A; dashed purple rays at plus and minus (pi/3 + 1/14) lie just inside the cap; the circle of radius 3/8 is drawn dashed](figures/06-three/wide-arc.svg)
 
@@ -634,7 +634,7 @@ centred at $\theta_T$, with half-width $A$. Finally
 $0 \le \frac{a_T - 1/2}{7/16} \le \frac37$, so by (1)
 $A \ge \frac\pi3 + \frac12 - \frac37 = \frac\pi3 + \frac1{14}$ (Figure 6.12).
 
-(3) By (2) and Lemma 3.17, $d(\theta_T, \theta_U)$ is at least the sum of the
+(3) By (2) and Lemma 3.17, $\angle(\theta_T, \theta_U)$ is at least the sum of the
 half-widths of the two arcs of (2), which is at least
 $\frac{2\pi}3 + \frac17$ (Figure 6.13). $\square$
 
@@ -775,11 +775,11 @@ $S$ and the caps of $T$ and $U$, which are centred at $\theta_T$ and
 $\theta_U$ with half-widths $A_T, A_U \ge \frac\pi3$, and step 1 give
 
 ```math
-d(\theta_T, \theta_U) \le 2\pi - L_S - A_T - A_U \le \tfrac{4\pi}3 - L_S < \tfrac{5\pi}6 - \tfrac{13}{29} .
+\angle(\theta_T, \theta_U) \le 2\pi - L_S - A_T - A_U \le \tfrac{4\pi}3 - L_S < \tfrac{5\pi}6 - \tfrac{13}{29} .
 ```
 
 **5. Contradiction.** By step 3, Lemma 6.14 (3) applies to $T$ and $U$ and
-gives $d(\theta_T, \theta_U) \ge \frac{2\pi}3 + \frac17$. But
+gives $\angle(\theta_T, \theta_U) \ge \frac{2\pi}3 + \frac17$. But
 $\frac{5\pi}6 - \frac{13}{29} < \frac{2\pi}3 + \frac17$, since
 $\frac\pi6 < \frac47 = \frac37 + \frac17 < \frac{13}{29} + \frac17$, the first
 by $\pi < \frac{22}7$ and the second as $3 \cdot 29 < 13 \cdot 7$. This
@@ -818,7 +818,7 @@ frame $\theta_3 - \frac\pi2$, in which $S_1$, $S_2$, $S_3$ sit at $c_1$,
 $c_2$, $c_3$.
 
 *Proof.* For directions $\alpha$ and $\beta$,
-$\cos(\beta - \alpha) = \cos d(\alpha, \beta)$ (§2.1), so any two of the three
+$\cos(\beta - \alpha) = \cos \angle(\alpha, \beta)$ (§2.1), so any two of the three
 directions differ by an angle whose cosine is $\cos\frac{2\pi}3 = -\frac12$. If
 $\varepsilon' = \varepsilon$, the first two directions differ by
 $\psi - \phi = \pi$, and $\cos\pi = -1$. So $\varepsilon' = -\varepsilon$. Put

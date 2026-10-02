@@ -65,7 +65,7 @@ numbered statement names the declarations that prove it.
   - [Theorem 5.1 (two squares)](05-two.md#theorem-51-two-squares)
   - [5.1 Construction](05-two.md#51-construction)
   - [5.2 The centres](05-two.md#52-the-centres)
-  - [5.3 The half circles](05-two.md#53-the-half-circles)
+  - [5.3 The shared edge](05-two.md#53-the-shared-edge)
   - [5.4 Proof of Theorem 5.1](05-two.md#54-proof-of-theorem-51)
 - [6. Three squares](06-three.md)
   - [Theorem 6.1 (three squares)](06-three.md#theorem-61-three-squares)
@@ -336,18 +336,18 @@ the diamond $a + b \le 1$ (Table 1.2).
 **One and two squares** (Chapters 4 and 5). At the radius $R_1$ the
 inequality forces $a_S = b_S = 0$: the square is centred at the disk centre.
 At the radius $R_2$ it keeps both centres within $\frac12$ of the disk centre,
-while the centres of disjoint squares are at least 1 apart; so both centres are
-exactly $\frac12$ away, and each square holds the half of a small circle about
-the disk centre that faces it. Disjoint half circles are opposite, and that is
-the rectangle (Figure 1.5).
+while the centres of disjoint squares are at least 1 apart; so the centres are
+exactly 1 apart, with the disk centre as their midpoint. Disjoint squares
+whose centres are 1 apart share a full edge (Lemma 3.13), and that is the
+rectangle (Figure 1.5).
 
-![Two squares S and T forming a 2 by 1 rectangle in the dashed circle of radius R_2 about o. Their centres c_S and c_T lie on the circle of radius 1/2 about o, at the ends of a horizontal diameter of length 1; the right half of that circle is drawn thick in S and the left half in T](figures/01-introduction/two.svg)
+![Two squares S and T forming a 2 by 1 rectangle in the dashed circle of radius R_2 about o. Their centres c_S and c_T lie on the dashed circle of radius 1/2 about o, at the ends of a horizontal diameter of length 1, and the edge the two squares share, through o, is drawn thick](figures/01-introduction/two.svg)
 
 *Figure 1.5.* Two squares at the radius $R_2$. Both centres lie within
-$\frac12$ of $o$ and at least 1 apart, so they are the ends of a diameter of
-the circle $\Gamma_{1/2}$ of radius $\frac12$ about $o$. Each square holds the
-half of $\Gamma_{1/2}$ on its side (thick), these half circles are opposite,
-and the squares form the rectangle.
+$\frac12$ of $o$ and at least 1 apart, so they are exactly 1 apart, at the
+ends of a diameter of the circle $\Gamma_{1/2}$ of radius $\frac12$ about $o$.
+Squares whose centres are 1 apart share a full edge (thick), so the squares
+form the rectangle.
 
 **Three to five squares** (Chapters 6 to 8). These cases share one method,
 run once at the optimal radius. Take a packing in the closed disk of radius

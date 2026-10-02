@@ -25,7 +25,7 @@
 <path d="M 147.0 190.5 A 45.0 45.0 0 0 0 131.4 174.6" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-linecap="round"/>
 <text x="150.9" y="171.1" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">½</text>
 <circle cx="258.0" cy="138.0" r="3.2" fill="#2563eb"/>
-<text x="325.5" y="53.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="end" dominant-baseline="middle">(<tspan font-style="italic">a</tspan>, <tspan font-style="italic">u</tspan>) = (1, ½)</text>
+<text x="325.5" y="53.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="end" dominant-baseline="middle">(<tspan font-style="italic">a</tspan>, <tspan font-style="italic">b</tspan>) = (1, ½)</text>
 <circle cx="108.0" cy="213.0" r="3.2" fill="#1f2937"/>
 <text x="112.5" y="225.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">o</text>
 <text x="84.0" y="351.0" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle" font-style="italic">Γ<tspan dy="4.8" font-size="10.9">1</tspan></text>
@@ -52,7 +52,7 @@
 <path d="M 524.9 196.5 A 45.0 45.0 0 0 0 511.8 178.5" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-linecap="round"/>
 <text x="531.7" y="177.9" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">½</text>
 <circle cx="618.0" cy="168.0" r="3.2" fill="#2563eb"/>
-<text x="685.5" y="83.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="end" dominant-baseline="middle">(<tspan font-style="italic">a</tspan>, <tspan font-style="italic">u</tspan>) = (0.9, 0.3)</text>
+<text x="685.5" y="83.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="end" dominant-baseline="middle">(<tspan font-style="italic">a</tspan>, <tspan font-style="italic">b</tspan>) = (0.9, 0.3)</text>
 <circle cx="483.0" cy="213.0" r="3.2" fill="#1f2937"/>
 <text x="487.5" y="225.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">o</text>
 <text x="459.0" y="351.0" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle" font-style="italic">Γ<tspan dy="4.8" font-size="10.9">1</tspan></text>

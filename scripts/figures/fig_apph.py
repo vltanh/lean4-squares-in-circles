@@ -10,7 +10,7 @@ bounds of the proofs by sampling the functions, and the label regions by
 clipping the admissible region with the lines of the labels. The boundary
 curves are those of Definitions G.9 and G.13: circle_a is gamma, tie_line is
 lambda, axial_top is chi, tie_a is alpha, diagonal is delta and side_top is the
-top (a-hat, u-hat) of a side label.
+top (a-hat, b-hat) of a side label.
 """
 import math
 
@@ -27,29 +27,29 @@ BLUE, ORANGE, GREEN, PURPLE, PINK = COLORS[:5]
 # The states, labels and boundary functions of Chapter 10 and Appendix G.
 
 
-def axial(u_):
-    return 5 * u_ / 4
+def axial(b):
+    return 5 * b / 4
 
 
-def side(a, u_):
-    return PI / 6 + (u_ - 0.5) / 3 + 3 * (1 - a) / 4
+def side(a, b):
+    return PI / 6 + (b - 0.5) / 3 + 3 * (1 - a) / 4
 
 
-def label(a, u_):
-    return min(axial(u_), side(a, u_), PI / 4)
+def label(a, b):
+    return min(axial(b), side(a, b), PI / 4)
 
 
-def phi(a, u_):
-    return (a + 0.5) ** 2 + (u_ + 0.5) ** 2
+def phi(a, b):
+    return (a + 0.5) ** 2 + (b + 0.5) ** 2
 
 
-def remainder(a, u_):
-    return 4 - 3 * a - 2 * u_
+def remainder(a, b):
+    return 4 - 3 * a - 2 * b
 
 
-def admissible(a, u_, tol=1e-9):
-    return (-tol <= u_ <= a + tol and a >= 0.5 - tol
-            and phi(a, u_) <= 13 / 4 + tol)
+def admissible(a, b, tol=1e-9):
+    return (-tol <= b <= a + tol and a >= 0.5 - tol
+            and phi(a, b) <= 13 / 4 + tol)
 
 
 def circle_a(w):
@@ -80,15 +80,15 @@ def diagonal(x):
 M = 2 * PI + 17
 JJ = math.sqrt(202 * 13 / 4 - M ** 2)
 A0 = (9 * M + 11 * JJ) / 202 - 0.5
-U0 = (11 * M - 9 * JJ) / 202 - 0.5
-S0 = 5 / 4 * U0
+B0 = (11 * M - 9 * JJ) / 202 - 0.5
+S0 = 5 / 4 * B0
 RD = math.sqrt(13 / 8) - 0.5
 TD = PI / 6 + 7 / 12 - 5 / 12 * RD
 THD = TD + S0 - PI / 6                  # theta_d of Lemma G.19
 
 
 def side_top(x):
-    """(a-hat(x), u-hat(x)): the upper end of the segment of side label x."""
+    """(a-hat(x), b-hat(x)): the upper end of the segment of side label x."""
     if x > TD:
         return diagonal(x), diagonal(x)
     n = 97 / 144
@@ -99,9 +99,9 @@ def side_top(x):
     return X - 0.5, Y - 0.5
 
 
-def J(a, A, v, e):
+def J(a, A, B, e):
     return 0.5 - a - A * math.sin(e) + abs(math.sin(e)) / 2 + \
-        (v + 0.5) * math.cos(e)
+        (B + 0.5) * math.cos(e)
 
 
 def upper(z, x):
@@ -208,22 +208,22 @@ class Graph:
 # Figure H.1: the canonical pair on the inward axis in four sectors.
 
 
-def canonical_pair(a, uu, A, v, s, t):
+def canonical_pair(a, b, A, B, s, t):
     """The squares S and T of the canonical pair at the gap pi/3, in the chart
     of S: centres, turning angles (degrees), and the two markers."""
-    l1, l2 = label(a, uu), label(A, v)
+    l1, l2 = label(a, b), label(A, B)
     d = PI / 3 + s * l1 - t * l2
-    cs = (a, s * uu)
-    ct = (A * math.cos(d) - t * v * math.sin(d),
-          A * math.sin(d) + t * v * math.cos(d))
+    cs = (a, s * b)
+    ct = (A * math.cos(d) - t * B * math.sin(d),
+          A * math.sin(d) + t * B * math.cos(d))
     return cs, ct, math.degrees(d), s * l1, s * l1 + PI / 3
 
 
-def pair_panel(f, off, title, a, uu, A, v, s, t, y_sh=-1.28):
+def pair_panel(f, off, title, a, b, A, B, s, t, y_sh=-1.28):
     def P(p):
         return (p[0] + off[0], p[1] + off[1])
 
-    cs, ct, ddeg, m1, m2 = canonical_pair(a, uu, A, v, s, t)
+    cs, ct, ddeg, m1, m2 = canonical_pair(a, b, A, B, s, t)
     S = square_corners(cs)
     T = square_corners(ct, ddeg)
     f.circle(P((0, 0)), 1, stroke=FAINT, dash='4 4')
@@ -249,9 +249,9 @@ def pair_panel(f, off, title, a, uu, A, v, s, t, y_sh=-1.28):
     t_hi = max(q[0] for q in T)
     sigma = t_hi - s_lo
     # the closed form (H.1) of the inward sum, for s = +1
-    e = label(a, uu) - t * label(A, v) - PI / 6
+    e = label(a, b) - t * label(A, B) - PI / 6
     closed = (0.5 - a - A * math.sin(e) + abs(math.sin(e)) / 2
-              + (0.5 - t * v) * math.cos(e))
+              + (0.5 - t * B) * math.cos(e))
     assert s == 1 and abs(sigma - closed) < 1e-12
     f.line(P((-1.15, y_sh)), P((1.72, y_sh)), width=1)
     f.line(P((-0.75, y_sh + 0.2)), P((-1.1, y_sh + 0.2)), width=1.4,
@@ -284,9 +284,9 @@ def inward_sectors():
         ((0, -h), '(c) side target; (+, +)', (1.1, 0.1, 1.0, 0.5, 1, 1)),
         ((w, -h), '(d) opposite signs; (+, −)', (1.0, 0.5, 1.0, 0.1, 1, -1)),
     ]
-    for off, title, (a, uu, A, v, s, t) in panels:
-        assert admissible(a, uu) and admissible(A, v)
-        sigma = pair_panel(f, off, title, a, uu, A, v, s, t)
+    for off, title, (a, b, A, B, s, t) in panels:
+        assert admissible(a, b) and admissible(A, B)
+        sigma = pair_panel(f, off, title, a, b, A, B, s, t)
         assert sigma >= -1e-12
     f.save('appendix-h/inward-sectors', 'The canonical pair on the inward axis in '
            'four sectors, with the shadows of the two squares on the line of '
@@ -418,7 +418,7 @@ def positive_turn():
         assert lhs(e) >= bound(e) - 1e-15 and bound(e) >= e / 840 - 1e-15
     assert 9 / 5 - 26 / 15 - 11 / 168 == 1 / 840 or \
         abs(9 / 5 - 26 / 15 - 11 / 168 - 1 / 840) < 1e-15
-    g.text(0.2, lhs(0.2) + 0.00045, 'A = √3 − ½, v = 0', color=BLUE,
+    g.text(0.2, lhs(0.2) + 0.00045, 'A = √3 − ½, B = 0', color=BLUE,
            size=14, anchor='start')
     g.text(0.168, 0.00125, 'e(9/5 − √3 − e/4)', color=ORANGE, size=14)
     g.text(0.236, 0.236 / 840 + 0.0002, 'e/840', color=FAINT, size=14)
@@ -435,15 +435,15 @@ def side_axial_least(l1, e):
     """The least inward sum, for the signs (+, +), of the source at the top of
     the side label l1 and the targets with the axial label l1 - pi/6 - e;
     and the bound of Proposition H.7."""
-    a, uu = side_top(l1)
+    a, b = side_top(l1)
     l2 = l1 - PI / 6 - e
-    v = 0.8 * l2
+    B = 0.8 * l2
     # (H.1) is affine in A: decreasing for e > 0, increasing for e < 0
-    A = axial_top(v) if e >= 0 else max(0.5, v)
-    assert admissible(A, v) and abs(label(A, v) - l2) < 1e-9
+    A = axial_top(B) if e >= 0 else max(0.5, B)
+    assert admissible(A, B) and abs(label(A, B) - l2) < 1e-9
     sigma = (0.5 - a - A * math.sin(e) + abs(math.sin(e)) / 2
-             + (0.5 - v) * math.cos(e))
-    return sigma, 2 / 15 * remainder(a, uu) + abs(e) / 840
+             + (0.5 - B) * math.cos(e))
+    return sigma, 2 / 15 * remainder(a, b) + abs(e) / 840
 
 
 def side_axial():
@@ -456,21 +456,21 @@ def side_axial():
     f.line(g.q(0, 0), g.q(0, 0.09), stroke=FAINT, width=1, dash='3 3')
     sources = [(PI / 6, BLUE), (0.6, ORANGE), (0.75, GREEN)]
     for l1, color in sources:
-        a, uu = side_top(l1)
-        assert admissible(a, uu) and abs(label(a, uu) - l1) < 1e-9
+        a, b = side_top(l1)
+        assert admissible(a, b) and abs(label(a, b) - l1) < 1e-9
         e0, e1 = max(lo, l1 - 5 * PI / 12), l1 - PI / 6
         for k in range(401):
             e = e0 + (e1 - e0) * k / 400
-            s, b = side_axial_least(l1, e)
-            assert s >= b - 1e-12
+            s, low = side_axial_least(l1, e)
+            assert s >= low - 1e-12
         # at e = 0 the bound is attained: sigma_2 = 2 r / 15, by (H.3)
-        s, b = side_axial_least(l1, 0.0)
-        assert abs(s - b) < 1e-12
+        s, low = side_axial_least(l1, 0.0)
+        assert abs(s - low) < 1e-12
         g.curve(lambda e: side_axial_least(l1, e)[1], e0, e1, stroke=color,
                 width=1.4, dash='5 4')
         g.curve(lambda e: side_axial_least(l1, e)[0], e0, e1, stroke=color,
                 width=2.2)
-        g.dot(0, b, r=3.6, fill=color)
+        g.dot(0, low, r=3.6, fill=color)
     g.legend([('side state, ' + it('ℓ') + ' = π/6', BLUE, None, False),
               (it('ℓ') + ' = 0.6', ORANGE, None, False),
               (it('ℓ') + ' = 0.75', GREEN, None, False),
@@ -488,21 +488,21 @@ def side_axial():
 
 
 def target_arc():
-    A, v = 1.0, 0.5
-    l2 = label(A, v)
+    A, B = 1.0, 0.5
+    l2 = label(A, B)
     x = PI / 8
     psi = PI / 3 + x - l2
     n = u(-psi)
     tv = (-n[1], n[0])
-    H = (A + 0.5) * math.cos(psi) + (0.5 - v) * math.sin(psi)
-    corners = square_corners((A, v))
+    H = (A + 0.5) * math.cos(psi) + (0.5 - B) * math.sin(psi)
+    corners = square_corners((A, B))
     assert abs(max(q[0] * n[0] + q[1] * n[1] for q in corners) - H) < 1e-12
     pt = u(l2 - 0.5)
     proj = math.cos(PI / 3 + x - 0.5)
     assert abs(pt[0] * n[0] + pt[1] * n[1] - proj) < 1e-12 and proj > 0
     f = Figure(-1.2, 1.75, -1.42, 1.2, 170)
     f.circle((0, 0), 1, stroke=FAINT, dash='4 4')
-    f.square((A, v), fill=FILLS[2], stroke=GREEN)
+    f.square((A, B), fill=FILLS[2], stroke=GREEN)
     f.text((1.3, 0.85), 'T', size=17, color=GREEN)
     f.arc((0, 0), 1, l2 - 0.5, l2 + 0.5, GREEN, width=5)
     f.line((0, 0), u(l2), stroke=GREEN, width=1, dash='3 3')
@@ -571,8 +571,8 @@ def quarter_profile():
 
 def side_target():
     targets = [((1.0, 0.5), 'side state (1, ½)', BLUE),
-               ((A0, U0), 'transition state ' + it(sbn('(a', '0', ', ', 13)
-                                                    + sbn('u', '0', ')', 13)),
+               ((A0, B0), 'transition state ' + it(sbn('(a', '0', ', ', 13)
+                                                    + sbn('b', '0', ')', 13)),
                 ORANGE),
                ((RD, RD), 'diagonal corner ' + it(sbn('(r', 'd', ', ', 13)
                                                   + sbn('r', 'd', ')', 13)),
@@ -585,27 +585,27 @@ def side_target():
            [(0, '0'), (0.1, '0.1'), (0.2, '0.2'), (0.3, '0.3'), (0.4, '0.4'),
             (0.5, '0.5')], xname='ℓ')
     # the lower bounds of f at the two ends, from Lemmas H.9 and H.11
-    b0, b1 = 0.5 - 2 * PI / 15, PI / 15 - 1 / 6
-    g.points([(0, b0), (0.07, b0)], stroke=INK, width=1.4, dash='4 3')
-    g.points([(PI / 4 - 0.07, b1), (PI / 4, b1)], stroke=INK, width=1.4,
+    low0, low1 = 0.5 - 2 * PI / 15, PI / 15 - 1 / 6
+    g.points([(0, low0), (0.07, low0)], stroke=INK, width=1.4, dash='4 3')
+    g.points([(PI / 4 - 0.07, low1), (PI / 4, low1)], stroke=INK, width=1.4,
              dash='4 3')
-    g.text(0.006, b0 - 0.024, '½ − 2π/15', size=13, italic=False,
+    g.text(0.006, low0 - 0.024, '½ − 2π/15', size=13, italic=False,
            anchor='start')
-    g.text(PI / 4 - 0.006, b1 + 0.022, 'π/15 − 1/6', size=13, italic=False,
+    g.text(PI / 4 - 0.006, low1 + 0.022, 'π/15 − 1/6', size=13, italic=False,
            anchor='end')
     rows = []
-    for (A, v), name, color in targets:
-        assert admissible(A, v)
-        l2 = side(A, v)
-        assert abs(label(A, v) - l2) < 1e-9
+    for (A, B), name, color in targets:
+        assert admissible(A, B)
+        l2 = side(A, B)
+        assert abs(label(A, B) - l2) < 1e-9
 
-        def fx(x, A=A, v=v, l2=l2):
+        def fx(x, A=A, B=B, l2=l2):
             psi = PI / 3 + x - l2
             return (-0.5 - 2 * PI / 15 + 0.8 * x
-                    + (A + 0.5) * math.cos(psi) + (0.5 - v) * math.sin(psi))
+                    + (A + 0.5) * math.cos(psi) + (0.5 - B) * math.sin(psi))
         for j in range(101):
             assert fx(PI / 4 * j / 100) > 0
-        assert fx(0) > b0 and fx(PI / 4) > b1
+        assert fx(0) > low0 and fx(PI / 4) > low1
         g.curve(fx, stroke=color, width=2)
         g.dot(0, fx(0), fill=color)
         g.dot(PI / 4, fx(PI / 4), fill=color)
@@ -629,19 +629,19 @@ def side_target():
 
 
 def negative_least(z, l1, A):
-    """sigma_2 - 2 r(a, u)/15 for a side source of label l1 and an axial
-    target (A, v), signs (+, -), turn -z (Lemma H.13 (2))."""
-    v = 0.8 * (PI / 6 - z - l1)
-    return -0.8 * z + (A + 0.5) * math.sin(z) - (v + 0.5) * (1 - math.cos(z))
+    """sigma_2 - 2 r(a, b)/15 for a side source of label l1 and an axial
+    target (A, B), signs (+, -), turn -z (Lemma H.13 (2))."""
+    B = 0.8 * (PI / 6 - z - l1)
+    return -0.8 * z + (A + 0.5) * math.sin(z) - (B + 0.5) * (1 - math.cos(z))
 
 
 def negative_turn():
     hi = 1 / 6
-    zmax = PI / 6 - S0          # the largest turn: source label s0, v = 0
+    zmax = PI / 6 - S0          # the largest turn: source label s0, B = 0
 
     def least(z):
-        """The least of sigma_2 - 2 r(a, u)/15 at the turn -z, divided by z:
-        it is increasing in A and decreasing in v, so it is least at A = 1/2
+        """The least of sigma_2 - 2 r(a, b)/15 at the turn -z, divided by z:
+        it is increasing in A and decreasing in B, so it is least at A = 1/2
         and at the source label s0 (the transition state)."""
         if z == 0:
             return 0.2
@@ -654,9 +654,9 @@ def negative_turn():
         # brute force over the source labels and the targets of the turn
         for j in range(21):
             l1 = S0 + (PI / 6 - z - S0) * j / 20
-            v = 0.8 * (PI / 6 - z - l1)
-            for A in (max(0.5, v), axial_top(v)):
-                assert admissible(A, v) and abs(label(A, v) - axial(v)) < 1e-9
+            B = 0.8 * (PI / 6 - z - l1)
+            for A in (max(0.5, B), axial_top(B)):
+                assert admissible(A, B) and abs(label(A, B) - axial(B)) < 1e-9
                 assert negative_least(z, l1, A) >= least(z) * z - 1e-15
         assert least(z) >= poly(z) >= 1 / 12
     assert zmax < hi
@@ -714,7 +714,7 @@ def label_boundary():
     f.line((0.42, 0), (1.34, 0), width=1, arrow=True)
     f.line((0.45, -0.05), (0.45, 0.84), width=1, arrow=True)
     f.text((1.34, -0.035), 'a', anchor='end')
-    f.text((0.435, 0.83), 'u', anchor='end')
+    f.text((0.435, 0.83), 'b', anchor='end')
     for x in (0.5, 1.0):
         f.line((x, -0.008), (x, 0.008), width=1)
         f.text((x, -0.035), f'{x:g}', size=13, italic=False)
@@ -730,11 +730,11 @@ def label_boundary():
     stop = [side_top(S0 + (PI / 4 - S0) * j / 300) for j in range(301)]
     polyline(f, stop, stroke=ORANGE, width=3.4)
     # an axial segment of a target, least at its right end
-    v = 0.2
-    f.line((0.5, v), (axial_top(v) - 0.02, v), stroke=BLUE, width=1.6,
+    B = 0.2
+    f.line((0.5, B), (axial_top(B) - 0.02, B), stroke=BLUE, width=1.6,
            arrow=True)
-    f.dot((axial_top(v), v), r=4.5, fill=BLUE)
-    f.text((0.62, v + 0.025), 'axial segment', size=13, italic=False,
+    f.dot((axial_top(B), B), r=4.5, fill=BLUE)
+    f.text((0.62, B + 0.025), 'axial segment', size=13, italic=False,
            color=BLUE)
     # a side segment of a source, least at its top
     x = 0.45
@@ -754,8 +754,8 @@ def label_boundary():
     f.text(shift(tp, (-0.02, 0.0)), 'target', size=13, italic=False,
            color=ORANGE, anchor='end')
     # special states
-    for p, s, dx, dy in (((A0, U0), sbn('(a', '0', ', ', 14) +
-                          sbn('u', '0', ')', 14), 0.02, -0.03),
+    for p, s, dx, dy in (((A0, B0), sbn('(a', '0', ', ', 14) +
+                          sbn('b', '0', ')', 14), 0.02, -0.03),
                          ((RD, RD), sbn('(r', 'd', ', ', 14) +
                           sbn('r', 'd', ')', 14), 0.02, 0.025),
                          ((1.0, 0.5), '(1, ½)', 0.02, 0.0)):
@@ -766,7 +766,7 @@ def label_boundary():
     f.text((0.66, 0.72), 'capped', size=13, italic=False, color=FAINT)
     f.text((1.215, 0.12), 'φ = 13/4', size=14, anchor='start')
     f.text((0.9, 0.42), 'tie line', size=13, italic=False, anchor='end')
-    f.save('appendix-h/label-boundary', 'The admissible region in the (a, u)-plane '
+    f.save('appendix-h/label-boundary', 'The admissible region in the (a, b)-plane '
            'with its axial, side and capped parts, the top of the axial region '
            'and the tops of the side labels, and the ends of label segments '
            'where the inward sum with opposite signs is least')
@@ -826,20 +826,20 @@ def circle_bound():
            'the gap below the tangent divided by w^2 stays above 5/16')
 
 
-def radial_form(z, v):
-    """E(z, v) of Definition H.16."""
-    return (4 / 5 * z + 6 / 25 * (z - 5 * v / 4) ** 2
-            - (SQRT3 - 1 - SQRT3 / 6 * v - 5 / 16 * v ** 2) * math.sin(z)
-            - (v + 0.5) * (1 - math.cos(z)))
+def radial_form(z, B):
+    """E(z, B) of Definition H.16."""
+    return (4 / 5 * z + 6 / 25 * (z - 5 * B / 4) ** 2
+            - (SQRT3 - 1 - SQRT3 / 6 * B - 5 / 16 * B ** 2) * math.sin(z)
+            - (B + 0.5) * (1 - math.cos(z)))
 
 
 def radial_beta(z):
     return 3 / 8 + 5 / 16 * math.sin(z)
 
 
-def radial_affine(z, v):
-    """L(v) = E(z, v) - beta(z) (v - z/2)^2 of Lemma H.18."""
-    return radial_form(z, v) - radial_beta(z) * (v - z / 2) ** 2
+def radial_affine(z, B):
+    """L(B) = E(z, B) - beta(z) (B - z/2)^2 of Lemma H.18."""
+    return radial_form(z, B) - radial_beta(z) * (B - z / 2) ** 2
 
 
 def end_bound0(z):
@@ -861,21 +861,21 @@ def radial_ends():
     rho = SQRT3 - 1 - SQRT3 / 6 * 0.3 - 5 / 16 * 0.09
     for k in range(1, 201):
         z = c * k / 200
-        # Lemma H.17 at v = 0: the bound is positive and below L(0).
+        # Lemma H.17 at B = 0: the bound is positive and below L(0).
         assert 0 < end_bound0(z) <= radial_affine(z, 0)
-        # Lemma H.17 at v = 3/10: F'' is negative, below the cubic bound.
+        # Lemma H.17 at B = 3/10: F'' is negative, below the cubic bound.
         cubic = -3 / 10 + 3 / 16 * z + 3 / 10 * z ** 2 + 5 / 32 * z ** 3
         h = 1e-4
         fd = (radial_affine(z + h, 0.3) - 2 * radial_affine(z, 0.3)
               + radial_affine(z - h, 0.3)) / h ** 2
         assert abs(fd - top_second(z)) < 1e-5 and top_second(z) < cubic < 0
-        # Lemma H.18: L is affine in v, so E is positive between the heights.
+        # Lemma H.18: L is affine in B, so E is positive between the heights.
         for j in range(31):
-            v = 0.3 * j / 30
-            d = ((1 - 10 * v / 3) * radial_affine(z, 0)
-                 + 10 * v / 3 * radial_affine(z, 0.3))
-            assert abs(radial_affine(z, v) - d) < 1e-12
-            assert radial_form(z, v) > 0
+            B = 0.3 * j / 30
+            d = ((1 - 10 * B / 3) * radial_affine(z, 0)
+                 + 10 * B / 3 * radial_affine(z, 0.3))
+            assert abs(radial_affine(z, B) - d) < 1e-12
+            assert radial_form(z, B) > 0
     # the decimal bounds of the proof of Lemma H.17
     assert 1800 - 1733 == 67 and 1 / 100 + 3 / 32 < 0.104
     assert 0.067 - c * 0.104 > 0 and 1 / 6 - c ** 2 / 120 > 0.163
@@ -891,21 +891,21 @@ def radial_ends():
     W, H, gap = 300, 230, 84
     f = Figure(-58, 2 * W + gap + 24, -44, H + 46, 1, pad=0)
     # (a) At z = 5/8, E is a square plus the affine L, positive at both ends.
-    vmax = 0.36
-    a = Graph(0, vmax, 0, 0.08, width=W, height=H, fig=f)
+    Bmax = 0.36
+    a = Graph(0, Bmax, 0, 0.08, width=W, height=H, fig=f)
     a.axes([(0, '0'), (0.1, '0.1'), (0.2, '0.2'), (0.3, '3/10')],
            [(0, '0'), (0.02, '0.02'), (0.04, '0.04'), (0.06, '0.06'),
-            (0.08, '0.08')], xname='v')
+            (0.08, '0.08')], xname='B')
     f.line(a.q(0.3, 0), a.q(0.3, 0.08), stroke=FAINT, width=1, dash='4 3')
-    a.curve(lambda v: radial_beta(c) * (v - c / 2) ** 2, stroke=ORANGE,
+    a.curve(lambda B: radial_beta(c) * (B - c / 2) ** 2, stroke=ORANGE,
             width=2.2)
-    a.curve(lambda v: radial_affine(c, v), 0, 0.3, stroke=GREEN, width=2.2)
-    a.curve(lambda v: radial_form(c, v), stroke=BLUE, width=2.2)
-    for v in (0, 0.3):
-        a.dot(v, radial_affine(c, v), fill=GREEN)
-    a.legend([('E(5/8, v)', BLUE, None, True),
-              ('β(5/8)(v − 5/16)²', ORANGE, None, True),
-              ('L(v)', GREEN, None, True)], 0.15, 0.074, 0.0085, 0.03)
+    a.curve(lambda B: radial_affine(c, B), 0, 0.3, stroke=GREEN, width=2.2)
+    a.curve(lambda B: radial_form(c, B), stroke=BLUE, width=2.2)
+    for B in (0, 0.3):
+        a.dot(B, radial_affine(c, B), fill=GREEN)
+    a.legend([('E(5/8, B)', BLUE, None, True),
+              ('β(5/8)(B − 5/16)²', ORANGE, None, True),
+              ('L(B)', GREEN, None, True)], 0.15, 0.074, 0.0085, 0.03)
     f.text((W / 2, H + 30), '(a) the radial form at ' + it('z') + ' = 5/8',
            size=14, italic=False)
     # (b) The two heights: L(0) positive, F concave above its chord.
@@ -924,21 +924,21 @@ def radial_ends():
     f.text((W + gap + W / 2, H + 30), '(b) the two heights', size=14,
            italic=False)
     f.save('appendix-h/radial-ends', 'The radial form at z = 5/8 as a square plus '
-           'an affine function of v that is positive at v = 0 and v = 3/10; '
-           'the two heights on [0, 5/8], the one at v = 3/10 concave and '
+           'an affine function of B that is positive at B = 0 and B = 3/10; '
+           'the two heights on [0, 5/8], the one at B = 3/10 concave and '
            'above its chord')
 
 
 def circular_pair():
     l1, l2 = 0.45, 0.3
-    a, uu = side_top(l1)
-    v = 0.8 * l2
-    A = axial_top(v)
-    assert abs(label(a, uu) - l1) < 1e-9 and abs(label(A, v) - l2) < 1e-9
-    assert abs(phi(a, uu) - 13 / 4) < 1e-9 and abs(phi(A, v) - 13 / 4) < 1e-9
-    cs, ct, ddeg, m1, m2 = canonical_pair(a, uu, A, v, 1, -1)
+    a, b = side_top(l1)
+    B = 0.8 * l2
+    A = axial_top(B)
+    assert abs(label(a, b) - l1) < 1e-9 and abs(label(A, B) - l2) < 1e-9
+    assert abs(phi(a, b) - 13 / 4) < 1e-9 and abs(phi(A, B) - 13 / 4) < 1e-9
+    cs, ct, ddeg, m1, m2 = canonical_pair(a, b, A, B, 1, -1)
     z = l1 + l2 - PI / 6
-    Jv = J(a, A, v, z)
+    Jv = J(a, A, B, z)
     S = square_corners(cs)
     T = square_corners(ct, ddeg)
     R = math.sqrt(13) / 2
@@ -1150,21 +1150,21 @@ def upper_cases():
 
 
 def transition_shift():
-    uu, v = 0.15, 0.59                  # the source and target heights
+    b, B = 0.15, 0.59                   # the source and target heights
     a = 1.16                            # an axial source with a > a0
-    A = axial_top(v) - 0.06             # an axial target below its top
-    z = 1.25 * (uu + v) - PI / 6
-    vp = v - (U0 - uu)
-    Ap = axial_top(vp)
-    for (x, y) in ((a, uu), (A, v), (Ap, vp)):
+    A = axial_top(B) - 0.06             # an axial target below its top
+    z = 1.25 * (b + B) - PI / 6
+    Bp = B - (B0 - b)
+    Ap = axial_top(Bp)
+    for (x, y) in ((a, b), (A, B), (Ap, Bp)):
         assert admissible(x, y) and abs(label(x, y) - axial(y)) < 1e-12
-    assert z > 0 and uu < U0 and 0 < vp <= v <= PI / 5
-    assert abs(S0 + 1.25 * vp - PI / 6 - z) < 1e-12
-    diff = J(a, A, v, z) - J(A0, Ap, vp, z)
+    assert z > 0 and b < B0 and 0 < Bp <= B <= PI / 5
+    assert abs(S0 + 1.25 * Bp - PI / 6 - z) < 1e-12
+    diff = J(a, A, B, z) - J(A0, Ap, Bp, z)
     assert abs(diff - ((A0 - a) + (Ap - A) * math.sin(z)
-                       + (U0 - uu) * math.cos(z))) < 1e-12 and diff >= 0
-    assert A0 < a <= circle_a(uu) <= A0 + 0.5 * (U0 - uu)
-    assert A <= axial_top(v) <= Ap and J(A0, Ap, vp, z) > 0
+                       + (B0 - b) * math.cos(z))) < 1e-12 and diff >= 0
+    assert A0 < a <= circle_a(b) <= A0 + 0.5 * (B0 - b)
+    assert A <= axial_top(B) <= Ap and J(A0, Ap, Bp, z) > 0
     lo, hi, top = 0.56, 1.46, 0.66
     f = Figure(lo, hi, -0.08, top, 560)
     adm, axial_region, side_region, cap_region = label_regions()
@@ -1184,41 +1184,41 @@ def transition_shift():
     polyline(f, [(circle_a(w), w) for w in ws], stroke=FAINT, width=1.2)
     polyline(f, [(axial_top(w), w) for w in ws if w <= PI / 5],
              stroke=BLUE, width=2.4)
-    # the bound a <= a0 + (u0 - w)/2 below the transition state
-    f.line((A0, U0), (A0 + 0.5 * U0, 0), stroke=INK, width=1, dash='4 3')
+    # the bound a <= a0 + (b0 - w)/2 below the transition state
+    f.line((A0, B0), (A0 + 0.5 * B0, 0), stroke=INK, width=1, dash='4 3')
     # the moves: the source up to the transition state, the target down by
     # the same amount and out to the top of the axial region
-    f.line((a, uu), shift((A0, U0), (a - A0, uu - U0), 0.06), stroke=INK,
+    f.line((a, b), shift((A0, B0), (a - A0, b - B0), 0.06), stroke=INK,
            width=1.5, arrow=True)
-    f.line((A, v), shift((Ap, vp), (A - Ap, v - vp), 0.06), stroke=INK,
+    f.line((A, B), shift((Ap, Bp), (A - Ap, B - Bp), 0.06), stroke=INK,
            width=1.5, arrow=True)
-    f.dot((a, uu), r=4.5, fill=BLUE)
-    f.dot((A, v), r=4.5, fill=GREEN)
-    open_dot(f, (A0, U0), r=4.5, stroke=BLUE)
-    open_dot(f, (Ap, vp), r=4.5, stroke=GREEN)
-    f.text((a - 0.016, uu - 0.032), '(a, u)', size=14, anchor='end')
-    f.text((A0 + 0.018, U0 + 0.014), sbn('(a', '0', ', ', 14)
-           + sbn('u', '0', ')', 14), size=14, anchor='start')
-    f.text((A - 0.016, v), '(A, v)', size=14, anchor='end')
-    f.text((Ap + 0.018, vp + 0.014), '(χ(v′), v′)', size=14, anchor='start')
+    f.dot((a, b), r=4.5, fill=BLUE)
+    f.dot((A, B), r=4.5, fill=GREEN)
+    open_dot(f, (A0, B0), r=4.5, stroke=BLUE)
+    open_dot(f, (Ap, Bp), r=4.5, stroke=GREEN)
+    f.text((a - 0.016, b - 0.032), '(a, b)', size=14, anchor='end')
+    f.text((A0 + 0.018, B0 + 0.014), sbn('(a', '0', ', ', 14)
+           + sbn('b', '0', ')', 14), size=14, anchor='start')
+    f.text((A - 0.016, B), '(A, B)', size=14, anchor='end')
+    f.text((Ap + 0.018, Bp + 0.014), '(χ(B′), B′)', size=14, anchor='start')
     # the two equal shifts, on the right
     xb = 1.36
-    for (y0, y1, color, p0, p1) in ((uu, U0, BLUE, (a, uu), (A0, U0)),
-                                    (vp, v, GREEN, (Ap, vp), (A, v))):
+    for (y0, y1, color, p0, p1) in ((b, B0, BLUE, (a, b), (A0, B0)),
+                                    (Bp, B, GREEN, (Ap, Bp), (A, B))):
         for p in (p0, p1):
             f.line(p, (xb, p[1]), stroke=color, width=0.8, dash='2 3')
         f.line((xb, y0), (xb, y1), stroke=color, width=1.2)
         for yy in (y0, y1):
             f.line((xb - 0.008, yy), (xb + 0.008, yy), stroke=color,
                    width=1.2)
-        f.text((xb + 0.014, (y0 + y1) / 2), sbn('u', '0', ' − ', 13)
-               + it('u'), size=13, color=color, anchor='start')
+        f.text((xb + 0.014, (y0 + y1) / 2), sbn('b', '0', ' − ', 13)
+               + it('b'), size=13, color=color, anchor='start')
     f.text((0.85, 0.12), 'axial', size=14, italic=False, color=BLUE)
     f.text((1.08, 0.6), 'side', size=14, italic=False, color=ORANGE)
     f.save('appendix-h/transition-shift', 'Two axial labels with opposite signs '
            'and a source label below s_0: the source moves up to the '
            'transition state and the target moves down by the same amount '
-           'u_0 - u and out to the top of the axial region, which keeps the '
+           'b_0 - b and out to the top of the axial region, which keeps the '
            'turn')
 
 

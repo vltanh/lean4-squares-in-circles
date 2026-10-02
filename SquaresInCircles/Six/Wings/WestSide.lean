@@ -19,9 +19,12 @@ with nonnegative coefficients in `s` and concave in `v` on each side of `0`. For
 a missing west wing with S on the south side of C, the weights `2`, `4`, `3`,
 `3` on C–W, C–S, W–D along the secondary axis of D and D–S along that of S leave
 a gap concave in each angle, positive at twelve points. The radicals
-`R0 √(p + q sin x)` of the far-vertex supports are concave by the curvature
-criterion of `radicalTrig`, and their values at the points are bounded by
-squaring.
+`R0 √(p + q sin x)` of the far-vertex supports of W and S are concave by the
+curvature criterion of `radicalTrig`. Unit forces along the secondary axes of D
+and of S give D the force `(cos x, 1 - sin x)`, of length
+`√2 (cos (x/2) - sin (x/2))`; the term `diagonalTerm c x` that its far vertex
+leaves is concave for `c ≤ 4`, here with `c = √2 R0` and in `WestDiagonal` with
+a decimal bound of it. The values at the points are bounded by squaring.
 -/
 
 noncomputable section
@@ -86,6 +89,74 @@ lemma southTerm_positive_concave :
   dsimp [radicalTrig,southTerm]
   rw [max_eq_right (show -Real.sin x ≤ 0 by linarith)]
   ring_nf
+
+/-! ### The term of the force `(cos x, 1 - sin x)`
+
+Unit forces along the secondary axes of D and of S give D the force
+`(cos x, 1 - sin x)`, of length `√2 · halfDifference x` (`norm_identity`). With
+`c` for `√2` times the radius, its far-vertex support leaves the term
+`diagonalTerm c x`; `diagonalFirst` and `diagonalSecond` are its derivatives. -/
+
+def halfDifference (x : ℝ) : ℝ := Real.cos (x/2)-Real.sin (x/2)
+
+def diagonalTerm (c x : ℝ) : ℝ := Real.cos x-c*Real.cos (x/2)+c*Real.sin (x/2)
+def diagonalFirst (c x : ℝ) : ℝ := -Real.sin x+(c/2)*(Real.sin (x/2)+Real.cos (x/2))
+def diagonalSecond (c x : ℝ) : ℝ := -Real.cos x+(c/4)*halfDifference x
+
+lemma half_difference_lower {x : ℝ} (hx : 0 ≤ x ∧ x ≤ 6/5) :
+    0 ≤ halfDifference x := by
+  have h := sin_le_cos_of_small (x := x/2)
+    ⟨by linarith [hx.1],by linarith [hx.2,Real.pi_gt_d2]⟩
+  dsimp [halfDifference]
+  linarith
+
+lemma norm_identity (x : ℝ) :
+    (Real.cos x)^2+(1-Real.sin x)^2=2*(halfDifference x)^2 := by
+  have hs : Real.sin x=2*Real.sin (x/2)*Real.cos (x/2) := by
+    simpa only [show 2*(x/2)=x by ring] using Real.sin_two_mul (x/2)
+  dsimp [halfDifference]
+  linear_combination Real.sin_sq_add_cos_sq x-2*Real.sin_sq_add_cos_sq (x/2)-2*hs
+
+lemma diagonal_hasDeriv (c x : ℝ) : HasDerivAt (diagonalTerm c) (diagonalFirst c x) x := by
+  convert (((Real.hasDerivAt_cos x).sub
+    ((((hasDerivAt_id x).div_const 2).cos).const_mul c)).add
+    ((((hasDerivAt_id x).div_const 2).sin).const_mul c)) using 1
+  · funext y; simp only [diagonalTerm,Pi.add_apply,Pi.sub_apply,id_eq]
+  · dsimp [diagonalFirst]; ring
+
+lemma diagonal_first_hasDeriv (c x : ℝ) :
+    HasDerivAt (diagonalFirst c) (diagonalSecond c x) x := by
+  convert (((Real.hasDerivAt_sin x).const_mul (-1)).add
+    (((((hasDerivAt_id x).div_const 2).sin).add
+      (((hasDerivAt_id x).div_const 2).cos)).const_mul (c/2))) using 1
+  · funext y; simp only [diagonalFirst,Pi.add_apply,id_eq]; ring
+  · dsimp [diagonalSecond,halfDifference]; ring
+
+/-- The curvature is `halfDifference x · (c/4 - cos (x/2) - sin (x/2))`, as
+`cos x = halfDifference x · (cos (x/2) + sin (x/2))`. -/
+lemma diagonal_second_nonpositive {c x : ℝ} (hc : c ≤ 4) (hx : 0 ≤ x ∧ x ≤ 6/5) :
+    diagonalSecond c x ≤ 0 := by
+  have hu := half_difference_lower hx
+  obtain ⟨hcos,hsin⟩ := cos_sin_nonneg (x := x/2)
+    ⟨by linarith [hx.1],by linarith [hx.2,Real.pi_gt_d2]⟩
+  have hsum : 1 ≤ Real.cos (x/2)+Real.sin (x/2) := by
+    nlinarith [mul_nonneg hsin hcos,Real.sin_sq_add_cos_sq (x/2)]
+  have hp := mul_nonpos_of_nonneg_of_nonpos hu
+    (show -(Real.cos (x/2)+Real.sin (x/2))+c/4 ≤ 0 by linarith)
+  have hid : Real.cos x=halfDifference x*(Real.cos (x/2)+Real.sin (x/2)) := by
+    have h := Real.cos_two_mul (x/2)
+    rw [show 2*(x/2)=x by ring] at h
+    dsimp [halfDifference]
+    nlinarith only [h,Real.sin_sq_add_cos_sq (x/2)]
+  dsimp [diagonalSecond]
+  rw [hid]
+  dsimp [halfDifference] at hp ⊢
+  nlinarith only [hp]
+
+lemma diagonal_concave {c : ℝ} (hc : c ≤ 4) :
+    ConcaveOn ℝ (Set.Icc 0 (6/5)) (diagonalTerm c) :=
+  concave_of_deriv2 (fun x _ => diagonal_hasDeriv c x) (fun x _ => diagonal_first_hasDeriv c x)
+    fun _ h => diagonal_second_nonpositive hc h
 
 /-! ### Values at the points -/
 
@@ -160,56 +231,24 @@ private lemma offset_range {d t : ℝ}
     0 ≤ d-t ∧ d-t ≤ 6/5 := by
   constructor <;> linarith [hd.1,hd.2,ht.1,ht.2,Real.pi_lt_d2]
 
-private lemma first_quadrant_trig {x : ℝ} (hx : 0 ≤ x ∧ x ≤ 6/5) :
-    0 < Real.cos x ∧ 0 ≤ Real.sin x ∧ Real.sin x < 1 ∧
-      1 ≤ Real.cos x+Real.sin x := by
-  have hc : 0 < Real.cos x := Real.cos_pos_of_mem_Ioo
-    ⟨by linarith [hx.1,Real.pi_pos],by linarith [hx.2,Real.pi_gt_d2]⟩
-  have hs := Real.sin_nonneg_of_nonneg_of_le_pi hx.1
-    (by linarith [hx.2,Real.pi_gt_d2])
-  have hs1 : Real.sin x < 1 := by
-    have hc2 := pow_pos hc 2
-    nlinarith [Real.sin_sq_add_cos_sq x]
-  have hw := one_le_abs_cos_add_abs_sin x
-  rw [abs_of_pos hc,abs_of_nonneg hs] at hw
-  exact ⟨hc,hs,hs1,hw⟩
+private lemma cos_add_sin_lower {x : ℝ} (hx : 0 ≤ x ∧ x ≤ 6/5) :
+    1 ≤ Real.cos x+Real.sin x := by
+  obtain ⟨hc,hs⟩ := cos_sin_nonneg ⟨hx.1,by linarith [hx.2,Real.pi_gt_d2]⟩
+  nlinarith [mul_nonneg hs hc,Real.sin_sq_add_cos_sq x]
 
-/-- The term of D is concave on `[0, 6/5]`: with equal weights on the two
-separators of D its curvature criterion factors. -/
+/-- The term of D is `3 WestSide.diagonalTerm (√2 R0)` on `[0, 6/5]`, as
+`18 - 18 sin x = 2 (3 halfDifference x)²` (`norm_identity`), and `√2 R0 ≤ 4`. -/
 lemma diagonalTerm_concave :
     ConcaveOn ℝ (Set.Icc 0 (6/5)) diagonalTerm := by
-  have hh : ConcaveOn ℝ (Set.Icc 0 (6/5)) (radicalTrig 3 0 18 (-18) R0) := by
-    apply radicalTrig_concave R0_nonneg (by norm_num)
-    · intro x hx
-      have ht := first_quadrant_trig hx
-      linarith [ht.2.2.1]
-    · intro x hx
-      have ht := first_quadrant_trig hx
-      have hr : 0 ≤ 18-18*Real.sin x := by linarith [ht.2.2.1]
-      have hs := Real.sq_sqrt hr
-      have hfactor := mul_nonneg
-        (show 0 ≤ 1-Real.sin x by linarith [ht.2.2.1])
-        (show 0 ≤ 144*(1+Real.sin x)-18*Q0 by
-          norm_num [Q0]; linarith [ht.2.1])
-      have hmul := congrArg (fun z : ℝ => Q0*z) hs
-      have hsq : (R0*Real.sqrt (18-18*Real.sin x))^2 ≤ (12*Real.cos x)^2 := by
-        rw [mul_pow,R0_sq]
-        nlinarith [Real.sin_sq_add_cos_sq x]
-      have hleft : 0 ≤ R0*Real.sqrt (18-18*Real.sin x) :=
-        mul_nonneg R0_nonneg (Real.sqrt_nonneg _)
-      have hright : 0 ≤ 12*Real.cos x := by linarith [ht.1]
-      have hbound : R0*Real.sqrt (18-18*Real.sin x) ≤ 12*Real.cos x := by
-        by_contra! h
-        have hp := mul_pos (sub_pos.mpr h)
-          (show 0 < R0*Real.sqrt (18-18*Real.sin x)+12*Real.cos x by linarith)
-        nlinarith
-      have e : (18:ℝ) + -18*Real.sin x = 18-18*Real.sin x := by ring
-      rw [e]
-      linarith [hbound]
-  apply hh.congr
-  intro x _
-  have e : (18:ℝ) + -18*Real.sin x = 18-18*Real.sin x := by ring
-  simp only [radicalTrig,diagonalTerm,e]
+  have hc : Real.sqrt 2*R0 ≤ 4 := by
+    nlinarith [half_root_bounds.2,R0_bounds.2,R0_nonneg,Real.sqrt_nonneg 2]
+  refine ((WestSide.diagonal_concave hc).smul (by norm_num : (0:ℝ) ≤ 3)).congr
+    fun x hx => ?_
+  have hr : Real.sqrt (18-18*Real.sin x)=Real.sqrt 2*(3*halfDifference x) := by
+    rw [show 18-18*Real.sin x=2*(3*halfDifference x)^2 by
+        nlinarith [norm_identity x,Real.sin_sq_add_cos_sq x],
+      Real.sqrt_mul (by norm_num),Real.sqrt_sq (by linarith [half_difference_lower hx])]
+  simp only [smul_eq_mul,WestSide.diagonalTerm,diagonalTerm,hr,halfDifference]
   ring
 
 lemma westTerm_diagonal_concave {w : ℝ} (hw : -(2/5) ≤ w ∧ w ≤ 0) :
@@ -231,9 +270,9 @@ lemma westTerm_diagonal_concave {w : ℝ} (hw : -(2/5) ≤ w ∧ w ≤ 0) :
       have hroot : Real.sqrt (13+12*Real.sin d) ≤ 5 := by
         nlinarith [Real.sin_le_one d,Real.sqrt_nonneg (13+12*Real.sin d)]
       have hmul := mul_le_mul_of_nonneg_left hroot R0_nonneg
-      have ht := first_quadrant_trig (offset_range hd ⟨hw.1,by linarith [hw.2]⟩)
+      have ht := cos_add_sin_lower (offset_range hd ⟨hw.1,by linarith [hw.2]⟩)
       rw [he]
-      nlinarith [ht.2.2.2,R0_bounds.2]
+      nlinarith [ht,R0_bounds.2]
   apply hh.congr
   intro d _
   simp only [radicalTrig,westTerm,he]
@@ -267,9 +306,9 @@ lemma gap_west_concave {s d : ℝ} (hd : 1/2 ≤ d ∧ d ≤ Real.pi/4) :
     · intro _ _; norm_num
     · intro w hw
       have hc := cos_small ⟨hw.1,by linarith [hw.2]⟩
-      have ht := first_quadrant_trig (offset_range hd ⟨hw.1,by linarith [hw.2]⟩)
+      have ht := cos_add_sin_lower (offset_range hd ⟨hw.1,by linarith [hw.2]⟩)
       rw [he]
-      nlinarith [ht.2.2.2]
+      nlinarith [ht]
   let K := 9-6*c0+southTerm s+diagonalTerm (d-s)-R0*Real.sqrt (13+12*Real.sin d)
   have h := hh.add (concaveOn_const K (convex_Icc (-(2/5)) 0))
   apply h.congr

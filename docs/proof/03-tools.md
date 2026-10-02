@@ -13,10 +13,10 @@ for its construction and Corollary 2.10 to conclude.
 | --- | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 | [§3.1](#31-the-disk-centre-seen-from-a-square) the disk centre seen from a square | 3.4 | 3.4 | 3.4 | 3.4 | 3.4 | 3.4 | 3.4 |
 | [§3.2](#32-contact-polygons) contact polygons | | | 3.6 | 3.6 | 3.6 | 3.6 | 3.6 |
-| [§3.3](#33-two-disjoint-squares) two disjoint squares | | 3.9, 3.10 | 3.9 | 3.12 | 3.8 to 3.13 | 3.9, 3.12 | 3.12 |
-| [§3.4](#34-arcs-and-the-angular-budget) arcs and the angular budget | | 3.17 | 3.16 to 3.18 | 3.16, 3.17, 3.19 | 3.16 | 3.16 | 3.19 |
-| [§3.5](#35-charts) charts | 3.21, 3.22 | 3.21, 3.22 | 3.21, 3.22 | 3.21, 3.22 | 3.21 | 3.21, 3.22 | 3.21, 3.22 |
-| [§3.6](#36-arcs-of-an-exterior-square) arcs of an exterior square | | 3.24 | 3.24 | 3.24 | 3.24 | 3.24 | |
+| [§3.3](#33-two-disjoint-squares) two disjoint squares | | 3.8 to 3.13 | 3.9 | 3.12 | 3.8 to 3.13 | 3.9, 3.12 | 3.12 |
+| [§3.4](#34-arcs-and-the-angular-budget) arcs and the angular budget | | | 3.16 to 3.18 | 3.16, 3.17, 3.19 | 3.16 | 3.16 | 3.19 |
+| [§3.5](#35-charts) charts | 3.21, 3.22 | | 3.21, 3.22 | 3.21, 3.22 | 3.21 | 3.21, 3.22 | 3.21, 3.22 |
+| [§3.6](#36-arcs-of-an-exterior-square) arcs of an exterior square | | | 3.24 | 3.24 | 3.24 | 3.24 | |
 | [§3.7](#37-the-radial-sweep) the radial sweep | | | | | 3.26 to 3.28 | | |
 | [§3.8](#38-elementary-estimates) elementary estimates | | | 3.29 | | 3.29 | 3.29 | 3.29 |
 | [§3.9](#39-recognizing-a-model) recognizing a model | 3.31 | 3.30, 3.31 | 3.30, 3.31 | 3.30, 3.31 | 3.30, 3.31 | 3.30 | 3.30, 3.31 |
@@ -483,10 +483,10 @@ For $r > 0$, the circle of radius $r$ about $o$ is
 and we label its points by their directions. Angles between points of
 $\Gamma_r$ are measured by the angle $d$ of §2.1 (Figure 3.15).
 
-![Two directions from o drawn as radii of the circle of radius r, the unit vector u(theta), and the angle d between the two directions](figures/03-tools/directions.svg)
+![Two directions from o drawn as radii of the circle of radius r, the unit vector u(theta), and the angle between the two directions](figures/03-tools/directions.svg)
 
 *Figure 3.15.* Two directions $\theta, \theta'$ seen from $o$, the unit vector
-$u(\theta)$, and the angle $d(\theta, \theta')$ between them.
+$u(\theta)$, and the angle $\angle(\theta, \theta')$ between them.
 
 *Lean: [`circlePoint`](../../SquaresInCircles/Common/Arcs.lean#L24),
 [`direction_dist`](../../SquaresInCircles/Common/Arcs.lean#L33).*
@@ -495,7 +495,7 @@ $u(\theta)$, and the angle $d(\theta, \theta')$ between them.
 
 Let $U$ be a set in the plane and $r > 0$. An *arc of $U$ on $\Gamma_r$* with
 *centre* $\theta_0$ and *half-width* $w \in (0, \pi]$ is the set of points
-$o + r\,u(\theta)$ with $d(\theta, \theta_0) < w$, provided all of them lie in
+$o + r\,u(\theta)$ with $\angle(\theta, \theta_0) < w$, provided all of them lie in
 $U$. It need not be all of $\Gamma_r \cap U$ (Figure 3.16). We say that $U$
 *holds* the arc, and that a square $S$ holds it when $U = S^\circ$.
 
@@ -525,12 +525,12 @@ arcs share its $2\pi$ of angle.
 
 *Proof.* Measure sets of directions by length, the Lebesgue measure on
 $\mathbb{R}/2\pi\mathbb{Z}$, of total $2\pi$; a closed arc of directions
-$\lbrace \theta : d(\theta, \theta_0) \le v \rbrace$ with $0 \le v \le \pi$ has
+$\lbrace \theta : \angle(\theta, \theta_0) \le v \rbrace$ with $0 \le v \le \pi$ has
 length $2v$. Let $\theta_i$ be the centre of the arc of $U_i$ (Figure 3.17). Fix
 $0 \le t < 1$, and consider the closed arcs of directions of half-width $t w_i$
 about the $\theta_i$ (Figure 3.18). They are pairwise disjoint: a direction
-$\theta$ in two of them, $i \ne j$, has $d(\theta, \theta_i) \le t w_i < w_i$
-and $d(\theta, \theta_j) < w_j$, so the point $o + r\,u(\theta)$ lies in $U_i$
+$\theta$ in two of them, $i \ne j$, has $\angle(\theta, \theta_i) \le t w_i < w_i$
+and $\angle(\theta, \theta_j) < w_j$, so the point $o + r\,u(\theta)$ lies in $U_i$
 and in $U_j$. Their lengths $2t w_i$ therefore add up to at most $2\pi$, so
 $t(w_1 + \dots + w_n) \le \pi$ for every $t < 1$, and the claim follows. If
 every $w_i \ge \frac\pi n$ and one is larger, the sum exceeds $\pi$. $\square$
@@ -556,7 +556,7 @@ If disjoint sets $U$ and $V$ hold arcs on the same circle $\Gamma_r$, with
 centres $\theta_U, \theta_V$ and half-widths $w_U, w_V$, then
 
 ```math
-d(\theta_U, \theta_V) \ge w_U + w_V .
+\angle(\theta_U, \theta_V) \ge w_U + w_V .
 ```
 
 In particular, disjoint half circles, with $w_U = w_V = \frac\pi2$, have
@@ -574,14 +574,14 @@ direction $x$ that divides the angle between them in the ratio $w_U : w_V$
 would be within $w_U$ of $\theta_U$ and within $w_V$ of $\theta_V$, and its
 point on $\Gamma_r$ would lie in both $U$ and $V$.
 
-*Proof.* Suppose $\delta = d(\theta_U, \theta_V) < w_U + w_V$ (Figure 3.20), and
+*Proof.* Suppose $\delta = \angle(\theta_U, \theta_V) < w_U + w_V$ (Figure 3.20), and
 take representatives $x_U, x_V$ of the two directions with
 $|x_V - x_U| = \delta$. The direction of
 $x = x_U + \frac{w_U}{w_U + w_V}(x_V - x_U)$ is at angle at most
 $\frac{w_U}{w_U + w_V}\delta < w_U$ from $\theta_U$ and at most
 $\frac{w_V}{w_U + w_V}\delta < w_V$ from $\theta_V$. So its point on $\Gamma_r$
 lies in $U$ and in $V$, a contradiction. For half circles this gives
-$d(\theta_U, \theta_V) \ge \pi$, and only opposite directions are $\pi$ apart.
+$\angle(\theta_U, \theta_V) \ge \pi$, and only opposite directions are $\pi$ apart.
 $\square$
 
 *Lean:
@@ -596,7 +596,7 @@ with centres $\theta_U, \theta_V, \theta_W$ and half-widths $w_U, w_V, w_W$,
 then
 
 ```math
-w_V + w_W \le d(\theta_V, \theta_W) \le 2\pi - 2w_U - w_V - w_W ,
+w_V + w_W \le \angle(\theta_V, \theta_W) \le 2\pi - 2w_U - w_V - w_W ,
 ```
 
 and in particular $w_U + w_V + w_W \le \pi$.
@@ -606,22 +606,22 @@ and in particular $w_U + w_V + w_W \le \pi$.
 *Figure 3.21.* The short way from $\theta_V$ to $\theta_W$ crosses half of $V$
 and half of $W$. The long way crosses those halves and all of $U$.
 
-![A circle about o with three directions x_U, x_V, x_W, which cut it into three coloured gaps x_V - x_U, x_W - x_V and x_U + 2 pi - x_W, the last one the longest; an inner arc marks the angle d(theta_U, theta_W), which goes the short way round, through x_V](figures/03-tools/perimeter.svg)
+![A circle about o with three directions x_U, x_V, x_W, which cut it into three coloured gaps x_V - x_U, x_W - x_V and x_U + 2 pi - x_W, the last one the longest; an inner arc marks the angle between theta_U and theta_W, which goes the short way round, through x_V](figures/03-tools/perimeter.svg)
 
 *Figure 3.22.* Representatives $x_U \le x_V \le x_W < x_U + 2\pi$ cut the
 circle into three gaps that add up to $2\pi$. Each angle between two of the
 directions is at most the gap between their representatives: here
-$d(\theta_U, \theta_W)$ is shorter than the gap $x_U + 2\pi - x_W$.
+$\angle(\theta_U, \theta_W)$ is shorter than the gap $x_U + 2\pi - x_W$.
 
 *Proof.* First, any three directions have
-$d(\theta_U, \theta_V) + d(\theta_V, \theta_W) + d(\theta_U, \theta_W) \le 2\pi$
+$\angle(\theta_U, \theta_V) + \angle(\theta_V, \theta_W) + \angle(\theta_U, \theta_W) \le 2\pi$
 (Figure 3.22). Indeed, take a representative $x_U$ of $\theta_U$ and
 representatives $x_V, x_W \in [x_U, x_U + 2\pi)$ of the other two, and exchange
 the names $V$ and $W$ if needed so that $x_U \le x_V \le x_W < x_U + 2\pi$;
 since $x_U + 2\pi$ also represents $\theta_U$, the three angles are at most
 $x_V - x_U$, $x_W - x_V$ and $x_U + 2\pi - x_W$, which add up to $2\pi$. Now
-bound $d(\theta_U, \theta_V) \ge w_U + w_V$ and
-$d(\theta_U, \theta_W) \ge w_U + w_W$ by Lemma 3.17 to get the upper bound, and
+bound $\angle(\theta_U, \theta_V) \ge w_U + w_V$ and
+$\angle(\theta_U, \theta_W) \ge w_U + w_W$ by Lemma 3.17 to get the upper bound, and
 use Lemma 3.17 for $V$ and $W$ to get the lower bound (Figure 3.21). Comparing
 the two bounds gives $2(w_U + w_V + w_W) \le 2\pi$. $\square$
 

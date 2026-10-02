@@ -40,5 +40,5 @@
 <line x1="298.5" y1="396.0" x2="298.5" y2="457.0" stroke="#9ca3af" stroke-width="1" stroke-dasharray="3 3"/>
 <circle cx="298.5" cy="396.0" r="4" fill="#ea580c"/>
 <text x="44.6" y="396.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="end" dominant-baseline="middle" font-style="italic">−δ</text>
-<text x="111.6" y="60.2" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle" font-style="italic">h(A, tv, z)</text>
+<text x="111.6" y="60.2" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle" font-style="italic">h(A, tB, z)</text>
 </svg>

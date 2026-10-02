@@ -41,7 +41,7 @@
 <line x1="107.2" y1="37.2" x2="247.6" y2="280.4" stroke="#ea580c" stroke-width="1.8"/>
 <text x="107.2" y="27.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle"><tspan font-style="italic">z</tspan><tspan> = π/6</tspan></text>
 <circle cx="184.3" cy="170.7" r="4" fill="#1f2937"/>
-<text x="176.6" y="182.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle"><tspan>(</tspan><tspan font-style="italic">a</tspan><tspan dy="3.9" font-size="8.8">0</tspan><tspan dy="-3.9">, </tspan><tspan font-style="italic">u</tspan><tspan dy="3.9" font-size="8.8">0</tspan><tspan dy="-3.9">)</tspan></text>
+<text x="176.6" y="182.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle"><tspan>(</tspan><tspan font-style="italic">a</tspan><tspan dy="3.9" font-size="8.8">0</tspan><tspan dy="-3.9">, </tspan><tspan font-style="italic">b</tspan><tspan dy="3.9" font-size="8.8">0</tspan><tspan dy="-3.9">)</tspan></text>
 <text x="107.6" y="229.2" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle">axial</text>
 <text x="178.0" y="56.4" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="start" dominant-baseline="middle">side</text>
 <line x1="174.8" y1="59.0" x2="105.7" y2="71.8" stroke="#16a34a" stroke-width="0.8"/>
@@ -61,6 +61,6 @@
 <line x1="43.6" y1="101.2" x2="47.6" y2="101.2" stroke="#9ca3af" stroke-width="1"/>
 <text x="38.6" y="101.2" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="end" dominant-baseline="middle"><tspan>0.4</tspan></text>
 <text x="259.2" y="293.4" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="start" dominant-baseline="middle"><tspan font-style="italic">A</tspan></text>
-<text x="38.6" y="53.2" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="end" dominant-baseline="middle"><tspan font-style="italic">v</tspan></text>
+<text x="38.6" y="53.2" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="end" dominant-baseline="middle"><tspan font-style="italic">B</tspan></text>
 </g>
 </svg>

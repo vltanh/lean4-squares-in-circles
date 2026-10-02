@@ -386,7 +386,7 @@ square satisfies (7.1), and the squares are pairwise disjoint.
    centre $\mu_i$ and half-width $\frac\pi4$. These arcs belong to pairwise
    disjoint open squares, so
    [Lemma 3.17](03-tools.md#lemma-317-disjoint-arcs-have-separated-centres)
-   gives $d(\mu_i, \mu_j) \ge \frac\pi4 + \frac\pi4 = \frac\pi2$ for
+   gives $\angle(\mu_i, \mu_j) \ge \frac\pi4 + \frac\pi4 = \frac\pi2$ for
    $i \ne j$. By [Lemma 3.19](03-tools.md#lemma-319-regular-polygons) (2) with
    $m = 4$ and $g = \frac\pi2$, there are a direction $\mu_0$ and a
    relabelling $\tau$ of $\lbrace 1, 2, 3, 4 \rbrace$ such that

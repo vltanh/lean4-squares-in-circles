@@ -501,7 +501,7 @@ def directions():
     f.text(shift((0.06, -0.08), u(t1), 0.33), 'u(θ)', color=COLORS[0],
            anchor='start')
     f.arc((0, 0), 0.28, t1, t2, orange, width=1.8)
-    f.text(shift((0, 0), u((t1 + t2) / 2), 0.43), 'd(θ, θ′)', color=orange)
+    f.text(shift((0, 0), u((t1 + t2) / 2), 0.43), '∠(θ, θ′)', color=orange)
     f.text(shift((0, 0), u(t1), 1.1), 'θ')
     f.text(shift((0, 0), u(t2), 1.1), 'θ′')
     subscript(f, (-0.85, -0.85), 'Γ', 'r', size=16)

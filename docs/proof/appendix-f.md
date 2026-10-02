@@ -16,16 +16,16 @@ on $\pi$ we use $\pi > 3.14$.
 
 We prove [Lemma 10.9](10-seven.md#lemma-109-the-marker-arc):
 
-> *Let $(a, u)$ be an admissible state and $t$ a real number with
-> $|t - \ell(a, u)| \le \frac12$. Then $|\cos t - a| \le \frac12$ and
-> $|\sin t - u| \le \frac12$.*
+> *Let $(a, b)$ be an admissible state and $t$ a real number with
+> $|t - \ell(a, b)| \le \frac12$. Then $|\cos t - a| \le \frac12$ and
+> $|\sin t - b| \le \frac12$.*
 
-We recall the notions involved. A state $(a, u)$ is *admissible*
+We recall the notions involved. A state $(a, b)$ is *admissible*
 ([Definition 10.4](10-seven.md#definition-104-states)) if
 
 ```math
-\tfrac12 \le a , \qquad 0 \le u \le a , \qquad
-\varphi(a, u) = \left(a + \tfrac12\right)^2 + \left(u + \tfrac12\right)^2 \le \tfrac{13}4 ,
+\tfrac12 \le a , \qquad 0 \le b \le a , \qquad
+\varphi(a, b) = \left(a + \tfrac12\right)^2 + \left(b + \tfrac12\right)^2 \le \tfrac{13}4 ,
 ```
 
 where $\varphi$ is the farthest-vertex function of
@@ -33,29 +33,29 @@ where $\varphi$ is the farthest-vertex function of
 *label* ([Definition 10.6](10-seven.md#definition-106-labels-and-markers)) is
 
 ```math
-\ell(a, u) = \min\left(\mathrm{axial}(u), \mathrm{side}(a, u), \tfrac\pi4\right) , \qquad
-\mathrm{axial}(u) = \tfrac54 u , \qquad
-\mathrm{side}(a, u) = \tfrac\pi6 + \tfrac13\left(u - \tfrac12\right) + \tfrac34(1 - a) ,
+\ell(a, b) = \min\left(\mathrm{axial}(b), \mathrm{side}(a, b), \tfrac\pi4\right) , \qquad
+\mathrm{axial}(b) = \tfrac54 b , \qquad
+\mathrm{side}(a, b) = \tfrac\pi6 + \tfrac13\left(b - \tfrac12\right) + \tfrac34(1 - a) ,
 ```
 
-so $\ell(a, u)$ is at most each of the three terms. For an admissible state,
-$u < \frac{31}{40}$ and $a < \frac54$
+so $\ell(a, b)$ is at most each of the three terms. For an admissible state,
+$b < \frac{31}{40}$ and $a < \frac54$
 ([Lemma 10.5](10-seven.md#lemma-105-admissible-states)), and
-$\ell(a, u) \ge 0$ ([Lemma 10.7](10-seven.md#lemma-107-the-label)).
+$\ell(a, b) \ge 0$ ([Lemma 10.7](10-seven.md#lemma-107-the-label)).
 
-![The admissible states in the (a, u)-plane: a region bounded by the segment of the a-axis from one half to root 3 minus one half, the arc of the circle phi equals 13/4 up to the diagonal, the diagonal u equals a, and the vertical line a equals one half. An orange line touches the circle at about (0.85, 0.70); a green vertical segment at a = x + 1/2 rises from the a-axis to the circle; the side state (1, 1/2) is marked on the circle](figures/appendix-f/admissible.svg)
+![The admissible states in the (a, b)-plane: a region bounded by the segment of the a-axis from one half to root 3 minus one half, the arc of the circle phi equals 13/4 up to the diagonal, the diagonal b equals a, and the vertical line a equals one half. An orange line touches the circle at about (0.85, 0.70); a green vertical segment at a = x + 1/2 rises from the a-axis to the circle; the side state (1, 1/2) is marked on the circle](figures/appendix-f/admissible.svg)
 
 *Figure F.1.* The admissible states (shaded). The line
-$\frac34(a + \frac12) + \frac23(u + \frac12) = \frac{\sqrt{1885}}{24}$ (orange)
+$\frac34(a + \frac12) + \frac23(b + \frac12) = \frac{\sqrt{1885}}{24}$ (orange)
 touches the circle $\varphi = \frac{13}4$ at the dot, and the disk lies below
 it (step 3 of Lemma F.2). At $a = x + \frac12$ the circle bounds
-$u + \frac12$ by $\sqrt{13/4 - (x + 1)^2}$ (green; step 1 of Lemma F.8).
+$b + \frac12$ by $\sqrt{13/4 - (x + 1)^2}$ (green; step 1 of Lemma F.8).
 
-In the chart of an exterior square with state $(a, u)$ (Chapter 10) the closed
-square is $[a - \frac12, a + \frac12] \times [u - \frac12, u + \frac12]$ and
+In the chart of an exterior square with state $(a, b)$ (Chapter 10) the closed
+square is $[a - \frac12, a + \frac12] \times [b - \frac12, b + \frac12]$ and
 the unit circle $\Gamma_1$ about the disk centre is
 $t \mapsto (\cos t, \sin t)$. So the lemma says that the arc of $\Gamma_1$ of
-half-width $\frac12$ about the direction $\ell(a, u)$ lies in the
+half-width $\frac12$ about the direction $\ell(a, b)$ lies in the
 closed square: it stays on the correct side of each of the four edge lines
 (Figure F.2).
 
@@ -70,10 +70,10 @@ $\frac\pi3$, of half-width $\frac\pi6 \approx 0.5236$, against $\frac12$.
 For $(0.9, 0.3)$ the arc ends close to the lower and the upper edge.
 
 *Idea of the proof.* The far edge is out of reach. For the lower and upper
-edges we compare the label with $\arcsin(u \mp \frac12)$ using lines of slope
+edges we compare the label with $\arcsin(b \mp \frac12)$ using lines of slope
 $\frac54$ (Lemmas F.1 to F.3). For the near edge we need
 $\ell + \arcsin(a - \frac12) + \frac12 < \frac\pi2$. Bounding $\ell$
-by the side term and $u$ by the circle $\varphi = \frac{13}4$ leaves a function
+by the side term and $b$ by the circle $\varphi = \frac{13}4$ leaves a function
 $E$ of $x = a - \frac12$ alone, the envelope. Its second derivative is at
 most $-\frac18$ (Lemmas F.5 and F.6), so it lies below the parabola that
 shares its value and slope at $x = 0$, where both radicands are squares of
@@ -91,9 +91,9 @@ Let $f(y) = \frac54 y - \arcsin y$ for $-1 \le y \le 1$ (Figure F.3).
 ![The graph of f(y) = 5/4 y minus arcsin y on minus 1 to 1: it falls to a minimum at minus 3/5, rises to a maximum at 3/5 and falls again. An orange band over minus 1/2 to 11/40 with a dashed line at the value at minus 1/2 lies below the graph there; a green band over 1/2 to 1 with a dashed line at the value at 3/5 lies above the graph there](figures/appendix-f/asin-line.svg)
 
 *Figure F.3.* The function $f$ of Lemma F.1. On the range
-$[-\frac12, \frac{11}{40})$ of $y = u - \frac12$ (orange) it stays above
+$[-\frac12, \frac{11}{40})$ of $y = b - \frac12$ (orange) it stays above
 $f(-\frac12) = \frac\pi6 - \frac58$, which is step 2 of Lemma F.2. On the
-range $[\frac12, 1]$ of $y = u + \frac12$ when $u \le \frac12$ (green) it
+range $[\frac12, 1]$ of $y = b + \frac12$ when $b \le \frac12$ (green) it
 stays below $f(\frac35) = \frac34 - \arcsin\frac35$, which is step 2 of
 Lemma F.3.
 
@@ -115,23 +115,23 @@ By (1) and (2), $f(\frac35) = \frac34 - \arcsin\frac35$ is the largest value of
 $f$ on $[-\frac35, 1]$. The next two lemmas place the label between the lower
 and the upper edge (Figure F.4).
 
-![The (u, angle)-plane for u from 0 to 31/40. A thin blue shaded band, the labels of the admissible states, starts at the origin, widens towards the right and closes again in a point just below the angle pi/4. An orange curve, arcsin(u - 1/2) + 1/2, runs just below the band; a green curve, arcsin(u + 1/2) - 1/2, runs above it for u up to 1/2 and rises steeply there](figures/appendix-f/transverse.svg)
+![The (b, angle)-plane for b from 0 to 31/40. A thin blue shaded band, the labels of the admissible states, starts at the origin, widens towards the right and closes again in a point just below the angle pi/4. An orange curve, arcsin(b - 1/2) + 1/2, runs just below the band; a green curve, arcsin(b + 1/2) - 1/2, runs above it for b up to 1/2 and rises steeply there](figures/appendix-f/transverse.svg)
 
-*Figure F.4.* Lemmas F.2 and F.3. For each $u$ the labels $\ell(a, u)$ of
-the admissible states $(a, u)$ fill the shaded interval. It lies above the
-curve $\arcsin(u - \frac12) + \frac12$ of the lower edge (orange) and, for
-$u \le \frac12$, below the curve $\arcsin(u + \frac12) - \frac12$ of the
+*Figure F.4.* Lemmas F.2 and F.3. For each $b$ the labels $\ell(a, b)$ of
+the admissible states $(a, b)$ fill the shaded interval. It lies above the
+curve $\arcsin(b - \frac12) + \frac12$ of the lower edge (orange) and, for
+$b \le \frac12$, below the curve $\arcsin(b + \frac12) - \frac12$ of the
 upper edge (green). The closest approach, about 0.005, is at the lower edge
-near $u = 0.72$, where the label is a side label (Figure F.5).
+near $b = 0.72$, where the label is a side label (Figure F.5).
 
 ### Lemma F.2 (the lower edge)
 
-Let $(a, u)$ be an admissible state. Then
-$\arcsin(u - \frac12) + \frac12 < \ell(a, u)$.
+Let $(a, b)$ be an admissible state. Then
+$\arcsin(b - \frac12) + \frac12 < \ell(a, b)$.
 
-*Proof.* Put $y = u - \frac12$. As $0 \le u < \frac{31}{40}$,
+*Proof.* Put $y = b - \frac12$. As $0 \le b < \frac{31}{40}$,
 $-\frac12 \le y < \frac{11}{40}$. We show that $\arcsin y + \frac12$ is
-less than each of the three terms whose minimum is $\ell(a, u)$.
+less than each of the three terms whose minimum is $\ell(a, b)$.
 
 1. *A bound on the arcsine: $\arcsin y < y + 0.0052$.* If
    $y \ge 0$, then $y < \frac{11}{40} < \frac35$, and
@@ -146,15 +146,15 @@ less than each of the three terms whose minimum is $\ell(a, u)$.
    $-\frac12 \le y$. By Lemma F.1 (1) and (3), and as the arcsine is odd,
 
    ```math
-   \tfrac\pi6 - \tfrac58 = f\left(-\tfrac12\right) \le f(y) = \tfrac54 u - \tfrac58 - \arcsin y ,
+   \tfrac\pi6 - \tfrac58 = f\left(-\tfrac12\right) \le f(y) = \tfrac54 b - \tfrac58 - \arcsin y ,
    ```
 
-   that is, $\arcsin y \le \mathrm{axial}(u) - \frac\pi6$. Since
+   that is, $\arcsin y \le \mathrm{axial}(b) - \frac\pi6$. Since
    $\frac\pi6 > \frac{3.14}6 > \frac12$, we get
-   $\arcsin y + \frac12 < \mathrm{axial}(u)$.
-3. *The side term.* Put $p = a + \frac12$, $q = u + \frac12$ and
+   $\arcsin y + \frac12 < \mathrm{axial}(b)$.
+3. *The side term.* Put $p = a + \frac12$, $q = b + \frac12$ and
    $L = \frac34 p + \frac23 q$. By the Cauchy–Schwarz inequality, with
-   $\varphi(a, u) = p^2 + q^2 \le \frac{13}4$,
+   $\varphi(a, b) = p^2 + q^2 \le \frac{13}4$,
 
    ```math
    L^2 \le \left(\tfrac9{16} + \tfrac49\right)\left(p^2 + q^2\right) \le \tfrac{145}{144} \cdot \tfrac{13}4 ,
@@ -165,22 +165,22 @@ less than each of the three terms whose minimum is $\ell(a, u)$.
    definition of the side term, and as $\sqrt{1885} < 43.42$,
 
    ```math
-   \mathrm{side}(a, u) - y = \tfrac\pi6 - \tfrac23 y - \tfrac34 (a - 1) = \tfrac\pi6 + \tfrac{43}{24} - L
+   \mathrm{side}(a, b) - y = \tfrac\pi6 - \tfrac23 y - \tfrac34 (a - 1) = \tfrac\pi6 + \tfrac{43}{24} - L
    > \tfrac\pi6 - \tfrac{43.42 - 43}{24} = \tfrac\pi6 - 0.0175 .
    ```
 
    With step 1, and as $\frac\pi6 > \frac{3.14}6 > 0.5233$,
 
    ```math
-   \mathrm{side}(a, u) - \arcsin y - \tfrac12 > \tfrac\pi6 - 0.0175 - 0.0052 - 0.5 > 0 .
+   \mathrm{side}(a, b) - \arcsin y - \tfrac12 > \tfrac\pi6 - 0.0175 - 0.0052 - 0.5 > 0 .
    ```
 
 4. *The cap.* By step 1, and as $y < \frac{11}{40}$,
    $\arcsin y + \frac12 < \frac{11}{40} + 0.0052 + \frac12 = 0.7802 < \frac{3.14}4 < \frac\pi4$.
 
-So $\arcsin y + \frac12$ is less than $\mathrm{axial}(u)$,
-$\mathrm{side}(a, u)$ and $\frac\pi4$, hence less than their minimum
-$\ell(a, u)$. $\square$
+So $\arcsin y + \frac12$ is less than $\mathrm{axial}(b)$,
+$\mathrm{side}(a, b)$ and $\frac\pi4$, hence less than their minimum
+$\ell(a, b)$. $\square$
 
 *Lean:
 [`Seven.marker_lower_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L257),
@@ -188,8 +188,8 @@ $\ell(a, u)$. $\square$
 
 ### Lemma F.3 (the upper edge)
 
-Let $(a, u)$ be an admissible state with $u \le \frac12$. Then
-$\ell(a, u) + \frac12 < \arcsin(u + \frac12)$.
+Let $(a, b)$ be an admissible state with $b \le \frac12$. Then
+$\ell(a, b) + \frac12 < \arcsin(b + \frac12)$.
 
 *Proof.*
 
@@ -203,37 +203,37 @@ $\ell(a, u) + \frac12 < \arcsin(u + \frac12)$.
    $-\frac\pi2 \le \arcsin\frac35 \le \frac58 < \frac\pi2$ and the sine
    is increasing on $[-\frac\pi2, \frac\pi2]$, we would get
    $\frac35 = \sin(\arcsin\frac35) \le \sin\frac58 < \frac35$.
-2. Put $y = u + \frac12 \in [\frac12, 1]$. By Lemma F.1 (1) if
+2. Put $y = b + \frac12 \in [\frac12, 1]$. By Lemma F.1 (1) if
    $y \le \frac35$, and by Lemma F.1 (2) if $y \ge \frac35$,
    $f(y) \le f(\frac35)$, that is,
    $\arcsin y \ge \arcsin\frac35 + \frac54(y - \frac35)$. As
-   $\frac54(y - \frac35) = \frac54 u - \frac18$, step 1 gives
+   $\frac54(y - \frac35) = \frac54 b - \frac18$, step 1 gives
 
    ```math
-   \arcsin y > \tfrac58 + \tfrac54 u - \tfrac18 = \tfrac54 u + \tfrac12 .
+   \arcsin y > \tfrac58 + \tfrac54 b - \tfrac18 = \tfrac54 b + \tfrac12 .
    ```
 
-3. As $\ell(a, u) \le \mathrm{axial}(u) = \frac54 u$, step 2 gives
-   $\arcsin(u + \frac12) > \ell(a, u) + \frac12$. $\square$
+3. As $\ell(a, b) \le \mathrm{axial}(b) = \frac54 b$, step 2 gives
+   $\arcsin(b + \frac12) > \ell(a, b) + \frac12$. $\square$
 
 *Lean:
 [`Seven.marker_horizontal_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L459).*
 
-The label does not increase with $a$, so for a given $u$ it comes closest to
+The label does not increase with $a$, so for a given $b$ it comes closest to
 the lower edge at the largest admissible $a$, on the circle
 $\varphi = \frac{13}4$, and closest to the upper edge at $a = \frac12$.
 Figure F.5 shows the two margins.
 
-![The margins, for u from 0 to 31/40, by which the label clears the lower edge (orange) and, for u up to 1/2, the upper edge (green), on a vertical scale from 0 to 0.1. The lower margin rises from about 0.024 at u = 0 to a corner near u = 0.29, where the label of the closest state turns from axial to side, then falls to its minimum, about 0.0047, near u = 0.72. The upper margin starts at the same value, dips to its minimum arcsin 3/5 - 5/8 at u = 0.1 and then rises steeply](figures/appendix-f/margins.svg)
+![The margins, for b from 0 to 31/40, by which the label clears the lower edge (orange) and, for b up to 1/2, the upper edge (green), on a vertical scale from 0 to 0.1. The lower margin rises from about 0.024 at b = 0 to a corner near b = 0.29, where the label of the closest state turns from axial to side, then falls to its minimum, about 0.0047, near b = 0.72. The upper margin starts at the same value, dips to its minimum arcsin 3/5 - 5/8 at b = 0.1 and then rises steeply](figures/appendix-f/margins.svg)
 
 *Figure F.5.* Lemmas F.2 and F.3 in detail: the least of
-$\ell(a, u) - \arcsin(u - \frac12) - \frac12$ (lower edge, orange) and of
-$\arcsin(u + \frac12) - \frac12 - \ell(a, u)$ (upper edge, green) over the
-admissible states $(a, u)$ with a given $u$. The lower margin is smallest,
-about $0.0047$, near $u = 0.72$, where the closest state lies on the circle
+$\ell(a, b) - \arcsin(b - \frac12) - \frac12$ (lower edge, orange) and of
+$\arcsin(b + \frac12) - \frac12 - \ell(a, b)$ (upper edge, green) over the
+admissible states $(a, b)$ with a given $b$. The lower margin is smallest,
+about $0.0047$, near $b = 0.72$, where the closest state lies on the circle
 with a side label; left of the dotted line, at the transition state
-$u_0 \approx 0.29$ of [Definition 10.6](10-seven.md#definition-106-labels-and-markers),
-that label is axial. The upper margin is smallest at $u = \frac1{10}$, where it is
+$b_0 \approx 0.29$ of [Definition 10.6](10-seven.md#definition-106-labels-and-markers),
+that label is axial. The upper margin is smallest at $b = \frac1{10}$, where it is
 $\arcsin\frac35 - \frac58 \approx 0.0185$, the number that step 1 of
 Lemma F.3 shows to be positive.
 
@@ -261,21 +261,21 @@ on $[0, \frac34]$ (Lemma F.6).
 The definition of the side term can be written
 
 ```math
-\mathrm{side}(a, u) = \tfrac\pi6 + \tfrac1{24} + \tfrac13\left(u + \tfrac12\right) - \tfrac34\left(a - \tfrac12\right) . \tag{F.1}
+\mathrm{side}(a, b) = \tfrac\pi6 + \tfrac1{24} + \tfrac13\left(b + \tfrac12\right) - \tfrac34\left(a - \tfrac12\right) . \tag{F.1}
 ```
 
-For an admissible state with $a - \frac12 = x$, the disk bounds $u + \frac12$
+For an admissible state with $a - \frac12 = x$, the disk bounds $b + \frac12$
 by $\sqrt{13/4 - (x + 1)^2}$, so $E(x)$ bounds
-$\mathrm{side}(a, u) + \arcsin x$ from above (Lemma F.8 and Figure F.6).
+$\mathrm{side}(a, b) + \arcsin x$ from above (Lemma F.8 and Figure F.6).
 
 ![For x from 0 to 3/4, a blue shaded region bounded below by a rising curve and above by a curve that meets an orange curve, the graph of E(x) - pi/6, for x beyond about 0.27 and stays below it before; the region ends at x = root 3 - 1. A dashed horizontal line slightly above the orange curve marks the level pi/3 - 1/2](figures/appendix-f/envelope-band.svg)
 
 *Figure F.6.* The envelope. For each $x = a - \frac12$, the values of
-$\mathrm{side}(a, u) + \arcsin x - \frac\pi6$ over the admissible states
-$(a, u)$ fill the shaded interval; it ends at $x = \sqrt3 - 1$, beyond which
-$u$ would have to be negative. The top of the interval lies on the graph of
+$\mathrm{side}(a, b) + \arcsin x - \frac\pi6$ over the admissible states
+$(a, b)$ fill the shaded interval; it ends at $x = \sqrt3 - 1$, beyond which
+$b$ would have to be negative. The top of the interval lies on the graph of
 $E(x) - \frac\pi6$ (orange) where the circle $\varphi = \frac{13}4$ rather
-than $u \le a$ bounds $u$, that is, for $x \ge \sqrt{13/8} - 1 \approx 0.27$.
+than $b \le a$ bounds $b$, that is, for $x \ge \sqrt{13/8} - 1 \approx 0.27$.
 Lemma F.8 needs everything below the dashed level $\frac\pi3 - \frac12$.
 
 ### Lemma F.5 (the peak bound)
@@ -377,7 +377,7 @@ Let $0 \le x \le \frac34$. Then
 
 The two terms of $E_2$ come from the arcsine, which bends up, and from the
 circle $\varphi = \frac{13}4$, which bends down: $B$ is the value of
-$u + \frac12$ on that circle at $a = x + \frac12$ (Figure F.1). On
+$b + \frac12$ on that circle at $a = x + \frac12$ (Figure F.1). On
 $[0, \frac34]$ the circle wins by at least $\frac18$ (Figure F.8).
 
 ![The graph of E2 on zero to 3/4 in blue, below the x-axis: it starts at minus 26/81, rises to about minus 0.209 near x = 0.33 and then falls steeply, leaving the frame at about minus 1.15. A dashed purple curve, the bound of step 4, runs just above it, and a dashed black horizontal line at minus 1/8 lies above both](figures/appendix-f/curvature.svg)
@@ -444,25 +444,25 @@ $\frac\pi3 - \frac12 - \frac{353}{648} \approx 0.0024$.
 
 ### Lemma F.8 (the near edge)
 
-Let $(a, u)$ be an admissible state. Then
-$\ell(a, u) + \frac12 < \arccos(a - \frac12)$.
+Let $(a, b)$ be an admissible state. Then
+$\ell(a, b) + \frac12 < \arccos(a - \frac12)$.
 
 *Proof.* Put $x = a - \frac12$. Since $\frac12 \le a < \frac54$,
 $0 \le x < \frac34$.
 
-1. *The disk bounds $u$.* We have
-   $\varphi(a, u) = (x + 1)^2 + (u + \frac12)^2 \le \frac{13}4$, so
-   $(u + \frac12)^2 \le \frac{13}4 - (x + 1)^2$, which is positive by
-   Lemma F.6 (1). As $u + \frac12 > 0$ and the square root is increasing,
-   $u + \frac12 \le \sqrt{13/4 - (x + 1)^2}$ (Figure F.1).
+1. *The disk bounds $b$.* We have
+   $\varphi(a, b) = (x + 1)^2 + (b + \frac12)^2 \le \frac{13}4$, so
+   $(b + \frac12)^2 \le \frac{13}4 - (x + 1)^2$, which is positive by
+   Lemma F.6 (1). As $b + \frac12 > 0$ and the square root is increasing,
+   $b + \frac12 \le \sqrt{13/4 - (x + 1)^2}$ (Figure F.1).
 2. *The envelope.* By (F.1) and step 1,
-   $\mathrm{side}(a, u) + \arcsin x \le E(x)$, and by Lemma F.7,
-   $\mathrm{side}(a, u) + \arcsin x \le \frac\pi6 + \frac{353}{648}$.
-3. As $\ell(a, u) \le \mathrm{side}(a, u)$ and
+   $\mathrm{side}(a, b) + \arcsin x \le E(x)$, and by Lemma F.7,
+   $\mathrm{side}(a, b) + \arcsin x \le \frac\pi6 + \frac{353}{648}$.
+3. As $\ell(a, b) \le \mathrm{side}(a, b)$ and
    $\arccos x = \frac\pi2 - \arcsin x$,
 
    ```math
-   \arccos x - \ell(a, u) - \tfrac12
+   \arccos x - \ell(a, b) - \tfrac12
    \ge \tfrac\pi2 - \tfrac\pi6 - \tfrac{353}{648} - \tfrac12
    = \tfrac\pi3 - \tfrac{677}{648} > 0 ,
    ```
@@ -473,8 +473,8 @@ $0 \le x < \frac34$.
 *Lean:
 [`Seven.marker_vertical_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L437).*
 
-*Proof of [Lemma 10.9](10-seven.md#lemma-109-the-marker-arc).* Let $(a, u)$
-be admissible, write $\ell = \ell(a, u)$, and let $|t - \ell| \le \frac12$,
+*Proof of [Lemma 10.9](10-seven.md#lemma-109-the-marker-arc).* Let $(a, b)$
+be admissible, write $\ell = \ell(a, b)$, and let $|t - \ell| \le \frac12$,
 so that $\ell - \frac12 \le t \le \ell + \frac12$. Put
 $\theta = \arccos(a - \frac12)$. Since $0 \le a - \frac12 \le 1$,
 $0 \le \theta \le \frac\pi2$ and $\cos\theta = a - \frac12$.
@@ -486,15 +486,15 @@ $0 \le \theta \le \frac\pi2$ and $\cos\theta = a - \frac12$.
    $[0, \pi]$, so by step 1, $\cos t = \cos|t| > \cos\theta = a - \frac12$.
    Also $\cos t \le 1 \le a + \frac12$. Hence $|\cos t - a| \le \frac12$.
 3. *The lower edge.* By Lemma F.2,
-   $\arcsin(u - \frac12) < \ell - \frac12 \le t$. Both
-   $\arcsin(u - \frac12)$ and $t$ lie in $[-\frac\pi2, \frac\pi2]$, where the
-   sine is strictly increasing, and $-1 \le u - \frac12 \le 1$, so
-   $u - \frac12 = \sin\left(\arcsin(u - \frac12)\right) < \sin t$.
-4. *The upper edge.* If $u > \frac12$, then $\sin t \le 1 < u + \frac12$. If
-   $u \le \frac12$, Lemma F.3 gives
-   $t \le \ell + \frac12 < \arcsin(u + \frac12)$; as in step 3, both
-   sides lie in $[-\frac\pi2, \frac\pi2]$ and $\frac12 \le u + \frac12 \le 1$,
-   so $\sin t < u + \frac12$. With step 3, $|\sin t - u| \le \frac12$.
+   $\arcsin(b - \frac12) < \ell - \frac12 \le t$. Both
+   $\arcsin(b - \frac12)$ and $t$ lie in $[-\frac\pi2, \frac\pi2]$, where the
+   sine is strictly increasing, and $-1 \le b - \frac12 \le 1$, so
+   $b - \frac12 = \sin\left(\arcsin(b - \frac12)\right) < \sin t$.
+4. *The upper edge.* If $b > \frac12$, then $\sin t \le 1 < b + \frac12$. If
+   $b \le \frac12$, Lemma F.3 gives
+   $t \le \ell + \frac12 < \arcsin(b + \frac12)$; as in step 3, both
+   sides lie in $[-\frac\pi2, \frac\pi2]$ and $\frac12 \le b + \frac12 \le 1$,
+   so $\sin t < b + \frac12$. With step 3, $|\sin t - b| \le \frac12$.
    $\square$
 
 *Lean: [`Seven.marker_arc`](../../SquaresInCircles/Seven/Exterior.lean#L486).*

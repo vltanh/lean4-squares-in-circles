@@ -80,29 +80,29 @@ def label(f, pos, s, size=13, color=INK, anchor='start', dx=0.0, dy=0.0):
 # The labels, the transition state and the boundary of the label regions,
 # in the notation of Appendix G.
 
-def axial(v):
-    return 1.25 * v
+def axial(B):
+    return 1.25 * B
 
 
-def side(A, v):
-    return PI / 6 + (v - 0.5) / 3 + 0.75 * (1 - A)
+def side(A, B):
+    return PI / 6 + (B - 0.5) / 3 + 0.75 * (1 - A)
 
 
-def ell(A, v):
-    """The label of the state (A, v)."""
-    return min(axial(v), side(A, v), PI / 4)
+def ell(A, B):
+    """The label of the state (A, B)."""
+    return min(axial(B), side(A, B), PI / 4)
 
 
-def admissible(A, v):
-    return A >= 0.5 and 0 <= v <= A and (A + .5) ** 2 + (v + .5) ** 2 <= R2
+def admissible(A, B):
+    return A >= 0.5 and 0 <= B <= A and (A + .5) ** 2 + (B + .5) ** 2 <= R2
 
 
 M_ = 2 * PI + 17
 J_ = math.sqrt(202 * R2 - M_ ** 2)
 X0 = (9 * M_ + 11 * J_) / 202
 Y0 = (11 * M_ - 9 * J_) / 202
-A0, U0 = X0 - .5, Y0 - .5
-S0 = 1.25 * U0
+A0, B0 = X0 - .5, Y0 - .5
+S0 = 1.25 * B0
 RD = math.sqrt(13 / 8) - .5
 TD = PI / 6 + 7 / 12 - 5 / 12 * RD
 OMEGA = math.atan(9 / 4)
@@ -118,19 +118,19 @@ def delta(t):
     return (2 * PI + 7 - 12 * t) / 5
 
 
-def gamma(v):
-    """The circle over v."""
-    return math.sqrt(R2 - (v + .5) ** 2) - .5
+def gamma(B):
+    """The circle over B."""
+    return math.sqrt(R2 - (B + .5) ** 2) - .5
 
 
-def lam(v):
-    """The tie line over v."""
-    return (2 * PI + 7 - 11 * v) / 9
+def lam(B):
+    """The tie line over B."""
+    return (2 * PI + 7 - 11 * B) / 9
 
 
-def chi(v):
-    """The top of the axial region over v."""
-    return min(gamma(v), lam(v))
+def chi(B):
+    """The top of the axial region over B."""
+    return min(gamma(B), lam(B))
 
 
 def circle_xyzd(t):
@@ -149,9 +149,9 @@ def top(t):
     return delta(t), delta(t)
 
 
-def G(d, A, v):
-    """The target support G_d(A, v)."""
-    return -(A - .5) * math.sin(d) + (v + .5) * math.cos(d)
+def G(d, A, B):
+    """The target support G_d(A, B)."""
+    return -(A - .5) * math.sin(d) + (B + .5) * math.cos(d)
 
 
 def sw(l):
@@ -160,7 +160,7 @@ def sw(l):
 
 
 def admissible_polygon(steps=160):
-    """The admissible region in the (A, v)-plane, a convex polygon."""
+    """The admissible region in the (A, B)-plane, a convex polygon."""
     t0, t1 = math.asin(.5 / R), PI / 4
     return [(.5, 0)] + circle_arc(t0, t1, steps) + [(.5, .5)]
 
@@ -204,9 +204,9 @@ def side_region_points(n=140):
     pts = []
     for i in range(n + 1):
         for j in range(n + 1):
-            A, v = 0.6 + 0.55 * i / n, 0.25 + 0.55 * j / n
-            if admissible(A, v) and abs(ell(A, v) - side(A, v)) < 1e-12:
-                pts.append((A, v))
+            A, B = 0.6 + 0.55 * i / n, 0.25 + 0.55 * j / n
+            if admissible(A, B) and abs(ell(A, B) - side(A, B)) < 1e-12:
+                pts.append((A, B))
     for k in range(120):
         t = S0 + (PI / 4 - S0) * k / 119
         pts.append(top(t))
@@ -219,13 +219,13 @@ def axial_region_points(n=120):
     pts = []
     for i in range(n + 1):
         for j in range(n + 1):
-            A, v = 0.5 + KAPPA * i / n, 0.63 * j / n
-            if admissible(A, v) and abs(ell(A, v) - axial(v)) < 1e-12:
-                pts.append((A, v))
+            A, B = 0.5 + KAPPA * i / n, 0.63 * j / n
+            if admissible(A, B) and abs(ell(A, B) - axial(B)) < 1e-12:
+                pts.append((A, B))
     for k in range(200):
-        v = PI / 5 * k / 199
-        pts.append((chi(v), v))
-    pts.append((A0, U0))
+        B = PI / 5 * k / 199
+        pts.append((chi(B), B))
+    pts.append((A0, B0))
     return pts
 
 
@@ -263,9 +263,9 @@ def seg_in_window(a, b, c, box):
     return (pts[0], pts[-1]) if len(pts) >= 2 else None
 
 
-def av_axes(f, x0, x1, y0, y1, ticks_a=(), ticks_v=(), names=('A', 'v')):
-    """Axes of the (A, v)-plane in the box [x0, x1] x [y0, y1], with ticks
-    and the names; the A-axis lies at v = 0 if the box contains it."""
+def ab_axes(f, x0, x1, y0, y1, ticks_a=(), ticks_b=(), names=('A', 'B')):
+    """Axes of the (A, B)-plane in the box [x0, x1] x [y0, y1], with ticks
+    and the names; the A-axis lies at B = 0 if the box contains it."""
     k = 1 / f.s
     ya = 0 if y0 <= 0 <= y1 else y0
     f.line((x0, ya), (x1, ya), stroke=FAINT, width=1, arrow=True)
@@ -277,9 +277,9 @@ def av_axes(f, x0, x1, y0, y1, ticks_a=(), ticks_v=(), names=('A', 'v')):
         f.line((a, ya - 3 * k), (a, ya + 3 * k), stroke=FAINT, width=1)
         label(f, (a, ya), f'{a:g}', size=12, color=FAINT, anchor='middle',
               dy=13)
-    for v in ticks_v:
-        f.line((x0 - 3 * k, v), (x0 + 3 * k, v), stroke=FAINT, width=1)
-        label(f, (x0, v), f'{v:g}', size=12, color=FAINT, anchor='end', dx=-6)
+    for B in ticks_b:
+        f.line((x0 - 3 * k, B), (x0 + 3 * k, B), stroke=FAINT, width=1)
+        label(f, (x0, B), f'{B:g}', size=12, color=FAINT, anchor='end', dx=-6)
 
 
 def side_by_side(panels, gap=0, top=0):
@@ -387,13 +387,13 @@ def argmin(fn, lo, hi, n=2000):
 
 # The canonical pair on the forward axis.
 
-def canonical(a, us, A, v, s, t):
+def canonical(a, b, A, B, s, t):
     """Centre of S, centre of T, turn d, markers of S and T."""
-    l, L = ell(a, us), ell(A, v)
+    l, L = ell(a, b), ell(A, B)
     d = PI / 3 + s * l - t * L
-    cS = (a, s * us)
-    cT = (A * math.cos(d) - t * v * math.sin(d),
-          A * math.sin(d) + t * v * math.cos(d))
+    cS = (a, s * b)
+    cT = (A * math.cos(d) - t * B * math.sin(d),
+          A * math.sin(d) + t * B * math.cos(d))
     return cS, cT, d, s * l, d + t * L
 
 
@@ -479,18 +479,18 @@ def region_frame(f, width=1.3):
 def tie_segment(f, width=1.2):
     """The tie line between the transition state and the capped corner."""
     c = 2 * PI + 7
-    polyline(f, [(A0, U0), ((c - 11 * PI / 5) / 9, PI / 5)], stroke=INK,
+    polyline(f, [(A0, B0), ((c - 11 * PI / 5) / 9, PI / 5)], stroke=INK,
              width=width, dash='4 3')
 
 
 def disk_support():
     box = (0.34, 1.46, -0.13, 1.05)
     f = Figure(0.25, 1.53, -0.2, 1.1, 380)
-    av_axes(f, 0.34, 1.46, -0.13, 1.05, ticks_a=(0.5, 1.0), ticks_v=(0.5,))
+    ab_axes(f, 0.34, 1.46, -0.13, 1.05, ticks_a=(0.5, 1.0), ticks_b=(0.5,))
     polyline(f, circle_in_box(box), stroke=INK, width=1, dash='6 4')
     region_frame(f)
     tie_segment(f)
-    # Level lines of 3A + 2v and the supporting one, r = 0.
+    # Level lines of 3A + 2B and the supporting one, r = 0.
     for level in (3.0, 3.5):
         s = seg_in_window(3, 2, level, box)
         f.line(s[0], s[1], stroke=ORANGE, width=1, dash='3 4')
@@ -500,18 +500,18 @@ def disk_support():
     tip = shift((1, .5), n, 0.2)
     f.line((1, .5), tip, width=1.5, arrow=True)
     label(f, tip, '(3, 2)', size=13, dx=6, dy=-4)
-    label(f, (0.79, 0.99), '*r*(*A*, *v*) = 0', size=14, color=ORANGE)
+    label(f, (0.79, 0.99), '*r*(*A*, *B*) = 0', size=14, color=ORANGE)
     f.dot((1, .5), r=4)
     label(f, (1.065, 0.465), '(1, ½)', size=13)
-    f.dot((A0, U0), r=3.5)
-    label(f, (A0 + 0.035, U0 - 0.012), '(*a*_0, *u*_0)', size=13)
+    f.dot((A0, B0), r=3.5)
+    label(f, (A0 + 0.035, B0 - 0.012), '(*a*_0, *b*_0)', size=13)
     f.text((0.72, 0.17), 'axial', size=14, italic=False, color=BLUE)
     f.text((0.86, 0.6), 'side', size=14, italic=False, color=GREEN)
     f.text((0.64, 0.73), 'capped', size=13, italic=False, color=INK,
            anchor='end')
     f.line((0.645, 0.72), (0.7, 0.665), width=0.8)
     label(f, (1.29, -0.08), '*φ* = 13/4', size=13)
-    f.save('appendix-i/disk-support', 'The admissible states in the (A, v)-plane '
+    f.save('appendix-i/disk-support', 'The admissible states in the (A, B)-plane '
            'with their axial, side and capped labels, bounded by the circle '
            'phi = 13/4; the line r = 0 supports the disk at the side state '
            '(1, 1/2), and parallel level lines of the same linear form cut '
@@ -539,7 +539,7 @@ def switch_panel(l, tau, title, names):
     step = g1 - g0
     for k in range(-1, 3):
         level = g0 + k * step
-        # -(A - 1/2) sin d + (v + 1/2) cos d = level
+        # -(A - 1/2) sin d + (B + 1/2) cos d = level
         sg = seg_in_window(-math.sin(d), math.cos(d),
                            level - 0.5 * math.sin(d) - 0.5 * math.cos(d), box)
         if sg:
@@ -555,10 +555,10 @@ def switch_panel(l, tau, title, names):
           color=ORANGE, width=1.6)
     label(f, (base[0] + 0.012, base[1] - 0.022), 'growing *G*_d', size=13,
           color=ORANGE)
-    f.dot((A0, U0), r=3.5)
+    f.dot((A0, B0), r=3.5)
     f.dot((RD, RD), r=3.5)
     if names:
-        label(f, (A0 - 0.015, U0 - 0.022), '(*a*_0, *u*_0)', size=13,
+        label(f, (A0 - 0.015, B0 - 0.022), '(*a*_0, *b*_0)', size=13,
               anchor='end')
         label(f, (RD + 0.02, RD + 0.015), '(*r*_d, *r*_d)', size=13)
         label(f, (0.92, 0.36), 'tie line', size=13, anchor='middle')
@@ -583,7 +583,7 @@ def switch_figure():
     assert abs(math.atan2(9, 4) - OMEGA) < 1e-15
     f = side_by_side([(left, 0), (right, 0)], gap=24)
     f.save('appendix-i/switch', 'Two copies of the side region of the '
-           '(A, v)-plane between the dashed tie line, the circle and the '
+           '(A, B)-plane between the dashed tie line, the circle and the '
            'diagonal, with the side segment of label 0.7 from its tie state '
            'on the tie line to its top on the circle, and dashed level lines '
            'of the target support; on the left the level lines are less steep '
@@ -644,7 +644,7 @@ def transition_force():
     pl.label(0.93, 0.8, '(cos *z*, 1 − sin *z*)', size=13, anchor='end',
              dx=-6)
     pl.label(0.78, 1.08, 'cone', size=13, color=ORANGE, anchor='middle')
-    # Right: the (A, v)-plane near the transition state; the level lines of
+    # Right: the (A, B)-plane near the transition state; the level lines of
     # the form through it leave the axial states on their lower side.
     box = (0.9, 1.24, 0.12, 0.5)
     g = Figure(0.86, 1.25, 0.08, 0.53, 640)
@@ -657,15 +657,15 @@ def transition_force():
     g.line(s0[0], s0[1], width=1.1, dash='4 3')
     for z, name in ((0, '*z* = 0'), (PI / 6, '*z* = π/6')):
         p, q = force(z)
-        seg = seg_in_window(p, q, p * A0 + q * U0, box)
+        seg = seg_in_window(p, q, p * A0 + q * B0, box)
         g.line(seg[0], seg[1], stroke=ORANGE, width=1.8)
         hi = max(seg, key=lambda t: t[1])
         label(g, hi, name, size=13, color=ORANGE, anchor='middle', dy=-10)
         # the axial states lie on the lower side of the line
-        assert all(p * A + q * v <= p * A0 + q * U0 + 1e-9
-                   for A, v in axial_region_points(60))
-    g.dot((A0, U0), r=4)
-    label(g, (A0 - 0.012, U0 - 0.018), '(*a*_0, *u*_0)', size=13,
+        assert all(p * A + q * B <= p * A0 + q * B0 + 1e-9
+                   for A, B in axial_region_points(60))
+    g.dot((A0, B0), r=4)
+    label(g, (A0 - 0.012, B0 - 0.018), '(*a*_0, *b*_0)', size=13,
           anchor='end')
     g.text((1.0, 0.2), 'axial', size=14, italic=False, color=BLUE)
     g.text((1.11, 0.47), 'side', size=14, italic=False, color=GREEN,
@@ -680,12 +680,12 @@ def transition_force():
         g.line((a, box[2]), (a, box[2] + 4 * k), stroke=FAINT, width=1)
         label(g, (a, box[2]), f'{a:g}', size=12, color=FAINT, anchor='middle',
               dy=13)
-    for v in (0.2, 0.3, 0.4):
-        g.line((box[0], v), (box[0] + 4 * k, v), stroke=FAINT, width=1)
-        label(g, (box[0], v), f'{v:g}', size=12, color=FAINT, anchor='end',
+    for B in (0.2, 0.3, 0.4):
+        g.line((box[0], B), (box[0] + 4 * k, B), stroke=FAINT, width=1)
+        label(g, (box[0], B), f'{B:g}', size=12, color=FAINT, anchor='end',
               dx=-5)
     label(g, (box[1], box[2]), '*A*', size=15, color=FAINT, dx=-2, dy=13)
-    label(g, (box[0], box[3] - 0.025), '*v*', size=15, color=FAINT,
+    label(g, (box[0], box[3] - 0.025), '*B*', size=15, color=FAINT,
           anchor='end', dx=-5)
     f = side_by_side([(f, 0), (g, 8)], gap=6)
     f.save('appendix-i/transition-force', 'Left: the plane of forces. For '
@@ -709,11 +709,11 @@ def axial_margins():
 def axial_profile():
     pts = axial_region_points()
     lam_, f0, m2 = axial_margins()
-    E = lambda z: min(lam_(z) - (A + .5) * math.cos(z) - (v + .5) *
-                      (1 - math.sin(z)) for A, v in pts)
+    E = lambda z: min(lam_(z) - (A + .5) * math.cos(z) - (B + .5) *
+                      (1 - math.sin(z)) for A, B in pts)
     tangent = lambda z: f0(0) + (Y0 - 0.8) * z
     # the decimal bounds of the proof of Lemma I.2
-    assert 1.11979 < A0 < 1.1198 and 0.29136 < U0 < 0.29137
+    assert 1.11979 < A0 < 1.1198 and 0.29136 < B0 < 0.29137
     assert 2 + 2 * 3.1415 / 15 > 2.4188 and 2.4188 - 1.6198 - 0.79137 > 0.0076
     assert 0.8 - 0.79136 < 0.0087 and PI / 6 < 0.53
     assert 0.0076 - 0.0087 * 0.53 > 0
@@ -780,26 +780,26 @@ def transition_tangent():
     s = seg_in_window(9, 11, c, box)
     f.line(s[0], s[1], width=1.2, dash='4 3')
     # the tangent at the transition state and the quarter plane
-    s = seg_in_window(X0, Y0, X0 * A0 + Y0 * U0, box)
+    s = seg_in_window(X0, Y0, X0 * A0 + Y0 * B0, box)
     f.line(s[0], s[1], stroke=ORANGE, width=2)
-    f.line((box[0], U0), (box[1], U0), stroke=FAINT, width=1, dash='2 3')
+    f.line((box[0], B0), (box[1], B0), stroke=FAINT, width=1, dash='2 3')
     f.line((A0, box[2]), (A0, box[3]), stroke=FAINT, width=1, dash='2 3')
     # every state with side label lies in the quarter plane, on the inner
     # side of the tangent and of the line of slope -25/12
-    for A, v in side_region_points(60):
-        assert v >= U0 - 1e-9 and A <= A0 + 1e-9
-        assert X0 * (A - A0) + Y0 * (v - U0) <= 1e-9
-        assert 12 / 25 * (v - U0) <= A0 - A + 1e-9
-    f.dot((A0, U0), r=4)
-    label(f, (A0 - 0.02, U0 - 0.035), '(*a*_0, *u*_0)', size=14,
+    for A, B in side_region_points(60):
+        assert B >= B0 - 1e-9 and A <= A0 + 1e-9
+        assert X0 * (A - A0) + Y0 * (B - B0) <= 1e-9
+        assert 12 / 25 * (B - B0) <= A0 - A + 1e-9
+    f.dot((A0, B0), r=4)
+    label(f, (A0 - 0.02, B0 - 0.035), '(*a*_0, *b*_0)', size=14,
           anchor='end')
     f.text((0.885, 0.55), 'side labels', size=14, italic=False, color=GREEN)
     label(f, (0.665, 0.565), 'tie line', size=13)
     label(f, (1.105, 0.62), 'tangent', size=14, color=ORANGE, anchor='end')
-    label(f, (0.64, U0), '*v* = *u*_0', size=13, color=FAINT, dy=-10)
+    label(f, (0.64, B0), '*B* = *b*_0', size=13, color=FAINT, dy=-10)
     label(f, (A0, 0.82), '*A* = *a*_0', size=13, color=FAINT, dx=6)
     f.save('appendix-i/transition-tangent', 'The states with side label lie in '
-           'the quarter plane v at least u0, A at most a0, and on the inner '
+           'the quarter plane B at least b0, A at most a0, and on the inner '
            'side of the tangent of the circle at the transition state')
 
 
@@ -815,23 +815,23 @@ def disk_bound(z):
     return math.sin(z) - 0.8 * z - 13 / 4 * (1 - math.cos(z))
 
 
-def side_E(z, A, v):
+def side_E(z, A, B):
     return (math.cos(z) - 2 / 15 - 0.8 * z + (0.6 - math.cos(z)) * (A + .5)
-            + (math.sin(z) - 4 / 15) * (v + .5))
+            + (math.sin(z) - 4 / 15) * (B + .5))
 
 
 def side_profile():
     pts = side_region_points()
-    m = lambda z: min(side_E(z, A, v) for A, v in pts)
+    m = lambda z: min(side_E(z, A, B) for A, B in pts)
     # the identity and the bounds of the proof of Lemma I.6
     for k in range(1, 100):
         z = k / 1000
-        for A, v in ((1, .5), (A0, U0), (0.7, 0.6), (1.2, 0.1)):
+        for A, B in ((1, .5), (A0, B0), (0.7, 0.6), (1.2, 0.1)):
             sq = ((A - 1 + 15 / 4 * (1 - math.cos(z))) ** 2 +
-                  (v - .5 + 15 / 4 * math.sin(z)) ** 2)
-            phi = (A + .5) ** 2 + (v + .5) ** 2
+                  (B - .5 + 15 / 4 * math.sin(z)) ** 2)
+            phi = (A + .5) ** 2 + (B + .5) ** 2
             rhs = disk_bound(z) + 2 / 15 * (R2 - phi) + 2 / 15 * sq
-            assert abs(side_E(z, A, v) - rhs) < 1e-12
+            assert abs(side_E(z, A, B) - rhs) < 1e-12
         assert disk_bound(z) >= z * (1 / 5 - 13 / 8 * z - z * z / 6) \
             > z * (1 / 5 - 2 * z) > 0
     z = 0.1
@@ -840,7 +840,7 @@ def side_profile():
     assert abs(12 / 25 - 0.48) < 1e-15 and z - z ** 3 / 6 > 0.0998
     assert 4 / 15 < 0.2667 and 0.48 * 0.395 + 0.0998 - 0.2667 > 0
     assert 2 / 15 + 1 / 40 < 3 / 10 - 1 / 8 and 0.1 / 8 > 1 / 100
-    assert U0 + 0.5 > 4 / 5 - 1 / 100 and A0 - 0.5 > 3 / 5
+    assert B0 + 0.5 > 4 / 5 - 1 / 100 and A0 - 0.5 > 3 / 5
     zk = root(tangent_rate, 0, 1)
     zc = math.acos(0.6)
     zg = root(disk_bound, 0.1, 0.2)
@@ -849,9 +849,9 @@ def side_profile():
     assert abs(tangent_rate(1) - 0.55) < 0.005 and abs(m(1) - 0.16) < 0.003
     # where k >= 0 the least value is the value at the transition state
     for z in (0.08, 0.1, 0.3, 0.6, 0.9, 0.95, 1.0):
-        assert abs(m(z) - side_E(z, A0, U0)) < 1e-9
+        assert abs(m(z) - side_E(z, A0, B0)) < 1e-9
     for z in (0.01, 0.03, 0.05):
-        assert side_E(z, A0, U0) > m(z) + 1e-5
+        assert side_E(z, A0, B0) > m(z) + 1e-5
     f = Figure(0, 600, 0, 430, 1)
     # Top: the least value and its bounds, with the small turns magnified.
     pl = Plot(f, 60, 205, 480, 190, (0, 1), (0, 0.17))
@@ -859,7 +859,7 @@ def side_profile():
             [(0.05, '0.05'), (0.1, '0.1'), (0.15, '0.15')], xlabel='*z*')
     for x in (0.1, zc):
         pl.vline(x)
-    pl.curve(lambda z: side_E(z, A0, U0), 0, 1, stroke=GREEN, width=1.6,
+    pl.curve(lambda z: side_E(z, A0, B0), 0, 1, stroke=GREEN, width=1.6,
              dash='5 3')
     pl.curve(m, 0, 1, n=160, stroke=BLUE, width=2.2)
     pl.curve(disk_bound, 0, zg, stroke=ORANGE, width=1.8)
@@ -876,7 +876,7 @@ def side_profile():
     f.line(pl.q(zin[0], 0.012), pi_.q(zin[0], 0), stroke=FAINT, width=0.8)
     pi_.vline(0.1)
     pi_.vline(zk, stroke=PURPLE, dash='2 3')
-    pi_.curve(lambda z: side_E(z, A0, U0), 0, 0.15, stroke=GREEN, width=1.6,
+    pi_.curve(lambda z: side_E(z, A0, B0), 0, 0.15, stroke=GREEN, width=1.6,
               dash='5 3')
     pi_.curve(m, 0, 0.15, n=120, stroke=BLUE, width=2.2)
     pi_.curve(disk_bound, 0, zg, stroke=ORANGE, width=1.8)
@@ -909,22 +909,22 @@ def side_profile():
 
 # Figure: the support sum for target sign negative, over the turn.
 
-def beta_axial(A, v, e):
-    """beta(A, v; e, rho) for an axial target, Lemma I.3."""
+def beta_axial(A, B, e):
+    """beta(A, B; e, rho) for an axial target, Lemma I.3."""
     return (0.5 + 2 * PI / 15 + 0.8 * e - (A - .5) * math.cos(e) -
-            v * (1 + math.sin(e)) + 0.5 * abs(math.sin(e)))
+            B * (1 + math.sin(e)) + 0.5 * abs(math.sin(e)))
 
 
-def beta_side(A, v, e):
-    """beta_side(A, v; e) of Lemma I.5."""
-    return (0.8 * e + 2 / 15 * (4 - 3 * A - 2 * v) + (A - .5) * (1 - math.cos(e))
-            - v * math.sin(e) + 0.5 * abs(math.sin(e)))
+def beta_side(A, B, e):
+    """beta_side(A, B; e) of Lemma I.5."""
+    return (0.8 * e + 2 / 15 * (4 - 3 * A - 2 * B) + (A - .5) * (1 - math.cos(e))
+            - B * math.sin(e) + 0.5 * abs(math.sin(e)))
 
 
 def negative_target():
     axp, sdp = axial_region_points(90), side_region_points(110)
-    ma = lambda e: min(beta_axial(A, v, e) for A, v in axp)
-    ms = lambda e: min(beta_side(A, v, e) for A, v in sdp)
+    ma = lambda e: min(beta_axial(A, B, e) for A, B in axp)
+    ms = lambda e: min(beta_side(A, B, e) for A, B in sdp)
     e_lo, e_hi, e_side = -5 * PI / 12, PI / 3, 9 / 25 - 5 * PI / 12
     assert -1 < e_side < -0.94
     assert abs(beta_side(1, .5, 0)) < 1e-12 and abs(ma(0) - 0.0077) < 1e-4
@@ -935,7 +935,7 @@ def negative_target():
     # transition state, which has both labels
     for e in (-0.64, -0.5, -0.3, -0.15, -0.08):
         assert abs(ma(e) - ms(e)) < 1e-9
-        assert abs(ma(e) - beta_side(A0, U0, e)) < 1e-9
+        assert abs(ma(e) - beta_side(A0, B0, e)) < 1e-9
     assert ma(-0.7) < ms(-0.7) - 1e-4 and ms(-0.07) < ma(-0.07) - 1e-6
     f = Figure(0, 640, 0, 345, 1)
     pl = Plot(f, 60, 45, 520, 250, (e_lo, e_hi), (0, 0.6))
@@ -970,7 +970,7 @@ def negative_target():
            'for negative turns the two curves coincide')
 
 
-# Figures: the side margin and the lines B(w) = 0.
+# Figures: the side margin and the lines U(w) = 0.
 
 def M_w(w):
     return 19 / 20 + math.cos(w) - min(math.sin(w), 0) - 1.2 * w
@@ -1008,7 +1008,7 @@ def side_margin():
 def side_side():
     box = (0.45, 1.5, -0.05, 1.0)
     f = Figure(0.37, 1.58, -0.12, 1.05, 380)
-    av_axes(f, 0.45, 1.5, -0.05, 1.0, ticks_a=(0.5, 1.0), ticks_v=(0.5,))
+    ab_axes(f, 0.45, 1.5, -0.05, 1.0, ticks_a=(0.5, 1.0), ticks_b=(0.5,))
     P, _, sd, _ = regions()
     f.polygon(P, fill='none', stroke=INK, width=1)
     f.polygon(sd, fill=FILLS[2], stroke=GREEN, width=1)
@@ -1020,7 +1020,7 @@ def side_side():
         assert lo_w <= w <= hi_w
         p, q = math.sin(w) - 0.9, 0.4 - math.cos(w)
         n = math.hypot(p, q)
-        # the point of the line B(w) = 0 closest to the centre of the disk
+        # the point of the line U(w) = 0 closest to the centre of the disk
         foot = (-.5 - p / n * M_w(w) / n, -.5 - q / n * M_w(w) / n)
         gap = M_w(w) / n - R
         assert (gap > 0) == (w != 0) and gap > -1e-12
@@ -1037,9 +1037,9 @@ def side_side():
     label(f, (0.97, 0.52), '(1, ½)', size=13, anchor='end')
     label(f, (0.85, 0.585), 'side', size=13, color=GREEN, anchor='middle')
     label(f, (1.33, 0.07), '*φ* = 13/4', size=13)
-    f.save('appendix-i/side-side', 'The (A, v)-plane with the admissible region, '
+    f.save('appendix-i/side-side', 'The (A, B)-plane with the admissible region, '
            'its states with side label (green) and the dashed circle '
-           'phi = 13/4, and short pieces of the lines B(w) = 0 for w = -0.3, '
+           'phi = 13/4, and short pieces of the lines U(w) = 0 for w = -0.3, '
            '-0.15, 0, 0.15 and 0.3 near their points closest to the disk; '
            'only the line for w = 0 touches the circle, at the side state '
            '(1, 1/2)')
@@ -1048,9 +1048,9 @@ def side_side():
 # Figure: the mixed clearance.
 
 def clearance():
-    form = lambda A, v: 0.6 * (A + .5) + 11 / 15 * (v + .5)
+    form = lambda A, B: 0.6 * (A + .5) + 11 / 15 * (B + .5)
     # the form is largest on the side region at the diagonal corner
-    assert max(form(A, v) for A, v in side_region_points(160)) \
+    assert max(form(A, B) for A, B in side_region_points(160)) \
         <= form(RD, RD) + 1e-12
     ts = [S0 + (PI / 4 - S0) * k / 4000 for k in range(4001)]
     assert abs(max(ts, key=lambda t: form(*top(t))) - TD) < 1e-3
@@ -1059,14 +1059,14 @@ def clearance():
     assert 2 * RD < 31 / 20
     box = (0.62, 1.22, 0.24, 0.92)
     f = Figure(0.55, 1.26, 0.17, 0.96, 470)
-    av_axes(f, 0.62, 1.22, 0.24, 0.92, ticks_a=(0.75, 1.0), ticks_v=(0.5, 0.75))
+    ab_axes(f, 0.62, 1.22, 0.24, 0.92, ticks_a=(0.75, 1.0), ticks_b=(0.5, 0.75))
     _, _, sd, cap = regions()
     f.polygon(clip_box(regions()[0], box), fill='none', stroke=FAINT, width=1)
     f.polygon(sd, fill=FILLS[2], stroke=GREEN, width=1)
     f.polygon(cap, fill=GREY, stroke='none')
     polyline(f, circle_in_box(box), width=1.2, dash='6 4')
     f.line((0.62, 0.62), (0.92, 0.92), width=0.9, stroke=FAINT)
-    # the bound 17/10 of the form, and A + v = 31/20
+    # the bound 17/10 of the form, and A + B = 31/20
     s = seg_in_window(0.6, 11 / 15, 17 / 10 - 0.6 / 2 - 11 / 30, box)
     f.line(s[0], s[1], stroke=ORANGE, width=2.2)
     s = seg_in_window(1, 1, 31 / 20, box)
@@ -1074,19 +1074,19 @@ def clearance():
     f.dot((RD, RD), r=4)
     label(f, (RD + 0.02, RD + 0.03), '(*r*_d, *r*_d)', size=13)
     label(f, (0.96, 0.47), 'side', size=13, color=GREEN, anchor='middle')
-    label(f, (0.63, 0.74), '*v* = *A*', size=13, color=FAINT)
+    label(f, (0.63, 0.74), '*B* = *A*', size=13, color=FAINT)
     for i, (col, dash, wd, text) in enumerate((
             (ORANGE, None, 2.2, 'form = 17/10'),
-            (PURPLE, '7 4', 1.4, '*A* + *v* = 31/20'))):
+            (PURPLE, '7 4', 1.4, '*A* + *B* = 31/20'))):
         y = 0.9 - 0.045 * i
         f.line((0.95, y), (1.0, y), stroke=col, width=wd, dash=dash)
         label(f, (1.015, y), text, size=13, color=col)
     label(f, (1.14, 0.28), '*φ* = 13/4', size=13)
-    f.save('appendix-i/clearance', 'The (A, v)-plane near the side region '
+    f.save('appendix-i/clearance', 'The (A, B)-plane near the side region '
            '(green): the orange line where the form 3/5 (A + 1/2) + 11/15 '
-           '(v + 1/2) equals 17/10, and the dashed purple line '
-           'A + v = 31/20; both lines cross the '
-           'diagonal v = A just beyond the diagonal corner (rd, rd), the state '
+           '(B + 1/2) equals 17/10, and the dashed purple line '
+           'A + B = 31/20; both lines cross the '
+           'diagonal B = A just beyond the diagonal corner (rd, rd), the state '
            'with side label where the form is largest')
 
 
@@ -1100,8 +1100,8 @@ def opposite_profiles():
                      0.5 * (1 - math.cos(z)))
     # the bounds of the proofs of Lemmas I.13 and I.15
     assert 13 / 30 - 2 * PI / 15 > 13 / 30 - 44 / 105 > 1 / 70 - 1e-15
-    assert max(0.6 * (A + .5) + 11 / 15 * (v + .5)
-               for A, v in side_region_points()) < 17 / 10
+    assert max(0.6 * (A + .5) + 11 / 15 * (B + .5)
+               for A, B in side_region_points()) < 17 / 10
     assert 22 / 35 < 0.6286 and 22 / 75 < 0.2934
     assert 0.5 + 12 / 25 - 1 / 25 - 0.6286 - 0.2934 > 0 and psi(0.4) > 0
     assert 6 / 5 - 11 / 15 - 7 / 20 > 0 and 1 / 70 - 1 / 75 > 0
@@ -1174,11 +1174,11 @@ def marker_inset(f, box, frame, cS, cT, d, p, theta):
 
 
 def marker_point():
-    a, us = A0, U0
-    cS, cT, d, _, mT = canonical(a, us, 1.0, 0.5, -1, -1)
+    a, b = A0, B0
+    cS, cT, d, _, mT = canonical(a, b, 1.0, 0.5, -1, -1)
     theta = mT - 0.5
     assert abs(theta - (PI / 3 - S0 - 0.5)) < 1e-12
-    assert 0 < math.sin(theta) < 0.5 - us
+    assert 0 < math.sin(theta) < 0.5 - b
     assert abs(math.degrees(d) - 69) < 1
     p = u(theta)
     f = Figure(-0.25, 2.8, -0.92, 1.45, 215)
@@ -1208,7 +1208,7 @@ def marker_point():
     m = marker_inset(f, box, frame, cS, cT, d, p, theta)
     f.text((2.3, frame[3] + 0.08), 'magnified', size=13, italic=False,
            color=FAINT)
-    label(f, (frame[0], m((0, topS))[1]), 'top of *S*: ½ − *u*', size=13,
+    label(f, (frame[0], m((0, topS))[1]), 'top of *S*: ½ − *b*', size=13,
           color=BLUE, anchor='end', dx=-6)
     label(f, (frame[0], m(p)[1]), 'height sin *θ*', size=13, color=ORANGE,
           anchor='end', dx=-6)
@@ -1229,16 +1229,16 @@ def marker_point():
 def segments():
     box = (0.44, 1.3, -0.06, 0.86)
     f = Figure(0.37, 1.36, -0.13, 0.9, 470)
-    av_axes(f, 0.44, 1.3, -0.06, 0.86, ticks_a=(0.5, 1.0), ticks_v=(0.5,))
+    ab_axes(f, 0.44, 1.3, -0.06, 0.86, ticks_a=(0.5, 1.0), ticks_b=(0.5,))
     region_frame(f, width=1.2)
     l = 0.55
     dd = lambda t: PI / 3 - l + t
     for k in range(9):
         t = PI / 4 * k / 8
-        v = 0.8 * t
-        a1 = chi(v)
-        f.line((max(0.5, v), v), (a1, v), stroke=BLUE, width=1.3)
-        f.dot((a1, v), r=3.4, fill=ORANGE)
+        B = 0.8 * t
+        a1 = chi(B)
+        f.line((max(0.5, B), B), (a1, B), stroke=BLUE, width=1.3)
+        f.dot((a1, B), r=3.4, fill=ORANGE)
     for k in range(8):
         t = S0 + (PI / 4 - S0) * k / 7
         p0, p1 = (alpha(t), 0.8 * t), top(t)
@@ -1250,8 +1250,8 @@ def segments():
     assert abs(t - 0.655) < 0.001
     f.line((alpha(t), 0.8 * t), top(t), stroke=ORANGE, width=1.4, dash='4 3')
     tie_segment(f, width=1)
-    f.dot((A0, U0), r=3.5)
-    label(f, (A0 + 0.015, U0 - 0.02), '(*a*_0, *u*_0)', size=13)
+    f.dot((A0, B0), r=3.5)
+    label(f, (A0 + 0.015, B0 - 0.02), '(*a*_0, *b*_0)', size=13)
     f.dot((RD, RD), r=3.5)
     label(f, (RD + 0.015, RD + 0.025), '(*r*_d, *r*_d)', size=13)
     f.text((0.76, 0.1), 'axial', size=14, italic=False, color=BLUE)
@@ -1259,7 +1259,7 @@ def segments():
     tp = top(t)
     label(f, (tp[0] + 0.025, tp[1] + 0.035), '*τ* = sw(*ℓ*)', size=13,
           color=ORANGE)
-    f.save('appendix-i/segments', 'The admissible states in the (A, v)-plane '
+    f.save('appendix-i/segments', 'The admissible states in the (A, B)-plane '
            'cut into segments of constant label: horizontal for axial labels, '
            'of slope 9/4 for side labels. For the source label 0.55 the orange '
            'dots mark the end of each segment where the target support is '
@@ -1282,64 +1282,69 @@ def circle_second_bound(l, t):
 
 
 def circle_concave():
-    l = 0.4
-    s = sw(l)
-    assert S0 < s < TD
+    # the largest source label, where d = pi/12 + tau is smallest
+    l = PI / 4
+    level = -1 / 2 + 8 / 49
     ts = [S0 + (TD - S0) * k / 400 for k in range(401)]
     for t in ts:
         _, _, Z, _ = circle_xyzd(t)
-        assert 1 < Z < 1.4
-        assert circle_second(l, t) <= circle_second_bound(l, t) < 0
-        if t >= s:
-            assert circle_second_bound(l, t) < -4 / 5 + 8 / 49
+        assert 1 < Z < 1.4 and PI / 3 - l + t > PI / 6
+        assert circle_second(l, t) <= circle_second_bound(l, t) < level
+        # for smaller source labels the bound is smaller
+        for k in range(11):
+            l2 = 0.4 + (PI / 4 - 0.4) * k / 10
+            assert circle_second_bound(l2, t) <= circle_second_bound(l, t) \
+                + 1e-12
     # the derivatives of Lemma I.19, by finite differences
     H = lambda t: G(PI / 3 - l + t, *top(t)) if t <= TD else None
     for t in (0.45, 0.6, 0.7):
         h = 1e-4
         second = (H(t + h) - 2 * H(t) + H(t - h)) / h ** 2
         assert abs(second - circle_second(l, t)) < 1e-4
+    # the ends of the three curves, as the alt text gives them
+    assert abs(circle_second(l, S0) + 1.74) < 0.005
+    assert abs(circle_second(l, TD) + 1.18) < 0.005
+    assert abs(math.sin(PI / 3 - l + S0) - 0.59) < 0.005
+    assert abs(math.sin(PI / 3 - l + TD) - 0.87) < 0.005
+    assert abs(circle_second_bound(l, S0) + 0.56) < 0.005
+    assert abs(circle_second_bound(l, TD) + 0.71) < 0.005
+    assert abs(level + 0.34) < 0.005
     f = Figure(0, 600, 0, 320, 1)
     pl = Plot(f, 70, 40, 470, 240, (S0, TD), (-2, 0))
-    pl.axes([(S0, ''), (s, 'sw(*ℓ*)'), (TD, '*t*_d')],
-            [(-2, '−2'), (-1, '−1'), (-4 / 5 + 8 / 49, '−0.64')],
+    pl.axes([(S0, ''), (TD, '*t*_d')],
+            [(-2, '−2'), (-1, '−1'), (level, '−0.34')],
             xlabel='*τ*', at=0, tick_dy=-13)
     pl.label(S0, 0, '*s*_0', size=12, dx=8, dy=-13)
-    pl.f.polygon([pl.q(s, -2), pl.q(TD, -2), pl.q(TD, 0), pl.q(s, 0)],
-                 fill=FILLS[1], stroke='none', opacity=0.6)
-    pl.hline(-4 / 5 + 8 / 49, stroke=FAINT, dash='2 3')
-    pl.vline(s)
+    pl.hline(level, stroke=FAINT, dash='2 3')
     pl.curve(lambda t: -math.sin(PI / 3 - l + t), S0, TD, stroke=ORANGE,
              width=1.4, dash='2 3')
     pl.curve(lambda t: circle_second_bound(l, t), S0, TD, stroke=GREEN,
              width=1.8, dash='6 3')
     pl.curve(lambda t: circle_second(l, t), S0, TD, stroke=BLUE, width=2.2)
-    pl.label(0.45, -1.42, '*H*^{circ}_2(*ℓ*, *τ*)', size=13, color=BLUE)
-    pl.label(0.38, -0.74, 'bound of the proof', size=13, color=GREEN)
-    pl.label(0.62, -1.06, '−sin *d*', size=13, color=ORANGE)
-    pl.label((s + TD) / 2, -1.9, 'Lemma I.20', size=13, color=ORANGE,
-             anchor='middle')
+    pl.label(0.52, -1.62, '*H*^{circ}_2(*ℓ*, *τ*)', size=13, color=BLUE)
+    pl.label(0.39, -0.47, 'bound of the proof', size=13, color=GREEN)
+    pl.label(0.6, -0.89, '−sin *d*', size=13, color=ORANGE)
     f.save('appendix-i/circle-concave', 'Graph over the side label tau from s0 '
-           'to td, for the source label 2/5, of the second derivative of the '
+           'to td, for the source label pi/4, of the second derivative of the '
            'target support along the circle (blue), well below the bound of '
            'the proof of Lemma I.20 (dashed green) and its main term minus '
-           'sin d (dotted orange); the shaded part from the switch label to '
-           'td is the range of the lemma, where the bound is below '
-           'minus 4/5 plus 8/49')
+           'sin d (dotted orange); all three lie below minus 1/2 plus 8/49, '
+           'about minus 0.34 (dotted line)')
 
 
 # Figure: the least target support over the targets of each label.
 
 def circle_profile():
     l = 0.5
-    us = top(l)[1]
-    assert abs(us - (0.5 + 1.2 * (l - PI / 6))) < 1e-3
+    b = top(l)[1]
+    assert abs(b - (0.5 + 1.2 * (l - PI / 6))) < 1e-3
     dd = lambda t: PI / 3 - l + t
     xi = lambda t: math.sqrt(R2 - (0.5 + 0.8 * t) ** 2)
-    gc = lambda t: 0.5 - us - (xi(t) - 1) * math.sin(dd(t)) + \
+    gc = lambda t: 0.5 - b - (xi(t) - 1) * math.sin(dd(t)) + \
         (0.5 + 0.8 * t) * math.cos(dd(t))
-    gtie = lambda t: 0.5 - us + G(dd(t), alpha(t), 0.8 * t)
-    gtop = lambda t: 0.5 - us + G(dd(t), *top(t))
-    g4 = 0.5 - us + G(dd(S0), A0, U0)
+    gtie = lambda t: 0.5 - b + G(dd(t), alpha(t), 0.8 * t)
+    gtop = lambda t: 0.5 - b + G(dd(t), *top(t))
+    g4 = 0.5 - b + G(dd(S0), A0, B0)
     s = sw(l)
     assert abs(gc(S0) - g4) < 1e-12 and abs(gtie(S0) - g4) < 1e-12
     assert abs(gtop(S0) - g4) < 1e-12 and abs(gtie(s) - gtop(s)) < 1e-12
@@ -1350,6 +1355,9 @@ def circle_profile():
         assert gtop(t) >= gtie(t) - 1e-12 and gtie(t) >= g4 - 1e-12
         t = s + (PI / 4 - s) * k / 100
         assert gtie(t) >= gtop(t) - 1e-12 and gtop(t) > 0
+    # the top values are concave on [s0, td] (Lemma I.23)
+    tops = [gtop(S0 + (TD - S0) * k / 100) for k in range(101)]
+    assert all(tops[k - 1] + tops[k + 1] <= 2 * tops[k] for k in range(1, 100))
     assert abs(g4 - 0.0236) < 1e-4
     f = Figure(0, 620, 0, 320, 1)
     lo, hi = 0, PI / 4
@@ -1371,7 +1379,7 @@ def circle_profile():
     pl.label(0.03, g4, '(I.4): the transition state', size=13, color=ORANGE,
              dy=-10)
     f.save('appendix-i/circle-profile', 'Graph over the target label tau from '
-           '0 to pi/4, for the source label 0.5, of one half minus u plus the '
+           '0 to pi/4, for the source label 0.5, of one half minus b plus the '
            'target support: on the axial states of the circle up to s0 '
            '(blue, decreasing), and beyond s0 at the tie state (purple) and at '
            'the top (green) of the side segment of label tau, the lower of the '
@@ -1382,24 +1390,24 @@ def circle_profile():
 # Figure: the least forward sum for both signs negative.
 
 def both_negative():
-    xi0 = lambda l: 0.5 - top(l)[1] + G(PI / 3 - l + S0, A0, U0)
+    xi0 = lambda l: 0.5 - top(l)[1] + G(PI / 3 - l + S0, A0, B0)
     # for sources at the top of their segment, the least sum over the active
     # targets is at the transition state
     tg = []
     n = 70
     for i in range(n + 1):
         for j in range(n + 1):
-            A, v = 0.5 + KAPPA * i / n, 0.8 * j / n
-            if admissible(A, v) and ell(A, v) < PI / 4 - 1e-12:
-                tg.append((A, v))
+            A, B = 0.5 + KAPPA * i / n, 0.8 * j / n
+            if admissible(A, B) and ell(A, B) < PI / 4 - 1e-12:
+                tg.append((A, B))
     for k in range(200):
         t = PI / 4 * k / 199
         tg.append((chi(0.8 * t), 0.8 * t))
         if t >= S0:
             tg.append(top(t))
-    sig = lambda l, A, v: (0.5 - top(l)[1] + G(PI / 3 - l + ell(A, v), A, v))
+    sig = lambda l, A, B: (0.5 - top(l)[1] + G(PI / 3 - l + ell(A, B), A, B))
     for l in (0.37, 0.4, 0.5, 0.6, 0.7, 0.72, 0.75, PI / 4):
-        assert min(sig(l, A, v) for A, v in tg) >= xi0(l) - 1e-12
+        assert min(sig(l, A, B) for A, B in tg) >= xi0(l) - 1e-12
     lmin = argmin(xi0, 0.6, PI / 4, 1000)
     assert abs(lmin - 0.72) < 0.01 and 7e-4 < xi0(lmin) < 9e-4
     b17 = lambda l: 0.5 - l / 5 - 2 * PI / 15

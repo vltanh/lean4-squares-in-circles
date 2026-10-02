@@ -38,7 +38,7 @@
 <circle cx="512.0" cy="116.8" r="3.6" fill="#16a34a"/>
 <text x="519.3" y="104.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="start" dominant-baseline="middle">marker</text>
 <line x1="418.4" y1="220.8" x2="688.8" y2="220.8" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="4 3"/>
-<text x="418.4" y="234.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle"><tspan font-style="italic">y</tspan> = <tspan font-style="italic">u</tspan> − ½</text>
+<text x="418.4" y="234.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle"><tspan font-style="italic">y</tspan> = <tspan font-style="italic">b</tspan> − ½</text>
 <line x1="514.1" y1="116.8" x2="514.1" y2="220.8" stroke="#ea580c" stroke-width="2.2"/>
 <text x="522.4" y="189.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle">≤ <tspan font-style="italic">σ</tspan><tspan dy="3.9" font-size="9.4">3</tspan></text>
 <line x1="512.0" y1="220.8" x2="602.1" y2="168.8" stroke="#2563eb" stroke-width="1" stroke-dasharray="3 3"/>

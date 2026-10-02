@@ -1,4 +1,5 @@
 import SquaresInCircles.Six.Wings.WestRange
+import SquaresInCircles.Six.Wings.WestSide
 
 /-!
 # Six squares: a missing west wing with W on its own axis
@@ -23,40 +24,23 @@ concave in `s` on each piece.
 noncomputable section
 namespace SquaresInCircles.Six.Wings.WestDiagonal
 open Normalization
+open WestSide (halfDifference diagonalTerm diagonalFirst half_difference_lower norm_identity
+  diagonal_hasDeriv diagonal_first_hasDeriv diagonal_second_nonpositive diagonal_concave)
 
 /-! ### The term of D
 
 With the weights `1` on W–D and on D–S the force on D is `(cos r, 1 - sin r)`,
 `r = d - s`, of length `√2 · halfDifference r` (`norm_identity`), at most
 `rootSlope · halfDifference r` with the bracket `rootSlope` of `√2`. With its
-far-vertex support it leaves in the profile the term `diagonalTerm r`, where
-`rootCoefficient = radiusBound · rootSlope`; `diagonalFirst` and
-`diagonalSecond` are its derivatives. -/
+far-vertex support it leaves in the profile the term
+`diagonalTerm rootCoefficient r` of `WestSide`, where
+`rootCoefficient = radiusBound · rootSlope`. -/
 
 def rootSlope : ℝ := 1.415
-def halfDifference (r : ℝ) : ℝ := Real.cos (r/2)-Real.sin (r/2)
 def rootCoefficient : ℝ := radiusBound*rootSlope
 
-def diagonalTerm (r : ℝ) : ℝ :=
-  Real.cos r-rootCoefficient*Real.cos (r/2)+rootCoefficient*Real.sin (r/2)
-def diagonalFirst (r : ℝ) : ℝ :=
-  -Real.sin r+(rootCoefficient/2)*(Real.sin (r/2)+Real.cos (r/2))
-def diagonalSecond (r : ℝ) : ℝ :=
-  -Real.cos r+(rootCoefficient/4)*(Real.cos (r/2)-Real.sin (r/2))
-
-lemma half_difference_lower {r : ℝ} (hr : 0 ≤ r ∧ r ≤ 6/5) :
-    0 ≤ halfDifference r := by
-  have h := sin_le_cos_of_small (x := r/2)
-    ⟨by linarith [hr.1],by linarith [hr.2,Real.pi_gt_d2]⟩
-  dsimp [halfDifference]
-  linarith
-
-lemma norm_identity (r : ℝ) :
-    (Real.cos r)^2+(1-Real.sin r)^2=2*(halfDifference r)^2 := by
-  have hs : Real.sin r=2*Real.sin (r/2)*Real.cos (r/2) := by
-    simpa only [show 2*(r/2)=r by ring] using Real.sin_two_mul (r/2)
-  dsimp [halfDifference]
-  linear_combination Real.sin_sq_add_cos_sq r-2*Real.sin_sq_add_cos_sq (r/2)-2*hs
+lemma coefficient_le : rootCoefficient ≤ 4 := by
+  norm_num [rootCoefficient,rootSlope,radiusBound]
 
 lemma norm_upper {r : ℝ} (hr : 0 ≤ r ∧ r ≤ 6/5) :
     Real.sqrt ((Real.cos r)^2+(1-Real.sin r)^2) ≤ rootSlope*halfDifference r := by
@@ -80,61 +64,16 @@ lemma support {a b r : ℝ} (hc : ContainedChart a |b|) (hr : 0 ≤ r ∧ r ≤ 
   dsimp only [diagonalUpper]
   linarith
 
-lemma diagonal_hasDeriv (r : ℝ) : HasDerivAt diagonalTerm (diagonalFirst r) r := by
-  convert (((Real.hasDerivAt_cos r).sub
-    ((((hasDerivAt_id r).div_const 2).cos).const_mul rootCoefficient)).add
-    ((((hasDerivAt_id r).div_const 2).sin).const_mul rootCoefficient)) using 1
-  · funext y; simp only [diagonalTerm,Pi.add_apply,Pi.sub_apply,id_eq]
-  · dsimp [diagonalFirst]; ring
-
-lemma diagonal_first_hasDeriv (r : ℝ) : HasDerivAt diagonalFirst (diagonalSecond r) r := by
-  convert (((Real.hasDerivAt_sin r).const_mul (-1)).add
-    (((((hasDerivAt_id r).div_const 2).sin).add
-      (((hasDerivAt_id r).div_const 2).cos)).const_mul (rootCoefficient/2))) using 1
-  · funext y; simp only [diagonalFirst,Pi.add_apply,id_eq]; ring
-  · dsimp [diagonalSecond]; ring
-
-lemma diagonal_second_nonpositive {r : ℝ} (hr : 0 ≤ r ∧ r ≤ 6/5) :
-    diagonalSecond r ≤ 0 := by
-  have hu := half_difference_lower hr
-  have hs := Real.sin_nonneg_of_nonneg_of_le_pi
-    (show 0 ≤ r/2 by linarith [hr.1])
-    (show r/2 ≤ Real.pi by linarith [hr.2,Real.pi_gt_d2])
-  have hc := Real.cos_nonneg_of_mem_Icc
-    (show r/2 ∈ Set.Icc (-(Real.pi/2)) (Real.pi/2) by
-      constructor <;> linarith [hr.1,hr.2,Real.pi_gt_d2])
-  have hsum : 1 ≤ Real.cos (r/2)+Real.sin (r/2) := by
-    have hp := mul_nonneg hs hc
-    nlinarith [Real.sin_sq_add_cos_sq (r/2)]
-  have hcoef : -(Real.cos (r/2)+Real.sin (r/2))+rootCoefficient/4 ≤ 0 := by
-    dsimp [rootCoefficient,rootSlope,radiusBound]
-    linarith
-  have hp := mul_nonpos_of_nonneg_of_nonpos hu hcoef
-  have hid : Real.cos r=halfDifference r*(Real.cos (r/2)+Real.sin (r/2)) := by
-    have h := Real.cos_two_mul (r/2)
-    rw [show 2*(r/2)=r by ring] at h
-    dsimp [halfDifference]
-    nlinarith only [h,Real.sin_sq_add_cos_sq (r/2)]
-  dsimp [diagonalSecond]
-  rw [hid]
-  dsimp [halfDifference] at hp ⊢
-  nlinarith only [hp]
-
-lemma diagonal_concave : ConcaveOn ℝ (Set.Icc 0 (6/5)) diagonalTerm :=
-  concave_of_deriv2 (fun x _ => diagonal_hasDeriv x) (fun x _ => diagonal_first_hasDeriv x)
-    fun _ h => diagonal_second_nonpositive h
-
 lemma diagonal_first_lower {r : ℝ} (hr : 0 ≤ r ∧ r ≤ 6/5) :
-    7/10 ≤ diagonalFirst r := by
-  have hm : MonotoneOn (fun x => -diagonalFirst x) (Set.Icc 0 (6/5)) := by
-    have hd (x : ℝ) : HasDerivAt (fun x => -diagonalFirst x) (-diagonalSecond x) x :=
-      (diagonal_first_hasDeriv x).neg
+    7/10 ≤ diagonalFirst rootCoefficient r := by
+  have hm : MonotoneOn (fun x => -diagonalFirst rootCoefficient x) (Set.Icc 0 (6/5)) := by
+    have hd (x : ℝ) := (diagonal_first_hasDeriv rootCoefficient x).neg
     apply monoOn_of_hasDeriv_nonneg (fun x _ => (hd x).continuousAt.continuousWithinAt)
       (fun x _ => hd x)
     intro x hx
-    exact neg_nonneg.mpr (diagonal_second_nonpositive ⟨hx.1.le,hx.2.le⟩)
+    exact neg_nonneg.mpr (diagonal_second_nonpositive coefficient_le ⟨hx.1.le,hx.2.le⟩)
   have h := hm hr (by norm_num : (6:ℝ)/5 ∈ Set.Icc 0 (6/5)) hr.2
-  have he : 7/10 ≤ diagonalFirst (6/5) := by
+  have he : 7/10 ≤ diagonalFirst rootCoefficient (6/5) := by
     have hs := sin_upper_five (x := (6:ℝ)/5) (by norm_num)
     have hc := cos_lower_six (x := (3:ℝ)/5) (by norm_num)
     have ht := sin_lower_seven (x := (3:ℝ)/5) (by norm_num)
@@ -146,9 +85,10 @@ lemma diagonal_first_lower {r : ℝ} (hr : 0 ≤ r ∧ r ≤ 6/5) :
 /-! ### The profile in `v` and `d`
 
 With the weight `beta` on C–W, the terms of W, of the separation W–D and of D
-make up `base v s d = beta · wing v + gapTerm (v + d) + diagonalTerm (d - s)`. It
-is concave in `v`, concave along the wall `d + v = 53/50` and increasing in `d`
-along `v = 31/50`, so it is positive once it is positive at three boundary
+make up
+`base v s d = beta · wing v + gapTerm (v + d) + diagonalTerm rootCoefficient (d - s)`.
+It is concave in `v`, concave along the wall `d + v = 53/50` and increasing in
+`d` along `v = 31/50`, so it is positive once it is positive at three boundary
 points. -/
 
 def beta : ℝ := 41/20
@@ -156,7 +96,7 @@ def beta : ℝ := 41/20
 def wing (v : ℝ) : ℝ := A*Real.cos v+B*Real.sin v
 def gapTerm (q : ℝ) : ℝ := (1/2)*Real.cos q-B*Real.sin q
 
-def base (v s d : ℝ) : ℝ := beta*wing v+gapTerm (v+d)+diagonalTerm (d-s)
+def base (v s d : ℝ) : ℝ := beta*wing v+gapTerm (v+d)+diagonalTerm rootCoefficient (d-s)
 
 /-- The three boundary points `(v, d)` of the domain. -/
 def pointV : Fin 3 → ℝ := ![53/50-16/25,53/50-11/14,31/50]
@@ -180,7 +120,7 @@ lemma west_concave {s d : ℝ} (hd : 16/25 ≤ d ∧ d ≤ 11/14) :
     have h := adverse_harmonic d
     dsimp [b,beta,B,B] at *
     linarith
-  have h := (concaveOn_const (diagonalTerm (d-s)) (convex_Icc 0 (31/50))).add
+  have h := (concaveOn_const (diagonalTerm rootCoefficient (d-s)) (convex_Icc 0 (31/50))).add
     (harmonic_concave fun _ hx => harmonic_nonneg hA hB ⟨hx.1,by linarith [hx.2,Real.pi_gt_d2]⟩)
   convert h using 1
   funext v
@@ -201,11 +141,12 @@ lemma wall_concave {s : ℝ} (hs : -(2/5) ≤ s ∧ s ≤ 12/25) :
     simp only [smul_eq_mul]
     congr 2
     ring
-  have hr0 := concave_affine_argument (a := 1) (b := -s) diagonal_concave
+  have hr0 := concave_affine_argument (a := 1) (b := -s) (diagonal_concave coefficient_le)
     (l := 16/25) (u := 11/14) (by
       intro d hd
       constructor <;> linarith [hd.1,hd.2,hs.1,hs.2])
-  have hr : ConcaveOn ℝ (Set.Icc (16/25) (11/14)) (fun d => diagonalTerm (d-s)) := by
+  have hr : ConcaveOn ℝ (Set.Icc (16/25) (11/14))
+      (fun d => diagonalTerm rootCoefficient (d-s)) := by
     simpa only [one_mul,sub_eq_add_neg] using hr0
   have h := (hw.add (concaveOn_const (gapTerm (53/50)) (convex_Icc (16/25) (11/14)))).add hr
   convert h using 1
@@ -216,10 +157,11 @@ lemma wall_concave {s : ℝ} (hs : -(2/5) ≤ s ∧ s ≤ 12/25) :
 lemma top_monotone {s : ℝ} (hs : -(2/5) ≤ s ∧ s ≤ 12/25) :
     MonotoneOn (fun d => base (31/50) s d) (Set.Icc (16/25) (11/14)) := by
   have hf (d : ℝ) : HasDerivAt (fun x => base (31/50) s x)
-      (-(1/2)*Real.sin (31/50+d)-B*Real.cos (31/50+d)+diagonalFirst (d-s)) d := by
+      (-(1/2)*Real.sin (31/50+d)-B*Real.cos (31/50+d)+
+        diagonalFirst rootCoefficient (d-s)) d := by
     have hc := (((hasDerivAt_id d).const_add (31/50)).cos).const_mul (1/2)
     have hs' := (((hasDerivAt_id d).const_add (31/50)).sin).const_mul B
-    have hr := (diagonal_hasDeriv (d-s)).comp d ((hasDerivAt_id d).sub_const s)
+    have hr := (diagonal_hasDeriv rootCoefficient (d-s)).comp d ((hasDerivAt_id d).sub_const s)
     convert ((hc.sub hs').add hr).const_add (beta*wing (31/50)) using 1
     · funext y
       simp only [base,gapTerm,Pi.add_apply,Pi.sub_apply,Function.comp_apply,id_eq]
@@ -308,13 +250,14 @@ private lemma south_term_concave (negative : Bool) :
 lemma south_concave (negative : Bool) {v d : ℝ}
     (hd : 16/25 ≤ d ∧ d ≤ 11/14) :
     ConcaveOn ℝ (Set.Icc 0 (2/5)) (fun x => profile negative v x d) := by
-  have hD0 := concave_affine_argument (a := -side negative) (b := d) diagonal_concave
+  have hD0 := concave_affine_argument (a := -side negative) (b := d)
+    (diagonal_concave coefficient_le)
     (l := 0) (u := 2/5) (by
       intro x hx
       cases negative <;> dsimp [side] <;> constructor <;>
         linarith [hd.1,hd.2,hx.1,hx.2])
   have hD : ConcaveOn ℝ (Set.Icc 0 (2/5))
-      (fun x => diagonalTerm (d-side negative*x)) := by
+      (fun x => diagonalTerm rootCoefficient (d-side negative*x)) := by
     convert hD0 using 1
     funext x
     congr 1
@@ -554,11 +497,11 @@ lemma piece_range (j : Fin 3) : 0 ≤ pieceStart j ∧ pieceEnd j ≤ 12/25 := b
 is a harmonic with nonnegative coefficients. -/
 lemma south_concave (j : Fin 3) {v d : ℝ} (hd : 16/25 ≤ d ∧ d ≤ 11/14) :
     ConcaveOn ℝ (Set.Icc 0 (12/25)) (fun s => profile j v s d) := by
-  have hD0 := concave_affine_argument (a := -1) (b := d) diagonal_concave
+  have hD0 := concave_affine_argument (a := -1) (b := d) (diagonal_concave coefficient_le)
     (l := 0) (u := 12/25) (by
       intro s hs
       constructor <;> linarith [hd.1,hd.2,hs.1,hs.2])
-  have hD : ConcaveOn ℝ (Set.Icc 0 (12/25)) (fun s => diagonalTerm (d-s)) := by
+  have hD : ConcaveOn ℝ (Set.Icc 0 (12/25)) (fun s => diagonalTerm rootCoefficient (d-s)) := by
     convert hD0 using 1
     funext s
     congr 1

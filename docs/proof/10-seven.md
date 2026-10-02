@@ -192,16 +192,16 @@ choice.
 
 ### Definition 10.4 (states)
 
-A *state* is a pair of real numbers $(a, u)$ with $\frac12 \le a$ and
-$0 \le u \le a$. It is *admissible* if moreover
-$\varphi(a, u) \le \frac{13}4$. The *remainder* of $(a, u)$ is
+A *state* is a pair of real numbers $(a, b)$ with $\frac12 \le a$ and
+$0 \le b \le a$. It is *admissible* if moreover
+$\varphi(a, b) \le \frac{13}4$. The *remainder* of $(a, b)$ is
 
 ```math
-r(a, u) = 4 - 3a - 2u .
+r(a, b) = 4 - 3a - 2b .
 ```
 
-The *state* of an exterior square $S$ is $(a_S, b_S)$, and its *sign* is its
-orientation $\varepsilon_S$.
+The *state* of an exterior square $S$ is the pair $(a_S, b_S)$ of its offsets,
+written $(a, b)$, and its *sign* is its orientation $\varepsilon_S$.
 
 *Lean: [`Seven.Admissible`](../../SquaresInCircles/Seven/Exterior.lean#L33),
 [`ExteriorChart`](../../SquaresInCircles/Common/ExteriorCharts.lean#L17),
@@ -210,15 +210,15 @@ orientation $\varepsilon_S$.
 
 ### Lemma 10.5 (admissible states)
 
-1. For all real $a$ and $u$,
+1. For all real $a$ and $b$,
 
    ```math
-   r(a, u) = (a - 1)^2 + \left(u - \tfrac12\right)^2 + \tfrac{13}4 - \varphi(a, u) .
+   r(a, b) = (a - 1)^2 + \left(b - \tfrac12\right)^2 + \tfrac{13}4 - \varphi(a, b) .
    ```
 
-   Hence an admissible state has $r(a, u) \ge 0$, that is $3a + 2u \le 4$.
-2. An admissible state $(a, u)$ has $a \le \sqrt3 - \frac12 < \frac54$,
-   $a + u < \frac{31}{20}$ and $u < \frac{31}{40}$. Here
+   Hence an admissible state has $r(a, b) \ge 0$, that is $3a + 2b \le 4$.
+2. An admissible state $(a, b)$ has $a \le \sqrt3 - \frac12 < \frac54$,
+   $a + b < \frac{31}{20}$ and $b < \frac{31}{40}$. Here
    $1.73 < \sqrt3 < 1.733$.
 3. If $S$ is an exterior square with $\varphi(a_S, b_S) \le \frac{13}4$, in
    particular if $\overline S$ lies in a closed disk of radius $R_7$ about $o$,
@@ -227,16 +227,16 @@ orientation $\varepsilon_S$.
 *Proof.* (1) This is the identity of
 [Lemma 3.6](03-tools.md#lemma-36-tangent-lines) at the point $(1, \frac12)$,
 where $\varphi(1, \frac12) = \frac{13}4$ and the linear terms are
-$3(a - 1) + 2(u - \frac12) = -r(a, u)$. For an admissible state the three terms
+$3(a - 1) + 2(b - \frac12) = -r(a, b)$. For an admissible state the three terms
 on the right are nonnegative.
 
-(2) As $u \ge 0$, [Lemma 3.4](03-tools.md#lemma-34-farthest-vertex) (2) gives
+(2) As $b \ge 0$, [Lemma 3.4](03-tools.md#lemma-34-farthest-vertex) (2) gives
 $a \le \sqrt{\frac{13}4 - \frac14} - \frac12 = \sqrt3 - \frac12$; and
 $\sqrt3 < \frac74$ because $3 < \frac{49}{16}$. Next,
-$2\varphi(a, u) = (a + u + 1)^2 + (a - u)^2 \ge (a + u + 1)^2$, so
-$(a + u + 1)^2 \le \frac{13}2 < (\frac{51}{20})^2 = 6.5025$ and
-$a + u < \frac{31}{20}$. With $u \le a$ this gives
-$2u \le a + u < \frac{31}{20}$. The bounds on $\sqrt3$ follow from
+$2\varphi(a, b) = (a + b + 1)^2 + (a - b)^2 \ge (a + b + 1)^2$, so
+$(a + b + 1)^2 \le \frac{13}2 < (\frac{51}{20})^2 = 6.5025$ and
+$a + b < \frac{31}{20}$. With $b \le a$ this gives
+$2b \le a + b < \frac{31}{20}$. The bounds on $\sqrt3$ follow from
 $1.73^2 < 3 < 1.733^2$.
 
 (3) By [Lemma 3.21](03-tools.md#lemma-321-charts) (1), $a_S \ge \frac12$ since
@@ -269,26 +269,26 @@ squares have the state $(1, \frac12)$, and the top and bottom squares have the
 states $(y_3, 0)$ and $(-y_1, 0)$, where
 $\frac52 - \sqrt3 \le y_3, -y_1 \le \sqrt3 - \frac12$.
 
-![The (a, u)-plane with the admissible region shaded: it is bounded by the vertical line a = 1/2, the diagonal u = a, the arc of the circle phi = 13/4 and the axis u = 0. The side state (1, 1/2) lies on the arc, with the tangent line 3a + 2u = 4 there; the axial states form the segment of the a-axis from 1/2 to root 3 minus 1/2; the transition state lies on the arc between them](figures/10-seven/states.svg)
+![The (a, b)-plane with the admissible region shaded: it is bounded by the vertical line a = 1/2, the diagonal b = a, the arc of the circle phi = 13/4 and the axis b = 0. The side state (1, 1/2) lies on the arc, with the tangent line 3a + 2b = 4 there; the axial states form the segment of the a-axis from 1/2 to root 3 minus 1/2; the transition state lies on the arc between them](figures/10-seven/states.svg)
 
-*Figure 10.3.* The admissible states: $\frac12 \le a$, $0 \le u \le a$ and
-$\varphi(a, u) \le \frac{13}4$. The line $r = 0$ touches the circle
+*Figure 10.3.* The admissible states: $\frac12 \le a$, $0 \le b \le a$ and
+$\varphi(a, b) \le \frac{13}4$. The line $r = 0$ touches the circle
 $\varphi = \frac{13}4$ at the side state $(1, \frac12)$, and the region lies on
 the side $r \ge 0$. The axial states of Definition 10.15 form the thick
-segment of the $a$-axis; the transition state $(a_0, u_0)$ of Definition 10.6 is
+segment of the $a$-axis; the transition state $(a_0, b_0)$ of Definition 10.6 is
 marked on the arc.
 
 ### Definition 10.6 (labels and markers)
 
-For real $a$ and $u$ let
+For real $a$ and $b$ let
 
 ```math
-\mathrm{axial}(u) = \tfrac54 u, \qquad
-\mathrm{side}(a, u) = \tfrac\pi6 + \tfrac13\left(u - \tfrac12\right) + \tfrac34(1 - a), \qquad
-\ell(a, u) = \min\left(\mathrm{axial}(u), \mathrm{side}(a, u), \tfrac\pi4\right) .
+\mathrm{axial}(b) = \tfrac54 b, \qquad
+\mathrm{side}(a, b) = \tfrac\pi6 + \tfrac13\left(b - \tfrac12\right) + \tfrac34(1 - a), \qquad
+\ell(a, b) = \min\left(\mathrm{axial}(b), \mathrm{side}(a, b), \tfrac\pi4\right) .
 ```
 
-The number $\ell(a, u)$ is the *label* of $(a, u)$. The label is *axial*,
+The number $\ell(a, b)$ is the *label* of $(a, b)$. The label is *axial*,
 *side* or *capped* when the first, second or third term attains the minimum
 (Figure 10.4), and *active* when it is axial or side. A tie counts for every
 term that attains the minimum, so a label equal to $\frac\pi4$ can be both
@@ -298,17 +298,17 @@ capped and active. The *marker* of an exterior square $S$ is the direction
 \mu_S = \theta_S + \varepsilon_S\,\ell(a_S, b_S) .
 ```
 
-The axial and side terms agree exactly on the line $9a + 11u = 2\pi + 7$,
-since $12(\mathrm{axial}(u) - \mathrm{side}(a, u)) = 9a + 11u - 2\pi - 7$. This
+The axial and side terms agree exactly on the line $9a + 11b = 2\pi + 7$,
+since $12(\mathrm{axial}(b) - \mathrm{side}(a, b)) = 9a + 11b - 2\pi - 7$. This
 line meets the circle $\varphi = \frac{13}4$ in two points; the one with the
-larger $a$ is the *transition state* $(a_0, u_0)$,
+larger $a$ is the *transition state* $(a_0, b_0)$,
 
 ```math
-a_0 = \frac{9M + 11J}{202} - \frac12, \qquad u_0 = \frac{11M - 9J}{202} - \frac12, \qquad M = 2\pi + 17, \quad J = \sqrt{202\cdot\tfrac{13}4 - M^2} ,
+a_0 = \frac{9M + 11J}{202} - \frac12, \qquad b_0 = \frac{11M - 9J}{202} - \frac12, \qquad M = 2\pi + 17, \quad J = \sqrt{202\cdot\tfrac{13}4 - M^2} ,
 ```
 
-and $s_0 = \frac54 u_0$ is its label. Numerically
-$(a_0, u_0) \approx (1.1198, 0.2914)$ and $s_0 \approx 0.3642$.
+and $s_0 = \frac54 b_0$ is its label. Numerically
+$(a_0, b_0) \approx (1.1198, 0.2914)$ and $s_0 \approx 0.3642$.
 
 *Lean: [`Seven.axial`](../../SquaresInCircles/Seven/Exterior.lean#L27),
 [`Seven.side`](../../SquaresInCircles/Seven/Exterior.lean#L28),
@@ -328,11 +328,11 @@ has the chart $(0, -1)$ and the marker $-\frac\pi6$, and the top square has a
 chart with phase $\frac\pi2$ and the marker $\frac\pi2$. This puts the six
 markers at 30°, 90°, …, 330°.
 
-![The admissible region of the (a, u)-plane divided into three label regions: the axial region below and left, where the label is 5u/4; the side region on the right next to the circle, where the label is the side term; and the small capped triangle near the diagonal, where the label is pi/4. The dividing lines meet at one point; level lines of the label are drawn in each region, horizontal in the axial region and of slope 9/4 in the side region; the side state, the transition state and the axial segment are marked](figures/10-seven/labels.svg)
+![The admissible region of the (a, b)-plane divided into three label regions: the axial region below and left, where the label is 5b/4; the side region on the right next to the circle, where the label is the side term; and the small capped triangle near the diagonal, where the label is pi/4. The dividing lines meet at one point; level lines of the label are drawn in each region, horizontal in the axial region and of slope 9/4 in the side region; the side state, the transition state and the axial segment are marked](figures/10-seven/labels.svg)
 
 *Figure 10.4.* The label on the admissible region. It is axial (green) below
-the line $u = \frac\pi5$ and left of the line $9a + 11u = 2\pi + 7$, side
-(orange) to the right of that line and below the line $9a - 4u = 7 - \pi$, and
+the line $b = \frac\pi5$ and left of the line $9a + 11b = 2\pi + 7$, side
+(orange) to the right of that line and below the line $9a - 4b = 7 - \pi$, and
 capped (grey) in the triangle above both, whose vertices are
 $(\frac\pi5, \frac\pi5)$, $(\frac{7 - \pi/5}9, \frac\pi5)$ and
 $(\frac{7 - \pi}5, \frac{7 - \pi}5)$; the three lines meet at the second
@@ -342,33 +342,33 @@ transition state (black dot) are marked.
 
 ### Lemma 10.7 (the label)
 
-1. For all real $a$ and $u$,
+1. For all real $a$ and $b$,
 
    ```math
-   \mathrm{side}(a, u) = \tfrac\pi6 + \tfrac56\left(u - \tfrac12\right) + \tfrac14 r(a, u)
-   = \tfrac\pi6 - \tfrac54(a - 1) - \tfrac16 r(a, u) .
+   \mathrm{side}(a, b) = \tfrac\pi6 + \tfrac56\left(b - \tfrac12\right) + \tfrac14 r(a, b)
+   = \tfrac\pi6 - \tfrac54(a - 1) - \tfrac16 r(a, b) .
    ```
 
-2. Let $(a, u)$ be admissible. Then $\mathrm{side}(a, u) > 0$ and
-   $0 \le \ell(a, u) \le \frac\pi4$; the label is equal to one of
-   $\mathrm{axial}(u)$, $\mathrm{side}(a, u)$, $\frac\pi4$ and at most each of
-   them; and $\ell(a, u) = 0$ if and only if $u = 0$.
-3. An admissible state has $a \le 1 + \frac{2\pi}{15} - \frac45\ell(a, u)$.
+2. Let $(a, b)$ be admissible. Then $\mathrm{side}(a, b) > 0$ and
+   $0 \le \ell(a, b) \le \frac\pi4$; the label is equal to one of
+   $\mathrm{axial}(b)$, $\mathrm{side}(a, b)$, $\frac\pi4$ and at most each of
+   them; and $\ell(a, b) = 0$ if and only if $b = 0$.
+3. An admissible state has $a \le 1 + \frac{2\pi}{15} - \frac45\ell(a, b)$.
 
 *Proof.* (1) Both expressions expand to
-$\frac\pi6 + \frac7{12} - \frac34 a + \frac13 u$, and so does
-$\mathrm{side}(a, u)$.
+$\frac\pi6 + \frac7{12} - \frac34 a + \frac13 b$, and so does
+$\mathrm{side}(a, b)$.
 
-(2) By Lemma 10.5 (2), $u \ge 0$ and $a < \frac54$ give
-$\mathrm{side}(a, u) > \frac\pi6 - \frac16 - \frac3{16}$, and this is
+(2) By Lemma 10.5 (2), $b \ge 0$ and $a < \frac54$ give
+$\mathrm{side}(a, b) > \frac\pi6 - \frac16 - \frac3{16}$, and this is
 $\frac\pi6 - \frac{17}{48} > 0$ as $\pi > 3$. The label is the least of the
-three numbers $\frac54 u \ge 0$, $\mathrm{side}(a, u) > 0$ and $\frac\pi4$; it
-equals one of them and is at most each. If $u = 0$ then
-$0 \le \ell(a, u) \le \mathrm{axial}(0) = 0$; if $u > 0$ all three numbers are
+three numbers $\frac54 b \ge 0$, $\mathrm{side}(a, b) > 0$ and $\frac\pi4$; it
+equals one of them and is at most each. If $b = 0$ then
+$0 \le \ell(a, b) \le \mathrm{axial}(0) = 0$; if $b > 0$ all three numbers are
 positive, and so is the label.
 
-(3) By (1) and $r(a, u) \ge 0$,
-$\ell(a, u) \le \mathrm{side}(a, u) \le \frac\pi6 - \frac54(a - 1)$; solve for
+(3) By (1) and $r(a, b) \ge 0$,
+$\ell(a, b) \le \mathrm{side}(a, b) \le \frac\pi6 - \frac54(a - 1)$; solve for
 $a$. $\square$
 
 *Lean:
@@ -386,62 +386,62 @@ $a$. $\square$
 
 ### Lemma 10.8 (side and axial labels)
 
-Let $(a, u)$ be an admissible state.
+Let $(a, b)$ be an admissible state.
 
-1. If the label is side, $\ell(a, u) = \mathrm{side}(a, u)$, then
-   $\ell(a, u) > \frac9{25}$, $\frac7{10} < a < \frac98$, and
+1. If the label is side, $\ell(a, b) = \mathrm{side}(a, b)$, then
+   $\ell(a, b) > \frac9{25}$, $\frac7{10} < a < \frac98$, and
 
    ```math
-   \tfrac95\left(\ell(a, u) - \tfrac\pi6\right)^2 \le r(a, u) .
+   \tfrac95\left(\ell(a, b) - \tfrac\pi6\right)^2 \le r(a, b) .
    ```
 
-2. If the label is axial, $\ell(a, u) = \mathrm{axial}(u)$, then
-   $9a + 11u \le 2\pi + 7$ and $a + u < 1 + \frac{2\pi}{15}$.
+2. If the label is axial, $\ell(a, b) = \mathrm{axial}(b)$, then
+   $9a + 11b \le 2\pi + 7$ and $a + b < 1 + \frac{2\pi}{15}$.
 
 *Proof.* We use $3.14 < \pi < 3.1416$.
 
-(1) Write $\ell = \ell(a, u)$. Since $\ell = \mathrm{side}(a, u)$ we
-have $12\ell = 2\pi + 7 + 4u - 9a$, and since $\ell \le \mathrm{axial}(u)$ we
-have $u \ge \frac45\ell$.
+(1) Write $\ell = \ell(a, b)$. Since $\ell = \mathrm{side}(a, b)$ we
+have $12\ell = 2\pi + 7 + 4b - 9a$, and since $\ell \le \mathrm{axial}(b)$ we
+have $b \ge \frac45\ell$.
 
 *The label exceeds $\frac9{25}$.* Every admissible state has
-$2a + u < 2.532$: with $X = a + \frac12$ and $Y = u + \frac12$,
+$2a + b < 2.532$: with $X = a + \frac12$ and $Y = b + \frac12$,
 
 ```math
-(2X + Y)^2 + (2Y - X)^2 = 5\left(X^2 + Y^2\right) = 5\,\varphi(a, u) \le \tfrac{65}4 < 4.032^2 ,
+(2X + Y)^2 + (2Y - X)^2 = 5\left(X^2 + Y^2\right) = 5\,\varphi(a, b) \le \tfrac{65}4 < 4.032^2 ,
 ```
 
-so $2X + Y < 4.032$, that is $2a + u < 2.532$.
+so $2X + Y < 4.032$, that is $2a + b < 2.532$.
 This is the disk $\varphi \le \frac{13}4$ seen in the direction $(2, 1)$.
-Now suppose $\ell \le \frac9{25}$. Then $9a = 2\pi + 7 - 12\ell + 4u$ and
-$u \ge \frac45\ell$ give
+Now suppose $\ell \le \frac9{25}$. Then $9a = 2\pi + 7 - 12\ell + 4b$ and
+$b \ge \frac45\ell$ give
 
 ```math
-9(2a + u) = 4\pi + 14 - 24\ell + 17u \ge 4\pi + 14 - \tfrac{52}5\ell \ge 4\pi + 14 - \tfrac{52}5 \cdot \tfrac9{25} > 12.56 + 14 - 3.744 > 22.8 ,
+9(2a + b) = 4\pi + 14 - 24\ell + 17b \ge 4\pi + 14 - \tfrac{52}5\ell \ge 4\pi + 14 - \tfrac{52}5 \cdot \tfrac9{25} > 12.56 + 14 - 3.744 > 22.8 ,
 ```
 
-so $2a + u > \frac{22.8}9 > 2.533$, a contradiction.
+so $2a + b > \frac{22.8}9 > 2.533$, a contradiction.
 
 *The bound $a < \frac98$.* Suppose $a \ge \frac98$. From
-$\mathrm{side}(a, u) > \frac9{25}$,
+$\mathrm{side}(a, b) > \frac9{25}$,
 
 ```math
-u - \tfrac12 > \tfrac{27}{25} - \tfrac\pi2 + \tfrac94(a - 1) \ge 1.08 - 1.5708 + 0.28125 > -0.21 ,
+b - \tfrac12 > \tfrac{27}{25} - \tfrac\pi2 + \tfrac94(a - 1) \ge 1.08 - 1.5708 + 0.28125 > -0.21 ,
 ```
 
-so $u + \frac12 > 0.79$. With $a + \frac12 \ge \frac{13}8$, the state lies beyond
+so $b + \frac12 > 0.79$. With $a + \frac12 \ge \frac{13}8$, the state lies beyond
 the corner $(\frac98, 0.29)$, which is already outside the disk:
 
 ```math
-\varphi(a, u) > \left(\tfrac{13}8\right)^2 + 0.79^2 > 2.64 + 0.62 > \tfrac{13}4 ,
+\varphi(a, b) > \left(\tfrac{13}8\right)^2 + 0.79^2 > 2.64 + 0.62 > \tfrac{13}4 ,
 ```
 
 a contradiction.
 
 *The bound $a > \frac7{10}$.* From $\ell \le \frac\pi4$,
-$\frac13(u - \frac12) \le \frac\pi{12} - \frac34(1 - a)$, that is
-$u \le \frac94 a + \frac\pi4 - \frac74$. From $\ell \le \mathrm{axial}(u)$,
-$9a + 11u \ge 2\pi + 7$. Together,
+$\frac13(b - \frac12) \le \frac\pi{12} - \frac34(1 - a)$, that is
+$b \le \frac94 a + \frac\pi4 - \frac74$. From $\ell \le \mathrm{axial}(b)$,
+$9a + 11b \ge 2\pi + 7$. Together,
 
 ```math
 2\pi + 7 \le 9a + 11\left(\tfrac94 a + \tfrac\pi4 - \tfrac74\right) = \tfrac{135}4 a + \tfrac{11\pi}4 - \tfrac{77}4 ,
@@ -449,13 +449,13 @@ $9a + 11u \ge 2\pi + 7$. Together,
 
 so $a \ge \frac{35 - \pi}{45}$, which exceeds $\frac7{10}$ as $\pi < \frac72$.
 
-*The quadratic bound.* Put $D = \ell - \frac\pi6$ and $w = r(a, u) \ge 0$. By
-Lemma 10.7 (1) with $\ell = \mathrm{side}(a, u)$,
-$a - 1 = -\frac45 D - \frac2{15}w$ and $u - \frac12 = \frac65 D - \frac3{10}w$,
+*The quadratic bound.* Put $D = \ell - \frac\pi6$ and $w = r(a, b) \ge 0$. By
+Lemma 10.7 (1) with $\ell = \mathrm{side}(a, b)$,
+$a - 1 = -\frac45 D - \frac2{15}w$ and $b - \frac12 = \frac65 D - \frac3{10}w$,
 so that
 
 ```math
-(a - 1)^2 + \left(u - \tfrac12\right)^2 = \tfrac{52}{25}D^2 - \tfrac{38}{75}Dw + \tfrac{97}{900}w^2 .
+(a - 1)^2 + \left(b - \tfrac12\right)^2 = \tfrac{52}{25}D^2 - \tfrac{38}{75}Dw + \tfrac{97}{900}w^2 .
 ```
 
 By Lemma 10.5 (1) the left side is at most $w$. Also
@@ -467,17 +467,17 @@ term in $w^2$, we get $w \ge \frac{52}{25}D^2 - \frac w7$, that is,
 w \ge \tfrac78 \cdot \tfrac{52}{25}D^2 = \tfrac{91}{50}D^2 \ge \tfrac95 D^2 .
 ```
 
-(2) Now $\ell(a, u) = \mathrm{axial}(u) \le \mathrm{side}(a, u)$, and
-$12(\mathrm{axial}(u) - \mathrm{side}(a, u)) = 9a + 11u - 2\pi - 7$, so
-$9a + 11u \le 2\pi + 7$. As $3a + 2u = 4 - r(a, u)$,
+(2) Now $\ell(a, b) = \mathrm{axial}(b) \le \mathrm{side}(a, b)$, and
+$12(\mathrm{axial}(b) - \mathrm{side}(a, b)) = 9a + 11b - 2\pi - 7$, so
+$9a + 11b \le 2\pi + 7$. As $3a + 2b = 4 - r(a, b)$,
 
 ```math
-15(a + u) = (9a + 11u) + 2(3a + 2u) \le 2\pi + 7 + 8 - 2r(a, u) ,
+15(a + b) = (9a + 11b) + 2(3a + 2b) \le 2\pi + 7 + 8 - 2r(a, b) ,
 ```
 
-that is, $a + u \le 1 + \frac{2\pi}{15} - \frac2{15}r(a, u)$. Finally
-$r(a, u) > 0$: by Lemma 10.5 (1), the only admissible state with
-$r(a, u) = 0$ is $(1, \frac12)$, where $9a + 11u = \frac{29}2 > 2\pi + 7$.
+that is, $a + b \le 1 + \frac{2\pi}{15} - \frac2{15}r(a, b)$. Finally
+$r(a, b) > 0$: by Lemma 10.5 (1), the only admissible state with
+$r(a, b) = 0$ is $(1, \frac12)$, where $9a + 11b = \frac{29}2 > 2\pi + 7$.
 $\square$
 
 *Lean:
@@ -490,34 +490,34 @@ $\square$
 [`Seven.axial_tie_line`](../../SquaresInCircles/Seven/Exterior.lean#L162),
 [`Seven.axial_sum_lt`](../../SquaresInCircles/Seven/Exterior.lean#L172).*
 
-The side term $\ell = \mathrm{side}(a, u)$ and the remainder $r = r(a, u)$ are
-affine coordinates of the $(a, u)$-plane. In them part (1) says that the states
+The side term $\ell = \mathrm{side}(a, b)$ and the remainder $r = r(a, b)$ are
+affine coordinates of the $(a, b)$-plane. In them part (1) says that the states
 with a side label lie right of $\ell = \frac9{25}$ and above the parabola
 $r = \frac95(\ell - \frac\pi6)^2$ (Figure 10.5).
 
-![The plane of the side label l and the remainder r near r = 0, l from about 0.33 to 0.83. The states with a side label form an orange region bounded below by a blue curve, the image of the circle phi = 13/4, which touches r = 0 at l = pi/6; on the left the region ends at the transition state, just right of a dashed vertical line at 9/25, and on the right at the vertical l = pi/4, near the corner u = a of the circle. A dashed purple parabola 9/5 (l - pi/6) squared touches r = 0 at the same point and runs just below the blue curve on both sides](figures/10-seven/quadratic.svg)
+![The plane of the side label l and the remainder r near r = 0, l from about 0.33 to 0.83. The states with a side label form an orange region bounded below by a blue curve, the image of the circle phi = 13/4, which touches r = 0 at l = pi/6; on the left the region ends at the transition state, just right of a dashed vertical line at 9/25, and on the right at the vertical l = pi/4, near the corner b = a of the circle. A dashed purple parabola 9/5 (l - pi/6) squared touches r = 0 at the same point and runs just below the blue curve on both sides](figures/10-seven/quadratic.svg)
 
 *Figure 10.5.* Lemma 10.8 (1) in the coordinates
-$(\ell, r) = (\mathrm{side}(a, u), r(a, u))$, which are affine in $(a, u)$,
+$(\ell, r) = (\mathrm{side}(a, b), r(a, b))$, which are affine in $(a, b)$,
 for $0 \le r \le 0.17$. The states with a side label (orange) are bounded below
 by the image of the circle $\varphi = \frac{13}4$ (blue), which rests on
 $r = 0$ at the side state $(1, \frac12)$, where $\ell = \frac\pi6$. They lie
-right of $\frac9{25}$, which the transition state $(a_0, u_0)$ just clears,
+right of $\frac9{25}$, which the transition state $(a_0, b_0)$ just clears,
 and above the parabola $\frac95(\ell - \frac\pi6)^2$ (dashed), which touches
-them at the side state and comes close again at the corner $u = a$ of the
+them at the side state and comes close again at the corner $b = a$ of the
 circle.
 
 ### Lemma 10.9 (the marker arc)
 
-Let $(a, u)$ be an admissible state and $t$ a real number with
-$|t - \ell(a, u)| \le \frac12$. Then
+Let $(a, b)$ be an admissible state and $t$ a real number with
+$|t - \ell(a, b)| \le \frac12$. Then
 
 ```math
-|\cos t - a| \le \tfrac12 , \qquad |\sin t - u| \le \tfrac12 ,
+|\cos t - a| \le \tfrac12 , \qquad |\sin t - b| \le \tfrac12 ,
 ```
 
 that is, the point $u(t)$ of the unit circle lies in the closed square
-$\overline{Q(a, u)}$.
+$\overline{Q(a, b)}$.
 
 The proof is given in [Appendix F](appendix-f.md).
 
@@ -529,13 +529,13 @@ $\frac12$ (about $28.6°$) about the label, that is, about the marker
 (Figure 10.6). In the column packing of Figure 10.1 the arc in each exterior
 square has half-width exactly $\frac\pi6$.
 
-![Left: a tilted exterior square S seen from the disk centre o, with the dashed phase direction theta S, the marker direction mu S turned clockwise from it by the angle l, and a thick orange arc of the unit circle about the marker inside the square. Right: the same square in its chart, the axis-parallel square centred at the state (a, u), with the dashed chart axis t = 0, the marker at the angle l from it, and the same thick arc, whose half-width 1/2 is marked as an angle between the marker and one end of the arc; the whole part of the unit circle inside the square is drawn in thin blue](figures/10-seven/marker.svg)
+![Left: a tilted exterior square S seen from the disk centre o, with the dashed phase direction theta S, the marker direction mu S turned clockwise from it by the angle l, and a thick orange arc of the unit circle about the marker inside the square. Right: the same square in its chart, the axis-parallel square centred at the state (a, b), with the dashed chart axis t = 0, the marker at the angle l from it, and the same thick arc, whose half-width 1/2 is marked as an angle between the marker and one end of the arc; the whole part of the unit circle inside the square is drawn in thin blue](figures/10-seven/marker.svg)
 
 *Figure 10.6.* The marker, for the state $(1, 0.45)$, whose label is side.
 Left: an exterior square $S$ seen from $o$, with its phase $\theta_S$
 (dashed) and its marker $\mu_S = \theta_S + \varepsilon_S\ell$, here with
 $\varepsilon_S = -1$. Right: the same square in its chart, where it is
-$Q(a, u)$ and the marker is at the angle $\ell = \ell(a, u)$. The thick arc of
+$Q(a, b)$ and the marker is at the angle $\ell = \ell(a, b)$. The thick arc of
 the unit circle, of half-width $\frac12$ about the marker, lies in the closed
 square (Lemma 10.9); the thin blue arc is the whole part of the circle in the
 square.
@@ -562,32 +562,32 @@ h(a, b, z) = a\cos z + b\sin z + \tfrac12\left(|\cos z| + |\sin z|\right) .
    $\langle p, u(z)\rangle \le h(a, b, z)$, with equality at a vertex. So
    $h(a, b, z) = \max_{p \in \overline{Q(a, b)}} \langle p, u(z)\rangle$ is the
    support function of the closed square.
-2. Let $(a, u)$ be admissible, $s \in \lbrace 1, -1\rbrace$, and $x$ real with
-   $|x - s\,\ell(a, u)| \le \frac12$. Then
-   $u(x) \in \overline{Q(a, su)}$, and $h(a, su, z) \ge \cos(z - x)$ for every
+2. Let $(a, b)$ be admissible, $s \in \lbrace 1, -1\rbrace$, and $x$ real with
+   $|x - s\,\ell(a, b)| \le \frac12$. Then
+   $u(x) \in \overline{Q(a, sb)}$, and $h(a, sb, z) \ge \cos(z - x)$ for every
    $z$.
-3. If $(a, |b|)$ is admissible, then $a^2 + b^2 \le (\sqrt3 - \frac12)^2$ and
-   $h(a, b, z) \ge 1 - \sqrt3 > -\frac{37}{50}$ for every $z$. In particular
-   this holds for $b = su$ when $(a, u)$ is admissible and $s = \pm1$.
+3. If $(a, |y|)$ is admissible, then $a^2 + y^2 \le (\sqrt3 - \frac12)^2$ and
+   $h(a, y, z) \ge 1 - \sqrt3 > -\frac{37}{50}$ for every $z$. In particular
+   this holds for $y = sb$ when $(a, b)$ is admissible and $s = \pm1$.
 
 *Proof.* (1) Write $p = (a + x, b + y)$ with $|x|, |y| \le \frac12$. Then
 $\langle p, u(z)\rangle = a\cos z + b\sin z + x\cos z + y\sin z$, and
 $x\cos z + y\sin z \le \frac12|\cos z| + \frac12|\sin z|$, with equality when
 $x$ and $y$ are $\pm\frac12$ with the signs of $\cos z$ and $\sin z$.
 
-(2) For $s = 1$, Lemma 10.9 with $t = x$ gives $u(x) \in \overline{Q(a, u)}$.
+(2) For $s = 1$, Lemma 10.9 with $t = x$ gives $u(x) \in \overline{Q(a, b)}$.
 For $s = -1$, apply Lemma 10.9 to $t = -x$, which has
-$|t - \ell(a, u)| = |x + \ell(a, u)| \le \frac12$: then
-$|\cos x - a| \le \frac12$ and $|{-\sin x} - u| \le \frac12$, so
-$u(x) \in \overline{Q(a, -u)}$. In both cases (1) gives
-$h(a, su, z) \ge \langle u(x), u(z)\rangle = \cos(z - x)$.
+$|t - \ell(a, b)| = |x + \ell(a, b)| \le \frac12$: then
+$|\cos x - a| \le \frac12$ and $|{-\sin x} - b| \le \frac12$, so
+$u(x) \in \overline{Q(a, -b)}$. In both cases (1) gives
+$h(a, sb, z) \ge \langle u(x), u(z)\rangle = \cos(z - x)$.
 
-(3) As $a$ and $|b|$ are nonnegative and $\varphi(a, |b|) \le \frac{13}4$,
+(3) As $a$ and $|y|$ are nonnegative and $\varphi(a, |y|) \le \frac{13}4$,
 [Lemma 3.4](03-tools.md#lemma-34-farthest-vertex) (3) gives
-$\rho = \sqrt{a^2 + b^2} \le \sqrt{\frac{13}4 - \frac14} - \frac12 = \sqrt3 - \frac12$.
-By Cauchy–Schwarz $a\cos z + b\sin z \ge -\rho$, and
+$\rho = \sqrt{a^2 + y^2} \le \sqrt{\frac{13}4 - \frac14} - \frac12 = \sqrt3 - \frac12$.
+By Cauchy–Schwarz $a\cos z + y\sin z \ge -\rho$, and
 $(|\cos z| + |\sin z|)^2 = 1 + 2|\cos z\sin z| \ge 1$, so
-$h(a, b, z) \ge \frac12 - \rho \ge 1 - \sqrt3$, and
+$h(a, y, z) \ge \frac12 - \rho \ge 1 - \sqrt3$, and
 $1 - \sqrt3 > 1 - 1.733 > -\frac{37}{50}$ by Lemma 10.5 (2). $\square$
 
 *Lean: [`point_le_support`](../../SquaresInCircles/Common/DiskSupport.lean#L96),
@@ -602,40 +602,40 @@ Part (2) is how the marker arcs enter the proofs below: a point of the arc lies
 in the closed square, so its projection on any direction is at most the support
 (Figure 10.7).
 
-![An axis-parallel square Q(a, u) to the right of the disk centre o, with the orange marker arc of the unit circle inside it. A ray from o in a direction u(z), pointing up and slightly right, carries two marked points: the foot of the dashed supporting line of the square perpendicular to the ray, which passes through the upper right vertex, at the distance h(a, u, z); and, nearer to o, the foot of the perpendicular from a point u(x) of the marker arc, at the distance cos(z - x)](figures/10-seven/support.svg)
+![An axis-parallel square Q(a, b) to the right of the disk centre o, with the orange marker arc of the unit circle inside it. A ray from o in a direction u(z), pointing up and slightly right, carries two marked points: the foot of the dashed supporting line of the square perpendicular to the ray, which passes through the upper right vertex, at the distance h(a, b, z); and, nearer to o, the foot of the perpendicular from a point u(x) of the marker arc, at the distance cos(z - x)](figures/10-seven/support.svg)
 
 *Figure 10.7.* Lemma 10.11 (1) and (2) for the state $(1, 0.45)$ and the
 direction $z = 75°$. The line perpendicular to $u(z)$ at the distance
-$h(a, u, z)$ from $o$ supports $\overline{Q(a, u)}$ at a vertex. The point
+$h(a, b, z)$ from $o$ supports $\overline{Q(a, b)}$ at a vertex. The point
 $u(x)$ of the marker arc lies in the closed square, so its projection
-$\cos(z - x)$ on $u(z)$ is at most $h(a, u, z)$.
+$\cos(z - x)$ on $u(z)$ is at most $h(a, b, z)$.
 
 ### Definition 10.12 (canonical pair and support sums)
 
-Let $a, u, A, v, g$ be real numbers and $s, t \in \lbrace 1, -1\rbrace$; in all
-our applications $(a, u)$ and $(A, v)$ are states. For an angle $d$, $R_d$ is
+Let $a, b, A, B, g$ be real numbers and $s, t \in \lbrace 1, -1\rbrace$; in all
+our applications $(a, b)$ and $(A, B)$ are states. For an angle $d$, $R_d$ is
 the rotation of the plane about the origin by $d$,
 $R_d(x, y) = x\,u(d) + y\,u(d + \frac\pi2)$. The *relative phase* is
 
 ```math
-d = g + s\,\ell(a, u) - t\,\ell(A, v) ,
+d = g + s\,\ell(a, b) - t\,\ell(A, B) ,
 ```
 
-and the *canonical pair* consists of the unit squares $S = Q(a, su)$ and $T$,
-the unit square with centre $c_T = R_d(A, tv)$ and frame
+and the *canonical pair* consists of the unit squares $S = Q(a, sb)$ and $T$,
+the unit square with centre $c_T = R_d(A, tB)$ and frame
 $u(d), u(d + \frac\pi2)$. The local coordinates of $R_d\,p$ in $T$ are the
-coordinates of $p - (A, tv)$, so
+coordinates of $p - (A, tB)$, so
 
 ```math
-T^\circ = R_d\left(Q(A, tv)^\circ\right), \qquad \overline T = R_d\left(\overline{Q(A, tv)}\right) :
+T^\circ = R_d\left(Q(A, tB)^\circ\right), \qquad \overline T = R_d\left(\overline{Q(A, tB)}\right) :
 ```
 
-with the origin as the disk centre, $S$ sits at $(a, su)$ in the frame $0$ and
-$T$ sits at $(A, tv)$ in the frame $d$, that is, $S = Q_0(a, su)$ and
-$T = Q_d(A, tv)$ in the notation of
+with the origin as the disk centre, $S$ sits at $(a, sb)$ in the frame $0$ and
+$T$ sits at $(A, tB)$ in the frame $d$, that is, $S = Q_0(a, sb)$ and
+$T = Q_d(A, tB)$ in the notation of
 [Definition 9.9](09-six.md#definition-99-squares-in-a-frame). The number $g$ is
-the *gap*: the *markers* $s\,\ell(a, u)$ of $S$ and
-$d + t\,\ell(A, v) = g + s\,\ell(a, u)$ of $T$ are $g$ apart. For
+the *gap*: the *markers* $s\,\ell(a, b)$ of $S$ and
+$d + t\,\ell(A, B) = g + s\,\ell(a, b)$ of $T$ are $g$ apart. For
 $k = 0, 1, 2, 3$ let $n_k = u(k\frac\pi2)$, the outer normal of the $k$-th edge
 of $S$ (Figure 10.8). We call $n_0$, $n_1$, $n_2$, $n_3$ the *outward*,
 *forward*, *inward* and *backward* axes: $n_0$ points away from the
@@ -644,11 +644,11 @@ angle, towards the marker of $T$, and $n_3$ the other way. The *support sums*
 of the pair are
 
 ```math
-\sigma_k(g) = h\left(a, su, k\tfrac\pi2\right) + h\left(A, tv, k\tfrac\pi2 + \pi - d\right) \qquad (k = 0, 1, 2, 3),
+\sigma_k(g) = h\left(a, sb, k\tfrac\pi2\right) + h\left(A, tB, k\tfrac\pi2 + \pi - d\right) \qquad (k = 0, 1, 2, 3),
 ```
 
 regarded as functions of the gap $g$, all other data being fixed. The
-*reversed pair* is the canonical pair of $A, v, a, u$ with the signs $-t, -s$
+*reversed pair* is the canonical pair of $A, B, a, b$ with the signs $-t, -s$
 and the same gap $g$; we write $\sigma'_k(g)$ for its support sums.
 
 *Lean:
@@ -673,11 +673,11 @@ line separates the squares.
 
 ### Lemma 10.13 (support sums)
 
-Let $(S, T)$ be the canonical pair of $a, u, A, v, g, s, t$, with relative phase
+Let $(S, T)$ be the canonical pair of $a, b, A, B, g, s, t$, with relative phase
 $d$, and let
 
 ```math
-\Delta = c_T - c_S = (\Delta_1, \Delta_2) = \left(A\cos d - tv\sin d - a,\ A\sin d + tv\cos d - su\right), \qquad
+\Delta = c_T - c_S = (\Delta_1, \Delta_2) = \left(A\cos d - tB\sin d - a,\ A\sin d + tB\cos d - sb\right), \qquad
 W = \tfrac12\left(1 + |\cos d| + |\sin d|\right) .
 ```
 
@@ -709,15 +709,15 @@ W = \tfrac12\left(1 + |\cos d| + |\sin d|\right) .
 4. Each $\sigma_k$ is a continuous function of $g$.
 
 *Proof.* (1) By Lemma 10.11 (1),
-$\max_{\overline S}\langle \cdot, n_k\rangle = h(a, su, k\frac\pi2)$. Since
-$\overline T = R_d(\overline{Q(A, tv)})$ and
+$\max_{\overline S}\langle \cdot, n_k\rangle = h(a, sb, k\frac\pi2)$. Since
+$\overline T = R_d(\overline{Q(A, tB)})$ and
 $\langle R_d\,p, n_k\rangle = \langle p, R_{-d}\,n_k\rangle$, where
 $R_{-d}\,n_k = u(k\frac\pi2 - d)$,
 
 ```math
 \begin{aligned}
-\min_{q \in \overline T}\langle q, n_k\rangle &= \min_{p \in \overline{Q(A, tv)}}\left\langle p, u\left(k\tfrac\pi2 - d\right)\right\rangle \\
-&= -\max_{p \in \overline{Q(A, tv)}}\left\langle p, u\left(k\tfrac\pi2 + \pi - d\right)\right\rangle = -h\left(A, tv, k\tfrac\pi2 + \pi - d\right).
+\min_{q \in \overline T}\langle q, n_k\rangle &= \min_{p \in \overline{Q(A, tB)}}\left\langle p, u\left(k\tfrac\pi2 - d\right)\right\rangle \\
+&= -\max_{p \in \overline{Q(A, tB)}}\left\langle p, u\left(k\tfrac\pi2 + \pi - d\right)\right\rangle = -h\left(A, tB, k\tfrac\pi2 + \pi - d\right).
 \end{aligned}
 ```
 
@@ -727,14 +727,14 @@ between $\max_{\overline S}\langle\cdot, n_k\rangle$ and
 $\min_{\overline T}\langle\cdot, n_k\rangle$.
 
 (2) As $|\cos k\frac\pi2| + |\sin k\frac\pi2| = 1$, the first term of
-$\sigma_k$ is $\langle (a, su), n_k\rangle + \frac12$, that is
+$\sigma_k$ is $\langle (a, sb), n_k\rangle + \frac12$, that is
 $\langle c_S, n_k\rangle + \frac12$. As
-$\langle (A, tv), R_{-d}\,n_k\rangle = \langle R_d(A, tv), n_k\rangle$ and a
+$\langle (A, tB), R_{-d}\,n_k\rangle = \langle R_d(A, tB), n_k\rangle$ and a
 quarter turn exchanges $|\cos|$ and $|\sin|$, the second term is
 
 ```math
 \begin{aligned}
-& -\left\langle (A, tv), u\left(k\tfrac\pi2 - d\right)\right\rangle + \tfrac12\left(\left|\cos\left(k\tfrac\pi2 - d\right)\right| + \left|\sin\left(k\tfrac\pi2 - d\right)\right|\right) \\
+& -\left\langle (A, tB), u\left(k\tfrac\pi2 - d\right)\right\rangle + \tfrac12\left(\left|\cos\left(k\tfrac\pi2 - d\right)\right| + \left|\sin\left(k\tfrac\pi2 - d\right)\right|\right) \\
 &\qquad = -\langle c_T, n_k\rangle + \tfrac12\left(|\cos d| + |\sin d|\right) .
 \end{aligned}
 ```
@@ -743,15 +743,15 @@ So $\sigma_k(g) = W - \langle \Delta, n_k\rangle$, which is (2) for
 $n_k = (1, 0), (0, 1), (-1, 0), (0, -1)$.
 
 (3) The relative phase of the reversed pair is
-$g + (-t)\ell(A, v) - (-s)\ell(a, u) = d$. Its squares are $S' = Q(A, -tv)$ and
-$T'$ with centre $R_d(a, -su)$, which is
-$(a\cos d + su\sin d,\ a\sin d - su\cos d)$. So by (2) its support sums are
+$g + (-t)\ell(A, B) - (-s)\ell(a, b) = d$. Its squares are $S' = Q(A, -tB)$ and
+$T'$ with centre $R_d(a, -sb)$, which is
+$(a\cos d + sb\sin d,\ a\sin d - sb\cos d)$. So by (2) its support sums are
 $W \mp \Delta'_1$ and $W \mp \Delta'_2$ with
-$\Delta' = (a\cos d + su\sin d - A,\ a\sin d - su\cos d + tv)$. Expanding,
+$\Delta' = (a\cos d + sb\sin d - A,\ a\sin d - sb\cos d + tB)$. Expanding,
 
 ```math
-\langle \Delta, u(d)\rangle = A - a\cos d - su\sin d = -\Delta'_1, \qquad
-\left\langle \Delta, u\left(d + \tfrac\pi2\right)\right\rangle = tv + a\sin d - su\cos d = \Delta'_2 .
+\langle \Delta, u(d)\rangle = A - a\cos d - sb\sin d = -\Delta'_1, \qquad
+\left\langle \Delta, u\left(d + \tfrac\pi2\right)\right\rangle = tB + a\sin d - sb\cos d = \Delta'_2 .
 ```
 
 (4) $h$ is continuous in $z$, and $z = k\frac\pi2 + \pi - d$ is affine in $g$.
@@ -782,12 +782,12 @@ still $g$.
 
 ### Lemma 10.14 (separating axes)
 
-Let $a, u, A, v, g$ be real numbers and $s, t \in \lbrace 1, -1\rbrace$. If the
+Let $a, b, A, B, g$ be real numbers and $s, t \in \lbrace 1, -1\rbrace$. If the
 open squares of the canonical pair are disjoint, then $\sigma_k(g) \le 0$ for
 some $k$, or $\sigma'_k(g) \le 0$ for some $k$.
 
 *Proof.* This is the separating-axis theorem of Chapter 9 for the canonical
-pair $S = Q_0(a, su)$, $T = Q_d(A, tv)$ (Definition 10.12 and Figure 10.10).
+pair $S = Q_0(a, sb)$, $T = Q_d(A, tB)$ (Definition 10.12 and Figure 10.10).
 With $W$ and $\Delta = c_T - c_S$ as in Lemma 10.13, $W = \tau(d)$
 (Definition 9.9) is the threshold of
 [Lemma 9.11](09-six.md#lemma-911-separating-axes-of-two-squares) for the
@@ -823,12 +823,12 @@ squares meet.
 ### Definition 10.15 (contacts)
 
 A state is a *side state* if it is $(1, \frac12)$, and an *axial state* if it
-is $(a, 0)$ with $\frac12 \le a \le \sqrt3 - \frac12$. Two states $(a, u)$ and
-$(A, v)$ with signs $s$ and $t$, in this order, form a *contact* if
+is $(a, 0)$ with $\frac12 \le a \le \sqrt3 - \frac12$. Two states $(a, b)$ and
+$(A, B)$ with signs $s$ and $t$, in this order, form a *contact* if
 
 1. $s = -1$, $t = 1$, and both states are side states; or
-2. $s = 1$, $(a, u)$ is a side state and $(A, v)$ is an axial state; or
-3. $t = -1$, $(a, u)$ is an axial state and $(A, v)$ is a side state.
+2. $s = 1$, $(a, b)$ is a side state and $(A, B)$ is an axial state; or
+3. $t = -1$, $(a, b)$ is an axial state and $(A, B)$ is a side state.
 
 *Lean: [`Seven.SideState`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L16),
 [`Seven.AxialState`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L17),
@@ -849,27 +849,27 @@ $\frac\pi3$. Left, kind (1): $S = Q(1, -\frac12)$ and $T = Q(1, \frac12)$, a
 side column; $\sigma_1(\frac\pi3) = 0$. Middle, kind (2): $S = Q(1, \frac12)$
 and the axial square $T$ at $(A, 0)$ in the frame $\frac\pi2$, that is
 $Q(0, A)$; $\sigma_2(\frac\pi3) = 0$ for every $A$. Right, kind (3): the axial
-square $S = Q(A, 0)$ and $T$ at $(1, -\frac12)$ in the frame $\frac\pi2$, that
+square $S = Q(a, 0)$ and $T$ at $(1, -\frac12)$ in the frame $\frac\pi2$, that
 is $Q(\frac12, 1)$; $\sigma_1(\frac\pi3) = 0$. The shared edges are thick; the
-figure uses $A = 1$.
+figure uses $A = 1$ and $a = 1$.
 
 ### Lemma 10.16 (contacts)
 
 1. $\ell(1, \frac12) = \frac\pi6$, and every axial state $(a, 0)$ is admissible
    with $\ell(a, 0) = 0$. In particular neither state of a contact has a
    capped label.
-2. If $(a, u)$ is admissible and $r(a, u) = 0$, then $(a, u)$ is the side
+2. If $(a, b)$ is admissible and $r(a, b) = 0$, then $(a, b)$ is the side
    state.
-3. If $(a, u)$ is admissible and $u = 0$, then $(a, u)$ is an axial state.
-4. If the states $(A, v)$, $(a, u)$ with the signs $-t$, $-s$ form a contact,
-   then $(a, u)$, $(A, v)$ with the signs $s$, $t$ form a contact.
-5. Let $(a, u)$ and $(A, v)$ be admissible with
-   $\ell(A, v) = \mathrm{axial}(v)$, let $t = \pm1$ and
+3. If $(a, b)$ is admissible and $b = 0$, then $(a, b)$ is an axial state.
+4. If the states $(A, B)$, $(a, b)$ with the signs $-t$, $-s$ form a contact,
+   then $(a, b)$, $(A, B)$ with the signs $s$, $t$ form a contact.
+5. Let $(a, b)$ and $(A, B)$ be admissible with
+   $\ell(A, B) = \mathrm{axial}(B)$, let $t = \pm1$ and
    $k \in \lbrace 0, 1, 2, 3\rbrace$, and let the support sum of their
    canonical pair with the signs $1, t$ satisfy, for some $c > 0$,
 
    ```math
-   \sigma_k\left(\tfrac\pi3\right) \ge \tfrac2{15}\,r(a, u) + c\left|\ell(a, u) - t\,\ell(A, v) - \tfrac\pi6\right| .
+   \sigma_k\left(\tfrac\pi3\right) \ge \tfrac2{15}\,r(a, b) + c\left|\ell(a, b) - t\,\ell(A, B) - \tfrac\pi6\right| .
    ```
 
    Then $\sigma_k(\frac\pi3) \ge 0$, and $\sigma_k(\frac\pi3) = 0$ only if the
@@ -877,25 +877,25 @@ figure uses $A = 1$.
 
 *Proof.* (1) $\mathrm{axial}(\frac12) = \frac58$ and
 $\mathrm{side}(1, \frac12) = \frac\pi6$, and $\frac\pi6$ is less than $\frac58$
-and $\frac\pi4$. An axial state has $0 \le u \le a$, $\frac12 \le a$ and
+and $\frac\pi4$. An axial state has $0 \le b \le a$, $\frac12 \le a$ and
 $\varphi(a, 0) = (a + \frac12)^2 + \frac14 \le 3 + \frac14$, and its label is 0
 by Lemma 10.7 (2). Neither $\frac\pi6$ nor 0 equals $\frac\pi4$.
 
 (2) By Lemma 10.5 (1),
-$0 = (a - 1)^2 + (u - \frac12)^2 + (\frac{13}4 - \varphi(a, u))$ is a sum of
-three nonnegative terms, so $a = 1$ and $u = \frac12$.
+$0 = (a - 1)^2 + (b - \frac12)^2 + (\frac{13}4 - \varphi(a, b))$ is a sum of
+three nonnegative terms, so $a = 1$ and $b = \frac12$.
 
 (3) $a \le \sqrt3 - \frac12$ by Lemma 10.5 (2).
 
 (4) If $-t = -1$, $-s = 1$ and both states are side states, then $s = -1$,
-$t = 1$: kind (1). If $-t = 1$, $(A, v)$ is a side state and $(a, u)$ axial,
-then $t = -1$: kind (3). If $-s = -1$, $(A, v)$ is axial and $(a, u)$ a side
+$t = 1$: kind (1). If $-t = 1$, $(A, B)$ is a side state and $(a, b)$ axial,
+then $t = -1$: kind (3). If $-s = -1$, $(A, B)$ is axial and $(a, b)$ a side
 state, then $s = 1$: kind (2).
 
 (5) The right side is nonnegative by Lemma 10.5 (1). If
-$\sigma_k(\frac\pi3) = 0$, both terms vanish. By (2), $(a, u) = (1, \frac12)$,
-whose label is $\frac\pi6$ by (1); then $t\,\ell(A, v) = 0$, so
-$\frac54 v = \ell(A, v) = 0$, and $(A, v)$ is axial by (3). With $s = 1$ this
+$\sigma_k(\frac\pi3) = 0$, both terms vanish. By (2), $(a, b) = (1, \frac12)$,
+whose label is $\frac\pi6$ by (1); then $t\,\ell(A, B) = 0$, so
+$\frac54 B = \ell(A, B) = 0$, and $(A, B)$ is axial by (3). With $s = 1$ this
 is a contact of kind (2). $\square$
 
 *Lean:
@@ -911,7 +911,7 @@ is a contact of kind (2). $\square$
 
 ### Proposition 10.17 (the critical gap)
 
-Let $(a, u)$ and $(A, v)$ be admissible states and
+Let $(a, b)$ and $(A, B)$ be admissible states and
 $s, t \in \lbrace 1, -1\rbrace$. Then for $k = 0, 1, 2, 3$ the support sums of
 their canonical pair satisfy
 $\sigma_k(\frac\pi3) \ge 0$, and $\sigma_k(\frac\pi3) = 0$ only if the two
@@ -944,7 +944,7 @@ Appendix A, and Cauchy–Schwarz on the disk
 The zeros occur only at contacts for the following reason. Where the lower
 bound of a case can vanish, it is a sum of nonnegative terms, as in
 Lemma 10.16 (5): the remainder $r$ of one or both states and an absolute value
-such as $|\ell(a, u) - t\,\ell(A, v) - \frac\pi6|$. A zero makes all of them
+such as $|\ell(a, b) - t\,\ell(A, B) - \frac\pi6|$. A zero makes all of them
 vanish. By Lemma 10.16 (2), $r = 0$ forces the side state $(1, \frac12)$,
 whose label is $\frac\pi6$; the absolute value then fixes the other label at
 $\frac\pi6$, for a second side state, or at $0$, which forces an axial state
@@ -982,11 +982,11 @@ position (Lemma 10.22); in each case the value is positive.
 
 ### Lemma 10.18 (small gaps)
 
-Let $(a, u)$ and $(A, v)$ be admissible, $s, t \in \lbrace 1, -1\rbrace$ and
+Let $(a, b)$ and $(A, B)$ be admissible, $s, t \in \lbrace 1, -1\rbrace$ and
 $0 \le g < 1$. Then $\sigma_k(g) > 0$ for $k = 0, 1, 2, 3$.
 
 *Proof.* Let $(S, T)$ be the canonical pair, with relative phase $d$, and put
-$\lambda = s\,\ell(a, u)$, so that the markers are $\lambda$ and $\lambda + g$
+$\lambda = s\,\ell(a, b)$, so that the markers are $\lambda$ and $\lambda + g$
 (Figure 10.13).
 Let $m = \lambda + \frac g2$ be their midpoint and
 $\epsilon = \frac{1 - g}2 > 0$. For each
@@ -994,11 +994,11 @@ $x \in \lbrace m - \epsilon, m, m + \epsilon\rbrace$,
 
 ```math
 |x - \lambda| \le \tfrac g2 + \epsilon = \tfrac12 , \qquad
-|(x - d) - t\,\ell(A, v)| = \left|x - m - \tfrac g2\right| \le \tfrac12 ,
+|(x - d) - t\,\ell(A, B)| = \left|x - m - \tfrac g2\right| \le \tfrac12 ,
 ```
 
-so by Lemma 10.11 (2) $u(x) \in \overline{Q(a, su)} = \overline S$ and
-$u(x - d) \in \overline{Q(A, tv)}$, that is
+so by Lemma 10.11 (2) $u(x) \in \overline{Q(a, sb)} = \overline S$ and
+$u(x - d) \in \overline{Q(A, tB)}$, that is
 $u(x) = R_d\,u(x - d) \in \overline T$. Suppose $\sigma_k(g) \le 0$. By Lemma
 10.13 (1) there is $m'$ with
 $\langle p, n_k\rangle \le m' \le \langle q, n_k\rangle$ for
@@ -1049,66 +1049,66 @@ exactly this.
 
 ### Lemma 10.20 (labels of separated pairs)
 
-Let $(a, u)$ and $(A, v)$ be admissible and $s, t \in \lbrace 1, -1\rbrace$.
+Let $(a, b)$ and $(A, B)$ be admissible and $s, t \in \lbrace 1, -1\rbrace$.
 
-1. If $u + v \ge 1$, then $\ell(a, u) + \ell(A, v) \ge \frac\pi3$.
-2. If $a + tv \ge 1$ or $A - su \ge 1$, then
-   $s\,\ell(a, u) - t\,\ell(A, v) \le \frac\pi6$.
+1. If $b + B \ge 1$, then $\ell(a, b) + \ell(A, B) \ge \frac\pi3$.
+2. If $a + tB \ge 1$ or $A - sb \ge 1$, then
+   $s\,\ell(a, b) - t\,\ell(A, B) \le \frac\pi6$.
 
-*Proof.* (1) By Lemma 10.5 (2), $u, v < \frac{31}{40}$, so $u + v \ge 1$ gives
-$u, v > \frac9{40}$. Each label is one of its three terms (Lemma 10.7 (2)), so it
+*Proof.* (1) By Lemma 10.5 (2), $b, B < \frac{31}{40}$, so $b + B \ge 1$ gives
+$b, B > \frac9{40}$. Each label is one of its three terms (Lemma 10.7 (2)), so it
 suffices to show that a term of the first label plus a term of the second is
 at least $\frac\pi3$. By Lemma 10.7 (1) and $r \ge 0$,
-$\mathrm{side}(a, u) \ge \frac\pi6 + \frac56(u - \frac12)$, and likewise for
-$(A, v)$. Then:
+$\mathrm{side}(a, b) \ge \frac\pi6 + \frac56(b - \frac12)$, and likewise for
+$(A, B)$. Then:
 
-- two axial terms: $\frac54(u + v) \ge \frac54 > \frac\pi3$;
-- two side terms: at least $\frac\pi3 + \frac56(u + v - 1) \ge \frac\pi3$;
+- two axial terms: $\frac54(b + B) \ge \frac54 > \frac\pi3$;
+- two side terms: at least $\frac\pi3 + \frac56(b + B - 1) \ge \frac\pi3$;
 - two capped terms: $\frac\pi2$;
-- an axial and a side term: with $u \ge 1 - v$ and the definition of the side
+- an axial and a side term: with $b \ge 1 - B$ and the definition of the side
   term,
 
   ```math
-  \tfrac54 u + \mathrm{side}(A, v) \ge \tfrac54(1 - v) + \mathrm{side}(A, v) = \tfrac\pi6 + \tfrac1{12}(22 - 9A - 11v) ,
+  \tfrac54 b + \mathrm{side}(A, B) \ge \tfrac54(1 - B) + \mathrm{side}(A, B) = \tfrac\pi6 + \tfrac1{12}(22 - 9A - 11B) ,
   ```
 
   and by Lemma 10.5 (2),
-  $9A + 11v = 9(A + v) + 2v < 9\cdot\frac{31}{20} + 2\cdot\frac{31}{40} = \frac{31}2$.
+  $9A + 11B = 9(A + B) + 2B < 9\cdot\frac{31}{20} + 2\cdot\frac{31}{40} = \frac{31}2$.
   So the sum exceeds $\frac\pi6 + \frac{13}{24}$, which is more than
   $\frac\pi3$ as $\pi < \frac{13}4$; and symmetrically for
-  $\mathrm{side}(a, u) + \frac54 v$;
+  $\mathrm{side}(a, b) + \frac54 B$;
 - an axial and a capped term:
-  $\frac54 u + \frac\pi4 > \frac9{32} + \frac\pi4 > \frac\pi3$, as
+  $\frac54 b + \frac\pi4 > \frac9{32} + \frac\pi4 > \frac\pi3$, as
   $\pi < \frac{27}8$;
-- a side and a capped term: as $u > \frac9{40}$, the sum
-  $\frac\pi6 + \frac56(u - \frac12) + \frac\pi4$ exceeds
+- a side and a capped term: as $b > \frac9{40}$, the sum
+  $\frac\pi6 + \frac56(b - \frac12) + \frac\pi4$ exceeds
   $\frac{5\pi}{12} - \frac{11}{48}$, which is at least $\frac\pi3$ as
   $\pi \ge \frac{11}4$.
 
-(2) First let $a + tv \ge 1$.
+(2) First let $a + tB \ge 1$.
 
-- $s = -1$, $t = 1$: $-\ell(a, u) - \ell(A, v) \le 0$.
-- $s = -1$, $t = -1$: then $v \le a - 1 < \frac14$, and
-  $-\ell(a, u) + \ell(A, v) \le \frac54 v < \frac5{16} < \frac\pi6$.
-- $s = 1$, $t = -1$: then $v \le a - 1$, and by Lemma 10.7 (1)
-
-  ```math
-  \ell(a, u) + \ell(A, v) \le \mathrm{side}(a, u) + \tfrac54(a - 1) = \tfrac\pi6 + \tfrac13\left(u - \tfrac12\right) + \tfrac12(a - 1) = \tfrac\pi6 - \tfrac16 r(a, u) \le \tfrac\pi6 .
-  ```
-
-- $s = 1$, $t = 1$: then $v \ge 1 - a$. If the label of $(A, v)$ is axial,
+- $s = -1$, $t = 1$: $-\ell(a, b) - \ell(A, B) \le 0$.
+- $s = -1$, $t = -1$: then $B \le a - 1 < \frac14$, and
+  $-\ell(a, b) + \ell(A, B) \le \frac54 B < \frac5{16} < \frac\pi6$.
+- $s = 1$, $t = -1$: then $B \le a - 1$, and by Lemma 10.7 (1)
 
   ```math
-  \ell(a, u) - \ell(A, v) \le \mathrm{side}(a, u) - \tfrac54(1 - a) = \tfrac\pi6 - \tfrac16 r(a, u) \le \tfrac\pi6 .
+  \ell(a, b) + \ell(A, B) \le \mathrm{side}(a, b) + \tfrac54(a - 1) = \tfrac\pi6 + \tfrac13\left(b - \tfrac12\right) + \tfrac12(a - 1) = \tfrac\pi6 - \tfrac16 r(a, b) \le \tfrac\pi6 .
   ```
 
-  If it is side, $\ell(A, v) > \frac9{25}$ by Lemma 10.8 (1), and
-  $\ell(a, u) - \ell(A, v) < \frac\pi4 - \frac9{25} < \frac\pi6$. If it is
-  capped, $\ell(a, u) - \ell(A, v) \le 0$.
+- $s = 1$, $t = 1$: then $B \ge 1 - a$. If the label of $(A, B)$ is axial,
 
-If instead $A - su \ge 1$, apply the case just proved to the states $(A, v)$,
-$(a, u)$ with the signs $-t$, $-s$: its hypothesis is $A + (-s)u \ge 1$, and its
-conclusion $(-t)\ell(A, v) - (-s)\ell(a, u) \le \frac\pi6$ is the claim.
+  ```math
+  \ell(a, b) - \ell(A, B) \le \mathrm{side}(a, b) - \tfrac54(1 - a) = \tfrac\pi6 - \tfrac16 r(a, b) \le \tfrac\pi6 .
+  ```
+
+  If it is side, $\ell(A, B) > \frac9{25}$ by Lemma 10.8 (1), and
+  $\ell(a, b) - \ell(A, B) < \frac\pi4 - \frac9{25} < \frac\pi6$. If it is
+  capped, $\ell(a, b) - \ell(A, B) \le 0$.
+
+If instead $A - sb \ge 1$, apply the case just proved to the states $(A, B)$,
+$(a, b)$ with the signs $-t$, $-s$: its hypothesis is $A + (-s)b \ge 1$, and its
+conclusion $(-t)\ell(A, B) - (-s)\ell(a, b) \le \frac\pi6$ is the claim.
 $\square$
 
 *Lean:
@@ -1118,7 +1118,7 @@ $\square$
 
 ### Lemma 10.21 (parallel and quarter-turned pairs)
 
-Let $(a, u)$ and $(A, v)$ be admissible, $s, t \in \lbrace 1, -1\rbrace$, $g$
+Let $(a, b)$ and $(A, B)$ be admissible, $s, t \in \lbrace 1, -1\rbrace$, $g$
 real, and $d$ the relative phase of the canonical pair.
 
 1. If $0 < g < \frac\pi3$ and $d = 0$, then $\sigma_k(g) > 0$ for every $k$.
@@ -1126,23 +1126,23 @@ real, and $d$ the relative phase of the canonical pair.
    $k$.
 
 *Proof.* We use Lemma 10.13 (2) and the bounds $\frac12 \le a, A < \frac54$ and
-$0 \le u, v < \frac{31}{40}$ of Lemma 10.5 (2) (Figure 10.15).
+$0 \le b, B < \frac{31}{40}$ of Lemma 10.5 (2) (Figure 10.15).
 
-(1) Here $W = 1$ and $\Delta = (A - a, tv - su)$: the two squares are parallel,
-$T = Q(A, tv)$. Then $\sigma_0 = 1 + a - A$ and $\sigma_2 = 1 + A - a$ are
-positive, as $|A - a| < \frac34$. Next, $\sigma_1 = 1 + su - tv$ and
-$\sigma_3 = 1 - su + tv$. If $s = t$ both are positive, as $|u - v| < 1$. The
+(1) Here $W = 1$ and $\Delta = (A - a, tB - sb)$: the two squares are parallel,
+$T = Q(A, tB)$. Then $\sigma_0 = 1 + a - A$ and $\sigma_2 = 1 + A - a$ are
+positive, as $|A - a| < \frac34$. Next, $\sigma_1 = 1 + sb - tB$ and
+$\sigma_3 = 1 - sb + tB$. If $s = t$ both are positive, as $|b - B| < 1$. The
 case $s = 1$, $t = -1$ does not occur, since then
-$d = g + \ell(a, u) + \ell(A, v) > 0$. If $s = -1$, $t = 1$, then
-$\sigma_3 = 1 + u + v > 0$, and $d = 0$ says
-$\ell(a, u) + \ell(A, v) = g < \frac\pi3$, so $u + v < 1$ by Lemma 10.20 (1) and
-$\sigma_1 = 1 - u - v > 0$.
+$d = g + \ell(a, b) + \ell(A, B) > 0$. If $s = -1$, $t = 1$, then
+$\sigma_3 = 1 + b + B > 0$, and $d = 0$ says
+$\ell(a, b) + \ell(A, B) = g < \frac\pi3$, so $b + B < 1$ by Lemma 10.20 (1) and
+$\sigma_1 = 1 - b - B > 0$.
 
-(2) Here $W = 1$ and $\Delta = (-tv - a, A - su)$. Then
-$\sigma_0 = 1 + a + tv \ge \frac32 - v > 0$ and
-$\sigma_3 = 1 + A - su \ge \frac32 - u > 0$. If $\sigma_1 = 1 - A + su \le 0$ or
-$\sigma_2 = 1 - a - tv \le 0$, then $A - su \ge 1$ or $a + tv \ge 1$, and Lemma
-10.20 (2) gives $s\,\ell(a, u) - t\,\ell(A, v) \le \frac\pi6$, so that
+(2) Here $W = 1$ and $\Delta = (-tB - a, A - sb)$. Then
+$\sigma_0 = 1 + a + tB \ge \frac32 - B > 0$ and
+$\sigma_3 = 1 + A - sb \ge \frac32 - b > 0$. If $\sigma_1 = 1 - A + sb \le 0$ or
+$\sigma_2 = 1 - a - tB \le 0$, then $A - sb \ge 1$ or $a + tB \ge 1$, and Lemma
+10.20 (2) gives $s\,\ell(a, b) - t\,\ell(A, B) \le \frac\pi6$, so that
 $d < \frac\pi3 + \frac\pi6 = \frac\pi2$, a contradiction. $\square$
 
 *Lean:
@@ -1153,15 +1153,15 @@ $d < \frac\pi3 + \frac\pi6 = \frac\pi2$, a contradiction. $\square$
 
 *Figure 10.15.* The two degenerate relative phases. Left, $d = 0$: $S$ and $T$
 are parallel, and a line $y = \text{const}$ can separate them only if they lie
-on opposite sides of the first axis with $u + v \ge 1$; then the labels add up
+on opposite sides of the first axis with $b + B \ge 1$; then the labels add up
 to at least $\frac\pi3$ (Lemma 10.20 (1)), so the markers are at least
 $\frac\pi3$ apart. Right, $d = \frac\pi2$: a separating line $x = \text{const}$
-needs $a + tv \ge 1$ or $A - su \ge 1$, and then the labels differ by at most
+needs $a + tB \ge 1$ or $A - sb \ge 1$, and then the labels differ by at most
 $\frac\pi6$ (Lemma 10.20 (2)), which forces $g \ge \frac\pi3$.
 
 ### Lemma 10.22 (smooth minima)
 
-Let $(a, u)$ and $(A, v)$ be admissible, $s, t \in \lbrace 1, -1\rbrace$ and
+Let $(a, b)$ and $(A, B)$ be admissible, $s, t \in \lbrace 1, -1\rbrace$ and
 $k \in \lbrace 0, 1, 2, 3\rbrace$. Let $1 \le g < \frac\pi3$ satisfy
 $\sigma_k(g) \le \sigma_k(y)$ for all $y \in [\frac12, \frac\pi3]$ and
 $\sigma_k(g) < \sigma_k(y)$ for all $y \in [\frac12, g)$, and suppose that the
@@ -1175,11 +1175,11 @@ centre (Figures 10.16 and 10.17). Then the support sum is the support of $S$
 minus the distance $\delta < \frac12$ of that vertex, and the support of $S$ is
 larger.
 
-*Proof.* Let $\lambda = \ell(a, u)$ and $\Lambda = \ell(A, v)$, both in
-$[0, \frac\pi4]$ by Lemma 10.7 (2), and let $c = h(a, su, k\frac\pi2)$, the
+*Proof.* Let $\lambda = \ell(a, b)$ and $\Lambda = \ell(A, B)$, both in
+$[0, \frac\pi4]$ by Lemma 10.7 (2), and let $c = h(a, sb, k\frac\pi2)$, the
 first term of $\sigma_k$, which does not depend on the gap. With
 $Z = k\frac\pi2 + \pi - s\lambda + t\Lambda$ the second term of $\sigma_k(y)$
-is $h(A, tv, Z - y)$, and at $y = g$ its direction is
+is $h(A, tB, Z - y)$, and at $y = g$ its direction is
 $z = Z - g = k\frac\pi2 + \pi - d$.
 
 *Step 1: a sinusoid near $g$.* As $z$ differs from $\pi - d$ by a multiple of
@@ -1189,10 +1189,10 @@ $\epsilon_2$ be their signs. By continuity there is an open interval $J$ about
 $g$ on which $\cos(Z - y)$ and $\sin(Z - y)$ keep these signs, and on $J$
 
 ```math
-\sigma_k(y) = c + X\cos(Z - y) + Y\sin(Z - y), \qquad X = A + \tfrac{\epsilon_1}2, \quad Y = tv + \tfrac{\epsilon_2}2 . \tag{10.1}
+\sigma_k(y) = c + X\cos(Z - y) + Y\sin(Z - y), \qquad X = A + \tfrac{\epsilon_1}2, \quad Y = tB + \tfrac{\epsilon_2}2 . \tag{10.1}
 ```
 
-The point $(X, Y)$ is the vertex of $\overline{Q(A, tv)}$ that is extreme in
+The point $(X, Y)$ is the vertex of $\overline{Q(A, tB)}$ that is extreme in
 the direction $u(z)$.
 
 *Step 2: Fermat's theorem.* The point $g$ is interior to
@@ -1218,11 +1218,11 @@ $\cos e - 1 \le 0$. Hence $H < 0$: at $g$ the sinusoid (10.1) is at a trough
 
 ![The support of the square T in the direction u(z), for z from 0 to 2 pi, drawn in blue: four sinusoidal pieces with corners at 0, pi/2, pi, 3 pi/2 and 2 pi, highest near z = 0.7 and lowest between pi and 3 pi/2. Dashed behind it, the four sinusoids of the vertices of T, each extended over the whole range. The piece between pi and 3 pi/2, which belongs to the vertex nearest to o, is orange, and its trough, at z = pi + beta below the zero line at the depth minus delta, is marked by a dot](figures/10-seven/sinusoids.svg)
 
-*Figure 10.16.* Steps 1 to 3 for the state $(A, v) = (0.85, 0.68)$ and
-$t = 1$. The support $h(A, tv, z)$ of $T$ in the direction $u(z)$ (blue) is
+*Figure 10.16.* Steps 1 to 3 for the state $(A, B) = (0.85, 0.68)$ and
+$t = 1$. The support $h(A, tB, z)$ of $T$ in the direction $u(z)$ (blue) is
 the largest of the four sinusoids $\langle p, u(z)\rangle$ of its vertices $p$
 (dashed), with corners at the multiples of $\frac\pi2$. As
-$\sigma_k(y) = c + h(A, tv, Z - y)$, a smooth minimum of $\sigma_k$ is a
+$\sigma_k(y) = c + h(A, tB, Z - y)$, a smooth minimum of $\sigma_k$ is a
 smooth minimum of $h$, the trough of one sinusoid. Only the sinusoid of the
 vertex nearest to $o$ (orange) has its trough on the graph of $h$: at
 $z = \pi + \beta$, of depth $-\delta$.
@@ -1234,15 +1234,15 @@ likewise $Y = H\sin z$. As $H < 0$:
 - $\cos z < 0$, since otherwise $\epsilon_1 = 1$ and
   $X = A + \frac12 > 0 > H\cos z$. So $\epsilon_1 = -1$, $X = A - \frac12$, and
   $X = H\cos z > 0$.
-- If $t = 1$: $\sin z > 0$ would give $Y = v + \frac12 > 0 > H\sin z$; so
-  $\sin z < 0$ and $Y = v - \frac12 = H\sin z > 0$. If $t = -1$: $\sin z < 0$
-  would give $Y = -v - \frac12 < 0 < H\sin z$; so $\sin z > 0$ and
-  $Y = -(v - \frac12) = H\sin z < 0$. In both cases $Y = t(v - \frac12)$ and
-  $v > \frac12$.
+- If $t = 1$: $\sin z > 0$ would give $Y = B + \frac12 > 0 > H\sin z$; so
+  $\sin z < 0$ and $Y = B - \frac12 = H\sin z > 0$. If $t = -1$: $\sin z < 0$
+  would give $Y = -B - \frac12 < 0 < H\sin z$; so $\sin z > 0$ and
+  $Y = -(B - \frac12) = H\sin z < 0$. In both cases $Y = t(B - \frac12)$ and
+  $B > \frac12$.
 
-So $(X, Y) = (A - \frac12, t(v - \frac12))$ is the vertex of
-$\overline{Q(A, tv)}$ nearest to the origin, and $p = A - \frac12$ and
-$q = v - \frac12$ satisfy $0 < q \le p$, as $v \le A$. Let
+So $(X, Y) = (A - \frac12, t(B - \frac12))$ is the vertex of
+$\overline{Q(A, tB)}$ nearest to the origin, and $p = A - \frac12$ and
+$q = B - \frac12$ satisfy $0 < q \le p$, as $B \le A$. Let
 $\delta = \sqrt{p^2 + q^2}$. From $H^2 = X^2 + Y^2 = \delta^2$ and $H < 0$ we
 get $H = -\delta$, so
 
@@ -1262,18 +1262,18 @@ Moreover $\delta < \frac12$: as $(p + q)^2 = \delta^2 + 2pq > \delta^2$ we have
 $p + q > \delta$, and
 
 ```math
-\tfrac{13}4 \ge \varphi(A, v) = (p + 1)^2 + (q + 1)^2 = \delta^2 + 2(p + q) + 2 > \delta^2 + 2\delta + 2 ,
+\tfrac{13}4 \ge \varphi(A, B) = (p + 1)^2 + (q + 1)^2 = \delta^2 + 2(p + q) + 2 > \delta^2 + 2\delta + 2 ,
 ```
 
 so $(\delta - \frac12)(\delta + \frac52) < 0$. Finally $\Lambda > \frac\pi6$,
-because $v > \frac12$: $\mathrm{axial}(v) > \frac58 > \frac\pi6$, by Lemma 10.7
-(1) $\mathrm{side}(A, v) = \frac\pi6 + \frac56(v - \frac12) + \frac14 r(A, v)$
+because $B > \frac12$: $\mathrm{axial}(B) > \frac58 > \frac\pi6$, by Lemma 10.7
+(1) $\mathrm{side}(A, B) = \frac\pi6 + \frac56(B - \frac12) + \frac14 r(A, B)$
 exceeds $\frac\pi6$, and $\frac\pi4 > \frac\pi6$.
 
-![The square T in the frame d, the axis-parallel square centred at (A, tv), and the disk centre o at the origin outside it, with the first axis dashed. The vertex of T nearest to o is joined to o by an orange segment of length delta, at the angle beta from the axis; the dashed line through that vertex perpendicular to the segment has T on its far side, and the direction u(z) is drawn at o, pointing away from the vertex](figures/10-seven/nearest-vertex.svg)
+![The square T in the frame d, the axis-parallel square centred at (A, tB), and the disk centre o at the origin outside it, with the first axis dashed. The vertex of T nearest to o is joined to o by an orange segment of length delta, at the angle beta from the axis; the dashed line through that vertex perpendicular to the segment has T on its far side, and the direction u(z) is drawn at o, pointing away from the vertex](figures/10-seven/nearest-vertex.svg)
 
-*Figure 10.17.* Step 4 for the state $(A, v) = (0.85, 0.68)$ and $t = 1$,
-drawn in the frame $d$, where $T$ is $Q(A, tv)$. At a smooth leftmost minimum
+*Figure 10.17.* Step 4 for the state $(A, B) = (0.85, 0.68)$ and $t = 1$,
+drawn in the frame $d$, where $T$ is $Q(A, tB)$. At a smooth leftmost minimum
 the direction $u(z)$ points from the vertex of $T$ nearest to $o$, at the
 distance $\delta$ and the angle $\beta$, through $o$, so that
 $z \equiv \pi + t\beta$ (10.3). The line through that vertex perpendicular to
@@ -1293,21 +1293,21 @@ We go through the axes.
 
 - $k = 2$ or $3$: $N \ge \pi - \frac\pi4 = \frac{3\pi}4 > \frac{7\pi}{12} > C$,
   which is impossible.
-- $k = 0$: $c = h(a, su, 0) = a + \frac12 \ge 1 > \delta$.
-- $k = 1$, $s = 1$: $c = u + \frac12 \ge \frac12 > \delta$.
-- $k = 1$, $s = -1$: $c = \frac12 - u$ and $N = \frac\pi2 + \lambda$. If
+- $k = 0$: $c = h(a, sb, 0) = a + \frac12 \ge 1 > \delta$.
+- $k = 1$, $s = 1$: $c = b + \frac12 \ge \frac12 > \delta$.
+- $k = 1$, $s = -1$: $c = \frac12 - b$ and $N = \frac\pi2 + \lambda$. If
   $t = 1$, then $C = g + \beta - \Lambda < \frac{5\pi}{12} < \frac\pi2 \le N$,
   impossible. So $t = -1$ and $\frac\pi2 + \lambda = g - \beta + \Lambda$, that
   is $\Lambda = \frac\pi2 + \lambda - g + \beta$, which is at least
   $\frac\pi6 + \lambda + \beta$ as $g \le \frac\pi3$; with
   $\Lambda \le \frac\pi4$ this gives $\lambda + \beta \le \frac\pi{12}$.
-  Hence $\lambda < \frac\pi{12} < \frac9{25}$, so the label of $(a, u)$ is
-  neither side (Lemma 10.8 (1)) nor capped: $\lambda = \mathrm{axial}(u)$ and
-  $u = \frac45\lambda$. On the other hand, with
+  Hence $\lambda < \frac\pi{12} < \frac9{25}$, so the label of $(a, b)$ is
+  neither side (Lemma 10.8 (1)) nor capped: $\lambda = \mathrm{axial}(b)$ and
+  $b = \frac45\lambda$. On the other hand, with
   $\kappa = \frac34\cos\beta - \frac13\sin\beta$,
 
   ```math
-  \Lambda \le \mathrm{side}(A, v) = \tfrac\pi6 + \tfrac13\delta\sin\beta + \tfrac34\left(\tfrac12 - \delta\cos\beta\right) = \tfrac\pi6 + \tfrac38 - \delta\kappa ,
+  \Lambda \le \mathrm{side}(A, B) = \tfrac\pi6 + \tfrac13\delta\sin\beta + \tfrac34\left(\tfrac12 - \delta\cos\beta\right) = \tfrac\pi6 + \tfrac38 - \delta\kappa ,
   ```
 
   and together with $\Lambda \ge \frac\pi6 + \lambda + \beta$ this gives
@@ -1328,7 +1328,7 @@ We go through the axes.
 
   the strict inequality because $\frac25\lambda + \frac{11}{24}\beta > 0$.
   Dividing by $\kappa > 0$ gives
-  $\delta < \frac12 - \frac45\lambda = \frac12 - u = c$.
+  $\delta < \frac12 - \frac45\lambda = \frac12 - b = c$.
 
 So $c > \delta$ in every case, and $\sigma_k(g) = c - \delta > 0$. $\square$
 
@@ -1342,7 +1342,7 @@ So $c > \delta$ in every case, and $\sigma_k(g) = c - \delta > 0$. $\square$
 
 ### Theorem 10.23 (all gaps)
 
-Let $(a, u)$ and $(A, v)$ be admissible, $s, t \in \lbrace 1, -1\rbrace$ and
+Let $(a, b)$ and $(A, B)$ be admissible, $s, t \in \lbrace 1, -1\rbrace$ and
 $0 \le g < \frac\pi3$. Then $\sigma_k(g) > 0$ for $k = 0, 1, 2, 3$.
 
 *Proof.* Fix the data and $k$, and let $f(y) = \sigma_k(y)$, a continuous
@@ -1352,7 +1352,7 @@ $1 \le g < \frac\pi3$ and suppose $f(g) \le 0$. Now $f(\frac12) > 0$ by Lemma
 $[\frac12, \frac\pi3]$ gives $x \in (\frac12, \frac\pi3)$ with $f(x) \le 0$,
 $f(x) \le f(y)$ for all $y \in [\frac12, \frac\pi3]$ and $f(x) < f(y)$ for all
 $y \in [\frac12, x)$; and $x \ge 1$, since $f(x) \le 0$ and Lemma 10.18. Let
-$d = x + s\,\ell(a, u) - t\,\ell(A, v)$ be the relative phase at the gap $x$. As
+$d = x + s\,\ell(a, b) - t\,\ell(A, B)$ be the relative phase at the gap $x$. As
 the labels lie in $[0, \frac\pi4]$,
 
 ```math
@@ -1383,34 +1383,34 @@ vanishes at $\frac\pi3$, where the pair is a contact of kind (1)
 
 Let $S$ and $T$ be disjoint exterior squares whose states are admissible. Then
 their markers are at least $\frac\pi3$ apart:
-$d(\mu_S, \mu_T) \ge \frac\pi3$. If $\mu_T = \mu_S + \frac\pi3$, then the
+$\angle(\mu_S, \mu_T) \ge \frac\pi3$. If $\mu_T = \mu_S + \frac\pi3$, then the
 states of $S$ and $T$ with the signs $\varepsilon_S$ and $\varepsilon_T$ form a
 contact.
 
 *Proof.* Let $g \in (-\pi, \pi]$ represent $\mu_T - \mu_S$, so that
-$d(\mu_S, \mu_T) = |g|$.
+$\angle(\mu_S, \mu_T) = |g|$.
 
 *Step 1: the canonical pair.* Suppose $0 \le g \le \frac\pi3$. Put
-$(a, u) = (a_S, b_S)$, $s = \varepsilon_S$, $(A, v) = (a_T, b_T)$,
-$t = \varepsilon_T$, and let $d = g + s\,\ell(a, u) - t\,\ell(A, v)$ be the
+$(a, b) = (a_S, b_S)$, $s = \varepsilon_S$, $(A, B) = (a_T, b_T)$,
+$t = \varepsilon_T$, and let $d = g + s\,\ell(a, b) - t\,\ell(A, B)$ be the
 relative phase of their canonical pair $(S_0, T_0)$ with gap $g$. Since
 $\mu_T - \mu_S \equiv g$, we have $\theta_T \equiv \theta_S + d$
 (Figure 10.19). By [Lemma 3.22](03-tools.md#lemma-322-cartesian-form-of-a-chart),
-$S^\circ = F_{\theta_S}(Q(a, su)^\circ) = F_{\theta_S}(S_0^\circ)$ and
-$T^\circ = F_{\theta_T}(Q(A, tv)^\circ)$. By the addition formulas,
+$S^\circ = F_{\theta_S}(Q(a, sb)^\circ) = F_{\theta_S}(S_0^\circ)$ and
+$T^\circ = F_{\theta_T}(Q(A, tB)^\circ)$. By the addition formulas,
 $F_{\theta_S}(R_d\,p) = F_{\theta_S + d}(p)$ for every point $p$, so
-$T^\circ = F_{\theta_S}(R_d(Q(A, tv)^\circ)) = F_{\theta_S}(T_0^\circ)$. As
+$T^\circ = F_{\theta_S}(R_d(Q(A, tB)^\circ)) = F_{\theta_S}(T_0^\circ)$. As
 $F_{\theta_S}$ is a bijection
 ([Lemma 2.5](02-preliminaries.md#lemma-25-frames-are-rigid-motions)), the open
 squares of $S_0$ and $T_0$ are disjoint, and by Lemma 10.14 some support sum of
 the canonical pair or of the reversed pair is at most 0 at the gap $g$. The
-reversed pair is the canonical pair of the admissible states $(A, v)$,
-$(a, u)$ with the signs $-t$, $-s$.
+reversed pair is the canonical pair of the admissible states $(A, B)$,
+$(a, b)$ with the signs $-t$, $-s$.
 
 *Step 2: the angle.* Suppose $|g| < \frac\pi3$. Exchanging $S$ and $T$, which
 replaces $g$ by $-g$, we may assume $0 \le g < \frac\pi3$. By Step 1 a support
 sum of one of the two pairs is at most 0, while all of them are positive by
-Theorem 10.23. So $d(\mu_S, \mu_T) = |g| \ge \frac\pi3$.
+Theorem 10.23. So $\angle(\mu_S, \mu_T) = |g| \ge \frac\pi3$.
 
 *Step 3: the contact.* If $\mu_T = \mu_S + \frac\pi3$, then $g = \frac\pi3$, and
 by Step 1 some $\sigma_k(\frac\pi3)$ of the pair, or of the reversed pair, is
@@ -1475,7 +1475,7 @@ Theorem 10.24 the states of $S_i$ and $S_{i+1}$ with their signs form a contact.
 *Step 2: the kinds.* Call an exterior square *lower* if its state is the side
 state and its sign is $-1$, *upper* if its state is the side state and its
 sign is $1$, and *axial* if its state is an axial state; the three kinds
-exclude one another, as the side state has $u = \frac12 \ne 0$. By Definition
+exclude one another, as the side state has $b = \frac12 \ne 0$. By Definition
 10.15 the first square of a contact has a kind, and its kind decides the kind
 of the contact and of the second square. A contact whose first square is lower
 is of kind (1), since kind (2) needs the sign $1$ and kind (3) an axial state;
@@ -1531,7 +1531,7 @@ heights $y_3$ and $y_1$ of the axial squares are free.
 
 ### Lemma 10.27 (the square in the middle)
 
-Let $S$ be a unit square with $o \in S^\circ$, and let $B_1, B_2, B_3, B_4$ be
+Let $S$ be a unit square with $o \in S^\circ$, and let $P_1, P_2, P_3, P_4$ be
 unit squares disjoint from $S$ that sit at $(1, -\frac12)$, $(1, \frac12)$,
 $(-1, -\frac12)$, $(-1, \frac12)$ in a frame $\theta$. Then $S$ sits at
 $(0, z)$ in the frame $\theta$ for some $z$ with $|z| < \frac12$.
@@ -1550,8 +1550,8 @@ $u(\psi), u(\psi + \frac\pi2)$ for its frame:
 S^{\ast\circ} = \left\lbrace (x, y) : |\cos\psi\,(x - X) + \sin\psi\,(y - Y)| < \tfrac12,\ |-\sin\psi\,(x - X) + \cos\psi\,(y - Y)| < \tfrac12 \right\rbrace ,
 ```
 
-and $B_i$ becomes $Q(p_i)$ with $p_i$ one of $(\pm1, \pm\frac12)$; as a closed
-square is the closure of the open one, $\overline{B_i}$ becomes
+and $P_i$ becomes $Q(p_i)$ with $p_i$ one of $(\pm1, \pm\frac12)$; as a closed
+square is the closure of the open one, $\overline{P_i}$ becomes
 $\overline{Q(p_i)}$. The origin lies in $S^{\ast\circ}$.
 
 *Step 1: the band.* Every point $(x, y) \in S^{\ast\circ}$ with $|y| < 1$ has
@@ -1564,7 +1564,7 @@ $\overline{Q(\pm1, \pm\frac12)}$: for $\tau x = \frac12$ in
 $\overline{Q(1, \frac12)} = [\frac12, \frac32] \times [0, 1]$ if $\tau y \ge 0$
 and in $\overline{Q(1, -\frac12)}$ if $\tau y \le 0$, and similarly for
 $\tau x = -\frac12$. But by [Lemma 3.12](03-tools.md#lemma-312-supporting-line)
-(2) no point of $\overline{B_i}$ lies in $S^\circ$, that is, no point of
+(2) no point of $\overline{P_i}$ lies in $S^\circ$, that is, no point of
 $\overline{Q(p_i)}$ lies in $S^{\ast\circ}$.
 
 *Step 2: the centre is near the origin.* The local coordinates of the origin
@@ -1598,10 +1598,10 @@ and $S$ sits at $(0, z)$ with $z = Y$. $\square$
 [`pullSquare`](../../SquaresInCircles/Common/Frames.lean#L21),
 [`pullSquare_open`](../../SquaresInCircles/Common/Frames.lean#L40).*
 
-![The four side squares B1 to B4 of the column packing, the band between them where the absolute value of y is less than 1, and the strip where the absolute value of x is at most 1/2, shaded. A tilted square containing the disk centre o is drawn dashed, with its chord through the centre parallel to the first axis; the chord is longer than 1 and its ends lie inside the side squares. An axis-parallel square in the strip, containing o, is drawn solid](figures/10-seven/middle.svg)
+![The four side squares P1 to P4 of the column packing, the band between them where the absolute value of y is less than 1, and the strip where the absolute value of x is at most 1/2, shaded. A tilted square containing the disk centre o is drawn dashed, with its chord through the centre parallel to the first axis; the chord is longer than 1 and its ends lie inside the side squares. An axis-parallel square in the strip, containing o, is drawn solid](figures/10-seven/middle.svg)
 
 *Figure 10.21.* The square in the middle. The side squares
-$B_1, \dots, B_4$ block the band $|y| < 1$ beyond $|x| = \frac12$, so the part
+$P_1, \dots, P_4$ block the band $|y| < 1$ beyond $|x| = \frac12$, so the part
 of the square that contains $o$ in that band stays in the strip
 $|x| \le \frac12$. A tilted square (dashed) has a chord through its centre
 longer than 1, which pokes into a side square; so the square is axis-parallel

@@ -810,7 +810,7 @@ def case_figure(name, names, weights, angles, scale, domain, title, caption,
 # The profiles of the cases, with exact constants (for the shading).
 
 def far_term(x):
-    """The function T of Lemma D.8."""
+    """The function T of Lemma D.8 (1)."""
     return (4 * math.cos(x) + 4 * max(-math.sin(x), 0)
             - R0 * math.sqrt(25 - 24 * math.sin(x)))
 
@@ -1160,7 +1160,7 @@ def walls():
          'the three points of Lemma D.18 marked')
 
 
-# Figure: the far-vertex term of Lemma D.8.
+# Figure: the far-vertex term T of Lemma D.8 (1).
 
 def far_term_fig():
     f = Figure(0, 4.7, 0.1, 3.05, 100)
@@ -1577,7 +1577,7 @@ def west_turned():
 
 def base():
     f = Figure(0, 8.0, 0.1, 3.3, 100)
-    # left: delta' and the level 7/10
+    # left: psi' and the level 7/10
     P = Plot(f, (0.75, 0.5, 2.9, 2.3), (0, 1.2), (0.6, 1.25))
     P.axes([(0, '0'), (0.6, '3/5'), (1.2, '6/5')],
            [(0.7, '7/10'), (0.9, '0.9'), (1.1, '1.1')], 'x', '')
@@ -1590,7 +1590,7 @@ def base():
     P.dot((1.2, end), r=3.2, fill=INK)
     P.text((1.2, end), num(end, 4), size=13, italic=False, anchor='start',
            dx=9)
-    P.text((0.3, dprime(0.3)), it('δ') + '′(' + it('x') + ')',
+    P.text((0.3, dprime(0.3)), it('ψ') + '′(' + it('x') + ')',
            size=14, italic=False, color=BLUE, anchor='start', dx=6, dy=-12)
     # right: the domain and the order of the argument
     lo, hi = 16 / 25, 11 / 14
@@ -1617,7 +1617,7 @@ def base():
     f.add(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="3.6" fill="#ffffff" '
           f'stroke="{INK}" stroke-width="1.4"/>')
     save(f, 'appendix-d/base', 'Two panels. Left: over x from 0 to 6/5, the '
-         'derivative of delta, in blue, falling from about 1.19 to about 0.73 '
+         'derivative of psi, in blue, falling from about 1.19 to about 0.73 '
          'and staying above the dashed orange level 7/10; the Taylor bound '
          '0.7278 at 6/5 is marked. Right: the domain of (v, d) of section D.9, '
          'a green quadrilateral: its left edge, the wall, drawn purple, its '

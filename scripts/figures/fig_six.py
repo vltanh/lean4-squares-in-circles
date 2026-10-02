@@ -1778,7 +1778,7 @@ def pair_figure():
 def diagonal_figure():
     """Lemma 9.52 at w = -0.3, s = -0.1, d = 0.75, both wings tight: the
     wings, and the wing forces on D with their sum
-    F_D = L(cos delta, -sin delta) in the frame of D."""
+    F_D = L(cos Theta, -sin Theta) in the frame of D."""
     w, s_, d = -0.3, -0.1, 0.75
     D_ = oriented(PI + d, 1.15, 0.0)
     cD = D_[0]
@@ -1795,14 +1795,14 @@ def diagonal_figure():
             assert not interiors_meet(corners(sq[p_]), corners(sq[q_]))
     assert abs(sep_value(W_, D_, e2W) - tau(d - w)) < 1e-12
     assert abs(sep_value(D_, S_, e2S) - tau(d - s_)) < 1e-12
-    beta = (w - s_) / 2
-    delta = d - PI / 4 - (w + s_) / 2
-    L = KD * (math.cos(beta) - math.sin(beta))
+    xi = (w - s_) / 2
+    theta = d - PI / 4 - (w + s_) / 2
+    L = KD * (math.cos(xi) - math.sin(xi))
     vW = shift((0, 0), e2W, M_STAR)
     vS = shift((0, 0), e2S, -M_STAR)
     FD = shift(vW, vS)
-    assert abs(dot2(FD, e1D) - L * math.cos(delta)) < 1e-12
-    assert abs(dot2(FD, e2D) + L * math.sin(delta)) < 1e-12
+    assert abs(dot2(FD, e1D) - L * math.cos(theta)) < 1e-12
+    assert abs(dot2(FD, e2D) + L * math.sin(theta)) < 1e-12
     xs = [q[0] for k in ('W', 'D', 'S') for q in corners(sq[k])]
     ys = [q[1] for k in ('W', 'D', 'S') for q in corners(sq[k])]
     x0, y0, y1 = min(xs) - 0.1, min(ys) - 0.1, max(ys) + 0.1
@@ -1855,8 +1855,8 @@ def diagonal_figure():
            italic=False, color=PINK)
     f.text(shift(pF, (0.1, 0.0)), sb('F', 'D', size=15), size=15,
            color=CYAN, anchor='start')
-    thin_arc(f, O, 0.7, 0.0, -delta, color=INK, width=1.2)
-    f.text(shift(O, u(-delta / 2), 0.85), it('δ'), size=15, italic=False)
+    thin_arc(f, O, 0.7, 0.0, -theta, color=INK, width=1.2)
+    f.text(shift(O, u(-theta / 2), 0.85), 'Θ', size=15, italic=False)
     f.dot(O, r=2.8, fill=CYAN)
     save(f, '09-six/diagonal', 'The two wings at the turned square D, and '
          'the wing forces on D and their sum in the frame of D')
@@ -1867,13 +1867,13 @@ def line_l(w):
 
 
 def remainder(w, s, d):
-    beta = (w - s) / 2
-    delta = d - PI / 4 - (w + s) / 2
-    L = KD * (math.cos(beta) - math.sin(beta))
-    if 2 * R6 * abs(math.sin(delta)) <= 1:
-        sig = RHO * L * math.cos(delta)
+    xi = (w - s) / 2
+    theta = d - PI / 4 - (w + s) / 2
+    L = KD * (math.cos(xi) - math.sin(xi))
+    if 2 * R6 * abs(math.sin(theta)) <= 1:
+        sig = RHO * L * math.cos(theta)
     else:
-        sig = L * (R6 - (math.cos(delta) + abs(math.sin(delta))) / 2)
+        sig = L * (R6 - (math.cos(theta) + abs(math.sin(theta))) / 2)
     Dv = M_STAR * (omega(d - w) + omega(d - s)) - sig
     return line_l(w) + line_l(-s) + Dv + 2 * BETA
 

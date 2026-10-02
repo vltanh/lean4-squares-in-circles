@@ -15,7 +15,7 @@
 <text x="237.1" y="368.4" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle" font-style="italic">S</text>
 <text x="250.5" y="140.0" font-size="16" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="start" dominant-baseline="middle" font-style="italic">T</text>
 <line x1="37.5" y1="263.4" x2="325.5" y2="263.4" stroke="#2563eb" stroke-width="0.9" stroke-dasharray="3 3"/>
-<text x="37.5" y="275.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle"><tspan font-style="italic">y</tspan> = ½ − <tspan font-style="italic">u</tspan></text>
+<text x="37.5" y="275.4" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="start" dominant-baseline="middle"><tspan font-style="italic">y</tspan> = ½ − <tspan font-style="italic">b</tspan></text>
 <line x1="310.5" y1="368.4" x2="310.5" y2="307.2" stroke="#1f2937" stroke-width="1.5"/>
 <path d="M 310.5 300.9 L 314.3 309.9 L 306.7 309.9 z" fill="#1f2937"/>
 <text x="316.5" y="306.9" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle"><tspan font-style="italic">n</tspan><tspan dy="4.2" font-size="10.1">1</tspan></text>

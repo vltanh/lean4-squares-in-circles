@@ -5,10 +5,10 @@
 This appendix proves the critical-gap proposition
 ([Proposition 10.17](10-seven.md#proposition-1017-the-critical-gap)) on the forward axis, for the signs that
 Appendix G leaves open. We use the notation of Chapter 10 and Appendix G: the
-admissible *source* state $(a, u)$ with sign $s$ and label $\ell = \ell(a, u)$,
-the admissible *target* state $(A, v)$ with sign $t$ and label
-$\ell' = \ell(A, v)$ ([Definition 10.4](10-seven.md#definition-104-states),
-[Definition 10.6](10-seven.md#definition-106-labels-and-markers)), their remainders $r(a, u)$ and $r(A, v)$, and
+admissible *source* state $(a, b)$ with sign $s$ and label $\ell = \ell(a, b)$,
+the admissible *target* state $(A, B)$ with sign $t$ and label
+$\ell' = \ell(A, B)$ ([Definition 10.4](10-seven.md#definition-104-states),
+[Definition 10.6](10-seven.md#definition-106-labels-and-markers)), their remainders $r(a, b)$ and $r(A, B)$, and
 the canonical pair $S$, $T$ with its support sums $\sigma_k$
 ([Definition 10.12](10-seven.md#definition-1012-canonical-pair-and-support-sums)). The forward axis is
 $n_1 = u(\frac\pi2)$ in the chart of $S$. It points in the direction of
@@ -26,11 +26,11 @@ reduces capped labels to active ones and settles the signs $(s, t) = (1, 1)$
 ([Proposition G.29](appendix-g.md#proposition-g29-the-forward-axis-with-positive-signs)); the other sectors are
 settled here.
 
-| signs $(s, t)$ | label of $(a, u)$ | label of $(A, v)$ | statement | $\sigma_1 = 0$ only if |
+| signs $(s, t)$ | label of $(a, b)$ | label of $(A, B)$ | statement | $\sigma_1 = 0$ only if |
 | --- | --- | --- | --- | --- |
-| $(1, -1)$ | any | axial or side | Proposition I.7 | $(a, u)$ axial state, $(A, v) = (1, \frac12)$ |
-| $(-1, -1)$ | axial | axial or side | Proposition I.7 | $(a, u)$ axial state, $(A, v) = (1, \frac12)$ |
-| $(-1, 1)$ | axial or side | axial or side | Proposition I.16 | $(a, u) = (A, v) = (1, \frac12)$ |
+| $(1, -1)$ | any | axial or side | Proposition I.7 | $(a, b)$ axial state, $(A, B) = (1, \frac12)$ |
+| $(-1, -1)$ | axial | axial or side | Proposition I.7 | $(a, b)$ axial state, $(A, B) = (1, \frac12)$ |
+| $(-1, 1)$ | axial or side | axial or side | Proposition I.16 | $(a, b) = (A, B) = (1, \frac12)$ |
 | $(-1, -1)$ | side | axial or side | Proposition I.26 | never |
 
 These possible zeros are the contacts of the optimal packings: a side square
@@ -64,12 +64,12 @@ and the axial state $(1, 0)$, with $\sigma_1 = \frac14(\sqrt3 - 1) \approx 0.18$
 **The closed form.** In the definition of the support sums
 ([Definition 10.12](10-seven.md#definition-1012-canonical-pair-and-support-sums)) take $k = 1$ and $g = \frac\pi3$, so that the
 relative phase is $d = \frac\pi3 + s\ell - t\ell'$. The first term is
-$h(a, su, \frac\pi2) = su + \frac12$, and
+$h(a, sb, \frac\pi2) = sb + \frac12$, and
 $\frac\pi2 + \pi - d = \frac{7\pi}6 - s\ell + t\ell'$. Hence
 ([Lemma G.5](appendix-g.md#lemma-g5-support-sums-in-closed-form))
 
 ```math
-\sigma_1\left(\tfrac\pi3\right) = \tfrac12 + su + h\left(A,\ tv,\ \tfrac{7\pi}6 - s\ell + t\ell'\right),
+\sigma_1\left(\tfrac\pi3\right) = \tfrac12 + sb + h\left(A,\ tB,\ \tfrac{7\pi}6 - s\ell + t\ell'\right),
 \qquad
 h(x, y, z) = x\cos z + y\sin z + \tfrac12\left(\lvert\cos z\rvert + \lvert\sin z\rvert\right) ,
 \tag{I.1}
@@ -84,33 +84,33 @@ $d$ itself (as in the Remark after
 $\sin(\pi - x) = \sin x$, $\cos(\frac{3\pi}2 \pm x) = \pm\sin x$ and
 $\sin(\frac{3\pi}2 \pm x) = -\cos x$.
 
-**Cauchy–Schwarz on the disk.** For an admissible state $(A, v)$ put
-$X = A + \frac12$ and $Y = v + \frac12$, so that
-$X^2 + Y^2 = \varphi(A, v) \le \frac{13}4$. We call the coefficient vector
+**Cauchy–Schwarz on the disk.** For an admissible state $(A, B)$ put
+$X = A + \frac12$ and $Y = B + \frac12$, so that
+$X^2 + Y^2 = \varphi(A, B) \le \frac{13}4$. We call the coefficient vector
 $(p, q)$ of a linear form $pX + qY$ its *force*. If $c \ge 0$ and
 $\frac{13}4(p^2 + q^2) \le c^2$, then
 
 ```math
--c \le p\left(A + \tfrac12\right) + q\left(v + \tfrac12\right) \le c ,
+-c \le p\left(A + \tfrac12\right) + q\left(B + \tfrac12\right) \le c ,
 ```
 
 and the first inequality is strict if $\frac{13}4(p^2 + q^2) < c^2$
 ([Lemma G.3](appendix-g.md#lemma-g3-cauchyschwarz-on-the-disk); the upper bound is the lower bound for the force
 $(-p, -q)$). Geometrically, $\varphi \le \frac{13}4$ is the disk of radius
-$\frac{\sqrt{13}}2$ about $(-\frac12, -\frac12)$ in the $(A, v)$-plane, and the
+$\frac{\sqrt{13}}2$ about $(-\frac12, -\frac12)$ in the $(A, B)$-plane, and the
 least and the greatest value of the form on it,
 $\mp\frac{\sqrt{13}}2\sqrt{p^2 + q^2}$, are taken where its level lines support
-the disk (Figure I.2). The same holds for $(a, u)$ in place of $(A, v)$.
+the disk (Figure I.2). The same holds for $(a, b)$ in place of $(A, B)$.
 
-![The admissible states in the (A, v)-plane: the region cut from the disk phi at most 13/4 (dashed circle) by A at least 1/2 and 0 at most v at most A, divided into axial labels (blue, below the dashed tie line), side labels (green) and capped labels (grey); the tie line meets the circle at the transition state (a0, u0). The thick orange line 3A + 2v = 4, marked r(A, v) = 0, touches the circle at the side state (1, 1/2), where the normal (3, 2) is drawn; two dashed parallel orange lines cut the disk.](figures/appendix-i/disk-support.svg)
+![The admissible states in the (A, B)-plane: the region cut from the disk phi at most 13/4 (dashed circle) by A at least 1/2 and 0 at most B at most A, divided into axial labels (blue, below the dashed tie line), side labels (green) and capped labels (grey); the tie line meets the circle at the transition state (a0, b0). The thick orange line 3A + 2B = 4, marked r(A, B) = 0, touches the circle at the side state (1, 1/2), where the normal (3, 2) is drawn; two dashed parallel orange lines cut the disk.](figures/appendix-i/disk-support.svg)
 
-*Figure I.2.* The admissible states $(A, v)$, with axial labels (blue), side
+*Figure I.2.* The admissible states $(A, B)$, with axial labels (blue), side
 labels (green) and capped labels (grey); the tie line (dashed) separates the
 first two and meets the circle $\varphi = \frac{13}4$ at the transition state
-$(a_0, u_0)$. A linear form $p(A + \frac12) + q(v + \frac12)$ is constant on
+$(a_0, b_0)$. A linear form $p(A + \frac12) + q(B + \frac12)$ is constant on
 parallel lines (orange), and on the disk it is at least its value on the one
 that supports the disk. Drawn is the case $(p, q) = -(\frac9{10}, \frac35)$ of
-Proposition I.10, whose supporting line is $r(A, v) = 0$, touching at the side
+Proposition I.10, whose supporting line is $r(A, B) = 0$, touching at the side
 state $(1, \frac12)$.
 
 **Taylor bounds.** Put
@@ -149,57 +149,57 @@ bounds of [§2.1](02-preliminaries.md#21-conventions). Also $1.73 < \sqrt3 < 1.7
 $1.73^2 < 3 < 1.733^2$ ([Lemma 10.5](10-seven.md#lemma-105-admissible-states) (2)); so
 $\frac7{10} < \sqrt3 - 1 < \frac{11}{15}$.
 
-**Admissible states.** For an admissible state $(a, u)$ with label $\ell$ we use
+**Admissible states.** For an admissible state $(a, b)$ with label $\ell$ we use
 the following facts from Chapter 10.
 
-- $0 \le \ell \le \frac\pi4$, $\ell \le \mathrm{axial}(u) = \frac54u$ and
-  $\ell \le \mathrm{side}(a, u)$; and $\ell = 0$ only if $u = 0$
+- $0 \le \ell \le \frac\pi4$, $\ell \le \mathrm{axial}(b) = \frac54b$ and
+  $\ell \le \mathrm{side}(a, b)$; and $\ell = 0$ only if $b = 0$
   ([Lemma 10.7](10-seven.md#lemma-107-the-label) (2)).
-- $a + u < \frac{31}{20}$, $u < \frac{31}{40}$ and $a \le \sqrt3 - \frac12$
+- $a + b < \frac{31}{20}$, $b < \frac{31}{40}$ and $a \le \sqrt3 - \frac12$
   ([Lemma 10.5](10-seven.md#lemma-105-admissible-states) (2)).
-- $r(a, u) = 4 - 3a - 2u \ge 0$ ([Lemma 10.5](10-seven.md#lemma-105-admissible-states) (1)), and
+- $r(a, b) = 4 - 3a - 2b \ge 0$ ([Lemma 10.5](10-seven.md#lemma-105-admissible-states) (1)), and
   ([Lemma 10.7](10-seven.md#lemma-107-the-label) (1))
 
   ```math
-  \mathrm{side}(a, u) = \tfrac\pi6 + \tfrac56\left(u - \tfrac12\right) + \tfrac14 r(a, u)
-  = \tfrac\pi6 - \tfrac54(a - 1) - \tfrac16 r(a, u) .
+  \mathrm{side}(a, b) = \tfrac\pi6 + \tfrac56\left(b - \tfrac12\right) + \tfrac14 r(a, b)
+  = \tfrac\pi6 - \tfrac54(a - 1) - \tfrac16 r(a, b) .
   \tag{I.3}
   ```
 
-- If $r(a, u) = 0$, then $(a, u)$ is the side state $(1, \frac12)$, whose label
-  is $\frac\pi6$; if $u = 0$, then $(a, u)$ is an axial state
+- If $r(a, b) = 0$, then $(a, b)$ is the side state $(1, \frac12)$, whose label
+  is $\frac\pi6$; if $b = 0$, then $(a, b)$ is an axial state
   ([Lemma 10.16](10-seven.md#lemma-1016-contacts) (2), (1), (3)).
 - If the label is side, then $\ell > \frac9{25}$ and $a < \frac98$
-  ([Lemma 10.8](10-seven.md#lemma-108-side-and-axial-labels) (1)); and $u \le \frac12 + \frac65(\ell - \frac\pi6)$ by
+  ([Lemma 10.8](10-seven.md#lemma-108-side-and-axial-labels) (1)); and $b \le \frac12 + \frac65(\ell - \frac\pi6)$ by
   (I.3) and $r \ge 0$.
-- If the label is axial, then $u = \frac45\ell \le \frac\pi5$;
-  $9a + 11u \le 2\pi + 7$, which is $\mathrm{axial}(u) \le \mathrm{side}(a, u)$
-  multiplied by 12; and $a + u < 1 + \frac{2\pi}{15}$
+- If the label is axial, then $b = \frac45\ell \le \frac\pi5$;
+  $9a + 11b \le 2\pi + 7$, which is $\mathrm{axial}(b) \le \mathrm{side}(a, b)$
+  multiplied by 12; and $a + b < 1 + \frac{2\pi}{15}$
   ([Lemma 10.8](10-seven.md#lemma-108-side-and-axial-labels) (2)).
 
 **The boundary of the label regions.** From Appendix G we use the following
-objects and facts. They concern one admissible state, which we write $(A, v)$,
+objects and facts. They concern one admissible state, which we write $(A, B)$,
 with label $\ell'$, or $\tau$ when the label is a variable.
 
-- The *tie line* $9A + 11v = 2\pi + 7$, where the axial and the side label
+- The *tie line* $9A + 11B = 2\pi + 7$, where the axial and the side label
   agree, meets the circle $\varphi = \frac{13}4$ at the *transition state*
-  $(a_0, u_0)$, whose label is $s_0 = \frac54 u_0$ ([Definition G.9](appendix-g.md#definition-g9-boundary-curves-and-special-states)).
-  With $X_0 = a_0 + \frac12$ and $Y_0 = u_0 + \frac12$ we have
+  $(a_0, b_0)$, whose label is $s_0 = \frac54 b_0$ ([Definition G.9](appendix-g.md#definition-g9-boundary-curves-and-special-states)).
+  With $X_0 = a_0 + \frac12$ and $Y_0 = b_0 + \frac12$ we have
   $X_0^2 + Y_0^2 = \frac{13}4$, $9X_0 + 11Y_0 = 2\pi + 17$,
-  $1.11979 < a_0 < 1.1198$ and $0.29136 < u_0 < 0.29137$; hence
-  $\frac{11}{10} < a_0 < \frac98$, $\frac{29}{100} < u_0 < \frac3{10}$ and
+  $1.11979 < a_0 < 1.1198$ and $0.29136 < b_0 < 0.29137$; hence
+  $\frac{11}{10} < a_0 < \frac98$, $\frac{29}{100} < b_0 < \frac3{10}$ and
   $\frac9{25} < s_0 < \frac25$, with $s_0 \approx 0.3642$
   ([Lemma G.10](appendix-g.md#lemma-g10-the-transition-state)). Every admissible state with side label has
-  $u_0 \le v$, $A \le a_0$ and $s_0 \le \ell'$
+  $b_0 \le B$, $A \le a_0$ and $s_0 \le \ell'$
   ([Proposition G.16](appendix-g.md#proposition-g16-segments-of-constant-side-label) (1)).
 - *Tie states.* Let $\alpha(\tau) = \frac{2\pi + 7}9 - \frac{44}{45}\tau$. Every
   state with side label $\tau$ lies on the line
-  $A = \alpha(\tau) + \frac49\left(v - \frac45\tau\right)$
+  $A = \alpha(\tau) + \frac49\left(B - \frac45\tau\right)$
   ([Proposition G.16](appendix-g.md#proposition-g16-segments-of-constant-side-label) (5)). For $s_0 \le \tau \le \frac\pi4$ the
   *tie state* $(\alpha(\tau), \frac45\tau)$, on the tie line, is admissible, and
   its label, its axial label and its side label all equal $\tau$
   (Proposition G.16 (3)).
-- *The diagonal corner.* The diagonal $v = A$ meets the circle at the
+- *The diagonal corner.* The diagonal $B = A$ meets the circle at the
   *diagonal corner* $(r_d, r_d)$, where $r_d = \sqrt{13/8} - \frac12$ and
   $0.77475 < r_d < 0.77476$. Its side label is
   $t_d = \frac\pi6 + \frac7{12} - \frac5{12}r_d$, and
@@ -222,30 +222,30 @@ with label $\ell'$, or $\tau$ when the label is a variable.
   $\frac54 < X \le X_0$ and $1 < Z < \frac75$, and $X' = -Y/Z$, $Y' = X/Z$,
   $Z' = D/Z$ ([Lemma G.14](appendix-g.md#lemma-g14-the-parametrization)).
 - *Side segments.* For $s_0 \le \tau \le \frac\pi4$ the *top* of the side label
-  $\tau$ is the state $(\hat a(\tau), \hat u(\tau))$, equal to
+  $\tau$ is the state $(\hat a(\tau), \hat b(\tau))$, equal to
   $(X(\tau) - \frac12, Y(\tau) - \frac12)$ if $\tau \le t_d$ and to
   $(\delta(\tau), \delta(\tau))$ if $\tau > t_d$ (Definition G.13). It is
-  admissible with side label $\tau$, and every admissible $(A, v)$ with side
+  admissible with side label $\tau$, and every admissible $(A, B)$ with side
   label $\tau$ lies on the *side segment* from the tie state to the top
-  (Figure I.3): $\frac45\tau \le v \le \hat u(\tau)$ and
-  $A = \alpha(\tau) + \frac49(v - \frac45\tau)$
+  (Figure I.3): $\frac45\tau \le B \le \hat b(\tau)$ and
+  $A = \alpha(\tau) + \frac49(B - \frac45\tau)$
   ([Proposition G.16](appendix-g.md#proposition-g16-segments-of-constant-side-label) (2), (4)).
 - *The axial boundary.* Let
-  $\gamma(v) = \sqrt{\frac{13}4 - (v + \frac12)^2} - \frac12$ (the circle),
-  $\lambda(v) = \frac19(2\pi + 7 - 11v)$ (the tie line) and
-  $\chi(v) = \min(\gamma(v), \lambda(v))$ (Definition G.9). Every admissible
-  $(A, v)$ with axial label has $A \le \chi(v)$
-  ([Proposition G.15](appendix-g.md#proposition-g15-the-axial-region) (1)), and $\chi(v) = \gamma(v)$
-  for $0 \le v \le u_0$, $\chi(v) = \lambda(v)$ for $u_0 \le v \le r_d$
-  ([Lemma G.12](appendix-g.md#lemma-g12-the-circle-over-the-u-axis) (3)). Also $\lambda(\frac45\tau) = \alpha(\tau)$.
+  $\gamma(B) = \sqrt{\frac{13}4 - (B + \frac12)^2} - \frac12$ (the circle),
+  $\lambda(B) = \frac19(2\pi + 7 - 11B)$ (the tie line) and
+  $\chi(B) = \min(\gamma(B), \lambda(B))$ (Definition G.9). Every admissible
+  $(A, B)$ with axial label has $A \le \chi(B)$
+  ([Proposition G.15](appendix-g.md#proposition-g15-the-axial-region) (1)), and $\chi(B) = \gamma(B)$
+  for $0 \le B \le b_0$, $\chi(B) = \lambda(B)$ for $b_0 \le B \le r_d$
+  ([Lemma G.12](appendix-g.md#lemma-g12-the-circle-over-the-b-axis) (3)). Also $\lambda(\frac45\tau) = \alpha(\tau)$.
 
-![Two copies of the side region of the (A, v)-plane, green, between the dashed tie line below, the circle on the right and the short diagonal at the top, with the axial region in blue below the tie line and the grey capped corner. In each copy a thick segment of slope 9/4 runs from the tie state on the tie line up to the top on the circle, four dashed orange level lines of the target support cross the region, and an orange arrow shows where the support grows. Left, for the source label pi/4: the level lines are less steep than the segment, and the tie state is ringed as the end where the support is least. Right, for the source label 2/5: the level lines are steeper than the segment, and the top is ringed. The left copy also names the transition state (a0, u0), the diagonal corner (rd, rd), the tie line and the circle.](figures/appendix-i/switch.svg)
+![Two copies of the side region of the (A, B)-plane, green, between the dashed tie line below, the circle on the right and the short diagonal at the top, with the axial region in blue below the tie line and the grey capped corner. In each copy a thick segment of slope 9/4 runs from the tie state on the tie line up to the top on the circle, four dashed orange level lines of the target support cross the region, and an orange arrow shows where the support grows. Left, for the source label pi/4: the level lines are less steep than the segment, and the tie state is ringed as the end where the support is least. Right, for the source label 2/5: the level lines are steeper than the segment, and the top is ringed. The left copy also names the transition state (a0, b0), the diagonal corner (rd, rd), the tie line and the circle.](figures/appendix-i/switch.svg)
 
-*Figure I.3.* The side region of the $(A, v)$-plane between the tie line
-(dashed), the circle and the diagonal, with the transition state $(a_0, u_0)$
+*Figure I.3.* The side region of the $(A, B)$-plane between the tie line
+(dashed), the circle and the diagonal, with the transition state $(a_0, b_0)$
 and the diagonal corner $(r_d, r_d)$. The thick segment is the side segment of
 label $\tau = 0.7$, from its tie state $(\alpha(\tau), \frac45\tau)$ to its top
-$(\hat a(\tau), \hat u(\tau))$ on the circle; it has the direction $(4, 9)$, at
+$(\hat a(\tau), \hat b(\tau))$ on the circle; it has the direction $(4, 9)$, at
 the angle $\omega$ to the $A$-axis. The dashed lines are level lines of the
 target support $G_d$, of the direction $(\cos d, \sin d)$, and the arrow points
 to where $G_d$ grows. Left: for the source label $\ell = \frac\pi4$,
@@ -258,7 +258,7 @@ $d = \omega$ and the level lines are parallel to the segment.
 label $\tau$ put $d = \frac\pi3 - \ell + \tau$ and
 
 ```math
-G_d(A, v) = -\left(A - \tfrac12\right)\sin d + \left(v + \tfrac12\right)\cos d ,
+G_d(A, B) = -\left(A - \tfrac12\right)\sin d + \left(B + \tfrac12\right)\cos d ,
 ```
 
 the part of $\sigma_1(\frac\pi3)$ that depends on the target when $s = t = -1$
@@ -272,7 +272,7 @@ label $\tau$ are ([Definition G.21](appendix-g.md#definition-g21-targets-on-the-
 \begin{aligned}
 C(\ell, \tau) &= -\left(\xi(\tau) - 1\right)\sin d + \zeta(\tau)\cos d, \\
 L(\ell, \tau) &= -\left(\alpha(\tau) - \tfrac12\right)\sin d + \zeta(\tau)\cos d, \\
-H(\ell, \tau) &= -\left(\hat a(\tau) - \tfrac12\right)\sin d + \left(\hat u(\tau) + \tfrac12\right)\cos d .
+H(\ell, \tau) &= -\left(\hat a(\tau) - \tfrac12\right)\sin d + \left(\hat b(\tau) + \tfrac12\right)\cos d .
 \end{aligned}
 ```
 
@@ -296,11 +296,11 @@ C(\ell, s_0) = L(\ell, s_0) = -\left(a_0 - \tfrac12\right)\sin\left(\tfrac\pi3 -
   $s_0 \le \tau \le \frac\pi4$ and $\tau \le \mathrm{sw}(\ell)$, then
   $C(\ell, s_0) \le L(\ell, \tau)$
   ([Proposition G.25](appendix-g.md#proposition-g25-the-straight-piece)).
-- *Two profiles.* If $(a, u)$ is admissible with side label $\ell \ge \frac25$,
+- *Two profiles.* If $(a, b)$ is admissible with side label $\ell \ge \frac25$,
   then ([Lemma G.18](appendix-g.md#lemma-g18-the-transition-profile) (4))
 
   ```math
-  \tfrac12 - u + C(\ell, s_0) > 0 .
+  \tfrac12 - b + C(\ell, s_0) > 0 .
   \tag{I.4}
   ```
 
@@ -313,7 +313,7 @@ C(\ell, s_0) = L(\ell, s_0) = -\left(a_0 - \tfrac12\right)\sin\left(\tfrac\pi3 -
 
 ## I.2 Target sign negative
 
-In this section $t = -1$, and $s = 1$ or the label of $(a, u)$ is axial. The
+In this section $t = -1$, and $s = 1$ or the label of $(a, b)$ is axial. The
 turn is $e = s\ell + \ell' - \frac\pi6$. The frame of $T$ is turned against that
 of $S$ by the relative phase $d = \frac\pi3 + s\ell + \ell' = \frac\pi2 + e$, so
 $e = 0$ when $T$ is turned by a quarter turn, as when the top or bottom square
@@ -324,34 +324,34 @@ together (Figure I.8).
 
 ### Lemma I.1 (the support sum for target sign negative)
 
-Let $(a, u)$ and $(A, v)$ be admissible states and $s \in \lbrace 1, -1\rbrace$,
-and suppose that $s = 1$ or that the label of $(a, u)$ is axial. Let
+Let $(a, b)$ and $(A, B)$ be admissible states and $s \in \lbrace 1, -1\rbrace$,
+and suppose that $s = 1$ or that the label of $(a, b)$ is axial. Let
 $e = s\ell + \ell' - \frac\pi6$, and for real $x$ and $\rho$ put
 
 ```math
-\beta(A, v; x, \rho) = \tfrac12 + \tfrac45\rho - \left(A - \tfrac12\right)\cos x - v\sin x + \tfrac12\lvert\sin x\rvert .
+\beta(A, B; x, \rho) = \tfrac12 + \tfrac45\rho - \left(A - \tfrac12\right)\cos x - B\sin x + \tfrac12\lvert\sin x\rvert .
 ```
 
 Then on the forward axis, for the signs $(s, -1)$,
-$\sigma_1(\frac\pi3) \ge \beta(A, v; e, s\ell)$.
+$\sigma_1(\frac\pi3) \ge \beta(A, B; e, s\ell)$.
 
 *Proof.* By (I.1) with $t = -1$ the direction is
 $\frac{7\pi}6 - s\ell - \ell' = \pi - e$, and
 
 ```math
-h(A, -v, \pi - e) = -A\cos e - v\sin e + \tfrac12\left(\lvert\cos e\rvert + \lvert\sin e\rvert\right) .
+h(A, -B, \pi - e) = -A\cos e - B\sin e + \tfrac12\left(\lvert\cos e\rvert + \lvert\sin e\rvert\right) .
 ```
 
 As $0 \le \ell, \ell' \le \frac\pi4$, the turn satisfies
 $-\frac{5\pi}{12} \le e \le \frac\pi3$, so $\cos e \ge 0$ and
 
 ```math
-\sigma_1\left(\tfrac\pi3\right) = \tfrac12 + su - \left(A - \tfrac12\right)\cos e - v\sin e + \tfrac12\lvert\sin e\rvert .
+\sigma_1\left(\tfrac\pi3\right) = \tfrac12 + sb - \left(A - \tfrac12\right)\cos e - B\sin e + \tfrac12\lvert\sin e\rvert .
 ```
 
-It remains to show $su \ge \frac45 s\ell$. If $s = 1$ this is
-$\ell \le \mathrm{axial}(u) = \frac54u$. If $s = -1$, the label is axial, so
-$\ell = \frac54u$ and $su = \frac45 s\ell$. $\square$
+It remains to show $sb \ge \frac45 s\ell$. If $s = 1$ this is
+$\ell \le \mathrm{axial}(b) = \frac54b$. If $s = -1$, the label is axial, so
+$\ell = \frac54b$ and $sb = \frac45 s\ell$. $\square$
 
 *Lean:
 [`Seven.forward_negative_target_lower`](../../SquaresInCircles/Seven/Pair/Forward/NegativeTarget.lean#L25),
@@ -359,13 +359,13 @@ $\ell = \frac54u$ and $su = \frac45 s\ell$. $\square$
 
 ### Lemma I.2 (an axial target at a negative turn)
 
-Let $(A, v)$ be admissible with axial label, and $0 \le z \le \frac\pi2$. Then
+Let $(A, B)$ be admissible with axial label, and $0 \le z \le \frac\pi2$. Then
 
 ```math
-1 + \tfrac{2\pi}{15} - \tfrac45z + \cos z - \left(A + \tfrac12\right)\cos z - \left(v + \tfrac12\right)(1 - \sin z) > 0 .
+1 + \tfrac{2\pi}{15} - \tfrac45z + \cos z - \left(A + \tfrac12\right)\cos z - \left(B + \tfrac12\right)(1 - \sin z) > 0 .
 ```
 
-![Two panels. Left: the plane of forces (p, q), with the shaded cone between the ray of the normal (X0, Y0) of the circle at the transition state, of slope about 0.49, and the ray of the normal (9, 11) of the tie line; the black arc of forces (cos z, 1 − sin z) runs inside the cone from (1, 1) at z = 0 to (root 3 over 2, 1/2) at z = pi/6, and dotted beyond it, leaving the cone near z = 0.66 and ending at the origin at z = pi/2. Right: the (A, v)-plane near the transition state, with the axial region (blue) below the dashed tie line and inside the circle, and the level lines through the transition state of the forms for z = 0 and z = pi/6 (orange), which leave the axial region on one side.](figures/appendix-i/transition-force.svg)
+![Two panels. Left: the plane of forces (p, q), with the shaded cone between the ray of the normal (X0, Y0) of the circle at the transition state, of slope about 0.49, and the ray of the normal (9, 11) of the tie line; the black arc of forces (cos z, 1 − sin z) runs inside the cone from (1, 1) at z = 0 to (root 3 over 2, 1/2) at z = pi/6, and dotted beyond it, leaving the cone near z = 0.66 and ending at the origin at z = pi/2. Right: the (A, B)-plane near the transition state, with the axial region (blue) below the dashed tie line and inside the circle, and the level lines through the transition state of the forms for z = 0 and z = pi/6 (orange), which leave the axial region on one side.](figures/appendix-i/transition-force.svg)
 
 *Figure I.4.* Lemma I.2 for small turns. Left: for $0 \le z \le \frac\pi6$ the
 force $(\cos z, 1 - \sin z)$ (black) lies in the cone (shaded) spanned by the
@@ -373,14 +373,14 @@ normal $(X_0, Y_0)$ of the circle and the normal $(9, 11)$ of the tie line at
 the transition state. Right: so the level line of the form through the
 transition state (orange, for $z = 0$ and $z = \frac\pi6$) has the states with
 axial label (blue) on its lower side, and the form is largest at the transition
-state $(a_0, u_0)$.
+state $(a_0, b_0)$.
 
-*Proof.* Put $X = A + \frac12$ and $Y = v + \frac12$, so that
-$X^2 + Y^2 = \varphi(A, v) \le \frac{13}4$, and
+*Proof.* Put $X = A + \frac12$ and $Y = B + \frac12$, so that
+$X^2 + Y^2 = \varphi(A, B) \le \frac{13}4$, and
 $\Lambda(z) = 1 + \frac{2\pi}{15} - \frac45z + \cos z$. The claim is
 $X\cos z + Y(1 - \sin z) < \Lambda(z)$: the linear form with the force
 $(\cos z, 1 - \sin z)$ stays below $\Lambda(z)$ on the states with axial label.
-The label is axial, so $9A + 11v \le 2\pi + 7$, that is
+The label is axial, so $9A + 11B \le 2\pi + 7$, that is
 
 ```math
 9X + 11Y \le 2\pi + 17 .
@@ -446,7 +446,7 @@ the circle (steps 1 and 2, Figure I.4). The two cases meet at $z = \frac\pi6$
    f(z) \ge f(0) + f'(0)\,z = \left(2 + \tfrac{2\pi}{15} - X_0 - Y_0\right) - \left(\tfrac45 - Y_0\right)z .
    ```
 
-   By the bounds on $a_0$ and $u_0$ (§I.1) and $\pi > 3.1415$, the first
+   By the bounds on $a_0$ and $b_0$ (§I.1) and $\pi > 3.1415$, the first
    bracket exceeds $2.4188 - 1.6198 - 0.79137 > 0.0076$ and the second is
    below $0.8 - 0.79136 < 0.0087$. As $z \le \frac\pi6 < 0.53$,
    $f(z) > 0.0076 - 0.0087\cdot 0.53 > 0$.
@@ -502,32 +502,32 @@ below $z \approx 0.32$: there the disk alone does not suffice, and the tie line
 
 ### Lemma I.3 (an axial target)
 
-Let $(A, v)$ be admissible with axial label $\ell'$, and let $e$, $\rho$ be
+Let $(A, B)$ be admissible with axial label $\ell'$, and let $e$, $\rho$ be
 real numbers with $-\frac\pi2 \le e \le \frac\pi3$ and
-$e = \rho + \ell' - \frac\pi6$. Then $\beta(A, v; e, \rho) > 0$.
+$e = \rho + \ell' - \frac\pi6$. Then $\beta(A, B; e, \rho) > 0$.
 
-*Proof.* As $\ell' = \frac54v$, we have $\rho = e - \ell' + \frac\pi6$ and
-$\frac45\rho = \frac45e - v + \frac{2\pi}{15}$, so
+*Proof.* As $\ell' = \frac54B$, we have $\rho = e - \ell' + \frac\pi6$ and
+$\frac45\rho = \frac45e - B + \frac{2\pi}{15}$, so
 
 ```math
-\beta(A, v; e, \rho) = \tfrac12 + \tfrac{2\pi}{15} + \tfrac45e - \left(A - \tfrac12\right)\cos e - v(1 + \sin e) + \tfrac12\lvert\sin e\rvert .
+\beta(A, B; e, \rho) = \tfrac12 + \tfrac{2\pi}{15} + \tfrac45e - \left(A - \tfrac12\right)\cos e - B(1 + \sin e) + \tfrac12\lvert\sin e\rvert .
 ```
 
 If $e \ge 0$, then $\sin e \ge 0$, as $e \le \frac\pi3$, and expanding shows
 
 ```math
-\beta = \left(1 + \tfrac{2\pi}{15} - A - v\right) + \left(A - \tfrac12\right)(1 - \cos e) + \left(\tfrac{13}{20} - v\right)\sin e + \tfrac3{20}(e - \sin e) + \tfrac{13}{20}e .
+\beta = \left(1 + \tfrac{2\pi}{15} - A - B\right) + \left(A - \tfrac12\right)(1 - \cos e) + \left(\tfrac{13}{20} - B\right)\sin e + \tfrac3{20}(e - \sin e) + \tfrac{13}{20}e .
 ```
 
 The first term is positive by [Lemma 10.8](10-seven.md#lemma-108-side-and-axial-labels) (2). The others are
-nonnegative, as $A \ge \frac12$, $v \le \frac\pi5 < \frac{13}{20}$ and
+nonnegative, as $A \ge \frac12$, $B \le \frac\pi5 < \frac{13}{20}$ and
 $0 \le \sin e \le e$.
 
 If $e < 0$, let $z = -e$, so $0 < z \le \frac\pi2$, $\sin e = -\sin z \le 0$ and
 $\lvert\sin e\rvert = \sin z$. Then
 
 ```math
-\beta = 1 + \tfrac{2\pi}{15} - \tfrac45z + \cos z - \left(A + \tfrac12\right)\cos z - \left(v + \tfrac12\right)(1 - \sin z) ,
+\beta = 1 + \tfrac{2\pi}{15} - \tfrac45z + \cos z - \left(A + \tfrac12\right)\cos z - \left(B + \tfrac12\right)(1 - \sin z) ,
 ```
 
 which is positive by Lemma I.2. $\square$
@@ -537,33 +537,33 @@ which is positive by Lemma I.2. $\square$
 
 ### Lemma I.4 (the tangent at the transition state)
 
-Let $(A, v)$ be admissible with side label. Then
-$\frac{12}{25}(v - u_0) \le a_0 - A$.
+Let $(A, B)$ be admissible with side label. Then
+$\frac{12}{25}(B - b_0) \le a_0 - A$.
 
 *Proof.* Write $A + \frac12 = X_0 + (A - a_0)$ and
-$v + \frac12 = Y_0 + (v - u_0)$. Since
-$\varphi(A, v) \le \frac{13}4 = X_0^2 + Y_0^2$, expanding gives
+$B + \frac12 = Y_0 + (B - b_0)$. Since
+$\varphi(A, B) \le \frac{13}4 = X_0^2 + Y_0^2$, expanding gives
 
 ```math
-2X_0(A - a_0) + 2Y_0(v - u_0) \le -(A - a_0)^2 - (v - u_0)^2 \le 0 :
+2X_0(A - a_0) + 2Y_0(B - b_0) \le -(A - a_0)^2 - (B - b_0)^2 \le 0 :
 ```
 
 the state lies on the side of the tangent of the circle at the transition state
 that contains the disk (Figure I.6). By
-[Proposition G.16](appendix-g.md#proposition-g16-segments-of-constant-side-label) (1), $v - u_0 \ge 0$. By the
-bounds on $a_0$ and $u_0$ (§I.1),
+[Proposition G.16](appendix-g.md#proposition-g16-segments-of-constant-side-label) (1), $B - b_0 \ge 0$. By the
+bounds on $a_0$ and $b_0$ (§I.1),
 $\frac{12}{25}X_0 < \frac{12}{25}\cdot\frac{13}8 = \frac{39}{50}$ and
 $\frac{39}{50} < \frac{79}{100} < Y_0$. Hence
-$\frac{12}{25}X_0(v - u_0) \le Y_0(v - u_0) \le X_0(a_0 - A)$, and we divide by
+$\frac{12}{25}X_0(B - b_0) \le Y_0(B - b_0) \le X_0(a_0 - A)$, and we divide by
 $X_0 > 0$. $\square$
 
-![A magnified part of the (A, v)-plane around the transition state: the thin curved region of side labels (green) between the dashed tie line and the circle, above the horizontal line v = u0 and to the left of the vertical line A = a0, and the orange tangent of the circle at the transition state, with the region on its inner side.](figures/appendix-i/transition-tangent.svg)
+![A magnified part of the (A, B)-plane around the transition state: the thin curved region of side labels (green) between the dashed tie line and the circle, above the horizontal line B = b0 and to the left of the vertical line A = a0, and the orange tangent of the circle at the transition state, with the region on its inner side.](figures/appendix-i/transition-tangent.svg)
 
 *Figure I.6.* Lemma I.4. The states with side label (green) lie in the quarter
-plane $v \ge u_0$, $A \le a_0$ and on the inner side of the tangent (orange) of
-the circle at the transition state $(a_0, u_0)$. In that quarter plane the
+plane $B \ge b_0$, $A \le a_0$ and on the inner side of the tangent (orange) of
+the circle at the transition state $(a_0, b_0)$. In that quarter plane the
 tangent, of slope $-X_0/Y_0$, may be replaced by the slightly steeper line
-$\frac{12}{25}(v - u_0) = a_0 - A$ of slope $-\frac{25}{12}$, which at this
+$\frac{12}{25}(B - b_0) = a_0 - A$ of slope $-\frac{25}{12}$, which at this
 scale cannot be told apart from it.
 
 *Lean:
@@ -571,23 +571,23 @@ scale cannot be told apart from it.
 
 ### Lemma I.5 (a side target at a nonnegative turn)
 
-Let $(A, v)$ be admissible, and for real $e$ put
+Let $(A, B)$ be admissible, and for real $e$ put
 
 ```math
-\beta_{\mathrm{side}}(A, v; e) = \tfrac45e + \tfrac2{15}r(A, v) + \left(A - \tfrac12\right)(1 - \cos e) - v\sin e + \tfrac12\lvert\sin e\rvert .
+\beta_{\mathrm{side}}(A, B; e) = \tfrac45e + \tfrac2{15}r(A, B) + \left(A - \tfrac12\right)(1 - \cos e) - B\sin e + \tfrac12\lvert\sin e\rvert .
 ```
 
 If $0 \le e \le \frac\pi3$, then
-$\beta_{\mathrm{side}}(A, v; e) \ge \frac{21}{40}e + \frac2{15}r(A, v)$.
+$\beta_{\mathrm{side}}(A, B; e) \ge \frac{21}{40}e + \frac2{15}r(A, B)$.
 
 *Proof.* Here $0 \le \sin e \le e$, and expanding shows
 
 ```math
-\beta_{\mathrm{side}}(A, v; e) - \tfrac{21}{40}e - \tfrac2{15}r(A, v)
-= \left(A - \tfrac12\right)(1 - \cos e) + \left(\tfrac{31}{40} - v\right)\sin e + \tfrac{11}{40}(e - \sin e) .
+\beta_{\mathrm{side}}(A, B; e) - \tfrac{21}{40}e - \tfrac2{15}r(A, B)
+= \left(A - \tfrac12\right)(1 - \cos e) + \left(\tfrac{31}{40} - B\right)\sin e + \tfrac{11}{40}(e - \sin e) .
 ```
 
-The three terms are nonnegative, since $A \ge \frac12$ and $v < \frac{31}{40}$
+The three terms are nonnegative, since $A \ge \frac12$ and $B < \frac{31}{40}$
 ([Lemma 10.5](10-seven.md#lemma-105-admissible-states) (2)). $\square$
 
 *Lean:
@@ -596,27 +596,27 @@ The three terms are nonnegative, since $A \ge \frac12$ and $v < \frac{31}{40}$
 
 ### Lemma I.6 (a side target at a negative turn)
 
-Let $(A, v)$ be admissible with side label, and $0 < z < 1$. Then
-$\beta_{\mathrm{side}}(A, v; -z) > 0$.
+Let $(A, B)$ be admissible with side label, and $0 < z < 1$. Then
+$\beta_{\mathrm{side}}(A, B; -z) > 0$.
 
 *Proof.* As $0 < z < \pi$, $\lvert\sin(-z)\rvert = \sin z$. Substituting
-$r(A, v) = 4 - 3A - 2v$ and expanding gives
+$r(A, B) = 4 - 3A - 2B$ and expanding gives
 
 ```math
-\beta_{\mathrm{side}}(A, v; -z) = E(A, v) := L_0(z) + \left(\tfrac35 - \cos z\right)\left(A + \tfrac12\right) + \left(\sin z - \tfrac4{15}\right)\left(v + \tfrac12\right),
+\beta_{\mathrm{side}}(A, B; -z) = E(A, B) := L_0(z) + \left(\tfrac35 - \cos z\right)\left(A + \tfrac12\right) + \left(\sin z - \tfrac4{15}\right)\left(B + \tfrac12\right),
 \qquad L_0(z) = \cos z - \tfrac2{15} - \tfrac45z .
 ```
 
-By [Proposition G.16](appendix-g.md#proposition-g16-segments-of-constant-side-label) (1), $A \le a_0$ and $v \ge u_0$,
-where $a_0 > \frac{11}{10}$ and $u_0 > \frac{29}{100}$. Let
+By [Proposition G.16](appendix-g.md#proposition-g16-segments-of-constant-side-label) (1), $A \le a_0$ and $B \ge b_0$,
+where $a_0 > \frac{11}{10}$ and $b_0 > \frac{29}{100}$. Let
 
 ```math
 k(z) = \tfrac{12}{25}\left(\cos z - \tfrac35\right) + \sin z - \tfrac4{15} .
 ```
 
 This is the rate of change of $E$ along the line
-$a_0 - A = \frac{12}{25}(v - u_0)$ of Lemma I.4: moving the state from
-$(a_0, u_0)$ along this line, so that $v$ grows by $t$, changes $E$ by
+$a_0 - A = \frac{12}{25}(B - b_0)$ of Lemma I.4: moving the state from
+$(a_0, b_0)$ along this line, so that $B$ grows by $t$, changes $E$ by
 $k(z)\,t$. The function $k$ increases on $[0, 1]$, by
 [Lemma A.1](appendix-a.md#lemma-a1-monotonicity-from-the-derivative): there
 $k'(y) = \cos y - \frac{12}{25}\sin y \ge \frac12 - \frac{12}{25} = \frac1{50}$,
@@ -640,13 +640,13 @@ $\cos z < \frac35$, and we treat these three cases in turn (Figure I.7).
    Expanding and using $\sin^2 z + \cos^2 z = 1$,
 
    ```math
-   E(A, v) = g(z) + \tfrac2{15}\left(\tfrac{13}4 - \varphi(A, v)\right) + \tfrac2{15}\left[\left(A - 1 + \tfrac{15}4(1 - \cos z)\right)^2 + \left(v - \tfrac12 + \tfrac{15}4\sin z\right)^2\right] .
+   E(A, B) = g(z) + \tfrac2{15}\left(\tfrac{13}4 - \varphi(A, B)\right) + \tfrac2{15}\left[\left(A - 1 + \tfrac{15}4(1 - \cos z)\right)^2 + \left(B - \tfrac12 + \tfrac{15}4\sin z\right)^2\right] .
    ```
 
-   At $z = 0$ the bracket is the squared distance from $(A, v)$ to the side
-   state $(1, \frac12)$, and the identity is $E(A, v) = \frac2{15}r(A, v)$ of
-   [Lemma 10.5](10-seven.md#lemma-105-admissible-states) (1). As $\varphi(A, v) \le \frac{13}4$, we get
-   $E(A, v) \ge g(z)$, and by (I.2)
+   At $z = 0$ the bracket is the squared distance from $(A, B)$ to the side
+   state $(1, \frac12)$, and the identity is $E(A, B) = \frac2{15}r(A, B)$ of
+   [Lemma 10.5](10-seven.md#lemma-105-admissible-states) (1). As $\varphi(A, B) \le \frac{13}4$, we get
+   $E(A, B) \ge g(z)$, and by (I.2)
 
    ```math
    g(z) \ge S_3(z) - \tfrac45z - \tfrac{13}8z^2 = z\left(\tfrac15 - \tfrac{13}8z - \tfrac{z^2}6\right) > z\left(\tfrac15 - 2z\right) > 0 .
@@ -656,24 +656,24 @@ $\cos z < \frac35$, and we treat these three cases in turn (Figure I.7).
    Expanding,
 
    ```math
-   E(A, v) - E(a_0, u_0) = \left(\cos z - \tfrac35\right)\left[(a_0 - A) - \tfrac{12}{25}(v - u_0)\right] + k(z)\,(v - u_0) ,
+   E(A, B) - E(a_0, b_0) = \left(\cos z - \tfrac35\right)\left[(a_0 - A) - \tfrac{12}{25}(B - b_0)\right] + k(z)\,(B - b_0) ,
    ```
 
-   and both terms are nonnegative, by Lemma I.4, $k(z) > 0$ and $v \ge u_0$. It
-   remains to show $E(a_0, u_0) > 0$. Written as $\beta_{\mathrm{side}}$,
+   and both terms are nonnegative, by Lemma I.4, $k(z) > 0$ and $B \ge b_0$. It
+   remains to show $E(a_0, b_0) > 0$. Written as $\beta_{\mathrm{side}}$,
 
    ```math
-   E(a_0, u_0) = \tfrac2{15}r(a_0, u_0) + \left(a_0 - \tfrac12\right)(1 - \cos z) + \left(u_0 + \tfrac12\right)\sin z - \tfrac45z ,
+   E(a_0, b_0) = \tfrac2{15}r(a_0, b_0) + \left(a_0 - \tfrac12\right)(1 - \cos z) + \left(b_0 + \tfrac12\right)\sin z - \tfrac45z ,
    ```
 
-   where $r(a_0, u_0) \ge 0$, as the transition state is admissible
+   where $r(a_0, b_0) \ge 0$, as the transition state is admissible
    ([Lemma G.10](appendix-g.md#lemma-g10-the-transition-state)), $a_0 - \frac12 > \frac35$ and
-   $u_0 + \frac12 > \frac45 - \frac1{100}$. With $\cos z \le C_4(z)$,
+   $b_0 + \frac12 > \frac45 - \frac1{100}$. With $\cos z \le C_4(z)$,
    $S_3(z) \le \sin z \le z$ from (I.2), and $z^4 \le z^2$, $z^3 \le z^2$ as
    $0 < z < 1$,
 
    ```math
-   E(a_0, u_0) \ge \tfrac35(1 - \cos z) - \tfrac45(z - \sin z) - \tfrac1{100}\sin z
+   E(a_0, b_0) \ge \tfrac35(1 - \cos z) - \tfrac45(z - \sin z) - \tfrac1{100}\sin z
    \ge -\tfrac z{100} + \tfrac3{10}z^2 - \tfrac2{15}z^3 - \tfrac1{40}z^4
    > z\left(\tfrac z8 - \tfrac1{100}\right) ,
    ```
@@ -684,10 +684,10 @@ $\cos z < \frac35$, and we treat these three cases in turn (Figure I.7).
    $\cos z \ge 1 - \frac{z^2}2 > \frac12$, so $\cos^2 z < \frac9{25}$ and
    $\sin z > \frac45$. Both coefficients $\frac35 - \cos z$ and
    $\sin z - \frac4{15}$ are positive, and as $A \ge \frac12$ and
-   $v \ge u_0 > \frac{29}{100}$,
+   $B \ge b_0 > \frac{29}{100}$,
 
    ```math
-   E(A, v) \ge L_0(z) + \left(\tfrac35 - \cos z\right) + \tfrac{79}{100}\left(\sin z - \tfrac4{15}\right)
+   E(A, B) \ge L_0(z) + \left(\tfrac35 - \cos z\right) + \tfrac{79}{100}\left(\sin z - \tfrac4{15}\right)
    = \tfrac7{15} - \tfrac45z + \tfrac{79}{100}\left(\sin z - \tfrac4{15}\right)
    > \tfrac7{15} - \tfrac45 + \tfrac{79}{100}\cdot\tfrac8{15} > 0 . \qquad\square
    ```
@@ -695,7 +695,7 @@ $\cos z < \frac35$, and we treat these three cases in turn (Figure I.7).
 ![Two panels sharing the z-axis from 0 to 1, cut by vertical lines at z = 1/10 and at z = arccos 3/5; the three ranges are numbered 1, 2 and 3. Top: the least value of the expression of Lemma I.6 over the admissible states with side label (blue), from 0 at z = 0 up to about 0.16 at z = 1, with an inset magnifying z from 0 to 0.15: there the dashed green value at the transition state lies slightly above the blue curve up to z of about 0.076, where k = 0, and on it after, and the orange bound g of the disk alone is a small positive arch below the blue curve that falls to 0 near z = 0.12. Bottom: the purple curve k(z), increasing from about −0.075 at z = 0 through 0 near z = 0.076 to about 0.55 at z = 1.](figures/appendix-i/side-profile.svg)
 
 *Figure I.7.* Lemma I.6. Top: the least value of
-$\beta_{\mathrm{side}}(A, v; -z)$ over the admissible states with side label
+$\beta_{\mathrm{side}}(A, B; -z)$ over the admissible states with side label
 (blue), with the small turns magnified. It tends to 0 as $z \to 0$, at the side
 state $(1, \frac12)$, where the contact of Proposition I.7 sits. Bottom: the
 rate $k(z)$, which changes sign before $z = \frac1{10}$. The three cases of the
@@ -710,44 +710,44 @@ is the value at the transition state (dashed), with which case 2 compares.
 
 ### Proposition I.7 (target sign negative)
 
-Let $(a, u)$ and $(A, v)$ be admissible states and $s \in \lbrace 1, -1\rbrace$.
-Suppose that $s = 1$ or that the label of $(a, u)$ is axial, and that the label
-of $(A, v)$ is axial or side. Then on the forward axis, for the signs $(s, -1)$,
-$\sigma_1(\frac\pi3) \ge 0$. If $\sigma_1(\frac\pi3) = 0$, then $(a, u)$ is an
-axial state and $(A, v) = (1, \frac12)$, so that the two states with these signs
+Let $(a, b)$ and $(A, B)$ be admissible states and $s \in \lbrace 1, -1\rbrace$.
+Suppose that $s = 1$ or that the label of $(a, b)$ is axial, and that the label
+of $(A, B)$ is axial or side. Then on the forward axis, for the signs $(s, -1)$,
+$\sigma_1(\frac\pi3) \ge 0$. If $\sigma_1(\frac\pi3) = 0$, then $(a, b)$ is an
+axial state and $(A, B) = (1, \frac12)$, so that the two states with these signs
 form a contact.
 
 *Proof.* Let $e = s\ell + \ell' - \frac\pi6$. By Lemma I.1,
-$\sigma_1 \ge \beta(A, v; e, s\ell)$, and $-\frac{5\pi}{12} \le e \le \frac\pi3$
+$\sigma_1 \ge \beta(A, B; e, s\ell)$, and $-\frac{5\pi}{12} \le e \le \frac\pi3$
 as $0 \le \ell, \ell' \le \frac\pi4$.
 
 *Axial target.* Lemma I.3 with $\rho = s\ell$ gives $\sigma_1 \ge \beta > 0$.
 
 *Side target.* By (I.3),
-$\ell' = \mathrm{side}(A, v) = \frac\pi6 - \frac54(A - 1) - \frac16r(A, v)$,
-so $s\ell = e - \ell' + \frac\pi6 = e + \frac54(A - 1) + \frac16r(A, v)$ and
-$\frac45s\ell = \frac45e + A - 1 + \frac2{15}r(A, v)$. Substituting,
-$\beta(A, v; e, s\ell) = \beta_{\mathrm{side}}(A, v; e)$.
+$\ell' = \mathrm{side}(A, B) = \frac\pi6 - \frac54(A - 1) - \frac16r(A, B)$,
+so $s\ell = e - \ell' + \frac\pi6 = e + \frac54(A - 1) + \frac16r(A, B)$ and
+$\frac45s\ell = \frac45e + A - 1 + \frac2{15}r(A, B)$. Substituting,
+$\beta(A, B; e, s\ell) = \beta_{\mathrm{side}}(A, B; e)$.
 
 If $e \ge 0$, Lemma I.5 gives
-$\sigma_1 \ge \frac{21}{40}e + \frac2{15}r(A, v) \ge 0$. If moreover
-$\sigma_1 = 0$, then $e = 0$ and $r(A, v) = 0$. So $(A, v) = (1, \frac12)$ and
+$\sigma_1 \ge \frac{21}{40}e + \frac2{15}r(A, B) \ge 0$. If moreover
+$\sigma_1 = 0$, then $e = 0$ and $r(A, B) = 0$. So $(A, B) = (1, \frac12)$ and
 $\ell' = \frac\pi6$, hence $s\ell = e - \ell' + \frac\pi6 = 0$, so
-$\ell = 0$, $u = 0$, and $(a, u)$ is an axial state. With $t = -1$, the axial
-state $(a, u)$ and the side state $(A, v)$ form a contact of kind (3)
+$\ell = 0$, $b = 0$, and $(a, b)$ is an axial state. With $t = -1$, the axial
+state $(a, b)$ and the side state $(A, B)$ form a contact of kind (3)
 ([Definition 10.15](10-seven.md#definition-1015-contacts)).
 
 If $e < 0$, let $z = -e > 0$. Since $\ell' > \frac9{25}$ and
 $s\ell \ge -\frac\pi4$, we have $e > \frac9{25} - \frac{5\pi}{12} > -1$, as
 $\frac{5\pi}{12} < \frac43 < 1 + \frac9{25}$. So $z < 1$, and Lemma I.6 gives
-$\sigma_1 \ge \beta_{\mathrm{side}}(A, v; -z) > 0$. $\square$
+$\sigma_1 \ge \beta_{\mathrm{side}}(A, B; -z) > 0$. $\square$
 
 *Lean:
 [`Seven.fixed_gap_forward_negative_target`](../../SquaresInCircles/Seven/Pair/Forward/NegativeTarget.lean#L321).*
 
 ![Graph over the turn e from −5 pi/12 to pi/3 of the least value, over the admissible targets, of the lower bound of Lemma I.1: for axial targets (blue) and for side targets (dashed green, from e = 9/25 − 5 pi/12 on). For negative turns both decrease towards e = 0, and between about −0.66 and −0.08 they coincide; for positive turns both rise steeply, the side curve above the dotted line 21e/40. An inset magnifies the neighbourhood of e = 0: the blue curve stays at least 0.0077, while the green one touches 0 at e = 0, the contact.](figures/appendix-i/negative-target.svg)
 
-*Figure I.8.* Proposition I.7: the least value of $\beta(A, v; e, s\ell)$ over the
+*Figure I.8.* Proposition I.7: the least value of $\beta(A, B; e, s\ell)$ over the
 admissible targets, as a function of the turn $e$, for axial targets (blue,
 Lemmas I.2 and I.3) and side targets (dashed green, Lemmas I.5 and I.6; their
 turns exceed $\frac9{25} - \frac{5\pi}{12}$). For
@@ -770,13 +770,13 @@ them together.
 
 ### Lemma I.8 (the support sum for opposite signs)
 
-Let $(a, u)$ and $(A, v)$ be admissible, and $w = \ell + \ell' - \frac\pi3$.
+Let $(a, b)$ and $(A, B)$ be admissible, and $w = \ell + \ell' - \frac\pi3$.
 Then $-\frac\pi3 \le w \le \frac\pi6$, and on the forward axis, for the signs
 $(-1, 1)$,
 
 ```math
-\sigma_1\left(\tfrac\pi3\right) = F(u, A, v; w), \qquad
-F(u, A, v; w) = \tfrac12 - u + A\sin w - v\cos w + \tfrac12\left(\lvert\sin w\rvert + \cos w\right) .
+\sigma_1\left(\tfrac\pi3\right) = F(b, A, B; w), \qquad
+F(b, A, B; w) = \tfrac12 - b + A\sin w - B\cos w + \tfrac12\left(\lvert\sin w\rvert + \cos w\right) .
 ```
 
 *Proof.* The range of $w$ holds as $0 \le \ell, \ell' \le \frac\pi4$. By (I.1)
@@ -784,7 +784,7 @@ with $s = -1$ and $t = 1$ the direction is
 $\frac{7\pi}6 + \ell + \ell' = \frac{3\pi}2 + w$, and
 
 ```math
-h\left(A, v, \tfrac{3\pi}2 + w\right) = A\sin w - v\cos w + \tfrac12\left(\lvert\sin w\rvert + \lvert\cos w\rvert\right),
+h\left(A, B, \tfrac{3\pi}2 + w\right) = A\sin w - B\cos w + \tfrac12\left(\lvert\sin w\rvert + \lvert\cos w\rvert\right),
 ```
 
 where $\cos w \ge 0$ as $\lvert w\rvert \le \frac\pi3$. $\square$
@@ -877,45 +877,45 @@ $w = 0$.
 
 ### Proposition I.10 (two side labels)
 
-Let $(a, u)$ and $(A, v)$ be admissible with side labels, and
-$w = \ell + \ell' - \frac\pi3$. Then $F(u, A, v; w) \ge 0$, with equality only
-if $(a, u) = (A, v) = (1, \frac12)$.
+Let $(a, b)$ and $(A, B)$ be admissible with side labels, and
+$w = \ell + \ell' - \frac\pi3$. Then $F(b, A, B; w) \ge 0$, with equality only
+if $(a, b) = (A, B) = (1, \frac12)$.
 
 *Proof.* As both labels are side,
 
 ```math
-w = \mathrm{side}(a, u) + \mathrm{side}(A, v) - \tfrac\pi3 = \tfrac13(u + v - 1) + \tfrac34(2 - a - A) .
+w = \mathrm{side}(a, b) + \mathrm{side}(A, B) - \tfrac\pi3 = \tfrac13(b + B - 1) + \tfrac34(2 - a - A) .
 ```
 
 Using this and $\lvert\sin w\rvert = \sin w - 2\min(\sin w, 0)$, expanding shows
 
 ```math
-F(u, A, v; w) = \tfrac3{10}r(a, u) + B(w), \qquad
-B(w) = M(w) + \left(\sin w - \tfrac9{10}\right)\left(A + \tfrac12\right) + \left(\tfrac25 - \cos w\right)\left(v + \tfrac12\right) .
+F(b, A, B; w) = \tfrac3{10}r(a, b) + U(w), \qquad
+U(w) = M(w) + \left(\sin w - \tfrac9{10}\right)\left(A + \tfrac12\right) + \left(\tfrac25 - \cos w\right)\left(B + \tfrac12\right) .
 \tag{I.8}
 ```
 
 By Lemma I.9 and Cauchy–Schwarz on the disk with $p = \sin w - \frac9{10}$,
-$q = \frac25 - \cos w$ and $c = M(w)$, $B(w) \ge 0$, and $B(w) > 0$ if
-$w \ne 0$. As $r(a, u) \ge 0$, $F \ge 0$. If $F = 0$, then $w = 0$, and
+$q = \frac25 - \cos w$ and $c = M(w)$, $U(w) \ge 0$, and $U(w) > 0$ if
+$w \ne 0$. As $r(a, b) \ge 0$, $F \ge 0$. If $F = 0$, then $w = 0$, and
 
 ```math
-B(0) = \tfrac{39}{20} - \tfrac9{10}\left(A + \tfrac12\right) - \tfrac35\left(v + \tfrac12\right) = \tfrac3{10}r(A, v) ,
+U(0) = \tfrac{39}{20} - \tfrac9{10}\left(A + \tfrac12\right) - \tfrac35\left(B + \tfrac12\right) = \tfrac3{10}r(A, B) ,
 ```
 
-so $F = \frac3{10}(r(a, u) + r(A, v)) = 0$. Both remainders vanish, and both
+so $F = \frac3{10}(r(a, b) + r(A, B)) = 0$. Both remainders vanish, and both
 states are $(1, \frac12)$ ([Lemma 10.16](10-seven.md#lemma-1016-contacts) (2)). $\square$
 
 *Remark.* At $w = 0$ both terms of (I.8) are multiples of remainders, and
 $r = 0$ is the tangent of the circle $\varphi = \frac{13}4$ at the side state.
-For $w \ne 0$ the line $B(w) = 0$ in the $(A, v)$-plane misses the disk, by a
+For $w \ne 0$ the line $U(w) = 0$ in the $(A, B)$-plane misses the disk, by a
 margin that vanishes only at $w = 0$ (Figure I.10).
 
-![The (A, v)-plane with the admissible region outlined, its states with side label shaded green, and the dashed circle phi = 13/4; short pieces of the lines B(w) = 0 for w = 0.3, 0.15, 0, −0.15 and −0.3, in five colours named in a legend, each near its point closest to the disk. Only the line for w = 0 touches the circle, at the side state (1, 1/2); the others lie outside the disk.](figures/appendix-i/side-side.svg)
+![The (A, B)-plane with the admissible region outlined, its states with side label shaded green, and the dashed circle phi = 13/4; short pieces of the lines U(w) = 0 for w = 0.3, 0.15, 0, −0.15 and −0.3, in five colours named in a legend, each near its point closest to the disk. Only the line for w = 0 touches the circle, at the side state (1, 1/2); the others lie outside the disk.](figures/appendix-i/side-side.svg)
 
-*Figure I.10.* Proposition I.10: the lines $B(w) = 0$ for turns $w$ that two
+*Figure I.10.* Proposition I.10: the lines $U(w) = 0$ for turns $w$ that two
 side labels can have. Each misses the disk $\varphi \le \frac{13}4$, so
-$B(w) > 0$ on it, except the line for $w = 0$, the tangent $r(A, v) = 0$ at the
+$U(w) > 0$ on it, except the line for $w = 0$, the tangent $r(A, B) = 0$ at the
 side state.
 
 *Lean:
@@ -925,10 +925,10 @@ side state.
 ### Lemma I.11 (bounds in the turn)
 
 1. For $0 \le w \le \frac\pi6$, $\sin w - \frac45w - \frac12(1 - \cos w) \ge 0$.
-2. If $A \ge \frac12$, $v \ge 0$ and $0 \le w \le \frac\pi6$, then
-   $F(u, A, v; w) \ge 1 - u - v + \sin w - \frac12(1 - \cos w)$.
-3. If $(A, v)$ is admissible and $0 \le z \le \frac\pi3$, then
-   $F(u, A, v; -z) \ge 1 - u - v - (A - \frac12)\sin z - \frac12(1 - \cos z)$.
+2. If $A \ge \frac12$, $B \ge 0$ and $0 \le w \le \frac\pi6$, then
+   $F(b, A, B; w) \ge 1 - b - B + \sin w - \frac12(1 - \cos w)$.
+3. If $(A, B)$ is admissible and $0 \le z \le \frac\pi3$, then
+   $F(b, A, B; -z) \ge 1 - b - B - (A - \frac12)\sin z - \frac12(1 - \cos z)$.
 
 *Proof.* (1) By (I.2) the left side is at least
 $S_3(w) - \frac45w - \frac14w^2$, which is
@@ -938,10 +938,10 @@ $\frac15 - \frac2{15} - \frac1{20} > 0$, as
 $\frac{w^2}6 < \frac16\left(\frac8{15}\right)^2 < \frac1{20}$.
 
 (2) Here $\sin w \ge 0$, and the difference of the two sides is
-$(A - \frac12)\sin w + v(1 - \cos w) \ge 0$.
+$(A - \frac12)\sin w + B(1 - \cos w) \ge 0$.
 
 (3) Here $\lvert\sin(-z)\rvert = \sin z$, and the difference of the two sides is
-$v(1 - \cos z) \ge 0$. $\square$
+$B(1 - \cos z) \ge 0$. $\square$
 
 *Lean:
 [`Seven.forward_turn_nonneg`](../../SquaresInCircles/Seven/Pair/Forward/Opposite.lean#L186),
@@ -956,8 +956,8 @@ $v(1 - \cos z) \ge 0$. $\square$
    1 - \tfrac{4\pi}{15} + \tfrac45z - (\sqrt3 - 1)\sin z - \tfrac12(1 - \cos z) > 0 .
    ```
 
-2. If $(a, u)$ and $(A, v)$ are admissible with axial labels, then
-   $F(u, A, v; w) > 0$ for $w = \ell + \ell' - \frac\pi3$.
+2. If $(a, b)$ and $(A, B)$ are admissible with axial labels, then
+   $F(b, A, B; w) > 0$ for $w = \ell + \ell' - \frac\pi3$.
 
 *Proof.* (1) Let $\kappa = \sqrt3 - 1$, and let $f(z)$ be the left side. For
 every real $x$, expanding and using $\cos^2 x + \sin^2 x = 1$,
@@ -982,7 +982,7 @@ f(z) \ge 1 - \tfrac{4\pi}{15} - \tfrac z{10} \ge 1 - \tfrac{4\pi}{15} - \tfrac\p
 as $\pi < \frac{10}3$ (Figure I.12).
 
 (2) Both labels are axial, so
-$u + v = \frac45(\ell + \ell') = \frac45(\frac\pi3 + w)$. If $w \ge 0$, Lemma
+$b + B = \frac45(\ell + \ell') = \frac45(\frac\pi3 + w)$. If $w \ge 0$, Lemma
 I.11 (2) and (1) give
 
 ```math
@@ -1005,61 +1005,61 @@ which is positive by (1). $\square$
 
 ### Lemma I.13 (the mixed clearance)
 
-1. Let $(A, v)$ be admissible with side label, and let $(a, u)$ be a state with
-   $\ell(a, u) = \mathrm{axial}(u)$. Then, with
-   $w = \ell + \ell' - \frac\pi3$, $1 - u - v \ge \frac1{70} - \frac45w$.
-2. Let $(A, v)$ be admissible, $0 \le w \le \frac\pi6$ and
-   $1 - u - v \ge \frac1{70} - \frac45w$. Then $F(u, A, v; w) > 0$.
+1. Let $(A, B)$ be admissible with side label, and let $(a, b)$ be a state with
+   $\ell(a, b) = \mathrm{axial}(b)$. Then, with
+   $w = \ell + \ell' - \frac\pi3$, $1 - b - B \ge \frac1{70} - \frac45w$.
+2. Let $(A, B)$ be admissible, $0 \le w \le \frac\pi6$ and
+   $1 - b - B \ge \frac1{70} - \frac45w$. Then $F(b, A, B; w) > 0$.
 
-*Proof.* (1) We have $\ell = \frac54u$ and $\ell' = \mathrm{side}(A, v)$, that
-is, $\ell' = \frac\pi6 + \frac13(v - \frac12) + \frac34(1 - A)$. Expanding
+*Proof.* (1) We have $\ell = \frac54b$ and $\ell' = \mathrm{side}(A, B)$, that
+is, $\ell' = \frac\pi6 + \frac13(B - \frac12) + \frac34(1 - A)$. Expanding
 gives
 
 ```math
-1 - u - v + \tfrac45w = \tfrac{32}{15} - \tfrac{2\pi}{15} - \tfrac35\left(A + \tfrac12\right) - \tfrac{11}{15}\left(v + \tfrac12\right) .
+1 - b - B + \tfrac45w = \tfrac{32}{15} - \tfrac{2\pi}{15} - \tfrac35\left(A + \tfrac12\right) - \tfrac{11}{15}\left(B + \tfrac12\right) .
 ```
 
-As $v \le A$ and $A + v < \frac{31}{20}$ ([Lemma 10.5](10-seven.md#lemma-105-admissible-states) (2)),
+As $B \le A$ and $A + B < \frac{31}{20}$ ([Lemma 10.5](10-seven.md#lemma-105-admissible-states) (2)),
 
 ```math
-\tfrac35\left(A + \tfrac12\right) + \tfrac{11}{15}\left(v + \tfrac12\right) = \tfrac23(A + v + 1) - \tfrac1{15}(A - v) \le \tfrac23(A + v + 1) < \tfrac23\cdot\tfrac{51}{20} = \tfrac{17}{10} .
+\tfrac35\left(A + \tfrac12\right) + \tfrac{11}{15}\left(B + \tfrac12\right) = \tfrac23(A + B + 1) - \tfrac1{15}(A - B) \le \tfrac23(A + B + 1) < \tfrac23\cdot\tfrac{51}{20} = \tfrac{17}{10} .
 ```
 
 So the right side exceeds
 $\frac{32}{15} - \frac{17}{10} - \frac{2\pi}{15} = \frac{13}{30} - \frac{2\pi}{15}$,
 which is more than $\frac{13}{30} - \frac{44}{105} = \frac1{70}$. The first
-bound is an equality on the diagonal $v = A$, and the second is nearly one at
+bound is an equality on the diagonal $B = A$, and the second is nearly one at
 the diagonal corner, where the clearance is least (Figure I.11).
 
-(2) As $A \ge \frac12$ and $v \ge 0$, Lemma I.11 (2) and (1) give
+(2) As $A \ge \frac12$ and $B \ge 0$, Lemma I.11 (2) and (1) give
 
 ```math
-F \ge 1 - u - v + \sin w - \tfrac12(1 - \cos w) \ge \tfrac1{70} + \Bigl[\sin w - \tfrac45w - \tfrac12(1 - \cos w)\Bigr] \ge \tfrac1{70} . \qquad\square
+F \ge 1 - b - B + \sin w - \tfrac12(1 - \cos w) \ge \tfrac1{70} + \Bigl[\sin w - \tfrac45w - \tfrac12(1 - \cos w)\Bigr] \ge \tfrac1{70} . \qquad\square
 ```
 
 *Lean:
 [`Seven.mixed_clearance_bound`](../../SquaresInCircles/Seven/Pair/Forward/Opposite.lean#L276),
 [`Seven.mixed_positive_turn`](../../SquaresInCircles/Seven/Pair/Forward/Opposite.lean#L286).*
 
-![The (A, v)-plane near the states with side label (green), between the tie line, the dashed circle phi = 13/4 and the diagonal v = A, with the grey capped corner. The orange line, where the form 3/5 (A + 1/2) + 11/15 (v + 1/2) equals 17/10, and the dashed purple line A + v = 31/20 both cross the diagonal just beyond the diagonal corner (rd, rd); the green region lies below both.](figures/appendix-i/clearance.svg)
+![The (A, B)-plane near the states with side label (green), between the tie line, the dashed circle phi = 13/4 and the diagonal B = A, with the grey capped corner. The orange line, where the form 3/5 (A + 1/2) + 11/15 (B + 1/2) equals 17/10, and the dashed purple line A + B = 31/20 both cross the diagonal just beyond the diagonal corner (rd, rd); the green region lies below both.](figures/appendix-i/clearance.svg)
 
 *Figure I.11.* Lemma I.13 (1). On the states with side label (green) the form
-$\frac35(A + \frac12) + \frac{11}{15}(v + \frac12)$ stays below $\frac{17}{10}$
-(orange line): it is at most $\frac23(A + v + 1)$, with equality on the diagonal
-$v = A$, and $A + v < \frac{31}{20}$ (dashed). Both lines cross the diagonal at
+$\frac35(A + \frac12) + \frac{11}{15}(B + \frac12)$ stays below $\frac{17}{10}$
+(orange line): it is at most $\frac23(A + B + 1)$, with equality on the diagonal
+$B = A$, and $A + B < \frac{31}{20}$ (dashed). Both lines cross the diagonal at
 $(\frac{31}{40}, \frac{31}{40})$, just beyond the diagonal corner
 $(r_d, r_d)$, where the form is largest, $\frac43(r_d + \frac12) \approx 1.6997$.
 
 ### Lemma I.14 (an axial source and a side target)
 
-Let $(a, u)$ and $(A, v)$ be admissible, the label of $(a, u)$ axial and that of
-$(A, v)$ side. Then $F(u, A, v; w) > 0$ for $w = \ell + \ell' - \frac\pi3$.
+Let $(a, b)$ and $(A, B)$ be admissible, the label of $(a, b)$ axial and that of
+$(A, B)$ side. Then $F(b, A, B; w) > 0$ for $w = \ell + \ell' - \frac\pi3$.
 
-*Proof.* By Lemma I.13 (1), $1 - u - v \ge \frac1{70} - \frac45w$. If
+*Proof.* By Lemma I.13 (1), $1 - b - B \ge \frac1{70} - \frac45w$. If
 $w \ge 0$, Lemma I.13 (2) concludes. Let $w < 0$ and $z = -w$. As
 $\ell' > \frac9{25}$ and $\ell \ge 0$,
 $z = \frac\pi3 - \ell - \ell' < \frac\pi3 - \frac9{25} < 1.05 - 0.36 < \frac7{10}$.
-As the label of $(A, v)$ is side, $A < \frac98$, so $0 \le A - \frac12 < \frac58$.
+As the label of $(A, B)$ is side, $A < \frac98$, so $0 \le A - \frac12 < \frac58$.
 By Lemma I.11 (3), $0 \le \sin z \le z$ and $1 - \cos z \le \frac{z^2}2$,
 
 ```math
@@ -1078,8 +1078,8 @@ F \ge \tfrac1{70} + \tfrac45z - \tfrac58\sin z - \tfrac14z^2 \ge \tfrac1{70} + \
    \Psi(z) = \tfrac12 - \tfrac\pi5 + \tfrac65z - (\sqrt3 - 1)\sin z - \tfrac12(1 - \cos z) > 0 .
    ```
 
-2. If $(a, u)$ and $(A, v)$ are admissible, the label of $(a, u)$ side and that
-   of $(A, v)$ axial, then $F(u, A, v; w) > 0$ for
+2. If $(a, b)$ and $(A, B)$ are admissible, the label of $(a, b)$ side and that
+   of $(A, B)$ axial, then $F(b, A, B; w) > 0$ for
    $w = \ell + \ell' - \frac\pi3$.
 
 *Proof.* (1) On $[\frac25, \frac7{10}]$,
@@ -1098,29 +1098,29 @@ $1 - \cos\frac25 \le \frac2{25}$,
 ```
 
 (2) Lemma I.13 (1), applied with the two states exchanged, gives
-$1 - u - v \ge \frac1{70} - \frac45w$, since $w$ is symmetric in the two
+$1 - b - B \ge \frac1{70} - \frac45w$, since $w$ is symmetric in the two
 labels. If $w \ge 0$, Lemma I.13 (2) concludes. Let $w < 0$ and $z = -w$; as
 $\ell > \frac9{25}$ and $\ell' \ge 0$, $z < \frac7{10}$ as in Lemma I.14. By
 Lemma I.11 (3), $A - \frac12 \le \sqrt3 - 1$ and $\sin z \ge 0$,
 
 ```math
-F \ge 1 - u - v - (\sqrt3 - 1)\sin z - \tfrac12(1 - \cos z) .
+F \ge 1 - b - B - (\sqrt3 - 1)\sin z - \tfrac12(1 - \cos z) .
 \tag{I.9}
 ```
 
-If $z \le \frac25$, then with $1 - u - v \ge \frac1{70} + \frac45z$,
+If $z \le \frac25$, then with $1 - b - B \ge \frac1{70} + \frac45z$,
 $\sqrt3 - 1 < \frac{11}{15}$, $\sin z \le z$ and $1 - \cos z \le \frac{z^2}2$,
 
 ```math
 F \ge \tfrac1{70} + \tfrac45z - \tfrac{11}{15}z - \tfrac14z^2 = \tfrac1{70} - \tfrac1{75} + \tfrac14\left(\tfrac25 - z\right)\left(z + \tfrac2{15}\right) > 0 .
 ```
 
-If $z > \frac25$, we use the labels themselves. The side label of $(a, u)$ gives
-$u \le \frac12 + \frac65(\ell - \frac\pi6)$, the axial label of $(A, v)$ gives
-$v = \frac45\ell'$, and $\ell = \frac\pi3 - z - \ell'$. So
+If $z > \frac25$, we use the labels themselves. The side label of $(a, b)$ gives
+$b \le \frac12 + \frac65(\ell - \frac\pi6)$, the axial label of $(A, B)$ gives
+$B = \frac45\ell'$, and $\ell = \frac\pi3 - z - \ell'$. So
 
 ```math
-1 - u - v \ge \tfrac12 - \tfrac65\left(\tfrac\pi6 - z - \ell'\right) - \tfrac45\ell' = \tfrac12 - \tfrac\pi5 + \tfrac65z + \tfrac25\ell' \ge \tfrac12 - \tfrac\pi5 + \tfrac65z ,
+1 - b - B \ge \tfrac12 - \tfrac65\left(\tfrac\pi6 - z - \ell'\right) - \tfrac45\ell' = \tfrac12 - \tfrac\pi5 + \tfrac65z + \tfrac25\ell' \ge \tfrac12 - \tfrac\pi5 + \tfrac65z ,
 ```
 
 and (I.9) gives $F \ge \Psi(z) > 0$ by (1). $\square$
@@ -1131,23 +1131,23 @@ and (I.9) gives $F \ge \Psi(z) > 0$ by (1). $\square$
 
 ### Proposition I.16 (opposite signs)
 
-Let $(a, u)$ and $(A, v)$ be admissible states whose labels are axial or side.
+Let $(a, b)$ and $(A, B)$ be admissible states whose labels are axial or side.
 Then on the forward axis, for the signs $(-1, 1)$, $\sigma_1(\frac\pi3) \ge 0$.
-If $\sigma_1(\frac\pi3) = 0$, then $(a, u) = (A, v) = (1, \frac12)$, and the two
+If $\sigma_1(\frac\pi3) = 0$, then $(a, b) = (A, B) = (1, \frac12)$, and the two
 states with these signs form a contact.
 
-*Proof.* By Lemma I.8, $\sigma_1 = F(u, A, v; w)$ with
+*Proof.* By Lemma I.8, $\sigma_1 = F(b, A, B; w)$ with
 $w = \ell + \ell' - \frac\pi3$. If both labels are side, Proposition I.10
 gives $F \ge 0$, with equality only at two side states, which with the signs
 $(-1, 1)$ form a contact of kind (1) ([Definition 10.15](10-seven.md#definition-1015-contacts)). Otherwise
 $F > 0$: by Lemma I.12 if both labels are axial, by Lemma I.14 if the label of
-$(a, u)$ is axial and that of $(A, v)$ side, and by Lemma I.15 if the label of
-$(a, u)$ is side and that of $(A, v)$ axial. $\square$
+$(a, b)$ is axial and that of $(A, B)$ side, and by Lemma I.15 if the label of
+$(a, b)$ is side and that of $(A, B)$ axial. $\square$
 
 ![Graph over the turn w from −pi/3 to pi/6 of three lower bounds, named in a legend: for two axial labels (blue), between about 0.12 and 0.2, and below it for negative w a dashed blue line falling from 1 − 4pi/15 at w = 0 to about 0.06 at w = −pi/3; for an axial source and a side target (green), two low arches from 1/70 at w = −7/10 to 1/70 at w = 0 and beyond; for a side source and an axial target (dashed pink), falling from about 0.12 at w = −7/10 to about 0.03 at w = −2/5, then rising from nearly 0 at w = −2/5 in a low arch that joins the green curve at w = 0. Vertical lines at w = −7/10 and w = −2/5.](figures/appendix-i/opposite-profiles.svg)
 
 *Figure I.12.* The lower bounds of Lemmas I.12, I.14 and I.15 for
-$F(u, A, v; w)$, as functions of the turn $w$. For two axial labels and
+$F(b, A, B; w)$, as functions of the turn $w$. For two axial labels and
 $w = -z < 0$ the bound is the left side of Lemma I.12 (1); its slope in $z$
 stays above $-\frac1{10}$, so it stays above the line
 $1 - \frac{4\pi}{15} - \frac z{10}$ (dashed blue). For mixed labels the turn
@@ -1159,32 +1159,31 @@ weakest at $w = -\frac25$, where Lemma I.15 changes its method.
 
 ## I.4 Both signs negative
 
-In this section $s = t = -1$ and the label of $(a, u)$ is side. The frame of $T$
+In this section $s = t = -1$ and the label of $(a, b)$ is side. The frame of $T$
 is turned against that of $S$ by the relative phase
 $d = \frac\pi3 - \ell + \ell'$, and no contact occurs: $\sigma_1(\frac\pi3) > 0$
 throughout (Figure I.1, right). If $\ell \le \frac25$, a single point of the
 marker arc of $T$ suffices (Lemma I.17). For larger $\ell$ we bound the support
-of $T$ below over the whole label region of $(A, v)$. Up to a constant it is
-the target support $G_d(A, v)$ of §I.1, which is affine along each segment of
+of $T$ below over the whole label region of $(A, B)$. Up to a constant it is
+the target support $G_d(A, B)$ of §I.1, which is affine along each segment of
 constant label; so it is least at an end of the segment, and these ends make up
 the boundary curves of Appendix G (Figure I.14): the circle, the tie line and
 the diagonal for side labels, and the circle and the tie line for axial labels.
-Along the circle the support is concave in the label beyond the switch label
-(Lemma I.20), so there it suffices to check the ends of that piece (Lemmas I.21
-to I.23). Lemmas I.24 and I.25 treat side and axial targets, and Proposition
-I.26 puts them together.
+Along the circle the support is concave in the label (Lemma I.20), so there it
+suffices to check the ends of that piece (Lemmas I.21 to I.23). Lemmas I.24 and
+I.25 treat side and axial targets, and Proposition I.26 puts them together.
 
 ### Lemma I.17 (a small source label)
 
-Let $(a, u)$ and $(A, v)$ be admissible, and suppose that the label of $(a, u)$
+Let $(a, b)$ and $(A, B)$ be admissible, and suppose that the label of $(a, b)$
 is side with $\ell \le \frac25$. Then on the forward axis, for the signs
 $(-1, -1)$, $\sigma_1(\frac\pi3) > 0$.
 
-*Proof.* By (I.1), $\sigma_1 = \frac12 - u + h(A, -v, z)$ with
+*Proof.* By (I.1), $\sigma_1 = \frac12 - b + h(A, -B, z)$ with
 $z = \frac{7\pi}6 + \ell - \ell'$. Let $x = -\ell' - \frac12$. Then
 $\lvert x - (-1)\ell'\rvert = \frac12$, so by the marker arc
-([Lemma 10.11](10-seven.md#lemma-1011-the-support-function) (2)), applied to $(A, v)$ with the sign $-1$,
-$h(A, -v, z) \ge \cos(z - x)$. Let $\theta = \frac\pi3 - \ell - \frac12$. Then
+([Lemma 10.11](10-seven.md#lemma-1011-the-support-function) (2)), applied to $(A, B)$ with the sign $-1$,
+$h(A, -B, z) \ge \cos(z - x)$. Let $\theta = \frac\pi3 - \ell - \frac12$. Then
 $z - x = \frac{7\pi}6 + \ell + \frac12 = 2\pi - (\frac\pi2 + \theta)$, so
 
 ```math
@@ -1193,8 +1192,8 @@ $z - x = \frac{7\pi}6 + \ell + \frac12 = 2\pi - (\frac\pi2 + \theta)$, so
 
 As $\ell \le \frac25$, $\theta \ge \frac\pi3 - \frac9{10} > 0$, so
 $\sin\theta \le \theta$, and
-$\sigma_1 \ge \frac12 - u - \theta = 1 - u + \ell - \frac\pi3$. The label of
-$(a, u)$ is side, so $u \le \frac12 + \frac65(\ell - \frac\pi6)$, and
+$\sigma_1 \ge \frac12 - b - \theta = 1 - b + \ell - \frac\pi3$. The label of
+$(a, b)$ is side, so $b \le \frac12 + \frac65(\ell - \frac\pi6)$, and
 
 ```math
 \sigma_1 \ge \tfrac12 - \tfrac15\ell - \tfrac{2\pi}{15} \ge \tfrac12 - \tfrac2{25} - \tfrac{2\pi}{15}
@@ -1206,30 +1205,30 @@ as $\pi < 3.15$. $\square$
 *Remark.* In the chart of $S$ the argument reads as follows. The marker of $T$
 is the direction $d - \ell' = \frac\pi3 - \ell$, and the point $u(\theta)$ of
 the unit circle is $\frac12$ behind it, inside the marker arc of $T$, so it lies
-in $\overline T$. Its height $\sin\theta$ is below the top $\frac12 - u$ of $S$
+in $\overline T$. Its height $\sin\theta$ is below the top $\frac12 - b$ of $S$
 (Figure I.13).
 
-![A canonical pair for the signs (−1, −1) in the chart of S: S = Q(a0, −u0) mostly below the horizontal axis and T above it, turned by about 69 degrees; the unit circle about o with the marker arc of T drawn thick inside T, and the point u(theta) at the lower end of the arc, at the angle theta above the horizontal axis. A magnified inset shows that the height sin theta of u(theta) is a little below the top edge of S at height 1/2 − u.](figures/appendix-i/marker-point.svg)
+![A canonical pair for the signs (−1, −1) in the chart of S: S = Q(a0, −b0) mostly below the horizontal axis and T above it, turned by about 69 degrees; the unit circle about o with the marker arc of T drawn thick inside T, and the point u(theta) at the lower end of the arc, at the angle theta above the horizontal axis. A magnified inset shows that the height sin theta of u(theta) is a little below the top edge of S at height 1/2 − b.](figures/appendix-i/marker-point.svg)
 
-*Figure I.13.* Lemma I.17, for the source $(a_0, u_0)$, whose label $s_0$ is
+*Figure I.13.* Lemma I.17, for the source $(a_0, b_0)$, whose label $s_0$ is
 below $\frac25$, and the target $(1, \frac12)$. The marker arc of $T$ (thick)
 lies in $\overline T$, so its point $u(\theta)$, $\frac12$ behind the marker of
 $T$, bounds how far $T$ reaches back along $n_1$. Its height $\sin\theta$ is
-below the top $\frac12 - u$ of $S$ (inset), so the shadows of $S$ and $T$ on
+below the top $\frac12 - b$ of $S$ (inset), so the shadows of $S$ and $T$ on
 $n_1$ overlap.
 
 *Lean:
-[`Seven.forward_negative_negative_small`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L341).*
+[`Seven.forward_negative_negative_small`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L275).*
 
 For $\ell \ge \frac25$ we follow the segments of constant label (Figure I.14),
 and first the circular piece of the upper ends of the side segments.
 
-![The admissible region in the (A, v)-plane divided into segments of constant label: horizontal blue segments where the label is axial, green segments of slope 9/4 where it is side, from the tie line to the circle or the diagonal; the capped part is grey. Orange dots mark one end of each segment: the right end of every axial segment, the end on the tie line for the side segments below a dashed orange segment, and the upper end for those above it. The transition state and the diagonal corner are marked.](figures/appendix-i/segments.svg)
+![The admissible region in the (A, B)-plane divided into segments of constant label: horizontal blue segments where the label is axial, green segments of slope 9/4 where it is side, from the tie line to the circle or the diagonal; the capped part is grey. Orange dots mark one end of each segment: the right end of every axial segment, the end on the tie line for the side segments below a dashed orange segment, and the upper end for those above it. The transition state and the diagonal corner are marked.](figures/appendix-i/segments.svg)
 
 *Figure I.14.* The segments of constant label, along which the target support
-$G_d(A, v)$ is affine, for the source label $\ell = 0.55$, so that
+$G_d(A, B)$ is affine, for the source label $\ell = 0.55$, so that
 $\mathrm{sw}(\ell) \approx 0.655$. The orange dots mark the end where it is
-least: the right end of an axial segment, on the circle below $u_0$ and on the
+least: the right end of an axial segment, on the circle below $b_0$ and on the
 tie line above; the tie state of a side segment with
 $\tau \le \mathrm{sw}(\ell)$; and the top of a side segment with
 $\tau > \mathrm{sw}(\ell)$, on the circle or, beyond the corner $(r_d, r_d)$, on
@@ -1250,7 +1249,7 @@ H^{\mathrm{circ}}_2(\ell, \tau) &= -\sin d - \frac{D}{Z^3}\left(X\cos d + Y\sin 
 
 So $H^{\mathrm{circ}}(\ell, \tau) = G_d(X(\tau) - \frac12, Y(\tau) - \frac12)$
 is the value of $G_d$ at the state of the circle with side label $\tau$, which
-is the top $(\hat a(\tau), \hat u(\tau))$; hence
+is the top $(\hat a(\tau), \hat b(\tau))$; hence
 $H^{\mathrm{circ}}(\ell, \tau) = H(\ell, \tau)$ for $s_0 \le \tau \le t_d$.
 
 *Lean:
@@ -1291,16 +1290,15 @@ Hence the derivative of $H^{\mathrm{circ}}_1$ is
 
 ### Lemma I.20 (concavity along the circle)
 
-Let $\frac25 \le \ell \le \frac\pi4$, $s_0 \le \tau \le t_d$ and
-$\tau \ge \mathrm{sw}(\ell)$. Then $H^{\mathrm{circ}}_2(\ell, \tau) \le 0$.
+Let $\frac25 \le \ell \le \frac\pi4$ and $s_0 \le \tau \le t_d$. Then
+$H^{\mathrm{circ}}_2(\ell, \tau) \le 0$.
 
-*Proof.* Let $d = \frac\pi3 - \ell + \tau$. Then $0 < d < \frac\pi2$,
-since $d \ge \frac\pi3 - \frac\pi4 + s_0 > 0$ and
-$d \le \frac\pi3 - \frac25 + \frac\pi4 < \frac\pi2$; so $\sin d \ge 0$
-and $\cos d \ge 0$. As $\tau \ge \mathrm{sw}(\ell)$, $d \ge \omega$ and
-$\cos d \le \frac49\sin d$ ([Lemma G.24](appendix-g.md#lemma-g24-the-switch-angle)). Squaring,
-$1 - \sin^2 d \le \frac{16}{81}\sin^2 d$, so
-$\sin^2 d \ge \frac{81}{97} > \frac{16}{25}$ and $\sin d > \frac45$.
+*Proof.* Let $d = \frac\pi3 - \ell + \tau$. Then $\frac\pi6 < d < \frac\pi2$,
+since $d \ge \frac\pi3 - \frac\pi4 + s_0 = \frac\pi{12} + s_0$ with
+$s_0 > \frac9{25} > \frac\pi{12}$, and
+$d \le \frac\pi3 - \frac25 + \frac\pi4 < \frac\pi2$. So $\cos d \ge 0$, and
+$\sin d > \sin\frac\pi6 = \frac12$, as the sine increases on
+$[0, \frac\pi2]$.
 
 Since $1 < Z < \frac75$ (§I.1), $-\frac27 < \frac1Z - 1 < 0$ and
 $(\frac1Z - 1)^2 < \frac4{49}$. Since $X^2 + Y^2 = \frac{13}4$, Cauchy–Schwarz
@@ -1310,58 +1308,42 @@ at most 0. Therefore (Figure I.15)
 
 ```math
 H^{\mathrm{circ}}_2(\ell, \tau) \le -\sin d + 2\left(\tfrac1Z - 1\right)^2
-< -\tfrac45 + \tfrac8{49} < 0 . \qquad\square
+< -\tfrac12 + \tfrac8{49} < 0 . \qquad\square
 ```
 
 *Lean:
 [`Seven.Boundary.sideTarget_concave_second`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L47).*
 
-![Graph over the side label tau from s0 to td, for the source label 2/5, of three curves: the second derivative of the target support along the circle (blue), between about −1.8 and −1.2; its main term minus sin d (dotted orange), between about −0.99 and −0.85; and the bound of the proof of Lemma I.20 (dashed green), between about −0.84 and −0.82. The part from the switch label sw(l) to td is shaded and labelled Lemma I.20; a dotted line marks −0.64.](figures/appendix-i/circle-concave.svg)
+![Graph over the side label tau from s0 to td, for the source label pi/4, of three curves: the second derivative of the target support along the circle (blue), rising from about −1.74 to about −1.18; its main term minus sin d (dotted orange), falling from about −0.59 to about −0.87; and the bound of the proof of Lemma I.20 (dashed green), falling from about −0.56 to about −0.71. A dotted line at −0.34 lies above all three.](figures/appendix-i/circle-concave.svg)
 
-*Figure I.15.* Lemma I.20 for the source label $\ell = \frac25$: the second
-derivative $H^{\mathrm{circ}}_2(\ell, \tau)$ of the target support along the
-circle (blue), the bound $-\sin d + 2(\frac1Z - 1)^2$ of the proof (dashed) and
-its main term $-\sin d$ (dotted). On the range of the lemma,
-$\tau \ge \mathrm{sw}(\ell)$ (shaded), $\sin d > \frac45$ and the bound is
-below $-\frac45 + \frac8{49} \approx -0.64$.
+*Figure I.15.* Lemma I.20 for the source label $\ell = \frac\pi4$, the
+largest, where $d = \frac\pi{12} + \tau$ is smallest: the second derivative
+$H^{\mathrm{circ}}_2(\ell, \tau)$ of the target support along the circle
+(blue), the bound $-\sin d + 2(\frac1Z - 1)^2$ of the proof (dashed) and its
+main term $-\sin d$ (dotted). As $d > \frac\pi6$, $\sin d > \frac12$ and the
+bound is below $-\frac12 + \frac8{49} \approx -0.34$ (dotted line); for
+smaller $\ell$, $d$ and $\sin d$ are larger.
 
-### Lemma I.21 (the ends of the circular piece)
+### Lemma I.21 (the circular piece at the transition state)
 
-1. For every real $\ell$,
-   $H^{\mathrm{circ}}(\ell, s_0) = C(\ell, s_0)$.
-2. If $s_0 \le \tau \le t_d$ and $\tau = \mathrm{sw}(\ell)$, then
-   $H^{\mathrm{circ}}(\ell, \tau) = L(\ell, \tau)$.
+For every real $\ell$, $H^{\mathrm{circ}}(\ell, s_0) = C(\ell, s_0)$.
 
-*Proof.* (1) $X(s_0) = a_0 + \frac12$ and $Y(s_0) = Y_0$
+*Proof.* $X(s_0) = a_0 + \frac12$ and $Y(s_0) = Y_0$
 ([Lemma G.14](appendix-g.md#lemma-g14-the-parametrization) (2)), so
 $H^{\mathrm{circ}}(\ell, s_0) = -(a_0 - \frac12)\sin d + Y_0\cos d$ with
 $d = \frac\pi3 - \ell + s_0$, which is $C(\ell, s_0)$
-([Proposition G.23](appendix-g.md#proposition-g23-the-circular-piece)).
-
-(2) Here $d = \omega$. The state $(X(\tau) - \frac12, Y(\tau) - \frac12)$ has
-side label $\tau$, so ([Proposition G.16](appendix-g.md#proposition-g16-segments-of-constant-side-label) (5))
-
-```math
-X(\tau) - \tfrac12 = \alpha(\tau) + \tfrac49\left(Y(\tau) - \tfrac12 - \tfrac45\tau\right) .
-```
-
-Substituting,
-
-```math
-H^{\mathrm{circ}}(\ell, \tau) - L(\ell, \tau) = \left(Y(\tau) - \tfrac12 - \tfrac45\tau\right)\left(\cos\omega - \tfrac49\sin\omega\right) = 0 . \qquad\square
-```
+([Proposition G.23](appendix-g.md#proposition-g23-the-circular-piece)). $\square$
 
 *Lean:
-[`Seven.Boundary.sideTarget_at_transition`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L95),
-[`Seven.Boundary.sideTarget_at_switch`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L109).*
+[`Seven.Boundary.sideTarget_at_transition`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L83).*
 
 ### Lemma I.22 (the diagonal piece)
 
-Let $(a, u)$ be admissible with side label $\ell \ge \frac25$, let
+Let $(a, b)$ be admissible with side label $\ell \ge \frac25$, let
 $t_d \le \tau \le \frac\pi4$ and $d = \frac\pi3 - \ell + \tau$. Then
 
 ```math
-\tfrac12 - u - \left(\delta(\tau) - \tfrac12\right)\sin d + \left(\delta(\tau) + \tfrac12\right)\cos d > 0 .
+\tfrac12 - b - \left(\delta(\tau) - \tfrac12\right)\sin d + \left(\delta(\tau) + \tfrac12\right)\cos d > 0 .
 ```
 
 *Proof.* Let $d_1 = \frac{7\pi}{12} - \ell$. Then
@@ -1383,142 +1365,132 @@ decreases, $\delta(\tau) \le \delta(t_d) = r_d < \frac{31}{40}$. Hence
 ```
 
 as $\cos$ decreases and $\sin$ increases on $[0, \frac\pi2]$. With
-$u \le \frac12 + \frac65(\ell - \frac\pi6)$, the left side of the claim is at
+$b \le \frac12 + \frac65(\ell - \frac\pi6)$, the left side of the claim is at
 least $K(\ell)$, which is positive by (I.5). $\square$
 
 *Lean:
-[`Seven.Boundary.diagonal_target_pos`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L127).*
+[`Seven.Boundary.diagonal_target_pos`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L97).*
 
 ### Lemma I.23 (the top of a side segment)
 
-Let $(a, u)$ be admissible with side label $\ell \ge \frac25$, and let
-$s_0 \le \tau \le \frac\pi4$ with $\tau \ge \mathrm{sw}(\ell)$. Then
-$\frac12 - u + H(\ell, \tau) > 0$.
+Let $(a, b)$ be admissible with side label $\ell \ge \frac25$, and let
+$s_0 \le \tau \le \frac\pi4$. Then $\frac12 - b + H(\ell, \tau) > 0$.
 
-*Proof.* *The case $\tau \ge t_d$.* Then the top is
-$(\hat a(\tau), \hat u(\tau)) = (\delta(\tau), \delta(\tau))$; at $\tau = t_d$
-this holds as $(X(t_d) - \frac12, Y(t_d) - \frac12) = (r_d, r_d)$
-([Lemma G.14](appendix-g.md#lemma-g14-the-parametrization) (2)) and $\delta(t_d) = r_d$. So the
-claim is Lemma I.22.
+*Proof.* *The case $\tau > t_d$.* Then the top is
+$(\hat a(\tau), \hat b(\tau)) = (\delta(\tau), \delta(\tau))$, and the claim is
+Lemma I.22.
 
-*The case $\tau < t_d$.* Then
+*The case $\tau \le t_d$.* Then
 $H(\ell, \tau) = H^{\mathrm{circ}}(\ell, \tau)$. Let
-$\tau_1 = \max(s_0, \mathrm{sw}(\ell))$, so that $\tau_1 \le \tau < t_d$, and let
-$f(x) = \frac12 - u + H^{\mathrm{circ}}(\ell, x)$ for $\tau_1 \le x \le t_d$.
-Every such $x$ has $x \ge \mathrm{sw}(\ell)$, so by Lemmas I.19 and I.20 the
-second derivative of $f$ is at most 0 on $[\tau_1, t_d]$. So $f$ is concave, and
-it is positive on $[\tau_1, t_d]$ if it is positive at both ends
+$f(x) = \frac12 - b + H^{\mathrm{circ}}(\ell, x)$ for $s_0 \le x \le t_d$. By
+Lemmas I.19 and I.20 the second derivative of $f$ is at most 0 on
+$[s_0, t_d]$. So $f$ is concave, and it is positive on $[s_0, t_d]$ if it is
+positive at both ends
 ([Lemma A.4](appendix-a.md#lemma-a4-positivity-from-concavity); Figure I.16). Both ends are
 positive.
 
-- *The left end.* If $\mathrm{sw}(\ell) \le s_0$, then $\tau_1 = s_0$ and
-  $f(s_0) = \frac12 - u + C(\ell, s_0) > 0$ by Lemma I.21 (1) and
-  (I.4). Otherwise $\tau_1 = \mathrm{sw}(\ell)$, with $s_0 < \tau_1 < t_d$, and by
-  Lemma I.21 (2), the switch bound ([Proposition G.25](appendix-g.md#proposition-g25-the-straight-piece)) with
-  $\tau = \tau_1$, and (I.4),
-
-  ```math
-  f(\tau_1) = \tfrac12 - u + L(\ell, \tau_1) \ge \tfrac12 - u + C(\ell, s_0) > 0 .
-  ```
-
-- *The right end.* $X(t_d) = Y(t_d) = r_d + \frac12$ and
-  $r_d = \delta(t_d)$, so $f(t_d)$ is the left side of Lemma I.22
-  at $\tau = t_d$, which is positive.
+- *The left end.* $f(s_0) = \frac12 - b + C(\ell, s_0) > 0$ by Lemma I.21 and
+  (I.4).
+- *The right end.* $X(t_d) = Y(t_d) = r_d + \frac12$
+  ([Lemma G.14](appendix-g.md#lemma-g14-the-parametrization) (2)) and $r_d = \delta(t_d)$, so
+  $f(t_d)$ is the left side of Lemma I.22 at $\tau = t_d$, which is positive.
 
 Hence $f(\tau) > 0$, which is the claim. $\square$
 
-![Graph over the target label tau from 0 to pi/4, for the source label 0.5, of one half minus u plus the target support at the end of each segment of label tau where it is least: a blue curve for the states of axial label on the circle, decreasing from about 0.075 at 0 to about 0.024 at s0; beyond s0 a purple curve at the tie states and a green curve at the tops, both starting there, the lower drawn solid: the purple one rising up to the switch label sw(l), where they meet near 0.078, and the green one beyond it, concave and ending near 0.065. A dotted orange line at the level of (I.4) marks the least value, at s0, the transition state.](figures/appendix-i/circle-profile.svg)
+![Graph over the target label tau from 0 to pi/4, for the source label 0.5, of one half minus b plus the target support at the end of each segment of label tau where it is least: a blue curve for the states of axial label on the circle, decreasing from about 0.075 at 0 to about 0.024 at s0; beyond s0 a purple curve at the tie states and a green curve at the tops, both starting there, the lower drawn solid: the purple one rising up to the switch label sw(l), where they meet near 0.078, and the green one beyond it, concave and ending near 0.065. A dotted orange line at the level of (I.4) marks the least value, at s0, the transition state.](figures/appendix-i/circle-profile.svg)
 
 *Figure I.16.* Lemmas I.21 to I.25 for the source label $\ell = 0.5$, with
-$u = \hat u(0.5) \approx 0.471$, the largest $u$ of a state with side label
-$0.5$: $\frac12 - u$ plus the target support at the end of each segment of
+$b = \hat b(0.5) \approx 0.471$, the largest $b$ of a state with side label
+$0.5$: $\frac12 - b$ plus the target support at the end of each segment of
 label $\tau$ where it is least (Figure I.14). Up to $s_0$ (blue) this is
 $C(\ell, \tau)$, at the state of axial label $\tau$ on the circle, which
 decreases to $C(\ell, s_0)$. Beyond $s_0$ it is the smaller of $L(\ell, \tau)$
 at the tie state (purple) and $H(\ell, \tau)$ at the top (green), drawn solid;
-they agree at $\tau = \mathrm{sw}(\ell)$ (Lemma I.21 (2)). Below $\mathrm{sw}(\ell)$ the
-tie values stay above (I.4), the value at the transition state (dotted); above
-it the top values are concave and positive at both ends (Lemma I.23). The least
-value over all targets is at $s_0$, the transition state.
+they agree at $\tau = \mathrm{sw}(\ell)$, where $G_d$ is constant along the
+segment (I.10). Below $\mathrm{sw}(\ell)$ the tie values stay above (I.4), the
+value at the transition state (dotted). The top values start from that value at
+$s_0$ and are concave up to $t_d$, just short of $\frac\pi4$; positive at both
+ends, they are positive throughout (Lemma I.23). The least value over all
+targets is at $s_0$, the transition state.
 
 *Lean:
-[`Seven.Boundary.upper_target_pos`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L166).*
+[`Seven.Boundary.upper_target_pos`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L136).*
 
 ### Lemma I.24 (the side segment of the target)
 
-Let $(a, u)$ and $(A, v)$ be admissible, the label of $(a, u)$ side with
-$\ell \ge \frac25$ and the label of $(A, v)$ side, and let
-$d = \frac\pi3 - \ell + \ell'$. Then $\frac12 - u + G_d(A, v) > 0$.
+Let $(a, b)$ and $(A, B)$ be admissible, the label of $(a, b)$ side with
+$\ell \ge \frac25$ and the label of $(A, B)$ side, and let
+$d = \frac\pi3 - \ell + \ell'$. Then $\frac12 - b + G_d(A, B) > 0$.
 
 *Proof.* Let $\tau = \ell'$. Then $s_0 \le \tau \le \frac\pi4$
 ([Proposition G.16](appendix-g.md#proposition-g16-segments-of-constant-side-label) (1)), so $0 < d < \frac\pi2$ as
 in Lemma I.20. By Proposition G.16 (2),
-$A = \alpha(\tau) + \frac49(v - \frac45\tau)$ with
-$\frac45\tau \le v \le \hat u(\tau)$, and substituting,
+$A = \alpha(\tau) + \frac49(B - \frac45\tau)$ with
+$\frac45\tau \le B \le \hat b(\tau)$, and substituting,
 
 ```math
-G_d(A, v) = L(\ell, \tau) + \left(v - \tfrac45\tau\right)\left(\cos d - \tfrac49\sin d\right) .
+G_d(A, B) = L(\ell, \tau) + \left(B - \tfrac45\tau\right)\left(\cos d - \tfrac49\sin d\right) .
 \tag{I.10}
 ```
 
-So along the segment $G_d$ is affine in $v$, smallest at the tie state if
+So along the segment $G_d$ is affine in $B$, smallest at the tie state if
 $\cos d - \frac49\sin d \ge 0$ and at the top otherwise.
 
 If $\tau \le \mathrm{sw}(\ell)$, then $d \le \omega$ and
 $\cos d - \frac49\sin d \ge 0$. So
-$G_d(A, v) \ge L(\ell, \tau) \ge C(\ell, s_0)$
+$G_d(A, B) \ge L(\ell, \tau) \ge C(\ell, s_0)$
 ([Proposition G.25](appendix-g.md#proposition-g25-the-straight-piece)), and (I.4) concludes.
 
 If $\tau > \mathrm{sw}(\ell)$, then $d > \omega$ and
-$\cos d - \frac49\sin d \le 0$. The top $(\hat a(\tau), \hat u(\tau))$ also
+$\cos d - \frac49\sin d \le 0$. The top $(\hat a(\tau), \hat b(\tau))$ also
 has side label $\tau$ (Proposition G.16 (4)), so (I.10) holds for it too, with
-$v = \hat u(\tau)$ and value $H(\ell, \tau)$. Subtracting,
+$B = \hat b(\tau)$ and value $H(\ell, \tau)$. Subtracting,
 
 ```math
-G_d(A, v) - H(\ell, \tau) = \bigl(\hat u(\tau) - v\bigr)\left(\tfrac49\sin d - \cos d\right) \ge 0 ,
+G_d(A, B) - H(\ell, \tau) = \bigl(\hat b(\tau) - B\bigr)\left(\tfrac49\sin d - \cos d\right) \ge 0 ,
 ```
 
 and Lemma I.23 concludes. $\square$
 
 *Lean:
-[`Seven.Boundary.target_side_pos`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L237).*
+[`Seven.Boundary.target_side_pos`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L172).*
 
 ### Lemma I.25 (the axial segment of the target)
 
-Let $(a, u)$ and $(A, v)$ be admissible, the label of $(a, u)$ side with
-$\ell \ge \frac25$ and the label of $(A, v)$ axial, and let
-$d = \frac\pi3 - \ell + \ell'$. Then $\frac12 - u + G_d(A, v) > 0$.
+Let $(a, b)$ and $(A, B)$ be admissible, the label of $(a, b)$ side with
+$\ell \ge \frac25$ and the label of $(A, B)$ axial, and let
+$d = \frac\pi3 - \ell + \ell'$. Then $\frac12 - b + G_d(A, B) > 0$.
 
-*Proof.* Let $\tau = \ell' = \frac54v$, so $0 \le \tau \le \frac\pi4$ and
+*Proof.* Let $\tau = \ell' = \frac54B$, so $0 \le \tau \le \frac\pi4$ and
 $\frac\pi{12} \le d < \frac\pi2$. As $\sin d \ge 0$, $G_d$ is nonincreasing in
-$A$, and $A \le \chi(v)$ ([Proposition G.15](appendix-g.md#proposition-g15-the-axial-region) (1)).
+$A$, and $A \le \chi(B)$ ([Proposition G.15](appendix-g.md#proposition-g15-the-axial-region) (1)).
 
-If $\tau \le s_0$, then $v = \frac45\tau \le u_0$, so $\chi(v) = \gamma(v)$
-([Lemma G.12](appendix-g.md#lemma-g12-the-circle-over-the-u-axis) (3)). As
+If $\tau \le s_0$, then $B = \frac45\tau \le b_0$, so $\chi(B) = \gamma(B)$
+([Lemma G.12](appendix-g.md#lemma-g12-the-circle-over-the-b-axis) (3)). As
 $\gamma(\frac45\tau) + \frac12 = \xi(\tau)$, and as
 $C(\ell, \cdot)$ is nonincreasing on $[0, s_0]$
 ([Proposition G.23](appendix-g.md#proposition-g23-the-circular-piece)),
 
 ```math
-G_d(A, v) \ge G_d\bigl(\gamma(v), v\bigr) = C(\ell, \tau) \ge C(\ell, s_0) ,
+G_d(A, B) \ge G_d\bigl(\gamma(B), B\bigr) = C(\ell, \tau) \ge C(\ell, s_0) ,
 ```
 
 and (I.4) concludes.
 
-If $\tau > s_0$, then $u_0 < v \le \frac\pi5 < r_d$, so $\chi(v) = \lambda(v)$
-(Lemma G.12 (3)), which is $\alpha(\tau)$ as $v = \frac45\tau$ (§I.1); hence
-$G_d(A, v) \ge G_d(\alpha(\tau), \frac45\tau)$. The tie state is admissible
+If $\tau > s_0$, then $b_0 < B \le \frac\pi5 < r_d$, so $\chi(B) = \lambda(B)$
+(Lemma G.12 (3)), which is $\alpha(\tau)$ as $B = \frac45\tau$ (§I.1); hence
+$G_d(A, B) \ge G_d(\alpha(\tau), \frac45\tau)$. The tie state is admissible
 with side label $\tau$ (Proposition G.16 (3)), and Lemma I.24, applied to
-$(a, u)$ and the tie state, gives
-$\frac12 - u + G_d(\alpha(\tau), \frac45\tau) > 0$. $\square$
+$(a, b)$ and the tie state, gives
+$\frac12 - b + G_d(\alpha(\tau), \frac45\tau) > 0$. $\square$
 
 *Lean:
-[`Seven.Boundary.target_axial_pos`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L288).*
+[`Seven.Boundary.target_axial_pos`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L222).*
 
 ### Proposition I.26 (both signs negative)
 
-Let $(a, u)$ and $(A, v)$ be admissible, the label of $(a, u)$ side and the
-label of $(A, v)$ axial or side. Then on the forward axis, for the signs
+Let $(a, b)$ and $(A, B)$ be admissible, the label of $(a, b)$ side and the
+label of $(A, B)$ axial or side. Then on the forward axis, for the signs
 $(-1, -1)$, $\sigma_1(\frac\pi3) > 0$.
 
 *Proof.* If $\ell \le \frac25$, this is Lemma I.17. Let $\ell \ge \frac25$ and
@@ -1529,26 +1501,26 @@ $\sin d, \cos d \ge 0$. By (I.1) with $s = t = -1$ the direction is
 $\frac{7\pi}6 + \ell - \ell' = \frac{3\pi}2 - d$, and
 
 ```math
-h\left(A, -v, \tfrac{3\pi}2 - d\right) = -A\sin d + v\cos d + \tfrac12(\sin d + \cos d) .
+h\left(A, -B, \tfrac{3\pi}2 - d\right) = -A\sin d + B\cos d + \tfrac12(\sin d + \cos d) .
 ```
 
 Hence
 
 ```math
-\sigma_1\left(\tfrac\pi3\right) = \tfrac12 - u + G_d(A, v) ,
+\sigma_1\left(\tfrac\pi3\right) = \tfrac12 - b + G_d(A, B) ,
 ```
 
-which is positive by Lemma I.24 if the label of $(A, v)$ is side, and by Lemma
+which is positive by Lemma I.24 if the label of $(A, B)$ is side, and by Lemma
 I.25 if it is axial (Figure I.17). $\square$
 
 *Lean:
-[`Seven.fixed_gap_forward_both_negative_side`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L370).*
+[`Seven.fixed_gap_forward_both_negative_side`](../../SquaresInCircles/Seven/Pair/Forward/BothNegative.lean#L304).*
 
 ![Graph over the source label from s0 to pi/4 of the least forward sum for the signs (−1, −1) over all targets with active labels, for the source at the top of its side segment (blue): it falls from about 0.068 at s0 to about 0.0008 near 0.72, marked by a dot, and rises steeply on the short last stretch after td. A dashed orange line, the bound of Lemma I.17, falls from about 0.008 at s0 to about 0.001 at 2/5, where a vertical line is drawn.](figures/appendix-i/both-negative.svg)
 
 *Figure I.17.* Proposition I.26: the least value of $\sigma_1(\frac\pi3)$ for the
 signs $(-1, -1)$ over the admissible targets with active labels, for a source
-with side label $\ell$ at the top of its segment, $u = \hat u(\ell)$, where it
+with side label $\ell$ at the top of its segment, $b = \hat b(\ell)$, where it
 is smallest (blue). It is attained at the transition state, so it is the left
 side of (I.4); its minimum is about $0.0008$, near $\ell = 0.72$. For
 $\ell \le \frac25$ Lemma I.17 gives the cruder bound
@@ -1557,6 +1529,6 @@ $\frac12 - \frac15\ell - \frac{2\pi}{15}$ (dashed), still positive.
 Together with the sector $(1, 1)$ of Appendix G, Propositions I.7, I.16 and I.26
 give the gap property on the forward axis for all active labels: for the signs
 $(1, -1)$ by Proposition I.7; for $(-1, 1)$ by Proposition I.16; and for
-$(-1, -1)$ by Proposition I.7 if the label of $(a, u)$ is axial and by
+$(-1, -1)$ by Proposition I.7 if the label of $(a, b)$ is axial and by
 Proposition I.26 if it is side. These are the forward cases of the assembly
 ([Proposition G.32](appendix-g.md#proposition-g32-active-labels)).

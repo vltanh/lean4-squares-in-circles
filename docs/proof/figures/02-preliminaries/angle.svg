@@ -13,8 +13,8 @@
 <text x="197.8" y="74.2" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">θ</text>
 <circle cx="92.7" cy="192.7" r="3.2" fill="#1f2937"/>
 <text x="88.5" y="204.4" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle" font-style="italic">θ′</text>
-<text x="156.4" y="150.5" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">d(θ, θ′)</text>
-<text x="77.6" y="84.3" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle">2π − <tspan font-style="italic">d</tspan></text>
+<text x="156.4" y="150.5" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">∠(θ, θ′)</text>
+<text x="87.7" y="92.8" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle">2π − ∠(θ, θ′)</text>
 <circle cx="119.4" cy="119.4" r="3.2" fill="#1f2937"/>
 <text x="124.1" y="127.2" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">o</text>
 <line x1="255.9" y1="127.2" x2="650.4" y2="127.2" stroke="#1f2937" stroke-width="1"/>
@@ -32,9 +32,9 @@
 <line x1="387.3" y1="103.8" x2="455.9" y2="103.8" stroke="#ea580c" stroke-width="1.6"/>
 <line x1="387.3" y1="108.5" x2="387.3" y2="99.1" stroke="#ea580c" stroke-width="1.6"/>
 <line x1="455.9" y1="108.5" x2="455.9" y2="99.1" stroke="#ea580c" stroke-width="1.6"/>
-<text x="421.6" y="90.5" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">d</text>
+<text x="421.6" y="90.5" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">∠(θ, θ′)</text>
 <line x1="455.9" y1="103.8" x2="563.8" y2="103.8" stroke="#9ca3af" stroke-width="1.6"/>
 <line x1="455.9" y1="108.5" x2="455.9" y2="99.1" stroke="#9ca3af" stroke-width="1.6"/>
 <line x1="563.8" y1="108.5" x2="563.8" y2="99.1" stroke="#9ca3af" stroke-width="1.6"/>
-<text x="509.8" y="90.5" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle" font-style="italic">2π − <tspan font-style="italic">d</tspan></text>
+<text x="509.8" y="90.5" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#9ca3af" text-anchor="middle" dominant-baseline="middle" font-style="italic">2π − ∠(θ, θ′)</text>
 </svg>

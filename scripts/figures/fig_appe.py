@@ -1192,11 +1192,11 @@ def pair_gap_figure():
 
 def diagonal_force():
     """Lemma E.17 (3): the force of the stress of the model on D, the sum of
-    m* e^W_2 and -m* e^S_2, makes the angle -delta with the primary axis of
-    D. Here w = -7/20, s = -3/20, d = 3/4: beta = -1/10, delta = 0.215;
+    m* e^W_2 and -m* e^S_2, makes the angle -Theta with the primary axis of
+    D. Here w = -7/20, s = -3/20, d = 3/4: Xi = -1/10, Theta = 0.215;
     W and S sit at their places in the model, D touches both wings."""
     w, s, d = -0.35, -0.15, 0.75
-    beta, delta = (w - s) / 2, d - PI / 4 - (w + s) / 2
+    xi, theta = (w - s) / 2, d - PI / 4 - (w + s) / 2
     aW, bW, aS, bS = 1 - S_STAR, -T_STAR, 1 - S_STAR, T_STAR
     tW, tS, tD = PI + w, 1.5 * PI + s, PI + d
     m11, m12, r1 = math.sin(d - w), math.cos(d - w), tau(d - w) + bW
@@ -1214,9 +1214,9 @@ def diagonal_force():
     assert not interiors_meet(sq['S'], sq['D'])
     FW, FS = scale(e2W, M_STAR), scale(e2S, -M_STAR)
     F = add(FW, FS)
-    L = K_STAR * (math.cos(beta) - math.sin(beta))
-    assert abs(dot2(F, e1D) - L * math.cos(delta)) < 1e-12
-    assert abs(dot2(F, e2D) + L * math.sin(delta)) < 1e-12
+    L = K_STAR * (math.cos(xi) - math.sin(xi))
+    assert abs(dot2(F, e1D) - L * math.cos(theta)) < 1e-12
+    assert abs(dot2(F, e2D) + L * math.sin(theta)) < 1e-12
     pts = sq['W'] + sq['S'] + sq['D'] + [(0.0, 0.0)]
     x0, x1 = min(p[0] for p in pts) - 0.25, max(p[0] for p in pts) + 0.1
     y0 = min(min(p[1] for p in pts), -R6) - 0.22
@@ -1245,13 +1245,13 @@ def diagonal_force():
     # the angle from the force to the axis
     a0 = math.atan2(F[1], F[0])
     a1 = a0 + math.remainder(tD - a0, 2 * PI)
-    assert abs(abs(a1 - a0) - abs(delta)) < 1e-12
+    assert abs(abs(a1 - a0) - abs(theta)) < 1e-12
     f.line(add(cD, scale(F, k)), add(cD, scale(u(a0), 1.05)), stroke=INK,
            width=1, dash='2 3')
     polyline(f, [add(cD, scale(u(a0 + (a1 - a0) * j / 30), 0.92))
                  for j in range(31)], stroke=INK, width=1.2)
     mid = add(cD, scale(u((a0 + a1) / 2), 1.06))
-    f.text(mid, 'δ', size=15)
+    f.text(mid, 'Θ', size=15, italic=False)
     f.dot((0, 0), r=2.4, fill=FAINT)
     f.text((0.08, -0.1), 'o', size=14, color=FAINT)
     f.text(shift(cW, (-0.05, 0.22)), 'W', size=17, color=PURPLE)
@@ -1265,7 +1265,7 @@ def diagonal_force():
     save(f, 'appendix-e/diagonal-force', 'The turned square D between W and S, '
          'separated from them along their secondary axes (dashed): the forces '
          'of the two wings on the centre of D and their sum, which makes the '
-         'angle minus delta with the primary axis of D (dashed)')
+         'angle minus Theta with the primary axis of D (dashed)')
 
 
 def centre_region(n=90):
@@ -1290,10 +1290,10 @@ def diagonal_support():
     s = 108
     alpha = math.asin(1 / (2 * R6))
     region = centre_region()
-    cond = f'2{sb(it("R"), "6", "|sin ", size=13)}{it("δ")}|'
+    cond = f'2{sb(it("R"), "6", "|sin ", size=13)}Θ|'
     cases = ((0.15, f'the cap case, {cond} ≤ 1'),
              (0.5, f'the vertex case, {cond} > 1'))
-    for idx, (delta, title) in enumerate(cases):
+    for idx, (theta, title) in enumerate(cases):
         o = (215 + 420 * idx, 215)
         P = lambda p: (o[0] + s * p[0], o[1] + s * p[1])
         f.circle(P((0, 0)), R6 * s, stroke=INK, width=1.0, dash='6 4')
@@ -1303,14 +1303,14 @@ def diagonal_support():
         word(f, P((-0.55, 0.42)), 'centres', size=12, color=FAINT)
         f.line(P((-1.75, 0)), P((1.85, 0)), stroke=FAINT, width=0.8)
         corner = (RHO, 0.0)
-        F = (math.cos(delta), -math.sin(delta))
-        if 2 * R6 * abs(math.sin(delta)) <= 1:
+        F = (math.cos(theta), -math.sin(theta))
+        if 2 * R6 * abs(math.sin(theta)) <= 1:
             centre = corner
-            work = RHO * math.cos(delta)
+            work = RHO * math.cos(theta)
         else:
-            centre = (R6 * math.cos(delta) - 0.5,
-                      -(R6 * abs(math.sin(delta)) - 0.5))
-            work = R6 - (math.cos(delta) + abs(math.sin(delta))) / 2
+            centre = (R6 * math.cos(theta) - 0.5,
+                      -(R6 * abs(math.sin(theta)) - 0.5))
+            work = R6 - (math.cos(theta) + abs(math.sin(theta))) / 2
         # the support is attained at the centre drawn: check on the region
         best = max(dot2(F, q) for q in centre_region(400))
         assert abs(best - work) < 2e-5
@@ -1323,7 +1323,7 @@ def diagonal_support():
         f.dot(P(centre), r=3.4)
         arrow(f, P(centre), P(add(centre, scale(F, 0.62))), color=INK,
               width=1.8)
-        if 2 * R6 * abs(math.sin(delta)) > 1:
+        if 2 * R6 * abs(math.sin(theta)) > 1:
             far = (centre[0] + 0.5, centre[1] - 0.5)
             assert abs(math.hypot(*far) - R6) < 1e-9
             f.dot(P(far), r=4, fill=RED)
@@ -1336,7 +1336,7 @@ def diagonal_support():
         word(f, shift(P(corner), (-10, -11)), '(' + star('ρ', ', 0)', 12),
              size=12, anchor='end')
         word(f, shift(P(add(centre, scale(F, 0.62))), (6, -12)),
-             f'{it("δ")} = {delta:g}', size=12, anchor='start')
+             f'Θ = {theta:g}', size=12, anchor='start')
         f.text(P(add(centre, (-0.3, 0.3 if idx == 0 else -0.3))), 'D',
                size=15, color=CYAN)
         word(f, (o[0], 410), title, size=13)
@@ -1413,22 +1413,22 @@ def vertex_minorant():
 # square.
 
 def remainder(w, s, d):
-    b = (w - s) / 2
-    dl = d - PI / 4 - (w + s) / 2
-    L = K_STAR * (math.cos(b) - math.sin(b))
-    if 2 * R6 * abs(math.sin(dl)) <= 1:
-        sig = RHO * L * math.cos(dl)
+    xi = (w - s) / 2
+    theta = d - PI / 4 - (w + s) / 2
+    L = K_STAR * (math.cos(xi) - math.sin(xi))
+    if 2 * R6 * abs(math.sin(theta)) <= 1:
+        sig = RHO * L * math.cos(theta)
     else:
-        sig = L * (R6 - (math.cos(dl) + abs(math.sin(dl))) / 2)
+        sig = L * (R6 - (math.cos(theta) + abs(math.sin(theta))) / 2)
     om = lambda t: (abs(math.cos(t)) + abs(math.sin(t))) / 2
     Delta = M_STAR * (om(d - w) + om(d - s)) - sig
     return line_l(w) + line_l(-s) + Delta + 2 * BETA_STAR
 
 
 def cap_line():
-    """Lemma E.19 along the line s = -w at d = pi/4, where delta = 0 (the cap
-    case) and beta = w: the remainder against the bounds of the proof,
-    3/200 Z for beta <= 0 and 23/100 Z for beta >= 0, with Z = 2|w|."""
+    """Lemma E.19 along the line s = -w at d = pi/4, where Theta = 0 (the cap
+    case) and Xi = w: the remainder against the bounds of the proof,
+    3/200 Z for Xi <= 0 and 23/100 Z for Xi >= 0, with Z = 2|w|."""
     W, Hh = 560, 330
     f = Figure(0, W, 0, Hh, 1, pad=4)
     p = Panel(f, 70, 50, 440, 250, (-0.44, 0.4), (0, 0.1))
@@ -1454,8 +1454,8 @@ def cap_line():
     word(f, p.P(0.235, 0.092), '23/100 (|' + it('w') + '| + |' + it('s') +
          '|)', size=12, color=ORANGE, anchor='start')
     word(f, p.P(-0.14, 0.03), 'the remainder', size=12, color=BLUE)
-    word(f, p.P(-0.22, 0.09), f'{it("β")} = {it("w")} ≤ 0', size=12)
-    word(f, p.P(0.33, 0.06), f'{it("β")} ≥ 0', size=12)
+    word(f, p.P(-0.22, 0.09), f'Ξ = {it("w")} ≤ 0', size=12)
+    word(f, p.P(0.33, 0.06), f'Ξ ≥ 0', size=12)
     f.line(p.P(0, 0), p.P(0, 0.1), stroke=FAINT, width=1, dash='2 3')
     save(f, 'appendix-e/cap-line', 'The remainder along the line s = -w at '
          'd = pi/4, in the cap case, against the bounds of Lemma E.19: for w '
@@ -1474,7 +1474,7 @@ def diagonal_remainder():
         p = Panel(f, ox, 92, 220, 220, (-0.44, 0.4), (-0.4, 0.44))
         fn = lambda w, s, d=d: remainder(w, s, d)
         heat(p, fn, 56, 56, levels)
-        # the cap band |delta| <= d0: w + s = 2 (d - pi/4 -+ d0)
+        # the cap band |Theta| <= d0: w + s = 2 (d - pi/4 -+ d0)
         for sgn in (1, -1):
             c = 2 * (d - PI / 4 - sgn * d0)
             pts = []

@@ -20,17 +20,17 @@ $r \ge 0$, the closed and the open disk of centre $c$ and radius $r$ are
 A *direction* is an angle modulo $2\pi$, an element of
 $\mathbb{R}/2\pi\mathbb{Z}$. The unit vector in the direction $\theta$ is
 $u(\theta) = (\cos\theta, \sin\theta)$, and the direction of a nonzero vector
-$v$ is the $\theta$ with $v = |v|\,u(\theta)$. The *angle* $d(\theta, \theta')$
+$v$ is the $\theta$ with $v = |v|\,u(\theta)$. The *angle* $\angle(\theta, \theta')$
 between two directions is their distance in $\mathbb{R}/2\pi\mathbb{Z}$: the
 least $|x - x'|$ over real representatives $x$ of $\theta$ and $x'$ of
 $\theta'$ (Figure 2.1). It is a number in $[0, \pi]$, it is a metric on the
-directions, and $\cos(\theta - \theta') = \cos d(\theta, \theta')$.
+directions, and $\cos(\theta - \theta') = \cos \angle(\theta, \theta')$.
 
-![Left: the unit circle about o with two directions theta and theta prime; the radius to theta is an arrow, the unit vector u(theta), and the radius to theta prime is a line; the shorter arc between them, of angle d, is highlighted, and the longer arc, of angle 2 pi minus d, is dashed. Right: the real line with the representatives x - 2 pi, x, x + 2 pi of theta and x' - 2 pi, x' of theta prime; the least distance between two of them, d, lies between x' - 2 pi and x, and the distance from x to x' is 2 pi minus d](figures/02-preliminaries/angle.svg)
+![Left: the unit circle about o with two directions theta and theta prime; the radius to theta is an arrow, the unit vector u(theta), and the radius to theta prime is a line; the shorter arc between them, of the angle between theta and theta prime, is highlighted, and the longer arc, of 2 pi minus that angle, is dashed. Right: the real line with the representatives x - 2 pi, x, x + 2 pi of theta and x' - 2 pi, x' of theta prime; the least distance between two of them, the angle, lies between x' - 2 pi and x, and the distance from x to x' is 2 pi minus the angle](figures/02-preliminaries/angle.svg)
 
 *Figure 2.1.* The unit vector $u(\theta)$ (arrow) and the angle
-$d(\theta, \theta')$, which goes the shorter way round the circle; the longer
-way is $2\pi - d(\theta, \theta')$. On the line it is the least distance
+$\angle(\theta, \theta')$, which goes the shorter way round the circle; the longer
+way is $2\pi - \angle(\theta, \theta')$. On the line it is the least distance
 between a representative $x$ of $\theta$ and a representative $x'$ of
 $\theta'$, here between $x$ and $x' - 2\pi$.
 

@@ -494,7 +494,7 @@ direction of $c_S$.
    $|t - \delta| \approx 36.7°$, just beyond $\frac\pi5 = 36°$.
 
 4. *The arc.* Let $\theta$ be a direction with
-   $d(\theta, \theta_S + \varepsilon_S\delta) < \frac\pi5$. Then
+   $\angle(\theta, \theta_S + \varepsilon_S\delta) < \frac\pi5$. Then
    $\theta = \theta_S + \varepsilon_S\delta + s$ for a real $s$ with
    $|s| < \frac\pi5$, that is, $\theta = \theta_S + \varepsilon_S t$ with
    $t = \delta + \varepsilon_S s$ and $|t - \delta| < \frac\pi5$. By step 3,

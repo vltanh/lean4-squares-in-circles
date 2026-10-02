@@ -18,13 +18,13 @@ HALF_WIDTH = 1 / 2
 TARGET = 13 / 4
 
 
-def label(a, uu):
-    side = math.pi / 6 + (uu - 0.5) / 3 + 3 * (1 - a) / 4
-    return min(1.25 * uu, side, math.pi / 4)
+def label(a, b):
+    side = math.pi / 6 + (b - 0.5) / 3 + 3 * (1 - a) / 4
+    return min(1.25 * b, side, math.pi / 4)
 
 
-def admissible(a, uu):
-    return 0.5 <= a and 0 <= uu <= a and (a + 0.5) ** 2 + (uu + 0.5) ** 2 <= TARGET
+def admissible(a, b):
+    return 0.5 <= a and 0 <= b <= a and (a + 0.5) ** 2 + (b + 0.5) ** 2 <= TARGET
 
 
 def marker_arc():
@@ -32,35 +32,35 @@ def marker_arc():
     panel = 2.5
     left = -0.55                         # where the edge lines start
     f = Figure(left - 0.05, panel + 1.72, -1.02, 1.3, 150)
-    for k, (a, uu, name) in enumerate(states):
-        assert admissible(a, uu)
+    for k, (a, b, name) in enumerate(states):
+        assert admissible(a, b)
         o = (k * panel, 0.0)
-        ell = label(a, uu)
+        ell = label(a, b)
         lo, hi = ell - HALF_WIDTH, ell + HALF_WIDTH
         # The part of the circle in the closed square, and the arc inside it.
-        enter = max(math.asin(uu - 0.5), -math.acos(a - 0.5))
-        leave = min(math.acos(a - 0.5), math.asin(min(1.0, uu + 0.5)))
+        enter = max(math.asin(b - 0.5), -math.acos(a - 0.5))
+        leave = min(math.acos(a - 0.5), math.asin(min(1.0, b + 0.5)))
         assert enter < lo and hi < leave
         for j in range(201):
             t = lo + (hi - lo) * j / 200
-            assert abs(math.cos(t) - a) <= 0.5 and abs(math.sin(t) - uu) <= 0.5
-        c = shift(o, (a, uu))
+            assert abs(math.cos(t) - a) <= 0.5 and abs(math.sin(t) - b) <= 0.5
+        c = shift(o, (a, b))
         f.line(shift(o, (left, 0)), shift(o, (1.7, 0)), stroke=FAINT, width=1)
         f.text(shift(o, (1.7, 0)), it('t') + NB + '=' + NB + '0', size=13,
                italic=False, anchor='end', color=FAINT, dy=12)
         f.square(c, fill=FILLS[0], stroke=BLUE)
         for x0, y0, x1, y1 in ((a - 0.5, -0.98, a - 0.5, 1.12),
                                (a + 0.5, -0.98, a + 0.5, 1.12),
-                               (left, uu - 0.5, 1.7, uu - 0.5),
-                               (left, uu + 0.5, 1.7, uu + 0.5)):
+                               (left, b - 0.5, 1.7, b - 0.5),
+                               (left, b + 0.5, 1.7, b + 0.5)):
             f.line(shift(o, (x0, y0)), shift(o, (x1, y1)), width=1, dash='4 4')
         f.text(shift(o, (a - 0.5, -0.98)), 'near', size=13, italic=False,
                anchor='start', dx=4, dy=4)
         f.text(shift(o, (a + 0.5, -0.98)), 'far', size=13, italic=False,
                anchor='start', dx=4, dy=4)
-        f.text(shift(o, (left, uu - 0.5)), 'lower', size=13, italic=False,
+        f.text(shift(o, (left, b - 0.5)), 'lower', size=13, italic=False,
                anchor='start', dy=-9)
-        f.text(shift(o, (left, uu + 0.5)), 'upper', size=13, italic=False,
+        f.text(shift(o, (left, b + 0.5)), 'upper', size=13, italic=False,
                anchor='start', dy=-9)
         f.arc(o, 1.0, -math.pi / 2 - 0.05, math.pi / 2 + 0.3, FAINT,
               width=1.2)
@@ -77,8 +77,8 @@ def marker_arc():
         assert half[0] + 0.03 < o[0] + a - 0.5            # left of the near edge
         f.text(half, '½', size=14, italic=False)
         f.dot(c, fill=BLUE)
-        f.text(shift(o, (a + 0.45, uu + 0.5)), '(' + it('a') + ',' + NB
-               + it('u') + ')' + NB + '=' + NB + name, size=13, italic=False,
+        f.text(shift(o, (a + 0.45, b + 0.5)), '(' + it('a') + ',' + NB
+               + it('b') + ')' + NB + '=' + NB + name, size=13, italic=False,
                color=BLUE, anchor='end', dy=-10)
         f.dot(o)
         f.text(shift(o, (0.03, -0.08)), 'o', anchor='start')
@@ -100,27 +100,27 @@ def admissible_region():
            for k in range(81)]
     region = [(0.5, 0.0)] + arc + [(0.5, 0.5)]
     assert abs(arc[-1][0] - corner) < 1e-12
-    for a, uu in region:
-        assert (a + 0.5) ** 2 + (uu + 0.5) ** 2 <= TARGET + 1e-9
-    # The line of the Cauchy-Schwarz bound, 3/4 (a + 1/2) + 2/3 (u + 1/2)
+    for a, b in region:
+        assert (a + 0.5) ** 2 + (b + 0.5) ** 2 <= TARGET + 1e-9
+    # The line of the Cauchy-Schwarz bound, 3/4 (a + 1/2) + 2/3 (b + 1/2)
     # = sqrt(1885)/24, and the point where it touches the circle.
     L = math.sqrt(1885) / 24
     assert L < 43.42 / 24 and abs(43.42 / 24 - 43 / 24 - 0.0175) < 1e-12
     norm = math.hypot(0.75, 2 / 3)
     touch = (-0.5 + root * 0.75 / norm, -0.5 + root * (2 / 3) / norm)
     assert abs(0.75 * (touch[0] + 0.5) + (2 / 3) * (touch[1] + 0.5) - L) < 1e-12
-    line_u = lambda a: (L - 0.75 * (a + 0.5)) / (2 / 3) - 0.5
+    line_b = lambda a: (L - 0.75 * (a + 0.5)) / (2 / 3) - 0.5
     x = 0.4
     top = math.sqrt(TARGET - (x + 1) ** 2) - 0.5
     p = Plot(0.3, 1.42, -0.1, 0.98, 330, 330)
     x_axis(p, 0.35, 1.4, ticks=((0.5, '½'), (1, '1'), (math.sqrt(3) - 0.5,
                                                        '√3 − ½')), label='a')
-    y_axis(p, -0.02, 0.96, x=0.35, ticks=((0.5, '½'),), label='u')
+    y_axis(p, -0.02, 0.96, x=0.35, ticks=((0.5, '½'),), label='b')
     p.polygon(region, fill=FILLS[0], stroke=BLUE, width=1.6)
     p.curve(lambda a: math.sqrt(max(0.0, TARGET - (a + 0.5) ** 2)) - 0.5,
             0.36, math.sqrt(3) - 0.5, ylim=(-0.02, 0.96), stroke=BLUE,
             width=1, dash='4 3')
-    p.line((0.62, line_u(0.62)), (1.12, line_u(1.12)), stroke=ORANGE,
+    p.line((0.62, line_b(0.62)), (1.12, line_b(1.12)), stroke=ORANGE,
            width=1.6)
     p.dot(touch, fill=ORANGE)
     p.line((x + 0.5, 0), (x + 0.5, top), stroke=GREEN, width=2.4)
@@ -129,15 +129,15 @@ def admissible_region():
     p.text((1.0, 0.5), '(1, ½)', size=13, italic=False, anchor='start',
            dx=7, dy=4)
     p.text((1.17, 0.26), 'φ = 13/4', size=13, color=BLUE, anchor='start')
-    p.text((0.7, line_u(0.7)), 'Cauchy–Schwarz', size=13, italic=False,
+    p.text((0.7, line_b(0.7)), 'Cauchy–Schwarz', size=13, italic=False,
            color=ORANGE, anchor='start', dx=10, dy=-6)
     p.text((x + 0.5, top / 2), 'a = x + ½', size=13, color=GREEN,
            anchor='end', dx=-6)
     p.text((0.66, 0.2), 'admissible', size=13, italic=False, color=BLUE)
-    p.save('appendix-f/admissible', 'The admissible states in the (a, u)-plane: '
-           'a at least 1/2, u between 0 and a, and phi at most 13/4. The line '
+    p.save('appendix-f/admissible', 'The admissible states in the (a, b)-plane: '
+           'a at least 1/2, b between 0 and a, and phi at most 13/4. The line '
            'of the Cauchy-Schwarz bound passes just outside the disk, and at '
-           'a = x + 1/2 the circle bounds u')
+           'a = x + 1/2 the circle bounds b')
 
 
 # A line against the arcsine (Lemma F.1).
@@ -177,17 +177,17 @@ def asin_line():
 # The label between the transverse edges (Lemmas F.2 and F.3).
 
 def transverse():
-    umax = math.sqrt(TARGET / 2) - 0.5
+    bmax = math.sqrt(TARGET / 2) - 0.5
 
-    def amax(uu):
-        return math.sqrt(TARGET - (uu + 0.5) ** 2) - 0.5
+    def amax(b):
+        return math.sqrt(TARGET - (b + 0.5) ** 2) - 0.5
 
     n = 400
-    us = [umax * k / n for k in range(n + 1)]
-    low = [label(amax(uu), uu) for uu in us]
-    high = [label(max(0.5, uu), uu) for uu in us]
-    lower_edge = lambda uu: math.asin(uu - 0.5) + HALF_WIDTH
-    upper_edge = lambda uu: math.asin(min(1.0, uu + 0.5)) - HALF_WIDTH
+    bs = [bmax * k / n for k in range(n + 1)]
+    low = [label(amax(b), b) for b in bs]
+    high = [label(max(0.5, b), b) for b in bs]
+    lower_edge = lambda b: math.asin(b - 0.5) + HALF_WIDTH
+    upper_edge = lambda b: math.asin(min(1.0, b + 0.5)) - HALF_WIDTH
     # The decimal bounds of Lemmas F.2 and F.3.
     assert (11 / 40) ** 3 / 4 < 0.0052 and 3.14 / 6 - 0.0175 - 0.0052 - 0.5 > 0
     assert 11 / 40 + 0.0052 + 0.5 < 3.14 / 4
@@ -195,35 +195,35 @@ def transverse():
     assert z - z ** 3 / 6 + z ** 5 / 120 < 0.5852 < 0.6
     # Lemmas F.2 and F.3 on a grid of admissible states.
     for i in range(0, n + 1, 4):
-        uu = us[i]
+        b = bs[i]
         for j in range(41):
-            a = max(0.5, uu) + (amax(uu) - max(0.5, uu)) * j / 40
-            if admissible(a, uu):
-                assert lower_edge(uu) < label(a, uu)
-                if uu <= 0.5:
-                    assert label(a, uu) < upper_edge(uu)
+            a = max(0.5, b) + (amax(b) - max(0.5, b)) * j / 40
+            if admissible(a, b):
+                assert lower_edge(b) < label(a, b)
+                if b <= 0.5:
+                    assert label(a, b) < upper_edge(b)
     p = Plot(-0.08, 0.86, -0.16, 1.16, 440, 300)
     x_axis(p, -0.03, 0.84, ticks=((0, '0'), (0.5, '½'), (0.775, '31/40')),
-           label='u')
+           label='b')
     y_axis(p, -0.12, 1.14, ticks=((math.pi / 4, 'π/4'), (math.pi / 6, 'π/6')))
     for y in (math.pi / 4, math.pi / 6):
         p.line((0, y), (0.8, y), stroke=FAINT, width=1, dash='3 3')
-    p.polygon(list(zip(us, low)) + list(zip(reversed(us), reversed(high))),
+    p.polygon(list(zip(bs, low)) + list(zip(reversed(bs), reversed(high))),
               fill=FILLS[0], stroke=BLUE, width=1.2)
-    p.polyline([(x, lower_edge(x)) for x in us], stroke=ORANGE, width=2.2)
-    top = [x for x in us if x <= 0.5] + [0.5]
+    p.polyline([(x, lower_edge(x)) for x in bs], stroke=ORANGE, width=2.2)
+    top = [x for x in bs if x <= 0.5] + [0.5]
     p.polyline([(x, upper_edge(x)) for x in top], stroke=GREEN, width=2.2)
     p.line((0.5, 0), (0.5, upper_edge(0.5)), stroke=FAINT, width=1,
            dash='3 3')
-    p.text((0.6, 0.69), 'ℓ(a, u)', size=13, color=BLUE)
-    p.text((0.33, 0.17), 'arcsin(' + it('u') + NB + '−' + NB + '½)' + NB + '+'
+    p.text((0.6, 0.69), 'ℓ(a, b)', size=13, color=BLUE)
+    p.text((0.33, 0.17), 'arcsin(' + it('b') + NB + '−' + NB + '½)' + NB + '+'
            + NB + '½', size=13, italic=False, color=ORANGE, anchor='start')
-    p.text((0.06, 1.0), 'arcsin(' + it('u') + NB + '+' + NB + '½)' + NB + '−'
+    p.text((0.06, 1.0), 'arcsin(' + it('b') + NB + '+' + NB + '½)' + NB + '−'
            + NB + '½', size=13, italic=False, color=GREEN, anchor='start')
-    p.save('appendix-f/transverse', 'For each u, the labels of the admissible '
-           'states (a, u) form the shaded interval. It lies above the curve '
-           'arcsin(u - 1/2) + 1/2 of the lower edge, and for u at most '
-           '1/2 below the curve arcsin(u + 1/2) - 1/2 of the upper edge')
+    p.save('appendix-f/transverse', 'For each b, the labels of the admissible '
+           'states (a, b) form the shaded interval. It lies above the curve '
+           'arcsin(b - 1/2) + 1/2 of the lower edge, and for b at most '
+           '1/2 below the curve arcsin(b + 1/2) - 1/2 of the upper edge')
 
 
 # The envelope (Definition F.4 and Lemmas F.5 to F.7).
@@ -237,14 +237,14 @@ def envelope_band():
     xe = math.sqrt(3) - 1
     n = 300
     xs = [xe * k / n for k in range(n + 1)]
-    side_plus = lambda x, uu: (uu - 0.5) / 3 + 0.75 * (0.5 - x) + math.asin(x)
+    side_plus = lambda x, b: (b - 0.5) / 3 + 0.75 * (0.5 - x) + math.asin(x)
 
-    def umax(x):
+    def bmax(x):
         a = x + 0.5
         return min(a, math.sqrt(TARGET - (x + 1) ** 2) - 0.5)
 
     low = [side_plus(x, 0) for x in xs]
-    high = [side_plus(x, umax(x)) for x in xs]
+    high = [side_plus(x, bmax(x)) for x in xs]
     for x, h in zip(xs, high):
         assert h <= envelope(x) + 1e-12
     level = math.pi / 3 - HALF_WIDTH
@@ -262,13 +262,13 @@ def envelope_band():
     p.curve(envelope, 0, 0.75, stroke=ORANGE, width=2.4)
     p.text((0.75, envelope(0.75)), 'E(x) − π/6', size=14, color=ORANGE,
            anchor='start', dx=8, dy=4)
-    p.text((0.33, 0.42), 'side(' + it('a') + ',' + NB + it('u') + ')' + NB
+    p.text((0.33, 0.42), 'side(' + it('a') + ',' + NB + it('b') + ')' + NB
            + '+' + NB + 'arcsin' + NB + it('x') + NB + '−' + NB + 'π/6',
            size=13, italic=False, color=BLUE)
     p.save('appendix-f/envelope-band', 'For each x = a - 1/2, the values of side(a, '
-           'u) + arcsin x - pi/6 over the admissible states (a, u) fill the '
+           'b) + arcsin x - pi/6 over the admissible states (a, b) fill the '
            'shaded interval, which lies below the graph of E(x) - pi/6 and '
-           'touches it where the disk bounds u')
+           'touches it where the disk bounds b')
 
 
 def peak_bound():
@@ -348,57 +348,57 @@ def envelope_parabola():
 
 def margins():
     """Lemmas F.2 and F.3: by how much the label clears the lower and the
-    upper edge, at the admissible state with the given u where it is closest.
+    upper edge, at the admissible state with the given b where it is closest.
     The label decreases in a, so it is least at the largest a, on the circle,
     and largest at a = 1/2."""
-    umax = math.sqrt(TARGET / 2) - 0.5
-    amax = lambda uu: math.sqrt(TARGET - (uu + 0.5) ** 2) - 0.5
-    lower = lambda uu: label(amax(uu), uu) - math.asin(uu - 0.5) - HALF_WIDTH
-    upper = lambda uu: math.asin(uu + 0.5) - HALF_WIDTH - label(0.5, uu)
+    bmax = math.sqrt(TARGET / 2) - 0.5
+    amax = lambda b: math.sqrt(TARGET - (b + 0.5) ** 2) - 0.5
+    lower = lambda b: label(amax(b), b) - math.asin(b - 0.5) - HALF_WIDTH
+    upper = lambda b: math.asin(b + 0.5) - HALF_WIDTH - label(0.5, b)
     n = 4000
-    us = [umax * k / n for k in range(n + 1)]
-    # the closest states really are at a = amax(u) and a = 1/2
+    bs = [bmax * k / n for k in range(n + 1)]
+    # the closest states really are at a = amax(b) and a = 1/2
     for k in range(0, n + 1, 40):
-        uu = us[k]
+        b = bs[k]
         for j in range(41):
-            a = max(0.5, uu) + (amax(uu) - max(0.5, uu)) * j / 40
-            if admissible(a, uu):
-                assert label(a, uu) >= label(amax(uu), uu) - 1e-12
-                assert label(a, uu) <= label(0.5, uu) + 1e-12 or uu > 0.5
-    lo_val, lo_u = min((lower(x), x) for x in us)
-    up_val, up_u = min((upper(x), x) for x in us if x <= 0.5)
-    assert 0.0046 < lo_val < 0.0048 and abs(lo_u - 0.72) < 0.01
-    assert abs(up_u - 0.1) < 1e-3 and abs(up_val - (math.asin(0.6) - 0.625)) < 1e-6
-    a0u = [x for x in us if label(amax(x), x) < 1.25 * x - 1e-12][0]
+            a = max(0.5, b) + (amax(b) - max(0.5, b)) * j / 40
+            if admissible(a, b):
+                assert label(a, b) >= label(amax(b), b) - 1e-12
+                assert label(a, b) <= label(0.5, b) + 1e-12 or b > 0.5
+    lo_val, lo_b = min((lower(x), x) for x in bs)
+    up_val, up_b = min((upper(x), x) for x in bs if x <= 0.5)
+    assert 0.0046 < lo_val < 0.0048 and abs(lo_b - 0.72) < 0.01
+    assert abs(up_b - 0.1) < 1e-3 and abs(up_val - (math.asin(0.6) - 0.625)) < 1e-6
+    b0 = [x for x in bs if label(amax(x), x) < 1.25 * x - 1e-12][0]
     top = 0.1
     p = Plot(-0.08, 0.9, -0.012, 0.112, 480, 3000)
     x_axis(p, -0.03, 0.86, ticks=((0, '0'), (0.1, '0.1'), (0.5, '½'),
-                                 (0.775, '31/40')), label='u')
+                                 (0.775, '31/40')), label='b')
     y_axis(p, 0, 0.108, ticks=((0.02, '0.02'), (0.04, '0.04'), (0.06, '0.06'),
                                (0.08, '0.08'), (0.1, '0.10')))
-    p.curve(lower, 0, umax, n=n, ylim=(0, top), stroke=ORANGE, width=2.4)
+    p.curve(lower, 0, bmax, n=n, ylim=(0, top), stroke=ORANGE, width=2.4)
     p.curve(upper, 0, 0.5, n=n, ylim=(0, top), stroke=GREEN, width=2.4)
-    p.line((a0u, 0), (a0u, lower(a0u)), stroke=FAINT, width=1, dash='3 3')
-    p.dot((lo_u, lo_val), fill=ORANGE)
-    p.dot((up_u, up_val), fill=GREEN)
-    p.text((lo_u, lo_val), f'{lo_val:.4f}', size=13, italic=False,
+    p.line((b0, 0), (b0, lower(b0)), stroke=FAINT, width=1, dash='3 3')
+    p.dot((lo_b, lo_val), fill=ORANGE)
+    p.dot((up_b, up_val), fill=GREEN)
+    p.text((lo_b, lo_val), f'{lo_val:.4f}', size=13, italic=False,
            color=ORANGE, dy=-14)
-    p.text((up_u, up_val), 'arcsin' + NB + '3/5' + NB + '−' + NB + '5/8',
+    p.text((up_b, up_val), 'arcsin' + NB + '3/5' + NB + '−' + NB + '5/8',
            size=13, italic=False, color=GREEN, anchor='start', dx=6, dy=12)
     assert lower(0.62) < 0.03
     p.text((0.62, 0.04), 'lower edge', size=13, italic=False, color=ORANGE,
            anchor='start')
     p.text((0.34, 0.092), 'upper edge', size=13, italic=False, color=GREEN,
            anchor='end')
-    p.text((a0u, 0.004), 'axial', size=12, italic=False, color=FAINT,
+    p.text((b0, 0.004), 'axial', size=12, italic=False, color=FAINT,
            anchor='end', dx=-5)
-    p.text((a0u, 0.004), 'side', size=12, italic=False, color=FAINT,
+    p.text((b0, 0.004), 'side', size=12, italic=False, color=FAINT,
            anchor='start', dx=5)
     p.save('appendix-f/margins', 'The margins by which the label clears the '
-           'lower edge, for u from 0 to 31/40, and the upper edge, for u up to '
-           '1/2, at the closest admissible state with the given u. Both stay '
-           'positive; the lower one comes down to about 0.0047 near u = 0.72, '
-           'the upper one to arcsin 3/5 - 5/8 at u = 1/10')
+           'lower edge, for b from 0 to 31/40, and the upper edge, for b up to '
+           '1/2, at the closest admissible state with the given b. Both stay '
+           'positive; the lower one comes down to about 0.0047 near b = 0.72, '
+           'the upper one to arcsin 3/5 - 5/8 at b = 1/10')
 
 
 def curvature():

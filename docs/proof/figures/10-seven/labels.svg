@@ -30,7 +30,7 @@
 <line x1="51.6" y1="404.4" x2="492.6" y2="404.4" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
 <line x1="68.4" y1="429.6" x2="68.4" y2="26.4" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
 <text x="492.6" y="425.4" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">a</text>
-<text x="55.8" y="34.8" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">u</text>
+<text x="55.8" y="34.8" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic">b</text>
 <line x1="102.0" y1="410.7" x2="102.0" y2="398.1" stroke="#1f2937" stroke-width="1.2"/>
 <text x="102.0" y="427.5" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">½</text>
 <line x1="312.0" y1="410.7" x2="312.0" y2="398.1" stroke="#1f2937" stroke-width="1.2"/>
@@ -39,12 +39,12 @@
 <text x="409.5" y="427.5" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">√3 − ½</text>
 <line x1="62.1" y1="194.4" x2="74.7" y2="194.4" stroke="#1f2937" stroke-width="1.2"/>
 <text x="55.8" y="194.4" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">½</text>
-<text x="219.6" y="345.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle">axial: <tspan font-style="italic">ℓ</tspan> = 5<tspan font-style="italic">u</tspan>/4</text>
-<text x="354.0" y="127.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle">side: <tspan font-style="italic">ℓ</tspan> = side(<tspan font-style="italic">a</tspan>, <tspan font-style="italic">u</tspan>)</text>
+<text x="219.6" y="345.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle">axial: <tspan font-style="italic">ℓ</tspan> = 5<tspan font-style="italic">b</tspan>/4</text>
+<text x="354.0" y="127.2" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="start" dominant-baseline="middle">side: <tspan font-style="italic">ℓ</tspan> = side(<tspan font-style="italic">a</tspan>, <tspan font-style="italic">b</tspan>)</text>
 <line x1="354.0" y1="135.6" x2="291.0" y2="181.8" stroke="#ea580c" stroke-width="1"/>
 <text x="144.0" y="55.8" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">capped: <tspan font-style="italic">ℓ</tspan> = π/4</text>
 <line x1="177.6" y1="64.2" x2="188.1" y2="114.6" stroke="#1f2937" stroke-width="1"/>
 <circle cx="312.0" cy="194.4" r="3.6" fill="#ea580c"/>
 <circle cx="362.3" cy="282.0" r="3.6" fill="#1f2937"/>
-<text x="381.2" y="282.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">(a<tspan dy="3.9" font-size="8.8">0</tspan><tspan dy="-3.9">, </tspan>u<tspan dy="3.9" font-size="8.8">0</tspan><tspan dy="-3.9">)</tspan></text>
+<text x="381.2" y="282.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">(a<tspan dy="3.9" font-size="8.8">0</tspan><tspan dy="-3.9">, </tspan>b<tspan dy="3.9" font-size="8.8">0</tspan><tspan dy="-3.9">)</tspan></text>
 </svg>

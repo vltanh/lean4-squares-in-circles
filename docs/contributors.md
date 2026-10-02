@@ -165,3 +165,14 @@ Times are rough commit times, in US Central time (UTC−5).
   fixed, schematic pictures of six squares became computed configurations,
   and new figures, computed from the geometry and the formulas of the proofs,
   bring the book from 237 to 331 figures.
+* **From 18:40 — simpler proofs and one name per letter.** Claude Opus 5.5,
+  in Claude Code, carried out what the audit had left. Two squares now end
+  with the shared edge: the centres are 1 apart with the disk centre their
+  midpoint, so the squares share an edge, as for five squares, and charts and
+  half circles drop out of that case. In seven squares, Lemma I.20 no longer
+  needs the switch angle, which shortens Lemma I.23; in six squares, one lemma
+  gives the far-vertex term of both Proposition D.10 and §D.9. The states of
+  seven squares are written (a, b) and (A, B), the offsets of Chapter 3, so u
+  is only the unit vector u(θ); the angle between two directions is ∠(θ, θ′),
+  so d is only the relative phase; and the local letters of Definition 9.51
+  and §D.9 no longer repeat names used nearby.
