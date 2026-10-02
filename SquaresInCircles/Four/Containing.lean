@@ -1,4 +1,6 @@
-import SquaresInCircles.Common.Charts
+module
+
+public import SquaresInCircles.Common.Charts
 
 /-!
 # Four squares: the containing square
@@ -7,6 +9,9 @@ A square whose closed square contains the disk centre holds the quarter of the
 circle of radius `1/2` between its two edges at the vertex nearest the disk
 centre, centred on the direction `vertexMid` of that vertex.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles.Four

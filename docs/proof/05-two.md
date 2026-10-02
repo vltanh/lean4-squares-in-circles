@@ -40,9 +40,9 @@ $Q(c_1)$ and $Q(c_2)$ share an edge whose midpoint is $o$, and the four
 corners of the $2 \times 1$ rectangle lie on the circle of radius $R_2$ about
 $o$ (dashed).
 
-*Lean: [`Two.model_packing`](../../SquaresInCircles/Two/Construction.lean#L18),
-[`Two.uniqueness`](../../SquaresInCircles/Two/Uniqueness.lean#L55),
-[`Two.optimum`](../../SquaresInCircles/Two/Uniqueness.lean#L80).*
+*Lean: [`Two.model_packing`](../../SquaresInCircles/Two/Construction.lean#L23),
+[`Two.uniqueness`](../../SquaresInCircles/Two/Uniqueness.lean#L60),
+[`Two.optimum`](../../SquaresInCircles/Two/Uniqueness.lean#L85).*
 
 *Outline of the proof.* Part (1) is the construction, Proposition 5.2
 (§5.1). Parts (2) and (3) follow, by
@@ -85,10 +85,10 @@ satisfies
 So [Lemma 2.8](02-preliminaries.md#lemma-28-axis-parallel-squares) (3)
 applies. $\square$
 
-*Lean: [`Two.model_packing`](../../SquaresInCircles/Two/Construction.lean#L18),
-[`Two.model`](../../SquaresInCircles/Geometry.lean#L133),
-[`Two.radius`](../../SquaresInCircles/Geometry.lean#L127),
-[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L38).*
+*Lean: [`Two.model_packing`](../../SquaresInCircles/Two/Construction.lean#L23),
+[`Two.model`](../../SquaresInCircles/Geometry.lean#L137),
+[`Two.radius`](../../SquaresInCircles/Geometry.lean#L131),
+[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L43).*
 
 ## 5.2 The centres
 
@@ -126,7 +126,7 @@ $a^2 + b^2 \le \frac14$, and meets the quarter circle $a^2 + b^2 = \frac14$
 $\rho = \frac12$, since $\frac14 + \frac12 + \frac12 = \frac54$ (Figure 5.4).
 $\square$
 
-*Lean: [`radial_sq_le_of_phi`](../../SquaresInCircles/Common/Basic.lean#L159).*
+*Lean: [`radial_sq_le_of_phi`](../../SquaresInCircles/Common/Basic.lean#L164).*
 
 Seen in the frame of a square $S$ whose closed square lies in
 $\overline{D}(o, R_2)$, Lemma 5.4 puts $o$ in the closed disk of radius
@@ -197,8 +197,8 @@ $|u|^2 = \frac14$, and in the same way $|v|^2 = \frac14$. By Lemma 3.4 these
 are the claims $a_S^2 + b_S^2 = \frac14$ and $a_T^2 + b_T^2 = \frac14$.
 $\square$
 
-*Lean: [`Two.centers_at_half`](../../SquaresInCircles/Two/Uniqueness.lean#L30),
-[`Two.normSq_parallelogram`](../../SquaresInCircles/Two/Uniqueness.lean#L21).*
+*Lean: [`Two.centers_at_half`](../../SquaresInCircles/Two/Uniqueness.lean#L35),
+[`Two.normSq_parallelogram`](../../SquaresInCircles/Two/Uniqueness.lean#L26).*
 
 ## 5.3 The shared edge
 
@@ -256,12 +256,12 @@ $\phi$ the square $S$ sits at $c_1$ and $T$ at $c_2$. By
 [Lemma 3.31](03-tools.md#lemma-331-from-slots-to-congruence) the configuration
 $S, T$ is congruent to the model $Q(c_1), Q(c_2)$, the rectangle. $\square$
 
-*Lean: [`Two.uniqueness`](../../SquaresInCircles/Two/Uniqueness.lean#L55),
-[`Two.frame_scale`](../../SquaresInCircles/Two/Uniqueness.lean#L50),
-[`unit_contact`](../../SquaresInCircles/Common/Contacts.lean#L108),
-[`same_axes_open`](../../SquaresInCircles/Common/Contacts.lean#L80),
-[`self_represents`](../../SquaresInCircles/Common/Contacts.lean#L72),
-[`congruent_of_slots`](../../SquaresInCircles/Common/Congruence.lean#L148).*
+*Lean: [`Two.uniqueness`](../../SquaresInCircles/Two/Uniqueness.lean#L60),
+[`Two.frame_scale`](../../SquaresInCircles/Two/Uniqueness.lean#L55),
+[`unit_contact`](../../SquaresInCircles/Common/Contacts.lean#L113),
+[`same_axes_open`](../../SquaresInCircles/Common/Contacts.lean#L85),
+[`self_represents`](../../SquaresInCircles/Common/Contacts.lean#L77),
+[`congruent_of_slots`](../../SquaresInCircles/Common/Congruence.lean#L153).*
 
 ## 5.4 Proof of Theorem 5.1
 
@@ -274,7 +274,7 @@ $1 + \frac14 = \frac54 = R_2^2$ from the origin (Figure 5.2); (c) is
 Proposition 5.3. Parts (1), (2), (3) of the theorem are (a), (i) and (ii).
 $\square$
 
-*Lean: [`Two.optimum`](../../SquaresInCircles/Two/Uniqueness.lean#L80),
-[`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L47),
-[`Optimum.isLeast`](../../SquaresInCircles/Common/Optimum.lean#L61),
-[`Optimum.packing_iff`](../../SquaresInCircles/Common/Optimum.lean#L67).*
+*Lean: [`Two.optimum`](../../SquaresInCircles/Two/Uniqueness.lean#L85),
+[`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L52),
+[`Optimum.isLeast`](../../SquaresInCircles/Common/Optimum.lean#L66),
+[`Optimum.packing_iff`](../../SquaresInCircles/Common/Optimum.lean#L72).*

@@ -1,4 +1,6 @@
-import SquaresInCircles.Five.Exterior
+module
+
+public import SquaresInCircles.Five.Exterior
 
 /-!
 # Five squares: the containing square
@@ -8,6 +10,9 @@ centre until that centre is at distance `1/√2`, has an inscribed disk that
 covers a fifth of the circle of radius `5/6`. So the radial sweep of the square
 holds that fifth, unless the square is centred at the disk centre.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles.Five

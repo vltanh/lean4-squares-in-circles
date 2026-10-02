@@ -50,11 +50,11 @@ A *configuration* of $n$ unit squares is a family $S_1, \dots, S_n$ of unit
 squares (Definition 2.1), indexed by $\lbrace 1, \dots, n\rbrace$. A
 *relabelling* is a permutation $\sigma$ of $\lbrace 1, \dots, n\rbrace$.
 
-*Lean: [`Point`](../../SquaresInCircles/Geometry.lean#L27),
-[`normSq`](../../SquaresInCircles/Geometry.lean#L30),
-[`inDisk`](../../SquaresInCircles/Geometry.lean#L67),
-[`Direction`](../../SquaresInCircles/Geometry.lean#L79),
-[`direction_dist`](../../SquaresInCircles/Common/Arcs.lean#L33).*
+*Lean: [`Point`](../../SquaresInCircles/Geometry.lean#L31),
+[`normSq`](../../SquaresInCircles/Geometry.lean#L34),
+[`inDisk`](../../SquaresInCircles/Geometry.lean#L71),
+[`Direction`](../../SquaresInCircles/Geometry.lean#L83),
+[`direction_dist`](../../SquaresInCircles/Common/Arcs.lean#L38).*
 
 ## 2.2 Unit squares
 
@@ -99,11 +99,11 @@ by a quarter turn. The square and the point $p$ are the same, and the local
 coordinates of $p$ change from $(x_S(p), y_S(p))$ to $(y_S(p), -x_S(p))$:
 both are less than $\frac12$ in absolute value in either frame.
 
-*Lean: [`UnitSquare`](../../SquaresInCircles/Geometry.lean#L37),
-[`localX`](../../SquaresInCircles/Geometry.lean#L44),
-[`localY`](../../SquaresInCircles/Geometry.lean#L48),
-[`openSquare`](../../SquaresInCircles/Geometry.lean#L58),
-[`closedSquare`](../../SquaresInCircles/Geometry.lean#L53).*
+*Lean: [`UnitSquare`](../../SquaresInCircles/Geometry.lean#L41),
+[`localX`](../../SquaresInCircles/Geometry.lean#L48),
+[`localY`](../../SquaresInCircles/Geometry.lean#L52),
+[`openSquare`](../../SquaresInCircles/Geometry.lean#L62),
+[`closedSquare`](../../SquaresInCircles/Geometry.lean#L57).*
 
 ### Definition 2.2 (axis-parallel square)
 
@@ -120,11 +120,11 @@ Q(c)^\circ = \lbrace (x, y) : |x - c_1| < \tfrac12,\ |y - c_2| < \tfrac12 \rbrac
 *Figure 2.5.* The square $Q(c)$ spans $c_1 \pm \frac12$ across and
 $c_2 \pm \frac12$ up.
 
-*Lean: [`axisSquare`](../../SquaresInCircles/Geometry.lean#L87),
-[`openAxisSquare`](../../SquaresInCircles/Common/Constructions.lean#L13),
-[`closedAxisSquare`](../../SquaresInCircles/Common/Constructions.lean#L15),
-[`axisSquare_open`](../../SquaresInCircles/Common/Constructions.lean#L18),
-[`axisSquare_closed`](../../SquaresInCircles/Common/Constructions.lean#L22).*
+*Lean: [`axisSquare`](../../SquaresInCircles/Geometry.lean#L91),
+[`openAxisSquare`](../../SquaresInCircles/Common/Constructions.lean#L18),
+[`closedAxisSquare`](../../SquaresInCircles/Common/Constructions.lean#L20),
+[`axisSquare_open`](../../SquaresInCircles/Common/Constructions.lean#L23),
+[`axisSquare_closed`](../../SquaresInCircles/Common/Constructions.lean#L27).*
 
 ## 2.3 Packings
 
@@ -153,8 +153,8 @@ single square has touching squares.
 but the open squares do not meet: the squares are disjoint, and may both
 belong to a packing. Right, the open squares meet in the shaded region.
 
-*Lean: [`Packing`](../../SquaresInCircles/Geometry.lean#L73),
-[`InteriorDisjoint`](../../SquaresInCircles/Common/Basic.lean#L47).*
+*Lean: [`Packing`](../../SquaresInCircles/Geometry.lean#L77),
+[`InteriorDisjoint`](../../SquaresInCircles/Common/Basic.lean#L52).*
 
 ## 2.4 Frames and congruence
 
@@ -184,8 +184,8 @@ F_\phi(x, y) \in S^\circ \iff |x - c_1| < \tfrac12 \ \text{ and } \ |y - c_2| < 
 $u(\phi + \frac\pi2)$. The square $S$ sits at $c = (c_1, c_2)$: in these
 coordinates it is $Q(c)$.
 
-*Lean: [`pointInDirection`](../../SquaresInCircles/Geometry.lean#L83),
-[`Represents`](../../SquaresInCircles/Common/Congruence.lean#L20).*
+*Lean: [`pointInDirection`](../../SquaresInCircles/Geometry.lean#L87),
+[`Represents`](../../SquaresInCircles/Common/Congruence.lean#L25).*
 
 ### Lemma 2.5 (frames are rigid motions)
 
@@ -213,10 +213,10 @@ $F_\phi(x, y) - o$ with the two vectors returns $x$ and $y$; conversely every
 $p$ equals $F_\phi$ of the pair of those inner products, by expanding $p - o$ in
 the orthonormal basis. Finally $F_\phi(0) = o$. $\square$
 
-*Lean: [`frameEquiv`](../../SquaresInCircles/Common/Congruence.lean#L24),
-[`frameEquiv_zero`](../../SquaresInCircles/Common/Congruence.lean#L44),
-[`frameEquiv_distance`](../../SquaresInCircles/Common/Congruence.lean#L47),
-[`pointInDirection_norm`](../../SquaresInCircles/Common/Charts.lean#L219).*
+*Lean: [`frameEquiv`](../../SquaresInCircles/Common/Congruence.lean#L29),
+[`frameEquiv_zero`](../../SquaresInCircles/Common/Congruence.lean#L49),
+[`frameEquiv_distance`](../../SquaresInCircles/Common/Congruence.lean#L52),
+[`pointInDirection_norm`](../../SquaresInCircles/Common/Charts.lean#L224).*
 
 ### Definition 2.6 (congruence to a model)
 
@@ -259,7 +259,7 @@ turned about $o$ by another angle: in the new frame (faint axes) the squares
 $S_3$, $S_2$, $S_1$ sit at $c_1$, $c_2$, $c_3$, the two lower squares having
 exchanged their slots.
 
-*Lean: [`Congruent`](../../SquaresInCircles/Geometry.lean#L99).*
+*Lean: [`Congruent`](../../SquaresInCircles/Geometry.lean#L103).*
 
 ### Lemma 2.7 (congruent configurations)
 
@@ -287,8 +287,8 @@ $S_1, \dots, S_n$ be the configuration.
    $M_l^\circ$, against the disjointness of the model. $\square$
 
 *Lean:
-[`Congruent.packing`](../../SquaresInCircles/Common/Congruence.lean#L171),
-[`frameEquiv_distance`](../../SquaresInCircles/Common/Congruence.lean#L47).*
+[`Congruent.packing`](../../SquaresInCircles/Common/Congruence.lean#L176),
+[`frameEquiv_distance`](../../SquaresInCircles/Common/Congruence.lean#L52).*
 
 ## 2.5 Models of axis-parallel squares
 
@@ -328,8 +328,8 @@ $|p_2| \le |y| + \frac12$, so
 $|p|^2 \le (|x| + \frac12)^2 + (|y| + \frac12)^2 \le R^2$ (Figure 2.14).
 (3) combines (1) and (2). $\square$
 
-*Lean: [`axis_disjoint`](../../SquaresInCircles/Common/Constructions.lean#L29),
-[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L38).*
+*Lean: [`axis_disjoint`](../../SquaresInCircles/Common/Constructions.lean#L34),
+[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L43).*
 
 ## 2.6 Reduction to uniqueness
 
@@ -373,8 +373,8 @@ of $\overline{S_{\sigma(i)}}$, and by Lemma 2.5 its distance from $o$ is
 $|p| \ge R_n > R$ (Figure 2.15). So $\overline{S_{\sigma(i)}}$ does not lie
 in $\overline{D}(o, R)$, a contradiction. $\square$
 
-*Lean: [`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L47),
-[`pointInDirection_norm`](../../SquaresInCircles/Common/Charts.lean#L219).*
+*Lean: [`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L52),
+[`pointInDirection_norm`](../../SquaresInCircles/Common/Charts.lean#L224).*
 
 ### Corollary 2.10 (the scheme of proof)
 
@@ -413,8 +413,8 @@ to 10, for seven squares the column packing with the heights $(-1, 0, 1)$:
 each model lies in its closed disk of radius $R_n$, and the marked corner $p$
 reaches the circle, with $|p|^2 = R_n^2$.
 
-*Lean: [`Optimum`](../../SquaresInCircles/Common/Optimum.lean#L21),
-[`Optimum.isLeast`](../../SquaresInCircles/Common/Optimum.lean#L61),
-[`Optimum.packing_iff`](../../SquaresInCircles/Common/Optimum.lean#L67),
-[`Optimum.rigid_uniqueness`](../../SquaresInCircles/Common/Optimum.lean#L73),
-[`Optimum.ofUnique`](../../SquaresInCircles/Common/Optimum.lean#L35).*
+*Lean: [`Optimum`](../../SquaresInCircles/Common/Optimum.lean#L26),
+[`Optimum.isLeast`](../../SquaresInCircles/Common/Optimum.lean#L66),
+[`Optimum.packing_iff`](../../SquaresInCircles/Common/Optimum.lean#L72),
+[`Optimum.rigid_uniqueness`](../../SquaresInCircles/Common/Optimum.lean#L78),
+[`Optimum.ofUnique`](../../SquaresInCircles/Common/Optimum.lean#L40).*

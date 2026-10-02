@@ -1,9 +1,11 @@
-import SquaresInCircles.Common.Tangents
-import SquaresInCircles.Common.Trigonometry
-import SquaresInCircles.Common.ExteriorCharts
-import SquaresInCircles.Common.DiskSupport
-import SquaresInCircles.Seven.Construction
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
+module
+
+public import SquaresInCircles.Common.Tangents
+public import SquaresInCircles.Common.Trigonometry
+public import SquaresInCircles.Common.ExteriorCharts
+public import SquaresInCircles.Common.DiskSupport
+public import SquaresInCircles.Seven.Construction
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
 
 /-!
 # Seven squares: states, labels, markers and the marker arc
@@ -18,6 +20,9 @@ stays out of the way, the far one trivially. The transverse edges are
 controlled by arcsine bounds, and the near edge by an envelope whose curvature
 is at most `-1/8`, hence below a parabola through its value and slope at `0`.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles.Seven

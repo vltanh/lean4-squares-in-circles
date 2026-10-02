@@ -1,5 +1,7 @@
-import SquaresInCircles.Common.Trigonometry
-import SquaresInCircles.Six.Separators.Axes
+module
+
+public import SquaresInCircles.Common.Trigonometry
+public import SquaresInCircles.Six.Separators.Axes
 
 /-!
 # Six squares: W on its own axis turns away from D
@@ -14,6 +16,8 @@ a quadratic in `cos d + sin d - 1` with positive coefficients. Taylor bounds
 and monotonicity then exclude both separations of W and D along a secondary
 axis.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six

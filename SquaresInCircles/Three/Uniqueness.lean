@@ -1,8 +1,10 @@
-import SquaresInCircles.Three.Containing
-import SquaresInCircles.Three.Construction
-import SquaresInCircles.Common.Sweep
-import SquaresInCircles.Common.Angles
-import SquaresInCircles.Common.Optimum
+module
+
+public import SquaresInCircles.Three.Containing
+public import SquaresInCircles.Three.Construction
+public import SquaresInCircles.Common.Sweep
+public import SquaresInCircles.Common.Angles
+public import SquaresInCircles.Common.Optimum
 
 /-!
 # Three squares: uniqueness
@@ -18,6 +20,9 @@ T.
 The file ends with `optimum`: the case as an `Optimum`, which also gives the
 lower bound.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles.Three

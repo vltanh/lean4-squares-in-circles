@@ -1,5 +1,7 @@
-import SquaresInCircles.Six.Stress.PairEstimate.Curvature
-import SquaresInCircles.Six.Stress.PairEstimate.Vertices
+module
+
+public import SquaresInCircles.Six.Stress.PairEstimate.Curvature
+public import SquaresInCircles.Six.Stress.PairEstimate.Vertices
 
 /-!
 # Six squares: the pair estimate
@@ -15,6 +17,8 @@ diagonal; a segment in `w` from there reaches the corner and axis points or the
 diagonal; and the diagonal, cut at the origin, ends at the listed points. So the
 gap is nonnegative everywhere.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six.Stress.Pair

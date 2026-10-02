@@ -1,8 +1,10 @@
-import SquaresInCircles.Five.Containing
-import SquaresInCircles.Five.Construction
-import SquaresInCircles.Common.Sweep
-import SquaresInCircles.Common.Contacts
-import SquaresInCircles.Common.Optimum
+module
+
+public import SquaresInCircles.Five.Containing
+public import SquaresInCircles.Five.Construction
+public import SquaresInCircles.Common.Sweep
+public import SquaresInCircles.Common.Contacts
+public import SquaresInCircles.Common.Optimum
 
 /-!
 # Five squares: uniqueness
@@ -17,6 +19,9 @@ than uniqueness for the disk.
 The file ends with `optimum`: the case as an `Optimum`, which also gives the
 lower bound.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles.Five

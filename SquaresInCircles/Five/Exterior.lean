@@ -1,6 +1,8 @@
-import SquaresInCircles.Common.ExteriorArcs
-import SquaresInCircles.Common.Tangents
-import SquaresInCircles.Common.Trigonometry
+module
+
+public import SquaresInCircles.Common.ExteriorArcs
+public import SquaresInCircles.Common.Tangents
+public import SquaresInCircles.Common.Trigonometry
 
 /-!
 # Five squares: the 12-gon and the exterior arcs
@@ -10,6 +12,9 @@ The tangents to `phi = 5/2` at `(1, 0)`, `(0, 1)` and `(g, g)`, with
 exterior square with its centre in `P5` holds an arc longer than 72 degrees.
 The radius is rational, and a cubic arcsine bound suffices.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles.Five

@@ -1,4 +1,6 @@
-import SquaresInCircles.Seven.Pair.Contacts
+module
+
+public import SquaresInCircles.Seven.Pair.Contacts
 
 /-!
 # Seven squares: the inward axis, positive source sign, axial target
@@ -12,6 +14,9 @@ is positive, for either target sign when the turn is nonpositive; for a side
 source it is at least the remainder plus a multiple of the turn, which vanish
 together only at the contact of a side square with the top or bottom square.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles.Seven

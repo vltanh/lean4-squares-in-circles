@@ -1,5 +1,7 @@
-import SquaresInCircles.Six.Stress.PairStress
-import SquaresInCircles.Common.Trigonometry
+module
+
+public import SquaresInCircles.Six.Stress.PairStress
+public import SquaresInCircles.Common.Trigonometry
 
 /-!
 # Six squares: the pair gap at the vertices of the sectors
@@ -18,6 +20,8 @@ corner `n = 0`, `w = -11/25` for N–W along the second axis of N, which is what
 needs `rStar` to five decimals. At each point the model is checked by rational
 arithmetic, after two squarings remove its roots.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six.Stress.Pair

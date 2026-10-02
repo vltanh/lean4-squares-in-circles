@@ -1,6 +1,8 @@
-import SquaresInCircles.Common.ExteriorArcs
-import SquaresInCircles.Common.Trigonometry
-import SquaresInCircles.Six.Constants
+module
+
+public import SquaresInCircles.Common.ExteriorArcs
+public import SquaresInCircles.Common.Trigonometry
+public import SquaresInCircles.Six.Constants
 
 /-!
 # Six squares: the exterior squares
@@ -12,6 +14,9 @@ chart angles `± A` and its lower and upper edges at `-V` and `U`, and each of
 `2A`, `A + U`, `A + V` and `U + V` exceeds `28/25`, by arcsine bounds on the
 region `(a + 1/2)² + (b + 1/2)² ≤ Q0`.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles.Six

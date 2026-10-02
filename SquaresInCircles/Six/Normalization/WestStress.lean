@@ -1,6 +1,8 @@
-import SquaresInCircles.Six.Normalization.WestPair
-import SquaresInCircles.Common.Trigonometry
-import SquaresInCircles.Six.Supports
+module
+
+public import SquaresInCircles.Six.Normalization.WestPair
+public import SquaresInCircles.Common.Trigonometry
+public import SquaresInCircles.Six.Supports
 
 /-!
 # Six squares: D is not separated along the west side of C
@@ -26,6 +28,8 @@ along the axis of D their lengths enter the terms in `u - t` and `u`. A term
 `radicalTrig_concave` holds: on `[-2/3, 0]` the length of the force on D lies
 below its tangent, and on `[0, 2/5]` below `2/5`.
 -/
+
+@[expose] public section
 
 noncomputable section
 open Set

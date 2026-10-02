@@ -1,4 +1,6 @@
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Angle
+module
+
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Angle
 
 /-!
 # Packing unit squares in a disk: the statement
@@ -37,6 +39,8 @@ turn of a frame describes the same square. It allows a rotation about the disk
 centre and a relabelling; every optimal model is symmetric under a reflection,
 so reflections add nothing.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles

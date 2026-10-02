@@ -47,9 +47,9 @@ $\xi \in (x, y)$ with $f(y) - f(x) = f'(\xi)(y - x) \ge 0$. (2) Apply (1) to
 $-f$. (3) For $x > 0$, (1) on $[0, x]$ gives $f(x) \ge f(0) = 0$. $\square$
 
 *Lean:
-[`monoOn_of_hasDeriv_nonneg`](../../SquaresInCircles/Common/Analysis.lean#L29),
-[`antiOn_of_hasDeriv_nonpos`](../../SquaresInCircles/Common/Analysis.lean#L37),
-[`nonneg_of_deriv_nonneg`](../../SquaresInCircles/Common/Analysis.lean#L47).*
+[`monoOn_of_hasDeriv_nonneg`](../../SquaresInCircles/Common/Analysis.lean#L34),
+[`antiOn_of_hasDeriv_nonpos`](../../SquaresInCircles/Common/Analysis.lean#L42),
+[`nonneg_of_deriv_nonneg`](../../SquaresInCircles/Common/Analysis.lean#L52).*
 
 ### Lemma A.2 (tangent parabolas)
 
@@ -75,7 +75,7 @@ $g_1 \le 0$ on $[l, t]$ and $g_1 \ge 0$ on $[t, u]$. By Lemma A.1 again, $g$ is
 nonincreasing on $[l, t]$ and nondecreasing on $[t, u]$. As $g(t) = 0$, we get
 $g \ge 0$ on $[l, u]$, and $g(x) \ge 0$ is the claim. $\square$
 
-*Lean: [`curvature_tangent`](../../SquaresInCircles/Common/Analysis.lean#L148).*
+*Lean: [`curvature_tangent`](../../SquaresInCircles/Common/Analysis.lean#L153).*
 
 With $\kappa = 0$, Lemma A.2 says that a function with a nonnegative second
 derivative lies above its tangent lines; applied to $-f$, that a function with
@@ -104,7 +104,7 @@ value of the parabola, $f(t) - d(t)^2/2\kappa$ (green), is positive.
 ```
 
 *Lean:
-[`positive_of_curvature`](../../SquaresInCircles/Common/Analysis.lean#L178).*
+[`positive_of_curvature`](../../SquaresInCircles/Common/Analysis.lean#L183).*
 
 ### Lemma A.4 (positivity from concavity)
 
@@ -128,7 +128,7 @@ f(x) \ge \frac{(u - x) f(l) + (x - l) f(u)}{u - l} \ge \min\left(f(l), f(u)\righ
 ```
 
 *Lean:
-[`positive_of_second_nonpos`](../../SquaresInCircles/Common/Analysis.lean#L139).*
+[`positive_of_second_nonpos`](../../SquaresInCircles/Common/Analysis.lean#L144).*
 
 ### Lemma A.5 (concave trigonometric sums)
 
@@ -150,7 +150,7 @@ $y \in [l, u] \subset [0, \frac\pi2]$ we have $\sin y \ge 0$ and
 $\cos y \ge 0$, so $e(y) \le 0$. $\square$
 
 *Lean:
-[`trig_concave_gt`](../../SquaresInCircles/Common/Trigonometry.lean#L323).*
+[`trig_concave_gt`](../../SquaresInCircles/Common/Trigonometry.lean#L328).*
 
 ## A.2 Sine and cosine
 
@@ -174,9 +174,9 @@ $\cos x \le \cos(\frac\pi2 - x) = \sin x$. (3)
 $\cos z \ge \cos\frac\pi3 = \frac12$. $\square$
 
 *Lean:
-[`sin_le_cos_of_small`](../../SquaresInCircles/Common/Trigonometry.lean#L50),
-[`cos_le_sin_of_quarter`](../../SquaresInCircles/Common/Trigonometry.lean#L54),
-[`cos_ge_half`](../../SquaresInCircles/Common/Trigonometry.lean#L59).*
+[`sin_le_cos_of_small`](../../SquaresInCircles/Common/Trigonometry.lean#L55),
+[`cos_le_sin_of_quarter`](../../SquaresInCircles/Common/Trigonometry.lean#L59),
+[`cos_ge_half`](../../SquaresInCircles/Common/Trigonometry.lean#L64).*
 
 ### Lemma A.7 (Taylor bounds)
 
@@ -221,10 +221,10 @@ are the classical bounds $\sin x \le x$, $\cos x \ge 1 - \frac{x^2}2$ and
 $\sin x \ge x - \frac{x^3}6$; $g_4, g_5, g_6, g_7 \ge 0$ are (1) to (4)
 (Figure A.4). $\square$
 
-*Lean: [`cos_upper_four`](../../SquaresInCircles/Common/Trigonometry.lean#L200),
-[`sin_upper_five`](../../SquaresInCircles/Common/Trigonometry.lean#L207),
-[`cos_lower_six`](../../SquaresInCircles/Common/Trigonometry.lean#L214),
-[`sin_lower_seven`](../../SquaresInCircles/Common/Trigonometry.lean#L221).*
+*Lean: [`cos_upper_four`](../../SquaresInCircles/Common/Trigonometry.lean#L205),
+[`sin_upper_five`](../../SquaresInCircles/Common/Trigonometry.lean#L212),
+[`cos_lower_six`](../../SquaresInCircles/Common/Trigonometry.lean#L219),
+[`sin_lower_seven`](../../SquaresInCircles/Common/Trigonometry.lean#L226).*
 
 Both sides of (1) and (3) are even functions of $x$, so these two bounds hold
 for every real $x$.
@@ -244,7 +244,7 @@ the cosine decreasing on $[0, \pi] \supset [l, u]$, so
 $\sin l \le \sin x \le \sin u$ and $\cos u \le \cos x \le \cos l$. Now apply
 Lemma A.7 (4) at $l$, (2) at $u$, (3) at $u$ and (1) at $l$. $\square$
 
-*Lean: [`trig_bracket`](../../SquaresInCircles/Common/Trigonometry.lean#L229).*
+*Lean: [`trig_bracket`](../../SquaresInCircles/Common/Trigonometry.lean#L234).*
 
 ## A.3 A peak
 
@@ -269,7 +269,7 @@ $x \in [l, u]$. If $x \le c$, then $f$ is nondecreasing on $[l, c]$ by
 Lemma A.1 (1), so $f(x) \le f(c)$. If $x \ge c$, then $f$ is nonincreasing on
 $[c, u]$ by Lemma A.1 (2), so again $f(x) \le f(c)$ (Figure A.5). $\square$
 
-*Lean: [`le_at_peak`](../../SquaresInCircles/Common/Analysis.lean#L54).*
+*Lean: [`le_at_peak`](../../SquaresInCircles/Common/Analysis.lean#L59).*
 
 In use, $d(y)$ is a product of factors of constant sign on $[l, u]$ and one
 affine factor that vanishes at $c$; Lemma F.5 is an example (Figure F.7).
@@ -328,13 +328,13 @@ $\alpha((1 - \lambda)x + \lambda y) + \beta = (1 - \lambda)(\alpha x + \beta) + 
 and $f(u, y) > 0$; by (2) again, along the segment from $(l, y)$ to $(u, y)$,
 $f(x, y) > 0$ (Figure A.6). $\square$
 
-*Lean: [`concave_of_deriv2`](../../SquaresInCircles/Common/Analysis.lean#L69),
-[`concave_gt_of_endpoints`](../../SquaresInCircles/Common/Analysis.lean#L81),
-[`affine_concave`](../../SquaresInCircles/Common/Analysis.lean#L118),
-[`concave_affine_argument`](../../SquaresInCircles/Common/Analysis.lean#L107),
-[`positive_on_separately_concave_rectangle`](../../SquaresInCircles/Common/Analysis.lean#L127),
-[`monoOn_of_hasDeriv_nonneg`](../../SquaresInCircles/Common/Analysis.lean#L29),
-[`antiOn_of_hasDeriv_nonpos`](../../SquaresInCircles/Common/Analysis.lean#L37).*
+*Lean: [`concave_of_deriv2`](../../SquaresInCircles/Common/Analysis.lean#L74),
+[`concave_gt_of_endpoints`](../../SquaresInCircles/Common/Analysis.lean#L86),
+[`affine_concave`](../../SquaresInCircles/Common/Analysis.lean#L123),
+[`concave_affine_argument`](../../SquaresInCircles/Common/Analysis.lean#L112),
+[`positive_on_separately_concave_rectangle`](../../SquaresInCircles/Common/Analysis.lean#L132),
+[`monoOn_of_hasDeriv_nonneg`](../../SquaresInCircles/Common/Analysis.lean#L34),
+[`antiOn_of_hasDeriv_nonpos`](../../SquaresInCircles/Common/Analysis.lean#L42).*
 
 In use, (4) is applied one variable at a time: a function of three angles that
 is concave in each of them on a box is positive once it is positive at the
@@ -369,12 +369,12 @@ $[0, \frac\pi2]$ both $\cos x$ and $\sin x$ are nonnegative, so $H \ge 0$
 there, and $K + H$ is concave on $[l, u]$ by (1); Lemma A.10 (2) with $m = 0$
 gives the rest, which is also the case $\alpha = 0$ of Lemma A.5. $\square$
 
-*Lean: [`harmonic`](../../SquaresInCircles/Common/Trigonometry.lean#L299),
-[`harmonic_hasDerivAt`](../../SquaresInCircles/Common/Trigonometry.lean#L302),
-[`harmonic_concave`](../../SquaresInCircles/Common/Trigonometry.lean#L315),
-[`harmonic_nonneg`](../../SquaresInCircles/Common/Trigonometry.lean#L309),
-[`harmonic_pos_of_endpoints`](../../SquaresInCircles/Common/Trigonometry.lean#L340),
-[`trig_concave_gt`](../../SquaresInCircles/Common/Trigonometry.lean#L323).*
+*Lean: [`harmonic`](../../SquaresInCircles/Common/Trigonometry.lean#L304),
+[`harmonic_hasDerivAt`](../../SquaresInCircles/Common/Trigonometry.lean#L307),
+[`harmonic_concave`](../../SquaresInCircles/Common/Trigonometry.lean#L320),
+[`harmonic_nonneg`](../../SquaresInCircles/Common/Trigonometry.lean#L314),
+[`harmonic_pos_of_endpoints`](../../SquaresInCircles/Common/Trigonometry.lean#L345),
+[`trig_concave_gt`](../../SquaresInCircles/Common/Trigonometry.lean#L328).*
 
 A typical use: a weighted sum of separating inequalities, after the supports
 of the squares, leaves a function of an angle $x$ of the form
@@ -419,10 +419,10 @@ f'' = -\left(A\cos x + B\sin x\right) + \frac R4 r - R\,\frac{p^2 - q^2}{4r^3} \
 on $[l, u]$, by $R \ge 0$, $q^2 \le p^2$ and the hypothesis. Lemma A.10 (1)
 applies. $\square$
 
-*Lean: [`radicalTrig`](../../SquaresInCircles/Common/Trigonometry.lean#L350),
-[`radical_second_identity`](../../SquaresInCircles/Common/Trigonometry.lean#L353),
-[`radical_second_derivative`](../../SquaresInCircles/Common/Trigonometry.lean#L369),
-[`radicalTrig_concave`](../../SquaresInCircles/Common/Trigonometry.lean#L391).*
+*Lean: [`radicalTrig`](../../SquaresInCircles/Common/Trigonometry.lean#L355),
+[`radical_second_identity`](../../SquaresInCircles/Common/Trigonometry.lean#L358),
+[`radical_second_derivative`](../../SquaresInCircles/Common/Trigonometry.lean#L374),
+[`radicalTrig_concave`](../../SquaresInCircles/Common/Trigonometry.lean#L396).*
 
 The radical is the length of a force that turns with $x$: a force
 $(\alpha + \gamma\sin x, \gamma\cos x)$ has length
@@ -475,16 +475,16 @@ $2a^2 + 2b^2 = 2P$ and $4a^2b^2 = Q^2 + T^2$. The first factor is at most 0 by
 hypothesis, and the second is at least 0, because $z \ge -2ab \ge -2b^2$ for
 $a \le b$. $\square$
 
-*Lean: [`harmonicArg`](../../SquaresInCircles/Common/Trigonometry.lean#L447),
-[`harmonicRoot`](../../SquaresInCircles/Common/Trigonometry.lean#L450),
-[`harmonicCurvature`](../../SquaresInCircles/Common/Trigonometry.lean#L457),
-[`harmonicRoot_second`](../../SquaresInCircles/Common/Trigonometry.lean#L475),
-[`harmonic_amplitude_bound`](../../SquaresInCircles/Common/Trigonometry.lean#L502),
-[`harmonic_length_bound`](../../SquaresInCircles/Common/Trigonometry.lean#L520),
-[`rotating_length_factor`](../../SquaresInCircles/Common/Trigonometry.lean#L533),
-[`harmonicCurvature_le_harmonic_mean`](../../SquaresInCircles/Common/Trigonometry.lean#L539),
-[`harmonic_mean_mono`](../../SquaresInCircles/Common/Trigonometry.lean#L571),
-[`harmonicCurvature_nonpos_of_opposition`](../../SquaresInCircles/Common/Trigonometry.lean#L582).*
+*Lean: [`harmonicArg`](../../SquaresInCircles/Common/Trigonometry.lean#L452),
+[`harmonicRoot`](../../SquaresInCircles/Common/Trigonometry.lean#L455),
+[`harmonicCurvature`](../../SquaresInCircles/Common/Trigonometry.lean#L462),
+[`harmonicRoot_second`](../../SquaresInCircles/Common/Trigonometry.lean#L480),
+[`harmonic_amplitude_bound`](../../SquaresInCircles/Common/Trigonometry.lean#L507),
+[`harmonic_length_bound`](../../SquaresInCircles/Common/Trigonometry.lean#L525),
+[`rotating_length_factor`](../../SquaresInCircles/Common/Trigonometry.lean#L538),
+[`harmonicCurvature_le_harmonic_mean`](../../SquaresInCircles/Common/Trigonometry.lean#L544),
+[`harmonic_mean_mono`](../../SquaresInCircles/Common/Trigonometry.lean#L576),
+[`harmonicCurvature_nonpos_of_opposition`](../../SquaresInCircles/Common/Trigonometry.lean#L587).*
 
 ![Left: from o, a constant vector of length a = 2/5 and, from its tip, a vector of length b = 1 turned by the angle x; the tip of their sum runs on the dashed circle of radius b, and its distance L from o is drawn thick. The part of the circle behind the dotted line through o perpendicular to the constant vector is orange. Right: L as a function of x on minus pi to pi, between b - a and a + b; a dashed green parabola touches its peak from below, and the curve is orange where L is at most the square root of b squared minus a squared](figures/appendix-a/turning.svg)
 
@@ -508,8 +508,8 @@ only for $y = c^2$. For every real $y$, $y \le \left(\frac{y + c^2}{2c}\right)^2
 $(y + c^2)^2 - 4c^2y = (y - c^2)^2 \ge 0$. $\square$
 
 *Lean:
-[`sqrt_le_tangent`](../../SquaresInCircles/Common/Trigonometry.lean#L609),
-[`sq_le_tangent_sq`](../../SquaresInCircles/Common/Trigonometry.lean#L614).*
+[`sqrt_le_tangent`](../../SquaresInCircles/Common/Trigonometry.lean#L614),
+[`sq_le_tangent_sq`](../../SquaresInCircles/Common/Trigonometry.lean#L619).*
 
 The square root is concave, and the right side is its tangent at $c^2$
 (Figure A.9). The estimates use it to replace the length of a force, the
@@ -549,17 +549,17 @@ to $\frac\pi2$: $\sin x \ge \frac2\pi x$. With $x = \frac t2$,
 $1 - \cos t \ge \frac{2t^2}{\pi^2} \ge \frac{t^2}5$, since
 $\pi^2 < (\frac{22}7)^2 < 10$ (Figure A.10). $\square$
 
-*Lean: [`small_angle`](../../SquaresInCircles/Common/Trigonometry.lean#L100),
-[`small_angle_nonneg`](../../SquaresInCircles/Common/Trigonometry.lean#L109),
-[`one_le_abs_cos_add_abs_sin`](../../SquaresInCircles/Common/Trigonometry.lean#L89),
-[`angularWidth_lower`](../../SquaresInCircles/Common/SeparatingAxes.lean#L276),
-[`angularWidth_neg`](../../SquaresInCircles/Common/SeparatingAxes.lean#L258),
-[`angularWidth_pi_add`](../../SquaresInCircles/Common/SeparatingAxes.lean#L261),
-[`angularWidth_half_pi_add`](../../SquaresInCircles/Common/SeparatingAxes.lean#L264),
-[`angularWidth_half_pi_sub`](../../SquaresInCircles/Common/SeparatingAxes.lean#L267),
-[`east_quadrant_trig`](../../SquaresInCircles/Common/Trigonometry.lean#L64),
-[`cos_add_sin_mono`](../../SquaresInCircles/Common/Trigonometry.lean#L79),
-[`cos_le_one_sub_fifth_sq`](../../SquaresInCircles/Common/Trigonometry.lean#L116).*
+*Lean: [`small_angle`](../../SquaresInCircles/Common/Trigonometry.lean#L105),
+[`small_angle_nonneg`](../../SquaresInCircles/Common/Trigonometry.lean#L114),
+[`one_le_abs_cos_add_abs_sin`](../../SquaresInCircles/Common/Trigonometry.lean#L94),
+[`angularWidth_lower`](../../SquaresInCircles/Common/SeparatingAxes.lean#L281),
+[`angularWidth_neg`](../../SquaresInCircles/Common/SeparatingAxes.lean#L263),
+[`angularWidth_pi_add`](../../SquaresInCircles/Common/SeparatingAxes.lean#L266),
+[`angularWidth_half_pi_add`](../../SquaresInCircles/Common/SeparatingAxes.lean#L269),
+[`angularWidth_half_pi_sub`](../../SquaresInCircles/Common/SeparatingAxes.lean#L272),
+[`east_quadrant_trig`](../../SquaresInCircles/Common/Trigonometry.lean#L69),
+[`cos_add_sin_mono`](../../SquaresInCircles/Common/Trigonometry.lean#L84),
+[`cos_le_one_sub_fifth_sq`](../../SquaresInCircles/Common/Trigonometry.lean#L121).*
 
 ![Left: the width omega(t) on minus pi to pi, a curve of period pi/2 with arches between one half and the square root of 2 over 2, above the dashed level one half and above the dashed orange curve (cos t + sin t)/2, which it meets from 0 to pi/2. Right: cos t on minus pi to pi between the dashed parabolas 1 - t^2/2 below and 1 - t^2/5 above; all three meet at 0, and at plus and minus pi the upper parabola passes just above -1](figures/appendix-a/small-angles.svg)
 
@@ -610,13 +610,13 @@ $-\sin x + \frac{89}{100}x \le 0$ on $[0, \frac45]$, by (1); so it is
 nonincreasing there, and its values at $q \le t$ compare as claimed. $\square$
 
 *Lean:
-[`small_polynomial_trig`](../../SquaresInCircles/Common/Trigonometry.lean#L621),
-[`halfRatio`](../../SquaresInCircles/Common/Trigonometry.lean#L619),
-[`halfRatio_identities`](../../SquaresInCircles/Common/Trigonometry.lean#L640),
-[`halfRatio_lower`](../../SquaresInCircles/Common/Trigonometry.lean#L650),
-[`halfRatio_upper`](../../SquaresInCircles/Common/Trigonometry.lean#L680),
-[`halfRatio_shift`](../../SquaresInCircles/Common/Trigonometry.lean#L709),
-[`cosine_difference_lower`](../../SquaresInCircles/Common/Trigonometry.lean#L694).*
+[`small_polynomial_trig`](../../SquaresInCircles/Common/Trigonometry.lean#L626),
+[`halfRatio`](../../SquaresInCircles/Common/Trigonometry.lean#L624),
+[`halfRatio_identities`](../../SquaresInCircles/Common/Trigonometry.lean#L645),
+[`halfRatio_lower`](../../SquaresInCircles/Common/Trigonometry.lean#L655),
+[`halfRatio_upper`](../../SquaresInCircles/Common/Trigonometry.lean#L685),
+[`halfRatio_shift`](../../SquaresInCircles/Common/Trigonometry.lean#L714),
+[`cosine_difference_lower`](../../SquaresInCircles/Common/Trigonometry.lean#L699).*
 
 ![Left: the upper half of the unit circle about o with the point u(t) for t = 4/5; the chord from (-1, 0) to u(t), blue, makes the angle t/2 with the axis and crosses the vertical line through o at the height tan(t/2), marked green; the chord from u(t) to (1, 0), orange, is perpendicular to it, and a dashed segment of length sin t drops from u(t) to the axis. Right: tan(t/2)/t for t from 0 to 4/5, rising from one half and staying below 11/20, both levels dashed](figures/appendix-a/half-angles.svg)
 

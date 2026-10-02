@@ -1,5 +1,7 @@
-import SquaresInCircles.Six.Separators.Axes
-import SquaresInCircles.Six.Separators.Profiles
+module
+
+public import SquaresInCircles.Six.Separators.Axes
+public import SquaresInCircles.Six.Separators.Profiles
 
 /-!
 # Six squares: D and S along a secondary axis
@@ -15,6 +17,8 @@ of C, and leaves a reserve that is concave in `d` and in `s` on the triangle
 the difference of the centres on the two secondary axes sum to more than twice
 the threshold `(1 + cos r + sin r)/2`, and one of the two axes separates.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six

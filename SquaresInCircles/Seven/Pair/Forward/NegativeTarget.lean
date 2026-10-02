@@ -1,5 +1,7 @@
-import SquaresInCircles.Seven.Pair.LabelSegments
-import SquaresInCircles.Seven.Pair.Contacts
+module
+
+public import SquaresInCircles.Seven.Pair.LabelSegments
+public import SquaresInCircles.Seven.Pair.Contacts
 
 /-!
 # Seven squares: the forward axis, negative target sign
@@ -13,6 +15,9 @@ the target exceeds its value at the transition state, where the force along the
 tangent of the disk is nonnegative. The sum vanishes only at an axial source and
 a side target.
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles.Seven
 open Boundary

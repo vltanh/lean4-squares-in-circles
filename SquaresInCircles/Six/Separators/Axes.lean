@@ -1,6 +1,8 @@
-import SquaresInCircles.Six.Normalization.PinAxes
-import SquaresInCircles.Six.Normalization.Basic
-import SquaresInCircles.Common.Trigonometry
+module
+
+public import SquaresInCircles.Six.Normalization.PinAxes
+public import SquaresInCircles.Six.Normalization.Basic
+public import SquaresInCircles.Common.Trigonometry
 
 /-!
 # Six squares: the separating axes of consecutive exterior squares
@@ -18,6 +20,8 @@ makes the secondary projection the larger one. The chord between the pins rules
 out the axes `-e₂`, so W and D are separated along `e₂` of W or of D, and so
 are D and S when `s ≤ d`.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six

@@ -1,5 +1,7 @@
-import SquaresInCircles.Seven.Pair.BoundaryProfiles
-import SquaresInCircles.Seven.Pair.Contacts
+module
+
+public import SquaresInCircles.Seven.Pair.BoundaryProfiles
+public import SquaresInCircles.Seven.Pair.Contacts
 
 /-!
 # Seven squares: the inward axis with opposite signs, minima on the boundary
@@ -17,6 +19,9 @@ positive at `v = 0` by Taylor bounds, and at `v = 3/10` because it is concave in
 `z`, zero at `0` and positive at `5/8`. The diagonal junction uses one positive
 value and monotonicity.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles.Seven

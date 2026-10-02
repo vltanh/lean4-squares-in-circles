@@ -1,4 +1,6 @@
-import SquaresInCircles.Seven.Pair.LabelSegments
+module
+
+public import SquaresInCircles.Seven.Pair.LabelSegments
 
 /-!
 # Seven squares: profiles along the boundary of the label regions
@@ -9,6 +11,9 @@ monotonicity. The values at the diagonal corner come from rational brackets of
 `π`, of the transition state and of the corner, and from Taylor bounds of `sin`
 and `cos`.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles.Seven

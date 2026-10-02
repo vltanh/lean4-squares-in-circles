@@ -1,4 +1,6 @@
-import SquaresInCircles.Common.Congruence
+module
+
+public import SquaresInCircles.Common.Congruence
 
 /-!
 # Contacts
@@ -8,6 +10,9 @@ exactly 1 the squares are side-neighbours, by the supporting functional of
 `support_separator`. Squares with parallel sides read in one frame; squares with
 the same centre and the same axes are the same square.
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles
 

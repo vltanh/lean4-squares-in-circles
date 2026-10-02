@@ -1,6 +1,8 @@
-import SquaresInCircles.Six.Stress.StressBound
-import SquaresInCircles.Six.Equality.Reflection
-import SquaresInCircles.Common.Optimum
+module
+
+public import SquaresInCircles.Six.Stress.StressBound
+public import SquaresInCircles.Six.Equality.Reflection
+public import SquaresInCircles.Common.Optimum
 
 /-!
 # Six squares: uniqueness
@@ -17,6 +19,8 @@ permuted, and the diagonal symmetry of the model absorbs the reflection.
 The file ends with `optimum`: the case as an `Optimum`, which also gives the
 lower bound.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six

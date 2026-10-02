@@ -1,4 +1,6 @@
-import SquaresInCircles.Six.Supports
+module
+
+public import SquaresInCircles.Six.Supports
 
 /-!
 # Six squares: the chord term
@@ -14,6 +16,8 @@ largest weight `9/20`, it is therefore convex on `[1/2, 5/3]`, where
 its chords, and Taylor polynomials at the ends bound it by
 `3/40 - (3/10) min (q, 1)` on `[1/2, 3/2]` and, beyond `157/200`, by `-19/100`.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six.Wings

@@ -1,4 +1,6 @@
-import SquaresInCircles.Common.ExteriorArcs
+module
+
+public import SquaresInCircles.Common.ExteriorArcs
 
 /-!
 # Four squares: exterior arcs
@@ -8,6 +10,9 @@ touches `phi = 2` only there. On the circle of radius `1/2`, every exterior
 square in the closed disk of radius `sqrt 2` holds an arc of at least 90
 degrees, strictly more unless its centre is on the diamond's edge.
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles.Four
 

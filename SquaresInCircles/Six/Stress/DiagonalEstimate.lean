@@ -1,4 +1,6 @@
-import SquaresInCircles.Six.Stress.PairStress
+module
+
+public import SquaresInCircles.Six.Stress.PairStress
 
 /-!
 # Six squares: the diagonal estimate
@@ -20,6 +22,8 @@ case `|δ| ≥ 29/100`, so `|w + s| ≥ 2|δ| - 4/7` is large; with the radius a
 pieces of the range of `|δ|` by first harmonics in `|δ|` plus affine functions,
 which are concave and positive at the ends of their pieces.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six.Stress

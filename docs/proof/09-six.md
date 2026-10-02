@@ -68,19 +68,19 @@ $N$, and $S$ with $E$. The turned square $D$ touches $W$ and $S$ with two of its
 vertices (large dots). Six points lie on the circle (small dots): the far
 corners of $N$, $E$, $W$ and $S$, and two vertices of $D$.
 
-*Lean: [`Six.hStar`](../../SquaresInCircles/Geometry.lean#L184),
-[`Six.AStar`](../../SquaresInCircles/Geometry.lean#L188),
-[`Six.BStar`](../../SquaresInCircles/Geometry.lean#L191),
-[`Six.sStar`](../../SquaresInCircles/Geometry.lean#L198),
-[`Six.tStar`](../../SquaresInCircles/Geometry.lean#L202),
-[`Six.dStar`](../../SquaresInCircles/Geometry.lean#L206),
-[`Six.qStar`](../../SquaresInCircles/Geometry.lean#L209),
-[`Six.radius`](../../SquaresInCircles/Geometry.lean#L213),
-[`Six.diagonalSquare`](../../SquaresInCircles/Geometry.lean#L216),
-[`Six.model`](../../SquaresInCircles/Geometry.lean#L227),
-[`Six.model_packing`](../../SquaresInCircles/Six/Construction.lean#L160),
-[`Six.uniqueness`](../../SquaresInCircles/Six/Uniqueness.lean#L79),
-[`Six.optimum`](../../SquaresInCircles/Six/Uniqueness.lean#L100).*
+*Lean: [`Six.hStar`](../../SquaresInCircles/Geometry.lean#L188),
+[`Six.AStar`](../../SquaresInCircles/Geometry.lean#L192),
+[`Six.BStar`](../../SquaresInCircles/Geometry.lean#L195),
+[`Six.sStar`](../../SquaresInCircles/Geometry.lean#L202),
+[`Six.tStar`](../../SquaresInCircles/Geometry.lean#L206),
+[`Six.dStar`](../../SquaresInCircles/Geometry.lean#L210),
+[`Six.qStar`](../../SquaresInCircles/Geometry.lean#L213),
+[`Six.radius`](../../SquaresInCircles/Geometry.lean#L217),
+[`Six.diagonalSquare`](../../SquaresInCircles/Geometry.lean#L220),
+[`Six.model`](../../SquaresInCircles/Geometry.lean#L231),
+[`Six.model_packing`](../../SquaresInCircles/Six/Construction.lean#L164),
+[`Six.uniqueness`](../../SquaresInCircles/Six/Uniqueness.lean#L83),
+[`Six.optimum`](../../SquaresInCircles/Six/Uniqueness.lean#L104).*
 
 *Remarks.* (i) The model is symmetric under the reflection
 $(x, y) \mapsto (y, x)$ in the diagonal, which exchanges $N$ with $E$ and $W$
@@ -213,19 +213,19 @@ the origin of the far corner of $E$, of the far corner of $S$ (by symmetry,
 the same as that of $W$) and of a far vertex of $D$, with the legs of the
 right triangles; the three points lie on the circle of radius $R_6$.
 
-*Lean: [`Six.sStar_polynomial`](../../SquaresInCircles/Six/Constants.lean#L101),
-[`Six.sStar_bounds`](../../SquaresInCircles/Six/Constants.lean#L121),
-[`Six.tStar_bounds`](../../SquaresInCircles/Six/Constants.lean#L136),
-[`Six.dStar_pos`](../../SquaresInCircles/Six/Constants.lean#L143),
-[`Six.qStar_bounds`](../../SquaresInCircles/Six/Constants.lean#L151),
-[`Six.radius_bounds`](../../SquaresInCircles/Six/Constants.lean#L161),
-[`Six.east_radius_identity`](../../SquaresInCircles/Six/Constants.lean#L168),
-[`Six.west_radius_identity`](../../SquaresInCircles/Six/Constants.lean#L175),
-[`Six.diagonal_radius_identity`](../../SquaresInCircles/Six/Constants.lean#L184),
-[`Six.rhoStar`](../../SquaresInCircles/Six/Constants.lean#L204),
-[`Six.rhoStar_identity`](../../SquaresInCircles/Six/Constants.lean#L261),
-[`Six.rhoStar_bounds`](../../SquaresInCircles/Six/Constants.lean#L254),
-[`Six.rhoStar_eq_two_h_d`](../../SquaresInCircles/Six/Constants.lean#L268).*
+*Lean: [`Six.sStar_polynomial`](../../SquaresInCircles/Six/Constants.lean#L105),
+[`Six.sStar_bounds`](../../SquaresInCircles/Six/Constants.lean#L125),
+[`Six.tStar_bounds`](../../SquaresInCircles/Six/Constants.lean#L140),
+[`Six.dStar_pos`](../../SquaresInCircles/Six/Constants.lean#L147),
+[`Six.qStar_bounds`](../../SquaresInCircles/Six/Constants.lean#L155),
+[`Six.radius_bounds`](../../SquaresInCircles/Six/Constants.lean#L165),
+[`Six.east_radius_identity`](../../SquaresInCircles/Six/Constants.lean#L172),
+[`Six.west_radius_identity`](../../SquaresInCircles/Six/Constants.lean#L179),
+[`Six.diagonal_radius_identity`](../../SquaresInCircles/Six/Constants.lean#L188),
+[`Six.rhoStar`](../../SquaresInCircles/Six/Constants.lean#L208),
+[`Six.rhoStar_identity`](../../SquaresInCircles/Six/Constants.lean#L265),
+[`Six.rhoStar_bounds`](../../SquaresInCircles/Six/Constants.lean#L258),
+[`Six.rhoStar_eq_two_h_d`](../../SquaresInCircles/Six/Constants.lean#L272).*
 
 ### Proposition 9.3 (construction)
 
@@ -312,13 +312,13 @@ $1.95$, outside that circle, of radius about $1.63$. Right: the two distances
 against $s$, while $D$ stays clear of $C$ ($s \le 0.09$); they are equal at
 $s_*$, where both are $R_6$.
 
-*Lean: [`Six.model_packing`](../../SquaresInCircles/Six/Construction.lean#L160),
-[`Six.axisCenters_separated`](../../SquaresInCircles/Six/Construction.lean#L29),
-[`Six.axisCenters_contained`](../../SquaresInCircles/Six/Construction.lean#L40),
-[`Six.diagonal_contained`](../../SquaresInCircles/Six/Construction.lean#L68),
-[`Six.diagonal_open_upper`](../../SquaresInCircles/Six/Construction.lean#L89),
-[`Six.central_diagonal_disjoint`](../../SquaresInCircles/Six/Construction.lean#L110),
-[`Six.model_reaches`](../../SquaresInCircles/Six/Uniqueness.lean#L91).*
+*Lean: [`Six.model_packing`](../../SquaresInCircles/Six/Construction.lean#L164),
+[`Six.axisCenters_separated`](../../SquaresInCircles/Six/Construction.lean#L33),
+[`Six.axisCenters_contained`](../../SquaresInCircles/Six/Construction.lean#L44),
+[`Six.diagonal_contained`](../../SquaresInCircles/Six/Construction.lean#L72),
+[`Six.diagonal_open_upper`](../../SquaresInCircles/Six/Construction.lean#L93),
+[`Six.central_diagonal_disjoint`](../../SquaresInCircles/Six/Construction.lean#L114),
+[`Six.model_reaches`](../../SquaresInCircles/Six/Uniqueness.lean#L95).*
 
 ## 9.2 The containing square
 
@@ -337,16 +337,16 @@ Let $Q_0 = 2.85118$, $R_0 = \sqrt{Q_0}$, and
 We write $\bar R = 1.6886$, $\bar\rho = 1.11282$ and $\bar c = 0.11282$ for
 the decimal upper bounds of $R_0$, $\rho_0$ and $c_0$ (Lemma 9.5).
 
-*Lean: [`Six.Q0`](../../SquaresInCircles/Six/Constants.lean#L318),
-[`Six.R0`](../../SquaresInCircles/Six/Constants.lean#L321),
-[`Six.rho0`](../../SquaresInCircles/Six/Constants.lean#L325),
-[`Six.c0`](../../SquaresInCircles/Six/Constants.lean#L328),
-[`Six.coreRadius`](../../SquaresInCircles/Six/Constants.lean#L332),
-[`Six.aMin`](../../SquaresInCircles/Six/Constants.lean#L335),
-[`Six.U0`](../../SquaresInCircles/Six/Constants.lean#L339),
-[`Six.radiusBound`](../../SquaresInCircles/Six/Constants.lean#L419),
-[`Six.rhoBound`](../../SquaresInCircles/Six/Constants.lean#L421),
-[`Six.coreUpper`](../../SquaresInCircles/Six/Constants.lean#L423).*
+*Lean: [`Six.Q0`](../../SquaresInCircles/Six/Constants.lean#L322),
+[`Six.R0`](../../SquaresInCircles/Six/Constants.lean#L325),
+[`Six.rho0`](../../SquaresInCircles/Six/Constants.lean#L329),
+[`Six.c0`](../../SquaresInCircles/Six/Constants.lean#L332),
+[`Six.coreRadius`](../../SquaresInCircles/Six/Constants.lean#L336),
+[`Six.aMin`](../../SquaresInCircles/Six/Constants.lean#L339),
+[`Six.U0`](../../SquaresInCircles/Six/Constants.lean#L343),
+[`Six.radiusBound`](../../SquaresInCircles/Six/Constants.lean#L423),
+[`Six.rhoBound`](../../SquaresInCircles/Six/Constants.lean#L425),
+[`Six.coreUpper`](../../SquaresInCircles/Six/Constants.lean#L427).*
 
 ### Lemma 9.5 (the ceiling)
 
@@ -376,18 +376,18 @@ other square has its near edge at least $r_0$ from the disk centre, so its
 radial coordinate is at least $a_0$ and its transverse coordinate at most $U_0$
 (Lemma 9.16).
 
-*Lean: [`Six.qStar_lt_Q0`](../../SquaresInCircles/Six/Constants.lean#L342),
-[`Six.rhoStar_lt_rho0`](../../SquaresInCircles/Six/Constants.lean#L378),
-[`Six.R0_bounds`](../../SquaresInCircles/Six/Constants.lean#L354),
-[`Six.rho0_bounds`](../../SquaresInCircles/Six/Constants.lean#L370),
-[`Six.c0_bounds`](../../SquaresInCircles/Six/Constants.lean#L381),
-[`Six.coreRadius_bounds`](../../SquaresInCircles/Six/Constants.lean#L387),
-[`Six.aMin_bounds`](../../SquaresInCircles/Six/Constants.lean#L401),
-[`Six.U0_upper`](../../SquaresInCircles/Six/Constants.lean#L412),
-[`Six.ceiling_bounds`](../../SquaresInCircles/Six/Constants.lean#L427),
-[`Six.rho0_identity`](../../SquaresInCircles/Six/Constants.lean#L362),
-[`Six.c0_add_coreRadius`](../../SquaresInCircles/Six/Constants.lean#L393),
-[`Six.aMin_eq_coreRadius_add_half`](../../SquaresInCircles/Six/Constants.lean#L397).*
+*Lean: [`Six.qStar_lt_Q0`](../../SquaresInCircles/Six/Constants.lean#L346),
+[`Six.rhoStar_lt_rho0`](../../SquaresInCircles/Six/Constants.lean#L382),
+[`Six.R0_bounds`](../../SquaresInCircles/Six/Constants.lean#L358),
+[`Six.rho0_bounds`](../../SquaresInCircles/Six/Constants.lean#L374),
+[`Six.c0_bounds`](../../SquaresInCircles/Six/Constants.lean#L385),
+[`Six.coreRadius_bounds`](../../SquaresInCircles/Six/Constants.lean#L391),
+[`Six.aMin_bounds`](../../SquaresInCircles/Six/Constants.lean#L405),
+[`Six.U0_upper`](../../SquaresInCircles/Six/Constants.lean#L416),
+[`Six.ceiling_bounds`](../../SquaresInCircles/Six/Constants.lean#L431),
+[`Six.rho0_identity`](../../SquaresInCircles/Six/Constants.lean#L366),
+[`Six.c0_add_coreRadius`](../../SquaresInCircles/Six/Constants.lean#L397),
+[`Six.aMin_eq_coreRadius_add_half`](../../SquaresInCircles/Six/Constants.lean#L401).*
 
 ### Lemma 9.6 (exterior arcs)
 
@@ -485,8 +485,8 @@ the circle. The central square misses the circle. $W$ and $N$, and $S$ and
 $E$, meet on the circle; the gaps around $D$ and between $E$ and $N$ are about
 $6.2°$ and $9.0°$.
 
-*Lean: [`Six.exterior_arc`](../../SquaresInCircles/Six/Exterior.lean#L169),
-[`Six.arc_length`](../../SquaresInCircles/Six/Exterior.lean#L144).*
+*Lean: [`Six.exterior_arc`](../../SquaresInCircles/Six/Exterior.lean#L174),
+[`Six.arc_length`](../../SquaresInCircles/Six/Exterior.lean#L149).*
 
 ### Proposition 9.7 (the containing square)
 
@@ -501,8 +501,8 @@ arcs in pairwise disjoint open squares contradict
 [Lemma 3.16](03-tools.md#lemma-316-angular-budget). $\square$
 
 *Lean:
-[`Six.exists_containing`](../../SquaresInCircles/Six/Containing.lean#L29),
-[`Six.exists_unique_containing`](../../SquaresInCircles/Six/Containing.lean#L40).*
+[`Six.exists_containing`](../../SquaresInCircles/Six/Containing.lean#L34),
+[`Six.exists_unique_containing`](../../SquaresInCircles/Six/Containing.lean#L45).*
 
 From now on we read the packing in a frame of its containing square, as a
 packing about the origin.
@@ -530,9 +530,9 @@ one, which is
 [Definition 2.6](02-preliminaries.md#definition-26-congruence-to-a-model) with
 the new configuration as the model. $\square$
 
-*Lean: [`NormalizedFrame`](../../SquaresInCircles/Common/Frames.lean#L144),
-[`normalize_with_containing`](../../SquaresInCircles/Common/Frames.lean#L158),
-[`Six.Normalization.normalize_frame_of_ceiling`](../../SquaresInCircles/Six/Containing.lean#L49).*
+*Lean: [`NormalizedFrame`](../../SquaresInCircles/Common/Frames.lean#L149),
+[`normalize_with_containing`](../../SquaresInCircles/Common/Frames.lean#L163),
+[`Six.Normalization.normalize_frame_of_ceiling`](../../SquaresInCircles/Six/Containing.lean#L54).*
 
 ### Definition 9.9 (squares in a frame)
 
@@ -568,13 +568,13 @@ $b = 0.3$: its centre lies $a$ along $u(t)$ and $b$ along $u(t + \frac\pi2)$
 from the origin, and its frame is its own axis $e_1$ and its secondary axis
 $e_2$.
 
-*Lean: [`orientedSquare`](../../SquaresInCircles/Common/Congruence.lean#L87),
-[`centerX`](../../SquaresInCircles/Common/Congruence.lean#L94),
-[`centerY`](../../SquaresInCircles/Common/Congruence.lean#L96),
-[`Six.Normalization.ContainedChart`](../../SquaresInCircles/Six/Normalization/Basic.lean#L40),
-[`ExteriorChart`](../../SquaresInCircles/Common/ExteriorCharts.lean#L17),
-[`angularWidth`](../../SquaresInCircles/Common/SeparatingAxes.lean#L250),
-[`SAT.threshold`](../../SquaresInCircles/Common/SeparatingAxes.lean#L202).*
+*Lean: [`orientedSquare`](../../SquaresInCircles/Common/Congruence.lean#L92),
+[`centerX`](../../SquaresInCircles/Common/Congruence.lean#L99),
+[`centerY`](../../SquaresInCircles/Common/Congruence.lean#L101),
+[`Six.Normalization.ContainedChart`](../../SquaresInCircles/Six/Normalization/Basic.lean#L44),
+[`ExteriorChart`](../../SquaresInCircles/Common/ExteriorCharts.lean#L22),
+[`angularWidth`](../../SquaresInCircles/Common/SeparatingAxes.lean#L255),
+[`SAT.threshold`](../../SquaresInCircles/Common/SeparatingAxes.lean#L207).*
 
 ### Lemma 9.10 (charts in the ceiling)
 
@@ -601,11 +601,11 @@ $R^2 = Q_0$ give $a \le \sqrt{Q_0 - \frac14} - \frac12 = \rho_0$ and
 $a^2 + b^2 \le \rho_0^2$. $\square$
 
 *Lean:
-[`SquareChart.exteriorChart_signed`](../../SquaresInCircles/Common/ExteriorCharts.lean#L58),
-[`Six.Normalization.chart_same_open_oriented`](../../SquaresInCircles/Six/Normalization/Basic.lean#L162),
-[`Six.Normalization.oriented_contained_of_chart`](../../SquaresInCircles/Six/Normalization/Basic.lean#L262),
-[`Six.Normalization.ContainedChart.a_le_rho0`](../../SquaresInCircles/Six/Normalization/Basic.lean#L52),
-[`ExteriorChart.center_sq_le`](../../SquaresInCircles/Common/ExteriorCharts.lean#L41).*
+[`SquareChart.exteriorChart_signed`](../../SquaresInCircles/Common/ExteriorCharts.lean#L63),
+[`Six.Normalization.chart_same_open_oriented`](../../SquaresInCircles/Six/Normalization/Basic.lean#L166),
+[`Six.Normalization.oriented_contained_of_chart`](../../SquaresInCircles/Six/Normalization/Basic.lean#L266),
+[`Six.Normalization.ContainedChart.a_le_rho0`](../../SquaresInCircles/Six/Normalization/Basic.lean#L56),
+[`ExteriorChart.center_sq_le`](../../SquaresInCircles/Common/ExteriorCharts.lean#L46).*
 
 ### Lemma 9.11 (separating axes of two squares)
 
@@ -689,16 +689,16 @@ $U$, $c_V$ lies on the side perpendicular to $e^V_1$, and the two squares are
 separated along $e^V_1$ (dashed line).
 
 *Lean:
-[`oriented_separating_axes`](../../SquaresInCircles/Common/SeparatingAxes.lean#L356),
-[`SAT.separating_axes`](../../SquaresInCircles/Common/SeparatingAxes.lean#L205),
-[`oriented_pair_threshold`](../../SquaresInCircles/Common/SeparatingAxes.lean#L312),
-[`pair_frameX_left`](../../SquaresInCircles/Common/SeparatingAxes.lean#L319),
-[`pair_frameY_left`](../../SquaresInCircles/Common/SeparatingAxes.lean#L327),
-[`pair_frameX_right`](../../SquaresInCircles/Common/SeparatingAxes.lean#L336),
-[`pair_frameY_right`](../../SquaresInCircles/Common/SeparatingAxes.lean#L344),
-[`Six.directed_pair_separator`](../../SquaresInCircles/Six/Normalization/DirectedAxes.lean#L212),
-[`Six.pairNormal_widths`](../../SquaresInCircles/Six/Normalization/DirectedAxes.lean#L110),
-[`Six.axis_points_to_pin`](../../SquaresInCircles/Six/Normalization/DirectedAxes.lean#L145).*
+[`oriented_separating_axes`](../../SquaresInCircles/Common/SeparatingAxes.lean#L361),
+[`SAT.separating_axes`](../../SquaresInCircles/Common/SeparatingAxes.lean#L210),
+[`oriented_pair_threshold`](../../SquaresInCircles/Common/SeparatingAxes.lean#L317),
+[`pair_frameX_left`](../../SquaresInCircles/Common/SeparatingAxes.lean#L324),
+[`pair_frameY_left`](../../SquaresInCircles/Common/SeparatingAxes.lean#L332),
+[`pair_frameX_right`](../../SquaresInCircles/Common/SeparatingAxes.lean#L341),
+[`pair_frameY_right`](../../SquaresInCircles/Common/SeparatingAxes.lean#L349),
+[`Six.directed_pair_separator`](../../SquaresInCircles/Six/Normalization/DirectedAxes.lean#L216),
+[`Six.pairNormal_widths`](../../SquaresInCircles/Six/Normalization/DirectedAxes.lean#L114),
+[`Six.axis_points_to_pin`](../../SquaresInCircles/Six/Normalization/DirectedAxes.lean#L149).*
 
 ### Definition 9.12 (separators of the containing square)
 
@@ -721,10 +721,10 @@ along the east, west, north or south side of $C$ when the corresponding margin
 is nonnegative.
 
 *Lean:
-[`Six.Normalization.CentralAxis`](../../SquaresInCircles/Six/Normalization/Basic.lean#L272),
-[`Six.Normalization.centralMargin`](../../SquaresInCircles/Six/Normalization/Basic.lean#L284),
-[`Six.Normalization.centralNormal`](../../SquaresInCircles/Six/Normalization/Basic.lean#L277),
-[`Six.Normalization.centralTransverse`](../../SquaresInCircles/Six/Normalization/Basic.lean#L279).*
+[`Six.Normalization.CentralAxis`](../../SquaresInCircles/Six/Normalization/Basic.lean#L276),
+[`Six.Normalization.centralMargin`](../../SquaresInCircles/Six/Normalization/Basic.lean#L288),
+[`Six.Normalization.centralNormal`](../../SquaresInCircles/Six/Normalization/Basic.lean#L281),
+[`Six.Normalization.centralTransverse`](../../SquaresInCircles/Six/Normalization/Basic.lean#L283).*
 
 ### Lemma 9.13 (separators of the containing square)
 
@@ -754,8 +754,8 @@ other sides of $C$ work in the same way. The eighth way, along $-e_1$, never
 occurs: it would put $C$, and with it the origin, beyond the far edge of $T$.
 
 *Lean:
-[`Six.Normalization.central_separators_complete`](../../SquaresInCircles/Six/Normalization/Basic.lean#L320),
-[`Six.Normalization.centralNormal_le_width`](../../SquaresInCircles/Six/Normalization/Basic.lean#L302).*
+[`Six.Normalization.central_separators_complete`](../../SquaresInCircles/Six/Normalization/Basic.lean#L324),
+[`Six.Normalization.centralNormal_le_width`](../../SquaresInCircles/Six/Normalization/Basic.lean#L306).*
 
 ### Lemma 9.14 (shallow support lines)
 
@@ -773,8 +773,8 @@ then $q_1 x + q_2 y \le c_x x + c_y y + \frac12(|x| + |y|)$.
 The proof is given in [Appendix B](appendix-b.md#b1-proof-of-lemma-914).
 
 *Lean:
-[`Six.Normalization.shallow_support`](../../SquaresInCircles/Six/Containing.lean#L119),
-[`Six.Normalization.FreeRegime`](../../SquaresInCircles/Six/Containing.lean#L112).*
+[`Six.Normalization.shallow_support`](../../SquaresInCircles/Six/Containing.lean#L124),
+[`Six.Normalization.FreeRegime`](../../SquaresInCircles/Six/Containing.lean#L117).*
 
 ### Proposition 9.15 (the central box)
 
@@ -841,9 +841,9 @@ none reaches the arc (Lemma 9.14). The east side of $C$ (black, dashed) is too
 far out for any square.
 
 *Lean:
-[`Six.Normalization.central_box`](../../SquaresInCircles/Six/Containing.lean#L335),
-[`Six.Normalization.free_point_outside`](../../SquaresInCircles/Six/Containing.lean#L175),
-[`Six.Normalization.east_separator_negative`](../../SquaresInCircles/Six/Normalization/Basic.lean#L371).*
+[`Six.Normalization.central_box`](../../SquaresInCircles/Six/Containing.lean#L340),
+[`Six.Normalization.free_point_outside`](../../SquaresInCircles/Six/Containing.lean#L180),
+[`Six.Normalization.east_separator_negative`](../../SquaresInCircles/Six/Normalization/Basic.lean#L375).*
 
 ## 9.3 Pins and labels
 
@@ -896,12 +896,12 @@ their centres at least $a_0 = r_0 + \frac12$ along their own axes (dashed, for
 $S$).
 
 *Lean:
-[`Six.Normalization.avoidsCore_of_disjoint`](../../SquaresInCircles/Six/Normalization/Basic.lean#L109),
-[`Six.Normalization.AvoidsCore`](../../SquaresInCircles/Six/Normalization/Basic.lean#L45),
-[`Six.Normalization.ContainedChart.aMin_le`](../../SquaresInCircles/Six/Normalization/Basic.lean#L74),
-[`Six.Normalization.ContainedChart.u_le_U0`](../../SquaresInCircles/Six/Normalization/Basic.lean#L89),
-[`Six.Normalization.ContainedChart.u_lt_half`](../../SquaresInCircles/Six/Normalization/Basic.lean#L56),
-[`Six.Normalization.secondary_separators_fail`](../../SquaresInCircles/Six/Normalization/Basic.lean#L393).*
+[`Six.Normalization.avoidsCore_of_disjoint`](../../SquaresInCircles/Six/Normalization/Basic.lean#L113),
+[`Six.Normalization.AvoidsCore`](../../SquaresInCircles/Six/Normalization/Basic.lean#L49),
+[`Six.Normalization.ContainedChart.aMin_le`](../../SquaresInCircles/Six/Normalization/Basic.lean#L78),
+[`Six.Normalization.ContainedChart.u_le_U0`](../../SquaresInCircles/Six/Normalization/Basic.lean#L93),
+[`Six.Normalization.ContainedChart.u_lt_half`](../../SquaresInCircles/Six/Normalization/Basic.lean#L60),
+[`Six.Normalization.secondary_separators_fail`](../../SquaresInCircles/Six/Normalization/Basic.lean#L397).*
 
 ### Lemma 9.17 (deep caps)
 
@@ -934,12 +934,12 @@ line; it falls below $\frac12$ before $t = 0.203$ and below $r_0$ before
 $t = \frac25$, which gives (1) and (2).
 
 *Lean:
-[`Six.Normalization.deep_cap_bounds`](../../SquaresInCircles/Six/Normalization/Caps.lean#L330),
-[`Six.Normalization.cap_piercing`](../../SquaresInCircles/Six/Normalization/Caps.lean#L414),
-[`Six.Normalization.cap_angle_small`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L26),
-[`Six.Normalization.deep_cap_faces`](../../SquaresInCircles/Six/Normalization/Caps.lean#L471),
-[`Six.Normalization.capDepth`](../../SquaresInCircles/Six/Normalization/Caps.lean#L40),
-[`Six.Normalization.cap_support_bound_signed`](../../SquaresInCircles/Six/Normalization/Caps.lean#L105).*
+[`Six.Normalization.deep_cap_bounds`](../../SquaresInCircles/Six/Normalization/Caps.lean#L334),
+[`Six.Normalization.cap_piercing`](../../SquaresInCircles/Six/Normalization/Caps.lean#L418),
+[`Six.Normalization.cap_angle_small`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L30),
+[`Six.Normalization.deep_cap_faces`](../../SquaresInCircles/Six/Normalization/Caps.lean#L475),
+[`Six.Normalization.capDepth`](../../SquaresInCircles/Six/Normalization/Caps.lean#L44),
+[`Six.Normalization.cap_support_bound_signed`](../../SquaresInCircles/Six/Normalization/Caps.lean#L109).*
 
 ### Definition 9.18 (pins)
 
@@ -968,10 +968,10 @@ $\frac{5\pi}{12}$, $\frac\pi2$, $\frac{5\pi}{12}$ apart from $S$ to $E$, $E$ to
 $N$ and $N$ to $W$; the chords between them are used in §9.5 and §9.6.
 
 *Lean:
-[`Six.Normalization.pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L32),
-[`Six.Normalization.pinAngle`](../../SquaresInCircles/Six/Normalization/Pins.lean#L98),
-[`Six.Normalization.pin_diagonal`](../../SquaresInCircles/Six/Normalization/Pins.lean#L117),
-[`Six.Normalization.mirrorPin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L91).*
+[`Six.Normalization.pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L36),
+[`Six.Normalization.pinAngle`](../../SquaresInCircles/Six/Normalization/Pins.lean#L102),
+[`Six.Normalization.pin_diagonal`](../../SquaresInCircles/Six/Normalization/Pins.lean#L121),
+[`Six.Normalization.mirrorPin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L95).*
 
 ### Lemma 9.19 (sixty degrees)
 
@@ -1028,10 +1028,10 @@ both points a square would have to reach out beyond both, and its far corner
 would leave the disk.
 
 *Lean:
-[`Six.sixty_pin_cover`](../../SquaresInCircles/Six/Normalization/Pins.lean#L317),
-[`Six.sixty_coordinates_cover`](../../SquaresInCircles/Six/Normalization/Pins.lean#L269),
-[`Six.sixty_cross_obstruction`](../../SquaresInCircles/Six/Normalization/Pins.lean#L237),
-[`Six.sixty_cross_quadratic`](../../SquaresInCircles/Six/Normalization/Pins.lean#L230).*
+[`Six.sixty_pin_cover`](../../SquaresInCircles/Six/Normalization/Pins.lean#L321),
+[`Six.sixty_coordinates_cover`](../../SquaresInCircles/Six/Normalization/Pins.lean#L273),
+[`Six.sixty_cross_obstruction`](../../SquaresInCircles/Six/Normalization/Pins.lean#L241),
+[`Six.sixty_cross_quadratic`](../../SquaresInCircles/Six/Normalization/Pins.lean#L234).*
 
 ### Lemma 9.20 (squares separated along their own axis)
 
@@ -1054,14 +1054,14 @@ holds $p_W$.
 The proof is given in [Appendix B](appendix-b.md#b3-proof-of-lemma-920).
 
 *Lean:
-[`Six.own_east_window`](../../SquaresInCircles/Six/Normalization/Pins.lean#L455),
-[`Six.own_east_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L645),
-[`Six.own_west_lower_window`](../../SquaresInCircles/Six/Normalization/Pins.lean#L528),
-[`Six.own_west_pins`](../../SquaresInCircles/Six/Normalization/Pins.lean#L734),
-[`Six.own_west_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L713),
-[`Six.own_west_pin_upper`](../../SquaresInCircles/Six/Normalization/Pins.lean#L553),
-[`Six.western_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L679),
-[`Six.west_cap_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L772).*
+[`Six.own_east_window`](../../SquaresInCircles/Six/Normalization/Pins.lean#L459),
+[`Six.own_east_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L649),
+[`Six.own_west_lower_window`](../../SquaresInCircles/Six/Normalization/Pins.lean#L532),
+[`Six.own_west_pins`](../../SquaresInCircles/Six/Normalization/Pins.lean#L738),
+[`Six.own_west_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L717),
+[`Six.own_west_pin_upper`](../../SquaresInCircles/Six/Normalization/Pins.lean#L557),
+[`Six.western_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L683),
+[`Six.west_cap_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L776).*
 
 ### Proposition 9.21 (every exterior square holds a pin)
 
@@ -1112,17 +1112,17 @@ $p_W$ or $p_D$. In both cases (W) holds, as $|v| < \frac25 < \frac58$.
 $\square$
 
 *Lean:
-[`Six.five_pin_cover`](../../SquaresInCircles/Six/Normalization/Pins.lean#L1036),
-[`Six.pin_location_of_separation`](../../SquaresInCircles/Six/Normalization/Pins.lean#L1012),
-[`Six.PinLocation`](../../SquaresInCircles/Six/Normalization/Pins.lean#L846),
-[`Six.EastPinData`](../../SquaresInCircles/Six/Normalization/Pins.lean#L819),
-[`Six.NorthPinData`](../../SquaresInCircles/Six/Normalization/Pins.lean#L824),
-[`Six.WestPinData`](../../SquaresInCircles/Six/Normalization/Pins.lean#L830),
-[`Six.SouthPinData`](../../SquaresInCircles/Six/Normalization/Pins.lean#L838),
-[`Six.east_cap_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L752),
-[`Six.west_cap_pins`](../../SquaresInCircles/Six/Normalization/Pins.lean#L803),
-[`Six.west_cap_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L772),
-[`Six.western_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L679).*
+[`Six.five_pin_cover`](../../SquaresInCircles/Six/Normalization/Pins.lean#L1040),
+[`Six.pin_location_of_separation`](../../SquaresInCircles/Six/Normalization/Pins.lean#L1016),
+[`Six.PinLocation`](../../SquaresInCircles/Six/Normalization/Pins.lean#L850),
+[`Six.EastPinData`](../../SquaresInCircles/Six/Normalization/Pins.lean#L823),
+[`Six.NorthPinData`](../../SquaresInCircles/Six/Normalization/Pins.lean#L828),
+[`Six.WestPinData`](../../SquaresInCircles/Six/Normalization/Pins.lean#L834),
+[`Six.SouthPinData`](../../SquaresInCircles/Six/Normalization/Pins.lean#L842),
+[`Six.east_cap_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L756),
+[`Six.west_cap_pins`](../../SquaresInCircles/Six/Normalization/Pins.lean#L807),
+[`Six.west_cap_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L776),
+[`Six.western_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L683).*
 
 ### Proposition 9.22 (labels)
 
@@ -1182,16 +1182,16 @@ nonnegative first coordinates; so $X$ is $W$ or $D$. Likewise only $D$ and $S$
 can be separated along the south side. $\square$
 
 *Lean:
-[`Six.Normalization.pinPacking_of_ceiling`](../../SquaresInCircles/Six/Normalization/Complete.lean#L180),
-[`Six.Normalization.PinPacking`](../../SquaresInCircles/Six/Normalization/Complete.lean#L59),
-[`Six.Normalization.pin_labels_of_covering`](../../SquaresInCircles/Six/Normalization/Pins.lean#L58),
-[`Six.labelled_window`](../../SquaresInCircles/Six/Normalization/Pins.lean#L1119),
-[`Six.window_for_unique_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L1070),
-[`Six.allowed_axis_of_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L1185),
-[`Six.Normalization.modelPhase`](../../SquaresInCircles/Six/Normalization/Pins.lean#L39),
-[`Six.Normalization.windowLower`](../../SquaresInCircles/Six/Normalization/Pins.lean#L44),
-[`Six.Normalization.windowUpper`](../../SquaresInCircles/Six/Normalization/Pins.lean#L45),
-[`Six.Normalization.allowed`](../../SquaresInCircles/Six/Normalization/Pins.lean#L48).*
+[`Six.Normalization.pinPacking_of_ceiling`](../../SquaresInCircles/Six/Normalization/Complete.lean#L184),
+[`Six.Normalization.PinPacking`](../../SquaresInCircles/Six/Normalization/Complete.lean#L63),
+[`Six.Normalization.pin_labels_of_covering`](../../SquaresInCircles/Six/Normalization/Pins.lean#L62),
+[`Six.labelled_window`](../../SquaresInCircles/Six/Normalization/Pins.lean#L1123),
+[`Six.window_for_unique_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L1074),
+[`Six.allowed_axis_of_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L1189),
+[`Six.Normalization.modelPhase`](../../SquaresInCircles/Six/Normalization/Pins.lean#L43),
+[`Six.Normalization.windowLower`](../../SquaresInCircles/Six/Normalization/Pins.lean#L48),
+[`Six.Normalization.windowUpper`](../../SquaresInCircles/Six/Normalization/Pins.lean#L49),
+[`Six.Normalization.allowed`](../../SquaresInCircles/Six/Normalization/Pins.lean#L52).*
 
 ## 9.4 Stresses
 
@@ -1225,13 +1225,13 @@ of an edge between two squares is that of Lemma 9.11 for their relative turn
 $\delta$, $\tau_e = \tau(\delta)$, and its normal is the separating axis.
 
 *Lean: the stresses are written out one by one, for instance
-[`Six.westForceC`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L613),
-[`Six.westForceW`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L615),
-[`Six.westForceD`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L618),
-[`Six.westThreshold`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L623),
-[`Six.Stress.Pair.northForce`](../../SquaresInCircles/Six/Stress/PairStress.lean#L68),
-[`Six.Stress.Pair.westForce`](../../SquaresInCircles/Six/Stress/PairStress.lean#L72),
-[`Six.Stress.Pair.threshold`](../../SquaresInCircles/Six/Stress/PairStress.lean#L77).*
+[`Six.westForceC`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L617),
+[`Six.westForceW`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L619),
+[`Six.westForceD`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L622),
+[`Six.westThreshold`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L627),
+[`Six.Stress.Pair.northForce`](../../SquaresInCircles/Six/Stress/PairStress.lean#L72),
+[`Six.Stress.Pair.westForce`](../../SquaresInCircles/Six/Stress/PairStress.lean#L76),
+[`Six.Stress.Pair.threshold`](../../SquaresInCircles/Six/Stress/PairStress.lean#L81).*
 
 ### Lemma 9.24 (balance)
 
@@ -1273,9 +1273,9 @@ each force is at most $\rho$, so $1 \le 2\rho$; at $R = \frac{\sqrt5}2$, where
 $\rho = \frac12$, both bounds are attained, by the $2 \times 1$ rectangle.
 
 *Lean: the instances
-[`Six.west_force_balance`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L640),
-[`Six.Stress.edge_work_identity`](../../SquaresInCircles/Six/Stress/StressBound.lean#L79),
-[`Six.Equality.model_of_contacts`](../../SquaresInCircles/Six/Equality/Contacts.lean#L68).*
+[`Six.west_force_balance`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L644),
+[`Six.Stress.edge_work_identity`](../../SquaresInCircles/Six/Stress/StressBound.lean#L83),
+[`Six.Equality.model_of_contacts`](../../SquaresInCircles/Six/Equality/Contacts.lean#L72).*
 
 ### Lemma 9.25 (supports of a square in a disk)
 
@@ -1339,14 +1339,14 @@ Right, a force close to the axis, here with $V = \frac15U$: the cap bound,
 attained at the same square.
 
 *Lean:
-[`box_vertex_support`](../../SquaresInCircles/Common/DiskSupport.lean#L81),
-[`Six.local_vertex_support`](../../SquaresInCircles/Six/Supports.lean#L28),
-[`Six.chart_radial_work`](../../SquaresInCircles/Six/Supports.lean#L113),
-[`dot_le_radius`](../../SquaresInCircles/Common/DiskSupport.lean#L47),
-[`radial_sq_le_of_phi`](../../SquaresInCircles/Common/Basic.lean#L159),
-[`Six.cap_linear_upper`](../../SquaresInCircles/Six/Supports.lean#L101),
-[`Six.disk_corner_support`](../../SquaresInCircles/Six/Supports.lean#L85),
-[`Six.Stress.center_dot_project`](../../SquaresInCircles/Six/Stress/StressBound.lean#L37).*
+[`box_vertex_support`](../../SquaresInCircles/Common/DiskSupport.lean#L86),
+[`Six.local_vertex_support`](../../SquaresInCircles/Six/Supports.lean#L32),
+[`Six.chart_radial_work`](../../SquaresInCircles/Six/Supports.lean#L117),
+[`dot_le_radius`](../../SquaresInCircles/Common/DiskSupport.lean#L52),
+[`radial_sq_le_of_phi`](../../SquaresInCircles/Common/Basic.lean#L164),
+[`Six.cap_linear_upper`](../../SquaresInCircles/Six/Supports.lean#L105),
+[`Six.disk_corner_support`](../../SquaresInCircles/Six/Supports.lean#L89),
+[`Six.Stress.center_dot_project`](../../SquaresInCircles/Six/Stress/StressBound.lean#L41).*
 
 ### Lemma 9.26 (supports in the ceiling)
 
@@ -1372,16 +1372,16 @@ Let $(t, a, b)$ be a chart in the ceiling.
 The proof is given in [Appendix B](appendix-b.md#b4-proof-of-lemma-926).
 
 *Lean:
-[`Six.radial_transverse_quadratic`](../../SquaresInCircles/Six/Supports.lean#L164),
-[`Six.cone_support`](../../SquaresInCircles/Six/Supports.lean#L176),
-[`Six.soft_support`](../../SquaresInCircles/Six/Supports.lean#L187),
-[`Six.wide_support`](../../SquaresInCircles/Six/Supports.lean#L205),
-[`Six.narrow_support`](../../SquaresInCircles/Six/Supports.lean#L223),
-[`Six.chord_support`](../../SquaresInCircles/Six/Supports.lean#L60),
-[`Six.chordMajorant`](../../SquaresInCircles/Six/Supports.lean#L55),
-[`Six.center_corner`](../../SquaresInCircles/Six/Supports.lean#L267),
-[`Six.center_face`](../../SquaresInCircles/Six/Supports.lean#L275),
-[`Six.vertex_support`](../../SquaresInCircles/Six/Supports.lean#L34).*
+[`Six.radial_transverse_quadratic`](../../SquaresInCircles/Six/Supports.lean#L168),
+[`Six.cone_support`](../../SquaresInCircles/Six/Supports.lean#L180),
+[`Six.soft_support`](../../SquaresInCircles/Six/Supports.lean#L191),
+[`Six.wide_support`](../../SquaresInCircles/Six/Supports.lean#L209),
+[`Six.narrow_support`](../../SquaresInCircles/Six/Supports.lean#L227),
+[`Six.chord_support`](../../SquaresInCircles/Six/Supports.lean#L64),
+[`Six.chordMajorant`](../../SquaresInCircles/Six/Supports.lean#L59),
+[`Six.center_corner`](../../SquaresInCircles/Six/Supports.lean#L271),
+[`Six.center_face`](../../SquaresInCircles/Six/Supports.lean#L279),
+[`Six.vertex_support`](../../SquaresInCircles/Six/Supports.lean#L38).*
 
 ### Proposition 9.27 (the stress of the model)
 
@@ -1469,19 +1469,19 @@ $4 + 2r_* + m_*(1 + 2h) \approx 6.886$ of the stress of the model and the sum
 $2V_1(R) + 2V_2(R) + K_*\rho(R)$ of the supports at the radius $R$. They meet
 at $R_6$; below it the supports cannot pay for the thresholds.
 
-*Lean: [`Six.rStar`](../../SquaresInCircles/Six/Constants.lean#L194),
-[`Six.kStar`](../../SquaresInCircles/Six/Constants.lean#L196),
-[`Six.mStar`](../../SquaresInCircles/Six/Constants.lean#L198),
-[`Six.diagonalK`](../../SquaresInCircles/Six/Constants.lean#L200),
-[`Six.pairBase`](../../SquaresInCircles/Six/Constants.lean#L207),
-[`Six.rStar_bounds`](../../SquaresInCircles/Six/Constants.lean#L212),
-[`Six.kStar_bounds`](../../SquaresInCircles/Six/Constants.lean#L218),
-[`Six.mStar_bounds`](../../SquaresInCircles/Six/Constants.lean#L229),
-[`Six.diagonalK_bounds`](../../SquaresInCircles/Six/Constants.lean#L238),
-[`Six.pairBase_bounds`](../../SquaresInCircles/Six/Constants.lean#L247),
-[`Six.radius_mul_north_length`](../../SquaresInCircles/Six/Constants.lean#L281),
-[`Six.radius_mul_west_length`](../../SquaresInCircles/Six/Constants.lean#L294),
-[`Six.pairBase_diagonal_identity`](../../SquaresInCircles/Six/Constants.lean#L310).*
+*Lean: [`Six.rStar`](../../SquaresInCircles/Six/Constants.lean#L198),
+[`Six.kStar`](../../SquaresInCircles/Six/Constants.lean#L200),
+[`Six.mStar`](../../SquaresInCircles/Six/Constants.lean#L202),
+[`Six.diagonalK`](../../SquaresInCircles/Six/Constants.lean#L204),
+[`Six.pairBase`](../../SquaresInCircles/Six/Constants.lean#L211),
+[`Six.rStar_bounds`](../../SquaresInCircles/Six/Constants.lean#L216),
+[`Six.kStar_bounds`](../../SquaresInCircles/Six/Constants.lean#L222),
+[`Six.mStar_bounds`](../../SquaresInCircles/Six/Constants.lean#L233),
+[`Six.diagonalK_bounds`](../../SquaresInCircles/Six/Constants.lean#L242),
+[`Six.pairBase_bounds`](../../SquaresInCircles/Six/Constants.lean#L251),
+[`Six.radius_mul_north_length`](../../SquaresInCircles/Six/Constants.lean#L285),
+[`Six.radius_mul_west_length`](../../SquaresInCircles/Six/Constants.lean#L298),
+[`Six.pairBase_diagonal_identity`](../../SquaresInCircles/Six/Constants.lean#L314).*
 
 ## 9.5 Normalized packings
 
@@ -1510,12 +1510,12 @@ $(\eta + \frac12, 0)$ in the turned square; turning back gives the claim.
 $\square$
 
 *Lean:
-[`Six.Normalization.PinPacking.side_angle`](../../SquaresInCircles/Six/Normalization/Complete.lean#L383),
-[`Six.Normalization.PinPacking.matching_cardinal_angle`](../../SquaresInCircles/Six/Normalization/Complete.lean#L394),
-[`Six.Normalization.PinPacking.cardinal_piercing`](../../SquaresInCircles/Six/Normalization/Complete.lean#L464),
-[`Six.Normalization.PinPacking.cardinal_cap_depth`](../../SquaresInCircles/Six/Normalization/Complete.lean#L496),
-[`Six.Normalization.cardinal_margin_local`](../../SquaresInCircles/Six/Normalization/Complete.lean#L346),
-[`Six.Normalization.phase_eq_of_short_difference`](../../SquaresInCircles/Six/Normalization/Basic.lean#L205).*
+[`Six.Normalization.PinPacking.side_angle`](../../SquaresInCircles/Six/Normalization/Complete.lean#L387),
+[`Six.Normalization.PinPacking.matching_cardinal_angle`](../../SquaresInCircles/Six/Normalization/Complete.lean#L398),
+[`Six.Normalization.PinPacking.cardinal_piercing`](../../SquaresInCircles/Six/Normalization/Complete.lean#L468),
+[`Six.Normalization.PinPacking.cardinal_cap_depth`](../../SquaresInCircles/Six/Normalization/Complete.lean#L500),
+[`Six.Normalization.cardinal_margin_local`](../../SquaresInCircles/Six/Normalization/Complete.lean#L350),
+[`Six.Normalization.phase_eq_of_short_difference`](../../SquaresInCircles/Six/Normalization/Basic.lean#L209).*
 
 ### Lemma 9.29 (the reflection in the diagonal)
 
@@ -1544,14 +1544,14 @@ $\frac{5\pi}2 - t_D < \frac{5\pi}4$. As the reflection is its own inverse, a
 packing is congruent to the reflection of its own image. $\square$
 
 *Lean:
-[`Six.Normalization.PinPacking.mirror`](../../SquaresInCircles/Six/Normalization/Complete.lean#L213),
-[`Six.Normalization.mirroredPhase`](../../SquaresInCircles/Six/Normalization/Complete.lean#L192),
-[`Six.Normalization.mirrored_window`](../../SquaresInCircles/Six/Normalization/Complete.lean#L205),
-[`Six.Normalization.normalize_diagonal_half`](../../SquaresInCircles/Six/Normalization/Complete.lean#L290),
-[`Six.square_diagonal_membership`](../../SquaresInCircles/Six/Normalization/Pins.lean#L179),
-[`reflectDiagonalSquare`](../../SquaresInCircles/Common/Frames.lean#L204),
-[`packing_reflectDiagonal`](../../SquaresInCircles/Common/Frames.lean#L236),
-[`CongruentOrDiagonal`](../../SquaresInCircles/Common/Frames.lean#L281).*
+[`Six.Normalization.PinPacking.mirror`](../../SquaresInCircles/Six/Normalization/Complete.lean#L217),
+[`Six.Normalization.mirroredPhase`](../../SquaresInCircles/Six/Normalization/Complete.lean#L196),
+[`Six.Normalization.mirrored_window`](../../SquaresInCircles/Six/Normalization/Complete.lean#L209),
+[`Six.Normalization.normalize_diagonal_half`](../../SquaresInCircles/Six/Normalization/Complete.lean#L294),
+[`Six.square_diagonal_membership`](../../SquaresInCircles/Six/Normalization/Pins.lean#L183),
+[`reflectDiagonalSquare`](../../SquaresInCircles/Common/Frames.lean#L209),
+[`packing_reflectDiagonal`](../../SquaresInCircles/Common/Frames.lean#L241),
+[`CongruentOrDiagonal`](../../SquaresInCircles/Common/Frames.lean#L286).*
 
 ### Lemma 9.30 (two choices)
 
@@ -1575,10 +1575,10 @@ other than the own axis and the matching side, the south side for $D$, does not
 occur. $\square$
 
 *Lean:
-[`Six.Normalization.PinPacking.one_per_side`](../../SquaresInCircles/Six/Normalization/Complete.lean#L482),
-[`Six.Normalization.PinPacking.diagonal_south_negative`](../../SquaresInCircles/Six/Normalization/Complete.lean#L406),
-[`Six.Normalization.PinPacking.two_choice`](../../SquaresInCircles/Six/Normalization/Complete.lean#L421),
-[`Six.Normalization.matchingCardinal`](../../SquaresInCircles/Six/Normalization/Complete.lean#L311).*
+[`Six.Normalization.PinPacking.one_per_side`](../../SquaresInCircles/Six/Normalization/Complete.lean#L486),
+[`Six.Normalization.PinPacking.diagonal_south_negative`](../../SquaresInCircles/Six/Normalization/Complete.lean#L410),
+[`Six.Normalization.PinPacking.two_choice`](../../SquaresInCircles/Six/Normalization/Complete.lean#L425),
+[`Six.Normalization.matchingCardinal`](../../SquaresInCircles/Six/Normalization/Complete.lean#L315).*
 
 ### Lemma 9.31 (turned pairs)
 
@@ -1619,11 +1619,11 @@ $-e^V_2$. Here $t' - t = 0.75$, and $U$ and $V$ are separated along $e^U_2$
 (dashed).
 
 *Lean:
-[`Six.turned_pair_secondary`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L103),
-[`Six.primary_projection_bound`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L57),
-[`Six.forward_transverse_bound`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L78),
-[`Six.west_difference_trig`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L87),
-[`Six.west_secondary_axes`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L157).*
+[`Six.turned_pair_secondary`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L107),
+[`Six.primary_projection_bound`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L61),
+[`Six.forward_transverse_bound`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L82),
+[`Six.west_difference_trig`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L91),
+[`Six.west_secondary_axes`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L161).*
 
 ### Lemma 9.32 (W comes before D)
 
@@ -1659,10 +1659,10 @@ chord away from $p_W$. So, with $t_D \le t_W$, neither secondary axis could
 separate $D$ from $W$.
 
 *Lean:
-[`Six.west_before_diagonal`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L176),
-[`Six.Normalization.PinPacking.west_before_diagonal`](../../SquaresInCircles/Six/Normalization/Complete.lean#L514),
-[`Six.west_diagonal_pin_order`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L42),
-[`Six.west_diagonal_projection_difference`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L32).*
+[`Six.west_before_diagonal`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L180),
+[`Six.Normalization.PinPacking.west_before_diagonal`](../../SquaresInCircles/Six/Normalization/Complete.lean#L518),
+[`Six.west_diagonal_pin_order`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L46),
+[`Six.west_diagonal_projection_difference`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L36).*
 
 ### Proposition 9.33 (the west stress)
 
@@ -1680,10 +1680,10 @@ side of $C$, then $W$ and $D$ are not disjoint.
 The proof is given in [Appendix B](appendix-b.md#b5-proof-of-proposition-933).
 
 *Lean:
-[`Six.west_cardinal_impossible`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L788),
-[`Six.west_geometric_defect_nonpos`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L732),
-[`Six.westStressW_positive`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L545),
-[`Six.westStressD_positive`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L578).*
+[`Six.west_cardinal_impossible`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L792),
+[`Six.west_geometric_defect_nonpos`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L736),
+[`Six.westStressW_positive`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L549),
+[`Six.westStressD_positive`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L582).*
 
 This is the first stress argument of the chapter. By Lemma 9.31, $W$ and $D$
 are separated along the secondary axis of one of them. The three separating
@@ -1725,11 +1725,11 @@ otherwise; by Lemma 9.30 a square on its own axis is separated from $C$ along
 its own axis.
 
 *Lean:
-[`Six.Normalization.NormalizedPacking`](../../SquaresInCircles/Six/Normalization/Complete.lean#L605),
-[`Six.Normalization.NormalizedPacking.deviation`](../../SquaresInCircles/Six/Normalization/Complete.lean#L612),
-[`Six.Normalization.NormalizedPacking.diagonalAngle`](../../SquaresInCircles/Six/Normalization/Complete.lean#L615),
-[`Six.Normalization.PinPacking.ownAxis`](../../SquaresInCircles/Six/Normalization/Complete.lean#L440),
-[`Six.Normalization.PinPacking.own_of_ownAxis`](../../SquaresInCircles/Six/Normalization/Complete.lean#L454).*
+[`Six.Normalization.NormalizedPacking`](../../SquaresInCircles/Six/Normalization/Complete.lean#L609),
+[`Six.Normalization.NormalizedPacking.deviation`](../../SquaresInCircles/Six/Normalization/Complete.lean#L616),
+[`Six.Normalization.NormalizedPacking.diagonalAngle`](../../SquaresInCircles/Six/Normalization/Complete.lean#L619),
+[`Six.Normalization.PinPacking.ownAxis`](../../SquaresInCircles/Six/Normalization/Complete.lean#L444),
+[`Six.Normalization.PinPacking.own_of_ownAxis`](../../SquaresInCircles/Six/Normalization/Complete.lean#L458).*
 
 ### Proposition 9.35 (normalization)
 
@@ -1788,19 +1788,19 @@ $\frac12 + c_x$ or $\frac12 + c_y$, at least $\frac12$, and Lemma 9.17 (2) gives
 $0.203$. $\square$
 
 *Lean:
-[`Six.Normalization.normalize_of_ceiling`](../../SquaresInCircles/Six/Normalization/Complete.lean#L649),
-[`Six.Normalization.normalize`](../../SquaresInCircles/Six/Normalization/Complete.lean#L662),
-[`Six.Normalization.PinPacking.diagonal_west_negative`](../../SquaresInCircles/Six/Normalization/Complete.lean#L559),
-[`Six.Normalization.PinPacking.diagonal_own_axis`](../../SquaresInCircles/Six/Normalization/Complete.lean#L594),
-[`Six.Normalization.NormalizedPacking.primary_order`](../../SquaresInCircles/Six/Normalization/Complete.lean#L617),
-[`Six.Normalization.NormalizedPacking.diagonal_angle_pos`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L136),
-[`Six.diagonal_pin_transverse_lower`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L94),
-[`Six.diagonal_gap_nonpos`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L112),
-[`Six.Normalization.own_sub_west_margin`](../../SquaresInCircles/Six/Normalization/Basic.lean#L296),
-[`Six.Normalization.NormalizedPacking.deviation_windows`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L346),
-[`Six.Normalization.NormalizedPacking.cardinal_angle`](../../SquaresInCircles/Six/Normalization/Complete.lean#L640),
-[`Six.Normalization.NormalizedPacking.east_cardinal_angle_small`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L42),
-[`Six.Normalization.NormalizedPacking.north_cardinal_angle_small`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L54).*
+[`Six.Normalization.normalize_of_ceiling`](../../SquaresInCircles/Six/Normalization/Complete.lean#L653),
+[`Six.Normalization.normalize`](../../SquaresInCircles/Six/Normalization/Complete.lean#L666),
+[`Six.Normalization.PinPacking.diagonal_west_negative`](../../SquaresInCircles/Six/Normalization/Complete.lean#L563),
+[`Six.Normalization.PinPacking.diagonal_own_axis`](../../SquaresInCircles/Six/Normalization/Complete.lean#L598),
+[`Six.Normalization.NormalizedPacking.primary_order`](../../SquaresInCircles/Six/Normalization/Complete.lean#L621),
+[`Six.Normalization.NormalizedPacking.diagonal_angle_pos`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L140),
+[`Six.diagonal_pin_transverse_lower`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L98),
+[`Six.diagonal_gap_nonpos`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L116),
+[`Six.Normalization.own_sub_west_margin`](../../SquaresInCircles/Six/Normalization/Basic.lean#L300),
+[`Six.Normalization.NormalizedPacking.deviation_windows`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L350),
+[`Six.Normalization.NormalizedPacking.cardinal_angle`](../../SquaresInCircles/Six/Normalization/Complete.lean#L644),
+[`Six.Normalization.NormalizedPacking.east_cardinal_angle_small`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L46),
+[`Six.Normalization.NormalizedPacking.north_cardinal_angle_small`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L58).*
 
 ![A normalized packing that is not the model: the containing square C with its centre in the small box, and the five other squares E, N, W, D, S at angles within their windows, each holding its pin on the dotted circle of radius 9/10; E, N and W are on their matching sides, D and S on their own axes. At each square a short dotted ray points in the direction 0, 90, 180, 180 or 270 degrees, an arrow along the own axis of the square, and a small arc between them is labelled with the angle e, n, w, d or s](figures/09-six/normalized.svg)
 
@@ -1877,13 +1877,13 @@ inner product with the four vectors $-e^W_1$, $-e^W_2$, $e^N_1$, $-e^N_2$
 along one of them; likewise for $S$ and $E$.
 
 *Lean:
-[`Six.Normalization.NormalizedPacking.northWest_separator`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L365),
-[`Six.Normalization.NormalizedPacking.eastSouth_separator`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L379),
-[`Six.Normalization.NormalizedPacking.westDiagonal_separator`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L417),
-[`Six.Normalization.NormalizedPacking.diagonalSouth_separator`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L458),
-[`Six.northWestSigns`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L265),
-[`Six.eastSouthSigns`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L266),
-[`Six.preferred_separators_complete`](../../SquaresInCircles/Six/Normalization/DirectedAxes.lean#L226).*
+[`Six.Normalization.NormalizedPacking.northWest_separator`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L369),
+[`Six.Normalization.NormalizedPacking.eastSouth_separator`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L383),
+[`Six.Normalization.NormalizedPacking.westDiagonal_separator`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L421),
+[`Six.Normalization.NormalizedPacking.diagonalSouth_separator`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L462),
+[`Six.northWestSigns`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L269),
+[`Six.eastSouthSigns`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L270),
+[`Six.preferred_separators_complete`](../../SquaresInCircles/Six/Normalization/DirectedAxes.lean#L230).*
 
 ### Lemma 9.37 (secondary axes)
 
@@ -1900,11 +1900,11 @@ $D$ and $S$ are separated along $e^D_2$ or $e^S_2$.
 The proof is given in [Appendix C](appendix-c.md#c1-proof-of-lemma-937).
 
 *Lean:
-[`Six.normalized_outward_axes_excluded`](../../SquaresInCircles/Six/Separators/Axes.lean#L55),
-[`Six.secondary_of_inward_primary`](../../SquaresInCircles/Six/Separators/Axes.lean#L115),
-[`Six.secondary_of_separating_axis`](../../SquaresInCircles/Six/Separators/Axes.lean#L147),
-[`Six.westDiagonal_secondary`](../../SquaresInCircles/Six/Separators/Axes.lean#L189),
-[`Six.south_secondary_choice_of_angle`](../../SquaresInCircles/Six/Separators/Axes.lean#L214).*
+[`Six.normalized_outward_axes_excluded`](../../SquaresInCircles/Six/Separators/Axes.lean#L59),
+[`Six.secondary_of_inward_primary`](../../SquaresInCircles/Six/Separators/Axes.lean#L119),
+[`Six.secondary_of_separating_axis`](../../SquaresInCircles/Six/Separators/Axes.lean#L151),
+[`Six.westDiagonal_secondary`](../../SquaresInCircles/Six/Separators/Axes.lean#L193),
+[`Six.south_secondary_choice_of_angle`](../../SquaresInCircles/Six/Separators/Axes.lean#L218).*
 
 ### Lemma 9.38 (W on its own axis turns away from D)
 
@@ -1913,9 +1913,9 @@ If $W$ is not separated from $C$ along the west side of $C$, then $w < 0$.
 The proof is given in [Appendix C](appendix-c.md#c2-proof-of-lemma-938).
 
 *Lean:
-[`Six.own_west_negative`](../../SquaresInCircles/Six/Wings/WestSign.lean#L218),
-[`Six.diagonal_transverse_profile`](../../SquaresInCircles/Six/Wings/WestSign.lean#L26),
-[`Six.west_nonnegative_impossible`](../../SquaresInCircles/Six/Wings/WestSign.lean#L170).*
+[`Six.own_west_negative`](../../SquaresInCircles/Six/Wings/WestSign.lean#L222),
+[`Six.diagonal_transverse_profile`](../../SquaresInCircles/Six/Wings/WestSign.lean#L30),
+[`Six.west_nonnegative_impossible`](../../SquaresInCircles/Six/Wings/WestSign.lean#L174).*
 
 ### Proposition 9.39 (the angle of D)
 
@@ -1924,9 +1924,9 @@ $d > \frac12$.
 The proof is given in [Appendix C](appendix-c.md#c3-proof-of-proposition-939).
 
 *Lean:
-[`Six.normalized_diagonal_gt_half`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L422),
-[`Six.own_west_diagonal_gt_half`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L437),
-[`Six.cardinal_west_diagonal_gt_half`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L389).*
+[`Six.normalized_diagonal_gt_half`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L426),
+[`Six.own_west_diagonal_gt_half`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L441),
+[`Six.cardinal_west_diagonal_gt_half`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L393).*
 
 ### Lemma 9.40 (transverse profiles)
 
@@ -1939,10 +1939,10 @@ The proof is given in [Appendix C](appendix-c.md#c3-proof-of-proposition-939).
 The proof is given in [Appendix C](appendix-c.md#c4-proof-of-lemma-940).
 
 *Lean:
-[`Six.normalized_diagonal_profile`](../../SquaresInCircles/Six/Separators/Profiles.lean#L229),
-[`Six.normalized_diagonal_transverse_small`](../../SquaresInCircles/Six/Separators/Profiles.lean#L260),
-[`Six.cardinal_west_negative_transverse`](../../SquaresInCircles/Six/Separators/Profiles.lean#L51),
-[`Six.own_west_transverse_small_angle`](../../SquaresInCircles/Six/Separators/Profiles.lean#L103).*
+[`Six.normalized_diagonal_profile`](../../SquaresInCircles/Six/Separators/Profiles.lean#L233),
+[`Six.normalized_diagonal_transverse_small`](../../SquaresInCircles/Six/Separators/Profiles.lean#L264),
+[`Six.cardinal_west_negative_transverse`](../../SquaresInCircles/Six/Separators/Profiles.lean#L55),
+[`Six.own_west_transverse_small_angle`](../../SquaresInCircles/Six/Separators/Profiles.lean#L107).*
 
 ### Proposition 9.41 (D and S along a secondary axis)
 
@@ -1951,10 +1951,10 @@ $D$ and $S$ are separated along $e^D_2$ or along $e^S_2$.
 The proof is given in [Appendix C](appendix-c.md#c5-proof-of-proposition-941).
 
 *Lean:
-[`Six.south_secondary_choice`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L347),
-[`Six.SouthSecondaryChoice`](../../SquaresInCircles/Six/Separators/Axes.lean#L207),
-[`Six.coupled_own_radial_sum`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L195),
-[`Six.overtaking_secondary_sum`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L249).*
+[`Six.south_secondary_choice`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L351),
+[`Six.SouthSecondaryChoice`](../../SquaresInCircles/Six/Separators/Axes.lean#L211),
+[`Six.coupled_own_radial_sum`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L199),
+[`Six.overtaking_secondary_sum`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L253).*
 
 ### Lemma 9.42 (walls)
 
@@ -1965,13 +1965,13 @@ The proof is given in [Appendix C](appendix-c.md#c5-proof-of-proposition-941).
 The proof is given in [Appendix C](appendix-c.md#c6-proof-of-lemma-942).
 
 *Lean:
-[`Six.westDiagonal_wall`](../../SquaresInCircles/Six/Separators/Walls.lean#L58),
-[`Six.diagonalSouth_wall`](../../SquaresInCircles/Six/Separators/Walls.lean#L70),
-[`Six.westDiagonal_gap_gt_quarter`](../../SquaresInCircles/Six/Separators/Walls.lean#L28),
-[`Six.diagonalSouth_gap_gt_quarter`](../../SquaresInCircles/Six/Separators/Walls.lean#L42),
-[`Six.diagonal_secondary_excluded`](../../SquaresInCircles/Six/Separators/SmallAngle.lean#L44),
-[`Six.not_both_diagonal_secondary`](../../SquaresInCircles/Six/Separators/Walls.lean#L280),
-[`Six.doubleSecondaryGap_nonpositive`](../../SquaresInCircles/Six/Separators/Walls.lean#L100).*
+[`Six.westDiagonal_wall`](../../SquaresInCircles/Six/Separators/Walls.lean#L62),
+[`Six.diagonalSouth_wall`](../../SquaresInCircles/Six/Separators/Walls.lean#L74),
+[`Six.westDiagonal_gap_gt_quarter`](../../SquaresInCircles/Six/Separators/Walls.lean#L32),
+[`Six.diagonalSouth_gap_gt_quarter`](../../SquaresInCircles/Six/Separators/Walls.lean#L46),
+[`Six.diagonal_secondary_excluded`](../../SquaresInCircles/Six/Separators/SmallAngle.lean#L48),
+[`Six.not_both_diagonal_secondary`](../../SquaresInCircles/Six/Separators/Walls.lean#L284),
+[`Six.doubleSecondaryGap_nonpositive`](../../SquaresInCircles/Six/Separators/Walls.lean#L104).*
 
 ### Lemma 9.43 (signs of the own wings)
 
@@ -1982,8 +1982,8 @@ The proof is given in [Appendix C](appendix-c.md#c6-proof-of-lemma-942).
 The proof is given in [Appendix C](appendix-c.md#c7-proof-of-lemma-943).
 
 *Lean:
-[`Six.own_south_positive`](../../SquaresInCircles/Six/Separators/Signs.lean#L242),
-[`Six.normalized_own_wing_angle_sum`](../../SquaresInCircles/Six/Separators/Signs.lean#L349).*
+[`Six.own_south_positive`](../../SquaresInCircles/Six/Separators/Signs.lean#L246),
+[`Six.normalized_own_wing_angle_sum`](../../SquaresInCircles/Six/Separators/Signs.lean#L353).*
 
 ### Definition 9.44 (wings)
 
@@ -1995,9 +1995,9 @@ separated along $e^D_2$ and $D$ and $S$ along $e^S_2$; the south wing is
 $e^D_2$.
 
 *Lean:
-[`Six.WingSeparators`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L483),
-[`Six.MissingWestWing`](../../SquaresInCircles/Six/Separators/Walls.lean#L333),
-[`Six.MissingSouthWing`](../../SquaresInCircles/Six/Separators/Walls.lean#L341).*
+[`Six.WingSeparators`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L487),
+[`Six.MissingWestWing`](../../SquaresInCircles/Six/Separators/Walls.lean#L337),
+[`Six.MissingSouthWing`](../../SquaresInCircles/Six/Separators/Walls.lean#L345).*
 
 ![Three panels with the squares W, D and S, each with the separating lines of the pairs W, D and D, S dashed. Left, the model: W and D separated along the secondary axis of W, a horizontal line, and D and S along the secondary axis of S, a vertical line. Middle, a missing west wing, with w = -0.47, d = 0.57 and s = 0.19: W and D separated along the secondary axis of D, the line of the upper left edge of D, and D and S along the secondary axis of S. Right, a missing south wing, with w = -0.45, d = 0.6 and s = 0.4: W and D separated along the secondary axis of W, and D and S along the secondary axis of D, the line of the lower right edge of D](figures/09-six/wings.svg)
 
@@ -2020,11 +2020,11 @@ The proof, after Proposition 9.46, reduces this to the exclusion of a missing
 wing (Figure 9.25).
 
 *Lean:
-[`Six.wing_separators`](../../SquaresInCircles/Six/Wings/Separators.lean#L133),
-[`Six.missing_west_of_failure`](../../SquaresInCircles/Six/Separators/Walls.lean#L349),
-[`Six.missing_south_of_failure`](../../SquaresInCircles/Six/Separators/Walls.lean#L365),
-[`Six.Wings.not_missing_west`](../../SquaresInCircles/Six/Wings/Separators.lean#L87),
-[`Six.Wings.not_missing_south`](../../SquaresInCircles/Six/Wings/Separators.lean#L31).*
+[`Six.wing_separators`](../../SquaresInCircles/Six/Wings/Separators.lean#L137),
+[`Six.missing_west_of_failure`](../../SquaresInCircles/Six/Separators/Walls.lean#L353),
+[`Six.missing_south_of_failure`](../../SquaresInCircles/Six/Separators/Walls.lean#L369),
+[`Six.Wings.not_missing_west`](../../SquaresInCircles/Six/Wings/Separators.lean#L91),
+[`Six.Wings.not_missing_south`](../../SquaresInCircles/Six/Wings/Separators.lean#L35).*
 
 ### Proposition 9.46 (no missing wing)
 
@@ -2033,9 +2033,9 @@ Neither wing is missing.
 The proof is given in [Appendix D](appendix-d.md).
 
 *Lean:
-[`Six.Wings.not_missing_west`](../../SquaresInCircles/Six/Wings/Separators.lean#L87),
-[`Six.Wings.not_missing_south`](../../SquaresInCircles/Six/Wings/Separators.lean#L31),
-[`Six.westDiagonal_gap_gt_one`](../../SquaresInCircles/Six/Wings/WestGap.lean#L161).*
+[`Six.Wings.not_missing_west`](../../SquaresInCircles/Six/Wings/Separators.lean#L91),
+[`Six.Wings.not_missing_south`](../../SquaresInCircles/Six/Wings/Separators.lean#L35),
+[`Six.westDiagonal_gap_gt_one`](../../SquaresInCircles/Six/Wings/WestGap.lean#L165).*
 
 *Proof of Proposition 9.45.* Suppose that $W$ and $D$ are not separated
 along $e^W_2$. By Lemma 9.37 they are separated along $e^D_2$. By
@@ -2074,8 +2074,8 @@ $1.713$ (dashed), more than $R_0$ (dotted), and the stress shows that for
 $w \le -\frac{11}{25}$ none fits within the ceiling.
 
 *Lean:
-[`Six.WestTail.own_west_bound`](../../SquaresInCircles/Six/Tails/West.lean#L451),
-[`Six.SouthTail.own_south_bound`](../../SquaresInCircles/Six/Tails/South.lean#L723).*
+[`Six.WestTail.own_west_bound`](../../SquaresInCircles/Six/Tails/West.lean#L455),
+[`Six.SouthTail.own_south_bound`](../../SquaresInCircles/Six/Tails/South.lean#L727).*
 
 ## 9.8 The stress of the model
 
@@ -2125,18 +2125,18 @@ P(n, w) = c_0\left(\max(\sin n, 0) + 1 - \cos n\right)[N \text{ on its own axis}
 a bracket being 1 if the condition holds and 0 otherwise.
 
 *Lean:
-[`Six.Stress.Facet`](../../SquaresInCircles/Six/Stress/PairStress.lean#L32),
-[`Six.Stress.Facet.north`](../../SquaresInCircles/Six/Stress/PairStress.lean#L46),
-[`Six.Stress.Facet.west`](../../SquaresInCircles/Six/Stress/PairStress.lean#L53),
-[`Six.Stress.Facet.model`](../../SquaresInCircles/Six/Stress/PairStress.lean#L39),
-[`Six.Stress.Pair.central`](../../SquaresInCircles/Six/Stress/PairStress.lean#L65),
-[`Six.Stress.Pair.northForce`](../../SquaresInCircles/Six/Stress/PairStress.lean#L68),
-[`Six.Stress.Pair.westForce`](../../SquaresInCircles/Six/Stress/PairStress.lean#L72),
-[`Six.Stress.Pair.threshold`](../../SquaresInCircles/Six/Stress/PairStress.lean#L77),
-[`Six.Stress.Pair.vertexBound`](../../SquaresInCircles/Six/Stress/PairStress.lean#L87),
-[`Six.Stress.Pair.northBound`](../../SquaresInCircles/Six/Stress/PairStress.lean#L91),
-[`Six.Stress.Pair.penalty`](../../SquaresInCircles/Six/Stress/PairStress.lean#L82),
-[`Six.Stress.Pair.value`](../../SquaresInCircles/Six/Stress/PairStress.lean#L96).*
+[`Six.Stress.Facet`](../../SquaresInCircles/Six/Stress/PairStress.lean#L36),
+[`Six.Stress.Facet.north`](../../SquaresInCircles/Six/Stress/PairStress.lean#L50),
+[`Six.Stress.Facet.west`](../../SquaresInCircles/Six/Stress/PairStress.lean#L57),
+[`Six.Stress.Facet.model`](../../SquaresInCircles/Six/Stress/PairStress.lean#L43),
+[`Six.Stress.Pair.central`](../../SquaresInCircles/Six/Stress/PairStress.lean#L69),
+[`Six.Stress.Pair.northForce`](../../SquaresInCircles/Six/Stress/PairStress.lean#L72),
+[`Six.Stress.Pair.westForce`](../../SquaresInCircles/Six/Stress/PairStress.lean#L76),
+[`Six.Stress.Pair.threshold`](../../SquaresInCircles/Six/Stress/PairStress.lean#L81),
+[`Six.Stress.Pair.vertexBound`](../../SquaresInCircles/Six/Stress/PairStress.lean#L91),
+[`Six.Stress.Pair.northBound`](../../SquaresInCircles/Six/Stress/PairStress.lean#L95),
+[`Six.Stress.Pair.penalty`](../../SquaresInCircles/Six/Stress/PairStress.lean#L86),
+[`Six.Stress.Pair.value`](../../SquaresInCircles/Six/Stress/PairStress.lean#L100).*
 
 These are the edges of the stress of the model that touch $N$ or $W$: from
 $C$ to $N$ with the weight 1, along the own axis of $N$ or the north normal
@@ -2213,13 +2213,13 @@ for $S$, $E$ to those for $W$, $N$. The first part, applied to the images,
 gives the second. $\square$
 
 *Lean:
-[`Six.Stress.pair_work_bound`](../../SquaresInCircles/Six/Stress/StressBound.lean#L105),
-[`Six.Stress.edge_work_identity`](../../SquaresInCircles/Six/Stress/StressBound.lean#L79),
-[`Six.Stress.northwest_work`](../../SquaresInCircles/Six/Stress/StressBound.lean#L188),
-[`Six.Stress.eastsouth_work`](../../SquaresInCircles/Six/Stress/StressBound.lean#L263),
-[`Six.Stress.Pair.work_le_vertexBound`](../../SquaresInCircles/Six/Stress/PairStress.lean#L102),
-[`Six.Stress.Pair.work_le_northBound`](../../SquaresInCircles/Six/Stress/PairStress.lean#L116),
-[`Six.Stress.Pair.central_excess_support`](../../SquaresInCircles/Six/Stress/PairStress.lean#L149).*
+[`Six.Stress.pair_work_bound`](../../SquaresInCircles/Six/Stress/StressBound.lean#L109),
+[`Six.Stress.edge_work_identity`](../../SquaresInCircles/Six/Stress/StressBound.lean#L83),
+[`Six.Stress.northwest_work`](../../SquaresInCircles/Six/Stress/StressBound.lean#L192),
+[`Six.Stress.eastsouth_work`](../../SquaresInCircles/Six/Stress/StressBound.lean#L267),
+[`Six.Stress.Pair.work_le_vertexBound`](../../SquaresInCircles/Six/Stress/PairStress.lean#L106),
+[`Six.Stress.Pair.work_le_northBound`](../../SquaresInCircles/Six/Stress/PairStress.lean#L120),
+[`Six.Stress.Pair.central_excess_support`](../../SquaresInCircles/Six/Stress/PairStress.lean#L153).*
 
 ### Proposition 9.50 (the pair estimate)
 
@@ -2253,12 +2253,12 @@ the line $\ell(w)$ (dashed). They meet at $w = 0$ (red dot), and nearly at
 $w = -\frac{11}{25}$.
 
 *Lean:
-[`Six.Stress.Pair.lower_bound`](../../SquaresInCircles/Six/Stress/PairEstimate.lean#L124),
-[`Six.Stress.Pair.model_of_value_origin`](../../SquaresInCircles/Six/Stress/PairEstimate.lean#L133),
-[`Six.Stress.Pair.value_origin`](../../SquaresInCircles/Six/Stress/PairStress.lean#L127),
-[`Six.Stress.Pair.Domain`](../../SquaresInCircles/Six/Stress/PairStress.lean#L169),
-[`Six.Stress.line`](../../SquaresInCircles/Six/Stress/PairStress.lean#L28),
-[`Six.Stress.Pair.gap`](../../SquaresInCircles/Six/Stress/PairStress.lean#L186).*
+[`Six.Stress.Pair.lower_bound`](../../SquaresInCircles/Six/Stress/PairEstimate.lean#L128),
+[`Six.Stress.Pair.model_of_value_origin`](../../SquaresInCircles/Six/Stress/PairEstimate.lean#L137),
+[`Six.Stress.Pair.value_origin`](../../SquaresInCircles/Six/Stress/PairStress.lean#L131),
+[`Six.Stress.Pair.Domain`](../../SquaresInCircles/Six/Stress/PairStress.lean#L173),
+[`Six.Stress.line`](../../SquaresInCircles/Six/Stress/PairStress.lean#L32),
+[`Six.Stress.Pair.gap`](../../SquaresInCircles/Six/Stress/PairStress.lean#L190).*
 
 ### Definition 9.51 (the diagonal value)
 
@@ -2285,14 +2285,14 @@ $-\frac25 \le s \le \frac{11}{25}$, $\frac12 \le d \le \frac\pi4$, and the
 ```
 
 *Lean:
-[`Six.Stress.diagonalBeta`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L34),
-[`Six.Stress.diagonalDelta`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L35),
-[`Six.Stress.diagonalSupport`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L39),
-[`Six.Stress.diagonalValue`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L46),
-[`Six.Stress.DiagonalDomain`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L52),
-[`Six.Stress.remainder`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L56),
-[`Six.Stress.diagonalLocalForce`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L30),
-[`Six.Stress.diagonal_force_formula`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L123).*
+[`Six.Stress.diagonalBeta`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L38),
+[`Six.Stress.diagonalDelta`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L39),
+[`Six.Stress.diagonalSupport`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L43),
+[`Six.Stress.diagonalValue`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L50),
+[`Six.Stress.DiagonalDomain`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L56),
+[`Six.Stress.remainder`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L60),
+[`Six.Stress.diagonalLocalForce`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L34),
+[`Six.Stress.diagonal_force_formula`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L127).*
 
 ### Lemma 9.52 (the diagonal bound)
 
@@ -2339,10 +2339,10 @@ $F_D = L(\cos\Theta, -\sin\Theta)$, here with $\Theta \approx 0.165$ and
 $L \approx 1.377$.
 
 *Lean:
-[`Six.Stress.diagonal_work`](../../SquaresInCircles/Six/Stress/StressBound.lean#L306),
-[`Six.Stress.diagonal_work_le`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L157),
-[`Six.Stress.diagonal_support_bound`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L84),
-[`Six.Stress.diagonal_threshold_formula`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L137).*
+[`Six.Stress.diagonal_work`](../../SquaresInCircles/Six/Stress/StressBound.lean#L310),
+[`Six.Stress.diagonal_work_le`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L161),
+[`Six.Stress.diagonal_support_bound`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L88),
+[`Six.Stress.diagonal_threshold_formula`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L141).*
 
 ### Proposition 9.53 (the diagonal estimate)
 
@@ -2360,11 +2360,11 @@ domain of the diagonal. It pays for the lines $\ell$ of the two pairs and
 vanishes only at the model (red dot).
 
 *Lean:
-[`Six.Stress.remainder_nonnegative`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L541),
-[`Six.Stress.remainder_zero`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L548),
-[`Six.Stress.diagonal_cap_lower`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L214),
-[`Six.Stress.diagonal_cap_zero`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L285),
-[`Six.Stress.diagonal_vertex_pos`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L490).*
+[`Six.Stress.remainder_nonnegative`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L545),
+[`Six.Stress.remainder_zero`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L552),
+[`Six.Stress.diagonal_cap_lower`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L218),
+[`Six.Stress.diagonal_cap_zero`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L289),
+[`Six.Stress.diagonal_vertex_pos`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L494).*
 
 ### Theorem 9.54 (the stress bound)
 
@@ -2404,8 +2404,8 @@ is, and they leave no slack there: the stress bound is the precise sense in
 which the model is optimal (Figures 9.28 and 9.30).
 
 *Lean:
-[`Six.Stress.stress_bound`](../../SquaresInCircles/Six/Stress/StressBound.lean#L435),
-[`Six.Stress.angle_domains`](../../SquaresInCircles/Six/Stress/StressBound.lean#L327).*
+[`Six.Stress.stress_bound`](../../SquaresInCircles/Six/Stress/StressBound.lean#L439),
+[`Six.Stress.angle_domains`](../../SquaresInCircles/Six/Stress/StressBound.lean#L331).*
 
 ## 9.9 The eight contacts
 
@@ -2432,9 +2432,9 @@ $E$ along $(0, 1)$; $W$ from $D$ along $(0, -1)$; and $D$ from $S$ along
 $(1, 0)$. In the model all eight are equalities.
 
 *Lean:
-[`Six.Equality.Contacts`](../../SquaresInCircles/Six/Equality/Contacts.lean#L27),
-[`Six.Equality.modelRadial`](../../SquaresInCircles/Six/Equality/Contacts.lean#L38),
-[`Six.Equality.modelTransverse`](../../SquaresInCircles/Six/Equality/Contacts.lean#L39).*
+[`Six.Equality.Contacts`](../../SquaresInCircles/Six/Equality/Contacts.lean#L31),
+[`Six.Equality.modelRadial`](../../SquaresInCircles/Six/Equality/Contacts.lean#L42),
+[`Six.Equality.modelTransverse`](../../SquaresInCircles/Six/Equality/Contacts.lean#L43).*
 
 ### Lemma 9.56 (the contacts hold)
 
@@ -2453,7 +2453,7 @@ along $e^W_2 = (0, -1)$ and $e^S_2 = (1, 0)$ with the threshold
 $\tau(\frac\pi4) = \frac12 + h$: the last two. $\square$
 
 *Lean:
-[`Six.Stress.contacts_of_model_angles`](../../SquaresInCircles/Six/Stress/StressBound.lean#L375).*
+[`Six.Stress.contacts_of_model_angles`](../../SquaresInCircles/Six/Stress/StressBound.lean#L379).*
 
 ### Lemma 9.57 (a force at a corner)
 
@@ -2475,7 +2475,7 @@ $xa + yb \le x|a| + y|b|$ gives the inequality. Equality forces
 $X^2 + Y^2 = 0$ and $a = |a|$, $b = |b|$. $\square$
 
 *Lean:
-[`Six.Equality.corner_bound`](../../SquaresInCircles/Six/Equality/Contacts.lean#L44).*
+[`Six.Equality.corner_bound`](../../SquaresInCircles/Six/Equality/Contacts.lean#L48).*
 
 This is Lemma 9.25 (1) for a force with positive components, with its case of
 equality: the far vertex must be the point of the circle in the direction of the
@@ -2537,10 +2537,10 @@ $c_x = a_E - 1 = 1 - a_W = s_*$, and the second and the fourth $c_y = s_*$.
 $\square$
 
 *Lean:
-[`Six.Equality.model_of_contacts`](../../SquaresInCircles/Six/Equality/Contacts.lean#L68),
-[`Six.pairBase_diagonal_identity`](../../SquaresInCircles/Six/Constants.lean#L310),
-[`Six.radius_mul_north_length`](../../SquaresInCircles/Six/Constants.lean#L281),
-[`Six.radius_mul_west_length`](../../SquaresInCircles/Six/Constants.lean#L294).*
+[`Six.Equality.model_of_contacts`](../../SquaresInCircles/Six/Equality/Contacts.lean#L72),
+[`Six.pairBase_diagonal_identity`](../../SquaresInCircles/Six/Constants.lean#L314),
+[`Six.radius_mul_north_length`](../../SquaresInCircles/Six/Constants.lean#L285),
+[`Six.radius_mul_west_length`](../../SquaresInCircles/Six/Constants.lean#L298).*
 
 ![The model with the eight contacts drawn as thick segments and dots, the forces of the stress as arrows at the centres of E, N, W, S and D, and the far corners of E, N, W and S and the far vertices of D on the dashed circle; each arrow of E, N, W and S is parallel to the dotted radius through the corner of its square, where the bound of Lemma 9.57 is attained](figures/09-six/contacts.svg)
 
@@ -2572,11 +2572,11 @@ reflection of $T$ is congruent to the model. Congruences compose, since frames
 at the origin compose as rotations. $\square$
 
 *Lean:
-[`Six.Equality.model_reflection_congruent`](../../SquaresInCircles/Six/Equality/Reflection.lean#L38),
-[`Six.Equality.model_reflection_open`](../../SquaresInCircles/Six/Equality/Reflection.lean#L29),
-[`Six.Equality.congruent_of_reflection`](../../SquaresInCircles/Six/Equality/Reflection.lean#L45),
-[`congruent_diagonal`](../../SquaresInCircles/Common/Frames.lean#L267),
-[`congruent_trans`](../../SquaresInCircles/Common/Frames.lean#L87).*
+[`Six.Equality.model_reflection_congruent`](../../SquaresInCircles/Six/Equality/Reflection.lean#L42),
+[`Six.Equality.model_reflection_open`](../../SquaresInCircles/Six/Equality/Reflection.lean#L33),
+[`Six.Equality.congruent_of_reflection`](../../SquaresInCircles/Six/Equality/Reflection.lean#L49),
+[`congruent_diagonal`](../../SquaresInCircles/Common/Frames.lean#L272),
+[`congruent_trans`](../../SquaresInCircles/Common/Frames.lean#L92).*
 
 ### Proposition 9.60 (uniqueness)
 
@@ -2597,11 +2597,11 @@ frame of $D$ in the model turned by $\pi$, which is the same square. So $T$ is
 the model with its squares relabelled, congruent to it by the direction 0, and
 Lemma 9.59 removes the reflection. $\square$
 
-*Lean: [`Six.uniqueness`](../../SquaresInCircles/Six/Uniqueness.lean#L79),
-[`Six.model_congruent`](../../SquaresInCircles/Six/Uniqueness.lean#L43),
-[`Six.order`](../../SquaresInCircles/Six/Uniqueness.lean#L27),
-[`Six.Normalization.normalize`](../../SquaresInCircles/Six/Normalization/Complete.lean#L662),
-[`Six.Stress.stress_bound`](../../SquaresInCircles/Six/Stress/StressBound.lean#L435).*
+*Lean: [`Six.uniqueness`](../../SquaresInCircles/Six/Uniqueness.lean#L83),
+[`Six.model_congruent`](../../SquaresInCircles/Six/Uniqueness.lean#L47),
+[`Six.order`](../../SquaresInCircles/Six/Uniqueness.lean#L31),
+[`Six.Normalization.normalize`](../../SquaresInCircles/Six/Normalization/Complete.lean#L666),
+[`Six.Stress.stress_bound`](../../SquaresInCircles/Six/Stress/StressBound.lean#L439).*
 
 *Proof of Theorem 9.1.* We apply
 [Corollary 2.10](02-preliminaries.md#corollary-210-the-scheme-of-proof) with
@@ -2611,7 +2611,7 @@ is at distance $R_6$ from the origin, by Lemma 9.2 (2); (c) is
 Proposition 9.60. Parts (1), (2), (3) of the theorem are (a), (i) and (ii).
 $\square$
 
-*Lean: [`Six.optimum`](../../SquaresInCircles/Six/Uniqueness.lean#L100),
-[`Six.model_reaches`](../../SquaresInCircles/Six/Uniqueness.lean#L91),
-[`Optimum.isLeast`](../../SquaresInCircles/Common/Optimum.lean#L61),
-[`Optimum.packing_iff`](../../SquaresInCircles/Common/Optimum.lean#L67).*
+*Lean: [`Six.optimum`](../../SquaresInCircles/Six/Uniqueness.lean#L104),
+[`Six.model_reaches`](../../SquaresInCircles/Six/Uniqueness.lean#L95),
+[`Optimum.isLeast`](../../SquaresInCircles/Common/Optimum.lean#L66),
+[`Optimum.packing_iff`](../../SquaresInCircles/Common/Optimum.lean#L72).*

@@ -333,7 +333,10 @@ to the Lean declarations.
 The repository is set up for the [Palomar](https://palomar-registry.org/)
 registry. `Challenge.lean` is the statement to audit: it imports only mathlib,
 restates `SquaresInCircles/Geometry.lean` word for word, and states
-`optimal_radius` and `optimal_packings` with `sorry`.
+`optimal_radius` and `optimal_packings` with `sorry`. Like every file of the
+library, it is a module of Lean's module system, as Palomar requires: it
+begins with `module`, imports with `public import` and exposes its
+definitions in an `@[expose] public section`.
 [`comparator.json`](comparator.json) pairs it with the root module
 `SquaresInCircles`, which proves them, and `scripts/verify-comparator.sh` runs
 `lake comparator` as Palomar does: the same statements over identical

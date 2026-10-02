@@ -1,4 +1,6 @@
-import SquaresInCircles.Common.Constructions
+module
+
+public import SquaresInCircles.Common.Constructions
 
 /-!
 # Seven squares: construction
@@ -13,6 +15,9 @@ below, between and above its squares, are nonnegative with sum `2√3 - 3`, and
 they determine the column. The radius, `Column` and the column packings are
 defined with the statement, in `Geometry.lean`.
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles.Seven
 

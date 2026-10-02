@@ -1,6 +1,8 @@
-import SquaresInCircles.Seven.Pair.AxialBoundary
-import SquaresInCircles.Seven.Pair.BoundaryProfiles
-import SquaresInCircles.Seven.Pair.Contacts
+module
+
+public import SquaresInCircles.Seven.Pair.AxialBoundary
+public import SquaresInCircles.Seven.Pair.BoundaryProfiles
+public import SquaresInCircles.Seven.Pair.Contacts
 
 /-!
 # Seven squares: the forward axis, both signs negative
@@ -9,6 +11,9 @@ The case of a side-selected source. The target support is minimised along the
 exact axial and side label segments; its circular piece is concave, and the
 endpoints reduce to the transition and diagonal profiles.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles.Seven

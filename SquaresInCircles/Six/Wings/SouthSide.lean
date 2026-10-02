@@ -1,5 +1,7 @@
-import SquaresInCircles.Six.Wings.Chord
-import SquaresInCircles.Six.Wings.Chart
+module
+
+public import SquaresInCircles.Six.Wings.Chord
+public import SquaresInCircles.Six.Wings.Chart
 
 /-!
 # Six squares: W on its own axis, S on the south side of C
@@ -23,6 +25,8 @@ The first range holds for a missing south wing, the second, read in the
 reflection in the diagonal, for a missing west wing with W on the west side of
 C and S on its own axis.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six.Wings.SouthSide

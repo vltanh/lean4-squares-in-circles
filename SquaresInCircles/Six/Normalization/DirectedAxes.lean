@@ -1,4 +1,6 @@
-import SquaresInCircles.Six.Normalization.Basic
+module
+
+public import SquaresInCircles.Six.Normalization.Basic
 
 /-!
 # Six squares: directed axes of a pair of squares
@@ -12,6 +14,8 @@ has a positive projection on it. Conversely, if the four axes of the pair,
 directed by a table of signs, all have positive projection on such a chord,
 then one of them separates the squares.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six

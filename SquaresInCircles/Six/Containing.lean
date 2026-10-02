@@ -1,7 +1,9 @@
-import SquaresInCircles.Six.Exterior
-import SquaresInCircles.Six.Normalization.Basic
-import SquaresInCircles.Common.Sweep
-import SquaresInCircles.Common.Frames
+module
+
+public import SquaresInCircles.Six.Exterior
+public import SquaresInCircles.Six.Normalization.Basic
+public import SquaresInCircles.Common.Sweep
+public import SquaresInCircles.Common.Frames
 
 /-!
 # Six squares: the containing square
@@ -18,6 +20,9 @@ of C along one of its own axes, and such a support line is at distance at most
 `cy ≤ c0` and `(0, 7/10)` otherwise. With the five arcs of the other squares
 this exceeds the circle, so the centre of C lies in `[0, c0]²` (`central_box`).
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles.Six

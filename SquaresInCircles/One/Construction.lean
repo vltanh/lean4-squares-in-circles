@@ -1,4 +1,6 @@
-import SquaresInCircles.Common.Constructions
+module
+
+public import SquaresInCircles.Common.Constructions
 
 /-!
 # One square: construction
@@ -7,6 +9,9 @@ The unit square centred at the disk centre packs the disk of the optimal radius
 `sqrt 2 / 2`. The radius and the model are defined with the statement, in
 `Geometry.lean`.
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles.One
 

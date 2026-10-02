@@ -1,4 +1,6 @@
-import SquaresInCircles.Common.Constructions
+module
+
+public import SquaresInCircles.Common.Constructions
 
 /-!
 # Three squares: construction
@@ -7,6 +9,9 @@ The T: three unit squares that pack the disk of the optimal radius
 `5 * sqrt 17 / 16` about the origin. The radius and the model are defined with
 the statement, in `Geometry.lean`.
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles.Three
 

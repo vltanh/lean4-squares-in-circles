@@ -1,6 +1,8 @@
-import SquaresInCircles.Six.Normalization.Caps
-import SquaresInCircles.Six.Containing
-import SquaresInCircles.Common.Trigonometry
+module
+
+public import SquaresInCircles.Six.Normalization.Caps
+public import SquaresInCircles.Six.Containing
+public import SquaresInCircles.Common.Trigonometry
 
 /-!
 # Six squares: the pins
@@ -25,6 +27,8 @@ is its label; holding no other pin puts its phase in the window of its label
 (`labelled_window`), and the coordinates of the pins give the axes along which
 it may be separated (`allowed_axis_of_pin`).
 -/
+
+@[expose] public section
 
 noncomputable section
 
@@ -333,7 +337,7 @@ private def radialMinorant (v : ℝ) : ℝ := 3/2+v/4
 
 /-- The point `(A, B) = (3/2 + v/4, 1 - v)` runs along the line `4A + B = 7`,
 which misses the disk: `A² + B² ≥ 49/17 > Q0`. -/
-lemma moving_pin_polynomial (v : ℝ) : Q0 < (radialMinorant v)^2+(1-v)^2 := by
+private lemma moving_pin_polynomial (v : ℝ) : Q0 < (radialMinorant v)^2+(1-v)^2 := by
   dsimp [radialMinorant]
   norm_num [Q0]
   nlinarith [sq_nonneg ((3/2+v/4)-4*(1-v))]

@@ -1,10 +1,12 @@
-import SquaresInCircles.Six.Wings.WestGap
-import SquaresInCircles.Six.Wings.WestSide
-import SquaresInCircles.Six.Wings.SouthTurned
-import SquaresInCircles.Six.Wings.WestTurned
-import SquaresInCircles.Six.Wings.SouthSide
-import SquaresInCircles.Six.Wings.WestDiagonal
-import SquaresInCircles.Six.Wings.WestRange
+module
+
+public import SquaresInCircles.Six.Wings.WestGap
+public import SquaresInCircles.Six.Wings.WestSide
+public import SquaresInCircles.Six.Wings.SouthTurned
+public import SquaresInCircles.Six.Wings.WestTurned
+public import SquaresInCircles.Six.Wings.SouthSide
+public import SquaresInCircles.Six.Wings.WestDiagonal
+public import SquaresInCircles.Six.Wings.WestRange
 
 /-!
 # Six squares: the separators of the turned square
@@ -20,6 +22,8 @@ its own axis is read in the reflection in the diagonal, where it is a missing
 south wing with W on its own axis, on the other half `π/4 ≤ d` of the range of
 the angle of D.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six.Wings

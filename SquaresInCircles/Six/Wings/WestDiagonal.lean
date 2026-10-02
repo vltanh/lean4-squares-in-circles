@@ -1,5 +1,7 @@
-import SquaresInCircles.Six.Wings.WestRange
-import SquaresInCircles.Six.Wings.WestSide
+module
+
+public import SquaresInCircles.Six.Wings.WestRange
+public import SquaresInCircles.Six.Wings.WestSide
 
 /-!
 # Six squares: a missing west wing with W on its own axis
@@ -20,6 +22,8 @@ the pieces `[0, 3/20]`, `[3/20, 3/10]` and `[3/10, 12/25]` of the range of `s`,
 so that the force `(γ, 1)` on S has a constant length and the profile is
 concave in `s` on each piece.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six.Wings.WestDiagonal

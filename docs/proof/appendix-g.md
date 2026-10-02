@@ -63,8 +63,8 @@ So the critical-gap proposition ([Proposition 10.17](10-seven.md#proposition-101
 admissible states, with any signs, have the gap property on every axis.
 
 *Lean:
-[`Seven.PairProperty`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L69),
-[`Seven.ActiveLabel`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L65).*
+[`Seven.PairProperty`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L74),
+[`Seven.ActiveLabel`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L70).*
 
 ### Lemma G.2 (zeros at contacts)
 
@@ -94,12 +94,12 @@ Part (4) holds because a positive number is nonnegative and not zero.
 $\square$
 
 *Lean:
-[`Seven.PairProperty.of_pos`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L73),
-[`Seven.PairProperty.of_side_axial`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L80),
-[`Seven.remainder_zero`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L24),
-[`Seven.axial_of_transverse_zero`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L31),
-[`Seven.side_label`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L34),
-[`Seven.axial_label`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L41).*
+[`Seven.PairProperty.of_pos`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L78),
+[`Seven.PairProperty.of_side_axial`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L85),
+[`Seven.remainder_zero`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L29),
+[`Seven.axial_of_transverse_zero`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L36),
+[`Seven.side_label`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L39),
+[`Seven.axial_label`](../../SquaresInCircles/Seven/Pair/Contacts.lean#L46).*
 
 ![Four copies of the same canonical pair: a blue source square S with its centre to the right of the disk centre o and a green target square T turned by about 71 degrees above it, overlapping S at a corner, with dashed rays from o to the two markers on a faint unit circle. In each copy a grey line in the direction of one normal carries the blue shadow of S and the green shadow of T, and an orange bracket marks the support sum: on the outward and backward axes it spans both shadows, on the forward and inward axes it is the overlap of the shadows](figures/appendix-g/pair-axes.svg)
 
@@ -160,9 +160,9 @@ $(pX + qY)^2 + (pY - qX)^2 = (p^2 + q^2)(X^2 + Y^2) \le \frac{13}4(p^2 + q^2)$.
 (2) By (1), $|pX + qY| \le \sqrt{\frac{13}4(p^2 + q^2)}$, which is at most $c$,
 or less than $c$, respectively. $\square$
 
-*Lean: [`dot_ge`](../../SquaresInCircles/Common/DiskSupport.lean#L30),
-[`dot_gt`](../../SquaresInCircles/Common/DiskSupport.lean#L34),
-[`dot_sq_le`](../../SquaresInCircles/Common/DiskSupport.lean#L24).*
+*Lean: [`dot_ge`](../../SquaresInCircles/Common/DiskSupport.lean#L35),
+[`dot_gt`](../../SquaresInCircles/Common/DiskSupport.lean#L39),
+[`dot_sq_le`](../../SquaresInCircles/Common/DiskSupport.lean#L29).*
 
 ### Lemma G.4 (lower bounds for the support)
 
@@ -187,9 +187,9 @@ $s\,\ell(a, b)$, because the closed square contains the arc (Figure G.2).
 *Proof.* Part (1) is [Lemma 10.11](10-seven.md#lemma-1011-the-support-function) (3). In part (2), $|sb| = b$, and the
 inequality is Lemma 10.11 (2). $\square$
 
-*Lean: [`Seven.support_lower`](../../SquaresInCircles/Seven/Exterior.lean#L228),
-[`Seven.sign_admissible`](../../SquaresInCircles/Seven/Pair/Frame.lean#L44),
-[`Seven.marker_arc_support`](../../SquaresInCircles/Seven/Pair/Frame.lean#L50).*
+*Lean: [`Seven.support_lower`](../../SquaresInCircles/Seven/Exterior.lean#L233),
+[`Seven.sign_admissible`](../../SquaresInCircles/Seven/Pair/Frame.lean#L49),
+[`Seven.marker_arc_support`](../../SquaresInCircles/Seven/Pair/Frame.lean#L55).*
 
 ![Two panels. Left: a blue square Q(a, y) with its centre (a, y) inside a dashed circle of radius root 3 minus 1/2 about the disk centre o, an arrow u(z) from o pointing up and to the left, away from the square, and two dashed lines perpendicular to u(z): the blue support line of the square through its vertex farthest along u(z), labelled h(a, y, z), and, farther back, an orange line labelled -37/50, which cuts through the square. Right: the side square Q(a, sb), the thick blue marker arc of the unit circle inside it, an orange point u(x) on the arc, an arrow u(z) from o, and two dashed lines perpendicular to u(z): the orange line through u(x), labelled cos(z - x), and beyond it the blue support line of the square through its far corner, labelled h(a, sb, z)](figures/appendix-g/support-bounds.svg)
 
@@ -272,16 +272,16 @@ and $\sin(\frac{5\pi}2 - d) = \cos d$. With these and part (2) for $w = d$, part
 $\square$
 
 *Lean:
-[`Seven.pairSupport_zero`](../../SquaresInCircles/Seven/Pair/Frame.lean#L79),
-[`Seven.pairSupport_one`](../../SquaresInCircles/Seven/Pair/Frame.lean#L85),
-[`Seven.pairSupport_two`](../../SquaresInCircles/Seven/Pair/Frame.lean#L92),
-[`Seven.pairSupport_three`](../../SquaresInCircles/Seven/Pair/Frame.lean#L99),
-[`Seven.support_three_half_sub`](../../SquaresInCircles/Seven/Pair/Frame.lean#L65),
-[`Seven.support_two_pi_sub`](../../SquaresInCircles/Seven/Pair/Frame.lean#L73),
-[`Seven.pair_support_axis_values`](../../SquaresInCircles/Seven/Pair/Frame.lean#L142),
-[`Seven.centerDX`](../../SquaresInCircles/Seven/Pair/Frame.lean#L136),
-[`Seven.centerDY`](../../SquaresInCircles/Seven/Pair/Frame.lean#L139),
-[`angularWidth`](../../SquaresInCircles/Common/SeparatingAxes.lean#L250).*
+[`Seven.pairSupport_zero`](../../SquaresInCircles/Seven/Pair/Frame.lean#L84),
+[`Seven.pairSupport_one`](../../SquaresInCircles/Seven/Pair/Frame.lean#L90),
+[`Seven.pairSupport_two`](../../SquaresInCircles/Seven/Pair/Frame.lean#L97),
+[`Seven.pairSupport_three`](../../SquaresInCircles/Seven/Pair/Frame.lean#L104),
+[`Seven.support_three_half_sub`](../../SquaresInCircles/Seven/Pair/Frame.lean#L70),
+[`Seven.support_two_pi_sub`](../../SquaresInCircles/Seven/Pair/Frame.lean#L78),
+[`Seven.pair_support_axis_values`](../../SquaresInCircles/Seven/Pair/Frame.lean#L147),
+[`Seven.centerDX`](../../SquaresInCircles/Seven/Pair/Frame.lean#L141),
+[`Seven.centerDY`](../../SquaresInCircles/Seven/Pair/Frame.lean#L144),
+[`angularWidth`](../../SquaresInCircles/Common/SeparatingAxes.lean#L255).*
 
 ### Lemma G.6 (the inward sum with a positive source sign)
 
@@ -306,7 +306,7 @@ $e \in [-\frac\pi6, \frac\pi3]$ if $t = -1$. In both cases $\cos e \ge 0$, so
 $|\cos e| = \cos e$. $\square$
 
 *Lean:
-[`Seven.pairSupport_inward`](../../SquaresInCircles/Seven/Pair/Frame.lean#L110).*
+[`Seven.pairSupport_inward`](../../SquaresInCircles/Seven/Pair/Frame.lean#L115).*
 
 *Remark (the turns of the sectors).* In each sector Appendices H and I write
 $\sigma_k(\frac\pi3)$ through a *turn*, the relative phase
@@ -367,9 +367,9 @@ $a + b < \frac{31}{20}$. Moreover $1.73 < \sqrt3 < 1.733$.
 *Proof.* This is part of [Lemma 10.5](10-seven.md#lemma-105-admissible-states) (2). $\square$
 
 *Lean:
-[`Seven.Admissible.a_le_sqrt_three_sub_half`](../../SquaresInCircles/Seven/Exterior.lean#L62),
-[`Seven.Admissible.sum_lt`](../../SquaresInCircles/Seven/Exterior.lean#L69),
-[`Seven.sqrt_three_bounds`](../../SquaresInCircles/Seven/Exterior.lean#L222).*
+[`Seven.Admissible.a_le_sqrt_three_sub_half`](../../SquaresInCircles/Seven/Exterior.lean#L67),
+[`Seven.Admissible.sum_lt`](../../SquaresInCircles/Seven/Exterior.lean#L74),
+[`Seven.sqrt_three_bounds`](../../SquaresInCircles/Seven/Exterior.lean#L227).*
 
 ### Lemma G.8 (axial and side labels)
 
@@ -385,13 +385,13 @@ Let $(a, b)$ be admissible and $\ell = \ell(a, b)$.
 [Lemma 10.7](10-seven.md#lemma-107-the-label) (3). $\square$
 
 *Lean:
-[`Seven.axial_tie_line`](../../SquaresInCircles/Seven/Exterior.lean#L162),
-[`Seven.axial_sum_lt`](../../SquaresInCircles/Seven/Exterior.lean#L172),
-[`Seven.side_selected_label_gt`](../../SquaresInCircles/Seven/Exterior.lean#L131),
-[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Exterior.lean#L154),
-[`Seven.side_selected_a_lt`](../../SquaresInCircles/Seven/Exterior.lean#L143),
-[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Exterior.lean#L185),
-[`Seven.Admissible.radial_label_bound`](../../SquaresInCircles/Seven/Exterior.lean#L110).*
+[`Seven.axial_tie_line`](../../SquaresInCircles/Seven/Exterior.lean#L167),
+[`Seven.axial_sum_lt`](../../SquaresInCircles/Seven/Exterior.lean#L177),
+[`Seven.side_selected_label_gt`](../../SquaresInCircles/Seven/Exterior.lean#L136),
+[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Exterior.lean#L159),
+[`Seven.side_selected_a_lt`](../../SquaresInCircles/Seven/Exterior.lean#L148),
+[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Exterior.lean#L190),
+[`Seven.Admissible.radial_label_bound`](../../SquaresInCircles/Seven/Exterior.lean#L115).*
 
 ### Definition G.9 (boundary curves and special states)
 
@@ -433,20 +433,20 @@ $\frac{44}5\tau + \frac{16}5\tau = 12\tau$; its axial label is
 $\frac54\cdot\frac45\tau = \tau$ too.
 
 *Lean:
-[`Seven.Boundary.circle`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L33),
-[`Seven.Boundary.axialLine`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L34),
-[`Seven.Boundary.axialTop`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L35),
-[`Seven.Boundary.tieA`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L36),
-[`Seven.Boundary.diagonal`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L37),
-[`Seven.Boundary.M`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L15),
-[`Seven.Boundary.J`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L16),
-[`Seven.Boundary.X0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L17),
-[`Seven.Boundary.Y0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L18),
-[`Seven.Boundary.a0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L19),
-[`Seven.Boundary.u0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L20),
-[`Seven.Boundary.s0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L21),
-[`Seven.Boundary.rd`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L22),
-[`Seven.Boundary.td`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L23).*
+[`Seven.Boundary.circle`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L38),
+[`Seven.Boundary.axialLine`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L39),
+[`Seven.Boundary.axialTop`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L40),
+[`Seven.Boundary.tieA`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L41),
+[`Seven.Boundary.diagonal`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L42),
+[`Seven.Boundary.M`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L20),
+[`Seven.Boundary.J`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L21),
+[`Seven.Boundary.X0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L22),
+[`Seven.Boundary.Y0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L23),
+[`Seven.Boundary.a0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L24),
+[`Seven.Boundary.u0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L25),
+[`Seven.Boundary.s0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L26),
+[`Seven.Boundary.rd`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L27),
+[`Seven.Boundary.td`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L28).*
 
 ![The quarter circle X squared plus Y squared equals 13/4 in the (X, Y)-plane, with the admissible states shaded grey inside it, right of X = 1 and above Y = 1/2. A purple tie line 9X + 11Y = M crosses the circle twice; a dashed segment of length M over root 202 runs from the origin 0, perpendicular to the line, to its point y = 0, where an arrow along (11, -9) starts; the line meets the circle at y = -J/202 near the top and at y = J/202, the transition point (X0, Y0), on the right. The dashed diagonal X = Y meets the circle at the diagonal corner (rd + 1/2, rd + 1/2)](figures/appendix-g/transition.svg)
 
@@ -501,15 +501,15 @@ start of this section, $\mathrm{side}(a_0, b_0) = \mathrm{axial}(b_0) = s_0$,
 and $s_0 < \frac25 < \frac\pi4$. $\square$
 
 *Lean:
-[`Seven.Boundary.J_sq`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L42),
-[`Seven.Boundary.J_bounds`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L47),
-[`Seven.Boundary.transition_circle`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L68),
-[`Seven.Boundary.transition_line`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L73),
-[`Seven.Boundary.tieA_s0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L77),
-[`Seven.Boundary.transition_bounds`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L53),
-[`Seven.Boundary.transition_coarse`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L60),
-[`Seven.Boundary.transition_admissible`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L82),
-[`Seven.Boundary.transition_labels`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L89).*
+[`Seven.Boundary.J_sq`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L47),
+[`Seven.Boundary.J_bounds`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L52),
+[`Seven.Boundary.transition_circle`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L73),
+[`Seven.Boundary.transition_line`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L78),
+[`Seven.Boundary.tieA_s0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L82),
+[`Seven.Boundary.transition_bounds`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L58),
+[`Seven.Boundary.transition_coarse`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L65),
+[`Seven.Boundary.transition_admissible`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L87),
+[`Seven.Boundary.transition_labels`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L94).*
 
 ### Lemma G.11 (the diagonal corner)
 
@@ -526,10 +526,10 @@ to $7 - 5r_d < \pi$, and
 $\frac15(7 - \pi) < \frac15(7 - 3.1415) < 0.7717 < r_d$. $\square$
 
 *Lean:
-[`Seven.Boundary.rd_sq`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L104),
-[`Seven.Boundary.rd_bounds`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L98),
-[`Seven.Boundary.td_bounds`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L108),
-[`Seven.Boundary.diagonal_td`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L113).*
+[`Seven.Boundary.rd_sq`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L109),
+[`Seven.Boundary.rd_bounds`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L103),
+[`Seven.Boundary.td_bounds`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L113),
+[`Seven.Boundary.diagonal_td`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L118).*
 
 ### Lemma G.12 (the circle over the b-axis)
 
@@ -590,18 +590,18 @@ $\frac{13}4 - (w + \frac12)^2$, and $a + \frac12 > 0$; take square roots.
 $\square$
 
 *Lean:
-[`Seven.Boundary.circle_radicand_pos`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L17),
-[`Seven.Boundary.circle_eq`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L25),
-[`Seven.Boundary.circle_ge_coordinate`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L31),
-[`Seven.Boundary.circle_state`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L40),
-[`Seven.Boundary.circle_order`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L51),
-[`Seven.Boundary.circle_u0`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L71),
-[`Seven.Boundary.circle_switch_left`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L79),
-[`Seven.Boundary.circle_switch_right`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L88),
-[`Seven.Boundary.axialTop_left`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L97),
-[`Seven.Boundary.axialTop_right`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L100),
-[`Seven.Boundary.circle_displacement_half`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L352),
-[`Seven.Boundary.a_le_circle`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L103).*
+[`Seven.Boundary.circle_radicand_pos`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L22),
+[`Seven.Boundary.circle_eq`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L30),
+[`Seven.Boundary.circle_ge_coordinate`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L36),
+[`Seven.Boundary.circle_state`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L45),
+[`Seven.Boundary.circle_order`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L56),
+[`Seven.Boundary.circle_u0`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L76),
+[`Seven.Boundary.circle_switch_left`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L84),
+[`Seven.Boundary.circle_switch_right`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L93),
+[`Seven.Boundary.axialTop_left`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L102),
+[`Seven.Boundary.axialTop_right`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L105),
+[`Seven.Boundary.circle_displacement_half`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L357),
+[`Seven.Boundary.a_le_circle`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L108).*
 
 ![Graphs over b from 0 to rd, with a on the vertical axis: the black circle gamma, decreasing from root 3 minus 1/2 to rd, and the steeper purple tie line lambda, which crosses it at b0 at the height a0; their minimum chi, drawn thick blue, follows the circle up to b0 and the tie line beyond. Below chi the axial region is shaded, from a = 1/2 up, for b up to pi/5, cut off on the right by the dashed diagonal a = b. A dashed orange line of slope -1/2 through (b0, a0) lies just above the circle on [0, b0]](figures/appendix-g/axial-top.svg)
 
@@ -644,15 +644,15 @@ $(X(\tau), Y(\tau))$ is the intersection with
 $\frac13 X + \frac34 Y = Z(\tau) > 0$.
 
 *Lean:
-[`Seven.Boundary.N`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L25),
-[`Seven.Boundary.D`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L26),
-[`Seven.Boundary.Z`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L27),
-[`Seven.Boundary.X`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L28),
-[`Seven.Boundary.Y`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L29),
-[`Seven.Boundary.sideA`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L30),
-[`Seven.Boundary.sideU`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L31),
-[`Seven.Boundary.sideTopA`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L40),
-[`Seven.Boundary.sideTopU`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L39).*
+[`Seven.Boundary.N`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L30),
+[`Seven.Boundary.D`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L31),
+[`Seven.Boundary.Z`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L32),
+[`Seven.Boundary.X`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L33),
+[`Seven.Boundary.Y`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L34),
+[`Seven.Boundary.sideA`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L35),
+[`Seven.Boundary.sideU`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L36),
+[`Seven.Boundary.sideTopA`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L45),
+[`Seven.Boundary.sideTopU`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L44).*
 
 ![The quarter circle X squared plus Y squared equals 13/4 in the (X, Y)-plane with the diagonal X = Y; from the origin, two short arrows along (3/4, -1/3) and (1/3, 3/4); an orange segment from the origin, under the first arrow, of length D/root N to the foot of a purple line of constant side label, and a blue segment along that line of length Z/root N up to the point (X(tau), Y(tau)) on the circle; a thick green arc of the circle from the transition point (X0, Y0) up to the diagonal point (rd + 1/2, rd + 1/2)](figures/appendix-g/parametrization.svg)
 
@@ -755,22 +755,22 @@ YZ + XD = Y\left(\tfrac13 X + \tfrac34 Y\right) + X\left(\tfrac34 X - \tfrac13 Y
 $\square$
 
 *Lean:
-[`Seven.Boundary.D_range`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L127),
-[`Seven.Boundary.radicand_pos`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L134),
-[`Seven.Boundary.Z_pos`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L140),
-[`Seven.Boundary.Z_sq`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L143),
-[`Seven.Boundary.circle_identities`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L147),
-[`Seven.Boundary.circle_label`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L156),
-[`Seven.Boundary.D_s0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L121),
-[`Seven.Boundary.side_at_transition`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L162),
-[`Seven.Boundary.D_td`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L117),
-[`Seven.Boundary.side_at_diagonal`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L181),
-[`Seven.Boundary.circle_bounds`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L195),
-[`Seven.Boundary.hasDerivAt_D`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L255),
-[`Seven.Boundary.hasDerivAt_Z`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L260),
-[`Seven.Boundary.hasDerivAt_X`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L271),
-[`Seven.Boundary.hasDerivAt_Y`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L283),
-[`Seven.Boundary.hasDerivAt_Y_prime`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L295).*
+[`Seven.Boundary.D_range`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L132),
+[`Seven.Boundary.radicand_pos`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L139),
+[`Seven.Boundary.Z_pos`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L145),
+[`Seven.Boundary.Z_sq`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L148),
+[`Seven.Boundary.circle_identities`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L152),
+[`Seven.Boundary.circle_label`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L161),
+[`Seven.Boundary.D_s0`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L126),
+[`Seven.Boundary.side_at_transition`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L167),
+[`Seven.Boundary.D_td`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L122),
+[`Seven.Boundary.side_at_diagonal`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L186),
+[`Seven.Boundary.circle_bounds`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L200),
+[`Seven.Boundary.hasDerivAt_D`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L260),
+[`Seven.Boundary.hasDerivAt_Z`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L265),
+[`Seven.Boundary.hasDerivAt_X`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L276),
+[`Seven.Boundary.hasDerivAt_Y`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L288),
+[`Seven.Boundary.hasDerivAt_Y_prime`](../../SquaresInCircles/Seven/Pair/LabelBoundary.lean#L300).*
 
 ![Graphs over the label tau from s0 to td, with dashed levels at 1/2, 1, 5/4 and 7/5: X in blue decreasing from X0 to rd + 1/2, Y in green increasing from Y0 to the same value, where the two meet at td (black dot), Z in purple increasing between 1 and 7/5, and D in orange decreasing between 1/2 and 1; all four are nearly straight](figures/appendix-g/circle-functions.svg)
 
@@ -822,10 +822,10 @@ If $\chi(b') = \lambda(b')$, then
 $\chi(b) \le \lambda(b) = \lambda(b') + \frac{11}9(b' - b)$. $\square$
 
 *Lean:
-[`Seven.Boundary.axial_upper`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L113),
-[`Seven.Boundary.axialTop_state`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L120),
-[`Seven.Boundary.axialTop_antitone`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L328),
-[`Seven.Boundary.axialTop_displacement`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L336).*
+[`Seven.Boundary.axial_upper`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L118),
+[`Seven.Boundary.axialTop_state`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L125),
+[`Seven.Boundary.axialTop_antitone`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L333),
+[`Seven.Boundary.axialTop_displacement`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L341).*
 
 ![A zoom on the side region in the (a, b)-plane: the green region between the purple tie line at the bottom left, the circle phi = 13/4 at the right and the diagonal at the top left, with the orange capped triangle at its left corner. Green segments of slope 9/4 cross it from the tie line to the circle, labelled by their side labels 0.42, 0.48, pi/6, 0.6, 0.66, 0.72, and two unlabelled ones of the labels 0.76 and td, the second ending at the diagonal corner; the segment of label pi/6 ends at the side state (1, 1/2), and the orange segment of label pi/4 is the edge V1 V2 of the capped triangle. The transition state (a0, b0) is the lower right corner and the diagonal corner (rd, rd) the top](figures/appendix-g/segments.svg)
 
@@ -930,15 +930,15 @@ because $13Y \le 12Z = 4X + 9Y$ by $Y \le X$. So the function is nondecreasing,
 and its values at $\tau$ and $\tau'$ give the claim. $\square$
 
 *Lean:
-[`Seven.Boundary.side_state_transition_bounds`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L143),
-[`Seven.Boundary.side_segment`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L289),
-[`Seven.Boundary.side_radial_upper`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L398),
-[`Seven.Boundary.tie_state`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L251),
-[`Seven.Boundary.sideTop_state`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L241),
-[`Seven.Boundary.circle_state_at_label`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L182),
-[`Seven.Boundary.diagonal_state`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L219),
-[`Seven.Boundary.tie_of_side`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L284),
-[`Seven.Boundary.sideA_displacement`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L375).*
+[`Seven.Boundary.side_state_transition_bounds`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L148),
+[`Seven.Boundary.side_segment`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L294),
+[`Seven.Boundary.side_radial_upper`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L403),
+[`Seven.Boundary.tie_state`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L256),
+[`Seven.Boundary.sideTop_state`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L246),
+[`Seven.Boundary.circle_state_at_label`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L187),
+[`Seven.Boundary.diagonal_state`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L224),
+[`Seven.Boundary.tie_of_side`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L289),
+[`Seven.Boundary.sideA_displacement`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L380).*
 
 ### Lemma G.17 (the slope along the tie line)
 
@@ -982,7 +982,7 @@ $\frac94(\frac{43}{90} - \frac45\tau)\cos x$, and the sum is at least
 using $\tau \le \frac\pi4$ and $\pi < \frac{22}7$. $\square$
 
 *Lean:
-[`Seven.Boundary.tie_slope_pos`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L269).*
+[`Seven.Boundary.tie_slope_pos`](../../SquaresInCircles/Seven/Pair/LabelSegments.lean#L274).*
 
 ![Graphs over x from 0 to omega of the left side of Lemma G.17 for the labels s0, 0.5, 0.6, 0.7 and pi/4, in five colours, all between about 0.1 and 0.6 and crossing near x = 0.9; the curve for pi/4 falls from about 0.59 to about 0.10 at omega, where it meets the dashed lower bound (115/72 - 77 pi/180) cos x](figures/appendix-g/slope.svg)
 
@@ -1114,16 +1114,16 @@ $\frac12 - b \ge \frac12 - \delta(\ell)$ and the expression is at least
 $G(\ell) > 0$ by (3). $\square$
 
 *Lean:
-[`Seven.Boundary.transition_actual_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L208),
-[`Seven.Boundary.transitionF`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L41),
-[`Seven.Boundary.transitionF_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L159),
-[`Seven.Boundary.transitionDiagonalF`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L170),
-[`Seven.Boundary.transitionDiagonalF_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L173),
-[`Seven.Boundary.corner_angle_bounds`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L73),
-[`Seven.Boundary.corner_point`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L82),
-[`Seven.Boundary.transition_curvature`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L116),
-[`Seven.Boundary.hasDerivAt_transitionF`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L53),
-[`Seven.Boundary.hasDerivAt_transitionFD`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L62).*
+[`Seven.Boundary.transition_actual_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L213),
+[`Seven.Boundary.transitionF`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L46),
+[`Seven.Boundary.transitionF_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L164),
+[`Seven.Boundary.transitionDiagonalF`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L175),
+[`Seven.Boundary.transitionDiagonalF_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L178),
+[`Seven.Boundary.corner_angle_bounds`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L78),
+[`Seven.Boundary.corner_point`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L87),
+[`Seven.Boundary.transition_curvature`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L121),
+[`Seven.Boundary.hasDerivAt_transitionF`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L58),
+[`Seven.Boundary.hasDerivAt_transitionFD`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L67).*
 
 ![Graph of the transition profile F on the interval from 2/5 to td, a convex blue curve falling from about 0.053 to a minimum of about 0.0008 near 0.72 and rising slightly up to td, continued by a short green piece G on the tiny interval from td to pi/4, above a dashed orange parabola that touches the curve at the black dot at td and dips nearly to 0 near 0.7](figures/appendix-g/transition-profile.svg)
 
@@ -1156,10 +1156,10 @@ $0.5 - 0.77476 - 0.6198\cdot 0.585 + 0.79136\cdot 0.811$, which is more than
 $0.004$. $\square$
 
 *Lean:
-[`Seven.Boundary.diagonalAngle`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L17),
-[`Seven.Boundary.diagonalValue`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L18),
-[`Seven.Boundary.diagonal_angle_bounds`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L20),
-[`Seven.Boundary.diagonal_value_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L26).*
+[`Seven.Boundary.diagonalAngle`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L22),
+[`Seven.Boundary.diagonalValue`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L23),
+[`Seven.Boundary.diagonal_angle_bounds`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L25),
+[`Seven.Boundary.diagonal_value_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L31).*
 
 ### Lemma G.20 (the diagonal profile)
 
@@ -1207,9 +1207,9 @@ K\left(\tfrac25\right) > \tfrac\pi5 - \tfrac{12}{25} + \tfrac{51}{40}\cdot\tfrac
 which is positive as $\pi > 3$. $\square$
 
 *Lean:
-[`Seven.Boundary.diagonalK`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L222),
-[`Seven.Boundary.diagonalK_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L248),
-[`Seven.Boundary.diagonalSlope_gt`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L229).*
+[`Seven.Boundary.diagonalK`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L227),
+[`Seven.Boundary.diagonalK_pos`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L253),
+[`Seven.Boundary.diagonalSlope_gt`](../../SquaresInCircles/Seven/Pair/BoundaryProfiles.lean#L234).*
 
 ![Two graphs. Left: the concave function 51/40 sin x + 11/40 cos x, blue on the interval from pi/3 to x1 = 7 pi/12 - 2/5 and grey on either side, with a maximum near 1.31, above the dashed level 6/5. Right: the profile K on the interval from 2/5 to pi/4, an increasing blue curve from about 0.052 at 2/5, above the orange mark at pi/5 - 0.585 there, to about 0.085](figures/appendix-g/diagonal-profile.svg)
 
@@ -1256,13 +1256,13 @@ is the target part at the tie state of label $\ell'$, and $H$ at the top of the
 side label $\ell'$. At the switch label, $d = \omega$.
 
 *Lean:
-[`Seven.Boundary.axialX`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L15),
-[`Seven.Boundary.axialY`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L16),
-[`Seven.Boundary.circleTarget`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L24),
-[`Seven.Boundary.lineTarget`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L26),
-[`Seven.Boundary.vertexTarget`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L28),
-[`Seven.Boundary.switchAngle`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L31),
-[`Seven.Boundary.switchLabel`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L32).*
+[`Seven.Boundary.axialX`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L20),
+[`Seven.Boundary.axialY`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L21),
+[`Seven.Boundary.circleTarget`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L29),
+[`Seven.Boundary.lineTarget`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L31),
+[`Seven.Boundary.vertexTarget`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L33),
+[`Seven.Boundary.switchAngle`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L36),
+[`Seven.Boundary.switchLabel`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L37).*
 
 ### Lemma G.22 (a derivative ratio)
 
@@ -1408,17 +1408,17 @@ $0 \le x - \frac\pi{12} \le \pi$, so
 and $\cos\frac\pi{12} > 0$. $\square$
 
 *Lean:
-[`Seven.Boundary.axial_circle_bounds`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L34),
-[`Seven.Boundary.hasDerivAt_axialX`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L57),
-[`Seven.Boundary.hasDerivAt_axialY`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L52),
-[`Seven.Boundary.ratio`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L17),
-[`Seven.Boundary.ratio_nonneg`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L128),
-[`Seven.Boundary.ratio_zero_lt`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L136),
-[`Seven.Boundary.ratioD`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L19),
-[`Seven.Boundary.hasDerivAt_ratio`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L68),
-[`Seven.Boundary.ratio_numerator_pos`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L87),
-[`Seven.Boundary.ratio_derivative_lt_one`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L105),
-[`Seven.Boundary.tan_twelfth_le`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L147).*
+[`Seven.Boundary.axial_circle_bounds`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L39),
+[`Seven.Boundary.hasDerivAt_axialX`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L62),
+[`Seven.Boundary.hasDerivAt_axialY`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L57),
+[`Seven.Boundary.ratio`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L22),
+[`Seven.Boundary.ratio_nonneg`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L133),
+[`Seven.Boundary.ratio_zero_lt`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L141),
+[`Seven.Boundary.ratioD`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L24),
+[`Seven.Boundary.hasDerivAt_ratio`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L73),
+[`Seven.Boundary.ratio_numerator_pos`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L92),
+[`Seven.Boundary.ratio_derivative_lt_one`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L110),
+[`Seven.Boundary.tan_twelfth_le`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L152).*
 
 ![Graph of the quintic P on the interval from 8/5 to 7/4: a concave blue arch from 119.68 at 8/5 up to about 132 and down to about 78.6 at 7/4, continued in grey beyond both ends, above the orange chord joining its two end points and far above the axis](figures/appendix-g/quintic.svg)
 
@@ -1467,9 +1467,9 @@ $\frac45 s_0 + \frac12 = Y_0$ (Lemma G.10), which gives the two values.
 $\square$
 
 *Lean:
-[`Seven.Boundary.circleTarget_decreases`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L160),
-[`Seven.Boundary.circleTarget_transition`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L216),
-[`Seven.Boundary.lineTarget_transition`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L230).*
+[`Seven.Boundary.circleTarget_decreases`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L165),
+[`Seven.Boundary.circleTarget_transition`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L221),
+[`Seven.Boundary.lineTarget_transition`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L235).*
 
 ### Lemma G.24 (the switch angle)
 
@@ -1483,9 +1483,9 @@ $\cos x - \frac49\sin x$ is strictly decreasing, as $\cos$ decreases and $\sin$
 increases there, and it vanishes at $\omega$. $\square$
 
 *Lean:
-[`Seven.Boundary.switch_range`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L236),
-[`Seven.Boundary.switch_zero`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L239),
-[`Seven.Boundary.switch_iff`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L244).*
+[`Seven.Boundary.switch_range`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L241),
+[`Seven.Boundary.switch_zero`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L244),
+[`Seven.Boundary.switch_iff`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L249).*
 
 ### Proposition G.25 (the straight piece)
 
@@ -1503,8 +1503,8 @@ $c = \frac\pi3 - \ell$, the derivative of $L(\ell, \cdot)$ at $y$ is positive.
 With Proposition G.23 this gives the claim. $\square$
 
 *Lean:
-[`Seven.Boundary.lineTarget_derivative_positive`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L263),
-[`Seven.Boundary.lineTarget_low_min`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L276).*
+[`Seven.Boundary.lineTarget_derivative_positive`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L268),
+[`Seven.Boundary.lineTarget_low_min`](../../SquaresInCircles/Seven/Pair/AxialBoundary.lean#L281).*
 
 ![Graphs of the target support against the target label for four source labels 2/5, 0.55, 0.7 and pi/4, in four colours. Each curve decreases slowly (solid) from the target label 0 to s0, where it has a corner marked by a dot, and then increases (dashed) along the tie line up to the switch label or pi/4](figures/appendix-g/targets.svg)
 
@@ -1550,7 +1550,7 @@ $h(A, tB, \pi - d) > -\frac{37}{50}$, and $a \ge \frac12$. So
 $\sigma_0(\frac\pi3) > 1 - \frac{37}{50} = \frac{13}{50}$. $\square$
 
 *Lean:
-[`Seven.fixed_gap_outward`](../../SquaresInCircles/Seven/Pair/EasySectors.lean#L19).*
+[`Seven.fixed_gap_outward`](../../SquaresInCircles/Seven/Pair/EasySectors.lean#L24).*
 
 ### Proposition G.27 (the backward axis)
 
@@ -1579,7 +1579,7 @@ $\sin(\frac\pi3 - \ell) \ge 0$ and
 $\sigma_3(\frac\pi3) \ge \frac12 + b \ge \frac12$. $\square$
 
 *Lean:
-[`Seven.fixed_gap_backward`](../../SquaresInCircles/Seven/Pair/EasySectors.lean#L28).*
+[`Seven.fixed_gap_backward`](../../SquaresInCircles/Seven/Pair/EasySectors.lean#L33).*
 
 ### Proposition G.28 (the inward axis with a negative source sign)
 
@@ -1605,7 +1605,7 @@ $\sigma_2(\frac\pi3) > \frac12 - (\sqrt3 - \frac12) + \frac79 = \frac{16}9 - \sq
 which is positive as $\sqrt3 < 1.733 < \frac{16}9$. $\square$
 
 *Lean:
-[`Seven.fixed_gap_inward_negative`](../../SquaresInCircles/Seven/Pair/EasySectors.lean#L56).*
+[`Seven.fixed_gap_inward_negative`](../../SquaresInCircles/Seven/Pair/EasySectors.lean#L61).*
 
 ### Proposition G.29 (the forward axis with positive signs)
 
@@ -1681,8 +1681,8 @@ Recall $b \ge \frac45\ell$, because $\ell \le \mathrm{axial}(b)$.
    $\sigma_1(\frac\pi3) > 0$ (Figure G.17). $\square$
 
 *Lean:
-[`Seven.fixed_gap_forward_positive`](../../SquaresInCircles/Seven/Pair/EasySectors.lean#L76),
-[`cos_add_sin_mono`](../../SquaresInCircles/Common/Trigonometry.lean#L79).*
+[`Seven.fixed_gap_forward_positive`](../../SquaresInCircles/Seven/Pair/EasySectors.lean#L81),
+[`cos_add_sin_mono`](../../SquaresInCircles/Common/Trigonometry.lean#L84).*
 
 ![Two panels. Left: the square of the source label l and the target label l′, from 0 to pi/4, split by the vertical line l = 5/16 and, left of it, by the line l′ = l + pi/12, where the turn z equals pi/4, into three regions: step 1 on the right (blue, sigma1 > 1/100), step 3 above the line (green, sigma1 > 7/80) and step 4 below it (orange). Right: the concave function k on [0, 0.69], blue on [1/5, pi/6] with dots at both ends, above the dashed orange level m = 4/3 - 2 pi/15](figures/appendix-g/forward-bound.svg)
 
@@ -1764,12 +1764,12 @@ is affine and the weights are nonnegative, (2) gives
 and $7 - 2\pi > 0$. $\square$
 
 *Lean:
-[`Seven.capVertex`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L51),
-[`Seven.capVertex_admissible`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L54),
-[`Seven.capVertex_label`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L66),
-[`Seven.capVertex_active`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L72),
-[`Seven.cap_vertex_le`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L91),
-[`Seven.exists_le_weighted_sum`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L81).*
+[`Seven.capVertex`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L56),
+[`Seven.capVertex_admissible`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L59),
+[`Seven.capVertex_label`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L71),
+[`Seven.capVertex_active`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L77),
+[`Seven.cap_vertex_le`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L96),
+[`Seven.exists_le_weighted_sum`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L86).*
 
 ![A zoom on the capped triangle in the (a, b)-plane: the orange triangle with vertices V0 on the diagonal b = a at the lower left, V1 on the line b = pi/5 to its right, and V2 on the diagonal at the top; the dashed lines b = pi/5 and 9a - 4b = 7 - pi through its edges, the purple tie line ending at V1 from below, the grey half-plane b > a above the diagonal where there are no states, the words axial below the triangle and side to its right, and a capped state (a, b) inside joined to the three vertices by dashed segments](figures/appendix-g/capped.svg)
 
@@ -1827,9 +1827,9 @@ have the gap property on every axis.
    gap property, and step 2 concludes. $\square$
 
 *Lean:
-[`Seven.fixed_gap_of_active_cases`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L144),
-[`Seven.pairProperty_cap_first`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L112),
-[`Seven.pairProperty_cap_second`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L128).*
+[`Seven.fixed_gap_of_active_cases`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L149),
+[`Seven.pairProperty_cap_first`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L117),
+[`Seven.pairProperty_cap_second`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L133).*
 
 ## G.9 Proof of Proposition 10.17
 
@@ -1861,7 +1861,7 @@ of §G.1. A positive sum gives the gap property by Lemma G.2 (4).
 Every active label is axial or side, so the cases are exhaustive. $\square$
 
 *Lean:
-[`Seven.fixed_gap_active`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L27).*
+[`Seven.fixed_gap_active`](../../SquaresInCircles/Seven/Pair/CriticalGap.lean#L32).*
 
 *Proof of [Proposition 10.17](10-seven.md#proposition-1017-the-critical-gap).* By Proposition G.32 the hypothesis of
 Proposition G.31 holds, so any two admissible states, with any signs, have the

@@ -1,5 +1,7 @@
-import SquaresInCircles.Common.Contacts
-import SquaresInCircles.Common.Trigonometry
+module
+
+public import SquaresInCircles.Common.Contacts
+public import SquaresInCircles.Common.Trigonometry
 
 /-!
 # Supports of a square in a disk
@@ -15,6 +17,9 @@ closed axis-parallel square at `(a, b)` bounds the projection of each of its
 points (`point_le_support`), and is at least `1/2 - ρ` when the centre is within
 `ρ` of the origin (`support_ge`).
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles
 

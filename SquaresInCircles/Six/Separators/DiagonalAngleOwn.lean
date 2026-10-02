@@ -1,5 +1,7 @@
-import SquaresInCircles.Six.Wings.WestSign
-import SquaresInCircles.Six.Supports
+module
+
+public import SquaresInCircles.Six.Wings.WestSign
+public import SquaresInCircles.Six.Supports
 
 /-!
 # Six squares: the angle of D with W on its own axis
@@ -16,6 +18,8 @@ and in `v + d`, and it is concave in each of `v` and `d` on
 of `sin (v + d)`; at the four corners the far-vertex and cap supports bound it
 below by positive numbers. So the slack is positive, a contradiction.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six

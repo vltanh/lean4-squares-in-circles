@@ -1,6 +1,8 @@
-import SquaresInCircles.Common.Contacts
-import SquaresInCircles.Common.Angles
-import SquaresInCircles.Common.Trigonometry
+module
+
+public import SquaresInCircles.Common.Contacts
+public import SquaresInCircles.Common.Angles
+public import SquaresInCircles.Common.Trigonometry
 
 /-!
 # The separating-axis theorem
@@ -12,6 +14,9 @@ squares, the second turned by `d` from the first, the threshold is
 `1/2 + angularWidth d` and the offset of the centres has explicit coordinates
 in either frame (`oriented_separating_axes`).
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles.SAT
 

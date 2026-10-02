@@ -1,10 +1,12 @@
-import SquaresInCircles.Seven.Pair.EasySectors
-import SquaresInCircles.Seven.Pair.Forward.NegativeTarget
-import SquaresInCircles.Seven.Pair.Forward.BothNegative
-import SquaresInCircles.Seven.Pair.Forward.Opposite
-import SquaresInCircles.Seven.Pair.Inward.AxialTarget
-import SquaresInCircles.Seven.Pair.Inward.SideTarget
-import SquaresInCircles.Seven.Pair.Inward.Opposite
+module
+
+public import SquaresInCircles.Seven.Pair.EasySectors
+public import SquaresInCircles.Seven.Pair.Forward.NegativeTarget
+public import SquaresInCircles.Seven.Pair.Forward.BothNegative
+public import SquaresInCircles.Seven.Pair.Forward.Opposite
+public import SquaresInCircles.Seven.Pair.Inward.AxialTarget
+public import SquaresInCircles.Seven.Pair.Inward.SideTarget
+public import SquaresInCircles.Seven.Pair.Inward.Opposite
 
 /-!
 # Seven squares: the critical gap `π/3`
@@ -17,6 +19,9 @@ admissible ties; so a support sum at a capped state is at least its value at a
 vertex, and a zero would pass to a vertex as a contact with a capped label,
 which does not exist.
 -/
+
+@[expose] public section
+
 noncomputable section
 open scoped BigOperators
 namespace SquaresInCircles.Seven

@@ -1,12 +1,14 @@
-import SquaresInCircles.Common.Contacts
-import SquaresInCircles.Common.Sweep
-import SquaresInCircles.Common.ExteriorCharts
-import SquaresInCircles.Common.DiskSupport
-import SquaresInCircles.Common.Trigonometry
-import SquaresInCircles.Common.Congruence
-import SquaresInCircles.Six.Constants
-import SquaresInCircles.Common.SeparatingAxes
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
+module
+
+public import SquaresInCircles.Common.Contacts
+public import SquaresInCircles.Common.Sweep
+public import SquaresInCircles.Common.ExteriorCharts
+public import SquaresInCircles.Common.DiskSupport
+public import SquaresInCircles.Common.Trigonometry
+public import SquaresInCircles.Common.Congruence
+public import SquaresInCircles.Six.Constants
+public import SquaresInCircles.Common.SeparatingAxes
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
 
 /-!
 # Six squares: charts and the separating axes of the central square
@@ -23,6 +25,8 @@ along its own axis, its secondary axis in either direction, or a side of C
 (`central_separators_complete`); `centralMargin k t a b cx cy ≥ 0` is the
 separating inequality along the axis `k`, with threshold `1/2 + angularWidth t`.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six.Normalization

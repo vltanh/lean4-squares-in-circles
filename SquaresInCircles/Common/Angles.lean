@@ -1,6 +1,8 @@
-import SquaresInCircles.Common.Congruence
-import SquaresInCircles.Common.Arcs
-import Mathlib.Data.Fin.Tuple.Sort
+module
+
+public import SquaresInCircles.Common.Congruence
+public import SquaresInCircles.Common.Arcs
+public import Mathlib.Data.Fin.Tuple.Sort
 
 /-!
 # Directions on the circle
@@ -13,6 +15,9 @@ form a regular polygon. Two directions at least `π` apart are
 opposite, so disjoint half circles have opposite centres. A quarter turn of the
 frame turns the centre of a square by a quarter turn.
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles
 

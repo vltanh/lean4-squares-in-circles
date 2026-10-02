@@ -1,4 +1,6 @@
-import SquaresInCircles.Seven.Pair.LabelSegments
+module
+
+public import SquaresInCircles.Seven.Pair.LabelSegments
 
 /-!
 # Seven squares: the target support on the axial boundary
@@ -7,6 +9,9 @@ On the circular piece by the sign of a derivative ratio: the ratio starts below
 `tan (π/12)`, and its derivative stays below `1` by the concavity of a quintic in
 the radial coordinate. On the straight piece by a sine/cosine comparison.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles.Seven

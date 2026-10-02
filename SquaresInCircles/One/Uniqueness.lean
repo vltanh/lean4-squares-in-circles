@@ -1,5 +1,7 @@
-import SquaresInCircles.One.Construction
-import SquaresInCircles.Common.Optimum
+module
+
+public import SquaresInCircles.One.Construction
+public import SquaresInCircles.Common.Optimum
 
 /-!
 # One square: uniqueness
@@ -10,6 +12,9 @@ square sits at the origin of the chart's frame.
 The file ends with `optimum`: the case as an `Optimum`, which also gives the
 lower bound.
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles.One
 

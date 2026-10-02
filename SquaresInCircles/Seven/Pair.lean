@@ -1,5 +1,7 @@
-import SquaresInCircles.Seven.Pair.Frame
-import SquaresInCircles.Seven.Pair.SmallerGaps
+module
+
+public import SquaresInCircles.Seven.Pair.Frame
+public import SquaresInCircles.Seven.Pair.SmallerGaps
 
 /-!
 # Seven squares: the pair theorem
@@ -12,6 +14,9 @@ the frame of its phase and the pair is a canonical pair; a separating axis
 gives a nonpositive support sum. The sign of the marker difference decides
 which square plays the first role.
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles.Seven
 

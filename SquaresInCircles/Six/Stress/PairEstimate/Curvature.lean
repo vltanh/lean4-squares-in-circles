@@ -1,5 +1,7 @@
-import SquaresInCircles.Six.Stress.PairStress
-import SquaresInCircles.Common.Trigonometry
+module
+
+public import SquaresInCircles.Six.Stress.PairStress
+public import SquaresInCircles.Common.Trigonometry
 
 /-!
 # Six squares: concavity of the pair gap along lines
@@ -18,6 +20,8 @@ terms, from `cos x ≥ 1 - x²/2`, `cos x + |sin x| ≥ 1` and the signs of the
 sector, make the second derivative nonpositive in every case: the gap is concave
 on every segment of these lines that stays in one sector.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six.Stress.Pair

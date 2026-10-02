@@ -1,6 +1,8 @@
-import SquaresInCircles.Seven.Pair
-import SquaresInCircles.Common.Frames
-import SquaresInCircles.Common.Angles
+module
+
+public import SquaresInCircles.Seven.Pair
+public import SquaresInCircles.Common.Frames
+public import SquaresInCircles.Common.Angles
 
 /-!
 # Seven squares: the containing square
@@ -15,6 +17,9 @@ disk centre, read in the frame of the side squares (`pullSquare`), stays in the
 strip between them; its height is left free. Aligned squares of one column have
 centres at least 1 apart.
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles.Seven
 

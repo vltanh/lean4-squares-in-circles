@@ -127,9 +127,9 @@ $2(1 - L)x + 1 - 2L > \frac75(1 - L) + 1 - 2L = \frac{12 - 17L}5 > 0$.
 $\square$
 
 *Lean:
-[`Six.Normalization.first_quadrant_steep`](../../SquaresInCircles/Six/Containing.lean#L62),
-[`Six.Normalization.fourth_quadrant_steep`](../../SquaresInCircles/Six/Containing.lean#L76),
-[`Six.Normalization.fourth_quadrant_flat`](../../SquaresInCircles/Six/Containing.lean#L94).*
+[`Six.Normalization.first_quadrant_steep`](../../SquaresInCircles/Six/Containing.lean#L67),
+[`Six.Normalization.fourth_quadrant_steep`](../../SquaresInCircles/Six/Containing.lean#L81),
+[`Six.Normalization.fourth_quadrant_flat`](../../SquaresInCircles/Six/Containing.lean#L99).*
 
 So in regime (i) a shallow support line with a normal in the first quadrant
 has its normal within $\arcsin\frac{21}{100} \approx 12°$ of the north, and one
@@ -202,8 +202,8 @@ $-\frac12 < -c_y \le q_2 - c_y \le \frac35 - c_0 < 0.49$.
    ```
 
 *Lean:
-[`Six.Normalization.shallow_support`](../../SquaresInCircles/Six/Containing.lean#L119),
-[`Six.Normalization.FreeRegime`](../../SquaresInCircles/Six/Containing.lean#L112).*
+[`Six.Normalization.shallow_support`](../../SquaresInCircles/Six/Containing.lean#L124),
+[`Six.Normalization.FreeRegime`](../../SquaresInCircles/Six/Containing.lean#L117).*
 
 ## B.2 Proof of Lemma 9.17
 
@@ -267,11 +267,11 @@ where the sine increases on $[0, \frac\pi2]$. Numerically
 $\vartheta \approx 0.30062$.
 
 *Lean:
-[`Six.Normalization.capSwitch`](../../SquaresInCircles/Six/Normalization/Caps.lean#L29),
-[`Six.Normalization.capFirst`](../../SquaresInCircles/Six/Normalization/Caps.lean#L32),
-[`Six.Normalization.capSecond`](../../SquaresInCircles/Six/Normalization/Caps.lean#L36),
-[`Six.Normalization.capDepth`](../../SquaresInCircles/Six/Normalization/Caps.lean#L40),
-[`Six.Normalization.capSwitch_gt_29_100`](../../SquaresInCircles/Six/Normalization/Caps.lean#L54).*
+[`Six.Normalization.capSwitch`](../../SquaresInCircles/Six/Normalization/Caps.lean#L33),
+[`Six.Normalization.capFirst`](../../SquaresInCircles/Six/Normalization/Caps.lean#L36),
+[`Six.Normalization.capSecond`](../../SquaresInCircles/Six/Normalization/Caps.lean#L40),
+[`Six.Normalization.capDepth`](../../SquaresInCircles/Six/Normalization/Caps.lean#L44),
+[`Six.Normalization.capSwitch_gt_29_100`](../../SquaresInCircles/Six/Normalization/Caps.lean#L58).*
 
 ### Lemma B.3 (the cap depth bounds the cap)
 
@@ -298,8 +298,8 @@ $|a|\cos s + |b|\sin s \le R_0 - \frac12(\cos s + \sin s)$, and again
 $\eta \le \mathrm{cap}(s)$. $\square$
 
 *Lean:
-[`Six.Normalization.cap_support_bound_signed`](../../SquaresInCircles/Six/Normalization/Caps.lean#L105),
-[`Six.disk_corner_support`](../../SquaresInCircles/Six/Supports.lean#L85).*
+[`Six.Normalization.cap_support_bound_signed`](../../SquaresInCircles/Six/Normalization/Caps.lean#L109),
+[`Six.disk_corner_support`](../../SquaresInCircles/Six/Supports.lean#L89).*
 
 The bound is sharp: for $s \le \vartheta$ the square with $(a, b) = (\rho_0, 0)$,
 whose far edge has both corners on the circle, attains it, and for
@@ -359,9 +359,9 @@ so
 In both cases $\eta < \frac12$. $\square$
 
 *Lean:
-[`Six.Normalization.cap_angle_lt_two_fifths`](../../SquaresInCircles/Six/Normalization/Caps.lean#L159),
-[`Six.Normalization.cap_angle_lt_quarter`](../../SquaresInCircles/Six/Normalization/Caps.lean#L185),
-[`Six.Normalization.cap_angle_small`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L26).*
+[`Six.Normalization.cap_angle_lt_two_fifths`](../../SquaresInCircles/Six/Normalization/Caps.lean#L163),
+[`Six.Normalization.cap_angle_lt_quarter`](../../SquaresInCircles/Six/Normalization/Caps.lean#L189),
+[`Six.Normalization.cap_angle_small`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L30).*
 
 The thresholds are close: $\mathrm{cap}$ falls through $\frac12$ at about
 $0.20207$ and through $r_0$ at about $0.38320$ (Figure B.4).
@@ -430,7 +430,7 @@ Also $|b| \le \rho_0$, as $(|b| + \frac12)^2 \le Q_0 - \frac14 = (\rho_0 + \frac
    $\square$
 
 *Lean:
-[`Six.Normalization.deep_cap_bounds`](../../SquaresInCircles/Six/Normalization/Caps.lean#L330).*
+[`Six.Normalization.deep_cap_bounds`](../../SquaresInCircles/Six/Normalization/Caps.lean#L334).*
 
 ### Lemma B.6 (the piercing point)
 
@@ -470,10 +470,10 @@ So $(\eta + 1 + V\sigma)^2 + V^2 \ge (\eta + 1)^2 + 1 > (\frac{11}8)^2 + 1 > Q_0
 a contradiction. $\square$
 
 *Lean:
-[`Six.Normalization.cap_piercing`](../../SquaresInCircles/Six/Normalization/Caps.lean#L414),
-[`Six.Normalization.piercing_transverse_upper`](../../SquaresInCircles/Six/Normalization/Caps.lean#L385),
-[`Six.Normalization.piercing_polynomial_lower`](../../SquaresInCircles/Six/Normalization/Caps.lean#L343),
-[`Six.Normalization.piercing_polynomial_gt_ceiling`](../../SquaresInCircles/Six/Normalization/Caps.lean#L372).*
+[`Six.Normalization.cap_piercing`](../../SquaresInCircles/Six/Normalization/Caps.lean#L418),
+[`Six.Normalization.piercing_transverse_upper`](../../SquaresInCircles/Six/Normalization/Caps.lean#L389),
+[`Six.Normalization.piercing_polynomial_lower`](../../SquaresInCircles/Six/Normalization/Caps.lean#L347),
+[`Six.Normalization.piercing_polynomial_gt_ceiling`](../../SquaresInCircles/Six/Normalization/Caps.lean#L376).*
 
 ![The part of the disk of radius R0 beyond the dashed line x = eta, for the deepest cap eta = r0, shaded, with four squares drawn in it as outlines: two parallel to the axes and pushed up and down as far as the disk allows, and two turned by 0.3 and by minus 0.38, also pushed sideways. All four contain the point (eta + 1/2, 0), marked by a dot on the first axis](figures/appendix-b/piercing.svg)
 
@@ -518,11 +518,11 @@ $|t| \le \frac{3\pi}4$, then $t - v$ is a multiple of $2\pi$ with
 $|t - v| < \frac{3\pi}4 + \frac25 < 2\pi$, so $t = v$. $\square$
 
 *Lean:
-[`Six.Normalization.deep_cap_faces`](../../SquaresInCircles/Six/Normalization/Caps.lean#L471),
-[`Six.Normalization.primary_cap_angle`](../../SquaresInCircles/Six/Normalization/Caps.lean#L520),
-[`Six.Normalization.cos_sin_eq_of_coe_eq`](../../SquaresInCircles/Six/Normalization/Caps.lean#L460),
-[`Six.Normalization.four_primary_quadrants`](../../SquaresInCircles/Six/Normalization/Basic.lean#L172),
-[`Six.Normalization.phase_eq_of_short_difference`](../../SquaresInCircles/Six/Normalization/Basic.lean#L205).*
+[`Six.Normalization.deep_cap_faces`](../../SquaresInCircles/Six/Normalization/Caps.lean#L475),
+[`Six.Normalization.primary_cap_angle`](../../SquaresInCircles/Six/Normalization/Caps.lean#L524),
+[`Six.Normalization.cos_sin_eq_of_coe_eq`](../../SquaresInCircles/Six/Normalization/Caps.lean#L464),
+[`Six.Normalization.four_primary_quadrants`](../../SquaresInCircles/Six/Normalization/Basic.lean#L176),
+[`Six.Normalization.phase_eq_of_short_difference`](../../SquaresInCircles/Six/Normalization/Basic.lean#L209).*
 
 ![A square T in the cap beyond the dashed line x = eta, turned by 0.2, inside the circle of radius R0. From the origin, the four directions u(0.2 + k pi/2), k = 0, 1, 2, 3, that can serve as its primary axis, each labelled with the coordinates (a, b) of the centre of T in that frame: (1.05, 0.08) for the frame facing the cap, drawn in blue, and (0.08, -1.05), (-1.05, -0.08) and (-0.08, 1.05) for the others, drawn grey](figures/appendix-b/faces.svg)
 
@@ -541,10 +541,10 @@ $\eta \le \mathrm{cap}(t)$, and Lemma B.4 (2) gives $t < 0.203$. (3) is
 Lemma B.7. $\square$
 
 *Lean:
-[`Six.Normalization.deep_cap_bounds`](../../SquaresInCircles/Six/Normalization/Caps.lean#L330),
-[`Six.Normalization.cap_piercing`](../../SquaresInCircles/Six/Normalization/Caps.lean#L414),
-[`Six.Normalization.cap_angle_small`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L26),
-[`Six.Normalization.deep_cap_faces`](../../SquaresInCircles/Six/Normalization/Caps.lean#L471).*
+[`Six.Normalization.deep_cap_bounds`](../../SquaresInCircles/Six/Normalization/Caps.lean#L334),
+[`Six.Normalization.cap_piercing`](../../SquaresInCircles/Six/Normalization/Caps.lean#L418),
+[`Six.Normalization.cap_angle_small`](../../SquaresInCircles/Six/Normalization/PinAxes.lean#L30),
+[`Six.Normalization.deep_cap_faces`](../../SquaresInCircles/Six/Normalization/Caps.lean#L475).*
 
 ## B.3 Proof of Lemma 9.20
 
@@ -611,9 +611,9 @@ $829(A^2 + B^2) = (27A + 10B)^2 + (10A - 27B)^2 \ge (\frac{395}8)^2$, while
 $(\frac{395}8)^2/829 > 2.94$. (3) $1.54^2 + 0.696^2 = 2.856016$. $\square$
 
 *Lean:
-[`Six.Normalization.corner_sq_le`](../../SquaresInCircles/Six/Normalization/Basic.lean#L32),
-[`Six.moving_pin_polynomial`](../../SquaresInCircles/Six/Normalization/Pins.lean#L336),
-[`Six.western_flank_quadratic`](../../SquaresInCircles/Six/Normalization/Pins.lean#L672).*
+[`Six.Normalization.corner_sq_le`](../../SquaresInCircles/Six/Normalization/Basic.lean#L36),
+[`Six.moving_pin_polynomial`](../../SquaresInCircles/Six/Normalization/Pins.lean#L340),
+[`Six.western_flank_quadratic`](../../SquaresInCircles/Six/Normalization/Pins.lean#L676).*
 
 So a far corner cannot lie beyond any point of the two lines, nor beyond the
 point (3): these three obstacles lie just outside the disk (Figure B.7). Each
@@ -656,11 +656,11 @@ $\omega(t) = \frac12(\cos t + |\sin t|)$ and
 $c_y\sin t \ge -c_0|\sin t| \ge -\frac18|\sin t|$. $\square$
 
 *Lean:
-[`Six.own_east_positive_profile`](../../SquaresInCircles/Six/Normalization/Pins.lean#L424),
-[`Six.own_east_negative_profile`](../../SquaresInCircles/Six/Normalization/Pins.lean#L437),
-[`Six.own_west_negative_profile`](../../SquaresInCircles/Six/Normalization/Pins.lean#L496),
-[`Six.own_west_positive_profile`](../../SquaresInCircles/Six/Normalization/Pins.lean#L511),
-[`Six.own_radial_lower`](../../SquaresInCircles/Six/Normalization/Pins.lean#L407).*
+[`Six.own_east_positive_profile`](../../SquaresInCircles/Six/Normalization/Pins.lean#L428),
+[`Six.own_east_negative_profile`](../../SquaresInCircles/Six/Normalization/Pins.lean#L441),
+[`Six.own_west_negative_profile`](../../SquaresInCircles/Six/Normalization/Pins.lean#L500),
+[`Six.own_west_positive_profile`](../../SquaresInCircles/Six/Normalization/Pins.lean#L515),
+[`Six.own_radial_lower`](../../SquaresInCircles/Six/Normalization/Pins.lean#L411).*
 
 ### Lemma B.10 (an affine minorant)
 
@@ -676,7 +676,7 @@ of [Lemma A.7](appendix-a.md#lemma-a7-taylor-bounds) and $0 \le s \le r$;
 multiply by $A$ and $B$ and add. $\square$
 
 *Lean:
-[`Six.trig_affine_lower`](../../SquaresInCircles/Six/Normalization/Pins.lean#L585).*
+[`Six.trig_affine_lower`](../../SquaresInCircles/Six/Normalization/Pins.lean#L589).*
 
 ### Lemma B.11 (the windows)
 
@@ -727,10 +727,10 @@ So $g > 0$ on $[\frac23, \frac\pi4]$, and $a > \rho_0$, a contradiction.
 $\square$
 
 *Lean:
-[`Six.own_east_window`](../../SquaresInCircles/Six/Normalization/Pins.lean#L455),
-[`Six.own_west_lower_window`](../../SquaresInCircles/Six/Normalization/Pins.lean#L528),
-[`Six.quarter_trig_lower`](../../SquaresInCircles/Six/Normalization/Pins.lean#L419),
-[`harmonic_pos_of_endpoints`](../../SquaresInCircles/Common/Trigonometry.lean#L340).*
+[`Six.own_east_window`](../../SquaresInCircles/Six/Normalization/Pins.lean#L459),
+[`Six.own_west_lower_window`](../../SquaresInCircles/Six/Normalization/Pins.lean#L532),
+[`Six.quarter_trig_lower`](../../SquaresInCircles/Six/Normalization/Pins.lean#L423),
+[`harmonic_pos_of_endpoints`](../../SquaresInCircles/Common/Trigonometry.lean#L345).*
 
 The margins are small: the profiles cross $\rho_0$ at about $-0.4095$ and
 $0.2631$ near the east axis, and at about $-0.6625$ near the west axis
@@ -782,9 +782,9 @@ $(\frac32 + \frac\sigma4, 1 - \sigma)$ has squared norm at most
 $A_0^2 + B_0^2 \le Q_0$, against Lemma B.8 (1). $\square$
 
 *Lean:
-[`Six.own_transverse_obstruction`](../../SquaresInCircles/Six/Normalization/Pins.lean#L343),
-[`Six.moving_pin_trig`](../../SquaresInCircles/Six/Normalization/Pins.lean#L400),
-[`Six.moving_pin_polynomial`](../../SquaresInCircles/Six/Normalization/Pins.lean#L336).*
+[`Six.own_transverse_obstruction`](../../SquaresInCircles/Six/Normalization/Pins.lean#L347),
+[`Six.moving_pin_trig`](../../SquaresInCircles/Six/Normalization/Pins.lean#L404),
+[`Six.moving_pin_polynomial`](../../SquaresInCircles/Six/Normalization/Pins.lean#L340).*
 
 ### Lemma B.13 (the east pin)
 
@@ -817,9 +817,9 @@ $0 \le \frac9{10} \le L$; both lie in $(-\frac12, \frac12)$, the second
 because $(L, 0)$ is held. $\square$
 
 *Lean:
-[`Six.own_east_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L645),
-[`Six.east_pin_of_axis_point`](../../SquaresInCircles/Six/Normalization/Pins.lean#L621),
-[`Six.contract_transverse`](../../SquaresInCircles/Six/Normalization/Pins.lean#L604).*
+[`Six.own_east_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L649),
+[`Six.east_pin_of_axis_point`](../../SquaresInCircles/Six/Normalization/Pins.lean#L625),
+[`Six.contract_transverse`](../../SquaresInCircles/Six/Normalization/Pins.lean#L608).*
 
 Part (2) is used for squares in a deep cap beyond the east side of $C$, which
 by Lemma 9.17 hold the point $(1 + c_x, 0)$.
@@ -892,12 +892,12 @@ a \ge a\cos w + \tfrac12(1 - \cos w) \ge \eta + \tfrac12 + \tfrac12\sin w > \tfr
 ```
 
 *Lean:
-[`Six.western_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L679),
-[`Six.western_flank_quadratic`](../../SquaresInCircles/Six/Normalization/Pins.lean#L672),
-[`Six.own_west_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L713),
-[`Six.west_cap_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L772),
-[`Six.west_cap_rotated_identity`](../../SquaresInCircles/Six/Normalization/Pins.lean#L764),
-[`Six.polar_rotate`](../../SquaresInCircles/Six/Normalization/Pins.lean#L597).*
+[`Six.western_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L683),
+[`Six.western_flank_quadratic`](../../SquaresInCircles/Six/Normalization/Pins.lean#L676),
+[`Six.own_west_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L717),
+[`Six.west_cap_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L776),
+[`Six.west_cap_rotated_identity`](../../SquaresInCircles/Six/Normalization/Pins.lean#L768),
+[`Six.polar_rotate`](../../SquaresInCircles/Six/Normalization/Pins.lean#L601).*
 
 On this flank the phase of $T$ lies between $\pi - \frac23$ and the direction
 $\pi - \frac\pi{12}$ of $p_W$, so the sixty-degree lemma does not apply; the
@@ -937,7 +937,7 @@ $|b| + \frac12 > 0.6974 > 0.696$. By Lemma B.8 the point $(1.54, 0.696)$ then
 has squared norm at most $Q_0$, against Lemma B.8 (3). $\square$
 
 *Lean:
-[`Six.own_west_pin_upper`](../../SquaresInCircles/Six/Normalization/Pins.lean#L553).*
+[`Six.own_west_pin_upper`](../../SquaresInCircles/Six/Normalization/Pins.lean#L557).*
 
 *Proof of
 [Lemma 9.20](09-six.md#lemma-920-squares-separated-along-their-own-axis).* (1) is
@@ -953,14 +953,14 @@ the west side of $C$ is Lemma B.14 (2) with $w = -v$, as
 $\omega(\pi + v) = \omega(v)$. $\square$
 
 *Lean:
-[`Six.own_east_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L645),
-[`Six.own_east_window`](../../SquaresInCircles/Six/Normalization/Pins.lean#L455),
-[`Six.own_west_lower_window`](../../SquaresInCircles/Six/Normalization/Pins.lean#L528),
-[`Six.own_west_pins`](../../SquaresInCircles/Six/Normalization/Pins.lean#L734),
-[`Six.own_west_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L713),
-[`Six.own_west_pin_upper`](../../SquaresInCircles/Six/Normalization/Pins.lean#L553),
-[`Six.west_cap_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L772),
-[`Six.sixty_pin_cover`](../../SquaresInCircles/Six/Normalization/Pins.lean#L317).*
+[`Six.own_east_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L649),
+[`Six.own_east_window`](../../SquaresInCircles/Six/Normalization/Pins.lean#L459),
+[`Six.own_west_lower_window`](../../SquaresInCircles/Six/Normalization/Pins.lean#L532),
+[`Six.own_west_pins`](../../SquaresInCircles/Six/Normalization/Pins.lean#L738),
+[`Six.own_west_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L717),
+[`Six.own_west_pin_upper`](../../SquaresInCircles/Six/Normalization/Pins.lean#L557),
+[`Six.west_cap_left_pin`](../../SquaresInCircles/Six/Normalization/Pins.lean#L776),
+[`Six.sixty_pin_cover`](../../SquaresInCircles/Six/Normalization/Pins.lean#L321).*
 
 ![The directions pi + v around the west side of o, for v from -pi/4 to pi/4, cut into four coloured sectors at v = -2/3, -pi/12 and 5/8, with the pins p_W and p_D on the dotted circle of radius 9/10. A legend reads: v at most -2/3, none (Lemma B.11); v at most -pi/12, the square holds p_W (Lemma B.14); v below 5/8, it holds p_W or p_D (Lemma 9.19); v at least 5/8, it holds p_D (Lemmas 9.19 and B.15)](figures/appendix-b/west-phases.svg)
 
@@ -1070,16 +1070,16 @@ $Yc_y \le \bar cY$, and $y = \bar c$ will do; if $Y < 0$, then
 $Yc_y \le 0$, and $y = 0$ will do. $\square$
 
 *Lean:
-[`Six.radial_transverse_quadratic`](../../SquaresInCircles/Six/Supports.lean#L164),
-[`Six.cone_support`](../../SquaresInCircles/Six/Supports.lean#L176),
-[`Six.soft_support`](../../SquaresInCircles/Six/Supports.lean#L187),
-[`Six.wide_support`](../../SquaresInCircles/Six/Supports.lean#L205),
-[`Six.narrow_support`](../../SquaresInCircles/Six/Supports.lean#L223),
-[`Six.chordMajorant`](../../SquaresInCircles/Six/Supports.lean#L55),
-[`Six.chord_support`](../../SquaresInCircles/Six/Supports.lean#L60),
-[`Six.vertex_support`](../../SquaresInCircles/Six/Supports.lean#L34),
-[`Six.center_corner`](../../SquaresInCircles/Six/Supports.lean#L267),
-[`Six.center_face`](../../SquaresInCircles/Six/Supports.lean#L275).*
+[`Six.radial_transverse_quadratic`](../../SquaresInCircles/Six/Supports.lean#L168),
+[`Six.cone_support`](../../SquaresInCircles/Six/Supports.lean#L180),
+[`Six.soft_support`](../../SquaresInCircles/Six/Supports.lean#L191),
+[`Six.wide_support`](../../SquaresInCircles/Six/Supports.lean#L209),
+[`Six.narrow_support`](../../SquaresInCircles/Six/Supports.lean#L227),
+[`Six.chordMajorant`](../../SquaresInCircles/Six/Supports.lean#L59),
+[`Six.chord_support`](../../SquaresInCircles/Six/Supports.lean#L64),
+[`Six.vertex_support`](../../SquaresInCircles/Six/Supports.lean#L38),
+[`Six.center_corner`](../../SquaresInCircles/Six/Supports.lean#L271),
+[`Six.center_face`](../../SquaresInCircles/Six/Supports.lean#L279).*
 
 The number $\frac{31}{100}$ is just below the slope
 $\frac{1/2}{\rho_0 + 1/2} > 0.31001$ of the circle at the tip, where the
@@ -1155,15 +1155,15 @@ as + b\gamma \le sA + \gamma B - \tfrac12(s + \gamma) \le \left(l - \tfrac12\rig
 most $0$ if $v < 0$ and at most $\kappa v$ if $v \ge 0$. $\square$
 
 *Lean:
-[`Six.local_vertex_support`](../../SquaresInCircles/Six/Supports.lean#L28),
-[`Six.vertex_support`](../../SquaresInCircles/Six/Supports.lean#L34),
-[`Six.vertex_linear_upper`](../../SquaresInCircles/Six/Supports.lean#L44),
-[`Six.chart_radial_work`](../../SquaresInCircles/Six/Supports.lean#L113),
-[`Six.cap_linear_upper`](../../SquaresInCircles/Six/Supports.lean#L101),
-[`Six.disk_corner_support`](../../SquaresInCircles/Six/Supports.lean#L85),
-[`Six.circle_support_above_primary`](../../SquaresInCircles/Six/Supports.lean#L134),
-[`Six.coarse_central_work`](../../SquaresInCircles/Six/Supports.lean#L253),
-[`Six.scalar_box_support`](../../SquaresInCircles/Six/Supports.lean#L244).*
+[`Six.local_vertex_support`](../../SquaresInCircles/Six/Supports.lean#L32),
+[`Six.vertex_support`](../../SquaresInCircles/Six/Supports.lean#L38),
+[`Six.vertex_linear_upper`](../../SquaresInCircles/Six/Supports.lean#L48),
+[`Six.chart_radial_work`](../../SquaresInCircles/Six/Supports.lean#L117),
+[`Six.cap_linear_upper`](../../SquaresInCircles/Six/Supports.lean#L105),
+[`Six.disk_corner_support`](../../SquaresInCircles/Six/Supports.lean#L89),
+[`Six.circle_support_above_primary`](../../SquaresInCircles/Six/Supports.lean#L138),
+[`Six.coarse_central_work`](../../SquaresInCircles/Six/Supports.lean#L257),
+[`Six.scalar_box_support`](../../SquaresInCircles/Six/Supports.lean#L248).*
 
 Part (3) is the analogue of Lemma 9.25 (3) for the part $A \ge l$ of the disk:
 a force at the angle $\arcsin s$ from the secondary axis does the most work at
@@ -1264,10 +1264,10 @@ The *region* $\Delta$ is the set of the pairs $(t, u)$ with
 $-\frac23 \le t \le u$ and $-\frac25 \le u \le \frac25$.
 
 *Lean:
-[`Six.westStress`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L41),
-[`Six.westStressW`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L47),
-[`Six.westStressD`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L51),
-[`Six.westCentralSupport`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L36).*
+[`Six.westStress`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L45),
+[`Six.westStressW`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L51),
+[`Six.westStressD`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L55),
+[`Six.westCentralSupport`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L40).*
 
 ### Lemma B.18 (the stress bounds the separations)
 
@@ -1344,29 +1344,29 @@ $\sqrt{53/200}$ and $\sqrt{61/400 - 3\sin t/20}$, which gives
 $\Phi_W(t, u) \le 0$; for $z = u$ they are those of $\Phi_D$. $\square$
 
 *Lean:
-[`Six.west_geometric_defect_nonpos`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L732),
-[`Six.west_defect_at_secondary_axes`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L763),
-[`Six.westGeometricDefect`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L634),
-[`Six.west_force_balance`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L640),
-[`Six.westForceC`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L613),
-[`Six.westForceW`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L615),
-[`Six.westForceD`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L618),
-[`Six.westNormal`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L620),
-[`Six.westThreshold`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L623),
-[`Six.west_forceW_norm`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L647),
-[`Six.west_forceD_norm`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L652),
-[`Six.west_forceW_frameX`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L656),
-[`Six.west_forceW_frameY`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L662),
-[`Six.west_forceD_frameX`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L668),
-[`Six.west_forceD_frameY`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L675),
-[`Six.westWidthW`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L627),
-[`Six.westWidthD`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L629),
-[`Six.west_widthW_lower`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L682),
-[`Six.west_widthD_lower`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L690),
-[`Six.west_central_support`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L698),
-[`Six.west_own_separator`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L709),
-[`Six.west_cardinal_separator`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L723),
-[`center_le_vertexSupport`](../../SquaresInCircles/Common/DiskSupport.lean#L70).*
+[`Six.west_geometric_defect_nonpos`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L736),
+[`Six.west_defect_at_secondary_axes`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L767),
+[`Six.westGeometricDefect`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L638),
+[`Six.west_force_balance`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L644),
+[`Six.westForceC`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L617),
+[`Six.westForceW`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L619),
+[`Six.westForceD`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L622),
+[`Six.westNormal`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L624),
+[`Six.westThreshold`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L627),
+[`Six.west_forceW_norm`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L651),
+[`Six.west_forceD_norm`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L656),
+[`Six.west_forceW_frameX`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L660),
+[`Six.west_forceW_frameY`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L666),
+[`Six.west_forceD_frameX`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L672),
+[`Six.west_forceD_frameY`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L679),
+[`Six.westWidthW`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L631),
+[`Six.westWidthD`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L633),
+[`Six.west_widthW_lower`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L686),
+[`Six.west_widthD_lower`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L694),
+[`Six.west_central_support`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L702),
+[`Six.west_own_separator`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L713),
+[`Six.west_cardinal_separator`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L727),
+[`center_le_vertexSupport`](../../SquaresInCircles/Common/DiskSupport.lean#L75).*
 
 ![Left: the force on W in the frame of W, the sum of 9/20 along its primary axis e1 and an orange vector of length 1/4 whose tip runs on the dashed circle; for z = t the force points down and to the right, and as u - t grows to 16/15 its tip moves along the orange arc. Right: the force on D, the sum of 3/10 to the west and an orange vector of length 1/4 turned by z, its tip on the orange arc for z from -2/3 to 2/5](figures/appendix-b/forces.svg)
 
@@ -1480,27 +1480,27 @@ $4\alpha = \frac9{10} - \frac95c_0 > 0.6969$, and the bounds of
 Lemma A.12 applies in each case. $\square$
 
 *Lean:
-[`Six.westStress_eq`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L217),
-[`Six.westWForm`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L206),
-[`Six.westDForm`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L211),
-[`Six.westWForm_eq`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L243),
-[`Six.westDForm_eq`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L251),
-[`Six.westJ`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L192),
-[`Six.westH`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L198),
-[`Six.westG`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L202),
-[`Six.westJ_negative_concave`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L298),
-[`Six.westJ_positive_concave`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L306),
-[`Six.westH_negative_concave`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L375),
-[`Six.westH_positive_concave`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L384),
-[`Six.westG_concave`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L323),
-[`Six.west_affine_radical`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L69),
-[`Six.westJ_coefficient_pos`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L261),
-[`Six.west_angle_bounds`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L58),
-[`Six.west_sin_nonpos`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L82),
-[`Six.west_difference_trig`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L87),
-[`radicalTrig`](../../SquaresInCircles/Common/Trigonometry.lean#L350),
-[`radicalTrig_concave`](../../SquaresInCircles/Common/Trigonometry.lean#L391),
-[`sqrt_le_tangent`](../../SquaresInCircles/Common/Trigonometry.lean#L609).*
+[`Six.westStress_eq`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L221),
+[`Six.westWForm`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L210),
+[`Six.westDForm`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L215),
+[`Six.westWForm_eq`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L247),
+[`Six.westDForm_eq`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L255),
+[`Six.westJ`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L196),
+[`Six.westH`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L202),
+[`Six.westG`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L206),
+[`Six.westJ_negative_concave`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L302),
+[`Six.westJ_positive_concave`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L310),
+[`Six.westH_negative_concave`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L379),
+[`Six.westH_positive_concave`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L388),
+[`Six.westG_concave`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L327),
+[`Six.west_affine_radical`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L73),
+[`Six.westJ_coefficient_pos`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L265),
+[`Six.west_angle_bounds`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L62),
+[`Six.west_sin_nonpos`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L86),
+[`Six.west_difference_trig`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L91),
+[`radicalTrig`](../../SquaresInCircles/Common/Trigonometry.lean#L355),
+[`radicalTrig_concave`](../../SquaresInCircles/Common/Trigonometry.lean#L396),
+[`sqrt_le_tangent`](../../SquaresInCircles/Common/Trigonometry.lean#L614).*
 
 So in $\Phi_W$ the length of the force on $W$ is the constant
 $\sqrt{53/200}$, and that of the force on $D$ enters the term in $t$; in
@@ -1556,9 +1556,9 @@ diagonal $t = u$, where $F(u, u) = K + J(u) + H(u) + G(0)$. We use Lemma A.10
    $0$ and $u$. In each case $F(t, u) > 0$. $\square$
 
 *Lean:
-[`Six.triangle_positive`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L113),
-[`concave_gt_of_endpoints`](../../SquaresInCircles/Common/Analysis.lean#L81),
-[`concave_affine_argument`](../../SquaresInCircles/Common/Analysis.lean#L107).*
+[`Six.triangle_positive`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L117),
+[`concave_gt_of_endpoints`](../../SquaresInCircles/Common/Analysis.lean#L86),
+[`concave_affine_argument`](../../SquaresInCircles/Common/Analysis.lean#L112).*
 
 ![The region of the angles (t, u) with -2/3 at most t, t at most u, and u between -2/5 and 2/5, cut by the lines u = 0 and t = 0 into three parts, shaded differently: u negative, t negative and u positive, and t positive. The seven vertices v1 to v7 of the parts are marked, each labelled with the values of the two west stresses there, Phi_W first and Phi_D second, all positive; dotted horizontal segments inside the parts indicate directions in which the stresses are concave](figures/appendix-b/region.svg)
 
@@ -1634,18 +1634,18 @@ Table B.2 (rounded down). At $v_2$, $v_4$ and $v_7$, where $u = t$, the two
 stresses coincide.
 
 *Lean:
-[`Six.westStressW_vertices`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L488),
-[`Six.westStressD_vertices`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L512),
-[`Six.diagonalVertexExpression`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L396),
-[`Six.diagonal_lower_from_roots`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L401),
-[`Six.diagonal_root_endpoints`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L412),
-[`Six.west_minorant_positive`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L432),
-[`Six.diagonal_minorant_endpoints`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L460),
-[`Six.west_root_bound`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L55),
-[`Six.westCentralSupport_upper`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L74),
-[`cos_lower_six`](../../SquaresInCircles/Common/Trigonometry.lean#L214),
-[`sin_lower_seven`](../../SquaresInCircles/Common/Trigonometry.lean#L221),
-[`sin_upper_five`](../../SquaresInCircles/Common/Trigonometry.lean#L207).*
+[`Six.westStressW_vertices`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L492),
+[`Six.westStressD_vertices`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L516),
+[`Six.diagonalVertexExpression`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L400),
+[`Six.diagonal_lower_from_roots`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L405),
+[`Six.diagonal_root_endpoints`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L416),
+[`Six.west_minorant_positive`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L436),
+[`Six.diagonal_minorant_endpoints`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L464),
+[`Six.west_root_bound`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L59),
+[`Six.westCentralSupport_upper`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L78),
+[`cos_lower_six`](../../SquaresInCircles/Common/Trigonometry.lean#L219),
+[`sin_lower_seven`](../../SquaresInCircles/Common/Trigonometry.lean#L226),
+[`sin_upper_five`](../../SquaresInCircles/Common/Trigonometry.lean#L212).*
 
 ![The region of the angles (t, u), twice: left with level curves of Phi_W, right with level curves of Phi_D, at 0.025, 0.05, 0.1 and 0.15, labelled where they meet the top or the left edge; the cuts t = 0 and u = 0 are dashed and the seven vertices marked. Each stress is smallest at a circled vertex: (-2/3, 2/5) for Phi_W and (-2/3, 0) for Phi_D](figures/appendix-b/stress-map.svg)
 
@@ -1666,8 +1666,8 @@ by Lemma B.21 both are positive at the seven vertices. By Lemma B.20 both are
 positive on $\Delta$ (Figure B.20), a contradiction. $\square$
 
 *Lean:
-[`Six.west_cardinal_impossible`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L788),
-[`Six.west_secondary_axes`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L157),
-[`Six.turned_pair_secondary`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L103),
-[`Six.westStressW_positive`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L545),
-[`Six.westStressD_positive`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L578).*
+[`Six.west_cardinal_impossible`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L792),
+[`Six.west_secondary_axes`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L161),
+[`Six.turned_pair_secondary`](../../SquaresInCircles/Six/Normalization/WestPair.lean#L107),
+[`Six.westStressW_positive`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L549),
+[`Six.westStressD_positive`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L582).*

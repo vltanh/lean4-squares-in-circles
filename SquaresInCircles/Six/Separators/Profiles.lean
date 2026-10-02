@@ -1,5 +1,7 @@
-import SquaresInCircles.Six.Separators.DiagonalAngle
-import SquaresInCircles.Six.Supports
+module
+
+public import SquaresInCircles.Six.Separators.DiagonalAngle
+public import SquaresInCircles.Six.Supports
 
 /-!
 # Six squares: radial profiles and transverse coordinates
@@ -19,6 +21,8 @@ quadratic with positive coefficients, and on its own axis, with the Taylor
 polynomials of `cos v` and `sin v`, the excess is positive by a discriminant for
 `v ≤ 1/4` and at least its value at `v = 1/2` for `v ≥ 1/4`.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six

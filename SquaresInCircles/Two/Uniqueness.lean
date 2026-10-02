@@ -1,7 +1,9 @@
-import SquaresInCircles.Two.Construction
-import SquaresInCircles.Common.Contacts
-import SquaresInCircles.Common.Angles
-import SquaresInCircles.Common.Optimum
+module
+
+public import SquaresInCircles.Two.Construction
+public import SquaresInCircles.Common.Contacts
+public import SquaresInCircles.Common.Angles
+public import SquaresInCircles.Common.Optimum
 
 /-!
 # Two squares: uniqueness
@@ -14,6 +16,9 @@ as first axis, they sit at `(-1/2, 0)` and `(1/2, 0)` in the frame along it.
 The file ends with `optimum`: the case as an `Optimum`, which also gives the
 lower bound.
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles.Two
 

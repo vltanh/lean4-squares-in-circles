@@ -1,4 +1,6 @@
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Angle
+module
+
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Angle
 
 /-!
 # The statement: squares, disks, packings, congruence and the optimal models
@@ -17,6 +19,8 @@ in the file that needs them. Edit here only:
 `scripts/verify-comparator.sh --write` copies the definitions into
 `Challenge.lean`.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles

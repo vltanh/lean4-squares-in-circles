@@ -1,5 +1,7 @@
-import SquaresInCircles.Common.ExteriorArcs
-import SquaresInCircles.Common.Tangents
+module
+
+public import SquaresInCircles.Common.ExteriorArcs
+public import SquaresInCircles.Common.Tangents
 
 /-!
 # Three squares: the contact tangents and the exterior caps
@@ -10,6 +12,9 @@ every square. On the circle of radius `3/8` a square that does not contain the
 disk centre then holds a cap of at least 120 degrees, with equality only at
 those two positions: type A, `(11/16, 0)`, and type B, `(1/2, 5/16)`.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles.Three

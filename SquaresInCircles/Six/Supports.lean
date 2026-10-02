@@ -1,4 +1,6 @@
-import SquaresInCircles.Six.Normalization.Basic
+module
+
+public import SquaresInCircles.Six.Normalization.Basic
 
 /-!
 # Six squares: supports of the squares in the disk
@@ -17,6 +19,8 @@ D has length at most `(2 + z²/4) sin (q/2) + z cos (q/2)` (`chord_support`). Th
 centre of C lies in the box `[0, c0]²`, where the work of a force is largest at
 a corner or on the face chosen by the sign of a component (`center_face`).
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six

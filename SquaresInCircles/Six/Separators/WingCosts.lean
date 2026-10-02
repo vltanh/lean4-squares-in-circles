@@ -1,4 +1,6 @@
-import SquaresInCircles.Six.Separators.Profiles
+module
+
+public import SquaresInCircles.Six.Separators.Profiles
 
 /-!
 # Six squares: the cost of a wing separated along the secondary axis of D
@@ -17,6 +19,8 @@ matching side of C has a force of length `2 cos (π/4 - d/2)` for W or
 a triangle inequality. For the mixed cases, two reserves in `d` (and in the
 angle of S) follow from Taylor bounds and concavity.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six
@@ -54,7 +58,7 @@ private lemma secondary_tangent_constants :
     constructor <;> linarith
   · linarith
 
-lemma secondary_cap_line_expansion (h : ℝ) :
+private lemma secondary_cap_line_expansion (h : ℝ) :
     secondaryCapLine (13/10+h)=secondaryCapLine (13/10)+(13/20+tangentB)*h+
       tangentA*(Real.cos h-1)+tangentB*(Real.sin h-h) := by
   dsimp [secondaryCapLine,tangentA,tangentB]

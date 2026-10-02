@@ -1,5 +1,7 @@
-import SquaresInCircles.Six.Normalization.Complete
-import SquaresInCircles.Six.Containing
+module
+
+public import SquaresInCircles.Six.Normalization.Complete
+public import SquaresInCircles.Six.Containing
 
 /-!
 # Six squares: the diagonal reflection of the model
@@ -12,6 +14,8 @@ sides of a congruence gives a congruence with the opposite rotation
 reflection of `T`, as the normalization produces, is congruent to the model
 whenever `T` is.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six.Equality

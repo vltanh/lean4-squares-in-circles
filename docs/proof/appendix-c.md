@@ -162,12 +162,12 @@ $\tau(\frac{3\pi}2 + s) = \tau(s)$. Subtracting gives the two differences. For
 $\tau(\pm x) = \frac12 + \frac12(\cos x + \sin x)$. $\square$
 
 *Lean:
-[`Six.Normalization.centralMargin`](../../SquaresInCircles/Six/Normalization/Basic.lean#L284),
-[`Six.Normalization.centralNormal`](../../SquaresInCircles/Six/Normalization/Basic.lean#L277),
-[`Six.Normalization.own_sub_west_margin`](../../SquaresInCircles/Six/Normalization/Basic.lean#L296),
-[`angularWidth_pi_add`](../../SquaresInCircles/Common/SeparatingAxes.lean#L261),
-[`angularWidth_three_half_pi_add`](../../SquaresInCircles/Common/SeparatingAxes.lean#L270),
-[`angularWidth_eq`](../../SquaresInCircles/Common/SeparatingAxes.lean#L253).*
+[`Six.Normalization.centralMargin`](../../SquaresInCircles/Six/Normalization/Basic.lean#L288),
+[`Six.Normalization.centralNormal`](../../SquaresInCircles/Six/Normalization/Basic.lean#L281),
+[`Six.Normalization.own_sub_west_margin`](../../SquaresInCircles/Six/Normalization/Basic.lean#L300),
+[`angularWidth_pi_add`](../../SquaresInCircles/Common/SeparatingAxes.lean#L266),
+[`angularWidth_three_half_pi_add`](../../SquaresInCircles/Common/SeparatingAxes.lean#L275),
+[`angularWidth_eq`](../../SquaresInCircles/Common/SeparatingAxes.lean#L258).*
 
 The two differences correspond to each other under the reflection in the
 diagonal, which exchanges $W$ and $S$ and $c_x$ and $c_y$, and replaces $w$ by
@@ -197,10 +197,10 @@ $\cos(\frac\pi2 + s - d) = \sin(d - s)$ and
 $\tau(\frac\pi2 + s - d) = \tau(d - s)$. $\square$
 
 *Lean:
-[`pair_frameY_left`](../../SquaresInCircles/Common/SeparatingAxes.lean#L327),
-[`pair_frameY_right`](../../SquaresInCircles/Common/SeparatingAxes.lean#L344),
-[`oriented_pair_threshold`](../../SquaresInCircles/Common/SeparatingAxes.lean#L312),
-[`Six.south_relative_width`](../../SquaresInCircles/Six/Separators/Walls.lean#L136).*
+[`pair_frameY_left`](../../SquaresInCircles/Common/SeparatingAxes.lean#L332),
+[`pair_frameY_right`](../../SquaresInCircles/Common/SeparatingAxes.lean#L349),
+[`oriented_pair_threshold`](../../SquaresInCircles/Common/SeparatingAxes.lean#L317),
+[`Six.south_relative_width`](../../SquaresInCircles/Six/Separators/Walls.lean#L140).*
 
 The heart of Lemma 9.37 is the following inequality between two projections of
 the difference of two centres. When the phases of two squares $X$ and $Y$
@@ -282,9 +282,9 @@ secondary projection is therefore at least the primary one, which is at least
 $\tau(q)$. $\square$
 
 *Lean:
-[`Six.secondary_of_inward_primary`](../../SquaresInCircles/Six/Separators/Axes.lean#L115),
-[`Six.nine_twentieths_le_cos`](../../SquaresInCircles/Six/Separators/Axes.lean#L86),
-[`Six.one_sub_sin_le_cos`](../../SquaresInCircles/Six/Separators/Axes.lean#L96).*
+[`Six.secondary_of_inward_primary`](../../SquaresInCircles/Six/Separators/Axes.lean#L119),
+[`Six.nine_twentieths_le_cos`](../../SquaresInCircles/Six/Separators/Axes.lean#L90),
+[`Six.one_sub_sin_le_cos`](../../SquaresInCircles/Six/Separators/Axes.lean#L100).*
 
 ![Graph over the phase gap q from 0 to pi over 2. An orange curve, the largest inward primary projection less the threshold, rises from about minus 0.77 at 0 and crosses zero at about q = 1.14, reaching about 0.58 at pi over 2. A blue curve, the least lead of the secondary projection over the inward primary one, rises from about minus 1.15 at 0, crosses zero near 1.05 and stays slightly above zero up to pi over 2, where it returns to zero. The band from 11/10 to pi over 2 is shaded](figures/appendix-c/dominance.svg)
 
@@ -339,15 +339,15 @@ separated along a vector other than $e^D_1$, $-e^D_2$ and $-e^S_2$; by (2), alon
 $e^D_2$ or $e^S_2$. $\square$
 
 *Lean:
-[`Six.normalized_outward_axes_excluded`](../../SquaresInCircles/Six/Separators/Axes.lean#L55),
-[`Six.secondary_of_separating_axis`](../../SquaresInCircles/Six/Separators/Axes.lean#L147),
-[`Six.westDiagonal_secondary`](../../SquaresInCircles/Six/Separators/Axes.lean#L189),
-[`Six.south_secondary_choice_of_angle`](../../SquaresInCircles/Six/Separators/Axes.lean#L214),
-[`Six.SouthSecondaryChoice`](../../SquaresInCircles/Six/Separators/Axes.lean#L207),
-[`Six.frame_primary_le_rho0`](../../SquaresInCircles/Six/Separators/Axes.lean#L26),
-[`Six.normalized_primary_lower`](../../SquaresInCircles/Six/Separators/Axes.lean#L45),
-[`Six.normalized_center_radius`](../../SquaresInCircles/Six/Separators/Axes.lean#L37),
-[`Six.pair_threshold_ge_half`](../../SquaresInCircles/Six/Separators/Axes.lean#L33).*
+[`Six.normalized_outward_axes_excluded`](../../SquaresInCircles/Six/Separators/Axes.lean#L59),
+[`Six.secondary_of_separating_axis`](../../SquaresInCircles/Six/Separators/Axes.lean#L151),
+[`Six.westDiagonal_secondary`](../../SquaresInCircles/Six/Separators/Axes.lean#L193),
+[`Six.south_secondary_choice_of_angle`](../../SquaresInCircles/Six/Separators/Axes.lean#L218),
+[`Six.SouthSecondaryChoice`](../../SquaresInCircles/Six/Separators/Axes.lean#L211),
+[`Six.frame_primary_le_rho0`](../../SquaresInCircles/Six/Separators/Axes.lean#L30),
+[`Six.normalized_primary_lower`](../../SquaresInCircles/Six/Separators/Axes.lean#L49),
+[`Six.normalized_center_radius`](../../SquaresInCircles/Six/Separators/Axes.lean#L41),
+[`Six.pair_threshold_ge_half`](../../SquaresInCircles/Six/Separators/Axes.lean#L37).*
 
 ## C.2 Proof of Lemma 9.38
 
@@ -380,7 +380,7 @@ $1 - \cos w = \tan\frac w2\,\sin w$ of
 and $\sin w > 0$. $\square$
 
 *Lean:
-[`Six.own_west_transverse_lower`](../../SquaresInCircles/Six/Wings/WestSign.lean#L139).*
+[`Six.own_west_transverse_lower`](../../SquaresInCircles/Six/Wings/WestSign.lean#L143).*
 
 ![Two panels, each with the grey central square C around the disk centre o, the dashed vertical line of the west side of C, a dashed blue line through a corner of C perpendicular to the own axis of W, and a dotted purple line through the lower left corner of C, beyond which D lies. W is drawn in outline where it touches the two dashed lines at that corner, and shaded where it has slid along the blue line, with an arrow. In panel (a), w = −0.3, the corner is the upper left one and W slides upwards, away from the purple pin of D below. In panel (b), w = 0.3, the corner is the lower left one and W slides downwards onto the pin of D, across the dotted purple line](figures/appendix-c/turn.svg)
 
@@ -422,7 +422,7 @@ with $0 \le x \le \frac12$,
 which contradicts $(a + \frac12)^2 + (|b| + \frac12)^2 \le Q_0$. $\square$
 
 *Lean:
-[`Six.diagonal_transverse_profile`](../../SquaresInCircles/Six/Wings/WestSign.lean#L26).*
+[`Six.diagonal_transverse_profile`](../../SquaresInCircles/Six/Wings/WestSign.lean#L30).*
 
 Figure C.12 (a) compares this bound (green) with the largest $|b|$ that the
 disk allows.
@@ -489,13 +489,13 @@ w\left(\tfrac{89}{200}\left(\tfrac12 - \bar c\right)d - \tfrac12 + \tfrac{\bar\r
 for $d \le \frac45$ (Figure C.5 (b)). $\square$
 
 *Lean:
-[`Six.west_secondary_reserve`](../../SquaresInCircles/Six/Wings/WestSign.lean#L64),
-[`Six.diagonal_secondary_reserve`](../../SquaresInCircles/Six/Wings/WestSign.lean#L93),
-[`halfRatio_upper`](../../SquaresInCircles/Common/Trigonometry.lean#L680),
-[`halfRatio_lower`](../../SquaresInCircles/Common/Trigonometry.lean#L650),
-[`halfRatio_shift`](../../SquaresInCircles/Common/Trigonometry.lean#L709),
-[`cosine_difference_lower`](../../SquaresInCircles/Common/Trigonometry.lean#L694),
-[`small_polynomial_trig`](../../SquaresInCircles/Common/Trigonometry.lean#L621).*
+[`Six.west_secondary_reserve`](../../SquaresInCircles/Six/Wings/WestSign.lean#L68),
+[`Six.diagonal_secondary_reserve`](../../SquaresInCircles/Six/Wings/WestSign.lean#L97),
+[`halfRatio_upper`](../../SquaresInCircles/Common/Trigonometry.lean#L685),
+[`halfRatio_lower`](../../SquaresInCircles/Common/Trigonometry.lean#L655),
+[`halfRatio_shift`](../../SquaresInCircles/Common/Trigonometry.lean#L714),
+[`cosine_difference_lower`](../../SquaresInCircles/Common/Trigonometry.lean#L699),
+[`small_polynomial_trig`](../../SquaresInCircles/Common/Trigonometry.lean#L626).*
 
 ![Two graphs over d from 0 to pi over 4. In each, a light blue band, whose lower edge is a blue curve labelled w = 0, falls from about 0.42 at d = 0 to between about 0.12 and 0.16 in (a) and between about 0.08 and 0.17 in (b) at pi over 4; a dashed orange curve below the band falls from 0.42 to 0.057 in (a) and to 0.050 in (b), where it ends in a marked dot](figures/appendix-c/reserves.svg)
 
@@ -541,10 +541,10 @@ $c_y - kc_x \le \bar c$, so this is less than $\tau(q)$ by Lemma C.6 (2). Both
 separations fail, a contradiction; hence $w < 0$. $\square$
 
 *Lean:
-[`Six.own_west_negative`](../../SquaresInCircles/Six/Wings/WestSign.lean#L218),
-[`Six.west_nonnegative_impossible`](../../SquaresInCircles/Six/Wings/WestSign.lean#L170),
-[`Six.west_coarse_transverse`](../../SquaresInCircles/Six/Wings/WestSign.lean#L156),
-[`Six.diagonal_transverse_profile`](../../SquaresInCircles/Six/Wings/WestSign.lean#L26).*
+[`Six.own_west_negative`](../../SquaresInCircles/Six/Wings/WestSign.lean#L222),
+[`Six.west_nonnegative_impossible`](../../SquaresInCircles/Six/Wings/WestSign.lean#L174),
+[`Six.west_coarse_transverse`](../../SquaresInCircles/Six/Wings/WestSign.lean#L160),
+[`Six.diagonal_transverse_profile`](../../SquaresInCircles/Six/Wings/WestSign.lean#L30).*
 
 ## C.3 Proof of Proposition 9.39
 
@@ -590,11 +590,11 @@ claims of Lemma B.16 (1) and (2); (3) is the first claim of Lemma B.16 (2),
 and (4) is Lemma B.16 (4). $\square$
 
 *Lean:
-[`Six.vertex_linear_upper`](../../SquaresInCircles/Six/Supports.lean#L44),
-[`Six.local_vertex_support`](../../SquaresInCircles/Six/Supports.lean#L28),
-[`Six.cap_linear_upper`](../../SquaresInCircles/Six/Supports.lean#L101),
-[`Six.chart_radial_work`](../../SquaresInCircles/Six/Supports.lean#L113),
-[`Six.coarse_central_work`](../../SquaresInCircles/Six/Supports.lean#L253).*
+[`Six.vertex_linear_upper`](../../SquaresInCircles/Six/Supports.lean#L48),
+[`Six.local_vertex_support`](../../SquaresInCircles/Six/Supports.lean#L32),
+[`Six.cap_linear_upper`](../../SquaresInCircles/Six/Supports.lean#L105),
+[`Six.chart_radial_work`](../../SquaresInCircles/Six/Supports.lean#L117),
+[`Six.coarse_central_work`](../../SquaresInCircles/Six/Supports.lean#L257).*
 
 ### Lemma C.8 (three harmonics)
 
@@ -638,11 +638,11 @@ and $d \mapsto H(v, d)$ is concave on $[0, \frac12]$. Lemma A.10 (4) gives the
 claim. $\square$
 
 *Lean:
-[`Six.threeHarmonics`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L26),
-[`Six.threeHarmonics_positive`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L87),
-[`Six.trig_sum_concave_of_nonnegative`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L32),
-[`Six.compensated_v_curvature`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L52),
-[`Six.compensated_d_curvature`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L68).*
+[`Six.threeHarmonics`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L30),
+[`Six.threeHarmonics_positive`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L91),
+[`Six.trig_sum_concave_of_nonnegative`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L36),
+[`Six.compensated_v_curvature`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L56),
+[`Six.compensated_d_curvature`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L72).*
 
 ### Proposition C.9 (W on its own axis)
 
@@ -792,25 +792,25 @@ in both cases; but $\sigma \le 0$, as the squares are separated by the stress.
 This contradiction proves $d > \frac12$. $\square$
 
 *Lean:
-[`Six.own_west_diagonal_gt_half`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L437),
-[`Six.DiagonalAngle.Own.impossible`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L416),
-[`Six.DiagonalAngle.Own.slack`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L149),
-[`Six.DiagonalAngle.Own.slack_formula`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L158),
-[`Six.DiagonalAngle.Own.slack_nonpositive`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L371),
-[`Six.DiagonalAngle.Own.slack_positive`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L336),
-[`Six.DiagonalAngle.Own.corners`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L323),
-[`Six.DiagonalAngle.Own.vertex_endpoint_lower`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L171),
-[`Six.DiagonalAngle.Own.cap_endpoint_lower`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L203),
-[`Six.DiagonalAngle.Own.alpha`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L131),
-[`Six.DiagonalAngle.Own.beta`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L132),
-[`Six.DiagonalAngle.Own.mu`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L133),
-[`Six.DiagonalAngle.Own.westForce`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L140),
-[`Six.DiagonalAngle.Own.diagonalForce`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L144),
-[`Six.DiagonalAngle.Own.sourceNorm`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L238),
-[`Six.DiagonalAngle.Own.normZero`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L239),
-[`Six.DiagonalAngle.Own.normHalf`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L240),
-[`Six.DiagonalAngle.Own.normFar`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L241),
-[`Six.rotating_norm_sq`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L120).*
+[`Six.own_west_diagonal_gt_half`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L441),
+[`Six.DiagonalAngle.Own.impossible`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L420),
+[`Six.DiagonalAngle.Own.slack`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L153),
+[`Six.DiagonalAngle.Own.slack_formula`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L162),
+[`Six.DiagonalAngle.Own.slack_nonpositive`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L375),
+[`Six.DiagonalAngle.Own.slack_positive`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L340),
+[`Six.DiagonalAngle.Own.corners`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L327),
+[`Six.DiagonalAngle.Own.vertex_endpoint_lower`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L175),
+[`Six.DiagonalAngle.Own.cap_endpoint_lower`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L207),
+[`Six.DiagonalAngle.Own.alpha`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L135),
+[`Six.DiagonalAngle.Own.beta`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L136),
+[`Six.DiagonalAngle.Own.mu`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L137),
+[`Six.DiagonalAngle.Own.westForce`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L144),
+[`Six.DiagonalAngle.Own.diagonalForce`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L148),
+[`Six.DiagonalAngle.Own.sourceNorm`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L242),
+[`Six.DiagonalAngle.Own.normZero`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L243),
+[`Six.DiagonalAngle.Own.normHalf`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L244),
+[`Six.DiagonalAngle.Own.normFar`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L245),
+[`Six.rotating_norm_sq`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L124).*
 
 ### Proposition C.10 (W on the west side of C)
 
@@ -958,27 +958,27 @@ So $g > 0$ on the domain, and $\sigma \ge g > 0$, while $\sigma \le 0$. This
 contradiction proves $d > \frac12$. $\square$
 
 *Lean:
-[`Six.cardinal_west_diagonal_gt_half`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L389),
-[`Six.DiagonalAngle.Side.impossible`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L369),
-[`Six.DiagonalAngle.Side.slack`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L229),
-[`Six.DiagonalAngle.Side.slack_nonpositive`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L320),
-[`Six.DiagonalAngle.Side.gap_le_slack`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L266),
-[`Six.DiagonalAngle.Side.gap`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L74),
-[`Six.DiagonalAngle.Side.signedGap`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L70),
-[`Six.DiagonalAngle.Side.constant`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L54),
-[`Six.DiagonalAngle.Side.westTerm`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L57),
-[`Six.DiagonalAngle.Side.diagonalTerm`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L61),
-[`Six.DiagonalAngle.Side.relativeTerm`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L65),
-[`Six.DiagonalAngle.Side.westTerm_concave`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L85),
-[`Six.DiagonalAngle.Side.diagonalTerm_concave`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L97),
-[`Six.DiagonalAngle.Side.relativeTerm_concave`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L107),
-[`Six.DiagonalAngle.Side.positive_of_vertices`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L155),
-[`Six.DiagonalAngle.Side.vertices`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L190),
-[`Six.DiagonalAngle.Side.gap_positive`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L212),
-[`Six.DiagonalAngle.Side.side_force_norm`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L236),
-[`Six.DiagonalAngle.Side.rotating_force_norm`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L240),
-[`Six.rotTangent`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L26),
-[`Six.rotTangent_bound`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L35).*
+[`Six.cardinal_west_diagonal_gt_half`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L393),
+[`Six.DiagonalAngle.Side.impossible`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L373),
+[`Six.DiagonalAngle.Side.slack`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L233),
+[`Six.DiagonalAngle.Side.slack_nonpositive`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L324),
+[`Six.DiagonalAngle.Side.gap_le_slack`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L270),
+[`Six.DiagonalAngle.Side.gap`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L78),
+[`Six.DiagonalAngle.Side.signedGap`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L74),
+[`Six.DiagonalAngle.Side.constant`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L58),
+[`Six.DiagonalAngle.Side.westTerm`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L61),
+[`Six.DiagonalAngle.Side.diagonalTerm`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L65),
+[`Six.DiagonalAngle.Side.relativeTerm`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L69),
+[`Six.DiagonalAngle.Side.westTerm_concave`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L89),
+[`Six.DiagonalAngle.Side.diagonalTerm_concave`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L101),
+[`Six.DiagonalAngle.Side.relativeTerm_concave`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L111),
+[`Six.DiagonalAngle.Side.positive_of_vertices`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L159),
+[`Six.DiagonalAngle.Side.vertices`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L194),
+[`Six.DiagonalAngle.Side.gap_positive`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L216),
+[`Six.DiagonalAngle.Side.side_force_norm`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L240),
+[`Six.DiagonalAngle.Side.rotating_force_norm`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L244),
+[`Six.rotTangent`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L30),
+[`Six.rotTangent_bound`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L39).*
 
 ![Two panels in the plane of w (horizontal) and d (vertical), each showing the window of the angles as a dashed rectangle from w = −2/3 to 5/8 and d = 0 to pi over 4, with the band d above 1/2 shaded green. Panel (a), W on its own axis: the orange rectangle w from −2/3 to 0, d from 0 to 1/2, with two numbers at each corner. Panel (b), W on the west side: the orange domain w from −2/5 to 2/5, d from 0 to 1/2, w at most d, split by a dotted segment at w = 0, with two numbers at each of its six vertices. A legend above says that the upper, blue number is for W and D separated along the secondary axis of W, and the lower, purple one along that of D](figures/appendix-c/domains.svg)
 
@@ -993,9 +993,9 @@ of $C$, Proposition C.10 gives $d > \frac12$; otherwise $W$ is on its own axis,
 and Proposition C.9 does. $\square$
 
 *Lean:
-[`Six.normalized_diagonal_gt_half`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L422),
-[`Six.own_west_diagonal_gt_half`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L437),
-[`Six.cardinal_west_diagonal_gt_half`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L389).*
+[`Six.normalized_diagonal_gt_half`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L426),
+[`Six.own_west_diagonal_gt_half`](../../SquaresInCircles/Six/Separators/DiagonalAngleOwn.lean#L441),
+[`Six.cardinal_west_diagonal_gt_half`](../../SquaresInCircles/Six/Separators/DiagonalAngle.lean#L393).*
 
 ## C.4 Proof of Lemma 9.40
 
@@ -1015,7 +1015,7 @@ $(a + \frac12)^2 + (|b| + \frac12)^2 \ge L^2 + (T + \frac12)^2 > Q_0$, which
 contradicts the chart condition (Figure C.11). $\square$
 
 *Lean:
-[`Six.transverse_lt_of_profile`](../../SquaresInCircles/Six/Separators/Profiles.lean#L29).*
+[`Six.transverse_lt_of_profile`](../../SquaresInCircles/Six/Separators/Profiles.lean#L33).*
 
 ![The plane of a + 1/2 (horizontal, 1.3 to 1.7) against |b| + 1/2 (vertical, 0.5 to 0.8): the dashed circle of radius R0 and the region inside it, shaded, where the far corners of the charts lie. An orange vertical line at a + 1/2 = L, about 1.525, and a dashed orange horizontal line at |b| + 1/2 = T + 1/2 = 0.725 meet on the circle, at a purple dot labelled d = 1/2; the part of the region right of the vertical line, shaded orange, lies below the horizontal line. A short purple curve runs from that dot, just outside the circle, to a second dot labelled d = pi over 4](figures/appendix-c/profile-chart.svg)
 
@@ -1125,19 +1125,19 @@ So $G > 0$ on $[0, \frac12]$, and Lemma C.11 gives
 $|b_W| < \frac{233}{500} - \frac{73}{100}v$ (Figure C.12 (c)). $\square$
 
 *Lean:
-[`Six.normalized_diagonal_profile`](../../SquaresInCircles/Six/Separators/Profiles.lean#L229),
-[`Six.normalized_diagonal_transverse_affine`](../../SquaresInCircles/Six/Separators/Profiles.lean#L255),
-[`Six.normalized_diagonal_transverse_small`](../../SquaresInCircles/Six/Separators/Profiles.lean#L260),
-[`Six.own_front_profile`](../../SquaresInCircles/Six/Separators/Profiles.lean#L133),
-[`Six.diagonalCircleExcess`](../../SquaresInCircles/Six/Separators/Profiles.lean#L146),
-[`Six.diagonalCircleExcess_concave`](../../SquaresInCircles/Six/Separators/Profiles.lean#L156),
-[`Six.cardinal_west_negative_transverse`](../../SquaresInCircles/Six/Separators/Profiles.lean#L51),
-[`Six.leftProfile`](../../SquaresInCircles/Six/Separators/Profiles.lean#L40),
-[`Six.left_circle_obstruction`](../../SquaresInCircles/Six/Separators/Profiles.lean#L44),
-[`Six.own_west_transverse_small_angle`](../../SquaresInCircles/Six/Separators/Profiles.lean#L103),
-[`Six.wingFrontCubic`](../../SquaresInCircles/Six/Separators/Profiles.lean#L81),
-[`Six.own_wing_profile_circle`](../../SquaresInCircles/Six/Separators/Profiles.lean#L88),
-[`Six.transverse_lt_of_profile`](../../SquaresInCircles/Six/Separators/Profiles.lean#L29).*
+[`Six.normalized_diagonal_profile`](../../SquaresInCircles/Six/Separators/Profiles.lean#L233),
+[`Six.normalized_diagonal_transverse_affine`](../../SquaresInCircles/Six/Separators/Profiles.lean#L259),
+[`Six.normalized_diagonal_transverse_small`](../../SquaresInCircles/Six/Separators/Profiles.lean#L264),
+[`Six.own_front_profile`](../../SquaresInCircles/Six/Separators/Profiles.lean#L137),
+[`Six.diagonalCircleExcess`](../../SquaresInCircles/Six/Separators/Profiles.lean#L150),
+[`Six.diagonalCircleExcess_concave`](../../SquaresInCircles/Six/Separators/Profiles.lean#L160),
+[`Six.cardinal_west_negative_transverse`](../../SquaresInCircles/Six/Separators/Profiles.lean#L55),
+[`Six.leftProfile`](../../SquaresInCircles/Six/Separators/Profiles.lean#L44),
+[`Six.left_circle_obstruction`](../../SquaresInCircles/Six/Separators/Profiles.lean#L48),
+[`Six.own_west_transverse_small_angle`](../../SquaresInCircles/Six/Separators/Profiles.lean#L107),
+[`Six.wingFrontCubic`](../../SquaresInCircles/Six/Separators/Profiles.lean#L85),
+[`Six.own_wing_profile_circle`](../../SquaresInCircles/Six/Separators/Profiles.lean#L92),
+[`Six.transverse_lt_of_profile`](../../SquaresInCircles/Six/Separators/Profiles.lean#L33).*
 
 ![Three graphs. (a) Over d from 0 to pi over 4, a blue curve, the largest transverse coordinate of D allowed by the disk, falls from about 0.46 to about 0.18; above it a dashed green curve, 0.97 minus (cos d + sin d)/2, and on 1/2 to pi over 4 a dashed orange line, 0.31 minus 0.17 d, which the blue curve nearly touches at both ends. (b) Over v from 0 to 2/5, the largest value of minus b for W on the west side falls from about 0.46 to zero near 0.375, below the dashed line 47/100 minus 2v/3. (c) Over v from 0 to 1/2, the largest |b| for W on its own axis falls from about 0.46 to about 0.10, just below the dashed line 233/500 minus 73v/100 throughout](figures/appendix-c/profiles.svg)
 
@@ -1221,14 +1221,14 @@ $\cos\frac16 \ge 1 - \frac1{72}$,
 (Figure C.13). $\square$
 
 *Lean:
-[`Six.coupledOwnReserve`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L25),
-[`Six.coupled_own_reserve_positive`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L162),
-[`Six.coupled_formula`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L32),
-[`Six.coupled_concave_d`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L45),
-[`Six.coupled_left_concave`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L70),
-[`Six.coupled_diagonal_concave`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L111),
-[`Six.coupled_vertices`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L140),
-[`Six.coupled_trig`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L39).*
+[`Six.coupledOwnReserve`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L29),
+[`Six.coupled_own_reserve_positive`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L166),
+[`Six.coupled_formula`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L36),
+[`Six.coupled_concave_d`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L49),
+[`Six.coupled_left_concave`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L74),
+[`Six.coupled_diagonal_concave`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L115),
+[`Six.coupled_vertices`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L144),
+[`Six.coupled_trig`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L43).*
 
 ![A triangle in the plane of d (horizontal) and s (vertical), with vertices (1/2, 1/2), (1/2, 2/3) and (2/3, 2/3), shaded green and crossed by curved level lines of the reserve, labelled 0.005, 0.01, 0.02, 0.03 and 0.04 where they meet the dashed diagonal s = d. The values are written at the vertices: about 0.0027 at (1/2, 1/2), 0.0076 at (1/2, 2/3) and 0.047 at (2/3, 2/3)](figures/appendix-c/overtake.svg)
 
@@ -1269,7 +1269,7 @@ $a + A \le 2.17 + \frac{s - d}3$, combining the two bounds gives
 which contradicts Lemma C.12. $\square$
 
 *Lean:
-[`Six.coupled_own_radial_sum`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L195).*
+[`Six.coupled_own_radial_sum`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L199).*
 
 ### Lemma C.14 (the secondary sum)
 
@@ -1308,8 +1308,8 @@ $0 \le \sin r \le r < 1$. So the right side exceeds
 $\square$
 
 *Lean:
-[`Six.overtaking_secondary_sum`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L249),
-[`Six.chart_three_radial_support`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L180).*
+[`Six.overtaking_secondary_sum`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L253),
+[`Six.chart_three_radial_support`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L184).*
 
 *Proof of Proposition 9.41.* If $s \le d$, $D$ and $S$ are separated along
 $e^D_2$ or $e^S_2$ by Lemma 9.37. Let $s > d$. As explained above, $S$ is then
@@ -1327,10 +1327,10 @@ two projections add up to more than $2\tau(r)$, so one of them exceeds
 $\tau(r)$. $\square$
 
 *Lean:
-[`Six.south_secondary_choice`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L347),
-[`Six.overtaking_own_secondary_choice`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L294),
-[`Six.south_secondary_choice_of_angle`](../../SquaresInCircles/Six/Separators/Axes.lean#L214),
-[`Six.SouthSecondaryChoice`](../../SquaresInCircles/Six/Separators/Axes.lean#L207).*
+[`Six.south_secondary_choice`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L351),
+[`Six.overtaking_own_secondary_choice`](../../SquaresInCircles/Six/Separators/SouthPair.lean#L298),
+[`Six.south_secondary_choice_of_angle`](../../SquaresInCircles/Six/Separators/Axes.lean#L218),
+[`Six.SouthSecondaryChoice`](../../SquaresInCircles/Six/Separators/Axes.lean#L211).*
 
 ## C.6 Proof of Lemma 9.42
 
@@ -1359,9 +1359,9 @@ $a\sin q - b\cos q \le (l - \frac12)\sin q + (B_0 - \frac12)\cos q$, which is
 the claim. $\square$
 
 *Lean:
-[`Six.core_secondary_projection`](../../SquaresInCircles/Six/Separators/SmallAngle.lean#L25),
-[`Six.circle_support_above_primary`](../../SquaresInCircles/Six/Supports.lean#L134),
-[`Six.disk_corner_support`](../../SquaresInCircles/Six/Supports.lean#L85).*
+[`Six.core_secondary_projection`](../../SquaresInCircles/Six/Separators/SmallAngle.lean#L29),
+[`Six.circle_support_above_primary`](../../SquaresInCircles/Six/Supports.lean#L138),
+[`Six.disk_corner_support`](../../SquaresInCircles/Six/Supports.lean#L89).*
 
 ![The plane of a + 1/2 against |b| + 1/2: the dashed circle of radius R0, the vertical line a + 1/2 = l with l = a0 + 1/2, and between them the shaded region where the far corners of the charts with a at least a0 lie. At its corner (l, B0) on the circle, three orange arrows point straight up, up and to the right, and diagonally, all above a dotted ray along the radius through the corner; two dashed orange lines through the corner, a horizontal one labelled q = 0 and a falling diagonal one labelled q = pi over 4, leave the whole region below them](figures/appendix-c/core-support.svg)
 
@@ -1393,7 +1393,7 @@ $[0, \frac\pi4]$ ([Lemma A.6](appendix-a.md#lemma-a6-sine-and-cosine-compared)
 $\square$
 
 *Lean:
-[`Six.diagonal_secondary_excluded`](../../SquaresInCircles/Six/Separators/SmallAngle.lean#L44).*
+[`Six.diagonal_secondary_excluded`](../../SquaresInCircles/Six/Separators/SmallAngle.lean#L48).*
 
 *Proof of Lemma 9.42 (1).* Let $W$ and $D$ be separated along $e^D_2$, and put
 $q = d - w > 0$. By Lemma C.2 (1), $b_D + a_W\sin q - b_W\cos q \ge \tau(q)$.
@@ -1411,10 +1411,10 @@ impossible. So $\frac\pi2 + s - d > \frac\pi4$, that is, $s > d - \frac\pi4$
 (Figure C.15 (b)). $\square$
 
 *Lean:
-[`Six.westDiagonal_wall`](../../SquaresInCircles/Six/Separators/Walls.lean#L58),
-[`Six.diagonalSouth_wall`](../../SquaresInCircles/Six/Separators/Walls.lean#L70),
-[`Six.westDiagonal_gap_gt_quarter`](../../SquaresInCircles/Six/Separators/Walls.lean#L28),
-[`Six.diagonalSouth_gap_gt_quarter`](../../SquaresInCircles/Six/Separators/Walls.lean#L42).*
+[`Six.westDiagonal_wall`](../../SquaresInCircles/Six/Separators/Walls.lean#L62),
+[`Six.diagonalSouth_wall`](../../SquaresInCircles/Six/Separators/Walls.lean#L74),
+[`Six.westDiagonal_gap_gt_quarter`](../../SquaresInCircles/Six/Separators/Walls.lean#L32),
+[`Six.diagonalSouth_gap_gt_quarter`](../../SquaresInCircles/Six/Separators/Walls.lean#L46).*
 
 ![Two panels in the plane of the angles, d from 1/2 to pi over 4 horizontally. (a) The window of w, from −2/3 to 5/8, as a dashed rectangle, and the purple wall w = d minus pi over 4 rising from about −0.29 at d = 1/2 to the model point (pi over 4, 0); the region below the wall is shaded and labelled: W and D may be separated along the secondary axis of D. (b) The window of s, from −5/8 to 2/3, with the wall s = d minus pi over 4 and the region above it shaded and labelled: D and S may be separated along the secondary axis of D](figures/appendix-c/walls.svg)
 
@@ -1504,18 +1504,18 @@ $\cos(\pi - q) = -\cos q$, the left side is unchanged, and
 $\pi - q = \hat q$ (Figure C.16). $\square$
 
 *Lean:
-[`Six.secondary_cost_first_quadrant`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L135),
-[`Six.secondary_cost_folded_lower`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L167),
-[`Six.secondary_cost_affine_lower`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L188),
-[`Six.foldedSecondaryAngle`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L160),
-[`Six.foldedSecondaryAngle_le`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L162),
-[`Six.secondaryCapLine`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L34),
-[`Six.secondary_cap_line_expansion`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L57),
-[`Six.secondary_cap_line_positive`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L67),
-[`Six.sine_error_on_half`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L26),
-[`Six.secondary_vertex_positive`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L102),
-[`Six.secondary_cap_slope`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L116),
-[`Six.secondary_tangent_constants`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L40).*
+[`Six.secondary_cost_first_quadrant`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L139),
+[`Six.secondary_cost_folded_lower`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L171),
+[`Six.secondary_cost_affine_lower`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L192),
+[`Six.foldedSecondaryAngle`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L164),
+[`Six.foldedSecondaryAngle_le`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L166),
+[`Six.secondaryCapLine`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L38),
+[`Six.secondary_cap_line_expansion`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L61),
+[`Six.secondary_cap_line_positive`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L71),
+[`Six.sine_error_on_half`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L30),
+[`Six.secondary_vertex_positive`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L106),
+[`Six.secondary_cap_slope`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L120),
+[`Six.secondary_tangent_constants`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L44).*
 
 ![Graph over q from 1/2 to pi minus 1/2, symmetric about pi over 2: a blue curve, the least cost of a wing less the folded line, with humps of height about 0.035 near 0.75 and pi minus 0.75, dips to about 0.005 near 1.3 and pi minus 1.3, and a peak of about 0.025 at pi over 2. Below it, dashed, the lower bounds of the proof: green from the far vertex on 1/2 to 1 and pi minus 1 to pi minus 1/2, and purple from the cap on 1 to pi minus 1, close to the blue curve there. All curves stay positive](figures/appendix-c/cost.svg)
 
@@ -1585,18 +1585,18 @@ $\cos d + \sin d \ge \cos\frac12 + \sin\frac12 > 1.357$ by Lemma A.15 (3).
 $\square$
 
 *Lean:
-[`Six.cardinal_width_triangle`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L297),
-[`Six.west_cardinal_secondary_work`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L407),
-[`Six.south_cardinal_secondary_work`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L418),
-[`Six.west_cardinal_secondary_norm`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L389),
-[`Six.south_cardinal_secondary_norm`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L397),
-[`Six.westRadialLength`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L364),
-[`Six.southRadialLength`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L365),
-[`Six.west_radial_length`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L367),
-[`Six.south_radial_length`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L378),
-[`Six.radial_length_sum_bound`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L441),
-[`Six.eighth_cos_upper`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L430),
-[`Six.high_diagonal_width_lower`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L457).*
+[`Six.cardinal_width_triangle`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L301),
+[`Six.west_cardinal_secondary_work`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L411),
+[`Six.south_cardinal_secondary_work`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L422),
+[`Six.west_cardinal_secondary_norm`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L393),
+[`Six.south_cardinal_secondary_norm`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L401),
+[`Six.westRadialLength`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L368),
+[`Six.southRadialLength`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L369),
+[`Six.west_radial_length`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L371),
+[`Six.south_radial_length`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L382),
+[`Six.radial_length_sum_bound`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L445),
+[`Six.eighth_cos_upper`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L434),
+[`Six.high_diagonal_width_lower`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L461).*
 
 ![Graph over x from minus 2/5 to 2/5 of omega(x) + omega(d − x) − 1/2 − omega(d) for d = 1/2 (blue) and d = pi over 4 (purple): both curves touch zero at x = 0, marked by a dot, and rise on both sides, to about 0.18 and 0.10 at x = −2/5; for negative x a dashed orange curve, labelled bound of the proof, lies just below the purple one](figures/appendix-c/widths.svg)
 
@@ -1668,24 +1668,24 @@ N'(d) = \tfrac12(\cos d - \sin d) - 1.113\sin\left(\tfrac\pi4 - \tfrac d2\right)
 so $N(d) \ge N(\frac23)$, and the bound is at least $M(\frac23) > 0$. $\square$
 
 *Lean:
-[`Six.ownWingCost`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L278),
-[`Six.ownWingCost_lower`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L282),
-[`Six.southMixedDepth`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L464),
-[`Six.south_mixed_depth_lower`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L482),
-[`Six.ownWingPotential`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L194),
-[`Six.positiveWing`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L198),
-[`Six.ownWingPotential_nonnegative_angle`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L200),
-[`Six.ownWingPotential_negative_lower`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L207),
-[`Six.positiveWing_minus_antitone`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L220),
-[`Six.positiveWing_plus_monotone`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L232),
-[`Six.own_wing_penalty_lower`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L246),
-[`Six.own_wing_penalty_endpoint`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L268),
-[`Six.westMixedConstant`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L472),
-[`Six.westMixedBase`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L474),
-[`Six.westMixedDepth`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L477),
-[`Six.west_mixed_base_positive`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L500),
-[`Six.west_mixed_depth_monotone`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L515),
-[`Six.west_cardinal_own_south_reserve`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L541).*
+[`Six.ownWingCost`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L282),
+[`Six.ownWingCost_lower`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L286),
+[`Six.southMixedDepth`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L468),
+[`Six.south_mixed_depth_lower`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L486),
+[`Six.ownWingPotential`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L198),
+[`Six.positiveWing`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L202),
+[`Six.ownWingPotential_nonnegative_angle`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L204),
+[`Six.ownWingPotential_negative_lower`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L211),
+[`Six.positiveWing_minus_antitone`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L224),
+[`Six.positiveWing_plus_monotone`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L236),
+[`Six.own_wing_penalty_lower`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L250),
+[`Six.own_wing_penalty_endpoint`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L272),
+[`Six.westMixedConstant`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L476),
+[`Six.westMixedBase`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L478),
+[`Six.westMixedDepth`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L481),
+[`Six.west_mixed_base_positive`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L504),
+[`Six.west_mixed_depth_monotone`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L519),
+[`Six.west_cardinal_own_south_reserve`](../../SquaresInCircles/Six/Separators/WingCosts.lean#L545).*
 
 ![Two graphs. (a) Three curves against s from minus 5/8 to 2/3, for d = 1/2 (blue), 2/3 (green) and pi over 4 (purple), falling steeply from about 0.7 at minus 5/8 to a corner at s = 0 and then slowly to their least values, marked by dots: about 0.034 at s = 1/2 for d = 1/2, after which the blue curve rises again, and about 0.02 and 0.05 at s = 2/3 for the others. (b) Against d from 1/2 to pi over 4, the least value falls from about 0.034 to 0.019 at d = 2/3, marked by a dashed vertical line, and rises to about 0.047 at pi over 4; the dashed bound of the proof follows it closely up to 2/3 and stays at about 0.018 beyond](figures/appendix-c/double-reserve.svg)
 
@@ -1779,16 +1779,16 @@ $\sigma > 0.54 - 1.021018 + 0.2498 + 0.387 > 0.15$.
 In every case $\sigma > 0$, a contradiction. $\square$
 
 *Lean:
-[`Six.not_both_diagonal_secondary`](../../SquaresInCircles/Six/Separators/Walls.lean#L280),
-[`Six.doubleSecondaryGap`](../../SquaresInCircles/Six/Separators/Walls.lean#L90),
-[`Six.doubleSecondaryGap_nonpositive`](../../SquaresInCircles/Six/Separators/Walls.lean#L100),
-[`Six.doubleSecondaryGap_pos_side_side`](../../SquaresInCircles/Six/Separators/Walls.lean#L141),
-[`Six.doubleSecondaryGap_pos_own_side`](../../SquaresInCircles/Six/Separators/Walls.lean#L160),
-[`Six.doubleSecondaryGap_pos_side_own`](../../SquaresInCircles/Six/Separators/Walls.lean#L190),
-[`Six.doubleSecondaryGap_pos_own_own`](../../SquaresInCircles/Six/Separators/Walls.lean#L222),
-[`Six.wingBaseX`](../../SquaresInCircles/Six/Separators/Walls.lean#L84),
-[`Six.wingBaseY`](../../SquaresInCircles/Six/Separators/Walls.lean#L85),
-[`Six.south_relative_width`](../../SquaresInCircles/Six/Separators/Walls.lean#L136).*
+[`Six.not_both_diagonal_secondary`](../../SquaresInCircles/Six/Separators/Walls.lean#L284),
+[`Six.doubleSecondaryGap`](../../SquaresInCircles/Six/Separators/Walls.lean#L94),
+[`Six.doubleSecondaryGap_nonpositive`](../../SquaresInCircles/Six/Separators/Walls.lean#L104),
+[`Six.doubleSecondaryGap_pos_side_side`](../../SquaresInCircles/Six/Separators/Walls.lean#L145),
+[`Six.doubleSecondaryGap_pos_own_side`](../../SquaresInCircles/Six/Separators/Walls.lean#L164),
+[`Six.doubleSecondaryGap_pos_side_own`](../../SquaresInCircles/Six/Separators/Walls.lean#L194),
+[`Six.doubleSecondaryGap_pos_own_own`](../../SquaresInCircles/Six/Separators/Walls.lean#L226),
+[`Six.wingBaseX`](../../SquaresInCircles/Six/Separators/Walls.lean#L88),
+[`Six.wingBaseY`](../../SquaresInCircles/Six/Separators/Walls.lean#L89),
+[`Six.south_relative_width`](../../SquaresInCircles/Six/Separators/Walls.lean#L140).*
 
 ![The double separation at D: the grey square C, the purple square D turned by 45 degrees below left of it, the blue square W above left and the green square S below right, in a dashed circle of radius R0. Two dashed purple lines extend the two sides of D parallel to its primary axis; W touches the upper one and S the lower one. Orange arrows at the centre of D point both ways along its secondary axis and cancel; orange arrows show the forces on W (up and left), S (down and right) and C; the far vertices of W and S, marked in pink, lie outside the circle](figures/appendix-c/double.svg)
 
@@ -1824,7 +1824,7 @@ b < c_x + \tan\tfrac v2\,(a - c_y) .
 and $\sin v > 0$. $\square$
 
 *Lean:
-[`Six.own_south_transverse_upper`](../../SquaresInCircles/Six/Separators/Signs.lean#L163).*
+[`Six.own_south_transverse_upper`](../../SquaresInCircles/Six/Separators/Signs.lean#L167).*
 
 *Proof of Lemma 9.43 (1).* By Lemma 9.30 (2), $S$ is separated from $C$ along
 its own axis: $m_{\mathrm{own}}(S) \ge 0 > m_{\mathrm{south}}(S)$. Suppose that
@@ -1920,18 +1920,18 @@ $E(d, v) \le E(\frac12, v) < 0$, and $D$ and $S$ are not separated along $e^S_2$
 either (Figure C.20 (b)). This contradiction proves $s > 0$. $\square$
 
 *Lean:
-[`Six.own_south_positive`](../../SquaresInCircles/Six/Separators/Signs.lean#L242),
-[`Six.own_south_transverse_upper`](../../SquaresInCircles/Six/Separators/Signs.lean#L163),
-[`Six.south_diagonal_secondary_excluded`](../../SquaresInCircles/Six/Separators/Signs.lean#L181),
-[`Six.diagonal_projection_upper`](../../SquaresInCircles/Six/Separators/Signs.lean#L53),
-[`Six.southDefect`](../../SquaresInCircles/Six/Separators/Signs.lean#L29),
-[`Six.southDefect_antitone_d`](../../SquaresInCircles/Six/Separators/Signs.lean#L73),
-[`Six.southDefect_left_negative`](../../SquaresInCircles/Six/Separators/Signs.lean#L108),
-[`Six.southDefect_negative`](../../SquaresInCircles/Six/Separators/Signs.lean#L152),
-[`Six.transverseLimit`](../../SquaresInCircles/Six/Separators/Signs.lean#L26),
-[`Six.radialLimit`](../../SquaresInCircles/Six/Separators/Signs.lean#L27),
-[`Six.limit_bounds`](../../SquaresInCircles/Six/Separators/Signs.lean#L33),
-[`Six.angle_sum_trig`](../../SquaresInCircles/Six/Separators/Signs.lean#L41).*
+[`Six.own_south_positive`](../../SquaresInCircles/Six/Separators/Signs.lean#L246),
+[`Six.own_south_transverse_upper`](../../SquaresInCircles/Six/Separators/Signs.lean#L167),
+[`Six.south_diagonal_secondary_excluded`](../../SquaresInCircles/Six/Separators/Signs.lean#L185),
+[`Six.diagonal_projection_upper`](../../SquaresInCircles/Six/Separators/Signs.lean#L57),
+[`Six.southDefect`](../../SquaresInCircles/Six/Separators/Signs.lean#L33),
+[`Six.southDefect_antitone_d`](../../SquaresInCircles/Six/Separators/Signs.lean#L77),
+[`Six.southDefect_left_negative`](../../SquaresInCircles/Six/Separators/Signs.lean#L112),
+[`Six.southDefect_negative`](../../SquaresInCircles/Six/Separators/Signs.lean#L156),
+[`Six.transverseLimit`](../../SquaresInCircles/Six/Separators/Signs.lean#L30),
+[`Six.radialLimit`](../../SquaresInCircles/Six/Separators/Signs.lean#L31),
+[`Six.limit_bounds`](../../SquaresInCircles/Six/Separators/Signs.lean#L37),
+[`Six.angle_sum_trig`](../../SquaresInCircles/Six/Separators/Signs.lean#L45).*
 
 ![Two graphs below zero. (a) Over d from 1/2 to pi over 4, the bound cos d/2 minus 0.387 sin d minus 11/40 for the separation along the secondary axis of D falls from about −0.022, marked, to about −0.19. (b) Over v from 0 to 5/8, with a legend: the bound E of the separation along the secondary axis of S at d = 1/2, near −0.05, and at d = pi over 4, near −0.23 to −0.26; above them, the trigonometric bound at d = 1/2, dashed, rising from −0.047 to about −0.015, and the quadratic bound, dotted, just above it; all negative](figures/appendix-c/south-sign.svg)
 
@@ -1982,9 +1982,9 @@ least $2\bar\rho > 2\rho_0$, contradicting $a_W, a_S \le \rho_0$. Hence
 $s - w < \frac{24}{25}$. $\square$
 
 *Lean:
-[`Six.normalized_own_wing_angle_sum`](../../SquaresInCircles/Six/Separators/Signs.lean#L349),
-[`Six.coupled_own_wing_radial_sum`](../../SquaresInCircles/Six/Separators/Signs.lean#L304),
-[`Six.own_wing_profile_line`](../../SquaresInCircles/Six/Separators/Signs.lean#L333).*
+[`Six.normalized_own_wing_angle_sum`](../../SquaresInCircles/Six/Separators/Signs.lean#L353),
+[`Six.coupled_own_wing_radial_sum`](../../SquaresInCircles/Six/Separators/Signs.lean#L308),
+[`Six.own_wing_profile_line`](../../SquaresInCircles/Six/Separators/Signs.lean#L337).*
 
 ![Two panels. (a) Over x from 0 to 0.7, the blue profile one half plus 0.387 cos x plus 0.61 sin x rises from about 0.89 to about 1.2, crossing a dashed orange line of slope 9/25 through the point (12/25, 1.11282); on the shaded interval from 22/75 to 2/3 the profile lies above the line, touching it nearly at both ends. (b) The square of the angles w from −2/3 to 0 and s from 0 to 2/3, dashed, with the pink corner triangle where s minus w is at least 24/25, bounded by the line from (−2/3, 22/75) to (−22/75, 2/3); the model point is at the corner (0, 0)](figures/appendix-c/own-wings.svg)
 

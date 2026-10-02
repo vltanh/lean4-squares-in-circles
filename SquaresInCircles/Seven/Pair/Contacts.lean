@@ -1,4 +1,6 @@
-import SquaresInCircles.Seven.Pair.Frame
+module
+
+public import SquaresInCircles.Seven.Pair.Frame
 
 /-!
 # Seven squares: contacts
@@ -10,6 +12,9 @@ state and an axial state. A side state is `(1, 1/2)`, on the circle
 `PairProperty` is what the gap of `π/3` is shown to satisfy, case by case:
 the support sum is nonnegative and vanishes only at a contact.
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles.Seven
 

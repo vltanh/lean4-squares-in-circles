@@ -1,5 +1,7 @@
-import SquaresInCircles.Common.Contacts
-import SquaresInCircles.Common.Angles
+module
+
+public import SquaresInCircles.Common.Contacts
+public import SquaresInCircles.Common.Angles
 
 /-!
 # Changes of frame
@@ -11,6 +13,9 @@ congruences compose. A packing with a square that contains the disk centre is
 congruent to one about the origin whose square `0` is axis-parallel, contains
 the origin and has its centre in `[0, 1/2)²` (`normalize_with_containing`).
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles
 

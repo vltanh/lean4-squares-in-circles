@@ -1,8 +1,10 @@
-import Mathlib.Analysis.Convex.Deriv
-import Mathlib.Analysis.Convex.Jensen
-import Mathlib.Analysis.Convex.SpecificFunctions.Deriv
-import Mathlib.Analysis.Calculus.LocalExtr.Basic
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
+module
+
+public import Mathlib.Analysis.Convex.Deriv
+public import Mathlib.Analysis.Convex.Jensen
+public import Mathlib.Analysis.Convex.SpecificFunctions.Deriv
+public import Mathlib.Analysis.Calculus.LocalExtr.Basic
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
 
 /-!
 # One-variable calculus
@@ -19,6 +21,9 @@ end of an interval, nonnegative at the right end and somewhere nonpositive has
 a leftmost minimum inside; where the function is a sinusoid there, the minimum
 is stationary and the sinusoid negative.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set Filter
 open scoped Topology

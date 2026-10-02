@@ -1,5 +1,7 @@
-import SquaresInCircles.Six.Normalization.WestStress
-import SquaresInCircles.Six.Construction
+module
+
+public import SquaresInCircles.Six.Normalization.WestStress
+public import SquaresInCircles.Six.Construction
 
 /-!
 # Six squares: normalized packings
@@ -22,6 +24,8 @@ E, N, W, D, S. With the phase of D at most `5π/4`, D is separated along its own
 axis: otherwise W would be separated along its own axis, which
 `west_cardinal_impossible` excludes. A `NormalizedPacking` records these facts.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six.Normalization

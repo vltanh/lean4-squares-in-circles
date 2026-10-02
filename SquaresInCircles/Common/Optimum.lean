@@ -1,4 +1,6 @@
-import SquaresInCircles.Common.Congruence
+module
+
+public import SquaresInCircles.Common.Congruence
 
 /-!
 # The optimum for `n` squares
@@ -13,6 +15,9 @@ optimal one, so it would be congruent to a model that reaches the larger
 circle; and the packings of that radius are exactly the configurations
 congruent to a model.
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles
 

@@ -1,5 +1,7 @@
-import SquaresInCircles.Six.Constants
-import SquaresInCircles.Common.Constructions
+module
+
+public import SquaresInCircles.Six.Constants
+public import SquaresInCircles.Common.Constructions
 
 /-!
 # Six squares: construction
@@ -14,6 +16,8 @@ neighbours, and below the line `x + y = 2 s* - 1`, which bounds the central
 square. The radius and the model are defined with the statement, in
 `Geometry.lean`.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six

@@ -1,4 +1,6 @@
-import SquaresInCircles.Six.Separators.Profiles
+module
+
+public import SquaresInCircles.Six.Separators.Profiles
 
 /-!
 # Six squares: separation along the secondary axis of D at a small angle
@@ -12,6 +14,8 @@ disk and the core, the maximum is at the corner `(aMin, U0)` where the line
 at an angle `q` from D, is not separated from D along the secondary axis of D
 (`diagonal_secondary_excluded`).
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six

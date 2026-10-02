@@ -1,6 +1,8 @@
-import SquaresInCircles.Seven.Pair.Frame
-import Mathlib.Analysis.Calculus.LocalExtr.Basic
-import SquaresInCircles.Seven.Pair.CriticalGap
+module
+
+public import SquaresInCircles.Seven.Pair.Frame
+public import Mathlib.Analysis.Calculus.LocalExtr.Basic
+public import SquaresInCircles.Seven.Pair.CriticalGap
 
 /-!
 # Seven squares: the gaps below `π/3`
@@ -19,6 +21,9 @@ it stationary with a negative value, pointing away from the corner of the
 second square nearest the disk centre, and the support of the first square
 exceeds the distance of that corner.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set Filter
 open scoped Topology

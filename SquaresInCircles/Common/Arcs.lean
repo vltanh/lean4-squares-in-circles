@@ -1,5 +1,7 @@
-import SquaresInCircles.Common.Separation
-import Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic
+module
+
+public import SquaresInCircles.Common.Separation
+public import Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic
 
 /-!
 # Arcs and the angular budget
@@ -13,6 +15,9 @@ arc by the same factor below 1 and measure the closed arcs
 half-widths apart (`OpenArc.centers_separated`), and three directions have
 perimeter at most `2π`, which bounds the third distance of three arcs.
 -/
+
+@[expose] public section
+
 noncomputable section
 open scoped BigOperators ENNReal
 open MeasureTheory Set

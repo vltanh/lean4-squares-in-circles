@@ -1,4 +1,6 @@
-import SquaresInCircles.Six.Construction
+module
+
+public import SquaresInCircles.Six.Construction
 
 /-!
 # Six squares: eight contacts fix the centres
@@ -16,6 +18,8 @@ circle, completing the square in `|a| + 1/2 - A` and `|b| + 1/2 - B` gives
 equality only at `(rhoStar, 0)`. In the model these bounds add up to the
 thresholds, so all of them are attained.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six.Equality

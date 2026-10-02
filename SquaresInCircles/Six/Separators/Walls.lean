@@ -1,7 +1,9 @@
-import SquaresInCircles.Six.Separators.SmallAngle
-import SquaresInCircles.Six.Separators.SouthPair
-import SquaresInCircles.Six.Separators.WingCosts
-import SquaresInCircles.Six.Normalization.PinAxes
+module
+
+public import SquaresInCircles.Six.Separators.SmallAngle
+public import SquaresInCircles.Six.Separators.SouthPair
+public import SquaresInCircles.Six.Separators.WingCosts
+public import SquaresInCircles.Six.Normalization.PinAxes
 
 /-!
 # Six squares: the walls and the missing wings
@@ -18,6 +20,8 @@ As each pair is separated along a secondary axis, if a wing fails the pair is
 separated along the secondary axis of D, and the other pair along its wing: the
 wing is missing, and the angle of its square lies beyond the wall.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six

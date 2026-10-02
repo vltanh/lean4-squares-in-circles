@@ -241,11 +241,11 @@ Table 1.1.
 and 10.1 respectively: parts (1) and (2) of each give the attainment and the
 lower bound of (1) here, and part (3) gives (2). $\square$
 
-*Lean: [`optimal_radius`](../../SquaresInCircles.lean#L51),
-[`optimal_packings`](../../SquaresInCircles.lean#L57),
-[`optimal_packings_rigid`](../../SquaresInCircles.lean#L65),
-[`optimalRadius`](../../SquaresInCircles/Geometry.lean#L272),
-[`optimalPackings`](../../SquaresInCircles/Geometry.lean#L286).*
+*Lean: [`optimal_radius`](../../SquaresInCircles.lean#L56),
+[`optimal_packings`](../../SquaresInCircles.lean#L62),
+[`optimal_packings_rigid`](../../SquaresInCircles.lean#L70),
+[`optimalRadius`](../../SquaresInCircles/Geometry.lean#L276),
+[`optimalPackings`](../../SquaresInCircles/Geometry.lean#L290).*
 
 *Remarks.* (i) For $n \le 6$ the theorem says that the optimal packing is
 unique up to a rotation about the disk centre and a relabelling of the

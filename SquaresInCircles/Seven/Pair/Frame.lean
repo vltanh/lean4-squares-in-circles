@@ -1,5 +1,7 @@
-import SquaresInCircles.Seven.Exterior
-import SquaresInCircles.Common.SeparatingAxes
+module
+
+public import SquaresInCircles.Seven.Exterior
+public import SquaresInCircles.Common.SeparatingAxes
 
 /-!
 # Seven squares: a pair in the frame of its first square
@@ -13,6 +15,9 @@ of any point of its marker arc. If the open squares of the pair are disjoint,
 the separating-axis theorem gives a nonpositive support sum on one of the axes,
 of the pair or of the pair seen from the second square.
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles.Seven
 

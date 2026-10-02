@@ -1,5 +1,7 @@
-import SquaresInCircles.Common.Basic
-import SquaresInCircles.Common.Trigonometry
+module
+
+public import SquaresInCircles.Common.Basic
+public import SquaresInCircles.Common.Trigonometry
 
 /-!
 # Six squares: the constants
@@ -32,6 +34,8 @@ disk, `c0 = ρ0 - 1` bounds the centre of the central square C,
 `coreLower` and `coreUpper` stand for `R0`, `ρ0` and `c0`, rounded, in the
 estimates, and `A` and `B` for `1/2 ∓ coreUpper`.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six

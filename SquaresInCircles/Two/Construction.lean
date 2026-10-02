@@ -1,4 +1,6 @@
-import SquaresInCircles.Common.Constructions
+module
+
+public import SquaresInCircles.Common.Constructions
 
 /-!
 # Two squares: construction
@@ -7,6 +9,9 @@ The 2 × 1 rectangle centred at the disk centre packs the disk of the optimal
 radius `sqrt 5 / 2`. The radius and the model are defined with the statement,
 in `Geometry.lean`.
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles.Two
 

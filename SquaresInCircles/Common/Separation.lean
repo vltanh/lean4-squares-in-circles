@@ -1,5 +1,7 @@
-import SquaresInCircles.Common.Basic
-import Mathlib.Analysis.LocallyConvex.Separation
+module
+
+public import SquaresInCircles.Common.Basic
+public import Mathlib.Analysis.LocallyConvex.Separation
 
 /-!
 # A supporting functional for two squares with disjoint interiors
@@ -10,6 +12,8 @@ separates two squares with disjoint interiors by a nonzero linear functional
 `width S n + width T n ≤ dot n (sub T.center S.center)` by testing the
 functional on shrunk support vertices, which lie in the open squares.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles

@@ -1,6 +1,8 @@
-import SquaresInCircles.Six.Separators.Walls
-import SquaresInCircles.Six.Separators.Profiles
-import SquaresInCircles.Six.Supports
+module
+
+public import SquaresInCircles.Six.Separators.Walls
+public import SquaresInCircles.Six.Separators.Profiles
+public import SquaresInCircles.Six.Supports
 
 /-!
 # Six squares: W and D along the secondary axis of D
@@ -16,6 +18,8 @@ threshold by less than
 it increases in `v` along `U(v)`, and its values at `v = 1/2` (W on its own
 axis) and `v = 2/5` (W on the west side of C) are negative.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six

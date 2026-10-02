@@ -1,7 +1,9 @@
-import SquaresInCircles.Three.Exterior
-import SquaresInCircles.Common.Arcs
-import SquaresInCircles.Common.Trigonometry
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
+module
+
+public import SquaresInCircles.Three.Exterior
+public import SquaresInCircles.Common.Arcs
+public import SquaresInCircles.Common.Trigonometry
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
 
 /-!
 # Three squares: the containing square
@@ -15,6 +17,9 @@ radius `7/16` two nearly axial squares hold arcs too wide for the angle between
 their phases, which the budget on the circle of radius `3/8` keeps below
 `5π/6-13/29`.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles.Three

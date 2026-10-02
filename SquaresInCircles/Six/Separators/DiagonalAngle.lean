@@ -1,4 +1,6 @@
-import SquaresInCircles.Six.Separators.DiagonalAngleOwn
+module
+
+public import SquaresInCircles.Six.Separators.DiagonalAngleOwn
 
 /-!
 # Six squares: the angle of D exceeds 1/2
@@ -16,6 +18,8 @@ harmonic part is nonnegative, so the gap is concave in `w`, in `d` and along the
 edge `d = w`, and it is positive at the six vertices of the domain, by Taylor
 brackets.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six

@@ -1,4 +1,6 @@
-import SquaresInCircles.Six.Supports
+module
+
+public import SquaresInCircles.Six.Supports
 
 /-!
 # Six squares: squares in a deep cap
@@ -18,6 +20,8 @@ rectangle. A square with `a ≥ 0` and `|b| < 1/2` faces such a cap: its phase
 lies within `2/5` of the normal modulo `2π` (`deep_cap_faces`), since a quarter
 or a half turn would make the cap face a short or a negative coordinate.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six.Normalization

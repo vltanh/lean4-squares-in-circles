@@ -1,4 +1,6 @@
-import SquaresInCircles.Common.Charts
+module
+
+public import SquaresInCircles.Common.Charts
 
 /-!
 # Arcs of an exterior square
@@ -11,6 +13,9 @@ edge, the square holds every chart angle between these crossings, an arc whose
 length is one of `2A`, `A+U`, `A+V` and `U+V`. Membership is in the open
 square, so disjoint squares hold disjoint arcs.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles

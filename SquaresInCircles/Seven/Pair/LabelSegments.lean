@@ -1,6 +1,8 @@
-import SquaresInCircles.Seven.Pair.LabelBoundary
-import SquaresInCircles.Seven.Exterior
-import SquaresInCircles.Common.Trigonometry
+module
+
+public import SquaresInCircles.Seven.Pair.LabelBoundary
+public import SquaresInCircles.Seven.Exterior
+public import SquaresInCircles.Common.Trigonometry
 
 /-!
 # Seven squares: segments of constant label
@@ -9,6 +11,9 @@ At a fixed label the support is affine in the state, so it is extreme at the
 ends of the admissible segment of that label. The segments end on the axial
 line, on the circle `φ = 13/4` and on the diagonal.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles.Seven

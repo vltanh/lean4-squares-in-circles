@@ -1,4 +1,6 @@
-import SquaresInCircles.Seven.Pair.Contacts
+module
+
+public import SquaresInCircles.Seven.Pair.Contacts
 
 /-!
 # Seven squares: four sectors valid for every label
@@ -9,6 +11,9 @@ square; the inward axis with a negative source sign, by its marker arc; and the
 forward axis with both signs positive, by Cauchy–Schwarz on the disk and the
 marker bounds.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles.Seven

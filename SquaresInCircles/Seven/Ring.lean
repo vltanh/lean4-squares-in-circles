@@ -1,5 +1,7 @@
-import SquaresInCircles.Seven.Pair
-import SquaresInCircles.Common.Angles
+module
+
+public import SquaresInCircles.Seven.Pair
+public import SquaresInCircles.Common.Angles
 
 /-!
 # Seven squares: the ring
@@ -9,6 +11,9 @@ hexagon of markers, consecutive squares are contacts, so their kinds cycle
 through lower side, upper side and axial, twice. Read in one frame, they are
 the two side columns and two axial squares at free heights.
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles.Seven
 

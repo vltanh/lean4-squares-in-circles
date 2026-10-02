@@ -1,5 +1,7 @@
-import SquaresInCircles.Six.Normalization.Complete
-import SquaresInCircles.Six.Normalization.DirectedAxes
+module
+
+public import SquaresInCircles.Six.Normalization.Complete
+public import SquaresInCircles.Six.Normalization.DirectedAxes
 
 /-!
 # Six squares: the exterior squares of a normalized packing and their pin axes
@@ -16,6 +18,8 @@ the pairs N, W and E, S are separated along one of four axes directed by the
 chord, and W, D and D, S along one of their eight axes other than those the
 chords rule out.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six.Normalization

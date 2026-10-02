@@ -1,9 +1,11 @@
-import SquaresInCircles.Four.Exterior
-import SquaresInCircles.Four.Containing
-import SquaresInCircles.Four.Construction
-import SquaresInCircles.Common.Sweep
-import SquaresInCircles.Common.Angles
-import SquaresInCircles.Common.Optimum
+module
+
+public import SquaresInCircles.Four.Exterior
+public import SquaresInCircles.Four.Containing
+public import SquaresInCircles.Four.Construction
+public import SquaresInCircles.Common.Sweep
+public import SquaresInCircles.Common.Angles
+public import SquaresInCircles.Common.Optimum
 
 /-!
 # Four squares: uniqueness
@@ -19,6 +21,9 @@ the disk centre a vertex of every square, and the four quarter circles form the
 The file ends with `optimum`: the case as an `Optimum`, which also gives the
 lower bound.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles.Four

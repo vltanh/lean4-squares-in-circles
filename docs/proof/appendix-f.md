@@ -108,8 +108,8 @@ $\sqrt{1 - y^2} < \frac45$ and $f'(y) < 0$; apply Lemma A.1 (2).
 $\square$
 
 *Lean:
-[`Seven.asin_line_mono`](../../SquaresInCircles/Seven/Exterior.lean#L235),
-[`asin_half`](../../SquaresInCircles/Common/Trigonometry.lean#L717).*
+[`Seven.asin_line_mono`](../../SquaresInCircles/Seven/Exterior.lean#L240),
+[`asin_half`](../../SquaresInCircles/Common/Trigonometry.lean#L722).*
 
 By (1) and (2), $f(\frac35) = \frac34 - \arcsin\frac35$ is the largest value of
 $f$ on $[-\frac35, 1]$. The next two lemmas place the label between the lower
@@ -183,8 +183,8 @@ $\mathrm{side}(a, b)$ and $\frac\pi4$, hence less than their minimum
 $\ell(a, b)$. $\square$
 
 *Lean:
-[`Seven.marker_lower_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L257),
-[`dot_gt`](../../SquaresInCircles/Common/DiskSupport.lean#L34).*
+[`Seven.marker_lower_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L262),
+[`dot_gt`](../../SquaresInCircles/Common/DiskSupport.lean#L39).*
 
 ### Lemma F.3 (the upper edge)
 
@@ -217,7 +217,7 @@ $\ell(a, b) + \frac12 < \arcsin(b + \frac12)$.
    $\arcsin(b + \frac12) > \ell(a, b) + \frac12$. $\square$
 
 *Lean:
-[`Seven.marker_horizontal_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L459).*
+[`Seven.marker_horizontal_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L464).*
 
 The label does not increase with $a$, so for a given $b$ it comes closest to
 the lower edge at the largest admissible $a$, on the circle
@@ -254,9 +254,9 @@ E_2(x) &= \frac x{\left(1 - x^2\right)^{3/2}} - \frac{13}{12\left(13/4 - (x + 1)
 $E$ is the *envelope*; $E_1$ and $E_2$ are its first and second derivatives
 on $[0, \frac34]$ (Lemma F.6).
 
-*Lean: [`Seven.arcEnvelope`](../../SquaresInCircles/Seven/Exterior.lean#L286),
-[`Seven.arcEnvelopeDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L289),
-[`Seven.arcEnvelopeSecond`](../../SquaresInCircles/Seven/Exterior.lean#L292).*
+*Lean: [`Seven.arcEnvelope`](../../SquaresInCircles/Seven/Exterior.lean#L291),
+[`Seven.arcEnvelopeDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L294),
+[`Seven.arcEnvelopeSecond`](../../SquaresInCircles/Seven/Exterior.lean#L297).*
 
 The definition of the side term can be written
 
@@ -312,7 +312,7 @@ P(c) < 9 \cdot \tfrac13 \cdot 6^3 = 648 < 676 . \qquad \square
 ```
 
 *Lean:
-[`Seven.curvature_peak_lt`](../../SquaresInCircles/Seven/Exterior.lean#L358).*
+[`Seven.curvature_peak_lt`](../../SquaresInCircles/Seven/Exterior.lean#L363).*
 
 ### Lemma F.6 (the curvature of the envelope)
 
@@ -370,10 +370,10 @@ Let $0 \le x \le \frac34$. Then
    $12(x + \frac18)B^3 < 13A^3$, and $E_2(x) < -\frac18$. $\square$
 
 *Lean:
-[`Seven.arcEnvelopeSecond_le`](../../SquaresInCircles/Seven/Exterior.lean#L384),
-[`Seven.arc_radicands`](../../SquaresInCircles/Seven/Exterior.lean#L295),
-[`Seven.arcEnvelope_hasDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L300),
-[`Seven.arcEnvelopeDeriv_hasDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L317).*
+[`Seven.arcEnvelopeSecond_le`](../../SquaresInCircles/Seven/Exterior.lean#L389),
+[`Seven.arc_radicands`](../../SquaresInCircles/Seven/Exterior.lean#L300),
+[`Seven.arcEnvelope_hasDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L305),
+[`Seven.arcEnvelopeDeriv_hasDeriv`](../../SquaresInCircles/Seven/Exterior.lean#L322).*
 
 The two terms of $E_2$ come from the arcsine, which bends up, and from the
 circle $\varphi = \frac{13}4$, which bends down: $B$ is the value of
@@ -434,7 +434,7 @@ level $\frac\pi3 - \frac12 \approx 0.5472$ that Lemma F.8 needs
    With (F.2), $E(x) \le \frac\pi6 + \frac{353}{648}$ (Figure F.9). $\square$
 
 *Lean:
-[`Seven.arcEnvelope_bound`](../../SquaresInCircles/Seven/Exterior.lean#L419).*
+[`Seven.arcEnvelope_bound`](../../SquaresInCircles/Seven/Exterior.lean#L424).*
 
 For orientation: the largest value of $E$ on $[0, \frac34]$ is about
 $\frac\pi6 + 0.54293$, taken near $x = 0.094$, and
@@ -471,7 +471,7 @@ $0 \le x < \frac34$.
    $\square$
 
 *Lean:
-[`Seven.marker_vertical_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L437).*
+[`Seven.marker_vertical_endpoint`](../../SquaresInCircles/Seven/Exterior.lean#L442).*
 
 *Proof of [Lemma 10.9](10-seven.md#lemma-109-the-marker-arc).* Let $(a, b)$
 be admissible, write $\ell = \ell(a, b)$, and let $|t - \ell| \le \frac12$,
@@ -497,4 +497,4 @@ $0 \le \theta \le \frac\pi2$ and $\cos\theta = a - \frac12$.
    so $\sin t < b + \frac12$. With step 3, $|\sin t - b| \le \frac12$.
    $\square$
 
-*Lean: [`Seven.marker_arc`](../../SquaresInCircles/Seven/Exterior.lean#L486).*
+*Lean: [`Seven.marker_arc`](../../SquaresInCircles/Seven/Exterior.lean#L491).*

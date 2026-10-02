@@ -1,4 +1,6 @@
-import SquaresInCircles.Seven.Pair.Contacts
+module
+
+public import SquaresInCircles.Seven.Pair.Contacts
 
 /-!
 # Seven squares: the forward axis, signs `(-, +)`
@@ -10,6 +12,9 @@ turn, bounds it below by `0`, so it vanishes only at two side states. For the ot
 labels a linear clearance between the labels and one-variable profiles in the
 turn make it positive.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles.Seven

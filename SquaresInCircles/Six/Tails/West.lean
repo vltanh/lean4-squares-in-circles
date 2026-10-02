@@ -1,4 +1,6 @@
-import SquaresInCircles.Six.Wings.Chart
+module
+
+public import SquaresInCircles.Six.Wings.Chart
 
 /-!
 # Six squares: the west tail
@@ -22,6 +24,8 @@ at the eight corners, where Taylor polynomials bound it below. The corner
 (`k = 0`, with `0 < s < 3/5` since `s - w < 24/25`), or the south side of C
 with `s ≥ 0` (`k = 1`) or `s ≤ 0` (`k = 2`), with `|s| < 2/5`.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six.WestTail

@@ -1,4 +1,6 @@
-import SquaresInCircles.Six.Supports
+module
+
+public import SquaresInCircles.Six.Supports
 
 /-!
 # Six squares: the stress of the pair N, W
@@ -18,6 +20,8 @@ value is `pairBase`. Elsewhere the value is compared with
 `pairBase + line w + |n|/1000`, where the broken line `line w` in the angle of W
 is paid for by the turned square.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six.Stress

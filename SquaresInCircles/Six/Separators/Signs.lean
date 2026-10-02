@@ -1,4 +1,6 @@
-import SquaresInCircles.Six.Separators.Walls
+module
+
+public import SquaresInCircles.Six.Separators.Walls
 
 /-!
 # Six squares: the signs of the own wings
@@ -18,6 +20,8 @@ bounds `a_W + a_S` below by a concave profile of their angles; on
 `[22/75, 2/3]` the profile lies above the line of slope `9/25` through `ρ0` at
 `12/25`, and `a_W, a_S ≤ ρ0` gives `s - w < 24/25`.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six

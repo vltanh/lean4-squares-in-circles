@@ -1,5 +1,7 @@
-import SquaresInCircles.Common.Sweep
-import Mathlib.Analysis.SpecialFunctions.Complex.Arg
+module
+
+public import SquaresInCircles.Common.Sweep
+public import Mathlib.Analysis.SpecialFunctions.Complex.Arg
 
 /-!
 # Charts
@@ -13,6 +15,9 @@ square sits at `(a, ±b)`, the sign recording the reversal
 (`SquareChart.cartesian`); points in a rotated frame and polar coordinates
 connect the two descriptions.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles

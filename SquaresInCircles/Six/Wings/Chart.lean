@@ -1,4 +1,6 @@
-import SquaresInCircles.Six.Separators.Signs
+module
+
+public import SquaresInCircles.Six.Separators.Signs
 
 /-!
 # Six squares: the wings in the frames of the squares
@@ -15,6 +17,8 @@ reflection in the diagonal exchanges W and S: it maps the angles `(v, s, d)` to
 `cy`, and it carries the separations of a missing west wing to those of a
 missing south wing.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six.Wings

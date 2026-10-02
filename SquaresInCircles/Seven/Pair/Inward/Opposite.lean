@@ -1,5 +1,7 @@
-import SquaresInCircles.Seven.Pair.Inward.OppositeMinima
-import SquaresInCircles.Seven.Pair.Inward.AxialTarget
+module
+
+public import SquaresInCircles.Seven.Pair.Inward.OppositeMinima
+public import SquaresInCircles.Seven.Pair.Inward.AxialTarget
 
 /-!
 # Seven squares: the inward axis with opposite signs
@@ -9,6 +11,9 @@ target moves along its label segment to the axial tie. A nonpositive turn keeps
 the remainder of the side source, so the only zero is a side source with an
 axial target.
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles.Seven
 open Boundary

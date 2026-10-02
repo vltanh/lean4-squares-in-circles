@@ -1,5 +1,7 @@
-import SquaresInCircles.Seven.Pair.LabelSegments
-import SquaresInCircles.Seven.Pair.Frame
+module
+
+public import SquaresInCircles.Seven.Pair.LabelSegments
+public import SquaresInCircles.Seven.Pair.Frame
 
 /-!
 # Seven squares: the inward axis, positive signs, side target
@@ -7,6 +9,9 @@ import SquaresInCircles.Seven.Pair.Frame
 The support is concave in the source label, so the endpoints `0` and `π/4`
 suffice.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles.Seven

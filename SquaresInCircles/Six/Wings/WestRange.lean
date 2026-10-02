@@ -1,5 +1,7 @@
-import SquaresInCircles.Six.Supports
-import SquaresInCircles.Six.Wings.Chart
+module
+
+public import SquaresInCircles.Six.Supports
+public import SquaresInCircles.Six.Wings.Chart
 
 /-!
 # Six squares: the angles of W and D in a missing west wing
@@ -19,6 +21,8 @@ once it is positive at the corners, where Taylor brackets give the sign. Four
 rows of weights exclude in turn `d ≤ 3/5`, `d + v ≤ 53/50`, `v ≥ 31/50` and
 `d ≤ 16/25`.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six.Wings

@@ -1,7 +1,9 @@
-import SquaresInCircles.Six.Wings.Chord
-import SquaresInCircles.Six.Wings.Chart
-import SquaresInCircles.Common.Trigonometry
-import SquaresInCircles.Six.Normalization.Basic
+module
+
+public import SquaresInCircles.Six.Wings.Chord
+public import SquaresInCircles.Six.Wings.Chart
+public import SquaresInCircles.Common.Trigonometry
+public import SquaresInCircles.Six.Normalization.Basic
 
 /-!
 # Six squares: W on the west side of C
@@ -26,6 +28,8 @@ and of S give D the force `(cos x, 1 - sin x)`, of length
 leaves is concave for `c ≤ 4`, here with `c = √2 R0` and in `WestDiagonal` with
 a decimal bound of it. The values at the points are bounded by squaring.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six.Wings.WestSide

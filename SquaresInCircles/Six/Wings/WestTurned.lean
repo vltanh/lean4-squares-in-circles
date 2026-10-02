@@ -1,5 +1,7 @@
-import SquaresInCircles.Six.Wings.Chord
-import SquaresInCircles.Six.Wings.Chart
+module
+
+public import SquaresInCircles.Six.Wings.Chord
+public import SquaresInCircles.Six.Wings.Chart
 
 /-!
 # Six squares: own wings, W turned at least as far as S
@@ -20,6 +22,8 @@ the domain in `(v, s)` for the two ends of `d`, where Taylor polynomials exceed
 in the diagonal, for a missing west wing with W and S on their own axes and
 `v ≤ s`, where the reflected angle of D is below `π/2 - 16/25 < 163/175`.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six.Wings.WestTurned

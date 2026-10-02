@@ -1,5 +1,7 @@
-import SquaresInCircles.Common.Separation
-import SquaresInCircles.Common.Arcs
+module
+
+public import SquaresInCircles.Common.Separation
+public import SquaresInCircles.Common.Arcs
 
 /-!
 # The radial sweep
@@ -13,6 +15,9 @@ the sum of the two widths of each centre. Of two or more disjoint squares at
 most one contains the disk centre, and in the angular budget it can be replaced
 by its sweep (`ray_budget_impossible`).
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles

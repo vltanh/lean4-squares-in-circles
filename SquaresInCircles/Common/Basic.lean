@@ -1,4 +1,6 @@
-import SquaresInCircles.Geometry
+module
+
+public import SquaresInCircles.Geometry
 
 /-!
 # Frames, interior-disjointness and the farthest-vertex bound
@@ -9,6 +11,9 @@ in a closed disk about the point exactly when `phi` is at most the squared
 radius, and `phi` bounds the distance of the centre. Distances always use
 `normSq`; the product-space norm on `ℝ × ℝ` is the maximum norm.
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles
 

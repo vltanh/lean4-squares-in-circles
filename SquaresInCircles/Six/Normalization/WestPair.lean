@@ -1,5 +1,7 @@
-import SquaresInCircles.Six.Normalization.Pins
-import SquaresInCircles.Six.Normalization.DirectedAxes
+module
+
+public import SquaresInCircles.Six.Normalization.Pins
+public import SquaresInCircles.Six.Normalization.DirectedAxes
 
 /-!
 # Six squares: the pair W, D
@@ -13,6 +15,8 @@ transverse coordinates keep the backward projections below it. The pins of W
 and D, `π/3` apart, order the secondary axes of squares near the west from W to
 D; so W comes before D (`west_before_diagonal`).
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six

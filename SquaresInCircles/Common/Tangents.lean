@@ -1,4 +1,6 @@
-import SquaresInCircles.Common.Basic
+module
+
+public import SquaresInCircles.Common.Basic
 
 /-!
 # Contact tangents
@@ -7,6 +9,9 @@ The tangent-plus-remainder identity for the farthest-vertex function `phi`
 turns the curved constraint `phi a b ≤ K` into a linear one at every point of
 `phi = K`, strict away from the point of tangency.
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles
 

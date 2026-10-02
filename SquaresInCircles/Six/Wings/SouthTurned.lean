@@ -1,5 +1,7 @@
-import SquaresInCircles.Six.Wings.Chord
-import SquaresInCircles.Six.Wings.Chart
+module
+
+public import SquaresInCircles.Six.Wings.Chord
+public import SquaresInCircles.Six.Wings.Chart
 
 /-!
 # Six squares: own wings, S turned at least as far as W
@@ -21,6 +23,8 @@ in `s` with nonnegative coefficients, and concave along the edges `s = v`,
 `s = 2/3` and `v + s = 24/25`; Taylor polynomials at the four vertices give the
 sign.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six.Wings.SouthTurned

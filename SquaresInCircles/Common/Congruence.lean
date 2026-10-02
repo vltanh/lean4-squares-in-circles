@@ -1,5 +1,7 @@
-import SquaresInCircles.Common.Charts
-import SquaresInCircles.Common.Constructions
+module
+
+public import SquaresInCircles.Common.Charts
+public import SquaresInCircles.Common.Constructions
 
 /-!
 # Congruence to a model
@@ -13,6 +15,9 @@ places one square at an axis-parallel slot of the frame, and
 `modelSquare o φ c` is the square at `c` in the frame `φ` at `o`, and
 `orientedSquare t a b` the one at `(a, b)` in the frame `t` at the origin.
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles
 

@@ -1,4 +1,6 @@
-import SquaresInCircles.Common.Constructions
+module
+
+public import SquaresInCircles.Common.Constructions
 
 /-!
 # Five squares: construction
@@ -7,6 +9,9 @@ The plus: five unit squares that pack the disk of the optimal radius
 `sqrt (5/2)`. The radius and the model are defined with the statement, in
 `Geometry.lean`.
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles.Five
 

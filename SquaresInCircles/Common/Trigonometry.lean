@@ -1,9 +1,11 @@
-import SquaresInCircles.Common.Analysis
-import Mathlib.Analysis.Real.Pi.Bounds
-import Mathlib.Analysis.SpecialFunctions.Sqrt
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
-import Mathlib.Analysis.Calculus.Deriv.Inv
-import Mathlib.Tactic.NormNum.RealSqrt
+module
+
+public import SquaresInCircles.Common.Analysis
+public import Mathlib.Analysis.Real.Pi.Bounds
+public import Mathlib.Analysis.SpecialFunctions.Sqrt
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
+public import Mathlib.Analysis.Calculus.Deriv.Inv
+public import Mathlib.Tactic.NormNum.RealSqrt
 
 /-!
 # Trigonometric estimates
@@ -26,6 +28,9 @@ a polynomial with nonnegative terms, and nonpositive when `a ≤ b` and
 and the arcsine grows at least as fast as `x`, lies below `x + x³/4` on
 `[0, 3/5]` and is concave on `[0, 1]`.
 -/
+
+@[expose] public section
+
 noncomputable section
 open Set
 namespace SquaresInCircles

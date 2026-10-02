@@ -1,5 +1,7 @@
-import SquaresInCircles.Six.Tails.West
-import SquaresInCircles.Six.Wings.Separators
+module
+
+public import SquaresInCircles.Six.Tails.West
+public import SquaresInCircles.Six.Wings.Separators
 
 /-!
 # Six squares: the south tail
@@ -24,6 +26,8 @@ far-vertex support of D leaves a first harmonic in `d`; at the corner
 `v = s = 11/25` the force on D is nearly radial, its support exceeds `ρ0` times
 its length by at most `1/160`, and what remains decreases in `d`.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six.SouthTail

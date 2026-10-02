@@ -61,6 +61,13 @@ pages; it holds the drawing helpers and runs one module per chapter
 ([`scripts/figures/`](../scripts/figures)). The figures are computed from the
 geometry of the proofs, and most assert the facts their captions state.
 
+The library and `Challenge.lean` use Lean's module system, which Palomar
+requires: every file begins with `module`, imports with `public import` and
+puts its declarations in an `@[expose] public section`, so that they and the
+bodies of its definitions stay visible to the files that import it.
+`AxiomAudit.lean` and `SanityChecks.lean` are modules too, which import the
+library.
+
 Build from the committed `lake-manifest.json`, which pins every dependency by
 hash. Avoid `lake update`: seven transitive packages track `main` or `master`
 and would be re-resolved. Keep mathlib on its release tag `v4.35.0-rc3`, the

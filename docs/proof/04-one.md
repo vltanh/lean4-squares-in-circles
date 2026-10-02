@@ -37,9 +37,9 @@ centred at the origin.
 *Figure 4.1.* The model $Q(0, 0)$ placed at the disk centre $o$. Its four
 vertices lie on the circle of radius $R_1$ about $o$ (dashed).
 
-*Lean: [`One.model_packing`](../../SquaresInCircles/One/Construction.lean#L17),
-[`One.uniqueness`](../../SquaresInCircles/One/Uniqueness.lean#L23),
-[`One.optimum`](../../SquaresInCircles/One/Uniqueness.lean#L38).*
+*Lean: [`One.model_packing`](../../SquaresInCircles/One/Construction.lean#L22),
+[`One.uniqueness`](../../SquaresInCircles/One/Uniqueness.lean#L28),
+[`One.optimum`](../../SquaresInCircles/One/Uniqueness.lean#L43).*
 
 *Outline of the proof.* Part (1) is the construction, Proposition 4.2
 (§4.1). Parts (2) and (3) follow, by
@@ -66,10 +66,10 @@ separate, and
 So [Lemma 2.8](02-preliminaries.md#lemma-28-axis-parallel-squares) (3)
 applies. $\square$
 
-*Lean: [`One.model_packing`](../../SquaresInCircles/One/Construction.lean#L17),
-[`One.model`](../../SquaresInCircles/Geometry.lean#L119),
-[`One.radius`](../../SquaresInCircles/Geometry.lean#L113),
-[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L38).*
+*Lean: [`One.model_packing`](../../SquaresInCircles/One/Construction.lean#L22),
+[`One.model`](../../SquaresInCircles/Geometry.lean#L123),
+[`One.radius`](../../SquaresInCircles/Geometry.lean#L117),
+[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L43).*
 
 ## 4.2 Uniqueness
 
@@ -138,9 +138,9 @@ Hence [Lemma 3.31](03-tools.md#lemma-331-from-slots-to-congruence), applied with
 $n = 1$ and $c_1 = (0, 0)$, shows that the configuration $S$ is congruent to
 the model $Q(0, 0)$. $\square$
 
-*Lean: [`One.uniqueness`](../../SquaresInCircles/One/Uniqueness.lean#L23),
-[`One.half_add_le_phi`](../../SquaresInCircles/One/Uniqueness.lean#L18),
-[`local_center_norm`](../../SquaresInCircles/Common/Basic.lean#L111).*
+*Lean: [`One.uniqueness`](../../SquaresInCircles/One/Uniqueness.lean#L28),
+[`One.half_add_le_phi`](../../SquaresInCircles/One/Uniqueness.lean#L23),
+[`local_center_norm`](../../SquaresInCircles/Common/Basic.lean#L116).*
 
 ![Left: the model Q(0, 0), the axis-parallel unit square centred at the origin, with its vertices on the dashed circle of radius R1. Right: a unit square S centred at the disk centre o and turned by the angle theta S, with the axes of the frame at o turned by theta S parallel to its sides and its vertices on the dashed circle of radius R1; an arrow labelled turn by theta S leads from the left picture to the right one](figures/04-one/congruent.svg)
 
@@ -173,7 +173,7 @@ $Q(0, 0)$ has squared distance $\frac14 + \frac14 = \frac12 = R_1^2$ from the
 origin; (c) is Proposition 4.3. Parts (1), (2), (3) of the theorem are (a),
 (i) and (ii). $\square$
 
-*Lean: [`One.optimum`](../../SquaresInCircles/One/Uniqueness.lean#L38),
-[`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L47),
-[`Optimum.isLeast`](../../SquaresInCircles/Common/Optimum.lean#L61),
-[`Optimum.packing_iff`](../../SquaresInCircles/Common/Optimum.lean#L67).*
+*Lean: [`One.optimum`](../../SquaresInCircles/One/Uniqueness.lean#L43),
+[`Optimum.optimality`](../../SquaresInCircles/Common/Optimum.lean#L52),
+[`Optimum.isLeast`](../../SquaresInCircles/Common/Optimum.lean#L66),
+[`Optimum.packing_iff`](../../SquaresInCircles/Common/Optimum.lean#L72).*

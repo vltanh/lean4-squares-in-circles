@@ -40,9 +40,9 @@ about 74° of $\Gamma_{5/6}$, a little more than a fifth of the circle; the
 centre square (grey) holds none.
 
 *Lean:
-[`Five.model_packing`](../../SquaresInCircles/Five/Construction.lean#L21),
-[`Five.uniqueness`](../../SquaresInCircles/Five/Uniqueness.lean#L88),
-[`Five.optimum`](../../SquaresInCircles/Five/Uniqueness.lean#L98).*
+[`Five.model_packing`](../../SquaresInCircles/Five/Construction.lean#L26),
+[`Five.uniqueness`](../../SquaresInCircles/Five/Uniqueness.lean#L93),
+[`Five.optimum`](../../SquaresInCircles/Five/Uniqueness.lean#L103).*
 
 *Outline of the proof.* Part (1) is the construction, Proposition 8.2 (§8.1).
 Parts (2) and (3) follow, by
@@ -89,10 +89,10 @@ other four centres $(x, y)$ has
 $\square$
 
 *Lean:
-[`Five.model_packing`](../../SquaresInCircles/Five/Construction.lean#L21),
-[`Five.model`](../../SquaresInCircles/Geometry.lean#L177),
-[`Five.centers`](../../SquaresInCircles/Geometry.lean#L174),
-[`Five.radius`](../../SquaresInCircles/Geometry.lean#L170).*
+[`Five.model_packing`](../../SquaresInCircles/Five/Construction.lean#L26),
+[`Five.model`](../../SquaresInCircles/Geometry.lean#L181),
+[`Five.centers`](../../SquaresInCircles/Geometry.lean#L178),
+[`Five.radius`](../../SquaresInCircles/Geometry.lean#L174).*
 
 The eight outer corners, $(\pm\frac32, \pm\frac12)$ and
 $(\pm\frac12, \pm\frac32)$, lie on the circle of radius $R_5$ (Figure 8.2).
@@ -153,8 +153,8 @@ $o$, then $o$ lies in the blue region,
 $\varphi(|x_S(o)|, |y_S(o)|) \le \frac52$. The 12-gon (orange) contains that
 region; dashed, the octagon cut out by the first two inequalities alone.
 
-*Lean: [`Five.P5`](../../SquaresInCircles/Five/Exterior.lean#L18),
-[`Five.p5_swap`](../../SquaresInCircles/Five/Exterior.lean#L30).*
+*Lean: [`Five.P5`](../../SquaresInCircles/Five/Exterior.lean#L23),
+[`Five.p5_swap`](../../SquaresInCircles/Five/Exterior.lean#L35).*
 
 ### Lemma 8.5 (contact polygon)
 
@@ -174,7 +174,7 @@ half-plane at each of them:
 and multiplying by $2$, $2$ and $\frac2{\sqrt5}$ gives the three inequalities
 of $P_5$, since $2g = \sqrt5 - 1$. $\square$
 
-*Lean: [`Five.p5_of_phi`](../../SquaresInCircles/Five/Exterior.lean#L21).*
+*Lean: [`Five.p5_of_phi`](../../SquaresInCircles/Five/Exterior.lean#L26).*
 
 From here on only the polygon and the disjointness of the squares are used.
 
@@ -220,8 +220,8 @@ $3 - 2s > 3 - \frac{14}5 > 0$. Hence
 because $s - 1 > 0 > 5s - 7$ (Figure 8.5). $\square$
 
 *Lean:
-[`Five.dodecagon_norm_le`](../../SquaresInCircles/Five/Uniqueness.lean#L25),
-[`Five.center_norm_le`](../../SquaresInCircles/Five/Uniqueness.lean#L43).*
+[`Five.dodecagon_norm_le`](../../SquaresInCircles/Five/Uniqueness.lean#L30),
+[`Five.center_norm_le`](../../SquaresInCircles/Five/Uniqueness.lean#L48).*
 
 ## 8.3 Exterior squares
 
@@ -285,8 +285,8 @@ $\arcsin\frac{6y}5 \le \frac65 y$, and $x + y \le 1 - 2x < \frac15$. With
 \arcsin\tfrac{6x}5 + \arcsin\tfrac{6y}5 \le \tfrac65(x + y) + \tfrac{54}{125}x^3 < \tfrac65\cdot\tfrac15 + \tfrac{54}{125}\cdot\tfrac18 = 0.294 < 0.314 . \qquad \square
 ```
 
-*Lean: [`Five.arcsin_sum`](../../SquaresInCircles/Five/Exterior.lean#L42),
-[`Five.aux`](../../SquaresInCircles/Five/Exterior.lean#L33).*
+*Lean: [`Five.arcsin_sum`](../../SquaresInCircles/Five/Exterior.lean#L47),
+[`Five.aux`](../../SquaresInCircles/Five/Exterior.lean#L38).*
 
 ### Lemma 8.9 (the arc length)
 
@@ -339,7 +339,7 @@ We bound the four sums in turn.
    with $\theta = \frac\pi5$, gives
    $\frac{2\pi}5 < \arcsin u + \arcsin v = U + V$. $\square$
 
-*Lean: [`Five.arc_length`](../../SquaresInCircles/Five/Exterior.lean#L65).*
+*Lean: [`Five.arc_length`](../../SquaresInCircles/Five/Exterior.lean#L70).*
 
 *Remark.* Only two of the four sums occur as the length
 $\min(A, U) + \min(A, V)$ of the arc of
@@ -379,7 +379,7 @@ the numbers $A, V, U$ of Lemma 8.9 for $(a, b) = (a_S, b_S)$, so each of the
 four sums exceeds $\frac{2\pi}5$, and $S$ holds an arc of $\Gamma_{5/6}$ of
 half-width greater than $\frac\pi5$. $\square$
 
-*Lean: [`Five.exterior_arc`](../../SquaresInCircles/Five/Exterior.lean#L111).*
+*Lean: [`Five.exterior_arc`](../../SquaresInCircles/Five/Exterior.lean#L116).*
 
 Unlike the circle $\Gamma_{1/2}$ of Chapter 7, the circle $\Gamma_{5/6}$ can
 leave an exterior square through its upper edge, so we use the general arc of
@@ -504,9 +504,9 @@ direction of $c_S$.
    $(a_S, b_S)$ at the chart angle $\delta$, so this centre is the direction
    of $c_S - o$.) $\square$
 
-*Lean: [`Five.containing_arc`](../../SquaresInCircles/Five/Containing.lean#L17),
-[`SquareChart.ray_mem`](../../SquaresInCircles/Common/Charts.lean#L63),
-[`arcFromChartInterval`](../../SquaresInCircles/Common/Charts.lean#L168).*
+*Lean: [`Five.containing_arc`](../../SquaresInCircles/Five/Containing.lean#L22),
+[`SquareChart.ray_mem`](../../SquaresInCircles/Common/Charts.lean#L68),
+[`arcFromChartInterval`](../../SquaresInCircles/Common/Charts.lean#L173).*
 
 A square centred at $o$ gets no arc from this lemma, and none from its sweep
 either: then $\widehat S = S^\circ$, which lies in the open disk of radius
@@ -540,7 +540,7 @@ $n = 5$ and $r = \frac56$, these two conditions cannot both hold, a
 contradiction (Figure 8.13). $\square$
 
 *Lean:
-[`Five.centered_square`](../../SquaresInCircles/Five/Uniqueness.lean#L49).*
+[`Five.centered_square`](../../SquaresInCircles/Five/Uniqueness.lean#L54).*
 
 ## 8.5 The plus
 
@@ -579,7 +579,7 @@ side-neighbours, and four of them form the plus.
    plus. $\square$
 
 *Lean:
-[`Five.polygon_uniqueness`](../../SquaresInCircles/Five/Uniqueness.lean#L61).*
+[`Five.polygon_uniqueness`](../../SquaresInCircles/Five/Uniqueness.lean#L66).*
 
 *Proof of Proposition 8.3.* Let $S_1, \dots, S_5$ be a packing of five unit
 squares in the closed disk of radius $R_5$ about $o$. The squares are pairwise
@@ -587,7 +587,7 @@ disjoint, and for every $i$, Lemma 3.4 gives
 $\varphi(a_{S_i}, b_{S_i}) \le R_5^2 = \frac52$, so
 $(a_{S_i}, b_{S_i}) \in P_5$ by Lemma 8.5. Proposition 8.6 applies. $\square$
 
-*Lean: [`Five.uniqueness`](../../SquaresInCircles/Five/Uniqueness.lean#L88).*
+*Lean: [`Five.uniqueness`](../../SquaresInCircles/Five/Uniqueness.lean#L93).*
 
 ## 8.6 Proof of Theorem 8.1
 
@@ -599,6 +599,6 @@ $Q(c_2)$ has squared distance $\frac94 + \frac14 = \frac52 = R_5^2$ from the
 origin; (c) is Proposition 8.3. Parts (1), (2), (3) of the theorem are (a),
 (i) and (ii). $\square$
 
-*Lean: [`Five.optimum`](../../SquaresInCircles/Five/Uniqueness.lean#L98),
-[`Optimum.isLeast`](../../SquaresInCircles/Common/Optimum.lean#L61),
-[`Optimum.packing_iff`](../../SquaresInCircles/Common/Optimum.lean#L67).*
+*Lean: [`Five.optimum`](../../SquaresInCircles/Five/Uniqueness.lean#L103),
+[`Optimum.isLeast`](../../SquaresInCircles/Common/Optimum.lean#L66),
+[`Optimum.packing_iff`](../../SquaresInCircles/Common/Optimum.lean#L72).*

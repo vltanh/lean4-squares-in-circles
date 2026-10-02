@@ -1,6 +1,8 @@
-import SquaresInCircles.Seven.Ring
-import SquaresInCircles.Seven.Containing
-import SquaresInCircles.Common.Optimum
+module
+
+public import SquaresInCircles.Seven.Ring
+public import SquaresInCircles.Seven.Containing
+public import SquaresInCircles.Common.Optimum
 
 /-!
 # Seven squares: uniqueness
@@ -20,6 +22,9 @@ apart, which gives a column packing.
 The file ends with `optimum`: the case as an `Optimum`, which also gives the
 lower bound.
 -/
+
+@[expose] public section
+
 noncomputable section
 namespace SquaresInCircles.Seven
 

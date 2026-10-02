@@ -1,9 +1,11 @@
-import SquaresInCircles.Six.Stress.PairEstimate
-import SquaresInCircles.Six.Stress.DiagonalEstimate
-import SquaresInCircles.Six.Equality.Contacts
-import SquaresInCircles.Six.Tails.South
-import SquaresInCircles.Six.Separators.DiagonalAngle
-import SquaresInCircles.Six.Wings.WestSign
+module
+
+public import SquaresInCircles.Six.Stress.PairEstimate
+public import SquaresInCircles.Six.Stress.DiagonalEstimate
+public import SquaresInCircles.Six.Equality.Contacts
+public import SquaresInCircles.Six.Tails.South
+public import SquaresInCircles.Six.Separators.DiagonalAngle
+public import SquaresInCircles.Six.Wings.WestSign
 
 /-!
 # Six squares: the stress bound at the optimal radius
@@ -23,6 +25,8 @@ diagonal remainder, which bound the same sum below by `(|n| + |e|)/1000` plus th
 remainder. So all the angles vanish, `d = π/4`, and N–W and E–S are separated
 along the axes of the model; the separating inequalities are then the contacts.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SquaresInCircles.Six.Stress

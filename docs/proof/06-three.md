@@ -38,11 +38,11 @@ c_1 = \left(-\tfrac12, -\tfrac5{16}\right), \qquad c_2 = \left(\tfrac12, -\tfrac
 $o$ (dashed). The circle $\Gamma_{3/8}$ about $o$ splits into three arcs of
 exactly $\frac{2\pi}3$, one in each square.
 
-*Lean: [`Three.radius`](../../SquaresInCircles/Geometry.lean#L141),
-[`Three.model`](../../SquaresInCircles/Geometry.lean#L148),
-[`Three.model_packing`](../../SquaresInCircles/Three/Construction.lean#L22),
-[`Three.uniqueness`](../../SquaresInCircles/Three/Uniqueness.lean#L121),
-[`Three.optimum`](../../SquaresInCircles/Three/Uniqueness.lean#L194).*
+*Lean: [`Three.radius`](../../SquaresInCircles/Geometry.lean#L145),
+[`Three.model`](../../SquaresInCircles/Geometry.lean#L152),
+[`Three.model_packing`](../../SquaresInCircles/Three/Construction.lean#L27),
+[`Three.uniqueness`](../../SquaresInCircles/Three/Uniqueness.lean#L126),
+[`Three.optimum`](../../SquaresInCircles/Three/Uniqueness.lean#L199).*
 
 *Outline of the proof.* Part (1) is the construction, Proposition 6.2 (§6.1).
 Parts (2) and (3) follow, by
@@ -99,9 +99,9 @@ $(\pm1, -\frac{13}{16})$ of $Q(c_1)$ and $Q(c_2)$ and of the corners
 $(\pm\frac12, \frac{19}{16})$ of $Q(c_3)$ (Figure 6.2). $\square$
 
 *Lean:
-[`Three.model_packing`](../../SquaresInCircles/Three/Construction.lean#L22),
-[`Three.radius_sq`](../../SquaresInCircles/Three/Construction.lean#L17),
-[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L38).*
+[`Three.model_packing`](../../SquaresInCircles/Three/Construction.lean#L27),
+[`Three.radius_sq`](../../SquaresInCircles/Three/Construction.lean#L22),
+[`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L43).*
 
 ## 6.2 The contact polygon
 
@@ -110,7 +110,7 @@ $(\pm\frac12, \frac{19}{16})$ of $Q(c_3)$ (Figure 6.2). $\square$
 Every packing of three unit squares in a closed disk of radius $R_3$ is
 congruent to the T.
 
-*Lean: [`Three.uniqueness`](../../SquaresInCircles/Three/Uniqueness.lean#L121).*
+*Lean: [`Three.uniqueness`](../../SquaresInCircles/Three/Uniqueness.lean#L126).*
 
 The proof occupies §6.2 to §6.5. Throughout, $o$ is the disk centre, and every
 square $S$ comes with its offsets $a_S \ge b_S \ge 0$
@@ -135,7 +135,7 @@ Let $b \le a$. The point $(a, b)$ lies in the *16-gon* $P_3$ if
 16a + 13b \le \tfrac{193}{16} \qquad \text{and} \qquad 19a + 8b \le \tfrac{209}{16} . \tag{6.1}
 ```
 
-*Lean: [`Three.P3`](../../SquaresInCircles/Three/Exterior.lean#L19).*
+*Lean: [`Three.P3`](../../SquaresInCircles/Three/Exterior.lean#L24).*
 
 The two lines $16a + 13b = \frac{193}{16}$ and $19a + 8b = \frac{209}{16}$ are
 the tangents to the circle $\varphi = \frac{425}{256}$ at
@@ -184,9 +184,9 @@ squares are nonnegative, so both brackets are at most $0$; and the first
 bracket is negative when $a \ne \frac12$, because then
 $(a - \frac12)^2 > 0$. $\square$
 
-*Lean: [`Three.p3_of_phi`](../../SquaresInCircles/Three/Exterior.lean#L22),
-[`tangent_le`](../../SquaresInCircles/Common/Tangents.lean#L19),
-[`tangent_lt`](../../SquaresInCircles/Common/Tangents.lean#L25).*
+*Lean: [`Three.p3_of_phi`](../../SquaresInCircles/Three/Exterior.lean#L27),
+[`tangent_le`](../../SquaresInCircles/Common/Tangents.lean#L24),
+[`tangent_lt`](../../SquaresInCircles/Common/Tangents.lean#L30).*
 
 From here on, the proof of Proposition 6.3 uses the disk only through
 Lemma 6.5: the inequalities (6.1) for every square, and the strict one for a
@@ -225,8 +225,8 @@ $b \le \frac{57}{64}(\frac12 - u)$ (Figure 6.6).
 An exterior square $S$ is of *type A* if $(a_S, b_S) = (\frac{11}{16}, 0)$,
 and of *type B* if $(a_S, b_S) = (\frac12, \frac5{16})$.
 
-*Lean: [`Three.cap_bounds`](../../SquaresInCircles/Three/Exterior.lean#L64),
-[`Three.cap_types`](../../SquaresInCircles/Three/Uniqueness.lean#L27).*
+*Lean: [`Three.cap_bounds`](../../SquaresInCircles/Three/Exterior.lean#L69),
+[`Three.cap_types`](../../SquaresInCircles/Three/Uniqueness.lean#L32).*
 
 In the T the upper square is of type A and the two lower squares are of
 type B (Figure 6.5). For a square of type A, $o$ lies on an axis of $S$, at
@@ -289,7 +289,7 @@ and $v = \sin(\arcsin v) = \sin x$, and every inequality in (6.3) is an
 equality. The middle one, $u + \frac12 \le \frac12 + \frac{16}{13}u$, is an
 equality only if $u = 0$, and then $v = \sin\frac\pi6 = \frac12$. $\square$
 
-*Lean: [`Three.truncated_gap`](../../SquaresInCircles/Three/Exterior.lean#L30).*
+*Lean: [`Three.truncated_gap`](../../SquaresInCircles/Three/Exterior.lean#L35).*
 
 ### Lemma 6.8 (exterior caps)
 
@@ -348,8 +348,8 @@ half-width. If $A_S \le V_S$, then $w_S = A_S \ge \frac\pi3$ by (2), and the
 centre is $\theta_S$. If $V_S < A_S$, then
 $w_S = \frac12(A_S + V_S) \ge \frac\pi3$ by (3) (Figure 6.7). $\square$
 
-*Lean: [`Three.cap_bounds`](../../SquaresInCircles/Three/Exterior.lean#L64),
-[`Three.exterior_cap`](../../SquaresInCircles/Three/Exterior.lean#L86).*
+*Lean: [`Three.cap_bounds`](../../SquaresInCircles/Three/Exterior.lean#L69),
+[`Three.exterior_cap`](../../SquaresInCircles/Three/Exterior.lean#L91).*
 
 ### Lemma 6.9 (caps of a third)
 
@@ -366,7 +366,7 @@ $A_S = \arccos 0 = \frac\pi2$ and $V_S = \arcsin\frac12 = \frac\pi6$, so the
 cap runs from the chart angle $-\frac\pi6$ to $\frac\pi2$, and its centre is
 $\theta_S + \varepsilon_S\frac\pi6$. $\square$
 
-*Lean: [`Three.cap_types`](../../SquaresInCircles/Three/Uniqueness.lean#L27).*
+*Lean: [`Three.cap_types`](../../SquaresInCircles/Three/Uniqueness.lean#L32).*
 
 ## 6.4 The containing square
 
@@ -444,9 +444,9 @@ The interval has length $L_S$, with $0 < L_S \le \frac{3\pi}2$, so the arc has
 half-width $\frac12 L_S$. $\square$
 
 *Lean:
-[`Three.containing_arc`](../../SquaresInCircles/Three/Containing.lean#L51),
-[`Three.containing_mem`](../../SquaresInCircles/Three/Containing.lean#L38),
-[`Three.neg_lt_sin`](../../SquaresInCircles/Three/Containing.lean#L26).*
+[`Three.containing_arc`](../../SquaresInCircles/Three/Containing.lean#L56),
+[`Three.containing_mem`](../../SquaresInCircles/Three/Containing.lean#L43),
+[`Three.neg_lt_sin`](../../SquaresInCircles/Three/Containing.lean#L31).*
 
 ### Lemma 6.11 (the radial gap)
 
@@ -504,7 +504,7 @@ $S$ and $T$ overlap (shaded).
   $\square$
 
 *Lean:
-[`Three.gap_from_containing`](../../SquaresInCircles/Three/Containing.lean#L66).*
+[`Three.gap_from_containing`](../../SquaresInCircles/Three/Containing.lean#L71).*
 
 ### Lemma 6.12 (an increasing difference)
 
@@ -532,7 +532,7 @@ $f'(t) > (\frac{16}{13} - 1)\frac1{\sqrt{1 - t^2}} > 0$. By the mean value
 theorem, $f$ is increasing on $[0, \frac{13}{32})$. $\square$
 
 *Lean:
-[`Three.asin_increment_mono`](../../SquaresInCircles/Three/Containing.lean#L91).*
+[`Three.asin_increment_mono`](../../SquaresInCircles/Three/Containing.lean#L96).*
 
 ### Lemma 6.13 (compensation)
 
@@ -566,7 +566,7 @@ $\arcsin(\frac12 + \frac{16}{13}P) + \arcsin Q > \frac\pi3$. Adding this to the
 previous display proves the lemma. $\square$
 
 *Lean:
-[`Three.compensation`](../../SquaresInCircles/Three/Containing.lean#L113).*
+[`Three.compensation`](../../SquaresInCircles/Three/Containing.lean#L118).*
 
 In the proof of Proposition 6.15, $P$ and $Q$ are $P_S$ and $Q_S$ for the
 square $S$ that contains $o$, and $u$ and $v$ are $u_T$ and $v_T$ for a square
@@ -639,9 +639,9 @@ half-widths of the two arcs of (2), which is at least
 $\frac{2\pi}3 + \frac17$ (Figure 6.13). $\square$
 
 *Lean:
-[`Three.third_le_arccos`](../../SquaresInCircles/Three/Containing.lean#L127),
-[`Three.wide_arc`](../../SquaresInCircles/Three/Containing.lean#L136),
-[`Three.axial_pair_impossible`](../../SquaresInCircles/Three/Containing.lean#L150).*
+[`Three.third_le_arccos`](../../SquaresInCircles/Three/Containing.lean#L132),
+[`Three.wide_arc`](../../SquaresInCircles/Three/Containing.lean#L141),
+[`Three.axial_pair_impossible`](../../SquaresInCircles/Three/Containing.lean#L155).*
 
 ### Proposition 6.15 (no square contains the disk centre)
 
@@ -786,7 +786,7 @@ by $\pi < \frac{22}7$ and the second as $3 \cdot 29 < 13 \cdot 7$. This
 contradicts step 4. $\square$
 
 *Lean:
-[`Three.no_containing`](../../SquaresInCircles/Three/Containing.lean#L165).*
+[`Three.no_containing`](../../SquaresInCircles/Three/Containing.lean#L170).*
 
 ## 6.5 The T
 
@@ -836,9 +836,9 @@ Their difference gives $\cos\delta = 0$, and their sum gives
 $\varepsilon\sin\delta = -1$, that is $\sin\delta = -\varepsilon$. So
 $\delta = -\varepsilon\frac\pi2$. $\square$
 
-*Lean: [`Three.apex_phase`](../../SquaresInCircles/Three/Uniqueness.lean#L48),
-[`cos_sub_distance`](../../SquaresInCircles/Common/Arcs.lean#L216),
-[`cos_two_pi_thirds`](../../SquaresInCircles/Common/Arcs.lean#L222).*
+*Lean: [`Three.apex_phase`](../../SquaresInCircles/Three/Uniqueness.lean#L53),
+[`cos_sub_distance`](../../SquaresInCircles/Common/Arcs.lean#L221),
+[`cos_two_pi_thirds`](../../SquaresInCircles/Common/Arcs.lean#L227).*
 
 ### Lemma 6.17 (where the squares sit)
 
@@ -867,10 +867,10 @@ $\theta_S = (\theta_S - \pi) + 2 \cdot \frac\pi2$; two quarter turns take
 $(\frac12, \frac5{16})$ to $(-\frac12, -\frac5{16}) = c_1$. $\square$
 
 *Lean:
-[`Three.a_represents`](../../SquaresInCircles/Three/Uniqueness.lean#L113),
-[`Three.b_represents`](../../SquaresInCircles/Three/Uniqueness.lean#L94),
-[`chart_represents`](../../SquaresInCircles/Common/Congruence.lean#L197),
-[`represents_cardinal`](../../SquaresInCircles/Common/Angles.lean#L123).*
+[`Three.a_represents`](../../SquaresInCircles/Three/Uniqueness.lean#L118),
+[`Three.b_represents`](../../SquaresInCircles/Three/Uniqueness.lean#L99),
+[`chart_represents`](../../SquaresInCircles/Common/Congruence.lean#L202),
+[`represents_cardinal`](../../SquaresInCircles/Common/Angles.lean#L128).*
 
 The proof of Proposition 6.3 rules out two squares of type A and three of
 type B; Figures 6.19 and 6.20 show why such squares overlap.
@@ -951,10 +951,10 @@ $w_i \ge \frac\pi3$. The caps lie in the pairwise disjoint sets $S_i^\circ$.
    $\theta_3 - \frac\pi2$, so the packing is congruent to the T by
    [Lemma 3.31](03-tools.md#lemma-331-from-slots-to-congruence). $\square$
 
-*Lean: [`Three.uniqueness`](../../SquaresInCircles/Three/Uniqueness.lean#L121),
-[`SquareChart.half_arc`](../../SquaresInCircles/Common/Charts.lean#L197),
-[`OpenArc.opposite`](../../SquaresInCircles/Common/Angles.lean#L32),
-[`congruent_of_slots`](../../SquaresInCircles/Common/Congruence.lean#L148).*
+*Lean: [`Three.uniqueness`](../../SquaresInCircles/Three/Uniqueness.lean#L126),
+[`SquareChart.half_arc`](../../SquaresInCircles/Common/Charts.lean#L202),
+[`OpenArc.opposite`](../../SquaresInCircles/Common/Angles.lean#L37),
+[`congruent_of_slots`](../../SquaresInCircles/Common/Congruence.lean#L153).*
 
 ## 6.6 Proof of Theorem 6.1
 
@@ -966,6 +966,6 @@ $Q(c_1)$ has squared distance $1 + \frac{169}{256} = \frac{425}{256} = R_3^2$
 from the origin; (c) is Proposition 6.3. Parts (1), (2), (3) of the theorem are
 (a), (i) and (ii). $\square$
 
-*Lean: [`Three.optimum`](../../SquaresInCircles/Three/Uniqueness.lean#L194),
-[`Optimum.isLeast`](../../SquaresInCircles/Common/Optimum.lean#L61),
-[`Optimum.packing_iff`](../../SquaresInCircles/Common/Optimum.lean#L67).*
+*Lean: [`Three.optimum`](../../SquaresInCircles/Three/Uniqueness.lean#L199),
+[`Optimum.isLeast`](../../SquaresInCircles/Common/Optimum.lean#L66),
+[`Optimum.packing_iff`](../../SquaresInCircles/Common/Optimum.lean#L72).*

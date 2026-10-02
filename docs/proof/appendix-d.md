@@ -131,17 +131,17 @@ a_S\cos r + b_S\sin r - b_D &\ge \tfrac12 + \omega(r) . & \text{(D.9)}
 The wing data have a *missing west wing* if (D.7) and (D.8) hold, and a *missing
 south wing* if (D.6) and (D.9) hold.
 
-*Lean: [`Six.Wings.Chart`](../../SquaresInCircles/Six/Wings/Chart.lean#L27),
-[`Six.Wings.Chart.WestOwn`](../../SquaresInCircles/Six/Wings/Chart.lean#L49),
-[`Six.Wings.Chart.WestSide`](../../SquaresInCircles/Six/Wings/Chart.lean#L52),
-[`Six.Wings.Chart.SouthOwn`](../../SquaresInCircles/Six/Wings/Chart.lean#L55),
-[`Six.Wings.Chart.SouthSide`](../../SquaresInCircles/Six/Wings/Chart.lean#L58),
-[`Six.Wings.Chart.WestWing`](../../SquaresInCircles/Six/Wings/Chart.lean#L61),
-[`Six.Wings.Chart.WestDiagonal`](../../SquaresInCircles/Six/Wings/Chart.lean#L65),
-[`Six.Wings.Chart.SouthWing`](../../SquaresInCircles/Six/Wings/Chart.lean#L69),
-[`Six.Wings.Chart.SouthDiagonal`](../../SquaresInCircles/Six/Wings/Chart.lean#L73),
-[`Six.Wings.Chart.MissingSouth`](../../SquaresInCircles/Six/Wings/Chart.lean#L78),
-[`Six.Wings.Chart.MissingWest`](../../SquaresInCircles/Six/Wings/Chart.lean#L84).*
+*Lean: [`Six.Wings.Chart`](../../SquaresInCircles/Six/Wings/Chart.lean#L31),
+[`Six.Wings.Chart.WestOwn`](../../SquaresInCircles/Six/Wings/Chart.lean#L53),
+[`Six.Wings.Chart.WestSide`](../../SquaresInCircles/Six/Wings/Chart.lean#L56),
+[`Six.Wings.Chart.SouthOwn`](../../SquaresInCircles/Six/Wings/Chart.lean#L59),
+[`Six.Wings.Chart.SouthSide`](../../SquaresInCircles/Six/Wings/Chart.lean#L62),
+[`Six.Wings.Chart.WestWing`](../../SquaresInCircles/Six/Wings/Chart.lean#L65),
+[`Six.Wings.Chart.WestDiagonal`](../../SquaresInCircles/Six/Wings/Chart.lean#L69),
+[`Six.Wings.Chart.SouthWing`](../../SquaresInCircles/Six/Wings/Chart.lean#L73),
+[`Six.Wings.Chart.SouthDiagonal`](../../SquaresInCircles/Six/Wings/Chart.lean#L77),
+[`Six.Wings.Chart.MissingSouth`](../../SquaresInCircles/Six/Wings/Chart.lean#L82),
+[`Six.Wings.Chart.MissingWest`](../../SquaresInCircles/Six/Wings/Chart.lean#L88).*
 
 The numbers describe four squares: $C = Q(c)$ with $c = (c_x, c_y)$, and
 
@@ -230,28 +230,28 @@ $w < d - \frac\pi4$, and in a missing south wing $D$ and $S$ are separated along
 $e^D_2$, so $s > d - \frac\pi4$ ([Lemma 9.42](09-six.md#lemma-942-walls) (1)).
 $\square$
 
-*Lean: [`Six.Wings.chart`](../../SquaresInCircles/Six/Wings/Chart.lean#L147),
-[`Six.Wings.west_phase`](../../SquaresInCircles/Six/Wings/Chart.lean#L172),
-[`Six.Wings.diagonal_phase`](../../SquaresInCircles/Six/Wings/Chart.lean#L177),
-[`Six.Wings.south_phase`](../../SquaresInCircles/Six/Wings/Chart.lean#L181),
-[`Six.Wings.west_own`](../../SquaresInCircles/Six/Wings/Chart.lean#L185),
-[`Six.Wings.west_side`](../../SquaresInCircles/Six/Wings/Chart.lean#L194),
-[`Six.Wings.south_own`](../../SquaresInCircles/Six/Wings/Chart.lean#L204),
-[`Six.Wings.south_side`](../../SquaresInCircles/Six/Wings/Chart.lean#L213),
-[`Six.Wings.west_wing`](../../SquaresInCircles/Six/Wings/Chart.lean#L224),
-[`Six.Wings.west_diagonal`](../../SquaresInCircles/Six/Wings/Chart.lean#L234),
-[`Six.Wings.south_wing`](../../SquaresInCircles/Six/Wings/Chart.lean#L246),
-[`Six.Wings.south_diagonal`](../../SquaresInCircles/Six/Wings/Chart.lean#L259),
-[`Six.Wings.missing_south`](../../SquaresInCircles/Six/Wings/Chart.lean#L270),
-[`Six.Wings.missing_west`](../../SquaresInCircles/Six/Wings/Chart.lean#L273),
-[`Six.Wings.diagonal_range`](../../SquaresInCircles/Six/Wings/Chart.lean#L278),
-[`Six.Wings.west_upper`](../../SquaresInCircles/Six/Wings/Chart.lean#L281),
-[`Six.Wings.south_upper`](../../SquaresInCircles/Six/Wings/Chart.lean#L286),
-[`Six.Wings.west_own_angle`](../../SquaresInCircles/Six/Wings/Chart.lean#L288),
-[`Six.Wings.south_own_angle`](../../SquaresInCircles/Six/Wings/Chart.lean#L293),
-[`Six.Wings.west_side_angle`](../../SquaresInCircles/Six/Wings/Chart.lean#L296),
-[`Six.Wings.south_side_angle`](../../SquaresInCircles/Six/Wings/Chart.lean#L301),
-[`Six.Wings.own_angle_sum`](../../SquaresInCircles/Six/Wings/Chart.lean#L305).*
+*Lean: [`Six.Wings.chart`](../../SquaresInCircles/Six/Wings/Chart.lean#L151),
+[`Six.Wings.west_phase`](../../SquaresInCircles/Six/Wings/Chart.lean#L176),
+[`Six.Wings.diagonal_phase`](../../SquaresInCircles/Six/Wings/Chart.lean#L181),
+[`Six.Wings.south_phase`](../../SquaresInCircles/Six/Wings/Chart.lean#L185),
+[`Six.Wings.west_own`](../../SquaresInCircles/Six/Wings/Chart.lean#L189),
+[`Six.Wings.west_side`](../../SquaresInCircles/Six/Wings/Chart.lean#L198),
+[`Six.Wings.south_own`](../../SquaresInCircles/Six/Wings/Chart.lean#L208),
+[`Six.Wings.south_side`](../../SquaresInCircles/Six/Wings/Chart.lean#L217),
+[`Six.Wings.west_wing`](../../SquaresInCircles/Six/Wings/Chart.lean#L228),
+[`Six.Wings.west_diagonal`](../../SquaresInCircles/Six/Wings/Chart.lean#L238),
+[`Six.Wings.south_wing`](../../SquaresInCircles/Six/Wings/Chart.lean#L250),
+[`Six.Wings.south_diagonal`](../../SquaresInCircles/Six/Wings/Chart.lean#L263),
+[`Six.Wings.missing_south`](../../SquaresInCircles/Six/Wings/Chart.lean#L274),
+[`Six.Wings.missing_west`](../../SquaresInCircles/Six/Wings/Chart.lean#L277),
+[`Six.Wings.diagonal_range`](../../SquaresInCircles/Six/Wings/Chart.lean#L282),
+[`Six.Wings.west_upper`](../../SquaresInCircles/Six/Wings/Chart.lean#L285),
+[`Six.Wings.south_upper`](../../SquaresInCircles/Six/Wings/Chart.lean#L290),
+[`Six.Wings.west_own_angle`](../../SquaresInCircles/Six/Wings/Chart.lean#L292),
+[`Six.Wings.south_own_angle`](../../SquaresInCircles/Six/Wings/Chart.lean#L297),
+[`Six.Wings.west_side_angle`](../../SquaresInCircles/Six/Wings/Chart.lean#L300),
+[`Six.Wings.south_side_angle`](../../SquaresInCircles/Six/Wings/Chart.lean#L305),
+[`Six.Wings.own_angle_sum`](../../SquaresInCircles/Six/Wings/Chart.lean#L309).*
 
 ![Three panels, each with the central square C at the disk centre o and the squares W, D and S in the lower left part of the disk. In the first, the model, the turned square D touches the lower side of W with its top vertex and the left side of S with its right vertex, and these two sides are drawn as thick blue and green lines, labelled (D.6) and (D.8). In the second, S is turned and separated from D by the line of the lower right side of D, drawn in purple and labelled (D.9), and the squares cross the dashed circle of radius R0. The third is the mirror image of the second in the diagonal, with the lines (D.7) and (D.8)](figures/appendix-d/wings.svg)
 
@@ -373,11 +373,11 @@ for the reflection is $a_W\sin q - b_W\cos q + b_D \ge \frac12 + \omega(q)$,
 which is (D.7). $\square$
 
 *Lean:
-[`Six.Wings.Chart.reflect`](../../SquaresInCircles/Six/Wings/Chart.lean#L90),
-[`Six.Wings.Chart.SouthOwn.reflect`](../../SquaresInCircles/Six/Wings/Chart.lean#L112),
-[`Six.Wings.Chart.WestOwn.reflect`](../../SquaresInCircles/Six/Wings/Chart.lean#L116),
-[`Six.Wings.Chart.WestSide.reflect`](../../SquaresInCircles/Six/Wings/Chart.lean#L120),
-[`Six.Wings.Chart.MissingWest.reflect`](../../SquaresInCircles/Six/Wings/Chart.lean#L125).*
+[`Six.Wings.Chart.reflect`](../../SquaresInCircles/Six/Wings/Chart.lean#L94),
+[`Six.Wings.Chart.SouthOwn.reflect`](../../SquaresInCircles/Six/Wings/Chart.lean#L116),
+[`Six.Wings.Chart.WestOwn.reflect`](../../SquaresInCircles/Six/Wings/Chart.lean#L120),
+[`Six.Wings.Chart.WestSide.reflect`](../../SquaresInCircles/Six/Wings/Chart.lean#L124),
+[`Six.Wings.Chart.MissingWest.reflect`](../../SquaresInCircles/Six/Wings/Chart.lean#L129).*
 
 Geometrically, the reflection is the reflection in the diagonal
 ([Lemma 9.29](09-six.md#lemma-929-the-reflection-in-the-diagonal)): it exchanges
@@ -480,19 +480,19 @@ $H''_{L, M}(q) \le \frac3{40} - \frac3{10}q \le -\frac3{40}$ on $[\frac12, 1]$,
 and by (2) $H''_{L, M}(q) \le -\frac{19}{100}$ on $[1, \frac53]$; concavity is
 Lemma A.10 (1), and $H'_{L, M}$ is nonincreasing by Lemma A.1. $\square$
 
-*Lean: [`Six.Wings.chord`](../../SquaresInCircles/Six/Wings/Chord.lean#L24),
-[`Six.Wings.chordFirst`](../../SquaresInCircles/Six/Wings/Chord.lean#L25),
-[`Six.Wings.chordSecond`](../../SquaresInCircles/Six/Wings/Chord.lean#L33),
-[`Six.Wings.chordSin`](../../SquaresInCircles/Six/Wings/Chord.lean#L29),
-[`Six.Wings.chordCos`](../../SquaresInCircles/Six/Wings/Chord.lean#L30),
-[`Six.Wings.chord_hasDerivAt`](../../SquaresInCircles/Six/Wings/Chord.lean#L35),
-[`Six.Wings.chordFirst_hasDerivAt`](../../SquaresInCircles/Six/Wings/Chord.lean#L40),
-[`Six.Wings.second_le_top`](../../SquaresInCircles/Six/Wings/Chord.lean#L48),
-[`Six.Wings.top_concave`](../../SquaresInCircles/Six/Wings/Chord.lean#L60),
-[`Six.Wings.top_endpoint`](../../SquaresInCircles/Six/Wings/Chord.lean#L80),
-[`Six.Wings.chord_second_envelope`](../../SquaresInCircles/Six/Wings/Chord.lean#L93),
-[`Six.Wings.chord_second_high`](../../SquaresInCircles/Six/Wings/Chord.lean#L113),
-[`Six.Wings.chord_second_nonpositive`](../../SquaresInCircles/Six/Wings/Chord.lean#L122).*
+*Lean: [`Six.Wings.chord`](../../SquaresInCircles/Six/Wings/Chord.lean#L28),
+[`Six.Wings.chordFirst`](../../SquaresInCircles/Six/Wings/Chord.lean#L29),
+[`Six.Wings.chordSecond`](../../SquaresInCircles/Six/Wings/Chord.lean#L37),
+[`Six.Wings.chordSin`](../../SquaresInCircles/Six/Wings/Chord.lean#L33),
+[`Six.Wings.chordCos`](../../SquaresInCircles/Six/Wings/Chord.lean#L34),
+[`Six.Wings.chord_hasDerivAt`](../../SquaresInCircles/Six/Wings/Chord.lean#L39),
+[`Six.Wings.chordFirst_hasDerivAt`](../../SquaresInCircles/Six/Wings/Chord.lean#L44),
+[`Six.Wings.second_le_top`](../../SquaresInCircles/Six/Wings/Chord.lean#L52),
+[`Six.Wings.top_concave`](../../SquaresInCircles/Six/Wings/Chord.lean#L64),
+[`Six.Wings.top_endpoint`](../../SquaresInCircles/Six/Wings/Chord.lean#L84),
+[`Six.Wings.chord_second_envelope`](../../SquaresInCircles/Six/Wings/Chord.lean#L97),
+[`Six.Wings.chord_second_high`](../../SquaresInCircles/Six/Wings/Chord.lean#L117),
+[`Six.Wings.chord_second_nonpositive`](../../SquaresInCircles/Six/Wings/Chord.lean#L126).*
 
 ![The second derivative of the chord term on q from 1/2 to 5/3: a purple curve for the largest weights, z = 9/20, and a blue one below it for z = 3/8, both below a dashed orange broken line and, from 157/200 on, below a dashed green horizontal line, with five black dots on or just above the purple curve](figures/appendix-d/curvature.svg)
 
@@ -600,18 +600,18 @@ $-0.00379\ldots$ at $(U, V) = (0.101, \frac12)$. So $F(U(v), v, q) < 0$, a
 contradiction (Figure D.6). $\square$
 
 *Lean:
-[`Six.westDiagonal_gap_gt_one`](../../SquaresInCircles/Six/Wings/WestGap.lean#L161),
-[`Six.westDefect`](../../SquaresInCircles/Six/Wings/WestGap.lean#L24),
-[`Six.trig_one_bounds`](../../SquaresInCircles/Six/Wings/WestGap.lean#L28),
-[`Six.signed_radial_quadratic`](../../SquaresInCircles/Six/Wings/WestGap.lean#L35),
-[`Six.quadratic_projection_mono`](../../SquaresInCircles/Six/Wings/WestGap.lean#L40),
-[`Six.westDefect_mono_q`](../../SquaresInCircles/Six/Wings/WestGap.lean#L52),
-[`Six.westDefect_profile_endpoint`](../../SquaresInCircles/Six/Wings/WestGap.lean#L79),
-[`Six.westDefect_endpoint_bounds`](../../SquaresInCircles/Six/Wings/WestGap.lean#L107),
-[`Six.westDefect_own_negative`](../../SquaresInCircles/Six/Wings/WestGap.lean#L121),
-[`Six.westDefect_cardinal_negative`](../../SquaresInCircles/Six/Wings/WestGap.lean#L132),
-[`Six.west_secondary_defect_upper`](../../SquaresInCircles/Six/Wings/WestGap.lean#L143),
-[`Six.Wings.west_gap`](../../SquaresInCircles/Six/Wings/Separators.lean#L65).*
+[`Six.westDiagonal_gap_gt_one`](../../SquaresInCircles/Six/Wings/WestGap.lean#L165),
+[`Six.westDefect`](../../SquaresInCircles/Six/Wings/WestGap.lean#L28),
+[`Six.trig_one_bounds`](../../SquaresInCircles/Six/Wings/WestGap.lean#L32),
+[`Six.signed_radial_quadratic`](../../SquaresInCircles/Six/Wings/WestGap.lean#L39),
+[`Six.quadratic_projection_mono`](../../SquaresInCircles/Six/Wings/WestGap.lean#L44),
+[`Six.westDefect_mono_q`](../../SquaresInCircles/Six/Wings/WestGap.lean#L56),
+[`Six.westDefect_profile_endpoint`](../../SquaresInCircles/Six/Wings/WestGap.lean#L83),
+[`Six.westDefect_endpoint_bounds`](../../SquaresInCircles/Six/Wings/WestGap.lean#L111),
+[`Six.westDefect_own_negative`](../../SquaresInCircles/Six/Wings/WestGap.lean#L125),
+[`Six.westDefect_cardinal_negative`](../../SquaresInCircles/Six/Wings/WestGap.lean#L136),
+[`Six.west_secondary_defect_upper`](../../SquaresInCircles/Six/Wings/WestGap.lean#L147),
+[`Six.Wings.west_gap`](../../SquaresInCircles/Six/Wings/Separators.lean#L69).*
 
 ![Two graphs over q from 0 to 1, each with three increasing curves below the dashed zero line: left for W on its own axis with v = 0, 1/4, 1/2, right for W on the west side of C with v = 0, 1/5, 2/5; the curves for larger v start lower and end higher, and the highest end, at q = 1, is marked by an orange dot just below zero](figures/appendix-d/gap.svg)
 
@@ -663,8 +663,8 @@ bracket is nonnegative and $y = 0$ otherwise. Moving everything to the left and
 using $\frac12 - \bar c = \mu_-$ gives $P(v, d) \le 0$. $\square$
 
 *Lean:
-[`Six.Wings.WestRange.profile`](../../SquaresInCircles/Six/Wings/WestRange.lean#L38),
-[`Six.Wings.WestRange.profile_nonpos`](../../SquaresInCircles/Six/Wings/WestRange.lean#L204).*
+[`Six.Wings.WestRange.profile`](../../SquaresInCircles/Six/Wings/WestRange.lean#L42),
+[`Six.Wings.WestRange.profile_nonpos`](../../SquaresInCircles/Six/Wings/WestRange.lean#L208).*
 
 ![The squares C, W, D and S of a missing west wing with W on its own axis, W turned up by about 30 degrees, in the lower left part of the disk: the separating lines of the stress in colour, along the side of W facing C, along the upper right side of D facing C, and along the upper left side of D facing W; in grey the separations of S. Orange arrows show the forces on W, D and C; there is none on S](figures/appendix-d/range.svg)
 
@@ -801,26 +801,26 @@ $v < \frac{31}{50}$, and part (4) gives $d > \frac{16}{25}$ (Figure D.8).
 $\square$
 
 *Lean:
-[`Six.Wings.WestRange.profile_west`](../../SquaresInCircles/Six/Wings/WestRange.lean#L44),
-[`Six.Wings.WestRange.profile_diagonal`](../../SquaresInCircles/Six/Wings/WestRange.lean#L56),
-[`Six.Wings.WestRange.profile_wall`](../../SquaresInCircles/Six/Wings/WestRange.lean#L62),
-[`Six.Wings.WestRange.profile_gap`](../../SquaresInCircles/Six/Wings/WestRange.lean#L50),
-[`Six.Wings.adverse_harmonic`](../../SquaresInCircles/Six/Wings/WestRange.lean#L28),
-[`Six.Wings.WestRange.cone_coefficients`](../../SquaresInCircles/Six/Wings/WestRange.lean#L72),
-[`Six.Wings.WestRange.lower`](../../SquaresInCircles/Six/Wings/WestRange.lean#L85),
-[`Six.Wings.WestRange.lower_le_profile`](../../SquaresInCircles/Six/Wings/WestRange.lean#L91),
-[`Six.Wings.WestRange.positive_wall`](../../SquaresInCircles/Six/Wings/WestRange.lean#L114),
-[`Six.Wings.WestRange.positive_rectangle`](../../SquaresInCircles/Six/Wings/WestRange.lean#L144),
-[`Six.Wings.WestRange.positive_gap`](../../SquaresInCircles/Six/Wings/WestRange.lean#L172),
-[`Six.Wings.WestRange.west_cone`](../../SquaresInCircles/Six/Wings/WestRange.lean#L243),
-[`Six.Wings.WestRange.west_vertex`](../../SquaresInCircles/Six/Wings/WestRange.lean#L272),
-[`Six.Wings.WestRange.diagonal_vertex`](../../SquaresInCircles/Six/Wings/WestRange.lean#L257),
-[`Six.Wings.WestRange.diagonal_cone`](../../SquaresInCircles/Six/Wings/WestRange.lean#L264),
-[`Six.Wings.WestRange.diagonal_gt_three_fifths`](../../SquaresInCircles/Six/Wings/WestRange.lean#L292),
-[`Six.Wings.WestRange.gap_gt`](../../SquaresInCircles/Six/Wings/WestRange.lean#L322),
-[`Six.Wings.WestRange.west_lt`](../../SquaresInCircles/Six/Wings/WestRange.lean#L345),
-[`Six.Wings.WestRange.diagonal_gt`](../../SquaresInCircles/Six/Wings/WestRange.lean#L368),
-[`Six.Wings.own_west_range`](../../SquaresInCircles/Six/Wings/Separators.lean#L72).*
+[`Six.Wings.WestRange.profile_west`](../../SquaresInCircles/Six/Wings/WestRange.lean#L48),
+[`Six.Wings.WestRange.profile_diagonal`](../../SquaresInCircles/Six/Wings/WestRange.lean#L60),
+[`Six.Wings.WestRange.profile_wall`](../../SquaresInCircles/Six/Wings/WestRange.lean#L66),
+[`Six.Wings.WestRange.profile_gap`](../../SquaresInCircles/Six/Wings/WestRange.lean#L54),
+[`Six.Wings.adverse_harmonic`](../../SquaresInCircles/Six/Wings/WestRange.lean#L32),
+[`Six.Wings.WestRange.cone_coefficients`](../../SquaresInCircles/Six/Wings/WestRange.lean#L76),
+[`Six.Wings.WestRange.lower`](../../SquaresInCircles/Six/Wings/WestRange.lean#L89),
+[`Six.Wings.WestRange.lower_le_profile`](../../SquaresInCircles/Six/Wings/WestRange.lean#L95),
+[`Six.Wings.WestRange.positive_wall`](../../SquaresInCircles/Six/Wings/WestRange.lean#L118),
+[`Six.Wings.WestRange.positive_rectangle`](../../SquaresInCircles/Six/Wings/WestRange.lean#L148),
+[`Six.Wings.WestRange.positive_gap`](../../SquaresInCircles/Six/Wings/WestRange.lean#L176),
+[`Six.Wings.WestRange.west_cone`](../../SquaresInCircles/Six/Wings/WestRange.lean#L247),
+[`Six.Wings.WestRange.west_vertex`](../../SquaresInCircles/Six/Wings/WestRange.lean#L276),
+[`Six.Wings.WestRange.diagonal_vertex`](../../SquaresInCircles/Six/Wings/WestRange.lean#L261),
+[`Six.Wings.WestRange.diagonal_cone`](../../SquaresInCircles/Six/Wings/WestRange.lean#L268),
+[`Six.Wings.WestRange.diagonal_gt_three_fifths`](../../SquaresInCircles/Six/Wings/WestRange.lean#L296),
+[`Six.Wings.WestRange.gap_gt`](../../SquaresInCircles/Six/Wings/WestRange.lean#L326),
+[`Six.Wings.WestRange.west_lt`](../../SquaresInCircles/Six/Wings/WestRange.lean#L349),
+[`Six.Wings.WestRange.diagonal_gt`](../../SquaresInCircles/Six/Wings/WestRange.lean#L372),
+[`Six.Wings.own_west_range`](../../SquaresInCircles/Six/Wings/Separators.lean#L76).*
 
 ![Two plots of angle domains. Left, in the plane of s and d: a grey region left of a purple line from s = 1/2 − π/4 at d = 1/2 to s = 0 at d = π/4, the wall, and a green region to its right, with dashed vertical lines at s = 0, 2/5 and 12/25. Right, in the plane of v and d: a grey triangle under the wall, a yellow band where q = d + v is at most 1, and four pieces labelled (1) to (4) for the four parts of Proposition D.7, shaded from white to blue, which leave a small green quadrilateral at the top right with three marked points](figures/appendix-d/walls.svg)
 
@@ -885,21 +885,21 @@ the second derivative of the function is
 since $\cos\frac x2 + \sin\frac x2 \ge 1 \ge \frac c4$. $\square$
 
 *Lean:
-[`Six.Wings.WestSide.southTerm`](../../SquaresInCircles/Six/Wings/WestSide.lean#L38),
-[`Six.Wings.WestSide.cos_small`](../../SquaresInCircles/Six/Wings/WestSide.lean#L41),
-[`Six.Wings.WestSide.south_radical_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L47),
-[`Six.Wings.WestSide.southTerm_negative_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L66),
-[`Six.Wings.WestSide.southTerm_positive_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L81),
-[`Six.Wings.WestSide.halfDifference`](../../SquaresInCircles/Six/Wings/WestSide.lean#L100),
-[`Six.Wings.WestSide.half_difference_lower`](../../SquaresInCircles/Six/Wings/WestSide.lean#L106),
-[`Six.Wings.WestSide.norm_identity`](../../SquaresInCircles/Six/Wings/WestSide.lean#L113),
-[`Six.Wings.WestSide.diagonalTerm`](../../SquaresInCircles/Six/Wings/WestSide.lean#L102),
-[`Six.Wings.WestSide.diagonalFirst`](../../SquaresInCircles/Six/Wings/WestSide.lean#L103),
-[`Six.Wings.WestSide.diagonalSecond`](../../SquaresInCircles/Six/Wings/WestSide.lean#L104),
-[`Six.Wings.WestSide.diagonal_hasDeriv`](../../SquaresInCircles/Six/Wings/WestSide.lean#L120),
-[`Six.Wings.WestSide.diagonal_first_hasDeriv`](../../SquaresInCircles/Six/Wings/WestSide.lean#L127),
-[`Six.Wings.WestSide.diagonal_second_nonpositive`](../../SquaresInCircles/Six/Wings/WestSide.lean#L137),
-[`Six.Wings.WestSide.diagonal_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L156).*
+[`Six.Wings.WestSide.southTerm`](../../SquaresInCircles/Six/Wings/WestSide.lean#L42),
+[`Six.Wings.WestSide.cos_small`](../../SquaresInCircles/Six/Wings/WestSide.lean#L45),
+[`Six.Wings.WestSide.south_radical_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L51),
+[`Six.Wings.WestSide.southTerm_negative_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L70),
+[`Six.Wings.WestSide.southTerm_positive_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L85),
+[`Six.Wings.WestSide.halfDifference`](../../SquaresInCircles/Six/Wings/WestSide.lean#L104),
+[`Six.Wings.WestSide.half_difference_lower`](../../SquaresInCircles/Six/Wings/WestSide.lean#L110),
+[`Six.Wings.WestSide.norm_identity`](../../SquaresInCircles/Six/Wings/WestSide.lean#L117),
+[`Six.Wings.WestSide.diagonalTerm`](../../SquaresInCircles/Six/Wings/WestSide.lean#L106),
+[`Six.Wings.WestSide.diagonalFirst`](../../SquaresInCircles/Six/Wings/WestSide.lean#L107),
+[`Six.Wings.WestSide.diagonalSecond`](../../SquaresInCircles/Six/Wings/WestSide.lean#L108),
+[`Six.Wings.WestSide.diagonal_hasDeriv`](../../SquaresInCircles/Six/Wings/WestSide.lean#L124),
+[`Six.Wings.WestSide.diagonal_first_hasDeriv`](../../SquaresInCircles/Six/Wings/WestSide.lean#L131),
+[`Six.Wings.WestSide.diagonal_second_nonpositive`](../../SquaresInCircles/Six/Wings/WestSide.lean#L141),
+[`Six.Wings.WestSide.diagonal_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L160).*
 
 The force $(4\cos x, 3 - 4\sin x)$ has the length $\sqrt{25 - 24\sin x}$, and
 the threshold $4\tau(x)$ of its separation less the far-vertex bound of its
@@ -938,12 +938,12 @@ $0.707(0.921 - 0.39) = 0.375417$, $0.707(0.921 + 0.389) = 0.92617$ and
 $0.707\cdot 2\cdot 0.921 = 1.302294$. $\square$
 
 *Lean:
-[`Six.Wings.WestSide.trig_two_fifths`](../../SquaresInCircles/Six/Wings/WestSide.lean#L165),
-[`Six.trig_bracket_half`](../../SquaresInCircles/Six/Constants.lean#L41),
-[`Six.Wings.WestSide.trig_nine_tenths`](../../SquaresInCircles/Six/Wings/WestSide.lean#L171),
-[`Six.Wings.WestSide.trig_tenth`](../../SquaresInCircles/Six/Wings/WestSide.lean#L175),
-[`Six.Wings.WestSide.half_root_bounds`](../../SquaresInCircles/Six/Wings/WestSide.lean#L179),
-[`Six.Wings.WestSide.quarter_shift_bounds`](../../SquaresInCircles/Six/Wings/WestSide.lean#L185).*
+[`Six.Wings.WestSide.trig_two_fifths`](../../SquaresInCircles/Six/Wings/WestSide.lean#L169),
+[`Six.trig_bracket_half`](../../SquaresInCircles/Six/Constants.lean#L45),
+[`Six.Wings.WestSide.trig_nine_tenths`](../../SquaresInCircles/Six/Wings/WestSide.lean#L175),
+[`Six.Wings.WestSide.trig_tenth`](../../SquaresInCircles/Six/Wings/WestSide.lean#L179),
+[`Six.Wings.WestSide.half_root_bounds`](../../SquaresInCircles/Six/Wings/WestSide.lean#L183),
+[`Six.Wings.WestSide.quarter_shift_bounds`](../../SquaresInCircles/Six/Wings/WestSide.lean#L189).*
 
 ### Proposition D.10 (W on the west side: a missing west wing)
 
@@ -1039,21 +1039,21 @@ contradiction (Figure D.10). $\square$
 *Table D.6.* Lower bounds of $\Pi$ at the twelve points, rounded down.
 
 *Lean:
-[`Six.Wings.WestSide.MissingWest.impossible`](../../SquaresInCircles/Six/Wings/WestSide.lean#L495),
-[`Six.Wings.WestSide.MissingWest.gap`](../../SquaresInCircles/Six/Wings/WestSide.lean#L226),
-[`Six.Wings.WestSide.MissingWest.westTerm`](../../SquaresInCircles/Six/Wings/WestSide.lean#L223),
-[`Six.Wings.WestSide.MissingWest.diagonalTerm`](../../SquaresInCircles/Six/Wings/WestSide.lean#L220),
-[`Six.Wings.WestSide.MissingWest.diagonalTerm_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L241),
-[`Six.Wings.WestSide.MissingWest.westTerm_diagonal_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L254),
-[`Six.Wings.WestSide.MissingWest.gap_diagonal_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L280),
-[`Six.Wings.WestSide.MissingWest.gap_west_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L295),
-[`Six.Wings.WestSide.MissingWest.gap_south_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L320),
-[`Six.Wings.WestSide.MissingWest.endpoint_root_bounds`](../../SquaresInCircles/Six/Wings/WestSide.lean#L337),
-[`Six.Wings.WestSide.MissingWest.endpoint_trig`](../../SquaresInCircles/Six/Wings/WestSide.lean#L381),
-[`Six.Wings.WestSide.MissingWest.endpoint_roots`](../../SquaresInCircles/Six/Wings/WestSide.lean#L411),
-[`Six.Wings.WestSide.MissingWest.rationalReserve_positive`](../../SquaresInCircles/Six/Wings/WestSide.lean#L429),
-[`Six.Wings.WestSide.MissingWest.endpoint_positive`](../../SquaresInCircles/Six/Wings/WestSide.lean#L436),
-[`Six.Wings.WestSide.MissingWest.positive`](../../SquaresInCircles/Six/Wings/WestSide.lean#L453).*
+[`Six.Wings.WestSide.MissingWest.impossible`](../../SquaresInCircles/Six/Wings/WestSide.lean#L499),
+[`Six.Wings.WestSide.MissingWest.gap`](../../SquaresInCircles/Six/Wings/WestSide.lean#L230),
+[`Six.Wings.WestSide.MissingWest.westTerm`](../../SquaresInCircles/Six/Wings/WestSide.lean#L227),
+[`Six.Wings.WestSide.MissingWest.diagonalTerm`](../../SquaresInCircles/Six/Wings/WestSide.lean#L224),
+[`Six.Wings.WestSide.MissingWest.diagonalTerm_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L245),
+[`Six.Wings.WestSide.MissingWest.westTerm_diagonal_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L258),
+[`Six.Wings.WestSide.MissingWest.gap_diagonal_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L284),
+[`Six.Wings.WestSide.MissingWest.gap_west_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L299),
+[`Six.Wings.WestSide.MissingWest.gap_south_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L324),
+[`Six.Wings.WestSide.MissingWest.endpoint_root_bounds`](../../SquaresInCircles/Six/Wings/WestSide.lean#L341),
+[`Six.Wings.WestSide.MissingWest.endpoint_trig`](../../SquaresInCircles/Six/Wings/WestSide.lean#L385),
+[`Six.Wings.WestSide.MissingWest.endpoint_roots`](../../SquaresInCircles/Six/Wings/WestSide.lean#L415),
+[`Six.Wings.WestSide.MissingWest.rationalReserve_positive`](../../SquaresInCircles/Six/Wings/WestSide.lean#L433),
+[`Six.Wings.WestSide.MissingWest.endpoint_positive`](../../SquaresInCircles/Six/Wings/WestSide.lean#L440),
+[`Six.Wings.WestSide.MissingWest.positive`](../../SquaresInCircles/Six/Wings/WestSide.lean#L457).*
 
 ![Left: the squares C, W, D and S of a missing west wing in the lower left part of the disk, W slightly turned, with the separating lines of the stress in colour, a grey dashed line between C and D, and orange arrows for the forces on the four squares; the squares reach the pink circle, just outside the dashed circle of radius R0. Right: the rectangle of the angles s and d, shaded from white near s = 0 to blue at s = −2/5, with two lower bounds written at each of its six marked points](figures/appendix-d/side-west.svg)
 
@@ -1153,24 +1153,24 @@ all positive, a contradiction (Figure D.11). $\square$
 *Table D.7.* Lower bounds of $\Pi$ at the six points, rounded down.
 
 *Lean:
-[`Six.Wings.WestSide.SmallSouth.impossible`](../../SquaresInCircles/Six/Wings/WestSide.lean#L807),
-[`Six.Wings.WestSide.SmallSouth.gap`](../../SquaresInCircles/Six/Wings/WestSide.lean#L552),
-[`Six.Wings.WestSide.SmallSouth.westTerm`](../../SquaresInCircles/Six/Wings/WestSide.lean#L549),
-[`Six.Wings.WestSide.SmallSouth.chordTerm`](../../SquaresInCircles/Six/Wings/WestSide.lean#L550),
-[`Six.Wings.WestSide.SmallSouth.widthTerm`](../../SquaresInCircles/Six/Wings/WestSide.lean#L551),
-[`Six.Wings.WestSide.SmallSouth.chord_norm`](../../SquaresInCircles/Six/Wings/WestSide.lean#L654),
-[`Six.Wings.WestSide.SmallSouth.chordTerm_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L559),
-[`Six.Wings.WestSide.SmallSouth.widthTerm_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L589),
-[`Six.Wings.WestSide.SmallSouth.westTerm_negative_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L609),
-[`Six.Wings.WestSide.SmallSouth.westTerm_positive_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L617),
-[`Six.Wings.WestSide.SmallSouth.gap_diagonal_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L625),
-[`Six.Wings.WestSide.SmallSouth.gap_west_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L637),
-[`Six.Wings.WestSide.SmallSouth.south_width_lower`](../../SquaresInCircles/Six/Wings/WestSide.lean#L794),
-[`Six.Wings.WestSide.SmallSouth.width_endpoints`](../../SquaresInCircles/Six/Wings/WestSide.lean#L676),
-[`Six.Wings.WestSide.SmallSouth.endpoint_bounds`](../../SquaresInCircles/Six/Wings/WestSide.lean#L703),
-[`Six.Wings.WestSide.SmallSouth.reserve_positive`](../../SquaresInCircles/Six/Wings/WestSide.lean#L743),
-[`Six.Wings.WestSide.SmallSouth.endpoint_positive`](../../SquaresInCircles/Six/Wings/WestSide.lean#L748),
-[`Six.Wings.WestSide.SmallSouth.positive`](../../SquaresInCircles/Six/Wings/WestSide.lean#L774).*
+[`Six.Wings.WestSide.SmallSouth.impossible`](../../SquaresInCircles/Six/Wings/WestSide.lean#L811),
+[`Six.Wings.WestSide.SmallSouth.gap`](../../SquaresInCircles/Six/Wings/WestSide.lean#L556),
+[`Six.Wings.WestSide.SmallSouth.westTerm`](../../SquaresInCircles/Six/Wings/WestSide.lean#L553),
+[`Six.Wings.WestSide.SmallSouth.chordTerm`](../../SquaresInCircles/Six/Wings/WestSide.lean#L554),
+[`Six.Wings.WestSide.SmallSouth.widthTerm`](../../SquaresInCircles/Six/Wings/WestSide.lean#L555),
+[`Six.Wings.WestSide.SmallSouth.chord_norm`](../../SquaresInCircles/Six/Wings/WestSide.lean#L658),
+[`Six.Wings.WestSide.SmallSouth.chordTerm_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L563),
+[`Six.Wings.WestSide.SmallSouth.widthTerm_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L593),
+[`Six.Wings.WestSide.SmallSouth.westTerm_negative_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L613),
+[`Six.Wings.WestSide.SmallSouth.westTerm_positive_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L621),
+[`Six.Wings.WestSide.SmallSouth.gap_diagonal_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L629),
+[`Six.Wings.WestSide.SmallSouth.gap_west_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L641),
+[`Six.Wings.WestSide.SmallSouth.south_width_lower`](../../SquaresInCircles/Six/Wings/WestSide.lean#L798),
+[`Six.Wings.WestSide.SmallSouth.width_endpoints`](../../SquaresInCircles/Six/Wings/WestSide.lean#L680),
+[`Six.Wings.WestSide.SmallSouth.endpoint_bounds`](../../SquaresInCircles/Six/Wings/WestSide.lean#L707),
+[`Six.Wings.WestSide.SmallSouth.reserve_positive`](../../SquaresInCircles/Six/Wings/WestSide.lean#L747),
+[`Six.Wings.WestSide.SmallSouth.endpoint_positive`](../../SquaresInCircles/Six/Wings/WestSide.lean#L752),
+[`Six.Wings.WestSide.SmallSouth.positive`](../../SquaresInCircles/Six/Wings/WestSide.lean#L778).*
 
 ![Left: the squares of a missing south wing with W and S on the sides of C; D is separated from S by the line of its lower right side, and orange arrows show the forces of the stress. Right: the rectangle of the angles v and d, shaded from white along v = 0 to blue at the sides, with a lower bound at each of its six marked points](figures/appendix-d/side-small.svg)
 
@@ -1267,29 +1267,29 @@ bounds of Table D.8, all positive, a contradiction (Figure D.12). $\square$
 polynomials, rounded down.
 
 *Lean:
-[`Six.Wings.WestSide.LargeSouth.impossible`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1163),
-[`Six.Wings.WestSide.LargeSouth.totalThreshold`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1114),
-[`Six.Wings.WestSide.LargeSouth.defect`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1118),
-[`Six.Wings.WestSide.LargeSouth.westUpper`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1064),
-[`Six.Wings.WestSide.LargeSouth.diagonalUpper`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1067),
-[`Six.Wings.WestSide.LargeSouth.west_support`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1070),
-[`Six.Wings.WestSide.LargeSouth.diagonal_support`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1078),
-[`Six.Wings.WestSide.LargeSouth.south_support`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1092),
-[`Six.Wings.WestSide.LargeSouth.south_trig`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1100),
-[`Six.Wings.WestSide.LargeSouth.central_support`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1106),
-[`Six.Wings.WestSide.LargeSouth.profile`](../../SquaresInCircles/Six/Wings/WestSide.lean#L864),
-[`Six.Wings.WestSide.LargeSouth.coefficient`](../../SquaresInCircles/Six/Wings/WestSide.lean#L859),
-[`Six.Wings.WestSide.LargeSouth.sine_term_lower`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1122),
-[`Six.Wings.WestSide.LargeSouth.profile_le_defect`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1143),
-[`Six.Wings.WestSide.LargeSouth.diagonal_derivative_nonpositive`](../../SquaresInCircles/Six/Wings/WestSide.lean#L898),
-[`Six.Wings.WestSide.LargeSouth.profile_at_upper_diagonal`](../../SquaresInCircles/Six/Wings/WestSide.lean#L926),
-[`Six.Wings.WestSide.LargeSouth.extend_s`](../../SquaresInCircles/Six/Wings/WestSide.lean#L994),
-[`Six.Wings.WestSide.LargeSouth.profile_v_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L955),
-[`Six.Wings.WestSide.LargeSouth.coefficient_sine_lower`](../../SquaresInCircles/Six/Wings/WestSide.lean#L881),
-[`Six.Wings.WestSide.LargeSouth.endpointPolynomial`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1016),
-[`Six.Wings.WestSide.LargeSouth.endpointPolynomial_le`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1022),
-[`Six.Wings.WestSide.LargeSouth.corner`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1037),
-[`Six.Wings.WestSide.LargeSouth.positive`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1047).*
+[`Six.Wings.WestSide.LargeSouth.impossible`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1167),
+[`Six.Wings.WestSide.LargeSouth.totalThreshold`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1118),
+[`Six.Wings.WestSide.LargeSouth.defect`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1122),
+[`Six.Wings.WestSide.LargeSouth.westUpper`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1068),
+[`Six.Wings.WestSide.LargeSouth.diagonalUpper`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1071),
+[`Six.Wings.WestSide.LargeSouth.west_support`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1074),
+[`Six.Wings.WestSide.LargeSouth.diagonal_support`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1082),
+[`Six.Wings.WestSide.LargeSouth.south_support`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1096),
+[`Six.Wings.WestSide.LargeSouth.south_trig`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1104),
+[`Six.Wings.WestSide.LargeSouth.central_support`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1110),
+[`Six.Wings.WestSide.LargeSouth.profile`](../../SquaresInCircles/Six/Wings/WestSide.lean#L868),
+[`Six.Wings.WestSide.LargeSouth.coefficient`](../../SquaresInCircles/Six/Wings/WestSide.lean#L863),
+[`Six.Wings.WestSide.LargeSouth.sine_term_lower`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1126),
+[`Six.Wings.WestSide.LargeSouth.profile_le_defect`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1147),
+[`Six.Wings.WestSide.LargeSouth.diagonal_derivative_nonpositive`](../../SquaresInCircles/Six/Wings/WestSide.lean#L902),
+[`Six.Wings.WestSide.LargeSouth.profile_at_upper_diagonal`](../../SquaresInCircles/Six/Wings/WestSide.lean#L930),
+[`Six.Wings.WestSide.LargeSouth.extend_s`](../../SquaresInCircles/Six/Wings/WestSide.lean#L998),
+[`Six.Wings.WestSide.LargeSouth.profile_v_concave`](../../SquaresInCircles/Six/Wings/WestSide.lean#L959),
+[`Six.Wings.WestSide.LargeSouth.coefficient_sine_lower`](../../SquaresInCircles/Six/Wings/WestSide.lean#L885),
+[`Six.Wings.WestSide.LargeSouth.endpointPolynomial`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1020),
+[`Six.Wings.WestSide.LargeSouth.endpointPolynomial_le`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1026),
+[`Six.Wings.WestSide.LargeSouth.corner`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1041),
+[`Six.Wings.WestSide.LargeSouth.positive`](../../SquaresInCircles/Six/Wings/WestSide.lean#L1051).*
 
 ![Left: the squares of a missing south wing with W on the west side of C and S turned on its own axis; a long orange arrow shows the force on S, close to its own axis. Right: the rectangle of the angles v and s at d = 11/14, shaded from white along v = 0 to blue at v = −2/5, with a lower bound at each of its six marked points](figures/appendix-d/side-large.svg)
 
@@ -1393,27 +1393,27 @@ $\xi \le 1 - \frac74\mu_+ < 0$, and
 $-\mu_+U + \frac12(\sin s + \sin(d - s)) = \xi\cos x \ge \xi$. $\square$
 
 *Lean:
-[`Six.Wings.SouthSide.southRadial`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L34),
-[`Six.Wings.SouthSide.southTransverse`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L35),
-[`Six.Wings.SouthSide.south_half_angle`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L37),
-[`Six.Wings.SouthSide.square_sum_bound`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L52),
-[`Six.Wings.SouthSide.half_angle_ratio`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L68),
-[`Six.Wings.SouthSide.south_force_cone`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L86),
-[`Six.Wings.SouthSide.south_force_axial`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L110),
-[`Six.Wings.SouthSide.halfQuadratic`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L137),
-[`Six.Wings.SouthSide.halfLinear`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L138),
-[`Six.Wings.SouthSide.southContribution`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L140),
-[`Six.Wings.SouthSide.positiveExpression`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L144),
-[`Six.Wings.SouthSide.negativeExpression`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L147),
-[`Six.Wings.SouthSide.half_trig_bounds`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L151),
-[`Six.Wings.SouthSide.half_quadratic_lower`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L158),
-[`Six.Wings.SouthSide.half_coefficient_upper`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L169),
-[`Six.Wings.SouthSide.positive_expression_lower`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L181),
-[`Six.Wings.SouthSide.negative_expression_monotone`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L200),
-[`Six.Wings.SouthSide.contribution_of_nonnegative`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L230),
-[`Six.Wings.SouthSide.contribution_of_nonpositive`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L244),
-[`Six.Wings.SouthSide.south_angle_lower`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L257),
-[`Six.Wings.SouthSide.south_angle_lower_high`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L283).*
+[`Six.Wings.SouthSide.southRadial`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L38),
+[`Six.Wings.SouthSide.southTransverse`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L39),
+[`Six.Wings.SouthSide.south_half_angle`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L41),
+[`Six.Wings.SouthSide.square_sum_bound`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L56),
+[`Six.Wings.SouthSide.half_angle_ratio`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L72),
+[`Six.Wings.SouthSide.south_force_cone`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L90),
+[`Six.Wings.SouthSide.south_force_axial`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L114),
+[`Six.Wings.SouthSide.halfQuadratic`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L141),
+[`Six.Wings.SouthSide.halfLinear`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L142),
+[`Six.Wings.SouthSide.southContribution`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L144),
+[`Six.Wings.SouthSide.positiveExpression`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L148),
+[`Six.Wings.SouthSide.negativeExpression`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L151),
+[`Six.Wings.SouthSide.half_trig_bounds`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L155),
+[`Six.Wings.SouthSide.half_quadratic_lower`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L162),
+[`Six.Wings.SouthSide.half_coefficient_upper`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L173),
+[`Six.Wings.SouthSide.positive_expression_lower`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L185),
+[`Six.Wings.SouthSide.negative_expression_monotone`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L204),
+[`Six.Wings.SouthSide.contribution_of_nonnegative`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L234),
+[`Six.Wings.SouthSide.contribution_of_nonpositive`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L248),
+[`Six.Wings.SouthSide.south_angle_lower`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L261),
+[`Six.Wings.SouthSide.south_angle_lower_high`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L287).*
 
 ![Two panels. Left: in the frame of S, for s = 0.2 and d = 0.75, a black unit arrow of (D.5) at the angle s below the first axis, a purple unit arrow of (D.9) at the angle r above it, and their sum (U, V), of length 2 cos(d/2), in orange along the bisector, with the dashed parallelogram. Right: the plane of (U, V) with the part U at least 33/20 and V at most 3U/5 of the third cone shaded green, and the dashed line V = 0.31 U; the forces of part (1) fill a blue crescent inside the green part that nearly touches its corner, and those of part (2) a small orange region below the dashed line](figures/appendix-d/south-force.svg)
 
@@ -1516,23 +1516,23 @@ $[0, \frac23] \times [\frac{11}{14}, \frac{34}{35}]$, a contradiction
 *Table D.9.* Lower bounds of $P_y$ by Taylor polynomials, rounded down.
 
 *Lean:
-[`Six.Wings.SouthSide.impossible`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L513),
-[`Six.Wings.SouthSide.forceX`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L477),
-[`Six.Wings.SouthSide.forceY`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L478),
-[`Six.Wings.SouthSide.defect`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L482),
-[`Six.Wings.SouthSide.defect_sub_profile`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L491),
-[`Six.Wings.SouthSide.profile`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L320),
-[`Six.Wings.SouthSide.constantTerm`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L316),
-[`Six.Wings.SouthSide.chordL`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L310),
-[`Six.Wings.SouthSide.chordM`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L311),
-[`Six.Wings.SouthSide.chord_second_upper`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L324),
-[`Six.Wings.SouthSide.profile_west_concave`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L334),
-[`Six.Wings.SouthSide.profile_diagonal_concave`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L357),
-[`Six.Wings.SouthSide.lower`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L403),
-[`Six.Wings.SouthSide.lower_le`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L409),
-[`Six.Wings.SouthSide.corners`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L432),
-[`Six.Wings.SouthSide.section_lower`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L440),
-[`Six.Wings.SouthSide.positive`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L458).*
+[`Six.Wings.SouthSide.impossible`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L517),
+[`Six.Wings.SouthSide.forceX`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L481),
+[`Six.Wings.SouthSide.forceY`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L482),
+[`Six.Wings.SouthSide.defect`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L486),
+[`Six.Wings.SouthSide.defect_sub_profile`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L495),
+[`Six.Wings.SouthSide.profile`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L324),
+[`Six.Wings.SouthSide.constantTerm`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L320),
+[`Six.Wings.SouthSide.chordL`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L314),
+[`Six.Wings.SouthSide.chordM`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L315),
+[`Six.Wings.SouthSide.chord_second_upper`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L328),
+[`Six.Wings.SouthSide.profile_west_concave`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L338),
+[`Six.Wings.SouthSide.profile_diagonal_concave`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L361),
+[`Six.Wings.SouthSide.lower`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L407),
+[`Six.Wings.SouthSide.lower_le`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L413),
+[`Six.Wings.SouthSide.corners`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L436),
+[`Six.Wings.SouthSide.section_lower`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L444),
+[`Six.Wings.SouthSide.positive`](../../SquaresInCircles/Six/Wings/SouthSide.lean#L462).*
 
 The range $d \le \frac{34}{35}$ goes beyond $\frac\pi4$ for the sake of the
 reflection: in §D.10 the same stress excludes a missing west wing with $W$ on
@@ -1697,28 +1697,28 @@ $\square$
 rounded down.
 
 *Lean:
-[`Six.Wings.SouthTurned.impossible`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L310),
-[`Six.Wings.SouthTurned.chordL`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L31),
-[`Six.Wings.SouthTurned.chordL_le`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L33),
-[`Six.Wings.SouthTurned.half_sine_bounds`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L37),
-[`Six.Wings.SouthTurned.diagonal_support`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L47),
-[`Six.Wings.SouthTurned.south`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L69),
-[`Six.Wings.SouthTurned.southFirst`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L70),
-[`Six.Wings.SouthTurned.south_hasDerivAt`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L72),
-[`Six.Wings.SouthTurned.southFirst_hasDerivAt`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L76),
-[`Six.Wings.SouthTurned.constantTerm`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L85),
-[`Six.Wings.SouthTurned.profile`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L88),
-[`Six.Wings.SouthTurned.chordFirst_antitone`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L91),
-[`Six.Wings.SouthTurned.diagonal_comparison_negative`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L104),
-[`Six.Wings.SouthTurned.profile_at_upper_diagonal`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L118),
-[`Six.Wings.SouthTurned.edge_concave`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L163),
-[`Six.Wings.SouthTurned.upper_trig`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L182),
-[`Six.Wings.SouthTurned.s_identity`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L192),
-[`Six.Wings.SouthTurned.s_coefficients`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L200),
-[`Six.Wings.SouthTurned.lower`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L208),
-[`Six.Wings.SouthTurned.lower_le`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L213),
-[`Six.Wings.SouthTurned.four_vertices`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L225),
-[`Six.Wings.SouthTurned.positive`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L235).*
+[`Six.Wings.SouthTurned.impossible`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L314),
+[`Six.Wings.SouthTurned.chordL`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L35),
+[`Six.Wings.SouthTurned.chordL_le`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L37),
+[`Six.Wings.SouthTurned.half_sine_bounds`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L41),
+[`Six.Wings.SouthTurned.diagonal_support`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L51),
+[`Six.Wings.SouthTurned.south`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L73),
+[`Six.Wings.SouthTurned.southFirst`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L74),
+[`Six.Wings.SouthTurned.south_hasDerivAt`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L76),
+[`Six.Wings.SouthTurned.southFirst_hasDerivAt`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L80),
+[`Six.Wings.SouthTurned.constantTerm`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L89),
+[`Six.Wings.SouthTurned.profile`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L92),
+[`Six.Wings.SouthTurned.chordFirst_antitone`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L95),
+[`Six.Wings.SouthTurned.diagonal_comparison_negative`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L108),
+[`Six.Wings.SouthTurned.profile_at_upper_diagonal`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L122),
+[`Six.Wings.SouthTurned.edge_concave`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L167),
+[`Six.Wings.SouthTurned.upper_trig`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L186),
+[`Six.Wings.SouthTurned.s_identity`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L196),
+[`Six.Wings.SouthTurned.s_coefficients`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L204),
+[`Six.Wings.SouthTurned.lower`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L212),
+[`Six.Wings.SouthTurned.lower_le`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L217),
+[`Six.Wings.SouthTurned.four_vertices`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L229),
+[`Six.Wings.SouthTurned.positive`](../../SquaresInCircles/Six/Wings/SouthTurned.lean#L239).*
 
 ![Left: the squares of a missing south wing with W and S turned on their own axes, S turned further than W, with the separating lines and the forces of the stress. Right: a quadrilateral of the angles v and s with the vertices (0, 0), (0, 2/3), (22/75, 2/3) and (12/25, 12/25), shaded green, lighter near its vertices, with a lower bound at each vertex](figures/appendix-d/south-turned.svg)
 
@@ -1780,18 +1780,18 @@ $\cos x + \sin x \ge 1 - \frac{x^2}2 + x - \frac{x^3}6 = 1.3629\ldots > \frac43$
 $\square$
 
 *Lean:
-[`Six.Wings.WestTurned.wing_affine_lower`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L99),
-[`Six.Wings.WestTurned.transverse`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L30),
-[`Six.Wings.WestTurned.transverse_eq`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L35),
-[`Six.Wings.WestTurned.transverseFirst`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L31),
-[`Six.Wings.WestTurned.transverseSecond`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L32),
-[`Six.Wings.WestTurned.transverseThird`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L33),
-[`Six.Wings.WestTurned.transverse_hasDerivAt`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L41),
-[`Six.Wings.WestTurned.transverseFirst_hasDerivAt`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L47),
-[`Six.Wings.WestTurned.transverseSecond_hasDerivAt`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L54),
-[`Six.Wings.WestTurned.transverse_third_upper`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L64),
-[`Six.Wings.WestTurned.transverse_second_upper`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L81),
-[`Six.Wings.WestTurned.diagonal_trig_lower`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L120).*
+[`Six.Wings.WestTurned.wing_affine_lower`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L103),
+[`Six.Wings.WestTurned.transverse`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L34),
+[`Six.Wings.WestTurned.transverse_eq`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L39),
+[`Six.Wings.WestTurned.transverseFirst`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L35),
+[`Six.Wings.WestTurned.transverseSecond`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L36),
+[`Six.Wings.WestTurned.transverseThird`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L37),
+[`Six.Wings.WestTurned.transverse_hasDerivAt`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L45),
+[`Six.Wings.WestTurned.transverseFirst_hasDerivAt`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L51),
+[`Six.Wings.WestTurned.transverseSecond_hasDerivAt`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L58),
+[`Six.Wings.WestTurned.transverse_third_upper`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L68),
+[`Six.Wings.WestTurned.transverse_second_upper`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L85),
+[`Six.Wings.WestTurned.diagonal_trig_lower`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L124).*
 
 ![Three graphs. (1) Over x from 0 to 12/25, the wing harmonic, in blue, concave and above the dashed orange line mu- + 4x/9, which it meets at 0. (2) Over r from 0 to 1, the second derivative of J, in blue, falling from about 0.45 to about -0.02, below the dashed orange line mu+ - 1/6 - r/3, which it meets at 0. (3) Over d from 1/2 to 163/175, cos d + sin d, in blue, a concave arch with its top at pi/4, above the dashed orange level 4/3](figures/appendix-d/bounds.svg)
 
@@ -1904,24 +1904,24 @@ contradiction (Figure D.18). $\square$
 polynomials, rounded down.
 
 *Lean:
-[`Six.Wings.WestTurned.impossible`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L364),
-[`Six.Wings.WestTurned.westLength`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L134),
-[`Six.Wings.WestTurned.constantTerm`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L139),
-[`Six.Wings.WestTurned.westPart`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L143),
-[`Six.Wings.WestTurned.southPart`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L144),
-[`Six.Wings.WestTurned.profile`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L147),
-[`Six.Wings.WestTurned.forceX`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L334),
-[`Six.Wings.WestTurned.forceY`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L335),
-[`Six.Wings.WestTurned.defect`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L339),
-[`Six.Wings.WestTurned.profile_le_defect`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L348),
-[`Six.Wings.WestTurned.west_concave`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L150),
-[`Six.Wings.WestTurned.south_curvature_negative`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L167),
-[`Six.Wings.WestTurned.south_concave`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L177),
-[`Six.Wings.WestTurned.diagonal_concave`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L188),
-[`Six.Wings.WestTurned.positive_of_vertices`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L233),
-[`Six.Wings.WestTurned.lower`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L275),
-[`Six.Wings.WestTurned.lower_le`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L282),
-[`Six.Wings.WestTurned.positive`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L311).*
+[`Six.Wings.WestTurned.impossible`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L368),
+[`Six.Wings.WestTurned.westLength`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L138),
+[`Six.Wings.WestTurned.constantTerm`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L143),
+[`Six.Wings.WestTurned.westPart`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L147),
+[`Six.Wings.WestTurned.southPart`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L148),
+[`Six.Wings.WestTurned.profile`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L151),
+[`Six.Wings.WestTurned.forceX`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L338),
+[`Six.Wings.WestTurned.forceY`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L339),
+[`Six.Wings.WestTurned.defect`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L343),
+[`Six.Wings.WestTurned.profile_le_defect`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L352),
+[`Six.Wings.WestTurned.west_concave`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L154),
+[`Six.Wings.WestTurned.south_curvature_negative`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L171),
+[`Six.Wings.WestTurned.south_concave`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L181),
+[`Six.Wings.WestTurned.diagonal_concave`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L192),
+[`Six.Wings.WestTurned.positive_of_vertices`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L237),
+[`Six.Wings.WestTurned.lower`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L279),
+[`Six.Wings.WestTurned.lower_le`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L286),
+[`Six.Wings.WestTurned.positive`](../../SquaresInCircles/Six/Wings/WestTurned.lean#L315).*
 
 The range $d \le \frac{163}{175}$ again serves the reflection: in §D.10 this
 stress also excludes a missing west wing with $W$ and $S$ on their own axes and
@@ -2025,25 +2025,25 @@ on $[0, \frac{31}{50}]$ (Lemma A.11 (1)) and positive between the wall and the
 top. $\square$
 
 *Lean:
-[`Six.Wings.WestDiagonal.norm_upper`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L45),
-[`Six.Wings.WestDiagonal.rootSlope`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L39),
-[`Six.Wings.WestDiagonal.rootCoefficient`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L40),
-[`Six.Wings.WestDiagonal.coefficient_le`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L42),
-[`Six.Wings.WestDiagonal.diagonalUpper`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L54),
-[`Six.Wings.WestDiagonal.support`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L57),
-[`Six.Wings.WestDiagonal.west_support`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L210),
-[`Six.Wings.WestDiagonal.diagonal_first_lower`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L67),
-[`Six.Wings.WestDiagonal.beta`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L94),
-[`Six.Wings.WestDiagonal.wing`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L96),
-[`Six.Wings.WestDiagonal.gapTerm`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L97),
-[`Six.Wings.WestDiagonal.base`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L99),
-[`Six.Wings.WestDiagonal.pointV`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L102),
-[`Six.Wings.WestDiagonal.pointD`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L103),
-[`Six.Wings.WestDiagonal.wing_concave`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L105),
-[`Six.Wings.WestDiagonal.west_concave`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L109),
-[`Six.Wings.WestDiagonal.wall_concave`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L131),
-[`Six.Wings.WestDiagonal.top_monotone`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L157),
-[`Six.Wings.WestDiagonal.positive_of_three_points`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L187).*
+[`Six.Wings.WestDiagonal.norm_upper`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L49),
+[`Six.Wings.WestDiagonal.rootSlope`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L43),
+[`Six.Wings.WestDiagonal.rootCoefficient`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L44),
+[`Six.Wings.WestDiagonal.coefficient_le`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L46),
+[`Six.Wings.WestDiagonal.diagonalUpper`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L58),
+[`Six.Wings.WestDiagonal.support`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L61),
+[`Six.Wings.WestDiagonal.west_support`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L214),
+[`Six.Wings.WestDiagonal.diagonal_first_lower`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L71),
+[`Six.Wings.WestDiagonal.beta`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L98),
+[`Six.Wings.WestDiagonal.wing`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L100),
+[`Six.Wings.WestDiagonal.gapTerm`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L101),
+[`Six.Wings.WestDiagonal.base`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L103),
+[`Six.Wings.WestDiagonal.pointV`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L106),
+[`Six.Wings.WestDiagonal.pointD`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L107),
+[`Six.Wings.WestDiagonal.wing_concave`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L109),
+[`Six.Wings.WestDiagonal.west_concave`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L113),
+[`Six.Wings.WestDiagonal.wall_concave`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L135),
+[`Six.Wings.WestDiagonal.top_monotone`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L161),
+[`Six.Wings.WestDiagonal.positive_of_three_points`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L191).*
 
 ![Two panels. Left: over x from 0 to 6/5, the derivative of psi, in blue, falling from about 1.19 to about 0.73 and staying above the dashed orange level 7/10; the Taylor bound 0.7278 at 6/5 is marked. Right: the domain of (v, d) of section D.9, a green quadrilateral: its left edge, the wall, drawn purple, its right edge, the top, drawn orange with an arrow pointing up, and green horizontal segments across it; black dots mark the three points of the lemma, and an open circle the fourth corner](figures/appendix-d/base.svg)
 
@@ -2116,31 +2116,31 @@ $\square$
 rounded down.
 
 *Lean:
-[`Six.Wings.WestDiagonal.SideSouth.impossible`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L429),
-[`Six.Wings.WestDiagonal.SideSouth.gamma`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L226),
-[`Six.Wings.WestDiagonal.SideSouth.rootIntercept`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L230),
-[`Six.Wings.WestDiagonal.SideSouth.rootSin`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L231),
-[`Six.Wings.WestDiagonal.SideSouth.south_root`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L360),
-[`Six.Wings.WestDiagonal.SideSouth.southUpper`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L345),
-[`Six.Wings.WestDiagonal.SideSouth.south_support`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L372),
-[`Six.Wings.WestDiagonal.SideSouth.centerUpper`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L349),
-[`Six.Wings.WestDiagonal.SideSouth.center_support`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L387),
-[`Six.Wings.WestDiagonal.SideSouth.thresholdSum`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L352),
-[`Six.Wings.WestDiagonal.SideSouth.defect`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L356),
-[`Six.Wings.WestDiagonal.SideSouth.constantTerm`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L233),
-[`Six.Wings.WestDiagonal.SideSouth.side`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L234),
-[`Six.Wings.WestDiagonal.SideSouth.sineCoefficient`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L235),
-[`Six.Wings.WestDiagonal.SideSouth.southTerm`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L238),
-[`Six.Wings.WestDiagonal.SideSouth.profile`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L241),
-[`Six.Wings.WestDiagonal.SideSouth.profile_eq_defect`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L400),
-[`Six.Wings.WestDiagonal.SideSouth.south_term_concave`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L244),
-[`Six.Wings.WestDiagonal.SideSouth.south_concave`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L250),
-[`Six.Wings.WestDiagonal.SideSouth.lowerPolynomial`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L272),
-[`Six.Wings.WestDiagonal.SideSouth.polynomial_le`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L279),
-[`Six.Wings.WestDiagonal.SideSouth.endpoint`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L297),
-[`Six.Wings.WestDiagonal.SideSouth.endpoint_margin`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L299),
-[`Six.Wings.WestDiagonal.SideSouth.boundary_positive`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L306),
-[`Six.Wings.WestDiagonal.SideSouth.positive`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L328).*
+[`Six.Wings.WestDiagonal.SideSouth.impossible`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L433),
+[`Six.Wings.WestDiagonal.SideSouth.gamma`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L230),
+[`Six.Wings.WestDiagonal.SideSouth.rootIntercept`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L234),
+[`Six.Wings.WestDiagonal.SideSouth.rootSin`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L235),
+[`Six.Wings.WestDiagonal.SideSouth.south_root`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L364),
+[`Six.Wings.WestDiagonal.SideSouth.southUpper`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L349),
+[`Six.Wings.WestDiagonal.SideSouth.south_support`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L376),
+[`Six.Wings.WestDiagonal.SideSouth.centerUpper`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L353),
+[`Six.Wings.WestDiagonal.SideSouth.center_support`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L391),
+[`Six.Wings.WestDiagonal.SideSouth.thresholdSum`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L356),
+[`Six.Wings.WestDiagonal.SideSouth.defect`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L360),
+[`Six.Wings.WestDiagonal.SideSouth.constantTerm`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L237),
+[`Six.Wings.WestDiagonal.SideSouth.side`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L238),
+[`Six.Wings.WestDiagonal.SideSouth.sineCoefficient`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L239),
+[`Six.Wings.WestDiagonal.SideSouth.southTerm`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L242),
+[`Six.Wings.WestDiagonal.SideSouth.profile`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L245),
+[`Six.Wings.WestDiagonal.SideSouth.profile_eq_defect`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L404),
+[`Six.Wings.WestDiagonal.SideSouth.south_term_concave`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L248),
+[`Six.Wings.WestDiagonal.SideSouth.south_concave`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L254),
+[`Six.Wings.WestDiagonal.SideSouth.lowerPolynomial`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L276),
+[`Six.Wings.WestDiagonal.SideSouth.polynomial_le`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L283),
+[`Six.Wings.WestDiagonal.SideSouth.endpoint`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L301),
+[`Six.Wings.WestDiagonal.SideSouth.endpoint_margin`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L303),
+[`Six.Wings.WestDiagonal.SideSouth.boundary_positive`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L310),
+[`Six.Wings.WestDiagonal.SideSouth.positive`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L332).*
 
 ![Three panels. The first two show missing west wings with W turned on its own axis: D is separated from W by the line of its own upper left side and from S by a side of S, with S on the south side of C in the first panel and turned on its own axis in the second, and orange arrows for the forces. The third shows the small quadrilateral domain of the angles v and d, shaded green, with three marked points and two lower bounds at each](figures/appendix-d/diagonal.svg)
 
@@ -2208,31 +2208,31 @@ all positive, a contradiction (Figure D.20). $\square$
 pieces, by Taylor polynomials, rounded down.
 
 *Lean:
-[`Six.Wings.WestDiagonal.OwnSouth.impossible`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L649),
-[`Six.Wings.WestDiagonal.OwnSouth.pieceStart`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L476),
-[`Six.Wings.WestDiagonal.OwnSouth.pieceEnd`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L477),
-[`Six.Wings.WestDiagonal.OwnSouth.gamma`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L478),
-[`Six.Wings.WestDiagonal.OwnSouth.length`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L479),
-[`Six.Wings.WestDiagonal.OwnSouth.gamma_bounds`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L487),
-[`Six.Wings.WestDiagonal.OwnSouth.length_bound`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L490),
-[`Six.Wings.WestDiagonal.OwnSouth.piece_range`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L493),
-[`Six.Wings.WestDiagonal.OwnSouth.southUpper`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L587),
-[`Six.Wings.WestDiagonal.OwnSouth.south_support`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L602),
-[`Six.Wings.WestDiagonal.OwnSouth.forceX`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L589),
-[`Six.Wings.WestDiagonal.OwnSouth.forceY`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L590),
-[`Six.Wings.WestDiagonal.OwnSouth.central_forces`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L611),
-[`Six.Wings.WestDiagonal.OwnSouth.centerUpper`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L592),
-[`Six.Wings.WestDiagonal.OwnSouth.thresholdSum`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L594),
-[`Six.Wings.WestDiagonal.OwnSouth.defect`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L598),
-[`Six.Wings.WestDiagonal.OwnSouth.constantTerm`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L481),
-[`Six.Wings.WestDiagonal.OwnSouth.profile`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L484),
-[`Six.Wings.WestDiagonal.OwnSouth.profile_eq_defect`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L630),
-[`Six.Wings.WestDiagonal.OwnSouth.south_concave`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L498),
-[`Six.Wings.WestDiagonal.OwnSouth.lowerPolynomial`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L518),
-[`Six.Wings.WestDiagonal.OwnSouth.polynomial_le`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L524),
-[`Six.Wings.WestDiagonal.OwnSouth.endpoint_margin`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L543),
-[`Six.Wings.WestDiagonal.OwnSouth.boundary_positive`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L549),
-[`Six.Wings.WestDiagonal.OwnSouth.positive`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L570).*
+[`Six.Wings.WestDiagonal.OwnSouth.impossible`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L653),
+[`Six.Wings.WestDiagonal.OwnSouth.pieceStart`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L480),
+[`Six.Wings.WestDiagonal.OwnSouth.pieceEnd`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L481),
+[`Six.Wings.WestDiagonal.OwnSouth.gamma`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L482),
+[`Six.Wings.WestDiagonal.OwnSouth.length`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L483),
+[`Six.Wings.WestDiagonal.OwnSouth.gamma_bounds`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L491),
+[`Six.Wings.WestDiagonal.OwnSouth.length_bound`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L494),
+[`Six.Wings.WestDiagonal.OwnSouth.piece_range`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L497),
+[`Six.Wings.WestDiagonal.OwnSouth.southUpper`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L591),
+[`Six.Wings.WestDiagonal.OwnSouth.south_support`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L606),
+[`Six.Wings.WestDiagonal.OwnSouth.forceX`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L593),
+[`Six.Wings.WestDiagonal.OwnSouth.forceY`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L594),
+[`Six.Wings.WestDiagonal.OwnSouth.central_forces`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L615),
+[`Six.Wings.WestDiagonal.OwnSouth.centerUpper`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L596),
+[`Six.Wings.WestDiagonal.OwnSouth.thresholdSum`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L598),
+[`Six.Wings.WestDiagonal.OwnSouth.defect`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L602),
+[`Six.Wings.WestDiagonal.OwnSouth.constantTerm`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L485),
+[`Six.Wings.WestDiagonal.OwnSouth.profile`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L488),
+[`Six.Wings.WestDiagonal.OwnSouth.profile_eq_defect`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L634),
+[`Six.Wings.WestDiagonal.OwnSouth.south_concave`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L502),
+[`Six.Wings.WestDiagonal.OwnSouth.lowerPolynomial`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L522),
+[`Six.Wings.WestDiagonal.OwnSouth.polynomial_le`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L528),
+[`Six.Wings.WestDiagonal.OwnSouth.endpoint_margin`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L547),
+[`Six.Wings.WestDiagonal.OwnSouth.boundary_positive`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L553),
+[`Six.Wings.WestDiagonal.OwnSouth.positive`](../../SquaresInCircles/Six/Wings/WestDiagonal.lean#L574).*
 
 ## D.10 Proof of Proposition 9.46
 
@@ -2315,9 +2315,9 @@ alternative to a wing, this proves
 [Proposition 9.45](09-six.md#proposition-945-the-wings).
 
 *Lean:
-[`Six.Wings.not_missing_south`](../../SquaresInCircles/Six/Wings/Separators.lean#L31),
-[`Six.Wings.not_missing_west`](../../SquaresInCircles/Six/Wings/Separators.lean#L87),
-[`Six.Wings.west_gap`](../../SquaresInCircles/Six/Wings/Separators.lean#L65),
-[`Six.Wings.own_west_range`](../../SquaresInCircles/Six/Wings/Separators.lean#L72),
-[`Six.westDiagonal_gap_gt_one`](../../SquaresInCircles/Six/Wings/WestGap.lean#L161),
-[`Six.wing_separators`](../../SquaresInCircles/Six/Wings/Separators.lean#L133).*
+[`Six.Wings.not_missing_south`](../../SquaresInCircles/Six/Wings/Separators.lean#L35),
+[`Six.Wings.not_missing_west`](../../SquaresInCircles/Six/Wings/Separators.lean#L91),
+[`Six.Wings.west_gap`](../../SquaresInCircles/Six/Wings/Separators.lean#L69),
+[`Six.Wings.own_west_range`](../../SquaresInCircles/Six/Wings/Separators.lean#L76),
+[`Six.westDiagonal_gap_gt_one`](../../SquaresInCircles/Six/Wings/WestGap.lean#L165),
+[`Six.wing_separators`](../../SquaresInCircles/Six/Wings/Separators.lean#L137).*
