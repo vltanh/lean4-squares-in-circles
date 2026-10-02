@@ -9,18 +9,7 @@ up to rotation about the disk centre and relabelling: exactly one for `n ≤ 6`,
 and for `n = 7` a family in which each of the three middle squares slides along
 the middle column.
 
-| n | optimal radius | ≈ | an optimal packing |
-| :-: | :-: | :-: | :-: |
-| 1 | `√2 / 2` | 0.7071 | <img src="https://erich-friedman.github.io/packing/squincir/1.gif" width="100" alt="one unit square in a circle"><br>the square |
-| 2 | `√5 / 2` | 1.1180 | <img src="https://erich-friedman.github.io/packing/squincir/2.gif" width="100" alt="two unit squares in a circle"><br>a 2×1 rectangle |
-| 3 | `5√17 / 16` | 1.2885 | <img src="https://erich-friedman.github.io/packing/squincir/3.gif" width="100" alt="three unit squares in a circle"><br>the T |
-| 4 | `√2` | 1.4142 | <img src="https://erich-friedman.github.io/packing/squincir/4.gif" width="100" alt="four unit squares in a circle"><br>the 2×2 block |
-| 5 | `√(5/2)` | 1.5811 | <img src="https://erich-friedman.github.io/packing/squincir/5.gif" width="100" alt="five unit squares in a circle"><br>the plus |
-| 6 | `√q*`, `q*` a quartic irrational | 1.6885 | <img src="https://erich-friedman.github.io/packing/squincir/6.gif" width="100" alt="six unit squares in a circle"><br>a central square with four neighbours, two pushed along its sides, and a sixth square turned 45° in the corner between them |
-| 7 | `√13 / 2` | 1.8028 | <img src="https://erich-friedman.github.io/packing/squincir/7.gif" width="100" alt="seven unit squares in a circle"><br>three in a line between two pairs; not unique, each square of the line can move along it |
-
-Pictures by Erich Friedman, from the [Squares in Circles](https://erich-friedman.github.io/packing/squincir/)
-page of Erich's Packing Center.
+![The optimal packings of one to seven unit squares, each in its dashed circle of radius R_n at a common scale, with n and the exact radius under each: one square; two squares side by side; the T; the 2 by 2 block; the plus; six squares, one of them turned by 45 degrees; and seven squares in columns of two, three and two](docs/proof/figures/01-introduction/optimal.svg)
 
 ## Definitions
 
@@ -274,8 +263,9 @@ seven squares.
 More on each earlier result, with references:
 [docs/prior-work.md](docs/prior-work.md).
 
-- **One and two squares** are folklore; Erich Friedman's page lists them as
-  trivial.
+- **One and two squares** are folklore; Erich Friedman's
+  [Squares in Circles](https://erich-friedman.github.io/packing/squincir/)
+  page lists them as trivial.
 - **Three squares.** Montanher, Neumaier, Markót, Domes and Schichl (2019)
   enclosed the radius in an interval of width `6·10⁻¹⁴` containing `5√17/16`,
   and every optimal arrangement in small boxes near the T, by computer-assisted
