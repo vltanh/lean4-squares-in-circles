@@ -2,6 +2,7 @@
 
 [![Lean build](https://github.com/vltanh/lean4-squares-in-circles/actions/workflows/lean.yml/badge.svg)](https://github.com/vltanh/lean4-squares-in-circles/actions/workflows/lean.yml)
 [![Doc links](https://github.com/vltanh/lean4-squares-in-circles/actions/workflows/docs.yml/badge.svg)](https://github.com/vltanh/lean4-squares-in-circles/actions/workflows/docs.yml)
+[![Palomar](https://img.shields.io/badge/Palomar-registered-blue)](https://palomar-registry.org/entry.html?id=PALOMAR-2026-10-02-000002&version=1)
 
 Machine-checked proofs, for `n = 1, …, 7`, of the least radius of a disk
 holding `n` non-overlapping unit squares, and of every packing that attains it,
@@ -322,34 +323,30 @@ scripts/verify-comparator.sh
 The build uses Lean and mathlib `v4.35.0-rc3`, pinned by `lean-toolchain` and
 `lake-manifest.json`. `lake build` must succeed without warnings, and every
 `#print axioms` line must read `[propext, Classical.choice, Quot.sound]`. The
-last command (Linux, `bwrap`) checks the proofs against `Challenge.lean`
-([Palomar registry](#palomar-registry)). The trusted base is Lean, Lake and
+last command (Linux, `bwrap`) runs the check of the
+[Palomar registry](#palomar-registry). The trusted base is Lean, Lake and
 mathlib. GitHub Actions runs all five steps on every push and audits the axioms
 of every declaration; a second workflow checks the links from the proof pages
 to the Lean declarations.
 
 ## Palomar registry
 
-The repository is set up for the [Palomar](https://palomar-registry.org/)
-registry. `Challenge.lean` is the statement to audit: it imports only mathlib,
-restates `SquaresInCircles/Geometry.lean` word for word, and states
-`optimal_radius` and `optimal_packings` with `sorry`. Like every file of the
-library, it is a module of Lean's module system, as Palomar requires: it
-begins with `module`, imports with `public import` and exposes its
-definitions in an `@[expose] public section`.
-[`comparator.json`](comparator.json) pairs it with the root module
-`SquaresInCircles`, which proves them, and `scripts/verify-comparator.sh` runs
-`lake comparator` as Palomar does: the same statements over identical
-definitions, only the three standard axioms, and the proofs replayed through
-the NanoDa and con-ron kernels as well as Lean's. Edit the definitions in
-`Geometry.lean` only; `--write` copies them into `Challenge.lean`.
-[`formalization.yaml`](formalization.yaml) records provenance, sources,
-authorship, AI use and review status. The
-[preflight](.github/workflows/palomar.yml) workflow, run by hand, runs
-Palomar's mechanical check on a commit; submissions go through
-<https://submit.palomar-registry.org/>. The preflight does not cover the
-rendering of the Challenge, which Palomar runs after verification and which
-needs mathlib on its release tag ([verification](docs/verification.md)).
+The library is registered in the [Palomar](https://palomar-registry.org/)
+registry as
+[PALOMAR-2026-10-02-000002](https://palomar-registry.org/entry.html?id=PALOMAR-2026-10-02-000002&version=1),
+version 1, from commit `621f234`. Palomar checks the proofs against
+`Challenge.lean`, which imports only mathlib, restates
+`SquaresInCircles/Geometry.lean` word for word and states `optimal_radius` and
+`optimal_packings` with `sorry`; [`comparator.json`](comparator.json) pairs it
+with the library. The check requires the same statements over identical
+definitions, allows only the three standard axioms, and replays the proofs
+through the NanoDa and con-ron kernels as well as Lean's. Edit the definitions
+in `Geometry.lean` only: `scripts/verify-comparator.sh --write` copies them
+into `Challenge.lean`. [`formalization.yaml`](formalization.yaml) records
+provenance, authorship and AI use, the
+[preflight](.github/workflows/palomar.yml) workflow runs Palomar's own check on
+a commit, and new versions go through <https://submit.palomar-registry.org/>,
+with mathlib kept on its release tag ([verification](docs/verification.md)).
 
 ## License
 
