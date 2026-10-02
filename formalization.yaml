@@ -19,8 +19,8 @@ project:
     two squares and, between them, a column of three whose heights vary
     independently, at least 1 apart and within √3 − 1/2 of the disk centre.
     The proofs for three to six squares bound the arcs the squares occupy on
-    a small circle about the disk centre. For six squares this puts one
-    square at the disk centre; five fixed points label the others, and a
+    a small circle about the disk centre. For six squares this finds the
+    square that contains the disk centre; five fixed points label the others, and a
     weighted sum of separating inequalities, with estimates uniform in the
     angles of the squares, forces the optimal radius. For seven squares, each
     square avoiding the disk centre gets a direction from it, and in the
@@ -238,5 +238,6 @@ alignment:
       status: "proved"
 
 acknowledgements: >-
-  Mathlib, and the Lean toolchain with its lake comparator. The pictures of the
-  optimal packings in the README are Erich Friedman's.
+  Mathlib, and the Lean toolchain with its lake comparator. Erich Friedman's
+  Squares in Circles page, the record of the packings proved optimal here, and
+  Erich Friedman for sharing Wei Zhao's note.

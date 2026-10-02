@@ -344,7 +344,9 @@ the NanoDa and con-ron kernels as well as Lean's. Edit the definitions in
 authorship, AI use and review status. The
 [preflight](.github/workflows/palomar.yml) workflow, run by hand, runs
 Palomar's mechanical check on a commit; submissions go through
-<https://submit.palomar-registry.org/>.
+<https://submit.palomar-registry.org/>. The preflight does not cover the
+rendering of the Challenge, which Palomar runs after verification and which
+needs mathlib on its release tag ([verification](docs/verification.md)).
 
 ## License
 

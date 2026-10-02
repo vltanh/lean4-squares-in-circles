@@ -63,7 +63,12 @@ geometry of the proofs, and most assert the facts their captions state.
 
 Build from the committed `lake-manifest.json`, which pins every dependency by
 hash. Avoid `lake update`: seven transitive packages track `main` or `master`
-and would be re-resolved.
+and would be re-resolved. Keep mathlib on its release tag `v4.35.0-rc3`, the
+one that matches the toolchain: after verifying a submission, Palomar renders
+`Challenge.lean` with Verso's release for the same toolchain and merges
+Verso's Lake manifest into this one, and the render fails if a package that
+both pin, `plausible` or `Cli`, has two different revisions. On the tag both
+match Verso's; on mathlib `master` they soon drift.
 
 **Trusted base:** Lean, Lake, mathlib. Every numeric margin is an exact rational
 inequality closed by `norm_num`, `linarith` or `nlinarith`; `π` enters only
