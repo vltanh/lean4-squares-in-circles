@@ -1,5 +1,15 @@
 # n=8 proof tracker
 
+## Current orientation (2026-10-10)
+
+The checklist below is the original planning document and predates most of
+the research on this branch. See [PEN_AND_PAPER_ROADMAP.md](PEN_AND_PAPER_ROADMAP.md)
+for the current evidence, the precise global gap, and the analytic work plan.
+The exact candidate and a conditional five-corner optimum are already
+available with computational certificates. The unrestricted sharp lower bound
+and their complete pen-and-paper replacements are not yet proved.
+The current continuation writes mathematics only; no Lean proof is attempted.
+
 ## Scope
 
 This branch tracks research toward a human-readable proof for eight unit squares
@@ -329,3 +339,4 @@ many angle boxes
   -> generated rows / sampled minima
   -> acceptance by exhaustive computation.
 ```
+

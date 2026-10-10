@@ -6,7 +6,11 @@ This route keeps the fact that the ring has length SEVEN. It is not another atte
 
 ## 1. A general cycle-potential lemma
 
-Let x_0,...,x_6 be the seven exterior states in cyclic order, and let g_i be their actual consecutive OLD-marker gaps. Thus sum g_i=2*pi. A state includes the signed transverse coordinate; the old label is the one in SHARP_MARKER_RING.md.
+Let x_0,...,x_6 be the seven exterior states in cyclic order, and let g_i be their actual consecutive ring-marker gaps. Thus sum g_i=2*pi. A state includes the signed transverse coordinate. Throughout this note the ordering label is exactly
+
+    ell_ring(a,u)=min(11u/10, 5/9+3u/5-17a/50, 157/200),
+
+from SHARP_MARKER_RING.md. It is not the earlier label in EXTERIOR_MARKER_CERTIFICATE.md; the sharper gap bounds below do not hold for that earlier label.
 
 Choose a finite type map kappa(x), a real-valued state potential psi(x), and numbers b_{kl}. Suppose every relevant disjoint pair satisfies
 
@@ -33,7 +37,7 @@ For a proposed nonsharp lower bound q<=qbar one can relax the strict inequalitie
 
 A convenient parameterization is
 
-    psi(a,sigma*u)=sigma*(L_k(a,u)-ell_old(a,u)),
+    psi(a,sigma*u)=sigma*(L_k(a,u)-ell_ring(a,u)),
 
 where L_k is an explicit function on type k. Then the left side of (1) is the directed relative frame angle minus sigma*L_source plus tau*L_target. Each pair assertion is a five-variable continuous statement in a,u,A,v,g, with four sign choices. It is accessible to the existing interval support engine, rather than requiring a 23-variable global packing search.
 
@@ -80,3 +84,4 @@ The potential lemma turns a possible global obstruction into a finite set of pai
 It could either yield a sharper unconditional lower bound first or lead to a sharp certificate with a local equality argument. At present neither outcome has been certified. The rigorously established unrestricted bound remains the one in GLOBAL_LOWER_BOUND.md.
 
 No Lean code is being written. Exploratory optimizations and unsuccessful fits are not mathematical proof premises.
+
