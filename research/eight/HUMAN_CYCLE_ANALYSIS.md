@@ -397,3 +397,184 @@ penalty (5.2) offers a way to justify shared orientations near a candidate
 contact chain. Neither route currently forces the five-corner chain from
 every minimizing packing. That unrestricted structural implication remains
 the main open step.
+
+## 7. Sharp radius of a straight separator chain
+
+There is a stronger global restriction on straight force transmission than
+the elementary projected-width bound. The following theorem does not assume
+that the square orientations agree.
+
+**Theorem.** Let `S_1,...,S_k`, `k>=2`, be unit squares in a radius-R disk.
+Write their centers as c_i and their centered-square supports as h_i. Suppose
+one unit vector n orders them through the separating inequalities
+
+    n dot (c_(i+1)-c_i) >= h_i(n)+h_(i+1)(n),
+    1<=i<k.                                               (7.1)
+
+Then
+
+    R >= sqrt(k^2+1)/2.                                   (7.2)
+
+The bound is sharp. At equality all square frames have an axis parallel to
+n. After choosing a perpendicular unit vector m, their centers have the form
+
+    c_i = [i-(k+1)/2] n + t_i m,
+    t_1=t_k=0,
+
+where the interior parameters t_i may vary subject to disk containment.
+
+### A universal bound on the center radius
+
+For a unit square with center c and frame `(e,f)`, the farthest-vertex squared
+distance is
+
+    |c|^2 + |c dot e| + |c dot f| + 1/2.
+
+Since `|c dot e|+|c dot f|>=|c|`, containment in a radius-R disk gives
+
+    (|c|+1/2)^2 <= R^2-1/4,
+    |c| <= rho-1/2,        rho=sqrt(R^2-1/4).              (7.3)
+
+If equality holds and c is nonzero, one local coordinate of c must vanish,
+because equality between the sum of absolute coordinates and their Euclidean
+norm occurs only on an axis. In that case the center is directed along one
+of the square's side normals. No optimization or assumed outward motion of
+the square is used in (7.3).
+
+### Proof of the chain theorem
+
+Every unit square has `h_i(n)>=1/2`. Summing (7.1) therefore gives
+
+    k-1 <= h_1(n)+h_k(n)+2 sum_(i=2)^(k-1) h_i(n)
+         <= n dot (c_k-c_1)
+         <= |c_k|+|c_1|
+         <= 2rho-1,
+
+where the final inequality is (7.3). Thus `rho>=k/2`, which is (7.2).
+
+At equality every projected square width must be one, forcing an axis
+parallel to n for every square. Every separator in (7.1) is tight. Equality
+in the last two center inequalities forces the endpoint centers to be
+`-(k-1)n/2` and `(k-1)n/2`, with zero transverse coordinate. The unit normal
+center spacings then give the displayed centers.
+
+Conversely, those aligned squares have disjoint projection interiors, and
+their containment is exactly
+
+    (|i-(k+1)/2|+1/2)^2 + (|t_i|+1/2)^2 <= (k^2+1)/4.
+
+The endpoint values are t_1=t_k=0, and all internal choices satisfying this
+inequality are allowed. This establishes sharpness and the stated equality
+freedom. `QED`
+
+### Consequence below radius two
+
+A straight chain of four squares needs
+
+    R >= sqrt(17)/2 > 2.
+
+Thus any chain satisfying (7.1) in `R<2` has at most three squares. In
+particular, along a positive-stress path on four distinct squares, the two
+internal vertices cannot both have zero force and stress degree two: each
+would transmit the same weighted normal unchanged, producing a four-square
+straight chain. This is a genuine restriction on an arbitrary minimizing
+stress graph, using only its equilibrium and disk containment. It does not
+presume the candidate graph.
+
+## 8. A contact-minimal minimizer locks its two-contact interior squares
+
+The following supplies an orientation conclusion without assuming common
+square angles. Count a pair as a contact when its closed squares meet;
+disjoint open interiors continue to be the packing condition. This is the
+**actual contact graph**, which may contain additional edges of zero weight
+in a chosen positive-stress graph.
+
+An optimal radius is attained by the compactness argument in
+BALANCED_SEPARATOR_REDUCTION.md. Among the packings attaining that radius,
+choose one with the fewest contacting pairs. Such a choice exists: the
+contact count belongs to the finite set `{0,...,28}`, and the set of
+radius-minimizing packings is nonempty.
+
+**Theorem.** In this chosen packing, a square all of whose vertices lie
+strictly inside the circle has either no contacts or at least two contacts.
+If it has exactly two contacts, then the contacts admit only opposite
+separating normal directions, and the square has a side normal parallel to
+those directions. In particular it lies in a straight three-square
+separator chain with its own opposite sides.
+
+### Removing contacts by a translation
+
+For each neighboring square choose a separating unit normal pointing from
+that neighbor toward the interior square S. At a contact its separating
+inequality is an equality. If S has exactly one contact with chosen normal n,
+translate S a small positive distance in direction n. Its contact becomes a
+strict separation.
+
+If S has exactly two contacts with selected normals n_1 and n_2 and they
+are not opposite, translate instead in direction `v=n_1+n_2`. Since the
+normals are unit and not opposite,
+
+    n_1 dot v = n_2 dot v = 1+n_1 dot n_2 > 0.
+
+Both contacts become strict separations. These motions preserve circle
+containment for sufficiently small positive distance because S is strictly
+inside the circle. They also preserve its separation from every other
+square: noncontacting closed squares are compact disjoint sets with positive
+distance, and there are only finitely many of them. All other squares stay
+fixed. Hence no new contact is created and at least one old contact is
+removed, contradicting minimality of the contact count.
+
+It follows that an interior square cannot have exactly one contact. With
+exactly two contacts, every choice of one separating normal per contact must
+be opposite. In particular each contact has a unique separating normal
+direction, and the two directions are n and -n.
+
+### Removing contacts by a rotation unless a side is aligned
+
+The two fixed neighbors lie on opposite sides of the two parallel support
+lines of S perpendicular to n. The distance between those lines is the
+projected width of S,
+
+    w=|cos(theta)|+|sin(theta)|,
+
+where theta is its frame angle relative to n. If no side normal is parallel
+to n, then `w>1`. There are arbitrarily small rotations of S about its center
+that strictly reduce w. Indeed, after square symmetries
+`0<theta<=pi/4`; decreasing theta reduces `cos(theta)+sin(theta)` strictly,
+including at the endpoint by strict increase on `[0,pi/4]`.
+
+Under such a rotation its normal center coordinate is unchanged, and both
+normal support lines move strictly inward. The rotated square therefore has
+a strict separator from each fixed neighbor. The fixed direction n remains
+a valid geometric separating direction even if it is no longer a side
+normal of the rotated square. A sufficiently small rotation preserves its
+strict disk containment and all its other positive separation distances.
+Again two contacts disappear without any new contact, a contradiction.
+Consequently w must be one, and a side normal of S is parallel to n. `QED`
+
+### Corollary: two interior transmitters cannot be adjacent below radius two
+
+In a contact-minimal radius minimizer with `R<2`, the squares strictly inside
+the circle that have actual contact degree two form an independent set in
+the actual contact graph.
+
+Indeed, suppose U and V were two such squares in contact. Let A be the other
+neighbor of U, and B the other neighbor of V. The unique opposite normal
+directions just proved propagate the common separator along
+
+    A, U, V, B.
+
+If A and B are distinct, these four distinct squares form the straight chain
+excluded by section 7. If A=B, the three directed positive-width separation
+inequalities form a closed straight chain; summing them gives zero strictly
+greater than zero, again impossible. This argument concerns actual contacts
+and does not require any stress to be selected.
+
+This theorem does not say that all squares strictly inside the circle have
+degree two, nor that the two neighboring squares share their orientation.
+It provides the exact conclusion needed once a C-type or G-type two-contact
+transmitter has been identified: its own orientation is forced by the two
+opposite supports. Together with section 7, such transmitters cannot appear
+consecutively in a straight stress path below radius two. Selecting and
+controlling the remaining contact graph is still necessary for the sharp
+eight-square proof.
