@@ -14,6 +14,9 @@ The current continuation writes mathematics only; no Lean proof is attempted.
 
 - [x] Give an explicit rational eight-square packing, with complete
       containment and pair-separation proofs.
+- [x] Extend every least-family-radius stationary configuration to
+      eight full squares, with three independently variable positions,
+      using only the defining equations and analytical bounds.
 - [x] Prove the full fixed-tilt position convexity and exact domain of the
       five-corner defect.
 - [x] Give an analytic least-stationary-root characterization of the
@@ -49,14 +52,16 @@ The current continuation writes mathematics only; no Lean proof is attempted.
       for an arbitrary radius-minimizing eight-square packing.
 - [ ] Identify the least admissible family root with the previously
       isolated candidate root by an analytic proof.
-- [ ] Prove the eight-square construction at that exact selected root
-      without the existing interval margin checks.
+- [x] Prove the eight-square construction at the exact selected least
+      family root without the existing interval margin checks.
 - [ ] Combine these results into the unconditional equality $R_8=R_*$.
 
-The new construction proves $R_8\le\sqrt{9789}/50$, close to but strictly
-above the proposed sharp radius. The conditional family results and the
-contact-pattern implications do not yet establish the unrestricted lower
-bound. See the roadmap for exact statements and links to every new proof.
+The exact construction now proves $R_8\le\widehat R$, where $\widehat R$
+is the analytically selected least five-corner radius. The earlier rational
+construction also remains a standalone explicit upper bound. The
+conditional family results and contact-pattern implications do not yet
+establish the unrestricted lower bound. See the roadmap for exact statements
+and links to every new proof.
 
 ## Original checklist (historical)
 

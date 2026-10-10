@@ -132,3 +132,25 @@ comparisons before this commit.
 This theorem does not yet prove a fixed central core, the seven marker
 gap bounds, or the sharp five-corner obstruction.
 
+### Exact construction at the least family radius: closed
+
+ANALYTIC_EXACT_CONSTRUCTION.md proves $R_8\le\widehat R$, where
+$\widehat R$ is the least radius selected analytically by the stationary
+polynomial system. The root is not replaced by a numerical approximation.
+The coordinate order and support enclosure imply
+$u>7/10$, $r<93/50$, $w<48/25$, and the tilted top bound
+$Y_G<-41/260$. These bounds leave room for both middle squares.
+
+The note checks every farthest-vertex comparison and all 28 pairs, in
+groups of 15, 1, 4, and 8. Explicit independent intervals of radius
+$10^{-5}$ are given for the two middle heights and the transverse position
+of the second tilted square. They preserve strict disk and non-contact
+margins while retaining the required exact contact identities.
+An independent audit rederived the projection identities, horizontal and
+vertical gaps, concavity argument used in the enclosure, and displayed
+fractions. No correction remained before the commit.
+
+The sharp construction work package is therefore complete at the exact
+least family root. The unrestricted reverse inequality remains to be
+proved; the construction does not assert it.
+

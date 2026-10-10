@@ -36,6 +36,7 @@ the earlier certificate-only premises.
 | New result | Proof |
 | --- | --- |
 | Eight explicitly specified rational squares fit in radius $\sqrt{9789}/50 = 1.9787875\ldots$ | [ANALYTIC_RATIONAL_CONSTRUCTION.md](ANALYTIC_RATIONAL_CONSTRUCTION.md): seven exact farthest-vertex comparisons and a complete separating-line argument for all 28 pairs |
+| Eight squares fit at the exact least five-corner radius $\widehat R$, with three independent sliders | [ANALYTIC_EXACT_CONSTRUCTION.md](ANALYTIC_EXACT_CONSTRUCTION.md): the stationary order and the whole-family enclosure in HUMAN_FAMILY_ENCLOSURE.md give all containment and 28 pair checks analytically |
 | At every fixed tilt the five-corner defect is strictly convex in its position variable on the complete radical domain | [HUMAN_FIVE_CORNER.md](HUMAN_FIVE_CORNER.md), Lemmas 1–2 |
 | A global $F_{tt}+4F>91/45$ inequality gives a convex transformed fixed-position tilt defect | HUMAN_FIVE_CORNER.md, Lemma 3 |
 | The family optimum is attained at an interior stationary point and is exactly the least admissible q in a nine-variable polynomial system | HUMAN_FIVE_CORNER.md, Lemmas 4–8; the exact zero-tilt optimum is $\sqrt{2257}/24$ and nonzero tilt improves it |
@@ -265,15 +266,17 @@ missing inference must not be skipped.
 
 ### Priority 3: construct eight squares at the selected exact optimum
 
-The rational construction is already a complete unconditional upper bound.
-For sharp equality, replace its positive margins by direct estimates from
-the selected root equations, or prove that a least-family-root configuration
-extends to all eight squares. The new bounds $u,v<1$, $r>U$, $w>V$ and
-$k_1>1$, $k_2>1/2$ already justify the column ordering and useful tilted-corner
-comparisons. They do not check every extra square pair or the placement of
-both middle squares. Retain the known three sliders: forcing all
-eight squares to touch the circle, or asserting isolated equality, would be
-incorrect.
+**Completed.** ANALYTIC_EXACT_CONSTRUCTION.md extends every selected
+least-family-radius stationary point to eight squares. The proof uses
+$1/2<v<u<1$, $R>79/40$, and $\tan t<1/5$, all now established
+analytically. It checks every farthest vertex and all 28 pairs, and supplies
+three independent closed slider intervals with positive residual margins.
+The resulting unconditional upper bound is $R_8\le\widehat R$.
+
+This construction does not depend on identifying a tiny numerical root
+box. The equality $R_8=\widehat R$ still needs the unrestricted lower
+bound; equating $\widehat R$ with the earlier root specification is the
+separate family-identification task above.
 
 ### Priority 4: assemble the sharp theorem
 
