@@ -288,7 +288,235 @@ vanish identically, `F` is constant in the tilt and either endpoint already
 supplies the minimum. This is a complete algebraic alternative to an angle
 grid for the fixed-position subproblem.
 
-## 5. Audit: what has and has not become a human proof
+## 5. A global curvature inequality in the tilt
+
+### Lemma 3
+
+Throughout the entire radical domain, for every `25/16 < R < 2` and
+`0 <= t <= pi/4`,
+
+    F_tt + 4*F > 91/45.                                    (11)
+
+This is a global analytic inequality, including positions far from the
+candidate. In particular, at every point with `F<=0`, one has `F_tt>0`.
+
+#### Proof
+
+Let `k=(k1,k2)` and `d=(2,1)`. Direct differentiation gives
+
+    k_tt = d-k.
+
+Moreover the sum of the squared lengths of the two orthogonal tilt
+projections is
+
+    |k_t|^2 + |k-d|^2
+       = (r-1)^2+u^2+v^2+(w-1)^2
+       = 2*R^2+2-2*(r+w).
+
+Both terms on the left are needed in this identity. Combining it with
+`F=|k|^2-R^2` gives
+
+    F_tt/2 + 2*F = E,
+    E = 6*k1+3*k2-3-2*(r+w).                               (12)
+
+The elementary circle bounds
+
+    r <= 2-u^2/4,       w <= 2-v^2/4
+
+follow by squaring, using `R<2` and `0<=u,v<=R`. Substitution into (12)
+gives
+
+    E >= 4+(u^2+v^2)/2 + c*A + s*B,
+    A = 3*u^2/2 + 3*v - 6,
+    B = 3*v^2/4 + 6*u - 3.                                 (13)
+
+The top span forces `B>0`. Indeed weighted Cauchy-Schwarz and `U+V=3`
+give
+
+    3 <= U^2+V^2/2
+      < 4*u-u^2 + 2*v-v^2/2,
+
+where the strict inequality uses `R^2<4` in both circle equations.
+Rearranging shows
+
+    B > (3/2)*(u^2+(v-1)^2) > 0.                            (14)
+
+If `A>=0`, (13) gives `E>=4`. If `A<0`, use `c<=1`, `s>=0`, and (14)
+to obtain
+
+    E >= -2+2*u^2+v^2/2+3*v.                               (15)
+
+Put `S=u+v`. Concavity of `x |--> sqrt(R^2-(2-x)^2)` and `U+V=3` imply
+
+    S >= 4-2*sqrt(R^2-9/4) > 4-sqrt(7) > 4/3.
+
+Completing the square gives the exact identity
+
+    -2+2*u^2+v^2/2+3*v
+       = (5/2)*(v-(4*S-3)/5)^2
+         + (4*S^2+24*S-29)/10.
+
+The last polynomial increases for `S>=0`; at `S=4/3` its value is `91/90`.
+Thus (15) is strictly greater than `91/90`. This also holds in the earlier
+case `E>=4`. Equation (12) proves (11).
+
+### Corollary: the feasible tilts at a fixed position form an interval
+
+Let
+
+    theta = 2*(t-pi/8),       xi = tan(theta),
+    G(xi) = F(R^2,-u,t)/cos(theta).
+
+Here `-1<=xi<=1` and `cos(theta)>0`, including both endpoints. Twice
+applying the chain rule gives
+
+    G''(xi) = cos(theta)^3 * (F_tt+4*F)/4 > 0.
+
+Thus `G` is strictly convex on the entire transformed angle interval. Its
+nonpositive set is an interval, and multiplying by the positive cosine
+does not change signs. This proves the corollary.
+
+This is a statement for one fixed position. Separate convexity in position
+and transformed tilt does **not** by itself prove joint convexity, or
+convexity of the minimized envelope `M_R`. In particular it is not yet a
+replacement for the sharp conditional lower-bound certificate.
+
+## 6. Both tilt endpoints can be excluded analytically
+
+### Lemma 4: the endpoint `t=pi/4` has positive envelope derivative
+
+For `sqrt(13)/2 <= R < 2`,
+
+    M_R'(pi/4) > 0.
+
+Consequently `pi/4` cannot minimize the complete five-corner problem.
+
+#### Proof
+
+At the symmetric position `u=v=m`, one has `r=w` and `v'(u)=-1`.
+At tilt `pi/4`, `k1-k2=1` and
+
+    k1_u = -k2_u = (1+m/r)/sqrt(2).
+
+Therefore `F_u(m,pi/4)>0`. Lemma 2 puts the unique minimizing position
+strictly to the left of `m`; the decreasing involution then gives `u<v`
+at that minimizer.
+
+For a variable `x` in the open radical interval define
+
+    rho(x) = sqrt(R^2-x^2),
+    g(x) = sqrt(R^2-(2-x)^2),
+    Phi(x) = rho(x)*g'(x)*(x+rho(x)-1)/(x+rho(x)).            (16)
+
+This function is positive and strictly decreasing. To prove that assertion,
+write `h=x+rho(x)>R>1`. Logarithmic differentiation yields
+
+    Phi'(x)/Phi(x)
+       = -x/rho(x)^2
+         - R^2/((2-x)*g(x)^2)
+         + (1-x/rho(x))/(h*(h-1)).                         (17)
+
+For any `0<a<R`, the maximum of `a*(R^2-a^2)` is
+`2*R^3/(3*sqrt(3))`. With `a=2-x`, this implies
+
+    R^2/((2-x)*g(x)^2) >= 3*sqrt(3)/(2*R).
+
+Also `h>=R` and `1-x/rho(x)<=1`, so the last term in (17) is at most
+`1/(R*(R-1))`. Since `R>25/16` implies
+
+    1/(R-1) < 16/9 < 3*sqrt(3)/2,
+
+equation (17) is strictly negative.
+
+It remains to connect (16) to the envelope derivative. At its minimizing
+position, equation (6) at tilt `pi/4` says
+
+    k1*(u+r)/r = k2*p*(v+w)/w,
+    p = g'(u)/g'(v).
+
+Substitute this equality into (8). The sign of `F_t`, and therefore the
+sign of `M_R'`, is precisely the sign of
+
+    Phi(u)-Phi(v).
+
+All factors cancelled in taking this sign are positive: `k2,r,w,g'(v)`
+and `u+r,v+w` are positive. Since `u<v` and `Phi` strictly decreases,
+this difference is positive, as required.
+
+### Lemma 5: the endpoint `t=0` is excluded near the candidate radius
+
+For the entire rational squared-radius interval
+
+    3915/1000 <= R^2 <= 979/250,                            (18)
+
+one has
+
+    99/100 < u_R(0) < 101/100,
+    M_R'(0) < -1/10.                                       (19)
+
+The previously isolated candidate squared radius is inside (18). This
+lemma uses only the following displayed rational bounds and square
+comparisons; it does not depend on running the isolation program.
+
+#### Proof
+
+At zero tilt put
+
+    D0(u) = F_u/2 = (3/r-1)*u - (1+v)*p,
+    p = (2-u)*V/(U*(2-v)).
+
+The following bounds follow directly from (18) and the four circle
+radicals. All terminating decimals in this table denote exact rationals.
+
+| Fixed u | r | U | V=3-U | 2-v | v |
+| --- | --- | --- | --- | --- | --- |
+| 0.99 | [1.713,1.714] | [1.701,1.702] | [1.298,1.299] | [1.492,1.494] | [0.506,0.508] |
+| 1.01 | [1.701,1.702] | [1.713,1.714] | [1.286,1.287] | [1.502,1.505] | [0.495,0.498] |
+
+For example, at `u=0.99`, `r^2` lies in `[2.9349,2.9359]`, between the
+squares of `1.713` and `1.714`. Also `(2-v)^2` lies in
+`[3.915-1.299^2, 3.916-1.298^2]`, which is between the squares of `1.492`
+and `1.494`. The other table entries follow in the same order by these
+exact square comparisons.
+
+Substitution gives the explicit rational inequalities
+
+    D0(0.99)
+      <= (3/1.713-1)*0.99
+         - 1.506*(1.01*1.298)/(1.702*1.494)
+      < -3/100,
+
+    D0(1.01)
+      >= (3/1.702-1)*1.01
+         - 1.498*(0.99*1.287)/(1.713*1.502)
+      > 1/50.
+
+Each final comparison is a rational multiplication with positive
+denominators. Strict convexity now puts the minimizer between these
+positions.
+
+Throughout that whole position interval, the same radical comparisons give
+
+    r >= 1.701,      v >= 0.495,      w >= 1.912.
+
+For the last bound use `v<=0.508` and
+`w^2 >= 3.915-0.508^2 > 1.912^2`. At tilt zero, (8) therefore gives
+
+    M_R'(0)/2
+       = (3-r)*u - (1+v)*(w-1)
+       <= 1.299*1.01 - 1.495*0.912
+       = -0.05145 < -1/20.
+
+This proves (19).
+
+### Consequence
+
+For every radius in (18), the minimum of the five-corner defect over both
+variables is attained at an interior position and an interior tilt. Hence
+all global minima obey the stationary equations. This is an analytic
+endpoint reduction; uniqueness of the interior tilt remains to be proved.
+
+## 7. Audit: what has and has not become a human proof
 
 Established analytically in this note:
 
@@ -299,6 +527,11 @@ Established analytically in this note:
 - The remaining global family problem is the one-variable envelope `M_R`.
 - Fixed-position tilt minimization reduces to an explicit quartic and two
   endpoints; no interval box cover is involved in these reductions.
+- A global modified-curvature bound makes the fixed-position feasible tilt
+  set an interval after an explicit change of variable.
+- Both endpoint tilts are excluded near the candidate radius by fully
+  displayed analytic and rational inequalities, so all global minima there
+  are interior stationary points.
 
 Still not established by these lemmas:
 
