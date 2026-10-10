@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="650" viewBox="0 0 620 650" role="img" aria-labelledby="title desc">
+<title id="title">Eight rational unit squares in a circle</title>
+<desc id="desc">Six axis-parallel squares form three columns. Two squares share a tilted frame beneath them. The displayed coordinates are the exact rational construction proved in the accompanying note.</desc>
+<rect width="620" height="650" fill="white"/>
+<g font-family="Arial, sans-serif" fill="#243348">
+<text x="310" y="32" text-anchor="middle" font-size="23" font-weight="600">Eight unit squares</text>
+<text x="310" y="57" text-anchor="middle" font-size="16">Exact rational construction · R = √9789 / 50</text>
+<circle cx="310" cy="340" r="257.242376" fill="#FAFBFC" stroke="#475569" stroke-width="1.8"/>
+<polygon points="407.975670,459.166667 537.975670,459.166667 537.975670,329.166667 407.975670,329.166667" fill="#DCEEF3" stroke="#334155" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="395.266350,329.166667 525.266350,329.166667 525.266350,199.166667 395.266350,199.166667" fill="#DCEEF3" stroke="#334155" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="265.266350,359.500000 395.266350,359.500000 395.266350,229.500000 265.266350,229.500000" fill="#ECE6F5" stroke="#334155" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="135.266350,281.209710 265.266350,281.209710 265.266350,151.209710 135.266350,151.209710" fill="#DFE9F6" stroke="#334155" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="62.810200,411.209710 192.810200,411.209710 192.810200,281.209710 62.810200,281.209710" fill="#DFE9F6" stroke="#334155" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="265.266350,229.500000 395.266350,229.500000 395.266350,99.500000 265.266350,99.500000" fill="#ECE6F5" stroke="#334155" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="285.913440,530.545774 414.901767,514.359004 398.714997,385.370677 269.726670,401.557447" fill="#F9E5C9" stroke="#334155" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="156.925113,546.732544 285.913440,530.545774 269.726670,401.557447 140.738343,417.744218" fill="#F9E5C9" stroke="#334155" stroke-width="1.6" stroke-linejoin="round"/>
+<text x="472.975670" y="401.166667" text-anchor="middle" font-size="21" font-weight="600">A</text>
+<text x="460.266350" y="271.166667" text-anchor="middle" font-size="21" font-weight="600">B</text>
+<text x="330.266350" y="301.500000" text-anchor="middle" font-size="21" font-weight="600">C</text>
+<text x="200.266350" y="223.209710" text-anchor="middle" font-size="21" font-weight="600">D</text>
+<text x="127.810200" y="353.209710" text-anchor="middle" font-size="21" font-weight="600">E</text>
+<text x="330.266350" y="171.500000" text-anchor="middle" font-size="21" font-weight="600">T</text>
+<text x="342.314219" y="464.958225" text-anchor="middle" font-size="21" font-weight="600">G</text>
+<text x="213.325892" y="481.144996" text-anchor="middle" font-size="21" font-weight="600">H</text>
+<circle cx="310" cy="340" r="2.7" fill="#9A3412"/>
+<text x="319" y="357" font-size="13" fill="#9A3412">0</text>
+<text x="310" y="621" text-anchor="middle" font-size="13">The proof checks every vertex and all 28 pairs exactly.</text>
+</g></svg>

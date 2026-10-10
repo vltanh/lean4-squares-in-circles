@@ -10,6 +10,53 @@ available with computational certificates. The unrestricted sharp lower bound
 and their complete pen-and-paper replacements are not yet proved.
 The current continuation writes mathematics only; no Lean proof is attempted.
 
+### Completed analytical work in this continuation
+
+- [x] Give an explicit rational eight-square packing, with complete
+      containment and pair-separation proofs.
+- [x] Prove the full fixed-tilt position convexity and exact domain of the
+      five-corner defect.
+- [x] Give an analytic least-stationary-root characterization of the
+      conditional family optimum, including global endpoint exclusions.
+- [x] Prove feasible-branch position monotonicity and the stationary
+      coordinate inequalities needed for the construction's column order.
+- [x] Prove compactness, exact center supports, balanced stresses, and
+      complete normal angle stationarity for arbitrary minimizers.
+- [x] Prove the exceptional-corner bound and the outward disk-cap capacity.
+- [x] Exclude four-square straight separator chains below radius two.
+- [x] Derive the orientation of strictly interior two-contact squares.
+- [x] Derive a four-square common frame from two such squares sharing their
+      two actual neighbors.
+- [x] Prove radial leaf geometry and exclude nontrivial actual-contact tree
+      components in a minimum-contact minimizer.
+- [x] Prove force and moment equilibrium at actual common contact points;
+      constrain positive-stress bridges and tree components.
+- [x] Exclude every nontrivial stress-tree component under the explicit
+      hypothesis $\sqrt2+1/2<R<2$, retaining the distinction between this
+      conditional result and an analytic lower bound placing $R_8$ there.
+- [x] Replace the symmetric four-type seven-walk enumeration by an exact
+      elementary formula.
+
+### Remaining proof obligations
+
+- [ ] Force a sufficient contact pattern or a sharp alternative inequality
+      for an arbitrary radius-minimizing eight-square packing.
+- [ ] Identify the least admissible family root with the previously
+      isolated candidate root by an analytic proof.
+- [ ] Prove the eight-square construction at that exact selected root
+      without the existing interval margin checks.
+- [ ] Combine these results into the unconditional equality $R_8=R_*$.
+
+The new construction proves $R_8\le\sqrt{9789}/50$, close to but strictly
+above the proposed sharp radius. The conditional family results and the
+contact-pattern implications do not yet establish the unrestricted lower
+bound. See the roadmap for exact statements and links to every new proof.
+
+## Original checklist (historical)
+
+The sections below preserve the earlier plan; their unchecked boxes are
+not the current completion record.
+
 ## Scope
 
 This branch tracks research toward a human-readable proof for eight unit squares
