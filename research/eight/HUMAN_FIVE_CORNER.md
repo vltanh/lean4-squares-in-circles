@@ -14,9 +14,11 @@ lemma reduces optimization of the tilt at a fixed position to one explicit
 quartic equation and the two endpoints.
 
 These facts substantially simplify the conditional optimization problem.
-They do not by themselves prove that the angle-dependent minimum has its
-unique global minimum at the previously isolated candidate. That last angle
-statement is still supplied only by the existing computational certificate.
+They also give the exact zero-tilt optimum, an analytic strict improvement
+by tilting, and a global least-root polynomial characterization of the sharp
+family radius. They do not identify that least root with the previously
+isolated candidate. That identification is still supplied only by the
+existing computational certificate.
 
 ## 1. A symmetric parametrization and the exact radical domain
 
@@ -516,7 +518,237 @@ variables is attained at an interior position and an interior tilt. Hence
 all global minima obey the stationary equations. This is an analytic
 endpoint reduction; uniqueness of the interior tilt remains to be proved.
 
-## 7. Audit: what has and has not become a human proof
+## 7. An exact endpoint optimum and a least-root characterization
+
+The following results supply an existence and global selection rule for the
+sharp five-corner radius without using the candidate's tiny isolating box.
+They do not identify the selected root with that candidate.
+
+### Lemma 6: an elementary lower bound for every five-corner chain
+
+Every chain in the stated angle range satisfies
+
+    R >= 11/(4*sqrt(2)) > sqrt(13)/2.                       (20)
+
+#### Proof
+
+Orient the five consecutive edge requirements around
+`P1,P2,P3,P4,P5,P1`. Their unit normals are
+
+    n1=(0,1),     n2=(-1,0),    n3=(0,-1),
+    n4=(s,-c),    n5=(c,s).
+
+Summing all five inequalities with multiplier one, then applying the disk
+support bound to each vertex, gives
+
+    B <= R*D,
+    B = 10+c+s,
+    D = 3*sqrt(2)+sqrt(2-2*s)+sqrt(2-2*c).                  (21)
+
+Indeed the coefficient of `Pi` in the sum is `n_(i-1)-n_i`, with cyclic
+indices, and each corresponding dot product is at most the coefficient's
+length times `R`. The displayed `D` is the exact sum of these five lengths.
+
+Put `h=t/2`, `b=pi/8`, and `a=sqrt(2)-1=tan(b)`. Then
+
+    B = 10+cos(2*h)+sin(2*h),
+    D = sqrt(2)*(3+cos(h)+a*sin(h)).
+
+The desired inequality `B/D >= 11/(4*sqrt(2))` is equivalent to
+
+    J(h) = 7+4*cos(2*h)+4*sin(2*h)
+             -11*cos(h)-11*a*sin(h) >= 0.
+
+Here `J(0)=0`. With `delta=b-h`, differentiation and the angle addition
+formulas give
+
+    J'(h) = sin(delta)*(16*sqrt(2)*cos(delta)-11/cos(b)).
+
+For `0<=delta<=b`, the factor in parentheses is at least
+
+    (16*sqrt(2)*cos(b)^2-11)/cos(b)
+       = (8*sqrt(2)-3)/cos(b) > 0.
+
+Thus `J` increases on `[0,b]`, proving (20). The comparison with
+`sqrt(13)/2` follows by squaring: `121/32 > 13/4`.
+
+### Lemma 7: the exact zero-tilt radius
+
+Among all five-corner chains with `t=0`, the smallest radius is
+
+    R0 = sqrt(2257)/24,       q0 = 2257/576.                (22)
+
+A nonzero tilt strictly improves this radius within the five-corner
+family.
+
+#### Proof of the exact endpoint radius
+
+At tilt zero, combine the third and fourth projected inequalities to get
+
+    P3.y-P5.y >= 3.
+
+The remaining four-point requirements are
+
+    P2.y-P1.y >= 2,     P3.y-P5.y >= 3,
+    P2.x-P3.x >= 3,     P1.x-P5.x >= 3.                    (23)
+
+Reflect in the horizontal axis and simultaneously exchange `P1` with `P2`
+and `P3` with `P5`. Conditions (23) are unchanged. The coordinate-wise
+average of the old and new configurations still satisfies (23), because
+these constraints are linear, and still lies in the disk, because the disk
+is convex. This averaged configuration has the form
+
+    P1=(b,-h), P2=(b,h), P3=(a,k), P5=(a,-k),
+    h>=1,      k>=3/2,   b-a>=3.
+
+Consequently
+
+    3 <= b-a <= sqrt(q-1)+sqrt(q-9/4).                    (24)
+
+The sum of radicals strictly increases with `q`. At equality its two
+summands have sum three and squared difference `5/4`, so they are `41/24`
+and `31/24`. This gives exactly (22).
+
+Equality is realized by
+
+    P1=(41/24,-1),       P2=(41/24,1),
+    P3=(-31/24,3/2),     P5=(-31/24,-3/2),
+    P4=(-31/24,-1/2).
+
+The first four displayed boundary points have squared norm `q0`; `P4` lies
+strictly inside the disk. Every original five-corner inequality is an
+equality. This proves the matching upper bound.
+
+#### Proof of a strict improvement by tilting
+
+Use the boundary parametrization, which is another valid realization at
+this same endpoint optimum. Its parameters are exactly
+
+    u=1,       v=1/2,       r=U=41/24,
+    V=31/24,   w=sqrt(2113)/24,
+    k1=31/24,  k2=3/2.
+
+The fourth point in this boundary parametrization is
+`P4=(-sqrt(2113)/24,-1/2)`; its different horizontal coordinate does not
+change any constraint at zero tilt.
+
+Equation (8) now gives the exact first derivative
+
+    F_t(q0,-1,0)/2 = (134-3*sqrt(2113))/48 < 0.             (25)
+
+The sign follows by squaring positive quantities:
+`9*2113=19017 > 134^2=17956`. Thus at fixed `q0,u=1`, sufficiently small
+positive tilts have `F<0`. All radicals at this configuration are strictly
+positive, so continuity permits a simultaneous small decrease in `q` while
+retaining `F<0`. The exact converse of the scalar reduction then supplies a
+five-corner chain in a radius strictly below `R0`.
+
+This is a strict improvement theorem for the projected family. It does not
+assert that every nearby choice extends to eight disjoint full squares;
+that is a separate construction check.
+
+### Lemma 8: a globally selecting polynomial system
+
+Let `R_hat` denote the smallest radius of any five-corner chain, allowing
+all `0<=t<=pi/4`. Then the minimum is attained,
+
+    121/32 <= R_hat^2 < 2257/576,                           (26)
+
+and every minimizing scalar representative has an interior position and
+an interior tilt. In particular `R_hat^2` is exactly the **smallest q**
+selected by the following polynomial equalities and sign conditions.
+
+Use nine real variables
+
+    q,u,v,r,w,U,V,c,s,
+
+with
+
+    121/32 <= q < 2257/576,
+    u,v,r,w,U,V > 0,       0 < s < c,
+
+and impose the equations
+
+    r^2+u^2=q,             w^2+v^2=q,
+    U^2+(2-u)^2=q,         V^2+(2-v)^2=q,
+    U+V=3,                c^2+s^2=1.                      (27)
+
+Define the polynomial expressions
+
+    k1=2-c*(r-1)+s*u,
+    k2=1+c*v-s*(w-1).
+
+The three further polynomial equations are
+
+    k1^2+k2^2=q,                                          (28)
+
+    k1*(s*r+c*u)*U*(2-v)*w
+       = k2*V*(2-u)*(c*w+s*v)*r,                          (29)
+
+    k1*((r-1)*s+u*c)
+       = k2*(v*s+(w-1)*c).                               (30)
+
+No interval subdivision or isolated decimal root is part of this selection
+rule. The word **smallest** is essential.
+
+#### Proof
+
+There is at least one chain at `R0`, by Lemma 7. Restrict all five points to
+the fixed disk of radius `R0`, the angle to `[0,pi/4]`, and the variable
+radius to `[0,R0]`. The disk-containment inequalities and projected chain
+inequalities are closed conditions in this bounded finite-dimensional
+space. Hence compactness gives an attained least radius. Lemmas 6 and 7
+prove (26).
+
+At this least radius, choose the unique minimizing position for whichever
+tilt occurs. By (20) and Lemma 2, that position is interior and all four
+radicals are positive. The defect must equal zero. Otherwise continuity
+would allow a small decrease in the radius while preserving a strictly
+negative defect, contradicting minimality.
+
+For clarity, radius monotonicity in this open domain can also be checked
+directly. At fixed `u,t`,
+
+    r_q=1/(2*r)>0,
+    v_q=-3/(2*U*(2-v))<0,
+    w_q=(1-2*v*v_q)/(2*w)>0.
+
+Thus `k1_q<0`, `k2_q<0`, and
+
+    F_q = 2*k1*k1_q+2*k2*k2_q-1 < -1.                     (31)
+
+The tilt cannot be zero, since its sharp radius is `R0` and the true
+minimum is strictly smaller. It cannot be `pi/4`: Lemma 4 would make a small
+decrease in the tilt produce `F<0`, and continuity would then permit a
+smaller radius. Both scalar variables are therefore interior. A strictly negative defect
+at this radius would contradict its minimality, so the present point is
+also a local minimum of the defect. Its first derivatives vanish, proving
+(28)-(30); equation (29) is (6) multiplied by
+the positive denominator `r*U*(2-v)*w`.
+
+Conversely, every solution of (27)-(30) and the stated sign conditions is
+a genuine five-corner chain. Indeed `r,w>0` and `q<4` force `0<u,v<2`;
+positivity selects the four circle roots. Equation `U+V=3` then gives
+exactly the radical domain of Lemma 1. The conditions `c^2+s^2=1` and
+`0<s<c` select a tilt in `(0,pi/4)`, while (28) gives defect zero. The
+converse construction in `FIVE_CORNER_REDUCTION.md` supplies the five
+points. Its radius is necessarily at least `R_hat`.
+
+The true minimum supplies a solution of this polynomial system, and every
+solution supplies a chain. Therefore the least possible `q` in the system
+is exactly `R_hat^2`, as claimed.
+
+### Meaning of the least-root result
+
+This is a complete global selection theorem for the conditional family,
+with a polynomial characterization and a pen-and-paper proof. It still
+leaves a distinct identification question: **is this least q the stationary
+root previously isolated near 3.9155341375?** The existing full-domain
+certificate answers yes computationally. The present argument does not
+replace that last comparison by a human proof, and it does not prove that
+all stationary roots in (26) coincide.
+
+## 8. Audit: what has and has not become a human proof
 
 Established analytically in this note:
 
@@ -532,6 +764,11 @@ Established analytically in this note:
 - Both endpoint tilts are excluded near the candidate radius by fully
   displayed analytic and rational inequalities, so all global minima there
   are interior stationary points.
+- The exact zero-tilt optimum is `sqrt(2257)/24`, and an explicit negative
+  first derivative proves a strict improvement by nonzero tilt.
+- The true sharp family radius exists and is attained at an interior
+  stationary point; its square is the least q selected by (27)-(30) and
+  their sign conditions.
 
 Still not established by these lemmas:
 
