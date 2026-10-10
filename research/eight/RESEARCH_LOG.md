@@ -92,3 +92,22 @@ no argument above silently assumes the five-corner scaffold, identifies
 distinctly defined algebraic roots, or promotes computational evidence to an
 analytic proof.
 
+## Further continuation: enclosure of the least family root
+
+The instruction to proceed through the roadmap continues from PR head
+5f386b7afb956d046e206013df6998745b9a2cce. The next checked results are:
+
+- HUMAN_FAMILY_CLOSURE.md proves that every feasible simultaneous
+  stationary point in the relevant radius range has $1/2<v<u<1$,
+  $1/2<p<1$, and $r<w$. The proof uses a quadratic sign argument and the
+  previously established decreasing function $\Phi$.
+- HUMAN_FAMILY_ENCLOSURE.md proves that every feasible projected chain
+  with $q\le9789/2500$ has $R>79/40$ and $\tan t<1/5$. Five rational
+  choices of support weights give concave functions of the entire tilt
+  interval; ten fixed endpoint square comparisons settle their signs.
+
+The enclosure covers all positions and does not assume stationarity.
+It is intended to close the full-square construction at the globally
+selected family root and to reduce the remaining envelope problem. The
+unrestricted sharp lower bound is a separate obligation.
+

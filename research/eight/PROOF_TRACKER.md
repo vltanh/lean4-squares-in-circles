@@ -20,6 +20,9 @@ The current continuation writes mathematics only; no Lean proof is attempted.
       conditional family optimum, including global endpoint exclusions.
 - [x] Prove feasible-branch position monotonicity and the stationary
       coordinate inequalities needed for the construction's column order.
+- [x] Prove the sharper stationary order $1/2<v<u<1$ and give an
+      analytic whole-family enclosure $R>79/40$, $\tan t<1/5$ below
+      the rational construction ceiling, using concave support functions.
 - [x] Prove compactness, exact center supports, balanced stresses, and
       complete normal angle stationarity for arbitrary minimizers.
 - [x] Prove the exceptional-corner bound and the outward disk-cap capacity.
