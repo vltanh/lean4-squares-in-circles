@@ -6,7 +6,10 @@ necessary conditions in `HUMAN_ROTATIONAL_STRESS.md`; it does not invalidate
 or omit the normal-owner derivative proved there. The extra step is an
 elementary strict-direction lemma at a parallel edge contact. A useful
 consequence is that every bridge of the positive-stress graph transmits a
-force along a line through the disk center.
+force along a line through the disk center. In the explicit range
+`sqrt(2)+1/2<R<2`, the final theorem excludes every nontrivial component
+whose forces are all radial. Every positive-stress component then has a
+nonzero moment circulation and contains a cycle.
 
 All statements below apply to a radius-minimizing packing. No candidate
 contact graph, numerical optimization, or interval certificate is assumed.
@@ -351,7 +354,226 @@ component must contain that square; there can therefore be at most one
 such component. A stress component containing no square through the
 origin necessarily has a cycle with a nonzero contact-moment circulation.
 
-## 7. What remains for the sharp eight-square bound
+## 7. Below radius two, every radial contact meets a central square
+
+The distance argument has a stronger form when `R<2`.
+
+**Radial-contact lemma.** Suppose two packed unit squares touch at a
+point `z=d n`, where `n` is a unit separating normal and `d>0`, with
+the inner square in `n dot x<=d` and the outer square in
+`n dot x>=d`. If `R<2`, the inner square contains the origin.
+Consequently every positive-stress bridge is incident to a square
+containing the origin. If its separating line passes through the
+origin, both endpoints contain the origin.
+
+Write `rho=sqrt(R^2-1/4)`. The contact point `z` is the nearest point
+of the outer square to the origin, so that square has distance `d`.
+Its inscribed disk of radius `1/2`, centered at its center `p`, gives
+
+```text
+d <= |p|-1/2.
+```
+
+The universal center bound from `HUMAN_CYCLE_ANALYSIS.md`, section 7,
+gives `|p|<=rho-1/2`. Therefore
+
+```text
+d <= rho-1 < 1.                                        (18)
+```
+
+Suppose the inner square omitted the origin. In one of its signed
+frame directions `e`, its center coordinate is a number `a>1/2`.
+Every point of that square then has positive `e` coordinate. In
+particular `z dot e>0`, so `n dot e=(z dot e)/d>0`.
+Because `z` supports the inner square in direction `n`, it must have
+the farthest possible `e` coordinate:
+
+```text
+z dot e = a+1/2 > 1.
+```
+
+This contradicts `|z|=d<1`, proving the lemma. If the radial contact
+point is zero instead, both touching squares contain zero by definition.
+Section 5 now proves the bridge assertion.
+
+One further consequence needs no graph classification. In a component
+whose combined force lines are all radial, every square that does not
+contain the origin is the outer square on every incident edge. Its
+contact points all equal its unique nearest point to the origin, and
+its incident forces are positive multiples of that same outward unit
+normal. Its force resultant is therefore nonzero, so (11) and (15)
+make it a circle-contact square. No radial edge can join two squares
+that both omit the origin.
+
+## 8. Above sqrt(2)+1/2, every stress component has a cycle
+
+**Nonradial-component theorem.** Assume
+
+```text
+sqrt(2)+1/2 < R < 2.                                   (19)
+```
+
+Every nontrivial component of the physical positive-stress graph has a
+nonzero contact-moment circulation. In particular it contains a cycle,
+and no such component is a tree.
+
+We prove that a nontrivial component cannot have all its combined force
+lines through the origin. Throughout this proof call a square
+**central** if it contains the origin as a point of its closed square.
+This permits the origin to lie in its interior, on an edge, or at a
+corner. Put
+
+```text
+rho = sqrt(R^2-1/4),
+a = R-sqrt(2),
+b = rho-1.
+```
+
+The radius assumptions imply
+
+```text
+a>1/2,        1/sqrt(2)<b<1.                            (20)
+```
+
+For the stronger lower bound on `b`, observe that
+`R^2>9/4+sqrt(2)>7/4+sqrt(2)` and square the positive quantities.
+
+### 8.1. All noncentral squares have one of two radial forms
+
+Suppose a component has only radial combined contact forces. Section 7
+makes every noncentral vertex the outer endpoint of each incident edge.
+All its effective contact points are therefore its unique nearest point
+`d n` to the origin, and all incident forces on it are positive
+multiples of the same unit vector `n`. Its nonzero resultant supports
+its center in direction `n`.
+
+The support-center proof of the stress-leaf theorem in
+`HUMAN_STRESS_TREE_ENDS.md`, section 2, consequently applies even if
+this vertex has more than one incident edge. That proof needs only a
+parallel outward resultant, a radial inward contact, and the exact
+support center; graph degree one is not otherwise used. It gives exactly
+two possibilities:
+
+* **Side-normal form:** `n` is a side normal of the noncentral square,
+  its center is `(rho-1/2)n`, and its inward contact point is `b n`.
+* **Diagonal form:** `n` is a diagonal direction of the noncentral
+  square, its center is `(R-1/sqrt(2))n`, and its inward contact point
+  is `a n`.
+
+For clarity, the underlying two-branch calculation is short. In signed
+and ordered square axes write `n=c e+s f`, `c>=s>=0`. If
+`c>=2 rho s`, the supporting center is `(rho-1/2)e`. For `s>0` its
+inward vertex has coordinates `(b,-1/2)`, which cannot be radial in the
+direction `(c,s)`; hence `s=0`. In the other branch the supporting
+center is `Rn-(e+f)/2`, and its inward vertex `Rn-(e+f)` is radial only
+when `c=s=1/sqrt(2)`. This proves the two alternatives directly.
+
+In the diagonal form, the contact direction `n` is not a side normal
+of the noncentral square. Our selected contact axis must therefore be
+a side normal of each of its stress neighbors.
+
+### 8.2. Every outward contact gives a strict projection at its central square
+
+Let a central square C have center `p`, and consider an incident
+noncentral square. Let `n` point from C toward it. Their common radial
+contact point is `z=d n`, with `d=a` or `d=b` as above. The force on
+C from this edge is `-Lambda n`.
+
+We claim
+
+```text
+p dot n > 0.                                          (21)
+```
+
+If `n` is a side normal of C, its support face has normal coordinate
+`p dot n+1/2=d`. Thus `p dot n=d-1/2>0` by (20).
+
+If `n` is not a side normal of C, the noncentral square cannot have the
+diagonal form, by the owner restriction in section 8.1. It has the
+side-normal form, so `d=b`. The support face of C is a single vertex
+`z=p+v`, where the centered vertex satisfies `|v|^2=1/2`. Consequently
+
+```text
+p dot n = (b^2+|p|^2-1/2)/(2b) > 0,                   (22)
+```
+
+again by (20). This proves (21) for every such contact, without any
+assumption that zero lies strictly inside C.
+
+### 8.3. A central square cannot receive positive forces from other central squares
+
+Every central unit square is strictly inside the containing disk: any
+point of it is at most its diameter `sqrt(2)` from its point zero,
+and `R>sqrt(2)`. Its circle coefficients therefore vanish, and
+
+```text
+F_C=0.                                                (23)
+```
+
+If zero lies in its open interior, no other packed square can contain
+zero, even on its boundary, because interior points of that other square
+arbitrarily near zero would lie inside C. So this case has no central
+neighbors.
+
+Suppose instead that zero lies on the boundary of C. Let
+`m_1,...,m_k`, with `k=1` or `2`, be the inward unit normals of its
+side or sides through zero. They are orthogonal when there are two.
+For each of them the coordinate interval of C is
+
+```text
+0 <= m_j dot x <= 1.
+```
+
+At any outward radial contact `z=d n` with a noncentral square,
+section 7 gives `0<d<1`. We must have
+
+```text
+m_j dot n = 0   for every j.                           (24)
+```
+
+A negative value would put `z` outside C. A positive value, since `z`
+supports C in direction `n`, would force `m_j dot z=1`, and hence
+`d=|z|>=1`. Both are impossible. Thus every force on C from a
+noncentral square has zero projection on
+`m=m_1+...+m_k`.
+
+On the other hand, a radial contact between two central squares has
+effective contact point zero: their separating line passes through
+zero, and its only point parallel to its normal is zero itself. The
+force on C at that point lies in its inward normal cone. If zero is
+in the relative interior of an edge, this force is a positive multiple
+of `m_1`. If zero is a corner, it is a nonzero nonnegative combination
+of `m_1,m_2`. In either case its projection on `m` is strictly positive.
+
+Projecting (23) onto `m` therefore rules out every positive contact
+weight from another central square. This argument applies to each
+central square separately; it does not assume that the component has
+only one central vertex.
+
+### 8.4. Force balance gives the contradiction
+
+Section 7 says every edge of an all-radial nontrivial component meets
+a central square, so such a component has at least one central vertex
+C. By section 8.3, C has no incident positive edge to another central
+square. Since it belongs to a nontrivial connected component, it has
+at least one incident positive edge to a noncentral square.
+
+For all such edges, (21) gives
+
+```text
+p dot F_C = -sum_(noncentral neighbors) Lambda (p dot n) < 0.
+```
+
+This contradicts (23), proving that an all-radial component cannot
+exist in the range (19).
+
+Finally, section 5 shows that the combined edge moments form a
+circulation. If every edge moment vanished, all combined force lines
+would be radial, which has just been excluded. Every nontrivial
+component therefore has a nonzero moment circulation, and hence a
+cycle. This proves the theorem.
+
+## 9. What remains for the sharp eight-square bound
 
 The strict-direction lemma permits genuine contact-force arguments at
 parallel square contacts. The bridge theorem and tree corollary restrict
@@ -360,8 +582,17 @@ minimality lemmas in `HUMAN_CYCLE_ANALYSIS.md` and `HUMAN_STRESS_GRAPH.md`.
 In particular zero-weight actual contacts are still allowed, so conclusions
 about the two graphs must remain distinct.
 
-These results do not yet exclude a positive-stress tree through a square
-containing the origin, force the two-angle candidate orientation, or
-produce the projected five-corner chain for every eight-square minimizer.
-They identify exact additional geometry that any such remaining tree
-alternative must satisfy. No sharp global optimality claim is made here.
+Section 8 excludes every positive-stress tree, including one through
+squares containing the origin, under the explicit radius hypothesis
+`sqrt(2)+1/2<R<2`. Applying that lower radius hypothesis to the unknown
+eight-square minimum through the earlier bound `R_8^2>19/5` would still
+use the computational certificate in `GLOBAL_LOWER_BOUND.md`. The theorem
+here is entirely analytic under its displayed hypothesis; it does not
+replace that earlier lower bound by a pen-and-paper proof.
+
+A cycle carrying a nonzero contact moment is now a rigorous starting
+point in this radius range. The remaining task is to show that its
+geometry forces the two-angle candidate scaffold, or yields an equally
+strong projected obstruction. The graph theorem alone does not produce
+the five-corner chain or identify the sharp radius. No unrestricted sharp
+optimality claim is made here.
