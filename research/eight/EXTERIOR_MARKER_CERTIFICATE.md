@@ -1,5 +1,12 @@
 # A global central-square reduction for eight squares
 
+**Analytic replacement for the central-existence conclusion.**
+[HUMAN_GLOBAL_GEOMETRY_CLOSURE.md](HUMAN_GLOBAL_GEOMETRY_CLOSURE.md)
+now proves the same unique open central-square conclusion at squared
+radius at most $98/25$ by a two-circle angular-measure argument. That proof
+does not use the certificate recorded below. The marker-separation lemma
+in this historical record remains a distinct computational result.
+
 **Intermediate certificate theorem, not a proof of the optimum.**
 
 At squared radius at most 98/25, an interior-disjoint packing of eight unit squares has exactly one square whose OPEN interior contains the disk center. The proof below uses an exhaustively verified rational interval certificate for a two-square marker lemma. It is currently computational, not yet humanized. This is permitted by the revised research instruction; no Lean formalization is attempted.
@@ -74,3 +81,4 @@ This establishes the certificate-level pair lemma over the full state domain, no
 ## 6. Next mathematical problem
 
 Normalize the unique central square and analyze the seven exterior squares and their mutual separators. This reduction does not force Cantrell's contact graph, does not exclude all smaller radii, and does not assert that the seven exterior states all lie on the far-corner circle. Those remain separate tasks.
+

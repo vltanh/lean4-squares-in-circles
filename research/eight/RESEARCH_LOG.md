@@ -111,3 +111,24 @@ It is intended to close the full-square construction at the globally
 selected family root and to reduce the remaining envelope problem. The
 unrestricted sharp lower bound is a separate obligation.
 
+### Analytic central-square theorem
+
+HUMAN_GLOBAL_GEOMETRY_CLOSURE.md replaces the central-existence
+certificate dependency with a complete proof for $q\le98/25$.
+For any square whose open interior avoids the disk center, its total
+angular lengths on radii $1$ and $5/4$ satisfy
+$3L_1+L_{5/4}\ge\pi$. A single factored derivative comparison controls
+both curved boundary cases. The complete equality family has
+$L_1=\pi/3$ and $L_{5/4}=0$.
+
+If eight squares all avoided the center, summing both circular capacities
+would force equality for every square, but then their unit-circle arcs
+would total $8\pi/3>2\pi$. This proves a unique open central square.
+The argument includes all canonical states and disconnected circular
+intersections. Two independent derivations checked the derivative
+factorization, arc branches, equality cases, and rational trigonometric
+comparisons before this commit.
+
+This theorem does not yet prove a fixed central core, the seven marker
+gap bounds, or the sharp five-corner obstruction.
+

@@ -26,6 +26,9 @@ The current continuation writes mathematics only; no Lean proof is attempted.
 - [x] Prove compactness, exact center supports, balanced stresses, and
       complete normal angle stationarity for arbitrary minimizers.
 - [x] Prove the exceptional-corner bound and the outward disk-cap capacity.
+- [x] Prove analytically that every eight-square packing with
+      $q\le98/25$ has a unique square containing the disk center in its
+      open interior, using total angular measure on two circles.
 - [x] Exclude four-square straight separator chains below radius two.
 - [x] Derive the orientation of strictly interior two-contact squares.
 - [x] Derive a four-square common frame from two such squares sharing their

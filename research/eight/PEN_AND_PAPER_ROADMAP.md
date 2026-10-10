@@ -41,6 +41,7 @@ the earlier certificate-only premises.
 | The family optimum is attained at an interior stationary point and is exactly the least admissible q in a nine-variable polynomial system | HUMAN_FIVE_CORNER.md, Lemmas 4–8; the exact zero-tilt optimum is $\sqrt{2257}/24$ and nonzero tilt improves it |
 | Feasible position minima move monotonically with tilt; simultaneous stationary points satisfy $u,v<1$, hence $r>U$ and $w>V$ | HUMAN_FIVE_CORNER.md, Lemmas 9–11; the additional corner bounds $k_1>1$, $k_2>1/2$ hold on the whole relevant radical domain |
 | Relative to any selected square, at most one neighbor per corner lacks every separator on the selected square's axes | [HUMAN_STRUCTURAL_LEMMAS.md](HUMAN_STRUCTURAL_LEMMAS.md); in an eight-square packing at least three neighbors admit such axes |
+| Every eight-square packing with $q\le98/25$ has a unique square containing the disk center in its open interior | [HUMAN_GLOBAL_GEOMETRY_CLOSURE.md](HUMAN_GLOBAL_GEOMETRY_CLOSURE.md): the one-square inequality $3L_1+L_{5/4}\ge\pi$ and its exact equality cases force the conclusion by angular capacity |
 | A disk of radius two cut by $x\ge1/2$ contains at most two unit squares | [HUMAN_CAPACITY_BOUND.md](HUMAN_CAPACITY_BOUND.md); this bounds outward central sides and includes an exact counterexample to applying the same bound to inward sides |
 | A radius minimizer exists and has a nonzero balanced separator stress with exact disk-admissible center supports | [BALANCED_SEPARATOR_REDUCTION.md](BALANCED_SEPARATOR_REDUCTION.md) |
 | Normal contact multipliers satisfy center balance and the complete angle stationarity equations, including rotation of the selected normal | [HUMAN_ROTATIONAL_STRESS.md](HUMAN_ROTATIONAL_STRESS.md) |
@@ -197,6 +198,13 @@ EXACT_CONFIGURATION_AND_FREEDOM.md.
 ## 6. Concrete remaining roadmap
 
 ### Priority 1: force a sufficient contact pattern in a minimizer
+
+Central-square existence in the full relevant radius range is now proved
+analytically by HUMAN_GLOBAL_GEOMETRY_CLOSURE.md. It uses two auxiliary
+circles and total angular measure, including disconnected intersections.
+This removes the marker-certificate dependency from central existence;
+the central core, individual marker gaps, and quadrant counts remain
+separate stronger assertions.
 
 Use a radius minimizer with the fewest actual contacting pairs. Its radius
 is below two by the rational construction. Attainment, the allowed local
