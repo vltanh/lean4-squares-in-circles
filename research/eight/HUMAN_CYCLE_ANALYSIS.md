@@ -578,3 +578,139 @@ opposite supports. Together with section 7, such transmitters cannot appear
 consecutively in a straight stress path below radius two. Selecting and
 controlling the remaining contact graph is still necessary for the sharp
 eight-square proof.
+
+## 9. Two shared transmitters force a four-square parallel scaffold
+
+The actual-contact conclusion of section 8 can be sharpened. Continue to
+work with a radius-minimizing packing chosen with the fewest contacting
+pairs. All degrees in this section refer to its actual contact graph.
+
+### The neighbors of an interior transmitter are exactly distance one apart
+
+**Theorem.** Suppose S lies strictly inside the circle and has exactly two
+neighbors A and B. The distance between the two closed squares A and B is
+exactly one. Moreover, S has a side normal parallel to their unique
+shortest-distance direction.
+
+By section 8, choose the unit normal n pointing from A to B so that S has
+axis n, and the two opposite parallel separators are tight. For any vector v
+define the directed projection gap between the two fixed neighbors by
+
+    g(v) = v dot (c_B-c_A)-h_A(v)-h_B(v).
+
+Thus `g(n)=1`, the width of S in this direction. The function g is positively
+homogeneous and concave, since the square support functions are convex. If
+the distance between A and B is d, then
+
+    d = max_{|v|=1} g(v).                                 (9.1)
+
+Here d is positive because `g(n)=1`. To justify (9.1), every projection gap
+is at most the distance: for any `a in A`, `b in B`,
+
+    g(v) <= v dot (b-a) <= |b-a|,       |v|=1.
+
+Conversely choose nearest points a_0 in A and b_0 in B; they exist by
+compactness. Let `v_0=(b_0-a_0)/d`. Minimizing squared distance along the
+segment from a_0 toward any `a in A` gives
+
+    v_0 dot a <= v_0 dot a_0.
+
+The analogous variation in B gives `v_0 dot b >= v_0 dot b_0` for every
+`b in B`. Hence a_0 and b_0 are the appropriate support points and
+`g(v_0)=d`. This proves (9.1).
+
+Suppose d were greater than one. For sufficiently small positive t, put
+
+    v_t=(1-t)n+t v_0,       n_t=v_t/|v_t|.
+
+Concavity, homogeneity, and `|v_t|<=1` give
+
+    g(n_t) >= [(1-t)g(n)+t g(v_0)]/|v_t|
+            >= 1+t(d-1) > 1.                             (9.2)
+
+Also `n_t` tends to n. Rotate S by the corresponding small angle so that it
+has an axis n_t. Set its normal center coordinate to the midpoint between
+the two fixed support lines of A and B perpendicular to n_t. Explicitly, if
+those coordinates are
+
+    alpha_t = max_(a in A) n_t dot a,
+    beta_t  = min_(b in B) n_t dot b,
+
+replace the original center c_S by
+
+    c_t = c_S + [(alpha_t+beta_t)/2-n_t dot c_S] n_t.
+
+The centers and frames converge to their original values because the two
+original separators were tight. The new square has width exactly one in
+direction n_t, whereas the gap between A and B exceeds one by (9.2).
+Therefore its two contacts become strict separations. Its strict circle
+containment and all other positive separation distances survive this small
+motion. This contradicts minimality of the contact count. Consequently
+`d=1`.
+
+The maximizing unit direction in (9.1) is unique when d is positive. Indeed,
+if two distinct unit vectors v,w both had gap d, they could not be opposite
+(the gaps in opposite directions cannot both be positive). Concavity at
+their average, followed by normalization, would give
+
+    g((v+w)/|v+w|) >= 2d/|v+w| > d,
+
+contrary to (9.1). Thus n is the unique shortest-distance direction. `QED`
+
+### At most two interior transmitters can share the same neighbor pair
+
+Suppose several squares strictly inside the circle have actual degree two
+and the same neighbors A and B. The theorem makes all of their side normals
+parallel to the same unique direction n. Their normal center coordinate is
+fixed at the midpoint of the gap of width one.
+
+Let m be a perpendicular unit vector. The exposed face of A on the side
+facing B is either a vertex or an edge of length one. Its m-coordinate set
+is therefore a closed interval I_A of length at most one. To touch that face,
+the facing side of an aligned middle square, whose m-coordinate interval is
+`[t-1/2,t+1/2]`, must meet I_A. Hence its center height t belongs to
+
+    I_A + [-1/2,1/2],
+
+an interval of length at most two. The analogous constraint from B can only
+shorten this interval.
+
+Any two of these middle squares have the same normal center coordinate and
+aligned frames. Disjoint open interiors require their transverse center
+distance to be at least one. Equality would make them contact each other,
+in addition to their two contacts with A and B, contrary to their actual
+degree being two. Their transverse center distances must therefore be
+strictly greater than one. Three such centers would span more than two,
+which is impossible in the interval above. Thus at most two interior
+degree-two squares share any fixed pair of neighbors.
+
+### The four-square orientation conclusion
+
+Suppose there are exactly two such interior squares, S and T, sharing
+neighbors A and B. If A had no side normal parallel to n, its exposed face
+I_A would be a single vertex. Then the permitted transmitter center heights
+would lie in an interval of length one, contradicting the strict separation
+of the two center heights. Therefore A has a side normal parallel to n.
+The same argument applies to B.
+
+**Corollary.** Two strictly interior actual-degree-two squares with the same
+neighbors force all four square frames to be parallel. The neighbors A,B
+are separated by a strip of width one, and the two interior squares have
+the common normal coordinate at its midpoint.
+
+Writing the centers in the resulting `(n,m)` frame, the neighbors have normal
+center separation two. If their transverse center coordinates are a and b,
+the two interior coordinates s and t satisfy
+
+    s,t in [max(a,b)-1, min(a,b)+1],
+    |s-t|>1.
+
+In particular `|a-b|<1`. These are exact necessary constraints on the
+resulting scaffold, with no circle-contact or numerical-angle assumption.
+
+This is the candidate's four-parallel-square mechanism on B,C,T,D when C
+and T are chosen strictly inside the circle and apart from each other.
+The conclusion has now been proved from that actual-contact motif, rather
+than assumed as part of a coordinate ansatz. The remaining global task is
+to force this motif, or to bound the radius of the alternative contact
+patterns. The corollary does not assert that every minimizer already has it.
