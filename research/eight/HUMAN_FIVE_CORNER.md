@@ -748,7 +748,429 @@ certificate answers yes computationally. The present argument does not
 replace that last comparison by a human proof, and it does not prove that
 all stationary roots in (26) coincide.
 
-## 8. Audit: what has and has not become a human proof
+## 8. A positive mixed derivative on the feasible minimizing branch
+
+The following sign information uses feasibility. It does not assert joint
+convexity on the entire rectangle of positions and tilts.
+
+### Lemma 9 — feasibility forces a positive mixed derivative
+
+Suppose
+
+    121/32 <= q < 2257/576,     0 <= t <= pi/4,
+    F(q,-u,t) <= 0.
+
+Then
+
+    r>1,       w>1,       u^2+v^2<q,       r*w>u*v.        (32)
+
+If this position also satisfies `F_u=0`, then
+
+    F_ut>0.                                               (33)
+
+Here and below the `u` subscripts denote differentiation in the positive
+coordinate `u`, with `q,t` held fixed. Consequently the unique minimizing
+position from Lemma 2 satisfies
+
+    d u_R(t)/dt = -F_ut/F_uu < 0                           (34)
+
+at every tilt where `M_R(t)<=0`. In particular it is strictly decreasing
+on each interval on which the minimized defect is nonpositive. No
+monotonicity is asserted through a possible intervening infeasible interval.
+
+#### Proof
+
+We have `k1,k2>0` and `k1^2+k2^2<=q`, so both `k1` and `k2` are strictly
+less than `R<2`. If `r<=1`, then
+
+    k1=2-c*(r-1)+s*u >= 2,
+
+a contradiction. Thus `r>1`.
+
+If `w<=1`, then `v>=sqrt(q-1)` and
+
+    k2=1+c*v-s*(w-1)
+       >= 1+v/sqrt(2)
+       >= 1+sqrt((R^2-1)/2) > R.
+
+The last strict inequality holds for `1<R<3`: after subtracting 1 and
+squaring the positive sides, it is equivalent to `(R-1)*(R-3)<0`.
+This contradicts `k2<R`, and proves `w>1`.
+
+The numbers `u` and `v` cannot both be at least 1. Indeed `u,v<2`, so that
+would imply
+
+    U>=sqrt(q-1)>3/2,     V>=sqrt(q-1)>3/2,
+
+contrary to `U+V=3`. If both are less than 1, then
+`u^2+v^2<2<q`. If `u>=1` and `v<1`, then `r>1` gives
+`u^2<q-1`, again yielding `u^2+v^2<q`. The case `v>=1` is symmetric,
+using `w>1`. Finally,
+
+    r^2*w^2-u^2*v^2 = q*(q-u^2-v^2)>0,
+
+which proves (32).
+
+For the mixed derivative write
+
+    a=s+c*u/r,             B=c+s*v/w,
+    d=s*(r-1)+c*u,         e=c*(w-1)+s*v,
+    p=-v'(u)>0.
+
+All five quantities `a,B,d,e,p` are positive, and
+
+    k_u=(a,-p*B),          k_t=(d,-e).
+
+Position stationarity says `k1*a=k2*p*B`. Direct differentiation therefore
+gives the cancellation
+
+    T0 := k1*k1_ut+k2*k2_ut
+        = k1*(c-s*u/r)+k2*p*(s-c*v/w)
+        = (k1/B)*[(c-s*u/r)*(c+s*v/w)
+                         +(s+c*u/r)*(s-c*v/w)]
+        = (k1/B)*(1-u*v/(r*w)) > 0.                       (35)
+
+The other term in the mixed derivative is also positive:
+
+    F_ut/2 = k_u . k_t + T0
+           = a*d+p*B*e+T0 > 0.
+
+Lemma 2 supplies smoothness and `F_uu>0` at the unique minimizing
+position. Differentiating its equation `F_u=0` proves (34).
+
+### The exact remaining Hessian condition
+
+At an interior simultaneous stationary zero, namely
+
+    F=F_u=F_t=0,        0<t<pi/4,
+
+both derivative vectors are perpendicular to the same nonzero vector
+`k=(k1,k2)`. Their displayed signs show that they are positive scalar
+multiples. Define
+
+    k_t=kappa*k_u,
+    kappa=d/a=e/(p*B)>0.
+
+The identities `d=r*a-s` and `e=w*B-c` give
+
+    r-1 < kappa < r,
+    w-1 < p*kappa < w.                                    (36)
+
+Indeed `r-kappa=s/a` lies strictly between 0 and 1 because
+`a=s+c*u/r>s>0`. Similarly `w-p*kappa=c/B` lies strictly between 0 and 1
+because `B=c+s*v/w>c>0`.
+
+Set
+
+    A0=|k_u|^2,
+    S0=k1*k1_uu+k2*k2_uu,
+    T0=(k1/B)*(1-u*v/(r*w)),
+    U0=2*k1+k2-q.
+
+Here `A0,S0,T0>0`. For an explicit check of `S0`, differentiation yields
+
+    v''=q*V/(2-v)*(1/U^3+p^2/V^3)>0,
+    k1_uu=c*q/r^3>0,
+    k2_uu=s*q*p^2/w^3+B*v''>0.
+
+Using `k_tt=(2,1)-k` and `|k|^2=q`, the Hessian is exactly
+
+    (1/2)*Hess(F)
+      = A0 * [[1, kappa], [kappa, kappa^2]]
+            + [[S0, T0], [T0, U0]].
+
+Consequently
+
+    det(Hess(F))/4
+      = A0*(S0*kappa^2-2*T0*kappa+U0)+S0*U0-T0^2.         (37)
+
+Since `F_uu>0`, strict positivity of the right side is exactly the
+remaining condition for a positive definite Hessian at such a point.
+Lemma 3 supplies `F_tt>91/45` there, and (33) supplies the sign of the mixed
+term. Neither sign by itself proves (37) positive. This note does **not**
+claim that determinant inequality.
+
+There is also a separate global issue: even a proof that every stationary
+zero in a radius range has positive definite Hessian would require a
+continuation or connectedness argument to establish uniqueness. Distinct
+strict minima can lie in distinct feasible components. Fixed-position
+convexity and the local signs above do not themselves exclude that
+possibility.
+
+## 9. Coordinate bounds at minimizing positions
+
+These bounds will also be useful when checking the extra squares in the
+eight-square construction. Recall that `v<1` is equivalent to `w>V`,
+and `u<1` is equivalent to `r>U`.
+
+### Lemma 10 — every minimizing position has v<1
+
+For
+
+    121/32 <= q <= 2257/576,     0 <= t <= pi/4,
+
+the unique fixed-tilt minimizing position satisfies `v<1`. Feasibility of
+that minimum is not required.
+
+#### Proof
+
+First evaluate the position derivative at the unique domain point where
+`v=1`. At that point set
+
+    w=sqrt(q-1),       Y=sqrt(6*w-8),
+    u=2-Y,            U=3-w,
+    p=Y*w/(3-w).
+
+These formulas follow from `V=w`, `U+V=3`, and
+`(2-u)^2=q-U^2=6*w-8`. The stated radius interval gives
+
+    5/3 < w <= 41/24 < 2,
+    sqrt(2) < Y <= 3/2,
+    0 < u < 3/5,
+    r > 9/5,
+    p > 5*sqrt(2)/4.                                     (38)
+
+For `r>9/5`, one may use
+`r^2=q-u^2>121/32-9/25>81/25`. The other comparisons follow immediately
+from the displayed formulas. In particular this is an interior domain
+point.
+
+At this point put `a=s+c*u/r` and `B=c+s/w`. Since `s<=c` and
+`c>=1/sqrt(2)`,
+
+    k1=2-c*(r-1)+s*u
+       <= 2-c*(r-1-u) < 2-1/(5*sqrt(2)).
+
+The function `s+c*u/r` increases on `[0,pi/4]`, because `u/r<1`.
+Consequently
+
+    a <= (1+u/r)/sqrt(2) < 4/(3*sqrt(2)).
+
+Also `k2=1+c-s*(w-1)>1`. The concave function `B=c+s/w` has its minimum
+at an endpoint of this angle interval; its endpoint values are `1` and
+`(1+1/w)/sqrt(2)>3/(2*sqrt(2))>1`. Thus `B>=1`. Equation (6) now gives
+
+    F_u/2 = k1*a-k2*p*B
+           < 8/(3*sqrt(2))-2/15-5*sqrt(2)/4
+           = sqrt(2)/12-2/15 < 0.                        (39)
+
+The final inequality is equivalent to `sqrt(2)<8/5`. Strict position
+convexity places the unique minimum to the right of the point just
+examined. Since `v(u)` strictly decreases, that minimum has `v<1`.
+
+### Lemma 11 — feasible simultaneous stationary points have u<1
+
+Suppose
+
+    121/32 <= q <= 2257/576,
+    0 <= t <= pi/4,
+    F<=0,        F_u=F_t=0.
+
+Then `u<1`. Together with Lemma 10, this gives
+
+    u<1,       v<1,       r>U,       w>V.                  (40)
+
+In particular (40) holds at every least-family-radius configuration
+selected by Lemma 8. The proof uses one explicit support inequality, not
+a numerical box cover or a claim about uniqueness of the stationary root.
+
+#### Step 1: u>=1 would force a small tilt
+
+Assume for a contradiction that the stationary position has `u>=1`.
+Evaluate the position derivative at `u=1`, initially keeping `q,t` fixed.
+At this comparison point,
+
+    r=sqrt(q-1),          V=3-r,
+    Y=2-v=sqrt(6*r-8),    p=(3-r)/(r*Y).
+
+The radius bounds give
+
+    5/3 < r <= 41/24 < 7/4,
+    sqrt(2) < Y <= 3/2,
+    0 < v < 3/5,
+    w > 9/5,
+    1/2 < p < 3/5.                                      (41)
+
+For the last bounds one can use
+
+    p >= (31/24)/((41/24)*(3/2)) = 62/123 > 1/2,
+    p < (4/3)/((5/3)*(7/5)) = 4/7 < 3/5.
+
+All these comparisons are made at `u=1`, which is an interior domain
+point in the stated radius range.
+
+Expanding the derivative at this point gives
+
+    F_u/2 = Ls*s+Lc*c+Qs*s^2-Qc*c^2+J*c*s,
+
+where
+
+    Ls=2-p*v/w,
+    Lc=2/r-p,
+    Qs=1+p*(w-1)*v/w,
+    Qc=(r-1)/r+p*v,
+    J=1/r-(r-1)-p*v^2/w+p*(w-1).
+
+Here `Qs,Qc>0`, and (41) gives
+
+    Ls>9/5,
+    J>4/7-3/4-3/25+2/5=71/700>0.
+
+Also
+
+    Lc-Qc = (3-r)/r-p*(1+v)
+          = ((3-r)/r)*(2-3/Y) > -4/35.
+
+Indeed `(3-r)/r<4/5` and `-1/7<2-3/Y<=0`. Since `c^2<=c`,
+
+    F_u(q,-1,t)/2 > (9/5)*s-(4/35)*c.                   (42)
+
+Strict convexity in the position implies `F_u(q,-1,t)<=0` if its unique
+stationary position has `u>=1`. It follows from (42) that
+
+    tan(t)<4/63,        0<=s<4/63.                        (43)
+
+#### Step 2: one support inequality improves the radius bound at those tilts
+
+Apply the weighted version of the telescoping support argument in Lemma 6
+with positive weights, in the order of the five chain constraints,
+
+    (lambda1,lambda2,lambda3,lambda4,lambda5)
+      = (3/5,1,6/5,6/5,1).
+
+It gives `B<=R*D`, where direct computation of the five coefficient norms
+gives
+
+    B=49/5+c+(6/5)*s,
+
+    D=(sqrt(34)+2*sqrt(61)+sqrt(34-30*s))/5
+         +(12/5)*sin(t/2).                               (44)
+
+The weighted argument follows by multiplying each chain inequality by
+its indicated weight, collecting the coefficient of each point, and
+bounding that scalar product by the radius times the coefficient's norm.
+Thus (44) is valid for every feasible chain, without a stationarity
+assumption.
+
+Concavity of the square root gives
+
+    sqrt(34-30*s) <= sqrt(34)-15*s/sqrt(34).
+
+Moreover `cos(t/2)>9/10` on `[0,pi/4]`, so
+`sin(t/2)<5*s/9` for `s>0`, with equality of the zero values when `s=0`.
+Using `3/sqrt(34)>1/2`, and
+
+    2*(sqrt(34)+sqrt(61))/5
+      < (2/5)*(35/6+125/16) = 131/24,
+
+we obtain the uniform bounds
+
+    D<131/24+(5/6)*s,
+    B>=54/5+(6/5)*s-s^2.                                (45)
+
+The second follows from `c>=1-s^2`. Set `rho=197/100`. Then (43)-(45)
+imply
+
+    B-rho*D > 113/2400-(53/120)*s-s^2
+             > 9/200-3/100-1/200
+             = 1/100 > 0.                               (46)
+
+The displayed rational comparison uses
+`53*s/120<53/1890<3/100` and `s^2<16/3969<1/200`.
+Since feasibility gives `B<=R*D` and `D>0`, (46) proves
+
+    R>197/100,        q>38809/10000>31/8.                 (47)
+
+#### Step 3: the angle derivative has the wrong sign when u>=1
+
+Return first to the comparison point `u=1`, now using (47). Its formulas
+give the convenient rational estimates
+
+    r>339/200,
+    Y>147/100,
+    V<261/200,
+    v<53/100,
+    w>189/100.
+
+For example,
+
+    r^2=q-1>23/8>(339/200)^2,
+    Y^2=6*r-8>217/100>(147/100)^2,
+    w^2=q-v^2>31/8-(53/100)^2>(189/100)^2.
+
+Consequently, at `u=1`,
+
+    p*r=V/Y < 87/98 < 89/100 < w-1.                      (48)
+
+At fixed radius, `p=-v'` strictly decreases with `u` because `v''>0`;
+also `r'=-u/r<0` and `w'=p*v/w>0`. Hence `p*r` strictly decreases and
+`w` strictly increases as the position increases. Inequality (48)
+therefore persists at every position `u>=1` in the domain.
+
+At the hypothesized stationary position Lemma 10 gives `v<1`, so
+`u>v`, `p<1`, and `r<w`. The inequality `p<1` follows from the strictly
+decreasing derivative of `g(x)=sqrt(q-(2-x)^2)`, since
+`p=g'(u)/g'(v)`. Lemma 9 also gives `r,w>1` there.
+
+Let `h=tan(t)`. At a position-stationary point the sign of `F_t` is the
+sign of the polynomial
+
+    N(h)=p*(1+h*v/w)*(u+h*(r-1))
+             -(h+u/r)*((w-1)+h*v),
+
+as follows either from (6), (8), or directly from
+`F_t/2=(k2*c^2/a)*N(h)`, where `a=s+c*u/r>0`.
+Its coefficients are
+
+    N(0)=(u/r)*(p*r-(w-1)),
+
+    [h]N=p*(r-1)-(w-1)+u*v*(p/w-1/r),
+
+    [h^2]N=(v/w)*(p*(r-1)-w).
+
+The constant coefficient is strictly negative by (48) and its
+monotonicity extension. The linear coefficient is strictly negative
+because `p<1`, `r<w`, and `r>1`; both displayed summands are negative.
+The quadratic coefficient is also strictly negative. Thus `N(h)<0` for
+every `h>=0`, and in particular `F_t<0` at the hypothesized point. This
+contradicts `F_t=0`, proving `u<1`.
+
+Finally,
+
+    r^2-U^2=4*(1-u)>0,
+    w^2-V^2=4*(1-v)>0,
+
+which proves the equivalent circle-root inequalities in (40).
+
+### A uniform bound for the remaining local corner coordinate
+
+In the same radius range, every position in the radical domain satisfies
+
+    v>3/10,        k1>1,        k2>1/2.                   (49)
+
+Only the latter two inequalities are needed for some of the extra-corner
+checks in the eight-square construction; no stationarity is required.
+
+Indeed `q<=2257/576<98/25` gives `R<99/50`, and Lemma 1 gives
+
+    U<=2*sqrt(R-1)<99/50,
+    V=3-U>51/50.
+
+Therefore
+
+    (2-v)^2=q-V^2<98/25-(51/50)^2
+                    =7199/2500<(17/10)^2,
+
+which proves `v>3/10`. The bound `k1>=3-R>1` was proved above.
+If `w<=1`, then `k2>1` immediately. If `w>1`, use `w<R<2`,
+`c>=1/sqrt(2)`, and `s<=1/sqrt(2)` to obtain
+
+    k2=1+c*v-s*(w-1)
+       >1-7/(10*sqrt(2))>1/2.
+
+The last comparison is equivalent to `7/5<sqrt(2)`.
+
+## 10. Audit: what has and has not become a human proof
 
 Established analytically in this note:
 
@@ -769,6 +1191,18 @@ Established analytically in this note:
 - The true sharp family radius exists and is attained at an interior
   stationary point; its square is the least q selected by (27)-(30) and
   their sign conditions.
+- At every feasible minimizing position the mixed derivative is positive,
+  so the minimizing position decreases with tilt on each feasible interval.
+- At an interior simultaneous stationary zero, positive definiteness
+  reduces to the explicit scalar condition (37), with the tangent ratios
+  confined by (36).
+- Every fixed-tilt minimizing position in the radius range (26), including
+  its upper endpoint, satisfies `v<1`.
+- Every feasible simultaneous stationary point in that range satisfies
+  `u<1` as well, hence `r>U` and `w>V`; in particular this holds for the
+  least-family-radius configurations.
+- The entire radical domain in that radius range satisfies `v>3/10`,
+  `k1>1`, and `k2>1/2`, supplying further exact corner bounds.
 
 Still not established by these lemmas:
 
