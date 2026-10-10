@@ -268,6 +268,30 @@ argument, the squares lacking them must occupy distinct central corners.
 The four remaining corner possibilities come from exact geometric types,
 not a discretization of the angle space.
 
+### Correct use in a separator-branch argument
+
+Suppose the central square has center `c_0`, and an outer square has center
+`p_i` and central-frame half-width `H_i`. Its membership in the exceptional
+set is the actual pair of strict inequalities
+
+```text
+|(p_i-c_0)_x| < 1/2+H_i,
+|(p_i-c_0)_y| < 1/2+H_i.
+```
+
+Together with disjointness these force the unique corner and unique outward
+own axis proved above. At most four squares can satisfy them, with distinct
+corners. For each of the other at least three squares, at least one of the
+four signed central-axis inequalities holds.
+
+These are statements about which separators are **available**, not which
+ones a proof happens to select. If both frames separate a pair, choosing an
+axis of the outer square does not make it exceptional. In particular this
+capacity lemma must not be applied merely by counting the own-axis choices
+in a preselected support-stress branch. It can be applied by keeping the two
+strict central-axis failures in each exceptional branch, while the actual
+stress is free to select any valid separator it needs.
+
 ## 5. What this advances and what it leaves open
 
 `CENTRAL_PORT_NEGATIVE.md` disproves a universal pairwise claim that every
