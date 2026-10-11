@@ -13,12 +13,13 @@ position minimizer is unique throughout the full feasible domain. A second
 lemma reduces optimization of the tilt at a fixed position to one explicit
 quartic equation and the two endpoints.
 
-These facts substantially simplify the conditional optimization problem.
-They also give the exact zero-tilt optimum, an analytic strict improvement
+These facts give the exact zero-tilt optimum, an analytic strict improvement
 by tilting, and a global least-root polynomial characterization of the sharp
-family radius. They do not identify that least root with the previously
-isolated candidate. That identification is still supplied only by the
-existing computational certificate.
+family radius. The continuation
+[HUMAN_FAMILY_CLOSURE.md](HUMAN_FAMILY_CLOSURE.md) completes the analytical
+optimization: it proves a unique admissible stationary solution in an
+explicit radius strip and identifies it as the global conditional optimum.
+No tiny numerical root box is needed for that exact selection.
 
 ## 1. A symmetric parametrization and the exact radical domain
 

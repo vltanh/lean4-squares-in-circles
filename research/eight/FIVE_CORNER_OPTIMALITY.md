@@ -2,6 +2,13 @@
 
 ## Scope
 
+**Analytical replacement.** The historical certificate proof below is now
+supplemented by [HUMAN_FAMILY_CLOSURE.md](HUMAN_FAMILY_CLOSURE.md), which
+proves the global conditional optimum and unique stationary root in an
+explicit strip without a continuous box cover. The full eight-square
+construction at that exact root is proved in
+[ANALYTIC_EXACT_CONSTRUCTION.md](ANALYTIC_EXACT_CONSTRUCTION.md).
+
 This is a **conditional lower-bound theorem**, with a completely verified
 full-domain certificate. It does not assert that all eight-square packings
 have this chain. The remaining unrestricted structural problem is explicit.
@@ -141,3 +148,4 @@ by convexity. This is a valid intermediate computational proof, with an
 analytical replacement remaining possible later.
 
 No Lean formalization has been attempted. All relevant commits use [skip ci].
+

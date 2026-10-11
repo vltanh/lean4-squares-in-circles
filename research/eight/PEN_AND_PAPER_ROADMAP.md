@@ -41,6 +41,7 @@ the earlier certificate-only premises.
 | A global $F_{tt}+4F>91/45$ inequality gives a convex transformed fixed-position tilt defect | HUMAN_FIVE_CORNER.md, Lemma 3 |
 | The family optimum is attained at an interior stationary point and is exactly the least admissible q in a nine-variable polynomial system | HUMAN_FIVE_CORNER.md, Lemmas 4–8; the exact zero-tilt optimum is $\sqrt{2257}/24$ and nonzero tilt improves it |
 | Feasible position minima move monotonically with tilt; simultaneous stationary points satisfy $u,v<1$, hence $r>U$ and $w>V$ | HUMAN_FIVE_CORNER.md, Lemmas 9–11; the additional corner bounds $k_1>1$, $k_2>1/2$ hold on the whole relevant radical domain |
+| The stationary polynomial system has a unique admissible solution in $(79/40)^2\le q\le9789/2500$, and this solution is the global family optimum | [HUMAN_FAMILY_CLOSURE.md](HUMAN_FAMILY_CLOSURE.md): every critical point of the minimized tilt envelope has positive second derivative, even when its defect is positive |
 | Relative to any selected square, at most one neighbor per corner lacks every separator on the selected square's axes | [HUMAN_STRUCTURAL_LEMMAS.md](HUMAN_STRUCTURAL_LEMMAS.md); in an eight-square packing at least three neighbors admit such axes |
 | Every eight-square packing with $q\le98/25$ has a unique square containing the disk center in its open interior | [HUMAN_GLOBAL_GEOMETRY_CLOSURE.md](HUMAN_GLOBAL_GEOMETRY_CLOSURE.md): the one-square inequality $3L_1+L_{5/4}\ge\pi$ and its exact equality cases force the conclusion by angular capacity |
 | A disk of radius two cut by $x\ge1/2$ contains at most two unit squares | [HUMAN_CAPACITY_BOUND.md](HUMAN_CAPACITY_BOUND.md); this bounds outward central sides and includes an exact counterexample to applying the same bound to inward sides |
@@ -55,11 +56,12 @@ the earlier certificate-only premises.
 | Stress leaves have two exact radial forms; three-vertex stress trees have only four possible radii | [HUMAN_STRESS_TREE_ENDS.md](HUMAN_STRESS_TREE_ENDS.md); this classification is analytic for $R>\sqrt2$ |
 | The minimum weight of a closed seven-step walk on four symmetric types is exactly $\min(\tau+4m,L)$ | HUMAN_CYCLE_ANALYSIS.md, section 2; the continuous geometric pair bounds required to apply it remain open |
 
-The least-root theorem is a global **selection rule for the conditional
-family**. It does not yet prove that the selected root is the previously
-isolated $q_*=3.9155341375\ldots$. The common-frame theorem derives orientation
-from a stated actual-contact pattern; it does not yet force that pattern in
-every optimal packing.
+The sharp conditional family radius is now specified by a **unique
+admissible stationary solution in an explicit strip**, with a complete
+analytical proof of global optimality. The earlier tiny root box is not
+needed for this exact definition. The common-frame theorem derives
+orientation from a stated actual-contact pattern; it does not yet force
+that pattern in every optimal packing.
 
 ## 2. Proof standard for this continuation
 
@@ -245,24 +247,22 @@ classifies the whole graph.
 
 ### Priority 2: identify the least family root analytically
 
-Write $\widehat R$ for the true optimum of the projected five-corner family.
-HUMAN_FIVE_CORNER.md proves
+**Completed.** Write $\widehat R$ for the sharp projected five-corner
+radius. HUMAN_FAMILY_CLOSURE.md proves that the defining stationary
+polynomial system has exactly one admissible solution in
 
 $$
-\frac{121}{32}\le\widehat R^2<\frac{2257}{576}
+(79/40)^2\le q\le9789/2500.
 $$
 
-and characterizes its square as the least solution of its displayed
-polynomial equations and sign conditions. The rational construction supplies
-the additional sharper bound $\widehat R^2<9789/2500$: all five of its
-distinguished points lie strictly in that disk and satisfy the chain.
-
-The next analytic task is to show that this least solution is the specified
-candidate root. One possible sufficient theorem is uniqueness of the
-admissible interior stationary minimum. Another is a direct supporting
-inequality that is sharp at that root. The fixed-position tilt curvature
-and fixed-tilt position convexity do not imply joint convexity, so that
-missing inference must not be skipped.
+This solution exists, gives $q=\widehat R^2$, and is the global conditional
+optimum. The proof first encloses every feasible chain analytically. It
+then proves positive Hessian determinant at every critical point of the
+minimized tilt envelope in the remaining strip, without assuming
+nonpositive defect. Therefore each radius has at most one interior tilt
+minimum. Strict radius monotonicity gives the unique stationary root.
+This closes the former gap between separate coordinate convexity and
+global optimization. A tiny numerical isolating box is unnecessary.
 
 ### Priority 3: construct eight squares at the selected exact optimum
 
@@ -275,8 +275,8 @@ The resulting unconditional upper bound is $R_8\le\widehat R$.
 
 This construction does not depend on identifying a tiny numerical root
 box. The equality $R_8=\widehat R$ still needs the unrestricted lower
-bound; equating $\widehat R$ with the earlier root specification is the
-separate family-identification task above.
+bound. The exact radius appearing in that target is now uniquely selected
+by the analytical theorem in Priority 2.
 
 ### Priority 4: assemble the sharp theorem
 

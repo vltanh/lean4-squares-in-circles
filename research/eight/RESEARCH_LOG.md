@@ -154,3 +154,28 @@ The sharp construction work package is therefore complete at the exact
 least family root. The unrestricted reverse inequality remains to be
 proved; the construction does not assert it.
 
+### Global conditional optimization and unique root: closed
+
+HUMAN_FAMILY_CLOSURE.md now proves that the stationary polynomial system
+has a unique admissible solution in $(79/40)^2\le q\le9789/2500$, and
+that it gives the sharp radius of the complete projected five-corner
+family. All feasible chains are first enclosed by the analytical support
+argument. On the remaining strip, the position minimum is unique and
+interior, and every critical point of its tilt envelope has positive
+second derivative. The determinant estimate is strict by the explicit
+margin $237/20000$ after the displayed normalization.
+
+The critical-point estimates do not assume that the defect is nonpositive.
+This matters: a positive local maximum between two feasible minima would
+otherwise escape the argument. Excluding every critical maximum proves a
+unique tilt minimum whenever one exists. Strict radius monotonicity then
+selects one stationary root. Existence follows from the earlier attained
+family optimum and rational construction, so no tiny root-isolation box
+is a hidden premise.
+
+Two independent audits checked the full chain, including the off-feasible
+critical points, the normalized Hessian identity, the trial-position bound,
+and the rational margins. The conditional optimization and exact
+construction work packages are complete. The remaining sharp step is
+the unrestricted geometric lower bound.
+

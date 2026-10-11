@@ -5,9 +5,9 @@
 The checklist below is the original planning document and predates most of
 the research on this branch. See [PEN_AND_PAPER_ROADMAP.md](PEN_AND_PAPER_ROADMAP.md)
 for the current evidence, the precise global gap, and the analytic work plan.
-The exact candidate and a conditional five-corner optimum are already
-available with computational certificates. The unrestricted sharp lower bound
-and their complete pen-and-paper replacements are not yet proved.
+The exact construction and the sharp conditional five-corner optimum now
+have complete analytical proofs. The unrestricted sharp lower bound is
+not yet proved.
 The current continuation writes mathematics only; no Lean proof is attempted.
 
 ### Completed analytical work in this continuation
@@ -26,6 +26,10 @@ The current continuation writes mathematics only; no Lean proof is attempted.
 - [x] Prove the sharper stationary order $1/2<v<u<1$ and give an
       analytic whole-family enclosure $R>79/40$, $\tan t<1/5$ below
       the rational construction ceiling, using concave support functions.
+- [x] Prove that the stationary polynomial system has exactly one admissible
+      solution in the explicit radius strip, and that it gives the global
+      family optimum. The envelope argument covers critical points with
+      positive defect as well as feasible critical points.
 - [x] Prove compactness, exact center supports, balanced stresses, and
       complete normal angle stationarity for arbitrary minimizers.
 - [x] Prove the exceptional-corner bound and the outward disk-cap capacity.
@@ -50,8 +54,8 @@ The current continuation writes mathematics only; no Lean proof is attempted.
 
 - [ ] Force a sufficient contact pattern or a sharp alternative inequality
       for an arbitrary radius-minimizing eight-square packing.
-- [ ] Identify the least admissible family root with the previously
-      isolated candidate root by an analytic proof.
+- [x] Select the exact sharp family root uniquely by an analytical theorem;
+      a tiny numerical root box is unnecessary for its definition or proof.
 - [x] Prove the eight-square construction at the exact selected least
       family root without the existing interval margin checks.
 - [ ] Combine these results into the unconditional equality $R_8=R_*$.
