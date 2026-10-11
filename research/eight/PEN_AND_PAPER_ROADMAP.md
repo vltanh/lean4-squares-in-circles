@@ -54,6 +54,7 @@ the earlier certificate-only premises.
 | Every nontrivial actual-contact component in a minimum-contact minimizer contains a cycle | [HUMAN_STRESS_GRAPH.md](HUMAN_STRESS_GRAPH.md); every actual leaf is radial, all leaves share a central neighbor, and there are at most two |
 | Contact forces can be applied at actual common points, with exact force and moment equilibrium | [HUMAN_CONTACT_EQUILIBRIUM.md](HUMAN_CONTACT_EQUILIBRIUM.md); every positive-stress bridge is radial, and a stress-tree component must meet a square containing the disk center |
 | Every nontrivial physical stress component of an eight-square minimizer has a cycle carrying a nonzero moment circulation | HUMAN_CONTACT_EQUILIBRIUM.md, sections 7–8, together with the new analytical radius bound in HUMAN_ANALYTIC_LOWER_BOUND.md |
+| Every directed contact-moment cycle avoiding the central square winds positively around its whole open interior | [HUMAN_GLOBAL_CYCLE_CLOSURE.md](HUMAN_GLOBAL_CYCLE_CLOSURE.md): every exterior square orders its incoming and outgoing moments around its nearest-point ray; no degree or contact-graph planarity assumption is used |
 | Stress leaves have two exact radial forms; three-vertex stress trees have only four possible radii | [HUMAN_STRESS_TREE_ENDS.md](HUMAN_STRESS_TREE_ENDS.md); this classification is analytic for $R>\sqrt2$ |
 | The minimum weight of a closed seven-step walk on four symmetric types is exactly $\min(\tau+4m,L)$ | HUMAN_CYCLE_ANALYSIS.md, section 2; the continuous geometric pair bounds required to apply it remain open |
 
@@ -231,6 +232,15 @@ adapted to the central square is overfilled by the central square and all
 seven exterior squares. Thus every nontrivial physical stress component
 of a minimizer has nonzero contact-moment circulation, with no dependency
 on the earlier numerical marker bounds.
+
+HUMAN_GLOBAL_CYCLE_CLOSURE.md now shows that any directed moment cycle
+avoiding the central square winds around its whole open interior. The
+proof works for every exterior square, including force-free branches of
+higher degree, and handles zero-angle degeneracies. It does not ensure
+that a selected stress has such a cycle: the candidate admits a stress
+cycle through the central square while the second transmitter has zero
+stress. Controlling those central cycles and the remaining squares is
+therefore a necessary part of this route.
 
 A useful target is the following specific intermediate statement:
 

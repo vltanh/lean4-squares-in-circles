@@ -202,3 +202,23 @@ the theorem that every nontrivial physical stress component of an
 eight-square minimizer has nonzero moment circulation. The sharp
 unrestricted contact-pattern reduction is still to be proved.
 
+### Angular order for all exterior contact-moment cycles
+
+HUMAN_GLOBAL_CYCLE_CLOSURE.md proves two uniform contact bounds,
+$|n\cdot z|\le R-1$ and $|z|^2\le R^2-1$, and uses the first to
+order incoming and outgoing contact moments around the nearest-point
+ray of every exterior square. Concatenating paths through those nearest
+points turns each directed exterior cycle into a closed curve with
+positive winding around the central square. The proof treats both
+nearest-corner and nearest-side states, arbitrary available contact
+normals, and the possible zero-angle degeneracies. A winding exterior
+cycle has at least four squares by an elementary area argument.
+
+This removes a degree-two assumption from the angular-order step. It
+does not force the positive-stress cycle to avoid the central square.
+An exact four-square example in the note also shows that force and
+moment balance at one circle-free exterior square alone allow a
+three-force branch. Accordingly the remaining argument must use
+global minimality, the other squares, or collective deformations.
+The full note passed two independent audits before this commit.
+

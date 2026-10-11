@@ -46,6 +46,9 @@ The current continuation writes mathematics only; no Lean proof is attempted.
       components in a minimum-contact minimizer.
 - [x] Prove force and moment equilibrium at actual common contact points;
       constrain positive-stress bridges and tree components.
+- [x] Prove nearest-point angular order for the contact moments of every
+      exterior square, and positive winding for every directed exterior
+      moment cycle, including degenerate contacts and higher-degree branches.
 - [x] Exclude every nontrivial stress-tree component under the explicit
       hypothesis $\sqrt2+1/2<R<2$; the new analytical lower bound now
       places $R_8$ in this interval without a certificate premise.
