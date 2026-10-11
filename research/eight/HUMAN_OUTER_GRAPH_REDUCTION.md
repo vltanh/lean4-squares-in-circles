@@ -14,9 +14,10 @@ following assertions hold:
 1. There is at least one inner square: the unique open central square C.
 2. The actual-contact graph induced by all outer squares is either a
    disjoint union of paths and isolated vertices, or a single cycle.
-3. In the cycle case there are exactly six or seven outer squares. Every
-   remaining unit is inside its contact polygon, with winding number one.
-4. Every actual contact cycle of at most five squares includes an inner
+3. In the cycle case there are exactly seven outer squares. The remaining
+   unit is C, its center has norm strictly less than 1/2, and its open
+   interior has winding number one about the contact polygon.
+4. Every actual contact cycle of at most six squares includes an inner
    square. If such a cycle is exterior, this is a noncentral square at
    distance strictly less than 1/2 from zero.
 
@@ -32,6 +33,11 @@ there is the additional assertion:
 These are exhaustive graph alternatives, not a completed radius bound.
 An isolated outer vertex can have inner neighbors or can be isolated in the
 whole actual graph. The statements do not discard it.
+
+The earlier version of this note retained a six-outer cycle enclosing two
+units. HUMAN_RADIAL_ESCAPE.md now excludes that case. The proof below
+incorporates its stronger enclosure bound; it does not assume that two
+interior squares can be replaced by a solid convex hull.
 
 ## 1. Central square and cyclic order
 
@@ -68,60 +74,32 @@ all cycle squares. Its open interior is connected and avoids every closed
 cycle square. Hence the winding is one throughout its open interior.
 All 8-k noncycle units lie inside P, up to boundary points.
 
-## 2. The short-cycle capacity bound applies without a chosen stress
+## 2. Radial escape leaves exactly seven outer units
 
-The needed geometric estimates from HUMAN_CYCLE_INTERIOR_CAPACITY.md do
-not require stress weights once the polygon and winding assertions above
-have been established. For completeness, their application here is short.
+The radial-escape theorem applies to a unit square S in D_2 and a disjoint
+open disk of radius 1/2 centered at p with |p|>=1/2. It says that the closed
+square S misses the entire outward ray {t p:t>=1}.
 
-Let d_i<=sqrt(2) be the length of the chord in the i-th cycle square. Each
-piece cut off by its chord line has area at least
+Apply it to the inscribed disk of any noncycle square T and to each square
+used by P. If |p_T|>=1/2, this ray would connect p_T to infinity without
+meeting P. The winding number of P at p_T would then be zero, contradicting
+section 1. Thus every noncycle unit satisfies
 
-    (d_i^2-1)_+/2.                                        (1)
+    |p_T|<1/2.                                           (1)
 
-For a chord joining adjacent square sides, with endpoint distances a,b
-from their common corner, use a^2+b^2-ab<=1 on [0,1]^2. The corner
-triangle has area ab/2, and the other piece has area at least 1/2.
-For a chord joining opposite sides, write endpoints (0,a),(1,b). Its
-smaller cut piece has area
+Two different noncycle units would have center distance less than one by
+the triangle inequality. Their open inscribed radius-1/2 disks would
+intersect, contradicting the packing condition. Consequently
 
-    min(a+b,2-a-b)/2 >= |a-b|/2 >= (a-b)^2/2.
+    8-k<=1.
 
-These prove (1); for d_i<=1 it merely says that area is nonnegative.
+Since k<=7 already, k=7. The sole remaining unit is C and (1) gives the
+stated bound on its center.
 
-If d_i>1, the chord crosses its square's open interior. No other polygon
-edge enters that interior. The open piece on the left of the oriented
-chord therefore lies inside P: winding increases by one across that chord,
-and a simple positively oriented polygon has winding zero or one.
-The left pieces are mutually interior-disjoint, and disjoint from the
-8-k whole noncycle units. Consequently
-
-    8-k + (1/2) sum_i (d_i^2-1)_+ <= area(P).            (2)
-
-The polygonal area inequality proved by the finite Fourier calculation in
-HUMAN_CYCLE_INTERIOR_CAPACITY.md is
-
-    area(P) <= C_k sum_i d_i^2,
-    C_k=(1/4)cot(pi/k).                                  (3)
-
-That calculation applies to any closed polygonal path and thus certainly
-to P. Combining (2)--(3), with 0<=d_i^2<=2, gives
-
-    8-k <= k max(C_k,2C_k-1/2).                          (4)
-
-For k=3,4,5, the right side is respectively less than one, equal to one,
-and less than two. For the last comparison, tan(pi/5)>5/8 implies
-C_5<2/5<1/2. The elementary proof uses
-
-    tan x >= x+x^3/3,       pi/5>3/5,
-    tan(pi/5)>84/125>5/8.
-
-In every case k<=5, (4) contradicts 8-k>=3. A cycle must therefore have
-k=6 or k=7. No positive-moment orientation assumption has been used.
-
-For k=6, (4) permits two inner units; it does not exclude them. For k=7
-there is just the central unit inside. These two alternatives must still
-be handled quantitatively in a sharp proof.
+This argument is stronger than the earlier area-capacity calculation,
+which gave only k>=6. It excludes all k<=6 at once, in particular the
+six-outer-cycle case with two enclosed units. It relies on a clear ray
+of points, not on an asserted collision-free translation of a whole square.
 
 ## 3. Attachments in a contact-minimal radius minimizer
 
@@ -155,56 +133,79 @@ neighbor: circle-free vertices of actual degree two are transmitters.
 A vertex with an inner attachment need not have degree two, whether or not
 that attachment has positive weight in a chosen stress.
 
-## 4. The five-cycle case necessarily includes a near-center square
+## 4. Every cycle of at most six units includes a near-center square
 
-Suppose an actual contact cycle of length at most five contained only
+Suppose an actual contact cycle of length at most six contained only
 outer squares. It would be a cycle in the induced outer graph. By section 1
-it would have to be that entire graph's cycle, so k would be at most five.
+it would have to be that entire graph's cycle, so k would be at most six.
 Section 2 excludes this. Therefore every such actual cycle has an inner
 vertex S with center norm less than one.
 
 If the cycle is exterior, S is not C and its closed square omits zero.
 Its inscribed disk of radius 1/2 lies in S, so
 
-    0 < dist(0,S) <= |p_S|-1/2 < 1/2.                    (5)
+    0 < dist(0,S) <= |p_S|-1/2 < 1/2.                    (2)
 
 In a radius minimizer this square is also strictly inside D_R, by section 3.
-This strengthens HUMAN_CYCLE_BOUNDARY_COUNT.md for exterior five-cycles:
-the guaranteed interior vertex can be taken to have center norm below one,
-not merely to miss the containing circle.
+This strengthens HUMAN_CYCLE_BOUNDARY_COUNT.md: it applies to an exterior
+six-cycle as well as a five-cycle, and the guaranteed interior vertex has
+center norm below one, not merely a square missing the containing circle.
 
 The distinction matters for the earlier transmitter argument. Throughout
 the relevant radius range,
 
     sqrt(R^2-1)-1 > 1/2,
 
-since R>sqrt(2)+1/2 implies R^2>13/4. Thus the square in (5) is on the
+since R>sqrt(2)+1/2 implies R^2>13/4. Thus the square in (2) is on the
 opposite side of the distance threshold in
 HUMAN_OUTER_INTERIOR_TRANSMITTER.md. That theorem cannot be applied to this
 guaranteed vertex. Its actual degree might be two or might be larger;
 the near-center attachment and occupancy argument remains necessary.
 
-There is no additional alternative in which a short all-outer cycle sits
-inside a longer induced outer cycle: a subgraph of a simple cycle has no
-proper cycle. This is why the inner vertex conclusion is unconditional
-under the displayed packing hypotheses.
+There is no alternative in which a short all-outer cycle sits inside a
+longer induced outer cycle: a subgraph of a simple cycle has no proper
+cycle. This is why the inner vertex conclusion is unconditional under
+the displayed packing hypotheses.
 
-## 5. What is now reduced, and what remains
+## 5. Unused exterior units have winding zero for every exterior moment cycle
+
+The same radial-escape argument sharpens
+HUMAN_CYCLE_INTERIOR_CAPACITY.md independently of the center-one graph.
+Let gamma be a directed positive-moment cycle of exterior units. Its
+winding number is positive throughout the open central square C, by
+HUMAN_GLOBAL_CYCLE_CLOSURE.md. Every unused exterior unit T has
+|p_T|>=1/2 because its inscribed disk does not contain zero. Its outward
+center ray misses every unit used by gamma. Therefore
+
+    winding(gamma,int(T))=0.                            (3)
+
+This holds for any length of exterior moment cycle, including six.
+It improves the old allowance of a second enclosed whole unit in the
+six-cycle case. It does not bound repeated winding about C: the radial
+argument counts distinct enclosed units, not winding multiplicity.
+
+For completeness, in the present setting |p_T|=1/2 would already put
+zero in the closed inscribed disk of T and hence in T, impossible since
+C contains zero in its open interior. The weak inequality above is enough
+for the radial-escape theorem.
+
+## 6. What is now reduced, and what remains
 
 The reduction replaces a general exterior-contact graph by a cyclic graph
 on outer centers together with the inner units and their attachments.
-The cases are exactly:
+The two exhaustive alternatives are:
 
-* a six-outer cycle enclosing two inner units;
-* a seven-outer cycle enclosing C;
+* a seven-outer cycle enclosing C, whose center has norm less than 1/2;
 * outer paths and isolated outer vertices, with every nontrivial path
   attached to inner units at both ends in the contact-minimal representative.
 
-The cases do not assert a particular number of inner units in the path
-alternative. Isolated outer units, inner-inner contacts, repeated inner
-attachments, and zero-weight actual contacts are retained.
+The path alternative does not assert a particular number of inner units.
+Isolated outer units, inner-inner contacts, repeated inner attachments,
+and zero-weight actual contacts are retained. Every exterior actual cycle
+of length at most six must pass through a noncentral inner unit, and all
+unused exterior units have winding zero about an exterior moment cycle.
 
-To obtain R8>=Rhat one must still prove the sharp bound in the two long-cycle
-cases and for the paths with inner attachments, or a single inequality
-covering them. None of (1)--(5) supplies those sharp estimates. This note
-records the graph reduction, not closure of the unrestricted theorem.
+To obtain R8>=Rhat one must still prove the sharp bound for the seven-cycle
+and for the paths with inner attachments, or a single inequality covering
+both. None of (1)--(3) supplies those sharp estimates. This note records
+the graph reduction, not closure of the unrestricted theorem.
