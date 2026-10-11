@@ -275,3 +275,47 @@ result is a premise of the claimed hand lemmas.
 near-center attachments have not been converted into the five-corner
 chain or an equally sharp alternative inequality. No hand proof of
 the unrestricted n=8 equality is claimed.
+
+
+## New unconditional outer-center quadrant restriction
+
+HUMAN_OUTER_QUADRANT_CAPACITY.md now proves, entirely by hand,
+that below q<=9789/2500 no three packed unit squares
+with centers of norm at least one can have all three
+center directions inside any angular sector of width
+`pi/2+1/120`. The proof combines the established
+sharp q0=5/2+sqrt(2) common-point theorem and
+its stable q_plus perturbation bound with a new
+**two-point interior-margin lemma**: for an outer
+square centered on the positive axis and fitting
+at q0, one of the two points at angles +/-pi/8
+and radius (2+sqrt(2))/3 lies inside the square
+with an explicit full disk margin 1/70.
+The full continuous angle and radius domains are
+handled by the derivative bound already proved
+for the longitudinal coordinate, Cauchy--Schwarz,
+and exact rational slack comparisons.
+
+Thus seven outer center directions, if present,
+have 2,2,2,1 populations in any generic four
+quadrants, and any closed sector of angular width
+pi/2+1/120 has capacity two. This is a
+**center-ray** restriction. It does not imply
+whole-square membership in the central side caps
+and does not exclude the seven-outer-cycle case.
+
+HUMAN_OUTER_RADIALIZATION_COUNTEREXAMPLE.md
+supplies two rational strictly disjoint outer
+squares at q<9789/2500 which overlap after
+radially translating one outward, while both
+remain within that same disk. Thus global
+outward radialization is invalid even when
+all moved centers are outer. This does not
+invalidate the pair-only existential radial
+endpoint lemma.
+
+The missing unrestricted inference remains
+`R8>=Rhat`. Neither the new quadrant bound
+nor the failed radialization shortcut proves the
+five-corner inequalities or classifies the
+remaining outer-path inner attachments.
