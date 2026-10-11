@@ -394,3 +394,235 @@ not assert equilibrium at the other three squares. It disproves the
 stronger local assertion that disk containment, a central square, and
 force and moment balance at one exterior square already force a
 degree-two transmitter.
+
+
+## 7. A four-square exterior cycle is an exact cross
+
+Here is a rigidity consequence of winding which uses the area of the whole
+central square. It applies to any four distinct unit squares whose contact
+cycle winds around a fifth unit square; no force balance is needed.
+
+### A square cut by a contact chord
+
+Let a straight chord of a unit square have length $d$. Either of the two
+pieces into which its line cuts the square has area at least
+
+$$
+ a(d)=\frac{(d^2-1)_+}{2},\qquad (x)_+=\max(x,0).        \tag{8}
+$$
+
+Only $d>1$ needs proof. If the chord joins adjacent sides, write its
+distances from their common corner as $r,s\in[0,1]$. Its squared length is
+$r^2+s^2$, and the corner triangle has area $rs/2$. The inequality
+
+$$
+ r^2+s^2-rs\le1
+$$
+
+holds throughout the unit square of $(r,s)$ values: the left side is a
+convex function, so its maximum is attained at a vertex, where it is at
+most one. The complementary piece has area at least $1/2$, which also
+bounds $(d^2-1)/2$ since $d\le\sqrt2$.
+
+If the chord joins opposite sides, write its endpoints as $(0,r),(1,s)$.
+Then $d^2=1+(s-r)^2$. The smaller trapezoid has area
+
+$$
+ \frac{\min(r+s,2-r-s)}2
+ \ge\frac{|s-r|}{2}\ge\frac{(s-r)^2}{2}.
+$$
+
+This proves (8), including endpoint and side-chord degeneracies by
+continuity.
+
+### Applying the cut bound to a four-square contact polygon
+
+Join the incoming and outgoing contacts of each of four cycle squares by
+a chord. The chord is homotopic to the nearest-point path inside the
+same closed square, by convexity. This homotopy avoids every point of
+the open central square $C$. Section 4 therefore shows that the resulting
+closed four-edge path has
+positive winding about every point of the open central square $C$.
+Proper crossings of two nonadjacent chords are impossible. A point in
+the relative interior of a chord is either in its square's open interior
+or in the relative interior of one of its edges. In the first case a
+transverse second chord forces an open overlap; in the second case two
+transverse supporting edges have overlapping inward half-planes near
+their crossing, again forcing an open overlap.
+
+Consequently a nondegenerate bounded region of the four-edge path is a
+simple quadrilateral, or a triangle obtained by a repeated vertex or
+retraced part. The latter is impossible here: its three sides are
+subsegments of square chords and have length at most $\sqrt2$, so its
+area is at most $\sqrt3/2<1$. It cannot contain $C$. We therefore have a
+simple quadrilateral $P$ containing $C$, with side lengths
+$d_1,\ldots,d_4$.
+
+The other three sides of $P$ cannot enter the open interior of the square
+owning its $i$-th side. Thus the part of that square on the inward side
+of its chord lies in $P$, up to boundary points. Equivalently, its
+connected open cut piece has no boundary crossing through any other
+side of $P$, and the points immediately next to the chord lie inside
+$P$. The four such pieces have disjoint interiors and are disjoint from
+the open square $C$. Hence
+
+$$
+ 1\le\operatorname{area}(P)-\sum_{i=1}^4 a(d_i).        \tag{9}
+$$
+
+Every simple quadrilateral satisfies
+
+$$
+ \operatorname{area}(P)\le\frac14\sum_{i=1}^4d_i^2.     \tag{10}
+$$
+
+For example, its signed area is half the cross product of its two
+diagonal vectors. Apply $2|u\times v|\le |u|^2+|v|^2$ and the
+quadrilateral identity
+$|u|^2+|v|^2\le\sum_i d_i^2$; the difference in that last inequality
+is four times the squared distance between the diagonal midpoints.
+Equality in (10) requires a square.
+
+Combining (8)--(10) gives
+
+$$
+ 1\le\frac14\sum_{i=1}^4
+       \bigl[d_i^2-2(d_i^2-1)_+\bigr]\le1,             \tag{11}
+$$
+
+since each summand in brackets is at most one, with equality only when
+$d_i^2=1$. All inequalities are therefore equalities. The contact
+quadrilateral is a unit square; every inward cut piece has area zero;
+and its contained unit square $C$ is the whole quadrilateral. Each
+cycle square consequently shares one complete side with $C$ and lies
+outside it. In coordinates centered at $C$, their centers are exactly
+
+$$
+ (1,0),\quad(0,1),\quad(-1,0),\quad(0,-1),             \tag{12}
+$$
+
+and all five frames agree. Thus a four-square exterior positive-moment
+cycle is precisely a parallel five-square cross.
+
+This does not itself exclude the cycle in a radius below two: the cross
+can leave room for two additional unit squares. To exclude it for eight
+squares, one must exclude a third additional square. The following
+section supplies one part of that count, and HUMAN_CROSS_OCCUPANCY.md
+completes it: a cross admits at most two additional squares when $R<2$.
+
+## 8. Opposite corner regions of a cross cannot both be occupied
+
+Assume the five squares in (12) lie in $D_R$, with $R<2$, and that
+$C$ contains the disk origin in its open interior. Use the common square
+frame, and write $p=(p_x,p_y)$ for the actual center of $C$. Thus
+$|p_x|,|p_y|<1/2$. In this section $(a,b)$ denotes another square's center
+**relative to $p$**.
+
+No further square can lie beyond the outer side of the eastern arm with
+that arm's horizontal axis as a separator. It would be contained in
+$x\ge p_x+3/2>1$ in disk coordinates; its horizontal width is at least
+one, contrary to $R<2$. The analogous outward tip separators for the
+other three arms are equally impossible.
+
+An additional square's relative center cannot lie on either coordinate
+axis. For example, if $a>0,b=0$, separation from the eastern arm cannot
+be vertical, cannot put it to that arm's left since every sum of the
+two horizontal half-widths is at least one, and cannot use the outward
+tip separator just excluded. If neither arm axis separates, the corner
+classification in HUMAN_STRUCTURAL_LEMMAS.md requires both relative
+center components to be nonzero, again impossible. The origin itself
+is already occupied by $C$. Reflection covers the other rays.
+
+Suppose now that $a,b>0$, and put
+
+$$
+ c=\cos\theta,\quad s=\sin\theta,\quad
+ 0\le\theta\le\pi/4,\qquad
+ W=\frac{1+c+s}{2}.                                    \tag{13}
+$$
+
+Here $\theta$ is the unsigned frame difference modulo right angles.
+The additional square's half-width on either central axis is
+$(c+s)/2$, and its half-width in the unnormalized direction $(1,1)$
+is $c$.
+
+If the eastern arm's upper separator and the northern arm's right
+separator are both available, then $a,b\ge W$, whence
+
+$$
+ \max_{z\in S}(z_x+z_y)-p_x-p_y
+     =a+b+c\ge1+2c+s\ge3.                              \tag{14}
+$$
+
+The last inequality follows, for instance, by concavity of
+$2\cos\theta+\sin\theta$: its two endpoint values on
+$[0,\pi/4]$ are $2$ and $3/\sqrt2>2$.
+
+If there is a corner-owned separation from the eastern arm into its
+northeast corner, the corner triangle from HUMAN_STRUCTURAL_LEMMAS.md gives
+
+$$
+ (a-1)+b>1+s.
+$$
+
+Indeed, the infimum of the sum of the two center coordinates over that
+corner triangle is $1+\min(c,s)=1+s$; it occurs at an excluded endpoint.
+Consequently
+
+$$
+ a+b+c>2+c+s\ge3.                                      \tag{15}
+$$
+
+The same conclusion holds for a northeast corner-owned separation from
+the northern arm.
+
+These cases exhaust the possibilities. To see this, the only central-axis
+separator available with the eastern arm is its upper one, and the only
+one with the northern arm is its right one: the other inner directions
+contradict $a,b>0$, and the outward tip directions were excluded above.
+If one of these central-axis separators is available and the other is
+not, the missing one must be a northeast corner-owned separator. If
+neither is available and neither corner assignment is northeast, the
+square must be northwest of the eastern arm and southeast of the
+northern arm. Its selected outward axes in those opposite quadrants
+are $n=(-\alpha,\beta)$ and $-n=(\alpha,-\beta)$, where
+$\alpha,\beta>0$ and $\alpha+\beta=c+s$. The two separating
+inequalities would be
+
+$$
+ n\cdot(a-1,b)\ge W,\qquad
+ (-n)\cdot(a,b-1)\ge W.
+$$
+
+Their sum says $c+s\ge2W=1+c+s$, a contradiction.
+
+Thus every extra square whose center is in the northeast relative
+quadrant satisfies (14) or (15). Since its vertices are in $D_R$,
+
+$$
+ 3+p_x+p_y\le\max_{z\in S}(z_x+z_y)
+       \le\sqrt2 R<2\sqrt2,
+$$
+
+and therefore
+
+$$
+ p_x+p_y<2\sqrt2-3<0.                                  \tag{16}
+$$
+
+Reflection gives the corresponding strict inequality
+$\varepsilon_xp_x+\varepsilon_yp_y<2\sqrt2-3$ for an extra square
+in the quadrant with signs $(\varepsilon_x,\varepsilon_y)$.
+Opposite quadrants cannot both contain extra squares, because adding
+their inequalities would give $0<2(2\sqrt2-3)<0$.
+
+In particular, all extra squares lie in at most two adjacent relative
+quadrants. This statement alone does not bound the number within either
+quadrant: their centers are assigned to quadrants here, and a tilted
+square may protrude across a side of the central square.
+HUMAN_CROSS_OCCUPANCY.md supplies the further containment argument. Each
+additional square lies wholly in its corresponding open quadrant about
+the disk origin, where the radius bound gives capacity one. Thus a cross
+cannot extend to eight squares below radius two, and every exterior
+positive-moment cycle in an eight-square packing has at least five
+vertices.

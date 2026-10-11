@@ -57,6 +57,7 @@ the earlier certificate-only premises.
 | Contact forces can be applied at actual common points, with exact force and moment equilibrium | [HUMAN_CONTACT_EQUILIBRIUM.md](HUMAN_CONTACT_EQUILIBRIUM.md); every positive-stress bridge is radial, and a stress-tree component must meet a square containing the disk center |
 | Every nontrivial physical stress component of an eight-square minimizer has a cycle carrying a nonzero moment circulation | HUMAN_CONTACT_EQUILIBRIUM.md, sections 7–8, together with the new analytical radius bound in HUMAN_ANALYTIC_LOWER_BOUND.md |
 | Every directed contact-moment cycle avoiding the central square winds positively around its whole open interior | [HUMAN_GLOBAL_CYCLE_CLOSURE.md](HUMAN_GLOBAL_CYCLE_CLOSURE.md): every exterior square orders its incoming and outgoing moments around its nearest-point ray; no degree or contact-graph planarity assumption is used |
+| Every exterior moment cycle in an eight-square packing below radius two has at least five vertices | HUMAN_GLOBAL_CYCLE_CLOSURE.md, sections 7--8, and [HUMAN_CROSS_OCCUPANCY.md](HUMAN_CROSS_OCCUPANCY.md): a four-cycle is an exact cross, whose extra squares lie in at most two actual quadrants with capacity one each |
 | Stress leaves have two exact radial forms; three-vertex stress trees have only four possible radii | [HUMAN_STRESS_TREE_ENDS.md](HUMAN_STRESS_TREE_ENDS.md); this classification is analytic for $R>\sqrt2$ |
 | The minimum weight of a closed seven-step walk on four symmetric types is exactly $\min(\tau+4m,L)$ | HUMAN_CYCLE_ANALYSIS.md, section 2; the continuous geometric pair bounds required to apply it remain open |
 
@@ -243,6 +244,18 @@ that a selected stress has such a cycle: the candidate admits a stress
 cycle through the central square while the second transmitter has zero
 stress. Controlling those central cycles and the remaining squares is
 therefore a necessary part of this route.
+
+The cycle bound is now at least five, rather than four. A square cut by
+a chord of length $d$ contributes inward area at least
+$(d^2-1)_+/2$. Applying this to a four-square cycle that encloses the
+central unit forces equality in a quadrilateral area inequality: all
+four exterior units form a parallel cross around it.
+HUMAN_CROSS_OCCUPANCY.md then proves that every extra square lies wholly
+in its corresponding coordinate quadrant about the disk origin. Opposite
+quadrants cannot both be occupied, and each quadrant holds at most one
+extra unit. Thus a cross can have at most seven units in total. This
+excludes the complete four-cycle case without assumptions on the
+orientations of the additional squares.
 
 A useful target is the following specific intermediate statement:
 

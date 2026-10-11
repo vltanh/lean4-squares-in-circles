@@ -279,3 +279,29 @@ directs the remaining reduction toward full occupancy or collective
 deformations. The example and its first-order isolation argument were
 independently checked before this commit.
 
+### Four-cycle rigidity and the complete cross occupancy bound
+
+Sections 7--8 of HUMAN_GLOBAL_CYCLE_CLOSURE.md and the new
+HUMAN_CROSS_OCCUPANCY.md exclude every exterior four-square moment cycle
+in an eight-square packing of radius less than two. The cut-area
+inequality $(d^2-1)_+/2$ for a unit square and a chord of length $d$,
+together with the quadrilateral area bound, forces a winding four-cycle
+around a unit square to be the exact parallel five-square cross.
+
+The occupancy argument retains arbitrary frames on all additional
+squares. Cross containment first places its middle center within distance
+$23/50$ of the disk origin. If an extra square were to wrap across an
+actual coordinate axis, the separating-axis branches would force either
+a positive lowest-vertex coordinate or a central offset at least
+$71/152>23/50$. Thus each extra lies in its corresponding actual open
+quadrant. Every unit square in $(0,2)^2$ contains $(1,1)$ in its open
+interior, so a quadrant holds at most one. Opposite quadrants are
+incompatible by their diagonal support inequalities. This leaves at most
+two extra squares, excluding eight in the cross case.
+
+Independent audits checked the contact-path homotopy, cut pieces and
+quadrilateral equality, all central-separator alternatives, the uniform
+far-vertex bound, and the common-point capacity step. Exterior cycles of
+length at least five and cycles through the central square remain in the
+unrestricted sharp reduction.
+
