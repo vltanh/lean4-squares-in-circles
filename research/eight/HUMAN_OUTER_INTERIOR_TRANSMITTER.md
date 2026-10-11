@@ -7,8 +7,8 @@ Suppose its radius satisfies
 
     sqrt(2)+1/2 < R <= sqrt(9789)/50.
 
-Let S be a packed unit square strictly inside the containing circle, and
-put
+Let S be a packed unit square strictly inside the containing circle,
+with at least one actual neighbor, and put
 
     q=R^2,        r_c=sqrt(q-1),        d_*=r_c-1.
 
@@ -21,8 +21,9 @@ to S's own frame.
 This is a statement about all actual contacts, not only positive stress
 edges. Additional zero-weight neighbors are excluded by the same proof.
 No assumption about either neighbor's orientation or circle contact is made.
-The result is conditional on the displayed distance; it does not assert
-that every circle-free exterior square satisfies that distance bound.
+Both nonisolation and the displayed distance are hypotheses. In particular,
+the theorem does not discard isolated squares or assert that every
+circle-free exterior square satisfies that distance bound.
 
 ## 1. Contact points and square centers
 
@@ -88,15 +89,13 @@ one is removed, contradicting the minimum number of actual pairs.
 Consequently every available separating normal at every contact is
 horizontal. Each neighbor is wholly to the right of x=h or wholly to
 the left of x=h-1, tangent to that line at some height at least D.
-Both sides have neighbors: if all neighbors were on one side, translate
-S horizontally away from them to remove all contacts. If there were no
-neighbors at all, the theorem's conclusion would not follow from this
-argument alone; section 6 below addresses that case explicitly.
+At least one neighbor exists by hypothesis. Both sides have neighbors:
+if all were on one side, translate S horizontally away from that side
+to remove all contacts, again contradicting minimum contact count.
 
 ## 4. An opposite neighbor forces a positive cap threshold
 
-Assume for now that both sides have neighbors. We show h>1/10 and,
-by horizontal reflection, 1-h>1/10.
+We show h>1/10 and, by horizontal reflection, 1-h>1/10.
 
 Choose a neighbor A on the left. Its rightmost face lies on x=h-1 and
 meets S at height at least D. Its center satisfies
@@ -174,32 +173,24 @@ strictly greater than
     1+(d_*+1)^2=q,
 
 contradicting containment. Hence there is at most one right-hand neighbor.
-Reflection gives at most one left-hand neighbor. Whenever S is nonisolated,
-sections 3--5 prove that it has exactly those two neighbors.
+Reflection gives at most one left-hand neighbor. Section 3 supplies at
+least one on each side, so there are exactly two. This proves the theorem.
 
-## 6. Correct treatment of isolated squares
+## 6. Use and remaining cases
 
-Minimum contact count does not prohibit an isolated square. Therefore the
-precise conclusion proved without an extra hypothesis is the following:
+Without the nonisolation assumption, the conclusion is that S is either
+isolated or an actual degree-two transmitter. Minimum contact count does
+not itself prohibit an isolated square. A vertex of any actual contact
+cycle is automatically nonisolated, so the degree-two conclusion applies
+to it whenever the stated distance bound holds.
 
-> A strictly contained square at distance D>d_* is either isolated in the
-> actual-contact graph, or has exactly two actual neighbors on opposite
-> sides perpendicular to its nearest-point side.
+The proof needs no chosen stress. In particular it excludes additional
+actual neighbors even when all their stress weights happen to be zero.
+For a strictly interior vertex on an exterior moment cycle, the only
+remaining obstruction to this degree-two argument is the explicit near
+case
 
-If S belongs to any actual contact cycle, it is automatically nonisolated
-and the degree-two conclusion applies. The same holds if it has any
-positive stress edge. The initial theorem is to be read with this necessary
-nonisolation hypothesis; no argument here removes isolated packing units.
+    dist(0,S)<=sqrt(R^2-1)-1.
 
-To avoid ambiguity in later use, the formal statement used by this note is:
-
-**Outer transmitter theorem.** Under the stated radius and minimum-contact
-hypotheses, every nonisolated, strictly contained square S with
-D>sqrt(R^2-1)-1 has exactly two actual neighbors, in the configuration
-proved above. All additional actual contacts, including zero-weight ones,
-are excluded.
-
-In particular, a strictly interior vertex on an exterior moment cycle
-is an actual degree-two transmitter whenever it satisfies this explicit
-distance bound. Nearer interior vertices and isolated squares remain
-separate cases in the sharp eight-square proof.
+This note does not eliminate that near case or the isolated squares, and
+does not claim the unrestricted sharp eight-square lower bound.
