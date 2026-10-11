@@ -306,3 +306,85 @@ sector margin alone does not give a contradiction,
 since the angular span of three consecutive
 regular-heptagon rays is `4*pi/7`, larger than
 `pi/2+1/120`.
+
+
+## 6. Stronger certified sector margin: pi/2 + 1/40
+
+The depth estimate can be made `gamma=1/30` with only
+slightly sharper **rational** bounds, proving a stronger theorem:
+**no three outer center directions fit in any closed sector of width
+pi/2+1/40** at q<=9789/2500.
+
+Here are the full refinements. The original proof's
+`|A|,|B|` computations are unchanged except for their
+constants. Use
+
+    lambda <57/50,   lambda*cos(t)>21/20,
+    lambda*sin(t)>87/200,
+    1/sqrt(2)<442/625.                                (11)
+
+The first follows from `sqrt(2)<71/50`, and the last
+from `2*442^2>625^2`. For the third, the exact identity
+
+    (lambda*sin(t))^2=(2+sqrt(2))/18
+
+and `sqrt(2)>141/100` give
+
+    (lambda*sin(t))^2>341/1800>7569/40000=(87/200)^2.
+
+The bound on `lambda*cos(t)` is checked in
+section 2. The defining equation of `m` at
+beta=pi/4 also gives the sharper bound
+
+    m(pi/4)<1273/1000,
+
+since substitution of `1273/1000` yields
+
+    -379471/1000000+(273/1000)*sqrt(2)
+      > -379471/1000000+(273/1000)*(7/5)>0.
+
+Thus the monotone H from (6) satisfies
+
+    -A<=H(alpha)<(1273/1000)*(442/625)-87/200
+      =290791/625000 <7/15.                          (12)
+
+The positive A bound is `A<57/50-7/10=11/25<7/15`.
+The positive B bound is `B<(3/2-21/20)*sin(alpha)
+<=9/20<7/15`. For negative B, Cauchy gives
+
+    -B<sqrt((57/50)^2+1-2*(21/20))
+       =sqrt(499)/50<7/15,
+
+using the rational square comparison
+`499*225<49*2500`. Hence both fixed points
+have the appropriate frame coordinates strictly
+between `-7/15` and `7/15`, establishing a full
+interior disk margin `1/2-7/15=1/30`.
+
+If a three-center span were at most `pi/2+1/40`,
+the same stable pair gap as before would make
+each adjacent gap differ from pi/4 by less than
+
+    eta+1/40=27/1000.
+
+The original angular-point and translation comparison
+is now
+
+    lambda*(eta+1/40)+2*eps
+      <(57/50)*(27/1000)+14/15000
+      =4757/150000<5000/150000=1/30.
+
+Thus the proof in section 3 applies literally
+with these stronger margins and excludes every
+closed sector of width `pi/2+1/40`.
+This proof includes all frame angles and both
+disk-boundary and interior square positions;
+the quantitative enhancement does not rely on
+a numerical minimization.
+
+The radius q_plus is still above the known
+sharp candidate squared radius, so this new
+sector bound is an unconditional necessary
+condition for any hypothetical subcandidate
+eight-square packing. It is not itself
+the sharp lower bound.
