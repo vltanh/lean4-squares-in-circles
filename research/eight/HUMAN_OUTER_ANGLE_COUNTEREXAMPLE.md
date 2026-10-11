@@ -17,3 +17,37 @@ At Q it is strictly smaller: its support term is r*(7*c+17*s)/13, whereas the su
 Their center norms are equal. Therefore every vertex of both squares lies strictly inside the radius-two circle. Convexity then contains the whole squares.
 
 This disproves the assertion that exterior squares whose centers have norm at least one must have center-angle separation at least pi/4. It does not contradict the valid private-center-ray theorem or the weaker pi/8 angular bound. The counterexample must not be used as an eight-square packing or a counterexample to the conjectured optimum.
+
+
+## Sharper obstruction at the exact search ceiling
+
+Even the assertion that two outer-center directions must be **strictly**
+more than `pi/4` apart is false below the rational eight-square ceiling
+`sqrt(9789)/50`.
+
+Put `t=pi/8`, `e=(cos t,sin t)`, `f=(-sin t,cos t)`, and
+`L=cos t+sin t`. Choose two unit squares of common frame `(e,f)`
+and centers
+
+    P=(L,0),     Q=L*(cos(pi/4),sin(pi/4)).
+
+The center directions differ by exactly `pi/4`.
+The identity `2L sin(t)=sin(2t)+1-cos(2t)=1` gives
+
+    Q-P=f.
+
+Thus the two squares have disjoint open interiors and share a whole
+side. Their farthest squared vertex norms are equal, because both center
+directions make the same unsigned angle t with e; they are
+
+    L^2+1/2+L*(cos t+sin t)
+      =2*L^2+1/2
+      =5/2+sqrt(2).
+
+This is strictly less than the rational construction ceiling
+`9789/2500`: the comparison is `sqrt(2)<3539/2500`, proved
+by `2*2500^2=12500000<12524521=3539^2`.
+
+Hence a **strict pi/4 exterior-center pair gap** cannot hold even
+at the proved small-radius search ceiling. A seven-square circle budget
+must retain the central obstacle or more refined pair-state information.
