@@ -254,6 +254,16 @@ the continuations through A,E,H,G, with the projected lengths needed for
 the five-corner chain. A theorem that directly gives the chain, or a sharp
 inequality for the alternatives, would be equally sufficient.
 
+HUMAN_SCAFFOLD_CLOSURE.md now derives further consequences of this
+explicit twin hypothesis. The central square must be one of the twins.
+Their bounded gap is inaccessible to any other unit square, so their
+convex hull can be treated as a solid rectangle; a radius-preserving
+normal form makes the twins a vertical domino. This blocks the two upper
+central-corner exceptions. An orientation-independent projection lemma
+also gives the required two-unit vertical spans whenever a remaining
+square occupies each lower outer column. Joint occupancy of the four
+remaining squares and the last two oblique inequalities are still open.
+
 Keep actual contacts, positive-weight stress edges, and available
 separators distinct. A stress graph may omit real contacts; choosing one
 exterior-owned separator does not prove that no central-owned separator

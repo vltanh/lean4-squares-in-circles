@@ -1,6 +1,6 @@
 # n=8 proof tracker
 
-## Current orientation (2026-10-10)
+## Current orientation (2026-10-11)
 
 The checklist below is the original planning document and predates most of
 the research on this branch. See [PEN_AND_PAPER_ROADMAP.md](PEN_AND_PAPER_ROADMAP.md)
@@ -42,6 +42,10 @@ The current continuation writes mathematics only; no Lean proof is attempted.
 - [x] Derive the orientation of strictly interior two-contact squares.
 - [x] Derive a four-square common frame from two such squares sharing their
       two actual neighbors.
+- [x] Under this explicit twin hypothesis, identify the central twin, fill
+      the bounded gap without affecting any other square, exclude the two
+      upper central-corner exceptions, and obtain the outer two-unit spans
+      without assuming the frames of the remaining squares.
 - [x] Prove radial leaf geometry and exclude nontrivial actual-contact tree
       components in a minimum-contact minimizer.
 - [x] Prove force and moment equilibrium at actual common contact points;

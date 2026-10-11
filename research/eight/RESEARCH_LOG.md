@@ -222,3 +222,29 @@ three-force branch. Accordingly the remaining argument must use
 global minimality, the other squares, or collective deformations.
 The full note passed two independent audits before this commit.
 
+### Geometry forced by the twin scaffold
+
+HUMAN_SCAFFOLD_CLOSURE.md proves that, under the explicit hypothesis of
+two strictly interior degree-two squares sharing their neighbors, one
+twin is the central square. Minimum actual contact count makes all four
+side contacts overlap in positive length. The gap between the twins is
+a bounded complementary rectangle of height less than one, which no
+other unit square can enter. Their entire convex hull therefore excludes
+the other squares, and the twins can be made into a vertical domino
+without increasing the radius.
+
+The solid-rectangle argument eliminates the two upper corner exceptions
+relative to the central square, even for arbitrarily rotated remaining
+squares. A separate exact projection lemma shows that a unit square
+disjoint from an axis-parallel unit square with horizontal center offset
+at most $7/8$ has total vertical span at least two, with equality only
+for parallel frames. The disk and scaffold bounds place every remaining
+outer-column center within this range. This removes an orientation
+assumption from the first and third projected-chain inequalities.
+
+The note states the twin hypothesis and its remaining joint-occupancy
+obligation explicitly. Neither the existence of the twins nor the full
+five-corner reduction is asserted. An independent audit checked the
+endpoint-contact deformation, gap topology, projection polynomial, and
+rectangle separating-axis argument before this commit.
+
