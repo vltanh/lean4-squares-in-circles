@@ -283,7 +283,7 @@ HUMAN_OUTER_QUADRANT_CAPACITY.md now proves, entirely by hand,
 that below q<=9789/2500 no three packed unit squares
 with centers of norm at least one can have all three
 center directions inside any angular sector of width
-`pi/2+1/120`. The proof combines the established
+`pi/2+1/40` (the initial proof gave `pi/2+1/120` and the sharpened section 6 proves this stronger bound). The proof combines the established
 sharp q0=5/2+sqrt(2) common-point theorem and
 its stable q_plus perturbation bound with a new
 **two-point interior-margin lemma**: for an outer
