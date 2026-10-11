@@ -248,3 +248,34 @@ five-corner reduction is asserted. An independent audit checked the
 endpoint-contact deformation, gap topology, projection polynomial, and
 rectangle separating-axis argument before this commit.
 
+### Sharp two-square cap capacity and the local jamming obstruction
+
+HUMAN_SHARP_CAPACITY_BOUND.md proves the exact inequality
+$R^2\ge(h+1)^2+1$ for two unit squares in the cap
+$D_R\cap\{x\ge h\}$ when $2/3\le h\le1$. Both squares may
+rotate arbitrarily. At the critical radius, two disk tangents and the cap
+line enclose an isosceles triangle. The proof shows that every unit square
+in this triangle contains the same point. All nonparallel orientations
+contain it in their open interior. The only boundary cases are the two
+parallel stacked units, which establishes the sharp bound and complete
+equality description. The whole orientation interval is handled by
+elementary monotonicity and concavity, with explicit strict rational
+comparisons. Two independent audits rederived the center triangle,
+all support extrema, and the disk-to-triangle implication.
+
+As one conditional consequence, a parallel three-square column with two
+squares forced into the opposite central cap needs
+$q\ge2257/576$. The exact geometric hypotheses and parameter range are
+stated; this does not yet classify the eight-square occupancy.
+
+HUMAN_LOCAL_JAM_OBSTRUCTION.md gives a separate exact four-square
+counterexample to reducing a strictly contained exterior square to
+degree two by local jamming alone. The three-contact square is an
+isolated feasible position with its three neighbors fixed; the argument
+checks every alternative separating-axis branch. The containing squared
+radius is strictly below $39/10$, and the central offset is $23/100$.
+This rules out the proposed universal $1/4$ offset consequence and
+directs the remaining reduction toward full occupancy or collective
+deformations. The example and its first-order isolation argument were
+independently checked before this commit.
+

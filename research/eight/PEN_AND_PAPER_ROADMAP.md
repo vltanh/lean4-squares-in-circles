@@ -46,11 +46,13 @@ the earlier certificate-only premises.
 | Every eight-square packing with $q\le98/25$ has a unique square containing the disk center in its open interior | [HUMAN_GLOBAL_GEOMETRY_CLOSURE.md](HUMAN_GLOBAL_GEOMETRY_CLOSURE.md): the one-square inequality $3L_1+L_{5/4}\ge\pi$ and its exact equality cases force the conclusion by angular capacity |
 | Every eight-square packing has $R>\sqrt2+1/2$ | [HUMAN_ANALYTIC_LOWER_BOUND.md](HUMAN_ANALYTIC_LOWER_BOUND.md): an adaptive auxiliary-circle radius and a split at central depth $1/12$ give a complete angular-capacity contradiction |
 | A disk of radius two cut by $x\ge1/2$ contains at most two unit squares | [HUMAN_CAPACITY_BOUND.md](HUMAN_CAPACITY_BOUND.md); this bounds outward central sides and includes an exact counterexample to applying the same bound to inward sides |
+| Two unit squares in $D_R\cap\{x\ge h\}$, $2/3\le h\le1$, require $R^2\ge(h+1)^2+1$, with equality only for the parallel vertical pair | [HUMAN_SHARP_CAPACITY_BOUND.md](HUMAN_SHARP_CAPACITY_BOUND.md): every unit square in a containing isosceles triangle contains a common point, strictly for every nonparallel orientation |
 | A radius minimizer exists and has a nonzero balanced separator stress with exact disk-admissible center supports | [BALANCED_SEPARATOR_REDUCTION.md](BALANCED_SEPARATOR_REDUCTION.md) |
 | Normal contact multipliers satisfy center balance and the complete angle stationarity equations, including rotation of the selected normal | [HUMAN_ROTATIONAL_STRESS.md](HUMAN_ROTATIONAL_STRESS.md) |
 | A straight chain of k unit squares needs radius at least $\sqrt{k^2+1}/2$ | [HUMAN_CYCLE_ANALYSIS.md](HUMAN_CYCLE_ANALYSIS.md), section 7; four-square chains are impossible below radius two |
 | A strictly interior square with two actual contacts in a contact-minimal minimizer aligns its side with its two opposite separators | HUMAN_CYCLE_ANALYSIS.md, section 8 |
 | Two strictly interior degree-two squares sharing the same two neighbors force all four square frames to be parallel | HUMAN_CYCLE_ANALYSIS.md, section 9; the common neighbors are exactly distance one apart |
+| Under the twin hypothesis, one twin is central, their convex hull excludes all other squares, and the outer two-unit spans need no further frame assumption | [HUMAN_SCAFFOLD_CLOSURE.md](HUMAN_SCAFFOLD_CLOSURE.md); the two upper central-corner exceptions are also excluded |
 | Every nontrivial actual-contact component in a minimum-contact minimizer contains a cycle | [HUMAN_STRESS_GRAPH.md](HUMAN_STRESS_GRAPH.md); every actual leaf is radial, all leaves share a central neighbor, and there are at most two |
 | Contact forces can be applied at actual common points, with exact force and moment equilibrium | [HUMAN_CONTACT_EQUILIBRIUM.md](HUMAN_CONTACT_EQUILIBRIUM.md); every positive-stress bridge is radial, and a stress-tree component must meet a square containing the disk center |
 | Every nontrivial physical stress component of an eight-square minimizer has a cycle carrying a nonzero moment circulation | HUMAN_CONTACT_EQUILIBRIUM.md, sections 7–8, together with the new analytical radius bound in HUMAN_ANALYTIC_LOWER_BOUND.md |
@@ -263,6 +265,21 @@ central-corner exceptions. An orientation-independent projection lemma
 also gives the required two-unit vertical spans whenever a remaining
 square occupies each lower outer column. Joint occupancy of the four
 remaining squares and the last two oblique inequalities are still open.
+
+The sharp cap theorem in HUMAN_SHARP_CAPACITY_BOUND.md now controls two
+squares on a sufficiently outward central side, without a frame
+assumption. For example, an axis-parallel three-square column opposed by
+two squares beyond the opposite central side would force
+$q\ge2257/576$, already above the sharp candidate. The note gives the
+precise range and hypotheses of this conditional consequence; the
+necessary occupancy theorem remains open.
+
+HUMAN_LOCAL_JAM_OBSTRUCTION.md also rules out a proposed shortcut. A
+strictly contained exterior square can have three contacts and be locally
+immovable against its fixed neighbors, even with central center offset
+less than $1/4$. Its rational four-square example checks all alternative
+separating axes. Thus a degree-two reduction must use all eight squares,
+collective motion, or global minimality, beyond local jamming alone.
 
 Keep actual contacts, positive-weight stress edges, and available
 separators distinct. A stress graph may omit real contacts; choosing one

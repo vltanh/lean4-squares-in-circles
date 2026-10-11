@@ -33,6 +33,9 @@ The current continuation writes mathematics only; no Lean proof is attempted.
 - [x] Prove compactness, exact center supports, balanced stresses, and
       complete normal angle stationarity for arbitrary minimizers.
 - [x] Prove the exceptional-corner bound and the outward disk-cap capacity.
+- [x] Prove the sharp two-square disk-cap inequality
+      $R^2\ge(h+1)^2+1$ for $2/3\le h\le1$, including arbitrary
+      orientations and the complete equality cases.
 - [x] Prove analytically that every eight-square packing with
       $q\le98/25$ has a unique square containing the disk center in its
       open interior, using total angular measure on two circles.
