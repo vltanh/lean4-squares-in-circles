@@ -260,3 +260,49 @@ The unrestricted lower bound `R8>=Rhat`
 remains open; the theorem removes triple-outer
 quadrant clusters but does not eliminate
 seven-outer cycles or inner-attached outer paths.
+
+
+## 5. A quantitative extension beyond ninety degrees
+
+The same hand proof gives the stronger statement:
+
+> At squared radius q<=9789/2500, every angular sector
+> of width **pi/2+1/120** contains the center directions of at
+> most two packed unit squares whose center norms are at least one.
+
+Here are the strengthened constants, with no new numerical premise.
+The estimates (4), (6), (7), and (8) actually show
+
+    |A|,|B|<17/35=1/2-1/70.
+
+Indeed 9/20<17/35, 339/700<340/700=17/35,
+and sqrt(89)/20<17/35 because
+89*1225=109025<115600=289*400.
+Thus the two-point depth lemma holds with disk radius
+`gamma=1/70`, in place of `1/100`.
+
+If three consecutive outer center rays had total angular
+span at most `pi/2+1/120`, their individual gaps
+would still be greater than `pi/4-eta` and hence each
+less than `pi/4+eta+1/120`. The first/third square's
+fixed point could now differ in direction from the
+corresponding middle-square point by at most
+`eta+1/120=31/3000`. The radial-translation
+argument in section 3 contradicts interior-disjointness
+because
+
+    lambda*(eta+1/120)+2*eps
+      < (23/20)*(31/3000)+14/15000
+      =769/60000 <1/70.
+
+All other steps are unchanged. This proves the
+stronger closed-sector assertion. In particular the
+ninety-degree theorem stated above has a strictly
+positive quantitative reserve.
+
+For seven outer centers, four fixed generic quadrants
+still have populations `2,2,2,1`; the stronger
+sector margin alone does not give a contradiction,
+since the angular span of three consecutive
+regular-heptagon rays is `4*pi/7`, larger than
+`pi/2+1/120`.
