@@ -194,3 +194,46 @@ HUMAN_OUTER_GRAPH_REDUCTION.md). The new pair theorem does not assign
 the exterior-owned corner separators, exclude the near-center jam
 branch, produce the twin motif, or imply the five-corner projected chain.
 No equality `R8=Rhat` is claimed without those global steps.
+
+
+## Further checked hand results in the latest continuation
+
+* HUMAN_STABLE_OUTER_ANGLE.md: at q<=9789/2500, any two
+  interior-disjoint unit squares with center norms at least one have
+  angular center gap strictly larger than pi/4-1/500. This uses
+  uniform interior slack of 1/1500 in the fixed-point pair theorem
+  and a radial perturbation shorter than 7/15000; no assumed contact
+  axis or sampled inequality is involved.
+* HUMAN_CONTACT_ANGLE_UPPER.md: when two such outer squares actually
+  touch, their center gap is at most pi/2; equality is uniquely the
+  parallel corner-contact pair with centers (1,0),(0,1), up to
+  rotation. Hence an actual outer contact in the sharp search domain
+  has gap in (pi/4-1/500, pi/2].
+* HUMAN_SEVENFOLD_RING_BOUND.md: seven pairwise disjoint squares which
+  are rotated copies of one square under exact sevenfold rotational
+  symmetry about the containing disk origin require R>2. The proof
+  reduces the full frame interval to two rationally bounded regions.
+  It **does not** symmetrize an arbitrary seven-square ring.
+* RATIONAL_SEVEN_OUTER_COUNTEREXAMPLE.md: an explicit eight-square
+  packing of squared radius 397/100<4 has a central square and
+  **all seven** exterior centers at norm greater than one. All
+  positions and orthonormal frames are rational; every pair has a
+  displayed positive separating margin, and every farthest vertex
+  has squared norm below 397/100. Thus a general assertion that
+  R<2 forces an additional inner-center square is false, though
+  the witness radius is above the sharp candidate.
+* HUMAN_NO_LINEAR_TILT_POTENTIAL.md: two exact disjoint outer-square
+  pairs inside q0=5/2+sqrt(2) prove that no constant k can make
+  delta+k*(alpha_target-alpha_source)>=2*pi/7 valid for **every**
+  outer pair. The first touching pair forces k<=-1/7 and the second,
+  with strictly interior unambiguous frame tilts, violates the
+  inequality for every such k. Nonlinear, type-sensitive, and odd
+  seven-cycle potentials are not excluded.
+
+The exact unresolved implication is still
+`R8>=Rhat`. A general seven-outer actual-contact cycle is **not**
+a sevenfold symmetric orbit; the parallel/symmetric hand bounds do
+not apply to it. The other main branch, outer paths connected
+through inner attachments, contains the tilted candidate itself
+and cannot be discarded. No displayed global inequality yet
+classifies those attachments or forces the five-corner chain.
