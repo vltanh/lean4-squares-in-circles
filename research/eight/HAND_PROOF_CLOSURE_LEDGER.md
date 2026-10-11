@@ -290,7 +290,7 @@ its stable q_plus perturbation bound with a new
 square centered on the positive axis and fitting
 at q0, one of the two points at angles +/-pi/8
 and radius (2+sqrt(2))/3 lies inside the square
-with an explicit full disk margin 1/70.
+with an explicit full disk margin 1/30 (after the sharpened bounds in section 6).
 The full continuous angle and radius domains are
 handled by the derivative bound already proved
 for the longitudinal coordinate, Cauchy--Schwarz,
@@ -299,7 +299,7 @@ and exact rational slack comparisons.
 Thus seven outer center directions, if present,
 have 2,2,2,1 populations in any generic four
 quadrants, and any closed sector of angular width
-pi/2+1/120 has capacity two. This is a
+pi/2+1/40 has capacity two. Every generic diameter divides seven outer centers into 3 and 4. This is a
 **center-ray** restriction. It does not imply
 whole-square membership in the central side caps
 and does not exclude the seven-outer-cycle case.
