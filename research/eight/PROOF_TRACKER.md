@@ -36,6 +36,8 @@ The current continuation writes mathematics only; no Lean proof is attempted.
 - [x] Prove analytically that every eight-square packing with
       $q\le98/25$ has a unique square containing the disk center in its
       open interior, using total angular measure on two circles.
+- [x] Prove the unconditional analytical bound $R_8>\sqrt2+1/2$,
+      using an auxiliary circle chosen from the central square's depth.
 - [x] Exclude four-square straight separator chains below radius two.
 - [x] Derive the orientation of strictly interior two-contact squares.
 - [x] Derive a four-square common frame from two such squares sharing their
@@ -45,8 +47,8 @@ The current continuation writes mathematics only; no Lean proof is attempted.
 - [x] Prove force and moment equilibrium at actual common contact points;
       constrain positive-stress bridges and tree components.
 - [x] Exclude every nontrivial stress-tree component under the explicit
-      hypothesis $\sqrt2+1/2<R<2$, retaining the distinction between this
-      conditional result and an analytic lower bound placing $R_8$ there.
+      hypothesis $\sqrt2+1/2<R<2$; the new analytical lower bound now
+      places $R_8$ in this interval without a certificate premise.
 - [x] Replace the symmetric four-type seven-walk enumeration by an exact
       elementary formula.
 

@@ -14,6 +14,11 @@ nonzero moment circulation and contains a cycle.
 All statements below apply to a radius-minimizing packing. No candidate
 contact graph, numerical optimization, or interval certificate is assumed.
 
+For eight squares the required strict radius range is now proved
+analytically in [HUMAN_ANALYTIC_LOWER_BOUND.md](HUMAN_ANALYTIC_LOWER_BOUND.md).
+Consequently the nonzero-moment-cycle conclusion applies to an
+eight-square minimizer without using the earlier marker certificate.
+
 ## 1. Contact faces and infinitesimal velocities
 
 Let square `i` have center `p_i`, angle `theta_i`, and vertices `x_i,alpha`.

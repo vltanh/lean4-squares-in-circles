@@ -44,6 +44,7 @@ the earlier certificate-only premises.
 | The stationary polynomial system has a unique admissible solution in $(79/40)^2\le q\le9789/2500$, and this solution is the global family optimum | [HUMAN_FAMILY_CLOSURE.md](HUMAN_FAMILY_CLOSURE.md): every critical point of the minimized tilt envelope has positive second derivative, even when its defect is positive |
 | Relative to any selected square, at most one neighbor per corner lacks every separator on the selected square's axes | [HUMAN_STRUCTURAL_LEMMAS.md](HUMAN_STRUCTURAL_LEMMAS.md); in an eight-square packing at least three neighbors admit such axes |
 | Every eight-square packing with $q\le98/25$ has a unique square containing the disk center in its open interior | [HUMAN_GLOBAL_GEOMETRY_CLOSURE.md](HUMAN_GLOBAL_GEOMETRY_CLOSURE.md): the one-square inequality $3L_1+L_{5/4}\ge\pi$ and its exact equality cases force the conclusion by angular capacity |
+| Every eight-square packing has $R>\sqrt2+1/2$ | [HUMAN_ANALYTIC_LOWER_BOUND.md](HUMAN_ANALYTIC_LOWER_BOUND.md): an adaptive auxiliary-circle radius and a split at central depth $1/12$ give a complete angular-capacity contradiction |
 | A disk of radius two cut by $x\ge1/2$ contains at most two unit squares | [HUMAN_CAPACITY_BOUND.md](HUMAN_CAPACITY_BOUND.md); this bounds outward central sides and includes an exact counterexample to applying the same bound to inward sides |
 | A radius minimizer exists and has a nonzero balanced separator stress with exact disk-admissible center supports | [BALANCED_SEPARATOR_REDUCTION.md](BALANCED_SEPARATOR_REDUCTION.md) |
 | Normal contact multipliers satisfy center balance and the complete angle stationarity equations, including rotation of the selected normal | [HUMAN_ROTATIONAL_STRESS.md](HUMAN_ROTATIONAL_STRESS.md) |
@@ -52,7 +53,7 @@ the earlier certificate-only premises.
 | Two strictly interior degree-two squares sharing the same two neighbors force all four square frames to be parallel | HUMAN_CYCLE_ANALYSIS.md, section 9; the common neighbors are exactly distance one apart |
 | Every nontrivial actual-contact component in a minimum-contact minimizer contains a cycle | [HUMAN_STRESS_GRAPH.md](HUMAN_STRESS_GRAPH.md); every actual leaf is radial, all leaves share a central neighbor, and there are at most two |
 | Contact forces can be applied at actual common points, with exact force and moment equilibrium | [HUMAN_CONTACT_EQUILIBRIUM.md](HUMAN_CONTACT_EQUILIBRIUM.md); every positive-stress bridge is radial, and a stress-tree component must meet a square containing the disk center |
-| If $\sqrt2+1/2<R<2$, every nontrivial physical stress component has a cycle carrying a nonzero moment circulation | HUMAN_CONTACT_EQUILIBRIUM.md, sections 7–8; the lower endpoint is an explicit hypothesis, not a new analytic lower bound for eight squares |
+| Every nontrivial physical stress component of an eight-square minimizer has a cycle carrying a nonzero moment circulation | HUMAN_CONTACT_EQUILIBRIUM.md, sections 7–8, together with the new analytical radius bound in HUMAN_ANALYTIC_LOWER_BOUND.md |
 | Stress leaves have two exact radial forms; three-vertex stress trees have only four possible radii | [HUMAN_STRESS_TREE_ENDS.md](HUMAN_STRESS_TREE_ENDS.md); this classification is analytic for $R>\sqrt2$ |
 | The minimum weight of a closed seven-step walk on four symmetric types is exactly $\min(\tau+4m,L)$ | HUMAN_CYCLE_ANALYSIS.md, section 2; the continuous geometric pair bounds required to apply it remain open |
 
@@ -222,10 +223,14 @@ allow actual contacts carrying zero stress, so the two graphs cannot be
 identified.
 
 The physical stress theorem excludes all tree components when
-$\sqrt2+1/2<R<2$. Using the old bound $R_8^2>19/5$ puts the eight-square
-minimum in this interval, but that use retains its computational premise.
-An entirely analytic proof must establish a sufficient lower bound or
-cover the remaining smaller-radius possibilities separately.
+$\sqrt2+1/2<R<2$. HUMAN_ANALYTIC_LOWER_BOUND.md now places the
+eight-square minimum in this interval by a complete analytical proof.
+If the central depth is at least $1/12$, the seven exterior squares
+overfill the circle of radius $13/12$. If the depth is smaller, a circle
+adapted to the central square is overfilled by the central square and all
+seven exterior squares. Thus every nontrivial physical stress component
+of a minimizer has nonzero contact-moment circulation, with no dependency
+on the earlier numerical marker bounds.
 
 A useful target is the following specific intermediate statement:
 

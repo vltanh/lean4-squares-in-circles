@@ -3,6 +3,13 @@
 This theorem concerns ALL eight-square packings, unlike the conditional
 five-corner optimality theorem. It is not yet sharp.
 
+**Analytical companion.** The proof below retains its stated computational
+certificate. [HUMAN_ANALYTIC_LOWER_BOUND.md](HUMAN_ANALYTIC_LOWER_BOUND.md)
+gives the weaker but entirely analytical bound $R_8>\sqrt2+1/2$.
+That bound is sufficient to activate the physical contact-moment theorem
+without any certificate dependency; it does not replace the stronger
+numerical value proved below.
+
 ## Theorem
 
 Eight interior-disjoint unit squares in a closed disk of radius R satisfy
@@ -87,3 +94,4 @@ The successful argument above avoids that failure by proving a stronger
 low-dimensional pair lemma and summing its consequence around the circle.
 The remaining sharp-radius problem still needs additional use of the central
 obstacle or a different structural invariant.
+

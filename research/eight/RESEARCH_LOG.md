@@ -179,3 +179,26 @@ and the rational margins. The conditional optimization and exact
 construction work packages are complete. The remaining sharp step is
 the unrestricted geometric lower bound.
 
+### Analytical radius range for nonzero contact-moment cycles
+
+HUMAN_ANALYTIC_LOWER_BOUND.md proves the unconditional strict bound
+$R_8>\sqrt2+1/2$. Its only structural input is the new analytical
+central-square theorem. If the central square contains the open
+radius-$1/12$ disk, each exterior square occupies more than $2\pi/7$
+on the circle of radius $13/12$. Otherwise choose the auxiliary radius
+to equal the distance to the opposite central side; the central square
+occupies at least $\pi/3$ and each exterior square more than $3/4$.
+Both cases exceed the full circular budget.
+
+The single-square arc estimates cover clipped and disconnected states.
+Their curved-boundary derivatives share the positive factor
+$(s-R)^2+[r^2-(R-1)^2]s$, which extends the earlier angular comparison
+below radius one. The remaining endpoint trigonometric comparisons are
+fixed rational square checks. Two independent audits verified all arc
+branches and the central-depth split before this commit.
+
+This result removes the earlier computational lower-bound premise from
+the theorem that every nontrivial physical stress component of an
+eight-square minimizer has nonzero moment circulation. The sharp
+unrestricted contact-pattern reduction is still to be proved.
+
