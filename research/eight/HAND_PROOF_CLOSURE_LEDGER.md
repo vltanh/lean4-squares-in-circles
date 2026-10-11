@@ -161,3 +161,36 @@ Commit reviewable mathematical results and corrections with [skip ci].
 Verify the remote commit after writing. Keep all changes in research/eight/.
 No Lean proof is attempted. Closure will be recorded only when F1 and F2
 have complete hand proofs; this ledger does not claim them.
+
+
+## 2026-10-11: sharp outer-pair sector theorem and limitations
+
+HUMAN_SHARP_OUTER_PAIR_SECTOR.md now supplies a complete hand proof that at
+squared radius `q0=5/2+sqrt(2)`, every unit square whose center norm is at
+least one and whose center direction lies within pi/8 of a chosen bisector
+contains the fixed point at distance `(2+sqrt(2))/3` on that bisector.
+The two equality squares are axis parallel, with centers
+`((1+sqrt(2))/2, +/-1/2)`; they share a side. Consequently two disjoint
+outer-center squares have angular gap at least pi/4 at `q<=q0`, and
+strictly greater than pi/4 at `q<q0`. The proof handles the entire
+orientation and center-radius domain using exact support inequalities,
+a monotone longitudinal comparison, and strict transverse concavity.
+
+The result has **not** closed the n=8 lower bound: the exact search ceiling
+`9789/2500` is above q0, and the construction supplied in
+HUMAN_OUTER_ANGLE_COUNTEREXAMPLE.md shows a pi/4 touching pair already fits
+at q0. A separate rational pair even has center gap strictly below pi/4
+within the radius-two disk. Thus a universal strict pi/4 gap may not be
+used at the eight-square search ceiling.
+
+HUMAN_EXTERIOR_CENTER_ORDER.md gives the weaker angular gap for *all*
+exterior centers: greater than pi/8 for R<=2, improved to greater than
+pi/7 at q<=9789/2500. This makes their labeled cyclic order robust under
+continuous packing deformations, but not their contact adjacency.
+
+The genuinely open unrestricted cases remain the seven-outer contact
+cycle and the outer paths with inner attachments (as in
+HUMAN_OUTER_GRAPH_REDUCTION.md). The new pair theorem does not assign
+the exterior-owned corner separators, exclude the near-center jam
+branch, produce the twin motif, or imply the five-corner projected chain.
+No equality `R8=Rhat` is claimed without those global steps.
