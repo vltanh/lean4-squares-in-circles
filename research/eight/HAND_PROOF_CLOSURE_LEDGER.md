@@ -237,3 +237,41 @@ not apply to it. The other main branch, outer paths connected
 through inner attachments, contains the tilted candidate itself
 and cannot be discarded. No displayed global inequality yet
 classifies those attachments or forces the five-corner chain.
+
+
+## Latest pair-radius elimination and the odd-cycle obstruction
+
+HUMAN_RADIAL_ENDPOINT_PAIR.md proves an exact pairwise existential
+reduction: at fixed two center directions and two frames, disjointness
+for **some** permitted center norms >=1 occurs if and only if it occurs
+at at least one of the four radial corner pairs
+`(1,1),(1,m_j),(m_i,1),(m_i,m_j)`.
+This follows because every signed separating-axis projection gap is
+affine in the two center radii. It reduces the pair feasibility test
+to 16 unsigned / 32 signed trigonometric branches in the two relative
+tilts and one center-angle gap. It does **not** allow selecting the
+radial corners simultaneously for all seven squares or substituting
+endpoint-selected state potentials for the original center radii.
+
+HUMAN_NO_UNIFORM_STATE_POTENTIAL.md strengthens the previous affine
+negative result: two explicitly separated outer pairs inside
+q_plus=9789/2500, with the same two rotation-invariant states
+`(r,alpha)` in opposite order, each have gap
+`delta=arccos(5/8)<2*pi/7`. Every potential
+`psi(r,alpha)`, even discontinuous or nonlinear, cancels around
+this exact two-step cycle. Thus a **uniform** 2*pi/7 pair gap
+with one state potential is impossible. A seven-step odd-cycle
+budget with nonuniform type edge weights remains a genuine option.
+
+Exploratory finite-state min-plus and LP calculations suggest a
+positive seven-step reserve for a *selected finite sample* of
+outer states. That is neither a continuum certificate nor a
+proof for interior center radii; separate pairwise endpoint
+choices need not be jointly consistent. No such numerical
+result is a premise of the claimed hand lemmas.
+
+**Global target still open:** the unrestricted lower bound
+`R8>=Rhat`. The seven-outer-cycle and outer paths with
+near-center attachments have not been converted into the five-corner
+chain or an equally sharp alternative inequality. No hand proof of
+the unrestricted n=8 equality is claimed.
