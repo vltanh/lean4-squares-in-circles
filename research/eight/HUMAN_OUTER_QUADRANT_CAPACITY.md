@@ -388,3 +388,20 @@ sector bound is an unconditional necessary
 condition for any hypothetical subcandidate
 eight-square packing. It is not itself
 the sharp lower bound.
+
+
+## 7. Exact center populations across every generic diameter
+
+Partition the plane by a line through the origin avoiding all outer
+center rays. Each of its two open semicircles can be divided into
+two closed quadrants of angular width pi/2. The theorem above bounds
+each closed quadrant by two outer centers, so **each open semicircle
+holds at most four outer centers**.
+
+In particular, when there are seven outer centers, the two
+semicircle populations are necessarily **3 and 4**, in one order,
+for *every* such generic diameter. Similarly any generic orthogonal
+four-quadrant partition has populations **2,2,2,1**. These assertions
+are about centers, not wholly contained squares; in particular they
+cannot be substituted into a whole-square disk-cap theorem without
+a separate geometric implication.
