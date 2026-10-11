@@ -17,3 +17,27 @@ But cos(pi/8)^2=(2+sqrt(2))/4>17/20>(23/25)^2, using sqrt(2)>7/5 and 17*625>20*5
 Three center rays in an angular sector of width pi/4 would have two intervening gaps each greater than pi/8. An exterior square has center norm greater than 1/2, since otherwise its inscribed disk would contain zero, impossible when a different central square contains zero in its open interior. Along a continuous labeled deformation these rays cannot exchange cyclic order without coinciding; the central label stays fixed by the analytic central-square theorem and its compactness corollary.
 
 **Limitation.** The theorem separates center directions, not square shadows. It does not imply that an actual contact joins consecutive exterior centers or the five-corner inequalities. The rational counterexample in HUMAN_OUTER_ANGLE_COUNTEREXAMPLE.md shows why the stronger pi/4 claim even for outer centers is false.
+
+
+## Sharper radius-specific corollary: spacing exceeds pi/7
+
+For the eight-square search ceiling `q <= 9789/2500`, the same argument
+improves `delta>pi/8` to `delta>pi/7` for all seven exterior centers.
+Indeed `r^2+r+1/2<=q` and
+`(71/50)^2+71/50+1/2=9841/2500>9789/2500`
+give `M<71/50`. Repeating the corner maximization above yields
+
+    F(r,s) < max(71/50-75/142,1-1250/5041)
+           = 1583/1775 < 179/200.
+
+The elementary cosine bound `cos x>=1-x^2/2` and `pi<22/7` give
+
+    cos(pi/7) > 1-(22/49)^2/2
+              =2159/2401>179/200.
+
+Hence `cos(delta)<cos(pi/7)`, giving `delta>pi/7`.
+In particular every closed angular sector of width `2*pi/7`
+contains at most two exterior center rays.
+
+This is still a *center* budget. It does not replace the sharp pair-marker
+inequalities, whose markers are not simply center directions.
