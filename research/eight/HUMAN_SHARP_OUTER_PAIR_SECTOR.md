@@ -121,3 +121,138 @@ Therefore
 
 Both bounds on A are strict. Sections 3--4 treat B and all equality
 conditions, without assuming that any square orientations agree.
+
+
+## 3. The transverse bound for nonnegative relative angles
+
+Differentiate `B` from (3) with respect to `phi`:
+`B_phi=-lambda*cos(phi+alpha)<0`, since
+`|phi+alpha|<=3*pi/8<pi/2`.
+Reflection `(phi,alpha)->(-phi,-alpha)` changes the sign of B.
+It suffices to bound `-B` when `phi=t`.
+
+First suppose `alpha>=0`. From `r>=1`,
+
+    -B <= lambda*sin(t+alpha)-sin(alpha)
+        =u*cos(alpha)+v*sin(alpha),
+    u=lambda*sin(t),  v=lambda*cos(t)-1.                (10)
+
+We have `0<v<3/20`: indeed `lambda>10/9`,
+`cos(t)>9/10`, and `lambda<23/20`.
+Also `0<u<23/50`, since `sin(t)<2/5`.
+These elementary bounds follow by squaring the half-angle formulas;
+for example `sqrt(2)>7/5` gives
+`sin(t)^2=(2-sqrt(2))/4<3/20<4/25`.
+Cauchy--Schwarz therefore gives
+
+    -B <=sqrt(u^2+v^2)
+         <sqrt((23/50)^2+(3/20)^2)
+         =sqrt(2341/10000)<1/2.                        (11)
+
+So neither boundary equality nor a violation is possible here.
+
+## 4. The negative relative angles: strict one-variable concavity
+
+Now let `alpha=-beta<=0`. The position restriction `r<=m(beta)`
+reduces the remaining check to
+
+    -B<=G(beta):=lambda*sin(t-beta)+m(beta)*sin(beta).
+                                                               (12)
+
+We prove `G(beta)<=1/2` on the **complete** interval
+`0<=beta<=pi/4`, with equality only at `beta=t`.
+
+Put `L=cos(beta)+sin(beta)`, `L'=cos(beta)-sin(beta)`
+and `D=2m+L`. Twice differentiating the defining equation
+`m^2+mL=Q`, or substituting `m'=-mL'/D`, gives the identity
+
+    m''/m = L/D + 2*(m+L)*(L')^2/D^3.                 (13)
+
+The bounds in (2), `L>=1`, and `0<=L'<=1` imply
+
+    (2m-L)*D^2
+      > 1*(7/2)^2=49/4
+      > 12 > 4*(m+L)*(L')^2.
+
+By rearranging (13), this is exactly `m''<m/2`.
+Also `m'<=0`. Therefore
+
+    G''=-lambda*sin(t-beta)+(m''-m)*sin(beta)
+                            +2m'*cos(beta)
+       < -lambda*sin(t-beta)-(m/2)*sin(beta).          (14)
+
+For `0<=beta<=t` the right side is negative.
+
+For `t<=beta<=pi/4`, use
+`sin(beta-t)/sin(beta)=cos(t)-cot(beta)*sin(t)
+ <=cos(t)-sin(t)` and `m/2>5/8`.
+Moreover
+
+    lambda*(cos(t)-sin(t))<5/8.                        (15)
+
+Here is a rational proof of (15). Since `sqrt(2)<99/70`,
+we have
+
+    (cos(t)-sin(t))^2=1-1/sqrt(2)
+      <29/99<(13/24)^2.
+
+Using `lambda<23/20` yields the strict bound
+`lambda*(cos(t)-sin(t))<(23/20)*(13/24)
+=299/480<5/8`. Hence (14) is negative also for
+`beta>=t`: `G` is strictly concave throughout the interval.
+
+At `beta=t`, the equation `m^2+mL=Q` gives
+`m(t)=L(t)=cos(t)+sin(t)`, because
+`2L(t)^2=2+sqrt(2)=Q`. Thus
+
+    m'(t)=-(cos(t)-sin(t))/3,
+    G'(t)=-lambda+m'(t)*sin(t)+m(t)*cos(t)=0.
+
+The last equality is the exact identity
+
+    lambda=[3*cos(t)^2+2*sin(t)*cos(t)+sin(t)^2]/3
+           =(2+sqrt(2))/3.
+
+Also `G(t)=m(t)*sin(t)=1/2`.
+Strict concavity now proves `G(beta)<=1/2`, with
+equality only at `beta=t`.
+
+Together with (4), (9), and (11), this establishes
+`|A|,|B|<=1/2` at every allowed square: the claimed
+fixed common point w belongs to every square.
+
+## 5. Equality cases and the sharp pair consequence
+
+All A inequalities and the alpha>=0 transverse inequality are strict.
+Equality in the remaining transverse inequality requires all of:
+
+    phi=t, alpha=-t, beta=t, r=m(t)=cos(t)+sin(t).
+
+Reflecting gives the only other boundary configuration
+`phi=-t, alpha=t, r=m(t)`. Both have global frame angle
+`phi+alpha=0`, and their centers are, respectively,
+
+    ((1+sqrt(2))/2, 1/2), ((1+sqrt(2))/2,-1/2).
+
+The fixed point `w` is on their common horizontal side.
+The two squares touch along that side and their farthest vertices
+have squared norm exactly `q0`.
+
+Now take any two packed squares with center norms at least one and
+smaller center angle `delta<=pi/4`. Rotate coordinates to the
+bisector of their center rays. The theorem puts `w` in both closed
+squares. If one contains w openly, it must overlap the other's open
+interior, since an open neighborhood inside the former meets the
+interior of the latter. Thus, for disjoint interiors, both must be
+boundary equality cases, so `delta=pi/4` and the touching pair is
+the displayed one up to rotation.
+
+At any squared radius **strictly below** `q0` these equality cases
+are excluded by their circle-contact vertices, so the center angular
+separation is strictly greater than `pi/4`. The equality construction
+proves the threshold `q0=5/2+sqrt(2)` is sharp.
+
+This is not the missing n=8 theorem. The five-corner candidate has
+squared radius slightly **above** this two-square threshold. A sharp
+eight-square argument must use the other squares and their contacts;
+a uniform `pi/4` pair gap cannot simply be inserted at the candidate.
