@@ -244,3 +244,106 @@ R<=R_hat, including the candidate's full
 seven-outer cycle as an equality case.
 This note establishes a useful global normal
 form but does not claim R_8>=R_hat.
+
+
+## 6. Preserve the minimum-contact stressed core while connecting every square
+
+The theorem has a useful stronger **two-representative**
+form which reconciles it with the earlier stress theory.
+
+**Core-preserving saturation theorem.** Choose an eight-square
+radius minimizer P_min with the fewest *actual*
+contacting pairs. By HUMAN_CONTACT_COMPONENTS.md,
+its actual graph has exactly one nontrivial
+connected component J, and every other vertex
+is isolated. Then there exists a radius-R_8
+packing P_sat whose entire actual graph is
+connected, obtained from P_min by moving **only
+the isolated square labels**, while leaving
+**every square in J fixed**.
+
+Every old actual-contact edge of J is preserved,
+and every new contact uses at least one label
+originally isolated in P_min. Moreover every
+normalized physical stress on P_min, extended
+by zero to the original isolated labels, remains
+a normalized physical stress on P_sat with
+**identical nonzero contact and circle
+multipliers**. All new contacts may be given
+weight zero.
+
+**Hand proof.** The component J must contain
+at least one exterior square: at most one
+square contains zero, and J has an edge
+and hence at least two distinct vertices.
+
+Keep J fixed. At any stage, if some component
+outside J contains an exterior square, use
+section 2 to rotate that entire component
+about zero until it meets a different component.
+Because any two exterior components have
+open arcs on Γ_1, the first-contact
+argument guarantees such a merge whenever
+there is more than one exterior-containing
+component. Internal contacts in every moving
+component are rigidly preserved. The original
+J component is **never** chosen to move.
+Its original squares and all their contacts
+therefore stay literally fixed.
+
+Each rotation merges components and does not
+disconnect or separate any existing edge.
+After finitely many merges, every exterior
+square is connected to the fixed J. If the
+central square C is already in J, all eight
+labels are connected. Otherwise C was an
+isolated square in P_min and has not yet
+moved. Apply the central translation in
+section 3, with the **now connected**
+exterior component kept fixed, to attach C
+at its first contact. This moves only C,
+an original isolated label. The resulting
+actual graph is connected, and every
+original J square stayed fixed.
+
+Now choose any normalized physical stress
+on P_min. An originally isolated label
+has no nonzero contact multiplier and no
+nonzero circle multiplier: contact forces
+there vanish, and the force-balance/center-
+support inequality in HUMAN_CONTACT_EQUILIBRIUM.md
+shows that zero contact force forces zero
+total circle multiplier. Therefore moving
+an original isolated square changes none
+of the force or moment balance equations
+on squares carrying nonzero multipliers.
+Assign multiplier zero to each newly
+created actual contact and retain all
+old nonzero contact/circle multipliers
+at their unchanged positions on J.
+All equilibrium equations and the
+normalization sum remain exactly valid.
+This proves the stress-preservation
+assertion. QED.
+
+The statement is an **existence of a
+different representative**, not a claim
+that P_sat has the fewest actual contacts.
+The geometric conclusions proved solely
+about J in the original minimum-contact
+configuration (including its actual
+contacts and its stressed cycles) remain
+true as statements about that **fixed
+subconfiguration**. One must not apply
+a theorem requiring global minimum
+actual contact count to P_sat's newly
+attached, zero-stress edges.
+
+This converts the original unrestricted
+packing problem into a connected actual
+contact representation **without
+sacrificing any known positive-stress
+cycle or support-bearing candidate
+obstruction**. It does not by itself
+force the five-corner chain or settle
+the sharp lower bound.
