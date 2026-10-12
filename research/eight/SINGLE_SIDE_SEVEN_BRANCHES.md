@@ -112,3 +112,63 @@ R<Rhat in S1--S4 while allowing equality
 in S4, or to derive a single sharp
 obstruction valid for the whole D0/S=7
 class without this further split.
+
+
+## 5. New genuine continuous rejection inside S1
+
+The independent whole-orientation slice theorem
+HUMAN_TRIPLE_CAP_ORTHOGONAL_WITNESSES.md proves:
+
+> Three squares wholly beyond a line x=h with
+> h>=11/50 in a disk R<=99/50 necessarily
+> include **one entire square in y>0 and
+> another entire square in y<0**.
+
+Its hand proof takes the midpoint of the cap's
+available x strip, proves each of the three
+vertical square chords has length >=1 and
+that the full square protrudes beyond its
+chord by less than 7/20, while the
+containing disk's chord half-height is
+less than 33/20. Thus the topmost and
+bottommost squares lie wholly above and
+below the origin's horizontal diameter.
+
+Consequently, two *perpendicular* triples
+with both cap offsets >=11/50 force a
+**shared double-side member**, since each
+triple supplies a whole square in the
+common origin quadrant and that quadrant
+holds at most one entire square.
+The completely single-side Type S1 has
+two perpendicular triples and **no**
+shared double status. Therefore, after
+normalizing them to R and U with central
+center (a,b),
+
+    S1 => min(a,b)<-7/25.
+
+Thus the previous S1 location rectangle
+`-83/200<a,b<-5/24` (on any axis with
+3+1; and `-1/2<t<-5/24` on its 3+0 axis)
+has a concrete forbidden near-central
+subrectangle:
+
+    **S1 impossible if a>=-7/25 and b>=-7/25.**
+
+This does **not** eliminate all S1:
+one triple offset may still be smaller
+than 11/50. If the small-offset triple
+also has the single opposite-side
+member from the 3+1 axis, the opposite
+square's transverse center coordinate
+is additionally forced into
+`(-3/8,3/8)` by the one-square cap
+envelope (see the last section of the
+triple-cap note).
+
+The three other single-side types S2,S3,S4
+are unaffected by this specific
+*two perpendicular triples* rejection;
+S4 contains candidate equality and
+must remain.
