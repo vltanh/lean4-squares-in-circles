@@ -31,9 +31,9 @@ to \(n\) have **strictly opposite signs**, and at least one has
 \[
 |n_\perp\cdot p|>(h+1/2)/\sqrt3.                \tag{2}
 \]
-The side-offset threshold (1) is **sharp for the center-angle
-relaxation** (not asserted sharp for actual squares at the n=8
-radius).
+The side-offset threshold (1) is **sharp even for two actual
+axis-parallel unit squares** at disk radii smaller than the n=8
+search ceiling, as the explicit construction below shows.
 
 ## Proof
 
@@ -96,6 +96,37 @@ center,
 >(h+1/2)/\sqrt3,
 \]
 proving (2). QED.
+
+## Sharpness for actual whole squares (not just center disks)
+
+For every \(\varepsilon\in(0,(\sqrt3-1)/2)\), put
+\[
+x_\varepsilon=\sqrt3/2-\varepsilon,\qquad
+h_\varepsilon=x_\varepsilon-1/2.
+\]
+Take the two **axis-aligned** unit squares
+\[
+S_\pm=[x_\varepsilon-1/2,x_\varepsilon+1/2]
+\times [\pm1/2-1/2,\pm1/2+1/2].
+\]
+They occupy adjacent vertical strips \([0,1]\) and \([-1,0]\),
+so their open interiors are disjoint. Both are wholly beyond
+\(x=h_\varepsilon>0\), and their centers
+\((x_\varepsilon,\pm1/2)\) satisfy
+\[
+|p_\pm|^2=x_\varepsilon^2+1/4<1.
+\]
+Their farthest vertex squared norm is
+\[
+(x_\varepsilon+1/2)^2+1
+<(1+\sqrt3/2)+1=2+\sqrt3/2<9789/2500.
+\]
+Thus they fit the **actual n=8 search ceiling** in the same disk,
+and as \(\varepsilon\downarrow0\), their cap offset tends to
+\(H_*=(\sqrt3-1)/2\) from below. Therefore (1) cannot
+be made strictly smaller even under the extra disk bound for a
+**standalone two-square cap theorem**. This does not assert
+that the two squares extend to a full eight-square packing.
 
 ## Consequences for the exact n=8 side-status queue
 
