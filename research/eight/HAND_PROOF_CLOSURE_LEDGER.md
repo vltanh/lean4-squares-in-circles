@@ -1351,3 +1351,46 @@ seven-square contact geometry
 and central occupancy, without
 incorrectly eliminating genuine
 candidate equality branches.
+
+
+## Refined macro-branch stratification after latest corner-cap pruning
+
+HUMAN_SHARP_DOUBLE_CORNER_CAP.md, Theorem 7,
+proves that if two adjacent double-side
+statuses RU and RD both occur, their shared
+side coordinate a and transverse coordinate
+b obey the exact strict region
+
+    -1/2<a<-5/24,        |b|<5/24.
+
+The proof combines two opposite-y versions
+of the sharp two-coordinate corner cap
+envelope, and uses q_plus<2257/576.
+Reflections/rotations give all other
+two-double arrangements.
+
+REMAINING_DOUBLE_STATUS_BRANCHES.md is
+now the preferred compact case queue:
+**D0** no adjacent double-side member
+(forced when both central coordinates
+are within 1/10);
+**D1** exactly one double (signed diagonal
+central displacement and <=4 corner-only);
+**D2** exactly two *adjacent* doubles,
+sharing a side, with the central
+center trapped in the one-large/
+one-small coordinate region above
+and at most one whole square on the
+opposite side.
+
+All three macro-branches retain
+the k=3..7 outer-center/contact
+classification independently. The
+full seven-outer contact ring and
+multi-contact central square are
+**possible sharp equality branches**.
+A sharp global geometric estimate is
+still required inside each surviving
+continuous case; no universal
+R8>=Rhat theorem is asserted by
+this macro-branch enumeration.
