@@ -946,3 +946,77 @@ square among six parallel exterior squares; nor does it
 force the exact two tilted-square placement of the
 candidate. The sharp unrestricted lower bound
 `R8>=Rhat` is still OPEN.
+
+
+## Current global representative and sharp equality-branch correction
+
+HUMAN_CONNECTED_MAX_CONTACT_REPRESENTATIVE.md proves a new
+**unconditional global normal form**: in every packing of
+eight unit squares in a radius-R<2 disk with a central
+square, there is a same-radius packing with connected
+actual-contact graph and containing all initial
+contacting pairs. The key is a new radial-band lemma:
+every exterior square has nearest norm
+`d<=R-1<1` and farthest norm >1, so it
+intersects the unit circle **through an open arc
+of its interior**. Rigid rotation about the
+origin must eventually bring any two exterior
+contact components together. A final
+central-square translation attaches the central
+square if it is still isolated. Thus every
+maximum-actual-contact-count radius minimizer
+has connected actual graph.
+
+Crucially, section 6 of that note gives a
+**core-preserving** version: begin at the
+minimum-actual-contact-count radius minimizer
+whose unique nontrivial component J has the
+physical stresses of HUMAN_CONTACT_COMPONENTS.md.
+Keep every square in J **fixed**. Rotate/merge
+the originally isolated exterior components,
+and move the originally isolated central
+square only if necessary. Every original
+contact and every chosen positive stress on
+J survives unchanged, while the final full
+actual-contact graph is connected. All
+new contacts can have zero stress weight.
+This is a compatible two-representative
+reduction, not a claim that min and max
+actual contact counts coincide.
+
+ANALYTIC_SHARP_FOUR_CENTRAL_CONTACTS.md proves
+a second critical fact about **equality**:
+the exact least-five-corner candidate at
+R=Rhat can be realized with the central
+square C having **four actual neighbors
+B,D,T,G** while the seven outer squares
+still form their original actual contact
+ring. The full parameter-domain hand proof
+uses the topmost point Y of G in the
+middle column strip, placing standard
+middle squares in [Y,Y+1] and [Y+1,Y+2].
+It checks all 28 nonoverlap relations and
+the strict T circle slack with the identity
+
+    (79/40)^2-(17/24)^2-(479/260)^2
+       =583/121680>0.
+
+This **disproves** the shortcut that a
+radius-Rhat packing necessarily has
+central *actual* contact degree two,
+or that the maximal-contact connected
+representative can be chosen to have
+only two central contacts. The
+two-contact transmitter theorems remain
+valid only with their original
+minimum-contact/degree hypotheses.
+
+Both developments preserve the true
+global target: `R8>=Rhat` for **every**
+packing. Neither connectedness nor
+the exhibition of high-contact
+equality candidates derives the
+five-corner chain for arbitrary
+orientations/contact patterns.
+The unrestricted sharp lower bound
+is still OPEN.
