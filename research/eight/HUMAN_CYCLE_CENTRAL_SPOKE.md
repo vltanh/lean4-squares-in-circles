@@ -177,3 +177,56 @@ than two is not resolved by this result.
 
 The unrestricted sharp lower inequality
 R8>=Rhat remains unproved.
+
+
+## 5. A sharp consequence for central actual degree two
+
+**Corollary.** Let a radius-minimizing packing be chosen
+to have the fewest actual contacting pairs. Suppose its
+central square C has actual contact degree **exactly two**,
+and gamma is any exterior positive-moment contact cycle.
+Then **both of C's actual neighbors belong to gamma's
+cycle-square set J**. In particular, neither neighbor
+may be an unused exterior square of winding zero.
+
+**Proof.** The exact actual-degree-two theorem
+HUMAN_CYCLE_ANALYSIS.md, section 8, applies to C:
+it is strictly inside the containing disk, and
+its two actual separating normals must be opposite
+and owned by two opposite **sides of C**.
+Consequently the two contacts occur on opposite
+support lines of C, one unit apart. Their common
+contact sets cannot have any point in common.
+
+Suppose one neighbor S were not in J. Choose a
+contact point z in C intersect S. Section 2
+forces z to belong to gamma, and hence to some
+square T in J. Therefore C also touches T
+at the **same point z**. Since C has only two
+neighbors, T must be its other neighbor.
+But its two contacts then share point z,
+contradicting their opposite-side support
+lines. Thus both neighbors lie in J. QED.
+
+If the two neighbor centers have norm at least
+one and J is a full seven-outer contact ring,
+HUMAN_STRICT_OPPOSITE_CENTRAL_ANGLE.md now
+forces their center-ray separation above pi/2.
+No two consecutive touching outer squares
+can have so large a center-ray separation;
+hence the two central neighbors are
+**nonconsecutive vertices of that ring**.
+Both circular arcs between them contain
+at least one further ring square. This is
+the candidate's B-T-D central routing
+pattern at the level of cyclic order,
+without asserting the number of vertices
+on either arc or their orientations.
+
+This is a genuine closure of the central
+degree-two *attachment membership* subcase,
+but not of the remaining sharp radius
+inequality. It does not cover actual
+central degree three or more, and it
+must not be asserted for a representative
+without the minimum-contact condition.
