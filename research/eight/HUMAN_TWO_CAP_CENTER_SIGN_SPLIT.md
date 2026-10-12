@@ -228,3 +228,65 @@ These are geometric filters on continuous center
 positions and outer/inner status, not a proof that
 any particular coarse side-count profile is
 unrealizable.
+
+
+## 5. Far-cap singleton geometry in every opposite 3+1 branch
+
+**Far-cap theorem.** Let a complete unit square S of
+arbitrary orientation lie in `D_R∩{y>=h}`,
+where `R²<=9789/2500` and `h>17/24`. Then:
+
+* There is **at most one** such square in a packing.
+* Its center obeys `y>29/24>1` and `|x|<1/2`.
+* The **open positive y-axis ray intersects the open
+  interior of S**, and S necessarily has an outer center.
+
+**Hand proof.** The sharp two-square cap theorem applies
+at `h>17/24>2/5`. If two squares occupied the cap,
+it would give
+
+    q >= (1+h)^2+1
+       > (41/24)^2+1
+       =2257/576 >9789/2500,
+
+a contradiction.
+
+Whole-square cap containment forces
+`y>=h+h_S((0,1))>=h+1/2>29/24`,
+so `|p_S|>1`. The exact arbitrary-frame
+one-square cap-center envelope gives
+
+    (1+h)^2+(|x|+1/2)^2 <=q
+       <=9789/2500<2257/576
+       =(41/24)^2+1.
+
+Since `h>17/24`, subtraction yields
+`(|x|+1/2)^2<1`, hence `|x|<1/2`.
+The square's half-width in the horizontal
+direction is at least 1/2, so x=0 meets
+its **open** horizontal projection.
+A square's open interior intersects the
+vertical line x=0 in a nonempty open
+line segment. Since the entire square
+has y>=h>0, that segment lies on the
+positive y-axis ray. QED.
+
+**Corollary (every opposite 3+1 side profile).**
+When three whole squares lie beyond one
+central side, the three-square cap inequality
+forces its outward offset `h<7/24`.
+The opposite side has offset `1-h>17/24`.
+If it serves the one square of a **3+1**
+opposite-side profile, that square is
+the unique whole square in the farther
+cap, has outer-center norm >1 and
+**crosses the outward diameter ray through
+its open interior**. No own-frame alignment
+is assumed.
+
+This is a necessary radial-lane conclusion
+for the S1 and S3 no-double types and other
+surviving 3+1 branches. It does not in
+itself exclude those branches: the actual
+other six exterior squares may still lie
+in configurations compatible with the ray.
