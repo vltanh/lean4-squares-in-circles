@@ -1257,3 +1257,97 @@ all eight squares, or replace the enumeration
 with one universal sharp obstruction.
 No equality R8=Rhat is inferred merely from
 the finite taxonomy.
+
+
+## New exact sector/corner-status pruning (October 12 continuation)
+
+HUMAN_ORIGIN_SECTOR_REPLICATION.md proves a
+universal rotation-replication hand theorem:
+if m whole unit squares fit in an origin
+sector of opening <=2pi/k within q<=98/25,
+then k*m<=7. The 90-degree case gives
+**capacity one for any whole quadrant**;
+the 45-degree case says no whole unit square
+can have an angular shadow narrower than
+pi/4. In particular each central
+adjacent-double separator status RU,RD,LU,LD
+has multiplicity at most one.
+
+HUMAN_SHARP_DOUBLE_CORNER_CAP.md establishes
+the stronger **exact one-square** corner
+radius envelope
+
+    S subset {x>=h_x,y>=h_y}, h_x,h_y>=0
+         => R^2>=(1+h_x)^2+(1+h_y)^2,
+
+without orienting S. The short proof
+forms a nonnegative weighted mean of two
+actual far-corner squared norms. Equality
+forces axis alignment with the two cap
+lines. Applied to the central square
+at p_C=(a,b), this excludes **both
+opposite pairs of double-side statuses**:
+RU with LD, and RD with LU.
+At most two double statuses can occur,
+and any two must be adjacent and share
+a signed side.
+
+A pair of adjacent double statuses
+on R implies a<-5/24 and prevents
+a two-square population on L.
+Its rotated/reflected analogues hold.
+Any one RU status requires
+a+b<-487/2500, with the analogous
+signed displacement inequalities
+for other corners.
+
+If |a|,|b|<=1/10, all double
+statuses are impossible. If
+|a|,|b|<=5/24, at most one
+double status can occur. Theorem 5
+sharpens triple-side h to <7/24;
+its opposite side offset then
+exceeds 17/24 and **no member of
+that opposite cap may also lie
+beyond a perpendicular central
+side**. Theorem 6 summarizes these
+orientation-free central-center
+regimes.
+
+HUMAN_DISTANT_SIDE_TRANSVERSE_LANE.md
+proves that a side at offset
+h>=17/24 can serve at most one
+whole square, whose center transverse
+coordinate has absolute value <1/2,
+whose open interior crosses the
+perpendicular diameter, and which
+has **no** adjacent double-side
+separator. This is especially useful
+inside a still-surviving 3+1 profile.
+
+PATTERN_REJECTION_MATRIX.md and
+FINITE_PATTERN_TAXONOMY.md now record
+the **fully qualified** status filters.
+Under the finite necessary status
+rules, the number of labeled
+seven-exterior-square status
+assignments falls from 8,551,760
+to **3,995,040** (about 53.3%
+pruned), including the triple-side
+distant-corner rule. These are
+counts of discrete assignments,
+not packings or certificates
+that each surviving assignment
+is geometrically feasible. All 31
+coarse opposite-side count profiles
+still admit some assignment.
+
+The decisive global obstruction
+R8>=Rhat is **not proved** by
+these local prunings. Further
+work must join the remaining
+separator statuses to the
+seven-square contact geometry
+and central occupancy, without
+incorrectly eliminating genuine
+candidate equality branches.
