@@ -1781,3 +1781,79 @@ triple plus far singleton **without retaining double-side status**.
 
 No new general eight-square lower bound or complete proof for D0,D1,D2
 is claimed. The target \(R_8\ge\widehat R\) remains open.
+
+
+## 2026-10-12: sharp two-inner cap geometry and two full low-k eliminations
+
+[HUMAN_SHARP_TWO_INNER_CAP_THRESHOLD.md](HUMAN_SHARP_TWO_INNER_CAP_THRESHOLD.md)
+proves, for arbitrary frames, that two whole squares in one
+nonnegative offset cap with **both** centers of norm <1 require
+\[
+h<(\sqrt3-1)/2.
+\]
+The threshold is sharp for standalone axis-parallel squares
+within the n=8 radius ceiling. Both inner center rays
+must straddle the outward normal with strict opposite transverse
+signs, and one has transverse coordinate magnitude
+\(>(h+1/2)/\sqrt3\).
+This strictly improves the older \(h\ge2/5\) inner-pair cap
+center-count argument.
+
+[HUMAN_PERPENDICULAR_FOUR_INNER_CAP_BOUND.md](HUMAN_PERPENDICULAR_FOUR_INNER_CAP_BOUND.md)
+gives a strict quarter-circle inequality for **four distinct
+inner centers**, two in each of two perpendicular whole-side caps:
+\[
+(h_x+1/2)^2+(h_y+1/2)^2<1.
+\]
+It forces explicit narrow center-ray lanes in
+[HUMAN_S1_K3_FOUR_INNER_LANES.md](HUMAN_S1_K3_FOUR_INNER_LANES.md)
+and [HUMAN_S2_K3_INNER_FAN.md](HUMAN_S2_K3_INNER_FAN.md).
+Those latter S2/k3 conclusions are now superseded by the stronger
+global macro-cell exclusion below.
+
+**Genuine new complete macro-case exclusions.**
+[HUMAN_FAR_TWO_CAP_FOUR_INNER_EXCLUSION.md](HUMAN_FAR_TWO_CAP_FOUR_INNER_EXCLUSION.md)
+proves an orientation-free **six-square forbidden-cap pattern**:
+two distinct inner squares in one positive cap, two distinct
+inner squares in a perpendicular cap of offset \(h>7/24\),
+and two distinct outer squares in its opposite cap at
+offset \(1-h\) cannot all coexist under
+\(R^2\le9789/2500\).
+
+The core hand proof forces an inner R center with radius \(>4/5\)
+at polar angle \(<-\arcsin(19/24)\), bounds both far D
+outer center rays to a southern interval by their large signed
+normal component and the universal center radius
+\(<283/200\), and invokes the established **outer-outer**
+angular gap \(>\pi/4-1/500\).
+The inscribed-center distance inequality forces each D ray
+more than \(\pi/6+1/100\) away from the near-outer R center.
+An exact arctangent comparison
+\(\arcsin(19/24)+\arctan(4/3)>7\pi/12\)
+leaves available arc width \(<\pi/4-1/100\), contradictory.
+[verify_far_two_cap_angular_margins.py](verify_far_two_cap_angular_margins.py)
+audits the displayed rational comparisons; it is **not**
+a substitute for the geometric argument.
+
+**Consequently the entire exclusive S2/k=3 cell and the
+entire exclusive S4/k=3 cell are eliminated, without
+any central-offset exception.** The latest D0/S=7
+outer-count queue is:
+\[
+\begin{array}{ll}
+{\rm S1}:&k=3,4,5,6,\\
+{\rm S2}:&k=4,5,6,\\
+{\rm S3}:&k=3,4,5,6,7,\\
+{\rm S4}:&k=4,5,6,7.
+\end{array}
+\]
+The exact S4/k=7 candidate equality construction is
+untouched. Corner-only cases, D1/D2, other outer-path
+attachments, and the unrestricted sharp radius
+\(R_8\ge\widehat R\) remain **OPEN**.
+
+The exact rational five-square local counterexample with
+one actual RU double-side member is recorded separately in
+[RATIONAL_PERPENDICULAR_CAP_COUNTEREXAMPLE.md](RATIONAL_PERPENDICULAR_CAP_COUNTEREXAMPLE.md);
+it guards against applying an **exclusive single-side**
+exclusion to arbitrary side-population counts.
