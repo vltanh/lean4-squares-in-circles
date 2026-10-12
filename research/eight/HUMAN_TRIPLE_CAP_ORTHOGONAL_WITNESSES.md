@@ -271,3 +271,65 @@ R8>=Rhat. It removes a definite
 continuous central-position region
 from S1 and every analogous
 perpendicular-triple/no-double branch.
+
+
+## 5. Forced quadrant owners and a narrower singleton lane
+
+The proof gives more than the perpendicular-triple
+incompatibility. Let one central side, say R, serve
+three whole squares and have offset h_R>=11/50.
+Order those three squares by their chords on the
+vertical slice x=(R_disk+h_R)/2, as in section 3.
+The uppermost and lowermost are uniquely the
+**only packed squares which can lie wholly in**
+the northeast and southeast origin quadrants,
+respectively, since each such quadrant has capacity
+one by sector replication.
+
+In particular, if an RU double-side status exists,
+it must be the uppermost of the three R-square chords;
+if an RD status exists, it must be the lowermost.
+When both exist, their **vertical order is forced**
+without any frame or actual-contact assumption.
+This provides a canonical order for the D2/R-triple
+subcase when the shared side offset is >=11/50.
+
+Conversely, consider two **distinct perpendicular
+triple sides** with *no square belonging to both*,
+as in the pure-single-side S1 branch.
+The main corollary forces one offset h<11/50.
+Its opposite central side has offset
+
+    h_opp=1-h>39/50.
+
+If that opposite side serves even one whole square
+T, the one-square arbitrary-frame cap envelope
+HUMAN_ONE_SQUARE_CAP_ENVELOPE.md gives
+
+    (1+h_opp)^2+
+       (|p_T transverse|+1/2)^2 <=R^2<=9789/2500.
+
+The cap displacement h_opp>39/50 implies
+`(1+h_opp)^2>(89/50)^2`. The exact
+positive comparison
+
+    (89/50)^2+(7/8)^2
+       -(9789/2500)=737/40000>0
+
+therefore forces
+
+    **|p_T transverse| <3/8.**                    (13)
+
+This is a strict, orientation-free **narrower
+diameter lane** than the old <1/2 far-cap
+bound. In the S1 branch, if the small-offset
+triple is the 3+1 axis, its unique opposite
+singleton necessarily satisfies (13).
+
+No claim is made that the same lane exists
+when the small-offset triple is the 3+0
+axis, which has no opposite singleton.
+The opposite-side square T remains free
+to rotate and may be separated on only
+one central side, so its transverse
+center inequality does not fix its frame.
