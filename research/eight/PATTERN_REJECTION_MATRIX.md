@@ -203,3 +203,87 @@ R8>=Rhat. This ledger is intended to prevent
 known-impossible patterns being revisited and
 known-feasible equality configurations being
 accidentally excluded.
+
+
+## 6. New orthogonal corner-cap rejection: opposite double-side assignments vanish
+
+HUMAN_SHARP_DOUBLE_CORNER_CAP.md proves the sharp
+one-square arbitrary-orientation inequality
+
+    S subset D_R intersection {x>=h_x, y>=h_y},
+    h_x,h_y>=0
+        => R^2 >=(h_x+1)^2+(h_y+1)^2.                  (13)
+
+Equality requires the axis-parallel unit
+square resting on both lines. The proof uses
+two **actual** far-corner vertices of a
+rotated square, one positive convex weighting,
+and the exactly nonnegative identity
+
+    alpha*|V_top|^2+(1-alpha)*|V_right|^2
+          -(h_x+1)^2-(h_y+1)^2
+      =[2*h_x*(1-c)*(1-s)
+          +s*(1-s)+c^2*(1-c)]/c >=0,
+
+where c=cos(theta), s=sin(theta) with
+0<=theta<=pi/4, and
+alpha=(1-s)/c in (0,1].
+A reflection covers negative orientations.
+
+For the central square C centered at (a,b)
+in its own side frame, any **double-side**
+status in the stated corner requires:
+
+    RU: q>=(3/2+a)^2+(3/2+b)^2,
+    RD: q>=(3/2+a)^2+(3/2-b)^2,
+    LU: q>=(3/2-a)^2+(3/2+b)^2,
+    LD: q>=(3/2-a)^2+(3/2-b)^2.                (14)
+
+At q<=q_plus<9/2, the **opposite pairs**
+RU with LD and RD with LU are impossible:
+averaging the two requirements gives
+q>=9/2+a^2+b^2>q_plus.
+
+Consequently **at most TWO** of the
+four double-side statuses can occur,
+and if two occur they must be **adjacent
+types sharing a signed central side**.
+Each individual double type has capacity
+one by HUMAN_ORIGIN_SECTOR_REPLICATION.md.
+
+There is a stronger mixed-pattern rejection:
+if RU and RD both occur, (14) implies
+
+    q>=(3/2+a)^2+(3/2+|b|)^2
+      >=(3/2+a)^2+9/4,
+
+which forces a<-5/24 at the sharp search
+ceiling. But any 2+2 population on right
+and left central sides forces |a|<5/24
+by section 2. Therefore **RU and RD
+cannot coexist with two whole left-cap
+squares**. All reflected/rotated versions
+follow. Two double statuses on one side
+force that opposite side population <=1.
+
+Each double type also requires a specific
+central-center diagonal displacement,
+for example
+
+    RU => a+b<-487/2500,
+    RD => a-b<-487/2500,
+    LU => -a+b<-487/2500,
+    LD => -a-b<-487/2500.                       (15)
+
+If |a|,|b|<=1/10, no double type can
+occur at all: each corner cap has two
+offsets >=2/5 and (13) would require
+q>=2*(7/5)^2=98/25>q_plus.
+
+These rules reject **complete geometric
+status patterns**, not merely new
+radius estimates in a conditional
+candidate orientation family.
+They do **not** exclude the genuine
+seven-outer contact ring or the central
+degree-four equality representative.
