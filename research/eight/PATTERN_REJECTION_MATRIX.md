@@ -342,3 +342,52 @@ finite status enumeration further.
 They do not prohibit the one opposite
 **single-side** square in the 3+1
 profile, nor corner-only exceptions.
+
+
+## 8. The surviving far-side unit is forced into a central lane
+
+HUMAN_DISTANT_SIDE_TRANSVERSE_LANE.md adds a
+whole-orientation geometric restriction
+**inside** the surviving 3+1 branch.
+
+Suppose a central side lies at signed
+distance h>=17/24 from the disk origin.
+At q<=q_plus it can serve **at most one**
+whole exterior square (by the
+two-square cap bound). If it serves
+one S, the exact one-square cap
+center-envelope theorem gives
+
+    (1+h)^2+(|y_S|+1/2)^2<=q
+       <2257/576,
+
+where y_S is S's center coordinate
+parallel to that side. Because
+h>=17/24 this forces
+
+    |y_S|<1/2.
+
+The projected vertical half-width of
+any unit square is at least 1/2,
+so S's *open interior* crosses the
+diameter perpendicular to the side.
+The sharp corner-cap theorem also
+prohibits S from serving another
+adjacent central side: that would
+require q>(41/24)^2+1.
+
+Consequently every **3+1** central
+side pattern has a uniquely constrained
+opposite singleton, if present:
+it is a **single-side** status,
+its transverse center coordinate
+lies strictly between -1/2 and 1/2,
+and its open interior intersects
+the perpendicular diameter through
+the origin. No common frame or
+circle contact is being assumed.
+
+This supplies a geometrically testable
+placement lane for the remaining four
+or five squares, rather than
+incorrectly discarding the 3+1 case.
