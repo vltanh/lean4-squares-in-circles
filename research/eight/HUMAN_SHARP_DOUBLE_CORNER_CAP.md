@@ -374,3 +374,33 @@ opposite cap, nor corner-only members
 whose separation is on their own
 oblique frame. All seven exterior
 squares must still be accounted for.
+
+
+## Theorem 6: central offset stratifies double-status multiplicity
+
+Combine Theorems 2--4 and 3's two-adjacent
+bound to obtain the following complete
+**necessary** upper bounds, for the central
+center (a,b) in its own frame:
+
+| Position of C's center | Maximum number of populated double-side statuses |
+| --- | ---: |
+| |a|<=1/10 and |b|<=1/10 | **0** |
+| |a|<=5/24 and |b|<=5/24 | **1** |
+| Arbitrary |a|,|b|<1/2 | **2**, and the two must share one central side |
+
+The first line is Theorem 4. For the second,
+suppose two double types occurred. Theorem 2
+makes them share a central side, for example
+RU and RD on R. Theorem 3 then forces
+a<-5/24, contradicting |a|<=5/24.
+Reflections and quarter turns handle
+every adjacent pair. The unrestricted
+maximum two is Theorem 2.
+
+These are **upper** bounds; no row asserts
+that a maximum is attained in a full
+eight-square packing. The stratification
+does not exclude corner-only own-axis
+separators or force any candidate contact
+pattern.
