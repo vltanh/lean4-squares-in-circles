@@ -544,3 +544,21 @@ satisfy the older side/corner cap filters;
 the extra triple/double filters are vacuous.
 The position subcase is not asserted to be
 feasible for any of those assignments.
+
+
+**Why m<=8 without a computer.** Each double-side
+square contributes one additional membership,
+so m=n_side+d, where n_side<=7 is the number
+of side-separated exterior squares and d
+is the number of double-side squares.
+We proved d<=2. For d<=1, m<=8 immediately.
+For d=2, the two doubles must share one
+side, say R. Its opposite side L has
+population <=1 by the corner-cap theorem;
+R itself has population <=3. The other
+opposite side pair U,D has total
+population <=4, because each is at most3
+and a 3+2 opposite pair is forbidden.
+Thus m=N_R+N_L+N_U+N_D<=3+1+4=8.
+This explains the membership-bin cutoff
+used in the finite count table above.
