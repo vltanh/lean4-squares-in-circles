@@ -1,0 +1,205 @@
+# Actual exclusions and remaining cases for unrestricted eight-square packing
+
+**Scope and purpose.** All eight squares are independently oriented unit
+squares with pairwise disjoint **open interiors**, packed into a disk
+centered at zero. Work at the proved rational search ceiling
+
+    q=R^2 <= q_plus=9789/2500 <2257/576<98/25<4.
+
+The existing exact construction shows every radius minimizer can be
+examined in this range. The central-square theorem
+HUMAN_GLOBAL_GEOMETRY_CLOSURE.md guarantees exactly one square C
+whose open interior contains zero.
+
+This is a **pattern rejection ledger**, not a claim of the missing
+unrestricted sharp inequality R8>=Rhat. Every row below preserves
+its geometric hypotheses. 'Beyond a central side' means a **whole**
+square is contained in the indicated outward half-plane because
+of a valid central-owned support separator; it does NOT merely
+mean its center lies in that half-plane.
+
+## 1. Rejections that already have hand proofs
+
+| Proposed pattern | Verdict at q<=q_plus | Exact reason |
+| --- | --- | --- |
+| Four squares anywhere in one closed half-disk through zero | **Impossible** | Reflect all four to get eight exterior squares and contradict the analytic central-square theorem; HUMAN_CENTRAL_COMPACTNESS.md section 1 |
+| Four squares beyond any one central side | **Impossible** | A central side has positive signed distance h from zero, so its cap is contained in a forbidden half-disk |
+| Three squares beyond one central side and two beyond its opposite | **Impossible** | Orientation-free three- and two-square cap theorems require q>=2257/576; HUMAN_OPPOSITE_CAP_OCCUPANCY.md |
+| All seven noncentral squares have a common frame (central square arbitrary) | **Impossible** | The exact seven-parallel-exterior theorem gives q>=2257/576; HUMAN_SEVEN_EXTERIOR_PARALLEL.md |
+| Four squares in one sequential straight separating-axis chain | **Impossible** | The arbitrary-frame straight-chain theorem gives R^2>=(4^2+1)/4=17/4>4; HUMAN_CYCLE_ANALYSIS.md section 7 |
+| An actual-contact cycle with 3--6 vertices, all of whose centers have norm >=1 | **Impossible** | Private outer-center rays make it the full induced outer cycle; its winding would enclose at least two other units, contradicting radial escape; HUMAN_OUTER_GRAPH_REDUCTION.md |
+| The two neighbors on opposite central sides touch one another | **Impossible** | Their center distance is >=2, whereas touching unit squares have center distance <=sqrt(2); see section 3 below |
+| Sevenfold rotationally symmetric seven-square outer ring below R=2 | **Impossible** | Whole-angle separating-axis and containment argument; HUMAN_SEVENFOLD_RING_BOUND.md |
+| Three square centers of norm >=1 in an angular sector of width pi/2+1/40 | **Impossible** | Sharp orientation-independent sector bound; HUMAN_OUTER_QUADRANT_CAPACITY.md |
+| A diameter crosses only the open central square, with all other seven wholly to its two sides | **Impossible** | Each closed half-disk holds at most three whole squares, so seven cannot be divided across both sides; HUMAN_CENTRAL_COMPACTNESS.md section 2 |
+
+The first row is **stronger** than the independent slice proof of
+HUMAN_FOUR_SQUARE_CAP_SLICE.md, which by itself only excludes
+four units in the offset cap h>=1/100. There is **no surviving
+h<1/100 exception** once the analytic semicircle theorem is used.
+
+The six-outer-cycle rejection concerns the actual graph induced
+by **centers of norm at least one**. It does not say an exterior
+cycle containing a noncentral square with center norm <1 is
+impossible: such cycles occur and must be retained.
+
+## 2. New exact quantitative pruning for opposite central-side counts
+
+Fix one signed side normal n of C. Write
+
+    t=n dot p_C,       -1/2<t<1/2,
+    h_plus=1/2+t,     h_minus=1/2-t,               (1)
+
+so the positive and negative central side lines have distances
+h_plus,h_minus from zero, with h_plus+h_minus=1.
+Let N_plus,N_minus count **distinct whole exterior squares**
+lying beyond those central-owned support lines.
+
+**Proposition (a complete side-pair pruning rule).**
+At q<=q_plus:
+
+1. If N_plus>=3, then h_plus<3/10 and t<-1/5.
+   Necessarily N_minus<=1.
+2. If N_minus>=3, the reflected conclusion holds.
+3. If N_plus>=2 and N_minus>=2, then
+
+       |t| <=sqrt(q-1)-3/2 <5/24.                 (2)
+
+4. Every N_plus,N_minus is at most three. Consequently,
+   the only *cardinality* pairs surviving these
+   side-local restrictions are
+
+       (0..3,0..3) except
+       (3,2), (3,3), (2,3),
+
+   with (3,1),(1,3) allowed only if the central
+   side coordinate satisfies the offset restriction
+   in (1), and pairs (2,2) forcing (2).
+
+These are **necessary conditions**, not claims that every
+listed pair is geometrically attainable or compatible with
+the seven other exterior squares.
+
+**Hand proof.** Four is excluded by section 1.
+Suppose N_plus>=3 and put h=h_plus.
+The sharp three-square cap theorem gives, when
+0<=h<=1/3,
+
+    q>=(1+h)^2+9/4.                                (3)
+
+If h>=1/3, the smaller cap at h=1/3 would
+already require q>=145/36>4, impossible.
+Thus the actual h lies below 1/3 and (3) applies.
+If h>=3/10, (3) would give
+q>=169/100+9/4=197/50=3.94>q_plus.
+Therefore h<3/10, yielding t<-1/5.
+
+If two more squares lay beyond the opposite side,
+the three-square cap and the two-square cap for
+h_minus=1-h in (2/3,1) give
+
+    q>=max[(1+h)^2+9/4, (2-h)^2+1].
+
+The first bound strictly increases with h;
+the second strictly decreases. Their
+intersection occurs at h=7/24, where both
+equal 2257/576>q_plus. Thus N_minus<=1.
+Reflection proves the symmetrical case.
+
+Now assume at least two squares are served by
+both opposite sides. Choose the side whose
+distance from zero is larger, h_big=1/2+|t|.
+It belongs to [1/2,1), inside the interval
+[2/5,1] of HUMAN_EXTENDED_TWO_SQUARE_CAP.md.
+The two-square cap theorem yields
+
+    q>=(1+h_big)^2+1
+      =(3/2+|t|)^2+1.
+
+Rearranging gives the first inequality in (2).
+For the rational strict upper bound, if
+|t|>=5/24 then
+
+    q>=(3/2+5/24)^2+1
+      =(41/24)^2+1
+      =2257/576>q_plus,
+
+a contradiction. This proves (2) and all
+the cardinality assertions. QED.
+
+Notice that side-cap populations on **perpendicular**
+central sides can share a square that is beyond
+both central sides. The counts N_plus,N_minus
+are only for *opposite* caps; those caps are
+disjoint, so the comparison above uses truly
+distinct squares. No exclusive global assignment
+of the seven exterior squares to four sides
+is being presumed.
+
+## 3. Another exact forbidden local contact pattern
+
+Let A and B be two distinct unit squares wholly
+separated from C beyond its opposite sides
+along n,-n. Their support inequalities add to
+
+    n dot(p_A-p_B)
+      >=h_A(n)+2*h_C(n)+h_B(n)>=2,
+
+since each centered unit square has
+support half-width at least 1/2.
+Consequently |p_A-p_B|>=2.
+
+But if A and B actually touched at z,
+their centers would satisfy
+
+    |p_A-p_B|<=|p_A-z|+|z-p_B|
+             <=1/sqrt(2)+1/sqrt(2)=sqrt(2)<2.
+
+Contradiction. This excludes a triangle
+C--A--B--C whose two central contact
+directions are opposite. It does **not**
+exclude a four-vertex cycle C--A--T--B--C;
+the exact candidate has such cycles.
+
+## 4. Surviving branches we must NOT erase
+
+| Case | Why it remains |
+| --- | --- |
+| Seven exterior squares form a full actual-contact ring, with central spokes | The sharp five-corner construction actually realizes this, at exactly Rhat; ANALYTIC_SHARP_SEVEN_OUTER_CONSTRUCTION.md |
+| A noncentral exterior square has center norm <1 | The original tilted candidate and rational seven-ring examples contain this possibility |
+| Central square with actual degree 3 or 4 | ANALYTIC_SHARP_FOUR_CENTRAL_CONTACTS.md constructs a sharp-family packing with four central neighbors |
+| One exterior orientation differs from six mutually parallel ones | The seven-*parallel*-exterior theorem does not treat this case; HUMAN_ONE_ROTATED_QUADRANT_CAPACITY.md treats only its quadrant-cell subcase |
+| Three squares beyond one central side and one beyond the opposite | The 3+2 cap bound does not exclude 3+1; remaining squares may use side or corner-owned separators |
+| Two squares beyond each of two opposite sides | Feasible by side bounds when C is sufficiently centered; the global interaction with the remaining squares is unresolved |
+| Corner-separated exterior squares, or contacts with zero stress weight | A center-side occupancy number does not classify their actual separating axes |
+| Seven-outer-center paths joined through inner attachments | Not covered by the full-ring argument; contact graph analyses retain these branches |
+
+## 5. Next exact proof obligations, in priority order
+
+The **side-count** branching is now genuinely finite:
+each side has capacity 0,1,2,3; any 3 on a side
+has at most 1 opposite; any 2+2 opposite
+requires |n dot p_C|<5/24.
+
+But it is **not an exhaustive geometric classification**
+of the seven exterior units because corner-owned
+separators may bypass all four central side counts,
+and adjacent-side memberships can overlap.
+
+The next high-value hand theorem would show that
+each surviving side-count/corner-exception combination
+either supplies the coherent five-corner projected
+inequalities or obeys a *strictly stronger*
+radius bound. For the seven-outer actual ring,
+one must retain the full central square:
+RATIONAL_SEVEN_EXTERIOR_CONTACT_CYCLE.md and
+HUMAN_RATIONAL_RING_POCKET_AREA.md demonstrate
+that a winding seven-ring alone can be smaller
+than Rhat but may lack room for the central
+unit square.
+
+**Not proved:** the unrestricted reverse inequality
+R8>=Rhat. This ledger is intended to prevent
+known-impossible patterns being revisited and
+known-feasible equality configurations being
+accidentally excluded.
