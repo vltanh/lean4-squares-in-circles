@@ -1736,3 +1736,48 @@ singleton comparison using exact fractions. The script has been
 executed successfully; the analytical arguments remain the premises.
 No general S1 closure, S4 equality exclusion, or unrestricted
 \(R_8\ge\widehat R\) is claimed.
+
+
+## 2026-10-12 further continuation: exact inner-center cap threshold and a local counterexample
+
+[HUMAN_SHARP_TWO_INNER_CAP_THRESHOLD.md](HUMAN_SHARP_TWO_INNER_CAP_THRESHOLD.md)
+proves a **sharp, full-orientation** replacement for the previously
+reused h>=2/5 two-inner-center cap exclusion. Two distinct unit
+squares wholly beyond the same nonnegative offset line, with both
+centers of norm <1, require
+\[
+h<(\sqrt3-1)/2=:H_*.
+\]
+The proof only uses that the center normal projections exceed
+h+1/2, and that two centers of norm <1 with mutual distance >=1
+must have angular separation strictly greater than 60 degrees.
+It also proves that such two inner centers have **opposite signed
+transverse coordinates**, and one has transverse absolute coordinate
+>(h+1/2)/sqrt(3). A pair of aligned vertically stacked squares
+with centers (x,±1/2), x approaching sqrt(3)/2 from below, shows
+that H_* is actually **sharp for a standalone two-square cap inside
+the n=8 disk ceiling**, not merely for a center-disk relaxation.
+
+Writing \(T_*=1-\sqrt3/2\), the exact new joint status/outer-center
+restrictions are: S2/k=3 requires
+\(|t_{2+2}|>T_*\), S3/k=3 requires
+\(h_{\mathrm{2-member},2+1}<H_*\),
+S4/k=3 requires its 2+1 two-member offset \(<H_*\), and
+S4/k=4 with two-member offset \(\ge H_*\) requires
+\(|t_{2+2}|>T_*\). None eliminates S4 equality or all
+D1/D2 cases. The 12-status symbolic count is unchanged.
+
+[RATIONAL_PERPENDICULAR_CAP_COUNTEREXAMPLE.md](RATIONAL_PERPENDICULAR_CAP_COUNTEREXAMPLE.md)
+records five **exact rational** disjoint unit squares at
+\(R^2=3911/1000<q_{\mathrm{plus}}\), including the open
+origin-containing central square, a three-member right whole cap,
+and a far lower singleton. All 20 true square vertices and all
+10 unordered square pairs have explicit exact certificates in
+[verify_perpendicular_cap_counterexample.py](verify_perpendicular_cap_counterexample.py).
+The example has a genuine RU double-side square, so it
+**does not** contradict the S1-exclusive-single-side deductions.
+It refutes only the tempting shortcut of excluding a perpendicular
+triple plus far singleton **without retaining double-side status**.
+
+No new general eight-square lower bound or complete proof for D0,D1,D2
+is claimed. The target \(R_8\ge\widehat R\) remains open.
