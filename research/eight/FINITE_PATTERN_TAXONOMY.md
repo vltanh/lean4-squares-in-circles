@@ -490,3 +490,57 @@ Thus the answer is **finite combinatorics
 plus continuous exact geometry**, not
 infinitely many unrelated contact types,
 and not a solved 31-case checklist.
+
+
+### Auditable count by total side memberships
+
+For the strongest finite filters above, let
+`m=N_R+N_L+N_U+N_D`. A label counted
+twice (one adjacent double-side status)
+contributes two to m; a corner-only
+label contributes zero. Expanding the
+stated multinomial coefficient formula
+with the four triple/opposite-double
+conjunctions removed gives
+
+| m | Remaining labeled status assignments |
+| ---: | ---: |
+| 3 | 53,760 |
+| 4 | 372,960 |
+| 5 | 1,118,880 |
+| 6 | 1,534,400 |
+| 7 | 814,240 |
+| 8 | 100,800 |
+| **Total** | **3,995,040** |
+
+No assignment with m<3 is possible by
+the corner-only capacity four; no
+assignment with m>8 survives because
+there are seven squares and at most
+one populated status in each double
+corner, with no opposite pair.
+
+A direct finite formula for each entry is
+
+    7! * sum_(n_R+n_L+n_U+n_D
+             +d_RU+d_RD+d_LU+d_LD
+             +c_NE+c_NW+c_SE+c_SW = 7)
+           [side conditions and sum(side)=m]
+           / product(factorial(n_i),factorial(d_j),factorial(c_k)),
+
+where each d_j,c_k is 0 or 1; all n_i are
+nonnegative integers. The side conditions
+are exactly the count<=3, no-opposite-3+2,
+no opposite-double, adjacent-double/opposite-2+2,
+and triple/opposite-double exclusions described
+above. This is finite **integer arithmetic**.
+It is a reproducibility check, not a
+geometric feasibility certificate.
+
+In the *near-center subcase* `|a|,|b|<=1/10`,
+the sharp corner-cap theorem forces all
+d_j=0. Then only 588,000 labeled assignments
+satisfy the older side/corner cap filters;
+the extra triple/double filters are vacuous.
+The position subcase is not asserted to be
+feasible for any of those assignments.
