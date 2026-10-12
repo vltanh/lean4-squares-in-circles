@@ -350,3 +350,26 @@ the exact four-type walk formula alone does not supply them.
 
 No completion of the unrestricted n=8 proof is claimed by this roadmap.
 
+
+
+### Critical revision: the seven-outer contact ring is an equality case of the candidate
+
+ANALYTIC_SHARP_SEVEN_OUTER_CONSTRUCTION.md now proves, using only
+the whole-domain stationary inequalities, that the exact conditional
+five-corner optimum admits **seven outer-center squares in one full
+actual-contact cycle** A-B-T-D-E-H-G-A, while the central square C
+touches B and D. The construction keeps the exact radius R_hat and
+all 28 nonoverlap conditions. The tilted square G slides by an amount
+eta=-(k1-1)/2 along f; the circle containment reserve is at least
+3(k1-1)/4. The two rotated vertex-to-edge contacts are checked at
+their actual common points and persist throughout the slider interval.
+
+**Do not try to exclude the full seven-outer ring** at or below
+the candidate radius, and do not try to force a noncentral
+center of norm below one in every packing at the candidate radius:
+the exact candidate falsifies both conclusions.
+A sharp global lower-bound proof must derive a five-corner obstruction
+for general seven-outer rings **with equality allowed**, and must also
+cover configurations with fewer outer centers and other central
+attachments. This is a construction/equality warning, not a claim
+that the unrestricted lower bound has been proved.
