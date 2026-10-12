@@ -291,11 +291,10 @@ any square angles or actual contacts:
 The updated coarse classification of the
 **all-seven-single-side** statuses is:
 
-    S1=(3+0,3+1): only k=3,4,5,6 possible;
-    S2=(3+0,2+2): only k=3,4,5,6 possible;
-    S3=(2+1,3+1): k=3,4,5,6,7 not yet
-                    excluded globally;
-    S4=(2+1,2+2): k=3,4,5,6,7 retained,
+    S1=(3+0,3+1): k=3,4,5,6 retained;
+    S2=(3+0,2+2): k=4,5,6 retained;
+    S3=(2+1,3+1): k=3,4,5,6,7 retained;
+    S4=(2+1,2+2): k=4,5,6,7 retained,
                     including exact k=7
                     candidate equality.
 
@@ -307,3 +306,39 @@ This does not imply any complete all-orientation
 eight-square lower bound: outer **paths with
 noncentral inner-center attachments** remain,
 as do D1/D2 and the equality-bearing S4.
+
+
+## 8. New full macro-cell exclusions: S2/k=3 and S4/k=3
+
+[HUMAN_FAR_TWO_CAP_FOUR_INNER_EXCLUSION.md](HUMAN_FAR_TWO_CAP_FOUR_INNER_EXCLUSION.md)
+establishes a new **entire k-cell exclusion** that supersedes
+the earlier conditional k=3 offset-pruning rows for S2 and S4.
+It uses the existing strict outer-center angular gap and
+a new mixed inner/outer angular exclusion to prove that six
+distinct squares cannot simultaneously supply:
+
+* two **inner** centers in one positive whole central-side cap;
+* two **inner** centers in a perpendicular positive cap
+  of offset \(h>7/24\);
+* two **outer** centers in its opposite cap of offset \(1-h\).
+
+This forbidden six-square configuration eliminates the whole
+exclusive S2/k=3 cell, and the whole exclusive S4/k=3 cell,
+**without any central-coordinate exception**. In each case the
+two outer far-side members and the remaining total \(k=3\)
+force exactly the requisite four inner centers on perpendicular
+sides; S4's opposite 2+1 singleton is the third outer center.
+
+The latest allowable k values therefore are:
+
+| All-single-side type | k still not globally excluded |
+| --- | --- |
+| S1=(3+0,3+1) | **3,4,5,6** |
+| S2=(3+0,2+2) | **4,5,6** |
+| S3=(3+1,2+1) | **3,4,5,6,7** |
+| S4=(2+1,2+2) | **4,5,6,7** |
+
+The actual S4/k=7 sharp equality branch is deliberately
+preserved. These are outer-count/status **necessary conditions**,
+not a classification of realizable packings or a proof of
+the unrestricted sharp lower bound.
