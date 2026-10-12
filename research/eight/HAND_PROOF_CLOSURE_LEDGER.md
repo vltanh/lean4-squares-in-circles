@@ -1199,3 +1199,61 @@ separators, and mixed exterior
 orientations are **not eliminated**.
 None of the new bookkeeping
 establishes unrestricted R8>=Rhat.
+
+
+## Exhaustive finite-vs-continuous pattern taxonomy
+
+FINITE_PATTERN_TAXONOMY.md distinguishes three independent
+coarse classifications without pretending that they determine
+the exact packing geometry:
+
+1. Each of the seven exterior squares has one of **twelve**
+   exhaustive central-separator statuses: four single
+   central-side labels, four adjacent side-pair labels,
+   or four own-axis corner-only labels. There is at most
+   one corner-only square in each corner, and at least
+   three distinct exterior squares are side-separated.
+2. Each opposite central-side count pair belongs to one
+   of **eight** profiles up to reflection:
+   0+0,0+1,0+2,0+3,1+1,1+2,1+3,2+2.
+   There are 13 signed versions per axis, at most
+   169 combined four-side count profiles, and 36
+   profiles up to central-frame reflection/axis swap.
+   At least three distinct side-separated squares
+   eliminates five of these 36 coarse numerical
+   profiles, leaving **at most 31 for further pruning**.
+   They are necessary profiles, not 31 certified
+   realizable arrangements.
+3. A newly proved elementary center-count lemma
+   shows at most five of eight square centers
+   can have norm <1 (six such centers would have
+   angular gap <=pi/3 and center distance <1).
+   Thus the number k of center-norm-at-least-one
+   outer squares satisfies 3<=k<=7.
+   Their induced actual contact graph is a
+   union of paths and isolates for k=3,4,5,6;
+   for k=7 it is paths/isolates or the full
+   seven-cycle. The path alternatives allow
+   noncentral inner squares and their contacts.
+
+For formal exhaustiveness beyond these hand-geometric
+profiles, each pair of squares has at most eight
+signed separating-axis choices, giving <=8^28
+symbolic SAT-owner branches for 28 pairs. Every
+branch consists of polynomial equalities and
+inequalities in actual centers and unit square
+frame vectors (after finite absolute-value
+sign splits), hence is a continuous **semialgebraic**
+feasibility problem. The nontrivial exact slider
+interval in the sharp construction shows
+infinitely many positions occur even at one
+radius with the same full exterior contact ring.
+
+**Strategic conclusion:** finite contact types do not
+mean a finite list of isolated configurations.
+The proof must reject every surviving
+continuous family by inequalities incorporating
+all eight squares, or replace the enumeration
+with one universal sharp obstruction.
+No equality R8=Rhat is inferred merely from
+the finite taxonomy.
