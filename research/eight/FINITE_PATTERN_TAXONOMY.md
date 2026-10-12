@@ -860,3 +860,91 @@ vectors. The certified total of
 must therefore remain unchanged
 unless an additional pure status
 incompatibility is proved.
+
+
+## New full-frame eliminations via two outer centers in a moderate triple cap
+
+HUMAN_TRIPLE_CAP_TWO_OUTER_CENTERS.md proves, by one
+common disk slice and exact chord inequalities, that
+**three** complete squares beyond a line of radial
+offset h>=7/50 at R<=99/50 contain **two distinct
+center-norm->1 squares**. The highest and lowest
+slice squares have
+
+    p_top.x+p_top.y>1421/1000>sqrt(2),
+    p_bottom.x-p_bottom.y>1421/1000>sqrt(2).
+
+This is a hand theorem for **every square frame and
+position** in the cap, not a grid or a choice of
+contact normal between the three squares. It
+strictly strengthens the earlier single-outer-center
+triple lemma on this positive-offset region.
+
+HUMAN_PERPENDICULAR_TRIPLES_SHARP_LANE.md then
+sharpens the perpendicular-triple obstruction:
+a triple cap with h>=7/50 has an outer-center
+extreme in the exact angular lane
+
+    alpha<phi<pi/2-alpha,
+    alpha=atan(9/20).
+
+Two perpendicular triple caps meeting that
+offset threshold supply their respective
+outer-center extreme **in the same lane**.
+The lane has width
+`pi/2-2alpha<pi/4-1/100`, whereas two
+different outer square centers require
+angular gap `>pi/4-1/500`.
+They must therefore be **one common actual
+square label**, served by both perpendicular
+central sides. This conclusion uses no
+parallel-frame, actual-contact, or
+stress assumption.
+
+In particular, all-single-side **S1** with
+two perpendicular triples is impossible
+throughout the whole central-center rectangle
+
+    h_triple1>=7/50 AND h_triple2>=7/50.
+
+Every S1 packing must have
+`min(h_triple1,h_triple2)<7/50`, or,
+after normalizing its triples to R,U,
+`min(a,b)<-9/25`.
+This improves the older `13/60` and
+`11/50` thresholds, and it excludes this
+continuous region **for all k=3,...,7**.
+If the tiny-offset triple also has an
+opposite singleton, the latter's center
+transverse coordinate must satisfy
+`|z|<9/50`.
+
+Further exact macro-class intersections now
+ruled out:
+
+* **S2/k=3** if the triple offset is
+  >=7/50, *or* if the 2+2 central coordinate
+  has `|t|<=1/10`; the latter improves
+  the former `1/14` strip.
+* **S2/k=4** if the triple offset
+  is >=7/50 and `|t|<=1/10`.
+* **S3/k=3** unless **both**
+  its triple offset is <7/50 **and**
+  its 2+1 two-square side offset is <2/5.
+* **S1/k=3,4** requires a tiny triple
+  offset <7/50 (already true of S1 for all k).
+* **Saturated Type A/k=3,4** when both
+  of its perpendicular triple offsets
+  are >=7/50 (its one shared RU square
+  is counted only once, alongside two
+  distinct opposite far-side singletons).
+
+These are **provably excluded continuous
+status/outer-center/offset subregions**, not
+new integer-status assignment counts. The
+31 coarse count profiles and 3,995,040
+fine symbolic labeled assignments are
+bookkeeping upper bounds; the above geometry
+restricts their *real coordinates* further.
+The exact sharp S4 candidate remains a
+genuine equality branch and is not eliminated.
