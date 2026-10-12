@@ -127,3 +127,67 @@ To prove R8>=Rhat one must eliminate or
 quantitatively bound those alternatives as well
 as the stress-free full-ring branch. A constant
 moment flux alone is not a radius obstruction.
+
+
+## Two central stressed spokes give exactly two flux plateaus
+
+There is a second **conditional, exhaustive** refinement.
+Suppose, instead of the stress-free hypothesis of the theorem,
+that the physical stress has exactly two nonzero central
+contact resultants, at distinct ring vertices S_a,S_b.
+All ring vertices are outer; there are no other inner
+squares. By HUMAN_TWO_FORCE_SQUARE_CLASSIFICATION.md,
+the central forces are equal and opposite, act along
+one common line, and their normals are either a
+central side normal or a central vertex diagonal.
+
+Let M_i denote the scalar moment on outer S_i of
+its stress force from C, setting M_i=0 when C
+has no positive stress contact with S_i.
+The contact reaction on C is opposite at the same
+effective point, so moment balance on C gives
+
+    M_a+M_b=0,           M_i=0 for i not a,b.        (5)
+
+Physical moment balance on every outer square is
+
+    tau_i-tau_(i-1)=M_i,   tau_i>=0,                 (6)
+
+where tau_i denotes the positively oriented outer
+ring moment of edge S_i-S_(i+1), defined in
+the theorem above. Thus the sequence tau_i is
+**constant on each of the two circular outer
+edge arcs from S_a to S_b and back**.
+There are two nonnegative plateau values
+tau_+,tau_-, and their difference is M_a
+(up to the choice of which arc is called +).
+Their difference may vanish if the common
+central force line is radial about the disk origin.
+
+At least one plateau is strictly positive.
+Indeed, if every ring tau_i were zero, then
+every ring stress multiplier would vanish by
+the outer contact strict-moment theorem.
+The entire positive stress graph would consist
+of the two central spokes and would be a
+three-vertex tree. The nonradial-component
+theorem of HUMAN_CONTACT_EQUILIBRIUM.md,
+sections 7--8, excludes any nontrivial stress-tree
+component in the established eight-square
+minimizer radius range R>sqrt(2)+1/2.
+Normalization excludes the empty graph.
+Consequently the stress support around the ring
+is either its entire seven-cycle (both plateaus
+positive), or **one contiguous positive run**
+between the two central spokes (one plateau
+zero, the other positive). A mixture of
+several disjoint positive ring runs is
+impossible under this two-spoke hypothesis.
+
+The statement permits additional *actual*
+contacts carrying zero chosen stress; it
+concerns the flux and support of one fixed
+physical stress. It does not classify
+higher central stress degree, nor establish
+the sharp radius in either remaining plateau
+case.
