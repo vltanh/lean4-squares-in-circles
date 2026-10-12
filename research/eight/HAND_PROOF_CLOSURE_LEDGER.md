@@ -550,3 +550,42 @@ yields R8<=Rhat only. An arbitrary eight-square
 minimizer has not been reduced to the
 five-corner inequality or an equally
 sharp alternative.
+
+
+## Sharp conditional chain with only two aligned end frames
+
+HUMAN_TWO_ALIGNED_ENDS.md supplies a complete hand proof
+of a **strictly broader structural implication** than the
+former six-common-frame/tilted-pair description.
+Only the end squares A and E must share one
+axis-parallel frame. The four other chain squares
+B,D,G,H may have *arbitrary orientations*.
+Given the three directed outer-chain support
+separators (including an intervening square
+contributing one unit of width between B and D),
+and the three coherent oblique separator
+directions along e,e,f, the five disk points
+satisfying the exact five-corner obstruction
+exist. The result immediately yields R>=Rhat
+under these **explicit conditional hypotheses**.
+
+The key universal lemma constructs four canonical
+points inside every rotated unit square, at
+offsets `(1-L/2)(+/-a+/-b)` from its center,
+where `L=2h_S(a)=2h_S(b)`. Membership follows
+from `(1-L/2)L=1/2-(L-1)^2/2<=1/2`.
+This handles rotated B,D and gives a single
+oblique witness P5 inside an arbitrarily
+rotated H. The inflated projected supports
+of rotated middle squares exactly cancel
+the shorter canonical-corner displacements.
+Neither G nor H needs a frame aligned with e,f.
+
+The remaining global theorem must **force
+two appropriate aligned end squares and the
+six directed separator inequalities**, or
+prove sharp inequalities for other configurations.
+It is not legitimate to infer these axis
+choices merely from an actual-contact edge,
+nor to declare all frames parallel.
+Thus unrestricted R8>=Rhat remains OPEN.
