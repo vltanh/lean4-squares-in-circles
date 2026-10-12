@@ -112,3 +112,36 @@ Thus the sharp unrestricted lower bound
 R8>=Rhat still needs a quantitative inequality
 for the seven-outer ring or these centrally
 closed path components.
+
+
+## Additional exact degree and bridge restrictions
+
+The central square C **cannot have actual degree one** in
+the chosen minimum-contact minimizer. Otherwise C itself
+would be an actual leaf, whereas the leaf theorem makes
+every leaf a square wholly omitting the origin. This
+contradicts that C contains the origin in its open interior.
+
+Consequently, in the seven-outer cycle case, C is either
+isolated or has at least two distinct actual spokes to
+the ring. There is no one-spoke version of that case.
+
+In the path case, an outer vertex isolated in the induced
+outer graph and adjacent to C is a leaf of the full graph.
+The leaf theorem therefore gives its exact radial
+configuration relative to C:
+
+    center(leaf)= (sqrt(R^2-1/4)-1/2)*n,
+    center(C)= (sqrt(R^2-1/4)-3/2)*n + t*Jn,  |t|<1/2,
+
+where n is a signed side normal of C. In particular
+there are at most **two** such isolated-outer C-leaves
+in the entire graph, and if two exist their normals
+are perpendicular. These statements concern all actual
+edges, even when a contact has zero chosen stress weight.
+
+There may nevertheless be additional **globally isolated**
+outer squares; no upper bound on their count is deduced
+from the leaf formula. Thus these refinements do not
+assert a universal seven-cycle or the candidate's
+interior twin motif.
