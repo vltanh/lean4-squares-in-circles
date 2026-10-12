@@ -123,6 +123,76 @@ Each term of the exponential is used
 only through degree seven; multiplication
 by 7! gives an integer.
 
+
+
+## 1B. Sharper pruning: only an adjacent PAIR of double-side statuses can survive
+
+The sharp corner-cap theorem
+HUMAN_SHARP_DOUBLE_CORNER_CAP.md strengthens
+the preceding sector argument:
+
+* **Opposite double statuses are incompatible:**
+  RU+LD and RD+LU are impossible at
+  q<=9789/2500.
+* Hence of RU,RD,LU,LD, **at most two**
+  can be occupied, and if two are present,
+  their labels must share a signed central side.
+* **Two adjacent occupied double statuses
+  forbid population >=2 on their common
+  side's opposite side**.
+* If the central-square center is (a,b)
+  with |a|,|b|<=1/10, **all four double
+  statuses are impossible**.
+* A single double status imposes one of
+  four strict central-center displacement
+  constraints, e.g. RU requires
+  `a+b<-487/2500`.
+
+The key orientation-free one-square
+inequality is
+
+    S subset {x>=h_x,y>=h_y} intersect D_R,
+    h_x,h_y>=0
+      => R^2>=(1+h_x)^2+(1+h_y)^2.
+
+It is achieved only by the aligned
+unit square touching both cap lines.
+
+**Exact combinatorial effect.** For seven labeled
+exterior squares, impose at most one
+corner-only status at each corner,
+each central-side population <=3,
+and no opposite 3+2 populations.
+The numbers of labeled status
+assignments remaining after successive
+logically necessary filters are:
+
+| Filter | Labeled status assignments |
+| --- | ---: |
+| Original corner/side/opposite-cap restrictions | 8,551,760 |
+| Plus double-status capacity <=1 each | 6,663,440 |
+| Plus no opposite double-status pair | 4,808,720 |
+| Plus double-pair versus opposite 2+2 exclusion | 4,566,800 |
+
+These are **purely finite assignment counts**,
+not realizable packing counts. A reproducible
+formula is given in section 1A: expand the
+generating function through z^7, discard
+monomials violating the cap conditions,
+then impose the two forbidden double-pair
+combinations and the four indicated
+double-pair/side-count conjunctions.
+
+This eliminates 3,984,960 of the original
+8,551,760 labeled **status assignments**,
+approximately 46.6 percent. Nevertheless
+all **31 coarse side-count profiles** still
+admit some compatible status assignment,
+so the number 31 must **not** be presented
+as decreased by this refinement. Further
+elimination needs geometry *within* those
+profiles, not merely their side counts.
+
 ## 2. The eight possible opposite-side count profiles
 
 Let N_R,N_L,N_U,N_D denote the populations of **whole**
