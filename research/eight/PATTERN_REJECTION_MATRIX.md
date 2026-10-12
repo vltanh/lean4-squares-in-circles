@@ -653,3 +653,91 @@ do not yet reduce the symbolic
 since each remaining status word may
 still admit one of the permitted
 continuous placements.
+
+
+## New coupled side-cap / outer-center case elimination (October continuation)
+
+The status-only total is unchanged, but the geometric
+branches now have rigorous **outer-center count filters**.
+
+**(i) Two-square cap polarization**
+(HUMAN_TWO_CAP_CENTER_SIGN_SPLIT.md).
+At q<=9789/2500, two complete unit squares
+beyond a side at h>=3/7 must have center
+coordinates of strictly **opposite signs**
+perpendicular to that side. If h>=1/2
+the signs have clearance >1/10, and
+both centers have norm >1. In a 2+2
+opposite-side count, the farther cap
+always has h>=1/2, hence contains
+two such outer-center squares.
+If the central center component
+has |t|<=1/14, both cap pairs
+have opposite transverse center signs.
+
+**(ii) Moderate cap with two members cannot
+have two inner centers** (the cap-inner-pair
+lemma of HUMAN_TYPE_C_FIVE_OUTER_MINIMUM.md).
+If h>=2/5, any two whole cap squares
+cannot both have center norms <1:
+otherwise their center projections
+on the outward side lie in [9/10,1),
+and transverse projections have
+absolute value <sqrt(19)/10.
+Their squared center distance would
+be <77/100<1, contradicting their
+disjoint radius-1/2 inscribed disks.
+If h>=1/2 **every** cap member is outer.
+
+**(iii) Three whole cap squares cannot all have
+inner centers** (HUMAN_SINGLE_SIDE_OUTER_K_PRUNING.md).
+The center direction of any square with
+center norm <1 in a nonnegative cap
+lies strictly within 60 degrees of the
+cap's outward normal. But two such
+centers with distance at least one
+have angular gap strictly larger
+than 60 degrees. Three cannot fit
+within a 120-degree sector. Hence
+every triple cap has an outer member.
+
+The corresponding **newly rejected full
+subcases** are:
+
+| Macro-status | Outer count and central-position restriction now impossible |
+| --- | --- |
+| Saturated Type C (2+2,2+2 with one RU double) | **Every k=3 or k=4** (HUMAN_TYPE_C_FIVE_OUTER_MINIMUM.md) |
+| All-single-side S2=(3+0,2+2) | k=3 if |t_(2+2)|<=1/14 |
+| All-single-side S3=(3+1,2+1) | k=3 if the 2-member side has offset h>=2/5 |
+| All-single-side S4=(2+1,2+2), containing candidate equality | k=3 if its 2-member side on the 2+1 axis has h>=2/5 |
+| The same S4 | k=4 if also |t_(2+2)|<=1/14 |
+
+No equality-bearing S4 type as a **whole**
+has been rejected: its surviving geometric
+positions and center populations still require
+a sharp obstruction. All outer counts here
+refer to **center norm >=1**, not circle contact
+or the square omitting zero.
+
+**(iv) True radial-ray crossings**
+(HUMAN_TRIPLE_CAP_RAY_CROSSER.md and
+HUMAN_TRIPLE_SIDE_RAY_PENETRATION.md).
+A whole triple cap must have some square
+whose *open interior* intersects that side's
+outward origin ray. In a two-double RU,RD
+common-R triple, it must be the remaining
+single-R square. In the fully saturated
+Type A pattern, four distinct single-side
+squares cross the four cardinal rays;
+the double RU square instead lies
+entirely in the NE origin quadrant.
+This is compulsory geometric routing,
+not a demand that those squares' frames
+be aligned with the central frame.
+
+These filters shrink genuine continuous
+subcases. **They do not change the certified
+symbolic twelve-status word total 3,995,040**,
+because an eliminated k/offset combination
+need not eliminate its parent separator
+status word for other positions.
