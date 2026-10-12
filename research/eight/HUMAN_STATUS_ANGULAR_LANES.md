@@ -79,36 +79,39 @@ Reflection proves the three other quadrants.
 
 ## Hand proof: three in one half-disk reach both extreme cones
 
-Let S_1,S_2,S_3 lie in {x>=0}. Their union
-has polar angle minima alpha and maxima beta,
-with
+Suppose three complete pairwise interior-disjoint
+unit squares lie in the closed half-plane {x>=0}.
 
-    -pi/2<=alpha<=beta<=pi/2.
+If **no actual vertex** of any of those squares
+satisfied y>x/sqrt(3), every vertex would lie
+in the closed half-plane y<=x/sqrt(3).
+By convexity, every entire square would then
+be contained in the origin sector
 
-If beta-alpha<=2*pi/3, all three complete
-squares would be contained in one closed
-origin sector of opening <=2*pi/3.
-The k=3 version of
-HUMAN_ORIGIN_SECTOR_REPLICATION.md would
-then give at most floor(7/3)=2 squares
-there, a contradiction.
+    x>=0, y<=x/sqrt(3),
 
-Therefore beta-alpha>2*pi/3.
-Since alpha>=-pi/2, the upper extreme must
-satisfy beta>pi/6; otherwise its span
-would be at most pi/6+pi/2=2*pi/3.
-Similarly alpha<-pi/6.
+whose polar angles range from -pi/2 to pi/6:
+an opening of exactly 2*pi/3.
+The k=3 sector-replication theorem would allow
+at most floor(7/3)=2 unit squares in this
+sector, contradicting the presence of three.
 
-Hence there are actual points of the
-three squares in each open region
-y>x/sqrt(3) and y< -x/sqrt(3).
-The two inequalities are linear in (x,y).
-A linear function positive at some point
-of a polygon is positive at some actual
-vertex of that polygon. Thus each region
-contains a true square vertex as claimed.
-This proves (1), with no orientation
-assumption or selection of separating axes.
+Similarly, if no actual vertex satisfied
+y< -x/sqrt(3), all three entire squares
+would lie inside the origin sector
+
+    x>=0, y>=-x/sqrt(3),
+
+whose polar angles range from -pi/6 to pi/2,
+again of opening 2*pi/3. The same
+replication theorem gives a contradiction.
+
+Therefore actual vertices exist satisfying
+both strict opposite inequalities (1).
+This direct linear-half-plane argument
+also covers a square whose closed boundary
+happens to contain the origin: it does not
+need the polar-angle map to be defined there.
 
 ## What has and has not been pruned
 
