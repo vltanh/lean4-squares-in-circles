@@ -295,3 +295,89 @@ equality arrangements.
 
 The unrestricted inequality
 `R8>=R_hat` remains unproved.
+
+
+## 6. Exact five-square positions and the remaining one-dimensional G slider
+
+The same equality argument reconstructs the
+**actual positions**, not only the frames.
+Let `q=R_hat^2`, `t=t_hat` and
+`u,v,r,w,U,V,k1,k2` be the unique
+stationary parameters selected by
+HUMAN_FAMILY_CLOSURE.md and written
+explicitly in ANALYTIC_EXACT_CONSTRUCTION.md.
+
+After the permitted rigid rotation and
+reflection taking the end-square frame
+to the standard horizontal/vertical
+one, the *unique* five-point equality
+chain is
+
+    P1=(r,-u),
+    P2=(U,2-u),
+    P3=(-V,2-v),
+    P4=(-w,-v),
+    P5=-k1*e-k2*f.                                   (6.1)
+
+This follows directly from the exact
+radical replacement equations of
+FIVE_CORNER_REDUCTION.md, because
+section 1 proves equality in **every**
+replacement and the stationary position
+and tilt are unique.
+
+Since the end squares and (by sections
+2--3) B,D,H have the candidate frames,
+their centers are uniquely
+
+    p_A=P1-(a-b)/2,
+    p_B=P2-(a+b)/2,
+    p_D=P3-(-a+b)/2,
+    p_E=P4+(a+b)/2,
+    p_H=P5+(e+f)/2.                                 (6.2)
+
+The last center uses the forced e,f frame
+of H and the fact that P5 is its negative
+corner.
+
+The e-separator between G and H is tight
+by section 4. With their now-forced
+common e,f frame, it is exactly
+
+    e dot(p_G-p_H)=h_G(e)+h_H(e)=1.
+
+Thus there is a real scalar eta such that
+
+    p_G=p_H+e+eta*f.                                 (6.3)
+
+No other coordinate of G is forced by
+the six projected separators alone.
+Its allowed eta values are still
+restricted by disk containment and
+nonoverlap with the other squares,
+but the exact construction supplies
+a nontrivial interval of them.
+This is the correct **one-dimensional
+G freedom**, not an asserted rigidity
+of the whole eight-square packing.
+
+If a seventh square C supplied the
+horizontal B-D projected span via
+opposite a-directed separators,
+section 4 also forces its a,b frame.
+The equality of both separators gives
+
+    a dot(p_B-p_C)=1,
+    a dot(p_C-p_D)=1,
+
+hence its horizontal center coordinate
+is exactly `U-3/2`; its vertical
+coordinate is not thereby fixed.
+
+This completes the conditional sextet
+reconstruction. It does not constrain
+all placements of the unused two
+squares, does not establish that a
+full arbitrary packing admits this
+contact/separator labeling, and does
+not prove the unrestricted lower bound.
