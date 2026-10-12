@@ -1857,3 +1857,34 @@ one actual RU double-side member is recorded separately in
 [RATIONAL_PERPENDICULAR_CAP_COUNTEREXAMPLE.md](RATIONAL_PERPENDICULAR_CAP_COUNTEREXAMPLE.md);
 it guards against applying an **exclusive single-side**
 exclusion to arbitrary side-population counts.
+
+
+### Why S2/k=4 still needs actual-square geometry
+
+After excluding S2/k=3, the next low-outer-center S2 branch is
+k=4. In the subcase with *both near-2+2 centers inner*, the
+far-2+2 cap supplies two outer centers, and the perpendicular
+triple must supply at least two more outer centers (otherwise
+the six-square forbidden-cap theorem applies).
+
+[RATIONAL_S2_K4_CENTER_RELAXATION.md](RATIONAL_S2_K4_CENTER_RELAXATION.md)
+records an **exact rational eight-center constellation**
+that meets all 28 center-center unit-distance inequalities,
+the prescribed four outer/three exterior inner norms,
+strict central-side *necessary* projection bounds,
+and the universal necessary scalar disk center-radius envelope
+\(r^2+r+1/2\le9789/2500\). The smallest
+squared pair-distance margin is exactly
+\(21156861/5000000000>0\), and the smallest cap-center
+normal-projection margin is \(211/100000>0\).
+[verify_s2_k4_center_relaxation.py](verify_s2_k4_center_relaxation.py)
+checks all those rational conditions.
+
+**This is explicitly NOT a valid eight-square packing.**
+No square orientations, actual vertex circle containment,
+or SAT separators between the whole squares have been given.
+It merely disproves the prospect that these *weaker center-only
+conditions alone* could exclude the subcase. Any sharp
+S2/k4 obstruction must retain actual square frames,
+vertex containment, or pair support inequalities.
+The global \(R_8\ge\widehat R\) remains OPEN.
