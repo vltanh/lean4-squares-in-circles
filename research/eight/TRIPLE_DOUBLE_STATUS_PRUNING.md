@@ -230,3 +230,87 @@ squares in a full sharp-radius argument.
 
 The unrestricted eight-square radius lower bound
 R8>=Rhat remains OPEN.
+
+
+## 6. Exact three-square witness: same-corner own-axis + double-side is NOT locally forbidden
+
+The fine status rule cannot be sharpened by saying that a
+corner-only NE square and a double-side RU square may not coexist
+near the same central corner. Here is an exact counterexample
+using three unit squares, strictly below the eight-square
+search radius ceiling. It is **not an eight-square packing**.
+
+Let the central standard square be
+
+    C=[-9/10,1/10] times [-9/10,1/10],
+
+so its northeast vertex is v=(1/10,1/10) and
+zero is in the open interior of C.
+Put e=(99/101,20/101), f=(-20/101,99/101).
+Let S be the unit square of frame (e,f) centered at
+
+    p_S=v+e/2-f/4=(323/505,-93/2020).
+
+Finally take the axis-parallel unit square
+
+    T=[1/10,11/10] times [11/20,31/20].
+
+**Status of S.** Its center difference relative to C is
+
+    p_S-p_C=(105/101,143/404),
+
+while the sum of the horizontal or vertical
+central/S half-widths is
+
+    W=(1+99/101+20/101)/2=110/101.
+
+Thus both central-owned separators fail strictly:
+105/101<W and 143/404<W.
+Nevertheless the northeast own-frame separator
+holds with equality,
+
+    e dot(p_S-p_C)=W.
+
+Indeed v=p_S-e/2+f/4 lies on S's negative-e side
+and is the northeast vertex of C, so C and S
+physically touch only at this corner/side point.
+Therefore S is genuinely **corner-only NE**.
+
+**Status of T.** It lies wholly in
+x>=1/10 and y>=11/20>1/10,
+so it is genuinely **double-side RU** relative
+to C. It has no interior overlap with C.
+
+**Pair S,T.** The highest y coordinate of S is
+
+    -93/2020+(119/101)/2
+       =1097/2020,
+
+whereas the lowest y coordinate of T is
+11/20=1111/2020. Hence S and T are
+strictly separated by a horizontal gap of 7/1010.
+
+**Containment.** T's farthest vertex squared
+norm is
+
+    (11/10)^2+(31/20)^2=289/80<9789/2500.
+
+C's farthest squared vertex norm is 81/50<289/80.
+For S, |p_S|<7/10 follows from
+|p_S.x|<13/20 and |p_S.y|<1/20;
+every square vertex is within 1/sqrt(2)<3/4
+of its center. Thus every point of S has norm
+less than 7/10+3/4=29/20, whose square is
+841/400<289/80.
+
+All three unit squares therefore fit in
+D_(sqrt(289/80)) with disjoint open interiors
+and exactly the stated two distinct statuses.
+
+This proves only **local three-square compatibility**.
+It does not assert the existence of five additional
+unit squares at the sharp eight-square ceiling.
+Nevertheless a global exclusion of this finer
+status combination must use the space required
+by the *other five units*, not merely the
+three-square separator geometry.
