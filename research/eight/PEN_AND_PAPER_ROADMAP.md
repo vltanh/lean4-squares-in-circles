@@ -373,3 +373,39 @@ for general seven-outer rings **with equality allowed**, and must also
 cover configurations with fewer outer centers and other central
 attachments. This is a construction/equality warning, not a claim
 that the unrestricted lower bound has been proved.
+
+
+### New reduction of the remaining frame-assumption burden
+
+HUMAN_TWO_ALIGNED_ENDS.md supplies a complete
+hand proof of the **full five-corner obstruction**
+under six directed projection separators,
+requiring only that the two outer **end**
+squares A,E share one axis-parallel frame.
+The intervening outer squares B,D and the
+two oblique squares G,H may have independent
+arbitrary orientations. For every square S
+and any orthonormal frame a,b it constructs
+canonical interior points
+
+    p_S+(1-h_S(a))*(+/-a+/-b),
+
+because `h_S(a)=h_S(b)=L/2` and
+`(1-L/2)L<=1/2`. Thus rotated B,D
+still supply the 2,3,2 outer projected
+spans, and one genuine point of an
+arbitrarily rotated H supplies **both**
+oblique projected inequalities at once.
+
+This closes the *point-compatibility*
+subproblem: no unproved parallelism of
+G and H is needed at the final oblique
+step. The precise **remaining global gate**
+is to force two suitable aligned end
+squares and the six coherent directional
+separating inequalities, or to give an
+equally sharp alternative for other
+contact graphs. An actual contact alone
+does not imply an arbitrarily selected
+separating axis; no such implication
+has been inserted into the proof.
