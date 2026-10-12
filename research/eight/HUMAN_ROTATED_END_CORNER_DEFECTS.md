@@ -296,3 +296,85 @@ from additional packing constraints, force
 the aligned-end branch, or prove a sharp
 alternative. **This note does not establish
 R8>=Rhat.**
+
+
+## Exact orientation-sensitive slack criterion
+
+The proof above actually gives useful **orientation-specific**
+thresholds, rather than only the universal worst cases.
+Let `theta_A,theta_E in [-pi/4,pi/4]` be the
+signed end-square frame angles relative to a.
+Define `J_A(theta,t)` by the explicit formulas
+(7) for `theta>=0` and (10) for `theta<0`.
+Define `J_E(theta,t)` by (12) for
+`theta>=0` and (13) for `theta<0`.
+These are the `h(e)+e dot(X-p)` and
+`h(f)+f dot(X-p)` values of the **explicit**
+selected points (5)--(6), not fitted bounds.
+
+Put
+
+    delta_A(theta,t)=max(0,cos(t)-J_A(theta,t)),
+    delta_E(theta,t)=max(0,sin(t)-J_E(theta,t)).
+
+The proved universal bounds give
+
+    0<=delta_A(theta,t)<=epsilon_A(t),
+    0<=delta_E(theta,t)<=epsilon_E(t).               (16)
+
+For aligned end frames theta_A=theta_E=0,
+both deficits are zero, as required for the
+original exact five-corner equality model.
+The worst-case `theta=t` attains both upper
+bounds in (16), so they cannot be improved
+without retaining more geometric information.
+
+**Corollary (sharp-family obstruction with slack).**
+Allow all six square frames A,B,D,E,G,H to
+be arbitrary. Assume the three outer-chain
+separating projections from HUMAN_TWO_ALIGNED_ENDS.md
+and choose one coherent e,f frame.
+Suppose the oblique projected gaps have
+nonnegative extra reserves `sigma_e,sigma_f`
+beyond the basic full-square support sums,
+with
+
+    e dot(p_A-p_H)
+       >=h_A(e)+2*h_G(e)+h_H(e)+sigma_e,
+    f dot(p_E-p_H)
+       >=h_E(f)+h_H(f)+sigma_f.
+
+(The first displayed reserve follows if the
+two successive e separators A-G and G-H
+have total slack `sigma_e`.)
+
+If
+
+    sigma_e>=delta_A(theta_A,t),
+    sigma_f>=delta_E(theta_E,t),                      (17)
+
+then the five points selected above satisfy
+**all five original sharp** five-corner
+inequalities, not only the weakened (15).
+The exact family theorem therefore gives
+`R>=R_hat`.
+
+**Proof.** The first three projections are
+unchanged. The extra e reserve increases
+the bound in (15) from
+`2+J_A(theta_A,t)` to
+`2+J_A(theta_A,t)+sigma_e>=2+cos t`.
+The f reserve similarly increases its
+bound from `1+J_E(theta_E,t)`
+to `1+J_E(theta_E,t)+sigma_f>=1+sin t`.
+The same P5 is used throughout. QED.
+
+Condition (17) is a **sufficient conditional
+criterion**; an arbitrary minimizer is not
+known to satisfy it. In the candidate's aligned
+end squares the deficits and separator reserves
+are all zero, recovering equality. For rotated
+end squares the reserves are not automatic and
+must be proved from *other* packing constraints.
+This is an explicit, exact formulation of the
+still missing structural compensation.
