@@ -666,3 +666,72 @@ directional separator hypotheses in
 an arbitrary eight-square minimizer.
 The unrestricted lower bound
 `R8>=Rhat` has not been proved.
+
+
+## Latest conditional progress: sharp orientation defects and equality reconstruction
+
+HUMAN_ROTATED_END_CORNER_DEFECTS.md establishes sharp
+analytical cap-point estimates for both arbitrarily
+rotated **end** squares, as functions of tilt t:
+`h_A(e)+e dot(X_+-p_A)>=1-tan(t/2)` and
+`h_E(f)+f dot(X_--p_E)>=2*tan(t/2)/(1+tan(t/2))`.
+The proof treats every orientation sign and the
+entire interval `0<=t<=pi/4` by explicit
+edge points, concavity, and monotonicity.
+Both constants are sharp for square frame angle t.
+The same note gives an exact orientation-sensitive
+separator-slack criterion recovering R>=Rhat
+with **no frame assumptions**, and a robust
+quantitative bound
+`R>=Rhat-sqrt(a^2+b^2)` when the two
+remaining oblique deficits are a,b>=0.
+All remain **conditional** on six coherent
+directed separation inequalities.
+
+HUMAN_ANCHORED_END_RIGIDITY.md proves the
+candidate's right-hand end square A is the
+unique unit square of **any orientation**
+fitting the exact disk while preserving its
+two fixed A-B and A-G directional support
+thresholds. Its normalized radial vertex
+normal has positive decomposition
+`v=lambda*e-mu*b`, and the weighted
+support width W(theta) is strictly concave
+between three frame-angle breakpoints.
+Three explicit positive comparisons at
+the breakpoints give W(theta)>W(0)
+unless theta=0, which then pins the center.
+No root isolating box is needed. This is
+not a simultaneous multi-square deformation
+theorem because neighbor lines are fixed.
+
+HUMAN_TWO_END_EQUALITY_RIGIDITY.md proves that
+at **exactly** Rhat, any five-corner chain
+extracted via the two-aligned-end theorem
+has all five witness points on the disk
+boundary and all five projection inequalities
+tight. The constructed points in B,D,H
+would lie strictly inside their square
+interiors if their frames were rotated;
+hence B,D are forced parallel to A,E and
+H forced parallel to the oblique e,f frame.
+The tight A-G-H chain forces
+`h_G(e)=1/2`, so G also aligns with e,f.
+Section 6 reconstructs the five *unique*
+disk witness points and centers A,B,D,E,H
+of the stationary exact family, and leaves
+only `p_G=p_H+e+eta*f` as a genuine
+one-dimensional G slider. Any intermediate
+square providing B-D's two-unit horizontal
+center span also aligns with A,E and has
+the fixed horizontal center coordinate.
+
+This is a genuine *equality rigidity*
+theorem **inside the conditional branch**,
+not a global n=8 uniqueness result.
+The central missing obligation is still
+to deduce the six directed separators and
+the relevant two-end structure from an
+arbitrary eight-square minimizer, or to
+prove an equally sharp alternative.
+`R8>=Rhat` remains OPEN.
