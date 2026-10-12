@@ -1531,3 +1531,39 @@ is still 3,995,040 labeled assignments;
 this is a continuous geometric refinement
 aimed at the sharp unproved radius
 obstruction R8>=Rhat.
+
+
+## Two Type C / outer-center macro-cases are now genuinely excluded
+
+HUMAN_TYPE_C_FIVE_OUTER_MINIMUM.md establishes the
+first new **joint status-by-outer-center rejection**
+of this continuation: saturated Type C has exact
+fine statuses RU,R,L,L,U,D,D, central opposite
+counts 2+2 on both axes, and must possess
+**at least five center-norm-at-least-one
+exterior squares**, independent of all their
+orientations. Thus Type C with k=3 or k=4
+outer centers is **impossible**.
+
+The proof combines: RU is necessarily outer
+from |a|,|b|<5/24; the two pairs on sides
+with outward offsets >=1/2 are entirely
+outer; and in either mixed-sign central
+position, one additional pair on a cap
+of offset >59/120>2/5 must have at least
+one outer center. The last fact is an exact
+inscribed-center-distance contradiction
+for two centers of norm <1 in that cap.
+This is indexed in PATTERN_REJECTION_MATRIX.md,
+section 9, with its three-case hand proof.
+
+This removes two **macro-cells** (Type C,
+k=3 and Type C,k=4). It does *not*
+decrease the earlier 3,995,040 purely
+twelve-status labeled assignment count,
+which did not encode center norms.
+The remaining Type C k=5,6,7 branches
+and all other geometrically surviving
+types still require a sharp obstruction.
+The candidate D0/S4 equality branch
+is untouched.
