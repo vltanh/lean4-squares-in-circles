@@ -1,11 +1,11 @@
-# Three-square caps force two whole quadrants at offset eleven fiftieths
+# Three-square caps force two whole quadrants at offset thirteen sixtieths
 
 **Theorem (orientation-independent, new partial case exclusion).**
 Let three unit squares with disjoint open interiors lie wholly inside
 
     D_R intersect {x>=h},
 
-where `R<=99/50` and `h>=11/50`.
+where `R<=99/50` and `h>=13/60`.
 Then **one of these same three squares is wholly in
 the open upper half-plane `y>0` and another is
 wholly in the open lower half-plane `y<0`**.
@@ -26,7 +26,7 @@ whole-square members beyond its right side (at offset
 h_R) and three whole-square members beyond its upper
 side (at offset h_U). If
 
-    h_R>=11/50 and h_U>=11/50,
+    h_R>=13/60 and h_U>=13/60,
 
 then **at least one of the seven exterior squares
 has the double-side separator status RU**.
@@ -40,11 +40,11 @@ For the pure-single-side type S1=(3+0,3+1) of
 SINGLE_SIDE_SEVEN_BRANCHES.md, both triple sides
 are perpendicular and there is no double status.
 Consequently at least one of its two triple-side
-offsets must be strictly less than 11/50. If they
+offsets must be strictly less than 13/60. If they
 are R and U, writing p_C=(a,b),
 
-    S1 => min(h_R,h_U)<11/50
-       => min(a,b)<-7/25.                          (A)
+    S1 => min(h_R,h_U)<13/60
+       => min(a,b)<-17/60.                          (A)
 
 Together with the previous side interval bounds,
 this excludes a *continuous rectangle* of the
@@ -66,18 +66,18 @@ Put
 Every square lies within the vertical strip
 [h,R]; at x=X the disk's full vertical chord
 is the interval [-B,B]. From R<=99/50
-and h>=11/50,
+and h>=13/60,
 
-    m <=(99/50-11/50)/2=22/25.                 (1)
+    m <=(99/50-13/60)/2=529/600.                 (1)
 
 Moreover B<33/20, because B^2 increases with
 R and decreases with h on 0<h<R, and at the
-rational endpoint (R,h)=(99/50,11/50),
+rational endpoint (R,h)=(99/50,13/60),
 
-    B^2 =1694/625 <1089/400,                    (2)
+    B^2 =977063/360000 <980100/360000,                    (2)
 
 the positive integer comparison being
-`400*1694=677600<680625=625*1089`.
+`977063<980100`.
 
 Let S be any one of the three squares.
 Write its unsigned orientation angle
@@ -130,18 +130,18 @@ ell=1/c>=1 and
 where t=s/c belongs to [0,1].
 
 In the second branch of (4), we first show
-ell>1. Since m<=22/25 it suffices,
+ell>1. Since m<=529/600 it suffices,
 by (5), to prove
 
-    L-cs>22/25.                                   (7)
+    L-cs>529/600.                                   (7)
 
 The left side is the concave quadratic
 L-(L^2-1)/2 on [1,sqrt(2)], so its
 minimum occurs at an endpoint. Its values
 are 1 and sqrt(2)-1/2. The second exceeds
-22/25 by the elementary rational bound
+529/600 by the elementary rational bound
 sqrt(2)>707/500; indeed
-707/500-1/2-22/25=17/500>0.
+707/500-1/2-529/600=97/3000>0.
 Thus (7) holds, giving ell>1.
 
 For the second claim in the sloping branch,
@@ -162,8 +162,8 @@ At L=sqrt(2) it is
 
     sqrt(2)/2+7/40
       >707/1000+7/40
-      =882/1000
-      >22/25=880/1000.                          (9)
+      =441/500=2646/3000
+      >529/600=2645/3000.                          (9)
 
 Thus F(L)>m for every allowed frame,
 proving (8), ell>L-7/20, and the
@@ -256,7 +256,7 @@ perpendicular choice. QED.
 
 The proof makes no claim when one of
 the two triple-side offsets falls below
-11/50. Such a small-offset side has
+13/60. Such a small-offset side has
 more available cap width, and the
 fixed-middle-chord estimate used here
 no longer establishes L-ell<7/20.
