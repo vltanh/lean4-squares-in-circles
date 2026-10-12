@@ -391,3 +391,73 @@ This supplies a geometrically testable
 placement lane for the remaining four
 or five squares, rather than
 incorrectly discarding the 3+1 case.
+
+
+## 6. Stronger fine-status and continuous-offset pruning (next continuation)
+
+TRIPLE_DOUBLE_STATUS_PRUNING.md now integrates the already
+proved **triple-side vs opposite double-side**
+incompatibility as an actual Boolean status filter:
+if R serves three, statuses LU and LD are impossible;
+if L serves three, RU,RD impossible; if U serves
+three, RD,LD impossible; if D serves three, RU,LU
+impossible. With the other exact filters above, the
+number of labeled twelve-status **symbolic**
+assignments drops from 4,566,800 to
+**3,995,040**, eliminating 571,760 further words.
+The unlabeled nonnegative integer multiplicity
+vectors drop from 2,060 to **1,656**.
+The file supplies a factorial coefficient
+formula, not a numerical packing solver.
+
+That note also strengthens the central-center
+diagonal displacement forced by a double-corner
+square. In central frame coordinates (a,b),
+
+    RU => a+b< -1/5,
+    RD => a-b< -1/5,
+    LU => -a+b< -1/5,
+    LD => -a-b< -1/5.
+
+Two adjacent double-corner statuses sharing a
+central side at positive distance h require
+either **h<1/4**, or the central center's
+perpendicular signed coordinate has
+absolute value **<1/29**. This dichotomy
+comes from the exact one-square corner-cap
+inequality and the rational comparison
+`52709/13456>9789/2500`. Neither option is
+claimed impossible in every eight-square
+packing.
+
+HUMAN_ALL_SIDE_OFFSET_INTERVALS.md supplies
+a complete **one-axis signed center interval**
+for each of the eight surviving opposite-side
+count profiles. If a positive side serves
+at least 1, 2, or 3 entire exterior squares,
+respectively, its signed center coordinate
+t=n dot p_C must satisfy
+
+    t<83/200,     t<5/24,     t< -5/24.
+
+The first bound is from a new elementary
+one-square whole-cap vertex inequality
+`R^2>=(h+1)^2+1/4`. The second uses the
+sharp two-square cap theorem at h>=2/5,
+and for h<2/5 follows trivially from
+the already established analytic lower
+R8>sqrt(2)+1/2. The triple bound is the
+original sharp three-square cap inequality.
+Reflecting gives the opposite-side lower
+bounds. In particular the **3+1 branch**
+has `-83/200<t<-5/24` and the
+**2+2 branch** has `|t|<5/24`.
+
+These are **necessary continuous-domain
+restrictions**, and by themselves they
+do not remove any more of the 31 coarse
+count profiles. Their utility is to shrink
+the signed central-center intervals before
+examining the rotated-corner exceptions
+and the remaining neighboring-square
+separator choices.
