@@ -404,3 +404,57 @@ eight-square packing. The stratification
 does not exclude corner-only own-axis
 separators or force any candidate contact
 pattern.
+
+
+## Theorem 7: exact location of the central center when TWO double statuses occur
+
+Suppose two of the four double-side statuses are
+occupied. By Theorem 2 they share one signed
+central side. After reflecting/rotating the
+central frame, take the two statuses as
+RU and RD. Then necessarily
+
+    -1/2<a<-5/24,       |b|<5/24.                (19)
+
+The first strict bound is Theorem 3.
+For the second, the two sharp corner-cap
+inequalities imply
+
+    q >=(3/2+a)^2+(3/2+|b|)^2.
+
+Since C contains zero openly, a>-1/2
+and therefore 3/2+a>1. Hence
+
+    (3/2+|b|)^2 < q-1
+       <= q_plus-1
+       < (41/24)^2,
+
+where the last strict sign follows from
+q_plus<2257/576=(41/24)^2+1.
+Taking positive square roots gives
+3/2+|b|<41/24 and |b|<5/24.
+
+For any of the four possible adjacent
+double pairs, the signed coordinate
+along the common side is therefore
+**strictly less than -5/24**
+after orienting its normal outward,
+while the coordinate perpendicular
+to that side has **absolute value
+strictly below 5/24**.
+
+Thus a two-double-status branch can
+occur only when **exactly one** of
+the two central-frame coordinate
+magnitudes exceeds 5/24.
+When both coordinate magnitudes are
+<=5/24, at most one double status
+is possible (Theorem 6); when
+both magnitudes exceed 5/24, at
+most one is possible as well.
+
+This supplies a three-way central
+position partition for future
+geometric branch analysis. It
+does not imply any of these
+branches is realized at Rhat.
