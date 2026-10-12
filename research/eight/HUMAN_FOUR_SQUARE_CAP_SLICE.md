@@ -214,3 +214,24 @@ Neither restriction alone forces the
 candidate seven-edge separator graph.
 The unrestricted n=8 sharp bound
 R_8>=R_hat remains OPEN.
+
+
+## 5. Final occupancy conclusion using the stronger existing theorem
+
+The slice bound is a stand-alone elementary argument, but its
+offset restriction is **not** a true surviving case for
+eight-square packings. HUMAN_CENTRAL_COMPACTNESS.md, section 1
+shows that at squared radius q<=98/25 **no four whole unit
+squares can lie in any semicircle bounded by a diameter
+through zero**. This follows by reflecting hypothetical
+four half-disk squares to obtain eight unit squares with
+no origin-containing open interior, contradicting the
+analytic central-square theorem.
+
+Since every central side lies at strictly positive
+distance h from zero, its outward cap is a subset
+of one such half-disk. Hence **no central side can
+serve four whole squares at the n=8 radius ceiling,
+including the 0<h<1/100 range**.
+The precise cardinality and opposite-side constraints
+are collected in PATTERN_REJECTION_MATRIX.md.
