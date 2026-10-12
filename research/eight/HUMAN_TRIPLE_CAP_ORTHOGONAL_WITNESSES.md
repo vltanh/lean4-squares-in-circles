@@ -139,7 +139,7 @@ The left side is the concave quadratic
 L-(L^2-1)/2 on [1,sqrt(2)], so its
 minimum occurs at an endpoint. Its values
 are 1 and sqrt(2)-1/2. The second exceeds
-131/150 by the elementary rational bound
+22/25 by the elementary rational bound
 sqrt(2)>707/500; indeed
 707/500-1/2-22/25=17/500>0.
 Thus (7) holds, giving ell>1.
