@@ -466,3 +466,49 @@ No unrestricted theorem `R8=Rhat` is
 claimed from this construction: it is
 an equality **candidate** for the
 missing global lower bound.
+
+
+## 9. The exterior actual-contact cycle persists along the entire slide
+
+The seven actual contact edges in (9) remain present for
+**every** eta in the full interval (8). Only the H-G
+edge overlap and the G-A vertex-to-edge contact depend
+on eta; all other five edges are fixed.
+
+For H-G, the f-center difference is eta, and
+`|eta|<=d/2<1/2<1`, so the supporting
+unit intervals retain positive overlap.
+
+For G-A, the transverse vertex-to-edge offset
+is the affine function
+
+    T_A(eta)=1/2-c*(u-v)-s*(r+w-2)-eta.
+
+It increases as eta decreases. At the left
+endpoint `eta=-d/2`, section 8.3 proves
+`-1/2<T_A<1/2`. At the right endpoint
+eta=0 the lower estimate is
+
+    T_A(0)>1/2-1/2-(1/5)*(17/10)
+           =-17/50>-1/2,
+
+while its upper bound is even smaller than
+at the left endpoint. Affinity now puts
+`-1/2<T_A(eta)<1/2` throughout (8).
+Thus the A support vertex always belongs
+to the **relative interior** of G's supporting
+edge, and G-A remains an actual contact.
+
+Consequently the full seven-square *exterior*
+contact cycle A-B-T-D-E-H-G-A is preserved
+throughout this macroscopic deformation,
+even though the radial norm of the G center
+changes strictly. The two central spokes
+C-B,C-D also remain actual contacts.
+
+This illustrates why classifying the ring
+solely by which of its square centers have
+norm above one is not a topological or
+contact-graph invariant: the center norms
+can change while every actual edge of the
+exterior cycle stays present.
