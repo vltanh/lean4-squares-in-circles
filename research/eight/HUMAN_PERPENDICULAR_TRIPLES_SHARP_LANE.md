@@ -103,19 +103,51 @@ lane
 The square with the **lowest** chord is
 analogously outer and has
 p_bottom.y<-(9/20)*p_bottom.x.
-These facts use only actual positions
-and chord lengths, not assumed frame
-alignments or center polar data.
+
+We also need the **complementary** angular bound:
+the R-cap top-center ray cannot be arbitrarily
+close to the positive y axis. Every center p of
+a packed square in R<2 satisfies |p|^2<21/10.
+Indeed |p|^2+|p|+1/2<=R^2<4, and if
+|p|^2>=21/10 then |p|>7/5, making the
+left side >21/10+7/5+1/2=4.
+For the top R-cap center,
+
+    p_top.x>=h+L/2>=7/50+1/2=16/25.
+
+Since
+
+    (481/81)*(16/25)^2-21/10
+       =33647/101250>0,
+
+the two inequalities imply
+
+    p_top.x^2>(81/400)*p_top.y^2.
+
+Both coordinates are positive, so in particular
+
+    p_top.x>(9/20)*p_top.y.
+
+Combining with (7), the **full** ray lane is
+
+    alpha<angle(p_top)<pi/2-alpha.                (9)
+
+These facts use actual positions and chord
+lengths, not assumed frame alignments.
 
 After swapping coordinates, a triple cap
 in {y>=h} produces a **rightmost** extremal
 square whose center is outer and satisfies
+the analogous *two-sided* inequalities
 
     p_right.x>(9/20)*p_right.y>0,
+    p_right.y>(9/20)*p_right.x.
 
-so
+The second follows from p_right.y>=16/25
+and the same |p_right|^2<21/10 bound.
+Therefore it also lies in the **same** lane
 
-    angle(p_right)<pi/2-alpha.                   (9)
+    alpha<angle(p_right)<pi/2-alpha.            (9A)
 
 ## 2. The northeast angular lane is narrower than the outer-center exclusion gap
 
