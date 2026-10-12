@@ -298,3 +298,79 @@ since otherwise (16) would apply.
 In fact the signed diagonal inequality
 (15) locates the *direction* in which
 the central center must be displaced.
+
+
+## Theorem 5: a triple side forbids all opposite-side double statuses
+
+At q<=q_plus<2257/576, suppose a central side
+with outward normal n serves **three whole squares**.
+Let its signed distance from the origin be
+h=1/2+n dot p_C>0.
+
+The orientation-independent three-square
+cap theorem forces h<1/3, and then
+
+    q>=(1+h)^2+9/4.
+
+In fact the exact rational bound is
+
+    h<7/24.                                         (18)
+
+If h>=7/24, that lower bound would imply
+
+    q>=(31/24)^2+9/4=2257/576>q_plus,
+
+a contradiction. The opposite side of C
+is at distance 1-h>17/24 from zero.
+
+Now suppose some other unit square S were
+separated from C on that **opposite side**
+and on either adjacent perpendicular side.
+Reflect and rotate axes so that S is wholly
+inside two outward positive halfplanes
+whose offsets are
+
+    h_1=1-h>17/24,       h_2>0.
+
+The sharp arbitrary-frame corner-cap bound
+from Theorem 1 then gives
+
+    q>=(1+h_1)^2+(1+h_2)^2
+      >(41/24)^2+1
+       =2257/576>q_plus,
+
+another contradiction. Thus:
+
+* If R serves three whole exterior squares,
+  **LU and LD are absent** (no square served
+  by the opposite L side and either
+  perpendicular central side).
+* If L serves three, RU and RD are absent.
+* If U serves three, RD and LD are absent.
+* If D serves three, RU and LU are absent.
+
+This applies to every square orientation,
+including corner touch and zero-stress
+actual contacts. It is a genuinely new
+joint restriction on the **signed status
+assignment**, stronger than the older
+3+2 population exclusion: even one
+single square on the opposite side
+cannot also have a perpendicular
+central-owned side separator.
+
+**Equivalent local rule.** Any central
+side whose outward line distance is
+at least 17/24 can have only
+*single-side* members; it cannot
+participate in any double-side status,
+because the other adjacent side
+has positive offset and the same
+corner-cap inequality applies.
+
+These theorems do not prohibit a
+single-side member of that distant
+opposite cap, nor corner-only members
+whose separation is on their own
+oblique frame. All seven exterior
+squares must still be accounted for.
