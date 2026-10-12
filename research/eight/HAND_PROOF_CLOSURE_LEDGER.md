@@ -735,3 +735,124 @@ the relevant two-end structure from an
 arbitrary eight-square minimizer, or to
 prove an equally sharp alternative.
 `R8>=Rhat` remains OPEN.
+
+
+## Current continuation: exact orientation compensation and a solved seven-ring separator branch
+
+HUMAN_ROTATED_END_CORNER_DEFECTS.md proves the optimal
+universal bottom-cap point projections for **any**
+end-square orientations, with sharp shortfall
+`epsilon_A(t)`, `epsilon_E(t)` relative to
+the original five-corner thresholds.
+If the two directed oblique separators have
+additional projection slack covering the
+orientation-specific losses, the sharp
+five-corner radius bound follows with no
+orientation hypotheses on any square.
+With residual shortfalls `a,b>=0`, the
+same point construction gives the robust
+conditional bound
+`R>=Rhat-sqrt(a^2+b^2)`.
+It does not force the directed separators.
+
+HUMAN_ANCHORED_END_RIGIDITY.md gives a
+whole-orientation, unique-center theorem
+for the candidate's right end square A
+when two neighboring support thresholds
+are held fixed. A weighted support
+function of its free frame is strictly
+concave between finitely many fixed
+normal-alignment angles, and three
+exact positive endpoint comparisons
+force the horizontal/vertical frame
+and the reference center. This does
+not exclude collective rearrangements.
+
+HUMAN_TWO_END_EQUALITY_RIGIDITY.md
+establishes that in the enlarged
+**two-aligned-end** five-corner branch,
+equality at Rhat forces all five
+constructed witness points to lie on
+the container circle, all five
+inequalities tight, B,D to share
+the aligned end frame, and G,H to
+share the oblique frame. It
+reconstructs the five anchored
+centers and the one-dimensional G
+slider from the unique exact family.
+An intervening middle-square frame
+is also forced if its opposite
+side projections supply the
+B-D horizontal span.
+
+HUMAN_SHARP_SEVEN_RING_SEPARATOR_CLASS.md
+now states a clean theorem using **seven
+whole squares only**: if the seven
+directed projected pair separators
+of the candidate ring A-B-T-D-E-H-G-A
+are justified and its end squares
+A,E are aligned, then `R>=Rhat`,
+even with independent arbitrary
+orientations of the other five squares.
+Equality forces every one of the
+seven square frames into the candidate
+two-frame pattern, fixes the five
+outer support centers, and leaves
+the legitimate G-transverse and
+T-height sliders. The seventh T
+square, rather than the central C,
+supplies the B-D two-unit center
+projection in this version. The
+exact sharp construction realizes
+the hypotheses, so the bound is
+optimal **within that directed
+separator class**.
+
+HUMAN_FINITE_ORIENTATION_DUAL.md proves
+that any nonnegative weighted sum of
+unit-square support widths in *fixed*
+directions is strictly concave between
+finitely many side-normal alignment
+angles. HUMAN_FINITE_DUAL_SEPARATOR_BOUND.md
+combines that fact with the disk support
+inequality to give a general
+orientation-free dual radius lower
+bound for **any fixed directed
+separator graph**, requiring at most
+degree+1 orientation checks per
+square. It is an inner exact
+reduction, not a classification of
+which separators arbitrary packings use.
+
+HUMAN_LEFT_END_FROZEN_DUAL_OBSTRUCTION.md
+shows analytically why a naive
+single-linear-dual closure fails
+even in the candidate graph: at
+the left end E, the weighted
+radial-support sum with fixed
+two separator normals is
+**strictly lower** when E's frame
+is rotated by t than when aligned,
+for the exact family inequalities.
+This refutes that frozen-support
+certificate, not the full nonlinear
+disk radius constraint or the
+conjectured optimum.
+
+**Remaining decisive global gate.**
+Neither the seven-ring directed
+separator class nor the anchored
+dual assumes the orientation of
+the other five squares, but both
+still require the **appropriate
+directed separator pattern and the
+two aligned end squares**. Those
+facts are not known to follow from
+arbitrary eight-square nonoverlap
+and disk containment. The other
+contact patterns with inner square
+attachments also remain. No
+complete hand proof of
+`R8>=Rhat` is available in this
+ledger; the unrestricted
+n=8 packing optimum remains OPEN.
