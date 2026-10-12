@@ -2,6 +2,33 @@
 
 ## Current orientation (2026-10-11)
 
+### October 12 continuation: verified status of the global case queue
+
+The original checklist and early narrative below preserve historical
+planning. The active summary is the closure ledger and the end of
+SINGLE_SIDE_SEVEN_BRANCHES.md. In particular, the new
+[HUMAN_FAR_TWO_CAP_FOUR_INNER_EXCLUSION.md](HUMAN_FAR_TWO_CAP_FOUR_INNER_EXCLUSION.md)
+hand proof **completely excludes** the exclusive-one-side
+S2/k=3 and S4/k=3 macro-cells. It works by an exact six-square
+inner/outer center-ray contradiction (arbitrary square frames)
+and retains the real candidate's S4/k=7 equality cycle.
+
+The remaining all-single-side D0/S=7 subcases are
+S1 k=3..6, S2 k=4..6, S3 k=3..7, S4 k=4..7.
+Other D0 cases with corner-only exceptions, D1 with a double-side
+square, and D2 with two adjacent doubles are **still open**
+after their precise cap and angle restrictions.
+This enumeration is necessary-status bookkeeping, **not** a list
+of independent solved or even realizable geometric patterns.
+
+The analytic sharp five-corner construction and its conditional
+family optimum are proved; the **unrestricted reverse bound
+\(R_8\ge\widehat R\) remains open**.
+There is no production Lean n=8 theorem, no Lean handoff,
+and no equality classification of all minimizers.
+None should be claimed from the remaining local-cap eliminations.
+
+
 The checklist below is the original planning document and predates most of
 the research on this branch. See [PEN_AND_PAPER_ROADMAP.md](PEN_AND_PAPER_ROADMAP.md)
 for the current evidence, the precise global gap, and the analytic work plan.
