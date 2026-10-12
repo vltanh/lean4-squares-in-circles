@@ -1567,3 +1567,54 @@ and all other geometrically surviving
 types still require a sharp obstruction.
 The candidate D0/S4 equality branch
 is untouched.
+
+
+## Additional outer-center pruning in exclusive single-side S2--S4
+
+HUMAN_SINGLE_SIDE_OUTER_K_PRUNING.md gives an exact
+hand proof that **every three-square whole cap**
+at nonnegative radial offset has at least one
+square center with norm >=1. Three *inner*
+centers in such a cap would lie in a 120-degree
+angular sector, while each pair of centers of
+norm <1 must be separated by strictly more
+than 60 degrees (by their disjoint inscribed
+radius-1/2 disks). This is impossible for three.
+
+Together with the existing cap-inner-pair
+lemma (two squares at h>=2/5 cannot both
+have inner centers), and the fact that
+every cap square at h>=1/2 has an outer
+center, the note eliminates these entire
+joint macro/continuous subcases:
+
+    S2=(3+0,2+2), k=3, |t_2+2|<=1/14;
+    S3=(3+1,2+1), k=3, h_2>=2/5;
+    S4=(2+1,2+2), k=3, h_2>=2/5;
+    S4=(2+1,2+2), k=4, h_2>=2/5,
+         |t_2+2|<=1/14.
+
+Here h_2 is the outward offset of the
+two-member side on the 2+1 axis.
+These are only assertions about the
+**exclusive one-side, no-corner** S2--S4
+branches; they cannot be copied into
+branches with double-side memberships,
+where cap populations overlap in square
+labels. The exact S4 candidate's possible
+central position is not excluded.
+
+HUMAN_TWO_CAP_CENTER_SIGN_SPLIT.md also
+shows, at h>=3/7, two whole cap squares
+must have centers on opposite sides of
+the perpendicular origin diameter;
+at h>=1/2 both are outer with absolute
+transverse center coordinates >1/10.
+At h>17/24 the unique far-cap singleton
+is outer and openly crosses the outward
+diameter ray. The inequalities are
+proved by exact rational comparisons and
+disjoint half-unit inscribed disks.
+
+No claim of unrestricted R8>=Rhat
+follows from these macro-cell eliminations.
