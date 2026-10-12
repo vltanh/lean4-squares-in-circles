@@ -6,9 +6,9 @@ Work in D_R, R^2<=98/25, with arbitrary independently
 oriented, interior-disjoint unit squares.
 
 **Quadrant-bisector theorem.**
-Any complete unit square lying in a closed origin
-quadrant, e.g. {x>=0,y>=0}, intersects the open
-bisector ray {t(1,1):t>0} **through its open interior**.
+Any complete unit square **omitting the origin in its closed set**
+and lying in a closed origin quadrant, e.g.
+{x>=0,y>=0}, intersects the open bisector ray {t(1,1):t>0} **through its open interior**.
 In particular an exterior square served by both
 central right and upper side axes RU must meet
 the 45-degree origin ray through actual interior
@@ -44,7 +44,7 @@ angular extreme square must touch the circle.
 
 ## Hand proof: a quadrant square must cross its bisector
 
-Let S lie in the positive origin quadrant.
+Let S lie in the positive origin quadrant **and omit zero**.
 It is compact and convex and has a nonempty
 open interior. Its set of polar angles is a
 closed interval [alpha,beta] inside [0,pi/2]:
