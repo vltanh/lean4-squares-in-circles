@@ -59,4 +59,21 @@ assert 2 * RT2LO - RHI + H == Q(10621, 10000) > 1
 assert H - Q(1, 2) < -Q(1, 4)  # plateau-frame comparison
 assert 2 + RT2LO - RHI + H - BHI == Q(11, 100000) > 0
 
+
+# HUMAN_PERPENDICULAR_TRIPLE_LOW_OFFSET.md
+HLOW = Q(1, 16)
+HHIGH = Q(1, 10)
+BHI = Q(16953, 10000)
+ELLO = Q(9121, 10000)
+XLOW = (Q(191, 100) + HLOW) / 2
+XHIGH = (RHI + HHIGH) / 2
+assert XLOW == Q(789, 800)
+assert XHIGH == Q(5197, 5000)
+assert (RHI - HLOW) / 2 == Q(19163, 20000)
+assert BHI**2 - b2_upper(HLOW) == Q(47629, 400000000)
+assert 2 * RT2LO - RHI + HLOW == ELLO
+assert 3 * ELLO - BHI - XHIGH == Q(1, 625)
+assert XLOW - (BHI - ELLO) == Q(4061, 20000)
+assert (2 - Q(17, 200))**2 + Q(1, 4) - R2 == Q(13, 8000)
+
 print("All exact rational cap-improvement margins checked.")
