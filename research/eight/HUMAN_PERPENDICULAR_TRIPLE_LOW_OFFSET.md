@@ -138,3 +138,42 @@ with both offsets strictly **below** \(1/11\).
 This proves neither a global exclusion of S1 nor the unrestricted sharp
 inequality \(R_8\ge\widehat R\). The valid S4 equality case
 is unaffected.
+
+
+## New S1-specific small-offset dichotomy
+
+Write \(h_{31}\) for the triple-side offset on S1's 3+1 axis
+(with its opposite whole singleton), and \(h_{30}\) for the
+perpendicular 3+0 triple side.
+
+The sharp single-square cap envelope requires
+\[
+\boxed{h_{31}>17/200}.
+\]
+Indeed, if \(h_{31}\le17/200\), then its opposite singleton is
+contained in a whole cap at offset \(1-h_{31}\ge183/200>2/5\).
+Even with zero transverse center coordinate, the proven envelope
+would require
+\[
+R^2\ge(2-h_{31})^2+1/4
+\ge(2-17/200)^2+1/4
+=9789/2500+13/8000,
+\]
+contrary to the search ceiling. This agrees with the previously
+known signed 3+1 central-coordinate interval.
+
+Since \(17/200>1/16\), the newly forbidden low-offset rectangle
+gives the following **necessary S1 alternative**:
+\[
+\boxed{
+h_{31}\le1/10
+\quad\Longrightarrow\quad
+h_{30}<1/16\ \text{or}\ h_{30}>1/10.
+}
+\]
+Equivalently, **if both triple offsets are at most \(1/10\), then
+the 3+0 triple offset is strictly below \(1/16\)**.
+The strictly larger \(\ge1/11\) common-piercing theorem adds the
+separate condition \(\min(h_{30},h_{31})<1/11\).
+These are exact necessary continuous placement restrictions, not
+a proof that S1 is impossible.
