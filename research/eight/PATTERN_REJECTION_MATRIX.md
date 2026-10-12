@@ -839,3 +839,45 @@ None of these improvements changes
 the old **purely symbolic**
 3,995,040 count, because that count
 does not encode k or signed offsets.
+
+
+## 11. Exact full rejection of S2/k=3 and S4/k=3
+
+The newest [HUMAN_FAR_TWO_CAP_FOUR_INNER_EXCLUSION.md](HUMAN_FAR_TWO_CAP_FOUR_INNER_EXCLUSION.md)
+proves a **six-square angular crowding obstruction** under the actual
+eight-square squared-radius ceiling \(9789/2500\):
+
+* two distinct **inner-center** squares wholly beyond a positive
+  central side R;
+* two further **inner-center** squares wholly beyond the
+  perpendicular nearer U side with \(h_U>7/24\);
+* two further **outer-center** squares wholly beyond its opposite
+  D side, at offset \(1-h_U\).
+
+These six labels cannot coexist for arbitrary square frames.
+Four inner-center rays force an R-center radius \(>4/5\) at
+polar angle \(<-\arcsin(19/24)\); the two D outer rays occupy
+a southern arc of half-angle \(>\arctan(4/3)\).
+The inscribed-center distance bound excludes all D rays
+within \(\pi/6+1/100\) of that R center, leaving angular
+width \(<\pi/4-1/100\), too small for two outer centers
+whose angular gap must exceed \(\pi/4-1/500\).
+
+Consequently:
+
+| Exact exclusive-side status / outer-count cell | Verdict |
+| --- | --- |
+| **S2=(3+0,2+2), k=3** | **Impossible for every central offset** |
+| **S4=(2+1,2+2), k=3** | **Impossible for every central offset** |
+
+This **supersedes** the earlier *partial* S2/k=3 and S4/k=3
+offset strips, which remain historical, mathematically valid
+necessary filters but are no longer the strongest result.
+**Do not** promote the six-square forbidden pattern to
+other D1/D2 statuses without proving four **distinct inner**
+cap labels and the two **distinct outer** opposite-cap labels.
+
+The entire S2 and S4 status classes are not excluded:
+S2/k=4,5,6 and S4/k=4,5,6,7 remain, including the
+explicit candidate's S4/k=7 equality. This does not
+establish the unrestricted \(R_8\ge\widehat R\).
