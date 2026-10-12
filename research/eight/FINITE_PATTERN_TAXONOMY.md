@@ -707,3 +707,91 @@ a triple side reaches both 30-degree
 extreme cones. These are **continuous
 geometric constraints**, not additional
 finite status-count exclusions.
+
+
+## 6A. The triple and saturated Type A branches now have compulsory ray witnesses
+
+HUMAN_TRIPLE_SIDE_RAY_PENETRATION.md proves a new
+**unrestricted-orientation** geometric requirement:
+whenever a central side serves three complete
+exterior squares, one of those three has an
+open-interior intersection with that side's
+outward cardinal ray through the disk origin.
+Such a square is **single-side**, not a
+double-side member; its other two central
+perpendicular side separators are unavailable.
+
+The proof is a two-quadrant pigeonhole:
+without any ray crossing, all three complete
+squares would be wholly in the two origin
+quadrants adjacent to that side, with
+capacity one per quadrant, a contradiction.
+This holds at **every positive side offset**,
+including offsets where the earlier stronger
+whole-quadrant triple-cap theorem is not
+available.
+
+HUMAN_SATURATED_TYPE_A_RAY_ROUTING.md
+then gives an exhaustive geometrical
+routing for the maximally saturated
+Type A side populations (3+1,3+1),
+whose exact statuses are
+
+    RU, R, R, L, U, U, D.
+
+Four **different** single-side squares
+cross the four *cardinal* rays in their
+open interiors, respectively: one R
+crosses +x, the L singleton crosses -x,
+one U crosses +y, and the D singleton
+crosses -y. The RU double lies entirely
+in the origin NE quadrant and crosses
+the NE diagonal ray. The distant-side
+L,D crossings follow from the
+existing h>17/24 transverse lane theorem.
+
+If both triple offsets h_R,h_U are
+at least 13/60, the remaining two
+single-side members are forced to
+lie **wholly** in the origin SE
+and NW quadrants. Thus all seven
+exterior squares in that Type A
+subcase now have compulsory angular
+roles: one full NE unit, one full
+SE unit, one full NW unit, and four
+separate cardinal-ray-crossing units.
+No own frame alignment was assumed.
+
+HUMAN_CORNER_ONLY_DOUBLE_RAY_BOUND.md
+gives a complementary necessary
+curved central-position constraint:
+if an own-axis corner-separated
+square assigned to a central corner
+whose outward side offsets are A,B>0
+crosses **both corresponding positive
+origin rays through its open interior**,
+then sqrt(A)+sqrt(B)<sqrt(2). For example
+a central square centered in the
+nonnegative NE quadrant has no
+NE corner-only square wrapping both
+positive coordinate rays. This is
+a restriction on *ray placement*,
+not a ban on every NE corner-only
+status.
+
+These results **do not decrease**
+the purely symbolic total of
+3,995,040 12-status assignments:
+they add mandatory, exact continuous
+geometric constraints to the surviving
+triple, Type A, and corner-only branches.
+
+Important guard: the ray witness in a
+three-square cap has **not** been proved
+unique. The triple-ray note contains
+an exact rational two-square cap pair
+where both squares' open interiors cross
+the same cardinal ray within q_plus.
+It would be invalid to use a purported
+one-ray-crosser-per-cap rule without
+a genuine three-square proof.
