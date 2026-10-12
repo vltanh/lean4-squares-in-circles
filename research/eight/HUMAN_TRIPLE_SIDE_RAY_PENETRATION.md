@@ -168,3 +168,55 @@ If a proof needs uniqueness it must use
 the *simultaneous third square* and the
 disk cap's remaining occupancy, not just
 the two-ray geometry.
+
+
+## Complete high-offset classification: upper / crossing / lower, uniquely
+
+There is one stronger **three-square** conclusion
+which must be distinguished from the two-square
+counterexample above.
+
+Suppose the triple-cap offset satisfies
+
+    h>=13/60
+
+at the same search ceiling. The independent
+whole-orientation theorem
+HUMAN_TRIPLE_CAP_ORTHOGONAL_WITNESSES.md
+provides an entire member strictly in y>0
+and an entire *different* member strictly in
+y<0. Each is wholly in its corresponding
+origin quadrant, because all three lie in
+x>=h>0.
+
+The third member cannot also be wholly y>=0
+or wholly y<=0: that would place two entire
+units in the same origin quadrant, contrary
+to the one-per-quadrant replication theorem.
+Its open interior must consequently cross
+y=0. Thus the three packed squares have
+the **unique partition**
+
+    one entirely above y=0,
+    one open-interior crosser of positive x ray,
+    one entirely below y=0.
+
+There is **exactly one** crosser *among these
+three squares* under this larger-offset
+hypothesis. The upper and lower whole-quadrant
+members and the middle ray-crosser are
+all uniquely identified by their locations.
+They retain arbitrary independent square
+orientations.
+
+For 0<h<13/60, our earlier theorem still
+guarantees a ray crosser but does **not**
+assert that its two companions are in
+opposite whole quadrants or that this
+crosser is unique. The rational pair above
+makes clear why two-square geometry alone
+cannot justify such uniqueness.
+
+This is a complete transversal-location
+classification of the high-offset triple,
+not a proof of its infeasibility.
