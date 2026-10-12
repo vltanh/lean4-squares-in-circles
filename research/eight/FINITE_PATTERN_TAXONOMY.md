@@ -631,3 +631,79 @@ double-side square *can* coexist at the same
 central corner; removing that status conjunction
 without a full eight-square argument would
 be incorrect.
+
+
+## 2B. Branches forced by the total number of central-side memberships
+
+FORCED_CORNER_EXCEPTION_D2.md gives an exact
+status identity and three-way fine count
+table. Write D=0,1,2 for the number of
+occupied two-side statuses, E for the
+number of own-axis corner exceptions, and
+S=sum of all four side populations.
+Because seven distinct exterior squares
+each contribute zero, one or two memberships,
+
+    E=D+7-S.                                          (B)
+
+The cap and corner-cap filters impose S<=8 and
+D<=2. For the two-double macro-branch D2,
+the shared side has at most three members,
+the opposite side at most one and the
+perpendicular sides at most two each.
+Thus S<=8, and E=9-S>=1. If the shared side
+has exactly two members, S<=7 and E>=2.
+**Every D2 case therefore has a genuine
+corner-only own-axis square**. A proof
+assuming all seven squares are central-side
+separated cannot cover that branch.
+
+The exact labeled status word counts after
+all existing necessary Boolean filters are:
+
+| Total memberships S | D0 | D1 | D2 |
+|---:|---:|---:|---:|
+| 3 | 53,760 | 0 | 0 |
+| 4 | 211,680 | 161,280 | 0 |
+| 5 | 231,840 | 806,400 | 80,640 |
+| 6 | 82,880 | 967,680 | 483,840 |
+| 7 | 7,840 | 322,560 | 483,840 |
+| 8 | 0 | 20,160 | 80,640 |
+| **Total** | **588,000** | **2,278,080** | **1,128,960** |
+
+These are combinatorial assignment weights,
+not counts of continuous feasible packings,
+and do not represent new eliminations beyond
+the prior 3,995,040 total.
+
+SINGLE_SIDE_SEVEN_BRANCHES.md now further
+splits the **D0,S=7** case (all seven exterior
+squares with one central-side separator and
+no corner exception) into exactly four
+coarse types up to symmetry:
+
+    S1=(3+0,3+1), S2=(3+0,2+2),
+    S3=(2+1,3+1), S4=(2+1,2+2).
+
+The exact optimized five-corner candidate is
+a **genuine S4 equality construction**,
+not an excluded status profile. Its seven
+single-side labels are R,R,L,L,U,D,D,
+proved by full analytic inequalities
+in SHARP_CANDIDATE_SIDE_STATUS.md.
+
+HUMAN_STATUS_ANGULAR_LANES.md adds direct
+whole-square geometry from sector replication:
+every square wholly in one origin quadrant
+and omitting zero crosses that quadrant's
+diagonal ray through its open interior;
+three whole squares in one half-disk must
+have actual vertices in both angular
+regions beyond +30 and below -30 degrees
+about the half-disk axis. Hence the D2
+double statuses occupy both +/-45-degree
+diagonal rays of their shared side, while
+a triple side reaches both 30-degree
+extreme cones. These are **continuous
+geometric constraints**, not additional
+finite status-count exclusions.
