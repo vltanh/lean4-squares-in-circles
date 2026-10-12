@@ -249,3 +249,61 @@ the continuous central-center/outer-count
 parameter space**, not just symbolic
 combinatorial assignments. The exact
 unrestricted target R8>=Rhat remains OPEN.
+
+
+## 7. Complete k=7 rejection in S1 **and** S2
+
+The latest exact angular-cap theorems eliminate **two
+entire outer-center macro-branches** without presuming
+any square angles or actual contacts:
+
+* HUMAN_S1_NO_SEVEN_OUTER_CENTERS.md proves
+  **S1/k=7 impossible**, for every central
+  offset, by a two-case far-singleton/angular
+  saturation inequality. When the 3+1 triple
+  offset h>=7/50, the U cap center rays
+  begin beyond atan(9/20), while the distant
+  D singleton stays within atan(12/29)
+  of the negative y axis. When h<7/50,
+  its tighter |transverse|<9/50 lane
+  moves the D singleton even closer
+  to that axis. In either case all seven
+  hypothetical outer rays lie in an arc
+  shorter than 6*(pi/4-1/500), contradicting
+  the outer-center pair separation theorem.
+* HUMAN_S2_NO_SEVEN_OUTER_CENTERS.md proves
+  **S2/k=7 impossible for EVERY |t|<5/24**,
+  improving the earlier partial |t|>=1/8
+  conclusion. Split the 2+2 central offset
+  at |t|=1/10. For small displacement,
+  the sharp one-square cap envelope gives
+  polar elevations >atan(5/4) and >pi/4
+  on the farther/nearer opposite caps.
+  For larger displacement, use
+  >atan(33/20) and >atan(2/3).
+  Their sums exceed pi/2+3/250 by
+  exact arctangent identities and one
+  integer square comparison. Therefore
+  all seven outer rays would lie in
+  an arc shorter than 6*(pi/4-1/500),
+  again impossible.
+
+The updated coarse classification of the
+**all-seven-single-side** statuses is:
+
+    S1=(3+0,3+1): only k=3,4,5,6 possible;
+    S2=(3+0,2+2): only k=3,4,5,6 possible;
+    S3=(2+1,3+1): k=3,4,5,6,7 not yet
+                    excluded globally;
+    S4=(2+1,2+2): k=3,4,5,6,7 retained,
+                    including exact k=7
+                    candidate equality.
+
+Additional central-offset restrictions for
+k=3,4 in S1--S3 appear in section 6 and
+HUMAN_TRIPLE_CAP_TWO_OUTER_CENTERS.md.
+
+This does not imply any complete all-orientation
+eight-square lower bound: outer **paths with
+noncentral inner-center attachments** remain,
+as do D1/D2 and the equality-bearing S4.
