@@ -461,3 +461,52 @@ the signed central-center intervals before
 examining the rotated-corner exceptions
 and the remaining neighboring-square
 separator choices.
+
+
+## 7. Perpendicular triple sides must share a double if their offsets are not too small
+
+**New continuous case exclusion** from
+HUMAN_TRIPLE_CAP_ORTHOGONAL_WITNESSES.md:
+
+Suppose two perpendicular sides of the
+unique central square, e.g. R and U,
+each serve three whole exterior squares.
+If both of their outward offsets from
+zero satisfy
+
+    h_R>=11/50,      h_U>=11/50,
+
+then one actual exterior square must
+have the **RU double-side status**.
+The proof uses a new orientation-free
+three-square mid-cap chord theorem:
+each triple supplies a whole square
+in its common *positive* origin quadrant;
+that quadrant has capacity one, so
+the two selected squares coincide.
+
+In particular the completely
+single-side S1=(3+0,3+1) count type
+cannot occur with the two triple-side
+central projections both >=-7/25.
+After naming the triples R and U, it
+must satisfy
+
+    min(a,b)<-7/25.
+
+This eliminates an actual nonempty
+continuous subset of S1 rather than
+merely an arrangement of discrete
+separator labels. S1 with a smaller
+triple offset is still open.
+
+Moreover when an offset h<11/50 has
+an opposite whole-square singleton,
+that opposite side is at distance
+>39/50 and the singleton center's
+transverse coordinate is strictly
+less than 3/8 in absolute value.
+These conditions must not be
+misread as a global S1 exclusion
+or as assigning a corner-only
+square to a whole origin quadrant.
