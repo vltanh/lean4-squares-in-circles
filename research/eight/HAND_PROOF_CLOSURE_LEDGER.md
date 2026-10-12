@@ -501,3 +501,52 @@ which the exact candidate now demonstrably realizes.
 
 The user-requested unrestricted equality R8=Rhat
 has **not** been proved by this new construction.
+
+
+## Sharp seven-outer actual-contact ring: an equality construction, not an impossible branch
+
+Section 8 of ANALYTIC_SHARP_SEVEN_OUTER_CONSTRUCTION.md
+strengthens the earlier outer-center result:
+the exact five-corner candidate itself, at
+**exactly Rhat**, admits seven outer centers
+forming an **actual-contact seven-cycle**
+
+    A-B-T-D-E-H-G-A,
+
+together with central spokes C-B and C-D.
+Every shared boundary point is checked
+analytically. The two rotated vertex-to-edge
+contacts E-H and G-A are not inferred just
+from equal support projections: the note proves
+their support vertices lie strictly within
+the corresponding edge intervals. The
+proof uses the already established analytical
+stationary bounds `u>87/100`, `v<589/1000`
+from HUMAN_FAMILY_CLOSURE.md, and no tiny
+root-isolation box.
+
+This **falsifies** any proposed structural lemma
+that would exclude the full seven-outer
+actual-contact ring at radius <=Rhat, or
+that would force a *noncentral* inner center
+in every radius-Rhat packing. Both the
+full-seven-outer-ring and the central-fan
+path branches remain potential equality
+cases. The ring's sharp lower inequality
+must permit the explicit candidate above.
+
+It also explains why the seven-outer
+search cannot be separated from the
+central obstacle: the candidate seven-cycle
+has two actual spokes to the central square.
+When these spokes carry nonzero stress,
+the uniform-flux hypothesis of the
+stress-free ring lemma fails; its flux
+plateau analysis is conditional, not a
+universal obstruction.
+
+**Global proof still open:** the construction
+yields R8<=Rhat only. An arbitrary eight-square
+minimizer has not been reduced to the
+five-corner inequality or an equally
+sharp alternative.
