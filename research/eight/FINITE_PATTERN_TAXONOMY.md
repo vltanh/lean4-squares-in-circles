@@ -795,3 +795,68 @@ the same cardinal ray within q_plus.
 It would be invalid to use a purported
 one-ray-crosser-per-cap rule without
 a genuine three-square proof.
+
+
+## New cross-class pruning: central statuses constrain k and center angles
+
+**Outer-center counts are not independent of central-side statuses.**
+HUMAN_TYPE_C_FIVE_OUTER_MINIMUM.md proves that the
+saturated Type C status vector
+`RU,R,L,L,U,D,D` (all four central side
+counts 2+2) requires **k>=5** outer centers.
+The hand proof combines the strict central
+corner inequality `a+b<-1/5`, the
+two opposite 2+2 center offsets
+`|a|,|b|<5/24`, and elementary
+cap-center estimates. Thus the
+intersection of Type C with k=3 or k=4
+is **completely impossible**, regardless
+of the contact graph or rotations.
+
+HUMAN_SINGLE_SIDE_OUTER_K_PRUNING.md
+adds a general cap-angle theorem: three
+full squares in any nonnegative cap
+cannot all have center norms <1.
+Three such center directions would lie
+in an angular sector shorter than
+120 degrees, while the inscribed
+radius-1/2 disks require every
+two inner-center rays to differ
+by more than 60 degrees.
+The same file gives these further
+genuine center-position exclusions:
+
+| Exclusive single-side type | Ruled-out k/offset subcase |
+| --- | --- |
+| S2=(3+0,2+2) | k=3 whenever |t_(2+2)|<=1/14 |
+| S3=(3+1,2+1) | k=3 whenever the double-populated side of its 2+1 axis has h>=2/5 |
+| S4=(2+1,2+2), containing equality | k=3 whenever the double-populated side of 2+1 has h>=2/5 |
+| Same S4 | k=4 when also |t_(2+2)|<=1/14 |
+
+Here `t_(2+2)` is the signed central-center
+coordinate along that opposite-side axis,
+not the five-corner tilt parameter.
+All populations count **entire squares**
+past central-owned separating sides.
+
+HUMAN_TWO_CAP_CENTER_SIGN_SPLIT.md independently
+proves that two whole squares in a cap
+with h>=3/7 must have transverse center
+coordinates of strictly opposite signs.
+At h>=1/2 each sign has magnitude >1/10,
+and both centers are outer. A farther
+side of any opposite 2+2 pair always
+satisfies this stronger condition.
+A far side of a 3+1 pair
+(h>17/24) serves only one square,
+whose own open interior necessarily
+crosses the outward origin diameter.
+
+These eliminate **continuous k/location
+subcases** rather than deleting
+their parent 12-status multiplicity
+vectors. The certified total of
+3,995,040 symbolic labeled words
+must therefore remain unchanged
+unless an additional pure status
+incompatibility is proved.
