@@ -155,3 +155,29 @@ that the central stress degree is two, exclude
 the diagonal case using the remaining squares,
 force the twin motif, or produce the five
 projected inequalities required for R8>=Rhat.
+
+
+## 5. Diagonal transmission needs an additional zero-stress actual contact
+
+In a radius minimizer selected to have the fewest **actual**
+contacting pairs, a square strictly inside the containing disk
+with **actual contact degree two** has opposite *side*
+contact normals, by the already proved
+HUMAN_CYCLE_ANALYSIS.md, section 8. (That theorem uses
+the minimum-contact choice and local deformations;
+it does not follow merely from physical moment balance.)
+
+Consequently, if the same square carries exactly two
+positive-stress resultants and their common line is a
+**diagonal** of the square, the square cannot have
+actual contact degree two. Since its two positively
+stressed neighbors are already actual contacts,
+it must have at least one **additional actual neighbor**,
+which necessarily carries zero multiplier in the
+chosen two-edge physical stress.
+
+This precise branch implication prevents using a
+diagonal two-force member as an unsupported
+degree-two actual transmitter. It does not
+exclude the case: a zero-stress actual contact
+can still constrain a minimizer's allowed motion.
