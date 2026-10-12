@@ -167,3 +167,34 @@ unrestricted sharp lower bound R8>=Rhat.
 It provides exact narrow, disjoint
 real-variable subdomains for its
 remaining orientation/placement analysis.
+
+
+## A complete offset/center-sign split for saturated Type B
+
+In saturated Type B (3+1,2+2), reflect/rotate so
+its triple side is R and its perpendicular
+opposite pair has N_U=N_D=2.
+The existing cap bounds give
+
+    -83/200<a<-5/24,       |b|<5/24.
+
+The further **exhaustive necessary dichotomy** is:
+
+* If |b|<1/10, the central square lies in the
+  narrow perpendicular band `-1/10<b<1/10`.
+* If |b|>=1/10, choose the farther of U and D,
+  whose offset is `h_far=1/2+|b|>=3/5`.
+  The two whole-cap members on this side have
+  transverse x-center coordinates of opposite
+  signs, each with magnitude **>7/25**, by
+  the theorem above.
+
+This records a real-variable branch split rather
+than deleting a label count. The candidate
+single-side S4 equality profile is unaffected;
+it has no triple side.
+
+Exactly the same sign/offset dichotomy applies
+to any independent 2+2 opposite-side pair
+when its central coordinate along that axis
+is inside `(-5/24,5/24)`.
