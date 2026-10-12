@@ -319,3 +319,60 @@ The missing unrestricted inference remains
 nor the failed radialization shortcut proves the
 five-corner inequalities or classifies the
 remaining outer-path inner attachments.
+
+
+## 2026-10-11: central-fan and opposite-separator hand lemmas
+
+HUMAN_SEVEN_OUTER_FAN_GRAPH.md gives a complete actual-contact
+classification in the case where all seven noncentral centers have
+norm at least one, for a radius minimizer selected with minimum
+actual contact count:
+
+* The induced outer graph is the **full seven-cycle**, with
+  possible contacts/spokes to the central square C; the
+  central square is either isolated or has at least two
+  distinct spokes, never exactly one.
+* Otherwise the outer graph has **at least one nontrivial path**
+  and possibly other paths/isolates; both endpoints of every
+  nontrivial path touch C. Every actual contact cycle must
+  pass through C and follow a subpath of one outer path.
+  There can be at most two outer vertices isolated in the
+  induced graph yet attached to C as leaves; their radial
+  directions are perpendicular and their positions are
+  exactly those of the previous leaf theorem. Globally
+  isolated squares remain possible.
+
+The proof reuses the already established outer-ray adjacency,
+actual-leaf theorem, absence of nontrivial contact trees,
+and uniqueness of the nontrivial actual-contact component.
+It does **not** equate actual and stressed contacts.
+
+HUMAN_OPPOSITE_CENTRAL_ANGLE.md proves an arbitrary-frame
+three-square inequality: when A and B lie beyond opposite
+central-square supports in direction n and its opposite,
+their center rays satisfy
+
+    cos(delta) < 1-1250*(1+W)^2/5041,
+    W=|n dot e_C|+|n dot f_C|, 1<=W<=sqrt(2),
+
+throughout squared radius q<=9789/2500. In particular
+delta>pi/2-1/100; a 45-degree central separator gives
+delta>5*pi/8. This is a quantitative obstruction for the
+two-opposing-contact transmission branch but does not
+force that branch to arise in a minimizer.
+
+**Pairwise-cyclic numerical exploration (not a proof).**
+A trial seven-step angle budget which independently optimizes
+both endpoint radii *for each pair* can sum below 2*pi.
+When each state instead shares its radius across its two
+neighbors, finite-state sampled budgets become more restrictive,
+but the continuum and the nonadjacent constraints remain
+uncertified. Thus neither calculation may exclude the
+seven-outer full-cycle case. A correct proof must retain
+radial compatibility around the entire seven-cycle, and
+must separately handle the central fan of outer paths.
+
+**Global status:** R8<=Rhat remains proved by the exact
+construction, and the sharp conditional five-corner
+optimum is established. No argument in these new notes
+proves the necessary unrestricted reverse inequality.
