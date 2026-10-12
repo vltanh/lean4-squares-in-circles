@@ -335,3 +335,119 @@ also holds for the wider interval
 does not supply a hand proof of the
 global lower bound `R8^2>=77/20`;
 that remains a separate question.
+
+
+## 6. Sharper completely rational shadow threshold: 3841/1000
+
+**Theorem (sharpening of sections 1 and 5).**
+Every unit square touching a containing circle with
+
+    R^2 >= 3841/1000 = 3.841
+
+has a complete angular shadow of length **strictly
+less than pi/3**. The resulting six-boundary-square
+winding exclusion holds at this lower threshold.
+This proof retains every square orientation and
+uses no numerical optimization or sampled angle.
+
+Keep the exact vertex/angle formulas (3)--(7) of
+sections 1--3. At the new threshold, r>5/4:
+for L<=sqrt(2)<99/70, the farthest-vertex
+squared norm at r=5/4 is bounded by
+
+    25/16+(5/4)*(99/70)+1/2
+      =429/112 <3841/1000.
+
+Indeed the difference is 149/14000>0.
+The left side r^2+rL+1/2 increases in r.
+
+The top-bottom expression (5) is still bounded by
+
+    tan(w2)<200/119<433/250<sqrt(3),
+
+using the rational comparison
+`50000<51527` and `433^2<3*250^2`.
+It remains to bound the left-bottom
+expression (7) by 433/250.
+
+Write k=433/250 and Q=R^2-1/2. The desired inequality
+
+    (2rC-1)/(2r*(r-C)) < k
+
+is equivalent to
+
+    k*r^2-(k+1)*r*C+1/2 >0.                         (17)
+
+Its derivative with respect to r is
+`2kr-(k+1)C>2k*(5/4)-(k+1)>0`.
+Let r0 be the positive root of
+
+    r0^2+r0*(C+S)=3341/1000
+
+at the new threshold R^2=3841/1000.
+Since R^2 is at least that threshold,
+r>=r0. Therefore (17) will follow
+once it holds at r0.
+
+At that root, substitution gives exactly
+
+    k*r0^2-(k+1)*r0*C+1/2
+      =K-r0*A,
+    K=1571653/250000,
+    A=(558/125)*C+(433/250)*S.                 (18)
+
+To show K-r0*A>0, use the strict
+increase of `x^2+x*(C+S)` for x>0.
+It suffices to check
+
+    (K/A)^2+(K/A)*(C+S)>3341/1000.
+
+Because A>0, multiplying by A^2
+and using C^2+S^2=1 reduces this
+to a *single homogeneous quadratic*
+in C,S, whose value is
+
+    [62989404409*C^2
+      -794438999000*C*S
+      +2524218152409*S^2]/62500000000.       (19)
+
+This quadratic is strictly positive
+for every C,S>=0 not both zero:
+its two diagonal coefficients are
+positive and
+
+    4*62989404409*2524218152409
+       -(794438999000)^2
+       =4862668942395193285124>0.            (20)
+
+For completeness, AM-GM bounds its
+positive diagonal terms below by twice
+their geometric mean times CS,
+and (20) says that bound strictly
+dominates its negative cross term.
+
+Thus K-r0*A>0 and the derivative
+comparison yields (17) for every
+R^2>=3841/1000. Equation (7) now gives
+
+    tan(w1)<433/250<sqrt(3).
+
+Both widths w1,w2 lie in (0,pi/2),
+hence each is strictly smaller than
+pi/3. The maximum is the complete
+angular shadow, proving the theorem.
+The strictness holds at the squared-radius
+endpoint and every possible frame angle,
+including its cardinal and diagonal
+boundaries.
+
+**Important logical scope.** This is a
+*conditional radius threshold* for any
+individual circle-contact unit square;
+it is not a proof that every eight-square
+packing has R^2>=3841/1000. The prior
+purely analytical eight-square lower bound
+R>sqrt(2)+1/2 is weaker. The new angular
+shadow result cannot be used in the
+smaller-radius subcase without independently
+excluding that subcase.
