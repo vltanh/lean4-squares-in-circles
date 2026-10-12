@@ -240,3 +240,39 @@ any surviving outer ring. The five-corner
 construction establishes R8<=R_hat; the
 opposite unrestricted inequality remains
 an open obligation.
+
+
+## 7. An entire analytically certified slider interval
+
+The proof actually works for **every**
+
+    -(k1-1)/2 <= eta <= 0,                             (8)
+
+not only the selected endpoint.
+
+Indeed every pair separation above is unchanged or becomes
+stronger when eta decreases from zero. In the tilted
+frame G's e-coordinate vertex interval remains unchanged,
+while the largest absolute f vertex coordinate is
+`k2-eta`, which increases as eta decreases.
+The maximum squared vertex norm is consequently
+largest at the negative endpoint (1), already
+shown in (4) to be strictly below q. Thus all
+intermediate choices preserve circle containment.
+
+The f component of the center G is
+`1/2-k2+eta<0`, and its e component is
+independent of eta. Hence `|G|` **increases
+strictly** as eta decreases throughout (8).
+At the left endpoint it is greater than one,
+by (7). This gives a macroscopic, analytically
+certified slider of length `(k1-1)/2>0`
+within the *exact* least-family-radius packing.
+
+Unlike the earlier tiny independent slider
+interval around eta=0, (8) permits
+moving a square across the center-norm-one
+boundary whenever its right endpoint
+started below that boundary. No such crossing
+is asserted without first checking the
+starting center norm.
