@@ -250,3 +250,45 @@ proof exactly which remaining seven
 square separator roles must be
 considered, rather than allowing
 arbitrary choices among 12 statuses.
+
+
+## 5. The three saturated types counted separately
+
+The preceding forced-status descriptions give a shorter
+exact breakdown of the 100,800 S=8 labeled assignments:
+
+| Saturated type | Exact labeled count | Reason |
+| --- | ---: | --- |
+| A: (3+1,3+1) | 5,040 | Four signed placements of the two triples, each with one shared-corner double and multinomial 7!/(2!2!)=1260 |
+| B: (3+1,2+2) | 90,720 | 10,080 one-double/no-corner assignments plus 80,640 two-double/one-corner assignments |
+| C: (2+2,2+2) | 5,040 | Four possible signed placements of the unique double and multinomial 1260 each |
+| **Total** | **100,800** | Exact finite arithmetic |
+
+For Type B, its one-double branch has four choices
+of triple axis/sign, two choices of double corner
+on that signed side, and 7!/(2!2!)=1260 labelings,
+giving 4*2*1260=10,080.
+Its two-double branch has four choices of triple
+axis/sign and four choices of which corner
+gets the unique corner-only square; all seven
+status labels are distinct, so 4*4*7!=80,640.
+These counts make Type B the only saturated
+branch requiring a genuine corner-only analysis.
+
+The signed central-center regions also simplify:
+
+* Type A with triples on R and U and singles
+  on L and D forces
+  `-83/200<a,b<-5/24`.
+* Type C with unique double at RU forces
+  `|a|,|b|<5/24` and `a+b<-1/5`.
+* Type B with triple on R and L=1
+  forces `-83/200<a<-5/24` and,
+  because its U,D pair is 2+2,
+  `|b|<5/24`. If two adjacent doubles
+  occur, the extra strip dichotomy (8)
+  further reduces the domain.
+
+These are necessary inequalities for a
+complete eight-square packing, not
+witnesses of any new realizable branch.
