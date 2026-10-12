@@ -919,3 +919,30 @@ by a shadow count.
 
 The unrestricted lower bound
 `R8>=Rhat` remains OPEN.
+
+
+## Unrestricted-frame improvement of the parallel obstruction
+
+HUMAN_SEVEN_EXTERIOR_PARALLEL.md proves the exact sharp lower
+bound `R^2>=2257/576` whenever the **seven exterior squares**
+are mutually parallel, regardless of the orientation and position
+of the center-containing eighth square. The proof is a complete
+two-case hand classification of the seven parallel exterior
+centers using their own x/y frame; a rotated central square is
+used only to ensure no other square contains the disk origin.
+Four actual vertices among the seven exterior squares already
+satisfy the four-point 3-by-2 span obstruction.
+
+Thus rotating **only the central square** cannot improve
+the parallel eight-square optimum. The exact tilted candidate
+has smaller squared radius, so any packing at that radius
+must have at least two different exterior-square orientations.
+This is an unconditional statement for the entire
+sharp search region, independent of chosen contact axes
+and without assuming an actual-contact graph.
+
+The theorem does not exclude just one rotated exterior
+square among six parallel exterior squares; nor does it
+force the exact two tilted-square placement of the
+candidate. The sharp unrestricted lower bound
+`R8>=Rhat` is still OPEN.
