@@ -1083,3 +1083,65 @@ can have **four** actual central neighbors
 so no universal central degree<=2
 classification is possible.
 `R_8>=R_hat` remains OPEN.
+
+
+## Exact seven-exterior-ring counterexample and central-pocket obstruction
+
+RATIONAL_SEVEN_EXTERIOR_CONTACT_CYCLE.md gives **seven
+exterior unit squares** with rational frames and centers in
+the disk q=1957/500=3.914. Every consecutive edge of
+the seven-cycle is a **genuine** square-square contact,
+all 14 nonconsecutive pairs have strict rational
+separation margins, all vertices lie strictly in the
+circle, and the contact polygon winds +1 about zero.
+This is a **seven-square** example, *not an eight-square
+packing*. Two of its exterior-square center norms are
+strictly below one (p0 and p4), so it does **not**
+disprove a putative bound for a ring of seven squares
+whose **centers** are all outer.
+
+HUMAN_RATIONAL_RING_POCKET_AREA.md computes that the
+area available in the origin-containing bounded
+contact-polygon pocket, after removing the pieces
+of its seven ring squares, is exactly
+
+    23288171643871/26015100250000<1.
+
+The polygon's signed shoelace area is
+`120475483627389/41624160400000<29/10`,
+while seven explicitly clipped inward pieces
+sum to more than `39/20`. This is a short
+hand-checkable demonstration that **no eighth
+unit square containing the origin can be added
+to that particular ring**, regardless of frame.
+It directly quantifies the missing central
+obstacle rather than replacing it with an empty
+point at zero.
+
+HUMAN_RATIONAL_FIVE_CORNER_GAP.md supplies a
+new **whole-domain hand support certificate**
+that the exact globally minimized five-corner
+family requires
+
+    Rhat>2473/1250=1.9784,
+    Rhat^2>6115729/1562500
+         =1957/500+26/390625.
+
+The proof uses four rational weighted five-corner
+support functionals over the entire admissible
+tilt range 0<=tan t<=1/5. Strict concavity
+reduces each interval to two endpoint checks,
+and eight explicit integer-square-root certificates
+prove every endpoint inequality. Therefore the
+seven-ring is *rigorously* smaller in radius
+than the exact five-corner optimum, **without
+using the rounded Cantrell value or a numerical
+isolating box**.
+
+The exact implication that remains OPEN is:
+every actual eight-square packing below Rhat must
+be excluded by **the central square together with
+all seven exterior squares**, across unrestricted
+orientations and separator choices. A ring-only
+contact, winding or area constraint cannot be
+substituted for that coupled obstruction.
