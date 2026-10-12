@@ -110,3 +110,61 @@ perpendicular central sides.
 In particular it does not establish R8>=Rhat, and it
 must not be used to reject the candidate equality
 type S4=(2+1,2+2), which has no triple side.
+
+
+## Exact limitation: TWO ray-crossing cap squares can coexist
+
+The theorem guarantees **at least one** ray-crosser
+in a three-square cap. It would be **false** to
+strengthen the statement by claiming that a half-disk
+cap can contain at most one ray-crossing square.
+Here is a two-square exact rational counterexample,
+already at the n=8 rational radius ceiling.
+
+Use the common rational unit frame
+
+    e=(12/13,5/13),       f=(-5/13,12/13),
+
+and square centers
+
+    p1=(17/20,13/20),
+    p2=(219/200,-13/20).
+
+Both squares are wholly in x>0: their horizontal
+projected half-width is 17/26, and
+
+    17/20-17/26=51/260>0,
+    219/200-17/26=1147/2600>0.
+
+Each square crosses the **positive x ray in its open
+interior**, because its vertical projected
+half-width is also 17/26, whereas each center has
+absolute y coordinate 13/20<17/26.
+
+They are strictly separated along their common
+f axis. Indeed
+
+    |f dot(p2-p1)|=673/520>1,
+
+while the two unit squares have total support
+width exactly 1 along f. Their positive
+separating gap is 153/520.
+
+Their exact largest squared vertex norms are
+
+    Q1=7677/2600,
+    Q2=2029793/520000
+        =9789/2500-6319/520000,
+
+both strictly below the n=8 rational ceiling
+9789/2500. Thus this is a genuine contained,
+strictly separated, two-ray-crosser cap pair.
+
+It does **not** exhibit a third cap square,
+let alone an eight-square packing. It guards
+against the invalid inference that the
+ray witness in a triple must be **unique**.
+If a proof needs uniqueness it must use
+the *simultaneous third square* and the
+disk cap's remaining occupancy, not just
+the two-ray geometry.
