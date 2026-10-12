@@ -287,3 +287,58 @@ candidate orientation family.
 They do **not** exclude the genuine
 seven-outer contact ring or the central
 degree-four equality representative.
+
+
+## 7. A triple side blocks every opposite-side corner cap
+
+Theorem 5 of HUMAN_SHARP_DOUBLE_CORNER_CAP.md
+gives a new **joint count/status** exclusion
+not encoded by the older 3+2 cap theorem.
+
+If a side n of the central square serves
+three whole unit squares, its offset h
+satisfies the strictly stronger rational
+bound
+
+    0<h<7/24,                                      (16)
+
+because the three-square cap inequality at
+h=7/24 is already
+q>=2257/576>9789/2500.
+The *opposite* central side has offset
+1-h>17/24. Any square simultaneously
+served by that opposite side and one
+perpendicular side would fall in a
+perpendicular corner cap whose sharp
+minimum squared radius is strictly
+greater than
+
+    (41/24)^2+1=2257/576>q_plus.
+
+Hence the opposite side can contain
+**only single-side statuses**; no
+perpendicular double-side assignment
+is permitted, even when its total
+population is just one. In notation:
+
+| Triple side | Additional impossible statuses |
+| --- | --- |
+| R serves 3 | LU, LD |
+| L serves 3 | RU, RD |
+| U serves 3 | RD, LD |
+| D serves 3 | RU, LU |
+
+The same principle applies to *any*
+central side at offset at least 17/24,
+whether or not the other side serves a
+triple: that distant side cannot
+participate in any adjacent double-side
+status.
+
+Combined with the opposite-double ban
+and adjacent-double/2+2 prohibition of
+section 6, these restrictions cut the
+finite status enumeration further.
+They do not prohibit the one opposite
+**single-side** square in the 3+1
+profile, nor corner-only exceptions.
