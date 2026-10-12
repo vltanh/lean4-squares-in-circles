@@ -458,3 +458,46 @@ does not settle the optimal radius of a full ring of
 actual contacts, nor the outer-path-with-inner-attachment
 cases. The remaining unrestricted implication
 `R8>=Rhat` is still open.
+
+
+## Stronger exact result: the five-corner optimum itself has seven outer centers
+
+ANALYTIC_SHARP_SEVEN_OUTER_CONSTRUCTION.md proves, from
+the whole-domain analytic inequalities already established
+in ANALYTIC_EXACT_CONSTRUCTION.md, that the `G` square
+may slide through the entire interval
+
+    -(k1-1)/2 <= eta <= 0
+
+without increasing the exact conditional radius `Rhat`
+or losing any of the 28 pair separations. At the
+negative endpoint the center of G satisfies
+`f dot G=1-k2-k1/2<-1`; the other six
+noncentral centers are also strictly outer.
+The proof uses only `k1^2+k2^2=q`,
+`(79/40)^2<q<9789/2500`, and elementary
+inequalities `1<k1<38/25`, `k2<2`,
+not a tiny numerical root box.
+
+**This supersedes the strategic force of the previous
+q=3.916 all-outer-center rational witness.**
+That rational witness remains a valid easy arithmetic
+example, but now an exact eight-square packing of
+radius **Rhat itself** has seven outer centers.
+Accordingly **neither all-seven-outer center geometry
+nor the central-fan outer-path branch may be excluded
+outright at the sharp target radius**. Any lower-bound
+argument asserting that every packing at or below
+Rhat must contain a noncentral center of norm less
+than one is false.
+
+The seven-outer **full actual-contact ring** remains
+a distinct case: the sharp construction with seven
+outer centers need not be such a ring. The crucial
+open step is to derive the five-corner projected
+obstruction, or an equally sharp inequality, in
+the centrally connected outer-path configuration
+which the exact candidate now demonstrably realizes.
+
+The user-requested unrestricted equality R8=Rhat
+has **not** been proved by this new construction.
