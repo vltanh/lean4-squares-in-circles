@@ -252,3 +252,49 @@ inequalities. Central corner-owned separators
 and all surviving mixed side populations
 remain genuine branches; no unrestricted
 conclusion R8>=Rhat is claimed.
+
+
+## Theorem 4: a central square within one tenth of both axes has no double-side square
+
+Suppose `|a|<=1/10` and `|b|<=1/10` for the
+central square's center in its own side frame.
+
+Every central side line then has distance at
+least `1/2-1/10=2/5` from the disk origin.
+Any exterior square with an adjacent double
+central-side separator status lies in one
+of the four perpendicular caps whose two
+outward offsets are both at least 2/5.
+Theorem 1, after reflections of the central
+side frame, requires
+
+    q >=(1+2/5)^2+(1+2/5)^2
+       =2*(7/5)^2=98/25.                           (16)
+
+But the search ceiling is
+`q<=9789/2500<98/25`. Contradiction.
+
+Hence a central square with
+
+    |a|,|b|<=1/10
+
+has **no** exterior square served by two
+adjacent central-owned side separators.
+Every exterior square's separator status
+is therefore one **single** central side
+or one of the four **corner-only** types.
+This statement is exhaustive in this
+central-center subcase, but the
+corner-only types remain possible
+and the sharp n=8 lower bound is
+not inferred.
+
+More generally, any double-side status
+forces
+
+    max(|a|,|b|)>1/10,                             (17)
+
+since otherwise (16) would apply.
+In fact the signed diagonal inequality
+(15) locates the *direction* in which
+the central center must be displaced.
