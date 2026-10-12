@@ -1,5 +1,19 @@
 # Four-square cap exclusion at the sharp eight-square search ceiling
 
+**Relationship to existing results.** The independent one-slice proof below
+is weaker, as a cap occupancy theorem, than the previously established
+HUMAN_CENTRAL_COMPACTNESS.md, section 1: **four whole unit squares cannot
+lie in any semicircle `D_R ∩ {n·x>=0}` whenever `R²<=98/25`**.
+That stronger statement follows by reflecting four squares across
+the diameter and contradicting the analytic eight-square
+central-square theorem. In particular, at the exact n=8 search ceiling
+the complete conclusion is **at most THREE squares beyond ANY central
+side**: its distance h is always positive. The narrow exception
+`0<h<1/100` discussed below is only an exception to the *slice
+technique*, NOT a surviving packing case. The current note remains an
+elementary self-contained alternative requiring only a one-dimensional
+chord calculation and no eight-square global central-square theorem.
+
 ## Theorem (all orientations, no contact assumptions)
 
 Let four unit squares with pairwise disjoint open interiors lie in a
