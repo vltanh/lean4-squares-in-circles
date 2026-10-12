@@ -1394,3 +1394,93 @@ still required inside each surviving
 continuous case; no universal
 R8>=Rhat theorem is asserted by
 this macro-branch enumeration.
+
+
+## 2026-10-12: radial-axis routing clears more continuous triple-side subcases
+
+HUMAN_TRIPLE_SIDE_RAY_PENETRATION.md proves
+that **every three-square whole central-side
+cap**, at *every* positive offset, has at
+least one single-side status member whose
+**open interior crosses that side's outward
+origin cardinal ray**. The proof uses only
+the one-per-quadrant sector replication
+theorem. If the triple contains RU and RD
+on a common R side, its third R member
+is necessarily that ray-crossing unit.
+
+At offsets h>=13/60, combine with the
+older three-square whole-quadrant witness
+theorem: the three squares are **uniquely
+classified in transversal location** as
+one wholly in the upper origin quadrant,
+one crossing the outward radial ray, and
+one wholly in the lower origin quadrant.
+The full angular/frame continuum remains
+possible, but the three geometric roles
+are compulsory.
+
+HUMAN_OPPOSITE_TRIPLE_DIAMETER_CHAIN.md
+proves every opposite 3+1 side-population
+has two **distinct single-side exterior
+square open interiors** crossing the
+two opposite cardinal rays, with the
+origin-containing central square between
+them. Thus a far-side singleton in a
+3+1 pattern cannot lie wholly in either
+adjacent origin quadrant. No contact
+or common-frame assumption is needed.
+
+HUMAN_SATURATED_TYPE_A_RAY_ROUTING.md
+specializes to maximally saturated
+Type A (3+1,3+1) with exact seven
+statuses RU,R,R,L,U,U,D. It forces
+**four different** cardinal-ray crossing
+single-side units and an RU quadrant
+unit crossing the NE diagonal. When
+both triple offsets >=13/60, the
+remaining R and U singles must be
+wholly in the SE and NW origin
+quadrants respectively. Otherwise
+at least one triple offset <13/60
+and its opposite singleton has a
+narrow transverse center coordinate
+absolute value <9/25. This is
+an exhaustive exact two-subcase
+routing for Type A.
+
+HUMAN_CORNER_ONLY_DOUBLE_RAY_BOUND.md
+supplies a strict nonlinear placement
+condition for own-axis corner-only
+members wrapping two adjacent outward
+origin rays: their central-corner
+offsets A,B>0 must satisfy
+sqrt(A)+sqrt(B)<sqrt(2). In
+particular if the central square
+center has nonnegative coordinates
+toward that corner, double-ray
+wrapping by a corner-only square
+is impossible.
+
+**Limitations and guards:** These
+are genuine *continuous geometric
+placement exclusions*, not further
+Boolean 12-status exclusions. The
+finite assigned-status count remains
+**3,995,040** under the existing
+filters. A pair of disjoint cap
+squares can *both* cross one ray:
+an exact rational witness is recorded
+in the triple-ray note. It would be
+incorrect to promote ray-crossing
+uniqueness to the small-offset triple
+case or to arbitrary pairs.
+
+The exact unrestricted lower bound
+R8>=Rhat remains OPEN. The next
+unresolved step is to combine the
+compulsory radial chords and
+whole-quadrant owners with the disk
+and mutual separators into a sharp
+radius inequality, preserving the
+real candidate equality Type S4.
