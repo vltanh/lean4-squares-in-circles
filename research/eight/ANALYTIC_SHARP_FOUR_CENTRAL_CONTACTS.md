@@ -7,7 +7,7 @@ selected by the entirely analytical stationary theorem in
 HUMAN_FAMILY_CLOSURE.md. There is an eight-square packing of radius
 **exactly R_hat** whose central square C (the unique square containing
 zero in its open interior) has **four distinct actual neighbors**.
-The outer seven-square actual contact ring remains
+The seven **exterior** (noncentral) squares' actual-contact cycle remains
 
     A--B--T--D--E--H--G--A,
 
@@ -259,7 +259,7 @@ four standard support contacts have
 positive interval overlaps by the same
 coordinate checks above; E-H, H-G,
 G-A, and A-B are unchanged. In particular
-the full seven-outer cycle and its two
+the seven-exterior-square cycle and its two
 central side spokes remain present.
 
 ## 6. Exact logical lesson for global optimality
@@ -294,3 +294,22 @@ the five-corner projected obstruction, or an
 equally sharp alternative, from *all*
 unrestricted minimizers. This construction
 does not close that lower-bound gap.
+
+
+## 7. Center-norm terminology and the separate outer-center realization
+
+Throughout this note, **exterior** means a square whose *closed*
+set omits the disk origin. It does **not** mean its center has norm
+at least one. The present construction keeps the original tilted G
+at transverse slider eta=0, and this note does not assert
+`|p_G|>=1`. Therefore the asserted seven-member actual-contact
+cycle is a cycle of seven **exterior squares**, not necessarily a
+cycle of seven squares in the center-norm-at-least-one induced graph.
+
+ANALYTIC_SHARP_SEVEN_OUTER_CONSTRUCTION.md proves a distinct
+sharp-radius realization after a negative G slider, in which all
+seven noncentral centers do have norm greater than one and form an
+actual cycle. The four-central-contact realization in this note
+should not silently be assumed to satisfy that stronger center-norm
+condition. Both are valid conditional-family equality candidates;
+neither settles unrestricted optimality.
