@@ -1145,3 +1145,57 @@ all seven exterior squares**, across unrestricted
 orientations and separator choices. A ring-only
 contact, winding or area constraint cannot be
 substituted for that coupled obstruction.
+
+
+## Case rejection is now explicit, not an assumed candidate graph
+
+See **PATTERN_REJECTION_MATRIX.md** for the current
+hand-proved pattern eliminations and their precise
+whole-square/center/actual-contact qualifications.
+The strongest cardinality theorem is the **existing**
+HUMAN_CENTRAL_COMPACTNESS.md semicircle consequence:
+at q<=98/25 no four entire unit squares lie in a
+half-disk through zero, so every central side
+serves at most **three** squares. The subsequent
+HUMAN_FOUR_SQUARE_CAP_SLICE.md gives only an
+independent elementary proof when its cap
+offset h>=1/100; the analytic semicircle theorem
+removes that apparent small-offset exception.
+Do not treat it as an unresolved four-side branch.
+
+New exact opposite-side refinement:
+for a central side normal n and
+t=n dot p_C, if **both opposite sides
+serve two whole exterior squares**, then
+
+    |t| <= sqrt(q-1)-3/2 <5/24
+
+at q<=9789/2500. Indeed the more distant
+side has h=1/2+|t|>=1/2, so the
+two-square cap theorem gives
+q>=(3/2+|t|)^2+1; a value
+|t|>=5/24 would imply
+q>=2257/576>9789/2500.
+A side serving **three** forces its
+threshold h<3/10, its central center
+projection t<-1/5, and at most
+**one** whole square on the opposite
+side. All orientation and contact
+patterns are allowed in these
+side-occupancy assertions.
+
+The matrix also records the already
+proven exclusion of straight
+four-square chains, seven
+parallel **exterior** squares with
+arbitrary central frame, cycles on
+3--6 centers of norm at least one,
+and opposing central-contact
+neighbors which themselves touch.
+The seven-exterior actual-contact
+ring, **central degree four**
+equality examples, corner-owned
+separators, and mixed exterior
+orientations are **not eliminated**.
+None of the new bookkeeping
+establishes unrestricted R8>=Rhat.
