@@ -376,3 +376,52 @@ must separately handle the central fan of outer paths.
 construction, and the sharp conditional five-corner
 optimum is established. No argument in these new notes
 proves the necessary unrestricted reverse inequality.
+
+
+## New two-force closure and stressed-ring flux structure
+
+HUMAN_TWO_FORCE_SQUARE_CLASSIFICATION.md proves a true
+**two-force member** theorem for any circle-free square:
+exactly two nonzero contact resultants must act along
+the same line and at support points separated by
+`2*h_S(n)*n`. For a unit square this forces the
+normal to be one of its four side directions or four
+vertex diagonals. All strictly intermediate vertex
+normal-cone directions are excluded by force **and
+moment** balance, not by selecting one favorite
+separating axis. A diagonal two-force square in a
+minimum-contact representative must have an additional
+**zero-weight actual neighbor**, since a strictly
+interior square with actual degree two is aligned to
+one of its sides (HUMAN_CYCLE_ANALYSIS.md section 8).
+
+HUMAN_OPPOSITE_CENTRAL_ANGLE.md quantifies opposite
+central separator angles: two opposing neighbors have
+center-ray gap >pi/2-1/100, or >5*pi/8 for an exact
+central diagonal. This is an analytical three-square
+projection bound valid at q<=9789/2500.
+
+HUMAN_SEVEN_OUTER_FLUX.md describes the stressed
+seven-outer actual-contact ring. With no positive
+central spoke, **all seven ring edges carry positive
+stress and the same positive directed contact-moment
+flux**. With exactly two central stressed spokes,
+the two positive central forces are collinear and
+the seven ring moments have only **two constant
+plateaus**, one on each arc between the spokes.
+At least one plateau is positive, by the absence
+of stress tree components. Thus the positive ring
+support is either the full ring or one contiguous
+arc. This retains the distinction between actual
+and positive-stress edges.
+
+**Remaining work.** Neither the two-force direction
+classification nor the ring-flux plateau identity
+proves that arbitrary minimizers have central
+stress degree <=2. Even under those hypotheses the
+sharp geometric inequality comparing the ring or
+central-fan path case with the five-corner family
+has not been proved. The cases with >=3 central
+forces and those with one or more additional inner
+square centers remain. The global reverse bound
+`R8>=Rhat` is therefore explicitly **OPEN**.
