@@ -598,3 +598,58 @@ positive ray**; the triple-ray note
 includes a fully rational, exactly
 disjoint two-square example. Ray
 uniqueness is not a proved premise.
+
+
+## 8. Far 2-square cap polarization (new exact numerical-free placement exclusion)
+
+HUMAN_FAR_TWO_CAP_POLARIZATION.md proves that whenever
+two complete squares lie beyond a line of offset
+h>=3/5 in the q<=9789/2500 disk, their centers'
+**perpendicular** coordinates have strict opposite
+signs and magnitudes **greater than 7/25**.
+The hand proof bounds the absolute transverse
+coordinate by 133/200 and the possible
+longitudinal center difference by 8/25.
+If one transverse center coordinate had
+absolute value <=7/25, the two center
+distance squares would obey
+
+    |dp|^2<(189/200)^2+(8/25)^2
+           =39817/40000<1,
+
+contradicting disjoint inscribed half-unit disks.
+
+**Direct saturated Type C application.**
+For central populations (2+2,2+2) with
+one double RU square, the sharp corner
+cap theorem forces a+b<-1/5.
+Therefore a<-1/10 **or** b<-1/10.
+In the first case the two whole L squares
+have center y coordinates of opposite
+signs and absolute magnitude >7/25;
+in the second the two D squares have
+center x coordinates similarly polarized.
+If both central coordinates are below
+-1/10, both cap pairs are polarized.
+These are exact necessary location cases,
+not a claim that Type C is impossible.
+
+**Saturated Type B application.**
+With a 3+1 axis perpendicular to a 2+2
+axis, either the central coordinate along
+the 2+2 axis lies inside (-1/10,1/10),
+or the *farther* cap pair on that axis
+has transverse centers of opposite signs
+and magnitudes >7/25.
+This is another exhaustive real-variable
+subcase split for Type B.
+
+These conditions preserve mixed square
+frames; opposite center signs do **not**
+mean entire-square membership of
+corresponding origin quadrants. They
+do not yet reduce the symbolic
+3,995,040 twelve-status assignment count,
+since each remaining status word may
+still admit one of the permitted
+continuous placements.
