@@ -226,7 +226,7 @@ R<=sqrt(9789)/50<99/50.
 Suppose its R and U central sides
 each serve three whole squares and
 their signed outward offsets both
-exceed or equal 11/50.
+exceed or equal 13/60.
 
 Apply the just-proved theorem to the
 three R squares. It gives a specific
@@ -277,7 +277,7 @@ perpendicular-triple/no-double branch.
 
 The proof gives more than the perpendicular-triple
 incompatibility. Let one central side, say R, serve
-three whole squares and have offset h_R>=11/50.
+three whole squares and have offset h_R>=13/60.
 Order those three squares by their chords on the
 vertical slice x=(R_disk+h_R)/2, as in section 3.
 The uppermost and lowermost are uniquely the
@@ -292,15 +292,15 @@ if an RD status exists, it must be the lowermost.
 When both exist, their **vertical order is forced**
 without any frame or actual-contact assumption.
 This provides a canonical order for the D2/R-triple
-subcase when the shared side offset is >=11/50.
+subcase when the shared side offset is >=13/60.
 
 Conversely, consider two **distinct perpendicular
 triple sides** with *no square belonging to both*,
 as in the pure-single-side S1 branch.
-The main corollary forces one offset h<11/50.
+The main corollary forces one offset h<13/60.
 Its opposite central side has offset
 
-    h_opp=1-h>39/50.
+    h_opp=1-h>47/60.
 
 If that opposite side serves even one whole square
 T, the one-square arbitrary-frame cap envelope
@@ -309,16 +309,16 @@ HUMAN_ONE_SQUARE_CAP_ENVELOPE.md gives
     (1+h_opp)^2+
        (|p_T transverse|+1/2)^2 <=R^2<=9789/2500.
 
-The cap displacement h_opp>39/50 implies
-`(1+h_opp)^2>(89/50)^2`. The exact
+The cap displacement h_opp>47/60 implies
+`(1+h_opp)^2>(107/60)^2`. The exact
 positive comparison
 
-    (89/50)^2+(7/8)^2
-       -(9789/2500)=737/40000>0
+    (107/60)^2+(43/50)^2
+       -(9789/2500)=77/18000>0
 
 therefore forces
 
-    **|p_T transverse| <3/8.**                    (13)
+    **|p_T transverse| <9/25.**                   (13)
 
 This is a strict, orientation-free **narrower
 diameter lane** than the old <1/2 far-cap
