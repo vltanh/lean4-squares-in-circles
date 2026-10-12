@@ -237,3 +237,101 @@ nothing here excludes a seven-square
 cycle with just one circle-free
 square. The global eight-square
 optimality problem remains open.
+
+
+## 5. Sharpening the squared-radius threshold to 77/20
+
+The same method gives a **stronger theorem**:
+every boundary-contact unit square has angular shadow
+strictly shorter than pi/3 already when
+
+    R^2 >= 77/20 = 3.85.                            (12)
+
+Sections 1--4 remain an independent, simpler
+proof for the original q>=39/10 range.
+Here are the exact strengthened comparisons
+needed to prove (12), without changing the
+geometric vertex analysis.
+
+First, even at q=77/20 the center radius r
+exceeds 5/4, because
+
+    (5/4)^2+(5/4)*L+1/2
+      <25/16+(5/4)*(10/7)+1/2
+      =431/112<77/20,
+
+where the last strict comparison is
+`431*20=8620<8624=77*112`.
+
+The top-bottom estimate (5) therefore gives
+
+    tan(w2)<200/119<173/100<sqrt(3),
+
+using the positive integer inequalities
+`20000<20587` and `173^2<3*100^2`.
+
+For the left-bottom estimate (7) we now
+target the slightly larger rational value
+173/100 instead of 17/10.
+The sufficient and equivalent polynomial
+condition is
+
+    G_new(r,C)=173*r^2-273*r*C+50>0.                (13)
+
+Its derivative in r is
+`346*r-273*C>346*(5/4)-273>0`.
+Thus it suffices to check the radius r0 at
+`q=77/20`, satisfying
+
+    r0^2+r0*(C+S)=67/20.
+
+Substitution into (13) gives exactly
+
+    G_new(r0,C)=K-r0*A,
+    K=12591/20,       A=446*C+173*S.               (14)
+
+As in section 3, it is enough to show
+`r0<K/A`, or equivalently
+
+    (K/A)^2+(K/A)*(C+S)>67/20.
+
+Clearing its positive denominator and
+using `C^2+S^2=1` reduces this
+single-variable inequality to positivity of
+
+    [4297561*C^2-50906860*C*S
+       +161993281*S^2]/400.                       (15)
+
+For C,S>=0 it is strictly positive:
+the two diagonal coefficients are
+positive and AM-GM gives
+
+    4297561*C^2+161993281*S^2
+       >=2*sqrt(4297561*161993281)*C*S
+       >50906860*C*S,
+
+by the explicit integer comparison
+
+    4*4297561*161993281
+       =2784704026750564
+       >2591508395059600
+       =50906860^2.                                (16)
+
+This proves (15), then (14), then
+G_new(r,C)>0 at every R^2>=77/20.
+Equations (7), (13) consequently give
+
+    tan(w1)<173/100<sqrt(3).
+
+Both candidate angular widths remain
+strictly below pi/3, proving the
+sharpened theorem (12) by ordinary
+hand-checkable arithmetic.
+
+Accordingly the six-boundary-square
+winding-cycle consequence in section 4
+also holds for the wider interval
+`R^2>=77/20`. This improvement
+does not supply a hand proof of the
+global lower bound `R8^2>=77/20`;
+that remains a separate question.
