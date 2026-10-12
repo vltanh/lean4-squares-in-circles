@@ -159,3 +159,58 @@ cannot coexist at smaller radius, or
 derive a sharp five-corner inequality.
 The theorem is a rigorous restructuring
 of the branch, **not** its exclusion.
+
+
+## An exhaustive high-offset / narrow-opposite-lane dichotomy
+
+The saturated Type A branch now splits into two **complete**
+geometric subcases, with no unclassified central-center
+offset interval.
+
+* **Both triple offsets are at least 13/60.**
+  The previous table fixes the origin-quadrant roles of
+  all seven exterior square statuses and forces four
+  distinct cardinal-ray crossings.
+* **At least one triple offset is below 13/60.**
+  The opposite *singleton* to that small-offset triple
+  must have an exceptionally narrow transverse
+  center lane:
+
+      |transverse center coordinate| < 9/25.          (13)
+
+  This supplements the same four mandatory cardinal-ray
+  crossings. If both triple offsets are small,
+  both opposite singleton lanes have this bound.
+
+Here is the entire hand proof of the second line.
+If h_R<13/60, the opposite left central side has
+offset h_L=1-h_R>47/60. The L singleton belongs
+whole to this left cap. Reflecting x, the
+orientation-free one-square cap envelope
+HUMAN_ONE_SQUARE_CAP_ENVELOPE.md gives
+
+    (1+h_L)^2+(|p_L.y|+1/2)^2 <= R^2
+       <=9789/2500.
+
+Since 1+h_L>107/60 and
+
+    (107/60)^2+(43/50)^2
+       =9789/2500+77/18000
+       >9789/2500,
+
+we obtain |p_L.y|+1/2<43/50 and
+therefore |p_L.y|<9/25.
+
+Similarly h_U<13/60 yields
+h_D>47/60 and |p_D.x|<9/25.
+These deductions hold for arbitrary L,D
+square frames, and do not assert they
+are parallel to C.
+
+Thus a putative subcandidate Type A packing
+must satisfy **either** the fully routed
+three-whole-quadrant high-offset geometry
+**or** at least one strict 9/25 diameter
+lane for an opposite singleton. This
+is a complete necessary case split,
+not a lower bound by itself.
