@@ -378,3 +378,69 @@ end squares the reserves are not automatic and
 must be proved from *other* packing constraints.
 This is an explicit, exact formulation of the
 still missing structural compensation.
+
+
+## Robust radius lower bound when the end projections are not aligned
+
+The exact defect lemma also gives a **quantitative**
+conditional radius bound without any orientation
+restriction on the six squares.
+
+Use the same outer-chain and oblique separator
+hypotheses as in the previous section, but allow
+arbitrary end-frame tilts theta_A,theta_E and
+extra separator reserves sigma_e,sigma_f>=0.
+Define the remaining nonnegative deficits
+
+    a=max(0,delta_A(theta_A,t)-sigma_e),
+    b=max(0,delta_E(theta_E,t)-sigma_f).          (18)
+
+The five constructed disk points then satisfy
+the first three *sharp* projected inequalities
+and the last two weakened inequalities
+
+    e dot(P1-P5)>=2+cos t-a,
+    f dot(P4-P5)>=1+sin t-b.                     (19)
+
+Put
+
+    P5_tilde=P5-a*e-b*f.
+
+Because e,f are orthonormal, this single translated
+point has `|P5_tilde-P5|=sqrt(a^2+b^2)`,
+so it lies in the disk of radius
+
+    R_new=R+sqrt(a^2+b^2).
+
+All four other points already lie in D_R,
+hence in D_(R_new). Moreover (19) gives
+
+    e dot(P1-P5_tilde)>=2+cos t,
+    f dot(P4-P5_tilde)>=1+sin t.
+
+Thus P1,P2,P3,P4,P5_tilde satisfy the
+**exact five-corner family** in the larger disk.
+Its proved sharp conditional optimum implies
+
+    R >= R_hat-sqrt(a^2+b^2).                    (20)
+
+In particular the universal worst-case bounds
+from (3) give the unconditional-under-separators
+stability inequality
+
+    R >= R_hat-
+         sqrt(epsilon_A(t)^2+epsilon_E(t)^2),    (21)
+
+valid for **all** six square frame orientations.
+
+When theta_A=theta_E=0, both orientation defects
+vanish, (20) recovers R>=R_hat without any
+additional slack. A pair of end rotations cannot
+be omitted from a sharp equality argument
+without either restoring their lost projections
+or proving nonzero compensating reserves.
+
+No part of (18)--(21) proves that every arbitrary
+eight-square packing exhibits the six directed
+separators; these are **conditional** inequalities,
+not an unrestricted packing theorem.
