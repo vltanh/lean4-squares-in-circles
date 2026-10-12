@@ -1020,3 +1020,66 @@ five-corner chain for arbitrary
 orientations/contact patterns.
 The unrestricted sharp lower bound
 is still OPEN.
+
+
+## Unified central two-spoke and connected-core normalization
+
+HUMAN_TWO_CENTRAL_NEIGHBOR_REPRESENTATIVE.md proves an
+**unrestricted hand theorem** for every eight-square
+packing in the search radius range: with the other
+seven squares fixed and the central frame fixed,
+one may choose the central square's location so
+it touches **at least two distinct neighbors**.
+The feasible center set is the complement of
+the interiors of seven convex Minkowski polygons
+inside the disk-admissible center set. By the
+analytic central-square theorem, every feasible
+central placement still contains zero, and
+therefore every central vertex has radius
+strictly below sqrt(2)<R. Thus the feasible
+center set is compact and stays away from
+the disk-center-set boundary. An open free
+component has a polygonal boundary; a
+convex-hull extreme vertex with a strict
+corner cannot be supplied by just one
+convex forbidden polygon (its exterior
+contains a local open half-disk). At least
+two distinct forbidden polygons meet,
+giving two actual central neighbors.
+No orientation or contact-graph pattern
+is assumed.
+
+Section 6 combines this result with
+HUMAN_CONNECTED_MAX_CONTACT_REPRESENTATIVE.md:
+starting from a **minimum-contact** radius
+minimizer, keep its stressed nontrivial
+component **fixed**, rigidly rotate all
+isolated exterior components until they
+attach, then if C was originally isolated
+reposition it into at least two contacts.
+The resulting single representative has
+
+* **connected full actual-contact graph**;
+* **at least two actual central neighbors**;
+* the same **normalized physical stress**
+  and unchanged support-bearing core as
+  the original minimum-contact minimizer.
+
+The new contacts may all have weight zero.
+None of the original minimum-contact
+actual-degree-two or radial-bridge claims
+is automatically transferred to this
+modified, more-connected representative.
+This is a global reduction on **representative
+selection**, not the missing sharp radius
+inequality. In particular it does not
+force the two central contact normals to
+be opposite, or the five-corner chain
+in arbitrary minimizers.
+
+The candidate's exact equality family
+can have **four** actual central neighbors
+(ANALYTIC_SHARP_FOUR_CENTRAL_CONTACTS.md),
+so no universal central degree<=2
+classification is possible.
+`R_8>=R_hat` remains OPEN.
