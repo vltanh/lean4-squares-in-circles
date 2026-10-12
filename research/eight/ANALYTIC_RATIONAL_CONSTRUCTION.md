@@ -264,3 +264,99 @@ notes apply to an actual global minimizer. Obtaining the sharp lower bound
 still requires the unrestricted structural implication and the analytic
 identification of the least family root described in
 [PEN_AND_PAPER_ROADMAP.md](PEN_AND_PAPER_ROADMAP.md).
+
+
+## 7. A completely rational seven-outer actual-contact cycle near the sharp radius
+
+There is also a **second, equally explicit rational**
+eight-square packing in exactly the same disk
+`q=9789/2500` with all seven noncentral centers
+of norm **strictly greater than one**. Replace only G by
+
+    G'=H+e-(1/8)*f.                                    (7.1)
+
+All other seven squares and both tilted frame vectors remain
+as in sections 1--5. The original exact pairs
+E-H, A-H and all fifteen axis-parallel pairs are unchanged.
+The A-G' separator along e and H-G' separator along e
+remain equalities, because e and f are orthogonal.
+The E-G' separation along f **increases** by 1/8.
+Finally G' moves downward by c/8, so every
+previous horizontal separation of G from B,C,D,T
+strictly increases. The 28 pair-disjointness
+assertions are thus preserved.
+
+G' now has local (e,f) center coordinates
+
+    (h1+3/2, h2+3/8).
+
+Its farthest squared vertex norm and its center norm
+are verified by the exact rational identities
+
+    max_vertex |z|^2
+      = 6713536402152169/2377764000000000,
+    q-max_vertex |z|^2
+      = 2596836316247831/2377764000000000 >0,
+    |G'|^2-1
+      = 317549450832169/2377764000000000 >0.           (7.2)
+
+Direct substitution in the unchanged center formulas
+shows each of A,B,D,E,T,H also has center norm >1;
+indeed the smallest of their squared norms is
+greater than 3/2. The central C has center squared
+norm <1/4 and is axis-parallel, so it contains
+zero in its open interior.
+
+The seven noncentral squares form the actual-contact
+cycle
+
+    A -- B -- T -- D -- E -- H -- G' -- A.              (7.3)
+
+This is more than a statement about equality of support
+projections: here are the actual overlaps.
+
+* The four parallel side contacts A-B, B-T,
+  T-D, D-E have positive common side lengths
+
+      225559/250000, 7/30,
+      602233/1000000, 88529/200000
+
+  respectively, by intersecting their exact
+  side intervals from section 1.
+* The tilted sides of H and G' in their shared
+  e-support line overlap with length `7/8`.
+* The positive-e side of G' meets the negative-e
+  support vertex `z_A=(r-1,-u)` of A. The
+  f-coordinate of that vertex relative to
+  the G' side center is exactly
+
+      f dot(z_A-G') =13591777/257000000,
+
+  strictly between -1/2 and 1/2.
+* The positive-f side of H meets the negative-f
+  support vertex `z_E=(1-w,-v)` of E. The
+  e-coordinate of that vertex relative to
+  the H side center is exactly
+
+      e dot(z_E-H)=-74251667/771000000,
+
+  again strictly between -1/2 and 1/2.
+
+The central square C shares vertical supporting
+faces with B and D with positive overlapping
+height intervals, as follows directly from
+`z_C=7/20`, `u=11/12`, and
+`v=547767/1000000`.
+
+Thus the **full seven-outer actual-contact-cycle
+case occurs already at the rational ceiling
+q=9789/2500**, not just in a limiting or
+sampled configuration. The stronger theorem
+ANALYTIC_SHARP_SEVEN_OUTER_CONSTRUCTION.md
+shows that this also happens at the **exact
+conditional sharp family radius** Rhat, using
+its analytical stationary equations and
+without a root-isolation program.
+
+These are construction results. Neither supplies
+the unrestricted lower bound R8>=Rhat.
