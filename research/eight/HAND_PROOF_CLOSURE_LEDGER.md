@@ -1484,3 +1484,50 @@ whole-quadrant owners with the disk
 and mutual separators into a sharp
 radius inequality, preserving the
 real candidate equality Type S4.
+
+
+## 2026-10-12: far two-cap polarization clears transverse center subcases
+
+HUMAN_FAR_TWO_CAP_POLARIZATION.md establishes a new
+**arbitrary-orientation, exact rational** center-sign theorem:
+if two whole unit squares occupy a cap at outward
+offset h>=3/5 under q<=9789/2500, their center
+coordinates perpendicular to the cap's outward
+normal must have **opposite strict signs** and
+each absolute value must exceed **7/25**.
+
+The hand proof combines the already proved
+single-square cap center envelope and
+universal center-radius bound. They constrain
+each perpendicular coordinate to absolute
+value <133/200 and the longitudinal
+center-coordinate difference to absolute
+value <8/25. If one of two centers were
+within 7/25 of the perpendicular diameter,
+their separation would be <sqrt(39817/40000)<1,
+contradicting their disjoint inscribed
+half-unit disks. No selected pair separator
+or common frame is used.
+
+This gives two targeted necessary
+continuous-domain splits:
+
+* Saturated Type C (2+2,2+2), with one RU double,
+  has a+b<-1/5. Thus a<-1/10 or b<-1/10,
+  so **at least one** of its far L/D two-square
+  caps has centers of strictly opposite
+  transverse signs and absolute coordinate
+  >7/25. Both caps polarize when both
+  coordinates are <-1/10.
+* Saturated Type B (3+1,2+2) has, on its
+  2+2 axis, either central signed coordinate
+  |t|<1/10 or the more distant cap's
+  two centers polarized by >7/25.
+
+No new entire twelve-status combination
+was excluded on these bounds alone.
+The correct remaining *symbolic* count
+is still 3,995,040 labeled assignments;
+this is a continuous geometric refinement
+aimed at the sharp unproved radius
+obstruction R8>=Rhat.
