@@ -1618,3 +1618,53 @@ disjoint half-unit inscribed disks.
 
 No claim of unrestricted R8>=Rhat
 follows from these macro-cell eliminations.
+
+
+## 2026-10-12: stronger midpoint-slice hand lemmas (post-9c747b1)
+
+Two further arbitrary-frame lemmas sharpen the October 12 continuous
+separator/outer-center queue without eliminating the S4 equality branch.
+
+**Shared square in perpendicular triples.**
+[HUMAN_PERPENDICULAR_TRIPLE_IMPROVED.md](HUMAN_PERPENDICULAR_TRIPLE_IMPROVED.md)
+improves the earlier \(h_R,h_U\ge1/10\) fixed-point result to
+\[
+h_R,h_U\ge1/11
+\quad\Longrightarrow\quad
+\text{an actual common double-side square}.
+\]
+It uses the midpoint chord formula, the exact decreasing-in-width
+reserve \(\ell>9405/10000\), and a common open-interior segment at both
+slices. In exclusive-single-side S1=(3+0,3+1), this forces
+\(\min(h_{\mathrm{triple},1},h_{\mathrm{triple},2})<1/11\)
+(or \(\min(a,b)<-9/22\) for R/U triples).
+If the exceptionally small triple is on the 3+1 axis,
+its opposite singleton has strict transverse center
+\(|z|<1/48\) by the existing arbitrary-frame single-square cap
+envelope. The latter bound is **not** asserted for a small triple
+on the 3+0 axis.
+
+**Two outer centers in a single triple cap.**
+[HUMAN_TRIPLE_CAP_TWO_OUTER_IMPROVED.md](HUMAN_TRIPLE_CAP_TWO_OUTER_IMPROVED.md)
+lowers the older \(7/50\) threshold to \(13/100\): each triple of
+whole squares beyond a side with \(h\ge13/100\) has two **distinct**
+center-norm-\(>1\) squares, selected by the top/bottom midpoint chords.
+The proof is global over square frames, splitting the extreme square
+at \(L=\cos\theta+\sin\theta=69/50\). Below that point its own chord
+has length at least one; above, an exact increasing quadratic yields
+\(|p|^2>100222049/100000000>1\).
+
+As immediate joint outer-count restrictions, S1/k=3 requires **both**
+triple offsets \(<13/100\); S2's triple \(\ge13/100\) implies
+\(k\ge4\) (and \(k\ge5\) when the 2+2 offset coordinate is
+\(\le1/10\) in absolute value); S3/k=3 requires its triple
+\(<13/100\); and Type A with both triple offsets \(\ge13/100\)
+has \(k\ge5\). These sharpen *continuous-region/outer-count*
+subcases, **not** the previously enumerated 3,995,040 purely symbolic
+assignments.
+
+Both new notes are written hand arguments with exact rational margins,
+not Lean files. They retain the nontrivial small-offset S1 continuum,
+other D0 branches, double-side/corner-only branches, and the real
+S4/k=7 candidate equality. The sharp unrestricted target
+\(R_8\ge\widehat R\) remains **OPEN**.
