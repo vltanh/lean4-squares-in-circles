@@ -589,3 +589,80 @@ It is not legitimate to infer these axis
 choices merely from an actual-contact edge,
 nor to declare all frames parallel.
 Thus unrestricted R8>=Rhat remains OPEN.
+
+
+## Orientation defects, anchored end uniqueness, and equality recovery
+
+HUMAN_ROTATED_END_CORNER_DEFECTS.md proves two **sharp
+whole-orientation point-selection inequalities** for a
+unit square whose chosen point must lie in the bottom
+unit-height cap of its own projected support strip.
+For `z=tan(t/2)`, the best universal sums of
+oblique support plus cap-point projection are
+`1-z` along e and `2z/(1+z)` along f.
+Their exact losses relative to aligned corners
+are `epsilon_A=sin(t)*(1-sin(t))/(1+cos(t))`
+and `epsilon_E=(1-cos(t))*(1-sin(t))/cos(t)`.
+A piecewise trigonometric hand proof includes
+both signed orientations, concavity/monotonicity,
+and explicit sharpness examples.
+
+Under the six directed separators of the
+two-aligned-end conditional theorem, but with
+**all six frames arbitrary**, the resulting
+five-point chain retains its exact 2,3,2
+first-three spans and has weakened oblique
+thresholds `3-z` and `1+2z/(1+z)`.
+The note also gives an exact orientation-sensitive
+separator-slack sufficient criterion restoring
+the sharp family lower bound. More generally,
+translating only P5 by the two remaining deficits
+proves the robust conditional inequality
+`R>=Rhat-sqrt(a^2+b^2)`.
+This is a quantified obstruction to simply
+erasing the two end-alignment assumptions.
+
+HUMAN_ANCHORED_END_RIGIDITY.md proves that
+the candidate's right-hand end square A is
+**globally unique in position and frame**
+when its two neighbor support thresholds
+are held fixed and the disk radius is
+unchanged. The hand proof expresses its
+circle radial normal as a positive
+combination of the two separator axes.
+A weighted sum of three square support
+functions is strictly concave between
+only three angular breakpoints; exact
+values at those breakpoints force the
+unique standard frame and then the center.
+It uses only broad analytical family
+bounds, not a tiny root box. Neighbor
+positions/directions are **assumed fixed**;
+collective rearrangements are not excluded.
+
+HUMAN_TWO_END_EQUALITY_RIGIDITY.md now
+derives the equality cases of the enlarged
+two-aligned-end theorem: at exactly Rhat,
+the five witness points must be *on the
+disk circle* and all five projected
+inequalities tight. The canonical points
+in arbitrary B,D,H are strictly interior
+to those squares unless their projected
+width is one. Hence equality forces
+B,D parallel to A,E and H parallel
+to the oblique e,f frame. Equality of
+the two e separators also gives
+`h_G(e)=1/2`, forcing G parallel to H.
+If a central square supplies the B-D
+middle projected span, it too aligns
+with A,E. Tight support projections
+do not by themselves assert common
+physical contact points.
+
+**Still open globally:** none of these
+conditional rigidity/equality theorems
+forces the two end squares and six
+directional separator hypotheses in
+an arbitrary eight-square minimizer.
+The unrestricted lower bound
+`R8>=Rhat` has not been proved.
