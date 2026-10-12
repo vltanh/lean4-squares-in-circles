@@ -61,6 +61,68 @@ There are finitely many label assignments of these
 assignments violate occupancy or pairwise nonoverlap.
 The assignments do not fix centers, frames or contacts.
 
+
+
+## 1A. New exact capacity of the four *double-side* statuses
+
+HUMAN_ORIGIN_SECTOR_REPLICATION.md proves the following
+stronger necessary condition, using the central-square
+theorem and a 90-degree rotational copy argument:
+
+    count(RU),count(RD),count(LU),count(LD) <= 1.         (A)
+
+Indeed two different whole squares each served beyond,
+say, both central right and central upper sides would
+lie entirely inside the positive origin quadrant.
+Rotating the pair by 0,90,180,270 degrees would
+create eight interior-disjoint unit squares, none
+containing zero in its open interior, contradicting
+HUMAN_GLOBAL_GEOMETRY_CLOSURE.md.
+
+This is a true **whole-square** exclusion for every
+R^2<=98/25. It is not merely a result about two
+center directions occupying the same quadrant.
+
+Consequently each of the four double-side types,
+and each of the four corner-only types, can occur
+**at most once**. Only the four single-side types
+can occur repeatedly (up to three instances
+each by semicircle capacity).
+
+The previous 31 coarse side-count profiles
+are **not** reduced by (A): all 31 still admit
+at least one combinatorial assignment under
+these capacity constraints, though many may be
+geometrically impossible. The new rule does
+prune finer labeled and unlabeled **status
+multiplicities**, which a side-count profile
+does not record.
+
+For a check on its combinatorial impact:
+restrict seven labeled squares to the twelve
+statuses, impose one corner-only square
+per corner, side counts <=3 and the 3+2
+opposite-pair exclusions. Those filters permit
+8,551,760 labeled status assignments if
+double-side statuses are allowed arbitrary
+multiplicity, but **6,663,440** after (A).
+These are finite algebraic counts, not
+counts of feasible packings. They can be
+reproduced from the coefficient expression
+
+    7! * [z^7] (1+z)^4
+      * exp(z*(x_R+x_L+x_U+x_D))
+      * product_(adjacent i,j) (1+z*x_i*x_j),
+
+retaining only monomials with individual
+x exponents <=3 and excluding exponents
+(3,2),(2,3),(3,3) for both opposite
+pairs. The old count replaces the last
+product by exp(z*sum_(adjacent i,j) x_i*x_j).
+Each term of the exponential is used
+only through degree seven; multiplication
+by 7! gives an integer.
+
 ## 2. The eight possible opposite-side count profiles
 
 Let N_R,N_L,N_U,N_D denote the populations of **whole**
