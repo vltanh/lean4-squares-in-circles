@@ -1692,3 +1692,47 @@ eight-square lower-radius range \(\sqrt2+1/2<R\); it does **not**
 claim the same \(17/80\) threshold for all arbitrary three-square
 caps without that premise. Earlier stronger-in-scope but
 weaker-in-threshold \(13/60\) results remain valid.
+
+
+### 2026-10-12: low-offset S1 hole and asymmetric analytic gate
+
+The fixed-segment technique also works **below** the uniform
+\(1/11\) threshold on a two-dimensional domain:
+[HUMAN_PERPENDICULAR_TRIPLE_LOW_OFFSET.md](HUMAN_PERPENDICULAR_TRIPLE_LOW_OFFSET.md)
+proves that perpendicular triple caps whose outward offsets are both
+in the closed interval \([1/16,1/10]\) share an actual square,
+regardless of all frames. It uses the distinct fixed slice interval
+\([789/800,5197/5000]\), actual midpoint chords
+\(\ell>9121/10000\), and an exact \(1/625\) upper overlap margin.
+Hence the full closed central-center rectangle
+\([-7/16,-2/5]^2\) is forbidden in the exclusive-single-side S1
+R/U-triple normalization. This genuinely removes a low-offset S1
+region **not** excluded by the original \(1/11\) theorem.
+
+The same note couples this result to the sharp one-square cap
+envelope: on S1's 3+1 axis the triple offset is **strictly**
+\(h_{31}>17/200\), because the opposite singleton would otherwise
+need squared radius larger by \(13/8000\).
+Thus if \(h_{31}\le1/10\), the perpendicular 3+0 triple offset
+must lie **outside** \([1/16,1/10]\); if both triple offsets
+are \(\le1/10\), necessarily \(h_{30}<1/16\).
+
+[HUMAN_ASYMMETRIC_TRIPLE_PIERCE_GATE.md](HUMAN_ASYMMETRIC_TRIPLE_PIERCE_GATE.md)
+records the full-domain symbolic follow-up. For arbitrary offsets
+\(h_R,h_U\ge0\) serving whole triple caps, write
+\(X(h)=(R+h)/2\),
+\(B(h)=\sqrt{R^2-X(h)^2}\), and
+\(\lambda(h)=\min(1,2\sqrt2-R+h)\).
+If **both** \(3\lambda(h_R)-B(h_R)>X(h_U)\)
+and \(3\lambda(h_U)-B(h_U)>X(h_R)\), the populations share an
+actual double-side square. Therefore an exclusive-single-side S1
+configuration must violate at least one of those inequalities.
+This is a proven exact *necessary continuous-domain condition*, not
+a sampled classifier and not a sufficiency claim for S1 existence.
+
+[verify_improved_cap_arithmetic.py](verify_improved_cap_arithmetic.py)
+now also audits the low-offset midpoint bounds and \(17/200\)
+singleton comparison using exact fractions. The script has been
+executed successfully; the analytical arguments remain the premises.
+No general S1 closure, S4 equality exclusion, or unrestricted
+\(R_8\ge\widehat R\) is claimed.
