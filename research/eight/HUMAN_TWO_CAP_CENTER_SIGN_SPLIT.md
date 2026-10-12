@@ -160,3 +160,71 @@ whole-square central-owned separator.
 
 The sharp global lower bound `R8>=Rhat`
 remains unproved.
+
+
+## 4. Stronger one-tenth clearance in caps beyond offset one half
+
+**Corollary.** Under the theorem's eight-square search ceiling,
+suppose two entire unit squares lie beyond the same line
+`y=h>=1/2`. Their centers satisfy, after labeling,
+
+    (p_S)_x < -1/10,       (p_T)_x >1/10.                (7)
+
+Furthermore both centers have Euclidean norm **strictly greater
+than one**, so the pair consists of outer-center squares.
+
+**Hand proof.** By the orientation-free one-square center
+envelope, every center (x,y) in the cap obeys
+
+    |x|<=sqrt(q-(1+h)^2)-1/2
+         <=sqrt(q_plus-9/4)-1/2
+         <4/5,
+
+because `q_plus-9/4=4164/2500<(13/10)^2`.
+
+The universal center-radius bound and the cap support give
+
+    h+1/2<=y<=sqrt(q-1/4)-1/2.
+
+Therefore any two such centers have
+
+    |dy| <=sqrt(q_plus-1/4)-(1+h)
+          <=sqrt(2291/625)-3/2 <5/12,
+
+where the final inequality is verified by
+
+    (23/12)^2-2291/625
+       = 713/90000 >0.
+
+If either center had `|x|<=1/10`, the other one's
+absolute x coordinate <4/5 would give
+
+    |dx| <9/10.
+
+Their squared distance would then be strictly less than
+
+    (9/10)^2+(5/12)^2
+       =14164/14400<1,
+
+contradicting their disjoint inscribed radius-1/2
+disks. Hence both centers have |x|>1/10.
+Section 2 of this note already proved that the
+two x signs are opposite, giving (7).
+
+Finally y>=h+1/2>=1 and |x|>1/10,
+so |p|>1 for both squares. QED.
+
+Thus whenever a central side serves two whole squares
+at outward offset >=1/2, **both are outer** and
+their centers occupy the two separated transverse
+lanes `x<-1/10` and `x>1/10`.
+In a 2+2 opposite-side profile, at least the more
+distant side always has this conclusion, since
+its offset equals `1/2+|t|>=1/2`.
+The closer cap has only the weaker opposite-sign
+conclusion when its offset is >=3/7.
+
+These are geometric filters on continuous center
+positions and outer/inner status, not a proof that
+any particular coarse side-count profile is
+unrealizable.
