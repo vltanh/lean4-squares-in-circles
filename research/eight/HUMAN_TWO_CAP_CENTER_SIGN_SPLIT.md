@@ -194,7 +194,7 @@ Therefore any two such centers have
 where the final inequality is verified by
 
     (23/12)^2-2291/625
-       = 713/90000 >0.
+       = 721/90000 >0.
 
 If either center had `|x|<=1/10`, the other one's
 absolute x coordinate <4/5 would give
