@@ -787,3 +787,55 @@ however, now rejects Type C with k=3 or 4.
 All Type C branches k=5,6,7 remain to be treated,
 as does the real candidate equality branch
 D0/S4. No unrestricted R8>=Rhat proof follows.
+
+
+## 10. Additional actual status-by-outer-center cells are eliminated
+
+HUMAN_SINGLE_SIDE_OUTER_K_PRUNING.md proves a
+whole-orientation center-count rule for a
+*three-square* outward cap: at least one
+member must have center norm >=1. If all
+three centers had norms <1, their
+projected normal components would all
+be >1/2; their polar directions would
+lie within an **open 120-degree** sector.
+But distinct inner centers of disjoint
+unit squares require angular gaps >60
+degrees (by the unit inscribed-disk
+center separation), so three such
+centers cannot fit in that sector.
+
+Combining this with the established
+two-square cap-inner-pair theorem
+(h>=2/5 guarantees at least one
+outer center) and the fact that
+a cap of offset h>=1/2 consists
+entirely of outer centers gives these
+further **genuine k-cell exclusions**
+in the all-seven-single-side branches:
+
+| Single-side type | Eliminated k branch | Additional exact central offset hypothesis |
+| --- | --- | --- |
+| S2=(3+0,2+2) | k=3 | the 2+2 center coordinate has abs <=1/14 |
+| S3=(3+1,2+1) | k=3 | the two-member side on the 2+1 axis has offset >=2/5 |
+| S4=(2+1,2+2) | k=3 | the two-member side on the 2+1 axis has offset >=2/5 |
+| S4=(2+1,2+2) | k=4 | the same two-member side has offset >=2/5, AND the 2+2 axis center coordinate has abs <=1/14 |
+
+The equality candidate is in S4, so these
+strictly conditional subcase exclusions do
+**not** discard S4 itself; they confine its
+low-k configurations to narrower central
+offset strips. See the cited note for
+the short center-count proofs for each
+row and a careful distinction between
+*distinct single-side statuses* and
+overlapping double memberships.
+
+Together with section 9, Type C/k=3,4
+are entirely eliminated, while the
+four rows above are eliminated on
+specified exact continuous regions.
+None of these improvements changes
+the old **purely symbolic**
+3,995,040 count, because that count
+does not encode k or signed offsets.
