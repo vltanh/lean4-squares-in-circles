@@ -385,9 +385,9 @@ center (a,b) in its own frame:
 
 | Position of C's center | Maximum number of populated double-side statuses |
 | --- | ---: |
-| |a|<=1/10 and |b|<=1/10 | **0** |
-| |a|<=5/24 and |b|<=5/24 | **1** |
-| Arbitrary |a|,|b|<1/2 | **2**, and the two must share one central side |
+| abs(a)<=1/10 and abs(b)<=1/10 | **0** |
+| abs(a)<=5/24 and abs(b)<=5/24 | **1** |
+| Arbitrary abs(a),abs(b)<1/2 | **2**, and the two must share one central side |
 
 The first line is Theorem 4. For the second,
 suppose two double types occurred. Theorem 2
