@@ -510,3 +510,91 @@ These conditions must not be
 misread as a global S1 exclusion
 or as assigning a corner-only
 square to a whole origin quadrant.
+
+
+## 7. New radial-ray pattern eliminations within all triple-side branches
+
+HUMAN_TRIPLE_SIDE_RAY_PENETRATION.md now proves that
+any central side with **three** whole exterior
+square members has at least one **single-side**
+member crossing that side's outward origin
+cardinal ray through its **open interior**.
+Otherwise all three entire squares would be
+confined to the two adjacent origin quadrants,
+each of capacity one. This holds at *every*
+positive cap offset and for arbitrary frames;
+it is stronger at small offsets than requiring
+the whole-quadrant witness theorem, which has
+its own offset threshold.
+
+In the adjacent-double D2 case RU+RD with
+R count exactly three, the third R square
+**must be the positive-x-ray crosser**;
+the two double members are wholly above
+and below the axis and cannot cross it.
+This clears every placement subcase
+where the third R member avoids that
+diameter, independently of its frame.
+
+HUMAN_OPPOSITE_TRIPLE_DIAMETER_CHAIN.md
+adds the opposite-side singleton. Every
+3+1 population pair has *two distinct
+single-side* exterior members crossing
+the opposite cardinal rays, with the
+central square's diameter interval between
+them. The far-side singleton crosses its
+own ray because its outward cap offset
+is >17/24, forcing its transverse center
+coordinate to have absolute value <1/2.
+Thus one may discard all 3+1 placements
+where the distant singleton lies **wholly
+inside either adjacent origin quadrant**,
+or where the three-square near cap never
+crosses the opposite positive cardinal ray.
+
+HUMAN_SATURATED_TYPE_A_RAY_ROUTING.md then
+shows saturated Type A (3+1,3+1) forces
+**four distinct single-side square open
+interiors** across all four cardinal rays,
+plus its RU double square entirely inside
+the origin NE quadrant. If both triple
+offsets >=13/60, the other two singles
+are wholly in the origin SE and NW
+quadrants; these seven roles are fully
+determined without common orientations.
+If either offset <13/60, the singleton
+beyond the opposite distant side has
+a strict transverse center lane
+|coordinate|<9/25. This gives a complete
+high-offset / narrow-lane split of the
+saturated Type A branch.
+
+HUMAN_CORNER_ONLY_DOUBLE_RAY_BOUND.md
+supplies another exact **conditional
+placement exclusion**: a corner-only
+own-axis square assigned NE, intersecting
+both positive origin cardinal rays through
+its open interior, forces
+
+    sqrt(1/2+a)+sqrt(1/2+b)<sqrt(2),
+
+where p_C=(a,b). Thus when a,b>=0
+such simultaneous positive-ray wrapping
+is impossible. Reflect/rotate for other
+corners. This does **not** forbid the
+corner-only type itself or an intersection
+with only one of its bordering rays.
+
+The purely symbolic **twelve-status
+assignment count remains 3,995,040**:
+these new theorems reject *continuous
+placements inside surviving statuses*,
+not further status-label combinations.
+Do not report a decreased finite count
+without an additional exact status
+implication. In particular two squares
+of a right cap **can both cross the same
+positive ray**; the triple-ray note
+includes a fully rational, exactly
+disjoint two-square example. Ray
+uniqueness is not a proved premise.
