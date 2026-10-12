@@ -172,3 +172,80 @@ are unaffected by this specific
 *two perpendicular triples* rejection;
 S4 contains candidate equality and
 must remain.
+
+
+## 6. Sharper full-orientation S1 exclusion and the remaining k-subcases
+
+Two new independent hand proofs greatly strengthen
+the S1 geometry without assuming a common frame:
+
+* HUMAN_TRIPLE_CAP_TWO_OUTER_CENTERS.md:
+  **three whole square members** of a positive cap
+  at offset h>=7/50 and radius R<=99/50
+  have two distinct centers of norm >1.
+  The proof uses three long vertical chords,
+  the bound `ell>987/1000`, and the actual
+  center inequality
+  `p_top.x+p_top.y>1421/1000>sqrt(2)`.
+* HUMAN_PERPENDICULAR_TRIPLES_SHARP_LANE.md:
+  if two **perpendicular** central sides
+  both serve three whole squares and their
+  offsets are >=7/50, the two appropriately
+  selected outer centers lie in the same
+  angular interval of width
+  `pi/2-2 atan(9/20)<pi/4-1/100`.
+  The proved outer-center angular gap is
+  >pi/4-1/500, so they **must be the same
+  square**, possessing a shared double-side
+  separator status.
+
+S1 has exactly two perpendicular triples
+and **no double-side members**. Hence, for
+every possible number k of outer centers,
+
+    S1 => min(h_triple1,h_triple2)<7/50.
+
+Normalize the triples to R and U and write
+the central center as (a,b). Then
+
+    S1 => min(a,b)<-9/25.
+
+This is a **genuine continuous exclusion**
+of the entire complementary central-center
+rectangle for S1, substantially stronger
+than the previous threshold 11/50 or 13/60.
+It does **not** prove S1 impossible when one
+triple offset is below 7/50.
+
+Further center-count exclusions, retaining
+all frames independently, follow from the
+two-outer-center triple result:
+
+* **S2=(3+0,2+2):** if the triple offset
+  is >=7/50, then k>=4. If also the central
+  signed coordinate on the 2+2 axis is
+  within 1/10 of zero, then k>=5.
+  Even without the triple offset condition,
+  |t|<=1/10 forces k>=4, improving the
+  previous |t|<=1/14 band.
+* **S3=(3+1,2+1):** if its triple offset
+  is >=7/50, then k>=4. The branch k=3
+  now requires both triple offset <7/50
+  **and** the two-square side on the
+  2+1 axis to have offset <2/5.
+* **S4=(2+1,2+2):** retains the exact
+  candidate equality; this triple theorem
+  has no direct consequence for S4.
+
+If S1's triple side of type 3+1 has the
+exceptionally small offset <7/50,
+its sole opposite far-side square has
+transverse center coordinate strictly
+smaller than 9/50 in magnitude, by the
+orientation-free cap center-height bound.
+
+All these conclusions prune **regions in
+the continuous central-center/outer-count
+parameter space**, not just symbolic
+combinatorial assignments. The exact
+unrestricted target R8>=Rhat remains OPEN.
