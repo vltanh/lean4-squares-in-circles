@@ -22,11 +22,12 @@ the established rational eight-square upper ceiling
 
     9789/2500 - 1957/500 = 1/625 > 0.
 
-It is also numerically smaller than the Cantrell candidate
-squared radius, approximately 3.9155341375. The latter
-strict comparison is not used in the theorem: the present
-purely hand-analytic family enclosure alone is too coarse
-to certify it. The construction contains **seven**, not eight,
+It is **provably** smaller than the exact least five-corner
+family radius: HUMAN_RATIONAL_FIVE_CORNER_GAP.md gives a
+complete hand support certificate
+R_hat > 2473/1250 and
+(2473/1250)^2-1957/500=26/390625>0.
+The comparison does not rely on the decimal Cantrell value. The construction contains **seven**, not eight,
 squares and therefore is not a counterexample to the
 eight-square conjecture.
 
@@ -290,3 +291,21 @@ The unrestricted sharp lower bound
 R8>=R_hat has **not** been proved by this
 counterexample or by any previous
 ring-only inequality.
+
+
+## 7. Exact pocket-area complement
+
+HUMAN_RATIONAL_RING_POCKET_AREA.md computes the exact
+free area inside this ring's contact polygon, after
+subtracting all seven inward square pieces:
+
+    23288171643871/26015100250000 < 1.
+
+Any eighth square containing the disk center would have
+its whole open interior inside that polygon, because the
+ring has winding one and its own interiors are disjoint.
+Its area would be one, contradicting the displayed strict
+free-area bound. Thus the particular seven-square ring
+cannot be extended by an eighth central unit square.
+This is a verified exact spatial obstruction, not a
+universal seven-ring lower bound.
