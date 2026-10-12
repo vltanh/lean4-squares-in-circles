@@ -425,3 +425,36 @@ has not been proved. The cases with >=3 central
 forces and those with one or more additional inner
 square centers remain. The global reverse bound
 `R8>=Rhat` is therefore explicitly **OPEN**.
+
+
+## New exact near-sharp all-outer-center construction
+
+RATIONAL_NEAR_SHARP_SEVEN_OUTER.md records eight **rational**
+interior-disjoint unit squares at squared radius `979/250=3.916`
+with a central square and seven other square centers of norm
+greater than one. Its proof supplies all eight rational
+orthonormal frames, eight farthest-vertex inequalities and
+one strictly positive rational separating-line witness for
+every one of the 28 unordered pairs. The seven consecutive
+outer pairs have verified strict margins exceeding
+`19/1000000`; all other pairs have margins over
+`1/1000`. This replaces the earlier weaker all-outer
+example at squared radius `397/100` with a near-candidate
+construction.
+
+This example is *above* the conjectured exact candidate
+squared radius (`3.915534...`) and gives no improved
+upper bound for the unrestricted problem. But it **refutes**
+any proposed proof route claiming that seven outer centers
+alone require squared radius at least, for example,
+`3.92` or `4`. The complete seven-outer-center case
+must be treated almost as sharply as the actual candidate,
+and cannot be eliminated using a coarse universal radius
+estimate or just the existing quadrant capacity bounds.
+
+Unlike the seven-outer contact-cycle branch, the
+rational example has **strict** pair gaps. It therefore
+does not settle the optimal radius of a full ring of
+actual contacts, nor the outer-path-with-inner-attachment
+cases. The remaining unrestricted implication
+`R8>=Rhat` is still open.
