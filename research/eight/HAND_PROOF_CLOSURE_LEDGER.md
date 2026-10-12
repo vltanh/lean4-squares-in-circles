@@ -1668,3 +1668,27 @@ not Lean files. They retain the nontrivial small-offset S1 continuum,
 other D0 branches, double-side/corner-only branches, and the real
 S4/k=7 candidate equality. The sharp unrestricted target
 \(R_8\ge\widehat R\) remains **OPEN**.
+
+
+### Additional high-offset whole-quadrant improvement
+
+[HUMAN_TRIPLE_CAP_QUADRANT_IMPROVED.md](HUMAN_TRIPLE_CAP_QUADRANT_IMPROVED.md)
+sharpens the full-square upper/lower quadrant witness threshold in the
+actual n=8 search radius window from \(13/60\) to \(17/80\).
+For **three whole** squares in a cap at offset \(h\ge17/80\),
+the top and bottom midpoint-chord labels are wholly in the opposite
+open origin quadrants, for arbitrary independent orientations.
+The proof fixes the smaller offset \(17/80\), uses the improved rational
+disk chord bound \(B<164779/100000\), establishes that all three
+midpoint chords have length at least one, and bounds the *full vertical
+projection* of the extreme square with
+\(\ell-L\ge\sqrt2-R+17/80\). The resulting strict full-square
+ordinate margin is \(11/100000>0\).
+
+This strengthens Type A's high-offset **whole-quadrant owner**
+routing, not its Boolean status count, and does not force the
+sharp five-corner chain. It assumes the already analytically proved
+eight-square lower-radius range \(\sqrt2+1/2<R\); it does **not**
+claim the same \(17/80\) threshold for all arbitrary three-square
+caps without that premise. Earlier stronger-in-scope but
+weaker-in-threshold \(13/60\) results remain valid.
