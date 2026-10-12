@@ -741,3 +741,49 @@ symbolic twelve-status word total 3,995,040**,
 because an eliminated k/offset combination
 need not eliminate its parent separator
 status word for other positions.
+
+
+## 9. Two entire Type C / outer-center macro-cases are eliminated
+
+HUMAN_TYPE_C_FIVE_OUTER_MINIMUM.md proves, for all orientations,
+that the saturated Type C fine-status branch
+
+    RU, R, L, L, U, D, D,
+    with four side counts (2,2,2,2),
+
+has **at least five exterior square centers with norm >=1**.
+Therefore its intersections with the outer-center
+k=3 and k=4 macro-branches in FINITE_PATTERN_TAXONOMY.md
+are **impossible**. These are genuine case exclusions,
+not just a restriction on a continuous center interval.
+
+A compressed hand proof: the corner RU square itself is
+outer, because the 2+2 offset bounds give |a|,|b|<5/24
+and its center components exceed 1+a,1+b>19/24, so
+its norm squared exceeds 2*(19/24)^2>1.
+If a,b<=0, the whole left and lower side pairs have
+offset >=1/2, so all four of their distinct centers
+have norm >=1; with RU this gives five.
+
+If a>=0,b<0, the right and lower pairs similarly
+give four distinct outer centers. The RU corner-cap
+inequality a+b<-1/5 and a>-5/24 imply a<1/120,
+so the two left-side centers lie in a cap of offset
+1/2-a>59/120>2/5. They cannot *both* have norm <1:
+if they did, both would have normal center coordinate
+in [9/10,1), transverse coordinate absolute value
+<sqrt(19)/10, and therefore mutual center distance
+squared <1/100+19/25=77/100<1. This contradicts
+the two unit-square inscribed disks. Hence the L pair
+contributes a fifth distinct outer center.
+The case a<0,b>=0 is the perpendicular reflection.
+The three cases exhaust a+b<-1/5.
+
+The symbolic count of twelve-status words remains
+3,995,040, because k (number of outer center norms)
+was not part of those twelve statuses.
+The **joint status-by-outer-center** case table,
+however, now rejects Type C with k=3 or 4.
+All Type C branches k=5,6,7 remain to be treated,
+as does the real candidate equality branch
+D0/S4. No unrestricted R8>=Rhat proof follows.
