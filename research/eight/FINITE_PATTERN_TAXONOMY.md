@@ -173,6 +173,7 @@ logically necessary filters are:
 | Plus double-status capacity <=1 each | 6,663,440 |
 | Plus no opposite double-status pair | 4,808,720 |
 | Plus double-pair versus opposite 2+2 exclusion | 4,566,800 |
+| Plus triple-side versus opposite double-status exclusion | **3,995,040** |
 
 These are **purely finite assignment counts**,
 not realizable packing counts. A reproducible
@@ -183,15 +184,37 @@ then impose the two forbidden double-pair
 combinations and the four indicated
 double-pair/side-count conjunctions.
 
-This eliminates 3,984,960 of the original
+This eliminates 4,556,720 of the original
 8,551,760 labeled **status assignments**,
-approximately 46.6 percent. Nevertheless
+approximately 53.3 percent. Nevertheless
 all **31 coarse side-count profiles** still
 admit some compatible status assignment,
 so the number 31 must **not** be presented
 as decreased by this refinement. Further
 elimination needs geometry *within* those
 profiles, not merely their side counts.
+
+
+
+**Triple-side upgrade.** Any central side with
+population three has whole-cap offset
+`h<7/24` and makes the opposite side
+offset exceed `17/24`. By the sharp
+perpendicular corner-cap inequality, the
+opposite side can then serve **no**
+square also served by a perpendicular
+central side. This removes 571,760
+additional labeled status assignments
+from the previous total of 4,566,800.
+
+The four exact rejection conditions are:
+`N_R=3 => count(LU)=count(LD)=0`;
+`N_L=3 => count(RU)=count(RD)=0`;
+`N_U=3 => count(RD)=count(LD)=0`;
+`N_D=3 => count(RU)=count(LU)=0`.
+The coarse 31 four-side *count* profiles
+remain untouched, because each retains
+some compatible status assignment.
 
 ## 2. The eight possible opposite-side count profiles
 
