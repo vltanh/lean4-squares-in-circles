@@ -948,3 +948,53 @@ bookkeeping upper bounds; the above geometry
 restricts their *real coordinates* further.
 The exact sharp S4 candidate remains a
 genuine equality branch and is not eliminated.
+
+
+## New 2026-10-12 exact center-count cross-class exclusions
+
+The independent whole-frame
+[HUMAN_SHARP_TWO_INNER_CAP_THRESHOLD.md](HUMAN_SHARP_TWO_INNER_CAP_THRESHOLD.md)
+proves that **two** whole squares whose center norms are
+strictly below one cannot lie together in a nonnegative
+cap of offset \(h\ge(\sqrt3-1)/2\).
+The threshold is sharp already for two axis-parallel squares
+within the search disk; if two such inner centers exist,
+their transverse center-coordinate signs are opposite.
+
+The independent
+[HUMAN_PERPENDICULAR_FOUR_INNER_CAP_BOUND.md](HUMAN_PERPENDICULAR_FOUR_INNER_CAP_BOUND.md)
+adds a strict quarter-circle bound on the two offsets
+for two distinct inner squares per perpendicular whole cap:
+\((h_x+1/2)^2+(h_y+1/2)^2<1\).
+Its low-k consequences include angular-lane descriptions in
+[HUMAN_S1_K3_FOUR_INNER_LANES.md](HUMAN_S1_K3_FOUR_INNER_LANES.md)
+and [HUMAN_S2_K3_INNER_FAN.md](HUMAN_S2_K3_INNER_FAN.md).
+
+**Stronger final result:**
+[HUMAN_FAR_TWO_CAP_FOUR_INNER_EXCLUSION.md](HUMAN_FAR_TWO_CAP_FOUR_INNER_EXCLUSION.md)
+uses the **two outer centers on the far side of a 2+2
+axis** and their rigorous angular separation to
+eliminate the *entire* S2/k=3 and S4/k=3 cases.
+The proof is a forbidden six-square combination,
+not a sampled optimization or a contact-graph assumption.
+
+| Exclusive all-single-side case | Outer count \(k\) still open |
+| --- | --- |
+| S1=(3+0,3+1) | **3,4,5,6** |
+| S2=(3+0,2+2) | **4,5,6** |
+| S3=(3+1,2+1) | **3,4,5,6,7** |
+| S4=(2+1,2+2) | **4,5,6,7** |
+
+The outer count is **separate** from the old
+3,995,040 twelve-status assignment count, which was
+computed without classifying individual center norms.
+It must not be silently decreased by counting these joint
+macro-cell exclusions as rejected twelve-status words.
+The S4/k=7 sharp equality cycle remains valid.
+
+[verify_far_two_cap_angular_margins.py](verify_far_two_cap_angular_margins.py)
+checks the rational sign margins in the new proof, not the
+continuous geometric reasoning itself. No general
+\(R_8\ge\widehat R\) theorem follows from the k=3 cell
+eliminations; outer paths/attachments and surviving D1/D2
+branches still require sharp inequalities.
