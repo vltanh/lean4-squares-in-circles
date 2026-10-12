@@ -309,3 +309,29 @@ free-area bound. Thus the particular seven-square ring
 cannot be extended by an eighth central unit square.
 This is a verified exact spatial obstruction, not a
 universal seven-ring lower bound.
+
+
+## 8. Precise center-norm scope of the ring example
+
+This seven-square ring is an **exterior-square**
+ring, not a ring in which every center has norm
+at least one. The exact squared center norms of
+its two inner-center exterior squares are
+
+    |p0|^2=25561/100000,                 (just over 1/4)
+    |p4|^2=887345141/1275125000<1.
+
+The other five centers have norms strictly
+greater than one, as direct rational squaring
+shows. Both squares 0 and 4 still **avoid the
+origin in their closed sets**, by section 2.
+
+Consequently this ring disproves a radius
+obstruction based solely on **seven exterior
+squares** and their winding contact cycle.
+It does **not** disprove a stronger candidate
+obstruction which assumes all seven exterior
+**center norms** are at least one. Such a
+hypothesis changes the problem, and must
+be kept explicit in any use of
+HUMAN_OUTER_GRAPH_REDUCTION.md.
