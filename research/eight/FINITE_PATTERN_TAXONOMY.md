@@ -562,3 +562,72 @@ and a 3+2 opposite pair is forbidden.
 Thus m=N_R+N_L+N_U+N_D<=3+1+4=8.
 This explains the membership-bin cutoff
 used in the finite count table above.
+
+
+## 2A. The next certified reductions: 3,995,040 fine assignments and eight signed intervals
+
+TRIPLE_DOUBLE_STATUS_PRUNING.md uses the existing
+orientation-free **triple-side vs opposite double-side**
+incompatibility to remove a further **571,760 labeled
+status assignments**. The exact sequence is
+
+    8,551,760  side/corner/opposite-cap filters,
+    6,663,440  plus multiplicity <=1 of each double type,
+    4,808,720  plus no opposite double-corner pair,
+    4,566,800  plus adjacent double-pair vs opposite 2+2,
+    3,995,040  plus triple side forbids opposite double.
+
+The last count has only 1,656 **unlabeled integer
+multiplicity vectors**, versus 2,060 before the last
+filter. Each count is the exact sum of multinomial
+weights 7!/(product m_type!) over twelve-status
+vectors satisfying the stated conditions. This is
+a finite combinatorial reduction, **not** a claim
+that millions of packings remain feasible.
+
+The same note improves the necessary central
+center diagonal condition for any double-side
+status: at q<=9789/2500,
+
+    RU => a+b < -1/5,
+    RD => a-b < -1/5,
+    LU => -a+b < -1/5,
+    LD => -a-b < -1/5.
+
+If two adjacent double statuses share a central
+side at positive offset h, then either
+`h<1/4` or the central center's
+**perpendicular** signed coordinate has
+absolute value <1/29. These bounds follow
+from the exact arbitrary-frame corner-cap
+inequality, with a rational endpoint
+comparison `52709/13456>9789/2500`.
+
+HUMAN_ALL_SIDE_OFFSET_INTERVALS.md further
+shows that **each side's population controls
+its own central-center coordinate**, without
+any frame assumption:
+
+    side count >=1 => t<83/200;
+    side count >=2 => t<5/24;
+    side count  =3 => t< -5/24,
+
+where t is the central-center projection toward
+that signed side. Reflecting gives lower bounds
+from the opposite side. In particular all eight
+opposite-side count types now impose explicit
+open rational intervals for t, ranging from
+`(-1/2,1/2)` for 0+0 to
+`(-83/200,-5/24)` for 3+1 and
+`(-5/24,5/24)` for 2+2.
+
+These **signed interval bounds shrink the
+continuous domains** but do not yet eliminate
+any of the 31 coarse count profiles solely
+on their own. The exact rational three-square
+example in TRIPLE_DOUBLE_STATUS_PRUNING.md shows
+that one corner-only exception and one adjacent
+double-side square *can* coexist at the same
+central corner; removing that status conjunction
+without a full eight-square argument would
+be incorrect.
