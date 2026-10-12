@@ -856,3 +856,66 @@ complete hand proof of
 `R8>=Rhat` is available in this
 ledger; the unrestricted
 n=8 packing optimum remains OPEN.
+
+
+## Boundary contact angular shadow: exact six-member winding obstruction
+
+HUMAN_SIX_BOUNDARY_SHADOW.md proves the following
+entire-orientation hand theorem:
+every unit square **touching** a disk circle with
+
+    R^2 >= 3841/1000
+
+has a complete angular shadow (directions of its
+points as seen from the origin) strictly smaller
+than pi/3. Its proof reduces every square frame
+to the maximum of two explicit angular widths,
+then checks two rational tangent inequalities.
+The difficult left-versus-bottom case reduces
+to positivity of a quadratic
+`62989404409 C^2-794438999000 CS+2524218152409 S^2`;
+the discriminant criterion is the exact positive
+integer identity
+
+    4*62989404409*2524218152409
+      -(794438999000)^2
+      =4862668942395193285124 >0.
+
+No numerical grid or root isolation is used.
+The theorem works for all larger squared radii;
+it does not require contact at a square vertex,
+nor any common square frame.
+
+Consequently, **at squared radius q>=3841/1000**,
+no winding curve around the disk center can be
+supported by at most six *circle-contact*
+exterior squares; a k<=6 exterior winding
+contact cycle must include a square strictly
+inside the containing circle.
+
+**This is conditional on q>=3841/1000.**
+The purely analytical unconditional lower bound
+in HUMAN_ANALYTIC_LOWER_BOUND.md is currently
+`R8>sqrt(2)+1/2`, whose square is strictly
+below 3841/1000. The earlier computed marker
+certificate q>19/5 is also below that threshold
+and is not an allowed hand-proof premise here.
+One may not apply the new angular-shadow
+theorem to a hypothetical smaller-radius
+packing without independently proving
+`q>=3841/1000` or separately handling
+the smaller radius range.
+
+**Crucial limitation:** this does not
+force *two* circle-free squares on a
+seven-square outer ring. Six boundary
+squares have shadow total under 2pi,
+but the seventh (circle-free) square
+could cover the remaining directions.
+The seven-outer full-contact ring is
+already a sharp candidate equality case
+and must not be excluded merely
+by a shadow count.
+
+The unrestricted lower bound
+`R8>=Rhat` remains OPEN.
