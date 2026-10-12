@@ -276,3 +276,193 @@ boundary whenever its right endpoint
 started below that boundary. No such crossing
 is asserted without first checking the
 starting center norm.
+
+
+## 8. The seven outer squares actually form a contact cycle
+
+**Strengthening.** At the negative slider endpoint
+`eta=-(k1-1)/2`, the seven outer squares do not merely
+fit: their **actual-contact graph is the entire
+seven-cycle**
+
+    A--B--T--D--E--H--G--A.                            (9)
+
+Moreover the central square C has actual contacts with
+B and D. Thus the full seven-outer **contact-cycle**
+case is an exact sharp-family realization, not a
+hypothetical branch to exclude at radius Rhat.
+
+It is important to check *actual common points*:
+a tight separating projection does not by itself
+guarantee that the two supporting faces intersect.
+
+The needed extra position facts are already proved
+analytically in HUMAN_FAMILY_CLOSURE.md, Propositions
+3--4, for the unique least-family-radius stationary
+point:
+
+    u>87/100,   v<589/1000,
+    r<16/9,     w<48/25.                              (10)
+
+The same proof above gave `k1<757/500`; also
+`k1>3-r>57/50`.
+
+### 8.1 The five contacts carried by the parallel columns and the tilted pair
+
+The A top and B bottom share the line `y=1-u`.
+Their horizontal projections overlap with positive length,
+because A occupies `[r-1,r]` and B occupies
+`[U-1,U]`, where `0<r-U<1`
+from `r>U`, `r<16/9`, and `U>3/2`.
+Thus **A-B is an actual edge contact**.
+
+The B left and T right sides share the line `x=U-1`.
+The B vertical interval is `[1-u,2-u]`;
+the T interval is `[z_T-1/2,z_T+1/2]`,
+with `z_T=13431/10000`.
+Their interiors overlap along this line because
+`1-u<1<z_T+1/2` and
+`z_T-1/2=8431/10000<1<2-u`.
+Thus B-T is an actual edge contact.
+
+Similarly the T left and D right sides share
+`x=U-2`. The D vertical interval is
+`[1-v,2-v]`, with `1/2<v<3/4`.
+It meets T's vertical interval with positive length:
+`1-v<1/2<z_T+1/2` and
+`z_T-1/2<1<2-v`. Thus T-D is an actual edge contact.
+
+The E top and D bottom meet on `y=1-v`.
+Their horizontal intervals are, respectively,
+`[-w,1-w]` and `[U-3,U-2]`.
+They overlap with positive length because
+`2<U+w<4`: the lower bound follows from
+`U>3/2,w>17/10`, and the upper bound
+from `U<41/24,w<48/25`.
+This proves D-E is an actual edge contact.
+
+The H positive-e side and the G negative-e side
+have the same e coordinate because `e dot(G-H)=1`.
+Their f-coordinate center difference is
+`eta=-d/2`, with `|eta|<1/2<1`.
+Two unit-length side intervals translated by
+less than one overlap with positive length,
+so H-G is an actual edge contact.
+
+### 8.2 The E-H tilted contact: the support vertex stays on its edge
+
+The E support vertex in the negative-f direction is
+
+    z_E=(1-w,-v).
+
+From `k2=1+c*v-s*(w-1)` and
+`f=(-s,c)`, its f coordinate is
+
+    f dot z_E=s*(w-1)-c*v=1-k2.
+
+But H has f-center coordinate `1/2-k2`, so its
+positive-f side lies precisely on that same
+support line. The H side's e interval is
+`[-k1,1-k1]`. We must check that its
+vertex `z_E` has an e coordinate inside.
+
+Indeed, by (3)--(4), (10) and `0<s<1/5`,
+
+    e dot z_E=c*(1-w)-s*v
+      >-(w-1)-s*v
+      >-23/25-589/5000
+      >-57/50 >-k1,
+
+whereas
+
+    e dot z_E <-c*(w-1)
+       <-(49/50)*(7/10)
+       =-343/500
+       <-257/500<1-k1.
+
+Thus `z_E` lies in the **relative interior**
+of H's positive-f supporting side. Hence
+E-H is an actual vertex-to-edge contact.
+
+### 8.3 The G-A tilted contact survives the larger slide
+
+The A support vertex in the negative-e
+direction is
+
+    z_A=(r-1,-u).
+
+It has `e dot z_A=c*(r-1)-s*u=2-k1`,
+which equals G's positive-e support coordinate.
+The G positive-e side has f-coordinate interval
+
+    [1/2-k2-k1/2, 3/2-k2-k1/2].
+
+Let `T_A=f dot z_A-f dot G`, the transverse
+offset from that side's center. Substitution
+of the k2 definition and eta=-d/2 yields
+
+    T_A=1/2-c*(u-v)-s*(r+w-2)+d/2.                (11)
+
+The upper bound uses `u-v>87/100-589/1000
+=281/1000`, `c>49/50`, and
+`d/2<(757/500-1)/2=257/1000`:
+
+    T_A<1/2-(49/50)*(281/1000)+257/1000
+        <1/2.
+
+The lower bound uses `u-v<1/2`,
+`r+w-2<16/9+48/25-2<17/10`,
+`s<1/5`, and `d/2>0`:
+
+    T_A>1/2-1/2-(1/5)*(17/10)
+        =-17/50>-1/2.
+
+Therefore `-1/2<T_A<1/2`. The A support
+vertex lies in the **relative interior**
+of G's positive-e edge. Consequently
+G-A remains an actual contact after the
+macroscopic negative-f slide.
+
+The seven successive pairs in (9) now all
+have proven actual contact points.
+
+### 8.4 Central spokes and exact outer cycle
+
+The central square C occupies the horizontal
+interval `[U-2,U-1]`, meeting B along
+`x=U-1` and D along `x=U-2`.
+Its vertical interval is
+`[z_C-1/2,z_C+1/2]` with `z_C=343/1000`.
+It overlaps both B's interval `[1-u,2-u]`
+and D's interval `[1-v,2-v]` in positive
+length, because `u>87/100`,
+`1/2<v<3/4` and `z_C+1/2=843/1000`.
+Hence **C-B and C-D are actual central contacts**.
+
+All seven noncentral square centers were
+proved outer in sections 4--5. The private-ray
+and outer circular-order theorem in
+HUMAN_OUTER_CENTER_VISIBILITY.md says that
+their induced actual-contact graph is a subgraph
+of a simple seven-cycle. Since the seven
+edges in (9) already form a Hamiltonian
+seven-cycle, they must be the **entire
+outer induced contact graph**, and their
+order agrees with the actual circular center
+order up to reversal.
+
+This directly corrects a previously tempting
+proof strategy: **the full seven-outer
+actual-contact-cycle case cannot be
+excluded at Rhat**, because the exact
+conditional candidate realizes it. The
+sharp global argument must recover the
+five-corner support obstruction *inside
+this contact-cycle case*, with equality
+permitted, as well as cover the centrally
+closed outer-path case.
+
+No unrestricted theorem `R8=Rhat` is
+claimed from this construction: it is
+an equality **candidate** for the
+missing global lower bound.
