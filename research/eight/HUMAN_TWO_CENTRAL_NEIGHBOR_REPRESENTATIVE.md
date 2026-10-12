@@ -281,3 +281,87 @@ five-corner structural reduction.
 
 The unrestricted inequality
 R_8>=R_hat remains OPEN.
+
+
+## 6. Joint connected, two-central-spoke, stress-preserving representative
+
+**Corollary (one consistent representative).** For the
+attained eight-square radius minimum R_8 there is
+a packing P_star of the same radius satisfying
+**all three** structural properties:
+
+1. Its full actual-contact graph is **connected**.
+2. Its unique central square has actual contacts
+   with **at least two distinct** exterior squares.
+3. It carries a normalized physical stress whose
+   nonzero contact forces, nonzero circle multipliers,
+   and original square positions on the
+   minimum-actual-contact representative's
+   unique nontrivial component J are **unchanged**.
+
+**Proof.** Begin with a radius-minimizing
+packing P_min chosen with the fewest actual
+contacting pairs. HUMAN_CONTACT_COMPONENTS.md
+gives one nontrivial actual component J,
+the others isolated; J necessarily contains
+an exterior square.
+
+Apply the **core-preserving exterior rotation**
+procedure of HUMAN_CONNECTED_MAX_CONTACT_REPRESENTATIVE.md,
+section 6. It leaves every member of J
+fixed, rotates only components formed by
+originally isolated exterior labels, and
+attaches all exterior labels into one
+connected actual-contact component
+containing J.
+
+If the central square C originally belonged
+to J, then it already had at least two
+actual neighbors: it is strictly inside
+the containing circle and the
+minimum-contact one-leaf theorem prohibits
+central actual degree one. All squares
+are now connected and the core has not
+moved, so the claim follows.
+
+Otherwise C was originally an isolated
+vertex, and remains isolated after the
+exterior rotations. Keep all seven
+exterior squares in their newly connected
+configuration **fixed**. Apply the
+two-central-neighbor theorem of sections
+1--5 to translate C, with its frame
+unchanged, to a feasible location
+contacting at least two distinct
+members of that exterior component.
+The resulting actual graph is connected.
+
+Every originally isolated label,
+including C in the second case, had
+zero contact and circle multipliers in
+the chosen normalized physical stress.
+All squares in J have literally
+unchanged positions, frames, and
+contacting partners, so retaining the
+old nonzero multipliers and giving all
+new contact pairs weight zero preserves
+the force and moment equilibrium
+equations and their normalization,
+as established in the core-preserving
+saturation theorem. This proves
+all three properties in one packing. QED.
+
+This joint representative is **not**
+asserted to minimize the number of
+actual contact pairs. Neither the
+new central two contacts nor any
+newly attached zero-weight edges may
+be inserted into the minimum-contact
+opposite-normal rigidity theorem.
+
+The sharp lower-bound problem remains:
+even this joint representative does
+not yet force the coherent five-corner
+separator chain or any alternative
+radius obstruction valid for all
+possible square orientations.
