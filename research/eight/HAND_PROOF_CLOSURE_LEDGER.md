@@ -1958,3 +1958,58 @@ S2/k=3 and S4/k=3 entire macro-cell exclusions remain valid.
 S4/k=7 sharp equality, D0 corner-only branches, D1/D2,
 and the unrestricted reverse bound \(R_8\ge\widehat R\)
 are **still OPEN**.
+
+
+## 2026-10-12 continuation: S2 near-inner 2+2 pair forces k=4 and outer-R sign polarization
+
+[HUMAN_S2_NEAR_INNER_OUTER_POLARITY.md](HUMAN_S2_NEAR_INNER_OUTER_POLARITY.md)
+proves a new, **all-frame six-square angular theorem**:
+if two **inner-center** squares lie in a positive U cap,
+two **outer-center** squares occupy its opposite D cap at
+complementary offset \(1-h_U\), with \(7/24<h_U<H_*\),
+then at most **two** additional outer centers can belong
+to any perpendicular positive R whole-square cap.
+
+For exactly two R outer members, let their center-ray
+angles be ordered \(\psi_1<\psi_2\).
+The outer-outer gap, U+ inner/outer mixed gap,
+and exact far-D polar elevation force
+\[
+-\pi/4+17/125<\psi_1<-\pi/18+1/500<0
+\]
+and
+\[
+0<67/500<\psi_2<7\pi/36.
+\]
+Thus they **strictly straddle the outward positive x ray**,
+with quantified open angular margins. A third R outer
+ray cannot fit inside the same narrow interval
+\((-\pi/4+17/125,7\pi/36)\), whose width is
+strictly less than twice the rigorous outer-pair gap
+\(\pi/4-1/500\).
+
+**New exact S2 outer-count consequence:** in exclusive
+S2=(3+0,2+2), with the nearer 2+2 U cap containing
+**two inner centers**, the opposite farther D cap
+already contributes two outer centers.
+The earlier six-square exclusion
+HUMAN_FAR_TWO_CAP_FOUR_INNER_EXCLUSION.md
+rules out *one* outer R member, and the new
+outer-center angle theorem rules out *three*.
+Therefore this entire conditional S2 branch has
+**exactly two outer R centers, one inner R center,
+and k=4**. The S2/k=5 subcase with both near-U
+centers inner is **now impossible**, while
+S2/k=4 with both near-U centers inner remains
+a genuine unresolved continuous cell.
+
+This is not a change to the purely symbolic
+3,995,040 labeled separator-status assignments:
+the new restrictions depend on actual square
+center norms and their polar angular order.
+Do not infer that the two outer R squares are
+whole origin quadrants merely from their
+opposite transverse center signs.
+
+The sharp S4/k=7 equality family and the missing
+global \(R_8\ge\widehat R\) remain **unaffected**.
