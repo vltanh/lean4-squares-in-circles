@@ -584,3 +584,42 @@ inner/outer subcases* have shrunk.
 The real S4/k=7 sharp equality remains
 untouched and unrestricted
 \(R_8\ge\widehat R\) is still OPEN.
+
+
+## 14. High 2+2-cap center norms prune both S2/k4 and S4/k4 near the center
+
+[HUMAN_TWO_OUTER_HIGH_CAP.md](HUMAN_TWO_OUTER_HIGH_CAP.md)
+supplies another new arbitrary-frame cap fact:
+two distinct whole squares in an outward cap
+of offset \(h\ge97/200\), within
+\(R^2\le9789/2500\), **must both have
+outer centers**. It is proved analytically
+from the sharp one-square cap envelope and
+a center-distance contradiction with exact
+margin \(543/200000>0\).
+
+For either exclusive side-status class
+**S2=(3+0,2+2)** or
+**S4=(2+1,2+2)**, let t denote C's
+signed center coordinate along the 2+2 axis.
+If \(|t|\le3/200\), *both* opposite 2+2
+caps have offset at least 97/200, hence
+all four members of that axis have outer
+centers. The perpendicular axis contributes
+at least one **distinct** outer label.
+Thus \(k\ge5\), and the complete
+closed strip \(|t|\le3/200\) is excluded
+from **both S2/k=4 and S4/k=4**:
+\[
+\boxed{\text{S2/k4 or S4/k4}\ \Longrightarrow\
+|t_{2+2}|>3/200.}
+\]
+
+This improves the signed continuous center
+domain but does **not** exclude the full
+k=4 macro-cells or alter the candidate-bearing
+S4/k7 equality case. The current completed
+parent exclusions are S2/k3, S3/k3,
+S4/k3, and S2 with *both nearer-U*
+centers inner. All other listed cells
+still need additional global geometry.
