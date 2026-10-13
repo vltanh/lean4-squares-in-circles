@@ -807,3 +807,59 @@ or impossible. S1 with larger k, other
 S2/S3/S4 classes, D1/D2, and the
 unrestricted sharp lower bound
 \(R_8\ge\widehat R\) remain open.
+
+
+## NEW computer-to-hand 37/100 mixed cap exclusion (2026-10-12)
+
+The numerical exploratory cap-pair optimizer in
+[computer_two_square_cap_probe.py](computer_two_square_cap_probe.py)
+was used only to select an analytic target. Its local
+minimum values are **not** global proof or feasibility
+certificates. The reproducible details and proof
+roadmap are in
+[COMPUTER_ASSISTED_ATTACK_ROADMAP.md](COMPUTER_ASSISTED_ATTACK_ROADMAP.md).
+
+The new **rigorous** exact
+[HUMAN_CAP_ENVELOPE_37_100.md](HUMAN_CAP_ENVELOPE_37_100.md)
+extends the previous one-square arbitrary-frame
+sharp cap center envelope from \(h\ge2/5\)
+to \(h\ge37/100\) at the justified
+search ceiling \(R^2\le9789/2500\).
+Its written proof is a negative-frame
+concavity reduction plus an affine positive-frame
+polynomial check on **four rational parameter
+vertices** (tangent minimum \(553/78125>0\)).
+
+Therefore
+[HUMAN_MIXED_HIGH_CAP_37_100.md](HUMAN_MIXED_HIGH_CAP_37_100.md)
+**eliminates every same-weak-sign center
+mixed inner/outer whole-cap pair** at
+\(h\ge37/100\), for arbitrary square
+orientations, by a strict center-distance
+contradiction
+\[
+|p-q|^2<1989/2000<1.
+\]
+
+For the exclusive S2=(3+0,2+2) **k=4**
+branch, the current necessary geometric
+three-cell queue is:
+A: \(37/100\le h_U<97/200\), opposite signs;
+B: \(7/24<h_U<37/100\), opposite signs;
+C: \(7/24<h_U<37/100\), weak same signs
+(with one whole-quadrant owner and a
+compulsory nontrivial frame defect).
+The entire old C offset strip
+\([37/100,2/5)\) is now impossible.
+
+**Important limitations:** S2/k4 cells
+A, B and C are each still OPEN in
+their residual intervals. The numerical
+conjecture \(R^2\ge(h+1)^2+9/4\)
+for all mixed same-sign pairs at
+\(h\ge7/24\) remains unproved.
+The equality-bearing S4/k7 packing,
+D0 corner-only, D1/D2 and all
+unrestricted \(R_8\ge\widehat R\) tasks
+are unchanged and remain appropriately
+open.
