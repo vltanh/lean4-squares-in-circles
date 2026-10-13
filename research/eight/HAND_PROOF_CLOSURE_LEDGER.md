@@ -2013,3 +2013,59 @@ opposite transverse center signs.
 
 The sharp S4/k=7 equality family and the missing
 global \(R_8\ge\widehat R\) remain **unaffected**.
+
+
+### Stronger conclusion: S2 near-inner k=4 also forces its right triple offset below 1/10
+
+[HUMAN_S2_K4_NEAR_INNER_SMALL_TRIPLE.md](HUMAN_S2_K4_NEAR_INNER_SMALL_TRIPLE.md)
+takes the preceding opposite-sign outer R center-ray lanes
+and includes the **third, inner** member of the R triple.
+When the R triple's outward side offset \(h_R\ge1/10\),
+that inner center must have radius \(r\ge3/5\).
+Every inner-to-outer pair at the actual n=8 radius
+ceiling then has angular separation
+\[
+>631/1000\ {\rm radians},
+\]
+proved by four exact squared-center-distance endpoint
+comparisons, with worst bound \(998731/1000000<1\).
+
+The two successive outer-ray gaps into which the R-inner
+square could fall — from the upper D outer to the lower
+R outer, or between the two R outers — each have total
+width
+\[
+<4\pi/9-17/125
+<9929/7875<2(631/1000).
+\]
+Thus the inner center cannot occupy either gap. Its
+other hypothetical position, above both R outer rays,
+would put it within \(<\pi/3\) of the **positive-x
+inner U** center, contradicting the inner-inner
+unit-distance angular theorem. The inner center cannot
+lie below the uppermost D outer ray because the former
+has x projection at least \(3/5\), whereas the latter
+has a more southerly polar angle than
+\(-\arcsin(4/5)\).
+
+Therefore the full still-unresolved **exclusive S2
+branch with both nearer-U centers inner** now satisfies
+\[
+\boxed{k=4,\quad0<h_R<1/10,}
+\]
+plus the earlier explicit negative/positive
+R-outer ray lanes. The entire \(h_R\ge1/10\)
+continuous subdomain is **newly excluded**.
+This is genuine pruning, **not** elimination of all
+S2/k4 packings and not a change in the purely symbolic
+12-status assignment count.
+
+[verify_s2_k4_small_triple_margins.py](verify_s2_k4_small_triple_margins.py)
+provides an exact-fraction check of the rational
+cosine Taylor and angular-gap inequalities.
+It is an arithmetic audit, not a formal n=8 proof
+or an oracle for continuous feasibility.
+
+The original S4/k=7 exact equality construction
+remains allowed. The unrestricted
+\(R_8\ge\widehat R\) remains OPEN.
