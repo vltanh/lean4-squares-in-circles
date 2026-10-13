@@ -4157,3 +4157,122 @@ and conditional five-corner theorem remain
 the starting point; unrestricted
 \(R_8\ge\widehat R\), global equality
 classification and Lean 4 remain OPEN.
+
+
+## 2026-10-13: GLOBAL directed SAT owner-word pruning beyond local support bounds
+
+**Substantial unconditional-in-topology hand result.**
+[HUMAN_GLOBAL_SAT_OWNER_CYCLE_CONE_EXCLUSION.md](HUMAN_GLOBAL_SAT_OWNER_CYCLE_CONE_EXCLUSION.md)
+uses the ACTUAL squared disk ceiling \(q\le9789/2500\)
+to prove every genuine unit-square center has
+\(|p|<283/200\). For any positive **directed cycle
+of true SAT owner normals** \(n_i\), summing the
+whole-square directed projections gives the
+global center-free necessary inequality
+\[
+\sum_{\rm cycle}(H_i(n_i)+H_{i+1}(n_i))
+<\frac{283}{200}
+\sum_{\rm cycle}|n_{i-1}-n_i|.
+\]
+Every true square support pair has
+half-width sum >=1. Thus a directed three-square
+owner cycle cannot have all normals inside
+one **60-degree** arc, with exact strict
+rational proof margin \(37/1050>0\).
+Any longer directed owner cycle in one
+\(2/3\)-radian cone is also impossible.
+
+**Twelve EXACT rational direction DAGs.**
+[HUMAN_RATIONAL_TWELVE_CONE_OWNER_DAGS.md](HUMAN_RATIONAL_TWELVE_CONE_OWNER_DAGS.md)
+partitions the plane by rational unit rays generated from
+\((1,0),(15/17,8/17),(3/5,4/5)\) under quarter-turns.
+All 12 cone widths are \(<2/3\) rad by an elementary
+rational tangent inequality.
+For every REAL eight-square feasible full SAT owner
+word, each cone's genuine signed directed separator
+graph must be **acyclic**. Important: one pair SAT
+inequality is represented by both
+\(i\to j,n\) and \(j\to i,-n\);
+otherwise the owner DAG screen is vacuous.
+
+The exact
+[verify_rational_fan_sat_owner_word.py](verify_rational_fan_sat_owner_word.py)
+checker uses only rational dot/cross signs.
+It detects a demonstrably impossible rational
+three-square owner cycle while retaining a genuine
+full eight-square rational positive regression.
+[verify_rational_eight_fan_positive_regression.py](verify_rational_eight_fan_positive_regression.py)
+reconstructs the actual eight rational squares
+and checks **all 32 true disk vertices and all
+28 specified true signed owner separators**
+before running the graph screen.
+
+**Stronger CROSS-SECTOR whole owner-word Farkas theorem.**
+[HUMAN_RATIONAL_SECTOR_PROJECTION_FARKAS.md](HUMAN_RATIONAL_SECTOR_PROJECTION_FARKAS.md)
+upgrades every chosen owner in rational sector k
+to an **orientation-independent fixed rational
+center projection**
+\[
+(r_k+r_{k+1})\cdot(p_j-p_i)>289/2700.
+\]
+The derivation only needs the exact 12cone width
+<2/3 and true disk center-radius <283/200.
+Therefore ANY strictly positive rational combination
+of these chosen owner inequalities with exactly
+balanced center-force incidence rejects the
+entire owner word—no actual center variables,
+nonlinear solver or approximation is required.
+
+The most important NEW negative example is
+[global_sat_balanced_sector_farkas_certificate.json](global_sat_balanced_sector_farkas_certificate.json):
+a complete **28-edge signed genuine owner word**
+with eight distinct rational frames which passes
+**every** previous directed 60-degree triangle
+and 12cone DAG screen, but eight of its edges
+admit an EXACT positive integer Farkas balance
+with coefficients 44,51,28 and total 327:
+\[
+0>327(289/2700)=31501/900>35.
+\]
+[verify_rational_sector_farkas.py](verify_rational_sector_farkas.py)
+checks the 28-edge predecessor-screen PASS,
+all selected actual true rational cone memberships
+and all **sixteen exact zero force coordinates**.
+
+[verify_interval_rational_sector_farkas.py](verify_interval_rational_sector_farkas.py)
+and
+[global_sat_balanced_sector_eight_angle_box_certificate.json](global_sat_balanced_sector_eight_angle_box_certificate.json)
+further certify a **nonzero eight-dimensional
+frame half-angle product box** in which those
+eight owner directions stay in their sectors,
+so the same 0>31501/900 contradiction holds
+for **all possible centers and all frame
+angles in the box**. The interval checker
+uses exact outward Fraction operations
+and has positive rational membership margin.
+A second independent global three-square
+owner contradiction is certified on a
+full eight-frame angular box in
+[global_sat_triangle_eight_angle_box_certificate.json](global_sat_triangle_eight_angle_box_certificate.json).
+
+This is a **coherent global owner pruning hierarchy**
+(60° cycle -> twelve rational directional orders ->
+cross-sector Farkas -> full convex center/angle dual),
+NOT a proof that ALL remaining owner words
+have been eliminated. An exploratory 2,000-word
+sample per frame scenario pruned ~97–99%
+of random owner words by the directed triangle
+test, but this is a clearly NONCERTIFYING
+diagnostic, and even one percent of \(8^{28}\)
+would be much too many to enumerate directly.
+
+**Remaining decisive task:** integrate disk marker/central
+ownership to prove a finite exhaustive global cover
+of all eight-angle/28-owner classes using these exact
+filters plus
+[GLOBAL_SAT_ANGLE_FIBER_DUALITY.md](GLOBAL_SAT_ANGLE_FIBER_DUALITY.md).
+No terminating complete cover exists yet.
+Unrestricted \(R_8\ge\widehat R\),
+full equality classification and Lean 4
+formalization remain OPEN. The sharp
+equality-bearing seven-outer ring is preserved.
