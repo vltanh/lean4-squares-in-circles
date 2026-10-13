@@ -2846,3 +2846,71 @@ proves the unrestricted reverse bound
 \(R_8\ge\widehat R\). D0 corner-only,
 D1/D2, contact graph alternatives and
 the eventual Lean handoff remain OPEN.
+
+
+### 2026-10-12: S1/k3 tightened to a uniform h30<1/16
+
+[HUMAN_FIVE_SQUARE_RU_ONE_SIXTEENTH.md](HUMAN_FIVE_SQUARE_RU_ONE_SIXTEENTH.md)
+substantially strengthens the preceding
+R-only five-square theorem:
+the necessary perpendicular U offset
+is now **only \(h_U\ge1/16\)** rather than
+the older \(h_U>17/200\). The three R-cap
+squares still require \(h_R>17/200\),
+two R inner-center labels, and one
+outer R-only label. The two U inner
+labels must be **distinct** from all
+three R members.
+
+The new low-perpendicular-offset proof
+uses \(\arcsin(h_U+1/2)>\!297/500\)
+and a *new* radius-\(>9/16\) inner/outer
+polar gap \(>59/100\) radians. It also
+proves a strengthened \(>779/1000\)
+polar gap whenever the inner center
+radius is \(>9/10\). If the R outer
+ray is negative, exact Taylor and radial
+endpoint comparisons force its R-minus
+inner center to violate the mandatory
+\(p_x>117/200\). If the R outer ray
+is positive, it lies between
+\(311/500\) and \(2392/2625\),
+and the same R-only upper nonmembership
+and positive-y inner R center reserve
+as in the previous full S3/k3 proof
+force squared center separation
+\(<1-969139759/40000000000\).
+
+The exact-fraction script
+[verify_five_square_ru_one_sixteenth.py](verify_five_square_ru_one_sixteenth.py)
+replays the new strict cosine, sine and
+four-corner radial margins, with **all**
+new rational identities checked. It is not
+a computer classifier or Lean formalization.
+
+Consequently, for **exclusive S1=(3+0,3+1)
+with exactly k=3 outer centers**, the far
+singleton on the 3+1 axis implies its
+triple offset \(h_{31}>17/200\). Each
+perpendicular triple has exactly
+two inner and one outer labels, and
+all selected whole-side statuses are
+exclusive. The five-square theorem
+then excludes *every*
+\(h_{30}\ge1/16\). The new exact
+necessary region is therefore
+\[
+\boxed{0<h_{30}<1/16}
+\]
+**uniformly for all permitted \(h_{31}\)**.
+This replaces the earlier weaker
+\(h_{30}\le17/200\) or conditional
+\(h_{30}<1/16\) statements.
+
+The **remaining tiny-offset S1/k3
+continuum remains open**. No claim is
+made that S1/k3 is globally impossible,
+or that the unrestricted
+\(R_8\ge\widehat R\) has been closed.
+The valid S4/k7 sharp equality packing
+remains admitted.
