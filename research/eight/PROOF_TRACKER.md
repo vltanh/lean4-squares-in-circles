@@ -2,6 +2,70 @@
 
 ## Current orientation (2026-10-11)
 
+### CURRENT proof architecture: four stress roots; k7 two-spoke m=7 excluded
+
+[STRUCTURAL_GLOBAL_CLOSURE_ROADMAP.md](STRUCTURAL_GLOBAL_CLOSURE_ROADMAP.md)
+now leads the research. It abandons
+further minor cap-cutoff tuning in
+favor of actual contact geometry,
+positive mechanical stress and the
+*unrestricted global radius*.
+
+The exact
+[HUMAN_GLOBAL_STRESS_ROOTS.md](HUMAN_GLOBAL_STRESS_ROOTS.md)
+reduces every attained minimizer to:
+(A) the **full seven-outer actual-contact
+ring**, genuinely realized at equality;
+(B2) central positive stress degree two;
+(B3) central positive stress degree >=3;
+or (X) an exterior positive-moment
+cycle of 5..7 squares containing a
+**noncentral, strictly circle-free
+inner-center witness**.
+
+Within k=7/B2 and **outer actual paths**,
+[HUMAN_SEVEN_OUTER_STRESS_CYCLE_NORMAL_FORM.md](HUMAN_SEVEN_OUTER_STRESS_CYCLE_NORMAL_FORM.md)
+proves that the entire positive stress
+graph is a single cycle
+C-S1-...-Sm-C, m=3..7, with no
+positive outer tails; its angular
+order is consecutive among all seven
+outer square centers. Exact graph
+enumeration returns 35 labeled
+supports before applying further geometry.
+
+**Major completed macro-case exclusion:**
+[HUMAN_OPPOSITE_CENTRAL_NEIGHBOR_ANGLE.md](HUMAN_OPPOSITE_CENTRAL_NEIGHBOR_ANGLE.md)
+proves opposite supporting contacts
+across C force the neighbor-center
+angle **>\(\pi/2+1/13\)**.
+[HUMAN_SEVEN_OUTER_PATH_M7_EXCLUDED.md](HUMAN_SEVEN_OUTER_PATH_M7_EXCLUDED.md)
+then proves **m=7 is impossible** in
+this k7/B2 actual-path root, since
+the six actual successive outer
+contacts require missing angle
+**<\(\pi/2+3/250\)**.
+The exact incompatibility margin is
+\(211/3250>0\).
+Only **m=3,4,5,6** remain in this
+particular root, 28 labeled graph
+supports before continuous pruning.
+
+The candidate's real **full outer
+actual-contact seven-cycle** belongs
+to separate root A, and is not rejected.
+Outer spectators, zero-weight actual
+contacts and all square frames remain
+part of the global model.
+
+This is a genuine *structural proof
+step*, not just a smaller real-valued
+cap parameter. **It does not yet
+establish \(R_8\ge\widehat R\)** or
+classify all equality cases.
+Lean formalization has not begun.
+
+
 ### CURRENT computer-assisted proof frontier: 79/250 (2026-10-12)
 
 **Supersedes the older 37/100, 1/3, and 8/25
