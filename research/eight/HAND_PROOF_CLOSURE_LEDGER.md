@@ -3614,3 +3614,147 @@ S4/k7 equality construction is
 preserved. Unrestricted optimality,
 equality classification and Lean 4
 formalization remain OPEN.
+
+
+### Major global graph collapse: 364 spectator-edge supertemplates impossible; pure B2 spectators isolated
+
+A stronger, **complete actual-contact theorem**
+now supersedes the broad 392-supertemplate
+enumeration in the **k7/B2
+central-*actual*-degree-two** root:
+[HUMAN_B2_PURE_CENTRAL_CONTACT_ISOLATES_SPECTATORS.md](HUMAN_B2_PURE_CENTRAL_CONTACT_ISOLATES_SPECTATORS.md).
+
+The positive stressed outer path
+\(S_1-\cdots-S_m\), m=3..6,
+has 7−m spectators on its
+complementary seven-ray angular arc.
+Every possible extra actual outer
+contact belongs to that complementary
+spectator path. Since the outer actual
+graph is not the full seven-cycle,
+a nonempty proper set of such extra
+edges must contain a **terminal
+spectator of actual contact degree one**.
+But with C touching *only* its two
+positive stressed endpoints, this
+terminal spectator has a
+**noncentral sole neighbor**,
+contradicting the exact
+HUMAN_STRESS_GRAPH.md
+minimum-contact leaf theorem.
+
+Therefore **no extra spectator
+edges whatsoever can occur**.
+The complete actual contact graph
+must be precisely
+\(C-S_1-\cdots-S_m-C\)
+plus **7−m actually isolated
+outer square labels**.
+The exact graph audit
+[verify_B2_isolated_spectators.py](verify_B2_isolated_spectators.py)
+checks all 392 formerly
+graph-permissible supertemplates:
+**364 contain forbidden extra
+spectator edges**, leaving
+**seven bare graph supports per
+m**, or 28 complete
+actual-contact templates
+for m=3,4,5,6.
+
+Both stressed endpoints then have
+**exactly two actual neighbors**
+(C and one path neighbor).
+Since C is a circle-free actual-
+degree-two transmitter, neither
+endpoint can also be a circle-free
+degree-two transmitter. Thus
+**both stressed endpoints have
+true disk-circle vertices**.
+
+The internal circle-or-C-chord
+vertex-cover theorem has no C
+chords in this pure Cactual2
+root. It therefore forces
+minimum numbers of **distinct
+stressed outer circle-contact
+square labels**:
+
+| m | 3 | 4 | 5 | 6 |
+| --- | ---: | ---: | ---: | ---: |
+| Minimum true circle-contact path labels | **2** | **3** | **3** | **4** |
+
+This **supersedes** the older
+m6/P conclusion "at least three"
+boundary outer squares with a
+stronger **at least four**.
+
+A further exact
+[HUMAN_ISOLATED_OUTER_CIRCLE_FREE_NORMALIZATION.md](HUMAN_ISOLATED_OUTER_CIRCLE_FREE_NORMALIZATION.md)
+shows any actually isolated outer
+square can be translated a tiny
+distance **radially inward** until
+all its true vertices have strict
+disk clearance, while preserving
+its outer center class,
+all actual square contacts and
+the attained global minimum
+radius. Indeed for a square
+center of norm r>=1 and
+true vertex \(z=p+v\),
+\[
+(p/r)\cdot z\ge r-1/\sqrt2>0,
+\]
+so every true vertex squared
+radius strictly decreases.
+A center at r=1 was already
+strictly circle-free because
+\(1+1/\sqrt2<R\).
+Consequently in the pure
+Cactual2 root there is an
+equally contact-minimal
+representative with **all
+spectators both actually
+isolated and circle-free**.
+They remain *real* unit squares
+and cannot be discarded from
+the eight-square packing bound.
+
+**Root-wide m6 spectator classification:**
+[HUMAN_M6_SPECTATOR_CONTACT_TRICHOTOMY.md](HUMAN_M6_SPECTATOR_CONTACT_TRICHOTOMY.md)
+proves that the unique spectator T
+in *any* k7/B2/m6 root,
+irrespective of central actual degree,
+is exactly one of:
+(I) actually isolated;
+(L) a C-only actual leaf,
+radial/C-parallel and with two
+true circle vertices;
+or (\(\triangle\)) a true
+C-T-S1-C or C-T-S6-C
+contact triangle, with T also
+circle-contacting. An outer-only
+T leaf would contradict the
+actual-leaf theorem; touching
+both endpoints would close the
+excluded full outer ring.
+The exact 3-bit graph check
+has four labelled surviving
+incidence words out of eight.
+
+This is **genuine global structural
+progress beyond small cap constants**.
+It does not yet prove the sharp
+unrestricted lower bound
+\(R_8\ge\widehat R\).
+The next hand obstruction must
+account for **all isolated spectators**
+and prove the candidate radius
+from the now much cleaner
+circle-anchored stressed core,
+or from the braced zero-contact
+chord and spectator-triangle
+alternatives. The valid S4/k7
+full actual outer contact ring
+remains deliberately admitted;
+equality classification and
+Lean formalization remain OPEN.
