@@ -1330,3 +1330,65 @@ D0 corner-only, D1/D2 and all
 unrestricted \(R_8\ge\widehat R\) tasks
 are unchanged and remain appropriately
 open.
+
+
+## 21. Latest exact computer-to-hand mixed cap sign rejection (h>=79/250)
+
+**This supersedes the older 37/100, 1/3, and
+8/25 same-sign mixed-cap cutoff rows above.**
+The stronger
+[HUMAN_CAP_ENVELOPE_79_250.md](HUMAN_CAP_ENVELOPE_79_250.md)
+proves the previously known sharp aligned-square
+one-cap center envelope for **every frame**
+as far down as offset \(h\ge79/250\),
+under the actual disk squared-radius
+ceiling \(9789/2500\). Its noncircular
+center-height proof uses actual true
+vertices and an **exact 63-coefficient
+Bernstein positivity certificate**.
+
+The consequent
+[HUMAN_MIXED_HIGH_CAP_79_250.md](HUMAN_MIXED_HIGH_CAP_79_250.md)
+excludes **every** mixed inner/outer
+two-square cap at \(h\ge79/250\)
+with nonnegative transverse center-sign
+product. The tight hand inequality for
+the false same-sign assumption is
+\[
+|p-q|^2<999361/1000000<1
+\]
+with strict reserve \(639/1000000\).
+No rotated-frame, SAT-owner, circle-contact
+or numerical optimization premise is used.
+
+Thus exclusive S2/k4's actual current
+signed-offset cells are:
+
+| Cell | Near-U h | Center sign pattern | Status |
+| --- | --- | --- | --- |
+| A | \(79/250\le h<97/200\) | Strict opposite | Open |
+| B | \(7/24<h<79/250\) | Strict opposite | Open |
+| C | \(7/24<h<79/250\) | Weak same; strict center/quadrant/frame restrictions | Open |
+
+The old same-sign interval
+\([79/250,37/100)\) is **entirely excluded**.
+The remaining C interval is \(73/3000\) wide.
+
+**The one-square theorem cannot be arbitrarily
+extended below this range.**
+[RATIONAL_ROTATED_CAP_ENVELOPE_THREE_TENTHS.md](RATIONAL_ROTATED_CAP_ENVELOPE_THREE_TENTHS.md)
+contains an actual rational-frame unit
+square at h=3/10 under the ceiling,
+**violating the aligned one-square envelope**.
+It has only one outer-center square, not a
+mixed inner/outer pair, so the corresponding
+two-square conjecture remains OPEN.
+
+The next proof route is explicitly described
+in [COMPUTER_ASSISTED_ATTACK_ROADMAP.md](COMPUTER_ASSISTED_ATTACK_ROADMAP.md):
+use actual SAT-owned square support directions
+or a full far-D/right-R interaction,
+not a center-only approximation.
+The true S4/k7 candidate equality branch
+must be preserved and the unrestricted
+\(R_8\ge\widehat R\) remains OPEN.
