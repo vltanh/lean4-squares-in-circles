@@ -120,3 +120,59 @@ The sharp unrestricted \(R_8\ge\widehat R\) theorem
 and S2/k4 remain OPEN. The point of this exact
 counterexample is to prevent an invalid promotion of
 center-disk feasibility to square-packing feasibility.
+
+
+## Important audit: the witness fails an already proved outer-angle theorem
+
+The center-only list (1)--(5) above **does not include**
+the stronger, already hand-proved two-outer-center angular
+separation \(>\pi/4-1/500\) at the n=8 disk ceiling.
+Consequently this exact center witness **does not** satisfy
+all previously known necessary packing constraints.
+It cannot serve as evidence that the full S2/k4 near-inner
+configuration is geometrically realizable.
+
+Indeed take the printed rational center vectors
+\(R1=(1.11097,-0.87476)\),
+\(D2=(0.25226,-1.39134)\), both marked outer.
+They have strictly positive dot product and exact
+smaller-angle tangent
+\[
+\tan\angle(R1,D2)
+=\frac{|\det(R1,D2)|}{R1\cdot D2}
+=\frac{6625350211}{7486709353}<\frac9{10}.
+\]
+The outer pair \(D1,D2\) independently has
+\[
+\tan\angle(D1,D2)
+=\frac{3312677524}{3743346721}<\frac9{10}.
+\]
+But \(\tan(1/500)<1/250\) gives
+\[
+\tan(\pi/4-1/500)
+=\frac{1-\tan(1/500)}{1+\tan(1/500)}
+>\frac{249}{251}>\frac9{10}.
+\]
+Since all compared acute angles lie in \((0,\pi/2)\),
+**both** rational pairs have angular separation
+strictly **less** than \(\pi/4-1/500\).
+Thus the witness violates
+HUMAN_STABLE_OUTER_ANGLE.md (which legitimately
+uses full square geometry in proving its center-angle
+inequality). This is a **failure of the witness under
+stronger necessary conditions**, not a counterexample
+to the valid outer-angle theorem.
+
+The logical conclusion is deliberately limited:
+the original *five weak center-only tests* are
+insufficient to reject this S2/k4 pattern. It remains
+possible that **stronger analytically derived
+center-ray inequalities alone**, together with
+the cap projections, could exclude this branch.
+We do **not** assert here that introducing new
+square-frame variables is logically necessary.
+
+The new explicit all-frame S2 restrictions in
+HUMAN_S2_K4_NEAR_INNER_FIVE_HUNDREDTHS.md and
+HUMAN_S2_K4_TRANSVERSE_CENTER_ANCHORS.md remain
+independent and fully compatible with this correction.
