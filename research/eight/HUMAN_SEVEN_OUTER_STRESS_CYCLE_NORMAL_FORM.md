@@ -427,3 +427,65 @@ The legitimate full seven-outer
 actual-contact equality ring
 remains outside the outer-path
 hypotheses and is preserved.
+
+
+## New positive circle-multiplier vertex cover (not merely actual circle contacts)
+
+[HUMAN_STRESS_CYCLE_POSITIVE_CIRCLE_COVER.md](HUMAN_STRESS_CYCLE_POSITIVE_CIRCLE_COVER.md)
+proves a stronger **force-level** invariant
+for *every* simple positive physical-stress
+cycle at containing radius **R<2**:
+no two consecutive cycle squares can both
+have zero total **circle multiplier**
+\(m_i=\sum_\alpha\mu_{i,\alpha}\).
+If two adjacent vertices were force-free,
+their force equations would propagate a
+common directed positive contact normal
+across **three successive actual contacts**.
+The four genuinely distinct unit squares
+then have total projection width at least
+4 in that common direction, impossible
+inside disk projection diameter \(2R<4\).
+This uses **actual square support
+widths**, not local cap inequalities.
+
+Since C has zero circle multiplier
+and is a member of the C-rooted
+positive cycle, **both stressed
+outer endpoints S1,Sm carry
+positive circle multipliers**.
+Among the m−2 internal stressed
+square labels, the positive-multiplier
+indices cover every internal path edge.
+Therefore **at least**
+\[
+2+\lfloor(m-2)/2\rfloor
+\]
+distinct stressed outer labels
+have **genuinely positive** disk-circle
+vertex multipliers. The lower counts
+are **2,3,3,4** for m=3,4,5,6.
+
+Unlike the older actual
+circle-or-central-chord vertex-cover,
+this **holds with any number of
+additional zero-weight actual C chords**,
+including the full m6 S/K and
+diagonally braced modes. In m6
+the path always has **at least four
+positive circle-multiplier outer labels**.
+If T is a spectator spoke or
+triangle, T is also a **distinct
+true circle-contact square** with
+zero positive circle multiplier,
+giving **at least five exterior
+true circle-contact squares**.
+
+The independent exact 0/1 graph audit
+[verify_stress_cycle_positive_circle_cover.py](verify_stress_cycle_positive_circle_cover.py)
+checks all minimum multiplier-support
+patterns. The proof is the physical
+force equation and width-four
+obstruction; not a numerical stress
+optimizer or an assumption about
+arbitrary minimizer contact degrees.
