@@ -1,6 +1,93 @@
 # Structural closure roadmap: stop narrowing cap constants, finish the global four roots
 
 
+## NEWEST force-level cycle invariant and completed m3 structural subcase
+
+**Sharper than true disk contact geometry:**
+[HUMAN_STRESS_CYCLE_POSITIVE_CIRCLE_COVER.md](HUMAN_STRESS_CYCLE_POSITIVE_CIRCLE_COVER.md)
+proves a universal simple-positive-stress-cycle
+theorem at R<2: **no two consecutive
+cycle squares can both have zero physical
+circle-vertex multiplier**.
+Otherwise contact-force equilibrium
+propagates three equal genuine
+separating normals along four
+distinct unit squares, which would
+have projected width >=4 in
+a disk of diameter 2R<4.
+
+Thus the genuinely **positive
+circle-multiplier square labels
+cover the full stress cycle**.
+For C-rooted cycle
+C-S1-...-Sm-C with C's circle
+multipliers zero, **both endpoints
+S1 and Sm must have positive
+circle weights**, and the internal
+m−2 labels carry enough positive
+weights to cover their path edges.
+The minimal number of stressed
+outer labels with *positive*
+circle multipliers is
+\[
+\boxed{m=3:\ 2,\quad m=4:\ 3,\quad
+m=5:\ 3,\quad m=6:\ 4.}
+\]
+This holds for **every B2
+actual-central-contact mode**, even
+if actual zero-stress internal C
+chords are present. For m6 with
+a spectator C leaf or triangle,
+the spectator is an *additional*
+distinct true circle-contact square,
+so there are >=**five different
+exterior circle-contact labels**.
+An exact 0/1 stress-support audit
+lists three minimal four-positive
+m6 patterns, all including endpoints
+S1 and S6.
+
+**One more complete m3 subcase eliminated:**
+[HUMAN_B2_M3_PARALLEL_SCAFFOLD_EXCLUDED.md](HUMAN_B2_M3_PARALLEL_SCAFFOLD_EXCLUDED.md)
+combines those positive endpoint
+circle weights with the previously
+proved genuine four-parallel-square
+scaffold forced if the sole
+internal S2 is circle-free.
+The two outer endpoint forces
+are then horizontal and nonzero;
+their positive circle reactions
+force their transverse center
+coordinates to zero, and the
+two true disk-circle vertex
+equations force
+\(R^2=5/2\), impossible because
+eight disjoint unit squares require
+\(R^2\ge8/\pi>28/11>5/2\).
+
+Hence the **entire pure-central-contact
+m3 circle-free internal-scaffold
+alternative is IMPOSSIBLE**.
+In any surviving pure C-degree-two
+m3 path, **all three** positive
+path square labels actually
+touch the circle. The candidate
+equality-bearing full seven-outer
+ring remains a separate valid root.
+
+**Next actual global proof goal:**
+Use these *positive physical
+circle-force anchors* (not just
+geometric disk contacts) to constrain
+the force polygons and true vertex
+locations of m6 P/S/K paths with
+their real spectators, then the
+remaining m3/m4/m5 cases.
+The global \(R_8\ge\widehat R\)
+is still OPEN.
+
+---
+
 ## NEWEST complete actual-contact collapse: bare stress cycle plus isolated, circle-free spectators
 
 **This is the strongest newly proved global contact-graph
