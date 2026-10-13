@@ -4036,3 +4036,124 @@ case, CS/SD braced complete spectator paths,
 other actual C-contact-degree variants,
 B2 m4..6, all other global roots and the real
 S4/k7 equality ring remain open.
+
+
+## 2026-10-13 exact all-eight SAT/angle convex fiber theorem and first genuine interval certificate
+
+This is a **global parameter reduction**, not another
+local cap threshold, and also not a complete
+proof of \(R_8\ge\widehat R\).
+
+[GLOBAL_SAT_ANGLE_FIBER_DUALITY.md](GLOBAL_SAT_ANGLE_FIBER_DUALITY.md)
+proves the following with **all eight true square frames
+independent** and all 28 genuine square-pair
+nonoverlap requirements:
+
+* Fix the eight true frame orientations and
+  one of eight signed legitimate owner side
+  normals for each square pair. The entire
+  center/radius optimization has **only convex
+  squared-vertex epigraph inequalities and
+  affine true SAT separators**. It is
+  equivalently one exact SOCP, no nonconvex
+  center search remains.
+* A feasible owner fiber is strictly feasible
+  after scaling the centers radially outward,
+  without changing unit-square frames, and
+  increasing q; Slater strong duality holds.
+* For nonnegative vertex weights \(\mu\)
+  summing to 1, nonnegative genuine directed
+  support weights \(\lambda\), and per-square
+  \(m_i=\sum\mu,\ a_i=\sum\mu o_{i,\epsilon}\),
+  \(c_i=\sum_{\rm out}\lambda n-\sum_{\rm in}\lambda n\),
+  the exact universal center-free lower bound is
+  \[
+  q\ge\frac12+
+     \sum_e\lambda_e(H_i(n_e)+H_j(n_e))-
+     \sum_{i:m_i>0}
+       \frac{|2a_i+c_i|^2}{4m_i},
+  \]
+  with \(c_i=0\) required when \(m_i=0\).
+  Maximizing this dual exactly recovers the
+  center-fiber optimum.
+* Therefore the complete unrestricted n8 problem
+  is **equivalent to a finite SAT-owner disjunction
+  plus eight continuous frame angles**.
+  The potentially \(8^{28}\) raw owner words
+  are far too many to declare solved:
+  no marker-driven complete pruning/angle-box
+  cover has been constructed.
+
+**Complete exact rational boundary example.**
+[HUMAN_SEVEN_PARALLEL_EXACT_DUAL.md](HUMAN_SEVEN_PARALLEL_EXACT_DUAL.md)
+provides a true nonnegative contact/vertex
+SOS identity for all seven-square center
+positions in the fixed zero-tilt
+directed support class. It proves
+\(q\ge q_0=2257/576>\widehat q\),
+with rational weights
+\(\mu_A=\mu_B=31/144\),
+\(\mu_D=\mu_H=41/144\),
+\(\lambda_{AB}=31/72\),
+four horizontal \(\lambda=1271/1728\),
+two vertical \(\lambda=41/48\).
+The **entire arbitrary-center polynomial identity**
+and genuine seven-square attaining packing
+(all 21 pair SAT separations and 28 disk vertices)
+were checked using exact SymPy/Fraction arithmetic
+in
+[verify_seven_parallel_exact_dual.py](verify_seven_parallel_exact_dual.py).
+
+**The first sound nonzero angular interval certificate.**
+The exact Fraction checker
+[verify_interval_angle_fiber_dual.py](verify_interval_angle_fiber_dual.py)
+evaluates the true SAT-owner directions,
+true frame half-widths, and dual denominator
+with outward exact rational interval bounds,
+without numerical sampling.
+[seven_parallel_positive_angle_box_certificate.json](seven_parallel_positive_angle_box_certificate.json)
+is a complete **one-cell** certificate for
+all seven frame half-angle tangents
+\[
+z_i=\tan(\theta_i/2)\in
+[-1/15000,1/15000]
+\]
+simultaneously, with **arbitrary center positions**
+and the seven specified actual owner directions:
+\[
+\boxed{q\ge3.915747909432255\ldots
+>3.915535>\widehat q.}
+\]
+It has positive circle weights on all seven
+square labels, so no unanchored varying-direction
+force balance is assumed. This is a genuine
+**positive-volume angle box**, rigorously
+verified by exact Fraction arithmetic,
+but **only one SAT owner pattern**, not an
+exhaustive global certificate.
+
+The separately committed
+[computer_seven_angle_fiber_oracle.py](computer_seven_angle_fiber_oracle.py)
+explores seven fixed-directed-support fibers
+numerically using analytic convex gradients,
+and is clearly marked **NONCERTIFYING**.
+An independent 3456-evaluation eight-angular
+differential-evolution scan failed to find
+a below-candidate fiber, which is
+**not proof** of a universal inequality
+and does not include the remaining eighth square
+or all 28 SAT disjunctions.
+
+**Remaining decisive global obstruction:**
+a sound disk-native geometry/marker theorem
+must reduce true owner cases drastically,
+followed by a **finite terminating angle-box
+dual/interval cover** of every remaining
+outside-local pose class (or a different
+global sharp inequality). As of this note
+no such cover exists. Local all-orientation
+sharpness, the explicit construction,
+and conditional five-corner theorem remain
+the starting point; unrestricted
+\(R_8\ge\widehat R\), global equality
+classification and Lean 4 remain OPEN.
