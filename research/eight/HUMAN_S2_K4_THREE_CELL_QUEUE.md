@@ -1,5 +1,38 @@
 # Exact three-cell continuous queue for the surviving exclusive S2/k=4 branch
 
+
+## CURRENT case split after computer-to-hand envelope extension
+
+**This section supersedes the earlier A/B/C offset table
+farther below; older thresholds are retained as historical
+intermediate restrictions.**
+
+The proved [HUMAN_CAP_ENVELOPE_37_100.md](HUMAN_CAP_ENVELOPE_37_100.md)
+extends the sharp single-square arbitrary-frame cap
+envelope to \(h\ge37/100\) at \(q\le9789/2500\).
+The resulting exact mixed-inner/outer
+[HUMAN_MIXED_HIGH_CAP_37_100.md](HUMAN_MIXED_HIGH_CAP_37_100.md)
+excludes **all same-weak-sign** near-U center pairs
+for \(h_U\ge37/100\), with strict center-distance
+upper bound \(1989/2000<1\).
+
+Thus the *current* exhaustive necessary S2/k4
+three-cell partition is:
+
+| Cell | Exact near-U offset | Inner/outer U transverse center signs |
+| --- | --- | --- |
+| **A** | \(37/100\le h_U<97/200\) | Strictly opposite |
+| **B** | \(7/24<h_U<37/100\) | Strictly opposite |
+| **C** | \(7/24<h_U<37/100\) | Nonnegative sign product; inner \(|x|<1/4\), outer \(|x|>7/10\); a genuine whole-quadrant outer U member; at least one frame tilt \(>1/2600\) |
+
+This is *strictly smaller* than the previous
+same-sign interval up to \(2/5\).
+**None of A/B/C is proved impossible as a whole.**
+The local numerical experiment and exact
+proof conversion are recorded in
+[COMPUTER_ASSISTED_ATTACK_ROADMAP.md](COMPUTER_ASSISTED_ATTACK_ROADMAP.md).
+
+
 Research continuation, 2026-10-12. This is an
 **exhaustive combination of established necessary
 hand theorems**, not a claim that any listed
