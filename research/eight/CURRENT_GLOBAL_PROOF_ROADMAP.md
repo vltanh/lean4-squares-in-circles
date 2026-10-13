@@ -1,3 +1,74 @@
+
+## NEW direct progress on global SAT-owner pruning: exact owner CYCLES and FARKAS boxes
+
+This is the latest current milestone and a **sound full-eight-square
+structural exclusion**, rather than a small cap-constant
+improvement. Detailed proofs in
+[HUMAN_GLOBAL_SAT_OWNER_CYCLE_CONE_EXCLUSION.md](HUMAN_GLOBAL_SAT_OWNER_CYCLE_CONE_EXCLUSION.md),
+[HUMAN_RATIONAL_TWELVE_CONE_OWNER_DAGS.md](HUMAN_RATIONAL_TWELVE_CONE_OWNER_DAGS.md)
+and
+[HUMAN_RATIONAL_SECTOR_PROJECTION_FARKAS.md](HUMAN_RATIONAL_SECTOR_PROJECTION_FARKAS.md).
+
+**Every complete genuine 28-pair SAT-owner word
+must now satisfy:**
+
+* No directed three-edge owner cycle with all
+  actual signed side-normal directions in one
+  arc of width ≤π/3.
+* No directed owner cycle of any length in
+  each of twelve **fixed rational cones**
+  narrower than 2/3 radians. The corresponding
+  twelve owner graphs each have a common
+  **rational projected center ordering**.
+* Every oriented owner edge in rational sector k
+  forces the true-center projection
+  \[
+  (r_k+r_{k+1})\cdot(p_j-p_i)>289/2700.
+  \]
+  Hence **any positive exact cross-sector
+  Farkas balance on these fixed rational
+  direction vectors rejects the entire
+  owner word**, without frame/center
+  numerical optimization.
+
+**Complete exact checked example, stronger
+than the former cone DAG rules:** a rational
+eight-frame owner word with all 28 chosen
+pair SAT directions passes the former
+60-degree and twelve-DAG tests, yet
+8 owner edges with strictly positive
+integer coefficients **44,51,28**
+cancel all sixteen center coordinate
+coefficients, giving the impossible
+\(0>31501/900>35\).
+[verify_rational_sector_farkas.py](verify_rational_sector_farkas.py)
+checks the exact rational owner angles,
+sector membership, positive weights and
+zero force result. A second certificate
+[global_sat_balanced_sector_eight_angle_box_certificate.json](global_sat_balanced_sector_eight_angle_box_certificate.json)
+extends this contradiction to an entire
+strictly positive-width **eight-dimensional
+orientation product box**, verified by
+[verify_interval_rational_sector_farkas.py](verify_interval_rational_sector_farkas.py)
+with outward exact Fraction interval bounds.
+The all-eight-angle 60-degree triangle box
+is separately certified.
+
+**ONE remaining exit gate:** integrate the new
+cheap *center-free* owner rejections with
+[GLOBAL_SAT_ANGLE_FIBER_DUALITY.md](GLOBAL_SAT_ANGLE_FIBER_DUALITY.md)
+and the exterior-marker/central-packing facts
+in a sound FINITE EXHAUSTIVE eight-angle/owner
+cover. Surviving owner words must be discharged
+by exact dual inequalities or other global
+whole-square geometry. The current checkers
+certify individual classes and boxes only,
+NOT the entire union; unrestricted global
+sharpness and equality classification
+remain OPEN.
+
+---
+
 # LATEST DECISION GATE — exact all-eight SAT owner/angle fibers
 
 **Status: proven global DIMENSION REDUCTION and first exact
