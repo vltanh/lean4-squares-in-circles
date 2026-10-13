@@ -16,15 +16,17 @@ lemma or one rejected box does not pass a gate about an entire domain.
 | 1 | Exact exhaustive seven-angle actual-square domain | PASSED |
 | 2 | Complete sparse center-fiber alternatives | PASSED |
 | 3A | First owner-complete structural reduction | PASSED |
-| 3B | Explicit classification of surviving joint order/owner families | ACTIVE / OPEN |
-| 3C | Exhaustiveness and usability of the survivor list | WAITING |
+| 3B.1 | Exhaustive four-branch frame-majority cover | PASSED |
+| 3B.2 | Joint owner-family classification, starting with M5 | ACTIVE / OPEN |
+| 3C | Exhaustiveness and usability of the final survivor list | WAITING |
 | 4 | Sharp bounds over every surviving continuous family | WAITING |
 | 5 | Assemble unrestricted optimality | WAITING |
 | 6 | Global equality and later formalization handoff | WAITING |
 
 **The unrestricted lower bound R_8>=R_* is NOT proved.** Gates 1 and 2
-close representation/certificate foundations. Gate 3A is a global
-necessary structural reduction, not a classification of all survivors.
+close representation/certificate foundations. Gate 3A gives a global
+necessary structural reduction. Gate 3B.1 covers all packings by four
+macrobranches; it does not classify their internal owner families.
 
 ## Target and audited baseline
 
@@ -42,12 +44,10 @@ Do not replace q_* by a rounded decimal or by the larger research ceiling
 The dependency review found an exact construction, a sharp conditional
 family theorem, a genuine **local pose** theorem with independently
 varying frames, and exact convex fixed-angle/owner center fibers. Earlier
-owner-cycle/Farkas boxes were valid individual exclusions, not an
-exhaustive union. Exact contacts or parallel frames may not be assumed
-for arbitrary near-sharp packings.
-
-This review is not a claim that every older file has been independently
-rechecked or that any unrestricted eight-square theorem is formalized.
+owner-cycle/Farkas boxes were individual exclusions, not an exhaustive
+union. Exact contacts or parallel frames may not be assumed for arbitrary
+near-sharp packings. This review does not claim that every older file has
+been independently rechecked or that any unrestricted theorem is formalized.
 
 ## Gate 1 — One exact exhaustive domain: PASSED
 
@@ -64,11 +64,6 @@ have explicit integer-coefficient polynomial forms with positive
 cleared denominators. The proof covers both directions of representation,
 frame ties, quarter-turn duplicates, separator tangencies, and compact
 attainment below the fixed research ceiling.
-
-`verify_ordered_rational_gate.py` was run locally: 3,672 exact signed SAT
-residual identities, vertex identities, tangencies, and an eight-frame
-normalization regression. These audit the formulas; the full-domain
-proof is the written argument.
 
 This gate does not reduce the raw owner count or prove a radius bound.
 
@@ -127,55 +122,81 @@ acyclic and, throughout R^2<=9789/2500<4, has no six-edge directed path.
 Cross-order positive force balances reject entire coarse order families,
 not isolated orientation boxes.
 
-`verify_gated_fiber_and_canonical_owner.py` was run locally. It audits
-regularization, the zero-anchor guard, 11,696 exact canonical-cone
-instances, a noncanonical negative control, and all 32 vertices and 28
-pairs for both the existing rational reference packing and its strictly
-separated eight-distinct-frame perturbation. Both are retained.
+### Gate 3B.1 — four exhaustive frame-majority branches: PASSED
 
-The theorem preserves the exact sharp construction by universal coverage;
-the nearby rational regression is not a substitute for that proof.
+Proof: `GATE3B_FOUR_FRAME_MAJORITY_BRANCHES.md`.
 
-### Gate 3B — classify survivors: ACTIVE
+Orientations live on the circle of circumference pi/2. Let M_i count
+frames in the closed clockwise pi/4 window starting at square i's frame,
+including i and all multiplicities. Each pair contributes to at least
+one such count, so sum_i M_i>=8+28=36 and max_i M_i>=5.
 
-The current explicit residual is:
+Choose a maximizing anchor and normalize its frame to zero. The packing
+then belongs to M5, M6, M7, or M8, according to how many frames lie in
+[0,pi/4]. Call those labels L and the remainder H. The boundary condition
+is exactly polynomial: 1-2z-z^2>=0 for L and <=0 for H in the closed cover.
+Closed chambers deliberately overlap at pi/4; they do NOT by themselves
+imply an exclusive exact count or that the chosen anchor is maximizing.
+Retain those extra conditions explicitly whenever a later argument uses them.
 
-> Four jointly realizable directed projection orders covering all 28
-> pairs, each acyclic and without a six-edge directed path, satisfying
-> the common bounded center-projection relaxation, together with actual
-> canonical owner axes, their octant memberships, and the seven-angle
-> rational square constraints.
+Canonical octant labels can be chosen coherently by the owner square's
+frame group: every L-L pair uses orders 0 or 2; every H-H pair uses
+orders 1 or 3; mixed pairs may use any of the four orders. The two orders
+within each group are orthogonal.
 
-The next work must classify this joint residual, not merely examine each
-DAG separately. Necessary projection inequalities by themselves are a
-relaxation, not an actual square-packing description.
+| Branch | L / H sizes | L-L pairs: orders 0/2 | H-H pairs: orders 1/3 | Mixed pairs |
+|---|---|---:|---:|---:|
+| M5 | 5 / 3 | 10 | 3 | 15 |
+| M6 | 6 / 2 | 15 | 1 | 12 |
+| M7 | 7 / 1 | 21 | 0 | 7 |
+| M8 | 8 / 0 | 28 | 0 | 0 |
 
-Proceed in this order:
+Each row accounts for all 28 pairs. This is an exhaustive MACROBRANCH
+cover, not four already solved cases. M8 does not assume parallel frames:
+its eight frames may vary across the entire 45-degree window. The sharp
+candidate is retained in M8. No M5--M8 branch is excluded by this note.
 
-1. Record a structural parent-to-children decomposition of the JOINT
-   order families, up to legitimate symmetries, with all boundary ties
-   included. Keep actual owner and orientation compatibility attached.
-2. Exclude whole children by exact cross-order force or disk inequalities,
-   or by proved whole-square geometric obstructions. Record each child's
-   exact hypotheses and its parent's coverage implication.
-3. Name every surviving continuous family and its inherited inequalities.
-   Do not assert a small case count until all children are accounted for.
+### Gate 3B.2 — classify internal joint order families: ACTIVE, START WITH M5
 
-**Exit 3B:** an explicit survivor list and a proved coverage implication.
-No exhaustive enumeration or usable small list has yet been produced.
+The next precise target is:
+
+> For every M5 packing under the radius ceiling, classify the jointly
+> realized two-order L subsystem (10 pairs), two-order H subsystem
+> (3 pairs), and 15 mixed pairs, with all actual canonical owners,
+> octant memberships, and seven-angle square constraints attached.
+
+A valid exit for this child is a proved structural exclusion or an
+explicit further survivor decomposition with a parent-to-children
+coverage proof. Work on M5 first, then M6, M7, and M8. Do not skip to
+M8 just because the candidate family there is easier to recognize.
+
+For each child:
+
+1. Record the structural decomposition and valid symmetries, including
+   all weak boundary and maximizing-axis ties.
+2. Exclude whole subfamilies by exact joint force/disk inequalities or
+   whole-square geometric obstructions. Record exact hypotheses.
+3. Name every surviving continuous family and inherited constraints.
+
+The projections must be realized by the SAME planar centers. Separate
+DAG feasibility is insufficient. Even joint projection feasibility is
+only a necessary relaxation, not a real square-packing witness.
+
+**Exit 3B.2:** an explicit usable survivor list across all four branches,
+with coverage implications. No such final list has yet been produced.
 
 ### Gate 3C — audit exhaustiveness and usability: WAITING
 
-Prove that every feasible Gate 1 point belongs to one listed survivor or
-a proved-impossible family. Check frame coincidences, quarter-turn
-boundaries, canonical ties, corner-only statuses, double-side statuses,
-and the genuine equality ring and its sliders.
+Prove that every feasible Gate 1 point belongs to one final listed
+survivor or a proved-impossible family. Check frame coincidences,
+quarter-turn boundaries, canonical ties, corner-only and double-side
+statuses, and the genuine equality ring and its sliders.
 
-**Exit 3C:** a complete structural cover usable by Gate 4. A generator that
-has not finished, a convergence assertion, or 'all counterexamples are
-near the candidate' does not meet it.
+**Exit:** a complete structural cover usable by Gate 4. An unfinished
+generator, a convergence assertion, or 'all counterexamples are near the
+candidate' does not meet it.
 
-### Important compatibility rule
+### Compatibility rule for canonical comparisons
 
 Adding homogeneous canonical comparison inequalities to a fiber can
 force equality in those rows. Do not reuse Gate 2's full strict-Slater
@@ -210,9 +231,26 @@ freedoms and symmetry orbits. This is separate from proving the radius.
 Only later prepare a Lean handoff if requested. No Lean compilation or CI
 belongs to this task.
 
+## Executed exact arithmetic audits
+
+* `verify_ordered_rational_gate.py`: 3,672 exact signed SAT residual
+  identities; vertex identities; tangencies; an eight-frame normalization.
+* `verify_gated_fiber_and_canonical_owner.py`: exact regularization,
+  zero-anchor guard, 11,696 canonical-cone instances, and a noncanonical
+  negative control. All 32 vertices and 28 pairs checked for both the
+  existing rational reference packing and its strictly separated
+  eight-distinct-frame perturbation; both remain admitted.
+* `verify_frame_majority_cover.py`: 503 exact eight-frame inputs,
+  including coincident and exact 45-degree direction ties. All four
+  maxima 5,6,7,8 occur; both actual n=8 packing regressions have maximum 8.
+
+These are arithmetic/implementation regressions, not a global proof
+oracle. Continuous coverage and inequalities are proved in the written
+notes. Preservation of the exact sharp construction follows from the
+universal theorems, not substituting a nearby rational regression.
+
 ## Stop and continuation rule
 
-Resume at **Gate 3B**, using the four jointly realized projection orders
-and the actual canonical constraints. Do not return to isolated cap
-constants or another single owner/angle box unless it discharges a named
-child in this structural coverage proof.
+Resume at **Gate 3B.2 / M5**, with its 10 L-L, 3 H-H, and 15 mixed pairs.
+Do not return to isolated cap constants or another single owner/angle
+box unless it discharges a named child in this structural coverage proof.
