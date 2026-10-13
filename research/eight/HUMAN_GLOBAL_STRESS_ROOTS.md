@@ -225,3 +225,50 @@ universal sharp inequality spanning
 multiple roots, not merely lower a
 local cap offset from one rational
 number to another.
+
+
+## Completed root-B2 full-path case
+
+An entire global contact/stress macro-case
+is **now rigorously excluded**, improving
+the initial conditional 35-support count:
+[HUMAN_SEVEN_OUTER_PATH_M7_EXCLUDED.md](HUMAN_SEVEN_OUTER_PATH_M7_EXCLUDED.md).
+
+In root B2 with **k=7 outer centers** and
+no full actual outer contact cycle,
+the central square's two stressed
+neighbor forces are opposite.
+[HUMAN_OPPOSITE_CENTRAL_NEIGHBOR_ANGLE.md](HUMAN_OPPOSITE_CENTRAL_NEIGHBOR_ANGLE.md)
+proves their true center-ray angle satisfies
+\(\Delta>\pi/2+1/13\).
+
+If the stressed cycle contained all seven
+outer squares (m=7), the other six
+**true consecutive outer contacts**
+would each have angular gap
+\(>\pi/4-1/500\) and leave a
+missing seventh gap
+\(\Delta<\pi/2+3/250\).
+These strict exact inequalities are
+incompatible (\(211/3250>0\)).
+Consequently \(\boxed{m\ne7}\) in
+this particular structural root.
+
+The **currently unexcluded seven-outer,
+actual-path, central-positive-degree-two**
+stressed cycles are only
+\[
+\boxed{m=3,4,5,6},
+\]
+or 28 labeled cyclic positive-stress
+supports. All zero-stress spectators
+remain real space-occupying squares.
+The fully actual seven-outer **cycle**
+equality construction stays in root A;
+central degree>=3 stays in root B3.
+
+This is a meaningful **whole structural
+macro-branch closure**, not a complete
+global packing bound. k<=6,
+root X, and the equality-preserving
+A root remain unresolved.
