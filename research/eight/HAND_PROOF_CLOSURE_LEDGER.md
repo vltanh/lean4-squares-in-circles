@@ -2069,3 +2069,52 @@ or an oracle for continuous feasibility.
 The original S4/k=7 exact equality construction
 remains allowed. The unrestricted
 \(R_8\ge\widehat R\) remains OPEN.
+
+
+### 2026-10-12: further halving the S2/k=4 near-inner offset to 1/20
+
+[HUMAN_S2_K4_NEAR_INNER_FIVE_HUNDREDTHS.md](HUMAN_S2_K4_NEAR_INNER_FIVE_HUNDREDTHS.md)
+proves a new fully analytic, arbitrary-square-frame
+**strict improvement** of the S2 near-inner subcase:
+
+\[
+\boxed{\text{exclusive S2, both near U centers inner}
+\ \Longrightarrow\ k=4,\quad 0<h_R<1/20.}
+\]
+
+The essential new ingredient is a single-square far-cap
+**polar elevation beyond 60 degrees**: in the disk
+\(R^2\le9789/2500\), any whole square in
+\(y\le-h\) for \(h\ge5/8\) has
+\(|p_x|<(-p_y)/\sqrt3\), obtained from the
+sharp arbitrary-frame cap envelope. Since
+the nearer U inner pair forces \(h_U<
+(\sqrt3-1)/2<3/8\), the two outer
+far-D centers lie in one southern arc of
+width \(<\pi/3\). Combined with the
+rigorous outer-outer angular gap \(>\pi/4-1/500\),
+both consecutive upper outer gaps (upper D to
+lower R, lower R to upper R) have width
+strictly smaller than
+\[
+13\pi/36+1/250<57/50.
+\]
+A separate cosine-law bound shows any inner
+center of radius \(r\ge11/20\) must have angular
+gap \(>57/100\) radians from any outer center.
+An R-inner square at offset \(h_R\ge1/20\)
+would therefore fail to fit in either gap,
+while the space above both R outers is excluded
+by the existing positive-x U-inner center.
+
+[verify_s2_k4_five_hundredths_margins.py](verify_s2_k4_five_hundredths_margins.py)
+audits the exact rational endpoint comparisons and has
+been executed successfully. The **written angular argument**
+proves the continuous case; the script is not a grid, Lean proof,
+or optimization oracle.
+
+This removes the entire previous residual interval
+\(1/20\le h_R<1/10\), but **does not exclude
+all S2/k=4**, all S2 near-cap outer statuses, or any
+S4 equality-bearing configuration. The unrestricted
+\(R_8\ge\widehat R\) remains OPEN.
