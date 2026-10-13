@@ -2154,3 +2154,72 @@ frames and actual inter-exterior separators remain free.
 has been executed successfully to audit the exact rational
 margins. The global sharp lower bound
 \(R_8\ge\widehat R\) remains **OPEN**.
+
+
+## 2026-10-12: S3/k=3 upper offset and outer-ray sectors tightened further
+
+[HUMAN_FIVE_SQUARE_FAN_REFINED.md](HUMAN_FIVE_SQUARE_FAN_REFINED.md)
+strictly improves the previously established five-square
+mixed inner/outer angular fan cutoff from
+\(h_U\ge21/100\) to **\(h_U\ge1/5\)**.
+It proves a sharper mixed-center angular gap
+\(>311/500\) radians whenever the inner center
+radius is \(>117/200\), using the exact
+cosine Taylor lower bound \(>13/16\) and the
+four rational corner distances already present in
+the previous proof. The key endpoint comparison
+\[
+\arcsin(7/10)>4\pi/9-311/500
+\]
+is established with the rational upper bound
+\(\pi<22/7\) and a strict fifth-degree sine
+Taylor inequality at \(31/40\).
+
+Thus in **exclusive S3=(3+1,2+1), k=3**
+the surviving two-member U cap offset satisfies
+\[
+17/200<h_U<1/5
+\]
+alongside \(17/200<h_R<13/100\).
+The far D singleton transverse center coordinate
+improves to \(|p_D.x|<13/40\);
+the L singleton retains \(|p_L.y|<3/20\).
+This is a genuine continuous-region exclusion,
+not a closure of S3/k=3.
+
+[HUMAN_S3_K3_SHARPER_OUTER_RAYS.md](HUMAN_S3_K3_SHARPER_OUTER_RAYS.md)
+uses the refined mixed-angle bound to sharpen the sole
+R-outer center's two alternative ray sectors further:
+\[
+-\pi/9<\psi<-2041/10500
+\quad\text{or}\quad
+311/500<\psi<8959/10500.
+\]
+The exact sine inequality at \(31/50\) gives
+\(\arcsin(h_U+1/2)>31/50\).
+The right-minus inner center has radial norm \(>7/10\),
+so it repels the outer R center by \(>2\pi/9\),
+while U-plus and R-plus repel it by
+\(>311/500\); these are center-ray bounds,
+not assertions of whole-square quadrant membership.
+
+The optional exact-fraction scripts
+[verify_five_square_fan_refined.py](verify_five_square_fan_refined.py)
+and [verify_s3_k3_sharper_rays.py](verify_s3_k3_sharper_rays.py)
+have been executed successfully for the displayed rational margins.
+The continuous proofs remain in the Markdown notes.
+
+**Audit/correction:** the previously recorded rational
+eight-center relaxation in
+[RATIONAL_S2_K4_CENTER_RELAXATION.md](RATIONAL_S2_K4_CENTER_RELAXATION.md)
+satisfies only its explicitly enumerated *weak* center
+inequalities. Its outer pairs R1-D2 and D1-D2 have
+exact acute angular tangent <9/10, thus violate the
+known outer-angle gap \(>\pi/4-1/500\).
+The note and verifier now explicitly flag both failures.
+It is **not** evidence of actual S2/k4 feasibility,
+nor proof that all center-ray-only methods must fail.
+
+The exact S4/k=7 sharp equality configuration is
+still retained. The unrestricted bound
+\(R_8\ge\widehat R\) remains **OPEN**.
