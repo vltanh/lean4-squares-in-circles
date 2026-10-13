@@ -31,7 +31,7 @@ unsigned-side-frame angle relative to the cap-aligned
 horizontal/vertical axes, normalized modulo right angles.
 Suppose both frames obey
 \[
-|\theta_1|,\ |\theta_2|\le1/3000\ \text{radians}.
+|\theta_1|,\ |\theta_2|\le1/2600\ \text{radians}.
 \]
 
 **Conclusion: these assumptions are incompatible.**
@@ -39,14 +39,14 @@ Equivalently, under the same-side-center and whole-cap
 hypotheses, at least one actual square frame must have
 nonzero axis deviation
 \[
-\boxed{\max(|\theta_1|,|\theta_2|)>1/3000.}        \tag{1}
+\boxed{\max(|\theta_1|,|\theta_2|)>1/2600.}        \tag{1}
 \]
 No assumption on a square-square physical contact is used.
 
 ## 1. A common axis-parallel inscribed square
 
 For a unit square with frame angle
-\(|\theta|\le1/3000\), its intersection of
+\(|\theta|\le1/2600\), its intersection of
 two supporting frame-coordinate inequalities is
 \[
 |e\cdot(x-p)|\le1/2,\qquad
@@ -54,8 +54,8 @@ two supporting frame-coordinate inequalities is
 \]
 Any axis-parallel square centered at p with side
 \[
-t=\frac{3000}{3001}
-=\frac{1}{1+1/3000}
+t=\frac{2600}{2601}
+=\frac{1}{1+1/2600}
 \]
 lies inside it: every displacement
 \(v=(v_x,v_y)\) with \(|v_x|,|v_y|\le t/2\)
@@ -126,20 +126,20 @@ including possible contact boundaries. QED.
 ## 3. A strict exact rational contradiction
 
 Apply (2) to the two actual centered t-squares,
-using \(h\ge7/24\) and \(t=3000/3001\).
+using \(h\ge7/24\) and \(t=2600/2601\).
 Then
 \[
 R^2\ge
-\left(\frac7{24}+\frac{3000}{3001}\right)^2
-+\frac94\left(\frac{3000}{3001}\right)^2.
+\left(\frac7{24}+\frac{2600}{2601}\right)^2
++\frac94\left(\frac{2600}{2601}\right)^2.
 \]
 Subtract the current disk ceiling:
 \[
 \begin{aligned}
-&\left(\frac7{24}+\frac{3000}{3001}\right)^2
-+\frac94\left(\frac{3000}{3001}\right)^2
+&\left(\frac7{24}+\frac{2600}{2601}\right)^2
++\frac94\left(\frac{2600}{2601}\right)^2
 -\frac{9789}{2500}\\
-&\qquad=\frac{1435675009}{3242160360000}>0.
+&\qquad=\frac{21634201}{270608040000}>0.
 \end{aligned}
 \]
 Therefore \(R^2>9789/2500\), contradicting
@@ -171,7 +171,7 @@ the 2+2 axis).
 If the *two distinct* near-side square centers
 lie in the same transverse weak half-plane,
 their frames **cannot both lie within
-1/3000 radians of the central-square axes**.
+1/2600 radians of the central-square axes**.
 At least one of the two actual squares must
 be more substantially tilted, or the
 centers must be split across the transverse
