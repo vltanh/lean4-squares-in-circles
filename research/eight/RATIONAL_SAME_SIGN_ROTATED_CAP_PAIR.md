@@ -145,3 +145,45 @@ and an actual rotated separating axis.
 
 [verify_same_sign_cap_pair.py](verify_same_sign_cap_pair.py)
 replays every rational equality without floating-point calculations.
+
+
+## Robustness: there is a strict cap offset with open geometric slack
+
+The displayed pair touches the chosen cap line at one
+vertex of Q, but **its local feasibility is not
+an equality-only artifact**. Keep the same
+two exact square frames and centers, and declare the
+slightly smaller still-positive offset
+\[
+h'=\frac7{24}+\frac1{1000}
+=\frac{439}{1500}>\frac7{24}.
+\]
+Both whole squares then lie **strictly** beyond
+the line \(y=h'\). Their exact minimum-vertex
+vertical margins are
+\[
+\min_{z\in Q}z_y-h'=\frac1{1000}>0,
+\]
+\[
+\min_{z\in P}z_y-h'
+=\frac{643547}{1203000}>0.
+\]
+The prior SAT gap \(31/48120>0\), disk-vertex
+reserve \(7219/1800000>0\), and two
+center x coordinates \(>0\) remain unchanged.
+
+Thus the local counterexample satisfies
+**all** of its geometric inequalities with
+strict positive slack at \(h'\).
+It persists under sufficiently small
+perturbations of the centers, frames, and
+cap offset. In particular, one cannot rescue
+the false blanket same-sign-cap exclusion
+by replacing weak half-plane containment
+with a strict cap condition.
+
+As throughout this note, this proves
+**only a local two-square statement**.
+It does not exhibit the full exclusive S2/k4
+mixed inner/outer arrangement or a
+suboptimal eight-square packing.
