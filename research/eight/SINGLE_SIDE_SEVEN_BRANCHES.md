@@ -448,3 +448,45 @@ equality case is untouched.
 
 The unrestricted optimality inequality
 \(R_8\ge\widehat R\) and the Lean handoff remain OPEN.
+
+
+## 11. Latest S3/k=3 correction: only the positive R-outer ray survives
+
+**Supersedes section 10's two-sector alternative for S3/k=3.**
+
+[HUMAN_S3_K3_NEGATIVE_RAY_EXCLUDED.md](HUMAN_S3_K3_NEGATIVE_RAY_EXCLUDED.md)
+proves the **entire negative outer-R center sector**
+is impossible, via an iterated exact mixed
+inner/outer center-distance angular bound and
+the R-minus inner center's mandatory whole-side
+normal projection.
+
+Consequently the only **currently unexcluded**
+S3/k=3 outer-R ray is
+\[
+\boxed{311/500<\psi<8959/10500.}
+\]
+In particular its actual *center* has positive x
+and y coordinates. This does **not** mean the
+whole rotated R square lies in an open origin quadrant.
+
+[HUMAN_S3_K3_DISTANT_D_NEGATIVE_X.md](HUMAN_S3_K3_DISTANT_D_NEGATIVE_X.md)
+uses the surviving positive sector to force
+the far D singleton's actual *center* strictly
+to the left of the vertical origin diameter:
+\[
+\boxed{-13/40<x_D<0,\qquad y_D<0.}
+\]
+The full S3/k3 branch remains unresolved in
+\[
+17/200<h_R<13/100,\qquad
+17/200<h_U<1/5,
+\]
+with the above angular/center-sign restrictions.
+
+This removes a **whole continuous angular sector**
+without decreasing the purely symbolic 12-status
+assignment count or eliminating S3/k3 altogether.
+S4/k7 exact equality remains valid, and
+the unrestricted \(R_8\ge\widehat R\)
+is still OPEN.
