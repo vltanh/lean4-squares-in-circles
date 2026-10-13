@@ -1,162 +1,218 @@
 # Sequential gates for the unrestricted n=8 proof
 
-Date: 2026-10-13. Audited baseline: `ce35213455ad9d0715db88d7a732b380d6436f3d`.
+Date: 2026-10-13. Audited starting head: `ce35213455ad9d0715db88d7a732b380d6436f3d`.
 Scope: PR #9, `research/eight/**` only. Pen-and-paper research; no Lean or CI.
 
-This file replaces the *work queue*, not the earlier mathematical results.
-Advance only after the current gate's exit theorem has been proved. A useful
+**This is the authoritative active work queue.** It replaces earlier work
+queues, including the accumulated historical sections of
+`CURRENT_GLOBAL_PROOF_ROADMAP.md`, without retracting their valid results.
+Advance only after a gate's stated exit theorem is proved. One useful
 lemma or one rejected box does not pass a gate about an entire domain.
 
-## Target and baseline
+## Current status
+
+| Gate | Requirement | Status |
+|---|---|---|
+| 1 | Exact exhaustive seven-angle actual-square domain | PASSED |
+| 2 | Complete sparse center-fiber alternatives | PASSED |
+| 3A | First owner-complete structural reduction | PASSED |
+| 3B | Explicit classification of surviving joint order/owner families | ACTIVE / OPEN |
+| 3C | Exhaustiveness and usability of the survivor list | WAITING |
+| 4 | Sharp bounds over every surviving continuous family | WAITING |
+| 5 | Assemble unrestricted optimality | WAITING |
+| 6 | Global equality and later formalization handoff | WAITING |
+
+**The unrestricted lower bound R_8>=R_* is NOT proved.** Gates 1 and 2
+close representation/certificate foundations. Gate 3A is a global
+necessary structural reduction, not a classification of all survivors.
+
+## Target and audited baseline
 
 Let q_* be the exact five-corner candidate squared radius defined by
 `ANALYTIC_EXACT_CONSTRUCTION.md` and `HUMAN_FAMILY_CLOSURE.md`.
 The research record establishes an actual eight-square construction at
-R_* = sqrt(q_*) approximately 1.97877086534. The missing optimality theorem is:
+R_*=sqrt(q_*) approximately 1.97877086534. The missing optimality theorem is:
 
 > Every eight pairwise interior-disjoint unit squares contained in a disk
-> of squared radius q satisfy q >= q_*.
+> of squared radius q satisfy q>=q_*.
 
-Do not replace q_* by a rounded decimal or by the convenient larger ceiling
+Do not replace q_* by a rounded decimal or by the larger research ceiling
 9789/2500. Equality classification is a separate later objective.
 
-The latest dependency review finds:
+The dependency review found an exact construction, a sharp conditional
+family theorem, a genuine **local pose** theorem with independently
+varying frames, and exact convex fixed-angle/owner center fibers. Earlier
+owner-cycle/Farkas boxes were valid individual exclusions, not an
+exhaustive union. Exact contacts or parallel frames may not be assumed
+for arbitrary near-sharp packings.
 
-* An exact candidate construction and a sharp conditional family theorem.
-* A genuine **local pose** sharpness theorem, with independently varying
-  frames, in `HUMAN_LOCAL_TRUE_SAT_SEVEN_SQUARE_SHARPNESS.md`. It is not yet
-  an explicit angular-box terminal valid for every possible center fiber.
-* An exact fixed-angle/fixed-SAT-owner convex center problem and its dual,
-  in `GLOBAL_SAT_ANGLE_FIBER_DUALITY.md`.
-* Sound owner-cycle, rational-sector and Farkas exclusions, including
-  positive-width orientation boxes. No exhaustive owner/angle union is covered.
-* Explicit reasons not to assume exact contacts, frame alignment, or local
-  candidate capture for arbitrary near-sharp packings.
+This review is not a claim that every older file has been independently
+rechecked or that any unrestricted eight-square theorem is formalized.
 
-These are research-proof inputs, not a claim that every old file has been
-independently rechecked or that an unrestricted theorem is formalized.
+## Gate 1 — One exact exhaustive domain: PASSED
 
-## Gate 1 — One exact exhaustive domain
+Proof: `GATE1_ORDERED_RATIONAL_GLOBAL_MODEL.md`.
 
-**Current status: ACTIVE.**
+Every packing has a representative on the closed rational simplex
 
-Prove a normalization and closed-domain theorem covering every packing,
-including all orientation and SAT boundary cases, without assuming a
-central square, a contact graph, or a common frame.
+    z_1=0 <= z_2 <= ... <= z_8 <= 1,
 
-Deliverables:
+where z_i is the half-tangent of a relative frame angle. The common
+rotation gauge is removed; seven physical frame variables remain.
+All 32 actual vertex constraints and all 28 eight-way SAT disjunctions
+have explicit integer-coefficient polynomial forms with positive
+cleared denominators. The proof covers both directions of representation,
+frame ties, quarter-turn duplicates, separator tangencies, and compact
+attainment below the fixed research ceiling.
 
-1. Remove the global rotation gauge; only seven relative frame angles
-   should remain, not eight independent physical angles.
-2. Relabel by relative orientation and use one closed rational
-   half-tangent simplex with all boundary duplicates retained.
-3. Give explicit rational true-square vertices, all 28 eight-way SAT
-   disjunctions, and positive-denominator polynomial forms.
-4. Prove both directions: every packing has a representative, and every
-   feasible representative is an actual packing. Retain a compact
-   radius-ceiling domain and attainment.
+`verify_ordered_rational_gate.py` was run locally: 3,672 exact signed SAT
+residual identities, vertex identities, tangencies, and an eight-frame
+normalization regression. These audit the formulas; the full-domain
+proof is the written argument.
 
-**Exit:** a complete hand proof, not a discretization or a sampled roundtrip.
-Arithmetic diagnostics can check formulas but are not premises.
+This gate does not reduce the raw owner count or prove a radius bound.
 
-## Gate 2 — Complete center-fiber alternatives
+## Gate 2 — Complete center-fiber alternatives: PASSED
 
-**Status: WAITING FOR GATE 1.**
+Proof: `GATE2_COMPLETE_SPARSE_FIBER_ALTERNATIVE.md`.
 
-For each fixed relative orientation and chosen full SAT-owner word, prove:
+For every fixed frame tuple and full true SAT-owner word:
 
-1. Either its directed separator system is infeasible, with an exact
-   positive balanced-force certificate, or its radius minimum is attained
-   and the vertex/separator dual is exact.
-2. Handle zero disk-anchor weights explicitly; no division by zero and no
-   silently discarded free-center linear force.
-3. Establish finite support bounds for the certificates, and establish
-   that a strict lower bound admits rational, positive-anchor, locally
-   stable dual data. This distinguishes a complete rejection mechanism
-   from a heuristic numerical oracle.
-4. State precisely when a local pose theorem can propagate to a whole
-   fixed-frame convex fiber; do not infer an angular neighborhood from a
-   pose neighborhood without a center-capture argument.
+* An infeasible directed separator system has a positive balanced-force
+  witness supported on at most 15 edges (at most 2m-1 on m labels).
+* Otherwise the radius minimum is attained and has an exact optimal dual
+  supported on at most 17 total disk-vertex and separator constraints.
+* Zero-anchor center forces are handled explicitly, with no division by
+  zero or silently omitted linear term.
+* Every strict fiber exclusion has rational, strictly positive disk-anchor
+  multipliers valid on a relative open orientation neighborhood. The exact
+  regularization estimate is D_epsilon >= (1-epsilon)D+epsilon/2.
+* A local pose minimum propagates to its ENTIRE same-frame convex owner
+  fiber, but not automatically to a positive-width angular neighborhood.
 
-**Exit:** prove these alternatives for *every* fiber. This does not mean
-that all fibers have been proved to exceed q_*.
+Finite-cover existence on a compact region is conditional on already
+having a strict bound there. It is not a proof of global sharpness.
+The 17-term optimal support bound need not survive positive-anchor
+regularization; the two conclusions must not be conflated.
 
-## Gate 3 — Exhaustive structural reduction of owner families
+## Gate 3 — Exhaustive structural reduction: STILL OPEN
 
-**Status: WAITING FOR GATE 2.**
+The raw 8^28 owner words are not an adequate hand-proof case list.
+A sharp radius theorem cannot be assembled until an explicit exhaustive
+and usable survivor classification has been proved.
 
-This is the first unresolved *global geometric* bottleneck. The raw
-8^28 owner words are not an adequate hand-proof case list.
+### Gate 3A — owner-complete first reduction: PASSED
 
-Work in the exact Gate 1 domain, and derive a covering identity of the form
+Proof: `GATE3A_CANONICAL_OWNER_FOUR_ORDERS.md`.
 
-    all admissible angle/owner fibers under the radius ceiling
-      subset of proved-impossible families union explicit surviving families.
+All eight signed true axes of a square pair have the same support sum.
+Thus every packing, with every initial valid owner choice, can be
+represented instead by **canonical maximum-projection owners**. This
+keeps the exact centers, frames, disk, and radius, with ties retained.
 
-Use the complete Gate 2 alternatives to discover and prove structural
-reductions, rather than improving isolated cap constants or collecting
-unrelated narrow boxes. The existing marker, central-square, cone-order,
-and stress results are available only with their stated hypotheses.
+A canonical normal n obeys n dot d >= |Jn dot d| for the true center
+difference d. This gives four simultaneous rational projected-center
+orders, using
 
-**First subgate 3A:** produce one *owner-complete* structural family
-reduction: it must quantify over every valid owner selection in the stated
-geometric family, not merely a hand-picked word. State the family,
-coverage proof, and survivors before numerical exploration.
+    (12,5), (5,12), (-5,12), (-12,5).
 
-**Subgate 3B:** extend these reductions to a demonstrably exhaustive,
-explicitly indexed survivor list. Every branch must have a written
-parent-to-children coverage implication, including weak inequalities,
-frame ties, corner-only statuses, and double-side statuses.
+The eight signed normal octants choose one of these four orders and an
+arrow direction. Every resulting edge a->b in order k satisfies
 
-**Subgate 3C:** prove that the resulting list is usable for Gate 4 without
-an unbounded search or an assumed convergence/capture assertion.
+    u_k dot (p_b-p_a) >= 7 w_ab >= 7.
 
-**Exit:** an actual structural coverage theorem with explicit survivors.
-A generator that has not finished, a finite-certificate existence claim
-conditional on the desired sharp theorem, and 'all counterexamples are
-near the candidate' do not pass this gate.
+Opposite octants are merged with reversed arrows; without that reversal
+the claimed DAG restriction would be vacuous. Each order graph is
+acyclic and, throughout R^2<=9789/2500<4, has no six-edge directed path.
+Cross-order positive force balances reject entire coarse order families,
+not isolated orientation boxes.
 
-The genuine equality ring, its frame coincidences, and slider freedoms
-must remain admitted throughout.
+`verify_gated_fiber_and_canonical_owner.py` was run locally. It audits
+regularization, the zero-anchor guard, 11,696 exact canonical-cone
+instances, a noncanonical negative control, and all 32 vertices and 28
+pairs for both the existing rational reference packing and its strictly
+separated eight-distinct-frame perturbation. Both are retained.
 
-## Gate 4 — Sharp bounds on every surviving family
+The theorem preserves the exact sharp construction by universal coverage;
+the nearby rational regression is not a substitute for that proof.
 
-**Status: WAITING FOR GATE 3.**
+### Gate 3B — classify survivors: ACTIVE
 
-Prove q >= q_* for each surviving family over its entire continuous domain.
-Use exact angular dual inequalities or whole-square geometry. Near the
-candidate, use the local pose theorem only after the necessary uniform
-center and slider hypotheses have been proved.
+The current explicit residual is:
 
-**Exit:** a finite dependency table in which every Gate 3 survivor has a
-proved sharp bound. Strict-margin interval computations may guide a hand
-proof; a sampled minimum or a PASS flag is not the final argument.
+> Four jointly realizable directed projection orders covering all 28
+> pairs, each acyclic and without a six-edge directed path, satisfying
+> the common bounded center-projection relaxation, together with actual
+> canonical owner axes, their octant memberships, and the seven-angle
+> rational square constraints.
 
-## Gate 5 — Assemble unrestricted optimality
+The next work must classify this joint residual, not merely examine each
+DAG separately. Necessary projection inequalities by themselves are a
+relaxation, not an actual square-packing description.
 
-**Status: WAITING FOR GATE 4.**
+Proceed in this order:
 
-Combine Gate 1 coverage, Gate 3 structural reduction, and Gate 4 bounds,
-then combine with the actual construction to deduce R_8 = R_*.
-Audit all strict/non-strict boundaries and verify that no hypothesis is
-the desired theorem in disguise.
+1. Record a structural parent-to-children decomposition of the JOINT
+   order families, up to legitimate symmetries, with all boundary ties
+   included. Keep actual owner and orientation compatibility attached.
+2. Exclude whole children by exact cross-order force or disk inequalities,
+   or by proved whole-square geometric obstructions. Record each child's
+   exact hypotheses and its parent's coverage implication.
+3. Name every surviving continuous family and its inherited inequalities.
+   Do not assert a small case count until all children are accounted for.
 
-**Exit:** one self-contained unrestricted lower-bound theorem with a
-closed dependency graph. Do not describe the research as optimality
-before this gate passes.
+**Exit 3B:** an explicit survivor list and a proved coverage implication.
+No exhaustive enumeration or usable small list has yet been produced.
 
-## Gate 6 — Equality and subsequent formalization handoff
+### Gate 3C — audit exhaustiveness and usability: WAITING
 
-**Status: WAITING FOR GATE 5; separate from the lower-bound claim.**
+Prove that every feasible Gate 1 point belongs to one listed survivor or
+a proved-impossible family. Check frame coincidences, quarter-turn
+boundaries, canonical ties, corner-only statuses, double-side statuses,
+and the genuine equality ring and its sliders.
 
-Trace equality through all global alternatives, including nonunique
-sliders and symmetry orbits. Only then prepare a Lean handoff if requested.
-No Lean compilation or CI is part of the present task.
+**Exit 3C:** a complete structural cover usable by Gate 4. A generator that
+has not finished, a convergence assertion, or 'all counterexamples are
+near the candidate' does not meet it.
 
-## Execution rule and current action
+### Important compatibility rule
 
-Work on Gate 1, then Gate 2, then 3A. Update this file after each proved
-exit, with the proof file and what remains unproved. Do not jump to
-Gate 4 because a promising local inequality is easier to obtain.
+Adding homogeneous canonical comparison inequalities to a fiber can
+force equality in those rows. Do not reuse Gate 2's full strict-Slater
+claim for that augmented system without an affine-hull argument. Original
+fiber dual bounds remain sound on its canonical subset; the projected
+positive-width systems have their separately proved force alternative.
 
-No gate is passed by this planning commit alone.
+## Gate 4 — Sharp inequalities for every survivor: WAITING
+
+For each Gate 3 survivor prove q>=q_* throughout its entire continuous
+domain. Use exact angular dual inequalities or whole-square geometry.
+Invoke the local pose theorem only after its needed center and slider
+hypotheses are uniformly established. Do not treat an angular box as a
+pose neighborhood without a valid implication.
+
+**Exit:** a finite dependency table with a proved bound for every survivor.
+Numerical minima and individual PASS flags are not the final argument.
+
+## Gate 5 — Unrestricted optimality: WAITING
+
+Combine Gate 1 coverage, Gate 3 classification, and Gate 4 bounds, and
+then the actual construction, to deduce R_8=R_*.
+Audit all weak boundaries and noncircular dependencies.
+
+**Exit:** a self-contained unrestricted lower-bound theorem with a closed
+dependency graph. Do not call the research an optimality proof before it.
+
+## Gate 6 — Equality and formalization handoff: WAITING
+
+Trace equality through every global alternative, preserving genuine slider
+freedoms and symmetry orbits. This is separate from proving the radius.
+Only later prepare a Lean handoff if requested. No Lean compilation or CI
+belongs to this task.
+
+## Stop and continuation rule
+
+Resume at **Gate 3B**, using the four jointly realized projection orders
+and the actual canonical constraints. Do not return to isolated cap
+constants or another single owner/angle box unless it discharges a named
+child in this structural coverage proof.
