@@ -2453,3 +2453,68 @@ Alongside the previous **full S3/k=3 exclusion**,
 these are genuine branch closures, but
 the unrestricted \(R_8\ge\widehat R\)
 and Lean handoff remain **OPEN**.
+
+
+## 2026-10-12: both centers in a very high two-square cap are outer
+
+[HUMAN_TWO_OUTER_HIGH_CAP.md](HUMAN_TWO_OUTER_HIGH_CAP.md)
+proves a new **arbitrary-frame, exact whole-cap**
+result at the established n=8 disk ceiling:
+if two *distinct actual whole squares* lie
+beyond a line at outward offset
+\[
+h\ge97/200,
+\]
+**both** their centers have norm at least one.
+This improves the formerly automatic
+single-square outer-center cutoff \(h\ge1/2\)
+in the two-square-cap setting, without
+presuming aligned square frames.
+
+For a hypothetical inner center p, put
+\(a=h+1/2\ge197/200\);
+then \(p_x\in[a,1)\) and
+\(|p_y|<\sqrt{1-a^2}<173/1000\).
+For the other square, the sharp arbitrary-frame
+one-square cap envelope gives transverse center
+\(|q_y|<81/100\), while the universal norm bound
+\(|q|<283/200\) supplies
+\(q_x<\sqrt{(283/200)^2-q_y^2}\).
+Elementary exact rational comparisons imply
+\[
+|p-q|^2<
+(283/200)^2+1
+-2(197/200)(29/25)
++2(81/100)(173/1000)
+=1-\frac{543}{200000}<1.
+\]
+Thus the two center inscribed half-unit disks
+would overlap, contradiction.
+[verify_two_outer_high_cap.py](verify_two_outer_high_cap.py)
+audits the exact inequalities and has been executed
+successfully; it is **not** a substitute for
+the continuous hand argument.
+
+**New S2/k4 region exclusion:**
+on S2's opposite 2+2 axis, with central
+signed coordinate t, the nearer cap offset
+is \(1/2-|t|\).
+If \(|t|\le3/200\), **both** nearer
+2+2 centers are now forced outer,
+the farther pair are outer, and the
+separate perpendicular triple has at least
+one outer label: **k>=5**.
+Therefore
+\[
+\boxed{\text{exclusive S2/k=4 requires }|t|>3/200.}
+\]
+This eliminates an entire closed *central offset
+strip* from the newly remaining S2/k4 case,
+without claiming that all S2/k4 configurations
+are impossible. The valid S4/k7 equality
+family is unaffected.
+
+Alongside the recent full S3/k3 and S2
+near-inner branch closures, this provides
+further genuine continuous-region pruning.
+The global \(R_8\ge\widehat R\) remains OPEN.
