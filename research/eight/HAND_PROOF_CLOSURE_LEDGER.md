@@ -3036,3 +3036,101 @@ exclusion. In particular, the valid
 S4/k7 equality construction survives,
 and the unrestricted
 \(R_8\ge\widehat R\) remains OPEN.
+
+
+## 2026-10-12: successful computer-to-hand cap breakthrough and next attack roadmap
+
+[COMPUTER_ASSISTED_ATTACK_ROADMAP.md](COMPUTER_ASSISTED_ATTACK_ROADMAP.md)
+now specifies the actual numerical experiment,
+a completed analytic theorem extracted from it,
+and the prioritized still-open proof tasks.
+The exploratory script
+[computer_two_square_cap_probe.py](computer_two_square_cap_probe.py)
+models **true square vertices**, eight signed
+separating axes, genuine whole caps, and mixed
+inner/outer centers, using local nonconvex
+SLSQP. Reproducible 5-start runs at h=7/24,
+1/3 and 37/100 found **near-axis** candidates.
+The numerical solvers had tiny negative
+constraint residuals and unsuccessful termination:
+the numeric values are **not certified**
+global optima or exclusion proofs.
+The **exact axis-aligned reference geometry**
+requires
+\[
+q_{\rm axis}(h)=(1+h)^2+9/4,
+\quad q_{\rm axis}(7/24)=2257/576
+>q_+=9789/2500.
+\]
+
+**Successful computer-to-hand conversion.**
+[HUMAN_CAP_ENVELOPE_37_100.md](HUMAN_CAP_ENVELOPE_37_100.md)
+proves a new **full-frame, full-position**
+sharp single-square cap envelope at the
+established n=8 disk ceiling:
+\[
+S\subseteq D_R\cap\{x\ge h\},\
+R^2\le q_+,\ h\ge37/100
+\Longrightarrow
+R^2\ge(h+1)^2+(|p_y|+1/2)^2.
+\]
+The prior standalone theorem had only
+h>=2/5. The hand proof derives
+\(y<1,\ h+y<7/5\) independently of its
+conclusion, applies negative-frame vertex
+concavity, and checks a **four-vertex
+affine-polynomial positivity certificate**
+over every positive frame angle. The
+tightest new polynomial tangent margin
+is \(553/78125>0\). Its verifier
+[verify_cap_envelope_37_100.py](verify_cap_envelope_37_100.py)
+was executed with exact Fractions;
+the continuum result is proved in the
+note and not inferred from the numerical
+optimizer.
+
+The consequent
+[HUMAN_MIXED_HIGH_CAP_37_100.md](HUMAN_MIXED_HIGH_CAP_37_100.md)
+proves **every mixed inner/outer two-square
+whole-cap pair** at offset \(h\ge37/100\)
+has strictly **opposite transverse
+center signs**, for arbitrary independent
+frames. If signs were weakly same, the
+older mixed polar lemma would force
+\(|x_{\rm inner}|<1/4\) and
+\(|x_{\rm outer}|>7/10\); the new cap
+envelope forces \(|x_{\rm outer}|<93/100\),
+and the universal radial ceiling forces
+vertical center separation \(<9/25\).
+Thus their squared center distance would obey
+\[
+< (93/100)^2+(9/25)^2
+=1989/2000=1-11/2000<1,
+\]
+a genuine strict hand contradiction.
+[verify_mixed_high_cap_37_100.py](verify_mixed_high_cap_37_100.py)
+audits all exact rational margins.
+
+**Updated exhaustive exclusive S2/k4 three cells:**
+* A: \(37/100\le h_U<97/200\), opposite x signs.
+* B: \(7/24<h_U<37/100\), opposite x signs.
+* C: \(7/24<h_U<37/100\), weak same x signs,
+  with earlier stringent inner/outer coordinate,
+  whole-quadrant and frame-defect conditions.
+
+This **strictly removes** the old same-sign
+interval \(37/100\le h_U<2/5\) (in addition
+to the earlier high-offset region).
+**None of A/B/C is now globally empty.**
+The new computer experiment suggests a
+stronger, *unproved* whole mixed same-sign
+pair bound \(R^2\ge(h+1)^2+9/4\) for h>=7/24.
+That should be attacked using the **actual
+SAT-owner/sign branches** and rationalized
+frame angles, not assumed from the optimizer.
+
+Do not discard the real S4/k7 sharp equality
+packing. D0 corner-only cases, D1/D2,
+higher-k outer paths/rings, unrestricted
+\(R_8\ge\widehat R\), equality classification
+and Lean 4 formalization remain OPEN.
