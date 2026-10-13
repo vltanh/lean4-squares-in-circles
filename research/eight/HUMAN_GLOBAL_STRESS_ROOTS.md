@@ -334,3 +334,71 @@ full contact ring A, B3, X and
 k<=6 remain unresolved. No
 unrestricted sharp radius bound is
 claimed.
+
+
+## Strongest new B2 actual-contact rigidity: no spectator edges if C has actual degree two
+
+The **minimum-actual-contact**, k7,
+C-positive-degree-two and
+C-*actual*-degree-two root is now
+much simpler than the preceding
+graph-only supertemplates:
+
+[HUMAN_B2_PURE_CENTRAL_CONTACT_ISOLATES_SPECTATORS.md](HUMAN_B2_PURE_CENTRAL_CONTACT_ISOLATES_SPECTATORS.md)
+proves the **entire actual graph**
+is *exactly* the positive-stress
+cycle \(C-S_1-\cdots-S_m-C\),
+m=3,4,5,6, **plus 7-m isolated
+outer spectators**. Any other
+spectator outer contact would
+create a true noncentral actual
+leaf (forbidden in a
+contact-minimal minimizer) unless
+all complementary edges were
+present, which would form the
+excluded full actual outer cycle.
+This eliminates **364 of the 392**
+previously admitted pure-graph
+spectator-edge supertemplates:
+only **28** bare actual cycle
+graph supports remain.
+
+[HUMAN_B2_INTERNAL_PATH_VERTEX_COVER.md](HUMAN_B2_INTERNAL_PATH_VERTEX_COVER.md)
+then forces *all internal path
+anchors to be genuine circle
+contacts* (there are no internal
+zero-stress C chords in this
+actual-degree-two root). In
+addition **both** stressed
+path endpoints must circle-touch.
+Minimum true circle-contact
+stressed outer labels for
+m3,m4,m5,m6 are **2,3,3,4**.
+
+[HUMAN_ISOLATED_OUTER_CIRCLE_FREE_NORMALIZATION.md](HUMAN_ISOLATED_OUTER_CIRCLE_FREE_NORMALIZATION.md)
+shows the isolated outer spectators
+can be moved infinitesimally
+radially inward until their
+actual vertices all have **strict
+disk clearance**, without changing
+the minimum radius, the k7
+outer-center classes or the
+actual contact graph. Thus
+the disk-boundary constraints
+can be normalized to be
+**entirely on the stressed core**,
+but the isolated squares still
+occupy area and cannot be omitted
+from any sharp inequality.
+
+The remaining m6 root with extra
+actual C contacts has the
+spectator **I/L/triangle incidence
+classification** in
+[HUMAN_M6_SPECTATOR_CONTACT_TRICHOTOMY.md](HUMAN_M6_SPECTATOR_CONTACT_TRICHOTOMY.md).
+If the spectator is not isolated,
+it must contact C and also have
+a true circle vertex.
+All other roots and the
+unrestricted \(R_8\ge\widehat R\)
+remain OPEN.
