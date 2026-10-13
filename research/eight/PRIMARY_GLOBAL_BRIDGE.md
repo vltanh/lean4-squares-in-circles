@@ -1,5 +1,114 @@
 # ONE bridge to the unrestricted eight-square sharp radius
 
+## New exact GLOBAL reduction: center elimination and true SAT angle/owner fibers (2026-10-13)
+
+**This supersedes the speculative "capture" slogan as an
+explicit mathematical program. It does NOT close n=8.**
+
+[GLOBAL_SAT_ANGLE_FIBER_DUALITY.md](GLOBAL_SAT_ANGLE_FIBER_DUALITY.md)
+proves an exact unconditionally valid reduction:
+for **all eight genuine squares** with every frame
+angle \(\theta_i\) fixed and one of the eight
+signed actual SAT-owner normals chosen for each
+of 28 pairs, the search over all **16 center coordinates
+and disk radius** is one **convex second-order-cone
+program**. Every nonempty center fiber has
+strict feasibility after outward center dilation
+and hence exact positive Lagrangian duality.
+
+For nonnegative true vertex weights \(\mu\)
+summing to one and nonnegative chosen genuine
+separator weights \(\lambda\), define
+\(m_i=\sum_\epsilon\mu_{i,\epsilon}\),
+\(a_i=\sum_\epsilon\mu_{i,\epsilon}o_{i,\epsilon}\)
+and the directed contact-force incidence
+\(c_i=\sum_{\mathrm{out}}\lambda n
+-\sum_{\mathrm{in}}\lambda n\).
+Whenever an unanchored center has \(c_i=0\),
+the explicit **globally valid center-free dual** is
+\[
+\boxed{q\ge
+ \frac12+\sum_e\lambda_e
+       [H_i(n_e)+H_j(n_e)]
+ -\sum_{i:m_i>0}
+  \frac{|2a_i+c_i|^2}{4m_i}.}
+\]
+No unknown center coordinate occurs. For fixed
+true frame angles and owner choices, **maximizing
+this lower bound gives the exact fiber optimum**.
+
+The unrestricted problem is therefore exactly an
+optimization over the **eight square frame angles
+and finite genuine SAT owner words**, rather
+than a 23+/24-variable uncontrolled center/angle
+search. There are at most \(8^{28}\) raw
+full owner words, so **the actual remaining
+global difficulty is their sound geometric
+pruning and an EXHAUSTIVE angle-box certificate**.
+This reduction is a theorem, not the certificate.
+
+**Two executed exact proof regressions:**
+
+1. [HUMAN_SEVEN_PARALLEL_EXACT_DUAL.md](HUMAN_SEVEN_PARALLEL_EXACT_DUAL.md)
+   proves a rational SOS identity for the seven
+   candidate directed supports at zero tilt,
+   with global-in-centers optimum
+   \[
+   \boxed{q\ge2257/576},
+   \]
+   attained by a genuine seven-square packing.
+   [verify_seven_parallel_exact_dual.py](verify_seven_parallel_exact_dual.py)
+   expands the **whole polynomial identity**
+   in arbitrary center variables and checks
+   all 21 actual pair separations and all
+   28 true disk vertices by exact rational arithmetic.
+2. [verify_interval_angle_fiber_dual.py](verify_interval_angle_fiber_dual.py)
+   is an exact Fraction *continuous interval*
+   checker for true rational-frame half-tangent
+   angle boxes. The supplied
+   [seven_parallel_positive_angle_box_certificate.json](seven_parallel_positive_angle_box_certificate.json)
+   rigorously covers **all seven independent**
+   half-angle tangent intervals
+   \([-1/15000,1/15000]\) for one
+   actual SAT-owner pattern and **all centers**.
+   Its exact dual lower bound is
+   \[
+   \boxed{q\ge3.9157479094\ldots
+   >3.915535>\widehat q}.
+   \]
+   This is **one sound positive-volume
+   angle/owner cell**, NOT complete coverage
+   of all poses or an n8 global proof.
+
+The noncertifying
+[computer_seven_angle_fiber_oracle.py](computer_seven_angle_fiber_oracle.py)
+explores seven directed-support fibers using
+a numerical convex center subproblem with
+analytic Jacobian. A separate 3456-fiber
+differential-evolution scan did not find
+a below-candidate fixed-support solution,
+but is **not mathematical evidence of
+global impossibility**. It does not cover
+the eighth square or other owner words.
+
+**Next actual global exit criterion:** combine
+a DISK-NATIVE exterior-marker/center-order
+reduction with rational SAT-owner pruning,
+and exhibit a finite **cover of ALL 8-angle
+and owner cells** by interval dual certificates
+or direct proven geometric contradictions,
+leaving only the already hand-proved local
+sharp neighborhood. A nonterminating branch-and-bound
+or 3456 successful numerical fibers is
+not a proof. The needed complete finite
+global certificate has not been produced.
+
+**The unrestricted \(R_8\ge\widehat R\),
+equality classification and Lean 4 remain OPEN.**
+
+---
+
+
 ## Latest audit: local-capture slogan is equivalent to the global conjecture (2026-10-13)
 
 [GLOBAL_CAPTURE_EQUIVALENCE_AND_DUAL_NO_GO.md](GLOBAL_CAPTURE_EQUIVALENCE_AND_DUAL_NO_GO.md)
