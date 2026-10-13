@@ -2914,3 +2914,75 @@ or that the unrestricted
 \(R_8\ge\widehat R\) has been closed.
 The valid S4/k7 sharp equality packing
 remains admitted.
+
+
+### 2026-10-12: S1/k3 far 3+1 singleton lies strictly opposite the 3+0 triple
+
+[HUMAN_S1_K3_FAR_SINGLETON_OPPOSITE_SIGN.md](HUMAN_S1_K3_FAR_SINGLETON_OPPOSITE_SIGN.md)
+eliminates a further genuine continuous
+**signed-center subbranch** inside the still-open
+exclusive S1=(3+0,3+1), k=3 macro-case.
+
+Normalize the 3+1 axis as R:3, L:1
+and the perpendicular 3+0 axis as U:3,D:0.
+If the far L singleton's actual center
+were on or above the horizontal origin
+diameter (\(y_L\ge0\)), the outer
+L center's angle \(\phi_L\le\pi\)
+would repel the northwest U-inner
+center \(U_-\) by the previously proved
+mixed center-angle gap \(>2\pi/9\).
+This forces its center ray
+\(\theta_{U-}<7\pi/9\).
+
+The three consecutive pairwise
+inner-center angular gaps \(>\pi/3\)
+then force
+\[
+\theta_{U+}<4\pi/9,\quad
+\theta_{R+}<\pi/9,\quad
+\theta_{R-}<-2\pi/9.
+\]
+That last R-inner bound makes its radial
+norm \(>7/10\), so the sole outer R ray
+cannot lie below it. Nor can the outer R
+ray lie above the U+ inner ray because
+of the exact mixed \(>12/25\)-radian
+center-gap lemma.
+
+If the outer R ray lay below R+, a
+strict \(>2\pi/9\) mixed gap would force
+R-minus below \(-24/25\) radians,
+violating its *whole R-cap*
+x projection \(>117/200\).
+If it lay above R+, it would satisfy
+\[
+311/500<\psi_R<\pi/3;
+\]
+its required **R-only** failure of U
+whole-cap membership then forces
+squared distance \(<1-969139759/40000000000\)
+from the positive-y inner R center,
+another contradiction.
+
+Therefore the strict necessary
+center-sign condition is
+\[
+\boxed{y_L<0}
+\]
+for the far L singleton in that
+normalization. Under rotations/reflections,
+its transverse sign is **opposite to
+the 3+0 triple's outward side normal**.
+All rational trigonometric margins are
+audited by
+[verify_s1_k3_far_singleton_sign.py](verify_s1_k3_far_singleton_sign.py).
+
+Combined with the separately proved
+uniform \(0<h_{30}<1/16\) condition,
+this narrows S1/k3 to tiny perpendicular
+offsets and one far-singleton center side.
+**It does not close the residual S1/k3
+continuum**, the other S1 outer counts,
+or the unrestricted radius inequality
+\(R_8\ge\widehat R\).
