@@ -2,6 +2,114 @@
 
 ## Current orientation (2026-10-11)
 
+### CURRENT global B2 structural closure (2026-10-12)
+
+The latest structural work **does not chase more local
+cap thresholds**. See
+[STRUCTURAL_GLOBAL_CLOSURE_ROADMAP.md](STRUCTURAL_GLOBAL_CLOSURE_ROADMAP.md).
+
+**Quantized central two-force directions.**
+[HUMAN_TWO_CENTRAL_FORCE_AXES.md](HUMAN_TWO_CENTRAL_FORCE_AXES.md)
+proves force+torque equilibrium restricts
+two opposite positive-stress central
+contact normals to **only the C side or
+diagonal axes** (four unoriented axes).
+Side mode has equal transverse coordinates
+at opposite C-side contacts; diagonal
+mode uses two opposite true C corners.
+
+**Diagonal mode requires true auxiliary bracing.**
+[HUMAN_DIAGONAL_CENTRAL_TANGENTIAL_BRACING.md](HUMAN_DIAGONAL_CENTRAL_TANGENTIAL_BRACING.md)
+rules out diagonal C with fewer than
+four *actual C-contact neighbors* in
+a minimum-contact radius representative.
+There must be at least two additional
+zero-positive-stress contacts with
+**opposing signed projections along
+the stressed diagonal tangent**.
+Rotating C would otherwise remove the
+two diagonal positive contacts and
+a small tangential translation would
+remove all one-sided extra contacts.
+
+**All k7/B2 stressed paths m=3..6 have
+circle-or-spectator endpoint obligations**
+if C has exactly two actual contacts:
+each positive path endpoint either
+touches the disk circle or an adjacent
+spectator. For m6 at least one endpoint
+is circle-contacting. For m5 with both
+endpoints circle-free, the complete
+outer actual graph is a seven-vertex
+path missing only the edge between
+the two spectators. Exact finite graph
+enumeration checks 392 possible
+labeled outer-edge supergraphs
+before geometry.
+
+**All internal path vertices obey a
+global vertex-cover condition.**
+[HUMAN_B2_INTERNAL_PATH_VERTEX_COVER.md](HUMAN_B2_INTERNAL_PATH_VERTEX_COVER.md)
+proves every edge joining two
+consecutive *internal stressed outer*
+squares has at least one endpoint
+that either has a true circle-contact
+vertex or an additional actual C
+contact chord. Otherwise two adjacent
+circle-free actual-degree-two transmitters
+would violate the existing exact
+four-square chain theorem. The internal
+anchor minima for m=3,4,5,6 are
+**0,1,1,2**, independently of frames.
+
+**k7/B2/m6 is now exactly P/S/K.**
+[HUMAN_M6_THREE_ACTUAL_CONTACT_MODES.md](HUMAN_M6_THREE_ACTUAL_CONTACT_MODES.md)
+gives three exhaustive actual C-contact modes:
+P (only two central contacts; **at least
+three stressed path outer squares touch
+the circle**), S (extra central contact
+only to spectator T; **T and at least
+two internal stressed squares touch
+the circle**), K (at least one
+zero-weight actual C-to-internal-path
+chord, and **at least two internal
+circle/chord anchors**).
+Every diagonal C-positive mode belongs
+to K and has the stronger opposed
+tangential bracing.
+
+In S0, where the spectator is an actual
+one-contact **leaf**, the
+[HUMAN_LEAF_EXCLUSIVE_CENTRAL_SIDE.md](HUMAN_LEAF_EXCLUSIVE_CENTRAL_SIDE.md)
+theorem forces T radial and C-parallel,
+touching the disk at two vertices
+and attaching on a **perpendicular
+central side**, not one of the
+two positively stressed C sides.
+
+**m3 scaffold gate.** When C has
+exactly two actual contacts and
+the sole internal stressed square S2
+is circle-free, two *distinct*
+interior actual-degree-two transmitters
+share the same endpoint pair. The
+existing exact theorem forces
+**all four square frames parallel**,
+a genuine candidate-like motif
+rather than an assumed common frame.
+
+**Remaining mathematical exit:** prove
+a sharp full-packing radius inequality
+from these forced circle vertices,
+central chords and parallel scaffolds;
+then close root A (actual full ring),
+B3, X and k<=6. The unrestricted
+\(R_8\ge\widehat R\), equality
+classification and Lean theorem
+remain OPEN. Preserve the genuine
+sharp S4/k7 equality packing.
+
+
 ### CURRENT proof architecture: four stress roots; k7 two-spoke m=7 excluded
 
 [STRUCTURAL_GLOBAL_CLOSURE_ROADMAP.md](STRUCTURAL_GLOBAL_CLOSURE_ROADMAP.md)
