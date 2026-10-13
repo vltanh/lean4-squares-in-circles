@@ -342,3 +342,88 @@ root, not to the missing-edge outer
 path root, and remains admitted.
 No unrestricted \(R_8\ge\widehat R\)
 proof is asserted.
+
+
+## Sharpened actual-contact graph conclusion when C has only two actual neighbors
+
+The original 35-support count, followed by the
+m=7 path exclusion to 28 **positive
+stress** supports, is now complemented
+by a stronger *actual-contact* graph
+result:
+
+[HUMAN_B2_PURE_CENTRAL_CONTACT_ISOLATES_SPECTATORS.md](HUMAN_B2_PURE_CENTRAL_CONTACT_ISOLATES_SPECTATORS.md)
+proves that if the chosen *minimum-contact*
+radius minimizer has **exactly two
+actual C neighbors**, equal to its
+two positive-stress C neighbors,
+**every remaining exterior spectator
+is actually isolated from all other
+squares**. Otherwise a nonempty
+proper set of extra outer-ray
+neighbor edges would produce an
+actual-degree-one *noncentral*
+spectator, violating the exact
+actual-leaf theorem. Thus
+**all positive-stress edges are
+exactly all actual square contact
+edges in the nontrivial component**.
+
+An exact graph-only audit now
+eliminates **364 of the 392**
+possible proper *actual outer-contact
+supergraphs* of m3..6 stressed paths,
+leaving only the 28 bare stressed
+actual graph supports (seven per m).
+This is a stronger claim about
+**true contacts**, not a new
+numerical assertion about the
+number of positive cycle supports.
+
+The contact-minimal transmitter
+theorems then force **both**
+central stressed path endpoints
+to have true disk-circle vertices.
+The internal stressed-path
+vertex-cover theorem forces
+additional circle-contact
+outer square labels. Minimum
+stressed-path circle-touching
+label counts for m3,m4,m5,m6
+are **2,3,3,4** respectively.
+
+[HUMAN_ISOLATED_OUTER_CIRCLE_FREE_NORMALIZATION.md](HUMAN_ISOLATED_OUTER_CIRCLE_FREE_NORMALIZATION.md)
+allows the actual isolated outer
+spectators to be repositioned
+slightly radially inward, retaining
+their true frames, center outer
+classes, zero actual contacts and
+the least radius, until **all
+their disk vertices are strict**.
+The spectators must still appear
+as real whole unit squares in
+every sharp packing inequality.
+
+The **entire m6 root with extra
+actual C contacts** is separately
+classified by
+[HUMAN_M6_SPECTATOR_CONTACT_TRICHOTOMY.md](HUMAN_M6_SPECTATOR_CONTACT_TRICHOTOMY.md):
+the sole spectator T is either
+actually isolated, a central
+leaf with true circle contacts,
+or a C--T--S1/S6 actual triangle
+with a true circle contact.
+Diagonal two-stress central mode
+still requires two-sided
+tangential actual bracing
+and internal C chords.
+
+These are new complete graph
+and actual-contact *subcase
+exclusions*, not the sharp
+global inequality
+\(R_8\ge\widehat R\).
+The legitimate full seven-outer
+actual-contact equality ring
+remains outside the outer-path
+hypotheses and is preserved.
