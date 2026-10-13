@@ -2278,3 +2278,36 @@ S3/k=3 outer-R sector, the S2/k4 small-offset
 near-inner case, D1/D2, or the unrestricted
 \(R_8\ge\widehat R\). The S4/k7 sharp
 candidate equality is preserved.
+
+
+### Exact transverse clearance of the sole remaining S3/k3 distant D center
+
+The previous S3/k3 far D **negative x sign** theorem
+now has a quantitative strict strengthening:
+\[
+\boxed{-13/40<x_D<-9/500.}
+\]
+See the appended section of
+[HUMAN_S3_K3_DISTANT_D_NEGATIVE_X.md](HUMAN_S3_K3_DISTANT_D_NEGATIVE_X.md).
+
+Indeed the R-minus inner angle and mixed
+inner/outer center-angle inequalities force
+the D polar ray at least
+\[
+1427/1750+77/100-\pi/2
+>1427/1750+77/100-11/7=7/500
+\]
+radians *left* of the downward origin diameter.
+Since the far D singleton's
+longitudinal center coordinate satisfies
+\(-y_D>13/10\), the elementary
+\(\tan t>t\) gives
+\(-x_D>(13/10)(7/500)=91/5000>9/500\).
+The script verify_s3_k3_distant_d_sign.py now
+also audits the exact rational comparison.
+
+**This is still a necessary center coordinate,
+not a whole-square quadrant separator.**
+The positive outer-R ray S3/k3 continuum
+is unresolved. The global sharp n=8 proof
+and Lean handoff remain OPEN.
