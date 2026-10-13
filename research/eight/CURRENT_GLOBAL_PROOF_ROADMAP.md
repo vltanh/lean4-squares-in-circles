@@ -1,3 +1,41 @@
+# CURRENT PRIMARY TARGET — one global bridge, not more subcases
+
+**The authoritative next theorem is now**
+[PRIMARY_GLOBAL_BRIDGE.md](PRIMARY_GLOBAL_BRIDGE.md).
+All detailed branch tables below are retained as historical
+research inputs, **not** the current work queue.
+
+* Proven: the five-corner directed chain is sharp, and the
+  seven-genuine-square separator theorem establishes
+  \(R\ge\widehat R\) when its **seven actual directed
+  support inequalities** and aligned A/E end frames hold.
+* **Unproved candidate B:** extract **those exact
+  inequalities and that A/E frame alignment from every
+  attained global minimum-radius eight-square packing**
+  with \(R\le\widehat R\). If false, derive a different
+  universal orientation-free sharp support inequality.
+* Newly **disproved as a potential shortcut:** no actual
+  contact graph, two parallel frames or any prescribed
+  contact edge is forced for **all** packings under
+  \(R^2\le9789/2500\).
+  [NO_NEAR_SHARP_CONTACT_OR_FRAME_RIGIDITY.md](NO_NEAR_SHARP_CONTACT_OR_FRAME_RIGIDITY.md)
+  constructs a full **rational eight-square** witness
+  with no square contacts and eight distinct frames;
+  its exact script checks all 32 vertices and 28 pair SAT
+  inequalities. Thus B **must** be minimizer-level.
+* Numerical attempts to extend the directed separator
+  theorem to freely oriented A/E ends have not produced
+  a certified counterexample or theorem. Infeasible
+  local optimizer outputs have no status as evidence.
+
+**Stop rule:** no new branch-specific lemmas should be
+committed unless they directly establish or falsify B
+or yield a global sharp inequality spanning its failure.
+The true seven-outer equality contact-ring construction
+must remain admitted. **Unrestricted sharpness is OPEN.**
+
+---
+
 # Current global proof roadmap
 
 Reorientation: 2026-10-13. Baseline audited: `605af6c522c0928d3fd1ab7b1765ed20d3e7dc1f`.
