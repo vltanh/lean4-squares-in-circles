@@ -45,7 +45,7 @@ for m in range(3,7):
             if left in E and right in E:
                 both_circle_free_masks[m]+=1
                 assert len(spectators)>=2
-                assert some_missing_middle := any(e not in E for e in middle)
+                assert any(e not in E for e in middle)
                 if m==5:
                     assert len(middle)==1 and not (middle<=E)
                 if m==6:
