@@ -1043,3 +1043,48 @@ Outer-center paths and the seven-outer S4
 candidate contact cycle remain part of the
 unrestricted case queue. The sharp reverse
 radius bound \(R_8\ge\widehat R\) is still OPEN.
+
+
+## 2026-10-12 exact global-pruning progress in the exclusive D0/S=7 classes
+
+The latest **full-center-domain hand proofs** supersede
+older S2 near-inner and S3/k3 residual strips:
+
+* [HUMAN_S3_K3_FULL_EXCLUSION.md](HUMAN_S3_K3_FULL_EXCLUSION.md):
+  **the entire S3/k=3 joint status/outer-count cell is impossible**.
+  The last positive outer-R ray from the previous angular
+  analysis forces a center-distance contradiction with
+  the positive-y inner R center. This uses the
+  **R-only, not RU** whole-side status condition
+  essentially.
+* [HUMAN_S2_NEAR_INNER_FULL_EXCLUSION.md](HUMAN_S2_NEAR_INNER_FULL_EXCLUSION.md):
+  **the entire S2 subbranch where both nearer 2+2
+  whole-cap centers are inner is impossible**, for every
+  outer-center count. The final geometric obstruction
+  is \(|q_{\mathrm{outer\,R+}}-p_{\mathrm{inner\,U+}}|^2
+  <4923651/5000000<1\), proved by strict angle bounds,
+  independent frames and four hand convexity endpoints.
+
+The current necessary exclusive-one-side queue is:
+
+| Status type | k not yet globally excluded | Additional necessary restriction |
+| --- | --- | --- |
+| S1=(3+0,3+1) | 3,4,5,6 | Exceptional small perpendicular-triple offset regions remain |
+| S2=(3+0,2+2) | 4,5,6 | **At least one nearer 2+2 cap center is outer** |
+| S3=(3+1,2+1) | 4,5,6,7 | k=3 fully impossible |
+| S4=(2+1,2+2) | 4,5,6,7 | Includes actual k=7 sharp equality |
+
+In particular S2/k=4 now necessarily has
+*exactly one* nearer-cap outer and *exactly one*
+perpendicular triple outer, besides its two
+far-cap outer centers; k=5/6 still permits
+several outer allocations that need new sharp
+geometry. The candidate's S4/k=7 ring is
+unchanged.
+
+**These are joint center/status restrictions,
+not new reductions of the 3,995,040 purely
+symbolic twelve-status word count**. The
+theorem \(R_8\ge\widehat R\) remains OPEN,
+as do D0 corner-only exceptions, D1/D2 and
+outer-contact graph branches.
