@@ -966,3 +966,37 @@ of the remaining square labels still matter.
 The S4 equality-bearing configuration and the
 unrestricted \(R_8\ge\widehat R\) proof obligation
 remain untouched.
+
+
+## 14. Revised strict S2/k4 and S3/k3 center-coordinate domains
+
+The newest *arbitrary-frame analytical* pruning supersedes
+the earlier weaker S2 \(h_R<1/10\) and S3
+\(h_U<21/100\) bounds, under their exact
+respective inner/outer center hypotheses.
+
+| Status / actual center subcase | Necessary remaining domain |
+| --- | --- |
+| Exclusive S2, both near-U cap centers inner | **k=4 exactly**, \(0<h_R<1/20\); R outer center rays have strict opposite signed y; U inner transverse x values are \(<-9/25\) and \(>9/25\); D outer transverse x values are \(<-29/100\) and \(>29/100\) |
+| Exclusive S3, k=3 | \(17/200<h_R<13/100\) and \(17/200<h_U<1/5\), with the sole R-outer ray either \(-\pi/9<\psi<-2041/10500\) or \(311/500<\psi<8959/10500\); distant L/D center transverse magnitudes \(<3/20\), \(<13/40\) |
+
+Proof files:
+[HUMAN_S2_K4_NEAR_INNER_FIVE_HUNDREDTHS.md](HUMAN_S2_K4_NEAR_INNER_FIVE_HUNDREDTHS.md),
+[HUMAN_S2_K4_TRANSVERSE_CENTER_ANCHORS.md](HUMAN_S2_K4_TRANSVERSE_CENTER_ANCHORS.md),
+[HUMAN_FIVE_SQUARE_FAN_REFINED.md](HUMAN_FIVE_SQUARE_FAN_REFINED.md),
+and [HUMAN_S3_K3_SHARPER_OUTER_RAYS.md](HUMAN_S3_K3_SHARPER_OUTER_RAYS.md).
+
+**Audit guardrail:** the exact rational S2/k4 eight-center
+relaxation in RATIONAL_S2_K4_CENTER_RELAXATION.md
+passes only its explicitly stated weak radial/center-distance
+conditions. Its R1/D2 and D1/D2 outer-center angle gaps are
+too small to satisfy HUMAN_STABLE_OUTER_ANGLE.md;
+their exact angle tangents are both \(<9/10\), while
+\(\tan(\pi/4-1/500)>249/251\). It is **not** an
+actual square packing or evidence that the full S2/k4
+case is realizable. Stronger center-angle obstructions
+might still suffice.
+
+These refinements preserve the S4/k7 exact equality
+configuration and do not yet establish
+\(R_8\ge\widehat R\).
