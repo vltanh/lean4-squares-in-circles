@@ -204,3 +204,41 @@ polarization theorem are **not** refuted. A genuine
 cell C exclusion must exploit the mixed radial
 classification, the other five squares, or
 additional geometric relations.
+
+
+## Two local geometry developments affecting cell C
+
+**Exact nonempty standalone same-sign cap pairs.**
+[RATIONAL_SAME_SIGN_ROTATED_CAP_PAIR.md](RATIONAL_SAME_SIGN_ROTATED_CAP_PAIR.md)
+provides two genuine whole unit squares
+with both center x coordinates *strictly
+positive*, independent frames and positive
+SAT separation, at shared cap offset
+\(h=881/3000>7/24\) under the n=8
+radius ceiling. Both centers in that
+example are **outer**, so it is **not**
+a complete S2/k4 cell C packing with one
+inner and one outer nearer-U center.
+It does disprove any universal all-frame
+same-sign **two-square** cap exclusion.
+
+**Actual whole-quadrant ownership.**
+[HUMAN_MIXED_CAP_WHOLE_QUADRANT_OWNER.md](HUMAN_MIXED_CAP_WHOLE_QUADRANT_OWNER.md)
+proves the stronger *mixed radial class*
+result: if the near-U inner and outer
+centers in cell C have nonnegative
+transverse sign product, the **outer U
+square itself** lies wholly in either
+NE or NW, with signed x clearance
+strictly **greater than \(1/50\)**.
+The independent whole-quadrant capacity
+theorem forbids any additional entire
+unit square in that same quadrant.
+This does **not** force every R square
+to be wholly in an origin quadrant,
+and it does not eliminate cell C.
+
+These notes refine cell C's true-square
+status without changing the exhaustive
+A/B/C classification or claiming
+\(R_8\ge\widehat R\).
