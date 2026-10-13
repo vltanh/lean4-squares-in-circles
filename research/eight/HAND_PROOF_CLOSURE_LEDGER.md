@@ -3164,3 +3164,137 @@ the new cap envelope hand proof.
 
 The roadmap and the still-open unrestricted
 \(R_8\ge\widehat R\) status are unchanged.
+
+
+## 2026-10-12: second computer-to-hand cap breakthrough and exact counterexample boundary
+
+A second round of **genuine computer-assisted discovery**
+plus exact human mathematics has improved the previous
+mixed-cap sign cutoff in three increasingly strong,
+fully proved stages: \(h\ge1/3\), \(h\ge8/25\),
+and finally
+\[
+\boxed{h\ge79/250=0.316.}
+\]
+The earlier full-frame 37/100 theorem remains valid but
+is now superseded in threshold.
+
+**Sharp one-square cap theorem at 79/250.**
+[HUMAN_CAP_ENVELOPE_79_250.md](HUMAN_CAP_ENVELOPE_79_250.md)
+proves that if an arbitrary-frame whole
+unit square S with center (x,y) lies in a disk with
+\(R^2\le q_+:=9789/2500\) and in the cap \(x\ge h\ge79/250\),
+then
+\[
+R^2\ge(1+h)^2+(|y|+1/2)^2.
+\]
+The true-square proof first obtains \(h+y<7/5\)
+from the actual (1,1) support direction.
+Computer-assisted **exact rational Bernstein
+coefficient search** located a four-parameter-vertex
+positivity certificate for the genuine positive-frame
+two-vertex polynomial. The certificate covers all
+real tilt half-tangents \(z\in[0,\sqrt2-1]\subset[0,1/2]\):
+**63 exact degree-six Bernstein coefficients**
+over nine rational subintervals have positive
+minima, with smallest \(4322111/1310720000>0\).
+The top-edge certificate at
+\(y=49/50\) is used **before** deriving the
+center-height bound \(y<49/50\),
+avoiding circular reliance on the desired
+cap envelope. Negative-frame squared-vertex
+concavity contributes the exact diagonal margin
+\(57/2500>0\).
+
+The proof is completely analytic over all
+frames, positions, signs and disk-containment
+parameters; the optional exact
+[verify_cap_envelope_79_250.py](verify_cap_envelope_79_250.py)
+replays arithmetic only.
+The exploratory script
+[computer_cap_bernstein_discover.py](computer_cap_bernstein_discover.py)
+reproduces rational coefficient-search successes
+and failures, but a negative scan is NOT
+proof of any theorem's failure.
+
+**Sharp mixed-inner/outer center sign theorem at 79/250.**
+[HUMAN_MIXED_HIGH_CAP_79_250.md](HUMAN_MIXED_HIGH_CAP_79_250.md)
+combines that exact single-square envelope
+with the older universal mixed polar
+\(>3/4\) gap and radial center bound
+\(|q|<283/200\).
+If two **whole squares** in the same
+cap \(h\ge79/250\) have one inner and
+one outer center, their transverse
+center coordinates must have
+**strictly opposite signs**.
+For same weak signs, normalize
+\(0\le p_x<1/4<7/10<q_x<489/500\),
+\(a:=102/125\le p_y<1\)
+and \(q_y\ge a\).
+Keeping the coupled outer radial
+inequality, the two possible y-orders
+force respectively
+\[
+|p-q|^2<999361/1000000<1,
+\quad
+|p-q|^2<49517/50000<1.
+\]
+The nearest tight **positive reserve**
+is \(639/1000000>0\). Exact checks
+are in [verify_mixed_high_cap_79_250.py](verify_mixed_high_cap_79_250.py).
+The weak inner x=0 boundary is included
+correctly by using \(|q_x-p_x|\le q_x\);
+the final contradiction remains strict
+from the radial bound.
+
+**Critical mathematical counterexamples.**
+[RATIONAL_DIAGONAL_CAP_ENVELOPE_COUNTEREXAMPLE.md](RATIONAL_DIAGONAL_CAP_ENVELOPE_COUNTEREXAMPLE.md)
+gives a true \(45^\circ\) square at
+\(h=293/1000>7/24\) which fits
+under \(q_+\) but *violates*
+the aligned-square one-cap envelope.
+A stronger **fully rational-frame**
+witness in
+[RATIONAL_ROTATED_CAP_ENVELOPE_THREE_TENTHS.md](RATIONAL_ROTATED_CAP_ENVELOPE_THREE_TENTHS.md)
+also violates that inequality at
+\(h=3/10=0.3\), with exact genuine
+four-vertex circle reserve
+\(1953173771/272891522000>0\).
+Neither one-square counterexample is
+a mixed-center two-square arrangement,
+so neither contradicts the new 79/250
+mixed-pair theorem. They **prohibit**
+silently extending the same one-square
+envelope to the remaining offset interval.
+
+**Latest S2/k4 exact three cells, all still open:**
+A \(79/250\le h_U<97/200\), opposite signs;
+B \(7/24<h_U<79/250\), opposite signs;
+C \(7/24<h_U<79/250\), weak same signs,
+with its prior whole-quadrant owner,
+strict center magnitudes, and mandatory
+frame-defect constraints. The entire
+previous same-sign offset band
+\([79/250,37/100)\) is now excluded.
+The residual width of C is
+\[
+79/250-7/24=73/3000.
+\]
+**No A/B/C cell is yet entirely eliminated.**
+
+The roadmap
+[COMPUTER_ASSISTED_ATTACK_ROADMAP.md](COMPUTER_ASSISTED_ATTACK_ROADMAP.md)
+now prioritizes **true two-square separating-axis
+inequalities** in this remaining C interval
+instead of indefinitely tightening one-square
+thresholds. Separate opposite-sign A/B local
+pairs are actually feasible, so A/B require
+the far-D pair/right-R triple/central square
+and valid inter-square axes.
+
+The entire unrestricted radius inequality
+\(R_8\ge\widehat R\), global equality
+classification, and Lean formalization
+remain OPEN; the exact sharp S4/k7
+equality ring must be retained.
