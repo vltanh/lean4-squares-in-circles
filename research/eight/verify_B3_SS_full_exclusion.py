@@ -35,7 +35,7 @@ torque=sp.expand(lX*cross(zX,nX)+
                  lY*cross(zY,nY)+
                  lZ*cross(zZ,nZ))
 torque_from_force=sp.factor(torque.subs(force_values))
-assert torque_from_force==lX*(c*(d+sp.Rational(1,2))-s*(k+xi))
+assert sp.simplify(torque_from_force-lX*(c*(d+sp.Rational(1,2))-s*(k+xi)))==0
 solution_xi=sp.solve(torque_from_force,xi)[0]
 assert sp.simplify(solution_xi-(-k+c*(d+sp.Rational(1,2))/s))==0
 
