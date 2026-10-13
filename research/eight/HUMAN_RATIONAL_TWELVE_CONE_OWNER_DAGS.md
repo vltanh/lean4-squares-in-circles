@@ -205,3 +205,70 @@ constraints. No such complete cover is
 claimed here, and the unrestricted sharp
 bound \(R_8\ge\widehat R\), equality and
 Lean formalization remain OPEN.
+
+
+## Later strengthening: a fixed rational projection margin, plus cross-sector Farkas
+
+The previous twelve-cone DAG theorem has been **strictly
+strengthened** by
+[HUMAN_RATIONAL_SECTOR_PROJECTION_FARKAS.md](HUMAN_RATIONAL_SECTOR_PROJECTION_FARKAS.md).
+
+If any genuine directed square SAT-owner normal
+n lies in the k-th rational cone, its center pair
+obeys the **explicit projection inequality**
+\[
+\boxed{(r_k+r_{k+1})\cdot(p_j-p_i)>289/2700.}
+\]
+This holds for **all independent square frames**,
+not merely at rational points. The hand proof uses
+the center radius \(<283/200\), true SAT support
+sum >=1, sector width <2/3 radians, and the
+unit bisector's angular distance <1/3 from n.
+
+Thus every sector graph is not only a DAG but a
+set of **strictly ordered rational linear projections**.
+More importantly, owner edges belonging to DIFFERENT
+sectors may themselves be incompatible. If positive
+integer/rational coefficients on selected sector edges
+make the coefficient of **every center p_i vanish
+exactly**, their summed positive projection
+inequalities would say 0>positive, a pure Farkas
+contradiction.
+
+A fully exact example with **eight real rational
+square frames and 28 selected signed true SAT owners**
+passes ALL previous 60-degree-triangle and
+12-sector DAG tests but is ruled out by just
+**eight selected cross-sector inequalities**
+with exact integer weights 44,51,28:
+\[
+0>327(289/2700)=31501/900>35.
+\]
+The file
+[global_sat_balanced_sector_farkas_certificate.json](global_sat_balanced_sector_farkas_certificate.json)
+and checker
+[verify_rational_sector_farkas.py](verify_rational_sector_farkas.py)
+verify every rational sector assignment, the
+28-edge old-screen pass, and all 16 EXACT center
+force cancellations. The new test is therefore
+**genuinely stronger than the preceding DAG filter**.
+
+The further
+[verify_interval_rational_sector_farkas.py](verify_interval_rational_sector_farkas.py)
+checks the same positive integer Farkas balance
+over a FULL, strictly positive-width,
+**eight-dimensional rational frame half-angle
+box**, from
+[global_sat_balanced_sector_eight_angle_box_certificate.json](global_sat_balanced_sector_eight_angle_box_certificate.json).
+All selected true normals remain inside their
+certified rational cones throughout the box
+with exact positive cross-product margins, and
+every possible center arrangement would again
+yield the impossible 0>31501/900.
+No sampled orientations or numerical solver
+output enter this conclusion.
+
+The global unrestricted optimal radius remains
+OPEN: these are *whole owner/angle-class
+exclusions* and do not prove that every
+other owner class has been covered.
