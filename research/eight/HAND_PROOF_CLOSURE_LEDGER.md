@@ -3920,3 +3920,119 @@ full ring A, root X and
 k<=6. Do not return to
 tiny cap threshold optimization
 without a new global bridge.
+
+
+## 2026-10-13: global minimal B3 radial triangle structural closures
+
+The smallest k7/B3 positive stress graph remains
+the actual stressed triangle \(C-X-Y-C\) plus
+radial positive C-Z bridge. All X,Y,Z have **strictly
+positive physical circle multipliers**. SAT ownership
+leaves three genuine bridge interfaces:
+SS (C side/Z side), CS (C corner/Z side),
+SD (C side/Z diagonal). The C-corner/Z-diagonal
+case was fully excluded previously.
+
+**Entire global SS all-C-side triangle subcase excluded.**
+[HUMAN_B3_SS_OPPOSITE_SIDE_EXCLUDED.md](HUMAN_B3_SS_OPPOSITE_SIDE_EXCLUDED.md)
+uses the earlier force/torque fact that with SS Z
+and all three true C contact normals being C side
+normals, both X,Y positively contact the
+*opposite* C side, with actual C contact points
+straddling the radial n line. One of them has
+true transverse contact ordinate \(|\tau|\le1/2\)
+on the side \(n\cdot z=-k\), with
+\(k=2-\sqrt{R^2-1/4}\in(0,1/2)\).
+A new **all-frame exact square-vertex lemma**
+proves any genuine square wholly beyond that
+negative side with a support-face point at
+\((-k,\tau)\) satisfies
+\[
+\max_{\text{all true vertices }v}|v|^2
+\le(k+1)^2+9/4
+=R^2-(6\sqrt{R^2-1/4}-11)<R^2.
+\]
+Its key trigonometric frame-width identity is
+\[
+2k(L-1)+(D-1)\le L+D-2\le0,\quad
+L=c+s,\ D=c-s.
+\]
+Thus the corresponding X or Y square is
+**strictly circle-free**, contradicting its
+mandatory strictly positive circle multiplier.
+This eliminates the entire previously surviving
+all-C-side SS opposite-face triangle, not merely
+an offset interval. The exact algebra is
+audited in
+[verify_B3_SS_opposite_side_exclusion.py](verify_B3_SS_opposite_side_exclusion.py).
+
+**Surviving SS triangle normals are corner-forced.**
+[HUMAN_B3_SS_TRANSVERSE_CORNER_FORCING.md](HUMAN_B3_SS_TRANSVERSE_CORNER_FORCING.md)
+shows the positive C--X and C--Y normals have
+nonzero **opposite transverse projections**,
+their actual C contact points occupy the top and
+bottom transverse support sides, and at least
+one C contact is a genuine corner on the
+side opposite radial Z.
+The CS bridge independently also forces
+nonzero opposite transverse triangle normal
+projections, by
+[HUMAN_B3_CS_TRANSVERSE_FORCE_REQUIRED.md](HUMAN_B3_CS_TRANSVERSE_FORCE_REQUIRED.md):
+otherwise all positive contact edges have
+zero origin moment, contrary to the true
+nonradial positive stress component theorem.
+Do not promote either result to SD.
+
+**Complete auxiliary actual spectator paths.**
+[HUMAN_B3_COMPLETE_SPECTATOR_ARCS.md](HUMAN_B3_COMPLETE_SPECTATOR_ARCS.md)
+proves that if C has **exactly three actual
+neighbors X,Y,Z**, each of the two complementary
+outer-ray spectator arcs between Y-Z and Z-X
+must be either entirely present as true contacts
+or entirely absent. A partial nonempty arc
+would have a degree-one spectator whose only
+actual neighbor is noncentral, violating the
+minimum-contact actual-leaf theorem.
+Both arcs complete would be the excluded
+full seven-outer actual ring.
+Hence there are exactly **three graph patterns
+per 21 positive ray-label triples**, or **63
+combinatorial actual-contact templates**, not
+63 feasible packings. The exact
+[verify_B3_complete_spectator_arcs.py](verify_B3_complete_spectator_arcs.py)
+checks all 1,344 optional edge masks:
+1,260 partial arcs create actual noncentral leaves,
+21 form a full ring, 63 remain.
+
+Contact-minimal CS/SD bridge modes **require**
+an additional actual Z-to-spectator contact;
+therefore they must use one of the two
+**complete** auxiliary arcs when C actual degree
+is exactly three.
+
+**Actual circle-vertex and transmitter support
+along zero-positive-weight spectator paths.**
+[HUMAN_B3_AUXILIARY_ARC_BOUNDARY_COVER.md](HUMAN_B3_AUXILIARY_ARC_BOUNDARY_COVER.md)
+proves the s=1,2,3 spectators on a complete
+auxiliary arc each have exactly two actual square
+neighbors, none C. Adjacent circle-free
+two-contact spectator transmitters cannot occur.
+Therefore true circle-contact spectator labels
+cover the internal spectator path, requiring
+at least \(\lfloor s/2\rfloor\) such labels.
+For a single-spectator arc (s=1), the
+circle-free alternative is a genuine aligned
+unit-width transmitter between the two
+stressed core endpoints, which must have
+exact **closed-square distance one**.
+The Z ray positions i+3,i+4,i+5 give
+complementary arc spectator sizes
+(1,3),(2,2),(3,1).
+
+These are **genuine structural geometric
+conditions on full squares**, not a sharp
+global radius proof. The SS corner-forced
+case, CS/SD braced complete spectator paths,
+other actual C-contact-degree variants,
+B2 m4..6, all other global roots and the real
+S4/k7 equality ring remain open.
