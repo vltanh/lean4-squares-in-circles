@@ -1,5 +1,97 @@
 # ONE bridge to the unrestricted eight-square sharp radius
 
+
+## New preferred bridge after reading 11SquaresOptimal: pay for independent frame angles
+
+**The existing exact-end-frame bridge B below is now a
+STRONGER BACKUP conjecture, not the preferred next
+proof test.** The new technical target is an
+**orientation-robust seven-directed-separator theorem**,
+which may work even if A,E have different true frames.
+
+[**ELEVEN_SQUARE_METHOD_TRANSFER.md**](ELEVEN_SQUARE_METHOD_TRANSFER.md)
+extracts the technique from
+https://github.com/Queuingtheorydotcom/11SquaresOptimal,
+especially its revised manuscript's
+"mixed support inequality with independent angles":
+a true pair separator can give
+\[
+g_{ij}\ge\frac{\eta_{ij}}2
+             |\theta_i-\theta_j|,\quad
+\eta_{ij}>0.
+\]
+A positive weighted sum of true supports may
+then "pay" to compare its scalar value with
+the common-angle family, via an abstract
+spanning-tree contraction of angle variables.
+**No physical packing is rotated** and no exact
+minimizer-level frame parallelism is assumed.
+
+A concrete full-continuum **local transfer is PROVED**
+in [HUMAN_LOCAL_ANGLE_MISMATCH_BACKBONE.md](HUMAN_LOCAL_ANGLE_MISMATCH_BACKBONE.md):
+for the genuine candidate's directed SAT pairs
+AB, TB, DT, ED and HG, independently moving
+each relevant true square center by <=1/50
+and its frame by <=1/50 radians still
+**forces the correct true SAT owner family**
+and yields the uniform mismatch reserve
+\[
+\boxed{g_{ij}\ge\tfrac7{100}
+                   |\theta_i-\theta_j|.}
+\]
+All five exact base transverse displacements
+are rational with absolute values <=23/30.
+The arithmetic is independently checked in
+[verify_eight_angle_mismatch_backbone.py](verify_eight_angle_mismatch_backbone.py).
+The edge graph joins all **five standard
+chain frame variables** A--B--T--D--E,
+and separately the **tilted pair** H--G;
+the candidate's *relative* tilt remains free.
+
+**One immediate decisive computation, BEFORE
+more full case enumeration:** construct an
+explicit **positive weighted seven-square
+support functional** equal at common
+standard-cluster angles to the existing
+sharp five-corner scalar certificate.
+Determine whether its angle-cluster
+derivative bounds are dominated by
+the five **positive true-square mismatch
+penalties** above. A certificate
+\[
+|\partial_{\text{cluster}} S|
+\le\beta_{ij}
+\le\lambda_{ij}\eta_{ij}/2
+\]
+throughout a rational candidate neighborhood
+would prove a **local orientation-robust
+conditional sharp lower bound** without
+requiring any pair of frames to be parallel.
+
+**Global gap still present:** one must
+extract the required genuine seven
+directed SAT owner families and a
+sufficient pose/capture neighborhood
+from every hypothetical better
+eight-square minimizer, *or* prove
+a different universal sharp bound
+for uncaptured alternatives. The
+eleven-square manuscript gets
+capture from **12-markers in a
+SQUARE container**; its wall-based
+ownership proof is not valid
+verbatim for our circle.
+Do not mistake a local positive
+angle penalty for a global
+five-corner reduction.
+
+**No new global sharp radius proof,
+equality classification, or Lean
+formalization is claimed.**
+
+---
+
+
 **Single current research objective, 2026-10-13.**
 This supersedes the sprawling case-first strategy as the **primary
 proof program**. Historical S1–S4, D0/D1/D2 and physical-stress
