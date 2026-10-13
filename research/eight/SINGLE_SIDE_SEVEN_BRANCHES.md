@@ -293,7 +293,7 @@ The updated coarse classification of the
 
     S1=(3+0,3+1): k=3,4,5,6 retained;
     S2=(3+0,2+2): k=4,5,6 retained;
-    S3=(2+1,3+1): k=3,4,5,6,7 retained;
+    S3=(2+1,3+1): k=4,5,6,7 retained;
     S4=(2+1,2+2): k=4,5,6,7 retained,
                     including exact k=7
                     candidate equality.
@@ -335,7 +335,7 @@ The latest allowable k values therefore are:
 | --- | --- |
 | S1=(3+0,3+1) | **3,4,5,6** |
 | S2=(3+0,2+2) | **4,5,6** |
-| S3=(3+1,2+1) | **3,4,5,6,7** |
+| S3=(3+1,2+1) | **4,5,6,7** |
 | S4=(2+1,2+2) | **4,5,6,7** |
 
 The actual S4/k=7 sharp equality branch is deliberately
@@ -490,3 +490,50 @@ assignment count or eliminating S3/k3 altogether.
 S4/k7 exact equality remains valid, and
 the unrestricted \(R_8\ge\widehat R\)
 is still OPEN.
+
+
+## 12. Complete elimination of the S3/k=3 parent macro-cell
+
+**This supersedes every earlier 'still-open S3/k=3' rectangle,
+ray sector and far-singleton note in sections 7–11.**
+
+[HUMAN_S3_K3_FULL_EXCLUSION.md](HUMAN_S3_K3_FULL_EXCLUSION.md)
+proves that the **entire exclusive S3=(3+1,2+1), k=3 case
+is impossible**, with no angular or central-offset exception.
+It combines the earlier rigorous single **positive** outer-R
+ray restriction with a new hand proof of the positive-y
+inner R square's center reserve:
+\[
+y_{R_+}>49/500.
+\]
+
+Since the sole outer R square is **R-only**,
+it cannot be wholly beyond the central U side.
+Its vertical center is therefore below
+\(h_U+\sqrt2/2<227/250\), while its positive
+ray \(311/500<\psi<8959/10500\) and outer radius
+\(<283/200\) imply \(1/2<q_x<230079/200000\)
+and \(q_y>1/2\). The inner R+ center has
+\(117/200<p_x<1,\ 49/500<p_y<1\). Hence
+\[
+|q-p_{R_+}|^2
+<1-\frac{969139759}{40000000000}<1,
+\]
+contradicting their mandatory center distance
+at least one. All exact rational endpoint
+comparisons are audited in
+[verify_s3_k3_global_exclusion.py](verify_s3_k3_global_exclusion.py).
+
+The **new current exclusive D0/S=7 outer-center queue** is:
+\[
+\begin{array}{ll}
+{\rm S1}:&k=3,4,5,6,\\
+{\rm S2}:&k=4,5,6,\\
+{\rm S3}:&k=4,5,6,7,\\
+{\rm S4}:&k=4,5,6,7.
+\end{array}
+\]
+The S4/k=7 sharp seven-outer equality construction
+is retained; no whole status class has been
+proved impossible, and the unrestricted radius
+inequality \(R_8\ge\widehat R\) remains OPEN.
