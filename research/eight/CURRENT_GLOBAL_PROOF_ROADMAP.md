@@ -1,3 +1,73 @@
+# LATEST DECISION GATE — exact all-eight SAT owner/angle fibers
+
+**Status: proven global DIMENSION REDUCTION and first exact
+nonzero angular certificate, but unrestricted sharpness OPEN.**
+
+[GLOBAL_SAT_ANGLE_FIBER_DUALITY.md](GLOBAL_SAT_ANGLE_FIBER_DUALITY.md)
+now provides an exact computational-geometric framework,
+independent of the candidate contact pattern:
+choose the eight true square orientations and one
+genuine signed side-normal SAT owner for each of
+28 unordered pairs. With these fixed, all **16 center
+coordinates** and radius form a convex SOCP.
+Every feasible fiber admits a strictly feasible
+outward-center dilation and hence an **exact**
+nonnegative-multiplier center-free dual inequality.
+The complete unrestricted eight-square optimization
+is the infimum of those exact fiber values over
+**eight angles and finite signed owner words**.
+
+[HUMAN_SEVEN_PARALLEL_EXACT_DUAL.md](HUMAN_SEVEN_PARALLEL_EXACT_DUAL.md)
+is a complete rational SOS certificate of
+\(q\ge2257/576\) in the aligned zero-tilt
+seven-directed-support fiber, with an actual
+seven-square equality packing.
+
+The **first genuine POSITIVE-WIDTH angle-box
+certificate** has been executed:
+[verify_interval_angle_fiber_dual.py](verify_interval_angle_fiber_dual.py)
+and
+[seven_parallel_positive_angle_box_certificate.json](seven_parallel_positive_angle_box_certificate.json)
+prove for **all seven independently varying**
+rational half-tangent angles
+\(z_i\in[-1/15000,1/15000]\)
+in that one specified true SAT-owner class,
+and ALL centers,
+\[
+q\ge3.915747909432255\ldots
+>3.915535>\widehat q.
+\]
+Every operation is an exact Fraction
+interval bound; it is **one** cell,
+not an exhaustive global cover.
+
+**The next decisive issue is NOT finding more
+narrow angle boxes in isolation.** It is
+deriving a disk-specific exterior-marker/
+central-square reduction that soundly discards
+most of the astronomical \(8^{28}\) raw owner
+words, then proving termination of the
+remaining angle-box dual cover.
+The historical low-dimensional pair-marker
+certificate proves only \(q>19/5\);
+it has not established this necessary
+complete owner selection.
+
+A numerical seven-fiber SOCP-style oracle
+with analytic Jacobians was also committed.
+Hundreds of sampled angle fibers and one
+3456-evaluation differential-evolution
+scan found no certified below-candidate
+solution for the **seven directed**
+support system. These are **noncertifying
+diagnostics**, not an unrestricted proof.
+
+**No claim of global capture, sharp
+\(R_8\ge\widehat R\), equality
+classification or Lean completion.**
+
+---
+
 ## CURRENT DECISION GATE: exhibit a REAL global certificate, not a capture restatement (2026-10-13)
 
 [GLOBAL_CAPTURE_EQUIVALENCE_AND_DUAL_NO_GO.md](GLOBAL_CAPTURE_EQUIVALENCE_AND_DUAL_NO_GO.md)
