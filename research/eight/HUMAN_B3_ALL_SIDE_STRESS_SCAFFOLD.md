@@ -197,3 +197,52 @@ removed. This result has not established
 \(R_8\ge\widehat R\), global equality classification
 or Lean 4 formalization. The true seven-outer ring
 equality construction remains admissible.
+
+
+## COMPLETE EXCLUSION OF THIS ALL-C-SIDE SS PARENT SUBCASE
+
+**The opposite-side X/Y scaffold derived above has now
+been rigorously ruled out**, not left as a feasible
+or unresolved option.
+
+[HUMAN_B3_SS_OPPOSITE_SIDE_EXCLUDED.md](HUMAN_B3_SS_OPPOSITE_SIDE_EXCLUDED.md)
+proves a general *arbitrary-frame* lemma: if
+a genuine unit square Q lies in \(x\le-k\),
+\(0\le k\le1/2\), and its rightmost true
+support face contains a point \((-k,\tau)\)
+with \(|\tau|\le1/2\), then **all its true
+vertices** obey \(|v|^2\le(k+1)^2+9/4\).
+The proof retains the coupled half-width
+terms \(2k(L-1)+(D-1)\le L+D-2\le0\).
+
+In this all-C-side SS branch the positive Z
+leaf determines \(k=2-\sqrt{R^2-1/4}\).
+The two positive opposite-side C triangle contacts
+have transverse coordinates strictly straddling
+zero on a segment of length one. Therefore one
+square Q is contacted at \(|\tau|\le1/2\), and
+\[
+R^2-\big((k+1)^2+9/4\big)
+=6\sqrt{R^2-1/4}-11>0
+\]
+using only \(R>\sqrt2+1/2\).
+Q is **strictly circle-free**, contradicting its
+strictly positive physical circle multiplier
+from HUMAN_POSITIVE_TRIANGLE_FORCES_CIRCLE_WEIGHTS.md.
+
+Thus **every** minimal B3 core with
+radial **SS side-leaf** Z and both C-X,
+C-Y positive normals from genuine C side faces
+is IMPOSSIBLE. This includes the previously
+surviving both-X/Y-on-one-opposite-C-side
+configuration derived above. No further interval
+case remains under those exact assumptions.
+
+[HUMAN_B3_SS_TRANSVERSE_CORNER_FORCING.md](HUMAN_B3_SS_TRANSVERSE_CORNER_FORCING.md)
+identifies the genuinely **remaining SS**
+case: the two positive C triangle normals
+have opposite **nonzero** transverse components,
+and at least one C-X/Y positive contact is
+owned at a **true C corner opposite Z**.
+The entire small B3 root is **not** yet
+closed, nor is the actual seven-outer equality ring.
