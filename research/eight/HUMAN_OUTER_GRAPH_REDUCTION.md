@@ -209,3 +209,70 @@ To obtain R8>=Rhat one must still prove the sharp bound for the seven-cycle
 and for the paths with inner attachments, or a single inequality covering
 both. None of (1)--(3) supplies those sharp estimates. This note records
 the graph reduction, not closure of the unrestricted theorem.
+
+
+## New stress-normalized complete m=7 path elimination (October 12)
+
+The preceding outer-contact graph alternatives
+remain valid, but a stronger **whole packing
+stress** reduction is now proved for the
+seven-outer path/forest branch:
+[HUMAN_SEVEN_OUTER_STRESS_CYCLE_NORMAL_FORM.md](HUMAN_SEVEN_OUTER_STRESS_CYCLE_NORMAL_FORM.md).
+
+In an attained radius minimizer with
+all seven exterior center norms \(\ge1\)
+and **no full actual outer cycle**,
+the central C necessarily belongs
+to the unique nontrivial positive-stress
+component. If C has exactly two
+positive-stress neighbors, their
+normal forces are opposite and
+the **entire** positive-stress component
+is exactly one C-rooted outer path
+closed by two C spokes:
+\(C-S_1-\cdots-S_m-C\),
+\(3\le m\le7\).
+No extra positive-stress outer
+tails can occur: every positive
+outer--outer edge has nonzero
+signed moment and lies in a
+moment-circulation cycle containing C.
+
+[HUMAN_OPPOSITE_CENTRAL_NEIGHBOR_ANGLE.md](HUMAN_OPPOSITE_CENTRAL_NEIGHBOR_ANGLE.md)
+proves opposite whole supporting
+caps of C force their neighboring
+square centers to have angular
+separation
+\[
+>\pi/2+1/13.
+\]
+[HUMAN_SEVEN_OUTER_PATH_M7_EXCLUDED.md](HUMAN_SEVEN_OUTER_PATH_M7_EXCLUDED.md)
+then **eliminates the entire m=7
+positive-stress outer-path subcase**:
+its six actual outer contacts
+would leave a missing outer ray
+gap \(<\pi/2+3/250\), an exact
+contradiction. The full
+seven-outer **actual** contact
+cycle is a separate alternative
+and remains genuinely realized
+at equality.
+
+The remaining k7/outer-path/
+central-positive-degree-two
+stressed path lengths are thus
+\[
+\boxed{m=3,4,5,6},
+\]
+with exactly seven cyclic graph
+supports per m (28 total)
+**before** continuous geometry.
+Central branching positive degree
+>=3 and the full outer actual
+cycle are not eliminated.
+
+The unrestricted \(R_8\ge\widehat R\)
+still requires sharp inequalities
+for those remaining roots and
+the center-pocket occupancy
+of the actual seven-outer ring.
