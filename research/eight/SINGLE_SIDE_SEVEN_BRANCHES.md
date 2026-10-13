@@ -342,3 +342,53 @@ The actual S4/k=7 sharp equality branch is deliberately
 preserved. These are outer-count/status **necessary conditions**,
 not a classification of realizable packings or a proof of
 the unrestricted sharp lower bound.
+
+
+## 9. New five-square fan obstruction: the S3/k=3 upper-offset strip is eliminated
+
+The arbitrary-frame
+[HUMAN_FIVE_SQUARE_INNER_OUTER_FAN.md](HUMAN_FIVE_SQUARE_INNER_OUTER_FAN.md)
+theorem excludes five **distinct** whole-side-cap squares
+consisting of two R-inner, two perpendicular U-inner,
+and one additional R-outer whenever
+\[
+h_R>17/200,\quad h_U\ge21/100.
+\]
+
+Because any exclusive S3=(3+1,2+1) configuration
+with exactly k=3 exterior outer centers has
+**exactly** those five R/U center statuses,
+the entire S3/k=3 region with \(h_U\ge21/100\)
+is **impossible** (no frame, contact graph or
+central coordinate exception). The remaining S3/k=3
+offsets satisfy
+\[
+17/200<h_R<13/100,\qquad 17/200<h_U<21/100.
+\]
+
+[HUMAN_S3_K3_REMAINING_TWO_LANES.md](HUMAN_S3_K3_REMAINING_TWO_LANES.md)
+gives the exact further two-ray classification:
+the outer R member's center-ray angle is
+in \((-5\pi/36,-2\pi/45)\) **or**
+\((7\pi/36,13\pi/45)\), and the two distant
+L,D singletons obey
+\(|p_L.y|<3/20\), \(|p_D.x|<11/32\).
+These are genuine continuous center-position
+constraints, not a proof that the two surviving
+sectors are geometrically feasible.
+
+For S1/k=3, if the U triple has an opposite
+D singleton and its offset \(h_U\ge21/100\),
+the perpendicular R triple must have
+\(h_R\le17/200\), or the same five-square
+obstruction applies. The remaining S1/k=3
+branch is **not** fully eliminated.
+
+The outer-center count table in section 8
+remains **unchanged**: S1 k=3..6,
+S2 k=4..6, S3 k=3..7 and S4 k=4..7.
+This theorem removes an entire **continuous
+subregion** within S3/k=3, not an entire k-cell,
+and does not alter the 3,995,040 purely
+symbolic separator-status assignment total.
+The S4/k=7 equality realization is untouched.
