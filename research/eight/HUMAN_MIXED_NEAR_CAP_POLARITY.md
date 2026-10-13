@@ -256,3 +256,58 @@ S4/k=7 equality configuration is not affected.
 [verify_mixed_near_cap_polarity.py](verify_mixed_near_cap_polarity.py)
 audits the exact rational margins but does not
 replace the hand proof or constitute a Lean theorem.
+
+
+## Boundary-case completion: a zero transverse center coordinate cannot evade the split
+
+The main theorem above states the quantitative
+same-*strict*-sign case. Its proof also
+settles both zero-coordinate boundary cases,
+which makes the remaining sign split exhaustive.
+
+**The outer center cannot have \(q_x=0\).**
+If it did, \(\theta_q=\pi/2\).
+The cap polar bound already proved
+\(\theta_p\in(\alpha,\pi-\alpha)\)
+with \(\alpha>17/20\), so
+\[
+|\theta_p-\theta_q|
+<\pi/2-17/20<101/140<3/4,
+\]
+contradicting the strict mixed gap (1).
+
+**If the inner center has \(p_x=0\)**,
+then \(\theta_p=\pi/2\).
+The mixed gap (1) forces
+\[
+|\theta_q-\pi/2|>3/4.
+\]
+Since \(q_y\ge19/24>0\),
+\[
+|q_x|
+=q_y\tan|\theta_q-\pi/2|
+>(19/24)\tan(3/4)>7/10,
+\]
+using the same exact tangent lower bound
+already proved in section 3. Of course
+\(|p_x|=0<1/4\).
+
+Thus the same quantitative center-coordinate
+inequalities in (2) hold whenever
+\[
+\boxed{p_xq_x\ge0},
+\]
+including \(p_x=0\) (while \(q_x=0\) itself
+is impossible). If \(p_xq_x<0\), the centers
+are on strictly opposite sides of the
+origin diameter and no same-sign coordinate
+bounds are inferred. The mixed polar gap
+\(>3/4\) always holds in **both** branches.
+
+This boundary completion is particularly
+important when combining the theorem with
+HUMAN_SAME_SIDE_NEAR_AXIS_CAP.md,
+whose hypotheses allow **weak** same-side
+center signs. It does not remove the
+remaining low-offset opposite-sign or
+obliquely rotated same-sign S2/k4 cases.
