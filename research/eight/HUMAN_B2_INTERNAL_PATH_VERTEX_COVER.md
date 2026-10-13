@@ -266,3 +266,54 @@ global equality classification, or a
 Lean 4 proof. The real seven-outer
 full-contact-cycle candidate remains
 a different untouched root A.
+
+
+## Stronger complete-graph corollary in the pure C-two-contact representative
+
+The prior vertex-cover argument holds
+whether C has two or more **actual**
+contacts. When C has **exactly its
+two positive-stress actual contacts**,
+a stronger global theorem now applies:
+[HUMAN_B2_PURE_CENTRAL_CONTACT_ISOLATES_SPECTATORS.md](HUMAN_B2_PURE_CENTRAL_CONTACT_ISOLATES_SPECTATORS.md)
+proves **all spectator square
+contact edges are impossible**,
+because any proper nonempty
+complementary outer path would
+contain a true **noncentral
+one-contact leaf**, violating
+minimum-contact rigidity.
+
+Thus in that pure root the entire
+actual contact graph is the C-rooted
+positive stressed cycle **plus
+actually isolated outer spectators**;
+there are no C-internal chords.
+The two stressed outer endpoints
+must **both** have true circle vertices,
+and the current minimum distinct
+circle-contact stressed outer label
+counts are
+\[
+m=3:2,\qquad m=4:3,\qquad
+m=5:3,\qquad m=6:4.
+\]
+
+All isolated spectators can, by an
+arbitrarily small radial inward
+translation, be selected to be
+**strictly circle-free** while
+retaining their outer-center
+classification and preserving
+the globally least radius;
+see
+[HUMAN_ISOLATED_OUTER_CIRCLE_FREE_NORMALIZATION.md](HUMAN_ISOLATED_OUTER_CIRCLE_FREE_NORMALIZATION.md).
+They remain actual full unit
+squares whose occupancy and SAT
+constraints must be kept in
+every sharp lower-bound argument.
+
+This is a **complete structural
+contact-graph subcase exclusion**,
+not the still-missing sharp radius
+inequality \(R_8\ge\widehat R\).
