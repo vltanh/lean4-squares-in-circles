@@ -37,28 +37,28 @@ seven directed inequalities plus the two common end frames.**
 
 ## THE SINGLE PROPOSED BRIDGE (UNPROVED)
 
-> **Sharp end-frame/separator extraction.**
-> Let an eight-unit-square packing attain the
-> **global least possible** containing radius,
-> with \(R\le\widehat R\).
-> Then it has a choice of seven distinct square
-> labels A,B,T,D,E,H,G and true orthonormal directions
-> (a,b),(e,f) meeting the exact seven *directed
-> whole-square separation inequalities (1)* of
-> HUMAN_SHARP_SEVEN_RING_SEPARATOR_CLASS.md,
-> with A,E possessing the common frame (a,b),
-> **unless** there is a separate exact
-> force/support inequality proving \(R\ge\widehat R\)
-> without that extraction.
+> **Candidate minimizer-level bridge B (UNPROVED).**
+> Every attained **global radius-minimizing**
+> eight-unit-square packing with \(R\le\widehat R\)
+> admits seven distinct square labels
+> A,B,T,D,E,H,G and true orthonormal directions
+> (a,b),(e,f) satisfying the exact seven
+> **directed whole-square support inequalities (1)**
+> of HUMAN_SHARP_SEVEN_RING_SEPARATOR_CLASS.md,
+> **with A,E possessing the same side frame (a,b)**.
+>
+> No positive-stress-only or center-distance
+> replacement is permitted for a specified
+> genuine whole-square separator.
 
-Proving the first alternative **for every strict
-counterexample minimizer** would establish
-\(R_8\ge\widehat R\) immediately by the existing
-conditional theorem, while the exact construction
-already proves the reverse bound. The second
-alternative is a clear escape route if force
-equilibrium shows a competing stress topology
-cannot have the aligned-end pattern.
+Proving B would establish \(R_8\ge\widehat R\)
+immediately by the existing conditional theorem;
+the exact construction supplies the matching
+upper bound. **B may be false.** Its failure at an
+attained minimizer would require a genuinely
+orientation-independent sharp force/support
+inequality as an *alternative research target*,
+not an unproved escape clause in B itself.
 
 The key mathematical challenge is to justify
 **common end-frame alignment and directed
