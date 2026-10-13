@@ -82,7 +82,7 @@ it follows that
 \boxed{\sqrt{r_0^2-q_x^2}>103/100.}           \tag{3}
 \]
 
-Now (1) implies \(0<q_x-p_x<q_x\).
+Now (1) implies \(0<q_x-p_x\le q_x\).
 There are only **two** possible signed y orders.
 
 **Case q_y>=p_y.** Since \(p_y\ge a\),
