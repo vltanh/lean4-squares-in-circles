@@ -2118,3 +2118,39 @@ This removes the entire previous residual interval
 all S2/k=4**, all S2 near-cap outer statuses, or any
 S4 equality-bearing configuration. The unrestricted
 \(R_8\ge\widehat R\) remains OPEN.
+
+
+### 2026-10-12: two quantitative transverse anchors on each opposing S2 2+2 side
+
+[HUMAN_S2_K4_TRANSVERSE_CENTER_ANCHORS.md](HUMAN_S2_K4_TRANSVERSE_CENTER_ANCHORS.md)
+adds four strict **center-coordinate** bounds within the
+exclusive S2 branch where both near-U squares have inner
+centers. After ordering both U and D pairs by x coordinate,
+\[
+x_{U_-}<-9/25<0<9/25<x_{U_+},
+\]
+\[
+x_{D_-}<-29/100<0<29/100<x_{D_+}.
+\]
+The first bound uses inner-center unit separation and
+the whole-cap normal projection \(p_y>19/24\),
+forcing a transverse signed separation
+\(>\sqrt{551}/24\), while either inner center has
+\(|p_x|<\sqrt{215}/24\).
+The second uses the newly proved >60-degree far-D
+polar elevation, two outer D centers' angular separation
+\(>\pi/4-1/500\), and the exact strict tangent
+lower comparison
+\[
+\tan(\pi/12-1/500)>1315/5006.
+\]
+
+These inequalities supplement the newly proved **k=4
+and \(0<h_R<1/20\)** and opposite-sign right-outer
+ray requirements. They **do not** imply the corresponding
+whole squares lie inside open origin quadrants. All their
+frames and actual inter-exterior separators remain free.
+[verify_s2_transverse_center_anchors.py](verify_s2_transverse_center_anchors.py)
+has been executed successfully to audit the exact rational
+margins. The global sharp lower bound
+\(R_8\ge\widehat R\) remains **OPEN**.
