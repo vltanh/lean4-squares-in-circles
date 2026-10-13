@@ -236,3 +236,59 @@ eliminated as a whole. A global
 \(R_8\ge\widehat R\) inequality,
 equality classification and Lean
 formalization remain OPEN.
+
+
+## Exact diagonal-mode refinements: internal zero-stress chords must brace both tangent signs
+
+Retain all assumptions of the m=6 theorem, and suppose
+C has **diagonal** positive-stress normal n.
+Write \(t=Jn\). The two stressed
+C--S1 and C--S6 contact points are
+**opposite central vertices**.
+
+The tangential bracing theorem implies the
+following exhaustive **genuine actual-contact
+requirements**, beyond merely asserting
+the existence of one internal chord:
+
+1. **T does not contact C.** Then the
+   required **positive- and negative-tangent
+   auxiliary contacts must be two distinct
+   internal path squares** \(S_j,S_k\)
+   with \(j,k\in\{2,3,4,5\}\):
+   \[
+   (m_j\cdot t)(m_k\cdot t)<0.
+   \]
+   Both C--S_j and C--S_k are
+   **real zero-positive-stress actual chords**.
+   A diagonal C with only one internal
+   auxiliary chord is impossible.
+2. **T does contact C.** The actual
+   C--T contact has zero positive
+   stress. If one selected genuine C--T
+   normal has \(m_T\cdot t>0\), then
+   at least one internal actual C--S_j
+   contact must have \(m_j\cdot t<0\).
+   The reverse sign requires an internal
+   positive-tangent normal. If
+   \(m_T\cdot t=0\), **two different
+   internal path labels** with opposite
+   tangential contact-normal signs
+   are required instead.
+
+All statements are necessary for **every
+choice of one genuine contact normal per
+auxiliary C-neighbor pair**, as required
+by the original bracing theorem. In particular
+the chosen SAT directions of additional
+C--S_j contacts cannot all be assigned
+the same tangential normal sign.
+
+This is not an extra geometric estimate:
+it is a precise **finite graph/contact-normal
+specialization** of the proved global
+two-sided bracing theorem. No central
+diagonal mode is claimed globally impossible.
+The next computational geometry model must
+enforce these **actual** zero-weight chords,
+not optimize only the positive stress cycle.
