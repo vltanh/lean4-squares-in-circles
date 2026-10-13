@@ -303,3 +303,30 @@ D1/D2 and the unrestricted
 
 [verify_s1_k3_far_singleton_clearance.py](verify_s1_k3_far_singleton_clearance.py)
 audits the new rational comparisons.
+
+
+## Combined exact far-singleton transverse lane
+
+The existing arbitrary-orientation one-square
+cap envelope also provides the **opposite**
+strict transverse ceiling. Because the
+R triple has exactly one outer center,
+\(h_R<13/100\), so the whole far L offset
+\(h_L=1-h_R>87/100\) implies
+\[
+(|y_L|+1/2)^2
+\le q_+-(1+h_L)^2
+<9789/2500-(187/100)^2
+=4187/10000<(13/20)^2.
+\]
+Consequently \(|y_L|<3/20\).
+Combining with the newly proved signed
+negative clearance gives the explicit
+**open interval**
+\[
+\boxed{-3/20<y_L<-1/75.}
+\]
+These are *actual center-coordinate* bounds,
+not a requirement that L lie wholly in
+the lower origin quadrant. The remaining
+\(0<h_U<1/16\) S1/k3 case is still open.
