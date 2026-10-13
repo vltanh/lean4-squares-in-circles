@@ -3134,3 +3134,33 @@ packing. D0 corner-only cases, D1/D2,
 higher-k outer paths/rings, unrestricted
 \(R_8\ge\widehat R\), equality classification
 and Lean 4 formalization remain OPEN.
+
+
+### Exact opposite-sign mixed cap pair as a negative control for S2 cells A/B
+
+[RATIONAL_OPPOSITE_SIGN_MIXED_CAP_PAIR.md](RATIONAL_OPPOSITE_SIGN_MIXED_CAP_PAIR.md)
+provides two *actual axis-parallel unit squares* in a cap
+at \(h=2/5\), one with inner center
+\((-3/10,9/10)\) and one with outer center
+\((4/5,9/10)\), in **opposite transverse
+origin half-planes**. They have exact
+strict SAT separation \(1/10>0\), and all
+eight true vertices fit inside squared radius
+\(73/20<q_+\) with margin \(166/625>0\).
+[verify_opposite_sign_mixed_cap_pair.py](verify_opposite_sign_mixed_cap_pair.py)
+checks their exact true vertices and center classes.
+
+This is **only a two-square local witness**, not
+a valid S2/k4 eight-square arrangement. It proves
+that neither remaining opposite-sign cell A nor B
+can be eliminated **solely** by the near-U
+inner/outer two-square cap constraints:
+their far-D pair, right triple, central square,
+or further true-square SAT inequalities must
+be used. Unlike this exact feasible
+opposite-sign pair, the same-sign mixed pair
+at h>=37/100 is rigorously impossible by
+the new cap envelope hand proof.
+
+The roadmap and the still-open unrestricted
+\(R_8\ge\widehat R\) status are unchanged.
