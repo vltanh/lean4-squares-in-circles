@@ -317,3 +317,69 @@ This is a **complete structural
 contact-graph subcase exclusion**,
 not the still-missing sharp radius
 inequality \(R_8\ge\widehat R\).
+
+
+## The m=3 circle-free four-parallel scaffold alternative is now completely impossible
+
+**This supersedes the earlier m=3 'circle contact
+or parallel scaffold' still-open dichotomy.**
+
+[HUMAN_B2_M3_PARALLEL_SCAFFOLD_EXCLUDED.md](HUMAN_B2_M3_PARALLEL_SCAFFOLD_EXCLUDED.md)
+proves that, under the *pure* C-actual-degree-two
+B2/k7/m3 hypotheses, a **circle-free internal
+S2 square** is **impossible**.
+
+Indeed the existing two-shared-transmitter
+theorem would then force the four genuine
+frames C,S1,S2,S3 all parallel, with
+S1,S3 on opposite common-normal sides of
+C and S2. The positive-circle-multiplier
+vertex-cover theorem forces **both**
+outer endpoints S1,S3 to have genuinely
+positive physical circle-vertex weights.
+Their actual two positive contact forces
+are each exactly horizontal in that
+common frame, so their resultant
+physical circle forces must be
+horizontal. For an axis-parallel
+outer endpoint with signed nonzero
+normal-center coordinate, this
+is possible with positive
+multipliers only if its **transverse
+center coordinate equals zero**.
+Both outer endpoint centers are
+therefore on the same horizontal
+diameter.
+
+Since C has genuine opposite
+unit-width side contacts, their
+normal center coordinates are
+\(c-1,c+1\), where |c|<1/2.
+Positive circle vertices of both
+axis-parallel endpoints then force
+\[
+R^2=(c-3/2)^2+1/4
+    =(c+3/2)^2+1/4,
+\]
+giving c=0 and \(R^2=5/2\).
+But eight unit squares have total
+area 8, so \(R^2\ge8/\pi>
+28/11>5/2\), contradiction.
+
+Thus the **only** still-unexcluded
+pure m3 geometry has its *sole
+internal stressed outer square*
+S2 also **true circle-contacting**.
+Both endpoints already have
+positive circle multipliers.
+Hence **all three stressed outer
+squares must touch the containing
+circle**, not merely the
+two endpoints.
+
+This is a genuine **global,
+complete conditional subcase
+exclusion**, not an inferred
+impossibility of all m3
+stressed paths or of the
+sharp equality-bearing outer ring.
