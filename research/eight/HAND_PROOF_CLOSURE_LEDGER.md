@@ -2518,3 +2518,64 @@ Alongside the recent full S3/k3 and S2
 near-inner branch closures, this provides
 further genuine continuous-region pruning.
 The global \(R_8\ge\widehat R\) remains OPEN.
+
+
+## 2026-10-12 further continuation: mixed inner/outer near-cap angular polarization
+
+[HUMAN_MIXED_NEAR_CAP_POLARITY.md](HUMAN_MIXED_NEAR_CAP_POLARITY.md)
+proves a reusable **arbitrary-frame, full-continuum**
+center-angle statement. If two distinct whole
+squares in a cap \(y\ge h\ge7/24\) have
+one inner center (norm <1) and one outer
+center (norm >=1) in the disk with
+\(R^2\le9789/2500\), their **polar center-ray
+gap is strictly larger than \(3/4\) radians**.
+This follows from the exact cosine bound
+\[
+\cos(3/4)>\frac{73}{100}
+\]
+and four convex radial endpoint inequalities,
+the largest squared-distance upper bound being
+\(715289/720000<1\).
+
+If their *transverse center x signs are the same*
+(strictly positive or strictly negative),
+then the inner center is tightly pinned to
+\[
+|x_{\rm inner}|<1/4,
+\]
+while the outer center is forced away:
+\[
+|x_{\rm outer}|>7/10.
+\]
+The outer center's polar ray is farther from
+the positive y axis: lower polar angle in
+the +x half-plane and higher angle in the -x
+half-plane. This is a statement about
+**centers**, not whole-square quadrant
+containment. The latter cannot be inferred
+from a center sign.
+
+In particular the remaining **exclusive S2/k=4**
+case has one inner and one outer on its nearer
+2+2 cap, by the previously proved global
+S2 near-inner exclusion and the outer-count
+identity. Hence **every** surviving S2/k4
+configuration has the strict \(>3/4\) mixed
+near-cap gap; each *same-sign* transverse
+subcase must also satisfy the two absolute
+coordinate inequalities above.
+The *opposite-sign* subcases are **not**
+eliminated by this argument.
+
+[verify_mixed_near_cap_polarity.py](verify_mixed_near_cap_polarity.py)
+audits the exact rational margins and has been
+executed locally, but does not replace the
+hand center-angle argument or prove the
+unrestricted eight-square theorem.
+
+This additional continuous geometric pruning
+does **not** finish S2/k4, S1/S3/S4, D0
+corner-only branches, D1/D2, contact-graph
+alternatives, or \(R_8\ge\widehat R\).
+The genuine S4/k7 equality packing remains.
