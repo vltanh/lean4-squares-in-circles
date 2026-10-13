@@ -537,3 +537,50 @@ The S4/k=7 sharp seven-outer equality construction
 is retained; no whole status class has been
 proved impossible, and the unrestricted radius
 inequality \(R_8\ge\widehat R\) remains OPEN.
+
+
+## 13. S2 nearer-U pair cannot both have inner centers (complete closure)
+
+**This supersedes all earlier statements treating S2's
+'near-U both inner, k=4, h_R<1/20' as a still-open
+geometry subcase.**
+
+[HUMAN_S2_NEAR_INNER_FULL_EXCLUSION.md](HUMAN_S2_NEAR_INNER_FULL_EXCLUSION.md)
+proves an exact arbitrary-frame **contradiction**
+from two inner centers in the nearer U cap
+of an exclusive S2=(3+0,2+2) arrangement.
+The prior outer-center angular order and
+inner R center placement force the positive
+outer R center ray into
+\(43/100<\psi_2<31/50\).
+The positive-x inner U center is constrained
+to \(9/25<x<31/50,\ 79/100<y<47/50\).
+A short four-rational-endpoint convexity
+comparison forces their squared center distance
+strictly below \(4923651/5000000<1\).
+The two labels are distinct packed unit squares,
+so their centers must be at least one apart.
+Hence **the entire near-U both-inner case
+is impossible** for every offset and every k.
+
+This leaves, for exclusive S2:
+* k=4 with **exactly one** outer U-center and
+  exactly one outer R-center (plus the two
+  far-D outer centers);
+* k=5,6 with **at least one** outer U-center,
+  and admissible additional outer R-center
+  allocations.
+
+These allocations are necessary, not
+realizability statements; S2 itself is not
+proved impossible.
+
+The earlier complete S3/k=3 exclusion
+in section 12 remains valid. The current
+exclusive D0/S=7 k queue is unchanged
+(S1 3..6; S2 4..6; S3 4..7;
+S4 4..7), but the genuine *continuous
+inner/outer subcases* have shrunk.
+The real S4/k=7 sharp equality remains
+untouched and unrestricted
+\(R_8\ge\widehat R\) is still OPEN.
