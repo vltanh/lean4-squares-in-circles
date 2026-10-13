@@ -1,0 +1,36 @@
+{
+  "description": "Impossible directed actual SAT-owner triangle for three genuinely differently rotated rational unit-square frames, with an exact positive margin 62793/68000 at q<=9789/2500.",
+  "frame_half_tangents": [
+    "0",
+    "1/4",
+    "1/2"
+  ],
+  "cycle": [
+    [
+      0,
+      1,
+      0,
+      "e",
+      1
+    ],
+    [
+      1,
+      2,
+      1,
+      "e",
+      1
+    ],
+    [
+      2,
+      0,
+      2,
+      "e",
+      1
+    ]
+  ],
+  "coefficient_norm_upper_bounds": [
+    "9/10",
+    "1/2",
+    "9/20"
+  ]
+}
