@@ -1192,3 +1192,42 @@ Current stronger parent closures remain:
 
 The unrestricted \(R_8\ge\widehat R\)
 remains OPEN.
+
+
+## 19. Mixed inner/outer two-square cap: exact angular and same-sign exclusion gates
+
+For the **remaining exclusive S2/k=4** case,
+the nearer of its opposite 2+2 whole-cap sides
+has exactly one inner and one outer center
+(the previous both-inner and k=3 branches
+are globally eliminated). New all-frame
+hand proofs supply the following exact
+continuous restrictions:
+
+| Necessary geometric case | Proven bound / rejection |
+| --- | --- |
+| Any nearer-cap inner/outer pair, h>=7/24 | **Polar center-ray gap >3/4 radians**, HUMAN_MIXED_NEAR_CAP_POLARITY.md |
+| Both nearer-cap centers with same **strict** transverse x sign | Inner x magnitude <1/4; outer x magnitude >7/10; outer ray is farther from the +y diameter |
+| Same-sign mixed pair with near-cap offset **h>=2/5** | **Impossible**, HUMAN_MIXED_HIGH_CAP_SIGN_SPLIT.md |
+| Same **weak** transverse sign at offset h>=7/24 and both frames within 1/2600 rad of cap-aligned axes | **Impossible**, HUMAN_SAME_SIDE_NEAR_AXIS_CAP.md |
+| Opposite transverse signs | Not excluded by these lemmas |
+| Same-sign pair in 7/24<h<2/5 with sufficiently oblique frame | Still open; cannot promote the conditional near-axis theorem to full-frame exclusion |
+
+The high-offset sign theorem uses the sharp
+arbitrary-frame single-square cap center envelope
+to trap a hypothetical same-sign pair in a
+rectangle whose **squared center-distance upper
+bound** is \(9189/10000<1\).
+The near-axis theorem uses centered axis-parallel
+inscribed squares of side \(2600/2601\) to derive
+the strict radius contradiction
+\[
+R^2\ge q_++21634201/270608040000>q_+.
+\]
+
+These are actual continuous center/frame constraints,
+**not** additional eliminations from the purely
+symbolic twelve-status word total. They do not
+eliminate all S2/k=4, S2, S4/k=7,
+D1/D2 or the missing unrestricted
+\(R_8\ge\widehat R\).
