@@ -923,3 +923,46 @@ be five distinct actual whole-square members.
 A shared RU square cannot be counted twice.
 No S4 equality is excluded, and no general
 \(R_8\ge\widehat R\) proof is claimed.
+
+
+## 13. Further S2 and S3 continuous region pruning (October 12)
+
+The all-frame
+[HUMAN_FIVE_SQUARE_INNER_OUTER_FAN.md](HUMAN_FIVE_SQUARE_INNER_OUTER_FAN.md)
+theorem excludes the entire **S3/k=3** subdomain
+where the two-member 2+1-side cap has outward offset
+\(h_U\ge21/100\). The remaining exact offset region is
+\(17/200<h_R<13/100\) and \(17/200<h_U<21/100\).
+HUMAN_S3_K3_REMAINING_TWO_LANES.md further splits
+the sole R outer center into two disjoint angular sectors
+and pins the distant L/D transverse centers.
+
+[HUMAN_S2_NEAR_INNER_OUTER_POLARITY.md](HUMAN_S2_NEAR_INNER_OUTER_POLARITY.md)
+and [HUMAN_S2_K4_NEAR_INNER_SMALL_TRIPLE.md](HUMAN_S2_K4_NEAR_INNER_SMALL_TRIPLE.md)
+give the following stronger **joint center-count and
+continuous-position exclusions**:
+
+| Actual exclusive S2 center-class hypothesis | Newly forced condition |
+| --- | --- |
+| Both members of the nearer 2+2 U cap have inner centers | **Exactly k=4** (not k=3 or 5) |
+| The same, with R triple offset h_R | **0<h_R<1/10** |
+| The same, ordered outer R center rays psi_1<psi_2 | psi_1 in (-pi/4+17/125,-pi/18+1/500), psi_2 in (67/500,7*pi/36) |
+
+In particular S2/k=5 with **both** near-U centers
+inner is **fully impossible** (not the entire S2/k=5
+class). S2/k=4 with that near-inner pair is
+**fully impossible for h_R>=1/10**; its
+remaining small-offset interval is still open.
+
+These results depend on inner/outer center norms
+and polar geometry, so **do not** reduce the
+independent 3,995,040 symbolically admitted
+twelve-status labels or the 31 coarse count
+profiles. Also do not promote opposite center
+transverse signs into whole-quadrant membership:
+the actual rotations and mutual separating axes
+of the remaining square labels still matter.
+
+The S4 equality-bearing configuration and the
+unrestricted \(R_8\ge\widehat R\) proof obligation
+remain untouched.
