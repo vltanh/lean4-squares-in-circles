@@ -2372,3 +2372,84 @@ configuration remains. **D0 with corner-only
 statuses, D1, D2, exterior contact paths/rings
 and the unrestricted \(R_8\ge\widehat R\)
 remain open.** No Lean handoff is claimed.
+
+
+## 2026-10-12: entire S2 nearer-U two-inner-center branch eliminated
+
+[HUMAN_S2_NEAR_INNER_FULL_EXCLUSION.md](HUMAN_S2_NEAR_INNER_FULL_EXCLUSION.md)
+now proves the **complete impossibility** of the
+previously narrowed exclusive S2 subbranch
+in which both centers on the nearer 2+2
+whole cap U have norm **strictly less than one**.
+This is a **full continuous-center/orientation
+subbranch exclusion**, not merely another bound
+on h_R and not a claim that S2 in its entirety
+has been excluded.
+
+Under the forbidden antecedent, the previous
+outer-polarity theorem forces **two outer**
+R-square centers, one inner R center, two
+inner U centers, and two outer D centers.
+The unique inner R center must lie angularly
+*between* the two outer R rays. If it lay
+below, its larger radius would put it
+too close in angle to the upper far D
+outer center; if above, it would be
+within 60 degrees of the positive-x
+U inner center. The exact mixed center-angle
+bound \(>12/25\) radians then forces the
+upper outer R ray into the strict interval
+\[
+43/100<\psi_2<31/50.
+\]
+
+The positive-x inner U center is forced into
+the strict coordinate rectangle
+\[
+9/25<u_x<31/50,\qquad
+79/100<u_y<47/50.
+\]
+The positive-y outer R center has radius
+\(1\le s<283/200\), and positive ray in
+the interval above. A short **hand concavity
+reduction** of its squared distance from
+the U inner center gives only four rational
+vertex bounds, with greatest
+\[
+|q-u|^2<
+4923651/5000000
+=1-76349/5000000<1.
+\]
+This contradicts the mandatory center
+distance at least one for two distinct
+whole unit squares. All square frames remain
+unrestricted. The rational margins are checked
+independently in
+[verify_s2_near_inner_full_exclusion.py](verify_s2_near_inner_full_exclusion.py),
+which has been executed successfully; the
+full-domain continuous argument is written
+in the theorem note.
+
+**This supersedes the earlier S2 near-inner
+conditional conclusions k=4,
+h_R<1/10, h_R<1/20, and the transverse
+center anchors:** their **antecedent is now
+impossible**, so those notes are historical
+intermediate proofs, not still-feasible
+near-inner subcases.
+
+Every surviving exclusive S2 packing
+must instead have **at least one outer-center
+square on the nearer 2+2 cap**.
+Thus S2/k=4, if any, has exactly one
+near-U outer and exactly one R-triple outer
+alongside the two far-D outers. Cases with
+k=5,6 and other outer-center allocations
+remain unresolved. This does **not** alter
+the purely symbolic 12-status count or
+the equality-bearing S4/k=7 branch.
+
+Alongside the previous **full S3/k=3 exclusion**,
+these are genuine branch closures, but
+the unrestricted \(R_8\ge\widehat R\)
+and Lean handoff remain **OPEN**.
