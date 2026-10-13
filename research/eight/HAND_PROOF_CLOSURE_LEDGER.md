@@ -2739,3 +2739,110 @@ configuration is preserved. The unrestricted
 radius theorem \(R_8\ge\widehat R\), full
 equality classification, and Lean n=8
 handoff remain **OPEN**.
+
+
+## 2026-10-12 continuation: actual rotated two-square guardrail, quadrant owner, local five-square S1 pruning
+
+Three further results clarify the exact still-open
+exclusive S2/k4 and S1/k3 continua.
+
+**1. A positive exact *local counterexample* against
+a universal two-square same-sign cap exclusion.**
+[RATIONAL_SAME_SIGN_ROTATED_CAP_PAIR.md](RATIONAL_SAME_SIGN_ROTATED_CAP_PAIR.md)
+exhibits two *actual* independently rotated,
+interior-disjoint unit squares with both center
+x coordinates strictly positive, both wholly
+above the offset \(h=881/3000=7/24+1/500\),
+and both contained in a disk of squared radius
+\[
+7040861/1800000<9789/2500.
+\]
+The rational SAT separating-axis gap is
+\(31/48120>0\), and the disk radius reserve is
+\(7219/1800000>0\). Its exact verifier checks
+all **eight true square vertices**.
+**Both example centers are outer**, so it does
+*not* show the full S2/k4 *mixed inner/outer*
+cell C is feasible. It proves only that a
+blanket, all-frame, same-sign **two-square**
+cap theorem would be false.
+
+**2. A genuine whole-quadrant owner in mixed
+same-sign caps.**
+[HUMAN_MIXED_CAP_WHOLE_QUADRANT_OWNER.md](HUMAN_MIXED_CAP_WHOLE_QUADRANT_OWNER.md)
+strengthens the existing polar gap
+\(>3/4\) radians when two whole squares
+in a cap \(y\ge h\ge7/24\) have one inner
+and one outer center with **nonnegative
+transverse center-sign product**. The outer
+whole square is forced into **one entire
+open origin quadrant**, not merely its
+center: its signed x distance from the
+vertical diameter is
+\[
+>\frac{14953}{20480}-\frac{71}{100}
+=\frac{2061}{102400}>\frac1{50}.
+\]
+This holds for all square frames and also
+covers the inner x=0 boundary. The earlier
+quadrant-capacity theorem then forbids
+any *other entire square* from occupying
+that same quadrant. It is an additional
+true-square constraint on the still-open
+S2/k4 cell C, **not** a full cell exclusion.
+
+**3. A reusable local five-square theorem
+prunes exclusive S1/k3.**
+[HUMAN_FIVE_SQUARE_LOCAL_RU_OBSTRUCTION.md](HUMAN_FIVE_SQUARE_LOCAL_RU_OBSTRUCTION.md)
+extracts the actual five-square geometric
+core of the former exclusive S3/k3 proof.
+If a right whole cap at \(h_R>17/200\)
+contains *two inner-center and one outer-center*
+square, a perpendicular upper cap at
+\(h_U>17/200\) contains *two more distinct
+inner-center squares*, and the R-outer square
+is **not** wholly beyond the U side, then
+the five units cannot all fit in the
+\(q_+=9789/2500\) disk. The proof splits
+at \(h_U=1/5\): above it, use the general
+refined five-square angular theorem;
+below it, use the exact four-inner ray
+order, negative outer-R ray exclusion,
+inner R+ height reserve \(>49/500\),
+and the outer R's lack of an U cap to force
+the strict center-distance upper bound
+\[
+|q-p_{R+}|^2<
+1-\frac{969139759}{40000000000}<1.
+\]
+Crucially this five-square statement
+**does not require S3**, a far singleton,
+or any of the other three exterior labels.
+
+In **exclusive S1=(3+0,3+1), k=3**,
+normalize the 3+1 triple to R and its
+opposite far singleton to L. The L square
+and one member of each perpendicular
+triple are the three distinct outer
+labels, so R and U each have exactly
+two inner and one outer centers. The
+far L singleton forces the R (3+1)
+triple offset \(h_{31}>17/200\).
+The local five-square theorem consequently
+gives the new strict-position requirement
+\[
+\boxed{0<h_{30}\le17/200}
+\]
+for the perpendicular **3+0** triple side.
+If \(h_{31}\le1/10\), the earlier exact
+low-offset piercing rectangle improves
+this further to \(0<h_{30}<1/16\).
+**S1/k3 is still open** in its remaining
+small-offset continuum.
+
+None of these results excludes the actual
+S4/k7 sharp equality construction or
+proves the unrestricted reverse bound
+\(R_8\ge\widehat R\). D0 corner-only,
+D1/D2, contact graph alternatives and
+the eventual Lean handoff remain OPEN.
