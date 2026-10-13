@@ -1,3 +1,84 @@
+
+## NEW strongest global owner-pruning gate: exact twelve-cone projection and cross-sector Farkas (2026-10-13)
+
+The center-free SAT-angle program now has **three rigorously
+proved, globally applicable owner-disjunction exclusions**,
+stronger than the previous purely local support dual:
+
+1. [HUMAN_GLOBAL_SAT_OWNER_CYCLE_CONE_EXCLUSION.md](HUMAN_GLOBAL_SAT_OWNER_CYCLE_CONE_EXCLUSION.md)
+   proves any true directed SAT-owner **three-cycle**
+   whose signed normals lie in one **60° arc**
+   is impossible at \(R^2\le9789/2500\).
+   Any longer directed owner cycle inside one
+   **2/3-radian cone** is also impossible.
+2. [HUMAN_RATIONAL_TWELVE_CONE_OWNER_DAGS.md](HUMAN_RATIONAL_TWELVE_CONE_OWNER_DAGS.md)
+   constructs twelve fixed exact rational angular
+   cones of width <2/3. Each selected signed
+   owner is entered in BOTH equivalent directed
+   orientations, with opposing normals.
+   Every cone's full directed owner graph must
+   be acyclic. Membership uses exact rational
+   cross products only, not atan2.
+   The checker
+   [verify_rational_fan_sat_owner_word.py](verify_rational_fan_sat_owner_word.py)
+   rejects an impossible rational three-cycle
+   and deliberately **retains the entire
+   genuine 28-pair SAT owner word** of the
+   historical rational eight-square packing.
+3. [HUMAN_RATIONAL_SECTOR_PROJECTION_FARKAS.md](HUMAN_RATIONAL_SECTOR_PROJECTION_FARKAS.md)
+   proves something stronger than acyclicity:
+   if the chosen genuine owner normal lies in
+   sector k with exact rational boundary rays
+   \(r_k,r_{k+1}\), then
+   \[
+   (r_k+r_{k+1})\cdot(p_j-p_i)>289/2700.
+   \]
+   This turns owner sectors into **fixed rational
+   linear center-order constraints**.
+   Any positive combination of them with
+   EXACT zero center-force incidence is an
+   immediate rational **Farkas contradiction**,
+   even when every individual cone DAG passes.
+
+**NEW whole-word/box exact certificates.**
+An explicit 28-owner, eight-rational-frame word
+passes all the former triangle/DAG checks, yet just
+EIGHT of its edges have integer positive Farkas
+multipliers summing to 327 and canceling all sixteen
+center coefficients, yielding
+\[
+\boxed{0>\frac{31501}{900}>35.}
+\]
+[verify_rational_sector_farkas.py](verify_rational_sector_farkas.py)
+replays that exact contradiction.
+[verify_interval_rational_sector_farkas.py](verify_interval_rational_sector_farkas.py)
+extends it to a strictly positive-width **entire
+eight-frame angular box**, with exact cross-sign
+interval checks and the SAME strict rational
+force cancellation; its certificate is
+[global_sat_balanced_sector_eight_angle_box_certificate.json](global_sat_balanced_sector_eight_angle_box_certificate.json).
+A separate eight-angle box of selected 60° owner
+triple is also exactly excluded by
+[verify_interval_global_sat_owner_cycle.py](verify_interval_global_sat_owner_cycle.py).
+
+**Why this matters:** owner-word pruning now starts
+with elementary disk geometry + rational orientation
+cones + exact positive Farkas certificates,
+before any center-fiber SOCP or nonlinear dual.
+Random raw owner-word diagnostics reject about
+97–99% through the triangle rule alone;
+this has NO worst-case completeness implication.
+
+**What remains and is not being hidden:** a
+finite exhaustive disk-native reduction and
+certificate of ALL other eight-angle/28-owner
+classes is still missing. These correct
+individual global-class exclusions do **not**
+prove unrestricted \(R_8\ge\widehat R\).
+Do not claim they do.
+
+---
+
 # ONE bridge to the unrestricted eight-square sharp radius
 
 ## New exact GLOBAL reduction: center elimination and true SAT angle/owner fibers (2026-10-13)
