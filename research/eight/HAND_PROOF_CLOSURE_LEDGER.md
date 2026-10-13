@@ -3432,3 +3432,185 @@ remaining B2 cycle lengths, B3,
 X, k<=6, D0 corner-only/D1/D2
 and full equality classification,
 and Lean 4 formalization.
+
+
+## 2026-10-12 structural continuation: true central-force axes, diagonal bracing and outer path vertex covers
+
+**This continuation closes actual contact-graph subcases, not
+additional numerical cap-offset bands.** The new primary
+roadmap is
+[STRUCTURAL_GLOBAL_CLOSURE_ROADMAP.md](STRUCTURAL_GLOBAL_CLOSURE_ROADMAP.md),
+with the current proof gate indexed at its top.
+
+**Central positive-degree-two forces have only four axes.**
+[HUMAN_TWO_CENTRAL_FORCE_AXES.md](HUMAN_TWO_CENTRAL_FORCE_AXES.md)
+proves that if the circle-free central unit C has
+exactly two positive-stress contact neighbor
+pairs, force balance gives opposite equal
+normals ±n and **torque balance quantizes
+n to just four central-frame axes**:
+the two side axes or the two diagonals.
+In side mode their two true contact points
+lie on opposite C sides at the **same
+transverse coordinate**. In diagonal mode
+they lie at opposite C vertices.
+No continuously oblique third force
+mode survives true equilibrium.
+
+**Diagonal central support requires two-sided real bracing.**
+[HUMAN_DIAGONAL_CENTRAL_TANGENTIAL_BRACING.md](HUMAN_DIAGONAL_CENTRAL_TANGENTIAL_BRACING.md)
+proves that in a *minimum-actual-contact*
+least-radius representative, diagonal
+positive C degree two is incompatible with
+fewer than **four distinct actual C
+contact neighbors**. The two additional
+actual contact pairs have **zero positive
+stress** and their genuine outward
+separating normals have **opposite signed
+tangential projections** against the
+stressed diagonal. The hand proof
+rotates C to open both opposite
+diagonal corner contacts by
+\((1-\cos\theta)/\sqrt2>0\),
+then translates tangentially with
+magnitude \(K|\theta|\) to release
+every one-sided extra contact.
+Without opposing auxiliary normals
+all true C contacts disappear while
+preserving disk and noncontact gaps,
+contradicting the minimum-contact
+choice. This fully eliminates the
+bare-diagonal-two-spoke and
+diagonal-plus-one-brace subcases.
+
+**All k7/B2 stressed path endpoints have boundary/spectator obligations.**
+[HUMAN_B2_ENDPOINT_BOUNDARY_OR_SPECTATOR.md](HUMAN_B2_ENDPOINT_BOUNDARY_OR_SPECTATOR.md)
+proves that when C has **exactly
+two actual neighbors** and the k7
+positive stressed path uses m=3..6
+consecutive outer labels, each stressed
+endpoint **must** have either a
+true circle vertex or an actual
+contact with its next spectator.
+Both endpoints circle-free requires
+m<=5. In m5 it forces the complete
+seven-outer actual-contact graph to
+be a path missing *only* the single
+edge between the two spectators.
+A finite graph enumeration (independently
+checked) gives 392 purely combinatorial
+outer actual supergraphs across m3..6
+(217,105,49,21), none assumed feasible.
+
+**Whole m6 case has a three-mode actual contact structure.**
+[HUMAN_M6_THREE_ACTUAL_CONTACT_MODES.md](HUMAN_M6_THREE_ACTUAL_CONTACT_MODES.md)
+proves an exhaustive P/S/K split
+for k7, C-positive-degree-two, m6:
+P has only two actual C neighbors and
+at least one true circle-contact
+outer stressed endpoint; S has exactly
+one additional C actual contact to
+the sole spectator T, which **must
+have a true circle vertex**; K has
+an actual zero-weight C chord to
+some stressed internal path square.
+Diagonal C two-force mode necessarily
+belongs to K and has extra
+two-sided tangential bracing. With
+only one spectator, if T does not
+touch C the diagonal case has **at
+least two distinct internal actual
+C chords with opposite tangential
+normal signs**.
+
+**A leaf monopolizes its side, forcing an orthogonal scaffold.**
+[HUMAN_LEAF_EXCLUSIVE_CENTRAL_SIDE.md](HUMAN_LEAF_EXCLUSIVE_CENTRAL_SIDE.md)
+proves an actual one-contact leaf
+square T in a minimum-contact n8
+minimizer is radial, parallel to C
+and wholly beyond a **unique**
+C side cap of offset
+\(b=\sqrt{R^2-1/4}-1>4/5\).
+No second whole unit square can
+occupy the same high cap under
+the search ceiling: the rigorous
+all-frame pair center squared-distance
+upper bound is \(164761/360000<1\).
+Consequently in **side-stressed
+B2** any actual C leaf must attach
+on one of the **two perpendicular
+central sides**, not on either of
+the positively stressed side
+normals. The m6 spectator leaf
+specialization is in
+[HUMAN_M6_PERPENDICULAR_SPECTATOR_LEAF.md](HUMAN_M6_PERPENDICULAR_SPECTATOR_LEAF.md).
+
+**New internal stressed-path *vertex-cover invariant*.**
+[HUMAN_B2_INTERNAL_PATH_VERTEX_COVER.md](HUMAN_B2_INTERNAL_PATH_VERTEX_COVER.md)
+proves, *for every k7/B2 stressed
+outer path m=3..6*, each pair of
+consecutive internal stressed squares
+has at least one member that **truly
+touches the circle or has an actual
+C chord**. Otherwise the pair
+would be adjacent strictly circle-free
+actual-degree-two aligned transmitters,
+forbidden at R<2. Thus the true
+circle-or-chord internal anchors
+form a path vertex cover, with minimum
+counts \(0,1,1,2\) for m=3,4,5,6.
+An exact 0/1 graph verifier audits
+the combinatorial statement.
+
+**Immediate strong m6 consequences:**
+P and S have **no internal C
+chords**. Each must therefore have
+at least **two different internal
+outer stressed square circle contacts**.
+P also forces at least one stressed
+path **endpoint** circle contact,
+and S forces the **spectator**
+circle contact. Thus **P and S
+each have at least THREE distinct
+true circle-contact exterior squares**.
+In K, at least two distinct
+internal labels must be circle
+contacts or genuine C-chord
+endpoints: a *single* internal
+chord with no other circle/chord
+anchor is **fully impossible**.
+
+**A new m3 parallel scaffold consequence.**
+When m=3 and C has exactly two
+actual contacts, its only stressed
+internal square S2 has exactly
+two actual outer contacts.
+If S2 is circle-free, C and S2
+are two distinct aligned transmitters
+sharing the *same two endpoint
+neighbors* S1 and S3. The existing
+shared-transmitter theorem
+HUMAN_CYCLE_ANALYSIS.md section 9
+then forces **all four true frames
+C,S1,S2,S3 parallel**. If not,
+S2 itself is circle-contacting.
+This is a real global route to
+the four-square parallel candidate
+scaffold, not an assumed frame
+choice or local cap inequality.
+
+**Remaining decisive proof:** derive a
+sharp \(R\ge\widehat R\)
+inequality from these **real**
+outer boundary contacts, central
+chords, orthogonal leaf scaffolds,
+or the m3 forced parallel motif;
+then handle outer full-contact ring
+root A, central branching B3,
+exterior stress root X and k<=6.
+None of P, S or K has yet been
+eliminated in full. The real
+S4/k7 equality construction is
+preserved. Unrestricted optimality,
+equality classification and Lean 4
+formalization remain OPEN.
