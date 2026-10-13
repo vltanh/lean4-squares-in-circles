@@ -1888,3 +1888,73 @@ conditions alone* could exclude the subcase. Any sharp
 S2/k4 obstruction must retain actual square frames,
 vertex containment, or pair support inequalities.
 The global \(R_8\ge\widehat R\) remains OPEN.
+
+
+## 2026-10-12 continuation: five-square inner/outer fan rules out a full S3/k=3 offset region
+
+[HUMAN_FIVE_SQUARE_INNER_OUTER_FAN.md](HUMAN_FIVE_SQUARE_INNER_OUTER_FAN.md)
+proves a **global, arbitrary-frame five-square obstruction** for
+two distinct inner-center squares in each of two perpendicular
+whole caps (R and U), and a fifth **outer-center** square
+in the R cap. Under the actual n=8 ceiling,
+the five-square configuration is impossible when
+\[
+h_R>17/200,\qquad h_U\ge21/100.
+\]
+The proof uses only the actual inscribed-center distance
+constraint, the farthest-vertex center-radius bound
+\(r<283/200\), and the four-inner angular fan.
+Its two exact mixed inner/outer angular margins are:
+* for inner radii \(>7/10\): outer angle gap \(>2\pi/9\);
+* for inner radii \(>117/200\): outer angle gap \(>7\pi/36\).
+
+The three forced inner rays R-,R+,U+ bracket any R-outer ray
+strictly in \((-\pi/9,7\pi/36)\), which lies *too close*
+to R+; thus no such fifth square exists.
+[verify_five_square_angular_fan.py](verify_five_square_angular_fan.py)
+audits the exact rational squared-distance margins, not
+the whole-continuum proof or the unrestricted n=8 theorem.
+
+**New S3/k=3 rejection:** exclusive S3=(3+1,2+1)
+with k=3 necessarily has one R-outer, two R-inner,
+two U-inner, and far L/D outer singletons.
+The distant L singleton forces \(h_R>17/200\);
+therefore the entire \(h_U\ge21/100\) subdomain
+is impossible. The surviving S3/k=3 offset must satisfy
+\[
+17/200<h_R<13/100,\qquad
+17/200<h_U<21/100.
+\]
+This supersedes the older \(h_U<(\sqrt{26311}-100)/200\)
+bound, but does **not** eliminate S3/k=3 entirely.
+
+[HUMAN_S3_K3_REMAINING_TWO_LANES.md](HUMAN_S3_K3_REMAINING_TWO_LANES.md)
+gives a further **exact positional split** within that
+small rectangle. The sole outer R center ray angle \(\psi\)
+must lie in one of two disjoint open sectors:
+\[
+-5\pi/36<\psi<-2\pi/45
+\quad\text{or}\quad
+7\pi/36<\psi<13\pi/45.
+\]
+The far L/D singleton transverse center coordinates obey
+\[
+|p_L.y|<3/20,\qquad |p_D.x|<11/32,
+\]
+placing their center rays within \(\pi/24\) of the
+negative x axis and \(\pi/12\) of the negative y axis,
+respectively. All assertions use **whole-square cap**
+hypotheses, not merely center sign or arbitrarily chosen
+separating directions.
+
+**New S1/k=3 conditional restriction:** if the 3+1
+triple offset \(h_U\ge21/100\), its perpendicular
+3+0 triple must have \(h_R\le17/200\), or the same
+five-square theorem applies. This does not finish S1/k=3.
+
+These results remove genuine **continuous geometric subregions**,
+not additional Boolean twelve-status words. The previous
+S2/k=3 and S4/k=3 entire macro-cell exclusions remain valid.
+S4/k=7 sharp equality, D0 corner-only branches, D1/D2,
+and the unrestricted reverse bound \(R_8\ge\widehat R\)
+are **still OPEN**.
