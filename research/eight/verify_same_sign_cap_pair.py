@@ -45,5 +45,12 @@ assert q_ceiling-max_P==F(4124287,200500000)>0
 assert q_ceiling-max_Q==F(7219,1800000)>0
 assert max_Q>max_P
 
+
+strict_h = F(7,24)+F(1,1000)
+assert strict_h==F(439,1500)>F(7,24)
+assert h-strict_h==F(1,1000)>0
+assert min(z[1] for z in vq)-strict_h==F(1,1000)>0
+assert min(z[1] for z in vp)-strict_h==F(643547,1203000)>0
+
 print("PASS: 2 true unit-square frames, 8 exact disk vertices, "
       "positive strict same-sign cap, genuine SAT gap")
