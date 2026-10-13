@@ -2670,3 +2670,72 @@ verify all cited strict rational margins and
 have been executed locally. The global
 \(R_8\ge\widehat R\), D0 corner-only, D1/D2
 and equality classification remain OPEN.
+
+
+## 2026-10-12: exact surviving S2/k4 three-cell queue and common true-square slice
+
+[HUMAN_S2_K4_THREE_CELL_QUEUE.md](HUMAN_S2_K4_THREE_CELL_QUEUE.md)
+combines the latest proved *necessary* constraints into
+an exhaustive **three-cell continuous S2/k4 queue**.
+The case has R:3,L:0,U:2,D:2 with U nearer, and
+\[
+0<h_R<13/100,\qquad
+7/24<h_U<97/200.
+\]
+There are exactly two far-D outer centers, one
+near-U **inner**, one near-U **outer**, and
+one outer/two inner right-triple centers.
+The D outer pair has opposite signed transverse
+center coordinates. Every mixed U pair has strict
+polar gap \(>3/4\) radians.
+
+The three exhaustive cells are:
+
+* **A:** \(2/5\le h_U<97/200\). The near-U inner
+  and outer centers must have **strictly opposite**
+  transverse x signs, by the new
+  [HUMAN_MIXED_HIGH_CAP_SIGN_SPLIT.md](HUMAN_MIXED_HIGH_CAP_SIGN_SPLIT.md).
+* **B:** \(7/24<h_U<2/5\), with near-U transverse
+  center signs strictly opposite. No frame
+  alignment is inferred.
+* **C:** \(7/24<h_U<2/5\), with near-U transverse
+  center sign product **nonnegative**. The
+  inner x absolute value is \(<1/4\), outer x
+  absolute value \(>7/10\) (including the
+  possible inner x=0 boundary); at least one
+  actual near-U frame must be tilted **more
+  than \(1/2600\) radian** from the central axes.
+
+The **outer** near-U center can never have
+zero transverse x coordinate, by the
+boundary-completed mixed polar lemma.
+Thus the three cells include every zero-sign
+boundary and no false omitted case.
+
+[HUMAN_TWO_CAP_SHARED_MIDSLICE_CHORDS.md](HUMAN_TWO_CAP_SHARED_MIDSLICE_CHORDS.md)
+adds a useful **actual whole-square** ordering
+common to all A/B/C: the line
+\(y=(R+h_U)/2\) intersects each nearer-U
+square in a horizontal open chord of length
+**at least one**, for any independent frame.
+The two chords are disjoint and have a real
+left-to-right order; rotated frames give
+strictly longer chords. On a sloping
+flank the complete-domain chord lower bound
+is \(>667/600\), by exact \(R<99/50\) and
+\(h_U>7/24\).
+
+This **does not** assert horizontal projections
+of the entire oblique squares are disjoint.
+Nor are A/B/C proved empty: the next goal is
+to couple those common-slice segments to
+disk vertices, outer-center angular lanes,
+actual inter-square separating axes, and the
+remaining five exterior squares. No sampling
+result has been promoted to an analytic proof.
+
+The previously proved sharp S4/k7 equality
+configuration is preserved. The unrestricted
+radius theorem \(R_8\ge\widehat R\), full
+equality classification, and Lean n=8
+handoff remain **OPEN**.
