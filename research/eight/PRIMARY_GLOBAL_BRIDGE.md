@@ -1,5 +1,105 @@
 # ONE bridge to the unrestricted eight-square sharp radius
 
+## CURRENT mathematical breakthrough: true SAT-local sharpness with all seven frames free
+
+**The candidate's seven-square ring is now proved
+LOCALLY SHARP under full genuine SAT nonoverlap,
+without any parallel-frame or prescribed fixed-axis
+separator hypothesis.**
+
+[HUMAN_LOCAL_TRUE_SAT_SEVEN_SQUARE_SHARPNESS.md](HUMAN_LOCAL_TRUE_SAT_SEVEN_SQUARE_SHARPNESS.md)
+proves that some open neighborhood of the exact seven
+outer-square reference configuration has the following
+property: **every** set of seven genuine unit squares
+inside that neighborhood, with completely independent
+orientations, *all actual open interiors disjoint* and
+contained in \(D_R\), satisfies \(R\ge\widehat R\).
+
+The proof uses the NEW
+[HUMAN_ADAPTIVE_DUAL_SEVEN_SQUARE_SHARPNESS.md](HUMAN_ADAPTIVE_DUAL_SEVEN_SQUARE_SHARPNESS.md).
+For every common tilted-frame parameter t near the
+exact sharp root, it chooses a true positive
+seven-directed-edge/five-circle adaptive algebraic
+dual from the stationary five-corner scalar family,
+and completes the center squares:
+\[
+R^2\ge q_*+\mu_H(t)F(q_*,y(t),t)+
+ (1/200)\sum_{\text{seven frames}}
+ |\sin(\text{orientation defect})|
+\]
+under the **fixed seven directed** separator hypotheses.
+The global-in-family theorem gives \(F\ge0\).
+
+The stronger TRUE-SAT theorem then removes those
+fixed-direction hypotheses **locally**:
+at the exact candidate **all 11 wrong pair SAT
+side axes** have projected gap less than \(-1/20\),
+so actual nonoverlap forces one of just
+**32** correct signed owner assignments.
+A true physical force/circle dual on all
+32 assignments has **strict first-order
+mismatch coefficient reserve \(>1/40\)**
+on the five relative-orientation tree edges
+AB,TB,DT,ED,HG, proven by the
+[exact interval auditor](verify_sat_seven_local_dual.py).
+Positive disk-vertex quadratic terms
+absorb position/angle mixed Taylor errors,
+giving an exact nonlinear local bound with
+angular penalty \(>1/80\) times total relative
+angle defect after reducing the neighborhood.
+**No physical square is rotated in this argument.**
+
+Because any full eight-square packing contains its
+seven named exterior squares, this proves **LOCAL
+sharpness of the full eight-square construction**,
+for all independently oriented frames, with
+its legitimate T/G slider freedoms.
+
+### The one remaining GLOBAL bridge
+
+The finite local result does **NOT** prove
+unrestricted \(R_8\ge\widehat R\).
+The next and ONLY global theorem needed by
+this approach is a **capture statement**:
+
+> Every hypothetical complete eight-square packing
+> with \(R<\widehat R\) can, by an exhaustive sound
+> geometric pose-cover proof and symmetry reduction,
+> be reduced to the open seven-square candidate
+> neighborhood just proved sharp—or must satisfy
+> another exact globally sharp obstruction.
+
+Equivalently, it would suffice to establish:
+**every attained global minimizer of radius
+\(R<\widehat R\) lies (up to label symmetries
+and rigid disk symmetries) in the candidate's
+local pose neighborhood.**
+The local theorem would then immediately contradict
+the smaller radius. **THIS CAPTURE THEOREM IS OPEN**.
+
+The revised 11SquaresOptimal manuscript obtains its
+global capture using a fixed marker ownership cover,
+compulsory convex regions and certified
+interval/SAT pruning. Our disk geometry needs a
+new **circular-geometry** pose/ownership capture,
+not its rectangular wall arguments copied verbatim.
+
+**Stop rule:** Do not attempt further tiny
+cap-constant improvements or new conditional
+contact graphs. The only current globally decisive
+deliverable is a sound complete capture of
+strictly better eight-square configurations
+into the local true-SAT neighborhood (or an
+orientation-independent alternative sharp bound).
+The equality-bearing full seven-outer actual
+contact ring is explicitly included locally.
+
+Unrestricted sharpness, global equality classification,
+and Lean 4 formalization remain **OPEN**.
+
+---
+
+
 
 ## New preferred bridge after reading 11SquaresOptimal: pay for independent frame angles
 
