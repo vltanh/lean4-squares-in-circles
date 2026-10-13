@@ -2579,3 +2579,94 @@ does **not** finish S2/k4, S1/S3/S4, D0
 corner-only branches, D1/D2, contact-graph
 alternatives, or \(R_8\ge\widehat R\).
 The genuine S4/k7 equality packing remains.
+
+
+## 2026-10-12: further all-frame mixed-center near-cap polarity and near-axis exclusions
+
+A completed reusable lemma is
+[HUMAN_MIXED_NEAR_CAP_POLARITY.md](HUMAN_MIXED_NEAR_CAP_POLARITY.md):
+for two distinct whole unit squares in a common cap
+at offset \(h\ge7/24\), one inner-center and one
+outer-center, their **polar center-ray gap
+exceeds \(3/4\) radians** for arbitrary
+square orientations. This follows from the
+actual inscribed-center unit distance, the
+cap-projection radial bounds
+\(19/24\le r_{\rm inner}<1\),
+\(1\le r_{\rm outer}<283/200\),
+and an elementary separately convex
+cosine-law rectangle with largest upper
+corner \(715289/720000<1\).
+
+For the *same strict transverse x sign*,
+the inner member is forced near the origin
+diameter \(|x_{\rm inner}|<1/4\)
+and the outer member far away
+\(|x_{\rm outer}|>7/10\). The outer
+center ray is farther from the positive
+y diameter (ordered downward in +x,
+upward in -x). There is no claim that
+a center sign gives a whole-square quadrant
+separator.
+
+A second independent all-frame theorem,
+[HUMAN_MIXED_HIGH_CAP_SIGN_SPLIT.md](HUMAN_MIXED_HIGH_CAP_SIGN_SPLIT.md),
+uses the **sharp one-square cap transverse
+envelope**, valid at \(h\ge2/5\), to prove that
+such a mixed inner/outer pair in one cap
+**must have strictly opposite transverse
+center signs**. In the hypothetical same-sign
+case its outer x coordinate would obey
+\(7/10<|x_{\rm outer}|<9/10\)
+and outer y coordinate \(9/10\le y_{\rm outer}
+<123/100\); the inner center has
+\(|x_{\rm inner}|<1/4\) and
+\(9/10\le y_{\rm inner}<1\).
+Their squared separation would then be
+\[
+< (9/10)^2+(33/100)^2
+=9189/10000<1,
+\]
+contradicting the two inscribed half-unit disks.
+The margin \(811/10000\) is exact.
+
+The **same-side arbitrary-frame case below
+h=2/5 is *not* claimed eliminated**.
+[HUMAN_SAME_SIDE_NEAR_AXIS_CAP.md](HUMAN_SAME_SIDE_NEAR_AXIS_CAP.md)
+gives a complementary **open near-axis orientation
+exclusion**: if two distinct whole cap members at
+\(h\ge7/24\) have the same weak transverse
+center sign, **both** frames cannot be within
+\(1/2600\) radians of the central axes.
+Each actual square would otherwise contain
+a centered axis-aligned \(2600/2601\)-square;
+the two parallel smaller squares would require
+\[
+R^2\ge
+(7/24+2600/2601)^2
++(9/4)(2600/2601)^2
+=q_+ +21634201/270608040000>q_+.
+\]
+This result is conditional on both small frame
+tilts; it neither asserts arbitrary-frame
+impossibility nor changes the S4 equality construction.
+
+**S2/k=4 application.** Exactly one nearer
+2+2 center is inner and one outer. Their
+polar gap is always \(>3/4\); when
+\(h_{\rm near}\ge2/5\) their transverse x
+center signs are necessarily **opposite**.
+When \(7/24<h_{\rm near}<2/5\),
+a same-sign pair must have
+\(|x_{\rm inner}|<1/4\),
+\(|x_{\rm outer}|>7/10\) and at least one
+frame deviation \(>1/2600\) radians.
+These are explicit **necessary continuous
+positional cases**, not finished S2/k=4
+or unrestricted n=8 proof.
+
+The three optional exact-fraction audit scripts
+verify all cited strict rational margins and
+have been executed locally. The global
+\(R_8\ge\widehat R\), D0 corner-only, D1/D2
+and equality classification remain OPEN.
