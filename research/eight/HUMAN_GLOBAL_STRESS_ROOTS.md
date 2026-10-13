@@ -467,3 +467,45 @@ contact ring A is preserved.
 The unrestricted
 \(R_8\ge\widehat R\) remains
 OPEN.
+
+
+## Refined minimal k=7/B3 radial triangle-leaf interface
+
+The smallest positive central-branching component consists
+of C-X-Y-C plus a genuine radial positive bridge C-Z,
+with X,Y consecutive outer-center ray labels and Z
+among three eligible nonadjacent ray positions.
+
+The strongest new **all-frame, force-level** reductions are
+indexed in the current roadmap and proved in:
+
+- [HUMAN_POSITIVE_TRIANGLE_FORCES_CIRCLE_WEIGHTS.md](HUMAN_POSITIVE_TRIANGLE_FORCES_CIRCLE_WEIGHTS.md):
+  **all X,Y,Z** must carry positive physical circle
+  multipliers, not just the radial leaf;
+- [HUMAN_RADIAL_STRESS_LEAF_TWO_MODES.md](HUMAN_RADIAL_STRESS_LEAF_TWO_MODES.md):
+  Z is either a radial true **side** square with two
+  equal circle reactions or a radial true **diagonal**
+  square with one circle vertex; its bridge offset b
+  and genuine center are explicit functions of R;
+- [HUMAN_RADIAL_BRIDGE_THREE_SAT_INTERFACES.md](HUMAN_RADIAL_BRIDGE_THREE_SAT_INTERFACES.md):
+  genuine separating-axis ownership forbids **C corner
+  / Z diagonal**; only C-side/Z-side **SS**,
+  C-corner/Z-side **CS**, and C-side/Z-diagonal
+  **SD** remain;
+- [HUMAN_B3_RADIAL_LEAF_ANTIPODAL_FORCE_CONE.md](HUMAN_B3_RADIAL_LEAF_ANTIPODAL_FORCE_CONE.md):
+  the actual Z radial ray lies in a strict
+  antipodal cone forced by X/Y positive circle forces;
+- [HUMAN_B3_RADIAL_STRESS_LEAF_BRACING.md](HUMAN_B3_RADIAL_STRESS_LEAF_BRACING.md):
+  in a contact-minimal radius representative,
+  **CS and SD require real zero-stress spectator bracing**;
+  they cannot be bare actual C-leaves;
+- [HUMAN_B3_ALL_SIDE_STRESS_SCAFFOLD.md](HUMAN_B3_ALL_SIDE_STRESS_SCAFFOLD.md):
+  under the additional all-C-side-normal,
+  radial side-leaf hypothesis, X,Y both contact
+  the single *opposite* C side and must straddle
+  the origin-radial foot with actual contact points.
+
+This eliminates one proposed bridge interface and one
+all-side-positive-force incidence pattern, but **does
+not close the whole k7/B3 small component**. The four
+spectators and their genuine actual contacts remain.
