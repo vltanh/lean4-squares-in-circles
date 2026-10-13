@@ -489,3 +489,89 @@ force equation and width-four
 obstruction; not a numerical stress
 optimizer or an assumption about
 arbitrary minimizer contact degrees.
+
+
+## CURRENT exact k7/B2 outer-path support queue: m=4,5,6 only
+
+**The previous m=3 positive stress cycle root is now
+completely impossible, even when C has additional
+zero-positive-stress actual neighbors.**
+
+[HUMAN_SEVEN_OUTER_M3_SEMICIRCLE_EXCLUDED.md](HUMAN_SEVEN_OUTER_M3_SEMICIRCLE_EXCLUDED.md)
+proves the genuine **global m=3
+macro-case exclusion** as follows:
+the three positive-stressed outer
+square labels are consecutive among
+seven outer ray directions, so their
+center rays span strictly
+\[
+<3\pi/4+1/100.
+\]
+Every actual disk-circle vertex
+deviates from its square center ray
+by \(<31/80\) radians (proved from
+\(R>\sqrt2+1/2\) and exact
+rational sin/sqrt comparisons).
+The entire positively stressed
+circle-vertex support therefore
+lies within one angular arc of
+width
+\[
+<3\pi/4+1/100+31/40<\pi.
+\]
+All spectator squares and central
+C have **zero physical circle
+multipliers** in the m3 stress
+support; normalizing the positive
+circle multipliers to sum to one
+would make their radial force
+vectors positively sum to zero,
+impossible inside one strict
+open half-plane. No actual C-degree,
+frame alignment or additional
+zero-weight contact assumption
+enters this contradiction.
+
+Thus the actual current
+**k=7, outer-actual-contact-forest,
+positive C-degree-two** stressed
+cycle sizes are **only**
+\[
+\boxed{m\in\{4,5,6\}},
+\]
+with 7 cyclic positive graph
+placements each, **21 graph
+supports** before geometry.
+The previously excluded m=7
+(and now m=3) positive supports
+were each eliminated across
+*all* square frames and
+central extra-contact patterns.
+
+[HUMAN_GLOBAL_STRESS_CIRCLE_ARC_SPREAD.md](HUMAN_GLOBAL_STRESS_CIRCLE_ARC_SPREAD.md)
+records the underlying reusable
+physical-stress necessary condition:
+every normalized positive
+circle-multiplier support must
+have center rays spread across
+an angular arc of width strictly
+larger than \(\pi-31/40\).
+It also excludes certain central
+B3 stress supports on three
+consecutive outer labels.
+
+Earlier pure m3 proofs excluding
+the circle-free four-parallel
+transmitter scaffold and forcing
+all three positive circle
+multipliers are valid *conditional*
+historical lemmas, but the
+m3 parent root has now
+been fully excluded and should
+**not** appear in the current
+unresolved B2 queue.
+
+The real sharp construction's
+**full seven-outer actual contact
+ring** remains a separate,
+legitimate equality root.
