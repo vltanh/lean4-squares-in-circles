@@ -1,3 +1,66 @@
+## LATEST FOCUSED RESULT: TRUE-SAT LOCAL SHARPNESS IS CLOSED (October 13)
+
+**The global proof is still OPEN; the local candidate
+neighborhood is now a complete all-orientation theorem.**
+
+* [HUMAN_ADAPTIVE_DUAL_SEVEN_SQUARE_SHARPNESS.md](HUMAN_ADAPTIVE_DUAL_SEVEN_SQUARE_SHARPNESS.md)
+  establishes a **finite** (not just first-order)
+  sharp \(R\ge\widehat R\) theorem for the seven
+  candidate directed separator inequalities with
+  **all seven square frames allowed to rotate
+  independently**. The positive dual multipliers
+  ADAPT to the common tilted-frame parameter,
+  and exact intervals certify
+  \(\Gamma_i-|B_i|>1/40\), \(|A_i|<2\)
+  for every independent angular variable.
+* [HUMAN_LOCAL_TRUE_SAT_SEVEN_SQUARE_SHARPNESS.md](HUMAN_LOCAL_TRUE_SAT_SEVEN_SQUARE_SHARPNESS.md)
+  upgrades this to **ACTUAL pairwise SAT nonoverlap**
+  in an open candidate pose neighborhood:
+  all 11 incorrect owner axes have reference
+  gap \(<-1/20\); the 32 allowable true owner
+  branches each have positive angular
+  stiffness \(>1/40\) along the five
+  independent frame-edge differences.
+  An exact nonlinear Taylor/Young argument
+  uses the five positive circle-anchor
+  weights to absorb center/frame cross terms.
+  Thus every nearby genuine seven-square
+  packing—and consequently every full
+  eight-square packing near the known sharp
+  construction—has \(R\ge\widehat R\),
+  with the actual T/G slider freedoms intact.
+  The arithmetic is reproduced by
+  [verify_adaptive_seven_square_dual.py](verify_adaptive_seven_square_dual.py)
+  and [verify_sat_seven_local_dual.py](verify_sat_seven_local_dual.py).
+* **The old FROZEN candidate dual is not
+  globally or finitely sufficient**:
+  after completing the center squares its
+  aligned common-tilt bound has strict
+  negative curvature
+  \(K(\cos(t-t_*)-1)\), \(K\approx13.109>0\).
+  The adaptive weights restore the positive
+  conditional five-corner scalar defect.
+
+**Only remaining global task in this focused
+program:** prove a **SOUND COMPLETE POSE/CAPTURE
+THEOREM** for all hypothetical smaller-radius
+eight-square packings, reducing them (after
+symmetries) to the now-proved local true-SAT
+candidate neighborhood, or prove an alternative
+sharp obstruction for the cases outside it.
+The 11SquaresOptimal manuscript's *global marker
+cover* is methodological inspiration, not
+a ready-made disk theorem. No global capture
+certificate has been constructed.
+
+Stop new local threshold/branch-count work unless
+it directly produces this global capture.
+The unrestricted \(R_8\ge\widehat R\),
+global equality classification and
+Lean 4 remain OPEN.
+
+---
+
 # CURRENT PRIMARY TARGET — one global bridge, not more subcases
 
 **The authoritative next theorem is now**
