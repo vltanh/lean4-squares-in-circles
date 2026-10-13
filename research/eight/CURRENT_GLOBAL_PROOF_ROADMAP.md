@@ -2,6 +2,84 @@
 
 Reorientation: 2026-10-13. Baseline audited: `605af6c522c0928d3fd1ab7b1765ed20d3e7dc1f`.
 
+## Latest completed structural reduction: the minimal B3 branching core (October 13)
+
+The smallest **seven-outer central-branching** positive-stress
+component has exactly the triangle C-X-Y-C and positive
+radial bridge C-Z. The previous graph theorem gives seven
+choices of X-Y consecutive ray pair and three nonadjacent Z
+ray placements (**21 labeled positive graph templates**),
+all still subject to genuine eight-square geometry.
+
+**New complete hand deductions, not a finished B3 radius bound:**
+
+1. [HUMAN_POSITIVE_TRIANGLE_FORCES_CIRCLE_WEIGHTS.md](HUMAN_POSITIVE_TRIANGLE_FORCES_CIRCLE_WEIGHTS.md)
+   forces **all three outer labels X,Y,Z** to have
+   strictly positive **physical circle multipliers**.
+   Otherwise the two forces through X or Y transmit
+   straight through a unit square and separate
+   its two other *contacting* neighbors, impossible.
+2. [HUMAN_RADIAL_STRESS_LEAF_TWO_MODES.md](HUMAN_RADIAL_STRESS_LEAF_TWO_MODES.md)
+   proves the positive radial bridge square Z has
+   only two true disk-circle shapes: **side mode**
+   \[
+   b=\sqrt{R^2-1/4}-1,\quad p_Z=(\sqrt{R^2-1/4}-1/2)n
+   \]
+   with two **equal positively weighted circle vertices**,
+   or **diagonal mode**
+   \[
+   b=R-\sqrt2,\quad p_Z=(R-1/\sqrt2)n
+   \]
+   with one positively weighted vertex at \(Rn\).
+3. The genuine SAT-owner condition eliminates the
+   false C-corner/Z-diagonal combination.
+   [HUMAN_RADIAL_BRIDGE_THREE_SAT_INTERFACES.md](HUMAN_RADIAL_BRIDGE_THREE_SAT_INTERFACES.md)
+   gives **exactly three** true interfaces:
+   **SS** (C side/Z side, frames parallel),
+   **CS** (C radial corner/Z side), and
+   **SD** (C side/Z inward diagonal corner,
+   frames differing by 45 degrees).
+4. [HUMAN_B3_RADIAL_LEAF_ANTIPODAL_FORCE_CONE.md](HUMAN_B3_RADIAL_LEAF_ANTIPODAL_FORCE_CONE.md)
+   constrains the genuine radial center ray n of Z
+   to the antipodal cone of X,Y's two positively
+   circle-stressed square center rays:
+   \[
+   \theta_X+\pi-31/80<\arg n
+   <\theta_Y+\pi+31/80\pmod{2\pi}.
+   \]
+   The cone's width is strictly below pi.
+5. In a **contact-minimal** radius minimizer,
+   [HUMAN_B3_RADIAL_STRESS_LEAF_BRACING.md](HUMAN_B3_RADIAL_STRESS_LEAF_BRACING.md)
+   rules out **unbraced CS and SD**. Those
+   nonparallel bridges require a further **actual
+   zero-positive-weight contact** to one of
+   Z's two angularly adjacent spectator squares;
+   that spectator may not end as a noncentral
+   actual leaf.
+6. In the further **all-positive-C-side-normal,
+   side-mode** subcase, [HUMAN_B3_ALL_SIDE_STRESS_SCAFFOLD.md](HUMAN_B3_ALL_SIDE_STRESS_SCAFFOLD.md)
+   proves X,Y must both contact the *opposite* C side,
+   their actual C contact points must straddle
+   the radial origin line in tangent sign, and
+   X-Y has a transverse positive contact normal.
+   The conjectured **three-distinct-C-side**
+   branching case is **fully excluded under those
+   explicit hypotheses**, but the opposite-side
+   triangle remains.
+
+**Next B3 handproof target:** handle complete **SS actual
+leaf** versus **CS/SD externally braced** configurations,
+with all four remaining full spectator squares.
+Try force-cone + exact true-square triangle contacts,
+not cap-cutoff tuning or incomplete stress-core optimization.
+The global root A (genuine equality ring), B2 m=4..6,
+B3 larger components, X and k<=6 remain open.
+
+This is a *structural reduction*, not a claim of global
+\(R_8\ge\widehat R\), equality classification or Lean completion.
+
+---
+
 ## 1. The actual objective
 
 Let R8 be the least radius containing eight interior-disjoint genuine unit squares, with independent orientations. The candidate construction supplies R8 <= Rhat. The remaining theorem is **R8 >= Rhat**, not impossibility at the inclusive candidate radius. The known equality packing must remain admissible.
