@@ -1,6 +1,146 @@
 # Structural closure roadmap: stop narrowing cap constants, finish the global four roots
 
 
+## NEWEST complete actual-contact collapse: bare stress cycle plus isolated, circle-free spectators
+
+**This is the strongest newly proved global contact-graph
+normal form within the central-actual-degree-two root.**
+
+[HUMAN_B2_PURE_CENTRAL_CONTACT_ISOLATES_SPECTATORS.md](HUMAN_B2_PURE_CENTRAL_CONTACT_ISOLATES_SPECTATORS.md)
+shows that when k=7, C has exactly two
+*actual* contacts (its two positive
+stress neighbors), and the outer
+actual graph is not the full
+seven-contact ring, **every remaining
+outer spectator is completely
+isolated in the actual-contact graph**.
+
+The reason is genuinely structural,
+not numeric: any nonempty **proper**
+additional spectator-edge run on
+the complementary seven-ray angular
+arc would have a degree-one
+spectator contacting a *noncentral*
+square. The exact **actual-leaf theorem**
+for a minimum-contact radius minimizer
+says every actual leaf must instead
+contact the central square. Contradiction.
+Thus there are **no extra outer actual
+contacts at all** beyond the positive
+stressed path.
+
+The earlier **392 graph-only possible
+actual outer supergraphs** for
+m=3,4,5,6 collapse in this root to
+**only 28 complete actual-contact
+graphs** (the seven cyclic placements
+of each bare m=3,4,5,6 stressed
+C-rooted cycle). The exact finite
+[verify_B2_isolated_spectators.py](verify_B2_isolated_spectators.py)
+audits all 364 excluded extra-edge
+templates. The actual-leaf impossibility
+is proved in the hand theorem, not
+inferred from enumeration.
+
+**Both stressed endpoints now MUST
+touch the disk circle**, not merely
+"at least one." Combine the internal
+path vertex-cover theorem to get
+the following minimum number of
+different stressed outer squares
+with true circle vertices:
+
+| m | 3 | 4 | 5 | **6** |
+| --- | ---: | ---: | ---: | ---: |
+| Required stressed-path circle-contact labels | **2** | **3** | **3** | **4** |
+| Actual isolated outer spectators | 4 | 3 | 2 | 1 |
+
+[HUMAN_ISOLATED_OUTER_CIRCLE_FREE_NORMALIZATION.md](HUMAN_ISOLATED_OUTER_CIRCLE_FREE_NORMALIZATION.md)
+proves a further exact **representative
+normalization**: each actually isolated
+outer square can be translated a tiny
+distance **radially inward** until every
+true vertex has strict disk clearance,
+*without changing its outer-center
+classification, any actual contacts,
+the minimizing radius, or the physical
+stress core*. Thus in this root we may
+work with **all spectators both isolated
+and strictly circle-free**. They still
+occupy full unit-square area and must
+be retained in every global inequality.
+
+The m=3 pure-C-two-contact subcase
+has a sharp **boundary-or-four-parallel**
+motif: if its sole internal S2 is not
+circle-contacting, the actual shared
+two-transmitter theorem forces
+**C,S1,S2,S3 all parallel**.
+No parallelism assumption was made.
+
+### Even more precise m=6 spectator incidence
+
+[HUMAN_M6_SPECTATOR_CONTACT_TRICHOTOMY.md](HUMAN_M6_SPECTATOR_CONTACT_TRICHOTOMY.md)
+proves for the *entire* k7/B2/m6
+root, **regardless of C actual degree**,
+that the unique spectator T is exactly
+one of:
+
+1. **Actually isolated.**
+2. An **actual central leaf** C--T,
+   with radial, C-parallel true unit
+   frame and two disk-circle vertices;
+   in side-positive C mode the leaf
+   points along a **perpendicular** side.
+3. An **actual contact triangle**
+   C--T--S1--C or C--T--S6--C;
+   T has a true circle vertex.
+
+No outer-only T leaf is possible, by
+the global actual-leaf theorem, and
+contacting both path endpoints would
+form the excluded full actual ring.
+An exact 3-bit graph audit reduces
+8 candidate contact words to 4
+labeled legal incidences.
+
+The existing P/S/K actual central
+contact modes can now be sharpened:
+
+* **P:** C actual-degree-two,
+  T actually isolated and (by choice)
+  circle-free; **both** stressed
+  path endpoints and at least
+  **two internal path squares**
+  circle-touch. At least **four
+  distinct stressed outer squares**
+  touch the circle.
+* **S:** the extra actual C contact
+  is to T alone, which is a leaf
+  or circle-anchored triangle.
+  At least two internal stressed
+  path squares also circle-touch.
+* **K:** a real C-to-internal
+  zero-stress chord exists; all
+  internal boundary-or-chord vertex
+  cover constraints remain, and
+  diagonal positive mode forces
+  two-sided auxiliary C bracing.
+
+**Next decisive proof goal:** derive a sharp
+global radius lower bound for **P with
+four true boundary-anchored stressed
+outer squares plus an isolated circle-free
+spectator**, or close the S0
+perpendicular radial leaf geometry.
+The missing inequality must retain the
+spectator's full square and the entire
+central pocket. This is now an
+explicit global support-contact
+problem, not a local offset gap.
+
+---
+
 ## LATEST structural invariant: internal path boundary-or-chord vertex cover
 
 **This is the current first proof gate**, stronger than the
