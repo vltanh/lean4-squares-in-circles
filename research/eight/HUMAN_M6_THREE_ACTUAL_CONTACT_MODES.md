@@ -292,3 +292,59 @@ diagonal mode is claimed globally impossible.
 The next computational geometry model must
 enforce these **actual** zero-weight chords,
 not optimize only the positive stress cycle.
+
+
+## New pure-P refinement: no spectator actual edges; FOUR stressed circle-contact labels
+
+The earlier mode-P statement "at least one
+stressed endpoint circle-touches" is now
+**strictly superseded** by
+[HUMAN_B2_PURE_CENTRAL_CONTACT_ISOLATES_SPECTATORS.md](HUMAN_B2_PURE_CENTRAL_CONTACT_ISOLATES_SPECTATORS.md).
+
+Because C has actual degree two in P,
+the sole m6 spectator T **cannot**
+contact one endpoint without also
+contacting C: it would be an actual
+noncentral leaf, forbidden by
+HUMAN_STRESS_GRAPH.md. Nor may T
+contact both endpoints, as that
+would form the full seven-outer
+actual cycle (a different root).
+Since P forbids C--T, **T is
+actually isolated**.
+
+Both stressed endpoints S1,S6
+then have exactly two actual neighbors
+(C and their one outer-path neighbor).
+The central square C is a circle-free
+actual-degree-two transmitter; either
+endpoint would be an adjacent
+circle-free transmitter if it did
+not touch the disk. Thus **both
+S1 and S6 touch the disk circle**.
+
+The stronger
+[HUMAN_B2_INTERNAL_PATH_VERTEX_COVER.md](HUMAN_B2_INTERNAL_PATH_VERTEX_COVER.md)
+forces at least **two distinct**
+internal stressed outer square labels
+in S2..S5 to have true disk-circle
+vertices, because P has *no*
+internal C chords. Therefore
+\[
+\boxed{\text{pure P, m6: at least FOUR
+distinct stressed outer square labels
+touch the disk circle}.}
+\]
+The isolated spectator may be
+moved radially inward to become
+strictly circle-free, preserving
+outer-center class and the actual
+contact graph, by
+[HUMAN_ISOLATED_OUTER_CIRCLE_FREE_NORMALIZATION.md](HUMAN_ISOLATED_OUTER_CIRCLE_FREE_NORMALIZATION.md).
+
+The full root remains **unresolved**,
+but the earlier mode-P optional
+spectator edges have been **completely
+ruled out**, leaving an exact
+six-outer stressed path and one
+actually isolated spectator.
