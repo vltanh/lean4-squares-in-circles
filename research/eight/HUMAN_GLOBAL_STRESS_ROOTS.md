@@ -272,3 +272,65 @@ macro-branch closure**, not a complete
 global packing bound. k<=6,
 root X, and the equality-preserving
 A root remain unresolved.
+
+
+## Further exact refinements within B2 (true actual contacts, not cap-offset cases)
+
+[HUMAN_TWO_CENTRAL_FORCE_AXES.md](HUMAN_TWO_CENTRAL_FORCE_AXES.md)
+sharpens B2 in **every k root**:
+its two opposite positive C normals
+are constrained by C torque equilibrium
+to the **four central side/diagonal
+unoriented axes**, with contact-point
+chord either across opposite C side
+faces (same tangential coordinate)
+or across the two opposite C vertices.
+
+In a representative chosen with
+the **fewest actual square contacts**,
+[HUMAN_DIAGONAL_CENTRAL_TANGENTIAL_BRACING.md](HUMAN_DIAGONAL_CENTRAL_TANGENTIAL_BRACING.md)
+further eliminates the bare diagonal
+two-spoke case: diagonal B2 must have
+at least **four actual C neighbors**,
+with two additional zero-stress
+contact normals of strictly opposite
+tangential projections.
+
+For k7/B2 with an outer actual-path
+graph, the positive stressed cycle
+sizes m3..6 are treated by
+[HUMAN_B2_INTERNAL_PATH_VERTEX_COVER.md](HUMAN_B2_INTERNAL_PATH_VERTEX_COVER.md).
+Every two adjacent *internal*
+stressed-path members must include
+a true disk-circle contact or a
+true zero-stress C chord. The
+minimum number of anchored internal
+labels is 0/1/1/2 for m3/m4/m5/m6.
+
+The most constrained m6 root has
+an exhaustive **P/S/K actual contact**
+classification:
+P = just two actual C contacts,
+S = C additionally contacts only
+its sole outer spectator T,
+K = at least one additional actual
+C-to-internal-path square contact.
+Modes P and S each force **at
+least three distinct true circle-
+contact exterior squares**, and
+mode K forces **at least two**
+internal boundary-or-C-chord labels.
+Any diagonal C-positive mode is K.
+
+The mode-S spectator leaf is forced
+onto one of the **perpendicular**
+central side normals, genuinely
+radial, C-parallel, and circle-contacting
+at two vertices, by the exact
+leaf-capacity and leaf rigidity
+theorem. The whole S mode, the
+other P/K subcases, the outer
+full contact ring A, B3, X and
+k<=6 remain unresolved. No
+unrestricted sharp radius bound is
+claimed.
