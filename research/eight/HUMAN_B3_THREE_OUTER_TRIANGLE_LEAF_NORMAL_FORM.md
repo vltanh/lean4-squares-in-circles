@@ -277,3 +277,65 @@ valid. The unrestricted
 equality classification and
 Lean 4 formalization remain
 OPEN.
+
+
+## Exact 21-way outer-ray label classification for this minimal B3 core
+
+The unique positively stressed outer
+contact X--Y must join **consecutive**
+outer center rays in the full seven-
+label circular order. There are
+seven possible choices of this
+adjacent pair.
+
+Once the pair is fixed as ray
+indices \(i,i+1\) modulo seven,
+the third positively stressed
+outer label Z cannot occupy
+indices \(i-1\) or \(i+2\):
+either choice would make X,Y,Z
+**three consecutive outer rays**,
+contradicting the proved
+global circle-force semicircle
+theorem (independently of the
+positive outer-edge structure).
+
+It cannot coincide with X or Y.
+The only three possible Z
+ray positions are therefore
+\[
+\boxed{i+3,\quad i+4,\quad i+5
+\pmod7.}
+\]
+These are exactly the positions
+*not adjacent in the center-ray
+cycle* to either X or Y.
+Thus the four-square B3
+triangle-plus-radial-leaf core
+has precisely
+\[
+\boxed{7\cdot3=21}
+\]
+**combinatorially surviving
+labeled positive-stress supports**,
+all with the unique C-X-Y
+triangle and C-Z radial bridge.
+This is a finite contact-stress
+label count, **not** 21
+certified feasible packings.
+
+The independent exact enumerator
+[verify_B3_triangle_leaf_ray_labels.py](verify_B3_triangle_leaf_ray_labels.py)
+checks all \(\binom73=35\)
+three-outer-label subsets:
+seven triples have no
+outer-ray-adjacent pair and
+cannot have a nonzero moment
+cycle, seven triples are
+consecutive and fail circle
+force balance, leaving exactly
+21 with one adjacent pair.
+The **geometric and physical**
+proof of the exclusions is
+the preceding hand theorem,
+not the enumerator.
