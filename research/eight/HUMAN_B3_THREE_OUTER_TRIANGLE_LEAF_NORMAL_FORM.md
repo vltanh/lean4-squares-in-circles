@@ -507,3 +507,62 @@ radius bound \(R\ge\widehat R\).
 The full equality ring A
 is preserved and the
 unrestricted proof is OPEN.
+
+
+## 2026-10-13 further exact all-frame branch closures
+
+**The full all-C-side SS radial leaf subcase is
+now eliminated**, not merely normalized.
+[HUMAN_B3_SS_OPPOSITE_SIDE_EXCLUDED.md](HUMAN_B3_SS_OPPOSITE_SIDE_EXCLUDED.md)
+shows one of the two forced opposite-side
+C triangle contact points is within
+one-half unit of the radial origin line,
+which by a **coupled true rotated-square
+vertex bound** makes the corresponding
+positive circle-stressed square strictly
+circle-free. The positive triangle
+circle-multiplier theorem contradicts this.
+The strict squared-radius reserve is
+\(6\sqrt{R^2-1/4}-11>0\).
+
+The surviving SS positive C triangle normals
+must have **strictly opposite tangential
+components**, with actual C support points
+on its top and bottom transverse sides.
+At least one actual positive C contact is
+at a **negative radial-side C corner**:
+[HUMAN_B3_SS_TRANSVERSE_CORNER_FORCING.md](HUMAN_B3_SS_TRANSVERSE_CORNER_FORCING.md).
+The CS (C radial corner/Z radial side) mode
+also requires two nonzero opposite transverse
+positive C triangle force components, by
+[HUMAN_B3_CS_TRANSVERSE_FORCE_REQUIRED.md](HUMAN_B3_CS_TRANSVERSE_FORCE_REQUIRED.md).
+These claims do not apply to SD unless
+separately proved.
+
+**Complete conditional actual spectator arc form:**
+If C has *exactly the three actual neighbors*
+X,Y,Z, then
+[HUMAN_B3_COMPLETE_SPECTATOR_ARCS.md](HUMAN_B3_COMPLETE_SPECTATOR_ARCS.md)
+proves the four other exterior squares can
+form **no partial outer contact paths**:
+each of the two complementary spectator arcs
+between Y-Z or Z-X must be entirely present
+or absent. Not both present (that is the
+forbidden full outer actual ring).
+This leaves only **three possible outer
+actual graph patterns per positive ray triple**:
+all four spectators isolated; complete Y-Z arc;
+complete Z-X arc. With 21 prior positive
+ray triples this gives **63 graph-only templates**,
+versus 1,344 raw optional-edge assignments.
+
+In contact-minimal CS/SD interface modes, the
+Z positive bridge **must** also actually contact
+a spectator; hence it requires one of the
+two complete zero-stress spectator paths.
+If C has additional zero-stress *actual*
+spectator C contacts, this simple three-arc
+classification is not asserted.
+
+All full eight-square sharp radius bounds
+and equality classification remain OPEN.
