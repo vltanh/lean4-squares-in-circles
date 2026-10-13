@@ -207,6 +207,28 @@ support inequalities, or prove a sharp lower bound
 for the entire S2/k4 class. A locally feasible 4-square
 subassembly would not imply an 8-square packing.
 
+
+
+### Exact opposite-sign negative control
+
+[RATIONAL_OPPOSITE_SIGN_MIXED_CAP_PAIR.md](RATIONAL_OPPOSITE_SIGN_MIXED_CAP_PAIR.md)
+exhibits two axis-parallel, actual unit squares
+with one inner and one outer center in
+**strictly opposite transverse half-planes**,
+both wholly in \(y\ge2/5\).
+Their true square-square SAT reserve is
+\(1/10>0\), all eight vertices fit in the disk
+with squared radius \(73/20<q_+\), and
+the exact n=8 ceiling margin is \(166/625>0\).
+
+Thus **cell A's opposite-sign mixed near-U pair
+is locally possible** under the pair-only conditions;
+one must use its **far-D outer pair, right triple and/or
+central square** to prove a global S2/k4 exclusion.
+This local two-square packing is not a valid
+eight-square configuration. The full rational
+vertex proof and its verifier are in the linked files.
+
 ## 4. Priority C: exclusive S1/k=3 tiny-offset geometry
 
 The already proved S1/k3 necessary region, in
