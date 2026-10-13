@@ -1000,3 +1000,46 @@ might still suffice.
 These refinements preserve the S4/k7 exact equality
 configuration and do not yet establish
 \(R_8\ge\widehat R\).
+
+
+## 15. An entire S3/k=3 outer-center angular sector is now excluded
+
+The earlier two-sector S3/k=3 center-ray description is
+**superseded** by
+[HUMAN_S3_K3_NEGATIVE_RAY_EXCLUDED.md](HUMAN_S3_K3_NEGATIVE_RAY_EXCLUDED.md):
+the **whole negative R-outer ray sector** is impossible.
+The sole surviving R outer-center ray must obey
+\[
+\boxed{311/500<\psi<8959/10500.}
+\]
+The proof iteratively increases the lower inner R
+center radius from \(>7/10\) to \(>9/10\) using
+actual whole R-cap center projections, then obtains
+an exact mixed angular separation contradiction
+to the same cap projection. It does not assign
+a square frame or physical contact.
+
+Furthermore
+[HUMAN_S3_K3_DISTANT_D_NEGATIVE_X.md](HUMAN_S3_K3_DISTANT_D_NEGATIVE_X.md)
+excludes the entire center-sign subdomain
+\(x_D\ge0\) for the **far D singleton**:
+\[
+\boxed{-13/40<x_D<0,\quad y_D<0.}
+\]
+The angular proof first forces the R-minus inner
+center to radius \(>17/20\); every outer D center
+on or right of the y axis would then be too close
+in center-ray angle for the necessary unit
+center separation.
+
+The remaining S3/k3 offset rectangle is unchanged:
+\[
+17/200<h_R<13/100,\qquad
+17/200<h_U<1/5.
+\]
+No claim of full S3/k3 nonexistence is made.
+These are **continuous** geometric exclusions,
+not new deletions from the purely symbolic
+3,995,040 twelve-status count. The real
+S4/k7 candidate equality branch is preserved,
+and \(R_8\ge\widehat R\) remains OPEN.
