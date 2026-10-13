@@ -2,6 +2,60 @@
 
 ## Current orientation (2026-10-11)
 
+### CURRENT computer-to-hand roadmap (2026-10-12)
+
+Start from the authoritative
+[COMPUTER_ASSISTED_ATTACK_ROADMAP.md](COMPUTER_ASSISTED_ATTACK_ROADMAP.md).
+It documents an **actual** reproducible
+mixed-center two-square cap optimization
+using every true vertex and signed SAT
+separator, then converts its candidate
+near-axis pattern into a completely
+independent **written analytic theorem**.
+
+The new
+[HUMAN_CAP_ENVELOPE_37_100.md](HUMAN_CAP_ENVELOPE_37_100.md)
+extends the sharp arbitrary-frame single-square
+cap envelope to offset \(h\ge37/100\)
+under the established n=8 disk ceiling
+\(R^2\le9789/2500\), via four rational
+polynomial positivity certificates.
+The derived
+[HUMAN_MIXED_HIGH_CAP_37_100.md](HUMAN_MIXED_HIGH_CAP_37_100.md)
+**excludes all mixed inner/outer same-weak-sign
+two-square caps at \(h\ge37/100\)**,
+with true center squared-distance upper
+bound \(1989/2000<1\).
+
+The current exhaustive **exclusive S2/k4**
+geometric three-cell queue is now
+A: \(37/100\le h_U<97/200\), opposite
+near-U transverse signs;
+B: \(7/24<h_U<37/100\), opposite signs;
+C: \(7/24<h_U<37/100\), weak same signs
+with compulsory quadrant and frame constraints.
+The **entire** former C strip
+\(37/100\le h_U<2/5\) is eliminated.
+The conjectured stronger standalone
+mixed-cap radius bound
+\(R^2\ge(1+h)^2+9/4\) down to \(h=7/24\)
+is **not yet proved**. Numerical local
+solver values are NOT proof certificates.
+
+Priorities in the new roadmap: finish
+C using exact SAT-owner frame reductions,
+then the opposite-sign A/B cases;
+then tiny-offset S1/k3, higher k,
+D0 corner-only/D1/D2, and the
+**equality-preserving S4/k7** global
+radius lower bound.
+
+The unrestricted theorem \(R_8\ge\widehat R\),
+global equality classification and Lean 4
+formalization remain OPEN. Preserve the
+genuine exact S4/k7 equality packing.
+
+
 ### Latest October 12 small-cap research frontier
 
 The main unrestricted target is still
