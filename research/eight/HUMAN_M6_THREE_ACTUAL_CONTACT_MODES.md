@@ -348,3 +348,75 @@ spectator edges have been **completely
 ruled out**, leaving an exact
 six-outer stressed path and one
 actually isolated spectator.
+
+
+## Strongest new force anchor: four positively circle-stressed outer path labels in every P/S/K mode
+
+The actual-contact classification P/S/K
+is now complemented by an independent
+**positive physical circle-multiplier**
+theorem, not dependent on C's actual degree:
+
+[HUMAN_STRESS_CYCLE_POSITIVE_CIRCLE_COVER.md](HUMAN_STRESS_CYCLE_POSITIVE_CIRCLE_COVER.md)
+proves that for the simple
+C-S1-...-S6-C **positive-stress**
+cycle, **at least four different
+outer path square labels have
+strictly positive circle-vertex
+multipliers**. The two endpoints
+S1,S6 must *both* have positive
+circle multipliers, and at least
+two of S2..S5 must too; their
+indices cover the internal path edges.
+
+The proof uses the actual contact
+force equilibrium. Two adjacent
+zero-circle-multiplier squares
+would propagate the identical
+support normal over three
+successive square contacts,
+creating a four-unit chain
+with total projected width
+>=4, impossible in a disk
+of diameter <4.
+
+**Applies uniformly to P, S and K.**
+Even true zero-positive-stress
+central contact chords in K
+cannot substitute for the
+required **positive physical
+circle-multiplier** internal
+squares. In spectator-spoke
+mode S, the additional T is a
+**true circle-contact square
+with zero positive circle weight**,
+so the full eight-square packing
+has **at least five distinct
+exterior true circle-contact
+square labels**: four stressed
+path labels plus T.
+
+The minimal possible four-label
+positive support patterns on
+S1..S6 are exactly:
+\[
+\{S_1,S_3,S_5,S_6\},\quad
+\{S_1,S_3,S_4,S_6\},\quad
+\{S_1,S_2,S_4,S_6\}.
+\]
+Other patterns with five or six
+positive circle-weight labels
+remain possible. This is an
+exact **graph/force support**
+classification, not a claim
+that any of the three patterns
+is geometrically feasible.
+
+The sharp radius bound for the
+entire P/S/K cases remains
+unproved, but any future
+numerical model must encode
+these **nonzero circle dual
+forces**, rather than only
+zero/nonzero circle vertex
+geometry.
