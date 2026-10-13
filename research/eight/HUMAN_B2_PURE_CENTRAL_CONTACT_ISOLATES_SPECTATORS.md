@@ -353,3 +353,51 @@ The unrestricted sharp optimality
 inequality \(R_8\ge\widehat R\),
 full equality classification and
 Lean formalization remain OPEN.
+
+
+## Global m3 semicircle exclusion supersedes the earlier pure m3 scaffold analysis
+
+The earlier pure-actual-central-degree-two
+graph count of **28** cycle supports
+for m3,m4,m5,m6 was correct *before*
+the latest **global geometric
+exclusion**. The entire m3
+stressed cycle has since been
+**ruled out** even with additional
+zero-weight actual C contacts, by
+[HUMAN_SEVEN_OUTER_M3_SEMICIRCLE_EXCLUDED.md](HUMAN_SEVEN_OUTER_M3_SEMICIRCLE_EXCLUDED.md):
+its three positive outer
+circle-force supports are
+trapped in a strict open
+angular semicircle, contrary
+to global normalized force
+balance. The valid pure m3
+four-parallel scaffold
+elimination is now only a
+historical intermediate
+conditional step.
+
+Thus the **currently
+unexcluded k7/B2,
+C-actual-degree-two,
+proper-outer-forest** bare
+stressed actual-contact
+cycles have **m=4,5,6 only**,
+seven cyclic placements per
+length, i.e. **21** complete
+bare actual graph supports
+before continuous feasibility.
+All 7−m exterior spectators
+are actually isolated and
+may be chosen circle-free.
+The endpoint positive
+circle-multiplier and
+internal vertex-cover
+constraints of the
+original theorem still apply.
+
+Do not confuse 21 **graph
+templates** with 21 valid
+packings. No full m4/m5/m6
+sharp inequality has been
+proved.
