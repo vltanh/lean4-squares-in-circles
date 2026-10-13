@@ -165,3 +165,42 @@ statement for arbitrarily rotated squares. It
 does not prove any full cell impossible without
 coupling the chord order to true disk
 vertices and the remaining five exterior squares.
+
+
+## Exact local guardrail: the same-sign two-square cap itself is feasible
+
+[RATIONAL_SAME_SIGN_ROTATED_CAP_PAIR.md](RATIONAL_SAME_SIGN_ROTATED_CAP_PAIR.md)
+provides a completely **rational actual two-square packing**
+of independently rotated unit squares with both
+center x coordinates **strictly positive**, with
+both whole squares contained in the same cap at
+\[
+h=881/3000=7/24+1/500>7/24,
+\]
+and both contained in a disk of squared radius
+\[
+R^2=7040861/1800000<9789/2500.
+\]
+Its actual square-pair separating-axis gap equals
+\(31/48120>0\), while its disk vertex margin
+on the radius-determining square is
+\(7219/1800000>0\).
+[verify_same_sign_cap_pair.py](verify_same_sign_cap_pair.py)
+checks all eight actual vertices and the SAT gap
+using **exact fractions**.
+
+**Logical implication:** one cannot close cell C by
+claiming that any two whole squares in
+\(y\ge h>7/24\) with same-sign centers are
+impossible for arbitrary frames. Such a blanket
+two-square lemma is **false**.
+
+The pair in the witness has two **outer** centers,
+so it is **not itself an S2/k4 cell C realization**,
+which requires **one inner and one outer** near-U
+center plus five more packed squares. The conditional
+near-axis theorem and the mixed inner/outer
+polarization theorem are **not** refuted. A genuine
+cell C exclusion must exploit the mixed radial
+classification, the other five squares, or
+additional geometric relations.
