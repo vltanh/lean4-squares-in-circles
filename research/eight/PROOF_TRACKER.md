@@ -2,6 +2,46 @@
 
 ## Current orientation (2026-10-11)
 
+### Most recent further S2/k4 mixed-pair case split
+
+The exclusive S2/k4 parent macro-cell remains OPEN,
+but [HUMAN_S2_K4_THREE_CELL_QUEUE.md](HUMAN_S2_K4_THREE_CELL_QUEUE.md)
+now gives an exact three-cell *continuous* remainder:
+
+- \(0<h_R<13/100\),
+  \(7/24<h_{\rm near}<97/200\);
+  the far 2+2 members are outer, R has one
+  outer/two inner, and near U has one
+  outer/one inner square.
+- At \(h_{\rm near}\ge2/5\), the near inner
+  and outer centers **must have opposite**
+  transverse signs, by an all-frame analytic
+  mixed-cap center-distance contradiction.
+- For \(7/24<h_{\rm near}<2/5\), an
+  opposite-sign pair remains, or a **weak
+  same-sign** pair with inner \(|x|<1/4\),
+  outer \(|x|>7/10\), and at least one
+  actual frame deviation \(>1/2600\) radians.
+- In all three cases their center-ray gap is
+  \(>3/4\) radian, and their **actual**
+  horizontal chords on \(y=(R+h_{\rm near})/2\)
+  are disjoint and each have length >=1.
+  Do **not** infer disjoint whole horizontal
+  projections for arbitrary rotated squares.
+
+These are strict necessary conditions, not
+claims that all three continuous cells
+are impossible or realizable.
+They do **not** modify the older complete
+S2/k3, S3/k3, S4/k3, or S2-near-both-inner
+exclusions, nor the actual S4/k7
+sharp equality construction.
+
+The unconditional reverse radius inequality
+\(R_8\ge\widehat R\), equality classification,
+and Lean handoff remain OPEN.
+
+
 ### Latest completed subcases (2026-10-12 research continuation)
 
 Two additional **full analytic macro/subbranch closures** now
