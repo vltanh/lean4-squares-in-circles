@@ -1,5 +1,154 @@
 # Structural closure roadmap: stop narrowing cap constants, finish the global four roots
 
+
+## CURRENT structural frontier: finite central normals and P/S/K modes for k=7/B2/m=6
+
+**This section supersedes the older first-priority m=6
+discussion below, which lacked the newly proved
+actual-contact rigidity. No global root is now
+being declared closed.**
+
+**Step 1 — Central positive two-force axis is finite.**
+[HUMAN_TWO_CENTRAL_FORCE_AXES.md](HUMAN_TWO_CENTRAL_FORCE_AXES.md)
+uses *true physical force and torque equilibrium*
+to prove that if C has exactly two positive
+contact-neighbor labels, the opposite force normals
+lie on **one of only four central-frame unoriented
+axes**: the two side normals or the two
+diagonals. The two aggregated C contact points
+form either a same-transverse-coordinate chord
+between opposite **sides** of C, or the
+two **opposite vertices** of C. No other
+oblique central-force orientation is possible.
+
+**Step 2 — Diagonal two-force contact is not a bare two-spoke core.**
+[HUMAN_DIAGONAL_CENTRAL_TANGENTIAL_BRACING.md](HUMAN_DIAGONAL_CENTRAL_TANGENTIAL_BRACING.md)
+proves that in a **minimum-actual-contact
+radius minimizer**, diagonally positive C
+degree two requires **at least four
+distinct actual C-contact neighbors**,
+with at least two *zero-positive-stress*
+extra contacts whose true selected
+contact normals brace the diagonal's
+tangent from **opposite signs**.
+The proof rotates C to open the two
+opposite-corner stressed contacts and
+translates it tangentially to open all
+contacts if those auxiliary normal
+signs were one-sided. Thus diagonal
+C-positive-degree-two with zero or one
+extra actual C contact is **fully impossible**.
+
+**Step 3 — All remaining outer path endpoints have actual boundary obligations.**
+[HUMAN_B2_ENDPOINT_BOUNDARY_OR_SPECTATOR.md](HUMAN_B2_ENDPOINT_BOUNDARY_OR_SPECTATOR.md)
+proves that for k=7, positive C degree two,
+**actual C degree two**, and positive
+stressed cycle outer length
+\(m=3,4,5,6\), *each* stressed path
+endpoint must have **either**
+a true disk-circle contact **or**
+an additional actual contact with the
+immediately adjacent spectator.
+Both endpoints circle-free requires
+\(m\le5\). For m=5 it forces the
+outer actual graph to be a seven-vertex
+path missing **exactly** the edge
+between the two spectator squares.
+The exact graph enumerator
+[verify_B2_endpoint_spectator_graphs.py](verify_B2_endpoint_spectator_graphs.py)
+cross-checks 392 purely combinatorial
+outer-actual-contact supergraphs:
+217,105,49,21 for m=3,4,5,6,
+respectively. These are not feasible
+packing certificates.
+
+**Step 4 — m=6 is now an exhaustive three-mode whole-contact root.**
+[HUMAN_M6_THREE_ACTUAL_CONTACT_MODES.md](HUMAN_M6_THREE_ACTUAL_CONTACT_MODES.md)
+reduces the k7/B2 m6 stressed path
+plus its one real spectator to:
+
+| Mode | Forced *actual* C contacts | New real geometry |
+| --- | --- | --- |
+| **P — pure transmitter** | Exactly the two positive stressed path endpoints | C true **side** mode; at least one endpoint has a true disk-circle vertex |
+| **S — spectator spoke** | Exactly the two endpoints **plus the spectator T** | C side mode; T is **true circle-contacting**, even though its positive stress is zero |
+| **K — internal chord** | At least one additional **internal** stressed-path square S2..S5 touches C | True zero-stress C--S_j chord; in diagonal mode at least **two extra C contacts** with opposite tangential normal signs |
+
+For **S0**, the spectator T is an actual
+one-contact C-leaf. Then
+[HUMAN_LEAF_EXCLUSIVE_CENTRAL_SIDE.md](HUMAN_LEAF_EXCLUSIVE_CENTRAL_SIDE.md)
+and [HUMAN_M6_PERPENDICULAR_SPECTATOR_LEAF.md](HUMAN_M6_PERPENDICULAR_SPECTATOR_LEAF.md)
+force its side normal **perpendicular**
+to the two opposite positively stressed
+C sides, with its own frame **parallel**
+to C, center radial in that direction
+and two actual circle vertices.
+The other spectator-spoke case S1
+has T contacting C and one stressed
+outer endpoint; T still has a true
+circle vertex but no parallelism
+assumption may be made.
+
+If C is **diagonally stressed in m6**,
+it must be mode K, with at least
+one internal zero-stress chord; when
+the spectator T does not also
+touch C, there must be **two distinct
+internal chords of opposing tangential
+normal signs**. The actual zero-weight
+contacts are geometric obligations,
+not optional edges to discard from
+an optimizer.
+
+### Next decisive handproof targets, in order
+
+1. **S0 orthogonal leaf scaffold.** Exploit the
+   *exact radial/frame leaf geometry*,
+   two perpendicular central side
+   directions, two opposite positive
+   stressed C neighbors, and five
+   successive true outer pair contacts.
+   Derive a sharp seven-plus-one pocket
+   inequality \(R\ge\widehat R\)
+   or a strict contradiction below the
+   candidate; retain all eight units.
+2. **P endpoint-boundary support.** Use at least
+   one forced true circle vertex at a
+   stressed endpoint and the side-aligned
+   central transmitter to derive a
+   five-corner length/angle inequality
+   for the full six-outer stressed path
+   plus its spectator.
+3. **S1 boundary spectator triangle.** T has a
+   circle vertex and forms an actual
+   C--T--S_i--C contact triangle with a
+   stressed endpoint. Determine the
+   exact rotated-square support inequality
+   that constrains this triangle plus the
+   remaining path.
+4. **K internal-chord rigidity.** Use real
+   C--S_j zero-stress chords to split the
+   stressed outer-path cycle into smaller
+   *actual* cycles; prove these are incompatible
+   with the sharp radius or force the
+   five-corner support family. In diagonal
+   mode enforce the two-sided tangential
+   bracing theorem, not a bare two-spoke
+   diagonal model.
+5. Then return to **m=5,4,3**, true ring A,
+   central branching B3, exterior witness X
+   and k<=6. These are separate global
+   obligations, not automatically
+   covered by any m6 result.
+
+**Research standard:** the next *major*
+success should close **one of P/S/K entirely**,
+or prove a radius inequality common to
+several roots. More local cap-constant
+improvements alone should not be counted
+as progress toward the unrestricted
+optimality theorem.
+
+
 **Working target:** prove the sharp unrestricted lower bound
 \[
 \boxed{R_8\ge\widehat R}
