@@ -392,3 +392,59 @@ subregion** within S3/k=3, not an entire k-cell,
 and does not alter the 3,995,040 purely
 symbolic separator-status assignment total.
 The S4/k=7 equality realization is untouched.
+
+
+## 10. Latest stronger continuous-domain restrictions (October 12)
+
+The following **supersede** the earlier weaker offset and
+angular interval bounds while preserving every original
+status/outer-count hypothesis.
+
+**Exclusive S2=(3+0,2+2), nearer 2+2 pair both inner.**
+[HUMAN_S2_K4_NEAR_INNER_FIVE_HUNDREDTHS.md](HUMAN_S2_K4_NEAR_INNER_FIVE_HUNDREDTHS.md)
+reduces its right triple offset from
+\(h_R<1/10\) to the stronger **strict**
+\(0<h_R<1/20\). The previously proved center-count
+conclusion is **k=4 exactly**. Also
+[HUMAN_S2_K4_TRANSVERSE_CENTER_ANCHORS.md](HUMAN_S2_K4_TRANSVERSE_CENTER_ANCHORS.md)
+gives the four signed x-center placements
+\[
+x_{U_-}<-9/25,\quad x_{U_+}>9/25,\qquad
+x_{D_-}<-29/100,\quad x_{D_+}>29/100.
+\]
+The far D polar-elevation theorem works
+for a whole cap of offset \(h_D\ge5/8\) at
+the stated n=8 disk ceiling. It provides a
+strict \(>60^\circ\) center elevation for
+all square frames, without assuming any
+actual edge contact.
+
+**Exclusive S3=(3+1,2+1), k=3.**
+[HUMAN_FIVE_SQUARE_FAN_REFINED.md](HUMAN_FIVE_SQUARE_FAN_REFINED.md)
+improves the old \(h_U<21/100\) bound to
+the stronger \(h_U<1/5\). The remaining
+offset rectangle is
+\[
+17/200<h_R<13/100,\qquad17/200<h_U<1/5.
+\]
+The far D singleton satisfies \(|p_D.x|<13/40\);
+the L singleton still satisfies \(|p_L.y|<3/20\).
+[HUMAN_S3_K3_SHARPER_OUTER_RAYS.md](HUMAN_S3_K3_SHARPER_OUTER_RAYS.md)
+further sharpens the sole R outer-center ray to
+the **two** strict alternatives
+\[
+-\pi/9<\psi<-2041/10500
+\quad\text{or}\quad
+311/500<\psi<8959/10500.
+\]
+
+All these are **genuine continuous necessary conditions**,
+not reductions of the independently counted 12-status words
+or a claim that the remaining positions realize a packing.
+In particular **S2/k4** and **S3/k3** are still open.
+The complete S2/k3 and S4/k3 exclusions established
+earlier remain valid, and the S4/k7 exact candidate
+equality case is untouched.
+
+The unrestricted optimality inequality
+\(R_8\ge\widehat R\) and the Lean handoff remain OPEN.
