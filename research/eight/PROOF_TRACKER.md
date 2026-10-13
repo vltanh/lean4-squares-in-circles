@@ -2,6 +2,47 @@
 
 ## Current orientation (2026-10-11)
 
+### October 12 latest exact continuous pruning
+
+See HAND_PROOF_CLOSURE_LEDGER.md and
+PATTERN_REJECTION_MATRIX.md for precise hypotheses.
+
+* **Exclusive S2, both nearer 2+2 cap centers inner:**
+  the only remaining outer-center count is **k=4**,
+  with right triple offset \(0<h_R<1/20\);
+  the U inner and D outer cap-center transverse
+  x pairs each have opposite strict signs,
+  with absolute coordinate lower bounds
+  \(9/25\) and \(29/100\). This is not a
+  complete S2/k=4 exclusion.
+* **Exclusive S3/k=3:** the two offsets must satisfy
+  \(17/200<h_R<13/100\) and
+  \(17/200<h_U<1/5\).
+  The entire **negative** outer R-center polar
+  ray sector is now impossible; the sole possible
+  R outer ray satisfies
+  \(311/500<\psi<8959/10500\).
+  Its distant D singleton center must satisfy
+  \(-13/40<x_D<0\), \(y_D<0\).
+  The positive-ray case remains open.
+* The earlier **entire S2/k=3 and S4/k=3**
+  exclusions remain proven.
+* The rational eight-center S2 relaxation example
+  is known to violate the *existing* outer-angle
+  theorem; it proves only insufficiency of its
+  explicitly enumerated weaker center constraints,
+  and is not evidence of an actual packing.
+
+The conditional sharp five-corner optimum, exact
+construction, analytic cap lemmas and local
+exclusions do **not** yet establish
+\(R_8\ge\widehat R\). No n=8 production
+Lean theorem or unrestricted equality
+classification has been completed.
+The exact sharp S4/k=7 equality construction must
+continue to be preserved.
+
+
 ### October 12 continuation: verified status of the global case queue
 
 The original checklist and early narrative below preserve historical
