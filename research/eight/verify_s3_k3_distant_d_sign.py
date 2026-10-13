@@ -13,4 +13,6 @@ v=[r*r+s*s-F(717,500)*r*s for r in [F(17,20),F(1)] for s in [F(1),F(283,200)]]
 assert v==[F(1259,2500),F(1999963,2000000),F(283,500),F(194623,200000)]
 assert max(v)<1
 assert F(77,100)+F(163,200)-F(11,7)==F(19,1400)>0
+assert F(1427,1750)+F(77,100)-F(11,7)==F(7,500)>0
+assert F(13,10)*F(7,500)-F(9,500)==F(1,5000)>0
 print('PASS: exact S3/k3 far-D negative-x margins')
