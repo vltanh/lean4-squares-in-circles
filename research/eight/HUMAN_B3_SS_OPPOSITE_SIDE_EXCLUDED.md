@@ -58,18 +58,20 @@ Consequently
 \]
 Using the **exact true-square identities**
 \(L^2+D^2=2\) and \(L+D=2c\le2\),
+together with \(L\ge1\) and \(2k\le1\), we get
 \[
 \begin{aligned}
-(k+L)^2+(\tfrac12+D)^2
-&=k^2+2kL+\frac94+D\\
-&\le k^2+L+\frac94+D\\
-&\le k^2+\frac{17}{4}\\
-&\le(k+1)^2+\frac94.
+&(k+L)^2+(\tfrac12+D)^2
+       -\left((k+1)^2+\tfrac94\right)\\
+&\quad=2k(L-1)+(D-1)\\
+&\quad\le (L-1)+(D-1)\\
+&\quad=L+D-2=2c-2\le0.
 \end{aligned}
 \]
-The middle use \(2k\le1\) is valid
-since \(k\le1/2\), and the final use
-\(1+2k\ge1\). This proves (1) for every
+The key inequality **retains the correlated
+linear terms** \(L-1\) and \(D-1\):
+replacing both independently by their
+worst endpoint bounds would be invalid. This proves (1) for every
 independent square frame. QED.
 
 **Disk consequence.** Put
