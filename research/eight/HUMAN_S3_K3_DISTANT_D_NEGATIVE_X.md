@@ -189,3 +189,63 @@ candidate equality branch is untouched.
 audits the exact rational Taylor and
 mixed-center corner margins; it is not a
 computational proof of global packing optimality.
+
+
+## Quantitative strict negative transverse gap
+
+The previous proof in fact yields a stronger *signed interval*
+for the far D center:
+\[
+\boxed{-13/40<x_D<-9/500.}                        \tag{6}
+\]
+Here is the complete extra hand argument.
+
+From section 1, the R-minus inner angle satisfies
+\[
+\theta<-1427/1750.
+\]
+By the established conclusion \(x_D<0\) and
+\(y_D<0\), the D center ray \(\phi_D\)
+is strictly below the negative y direction
+in \((-\pi,-\pi/2)\). The mixed
+inner/outer center-angle bound in section 2
+applies to the two distinct centers and gives
+\[
+\theta-\phi_D>77/100.
+\]
+Thus
+\[
+\phi_D<-(1427/1750+77/100).
+\]
+The familiar \(\pi<22/7\) then gives
+\[
+-\pi/2-\phi_D
+>1427/1750+77/100-11/7
+=7/500>0.
+\]
+In the southwest quadrant the absolute ratio
+of transverse to negative longitudinal center
+coordinates is
+\[
+\frac{-x_D}{-y_D}
+=\tan(-\pi/2-\phi_D)>\tan(7/500)>7/500,
+\]
+using the elementary \(\tan t>t\) for
+\(0<t<\pi/2\).
+
+The far D whole-cap offset \(1-h_U>4/5\)
+forces \(-y_D>3/2-h_U>13/10\).
+Consequently
+\[
+-x_D>(13/10)(7/500)=91/5000>9/500,
+\]
+with exact final margin \(1/5000>0\).
+The previously proved one-square whole-cap
+envelope gave \(|x_D|<13/40\).
+Combining them proves (6).
+
+This quantitative strengthening remains only a
+*necessary center-position constraint*. It does
+not determine the D square frame, all its actual
+inter-square separating axes, or the sharp
+unrestricted eight-square lower bound.
