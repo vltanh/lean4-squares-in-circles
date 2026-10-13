@@ -1043,3 +1043,47 @@ not new deletions from the purely symbolic
 3,995,040 twelve-status count. The real
 S4/k7 candidate equality branch is preserved,
 and \(R_8\ge\widehat R\) remains OPEN.
+
+
+## 16. Entire S3/k=3 outer-count macro-cell eliminated
+
+**This replaces the previous S3/k3 residual
+two-offset rectangle and one-positive-ray
+survivor descriptions in sections 12–15.**
+
+The arbitrary-frame
+[HUMAN_S3_K3_FULL_EXCLUSION.md](HUMAN_S3_K3_FULL_EXCLUSION.md)
+proves **exclusive S3=(3+1,2+1) with exactly
+three outer centers is impossible**, unconditionally
+over its allowed central square offsets,
+square frames, contacts and pair separators.
+
+The key **new exact center-distance bound** uses
+both inner R whole-side square centers.
+Their positive-y member must satisfy \(y>49/500\).
+The sole outer R square is *R-only* (cannot have
+a whole U separator), so its center is below
+\(h_U+\sqrt2/2<227/250\).
+The previously proved sole positive outer R ray
+and universal center radius \(<283/200\)
+bound its x-coordinate above by \(230079/200000\).
+The two distinct centers then have squared distance
+\[
+<1-969139759/40000000000,
+\]
+contradicting the inscribed half-unit disks.
+No common frame or actual contact is assumed.
+
+| Exact all-single-side macro-cell | Verdict |
+| --- | --- |
+| **S3/k=3**, any central offset, all frames | **Impossible** |
+| S3/k=4,5,6,7 | Remain unresolved |
+| S4/k=7 | Valid known sharp equality realization |
+
+The exclusive D0/S=7 k queue now is
+S1 k=3..6; S2 k=4..6; S3 k=4..7;
+S4 k=4..7. This is a **joint status/outer-count
+rejection**, not a new deletion from the previously
+enumerated symbolic 12-status word total.
+The global \(R_8\ge\widehat R\)
+remains OPEN.
