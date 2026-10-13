@@ -52,4 +52,18 @@ for name,v in normsq.items():
  t=q-F(1,2)-v
  assert t>0 and t*t>v,(name,v,t*t-v)
 assert 1-max(normsq[n] for n in ["R3","U1","U2","C"])>F(4,1000)
-print("PASS: center-only necessary conditions; NOT a square packing")
+# Confirm that this weak relaxation witness also FAILS the known
+# outer-center angular separation theorem; do not use it as a full witness.
+def angle_tangent(i,j):
+    p=coords[i]; v=coords[j]
+    cross=abs(p[0]*v[1]-p[1]*v[0])
+    scalar=p[0]*v[0]+p[1]*v[1]
+    assert scalar>0
+    return cross/scalar
+assert angle_tangent("R1","D2")==F(6625350211,7486709353)
+assert angle_tangent("D1","D2")==F(3312677524,3743346721)
+assert angle_tangent("R1","D2")<F(9,10)
+assert angle_tangent("D1","D2")<F(9,10)
+assert F(249,251)>F(9,10)
+print("PASS: center-only relaxation, and its TWO known outer-angle failures")
+
