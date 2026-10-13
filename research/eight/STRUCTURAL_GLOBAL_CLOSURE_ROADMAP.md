@@ -1,6 +1,133 @@
 # Structural closure roadmap: stop narrowing cap constants, finish the global four roots
 
 
+## CURRENT: m=3 positive path eliminated and minimal branching core classified (2026-10-13)
+
+**This is the authoritative new structural frontier; older statements
+about m=3 still being open below are historical.**
+
+[HUMAN_SEVEN_OUTER_M3_SEMICIRCLE_EXCLUDED.md](HUMAN_SEVEN_OUTER_M3_SEMICIRCLE_EXCLUDED.md)
+**eliminates the entire m=3 positively stressed central path**,
+for *all* frames and all extra zero-weight actual contacts.
+Its circle-force argument is global: every containing-circle
+vertex direction lies within \(31/80\) radians of its
+square center ray, while the three consecutively
+stressed outer center rays occupy a center arc
+\( <3\pi/4+1/100\). All their true
+circle vertices therefore occupy an open
+semicircle of angular width
+\( <3\pi/4+1/100+31/40<\pi\).
+The unique positive stress component has
+only those three noncentral labels, so all
+physical circle multipliers lie on them.
+Positive global circle-force vectors
+cannot sum to zero inside one semicircle.
+This closes the **entire** m3 stress root,
+not merely the previously excluded
+circle-free four-parallel scaffold.
+
+**Correct current k=7/B2 outer-forest cycle
+sizes:**
+\[
+\boxed{m=4,5,6}.
+\]
+There are seven circularly labeled
+positive stress supports per m:
+**21 graph supports before geometry**.
+The older m7 path was already eliminated
+by the opposite-central-support angular
+gap; the valid sharp equality seven-outer
+*full actual contact ring* remains root A
+and is deliberately admitted.
+
+**General new stress angular-support constraint:**
+[HUMAN_GLOBAL_STRESS_CIRCLE_ARC_SPREAD.md](HUMAN_GLOBAL_STRESS_CIRCLE_ARC_SPREAD.md)
+proves that the center rays of all
+square labels carrying **positive
+circle-vertex multipliers** cannot
+lie in a circular arc of width at
+most \(\pi-31/40\).
+This applies even when the positive
+contact graph branches, not just to
+the B2 root.
+
+**Minimal k7/B3 branching core:**
+[HUMAN_B3_THREE_OUTER_TRIANGLE_LEAF_NORMAL_FORM.md](HUMAN_B3_THREE_OUTER_TRIANGLE_LEAF_NORMAL_FORM.md)
+classifies the entire positive component
+with **C plus exactly three outer labels**
+and central positive degree three.
+After excluding a three-consecutive
+outer-label support by semicircle
+force balance, its only possible
+positive contact graph is
+\[
+\boxed{\text{triangle }C-X-Y-C
+       \text{ plus radial positive bridge }C-Z}.
+\]
+The outer X,Y are consecutive rays,
+while Z must occupy one of the **three
+nonadjacent ray positions** relative
+to that pair. There are exactly
+\(7\cdot3=21\) combinatorial
+labeled support choices.
+The C-Z bridge contact is genuinely
+**radial about the disk origin**,
+and Z carries a **positive circle
+vertex multiplier**. At least one
+of X,Y must also have a positive
+circle multiplier. The physical
+triangle and four full exterior
+spectators are still to be bounded
+geometrically.
+
+**Next decisive handproof directions:**
+
+1. **k7/B2/m4,m5,m6:** combine the
+   exact positive-circle-multiplier
+   vertex cover (endpoints positively
+   weighted; at least 3,3,4 stressed
+   path labels for m4,m5,m6) with
+   the actual circle-contact vertices,
+   the central opposite support pair,
+   genuine SAT axes, and all spectator
+   unit squares to prove the sharp
+   radius \(R\ge\widehat R\).
+   In pure C-actual-degree-two cases,
+   every spectator is truly isolated
+   and may be chosen strictly
+   circle-free. m6 extra actual C
+   contacts remain split into P/S/K.
+2. **k7/B3 minimal core:** analyze
+   the *true actual* C-X-Y
+   positive contact triangle and
+   radial C-Z force bridge, with
+   the three distinct eligible
+   ray placements and all
+   four other spectator squares.
+   Do not assume C-Z is an
+   **actual graph bridge** if other
+   contacts have zero stress.
+3. **A full ring:** prove the global
+   sharp bound while retaining the
+   genuine equality packing and
+   its four-central-contact variants.
+4. **X and k<=6:** retain all
+   circle-free noncentral inner
+   witnesses, true frames and
+   zero-weight actual contacts.
+
+**Completion remains OPEN:** the
+unrestricted \(R_8\ge\widehat R\),
+the global equality classification
+and Lean formalization have
+not been derived. Stop spending
+research time on decreasing
+standalone cap constants unless
+they supply a global bridge.
+
+---
+
+
 ## NEWEST force-level cycle invariant and completed m3 structural subcase
 
 **Sharper than true disk contact geometry:**
