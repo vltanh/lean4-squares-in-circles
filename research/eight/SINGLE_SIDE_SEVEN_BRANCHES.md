@@ -764,3 +764,46 @@ eight-square packing has been constructed
 there. The real equality-bearing
 S4/k7 branch is unaffected, and
 \(R_8\ge\widehat R\) remains unproved.
+
+
+## 18. Quantitative far-singleton S1/k3 transverse clearance
+
+The completed signed-center theorem is sharpened by
+[HUMAN_S1_K3_FAR_SINGLETON_CLEARANCE.md](HUMAN_S1_K3_FAR_SINGLETON_CLEARANCE.md).
+Normalize S1/k3 to R=3,L=1,U=3,D=0.
+The far L singleton's actual center
+\(p_L=(x_L,y_L)\) now obeys the exact
+**strict transverse interval**
+\[
+\boxed{-3/20<y_L<-1/75.}
+\]
+The upper magnitude bound comes from
+the sharp one-square far-left cap envelope,
+while the **new negative clearance**
+rules out \(-1/75\le y_L<0\).
+Its proof revisits the four-inner
+angular fan with a strictly positive
+\(1/100\)-radian far-L polar slack,
+then excludes both possible R-outer
+ray placements by the same exact mixed
+center-distance obstructions. The new
+arithmetic margins are independently
+checked in
+[verify_s1_k3_far_singleton_clearance.py](verify_s1_k3_far_singleton_clearance.py).
+
+Together with the stronger uniform
+3+0 offset restriction from section 16,
+the currently necessary S1/k3 region has
+\[
+17/200<h_{31}<13/100,\qquad
+0<h_{30}<1/16,\qquad
+-3/20<y_L<-1/75.
+\]
+
+These are **actual whole-cap/center
+necessary inequalities**, not a proof
+the remaining S1/k3 continuum is feasible
+or impossible. S1 with larger k, other
+S2/S3/S4 classes, D1/D2, and the
+unrestricted sharp lower bound
+\(R_8\ge\widehat R\) remain open.
