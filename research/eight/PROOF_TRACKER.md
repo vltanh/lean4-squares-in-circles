@@ -2,6 +2,38 @@
 
 ## Current orientation (2026-10-11)
 
+### Latest completed subcases (2026-10-12 research continuation)
+
+Two additional **full analytic macro/subbranch closures** now
+supersede some historical 'remaining S2/S3' statements below:
+
+1. [HUMAN_S3_K3_FULL_EXCLUSION.md](HUMAN_S3_K3_FULL_EXCLUSION.md)
+   proves that **exclusive S3=(3+1,2+1) with exactly k=3
+   exterior outer centers is impossible**, all frames and
+   central offsets. It uses an inner-R-pair positive center-y
+   reserve and the sole R-outer's failure to have a U
+   whole-square side separator to force center distance <1.
+2. [HUMAN_S2_NEAR_INNER_FULL_EXCLUSION.md](HUMAN_S2_NEAR_INNER_FULL_EXCLUSION.md)
+   proves that **exclusive S2=(3+0,2+2) with both nearer
+   2+2 cap centers inner is impossible**, for every k.
+   The proof combines strict outer-ray ordering with a
+   four-rational-endpoint hand convexity argument and
+   center separation <1.
+
+The current **exclusive all-seven-one-side D0/S=7**
+outer-center counts not yet globally excluded are:
+S1 k=3..6; S2 k=4..6 (with at least one near-2+2
+outer center); S3 k=4..7; S4 k=4..7
+(including the actual S4/k=7 sharp equality packing).
+Other D0 corner-only, D1, D2 and contact graph cases
+still require sharp continuous inequalities.
+
+No complete proof of \(R_8\ge\widehat R\),
+unrestricted equality classification, production
+Lean 4 proof or Lean handoff has been established.
+The PR must remain a research-only draft.
+
+
 ### October 12 latest exact continuous pruning
 
 See HAND_PROOF_CLOSURE_LEDGER.md and
