@@ -2,6 +2,101 @@
 
 ## Current orientation (2026-10-11)
 
+### New exact pure-central B2 graph theorem (October 12; supersedes optional spectator-contact cases)
+
+The latest
+[HUMAN_B2_PURE_CENTRAL_CONTACT_ISOLATES_SPECTATORS.md](HUMAN_B2_PURE_CENTRAL_CONTACT_ISOLATES_SPECTATORS.md)
+proves a **complete actual-contact graph
+normal form** for a minimum-contact
+radius minimizer with k=7,
+central positive stress degree two,
+**central actual-contact degree two**,
+and an outer actual path rather than
+the full outer contact ring.
+
+The earlier positive stressed cycle
+\(C-S_1-\cdots-S_m-C\),
+m=3,4,5,6, is now proved to be the
+**entire nontrivial actual-contact
+component**, with **all 7−m
+spectators actually isolated**.
+The reason is a global actual-leaf
+obstruction: every nonempty proper
+set of optional spectator contacts
+would end at a one-contact
+noncentral spectator, impossible
+in a contact-minimal minimizer.
+
+A graph audit verifies that this
+eliminates **364 of the 392**
+formerly graph-permitted optional
+outer-edge supertemplates. Exactly
+**28 bare central-cycle actual-contact
+graphs** remain (7 cyclic placements
+at each of m=3,4,5,6), before
+continuous geometric pruning.
+The number of positive-stress cycle
+supports was already 28; the **new
+reduction is to the entire actual
+contact graph**, not a repeated
+stress-support count.
+
+**Boundary contact strengthening:** both
+stressed outer path endpoints must
+touch the disk circle. Adjacent
+circle-free internal transmitters
+are impossible, so internal
+path vertex-cover rigidity forces
+at least \(0,1,1,2\) additional
+true disk-circle square labels
+for m3,m4,m5,m6.
+Thus stressed outer disk-contact
+label minima are **2,3,3,4**.
+In particular m6 pure C-actual-degree-two
+has at least **four** circle-touching
+stressed outer square labels.
+
+[HUMAN_ISOLATED_OUTER_CIRCLE_FREE_NORMALIZATION.md](HUMAN_ISOLATED_OUTER_CIRCLE_FREE_NORMALIZATION.md)
+proves the isolated outer spectators
+can be moved strictly inside the
+circle while preserving their
+outer center classes, zero actual
+square contacts and the global
+least containing radius. The
+genuine spectator unit squares
+still occupy space and cannot
+be deleted from a sharp inequality.
+
+For the entire k7/B2/m6 root
+(regardless of C actual degree),
+[HUMAN_M6_SPECTATOR_CONTACT_TRICHOTOMY.md](HUMAN_M6_SPECTATOR_CONTACT_TRICHOTOMY.md)
+further restricts the unique
+spectator to **three actual
+contact types**: isolated,
+a radial/C-parallel central leaf,
+or a circle-anchored actual
+C--T--S1 (or S6) triangle.
+It cannot be an outer-only
+noncentral leaf.
+
+**Current proof task:** use these
+forced real boundary vertices,
+the orthogonal spectator leaf,
+or the genuine zero-weight
+internal C chords to prove a
+sharp full-packing inequality
+\(R\ge\widehat R\), retaining
+every spectator. The real
+equality construction belongs
+to the separate full seven-outer
+actual-contact root A and must
+remain valid.
+
+The unrestricted theorem,
+equality classification and
+Lean 4 handoff remain OPEN.
+
+
 ### CURRENT global B2 structural closure (2026-10-12)
 
 The latest structural work **does not chase more local
