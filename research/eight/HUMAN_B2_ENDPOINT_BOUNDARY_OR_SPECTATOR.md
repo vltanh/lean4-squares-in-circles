@@ -252,3 +252,51 @@ and contact-boundary necessities, not
 proof of the unrestricted
 \(R_8\ge\widehat R\), equality
 classification, or a Lean theorem.
+
+
+## Superseding actual-leaf theorem: all 364 extra-edge supertemplates are impossible
+
+The broad boundary-or-spectator alternatives
+in this note are valid **necessary**
+implications, but in the exact
+**minimum-contact, C-actual-degree-two**
+hypotheses they can now be sharpened:
+
+[HUMAN_B2_PURE_CENTRAL_CONTACT_ISOLATES_SPECTATORS.md](HUMAN_B2_PURE_CENTRAL_CONTACT_ISOLATES_SPECTATORS.md)
+proves that **no optional spectator
+outer-edge can actually occur at all**.
+Any nonempty proper subset of the
+complementary angular path
+produces an actual-degree-one
+spectator whose sole neighbor is
+noncentral, violating the
+exact global actual-leaf theorem.
+
+Hence the previously counted
+**392 proper outer-graph supertemplates
+are a historical combinatorial superset**,
+not the current actual-case queue.
+Exactly **364** contain at least one
+such forbidden extra spectator
+edge and are **impossible**.
+The complete actual-contact graph
+must be precisely
+\(C-S_1-\cdots-S_m-C\)
+with \(7-m\) actually **isolated
+exterior squares**, for m3..6.
+Only **seven cyclic supports per m
+(28 total)** remain, before any
+continuous geometry.
+
+Both stressed endpoints now necessarily
+have **true circle-contact vertices**,
+and each internal stressed path
+has further disk-boundary anchors
+as recorded in
+[HUMAN_B2_INTERNAL_PATH_VERTEX_COVER.md](HUMAN_B2_INTERNAL_PATH_VERTEX_COVER.md).
+
+Do not discard the isolated squares:
+they still occupy the containing
+disk and all pairwise separations
+must be retained for a global
+sharp radius lower bound.
