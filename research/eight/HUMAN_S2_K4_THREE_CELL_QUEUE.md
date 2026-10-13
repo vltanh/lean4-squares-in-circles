@@ -138,3 +138,30 @@ and frame variables. No formal Lean proof or
 complete global \(R_8\ge\widehat R\)
 derivation follows. The legitimate sharp
 S4/k=7 equality packing is unaffected.
+
+
+## Additional actual-square slice geometry shared by A, B, and C
+
+[HUMAN_TWO_CAP_SHARED_MIDSLICE_CHORDS.md](HUMAN_TWO_CAP_SHARED_MIDSLICE_CHORDS.md)
+proves that at the common horizontal midpoint
+\(Y=(R+h_U)/2\), **each of the two actual nearer-U
+whole squares** has an open horizontal chord
+of length \(\ge1\). The two chord intervals are
+disjoint and therefore have a true left-to-right
+order. Any tilted square has *strictly longer*
+chord than one. The proof is analytic over
+all frames: on a sloping chord the bound is
+\[
+\ell\ge2(\sqrt2-(R-h_U)/2)>667/600>1.
+\]
+Only plateau or axis-parallel chords can
+approach length one, with equality requiring
+an axis-parallel square.
+
+This supplies an **additional common-slice ordering
+in every remaining A/B/C cell**; unlike whole
+projection separation it is an actually justified
+statement for arbitrarily rotated squares. It
+does not prove any full cell impossible without
+coupling the chord order to true disk
+vertices and the remaining five exterior squares.
