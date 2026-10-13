@@ -2,6 +2,71 @@
 
 ## Current orientation (2026-10-11)
 
+### Latest October 12 small-cap research frontier
+
+The main unrestricted target is still
+\[
+R_8\ge\widehat R.
+\]
+Neither all status cases nor all equality
+configurations have been classified. No
+production Lean proof has been constructed.
+
+**New mathematical hand results:**
+
+* The previous S3/k3 local angular argument is
+  extracted and strengthened in
+  [HUMAN_FIVE_SQUARE_RU_ONE_SIXTEENTH.md](HUMAN_FIVE_SQUARE_RU_ONE_SIXTEENTH.md).
+  It forbids three R whole-cap members
+  (two inner, one R-only outer) at
+  \(h_R>17/200\) alongside two distinct
+  U-inner whole-cap members whenever
+  \(h_U\ge1/16\), for *all* frames.
+* Consequently **exclusive S1/k3** normalized
+  as R=3,L=1,U=3,D=0 must satisfy the
+  **uniform strict** tiny-offset bound
+  \(0<h_{30}<1/16\).
+* [HUMAN_S1_K3_FAR_SINGLETON_CLEARANCE.md](HUMAN_S1_K3_FAR_SINGLETON_CLEARANCE.md)
+  proves the far L singleton must have actual
+  transverse center
+  \(-3/20<y_L<-1/75\). This is a
+  genuine additional signed-position
+  exclusion, but does **not** finish S1/k3.
+* For **exclusive S2/k4 cell C**, the
+  mixed near-U outer square is forced
+  into an **actual whole open origin
+  quadrant** with x-boundary clearance
+  \(>1/50\), by
+  [HUMAN_MIXED_CAP_WHOLE_QUADRANT_OWNER.md](HUMAN_MIXED_CAP_WHOLE_QUADRANT_OWNER.md).
+* The *blanket* same-sign two-square
+  whole-cap impossibility shortcut is
+  **false**. The genuine exact rational
+  rotated pair in
+  [RATIONAL_SAME_SIGN_ROTATED_CAP_PAIR.md](RATIONAL_SAME_SIGN_ROTATED_CAP_PAIR.md)
+  has positive center x values, a shared
+  cap offset \(>7/24\), and true
+  square separation/disk-vertex margins
+  below the search ceiling. Its centers
+  are **both outer**; it is *not* an
+  S2/k4 mixed-center realization.
+
+**Remaining exclusive D0/S=7 k queue:**
+S1 k=3..6; S2 k=4..6 with at least one
+near-2+2 outer center; S3 k=4..7;
+S4 k=4..7 including exact k=7 equality.
+D0 corner-only, D1/D2 and full exterior
+contact-graph cases also remain open.
+The three-cell S2/k4 A/B/C geometry is
+not yet excluded.
+
+All new rational-margin scripts are
+checks of **arithmetic**, not global
+mathematical certificates or Lean proofs.
+Preserve the genuine sharp S4/k7 equality
+construction in every proposed global
+obstruction.
+
+
 ### Most recent further S2/k4 mixed-pair case split
 
 The exclusive S2/k4 parent macro-cell remains OPEN,
