@@ -287,3 +287,58 @@ spectators** and then handle the central
 degree>=3 and outer-cycle branches.
 No Lean 4 theorem, full equality classification,
 or unrestricted optimum is claimed here.
+
+
+## New complete macro-case elimination: m=7 cannot occur
+
+**The 35-support enumeration above is now historical
+*before* applying this geometric restriction.**
+
+[HUMAN_OPPOSITE_CENTRAL_NEIGHBOR_ANGLE.md](HUMAN_OPPOSITE_CENTRAL_NEIGHBOR_ANGLE.md)
+proves an independent full-orientation
+**opposite central-support theorem**: if
+the origin-containing C has two other genuine
+squares wholly beyond its opposite signed
+support lines, the two neighbor-center
+rays are separated by
+\[
+\Delta>\pi/2+1/13.
+\]
+The proof uses the hand-proved one-square cap
+envelope only for offsets \(\ge2/5\)
+and the universal radial bound elsewhere,
+with four exact rational offset bands;
+it does **not** assume aligned frames.
+
+[HUMAN_SEVEN_OUTER_PATH_M7_EXCLUDED.md](HUMAN_SEVEN_OUTER_PATH_M7_EXCLUDED.md)
+combines this with the six genuine
+outer-outer contact gaps in the full
+seven-outer C-rooted **stressed path**
+m=7. Their independent universal outer-center
+separation \(>\pi/4-1/500\)
+forces the **missing** seventh center-ray
+gap \(<\pi/2+3/250\), incompatible with
+the opposite-spoke lower bound because
+\[
+1/13-3/250=211/3250>0.
+\]
+Thus the entire m=7 stress path support
+is **impossible** for any minimum-radius
+eight-square packing at \(q\le q_+\).
+
+The corrected current degree-two, k7
+actual-path stress queue is therefore:
+\[
+\boxed{m=3,4,5,6\quad
+(\text{seven cyclic graph supports per }m,\
+ 28\text{ total}).}
+\]
+These 28 remain purely **combinatorial support
+patterns**, not isolated realizable positions.
+
+The real equality packing belongs to
+the **actual seven-outer contact-cycle**
+root, not to the missing-edge outer
+path root, and remains admitted.
+No unrestricted \(R_8\ge\widehat R\)
+proof is asserted.
