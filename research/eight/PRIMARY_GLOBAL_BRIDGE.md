@@ -1,5 +1,57 @@
 # ONE bridge to the unrestricted eight-square sharp radius
 
+## Latest audit: local-capture slogan is equivalent to the global conjecture (2026-10-13)
+
+[GLOBAL_CAPTURE_EQUIVALENCE_AND_DUAL_NO_GO.md](GLOBAL_CAPTURE_EQUIVALENCE_AND_DUAL_NO_GO.md)
+now proves a precise **logical no-go**:
+once local sharpness rules out every \(R<\widehat R\)
+packing inside the candidate neighborhood \(\mathcal U\),
+the bare sentence "every \(R<\widehat R\)
+packing lies in \(\mathcal U\)" is **equivalent**
+to the original global optimality conjecture,
+not a simpler intermediate structural theorem.
+A valid global proof must PROVIDE a concrete
+finite certified pose cover, an orientation-independent
+sharp inequality outside \(\mathcal U\), or a
+genuinely proved separator selection reduction.
+
+There is an additional **exact dual no-go**:
+the current candidate-derived adaptive support
+dual has E-frame angle term
+\(A_E(\cos\delta-1)+B_E\sin\delta+
+\Gamma_E|\sin\delta|\). The exact sharp-root
+interval checker proves at \(\delta=+1/10\)
+\[
+\Phi_E(1/10)-\Phi_E(0)
+<-\frac{4189}{3000000}<0.
+\]
+This is a failure of this one lower-bound
+certificate outside the local orientation
+neighborhood, **not** a smaller-radius packing.
+See [verify_globalized_dual_angle_failure.py](verify_globalized_dual_angle_failure.py).
+
+A complete full eight-square SLSQP trial
+(all 32 true vertices and 28 genuine pairwise
+SAT constraints) was **infeasible** at
+its termination point; it supplies no proof
+or counterexample. Earlier direct 23-variable
+exact interval searches in GLOBAL_LOWER_BOUND.md
+also exhausted budgets even at q=3.7.
+Do not call a failed search a global capture.
+
+**Primary next proof target is now explicitly
+certificate-producing**, not merely declaring
+the result of a hypothetical capture:
+an exhaustive disk-native geometry/interval
+cover of ALL nonlocal eight-square poses
+at \(q\le q_*\), with verifiable exclusion
+rules and no unresolved boxes, or a
+global sharp inequality avoiding that cover.
+The unrestricted theorem is still OPEN.
+
+---
+
+
 ## CURRENT mathematical breakthrough: true SAT-local sharpness with all seven frames free
 
 **The candidate's seven-square ring is now proved
