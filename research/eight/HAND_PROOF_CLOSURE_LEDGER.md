@@ -2986,3 +2986,53 @@ offsets and one far-singleton center side.
 continuum**, the other S1 outer counts,
 or the unrestricted radius inequality
 \(R_8\ge\widehat R\).
+
+
+### Stronger 2026-10-12 S1/k3 far-singleton transverse clearance
+
+The *signed far singleton* S1/k3 lemma
+has a strict quantitative upgrade in
+[HUMAN_S1_K3_FAR_SINGLETON_CLEARANCE.md](HUMAN_S1_K3_FAR_SINGLETON_CLEARANCE.md).
+
+In R=3,L=1,U=3,D=0 normalization,
+the single L-square's far-left center has
+\[
+\boxed{-3/20<y_L<-1/75}.
+\]
+Its far-side whole-cap envelope establishes
+the absolute bound \(|y_L|<3/20\).
+To obtain the new strict **negative
+clearance**, suppose \(-1/75\le y_L<0\).
+The far-L ray would deviate from
+the negative x direction by less than
+\(4/411<1/100\) radians because
+\(-x_L>137/100\). The mixed inner/outer
+ray gap \(>2\pi/9\) then forces
+the northwest U-inner ray below
+\(7\pi/9+1/100\), giving the three
+successive strict inner ray upper/lower
+bounds with +1/100 slack.
+The sole outer R-center ray cannot
+lie below R+, or the R-minus inner
+center loses its whole-side x projection;
+if it lies above R+, its **R-only**
+non-U membership again forces center
+squared distance \(<1-969139759/40000000000\)
+from R+.
+
+The new exact-fraction audit
+[verify_s1_k3_far_singleton_clearance.py](verify_s1_k3_far_singleton_clearance.py)
+checks all displayed strict margins.
+The resulting **still-open** S1/k3
+region satisfies
+\[
+17/200<h_{31}<13/100,\quad
+0<h_{30}<1/16,\quad
+-3/20<y_L<-1/75.
+\]
+All conditions are necessary, not
+existence certificates or a global S1
+exclusion. In particular, the valid
+S4/k7 equality construction survives,
+and the unrestricted
+\(R_8\ge\widehat R\) remains OPEN.
