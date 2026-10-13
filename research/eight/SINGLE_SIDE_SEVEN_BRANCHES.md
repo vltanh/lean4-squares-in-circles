@@ -659,3 +659,60 @@ forces the stronger \(h_{30}<1/16\).
 This new **continuous region exclusion**
 does not globally reject S1/k3, S1,
 or any legitimate S4/k7 equality packing.
+
+
+## 16. Stronger S1/k3 exclusion: the 3+0 triple offset is strictly below 1/16
+
+**This supersedes section 15's weaker bound
+\(h_{30}\le17/200\), and the earlier *conditional*
+\(h_{30}<1/16\) subcase restricted to
+\(h_{31}\le1/10\).**
+
+[HUMAN_FIVE_SQUARE_RU_ONE_SIXTEENTH.md](HUMAN_FIVE_SQUARE_RU_ONE_SIXTEENTH.md)
+strengthens the local five-square all-frame
+R-only obstruction: a cap of three actual
+square labels at \(h_R>17/200\), with **two
+inner, one R-only outer**, cannot coexist
+with two other distinct inner-center whole
+squares in a perpendicular upper cap at
+\[
+\boxed{h_U\ge1/16}.
+\]
+The proof lowers the older \(17/200\)
+perpendicular threshold using three
+exact mixed-center angular gaps, including
+a new \(>59/100\)-radian gap at inner
+radius \(>9/16\) and a sharper
+\(>779/1000\)-radian gap when the
+R-minus inner center's radius is forced
+above \(9/10\). Both polar alternatives
+for the outer R center lead to strict
+unit-center-distance contradictions.
+
+Apply the theorem to **exclusive S1/k=3**,
+with the 3+1 triple normalized to R and
+its opposite far singleton L; the
+perpendicular 3+0 triple is U. The far
+L singleton is outer, and both triples
+have exactly two inner and one outer
+members. The 3+1 R offset is
+\(h_{31}>17/200\). All five selected
+R and U inner labels are distinct,
+and the outer R is genuinely R-only.
+
+Therefore
+\[
+\boxed{\text{exclusive S1/k=3 requires }
+0<h_{30}<1/16.}
+\]
+This is uniform over the entire allowed
+3+1 offset range: **there is no longer
+an \(h_{31}>1/10\) exception** to
+the \(1/16\) restriction.
+
+The remaining very-small-offset
+S1/k3 continuum is still open.
+This does not rule out S1 with higher
+outer counts, the known S4/k7 sharp
+equality construction, or prove the
+unrestricted \(R_8\ge\widehat R\).
