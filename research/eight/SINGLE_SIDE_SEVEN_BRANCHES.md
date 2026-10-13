@@ -863,3 +863,48 @@ D0 corner-only, D1/D2 and all
 unrestricted \(R_8\ge\widehat R\) tasks
 are unchanged and remain appropriately
 open.
+
+
+## 19. Current S2/k4 same-sign cutoff: 79/250 (supersedes all older thresholds)
+
+The full-frame
+[HUMAN_CAP_ENVELOPE_79_250.md](HUMAN_CAP_ENVELOPE_79_250.md)
+hand theorem now proves the **sharp one-square
+cap envelope** at h>=79/250 under
+\(R^2\le9789/2500\), by noncircular true-vertex
+geometry and an exact 63-coefficient
+Bernstein certificate.
+
+Consequently the
+[HUMAN_MIXED_HIGH_CAP_79_250.md](HUMAN_MIXED_HIGH_CAP_79_250.md)
+theorem excludes **any** whole two-square
+cap with one inner and one outer center
+of nonnegative transverse x sign product
+when \(h\ge79/250\), with strict coupled
+center-distance upper bound
+\(999361/1000000<1\).
+
+For the still-unresolved *exclusive S2/k4*
+near-U pair, the most current necessary
+three-cell split is therefore:
+A \(79/250\le h_U<97/200\), opposite signs;
+B \(7/24<h_U<79/250\), opposite signs;
+C \(7/24<h_U<79/250\), weak same signs,
+with its prior strict inner/outer polar
+gap, one genuine whole-quadrant owner,
+and a forced \(>1/2600\) frame tilt.
+All three cells are **still open**;
+the same-sign C interval is only
+\(73/3000\) wide.
+
+A real rational **single-square**
+counterexample at h=3/10 in
+[RATIONAL_ROTATED_CAP_ENVELOPE_THREE_TENTHS.md](RATIONAL_ROTATED_CAP_ENVELOPE_THREE_TENTHS.md)
+shows the sharp one-square envelope **fails**
+below the latest proved threshold. It
+does NOT invalidate a future two-square
+SAT theorem nor prove the remaining C
+cell feasible. Continue to preserve the
+valid S4/k7 exact equality construction
+and the global \(R_8\ge\widehat R\)
+proof obligation.
