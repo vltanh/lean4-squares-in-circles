@@ -208,3 +208,29 @@ The remaining B3 triangle, stress force polygon, four
 other spectator units and the sharp radius bound are
 still OPEN. The real equality-bearing outer ring is
 unaffected. The theorem is not a Lean proof.
+
+
+## Stronger genuine-SAT interface corollary (three, not four, central contact types)
+
+The two Z-frame modes above are further intersected with
+**actual square--square separating-axis ownership**.
+[HUMAN_RADIAL_BRIDGE_THREE_SAT_INTERFACES.md](HUMAN_RADIAL_BRIDGE_THREE_SAT_INTERFACES.md)
+proves there are **only three** genuine contact interfaces:
+
+* **SS:** C side / Z side, with the two frames parallel;
+* **CS:** C radial corner / Z side, not necessarily frame-parallel;
+* **SD:** C side / Z inward diagonal corner, frames differ by
+  45 degrees modulo right angles.
+
+A hypothetical **C corner / Z diagonal** would have n as
+a side normal of neither square. Such an n cannot be a
+genuine separating-axis owner of a true square--square
+contact and is **fully impossible**.
+
+In the smallest seven-outer B3 triangle-plus-leaf core,
+[HUMAN_B3_RADIAL_STRESS_LEAF_BRACING.md](HUMAN_B3_RADIAL_STRESS_LEAF_BRACING.md)
+further proves CS/SD **require additional actual contact**
+from Z to a neighboring *spectator* square: if Z were
+an actual one-contact leaf, the contact-minimal leaf theorem
+would require the parallel SS mode. Those auxiliary contacts
+carry zero positive stress and must not be dropped.
