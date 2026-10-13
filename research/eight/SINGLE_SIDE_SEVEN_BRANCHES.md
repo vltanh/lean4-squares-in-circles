@@ -716,3 +716,51 @@ This does not rule out S1 with higher
 outer counts, the known S4/k7 sharp
 equality construction, or prove the
 unrestricted \(R_8\ge\widehat R\).
+
+
+## 17. Additional S1/k3 signed far-singleton side exclusion
+
+[HUMAN_S1_K3_FAR_SINGLETON_OPPOSITE_SIGN.md](HUMAN_S1_K3_FAR_SINGLETON_OPPOSITE_SIGN.md)
+proves the entire **far singleton transverse
+center-sign** subcase incompatible with the
+perpendicular 3+0 triple's outward direction
+is impossible.
+
+Normalize exclusive S1/k3 as
+R=3,L=1,U=3,D=0; the far L singleton
+has center \(p_L=(x_L,y_L)\).
+Then necessarily
+\[
+\boxed{y_L<0.}
+\]
+This strict sign is *relative to the
+positive U triple direction*: the
+far singleton center lies on the
+opposite side of the horizontal origin
+diameter. The proof uses the existing
+four-inner-center fan and the strict
+pairwise mixed inner/outer angular
+separation. If \(y_L\ge0\), the
+northwest U-inner ray must be below
+\(7\pi/9\). Three successive
+inner-ray gaps \(>\pi/3\) then force
+the northeast and right-inner rays into
+strict smaller sectors. The outer R
+ray has neither a permitted negative
+placement nor a permitted positive
+placement without violating the
+R-only cap and center separation
+conditions.
+
+This supplements the **uniform**
+strict 3+0 offset restriction
+\[
+\boxed{0<h_{30}<1/16}
+\]
+from [HUMAN_FIVE_SQUARE_RU_ONE_SIXTEENTH.md](HUMAN_FIVE_SQUARE_RU_ONE_SIXTEENTH.md).
+The *remaining* S1/k3 case with both
+conditions is still OPEN; no actual
+eight-square packing has been constructed
+there. The real equality-bearing
+S4/k7 branch is unaffected, and
+\(R_8\ge\widehat R\) remains unproved.
