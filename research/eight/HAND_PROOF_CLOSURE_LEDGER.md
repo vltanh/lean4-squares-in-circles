@@ -3758,3 +3758,165 @@ full actual outer contact ring
 remains deliberately admitted;
 equality classification and
 Lean formalization remain OPEN.
+
+
+## 2026-10-13: complete k7/B2 m3 stress-cycle exclusion by global circle-force semicircle
+
+**New full global stress-support branch closure,
+not a local cap interval.**
+
+[HUMAN_SEVEN_OUTER_M3_SEMICIRCLE_EXCLUDED.md](HUMAN_SEVEN_OUTER_M3_SEMICIRCLE_EXCLUDED.md)
+proves the *entire* k7,
+outer-actual-forest, C-positive
+degree two, m3 positive
+stressed cycle
+\(C-S_1-S_2-S_3-C\)
+is impossible. This holds even
+with additional zero-positive-
+stress C or outer actual contacts.
+
+The three positive-stress outer
+center ray labels are consecutive
+in the angular cyclic order
+of **all seven outer squares**.
+Five complementary outer center
+gaps each exceed the exact
+\(\pi/4-1/500\) separation,
+so the stressed three-center
+ray arc has length
+\[
+<3\pi/4+1/100.
+\]
+Every true circle vertex of
+a genuine unit square is at
+distance \(\sqrt2/2\) from its
+center. The proved eight-square
+radius lower bound
+\(R>\sqrt2+1/2\) yields the
+strict **circle-vertex ray
+shadow bound**
+\[
+\angle(\text{center},\text{circle vertex})
+<31/80.
+\]
+The exact rational certificate
+uses
+\[
+\sqrt2/2R<495/1337
+<\sin(31/80).
+\]
+Therefore **all** potentially
+positively weighted true circle
+vertices of the three
+consecutively stressed outer
+squares belong to one arc of
+width strictly
+\[
+<3\pi/4+1/100+31/40
+=3\pi/4+157/200<\pi.
+\]
+
+C is circle-free and every
+spectator outside the unique
+positive-stress component
+has **zero** circle multipliers
+by the physical force/circle
+equivalence \(F_i=0\iff m_i=0\).
+So the entire normalized
+circle multiplier support lies
+in a common **open half-plane
+through the disk origin**.
+Its positive weighted
+circle-position vectors
+therefore cannot sum to zero,
+contradicting global physical
+force equilibrium
+\(\sum\mu x=0\).
+
+This is a **complete m3
+positive-support elimination**,
+far stronger than the historical
+pure central-actual-degree-two
+circle-free parallel-scaffold
+and zero-circle-multiplier
+subcase exclusions. It
+does not touch the genuine
+seven-outer *full actual
+contact ring* equality root.
+
+Current **k7/B2 outer-forest
+stressed path lengths** are
+\[
+\boxed{m=4,5,6},
+\]
+exactly 7 circular placements
+per positive path size, hence
+**21 combinatorial positive
+stress supports** before
+actual geometry and spectator
+placement. The m7 path
+was eliminated earlier by
+opposite central cap normals.
+
+[HUMAN_GLOBAL_STRESS_CIRCLE_ARC_SPREAD.md](HUMAN_GLOBAL_STRESS_CIRCLE_ARC_SPREAD.md)
+makes the force balance
+principle reusable: the
+center-ray support of **every
+positive disk-circle multiplier**
+must occupy angular span
+strictly larger than
+\(\pi-31/40\).
+
+**New complete k7/B3 minimal-core graph normal form.**
+[HUMAN_B3_THREE_OUTER_TRIANGLE_LEAF_NORMAL_FORM.md](HUMAN_B3_THREE_OUTER_TRIANGLE_LEAF_NORMAL_FORM.md)
+proves that a positive-stress
+component with **C and exactly
+three outer square labels**,
+and central positive degree
+three, must be
+\[
+\boxed{\text{triangle }C-X-Y-C
+\text{ plus radial positive
+bridge }C-Z}.
+\]
+A positive outer-edge forest
+with zero edges would have
+no moment cycle; two edges
+would make three consecutive
+outer rays and violate the
+new global semicircle theorem.
+Thus exactly one positive
+outer pair X-Y exists, and
+Z is not an angular neighbor
+of X or Y. The positive
+bridge C-Z is truly **radial
+about the disk origin** and
+its normal is among the eight
+signed central side/corner-ray
+directions; \(m_Z>0\)
+and at least one of
+\(m_X,m_Y\) is positive.
+
+There are **seven** choices
+of the unique adjacent
+outer pair X,Y and **three**
+remaining nonadjacent ray
+positions for Z, or exactly
+**21 labeled positive graph
+supports** before continuous
+feasibility. This count
+is checked in
+[verify_B3_triangle_leaf_ray_labels.py](verify_B3_triangle_leaf_ray_labels.py).
+
+The sharp unrestricted
+\(R_8\ge\widehat R\)
+remains **OPEN**.
+Future work should use the
+now compact m4/m5/m6
+positive-circle-force cycle
+geometry, the B3 radial
+triangle-leaf geometry,
+full ring A, root X and
+k<=6. Do not return to
+tiny cap threshold optimization
+without a new global bridge.
