@@ -11,6 +11,121 @@ classify equality, and only then transfer the result to Lean 4.
 All proposals below must preserve the genuine S4/k=7 seven-outer
 contact-ring equality construction and its admissible slider variants.
 
+
+
+## CURRENT: second computer-to-hand breakthrough and exact search boundary
+
+**This section supersedes the older 37/100 numerical-to-hand cutoff
+and old S2/k4 A/B/C offset table below; those sections document the
+historical first breakthrough.**
+
+The second iteration found **two different facts**:
+
+1. **A strict exact obstruction to overextending the one-square
+   inequality.** [RATIONAL_DIAGONAL_CAP_ENVELOPE_COUNTEREXAMPLE.md](RATIONAL_DIAGONAL_CAP_ENVELOPE_COUNTEREXAMPLE.md)
+   records a real 45-degree square that violates the
+   axis-aligned one-square cap envelope at
+   \(h=293/1000>7/24\).
+   A stronger fully *rational-frame* witness in
+   [RATIONAL_ROTATED_CAP_ENVELOPE_THREE_TENTHS.md](RATIONAL_ROTATED_CAP_ENVELOPE_THREE_TENTHS.md)
+   does the same at \(h=3/10\), with **all four true vertices
+   inside the disk** and strict radius slack. Therefore
+   the one-square envelope is **false already at h=0.3**,
+   even in the actual \(q\le q_+\) search window.
+   Neither is a mixed inner/outer two-square packing.
+
+2. **A stronger valid intermediate hand theorem.**
+   The exact script
+   [computer_cap_bernstein_discover.py](computer_cap_bernstein_discover.py)
+   searches rational pairs \((H,Y)\) for a two-stage
+   certificate: independent circle/vertex margins,
+   and a four-parameter-vertex polynomial positivity
+   proof using **degree-six Bernstein coefficients on
+   rational subintervals**.
+   The best threshold currently *fully written and
+   proved* in
+   [HUMAN_CAP_ENVELOPE_79_250.md](HUMAN_CAP_ENVELOPE_79_250.md)
+   is now
+   \[
+   \boxed{h\ge79/250=0.316}.
+   \]
+   The proof is noncircular: the positive Bernstein
+   certificate on the **top parameter edge**
+   first establishes \(y<49/50\), and **only then**
+   is the same independent rational positivity
+   certificate applied on the full parameter polygon.
+   The exact verifier checks **all 63 Bernstein coefficients**.
+   Previous full hand proofs at 37/100, 1/3 and 8/25
+   remain valid but are superseded in threshold.
+
+   Combining this with the mixed inner/outer polar-angle
+   theorem yields
+   [HUMAN_MIXED_HIGH_CAP_79_250.md](HUMAN_MIXED_HIGH_CAP_79_250.md):
+   at \(h\ge79/250\) the two mixed-center squares
+   must have strictly **opposite transverse signs**.
+   The coupled radial squared-center bound is at most
+   \(999361/1000000<1\) under the forbidden
+   same-weak-sign assumption. The exact positive
+   margin is \(639/1000000\), independent of all frames.
+
+The **current exhaustive S2/k4 near-U center/sign cells** are:
+
+| Cell | Current near-U offset | Mixed near-U center signs |
+| --- | --- | --- |
+| A | \(79/250\le h_U<97/200\) | Strictly opposite |
+| B | \(7/24<h_U<79/250\) | Strictly opposite |
+| C | \(7/24<h_U<79/250\) | Weak same signs, near-U outer **whole-quadrant owner** and a forced nontrivial frame tilt |
+
+The total width of the last difficult cell C interval is
+\[
+79/250-7/24=73/3000.
+\]
+**None of A/B/C is proved globally impossible.**
+The opposite-sign local two-square example below
+demonstrates why A/B require interactions with
+the far-D pair and perpendicular R triple.
+
+### Computer-to-hand lesson: where not to spend more threshold iterations
+
+The exact Bernstein search also finds a **candidate
+certificate at H=39/125=0.312** for a single square, but
+the *independent* coupled-center contradiction used above
+already becomes too weak near h≈0.315. Pushing only the
+one-square envelope lower does **not automatically**
+eliminate another band of S2 cell C. Prioritize a genuinely
+**two-square mixed-cap SAT inequality** or a six-/eight-square
+interaction instead of indefinite tiny rational
+threshold improvements.
+
+**Current priority 1:** try to prove the conjectured
+two-square mixed same-sign bound
+\[
+R^2\ge(h+1)^2+9/4
+\quad(h\ge7/24)
+\]
+for one inner/one outer center, or disprove it with a
+true-vertex/SAT-verified exact rotated pair.
+This conjecture is still **unproved**; neither
+a local numerical minimum nor a single-square
+bound is its proof. Its axis-aligned boundary value
+at h=7/24 is \(2257/576>q_+\).
+
+**Current priority 2:** opposite-sign S2 cells A/B
+require the actual far-D two-square cap and
+perpendicular R triple; the rational opposite-sign
+pair is locally feasible, so a pair-only exclusion
+is impossible.
+
+**Current priorities 3–5:** the tiny-offset S1/k3
+\((0<h_{30}<1/16)\) with far-singleton
+\(-3/20<y_L<-1/75\), higher-k/corner-only/D1/D2,
+and the full **equality-preserving S4/k7**
+five-corner global bound and later Lean formalization.
+
+All new scripts are **research discovery or arithmetic
+audits**. The unrestricted inequality \(R_8\ge\widehat R\),
+equality classification and Lean 4 handoff remain OPEN.
+
 ## 1. One complete computer-to-hand example, accomplished
 
 We used
