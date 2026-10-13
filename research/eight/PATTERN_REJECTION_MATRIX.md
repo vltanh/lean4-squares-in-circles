@@ -1087,3 +1087,49 @@ rejection**, not a new deletion from the previously
 enumerated symbolic 12-status word total.
 The global \(R_8\ge\widehat R\)
 remains OPEN.
+
+
+## 17. Complete exclusion of S2 with two inner nearer-2+2 centers
+
+**This supersedes all historical conditional 'S2 near-inner
+k=4 h_R<1/20 remains' entries above.**
+
+The exact all-frame
+[HUMAN_S2_NEAR_INNER_FULL_EXCLUSION.md](HUMAN_S2_NEAR_INNER_FULL_EXCLUSION.md)
+proves **exclusive S2=(3+0,2+2) is impossible when
+both squares on its nearer two-member 2+2 cap
+have center norms <1**. It combines the
+previous outer-center ray polarity (two R outers,
+one R inner, two U inners, two D outers) with:
+
+* two new exact mixed inner/outer angular gap
+  lemmas, \(>12/25\) and \(>33/50\) radians;
+* an orientation-free proof that the inner R
+  ray lies strictly between its two R-outer rays,
+  forcing the positive R-outer ray \(>43/100\);
+* the near-U positive-x inner-center rectangle
+  \(9/25<u_x<31/50,\ 79/100<u_y<47/50\);
+* a four-endpoint **analytic concavity bound**
+  proving its distance from the positive R-outer
+  center has squared norm
+  \(<4923651/5000000<1\).
+
+The last contradicts the two actual whole
+squares' center separation. This is a complete
+continuous subbranch rejection, **not** a
+generated numeric classifier.
+
+| Exclusive S2 subcase | Current status |
+| --- | --- |
+| k=3 (all near-center allocations) | Entirely impossible (older result) |
+| **Both nearer U pair centers inner**, any k | **Entirely impossible (new)** |
+| k=4, exactly one U outer and one R outer | Remains unresolved |
+| k=5,6, at least one U outer | Remains unresolved |
+
+No deletion of the purely symbolic 3,995,040
+twelve-status assignments is inferred, since
+these inner/outer flags were not in that
+symbolic enumeration. The S4/k=7 exact
+equality configuration remains valid.
+The unrestricted \(R_8\ge\widehat R\)
+still requires additional global geometry.
