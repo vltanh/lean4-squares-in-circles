@@ -1133,3 +1133,62 @@ symbolic enumeration. The S4/k=7 exact
 equality configuration remains valid.
 The unrestricted \(R_8\ge\widehat R\)
 still requires additional global geometry.
+
+
+## 18. New far-side two-square outer-center theorem and S2/S4 k=4 offset strip exclusions
+
+[HUMAN_TWO_OUTER_HIGH_CAP.md](HUMAN_TWO_OUTER_HIGH_CAP.md)
+proves for **two distinct, arbitrarily oriented
+whole unit squares** in the n=8 disk ceiling
+that a common outward cap offset
+\[
+h\ge97/200
+\]
+forces **both centers to have norm at least one**.
+This is stronger than the trivial single-square
+cutoff \(h\ge1/2\). If one center were inner,
+the sharp one-square cap transverse envelope
+and the universal farthest-vertex radius bound
+would give the contradictory
+\[
+|p-q|^2<
+199457/200000
+=1-543/200000.
+\]
+The proof is for the *entire* continuous frame
+and center domain. All its numerical endpoints
+are exact rationals, audited separately in
+[verify_two_outer_high_cap.py](verify_two_outer_high_cap.py).
+
+For the **exclusive one-side** status types with
+an opposite 2+2 population, write t for the
+central center's signed coordinate on that
+axis. If \(|t|\le3/200\), both 2+2 caps
+are at offsets at least 97/200, and all
+**four distinct** squares on that axis have
+outer centers. The perpendicular other axis
+of S2 or S4 contributes at least one
+**different** outer center. Therefore:
+
+| Exact still-open status/outer-count case | New central-coordinate restriction |
+| --- | --- |
+| S2=(3+0,2+2), k=4 | **\(|t_{2+2}|>3/200\)** |
+| S4=(2+1,2+2), k=4 | **\(|t_{2+2}|>3/200\)** |
+
+These are strict **continuous offset subregion
+exclusions**, not complete elimination of
+S2/k4 or S4/k4 and not new reductions of the
+purely combinatorial twelve-status counts.
+Do not transfer the **five-distinct-outer**
+count to overlapping double-side labels
+without proving distinctness separately.
+The real S4/k7 equality branch is preserved.
+
+Current stronger parent closures remain:
+* S2/k3 and S4/k3 impossible;
+* S3/k3 impossible;
+* S2's entire **nearer 2+2 both-inner**
+  branch impossible.
+
+The unrestricted \(R_8\ge\widehat R\)
+remains OPEN.
