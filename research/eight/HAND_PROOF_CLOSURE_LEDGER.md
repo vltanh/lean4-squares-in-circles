@@ -2223,3 +2223,58 @@ nor proof that all center-ray-only methods must fail.
 The exact S4/k=7 sharp equality configuration is
 still retained. The unrestricted bound
 \(R_8\ge\widehat R\) remains **OPEN**.
+
+
+### 2026-10-12: S3/k=3 negative outer ray eliminated; distant lower center forced southwest
+
+[HUMAN_S3_K3_NEGATIVE_RAY_EXCLUDED.md](HUMAN_S3_K3_NEGATIVE_RAY_EXCLUDED.md)
+closes **one entire previously surviving outer-R ray sector**
+in exclusive S3=(3+1,2+1), k=3.
+The outer R center can no longer have negative polar angle.
+The proof iterates two *proved exact* mixed
+inner/outer center-angle thresholds:
+
+* negative outer-R ray would force the R-minus
+  inner-center angle below \(-22/25\) radians,
+  making its inner radius \(>9/10\) from the
+  actual R whole-side projection \(p_x>117/200\);
+* that larger radius requires mixed angular
+  gap \(>77/100\) radians, pushing R-minus below
+  \(-24/25\), where its center x projection
+  must be \(<117/200\), contradiction.
+
+The cosine Taylor signs and all four distance
+corner comparisons are audited by
+[verify_s3_k3_negative_sector.py](verify_s3_k3_negative_sector.py).
+
+Thus the sole R outer ray has **only one** remaining
+strict interval:
+\[
+311/500<\psi<8959/10500.
+\]
+
+[HUMAN_S3_K3_DISTANT_D_NEGATIVE_X.md](HUMAN_S3_K3_DISTANT_D_NEGATIVE_X.md)
+then proves the *far D singleton center* has
+strictly negative transverse x coordinate. In
+the positive R-outer sector, the R-plus-to-outer
+mixed gap \(>311/500\) and the R-minus-to-R-plus
+inner gap \(>\pi/3\) force the inner R-minus ray
+angle \(<-163/200\), and its radius \(>17/20\).
+The corresponding exact mixed center-distance
+inequality forces angular gap \(>77/100\) from
+the far D outer center. If \(x_D\ge0\), the
+far D cap polar angle is in \([-\pi/2,-\pi/3)\),
+giving a smaller gap and a contradiction.
+Thus \(x_D<0\), and with the existing far cap envelope
+\[
+-13/40<x_D<0,\qquad y_D<0.
+\]
+The exact rational margins are audited by
+[verify_s3_k3_distant_d_sign.py](verify_s3_k3_distant_d_sign.py).
+
+These are **genuine continuous geometric exclusions**,
+but they do **not** close the surviving **positive**
+S3/k=3 outer-R sector, the S2/k4 small-offset
+near-inner case, D1/D2, or the unrestricted
+\(R_8\ge\widehat R\). The S4/k7 sharp
+candidate equality is preserved.
