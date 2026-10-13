@@ -1,6 +1,95 @@
 # Structural closure roadmap: stop narrowing cap constants, finish the global four roots
 
 
+## LATEST structural invariant: internal path boundary-or-chord vertex cover
+
+**This is the current first proof gate**, stronger than the
+older P/S/K case split below:
+
+[HUMAN_B2_INTERNAL_PATH_VERTEX_COVER.md](HUMAN_B2_INTERNAL_PATH_VERTEX_COVER.md)
+proves, for the *entire* k=7, two-positively-stressed-C
+root with any stressed outer path size \(m=3,4,5,6\),
+that each internal stressed path square either
+(a) has a true disk-circle contact or
+(b) has an **actual** zero-positive-stress C contact
+chord, **unless** it is a circle-free
+actual-degree-two aligned transmitter.
+Two consecutive internal vertices cannot both
+be unanchored transmitters. Consequently
+the **true boundary-or-chord anchors form a
+vertex cover** of the path of m-2
+internal stressed vertices.
+
+The exact minimum number of required anchored
+internal labels is respectively
+\[
+m=3:\ 0;\qquad m=4:\ 1;\quad
+m=5:\ 1;\quad m=6:\ 2.
+\]
+This combinatorics is audited by the
+exact 0/1 vertex-cover enumerator
+[verify_B2_internal_path_vertex_cover.py](verify_B2_internal_path_vertex_cover.py);
+the all-frame geometric proof is the existing
+*actual-contact* transmitter rigidity.
+
+**New global m=6 consequences:**
+
+* **P, C actual degree two:** no C-internal chords;
+  **at least two distinct S2..S5 circle-contact squares**,
+  plus **at least one of S1,S6 circle-contact**.
+  Hence **three or more true circle-contact
+  stressed outer labels**.
+* **S, C actual neighbor spectator T:** also
+  no C-internal chords, so **at least two
+  circle-contact internal stressed labels**
+  plus **the circle-contact spectator T**.
+  Hence three or more true circle-contact
+  exterior squares. In S0, the leaf T
+  additionally has two true circle vertices,
+  is radial and frame-parallel to C, and
+  lies on a **perpendicular C side**.
+* **K, internal actual central chord:**
+  among S2..S5 **at least two different
+  indices** must have either a real
+  C chord or a true circle vertex.
+  In particular a single C-internal
+  chord forces a **separate internal
+  circle-contact label** (unless
+  further central chords are present).
+  In diagonal positive-stress mode
+  the two additional bracing contacts
+  have opposing tangential normal signs.
+
+**New global m=3 scaffold gate:** when C has
+exactly two *actual* contacts, if its sole
+internal stressed square S2 does not touch
+the circle, C and S2 are two separate
+circle-free actual-degree-two
+transmitters with the **same two
+outer neighbors S1,S3**. The exact
+shared-transmitter theorem then forces
+**all four frames C,S1,S2,S3 parallel**,
+a genuine candidate-like four-square
+scaffold. Thus m3 necessarily has
+an internal circle anchor **or**
+a proven four-parallel-square motif,
+with no frame ansatz.
+
+**The next proof target is now genuinely
+global:** derive a sharp bound
+\(R\ge\widehat R\) from the *minimum
+three circle-contact squares* in the
+m6 pure/spectator modes, or from the
+forced internal zero-stress chord(s)
+in K. For m3, combine the forced
+parallel scaffold with the **other
+four actual square labels**, using the
+already proved conditional five-corner
+optimum without discarding spectators.
+Do not optimize more tiny cap offsets.
+
+---
+
 ## CURRENT structural frontier: finite central normals and P/S/K modes for k=7/B2/m=6
 
 **This section supersedes the older first-priority m=6
