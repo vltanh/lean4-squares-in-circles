@@ -402,3 +402,68 @@ a true circle vertex.
 All other roots and the
 unrestricted \(R_8\ge\widehat R\)
 remain OPEN.
+
+
+## A second complete global B2 stressed-cycle size eliminated: m=3
+
+[HUMAN_SEVEN_OUTER_M3_SEMICIRCLE_EXCLUDED.md](HUMAN_SEVEN_OUTER_M3_SEMICIRCLE_EXCLUDED.md)
+now proves the *entire* k7/B2/
+proper-outer-actual-contact-forest
+stressed cycle with m=3 is
+**impossible**. The three
+positively stressed outer labels
+would be consecutive among the
+seven outer-center rays; five
+complementary ray gaps force
+their center arc below
+\(3\pi/4+1/100\).
+All actual circle-contact vertices
+of those three squares deviate
+less than \(31/80\) radians
+from their center ray, placing
+every positive circle reaction
+in an open angular semicircle.
+C and the four spectator squares
+have no physical circle
+multipliers, so global
+positive force balance cannot
+hold.
+
+**Current k7/B2 outer-forest
+positive stressed-cycle lengths:**
+\[
+\boxed{m=4,5,6},
+\]
+only **21 labeled cyclic positive
+stress graph supports** before
+the true square-geometry and
+spectator constraints. The
+m=7 path was already excluded
+by opposite central contact
+angles; m=3 is now excluded
+by global force support. Both
+closures hold regardless of
+how many zero-weight actual
+central or spectator contacts
+are present.
+
+The general
+[HUMAN_GLOBAL_STRESS_CIRCLE_ARC_SPREAD.md](HUMAN_GLOBAL_STRESS_CIRCLE_ARC_SPREAD.md)
+theorem also sharpens the B3
+**central branching stress root**:
+the unique positive component
+cannot involve C and at most
+three **consecutive** outer
+center-ray square labels at k=7,
+because its only positive circle
+reactions would occupy too short
+an angular arc. Components with
+additional or nonconsecutive
+outer labels remain unresolved.
+
+The real equality-bearing
+seven-outer complete actual
+contact ring A is preserved.
+The unrestricted
+\(R_8\ge\widehat R\) remains
+OPEN.
