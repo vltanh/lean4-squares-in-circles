@@ -1,0 +1,66 @@
+{
+  "description": "A sound full EIGHT-dimensional frame half-tangent angular product box (the first three narrow, the remaining five completely unrestricted) whose selected three signed true SAT-owner inequalities are impossible for ANY centers at q<=9789/2500.",
+  "angle_half_tangent_boxes": [
+    [
+      "-1/100",
+      "1/100"
+    ],
+    [
+      "6/25",
+      "13/50"
+    ],
+    [
+      "49/100",
+      "51/100"
+    ],
+    [
+      "-1",
+      "1"
+    ],
+    [
+      "-1",
+      "1"
+    ],
+    [
+      "-1",
+      "1"
+    ],
+    [
+      "-1",
+      "1"
+    ],
+    [
+      "-1",
+      "1"
+    ]
+  ],
+  "cycle": [
+    [
+      0,
+      1,
+      0,
+      "e",
+      1
+    ],
+    [
+      1,
+      2,
+      1,
+      "e",
+      1
+    ],
+    [
+      2,
+      0,
+      2,
+      "e",
+      1
+    ]
+  ],
+  "coefficient_norm_upper_bounds": [
+    "19/20",
+    "11/20",
+    "11/20"
+  ],
+  "claimed_minimum_margin": "2/5"
+}
