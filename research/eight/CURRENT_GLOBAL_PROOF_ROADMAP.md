@@ -80,6 +80,102 @@ This is a *structural reduction*, not a claim of global
 
 ---
 
+## New B3 structural closures: opposite-face SS impossible and only complete spectator arcs (October 13)
+
+**This section is the newest authoritative B3-small-core status.**
+The positive-stress component remains the four-square
+contact graph \(C-X-Y-C\) plus radial positive leaf C-Z,
+with X,Y outer-ray neighbors, Z in one of three
+nonneighboring ray positions, **all X,Y,Z with positive
+physical circle multipliers**.
+
+**Exact true-SAT radial bridge modes:** SS (C side/Z side),
+CS (C radial corner/Z side), and SD (C side/Z diagonal).
+The former fourth C-corner/Z-diagonal pair is impossible
+because no genuine square side owns its separating axis.
+
+**A complete global SS subcase is now CLOSED.**
+[HUMAN_B3_SS_OPPOSITE_SIDE_EXCLUDED.md](HUMAN_B3_SS_OPPOSITE_SIDE_EXCLUDED.md)
+proves the entire **SS with both X and Y
+positively contacting C along true C side normals**
+impossible. Central force balance puts both on
+the opposite C side, and torque makes their contact
+points straddle the radial origin line. One of
+the true contacts is at \(z=(-k,\tau)\) with
+\(k=2-\sqrt{R^2-1/4}\in(0,1/2)\),
+\(|\tau|\le1/2\), and the corresponding
+unit square lies wholly in \(x\le-k\).
+The **new arbitrary-frame contact-vertex lemma**
+bounds every one of its true vertex norms by
+\[
+|v|^2\le(k+1)^2+9/4
+=R^2-(6\sqrt{R^2-1/4}-11)<R^2.
+\]
+It consequently has no circle vertex and no
+positive circle multiplier, contradicting the
+rigorous positive circle force already required
+at both triangle labels X,Y. This closes that
+**whole SS contact-normal subcase**, not just
+another parameter interval.
+
+**Surviving SS geometry is corner-forced.**
+[HUMAN_B3_SS_TRANSVERSE_CORNER_FORCING.md](HUMAN_B3_SS_TRANSVERSE_CORNER_FORCING.md)
+shows the X/Y positive C contact normals
+must have **strictly opposite nonzero transverse
+components**, touch the *top and bottom* C side
+supports, and at least one positive contact
+is a genuine corner of C on its side opposite Z.
+[HUMAN_B3_CS_TRANSVERSE_FORCE_REQUIRED.md](HUMAN_B3_CS_TRANSVERSE_FORCE_REQUIRED.md)
+independently proves the same strict opposed
+transverse normal signs for the C-corner/Z-side
+(CS) radial bridge, using radial torque and
+nonzero stress moment circulation. The SD
+radial bridge is **not** included in these results.
+
+**Complete spectator arc classification in the
+C-actual-degree-three representative.**
+If C actually contacts **only** its three positive
+neighbors X,Y,Z, then
+[HUMAN_B3_COMPLETE_SPECTATOR_ARCS.md](HUMAN_B3_COMPLETE_SPECTATOR_ARCS.md)
+shows every complementary outer-ray spectator
+arc is either completely present or completely
+absent as an *actual contact path*. A partial
+arc creates a spectator actual-degree-one leaf
+whose neighbor is not C, impossible in the
+contact-minimal minimizer. Both arcs complete
+would form the excluded full seven-outer ring.
+Therefore the entire outer actual graph is
+one of **three** patterns per positive stress
+label triple: no spectator edges, the full Y-Z
+spectator path, or the full Z-X spectator path.
+There are **63** graph-only templates
+(\(21\times3\)), cross-checked against all
+\(21\times64=1,344\) optional-edge assignments.
+For genuine **CS/SD**, a further zero-weight
+spectator contact is mandatory by the
+actual-leaf rigidity theorem, so **the empty
+spectator path is excluded**. SS may have an
+actual leaf Z in the empty-arc case.
+
+**Remaining meaningful proof obligations:**
+derive a full eight-square sharp radius inequality
+for the **corner-forced SS** triangle, for the
+**CS side-leaf** with a complete bracing spectator
+arc, and for the **SD diagonal leaf** with
+mandatory spectator bracing. If C has extra actual
+zero-weight spectator neighbors, the 63-template
+arc classification **does not apply**; keep those
+separate actual-contact modes. B2 m4..6, the full
+equality ring A, larger B3, k<=6 and exterior root X
+also remain OPEN. Preserve the genuine S4/k7 equality.
+
+The supporting hand proofs have exact symbolic
+vertex identities and exhaustive finite graph
+audits; neither the graph count nor any optimizer
+is a global packing feasibility certificate.
+
+---
+
 ## 1. The actual objective
 
 Let R8 be the least radius containing eight interior-disjoint genuine unit squares, with independent orientations. The candidate construction supplies R8 <= Rhat. The remaining theorem is **R8 >= Rhat**, not impossibility at the inclusive candidate radius. The known equality packing must remain admissible.
