@@ -1,6 +1,54 @@
 # Exact three-cell continuous queue for the surviving exclusive S2/k=4 branch
 
 
+## AUTHORITATIVE current A/B/C partition after exact Bernstein search
+
+**The current strict mixed-cap same-sign cutoff is
+\(h_U\ge79/250\), NOT the historical 37/100, 1/3
+or 8/25 values preserved further below.**
+
+[HUMAN_CAP_ENVELOPE_79_250.md](HUMAN_CAP_ENVELOPE_79_250.md)
+proves the sharp arbitrary-frame one-square cap envelope
+at h>=79/250 under the actual disk ceiling,
+with a **noncircular** height argument and
+**63 exact Bernstein coefficient** checks.
+[HUMAN_MIXED_HIGH_CAP_79_250.md](HUMAN_MIXED_HIGH_CAP_79_250.md)
+then proves that any one-inner/one-outer two-square
+whole cap at that offset has strictly **opposite**
+transverse center signs: same signs would yield a
+coupled radial squared-center distance
+\(<999361/1000000<1\).
+
+Therefore the **exact presently necessary S2/k4**
+mixed-center near-U cells are
+
+| Cell | h_U | Signs and additional frame/whole-square constraints |
+| --- | --- | --- |
+| **A** | \(79/250\le h_U<97/200\) | Strictly opposite transverse center x signs |
+| **B** | \(7/24<h_U<79/250\) | Strictly opposite signs; retain full outer angular and true SAT constraints |
+| **C** | \(7/24<h_U<79/250\) | Weak same signs, inner \(|x|<1/4\), outer \(|x|>7/10\), outer whole NE/NW quadrant owner, at least one actual frame tilt \(>1/2600\) |
+
+The C interval is now only **\(73/3000\) wide**,
+and all former high-offset same-sign portions
+are **fully excluded**. The two squares on the
+near-U side still have common true horizontal
+chords on \(y=(R+h_U)/2\) of length >=1.
+**No A/B/C cell is globally closed yet.**
+
+A fully rational *single rotated square* at
+\(h=3/10\) violates the one-square sharp envelope
+even under \(R^2\le q_+\);
+[RATIONAL_ROTATED_CAP_ENVELOPE_THREE_TENTHS.md](RATIONAL_ROTATED_CAP_ENVELOPE_THREE_TENTHS.md).
+This is **not** a mixed two-square counterexample,
+but blocks any unjustified extension of the
+one-square proof directly to the lower
+cap endpoint 7/24. The
+[COMPUTER_ASSISTED_ATTACK_ROADMAP.md](COMPUTER_ASSISTED_ATTACK_ROADMAP.md)
+identifies the next **SAT-based two-square hand
+inequality** and six-/eight-square global branches.
+
+
+
 ## CURRENT case split after computer-to-hand envelope extension
 
 **This section supersedes the earlier A/B/C offset table
