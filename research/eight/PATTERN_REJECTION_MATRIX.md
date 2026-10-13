@@ -1231,3 +1231,46 @@ symbolic twelve-status word total. They do not
 eliminate all S2/k=4, S2, S4/k=7,
 D1/D2 or the missing unrestricted
 \(R_8\ge\widehat R\).
+
+
+## 20. Exact new surviving S2/k4 center/frame cells and midpoint chord order
+
+[HUMAN_S2_K4_THREE_CELL_QUEUE.md](HUMAN_S2_K4_THREE_CELL_QUEUE.md)
+updates the joint status/center-norm queue
+without claiming a completed S2/k4 exclusion.
+The mandatory near-2+2 offset lies in
+\(7/24<h_U<97/200\), the right-triple
+offset in \(0<h_R<13/100\); near-U
+contains **exactly one inner and one outer
+center**, with polar gap \(>3/4\) radians.
+
+| Branch | Actual remaining *necessary* conditions |
+| --- | --- |
+| A — \(2/5\le h_U<97/200\) | Mixed near-U transverse x signs **opposite**, arbitrary orientations |
+| B — \(7/24<h_U<2/5\), opposite signs | Retain outer-center angular and all pair-separator constraints |
+| C — \(7/24<h_U<2/5\), nonnegative x-sign product | \(|x_{\rm inner}|<1/4\), \(|x_{\rm outer}|>7/10\); **at least one U frame tilt \(>1/2600\) radian** from central axes |
+
+The outer near-U x coordinate cannot be zero;
+the inner x=0 boundary is included in C.
+Thus this is an **exhaustive sign/offset partition**
+under the already proved exclusive S2/k4
+classification, not an incomplete heuristic.
+
+[HUMAN_TWO_CAP_SHARED_MIDSLICE_CHORDS.md](HUMAN_TWO_CAP_SHARED_MIDSLICE_CHORDS.md)
+adds that, in **every** such cell, the same
+line \(y=(R+h_U)/2\) meets the two *actual*
+square interiors in disjoint horizontal
+chord intervals **each of length at least
+one**, with strict \(>1\) for any tilted frame.
+On a sloping square section the explicit
+lower bound is \(>667/600\).
+This is a justified slice order, **not**
+an inference of disjoint full-square
+horizontal projections for rotated frames.
+
+No A/B/C cell has yet been fully excluded.
+The completed S2 near-both-inner and
+S3/k3 closures remain valid. The sharp
+S4/k7 equality construction and the
+unrestricted \(R_8\ge\widehat R\) are
+unchanged.
