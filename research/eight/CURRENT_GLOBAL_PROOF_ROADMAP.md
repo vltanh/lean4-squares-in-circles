@@ -176,6 +176,77 @@ is a global packing feasibility certificate.
 
 ---
 
+## Latest B3 auxiliary-arc geometry (October 13)
+
+In the **smallest k=7 B3 central-branching core** with
+positive contact graph \(C-X-Y-C\) plus radial bridge C-Z,
+the current geometric status is:
+
+* **Radial SS:** the all-C-side-normal triangle subcase
+  is **completely impossible**. Any surviving SS triangle
+  must use C contacts on opposing transverse support sides,
+  with **nonzero opposite tangential normal components**
+  and at least one genuine C corner contact opposite Z.
+  Proven in [HUMAN_B3_SS_OPPOSITE_SIDE_EXCLUDED.md](HUMAN_B3_SS_OPPOSITE_SIDE_EXCLUDED.md)
+  and [HUMAN_B3_SS_TRANSVERSE_CORNER_FORCING.md](HUMAN_B3_SS_TRANSVERSE_CORNER_FORCING.md).
+* **Radial CS:** the opposite C-corner bridge allows only
+  triangle C contact normals with **nonzero opposite
+  tangential signs**, by
+  [HUMAN_B3_CS_TRANSVERSE_FORCE_REQUIRED.md](HUMAN_B3_CS_TRANSVERSE_FORCE_REQUIRED.md).
+  Pure collinear C triangle forces would make every
+  contact moment zero, contradicting the nonradial
+  physical-stress cycle theorem.
+* **Radial SD:** the C-side/Z-inward-corner interface
+  remains open. Do **not** apply the SS/CS high-cap
+  exclusivity to its lower bridge offset \(R-\sqrt2\).
+
+If C has **exactly its three actual positive-stress
+neighbors** X,Y,Z, the entire outer actual contact graph
+is constrained to **three patterns** per
+positive ray triple: all spectators isolated,
+the full Y-Z auxiliary spectator arc, or the
+full Z-X arc. Partial zero-weight spectator
+paths create forbidden **noncentral actual leaves**.
+There are 21 positive ray-label triples,
+thus **63 graph-only actual contact templates**.
+The independent exact finite enumeration tested
+all \(21\times64=1{,}344\) optional-edge masks:
+63 admitted, 1,260 excluded by a noncentral spectator
+leaf and 21 by a full outer seven-ring.
+
+In contact-minimal **CS/SD** radial modes,
+a genuine extra zero-weight Z-to-spectator actual
+contact is forced. Therefore the **isolated-spectator
+arc mode is impossible** when C has only these three
+actual neighbors: a *complete* Y-Z or Z-X auxiliary
+path is required. The new
+[HUMAN_B3_AUXILIARY_ARC_BOUNDARY_COVER.md](HUMAN_B3_AUXILIARY_ARC_BOUNDARY_COVER.md)
+shows its s=1,2,3 actual-degree-two
+spectators require **at least \(\lfloor s/2\rfloor\)
+different true disk-circle contacts**; for s=1,
+the alternative is an **actual circle-free aligned
+transmitter** with its two core endpoints at
+exact closed-square distance one.
+The eligible Z ray positions i+3,i+4,i+5 give
+spectator arc sizes (1,3),(2,2),(3,1).
+
+This is an exact *whole-contact* structural
+reduction, not a claim that one of the 63 graph
+templates is feasible or that the global sharp
+\(R_8\ge\widehat R\) has been proved.
+
+**Immediate next complete-case target:** prove a
+sharp radius obstruction for a CS/SD complete
+auxiliary actual path (retaining its zero-weight
+circle-contact spectator), or for the corner-forced
+SS triangle plus four full spectators. If C has
+additional zero-weight actual contacts to spectators,
+these three-arc conclusions do not automatically
+apply; that is a separate actual-contact-degree
+case in the global ledger.
+
+---
+
 ## 1. The actual objective
 
 Let R8 be the least radius containing eight interior-disjoint genuine unit squares, with independent orientations. The candidate construction supplies R8 <= Rhat. The remaining theorem is **R8 >= Rhat**, not impossibility at the inclusive candidate radius. The known equality packing must remain admissible.
