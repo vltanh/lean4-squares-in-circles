@@ -998,3 +998,48 @@ continuous geometric reasoning itself. No general
 \(R_8\ge\widehat R\) theorem follows from the k=3 cell
 eliminations; outer paths/attachments and surviving D1/D2
 branches still require sharp inequalities.
+
+
+### New S2 inner-pair and S3 low-k center-position strata
+
+The current **exclusive S2=(3+0,2+2)** case has a particularly
+sharp joint classification when the nearer two-member
+2+2 cap has **both** square centers inner:
+[HUMAN_S2_NEAR_INNER_OUTER_POLARITY.md](HUMAN_S2_NEAR_INNER_OUTER_POLARITY.md)
+forces its perpendicular right triple to have exactly
+two outer-center members (necessarily above/below
+the outward origin ray) and one inner-center member.
+The two far-side 2+2 cap squares are outer, so
+**k=4 exactly**. It excludes the entire S2/k=5
+subcase with both near-side centers inner.
+[HUMAN_S2_K4_NEAR_INNER_SMALL_TRIPLE.md](HUMAN_S2_K4_NEAR_INNER_SMALL_TRIPLE.md)
+then proves the right triple-cap outward offset
+**must be strictly below 1/10**. At or above
+1/10 the remaining inner R center has no angular
+gap between the four ordered outer centers that is
+large enough to permit unit-center distance, and
+cannot lie above both R outers without approaching
+the positive-x inner U center within 60 degrees.
+
+For **S3=(3+1,2+1), k=3**,
+[HUMAN_FIVE_SQUARE_INNER_OUTER_FAN.md](HUMAN_FIVE_SQUARE_INNER_OUTER_FAN.md)
+eliminates the entire two-member U offset strip
+h_U>=21/100. The remaining exact strict offset
+rectangle is
+\(17/200<h_R<13/100\),
+\(17/200<h_U<21/100\), and the outer R
+center ray belongs to one of only two
+nonadjacent angular intervals specified in
+[HUMAN_S3_K3_REMAINING_TWO_LANES.md](HUMAN_S3_K3_REMAINING_TWO_LANES.md).
+The distant L/D singleton center transverse bounds
+in that note are \(|p_L.y|<3/20\) and
+\(|p_D.x|<11/32\).
+
+These are **strictly necessary continuous conditions**
+under **inner/outer** hypotheses, not claims
+that a residual case is realizable, nor any
+change to the 12-status combinatorial labels.
+Outer-center paths and the seven-outer S4
+candidate contact cycle remain part of the
+unrestricted case queue. The sharp reverse
+radius bound \(R_8\ge\widehat R\) is still OPEN.
