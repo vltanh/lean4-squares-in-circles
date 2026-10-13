@@ -77,7 +77,7 @@ we have
 \]
 
 Since q_x>7/10>p_x>=0, its signed x separation
-obeys \(0<q_x-p_x<q_x\).
+obeys \(0<q_x-p_x\le q_x\).
 We now consider the two exhaustive center-y orders.
 
 **If q_y>=p_y**, then
