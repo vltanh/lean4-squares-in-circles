@@ -1,3 +1,42 @@
+## CURRENT DECISION GATE: exhibit a REAL global certificate, not a capture restatement (2026-10-13)
+
+[GLOBAL_CAPTURE_EQUIVALENCE_AND_DUAL_NO_GO.md](GLOBAL_CAPTURE_EQUIVALENCE_AND_DUAL_NO_GO.md)
+is the latest precise audit. The bare assertion
+"all hypothetical smaller-radius packings lie
+inside the locally sharp neighborhood" is, given
+the proved local lower bound, **LOGICALLY
+EQUIVALENT TO** \(R_8\ge\widehat R\).
+It is therefore not an independent easier proof
+bridge unless accompanied by an actual sound,
+terminating geometric capture/exclusion certificate.
+
+The existing adaptive dual is **not angle-global**:
+for a true E-frame angle change +1/10, its
+radius lower-bound expression strictly decreases
+by more than \(4189/3000000\) (exact root-box
+rational proof). This is a negative result
+about that dual, NOT a packing counterexample.
+
+An independent complete eight-square numerical
+SLSQP search with 32 true vertex constraints and
+28 genuine SAT pair constraints did not yield a
+feasible below-candidate packing or an exact
+exclusion; it provides no mathematical evidence.
+
+**One meaningful remaining global deliverable:**
+produce a *checkable exhaustive* interval/geometry
+certificate excluding every pose outside the
+already proved local sharp neighborhood at
+\(R^2<q_*\), or prove a universal
+orientation-independent sharp support inequality
+there. Disk marker ownership, exact SAT owner
+disjunctions and certified subproblem decomposition
+are potential components, but no full n8
+finite certificate currently exists.
+Unrestricted sharpness and equality/Lean are OPEN.
+
+---
+
 ## LATEST FOCUSED RESULT: TRUE-SAT LOCAL SHARPNESS IS CLOSED (October 13)
 
 **The global proof is still OPEN; the local candidate
