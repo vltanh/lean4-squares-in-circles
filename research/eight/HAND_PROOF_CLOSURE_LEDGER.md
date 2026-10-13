@@ -2311,3 +2311,64 @@ not a whole-square quadrant separator.**
 The positive outer-R ray S3/k3 continuum
 is unresolved. The global sharp n=8 proof
 and Lean handoff remain OPEN.
+
+
+## 2026-10-12: the entire S3/k=3 branch is now excluded
+
+[HUMAN_S3_K3_FULL_EXCLUSION.md](HUMAN_S3_K3_FULL_EXCLUSION.md)
+closes an entire previously unresolved
+**exclusive-one-side S3=(3+1,2+1), k=3
+outer-center macro-cell**, including its last positive
+outer-R angular sector. This is a **whole-domain
+analytical impossibility** within that macro-cell,
+not another numerical-sample or central-offset strip.
+
+Under k=3 the far L/D singletons are the
+first two outer centers; the right R triple
+contains one outer and two inner centers,
+and both U pair centers are inner.
+Previously proved S3/k3 lemmas force
+\(h_R>17/200\), \(h_U<1/5\) and sole
+outer R ray \(311/500<\psi<8959/10500\).
+
+The **new missing ingredient** is the inner-R-pair
+center-height reserve: their both-whole-right
+cap projections \(p_x>117/200\), inner radii
+\(<1\), and mandatory mutual distance \(\ge1\)
+force the *positive-y* inner R center
+\[
+p_{R_+}.y>49/500.
+\]
+But the outer R square is **R-only**, hence
+**not** wholly beyond central U. Its vertical
+center satisfies \(q_y<h_U+\sqrt2/2<227/250\).
+The outer-ray interval and radial ceiling
+\(r<283/200\) force
+\(1/2<q_x<230079/200000\) and \(q_y>1/2\).
+With \(117/200<p_{R_+}.x<1\), their squared
+center distance obeys
+\[
+|q-p_{R_+}|^2<
+(113079/200000)^2+(81/100)^2
+=1-\frac{969139759}{40000000000}<1.
+\]
+This contradicts disjoint open inscribed half-unit
+disks. [verify_s3_k3_global_exclusion.py](verify_s3_k3_global_exclusion.py)
+has been executed and checks every rational
+margin, but the all-frame geometry is proved
+in the written hand note, not by the script.
+
+Thus **S3/k=3 is impossible for every signed
+central position and arbitrary frame**.
+The former S3/k3 narrow rectangles, angle
+sectors and distant singleton deductions should
+now be treated as *historical intermediate
+conditional theorems*, not still-open branches.
+
+The current *exclusive D0/S=7* k queue is
+S1 k=3..6, S2 k=4..6, S3 k=4..7,
+S4 k=4..7. The genuine sharp S4/k7 equality
+configuration remains. **D0 with corner-only
+statuses, D1, D2, exterior contact paths/rings
+and the unrestricted \(R_8\ge\widehat R\)
+remain open.** No Lean handoff is claimed.
