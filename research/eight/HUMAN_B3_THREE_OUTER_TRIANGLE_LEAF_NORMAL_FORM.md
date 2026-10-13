@@ -339,3 +339,171 @@ The **geometric and physical**
 proof of the exclusions is
 the preceding hand theorem,
 not the enumerator.
+
+
+## Sharper physical support theorem: ALL THREE outer labels have positive circle multipliers
+
+[HUMAN_POSITIVE_TRIANGLE_FORCES_CIRCLE_WEIGHTS.md](HUMAN_POSITIVE_TRIANGLE_FORCES_CIRCLE_WEIGHTS.md)
+strengthens the earlier necessary
+\(m_Z>0,\ m_X+m_Y>0\) to
+\[
+\boxed{m_X>0,\quad m_Y>0,\quad m_Z>0.}
+\]
+Both X and Y have **exactly two
+positive contact pairs** on the
+C-X-Y positive triangle. If one
+had zero circle force, its pair
+normals would coincide and its
+two neighboring squares (which
+**actually contact** one another)
+would have positive projected
+separation at least one unit.
+This is impossible for true
+contacting squares. Z is a
+positive bridge leaf, so its
+single nonzero contact force
+requires positive circle weights.
+
+This says **all three** stressed
+outer squares X,Y,Z contribute
+genuinely positive disk-circle
+reaction forces, irrespective of
+zero-weight actual contacts to
+spectators.
+
+## Exact side/diagonal radial leaf normal form
+
+[HUMAN_RADIAL_STRESS_LEAF_TWO_MODES.md](HUMAN_RADIAL_STRESS_LEAF_TWO_MODES.md)
+fully classifies the true square
+Z (despite possible extra
+zero-weight *actual* contacts):
+the radial positive C-Z bridge
+point is \(z=b n,\ b>0\),
+and **Z's frame has only two
+possibilities**:
+
+| Z leaf mode | C--Z radial contact support b | Z's actual disk-circle vertices | Z's center |
+| --- | --- | --- | --- |
+| **Side** | \(b=\sqrt{R^2-1/4}-1>4/5\) | Two endpoints of Z's outer true side, **equal positive circle multipliers** | \((\sqrt{R^2-1/4}-1/2)n\) |
+| **Diagonal** | \(b=R-\sqrt2\) | The **one** true outermost Z corner on \(R n\), with positive multiplier | \((R-1/\sqrt2)n\) |
+
+Both have a **genuinely radial
+leaf center ray n**, now
+independent of Z's actual
+contact degree. There is no
+third generic oblique leaf
+frame mode compatible with the
+force/circle multipliers.
+
+At C, the same radial contact
+normal n can be a **true C side
+normal** or a **radial direction
+toward one of C's four true
+corners**. An off-center radial
+C corner is not generally a C
+diagonal direction; do **not**
+silently infer C and Z parallel
+from a positive stress bridge.
+
+The remaining minimal B3
+bridge-interface geometric
+modes are therefore the
+four **C-side/C-corner times
+Z-side/Z-diagonal** combinations,
+each with the exact b and
+Z true disk vertex equations
+above.
+
+## Exact antipodal global force cone
+
+[HUMAN_B3_RADIAL_LEAF_ANTIPODAL_FORCE_CONE.md](HUMAN_B3_RADIAL_LEAF_ANTIPODAL_FORCE_CONE.md)
+uses the global physical
+circle-force balance and
+the now-proved positive
+circle weights at **X,Y,Z**.
+Because X,Y are angularly
+consecutive outer centers,
+their positive disk-circle
+vertices lie in a narrow
+pointed cone near those
+two center rays. Their total
+reaction is exactly minus
+the radial Z reaction.
+Hence the genuine Z **center
+ray** n lies in the strict
+**antipodal** angular cone
+\[
+\boxed{
+\theta_X+\pi-31/80
+<\arg p_Z
+<\theta_Y+\pi+31/80
+\pmod {2\pi},
+}
+\]
+with X,Y labeled in
+positive outer cyclic order.
+This restricts the three
+eligible Z ray positions
+without making any unjustified
+center-to-whole-square
+quadrant inference.
+
+## Complete elimination of three distinct C-side contacts in the side-leaf, all-C-side mode
+
+[HUMAN_B3_ALL_SIDE_STRESS_SCAFFOLD.md](HUMAN_B3_ALL_SIDE_STRESS_SCAFFOLD.md)
+addresses the concrete mode
+where **all three positive C
+contact normals are C side
+normals**, and the radial
+leaf Z is in its **side** mode.
+Its high outward cap
+\(b=\sqrt{R^2-1/4}-1>4/5\)
+is **exclusive** for whole
+unit squares, so X,Y cannot
+also contact C with the
+same +n normal.
+
+True C force balance with
+three positive side normals
+then forces both X,Y normals
+to equal **the single opposite
+side normal** -n (not
+perpendicular ±Jn), with
+\(\lambda_Z=\lambda_X+\lambda_Y\).
+The actual C--X and C--Y
+contact points must **straddle
+the radial origin line** along
+that opposite central side:
+their signed transverse
+coordinates are nonzero and
+have opposite signs, by
+C torque balance and the
+required nonzero triangle
+contact-moment circulation.
+
+The positive outer triangle
+edge X--Y has a genuine
+separating normal **with nonzero
+tangential component**, and
+its positive circle reaction
+forces on X and Y have
+opposing nonzero tangential
+components. This is a finite
+global *side-scaffold* normal
+form; it **eliminates**
+the purported all-side-normal
+subcase with three distinct
+positive central sides, but
+does **not** yet eliminate
+the one surviving opposite-side
+X/Y configuration.
+
+All four bridge-interface
+combinations, the surviving
+opposite-face triangle and
+four true spectator squares
+still require a sharp global
+radius bound \(R\ge\widehat R\).
+The full equality ring A
+is preserved and the
+unrestricted proof is OPEN.
