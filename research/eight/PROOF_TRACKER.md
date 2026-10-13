@@ -2,6 +2,69 @@
 
 ## Current orientation (2026-10-11)
 
+### CURRENT computer-assisted proof frontier: 79/250 (2026-10-12)
+
+**Supersedes the older 37/100, 1/3, and 8/25
+cutoffs elsewhere in this historical tracker.**
+
+[HUMAN_CAP_ENVELOPE_79_250.md](HUMAN_CAP_ENVELOPE_79_250.md)
+is a new **genuine full-frame hand theorem**:
+at \(q\le9789/2500\), every whole unit square
+beyond offset \(h\ge79/250\) satisfies the
+sharp aligned-cap envelope
+\((h+1)^2+(|p_\perp|+1/2)^2\le q\).
+It is proved by actual vertices, strict
+concavity and a **63-coefficient exact rational
+Bernstein certificate**, establishing the
+needed height bound noncircularly.
+[computer_cap_bernstein_discover.py](computer_cap_bernstein_discover.py)
+records the reproducible exact coefficient
+discovery workflow; optional scripts
+audit arithmetic, never substitute for the
+mathematical hand proof.
+
+[HUMAN_MIXED_HIGH_CAP_79_250.md](HUMAN_MIXED_HIGH_CAP_79_250.md)
+then proves **full-frame impossibility**
+of same-weak-sign mixed inner/outer cap
+pairs at \(h\ge79/250\):
+their coupled squared center distance
+is \(<999361/1000000<1\).
+
+**Latest necessary exclusive S2/k4 cells:**
+A: \(79/250\le h_U<97/200\), opposite signs;
+B: \(7/24<h_U<79/250\), opposite signs;
+C: \(7/24<h_U<79/250\), weak same signs,
+forced near-U outer **whole-quadrant owner**
+and a nonzero actual frame-tilt defect.
+No cell is yet completely eliminated.
+The remaining same-sign offset interval
+has width \(73/3000\).
+
+**Counterexample guard:** the aligned one-square
+envelope is **false at h=3/10** under
+the same disk ceiling; an actual rational
+rotated square and its four true vertices are
+given in
+[RATIONAL_ROTATED_CAP_ENVELOPE_THREE_TENTHS.md](RATIONAL_ROTATED_CAP_ENVELOPE_THREE_TENTHS.md).
+This does *not* disprove a future **mixed
+two-square** SAT obstruction at h>=7/24.
+
+**Next substantive step:** prove (or falsify
+with genuine SAT-verified geometry) the
+proposed sharp mixed same-sign two-square
+cap bound down to h=7/24, not another
+tiny one-square threshold update.
+Then couple opposite-sign cells with
+the far-D pair and R triple; continue
+S1 tiny-offset, higher-k, corner-only,
+D1/D2 and true S4/k7 equality-preserving
+five-corner global proof.
+
+The unrestricted \(R_8\ge\widehat R\),
+full equality classification and
+Lean 4 proof remain **OPEN**.
+
+
 ### CURRENT computer-to-hand roadmap (2026-10-12)
 
 Start from the authoritative
