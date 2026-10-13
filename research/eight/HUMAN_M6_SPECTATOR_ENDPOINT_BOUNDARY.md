@@ -200,3 +200,60 @@ The last two are **not** ruled out.
 The strict global \(R_8\ge\widehat R\),
 equality classification, and Lean handoff
 remain OPEN.
+
+
+## Stronger later result: the pure C-actual-degree-two root admits NO spectator edges
+
+**The earlier three optional m6 outer-contact
+edge sets in this note were necessary
+*combinatorial possibilities*, but
+the nonempty ones are now completely
+excluded by true minimum-contact
+leaf rigidity.**
+
+[HUMAN_B2_PURE_CENTRAL_CONTACT_ISOLATES_SPECTATORS.md](HUMAN_B2_PURE_CENTRAL_CONTACT_ISOLATES_SPECTATORS.md)
+proves that if C has **exactly its
+two positive-stress actual neighbors**,
+the unique m6 spectator T **must
+be completely isolated** in the
+*full actual contact graph*.
+Otherwise T would have exactly one
+actual contact to a noncentral
+outer square, contrary to the
+actual-leaf theorem, unless T
+touched both stressed endpoints
+and closed the separately excluded
+seven-outer full contact ring.
+Thus **both** stressed path
+endpoints S1,S6 actually touch
+the containing circle, not
+merely at least one.
+
+[HUMAN_B2_INTERNAL_PATH_VERTEX_COVER.md](HUMAN_B2_INTERNAL_PATH_VERTEX_COVER.md)
+further forces at least two
+internal stressed squares S2..S5
+to touch the disk circle, so
+pure m6 has **at least FOUR
+different circle-contact
+stressed outer-square labels**.
+
+The other (non-pure) m6
+spectator actual contacts are
+globally classified by
+[HUMAN_M6_SPECTATOR_CONTACT_TRICHOTOMY.md](HUMAN_M6_SPECTATOR_CONTACT_TRICHOTOMY.md):
+T is isolated, an actual
+C-leaf, or a circle-anchored
+C--T--S1/S6 actual contact
+triangle. No outer-only leaf
+T is ever allowed. Extra
+true zero-weight central
+contact chords remain in
+mode K.
+
+This later result is the
+**current** actual-contact
+classification; the earlier
+21 graph-only m6 supertemplates
+should not be treated as 21
+genuinely still-open pure-mode
+packings.
