@@ -81,7 +81,7 @@ we know
 \]
 
 Because q_x>7/10>p_x>=0, we have
-\(0<q_x-p_x<q_x\). The two possible
+\(0<q_x-p_x\le q_x\). The two possible
 signed center-height orders are exhaustive:
 
 **If q_y>=p_y**, then q_y-p_y<
