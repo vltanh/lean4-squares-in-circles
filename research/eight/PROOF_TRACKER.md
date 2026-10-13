@@ -2,6 +2,98 @@
 
 ## Current orientation (2026-10-11)
 
+### CURRENT: global semicircle-stress support theorem eliminates m3 outright (2026-10-13)
+
+The former B2/k7/m3 path is **not still
+open**. [HUMAN_SEVEN_OUTER_M3_SEMICIRCLE_EXCLUDED.md](HUMAN_SEVEN_OUTER_M3_SEMICIRCLE_EXCLUDED.md)
+proves its entire physical
+positive-stress support impossible,
+independently of C's *actual*
+degree and all square frames.
+
+Three consecutive outer center
+rays among seven fit in a strict
+arc \(<3\pi/4+1/100\) because
+the five complementary gaps
+each exceed \(\pi/4-1/500\).
+Every genuine disk-circle
+vertex is within \(<31/80\)
+radians of its own square
+center ray, by the actual
+vertex-center distance
+\(\sqrt2/2\) and proved
+\(R>\sqrt2+1/2\).
+Thus all positive circle-vertex
+forces supported on those three
+square labels lie in one
+**strict open semicircle**.
+The normalized physical
+circle forces must sum to zero,
+a contradiction.
+
+The global
+[HUMAN_GLOBAL_STRESS_CIRCLE_ARC_SPREAD.md](HUMAN_GLOBAL_STRESS_CIRCLE_ARC_SPREAD.md)
+theorem extracts the stronger
+support principle: any normalized
+positive circle-multiplier square
+center rays must spread across
+an arc wider than
+\(\pi-31/40\).
+
+Current **k7, outer actual forest,
+C-positive-degree-two** cycle
+sizes are **only m=4,5,6**,
+seven cyclic positive stress
+supports each: **21 graph
+supports**, with all continuous
+positions/frames/spectators
+still unresolved.
+The older complete m7
+positive path exclusion also
+remains valid. The sharp equality
+packing with the *full seven-
+outer actual-contact cycle*
+remains root A and is preserved.
+
+A separate exact small-core
+[B3 normal form](HUMAN_B3_THREE_OUTER_TRIANGLE_LEAF_NORMAL_FORM.md)
+proves that if the unique
+positive-stress component is
+C plus exactly **three**
+outer squares and C positive
+degree three, the positive
+contact graph is exactly a
+**C-X-Y triangle plus one
+radial positive bridge C-Z**.
+X,Y are consecutive outer rays;
+Z is one of the three
+nonadjacent outer ray positions,
+giving **21 combinatorial
+positive supports** before
+geometric feasibility.
+The radial leaf Z carries
+positive disk-circle force;
+at least one of X/Y must
+also do so.
+
+The prior weaker pure-m3
+parallel-scaffold and
+three-positive-boundary
+results remain valid as
+historical conditional lemmas,
+but their **m3 parent is
+now fully excluded**.
+
+[STRUCTURAL_GLOBAL_CLOSURE_ROADMAP.md](STRUCTURAL_GLOBAL_CLOSURE_ROADMAP.md)
+is updated to prioritize the
+*remaining m4/m5/m6 core plus
+spectators*, B3 triangle/leaf,
+root A equality ring, root X,
+and k<=6. Unrestricted
+\(R_8\ge\widehat R\), full
+equality and Lean remain OPEN.
+
+
 ### New exact pure-central B2 graph theorem (October 12; supersedes optional spectator-contact cases)
 
 The latest
