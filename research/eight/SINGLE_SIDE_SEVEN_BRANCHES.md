@@ -623,3 +623,39 @@ parent exclusions are S2/k3, S3/k3,
 S4/k3, and S2 with *both nearer-U*
 centers inner. All other listed cells
 still need additional global geometry.
+
+
+## 15. An additional S1/k3 closed offset subregion
+
+The *five-square* local theorem
+[HUMAN_FIVE_SQUARE_LOCAL_RU_OBSTRUCTION.md](HUMAN_FIVE_SQUARE_LOCAL_RU_OBSTRUCTION.md)
+requires only a R triple with two inner
+and one **R-only** outer center, two **distinct**
+U inner squares, and both whole-cap offsets
+strictly greater than \(17/200\).
+It does not require S3-specific far
+singletons or contact assumptions; its
+geometric proof is independently valid.
+
+Applied to **exclusive S1/k3**, normalize
+the 3+1 triple to R and its far singleton
+to L, and normalize the 3+0 triple to U.
+The L singleton and one outer label from
+each triple exhaust k=3, forcing **two
+inner centers per triple**. The existing
+opposite far-singleton cap envelope
+gives \(h_{31}>17/200\); the local
+five-square theorem therefore excludes
+\[
+\boxed{h_{30}>17/200.}
+\]
+The surviving 3+0 side offset is
+\(0<h_{30}\le17/200\). When the
+3+1 triple offset also satisfies
+\(h_{31}\le1/10\), the older
+perpendicular-triple low-offset rectangle
+forces the stronger \(h_{30}<1/16\).
+
+This new **continuous region exclusion**
+does not globally reject S1/k3, S1,
+or any legitimate S4/k7 equality packing.
