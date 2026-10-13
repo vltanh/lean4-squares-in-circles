@@ -193,3 +193,47 @@ The unrestricted sharp eight-square lower
 bound \(R_8\ge\widehat R\), global equality
 classification and Lean formalization
 remain OPEN.
+
+
+## Additional exact S4/k=4 corollary (same whole-cap theorem)
+
+The exclusive all-seven-one-side
+S4=(2+1,2+2) status branch contains the
+real sharp five-corner equality packing.
+This corollary **does not** eliminate S4
+or its valid k=7 equality realization.
+
+Let t be the signed central-center
+coordinate on its **2+2 axis**.
+If \(|t|\le3/200\), both opposite 2+2 side
+offsets satisfy
+\[
+h_{\rm near}=1/2-|t|\ge97/200,\quad
+h_{\rm far}=1/2+|t|\ge1/2.
+\]
+The theorem above forces **both actual
+square centers on the nearer side outer**,
+and the simpler single-center projection
+forces **both on the farther side outer**.
+These are four distinct square labels:
+opposite whole caps cannot share a unit square.
+
+The perpendicular 2+1 axis also contributes
+**at least one distinct outer-center square**.
+Indeed if its two-member side offset is
+\(\ge1/2\), its two side squares are outer.
+Otherwise the opposite one-member cap
+has offset \(>1/2\), making its singleton
+outer. Since the seven status labels
+are exclusive, none of these labels
+is one of the four 2+2-axis units.
+
+Thus \(|t|\le3/200\Rightarrow k\ge5\),
+and in particular
+\[
+\boxed{\text{exclusive S4/k=4 requires }|t|>3/200.}
+\]
+This is a **genuine new signed-offset
+exclusion** inside the still-open S4/k4
+branch; it does not affect the known
+S4/k7 equality configuration.
