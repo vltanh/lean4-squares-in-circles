@@ -3298,3 +3298,137 @@ The entire unrestricted radius inequality
 classification, and Lean formalization
 remain OPEN; the exact sharp S4/k7
 equality ring must be retained.
+
+
+## 2026-10-12: decisive switch to whole-packing stress architecture
+
+**This work is deliberately not another cap threshold update.**
+
+[HUMAN_GLOBAL_STRESS_ROOTS.md](HUMAN_GLOBAL_STRESS_ROOTS.md)
+combines the existing rigorous
+physical-contact/stress theorems into
+**four exhaustive global minimizer roots**:
+
+* **A:** full seven-outer *actual-contact
+  cycle*, explicitly realized by the sharp
+  equality candidate;
+* **B2:** central square C has exactly two
+  positive-stress contact neighbors,
+  hence two opposite contact normals;
+* **B3:** C has at least three positive-stress
+  neighbors (true central branching);
+* **X:** no positive C contact; the unique
+  nontrivial stress component has an
+  exterior directed moment cycle of
+  5..7 squares containing an actual
+  **noncentral inner-center** label.
+
+[HUMAN_EXTERIOR_STRESS_INNER_WITNESS.md](HUMAN_EXTERIOR_STRESS_INNER_WITNESS.md)
+proves the root-X witness is a genuinely
+**circle-free exterior square** with
+\(1/2<|p|<1\), and has at least
+two positive-moment incident contacts.
+In a minimum-*actual*-contact representative,
+an *actual-degree-two* witness is
+a genuinely aligned opposite-side
+transmitter with neighbors at exact
+distance one; **actual degree>=3**
+is kept as a separate unsolved branch.
+Positive degree two alone does not
+justify the transmitter theorem.
+
+**New global graph normal form.**
+[HUMAN_SEVEN_OUTER_STRESS_CYCLE_NORMAL_FORM.md](HUMAN_SEVEN_OUTER_STRESS_CYCLE_NORMAL_FORM.md)
+proves that with **seven outer centers,
+no full outer actual cycle, and C
+positive stress degree two**, the unique
+nontrivial positive-stress component
+is exactly one C-rooted cycle
+\[
+C-S_1-\cdots-S_m-C,\quad 3\le m\le7,
+\]
+of circularly consecutive outer labels,
+with **no dangling positive-stress
+outer edges**. Every positive outer
+edge has nonzero signed contact moment,
+which forces it onto a directed
+cycle through C. Exactly two C forces
+are opposite/equal. A short independent
+graph enumeration checks seven labeled
+supports per m, 35 total before geometry;
+these are *graph templates*, not feasible
+square packing certificates.
+
+**Complete exclusion of an entire global stress subcase.**
+[HUMAN_OPPOSITE_CENTRAL_NEIGHBOR_ANGLE.md](HUMAN_OPPOSITE_CENTRAL_NEIGHBOR_ANGLE.md)
+proves, for any two genuine whole
+squares beyond opposite supports of
+the origin-containing C,
+\[
+p_A\cdot p_B<-4/25,\qquad
+\angle(p_A,p_B)>\pi/2+1/13.
+\]
+The four-band exact all-frame hand
+argument uses the established sharp
+one-square cap envelope **only at
+offset h>=2/5**, and radial bounds
+on the smaller-cap side. The listed
+seven exact rational square comparisons
+are audited independently in
+[verify_opposite_central_neighbor_angle.py](verify_opposite_central_neighbor_angle.py).
+
+[HUMAN_SEVEN_OUTER_PATH_M7_EXCLUDED.md](HUMAN_SEVEN_OUTER_PATH_M7_EXCLUDED.md)
+then eliminates **m=7** from the
+seven-outer, actual-path, C-positive-degree-two
+stress root: six true outer contact
+gaps each \(>\pi/4-1/500\)
+force the *missing* seventh gap
+\[
+\gamma<\pi/2+3/250,
+\]
+whereas the opposite C contact normals
+force \(\gamma>\pi/2+1/13\).
+The contradiction has an exact positive
+rational reserve \(211/3250>0\).
+There is **no geometry-dependent
+parameter exception** to this m=7
+exclusion. The real candidate has
+a **full outer actual contact cycle**,
+so belongs to root A and remains
+valid.
+
+Thus the **currently unexcluded k7/B2
+actual-path stress cycle sizes** are
+\[
+\boxed{m=3,4,5,6},
+\]
+with seven labeled cyclic placements
+each: **28** conditional positive
+stress graph supports. The exterior
+zero-stress spectators (7-m actual
+squares) still occupy physical space.
+The m=7 support branch is **completely
+closed**, not merely a narrowed
+offset strip.
+
+[STRUCTURAL_GLOBAL_CLOSURE_ROADMAP.md](STRUCTURAL_GLOBAL_CLOSURE_ROADMAP.md)
+is now the **primary forward research
+roadmap**, replacing small cap-constant
+tuning. It prioritizes the k7/B2 m=6
+cycle **including its one spectator**,
+then m=5..3, the equality-preserving
+outer ring A, the C-branching B3 case,
+and the exterior near-center inner
+witness X case, together with k<=6
+central-stressed variants. Every
+computer probe must use all 32 true
+square vertices, all 28 genuine SAT
+pair constraints, and independently
+checked stress force/torque balance.
+
+**Unresolved:** the sharp global
+\(R_8\ge\widehat R\), root A,
+remaining B2 cycle lengths, B3,
+X, k<=6, D0 corner-only/D1/D2
+and full equality classification,
+and Lean 4 formalization.
