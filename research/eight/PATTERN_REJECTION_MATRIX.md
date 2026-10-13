@@ -881,3 +881,45 @@ The entire S2 and S4 status classes are not excluded:
 S2/k=4,5,6 and S4/k=4,5,6,7 remain, including the
 explicit candidate's S4/k=7 equality. This does not
 establish the unrestricted \(R_8\ge\widehat R\).
+
+
+## 12. Entire high-offset region of the remaining S3/k=3 branch is impossible
+
+[HUMAN_FIVE_SQUARE_INNER_OUTER_FAN.md](HUMAN_FIVE_SQUARE_INNER_OUTER_FAN.md)
+supplies a new **genuine continuous-region exclusion** for
+four **distinct inner-center whole-cap members** (two R,
+two U) together with one additional R **outer-center**
+whole-cap member. It excludes every such configuration
+when \(h_R>17/200\) and \(h_U\ge21/100\), for all
+square frames and without any contact premise.
+
+For the exclusive S3=(3+1,2+1), k=3 branch this is an
+**unconditional-in-the-remaining-frames** elimination of
+the complete strip \(h_U\ge21/100\).
+The complementary still-unresolved region obeys
+\[
+17/200<h_R<13/100,\qquad 17/200<h_U<21/100.
+\]
+
+The new
+[HUMAN_S3_K3_REMAINING_TWO_LANES.md](HUMAN_S3_K3_REMAINING_TWO_LANES.md)
+additionally proves the outer R-center ray must lie in
+one of only two open angular intervals
+\((-5\pi/36,-2\pi/45)\) or
+\((7\pi/36,13\pi/45)\), and the distant L/D
+singleton center transversals satisfy
+\(|p_L.y|<3/20,\ |p_D.x|<11/32\).
+
+For S1/k=3, when its 3+1 U-triple offset is
+\(\ge21/100\), its perpendicular 3+0 R-triple
+offset must be \(\le17/200\). This is another
+strict **offset subdomain** rejection, not an
+elimination of S1/k=3.
+
+The five-square theorem may be applied to other
+D1/D2 branches **only if** its two R-inner,
+two U-inner and one R-outer witnesses are shown to
+be five distinct actual whole-square members.
+A shared RU square cannot be counted twice.
+No S4 equality is excluded, and no general
+\(R_8\ge\widehat R\) proof is claimed.
