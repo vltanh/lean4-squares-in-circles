@@ -1,3 +1,19 @@
+# Current decision: M5-DIFFUSE is the only remaining M5 child (2026-10-13)
+
+**The unrestricted sharp radius remains OPEN.** This note retains the historical status below as a chronology; the present current M5 state supersedes its earlier references to LOW and small-J HIGH as unresolved.
+
+* `GATE3B_M5_GLOBAL_SUPPORT_SURPLUS.md` and `GATE3B_M5_SURPLUS_CIRCLE_SPLIT.md`: true full-M5 support/Jensen reductions, independent of original owner selection.
+* `GATE3B_M5_LOW_EXACT_CERTIFICATE.md`: complete exact **3+5** reference exclusion at radius `198869/100000`, computer-assisted with exact rational replay; LOW excluded.
+* `GATE3B_M5_HIGH_JENSEN_EVEN_EXCLUSION.md`: any folded M5 configuration with `J<=3/1000` is within `1/200` radians of a single even 3+5 or odd 4+4 exact cut, and yields an actual reference packing at `q_ref<=3.95485389` by whole-square inscription.
+* `GATE3B_M5_HIGH_4PLUS4_EXACT_COVER.md`: a new complete **4+4** exact rational certificate, 66 D4 order roots, 73,210 replayed nodes, 64,067 contradiction leaves. Full 66-root proof data and independent verifier have been delivered in conversation archive `n8_m5_high_fourfour_exact_certificate.zip` but are **not yet stored on this PR branch**. This closes the odd small-J child, conditional on that independently replayed data.
+* `GATE3B_M5_HIGH_RING_BUDGET_AND_NO_GO.md`: every seven-frame cycle in M5 has width-excess at least `sqrt(2)-1`, but a uniform additional term proportional to whole-pair HIGH surplus cannot be deduced from orientations alone.
+
+**Current only unresolved M5 branch:** `J>3/1000` (M5-DIFFUSE), with both folded types, all actual disk vertices, 28 true SAT disjunctions, and no assumed central geometry or selected chain. A necessary consequence is `V>3sqrt(2)/500`, **not an equivalent definition**. M5 cannot be closed until this branch is excluded or classified with sharp bounds. Then proceed through M6, M7, M8, global coverage/optimality, and equality. No production Lean, CI, compilation, merge or global theorem claim.
+
+The new 4+4 certificate was replayed in full twice without SciPy/NumPy in its checker; five proof-data mutations were rejected. A rational-center positive 4+4 regression above the excluded radius passes all true vertices and 28 SAT pairs and the necessary model in an actual D4-root class. The exact archive (66 root objects, code, logs and SHA256 manifest) is a required part of the computer-assisted proof.
+
+---
+
 # Sequential gates for the unrestricted n=8 proof
 
 Date: 2026-10-13. Initial reorientation head: `ce35213455ad9d0715db88d7a732b380d6436f3d`.
