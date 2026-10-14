@@ -1,4 +1,4 @@
-# Current decision: M5-DIFFUSE is the only remaining M5 child (2026-10-13)
+# Previous decision: M5-DIFFUSE is the only remaining M5 child (2026-10-13)
 
 **The unrestricted sharp radius remains OPEN.** This note retains the historical status below as a chronology; the present current M5 state supersedes its earlier references to LOW and small-J HIGH as unresolved.
 
@@ -11,6 +11,18 @@
 **Current only unresolved M5 branch:** `J>3/1000` (M5-DIFFUSE), with both folded types, all actual disk vertices, 28 true SAT disjunctions, and no assumed central geometry or selected chain. A necessary consequence is `V>3sqrt(2)/500`, **not an equivalent definition**. M5 cannot be closed until this branch is excluded or classified with sharp bounds. Then proceed through M6, M7, M8, global coverage/optimality, and equality. No production Lean, CI, compilation, merge or global theorem claim.
 
 The new 4+4 certificate was replayed in full twice without SciPy/NumPy in its checker; five proof-data mutations were rejected. A rational-center positive 4+4 regression above the excluded radius passes all true vertices and 28 SAT pairs and the necessary model in an actual D4-root class. The exact archive (66 root objects, code, logs and SHA256 manifest) is a required part of the computer-assisted proof.
+
+## Gate 3B.2 / M5-DIFFUSE: next structural decision
+
+The positive-width exclusions now cover ALL M5 frames with Jensen defect `J<=3/1000`, including the 3+5 and 4+4 cut neighborhoods. Exact independent 4+4 proof data are delivered separately from this PR; see the note above.
+
+The active remaining condition is `J>3/1000`, **not** just `V>3sqrt(2)/500`. The latter is necessary but weaker.
+
+**New exact obstruction to a plausible shortcut:** `GATE3B_M5_DIFFUSE_CENTRAL_OUTLIER_NO_GO.md` constructs strict M5 orientation data with `J>1/5` where, after omitting a particular label, the seven remaining frames approach a 3+4 two-phase ring and their cyclic width excess tends to the sharp baseline `sqrt(2)-1`. Hence one cannot charge ANY fixed positive multiple of the entire J to the seven exterior ring widths from orientation combinatorics alone.
+
+**Next proof obligation:** use actual central-square containment/avoidance and all real disk vertices to treat central-frame outliers. For a given center label `c`, the exact pair Jensen decomposition gives `J=J_exterior+J_center`. The structural split `J_exterior>3/2000` or `J_center>3/2000` is exhaustive, but neither child is excluded. Do NOT infer an exterior ring bound from this dichotomy without a geometric matching of the physical angular order.
+
+No sharp `R_8>=R_*`, equality classification, or full M5 exit is established. Do not proceed to M6 as though M5 had closed.
 
 ---
 
