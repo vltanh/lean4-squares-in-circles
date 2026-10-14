@@ -1,3 +1,17 @@
+# Further analytic M5-DIFFUSE progress: intrinsic balanced-window Fourier bound (2026-10-13)
+
+[Theorem](GATE3B_M5_BALANCED_WINDOW_FOURIER.md): for every M5 frame set, write `S=sum_i exp(4i theta_i)` and let A be the intrinsic fraction of 45-degree orientation windows containing exactly four frames, equivalently the odd folded barycentric mass. Then
+
+    |S|<=2cos(pi*A/2),
+    sum_(i<j) sin²(2(theta_i-theta_j))>=15+sin²(pi*A/2)>=15+A²,
+    W>=W0+((sqrt(2)-1)/2)*sin²(pi*A/2).
+
+The proof is an elementary exact rearrangement of the semicircle window-count integral, not a numerical assertion. It strengthens the old uniform `|S|<=2` in a reanchoring-invariant way and interpolates the 3+5/4+4 reference cuts. It **does not** produce the missing sharp q bound or close DIFFUSE: even the strengthened angular inequalities do not incorporate true disk containment or all 28 SAT choices.
+
+The new global seven-order structural theorem and the exact M5-DIFFUSE positive packing just above the candidate radius (q<397/100, J>1/120) are recorded below. The next gate must exploit actual disk-center curvature with these orientation restrictions; do not claim graph/Fourier constraints suffice. **Gate 3B.2 remains OPEN.**
+
+---
+
 # Gate 3B.2 / M5-DIFFUSE: new owner structure and exact boundary audit (2026-10-13)
 
 **CURRENT GATE STILL OPEN.** A hypothetical eight-square packing at `q<=9789/2500` must be in M5-DIFFUSE `J>3/1000`, since the complete exact 3+5 and 4+4 certificates already exclude every small-J reference family. See [the fixed-frame proof replay](GATE3B_M5_HIGH_4PLUS4_CERTIFICATE_REPLAY.md) and [the low reference theorem](GATE3B_M5_LOW_EXACT_CERTIFICATE.md). The compressed 4+4 roots remain a separate research archive, not committed in this GitHub branch.
