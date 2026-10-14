@@ -8,7 +8,7 @@ Let the eight square orientations be `theta_i mod pi/2`, and assume **M5**, so n
 alpha_i=4theta_i mod 2pi,     S=sum_i exp(i alpha_i).
 ```
 
-Let `N(phi)` count the alpha_i in the half-open semicircle `[phi,phi+pi)` modulo `2pi`. Away from the finitely many endpoints, `N(phi)` lies in {3,4,5} and `N(phi+pi)=8-N(phi)`.
+Let `N(phi)` count the alpha_i in the **centered** half-open semicircle `[phi-pi/2,phi+pi/2)` modulo `2pi`. This has the SAME balanced-window proportion A as the intrinsic start-window definition, because that proportion is independent of translating the window start. Away from the finitely many endpoints, `N(phi)` lies in {3,4,5} and `N(phi+pi)=8-N(phi)`.
 
 The intrinsic Jensen theorem identifies
 
