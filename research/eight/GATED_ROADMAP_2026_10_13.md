@@ -1,3 +1,18 @@
+# Current definitive n=8 proof frontier (2026-10-13, later continuation)
+
+**Gate 3B.2 / M5 is STILL OPEN, but both small-J reference branches are now excluded by exact finite certificates.** New checked result: [GATE3B_M5_HIGH_4PLUS4_CERTIFICATE_REPLAY.md](GATE3B_M5_HIGH_4PLUS4_CERTIFICATE_REPLAY.md) proves the exact 4+4 two-frame reference impossibility at R=198869/100000, including all center arrangements, via 66 complete D4 roots and 64,067 exact rational contradiction leaves. The solver-independent checker [verify_m5_fourfour_certificate.py](verify_m5_fourfour_certificate.py), geometry model [m5_fourfour_exact_model.py](m5_fourfour_exact_model.py), and mutation tests [verify_m5_fourfour_mutations.py](verify_m5_fourfour_mutations.py) have been committed. Full compressed proof-root archive is an accompanying download, **not yet stored in GitHub**; this GitHub documentation alone is NOT a standalone replayable certificate.
+
+Together with the already completed 3+5 LOW theorem and the full-domain M5 Jensen reduction, **any hypothetical M5 packing at squared radius q<=9789/2500 must satisfy**
+
+    J > 3/1000,
+    V > 3*sqrt(2)/500,
+
+where J is the strong Jensen defect relative to the eight folded two-frame cut configurations and V is the corresponding pairwise folded-angle variance. All J<=3/1000 cases, including their boundary and both even 3+5 and odd 4+4 nearest cuts, are now excluded. HIGH defined only by the earlier W surplus is NOT the active frontier.
+
+**Next active gate: M5-DIFFUSE, J>3/1000.** Keep both folded M5 angular types, all eight true orientations, all 32 actual disk vertices, every one of 28 true SAT pair disjunctions, and possible canonical owner ties. Do not claim that V>3sqrt(2)/500 is sufficient or equivalent to J>3/1000. No full continuous center/angle cover of DIFFUSE exists yet; Gate 3B.2, M6--M8, global R_8>=R_* and equality are open. The equality-bearing S4/k7 ring and sliders must be retained. No Lean, CI or merge.
+
+---
+
 # Previous decision: M5-DIFFUSE is the only remaining M5 child (2026-10-13)
 
 **The unrestricted sharp radius remains OPEN.** This note retains the historical status below as a chronology; the present current M5 state supersedes its earlier references to LOW and small-J HIGH as unresolved.
