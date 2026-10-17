@@ -1,0 +1,23 @@
+{
+  "format": "ordered byte-exact UTF-8 parts",
+  "output": "CANDIDATE_COARSE_MISMATCH_HAND_DATA.json",
+  "bytes": 15758073,
+  "sha256": "ffa48df0d02e18880314907a72a70fcc6aaceea4ee1060ea76b4fdb04c23a5fa",
+  "parts": [
+    {
+      "name": "CANDIDATE_COARSE_MISMATCH_HAND_DATA.part01",
+      "bytes": 5500000,
+      "sha256": "37300b68dc94ec921ace1ccf0fbb4f41331d836225b741f3ef670bc0ac494326"
+    },
+    {
+      "name": "CANDIDATE_COARSE_MISMATCH_HAND_DATA.part02",
+      "bytes": 5500000,
+      "sha256": "66897708beedb618ee23c28b95378465031d3f69e060c675826a44781c26cf2a"
+    },
+    {
+      "name": "CANDIDATE_COARSE_MISMATCH_HAND_DATA.part03",
+      "bytes": 4758073,
+      "sha256": "52e6043dd99184748e803790cd3c074c6a9c52ccf09d1cb9a5f27048e6799ab2"
+    }
+  ]
+}
