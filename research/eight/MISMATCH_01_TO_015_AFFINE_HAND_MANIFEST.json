@@ -1,0 +1,62 @@
+{
+  "status": "COMPLETE_EXACT_REPLAY_AND_INDEPENDENT_CONTINUOUS_ASSEMBLY_PASS",
+  "theorem": "S<=1/10 implies S<3/200 under stated candidate boundary and tangent hypotheses",
+  "rows": 107196,
+  "angle_chains": 101280,
+  "polynomials": 292119,
+  "coefficients": 2468184,
+  "full_replay_sha256": "014c06a9373077acb965a78690669b863214eb42dc650f30619eb63553e60df3",
+  "files": [
+    {
+      "name": "MISMATCH_01_TO_015_AFFINE_HAND_THEOREM.md",
+      "bytes": 9086,
+      "sha256": "018270113e58fcbeb6abcbe3cdc2a0031dfaf2aa25db346f78298d7f21a16e40"
+    },
+    {
+      "name": "MISMATCH_01_TO_015_AFFINE_HAND_DATA.json",
+      "bytes": 13211631,
+      "sha256": "03bf9931b294d29cb9ef34bb0b9455e7ce12a0d173756d12ec6a915a5ead5fb3"
+    },
+    {
+      "name": "MISMATCH_01_TO_015_AFFINE_HAND_COMPACT_REPORT.json",
+      "bytes": 10054377,
+      "sha256": "7646a100a7f0ac79b41634d8e26ffd89cfd710e2d553e5fb2267f482df433cdf"
+    },
+    {
+      "name": "verify_mismatch_01_to_015_affine_hand.js",
+      "bytes": 16986,
+      "sha256": "6af3d41fe7d404da7dd286c46644160f5444edd3028d864701266e9a4cd18697"
+    },
+    {
+      "name": "replay_mismatch_01_to_015_hand.py",
+      "bytes": 1938,
+      "sha256": "8b11a6aea8d6b61aa70ba599695fb88e00b609b131ecce4a5418612dc20870ef"
+    },
+    {
+      "name": "audit_mismatch_01_to_015_hand_assembly.py",
+      "bytes": 7081,
+      "sha256": "e58fb0c7a3d57509f1affe39f69f4b4f210de17b1795b0d12d5f45e97c415b66"
+    },
+    {
+      "name": "MISMATCH_01_TO_015_AFFINE_HAND_ASSEMBLY_AUDIT.json",
+      "bytes": 1545,
+      "sha256": "515c24202e3479102b2c3a23b508eaa8c92692a4f2f10fb8b24250680afc3f4f"
+    },
+    {
+      "name": "MISMATCH_01_TO_015_INDEPENDENT_AUDIT.md",
+      "bytes": 9073,
+      "sha256": "34f2035cd4f149f0a8b625e34d028b27da3f992d565b5c786f41237b7b7249a9"
+    },
+    {
+      "name": "audit_mismatch_01_to_015_independently.py",
+      "bytes": 11920,
+      "sha256": "a4558aac11d6bdf424a37128000c3f93a8e8346c5f3af7fb1ac120355169f912"
+    },
+    {
+      "name": "MISMATCH_01_TO_015_INDEPENDENT_ASSEMBLY.json",
+      "bytes": 3709,
+      "sha256": "35bc5056add638c96a6810b172bb3c4ac874246e581cad9adf6fd0ffd82290e0"
+    }
+  ],
+  "independent_review": "Shifted-atan reconstruction of every closed state/conditional angle union, scope and exact cyclic contraction; all PASS."
+}

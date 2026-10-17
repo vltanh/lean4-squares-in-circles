@@ -1,0 +1,40 @@
+{
+  "status": "PASS_INDEPENDENTLY_REVIEWED_CONDITIONAL_FIXED_CEILING_TRANSFER",
+  "scope": "Universal fixed-ceiling boundary capture at Q1 with S<=1/1000 implies the exact sharp lower bound and the existing original-center equality classification. The proof preserves initial witnesses under outward radius changes and recovers an already feasible boundary cycle; no inward monotonicity or center tolerance is assumed.",
+  "external_hypothesis": "Complete global fixed-ceiling mismatch capture S<=1/1000, plus the explicitly cited central-core, radial reduction, sharp-root bracket and equality theorems.",
+  "Q1": "1957767069/500000000",
+  "qminus": "7831/2000",
+  "monotonicity_radius_range": [
+    "5/2",
+    "4"
+  ],
+  "mixed_sign_outer_outer_derivative_lower": "1/24",
+  "core_outer_derivative_lower": "1/30",
+  "fixed_strict_scalar_comparisons": 13,
+  "independent_flat_replay": "byte-identical; no stderr",
+  "capture_package_sha256": "dd0146dd4262476704293ad8928921d15e5184212490d7eb8c9406e7b7bf8bf6",
+  "files": {
+    "HAND_FIXED_CEILING_TRANSFER_WITH_AUTOMATIC_TERMINAL.md": {
+      "sha256": "09c574dbcad7353057ef247341424e2f6bc158c2ed1329bd7a125223ab062265",
+      "bytes": 9143
+    },
+    "CANDIDATE_FIXED_CEILING_TRANSFER_INDEPENDENT_AUDIT.md": {
+      "sha256": "a701922b308d7bf374dae4bf6a1ffc1b88f5347dd770cdbf53bee54798c02500",
+      "bytes": 5772
+    },
+    "audit_candidate_fixed_ceiling_transfer_independently.py": {
+      "sha256": "e12ae153a936b4fcd80837e39a8dc1822a7af874dad84dca1efcb7119d42df5f",
+      "bytes": 2823
+    },
+    "candidate_fixed_ceiling_transfer_independent_audit.json": {
+      "sha256": "73d8aec156f95c9b1c5ff4ac2a709902ad59dc4b5e1389fc33f2110caa8232f6",
+      "bytes": 2303
+    }
+  },
+  "bound_existing_inputs": {
+    "HAND_FIXED_CEILING_TRANSFER_WITH_AUTOMATIC_TERMINAL.md": "09c574dbcad7353057ef247341424e2f6bc158c2ed1329bd7a125223ab062265",
+    "HAND_CANDIDATE_CAPTURE_AT_ONE_THOUSANDTH.md": "7ee1a11292c08b979d9ba22296bbd4e849ff61ec90ab1af65c5de717d0ec0a4b",
+    "HAND_TERMINAL_WITH_AUTOMATIC_SLIDERS.md": "624fb9ffc0b819ae0aa5e891a4ca2f541b5b7562df789e5617a4e8c3d03d5d90",
+    "CANDIDATE_CAPTURE_AT_ONE_THOUSANDTH_HAND_MANIFEST.json": "dd0146dd4262476704293ad8928921d15e5184212490d7eb8c9406e7b7bf8bf6"
+  }
+}
