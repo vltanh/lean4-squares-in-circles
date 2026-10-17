@@ -65,20 +65,22 @@ An unordered off-diagonal entry consists of sixteen. The present state is:
 | Pair entry | Whole source-axis branches | Hand coverage currently established |
 |---|---:|---|
 | C/C | 8 | **Complete**, all signs, all axes, all frame angles |
-| C/L | 16 | Whole-domain proof pending |
+| C/L | 16 | **Complete**, all signs, all axes, all frame angles |
 | C/M | 16 | One signed source-axis strip, specified below |
 | C/H | 16 | Whole-domain proof pending |
-| L/L | 8 | Whole-domain proof pending |
+| L/L | 8 | **Complete**, all signs, all axes, all frame angles |
 | L/M | 16 | Whole-domain proof pending |
 | L/H | 16 | Four signed source-axis strips, specified below |
 | M/M | 8 | Whole-domain proof pending |
 | M/H | 16 | Whole-domain proof pending |
 | H/H | 8 | Whole-domain proof pending |
 
-Thus eight whole branches are proved. Five further branches have proved
-proper subintervals. The remaining 115 branches have not yet been
-covered by the listed hand notes. All 120 non-core/core whole branches
-still require some additional argument.
+Thus 32 whole source-axis branches are proved, comprising C/C, C/L, and
+L/L. Five further branches have proved proper subintervals. The remaining
+91 branches have not yet been covered by the listed hand notes. All 96
+branches in the seven other pair entries still require some additional
+argument. The [independent low-entry audit](LOW_FRAME_ENTRIES_INDEPENDENT_AUDIT.md)
+records the two new complete entries.
 
 ## 3. Exact scope of the proved strips
 
@@ -89,6 +91,8 @@ source-axis branch in the count above.
 | Source, target | Signs | Source axis | Complete interval in this note | Proof file |
 |---|---|---|---|---|
 | C, C | all four choices | both | all admissible \(\phi\) | `CORE_CORE_WHOLE_PAIR_HAND_PROOF.md` |
+| C, L and L, C | all four choices | both | all admissible \(\phi\) | `CORE_LOW_WHOLE_PAIR_HAND_PROOF.md` |
+| L, L | all four choices | both | all admissible \(\phi\) | `LOW_LOW_WHOLE_PAIR_HAND_PROOF.md` |
 | L, H | \((+,-)\) | \(+f\) | \([-1/50,1/50]\) | `LOW_HIGH_PARALLEL_STRIP_HAND_PROOF.md` |
 | H, L | \((+,-)\) | \(+f\) | \([-1/50,1/50]\) | `LOW_HIGH_PARALLEL_STRIP_HAND_PROOF.md` |
 | L, H | \((+,+)\) | \(+f\) | \([\pi/2-1/50,\pi/2+1/50]\) | `LOW_HIGH_QUARTER_STRIP_HAND_REDUCTION.md` |
@@ -148,7 +152,8 @@ The second version is the current proposed whole-domain target:
  \end{pmatrix}.}                                         \tag{1}
 \]
 
-Only its C/C entry and the listed strips have hand proofs at present.
+Its C/C, C/L and L/L entries and the listed strips have hand proofs at
+present.
 The matrix is a target, not a completed certificate.
 
 ## 5. The repaired finite graph budget has a short hand proof
