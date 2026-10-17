@@ -1,0 +1,343 @@
+{
+  "status": "PASS",
+  "strict_comparisons": 84,
+  "method": "Eight supplied radical brackets and fixed rational interval comparisons; no subdivision.",
+  "checks": [
+    {
+      "name": "test x1 lower square",
+      "positive_reserve": "3246548129231/1000000000000000000000000"
+    },
+    {
+      "name": "test x1 upper square",
+      "positive_reserve": "3420535878921/1000000000000000000000000"
+    },
+    {
+      "name": "test x2 lower square",
+      "positive_reserve": "135798479/156250000000000000000"
+    },
+    {
+      "name": "test x2 upper square",
+      "positive_reserve": "1827387826361/1000000000000000000000000"
+    },
+    {
+      "name": "test y3 lower square",
+      "positive_reserve": "7452153499/8000000000000000000000"
+    },
+    {
+      "name": "test y3 upper square",
+      "positive_reserve": "533708187793/500000000000000000000000"
+    },
+    {
+      "name": "test -x4 lower square",
+      "positive_reserve": "2836104007851/1000000000000000000000000"
+    },
+    {
+      "name": "test -x4 upper square",
+      "positive_reserve": "45178540689/20000000000000000000000"
+    },
+    {
+      "name": "test Fy lower",
+      "positive_reserve": "178153354759745585198351557519319797224242728440216713265479311039/3374602469406692768458237532997149170628680606757338653489211153125000"
+    },
+    {
+      "name": "test Fy upper",
+      "positive_reserve": "1150952366171516755944929926527202841658491500913709953176704939/1265475840201701424327843480519956674541745488173517975848841087500000"
+    },
+    {
+      "name": "test Ft lower",
+      "positive_reserve": "144017686802854080851536844286899/201535580247038420000000000000000000000"
+    },
+    {
+      "name": "test Ft upper",
+      "positive_reserve": "9543894628075072931096472144462393/503838950617596050000000000000000000000"
+    },
+    {
+      "name": "tilt displacement below .00005",
+      "positive_reserve": "1/1500000"
+    },
+    {
+      "name": "position displacement below .0000545",
+      "positive_reserve": "1/1500000"
+    },
+    {
+      "name": "stationary cosine lower",
+      "positive_reserve": "15133751/2509579025000"
+    },
+    {
+      "name": "stationary cosine upper",
+      "positive_reserve": "39848157/10038316100000"
+    },
+    {
+      "name": "stationary sine lower",
+      "positive_reserve": "18714637/2509579025000"
+    },
+    {
+      "name": "stationary sine upper",
+      "positive_reserve": "25524613/10038316100000"
+    },
+    {
+      "name": "stationary y lower",
+      "positive_reserve": "11/2000000"
+    },
+    {
+      "name": "stationary y upper",
+      "positive_reserve": "11/2000000"
+    },
+    {
+      "name": "stationary tilt below .125",
+      "positive_reserve": "23/20000"
+    },
+    {
+      "name": "stationary x1 lower square",
+      "positive_reserve": "33366612959/40000000000000000000000"
+    },
+    {
+      "name": "stationary x1 upper square",
+      "positive_reserve": "836630055009/250000000000000000000000"
+    },
+    {
+      "name": "stationary x2 lower square",
+      "positive_reserve": "1555431/156250000000000000000"
+    },
+    {
+      "name": "stationary x2 upper square",
+      "positive_reserve": "52351836641/250000000000000000000000"
+    },
+    {
+      "name": "stationary y3 lower square",
+      "positive_reserve": "2664002582871/1000000000000000000000000"
+    },
+    {
+      "name": "stationary y3 upper square",
+      "positive_reserve": "134277883501/50000000000000000000000"
+    },
+    {
+      "name": "stationary -x4 lower square",
+      "positive_reserve": "6995386719/20000000000000000000000"
+    },
+    {
+      "name": "stationary -x4 upper square",
+      "positive_reserve": "2226354914857/1000000000000000000000000"
+    },
+    {
+      "name": "x1 lower",
+      "positive_reserve": "278929/200000000000"
+    },
+    {
+      "name": "x1 upper",
+      "positive_reserve": "2751247/500000000000"
+    },
+    {
+      "name": "x2 lower",
+      "positive_reserve": "68163/12500000000"
+    },
+    {
+      "name": "x2 upper",
+      "positive_reserve": "3209871/500000000000"
+    },
+    {
+      "name": "y3 lower",
+      "positive_reserve": "7893773/1000000000000"
+    },
+    {
+      "name": "y3 upper",
+      "positive_reserve": "626101/62500000000"
+    },
+    {
+      "name": "-x4 lower",
+      "positive_reserve": "1197789/1000000000000"
+    },
+    {
+      "name": "-x4 upper",
+      "positive_reserve": "8105549/1000000000000"
+    },
+    {
+      "name": "h1 lower",
+      "positive_reserve": "99906403599/20000000000000000"
+    },
+    {
+      "name": "h1 upper",
+      "positive_reserve": "91057127387/25000000000000000"
+    },
+    {
+      "name": "h2 lower",
+      "positive_reserve": "559228965069/100000000000000000"
+    },
+    {
+      "name": "h2 upper",
+      "positive_reserve": "54452158429/50000000000000000"
+    },
+    {
+      "name": "H_x lower",
+      "positive_reserve": "14548755010942089/2500000000000000000000"
+    },
+    {
+      "name": "H_x upper",
+      "positive_reserve": "2839452620197891/1000000000000000000000"
+    },
+    {
+      "name": "H_y lower",
+      "positive_reserve": "8869028373675001/1250000000000000000000"
+    },
+    {
+      "name": "H_y upper",
+      "positive_reserve": "29674264551667197/5000000000000000000000"
+    },
+    {
+      "name": "T own horizontal center lower",
+      "positive_reserve": "1980443163/12500000000"
+    },
+    {
+      "name": "T own horizontal center upper",
+      "positive_reserve": "170743209871/500000000000"
+    },
+    {
+      "name": "G own first center lower",
+      "positive_reserve": "2640699906403599/20000000000000000"
+    },
+    {
+      "name": "G own first center upper",
+      "positive_reserve": "9187091057127387/25000000000000000"
+    },
+    {
+      "name": "H top first coefficient",
+      "positive_reserve": "9187091057127387/25000000000000000"
+    },
+    {
+      "name": "H top second coefficient",
+      "positive_reserve": "21488054452158429/50000000000000000"
+    },
+    {
+      "name": "B bottom",
+      "positive_reserve": "7929/100000"
+    },
+    {
+      "name": "D bottom",
+      "positive_reserve": "454557893773/1000000000000"
+    },
+    {
+      "name": "right column gap",
+      "positive_reserve": "93007814387/1000000000000"
+    },
+    {
+      "name": "left column gap",
+      "positive_reserve": "560546650829/1000000000000"
+    },
+    {
+      "name": "G largest top",
+      "positive_reserve": "815789731418850403/1250000000000000000000"
+    },
+    {
+      "name": "G smallest left",
+      "positive_reserve": "96670055652985979/1000000000000000000000"
+    },
+    {
+      "name": "E right edge",
+      "positive_reserve": "1197789/1000000000000"
+    },
+    {
+      "name": "A in negative-f halfplane",
+      "positive_reserve": "11432614104357783/20000000000000000"
+    },
+    {
+      "name": "H to A determinant",
+      "positive_reserve": "1602276922083582182474185557592013/1000000000000000000000000000000000"
+    },
+    {
+      "name": "B in first quadrant x",
+      "positive_reserve": "14480443163/12500000000"
+    },
+    {
+      "name": "B in first quadrant y",
+      "positive_reserve": "57929/100000"
+    },
+    {
+      "name": "D in second quadrant x",
+      "positive_reserve": "420743209871/500000000000"
+    },
+    {
+      "name": "D in second quadrant y",
+      "positive_reserve": "954557893773/1000000000000"
+    },
+    {
+      "name": "H off diagonal y=x",
+      "positive_reserve": "11310870174196588411/40000000000000000000"
+    },
+    {
+      "name": "H off diagonal y=-x",
+      "positive_reserve": "2219485967881913164163/1250000000000000000000"
+    },
+    {
+      "name": "central square fits automatically",
+      "positive_reserve": "201148069/90000000"
+    },
+    {
+      "name": "central angle strictly above outer tilt",
+      "positive_reserve": "3715331369/50490050000"
+    },
+    {
+      "name": "central frame below quarter diagonal",
+      "positive_reserve": "787799/1010201"
+    },
+    {
+      "name": "central separation A",
+      "positive_reserve": "50426582163283698929/204020396000200000000000"
+    },
+    {
+      "name": "central separation B",
+      "positive_reserve": "40800582145316837/12751274750012500000000"
+    },
+    {
+      "name": "central separation D",
+      "positive_reserve": "283257234819869682227/1020101980001000000000000"
+    },
+    {
+      "name": "central separation E",
+      "positive_reserve": "853792265821633417789/1020101980001000000000000"
+    },
+    {
+      "name": "central separation H",
+      "positive_reserve": "100713748469493611667270863309/1020101980001000000000000000000000"
+    },
+    {
+      "name": "central separation G",
+      "positive_reserve": "12008561674333498696576191940432901/39234691538500000000000000000000000000"
+    },
+    {
+      "name": "central separation T",
+      "positive_reserve": "740359181091/1020101980001000"
+    },
+    {
+      "name": "central own first center lower",
+      "positive_reserve": "277798/1010201"
+    },
+    {
+      "name": "central own first center upper",
+      "positive_reserve": "13697314957/25502549500025"
+    },
+    {
+      "name": "central own second center lower",
+      "positive_reserve": "841607298031/1020101980001000"
+    },
+    {
+      "name": "central own second center upper",
+      "positive_reserve": "56825831/1009801000"
+    },
+    {
+      "name": "T strict core avoidance",
+      "positive_reserve": "2297/3000"
+    },
+    {
+      "name": "G strict core avoidance",
+      "positive_reserve": "99814163356475287/150000000000000000"
+    },
+    {
+      "name": "T disk reserve",
+      "positive_reserve": "173241153947648163359/250000000000000000000000"
+    },
+    {
+      "name": "G disk reserve",
+      "positive_reserve": "1410510901522808897659530132187/2000000000000000000000000000000000"
+    }
+  ]
+}

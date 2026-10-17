@@ -1,0 +1,1258 @@
+{
+  "status": "PASS",
+  "comparison_count": 213,
+  "polynomial_rows": [
+    {
+      "id": "CMpositivef",
+      "degree": 16,
+      "lo": ".7",
+      "hi": "1.53",
+      "bern_lower_numerators": [
+        930757,
+        865698,
+        798263,
+        729205,
+        659251,
+        589108,
+        519469,
+        451021,
+        384457,
+        320478,
+        259803,
+        203178,
+        151376,
+        105205,
+        65512,
+        33176,
+        9117
+      ],
+      "denominator": 1000000,
+      "T_lower": 4,
+      "T_degree": 8
+    }
+  ],
+  "curvature_table": [
+    {
+      "x": ".6",
+      "slo": 56464,
+      "shi": 56465,
+      "clo": 82533,
+      "chi": 82534,
+      "zhi": 179424,
+      "nlo": 374711
+    },
+    {
+      "x": ".7",
+      "slo": 64421,
+      "shi": 64422,
+      "clo": 76484,
+      "chi": 76485,
+      "zhi": 177007,
+      "nlo": 353482
+    },
+    {
+      "x": ".8",
+      "slo": 71735,
+      "shi": 71736,
+      "clo": 69670,
+      "chi": 69671,
+      "zhi": 174969,
+      "nlo": 338316
+    },
+    {
+      "x": ".9",
+      "slo": 78332,
+      "shi": 78333,
+      "clo": 62160,
+      "chi": 62161,
+      "zhi": 173272,
+      "nlo": 327185
+    },
+    {
+      "x": "1",
+      "slo": 84147,
+      "shi": 84148,
+      "clo": 54030,
+      "chi": 54031,
+      "zhi": 171878,
+      "nlo": 318896
+    },
+    {
+      "x": "1.04",
+      "slo": 86240,
+      "shi": 86241,
+      "clo": 50622,
+      "chi": 50623,
+      "zhi": 171398,
+      "nlo": 316201
+    },
+    {
+      "x": "1.08",
+      "slo": 88195,
+      "shi": 88196,
+      "clo": 47132,
+      "chi": 47133,
+      "zhi": 170961,
+      "nlo": 313805
+    },
+    {
+      "x": "1.12",
+      "slo": 90010,
+      "shi": 90011,
+      "clo": 43568,
+      "chi": 43569,
+      "zhi": 170563,
+      "nlo": 311680
+    },
+    {
+      "x": "1.16",
+      "slo": 91680,
+      "shi": 91681,
+      "clo": 39933,
+      "chi": 39934,
+      "zhi": 170204,
+      "nlo": 309802
+    },
+    {
+      "x": "1.2",
+      "slo": 93203,
+      "shi": 93204,
+      "clo": 36235,
+      "chi": 36236,
+      "zhi": 169882,
+      "nlo": 308152
+    }
+  ],
+  "curvature_intervals": [
+    {
+      "i": 0,
+      "Blower_numerator": 32188,
+      "Dlower_numerator": 55193,
+      "B": "3772125854053/11718750000000",
+      "D": "26956715571268133999867304252556301721224037650203687/48840475882325792048175866518401765294101898240000000"
+    },
+    {
+      "i": 1,
+      "Blower_numerator": 28895,
+      "Dlower_numerator": 46704,
+      "B": "34675099758611/120000000000000",
+      "D": "2309578780833117196193768825038522146677434299917/4945062515707287753482224252990588540692096000000"
+    },
+    {
+      "i": 2,
+      "Blower_numerator": 23320,
+      "Dlower_numerator": 34899,
+      "B": "233206857420471/1000000000000000",
+      "D": "576234365385737087166802784585901304592857100234178123/1651106471943272697321084068844752280363436585937500000"
+    },
+    {
+      "i": 3,
+      "Blower_numerator": 15480,
+      "Dlower_numerator": 22276,
+      "B": "19350966313561/125000000000000",
+      "D": "98915623911748571348241163811752184652927240478029939/444033290728191579779107201800614724755537223680000000"
+    },
+    {
+      "i": 4,
+      "Blower_numerator": 16819,
+      "Dlower_numerator": 30005,
+      "B": "84096517690621/500000000000000",
+      "D": "298898517339491187814608643630246219420850216681147033/996162188182776102135233704970608424952146144835000000"
+    },
+    {
+      "i": 5,
+      "Blower_numerator": 12424,
+      "Dlower_numerator": 23091,
+      "B": "186363789448487/1500000000000000",
+      "D": "55553827525637578944340163076578062917680606851353/240577122323822620317308985882370686848000000000000"
+    },
+    {
+      "i": 6,
+      "Blower_numerator": 7672,
+      "Dlower_numerator": 16401,
+      "B": "230166224046613/3000000000000000",
+      "D": "342361407036464108426689577041052544608603348226653253/2087418123340108342732851757233030502147328000000000000"
+    },
+    {
+      "i": 7,
+      "Blower_numerator": 2563,
+      "Dlower_numerator": 9851,
+      "B": "25638237610557/1000000000000000",
+      "D": "463014018369283065651495613681353720049149141080372559/4700063709527939380188143164645743175492368235250000000"
+    },
+    {
+      "i": 8,
+      "Blower_numerator": -2891,
+      "Dlower_numerator": 3183,
+      "B": "-5419567879117/187500000000000",
+      "D": "2856680314294392458503140656983388999/89724472981501331710593073152000000000"
+    }
+  ],
+  "checks": [
+    {
+      "name": "R upper",
+      "pass": true,
+      "gap": "121809/62500000000"
+    },
+    {
+      "name": "M low lower",
+      "pass": true,
+      "gap": "62968656847/16000000000000000000"
+    },
+    {
+      "name": "M low upper",
+      "pass": true,
+      "gap": "65346156017/16000000000000000000"
+    },
+    {
+      "name": "M high lower",
+      "pass": true,
+      "gap": "185112539/61250000000000000"
+    },
+    {
+      "name": "M high upper",
+      "pass": true,
+      "gap": "33767171869/6125000000000000000"
+    },
+    {
+      "name": "core diagonal lower",
+      "pass": true,
+      "gap": "276191/18000000000000"
+    },
+    {
+      "name": "core diagonal upper",
+      "pass": true,
+      "gap": "57841/7031250000000"
+    },
+    {
+      "name": "core label maximum<.786",
+      "pass": true,
+      "gap": "3608373127/6000000000000"
+    },
+    {
+      "name": "core center radius<.8",
+      "pass": true,
+      "gap": "11878396351/781250000000"
+    },
+    {
+      "name": "M center radius<1.34",
+      "pass": true,
+      "gap": "54944914653843983/16000000000000000000"
+    },
+    {
+      "name": "M lower label>.3046",
+      "pass": true,
+      "gap": "24307508977/4000000000000000"
+    },
+    {
+      "name": "M lower label<.30461",
+      "pass": true,
+      "gap": "15677413841/4000000000000000"
+    },
+    {
+      "name": "M high label>.4555",
+      "pass": true,
+      "gap": "47391341/5468750000000"
+    },
+    {
+      "name": "M high label<.455511",
+      "pass": true,
+      "gap": "127412093/54687500000000"
+    },
+    {
+      "name": "M r>.458",
+      "pass": true,
+      "gap": "215142927/250000000000"
+    },
+    {
+      "name": "M r<.597",
+      "pass": true,
+      "gap": "171144437/350000000000"
+    },
+    {
+      "name": "M derivative positive",
+      "pass": true,
+      "gap": "690931979/1000000000"
+    },
+    {
+      "name": "M derivative<.898",
+      "pass": true,
+      "gap": "7297/500000000"
+    },
+    {
+      "name": "M derivative<1 and g",
+      "pass": true,
+      "gap": "51/500"
+    },
+    {
+      "name": "g>1",
+      "pass": true,
+      "gap": "19343/250000"
+    },
+    {
+      "name": "high b<.513966884",
+      "pass": true,
+      "gap": "1/3500000000"
+    },
+    {
+      "name": "high b-.5<.014",
+      "pass": true,
+      "gap": "115907/3500000000"
+    },
+    {
+      "name": "low b+.5>.8246",
+      "pass": true,
+      "gap": "347247/4000000000"
+    },
+    {
+      "name": "M a-.5<.799",
+      "pass": true,
+      "gap": "252751/1000000000"
+    },
+    {
+      "name": "M a+.5>1.699",
+      "pass": true,
+      "gap": "12803/50000000"
+    },
+    {
+      "name": "core b-.5<.059",
+      "pass": true,
+      "gap": "93/1250000"
+    },
+    {
+      "name": "core a+.5>1.058",
+      "pass": true,
+      "gap": "1851/2000000"
+    },
+    {
+      "name": "sqrt2<1.42",
+      "pass": true,
+      "gap": "41/2500"
+    },
+    {
+      "name": "M angle<.405",
+      "pass": true,
+      "gap": "816447/8070721400"
+    },
+    {
+      "name": "core angle<.786",
+      "pass": true,
+      "gap": "17/28250"
+    },
+    {
+      "name": "all frame differences>-.432",
+      "pass": true,
+      "gap": "181/113000"
+    },
+    {
+      "name": "unrestricted tail at2.18",
+      "pass": true,
+      "gap": "189/1000000"
+    },
+    {
+      "name": "core source primary impossible through1.5",
+      "pass": true,
+      "gap": "3144568487/137625600000"
+    },
+    {
+      "name": "core-primary negative target direct",
+      "pass": true,
+      "gap": "803/10000"
+    },
+    {
+      "name": "sin2.18>.820",
+      "pass": true,
+      "gap": "19491420678465504124291/194906250000000000000000000"
+    },
+    {
+      "name": "cos2.18>-.573",
+      "pass": true,
+      "gap": "270031447352220501599/354375000000000000000000"
+    },
+    {
+      "name": "core primary positive target through2.18",
+      "pass": true,
+      "gap": "81007/600000"
+    },
+    {
+      "name": "core primary positive target in QI",
+      "pass": true,
+      "gap": "11119/15000"
+    },
+    {
+      "name": "core negative f source is on side",
+      "pass": true,
+      "gap": "4/25"
+    },
+    {
+      "name": "positive M target f excluded to .7",
+      "pass": true,
+      "gap": "4273/1000000"
+    },
+    {
+      "name": "negative M target parallel low",
+      "pass": true,
+      "gap": "53163519712593/1000000000000000"
+    },
+    {
+      "name": "negative M target sine coefficient bound low",
+      "pass": true,
+      "gap": "363019712593/250000000000000"
+    },
+    {
+      "name": "negative M target positive sine coefficient low",
+      "pass": true,
+      "gap": "237636979748721/250000000000000"
+    },
+    {
+      "name": "negative M target D lower low",
+      "pass": true,
+      "gap": "204877519712593/1000000000000000"
+    },
+    {
+      "name": "negative M target D upper low",
+      "pass": true,
+      "gap": "7122479748721/1000000000000000"
+    },
+    {
+      "name": "negative-angle coefficient E>1.74 low",
+      "pass": true,
+      "gap": "26979979748721/250000000000000"
+    },
+    {
+      "name": "negative M target parallel high",
+      "pass": true,
+      "gap": "121161739101/875000000000000"
+    },
+    {
+      "name": "negative M target sine coefficient bound high",
+      "pass": true,
+      "gap": "13580137246367/125000000000000"
+    },
+    {
+      "name": "negative M target positive sine coefficient high",
+      "pass": true,
+      "gap": "10541986248429/12500000000000"
+    },
+    {
+      "name": "negative M target D lower high",
+      "pass": true,
+      "gap": "833411739101/875000000000000"
+    },
+    {
+      "name": "negative M target D upper high",
+      "pass": true,
+      "gap": "18466658745287/87500000000000"
+    },
+    {
+      "name": "negative-angle coefficient E>1.74 high",
+      "pass": true,
+      "gap": "9136248429/12500000000000"
+    },
+    {
+      "name": "negative M target derivative amplitude",
+      "pass": true,
+      "gap": "4123/50000"
+    },
+    {
+      "name": "negative-angle endpoint derivative",
+      "pass": true,
+      "gap": "207752/390625"
+    },
+    {
+      "name": "positive-M target upper support at1.53",
+      "pass": true,
+      "gap": "396778649673852476668715636678394560617/91520000000000000000000000000000000000000"
+    },
+    {
+      "name": "positive-M support derivative stays negative",
+      "pass": true,
+      "gap": "1921563707500951409784543395045961/1971200000000000000000000000000000"
+    },
+    {
+      "name": "positive-M endpoint QI cost decreases",
+      "pass": true,
+      "gap": "62148484719745596048269363901964825171/39200000000000000000000000000000000000000"
+    },
+    {
+      "name": "shared quarter endpoint>.9006",
+      "pass": true,
+      "gap": "1387246367/125000000000000"
+    },
+    {
+      "name": "positive-M endpoint QII derivative loss<.11",
+      "pass": true,
+      "gap": "4333411739101/875000000000000"
+    },
+    {
+      "name": "M-source negative-core parallel>.979",
+      "pass": true,
+      "gap": "121161739101/875000000000000"
+    },
+    {
+      "name": "M-source negative-core positive-angle derivative amplitude",
+      "pass": true,
+      "gap": "766359665443/1000000000000"
+    },
+    {
+      "name": "negative-angle core coefficient remains positive",
+      "pass": true,
+      "gap": "99078430477/14167000000"
+    },
+    {
+      "name": "negative-angle M/core derivative",
+      "pass": true,
+      "gap": "5252493388069199/68125000000000000"
+    },
+    {
+      "name": "M-source positive-core f impossible to1.2",
+      "pass": true,
+      "gap": "13/500"
+    },
+    {
+      "name": "M-source positive-core QI derivative amplitude",
+      "pass": true,
+      "gap": "30472146351/781250000000"
+    },
+    {
+      "name": "M-source positive-core QII derivative loss",
+      "pass": true,
+      "gap": "1063843/1250000"
+    },
+    {
+      "name": "M-source positive-core endpoint1.2",
+      "pass": true,
+      "gap": "4781563117126008419/610961914062500000000"
+    },
+    {
+      "name": "M-source primary impossible to .6",
+      "pass": true,
+      "gap": "829/25000"
+    },
+    {
+      "name": "primary cancellation K>g/s",
+      "pass": true,
+      "gap": "263044757/47000000"
+    },
+    {
+      "name": "sin1.2>.932",
+      "pass": true,
+      "gap": "7347383/187988281250"
+    },
+    {
+      "name": "sin1.94>.932",
+      "pass": true,
+      "gap": "119700556190031130548247/194906250000000000000000000"
+    },
+    {
+      "name": "M-source primary selects high from1.2",
+      "pass": true,
+      "gap": "189380107/233000000000"
+    },
+    {
+      "name": "primary endpoint G(1.2)>.902",
+      "pass": true,
+      "gap": "2001781284038744191246803/13049675441481250000000000000"
+    },
+    {
+      "name": "primary G'(1.2)>0",
+      "pass": true,
+      "gap": "122841531364376952625845894578260427/5596243707468102692876250000000000000"
+    },
+    {
+      "name": "cos1.2<.363",
+      "pass": true,
+      "gap": "344956013/537109375000"
+    },
+    {
+      "name": "primary G''' negative numerator",
+      "pass": true,
+      "gap": "25880524913/30000000000"
+    },
+    {
+      "name": "cos1.94>-.362",
+      "pass": true,
+      "gap": "397363353281823398951/354375000000000000000000"
+    },
+    {
+      "name": "primary QII G derivative",
+      "pass": true,
+      "gap": "534575969/1085780000"
+    },
+    {
+      "name": "primary side/negative-target direct tail1.94",
+      "pass": true,
+      "gap": "7503/1000000"
+    },
+    {
+      "name": "sin2.13>.847",
+      "pass": true,
+      "gap": "3326008272058120663052323/4928000000000000000000000000"
+    },
+    {
+      "name": "cos2.13>-.532",
+      "pass": true,
+      "gap": "6589639213473773504471/4480000000000000000000000"
+    },
+    {
+      "name": "positive-core corner blocked to2.13",
+      "pass": true,
+      "gap": "11758253/3000000000"
+    },
+    {
+      "name": "corner barrier forces b<.381",
+      "pass": true,
+      "gap": "22897/16000000"
+    },
+    {
+      "name": "corner barrier forces M<.394",
+      "pass": true,
+      "gap": "406750120343/1000000000000000"
+    },
+    {
+      "name": "positive-core corner final cost",
+      "pass": true,
+      "gap": "117/10000"
+    },
+    {
+      "name": "curvature sin lower .6",
+      "pass": true,
+      "gap": "59516063/24062500000000"
+    },
+    {
+      "name": "curvature sin upper .6",
+      "pass": true,
+      "gap": "235441611539/31281250000000000"
+    },
+    {
+      "name": "curvature cos lower .6",
+      "pass": true,
+      "gap": "2456521/437500000000"
+    },
+    {
+      "name": "curvature cos upper .6",
+      "pass": true,
+      "gap": "301474959/68750000000000"
+    },
+    {
+      "name": "curvature Z upper .6",
+      "pass": true,
+      "gap": "517886423976326318157819519/778365062500000000000000000000"
+    },
+    {
+      "name": "curvature N lower .6",
+      "pass": true,
+      "gap": "1724364870617199/12753184900000000000"
+    },
+    {
+      "name": "curvature sin lower .7",
+      "pass": true,
+      "gap": "4383569535751/570240000000000000"
+    },
+    {
+      "name": "curvature sin upper .7",
+      "pass": true,
+      "gap": "20573741400997199/8895744000000000000000"
+    },
+    {
+      "name": "curvature cos lower .7",
+      "pass": true,
+      "gap": "11338733393/5184000000000000"
+    },
+    {
+      "name": "curvature cos upper .7",
+      "pass": true,
+      "gap": "534614741885657/68428800000000000000"
+    },
+    {
+      "name": "curvature Z upper .7",
+      "pass": true,
+      "gap": "343770952728563599498388063363/518758155125000000000000000000000"
+    },
+    {
+      "name": "curvature N lower .7",
+      "pass": true,
+      "gap": "164033990414161/1280924100000000000"
+    },
+    {
+      "name": "curvature sin lower .8",
+      "pass": true,
+      "gap": "1483940837/243632812500000"
+    },
+    {
+      "name": "curvature sin upper .8",
+      "pass": true,
+      "gap": "116071938581/29692749023437500"
+    },
+    {
+      "name": "curvature cos lower .8",
+      "pass": true,
+      "gap": "14859839/2214843750000"
+    },
+    {
+      "name": "curvature cos upper .8",
+      "pass": true,
+      "gap": "1717951891/522070312500000"
+    },
+    {
+      "name": "curvature Z upper .8",
+      "pass": true,
+      "gap": "15568073537770824014725153587/25729551125000000000000000000000"
+    },
+    {
+      "name": "curvature N lower .8",
+      "pass": true,
+      "gap": "82603025980921/893412100000000000"
+    },
+    {
+      "name": "curvature sin lower .9",
+      "pass": true,
+      "gap": "340504438511/49280000000000000"
+    },
+    {
+      "name": "curvature sin upper .9",
+      "pass": true,
+      "gap": "113132351341371/36608000000000000000"
+    },
+    {
+      "name": "curvature cos lower .9",
+      "pass": true,
+      "gap": "4465522279/448000000000000"
+    },
+    {
+      "name": "curvature cos upper .9",
+      "pass": true,
+      "gap": "8934244419/281600000000000000"
+    },
+    {
+      "name": "curvature Z upper .9",
+      "pass": true,
+      "gap": "17010219979066118996079035551/23968368062500000000000000000000"
+    },
+    {
+      "name": "curvature N lower .9",
+      "pass": true,
+      "gap": "8703536427836631/68178432100000000000"
+    },
+    {
+      "name": "curvature sin lower 1",
+      "pass": true,
+      "gap": "4913/4989600000"
+    },
+    {
+      "name": "curvature sin upper 1",
+      "pass": true,
+      "gap": "7017223/778377600000"
+    },
+    {
+      "name": "curvature cos lower 1",
+      "pass": true,
+      "gap": "209/90720000"
+    },
+    {
+      "name": "curvature cos upper 1",
+      "pass": true,
+      "gap": "460687/59875200000"
+    },
+    {
+      "name": "curvature Z upper 1",
+      "pass": true,
+      "gap": "547654311382773317503893241/1003503062500000000000000000000"
+    },
+    {
+      "name": "curvature N lower 1",
+      "pass": true,
+      "gap": "4383524762408169/44255536900000000000"
+    },
+    {
+      "name": "curvature sin lower 1.04",
+      "pass": true,
+      "gap": "1571396441182079/371754169464111328125"
+    },
+    {
+      "name": "curvature sin upper 1.04",
+      "pass": true,
+      "gap": "18394678699678671677/3186464309692382812500000"
+    },
+    {
+      "name": "curvature cos lower 1.04",
+      "pass": true,
+      "gap": "5491906593539/21629333496093750000"
+    },
+    {
+      "name": "curvature cos upper 1.04",
+      "pass": true,
+      "gap": "1241796680751358651/127458572387695312500000"
+    },
+    {
+      "name": "curvature Z upper 1.04",
+      "pass": true,
+      "gap": "6669002226254852460609889/18157562500000000000000000000"
+    },
+    {
+      "name": "curvature N lower 1.04",
+      "pass": true,
+      "gap": "7097805925908159/82639000900000000000"
+    },
+    {
+      "name": "curvature sin lower 1.08",
+      "pass": true,
+      "gap": "9172007713866367/1174926757812500000000"
+    },
+    {
+      "name": "curvature sin upper 1.08",
+      "pass": true,
+      "gap": "83744268406705905931/38185119628906250000000000"
+    },
+    {
+      "name": "curvature cos lower 1.08",
+      "pass": true,
+      "gap": "35713287977921/4272460937500000000"
+    },
+    {
+      "name": "curvature cos upper 1.08",
+      "pass": true,
+      "gap": "27456237860484079/16784667968750000000000"
+    },
+    {
+      "name": "curvature Z upper 1.08",
+      "pass": true,
+      "gap": "24201771332616392841558097803/38891790125000000000000000000000"
+    },
+    {
+      "name": "curvature N lower 1.08",
+      "pass": true,
+      "gap": "5603503822361511/48615840100000000000"
+    },
+    {
+      "name": "curvature sin lower 1.12",
+      "pass": true,
+      "gap": "375136016054269/849723815917968750000"
+    },
+    {
+      "name": "curvature sin upper 1.12",
+      "pass": true,
+      "gap": "395923452194228000323/41424036026000976562500000"
+    },
+    {
+      "name": "curvature cos lower 1.12",
+      "pass": true,
+      "gap": "941725323331/386238098144531250"
+    },
+    {
+      "name": "curvature cos upper 1.12",
+      "pass": true,
+      "gap": "962779678494289141/127458572387695312500000"
+    },
+    {
+      "name": "curvature Z upper 1.12",
+      "pass": true,
+      "gap": "5889265798473958861276717043/10127250125000000000000000000000"
+    },
+    {
+      "name": "curvature N lower 1.12",
+      "pass": true,
+      "gap": "61252029625458681/810198012100000000000"
+    },
+    {
+      "name": "curvature sin lower 1.16",
+      "pass": true,
+      "gap": "295754343544037921/95169067382812500000000"
+    },
+    {
+      "name": "curvature sin upper 1.16",
+      "pass": true,
+      "gap": "63943531573985531600311/9278984069824218750000000000"
+    },
+    {
+      "name": "curvature cos lower 1.16",
+      "pass": true,
+      "gap": "3293578167631049/346069335937500000000"
+    },
+    {
+      "name": "curvature cos upper 1.16",
+      "pass": true,
+      "gap": "1919026933667212637/4078674316406250000000000"
+    },
+    {
+      "name": "curvature Z upper 1.16",
+      "pass": true,
+      "gap": "1343269980325702497541279/2280062500000000000000000000"
+    },
+    {
+      "name": "curvature N lower 1.16",
+      "pass": true,
+      "gap": "100044019624636281/840540576100000000000"
+    },
+    {
+      "name": "curvature sin lower 1.2",
+      "pass": true,
+      "gap": "27323753/3007812500000"
+    },
+    {
+      "name": "curvature sin upper 1.2",
+      "pass": true,
+      "gap": "31910403/34912109375000"
+    },
+    {
+      "name": "curvature cos lower 1.2",
+      "pass": true,
+      "gap": "423063/54687500000"
+    },
+    {
+      "name": "curvature cos upper 1.2",
+      "pass": true,
+      "gap": "1206013/537109375000"
+    },
+    {
+      "name": "curvature Z upper 1.2",
+      "pass": true,
+      "gap": "23467993261671018444393393971/49356813687500000000000000000000"
+    },
+    {
+      "name": "curvature N lower 1.2",
+      "pass": true,
+      "gap": "75649261565641/670292100000000000"
+    },
+    {
+      "name": "curvature B row 0",
+      "pass": true,
+      "gap": "94604053/11718750000000"
+    },
+    {
+      "name": "curvature D row 0",
+      "pass": true,
+      "gap": "191717536059594717598245054815402450376954600487/48840475882325792048175866518401765294101898240000000"
+    },
+    {
+      "name": "curvature >.03 row 0",
+      "pass": true,
+      "gap": "52193/100000"
+    },
+    {
+      "name": "curvature B row 1",
+      "pass": true,
+      "gap": "1099758611/120000000000000"
+    },
+    {
+      "name": "curvature D row 1",
+      "pass": true,
+      "gap": "36783497185523807430809921797674632597784077/4945062515707287753482224252990588540692096000000"
+    },
+    {
+      "name": "curvature >.03 row 1",
+      "pass": true,
+      "gap": "5463/12500"
+    },
+    {
+      "name": "curvature B row 2",
+      "pass": true,
+      "gap": "6857420471/1000000000000000"
+    },
+    {
+      "name": "curvature D row 2",
+      "pass": true,
+      "gap": "7358871127174264358827699885603134410683053924999/825553235971636348660542034422376140181718292968750000"
+    },
+    {
+      "name": "curvature >.03 row 2",
+      "pass": true,
+      "gap": "31899/100000"
+    },
+    {
+      "name": "curvature B row 3",
+      "pass": true,
+      "gap": "966313561/125000000000000"
+    },
+    {
+      "name": "curvature D row 3",
+      "pass": true,
+      "gap": "2768069136615036647243538647248566383768531073139/444033290728191579779107201800614724755537223680000000"
+    },
+    {
+      "name": "curvature >.03 row 3",
+      "pass": true,
+      "gap": "4819/25000"
+    },
+    {
+      "name": "curvature B row 4",
+      "pass": true,
+      "gap": "1517690621/500000000000000"
+    },
+    {
+      "name": "curvature D row 4",
+      "pass": true,
+      "gap": "52775249218368931770453815161513958765923405283/996162188182776102135233704970608424952146144835000000"
+    },
+    {
+      "name": "curvature >.03 row 4",
+      "pass": true,
+      "gap": "5401/20000"
+    },
+    {
+      "name": "curvature B row 5",
+      "pass": true,
+      "gap": "3789448487/1500000000000000"
+    },
+    {
+      "name": "curvature D row 5",
+      "pass": true,
+      "gap": "2164209843697686870345146479847617608926851353/240577122323822620317308985882370686848000000000000"
+    },
+    {
+      "name": "curvature >.03 row 5",
+      "pass": true,
+      "gap": "20091/100000"
+    },
+    {
+      "name": "curvature B row 6",
+      "pass": true,
+      "gap": "6224046613/3000000000000000"
+    },
+    {
+      "name": "curvature D row 6",
+      "pass": true,
+      "gap": "3960627452939135074560337263211951420082946653253/2087418123340108342732851757233030502147328000000000000"
+    },
+    {
+      "name": "curvature >.03 row 6",
+      "pass": true,
+      "gap": "13401/100000"
+    },
+    {
+      "name": "curvature B row 7",
+      "pass": true,
+      "gap": "8237610557/1000000000000000"
+    },
+    {
+      "name": "curvature D row 7",
+      "pass": true,
+      "gap": "10742343685757309161630532101559831395946225895059/4700063709527939380188143164645743175492368235250000000"
+    },
+    {
+      "name": "curvature >.03 row 7",
+      "pass": true,
+      "gap": "6851/100000"
+    },
+    {
+      "name": "curvature B row 8",
+      "pass": true,
+      "gap": "1057120883/187500000000000"
+    },
+    {
+      "name": "last curvature B is negative",
+      "pass": true,
+      "gap": "5419567879117/187500000000000"
+    },
+    {
+      "name": "curvature D row 8",
+      "pass": true,
+      "gap": "750339293205070154963138555228999/89724472981501331710593073152000000000"
+    },
+    {
+      "name": "curvature >.03 row 8",
+      "pass": true,
+      "gap": "183/100000"
+    },
+    {
+      "name": "test-point sine lower",
+      "pass": true,
+      "gap": "121816512524548165046335217983/137653946876525878906250000000000000000"
+    },
+    {
+      "name": "test-point sine upper",
+      "pass": true,
+      "gap": "67902999725954711171344568207497331/590191297233104705810546875000000000000000000"
+    },
+    {
+      "name": "test-point cosine lower",
+      "pass": true,
+      "gap": "224284016879274038869963211/1290917396545410156250000000000000000"
+    },
+    {
+      "name": "test-point cosine upper",
+      "pass": true,
+      "gap": "2786579697916698717428672812330259/3372521698474884033203125000000000000000000"
+    },
+    {
+      "name": "test-point radius lower",
+      "pass": true,
+      "gap": "2140724951/1000000000000000000"
+    },
+    {
+      "name": "test-point radius upper",
+      "pass": true,
+      "gap": "113553129/62500000000000000"
+    },
+    {
+      "name": "test-point norm lower",
+      "pass": true,
+      "gap": "369844775832228765551337759/48615598333015578062500000000000000"
+    },
+    {
+      "name": "test-point norm upper",
+      "pass": true,
+      "gap": "721576843473296357904054129/194462392891083409000000000000000000"
+    },
+    {
+      "name": "F(1.08)>.9006",
+      "pass": true,
+      "gap": "916052194868365549651/220489451750000000000000000"
+    },
+    {
+      "name": "test-point derivative Z-1 positive",
+      "pass": true,
+      "gap": "1963892309660367379130357/2767646209432676737000000"
+    },
+    {
+      "name": "test-point derivative bracket negative",
+      "pass": true,
+      "gap": "155448392510547699839907360443423/207573465273654924600000000000000"
+    },
+    {
+      "name": "F'(1.08)>-.0003",
+      "pass": true,
+      "gap": "226109110862671293655606765010014523295577/53820310456221490044697244680095643300000000000"
+    },
+    {
+      "name": "F'(1.08)<.0003",
+      "pass": true,
+      "gap": "16032884762892049348958850849081502724050217/26910155232896440889643667380850270900000000000"
+    },
+    {
+      "name": "strong-convexity reserve exceeds gamma",
+      "pass": true,
+      "gap": "197/2000000"
+    },
+    {
+      "name": "CMpositivef P Bernstein 0",
+      "pass": true,
+      "gap": "1386713519616088363074611/1920000000000000000000000000000"
+    },
+    {
+      "name": "CMpositivef P Bernstein 1",
+      "pass": true,
+      "gap": "8297293160752083280280533/12800000000000000000000000000000"
+    },
+    {
+      "name": "CMpositivef P Bernstein 2",
+      "pass": true,
+      "gap": "102914972694531353026896857/240000000000000000000000000000000"
+    },
+    {
+      "name": "CMpositivef P Bernstein 3",
+      "pass": true,
+      "gap": "84895774260078442158938147399/134400000000000000000000000000000000"
+    },
+    {
+      "name": "CMpositivef P Bernstein 4",
+      "pass": true,
+      "gap": "2650114820767868752828278298961/2912000000000000000000000000000000000"
+    },
+    {
+      "name": "CMpositivef P Bernstein 5",
+      "pass": true,
+      "gap": "7108088672878913170539513401019/11648000000000000000000000000000000000"
+    },
+    {
+      "name": "CMpositivef P Bernstein 6",
+      "pass": true,
+      "gap": "118558797112814232934096366617461/960960000000000000000000000000000000000"
+    },
+    {
+      "name": "CMpositivef P Bernstein 7",
+      "pass": true,
+      "gap": "45164488122389165427318189542900023/64064000000000000000000000000000000000000"
+    },
+    {
+      "name": "CMpositivef P Bernstein 8",
+      "pass": true,
+      "gap": "1319795487626715493986973345297148017/2882880000000000000000000000000000000000000"
+    },
+    {
+      "name": "CMpositivef P Bernstein 9",
+      "pass": true,
+      "gap": "77655512318640063109063225066354861/492800000000000000000000000000000000000000"
+    },
+    {
+      "name": "CMpositivef P Bernstein 10",
+      "pass": true,
+      "gap": "834788937631083325890617355960551519/1401400000000000000000000000000000000000000"
+    },
+    {
+      "name": "CMpositivef P Bernstein 11",
+      "pass": true,
+      "gap": "4116293289815071468289373802981203143/34944000000000000000000000000000000000000000"
+    },
+    {
+      "name": "CMpositivef P Bernstein 12",
+      "pass": true,
+      "gap": "112451616625861009124977143880017596787/2038400000000000000000000000000000000000000000"
+    },
+    {
+      "name": "CMpositivef P Bernstein 13",
+      "pass": true,
+      "gap": "345762920338490064801649502961322355403/448000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "CMpositivef P Bernstein 14",
+      "pass": true,
+      "gap": "2033991067317472413880491676005556652671/23520000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "CMpositivef P Bernstein 15",
+      "pass": true,
+      "gap": "10911060163980219416104832086634902268623/12544000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "CMpositivef P Bernstein 16",
+      "pass": true,
+      "gap": "8282910689956279143822346316217546536289/12544000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "CMpositivef T Bernstein 0",
+      "pass": true,
+      "gap": "538730879534233/800000000000000"
+    },
+    {
+      "name": "CMpositivef T Bernstein 1",
+      "pass": true,
+      "gap": "13784466407733701/16000000000000000"
+    },
+    {
+      "name": "CMpositivef T Bernstein 2",
+      "pass": true,
+      "gap": "291946579505910991/280000000000000000"
+    },
+    {
+      "name": "CMpositivef T Bernstein 3",
+      "pass": true,
+      "gap": "544517631228771573/448000000000000000"
+    },
+    {
+      "name": "CMpositivef T Bernstein 4",
+      "pass": true,
+      "gap": "77203240019869558013/56000000000000000000"
+    },
+    {
+      "name": "CMpositivef T Bernstein 5",
+      "pass": true,
+      "gap": "1714959128703852128183/1120000000000000000000"
+    },
+    {
+      "name": "CMpositivef T Bernstein 6",
+      "pass": true,
+      "gap": "2341388622069042118731/1400000000000000000000"
+    },
+    {
+      "name": "CMpositivef T Bernstein 7",
+      "pass": true,
+      "gap": "201794931476625785518081/112000000000000000000000"
+    },
+    {
+      "name": "CMpositivef T Bernstein 8",
+      "pass": true,
+      "gap": "214919342465773489515983/112000000000000000000000"
+    }
+  ]
+}

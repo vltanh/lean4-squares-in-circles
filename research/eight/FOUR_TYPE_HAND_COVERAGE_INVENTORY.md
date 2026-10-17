@@ -66,20 +66,19 @@ An unordered off-diagonal entry consists of sixteen. The present state is:
 |---|---:|---|
 | C/C | 8 | **Complete**, all signs, axes and frame angles |
 | C/L | 16 | **Complete**, independently reviewed |
-| C/M | 16 | Continuous derivation and prior arithmetic audit complete; full proof record is being reconstructed and must be replayed before inclusion in the closed count |
+| C/M | 16 | Complete restored manuscript and 213 fixed comparisons; fresh independent review pending |
 | C/H | 16 | **Complete**, 143 fixed comparisons and independent polynomial/coverage review |
 | L/L | 8 | **Complete**, independently reviewed |
-| L/M | 16 | Complete manuscript and 305 fixed comparisons; independent review in progress |
+| L/M | 16 | **Complete**, 305 fixed comparisons and independent reconstruction of all eight polynomial rows |
 | L/H | 16 | **Complete**, 232 fixed comparisons and independent reconstruction of all 80 Bernstein bounds and 16 endpoint rows |
-| M/M | 8 | New whole-domain argument in progress |
+| M/M | 8 | **Complete**, 111 fixed comparisons and independent review of the whole contact deformation and both polynomial rows |
 | M/H | 16 | **Complete at .8926**, 225 fixed comparisons and independent polynomial/coverage review |
-| H/H | 8 | Continuous derivation and prior independent audit complete; full proof record is being reconstructed and must be replayed before inclusion in the closed count |
+| H/H | 8 | **Complete**, restored 108-comparison proof with fresh independent geometry, scalar and polynomial audit |
 
-The reviewed complete entries now cover **80** of the 128 ordered
-source-axis branches: C/C, C/L, C/H, L/L, L/H and M/H. The L/M manuscript covers another
-16 branches and is under independent review. C/M and H/H have completed
-prior derivations whose full records are being restored. M/M is the
-remaining whole-entry attack target.
+The reviewed complete entries now cover **112** of the 128 ordered
+source-axis branches: C/C, C/L, C/H, L/L, L/M, L/H, M/M, M/H and H/H. The restored
+C/M manuscript covers the final 16 branches and passes 213 fixed
+comparisons; its fresh independent review is the final frame-table gate.
 
 The [C/H audit](CORE_HIGH_INDEPENDENT_AUDIT.md) reconstructs its
 degree-18 polynomial independently. The
@@ -158,9 +157,9 @@ The second version is the current proposed whole-domain target:
  \end{pmatrix}.}                                         \tag{1}
 \]
 
-Its C/C, C/L, C/H, L/L, L/H and M/H entries have complete independently
+Its C/C, C/L, C/H, L/L, L/M, L/H, M/M, M/H and H/H entries have complete independently
 reviewed hand proofs. The M/H proof establishes the strengthened .8926
-value required here. L/M has a complete manuscript under review. The
+value required here. The
 remaining obligations are recorded exactly in Section 2; the full matrix
 is not yet claimed as a closed hand theorem.
 

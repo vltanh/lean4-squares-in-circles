@@ -118,7 +118,7 @@ The following simple facts select its minimum.
   endpoints using (4).
 * On \(L\), \(-L+.98b\ge-.00004\). Indeed
   \(L'(0)<.984\) and \(L''<-.22\), giving
-  \(L-.98b<.004b-.11b^2\le .004^2/.44<.00004\).
+  \(L-.98b\le.004b-.11b^2\le .004^2/.44<.00004\).
 * On \(L\), \(-L+b\ge0\), since \(L'\le L'(0)<1\).
 * On \(M\), \(M-\lambda b\) is minimized at the upper endpoint if
   \(\lambda\ge.8\), and at the lower endpoint if \(\lambda=.797\).

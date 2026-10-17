@@ -5,8 +5,9 @@ Starting head: 77ac445d3c8b5299d02aa58d14aa444646234959.
 Scope: PR #9, research/eight/**, pen-and-paper research with exact computer
 assistance. This active queue supersedes GATED_ROADMAP_2026_10_13.md.
 
-**The unrestricted sharp radius theorem is complete with exact computer
-assistance. The requested hand proof remains active.** All three remaining
+**The unrestricted sharp radius theorem and complete equality classification
+are proved with exact computer assistance. The requested all-hand proof
+remains active.** All three remaining
 radial words have complete global covers, all four retained terminal cases
 satisfy the hypotheses of the final sharp dual, and the radius pullback
 closes the unrestricted argument. The full assembly is
@@ -14,8 +15,9 @@ closes the unrestricted argument. The full assembly is
 The central core, exact sharp-ceiling bracket, and terminal coefficient
 arithmetic now have complete hand replacements. Analytic replacement of
 the global pair/capture premises is the active gate. The user has explicitly included global equality classification in the
-active hand-proof target. The initial fixed-axis equality pullback is now
-written; the full free-square parameter domain remains open.
+active hand-proof target. The fixed-axis equality pullback and the complete five-parameter domain
+have independent hand audits. Their only remaining non-hand input is the
+same global capture being converted for optimality.
 
 The [complete common quarter table](COMMON_QUARTER_TABLE_AND_FOUR_WORD_EXCLUSIONS.md)
 now gives whole-domain hand proofs for all three increments. Its cyclic sum
@@ -45,9 +47,10 @@ Three exits are distinguished throughout this roadmap:
 1. **Optimality:** the unrestricted lower bound and actual construction.
    This exit has passed with exact computer assistance.
 2. **Equality:** every attaining pose, including genuine slider freedoms
-   and the eighth central square. This is explicitly requested, active,
-   and remains open. The construction already rules out an isolated-pose
-   uniqueness claim; the required result is the full equality family.
+   and the eighth central square. This is explicitly requested and now proved using the completed global
+   capture plus independently reviewed hand equality arguments. The exact
+   five-parameter domain includes a box of noncongruent packings, so
+   isolated-pose uniqueness is false.
 3. **Hand-proof closure:** analytic replacement of every retained
    computer-assisted premise. This is the user's active requirement.
 
@@ -73,7 +76,7 @@ change, or merge is included in this work.
 | G7a: broad sharp terminal inequality | Prove a uniform sharp bound for every surviving owner assignment and both projected sliders, without a center-proximity assumption. | **Passed, hand proof.** Nine position brackets, four rectangles, nine scalar reserves, and an explicit nonlinear dual bound. |
 | G7b: terminal completeness | Prove every G6 survivor satisfies the actual frame, owner, tilt and slider hypotheses of G7a. | **Passed.** Four full-SAT budget compositions, four angle lifts, complete slider interfaces; S<1/10000. |
 | G8: unrestricted assembly | Apply the terminal bound before radius expansion, then combine with exact attainment. | **Passed, computer-assisted theorem.** Hand monotone-radius transfer preserves every originally feasible signed separator. |
-| G9: global equality | Recover all original eight-square attaining poses and give the exact feasible parameter family, with converse. | **Active.** An independently reviewed fixed-axis boundary argument and reapplication of the stationary dual transfer the five anchors and two orientation groups to the original packing. The two exterior slider freedoms and the eighth square's full parameter domain still need classification; global hand capture remains an input. |
+| G9: global equality | Recover all original eight-square attaining poses and give the exact feasible parameter family, with converse. | **Passed, with the same computer-assisted global capture input.** The independently reviewed equality pullback fixes five original anchors and both outer frame groups. The complete explicit five-parameter domain is necessary and sufficient and contains a full box of noncongruent poses. Its classification argument and 84 fixed comparisons are hand proofs. |
 | H: hand conversion and final audit | Replace every retained computational premise by analytic inequalities and audit all boundaries, ties and dependencies. | **ACTIVE.** The global frame/pair/capture inequalities remain; central core and local arithmetic have hand replacements. |
 
 The old M5-DIFFUSE queue, low 3+5/4+4 reference certificates, and narrow
@@ -178,11 +181,11 @@ independent range/domain audits remain in their existing locations.
 | Hand gate | Required analytic replacement | Current concrete work |
 |---|---|---|
 | H1: central core | Prove the strict radius-1/12 core for every packing at 9789/2500. | **Passed.** [Transverse-segment proof](HUMAN_CENTRAL_CORE_FROM_TRANSVERSE_SEGMENT.md), with 19 explicit polynomial rows and two elementary forbidden-width estimates; independently reviewed. |
-| H2a: frame concentration | Replace the full four-type continuous pair theorem. | **Active.** C/C, C/L, C/H, L/L, L/H and the strengthened M/H entry are complete and independently reviewed: 80 whole source-axis branches. The [C/H proof](CORE_HIGH_WHOLE_PAIR_HAND_PROOF.md) has 143 fixed comparisons; the [M/H proof](MID_HIGH_WHOLE_PAIR_HAND_PROOF.md) has 225 and proves .8926. The [L/H proof](LOW_HIGH_WHOLE_PAIR_HAND_PROOF.md) covers all 16 branches with 232 comparisons; independent reconstruction of all 80 Bernstein bounds and 16 endpoint rows passes. The new [L/M manuscript](LOW_MID_WHOLE_PAIR_HAND_PROOF.md) covers all 16 branches with 305 comparisons and is under review. C/M and H/H records are being reconstructed from completed derivations. M/M is the remaining whole-entry attack. The [coverage inventory](FOUR_TYPE_HAND_COVERAGE_INVENTORY.md) binds these statuses to the exact graph budget for D<.7. |
-| H2b: global word and owner capture | Derive every sharp-terminal hypothesis throughout the full remaining domain. | **Active.** The common-point and seven-quarter-word reductions remain complete. Conditional on H2a, the common hand table excludes all four double-increment words. For 0010111, [ten mixed zero-quarter regimes](SHORT_WRONG_WORD_MIXED_ZERO_FAMILIES_HAND_PROOF.md) are now continuous hand theorems with 68 comparisons. For 0011011, [the entire symmetric edge-4 OO (+,-) regime](WRONG_0011011_SYMMETRIC_OUTER_WHOLE_ANGLE_HAND_PROOF.md) is proved for all allowed angles by a contact/Hessian argument and 71 comparisons. Neither component is a whole-word exclusion. Both wrong words and the candidate 0101011 capture remain open. |
+| H2a: frame concentration | Replace the full four-type continuous pair theorem. | **Active.** C/C, C/L, C/H, L/L, L/M, L/H, M/M, H/H and the strengthened M/H entry are complete and independently reviewed: 112 whole source-axis branches. The [C/H proof](CORE_HIGH_WHOLE_PAIR_HAND_PROOF.md) has 143 fixed comparisons; the [M/H proof](MID_HIGH_WHOLE_PAIR_HAND_PROOF.md) has 225 and proves .8926. The [L/H proof](LOW_HIGH_WHOLE_PAIR_HAND_PROOF.md) covers all 16 branches with 232 comparisons; independent reconstruction of all 80 Bernstein bounds and 16 endpoint rows passes. The [L/M proof](LOW_MID_WHOLE_PAIR_HAND_PROOF.md) covers all 16 branches with 305 comparisons and independent review; the [M/M proof](MID_MID_WHOLE_PAIR_HAND_PROOF.md) covers all 8 branches with 111 comparisons and an independent contact/polynomial audit. The restored H/H proof passes 108 comparisons and a fresh independent audit. The restored C/M proof passes 213 comparisons; its independent review is the final frame-table obligation. The [coverage inventory](FOUR_TYPE_HAND_COVERAGE_INVENTORY.md) binds these statuses to the exact graph budget for D<.7. |
+| H2b: global word and owner capture | Derive every sharp-terminal hypothesis throughout the full remaining domain. | **Active.** The common-point and seven-quarter-word reductions remain complete. Conditional on H2a, the common hand table excludes all four double-increment words. For 0010111, all C/C, all mixed C/O, and all 28 O/O zero-quarter branches now have continuous hand proofs; the remaining 48 O/O quarter-one branches are active. For 0011011, all C/C and all 56 mixed zero-quarter branches are proved, along with the opposite-sign O/O zero cases and several mixed quarter-one families. The other O/O and mixed quarter-one cases remain active. Neither whole wrong word is yet claimed closed. Candidate 0101011 capture remains open. |
 | H3: terminal constants and radius bracket | Give hand-verifiable broad stationary, slider, weight, owner and exact-ceiling inequalities. | **Passed.** [Compact terminal proof](HUMAN_BROAD_TERMINAL_ARITHMETIC.md), [sharp bracket](HUMAN_SHARP_CEILING_BRACKET.md), and [independent audit](HAND_TERMINAL_AND_CEILING_INDEPENDENT_AUDIT.md). The [exact square completion](HAND_EXACT_CENTER_SQUARE_COMPLETION.md) now extends the sufficient mismatch bound twenty-fold to \(S\le1/500\), for arbitrary anchored centers and all 32 owners. All bounds are displayed finite rational arithmetic with no adaptive search. |
 | H4: assembly audit | Substitute the completed hand lemmas into the unrestricted argument and check all ties, boundaries, signs and radius transfers. | H1 and H3 are substituted into the main assembly. Full hand closure waits for H2a–H2b. |
-| H5: equality classification | Classify every optimal original packing, modulo isometry and relabeling, including the full freedoms of the remaining squares. | **Active, explicitly requested.** The independently reviewed [equality pullback](EQUALITY_PULLBACK_TO_ORIGINAL_SQUARES.md) fixes the original five anchors and both outer orientation groups once boundary capture is supplied. It leaves exactly two exterior slider coordinates and one remaining square. The necessary and sufficient joint parameter domain is the next equality obligation. |
+| H5: equality classification | Classify every optimal original packing, modulo isometry and relabeling, including the full freedoms of the remaining squares. | **Passed as a hand component conditional on global capture.** The independently reviewed [equality pullback](EQUALITY_PULLBACK_TO_ORIGINAL_SQUARES.md) fixes the original five anchors and both outer orientation groups once boundary capture is supplied. It leaves exactly two exterior slider coordinates and one remaining square. The independently reviewed [complete five-parameter domain](COMPLETE_EQUALITY_PARAMETER_DOMAIN.md) gives the hand necessity and sufficiency argument, 84 fixed comparisons, and an explicit box of five independently variable noncongruent poses. Its sole remaining non-hand input is global capture. |
 
 **Next required exit:** a complete analytic replacement for the retained
 global frame and capture premises. The hand-proof gate stays open until

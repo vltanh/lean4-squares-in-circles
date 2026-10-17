@@ -1,0 +1,385 @@
+{
+  "status": "PASS",
+  "scope": "All14 outer/outer zero-quarter primary branches and all4 same-sign secondary branches facing the wrong transverse direction; no inference for remaining10 zero-quarter secondary branches",
+  "fixed_comparisons": 50,
+  "raw_branches": 18,
+  "primary_rows": [
+    {
+      "edge": 0,
+      "signs": "++",
+      "axis": 2,
+      "lower": "1.040739715181"
+    },
+    {
+      "edge": 1,
+      "signs": "--",
+      "axis": 4,
+      "lower": "0.992615616247"
+    },
+    {
+      "edge": 3,
+      "signs": "++",
+      "axis": 2,
+      "lower": "1.086026620085"
+    },
+    {
+      "edge": 3,
+      "signs": "--",
+      "axis": 4,
+      "lower": "0.929396858934"
+    }
+  ],
+  "rows": [
+    {
+      "edge": 0,
+      "signs": "+-",
+      "axes": [
+        2,
+        4
+      ],
+      "proved_lower": "1"
+    },
+    {
+      "edge": 1,
+      "signs": "+-",
+      "axes": [
+        2,
+        4
+      ],
+      "proved_lower": "1"
+    },
+    {
+      "edge": 3,
+      "signs": "+-",
+      "axes": [
+        2,
+        4
+      ],
+      "proved_lower": "1"
+    },
+    {
+      "edge": 0,
+      "signs": "++",
+      "axis": 2,
+      "lower": "1.040739715181"
+    },
+    {
+      "edge": 0,
+      "signs": "++",
+      "axis": 4,
+      "conclusion": "impossible"
+    },
+    {
+      "edge": 1,
+      "signs": "--",
+      "axis": 4,
+      "lower": "0.992615616247"
+    },
+    {
+      "edge": 1,
+      "signs": "--",
+      "axis": 2,
+      "conclusion": "impossible"
+    },
+    {
+      "edge": 3,
+      "signs": "++",
+      "axis": 2,
+      "lower": "1.086026620085"
+    },
+    {
+      "edge": 3,
+      "signs": "++",
+      "axis": 4,
+      "conclusion": "impossible"
+    },
+    {
+      "edge": 3,
+      "signs": "--",
+      "axis": 4,
+      "lower": "0.929396858934"
+    },
+    {
+      "edge": 3,
+      "signs": "--",
+      "axis": 2,
+      "conclusion": "impossible"
+    },
+    {
+      "edge": 0,
+      "signs": "++",
+      "axis": 3,
+      "proved_lower": "1.03"
+    },
+    {
+      "edge": 1,
+      "signs": "--",
+      "axis": 1,
+      "proved_lower": "1.03"
+    },
+    {
+      "edge": 3,
+      "signs": "++",
+      "axis": 3,
+      "proved_lower": "1.09"
+    },
+    {
+      "edge": 3,
+      "signs": "--",
+      "axis": 1,
+      "proved_lower": "1.03"
+    }
+  ],
+  "checks": [
+    {
+      "name": "pi/4<.786 gives phi>-.026",
+      "lower": "0.000601836602",
+      "threshold": "0"
+    },
+    {
+      "name": "sin and cosine difference .7",
+      "lower": "0.120624500046",
+      "threshold": "0"
+    },
+    {
+      "name": "same-sign forbidden primary positive half",
+      "lower": "-0.726818818609",
+      "threshold": "-1"
+    },
+    {
+      "name": "same-sign forbidden primary negative sliver",
+      "lower": "-0.539042454812",
+      "threshold": "-1"
+    },
+    {
+      "name": "zero-primary lower coefficient",
+      "lower": "0.153836000000",
+      "threshold": "0"
+    },
+    {
+      "name": "zero-primary monotonic numerator",
+      "lower": "0.120549980000",
+      "threshold": "0"
+    },
+    {
+      "name": "zero-primary numerator derivative",
+      "lower": "0.826195000000",
+      "threshold": "0"
+    },
+    {
+      "name": "opposite-primary common lower",
+      "lower": "1.004058588042",
+      "threshold": "1"
+    },
+    {
+      "name": "opposite edge 0 constant",
+      "lower": "-0.123937488182",
+      "threshold": "-.264"
+    },
+    {
+      "name": "opposite edge 0 source transverse",
+      "lower": "0.947660000000",
+      "threshold": ".767"
+    },
+    {
+      "name": "opposite edge 0 target transverse",
+      "lower": "1.038280000000",
+      "threshold": ".767"
+    },
+    {
+      "name": "opposite edge 1 constant",
+      "lower": "-0.041663196033",
+      "threshold": "-.264"
+    },
+    {
+      "name": "opposite edge 1 source transverse",
+      "lower": "0.999400000000",
+      "threshold": ".767"
+    },
+    {
+      "name": "opposite edge 1 target transverse",
+      "lower": "0.880740000000",
+      "threshold": ".767"
+    },
+    {
+      "name": "opposite edge 3 constant",
+      "lower": "-0.263127386863",
+      "threshold": "-.264"
+    },
+    {
+      "name": "opposite edge 3 source transverse",
+      "lower": "1.199090000000",
+      "threshold": ".767"
+    },
+    {
+      "name": "opposite edge 3 target transverse",
+      "lower": "0.767440000000",
+      "threshold": ".767"
+    },
+    {
+      "name": "favorable-primary target A lower",
+      "lower": "1.312997184299",
+      "threshold": "1.31"
+    },
+    {
+      "name": "favorable-primary target B upper",
+      "lower": "-0.292868973867",
+      "threshold": "-3/10"
+    },
+    {
+      "name": "same-sign primary q lower 0false",
+      "lower": "0.947660000000",
+      "threshold": ".767"
+    },
+    {
+      "name": "same-sign favorable primary 0false",
+      "lower": "1.040739715181",
+      "threshold": ".89765"
+    },
+    {
+      "name": "same-sign primary q lower 1true",
+      "lower": "0.880740000000",
+      "threshold": ".767"
+    },
+    {
+      "name": "same-sign favorable primary 1true",
+      "lower": "0.992615616247",
+      "threshold": ".89765"
+    },
+    {
+      "name": "same-sign primary q lower 3false",
+      "lower": "1.199090000000",
+      "threshold": ".767"
+    },
+    {
+      "name": "same-sign favorable primary 3false",
+      "lower": "1.086026620085",
+      "threshold": ".89765"
+    },
+    {
+      "name": "same-sign primary q lower 3true",
+      "lower": "0.767440000000",
+      "threshold": ".767"
+    },
+    {
+      "name": "same-sign favorable primary 3true",
+      "lower": "0.929396858934",
+      "threshold": ".89765"
+    },
+    {
+      "name": "unfavorable secondary forward cap at .3",
+      "lower": "-0.499359586395",
+      "threshold": "-1/2"
+    },
+    {
+      "name": "secondary norm concavity",
+      "lower": "0.345000000000",
+      "threshold": "0"
+    },
+    {
+      "name": "source axial transverse sign 0true",
+      "lower": "1.000600000000",
+      "threshold": "0"
+    },
+    {
+      "name": "secondary target vector length 0true",
+      "lower": "-0.947660000001",
+      "threshold": "-131/100"
+    },
+    {
+      "name": "secondary circle endpoint 0true .3",
+      "lower": "1.030708693753",
+      "threshold": "1.03"
+    },
+    {
+      "name": "secondary circle endpoint 0true .7",
+      "lower": "1.185388615815",
+      "threshold": "1.03"
+    },
+    {
+      "name": "source axial transverse sign 1false",
+      "lower": "0.961720000000",
+      "threshold": "0"
+    },
+    {
+      "name": "secondary target vector length 1false",
+      "lower": "-0.885462656751",
+      "threshold": "-131/100"
+    },
+    {
+      "name": "secondary circle endpoint 1false .3",
+      "lower": "1.043267278976",
+      "threshold": "1.03"
+    },
+    {
+      "name": "secondary circle endpoint 1false .7",
+      "lower": "1.187241998385",
+      "threshold": "1.03"
+    },
+    {
+      "name": "source axial transverse sign 3true",
+      "lower": "1.284470000000",
+      "threshold": "0"
+    },
+    {
+      "name": "secondary target vector length 3true",
+      "lower": "-1.305219644237",
+      "threshold": "-131/100"
+    },
+    {
+      "name": "diagonal target ordering at .5",
+      "lower": "0.112764046572",
+      "threshold": "0"
+    },
+    {
+      "name": "diagonal source X negative at .3",
+      "lower": "0.075500413322",
+      "threshold": "0"
+    },
+    {
+      "name": "diagonal target Y negative at .5",
+      "lower": "0.556075123780",
+      "threshold": "0"
+    },
+    {
+      "name": "exceptional diagonal lower",
+      "lower": "1.092130239669",
+      "threshold": "1.09"
+    },
+    {
+      "name": "exceptional diagonal derivative",
+      "lower": "0.201571869781",
+      "threshold": "0"
+    },
+    {
+      "name": "exceptional circle endpoint .5",
+      "lower": "1.198502647136",
+      "threshold": "1.19"
+    },
+    {
+      "name": "exceptional circle endpoint .7",
+      "lower": "1.246405307818",
+      "threshold": "1.19"
+    },
+    {
+      "name": "source axial transverse sign 3false",
+      "lower": "0.866400000000",
+      "threshold": "0"
+    },
+    {
+      "name": "secondary target vector length 3false",
+      "lower": "-0.791421743510",
+      "threshold": "-131/100"
+    },
+    {
+      "name": "secondary circle endpoint 3false .3",
+      "lower": "1.045774515068",
+      "threshold": "1.03"
+    },
+    {
+      "name": "secondary circle endpoint 3false .7",
+      "lower": "1.208333440019",
+      "threshold": "1.03"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "scope": "Independent reconstruction of all printed side and common-curvature polynomial coefficients; original 390-comparison replay also passed.",
+  "source_sha256": "22d650d8dcef5adb324d9dbe2cc390285f97f5ab27d756f65bc5f9830f68aad3",
+  "manuscript_sha256": "c1c85364c569266f4d793f8557cce7903ccb0bfacfae6850a4dcdf9fc5a3bba1",
+  "replay_sha256": "2e34a1b0303ad7d089fb0fba82e0041c919bdfbcc3df504cded21db1e72b6cc1",
+  "polynomial_rows": 11,
+  "coefficients_checked": 144,
+  "rows": [
+    {
+      "name": "Of 4 side positive T",
+      "degree": 10,
+      "coefficients_checked": 11,
+      "minimum_exact": "10714075390785072609585300673087/5376000000000000000000000000000"
+    },
+    {
+      "name": "Of 4 side squared radical majorant",
+      "degree": 20,
+      "coefficients_checked": 21,
+      "minimum_exact": "584573549194635171382617195157484602158253908774854629547259548722989406072689670609/18962192793600000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "Of 12 side positive T",
+      "degree": 10,
+      "coefficients_checked": 11,
+      "minimum_exact": "14016453533834284331185966433279/5376000000000000000000000000000"
+    },
+    {
+      "name": "Of 12 side squared radical majorant",
+      "degree": 20,
+      "coefficients_checked": 21,
+      "minimum_exact": "4034822489426078745019742180200301735365391525326433165602468627/235339776000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "Of 19 side positive T",
+      "degree": 10,
+      "coefficients_checked": 11,
+      "minimum_exact": "939704558046145570360937848399/358400000000000000000000000000"
+    },
+    {
+      "name": "Of 19 side squared radical majorant",
+      "degree": 20,
+      "coefficients_checked": 21,
+      "minimum_exact": "51794593968585459738274236504789568916964609509276912615892377/3137863680000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "Of 23 side positive T",
+      "degree": 10,
+      "coefficients_checked": 11,
+      "minimum_exact": "3216906586410427602458748476213/1344000000000000000000000000000"
+    },
+    {
+      "name": "Of 23 side squared radical majorant",
+      "degree": 20,
+      "coefficients_checked": 21,
+      "minimum_exact": "357275338956460903299389037917339359850457305187639707011137964151251343947/9654373048320000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "endpoint curvature E",
+      "degree": 4,
+      "coefficients_checked": 5,
+      "minimum_exact": "316279931/250000000"
+    },
+    {
+      "name": "endpoint curvature A",
+      "degree": 1,
+      "coefficients_checked": 2,
+      "minimum_exact": "171177/184375"
+    },
+    {
+      "name": "endpoint curvature squared bound",
+      "degree": 8,
+      "coefficients_checked": 9,
+      "minimum_exact": "1477048631271793972743951/4759179687500000000000000"
+    }
+  ]
+}

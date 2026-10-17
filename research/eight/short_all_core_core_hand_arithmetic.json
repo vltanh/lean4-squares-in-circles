@@ -1,0 +1,393 @@
+{
+  "status": "PASS",
+  "scope": "All 19 allowed core/core rows of wrong quarter word0010111, with each corrected cost>.898>.89765",
+  "fixed_comparisons": 54,
+  "rows": [
+    {
+      "edge": 0,
+      "signs": "++",
+      "method": "core gap and endpoint marker ranges",
+      "lower": "0.948092279520"
+    },
+    {
+      "edge": 0,
+      "signs": "+-",
+      "method": "core gap and endpoint marker ranges",
+      "lower": "0.906648945771"
+    },
+    {
+      "edge": 1,
+      "signs": "+-",
+      "method": "core gap and endpoint marker ranges",
+      "lower": "0.902313204996"
+    },
+    {
+      "edge": 1,
+      "signs": "--",
+      "method": "core gap and endpoint marker ranges",
+      "lower": "0.943756538745"
+    },
+    {
+      "edge": 2,
+      "signs": "-+",
+      "method": "core gap and endpoint marker ranges",
+      "lower": "1.425310000000"
+    },
+    {
+      "edge": 2,
+      "signs": "--",
+      "method": "core gap and endpoint marker ranges",
+      "lower": "1.187527628702"
+    },
+    {
+      "edge": 3,
+      "signs": "++",
+      "method": "core gap and endpoint marker ranges",
+      "lower": "0.933328991674"
+    },
+    {
+      "edge": 3,
+      "signs": "+-",
+      "method": "core gap and endpoint marker ranges",
+      "lower": "0.948771431642"
+    },
+    {
+      "edge": 3,
+      "signs": "--",
+      "method": "core gap and endpoint marker ranges",
+      "lower": "0.951922439967"
+    },
+    {
+      "edge": 4,
+      "signs": "++",
+      "method": "core gap and endpoint marker ranges",
+      "lower": "1.127052157294"
+    },
+    {
+      "edge": 4,
+      "signs": "+-",
+      "method": "quarter frame lower bound and nonnegative transverse terms",
+      "lower": "1.118646326794"
+    },
+    {
+      "edge": 4,
+      "signs": "-+",
+      "method": "core gap and endpoint marker ranges",
+      "lower": "1.364490000000"
+    },
+    {
+      "edge": 4,
+      "signs": "--",
+      "method": "core gap and endpoint marker ranges",
+      "lower": "1.125784633216"
+    },
+    {
+      "edge": 5,
+      "signs": "++",
+      "method": "core gap and endpoint marker ranges",
+      "lower": "1.052788050902"
+    },
+    {
+      "edge": 5,
+      "signs": "+-",
+      "method": "split phi=.951; all four SAT axes force b+B>.1 below it",
+      "lower": "0.898970000000"
+    },
+    {
+      "edge": 5,
+      "signs": "-+",
+      "method": "core gap and endpoint marker ranges",
+      "lower": "1.269550000000"
+    },
+    {
+      "edge": 5,
+      "signs": "--",
+      "method": "core gap and endpoint marker ranges",
+      "lower": "1.052665087278"
+    },
+    {
+      "edge": 6,
+      "signs": "++",
+      "method": "core gap and endpoint marker ranges",
+      "lower": "1.156342042277"
+    },
+    {
+      "edge": 6,
+      "signs": "-+",
+      "method": "core gap and endpoint marker ranges",
+      "lower": "1.394740000000"
+    }
+  ],
+  "checks": [
+    {
+      "name": "core lower angle coefficient",
+      "lower": "0.142857142857",
+      "threshold": "0"
+    },
+    {
+      "name": "core corner alpha second derivative numerator",
+      "lower": "1.833333333333",
+      "threshold": "0"
+    },
+    {
+      "name": "core side upper-bound minimum",
+      "lower": "0.002521777018",
+      "threshold": "1/400"
+    },
+    {
+      "name": "core side squared radius",
+      "lower": "-0.590277777778",
+      "threshold": "-16/25"
+    },
+    {
+      "name": "core corner squared radius",
+      "lower": "-0.624795574643",
+      "threshold": "-16/25"
+    },
+    {
+      "name": "core gap endpoint bound",
+      "lower": "-0.999671440521",
+      "threshold": "-1"
+    },
+    {
+      "name": "core gap axial bound",
+      "lower": "-0.640000000000",
+      "threshold": "-1"
+    },
+    {
+      "name": "core pair 0 1 1",
+      "lower": "0.948092279520",
+      "threshold": ".898"
+    },
+    {
+      "name": "core pair 0 1 -1",
+      "lower": "0.906648945771",
+      "threshold": ".898"
+    },
+    {
+      "name": "core pair 1 1 -1",
+      "lower": "0.902313204996",
+      "threshold": ".898"
+    },
+    {
+      "name": "core pair 1 -1 -1",
+      "lower": "0.943756538745",
+      "threshold": ".898"
+    },
+    {
+      "name": "core pair 2 -1 1",
+      "lower": "1.425310000000",
+      "threshold": ".898"
+    },
+    {
+      "name": "core pair 2 -1 -1",
+      "lower": "1.187527628702",
+      "threshold": ".898"
+    },
+    {
+      "name": "core pair 3 1 1",
+      "lower": "0.933328991674",
+      "threshold": ".898"
+    },
+    {
+      "name": "core pair 3 1 -1",
+      "lower": "0.948771431642",
+      "threshold": ".898"
+    },
+    {
+      "name": "core pair 3 -1 -1",
+      "lower": "0.951922439967",
+      "threshold": ".898"
+    },
+    {
+      "name": "core pair 4 1 1",
+      "lower": "1.127052157294",
+      "threshold": ".898"
+    },
+    {
+      "name": "core pair 4 1 -1",
+      "lower": "1.118646326794",
+      "threshold": ".898"
+    },
+    {
+      "name": "core pair 4 -1 1",
+      "lower": "1.364490000000",
+      "threshold": ".898"
+    },
+    {
+      "name": "core pair 4 -1 -1",
+      "lower": "1.125784633216",
+      "threshold": ".898"
+    },
+    {
+      "name": "core pair 5 1 1",
+      "lower": "1.052788050902",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge5 primary/secondary projection cap if b+B<=.1",
+      "lower": "0.316666666666",
+      "threshold": "0"
+    },
+    {
+      "name": "edge5 low-half contact bound",
+      "lower": "0.917939326794",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge5 high-half direct bound",
+      "lower": "0.898970000000",
+      "threshold": ".898"
+    },
+    {
+      "name": "core pair 5 1 -1",
+      "lower": "0.898970000000",
+      "threshold": ".898"
+    },
+    {
+      "name": "core pair 5 -1 1",
+      "lower": "1.269550000000",
+      "threshold": ".898"
+    },
+    {
+      "name": "core pair 5 -1 -1",
+      "lower": "1.052665087278",
+      "threshold": ".898"
+    },
+    {
+      "name": "core pair 6 1 1",
+      "lower": "1.156342042277",
+      "threshold": ".898"
+    },
+    {
+      "name": "core pair 6 -1 1",
+      "lower": "1.394740000000",
+      "threshold": ".898"
+    },
+    {
+      "name": "core label positive 0p",
+      "lower": "1.088160000000",
+      "threshold": "0"
+    },
+    {
+      "name": "core label upper 0p",
+      "lower": "-1.088160000000",
+      "threshold": "-8/7"
+    },
+    {
+      "name": "core label positive 1p",
+      "lower": "0.620950000000",
+      "threshold": "0"
+    },
+    {
+      "name": "core label upper 1p",
+      "lower": "-0.620950000000",
+      "threshold": "-8/7"
+    },
+    {
+      "name": "core label positive 1n",
+      "lower": "0.620950000000",
+      "threshold": "0"
+    },
+    {
+      "name": "core label upper 1n",
+      "lower": "-0.620950000000",
+      "threshold": "-8/7"
+    },
+    {
+      "name": "core label positive 2n",
+      "lower": "1.138550000000",
+      "threshold": "0"
+    },
+    {
+      "name": "core label upper 2n",
+      "lower": "-1.138550000000",
+      "threshold": "-8/7"
+    },
+    {
+      "name": "core label positive 3p",
+      "lower": "1.047290000000",
+      "threshold": "0"
+    },
+    {
+      "name": "core label upper 3p",
+      "lower": "-1.047290000000",
+      "threshold": "-8/7"
+    },
+    {
+      "name": "core label positive 3n",
+      "lower": "0.627500000000",
+      "threshold": "0"
+    },
+    {
+      "name": "core label upper 3n",
+      "lower": "-0.627500000000",
+      "threshold": "-8/7"
+    },
+    {
+      "name": "core label positive 4p",
+      "lower": "0.588290000000",
+      "threshold": "0"
+    },
+    {
+      "name": "core label upper 4p",
+      "lower": "-0.588290000000",
+      "threshold": "-8/7"
+    },
+    {
+      "name": "core label positive 4n",
+      "lower": "1.040730000000",
+      "threshold": "0"
+    },
+    {
+      "name": "core label upper 4n",
+      "lower": "-1.040730000000",
+      "threshold": "-8/7"
+    },
+    {
+      "name": "core label positive 5p",
+      "lower": "0.991950000000",
+      "threshold": "0"
+    },
+    {
+      "name": "core label upper 5p",
+      "lower": "-0.991950000000",
+      "threshold": "-8/7"
+    },
+    {
+      "name": "core label positive 5n",
+      "lower": "0.952690000000",
+      "threshold": "0"
+    },
+    {
+      "name": "core label upper 5n",
+      "lower": "-0.952690000000",
+      "threshold": "-8/7"
+    },
+    {
+      "name": "core label positive 6p",
+      "lower": "0.953240000000",
+      "threshold": "0"
+    },
+    {
+      "name": "core label upper 6p",
+      "lower": "-0.953240000000",
+      "threshold": "-8/7"
+    },
+    {
+      "name": "core label positive 6n",
+      "lower": "0.991730000000",
+      "threshold": "0"
+    },
+    {
+      "name": "core label upper 6n",
+      "lower": "-0.991730000000",
+      "threshold": "-8/7"
+    },
+    {
+      "name": "cyclic table reserve",
+      "lower": "6.283550000000",
+      "threshold": "710/113"
+    }
+  ]
+}
