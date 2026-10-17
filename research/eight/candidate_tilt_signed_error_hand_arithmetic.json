@@ -1,0 +1,309 @@
+{
+  "status": "PASS_FIXED_COMMON_WEIGHT_ERROR_VERTEX_HAND_PROOF",
+  "Q": "1957767069/500000000",
+  "epsilon": "1/1000",
+  "input_sha256": "bc5305ef2b0b00e62b89259da64d8eedadfa93c71fcf1269110b29aeaae28bc1",
+  "checker_sha256": "05c4ed1b89ccaa16d2f44f4b0ad26408376fb921a5399fc647a1b1f245403d2f",
+  "closed_cells": 59,
+  "vertices_per_common_weight_bundle": 21,
+  "quartics": 1239,
+  "bernstein_coefficients": 6195,
+  "minimum_printed_coefficient": "40703/500000000000",
+  "cell_summary": [
+    {
+      "lo": "-3/8",
+      "hi": "-7/20",
+      "minimum_numerator": 452817994112
+    },
+    {
+      "lo": "-7/20",
+      "hi": "-13/40",
+      "minimum_numerator": 410326695435
+    },
+    {
+      "lo": "-13/40",
+      "hi": "-3/10",
+      "minimum_numerator": 367759756730
+    },
+    {
+      "lo": "-3/10",
+      "hi": "-11/40",
+      "minimum_numerator": 325054209591
+    },
+    {
+      "lo": "-11/40",
+      "hi": "-1/4",
+      "minimum_numerator": 282136218715
+    },
+    {
+      "lo": "-1/4",
+      "hi": "-9/40",
+      "minimum_numerator": 238921108792
+    },
+    {
+      "lo": "-9/40",
+      "hi": "-1/5",
+      "minimum_numerator": 195313360066
+    },
+    {
+      "lo": "-1/5",
+      "hi": "-7/40",
+      "minimum_numerator": 151206551101
+    },
+    {
+      "lo": "-7/40",
+      "hi": "-3/20",
+      "minimum_numerator": 106483415167
+    },
+    {
+      "lo": "-3/20",
+      "hi": "-1/8",
+      "minimum_numerator": 61015801079
+    },
+    {
+      "lo": "-1/8",
+      "hi": "-1/10",
+      "minimum_numerator": 48566285935
+    },
+    {
+      "lo": "-1/10",
+      "hi": "-3/40",
+      "minimum_numerator": 30285153473
+    },
+    {
+      "lo": "-3/40",
+      "hi": "-1/20",
+      "minimum_numerator": 15966795273
+    },
+    {
+      "lo": "-1/20",
+      "hi": "-1/40",
+      "minimum_numerator": 4730589603
+    },
+    {
+      "lo": "-1/40",
+      "hi": "-1/80",
+      "minimum_numerator": 2857959051
+    },
+    {
+      "lo": "-1/80",
+      "hi": "-1/160",
+      "minimum_numerator": 1738620021
+    },
+    {
+      "lo": "-1/160",
+      "hi": "-1/320",
+      "minimum_numerator": 1144410897
+    },
+    {
+      "lo": "-1/320",
+      "hi": "0",
+      "minimum_numerator": 33367550
+    },
+    {
+      "lo": "0",
+      "hi": "1/1280",
+      "minimum_numerator": 26740982
+    },
+    {
+      "lo": "1/1280",
+      "hi": "1/640",
+      "minimum_numerator": 387259654
+    },
+    {
+      "lo": "1/640",
+      "hi": "1/320",
+      "minimum_numerator": 265438425
+    },
+    {
+      "lo": "1/320",
+      "hi": "3/640",
+      "minimum_numerator": 347486235
+    },
+    {
+      "lo": "3/640",
+      "hi": "1/160",
+      "minimum_numerator": 361982895
+    },
+    {
+      "lo": "1/160",
+      "hi": "3/320",
+      "minimum_numerator": 134097681
+    },
+    {
+      "lo": "3/320",
+      "hi": "1/80",
+      "minimum_numerator": 166602695
+    },
+    {
+      "lo": "1/80",
+      "hi": "1/64",
+      "minimum_numerator": 168815961
+    },
+    {
+      "lo": "1/64",
+      "hi": "3/160",
+      "minimum_numerator": 157413966
+    },
+    {
+      "lo": "3/160",
+      "hi": "7/320",
+      "minimum_numerator": 139457101
+    },
+    {
+      "lo": "7/320",
+      "hi": "1/40",
+      "minimum_numerator": 118509679
+    },
+    {
+      "lo": "1/40",
+      "hi": "9/320",
+      "minimum_numerator": 96508516
+    },
+    {
+      "lo": "9/320",
+      "hi": "1/32",
+      "minimum_numerator": 74622158
+    },
+    {
+      "lo": "1/32",
+      "hi": "11/320",
+      "minimum_numerator": 53604042
+    },
+    {
+      "lo": "11/320",
+      "hi": "3/80",
+      "minimum_numerator": 33958279
+    },
+    {
+      "lo": "3/80",
+      "hi": "13/320",
+      "minimum_numerator": 16032160
+    },
+    {
+      "lo": "13/320",
+      "hi": "7/160",
+      "minimum_numerator": 81406
+    },
+    {
+      "lo": "7/160",
+      "hi": "29/640",
+      "minimum_numerator": 32784201
+    },
+    {
+      "lo": "29/640",
+      "hi": "3/64",
+      "minimum_numerator": 25227144
+    },
+    {
+      "lo": "3/64",
+      "hi": "31/640",
+      "minimum_numerator": 18355416
+    },
+    {
+      "lo": "31/640",
+      "hi": "1/20",
+      "minimum_numerator": 12174230
+    },
+    {
+      "lo": "1/20",
+      "hi": "1001/20000",
+      "minimum_numerator": 20696445
+    },
+    {
+      "lo": "2/25",
+      "hi": "33/400",
+      "minimum_numerator": 27300061
+    },
+    {
+      "lo": "33/400",
+      "hi": "17/200",
+      "minimum_numerator": 42849496
+    },
+    {
+      "lo": "17/200",
+      "hi": "7/80",
+      "minimum_numerator": 60312912
+    },
+    {
+      "lo": "7/80",
+      "hi": "9/100",
+      "minimum_numerator": 79430667
+    },
+    {
+      "lo": "9/100",
+      "hi": "19/200",
+      "minimum_numerator": 41867678
+    },
+    {
+      "lo": "19/200",
+      "hi": "1/10",
+      "minimum_numerator": 120267709
+    },
+    {
+      "lo": "1/10",
+      "hi": "17/160",
+      "minimum_numerator": 198272155
+    },
+    {
+      "lo": "17/160",
+      "hi": "9/80",
+      "minimum_numerator": 73519137
+    },
+    {
+      "lo": "9/80",
+      "hi": "1/8",
+      "minimum_numerator": 2837691800
+    },
+    {
+      "lo": "1/8",
+      "hi": "3/20",
+      "minimum_numerator": 8382239509
+    },
+    {
+      "lo": "3/20",
+      "hi": "7/40",
+      "minimum_numerator": 19668247774
+    },
+    {
+      "lo": "7/40",
+      "hi": "1/5",
+      "minimum_numerator": 31209770814
+    },
+    {
+      "lo": "1/5",
+      "hi": "9/40",
+      "minimum_numerator": 43080821948
+    },
+    {
+      "lo": "9/40",
+      "hi": "1/4",
+      "minimum_numerator": 55357219829
+    },
+    {
+      "lo": "1/4",
+      "hi": "11/40",
+      "minimum_numerator": 68116687221
+    },
+    {
+      "lo": "11/40",
+      "hi": "3/10",
+      "minimum_numerator": 80530475487
+    },
+    {
+      "lo": "3/10",
+      "hi": "13/40",
+      "minimum_numerator": 102695855858
+    },
+    {
+      "lo": "13/40",
+      "hi": "7/20",
+      "minimum_numerator": 125828339321
+    },
+    {
+      "lo": "7/20",
+      "hi": "3/8",
+      "minimum_numerator": 158530556301
+    }
+  ]
+}
