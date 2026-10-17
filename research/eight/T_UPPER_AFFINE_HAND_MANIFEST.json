@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "theorem": "No candidate word0101011 boundary cycle at Q3.915534138 with G[-4/5,-1/20],T[4/5,1],E[-1,0] under physical center-order and frame-spread hypotheses",
+  "gamma_sum": "62839/10000",
+  "reserve_above_710_over_113": "807/1130000",
+  "arcs": 102,
+  "rows": 7078,
+  "angle_chains": 6452,
+  "polynomials": 19711,
+  "coefficients": 147771,
+  "files": [
+    {
+      "path": "T_UPPER_AFFINE_HAND_EXCLUSION.md",
+      "bytes": 7309,
+      "sha256": "8ae1b8e24d5d72016b045650a7dfe8080067385f430c04352f99124c072a9ba4"
+    },
+    {
+      "path": "T_UPPER_AFFINE_HAND_DATA.json",
+      "bytes": 863592,
+      "sha256": "bf670d4828b6045906e55b07e95d452f555eb4e986505f6f7c8ad9308476b2f8"
+    },
+    {
+      "path": "T_UPPER_AFFINE_HAND_COMPACT_REPORT.json",
+      "bytes": 512031,
+      "sha256": "091eaa23e58811220ef4711e16963638c9c6524998615957d33c6c763ea98208"
+    },
+    {
+      "path": "verify_T_upper_affine_hand.js",
+      "bytes": 15356,
+      "sha256": "1bd04b7b8890f7008108489da6fdf24b947e472eb4873f7523994ce4b81b85ee"
+    },
+    {
+      "path": "replay_T_upper_hand.py",
+      "bytes": 1861,
+      "sha256": "ac90971620387438cef37166503b205ff357e817c3d0e63efbeb1becec5d2c7b"
+    },
+    {
+      "path": "audit_T_upper_hand_assembly_independently.py",
+      "bytes": 6221,
+      "sha256": "18f878f8009418c374bd09cf8f7c53d98345c3c1a3d5279855eaecc87d8483c6"
+    },
+    {
+      "path": "T_UPPER_AFFINE_HAND_INDEPENDENT_ASSEMBLY.json",
+      "bytes": 1162,
+      "sha256": "45649371e65443e4b4b518611120687a5ec06cffdf100d198b6306a5de128567"
+    },
+    {
+      "path": "T_UPPER_AFFINE_HAND_INDEPENDENT_AUDIT.md",
+      "bytes": 2247,
+      "sha256": "d1a221805f1b86bdf6738c661c077c30f972bd104df0722e33b7734349877c69"
+    }
+  ],
+  "optional_full_replay": {
+    "path": "T_UPPER_AFFINE_HAND_ARITHMETIC.json",
+    "sha256": "f43ecf10d0543acb7417c881dd4068b850caa2399de40397082265f00f3ac186",
+    "committed": false
+  },
+  "excluded_from_proof": "All discovery iterations, provisional fits and failed rows."
+}
