@@ -76,7 +76,7 @@ We prove
 \[
 \boxed{
 r\ge q_*+\frac{3\mu_H}{8}(t-t_*)^2+
-\sum_{i=A,B,D,E,H}\mu_i\left|p_i+o_i+rac{F_i}{2\mu_i}\right|^2
+\sum_{i=A,B,D,E,H}\mu_i\left|p_i+o_i+\frac{F_i}{2\mu_i}\right|^2
  +\frac9{100000}S\ \ge q_* .}                              \tag{4}
 \]
 
@@ -376,3 +376,4 @@ The already proved stationary-family estimate
 The entire argument applies to all 32 allowed owner assignments because the
 force and support identities cover each owner explicitly, and the one
 first-order input is the uniform nine-scalar owner table.
+

@@ -1,0 +1,113 @@
+{
+  "status": "PASS",
+  "scope": "independent arithmetic and byte-identical replay; continuous review is in the bound audit note",
+  "checks": [
+    {
+      "name": "sqrt2 lower bound",
+      "strict_reserve": "119/10000"
+    },
+    {
+      "name": "primary upper bound at zero secondary",
+      "strict_reserve": "13/8000"
+    },
+    {
+      "name": "T lower endpoint from center rotation",
+      "strict_reserve": "1/4000"
+    },
+    {
+      "name": "T upper endpoint from center rotation",
+      "strict_reserve": "1/2000"
+    },
+    {
+      "name": "G upper endpoint from primary and h2",
+      "strict_reserve": "3/4000"
+    },
+    {
+      "name": "enlarged owner reserve 1",
+      "strict_reserve": "1869/100000"
+    },
+    {
+      "name": "enlarged owner reserve 2",
+      "strict_reserve": "1083/3125"
+    },
+    {
+      "name": "enlarged owner reserve 3",
+      "strict_reserve": "124503/400000"
+    },
+    {
+      "name": "enlarged owner reserve 4",
+      "strict_reserve": "159399/400000"
+    },
+    {
+      "name": "enlarged owner reserve 5",
+      "strict_reserve": "498319/10000000"
+    },
+    {
+      "name": "enlarged owner reserve 6",
+      "strict_reserve": "56793/5000000"
+    },
+    {
+      "name": "enlarged owner reserve 7",
+      "strict_reserve": "4357/200000"
+    },
+    {
+      "name": "enlarged owner reserve 8",
+      "strict_reserve": "160229/10000000"
+    },
+    {
+      "name": "enlarged owner reserve 9",
+      "strict_reserve": "79121/2000000"
+    },
+    {
+      "name": "quadratic remainder below 9.28",
+      "strict_reserve": "3148402569799787/2850910772000000000"
+    },
+    {
+      "name": "cubic remainder below 1.5",
+      "strict_reserve": "6430197/3455440000"
+    },
+    {
+      "name": "remainder at S=.001 below 9.3",
+      "strict_reserve": "55895557085834637/2850910772000000000"
+    },
+    {
+      "name": "strict final coefficient",
+      "strict_reserve": "10293/5000000"
+    },
+    {
+      "name": "first mismatch in the Taylor range",
+      "strict_reserve": "21/10000"
+    },
+    {
+      "name": "Taylor slope at d=.004 above .49",
+      "strict_reserve": "6749/750000"
+    },
+    {
+      "name": "second mismatch below .001",
+      "strict_reserve": "3/98000"
+    }
+  ],
+  "comparison_count": 21,
+  "bindings": {
+    "proof_integration/HAND_TERMINAL_WITH_AUTOMATIC_SLIDERS.md": "624fb9ffc0b819ae0aa5e891a4ca2f541b5b7562df789e5617a4e8c3d03d5d90",
+    "proof_integration/verify_automatic_slider_terminal.py": "4d37ef83d40bf39bdd0901d3339392510b7f1242df95cf9aa5d6a3f9d6ae4625",
+    "proof_reference/HAND_EXACT_CENTER_SQUARE_COMPLETION.md": "833515826402c73a17862e019c9c6afa2c99b919f2330670e04387d771443f88",
+    "proof_reference/HUMAN_BROAD_TERMINAL_ARITHMETIC.md": "4f80be27bba8e2a97c16181a230f911dfd9bab7c80546b5052b8774e984f0581",
+    "proof_integration/CANDIDATE_WORD_HAND_CAPTURE_INTERFACES.md": "f46df89d0521cec770b7079c578b0595abf4ab43abe97bf445396472d892f406",
+    "proof_integration/automatic_slider_terminal_arithmetic.json": "cdf4e5a309fdd7fabfd96be9f7880ebe757bde79aebbae7f15b0665a2c9c2eac"
+  },
+  "owner_reserves": [
+    "1869/100000",
+    "1083/3125",
+    "124503/400000",
+    "159399/400000",
+    "498319/10000000",
+    "56793/5000000",
+    "4357/200000",
+    "160229/10000000",
+    "79121/2000000"
+  ],
+  "C2": "26453303561590200213/2850910772000000000",
+  "C3": "5176729803/3455440000",
+  "terminal_coefficient": "10293/5000000"
+}
