@@ -467,6 +467,6 @@ Completing a square gives
 Equations (23)--(29) close the last half-axis, and therefore all of
 the row (1)--(2).
 
-Every final bound is strict. This row cannot occur in an equality
-configuration for a cyclic sum whose proposed target is \(7\gamma\).
+Every final bound is strict, so this row contributes a positive reserve
+above \(\gamma\) to the cyclic sum.
 

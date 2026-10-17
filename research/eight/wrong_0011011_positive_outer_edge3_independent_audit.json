@@ -1,0 +1,206 @@
+{
+  "status": "PASS",
+  "scope": "Whole 0011011 edge3 OO(++), four retained axes and both angle halves; reflected edge5 follows from the stated role symmetry",
+  "author_replay_byte_identical": true,
+  "author_fixed_comparisons": 147,
+  "independent_fixed_comparisons": 47,
+  "independent_checks": [
+    {
+      "name": "target tangent slope .172",
+      "strict_reserve": "24167986334359/1000000000000000000000000"
+    },
+    {
+      "name": "target tangent intercept .172",
+      "strict_reserve": "1844686282763/8000000000000000000000"
+    },
+    {
+      "name": "short support endpoint .172:lo",
+      "strict_reserve": "8270966424848570118627/1000000000000000000000000"
+    },
+    {
+      "name": "short support endpoint .172:1",
+      "strict_reserve": "36560106875613772961/15625000000000000000000"
+    },
+    {
+      "name": "target tangent slope .209",
+      "strict_reserve": "132450001206771/1000000000000000000000000"
+    },
+    {
+      "name": "target tangent intercept .209",
+      "strict_reserve": "790937866649153/1000000000000000000000000"
+    },
+    {
+      "name": "short support endpoint .209:1",
+      "strict_reserve": "4036417313894003491007/1000000000000000000000000"
+    },
+    {
+      "name": "short support endpoint .209:1.1",
+      "strict_reserve": "62897730671607394691/100000000000000000000000"
+    },
+    {
+      "name": "target tangent slope .252",
+      "strict_reserve": "111431066036029/250000000000000000000000"
+    },
+    {
+      "name": "target tangent intercept .252",
+      "strict_reserve": "99704942226013/200000000000000000000000"
+    },
+    {
+      "name": "short support endpoint .252:1.1",
+      "strict_reserve": "838515626435261588079/500000000000000000000000"
+    },
+    {
+      "name": "short support endpoint .252:1.2",
+      "strict_reserve": "1986820585623909359/20000000000000000000000"
+    },
+    {
+      "name": "target tangent slope .302",
+      "strict_reserve": "47839721352163/500000000000000000000000"
+    },
+    {
+      "name": "target tangent intercept .302",
+      "strict_reserve": "444038362422201/500000000000000000000000"
+    },
+    {
+      "name": "short support endpoint .302:1.2",
+      "strict_reserve": "147927328423140174669/250000000000000000000000"
+    },
+    {
+      "name": "short support endpoint .302:1.3",
+      "strict_reserve": "604941219831521469433/1000000000000000000000000"
+    },
+    {
+      "name": "contact corner ('lo', '.95', 'lo', '.252')",
+      "strict_reserve": "31735236905415891270879/500000000000000000000000"
+    },
+    {
+      "name": "contact corner ('lo', '.95', 'lo', '.346')",
+      "strict_reserve": "194116728672615049845151/1000000000000000000000000"
+    },
+    {
+      "name": "contact corner ('lo', '.95', '.95', '.252')",
+      "strict_reserve": "209315403426860185353/8000000000000000000000"
+    },
+    {
+      "name": "contact corner ('lo', '.95', '.95', '.346')",
+      "strict_reserve": "79726401867494011675319/500000000000000000000000"
+    },
+    {
+      "name": "contact corner ('.95', '1.05', '.95', '.345')",
+      "strict_reserve": "15820864914633729378409/100000000000000000000000"
+    },
+    {
+      "name": "contact corner ('.95', '1.05', '.95', '.466')",
+      "strict_reserve": "139735612949375492875441/500000000000000000000000"
+    },
+    {
+      "name": "contact corner ('.95', '1.05', '1.05', '.345')",
+      "strict_reserve": "417416034742600349593/3906250000000000000000"
+    },
+    {
+      "name": "contact corner ('.95', '1.05', '1.05', '.466')",
+      "strict_reserve": "116121500963028114540109/500000000000000000000000"
+    },
+    {
+      "name": "contact corner ('1.05', '1.15', '1.05', '.465')",
+      "strict_reserve": "57864625033882323619183/250000000000000000000000"
+    },
+    {
+      "name": "contact corner ('1.05', '1.15', '1.05', '.590')",
+      "strict_reserve": "293267330280297984785807/1000000000000000000000000"
+    },
+    {
+      "name": "contact corner ('1.05', '1.15', '1.15', '.465')",
+      "strict_reserve": "7023855608913151988723/40000000000000000000000"
+    },
+    {
+      "name": "contact corner ('1.05', '1.15', '1.15', '.590')",
+      "strict_reserve": "120716767825777666179077/500000000000000000000000"
+    },
+    {
+      "name": "contact corner ('1.15', '1.3', '1.15', '.589')",
+      "strict_reserve": "60303242052988701156069/250000000000000000000000"
+    },
+    {
+      "name": "contact corner ('1.15', '1.3', '1.15', '.779')",
+      "strict_reserve": "176399998248160249397819/1000000000000000000000000"
+    },
+    {
+      "name": "contact corner ('1.15', '1.3', '1.3', '.589')",
+      "strict_reserve": "36753989852981057918403/250000000000000000000000"
+    },
+    {
+      "name": "contact corner ('1.15', '1.3', '1.3', '.779')",
+      "strict_reserve": "22641944327131853315537/250000000000000000000000"
+    },
+    {
+      "name": "global source chord",
+      "strict_reserve": "718288021103992674453/1000000000000000000000000"
+    },
+    {
+      "name": "short source chord",
+      "strict_reserve": "242261768062500646059/1000000000000000000000000"
+    },
+    {
+      "name": "source derivative contact concavity",
+      "strict_reserve": "340211/100000"
+    },
+    {
+      "name": "aligned target-diagonal endpoint",
+      "strict_reserve": "34235754164409451/1000000000000000000000000"
+    },
+    {
+      "name": "source-diagonal first endpoint",
+      "strict_reserve": "48173847714713433/500000000000000000000000"
+    },
+    {
+      "name": "double-diagonal endpoint",
+      "strict_reserve": "36464732973086263037/500000000000000000000000"
+    },
+    {
+      "name": "source-diagonal concavity",
+      "strict_reserve": "3165459/6250000"
+    },
+    {
+      "name": "target-diagonal concavity",
+      "strict_reserve": "187798059978660418509679/1000000000000000000000000"
+    },
+    {
+      "name": "upper source-coordinate concavity",
+      "strict_reserve": "16602513/50000000"
+    },
+    {
+      "name": "upper zero-source cost concavity",
+      "strict_reserve": "3019/31250"
+    },
+    {
+      "name": "lower axis3 first source interval",
+      "strict_reserve": "3593097/31250000"
+    },
+    {
+      "name": "lower axis3 second source interval",
+      "strict_reserve": "182093/15625000"
+    },
+    {
+      "name": "lower axis3 strong-convexity completion",
+      "strict_reserve": "27272727272727272727/1000000000000000000000000"
+    },
+    {
+      "name": "later angle direct bound",
+      "strict_reserve": "16544762158242369459/500000000000000000000000"
+    },
+    {
+      "name": "strict declared table reserve",
+      "strict_reserve": "3/25000"
+    }
+  ],
+  "dependencies_reviewed": "The two imported target-only facts have the same Q, label and full angle scope; neither depends on source radius.",
+  "sha256": {
+    "WRONG_0011011_EDGE3_POSITIVE_OUTER_PAIR_HAND_PROOF.md": "c0ca11ec36df4b9592b22b2ef274356be44b188d14a639d56108220b5f9c40bb",
+    "verify_wrong_0011011_edge3_positive_outer_pair.js": "67dff31182961ed8e2d7b84fc3037ba84b5d3c4eaf8713f6c46c5e837363d687",
+    "wrong_0011011_edge3_positive_outer_pair_arithmetic.json": "e36deddf5f62765ecf90c25bb1477307896b70b90a2f803f932e2a337a5b3658",
+    "wrong_0011011_labels.json": "a4349b3d463bf9e67ecbb86f575c4d15df059d12c195b84eddceab85463eef6d",
+    "WRONG_0011011_EDGE3_POSITIVE_CORE_TO_POSITIVE_OUTER_HAND_PROOF.md": "ab289916a84b770614f16bbd10b28345e94d79fc661e64e59f944539a019cc07",
+    "WRONG_0011011_EDGE3_NEGATIVE_CORE_TO_POSITIVE_OUTER_HAND_PROOF.md": "82f8681b84775f395079192b4d4ca23a39b863b65efe5640466776e9496bbba3"
+  }
+}
