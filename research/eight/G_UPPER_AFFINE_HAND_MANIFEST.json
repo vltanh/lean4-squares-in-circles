@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "theorem": "No word0101011 boundary cycle at Q3.915534138 with u_G>=-1/20,u_E<=0 under physical center-order and frame-spread hypotheses",
+  "gamma_sum": "62839/10000",
+  "reserve_above_710_over_113": "807/1130000",
+  "arcs": 122,
+  "rows": 9796,
+  "angle_chains": 8876,
+  "polynomials": 27035,
+  "coefficients": 188461,
+  "files": [
+    {
+      "path": "G_UPPER_AFFINE_HAND_EXCLUSION.md",
+      "bytes": 11522,
+      "sha256": "dcf634a21cc99a705e8ac578911b58738b83268f3bfc7f0e2073b0dc3cd89836"
+    },
+    {
+      "path": "G_UPPER_AFFINE_HAND_DATA.json",
+      "bytes": 1196048,
+      "sha256": "0ef1144be02a6250497f8055b62cbdab7e76ee736dfb04440c960d7cf9711806"
+    },
+    {
+      "path": "G_UPPER_AFFINE_HAND_COMPACT_REPORT.json",
+      "bytes": 624584,
+      "sha256": "c213916d28a0c8f02fd3f99ce96e65b9dd483141211325d01c13a7d6f0f68a11"
+    },
+    {
+      "path": "verify_G_upper_affine_hand.js",
+      "bytes": 15356,
+      "sha256": "1bd04b7b8890f7008108489da6fdf24b947e472eb4873f7523994ce4b81b85ee"
+    },
+    {
+      "path": "replay_G_upper_hand.py",
+      "bytes": 1861,
+      "sha256": "5e107ae7341f088d404cd31d4fac8de9daedf830fa19012cd7db2f8d991050dc"
+    },
+    {
+      "path": "audit_G_upper_hand_assembly.py",
+      "bytes": 6190,
+      "sha256": "0393a48d4f5de4136eed47bff0a0a9a8d937e447f1ca884a82234921bf586802"
+    },
+    {
+      "path": "G_UPPER_AFFINE_HAND_ASSEMBLY_AUDIT.json",
+      "bytes": 1117,
+      "sha256": "2ede53c7ddddea2bcd203a14737ad945c091485557969863aac07f7712a0b399"
+    },
+    {
+      "path": "AFFINE_ARC_KERNEL_INDEPENDENT_AUDIT.md",
+      "bytes": 7789,
+      "sha256": "06a3e983654017d2141cda48d26cfeab2e90b2ab1f3698398bd41f00c3b3bd71"
+    },
+    {
+      "path": "audit_affine_arc_kernel_independently.py",
+      "bytes": 4231,
+      "sha256": "10b31daa6267ea26f072903835d397e5869988389087fa991c8b1fc18ab8278a"
+    },
+    {
+      "path": "AFFINE_ARC_KERNEL_INDEPENDENT_ARITHMETIC.json",
+      "bytes": 872,
+      "sha256": "ad6ed6795acdfd6110af1964518ea1496bc5cb090ea0cca9f859591288027ad9"
+    }
+  ],
+  "optional_full_replay": {
+    "path": "G_UPPER_AFFINE_HAND_ARITHMETIC.json",
+    "sha256": "edd61f0a534eb780894d884b7b0fcbae9d8d1e0901d32ce51d70605b0dbd2724",
+    "committed": false
+  },
+  "excluded_from_proof": "All discovery iterations, provisional fits and failed rows."
+}
