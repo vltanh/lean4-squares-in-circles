@@ -1,0 +1,894 @@
+{
+  "status": "PASS",
+  "scope": "C/H whole boundary pair at Q=9789/2500 and gamma=8833/10000",
+  "comparison_count": 143,
+  "polynomial": {
+    "degree": 18,
+    "interval": [
+      "3/4",
+      "3/2"
+    ],
+    "bernstein_lower_numerators": [
+      34281,
+      45678,
+      53640,
+      59000,
+      62526,
+      64903,
+      66706,
+      68387,
+      70249,
+      72436,
+      74913,
+      77453,
+      79629,
+      80800,
+      80112,
+      76492,
+      68645,
+      55061,
+      34020
+    ],
+    "denominator": 10000000
+  },
+  "checks": [
+    {
+      "name": "R upper",
+      "pass": true,
+      "gap": "121809/62500000000",
+      "decimal_gap": 0.000001948944
+    },
+    {
+      "name": "diagonal lower",
+      "pass": true,
+      "gap": "45551/125000000000",
+      "decimal_gap": 3.64408e-7
+    },
+    {
+      "name": "diagonal upper",
+      "pass": true,
+      "gap": "104649/20000000000",
+      "decimal_gap": 0.00000523245
+    },
+    {
+      "name": "H lower endpoint a lower",
+      "pass": true,
+      "gap": "99179/382812500000",
+      "decimal_gap": 2.590798367346939e-7
+    },
+    {
+      "name": "H lower endpoint a upper",
+      "pass": true,
+      "gap": "98209421/24500000000000",
+      "decimal_gap": 0.000004008547795918367
+    },
+    {
+      "name": "H lower b>.5139",
+      "pass": true,
+      "gap": "117/1750000",
+      "decimal_gap": 0.00006685714285714286
+    },
+    {
+      "name": "H upper a<1.2",
+      "pass": true,
+      "gap": "743/1000000",
+      "decimal_gap": 0.000743
+    },
+    {
+      "name": "H radial slope>.596",
+      "pass": true,
+      "gap": "2116949/1750000000",
+      "decimal_gap": 0.0012096851428571428
+    },
+    {
+      "name": "H lower label>.4639",
+      "pass": true,
+      "gap": "76471537/1750000000000",
+      "decimal_gap": 0.000043698021142857146
+    },
+    {
+      "name": "H lower label<.464",
+      "pass": true,
+      "gap": "10808285261/197750000000000",
+      "decimal_gap": 0.000054656309790139064
+    },
+    {
+      "name": "H upper label<.786",
+      "pass": true,
+      "gap": "17/28250",
+      "decimal_gap": 0.0006017699115044248
+    },
+    {
+      "name": "marker slope u+v<1",
+      "pass": true,
+      "gap": "19821/500000",
+      "decimal_gap": 0.039642
+    },
+    {
+      "name": "marker slope u+v<g",
+      "pass": true,
+      "gap": "58507/500000",
+      "decimal_gap": 0.117014
+    },
+    {
+      "name": "all negative phi>-.812",
+      "pass": true,
+      "gap": "17/14125",
+      "decimal_gap": 0.0012035398230088497
+    },
+    {
+      "name": "direct upper phi tail",
+      "pass": true,
+      "gap": "69/10000",
+      "decimal_gap": 0.0069
+    },
+    {
+      "name": "sin lower .812",
+      "pass": true,
+      "gap": "16521274453825414417071771296011961216418757/24854421615600585937500000000000000000000000000",
+      "decimal_gap": 0.0006647217428489813
+    },
+    {
+      "name": "cos lower .812",
+      "pass": true,
+      "gap": "321321755860909115297687080112145168319/6627845764160156250000000000000000000000000",
+      "decimal_gap": 0.000048480572314830445
+    },
+    {
+      "name": "sin lower 1.2",
+      "pass": true,
+      "gap": "2089503264769/53459167480468750",
+      "decimal_gap": 0.0000390859671642361
+    },
+    {
+      "name": "sin upper 1.2",
+      "pass": true,
+      "gap": "33547535403/34912109375000",
+      "decimal_gap": 0.0009609140210537622
+    },
+    {
+      "name": "cos lower 1.2",
+      "pass": true,
+      "gap": "1530020515069/4276733398437500",
+      "decimal_gap": 0.00035775447579407016
+    },
+    {
+      "name": "cos upper 1.2",
+      "pass": true,
+      "gap": "152802651/1074218750000",
+      "decimal_gap": 0.00014224537693090908
+    },
+    {
+      "name": "cos lower 1.25",
+      "pass": true,
+      "gap": "7543842323103607/23401744351572787200",
+      "decimal_gap": 0.00032236239357928887
+    },
+    {
+      "name": "sin lower 1.4",
+      "pass": true,
+      "gap": "366273453266815343/814429687500000000000",
+      "decimal_gap": 0.0004497299876078196
+    },
+    {
+      "name": "sin upper 1.4",
+      "pass": true,
+      "gap": "597541516458899/1085906250000000000",
+      "decimal_gap": 0.0005502698934267107
+    },
+    {
+      "name": "cos lower 1.4",
+      "pass": true,
+      "gap": "10502265087830749/10859062500000000000",
+      "decimal_gap": 0.0009671428898977925
+    },
+    {
+      "name": "cos upper 1.4",
+      "pass": true,
+      "gap": "548897801357/16706250000000000",
+      "decimal_gap": 0.00003285583547217359
+    },
+    {
+      "name": "cos upper 1.5",
+      "pass": true,
+      "gap": "1515583/5767168000",
+      "decimal_gap": 0.000262795014814897
+    },
+    {
+      "name": "sin lower 2.28",
+      "pass": true,
+      "gap": "1471304566993169997883787033/1670598983764648437500000000000",
+      "decimal_gap": 0.0008807048138372659
+    },
+    {
+      "name": "cos lower 2.28",
+      "pass": true,
+      "gap": "10295091783796880449642607/13364791870117187500000000000",
+      "decimal_gap": 0.000770314411466148
+    },
+    {
+      "name": "sin lower 2.4",
+      "pass": true,
+      "gap": "99043267420743/213836669921875000",
+      "decimal_gap": 0.00046317251132337755
+    },
+    {
+      "name": "cos lower 2.4",
+      "pass": true,
+      "gap": "2592673916471/4276733398437500",
+      "decimal_gap": 0.0006062276216278131
+    },
+    {
+      "name": "sin lower 2.45",
+      "pass": true,
+      "gap": "668712266991202724807107199/874487218176000000000000000000",
+      "decimal_gap": 0.0007646907274253803
+    },
+    {
+      "name": "cos lower 2.45",
+      "pass": true,
+      "gap": "2240631447780075251501551/2914957393920000000000000000",
+      "decimal_gap": 0.0007686669631787999
+    },
+    {
+      "name": "sin lower 2.5",
+      "pass": true,
+      "gap": "20230626613723/42849873690624000",
+      "decimal_gap": 0.0004721280337904397
+    },
+    {
+      "name": "sin upper 2.5",
+      "pass": true,
+      "gap": "134456723207/255058771968000",
+      "decimal_gap": 0.0005271597685880379
+    },
+    {
+      "name": "cos lower 2.5",
+      "pass": true,
+      "gap": "6115215514283/7141645615104000",
+      "decimal_gap": 0.0008562754081986113
+    },
+    {
+      "name": "cos upper 2.5",
+      "pass": true,
+      "gap": "447118579/392398110720",
+      "decimal_gap": 0.001139451406072254
+    },
+    {
+      "name": "cos(.812)>.67",
+      "pass": true,
+      "gap": "119622545510743721615297687080112145168319/6627845764160156250000000000000000000000000",
+      "decimal_gap": 0.01804848057231483
+    },
+    {
+      "name": "cos(1.2)>.362",
+      "pass": true,
+      "gap": "1530020515069/4276733398437500",
+      "decimal_gap": 0.00035775447579407016
+    },
+    {
+      "name": "whole marker root<.7",
+      "pass": true,
+      "gap": "645488811/50000000000",
+      "decimal_gap": 0.01290977622
+    },
+    {
+      "name": "rotating length dominates fixed length",
+      "pass": true,
+      "gap": "170910050651/250000000000",
+      "decimal_gap": 0.683640202604
+    },
+    {
+      "name": "R N/4<.9",
+      "pass": true,
+      "gap": "5184850929/250000000000",
+      "decimal_gap": 0.020739403716
+    },
+    {
+      "name": "concavity trigonometric coefficient",
+      "pass": true,
+      "gap": "21843/250000",
+      "decimal_gap": 0.087372
+    },
+    {
+      "name": "quarter norm>.640901",
+      "pass": true,
+      "gap": "36639/200000000000",
+      "decimal_gap": 1.83195e-7
+    },
+    {
+      "name": "quarter norm<.640902",
+      "pass": true,
+      "gap": "68663/62500000000",
+      "decimal_gap": 0.000001098608
+    },
+    {
+      "name": "parallel common baseline>.8939",
+      "pass": true,
+      "gap": "4021851/50000000000",
+      "decimal_gap": 0.00008043702
+    },
+    {
+      "name": "quarter common baseline>.88336",
+      "pass": true,
+      "gap": "3051617/500000000000",
+      "decimal_gap": 0.000006103234
+    },
+    {
+      "name": "core primary small-angle impossibility",
+      "pass": true,
+      "gap": "34657/1500000",
+      "decimal_gap": 0.023104666666666666
+    },
+    {
+      "name": "negative H direct tail",
+      "pass": true,
+      "gap": "59/10000",
+      "decimal_gap": 0.0059
+    },
+    {
+      "name": "negative H narrow branch B>.85",
+      "pass": true,
+      "gap": "4411/600000",
+      "decimal_gap": 0.007351666666666667
+    },
+    {
+      "name": "B>.85 forces A<1",
+      "pass": true,
+      "gap": "1569/10000",
+      "decimal_gap": 0.1569
+    },
+    {
+      "name": "negative H narrow branch label>.7",
+      "pass": true,
+      "gap": "2191407851/250000000000",
+      "decimal_gap": 0.008765631404
+    },
+    {
+      "name": "negative H narrow branch cost",
+      "pass": true,
+      "gap": "1929/10000",
+      "decimal_gap": 0.1929
+    },
+    {
+      "name": "positive H primary impossible through2.45",
+      "pass": true,
+      "gap": "684629/30000000",
+      "decimal_gap": 0.022820966666666668
+    },
+    {
+      "name": "positive H primary B<.6",
+      "pass": true,
+      "gap": "98/4485",
+      "decimal_gap": 0.02185061315496098
+    },
+    {
+      "name": "B<.6 forces A>1.14",
+      "pass": true,
+      "gap": "2/125",
+      "decimal_gap": 0.016
+    },
+    {
+      "name": "positive H late label<.54",
+      "pass": true,
+      "gap": "98095751113/11300000000000",
+      "decimal_gap": 0.008681039921504425
+    },
+    {
+      "name": "positive H late cost",
+      "pass": true,
+      "gap": "2029/10000",
+      "decimal_gap": 0.2029
+    },
+    {
+      "name": "secondary positive-angle derivative amplitude",
+      "pass": true,
+      "gap": "766359665443/1000000000000",
+      "decimal_gap": 0.766359665443
+    },
+    {
+      "name": "negative-angle core side coefficient",
+      "pass": true,
+      "gap": "2077408853/335000000",
+      "decimal_gap": 6.201220456716418
+    },
+    {
+      "name": "negative-angle projected derivative quadratic",
+      "pass": true,
+      "gap": "14713887869/425781250000",
+      "decimal_gap": 0.0345573880226055
+    },
+    {
+      "name": "positive core target impossible through .45",
+      "pass": true,
+      "gap": "19/1600",
+      "decimal_gap": 0.011875
+    },
+    {
+      "name": "positive core endpoint derivative amplitude",
+      "pass": true,
+      "gap": "183/5000",
+      "decimal_gap": 0.0366
+    },
+    {
+      "name": "positive core target secondary at .45",
+      "pass": true,
+      "gap": "1069/400000",
+      "decimal_gap": 0.0026725
+    },
+    {
+      "name": "negative source core remains on side",
+      "pass": true,
+      "gap": "17/200",
+      "decimal_gap": 0.085
+    },
+    {
+      "name": "negative-phi decreasing H target coefficient",
+      "pass": true,
+      "gap": "8273831/25000000",
+      "decimal_gap": 0.33095324
+    },
+    {
+      "name": "negative-phi endpoint derivative at zero",
+      "pass": true,
+      "gap": "52184248201/125000000000",
+      "decimal_gap": 0.417473985608
+    },
+    {
+      "name": "negative-phi endpoint derivative at .812",
+      "pass": true,
+      "gap": "33983/100000",
+      "decimal_gap": 0.33983
+    },
+    {
+      "name": "negative-phi derivative coefficient one",
+      "pass": true,
+      "gap": "1262748201/125000000000",
+      "decimal_gap": 0.010101985608
+    },
+    {
+      "name": "negative-phi derivative coefficient two",
+      "pass": true,
+      "gap": "934248201/125000000000",
+      "decimal_gap": 0.007473985608
+    },
+    {
+      "name": "negative-H full-circle norm at zero",
+      "pass": true,
+      "gap": "5130651/50000000000",
+      "decimal_gap": 0.00010261302
+    },
+    {
+      "name": "negative-H full-circle endpoint zero",
+      "pass": true,
+      "gap": "64158851/250000000000",
+      "decimal_gap": 0.000256635404
+    },
+    {
+      "name": "negative-H full-circle norm at1.2",
+      "pass": true,
+      "gap": "11129980769/3906250000000",
+      "decimal_gap": 0.002849275076864
+    },
+    {
+      "name": "negative-H full-circle endpoint1.2",
+      "pass": true,
+      "gap": "1257949851/250000000000",
+      "decimal_gap": 0.005031799404
+    },
+    {
+      "name": "late target B coefficient changes",
+      "pass": true,
+      "gap": "6773/20000000",
+      "decimal_gap": 0.00033865
+    },
+    {
+      "name": "late target A coefficient negative",
+      "pass": true,
+      "gap": "62756919/62500000",
+      "decimal_gap": 1.004110704
+    },
+    {
+      "name": "late endpoint derivative subtractand",
+      "pass": true,
+      "gap": "1660021849/250000000000",
+      "decimal_gap": 0.006640087396
+    },
+    {
+      "name": "positive-H endpoint derivative at zero",
+      "pass": true,
+      "gap": "21692543/62500000",
+      "decimal_gap": 0.347080688
+    },
+    {
+      "name": "positive-H endpoint derivative at1.4",
+      "pass": true,
+      "gap": "1053332029/12500000000",
+      "decimal_gap": 0.08426656232
+    },
+    {
+      "name": "lower endpoint D>1",
+      "pass": true,
+      "gap": "529265803/218750000000",
+      "decimal_gap": 0.002419500813714286
+    },
+    {
+      "name": "lower endpoint B>.51",
+      "pass": true,
+      "gap": "10417463601/31250000000",
+      "decimal_gap": 0.333358835232
+    },
+    {
+      "name": "lower endpoint derivative negative at1.4",
+      "pass": true,
+      "gap": "14208999377969/109375000000000",
+      "decimal_gap": 0.12991085145571657
+    },
+    {
+      "name": "lower positive-H endpoint at0",
+      "pass": true,
+      "gap": "62082453303/218750000000",
+      "decimal_gap": 0.2838055008137143
+    },
+    {
+      "name": "lower positive-H endpoint at1.4",
+      "pass": true,
+      "gap": "16836769083727/875000000000000",
+      "decimal_gap": 0.019242021809973715
+    },
+    {
+      "name": "lower positive-H endpoint at-.812",
+      "pass": true,
+      "gap": "92111353272539/218750000000000",
+      "decimal_gap": 0.42108047210303545
+    },
+    {
+      "name": "diagonal endpoint D>1",
+      "pass": true,
+      "gap": "52184248201/125000000000",
+      "decimal_gap": 0.417473985608
+    },
+    {
+      "name": "diagonal endpoint B>.51",
+      "pass": true,
+      "gap": "1262748201/125000000000",
+      "decimal_gap": 0.010101985608
+    },
+    {
+      "name": "diagonal endpoint derivative negative at1.4",
+      "pass": true,
+      "gap": "30256819461977/62500000000000",
+      "decimal_gap": 0.484109111391632
+    },
+    {
+      "name": "diagonal positive-H endpoint at0",
+      "pass": true,
+      "gap": "5331647296713/14125000000000",
+      "decimal_gap": 0.37746175551950445
+    },
+    {
+      "name": "diagonal positive-H endpoint at1.4",
+      "pass": true,
+      "gap": "306227363501573/3531250000000000",
+      "decimal_gap": 0.08671925338097643
+    },
+    {
+      "name": "diagonal positive-H endpoint at-.812",
+      "pass": true,
+      "gap": "2131158976005469/14125000000000000",
+      "decimal_gap": 0.15087851157560841
+    },
+    {
+      "name": "Nplus increasing from1.4",
+      "pass": true,
+      "gap": "28821247/100000000",
+      "decimal_gap": 0.28821247
+    },
+    {
+      "name": "Nplus second derivative positive",
+      "pass": true,
+      "gap": "68189800651/250000000000",
+      "decimal_gap": 0.272759202604
+    },
+    {
+      "name": "positive-H norm at1.4",
+      "pass": true,
+      "gap": "29846553411/62500000000000",
+      "decimal_gap": 0.000477544854576
+    },
+    {
+      "name": "positive-H full-circle endpoint1.4",
+      "pass": true,
+      "gap": "436314713/11300000000000",
+      "decimal_gap": 0.000038611921504424776
+    },
+    {
+      "name": "positive-H norm at2.5",
+      "pass": true,
+      "gap": "126142392389/15625000000000",
+      "decimal_gap": 0.008073113112896
+    },
+    {
+      "name": "positive-H full-circle endpoint2.5",
+      "pass": true,
+      "gap": "5432315913/11300000000000",
+      "decimal_gap": 0.0004807359215044248
+    },
+    {
+      "name": "H primary negative target excludes negative phi",
+      "pass": true,
+      "gap": "8693/50000",
+      "decimal_gap": 0.17386
+    },
+    {
+      "name": "H primary positive target phi>-.026",
+      "pass": true,
+      "gap": "17/28250",
+      "decimal_gap": 0.0006017699115044248
+    },
+    {
+      "name": "H primary excludes phi<=.75",
+      "pass": true,
+      "gap": "247/16000",
+      "decimal_gap": 0.0154375
+    },
+    {
+      "name": "H primary negative core coefficient",
+      "pass": true,
+      "gap": "1705886369/299000000",
+      "decimal_gap": 5.7053055819397995
+    },
+    {
+      "name": "n decreases",
+      "pass": true,
+      "gap": "34110740951/250000000000",
+      "decimal_gap": 0.136442963804
+    },
+    {
+      "name": "n'(1)>-.214",
+      "pass": true,
+      "gap": "129259049/250000000000",
+      "decimal_gap": 0.000517036196
+    },
+    {
+      "name": "n''<.7",
+      "pass": true,
+      "gap": "96103646799786805399/4096000000000000000000",
+      "decimal_gap": 0.0234628043944792
+    },
+    {
+      "name": "polynomial multiplier x+B0 positive at left",
+      "pass": true,
+      "gap": "14336533648713/11300000000000",
+      "decimal_gap": 1.2687197919215045
+    },
+    {
+      "name": "whole primary polynomial Bernstein 0",
+      "pass": true,
+      "gap": "1830981927663896880261/97407934127931392000000000000",
+      "decimal_gap": 1.8797051226434634e-8
+    },
+    {
+      "name": "whole primary polynomial Bernstein 1",
+      "pass": true,
+      "gap": "816307161786891047409/9740793412793139200000000000",
+      "decimal_gap": 8.380294368165003e-8
+    },
+    {
+      "name": "whole primary polynomial Bernstein 2",
+      "pass": true,
+      "gap": "24008522894279675344373/413983720043708416000000000000",
+      "decimal_gap": 5.799388172014314e-8
+    },
+    {
+      "name": "whole primary polynomial Bernstein 3",
+      "pass": true,
+      "gap": "3612337446353177309861/206991860021854208000000000000",
+      "decimal_gap": 1.7451591796758513e-8
+    },
+    {
+      "name": "whole primary polynomial Bernstein 4",
+      "pass": true,
+      "gap": "6984755679917933955477/103495930010927104000000000000",
+      "decimal_gap": 6.748821600212186e-8
+    },
+    {
+      "name": "whole primary polynomial Bernstein 5",
+      "pass": true,
+      "gap": "1505355510018890419397/51747965005463552000000000000",
+      "decimal_gap": 2.9090139290693944e-8
+    },
+    {
+      "name": "whole primary polynomial Bernstein 6",
+      "pass": true,
+      "gap": "1368749679864801571873/19785986619736064000000000000",
+      "decimal_gap": 6.917773200652555e-8
+    },
+    {
+      "name": "whole primary polynomial Bernstein 7",
+      "pass": true,
+      "gap": "1874858291328790862369/168180886267756544000000000000",
+      "decimal_gap": 1.1147867828118566e-8
+    },
+    {
+      "name": "whole primary polynomial Bernstein 8",
+      "pass": true,
+      "gap": "56844868252472076386171/924994874472660992000000000000",
+      "decimal_gap": 6.145425214910439e-8
+    },
+    {
+      "name": "whole primary polynomial Bernstein 9",
+      "pass": true,
+      "gap": "39964453948085360067659/462497437236330496000000000000",
+      "decimal_gap": 8.641010896599633e-8
+    },
+    {
+      "name": "whole primary polynomial Bernstein 10",
+      "pass": true,
+      "gap": "1262536642047526164999/17788362970628096000000000000",
+      "decimal_gap": 7.0975426132928e-8
+    },
+    {
+      "name": "whole primary polynomial Bernstein 11",
+      "pass": true,
+      "gap": "925530101023888663521/10511305391734784000000000000",
+      "decimal_gap": 8.80509191324275e-8
+    },
+    {
+      "name": "whole primary polynomial Bernstein 12",
+      "pass": true,
+      "gap": "14740262631808032273/5255652695867392000000000000",
+      "decimal_gap": 2.8046492956809244e-9
+    },
+    {
+      "name": "whole primary polynomial Bernstein 13",
+      "pass": true,
+      "gap": "6446702198766744133/202140488302592000000000000",
+      "decimal_gap": 3.189218673062877e-8
+    },
+    {
+      "name": "whole primary polynomial Bernstein 14",
+      "pass": true,
+      "gap": "1459607654350109041/20214048830259200000000000",
+      "decimal_gap": 7.220758525947385e-8
+    },
+    {
+      "name": "whole primary polynomial Bernstein 15",
+      "pass": true,
+      "gap": "411810124577989861/50535122075648000000000000",
+      "decimal_gap": 8.148988419609142e-9
+    },
+    {
+      "name": "whole primary polynomial Bernstein 16",
+      "pass": true,
+      "gap": "11146853897280469/25267561037824000000000000",
+      "decimal_gap": 4.411527444455089e-10
+    },
+    {
+      "name": "whole primary polynomial Bernstein 17",
+      "pass": true,
+      "gap": "39741424104068277/743163559936000000000000",
+      "decimal_gap": 5.3476012881324195e-8
+    },
+    {
+      "name": "whole primary polynomial Bernstein 18",
+      "pass": true,
+      "gap": "773784973982829/14863271198720000000000",
+      "decimal_gap": 5.2060206911212525e-8
+    },
+    {
+      "name": "primary final-QI derivative",
+      "pass": true,
+      "gap": "566487413/250000000000",
+      "decimal_gap": 0.002265949652
+    },
+    {
+      "name": "primary QII Z>1.56",
+      "pass": true,
+      "gap": "51103559403/4882812500000",
+      "decimal_gap": 0.0104660089657344
+    },
+    {
+      "name": "primary QII concavity",
+      "pass": true,
+      "gap": "731763/1562500",
+      "decimal_gap": 0.46832832
+    },
+    {
+      "name": "primary QII endpoint norm",
+      "pass": true,
+      "gap": "15386311573011/4470050000000000",
+      "decimal_gap": 0.0034420893665643563
+    },
+    {
+      "name": "primary QII endpoint2.5",
+      "pass": true,
+      "gap": "6607744649011813/2023841300000000000",
+      "decimal_gap": 0.0032649519747481254
+    },
+    {
+      "name": "positive core corner phi>2.28",
+      "pass": true,
+      "gap": "11/3000",
+      "decimal_gap": 0.0036666666666666666
+    },
+    {
+      "name": "positive corner first b cap",
+      "pass": true,
+      "gap": "4393/4000000",
+      "decimal_gap": 0.00109825
+    },
+    {
+      "name": "positive corner first label cap",
+      "pass": true,
+      "gap": "6884817913/11300000000000",
+      "decimal_gap": 0.0006092759215044248
+    },
+    {
+      "name": "positive corner first cost",
+      "pass": true,
+      "gap": "79/10000",
+      "decimal_gap": 0.0079
+    },
+    {
+      "name": "positive corner second b cap",
+      "pass": true,
+      "gap": "9989/7200000",
+      "decimal_gap": 0.0013873611111111111
+    },
+    {
+      "name": "positive corner second label cap",
+      "pass": true,
+      "gap": "17029777113/11300000000000",
+      "decimal_gap": 0.0015070599215044247
+    },
+    {
+      "name": "positive corner second cost",
+      "pass": true,
+      "gap": "379/10000",
+      "decimal_gap": 0.0379
+    },
+    {
+      "name": "core corner diagonal lower",
+      "pass": true,
+      "gap": "276191/18000000000000",
+      "decimal_gap": 1.5343944444444445e-8
+    },
+    {
+      "name": "core corner diagonal upper",
+      "pass": true,
+      "gap": "57841/7031250000000",
+      "decimal_gap": 8.226275555555555e-9
+    },
+    {
+      "name": "core marker global maximum",
+      "pass": true,
+      "gap": "18038633519/30000000000000",
+      "decimal_gap": 0.0006012877839666667
+    },
+    {
+      "name": "negative-H late endpoint B coefficient",
+      "pass": true,
+      "gap": "22979140803/218750000000",
+      "decimal_gap": 0.10504750081371429
+    },
+    {
+      "name": "negative-H late endpoint A coefficient",
+      "pass": true,
+      "gap": "26354963601/31250000000",
+      "decimal_gap": 0.843358835232
+    },
+    {
+      "name": "primary sine lower on full range",
+      "pass": true,
+      "gap": "19184677/229376000",
+      "decimal_gap": 0.08363855416434152
+    },
+    {
+      "name": "positive-H quarter strip concavity",
+      "pass": true,
+      "gap": "47863071/50000000",
+      "decimal_gap": 0.95726142
+    }
+  ]
+}

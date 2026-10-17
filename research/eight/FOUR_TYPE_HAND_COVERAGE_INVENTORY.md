@@ -62,25 +62,31 @@ covering one of these whole branches.
 An unordered diagonal type entry consists of eight such branches.
 An unordered off-diagonal entry consists of sixteen. The present state is:
 
-| Pair entry | Whole source-axis branches | Hand coverage currently established |
+| Pair entry | Whole source-axis branches | Hand status |
 |---|---:|---|
-| C/C | 8 | **Complete**, all signs, all axes, all frame angles |
-| C/L | 16 | **Complete**, all signs, all axes, all frame angles |
-| C/M | 16 | One signed source-axis strip, specified below |
-| C/H | 16 | Whole-domain proof pending |
-| L/L | 8 | **Complete**, all signs, all axes, all frame angles |
-| L/M | 16 | Whole-domain proof pending |
-| L/H | 16 | Four signed source-axis strips, specified below |
-| M/M | 8 | Whole-domain proof pending |
-| M/H | 16 | Whole-domain proof pending |
-| H/H | 8 | Whole-domain proof pending |
+| C/C | 8 | **Complete**, all signs, axes and frame angles |
+| C/L | 16 | **Complete**, independently reviewed |
+| C/M | 16 | Continuous derivation and prior arithmetic audit complete; full proof record is being reconstructed and must be replayed before inclusion in the closed count |
+| C/H | 16 | **Complete**, 143 fixed comparisons and independent polynomial/coverage review |
+| L/L | 8 | **Complete**, independently reviewed |
+| L/M | 16 | New whole-domain argument in progress |
+| L/H | 16 | Complete manuscript and 232 fixed comparisons; independent review in progress |
+| M/M | 8 | New whole-domain argument in progress |
+| M/H | 16 | **Complete at .8926**, 225 fixed comparisons and independent polynomial/coverage review |
+| H/H | 8 | Continuous derivation and prior independent audit complete; full proof record is being reconstructed and must be replayed before inclusion in the closed count |
 
-Thus 32 whole source-axis branches are proved, comprising C/C, C/L, and
-L/L. Five further branches have proved proper subintervals. The remaining
-91 branches have not yet been covered by the listed hand notes. All 96
-branches in the seven other pair entries still require some additional
-argument. The [independent low-entry audit](LOW_FRAME_ENTRIES_INDEPENDENT_AUDIT.md)
-records the two new complete entries.
+The reviewed complete entries now cover **64** of the 128 ordered
+source-axis branches: C/C, C/L, C/H, L/L and M/H. The L/H manuscript
+covers another 16 branches and is under independent review. C/M and H/H
+have completed prior derivations whose full records are being restored.
+L/M and M/M are the two remaining whole-entry attack targets.
+
+The [C/H audit](CORE_HIGH_INDEPENDENT_AUDIT.md) reconstructs its
+degree-18 polynomial independently. The
+[M/H audit](MID_HIGH_WHOLE_PAIR_INDEPENDENT_AUDIT.md) reconstructs all
+five polynomials, including a direct conversion to degree 20 for the
+elevated row. The prior low-entry audit remains
+[LOW_FRAME_ENTRIES_INDEPENDENT_AUDIT.md](LOW_FRAME_ENTRIES_INDEPENDENT_AUDIT.md).
 
 ## 3. Exact scope of the proved strips
 
@@ -152,9 +158,11 @@ The second version is the current proposed whole-domain target:
  \end{pmatrix}.}                                         \tag{1}
 \]
 
-Its C/C, C/L and L/L entries and the listed strips have hand proofs at
-present.
-The matrix is a target, not a completed certificate.
+Its C/C, C/L, C/H, L/L and M/H entries have complete independently
+reviewed hand proofs. The M/H proof establishes the strengthened .8926
+value required here. L/H has a complete manuscript under review. The
+remaining obligations are recorded exactly in Section 2; the full matrix
+is not yet claimed as a closed hand theorem.
 
 ## 5. The repaired finite graph budget has a short hand proof
 

@@ -103,7 +103,12 @@ The alternating arctangent sum
 \[
  \phi>.76-.246-.786=-.272.                               \tag{7}
 \]
-If \(\phi\le0\), the gap hypothesis allows only \((\sigma,\tau)=(+,-)\).
+For \(-.272<\phi\le0\), the secondary axis can separate only in the
+sign case \((\sigma,\tau)=(+,-)\). This follows directly from (4),
+not from the center-gap hypothesis alone. For H/L with signs \((+,+)\),
+its projection is at most the source transverse coordinate \(b\le c<1\).
+For L/H with signs \((-,-)\), it is at most the target transverse
+coordinate \(B\le c<1\). The case \((-,+)\) has nonpositive projection.
 For H as source and L as target, the negative-source \(f\) axis is
 impossible at every angle: its separating projection is at most the
 target center radius minus \(b_H\), which is less than
@@ -114,7 +119,7 @@ impossible when \(-.272<\phi\le0\). Upper bounds for its projection are
 \quad
  1.415-.899(1-.272^2/2)+.9(.272)<1.                       \tag{8}
 \]
-Here only the allowed sign pair needs consideration.
+Both bounds use \(|\sin\phi|\), and hold for either target sign.
 
 The aligned-contact note proves, with \(b_0=1-c\),
 \[
