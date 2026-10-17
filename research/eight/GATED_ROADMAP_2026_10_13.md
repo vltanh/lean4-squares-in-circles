@@ -1,3 +1,14 @@
+# Superseded active queue — 2026-10-17
+
+The active queue is [GATED_ROADMAP_2026_10_16.md](GATED_ROADMAP_2026_10_16.md).
+The complete [global exterior-frame theorem](GLOBAL_EXTERIOR_FRAME_WINDOW.md)
+now excludes **all of M5 and M6**, including the former M5-DIFFUSE gate.
+The current global radial cover and its sharp-capture obligations are in
+the new roadmap. Unrestricted optimality, equality, and hand conversion
+remain open. Statements below describe earlier checkpoints.
+
+---
+
 # Further analytic M5-DIFFUSE progress: intrinsic balanced-window Fourier bound (2026-10-13)
 
 [Theorem](GATE3B_M5_BALANCED_WINDOW_FOURIER.md): for every M5 frame set, write `S=sum_i exp(4i theta_i)` and let A be the intrinsic fraction of 45-degree orientation windows containing exactly four frames, equivalently the odd folded barycentric mass. Then
@@ -345,3 +356,4 @@ finite testing. No Lean compilation or CI was invoked.
 Resume at **Gate 3B.2 / M5-I's uncovered center/owner arrangements**.
 Do not mark M5 or the whole gate passed. Do not move to M6 while its
 predecessor's coverage/exclusion obligation is still unproved.
+
