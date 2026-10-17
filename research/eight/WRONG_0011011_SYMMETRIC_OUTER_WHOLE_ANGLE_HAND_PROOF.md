@@ -5,8 +5,8 @@
 It replaces a two-variable contact search by calculus and 71 fixed rational
 comparisons. It does not claim the remaining signs or the mixed radial cases.
 The only prior analytic inputs are the retained-axis reduction for the physical
-seven-ring, the label curvature lemma, and the already proved symmetric aligned
-quartic inequality.
+seven-ring and the symmetric aligned quartic inequality. The label curvature
+bound needed here is proved directly below.
 
 ## 1. Statement and coordinates
 
@@ -68,7 +68,14 @@ Let \(D=L'\). If \(R(b)=a(b)+1/2\), direct differentiation gives
 \]
 Every decimal in this note denotes an exact terminating rational.
 
-The previously proved curvature statement is \(D''>2\) on \([0,d]\).
+Differentiating once more gives the explicit positive expression
+\[
+ D''(b)=1.89442\left(\frac{3Q}{R(b)^3}
+       +\frac{3bQ(b+1/2)}{R(b)^5}\right)
+ >\frac{3(1.8)(3.9)}{2^3}>2.                           \tag{6a}
+\]
+Here \(b\ge0\), \(Q>3.9\), and \(R(b)<\sqrt Q<2\).
+Thus \(D''>2\) on \([0,d]\) without a prior label-curvature lemma.
 In particular, \(D\) is strictly convex and \(D'\) is strictly increasing.
 The following fixed evaluations suffice for everything below.
 

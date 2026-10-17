@@ -69,17 +69,17 @@ An unordered off-diagonal entry consists of sixteen. The present state is:
 | C/M | 16 | Continuous derivation and prior arithmetic audit complete; full proof record is being reconstructed and must be replayed before inclusion in the closed count |
 | C/H | 16 | **Complete**, 143 fixed comparisons and independent polynomial/coverage review |
 | L/L | 8 | **Complete**, independently reviewed |
-| L/M | 16 | New whole-domain argument in progress |
-| L/H | 16 | Complete manuscript and 232 fixed comparisons; independent review in progress |
+| L/M | 16 | Complete manuscript and 305 fixed comparisons; independent review in progress |
+| L/H | 16 | **Complete**, 232 fixed comparisons and independent reconstruction of all 80 Bernstein bounds and 16 endpoint rows |
 | M/M | 8 | New whole-domain argument in progress |
 | M/H | 16 | **Complete at .8926**, 225 fixed comparisons and independent polynomial/coverage review |
 | H/H | 8 | Continuous derivation and prior independent audit complete; full proof record is being reconstructed and must be replayed before inclusion in the closed count |
 
-The reviewed complete entries now cover **64** of the 128 ordered
-source-axis branches: C/C, C/L, C/H, L/L and M/H. The L/H manuscript
-covers another 16 branches and is under independent review. C/M and H/H
-have completed prior derivations whose full records are being restored.
-L/M and M/M are the two remaining whole-entry attack targets.
+The reviewed complete entries now cover **80** of the 128 ordered
+source-axis branches: C/C, C/L, C/H, L/L, L/H and M/H. The L/M manuscript covers another
+16 branches and is under independent review. C/M and H/H have completed
+prior derivations whose full records are being restored. M/M is the
+remaining whole-entry attack target.
 
 The [C/H audit](CORE_HIGH_INDEPENDENT_AUDIT.md) reconstructs its
 degree-18 polynomial independently. The
@@ -158,9 +158,9 @@ The second version is the current proposed whole-domain target:
  \end{pmatrix}.}                                         \tag{1}
 \]
 
-Its C/C, C/L, C/H, L/L and M/H entries have complete independently
+Its C/C, C/L, C/H, L/L, L/H and M/H entries have complete independently
 reviewed hand proofs. The M/H proof establishes the strengthened .8926
-value required here. L/H has a complete manuscript under review. The
+value required here. L/M has a complete manuscript under review. The
 remaining obligations are recorded exactly in Section 2; the full matrix
 is not yet claimed as a closed hand theorem.
 
