@@ -130,6 +130,19 @@ lt('axis1 lower derivative product',F('1.069')*F('.915'),1)
 gt('axis1 lower final bound',pi2-F('.571')-label('T',0)+label('K',0),'.953')
 lt('axis1 upper source cap',q0.sqrt()-F('.5'),'.543')
 gt('axis1 upper direct bound',pi2-label('T','.543')+label('K',0),'1.09')
+s626,c626=trig('.626')
+gt('correct lower axis1 target-cost concavity numerator',
+   F('.44642')*Q-(F('.24433')+F('1.069')*c7)*F('1.4'),'.261')
+gt('correct lower axis1 target-cost derivative axial',
+   der('K',0)[0]+F('1.069')*(F('.5')/outer(0)[1]*c7-s7),'.44')
+gt('correct lower axis1 target-cost derivative diagonal',
+   der('K',d)[0]+F('1.069')*(c7-s7),'.44')
+gt('correct lower axis1 early zero-source cost',pi2-F('.626')-label('T',0)+label('K',0),'.8982')
+gt('correct lower axis1 late zero-source cost',pi2-F('.7')-label('T',0)+label('K','.1'),'.9157')
+gt('correct lower axis1 small target derivative',s626-F('.6')/outer('.1')[1]*c626)
+lt('correct lower axis1 small target infeasible',
+   (outer('.1')[0]-F('.5'))*c626-F('.4')*s626-F('.5'),'-.0166')
+gt('correct upper axis1 direct bound',pi2-label('T','.415')+label('K',0),'1.175')
 s25,c25=trig('.25')
 gt('axis2 lower angle cap',F('1.75')*s25+F('.5')*c25,'.915')
 gt('axis2 lower cap increases',F('1.75')*c7-F('.5')*s7)

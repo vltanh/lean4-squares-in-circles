@@ -2,7 +2,7 @@
   "status": "PASS: whole edge-3 negative outer quarter row",
   "Q": "9789/2500",
   "target": "17953/20000",
-  "comparison_count": 126,
+  "comparison_count": 134,
   "axial_rows": [
     {
       "x": [
@@ -223,6 +223,38 @@
     {
       "name": "axis1 upper direct bound",
       "strict_reserve": "30286458127876540164723962475356667513950060200321212783359/8970136240884279266318636353757871093750000000000000000000000"
+    },
+    {
+      "name": "correct lower axis1 target-cost concavity numerator",
+      "strict_reserve": "94888338561530371331/342144000000000000000000"
+    },
+    {
+      "name": "correct lower axis1 target-cost derivative axial",
+      "strict_reserve": "1207907609147854887777641890802322161/94619861321549541120000000000000000000"
+    },
+    {
+      "name": "correct lower axis1 target-cost derivative diagonal",
+      "strict_reserve": "5201124007124910209839470567960217552784811712831/5375335680000000677381446816588800000000000000000000"
+    },
+    {
+      "name": "correct lower axis1 early zero-source cost",
+      "strict_reserve": "179478264001551580566246845988872611807401310193286791/8759898672738553971014293314216670989990234375000000000000"
+    },
+    {
+      "name": "correct lower axis1 late zero-source cost",
+      "strict_reserve": "88706300312500991381855155624822842823859313685844224873/1121267030110534908289829544219733886718750000000000000000000"
+    },
+    {
+      "name": "correct lower axis1 small target derivative",
+      "strict_reserve": "109604457341618126403359389684204550990745407544923/334110042278829928125000000000000000000000000000000"
+    },
+    {
+      "name": "correct lower axis1 small target infeasible",
+      "strict_reserve": "25053486703443846612772299851048085058748648186069/365449218750000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "correct upper axis1 direct bound",
+      "strict_reserve": "107826891124539739955540465502360782403687016056110588999/560633515055267454144914772109866943359375000000000000000000"
     },
     {
       "name": "axis2 lower angle cap",

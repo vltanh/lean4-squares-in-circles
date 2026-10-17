@@ -49,7 +49,7 @@ or computer-generated cover.
 
 The companion
 **verify_wrong_0011011_edge3_negative_outer_quarter_hand.py**
-checks 126 fixed rational comparisons appearing below. Its only
+checks 134 fixed rational comparisons appearing below. Its only
 transcendental inputs are the displayed radicals, alternating Taylor
 bounds for sine and cosine, and the Machin bounds specified in Section 8.
 The complete continuous proof is in this note.
@@ -168,11 +168,33 @@ Write \(x=|\phi-\pi/2|\), so \(0\le x\le.7\), and write
 
 For \(\phi=\pi/2-x\), axis 1 says
 \[
- b\le(A-\tfrac12)c-(B+\tfrac12)s-\tfrac12.
+ b\le b_{\max}(B,x):=(A-\tfrac12)c+(B-\tfrac12)s-\tfrac12.
 \]
-Its right side decreases with \(B\), whereas \(K\) increases.
-Since \(T\) increases, the smallest cost occurs at \(B=0\) and the
-largest allowed \(b\):
+The bound \(b_{\max}<\sqrt{Q-2a_0}-1/2<.543<d\) follows from
+\((A-1/2)^2+(B-1/2)^2=Q-2(A+B)\) and \(A+B\ge a_0\).
+Thus there is no source-diagonal clamp, and increasing \(b\) reduces
+the cost until contact. On contact its derivative with respect to \(B\)
+is
+\[
+ C_B=K'(B)+T'(b_{\max})(r(B)c-s)>0.
+\]
+To prove the last sign, it suffices when \(r c-s<0\) to bound it below by
+\[
+ G(B)=K'(B)+1.069\{r(B)\cos(.7)-\sin(.7)\}.
+\]
+This function is strictly concave: by (4), its second derivative has
+the sign of
+\[
+ -.44642Q+\{.24433+1.069\cos(.7)\}(B+\tfrac12)<-.261.
+\]
+Both endpoint values of \(G\) exceed .44. When \(r c-s\ge0\),
+the desired sign follows directly from \(K'>0\).
+
+At each fixed angle the feasible contact interval therefore has its
+minimum at \(B=0\), if that point is feasible, or at a zero-source
+endpoint \(b_{\max}=0\). These are all the possibilities because
+\(b_{\max}\) is concave in \(B\).
+On the \(B=0\) boundary,
 \[
  b=(a_0-\tfrac12)c-\tfrac12s-\tfrac12.
 \]
@@ -191,22 +213,33 @@ strictly larger than
 \[
  \pi/2-.571-T(0)+K(0)>.953.                                   \tag{10}
 \]
+For a zero-source endpoint, if \(x\le.626\), the direct bound is
+\[
+ \pi/2-.626-T(0)+K(0)>.8982>.89777.
+\]
+If \(x\ge.626\), feasibility forces \(B>.1\). Indeed on
+\(B\in[0,.1]\) the function \(b_{\max}\) decreases in \(x\), and
+increases in \(B\), while
+\[
+ \sin(.626)-r(.1)\cos(.626)>0,\qquad
+ b_{\max}(.1,.626)<-.0166<0.
+\]
+Consequently every such later zero-source endpoint has cost
+\[
+ \pi/2-.7-T(0)+K(.1)>.9157.
+\]
+This covers the complete lower half.
 
 ### 3.2. Axis 1 above alignment
 
 For \(\phi=\pi/2+x\),
 \[
- b\le(A-\tfrac12)c+(B-\tfrac12)s-\tfrac12
- \le\sqrt{(A-\tfrac12)^2+(B-\tfrac12)^2}-\tfrac12.
-\]
-The last squared radius equals \(Q-2(A+B)\). The concavity of
-\(a(B)+B\) gives \(A+B\ge a_0\). Therefore
-\[
- b<\sqrt{Q-2a_0}-\tfrac12<.543.
+ b\le(A-\tfrac12)c-(B+\tfrac12)s-\tfrac12
+ \le a_0-1<.415.
 \]
 A direct bound is now enough:
 \[
- \phi-T(b)+K(B)\ge\pi/2-T(.543)+K(0)>1.09.                     \tag{11}
+ \phi-T(b)+K(B)\ge\pi/2-T(.415)+K(0)>1.175.                    \tag{11}
 \]
 
 ### 3.3. Axis 2 below alignment
