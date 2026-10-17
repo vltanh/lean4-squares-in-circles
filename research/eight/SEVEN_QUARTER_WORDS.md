@@ -6,9 +6,10 @@ frames have lifts in one interval of length less than (7/10). It does
 not assume any of the 123 numerical role-domain exclusions.
 
 Under that one frame hypothesis, a physical exterior seven-cycle has one
-of the seven integer words in Section 3. The six noncandidate words still
-require exclusion; the candidate word still requires a sharp geometric
-argument. Those later steps are not claimed here.
+of the seven integer words in Section 3. The [complete common hand table](COMMON_QUARTER_TABLE_AND_FOUR_WORD_EXCLUSIONS.md)
+now excludes the four words containing a double increment under this same
+frame hypothesis. The two other wrong words and the candidate sharp
+argument remain separate active tasks.
 
 ## 1. A slightly stronger common-point lemma
 
@@ -148,10 +149,10 @@ rotation and plane reflection combined with reversal of the center order:
 
 | Word | Number of entries equal to 2 | Status in the hand reduction |
 |---|---:|---|
-| (0010012) | 1 | Requires exclusion |
-| (0010102) | 1 | Requires exclusion |
-| (0010201) | 1 | Requires exclusion |
-| (0011002) | 1 | Requires exclusion |
+| (0010012) | 1 | Excluded by the common hand table, conditional on the frame bound |
+| (0010102) | 1 | Excluded by the common hand table, conditional on the frame bound |
+| (0010201) | 1 | Excluded by the common hand table, conditional on the frame bound |
+| (0011002) | 1 | Excluded by the common hand table, conditional on the frame bound |
 | (0010111) | 0 | Requires exclusion |
 | (0011011) | 0 | Requires exclusion |
 | (0101011) | 0 | Contains the proposed optimum |

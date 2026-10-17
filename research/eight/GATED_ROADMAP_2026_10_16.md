@@ -16,10 +16,13 @@ arithmetic now have complete hand replacements. Analytic replacement of
 the global pair/capture premises is the active gate. Global equality
 classification remains a separate open gate.
 
-The [latest hand checkpoint](HAND_PAIR_AND_TERMINAL_PROGRESS_2026_10_17.md)
-adds two difficult frame-pair strips, four complete named quarter-increment
-regimes, and an [exact square-completion terminal](HAND_EXACT_CENTER_SQUARE_COMPLETION.md)
-valid for \(S\le1/500\). The full global hand gates remain open.
+The [complete common quarter table](COMMON_QUARTER_TABLE_AND_FOUR_WORD_EXCLUSIONS.md)
+now gives whole-domain hand proofs for all three increments. Its cyclic sum
+excludes all four words containing a double increment, conditional on the
+explicit upstream frame bound. The [independent audit](COMMON_QUARTER_TABLE_INDEPENDENT_AUDIT.md)
+passes. The [exact square-completion terminal](HAND_EXACT_CENTER_SQUARE_COMPLETION.md)
+is valid for \(S\le1/500\). Global frame concentration, the two remaining
+wrong words, and candidate capture remain the active hand work.
 
 ## 1. Exact target and closure standards
 
@@ -172,8 +175,8 @@ independent range/domain audits remain in their existing locations.
 | Hand gate | Required analytic replacement | Current concrete work |
 |---|---|---|
 | H1: central core | Prove the strict radius-1/12 core for every packing at 9789/2500. | **Passed.** [Transverse-segment proof](HUMAN_CENTRAL_CORE_FROM_TRANSVERSE_SEGMENT.md), with 19 explicit polynomial rows and two elementary forbidden-width estimates; independently reviewed. |
-| H2a: frame concentration | Replace the full four-type continuous pair theorem. | **Active.** [Affine support reduction](AFFINE_MARKER_SUPPORT_REDUCTION.md) eliminates both state variables. The low/high [aligned](LOW_HIGH_ALIGNED_CONTACT_HAND_PROOF.md), [parallel-strip](LOW_HIGH_PARALLEL_STRIP_HAND_PROOF.md), and [quarter-strip](LOW_HIGH_QUARTER_STRIP_HAND_REDUCTION.md) regimes have hand proofs. New [high/low polynomial](HIGH_LOW_NONALIGNED_SHORT_HAND_PROOF.md) and [mid/core curvature](CORE_MID_NONALIGNED_HAND_PROOF.md) lemmas close two more difficult strips. These are named partial regimes, not the full pair theorem. |
-| H2b: global word and owner capture | Derive every sharp-terminal hypothesis throughout the full remaining domain. | **Active.** The [common-point lemma](COMMON_POINT_AND_THREE_QUARTER_ANGLE.md) and its strengthening give center gaps >19/25 and remove four signed axes. Conditional on H2a, the [seven-quarter-word theorem](SEVEN_QUARTER_WORDS.md) gives a complete seven-word list. Six wrong-word exclusions and the candidate-word sharp argument remain; numerical fits are discovery only. |
+| H2a: frame concentration | Replace the full four-type continuous pair theorem. | **Active.** [Affine support reduction](AFFINE_MARKER_SUPPORT_REDUCTION.md) eliminates both state variables. The low/high [aligned](LOW_HIGH_ALIGNED_CONTACT_HAND_PROOF.md), [parallel-strip](LOW_HIGH_PARALLEL_STRIP_HAND_PROOF.md), and [quarter-strip](LOW_HIGH_QUARTER_STRIP_HAND_REDUCTION.md) regimes have hand proofs. New [high/low polynomial](HIGH_LOW_NONALIGNED_SHORT_HAND_PROOF.md) and [mid/core curvature](CORE_MID_NONALIGNED_HAND_PROOF.md) lemmas close two more difficult strips. The [whole core/core entry](CORE_CORE_WHOLE_PAIR_HAND_PROOF.md) is now proved for all angles, signs and axes. The [coverage inventory](FOUR_TYPE_HAND_COVERAGE_INVENTORY.md) records the exact remaining entries and the repaired graph budget needed for D<.7. |
+| H2b: global word and owner capture | Derive every sharp-terminal hypothesis throughout the full remaining domain. | **Active.** The [common-point lemma](COMMON_POINT_AND_THREE_QUARTER_ANGLE.md) and its strengthening give center gaps >19/25 and remove four signed axes. Conditional on H2a, the [seven-quarter-word theorem](SEVEN_QUARTER_WORDS.md) gives a complete seven-word list. The [common three-row hand table](COMMON_QUARTER_TABLE_AND_FOUR_WORD_EXCLUSIONS.md) now excludes all four words containing a double increment, for every radial assignment and retained SAT axis. Two wrong words (0010111, 0011011) and the candidate word (0101011) remain; numerical fits are discovery only. |
 | H3: terminal constants and radius bracket | Give hand-verifiable broad stationary, slider, weight, owner and exact-ceiling inequalities. | **Passed.** [Compact terminal proof](HUMAN_BROAD_TERMINAL_ARITHMETIC.md), [sharp bracket](HUMAN_SHARP_CEILING_BRACKET.md), and [independent audit](HAND_TERMINAL_AND_CEILING_INDEPENDENT_AUDIT.md). The [exact square completion](HAND_EXACT_CENTER_SQUARE_COMPLETION.md) now extends the sufficient mismatch bound twenty-fold to \(S\le1/500\), for arbitrary anchored centers and all 32 owners. All bounds are displayed finite rational arithmetic with no adaptive search. |
 | H4: assembly audit | Substitute the completed hand lemmas into the unrestricted argument and check all ties, boundaries, signs and radius transfers. | H1 and H3 are substituted into the main assembly. Full hand closure waits for H2a–H2b. |
 
