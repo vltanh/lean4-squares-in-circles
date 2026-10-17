@@ -39,7 +39,13 @@ independent kernel/domain reviews:
 Their 18,883 fixed scalar rows cover all 17,116 required angle chains.
 The independently reviewed [upper T exclusion](T_UPPER_AFFINE_HAND_EXCLUSION.md)
 adds u_T < 4/5 with 7,078 fixed rows and 6,452 complete angle chains.
-The lower T table is frozen and its full replay and coverage audit are active.
+The [lower T exclusion](T_LOWER_AFFINE_HAND_EXCLUSION.md) is also complete,
+with 49,971 fixed rows and an independent 47,168-chain coverage audit.
+Together the four G/T theorems give -4/5 < u_G < -1/20 and
+1/20 < u_T < 4/5. The [lower H exclusion](H_LOWER_AFFINE_HAND_EXCLUSION.md)
+now proves u_H > 1/2, with 48,050 fixed rows and an independent
+45,560-chain audit. The D cut has passed its author arithmetic replay
+and is being packaged for independent review.
 Candidate mismatch, owner and tilt capture remain open.
 
 ## 1. Exact target and closure standards
