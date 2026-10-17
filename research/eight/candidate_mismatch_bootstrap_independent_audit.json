@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "scope": "Continuous mismatch contraction and strict zero-edge axis/sign implications, conditional on the explicitly stated full pair bound",
+  "replayed_comparisons": 17,
+  "independently_recomputed_comparisons": 17,
+  "replay_byte_identical": true,
+  "geometric_reserves": {
+    "primary_axes": "711/20000",
+    "source_sign": "17/2000",
+    "target_sign": "3/500"
+  },
+  "sha256": {
+    "HAND_CANDIDATE_MISMATCH_BOOTSTRAP.md": "d2485f4e1db5707be71e01e4f6491061e90e4029dc6c947f661ff1c2cd042e2f",
+    "verify_candidate_mismatch_bootstrap.py": "da2d892a5d325ff9a2f9fb08f3035192d47b4d88124f510388fa84be834b9eac",
+    "candidate_mismatch_bootstrap_arithmetic.json": "6206d8f5b10b0bdae95ad5eecd25b1493a54724c4f08fee5a9ed4bb71f2fde4e"
+  }
+}
