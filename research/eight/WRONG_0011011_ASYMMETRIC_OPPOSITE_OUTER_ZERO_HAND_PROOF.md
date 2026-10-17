@@ -363,7 +363,7 @@ are \(0\) and \(x_*<.56\). The inverse function \(x(B)\) is convex.
 A convex function lies below its endpoint chord, so
 \[
  0\le x(B)\le \frac{x_*}{2d-1}(B-(1-d))
- <.702(B-(1-d)),                                     \tag{27}
+ \le.702(B-(1-d)),                                   \tag{27}
 \]
 where \(.56/(2(.899)-1)<.702\).
 By \(P'>.773\),

@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "comparisons": 66,
+  "replay_byte_identical": true,
+  "temporary_replay_directory": "/tmp/m5_asym_zero_audit_988d3_mr",
+  "hashes": {
+    "proof_integration/WRONG_0011011_ASYMMETRIC_OPPOSITE_OUTER_ZERO_HAND_PROOF.md": "fbbd2da52f34c98507c2ea9a6c1756c2e14f73f588a1da75fd5a939223a5451a",
+    "proof_integration/verify_wrong_0011011_asymmetric_opposite_outer_zero_hand.py": "8e02ca7d3c920a31007d66ed170efc74890f112b4eabba53d20f7b2fdd276cec",
+    "proof_integration/wrong_0011011_asymmetric_opposite_outer_zero_hand_arithmetic.json": "564fea8ba97271035d15be3fe76010fc05b891295431523f83be046d7d58bd82"
+  }
+}

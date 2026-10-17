@@ -6,14 +6,14 @@ unproved entries. The computer-assisted PL certificate remains a separate,
 completed artifact; none of its interval trees is silently treated as a
 hand proof below.
 
-## 1. One fixed proposed family
+## 1. The fixed proved family
 
 Put \(Q=9789/2500\), \(\beta=9/50\),
 \(a_0=\sqrt{Q-1/4}-1/2\), and
 \(c=\sqrt{Q/2}-1/2\). Use the following four geometric domains and
 positive-half labels. Every decimal is an exact rational number.
 
-| Type | Geometric domain, with \(t=b/a\ge0\) | Proposed \(\ell(a,b)\) |
+| Type | Geometric domain, with \(t=b/a\ge0\) | Proved label \(\ell(a,b)\) |
 |---|---|---|
 | C, index 0 | whole core boundary, \(0\le t\le1\) | \(7.506931(7/12-a)+1.077372b\) |
 | L, index 1 | outer boundary, \(0\le t\le1/4\) | \(.403875(a-a_0)+1.089065b\) |
@@ -66,7 +66,7 @@ An unordered off-diagonal entry consists of sixteen. The present state is:
 |---|---:|---|
 | C/C | 8 | **Complete**, all signs, axes and frame angles |
 | C/L | 16 | **Complete**, independently reviewed |
-| C/M | 16 | Complete restored manuscript and 213 fixed comparisons; fresh independent review pending |
+| C/M | 16 | **Complete**, 213 fixed comparisons and independent whole-domain review with 66 independently reconstructed scalar comparisons |
 | C/H | 16 | **Complete**, 143 fixed comparisons and independent polynomial/coverage review |
 | L/L | 8 | **Complete**, independently reviewed |
 | L/M | 16 | **Complete**, 305 fixed comparisons and independent reconstruction of all eight polynomial rows |
@@ -75,10 +75,13 @@ An unordered off-diagonal entry consists of sixteen. The present state is:
 | M/H | 16 | **Complete at .8926**, 225 fixed comparisons and independent polynomial/coverage review |
 | H/H | 8 | **Complete**, restored 108-comparison proof with fresh independent geometry, scalar and polynomial audit |
 
-The reviewed complete entries now cover **112** of the 128 ordered
-source-axis branches: C/C, C/L, C/H, L/L, L/M, L/H, M/M, M/H and H/H. The restored
-C/M manuscript covers the final 16 branches and passes 213 fixed
-comparisons; its fresh independent review is the final frame-table gate.
+All **128** ordered source-axis branches now have complete independently
+reviewed hand proofs. The restored C/M manuscript closes the final 16,
+with 213 fixed comparisons and an independent reconstruction of its
+polynomial and curvature arguments. See
+[the final C/M audit](CORE_MID_WHOLE_PAIR_INDEPENDENT_AUDIT.md).
+The complete [hand frame assembly](HAND_EXTERIOR_FRAME_CONCENTRATION.md)
+proves D < .7 and discharges the common quarter table's frame premise.
 
 The [C/H audit](CORE_HIGH_INDEPENDENT_AUDIT.md) reconstructs its
 degree-18 polynomial independently. The
@@ -113,7 +116,7 @@ the stronger scalar value \(F>.8833599\) on its stated interval.
 The aligned and deformation arguments retain values above .88335 as
 well. None of those statements extends beyond the intervals in the table.
 
-## 4. The proposed cost table and the frame-concentration interface
+## 4. The proved cost table and the frame-concentration interface
 
 The earlier rounded target table was
 
@@ -145,7 +148,7 @@ Two alternative explicit repairs each give the exact budget
 1. Raise both C/H and L/H targets from .8833 to .88335.
 2. Keep those targets and raise only M/H from .8925 to .8926.
 
-The second version is the current proposed whole-domain target:
+The second version is the proved whole-domain table:
 
 \[
  \boxed{\Gamma=
@@ -157,11 +160,10 @@ The second version is the current proposed whole-domain target:
  \end{pmatrix}.}                                         \tag{1}
 \]
 
-Its C/C, C/L, C/H, L/L, L/M, L/H, M/M, M/H and H/H entries have complete independently
-reviewed hand proofs. The M/H proof establishes the strengthened .8926
-value required here. The
-remaining obligations are recorded exactly in Section 2; the full matrix
-is not yet claimed as a closed hand theorem.
+All ten entries have complete independently reviewed hand proofs. The
+M/H proof establishes the strengthened .8926 value required here. The
+full matrix is a closed hand theorem, with its complete scope recorded
+in Section 2.
 
 ## 5. The repaired finite graph budget has a short hand proof
 
@@ -196,7 +198,7 @@ Consequently every length-seven closed walk satisfies
 The example word above attains equality, so (2) is the exact minimum.
 No exhaustive word enumeration is needed for this conclusion.
 
-If all continuous pair inequalities for (1) are proved, telescoping
+The proved continuous pair inequalities for (1), telescoping
 and \(\pi<355/113\) give
 
 \[
@@ -219,17 +221,17 @@ with exact final difference
  \frac{201866893}{813600000000}>0.
 \]
 
-Thus the repaired table would supply the precise \(D<.7\) interface.
-The continuous pair entries in Section 2 remain the hand gate.
+Thus the repaired table supplies the precise \(D<.7\) interface.
+[The hand frame assembly](HAND_EXTERIOR_FRAME_CONCENTRATION.md) gives
+the full orientation-circle lifting argument and closes this gate.
 
 ## 6. Other routes are logically separate
 
 The common quarter-increment table uses two physical kinds, C/O, and
 different markers. All three rows now have independent hand proofs, assembled in
-`COMMON_QUARTER_TABLE_AND_FOUR_WORD_EXCLUSIONS.md`. Those proofs
-are conditioned on \(D<.7\); they cannot themselves be substituted
-for the missing frame-concentration premise without an additional
-argument.
+`COMMON_QUARTER_TABLE_AND_FOUR_WORD_EXCLUSIONS.md`. Their \(D<.7\) premise is now supplied by the independent whole-domain
+frame proof above. Thus all four double-increment-word exclusions are
+complete hand consequences for every packing under the radius ceiling.
 
 A discovery experiment with two angular graph types and only three
 affine geometric labels (core, low outer, high outer) has not yet
