@@ -255,10 +255,11 @@ A global boundary-cycle capture may terminate in this neighborhood
 even when T or G is at its core or outer endpoint. It must still prove
 that the five anchored centers, independent frame angles, cyclic
 labeling, and the correct slider components enter the stated tube.
-This theorem supplies neither that global covering statement nor an
-explicit numerical tube radius. A computational capture must also
-make the neighborhood size quantitative before claiming that a
-specific terminal box lies inside it.
+This theorem does not supply that global covering statement. Its
+[quantitative extension](HUMAN_QUANTITATIVE_SLIDER_TUBE.md) now proves an
+explicit tube with center error at most 1/1000 and total five-edge angle
+mismatch at most 1/10000 over a stated common-tilt chart. A computational
+capture must prove that every terminal box satisfies those hypotheses.
 
 Run the finite arithmetic audit from this directory:
 

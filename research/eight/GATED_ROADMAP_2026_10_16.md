@@ -58,8 +58,9 @@ included in this work.
 | G5b: three-core exclusion | Exclude the whole COCOCOO continuous family at Q. | **Passed, computer-assisted.** All eight closed pair branches complete; a hand sum gives 3929/625>2π. |
 | G5c: short two-core exclusion | Exclude the whole COCOOOO continuous family at Q. | **Passed, computer-assisted.** All 28 directed role/sign branches complete; their cost sum is 125709/20000>2π. |
 | G6: global survivor capture | Cover every remaining physical boundary cycle by a finite explicit collection of families on which all sharp-proof hypotheses hold, or prove a direct universal sharp inequality. | **ACTIVE / OPEN.** Three radial words remain; M7 and M8 are not closed. |
-| G7: sharp terminal inequalities | Prove q>=q_* on every retained family, for full continuous angles and every allowed slider; strictly exclude all other families. | Open. Existing conditional and local theorems do not yet cover G6. |
-| G8: unrestricted assembly | Prove that every normalized packing reaches a completed terminal theorem, then combine with the exact construction. | Waiting for G6–G7. |
+| G7a: quantitative candidate terminal | Give explicit continuous pose/frame tolerances including both full slider ranges, with every actual SAT owner covered. | **Passed.** The quantitative curved tube admits center error 1/1000 and total five-edge mismatch 1/10000. All 44 wrong-gap and 640 owner-reserve comparisons pass; an explicit nonlinear estimate proves the sharp bound. |
+| G7b: terminal completeness | Prove q>=q_* on every family retained by G6, or strictly exclude it. | Open. G7a applies once G6 proves its hypotheses; unclassified branches remain. |
+| G8: unrestricted assembly | Prove that every normalized packing reaches a completed terminal theorem, then combine with the exact construction. | Waiting for G6–G7b. **Radius interface passed:** monotone outer-radius expansion and a 10^-16 center pullback transfer a sharp rational-ceiling capture to an actual smaller disk. |
 | G9: global equality | Trace equality through a complete cover and recover exactly all attaining poses and slider ranges, with converse feasibility. | Open. Deformations used for lower bounds need a separate equality analysis. |
 | H: hand conversion and final audit | Replace each retained computational premise by an analytic proof and audit the full dependency chain, ties, and boundaries. | Open. Currently G2, G4, G5b, and G5c contain computational premises. |
 
@@ -76,7 +77,9 @@ seven-cycle of actual unit squares with:
 
 - centers in cyclic order and gaps \(3/5<\delta_i<\pi\), summing
   **exactly** to \(2\pi\);
-- a square on the `O` or `C` radial curve at Q for each label;
+- a square on the `O` or `C` radial curve at the sharp rational ceiling
+  Q_sharp=q_c+10^-16 for each label, where
+  q_c=3.91553413751747532652;
 - all seven adjacent genuine SAT disjunctions, with actual frame
   widths and a consistent frame at every vertex;
 - all seven exterior frames in one interval of length less than 7/10.
@@ -86,6 +89,17 @@ radius-1/12 core have been relaxed. A universal sharp theorem on this
 larger domain would suffice. If the relaxation admits a smaller
 counterexample, restore the necessary original geometric constraints;
 do not discard the counterexample by assumption.
+
+The [monotone-radius lemma](OUTER_RADIUS_MONOTONICITY_AND_SHARP_PULLBACK.md)
+expands each O radius while retaining all center rays, frames, relative
+parameters, C states, and selected true SAT inequalities. Thus the
+completed exclusions at the coarser Q=9789/2500 apply to this sharp parent
+domain with the same radial word. Conversely, starting with any hypothetical
+q<q_*, put q_bar=max(q,q_c-2*10^-16), perform the radial reduction there,
+and expand to Q_sharp. The center change on returning to q_bar is at
+most 10^-16. A terminal center-error target 0.00099 therefore transfers
+into the proved 0.001 tube. Capture at the larger circle alone would not
+have supplied this contradiction; the explicit pullback does.
 
 The finite radial cover, up to rotation and reflection, is:
 
@@ -116,9 +130,14 @@ extends local sharpness to a neighborhood of the full candidate-compatible
 T/G slider rectangle, including both radial endpoints. All 44 wrong-axis
 corner bounds and all 640 owner-coefficient corner bounds passed exactly;
 convexity and concavity fill the continuous rectangle. This repairs the
-former fixed-slider interface. A computational terminal box still needs
-a quantitative tube radius and a complete capture proof into that tube.
-Numerical convergence to the candidate establishes neither.
+former fixed-slider interface. The
+[quantitative terminal theorem](HUMAN_QUANTITATIVE_SLIDER_TUBE.md)
+now supplies exact tolerances on the whole chart
+|tan(t/2)-0.06189741100766035970|<=1/2000: center error at most 1/1000
+and total aligned-edge angular mismatch at most 1/10000. Its explicit
+dual estimate leaves a positive angular term 7S/2500. A global box must
+prove every labeling, slider, common-tilt, center, and mismatch hypothesis;
+numerical convergence to the candidate does not establish capture.
 
 ### G6.3 — union and usability audit
 
@@ -144,6 +163,8 @@ Its dependencies are deliberately separated:
 | No three C | THREE_CORE_BOUNDARY_EXCLUSION.md; verify_boundary_pair_costs.cpp | Complete exact dyadic verification plus hand telescoping |
 | No short two C | SHORT_TWO_CORE_BOUNDARY_EXCLUSION.md; verify_boundary_pair_costs.cpp | Complete exact directed-role verification plus hand telescoping |
 | Local sharpness across both full slider ranges | HUMAN_UNIFORM_SLIDER_LOCAL_SHARPNESS.md; verify_uniform_slider_local_dual.py | Analytic compact-family extension with finite exact coefficient checks |
+| Explicit full-slider terminal | HUMAN_QUANTITATIVE_SLIDER_TUBE.md; verify_quantitative_slider_tube.py; QUANTITATIVE_SLIDER_TUBE_AUDIT.md | Exact coefficient bounds and a hand nonlinear remainder estimate |
+| Coarse/sharp radius transfer | OUTER_RADIUS_MONOTONICITY_AND_SHARP_PULLBACK.md | Hand monotonicity of active true SAT projections and an explicit center-error bound |
 
 All three continuous certificates retain exact rational constants, sources,
 all complete branch logs, strict margins, and SHA-256 manifests. The
@@ -168,7 +189,9 @@ three-core branches (754,058 nodes and 377,285 terminal rectangles),
 followed by the complete short-two-core cover (9,535,240 nodes and
 4,768,516 terminal rectangles), reduce the global radial cover to the
 three displayed words. The uniform local theorem now includes the full
-candidate-compatible slider rectangle.
+candidate-compatible slider rectangle. Its quantitative extension now
+provides a precise terminal tube, and the hand monotone-radius lemma
+resolves how a capture at Q_sharp contradicts a packing below q_*.
 
 **Next required exit:** a complete sharp capture or direct inequality
 for those remaining continuous families. Global optimality, global
