@@ -30,7 +30,15 @@ bound now has its complete hand proof in
 passes. The [exact square-completion terminal](HAND_EXACT_CENTER_SQUARE_COMPLETION.md)
 is valid for \(S\le1/500\). The whole word 0010111 now has a complete hand assembly and independent
 scalar-kernel review. The remaining 0011011
-quarter-one cases and candidate capture are the active hand work.
+quarter-one cases and candidate capture are the active hand work. The two
+candidate G exclusions now have complete hand polynomial tables and
+independent kernel/domain reviews:
+[lower G](G_LOWER_AFFINE_HAND_EXCLUSION.md) and
+[upper G](G_UPPER_AFFINE_HAND_EXCLUSION.md). They prove
+\(-4/5<u_G<-1/20\) after the reflection normalization \(u_E\le0\).
+Their 18,883 fixed scalar rows cover all 17,116 required angle chains;
+the remaining candidate tangent, mismatch, owner and tilt premises
+are not inferred from these two exclusions.
 
 ## 1. Exact target and closure standards
 
