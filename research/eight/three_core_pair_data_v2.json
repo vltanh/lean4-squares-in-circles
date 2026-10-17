@@ -1,0 +1,143 @@
+{
+  "status": "CANDIDATE v2 ONLY: needs complete continuous exact pair verification",
+  "Q": [
+    9789,
+    2500
+  ],
+  "core_radius": [
+    1,
+    12
+  ],
+  "coordinate": "t=tan(alpha), odd extension",
+  "types": [
+    "core",
+    "outer"
+  ],
+  "K": 8,
+  "knots": [
+    [
+      0,
+      8
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      2,
+      8
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      5,
+      8
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      8,
+      8
+    ]
+  ],
+  "beta": [
+    0,
+    1
+  ],
+  "psi_numerators": [
+    [
+      0,
+      1142853,
+      2408492,
+      3743201,
+      5006713,
+      6018038,
+      7587799,
+      0,
+      0
+    ],
+    [
+      0,
+      799677,
+      4163365,
+      6444301,
+      7593139,
+      6626810,
+      4538691,
+      2271550,
+      0
+    ]
+  ],
+  "psi_denominator": 100000000,
+  "gamma_numerators": [
+    [
+      0,
+      4698
+    ],
+    [
+      4698,
+      3244
+    ]
+  ],
+  "gamma_denominator": 5000,
+  "required_pairs": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "cost_sum": [
+    3929,
+    625
+  ],
+  "rational_margin": [
+    227,
+    70625
+  ],
+  "rational_margin_decimal": 0.0032141592920353983,
+  "word": "COCOCOO",
+  "discovery_source": "three_core_knots_8.npz",
+  "discovery_checks": "full PL-knot grid including core transition, dense parallel/quarter contacts, two-seed whole-domain DE",
+  "positive_domains": [
+    [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ]
+  ],
+  "is_core": [
+    true,
+    false
+  ]
+}

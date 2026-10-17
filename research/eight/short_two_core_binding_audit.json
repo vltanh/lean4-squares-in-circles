@@ -1,0 +1,11 @@
+{
+  "status": "INDEPENDENT AUDIT PASS",
+  "branches": 28,
+  "initial_rectangles": 1792,
+  "nodes": 9535240,
+  "leaves": 4768516,
+  "max_depth": 29,
+  "worst_scaled_upper": -7079,
+  "cost_sum": "125709/20000",
+  "margin_over_710_over_113": "5117/2260000"
+}

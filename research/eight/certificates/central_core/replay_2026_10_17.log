@@ -1,0 +1,5 @@
+VERIFIED CORE -1 -1 nodes=5199 empty=0 positive=2600 depth=31 minimum_margin=3290350679/281474976710656
+VERIFIED CORE -1 1 nodes=11383 empty=0 positive=5692 depth=41 minimum_margin=1211334/281474976710656
+VERIFIED CORE 1 -1 nodes=14133 empty=0 positive=7067 depth=31 minimum_margin=4332916735/281474976710656
+VERIFIED CORE 1 1 nodes=47359 empty=0 positive=23680 depth=42 minimum_margin=37826307/281474976710656
+All four core-label sign cases passed. See the note for the eight-square counting consequence.

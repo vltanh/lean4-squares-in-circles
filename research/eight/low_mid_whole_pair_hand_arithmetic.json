@@ -1,0 +1,1759 @@
+{
+  "status": "PASS",
+  "comparison_count": 305,
+  "polynomial_rows": [
+    {
+      "id": "L+M+f",
+      "lo": ".76",
+      "hi": "1.4",
+      "degree": 16,
+      "lower_numerators": [
+        "298611",
+        "278811",
+        "258892",
+        "239202",
+        "220081",
+        "201865",
+        "184883",
+        "169463",
+        "155931",
+        "144612",
+        "135834",
+        "129926",
+        "127221",
+        "128056",
+        "132775",
+        "141727",
+        "155267"
+      ],
+      "denominator": 1000000,
+      "T_bernstein_lower": "4"
+    },
+    {
+      "id": "L-M+f_QI",
+      "lo": "1",
+      "hi": "1.58",
+      "degree": 16,
+      "lower_numerators": [
+        "286934",
+        "263872",
+        "241970",
+        "221471",
+        "202620",
+        "185660",
+        "170838",
+        "158401",
+        "148603",
+        "141698",
+        "137948",
+        "137617",
+        "140977",
+        "148304",
+        "159880",
+        "175992",
+        "196933"
+      ],
+      "denominator": 1000000,
+      "T_bernstein_lower": "5"
+    },
+    {
+      "id": "L-M+f_QII",
+      "lo": "1.57",
+      "hi": "1.71",
+      "degree": 16,
+      "lower_numerators": [
+        "183687",
+        "269849",
+        "356678",
+        "444166",
+        "532306",
+        "621092",
+        "710515",
+        "800569",
+        "891246",
+        "982538",
+        "1074437",
+        "1166936",
+        "1260028",
+        "1353703",
+        "1447954",
+        "1542774",
+        "1638153"
+      ],
+      "denominator": 1000000,
+      "T_bernstein_lower": "5"
+    },
+    {
+      "id": "MLtight",
+      "lo": ".4",
+      "hi": ".79",
+      "degree": 18,
+      "lower_numerators": [
+        "50244",
+        "46802",
+        "43299",
+        "39758",
+        "36203",
+        "32659",
+        "29150",
+        "25702",
+        "22343",
+        "19100",
+        "16001",
+        "13079",
+        "10363",
+        "7888",
+        "5689",
+        "3800",
+        "2262",
+        "1113",
+        "394"
+      ],
+      "denominator": 1000000,
+      "T_bernstein_lower": "1"
+    },
+    {
+      "id": "LMprimaryplus_QI",
+      "lo": "1.5",
+      "hi": "1.58",
+      "degree": 18,
+      "lower_numerators": [
+        "747732",
+        "735914",
+        "723910",
+        "711721",
+        "699347",
+        "686789",
+        "674049",
+        "661128",
+        "648026",
+        "634744",
+        "621285",
+        "607648",
+        "593835",
+        "579847",
+        "565684",
+        "551349",
+        "536841",
+        "522163",
+        "507315"
+      ],
+      "denominator": 1000000,
+      "T_bernstein_lower": "3"
+    },
+    {
+      "id": "LMprimaryplus_QII",
+      "lo": "1.57",
+      "hi": "1.71",
+      "degree": 18,
+      "lower_numerators": [
+        "536389",
+        "548221",
+        "559794",
+        "571110",
+        "582174",
+        "592988",
+        "603556",
+        "613881",
+        "623966",
+        "633814",
+        "643429",
+        "652813",
+        "661971",
+        "670904",
+        "679617",
+        "688111",
+        "696391",
+        "704459",
+        "712319"
+      ],
+      "denominator": 1000000,
+      "T_bernstein_lower": "3"
+    },
+    {
+      "id": "MLprimaryplus_QI",
+      "lo": "1.3",
+      "hi": "1.58",
+      "degree": 18,
+      "lower_numerators": [
+        "117881",
+        "125949",
+        "132444",
+        "137371",
+        "140737",
+        "142549",
+        "142814",
+        "141541",
+        "138738",
+        "134417",
+        "128586",
+        "121256",
+        "112440",
+        "102148",
+        "90394",
+        "77191",
+        "62552",
+        "46492",
+        "29025"
+      ],
+      "denominator": 1000000,
+      "T_bernstein_lower": ".5"
+    },
+    {
+      "id": "MLprimaryplus_QII",
+      "lo": "1.57",
+      "hi": "1.71",
+      "degree": 18,
+      "lower_numerators": [
+        "38888",
+        "40901",
+        "42846",
+        "44725",
+        "46539",
+        "48289",
+        "49976",
+        "51602",
+        "53168",
+        "54675",
+        "56123",
+        "57515",
+        "58851",
+        "60132",
+        "61359",
+        "62533",
+        "63655",
+        "64726",
+        "65746"
+      ],
+      "denominator": 1000000,
+      "T_bernstein_lower": ".8"
+    }
+  ],
+  "checks": [
+    {
+      "name": "R upper",
+      "pass": true,
+      "gap": "121809/62500000000"
+    },
+    {
+      "name": "a0 lower",
+      "pass": true,
+      "gap": "38440511/10000000000000000"
+    },
+    {
+      "name": "a0 upper",
+      "pass": true,
+      "gap": "59597681/15625000000000000"
+    },
+    {
+      "name": "L lower",
+      "pass": true,
+      "gap": "62968656847/16000000000000000000"
+    },
+    {
+      "name": "L upper",
+      "pass": true,
+      "gap": "65346156017/16000000000000000000"
+    },
+    {
+      "name": "M upper-cut lower",
+      "pass": true,
+      "gap": "185112539/61250000000000000"
+    },
+    {
+      "name": "M upper-cut upper",
+      "pass": true,
+      "gap": "33767171869/6125000000000000000"
+    },
+    {
+      "name": "L high label>.30682",
+      "pass": true,
+      "gap": "3869993311/800000000000000"
+    },
+    {
+      "name": "L high label<.30683",
+      "pass": true,
+      "gap": "4128278663/800000000000000"
+    },
+    {
+      "name": "M lower label>.3046",
+      "pass": true,
+      "gap": "24307508977/4000000000000000"
+    },
+    {
+      "name": "M lower label<.30461",
+      "pass": true,
+      "gap": "15677413841/4000000000000000"
+    },
+    {
+      "name": "M high label>.4555",
+      "pass": true,
+      "gap": "47391341/5468750000000"
+    },
+    {
+      "name": "M high label<.455511",
+      "pass": true,
+      "gap": "127412093/54687500000000"
+    },
+    {
+      "name": "L r>.261",
+      "pass": true,
+      "gap": "36968701/125000000000"
+    },
+    {
+      "name": "L r<.459",
+      "pass": true,
+      "gap": "938174123/1000000000000"
+    },
+    {
+      "name": "M r>.458",
+      "pass": true,
+      "gap": "215142927/250000000000"
+    },
+    {
+      "name": "M r<.597",
+      "pass": true,
+      "gap": "171144437/350000000000"
+    },
+    {
+      "name": "M label increasing",
+      "pass": true,
+      "gap": "690931979/1000000000"
+    },
+    {
+      "name": "L label increasing",
+      "pass": true,
+      "gap": "7229491/8000000"
+    },
+    {
+      "name": "atan(.25)<.245",
+      "pass": true,
+      "gap": "1/76800"
+    },
+    {
+      "name": "atan(.25)>.24",
+      "pass": true,
+      "gap": "23/4800"
+    },
+    {
+      "name": "atan(3/7)<.405",
+      "pass": true,
+      "gap": "816447/8070721400"
+    },
+    {
+      "name": "L slope<.984",
+      "pass": true,
+      "gap": "2771/8000000"
+    },
+    {
+      "name": "L concavity magnitude>.22",
+      "pass": true,
+      "gap": "3656041022569128543452131/97656250000000000000000000"
+    },
+    {
+      "name": "L minus .98b upper quadratic loss",
+      "pass": true,
+      "gap": "1/275000"
+    },
+    {
+      "name": "positive L .945 floor",
+      "pass": true,
+      "gap": "4639932311/800000000000000"
+    },
+    {
+      "name": "M endpoint secant below .8",
+      "pass": true,
+      "gap": "2920193830891/5600000000000000"
+    },
+    {
+      "name": "M endpoint secant above .797",
+      "pass": true,
+      "gap": "1298299607807/28000000000000000"
+    },
+    {
+      "name": "critical lambda>.8",
+      "pass": true,
+      "gap": "1627/20000"
+    },
+    {
+      "name": "M negative f source selects lower",
+      "pass": true,
+      "gap": "51007297/500000000"
+    },
+    {
+      "name": "L negative primary source selects upper",
+      "pass": true,
+      "gap": "3924691/8000000"
+    },
+    {
+      "name": "M negative primary source selects upper lambda1",
+      "pass": true,
+      "gap": "93931979/1000000000"
+    },
+    {
+      "name": "M+L+ f impossible through .4",
+      "pass": true,
+      "gap": "2/25"
+    },
+    {
+      "name": "positive L target upper endpoint tangent bound",
+      "pass": true,
+      "gap": "41249111/500000000"
+    },
+    {
+      "name": "target derivative decreases after .79",
+      "pass": true,
+      "gap": "156154494263426443528501/403200000000000000000000"
+    },
+    {
+      "name": "post-.79 scalar derivative amplitude",
+      "pass": true,
+      "gap": "2403980949274365582597447/16000000000000000000000000"
+    },
+    {
+      "name": "critical post-.79 endpoint",
+      "pass": true,
+      "gap": "5171628496752235285091633640538763/207360000000000000000000000000000000000"
+    },
+    {
+      "name": "direct tail L+M+",
+      "pass": true,
+      "gap": "6189/1000000"
+    },
+    {
+      "name": "direct tail mixed plus-minus",
+      "pass": true,
+      "gap": "63/10000"
+    },
+    {
+      "name": "direct tail negative-negative L source",
+      "pass": true,
+      "gap": "947/100000"
+    },
+    {
+      "name": "direct tail positive-positive M source",
+      "pass": true,
+      "gap": "947/100000"
+    },
+    {
+      "name": "direct tail both negative labels",
+      "pass": true,
+      "gap": "9359/1000000"
+    },
+    {
+      "name": "direct tail M negative source negative target",
+      "pass": true,
+      "gap": "6189/1000000"
+    },
+    {
+      "name": "sin/cos at1.5 primary exclusion",
+      "pass": true,
+      "gap": "1267569421/45875200000"
+    },
+    {
+      "name": "L/M primary negative target excluded to .95",
+      "pass": true,
+      "gap": "2202764216968626120101/37158912000000000000000"
+    },
+    {
+      "name": "M/L primary negative target excluded to1.1",
+      "pass": true,
+      "gap": "300570140475854701/18144000000000000000"
+    },
+    {
+      "name": "M/L primary positive target excluded to1.3",
+      "pass": true,
+      "gap": "2970671949153038749/18144000000000000000"
+    },
+    {
+      "name": "endpoint monotone start .945 Mlo",
+      "pass": true,
+      "gap": "630963907307667776913824687540069629/32256000000000000000000000000000000000"
+    },
+    {
+      "name": "endpoint derivative amplitude .945 Mlo",
+      "pass": true,
+      "gap": "7182325185489766507999/25600000000000000000000"
+    },
+    {
+      "name": "endpoint monotone start .945 Mhi",
+      "pass": true,
+      "gap": "12071006323026926207112729446059/4032000000000000000000000000000000"
+    },
+    {
+      "name": "endpoint derivative amplitude .945 Mhi",
+      "pass": true,
+      "gap": "2128269621018731707499/5000000000000000000000"
+    },
+    {
+      "name": "endpoint monotone start 1 Mlo",
+      "pass": true,
+      "gap": "23572664283552072312367327/2359296000000000000000000000"
+    },
+    {
+      "name": "endpoint derivative amplitude 1 Mlo",
+      "pass": true,
+      "gap": "129823991875553319/640000000000000000"
+    },
+    {
+      "name": "endpoint monotone start 1 Mhi",
+      "pass": true,
+      "gap": "177559455775312645368307/10321920000000000000000000"
+    },
+    {
+      "name": "endpoint derivative amplitude 1 Mhi",
+      "pass": true,
+      "gap": "2243377753582828131/6125000000000000000"
+    },
+    {
+      "name": "M+L- endpoint at .11 axial",
+      "pass": true,
+      "gap": "736770387193596814632307537451/1008000000000000000000000000000000"
+    },
+    {
+      "name": "M+L- endpoint at .11 cut",
+      "pass": true,
+      "gap": "470693355279507776913824687540069629/32256000000000000000000000000000000000"
+    },
+    {
+      "name": "M+L- derivative amplitude",
+      "pass": true,
+      "gap": "1184914851361236999/625000000000000000000"
+    },
+    {
+      "name": "M+L- whole short interval",
+      "pass": true,
+      "gap": "113/100000"
+    },
+    {
+      "name": "M-L- target axial derivative",
+      "pass": true,
+      "gap": "2240861837115709/6152343750000000"
+    },
+    {
+      "name": "M-L- target A coefficient negative",
+      "pass": true,
+      "gap": "35074045767419/123046875000000"
+    },
+    {
+      "name": "M-L- derivative amplitude",
+      "pass": true,
+      "gap": "169183112902319/15625000000000000"
+    },
+    {
+      "name": "M-L- start>.97",
+      "pass": true,
+      "gap": "299110681320639442057813/57678222656250000000000000"
+    },
+    {
+      "name": "M-L- full interval lower",
+      "pass": true,
+      "gap": "119/10000"
+    },
+    {
+      "name": "M/L negative primary concave endpoint axial 1.1",
+      "pass": true,
+      "gap": "87996688763187021504137/403200000000000000000000"
+    },
+    {
+      "name": "M/L negative primary concave endpoint axial 1.4",
+      "pass": true,
+      "gap": "2214117796821332009/56250000000000000000"
+    },
+    {
+      "name": "M/L negative primary concave endpoint cut 1.1",
+      "pass": true,
+      "gap": "6646700343208283770059553/36288000000000000000000000"
+    },
+    {
+      "name": "M/L negative primary concave endpoint cut 1.4",
+      "pass": true,
+      "gap": "33162976030865549821/5062500000000000000000"
+    },
+    {
+      "name": "L fixed norm<1.162",
+      "pass": true,
+      "gap": "21328203/20000000000"
+    },
+    {
+      "name": "M-L+ quarter norm<2.194",
+      "pass": true,
+      "gap": "56668203/20000000000"
+    },
+    {
+      "name": "M-L+ norm at1<1.7",
+      "pass": true,
+      "gap": "1105214043811/30240000000000"
+    },
+    {
+      "name": "M-L+ norm at1.71<2.3",
+      "pass": true,
+      "gap": "33657779643322451469196003281/896000000000000000000000000000"
+    },
+    {
+      "name": "M-L+ full-circle endpoint1",
+      "pass": true,
+      "gap": "1916970254617/16800000000000"
+    },
+    {
+      "name": "M-L+ full-circle quarter",
+      "pass": true,
+      "gap": "7628875477/800000000000"
+    },
+    {
+      "name": "M-L+ full-circle endpoint1.71",
+      "pass": true,
+      "gap": "405170820914325362011/4480000000000000000000"
+    },
+    {
+      "name": "M-L+ QI curvature",
+      "pass": true,
+      "gap": "349/10000"
+    },
+    {
+      "name": "M-L+ QII curvature",
+      "pass": true,
+      "gap": "46558293/500000000"
+    },
+    {
+      "name": "sin .79<.711",
+      "pass": true,
+      "gap": "234683827816451861681/362880000000000000000000"
+    },
+    {
+      "name": "cos .79<.704",
+      "pass": true,
+      "gap": "62358258281853439/403200000000000000000"
+    },
+    {
+      "name": "sin1>.84",
+      "pass": true,
+      "gap": "37/25200"
+    },
+    {
+      "name": "cos1<.55",
+      "pass": true,
+      "gap": "391/40320"
+    },
+    {
+      "name": "quarter norm curvature factor<1.1",
+      "pass": true,
+      "gap": "58333/5000000"
+    },
+    {
+      "name": "L+M+f P Bernstein 0",
+      "pass": true,
+      "gap": "1572285457743787628736346439/1168251037597656250000000000000000"
+    },
+    {
+      "name": "L+M+f P Bernstein 1",
+      "pass": true,
+      "gap": "149015471123611101596342701/116825103759765625000000000000000"
+    },
+    {
+      "name": "L+M+f P Bernstein 2",
+      "pass": true,
+      "gap": "200811156204717018987176743/140190124511718750000000000000000"
+    },
+    {
+      "name": "L+M+f P Bernstein 3",
+      "pass": true,
+      "gap": "804544695856645610800513/584125518798828125000000000000"
+    },
+    {
+      "name": "L+M+f P Bernstein 4",
+      "pass": true,
+      "gap": "8167805107504795597319883/4859924316406250000000000000000"
+    },
+    {
+      "name": "L+M+f P Bernstein 5",
+      "pass": true,
+      "gap": "6066334941599085548926991/5207061767578125000000000000000"
+    },
+    {
+      "name": "L+M+f P Bernstein 6",
+      "pass": true,
+      "gap": "333420391662728092553067103/267295837402343750000000000000000"
+    },
+    {
+      "name": "L+M+f P Bernstein 7",
+      "pass": true,
+      "gap": "366653717831478532859033/272750854492187500000000000000"
+    },
+    {
+      "name": "L+M+f P Bernstein 8",
+      "pass": true,
+      "gap": "1991173442778114868520783/1527404785156250000000000000000"
+    },
+    {
+      "name": "L+M+f P Bernstein 9",
+      "pass": true,
+      "gap": "278579210369646069332521/152740478515625000000000000000"
+    },
+    {
+      "name": "L+M+f P Bernstein 10",
+      "pass": true,
+      "gap": "22250755666517033990577/12219238281250000000000000000"
+    },
+    {
+      "name": "L+M+f P Bernstein 11",
+      "pass": true,
+      "gap": "709732481470465645909/416564941406250000000000000"
+    },
+    {
+      "name": "L+M+f P Bernstein 12",
+      "pass": true,
+      "gap": "337547838542069105009/222167968750000000000000000"
+    },
+    {
+      "name": "L+M+f P Bernstein 13",
+      "pass": true,
+      "gap": "3299946599854988113/1708984375000000000000000"
+    },
+    {
+      "name": "L+M+f P Bernstein 14",
+      "pass": true,
+      "gap": "584338746486686731/292968750000000000000000"
+    },
+    {
+      "name": "L+M+f P Bernstein 15",
+      "pass": true,
+      "gap": "332361528920901/195312500000000000000"
+    },
+    {
+      "name": "L+M+f P Bernstein 16",
+      "pass": true,
+      "gap": "4923924527310543/3906250000000000000000"
+    },
+    {
+      "name": "L+M+f positive T Bernstein 0",
+      "pass": true,
+      "gap": "42640075812967859/68359375000000000"
+    },
+    {
+      "name": "L+M+f positive T Bernstein 1",
+      "pass": true,
+      "gap": "10367413205183087/13671875000000000"
+    },
+    {
+      "name": "L+M+f positive T Bernstein 2",
+      "pass": true,
+      "gap": "2430885899800091/2734375000000000"
+    },
+    {
+      "name": "L+M+f positive T Bernstein 3",
+      "pass": true,
+      "gap": "555271589260663/546875000000000"
+    },
+    {
+      "name": "L+M+f positive T Bernstein 4",
+      "pass": true,
+      "gap": "17763351172837/15625000000000"
+    },
+    {
+      "name": "L+M+f positive T Bernstein 5",
+      "pass": true,
+      "gap": "3915921036041/3125000000000"
+    },
+    {
+      "name": "L+M+f positive T Bernstein 6",
+      "pass": true,
+      "gap": "5966314229291/4375000000000"
+    },
+    {
+      "name": "L+M+f positive T Bernstein 7",
+      "pass": true,
+      "gap": "183561107009/125000000000"
+    },
+    {
+      "name": "L+M+f positive T Bernstein 8",
+      "pass": true,
+      "gap": "39179623637/25000000000"
+    },
+    {
+      "name": "L-M+f_QI P Bernstein 0",
+      "pass": true,
+      "gap": "1011800611217/648000000000000000"
+    },
+    {
+      "name": "L-M+f_QI P Bernstein 1",
+      "pass": true,
+      "gap": "1040414745337/756000000000000000"
+    },
+    {
+      "name": "L-M+f_QI P Bernstein 2",
+      "pass": true,
+      "gap": "111140710684947557/95256000000000000000000"
+    },
+    {
+      "name": "L-M+f_QI P Bernstein 3",
+      "pass": true,
+      "gap": "1296137481381514607/793800000000000000000000"
+    },
+    {
+      "name": "L-M+f_QI P Bernstein 4",
+      "pass": true,
+      "gap": "676160201481863266451/515970000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QI P Bernstein 5",
+      "pass": true,
+      "gap": "640543958026580677211/425250000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QI P Bernstein 6",
+      "pass": true,
+      "gap": "13557005874249560405489/11261250000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QI P Bernstein 7",
+      "pass": true,
+      "gap": "97369800096532766953477003/50675625000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QI P Bernstein 8",
+      "pass": true,
+      "gap": "22798771807056834682752366833/15202687500000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QI P Bernstein 9",
+      "pass": true,
+      "gap": "199455226383832891399918018517/110852929687500000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QI P Bernstein 10",
+      "pass": true,
+      "gap": "76195881755426394394547685879397/59121562500000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QI P Bernstein 11",
+      "pass": true,
+      "gap": "72730100226926116761991638612823/48372187500000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QI P Bernstein 12",
+      "pass": true,
+      "gap": "6260589019758729079950981259631/4606875000000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QI P Bernstein 13",
+      "pass": true,
+      "gap": "461536379814967796044191250327/354375000000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QI P Bernstein 14",
+      "pass": true,
+      "gap": "27421196020992364526352409748477/21262500000000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QI P Bernstein 15",
+      "pass": true,
+      "gap": "2324663883904874245480311735763/1476562500000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QI P Bernstein 16",
+      "pass": true,
+      "gap": "32256317443290586993585881942303601/24806250000000000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QI positive T Bernstein 0",
+      "pass": true,
+      "gap": "4155877/72000000"
+    },
+    {
+      "name": "L-M+f_QI positive T Bernstein 1",
+      "pass": true,
+      "gap": "9552061/56000000"
+    },
+    {
+      "name": "L-M+f_QI positive T Bernstein 2",
+      "pass": true,
+      "gap": "2814505027/10080000000"
+    },
+    {
+      "name": "L-M+f_QI positive T Bernstein 3",
+      "pass": true,
+      "gap": "48299496521/126000000000"
+    },
+    {
+      "name": "L-M+f_QI positive T Bernstein 4",
+      "pass": true,
+      "gap": "579159565243/1200000000000"
+    },
+    {
+      "name": "L-M+f_QI positive T Bernstein 5",
+      "pass": true,
+      "gap": "51921195261017/90000000000000"
+    },
+    {
+      "name": "L-M+f_QI positive T Bernstein 6",
+      "pass": true,
+      "gap": "41955900246017651/63000000000000000"
+    },
+    {
+      "name": "L-M+f_QI positive T Bernstein 7",
+      "pass": true,
+      "gap": "3514278748934419/4687500000000000"
+    },
+    {
+      "name": "L-M+f_QI positive T Bernstein 8",
+      "pass": true,
+      "gap": "130422934619722040551/157500000000000000000"
+    },
+    {
+      "name": "L-M+f_QII P Bernstein 0",
+      "pass": true,
+      "gap": "2333663189632880233622894972155480721521/1625702400000000000000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII P Bernstein 1",
+      "pass": true,
+      "gap": "2596500974166104100247208756867103128063/1625702400000000000000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII P Bernstein 2",
+      "pass": true,
+      "gap": "698948925635925730275047440152135953563/541900800000000000000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII P Bernstein 3",
+      "pass": true,
+      "gap": "2385455039396706424311148494425514049567/1625702400000000000000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII P Bernstein 4",
+      "pass": true,
+      "gap": "41969032682552054186821023561423231487613/21134131200000000000000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII P Bernstein 5",
+      "pass": true,
+      "gap": "33948130249624543399439444866817806732339/21134131200000000000000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII P Bernstein 6",
+      "pass": true,
+      "gap": "51593029551263317589243332737722096588743/25830604800000000000000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII P Bernstein 7",
+      "pass": true,
+      "gap": "134669445978802570506820763429995618468187/77491814400000000000000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII P Bernstein 8",
+      "pass": true,
+      "gap": "306789573368740081586064244303557736801183/232475443200000000000000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII P Bernstein 9",
+      "pass": true,
+      "gap": "9904543251242509090787608404611480521187/8610201600000000000000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII P Bernstein 10",
+      "pass": true,
+      "gap": "13395044576889469907138069994863950054061/8610201600000000000000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII P Bernstein 11",
+      "pass": true,
+      "gap": "4186259059203150511959610446520457702459/2348236800000000000000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII P Bernstein 12",
+      "pass": true,
+      "gap": "784225500501763495253148780313567253959/782745600000000000000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII P Bernstein 13",
+      "pass": true,
+      "gap": "78879913090072803228646894897617738029/60211200000000000000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII P Bernstein 14",
+      "pass": true,
+      "gap": "104343530651874728907606206228526699587/60211200000000000000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII P Bernstein 15",
+      "pass": true,
+      "gap": "24643475772282009269890581311070583087/20070400000000000000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII P Bernstein 16",
+      "pass": true,
+      "gap": "33839686511235183454183495532811113761/20070400000000000000000000000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII positive T Bernstein 0",
+      "pass": true,
+      "gap": "32924145734074245268711/40320000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII positive T Bernstein 1",
+      "pass": true,
+      "gap": "34257572044705632974633/40320000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII positive T Bernstein 2",
+      "pass": true,
+      "gap": "35578380859866807499399/40320000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII positive T Bernstein 3",
+      "pass": true,
+      "gap": "4098474636790661381633/4480000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII positive T Bernstein 4",
+      "pass": true,
+      "gap": "4242327958943179860399/4480000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII positive T Bernstein 5",
+      "pass": true,
+      "gap": "13154045049800610813091/13440000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII positive T Bernstein 6",
+      "pass": true,
+      "gap": "4525504963711192512591/4480000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII positive T Bernstein 7",
+      "pass": true,
+      "gap": "4664767836704068526273/4480000000000000000000"
+    },
+    {
+      "name": "L-M+f_QII positive T Bernstein 8",
+      "pass": true,
+      "gap": "4802441234381547214319/4480000000000000000000"
+    },
+    {
+      "name": "MLtight P Bernstein 0",
+      "pass": true,
+      "gap": "70025946120287246832793/63504000000000000000000000000"
+    },
+    {
+      "name": "MLtight P Bernstein 1",
+      "pass": true,
+      "gap": "1188729823714031753335651/952560000000000000000000000000"
+    },
+    {
+      "name": "MLtight P Bernstein 2",
+      "pass": true,
+      "gap": "91986413867082684053723627/80967600000000000000000000000000"
+    },
+    {
+      "name": "MLtight P Bernstein 3",
+      "pass": true,
+      "gap": "11401250535107443027437767/8996400000000000000000000000000"
+    },
+    {
+      "name": "MLtight P Bernstein 4",
+      "pass": true,
+      "gap": "60382297246435646005261301/40483800000000000000000000000000"
+    },
+    {
+      "name": "MLtight P Bernstein 5",
+      "pass": true,
+      "gap": "23735549658687502976779326413/20241900000000000000000000000000000"
+    },
+    {
+      "name": "MLtight P Bernstein 6",
+      "pass": true,
+      "gap": "51827933611964932361491761397/38556000000000000000000000000000000"
+    },
+    {
+      "name": "MLtight P Bernstein 7",
+      "pass": true,
+      "gap": "24050916815018070998886918800761/12954816000000000000000000000000000000"
+    },
+    {
+      "name": "MLtight P Bernstein 8",
+      "pass": true,
+      "gap": "8623219379886546961527625671760231/5700119040000000000000000000000000000000"
+    },
+    {
+      "name": "MLtight P Bernstein 9",
+      "pass": true,
+      "gap": "2272255217430261493492395216530323/1900039680000000000000000000000000000000"
+    },
+    {
+      "name": "MLtight P Bernstein 10",
+      "pass": true,
+      "gap": "1413118180995737653483661369725634173/712514880000000000000000000000000000000000"
+    },
+    {
+      "name": "MLtight P Bernstein 11",
+      "pass": true,
+      "gap": "12964053399285891467265028456636911013/10363852800000000000000000000000000000000000"
+    },
+    {
+      "name": "MLtight P Bernstein 12",
+      "pass": true,
+      "gap": "56454806838824550615625314772442479/31987200000000000000000000000000000000000"
+    },
+    {
+      "name": "MLtight P Bernstein 13",
+      "pass": true,
+      "gap": "1303999406168746088919916563815910397/740275200000000000000000000000000000000000"
+    },
+    {
+      "name": "MLtight P Bernstein 14",
+      "pass": true,
+      "gap": "7727692425082115091438928328878505323/7620480000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLtight P Bernstein 15",
+      "pass": true,
+      "gap": "260913328847830386013602855835667666609/138184704000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLtight P Bernstein 16",
+      "pass": true,
+      "gap": "114729803724685731130811249910283924985347/82910822400000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLtight P Bernstein 17",
+      "pass": true,
+      "gap": "5683626375177401630392477491037013671747/4877107200000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLtight P Bernstein 18",
+      "pass": true,
+      "gap": "2567576539050782270957723642140299442441/1625702400000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLtight positive T Bernstein 0",
+      "pass": true,
+      "gap": "157448461865659/252000000000000"
+    },
+    {
+      "name": "MLtight positive T Bernstein 1",
+      "pass": true,
+      "gap": "2649767530027897/3780000000000000"
+    },
+    {
+      "name": "MLtight positive T Bernstein 2",
+      "pass": true,
+      "gap": "2930675232624509/3780000000000000"
+    },
+    {
+      "name": "MLtight positive T Bernstein 3",
+      "pass": true,
+      "gap": "593376064049071/700000000000000"
+    },
+    {
+      "name": "MLtight positive T Bernstein 4",
+      "pass": true,
+      "gap": "433782306834413/472500000000000"
+    },
+    {
+      "name": "MLtight positive T Bernstein 5",
+      "pass": true,
+      "gap": "466078367524093411/472500000000000000"
+    },
+    {
+      "name": "MLtight positive T Bernstein 6",
+      "pass": true,
+      "gap": "26528326877100658817/25200000000000000000"
+    },
+    {
+      "name": "MLtight positive T Bernstein 7",
+      "pass": true,
+      "gap": "67553302201627501579/60480000000000000000"
+    },
+    {
+      "name": "MLtight positive T Bernstein 8",
+      "pass": true,
+      "gap": "142627955908605960643393/120960000000000000000000"
+    },
+    {
+      "name": "MLtight positive T Bernstein 9",
+      "pass": true,
+      "gap": "49967114682256267566979/40320000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI P Bernstein 0",
+      "pass": true,
+      "gap": "339154878548474485009/321126400000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI P Bernstein 1",
+      "pass": true,
+      "gap": "4528039753676957877581/2890137600000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI P Bernstein 2",
+      "pass": true,
+      "gap": "8514397759479760152153/5459148800000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI P Bernstein 3",
+      "pass": true,
+      "gap": "17005590519042853617959/16377446400000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI P Bernstein 4",
+      "pass": true,
+      "gap": "1242711911022302743317937/1228308480000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI P Bernstein 5",
+      "pass": true,
+      "gap": "3058796977537014356184947/2047180800000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI P Bernstein 6",
+      "pass": true,
+      "gap": "58918495597875371516447099/39137280000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI P Bernstein 7",
+      "pass": true,
+      "gap": "4110058364822900928860685889/3838464000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI P Bernstein 8",
+      "pass": true,
+      "gap": "3350090405066108427371880805799/2744501760000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI P Bernstein 9",
+      "pass": true,
+      "gap": "3415123912759928563196675290835779/1715313600000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI P Bernstein 10",
+      "pass": true,
+      "gap": "109822224139796018848645474348149907/77189112000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI P Bernstein 11",
+      "pass": true,
+      "gap": "10963554929334459972499643241927757/7017192000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI P Bernstein 12",
+      "pass": true,
+      "gap": "3418067286560704573210407689064539/2339064000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI P Bernstein 13",
+      "pass": true,
+      "gap": "634852163189395033863248635744889/539784000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI P Bernstein 14",
+      "pass": true,
+      "gap": "4773225966866121656250661460583521/2698920000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI P Bernstein 15",
+      "pass": true,
+      "gap": "9786502306297850297354629379463301/7497000000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI P Bernstein 16",
+      "pass": true,
+      "gap": "61464552940553350028821387292856659/33075000000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI P Bernstein 17",
+      "pass": true,
+      "gap": "746237087786344009677400007869045729/496125000000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI P Bernstein 18",
+      "pass": true,
+      "gap": "82133113240793539768881264814865691361/62015625000000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI positive T Bernstein 0",
+      "pass": true,
+      "gap": "4401796772503/17920000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI positive T Bernstein 1",
+      "pass": true,
+      "gap": "41169329540027/161280000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI positive T Bernstein 2",
+      "pass": true,
+      "gap": "42723865469527/161280000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI positive T Bernstein 3",
+      "pass": true,
+      "gap": "14759921672609/53760000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI positive T Bernstein 4",
+      "pass": true,
+      "gap": "229185071240347/806400000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI positive T Bernstein 5",
+      "pass": true,
+      "gap": "5924449876552223/20160000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI positive T Bernstein 6",
+      "pass": true,
+      "gap": "16998439220412091/56000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI positive T Bernstein 7",
+      "pass": true,
+      "gap": "1315539518583868861/4200000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI positive T Bernstein 8",
+      "pass": true,
+      "gap": "20343446064342278159/63000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QI positive T Bernstein 9",
+      "pass": true,
+      "gap": "2619287266801291049231/7875000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII P Bernstein 0",
+      "pass": true,
+      "gap": "26131077406404208458937823575650223360045249/16257024000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII P Bernstein 1",
+      "pass": true,
+      "gap": "7954290234674758877431885114733911292265349/5419008000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII P Bernstein 2",
+      "pass": true,
+      "gap": "93884752593471874781153139408970461094227899/92123136000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII P Bernstein 3",
+      "pass": true,
+      "gap": "8309036818712572742266485895504783809539941/5419008000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII P Bernstein 4",
+      "pass": true,
+      "gap": "351359297399524649995615890888969694088758673/276369408000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII P Bernstein 5",
+      "pass": true,
+      "gap": "24097866339143240494634720080542806145517007/16257024000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII P Bernstein 6",
+      "pass": true,
+      "gap": "1680116882601720153885903712179344572844838847/1197600768000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII P Bernstein 7",
+      "pass": true,
+      "gap": "4515500982513213593278236872154996828607962323/3592802304000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII P Bernstein 8",
+      "pass": true,
+      "gap": "49564987053472395907663703080610463698555645759/39520825344000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII P Bernstein 9",
+      "pass": true,
+      "gap": "6985582184909521264330635600217229758304934953/4391202816000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII P Bernstein 10",
+      "pass": true,
+      "gap": "6358388765585239874646434707688959702359233959/4391202816000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII P Bernstein 11",
+      "pass": true,
+      "gap": "265004174373103652495665129689017930982539369/133066752000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII P Bernstein 12",
+      "pass": true,
+      "gap": "60828031806053864706866400383008242443627469/44355584000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII P Bernstein 13",
+      "pass": true,
+      "gap": "52850804137498553129727451066039798245746951/30707712000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII P Bernstein 14",
+      "pass": true,
+      "gap": "35535251928041115492104333161608518891200553/30707712000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII P Bernstein 15",
+      "pass": true,
+      "gap": "6068941394184201041696515379845958889416751/3411968000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII P Bernstein 16",
+      "pass": true,
+      "gap": "51175797488552693680113687818702434772509577/30707712000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII P Bernstein 17",
+      "pass": true,
+      "gap": "3401293618103557124515814648220766450454743/1806336000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII P Bernstein 18",
+      "pass": true,
+      "gap": "295270477014259733862615513050915512438481/200704000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII positive T Bernstein 0",
+      "pass": true,
+      "gap": "1294728529314450407446943/4032000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII positive T Bernstein 1",
+      "pass": true,
+      "gap": "469413048111016770967643/1344000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII positive T Bernstein 2",
+      "pass": true,
+      "gap": "507282814595788026675029/1344000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII positive T Bernstein 3",
+      "pass": true,
+      "gap": "545179522067153637971387/1344000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII positive T Bernstein 4",
+      "pass": true,
+      "gap": "1749291595201801335929183/4032000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII positive T Bernstein 5",
+      "pass": true,
+      "gap": "1863089570236441677357649/4032000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII positive T Bernstein 6",
+      "pass": true,
+      "gap": "658971499080505102937749/1344000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII positive T Bernstein 7",
+      "pass": true,
+      "gap": "2090748359224710681750641/4032000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII positive T Bernstein 8",
+      "pass": true,
+      "gap": "2204573126733906349454623/4032000000000000000000000"
+    },
+    {
+      "name": "LMprimaryplus_QII positive T Bernstein 9",
+      "pass": true,
+      "gap": "257596752019726951642441/448000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI P Bernstein 0",
+      "pass": true,
+      "gap": "19575884182308294965316049/16257024000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI P Bernstein 1",
+      "pass": true,
+      "gap": "148700005653122160743374007/81285120000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI P Bernstein 2",
+      "pass": true,
+      "gap": "4108962675450746618279246299/2303078400000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI P Bernstein 3",
+      "pass": true,
+      "gap": "65687303492989891963856161271/34546176000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI P Bernstein 4",
+      "pass": true,
+      "gap": "95464869767019815786959735403/57576960000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI P Bernstein 5",
+      "pass": true,
+      "gap": "59416201907112090408803829847/50803200000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI P Bernstein 6",
+      "pass": true,
+      "gap": "66534616387183530054825820069181/56137536000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI P Bernstein 7",
+      "pass": true,
+      "gap": "303820753432007020094282023632043/280687680000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI P Bernstein 8",
+      "pass": true,
+      "gap": "870425487738342634578718632389903/467812800000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI P Bernstein 9",
+      "pass": true,
+      "gap": "7964773610037380655348664329292859/7017192000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI P Bernstein 10",
+      "pass": true,
+      "gap": "39639997372499721920541607276201501/35085960000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI P Bernstein 11",
+      "pass": true,
+      "gap": "32568572292950370460739760781405747/19492200000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI P Bernstein 12",
+      "pass": true,
+      "gap": "1033609279765477437987457844794940429/877149000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI P Bernstein 13",
+      "pass": true,
+      "gap": "62179778498554123039025659633579151/37485000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI P Bernstein 14",
+      "pass": true,
+      "gap": "2861550095292507010470312842503969457/1686825000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI P Bernstein 15",
+      "pass": true,
+      "gap": "12184284253705022587225324804364292311/8434125000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI P Bernstein 16",
+      "pass": true,
+      "gap": "68180723552131458013128330442776109153/42170625000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI P Bernstein 17",
+      "pass": true,
+      "gap": "6104103176677850034830304344544551869/4134375000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI P Bernstein 18",
+      "pass": true,
+      "gap": "113328888257197562378514410119678191361/62015625000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI positive T Bernstein 0",
+      "pass": true,
+      "gap": "337375751853257/4032000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI positive T Bernstein 1",
+      "pass": true,
+      "gap": "2353368081594751/20160000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI positive T Bernstein 2",
+      "pass": true,
+      "gap": "5037148549148291/33600000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI positive T Bernstein 3",
+      "pass": true,
+      "gap": "92339669587992479/504000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI positive T Bernstein 4",
+      "pass": true,
+      "gap": "60655574385021313/280000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI positive T Bernstein 5",
+      "pass": true,
+      "gap": "3151917953664868991/12600000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI positive T Bernstein 6",
+      "pass": true,
+      "gap": "17878501542069550793/63000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI positive T Bernstein 7",
+      "pass": true,
+      "gap": "100020064749796689439/315000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI positive T Bernstein 8",
+      "pass": true,
+      "gap": "184465709043924188099/525000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QI positive T Bernstein 9",
+      "pass": true,
+      "gap": "3034233416313634799231/7875000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII P Bernstein 0",
+      "pass": true,
+      "gap": "20265847395927428081491483833577319702563/12288000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII P Bernstein 1",
+      "pass": true,
+      "gap": "48213894968908944344466985010706275928967/36864000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII P Bernstein 2",
+      "pass": true,
+      "gap": "70731021339453301780377419580670582073625577/50761728000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII P Bernstein 3",
+      "pass": true,
+      "gap": "2259295772691942047788821735454942194642053/1880064000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII P Bernstein 4",
+      "pass": true,
+      "gap": "50800180172361540830133665089617178606192393/50761728000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII P Bernstein 5",
+      "pass": true,
+      "gap": "17428818741281710274035603288235111176188493/16920576000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII P Bernstein 6",
+      "pass": true,
+      "gap": "330016629300303472450493052409553800230789127/219967488000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII P Bernstein 7",
+      "pass": true,
+      "gap": "350447411830764415322443775345794256980451081/219967488000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII P Bernstein 8",
+      "pass": true,
+      "gap": "3534800803686428685033033828309140357937057773/2419642368000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII P Bernstein 9",
+      "pass": true,
+      "gap": "109854090835237382368134644295863155423071097/89616384000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII P Bernstein 10",
+      "pass": true,
+      "gap": "532422096624407400599039704511345965239631973/268849152000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII P Bernstein 11",
+      "pass": true,
+      "gap": "130989985777128549459845061462794152463118787/73322496000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII P Bernstein 12",
+      "pass": true,
+      "gap": "40949760614413011696469149785493682965328687/24440832000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII P Bernstein 13",
+      "pass": true,
+      "gap": "114727621668377352353172876676184171566911/69632000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII P Bernstein 14",
+      "pass": true,
+      "gap": "3143614946827656198043949164703253723620491/1880064000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII P Bernstein 15",
+      "pass": true,
+      "gap": "352287046361080799118710567497009884930397/208896000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII P Bernstein 16",
+      "pass": true,
+      "gap": "333506806286660546967970437224927601431891/208896000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII P Bernstein 17",
+      "pass": true,
+      "gap": "47047434327634616474815561251476144169607/36864000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII P Bernstein 18",
+      "pass": true,
+      "gap": "6419424575576943045942388079518638551169/4096000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII positive T Bernstein 0",
+      "pass": true,
+      "gap": "4721405663015644902961/64000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII positive T Bernstein 1",
+      "pass": true,
+      "gap": "531601173192112663056623/5184000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII positive T Bernstein 2",
+      "pass": true,
+      "gap": "75655040258754332041241/576000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII positive T Bernstein 3",
+      "pass": true,
+      "gap": "276764109103143576862469/1728000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII positive T Bernstein 4",
+      "pass": true,
+      "gap": "326589299400366698931307/1728000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII positive T Bernstein 5",
+      "pass": true,
+      "gap": "376432616135634215435621/1728000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII positive T Bernstein 6",
+      "pass": true,
+      "gap": "15788369247608828076369/64000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII positive T Bernstein 7",
+      "pass": true,
+      "gap": "158713753697878040647063/576000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII positive T Bernstein 8",
+      "pass": true,
+      "gap": "175330128925834627186489/576000000000000000000000"
+    },
+    {
+      "name": "MLprimaryplus_QII positive T Bernstein 9",
+      "pass": true,
+      "gap": "21326860858011278307263/64000000000000000000000"
+    }
+  ]
+}

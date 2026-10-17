@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "quarter_value_lower": "19681283/25000000",
+  "negative_angle_barrier": "188377/187500",
+  "endpoint_rows": [
+    {
+      "x": "1/10",
+      "sin_lower": "9983/100000",
+      "sin_upper": "999/10000",
+      "cos_lower": "199/200",
+      "N2_upper": "337/2000",
+      "F_lower": "79374537/100000000"
+    },
+    {
+      "x": "7/10",
+      "sin_lower": "3221/5000",
+      "sin_upper": "8053/12500",
+      "cos_lower": "19121/25000",
+      "N2_upper": "1859/2500",
+      "F_lower": "39319161/50000000"
+    }
+  ]
+}

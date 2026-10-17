@@ -1,0 +1,392 @@
+{
+  "status": "PASS",
+  "strict_comparisons": 80,
+  "F0_lower": "792269/1000000",
+  "endpoint_rows": [
+    {
+      "lambda": "39/40",
+      "constant": "919/10000",
+      "x": "-7/10",
+      "norm_upper": "9/10",
+      "cost_lower": "477407/500000"
+    },
+    {
+      "lambda": "39/40",
+      "constant": "919/10000",
+      "x": "0",
+      "norm_upper": "727/500",
+      "cost_lower": "787729/1000000"
+    },
+    {
+      "lambda": "39/40",
+      "constant": "919/10000",
+      "x": "7/10",
+      "norm_upper": "37/20",
+      "cost_lower": "1102859/1000000"
+    },
+    {
+      "lambda": "203/200",
+      "constant": "11/125",
+      "x": "-7/10",
+      "norm_upper": "229/250",
+      "cost_lower": "2424609/2500000"
+    },
+    {
+      "lambda": "203/200",
+      "constant": "11/125",
+      "x": "0",
+      "norm_upper": "1483/1000",
+      "cost_lower": "393219/500000"
+    },
+    {
+      "lambda": "203/200",
+      "constant": "11/125",
+      "x": "7/10",
+      "norm_upper": "187/100",
+      "cost_lower": "5678703/5000000"
+    },
+    {
+      "lambda": "291/250",
+      "constant": "9/100",
+      "x": "-7/10",
+      "norm_upper": "124/125",
+      "cost_lower": "25247519/25000000"
+    },
+    {
+      "lambda": "291/250",
+      "constant": "9/100",
+      "x": "0",
+      "norm_upper": "797/500",
+      "cost_lower": "792269/1000000"
+    },
+    {
+      "lambda": "291/250",
+      "constant": "9/100",
+      "x": "7/10",
+      "norm_upper": "2007/1000",
+      "cost_lower": "14388307/12500000"
+    }
+  ],
+  "comparisons": [
+    {
+      "name": "outer axial lower",
+      "strict_margin": "1159/4000000"
+    },
+    {
+      "name": "outer axial upper",
+      "strict_margin": "13/8000"
+    },
+    {
+      "name": "outer diagonal lower",
+      "strict_margin": "599/1000000"
+    },
+    {
+      "name": "outer diagonal upper",
+      "strict_margin": "11/5000"
+    },
+    {
+      "name": "core diagonal lower",
+      "strict_margin": "974/15625"
+    },
+    {
+      "name": "core diagonal upper",
+      "strict_margin": "46/625"
+    },
+    {
+      "name": "radius upper",
+      "strict_margin": "841/1000000"
+    },
+    {
+      "name": "outer marker positive at b=0",
+      "strict_margin": "777/400000"
+    },
+    {
+      "name": "outer marker increasing",
+      "strict_margin": "19/20"
+    },
+    {
+      "name": "outer marker minus b decreases",
+      "strict_margin": "151/4979"
+    },
+    {
+      "name": "outer marker minus b lower",
+      "strict_margin": "23/25000"
+    },
+    {
+      "name": "outer marker minus b upper",
+      "strict_margin": "1/40000"
+    },
+    {
+      "name": "core marker upper",
+      "strict_margin": "121/37500"
+    },
+    {
+      "name": "core-quarter marker perturbation",
+      "strict_margin": "35901/3125000"
+    },
+    {
+      "name": "core/core cost",
+      "strict_margin": "41/600"
+    },
+    {
+      "name": "easy opposite sign cost",
+      "strict_margin": "17159/200000"
+    },
+    {
+      "name": "outer sloped line upper",
+      "strict_margin": "703/250000"
+    },
+    {
+      "name": "sin linear lower coefficient",
+      "strict_margin": "11/600"
+    },
+    {
+      "name": "one minus cos quadratic lower coefficient",
+      "strict_margin": "23/2400"
+    },
+    {
+      "name": "sin .7 lower",
+      "strict_margin": "126551/7200000000"
+    },
+    {
+      "name": "sin .7 upper",
+      "strict_margin": "73/12000000"
+    },
+    {
+      "name": "cos .7 lower",
+      "strict_margin": "551/720000000"
+    },
+    {
+      "name": "cos .7 upper",
+      "strict_margin": "1039657/576000000000"
+    },
+    {
+      "name": "norm derivative sign",
+      "strict_margin": "28833/40000"
+    },
+    {
+      "name": "negative-half norm bound",
+      "strict_margin": "4333/160000"
+    },
+    {
+      "name": "negative-half norm bound monotonicity",
+      "strict_margin": "923/400"
+    },
+    {
+      "name": "positive-half norm bound",
+      "strict_margin": "331247/800000"
+    },
+    {
+      "name": "positive-half norm bound monotonicity",
+      "strict_margin": "88213/20000"
+    },
+    {
+      "name": "negative-half concavity",
+      "strict_margin": "371/25000"
+    },
+    {
+      "name": "norm minus 39/40",
+      "strict_margin": "3013873/1000000000"
+    },
+    {
+      "name": "norm zero 39/40",
+      "strict_margin": "2291/1000000"
+    },
+    {
+      "name": "norm plus 39/40",
+      "strict_margin": "65369003/1000000000"
+    },
+    {
+      "name": "envelope 39/40 at -7/10",
+      "strict_margin": "84907/500000"
+    },
+    {
+      "name": "envelope 39/40 at 0",
+      "strict_margin": "2729/1000000"
+    },
+    {
+      "name": "envelope 39/40 at 7/10",
+      "strict_margin": "317859/1000000"
+    },
+    {
+      "name": "norm minus 203/200",
+      "strict_margin": "4008621/5000000000"
+    },
+    {
+      "name": "norm zero 203/200",
+      "strict_margin": "333/125000"
+    },
+    {
+      "name": "norm plus 203/200",
+      "strict_margin": "19397631/5000000000"
+    },
+    {
+      "name": "envelope 203/200 at -7/10",
+      "strict_margin": "462109/2500000"
+    },
+    {
+      "name": "envelope 203/200 at 0",
+      "strict_margin": "719/500000"
+    },
+    {
+      "name": "envelope 203/200 at 7/10",
+      "strict_margin": "1753703/5000000"
+    },
+    {
+      "name": "norm minus 291/250",
+      "strict_margin": "7342937/6250000000"
+    },
+    {
+      "name": "norm zero 291/250",
+      "strict_margin": "17/100000"
+    },
+    {
+      "name": "norm plus 291/250",
+      "strict_margin": "4245157/6250000000"
+    },
+    {
+      "name": "envelope 291/250 at -7/10",
+      "strict_margin": "5622519/25000000"
+    },
+    {
+      "name": "envelope 291/250 at 0",
+      "strict_margin": "7269/1000000"
+    },
+    {
+      "name": "envelope 291/250 at 7/10",
+      "strict_margin": "4575807/12500000"
+    },
+    {
+      "name": "outer negative-source envelope constant",
+      "strict_margin": "1/40000"
+    },
+    {
+      "name": "negative source is on core side, agreeing projection",
+      "strict_margin": "21/1000"
+    },
+    {
+      "name": "negative source is on core side, opposing projection",
+      "strict_margin": "17/200"
+    },
+    {
+      "name": "negative-target coefficient of A",
+      "strict_margin": "3556563/5000000"
+    },
+    {
+      "name": "negative-target coefficient of B",
+      "strict_margin": "1001/5000"
+    },
+    {
+      "name": "negative-target quadratic coefficient",
+      "strict_margin": "23/1000"
+    },
+    {
+      "name": "negative-target secondary cost",
+      "strict_margin": "45469/400000"
+    },
+    {
+      "name": "outer/core secondary cost",
+      "strict_margin": "58471/200000"
+    },
+    {
+      "name": "outer/core negative-half secondary difference",
+      "strict_margin": "4999/50000"
+    },
+    {
+      "name": "outer/core positive-half secondary difference",
+      "strict_margin": "11627/12500"
+    },
+    {
+      "name": "core/outer primary positive-target cost",
+      "strict_margin": "321631/1800000"
+    },
+    {
+      "name": "core/outer primary negative-target negative-half derivative bracket",
+      "strict_margin": "65849/600000"
+    },
+    {
+      "name": "core/outer primary negative-target negative-half cost",
+      "strict_margin": "206077/600000"
+    },
+    {
+      "name": "core/outer primary negative-target near zero cost",
+      "strict_margin": "121177/600000"
+    },
+    {
+      "name": "core/outer primary negative-target positive tail",
+      "strict_margin": "9159/200000"
+    },
+    {
+      "name": "outer/core primary negative-target positive-half bracket",
+      "strict_margin": "6993/10000"
+    },
+    {
+      "name": "outer/core primary negative-target h bracket at .6",
+      "strict_margin": "537/50000"
+    },
+    {
+      "name": "outer/core primary negative-target h at .7",
+      "strict_margin": "3568963631/7200000000000"
+    },
+    {
+      "name": "sin .6 lower",
+      "strict_margin": "28107/43750000"
+    },
+    {
+      "name": "cos .6 lower",
+      "strict_margin": "419/1250000"
+    },
+    {
+      "name": "cos .6 upper",
+      "strict_margin": "1162671/1750000000"
+    },
+    {
+      "name": "W .6 lower",
+      "strict_margin": "10693/21875000"
+    },
+    {
+      "name": "outer/core primary negative-target forced B",
+      "strict_margin": "419/125000"
+    },
+    {
+      "name": "outer/core primary negative-target tail cost",
+      "strict_margin": "113699/25000000"
+    },
+    {
+      "name": "outer/core corner positive-target x barrier",
+      "strict_margin": "3/200"
+    },
+    {
+      "name": "outer/core corner positive-target endpoint 3/10",
+      "strict_margin": "69313/1400000"
+    },
+    {
+      "name": "outer/core corner positive-target endpoint 7/10",
+      "strict_margin": "487939/4200000"
+    },
+    {
+      "name": "outer/core side positive-target positive-half bracket",
+      "strict_margin": "1239/2500"
+    },
+    {
+      "name": "outer/core side positive-target feasibility barrier",
+      "strict_margin": "599/14400"
+    },
+    {
+      "name": "outer/core side positive-target low-z bracket",
+      "strict_margin": "10771/750000"
+    },
+    {
+      "name": "outer/core side positive-target high-z B bound",
+      "strict_margin": "2/1125"
+    },
+    {
+      "name": "outer/core side positive-target h bracket at .5",
+      "strict_margin": "1511/24000"
+    },
+    {
+      "name": "outer/core side positive-target tail cost",
+      "strict_margin": "1449/1000000"
+    }
+  ]
+}
