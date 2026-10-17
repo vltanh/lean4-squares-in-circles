@@ -39,8 +39,10 @@ F(q,y,t)&=h_1^2+h_2^2-q.
 
 The selected exact solution satisfies \(F=F_y=F_t=0\) with the stated
 radical signs. The existing family proof proves its existence, uniqueness
-in the admissible strip, and conditional optimality. Its exact isolating
-enclosure is a retained input to the rational-ceiling construction below.
+in the admissible strip, and conditional optimality. The new
+[hand sharp-ceiling bracket](HUMAN_SHARP_CEILING_BRACKET.md) supplies the
+rational-ceiling comparison below by eight explicit square-root brackets
+and strong convexity, without relying on a numerical root isolation.
 
 ## 2. The two global geometric reductions
 
@@ -56,8 +58,7 @@ Q_\sharp=q_c+10^{-16},\\
 \end{aligned}
 \]
 
-These terminating decimals are exact rational numbers. The isolating
-enclosure gives
+These terminating decimals are exact rational numbers. The hand bracket gives
 
 \[
 q_-\le\widetilde q<q_*\le Q_\sharp,
@@ -66,8 +67,8 @@ q_-\le\widetilde q<q_*\le Q_\sharp,
 \]
 
 The same packing lies in the \(\widetilde q\) disk. The
-[central-core theorem](CENTRAL_CORE_CERTIFICATE.md), valid at the larger
-ceiling \(98/25\), gives one square whose open interior contains the closed
+[central-core hand theorem](HUMAN_CENTRAL_CORE_FROM_TRANSVERSE_SEGMENT.md),
+valid at the ceiling \(9789/2500\), gives one square whose open interior contains the closed
 disk of radius \(\rho=1/12\). The other seven squares avoid that disk.
 
 Order those seven centers cyclically. Their radii lie between \(7/12\)
@@ -263,13 +264,13 @@ assumed of the actual squares.
 
 ## 7. A sharp inequality with no center-proximity hypothesis
 
-The [broad stationary graph](BROAD_STATIONARY_GRAPH_AND_CURVATURE.md)
+The [hand broad stationary graph](HUMAN_BROAD_TERMINAL_ARITHMETIC.md)
 gives one analytic position \(y(t)\) with \(F_y(q_*,y(t),t)=0\) on the
 entire captured tilt interval. It contains \((y_*,t_*)\), satisfies
 \(-29/20<h_2<-7/5\), and has
 
 \[
-F(q_*,y(t),t)\ge\frac12(t-t_*)^2.
+F(q_*,y(t),t)\ge\frac38(t-t_*)^2.
 \tag{7}
 \]
 
@@ -312,7 +313,7 @@ The [projected-slider remainder proof](CENTER_FREE_PROJECTED_SLIDER_REMAINDER.md
 is elementary and explicit. Put \(d_i=p_i-p_i^0\). The pure angular
 loss is at most \(12S^2\). Young's inequality absorbs the five anchored
 center/angle terms into half the positive center squares and at most
-\(100S^2\). The free-slider displacements satisfy
+\(110S^2\). The free-slider displacements satisfy
 
 \[
 d_T=\tau e_0,\qquad d_G=\upsilon e_t.
@@ -324,26 +325,28 @@ Thus their remaining terms are quadratic, by the exact identity
 (R(a)n-n)\cdot(\xi n)=\xi(\cos a-1).
 \]
 
-Disk containment bounds their magnitudes by 8, so their total loss is
-at most \(16S^2\). Consequently
+The actual and reference slider centers all have norm below 2, so the
+displacement magnitudes are below 4 and their total loss is at most
+\(8S^2\). Consequently
 
 \[
 \begin{aligned}
 R^2&\ge q_*+\mu_HF
 +\frac12\sum_{i=A,B,D,E,H}\mu_i|d_i|^2
-+\left(\frac9{500}-128S\right)S\\
-&\ge q_*+\frac{\mu_H}{2}(t-t_*)^2
++\left(\frac9{500}-130S\right)S\\
+&\ge q_*+\frac{3\mu_H}{8}(t-t_*)^2
 +\frac12\sum_{i=A,B,D,E,H}\mu_i|d_i|^2
-+\frac{13}{2500}S\ge q_*.
++\frac1{200}S\ge q_*.
 \end{aligned}
 \tag{9}
 \]
 
-The exact coefficient and stationary bounds invoked here have complete
-independent audits on the broad graph; the analytic expansion does not
-hide a small-center assumption. Their status as finite arithmetic
-premises is recorded in
-[BROAD_CENTER_FREE_SHARPNESS_INDEPENDENT_AUDIT.md](BROAD_CENTER_FREE_SHARPNESS_INDEPENDENT_AUDIT.md).
+The exact coefficient and stationary bounds invoked here now have an
+explicit hand derivation: nine rational position brackets, four fixed
+rectangles, and nine scalar mean-value estimates. The 32 owner assignments
+reduce algebraically to those nine scalars. The independent review is
+[HAND_TERMINAL_AND_CEILING_INDEPENDENT_AUDIT.md](HAND_TERMINAL_AND_CEILING_INDEPENDENT_AUDIT.md).
+The analytic expansion does not require a small-center assumption.
 
 ## 8. Apply the inequality before expansion
 
@@ -370,11 +373,13 @@ The **unrestricted radius theorem is closed with exact computer
 assistance**. No global capture or terminal-owner gate remains unproved
 within this proof standard. All proofs concern full continuous domains.
 
-The **hand-proof requirement remains open** until analytic replacements
-are supplied for the retained central-core, pair/capture, and finite local
-arithmetic premises. Their numerical discovery alone is not such a
-replacement. This is the active continuation, rather than further
-improvement of a rounded radius bound.
+The central core, sharp rational ceiling, and finite local arithmetic now
+have complete hand proofs. The **unrestricted hand-proof requirement remains
+open** until analytic replacements are supplied for the global pair/capture
+premises. The new [seven-quarter-word reduction](SEVEN_QUARTER_WORDS.md)
+is exhaustive conditional on frame concentration, and its smaller global
+list is an active route. Numerical marker fits do not prove its remaining
+word exclusions or the candidate capture.
 
 Equation (9) also identifies equality inside a captured exterior ring:
 the common tilt, both orientation clusters, and five anchored centers

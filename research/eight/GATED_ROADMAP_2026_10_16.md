@@ -11,8 +11,10 @@ radial words have complete global covers, all four retained terminal cases
 satisfy the hypotheses of the final sharp dual, and the radius pullback
 closes the unrestricted argument. The full assembly is
 [UNRESTRICTED_EIGHT_SQUARE_SHARPNESS.md](UNRESTRICTED_EIGHT_SQUARE_SHARPNESS.md).
-Analytic replacement of its retained computational premises is the active
-gate. Global equality classification remains a separate open gate.
+The central core, exact sharp-ceiling bracket, and terminal coefficient
+arithmetic now have complete hand replacements. Analytic replacement of
+the global pair/capture premises is the active gate. Global equality
+classification remains a separate open gate.
 
 ## 1. Exact target and closure standards
 
@@ -50,18 +52,18 @@ change, or merge is included in this work.
 |---|---|---|
 | G0: target, exact model, attainment | Define q_* exactly; cover every actual packing by the genuine square/SAT model; construct attainment. | **Passed, hand proofs.** Foundational interfaces re-audited. |
 | G1: fiber and owner alternatives | Preserve original common-center fibers, sparse alternatives, owner ties and exhaustive orientation cover. | **Passed, hand proofs.** |
-| G2: central core | Every packing below the research ceiling has one square containing the closed radius-1/12 disk in its open interior. | **Passed, computer-assisted.** All four exact branches replayed. Hand replacement active. |
+| G2: central core | Every packing below the research ceiling has one square containing the closed radius-1/12 disk in its open interior. | **Passed, hand proof at 9789/2500.** A universal transverse segment and two forbidden-angle estimates exclude every shallow central square. |
 | G3: radial-boundary cover | Deform every exterior seven-cycle, at fixed actual frames and angle sum 2π, onto two explicit boundary curves, retaining adjacent true SAT. | **Passed, hand proof.** Nonneighbor constraints are explicitly relaxed. |
 | G4: global frame concentration | Put all seven exterior frames in one open 45-degree interval, excluding every former M5 and M6 branch. | **Passed, computer-assisted.** All 40 four-type branches, then hand odd-cycle and frame-lifting arguments. |
 | G5a: no adjacent core states | Reduce the boundary cycle to the five words with no adjacent C. | **Passed.** Hand core-pair estimate using G4. |
 | G5b: three-core exclusion | Exclude the entire COCOCOO continuous family. | **Passed, computer-assisted.** Eight complete branches, then a hand cyclic sum. |
 | G5c: short two-core exclusion | Exclude the entire COCOOOO continuous family. | **Passed, computer-assisted.** 28 complete directed role/sign branches, then a hand cyclic sum. |
 | G6: global survivor capture | Cover every remaining physical boundary cycle by explicit families on which all sharp-proof hypotheses hold. | **Passed, computer-assisted.** All 123 exclusions complete: 45 all-O, 46 one-C, 32 long two-C; every closed domain union independently audited. |
-| G7a: broad sharp terminal inequality | Prove a uniform sharp bound for every surviving owner assignment and both projected sliders, without a center-proximity assumption. | **Passed.** Hand nonlinear dual expansion, with exact finite coefficient/stationary premises. |
+| G7a: broad sharp terminal inequality | Prove a uniform sharp bound for every surviving owner assignment and both projected sliders, without a center-proximity assumption. | **Passed, hand proof.** Nine position brackets, four rectangles, nine scalar reserves, and an explicit nonlinear dual bound. |
 | G7b: terminal completeness | Prove every G6 survivor satisfies the actual frame, owner, tilt and slider hypotheses of G7a. | **Passed.** Four full-SAT budget compositions, four angle lifts, complete slider interfaces; S<1/10000. |
 | G8: unrestricted assembly | Apply the terminal bound before radius expansion, then combine with exact attainment. | **Passed, computer-assisted theorem.** Hand monotone-radius transfer preserves every originally feasible signed separator. |
 | G9: global equality | Trace equality through the cover and recover all original eight-square attaining poses, with converse feasibility. | **Open.** The final dual determines captured exterior equality; radial pullback and the central square need a separate argument. |
-| H: hand conversion and final audit | Replace every retained computational premise by analytic inequalities and audit all boundaries, ties and dependencies. | **ACTIVE.** Central core, global pair/capture inequalities, and finite terminal arithmetic remain to be replaced. |
+| H: hand conversion and final audit | Replace every retained computational premise by analytic inequalities and audit all boundaries, ties and dependencies. | **ACTIVE.** The global frame/pair/capture inequalities remain; central core and local arithmetic have hand replacements. |
 
 The old M5-DIFFUSE queue, low 3+5/4+4 reference certificates, and narrow
 center-proximity terminal are no longer dependencies of the completed
@@ -108,6 +110,9 @@ captured inside a tiny neighborhood of the candidate.
 Let \(q_c=3.91553413751747532652\), as an exact rational, and put
 \(Q_\sharp=q_c+10^{-16}\). For a hypothetical packing at \(q<q_*\),
 work first at \(\widetilde q=\max(q,q_c-2\cdot10^{-16})<q_*\).
+The [hand sharp-ceiling bracket](HUMAN_SHARP_CEILING_BRACKET.md), using
+eight explicit radical brackets and two-stage strong convexity, proves
+\(q_c-2\cdot10^{-16}<q_*<Q_\sharp\).
 Perform the radial reduction there, then expand only the O radii to
 \(Q_\sharp\). The hand monotonicity theorem preserves every originally
 valid signed separator, all center rays and all actual frames.
@@ -124,9 +129,9 @@ family and positive balanced weights give
 
 \[
 \widetilde q\ge q_*+
-\frac{\mu_H}{2}(t-t_*)^2+
+\frac{3\mu_H}{8}(t-t_*)^2+
 \frac12\sum_{i=A,B,D,E,H}\mu_i|p_i-p_i^0|^2+
-\frac{13}{2500}S\ge q_*.
+\frac1{200}S\ge q_*.
 \]
 
 The positive quadratic center terms absorb arbitrary anchored-center
@@ -161,13 +166,14 @@ independent range/domain audits remain in their existing locations.
 
 | Hand gate | Required analytic replacement | Current concrete work |
 |---|---|---|
-| H1: central core | Prove the strict marker separation for every sorted square state with primary coordinate at least 5/12, including shallow central squares. | The [circular-cap lemma](HUMAN_CIRCULAR_CAP_AND_AXIS_ELIMINATION.md) eliminates outward-primary separators by hand. Remaining angular marker cases are active. |
-| H2: global geometry | Replace the four-type, excluded-word and 123 capture pair inequalities by tractable contact-envelope inequalities and an exhaustive geometric argument. | The cap lemma also removes exterior outward axes. Low-degree potentials and a shared finite transition argument are being investigated; discovery fits are not counted as proofs. |
-| H3: terminal constants | Give a hand-verifiable proof of the broad stationary, slider, weight and owner inequalities. | Exact force identities reduce 32 owner assignments to nine scalar inequalities. Monotonicity reduces the stationary graph to rational endpoint comparisons. Analytic presentation is in progress. |
-| H4: assembly audit | Substitute the completed hand lemmas into the unrestricted argument and check all ties, boundaries, signs and radius transfers. | Waits for H1–H3; the existing computer-assisted assembly is preserved as a completed reference. |
+| H1: central core | Prove the strict radius-1/12 core for every packing at 9789/2500. | **Passed.** [Transverse-segment proof](HUMAN_CENTRAL_CORE_FROM_TRANSVERSE_SEGMENT.md), with 19 explicit polynomial rows and two elementary forbidden-width estimates; independently reviewed. |
+| H2a: frame concentration | Replace the full four-type continuous pair theorem. | **Active.** [Affine support reduction](AFFINE_MARKER_SUPPORT_REDUCTION.md) eliminates both state variables. The low/high [aligned](LOW_HIGH_ALIGNED_CONTACT_HAND_PROOF.md), [parallel-strip](LOW_HIGH_PARALLEL_STRIP_HAND_PROOF.md), and [quarter-strip](LOW_HIGH_QUARTER_STRIP_HAND_REDUCTION.md) regimes have hand proofs; other regimes remain. |
+| H2b: global word and owner capture | Derive every sharp-terminal hypothesis throughout the full remaining domain. | **Active.** The [common-point lemma](COMMON_POINT_AND_THREE_QUARTER_ANGLE.md) and its strengthening give center gaps >19/25 and remove four signed axes. Conditional on H2a, the [seven-quarter-word theorem](SEVEN_QUARTER_WORDS.md) gives a complete seven-word list. Six wrong-word exclusions and the candidate-word sharp argument remain; numerical fits are discovery only. |
+| H3: terminal constants and radius bracket | Give hand-verifiable broad stationary, slider, weight, owner and exact-ceiling inequalities. | **Passed.** [Compact terminal proof](HUMAN_BROAD_TERMINAL_ARITHMETIC.md), [sharp bracket](HUMAN_SHARP_CEILING_BRACKET.md), and [independent audit](HAND_TERMINAL_AND_CEILING_INDEPENDENT_AUDIT.md). All bounds are displayed finite rational arithmetic with no adaptive search. |
+| H4: assembly audit | Substitute the completed hand lemmas into the unrestricted argument and check all ties, boundaries, signs and radius transfers. | H1 and H3 are substituted into the main assembly. Full hand closure waits for H2a–H2b. |
 
 **Next required exit:** a complete analytic replacement for the retained
-global and local arithmetic premises. The hand-proof gate stays open until
+global frame and capture premises. The hand-proof gate stays open until
 that replacement is written and checked; the computer-assisted result is
 not relabeled as a hand proof.
 
