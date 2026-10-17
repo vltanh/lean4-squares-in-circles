@@ -10,7 +10,7 @@ chronological queue in `GATED_ROADMAP_2026_10_13.md`.
 are now excluded at the research ceiling.** The new universal
 [exterior-frame theorem](GLOBAL_EXTERIOR_FRAME_WINDOW.md) bypasses the
 former M5 small-J/diffuse split. A global radial-boundary reduction and
-two complete continuous certificates leave four explicit radial
+three complete continuous certificates leave three explicit radial
 patterns. Sharp global capture of the survivors is the active gate.
 
 ## 1. Exact target and closure standards
@@ -56,11 +56,12 @@ included in this work.
 | G4: global frame concentration | All seven exterior frames lie in one open 45-degree interval; exclude every M5 and M6 configuration. | **Passed, computer-assisted.** All 40 four-type branches complete, followed by hand odd-cycle and frame-lifting proofs. Also D<7/10. |
 | G5a: no adjacent core states | Cover the whole boundary cycle by five binary necklaces with no adjacent C. | **Passed.** Hand core-pair bound plus the completed G4 pair theorem. |
 | G5b: three-core exclusion | Exclude the whole COCOCOO continuous family at Q. | **Passed, computer-assisted.** All eight closed pair branches complete; a hand sum gives 3929/625>2π. |
-| G6: global survivor capture | Cover every remaining physical boundary cycle by a finite explicit collection of families on which all sharp-proof hypotheses hold, or prove a direct universal sharp inequality. | **ACTIVE / OPEN.** Four radial words remain; M7 and M8 are not closed. |
+| G5c: short two-core exclusion | Exclude the whole COCOOOO continuous family at Q. | **Passed, computer-assisted.** All 28 directed role/sign branches complete; their cost sum is 125709/20000>2π. |
+| G6: global survivor capture | Cover every remaining physical boundary cycle by a finite explicit collection of families on which all sharp-proof hypotheses hold, or prove a direct universal sharp inequality. | **ACTIVE / OPEN.** Three radial words remain; M7 and M8 are not closed. |
 | G7: sharp terminal inequalities | Prove q>=q_* on every retained family, for full continuous angles and every allowed slider; strictly exclude all other families. | Open. Existing conditional and local theorems do not yet cover G6. |
 | G8: unrestricted assembly | Prove that every normalized packing reaches a completed terminal theorem, then combine with the exact construction. | Waiting for G6–G7. |
 | G9: global equality | Trace equality through a complete cover and recover exactly all attaining poses and slider ranges, with converse feasibility. | Open. Deformations used for lower bounds need a separate equality analysis. |
-| H: hand conversion and final audit | Replace each retained computational premise by an analytic proof and audit the full dependency chain, ties, and boundaries. | Open. Currently G2, G4, and G5b contain computational premises. |
+| H: hand conversion and final audit | Replace each retained computational premise by an analytic proof and audit the full dependency chain, ties, and boundaries. | Open. Currently G2, G4, G5b, and G5c contain computational premises. |
 
 The old M5-DIFFUSE gate is closed by G4 as a whole. The recovered 3+5
 and 4+4 reference certificates are no longer dependencies of the
@@ -92,7 +93,6 @@ The finite radial cover, up to rotation and reflection, is:
 |---|---|
 | `OOOOOOO` | Cover or exclude the full all-outer seven-cycle. |
 | `COOOOOO` | Cover or exclude every one-core seven-cycle. |
-| `COCOOOO` | Cover or exclude the complete short-separation two-core family. |
 | `COOCOOO` | Cover the long-separation two-core family and retain its candidate-compatible sharp configurations. |
 
 Each word still contains seven continuous relative-frame parameters
@@ -110,13 +110,15 @@ not prove this union.
 ### G6.2 — usable sharp hypotheses
 
 For each retained family, prove the exact hypotheses of its terminal
-inequality. In particular, the existing
-[local seven-square theorem](HUMAN_LOCAL_TRUE_SAT_SEVEN_SQUARE_SHARPNESS.md)
-has neighborhood and slider assumptions. A boundary representative
-can move sliders to the core and leave that stated neighborhood.
-Either prove capture into the neighborhood or prove a uniform local
-theorem over the full permitted slider ranges. Numerical convergence
-to the candidate does not establish either statement.
+inequality. The new
+[uniform slider theorem](HUMAN_UNIFORM_SLIDER_LOCAL_SHARPNESS.md)
+extends local sharpness to a neighborhood of the full candidate-compatible
+T/G slider rectangle, including both radial endpoints. All 44 wrong-axis
+corner bounds and all 640 owner-coefficient corner bounds passed exactly;
+convexity and concavity fill the continuous rectangle. This repairs the
+former fixed-slider interface. A computational terminal box still needs
+a quantitative tube radius and a complete capture proof into that tube.
+Numerical convergence to the candidate establishes neither.
 
 ### G6.3 — union and usability audit
 
@@ -140,8 +142,10 @@ Its dependencies are deliberately separated:
 | Frame window and D<7/10 | FRAME_SEMICIRCLE_FORCING.md; EXTERIOR_FRAME_CONCENTRATION.md | Hand concavity, lifting, and rational Taylor bounds |
 | No adjacent C | NO_ADJACENT_CORE_BOUNDARY_STATES.md | Hand estimate using certified pair costs |
 | No three C | THREE_CORE_BOUNDARY_EXCLUSION.md; verify_boundary_pair_costs.cpp | Complete exact dyadic verification plus hand telescoping |
+| No short two C | SHORT_TWO_CORE_BOUNDARY_EXCLUSION.md; verify_boundary_pair_costs.cpp | Complete exact directed-role verification plus hand telescoping |
+| Local sharpness across both full slider ranges | HUMAN_UNIFORM_SLIDER_LOCAL_SHARPNESS.md; verify_uniform_slider_local_dual.py | Analytic compact-family extension with finite exact coefficient checks |
 
-Both continuous certificates retain exact rational constants, sources,
+All three continuous certificates retain exact rational constants, sources,
 all complete branch logs, strict margins, and SHA-256 manifests. The
 proof notes give direct build and run commands. Independent audits
 cover the actual SAT formulas, complete closed domain coverage,
@@ -160,8 +164,11 @@ missing grid certificate.
 The new route then supplied the hand radial reduction, completed all
 40 four-type branches (3,746,056 nodes and 1,874,308 terminal rectangles),
 and closed all M5/M6. The no-adjacent-core lemma and all eight
-three-core branches (754,058 nodes and 377,285 terminal rectangles)
-reduced the global radial cover to the four displayed words.
+three-core branches (754,058 nodes and 377,285 terminal rectangles),
+followed by the complete short-two-core cover (9,535,240 nodes and
+4,768,516 terminal rectangles), reduce the global radial cover to the
+three displayed words. The uniform local theorem now includes the full
+candidate-compatible slider rectangle.
 
 **Next required exit:** a complete sharp capture or direct inequality
 for those remaining continuous families. Global optimality, global

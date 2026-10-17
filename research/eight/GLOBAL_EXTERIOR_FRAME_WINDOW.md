@@ -185,20 +185,24 @@ excludes `COCOCOO`: six cross-edge costs plus one outer-edge cost give
 \]
 
 Its eight closed branches cover 512 initial rectangles, 754,058 nodes,
-and 377,285 terminal rectangles. The full data and replay logs are
-retained. Thus every original packing has a boundary representative
-in one of the four words
+and 377,285 terminal rectangles. A third
+[complete certificate](SHORT_TWO_CORE_BOUNDARY_EXCLUSION.md) excludes
+the short-separation two-core word `COCOOOO`: all 28 directed role/sign
+branches pass, and their seven costs sum to \(125709/20000>2\pi\).
+This cover has 9,535,240 nodes and 4,768,516 terminal rectangles.
+The full exact data and replay logs are retained. Every original packing
+therefore has a boundary representative in one of the three words
 
 | Radial pattern | Status at this checkpoint |
 |---|---|
 | `OOOOOOO` | Retained |
 | `COOOOOO` | Retained |
-| `COCOOOO` | Retained |
 | `COOCOOO` | Retained; includes the candidate topology after slider motion |
 
-These are seven-state continuous families, not four fully classified
+These are seven-state continuous families, not fully classified
 contact graphs. Their exact physical angle sum and all seven true
 neighbor SAT alternatives must remain in any terminal proof. The
-existing local sharpness theorem cannot be applied until its
-neighborhood and slider hypotheses are proved for every relevant
+new [uniform local sharpness theorem](HUMAN_UNIFORM_SLIDER_LOCAL_SHARPNESS.md)
+includes the entire candidate-compatible slider rectangle, but its
+neighborhood hypotheses must still be proved for every relevant
 survivor. Global optimality and equality are still open.

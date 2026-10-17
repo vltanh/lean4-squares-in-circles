@@ -242,6 +242,9 @@ sanitizer output. The final source now rejects invalid optional piece indices,
 resolving the minor vacuous-selection issue identified during audit.
 
 No invalid geometric implication or unsound acceptance criterion was found.
+The separate [arithmetic range audit](DYADIC_PAIR_ARITHMETIC_RANGE_AUDIT.md)
+also supplies explicit mathematical bounds for every executed narrowing
+conversion and wide product, without changing the validated source hashes.
 The completed proof is computer-assisted: the interval partition is finite
 and uses exact arithmetic, but these approximately 1.87 million terminal
 rectangles have not been replaced by a short human-readable family of
