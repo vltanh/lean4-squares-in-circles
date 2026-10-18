@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Eight.Candidate.Nominal
+public import SquaresInCircles.Eight.Candidate.GeometricOwners
 public import SquaresInCircles.Eight.Generated.OwnerCompleteness
 
 /-!
@@ -16,134 +16,6 @@ noncomputable section
 open scoped BigOperators
 namespace SquaresInCircles.Eight.Candidate
 open Dual
-
-theorem pairWidth_half_pi_add (t : ℝ) : pairWidth (Real.pi/2+t)=pairWidth t := by
-  simp [pairWidth, Real.sin_add, Real.cos_add, add_comm]
-
-theorem aligned_width {q : ℝ} {C : BoundaryCycle q} (F : Frame C) {i : Vertex}
-    (hi : i ∈ charged) :
-    pairWidth (nominalPhase (tilt F.theta) i)=1 ∧
-      pairWidth (phi F.theta i)=pairWidth (delta F.theta i) := by
-  fin_cases i <;> norm_num [charged] at hi <;>
-    simp [nominalPhase, zeroEdges, otherQuarterEdges, phi, word,
-      pairWidth_half_pi_add, pairWidth]
-
-theorem aligned_coarse_projection {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
-    (hq : q ≤ Q0) {i : Vertex} (hi : i ∈ charged) (j : Fin 4)
-    (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i)))
-    {ε : ℝ} (hS : mismatch F.theta ≤ ε) :
-    1-(3/2)*ε ≤ actualProjection C i j (nominalPhase (tilt F.theta) i) := by
-  have hp := actualProjection_feasible F i j hj
-  have hw := width_one_le (phi F.theta i)
-  have hd := (delta_le_mismatch F.theta hi).trans hS
-  have hl := actualProjection_lipschitz C hq i j
-    (phi F.theta i) (nominalPhase (tilt F.theta) i)
-  rw [phase_decomposition F, if_pos hi, add_sub_cancel_left] at hl
-  have hh := (abs_le.mp hl).2
-  linarith
-
-theorem aligned_first_order_projection {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
-    (hq : q ≤ Q0) {i : Vertex} (hi : i ∈ charged) (j : Fin 4)
-    (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i)))
-    (hS : mismatch F.theta ≤ 1/500) :
-    1-(1001/1000)*|delta F.theta i| ≤
-      actualProjection C i j (nominalPhase (tilt F.theta) i) := by
-  have hd := (delta_le_mismatch F.theta hi).trans hS
-  have hp := actualProjection_feasible F i j hj
-  rw [(aligned_width F hi).2] at hp
-  have hw := width_cusp_lower hd
-  have hl := actualProjection_lipschitz C hq i j
-    (phi F.theta i) (nominalPhase (tilt F.theta) i)
-  rw [phase_decomposition F, if_pos hi, add_sub_cancel_left] at hl
-  have hh := (abs_le.mp hl).2
-  have h₂ := mul_le_mul_of_nonneg_right hd (abs_nonneg (delta F.theta i))
-  have h₃ := mul_le_mul_of_nonneg_right h₂ (abs_nonneg (delta F.theta i))
-  have h₄ := mul_le_mul_of_nonneg_left h₂ (show (0:ℝ) ≤ 1/500 by norm_num)
-  nlinarith [sq_abs (delta F.theta i)]
-
-theorem aligned_second_order_projection {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
-    (hq : q ≤ Q0) {i : Vertex} (hi : i ∈ charged) (j : Fin 4)
-    (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i)))
-    (hS : mismatch F.theta ≤ 1/500) :
-    |delta F.theta i|/2 -
-      actualDerivative C i j (nominalPhase (tilt F.theta) i)*delta F.theta i -
-      (1001/1000)*(delta F.theta i)^2 ≤
-    actualProjection C i j (nominalPhase (tilt F.theta) i)-1 := by
-  have hd := (delta_le_mismatch F.theta hi).trans hS
-  have hp := actualProjection_feasible F i j hj
-  rw [(aligned_width F hi).2] at hp
-  have hw := width_cusp_lower hd
-  have hT := (actualProjection_taylor C hq i j
-    (nominalPhase (tilt F.theta) i) (delta F.theta i)).2
-  have he := phase_decomposition F i
-  rw [if_pos hi] at he
-  rw [← he] at hT
-  have h₃ := mul_le_mul_of_nonneg_right hd (sq_nonneg (delta F.theta i))
-  nlinarith [sq_abs (delta F.theta i)]
-
-theorem mixed_G_projection {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
-    (j : Fin 4) (hj : (forwardAxis j).Feasible (C.square G) (C.square (next G))) :
-    pairWidth (nominalPhase (tilt F.theta) G) ≤
-      actualProjection C G j (nominalPhase (tilt F.theta) G) := by
-  have he := phase_decomposition F G
-  norm_num [G,charged] at he
-  simpa [he] using actualProjection_feasible F G j hj
-
-theorem mixed_E_projection {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
-    (hq : q ≤ Q0) (j : Fin 4)
-    (hj : (forwardAxis j).Feasible (C.square E) (C.square (next E)))
-    {ε : ℝ} (hε : ε ≤ 3/200) (hS : mismatch F.theta ≤ ε) :
-    pairWidth (nominalPhase (tilt F.theta) E)-2*ε ≤
-      actualProjection C E j (nominalPhase (tilt F.theta) E) := by
-  have hδ := (totalSignedError_abs F.theta).trans hS
-  have ht := F.tilt_small
-  have he := phase_decomposition F E
-  simp [E,G,charged,nominalPhase,zeroEdges,otherQuarterEdges] at he
-  have hp := actualProjection_feasible F E j hj
-  have hl := actualProjection_lipschitz C hq E j
-    (phi F.theta E) (nominalPhase (tilt F.theta) E)
-  have hw := width_lipschitz_small
-    (x := tilt F.theta-totalSignedError F.theta) (y := tilt F.theta)
-    (by have hh := abs_sub (tilt F.theta) (totalSignedError F.theta); linarith)
-    (by linarith)
-  have hw' : pairWidth (tilt F.theta) - |totalSignedError F.theta|/2 ≤
-      pairWidth (tilt F.theta-totalSignedError F.theta) := by
-    have hh := (abs_le.mp hw).1
-    simp only [sub_sub_cancel_left,abs_neg] at hh
-    linarith
-  simp [nominalPhase,E,G,zeroEdges,otherQuarterEdges] at hl ⊢
-  rw [he, show Real.pi/2+tilt F.theta-totalSignedError F.theta =
-    Real.pi/2+(tilt F.theta-totalSignedError F.theta) by ring, pairWidth_half_pi_add] at hp
-  rw [he] at hl
-  have hh := (abs_le.mp hl).2
-  simp only [sub_add_cancel_left, sub_sub_cancel_left, abs_neg] at hh
-  rw [pairWidth_half_pi_add]
-  linarith
-
-theorem mixed_E_second_order {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
-    (hq : q ≤ Q0) (j : Fin 4)
-    (hj : (forwardAxis j).Feasible (C.square E) (C.square (next E)))
-    (hS : mismatch F.theta ≤ 1/1000) {positive : Bool}
-    (hsign : if positive then 0 ≤ tilt F.theta else tilt F.theta ≤ 0) :
-    (actualDerivative C E j (nominalPhase (tilt F.theta) E)-widthSlope positive (tilt F.theta))*
-        totalSignedError F.theta - (9/8)*(totalSignedError F.theta)^2 ≤
-      actualProjection C E j (nominalPhase (tilt F.theta) E)-
-        pairWidth (nominalPhase (tilt F.theta) E) := by
-  have hδ := (totalSignedError_abs F.theta).trans hS
-  have he := phase_decomposition F E
-  norm_num [E,G,charged] at he
-  have hp := actualProjection_feasible F E j hj
-  have hT := (actualProjection_taylor C hq E j
-    (nominalPhase (tilt F.theta) E) (-totalSignedError F.theta)).2
-  rw [← he] at hT
-  have hw := width_semiconvex F.tilt_small.le
-    (v := -totalSignedError F.theta) (by rw [abs_neg]; linarith) hsign
-  have hn : nominalPhase (tilt F.theta) E = Real.pi/2+tilt F.theta := by
-    norm_num [nominalPhase,E,G,zeroEdges,otherQuarterEdges]
-  rw [he,hn,show (Real.pi/2+tilt F.theta)+ -totalSignedError F.theta =
-    Real.pi/2+(tilt F.theta+ -totalSignedError F.theta) by ring,pairWidth_half_pi_add] at hp
-  rw [hn,pairWidth_half_pi_add]
-  nlinarith
 
 def weightedSlack {q : ℝ} (C : BoundaryCycle q) (t : ℝ)
     (p : Vertex → Fin 4) (λ : Vertex → ℚ) : ℝ :=
@@ -374,21 +246,6 @@ theorem l1_square_bound {ι : Type*} [Fintype ι] (d : ι → ℝ) {ε : ℝ}
   have hs : 0 ≤ ∑ i, |d i| := Finset.sum_nonneg (fun _ _ => abs_nonneg _)
   exact (hfinite Finset.univ).trans (pow_le_pow_left₀ hs hε 2)
 
-theorem terminal_nominal_projection {q : ℝ} {C : BoundaryCycle q}
-    (hc : TangentCuts C) (ho : OwnerRestriction C terminalOwners)
-    (p : Vertex → Fin 4) (hp : FeasibleOwners C p) (t : ℝ) (i : Vertex) :
-    actualProjection C i (nominalOwner i) (nominalPhase t i) =
-      actualProjection C i (p i) (nominalPhase t i) := by
-  have hi := ho i (p i) (hp i)
-  have hz : i ∈ zeroEdges → p i ∈ zeroOwners := by
-    intro hz
-    fin_cases i <;> norm_num [zeroEdges] at hz <;> simpa [terminalOwners,zeroOwners] using hi
-  rw [← collapsed_projection hc i (p i) t hz]
-  congr 1
-  fin_cases i <;> simp [nominalOwner,collapseOwner,zeroEdges,otherQuarterEdges,terminalOwners] at hi ⊢ <;>
-    fin_cases p 0 <;> fin_cases p 1 <;> fin_cases p 2 <;> fin_cases p 3 <;>
-    fin_cases p 4 <;> fin_cases p 5 <;> fin_cases p 6 <;> norm_num at *
-
 theorem terminal_alternative_owner {q : ℝ} {C : BoundaryCycle q}
     (ho : OwnerRestriction C terminalOwners) (p : Vertex → Fin 4)
     (hp : FeasibleOwners C p) (j : Fin 5) :
@@ -498,13 +355,17 @@ theorem tilt_window {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
     ∃ z : ℝ, 1001/20000 < z ∧ z < 2/25 ∧ tilt F.theta=2*Real.arctan z ∧
       1/10 < tilt F.theta ∧ tilt F.theta < 4/25 := by
   obtain ⟨z,hzl,hzu,ht⟩ := half_angle_chart F.tilt_small
+  have hzpos : 0 < z := by
+    by_contra! hn
+    exact negative_tilt_excluded F (hq.trans (by norm_num [Q1, Q0]))
+      hc ho hS ⟨hzl.le, hn⟩ ht
   have hzwindow : 1001/20000 < z ∧ z < 2/25 := by
     by_contra! hn
     have htail : z ≤ 1001/20000 ∨ 2/25 ≤ z := by
       by_cases hz : 1001/20000 < z
       · exact Or.inr (hn hz)
       · exact Or.inl (le_of_not_gt hz)
-    obtain ⟨B,hB⟩ := Generated.Owner.tilt_tail_certificate ⟨hzl.le,hzu.le⟩ htail
+    obtain ⟨B,hB⟩ := Generated.Owner.positive_tilt_tail_certificate ⟨hzpos.le,hzu.le⟩ htail
     exact tilt_bundle_excludes F hq hc ho hS B hB (abs_le.mpr ⟨hzl.le,hzu.le⟩) ht
   exact ⟨z,hzwindow.1,hzwindow.2,ht,
     (half_angle_terminal_window hzwindow.1 hzwindow.2 ht).1,

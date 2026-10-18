@@ -126,6 +126,18 @@ shared budget rather than charging every edge independently.
 
 Detailed execution belongs in `OWNER_GEOMETRY.md`.
 
+**G3.1 implemented:** `Candidate.GeometricOwners.negative_tilt_excluded`
+now handles the entire closed half-chart `-3/8 ≤ z ≤ 0`, including zero,
+under the actual terminal-owner and shared-mismatch hypotheses. The four
+circle weights give the exact reserve `34477/144000000` above `Q0`.
+`tilt_window` uses this theorem before consulting positive-tail certificates.
+The 18 negative-only bundles `Tilt000`–`Tilt017` have been deleted from
+source and from the import and coverage lists: 378 quartic certificates,
+1,890 Bernstein coefficient checks, and 16,740 generated lines removed.
+The generator now skips precisely those bundles. The 41 positive-tail
+bundles and the remaining owner alternatives are still active. All new
+Lean proof bodies remain uncompiled.
+
 ## G4 — Replace finite word and pair searches: open
 
 The four geometric labels form a small weighted graph. Replace the

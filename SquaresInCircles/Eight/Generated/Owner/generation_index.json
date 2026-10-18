@@ -20,8 +20,8 @@
       "input": "candidate_tilt_signed_error_hand_data.json",
       "sha256": "bc5305ef2b0b00e62b89259da64d8eedadfa93c71fcf1269110b29aeaae28bc1",
       "mode": "tilt",
-      "groups": 59,
-      "rows": 1239
+      "groups": 41,
+      "rows": 861
     }
   ]
 }

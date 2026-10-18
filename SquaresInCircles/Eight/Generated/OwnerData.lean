@@ -63,24 +63,6 @@ public import SquaresInCircles.Eight.Generated.Owner.Mixed011
 public import SquaresInCircles.Eight.Generated.Owner.Mixed012
 public import SquaresInCircles.Eight.Generated.Owner.Mixed013
 public import SquaresInCircles.Eight.Generated.Owner.Mixed014
-public import SquaresInCircles.Eight.Generated.Owner.Tilt000
-public import SquaresInCircles.Eight.Generated.Owner.Tilt001
-public import SquaresInCircles.Eight.Generated.Owner.Tilt002
-public import SquaresInCircles.Eight.Generated.Owner.Tilt003
-public import SquaresInCircles.Eight.Generated.Owner.Tilt004
-public import SquaresInCircles.Eight.Generated.Owner.Tilt005
-public import SquaresInCircles.Eight.Generated.Owner.Tilt006
-public import SquaresInCircles.Eight.Generated.Owner.Tilt007
-public import SquaresInCircles.Eight.Generated.Owner.Tilt008
-public import SquaresInCircles.Eight.Generated.Owner.Tilt009
-public import SquaresInCircles.Eight.Generated.Owner.Tilt010
-public import SquaresInCircles.Eight.Generated.Owner.Tilt011
-public import SquaresInCircles.Eight.Generated.Owner.Tilt012
-public import SquaresInCircles.Eight.Generated.Owner.Tilt013
-public import SquaresInCircles.Eight.Generated.Owner.Tilt014
-public import SquaresInCircles.Eight.Generated.Owner.Tilt015
-public import SquaresInCircles.Eight.Generated.Owner.Tilt016
-public import SquaresInCircles.Eight.Generated.Owner.Tilt017
 public import SquaresInCircles.Eight.Generated.Owner.Tilt018
 public import SquaresInCircles.Eight.Generated.Owner.Tilt019
 public import SquaresInCircles.Eight.Generated.Owner.Tilt020
@@ -148,9 +130,10 @@ theorem mixed_table_modes : ∀ T ∈ mixedTables, T.mode = .mixed := by
   simp only [mixedTables, List.mem_cons, List.mem_singleton] at hT
   rcases hT with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl <;> rfl
 
-def tiltLeft : List TiltBundle := [tiltBundle000, tiltBundle001, tiltBundle002, tiltBundle003, tiltBundle004, tiltBundle005, tiltBundle006, tiltBundle007, tiltBundle008, tiltBundle009, tiltBundle010, tiltBundle011, tiltBundle012, tiltBundle013, tiltBundle014, tiltBundle015, tiltBundle016, tiltBundle017, tiltBundle018, tiltBundle019, tiltBundle020, tiltBundle021, tiltBundle022, tiltBundle023, tiltBundle024, tiltBundle025, tiltBundle026, tiltBundle027, tiltBundle028, tiltBundle029, tiltBundle030, tiltBundle031, tiltBundle032, tiltBundle033, tiltBundle034, tiltBundle035, tiltBundle036, tiltBundle037, tiltBundle038, tiltBundle039]
+/-- The nonpositive half-chart is excluded by the four-circle stress. -/
+def tiltLeft : List TiltBundle := [tiltBundle018, tiltBundle019, tiltBundle020, tiltBundle021, tiltBundle022, tiltBundle023, tiltBundle024, tiltBundle025, tiltBundle026, tiltBundle027, tiltBundle028, tiltBundle029, tiltBundle030, tiltBundle031, tiltBundle032, tiltBundle033, tiltBundle034, tiltBundle035, tiltBundle036, tiltBundle037, tiltBundle038, tiltBundle039]
 
-theorem tilt_left_cover : Arithmetic.ClosedChain (-3/8) (1001/20000)
+theorem tilt_left_cover : Arithmetic.ClosedChain 0 (1001/20000)
     (tiltLeft.map TiltBundle.interval) := by decide
 
 def tiltRight : List TiltBundle := [tiltBundle040, tiltBundle041, tiltBundle042, tiltBundle043, tiltBundle044, tiltBundle045, tiltBundle046, tiltBundle047, tiltBundle048, tiltBundle049, tiltBundle050, tiltBundle051, tiltBundle052, tiltBundle053, tiltBundle054, tiltBundle055, tiltBundle056, tiltBundle057, tiltBundle058]

@@ -51,7 +51,9 @@ theorem mixed_certificate {p : Vertex → Fin 4} (hp : MixedPattern p) :
   obtain ⟨k,hk⟩ := mixed_pattern_complete p hp
   exact ⟨mixedByIndex k,mixedByIndex_mode k,hk⟩
 
-theorem tilt_tail_certificate {z : ℝ} (hz : -(3/8:ℝ) ≤ z ∧ z ≤ 3/8)
+/-- Nonpositive half-angles are excluded by `negative_tilt_excluded`.
+Only the two remaining closed positive tails require a bundle. -/
+theorem positive_tilt_tail_certificate {z : ℝ} (hz : 0 ≤ z ∧ z ≤ 3/8)
     (htail : z ≤ 1001/20000 ∨ 2/25 ≤ z) :
     ∃ B : TiltBundle, B.interval.Mem z := by
   rcases htail with hl | hr

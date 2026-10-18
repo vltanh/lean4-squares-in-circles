@@ -15,6 +15,27 @@ checking has succeeded. Every F12 verification gate remains deferred.
 
 ## Provenance and delivery
 
+### Geometric replacement pass
+
+The subsequent execution of [GEOMETRIC_ROADMAP.md](GEOMETRIC_ROADMAP.md)
+has begun replacing active finite computations by geometric proof bodies.
+The four-type seven-walk bound now follows from alternating vertex
+potentials and 32 edge inequalities, replacing enumeration of all 16,384
+words. The entire nonpositive tilt chart now follows from a four-circle
+stress and one shared mismatch budget. This removes `Owner/Tilt000.lean`
+through `Owner/Tilt017.lean`, their active imports, and their coverage
+entries: 18 bundles containing 378 quartic certificates and 16,740 lines.
+The exact positive reserve over `Q0` is `34477/144000000`, including tilt
+zero. The 41 positive-tail bundles remain in use.
+
+These are source replacements with the original geometric hypotheses;
+their Lean elaboration and kernel checking remain deferred. The large
+affine corpus and the global stationary root cover still belong to the
+active proof graph. The gate-by-gate roadmap distinguishes implemented
+replacements from preparatory geometric lemmas and remaining obligations.
+
+### Original source transfer
+
 The implementation transfers the roadmap and mathematical corpus from
 [PR #9](https://github.com/vltanh/lean4-squares-in-circles/pull/9), at source commit
 `a21c91f54039e805a637e983bc612bd130f39ee7`, into

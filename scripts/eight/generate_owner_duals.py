@@ -202,7 +202,11 @@ inputs=[('quarter','candidate_quarter_owner_large_mismatch_dual_data.json'),
 for mode,filename in inputs:
     raw=(SOURCE/filename).read_bytes(); data=json.loads(raw)
     if mode=='tilt':
-        groups=[(k,b['vertices']) for k,b in enumerate(data['bundles'])]
+        # The entire closed chart [-3/8, 0] is proved geometrically in
+        # Candidate/GeometricOwners.lean. Never regenerate its former
+        # Tilt000--Tilt017 certificate dependencies.
+        groups=[(k,b['vertices']) for k,b in enumerate(data['bundles'])
+                if Q(b['hi']) > 0]
     else:
         pats=sorted({tuple(r['owners']) for r in data['rows']})
         groups=[(k,sorted([r for r in data['rows'] if tuple(r['owners'])==p],key=lambda r:Q(r['lo']))) for k,p in enumerate(pats)]
@@ -282,7 +286,7 @@ for mode in ['quarter','mixed']:
 
 '''
 left=[b for b in bundles if b[2]<=Q(1001,20000)];right=[b for b in bundles if b[1]>=Q(2,25)]
-for side,bs,lo,hi in [('left',left,Q(-3,8),Q(1001,20000)),('right',right,Q(2,25),Q(3,8))]:
+for side,bs,lo,hi in [('left',left,Q(0),Q(1001,20000)),('right',right,Q(2,25),Q(3,8))]:
     bs.sort(key=lambda b:b[1]);ns=', '.join(b[0] for b in bs)
     text+=f'''def tilt{side.title()} : List TiltBundle := [{ns}]
 
