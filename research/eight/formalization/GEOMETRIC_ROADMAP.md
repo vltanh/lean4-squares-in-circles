@@ -63,7 +63,7 @@ distinct from recursion nodes and from definitions or proof references to
 the checker. `--details` optionally lists all source occurrences; the
 default report keeps compact per-module counts. No checker is evaluated.
 
-## G1 — Replace stationary-root subdivision by the family geometry: open
+## G1 — Replace stationary-root subdivision by the family geometry: implemented
 
 The manuscript already contains a substantially more geometric proof in
 `HUMAN_FIVE_CORNER.md`, `HUMAN_FAMILY_ENCLOSURE.md`, and
@@ -144,6 +144,21 @@ inclusion also proves strict radius decrease of the actual envelope.
 The final gate is connecting these results to the original stationary
 coordinates and replacing the root-cover call; it remains active at this
 checkpoint.
+
+**G1.3 connected; global root-cover call removed:**
+`GeometricStationary.stationary_chain_unique` proves equality of arbitrary
+chains satisfying the original broad `Coordinates.IsStationary` predicate.
+The exact angle `2*atan(z)` supplies the actual envelope zero and critical
+point. Global angular minimality plus finite radius decrease identifies
+the radius; critical-point uniqueness identifies the angle; strict position
+convexity and the four circle equations identify all coordinates.
+`Stationary.stationary_unique` now applies this theorem to `sharpData`.
+`stationary_local` follows from equality with that witness, and the import
+and depth-48 call to `Generated.StationaryLocalization` have been removed.
+This is an actual replacement under the original hypotheses. The local
+existence/bracket bounds and the separate 256-box adaptive estimates are
+retained; their removal is not claimed. All replacement Lean remains
+uncompiled.
 
 ## G2 — Remove angular subdivisions by exact contact geometry: open
 

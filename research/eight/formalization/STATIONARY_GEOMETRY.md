@@ -358,15 +358,66 @@ The resulting actual-family theorems are
 `positionEnvelope_critical_global_minimum`. None uses the root cover or
 assumes the sign of the defect.
 
-## Remaining dependency to eliminate
+## 10. Original stationary-coordinate uniqueness and root-cover removal
 
-The remaining connection is the original `Coordinates.IsStationary`
-adapter: identify its tilt and position with the actual envelope critical
-point, use finite radius decrease to identify the unique zero, and recover
-the original coordinates. The geometric, regularity, and global envelope
-gates above supply the analytic inputs to that connection.
+`ExactFamily/GeometricStationary.lean` completes the adapter for the
+original `Coordinates.IsStationary` predicate.  It sets
 
-The recursive localization import remains active until these last results
-are connected to the existing stationary uniqueness theorem.  All new Lean
-sources in this note are still uncompiled, in accordance with the explicit
-no-compilation and no-CI instruction.
+```
+t = 2*atan(d.z),
+cos(t) = d.c,  sin(t) = d.s,
+0 < t < atan(1/5),
+u(t) = -d.y.
+```
+
+The exact half-angle identities prove the frame equalities.  The original
+strict tilt bound places `t` inside the envelope interval, and the actual
+position derivative and full-domain strict convexity identify the selected
+position minimizer with `-d.y`.  Consequently the algebraic defect and tilt
+stationarity equations give `M(d.q,t)=0` and `M_t(d.q,t)=0` for the actual
+envelope.  Section 9 then proves `M(d.q,v)>=0` at every other tilt in the
+full closed interval.
+
+If two stationary chains had `q0<q1`, the strict finite radius comparison
+at the smaller-radius chain's tilt would give
+
+```
+0 <= M(q1,t0) < M(q0,t0)-(q1-q0) = -(q1-q0) < 0.
+```
+
+This contradiction identifies their radii.  Critical-point uniqueness
+identifies their angles; injectivity of `atan` identifies their half-angle
+parameters.  Equality of the unique position minima identifies their
+heights, and the four positive/negative radical branches identify every
+remaining coordinate.  `stationary_chain_unique` therefore proves global
+uniqueness directly from the two original broad stationary predicates.
+It assumes no local-box membership or independently postulated minimum
+property.
+
+`Stationary.stationary_unique` now applies that geometric theorem to the
+analytically constructed `sharpData` witness.  `Stationary.stationary_local`
+follows afterward by equality with that witness and its existing local-box
+membership.  Its recursive root-checker call and the import of
+`Generated.StationaryLocalization` have both been removed from the active
+stationary proof path.  The existing local analytic existence construction
+and rational brackets are retained.
+
+## Scope and validation status
+
+The stationary root subdivision is no longer needed to prove uniqueness
+or localize a broad stationary chain.  The proof chain now runs through
+actual disk convexity, circle curvature and support estimates, a fixed
+interior minimizing window, the scalar implicit-function theorem, the
+global critical-point argument, and finite radius inclusion.
+
+The separate 256-box adaptive derivative, reserve, and perturbation bounds
+are still present.  Their enclosure utility currently shares a module
+with the old recursive checker; using the enclosure utility does not
+reintroduce the stationary localization certificate.  Those adaptive
+bounds remain a distinct target for further geometric reduction.
+
+All new Lean sources in this note remain uncompiled, in accordance with
+the explicit no-compilation and no-CI instruction.  Verification so far
+consists of source review, pinned-Mathlib API reads, small exact rational
+identity checks, and static dependency checks.  No claim of kernel
+acceptance is made.
