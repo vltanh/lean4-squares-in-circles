@@ -1,4 +1,4 @@
-# Owner geometry: three complete table replacements
+# Owner geometry: four complete table replacements
 
 ## Result and exact scope
 
@@ -272,8 +272,8 @@ with their imports and entries in `tiltLeft`. This removes exactly
 generated Lean lines, and 1,136,918 bytes. The owner generator filters
 these nonpositive bundles so regeneration cannot reinstate them.
 
-The two three-edge arguments below remove 24 of the quarter-owner
-patterns as well. There remain 24 quarter-owner patterns, 15 mixed-owner
+The three chain arguments below remove 28 of the quarter-owner
+patterns as well. There remain 20 quarter-owner patterns, 15 mixed-owner
 patterns, and 41 positive tilt bundles. Their geometric replacements are
 still open. In particular, the negative-tilt theorem uses the intended
 owners; it does not by itself supply the quarter or mixed restrictions.
@@ -455,3 +455,123 @@ bundles with 861 rows. Exact static checks confirmed the disjoint
 48-pattern partition (16 plus 8 removed, 24 retained), all 24 direct
 selector outputs, the reserve in (18), and the remaining source imports.
 No Lean compilation or historical certificate replay was run.
+
+## 8. Two forbidden directions force A toward its transverse side
+
+Suppose both B-to-T and D-to-E have a forbidden feasible axis. The
+zero-edge projections on A-to-B and T-to-D give two chains:
+
+\[
+b_A+a_T\ge2-\frac32(|d_A|+|d_B|),\qquad
+b_T+a_E\ge2-\frac32(|d_T|+|d_D|).
+\tag{19}
+\]
+
+Give the second chain weight \(2/3\), so the T force is
+\((1,2/3)\). A circle completion with weight \(3/10\) gives
+
+\[
+a_T+\frac23b_T\le\frac3{10}q+\frac{10}{27}.
+\tag{20}
+\]
+
+All four error coefficients are at most one. Consequently
+
+\[
+b_A\ge\frac{10}{3}-\frac32S-\frac23a_E
+  -\frac3{10}q-\frac{10}{27}
+\ge\frac{1110307}{1350000}>\frac{81}{100}.
+\tag{21}
+\]
+
+Here the final comparison uses \(a_E<283/200\), \(q\le Q_0\),
+and \(S\le3/200\). This is a geometric bound on the original A
+center; no circle equality or approximate stationary position is
+assumed. The Lean theorems are `double_forbidden_transverse_quantitative`
+and `double_forbidden_transverse_bound` in
+`Candidate/GeometricOwnersDouble.lean`.
+
+Now suppose G-to-A axis 1 is feasible (axis `0` in Lean). Set
+\(r=|\sin t|\), \(c=\cos t\). On the entire closed half-angle
+chart, \(c\ge0\), \(c^2+r^2=1\), and
+
+\[
+\frac rc=\frac{2|z|}{1-z^2}\le\frac{48}{55}<\frac9{10}.
+\tag{22}
+\]
+
+The statement used in Lean is the denominator-free inequality
+\(r\le(9/10)c\), including both chart endpoints. A single
+supporting line of A's corner disk, with force \((1,9/10)\) and
+circle weight \(1/3\), gives
+
+\[
+a_A+\frac9{10}b_A
+\le\frac q3+\frac{163}{400}
+\le\frac{17127}{10000}.
+\tag{23}
+\]
+
+Because \((9/10)c-r\ge0\), (21) and (23) imply
+
+\[
+\begin{aligned}
+a_Ac+b_Ar
+&\le\frac{17127}{10000}c-b_A\left(\frac9{10}c-r\right)\\
+&\le\frac{9837}{10000}c+\frac{81}{100}r.
+\end{aligned}
+\tag{24}
+\]
+
+Add the actual G-to-A and nominal H-to-G inequalities. The G transverse
+coordinate cancels; \(b_A\ge0\) permits replacing \(-\sin t\)
+by \(r\). Since \(b_H<9/10\), this forces
+
+\[
+\frac35-\frac32|d_H|
+\le\frac{4837}{10000}c+\frac{31}{100}r
+\le\frac{23}{40}.
+\tag{25}
+\]
+
+The last bound is a single support inequality for the unit direction
+circle, since
+
+\[
+\left(\frac{23}{40}\right)^2-
+ \left(\frac{4837}{10000}\right)^2-
+ \left(\frac{31}{100}\right)^2
+=\frac{55931}{100000000}>0.
+\]
+
+The source uses circle weight \(23/80\) to express this without a
+square root. But \(|d_H|\le S\le3/200\), so (25) is impossible:
+
+\[
+\frac35-\frac32\frac3{200}-\frac{23}{40}
+=\frac1{400}>0.
+\tag{26}
+\]
+
+No E-axis assumption appears anywhere in this exclusion. Every actual
+forbidden B or D axis, every allowed H, A or T zero axis, and every
+simultaneously feasible G axis is treated with its original inequality.
+`G_axis_zero_double_forbidden_excluded` therefore removes all four
+modules `Quarter000` through `Quarter003`: 120 quartics, 600 Bernstein
+coefficient checks, 5,172 generated Lean lines, and 346,353 UTF-8 bytes.
+
+The remaining quarter selector has just five \((G,D)\) pairs, in
+zero-based Lean indices: \((0,2),(1,0),(1,2),(3,0),(3,2)\).
+For each pair E has four choices. The direct selector is \(4k+e\)
+with \(k\in\mathrm{Fin}\,5\), \(e\in\mathrm{Fin}\,4\), and
+the completeness proof explicitly establishes these five possibilities.
+The 48 original patterns split disjointly as \(16+8+4+20\).
+
+The cumulative owner/tilt deletion is now 46 modules, 1,218 quartics,
+6,090 Bernstein checks, 52,944 generated Lean lines, and 3,550,245
+bytes. Remaining owner inputs have 20 quarter groups with 705 rows,
+15 mixed groups with 729 rows, and 41 positive tilt bundles with 861
+rows. The generator excludes every removed class, the direct selector
+was checked against all 20 retained source vectors, and the rational
+support constants and reserves above were checked exactly. These are
+uncompiled proof-source changes.

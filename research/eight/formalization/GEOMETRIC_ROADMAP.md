@@ -203,6 +203,17 @@ coefficient checks, and 47,772 lines. The 24 retained quarter patterns
 use an explicit index formula and 24 concrete projections; the previous
 enumeration of functions `Fin 7 → Fin 4` has also been removed.
 
+**G3.2 third whole class implemented:** when both quarter directions are
+forbidden, two weighted chains and the T circle force `b_A ≥ 81/100`.
+A single supporting line of the A circle then excludes G-axis 0 over
+the full tilt chart, independently of the E owner. Its final reserve
+at `S ≤ 3/200` is `1/400`. This removes `Quarter000`–`Quarter003`:
+four modules, 120 quartics, and 5,172 generated lines. The cumulative
+owner/tilt removal is 46 modules, 1,218 quartics, 6,090 Bernstein checks,
+and 52,944 lines. The 20 remaining quarter patterns have a direct
+five-direction-pair selector with four E choices each. The 15 mixed
+patterns and 41 positive tilt bundles remain active.
+
 ## G4 — Replace finite word and pair searches: open
 
 The four geometric labels form a small weighted graph. Replace the

@@ -13,10 +13,10 @@ open SquaresInCircles.Eight.Candidate
 open SquaresInCircles.Eight.Candidate.Dual
 namespace SquaresInCircles.Eight.Generated.Owner
 
-/-- Two three-edge geometric chains exclude the opposite quarter
-direction and every forbidden B direction with G-axis 2. -/
+/-- Three geometric chains restrict both quarter directions and G. -/
 def QuarterPattern (p : Vertex → Fin 4) : Prop :=
-  p 0=0 ∧ p 2=0 ∧ p 4=0 ∧ p 3=0 ∧ (p 5=0 ∨ p 5=2) ∧ p 1≠2
+  p 0=0 ∧ p 2=0 ∧ p 4=0 ∧ p 3=0 ∧ (p 5=0 ∨ p 5=2) ∧ p 1≠2 ∧
+    (p 5=0 → p 1≠0)
 
 def MixedPattern (p : Vertex → Fin 4) : Prop :=
   p 0=0 ∧ p 2=0 ∧ p 4=0 ∧ p 3=2 ∧ p 5=2 ∧ (p 1≠0 ∨ p 6≠1)
@@ -26,49 +26,52 @@ instance (p : Vertex → Fin 4) : Decidable (QuarterPattern p) := by
 instance (p : Vertex → Fin 4) : Decidable (MixedPattern p) := by
   unfold MixedPattern; infer_instance
 
-def quarterByIndex (k : Fin 24) : OwnerTable :=
+def quarterByIndex (k : Fin 20) : OwnerTable :=
   quarterTables.get ⟨k.val, by simpa only [quarterTables, List.length_cons, List.length_nil] using k.isLt⟩
 def mixedByIndex (k : Fin 15) : OwnerTable :=
   mixedTables.get ⟨k.val, by simpa only [mixedTables, List.length_cons, List.length_nil] using k.isLt⟩
 
-/-- Three G choices, four E choices, and two D directions remain. -/
-def quarterG : Fin 3 → Fin 4 := ![0,1,3]
+/-- The five surviving (G,D) pairs, in source-table order. -/
+def quarterDirection : Fin 5 → Fin 4 × Fin 4 :=
+  ![(0,2),(1,0),(1,2),(3,0),(3,2)]
 
-def quarterIndex (g : Fin 3) (e : Fin 4) (d : Fin 2) : Fin 24 :=
-  ⟨8*g.val+4*d.val+e.val, by omega⟩
+def quarterIndex (k : Fin 5) (e : Fin 4) : Fin 20 :=
+  ⟨4*k.val+e.val, by omega⟩
 
-theorem quarterByIndex_owners (g : Fin 3) (e : Fin 4) (d : Fin 2) :
-    (quarterByIndex (quarterIndex g e d)).owners =
-      ![0,quarterG g,0,0,0,if d=0 then 0 else 2,e] := by
-  fin_cases g <;> fin_cases d <;> fin_cases e <;> rfl
+theorem quarterByIndex_owners (k : Fin 5) (e : Fin 4) :
+    (quarterByIndex (quarterIndex k e)).owners =
+      ![0,(quarterDirection k).1,0,0,0,(quarterDirection k).2,e] := by
+  fin_cases k <;> fin_cases e <;> rfl
 
-theorem quarterG_complete (g : Fin 4) (hg : g≠2) :
-    ∃ k : Fin 3, quarterG k=g := by
-  fin_cases g
-  · exact ⟨0,rfl⟩
-  · exact ⟨1,rfl⟩
-  · exact False.elim (hg rfl)
-  · exact ⟨2,rfl⟩
+theorem quarterDirection_complete (g d : Fin 4) (hg : g≠2)
+    (hd : d=0 ∨ d=2) (hdouble : d=0 → g≠0) :
+    ∃ k : Fin 5, (quarterDirection k).1=g ∧ (quarterDirection k).2=d := by
+  rcases hd with rfl | rfl
+  · fin_cases g
+    · exact False.elim (hdouble rfl rfl)
+    · exact ⟨1,rfl,rfl⟩
+    · exact False.elim (hg rfl)
+    · exact ⟨3,rfl,rfl⟩
+  · fin_cases g
+    · exact ⟨0,rfl,rfl⟩
+    · exact ⟨2,rfl,rfl⟩
+    · exact False.elim (hg rfl)
+    · exact ⟨4,rfl,rfl⟩
 
 theorem quarter_pattern_complete : ∀ p : Vertex → Fin 4,
-    QuarterPattern p → ∃ k : Fin 24, (quarterByIndex k).owners=p := by
+    QuarterPattern p → ∃ k : Fin 20, (quarterByIndex k).owners=p := by
   intro p hp
-  rcases hp with ⟨h0,h2,h4,h3,h5,hG⟩
-  obtain ⟨g,hg⟩ := quarterG_complete (p 1) hG
-  rcases h5 with h5 | h5
-  · refine ⟨quarterIndex g (p 6) 0, ?_⟩
-    rw [quarterByIndex_owners,hg]
-    funext i
-    fin_cases i <;> simp [h0,h2,h3,h4,h5]
-  · refine ⟨quarterIndex g (p 6) 1, ?_⟩
-    rw [quarterByIndex_owners,hg]
-    funext i
-    fin_cases i <;> simp [h0,h2,h3,h4,h5]
+  rcases hp with ⟨h0,h2,h4,h3,h5,hG,hdouble⟩
+  obtain ⟨k,hkg,hkd⟩ := quarterDirection_complete (p 1) (p 5) hG h5 hdouble
+  refine ⟨quarterIndex k (p 6), ?_⟩
+  rw [quarterByIndex_owners,hkg,hkd]
+  funext i
+  fin_cases i <;> simp [h0,h2,h3,h4]
 
 theorem mixed_pattern_complete : ∀ p : Vertex → Fin 4,
     MixedPattern p → ∃ k : Fin 15, (mixedByIndex k).owners=p := by decide
 
-theorem quarterByIndex_mode (k : Fin 24) : (quarterByIndex k).mode=.quarter := by
+theorem quarterByIndex_mode (k : Fin 20) : (quarterByIndex k).mode=.quarter := by
   fin_cases k <;> rfl
 theorem mixedByIndex_mode (k : Fin 15) : (mixedByIndex k).mode=.mixed := by
   fin_cases k <;> rfl

@@ -1,9 +1,5 @@
 module
 
-public import SquaresInCircles.Eight.Generated.Owner.Quarter000
-public import SquaresInCircles.Eight.Generated.Owner.Quarter001
-public import SquaresInCircles.Eight.Generated.Owner.Quarter002
-public import SquaresInCircles.Eight.Generated.Owner.Quarter003
 public import SquaresInCircles.Eight.Generated.Owner.Quarter004
 public import SquaresInCircles.Eight.Generated.Owner.Quarter005
 public import SquaresInCircles.Eight.Generated.Owner.Quarter006
@@ -92,12 +88,12 @@ open SquaresInCircles.Eight.Candidate
 open SquaresInCircles.Eight.Candidate.Dual
 namespace SquaresInCircles.Eight.Generated.Owner
 
-def quarterTables : List OwnerTable := [quarterTable000, quarterTable001, quarterTable002, quarterTable003, quarterTable004, quarterTable005, quarterTable006, quarterTable007, quarterTable012, quarterTable013, quarterTable014, quarterTable015, quarterTable016, quarterTable017, quarterTable018, quarterTable019, quarterTable036, quarterTable037, quarterTable038, quarterTable039, quarterTable040, quarterTable041, quarterTable042, quarterTable043]
+def quarterTables : List OwnerTable := [quarterTable004, quarterTable005, quarterTable006, quarterTable007, quarterTable012, quarterTable013, quarterTable014, quarterTable015, quarterTable016, quarterTable017, quarterTable018, quarterTable019, quarterTable036, quarterTable037, quarterTable038, quarterTable039, quarterTable040, quarterTable041, quarterTable042, quarterTable043]
 
 theorem quarter_table_modes : ∀ T ∈ quarterTables, T.mode = .quarter := by
   intro T hT
   simp only [quarterTables, List.mem_cons, List.mem_singleton] at hT
-  rcases hT with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl <;> rfl
+  rcases hT with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl <;> rfl
 
 def mixedTables : List OwnerTable := [mixedTable000, mixedTable001, mixedTable002, mixedTable003, mixedTable004, mixedTable005, mixedTable006, mixedTable007, mixedTable008, mixedTable009, mixedTable010, mixedTable011, mixedTable012, mixedTable013, mixedTable014]
 
