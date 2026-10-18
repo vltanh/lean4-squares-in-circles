@@ -3,12 +3,20 @@ module
 public import SquaresInCircles.Eight.Arithmetic.ClosedCover
 
 /-!
-# Differential semantics for the stationary interval certificates
+# Eight squares: formulas, derivatives and interval certificates
 
-The unannotated formula is independent of the rational interval brackets.
-Erasing an enclosure does not erase the expression whose bound is proved.
-The derivative interpreter is justified by ordinary real derivative rules.
-No external evaluator or native-decide axiom is used.
+A `Formula` is a real expression in `n` variables built from rational constants, sums,
+negation, products, inverses, square roots and powers. `Formula.diff` is its symbolic partial
+derivative, and where every radicand is positive and every inverted value nonzero
+(`Formula.RegularAt`) it is the partial derivative of its value, by the ordinary rules of real
+differentiation (`Formula.hasDerivAt_partial`).
+
+An interval expression `ScalarExpr` carries rational brackets; erasing them gives a formula with the
+same value (`erase`, `erase_eval`), so the brackets do not change the expression whose bound is
+proved. A `FormulaCertificate` for a target formula is an interval expression that erases to it;
+when it is valid on a box, the target takes its values in the computed interval on the whole box
+(`FormulaCertificate.sound`). `StrictValid` adds strict positivity of every radicand and inverted
+value, which makes the formula regular on the box (`strictValid_regular`).
 -/
 
 @[expose] public section
@@ -73,8 +81,10 @@ def quotient {n : ℕ} (a b : Formula n) : Formula n := times a (reciprocal b)
 @[simp] theorem eval_plus {n : ℕ} (env : Fin n → ℝ) (a b : Formula n) :
     (plus a b).eval env = a.eval env+b.eval env := by
   unfold plus
-  split_ifs <;> subst_vars <;> simp_all [eval]
-  cases a <;> cases b <;> simp [eval]
+  split_ifs with ha hb
+  · subst ha; simp [eval]
+  · subst hb; simp [eval]
+  · split <;> simp [eval]
 
 @[simp] theorem eval_minus {n : ℕ} (env : Fin n → ℝ) (a : Formula n) :
     (minus a).eval env = -a.eval env := by cases a <;> simp [minus,eval]
@@ -136,20 +146,23 @@ theorem directional_eq_partials {n : ℕ} (a : Formula n) (env v : Fin n → ℝ
     a.directional env v = ∑ i : Fin n, (a.diff i).eval env*v i := by
   induction a with
   | const q => simp [directional,diff,eval]
-  | var j => simp [directional,diff,eval]
+  | var j => simp [directional,diff,eval,apply_ite (fun x : ℚ => (x : ℝ)),ite_mul]
   | add a b ha hb => simp [directional,diff,ha,hb,Finset.sum_add_distrib,add_mul]
   | neg a ha => simp [directional,diff,ha,Finset.sum_neg_distrib]
   | mul a b ha hb =>
-      simp [directional,diff,ha,hb,Finset.sum_add_distrib,Finset.sum_mul,
-        Finset.mul_sum,add_mul,mul_assoc,mul_comm,mul_left_comm]
+      simp only [directional,diff,eval_plus,eval_times,ha,hb,Finset.sum_mul,Finset.mul_sum,
+        ← Finset.sum_add_distrib]
+      exact Finset.sum_congr rfl (fun i _ => by ring)
   | inv a ha =>
-      simp [directional,diff,ha,Finset.sum_mul,Finset.sum_neg_distrib,
-        div_eq_mul_inv,mul_assoc,mul_comm,mul_left_comm]
+      simp only [directional,diff,eval_minus,eval_quotient,eval,ha,neg_div,Finset.sum_div,
+        ← Finset.sum_neg_distrib]
+      exact Finset.sum_congr rfl (fun i _ => by ring)
   | sqrt a ha =>
-      simp [directional,diff,ha,Finset.sum_mul,div_eq_mul_inv,
-        mul_assoc,mul_comm,mul_left_comm]
+      simp only [directional,diff,eval_quotient,eval_times,eval,ha,Finset.sum_div]
+      exact Finset.sum_congr rfl (fun i _ => by push_cast; ring)
   | pow a k ha =>
-      simp [directional,diff,ha,eval,Finset.mul_sum,mul_assoc,mul_comm,mul_left_comm]
+      simp only [directional,diff,eval_times,eval_power,eval,ha,Finset.mul_sum]
+      exact Finset.sum_congr rfl (fun i _ => by push_cast; ring)
 
 theorem hasDerivAt_curve {n : ℕ} (a : Formula n) {env : ℝ → Fin n → ℝ}
     {t : ℝ} {v : Fin n → ℝ} (hv : ∀ i, HasDerivAt (fun s => env s i) (v i) t)
@@ -158,12 +171,12 @@ theorem hasDerivAt_curve {n : ℕ} (a : Formula n) {env : ℝ → Fin n → ℝ}
   induction a with
   | const q => simpa [eval,directional] using hasDerivAt_const t (q:ℝ)
   | var i => exact hv i
-  | add a b ha hb => exact (ha h.1).add (hb h.2)
-  | neg a ha => exact (ha h).neg
-  | mul a b ha hb => exact (ha h.1).mul (hb h.2)
-  | inv a ha => simpa [directional,eval] using (ha h.1).inv h.2
-  | sqrt a ha => simpa [directional,eval] using (ha h.1).sqrt (ne_of_gt h.2)
-  | pow a k ha => simpa [directional,eval,mul_assoc] using (ha h).pow k
+  | add a b ha hb => exact (ha h.1).fun_add (hb h.2)
+  | neg a ha => exact (ha h).fun_neg
+  | mul a b ha hb => exact (ha h.1).fun_mul (hb h.2)
+  | inv a ha => exact (ha h.1).fun_inv h.2
+  | sqrt a ha => exact (ha h.1).sqrt (ne_of_gt h.2)
+  | pow a k ha => exact (ha h).fun_pow k
 
 theorem hasDerivAt_partial {n : ℕ} (a : Formula n) (i : Fin n)
     (env : Fin n → ℝ) (h : a.RegularAt env) :
@@ -172,20 +185,21 @@ theorem hasDerivAt_partial {n : ℕ} (a : Formula n) (i : Fin n)
   | const q => simpa [eval,diff] using hasDerivAt_const (env i) (q:ℝ)
   | var j =>
       by_cases hij : i=j
-      · subst j
-        simpa [eval,diff] using hasDerivAt_id (env i)
-      · simpa [eval,diff,hij,Ne.symm hij,Function.update_of_ne (Ne.symm hij)] using
+      · subst hij
+        simpa [eval,diff] using hasDerivAt_id' (env i)
+      · simpa [eval,diff,hij,Function.update_of_ne (Ne.symm hij)] using
           hasDerivAt_const (env i) (env j)
   | add a b ha hb =>
-      simpa [eval,diff] using (ha h.1).add (hb h.2)
-  | neg a ha => simpa [eval,diff] using (ha h).neg
+      simpa [eval,diff] using (ha h.1).fun_add (hb h.2)
+  | neg a ha => simpa [eval,diff] using (ha h).fun_neg
   | mul a b ha hb =>
-      simpa [eval,diff] using (ha h.1).mul (hb h.2)
-  | inv a ha => simpa [eval,diff,div_eq_mul_inv] using (ha h.1).inv h.2
+      simpa [eval,diff] using (ha h.1).fun_mul (hb h.2)
+  | inv a ha =>
+      simpa [eval,diff,neg_div] using (ha h.1).fun_inv (by simpa using h.2)
   | sqrt a ha =>
-      simpa [eval,diff] using (ha h.1).sqrt (ne_of_gt h.2)
+      simpa [eval,diff] using (ha h.1).sqrt (by simpa using ne_of_gt h.2)
   | pow a k ha =>
-      simpa [eval,diff,Nat.cast_ofNat,mul_assoc,mul_comm,mul_left_comm] using (ha h).pow k
+      simpa [eval,diff,mul_assoc] using (ha h).fun_pow k
 
 end Formula
 

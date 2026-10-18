@@ -7,11 +7,21 @@ public import Mathlib.Data.Fin.VecNotation
 public import Mathlib.Tactic
 
 /-!
-# Eight squares: geometric model and radius levels
+# Eight squares: radius levels, signed axes and cycles
 
-Uncompiled source draft, transcribed from PR #9, F0.  Distances are
-Euclidean squared distances, using the existing `normSq`.  This module
-does not strengthen `Packing`: boundary contacts remain permitted.
+The squared radii of the proof are the levels `qMinus < Q1 < Q0` (`radius_levels`), and the
+core disk has radius `coreRadius = 1/12`. Containment and packings are stated with squared
+radii (`SqContained`, `SqPacking`); `SqPacking` is `Packing` with the radius squared
+(`sqPacking_iff_packing`), so boundary contacts are allowed. All distances are squared
+Euclidean distances (`normSq`).
+
+Two squares are separated along one of eight signed axes, an axis of either square with a sign
+(`SignedAxis`); `SignedAxis.Feasible` says that the projection of the difference of the centres
+on it reaches the threshold of the separating-axis theorem. A `NeighborCycle` is seven squares in
+the disk that avoid the core disk, with a separating signed axis, the witness, on each pair of
+consecutive squares. A `BoundaryCycle` adds a canonical frame, a state `(a, b)` on the outer or
+the core curve (`BoundaryState`) and a real centre direction for each square. `RadiusExpansion`
+and `BoundaryReduction` record the two ways in which a cycle is moved.
 -/
 
 @[expose] public section
@@ -28,11 +38,12 @@ def coreRadius : ℝ := 1 / 12
 theorem radius_levels : (5 : ℝ) / 2 < qMinus ∧ qMinus < Q1 ∧ Q1 < Q0 ∧ Q0 < 4 := by
   norm_num [qMinus, Q1, Q0]
 
-/-- Containment of one actual square in the centered disk of squared radius q. -/
+/-- Containment of a square in the closed disk of squared radius `q` about the origin. -/
 def SqContained (q : ℝ) (K : UnitSquare) : Prop :=
   phi (alpha K (0, 0)) (beta K (0, 0)) ≤ q
 
-/-- Squared-radius version of the repository's packing predicate. -/
+/-- `Packing` with the squared radius `q`: the closed squares lie in the closed disk of squared
+radius `q` about `o` and have disjoint interiors. -/
 def SqPacking {n : ℕ} (S : Fin n → UnitSquare) (o : Point) (q : ℝ) : Prop :=
   0 ≤ q ∧ (∀ i p, closedSquare (S i) p → normSq (sub p o) ≤ q) ∧
     InteriorDisjoint S
@@ -70,7 +81,8 @@ theorem SqContained.mono {q r : ℝ} {K : UnitSquare}
 def CoreAvoiding (K : UnitSquare) : Prop :=
   ∀ p, closedSquare K p → coreRadius ^ 2 ≤ normSq p
 
-/-- Original exterior squares have strict clearance after the central-core lemma. -/
+/-- The closed square avoids the closed core disk. The exterior squares of a packing do, by
+the core theorem `central_core_and_exteriors`. -/
 def StrictCoreAvoiding (K : UnitSquare) : Prop :=
   ∀ p, closedSquare K p → coreRadius ^ 2 < normSq p
 
@@ -107,7 +119,11 @@ theorem moveCenter_sameFrame (K : UnitSquare) (p : Point) :
 
 /-- Four axes, independently of their two orientations. -/
 inductive AxisOwner | sourceX | sourceY | targetX | targetY
-  deriving DecidableEq, Fintype
+  deriving DecidableEq
+
+instance : Fintype AxisOwner where
+  elems := {.sourceX, .sourceY, .targetX, .targetY}
+  complete x := by cases x <;> decide
 
 def AxisOwner.index : AxisOwner → Fin 4
   | .sourceX => 0 | .sourceY => 1 | .targetX => 2 | .targetY => 3
@@ -120,7 +136,11 @@ def AxisOwner.normal (a : AxisOwner) (K L : UnitSquare) : Point :=
   | .sourceX => e K | .sourceY => f K | .targetX => e L | .targetY => f L
 
 inductive AxisSign | positive | negative
-  deriving DecidableEq, Fintype
+  deriving DecidableEq
+
+instance : Fintype AxisSign where
+  elems := {.positive, .negative}
+  complete x := by cases x <;> decide
 
 def AxisSign.value : AxisSign → ℝ | .positive => 1 | .negative => -1
 def AxisSign.flip : AxisSign → AxisSign | .positive => .negative | .negative => .positive
@@ -128,7 +148,11 @@ def AxisSign.flip : AxisSign → AxisSign | .positive => .negative | .negative =
 structure SignedAxis where
   owner : AxisOwner
   sign : AxisSign
-  deriving DecidableEq, Fintype
+  deriving DecidableEq
+
+instance : Fintype SignedAxis :=
+  Fintype.ofEquiv (AxisOwner × AxisSign)
+    ⟨fun p => ⟨p.1, p.2⟩, fun a => (a.owner, a.sign), fun _ => rfl, fun _ => rfl⟩
 
 def SignedAxis.normal (a : SignedAxis) (K L : UnitSquare) : Point :=
   scale a.sign.value (a.owner.normal K L)
@@ -136,7 +160,8 @@ def SignedAxis.normal (a : SignedAxis) (K L : UnitSquare) : Point :=
 def SignedAxis.projection (a : SignedAxis) (K L : UnitSquare) : ℝ :=
   dot (a.normal K L) (sub L.center K.center)
 
-/-- Exact original-axis feasibility, including simultaneous feasible ties. -/
+/-- The signed axis separates `K` and `L`: the projection of `L.center - K.center` on it is at
+least the threshold `SAT.threshold K L`. Several axes may separate the same pair. -/
 def SignedAxis.Feasible (a : SignedAxis) (K L : UnitSquare) : Prop :=
   SAT.threshold K L ≤ a.projection K L
 
@@ -148,7 +173,11 @@ def angleGap (β : Vertex → ℝ) (i : Vertex) : ℝ :=
   β (next i) - β i + if i = 6 then 2 * Real.pi else 0
 
 inductive RadialKind | outer | coreSide | coreCorner
-  deriving DecidableEq, Fintype
+  deriving DecidableEq
+
+instance : Fintype RadialKind where
+  elems := {.outer, .coreSide, .coreCorner}
+  complete x := by cases x <;> decide
 
 /-- The two radial curves, with the core side/corner junction kept weak. -/
 def BoundaryState (q : ℝ) (k : RadialKind) (a b : ℝ) : Prop :=
@@ -158,7 +187,8 @@ def BoundaryState (q : ℝ) (k : RadialKind) (a b : ℝ) : Prop :=
   | .coreCorner => 1 / 2 ≤ b ∧
       (a - 1 / 2) ^ 2 + (b - 1 / 2) ^ 2 = (1 / 12 : ℝ) ^ 2
 
-/-- Seven actual square records with only neighboring separation retained. -/
+/-- Seven squares in the disk that avoid the core disk, with a separating signed axis, the
+witness, on each pair of consecutive squares. Nonconsecutive squares may overlap. -/
 structure NeighborCycle (q : ℝ) where
   square : Vertex → UnitSquare
   contained : ∀ i, SqContained q (square i)
@@ -166,8 +196,10 @@ structure NeighborCycle (q : ℝ) where
   selected : Vertex → SignedAxis
   feasible : ∀ i, (selected i).Feasible (square i) (square (next i))
 
-/-- Boundary cycle with canonical square representatives and real center angles.
-It has no restriction on the 128 choices of outer versus core vertices. -/
+/-- A neighbour cycle in which every square is given a canonical frame, with its centre at
+`a e - σ b f`, `0 ≤ b ≤ a`, a state `(a, b)` on one of the radial curves and a real centre
+direction `beta`, the gaps between consecutive directions lying in `(0, π)`. Each of the seven
+squares may lie on the outer or on the core curve, in any of the 128 combinations. -/
 structure BoundaryCycle (q : ℝ) extends NeighborCycle q where
   kind : Vertex → RadialKind
   a : Vertex → ℝ
@@ -207,14 +239,15 @@ theorem BoundaryCycle.tangent_mem {q : ℝ} (C : BoundaryCycle q) (i : Vertex) :
   · simp only [BoundaryCycle.tangent, h, one_mul]
     exact ⟨(le_div_iff₀ ha).2 (by linarith), (div_le_iff₀ ha).2 (by linarith)⟩
 
-/-- The same angular data after radius expansion; original-axis feasibility is
-a separate universally quantified clause, so no convenient-owner choice is lost. -/
+/-- `D` is an expansion of `C` to a larger level: the same radial kinds, frames, centre
+directions and tangents, and every signed axis that separates two consecutive squares of `C`,
+not only the witness, separates them in `D`. -/
 structure RadiusExpansion {q r : ℝ} (C : BoundaryCycle q) (D : BoundaryCycle r) : Prop where
   same_kind : D.kind = C.kind
   same_frames : ∀ i, SameFrame (D.square i) (C.square i)
   same_rays : D.beta = C.beta
   same_tangents : D.tangent = C.tangent
-  preserves_all_axes : ∀ i axis, axis.Feasible (C.square i) (C.square (next i)) →
+  preserves_all_axes : ∀ i (axis : SignedAxis), axis.Feasible (C.square i) (C.square (next i)) →
     axis.Feasible (D.square i) (D.square (next i))
 
 def coreDistanceSq (K : UnitSquare) : ℝ :=
@@ -225,9 +258,10 @@ def OnRadialBoundary (q : ℝ) (K : UnitSquare) : Prop :=
   phi (alpha K (0, 0)) (beta K (0, 0)) = q ∨
   coreDistanceSq K = coreRadius ^ 2
 
-/-- Move actual centers with their original frames and witnesses first;
-then choose quarter-turn canonical representatives and transport the axes.
-The retained normal identity prevents relabeling an owner without its sign. -/
+/-- A boundary reduction of `C`: the centres are moved with their frames and witnesses kept
+(`raw`), and then each square is given the quarter turn of a canonical frame and its witness is
+transported (`result`). The witnesses keep their normals (`axis_transport`), so no axis is
+relabelled without its sign. -/
 structure BoundaryReduction {q : ℝ} (C : NeighborCycle q) where
   raw : NeighborCycle q
   raw_boundary : ∀ i, OnRadialBoundary q (raw.square i)

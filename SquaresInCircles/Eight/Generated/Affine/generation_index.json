@@ -1,19 +1,176 @@
 {
-  "schema": "eight-affine-single-source-v2",
-  "source_commit": "741c78b1f8c2922fa520304ef00dbe7c319388b7",
-  "status": "compact-source-uncompiled",
-  "rows": 660370,
-  "verification": "not executed",
+  "schema": "eight-affine-rows-v1",
+  "source": "the JSON of each table, converted by scripts/eight/affine_rows.py",
   "tables": [
-    {"module":"CandidateCoarseMismatch","source":"CANDIDATE_COARSE_MISMATCH_HAND_DATA.json","rows":129031,"arcs":462},
-    {"module":"DUpperAffine","source":"D_UPPER_AFFINE_HAND_DATA.json","rows":24197,"arcs":199},
-    {"module":"GLowerAffine","source":"G_LOWER_AFFINE_HAND_DATA.json","rows":9087,"arcs":114},
-    {"module":"GUpperAffine","source":"G_UPPER_AFFINE_HAND_DATA.json","rows":9796,"arcs":122},
-    {"module":"HLowerAffine","source":"H_LOWER_AFFINE_HAND_DATA.json","rows":48050,"arcs":279},
-    {"module":"Mismatch015To001Affine","source":"MISMATCH_015_TO_001_AFFINE_HAND_DATA.json","rows":144709,"arcs":456},
-    {"module":"Mismatch01To015Affine","source":"MISMATCH_01_TO_015_AFFINE_HAND_DATA.json","rows":107196,"arcs":335},
-    {"module":"Mismatch026To01Affine","source":"MISMATCH_026_TO_01_AFFINE_HAND_DATA.json","rows":131255,"arcs":401},
-    {"module":"TLowerAffine","source":"T_LOWER_AFFINE_HAND_DATA.json","rows":49971,"arcs":303},
-    {"module":"TUpperAffine","source":"T_UPPER_AFFINE_HAND_DATA.json","rows":7078,"arcs":102}
+    {
+      "module": "CandidateCoarseMismatch",
+      "input": "CANDIDATE_COARSE_MISMATCH.json",
+      "sha256": "ffa48df0d02e18880314907a72a70fcc6aaceea4ee1060ea76b4fdb04c23a5fa",
+      "rows": 115463,
+      "arcs": 462,
+      "data": [
+        {
+          "file": "data/eight/affine/CANDIDATE_COARSE_MISMATCH.rows",
+          "sha256": "ceb13cde72bca9cfc4baa2bcb2d3544c5f7fda18b0114559bb5492a01b6e5e37"
+        },
+        {
+          "file": "data/eight/affine/CANDIDATE_COARSE_MISMATCH.arcs",
+          "sha256": "54de162b9cfc1121ac7b7a11de8794edf4b748267ae219a5c10b5b25ae96607f"
+        }
+      ]
+    },
+    {
+      "module": "DUpperAffine",
+      "input": "D_UPPER_AFFINE.json",
+      "sha256": "d8913b5574c43e0090083a0a2c9e360058ad76d6786980d96258c634c0c50cad",
+      "rows": 18533,
+      "arcs": 199,
+      "data": [
+        {
+          "file": "data/eight/affine/D_UPPER_AFFINE.rows",
+          "sha256": "81faa596c08f3014e2649ff01b92ffd5c9088bbabd23ce969a9252121b30134d"
+        },
+        {
+          "file": "data/eight/affine/D_UPPER_AFFINE.arcs",
+          "sha256": "90a12217e6a090ff9fb373ac59f8339378183536c59c00e9b79eb2bdca838562"
+        }
+      ]
+    },
+    {
+      "module": "GLowerAffine",
+      "input": "G_LOWER_AFFINE.json",
+      "sha256": "619cf1f7f11aa9f82dd3a355df9a8d042f1d69403f25c53aaf1ac2bbe1dbf776",
+      "rows": 8282,
+      "arcs": 114,
+      "data": [
+        {
+          "file": "data/eight/affine/G_LOWER_AFFINE.rows",
+          "sha256": "b62fd65792f8220bc0d04fe5292621170fc815d2b201b2c2450eadce4a670b72"
+        },
+        {
+          "file": "data/eight/affine/G_LOWER_AFFINE.arcs",
+          "sha256": "8690647c3c689c7a8100227e22f1eacd1be207ce1fc839be319d194daee3cb5f"
+        }
+      ]
+    },
+    {
+      "module": "GUpperAffine",
+      "input": "G_UPPER_AFFINE.json",
+      "sha256": "0ef1144be02a6250497f8055b62cbdab7e76ee736dfb04440c960d7cf9711806",
+      "rows": 9005,
+      "arcs": 122,
+      "data": [
+        {
+          "file": "data/eight/affine/G_UPPER_AFFINE.rows",
+          "sha256": "b64eeeb63b2aa5458c8af82949b472fa85a171ff8804c5e7c4cff986018b75f0"
+        },
+        {
+          "file": "data/eight/affine/G_UPPER_AFFINE.arcs",
+          "sha256": "0d8bb5557156dd5747174da6edb1c86d9f2446bc5abec2019b891531cab437d2"
+        }
+      ]
+    },
+    {
+      "module": "HLowerAffine",
+      "input": "H_LOWER_AFFINE.json",
+      "sha256": "aa838899a723f6bf099f34ab6bf9a55849ade5da315acb903a00c21afadb1425",
+      "rows": 40296,
+      "arcs": 279,
+      "data": [
+        {
+          "file": "data/eight/affine/H_LOWER_AFFINE.rows",
+          "sha256": "f362f64c0233f848f79c7ea66a9eacc3a9e01fa8c7d74af539e018463647e3aa"
+        },
+        {
+          "file": "data/eight/affine/H_LOWER_AFFINE.arcs",
+          "sha256": "2e84d369910f004fb0a7489f74753109549a2c02cfb1df143bc7eb07898e3ddd"
+        }
+      ]
+    },
+    {
+      "module": "Mismatch015To001Affine",
+      "input": "MISMATCH_015_TO_001_AFFINE.json",
+      "sha256": "da456f7eb49a2e0dc702054c684afc14da52a5e55c042add695ef862d7a6c1a2",
+      "rows": 135810,
+      "arcs": 456,
+      "data": [
+        {
+          "file": "data/eight/affine/MISMATCH_015_TO_001_AFFINE.rows",
+          "sha256": "1b8b117b980e62be3570110da0e00eef6d9a6fa38ecd77a70580223ed13c1515"
+        },
+        {
+          "file": "data/eight/affine/MISMATCH_015_TO_001_AFFINE.arcs",
+          "sha256": "1f54757e6d89bda02e9c9dcb89360105001861ce89e2976ec75a225816b6af7d"
+        }
+      ]
+    },
+    {
+      "module": "Mismatch01To015Affine",
+      "input": "MISMATCH_01_TO_015_AFFINE.json",
+      "sha256": "03bf9931b294d29cb9ef34bb0b9455e7ce12a0d173756d12ec6a915a5ead5fb3",
+      "rows": 92068,
+      "arcs": 335,
+      "data": [
+        {
+          "file": "data/eight/affine/MISMATCH_01_TO_015_AFFINE.rows",
+          "sha256": "56208f5d2a361bed2afbc6a444c4b1c01e33054adff798831c7b320ee1be9ef0"
+        },
+        {
+          "file": "data/eight/affine/MISMATCH_01_TO_015_AFFINE.arcs",
+          "sha256": "2d5a93208c980abba302ee08621f31e33a8dd2d4cc45d7ac662a5270ec8c4e08"
+        }
+      ]
+    },
+    {
+      "module": "Mismatch026To01Affine",
+      "input": "MISMATCH_026_TO_01_AFFINE.json",
+      "sha256": "3230d71cdb3f1aa513aa74de04dc49429bb6ff2759a115cd55d98b160e1fedf4",
+      "rows": 114806,
+      "arcs": 401,
+      "data": [
+        {
+          "file": "data/eight/affine/MISMATCH_026_TO_01_AFFINE.rows",
+          "sha256": "d8b1b701e699463cf4bd48d135ab224e181cb9a5216dd691a40f57a6c50a0b0b"
+        },
+        {
+          "file": "data/eight/affine/MISMATCH_026_TO_01_AFFINE.arcs",
+          "sha256": "fc454ecb8c1b9a911aed6e6707ca7d0eab0e077febd10f27e33a97e557f1aea3"
+        }
+      ]
+    },
+    {
+      "module": "TLowerAffine",
+      "input": "T_LOWER_AFFINE.json",
+      "sha256": "d09d5eed09b0297139d13be0506fd108df3b34f27048670fd7f10b916d6b6dd3",
+      "rows": 42178,
+      "arcs": 303,
+      "data": [
+        {
+          "file": "data/eight/affine/T_LOWER_AFFINE.rows",
+          "sha256": "ddc9e06ddeb50ad6fb0703309281f66689eb8e382d7b53bd28f7d05faf1e9e8c"
+        },
+        {
+          "file": "data/eight/affine/T_LOWER_AFFINE.arcs",
+          "sha256": "ce9bbb68b95854870c724be76e57743a513e79579a739d117360722c7e5cc65a"
+        }
+      ]
+    },
+    {
+      "module": "TUpperAffine",
+      "input": "T_UPPER_AFFINE.json",
+      "sha256": "bf670d4828b6045906e55b07e95d452f555eb4e986505f6f7c8ad9308476b2f8",
+      "rows": 6449,
+      "arcs": 102,
+      "data": [
+        {
+          "file": "data/eight/affine/T_UPPER_AFFINE.rows",
+          "sha256": "20af352bb095a0dc5cbcb0321acab6bd051a22f32704cb4d02f657beab400e23"
+        },
+        {
+          "file": "data/eight/affine/T_UPPER_AFFINE.arcs",
+          "sha256": "aa1669d00e73ade6c53d7abb3fd508e23e754187420b24896d67cfa7c3ad8436"
+        }
+      ]
+    }
   ]
 }

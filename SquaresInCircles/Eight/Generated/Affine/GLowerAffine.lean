@@ -1,47 +1,58 @@
 module
 
-public meta import SquaresInCircles.Eight.AffineDataReader
-public import SquaresInCircles.Eight.Generated.Affine.GLowerAffine.Meta
-public import SquaresInCircles.Eight.Arithmetic.AffineCertificate
+public import SquaresInCircles.Eight.Generated.Affine.GLowerAffine.Data
+public import SquaresInCircles.Eight.Generated.Affine.GLowerAffine.Cover00
 
-/-! One retained data table; shared row semantics and complete closed coverage.
-All decision proofs below are uncompiled and have not been executed. -/
+/-! # The affine table `GLowerAffine`
+
+Each of its 8282 rows passes `checkRow`, so it satisfies its claim
+(`checkRow_claim`). The walks `coverBlock` over blocks of sources covering all arcs
+give the angle coverage (`coverBlocks_sound`). With the state chains and the
+arctangent intervals of the arcs they give the charged bound. -/
 
 @[expose] public section
+noncomputable section
 namespace SquaresInCircles.Eight.Generated.Affine.GLowerAffine
 open Arithmetic
 
-set_option maxRecDepth 1000000
-set_option maxHeartbeats 0
+set_option maxRecDepth 100000
 
-def rows : List AffineTableRow :=
-  affine_rows% "../../../../research/eight/G_LOWER_AFFINE_HAND_DATA.json" rows 9087
+/-- All rows of the table. -/
+noncomputable def rows : List AffineTableRow := data.map (·.toTableRow table ctx.den)
 
-theorem complete_row_count : rows.length = 9087 := by rfl
+theorem complete_row_count : rows.length = 8282 := by
+  simp only [rows, data, chunks, List.length_map, List.length_flatten, List.map_append,
+    List.sum_append, parts000_length, Nat.reduceAdd]
 
-theorem rows_valid : AffineCertificate.RowsValid meta rows := by decide
+theorem all_row_claims : ∀ r ∈ rows, r.Claim table := by
+  intro r hr
+  obtain ⟨x, hx, rfl⟩ := List.mem_map.mp hr
+  exact checkRow_claim ctx_valid (checkRows_sound data_check x hx)
 
-theorem all_row_claims : ∀ r ∈ rows, r.Claim meta :=
-  AffineCertificate.row_claims rows_valid
+theorem cover_endpoints : cover.EndpointsValid table := endpointsValid_atanEnds table _
 
-theorem all_rows_structural : ∀ r ∈ rows, r.Structural meta :=
-  AffineCertificate.rows_structural rows_valid
+theorem cover_blocks :
+    AllBlocks (fun a n => ∃ c o, coverBlock coverCtx table a n c o chunks = true)
+    [(0, 51), (51, 36), (87, 27)] :=
+  by simp only [AllBlocks]; exact
+    ⟨⟨0, 0, cover_0⟩, ⟨15, 87, cover_1⟩, ⟨30, 12, cover_2⟩, trivial⟩
 
-def cover : AffineCover := AffineCertificate.cover meta rows
+theorem cover_angles : cover.AngleCovers table rows :=
+  coverBlocks_sound coverCtx_valid.1 coverCtx_valid.2 (by decide +kernel) cover_blocks
 
-theorem cover_numeric : cover.NumericValid meta rows := by decide
+theorem word_matches : ∀ i, (table.word i:ℝ)=(Candidate.word i:ℝ) := by
+  have hw : table.word = ![0, 1, 0, 1, 0, 1, 1] := rfl
+  intro i; rw [hw]; fin_cases i <;> norm_num [Candidate.word]
 
-theorem word_matches : ∀ i, (meta.word i:ℝ)=(Candidate.word i:ℝ) := by
-  intro i; fin_cases i <;> norm_num [meta,Candidate.word]
-
-noncomputable def charged_bound (C : BoundaryCycle (meta.radius:ℝ))
+noncomputable def charged_bound (C : BoundaryCycle (table.radius:ℝ))
     (F : Candidate.Frame C) (β : ℝ)
-    (hcharge : ∀ i, (meta.charge i:ℝ)=Candidate.charge β i)
-    (hcuts : ∀ i, (meta.cuts i).Mem (C.tangent i))
-    (hdiff : ∀ i, (meta.differenceRange i).Mem (Candidate.delta F.theta i))
+    (hcharge : ∀ i, (table.charge i:ℝ)=Candidate.charge β i)
+    (hcuts : ∀ i, (table.cuts i).Mem (C.tangent i))
+    (hdiff : ∀ i, (table.differenceRange i).Mem (Candidate.delta F.theta i))
     (haxes : ∀ i j, (forwardAxis j).Feasible (C.square i) (C.square (next i)) →
-      ForwardAxis.ofIndex j∈meta.allowedAxes i) :
-    Candidate.ChargedBound C F β (fun i => (meta.target i:ℝ)) :=
-  cover.chargedBound cover_numeric all_row_claims C F β word_matches hcharge hcuts hdiff haxes
+      ForwardAxis.ofIndex j∈table.allowedAxes i) :
+    Candidate.ChargedBound C F β (fun i => (table.target i:ℝ)) :=
+  AffineCover.chargedBoundOf cover_endpoints cover_states cover_angles all_row_claims C F β
+    word_matches hcharge hcuts hdiff haxes
 
 end SquaresInCircles.Eight.Generated.Affine.GLowerAffine

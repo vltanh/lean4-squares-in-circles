@@ -7,8 +7,7 @@ public import SquaresInCircles.Four.Uniqueness
 public import SquaresInCircles.Five.Uniqueness
 public import SquaresInCircles.Six.Uniqueness
 public import SquaresInCircles.Seven.Uniqueness
-public import SquaresInCircles.Eight.Theorem
-public import SquaresInCircles.Optimal
+public import SquaresInCircles.Eight.Uniqueness
 
 /-!
 # Packing one to eight unit squares in a disk
@@ -18,21 +17,11 @@ non-overlapping unit squares, and the packings in a disk of that radius are
 exactly the configurations congruent to a model in `optimalPackings n`. For
 `n ≤ 6` there is one model, so the optimal packing is unique up to a rotation
 about the disk centre and a relabelling of the squares. For `n = 7` the three
-middle squares of the model move along the middle axis.
-At `n = 8`, five outer anchors are fixed, two exterior squares slide, and
-the central square translates and rotates in an explicit admissible domain.
-Both orientations of this five-parameter family are included. The public
-registries `optimalRadius` and `optimalPackings` are in `Optimal.lean`;
-primitive square geometry remains in `Geometry.lean`. The eighth-case
-statement data in `StatementEight.lean` use ordinary classical selection
-from explicit stationary equations, with existence, uniqueness, and agreement
-with the analytic root proved in `Eight/ExactFamily/StatementLink.lean`.
-Thus the public definitions and their Mathlib-only Challenge mirror do not
-depend on importing the case proofs.
-
-The n=8 extension is delivered as uncompiled draft Lean source. Its proof
-scripts and generated rational certificates have not been compiled or
-audited in this source-writing pass.
+middle squares of the model move along the middle axis. For `n = 8` five
+squares have a corner on the circle, two more slide between them, and the
+central square moves and turns: a five-parameter family, with its
+reflections. `optimalRadius` and `optimalPackings` are defined with the rest
+of the statement, in `Geometry.lean`.
 
 Every case proves the same statement, an `Optimum` (`Common/Optimum.lean`): its
 models pack the disk and reach its circle, and every packing of that radius is

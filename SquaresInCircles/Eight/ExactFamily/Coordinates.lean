@@ -4,14 +4,21 @@ public import SquaresInCircles.Common.Basic
 public import Mathlib.Tactic
 
 /-!
-# Exact coordinates for the eight-square family
+# Eight squares: the five-corner chain and the parameters of the family
 
-Uncompiled draft.  The inputs are the algebraic chain equations, never rounded
-coordinates.  The position stationarity equation is kept separate from the
-circle equations; it is the equation needed for the last force balance.
+A point of `Coordinates` is a squared radius `q`, a position `y`, the half-angle tangent `z` of
+the tilt and the coordinates `x₁, x₂, y₃, x₄` of the chain of squares `A, B, D, E, H` with five
+corners on the circle. In a chain (`IsChain`) the first four corners lie on the circle of squared
+radius `q`, and the fifth, `h₁ e + h₂ f` on `H`, lies outside it by the `defect`. The inputs are
+these algebraic equations, not rounded coordinates. The stationary system `IsStationary` adds
+the bounds of the analytic strip, `defect = 0` and the vanishing of the derivatives of the defect
+in the position and in the tilt. The position equation is kept separate from the circle
+equations: it is the equation needed for the last force balance (`Weights.lean`).
 
-Sources: `EXACT_CONFIGURATION_AND_FREEDOM.md`, `HUMAN_FIVE_CORNER.md`, and
-`COMPLETE_EQUALITY_PARAMETER_DOMAIN.md`, Sections 2 and 3.
+The chain realizes the seven contacts of the optimal packing for every `q`, `y` and `z`
+(`HG_contact`, `GA_contact`, `HE_contact`, `standard_contacts`). `EqualityParameters` are the
+five parameters of the family, and `Admissible` is its domain, with all weak separation ties and
+the half-open interval of the central frame; `InBox` is the box of side `0.002` inside it.
 -/
 
 @[expose] public section
@@ -42,8 +49,8 @@ theorem halfAngleCos_le_one (z : ℝ) : halfAngleCos z ≤ 1 := by
   rw [halfAngleCos, div_le_iff₀ (halfAngle_den_pos z)]
   nlinarith [sq_nonneg z]
 
-/-- The four successive positive radicals and the half-angle coordinate.
-`x₄` is negative, as in the equality manuscript. -/
+/-- The squared radius, the position, the half-angle tangent of the tilt and the four
+coordinates of the chain given by successive square roots, of which `x₄` is negative. -/
 structure Coordinates where
   q : ℝ
   y : ℝ
@@ -84,8 +91,8 @@ structure IsChain (d : Coordinates) : Prop where
   third_circle : d.x₃ ^ 2 + d.y₃ ^ 2 = d.q
   fourth_circle : d.x₄ ^ 2 + d.y₄ ^ 2 = d.q
 
-/-- The admissible stationary equations in the broad analytic strip.  This
-predicate asserts equations and branch conditions, not a packing reduction. -/
+/-- The stationary system in the analytic strip. It consists of equations and branch
+conditions only, with no reference to packings. -/
 structure IsStationary (d : Coordinates) : Prop extends IsChain d where
   q_lower : (79 / 40 : ℝ) ^ 2 ≤ d.q
   q_upper : d.q ≤ 9789 / 2500
@@ -105,7 +112,7 @@ theorem unit (d : Coordinates) : d.c ^ 2 + d.s ^ 2 = 1 :=
   halfAngle_unit d.z
 
 theorem IsChain.q_pos {d : Coordinates} (h : d.IsChain) : 0 < d.q := by
-  nlinarith [sq_pos_of_pos h.x₁_pos, sq_nonneg d.y]
+  nlinarith [sq_pos_of_pos h.x₁_pos, sq_nonneg d.y, h.first_circle]
 
 theorem IsChain.radicals {d : Coordinates} (h : d.IsChain) :
     d.x₁ = Real.sqrt (d.q - d.y ^ 2) ∧
@@ -130,7 +137,8 @@ theorem chain_unique_radicals {d e : Coordinates} (hd : d.IsChain) (he : e.IsCha
   have h₄ : d.x₄ = e.x₄ := by rw [hd'.2.2.2, he'.2.2.2, y₄, y₄, hq, h₃]
   cases d
   cases e
-  simp_all
+  simp only [Coordinates.mk.injEq]
+  exact ⟨hq, hy, hz, h₁, h₂, h₃, h₄⟩
 
 def e (d : Coordinates) : Point := (d.c, d.s)
 def f (d : Coordinates) : Point := (-d.s, d.c)
@@ -252,8 +260,9 @@ theorem standard_contacts (d : Coordinates) (z : ℝ) :
 
 end Coordinates
 
-/-- The five genuine equality parameters.  The two uses of the letter `z`
-in the source are separated by namespaces: here `z` is the top slider. -/
+/-- The five parameters of the family: the centre `(x, y)` and the frame parameter `w` of the
+central square, the height `z` of the top square `T` and the offset `eta` of `G` along `H`. The
+letter `z` also names the half-angle tangent `Coordinates.z`; here it is the height of `T`. -/
 structure EqualityParameters where
   x : ℝ
   y : ℝ
@@ -285,8 +294,9 @@ def W₀ (p : EqualityParameters) : ℝ := (1+p.C+|p.S|)/2
 def Wₜ (p : EqualityParameters) (a : Coordinates) : ℝ :=
   (1+a.c*p.C+a.s*p.S+|a.c*p.S-a.s*p.C|)/2
 
-/-- The exact finite domain (12.7), including all weak separation ties and
-the half-open interval for the central frame. -/
+/-- The admissible parameters: the frame parameter in `[1 - √2, √2 - 1)`, the two sliders in
+their closed ranges, the core in the interior of the central square, and the central square
+separated from the seven others, with every weak separation tie included. -/
 structure Admissible (a : Coordinates) (p : EqualityParameters) : Prop where
   frame_lower : 1-Real.sqrt 2 ≤ p.w
   frame_upper : p.w < Real.sqrt 2-1
@@ -304,7 +314,8 @@ structure Admissible (a : Coordinates) (p : EqualityParameters) : Prop where
   H_sep : p.Wₜ a ≤ p.Mₜ a (sub a.pH p.center)
   G_sep : p.Wₜ a ≤ p.Mₜ a (sub (a.pG p.eta) p.center)
 
-/-- The full rational box (12.8). -/
+/-- The rational box `[0.139, 0.141] × [-0.001, 0.001] × [0.099, 0.101] × [1.349, 1.351] ×
+[-0.321, -0.319]` of parameters. -/
 def InBox (p : EqualityParameters) : Prop :=
   (139/1000 ≤ p.x ∧ p.x ≤ 141/1000) ∧
   (-(1/1000) ≤ p.y ∧ p.y ≤ 1/1000) ∧

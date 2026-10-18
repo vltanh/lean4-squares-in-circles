@@ -129,16 +129,20 @@ as the implemented public theorem statements.
 
 ## Generated data
 
-The generators write Lean expressions and rational arithmetic proof
-objects. The theorem statements interpret those expressions over the
-reals. A successful Python run is not used as a Lean premise.
+The generators in `scripts/eight/` write Lean expressions and rational
+arithmetic proof objects into `Generated/`. The theorem statements interpret
+those expressions over the reals. A successful Python run is not used as a
+Lean premise. Interval bounds on formulas are checked in the kernel by the
+fixed-point evaluator of `FixedEval.lean`, and the stationary localization uses
+the mean-value covering rules of `MeanValueCover.lean`.
 
 - `generate_stationary.py`: stationary closed cover, derivatives, Hessian
-  bounds, root brackets, and coordinate brackets;
+  bounds, root brackets, and coordinate brackets (`StationaryFormula`,
+  `LocalStationaryBounds`, `StationaryLocalization`);
 - `generate_adaptive.py`: adaptive position brackets, all nine owner
-  reserves, edge weight bounds, and perturbation remainder bounds;
+  reserves, edge weight bounds, and perturbation remainder bounds
+  (`AdaptiveFormula`, `AdaptiveBounds`);
 - `generate_equality.py`: the explicit equality box and its strict
-  containment, core, and central separation reserves.
+  containment, core, and central separation reserves (`EqualityBox`).
 
-The large generated files are split into source modules so their full
-rational arithmetic data remain available to the later Lean pass.
+Running a generator again reproduces its files byte for byte.

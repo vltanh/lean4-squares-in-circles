@@ -4,11 +4,16 @@ public import SquaresInCircles.Eight.Candidate.Dual
 public import Mathlib.Analysis.SpecialFunctions.Trigonometric.ArctanDeriv
 
 /-!
-# Continuous projection estimates used by the owner and tilt tables
+# Eight squares: projection estimates for the owner and tilt tables
 
-These estimates concern the original centers. The radial boundary kind is
-irrelevant here: containment bounds the moving sinusoid's amplitude by 3/2.
-The support cusp is retained in the linear and quadratic error estimates.
+As a function of the relative angle `x`, the projection of the difference of two centres on a
+forward axis is a sinusoid `c + u sin x + v cos x` (`projection`). These estimates concern the
+centres of the cycle themselves, on either radial curve: containment bounds the amplitude of the
+sinusoid by `3/2` (`projection_amplitude`), which gives a Lipschitz bound and second-order Taylor
+bounds (`sinusoid_lipschitz`, `sinusoid_taylor`). The threshold `pairWidth` has a cusp at `0`,
+which the linear and quadratic error estimates keep (`width_cusp_lower`, `width_semiconvex`). The
+file ends with the half-angle chart `t = 2 arctan z` of the tilt (`half_angle_chart`,
+`half_angle_terminal_window`).
 -/
 
 @[expose] public section
@@ -22,15 +27,20 @@ def sinusoidDeriv (u v x : ℝ) : ℝ := u * Real.cos x - v * Real.sin x
 
 theorem sinusoid_hasDeriv (c u v x : ℝ) :
     HasDerivAt (sinusoid c u v) (sinusoidDeriv u v x) x := by
+  have hfun : sinusoid c u v = fun y => c + u * Real.sin y + v * Real.cos y := rfl
+  rw [hfun]
   convert (((Real.hasDerivAt_sin x).const_mul u).const_add c).add
-    ((Real.hasDerivAt_cos x).const_mul v) using 1 <;>
-    simp [sinusoid, sinusoidDeriv] <;> ring
+    ((Real.hasDerivAt_cos x).const_mul v) using 1
+  simp only [sinusoidDeriv]
+  ring
 
 theorem sinusoidDeriv_hasDeriv (u v x : ℝ) :
     HasDerivAt (sinusoidDeriv u v) (-u * Real.sin x - v * Real.cos x) x := by
+  have hfun : sinusoidDeriv u v = fun y => u * Real.cos y - v * Real.sin y := rfl
+  rw [hfun]
   convert ((Real.hasDerivAt_cos x).const_mul u).sub
-    ((Real.hasDerivAt_sin x).const_mul v) using 1 <;>
-    simp [sinusoidDeriv] <;> ring
+    ((Real.hasDerivAt_sin x).const_mul v) using 1
+  ring
 
 theorem harmonic_abs_le {u v M : ℝ} (hM : 0 ≤ M)
     (huv : u ^ 2 + v ^ 2 ≤ M ^ 2) (x : ℝ) :
@@ -41,13 +51,13 @@ theorem harmonic_abs_le {u v M : ℝ} (hM : 0 ≤ M)
   have hsq := sq_nonneg (u * Real.cos x - v * Real.sin x)
   have habs := abs_nonneg (u * Real.sin x + v * Real.cos x)
   rw [← sq_abs (u * Real.sin x + v * Real.cos x)] at hid
-  nlinarith
+  nlinarith only [huv, hid, hM]
 
 theorem sinusoid_derivative_bound {u v M : ℝ} (hM : 0 ≤ M)
     (huv : u ^ 2 + v ^ 2 ≤ M ^ 2) (x : ℝ) :
     |sinusoidDeriv u v x| ≤ M := by
   simpa [sinusoidDeriv, add_comm, mul_comm, sub_eq_add_neg] using
-    harmonic_abs_le hM (u := -v) (v := u) (by nlinarith) x
+    harmonic_abs_le hM (u := -v) (v := u) (by linarith) x
 
 theorem sinusoid_lipschitz {u v M : ℝ} (hM : 0 ≤ M)
     (huv : u ^ 2 + v ^ 2 ≤ M ^ 2) (c x y : ℝ) :
@@ -56,11 +66,11 @@ theorem sinusoid_lipschitz {u v M : ℝ} (hM : 0 ≤ M)
       (Real.cos x - Real.cos y) ^ 2 ≤ (x - y) ^ 2 := by
     have hc := Real.one_sub_sq_div_two_le_cos (x := x - y)
     rw [Real.cos_sub] at hc
-    nlinarith [Real.sin_sq_add_cos_sq x, Real.sin_sq_add_cos_sq y]
+    linarith [Real.sin_sq_add_cos_sq x, Real.sin_sq_add_cos_sq y]
   have hcauchy :
       (u * (Real.sin x - Real.sin y) + v * (Real.cos x - Real.cos y)) ^ 2 ≤
       (u ^ 2 + v ^ 2) * ((Real.sin x - Real.sin y) ^ 2 + (Real.cos x - Real.cos y) ^ 2) := by
-    nlinarith [sq_nonneg (u * (Real.cos x - Real.cos y) - v * (Real.sin x - Real.sin y))]
+    linarith [sq_nonneg (u * (Real.cos x - Real.cos y) - v * (Real.sin x - Real.sin y))]
   have hprod := mul_le_mul huv hchord (by positivity :
       0 ≤ (Real.sin x - Real.sin y) ^ 2 + (Real.cos x - Real.cos y) ^ 2) (sq_nonneg M)
   have he : sinusoid c u v x - sinusoid c u v y =
@@ -69,7 +79,7 @@ theorem sinusoid_lipschitz {u v M : ℝ} (hM : 0 ≤ M)
   rw [← he, ← sq_abs] at hcauchy
   have ha := abs_nonneg (sinusoid c u v x - sinusoid c u v y)
   have hb := mul_nonneg hM (abs_nonneg (x-y))
-  nlinarith [sq_abs (x-y)]
+  nlinarith only [sq_abs (x-y), hcauchy, hprod, hb]
 
 theorem sinusoid_taylor {u v M : ℝ} (hM : 0 ≤ M)
     (huv : u ^ 2 + v ^ 2 ≤ M ^ 2) (c x d : ℝ) :
@@ -87,7 +97,7 @@ theorem sinusoid_taylor {u v M : ℝ} (hM : 0 ≤ M)
     (fun y _ => sinusoid_hasDeriv _ _ _ y)
     (fun y _ => by simpa using sinusoidDeriv_hasDeriv (-u) (-v) y)
     (fun y _ => (abs_le.mp (harmonic_abs_le hM huv y)).1)
-  constructor <;> dsimp [sinusoid, sinusoidDeriv] at * <;> nlinarith
+  constructor <;> dsimp [sinusoid, sinusoidDeriv] at * <;> linarith
 
 theorem center_amplitude {q : ℝ} (C : BoundaryCycle q) (hq : q ≤ Q0) (i : Vertex) :
     (C.a i) ^ 2 + (C.b i) ^ 2 < (3 / 2 : ℝ) ^ 2 := by
@@ -99,9 +109,9 @@ theorem center_amplitude {q : ℝ} (C : BoundaryCycle q) (hq : q ≤ Q0) (i : Ve
   have hs : (3 / 2 : ℝ) ≤ C.a i + C.b i := by
     by_contra! hs
     have hh : (C.a i + C.b i) ^ 2 < (3 / 2 : ℝ) ^ 2 :=
-      sq_lt_sq₀ (by positivity) (by norm_num) hs
-    nlinarith [mul_nonneg ha hb]
-  nlinarith
+      (sq_lt_sq₀ (by positivity) (by norm_num)).2 hs
+    linarith [mul_nonneg ha hb]
+  linarith
 
 def projectionCoefficients (a b A B σ τ : ℝ) (j : Fin 4) : Fin 3 → ℝ :=
   ![![σ*b, A, -τ*B], ![A, σ*b, -a], ![-τ*B, a, σ*b], ![a, -τ*B, -A]] j
@@ -128,7 +138,7 @@ theorem projection_amplitude {q : ℝ} (C : BoundaryCycle q) (hq : q ≤ Q0)
   have ht := center_amplitude C hq (next i)
   rcases C.sigma_sign i with hi | hi <;>
     rcases C.sigma_sign (next i) with hj | hj <;>
-    fin_cases j <;> simp [projectionCoefficients, hi, hj] <;> nlinarith
+    fin_cases j <;> simp [projectionCoefficients, hi, hj] <;> linarith
 
 theorem width_one_le (x : ℝ) : 1 ≤ pairWidth x := by
   have hh := h_nonneg x
@@ -158,18 +168,20 @@ theorem width_cusp_lower {d : ℝ} (hd : |d| ≤ 1 / 500) :
   have hc := Real.one_sub_sq_div_two_le_cos (x := |d|)
   rw [width_abs_small (by linarith)]
   dsimp [hSmooth]
-  nlinarith [sq_abs d]
+  linarith [sq_abs d]
 
 theorem hSmooth_lipschitz {x y : ℝ}
     (hx : x ∈ Icc (0 : ℝ) (3/4)) (hy : y ∈ Icc (0 : ℝ) (3/4)) :
     |hSmooth x - hSmooth y| ≤ (1/2 : ℝ) * |x-y| := by
   have hd (t : ℝ) : HasDerivAt hSmooth ((Real.cos t - Real.sin t)/2) t := by
-    convert (((Real.hasDerivAt_sin t).add (Real.hasDerivAt_cos t)).sub_const 1).div_const 2 using 1 <;>
-      simp [hSmooth] <;> ring
+    have hfun : hSmooth = fun y => (Real.sin y + Real.cos y - 1) / 2 := rfl
+    rw [hfun]
+    convert (((Real.hasDerivAt_sin t).add (Real.hasDerivAt_cos t)).sub_const 1).div_const 2
+      using 1
   have hder (t : ℝ) (ht : t ∈ Ioo (0:ℝ) (3/4)) :
       0 ≤ (Real.cos t - Real.sin t)/2 ∧ (Real.cos t - Real.sin t)/2 ≤ 1/2 := by
-    have hsc := sin_le_cos_of_small ⟨ht.1.le, by linarith [Real.pi_gt_three]⟩
-    have hs := Real.sin_nonneg_of_nonneg_of_le_pi ht.1.le (by linarith [Real.pi_gt_three])
+    have hsc := sin_le_cos_of_small ⟨ht.1.le, by linarith [ht.2, Real.pi_gt_three]⟩
+    have hs := Real.sin_nonneg_of_nonneg_of_le_pi ht.1.le (by linarith [ht.2, Real.pi_gt_three])
     have hc := Real.cos_le_one t
     constructor <;> linarith
   have hm := monoOn_of_hasDeriv_nonneg
@@ -194,7 +206,7 @@ theorem width_lipschitz_small {x y : ℝ} (hx : |x| ≤ 3/4) (hy : |y| ≤ 3/4) 
     |pairWidth x - pairWidth y| ≤ (1/2 : ℝ) * |x-y| := by
   rw [width_abs_small hx, width_abs_small hy]
   have hh := hSmooth_lipschitz ⟨abs_nonneg x,hx⟩ ⟨abs_nonneg y,hy⟩
-  have hdist : ||x|-|y|| ≤ |x-y| := abs_abs_sub_abs_le_abs_sub x y
+  have hdist : |(|x|-|y|)| ≤ |x-y| := abs_abs_sub_abs_le_abs_sub x y
   simpa only [add_sub_add_left_eq_sub] using hh.trans
     (mul_le_mul_of_nonneg_left hdist (by norm_num))
 
@@ -207,17 +219,23 @@ theorem width_semiconvex {t v : ℝ} {positive : Bool}
     pairWidth t + widthSlope positive t * v - (3/8 : ℝ)*v^2 ≤ pairWidth (t+v) := by
   let σ : ℝ := if positive then 1 else -1
   have hσ : σ=1 ∨ σ= -1 := by cases positive <;> simp [σ]
-  have ht' : |t+v| ≤ 3/4 := (abs_add t v).trans (by linarith)
+  have ht' : |t+v| ≤ 3/4 := (abs_add_le t v).trans (by linarith)
   have h₀ : pairWidth t = sinusoid (1/2) (σ/2) (1/2) t := by
     rw [width_abs_small (by linarith)]
-    cases positive <;> simp [σ, hSmooth, sinusoid, abs_of_nonneg, abs_of_nonpos, hsgn] <;> ring
+    cases positive
+    · have hneg : t ≤ 0 := by simpa using hsgn
+      simp [σ, hSmooth, sinusoid, abs_of_nonpos hneg, Real.sin_neg]
+      ring
+    · have hpos : 0 ≤ t := by simpa using hsgn
+      simp [σ, hSmooth, sinusoid, abs_of_nonneg hpos]
+      ring
   have h₁ : sinusoid (1/2) (σ/2) (1/2) (t+v) ≤ pairWidth (t+v) := by
     have hc := Real.cos_nonneg_of_mem_Icc
       (show t+v ∈ Icc (-(Real.pi/2)) (Real.pi/2) by
         have hh := abs_le.mp ht'; constructor <;> linarith [Real.pi_gt_three])
     rw [pairWidth, abs_of_nonneg hc]
     rcases hσ with h | h <;> rw [h] <;> unfold sinusoid <;>
-      nlinarith [le_abs_self (Real.sin (t+v)), neg_le_abs (Real.sin (t+v))]
+      linarith [le_abs_self (Real.sin (t+v)), neg_le_abs (Real.sin (t+v))]
   have hT := (sinusoid_taylor (M := 3/4) (by norm_num)
     (u := σ/2) (v := 1/2) (by rcases hσ with h | h <;> norm_num [h]) (1/2) t v).1
   have hd : sinusoidDeriv (σ/2) (1/2) t = widthSlope positive t := by
@@ -227,12 +245,14 @@ theorem width_semiconvex {t v : ℝ} {positive : Bool}
 
 theorem arctan_cubic_lower {x : ℝ} (hx : 0 ≤ x) : x - x^3/3 ≤ Real.arctan x := by
   have hm := nonneg_of_deriv_nonneg (fun t : ℝ => Real.arctan t-t+t^3/3)
-    (by fun_prop) (by norm_num)
+    ((Real.differentiable_arctan.sub differentiable_id).add
+      ((differentiable_id.pow 3).div_const 3)) (by norm_num)
     (fun t ht => by
       have hd : HasDerivAt (fun t : ℝ => Real.arctan t-t+t^3/3)
           (1/(1+t^2)-1+t^2) t := by
-        convert ((Real.hasDerivAt_arctan t).sub (hasDerivAt_id t)).add
-          (((hasDerivAt_id t).pow 3).div_const 3) using 1 <;> ring
+        convert ((Real.hasDerivAt_arctan t).sub (hasDerivAt_id' t)).add
+          (((hasDerivAt_id' t).pow 3).div_const 3) using 1
+        norm_num
       rw [hd.deriv]
       have hp : 0 < 1+t^2 := by positivity
       have hid : 1/(1+t^2)-1+t^2 = t^4/(1+t^2) := by
@@ -244,11 +264,13 @@ theorem arctan_cubic_lower {x : ℝ} (hx : 0 ≤ x) : x - x^3/3 ≤ Real.arctan 
 
 theorem arctan_le_self {x : ℝ} (hx : 0 ≤ x) : Real.arctan x ≤ x := by
   have hm := nonneg_of_deriv_nonneg (fun t : ℝ => t-Real.arctan t)
-    (by fun_prop) (by norm_num)
+    (differentiable_id.sub Real.differentiable_arctan) (by norm_num)
     (fun t ht => by
-      rw [((hasDerivAt_id t).sub (Real.hasDerivAt_arctan t)).deriv]
+      have hd : HasDerivAt (fun t : ℝ => t - Real.arctan t) (1 - 1 / (1 + t ^ 2)) t :=
+        (hasDerivAt_id' t).sub (Real.hasDerivAt_arctan t)
+      rw [hd.deriv]
       have hp : 0 < 1+t^2 := by positivity
-      have hh : 1/(1+t^2) ≤ (1:ℝ) := (div_le_one hp).2 (by nlinarith)
+      have hh : 1/(1+t^2) ≤ (1:ℝ) := (div_le_one hp).2 (by nlinarith only [])
       linarith) hx
   linarith
 
@@ -276,11 +298,12 @@ theorem half_angle_identities (z : ℝ) :
   have hsn := ne_of_gt (Real.sqrt_pos.2 hp)
   constructor
   · rw [Real.sin_two_mul, Real.sin_arctan, Real.cos_arctan]
-    field_simp [hsn, ne_of_gt hp]
-    nlinarith
+    field_simp
+    rw [hs]
   · rw [Real.cos_two_mul, Real.cos_arctan]
-    field_simp [hsn, ne_of_gt hp]
-    nlinarith
+    field_simp
+    rw [hs]
+    ring
 
 theorem half_angle_terminal_window {z t : ℝ} (hlo : 1001/20000 < z)
     (hhi : z < 2/25) (ht : t=2*Real.arctan z) : 1/10 < t ∧ t < 4/25 := by
@@ -288,7 +311,8 @@ theorem half_angle_terminal_window {z t : ℝ} (hlo : 1001/20000 < z)
   have hatan := Real.arctan_strictMono hlo
   have hlow := arctan_cubic_lower (x := 1001/20000) (by norm_num)
   have hu := arctan_le_self hz
+  norm_num at hlow
   rw [ht]
-  constructor <;> norm_num at * <;> linarith
+  constructor <;> linarith
 
 end SquaresInCircles.Eight.Candidate

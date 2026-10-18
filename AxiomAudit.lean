@@ -9,7 +9,7 @@ unproved lemma would add `sorryAx`, and a proof by `native_decide`, which
 trusts the compiler, would add `Lean.ofReduceBool`.
 -/
 
--- All seven cases in one statement, which depends on every case.
+-- All eight cases in one statement, which depends on every case.
 #print axioms SquaresInCircles.optimal_radius
 #print axioms SquaresInCircles.optimal_packings
 #print axioms SquaresInCircles.optimal_packings_rigid
@@ -89,6 +89,25 @@ trusts the compiler, would add `Lean.ofReduceBool`.
 #print axioms SquaresInCircles.Seven.uniqueness
 #print axioms SquaresInCircles.Seven.classification_by_slots
 
+-- Eight squares: the stationary packing and the five-parameter family, the
+-- central square and its core, the boundary cycle, the frames and the quarter
+-- words, the candidate tables, the sharp terminal, the lower bound and the
+-- equality domain, and the agreement of the statement with the proof.
+#print axioms SquaresInCircles.Eight.ExactFamily.exact_stationary_existsUnique
+#print axioms SquaresInCircles.Eight.ExactFamily.model_sqPacking
+#print axioms SquaresInCircles.Eight.full_dimensional_equality_box
+#print axioms SquaresInCircles.Eight.central_core_and_exteriors
+#print axioms SquaresInCircles.Eight.boundary_reduction_exists
+#print axioms SquaresInCircles.Eight.physical_cycle_width_bound
+#print axioms SquaresInCircles.Eight.quarter_word_candidate
+#print axioms SquaresInCircles.Eight.Candidate.Tables.t_upper_excluded
+#print axioms SquaresInCircles.Eight.Terminal.boundary_rigid
+#print axioms SquaresInCircles.Eight.lower_bound
+#print axioms SquaresInCircles.Eight.uniqueness
+#print axioms SquaresInCircles.Eight.equality_iff_parameters
+#print axioms SquaresInCircles.Eight.radius_statement
+#print axioms SquaresInCircles.Eight.models_statement
+
 -- The statements being proved, for inspection.
 #print SquaresInCircles.Packing
 #print SquaresInCircles.Congruent
@@ -106,3 +125,7 @@ trusts the compiler, would add `Lean.ofReduceBool`.
 #print SquaresInCircles.Seven.Column
 #print SquaresInCircles.Seven.columnCenters
 #print SquaresInCircles.Seven.columnModel
+#print SquaresInCircles.EightStatement.Root.IsStationary
+#print SquaresInCircles.EightStatement.selected
+#print SquaresInCircles.EightStatement.Parameters.Admissible
+#print SquaresInCircles.EightStatement.models

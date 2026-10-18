@@ -3,14 +3,22 @@ module
 public import SquaresInCircles.Eight.BoundaryGeometry
 
 /-!
-# Actual dihedral actions on the seven-cycle
+# Eight squares: the dihedral actions on a cycle
 
-Reindexing a reflected cycle reverses both endpoints of an edge. Its selected
-axis is first reversed and then its secondary-axis sign is reflected. The
-real polar lift includes the explicit wrap integer; integer quarter words
-therefore transform as edges, rather than as vertex labels.
+A `CycleAction` renumbers the seven squares by a cyclic shift, possibly reversed, and moves the
+plane by a rotation about the origin, preceded by the reflection in the diagonal when the order
+is reversed. These motions keep containment, the core and the separations
+(`motionSquare_contained`, `reflectedAxis_feasible_iff`), and they turn neighbour cycles, polar
+orders, boundary cycles, radius expansions and quarter lifts into objects of the same kind
+(`CycleAction.neighbor`, `CycleAction.polarOrder`, `CycleAction.boundary`,
+`CycleAction.radiusExpansion`, `QuarterLift.act`).
 
-Uncompiled source draft.
+Reindexing a reflected cycle reverses both endpoints of an edge: the witness of the edge is
+first reversed, and then the sign of its secondary axis is reflected (`CycleAction.axis`). The
+real centre directions are lifted with an explicit wrap integer (`CycleAction.lift`), so the
+integer quarter words transform by the action on the edges (`CycleAction.quarter_increment`),
+not on the vertices. The file ends with a quarter lift from the bound on the frame costs
+(`quarterLift_of_cost`) and its pullback through a radius expansion (`QuarterLift.pullback`).
 -/
 
 @[expose] public section
@@ -47,7 +55,7 @@ lemma motion_left_inverse (θ : ℝ) (b : Bool) (p : Point) :
 
 lemma motion_right_inverse (θ : ℝ) (b : Bool) (p : Point) :
     motionPoint θ b (motionInverse θ b p)=p := by
-  cases b <;> simp [motionInverse,motionPoint,reflectionPoint]
+  cases b <;> simp [motionInverse,motionPoint,reflectionPoint,-frameEquiv_apply]
 
 lemma motionSquare_open (θ : ℝ) (b : Bool) (K : UnitSquare) (p : Point) :
     openSquare (motionSquare θ b K) p ↔ openSquare K (motionInverse θ b p) := by
@@ -59,12 +67,17 @@ lemma motionSquare_closed (θ : ℝ) (b : Bool) (K : UnitSquare) (p : Point) :
   cases b <;> simp [motionSquare,reflectionSquare,motionInverse,reflectionPoint,
     pullSquare_closed,reflectDiagonal_closed]
 
+/-- The motion in coordinates: the inverse rotation applied to the reflected point. -/
+lemma CycleActions.motionPoint_eq (θ : ℝ) (b : Bool) (p : Point) :
+    motionPoint θ b p=
+      (Real.cos θ*(reflectionPoint b p).1+Real.sin θ*(reflectionPoint b p).2,
+       -Real.sin θ*(reflectionPoint b p).1+Real.cos θ*(reflectionPoint b p).2) := by
+  apply Prod.ext <;> simp [motionPoint,frameEquiv]
+
 lemma motionPoint_norm (θ : ℝ) (b : Bool) (p : Point) :
     normSq (motionPoint θ b p)=normSq p := by
-  cases b <;>
-    dsimp [motionPoint,reflectionPoint,diagonalPoint,frameEquiv,pointInDirection,normSq] <;>
-    simp only [Real.Angle.cos_coe,Real.Angle.sin_coe] <;>
-    nlinarith [congrArg (fun z : ℝ => (p.1^2+p.2^2)*z) (Real.sin_sq_add_cos_sq θ)]
+  cases b <;> simp [CycleActions.motionPoint_eq,reflectionPoint,diagonalPoint,normSq] <;>
+    linear_combination (p.1^2+p.2^2)*Real.sin_sq_add_cos_sq θ
 
 lemma motionInverse_norm (θ : ℝ) (b : Bool) (p : Point) :
     normSq (motionInverse θ b p)=normSq p := by
@@ -79,10 +92,8 @@ lemma motionPoint_sub (θ : ℝ) (b : Bool) (p r : Point) :
 
 lemma motionPoint_dot (θ : ℝ) (b : Bool) (p r : Point) :
     dot (motionPoint θ b p) (motionPoint θ b r)=dot p r := by
-  cases b <;>
-    dsimp [motionPoint,reflectionPoint,diagonalPoint,frameEquiv,pointInDirection,dot] <;>
-    simp only [Real.Angle.cos_coe,Real.Angle.sin_coe] <;>
-    nlinarith [congrArg (fun z : ℝ => (p.1*r.1+p.2*r.2)*z) (Real.sin_sq_add_cos_sq θ)]
+  cases b <;> simp [CycleActions.motionPoint_eq,reflectionPoint,diagonalPoint,dot] <;>
+    linear_combination (p.1*r.1+p.2*r.2)*Real.sin_sq_add_cos_sq θ
 
 lemma motionSquare_contained {q : ℝ} (θ : ℝ) (b : Bool) {K : UnitSquare}
     (h : SqContained q K) : SqContained q (motionSquare θ b K) := by
@@ -131,19 +142,16 @@ lemma reflectedAxis_normal (θ : ℝ) (b : Bool) (a : SignedAxis) (K J : UnitSqu
 
 lemma motionSquare_relativeC (θ : ℝ) (b : Bool) (K J : UnitSquare) :
     relativeC (motionSquare θ b K) (motionSquare θ b J)=relativeC K J := by
-  cases b <;>
-    dsimp [motionSquare,reflectionSquare,pullSquare,reflectDiagonalSquare,relativeC] <;>
-    simp only [Real.Angle.cos_coe,Real.Angle.sin_coe] <;>
-    nlinarith [congrArg (fun z : ℝ => (K.cosine*J.cosine+K.sine*J.sine)*z)
-      (Real.sin_sq_add_cos_sq θ)]
+  cases b <;> simp [motionSquare,reflectionSquare,pullSquare,reflectDiagonalSquare,relativeC] <;>
+    linear_combination (K.cosine*J.cosine+K.sine*J.sine)*Real.sin_sq_add_cos_sq θ
 
 lemma motionSquare_relativeS (θ : ℝ) (b : Bool) (K J : UnitSquare) :
     relativeS (motionSquare θ b K) (motionSquare θ b J)=reflectionSign b*relativeS K J := by
-  cases b <;>
-    dsimp [motionSquare,reflectionSquare,pullSquare,reflectDiagonalSquare,relativeS,reflectionSign] <;>
-    simp only [Real.Angle.cos_coe,Real.Angle.sin_coe] <;>
-    nlinarith [congrArg (fun z : ℝ => (K.cosine*J.sine-K.sine*J.cosine)*z)
-      (Real.sin_sq_add_cos_sq θ)]
+  cases b
+  · simp [motionSquare,reflectionSquare,pullSquare,relativeS,reflectionSign]
+    linear_combination (K.cosine*J.sine-K.sine*J.cosine)*Real.sin_sq_add_cos_sq θ
+  · simp [motionSquare,reflectionSquare,pullSquare,reflectDiagonalSquare,relativeS,reflectionSign]
+    linear_combination (K.sine*J.cosine-K.cosine*J.sine)*Real.sin_sq_add_cos_sq θ
 
 lemma motionSquare_threshold (θ : ℝ) (b : Bool) (K J : UnitSquare) :
     SAT.threshold (motionSquare θ b K) (motionSquare θ b J)=SAT.threshold K J := by
@@ -193,12 +201,39 @@ lemma CycleAction.edge_endpoints (G : CycleAction) (i : Vertex) :
       (G.edge i,next (G.edge i)) := by
   cases h : G.reversed <;> simp [CycleAction.edge,h,G.index_next,next_prev]
 
+/-- The wrap table over all shifts, orientations and edges: the wrap integer
+jumps exactly on the edge whose image crosses the last edge. -/
+lemma CycleActions.wrap_table : ∀ (s : Vertex) (rev : Bool) (i : Vertex),
+    (CycleAction.wrap ⟨s,rev,0⟩ (next i)-CycleAction.wrap ⟨s,rev,0⟩ i+(if i=6 then 1 else 0) : ℤ)=
+      if CycleAction.edge ⟨s,rev,0⟩ i=6 then 1 else 0 := by
+  decide
+
+lemma CycleActions.wrap_step (G : CycleAction) (i : Vertex) :
+    G.wrap (next i)-G.wrap i+(if i=6 then 1 else 0)=if G.edge i=6 then 1 else 0 :=
+  CycleActions.wrap_table G.shift G.reversed i
+
 lemma CycleAction.lift_gap (G : CycleAction) (β : Vertex → ℝ) (i : Vertex) :
     angleGap (G.lift β) i=angleGap β (G.edge i) := by
-  rcases G with ⟨shift,rev,rot⟩
-  cases rev <;> fin_cases shift <;> fin_cases i <;>
-    norm_num [CycleAction.lift,CycleAction.index,CycleAction.edge,CycleAction.wrap,
-      reflectionSign,angleGap,next] <;> ring
+  have hw : ((G.wrap (next i):ℝ)-(G.wrap i:ℝ)+(if i=6 then 1 else 0))=
+      if G.edge i=6 then 1 else 0 := by
+    have h := congrArg (fun z : ℤ => (z:ℝ)) (CycleActions.wrap_step G i)
+    push_cast [apply_ite (fun z : ℤ => (z:ℝ))] at h
+    exact h
+  have hgap : angleGap (G.lift β) i=reflectionSign G.reversed*(β (G.index (next i))-β (G.index i))+
+      ((G.wrap (next i):ℝ)-(G.wrap i:ℝ)+(if i=6 then 1 else 0))*(2*Real.pi) := by
+    simp only [angleGap,CycleAction.lift]
+    split_ifs <;> ring
+  rw [hgap,hw]
+  have he := G.edge_endpoints i
+  cases h : G.reversed
+  · simp only [h,Bool.false_eq_true,ite_false,Prod.mk.injEq] at he
+    rw [he.1,he.2]
+    simp only [angleGap,reflectionSign,Bool.false_eq_true,ite_false]
+    split_ifs <;> ring
+  · simp only [h,ite_true,Prod.mk.injEq] at he
+    rw [he.1,he.2]
+    simp only [angleGap,reflectionSign,ite_true]
+    split_ifs <;> ring
 
 lemma CycleAction.lift_cos (G : CycleAction) (β : Vertex → ℝ) (i : Vertex) :
     Real.cos (G.lift β i)=Real.cos
@@ -258,17 +293,27 @@ def CycleAction.polarOrder {q : ℝ} (G : CycleAction) {C : NeighborCycle q} (O 
         (Real.sqrt (normSq (C.square (G.index i)).center)*Real.cos (O.beta (G.index i)),
          Real.sqrt (normSq (C.square (G.index i)).center)*Real.sin (O.beta (G.index i))) :=
       Prod.ext (O.center_cos _) (O.center_sin _)
-    change (motionSquare G.rotation G.reversed (C.square (G.index i))).center.1=_
-    rw [motionSquare_center,motionPoint_norm,G.lift_cos,hc,motionPoint_polar]
+    have hp := motionPoint_polar G.rotation G.reversed
+      (Real.sqrt (normSq (C.square (G.index i)).center)) (O.beta (G.index i))
+    rw [← hc] at hp
+    change (motionSquare G.rotation G.reversed (C.square (G.index i))).center.1=
+      Real.sqrt (normSq (motionSquare G.rotation G.reversed (C.square (G.index i))).center)*
+        Real.cos (G.lift O.beta i)
+    rw [motionSquare_center,motionPoint_norm,G.lift_cos,hp]
   center_sin i := by
     have hc : (C.square (G.index i)).center=
         (Real.sqrt (normSq (C.square (G.index i)).center)*Real.cos (O.beta (G.index i)),
          Real.sqrt (normSq (C.square (G.index i)).center)*Real.sin (O.beta (G.index i))) :=
       Prod.ext (O.center_cos _) (O.center_sin _)
-    change (motionSquare G.rotation G.reversed (C.square (G.index i))).center.2=_
-    rw [motionSquare_center,motionPoint_norm,G.lift_sin,hc,motionPoint_polar]
-  gap_pos i := by rw [G.lift_gap]; exact O.gap_pos _
-  gap_lt_pi i := by rw [G.lift_gap]; exact O.gap_lt_pi _
+    have hp := motionPoint_polar G.rotation G.reversed
+      (Real.sqrt (normSq (C.square (G.index i)).center)) (O.beta (G.index i))
+    rw [← hc] at hp
+    change (motionSquare G.rotation G.reversed (C.square (G.index i))).center.2=
+      Real.sqrt (normSq (motionSquare G.rotation G.reversed (C.square (G.index i))).center)*
+        Real.sin (G.lift O.beta i)
+    rw [motionSquare_center,motionPoint_norm,G.lift_sin,hp]
+  positive i := by rw [G.lift_gap]; exact O.positive _
+  below_pi i := by rw [G.lift_gap]; exact O.below_pi _
 
 def CycleAction.boundary {q : ℝ} (G : CycleAction) (C : BoundaryCycle q) : BoundaryCycle q where
   toNeighborCycle := G.neighbor C.toNeighborCycle
@@ -283,35 +328,84 @@ def CycleAction.boundary {q : ℝ} (G : CycleAction) (C : BoundaryCycle q) : Bou
     cases h : G.reversed <;> rcases C.sigma_sign (G.index i) with hs|hs <;>
       simp [reflectionSign,h,hs]
   center_eq i := by
+    change (motionSquare G.rotation G.reversed (C.square (G.index i))).center=
+      rotate (motionSquare G.rotation G.reversed (C.square (G.index i)))
+        (C.a (G.index i),-(reflectionSign G.reversed*C.sigma (G.index i))*C.b (G.index i))
     rw [motionSquare_center,C.center_eq,motionSquare_rotate]
-    congr 1
-    apply Prod.ext <;> dsimp <;> ring
+    congr 2
+    ring
   boundary i := C.boundary _
   beta := G.lift C.beta
   center_cos i := by
     change (motionSquare G.rotation G.reversed (C.square (G.index i))).center.1=_
     have hc : (C.square (G.index i)).center=
-        (C.radius (G.index i)*Real.cos (C.beta (G.index i)),
-         C.radius (G.index i)*Real.sin (C.beta (G.index i))) := Prod.ext (C.center_cos _) (C.center_sin _)
+        (Real.sqrt (C.a (G.index i)^2+C.b (G.index i)^2)*Real.cos (C.beta (G.index i)),
+         Real.sqrt (C.a (G.index i)^2+C.b (G.index i)^2)*Real.sin (C.beta (G.index i))) :=
+      Prod.ext (C.center_cos _) (C.center_sin _)
     rw [motionSquare_center,G.lift_cos,hc,motionPoint_polar]
   center_sin i := by
     change (motionSquare G.rotation G.reversed (C.square (G.index i))).center.2=_
     have hc : (C.square (G.index i)).center=
-        (C.radius (G.index i)*Real.cos (C.beta (G.index i)),
-         C.radius (G.index i)*Real.sin (C.beta (G.index i))) := Prod.ext (C.center_cos _) (C.center_sin _)
+        (Real.sqrt (C.a (G.index i)^2+C.b (G.index i)^2)*Real.cos (C.beta (G.index i)),
+         Real.sqrt (C.a (G.index i)^2+C.b (G.index i)^2)*Real.sin (C.beta (G.index i))) :=
+      Prod.ext (C.center_cos _) (C.center_sin _)
     rw [motionSquare_center,G.lift_sin,hc,motionPoint_polar]
   frame_cos i := by
-    cases h : G.reversed <;>
-      simp [motionSquare,reflectionSquare,pullSquare,reflectDiagonalSquare,C.frame_cos,C.frame_sin,
-        CycleAction.lift,CycleAction.wrap,reflectionSign,h,Real.arctan_neg,
-        Real.cos_add,Real.sin_add,Real.cos_sub,Real.sin_sub] <;>
-      split <;> simp [Real.cos_add,Real.sin_add] <;> ring
+    change (motionSquare G.rotation G.reversed (C.square (G.index i))).cosine=_
+    have ht : Real.arctan (reflectionSign G.reversed*C.sigma (G.index i)*C.b (G.index i)/
+        C.a (G.index i))=reflectionSign G.reversed*Real.arctan (C.sigma (G.index i)*
+        C.b (G.index i)/C.a (G.index i)) := by
+      cases G.reversed <;> simp [reflectionSign,neg_div,Real.arctan_neg]
+    have harg : G.lift C.beta i+Real.arctan (reflectionSign G.reversed*C.sigma (G.index i)*
+        C.b (G.index i)/C.a (G.index i))=
+        reflectionSign G.reversed*(C.beta (G.index i)+Real.arctan (C.sigma (G.index i)*
+          C.b (G.index i)/C.a (G.index i)))+(if G.reversed then Real.pi/2 else 0)-G.rotation+
+          (G.wrap i:ℝ)*(2*Real.pi) := by
+      rw [ht,CycleAction.lift]
+      ring
+    rw [harg,Real.cos_add_int_mul_two_pi]
+    cases h : G.reversed
+    · simp only [motionSquare,reflectionSquare,pullSquare,Bool.false_eq_true,ite_false,
+        Real.Angle.cos_coe,Real.Angle.sin_coe,C.frame_cos,C.frame_sin,reflectionSign,one_mul,
+        add_zero]
+      rw [Real.cos_sub]
+      ring
+    · simp only [motionSquare,reflectionSquare,pullSquare,reflectDiagonalSquare,ite_true,
+        Real.Angle.cos_coe,Real.Angle.sin_coe,C.frame_cos,C.frame_sin,reflectionSign]
+      rw [show -1*(C.beta (G.index i)+Real.arctan (C.sigma (G.index i)*C.b (G.index i)/
+          C.a (G.index i)))+Real.pi/2-G.rotation=Real.pi/2-((C.beta (G.index i)+
+          Real.arctan (C.sigma (G.index i)*C.b (G.index i)/C.a (G.index i)))+G.rotation) by ring,
+        Real.cos_pi_div_two_sub,Real.sin_add (C.beta (G.index i)+Real.arctan (C.sigma (G.index i)*
+          C.b (G.index i)/C.a (G.index i))) G.rotation]
+      ring
   frame_sin i := by
-    cases h : G.reversed <;>
-      simp [motionSquare,reflectionSquare,pullSquare,reflectDiagonalSquare,C.frame_cos,C.frame_sin,
-        CycleAction.lift,CycleAction.wrap,reflectionSign,h,Real.arctan_neg,
-        Real.cos_add,Real.sin_add,Real.cos_sub,Real.sin_sub] <;>
-      split <;> simp [Real.cos_add,Real.sin_add] <;> ring
+    change (motionSquare G.rotation G.reversed (C.square (G.index i))).sine=_
+    have ht : Real.arctan (reflectionSign G.reversed*C.sigma (G.index i)*C.b (G.index i)/
+        C.a (G.index i))=reflectionSign G.reversed*Real.arctan (C.sigma (G.index i)*
+        C.b (G.index i)/C.a (G.index i)) := by
+      cases G.reversed <;> simp [reflectionSign,neg_div,Real.arctan_neg]
+    have harg : G.lift C.beta i+Real.arctan (reflectionSign G.reversed*C.sigma (G.index i)*
+        C.b (G.index i)/C.a (G.index i))=
+        reflectionSign G.reversed*(C.beta (G.index i)+Real.arctan (C.sigma (G.index i)*
+          C.b (G.index i)/C.a (G.index i)))+(if G.reversed then Real.pi/2 else 0)-G.rotation+
+          (G.wrap i:ℝ)*(2*Real.pi) := by
+      rw [ht,CycleAction.lift]
+      ring
+    rw [harg,Real.sin_add_int_mul_two_pi]
+    cases h : G.reversed
+    · simp only [motionSquare,reflectionSquare,pullSquare,Bool.false_eq_true,ite_false,
+        Real.Angle.cos_coe,Real.Angle.sin_coe,C.frame_cos,C.frame_sin,reflectionSign,one_mul,
+        add_zero]
+      rw [Real.sin_sub]
+      ring
+    · simp only [motionSquare,reflectionSquare,pullSquare,reflectDiagonalSquare,ite_true,
+        Real.Angle.cos_coe,Real.Angle.sin_coe,C.frame_cos,C.frame_sin,reflectionSign]
+      rw [show -1*(C.beta (G.index i)+Real.arctan (C.sigma (G.index i)*C.b (G.index i)/
+          C.a (G.index i)))+Real.pi/2-G.rotation=Real.pi/2-((C.beta (G.index i)+
+          Real.arctan (C.sigma (G.index i)*C.b (G.index i)/C.a (G.index i)))+G.rotation) by ring,
+        Real.sin_pi_div_two_sub,Real.cos_add (C.beta (G.index i)+Real.arctan (C.sigma (G.index i)*
+          C.b (G.index i)/C.a (G.index i))) G.rotation]
+      ring
   gap_pos i := by rw [G.lift_gap]; exact C.gap_pos _
   gap_lt_pi i := by rw [G.lift_gap]; exact C.gap_lt_pi _
 
@@ -335,22 +429,25 @@ lemma CycleAction.canonical {q : ℝ} (G : CycleAction) (C : BoundaryCycle q) (i
   ring
 
 lemma CycleAction.axis_involutive (G : CycleAction) (a : SignedAxis) : G.axis (G.axis a)=a := by
-  cases h : G.reversed <;> cases a with
-  | mk owner sign => cases owner <;> cases sign <;> simp [CycleAction.axis,reflectedAxis,SignedAxis.reverse,AxisOwner.swap,AxisSign.flip,h]
+  rcases G with ⟨s,rev,rot⟩
+  rcases a with ⟨owner,sign⟩
+  cases rev <;> cases owner <;> cases sign <;> rfl
 
 lemma CycleAction.axis_feasible_iff {q : ℝ} (G : CycleAction) (C : BoundaryCycle q)
     (i : Vertex) (a : SignedAxis) :
     (G.axis a).Feasible ((G.boundary C).square i) ((G.boundary C).square (next i)) ↔
       a.Feasible (C.square (G.edge i)) (C.square (next (G.edge i))) := by
+  change (G.axis a).Feasible (motionSquare G.rotation G.reversed (C.square (G.index i)))
+      (motionSquare G.rotation G.reversed (C.square (G.index (next i)))) ↔ _
   have he := G.edge_endpoints i
   cases h : G.reversed
   · simp only [h,Bool.false_eq_true,ite_false,Prod.mk.injEq] at he
-    simpa [CycleAction.boundary,CycleAction.neighbor,CycleAction.axis,h,he.1,he.2]
-      using reflectedAxis_feasible_iff G.rotation false a _ _
+    rw [← he.2,← he.1]
+    simpa [CycleAction.axis,h] using reflectedAxis_feasible_iff G.rotation false a _ _
   · simp only [h,ite_true,Prod.mk.injEq] at he
-    simpa [CycleAction.boundary,CycleAction.neighbor,CycleAction.axis,h,he.1,he.2]
-      using (reflectedAxis_feasible_iff G.rotation true a.reverse _ _).trans
-        (reverse_feasible_iff a _ _)
+    rw [← he.2,← he.1]
+    simpa [CycleAction.axis,h] using
+      (reflectedAxis_feasible_iff G.rotation true a.reverse _ _).trans (reverse_feasible_iff a _ _)
 
 def CycleAction.radiusExpansion {q r : ℝ} (G : CycleAction) {C : BoundaryCycle q} {D : BoundaryCycle r}
     (h : RadiusExpansion C D) : RadiusExpansion (G.boundary C) (G.boundary D) where
@@ -368,10 +465,22 @@ def CycleAction.quarter (G : CycleAction) (m : Vertex → ℤ) (i : Vertex) : �
 
 lemma CycleAction.quarter_increment (G : CycleAction) (m : Vertex → ℤ) (i : Vertex) :
     integerQuarterIncrement (G.quarter m) i=integerQuarterIncrement m (G.edge i) := by
-  rcases G with ⟨shift,rev,rot⟩
-  cases rev <;> fin_cases shift <;> fin_cases i <;>
-    norm_num [CycleAction.quarter,CycleAction.index,CycleAction.edge,CycleAction.wrap,
-      reflectionSignInt,integerQuarterIncrement,next] <;> ring
+  have hgap : integerQuarterIncrement (G.quarter m) i=
+      reflectionSignInt G.reversed*(m (G.index (next i))-m (G.index i))+
+      4*(G.wrap (next i)-G.wrap i+(if i=6 then 1 else 0)) := by
+    simp only [integerQuarterIncrement,CycleAction.quarter]
+    split_ifs <;> ring
+  rw [hgap,CycleActions.wrap_step]
+  have he := G.edge_endpoints i
+  cases h : G.reversed
+  · simp only [h,Bool.false_eq_true,ite_false,Prod.mk.injEq] at he
+    rw [he.1,he.2]
+    simp only [integerQuarterIncrement,reflectionSignInt,Bool.false_eq_true,ite_false]
+    split_ifs <;> ring
+  · simp only [h,ite_true,Prod.mk.injEq] at he
+    rw [he.1,he.2]
+    simp only [integerQuarterIncrement,reflectionSignInt,ite_true]
+    split_ifs <;> ring
 
 def QuarterLift.act {q : ℝ} {C : BoundaryCycle q} (F : QuarterLift C) (G : CycleAction) :
     QuarterLift (G.boundary C) where

@@ -12,6 +12,7 @@ bound.
 -/
 
 @[expose] public section
+noncomputable section
 open Set
 
 namespace SquaresInCircles.Eight.Arithmetic
@@ -81,19 +82,30 @@ instance (a : PreparedArc) : Decidable a.NumericValid := by
 
 theorem endpointExpr_value (a : PreparedArc) (u : ℚ) (root : QInterval) :
     (a.endpointExpr u root).value = a.data.endpointA a.radius u := by
-  cases ho : a.data.outer <;> simp [ArcData.side,ho] at *
+  cases ho : a.data.outer
   · by_cases hs : a.data.tangent.hi ≤ 6/7
-    · simp [endpointExpr,ArcData.endpointA,ArcData.side,ho,hs,ScalarExpr.value,ScalarExpr.eval]
-    · by_cases hu : u=6/7
+    · have hside : a.data.side = true := by simp [ArcData.side,ho,hs]
+      simp [endpointExpr,ArcData.endpointA,hside,ho,ScalarExpr.value,ScalarExpr.eval]
+    · have hside : a.data.side = false := by simp [ArcData.side,ho,hs]
+      by_cases hu : u=6/7
       · subst u
-        norm_num [endpointExpr,ArcData.endpointA,ArcData.side,ho,hs,ScalarExpr.value,
-          ScalarExpr.eval,coreEndpointA]
-      · simp [endpointExpr,ArcData.endpointA,ArcData.side,ho,hs,hu,ScalarExpr.value,
-          ScalarExpr.div,ScalarExpr.eval,discriminant,coreEndpointA]
+        have hsq : Real.sqrt (((6/7:ℝ)+1)^2-(1+(6/7:ℝ)^2)*(71/36)) = 1/6 := by
+          rw [show ((6/7:ℝ)+1)^2-(1+(6/7:ℝ)^2)*(71/36) = (1/6)^2 by norm_num]
+          exact Real.sqrt_sq (by norm_num)
+        simp only [endpointExpr,ArcData.endpointA,hside,ho,ScalarExpr.value,
+          ScalarExpr.eval,coreEndpointA,Bool.false_eq_true,ite_false,true_and,ite_true]
+        push_cast
+        rw [hsq]
+        norm_num
+      · simp only [endpointExpr,ArcData.endpointA,hside,ho,hu,ScalarExpr.value,
+          ScalarExpr.div,ScalarExpr.eval,discriminant,coreEndpointA,Bool.false_eq_true,
+          ↓reduceIte,and_false]
         push_cast
         ring
-  · simp [endpointExpr,ArcData.endpointA,ArcData.side,ho,ScalarExpr.value,
-      ScalarExpr.div,ScalarExpr.eval,discriminant,outerEndpointA]
+  · have hside : a.data.side = false := by simp [ArcData.side,ho]
+    simp only [endpointExpr,ArcData.endpointA,hside,ho,ScalarExpr.value,
+      ScalarExpr.div,ScalarExpr.eval,discriminant,outerEndpointA,Bool.false_eq_true,
+      Bool.true_eq_false,↓reduceIte,false_and]
     push_cast
     ring
 
@@ -106,7 +118,7 @@ theorem bHi_value (a : PreparedArc) : a.bHi.value = (a.data.tangent.hi : ℝ)*a.
 
 theorem radiusExpr_value (a : PreparedArc) :
     a.radiusExpr.value = if a.data.outer then Real.sqrt a.radius else 1/12 := by
-  cases a.data.outer <;> simp [radiusExpr,ScalarExpr.value,ScalarExpr.eval]
+  cases ho : a.data.outer <;> simp [radiusExpr,ho,ScalarExpr.value,ScalarExpr.eval]
 
 def SupportDomain (a : PreparedArc) (x y : ℝ) : Prop :=
   a.bLo.value ≤ y ∧ y ≤ a.bHi.value ∧
@@ -122,14 +134,18 @@ theorem side_supportDomain {a : PreparedArc} (ha : a.NumericValid)
   have ho : a.data.outer=false := by
     cases h : a.data.outer <;> simp [ArcData.side,h] at hs ⊢
   have hhi : a.data.tangent.hi ≤ 6/7 := by simpa [ArcData.side,ho] using hs
-  have hx : x=7/12 := by simpa [ArcData.OnCurve,ho,hhi] using hxy.2.2.2.2
+  have hx : x=7/12 := by
+    have hon := hxy.2.2.2.2
+    simp only [ArcData.OnCurve,ho,hhi,Bool.false_eq_true,ite_false,ite_true] at hon
+    exact hon.1
   have ht := hxy.2.2.2.1
   have hl := (le_div_iff₀ hxy.1).mp ht.1
   have hu := (div_le_iff₀ hxy.1).mp ht.2
-  simp only [SupportDomain,hs,if_true]
+  simp only [SupportDomain,hs,ite_true]
   rw [bLo_value,bHi_value,aLo_value,aHi_value]
-  simp only [ArcData.endpointA,ho,hs,Bool.false_eq_true,if_false,if_true]
-  exact ⟨by nlinarith [hx],by nlinarith [hx],hx⟩
+  simp only [ArcData.endpointA,ho,hs,Bool.false_eq_true,ite_false,ite_true]
+  rw [hx] at hl hu
+  exact ⟨by linarith,by linarith,hx⟩
 
 /-- Circular semantic facts are isolated as a proposition whose premises are
 the explicit endpoint formulas, rather than interval-report fields. -/
@@ -155,33 +171,68 @@ theorem circleFacts {a : PreparedArc} (ha : a.NumericValid)
   have hlo0 : (0 : ℝ) ≤ a.data.tangent.lo := by exact_mod_cast ha.1.1
   have hlohi : (a.data.tangent.lo : ℝ) ≤ a.data.tangent.hi := by exact_mod_cast ha.1.2.1
   have hhi1 : (a.data.tangent.hi : ℝ) ≤ 1 := by exact_mod_cast ha.1.2.2.1
-  have hQ : (1/2 : ℝ) < a.radius := by exact_mod_cast ha.2.1
+  have hQ : (1/2 : ℝ) < a.radius := by
+    have h := (Rat.cast_lt (K := ℝ)).mpr ha.2.1
+    rw [Rat.cast_div,Rat.cast_one,Rat.cast_ofNat] at h
+    exact h
   have hon := hxy.2.2.2.2
+  have hx0 := hxy.1
+  have hy0 := hxy.2.1
   cases ho : a.data.outer with
   | true =>
       have hL := outerEndpoint_facts hQ ⟨hlo0,hlohi.trans hhi1⟩
       have hU := outerEndpoint_facts hQ ⟨hlo0.trans hlohi,hhi1⟩
       have hroot := Real.sq_sqrt (show (0 : ℝ) ≤ a.radius by linarith)
-      simp only [ArcData.OnCurve,ho,if_true] at hon
-      constructor <;>
-        simp only [aLo_value,aHi_value,bLo_value,bHi_value,radiusExpr_value,
-          ArcData.endpointA,ArcData.shift,ho,if_true] <;> push_cast <;>
-        nlinarith [hxy.1,hxy.2.1,hL.1,hL.2.1,hL.2.2.2,
-          hU.1,hU.2.1,hU.2.2.2,hon,hroot]
+      simp only [ArcData.OnCurve,ho,ite_true] at hon
+      have hsh : ((a.data.shift : ℚ) : ℝ) = -1/2 := by
+        simp [ArcData.shift,ho]
+      have hA : ∀ u : ℝ, a.data.endpointA a.radius u = outerEndpointA a.radius u := by
+        intro u; simp [ArcData.endpointA,ho]
+      have hR : a.radiusExpr.value = Real.sqrt a.radius := by
+        simp [radiusExpr_value,ho]
+      refine ⟨hx0,?_,?_,?_,?_,?_,?_,?_,?_,?_,?_,?_⟩ <;>
+        simp only [bLo_value,bHi_value,aLo_value,aHi_value,hsh,hA,hR,hroot]
+      · exact hL.1
+      · exact hU.1
+      · linarith
+      · linarith [hL.1]
+      · linarith [hU.1]
+      · linarith
+      · linarith [hL.2.1]
+      · linarith [hU.2.1]
+      · linarith [hon]
+      · linarith [hL.2.2.2]
+      · linarith [hU.2.2.2]
   | false =>
       have hbreak : ¬ a.data.tangent.hi ≤ 6/7 := by
         simpa [ArcData.side,ho] using hs
       have hlo : (6/7 : ℝ) ≤ a.data.tangent.lo := by
-        exact_mod_cast (ha.1.2.2.2 ho).resolve_left hbreak
+        have h := (Rat.cast_le (K := ℝ)).mpr ((ha.1.2.2.2 ho).resolve_left hbreak)
+        rw [Rat.cast_div,Rat.cast_ofNat,Rat.cast_ofNat] at h
+        exact h
       have hL := coreEndpoint_facts ⟨hlo,hlohi.trans hhi1⟩
       have hU := coreEndpoint_facts ⟨hlo.trans hlohi,hhi1⟩
-      simp only [ArcData.OnCurve,ho,if_false,hbreak] at hon
+      simp only [ArcData.OnCurve,ho,hbreak,Bool.false_eq_true,ite_false] at hon
       have hxshift : 1/2 < x := by nlinarith [hon.1,hon.2,hxy.2.2.1]
-      constructor <;>
-        simp only [aLo_value,aHi_value,bLo_value,bHi_value,radiusExpr_value,
-          ArcData.endpointA,ArcData.shift,ho,hs,if_false] <;> push_cast <;>
-        nlinarith [hxy.1,hxy.2.1,hL.1,hL.2.1,hL.2.2.2,
-          hU.1,hU.2.1,hU.2.2.2,hon.1,hon.2,hxshift]
+      have hsh : ((a.data.shift : ℚ) : ℝ) = 1/2 := by
+        simp [ArcData.shift,ho]
+      have hA : ∀ u : ℝ, a.data.endpointA a.radius u = coreEndpointA u := by
+        intro u; simp [ArcData.endpointA,ho,hs]
+      have hR : a.radiusExpr.value = 1/12 := by
+        simp [radiusExpr_value,ho]
+      refine ⟨hx0,?_,?_,?_,?_,?_,?_,?_,?_,?_,?_,?_⟩ <;>
+        simp only [bLo_value,bHi_value,aLo_value,aHi_value,hsh,hA,hR]
+      · linarith [hL.1]
+      · linarith [hU.1]
+      · exact hxshift
+      · exact hL.1
+      · exact hU.1
+      · exact hon.1
+      · exact hL.2.1
+      · exact hU.2.1
+      · linarith [hon.2]
+      · linarith [hL.2.2.2]
+      · linarith [hU.2.2.2]
 
 theorem circular_supportDomain {a : PreparedArc} (ha : a.NumericValid)
     (hs : a.data.side=false) {x y : ℝ} (hxy : a.data.Contains a.radius x y)
@@ -218,6 +269,25 @@ theorem ratioHi_valid {a : PreparedArc} (ha : a.NumericValid) : a.ratioHi.Valid 
   cases hs : a.data.side with
   | false => exact (ha.2.2.2.2.2 hs).2
   | true => simp [ratioHi,hs,ScalarExpr.Valid]
+
+/-- The precision of the square-root brackets. -/
+def rootScale : ℕ := 10 ^ 14
+
+/-- A bracket `[k, k + 1] / 10¹⁴` of `√x`, with `k = ⌊10¹⁴ √x⌋`; `NumericValid` checks that it
+encloses the root. -/
+def rootBracket (x : ℚ) : QInterval :=
+  let k := Nat.sqrt ((x.num.toNat * rootScale ^ 2) / x.den)
+  ⟨(k : ℚ) / rootScale, ((k + 1 : ℕ) : ℚ) / rootScale⟩
+
+/-- The prepared arc of an arc of a table of radius `Q`: the brackets of the square roots of
+the discriminants at its two tangent endpoints and, on the outer curve, of `Q`. -/
+def ofArc (Q : ℚ) (a : ArcData) : PreparedArc :=
+  let p : PreparedArc := ⟨a, Q, ⟨0,0⟩, ⟨0,0⟩, ⟨0,0⟩⟩
+  if a.side then p else
+    { p with
+      rootLo := rootBracket (p.discriminant a.tangent.lo)
+      rootHi := rootBracket (p.discriminant a.tangent.hi)
+      radiusRoot := if a.outer then rootBracket Q else ⟨0,0⟩ }
 
 end PreparedArc
 end SquaresInCircles.Eight.Arithmetic

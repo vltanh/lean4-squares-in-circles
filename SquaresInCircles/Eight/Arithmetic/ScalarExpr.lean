@@ -14,6 +14,7 @@ occurs in that theorem.
 -/
 
 @[expose] public section
+noncomputable section
 
 namespace SquaresInCircles.Eight.Arithmetic
 

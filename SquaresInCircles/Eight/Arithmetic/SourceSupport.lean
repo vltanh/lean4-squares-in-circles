@@ -12,6 +12,7 @@ original tangent arc; it does not select a representative state.
 -/
 
 @[expose] public section
+noncomputable section
 
 namespace SquaresInCircles.Eight.Arithmetic
 
@@ -89,6 +90,8 @@ theorem endpoints_sound {S : SourceSupport} (hS : S.Valid)
     (hmode : S.arc.data.side=true ∨ 0 ≤ S.X)
     (hl : m ≤ S.atLo.value) (hu : m ≤ S.atHi.value) :
     m ≤ (S.X : ℝ)*x+(S.Y : ℝ)*y := by
+  have hl' : m ≤ (S.X : ℝ)*S.arc.aLo.value+(S.Y : ℝ)*S.arc.bLo.value := hl
+  have hu' : m ≤ (S.X : ℝ)*S.arc.aHi.value+(S.Y : ℝ)*S.arc.bHi.value := hu
   have hd := S.arc.supportDomain hS.1 hxy
   cases hs : S.arc.data.side with
   | true =>
@@ -98,8 +101,8 @@ theorem endpoints_sound {S : SourceSupport} (hS : S.Valid)
       have hU : S.arc.aHi.value=7/12 := by
         simp [PreparedArc.aHi,PreparedArc.endpointExpr,hs,ScalarExpr.value,ScalarExpr.eval]
       apply side_endpoint_lower ⟨hd.1,hd.2.1⟩
-      · simpa [atLo,ScalarExpr.value,ScalarExpr.eval,hL,hx] using hl
-      · simpa [atHi,ScalarExpr.value,ScalarExpr.eval,hU,hx] using hu
+      · rw [hx]; rw [hL] at hl'; exact hl'
+      · rw [hx]; rw [hU] at hu'; exact hu'
   | false =>
       have hX : (0 : ℝ) ≤ S.X := by
         exact_mod_cast hmode.resolve_left (by simp [hs])
@@ -112,8 +115,8 @@ theorem endpoints_sound {S : SourceSupport} (hS : S.Valid)
       have hU := circle_branch hf.upper_shift hf.upper_circle
       rw [hdc.1]
       apply circle_endpoints_lower hX hdc.2 ⟨hd.1,hd.2.1⟩
-      · simpa [atLo,ScalarExpr.value,ScalarExpr.eval,hL] using hl
-      · simpa [atHi,ScalarExpr.value,ScalarExpr.eval,hU] using hu
+      · rw [← hL]; exact hl'
+      · rw [← hU]; exact hu'
 
 /-- The exact source lower bound, for every real state on the declared arc. -/
 theorem sound {S : SourceSupport} (hS : S.Valid) {x y : ℝ}
@@ -122,16 +125,25 @@ theorem sound {S : SourceSupport} (hS : S.Valid) {x y : ℝ}
   have hl := S.atLo.closed_sound (atLo_valid hS)
   have hu := S.atHi.closed_sound (atHi_valid hS)
   by_cases hep : S.arc.data.side || decide (0 ≤ S.X)
-  · have hm : S.mode=.endpoints := by simp [mode,hep]
+  · have hm : S.mode=.endpoints := by
+      unfold mode
+      rw [ite_eq_left hep]
     have hp : S.arc.data.side=true ∨ 0 ≤ S.X := by simpa using hep
     have hlq : S.lower ≤ (S.atLo.range closedBoxes).lo := by
       simp [lower,hm]
     have huq : S.lower ≤ (S.atHi.range closedBoxes).lo := by
       simp [lower,hm]
-    exact endpoints_sound hS hxy hp
-      ((by exact_mod_cast hlq).trans hl.1) ((by exact_mod_cast huq).trans hu.1)
+    have hlq' : ((S.lower : ℚ) : ℝ) ≤ ((S.atLo.range closedBoxes).lo : ℝ) := by
+      exact_mod_cast hlq
+    have huq' : ((S.lower : ℚ) : ℝ) ≤ ((S.atHi.range closedBoxes).lo : ℝ) := by
+      exact_mod_cast huq
+    exact endpoints_sound hS hxy hp (hlq'.trans hl.1) (huq'.trans hu.1)
   · have hs : S.arc.data.side=false := by
       cases h : S.arc.data.side <;> simp [h] at hep ⊢
+    have hX : ¬ (0 ≤ S.X) := by
+      intro h0
+      apply hep
+      simp [h0]
     have hd := S.arc.supportDomain hS.1 hxy
     have hf := S.arc.circleFacts hS.1 hs hxy
     have hdc : x=circleX S.arc.data.shift S.arc.radiusExpr.value y ∧
@@ -142,43 +154,75 @@ theorem sound {S : SourceSupport} (hS : S.Valid) {x y : ℝ}
     have hU := circle_branch hf.upper_shift hf.upper_circle
     have hdl := S.slopeLo.closed_sound (slopeLo_valid hS hs)
     have hdu := S.slopeHi.closed_sound (slopeHi_valid hS hs)
+    have hslopeLo : S.slopeLo.value =
+        (S.Y : ℝ)-(S.X : ℝ)*circleRatio S.arc.data.shift S.arc.radiusExpr.value S.arc.bLo.value := by
+      rw [← ratioLo_value hf hs]
+      change (S.Y : ℝ)+-((S.X : ℝ)*S.arc.ratioLo.value) = _
+      ring
+    have hslopeHi : S.slopeHi.value =
+        (S.Y : ℝ)-(S.X : ℝ)*circleRatio S.arc.data.shift S.arc.radiusExpr.value S.arc.bHi.value := by
+      rw [← ratioHi_value hf hs]
+      change (S.Y : ℝ)+-((S.X : ℝ)*S.arc.ratioHi.value) = _
+      ring
+    have hnot : ¬ (S.arc.data.side || decide (0 ≤ S.X)) = true := by simp [hs,hX]
     by_cases hdpos : 0 ≤ (S.slopeLo.range closedBoxes).lo ∧ 0 ≤ (S.slopeHi.range closedBoxes).lo
-    · have hm : S.mode=.lower := by simp [mode,hep,hdpos]
+    · have hm : S.mode=.lower := by
+        unfold mode
+        rw [ite_eq_right hnot,ite_eq_left hdpos]
       have hpL : 0 ≤ (S.Y : ℝ)-(S.X : ℝ)*circleRatio S.arc.data.shift S.arc.radiusExpr.value S.arc.bLo.value := by
         have hh : (0 : ℝ) ≤ (S.slopeLo.range closedBoxes).lo := by exact_mod_cast hdpos.1
         have hp := hh.trans hdl.1
-        simpa [slopeLo,ScalarExpr.value,ScalarExpr.sub,ScalarExpr.eval,ratioLo_value hf hs] using hp
+        rwa [hslopeLo] at hp
       have hpU : 0 ≤ (S.Y : ℝ)-(S.X : ℝ)*circleRatio S.arc.data.shift S.arc.radiusExpr.value S.arc.bHi.value := by
         have hh : (0 : ℝ) ≤ (S.slopeHi.range closedBoxes).lo := by exact_mod_cast hdpos.2
         have hp := hh.trans hdu.1
-        simpa [slopeHi,ScalarExpr.value,ScalarExpr.sub,ScalarExpr.eval,ratioHi_value hf hs] using hp
+        rwa [hslopeHi] at hp
       have hh := circle_lower_endpoint hdc.2 ⟨hd.1,hd.2.1⟩ hpL hpU
+      have hlow : S.lower = (S.atLo.range closedBoxes).lo := by simp [lower,hm]
       have hstart : (S.lower : ℝ) ≤ (S.X : ℝ)*S.arc.aLo.value+(S.Y : ℝ)*S.arc.bLo.value := by
-        simpa [lower,hm,atLo,ScalarExpr.value,ScalarExpr.eval] using hl.1
-      simpa [← hL,← hdc.1] using hstart.trans hh
+        rw [hlow]; exact hl.1
+      rw [hL] at hstart
+      have hfin := hstart.trans hh
+      rw [← hdc.1] at hfin
+      exact hfin
     · by_cases hdneg : (S.slopeLo.range closedBoxes).hi ≤ 0 ∧ (S.slopeHi.range closedBoxes).hi ≤ 0
-      · have hm : S.mode=.upper := by simp [mode,hep,hdpos,hdneg]
+      · have hm : S.mode=.upper := by
+          unfold mode
+          rw [ite_eq_right hnot,ite_eq_right hdpos,ite_eq_left hdneg]
         have hpL : (S.Y : ℝ)-(S.X : ℝ)*circleRatio S.arc.data.shift S.arc.radiusExpr.value S.arc.bLo.value ≤ 0 := by
           have hh : ((S.slopeLo.range closedBoxes).hi : ℝ) ≤ 0 := by exact_mod_cast hdneg.1
           have hp := hdl.2.trans hh
-          simpa [slopeLo,ScalarExpr.value,ScalarExpr.sub,ScalarExpr.eval,ratioLo_value hf hs] using hp
+          rwa [hslopeLo] at hp
         have hpU : (S.Y : ℝ)-(S.X : ℝ)*circleRatio S.arc.data.shift S.arc.radiusExpr.value S.arc.bHi.value ≤ 0 := by
           have hh : ((S.slopeHi.range closedBoxes).hi : ℝ) ≤ 0 := by exact_mod_cast hdneg.2
           have hp := hdu.2.trans hh
-          simpa [slopeHi,ScalarExpr.value,ScalarExpr.sub,ScalarExpr.eval,ratioHi_value hf hs] using hp
+          rwa [hslopeHi] at hp
         have hh := circle_upper_endpoint hdc.2 ⟨hd.1,hd.2.1⟩ hpL hpU
+        have hlow : S.lower = (S.atHi.range closedBoxes).lo := by simp [lower,hm]
         have hstart : (S.lower : ℝ) ≤ (S.X : ℝ)*S.arc.aHi.value+(S.Y : ℝ)*S.arc.bHi.value := by
-          simpa [lower,hm,atHi,ScalarExpr.value,ScalarExpr.eval] using hu.1
-        simpa [← hU,← hdc.1] using hstart.trans hh
-      · have hm : S.mode=.circle := by simp [mode,hep,hdpos,hdneg]
+          rw [hlow]; exact hu.1
+        rw [hU] at hstart
+        have hfin := hstart.trans hh
+        rw [← hdc.1] at hfin
+        exact hfin
+      · have hm : S.mode=.circle := by
+          unfold mode
+          rw [ite_eq_right hnot,ite_eq_right hdpos,ite_eq_right hdneg]
         have hc := S.onCircle.closed_sound (onCircle_valid hS)
         have hr : 0 ≤ S.arc.radiusExpr.value := by
           rw [PreparedArc.radiusExpr_value]
           split_ifs <;> positivity
         have hh := full_circle_lower hr hf.point_circle (X := S.X) (Y := S.Y)
+        have hlow : S.lower = (S.onCircle.range closedBoxes).lo := by simp [lower,hm]
+        have hval : S.onCircle.value = (S.arc.data.shift : ℝ)*((S.X : ℝ)+S.Y)-
+            S.arc.radiusExpr.value*Real.sqrt ((S.X : ℝ)^2+(S.Y : ℝ)^2) := by
+          change ((S.arc.data.shift*(S.X+S.Y) : ℚ) : ℝ)+
+            -(S.arc.radiusExpr.value*Real.sqrt (((S.X^2+S.Y^2 : ℚ)) : ℝ)) = _
+          push_cast
+          ring
         have hc' : (S.lower : ℝ) ≤ (S.arc.data.shift : ℝ)*((S.X : ℝ)+S.Y)-
             S.arc.radiusExpr.value*Real.sqrt ((S.X : ℝ)^2+(S.Y : ℝ)^2) := by
-          simpa [lower,hm,onCircle,normExpr,ScalarExpr.value,ScalarExpr.sub,ScalarExpr.eval] using hc.1
+          rw [hlow,← hval]; exact hc.1
         exact hc'.trans hh
 
 end SourceSupport

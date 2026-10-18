@@ -1,6 +1,7 @@
 module
 
-public import SquaresInCircles.Eight.Generated.WordCertificates
+public import SquaresInCircles.Eight.Generated.PairsWords
+public import SquaresInCircles.Eight.Arithmetic.WordProblems
 public import SquaresInCircles.Eight.CycleActions
 
 /-!
@@ -11,18 +12,17 @@ The two remaining wrong words use their separate role-dependent label
 systems.  A marker is evaluated once per vertex, so the target value on
 one edge is exactly the source value on the next edge.
 
-The finite interval problems receive the actual radial states, frame
-increments, physical gaps and original separating-axis margins.  The
-nineteen allowed sign cases follow from the two initial zero increments
-and the impossibility of a negative-to-positive zero edge.
+Each pair inequality is a problem of a pair table (`Generated/Pairs`): its
+ends carry the actual radial charts, signs and labels, and the table proves
+it for every state pair and frame difference `|d| ≤ 7/10` with the physical
+gap and the original separating-axis margin. The nineteen allowed sign cases
+follow from the two initial zero increments and the impossibility of a
+negative-to-positive zero edge.
 
 Dihedral normalization acts on actual squares and lifts through
 `CycleAction.boundary` and `QuarterLift.act`.  In particular reflection
 reverses an edge before transporting its separating axis.  The extra one
 in the reflected vertex shift accounts for that endpoint reversal.
-
-Uncompiled source draft.  None of the finite proof scripts imported from
-`Generated.WordCertificates` has been evaluated in this session.
 -/
 
 @[expose] public section
@@ -31,14 +31,14 @@ open scoped BigOperators
 
 namespace SquaresInCircles.Eight.WordGeometry
 
-open Arithmetic Arithmetic.RealBox WordProblems
+open Arithmetic Arithmetic.PairCover WordProblems
 
 def positiveOf (C : BoundaryCycle Q0) (i : Vertex) : Bool :=
   if C.sigma i=1 then true else false
 
 lemma positiveOf_spec (C : BoundaryCycle Q0) (i : Vertex) :
     (WordProblems.sign (positiveOf C i) : ℝ)=C.sigma i := by
-  rcases C.sigma_sign i with h | h <;> simp [positiveOf,WordProblems.sign,h]
+  rcases C.sigma_sign i with h | h <;> norm_num [positiveOf,WordProblems.sign,h]
 
 lemma alpha_formula (C : BoundaryCycle Q0) (i : Vertex) :
     C.alpha i=(WordProblems.sign (positiveOf C i):ℝ)*Real.arctan (C.b i/C.a i) := by
@@ -150,38 +150,10 @@ lemma original_margin (C : BoundaryCycle Q0) (F : QuarterLift C)
   rw [← he]
   exact sub_nonneg.mpr hj
 
-lemma environment (C : BoundaryCycle Q0) (F : QuarterLift C)
-    (hgap : ∀ i,19/25<angleGap C.beta i) (i : Vertex) (j : Fin 4)
-    (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i))) :
-    (pairBox (C.kind i) (C.kind (next i))).Mem ![C.b i,C.b (next i),difference F i] ∧
-      (∀ e ∈ pairHypotheses (F.word hgap pi_lt_22_over_7 i)
-        (C.kind i) (C.kind (next i)) (positiveOf C i) (positiveOf C (next i)) j,
-        0 ≤ e.eval ![C.b i,C.b (next i),difference F i]) := by
-  have ha : 1/2<C.a i := by linarith [(Candidate.canonical_bounds C le_rfl i).1]
-  have hA : 1/2<C.a (next i) := by
-    linarith [(Candidate.canonical_bounds C le_rfl (next i)).1]
-  have hδ : difference F i+((F.word hgap pi_lt_22_over_7 i).val:ℝ)*Real.pi/2+
-      (WordProblems.sign (positiveOf C i):ℝ)*Real.arctan (C.b i/C.a i)-
-      (WordProblems.sign (positiveOf C (next i)):ℝ)*Real.arctan (C.b (next i)/C.a (next i))=
-        angleGap C.beta i := by
-    rw [← alpha_formula,← alpha_formula]
-    exact phase_gap C F hgap i
-  apply local_environment (C.kind i) (C.kind (next i)) (positiveOf C i)
-    (positiveOf C (next i)) (F.word hgap pi_lt_22_over_7 i) j
-    ha hA (C.b_nonneg i) (C.b_nonneg (next i)) (C.b_le_a i) (C.b_le_a (next i))
-    (C.boundary i) (C.boundary (next i)) (difference_small F i).le
-  · rw [hδ]
-    exact ⟨(hgap i).le,(boundary_gap_upper C le_rfl i).le⟩
-  · exact original_margin C F hgap i j hj
-
 def commonValue (kind : RadialKind) (σ : Bool) (b : ℝ) : ℝ :=
   let a := primaryValue kind b
   (WordProblems.sign σ:ℝ)*(if kind=.outer then -9/100+(13/200)*a+(203/200)*b
     else (73/10)*(7/12-a)+(291/250)*b)
-
-lemma commonLabel_eval (kind : RadialKind) (σ : Bool) (b : E) (env : Fin 3→ℝ) :
-    (commonLabel kind σ b).eval env=commonValue kind σ (b.eval env) := by
-  cases kind <;> simp [commonLabel,commonValue,Expr.eval,primary_eval] <;> ring
 
 def commonMarker (C : BoundaryCycle Q0) (i : Vertex) : ℝ :=
   commonValue (C.kind i) (positiveOf C i) (C.b i)
@@ -197,17 +169,207 @@ def wrongValue (w : WrongWord) (i : Vertex) (kind : RadialKind) (σ : Bool) (b :
       (WordProblems.sign σ:ℝ)*((v 0:ℝ)/100000+(v 1:ℝ)/100000*a+
         (v 2:ℝ)/100000*b+(v 3:ℝ)/100000*b^2+(v 4:ℝ)/100000*a*b)
 
-lemma wrongLabel_eval (w : WrongWord) (i : Vertex) (kind : RadialKind)
-    (σ : Bool) (b : E) (env : Fin 3→ℝ) :
-    (wrongLabel w i kind σ b).eval env=wrongValue w i kind σ (b.eval env) := by
-  cases w <;> simp [wrongLabel,wrongValue,Expr.eval,primary_eval] <;> push_cast <;> ring
-
 def wrongMarker (C : BoundaryCycle Q0) (w : WrongWord) (i : Vertex) : ℝ :=
   wrongValue w i (C.kind i) (positiveOf C i) (C.b i)
 
-lemma phase_eval (k : Fin 3) (env : Fin 3→ℝ) :
-    (phase k).eval env=env 2+(k.val:ℝ)*Real.pi/2 := by
-  simp [phase,Expr.eval] <;> ring
+/-! ### The pair tables -/
+
+/-- The tangent range of a radial kind. -/
+def kindRange : RadialKind → QInterval
+  | .outer => ⟨0, 1⟩
+  | .coreSide => ⟨0, 6/7⟩
+  | .coreCorner => ⟨6/7, 1⟩
+
+/-- The end of a pair at a vertex of radial kind `kind`, sign `σ` and label `L`. -/
+def kindEnd (kind : RadialKind) (σ : Bool) (L : QuadLabel) : PairEnd :=
+  ⟨decide (kind = .outer), decide (kind = .coreSide), σ, kindRange kind, L⟩
+
+/-- The common label of a radial kind with the sign `σ`. -/
+def commonQuad (kind : RadialKind) (σ : Bool) : QuadLabel :=
+  (if kind = .outer then (⟨-9/100, -9/100, 13/200, 203/200, 0, 0⟩ : QuadLabel)
+    else ⟨73/10*(7/12), 73/10*(7/12), -(73/10), 291/250, 0, 0⟩).signed σ
+
+/-- The label of a wrong word at a role, for a radial kind and the sign `σ`. -/
+def wrongQuad (w : WrongWord) (i : Vertex) (kind : RadialKind) (σ : Bool) : QuadLabel :=
+  match w with
+  | .short =>
+      let v := shortCoefficients i (radialIndex kind) (signIndex σ)
+      ⟨v 0/100000, v 0/100000, v 1/100000, sign σ*v 2/100000, 0, 0⟩
+  | .second =>
+      let v := secondCoefficients i (radialIndex kind) (signIndex σ)
+      (⟨v 0/100000, v 0/100000, v 1/100000, v 2/100000, v 3/100000, v 4/100000⟩ : QuadLabel).signed σ
+
+/-- The two halves `(k, ±, 7/10)` of the frame difference, with `u⁺` over `10⁸`. -/
+def wordHalves (k : ℕ) : List (ℕ × Bool × ℕ) := [(k, true, 70000000), (k, false, 70000000)]
+
+/-- The pair problem of a common increment `k`. -/
+def commonPairProblem (k : Fin 3) (ks kt : RadialKind) (σ τ : Bool) (j : Fin 4) : PairProblem :=
+  ⟨kindEnd ks σ (commonQuad ks σ), kindEnd kt τ (commonQuad kt τ), axisOf (j.val + 1), 0,
+    commonGamma k, wordHalves k.val⟩
+
+/-- The pair problem of the edge `i` of a wrong word. -/
+def wrongPairProblem (w : WrongWord) (i : Vertex) (ks kt : RadialKind) (σ τ : Bool) (j : Fin 4) :
+    PairProblem :=
+  ⟨kindEnd ks σ (wrongQuad w i ks σ), kindEnd kt τ (wrongQuad w (next i) kt τ),
+    axisOf (j.val + 1), 0, wrongGamma w i, wordHalves (wrongWord w i).val⟩
+
+/-- The common tables. -/
+def commonTable : Fin 3 → List PairProblem :=
+  ![Generated.Pairs.Common0.problems, Generated.Pairs.Common1.problems,
+    Generated.Pairs.Common2.problems]
+
+/-- The tables of the edges of the wrong words. -/
+def wrongTable : WrongWord → Vertex → List PairProblem
+  | .short => ![Generated.Pairs.Short0.problems, Generated.Pairs.Short1.problems,
+      Generated.Pairs.Short2.problems, Generated.Pairs.Short3.problems,
+      Generated.Pairs.Short4.problems, Generated.Pairs.Short5.problems,
+      Generated.Pairs.Short6.problems]
+  | .second => ![Generated.Pairs.Second0.problems, Generated.Pairs.Second1.problems,
+      Generated.Pairs.Second2.problems, Generated.Pairs.Second3.problems,
+      Generated.Pairs.Second4.problems, Generated.Pairs.Second5.problems,
+      Generated.Pairs.Second6.problems]
+
+theorem commonTable_holds (k : Fin 3) :
+    ∀ P ∈ commonTable k, P.Holds ((9789/2500 : ℚ) : ℝ) 100000000 := by
+  fin_cases k
+  · exact Generated.Pairs.Common0.sound
+  · exact Generated.Pairs.Common1.sound
+  · exact Generated.Pairs.Common2.sound
+
+theorem wrongTable_holds (w : WrongWord) (i : Vertex) :
+    ∀ P ∈ wrongTable w i, P.Holds ((9789/2500 : ℚ) : ℝ) 100000000 := by
+  cases w <;> fin_cases i
+  · exact Generated.Pairs.Short0.sound
+  · exact Generated.Pairs.Short1.sound
+  · exact Generated.Pairs.Short2.sound
+  · exact Generated.Pairs.Short3.sound
+  · exact Generated.Pairs.Short4.sound
+  · exact Generated.Pairs.Short5.sound
+  · exact Generated.Pairs.Short6.sound
+  · exact Generated.Pairs.Second0.sound
+  · exact Generated.Pairs.Second1.sound
+  · exact Generated.Pairs.Second2.sound
+  · exact Generated.Pairs.Second3.sound
+  · exact Generated.Pairs.Second4.sound
+  · exact Generated.Pairs.Second5.sound
+  · exact Generated.Pairs.Second6.sound
+
+theorem commonPairProblem_mem : ∀ (k : Fin 3) (ks kt : RadialKind) (σ τ : Bool) (j : Fin 4),
+    commonPairProblem k ks kt σ τ j ∈ commonTable k := by
+  decide +kernel
+
+theorem wrongPairProblem_mem : ∀ (w : WrongWord) (i : Vertex) (ks kt : RadialKind)
+    (σ τ : Bool) (j : Fin 4), allowed w i σ τ → wrongPairProblem w i ks kt σ τ j ∈ wrongTable w i := by
+  decide +kernel
+
+lemma sign_cast (σ : Bool) : ((WordProblems.sign σ : ℚ) : ℝ) = sgnR σ := by
+  cases σ <;> simp [WordProblems.sign, sgnR]
+
+/-- A vertex is a point of the chart of its radial kind, with its tangent in the chart range. -/
+lemma vertex_mem (C : BoundaryCycle Q0) (i : Vertex) (σ : Bool) (L : QuadLabel) :
+    (kindEnd (C.kind i) σ L).Mem ((9789/2500 : ℚ) : ℝ) (kindEnd (C.kind i) σ L).range
+      (C.a i) (C.b i) := by
+  have hb := C.boundary i
+  have ha0 := C.a_pos i
+  have hb0 := C.b_nonneg i
+  have hba := C.b_le_a i
+  have hQ : ((9789/2500 : ℚ) : ℝ) = Q0 := by norm_num [Q0]
+  rw [hQ]
+  cases hk : C.kind i
+  · rw [hk] at hb
+    simp only [kindEnd, kindRange, PairEnd.Mem, PairEnd.OnCurve, QInterval.Mem, decide_true,
+      ↓reduceIte]
+    push_cast
+    refine ⟨ha0, hb0, hba, ⟨div_nonneg hb0 ha0.le, (div_le_one ha0).mpr hba⟩, ?_⟩
+    simpa [BoundaryState, SquaresInCircles.phi] using hb
+  · rw [hk] at hb
+    obtain ⟨hA, hB⟩ := hb
+    simp only [kindEnd, kindRange, PairEnd.Mem, PairEnd.OnCurve, QInterval.Mem,
+      reduceCtorEq, decide_false, decide_true, Bool.false_eq_true, ↓reduceIte]
+    push_cast
+    refine ⟨ha0, hb0, hba, ⟨div_nonneg hb0 ha0.le, ?_⟩, hA, hB⟩
+    rw [div_le_iff₀ ha0, hA]
+    linarith
+  · rw [hk] at hb
+    obtain ⟨hB, he⟩ := hb
+    simp only [kindEnd, kindRange, PairEnd.Mem, PairEnd.OnCurve, QInterval.Mem,
+      reduceCtorEq, decide_false, Bool.false_eq_true, ↓reduceIte]
+    push_cast
+    have haU : C.a i ≤ 7/12 := by nlinarith [sq_nonneg (C.b i - 1/2)]
+    refine ⟨ha0, hb0, hba, ⟨?_, (div_le_one ha0).mpr hba⟩, hB, he⟩
+    rw [le_div_iff₀ ha0]
+    linarith
+
+/-- A pair problem of the tables with the actual ends of the edge `i` gives the charged
+inequality of the edge, for every admissible pair of label constants. -/
+lemma word_pair (C : BoundaryCycle Q0) (F : QuarterLift C)
+    (hgap : ∀ i,19/25<angleGap C.beta i) (i : Vertex) (j : Fin 4)
+    (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i))) (Ls Lt : QuadLabel) (γ : ℚ)
+    (hP : (⟨kindEnd (C.kind i) (positiveOf C i) Ls, kindEnd (C.kind (next i)) (positiveOf C (next i)) Lt,
+      axisOf (j.val + 1), 0, γ, wordHalves (F.word hgap pi_lt_22_over_7 i).val⟩ : PairProblem).Holds
+      ((9789/2500 : ℚ) : ℝ) 100000000)
+    {cs ct : ℝ} (hcs : (Ls.cLo : ℝ) ≤ cs) (hct : ct ≤ Lt.cHi) :
+    (γ : ℝ) < phaseValue F hgap i + Ls.eval cs (C.a i) (C.b i) -
+      Lt.eval ct (C.a (next i)) (C.b (next i)) := by
+  set k := F.word hgap pi_lt_22_over_7 i
+  set d := difference F i
+  have hd := abs_lt.mp (difference_small F i)
+  set r : Bool := decide (0 ≤ d)
+  have hphi : phiOf k.val r |d| = phaseValue F hgap i := by
+    simp only [phiOf, phaseValue, r]
+    by_cases h0 : 0 ≤ d
+    · simp [h0, sgnR, abs_of_nonneg h0, d]
+      ring
+    · simp [h0, sgnR, abs_of_neg (lt_of_not_ge h0), d]
+      ring
+  have hmem : (k.val, r, 70000000) ∈ wordHalves k.val := by
+    cases hr : r <;> simp [wordHalves]
+  have hc := hP _ hmem cs ct hcs hct (C.a i) (C.b i) (C.a (next i)) (C.b (next i)) |d|
+    (vertex_mem C i _ _) (vertex_mem C (next i) _ _) (by simp) (by
+      have := difference_small F i
+      norm_num
+      linarith)
+  have he := phase_gap C F hgap i
+  rw [alpha_formula, alpha_formula, sign_cast, sign_cast] at he
+  simp only [PairProblem.gap, hphi] at hc
+  dsimp only [kindEnd] at hc
+  have hg1 : 19/25 ≤ phaseValue F hgap i + sgnR (positiveOf C i) * Real.arctan (C.b i / C.a i) -
+      sgnR (positiveOf C (next i)) * Real.arctan (C.b (next i) / C.a (next i)) := by
+    rw [he]
+    exact (hgap i).le
+  have hg2 : phaseValue F hgap i + sgnR (positiveOf C i) * Real.arctan (C.b i / C.a i) -
+      sgnR (positiveOf C (next i)) * Real.arctan (C.b (next i) / C.a (next i)) ≤
+        3 * Real.pi / 4 := by
+    rw [he]
+    exact (boundary_gap_upper C le_rfl i).le
+  have hm : 0 ≤ Arithmetic.forwardMargin (axisOf (j.val + 1)) (sgnR (positiveOf C i))
+      (sgnR (positiveOf C (next i))) (C.a i) (C.b i) (C.a (next i)) (C.b (next i))
+      (phaseValue F hgap i) := by
+    rw [forwardMargin_actual]
+    have hax : (axisOf (j.val + 1)).index = j := by fin_cases j <;> rfl
+    rw [hax, ← sign_cast, ← sign_cast]
+    exact original_margin C F hgap i j hj
+  have h := hc hg1 hg2 hm
+  push_cast at h
+  linarith
+
+lemma commonValue_eq (kind : RadialKind) (σ : Bool) (b : ℝ) :
+    commonValue kind σ b = (commonQuad kind σ).eval (commonQuad kind σ).cLo
+      (primaryValue kind b) b := by
+  cases kind <;> cases σ <;>
+    simp [commonValue, commonQuad, QuadLabel.signed, QuadLabel.neg, QuadLabel.eval,
+      WordProblems.sign] <;> ring
+
+lemma wrongValue_eq (w : WrongWord) (i : Vertex) (kind : RadialKind) (σ : Bool) (b : ℝ) :
+    wrongValue w i kind σ b = (wrongQuad w i kind σ).eval (wrongQuad w i kind σ).cLo
+      (primaryValue kind b) b := by
+  cases w <;> cases σ <;>
+    simp [wrongValue, wrongQuad, QuadLabel.signed, QuadLabel.neg, QuadLabel.eval,
+      WordProblems.sign] <;> ring
+
+lemma primary_vertex (C : BoundaryCycle Q0) (i : Vertex) : primaryValue (C.kind i) (C.b i) = C.a i :=
+  (actual_primary (C.kind i) (by linarith [(Candidate.canonical_bounds C le_rfl i).1])
+    (C.b_nonneg i) (C.b_le_a i) (C.boundary i)).1.symm
 
 lemma marker_budget (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hgap : ∀ i,19/25<angleGap C.beta i) (marker : Vertex→ℝ) :
@@ -222,18 +384,16 @@ lemma common_pair (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i))) :
     (commonGamma (F.word hgap pi_lt_22_over_7 i):ℝ)<
       phaseValue F hgap i+commonMarker C i-commonMarker C (next i) := by
-  obtain ⟨hbox,hhyps⟩ := environment C F hgap i j hj
-  have h := certify_sound
-    (common_certificates (F.word hgap pi_lt_22_over_7 i) (C.kind i) (C.kind (next i))
-      (positiveOf C i) (positiveOf C (next i)) j)
-    ![C.b i,C.b (next i),difference F i] hbox hhyps
-  change 0 < (phase (F.word hgap pi_lt_22_over_7 i)+
-    commonLabel (C.kind i) (positiveOf C i) (.var 0)-
-    commonLabel (C.kind (next i)) (positiveOf C (next i)) (.var 1)-
-    (.const (commonGamma (F.word hgap pi_lt_22_over_7 i)))).eval
-      ![C.b i,C.b (next i),difference F i] at h
-  simp only [Expr.eval,phase_eval,commonLabel_eval] at h
-  simpa [phaseValue,commonMarker,Expr.eval] using sub_pos.mp h
+  have hP := commonTable_holds _ _ (commonPairProblem_mem (F.word hgap pi_lt_22_over_7 i)
+    (C.kind i) (C.kind (next i)) (positiveOf C i) (positiveOf C (next i)) j)
+  have h := word_pair C F hgap i j hj _ _ _ hP le_rfl le_rfl
+  rw [commonMarker, commonMarker, commonValue_eq, commonValue_eq, primary_vertex, primary_vertex]
+  have hhi : ((commonQuad (C.kind (next i)) (positiveOf C (next i))).cLo : ℝ) =
+      (commonQuad (C.kind (next i)) (positiveOf C (next i))).cHi := by
+    cases C.kind (next i) <;> cases positiveOf C (next i) <;>
+      simp [commonQuad, QuadLabel.signed, QuadLabel.neg]
+  rw [hhi]
+  exact h
 
 lemma commonGamma_numerator (k : Fin 3) :
     (commonGamma k:ℝ)=(doubleWordCostNumerator k:ℝ)/10000 := by
@@ -308,18 +468,18 @@ lemma wrong_pair (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hw : F.word hgap pi_lt_22_over_7=wrongWord w) (i : Vertex) (j : Fin 4)
     (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i))) :
     (wrongGamma w i:ℝ)<phaseValue F hgap i+wrongMarker C w i-wrongMarker C w (next i) := by
-  obtain ⟨hbox,hhyps⟩ := environment C F hgap i j hj
-  rw [hw] at hhyps
-  have h := certify_sound
-    (wrong_certificates w i (C.kind i) (C.kind (next i)) (positiveOf C i)
-      (positiveOf C (next i)) j (actual_allowed C F hgap w hw i))
-    ![C.b i,C.b (next i),difference F i] hbox hhyps
-  change 0 < (phase (wrongWord w i)+
-    wrongLabel w i (C.kind i) (positiveOf C i) (.var 0)-
-    wrongLabel w (next i) (C.kind (next i)) (positiveOf C (next i)) (.var 1)-
-    (.const (wrongGamma w i))).eval ![C.b i,C.b (next i),difference F i] at h
-  simp only [Expr.eval,phase_eval,wrongLabel_eval] at h
-  simpa [phaseValue,hw,wrongMarker,Expr.eval] using sub_pos.mp h
+  have hP := wrongTable_holds w i _ (wrongPairProblem_mem w i (C.kind i) (C.kind (next i))
+    (positiveOf C i) (positiveOf C (next i)) j (actual_allowed C F hgap w hw i))
+  have hk : wordHalves (wrongWord w i).val =
+      wordHalves (F.word hgap pi_lt_22_over_7 i).val := by rw [hw]
+  simp only [wrongPairProblem, hk] at hP
+  have h := word_pair C F hgap i j hj _ _ _ hP le_rfl le_rfl
+  rw [wrongMarker, wrongMarker, wrongValue_eq, wrongValue_eq, primary_vertex, primary_vertex]
+  have hhi : ((wrongQuad w (next i) (C.kind (next i)) (positiveOf C (next i))).cLo : ℝ) =
+      (wrongQuad w (next i) (C.kind (next i)) (positiveOf C (next i))).cHi := by
+    cases w <;> cases positiveOf C (next i) <;> simp [wrongQuad, QuadLabel.signed, QuadLabel.neg]
+  rw [hhi]
+  exact h
 
 lemma wrongGamma_sum (w : WrongWord) :
     (710/113:ℝ)<∑ i,(wrongGamma w i:ℝ) := by

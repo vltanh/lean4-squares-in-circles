@@ -3,11 +3,12 @@ module
 public import SquaresInCircles.Eight.Arithmetic.AffineTableData
 
 @[expose] public section
+noncomputable section
 namespace SquaresInCircles.Eight.Generated.Affine.Mismatch026To01Affine
 open Arithmetic
 
 /-- Complete original arc data; schema eight-affine-v1. -/
-def meta : AffineTableMeta :=
+noncomputable def table : AffineTableMeta :=
   { radius := (1957767069/500000000)
     arcs := [
       ⟨0,0,false,true,⟨(1/2),(15/28)⟩,⟨(-1419576329/5000000000),0,(4699287159/5000000000)⟩⟩,
@@ -418,6 +419,7 @@ def meta : AffineTableMeta :=
     differenceRange := ![⟨(-13/50),(13/50)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-13/50),(13/50)⟩, ⟨(-13/50),(13/50)⟩, ⟨(-13/50),(13/50)⟩, ⟨(-13/50),(13/50)⟩, ⟨(-7/10),(7/10)⟩]
     allowedAxes := ![[.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four]] }
 
-theorem arc_count : meta.arcs.length = 401 := by rfl
+set_option maxRecDepth 10000 in
+theorem arc_count : table.arcs.length = 401 := by rfl
 
 end SquaresInCircles.Eight.Generated.Affine.Mismatch026To01Affine

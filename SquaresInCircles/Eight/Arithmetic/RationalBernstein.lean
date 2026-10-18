@@ -12,23 +12,24 @@ arithmetic still enters through ordinary Lean equality proofs.
 -/
 
 @[expose] public section
+noncomputable section
 open scoped BigOperators
 
 namespace SquaresInCircles.Eight.Arithmetic
 
 def QPoly.toPolynomial : QPoly → Polynomial ℚ
   | [] => 0
-  | a::p => Polynomial.C a+Polynomial.X*p.toPolynomial
+  | a::p => Polynomial.C a+Polynomial.X*QPoly.toPolynomial p
 
 def QPoly.evalRat : QPoly → ℚ → ℚ
-  | [],_ => 0 | a::p,x => a+x*p.evalRat x
+  | [],_ => 0 | a::p,x => a+x*QPoly.evalRat p x
 
 theorem QPoly.evalRat_cast (p : QPoly) (x : ℚ) : (p.evalRat x : ℝ) = p.eval x := by
-  induction p <;> simp [evalRat,eval,*]
+  induction p <;> simp [evalRat,eval, *]
 
 theorem QPoly.eval_toPolynomial (p : QPoly) (x : ℝ) :
     Polynomial.eval₂ (Rat.castHom ℝ) x p.toPolynomial = p.eval x := by
-  induction p <;> simp [toPolynomial,eval,*]
+  induction p <;> simp [toPolynomial,eval, *]
 
 def rationalBernstein (n : ℕ) (b : ℕ → ℚ) : Polynomial ℚ :=
   ∑ i ∈ Finset.range (n+1), Polynomial.C (b i*(n.choose i : ℚ))*
@@ -36,14 +37,20 @@ def rationalBernstein (n : ℕ) (b : ℕ → ℚ) : Polynomial ℚ :=
 
 theorem rationalBernstein_eval (n : ℕ) (b : ℕ → ℚ) (x : ℝ) :
     Polynomial.eval₂ (Rat.castHom ℝ) x (rationalBernstein n b) = bernsteinEval n b x := by
-  simp [rationalBernstein,bernsteinEval,bernsteinBasis,mul_assoc,mul_comm,mul_left_comm]
+  simp only [rationalBernstein,bernsteinEval,bernsteinBasis,Polynomial.eval₂_finsetSum]
+  refine Finset.sum_congr rfl (fun i _ => ?_)
+  simp only [Polynomial.eval₂_mul,Polynomial.eval₂_C,Polynomial.eval₂_natCast,Polynomial.eval₂_pow,
+    Polynomial.eval₂_sub,Polynomial.eval₂_one,Polynomial.eval₂_X,map_mul,map_natCast,
+    Rat.coe_castHom]
+  ring
 
 def BernsteinRow.AlgebraicIdentity (r : BernsteinRow) : Prop :=
   r.polynomial.toPolynomial.comp
     (Polynomial.C r.interval.lo+Polynomial.C (r.interval.hi-r.interval.lo)*Polynomial.X) =
       rationalBernstein r.degree r.coefficient
 
-instance (r : BernsteinRow) : Decidable r.AlgebraicIdentity := inferInstance
+instance (r : BernsteinRow) : Decidable r.AlgebraicIdentity := by
+  unfold BernsteinRow.AlgebraicIdentity; infer_instance
 
 theorem BernsteinRow.expansion_of_algebraic {r : BernsteinRow} (hr : r.AlgebraicIdentity) (t : ℝ) :
     r.polynomial.eval ((r.interval.lo : ℝ)+(r.interval.hi-r.interval.lo : ℚ)*t) =
@@ -74,8 +81,10 @@ def BernsteinRow.WeakCheck (r : BernsteinRow) : Prop :=
   else r.interval.lo < r.interval.hi ∧ r.AlgebraicIdentity ∧
     (∀ i : Fin (r.degree+1), 0 ≤ r.coefficient i)
 
-instance (r : BernsteinRow) : Decidable r.StrictCheck := by unfold StrictCheck; infer_instance
-instance (r : BernsteinRow) : Decidable r.WeakCheck := by unfold WeakCheck; infer_instance
+instance (r : BernsteinRow) : Decidable r.StrictCheck := by
+  unfold BernsteinRow.StrictCheck; infer_instance
+instance (r : BernsteinRow) : Decidable r.WeakCheck := by
+  unfold BernsteinRow.WeakCheck; infer_instance
 
 theorem BernsteinRow.strictCheck_sound {r : BernsteinRow} (hr : r.StrictCheck)
     {x : ℝ} (hx : r.interval.Mem x) : 0 < r.polynomial.eval x := by
@@ -135,7 +144,7 @@ theorem BernsteinRow.weakCheck_sound {r : BernsteinRow} (hr : r.WeakCheck)
       fun i hi => hp.2.2 ⟨i,Nat.lt_succ_of_le hi⟩
     have hh := bernstein_lower ht hb
     rw [← r.expansion_of_algebraic hp.2.1 t,hident] at hh
-    exact hh
+    exact_mod_cast hh
 
 def ParamPoly.strictCheck {n : ℕ} (boxes : QBox n) (I : QInterval) (p : ParamPoly n) : Prop :=
   p.Valid boxes ∧ (makeBernsteinRow (IntervalPoly.lower (p.compile boxes)) I).StrictCheck

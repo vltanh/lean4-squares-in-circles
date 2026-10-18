@@ -6,14 +6,22 @@ public import SquaresInCircles.Eight.ExactFamily.Generated.StationaryLocalizatio
 public import SquaresInCircles.Eight.ExactFamily.Coordinates
 
 /-!
-# Existence and uniqueness of the stationary zero
+# Eight squares: the stationary zero
 
-Uncompiled draft.  The local argument uses the minimum on a fixed compact
-rectangle.  The complete generated closed cover sends every admissible
-stationary zero to that rectangle.  The cover does not supply existence;
-existence follows from continuity, two opposite value signs, and the
-intermediate value theorem.  The Hessian certificate gives curvature 1/4
-in the position and half-angle coordinates.
+For each squared radius `q` in `[qMinus, Q0]` the defect `F(q, ·, ·)` of the chain, as a function
+of the position `y` and the half-angle tangent `z` of the tilt, is strongly convex on the fixed
+compact rectangle `poseBox`: the interval bounds on its Hessian give it curvature `1/4` in both
+coordinates (`hessian_data`, `family_strong_convex`). Its minimum over the rectangle is attained
+at an interior point (`minimum_interior`), the only stationary point there
+(`stationary_pose_unique`). The minimum value decreases in `q` with slope between `3` and `4`
+(`minimum_radius_difference`), so it is continuous, and it is positive at `qMinus` and negative at
+`Q0` (`minimum_endpoint_signs`). By the intermediate value theorem it vanishes at exactly one
+`qStar` (`unique_minimum_zero`), and `(qStar, sharpPose)` is the only simultaneous zero of `F`,
+`F_y` and `F_z` in these boxes (`stationary_existsUnique`).
+
+Existence comes from this argument alone. The closed cover of
+`Generated/StationaryLocalization.lean` sends every stationary zero of the analytic strip into the
+rectangle, and `Stationary.lean` uses it for uniqueness.
 -/
 
 @[expose] public section
@@ -39,10 +47,16 @@ def familyZZ (q : ℝ) (p : Pose) : ℝ := FzzFormula.eval ![q,p.1,p.2]
 
 theorem local_mem {q : ℝ} {p : Pose} (hq : q ∈ radiusBox) (hp : p ∈ poseBox) :
     localBox.Mem ![q,p.1,p.2] := by
+  have hq' : (7831/2000:ℝ) ≤ q ∧ q ≤ 9789/2500 := hq
+  have hy : -(937/1000:ℝ) ≤ p.1 ∧ p.1 ≤ -(179/200) := hp.1
+  have hz : (1/20:ℝ) ≤ p.2 ∧ p.2 ≤ 81/1000 := hp.2
   intro i; fin_cases i
-  · exact hq
-  · exact hp.1
-  · exact hp.2
+  · norm_num [localBox,QInterval.Mem]
+    exact hq'
+  · norm_num [localBox,QInterval.Mem]
+    constructor <;> linarith [hy.1, hy.2]
+  · norm_num [localBox,QInterval.Mem]
+    exact hz
 
 theorem trial_mem : trial ∈ poseBox := by
   norm_num [trial,poseBox,trialY,trialZ]
@@ -50,10 +64,14 @@ theorem trial_mem : trial ∈ poseBox := by
 theorem family_continuous : Continuous (fun x : ℝ × Pose => familyValue x.1 x.2) := by
   simp only [familyValue,F_eval]
   unfold scalarF
-  fun_prop (disch := positivity)
+  push_cast
+  fun_prop (disch := intro x; positivity)
 
 theorem family_continuous_pose (q : ℝ) : Continuous (familyValue q) := by
-  exact family_continuous.comp (continuous_const.prod_mk continuous_id)
+  have h := family_continuous.comp (continuous_const.prodMk continuous_id :
+    Continuous fun p : Pose => (q,p))
+  rw [Function.comp_def] at h
+  simpa using h
 
 theorem family_regular {q : ℝ} {p : Pose} (hq : q ∈ radiusBox) (hp : p ∈ poseBox) :
     FFormula.RegularAt ![q,p.1,p.2] ∧
@@ -72,6 +90,7 @@ theorem hessian_data {q : ℝ} {p : Pose} (hq : q ∈ radiusBox) (hp : p ∈ pos
   have hd := (determinant_bound i j _ hij).1
   have hy := (fullFyy_bound _ he).1
   have heq := determinant_eval ![q,p.1,p.2]
+  rw [show determinantFormula = formula258 from rfl] at heq
   exact ⟨hy,by dsimp [familyYY,familyYZ,familyZZ]; linarith⟩
 
 theorem quadratic_form_bound {A B C : ℝ} (hA : 6 ≤ A)
@@ -97,10 +116,12 @@ theorem segment_deriv (q : ℝ) (a b : Pose) (t : ℝ) :
       (![0,b.1-a.1,b.2-a.2] i) t := by
   intro i; fin_cases i
   · simpa using hasDerivAt_const t q
-  · convert (((hasDerivAt_const t 1).sub (hasDerivAt_id t)).mul_const a.1).add
-      ((hasDerivAt_id t).mul_const b.1) using 1 <;> simp [segment] <;> ring
-  · convert (((hasDerivAt_const t 1).sub (hasDerivAt_id t)).mul_const a.2).add
-      ((hasDerivAt_id t).mul_const b.2) using 1 <;> simp [segment] <;> ring
+  · convert (((hasDerivAt_id' t).const_sub 1).mul_const a.1).fun_add
+      ((hasDerivAt_id' t).mul_const b.1) using 1 <;> simp [segment]
+    ring
+  · convert (((hasDerivAt_id' t).const_sub 1).mul_const a.2).fun_add
+      ((hasDerivAt_id' t).mul_const b.2) using 1 <;> simp [segment]
+    ring
 
 theorem family_segment_first {q : ℝ} (hq : q ∈ radiusBox)
     {a b : Pose} (ha : a ∈ poseBox) (hb : b ∈ poseBox)
@@ -150,7 +171,10 @@ theorem family_strong_convex {q : ℝ} (hq : q ∈ radiusBox)
     (fun s hs => by
       obtain ⟨hA,hdet⟩ := hessian_data hq (segment_mem ha hb hs)
       exact quadratic_form_bound hA hdet _ _)
-  simpa [segment] using hcurv
+  have h0 : segment a b 0 = a := by simp [segment]
+  have h1 : segment a b 1 = b := by simp [segment]
+  simp only [h0,h1] at hcurv
+  linarith
 
 theorem stationary_pose_unique {q : ℝ} (hq : q ∈ radiusBox)
     {a b : Pose} (ha : a ∈ poseBox) (hb : b ∈ poseBox)
@@ -182,11 +206,16 @@ theorem minimumValue_le (q : ℝ) {p : Pose} (hp : p ∈ poseBox) :
 
 theorem trial_gradients {q : ℝ} (hq : q ∈ radiusBox) :
     |familyY q trial| ≤ 1/5000 ∧ |familyZ q trial| ≤ 1/2500 := by
+  have hq' : (7831/2000:ℝ) ≤ q ∧ q ≤ 9789/2500 := hq
   have hY := trialFy_bound ![q,trialY,trialZ] (by
-    intro i; fin_cases i <;> norm_num [trialFyBox,QInterval.Mem] <;> exact hq)
+    intro i; fin_cases i <;> norm_num [trialFyBox,QInterval.Mem,trialY,trialZ]
+    exact hq')
   have hZ := trialFz_bound ![q,trialY,trialZ] (by
-    intro i; fin_cases i <;> norm_num [trialFzBox,QInterval.Mem] <;> exact hq)
-  exact ⟨abs_le.mpr hY,abs_le.mpr hZ⟩
+    intro i; fin_cases i <;> norm_num [trialFzBox,QInterval.Mem,trialY,trialZ]
+    exact hq')
+  change (-1/5000:ℝ) ≤ familyY q trial ∧ familyY q trial ≤ 1/5000 at hY
+  change (-1/2500:ℝ) ≤ familyZ q trial ∧ familyZ q trial ≤ 1/2500 at hZ
+  exact ⟨abs_le.mpr ⟨by linarith [hY.1],hY.2⟩,abs_le.mpr ⟨by linarith [hZ.1],hZ.2⟩⟩
 
 theorem minimum_interior {q : ℝ} (hq : q ∈ radiusBox) :
     -(937/1000) < (minimizingPose q).1 ∧ (minimizingPose q).1 < -(179/200) ∧
@@ -218,31 +247,40 @@ theorem family_partial_y {q : ℝ} {p : Pose} (hq : q ∈ radiusBox) (hp : p ∈
     HasDerivAt (fun y => familyValue q (y,p.2)) (familyY q p) p.1 := by
   have h := Formula.hasDerivAt_partial FFormula 1 ![q,p.1,p.2] (family_regular hq hp).1
   rw [Fy_diff] at h
-  convert h using 1
-  · funext y
+  have hfun : (fun t => FFormula.eval (Function.update ![q,p.1,p.2] 1 t)) =
+      (fun y => familyValue q (y,p.2)) := by
+    funext y
+    simp only [familyValue]
     congr 1
     ext i; fin_cases i <;> simp [Function.update]
-  · rfl
+  rw [hfun] at h
+  exact h
 
 theorem family_partial_z {q : ℝ} {p : Pose} (hq : q ∈ radiusBox) (hp : p ∈ poseBox) :
     HasDerivAt (fun z => familyValue q (p.1,z)) (familyZ q p) p.2 := by
   have h := Formula.hasDerivAt_partial FFormula 2 ![q,p.1,p.2] (family_regular hq hp).1
   rw [Fz_diff] at h
-  convert h using 1
-  · funext z
+  have hfun : (fun t => FFormula.eval (Function.update ![q,p.1,p.2] 2 t)) =
+      (fun z => familyValue q (p.1,z)) := by
+    funext z
+    simp only [familyValue]
     congr 1
     ext i; fin_cases i <;> simp [Function.update]
-  · rfl
+  rw [hfun] at h
+  exact h
 
 theorem family_partial_q {q : ℝ} {p : Pose} (hq : q ∈ radiusBox) (hp : p ∈ poseBox) :
     HasDerivAt (fun r => familyValue r p) (familyQ q p) q := by
   have h := Formula.hasDerivAt_partial FFormula 0 ![q,p.1,p.2] (family_regular hq hp).1
   rw [Fq_diff] at h
-  convert h using 1
-  · funext r
+  have hfun : (fun t => FFormula.eval (Function.update ![q,p.1,p.2] 0 t)) =
+      (fun r => familyValue r p) := by
+    funext r
+    simp only [familyValue]
     congr 1
     ext i; fin_cases i <;> simp [Function.update]
-  · rfl
+  rw [hfun] at h
+  exact h
 
 theorem minimizingPose_stationary {q : ℝ} (hq : q ∈ radiusBox) :
     familyY q (minimizingPose q)=0 ∧ familyZ q (minimizingPose q)=0 := by
@@ -274,22 +312,23 @@ theorem family_radius_difference {q r : ℝ} (hq : q ∈ radiusBox) (hr : r ∈ 
       familyValue r p-familyValue q p ≤ -3*(r-q) := by
   have hanti := antiOn_of_hasDeriv_nonpos (l:=7831/2000) (u:=9789/2500)
     (f:=fun x => familyValue x p+3*x) (d:=fun x => familyQ x p+3)
-    (by exact ((family_continuous.comp (continuous_id.prod_mk continuous_const)).add
+    (by exact ((family_continuous.comp (continuous_id.prodMk continuous_const)).add
       (continuous_const.mul continuous_id)).continuousOn)
     (fun x hx => by
-      convert (family_partial_q ⟨hx.1.le,hx.2.le⟩ hp).add
-        ((hasDerivAt_id x).const_mul 3) using 1 <;> ring)
+      convert (family_partial_q ⟨hx.1.le,hx.2.le⟩ hp).fun_add
+        ((hasDerivAt_id' x).const_mul 3) using 1; ring)
     (fun x hx => by linarith [(family_q_bound ⟨hx.1.le,hx.2.le⟩ hp).2])
   have hmono := monoOn_of_hasDeriv_nonneg (l:=7831/2000) (u:=9789/2500)
     (f:=fun x => familyValue x p+4*x) (d:=fun x => familyQ x p+4)
-    (by exact ((family_continuous.comp (continuous_id.prod_mk continuous_const)).add
+    (by exact ((family_continuous.comp (continuous_id.prodMk continuous_const)).add
       (continuous_const.mul continuous_id)).continuousOn)
     (fun x hx => by
-      convert (family_partial_q ⟨hx.1.le,hx.2.le⟩ hp).add
-        ((hasDerivAt_id x).const_mul 4) using 1 <;> ring)
+      convert (family_partial_q ⟨hx.1.le,hx.2.le⟩ hp).fun_add
+        ((hasDerivAt_id' x).const_mul 4) using 1; ring)
     (fun x hx => by linarith [(family_q_bound ⟨hx.1.le,hx.2.le⟩ hp).1])
   have h₁ := hanti hq hr hqr
   have h₂ := hmono hq hr hqr
+  dsimp only at h₁ h₂
   constructor <;> linarith
 
 theorem minimum_radius_difference {q r : ℝ} (hq : q ∈ radiusBox) (hr : r ∈ radiusBox)
@@ -328,23 +367,25 @@ theorem minimum_trial_lower {q : ℝ} (hq : q ∈ radiusBox) :
 theorem minimum_endpoint_signs :
     0 < minimumValue (7831/2000) ∧ minimumValue (9789/2500) < 0 := by
   have hL := lowerTest_bound ![7831/2000,trialY,trialZ]
-    (by intro i; fin_cases i <;> norm_num [lowerTestBox,QInterval.Mem])
+    (by intro i; fin_cases i <;> norm_num [lowerTestBox,QInterval.Mem,trialY,trialZ])
   have hU := upperTest_bound ![9789/2500,trialY,trialZ]
-    (by intro i; fin_cases i <;> norm_num [upperTestBox,QInterval.Mem])
+    (by intro i; fin_cases i <;> norm_num [upperTestBox,QInterval.Mem,trialY,trialZ])
   have hcurv := minimum_trial_lower (q:=7831/2000) (by norm_num [radiusBox])
   obtain ⟨hy,hz⟩ := trial_gradients (q:=7831/2000) (by norm_num [radiusBox])
   have hy' := abs_le.mp hy
   have hz' := abs_le.mp hz
   have hupper := minimumValue_le (9789/2500) trial_mem
   change (1/8000:ℝ) ≤ familyValue (7831/2000) trial ∧ _ at hL
-  change _ ∧ familyValue (9789/2500) trial ≤ -(1/5000) at hU
+  change _ ∧ familyValue (9789/2500) trial ≤ (-1/5000) at hU
   constructor <;> nlinarith
 
 theorem unique_minimum_zero : ∃! q : ℝ, q ∈ radiusBox ∧ minimumValue q=0 := by
   have hs := minimum_endpoint_signs
   have hcont : ContinuousOn (fun q => -minimumValue q) radiusBox := minimum_continuous.neg
   obtain ⟨q,hq,hzero⟩ := intermediate_value_Icc (by norm_num : (7831/2000:ℝ) ≤ 9789/2500)
-    hcont ⟨by linarith [hs.1],by linarith [hs.2]⟩
+    hcont ⟨show -minimumValue (7831/2000) ≤ 0 by linarith [hs.1],
+      show 0 ≤ -minimumValue (9789/2500) by linarith [hs.2]⟩
+  dsimp only at hzero
   refine ⟨q,⟨hq,by linarith⟩,?_⟩
   intro r hr
   rcases lt_trichotomy r q with h | h | h
@@ -363,8 +404,9 @@ theorem sharpPose_stationary : familyY qStar sharpPose=0 ∧ familyZ qStar sharp
   minimizingPose_stationary qStar_mem
 theorem sharpPose_value : familyValue qStar sharpPose=0 := minimum_qStar
 
-/-- This is the stationary root theorem in value/derivative coordinates.  The
-algebraic `Coordinates.IsStationary` adapter is given in `Stationary.lean`. -/
+/-- The stationary zero in the variables `(q, y, z)` of the formulas: the only point of the boxes
+where `F`, `F_y` and `F_z` vanish. `Stationary.lean` translates it into the stationary system
+`Coordinates.IsStationary`. -/
 theorem stationary_existsUnique : ∃! x : ℝ × Pose,
     x.1 ∈ radiusBox ∧ x.2 ∈ poseBox ∧ familyValue x.1 x.2=0 ∧
       familyY x.1 x.2=0 ∧ familyZ x.1 x.2=0 := by

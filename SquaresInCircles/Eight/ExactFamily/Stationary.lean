@@ -4,11 +4,16 @@ public import SquaresInCircles.Eight.ExactFamily.Analysis
 public import SquaresInCircles.Eight.ExactFamily.Weights
 
 /-!
-# The exact selected stationary configuration
+# Eight squares: the stationary configuration
 
-Uncompiled draft.  `sharpData` is selected from the analytic existence theorem;
-its equations, branch signs, and uniqueness are conclusions.  Decimal strings
-below are rational brackets, never definitions of the stationary root.
+`sharpData` is the chain at the stationary zero `(qStar, sharpPose)` of `Analysis.lean`, with its
+coordinates given by the successive square roots (`radicalCoordinates`). Its equations, its
+branch signs and its uniqueness are theorems: it solves the stationary system
+(`sharpData_stationary`), and every solution of that system equals it (`stationary_unique`),
+because the closed cover of `Generated/StationaryLocalization.lean` puts every solution in the
+rectangle where the stationary zero is unique (`stationary_local`). The decimals below are
+rational brackets for `qStar` and the coordinates (`qStar_bracket`, `qStar_limits`,
+`sharp_coordinates`, `sharp_y`), not definitions of them.
 -/
 
 @[expose] public section
@@ -39,7 +44,7 @@ theorem radical_formula_values (q y z : ℝ) :
   simp [xOne_eval,xTwo_eval,yThree_eval,xFour_eval,cosine_eval,sine_eval,
     hOne_eval,hTwo_eval,scalarxOne,scalarxTwo,scalaryThree,scalarxFour,
     scalarcosine,scalarsine,scalarhOne,scalarhTwo,radicalCoordinates,
-    c,s,h₁,h₂,y₄,halfAngleCos,halfAngleSin,div_eq_mul_inv]
+    c,s,h₁,h₂,y₄,halfAngleCos,halfAngleSin,div_eq_mul_inv,sub_eq_add_neg]
 
 theorem radical_local_bounds {q y z : ℝ} (he : localBox.Mem ![q,y,z]) :
     17428/10000 ≤ (radicalCoordinates q y z).x₁ ∧
@@ -61,25 +66,31 @@ theorem radical_local_bounds {q y z : ℝ} (he : localBox.Mem ![q,y,z]) :
   have h₄ := localXFour_bound _ he
   have h₅ := localHOne_bound _ he
   have h₆ := localHTwo_bound _ he
-  simpa only [← hx₁,← hx₂,← hy₃,← hx₄,← hh₁,← hh₂] using
-    And.intro h₁.1 (And.intro h₁.2 (And.intro h₂.1 (And.intro h₂.2
-      (And.intro h₃.1 (And.intro h₃.2 (And.intro h₄.1 (And.intro h₄.2
-        (And.intro h₅.1 (And.intro h₅.2 h₆)))))))))
+  rw [show formula10 = xOneFormula from rfl, hx₁] at h₁
+  rw [show formula15 = xTwoFormula from rfl, hx₂] at h₂
+  rw [show formula21 = yThreeFormula from rfl, hy₃] at h₃
+  rw [show formula28 = xFourFormula from rfl, hx₄] at h₄
+  rw [show formula42 = hOneFormula from rfl, hh₁] at h₅
+  rw [show formula50 = hTwoFormula from rfl, hh₂] at h₆
+  exact ⟨by linarith only [h₁.1],by linarith only [h₁.2],by linarith only [h₂.1],
+    by linarith only [h₂.2],by linarith only [h₃.1],by linarith only [h₃.2],
+    by linarith only [h₄.1],by linarith only [h₄.2],by linarith only [h₅.1],
+    by linarith only [h₅.2],by linarith only [h₆.1],by linarith only [h₆.2]⟩
 
 theorem radical_isChain {q y z : ℝ} (he : localBox.Mem ![q,y,z]) :
     (radicalCoordinates q y z).IsChain := by
   obtain ⟨hx₁,_,hx₂,_,hy₃,_,_,hx₄,_⟩ := radical_local_bounds he
-  have h₁ : 0 < (radicalCoordinates q y z).x₁ := by linarith
-  have h₂ : 0 < (radicalCoordinates q y z).x₂ := by linarith
-  have h₃ : 0 < (radicalCoordinates q y z).y₃ := by linarith
-  have h₄ : (radicalCoordinates q y z).x₄ < 0 := by linarith
+  have h₁ : 0 < (radicalCoordinates q y z).x₁ := by linarith only [hx₁]
+  have h₂ : 0 < (radicalCoordinates q y z).x₂ := by linarith only [hx₂]
+  have h₃ : 0 < (radicalCoordinates q y z).y₃ := by linarith only [hy₃]
+  have h₄ : (radicalCoordinates q y z).x₄ < 0 := by linarith only [hx₄]
   have r₁ : 0 ≤ q-y^2 := (Real.sqrt_pos.mp h₁).le
   have r₂ : 0 ≤ q-(y+2)^2 := (Real.sqrt_pos.mp h₂).le
   have r₃ : 0 ≤ q-(Real.sqrt (q-(y+2)^2)-3)^2 := (Real.sqrt_pos.mp h₃).le
   have r₄ : 0 ≤ q-(Real.sqrt (q-(Real.sqrt (q-(y+2)^2)-3)^2)-2)^2 := by
     apply le_of_lt (Real.sqrt_pos.mp ?_)
     dsimp [radicalCoordinates] at h₄
-    linarith
+    linarith only [h₄]
   refine ⟨h₁,h₂,h₃,h₄,?_,?_,?_,?_⟩ <;>
     simp [radicalCoordinates,x₃,y₄,Real.sq_sqrt,r₁,r₂,r₃,r₄] <;> ring
 
@@ -89,17 +100,21 @@ theorem radical_weightDomain {q y z : ℝ} (he : localBox.Mem ![q,y,z]) :
   have hy := he 1
   have hz := he 2
   norm_num [localBox,QInterval.Mem] at hy hz
-  refine ⟨by linarith,by linarith,by linarith,?_,by linarith,
-    by simpa [radicalCoordinates] using (by linarith : y<0),
-    by simpa [radicalCoordinates] using (by linarith : 0<y+2),
-    halfAngleCos_pos (by rw [abs_lt]; constructor <;> linarith),
-    halfAngleSin_pos (by linarith),by linarith,by linarith⟩
-  dsimp [x₃]; linarith
+  have hyy : (radicalCoordinates q y z).y = y := rfl
+  have hzz : (radicalCoordinates q y z).z = z := rfl
+  refine ⟨by linarith only [hx₁],by linarith only [hx₂],by linarith only [hy₃],?_,
+    by linarith only [hx₄],
+    by rw [hyy]; linarith only [hy],
+    by rw [hyy]; linarith only [hy],
+    halfAngleCos_pos (by rw [hzz,abs_lt]; constructor <;> linarith only [hz]),
+    halfAngleSin_pos (by rw [hzz]; linarith only [hz]),by linarith only [hh₁],
+    by linarith only [hh₂]⟩
+  dsimp [x₃]; linarith only [hx₂u]
 
 theorem familyValue_radical (q y z : ℝ) :
     familyValue q (y,z) = (radicalCoordinates q y z).defect := by
   simp [familyValue,F_eval,scalarF,radicalCoordinates,defect,h₁,h₂,c,s,y₄,
-    halfAngleCos,halfAngleSin,div_eq_mul_inv]
+    halfAngleCos,halfAngleSin,div_eq_mul_inv,sub_eq_add_neg]
 
 theorem familyY_radical {q y z : ℝ}
     (h : (radicalCoordinates q y z).IsChain) :
@@ -112,8 +127,9 @@ theorem familyY_radical {q y z : ℝ}
   simp only [familyY,Fy_eval]
   dsimp [scalarFy,positionDerivative,h₁deriv,h₂deriv,y₄deriv,
     h₁,h₂,c,s,x₃,y₄,halfAngleCos,halfAngleSin,radicalCoordinates] at *
-  field_simp [hn₁,hn₂,hn₃,hn₄,hden]
-  ring
+  push_cast
+  simp only [sub_eq_add_neg]
+  ring_nf
 
 theorem familyZ_radical (q y z : ℝ) :
     familyZ q (y,z) = (2/(1+z^2))*(radicalCoordinates q y z).tiltDerivative := by
@@ -132,13 +148,13 @@ theorem chain_eq_radical {d : Coordinates} (hd : d.IsChain) :
 theorem stationary_local {d : Coordinates} (hd : d.IsStationary) :
     localBox.Mem ![d.q,d.y,d.z] := by
   have hc := chain_eq_radical hd.toIsChain
-  have hzden : 0 < 1-d.z^2 := by nlinarith [hd.z_pos,hd.z_lt_one]
+  have hzden : 0 < 1-d.z^2 := by nlinarith only [hd.z_pos, hd.z_lt_one]
   have hzsmall : d.z < 1/10 := by
     have ht := (div_lt_iff₀ hzden).mp hd.tilt_range
-    nlinarith [sq_nonneg d.z]
+    linarith [sq_nonneg d.z]
   apply stationary_localization ![d.q,d.y,d.z]
   · intro i; fin_cases i <;> norm_num [initialBox,QInterval.Mem]
-    · exact ⟨by nlinarith [hd.q_lower],hd.q_upper⟩
+    · exact ⟨by linarith [hd.q_lower],hd.q_upper⟩
     · exact ⟨hd.y_lower.le,hd.y_upper.le⟩
     · exact ⟨hd.z_pos.le,hzsmall.le⟩
   · intro i; fin_cases i
@@ -153,20 +169,20 @@ theorem stationary_local {d : Coordinates} (hd : d.IsStationary) :
 
 theorem sharp_endpoint_signs : 0 < minimumValue sharpLower ∧ minimumValue sharpUpper < 0 := by
   have hL := sharpLowF_bound ![sharpLower,trialY,trialZ]
-    (by intro i; fin_cases i <;> norm_num [sharpLower,sharpLowFBox,QInterval.Mem])
+    (by intro i; fin_cases i <;> norm_num [sharpLower,sharpLowFBox,QInterval.Mem,trialY,trialZ])
   have hU := sharpHighF_bound ![sharpUpper,trialY,trialZ]
-    (by intro i; fin_cases i <;> norm_num [sharpUpper,sharpHighFBox,QInterval.Mem])
+    (by intro i; fin_cases i <;> norm_num [sharpUpper,sharpHighFBox,QInterval.Mem,trialY,trialZ])
   have hy := sharpLowFy_bound ![sharpLower,trialY,trialZ]
-    (by intro i; fin_cases i <;> norm_num [sharpLower,sharpLowFyBox,QInterval.Mem])
+    (by intro i; fin_cases i <;> norm_num [sharpLower,sharpLowFyBox,QInterval.Mem,trialY,trialZ])
   have hz := sharpLowFz_bound ![sharpLower,trialY,trialZ]
-    (by intro i; fin_cases i <;> norm_num [sharpLower,sharpLowFzBox,QInterval.Mem])
+    (by intro i; fin_cases i <;> norm_num [sharpLower,sharpLowFzBox,QInterval.Mem,trialY,trialZ])
   have hlo := minimum_trial_lower (q:=sharpLower) (by norm_num [sharpLower,radiusBox])
   have hup := minimumValue_le sharpUpper trial_mem
   change _ ≤ familyValue sharpLower trial ∧ _ at hL
   change _ ∧ familyValue sharpUpper trial ≤ _ at hU
   change _ ≤ familyY sharpLower trial ∧ familyY sharpLower trial ≤ _ at hy
   change _ ≤ familyZ sharpLower trial ∧ familyZ sharpLower trial ≤ _ at hz
-  constructor <;> nlinarith
+  constructor <;> nlinarith only [hlo, hL, hy, hz, hup, hU]
 
 theorem qStar_bracket : sharpLower < qStar ∧ qStar < sharpUpper := by
   obtain ⟨hL,hU⟩ := sharp_endpoint_signs
@@ -192,10 +208,12 @@ theorem sharpPose_close : |sharpPose.1-trialY| < 1/1000000000000 ∧
     |sharpPose.2-trialZ| < 1/1000000000000 := by
   have hq := qStar_bracket
   have hy := sharpTrialFy_bound ![qStar,trialY,trialZ] (by
-    intro i; fin_cases i <;> norm_num [sharpTrialFyBox,QInterval.Mem]
+    intro i; fin_cases i <;> norm_num [sharpTrialFyBox,QInterval.Mem,trialY,trialZ]
+    norm_num [sharpLower,sharpUpper] at hq
     exact ⟨hq.1.le,hq.2.le⟩)
   have hz := sharpTrialFz_bound ![qStar,trialY,trialZ] (by
-    intro i; fin_cases i <;> norm_num [sharpTrialFzBox,QInterval.Mem]
+    intro i; fin_cases i <;> norm_num [sharpTrialFzBox,QInterval.Mem,trialY,trialZ]
+    norm_num [sharpLower,sharpUpper] at hq
     exact ⟨hq.1.le,hq.2.le⟩)
   have hc := family_strong_convex qStar_mem trial_mem (minimizingPose_mem qStar)
   have hm := minimumValue_le qStar trial_mem
@@ -204,10 +222,10 @@ theorem sharpPose_close : |sharpPose.1-trialY| < 1/1000000000000 ∧
   have hr : (sharpPose.1-trialY)^2+(sharpPose.2-trialZ)^2 <
       (1/1000000000000:ℝ)^2 := by
     dsimp [sharpPose,minimumValue,trial] at *
-    nlinarith [sq_nonneg ((minimizingPose qStar).1-trialY+8*familyY qStar (trialY,trialZ)),
-      sq_nonneg ((minimizingPose qStar).2-trialZ+8*familyZ qStar (trialY,trialZ))]
-  constructor <;> rw [abs_lt] <;> constructor <;>
-    nlinarith [sq_nonneg (sharpPose.1-trialY),sq_nonneg (sharpPose.2-trialZ)]
+    nlinarith only [sq_nonneg ((minimizingPose qStar).1-trialY+8*familyY qStar (trialY,trialZ)),
+      sq_nonneg ((minimizingPose qStar).2-trialZ+8*familyZ qStar (trialY,trialZ)), hc, hm, hy, hz]
+  exact ⟨abs_lt_of_sq_lt_sq (by linarith only [hr,sq_nonneg (sharpPose.2-trialZ)]) (by norm_num),
+    abs_lt_of_sq_lt_sq (by linarith only [hr,sq_nonneg (sharpPose.1-trialY)]) (by norm_num)⟩
 
 theorem sharpBox_mem : sharpBox.Mem ![qStar,sharpPose.1,sharpPose.2] := by
   have hq := qStar_bracket
@@ -216,42 +234,40 @@ theorem sharpBox_mem : sharpBox.Mem ![qStar,sharpPose.1,sharpPose.2] := by
   have hz' := abs_lt.mp hz
   intro i; fin_cases i <;>
     norm_num [sharpBox,QInterval.Mem,sharpLower,sharpUpper,trialY,trialZ] at * <;>
-    constructor <;> linarith
+    constructor <;> linarith only [hq, hy', hz']
 
 def sharpData : Coordinates := radicalCoordinates qStar sharpPose.1 sharpPose.2
 
 theorem sharpData_stationary : sharpData.IsStationary := by
   have he := local_mem qStar_mem (minimizingPose_mem qStar)
-  have hchain := radical_isChain he
+  have hchain : sharpData.IsChain := radical_isChain he
   have hrad := radical_local_bounds he
   have hy := (minimizingPose_mem qStar).1
   have hz := (minimizingPose_mem qStar).2
   norm_num [poseBox] at hy hz
   refine { hchain with
-    q_lower := by dsimp [sharpData,radicalCoordinates]; nlinarith [qStar_mem.1]
+    q_lower := by dsimp [sharpData,radicalCoordinates]; linarith only [qStar_mem.1]
     q_upper := qStar_mem.2
-    y_lower := by dsimp [sharpData,radicalCoordinates]; linarith
-    y_upper := by dsimp [sharpData,radicalCoordinates]; linarith
+    y_lower := by dsimp [sharpData,sharpPose,radicalCoordinates]; linarith only [hy]
+    y_upper := by dsimp [sharpData,sharpPose,radicalCoordinates]; linarith only [hy]
     y₄_lower := ?_
     y₄_upper := ?_
     position_order := ?_
-    z_pos := by dsimp [sharpData,radicalCoordinates]; linarith
+    z_pos := by dsimp [sharpData,sharpPose,radicalCoordinates]; linarith only [hz]
     tilt_range := ?_
-    z_lt_one := by dsimp [sharpData,radicalCoordinates]; linarith
+    z_lt_one := by dsimp [sharpData,sharpPose,radicalCoordinates]; linarith only [hz]
     zero_defect := ?_
     position_stationary := ?_
     tilt_stationary := ?_ }
-  · dsimp [sharpData,y₄]; linarith [hrad.2.2.2.2.1]
-  · dsimp [sharpData,y₄]; linarith [hrad.2.2.2.2.2.1]
-  · dsimp [sharpData,y₄,radicalCoordinates] at *
-    linarith [hrad.2.2.2.2.1]
-  · dsimp [sharpData,radicalCoordinates]
-    rw [div_lt_iff₀ (by nlinarith : 0<1-sharpPose.2^2)]
-    nlinarith
-  · rw [← familyValue_radical]
-    exact sharpPose_value
-  · rw [← familyY_radical hchain]
-    exact sharpPose_stationary.1
+  · dsimp [sharpData,sharpPose,y₄]; linarith only [hrad.2.2.2.2.1]
+  · dsimp [sharpData,sharpPose,y₄]; linarith only [hrad.2.2.2.2.2.1]
+  · dsimp [sharpData,sharpPose,y₄,radicalCoordinates] at *
+    linarith only [hrad.2.2.2.2.1, hy]
+  · dsimp [sharpData,sharpPose,radicalCoordinates]
+    rw [div_lt_iff₀ (by nlinarith only [hz] : 0<1-(minimizingPose qStar).2^2)]
+    nlinarith only [hz]
+  · exact (familyValue_radical qStar sharpPose.1 sharpPose.2).symm.trans sharpPose_value
+  · exact (familyY_radical hchain).symm.trans sharpPose_stationary.1
   · have hzv := sharpPose_stationary.2
     rw [familyZ_radical] at hzv
     exact (mul_eq_zero.mp hzv).resolve_left
@@ -259,8 +275,16 @@ theorem sharpData_stationary : sharpData.IsStationary := by
 
 theorem stationary_unique {d : Coordinates} (hd : d.IsStationary) : d=sharpData := by
   have he := stationary_local hd
-  have hq : d.q ∈ radiusBox := he 0
-  have hp : (d.y,d.z) ∈ poseBox := ⟨he 1,he 2⟩
+  have hq : d.q ∈ radiusBox := by
+    have h := he 0
+    norm_num [localBox,QInterval.Mem] at h
+    exact h
+  have hp : (d.y,d.z) ∈ poseBox := by
+    have h1 := he 1
+    have h2 := he 2
+    norm_num [localBox,QInterval.Mem] at h1 h2
+    simp only [poseBox,Set.mem_prod,Set.mem_Icc]
+    refine ⟨⟨?_,?_⟩,?_,?_⟩ <;> linarith
   have hc := chain_eq_radical hd.toIsChain
   have hv : familyValue d.q (d.y,d.z)=0 := by
     rw [familyValue_radical,← hc]; exact hd.zero_defect
@@ -301,10 +325,21 @@ theorem sharp_coordinates :
   have h₇ := sharpHOne_bound _ sharpBox_mem
   have h₈ := sharpHTwo_bound _ sharpBox_mem
   rcases hv with ⟨hx₁,hx₂,hy₃,hx₄,hc,hs,hh₁,hh₂⟩
-  rw [hx₁] at h₁; rw [hx₂] at h₂; rw [hy₃] at h₃; rw [hx₄] at h₄
-  rw [hc] at h₅; rw [hs] at h₆; rw [hh₁] at h₇; rw [hh₂] at h₈
-  exact ⟨h₁.1,h₁.2,h₂.1,h₂.2,h₃.1,h₃.2,h₄.1,h₄.2,
-    h₅.1,h₅.2,h₆.1,h₆.2,h₇.1,h₇.2,h₈.1,h₈.2⟩
+  rw [show formula10 = xOneFormula from rfl, hx₁] at h₁
+  rw [show formula15 = xTwoFormula from rfl, hx₂] at h₂
+  rw [show formula21 = yThreeFormula from rfl, hy₃] at h₃
+  rw [show formula28 = xFourFormula from rfl, hx₄] at h₄
+  rw [show formula34 = cosineFormula from rfl, hc] at h₅
+  rw [show formula36 = sineFormula from rfl, hs] at h₆
+  rw [show formula42 = hOneFormula from rfl, hh₁] at h₇
+  rw [show formula50 = hTwoFormula from rfl, hh₂] at h₈
+  unfold sharpData
+  exact ⟨by linarith only [h₁.1],by linarith only [h₁.2],by linarith only [h₂.1],
+    by linarith only [h₂.2],by linarith only [h₃.1],by linarith only [h₃.2],
+    by linarith only [h₄.1],by linarith only [h₄.2],by linarith only [h₅.1],
+    by linarith only [h₅.2],by linarith only [h₆.1],by linarith only [h₆.2],
+    by linarith only [h₇.1],by linarith only [h₇.2],by linarith only [h₈.1],
+    by linarith only [h₈.2]⟩
 
 theorem sharp_y : -92071/100000 < sharpData.y ∧ sharpData.y < -92059/100000 := by
   have h := abs_lt.mp sharpPose_close.1

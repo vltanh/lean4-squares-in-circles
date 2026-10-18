@@ -6,22 +6,19 @@ public import Mathlib.Tactic
 /-!
 # The statement: squares, disks, packings, congruence and the optimal models
 
-The primitive definitions used by the main theorems (`SquaresInCircles.lean`):
-unit squares, each with its own position and rotation; packings in a closed
-disk; congruence to a model given about the origin; and the explicit radius
-and models for the first seven cases. `StatementEight.lean` supplies the
-pure eighth-case stationary root and equality domain; `Optimal.lean` supplies
-the public registries through eight.
+Everything the main theorems (`SquaresInCircles.lean`) state: unit squares, each
+with its own position and rotation; packings in a closed disk; congruence to a
+model given about the origin; and the optimal radius and models of each case.
 `Packing` asks only that the closed squares lie in the disk and that no point
 lie in two open squares (`openSquare`, with strict inequalities).
 
-`Challenge.lean` restates the three pure modules in their dependency order:
-Geometry, StatementEight, Optimal. The standalone
-`python3 scripts/sync-challenge.py --write` command copies only source text;
-it does not compile or run the comparator. The later comparator procedure
-checks that the definitions and public theorem statements elaborate
-identically. Declaration order is retained because Lean names auxiliary
-proofs after the first definition that requires them.
+`Challenge.lean` restates this file word for word, and Comparator checks that
+the two elaborate identically. That needs every definition here, in this
+order: Lean names the auxiliary lemmas inside a definition, such as the proof
+of `Nat.AtLeastTwo 2` behind the real numeral `2`, after the first definition
+in the file that needs them. Edit here only:
+`scripts/verify-comparator.sh --write` copies the definitions into
+`Challenge.lean`.
 -/
 
 @[expose] public section
@@ -275,9 +272,254 @@ def columnModel (c : Column) : Fin 7 → UnitSquare :=
 
 end Seven
 
-/- The pure n=8 definitions are in `SquaresInCircles/StatementEight.lean` and
-the pure public registries in `SquaresInCircles/Optimal.lean`. Their ordinary
-epsilon selection is linked to the analytically proved unique root by the
-downstream `Eight/ExactFamily/StatementLink.lean`. -/
+namespace EightStatement
+
+/-- The cosine of the angle whose half has tangent `z`. -/
+def halfAngleCos (z : ℝ) : ℝ := (1-z^2)/(1+z^2)
+/-- The sine of the angle whose half has tangent `z`. -/
+def halfAngleSin (z : ℝ) : ℝ := 2*z/(1+z^2)
+
+theorem halfAngle_unit (z : ℝ) : halfAngleCos z^2+halfAngleSin z^2=1 := by
+  have hd : 0<1+z^2 := by positivity
+  unfold halfAngleCos halfAngleSin
+  field_simp [ne_of_gt hd]
+  ring
+
+/-- The numbers of the five-corner chain: the squared radius `q`, the height `y` of the
+lower right corner, the half-angle tangent `z` of the tilt of the two turned squares, and
+the coordinates `x₁`, `x₂`, `y₃`, `x₄` of the corners on the circle. -/
+structure Root where
+  q : ℝ
+  y : ℝ
+  z : ℝ
+  x₁ : ℝ
+  x₂ : ℝ
+  y₃ : ℝ
+  x₄ : ℝ
+  deriving Inhabited
+
+namespace Root
+
+/-- The cosine of the tilt. -/
+def c (d : Root) : ℝ := halfAngleCos d.z
+/-- The sine of the tilt. -/
+def s (d : Root) : ℝ := halfAngleSin d.z
+/-- The abscissa of the upper left corner, three to the left of `x₂`. -/
+def x₃ (d : Root) : ℝ := d.x₂-3
+/-- The height of the lower left corner, two below `y₃`. -/
+def y₄ (d : Root) : ℝ := d.y₃-2
+/-- The first coordinate, in the tilted frame, of the fifth corner, a corner of `H`. -/
+def h₁ (d : Root) : ℝ := d.c*d.x₁+d.s*d.y-2-d.c
+/-- The second coordinate of the fifth corner. -/
+def h₂ (d : Root) : ℝ := -d.s*d.x₄+d.c*d.y₄-1-d.s
+/-- How far the fifth corner is from the circle: `h₁² + h₂² - q`. -/
+def defect (d : Root) : ℝ := d.h₁^2+d.h₂^2-d.q
+/-- The derivative of `y₄` in `y` along the chain. -/
+def y₄deriv (d : Root) : ℝ := d.x₃*(d.y+2)/(d.y₃*d.x₂)
+/-- The derivative of `h₁` in `y` along the chain. -/
+def h₁deriv (d : Root) : ℝ := d.s-d.c*d.y/d.x₁
+/-- The derivative of `h₂` in `y` along the chain. -/
+def h₂deriv (d : Root) : ℝ := (d.c+d.s*d.y₄/d.x₄)*d.y₄deriv
+/-- The derivative of the defect in `y`, along the chain. -/
+def positionDerivative (d : Root) : ℝ := 2*(d.h₁*d.h₁deriv+d.h₂*d.h₂deriv)
+/-- The derivative of the defect in the tilt. -/
+def tiltDerivative (d : Root) : ℝ :=
+  2*(d.h₁*(-d.s*(d.x₁-1)+d.c*d.y)+d.h₂*(-d.c*(d.x₄+1)-d.s*d.y₄))
+
+/-- The four corners `(x₁, y)`, `(x₂, y + 2)`, `(x₃, y₃)`, `(x₄, y₄)` lie on the circle of
+squared radius `q`, on the sides of the axes that the signs select. -/
+structure IsChain (d : Root) : Prop where
+  x₁_pos : 0<d.x₁
+  x₂_pos : 0<d.x₂
+  y₃_pos : 0<d.y₃
+  x₄_neg : d.x₄<0
+  first_circle : d.x₁^2+d.y^2=d.q
+  second_circle : d.x₂^2+(d.y+2)^2=d.q
+  third_circle : d.x₃^2+d.y₃^2=d.q
+  fourth_circle : d.x₄^2+d.y₄^2=d.q
+
+/-- The stationary system: the chain closes (the defect vanishes) and the defect is
+stationary in the position and in the tilt, inside a strip of the parameters. The system
+has exactly one solution. -/
+structure IsStationary (d : Root) : Prop extends IsChain d where
+  q_lower : (79/40 : ℝ)^2≤d.q
+  q_upper : d.q≤9789/2500
+  y_lower : -1<d.y
+  y_upper : d.y< -(1/2)
+  y₄_lower : -1<d.y₄
+  y₄_upper : d.y₄< -(1/2)
+  position_order : d.y<d.y₄
+  z_pos : 0<d.z
+  tilt_range : 2*d.z/(1-d.z^2)<1/5
+  z_lt_one : d.z<1
+  zero_defect : d.defect=0
+  position_stationary : d.positionDerivative=0
+  tilt_stationary : d.tiltDerivative=0
+
+/-- The point with coordinates `(a, b)` in the tilted frame. -/
+def inFrame (d : Root) (a b : ℝ) : Point :=
+  (d.c*a-d.s*b,d.s*a+d.c*b)
+
+/-- The centre of `A`, whose lower right corner is `(x₁, y)`. -/
+def pA (d : Root) : Point := (d.x₁-1/2,d.y+1/2)
+/-- The centre of `B`, whose upper right corner is `(x₂, y + 2)`. -/
+def pB (d : Root) : Point := (d.x₂-1/2,d.y+3/2)
+/-- The centre of `D`, whose upper left corner is `(x₃, y₃)`. -/
+def pD (d : Root) : Point := (d.x₃+1/2,d.y₃-1/2)
+/-- The centre of `E`, whose lower left corner is `(x₄, y₄)`. -/
+def pE (d : Root) : Point := (d.x₄+1/2,d.y₄+1/2)
+/-- The centre of the turned square `H`, with the corner `(h₁, h₂)` in the tilted frame. -/
+def pH (d : Root) : Point := d.inFrame (d.h₁+1/2) (d.h₂+1/2)
+/-- The centre of `T`, between `D` and `B`, at height `Z`. -/
+def pT (d : Root) (Z : ℝ) : Point := (d.x₂-3/2,Z)
+/-- The centre of the turned square `G`, beside `H`, at offset `η` along the tilted frame. -/
+def pG (d : Root) (η : ℝ) : Point := d.inFrame (d.h₁+3/2) (d.h₂+1/2+η)
+
+/-- The unit square centred at `p` with the tilted frame. -/
+def tiltedSquare (d : Root) (p : Point) : UnitSquare where
+  center := p
+  cosine := d.c
+  sine := d.s
+  unit := halfAngle_unit d.z
+
+/-- The greatest height of `T` in the disk. -/
+def zMax (d : Root) : ℝ := Real.sqrt (d.q-(d.x₂-1)^2)-1/2
+/-- The least offset of `G` in the disk. -/
+def etaMin (d : Root) : ℝ := -d.h₂-Real.sqrt (d.q-(d.h₁+2)^2)
+/-- The greatest offset of `G`: its side nearest the centre then lies at distance `1/12`
+from it, as the side of `T` does at the least height `7/12`. -/
+def etaMax (d : Root) : ℝ := -d.h₂-13/12
+
+end Root
+
+/-- The solution of the stationary system. It is unique, so the choice is not arbitrary. -/
+def selected : Root := Classical.epsilon Root.IsStationary
+
+/-- The squared optimal radius for eight unit squares. -/
+def qStar : ℝ := selected.q
+
+/-- The optimal radius for eight unit squares, `√qStar ≈ 1.97877`. -/
+def radius : ℝ := Real.sqrt qStar
+
+/-- The five free numbers of an optimal packing: the centre `(x, y)` and the half-angle
+tangent `w` of the turn of the central square, the height `z` of `T`, and the offset `eta`
+of `G`. -/
+structure Parameters where
+  x : ℝ
+  y : ℝ
+  w : ℝ
+  z : ℝ
+  eta : ℝ
+
+namespace Parameters
+
+/-- The cosine of the turn of the central square. -/
+def C (p : Parameters) : ℝ := halfAngleCos p.w
+/-- The sine of the turn of the central square. -/
+def S (p : Parameters) : ℝ := halfAngleSin p.w
+def center (p : Parameters) : Point := (p.x,p.y)
+
+/-- The central square. -/
+def centralSquare (p : Parameters) : UnitSquare where
+  center := p.center
+  cosine := p.C
+  sine := p.S
+  unit := halfAngle_unit p.w
+
+/-- The largest absolute projection of `v` on the axes of the coordinate frame and of the
+frame of the central square. -/
+def M₀ (p : Parameters) (v : Point) : ℝ :=
+  max (max |v.1| |v.2|) (max |p.C*v.1+p.S*v.2| |-p.S*v.1+p.C*v.2|)
+
+/-- The largest absolute projection of `v` on the axes of the tilted frame and of the frame
+of the central square. -/
+def Mₜ (p : Parameters) (d : Root) (v : Point) : ℝ :=
+  max (max |d.c*v.1+d.s*v.2| |-d.s*v.1+d.c*v.2|)
+    (max |p.C*v.1+p.S*v.2| |-p.S*v.1+p.C*v.2|)
+
+/-- The separation threshold of an axis-parallel square and the central square: half the
+sum of their widths along an axis of either. -/
+def W₀ (p : Parameters) : ℝ := (1+p.C+|p.S|)/2
+/-- The separation threshold of a tilted square and the central square. -/
+def Wₜ (p : Parameters) (d : Root) : ℝ :=
+  (1+d.c*p.C+d.s*p.S+|d.c*p.S-d.s*p.C|)/2
+
+/-- The parameters of the optimal packings: the turn of the central square in a half-open
+interval; `T` and `G` in the disk, with their sides nearest the centre at distance at least
+`1/12` from it; the disk centre less than `5/12` from the centre of the central square along
+each of its axes; and the central square separated by an axis from each of the seven other
+squares. -/
+structure Admissible (d : Root) (p : Parameters) : Prop where
+  frame_lower : 1-Real.sqrt 2≤p.w
+  frame_upper : p.w<Real.sqrt 2-1
+  top_lower : 7/12≤p.z
+  top_upper : p.z≤d.zMax
+  tilted_lower : d.etaMin≤p.eta
+  tilted_upper : p.eta≤d.etaMax
+  core_first : |p.C*p.x+p.S*p.y|<5/12
+  core_second : |-p.S*p.x+p.C*p.y|<5/12
+  A_sep : p.W₀≤p.M₀ (sub d.pA p.center)
+  B_sep : p.W₀≤p.M₀ (sub d.pB p.center)
+  D_sep : p.W₀≤p.M₀ (sub d.pD p.center)
+  E_sep : p.W₀≤p.M₀ (sub d.pE p.center)
+  T_sep : p.W₀≤p.M₀ (sub (d.pT p.z) p.center)
+  H_sep : p.Wₜ d≤p.Mₜ d (sub d.pH p.center)
+  G_sep : p.Wₜ d≤p.Mₜ d (sub (d.pG p.eta) p.center)
+
+/-- The packing of parameters `p`: the central square, the turned squares `H` and `G`, and
+the axis-parallel squares `A`, `B`, `T`, `D`, `E`. -/
+def model (d : Root) (p : Parameters) : Fin 8 → UnitSquare :=
+  ![p.centralSquare,d.tiltedSquare d.pH,d.tiltedSquare (d.pG p.eta),
+    axisSquare d.pA,axisSquare d.pB,axisSquare (d.pT p.z),axisSquare d.pD,axisSquare d.pE]
+
+end Parameters
+
+/-- The reflection of a square in the diagonal `x = y`. -/
+def reflectSquare (K : UnitSquare) : UnitSquare where
+  center := (K.center.2,K.center.1)
+  cosine := K.sine
+  sine := K.cosine
+  unit := by linarith [K.unit]
+
+/-- The packing of parameters `p`, or its reflection in the diagonal. -/
+def reflectedModel (reflected : Bool) (p : Parameters) : Fin 8 → UnitSquare :=
+  if reflected then fun i=>reflectSquare (p.model selected i) else p.model selected
+
+/-- The optimal packings of eight unit squares, as models about the origin: the packings of
+admissible parameters and their reflections. Congruence turns but never reflects, so the
+reflections are listed. -/
+def models : Set (Fin 8 → UnitSquare) :=
+  {M | ∃ reflected : Bool,∃ p : Parameters,
+    p.Admissible selected ∧ M=reflectedModel reflected p}
+
+end EightStatement
+
+/-- The optimal radius for `n` unit squares, for `1 ≤ n ≤ 8`. Every other `n`
+gets the placeholder `0`, about which nothing is claimed. -/
+def optimalRadius : ℕ → ℝ
+  | 1 => One.radius
+  | 2 => Two.radius
+  | 3 => Three.radius
+  | 4 => Four.radius
+  | 5 => Five.radius
+  | 6 => Six.radius
+  | 7 => Seven.radius
+  | 8 => EightStatement.radius
+  | _ => 0
+
+/-- The optimal packings of `n` unit squares, as models about the origin: one
+packing for `n ≤ 6`, for `n = 7` every position of the three middle squares,
+and for `n = 8` the five-parameter family and its reflections. Every other `n`
+gets the placeholder `∅`, about which nothing is claimed. -/
+def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
+  | 1 => {One.model}
+  | 2 => {Two.model}
+  | 3 => {Three.model}
+  | 4 => {Four.model}
+  | 5 => {Five.model}
+  | 6 => {Six.model}
+  | 7 => Set.range Seven.columnModel
+  | 8 => EightStatement.models
+  | _ => ∅
 
 end SquaresInCircles

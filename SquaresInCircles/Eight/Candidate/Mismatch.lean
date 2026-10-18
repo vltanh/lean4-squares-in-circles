@@ -4,12 +4,21 @@ public import SquaresInCircles.Eight.Candidate.Model
 public import SquaresInCircles.Eight.Arithmetic.Taylor
 
 /-!
-# The ordered charged-cost contractions
+# Eight squares: the mismatch chain
 
-These lemmas prove the scalar consequences of the corresponding complete
-table bounds. Table hypotheses retain their actual continuous meaning;
-the generated instances supply them in the candidate assembly. This is
-an uncompiled source draft, with no external computation trusted as proof.
+The frame charge `h x = (|sin x| + |cos x| - 1)/2` is increasing and concave on `[0, 7/10]`
+(`h_monotone`, `h_concave`), so it lies above its chords, and it lies above the polynomials
+`hLower7` and `x/2 - x²/4 - x³/12` (`hLower7_le`, `h_cubic_lower`). The charges of the aligned
+edges add up to at least `h` of the mismatch (`hSum_ge_h_mismatch`). So a charged bound with
+charge `β` and constants `γᵢ` bounds the mismatch (`mismatch_contract`): if `∑ γᵢ + β L` exceeds
+`2π` for some `L ≤ h t`, the mismatch is less than `t`.
+
+These are the scalar steps of the chain. The coarse table gives mismatch below `2/5` and then
+below `13/50` (`coarse_first_contraction`, `coarse_enhanced_contraction`), and the three later
+tables give, each from the bound before it, mismatch below `1/10`, `3/200` and `1/1000`
+(`contraction_026_to_01`, `contraction_01_to_015`, `contraction_015_to_001`). The charged bounds
+themselves are hypotheses here; `Generated/AffineBudgets.lean` proves them from the affine tables,
+and `Capture.lean` chains the steps.
 -/
 
 @[expose] public section
@@ -22,7 +31,7 @@ theorem seven_tenths_lt_pi_four : (7 : ℝ) / 10 < Real.pi / 4 := by
   linarith [Real.pi_gt_d2]
 
 theorem h_eq_smooth {x : ℝ} (hx : x ∈ Icc (0 : ℝ) (7 / 10)) : h x = hSmooth x := by
-  have hh := cos_sin_nonneg ⟨hx.1, by linarith [seven_tenths_lt_pi_four]⟩
+  have hh := cos_sin_nonneg ⟨hx.1, by linarith [hx.2, seven_tenths_lt_pi_four, Real.pi_pos]⟩
   simp [h, hSmooth, abs_of_nonneg hh.1, abs_of_nonneg hh.2]
 
 theorem h_monotone : MonotoneOn h (Icc (0 : ℝ) (7 / 10)) := by
@@ -34,14 +43,17 @@ theorem h_monotone : MonotoneOn h (Icc (0 : ℝ) (7 / 10)) := by
 
 theorem h_concave : ConcaveOn ℝ (Icc (0 : ℝ) (7 / 10)) h := by
   have hd (x : ℝ) : HasDerivAt hSmooth ((Real.cos x - Real.sin x) / 2) x := by
-    convert (((Real.hasDerivAt_sin x).add (Real.hasDerivAt_cos x)).sub_const 1).div_const 2 using 1 <;>
-      simp [hSmooth] <;> ring
+    have hfun : hSmooth = fun y => (Real.sin y + Real.cos y - 1) / 2 := rfl
+    rw [hfun]
+    convert (((Real.hasDerivAt_sin x).add (Real.hasDerivAt_cos x)).sub_const 1).div_const 2
+      using 1
   have hd' (x : ℝ) : HasDerivAt (fun t => (Real.cos t - Real.sin t) / 2)
       (-(Real.sin x + Real.cos x) / 2) x := by
-    convert ((Real.hasDerivAt_cos x).sub (Real.hasDerivAt_sin x)).div_const 2 using 1 <;> ring
+    convert ((Real.hasDerivAt_cos x).sub (Real.hasDerivAt_sin x)).div_const 2 using 1
+    ring
   have hf : ConcaveOn ℝ (Icc (0 : ℝ) (7 / 10)) hSmooth :=
     concave_of_deriv2 (fun x _ => hd x) (fun x _ => hd' x) (fun x hx => by
-      have htrig := cos_sin_nonneg ⟨hx.1, by linarith [seven_tenths_lt_pi_four]⟩
+      have htrig := cos_sin_nonneg ⟨hx.1, by linarith [hx.2, seven_tenths_lt_pi_four, Real.pi_pos]⟩
       linarith)
   refine ⟨convex_Icc _ _, ?_⟩
   intro x hx y hy a b ha hb hab
@@ -56,14 +68,13 @@ theorem h_above_chord {L x : ℝ} (hL : 0 < L) (hLmax : L ≤ 7 / 10)
   have ht1 : x / L ≤ 1 := (div_le_one hL).2 hx.2
   have hc := h_concave.2 (show (0 : ℝ) ∈ Icc 0 (7 / 10) by norm_num)
     ⟨hL.le, hLmax⟩ (sub_nonneg.mpr ht1) ht0 (show (1 - x / L) + x / L = 1 by ring)
-  have hxid : (1 - x / L) • (0 : ℝ) + (x / L) • L = x := by
-    simp [smul_eq_mul, ne_of_gt hL]
-  simpa only [hxid, h_zero, smul_eq_mul, mul_zero, zero_add] using hc
+  have hxid : x / L * L = x := div_mul_cancel₀ x (ne_of_gt hL)
+  simpa only [smul_eq_mul, mul_zero, zero_add, hxid, h_zero] using hc
 
 theorem h_above_rational_chord {L x κ : ℝ} (hL : 0 < L) (hLmax : L ≤ 7 / 10)
     (hx : 0 ≤ x ∧ x ≤ L) (hend : κ * L ≤ h L) : κ * x ≤ h x := by
   have hh := mul_le_mul_of_nonneg_left hend (div_nonneg hx.1 hL.le)
-  have hid : x / L * (κ * L) = κ * x := by field_simp; ring
+  have hid : x / L * (κ * L) = κ * x := by field_simp
   rw [hid] at hh
   exact hh.trans (h_above_chord hL hLmax hx)
 

@@ -12,6 +12,7 @@ derivative remainders below are exact identities with positive denominator.
 -/
 
 @[expose] public section
+noncomputable section
 namespace SquaresInCircles.Eight.Arithmetic
 
 def atanLower (x : ℝ) : ℝ := x - x^3/3 + x^5/5 - x^7/7 + x^9/9 - x^11/11 + x^13/13 - x^15/15 + x^17/17 - x^19/19 + x^21/21 - x^23/23 + x^25/25 - x^27/27 + x^29/29 - x^31/31 + x^33/33 - x^35/35 + x^37/37 - x^39/39 + x^41/41 - x^43/43 + x^45/45 - x^47/47 + x^49/49 - x^51/51
@@ -19,26 +20,38 @@ def atanUpper (x : ℝ) : ℝ := x - x^3/3 + x^5/5 - x^7/7 + x^9/9 - x^11/11 + x
 
 theorem atanLower_le {x : ℝ} (hx : 0≤x) : atanLower x≤Real.arctan x := by
   have hh := nonneg_of_deriv_nonneg (fun t => Real.arctan t-atanLower t)
-    (by unfold atanLower; fun_prop) (by norm_num [atanLower])
-    (fun x _ => by
+    (by unfold atanLower; exact Real.differentiable_arctan.sub (by fun_prop))
+    (by norm_num [atanLower])
+    (fun x hx0 => by
       have hd : (0:ℝ)<1+x^2 := by positivity
       have hid : 1/(1+x^2)-(1 - x^2 + x^4 - x^6 + x^8 - x^10 + x^12 - x^14 + x^16 - x^18 + x^20 - x^22 + x^24 - x^26 + x^28 - x^30 + x^32 - x^34 + x^36 - x^38 + x^40 - x^42 + x^44 - x^46 + x^48 - x^50)=x^52/(1+x^2) := by
         field_simp [ne_of_gt hd]
         ring
-      simpa (disch := fun_prop) [atanLower,hid] using
-        (show 0≤x^52/(1+x^2) by positivity)) hx
+      have hp : deriv (fun t => atanLower t) x = 1 - x^2 + x^4 - x^6 + x^8 - x^10 + x^12 - x^14 + x^16 - x^18 + x^20 - x^22 + x^24 - x^26 + x^28 - x^30 + x^32 - x^34 + x^36 - x^38 + x^40 - x^42 + x^44 - x^46 + x^48 - x^50 := by
+        unfold atanLower
+        simp (disch := fun_prop)
+        ring
+      rw [deriv_fun_sub (Real.differentiableAt_arctan x) (by unfold atanLower; fun_prop),
+        Real.deriv_arctan,hp,hid]
+      exact div_nonneg (pow_nonneg hx0 52) hd.le) hx
   linarith
 
 theorem arctan_le_atanUpper {x : ℝ} (hx : 0≤x) : Real.arctan x≤atanUpper x := by
   have hh := nonneg_of_deriv_nonneg (fun t => atanUpper t-Real.arctan t)
-    (by unfold atanUpper; fun_prop) (by norm_num [atanUpper])
-    (fun x _ => by
+    (by unfold atanUpper; exact Differentiable.sub (by fun_prop) Real.differentiable_arctan)
+    (by norm_num [atanUpper])
+    (fun x hx0 => by
       have hd : (0:ℝ)<1+x^2 := by positivity
       have hid : (1 - x^2 + x^4 - x^6 + x^8 - x^10 + x^12 - x^14 + x^16 - x^18 + x^20 - x^22 + x^24 - x^26 + x^28 - x^30 + x^32 - x^34 + x^36 - x^38 + x^40 - x^42 + x^44 - x^46 + x^48)-1/(1+x^2)=x^50/(1+x^2) := by
         field_simp [ne_of_gt hd]
         ring
-      simpa (disch := fun_prop) [atanUpper,hid] using
-        (show 0≤x^50/(1+x^2) by positivity)) hx
+      have hp : deriv (fun t => atanUpper t) x = 1 - x^2 + x^4 - x^6 + x^8 - x^10 + x^12 - x^14 + x^16 - x^18 + x^20 - x^22 + x^24 - x^26 + x^28 - x^30 + x^32 - x^34 + x^36 - x^38 + x^40 - x^42 + x^44 - x^46 + x^48 := by
+        unfold atanUpper
+        simp (disch := fun_prop)
+        ring
+      rw [deriv_fun_sub (by unfold atanUpper; fun_prop) (Real.differentiableAt_arctan x),
+        Real.deriv_arctan,hp,hid]
+      exact div_nonneg (pow_nonneg hx0 50) hd.le) hx
   linarith
 
 def atanHalf (x : ℝ) : ℝ := x/(1+Real.sqrt (1+x^2))
@@ -57,9 +70,10 @@ theorem arctan_half_identity {x : ℝ} (hx : 0≤x ∧ x≤1) :
     unfold atanHalf
     exact (div_lt_one hd).mpr (by linarith [hx.2])
   have hyden : 0<1-(atanHalf x)^2 := by nlinarith [hy0,hy1]
+  have hne : (1+Real.sqrt (1+x^2))^2-x^2 ≠ 0 := ne_of_gt (by nlinarith [hsq,hs])
   have hid : 2*atanHalf x/(1-(atanHalf x)^2)=x := by
     unfold atanHalf
-    field_simp [ne_of_gt hd,ne_of_gt hyden]
+    field_simp [ne_of_gt hd,ne_of_gt hyden,hne]
     nlinarith [congrArg (fun z : ℝ => x*z) hsq]
   rw [Real.two_mul_arctan (by linarith [hy0]) hy1,hid]
 
@@ -68,7 +82,7 @@ def atanExpr {n : ℕ} : ℕ → ScalarExpr n → ScalarExpr n
   | k+1,e => .add (atanExpr k e)
       (.mul (.const (((-1 : ℚ)^(k+1))/(2*(k+1)+1))) (.pow e (2*(k+1)+1)))
 
-theorem atanExpr_valid {n k : ℕ} {boxes : Fin n→QInterval} {e : ScalarExpr n}
+theorem atanExpr_valid {n k : ℕ} {boxes : Fin n→ QInterval} {e : ScalarExpr n}
     (he : e.Valid boxes) : (atanExpr k e).Valid boxes := by
   induction k with
   | zero => exact he
@@ -103,7 +117,7 @@ def NumericValid (a : ArctanEndpoint) : Prop :=
 instance (a : ArctanEndpoint) : Decidable a.NumericValid := by unfold NumericValid; infer_instance
 
 theorem halfExpr_value (a : ArctanEndpoint) : a.halfExpr.value=atanHalf a.input := by
-  simp [halfExpr,ScalarExpr.value,ScalarExpr.eval,ScalarExpr.div,atanHalf]
+  simp [halfExpr,ScalarExpr.value,ScalarExpr.eval,ScalarExpr.div,atanHalf,div_eq_mul_inv]
 
 theorem sound {a : ArctanEndpoint} (ha : a.NumericValid) :
     a.output.Mem (Real.arctan a.input) := by
@@ -126,7 +140,7 @@ theorem sound {a : ArctanEndpoint} (ha : a.NumericValid) :
     rw [atanExpr_upper_value,halfExpr_value]
   rw [hlv] at hL
   rw [huv] at hU
-  exact ⟨by linarith,by linarith⟩
+  exact ⟨by linarith [hL.1],by linarith [hU.2]⟩
 end ArctanEndpoint
 
 end SquaresInCircles.Eight.Arithmetic

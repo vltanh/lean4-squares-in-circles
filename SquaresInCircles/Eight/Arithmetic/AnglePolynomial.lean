@@ -12,6 +12,7 @@ are obtained from the proved scalar-expression evaluator.
 -/
 
 @[expose] public section
+noncomputable section
 
 namespace SquaresInCircles.Eight.Arithmetic
 namespace AnglePolynomial
@@ -34,9 +35,27 @@ theorem env_mem {t : PreparedArc} (ht : t.NumericValid) {es ec : ℝ}
     (boxes t).Mem (env t es ec) := by
   intro i
   fin_cases i
-  · exact ⟨pi_hand_enclosure.1.le,pi_hand_enclosure.2.le⟩
-  · exact hs
-  · exact hc
+  · refine ⟨?_,?_⟩
+    · show (((3141592653589793238/1000000000000000000 : ℚ)) : ℝ) ≤ Real.pi
+      push_cast
+      exact pi_hand_enclosure.1.le
+    · show Real.pi ≤ (((3141592653589793239/1000000000000000000 : ℚ)) : ℝ)
+      push_cast
+      exact pi_hand_enclosure.2.le
+  · refine ⟨?_,?_⟩
+    · show ((0 : ℚ) : ℝ) ≤ es
+      push_cast
+      exact hs.1
+    · show es ≤ ((1/362880 : ℚ) : ℝ)
+      push_cast
+      linarith [hs.2]
+  · refine ⟨?_,?_⟩
+    · show ((-1/3628800 : ℚ) : ℝ) ≤ ec
+      push_cast
+      linarith [hc.1]
+    · show ec ≤ ((0 : ℚ) : ℝ)
+      push_cast
+      exact hc.2
   · exact t.aLo.closed_sound ht.2.2.1
   · exact t.bLo.closed_sound (t.bLo_valid ht)
   · exact t.aHi.closed_sound ht.2.2.2.1
@@ -45,30 +64,34 @@ theorem env_mem {t : PreparedArc} (ht : t.NumericValid) {es ec : ℝ}
   · exact t.ratioHi.closed_sound (t.ratioHi_valid ht)
   · exact t.radiusExpr.closed_sound ht.2.2.2.2.1
 
-def variable (i : Fin 10) : ParamPoly 10 := .scalar (.var i)
+def param (i : Fin 10) : ParamPoly 10 := .scalar (.var i)
 
 def sine : ParamPoly 10 :=
   .add (.add (.add (.add .angle (.scale (-1/6) (.pow .angle 3)))
     (.scale (1/120) (.pow .angle 5))) (.scale (-1/5040) (.pow .angle 7)))
-    (.mul (variable 1) (.pow .angle 9))
+    (.mul (param 1) (.pow .angle 9))
 
 def cosine : ParamPoly 10 :=
   .add (.add (.add (.add (.add (.constant 1) (.scale (-1/2) (.pow .angle 2)))
     (.scale (1/24) (.pow .angle 4))) (.scale (-1/720) (.pow .angle 6)))
-    (.scale (1/40320) (.pow .angle 8))) (.mul (variable 2) (.pow .angle 10))
+    (.scale (1/40320) (.pow .angle 8))) (.mul (param 2) (.pow .angle 10))
 
 theorem sine_eval {t : PreparedArc} {es ec u : ℝ}
     (hs : Real.sin u=sin7 u+es*u^9) : sine.eval (env t es ec) u = Real.sin u := by
+  have he : env t es ec 1 = es := rfl
   rw [hs]
-  simp [sine,variable,ParamPoly.eval,ParamPoly.scale,ParamPoly.constant,
-    ScalarExpr.eval,env,sin7]
+  simp only [sine,param,ParamPoly.eval,ParamPoly.scale,ParamPoly.constant,
+    ScalarExpr.eval,he,sin7]
+  push_cast
   ring
 
 theorem cosine_eval {t : PreparedArc} {es ec u : ℝ}
     (hc : Real.cos u=cos8 u+ec*u^10) : cosine.eval (env t es ec) u = Real.cos u := by
+  have he : env t es ec 2 = ec := rfl
   rw [hc]
-  simp [cosine,variable,ParamPoly.eval,ParamPoly.scale,ParamPoly.constant,
-    ScalarExpr.eval,env,cos8]
+  simp only [cosine,param,ParamPoly.eval,ParamPoly.scale,ParamPoly.constant,
+    ScalarExpr.eval,he,cos8]
+  push_cast
   ring
 
 def signQ (positiveHalf : Bool) : ℚ := if positiveHalf then 1 else -1

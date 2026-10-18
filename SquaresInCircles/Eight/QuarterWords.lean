@@ -4,14 +4,29 @@ public import SquaresInCircles.Eight.Frames
 public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Arctan
 
 /-!
-# Complete quarter-word classification
+# Eight squares: quarter words
 
-Source: `SEVEN_QUARTER_WORDS.md`. Every ordered word is included before the
-dihedral quotient. The finite classification concerns quarter increments,
-not radial kinds: no outer/core word is removed here.
+The quarter word of a boundary cycle records, for each edge, how many quarter turns the
+canonical frame of the target is ahead of that of the source (`QuarterLift.word`). An admissible
+word has digits `0`, `1`, `2` adding up to `4` and no three consecutive zeros, cyclically. Up to
+rotation and reflection of the cycle there are seven admissible words
+(`quarter_word_complete_classification`); the last, `0101011`, is the word of the optimal packing
+(`candidateQuarterWord`). The classification covers every ordered word before the quotient by
+these symmetries, and it concerns the quarter increments only, whatever the radial curves of the
+squares.
 
-All enumeration proofs below use ordinary `decide`. They are source drafts
-and have not been evaluated by Lean or by a native checker in this session.
+The classification and the count run through all `3 ^ 7` words as digit vectors: the kernel
+evaluates Boolean checks on the seven digits and never enumerates the function type itself. The
+facts about words with a digit `2` then follow from the classification, because sums over
+positions are invariant under rotation and reflection.
+
+If the frames lie in an interval shorter than `7/10` and the gaps exceed `19/25`, the word of the
+cycle is admissible (`QuarterLift.word_admissible`): a digit below `0` or above `2` would make a
+gap too small or too large, and three zeros would make three consecutive gaps add up to less than
+`7/10 + π/2`. The words with a `2` are excluded together by summing one table of costs
+(`no_double_word_of_cost_bound`), and once the six other classes are excluded, the candidate word
+remains (`candidate_word_after_six_exclusions`); the cost bounds are proved in
+`WordGeometry.lean`.
 -/
 
 @[expose] public section
@@ -26,9 +41,12 @@ def QuarterWord.Admissible (w : QuarterWord) : Prop :=
   (∑ i, (w i).val) = 4 ∧
     ∀ i, ¬ (w i = 0 ∧ w (next i) = 0 ∧ w (next (next i)) = 0)
 
-instance (w : QuarterWord) : Decidable (QuarterWord.Admissible w) := inferInstance
+instance (w : QuarterWord) : Decidable (QuarterWord.Admissible w) :=
+  inferInstanceAs (Decidable ((∑ i, (w i).val) = 4 ∧
+    ∀ i, ¬ (w i = 0 ∧ w (next i) = 0 ∧ w (next (next i)) = 0)))
 
-/-- The seven representatives, in the manuscript order. -/
+/-- The seven representatives `0010012`, `0010102`, `0010201`, `0011002`, `0010111`, `0011011`
+and `0101011`. -/
 def quarterRepresentatives : Fin 7 → QuarterWord :=
   ![![0, 0, 1, 0, 0, 1, 2],
     ![0, 0, 1, 0, 1, 0, 2],
@@ -47,43 +65,151 @@ def quarterDihedral (shift : Vertex) (reversed : Bool) (w : QuarterWord) : Quart
 def QuarterWord.DihedralEquivalent (w v : QuarterWord) : Prop :=
   ∃ shift reversed, w = quarterDihedral shift reversed v
 
-instance (w v : QuarterWord) : Decidable (QuarterWord.DihedralEquivalent w v) := inferInstance
+instance (w v : QuarterWord) : Decidable (QuarterWord.DihedralEquivalent w v) :=
+  inferInstanceAs (Decidable (∃ shift reversed, w = quarterDihedral shift reversed v))
 
-set_option maxRecDepth 200000 in
-set_option maxHeartbeats 0 in
+/-! ### Words as digit vectors
+
+A word is determined by its seven digits, so a statement about all words is a
+statement about seven digits in `Fin 3`. The kernel checks such statements on
+the Boolean functions below. -/
+
+/-- Every word is the vector of its seven digits. -/
+private theorem QuarterWords.eq_vec (w : QuarterWord) :
+    w = ![w 0, w 1, w 2, w 3, w 4, w 5, w 6] := by
+  funext i
+  fin_cases i <;> rfl
+
+private theorem QuarterWords.forall_vertex {Q : Vertex → Prop} :
+    (∀ i, Q i) ↔ Q 0 ∧ Q 1 ∧ Q 2 ∧ Q 3 ∧ Q 4 ∧ Q 5 ∧ Q 6 :=
+  ⟨fun h => ⟨h 0, h 1, h 2, h 3, h 4, h 5, h 6⟩,
+    fun ⟨h₀, h₁, h₂, h₃, h₄, h₅, h₆⟩ i => by fin_cases i <;> assumption⟩
+
+/-- Admissibility of the word with digits `a₀, …, a₆`, written out. -/
+private def QuarterWords.admissibleDigits (a₀ a₁ a₂ a₃ a₄ a₅ a₆ : Fin 3) : Bool :=
+  a₀.val + a₁.val + a₂.val + a₃.val + a₄.val + a₅.val + a₆.val == 4 &&
+    !(a₀ == 0 && a₁ == 0 && a₂ == 0) && !(a₁ == 0 && a₂ == 0 && a₃ == 0) &&
+    !(a₂ == 0 && a₃ == 0 && a₄ == 0) && !(a₃ == 0 && a₄ == 0 && a₅ == 0) &&
+    !(a₄ == 0 && a₅ == 0 && a₆ == 0) && !(a₅ == 0 && a₆ == 0 && a₀ == 0) &&
+    !(a₆ == 0 && a₀ == 0 && a₁ == 0)
+
+private theorem QuarterWords.admissible_vec (a₀ a₁ a₂ a₃ a₄ a₅ a₆ : Fin 3) :
+    QuarterWord.Admissible ![a₀, a₁, a₂, a₃, a₄, a₅, a₆] ↔
+      QuarterWords.admissibleDigits a₀ a₁ a₂ a₃ a₄ a₅ a₆ = true := by
+  simp [QuarterWord.Admissible, QuarterWords.admissibleDigits, Fin.sum_univ_seven,
+    QuarterWords.forall_vertex, next, and_assoc, -not_and, not_and_or, or_assoc]
+
+/-- Some rotation or reflection of a representative has the digits `a₀, …, a₆`. -/
+private def QuarterWords.isImage (a₀ a₁ a₂ a₃ a₄ a₅ a₆ : Fin 3) : Bool :=
+  (List.finRange 7).any fun j => (List.finRange 7).any fun s => [false, true].any fun r =>
+    a₀ == quarterDihedral s r (quarterRepresentatives j) 0 &&
+    a₁ == quarterDihedral s r (quarterRepresentatives j) 1 &&
+    a₂ == quarterDihedral s r (quarterRepresentatives j) 2 &&
+    a₃ == quarterDihedral s r (quarterRepresentatives j) 3 &&
+    a₄ == quarterDihedral s r (quarterRepresentatives j) 4 &&
+    a₅ == quarterDihedral s r (quarterRepresentatives j) 5 &&
+    a₆ == quarterDihedral s r (quarterRepresentatives j) 6
+
+private theorem QuarterWords.isImage_spec {a₀ a₁ a₂ a₃ a₄ a₅ a₆ : Fin 3}
+    (h : QuarterWords.isImage a₀ a₁ a₂ a₃ a₄ a₅ a₆ = true) :
+    ∃ j, QuarterWord.DihedralEquivalent ![a₀, a₁, a₂, a₃, a₄, a₅, a₆]
+      (quarterRepresentatives j) := by
+  simp only [QuarterWords.isImage, List.any_eq_true, Bool.and_eq_true, beq_iff_eq,
+    and_assoc] at h
+  obtain ⟨j, -, s, -, r, -, rfl, rfl, rfl, rfl, rfl, rfl, rfl⟩ := h
+  exact ⟨j, s, r, (QuarterWords.eq_vec _).symm⟩
+
+/-- A Boolean property of seven digits, checked for every choice of the digits. -/
+private def QuarterWords.allDigits
+    (p : Fin 3 → Fin 3 → Fin 3 → Fin 3 → Fin 3 → Fin 3 → Fin 3 → Bool) : Bool :=
+  (List.finRange 3).all fun a₀ => (List.finRange 3).all fun a₁ =>
+    (List.finRange 3).all fun a₂ => (List.finRange 3).all fun a₃ =>
+    (List.finRange 3).all fun a₄ => (List.finRange 3).all fun a₅ =>
+    (List.finRange 3).all fun a₆ => p a₀ a₁ a₂ a₃ a₄ a₅ a₆
+
+private theorem QuarterWords.allDigits_spec
+    {p : Fin 3 → Fin 3 → Fin 3 → Fin 3 → Fin 3 → Fin 3 → Fin 3 → Bool}
+    (h : QuarterWords.allDigits p = true) :
+    ∀ a₀ a₁ a₂ a₃ a₄ a₅ a₆, p a₀ a₁ a₂ a₃ a₄ a₅ a₆ = true := by
+  simpa [QuarterWords.allDigits] using h
+
 theorem quarter_word_complete_classification :
     ∀ w : QuarterWord, w.Admissible →
       ∃ j : Fin 7, w.DihedralEquivalent (quarterRepresentatives j) := by
-  decide
+  -- The kernel runs through all `3 ^ 7` digit vectors.
+  have key := QuarterWords.allDigits_spec (p := fun a₀ a₁ a₂ a₃ a₄ a₅ a₆ =>
+    !QuarterWords.admissibleDigits a₀ a₁ a₂ a₃ a₄ a₅ a₆ ||
+      QuarterWords.isImage a₀ a₁ a₂ a₃ a₄ a₅ a₆) (by decide +kernel)
+  intro w hw
+  rw [QuarterWords.eq_vec w] at hw ⊢
+  rw [QuarterWords.admissible_vec] at hw
+  exact QuarterWords.isImage_spec
+    (by simpa [hw] using key (w 0) (w 1) (w 2) (w 3) (w 4) (w 5) (w 6))
 
-set_option maxRecDepth 200000 in
-set_option maxHeartbeats 0 in
+/-- A sum over words of length `n + 1` splits off the first digit. -/
+private theorem QuarterWords.sum_cons {n : ℕ} {β : Type*} [AddCommMonoid β]
+    (F : (Fin (n + 1) → Fin 3) → β) :
+    ∑ w, F w = ∑ a, ∑ v : Fin n → Fin 3, F (Matrix.vecCons a v) := by
+  rw [← Fintype.sum_prod_type']
+  exact (Fintype.sum_equiv (Fin.consEquiv fun _ => Fin 3) _ _ fun _ => rfl).symm
+
+private theorem QuarterWords.sum_nil {β : Type*} [AddCommMonoid β]
+    (F : (Fin 0 → Fin 3) → β) : ∑ v, F v = F ![] := by
+  rw [Fintype.sum_unique]
+  exact congrArg F (Subsingleton.elim _ _)
+
 theorem admissible_quarter_word_count :
     (Finset.univ.filter QuarterWord.Admissible).card = 70 := by
-  decide
+  -- Seven nested sums over the digits, evaluated by the kernel.
+  rw [Finset.card_filter]
+  simp only [QuarterWords.sum_cons, QuarterWords.sum_nil, QuarterWords.admissible_vec]
+  decide +kernel
 
-set_option maxRecDepth 200000 in
-set_option maxHeartbeats 0 in
 theorem quarter_representatives_inequivalent :
     ∀ i j : Fin 7, (quarterRepresentatives i).DihedralEquivalent (quarterRepresentatives j) →
       i = j := by
-  decide
+  decide +kernel
 
-set_option maxRecDepth 200000 in
-set_option maxHeartbeats 0 in
+/-- Sums over the positions of a word do not see rotation or reflection. -/
+private theorem QuarterWords.sum_dihedral {β : Type*} [AddCommMonoid β] (f : Fin 3 → β)
+    (s : Vertex) (r : Bool) (w : QuarterWord) :
+    ∑ i, f (quarterDihedral s r w i) = ∑ i, f (w i) := by
+  cases r
+  · exact Equiv.sum_comp (Equiv.addRight s) (fun i => f (w i))
+  · exact Equiv.sum_comp (Equiv.subLeft s) (fun i => f (w i))
+
 theorem quarter_word_at_most_one_double :
     ∀ w : QuarterWord, w.Admissible → (Finset.univ.filter (fun i => w i = 2)).card ≤ 1 := by
-  decide
+  intro w hw
+  obtain ⟨j, s, r, rfl⟩ := quarter_word_complete_classification w hw
+  have key : ∀ j : Fin 7,
+      (Finset.univ.filter (fun i => quarterRepresentatives j i = 2)).card ≤ 1 := by
+    decide
+  rw [Finset.card_filter, QuarterWords.sum_dihedral (fun d => if d = 2 then 1 else 0)]
+  simpa only [Finset.card_filter] using key j
 
 lemma quarterDihedral_preserves_admissibility :
     ∀ (shift : Vertex) (reversed : Bool) (w : QuarterWord),
       (quarterDihedral shift reversed w).Admissible ↔ w.Admissible := by
-  decide
+  intro s r w
+  refine and_congr (by rw [QuarterWords.sum_dihedral (fun d => d.val)]) ?_
+  cases r
+  · refine (Equiv.addRight s).forall_congr fun i => ?_
+    simp only [quarterDihedral, Bool.false_eq_true, ite_false, Equiv.coe_addRight, next,
+      add_right_comm _ (1 : Vertex) s]
+  · -- The window at `i` of the reflected word is the window at `s - (i + 2)`, read backwards.
+    refine (Equiv.subLeft (s - 1 - 1)).forall_congr fun i => ?_
+    have e₁ : s - 1 - 1 - i = s - (i + 1 + 1) := by abel
+    have e₂ : s - (i + 1 + 1) + 1 = s - (i + 1) := by abel
+    have e₃ : s - (i + 1) + 1 = s - i := by abel
+    simp only [quarterDihedral, ite_true, Equiv.subLeft_apply, next, e₁, e₂, e₃]
+    exact not_congr ⟨fun ⟨h₀, h₁, h₂⟩ => ⟨h₂, h₁, h₀⟩, fun ⟨h₂, h₁, h₀⟩ => ⟨h₀, h₁, h₂⟩⟩
 
 lemma candidate_quarter_admissible : candidateQuarterWord.Admissible := by decide
 
-/-- Raw integer increment, including the winding contribution on the last
-edge. This is four full quarter turns, not an assumed word sum. -/
+/-- The integer increment of the quarter offsets on the edge `i`, with the winding of four
+quarter turns added on the last edge, so that the increments add up to `4`
+(`integerQuarterIncrement_sum`). -/
 def integerQuarterIncrement (m : Vertex → ℤ) (i : Vertex) : ℤ :=
   m (next i) - m i + if i = 6 then 4 else 0
 
@@ -91,8 +217,9 @@ lemma integerQuarterIncrement_sum (m : Vertex → ℤ) :
     ∑ i, integerQuarterIncrement m i = 4 := by
   simp [integerQuarterIncrement, Finset.sum_add_distrib, Finset.sum_sub_distrib, sum_next]
 
-/-- Real frame lifts with their actual quarter representatives. The source
-frames are recovered by the equality `beta+alpha=theta+m*pi/2`. -/
+/-- Real representatives `theta` of the frames modulo quarter turns, in an interval of length
+less than `7/10`, with integer quarter offsets `m`: the canonical axis of each square has the
+direction `beta + alpha = theta + m π/2`. -/
 structure QuarterLift {q : ℝ} (C : BoundaryCycle q) where
   theta : Vertex → ℝ
   quarter : Vertex → ℤ
@@ -105,8 +232,8 @@ structure QuarterLift {q : ℝ} (C : BoundaryCycle q) where
 lemma BoundaryCycle.alpha_range {q : ℝ} (C : BoundaryCycle q) (i : Vertex) :
     -Real.pi / 4 ≤ C.alpha i ∧ C.alpha i ≤ Real.pi / 4 := by
   have ht := C.tangent_mem i
-  have hl := Real.arctan_le_arctan ht.1
-  have hu := Real.arctan_le_arctan ht.2
+  have hl := Real.arctan_mono ht.1
+  have hu := Real.arctan_mono ht.2
   simpa [BoundaryCycle.alpha, Real.arctan_neg, Real.arctan_one, neg_div] using And.intro hl hu
 
 lemma QuarterLift.edge_identity {q : ℝ} {C : BoundaryCycle q} (F : QuarterLift C) (i : Vertex) :
@@ -115,14 +242,17 @@ lemma QuarterLift.edge_identity {q : ℝ} {C : BoundaryCycle q} (F : QuarterLift
   have h₁ := F.represents i
   have h₂ := F.represents (next i)
   by_cases hi : i = 6
-  · simp only [angleGap, integerQuarterIncrement, hi, if_true, Int.cast_add,
+  · subst hi
+    simp only [angleGap, integerQuarterIncrement, ite_true, Int.cast_add,
       Int.cast_sub, Int.cast_ofNat]
     linarith
-  · simp only [angleGap, integerQuarterIncrement, hi, if_false, add_zero, Int.cast_sub]
+  · simp only [angleGap, integerQuarterIncrement, hi, ite_false, add_zero, Int.cast_sub]
     linarith
 
-/-- Digit restriction with every range and radius-independent angle input
-visible. It is applied only after the common-point gap theorem. -/
+/-- A digit lies in `{0, 1, 2}` when its gap lies in `(19/25, 2π - 114/25)`, the frame
+difference is at most `D < 7/10` and both canonical angles are within `π/4`. None of the inputs
+depends on the radius; the gap bounds come from the common-point lemma of
+`BoundaryGeometry.lean`. -/
 lemma quarter_digit_range {δ ε a b D : ℝ} {k : ℤ}
     (hδ : 19 / 25 < δ ∧ δ < 2 * Real.pi - 114 / 25)
     (hε : -D ≤ ε ∧ ε ≤ D) (hD : D < 7 / 10)
@@ -228,19 +358,24 @@ theorem QuarterLift.seven_classes {q : ℝ} {C : BoundaryCycle q} (F : QuarterLi
     ∃ j : Fin 7, (F.word hgap hpi).DihedralEquivalent (quarterRepresentatives j) :=
   quarter_word_complete_classification _ (F.word_admissible hgap hpi)
 
-/-- The common three-increment table's exact per-digit lower constants. -/
+/-- The lower bounds of the common table for the cost of an edge with the digit `0`, `1` or
+`2`, in units of `10⁻⁴`. -/
 def doubleWordCostNumerator : Fin 3 → ℕ := ![9775, 7850, 8150]
 
-set_option maxRecDepth 200000 in
-set_option maxHeartbeats 0 in
 theorem double_word_cost_numerator :
     ∀ w : QuarterWord, w.Admissible → (∃ i, w i = 2) →
       (∑ i, doubleWordCostNumerator (w i)) = 62950 := by
-  decide
+  intro w hw ⟨i, hi⟩
+  obtain ⟨j, s, r, rfl⟩ := quarter_word_complete_classification w hw
+  have key : ∀ j : Fin 7, (∃ i, quarterRepresentatives j i = 2) →
+      ∑ i, doubleWordCostNumerator (quarterRepresentatives j i) = 62950 := by
+    decide
+  rw [QuarterWords.sum_dihedral doubleWordCostNumerator]
+  exact key j ⟨_, hi⟩
 
-/-- Finite summation of the continuous common-table inequalities excludes
-every double-increment word at once. The continuous inequalities remain
-explicit arguments of this intermediate theorem. -/
+/-- Summing the cost bounds of the common table round the cycle excludes every word with a
+digit `2` at once: the bounds add up to `6.295 > 2π`. The cost inequalities are hypotheses
+here. -/
 lemma no_double_word_of_cost_bound (w : QuarterWord) (hw : w.Admissible)
     (cost : Vertex → ℝ)
     (hcost : ∀ i, (doubleWordCostNumerator (w i) : ℝ) / 10000 ≤ cost i)
@@ -253,8 +388,8 @@ lemma no_double_word_of_cost_bound (w : QuarterWord) (hw : w.Admissible)
   rw [← Finset.sum_div, he] at hh
   linarith
 
-/-- The finite assembler only selects the remaining class after its six
-continuous geometric exclusions have been provided. -/
+/-- An admissible word outside the six other classes is equivalent to the candidate word
+`0101011`. The six exclusions are hypotheses here. -/
 lemma candidate_word_after_six_exclusions (w : QuarterWord) (hw : w.Admissible)
     (hexcluded : ∀ j : Fin 6, ¬ w.DihedralEquivalent (quarterRepresentatives j.castSucc)) :
     w.DihedralEquivalent candidateQuarterWord := by

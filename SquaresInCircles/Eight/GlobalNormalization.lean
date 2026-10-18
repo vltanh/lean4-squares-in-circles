@@ -60,23 +60,37 @@ lemma sameSquare_of_physical_center {K J : UnitSquare}
     (hc : K.center=J.center) (hf : SamePhysicalFrame K J) : SameSquare K J := by
   rcases hf with ⟨hcos,hsin⟩|⟨hcos,hsin⟩|⟨hcos,hsin⟩|⟨hcos,hsin⟩
   · constructor <;> intro p <;> simp [openSquare,closedSquare,localX,localY,hc,hcos,hsin]
-  · have hx (p : Point) : localX K p=localY J p := by simp [localX,localY,hc,hcos,hsin]; ring
+  · have hx (p : Point) : localX K p=localY J p := by simp [localX,localY,hc,hcos,hsin]
     have hy (p : Point) : localY K p= -localX J p := by simp [localX,localY,hc,hcos,hsin]; ring
     constructor <;> intro p <;> simp [openSquare,closedSquare,hx,hy,abs_neg,and_comm]
   · have hx (p : Point) : localX K p= -localX J p := by simp [localX,hc,hcos,hsin]; ring
     have hy (p : Point) : localY K p= -localY J p := by simp [localY,hc,hcos,hsin]; ring
     constructor <;> intro p <;> simp [openSquare,closedSquare,hx,hy,abs_neg]
   · have hx (p : Point) : localX K p= -localY J p := by simp [localX,localY,hc,hcos,hsin]; ring
-    have hy (p : Point) : localY K p=localX J p := by simp [localX,localY,hc,hcos,hsin]; ring
+    have hy (p : Point) : localY K p=localX J p := by simp [localX,localY,hc,hcos,hsin]
     constructor <;> intro p <;> simp [openSquare,closedSquare,hx,hy,abs_neg,and_comm]
+
+/-- The sixteen quarter-turn combinations turn the relative cosine and sine of a
+pair by a common quarter turn. -/
+private lemma relative_same_physical {K K' J J' : UnitSquare}
+    (hK : SamePhysicalFrame K K') (hJ : SamePhysicalFrame J J') :
+    (relativeC K J=relativeC K' J' ∧ relativeS K J=relativeS K' J') ∨
+    (relativeC K J=relativeS K' J' ∧ relativeS K J= -relativeC K' J') ∨
+    (relativeC K J= -relativeC K' J' ∧ relativeS K J= -relativeS K' J') ∨
+    (relativeC K J= -relativeS K' J' ∧ relativeS K J=relativeC K' J') := by
+  rcases hK with ⟨hc,hs⟩|⟨hc,hs⟩|⟨hc,hs⟩|⟨hc,hs⟩ <;>
+    rcases hJ with ⟨hC,hS⟩|⟨hC,hS⟩|⟨hC,hS⟩|⟨hC,hS⟩ <;>
+    first
+    | (left; constructor <;> simp only [relativeC,relativeS,hc,hs,hC,hS] <;> ring1)
+    | (right; left; constructor <;> simp only [relativeC,relativeS,hc,hs,hC,hS] <;> ring1)
+    | (right; right; left; constructor <;> simp only [relativeC,relativeS,hc,hs,hC,hS] <;> ring1)
+    | (right; right; right; constructor <;> simp only [relativeC,relativeS,hc,hs,hC,hS] <;> ring1)
 
 lemma threshold_same_physical {K K' J J' : UnitSquare}
     (hK : SamePhysicalFrame K K') (hJ : SamePhysicalFrame J J') :
     SAT.threshold K J=SAT.threshold K' J' := by
-  rcases hK with ⟨hc,hs⟩|⟨hc,hs⟩|⟨hc,hs⟩|⟨hc,hs⟩ <;>
-    rcases hJ with ⟨hC,hS⟩|⟨hC,hS⟩|⟨hC,hS⟩|⟨hC,hS⟩ <;>
-    simp [SAT.threshold,relativeC,relativeS,hc,hs,hC,hS,abs_neg,neg_mul,
-      mul_neg,← neg_add,← neg_sub,add_comm,add_left_comm,mul_comm,sub_eq_add_neg]
+  rcases relative_same_physical hK hJ with ⟨h₁,h₂⟩|⟨h₁,h₂⟩|⟨h₁,h₂⟩|⟨h₁,h₂⟩ <;>
+    simp only [SAT.threshold,h₁,h₂,abs_neg] <;> ring
 
 def BoundaryNormalization.sourceSquare {S : Fin 8 → UnitSquare} {q : ℝ}
     (N : BoundaryNormalization (S := S) q) (i : Vertex) : UnitSquare :=
@@ -131,8 +145,8 @@ def BoundaryNormalization.sourceOrder {S : Fin 8 → UnitSquare} {q : ℝ}
     moveCenter,N.original.square_eq i] using N.original.original_order.center_cos i
   center_sin i := by simpa [BoundaryNormalization.source,BoundaryNormalization.sourceSquare,
     moveCenter,N.original.square_eq i] using N.original.original_order.center_sin i
-  gap_pos := N.original.original_order.gap_pos
-  gap_lt_pi := N.original.original_order.gap_lt_pi
+  positive := N.original.original_order.positive
+  below_pi := N.original.original_order.below_pi
 
 /-- Extend the central label and the seven actual exterior labels to a full
 bijection. Surjectivity is part of the central-core enumeration. -/
@@ -141,14 +155,19 @@ def OrderedExterior.labels {S : Fin 8 → UnitSquare} {q : ℝ} (O : OrderedExte
   (Fin.cases O.central (fun i => O.index i)) (by
     constructor
     · intro i j hij
+      revert hij
       refine Fin.cases ?_ (fun i => ?_) i
       · refine Fin.cases ?_ (fun j => ?_) j
-        · rfl
-        · exact (O.misses_central j hij).elim
+        · intro _
+          rfl
+        · intro hij
+          exact (O.misses_central j hij).elim
       · refine Fin.cases ?_ (fun j => ?_) j
-        · exact (O.misses_central i hij.symm).elim
-        · have he := O.index.injective hij
-          simpa [he]
+        · intro hij
+          exact (O.misses_central i hij.symm).elim
+        · intro hij
+          simp only [Fin.cases_succ] at hij
+          rw [O.index.injective hij]
     · intro j
       by_cases hj : j=O.central
       · exact ⟨0,hj.symm⟩
@@ -202,29 +221,36 @@ lemma CycleAction.squares_packing {q : ℝ} (G : CycleAction) {S : Fin 8 → Uni
   have hpR := (sqPacking_iff_packing S (0,0) hp.1).1 hp
   have hl := packing_relabel hpR (extendExteriorPerm G.index)
   have hfinal : Packing (G.squares S) (0,0) (Real.sqrt q) := by
+    change Packing (fun i => motionSquare G.rotation G.reversed (S (extendExteriorPerm G.index i)))
+      (0,0) (Real.sqrt q)
     cases h : G.reversed
-    · simpa [CycleAction.squares,motionSquare,reflectionSquare,h] using
+    · simpa [motionSquare,reflectionSquare] using
         packing_pull hl (G.rotation:Direction)
-    · simpa [CycleAction.squares,motionSquare,reflectionSquare,h] using
+    · simpa [motionSquare,reflectionSquare] using
         packing_pull (packing_reflectDiagonal hl) (G.rotation:Direction)
   exact (sqPacking_iff_packing _ _ hp.1).2 hfinal
 
 lemma CycleAction.squares_congruent (G : CycleAction) (S : Fin 8 → UnitSquare) :
     Congruent S (0,0) (fun i => reflectionSquare G.reversed (G.squares S i)) := by
-  cases h : G.reversed
-  · refine ⟨(G.rotation:Direction),extendExteriorPerm G.index,?_⟩
+  rcases G with ⟨s,rev,rot⟩
+  cases rev
+  · refine ⟨(rot:Direction),extendExteriorPerm (CycleAction.index ⟨s,false,rot⟩),?_⟩
     intro i p
     constructor
-    · exact (pullSquare_open (0,0) (G.rotation:Direction) (S (extendExteriorPerm G.index i)) p).symm
-    · exact (pullSquare_closed (0,0) (G.rotation:Direction) (S (extendExteriorPerm G.index i)) p).symm
-  · refine ⟨(-G.rotation:Direction),extendExteriorPerm G.index,?_⟩
+    · exact (pullSquare_open (0,0) (rot:Direction) _ p).symm
+    · exact (pullSquare_closed (0,0) (rot:Direction) _ p).symm
+  · refine ⟨(-rot:Direction),extendExteriorPerm (CycleAction.index ⟨s,true,rot⟩),?_⟩
     intro i p
-    have he : diagonalPoint (frameEquiv (0,0) (G.rotation:Direction) (diagonalPoint p))=
-        pointInDirection (0,0) (-G.rotation:Direction) p.1 p.2 := by
-      simpa [frameEquiv_apply] using diagonal_conjugates_rotation (-G.rotation:Direction) (diagonalPoint p)
-    constructor <;>
-      simp [CycleAction.squares,reflectionSquare,motionSquare,h,reflectDiagonal_open,
-        reflectDiagonal_closed,pullSquare_open,pullSquare_closed,he]
+    have he : diagonalPoint (frameEquiv (0,0) (rot:Direction) (diagonalPoint p))=
+        pointInDirection (0,0) (-rot:Direction) p.1 p.2 := by
+      simpa [frameEquiv_apply] using diagonal_conjugates_rotation (-rot:Direction) (diagonalPoint p)
+    constructor
+    · change _ ↔ openSquare (reflectDiagonalSquare (pullSquare (0,0) (rot:Direction)
+        (reflectDiagonalSquare (S (extendExteriorPerm (CycleAction.index ⟨s,true,rot⟩) i))))) p
+      rw [reflectDiagonal_open,pullSquare_open,reflectDiagonal_open,he]
+    · change _ ↔ closedSquare (reflectDiagonalSquare (pullSquare (0,0) (rot:Direction)
+        (reflectDiagonalSquare (S (extendExteriorPerm (CycleAction.index ⟨s,true,rot⟩) i))))) p
+      rw [reflectDiagonal_closed,pullSquare_closed,reflectDiagonal_closed,he]
 
 lemma reflection_congruent_trans {S T U : Fin 8 → UnitSquare}
     (hST : ∃ b : Bool,Congruent S (0,0) (fun i => reflectionSquare b (T i)))
@@ -282,16 +308,24 @@ def CycleAction.candidateMirror (G : CycleAction) : CycleAction :=
 
 lemma CycleAction.candidateMirror_edge (G : CycleAction) (i : Vertex) :
     G.candidateMirror.edge i=G.edge (4-i) := by
-  rcases G with ⟨s,b,r⟩
-  cases b <;> fin_cases s <;> fin_cases i <;>
-    norm_num [CycleAction.candidateMirror,CycleAction.edge,CycleAction.index,next]
+  have htable : ∀ (s : Vertex) (b : Bool) (i : Vertex),
+      CycleAction.edge (CycleAction.candidateMirror ⟨s,b,0⟩) i=CycleAction.edge ⟨s,b,0⟩ (4-i) := by
+    decide
+  exact htable G.shift G.reversed i
 
 lemma CycleAction.candidateMirror_E {q : ℝ} (G : CycleAction) (C : BoundaryCycle q) :
     (G.candidateMirror.boundary C).tangent Candidate.E= -(G.boundary C).tangent Candidate.E := by
   rw [G.candidateMirror.tangent,G.tangent]
-  rcases G with ⟨s,b,r⟩
-  cases b <;> fin_cases s <;>
-    simp [CycleAction.candidateMirror,CycleAction.index,Candidate.E,reflectionSign]
+  have htable : ∀ (s : Vertex) (b : Bool),
+      CycleAction.index (CycleAction.candidateMirror ⟨s,b,0⟩) Candidate.E=
+        CycleAction.index ⟨s,b,0⟩ Candidate.E := by
+    decide
+  have hidx : G.candidateMirror.index Candidate.E=G.index Candidate.E :=
+    htable G.shift G.reversed
+  have hsign : reflectionSign G.candidateMirror.reversed= -reflectionSign G.reversed := by
+    cases h : G.reversed <;> simp [CycleAction.candidateMirror,reflectionSign,h]
+  rw [hidx,hsign]
+  ring
 
 lemma candidate_word_mirror (i : Vertex) : Candidate.word (4-i)=Candidate.word i := by
   fin_cases i <;> norm_num [Candidate.word]
@@ -321,8 +355,15 @@ def candidateFrameOfWordAction {q : ℝ} {C : BoundaryCycle q} (F : QuarterLift 
     rw [(normalizedCandidateAction F G).canonical]
     change (G.boundary C).canonicalAngle i=_ at h
     rw [G.canonical] at h
-    dsimp [normalizedCandidateAction,QuarterLift.act] at *
-    linarith
+    have hrev : (normalizedCandidateAction F G).reversed=G.reversed := rfl
+    have hidx : (normalizedCandidateAction F G).index=G.index := rfl
+    have hwrap : (normalizedCandidateAction F G).wrap=G.wrap := rfl
+    have hrot : (normalizedCandidateAction F G).rotation=G.rotation+(F.act G).theta Candidate.A+
+        ((G.quarter F.quarter Candidate.A:ℤ):ℝ)*(Real.pi/2) := rfl
+    have hquarter : (F.act G).quarter=G.quarter F.quarter := rfl
+    rw [hrev,hidx,hwrap,hrot]
+    rw [hquarter] at h
+    linear_combination h+(Real.pi/2)*hm'
   spread i j := by
     have hi := (F.act G).theta_range i
     have hj := (F.act G).theta_range j
@@ -498,7 +539,7 @@ theorem GlobalNormalization.original_slider_sectors {S : Fin 8 → UnitSquare}
     (hcenters : ∀ i,(N.source.square i).center=sharpData.exteriorCenters Z η i)
     (hTframe : (N.source.square 4).cosine=0 ∧ (N.source.square 4).sine=1)
     (hGframe : (N.source.square 1).cosine=sharpData.s ∧ (N.source.square 1).sine= -sharpData.c) :
-    7/12≤Z ∧ η≤sharpData.etaMax := by
+    7/12≤Z ∧ η≤ sharpData.etaMax := by
   have hq : sourceLevel qStar≤Q0 := by
     dsimp [sourceLevel,Q0,qMinus]
     exact max_le qStar_limits.2.2.le
@@ -513,17 +554,20 @@ theorem GlobalNormalization.original_slider_sectors {S : Fin 8 → UnitSquare}
   norm_num [angleGap,next] at htspan hgspan h₀ h₁ h₃ h₄
   obtain ⟨hx₁,hx₁u,hx₂,hx₂u,hy₃,hy₃u,hx₄,hx₄u,hc,hcu,hs,hsu,hh₁,hh₁u,hh₂,hh₂u⟩ := sharp_coordinates
   have hy := sharp_y
+  have hdot_scale (t : ℝ) (v p : Point) : dot (scale t v) p=t*dot v p := by
+    simp only [dot,scale]
+    ring
   have hTpositive : 0<Z := by
     have h := polarOrder_positive_three N.source_order
       (l := 3) (m := 4) (u := 5) (n := (0,1))
       (by linarith) (by linarith) (by linarith)
-      (by rw [hcenters]; norm_num [exteriorCenters,pB,dot]; linarith)
+      (by rw [hcenters]; norm_num [exteriorCenters,pB,dot]; linarith [hy.1])
       (by rw [hcenters]; norm_num [exteriorCenters,pD,dot]; linarith)
     simpa [hcenters,exteriorCenters,pT,dot] using h
   have hGnegative : sharpData.h₂+1/2+η<0 := by
     have hleft : 0<dot (scale (-1) sharpData.f) (N.source.square 0).center := by
       rw [hcenters]
-      norm_num [exteriorCenters,pH,dot_scale_left,sharpData.dot_f_inFrame]
+      norm_num [exteriorCenters,pH,hdot_scale,sharpData.dot_f_inFrame]
       linarith
     have hright : 0<dot (scale (-1) sharpData.f) (N.source.square 2).center := by
       rw [hcenters]
@@ -531,13 +575,13 @@ theorem GlobalNormalization.original_slider_sectors {S : Fin 8 → UnitSquare}
       have hsp : 0<sharpData.s := by linarith
       have hxp : 0<sharpData.x₁-1/2 := by linarith
       have hyp : 0< -sharpData.y-1/2 := by linarith [hy.2]
-      norm_num [exteriorCenters,pA,f,scale,dot]
+      norm_num [exteriorCenters,pA,Coordinates.f,scale,dot]
       nlinarith [mul_pos hsp hxp,mul_pos hcp hyp]
     have h := polarOrder_positive_three N.source_order
       (l := 0) (m := 1) (u := 2) (n := scale (-1) sharpData.f)
       (by linarith) (by linarith) (by linarith) hleft hright
     rw [hcenters] at h
-    norm_num [exteriorCenters,pG,dot_scale_left,sharpData.dot_f_inFrame] at h
+    norm_num [exteriorCenters,pG,hdot_scale,sharpData.dot_f_inFrame] at h
     linarith
   have hxsmall : |sharpData.x₂-3/2|≤1/2 := by
     rw [abs_of_pos (by linarith : 0<sharpData.x₂-3/2)]

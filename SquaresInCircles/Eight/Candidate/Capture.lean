@@ -4,12 +4,15 @@ public import SquaresInCircles.Eight.Candidate.DualApplication
 public import SquaresInCircles.Eight.Generated.AffineBudgets
 
 /-!
-# Complete candidate capture and the radius pullback
+# Eight squares: candidate capture and its pullback
 
-The affine tables are applied at Q1. All conclusions concerning the real
-frame lifts, signed tangents, and initially feasible owners pull back to the
-pre-expansion boundary cycle. The positive-error terminal is then evaluated
-at that cycle's actual radius.
+The tables are applied at the level `Q1` (`capture`). For a boundary cycle at `Q1` with a
+candidate frame and `τ_E ≤ 0` they give, step by step, the tangent cuts, the mismatch chain down to
+`1/1000`, the signs, the owner sets and the tilt window (`Captured`). These conclusions concern
+the real frame representatives, the signed tangents and the separating axes, so they pull back
+through a radius expansion to the boundary cycle before the expansion (`Captured.pullback`): the
+frames, directions and tangents do not change, and every axis that separates before the expansion
+separates after it. The terminal inequality is then applied at the level of that cycle.
 -/
 
 @[expose] public section
@@ -48,8 +51,9 @@ def capture {C : BoundaryCycle Q1} (F : Frame C) (hE : EHalf C) : Captured C F :
   let Pfinal := Tables.final_bound F hE hG hT hHD hSigns hZero hQuarter hS015.le
   have hS001 := contraction_015_to_001 Pfinal hS015.le
   have hOwners := mixed_owners F (by norm_num [Q1,Q0]) hc hZero hQuarter hS001.le
-  obtain ⟨z,hzl,hzu,ht,htl,htu⟩ := tilt_window F le_rfl hc hOwners hS001.le
-  exact ⟨hc,hS001,hZero,hQuarter,hOwners,z,hzl,hzu,ht,htl,htu⟩
+  have hw := tilt_window F le_rfl hc hOwners hS001.le
+  exact ⟨hc,hS001,hZero,hQuarter,hOwners,hw.choose,hw.choose_spec.1,hw.choose_spec.2.1,
+    hw.choose_spec.2.2.1,hw.choose_spec.2.2.2.1,hw.choose_spec.2.2.2.2⟩
 
 def Frame.pullback {q r : ℝ} {C : BoundaryCycle q} {D : BoundaryCycle r}
     (F : Frame D) (hR : RadiusExpansion C D) : Frame C where

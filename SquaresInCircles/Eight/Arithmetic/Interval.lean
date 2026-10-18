@@ -11,6 +11,7 @@ ordered-field proposition.  No external evaluation result is a premise.
 -/
 
 @[expose] public section
+noncomputable section
 
 namespace SquaresInCircles.Eight.Arithmetic
 
@@ -64,23 +65,23 @@ theorem product_between_corners {l u L U x y m M : ℝ}
       by_cases hL : 0 ≤ L
       · exact hlo.1.trans ((mul_le_mul_of_nonneg_right hx.1 hL).trans hxy)
       · exact hlo.2.2.1.trans
-          ((mul_le_mul_of_nonpos_right hx.2 (le_of_not_ge hL).le).trans hxy)
-    · have hxy := mul_le_mul_of_nonpos_left hy.2 (le_of_not_ge hx0).le
+          ((mul_le_mul_of_nonpos_right hx.2 (le_of_not_ge hL)).trans hxy)
+    · have hxy := mul_le_mul_of_nonpos_left hy.2 (le_of_not_ge hx0)
       by_cases hU : 0 ≤ U
       · exact hlo.2.1.trans ((mul_le_mul_of_nonneg_right hx.1 hU).trans hxy)
       · exact hlo.2.2.2.trans
-          ((mul_le_mul_of_nonpos_right hx.2 (le_of_not_ge hU).le).trans hxy)
+          ((mul_le_mul_of_nonpos_right hx.2 (le_of_not_ge hU)).trans hxy)
   · by_cases hx0 : 0 ≤ x
     · have hxy := mul_le_mul_of_nonneg_left hy.2 hx0
       by_cases hU : 0 ≤ U
       · exact hxy.trans ((mul_le_mul_of_nonneg_right hx.2 hU).trans hhi.2.2.2)
       · exact hxy.trans
-          ((mul_le_mul_of_nonpos_right hx.1 (le_of_not_ge hU).le).trans hhi.2.1)
-    · have hxy := mul_le_mul_of_nonpos_left hy.1 (le_of_not_ge hx0).le
+          ((mul_le_mul_of_nonpos_right hx.1 (le_of_not_ge hU)).trans hhi.2.1)
+    · have hxy := mul_le_mul_of_nonpos_left hy.1 (le_of_not_ge hx0)
       by_cases hL : 0 ≤ L
       · exact hxy.trans ((mul_le_mul_of_nonneg_right hx.2 hL).trans hhi.2.2.1)
       · exact hxy.trans
-          ((mul_le_mul_of_nonpos_right hx.1 (le_of_not_ge hL).le).trans hhi.1)
+          ((mul_le_mul_of_nonpos_right hx.1 (le_of_not_ge hL)).trans hhi.1)
 
 theorem mem_mul {I J : QInterval} {x y : ℝ} (hx : I.Mem x) (hy : J.Mem y) :
     (I.mul J).Mem (x*y) := by

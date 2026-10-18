@@ -1,4 +1,3 @@
 module
 
 public import SquaresInCircles.Eight.Generated.WholePairPolynomials000
-public import SquaresInCircles.Eight.Generated.WholePairPolynomials001

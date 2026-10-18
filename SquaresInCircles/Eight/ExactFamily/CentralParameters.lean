@@ -4,12 +4,15 @@ public import SquaresInCircles.Eight.Equality
 public import SquaresInCircles.Eight.BoundaryReduction
 
 /-!
-# A half-open representative for the central square
+# Eight squares: the parameters of the central square
 
-Uncompiled draft.  The quarter-turn is selected from the actual frame and
-the half-angle parameter is recovered algebraically as `s/(1+c)`.  The
-included lower endpoint and excluded upper endpoint match the equality
-domain, so a diagonal frame does not receive two parameter records.
+Every unit square is, as a set of points, the central square of parameters with the same centre
+and with the frame parameter `w` in the half-open interval `[1 - √2, √2 - 1)`
+(`central_parameters_exist`). One of the four quarter turns of its frame makes an angle in
+`[-π/4, π/4)` with the horizontal (`halfopen_quarter_exists`), and for that frame `(c, s)` the
+parameter is recovered algebraically as `w = s/(1 + c)` (`halfAngle_recover`,
+`halfAngle_halfopen`). The lower end of the interval is included and the upper end excluded, as in
+the admissible domain, so a frame along a diagonal gets only one parameter.
 -/
 
 @[expose] public section
@@ -97,8 +100,8 @@ theorem halfAngle_recover {c s : ℝ} (hu : c^2+s^2=1) (hc : 0<c) :
     field_simp [ne_of_gt hd]
 
 theorem halfAngle_halfopen {c s : ℝ} (hu : c^2+s^2=1)
-    (hc : 0<c) (hlo : -c≤s) (hhi : s<c) :
-    1-Real.sqrt 2≤s/(1+c) ∧ s/(1+c)<Real.sqrt 2-1 := by
+    (hc : 0<c) (hlo : -c≤ s) (hhi : s<c) :
+    1-Real.sqrt 2≤ s/(1+c) ∧ s/(1+c)<Real.sqrt 2-1 := by
   let w := s/(1+c)
   have hw := halfAngle_recover hu hc
   have hD := halfAngle_den_pos w
@@ -128,6 +131,13 @@ theorem halfAngle_halfopen {c s : ℝ} (hu : c^2+s^2=1)
       (by linarith : 0≤w+1+Real.sqrt 2)
     nlinarith
 
+private theorem centralParameters_unitSquare_eq {K L : UnitSquare} (h1 : K.center=L.center)
+    (h2 : K.cosine=L.cosine) (h3 : K.sine=L.sine) : K=L := by
+  cases K; cases L
+  simp only at h1 h2 h3
+  subst h1 h2 h3
+  rfl
+
 theorem central_parameters_exist (K : UnitSquare) (Z η : ℝ) :
     ∃ p : EqualityParameters, SameSquare p.centralSquare K ∧
       p.centralSquare.center=K.center ∧
@@ -139,7 +149,12 @@ theorem central_parameters_exist (K : UnitSquare) (Z η : ℝ) :
   have hw := halfAngle_recover L.unit hc
   have hframe := halfAngle_halfopen L.unit hc hl hu
   have hL : p.centralSquare=L := by
-    ext <;> simp [p,centralSquare,center,C,S,L,turnSquare,hw.1,hw.2]
+    refine centralParameters_unitSquare_eq ?_ ?_ ?_
+    · rfl
+    · show halfAngleCos (L.sine/(1+L.cosine))=L.cosine
+      exact hw.1
+    · show halfAngleSin (L.sine/(1+L.cosine))=L.sine
+      exact hw.2
   refine ⟨p,?_,?_,hframe,rfl,rfl⟩
   · rw [hL]
     exact turnSquare_sameSquare k K

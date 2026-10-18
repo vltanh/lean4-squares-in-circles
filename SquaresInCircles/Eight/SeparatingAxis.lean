@@ -4,11 +4,18 @@ public import SquaresInCircles.Eight.Model
 public import SquaresInCircles.Common.Contacts
 
 /-!
-# All eight signed separating axes and the four forward margins
+# Eight squares: the eight signed axes and the four forward margins
 
-F0 source draft. The four owner labels and the sign are independent.
-Existence comes from the repository SAT theorem; the converse is proved
-using the strict support of an open square. Equalities are allowed.
+Two squares have disjoint interiors exactly when one of the eight signed axes separates them
+(`disjoint_iff_signed_axis`). The owner of the axis, one of the two axes of either square, and
+its sign are independent. One direction is the separating-axis theorem; the converse uses the
+strict support of an open square (`open_point_strict_support`). The projection may equal the
+threshold.
+
+For a pair written in the canonical frame of its first square, the source, the four forward axes
+`forwardAxis j` separate exactly when the margins `forwardMargin j` are nonnegative
+(`forward_feasible_iff_margin`), and the margins are the same in any frame
+(`canonical_margin_identity`).
 -/
 
 @[expose] public section
@@ -164,7 +171,7 @@ theorem SignedAxis.disjoint {a : SignedAxis} {K L : UnitSquare}
 
 theorem disjoint_iff_signed_axis (K L : UnitSquare) :
     (∀ p, ¬ (openSquare K p ∧ openSquare L p)) ↔ ∃ a : SignedAxis, a.Feasible K L :=
-  ⟨signed_axis_of_disjoint K L, fun ⟨a, ha⟩ => ha.disjoint⟩
+  ⟨signed_axis_of_disjoint K L, fun ⟨_, ha⟩ => SignedAxis.disjoint ha⟩
 
 def AxisOwner.swap : AxisOwner → AxisOwner
   | .sourceX => .targetX | .sourceY => .targetY
@@ -185,7 +192,8 @@ theorem reverse_feasible_iff (a : SignedAxis) (K L : UnitSquare) :
     a.reverse.Feasible L K ↔ a.Feasible K L := by
   simp only [SignedAxis.Feasible, reverse_projection, threshold_comm L K]
 
-/-- Original forward-axis numbering in hand equation (7.2), zero based. -/
+/-- The four forward axes, numbered from zero: `+f` of the source, `+e` of the target, `+f` of
+the target and `-e` of the source. -/
 def forwardAxis (j : Fin 4) : SignedAxis :=
   ![⟨.sourceY, .positive⟩, ⟨.targetX, .positive⟩,
     ⟨.targetY, .positive⟩, ⟨.sourceX, .negative⟩] j
@@ -209,8 +217,9 @@ def localTarget (A B τ φ : ℝ) : UnitSquare where
 
 theorem local_threshold (a b A B σ τ φ : ℝ) :
     SAT.threshold (localSource a b σ) (localTarget A B τ φ) = pairWidth φ := by
-  simp [SAT.threshold, localSource, localTarget, axisSquare,
-    relativeC, relativeS, pairWidth, add_comm]
+  simp only [SAT.threshold, localSource, localTarget, axisSquare,
+    relativeC, relativeS, pairWidth]
+  ring_nf
 
 theorem forward_margin_identity (j : Fin 4) (a b A B σ τ φ : ℝ) :
     (forwardAxis j).projection (localSource a b σ) (localTarget A B τ φ) -
@@ -221,7 +230,8 @@ theorem forward_margin_identity (j : Fin 4) (a b A B σ τ φ : ℝ) :
     simp [forwardAxis, forwardMargin, SignedAxis.projection, SignedAxis.normal,
       AxisOwner.normal, AxisSign.value, localSource, localTarget, axisSquare,
       e, f, dot, scale, sub] <;>
-    nlinarith [Real.sin_sq_add_cos_sq φ]
+    nlinarith [Real.sin_sq_add_cos_sq φ, congrArg (fun x => A * x) (Real.sin_sq_add_cos_sq φ),
+      congrArg (fun x => τ * B * x) (Real.sin_sq_add_cos_sq φ)]
 
 theorem forward_feasible_iff_margin (j : Fin 4) (a b A B σ τ φ : ℝ) :
     (forwardAxis j).Feasible (localSource a b σ) (localTarget A B τ φ) ↔
@@ -267,7 +277,8 @@ theorem canonical_margin_identity (j : Fin 4) (K L : UnitSquare) (a b A B σ τ 
   rw [hKx, hKy, hc, hs] at hKLx hKLy
   rw [hLx, hLy, hc', hs'] at hLKx hLKy
   have hw : SAT.threshold K L = pairWidth φ := by
-    simp [SAT.threshold, hc, hs, pairWidth, add_comm]
+    simp only [SAT.threshold, hc, hs, pairWidth]
+    ring
   fin_cases j <;>
     simp [forwardAxis, forwardMargin, SignedAxis.projection_eq,
       AxisOwner.projection, AxisSign.value, frameX_sub, frameY_sub,

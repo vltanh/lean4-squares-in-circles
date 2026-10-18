@@ -10,6 +10,7 @@ below are pointwise; no derivative of a remainder coefficient is assumed.
 -/
 
 @[expose] public section
+noncomputable section
 
 namespace SquaresInCircles.Eight.Arithmetic
 

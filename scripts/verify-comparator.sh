@@ -7,12 +7,10 @@
 # through Lean's kernel and the toolchain's independent kernels NanoDa and
 # con-ron.
 #
-# Challenge.lean restates the pure definition bodies of Geometry.lean,
-# StatementEight.lean, and Optimal.lean in that order. The source-only helper
-# scripts/sync-challenge.py performs this synchronization; --write copies the
-# definitions before the comparator check. The Challenge header and theorem
-# region are left as they are. To materialize source without any build, run
-# only: python3 scripts/sync-challenge.py --write
+# Challenge.lean restates the definitions of SquaresInCircles/Geometry.lean
+# word for word. Edit Geometry.lean only, and run with --write to copy its
+# definitions into Challenge.lean before the check; the header of
+# Challenge.lean and its theorems are left as they are.
 #
 # Needs Linux, python3 and bubblewrap (`bwrap`), which sandboxes the build.
 # Run from anywhere: scripts/verify-comparator.sh [--write]
@@ -26,13 +24,30 @@ case "${1-}" in
   *) echo "usage: scripts/verify-comparator.sh [--write]" >&2; exit 2 ;;
 esac
 
-# This helper only copies source text or reports textual drift. The build
-# and independent-kernel work begin below, not inside the source helper.
-sync_args=()
-if [[ "$write" == 1 ]]; then
-  sync_args+=(--write)
-fi
-python3 scripts/sync-challenge.py "${sync_args[@]}"
+# The definitions run from `noncomputable section` to the end of the
+# namespace in Geometry.lean, and to the theorems in Challenge.lean.
+python3 - "$write" <<'PY'
+import sys
+from pathlib import Path
+
+write = sys.argv[1] == "1"
+challenge_path = Path("Challenge.lean")
+challenge = challenge_path.read_text()
+geometry = Path("SquaresInCircles/Geometry.lean").read_text()
+start = "noncomputable section\n"
+first = challenge.index(start)
+last = challenge.index("/-! ### The theorems -/")
+original = geometry[geometry.index(start):geometry.rindex("end SquaresInCircles")]
+original = original.rstrip() + "\n\n"
+if challenge[first:last] != original:
+    if not write:
+        raise SystemExit(
+            "error: the definitions in Challenge.lean differ from "
+            "SquaresInCircles/Geometry.lean; run scripts/verify-comparator.sh --write"
+        )
+    challenge_path.write_text(challenge[:first] + original + challenge[last:])
+    print("Challenge.lean: copied the definitions of SquaresInCircles/Geometry.lean")
+PY
 
 # Palomar ignores `enable_nanoda` and registers the toolchain's kernels itself;
 # a copy of comparator.json does the same here.

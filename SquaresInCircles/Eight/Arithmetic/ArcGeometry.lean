@@ -11,6 +11,7 @@ root branch retained. They are independent of a particular finite table.
 -/
 
 @[expose] public section
+noncomputable section
 open Set
 
 namespace SquaresInCircles.Eight.Arithmetic
@@ -65,14 +66,14 @@ theorem coreEndpoint_facts {u : ℝ} (hu : 6/7 ≤ u ∧ u ≤ 1) :
   have hb : 1/2 ≤ u*coreEndpointA u := by
     have hsq : (1-u)^2 ≤ (u*Real.sqrt d)^2 := by
       have hp := mul_nonneg (show 0 ≤ 1+u^2 by positivity) hfactor
-      have he : (u*Real.sqrt d)^2-(1-u)^2=(1+u^2)*(7*u-6)*(6-5*u)/36 := by
+      have he : (u*Real.sqrt d)^2-(1-u)^2=(1+u^2)*((7*u-6)*(6-5*u))/36 := by
         rw [mul_pow,hs]
         dsimp [d]
         ring
-      linarith
+      nlinarith
     have hroot : 1-u ≤ u*Real.sqrt d := by nlinarith [mul_nonneg hu0 hr.le]
     unfold coreEndpointA
-    rw [mul_div_assoc]
+    rw [← mul_div_assoc]
     apply (le_div_iff₀ hden).mpr
     nlinarith
   refine ⟨ha,hb,?_,?_⟩
@@ -81,11 +82,12 @@ theorem coreEndpoint_facts {u : ℝ} (hu : 6/7 ≤ u ∧ u ≤ 1) :
       dsimp [coreEndpointA,d]
       exact div_mul_cancel₀ _ (ne_of_gt hden)
     have hquad : (1+u^2)*(coreEndpointA u)^2-(u+1)*coreEndpointA u+71/144=0 := by
-      have hsq := congrArg (fun x : ℝ => x^2) hid
-      dsimp [d] at hs
+      have hsq : (coreEndpointA u*(2*(1+u^2))-(u+1))^2 = d := by
+        rw [hid,show u+1+Real.sqrt d-(u+1) = Real.sqrt d by ring,hs]
+      dsimp [d] at hsq
       have hid2 : 4*(1+u^2)*((1+u^2)*(coreEndpointA u)^2-
-          (u+1)*coreEndpointA u+71/144)=0 := by nlinarith
-      exact (mul_eq_zero.mp hid2).resolve_left (by positivity)
+          (u+1)*coreEndpointA u+71/144)=0 := by linear_combination hsq
+      exact (mul_eq_zero.mp hid2).resolve_left (by positivity : (4:ℝ)*(1+u^2) ≠ 0)
     nlinarith only [hquad]
 
 theorem circle_branch {v ρ a b : ℝ} (ha : v < a)
@@ -131,7 +133,7 @@ theorem circle_arc_radicand_positive {v ρ l u aU : ℝ}
     (hc : (aU-v)^2+(u-v)^2=ρ^2) :
     ∀ b ∈ Icc l u, 0 < ρ^2-(b-v)^2 := by
   intro b hb
-  have hp := mul_nonneg (sub_nonneg.mpr hb.2) (show 0 ≤ u+b-2*v by linarith [hb.1])
+  have hp := mul_nonneg (sub_nonneg.mpr hb.2) (show 0 ≤ u+b-2*v by linarith [hb.1,hb.2])
   have hsq := sq_pos_of_pos (sub_pos.mpr ha)
   nlinarith
 

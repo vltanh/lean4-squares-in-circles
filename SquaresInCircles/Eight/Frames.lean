@@ -104,13 +104,35 @@ def handGammaNumerator : Fin 4 → Fin 4 → ℕ :=
 
 def handGamma (i j : Fin 4) : ℝ := handGammaNumerator i j / 10000
 
-set_option maxRecDepth 200000 in
-set_option maxHeartbeats 0 in
-/-- Complete finite seven-walk enumeration; no native evaluator enters the
-trust boundary. It includes constant walks, repeated vertices, and every loop. -/
+/-- The least weight of a two-step walk between two types, the min-plus square
+of the matrix: the minimum over `b` of
+`handGammaNumerator a b + handGammaNumerator b c`. -/
+private def twoStepGammaNumerator : Fin 4 → Fin 4 → ℕ :=
+  ![![17666, 17666, 17759, 17931],
+    ![17666, 17666, 17759, 17931],
+    ![17759, 17759, 17824, 17838],
+    ![17931, 17931, 17838, 17666]]
+
+/-- Complete finite seven-walk bound; no native evaluator enters the trust
+boundary. It covers constant walks, repeated vertices, and every loop. A closed
+seven-walk is three two-step walks and one step; each two-step walk weighs at
+least `twoStepGammaNumerator` of its ends, and the kernel checks the remaining
+closed walk through four types for all `4 ^ 4` choices. -/
 theorem four_type_seven_walk_numerator :
     ∀ τ : Vertex → Fin 4, 62096 ≤ ∑ i, handGammaNumerator (τ i) (τ (next i)) := by
-  decide
+  have two : ∀ a b c : Fin 4,
+      twoStepGammaNumerator a c ≤ handGammaNumerator a b + handGammaNumerator b c := by
+    decide +kernel
+  have close : ∀ a b c d : Fin 4, 62096 ≤ twoStepGammaNumerator a b +
+      twoStepGammaNumerator b c + twoStepGammaNumerator c d + handGammaNumerator d a := by
+    decide +kernel
+  intro τ
+  have h₁ := two (τ 0) (τ 1) (τ 2)
+  have h₂ := two (τ 2) (τ 3) (τ 4)
+  have h₃ := two (τ 4) (τ 5) (τ 6)
+  have h₄ := close (τ 0) (τ 2) (τ 4) (τ 6)
+  simp only [Fin.sum_univ_seven, next, Fin.isValue, Fin.reduceAdd]
+  omega
 
 theorem four_type_seven_walk (τ : Vertex → Fin 4) :
     3881 / 625 ≤ ∑ i, handGamma (τ i) (τ (next i)) := by
@@ -170,17 +192,20 @@ lemma periodicFrameCost_neg (x : ℝ) : periodicFrameCost (-x) = periodicFrameCo
 lemma frameCost_hasDerivAt (x : ℝ) :
     HasDerivAt frameCost ((Real.cos x - Real.sin x) / 2) x := by
   convert ((((Real.hasDerivAt_cos x).add (Real.hasDerivAt_sin x)).sub_const 1).div_const 2)
-    using 1 <;> dsimp [frameCost] <;> ring
+    using 1
+  · rfl
+  · ring
 
 lemma frameCost_monotone : MonotoneOn frameCost (Set.Icc 0 (Real.pi / 4)) := by
   apply monotoneOn_of_hasDerivWithinAt_nonneg (convex_Icc _ _)
-  · dsimp [frameCost]
+    (f' := fun x => (Real.cos x - Real.sin x) / 2)
+  · unfold frameCost
     fun_prop
   · intro x hx
     exact (frameCost_hasDerivAt x).hasDerivWithinAt
   · intro x hx
-    have hx' : 0 ≤ x ∧ x ≤ Real.pi / 4 := hx
-    have hc := Real.cos_sub (Real.pi / 4) x
+    rw [interior_Icc] at hx
+    have hx' : 0 ≤ x ∧ x ≤ Real.pi / 4 := ⟨hx.1.le, hx.2.le⟩
     have hs := Real.sin_nonneg_of_nonneg_of_le_pi
       (show 0 ≤ Real.pi / 4 - x by linarith) (by linarith [Real.pi_pos])
     rw [Real.sin_sub, Real.sin_pi_div_four, Real.cos_pi_div_four] at hs
@@ -193,17 +218,46 @@ lemma closed_walk_range_bound (θ : Vertex → ℝ) (i j : Vertex) :
     2 * |θ j - θ i| ≤ ∑ k, |θ (next k) - θ k| := by
   have hp (k : Vertex) := le_abs_self (θ (next k) - θ k)
   have hn (k : Vertex) := neg_le_abs (θ (next k) - θ k)
+  have hsum : ∑ k, |θ (next k) - θ k| =
+      |θ (next 0) - θ 0| + |θ (next 1) - θ 1| + |θ (next 2) - θ 2| + |θ (next 3) - θ 3| +
+        |θ (next 4) - θ 4| + |θ (next 5) - θ 5| + |θ (next 6) - θ 6| :=
+    Fin.sum_univ_seven _
+  have e0 : next 0 = 1 := rfl
+  have e1 : next 1 = 2 := rfl
+  have e2 : next 2 = 3 := rfl
+  have e3 : next 3 = 4 := rfl
+  have e4 : next 4 = 5 := rfl
+  have e5 : next 5 = 6 := rfl
+  have e6 : next 6 = 0 := rfl
+  have hp0 := hp 0
+  have hp1 := hp 1
+  have hp2 := hp 2
+  have hp3 := hp 3
+  have hp4 := hp 4
+  have hp5 := hp 5
+  have hp6 := hp 6
+  have hn0 := hn 0
+  have hn1 := hn 1
+  have hn2 := hn 2
+  have hn3 := hn 3
+  have hn4 := hn 4
+  have hn5 := hn 5
+  have hn6 := hn 6
+  rw [hsum]
+  rw [e0, e1, e2, e3, e4, e5, e6] at *
+  have hi : i = 0 ∨ i = 1 ∨ i = 2 ∨ i = 3 ∨ i = 4 ∨ i = 5 ∨ i = 6 := by
+    revert i; decide
+  have hj : j = 0 ∨ j = 1 ∨ j = 2 ∨ j = 3 ∨ j = 4 ∨ j = 5 ∨ j = 6 := by
+    revert j; decide
   rcases le_total 0 (θ j - θ i) with h | h
   · rw [abs_of_nonneg h]
-    fin_cases i <;> fin_cases j <;>
-      norm_num [Fin.sum_univ_succ, next] at * <;>
-      linarith [hp 0, hp 1, hp 2, hp 3, hp 4, hp 5, hp 6,
-        hn 0, hn 1, hn 2, hn 3, hn 4, hn 5, hn 6]
+    rcases hi with rfl | rfl | rfl | rfl | rfl | rfl | rfl <;>
+      rcases hj with rfl | rfl | rfl | rfl | rfl | rfl | rfl <;>
+      linarith
   · rw [abs_of_nonpos h]
-    fin_cases i <;> fin_cases j <;>
-      norm_num [Fin.sum_univ_succ, next] at * <;>
-      linarith [hp 0, hp 1, hp 2, hp 3, hp 4, hp 5, hp 6,
-        hn 0, hn 1, hn 2, hn 3, hn 4, hn 5, hn 6]
+    rcases hi with rfl | rfl | rfl | rfl | rfl | rfl | rfl <;>
+      rcases hj with rfl | rfl | rfl | rfl | rfl | rfl | rfl <;>
+      linarith
 
 /-! ## The shortest orientation tour and its real lift -/
 
@@ -228,7 +282,7 @@ lemma frameCost_nonneg {x : ℝ} (hx : x ∈ Set.Icc 0 (Real.pi/4)) :
     frameCost_monotone ⟨le_rfl,by positivity⟩ hx hx.1
 
 lemma frameCost_at_quarter : frameCost (Real.pi/4) = (Real.sqrt 2-1)/2 := by
-  simp [frameCost,Real.cos_pi_div_four,Real.sin_pi_div_four]
+  rw [frameCost,Real.cos_pi_div_four,Real.sin_pi_div_four]
   ring
 
 lemma frameCost_at_quarter_pos : 0 < frameCost (Real.pi/4) := by
@@ -243,12 +297,12 @@ lemma frameCost_chord {a b : ℝ} (ha : 0 ≤ a) (hab : a ≤ b)
     (hb : 0 < b) (hbH : b ≤ Real.pi/4) :
     a / b * frameCost b ≤ frameCost a := by
   have ht : 0 ≤ a/b := div_nonneg ha hb.le
-  have ht1 : a/b ≤ 1 := (div_le_one hb).2 hab
+  have ht1 : a/b ≤ 1 := (div_le_one₀ hb).2 hab
   have h := frameCost_concave.2
     (show (0:ℝ) ∈ Set.Icc 0 (Real.pi/4) by constructor <;> positivity)
     (show b ∈ Set.Icc 0 (Real.pi/4) from ⟨hb.le,hbH⟩)
     (sub_nonneg.2 ht1) ht (by ring : (1-a/b)+a/b=1)
-  have hid : (1-a/b) * 0 + (a/b)*b=a := by field_simp
+  have hid : (a/b)*b=a := div_mul_cancel₀ a hb.ne'
   simpa only [smul_eq_mul,hid,frameCost_zero,mul_zero,zero_add] using h
 
 lemma frameCost_triangle {a b c : ℝ}
@@ -267,7 +321,6 @@ lemma frameCost_triangle {a b c : ℝ}
     have h₂ := frameCost_chord hb.1 (by linarith [ha.1]) hsp hsH
     have hid : a/(a+b)*frameCost (a+b)+b/(a+b)*frameCost (a+b)=frameCost (a+b) := by
       field_simp
-      ring
     have hmono := frameCost_monotone hc ⟨hsp.le,hsH⟩ htri
     linarith
   · have hH : 0 < Real.pi/4 := by positivity
@@ -278,7 +331,7 @@ lemma frameCost_triangle {a b c : ℝ}
         a/(Real.pi/4)*frameCost (Real.pi/4)+b/(Real.pi/4)*frameCost (Real.pi/4) := by ring
     have hratio : 1 ≤ a/(Real.pi/4)+b/(Real.pi/4) := by
       rw [← add_div]
-      exact (one_le_div hH).2 (le_of_not_ge hsH).le
+      exact (one_le_div hH).2 (le_of_not_ge hsH)
     have hh := mul_le_mul_of_nonneg_right hratio frameCost_at_quarter_pos.le
     linarith
 
@@ -365,12 +418,16 @@ structure PhysicalFrameLift (φ : Vertex → ℝ) where
   represents : ∀ i, φ i=theta i+(quarter i:ℝ)*(Real.pi/2)
 
 def quarterPrefix (m : Vertex → ℤ) (i : Vertex) : ℤ :=
-  ∑ j ∈ Finset.univ.filter (fun j : Vertex => j.val<i.val),m j
+  ∑ j ∈ Finset.univ.filter (fun j : Vertex => j.val< i.val),m j
 
 lemma quarterPrefix_difference (m : Vertex → ℤ) (hm : ∑ i,m i=0) (i : Vertex) :
     quarterPrefix m (next i)-quarterPrefix m i=m i := by
-  fin_cases i <;>
-    norm_num [quarterPrefix,Fin.sum_univ_succ,next] at hm ⊢ <;> omega
+  rw [Fin.sum_univ_seven] at hm
+  simp only [quarterPrefix,Finset.sum_filter,Fin.sum_univ_seven]
+  have hi : i = 0 ∨ i = 1 ∨ i = 2 ∨ i = 3 ∨ i = 4 ∨ i = 5 ∨ i = 6 := by
+    revert i; decide
+  rcases hi with rfl | rfl | rfl | rfl | rfl | rfl | rfl <;>
+    simp [next] <;> omega
 
 lemma frameCost_closed_range (θ : Vertex → ℝ) {l u : Vertex}
     (hl : ∀ i,θ l ≤ θ i) (hu : ∀ i,θ i ≤ θ u)
@@ -382,9 +439,9 @@ lemma frameCost_closed_range (θ : Vertex → ℝ) {l u : Vertex}
   let r : Vertex → ℝ := fun i => frameCost |θ i-θ l|
   have hstep (i : Vertex) : |r (next i)-r i| ≤ frameCost |θ (next i)-θ i| := by
     have h₁ := frameCost_triangle (hrange l i) (hrange i (next i)) (hrange l (next i))
-      (abs_sub_le (θ (next i)) (θ i) (θ l))
+      (by linarith [abs_sub_le (θ (next i)) (θ i) (θ l)])
     have h₂ := frameCost_triangle (hrange l (next i)) (hrange (next i) i) (hrange l i)
-      (abs_sub_le (θ i) (θ (next i)) (θ l))
+      (by linarith [abs_sub_le (θ i) (θ (next i)) (θ l)])
     rw [abs_sub_comm (θ i) (θ (next i))] at h₂
     apply abs_le.2
     dsimp [r]
@@ -410,19 +467,23 @@ theorem physical_frame_lift_of_cost (φ : Vertex → ℝ)
     hU.trans (frameCost_seven_tenths.trans_le
       (mul_le_mul_of_nonneg_left (frameCost_monotone ⟨by norm_num,hseven⟩ ⟨hH.le,le_rfl⟩ hseven)
         (by norm_num)))
-  have hchord (i : Vertex) : |x i|*frameCost (Real.pi/4) ≤
+  have hchord (i : Vertex) : |x i| * frameCost (Real.pi/4) ≤
       (Real.pi/4)*frameCost |x i| := by
     have h := frameCost_chord (abs_nonneg (x i))
       (shortestQuarter_range (φ (next i)-φ i)) hH le_rfl
-    exact (div_le_iff₀ hH).1 (by simpa [div_mul_eq_mul_div] using h)
+    rw [div_mul_eq_mul_div,div_le_iff₀ hH] at h
+    linarith
   have hsumchord := Finset.sum_le_sum (s := Finset.univ) (fun i _ => hchord i)
   rw [← Finset.sum_mul,← Finset.mul_sum] at hsumchord
   have hV : V < Real.pi/2 := by
-    dsimp [V,U] at *
+    change (∑ i,|x i|)*frameCost (Real.pi/4) ≤ (Real.pi/4)*U at hsumchord
+    change ∑ i,|x i| < Real.pi/2
     nlinarith [frameCost_at_quarter_pos]
   have hxs : ∑ i,x i= -(∑ i,m i:ℤ)*(Real.pi/2) := by
-    simp only [x,shortestQuarter,m,Finset.sum_sub_distrib,cyclic_difference_sum,
-      ← Finset.sum_mul,← Int.cast_sum,zero_sub]
+    have h1 : ∑ i,x i=∑ i,(φ (next i)-φ i)-∑ i,((m i:ℝ)*(Real.pi/2)) := by
+      rw [← Finset.sum_sub_distrib]
+      rfl
+    rw [h1,cyclic_difference_sum,← Finset.sum_mul,Int.cast_sum]
     ring
   have habs : |∑ i,x i| < Real.pi/2 :=
     (Finset.abs_sum_le_sum_abs _ _).trans_lt hV
@@ -442,8 +503,9 @@ theorem physical_frame_lift_of_cost (φ : Vertex → ℝ)
   have hθstep (i : Vertex) : θ (next i)-θ i=x i := by
     have hi : M (next i)-M i=m i := quarterPrefix_difference m hm i
     have hicast : (M (next i):ℝ)-(M i:ℝ)=(m i:ℝ) := by exact_mod_cast hi
-    dsimp [θ,x,shortestQuarter,m] at *
-    nlinarith
+    change (φ (next i)-(M (next i):ℝ)*(Real.pi/2))-(φ i-(M i:ℝ)*(Real.pi/2)) =
+      φ (next i)-φ i-(m i:ℝ)*(Real.pi/2)
+    linear_combination (-(Real.pi/2))*hicast
   obtain ⟨l,hlmem,hl⟩ := Finset.exists_min_image Finset.univ θ Finset.univ_nonempty
   obtain ⟨u,humem,hu⟩ := Finset.exists_max_image Finset.univ θ Finset.univ_nonempty
   have hl' (i : Vertex) : θ l ≤ θ i := hl i (Finset.mem_univ _)
@@ -452,20 +514,20 @@ theorem physical_frame_lift_of_cost (φ : Vertex → ℝ)
   have hdH : θ u-θ l < Real.pi/4 := by
     have hh := closed_walk_range_bound θ l u
     simp only [hθstep,abs_of_nonneg hd0] at hh
-    dsimp [V] at hV
+    change ∑ i,|x i| < Real.pi/2 at hV
     linarith
   have hmetric := frameCost_closed_range θ hl' hu' hdH.le
   simp only [hθstep] at hmetric
   have hdsmall : θ u-θ l < 7/10 := by
     by_contra! hbad
     have hmono := frameCost_monotone ⟨by norm_num,hseven⟩ ⟨hd0,hdH.le⟩ hbad
-    dsimp [U] at hU
+    change ∑ i,frameCost |x i| < 10394/25425 at hU
     linarith [frameCost_seven_tenths]
   refine ⟨⟨θ,M,θ l,θ u-θ l,hd0,hdsmall,?_,?_⟩⟩
   · intro i
     exact ⟨hl' i,by linarith [hu' i]⟩
   · intro i
-    dsimp [θ]
+    change φ i=(φ i-(M i:ℝ)*(Real.pi/2))+(M i:ℝ)*(Real.pi/2)
     ring
 
 end SquaresInCircles.Eight

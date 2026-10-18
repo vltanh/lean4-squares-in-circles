@@ -7,12 +7,27 @@ public import SquaresInCircles.Eight.Arithmetic.ClosedCover
 public import Mathlib.Algebra.Polynomial.Eval.Defs
 
 /-!
-# Circle duals and the common-weight error disjunction
+# Eight squares: circle duals and the quartic rows
 
-F8 draft. Circle completion is applied to the actual seven centers. The
-same edge-weight vector is fixed before the signed-error alternative is
-chosen. A finite polynomial certificate remains attached to the force
-and right-hand-side expressions reconstructed from its own multipliers.
+A circle dual excludes configurations of the seven exterior squares by linear inequalities in
+their states `(aᵢ, bᵢ)`. Weighted sums of the separations and of linear bounds on the states give
+`B ≤ ∑ (Cᵢ aᵢ + Dᵢ bᵢ)`, and completing the square in each `(aᵢ + 1/2, bᵢ + 1/2)`, whose squared
+length is at most `Q`, with weights `μᵢ > 0`, gives the necessary inequality of
+`circle_dual_necessary`. The completion is applied to the centres of the seven squares
+themselves.
+
+A `Row` fixes an interval of the half-angle tangent `z`, an owner on each edge and the weights.
+Its forces and right-hand side are polynomials in `z` built from these data, and the reverse of
+the necessary inequality, multiplied by `(1 + z²)²`, is the quartic `Row.quartic`. A valid row
+(`Row.Valid`) has nonnegative weights and a quartic with positive Bernstein coefficients on its
+interval, so it excludes the necessary inequality there (`Row.Valid.excludes`,
+`Row.Valid.excludes_original`), with exactly the forces from which the quartic is built.
+
+An `OwnerTable` covers the half-angle chart `[-3/8, 3/8]` by valid rows of one owner pattern. A
+`TiltBundle` deals with the errors of the frames: by `error_vertex_disjunction` an error term is
+largest at zero error or at one vertex of the ball `∑ |dᵢ| ≤ ε`, which gives 21 alternatives,
+and on the interval of the bundle the edge weights are fixed before the alternative is chosen;
+only the cone and circle multipliers vary with it.
 -/
 
 @[expose] public section
@@ -42,14 +57,14 @@ theorem circle_dual_necessary (a b C D μ : Vertex → ℝ) {Q B : ℝ}
     B + (1 / 2) * ∑ i, (C i + D i) ≤
       Q * (∑ i, μ i) + ∑ i, (C i ^ 2 + D i ^ 2) / (4 * μ i) := by
   have hs := Finset.sum_le_sum (s := (Finset.univ : Finset Vertex))
-    (fun i _ => circle_linear_upper (hμ i) (hcircle i))
+    (fun i _ => circle_linear_upper (C := C i) (D := D i) (hμ i) (hcircle i))
   have hleft : (∑ i, (C i * (a i + 1 / 2) + D i * (b i + 1 / 2))) =
       (∑ i, (C i * a i + D i * b i)) + (1 / 2) * ∑ i, (C i + D i) := by
     rw [Finset.mul_sum, ← Finset.sum_add_distrib]
     apply Finset.sum_congr rfl
     intro i _
     ring
-  rw [hleft, Finset.sum_add_distrib] at hs
+  rw [hleft, Finset.sum_add_distrib (f := fun i => μ i * Q)] at hs
   have hright : (∑ i, μ i * Q) = Q * ∑ i, μ i := by
     rw [Finset.mul_sum]
     congr 1
@@ -59,47 +74,50 @@ theorem circle_dual_necessary (a b C D μ : Vertex → ℝ) {Q B : ℝ}
   linarith
 
 theorem weighted_total_error {ι : Type*} [Fintype ι]
-    (λ d : ι → ℝ) {M ε : ℝ}
-    (hM : 0 ≤ M) (hλ : ∀ i, λ i ≤ M) (hε : ∑ i, |d i| ≤ ε) :
-    (∑ i, λ i * |d i|) ≤ M * ε := by
+    (lam d : ι → ℝ) {M ε : ℝ}
+    (hM : 0 ≤ M) (hlam : ∀ i, lam i ≤ M) (hε : ∑ i, |d i| ≤ ε) :
+    (∑ i, lam i * |d i|) ≤ M * ε := by
   calc
-    (∑ i, λ i * |d i|) ≤ ∑ i, M * |d i| :=
-      Finset.sum_le_sum (fun i _ => mul_le_mul_of_nonneg_right (hλ i) (abs_nonneg _))
+    (∑ i, lam i * |d i|) ≤ ∑ i, M * |d i| :=
+      Finset.sum_le_sum (fun i _ => mul_le_mul_of_nonneg_right (hlam i) (abs_nonneg _))
     _ = M * ∑ i, |d i| := (Finset.mul_sum _ _ _).symm
     _ ≤ M * ε := mul_le_mul_of_nonneg_left hε hM
 
-/-- Common-weight l1 disjunction, including the zero-error alternative. -/
+/-- With the weights fixed, a necessary inequality with the error terms `cᵢ dᵢ - λᵢ/2 |dᵢ|`, for
+an error in the ball `∑ |dᵢ| ≤ ε`, also holds at zero error or at one vertex `dᵢ = ±ε` of the
+ball. -/
 theorem error_vertex_disjunction {ι : Type*} [Fintype ι] [Nonempty ι]
-    (c λ d : ι → ℝ) {B R ε : ℝ} (hε : 0 ≤ ε)
+    (c lam d : ι → ℝ) {B R ε : ℝ} (hε : 0 ≤ ε)
     (hball : ∑ i, |d i| ≤ ε)
-    (hnecessary : 0 ≤ B + (∑ i, (c i * d i - λ i / 2 * |d i|)) + R) :
+    (hnecessary : 0 ≤ B + (∑ i, (c i * d i - lam i / 2 * |d i|)) + R) :
     0 ≤ B + R ∨ ∃ i, ∃ s : ℝ, (s = -1 ∨ s = 1) ∧
-      0 ≤ B + ε * (s * c i - λ i / 2) + R := by
+      0 ≤ B + ε * (s * c i - lam i / 2) + R := by
   by_cases hzero : 0 ≤ B + R
   · exact Or.inl hzero
   · right
     by_contra hn
-    push_neg at hn
-    let M : ℝ := Finset.univ.sup' Finset.univ_nonempty (fun i => |c i| - λ i / 2)
-    have hMi (i : ι) : |c i| - λ i / 2 ≤ M := Finset.le_sup' (s := Finset.univ) (by simp)
-    obtain ⟨j, _, hj⟩ := Finset.exists_mem_eq_sup' Finset.univ_nonempty (fun i => |c i| - λ i / 2)
-    have hterm (i : ι) : c i * d i - λ i / 2 * |d i| ≤ (|c i| - λ i / 2) * |d i| := by
+    push Not at hn
+    let M : ℝ := Finset.univ.sup' Finset.univ_nonempty (fun i => |c i| - lam i / 2)
+    have hMi (i : ι) : |c i| - lam i / 2 ≤ M :=
+      Finset.le_sup' (fun i => |c i| - lam i / 2) (Finset.mem_univ i)
+    obtain ⟨j, _, hj⟩ := Finset.exists_mem_eq_sup' Finset.univ_nonempty (fun i => |c i| - lam i / 2)
+    have hterm (i : ι) : c i * d i - lam i / 2 * |d i| ≤ (|c i| - lam i / 2) * |d i| := by
       have hh : c i * d i ≤ |c i| * |d i| := by simpa [abs_mul] using le_abs_self (c i * d i)
       nlinarith
     have hsum := Finset.sum_le_sum (s := (Finset.univ : Finset ι)) (fun i _ => hterm i)
     by_cases hM : 0 ≤ M
-    · have hw := weighted_total_error (fun i => |c i| - λ i / 2) d hM hMi hball
+    · have hw := weighted_total_error (fun i => |c i| - lam i / 2) d hM hMi hball
       have hlast : 0 ≤ B + ε * M + R := by linarith
       rcases le_total 0 (c j) with hc | hc
       · have hh := hn j 1 (Or.inr rfl)
-        have he : M = c j - λ j / 2 := by simpa [M, abs_of_nonneg hc] using hj.symm
+        have he : M = c j - lam j / 2 := by simpa [M, abs_of_nonneg hc] using hj
         rw [he] at hlast
         nlinarith
       · have hh := hn j (-1) (Or.inl rfl)
-        have he : M = -c j - λ j / 2 := by simpa [M, abs_of_nonpos hc] using hj.symm
+        have he : M = -c j - lam j / 2 := by simpa [M, abs_of_nonpos hc] using hj
         rw [he] at hlast
         nlinarith
-    · have hnonpos : (∑ i, (|c i| - λ i / 2) * |d i|) ≤ 0 :=
+    · have hnonpos : (∑ i, (|c i| - lam i / 2) * |d i|) ≤ 0 :=
         Finset.sum_nonpos (fun i _ => mul_nonpos_of_nonpos_of_nonneg
           ((hMi i).trans (le_of_not_ge hM)) (abs_nonneg _))
       linarith
@@ -111,7 +129,14 @@ def signs : Vertex → ℚ := ![1, -1, 1, -1, 1, -1, -1]
 inductive Alternative
   | zero
   | spike (edge : Fin 5) (secondOwner : Bool) (positive : Bool)
-  deriving DecidableEq, Fintype
+  deriving DecidableEq
+
+instance : Fintype Alternative :=
+  Fintype.ofEquiv (Option (Fin 5 × Bool × Bool))
+    { toFun := fun o => match o with | none => .zero | some (e, s, p) => .spike e s p
+      invFun := fun a => match a with | .zero => none | .spike e s p => some (e, s, p)
+      left_inv := fun o => by rcases o with _ | ⟨e, s, p⟩ <;> rfl
+      right_inv := fun a => by cases a <;> rfl }
 
 theorem alternative_count : Fintype.card Alternative = 21 := by decide
 
@@ -272,13 +297,49 @@ structure Row.Valid (r : Row) : Prop where
   bernstein_valid : r.bernsteinRow.Valid r.reserve
   reserve_pos : 0 < r.reserve
 
+private theorem peval_add (p q : Poly) (z : ℝ) : peval (p + q) z = peval p z + peval q z := by
+  simp [peval]
+
+private theorem peval_sub (p q : Poly) (z : ℝ) : peval (p - q) z = peval p z - peval q z := by
+  simp [peval]
+
+private theorem peval_mul (p q : Poly) (z : ℝ) : peval (p * q) z = peval p z * peval q z := by
+  simp [peval]
+
+private theorem peval_pow (p : Poly) (n : ℕ) (z : ℝ) : peval (p ^ n) z = peval p z ^ n := by
+  simp [peval]
+
+private theorem peval_C (c : ℚ) (z : ℝ) : peval (Polynomial.C c) z = (c : ℝ) := by
+  simp [peval]
+
+private theorem peval_sum {ι : Type*} (s : Finset ι) (f : ι → Poly) (z : ℝ) :
+    peval (∑ i ∈ s, f i) z = ∑ i ∈ s, peval (f i) z := by
+  simp [peval, Polynomial.eval₂_finsetSum]
+
+/-- Exchange of a weighted double sum, used for the force expansions. -/
+private theorem weighted_sum_swap {ι κ : Type*} [Fintype ι] [Fintype κ]
+    (w : ι → ℝ) (A B : ι → κ → ℝ) (a b : κ → ℝ) :
+    ∑ k, ((∑ i, w i * A i k) * a k + (∑ i, w i * B i k) * b k) =
+      ∑ i, w i * ∑ k, (A i k * a k + B i k * b k) := by
+  have hl : ∀ k, (∑ i, w i * A i k) * a k + (∑ i, w i * B i k) * b k =
+      ∑ i, w i * (A i k * a k + B i k * b k) := by
+    intro k
+    rw [Finset.sum_mul, Finset.sum_mul, ← Finset.sum_add_distrib]
+    apply Finset.sum_congr rfl
+    intro i _
+    ring
+  rw [Finset.sum_congr rfl (fun k _ => hl k), Finset.sum_comm]
+  apply Finset.sum_congr rfl
+  intro i _
+  rw [Finset.mul_sum]
+
 theorem Row.Valid.quartic_pos {r : Row} (hr : r.Valid) {z : ℝ} (hz : r.interval.Mem z) :
     0 < peval r.quartic z := by
   rw [hr.polynomial_identity, listPoly_eval]
   exact hr.bernstein_valid.positive hr.reserve_pos hz
 
-/-- Contradiction for the exact weighted necessary inequality. Its force and
-rhs are those in the certified quartic, not a separately asserted bound. -/
+/-- A valid row excludes the weighted necessary inequality on its interval. The forces and the
+right-hand side in the hypothesis are those from which the quartic of the row is built. -/
 theorem Row.Valid.excludes {r : Row} (hr : r.Valid) {z : ℝ} (hz : r.interval.Mem z)
     (a b : Vertex → ℝ)
     (hcircle : ∀ i, (a i + 1 / 2) ^ 2 + (b i + 1 / 2) ^ 2 ≤ (r.Q : ℝ))
@@ -291,22 +352,51 @@ theorem Row.Valid.excludes {r : Row} (hr : r.Valid) {z : ℝ} (hz : r.interval.M
     (fun i => peval (r.forceB i) z / peval Dpoly z)
     (fun i => (r.mu i : ℝ)) (fun i => by exact_mod_cast hr.mu_pos i) hcircle hnecessary
   have hp := hr.quartic_pos hz
+  have hD0 : peval Dpoly z ≠ 0 := ne_of_gt hd
+  have hmu0 : ∀ i, (r.mu i : ℝ) ≠ 0 := fun i => ne_of_gt (by exact_mod_cast hr.mu_pos i)
+  have hq1 : peval r.quartic z =
+      peval Dpoly z * (peval r.rhs z +
+        (1 / 2) * ∑ i, (peval (r.forceA i) z + peval (r.forceB i) z)) -
+      ((r.Q : ℝ) * ∑ i, (r.mu i : ℝ)) * peval Dpoly z ^ 2 -
+      ∑ i, (1 / (4 * (r.mu i : ℝ))) * (peval (r.forceA i) z ^ 2 + peval (r.forceB i) z ^ 2) := by
+    simp only [Row.quartic, Row.L, peval_add, peval_sub, peval_mul, peval_pow, peval_C,
+      peval_sum]
+    push_cast
+    ring
+  have hR : peval Dpoly z ^ 2 * (peval r.rhs z / peval Dpoly z) =
+      peval Dpoly z * peval r.rhs z := by
+    field_simp
+  have hS1 : peval Dpoly z ^ 2 * ∑ i,
+        (peval (r.forceA i) z / peval Dpoly z + peval (r.forceB i) z / peval Dpoly z) =
+      peval Dpoly z * ∑ i, (peval (r.forceA i) z + peval (r.forceB i) z) := by
+    rw [Finset.mul_sum, Finset.mul_sum]
+    apply Finset.sum_congr rfl
+    intro i _
+    field_simp
+  have hS2 : peval Dpoly z ^ 2 * ∑ i,
+        ((peval (r.forceA i) z / peval Dpoly z) ^ 2 +
+          (peval (r.forceB i) z / peval Dpoly z) ^ 2) / (4 * (r.mu i : ℝ)) =
+      ∑ i, (1 / (4 * (r.mu i : ℝ))) * (peval (r.forceA i) z ^ 2 + peval (r.forceB i) z ^ 2) := by
+    rw [Finset.mul_sum]
+    apply Finset.sum_congr rfl
+    intro i _
+    have := hmu0 i
+    field_simp
   have hidentity : peval r.quartic z = (peval Dpoly z) ^ 2 *
       ((peval r.rhs z / peval Dpoly z + (1 / 2) * ∑ i,
           (peval (r.forceA i) z / peval Dpoly z + peval (r.forceB i) z / peval Dpoly z)) -
         ((r.Q : ℝ) * ∑ i, (r.mu i : ℝ) + ∑ i,
           ((peval (r.forceA i) z / peval Dpoly z) ^ 2 +
            (peval (r.forceB i) z / peval Dpoly z) ^ 2) / (4 * (r.mu i : ℝ)))) := by
-    simp [Row.quartic, Row.L, peval, Polynomial.eval₂_finset_sum,
-      Fin.sum_univ_succ, map_add, map_mul, map_pow]
-    field_simp [ne_of_gt hd, fun i => ne_of_gt (show (0 : ℝ) < r.mu i by exact_mod_cast hr.mu_pos i)]
-    ring
+    rw [hq1]
+    linear_combination (-1 : ℝ) * hR + (-1 / 2 : ℝ) * hS1 + hS2
   rw [hidentity] at hp
   have hn := mul_nonpos_of_nonneg_of_nonpos (sq_nonneg (peval Dpoly z)) (sub_nonpos.mpr hdual)
   linarith
 
-/-- Every owner table covers the entire closed half-angle chart. Metadata
-equalities are proved from each row, independently of polynomial positivity. -/
+/-- Valid rows of one mode and owner pattern whose intervals cover the closed half-angle chart
+`[-3/8, 3/8]`. That each row has the mode, the owners and the zero alternative of the table is a
+condition separate from its validity. -/
 structure OwnerTable where
   mode : Mode
   owners : Vertex → Fin 4
@@ -320,12 +410,16 @@ structure OwnerTable where
 theorem OwnerTable.select (T : OwnerTable) {z : ℝ}
     (hz : -(3 / 8 : ℝ) ≤ z ∧ z ≤ 3 / 8) :
     ∃ r ∈ T.rows, r.interval.Mem z := by
-  obtain ⟨I, hI, hzI⟩ := T.cover.covers (by exact_mod_cast hz)
+  have hmem : Arithmetic.QInterval.Mem ⟨-3 / 8, 3 / 8⟩ z := by
+    unfold Arithmetic.QInterval.Mem
+    push_cast
+    exact ⟨by linarith [hz.1], by linarith [hz.2]⟩
+  obtain ⟨I, hI, hzI⟩ := T.cover.covers hmem
   obtain ⟨r, hr, rfl⟩ := List.mem_map.mp hI
   exact ⟨r, hr, hzI⟩
 
-/-- An interval chooses its common SAT weights before the error alternative.
-Only the cone and circle multipliers vary with that alternative. -/
+/-- On its interval a tilt bundle fixes the weights `lambda` of the separations before the error
+alternative is chosen; only the cone and circle multipliers vary with the alternative. -/
 structure TiltBundle where
   interval : Arithmetic.QInterval
   lambda : Vertex → ℚ
@@ -372,27 +466,63 @@ theorem Row.Valid.excludes_original {r : Row} (hr : r.Valid) {z : ℝ}
   have hk := Finset.sum_le_sum (s := (Finset.univ : Finset ConeIndex))
     (fun k _ => mul_le_mul_of_nonneg_left (hc.row k)
       (show (0 : ℝ) ≤ r.cone k by exact_mod_cast hr.cone_nonneg k))
-  have hident : peval r.rhs z -
-      (∑ i, (peval (r.forceA i) z * a i + peval (r.forceB i) z * b i)) =
-      ((∑ i, (r.lambda i : ℝ) * peval (edgeWidth r.positive i) z) -
-        (r.loss : ℝ) * peval Dpoly z + peval r.errorRhs z -
-        ((∑ i, (r.lambda i : ℝ) * projectionNumerator a b z i (r.owners i)) +
-          ∑ i, (peval (r.errorA i) z * a i + peval (r.errorB i) z * b i))) +
-      peval Dpoly z * ((∑ k, (r.cone k : ℝ) * coneRhs k) -
-        ∑ k, (r.cone k : ℝ) * ∑ i, ((coneA k i : ℝ) * a i + (coneB k i : ℝ) * b i)) := by
-    simp [Row.rhs, Row.forceA, Row.forceB, projectionNumerator, peval,
-      Polynomial.eval₂_finset_sum, Finset.mul_sum, Finset.sum_mul,
-      Finset.sum_add_distrib, Finset.sum_sub_distrib, Finset.sum_comm]
+  have hrhs : peval r.rhs z =
+      (∑ i, (r.lambda i : ℝ) * peval (edgeWidth r.positive i) z) +
+        ((∑ k, (r.cone k : ℝ) * coneRhs k) - (r.loss : ℝ)) * peval Dpoly z +
+        peval r.errorRhs z := by
+    simp only [Row.rhs, peval_add, peval_mul, peval_C, peval_sum]
+    push_cast
     ring
+  have hfA : ∀ j, peval (r.forceA j) z =
+      (∑ i, (r.lambda i : ℝ) * peval (nominalA i (r.owners i) j) z) +
+        (∑ k, (r.cone k : ℝ) * (coneA k j : ℝ)) * peval Dpoly z + peval (r.errorA j) z := by
+    intro j
+    simp only [Row.forceA, peval_add, peval_mul, peval_C, peval_sum]
+    push_cast
+    ring
+  have hfB : ∀ j, peval (r.forceB j) z =
+      (∑ i, (r.lambda i : ℝ) * peval (nominalB i (r.owners i) j) z) +
+        (∑ k, (r.cone k : ℝ) * (coneB k j : ℝ)) * peval Dpoly z + peval (r.errorB j) z := by
+    intro j
+    simp only [Row.forceB, peval_add, peval_mul, peval_C, peval_sum]
+    push_cast
+    ring
+  have hsplit : ∀ j, peval (r.forceA j) z * a j + peval (r.forceB j) z * b j =
+      ((∑ i, (r.lambda i : ℝ) * peval (nominalA i (r.owners i) j) z) * a j +
+        (∑ i, (r.lambda i : ℝ) * peval (nominalB i (r.owners i) j) z) * b j) +
+      peval Dpoly z * ((∑ k, (r.cone k : ℝ) * (coneA k j : ℝ)) * a j +
+        (∑ k, (r.cone k : ℝ) * (coneB k j : ℝ)) * b j) +
+      (peval (r.errorA j) z * a j + peval (r.errorB j) z * b j) := by
+    intro j
+    rw [hfA, hfB]
+    ring
+  have hforce : (∑ i, (peval (r.forceA i) z * a i + peval (r.forceB i) z * b i)) =
+      (∑ i, (r.lambda i : ℝ) * projectionNumerator a b z i (r.owners i)) +
+        peval Dpoly z *
+          ∑ k, (r.cone k : ℝ) * ∑ i, ((coneA k i : ℝ) * a i + (coneB k i : ℝ) * b i) +
+        ∑ i, (peval (r.errorA i) z * a i + peval (r.errorB i) z * b i) := by
+    rw [Finset.sum_congr rfl (fun j _ => hsplit j), Finset.sum_add_distrib,
+      Finset.sum_add_distrib, ← Finset.mul_sum,
+      weighted_sum_swap (fun i => (r.lambda i : ℝ))
+        (fun i j => peval (nominalA i (r.owners i) j) z)
+        (fun i j => peval (nominalB i (r.owners i) j) z) a b,
+      weighted_sum_swap (fun k => (r.cone k : ℝ)) (fun k j => (coneA k j : ℝ))
+        (fun k j => (coneB k j : ℝ)) a b]
+    rfl
   have hh : peval r.rhs z ≤ ∑ i, (peval (r.forceA i) z * a i + peval (r.forceB i) z * b i) := by
-    have h₁ : ((∑ i, (r.lambda i : ℝ) * peval (edgeWidth r.positive i) z) -
-        (r.loss : ℝ) * peval Dpoly z + peval r.errorRhs z -
-        ((∑ i, (r.lambda i : ℝ) * projectionNumerator a b z i (r.owners i)) +
-          ∑ i, (peval (r.errorA i) z * a i + peval (r.errorB i) z * b i))) ≤ 0 :=
-      sub_nonpos.mpr hnecessary
-    have h₂ := mul_nonpos_of_nonneg_of_nonpos hd.le (sub_nonpos.mpr hk)
+    have h₁ := hnecessary
+    unfold Row.originalNecessary at h₁
+    have h₂ := mul_le_mul_of_nonneg_left hk hd.le
+    rw [hrhs, hforce]
     linarith
-  have hh' := (div_le_div_iff_of_pos_right hd).2 hh
-  simpa [Finset.sum_div, add_div, div_mul_eq_mul_div] using hh'
+  have hsumdiv : (∑ i, (peval (r.forceA i) z / peval Dpoly z * a i +
+        peval (r.forceB i) z / peval Dpoly z * b i)) =
+      (∑ i, (peval (r.forceA i) z * a i + peval (r.forceB i) z * b i)) / peval Dpoly z := by
+    rw [Finset.sum_div]
+    apply Finset.sum_congr rfl
+    intro i _
+    ring
+  rw [hsumdiv]
+  exact (div_le_div_iff_of_pos_right hd).2 hh
 
 end SquaresInCircles.Eight.Candidate.Dual

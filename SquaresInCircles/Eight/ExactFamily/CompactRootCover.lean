@@ -3,52 +3,58 @@ module
 public import SquaresInCircles.Eight.ExactFamily.RootCover
 
 /-!
-# A single interval argument for the stationary cover
+# Eight squares: checked interval evaluation of formulas
 
-The old source printed the same radical expressions and closed-box argument
-at 22,601 nodes. Here the expressions are written once, interval endpoints
-are computed by one exact rational routine, and soundness is proved once.
+`proposeAt` evaluates a formula on a box by rational interval arithmetic, rounding every
+operation outward to a dyadic precision, and proposes an interval expression for it.
+`checkedRangeAt` accepts the proposal only when `FormulaCertificate.Valid` checks its whole syntax
+against the formula and every interval operation, so the rounding and the proposal need no proof
+of their own (`checkedRangeAt_sound`, `boundedAt_sound`). The formulas are written once, the
+endpoints are computed by one rational routine, and soundness is proved once for all boxes. These
+checks serve the mean-value cover of the stationary point (`MeanValueCover.lean`) and the adaptive
+boxes.
 
-The rounding and search code are not trusted: `checkedRange` accepts an
-expression only after `FormulaCertificate.Valid` checks its complete syntax
-and interval arithmetic. No floating-point operation or external success flag
-is used. This source has not been compiled.
+The file also gives `certify`, which localizes the simultaneous zeros of three formulas by
+recursive closed bisection, with its soundness (`sound`).
 -/
 
 @[expose] public section
+noncomputable section
 namespace SquaresInCircles.Eight.ExactFamily.CompactRootCover
 open Arithmetic
 
-/-- The dyadic precision used by the original stationary-cover generator. -/
+/-- The dyadic precision of `checkedRange`, in bits. -/
 def precision : ℕ := 40
 
 def denominator (bits : ℕ) : ℕ := 2 ^ bits
 
-private def floorRat (x : ℚ) : ℤ := x.num / (x.den : ℤ)
+def floorRat (x : ℚ) : ℤ := x.num / (x.den : ℤ)
 
-private def roundDown (bits : ℕ) (x : ℚ) : ℚ :=
+def roundDown (bits : ℕ) (x : ℚ) : ℚ :=
   (floorRat (x * denominator bits) : ℚ) / denominator bits
 
-private def roundUp (bits : ℕ) (x : ℚ) : ℚ := -roundDown bits (-x)
+def roundUp (bits : ℕ) (x : ℚ) : ℚ := -roundDown bits (-x)
 
 def outward (bits : ℕ) (I : QInterval) : QInterval :=
   ⟨roundDown bits I.lo, roundUp bits I.hi⟩
 
-private def rootFloor (bits : ℕ) (x : ℚ) : ℕ :=
+def rootFloor (bits : ℕ) (x : ℚ) : ℕ :=
   Nat.sqrt ((x.num.toNat * denominator bits ^ 2) / x.den)
 
-/-- An untrusted proposed bracket; the scalar certificate checks it. -/
+/-- A proposed bracket for the square root of an interval, from integer square roots at the
+given precision. It needs no proof: the certificate checks it. -/
 def rootProposal (bits : ℕ) (I : QInterval) : QInterval :=
   let lo := rootFloor bits I.lo
   let hi := rootFloor bits I.hi
   let upper := if (hi : ℚ) ^ 2 / (denominator bits : ℚ) ^ 2 < I.hi then hi + 1 else hi
   ⟨(lo : ℚ) / denominator bits, (upper : ℚ) / denominator bits⟩
 
-private def enclose {n : ℕ} (bits : ℕ) (B : QBox n) (e : ScalarExpr n) : ScalarExpr n :=
+def enclose {n : ℕ} (bits : ℕ) (B : QBox n) (e : ScalarExpr n) : ScalarExpr n :=
   .enclose e (outward bits (e.range B))
 
-/-- One translator for the root cover and all adaptive boxes. Failed
-positive-denominator or real-radical tests reject the proposal. -/
+/-- The proposed interval expression of a formula on a box, every operation enclosed outward at
+the given precision. A denominator that is not positive, or a radicand that is not nonnegative, on
+the box rejects the proposal. -/
 def proposeAt {n : ℕ} (bits : ℕ) (B : QBox n) : Formula n → Option (ScalarExpr n)
   | .const q => some (.const q)
   | .var i => some (.var i)
@@ -88,12 +94,12 @@ theorem checkedRangeAt_sound {n bits : ℕ} {B : QBox n} {f : Formula n} {I : QI
   cases hp : proposeAt bits B f with
   | none => simp [checkedRangeAt,hp] at hc
   | some e =>
-      have hh : (if (FormulaCertificate.mk e).Valid B f then some (e.range B) else none) = some I := by
+      have hh : (if (FormulaCertificate.mk e).Valid B f then some (e.range B) else none) =
+          some I := by
         simpa only [checkedRangeAt,hp] using hc
       split_ifs at hh with hv
-      · cases Option.some.inj hh
-        exact FormulaCertificate.sound hv he
-      · simp at hh
+      cases Option.some.inj hh
+      exact FormulaCertificate.sound hv he
 
 theorem checkedRange_sound {n : ℕ} {B : QBox n} {f : Formula n} {I : QInterval}
     (hc : checkedRange B f = some I) {env : Fin n → ℝ} (he : B.Mem env) :
@@ -120,7 +126,7 @@ def excludes (B : QBox 3) (f : Formula 3) : Bool :=
   | none => false
   | some I => decide (I.hi < 0 ∨ 0 < I.lo)
 
-/-- Dimension weights are the original generator's coordinate scaling. -/
+/-- The weights of the three coordinates in the choice of the axis to split. -/
 def scale : Fin 3 → ℚ := ![8, 1, 3]
 
 def splitAxis (B : QBox 3) : Fin 3 :=
@@ -161,7 +167,8 @@ theorem excluded_not_zero {B : QBox 3} {f : Formula 3}
       · have hn : (0 : ℝ) < I.lo := by exact_mod_cast hs
         linarith [hb.1]
 
-/-- The entire localization proof, independent of the number of boxes. -/
+/-- Soundness of `certify`: every simultaneous zero of the targets in an accepted box lies in
+the target box. The proof is one induction, whatever the number of boxes. -/
 theorem sound (targets : Fin 3 → Formula 3) (target : QBox 3) (fuel : ℕ)
     (B : QBox 3) (hc : certify targets target fuel B = true)
     (env : Fin 3 → ℝ) (he : B.Mem env) (hz : SimultaneousZeros targets env) :

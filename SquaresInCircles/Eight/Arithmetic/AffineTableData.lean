@@ -7,13 +7,13 @@ public import SquaresInCircles.Eight.Arithmetic.IntervalPolynomial
 # Embedded affine table schema and real row meaning
 
 The generated data records contain every original arc, row, axis domain,
-angle range, multiplier, and charged edge target. `Structural` is deliberately
-separate from `Claim`: well-formed finite data is not a continuous proof.
-The latter is discharged by the scalar, interval-polynomial, Bernstein, and
-arc-support kernels in their respective generated proof modules.
+angle range, multiplier, and charged edge target. A row means the continuous
+proposition `Claim` on the product of its two arcs and its angle interval; the
+row check of `RowCheck` proves it.
 -/
 
 @[expose] public section
+noncomputable section
 
 namespace SquaresInCircles.Eight.Arithmetic
 
@@ -72,16 +72,6 @@ def AffineTableRow.sourceArc (M : AffineTableMeta) (r : AffineTableRow) : ArcDat
   M.arcs.getD r.source default
 def AffineTableRow.targetArc (M : AffineTableMeta) (r : AffineTableRow) : ArcData :=
   M.arcs.getD r.target default
-
-def AffineTableRow.Structural (M : AffineTableMeta) (r : AffineTableRow) : Prop :=
-  r.source < M.arcs.length ∧ r.target < M.arcs.length ∧
-  (r.sourceArc M).role = r.edge ∧ (r.targetArc M).role = r.edge+1 ∧
-  r.quarter = M.word r.edge ∧ 0 ≤ r.angle.lo ∧ r.angle.lo ≤ r.angle.hi ∧
-  0 ≤ r.multiplier ∧ M.target r.edge ≤ r.lowerTarget ∧
-  (r.mode = .circle → 0 < r.radicalParameter)
-
-instance (M : AffineTableMeta) (r : AffineTableRow) : Decidable (r.Structural M) :=
-  inferInstanceAs (Decidable (_ ∧ _ ∧ _ ∧ _ ∧ _ ∧ _ ∧ _ ∧ _ ∧ _ ∧ _))
 
 def AffineTableRow.Domain (M : AffineTableMeta) (r : AffineTableRow)
     (a b A B u : ℝ) : Prop :=

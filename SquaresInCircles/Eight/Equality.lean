@@ -6,12 +6,20 @@ public import SquaresInCircles.Common.Optimum
 public import SquaresInCircles.Common.Frames
 
 /-!
-# The complete five-parameter equality family
+# Eight squares: the five-parameter family
 
-Uncompiled draft.  The admissible set contains its weak contact boundaries.
-The whole displayed rational parameter box lies inside it.  Reflection is a
-separate Boolean branch because the repository's `Congruent` relation uses
-positively oriented frames.
+The models of the admissible parameters `(x, y, w, z, eta)` and their mirror images in the
+diagonal (`reflectedModel`) form the set `models`: each is a packing in the closed disk of radius
+`radius = √qStar` about the origin (`model_packing`) that reaches the circle (`model_reaches`).
+The admissible set contains its weak contact boundaries. Every point of the rational box
+`InBox`, of side `0.002` in each parameter, is admissible (`box_admissible`), and distinct
+parameters give distinct models (`model_parameter_injective`), so the family has five independent
+parameters (`five_parameter_box`). Conversely, the admissibility conditions are necessary for a
+packing at the radius `√qStar` whose exterior squares are those of a model
+(`admissible_of_original_geometry`).
+
+The mirror image is a separate branch, chosen by a Boolean, because `Congruent` uses positively
+oriented frames.
 -/
 
 @[expose] public section
@@ -21,29 +29,54 @@ namespace SquaresInCircles.Eight
 open ExactFamily Coordinates EqualityParameters
 
 theorem box_admissible {p : EqualityParameters} (hp : p.InBox) : p.Admissible sharpData := by
-  have b0 := box_data_bounds hp 0; have b1 := box_data_bounds hp 1
-  have b2 := box_data_bounds hp 2; have b3 := box_data_bounds hp 3
-  have b4 := box_data_bounds hp 4; have b5 := box_data_bounds hp 5
-  have b6 := box_data_bounds hp 6; have b7 := box_data_bounds hp 7
-  have b8 := box_data_bounds hp 8; have b9 := box_data_bounds hp 9
-  have b10 := box_data_bounds hp 10; have b11 := box_data_bounds hp 11
-  have b12 := box_data_bounds hp 12; have b13 := box_data_bounds hp 13
-  have b14 := box_data_bounds hp 14
-  simp only [boxData,boxLower,boxUpper,Matrix.cons_val_zero,Matrix.cons_val_succ] at
-    b0 b1 b2 b3 b4 b5 b6 b7 b8 b9 b10 b11 b12 b13 b14
-  have hW0 : p.W₀=(1+p.C+p.S)/2 := by rw [W₀,abs_of_pos (by linarith : 0<p.S)]
+  have b0 : (979/1000:ℝ) ≤ p.C ∧ p.C ≤ 981/1000 := box_data_bounds hp 0
+  have b1 : (39/200:ℝ) ≤ p.S ∧ p.S ≤ 201/1000 := box_data_bounds hp 1
+  have b2 : (99/100:ℝ) ≤ sharpData.c*p.C+sharpData.s*p.S ∧
+      sharpData.c*p.C+sharpData.s*p.S ≤ 1 := box_data_bounds hp 2
+  have b3 : (9/125:ℝ) ≤ sharpData.c*p.S-sharpData.s*p.C ∧
+      sharpData.c*p.S-sharpData.s*p.C ≤ 2/25 := box_data_bounds hp 3
+  have b4 : (-139/1000:ℝ) ≤ p.C*p.x+p.S*p.y ∧ p.C*p.x+p.S*p.y ≤ 139/1000 :=
+    box_data_bounds hp 4
+  have b5 : (-3/100:ℝ) ≤ -p.S*p.x+p.C*p.y ∧ -p.S*p.x+p.C*p.y ≤ 3/100 :=
+    box_data_bounds hp 5
+  have b6 : (1/100:ℝ) ≤ (sharpData.pA).1-p.x-(1+p.C+p.S)/2 ∧
+      (sharpData.pA).1-p.x-(1+p.C+p.S)/2 ≤ 1 := box_data_bounds hp 6
+  have b7 : (1/100:ℝ) ≤ p.C*((sharpData.pB).1-p.x)+p.S*((sharpData.pB).2-p.y)-(1+p.C+p.S)/2 ∧
+      p.C*((sharpData.pB).1-p.x)+p.S*((sharpData.pB).2-p.y)-(1+p.C+p.S)/2 ≤ 1 :=
+    box_data_bounds hp 7
+  have b8 : (1/100:ℝ) ≤ -p.S*((sharpData.pD).1-p.x)+p.C*((sharpData.pD).2-p.y)-(1+p.C+p.S)/2 ∧
+      -p.S*((sharpData.pD).1-p.x)+p.C*((sharpData.pD).2-p.y)-(1+p.C+p.S)/2 ≤ 1 :=
+    box_data_bounds hp 8
+  have b9 : (1/100:ℝ) ≤ -((sharpData.pE).1-p.x)-(1+p.C+p.S)/2 ∧
+      -((sharpData.pE).1-p.x)-(1+p.C+p.S)/2 ≤ 1 := box_data_bounds hp 9
+  have b10 : (1/100:ℝ) ≤ -p.C*((sharpData.pH).1-p.x)-p.S*((sharpData.pH).2-p.y)-rawTiltWidth p ∧
+      -p.C*((sharpData.pH).1-p.x)-p.S*((sharpData.pH).2-p.y)-rawTiltWidth p ≤ 1 :=
+    box_data_bounds hp 10
+  have b11 : (1/100:ℝ) ≤ sharpData.s*((sharpData.pG p.eta).1-p.x)-
+        sharpData.c*((sharpData.pG p.eta).2-p.y)-rawTiltWidth p ∧
+      sharpData.s*((sharpData.pG p.eta).1-p.x)-
+        sharpData.c*((sharpData.pG p.eta).2-p.y)-rawTiltWidth p ≤ 1 :=
+    box_data_bounds hp 11
+  have b12 : (1/100:ℝ) ≤ p.z-p.y-(1+p.C+p.S)/2 ∧ p.z-p.y-(1+p.C+p.S)/2 ≤ 1 :=
+    box_data_bounds hp 12
+  have b13 : (11/200:ℝ) ≤ qStar-((sharpData.x₂-1)^2+(p.z+1/2)^2) ∧
+      qStar-((sharpData.x₂-1)^2+(p.z+1/2)^2) ≤ 2/25 := box_data_bounds hp 13
+  have b14 : (56/125:ℝ) ≤ qStar-((sharpData.h₁+2)^2+(sharpData.h₂+p.eta)^2) ∧
+      qStar-((sharpData.h₁+2)^2+(sharpData.h₂+p.eta)^2) ≤ 12/25 := box_data_bounds hp 14
+  have hW0 : p.W₀=(1+p.C+p.S)/2 := by rw [W₀,abs_of_pos (by linarith : 0< p.S)]
   have hWt : p.Wₜ sharpData=rawTiltWidth p := by
-    rw [Wₜ,abs_of_pos (by linarith : 0<sharpData.c*p.S-sharpData.s*p.C)]
+    rw [Wₜ,abs_of_pos (by linarith : 0< sharpData.c*p.S-sharpData.s*p.C)]
     dsimp [rawTiltWidth]; ring
   have hsqrt := Real.sq_sqrt (show (0:ℝ)≤2 by norm_num)
   have hsqrt0 := Real.sqrt_nonneg (2:ℝ)
   have hh := sharp_coordinates
-  have htopRad : 0≤qStar-(sharpData.x₂-1)^2 := by nlinarith [sq_nonneg (p.z+1/2)]
-  have htiltRad : 0≤qStar-(sharpData.h₁+2)^2 := by
-    nlinarith [sq_nonneg (sharpData.h₂+p.eta)]
+  have htopRad : 0≤ qStar-(sharpData.x₂-1)^2 := by
+    nlinarith only [b13.1,sq_nonneg (p.z+1/2)]
+  have htiltRad : 0≤ qStar-(sharpData.h₁+2)^2 := by
+    nlinarith only [b14.1,sq_nonneg (sharpData.h₂+p.eta)]
   refine {
-    frame_lower := by nlinarith [hp.2.2.1.1]
-    frame_upper := by nlinarith [hp.2.2.1.2]
+    frame_lower := by nlinarith only [hp.2.2.1.1,hsqrt,hsqrt0]
+    frame_upper := by nlinarith only [hp.2.2.1.2,hsqrt,hsqrt0]
     top_lower := by linarith [hp.2.2.2.1.1]
     top_upper := ?_
     tilted_lower := ?_
@@ -58,15 +91,20 @@ theorem box_admissible {p : EqualityParameters} (hp : p.InBox) : p.Admissible sh
     H_sep := ?_
     G_sep := ?_ }
   · dsimp [zMax]
-    change p.z≤Real.sqrt (qStar-(sharpData.x₂-1)^2)-1/2
-    nlinarith [Real.sq_sqrt htopRad,Real.sqrt_nonneg (qStar-(sharpData.x₂-1)^2),hp.2.2.2.1.1]
+    change p.z≤ Real.sqrt (qStar-(sharpData.x₂-1)^2)-1/2
+    have hz0 : 0 ≤ p.z+1/2 := by linarith [hp.2.2.2.1.1]
+    have hle : p.z+1/2 ≤ Real.sqrt (qStar-(sharpData.x₂-1)^2) :=
+      Real.le_sqrt_of_sq_le (by nlinarith only [b13.1])
+    linarith
   · dsimp [etaMin]
-    change -sharpData.h₂-Real.sqrt (qStar-(sharpData.h₁+2)^2)≤p.eta
-    nlinarith [Real.sq_sqrt htiltRad,Real.sqrt_nonneg (qStar-(sharpData.h₁+2)^2)]
+    change -sharpData.h₂-Real.sqrt (qStar-(sharpData.h₁+2)^2)≤ p.eta
+    have hle : -(sharpData.h₂+p.eta) ≤ Real.sqrt (qStar-(sharpData.h₁+2)^2) :=
+      Real.le_sqrt_of_sq_le (by nlinarith only [b14.1])
+    linarith
   · dsimp [etaMax]
     linarith [hp.2.2.2.2.2,hh.2.2.2.2.2.2.2.2.2.2.2.2.2.2.1]
   · rw [hW0]
-    apply le_trans (by linarith : (1+p.C+p.S)/2≤(sharpData.pA).1-p.x)
+    apply le_trans (by linarith : (1+p.C+p.S)/2≤ (sharpData.pA).1-p.x)
     exact (le_abs_self _).trans ((le_max_left _ _).trans (le_max_left _ _))
   · rw [hW0]
     apply le_trans (by linarith : (1+p.C+p.S)/2≤
@@ -80,7 +118,7 @@ theorem box_admissible {p : EqualityParameters} (hp : p.InBox) : p.Admissible sh
     apply le_trans (by linarith : (1+p.C+p.S)/2≤ -((sharpData.pE).1-p.x))
     exact (neg_le_abs _).trans ((le_max_left _ _).trans (le_max_left _ _))
   · rw [hW0]
-    apply le_trans (by linarith : (1+p.C+p.S)/2≤p.z-p.y)
+    apply le_trans (by linarith : (1+p.C+p.S)/2≤ p.z-p.y)
     exact (le_abs_self _).trans ((le_max_right _ _).trans (le_max_left _ _))
   · rw [hWt]
     apply le_trans (by linarith : rawTiltWidth p≤
@@ -122,13 +160,16 @@ theorem containsCore_center_bounds {K : UnitSquare} (hc : ContainsCore K) :
   · change |localY K (0,0)|<5/12
     exact abs_lt.mpr ⟨by linarith,by linarith⟩
 
-/-- Necessity of every displayed parameter condition after the original-center
-dual and cyclic-order argument have identified the two remaining sliders. -/
+/-- The admissibility conditions are necessary: if the model of `p` is a packing at the squared
+radius `qStar`, its central square contains the core disk, its frame parameter `w` lies in
+`[1 - √2, √2 - 1)`, and the sliders have `7/12 ≤ z` and `eta ≤ etaMax`, then `p` is admissible. It
+is applied once the stationary identity on the original centres and the cyclic order have placed
+the two sliders. -/
 theorem admissible_of_original_geometry {p : EqualityParameters}
     (hp : SqPacking (p.model sharpData) (0,0) qStar)
     (hcore : ContainsCore p.centralSquare)
     (hframe : 1-Real.sqrt 2≤p.w ∧ p.w<Real.sqrt 2-1)
-    (hT : 7/12≤p.z) (hG : p.eta≤sharpData.etaMax) : p.Admissible sharpData := by
+    (hT : 7/12≤p.z) (hG : p.eta≤ sharpData.etaMax) : p.Admissible sharpData := by
   have hcont (i : Fin 8) : SqContained qStar (p.model sharpData i) := by
     apply (SqContained.iff_points hp.1 _).mpr
     intro x hx
@@ -139,21 +180,24 @@ theorem admissible_of_original_geometry {p : EqualityParameters}
   have hcore' := containsCore_center_bounds hcore
   obtain ⟨hcx,hcy⟩ := p.central_core_coordinates
   rw [hcx,hcy] at hcore'
-  have hTpoly : (sharpData.x₂-1)^2+(p.z+1/2)^2≤qStar := by
+  have hTpoly : (sharpData.x₂-1)^2+(p.z+1/2)^2≤ qStar := by
     change SqContained qStar (axisSquare (sharpData.pT p.z)) at hTcont
     rw [axis_containment] at hTcont
-    simpa [pT,abs_of_pos (by linarith [hbounds.2.2.1] : 0<sharpData.x₂-3/2),
-      abs_of_pos (by linarith : 0<p.z)] using hTcont
+    simp only [pT] at hTcont
+    rw [abs_of_pos (by linarith [hbounds.2.2.1] : 0< sharpData.x₂-3/2),
+      abs_of_pos (by linarith : 0< p.z),
+      show sharpData.x₂-3/2+1/2=sharpData.x₂-1 by ring] at hTcont
+    exact hTcont
   have hGneg : sharpData.h₂+1/2+p.eta<0 := by
     dsimp [etaMax] at hG
     linarith
-  have hGpoly : (sharpData.h₁+2)^2+(sharpData.h₂+p.eta)^2≤qStar := by
+  have hGpoly : (sharpData.h₁+2)^2+(sharpData.h₂+p.eta)^2≤ qStar := by
     change SqContained qStar (sharpData.tiltedSquare (sharpData.pG p.eta)) at hGcont
     rw [pG,tilted_containment] at hGcont
     rw [abs_of_pos hbounds.2.2.2.2.1,abs_of_neg hGneg] at hGcont
     nlinarith
-  have hTrad : 0≤qStar-(sharpData.x₂-1)^2 := by nlinarith [sq_nonneg (p.z+1/2)]
-  have hGrad : 0≤qStar-(sharpData.h₁+2)^2 := by nlinarith [sq_nonneg (sharpData.h₂+p.eta)]
+  have hTrad : 0≤ qStar-(sharpData.x₂-1)^2 := by nlinarith [sq_nonneg (p.z+1/2)]
+  have hGrad : 0≤ qStar-(sharpData.h₁+2)^2 := by nlinarith [sq_nonneg (sharpData.h₂+p.eta)]
   refine {
     frame_lower := hframe.1
     frame_upper := hframe.2
@@ -171,10 +215,10 @@ theorem admissible_of_original_geometry {p : EqualityParameters}
     H_sep := (central_tilted_sat hframe sharpData.pH).1 ?_
     G_sep := (central_tilted_sat hframe (sharpData.pG p.eta)).1 ?_ }
   · dsimp [zMax]
-    change p.z≤Real.sqrt (qStar-(sharpData.x₂-1)^2)-1/2
+    change p.z≤ Real.sqrt (qStar-(sharpData.x₂-1)^2)-1/2
     nlinarith [Real.sq_sqrt hTrad,Real.sqrt_nonneg (qStar-(sharpData.x₂-1)^2)]
   · dsimp [etaMin]
-    change -sharpData.h₂-Real.sqrt (qStar-(sharpData.h₁+2)^2)≤p.eta
+    change -sharpData.h₂-Real.sqrt (qStar-(sharpData.h₁+2)^2)≤ p.eta
     nlinarith [Real.sq_sqrt hGrad,Real.sqrt_nonneg (qStar-(sharpData.h₁+2)^2)]
   · simpa [model] using hp.2.2 0 3 (by decide)
   · simpa [model] using hp.2.2 0 4 (by decide)
@@ -206,8 +250,10 @@ theorem model_parameter_injective : Function.Injective (fun p : EqualityParamete
     linarith
   have hpx : p.x=r.x := congrArg Prod.fst hxy
   have hpy : p.y=r.y := congrArg Prod.snd hxy
+  have hpz : p.z=r.z := hZ
   cases p; cases r
-  simp_all [model,centralSquare,center,pT]
+  simp only [EqualityParameters.mk.injEq]
+  exact ⟨hpx,hpy,hw,hpz,heta⟩
 
 def radius : ℝ := Real.sqrt qStar
 def reflectedModel (reflected : Bool) (p : EqualityParameters) : Fin 8 → UnitSquare :=
@@ -236,7 +282,7 @@ theorem unreflected_model_reaches (p : EqualityParameters) :
   refine ⟨3,(sharpData.x₁,sharpData.y),?_,?_⟩
   · norm_num [model,axisSquare,closedSquare,localX,localY,pA]
   · rw [radius,Real.sq_sqrt (by linarith [qStar_limits.1])]
-    change qStar≤sharpData.x₁^2+sharpData.y^2
+    change qStar≤ sharpData.x₁^2+sharpData.y^2
     exact sharpData_stationary.first_circle.ge
 
 theorem model_reaches (M : Fin 8 → UnitSquare) (hM : M∈models) :
@@ -253,10 +299,10 @@ theorem whole_box_packing {p : EqualityParameters} (hp : p.InBox) :
     Packing (p.model sharpData) (0,0) radius :=
   model_packing _ ⟨false,p,box_admissible hp,rfl⟩
 
-/-- The five independent closed intervals are all present, not just a single
-sample point.  Their coordinate map into the normalized family is injective. -/
+/-- Every point of the box of five closed intervals gives a packing at the optimal radius, and
+distinct points give distinct models. -/
 theorem five_parameter_box :
-    (∀ p : EqualityParameters, p.InBox→Packing (p.model sharpData) (0,0) radius) ∧
+    (∀ p : EqualityParameters, p.InBox→ Packing (p.model sharpData) (0,0) radius) ∧
       Function.Injective (fun p : EqualityParameters=>p.model sharpData) :=
   ⟨fun _ hp=>whole_box_packing hp,model_parameter_injective⟩
 

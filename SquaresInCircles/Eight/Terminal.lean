@@ -4,17 +4,22 @@ public import SquaresInCircles.Eight.TerminalEstimates
 public import SquaresInCircles.Eight.Arithmetic.PositiveEnergy
 
 /-!
-# The sharp bound and its equality mechanism
+# Eight squares: the sharp terminal
 
-Once candidate capture is established, the argument has three steps.
-First, the adaptive dual bounds the containing squared radius by the sharp
-value plus nonnegative errors. Second, positivity forces those errors to
-vanish at equality. Third, apply the stationary dual afresh to the untouched
-original centers; moving centers never justifies equality of their originals.
+Let a boundary cycle have the frames of the candidate word, the tilt in `[1/10, 4/25]`, the
+mismatch at most `1/1000` and its witnesses in the terminal owner sets. Then the adaptive dual
+bounds the squared radius `q` from below by `qStar` plus three nonnegative terms: a multiple of
+`(z - z*)²` in the half-angle tangent `z` of the tilt, the completed squares of the centres, and a
+multiple of the mismatch (`boundary_quantitative`). At `q ≤ qStar` all three vanish, so
+`q = qStar`, the tilt is that of the optimal packing and the mismatch is zero
+(`boundary_rigid`).
 
-The coordinate and projection estimates are in `TerminalEstimates`. Their
-precision-dependent witnesses do not enter the positive-energy reasoning.
-This source has not been compiled.
+The positions do not follow from the moved squares of the boundary cycle. The stationary identity
+is applied a second time, to the original centres of the packing, and fixes the five squares on
+the circle and the lines along which the two sliders move (`original_pullback`).
+
+The coordinate and projection estimates are in `TerminalEstimates.lean`; their numerical
+constants do not enter the positivity argument.
 -/
 
 @[expose] public section
@@ -39,7 +44,8 @@ theorem boundary_quantitative {q z : ℝ} {C : BoundaryCycle q} (F : Frame C)
   simpa [error_sum F] using quantitative hz ht htw (errors F) o (positions C)
     (by simpa [error_sum F] using hS) (vertex_containment F) hg hX hZabs hU hV hZ hη
 
-/-- Equality is a positivity argument, not a decimal comparison. -/
+/-- At `q ≤ qStar` the bound of `boundary_quantitative` forces `q = qStar`, the optimal tilt and
+zero mismatch, since every term it adds to `qStar` is nonnegative. -/
 theorem boundary_rigid {q z : ℝ} {C : BoundaryCycle q} (F : Frame C)
     (hq : q≤qStar) (hz : z ∈ tiltBox) (ht : tilt F.theta=2*Real.arctan z)
     (htw : 1/10≤tilt F.theta ∧ tilt F.theta≤4/25)
@@ -56,8 +62,10 @@ theorem boundary_rigid {q z : ℝ} {C : BoundaryCycle q} (F : Frame C)
     hρ henergy (mismatch_nonneg F.theta) hq hbound
   exact ⟨hrigid.1,sub_eq_zero.mp hrigid.2.1,hrigid.2.2⟩
 
-/-- Apply the dual on the original centers. This has no displacement or
-projected-slider hypothesis; only original vertices and separating gaps. -/
+/-- The stationary identity on the original centres: if the five anchored corners lie in the
+disk of squared radius `qStar` and the seven gaps along the normals of the model are
+nonnegative, then the five anchors are the centres of the model, the gaps vanish, and `T` and `G`
+lie on their slider lines. Nothing is assumed about how far the squares were moved. -/
 theorem original_pullback {p : Positions}
     (hv : ∀ i : Fin 5, normSq (add (p i.castSucc.castSucc) (sharpData.anchorOffsets i))≤qStar)
     (hg : ∀ e : Fin 7, 0≤OriginalDual.gap sharpData p e) :

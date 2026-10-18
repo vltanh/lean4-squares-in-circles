@@ -3,11 +3,13 @@ module
 public import SquaresInCircles.Eight.ExactFamily.Expression
 
 /-!
-# Closed-cover rule for simultaneous stationary equations
+# Eight squares: closed covers for simultaneous zeros
 
-Each exclusion retains the entire expression.  Closed cuts keep the shared
-endpoint in both children.  This rule is used by generated root-isolation
-proof terms; it proves localization, never root existence.
+The rules for localizing the simultaneous zeros of several formulas in a box: a certificate whose
+interval excludes `0` shows that its target does not vanish on the box
+(`interval_excludes_zero`), and a closed cut splits a box into two children that both keep the
+shared face (`closed_box_split`). The exclusions concern the whole target formula. A cover built
+from these rules localizes the zeros; it says nothing about their existence.
 -/
 
 @[expose] public section

@@ -12,6 +12,7 @@ lists are not accepted in place of the identity.
 -/
 
 @[expose] public section
+noncomputable section
 open scoped BigOperators
 
 namespace SquaresInCircles.Eight.Arithmetic
@@ -28,7 +29,8 @@ def bernsteinBasis (n i : ℕ) (t : ℝ) : ℝ :=
 theorem bernsteinBasis_nonneg {n i : ℕ} {t : ℝ} (ht : 0 ≤ t ∧ t ≤ 1) :
     0 ≤ bernsteinBasis n i t := by
   unfold bernsteinBasis
-  positivity
+  have h1 : 0 ≤ 1 - t := by linarith [ht.2]
+  exact mul_nonneg (mul_nonneg (Nat.cast_nonneg _) (pow_nonneg ht.1 _)) (pow_nonneg h1 _)
 
 /-- The binomial theorem gives the partition of unity, including t = 0,1. -/
 theorem bernsteinBasis_sum (n : ℕ) (t : ℝ) :
@@ -60,17 +62,18 @@ theorem bernstein_positive {n : ℕ} {b : ℕ → ℚ} {t : ℝ}
     0 < bernsteinEval n b t := by
   have hsum : ∃ i ∈ Finset.range (n+1), 0 < bernsteinBasis n i t := by
     by_contra hn
-    push_neg at hn
+    push Not at hn
     have hz : ∑ i ∈ Finset.range (n+1), bernsteinBasis n i t ≤ 0 :=
       Finset.sum_nonpos (fun i hi => hn i hi)
     rw [bernsteinBasis_sum] at hz
     norm_num at hz
   obtain ⟨j,hj,hjpos⟩ := hsum
+  unfold bernsteinEval
   apply Finset.sum_pos'
   · intro i hi
-    have hbi : (0 : ℝ) ≤ b i :=
-      (by exact_mod_cast (hb i (Nat.le_of_lt_succ (Finset.mem_range.mp hi)))).le
-    exact mul_nonneg hbi (bernsteinBasis_nonneg ht)
+    have hbi : (0 : ℝ) < b i := by
+      exact_mod_cast (hb i (Nat.le_of_lt_succ (Finset.mem_range.mp hi)))
+    exact mul_nonneg hbi.le (bernsteinBasis_nonneg ht)
   · refine ⟨j,hj,mul_pos ?_ hjpos⟩
     exact_mod_cast hb j (Nat.le_of_lt_succ (Finset.mem_range.mp hj))
 
@@ -134,7 +137,8 @@ theorem PointRow.sound {r : PointRow} {margin : ℚ} (hr : r.Valid margin)
     {x : ℝ} (hx : (QInterval.point r.point).Mem x) :
     (margin : ℝ) ≤ r.polynomial.eval x := by
   have he : x = (r.point : ℝ) := le_antisymm hx.2 hx.1
-  simpa [he] using hr
+  rw [he]
+  exact hr
 
 /-- A semantic lower comparison attaches the certified polynomial to the
 actual real expression of a row.  Downstream users must supply this comparison

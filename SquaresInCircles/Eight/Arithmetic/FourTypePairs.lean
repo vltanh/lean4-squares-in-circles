@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Eight.Arithmetic.RealBox
+public import SquaresInCircles.Eight.Generated.PairsFourType
 public import SquaresInCircles.Eight.BoundaryGeometry
 public import SquaresInCircles.Eight.Frames
 
@@ -13,30 +13,28 @@ closed core corner are kept as separate analytic charts; L, M and H are
 the three closed outer tangent ranges.  A vertex chooses its chart and
 sign once, and its resulting label is used on both incident edges.
 
-The finite problems below contain the actual radial square roots, signed
-labels, physical center gap, and original source-axis separating margin.
-No table consequence is an assumption of the continuous theorem.  The
-closed-box compiler can close a leaf only by excluding one of these
-necessary geometric inequalities or by proving the actual corrected cost
-strictly positive.  Reflection and reversal supply both target axes.
-
-Uncompiled source draft: the ordinary `decide` proof scripts are deliberately
-unevaluated.  Their rational reductions, resource costs, and all Lean
-elaboration remain for the requested later audit.  No external replay or
-report supplies a proof term here.
+For an ordered pair of charts, signs and a source axis, the pair inequality is a
+problem of a pair table (`Generated/Pairs`): its ends carry the actual charts,
+tangent ranges and signed labels, with rational brackets of the constants
+`√(Q₀ - 1/4)`, `√(Q₀/2)` and `π`. The table proves it on the six halves of
+`φ ∈ [-1, 4]`, for every state pair and angle with the physical gap and the
+source-axis margin. Reflection and reversal supply both target axes.
 -/
 
 @[expose] public section
+noncomputable section
 open scoped BigOperators
 
 namespace SquaresInCircles.Eight.Arithmetic.FourType
 
-open RealBox
-
 /-- Five analytic charts for the four geometric types.  The two core
 charts have the same label and the same matrix index. -/
 inductive Branch | coreSide | coreCorner | low | middle | high
-  deriving DecidableEq, Fintype, Repr
+  deriving DecidableEq, Repr
+
+instance : Fintype Branch where
+  elems := {.coreSide, .coreCorner, .low, .middle, .high}
+  complete x := by cases x <;> decide
 
 def Branch.type : Branch → Fin 4
   | .coreSide | .coreCorner => 0
@@ -82,381 +80,13 @@ def TypeMem (s : Branch) (a b : ℝ) : Prop :=
   | .middle => a ≤ 4*b ∧ 7*b ≤ 3*a
   | .high => 3*a ≤ 7*b
 
-def q {n : ℕ} (r : ℚ) : Expr n := .const r
-
-def radialExpr {n : ℕ} (s : Branch) (b : Expr n) : Expr n :=
-  match s with
-  | .coreSide => q (7/12)
-  | .coreCorner => q (1/2) + .sqrt (q (1/144)-(b-q (1/2))^2)
-  | .low | .middle | .high => .sqrt (q (9789/2500)-(b+q (1/2))^2)-q (1/2)
-
-def a0Expr {n : ℕ} : Expr n := .sqrt (q (9789/2500-1/4))-q (1/2)
-def c0Expr {n : ℕ} : Expr n := .sqrt (q (9789/5000))-q (1/2)
-
-def labelExpr {n : ℕ} (s : Branch) (a b : Expr n) : Expr n :=
-  match s with
-  | .coreSide | .coreCorner => q (7506931/1000000)*(q (7/12)-a)+q (269343/250000)*b
-  | .low => q (3231/8000)*(a-a0Expr)+q (217813/200000)*b
-  | .middle => q (-85723/40000)+q (1489593/1000000)*a+q (1580219/1000000)*b
-  | .high => q (1/4) * .pi-q (8898/15625)*(a-c0Expr)+q (195443/500000)*(b-c0Expr)
-
-def cutsExpr {n : ℕ} (s : Branch) (a b : Expr n) : List (Expr n) :=
-  match s with
-  | .coreSide | .coreCorner => []
-  | .low => [a-q 4*b]
-  | .middle => [q 4*b-a,q 3*a-q 7*b]
-  | .high => [q 7*b-q 3*a]
-
-def widthExpr {n : ℕ} (φ : Expr n) : Expr n :=
-  q (1/2)*(q 1 + .abs (.sin φ) + .abs (.cos φ))
-
-def chargeExpr {n : ℕ} (φ : Expr n) : Expr n :=
-  q (1/2)*(.abs (.sin φ) + .abs (.cos φ)-q 1)
-
 def sourceAxis (four : Bool) : Fin 4 := if four then 3 else 0
 
-def marginExpr {n : ℕ} (p r four : Bool) (a b A B φ : Expr n) : Expr n :=
-  if four then a-A * .cos φ-q (signQ r)*B * .sin φ-widthExpr φ
-  else q (signQ p)*b+A * .sin φ-q (signQ r)*B * .cos φ-widthExpr φ
-
-def gapExpr {n : ℕ} (p r : Bool) (a b A B φ : Expr n) : Expr n :=
-  φ+q (signQ p) * .atan (b/a)-q (signQ r) * .atan (B/A)
-
 def gammaQ (s t : Branch) : ℚ := handGammaNumerator s.type t.type/10000
-
-def costExpr {n : ℕ} (s t : Branch) (p r : Bool)
-    (a b A B φ : Expr n) : Expr n :=
-  φ-q (9/50)*chargeExpr φ+q (signQ p)*labelExpr s a b-
-    q (signQ r)*labelExpr t A B-q (gammaQ s t)
-
-/-- Coordinates are the two secondary coordinates and the unwrapped
-relative frame angle.  The physical gap remains an exact hypothesis. -/
-def problem (s t : Branch) (p r four : Bool) : Problem 3 :=
-  let b : Expr 3 := .var 0
-  let B : Expr 3 := .var 1
-  let φ : Expr 3 := .var 2
-  let a := radialExpr s b
-  let A := radialExpr t B
-  let δ := gapExpr p r a b A B φ
-  { hypotheses := [a-b,A-B,δ-q (19/25),q (3/4) * .pi-δ,
-        marginExpr p r four a b A B φ] ++ (cutsExpr s a b ++ cutsExpr t A B)
-    conclusion := costExpr s t p r a b A B φ }
-
-def domain (s t : Branch) : Box 3 := ![s.bBox,t.bBox,⟨-1,4⟩]
-
-/-- Closed rational subdivision depth.  This is a source parameter, not
-the output of an executed checker. -/
-def depth : ℕ := 96
-
-/- The 25 declarations in the following block each bind all eight sign/
-source-axis choices to one ordered pair of analytic charts.  Thus the
-original 128 type/sign/source-axis branches are all represented; splitting
-the core curve increases the analytic chart count to 200. -/
-
--- BEGIN FINITE FOUR-TYPE PROOF SCRIPTS
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem coreSide_coreSide_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .coreSide .coreSide p r four)
-        (domain .coreSide .coreSide)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem coreSide_coreCorner_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .coreSide .coreCorner p r four)
-        (domain .coreSide .coreCorner)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem coreSide_low_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .coreSide .low p r four)
-        (domain .coreSide .low)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem coreSide_middle_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .coreSide .middle p r four)
-        (domain .coreSide .middle)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem coreSide_high_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .coreSide .high p r four)
-        (domain .coreSide .high)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem coreCorner_coreSide_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .coreCorner .coreSide p r four)
-        (domain .coreCorner .coreSide)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem coreCorner_coreCorner_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .coreCorner .coreCorner p r four)
-        (domain .coreCorner .coreCorner)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem coreCorner_low_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .coreCorner .low p r four)
-        (domain .coreCorner .low)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem coreCorner_middle_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .coreCorner .middle p r four)
-        (domain .coreCorner .middle)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem coreCorner_high_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .coreCorner .high p r four)
-        (domain .coreCorner .high)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem low_coreSide_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .low .coreSide p r four)
-        (domain .low .coreSide)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem low_coreCorner_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .low .coreCorner p r four)
-        (domain .low .coreCorner)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem low_low_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .low .low p r four)
-        (domain .low .low)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem low_middle_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .low .middle p r four)
-        (domain .low .middle)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem low_high_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .low .high p r four)
-        (domain .low .high)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem middle_coreSide_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .middle .coreSide p r four)
-        (domain .middle .coreSide)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem middle_coreCorner_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .middle .coreCorner p r four)
-        (domain .middle .coreCorner)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem middle_low_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .middle .low p r four)
-        (domain .middle .low)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem middle_middle_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .middle .middle p r four)
-        (domain .middle .middle)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem middle_high_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .middle .high p r four)
-        (domain .middle .high)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem high_coreSide_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .high .coreSide p r four)
-        (domain .high .coreSide)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem high_coreCorner_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .high .coreCorner p r four)
-        (domain .high .coreCorner)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem high_low_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .high .low p r four)
-        (domain .high .low)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem high_middle_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .high .middle p r four)
-        (domain .high .middle)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem high_high_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .high .high p r four)
-        (domain .high .high)=true := by
-  decide
-
-theorem source_axis_certificates (s t : Branch) (p r four : Bool) :
-    certify depth (problem s t p r four) (domain s t)=true := by
-  cases s <;> cases t
-  · exact coreSide_coreSide_certificates p r four
-  · exact coreSide_coreCorner_certificates p r four
-  · exact coreSide_low_certificates p r four
-  · exact coreSide_middle_certificates p r four
-  · exact coreSide_high_certificates p r four
-  · exact coreCorner_coreSide_certificates p r four
-  · exact coreCorner_coreCorner_certificates p r four
-  · exact coreCorner_low_certificates p r four
-  · exact coreCorner_middle_certificates p r four
-  · exact coreCorner_high_certificates p r four
-  · exact low_coreSide_certificates p r four
-  · exact low_coreCorner_certificates p r four
-  · exact low_low_certificates p r four
-  · exact low_middle_certificates p r four
-  · exact low_high_certificates p r four
-  · exact middle_coreSide_certificates p r four
-  · exact middle_coreCorner_certificates p r four
-  · exact middle_low_certificates p r four
-  · exact middle_middle_certificates p r four
-  · exact middle_high_certificates p r four
-  · exact high_coreSide_certificates p r four
-  · exact high_coreCorner_certificates p r four
-  · exact high_low_certificates p r four
-  · exact high_middle_certificates p r four
-  · exact high_high_certificates p r four
-
--- END FINITE FOUR-TYPE PROOF SCRIPTS
-
-@[simp] theorem radialExpr_eval {n : ℕ} (s : Branch) (b : Expr n) (env : Fin n → ℝ) :
-    Expr.eval env (radialExpr s b)=radialA s (Expr.eval env b) := by
-  cases s <;> norm_num [radialExpr,radialA,q,Expr.eval,Q0]
-
-@[simp] theorem a0Expr_eval {n : ℕ} (env : Fin n → ℝ) :
-    Expr.eval env (a0Expr : Expr n)=a0 := by
-  norm_num [a0Expr,a0,q,Expr.eval,Q0]
-
-@[simp] theorem c0Expr_eval {n : ℕ} (env : Fin n → ℝ) :
-    Expr.eval env (c0Expr : Expr n)=c0 := by
-  norm_num [c0Expr,c0,q,Expr.eval,Q0]
-
-@[simp] theorem labelExpr_eval {n : ℕ} (s : Branch) (a b : Expr n) (env : Fin n → ℝ) :
-    Expr.eval env (labelExpr s a b)=label s (Expr.eval env a) (Expr.eval env b) := by
-  cases s <;> simp [labelExpr,label,q,Expr.eval,a0Expr_eval,c0Expr_eval] <;> ring
-
-theorem cutsExpr_sound {n : ℕ} (s : Branch) (a b : Expr n) (env : Fin n → ℝ)
-    (h : TypeMem s (Expr.eval env a) (Expr.eval env b)) :
-    ∀ e ∈ cutsExpr s a b,0 ≤ Expr.eval env e := by
-  cases s <;> simp only [cutsExpr,TypeMem,List.mem_cons,List.not_mem_nil,
-    or_false] at *
-  · tauto
-  · tauto
-  · rintro e rfl
-    simp only [q,Expr.eval]
-    linarith
-  · intro e he
-    rcases he with rfl | rfl <;> simp only [q,Expr.eval] <;> linarith [h.1,h.2]
-  · rintro e rfl
-    simp only [q,Expr.eval]
-    linarith
-
-@[simp] theorem widthExpr_eval {n : ℕ} (φ : Expr n) (env : Fin n → ℝ) :
-    Expr.eval env (widthExpr φ)=pairWidth (Expr.eval env φ) := by
-  simp only [widthExpr,q,Expr.eval,pairWidth]
-  push_cast
-  ring
-
-@[simp] theorem chargeExpr_eval {n : ℕ} (φ : Expr n) (env : Fin n → ℝ) :
-    Expr.eval env (chargeExpr φ)=periodicFrameCost (Expr.eval env φ) := by
-  simp only [chargeExpr,q,Expr.eval,periodicFrameCost]
-  push_cast
-  ring
-
-@[simp] theorem marginExpr_eval {n : ℕ} (p r four : Bool)
-    (a b A B φ : Expr n) (env : Fin n → ℝ) :
-    Expr.eval env (marginExpr p r four a b A B φ)=
-      SquaresInCircles.Eight.forwardMargin (sourceAxis four)
-        (Expr.eval env a) (Expr.eval env b) (Expr.eval env A) (Expr.eval env B)
-        (sign p) (sign r) (Expr.eval env φ) := by
-  cases four <;> simp [marginExpr,sourceAxis,SquaresInCircles.Eight.forwardMargin,
-    q,Expr.eval,signQ_cast,widthExpr_eval]
-
-@[simp] theorem gapExpr_eval {n : ℕ} (p r : Bool)
-    (a b A B φ : Expr n) (env : Fin n → ℝ) :
-    Expr.eval env (gapExpr p r a b A B φ)=Expr.eval env φ+
-      sign p*Real.arctan (Expr.eval env b/Expr.eval env a)-
-      sign r*Real.arctan (Expr.eval env B/Expr.eval env A) := by
-  simp [gapExpr,q,Expr.eval,div_eq_mul_inv]
 
 @[simp] theorem gammaQ_cast (s t : Branch) :
     (gammaQ s t : ℝ)=handGamma s.type t.type := by
   simp [gammaQ,handGamma]
-
-@[simp] theorem costExpr_eval {n : ℕ} (s t : Branch) (p r : Bool)
-    (a b A B φ : Expr n) (env : Fin n → ℝ) :
-    Expr.eval env (costExpr s t p r a b A B φ)=
-      Expr.eval env φ-(9/50)*periodicFrameCost (Expr.eval env φ)+
-        sign p*label s (Expr.eval env a) (Expr.eval env b)-
-        sign r*label t (Expr.eval env A) (Expr.eval env B)-handGamma s.type t.type := by
-  simp [costExpr,q,Expr.eval,chargeExpr_eval,labelExpr_eval,gammaQ_cast]
 
 /-- An actual closed chart point.  None of its fields is a pair inequality. -/
 structure State where
@@ -497,6 +127,243 @@ theorem gamma_symmetric (s t : Branch) :
     handGamma t.type s.type=handGamma s.type t.type := by
   cases s <;> cases t <;> norm_num [Branch.type,handGamma,handGammaNumerator]
 
+/-! ### The pair tables -/
+
+section Tables
+
+open PairCover
+
+/-- Rational brackets of `√(Q₀ - 1/4)`, `√(Q₀/2)` and `π`. -/
+def rootA0Lo : ℚ := 191457567100389113870 / 10 ^ 20
+def rootA0Hi : ℚ := 191457567100389113871 / 10 ^ 20
+def rootC0Lo : ℚ := 139921406510940991183 / 10 ^ 20
+def rootC0Hi : ℚ := 139921406510940991184 / 10 ^ 20
+def piLo : ℚ := 3141592653589793238 / 10 ^ 18
+def piHi : ℚ := 3141592653589793239 / 10 ^ 18
+
+theorem a0_bounds : (rootA0Lo : ℝ) - 1/2 ≤ a0 ∧ a0 ≤ (rootA0Hi : ℝ) - 1/2 := by
+  have h1 : (rootA0Lo : ℝ) ≤ Real.sqrt (Q0 - 1/4) :=
+    Real.le_sqrt_of_sq_le (by norm_num [rootA0Lo, Q0])
+  have h2 : Real.sqrt (Q0 - 1/4) ≤ rootA0Hi :=
+    Real.sqrt_le_iff.mpr ⟨by norm_num [rootA0Hi], by norm_num [rootA0Hi, Q0]⟩
+  unfold a0
+  constructor <;> linarith
+
+theorem c0_bounds : (rootC0Lo : ℝ) - 1/2 ≤ c0 ∧ c0 ≤ (rootC0Hi : ℝ) - 1/2 := by
+  have h1 : (rootC0Lo : ℝ) ≤ Real.sqrt (Q0 / 2) :=
+    Real.le_sqrt_of_sq_le (by norm_num [rootC0Lo, Q0])
+  have h2 : Real.sqrt (Q0 / 2) ≤ rootC0Hi :=
+    Real.sqrt_le_iff.mpr ⟨by norm_num [rootC0Hi], by norm_num [rootC0Hi, Q0]⟩
+  unfold c0
+  constructor <;> linarith
+
+theorem pi_bounds : (piLo : ℝ) ≤ Real.pi ∧ Real.pi ≤ piHi := by
+  have h := pi_hand_enclosure
+  constructor <;> norm_num [piLo, piHi] <;> linarith [h.1, h.2]
+
+/-- The positive label of a branch, with a rational bracket of its constant. -/
+def branchQuad : Branch → QuadLabel
+  | .coreSide | .coreCorner => ⟨7506931/1000000*(7/12), 7506931/1000000*(7/12), -(7506931/1000000),
+      269343/250000, 0, 0⟩
+  | .low => ⟨-(3231/8000)*(rootA0Hi-1/2), -(3231/8000)*(rootA0Lo-1/2), 3231/8000, 217813/200000,
+      0, 0⟩
+  | .middle => ⟨-85723/40000, -85723/40000, 1489593/1000000, 1580219/1000000, 0, 0⟩
+  | .high => ⟨piLo/4+(8898/15625-195443/500000)*(rootC0Lo-1/2),
+      piHi/4+(8898/15625-195443/500000)*(rootC0Hi-1/2), -(8898/15625), 195443/500000, 0, 0⟩
+
+/-- The constant of the positive label of a branch. -/
+noncomputable def branchConst : Branch → ℝ
+  | .coreSide | .coreCorner => 7506931/1000000*(7/12)
+  | .low => -(3231/8000)*a0
+  | .middle => -85723/40000
+  | .high => Real.pi/4+(8898/15625-195443/500000)*c0
+
+theorem label_eq (s : Branch) (a b : ℝ) : label s a b = (branchQuad s).eval (branchConst s) a b := by
+  cases s <;> simp only [label, branchQuad, branchConst, QuadLabel.eval] <;> push_cast <;> ring
+
+theorem branchConst_mem (s : Branch) :
+    ((branchQuad s).cLo : ℝ) ≤ branchConst s ∧ branchConst s ≤ (branchQuad s).cHi := by
+  have ha := a0_bounds
+  have hc := c0_bounds
+  have hp := pi_bounds
+  cases s <;> simp only [branchQuad,
+    branchConst] <;> push_cast <;> constructor <;> linarith only [ha, hc, hp]
+
+/-- The chart and the tangent range of a branch. -/
+def Branch.outer : Branch → Bool
+  | .low | .middle | .high => true
+  | .coreSide | .coreCorner => false
+
+def Branch.side : Branch → Bool
+  | .coreSide => true
+  | _ => false
+
+def Branch.range : Branch → QInterval
+  | .coreSide => ⟨0, 6/7⟩
+  | .coreCorner => ⟨6/7, 1⟩
+  | .low => ⟨0, 1/4⟩
+  | .middle => ⟨1/4, 3/7⟩
+  | .high => ⟨3/7, 1⟩
+
+/-- The end of a pair at a vertex of the branch `s` and sign `σ`. -/
+def branchEnd (s : Branch) (σ : Bool) : PairEnd :=
+  ⟨s.outer, s.side, σ, s.range, (branchQuad s).signed σ⟩
+
+/-- The six halves `(k, r, u⁺)` of `φ ∈ [-1, 4]`, with `u⁺` over `10⁸`. -/
+def fourTypeHalves : List (ℕ × Bool × ℕ) :=
+  [(0, false, 100000000), (0, true, 80000000), (1, false, 80000000), (1, true, 80000000),
+    (2, false, 80000000), (2, true, 86000000)]
+
+/-- The pair problem of the branches `s`, `t`, the signs `σ`, `τ` and the source axis. -/
+def fourTypeProblem (s t : Branch) (σ τ four : Bool) : PairProblem :=
+  ⟨branchEnd s σ, branchEnd t τ, if four then .four else .one, 9/50, gammaQ s t, fourTypeHalves⟩
+
+/-- The pair table of an ordered pair of branches. -/
+def fourTypeTable : Branch → Branch → List PairProblem
+  | .coreSide, .coreSide => Generated.Pairs.FourTypeCoreSideCoreSide.problems
+  | .coreSide, .coreCorner => Generated.Pairs.FourTypeCoreSideCoreCorner.problems
+  | .coreSide, .low => Generated.Pairs.FourTypeCoreSideLow.problems
+  | .coreSide, .middle => Generated.Pairs.FourTypeCoreSideMiddle.problems
+  | .coreSide, .high => Generated.Pairs.FourTypeCoreSideHigh.problems
+  | .coreCorner, .coreSide => Generated.Pairs.FourTypeCoreCornerCoreSide.problems
+  | .coreCorner, .coreCorner => Generated.Pairs.FourTypeCoreCornerCoreCorner.problems
+  | .coreCorner, .low => Generated.Pairs.FourTypeCoreCornerLow.problems
+  | .coreCorner, .middle => Generated.Pairs.FourTypeCoreCornerMiddle.problems
+  | .coreCorner, .high => Generated.Pairs.FourTypeCoreCornerHigh.problems
+  | .low, .coreSide => Generated.Pairs.FourTypeLowCoreSide.problems
+  | .low, .coreCorner => Generated.Pairs.FourTypeLowCoreCorner.problems
+  | .low, .low => Generated.Pairs.FourTypeLowLow.problems
+  | .low, .middle => Generated.Pairs.FourTypeLowMiddle.problems
+  | .low, .high => Generated.Pairs.FourTypeLowHigh.problems
+  | .middle, .coreSide => Generated.Pairs.FourTypeMiddleCoreSide.problems
+  | .middle, .coreCorner => Generated.Pairs.FourTypeMiddleCoreCorner.problems
+  | .middle, .low => Generated.Pairs.FourTypeMiddleLow.problems
+  | .middle, .middle => Generated.Pairs.FourTypeMiddleMiddle.problems
+  | .middle, .high => Generated.Pairs.FourTypeMiddleHigh.problems
+  | .high, .coreSide => Generated.Pairs.FourTypeHighCoreSide.problems
+  | .high, .coreCorner => Generated.Pairs.FourTypeHighCoreCorner.problems
+  | .high, .low => Generated.Pairs.FourTypeHighLow.problems
+  | .high, .middle => Generated.Pairs.FourTypeHighMiddle.problems
+  | .high, .high => Generated.Pairs.FourTypeHighHigh.problems
+
+theorem fourTypeTable_holds (s t : Branch) :
+    ∀ P ∈ fourTypeTable s t, P.Holds ((9789/2500 : ℚ) : ℝ) 100000000 := by
+  cases s <;> cases t
+  · exact Generated.Pairs.FourTypeCoreSideCoreSide.sound
+  · exact Generated.Pairs.FourTypeCoreSideCoreCorner.sound
+  · exact Generated.Pairs.FourTypeCoreSideLow.sound
+  · exact Generated.Pairs.FourTypeCoreSideMiddle.sound
+  · exact Generated.Pairs.FourTypeCoreSideHigh.sound
+  · exact Generated.Pairs.FourTypeCoreCornerCoreSide.sound
+  · exact Generated.Pairs.FourTypeCoreCornerCoreCorner.sound
+  · exact Generated.Pairs.FourTypeCoreCornerLow.sound
+  · exact Generated.Pairs.FourTypeCoreCornerMiddle.sound
+  · exact Generated.Pairs.FourTypeCoreCornerHigh.sound
+  · exact Generated.Pairs.FourTypeLowCoreSide.sound
+  · exact Generated.Pairs.FourTypeLowCoreCorner.sound
+  · exact Generated.Pairs.FourTypeLowLow.sound
+  · exact Generated.Pairs.FourTypeLowMiddle.sound
+  · exact Generated.Pairs.FourTypeLowHigh.sound
+  · exact Generated.Pairs.FourTypeMiddleCoreSide.sound
+  · exact Generated.Pairs.FourTypeMiddleCoreCorner.sound
+  · exact Generated.Pairs.FourTypeMiddleLow.sound
+  · exact Generated.Pairs.FourTypeMiddleMiddle.sound
+  · exact Generated.Pairs.FourTypeMiddleHigh.sound
+  · exact Generated.Pairs.FourTypeHighCoreSide.sound
+  · exact Generated.Pairs.FourTypeHighCoreCorner.sound
+  · exact Generated.Pairs.FourTypeHighLow.sound
+  · exact Generated.Pairs.FourTypeHighMiddle.sound
+  · exact Generated.Pairs.FourTypeHighHigh.sound
+
+theorem fourTypeProblem_mem :
+    ∀ s t : Branch, ∀ σ τ four : Bool, fourTypeProblem s t σ τ four ∈ fourTypeTable s t := by
+  decide +kernel
+
+/-- Every `φ ∈ [-1, 4]` is `k π / 2 ± u` on one of the six halves. -/
+theorem four_type_half {φ : ℝ} (hφ : -1 ≤ φ ∧ φ ≤ 4) :
+    ∃ hv ∈ fourTypeHalves, ∃ u : ℝ, 0 ≤ u ∧ u ≤ (hv.2.2 : ℝ) / ((100000000 : ℕ) : ℝ) ∧
+      phiOf hv.1 hv.2.1 u = φ := by
+  have hpi := pi_bounds
+  have h1 : (piLo : ℝ) = 3141592653589793238 / 10 ^ 18 := by norm_num [piLo]
+  have h2 : (piHi : ℝ) = 3141592653589793239 / 10 ^ 18 := by norm_num [piHi]
+  rw [h1, h2] at hpi
+  simp only [fourTypeHalves, List.mem_cons, List.not_mem_nil, or_false, exists_eq_or_imp,
+    exists_eq_left, phiOf, sgnR, Bool.false_eq_true, ↓reduceIte]
+  push_cast
+  by_cases h0 : φ ≤ 0
+  · exact Or.inl ⟨-φ, by linarith only [h0], by linarith only [hφ], by ring⟩
+  by_cases h45 : φ ≤ 4/5
+  · exact Or.inr (Or.inl ⟨φ, by linarith only [h0], by linarith only [h45], by ring⟩)
+  by_cases hp2 : φ ≤ Real.pi / 2
+  · exact Or.inr (Or.inr (Or.inl ⟨Real.pi / 2 - φ, by linarith only [hp2],
+    by linarith only [hpi, h0, h45], by ring⟩))
+  by_cases hp3 : φ ≤ Real.pi / 2 + 4/5
+  · exact Or.inr (Or.inr (Or.inr (Or.inl ⟨φ - Real.pi / 2, by linarith only [hp2],
+    by linarith only [hp3], by ring⟩)))
+  by_cases hp4 : φ ≤ Real.pi
+  · exact Or.inr (Or.inr (Or.inr (Or.inr (Or.inl
+      ⟨Real.pi - φ, by linarith only [hp4], by linarith only [hpi, hp3], by ring⟩))))
+  · exact Or.inr (Or.inr (Or.inr (Or.inr (Or.inr
+      ⟨φ - Real.pi, by linarith only [hp4], by linarith only [hφ, hpi, hp4], by ring⟩))))
+
+/-- A state is a point of the chart of its branch, with its tangent in the branch range. -/
+theorem state_mem (s : State) :
+    (branchEnd s.branch s.positive).Mem ((9789/2500 : ℚ) : ℝ) s.branch.range s.a s.b := by
+  have ha := s.a_eq
+  have hb := s.b_mem
+  have hba := s.canonical
+  have ht := s.type_mem
+  have hQ : ((9789/2500 : ℚ) : ℝ) = Q0 := by norm_num [Q0]
+  rw [hQ]
+  simp only [PairEnd.Mem, PairEnd.OnCurve, branchEnd, QInterval.Mem]
+  cases hs : s.branch <;>
+    simp only [hs, radialA, Branch.bBox, Branch.outer, Branch.side, Branch.range, TypeMem,
+      QInterval.Mem, Bool.false_eq_true, ↓reduceIte] at ha hb ht ⊢ <;> push_cast at hb ⊢
+  · -- the core side
+    have hpos : 0 < s.a := by rw [ha]; norm_num
+    refine ⟨hpos, hb.1, hba, ⟨div_nonneg hb.1 hpos.le, ?_⟩, ha, hb.2⟩
+    rw [div_le_iff₀ hpos, ha]
+    linarith only [hb.2]
+  · -- the core corner
+    have hr : 0 ≤ (1/12 : ℝ)^2 - (s.b - 1/2)^2 := by nlinarith only [hb.1, hb.2]
+    have hsq := Real.sq_sqrt hr
+    have hs0 := Real.sqrt_nonneg ((1/12 : ℝ)^2 - (s.b - 1/2)^2)
+    have hsle : Real.sqrt ((1/12 : ℝ)^2 - (s.b - 1/2)^2) ≤ 1/12 := by
+      rw [Real.sqrt_le_left (by norm_num)]
+      nlinarith only []
+    have hpos : 0 < s.a := by rw [ha]; linarith only [hba, ha, hb]
+    refine ⟨hpos, by linarith only [hb.1], hba, ⟨?_, ?_⟩, hb.1, ?_⟩
+    · rw [le_div_iff₀ hpos]
+      linarith only [hb.1, ha, hsle]
+    · rw [div_le_iff₀ hpos]
+      linarith only [hba]
+    · rw [ha]
+      linarith only [hsq]
+  all_goals
+    have hr : 0 ≤ Q0 - (s.b + 1/2)^2 := by norm_num [Q0]; nlinarith only [hb.1, hb.2, ht, hba]
+    have hsq := Real.sq_sqrt hr
+    have hs0 := Real.sqrt_nonneg (Q0 - (s.b + 1/2)^2)
+    have hlow : (139/100 : ℝ) ≤ Real.sqrt (Q0 - (s.b + 1/2)^2) := by
+      apply Real.le_sqrt_of_sq_le
+      norm_num [Q0]
+      nlinarith only [hb.1, hb.2, hba, hQ, ha, hsq, ht]
+    have hpos : 0 < s.a := by rw [ha]; linarith only [hlow]
+    refine ⟨hpos, hb.1, hba, ⟨?_, ?_⟩, ?_⟩
+  -- low
+  · exact div_nonneg hb.1 hpos.le
+  · rw [div_le_iff₀ hpos]; linarith only [ht]
+  · rw [ha]; linarith only [hsq]
+  -- middle
+  · rw [le_div_iff₀ hpos]; linarith only [ht.1]
+  · rw [div_le_iff₀ hpos]; linarith only [ht.2]
+  · rw [ha]; linarith only [hsq]
+  -- high
+  · rw [le_div_iff₀ hpos]; linarith only [ht]
+  · rw [div_le_iff₀ hpos]; linarith only [hba]
+  · rw [ha]; linarith only [hsq]
+
+end Tables
+
 /-- Soundness of each source-axis problem, on every point of its full
 closed state box and its closed physical angular domain. -/
 theorem source_pair (s t : State) (four : Bool) (φ : ℝ)
@@ -505,46 +372,36 @@ theorem source_pair (s t : State) (four : Bool) (φ : ℝ)
     (haxis : 0 ≤ SquaresInCircles.Eight.forwardMargin (sourceAxis four)
       s.a s.b t.a t.b (sign s.positive) (sign t.positive) φ) :
     handGamma s.branch.type t.branch.type < s.cost t φ := by
-  let env : Fin 3 → ℝ := ![s.b,t.b,φ]
-  let a : Expr 3 := radialExpr s.branch (.var 0)
-  let A : Expr 3 := radialExpr t.branch (.var 1)
-  have ha : Expr.eval env a=s.a := by simpa [a,env,Expr.eval] using s.a_eq.symm
-  have hA : Expr.eval env A=t.a := by simpa [A,env,Expr.eval] using t.a_eq.symm
-  have hbox : ∀ i,(domain s.branch t.branch i).Mem (env i) := by
-    intro i
-    fin_cases i
-    · simpa [domain,env] using s.b_mem
-    · simpa [domain,env] using t.b_mem
-    · simpa [domain,env,QInterval.Mem] using hφ
-  have hcuts := cutsExpr_sound s.branch a (.var 0) env (by simpa [ha,env,Expr.eval] using s.type_mem)
-  have hCuts := cutsExpr_sound t.branch A (.var 1) env (by simpa [hA,env,Expr.eval] using t.type_mem)
-  have hhyps : ∀ e ∈ (problem s.branch t.branch s.positive t.positive four).hypotheses,
-      0 ≤ Expr.eval env e := by
-    intro e he
-    change e ∈ ([a - .var 0,A - .var 1,
-      gapExpr s.positive t.positive a (.var 0) A (.var 1) (.var 2)-q (19/25),
-      q (3/4) * .pi-gapExpr s.positive t.positive a (.var 0) A (.var 1) (.var 2),
-      marginExpr s.positive t.positive four a (.var 0) A (.var 1) (.var 2)] ++
-      (cutsExpr s.branch a (.var 0) ++ cutsExpr t.branch A (.var 1))) at he
-    simp only [List.mem_append] at he
-    rcases he with he | (he | he)
-    · simp only [List.mem_cons,List.not_mem_nil,or_false] at he
-      rcases he with rfl | rfl | rfl | rfl | rfl
-      · simpa [Expr.eval,ha,env] using sub_nonneg.mpr s.canonical
-      · simpa [Expr.eval,hA,env] using sub_nonneg.mpr t.canonical
-      · simpa [Expr.eval,q,ha,hA,env,State.gap,State.offset,gapExpr_eval]
-          using sub_nonneg.mpr hgap.1
-      · have hh : 0 ≤ (3/4:ℝ)*Real.pi-s.gap t φ := by linarith [hgap.2]
-        simpa [Expr.eval,q,ha,hA,env,State.gap,State.offset,gapExpr_eval] using hh
-      · simpa [marginExpr_eval,ha,hA,env,Expr.eval] using haxis
-    · exact hcuts e he
-    · exact hCuts e he
-  have h := RealBox.certify_sound
-    (source_axis_certificates s.branch t.branch s.positive t.positive four) env hbox hhyps
-  change 0 < Expr.eval env (costExpr s.branch t.branch s.positive t.positive
-    a (.var 0) A (.var 1) (.var 2)) at h
-  rw [costExpr_eval,ha,hA] at h
-  simpa [env,Expr.eval,State.cost,State.signedLabel] using (sub_pos.mp h)
+  obtain ⟨hv, hmem, u, hu0, hu1, hphi⟩ := four_type_half hφ
+  have hP := fourTypeTable_holds s.branch t.branch _
+    (fourTypeProblem_mem s.branch t.branch s.positive t.positive four)
+  have hcs := QuadLabel.signed_bounds (branchConst_mem s.branch) s.positive
+  have hct := QuadLabel.signed_bounds (branchConst_mem t.branch) t.positive
+  have hc := hP hv hmem (sgnR s.positive * branchConst s.branch)
+    (sgnR t.positive * branchConst t.branch) hcs.1 hct.2 s.a s.b t.a t.b u (state_mem s)
+    (state_mem t) (by simpa using hu0) hu1
+  have hσ : sgnR s.positive = sign s.positive := rfl
+  have hτ : sgnR t.positive = sign t.positive := rfl
+  simp only [fourTypeProblem, branchEnd, PairCover.PairProblem.gap, hphi] at hc
+  have hgap' : 19/25 ≤ φ + sign s.positive * Real.arctan (s.b / s.a) -
+      sign t.positive * Real.arctan (t.b / t.a) := hgap.1
+  have hgap'' : φ + sign s.positive * Real.arctan (s.b / s.a) -
+      sign t.positive * Real.arctan (t.b / t.a) ≤ 3 * Real.pi / 4 := hgap.2
+  have hmargin : 0 ≤ forwardMargin (if four then ForwardAxis.four else ForwardAxis.one)
+      (sign s.positive) (sign t.positive) s.a s.b t.a t.b φ := by
+    rw [forwardMargin_actual]
+    cases four <;> exact haxis
+  rw [hσ, hτ] at hc
+  have h := hc hgap' hgap'' hmargin
+  rw [← hσ, ← hτ, QuadLabel.signed_eval, QuadLabel.signed_eval, ← label_eq, ← label_eq,
+    gammaQ_cast, hσ, hτ] at h
+  have hframe : frameCharge φ = periodicFrameCost φ := by
+    simp only [frameCharge, periodicFrameCost]
+    ring
+  rw [hframe] at h
+  simp only [State.cost, State.signedLabel]
+  push_cast at h
+  linarith
 
 /-- Original target axes are covered by reflected reversal, with both
 vertex signs and both vertex labels transported together. -/
@@ -589,7 +446,7 @@ noncomputable def signOf (C : BoundaryCycle Q0) (i : Vertex) : Bool :=
   if C.sigma i=1 then true else false
 
 theorem signOf_spec (C : BoundaryCycle Q0) (i : Vertex) : sign (signOf C i)=C.sigma i := by
-  rcases C.sigma_sign i with h | h <;> simp [signOf,sign,h]
+  rcases C.sigma_sign i with h | h <;> norm_num [signOf,sign,h]
 
 theorem branchOf_spec (C : BoundaryCycle Q0) (i : Vertex) :
     C.a i=radialA (branchOf C i) (C.b i) ∧
@@ -604,16 +461,16 @@ theorem branchOf_spec (C : BoundaryCycle Q0) (i : Vertex) :
       have he : (C.a i+1/2)^2+(C.b i+1/2)^2=Q0 := by
         simpa [BoundaryState,hk,SquaresInCircles.phi] using hboundary
       have hr : Real.sqrt (Q0-(C.b i+1/2)^2)=C.a i+1/2 := by
-        rw [show Q0-(C.b i+1/2)^2=(C.a i+1/2)^2 by linarith,
-          Real.sqrt_sq_eq_abs,abs_of_pos (by linarith)]
+        rw [show Q0-(C.b i+1/2)^2=(C.a i+1/2)^2 by linarith only [he],
+          Real.sqrt_sq_eq_abs,abs_of_pos (by linarith only [ha])]
       simp only [branchOf,hk]
       split_ifs with hl hm
-      · exact ⟨by simp [radialA,hr],
+      · exact ⟨by simp only [radialA,hr]; ring,
           by simpa [Branch.bBox,QInterval.Mem] using And.intro hb hbU.le,hl⟩
-      · exact ⟨by simp [radialA,hr],
+      · exact ⟨by simp only [radialA,hr]; ring,
           by simpa [Branch.bBox,QInterval.Mem] using And.intro hb hbU.le,
           ⟨(lt_of_not_ge hl).le,hm⟩⟩
-      · exact ⟨by simp [radialA,hr],
+      · exact ⟨by simp only [radialA,hr]; ring,
           by simpa [Branch.bBox,QInterval.Mem] using And.intro hb hbU.le,
           (lt_of_not_ge hm).le⟩
   | coreSide =>
@@ -625,15 +482,15 @@ theorem branchOf_spec (C : BoundaryCycle Q0) (i : Vertex) :
   | coreCorner =>
       have hc : 1/2 ≤ C.b i ∧ (C.a i-1/2)^2+(C.b i-1/2)^2=(1/12:ℝ)^2 := by
         simpa [BoundaryState,hk] using hboundary
-      have hap : 0 ≤ C.a i-1/2 := by linarith [hc.1]
+      have hap : 0 ≤ C.a i-1/2 := by linarith only [hc.1, hab]
       have hr : Real.sqrt ((1/12:ℝ)^2-(C.b i-1/2)^2)=C.a i-1/2 := by
-        rw [show (1/12:ℝ)^2-(C.b i-1/2)^2=(C.a i-1/2)^2 by linarith [hc.2],
+        rw [show (1/12:ℝ)^2-(C.b i-1/2)^2=(C.a i-1/2)^2 by linarith only [hc.2],
           Real.sqrt_sq_eq_abs,abs_of_nonneg hap]
       have hb' : C.b i ≤ 14/25 := by
         have hs : (C.b i-1/2)^2 ≤ (C.a i-1/2)^2 :=
-          pow_le_pow_left₀ (by linarith [hc.1]) (by linarith) 2
-        nlinarith [hc.2]
-      exact ⟨by simp [branchOf,hk,radialA,hr],
+          pow_le_pow_left₀ (by linarith only [hc.1]) (by linarith only [hab]) 2
+        nlinarith only [hc.2, hab, hs, ha]
+      exact ⟨by simp only [branchOf,hk,radialA,hr]; ring,
         by simpa [branchOf,hk,Branch.bBox,QInterval.Mem] using And.intro hc.1 hb',
         by simp [branchOf,hk,TypeMem]⟩
 

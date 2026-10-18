@@ -1,19 +1,21 @@
 module
 
-public import SquaresInCircles.StatementEight
+public import SquaresInCircles.Geometry
 public import SquaresInCircles.Eight.Equality
 
 /-!
-# The pure statement root and the analytically selected root agree
+# Eight squares: the statement and the proof agree
 
-Uncompiled source draft. The statement uses ordinary epsilon selection from
-its explicit stationary equations. This module supplies the actual
-existence and uniqueness proof from F2, identifies the selected coordinates,
-and transports the complete equality domain and both model branches.
+`Geometry.lean` states the radius and the optimal packings with Mathlib alone: it selects
+the stationary root by `Classical.epsilon` from the explicit stationary equations, and it writes
+out the admissible domain and both orientations of the model. Its stationary system has exactly
+one solution, the configuration `sharpData` of `Stationary.lean`
+(`statement_stationary_existsUnique`, `selected_coordinates`), so the stated radius is `√qStar`
+(`radius_statement`). The admissible domains and the two branches of the model agree as well, so
+the stated set of models is `models` (`models_statement`).
 
-The analytic definitions are unchanged: this bridge keeps the pure
-Mathlib-only challenge independent of the proof modules and their interval
-certificate infrastructure.
+Both sides keep their own definitions, and this module only identifies them; so the statement
+does not depend on the proof modules or on their interval arithmetic.
 -/
 
 @[expose] public section
@@ -205,11 +207,12 @@ end SquaresInCircles.Eight.ExactFamily.StatementLink
 
 namespace SquaresInCircles.Eight
 
-/-- The analytic optimum agrees with the pure Mathlib-only statement radius. -/
+/-- The radius of the proof is the radius of the statement. -/
 theorem radius_statement : radius=EightStatement.radius :=
   ExactFamily.StatementLink.radius_eq.symm
 
-/-- The full weak equality family agrees with the pure statement model set. -/
+/-- The models of the proof, the admissible models with their weak boundaries and their mirror
+images, are the models of the statement. -/
 theorem models_statement : models=EightStatement.models :=
   ExactFamily.StatementLink.models_eq.symm
 

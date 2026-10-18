@@ -15,6 +15,7 @@ at every coefficient product.
 -/
 
 @[expose] public section
+noncomputable section
 
 namespace SquaresInCircles.Eight.Arithmetic
 
@@ -37,16 +38,26 @@ theorem eval_add (p q : T) (x : ℝ) : eval (add p q) x = eval p x+eval q x := b
   | cons a p ih => cases q <;> simp [add,eval,ih] <;> ring
 
 theorem eval_neg (p : T) (x : ℝ) : eval (neg p) x = -eval p x := by
-  induction p <;> simp [neg,eval,*] <;> ring
+  induction p with
+  | nil => simp [neg,eval]
+  | cons a p ih =>
+      simp only [neg,List.map_cons,eval] at ih ⊢
+      rw [ih]
+      ring
 
 theorem eval_scale (a : ℝ) (p : T) (x : ℝ) : eval (scale a p) x = a*eval p x := by
-  induction p <;> simp [scale,eval,*] <;> ring
+  induction p with
+  | nil => simp [scale,eval]
+  | cons b p ih =>
+      simp only [scale,List.map_cons,eval] at ih ⊢
+      rw [ih]
+      ring
 
 theorem eval_mul (p q : T) (x : ℝ) : eval (mul p q) x = eval p x*eval q x := by
-  induction p <;> simp [mul,eval,eval_add,eval_scale,*] <;> ring
+  induction p <;> simp [mul,eval,eval_add,eval_scale, *] <;> ring
 
 theorem eval_pow (p : T) (n : ℕ) (x : ℝ) : eval (pow p n) x = (eval p x)^n := by
-  induction n <;> simp [pow,eval,eval_mul,pow_succ,*]
+  induction n <;> simp [pow,eval,eval_mul,pow_succ, *]
 end RealPoly
 
 namespace IntervalPoly
@@ -69,7 +80,7 @@ theorem rel_add {p q : T} {a b : RealPoly.T} (hp : Rel p a) (hq : Rel q b) :
   | nil => simpa [add,RealPoly.add] using hq
   | @cons I x p a hx hp ih =>
       cases hq with
-      | nil => simpa [add,RealPoly.add] using List.Forall₂.cons hx hp
+      | nil => simpa [add,RealPoly.add,Rel] using List.Forall₂.cons hx hp
       | cons hy hq => exact List.Forall₂.cons (QInterval.mem_add hx hy) (ih hq)
 
 theorem rel_neg {p : T} {a : RealPoly.T} (hp : Rel p a) :
@@ -89,12 +100,13 @@ theorem rel_mul {p q : T} {a b : RealPoly.T} (hp : Rel p a) (hq : Rel q b) :
   induction hp with
   | nil => exact List.Forall₂.nil
   | cons hx hp ih =>
-      exact rel_add (rel_scale hx hq) (List.Forall₂.cons (QInterval.mem_point 0) ih)
+      exact rel_add (rel_scale hx hq)
+        (List.Forall₂.cons (by simpa using QInterval.mem_point (0 : ℚ)) ih)
 
 theorem rel_pow {p : T} {a : RealPoly.T} (hp : Rel p a) (n : ℕ) :
     Rel (pow p n) (RealPoly.pow a n) := by
   induction n with
-  | zero => exact List.Forall₂.cons (QInterval.mem_point 1) List.Forall₂.nil
+  | zero => exact List.Forall₂.cons (by simpa using QInterval.mem_point (1 : ℚ)) List.Forall₂.nil
   | succ n ih => exact rel_mul ih hp
 
 theorem lower_upper {p : T} {a : RealPoly.T} (hp : Rel p a) {x : ℝ} (hx : 0 ≤ x) :
@@ -104,9 +116,8 @@ theorem lower_upper {p : T} {a : RealPoly.T} (hp : Rel p a) {x : ℝ} (hx : 0 �
   | cons hhead htail ih =>
       have hlow := mul_le_mul_of_nonneg_left ih.1 hx
       have hupp := mul_le_mul_of_nonneg_left ih.2 hx
-      constructor <;>
-        simp only [lower,upper,List.map_cons,QPoly.eval,RealPoly.eval] <;>
-        linarith [hhead.1,hhead.2]
+      simp only [lower,upper,List.map_cons,QPoly.eval,RealPoly.eval] at hlow hupp ⊢
+      constructor <;> linarith [hhead.1,hhead.2]
 end IntervalPoly
 
 /-- A polynomial in the angle whose coefficients are real scalar expressions.
@@ -157,7 +168,7 @@ def Valid {n : ℕ} (boxes : QBox n) : ParamPoly n → Prop
 instance validDecidable {n : ℕ} (boxes : QBox n) (p : ParamPoly n) :
     Decidable (p.Valid boxes) := by
   induction p with
-  | scalar e => exact inferInstance
+  | scalar e => exact inferInstanceAs (Decidable (e.Valid boxes))
   | angle => exact isTrue True.intro
   | add a b ha hb => exact @instDecidableAnd _ _ ha hb
   | neg a ha => exact ha
@@ -168,15 +179,16 @@ theorem actual_eval {n : ℕ} (env : Fin n → ℝ) (x : ℝ) (p : ParamPoly n) 
     RealPoly.eval (p.actual env) x = p.eval env x := by
   induction p <;>
     simp [actual,eval,RealPoly.eval,RealPoly.eval_add,RealPoly.eval_neg,
-      RealPoly.eval_mul,RealPoly.eval_pow,*]
+      RealPoly.eval_mul,RealPoly.eval_pow, *]
 
 theorem compile_rel {n : ℕ} (boxes : QBox n) (p : ParamPoly n)
     (hp : p.Valid boxes) (env : Fin n → ℝ) (henv : boxes.Mem env) :
     IntervalPoly.Rel (p.compile boxes) (p.actual env) := by
   induction p with
   | scalar e => exact List.Forall₂.cons (ScalarExpr.sound boxes e hp env henv) List.Forall₂.nil
-  | angle => exact List.Forall₂.cons (QInterval.mem_point 0)
-      (List.Forall₂.cons (QInterval.mem_point 1) List.Forall₂.nil)
+  | angle =>
+      exact List.Forall₂.cons (by simpa using QInterval.mem_point (0 : ℚ))
+        (List.Forall₂.cons (by simpa using QInterval.mem_point (1 : ℚ)) List.Forall₂.nil)
   | add a b ha hb => exact IntervalPoly.rel_add (ha hp.1) (hb hp.2)
   | neg a ha => exact IntervalPoly.rel_neg (ha hp)
   | mul a b ha hb => exact IntervalPoly.rel_mul (ha hp.1) (hb hp.2)

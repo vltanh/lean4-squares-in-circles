@@ -5,15 +5,24 @@ public import SquaresInCircles.Eight.QuarterWords
 public import SquaresInCircles.Eight.Candidate.Geometry
 
 /-!
-# Common-point gaps and the four forward axes
+# Eight squares: the gaps of a cycle and the four forward axes
 
-The strengthened closed cap of half-angle `19/50` is the band-B common-point
-lemma, used with the actual core distance lower bound. It applies to every
-admissible exterior center before or after boundary movement. The secondary
-axis argument uses the complete interval `(-3/100, pi)`; no angular sampling
-or chosen-owner assumption occurs.
+A square in the disk of squared radius at most `Q0` that avoids the core disk has its primary
+coordinate above `107/200`, by the lower bound on its distance from the origin. By the
+common-point lemma `CentralBand.RayData.common_point_B` it then contains the point at distance
+`41/40` from the origin in every direction within `19/50` of its centre direction, a closed cap of
+half-angle `19/50`. So two disjoint such squares have centre directions more than `19/25` apart
+(`exterior_pair_gap`). This holds for the exterior squares of a packing and for the squares of a
+boundary cycle alike, and it gives the gaps `19/25 < δᵢ < 3π/4` of a cycle
+(`boundary_gap_lower`, `boundary_gap_upper`).
 
-Uncompiled source draft.
+Of the eight signed axes of two consecutive squares of a boundary cycle, only the four forward
+axes can separate them (`boundary_forward_complete`). Along `+e` of the source the centre of the
+target would be at distance at least `a + 1 > 3/2` from the origin, and in the same way along
+`-e` of the target. Along `-f` of the source or of the target the projection is less than
+`(3/2)(3/100) + b < 1`, since the angle involved lies in the interval `(-3/100, π)`, on which the
+sine exceeds `-3/100` (`backward_sine_lower`). Every separating axis is covered, whichever witness
+was chosen.
 -/
 
 @[expose] public section
@@ -23,47 +32,51 @@ namespace SquaresInCircles.Eight
 
 lemma CentralBand.RayData.center_point {K : UnitSquare} (R : CentralBand.RayData K) :
     circlePoint (0,0) R.radius R.direction=K.center := by
-  let p := circlePoint (0,0) R.radius R.direction
+  set p := circlePoint (0,0) R.radius R.direction with hp
   have hmem (m : ℝ) : openSquare K
-      (sub (circlePoint (0,0) ((1+m)*R.radius) R.direction) (scale m K.center)) := by
+      (sub (circlePoint (0,0) ((1+m)*R.radius) R.direction) (scale m (sub K.center (0,0)))) := by
     apply (R.chart.shifted_membership ((1+m)*R.radius) R.angle m).2
     rw [mul_assoc, R.primary,mul_assoc,R.secondary]
     norm_num
   have hx (m : ℝ) : |(1+m)*localX K p|<1/2 := by
     have h := (hmem m).1
-    convert h using 1
-    congr 1
-    dsimp [p,localX,circlePoint,sub,scale]
+    convert h using 2
+    simp only [hp,localX,circlePoint,sub,scale]
     ring
   have hy (m : ℝ) : |(1+m)*localY K p|<1/2 := by
     have h := (hmem m).2
-    convert h using 1
-    congr 1
-    dsimp [p,localY,circlePoint,sub,scale]
+    convert h using 2
+    simp only [hp,localY,circlePoint,sub,scale]
     ring
   have hx0 : localX K p=0 := by
     by_contra hn
     have h := hx (1/localX K p-1)
-    have he : (1+(1/localX K p-1))*localX K p=1 := by field_simp
+    have he : (1+(1/localX K p-1))*localX K p=1 := by
+      rw [show (1:ℝ)+(1/localX K p-1)=1/localX K p by ring]
+      exact one_div_mul_cancel hn
     rw [he] at h
     norm_num at h
   have hy0 : localY K p=0 := by
     by_contra hn
     have h := hy (1/localY K p-1)
-    have he : (1+(1/localY K p-1))*localY K p=1 := by field_simp
+    have he : (1+(1/localY K p-1))*localY K p=1 := by
+      rw [show (1:ℝ)+(1/localY K p-1)=1/localY K p by ring]
+      exact one_div_mul_cancel hn
     rw [he] at h
     norm_num at h
   have he := frame_distance K p K.center
   have hxc : localX K K.center=0 := by simp [localX]
   have hyc : localY K K.center=0 := by simp [localY]
-  simp only [hxc,hyc,hx0,hy0,sub_zero,zero_pow,zero_add] at he
+  rw [hxc,hyc,hx0,hy0] at he
   have hx2 : (p.1-K.center.1)^2=0 := by
     dsimp [normSq,sub] at he
-    nlinarith [sq_nonneg (p.2-K.center.2)]
+    nlinarith [sq_nonneg (p.1-K.center.1),sq_nonneg (p.2-K.center.2)]
   have hy2 : (p.2-K.center.2)^2=0 := by
     dsimp [normSq,sub] at he
-    nlinarith [sq_nonneg (p.1-K.center.1)]
-  apply Prod.ext <;> nlinarith [hx2,hy2]
+    nlinarith [sq_nonneg (p.1-K.center.1),sq_nonneg (p.2-K.center.2)]
+  apply Prod.ext
+  · linarith [sq_eq_zero_iff.1 hx2]
+  · linarith [sq_eq_zero_iff.1 hy2]
 
 lemma CentralBand.RayData.direction_of_polar {K : UnitSquare}
     (R : CentralBand.RayData K) {r β : ℝ} (hr : 0 < r)
@@ -84,8 +97,9 @@ lemma CentralBand.RayData.direction_of_polar {K : UnitSquare}
   rw [he,hy] at hpy
   apply angle_ext <;> simp only [Real.Angle.cos_coe,Real.Angle.sin_coe] <;> nlinarith
 
-/-- The common-point gap is a theorem about actual squares, independently of
-any radial boundary or canonical choice of their frames. -/
+/-- Two disjoint squares in the disk of squared radius `q ≤ Q0` that avoid the core disk have
+centre directions more than `19/25` apart. The squares need not lie on a radial boundary, and no
+canonical frame is chosen. -/
 theorem exterior_pair_gap {K J : UnitSquare} {q r s β γ : ℝ}
     (hq : q ≤ Q0) (hK : SqContained q K) (hJ : SqContained q J)
     (hcK : CoreAvoiding K) (hcJ : CoreAvoiding J)
@@ -129,8 +143,8 @@ theorem polar_order_gap_lower {q : ℝ} (C : NeighborCycle q) (O : PolarOrder C)
     (C.core i) (C.core (next i))
     (center_radius_pos (C.core i)) (center_radius_pos (C.core (next i)))
     (O.center_cos i) (O.center_sin i) (O.center_cos (next i)) (O.center_sin (next i))
-    (C.feasible i).disjoint
-  rwa [angleGap_direction_distance O.beta i (O.gap_pos i).le (O.gap_lt_pi i).le] at h
+    (SignedAxis.disjoint (C.feasible i))
+  rwa [angleGap_direction_distance O.beta i (O.positive i).le (O.below_pi i).le] at h
 
 theorem boundary_gap_lower {q : ℝ} (C : BoundaryCycle q) (hq : q ≤ Q0) :
     ∀ i,19/25 < angleGap C.beta i := by
@@ -138,19 +152,22 @@ theorem boundary_gap_lower {q : ℝ} (C : BoundaryCycle q) (hq : q ≤ Q0) :
   have h := exterior_pair_gap hq (C.contained i) (C.contained (next i))
     (C.core i) (C.core (next i)) (C.radius_pos i) (C.radius_pos (next i))
     (C.center_cos i) (C.center_sin i) (C.center_cos (next i)) (C.center_sin (next i))
-    (C.feasible i).disjoint
+    (SignedAxis.disjoint (C.feasible i))
   rwa [angleGap_direction_distance C.beta i (C.gap_pos i).le (C.gap_lt_pi i).le] at h
 
 lemma seven_gaps_three_quarters (β : Vertex → ℝ)
     (hgap : ∀ i,19/25 < angleGap β i) : ∀ i,angleGap β i < 3*Real.pi/4 := by
   intro i
-  have hh := Finset.sum_lt_sum_of_nonempty
-    (s := (Finset.univ.erase i : Finset Vertex))
-    (by have hc : (Finset.univ.erase i : Finset Vertex).card=6 := by simp; exact Finset.card_pos.1 (by omega))
-    (fun j hj => hgap j)
+  have hne : (Finset.univ.erase i : Finset Vertex).Nonempty :=
+    ⟨i+1,Finset.mem_erase.2 ⟨by simp,Finset.mem_univ _⟩⟩
+  have hh := Finset.sum_lt_sum_of_nonempty (f := fun _ => (19/25:ℝ)) (g := angleGap β)
+    hne (fun j _ => hgap j)
+  have hc : ((Finset.univ.erase i : Finset Vertex).card:ℝ)=6 := by
+    rw [Finset.card_erase_of_mem (Finset.mem_univ i)]
+    simp
+  rw [Finset.sum_const,nsmul_eq_mul,hc] at hh
   have hs := Finset.sum_erase_add (s := Finset.univ) (f := angleGap β) (Finset.mem_univ i)
   rw [angleGap_sum] at hs
-  norm_num at hh
   linarith [pi_lt_22_over_7]
 
 theorem boundary_gap_upper {q : ℝ} (C : BoundaryCycle q) (hq : q ≤ Q0) :
@@ -167,11 +184,11 @@ lemma BoundaryCycle.radius_lt_three_halves {q : ℝ} (C : BoundaryCycle q)
     (hq : q ≤ Q0) (i : Vertex) : C.radius i < 3/2 := by
   have h := annular_center_radius_upper (C.contained i) hq
   have he : normSq (C.square i).center=C.radius i^2 := by
-    rw [C.center_eq]
-    dsimp [rotate,normSq]
-    nlinarith [C.radius_sq i,(C.square i).unit,
-      congrArg (fun z : ℝ => z^2) (show (C.sigma i)^2=1 by
-        rcases C.sigma_sign i with h|h <;> simp [h])]
+    have hσ : C.sigma i^2=1 := by
+      rcases C.sigma_sign i with h|h <;> simp [h]
+    rw [C.center_eq i]
+    dsimp only [rotate,normSq]
+    linear_combination (C.a i^2+C.sigma i^2*C.b i^2)*(C.square i).unit+C.b i^2*hσ-C.radius_sq i
   have hsqrt : Real.sqrt (normSq (C.square i).center)=C.radius i := by
     rw [he,Real.sqrt_sq_eq_abs,abs_of_pos (C.radius_pos i)]
   rw [hsqrt] at h
@@ -181,31 +198,47 @@ lemma BoundaryCycle.minus_source_y_projection {q : ℝ} (C : BoundaryCycle q) (i
     (⟨.sourceY,.negative⟩:SignedAxis).projection (C.square i) (C.square (next i))=
       -C.radius (next i)*Real.sin (angleGap C.beta i-C.alpha i)-C.sigma i*C.b i := by
   have hlocal : frameY (C.square i) (C.square i).center= -C.sigma i*C.b i := by
-    rw [C.center_eq,frameY_rotate]
+    rw [C.center_eq i,frameY_rotate]
   have htarget : frameY (C.square i) (C.square (next i)).center=
       C.radius (next i)*Real.sin (angleGap C.beta i-C.alpha i) := by
-    rw [frameY,C.frame_cos i,C.frame_sin i,C.center_cos (next i),C.center_sin (next i)]
-    by_cases hi : i=6 <;>
-      simp [angleGap,hi,BoundaryCycle.alpha,BoundaryCycle.tangent,BoundaryCycle.radius,
-        Real.sin_sub,Real.sin_add,Real.cos_add] <;> ring
-  dsimp [SignedAxis.projection,SignedAxis.normal,AxisOwner.normal,AxisSign.value,scale,f,dot,sub]
-  dsimp [frameY] at htarget hlocal
-  linarith
+    have hsin : Real.sin (angleGap C.beta i-C.alpha i)=
+        Real.sin (C.beta (next i)-(C.beta i+C.alpha i)) := by
+      rw [angleGap]
+      split_ifs
+      · rw [show C.beta (next i)-C.beta i+2*Real.pi-C.alpha i=
+          C.beta (next i)-(C.beta i+C.alpha i)+2*Real.pi by ring,Real.sin_add_two_pi]
+      · congr 1
+        ring
+    rw [hsin,Real.sin_sub,frameY,C.frame_cos i,C.frame_sin i,C.center_cos (next i),
+      C.center_sin (next i)]
+    simp only [BoundaryCycle.radius,BoundaryCycle.alpha,BoundaryCycle.tangent]
+    ring
+  rw [SignedAxis.projection_eq]
+  simp only [AxisSign.value,AxisOwner.projection,frameY_sub,htarget,hlocal]
+  ring
 
 lemma BoundaryCycle.minus_target_y_projection {q : ℝ} (C : BoundaryCycle q) (i : Vertex) :
     (⟨.targetY,.negative⟩:SignedAxis).projection (C.square i) (C.square (next i))=
       -C.radius i*Real.sin (angleGap C.beta i+C.alpha (next i))+C.sigma (next i)*C.b (next i) := by
   have hlocal : frameY (C.square (next i)) (C.square (next i)).center=
-      -C.sigma (next i)*C.b (next i) := by rw [C.center_eq,frameY_rotate]
+      -C.sigma (next i)*C.b (next i) := by rw [C.center_eq (next i),frameY_rotate]
   have hsource : frameY (C.square (next i)) (C.square i).center=
       -C.radius i*Real.sin (angleGap C.beta i+C.alpha (next i)) := by
-    rw [frameY,C.frame_cos (next i),C.frame_sin (next i),C.center_cos i,C.center_sin i]
-    by_cases hi : i=6 <;>
-      simp [angleGap,hi,BoundaryCycle.alpha,BoundaryCycle.tangent,BoundaryCycle.radius,
-        Real.sin_sub,Real.sin_add,Real.cos_add] <;> ring
-  dsimp [SignedAxis.projection,SignedAxis.normal,AxisOwner.normal,AxisSign.value,scale,f,dot,sub]
-  dsimp [frameY] at hsource hlocal
-  linarith
+    have hsin : Real.sin (angleGap C.beta i+C.alpha (next i))=
+        Real.sin ((C.beta (next i)+C.alpha (next i))-C.beta i) := by
+      rw [angleGap]
+      split_ifs
+      · rw [show C.beta (next i)-C.beta i+2*Real.pi+C.alpha (next i)=
+          (C.beta (next i)+C.alpha (next i))-C.beta i+2*Real.pi by ring,Real.sin_add_two_pi]
+      · congr 1
+        ring
+    rw [hsin,Real.sin_sub,frameY,C.frame_cos (next i),C.frame_sin (next i),C.center_cos i,
+      C.center_sin i]
+    simp only [BoundaryCycle.radius,BoundaryCycle.alpha,BoundaryCycle.tangent]
+    ring
+  rw [SignedAxis.projection_eq]
+  simp only [AxisSign.value,AxisOwner.projection,frameY_sub,hsource,hlocal]
+  ring
 
 lemma backward_sine_lower {x : ℝ} (hx : -3/100 < x ∧ x < Real.pi) :
     -3/100 < Real.sin x := by
@@ -215,8 +248,9 @@ lemma backward_sine_lower {x : ℝ} (hx : -3/100 < x ∧ x < Real.pi) :
     rw [Real.sin_neg] at h
     linarith
 
-/-- All four excluded signs are ruled out individually. This theorem applies
-also when several other signed axes are feasible on the same pair. -/
+/-- Every signed axis that separates two consecutive squares of a boundary cycle is a forward
+axis. The four other signed axes are excluded one by one, so this holds when several axes
+separate the same pair. -/
 theorem boundary_forward_complete {q : ℝ} (C : BoundaryCycle q) (hq : q ≤ Q0) :
     ∀ i axis,axis.Feasible (C.square i) (C.square (next i)) →
       ∃ j : Fin 4,axis=forwardAxis j := by

@@ -5,11 +5,18 @@ public import SquaresInCircles.Eight.ExactFamily.CenterCompletion
 public import SquaresInCircles.Common.Trigonometry
 
 /-!
-# Exact arbitrary-center terminal dual
+# Eight squares: the terminal dual at arbitrary centres
 
-Uncompiled draft.  All positions are free variables.  The only finite choice
-is which of the two allowed square axes owns each of the five aligned edges.
-`hypotheses` below refers to actual selected vertices and actual signed gaps.
+The terminal dual is written for seven arbitrary centres (`Positions`), five frame errors
+(`Errors`) and a choice of owners (`Owners`). All positions are free variables; the only finite
+choice is which of the two allowed axes owns each of the five aligned edges. The gaps `actualGap`
+are the projections of the differences of the centres on the owner normals less the supports, and
+`dual` is the sum of the five corner constraints at the anchored corners, weighted by the circle
+weights, less the seven gaps, weighted by the contact weights. When the corners lie in the disk
+and the gaps are nonnegative, `dual` is at most the squared radius (`dual_le`). Completing the
+square in each anchored centre writes `dual` as the nonnegative sum of squares `completed` plus
+the part `reduced` (`exact_completion`, `completed_nonneg`). The file ends with the first-order
+terms of the reduced part and the coefficients that `PerturbationEstimates.lean` bounds.
 -/
 
 @[expose] public section
@@ -49,11 +56,12 @@ theorem atan_frame (z : ℝ) :
   · rw [Real.cos_two_mul,Real.cos_arctan]
     dsimp [halfAngleCos]
     field_simp [hn,ne_of_gt hp]
-    nlinarith
+    rw [hs]
+    ring
   · rw [Real.sin_two_mul,Real.sin_arctan,Real.cos_arctan]
     dsimp [halfAngleSin]
     field_simp [hn,ne_of_gt hp]
-    nlinarith
+    rw [hs]
 
 def tree (a : Errors) : Fin 5 → ℝ := ![-a 0,a 1-a 0,a 2-a 1,a 3-a 2,a 4]
 def errorSum (a : Errors) : ℝ := ∑ i, |tree a i|
@@ -114,41 +122,52 @@ theorem chainSum_nonneg (a : Errors) : 0≤chainSum a := by
   dsimp [chainSum]; positivity
 
 theorem errorSum_decompose (a : Errors) : errorSum a=chainSum a+|a 4| := by
-  simp [errorSum,chainSum,tree,Fin.sum_univ_succ]
+  simp [errorSum,chainSum,Fin.sum_univ_five,tree]
 
 theorem tree_bound (a : Errors) (i : Fin 5) : |tree a i|≤errorSum a :=
-  Finset.single_le_sum (fun _ _ => abs_nonneg _) (Finset.mem_univ i)
+  Finset.single_le_sum (f := fun i => |tree a i|) (fun _ _ => abs_nonneg _) (Finset.mem_univ i)
 
 theorem error_bound (a : Errors) (i : Fin 4) : |a i.castSucc|≤chainSum a := by
-  have hb := abs_add (a 0) (a 1-a 0)
-  have hd := abs_add (a 1) (a 2-a 1)
-  have he := abs_add (a 2) (a 3-a 2)
-  have h₀ := abs_nonneg (a 0)
-  have h₁ := abs_nonneg (a 1-a 0)
-  have h₂ := abs_nonneg (a 2-a 1)
-  have h₃ := abs_nonneg (a 3-a 2)
-  fin_cases i <;> simp [chainSum,tree,abs_neg] at * <;>
-    simp only [show a 0+(a 1-a 0)=a 1 by ring,
-      show a 1+(a 2-a 1)=a 2 by ring,show a 2+(a 3-a 2)=a 3 by ring] at * <;> linarith
+  have h₀ : |tree a 0| = |a 0| := by simp [tree]
+  have h₁ : |tree a 1| = |a 1-a 0| := by simp [tree]
+  have h₂ : |tree a 2| = |a 2-a 1| := by simp [tree]
+  have h₃ : |tree a 3| = |a 3-a 2| := by simp [tree]
+  have hb : |a 1| ≤ |a 0|+|a 1-a 0| := by simpa using abs_add_le (a 0) (a 1-a 0)
+  have hd : |a 2| ≤ |a 1|+|a 2-a 1| := by simpa using abs_add_le (a 1) (a 2-a 1)
+  have he : |a 3| ≤ |a 2|+|a 3-a 2| := by simpa using abs_add_le (a 2) (a 3-a 2)
+  have n₀ := abs_nonneg (a 0)
+  have n₁ := abs_nonneg (a 1-a 0)
+  have n₂ := abs_nonneg (a 2-a 1)
+  have n₃ := abs_nonneg (a 3-a 2)
+  simp only [chainSum, h₀, h₁, h₂, h₃]
+  fin_cases i <;> simp <;> linarith only [n₁, n₂, n₃, hb, hd, he]
 
 theorem error_difference_bound (a : Errors) (i j : Fin 5) :
     |(![0,a 0,a 1,a 2,a 3] i)-(![0,a 0,a 1,a 2,a 3] j)|≤chainSum a := by
+  have hc : chainSum a = |a 0|+|a 1-a 0|+|a 2-a 1|+|a 3-a 2| := by simp [chainSum,tree]
   have h20 : |a 2-a 0|≤|a 2-a 1|+|a 1-a 0| := by
-    convert abs_add (a 2-a 1) (a 1-a 0) using 1 <;> ring
+    convert abs_add_le (a 2-a 1) (a 1-a 0) using 2; ring
   have h31 : |a 3-a 1|≤|a 3-a 2|+|a 2-a 1| := by
-    convert abs_add (a 3-a 2) (a 2-a 1) using 1 <;> ring
+    convert abs_add_le (a 3-a 2) (a 2-a 1) using 2; ring
   have h30 : |a 3-a 0|≤|a 3-a 1|+|a 1-a 0| := by
-    convert abs_add (a 3-a 1) (a 1-a 0) using 1 <;> ring
-  have h₀ := error_bound a 0
-  have h₁ := error_bound a 1
-  have h₂ := error_bound a 2
-  have h₃ := error_bound a 3
+    convert abs_add_le (a 3-a 1) (a 1-a 0) using 2; ring
+  have h₀ : |a 0| ≤ chainSum a := error_bound a 0
+  have h₁ : |a 1| ≤ chainSum a := error_bound a 1
+  have h₂ : |a 2| ≤ chainSum a := error_bound a 2
+  have h₃ : |a 3| ≤ chainSum a := error_bound a 3
   have hn₀ := abs_nonneg (a 0)
   have hn₁ := abs_nonneg (a 1-a 0)
   have hn₂ := abs_nonneg (a 2-a 1)
   have hn₃ := abs_nonneg (a 3-a 2)
-  fin_cases i <;> fin_cases j <;> simp [chainSum,tree,abs_sub_comm,abs_neg] at * <;>
-    linarith
+  rw [hc] at h₀ h₁ h₂ h₃ ⊢
+  have c₁ := abs_sub_comm (a 0) (a 1)
+  have c₂ := abs_sub_comm (a 1) (a 2)
+  have c₃ := abs_sub_comm (a 2) (a 3)
+  have c₄ := abs_sub_comm (a 0) (a 2)
+  have c₅ := abs_sub_comm (a 1) (a 3)
+  have c₆ := abs_sub_comm (a 0) (a 3)
+  fin_cases i <;> fin_cases j <;> simp <;> linarith only [h₀, hn₀, h₁, h₂, h₃, hn₂, hn₃, c₁, h20,
+    c₄, h31, h30, c₆, hn₁, c₂, c₅, c₃]
 
 theorem owner_error_bounds (a : Errors) (o : Owners) :
     |ownerB a o|≤chainSum a ∧ |ownerU a o|≤chainSum a ∧
@@ -156,22 +175,26 @@ theorem owner_error_bounds (a : Errors) (o : Owners) :
     |ownerU a o-ownerB a o|≤chainSum a ∧
     |ownerV a o-ownerD a o|≤chainSum a ∧
     |a 4-ownerD a o|≤errorSum a ∧ |a 4-a 3|≤errorSum a := by
+  have e₀ : |a 0| ≤ chainSum a := error_bound a 0
+  have e₁ : |a 1| ≤ chainSum a := error_bound a 1
+  have e₂ : |a 2| ≤ chainSum a := error_bound a 2
+  have e₃ : |a 3| ≤ chainSum a := error_bound a 3
   have hb : |ownerB a o|≤chainSum a := by
     cases h : o 0
     · simpa [ownerB,h] using chainSum_nonneg a
-    · simpa [ownerB,h] using error_bound a 0
+    · simpa [ownerB,h] using e₀
   have hu : |ownerU a o|≤chainSum a := by
     cases h : o 1
-    · simpa [ownerU,h] using error_bound a 1
-    · simpa [ownerU,h] using error_bound a 0
+    · simpa [ownerU,h] using e₁
+    · simpa [ownerU,h] using e₀
   have hv : |ownerV a o|≤chainSum a := by
     cases h : o 2
-    · simpa [ownerV,h] using error_bound a 2
-    · simpa [ownerV,h] using error_bound a 1
+    · simpa [ownerV,h] using e₂
+    · simpa [ownerV,h] using e₁
   have hd : |ownerD a o|≤chainSum a := by
     cases h : o 3
-    · simpa [ownerD,h] using error_bound a 2
-    · simpa [ownerD,h] using error_bound a 3
+    · simpa [ownerD,h] using e₂
+    · simpa [ownerD,h] using e₃
   have hub : |ownerU a o-ownerB a o|≤chainSum a := by
     cases h₀ : o 0 <;> cases h₁ : o 1
     · simpa [ownerU,ownerB,h₀,h₁] using error_difference_bound a 2 0
@@ -187,7 +210,7 @@ theorem owner_error_bounds (a : Errors) (o : Owners) :
   have hh := errorSum_decompose a
   have hhd := abs_sub (a 4) (ownerD a o)
   have hhe := abs_sub (a 4) (a 3)
-  exact ⟨hb,hu,hv,hd,hub,hvd,by linarith,by linarith [error_bound a 3]⟩
+  exact ⟨hb,hu,hv,hd,hub,hvd,by linarith only [hd, hh, hhd],by linarith only [e₃, hh, hhe]⟩
 
 theorem force_expansion (d : Coordinates) (t : ℝ) (a : Errors) (o : Owners) (p : Positions) :
     -(∑ i : Fin 7, d.lam i*actualGap t a o p i) =
@@ -207,7 +230,7 @@ theorem exact_completion {d : Coordinates} (hw : d.WeightDomain)
   have he := force_expansion d t a o p
   dsimp [dual,completed,reduced,forceTerm,supportTerm,sliderTerm]
   simp [Fin.sum_univ_succ] at he hs ⊢
-  linarith
+  linarith only [he, hs]
 
 theorem completed_nonneg {d : Coordinates} (hw : d.WeightDomain)
     (t : ℝ) (a : Errors) (o : Owners) (p : Positions) : 0≤completed d t a o p :=
@@ -223,7 +246,7 @@ theorem dual_le {d : Coordinates} (hw : d.WeightDomain)
     (fun i _ => mul_nonneg (hw.lam_pos i).le (hg i))
   rw [← Finset.sum_mul,hw.mu_sum,one_mul] at hc
   dsimp [dual]
-  linarith
+  linarith only [hc, hgap]
 
 def KA (d : Coordinates) : ℝ := d.edgeAlpha*d.edgeOmega/(2*d.mu 0)
 def KB (d : Coordinates) : ℝ := d.edgeAlpha*d.edgeBeta/(2*d.mu 1)
@@ -250,7 +273,7 @@ def cusp (d : Coordinates) (a : Errors) : ℝ := ∑ i : Fin 5, (edgeWeights d i
 def coefficient (d : Coordinates) (o : Owners) (Z η : ℝ) : Fin 5 → ℝ :=
   ![-d.edgeAlpha/2+d.cutX+(if o 0 then d.edgeAlpha*d.cutY else 0),
     if o 1 then -d.edgeBeta*(Z+d.cutJ) else -d.edgeBeta*(d.y+3/2+d.cutJ),
-    if o 2 then -d.edgeBeta*(Z+d.cutJ) else d.edgeBeta/2-d.cutK,
+    if o 2 then d.edgeBeta/2-d.cutK else -d.edgeBeta*(Z+d.cutJ),
     d.edgeDelta/2-d.edgeEpsilon*d.c-(if o 3 then d.edgeDelta*(d.x₄-d.x₃) else 0),
     -d.edgeOmega/2+d.cutN-(if o 4 then d.edgeOmega*η else 0)]
 

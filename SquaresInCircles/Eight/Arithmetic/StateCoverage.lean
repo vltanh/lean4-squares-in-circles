@@ -12,14 +12,15 @@ represents the same state; the resulting theorem preserves the signed product
 -/
 
 @[expose] public section
+noncomputable section
 namespace SquaresInCircles.Eight.Arithmetic
 
-def Every {α : Type*} (P : α→Prop) : List α→Prop
+def Every {α : Type*} (P : α→ Prop) : List α→ Prop
   | [] => True | a::xs => P a ∧ Every P xs
-instance everyDecidable {α : Type*} (P : α→Prop) [DecidablePred P] (xs : List α) :
+instance everyDecidable {α : Type*} (P : α→ Prop) [DecidablePred P] (xs : List α) :
     Decidable (Every P xs) := by
   induction xs <;> simp only [Every] <;> infer_instance
-theorem Every.of_mem {α : Type*} {P : α→Prop} {xs : List α}
+theorem Every.of_mem {α : Type*} {P : α→ Prop} {xs : List α}
     (h : Every P xs) {x : α} (hx : x∈xs) : P x := by
   induction xs with
   | nil => simp at hx
@@ -42,7 +43,7 @@ theorem list_getD_mem {α : Type*} {xs : List α} {d : α} {i : ℕ}
 def ArcData.signedInterval (a : ArcData) : QInterval :=
   if a.positive then a.tangent else a.tangent.neg
 
-def radialOuter : RadialKind→Bool | .outer => true | .coreSide => false | .coreCorner => false
+def radialOuter : RadialKind→ Bool | .outer => true | .coreSide => false | .coreCorner => false
 def arcAt (M : AffineTableMeta) (i : ℕ) : ArcData := M.arcs.getD i default
 
 theorem signed_interval_absolute {a : ArcData} (ha : a.WellFormed) {t : ℝ}
@@ -78,30 +79,44 @@ theorem boundary_on_arc_curve {q : ℝ} (C : BoundaryCycle q) (i : Vertex)
   cases hk : C.kind i with
   | outer =>
       have ho : a.outer=true := by simpa [radialOuter,hk] using hout
-      simpa [ArcData.OnCurve,ho,BoundaryState,hk,SquaresInCircles.phi] using hb
+      rw [hk] at hb
+      simpa [ArcData.OnCurve,ho,BoundaryState,SquaresInCircles.phi] using hb
   | coreSide =>
       have ho : a.outer=false := by simpa [radialOuter,hk] using hout
-      have hb' : C.a i=7/12 ∧ C.b i≤1/2 := by simpa [BoundaryState,hk] using hb
+      rw [hk] at hb
+      have hb' : C.a i=7/12 ∧ C.b i≤1/2 := by simpa [BoundaryState] using hb
       by_cases hhi : a.tangent.hi≤6/7
       · simpa [ArcData.OnCurve,ho,hhi] using hb'
       · have hlo : (6/7:ℝ)≤a.tangent.lo := by
-          exact_mod_cast (ha.2.2.2 ho).resolve_left hhi
+          have h := (Rat.cast_le (K := ℝ)).mpr ((ha.2.2.2 ho).resolve_left hhi)
+          rw [Rat.cast_div,Rat.cast_ofNat,Rat.cast_ofNat] at h
+          exact h
         have hratio : (6/7:ℝ)≤C.b i/C.a i := hlo.trans ht.1
         have hcross := (le_div_iff₀ hA).mp hratio
-        have he : C.b i=1/2 := by nlinarith [hb'.1,hb'.2]
-        simp [ArcData.OnCurve,ho,hhi,hb'.1,he]
+        have he : C.b i=1/2 := by
+          rw [hb'.1] at hcross
+          linarith [hb'.2]
+        simp only [ArcData.OnCurve,ho,hhi,Bool.false_eq_true,if_false]
+        rw [hb'.1,he]
         norm_num
   | coreCorner =>
       have ho : a.outer=false := by simpa [radialOuter,hk] using hout
+      rw [hk] at hb
       have hb' : 1/2≤C.b i ∧ (C.a i-1/2)^2+(C.b i-1/2)^2=(1/12:ℝ)^2 := by
-        simpa [BoundaryState,hk] using hb
+        simpa [BoundaryState] using hb
       by_cases hhi : a.tangent.hi≤6/7
       · have haU : C.a i≤7/12 := by nlinarith [sq_nonneg (C.b i-1/2)]
-        have hratio : C.b i/C.a i≤(6/7:ℝ) := ht.2.trans (by exact_mod_cast hhi)
+        have hhi' : (a.tangent.hi : ℝ)≤6/7 := by
+          have h := (Rat.cast_le (K := ℝ)).mpr hhi
+          rw [Rat.cast_div,Rat.cast_ofNat,Rat.cast_ofNat] at h
+          exact h
+        have hratio : C.b i/C.a i≤(6/7:ℝ) := ht.2.trans hhi'
         have hcross := (div_le_iff₀ hA).mp hratio
-        have heA : C.a i=7/12 := by nlinarith [hb'.1]
-        have heB : C.b i=1/2 := by nlinarith [hb'.1]
-        simp [ArcData.OnCurve,ho,hhi,heA,heB]
+        have heA : C.a i=7/12 := by linarith [hb'.1]
+        have heB : C.b i=1/2 := by linarith [hb'.1]
+        simp only [ArcData.OnCurve,ho,hhi,Bool.false_eq_true,if_false,if_true]
+        rw [heA,heB]
+        norm_num
       · simpa [ArcData.OnCurve,ho,hhi] using hb'
 
 theorem boundary_arc_contains {q : ℝ} (C : BoundaryCycle q) (i : Vertex)
@@ -118,7 +133,7 @@ theorem boundary_arc_contains {q : ℝ} (C : BoundaryCycle q) (i : Vertex)
   field_simp [ha0] at he
   nlinarith only [he]
 
-def StateChains := Vertex→Bool→List ℕ
+def StateChains := Vertex→ Bool→ List ℕ
 def StateChains.NumericValid (M : AffineTableMeta) (S : StateChains) : Prop :=
   ∀ i : Vertex, ∀ outer : Bool,
     Every (fun k => k<M.arcs.length ∧ (arcAt M k).role=i ∧
@@ -126,7 +141,9 @@ def StateChains.NumericValid (M : AffineTableMeta) (S : StateChains) : Prop :=
     ClosedChain (M.cuts i).lo (M.cuts i).hi
       ((S i outer).map (fun k => (arcAt M k).signedInterval))
 instance (M : AffineTableMeta) (S : StateChains) : Decidable (S.NumericValid M) := by
-  unfold StateChains.NumericValid ArcData.WellFormed
+  unfold StateChains.NumericValid
+  refine @Fintype.decidableForallFintype _ _ (fun i => ?_) _
+  unfold ArcData.WellFormed
   infer_instance
 
 theorem StateChains.covers {M : AffineTableMeta} {S : StateChains}

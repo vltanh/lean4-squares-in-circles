@@ -7,15 +7,23 @@ public import Mathlib.Topology.Instances.Real.Lemmas
 public import Mathlib.Analysis.SpecialFunctions.Complex.Arg
 
 /-!
-# The annular boundary reduction
+# Eight squares: the boundary reduction
 
-The center is moved in the intersection of its two retained SAT halfplanes.
-The endpoint is the first contact with either radial boundary. All feasibility
-statements refer to the original signed normals; the argument never asserts
-that arbitrary motion away from the disk center preserves separation.
+A neighbour cycle at a level `q ≤ Q0`, with its centre directions in cyclic order, is moved to a
+boundary cycle with the same frames and the same witnesses (`boundary_reduction_exists`). The
+squares are moved one at a time by translations. The witnesses on the two edges of the moving
+square are two closed half-planes for its centre, and the centre moves along a direction common
+to both (`two_halfplanes_recession`), so both witnesses keep separating; only these two
+separations are claimed, with their original signed normals. The motion stops at the first
+contact with the circle or with the core disk (`first_two_boundary_contact`), which exists
+because the centres of the squares in the disk form a bounded set (`ray_leaves_containment`).
 
-This is an uncompiled source transcription of
-`CYCLIC_RADIAL_BOUNDARY_REDUCTION.md`.
+The centres stay in the annulus `7/12 ≤ r < 71/50` (`annular_center_radius_lower`,
+`annular_center_radius_upper`), where two centres at least `1` apart have directions more than
+`3/5` apart (`annular_angle_lower`). Along the motion the centre direction moves continuously
+(`straight_line_polar_lift`), so the cyclic order and the gaps below `π` are kept
+(`VertexMotion.polarOrder`). Finally each square is given the quarter turn of a canonical frame,
+and its witness is transported to that representative (`canonicalBoundaryCycle`).
 -/
 
 @[expose] public section
@@ -92,7 +100,7 @@ lemma center_radius_pos {K : UnitSquare} (h : CoreAvoiding K) :
     norm_num [closedSquare, localX, localY])
   apply Real.sqrt_pos.mpr
   dsimp [coreRadius] at hc
-  nlinarith
+  linarith
 
 lemma annular_center_radius_lower {K : UnitSquare} (h : CoreAvoiding K) :
     7/12 ≤ Real.sqrt (normSq K.center) := by
@@ -100,23 +108,23 @@ lemma annular_center_radius_lower {K : UnitSquare} (h : CoreAvoiding K) :
   have hb := beta_nonneg K (0, 0)
   have hc := (coreAvoiding_iff_distance K).mp h
   have hr := Real.sqrt_nonneg (normSq K.center)
-  have hr₂ := Real.sq_sqrt (normSq_nonneg K.center)
-  rw [center_radius_sq] at hr₂
+  have hr₂ : Real.sqrt (normSq K.center) ^ 2 = alpha K (0, 0) ^ 2 + beta K (0, 0) ^ 2 := by
+    rw [Real.sq_sqrt (normSq_nonneg K.center), center_radius_sq]
   dsimp [coreDistanceSq, coreRadius] at hc
   by_cases hA : alpha K (0, 0) ≤ 1/2
-  · rw [max_eq_right (by linarith)] at hc
+  · rw [max_eq_right (by linarith only [hA])] at hc
     have hB : 1/2 ≤ beta K (0, 0) := by
       by_contra! hh
-      rw [max_eq_right (by linarith)] at hc
+      rw [max_eq_right (by linarith only [hh])] at hc
       norm_num at hc
-    rw [max_eq_left (by linarith)] at hc
-    have hb' : 7/12 ≤ beta K (0, 0) := by nlinarith
-    nlinarith [sq_nonneg (alpha K (0, 0))]
+    rw [max_eq_left (by linarith only [hB])] at hc
+    have hb' : 7/12 ≤ beta K (0, 0) := by nlinarith only [hc, hB]
+    nlinarith only [sq_nonneg (alpha K (0, 0)), hc, hr₂, hb', hr]
   · by_cases hB : beta K (0, 0) ≤ 1/2
-    · rw [max_eq_left (by linarith), max_eq_right (by linarith)] at hc
-      have ha' : 7/12 ≤ alpha K (0, 0) := by nlinarith
-      nlinarith [sq_nonneg (beta K (0, 0))]
-    · nlinarith
+    · rw [max_eq_left (by linarith only [hA]), max_eq_right (by linarith only [hB])] at hc
+      have ha' : 7/12 ≤ alpha K (0, 0) := by nlinarith only [hc, hA]
+      nlinarith only [sq_nonneg (beta K (0, 0)), hc, hr₂, ha', hr]
+    · nlinarith only [hr₂, hA, hB, ha, hb, hr]
 
 lemma annular_center_radius_upper {K : UnitSquare} {q : ℝ}
     (h : SqContained q K) (hq : q ≤ Q0) :
@@ -124,16 +132,16 @@ lemma annular_center_radius_upper {K : UnitSquare} {q : ℝ}
   have ha := alpha_nonneg K (0, 0)
   have hb := beta_nonneg K (0, 0)
   have hr := Real.sqrt_nonneg (normSq K.center)
-  have hr₂ := Real.sq_sqrt (normSq_nonneg K.center)
+  have hr₂ : Real.sqrt (normSq K.center) ^ 2 = alpha K (0, 0) ^ 2 + beta K (0, 0) ^ 2 := by
+    rw [Real.sq_sqrt (normSq_nonneg K.center), center_radius_sq]
   have hsum : Real.sqrt (normSq K.center) ≤ alpha K (0, 0) + beta K (0, 0) := by
     rw [center_radius_sq]
     apply Real.sqrt_le_left (by positivity) |>.2
-    nlinarith [mul_nonneg ha hb]
+    linarith [mul_nonneg ha hb]
   have hh := h.trans hq
   dsimp [SqContained, phi, Q0] at hh
-  rw [center_radius_sq] at hr₂
   by_contra! hn
-  nlinarith [sq_nonneg (Real.sqrt (normSq K.center) - 71/50)]
+  linarith [sq_nonneg (Real.sqrt (normSq K.center) - 71/50)]
 
 lemma signed_axis_center_distance {a : SignedAxis} {K L : UnitSquare}
     (h : a.Feasible K L) : 1 ≤ normSq (sub L.center K.center) := by
@@ -141,10 +149,12 @@ lemma signed_axis_center_distance {a : SignedAxis} {K L : UnitSquare}
   have hc := cauchy_sq (a.normal K L) (sub L.center K.center)
   rw [signed_normal_unit] at hc
   dsimp [SignedAxis.projection] at hp
-  nlinarith [sq_nonneg (dot (a.normal K L) (sub L.center K.center) - 1)]
+  linarith [sq_nonneg (dot (a.normal K L) (sub L.center K.center) - 1)]
 
-/-- The corner maximum is proved by separate concavity, encoded as two
-quadratic interpolation identities. No sampled angular bound is used. -/
+/-- For centre distances `r` and `s` in `[7/12, 71/50]`, the cosine of the angle between two
+centres at least `1` apart is at most `17443/21300`. The bound is a maximum at a corner of the
+square of `(r, s)`: `1 - r² - s² + (17443/10650) r s` is concave in each variable, so it is
+nonnegative once it is at the corners, by two quadratic interpolation identities. -/
 lemma annular_cosine_quotient {r s : ℝ}
     (hr : 7/12 ≤ r ∧ r ≤ 71/50) (hs : 7/12 ≤ s ∧ s ≤ 71/50) :
     (r^2+s^2-1)/(2*r*s) ≤ 17443/21300 := by
@@ -152,10 +162,10 @@ lemma annular_cosine_quotient {r s : ℝ}
   have hsprod := mul_nonneg (sub_nonneg.mpr hs.1) (sub_nonneg.mpr hs.2)
   have ga : 0 ≤ G (7/12) s := by
     dsimp [G]
-    nlinarith
+    linarith only [hs, hsprod]
   have gb : 0 ≤ G (71/50) s := by
     dsimp [G]
-    nlinarith
+    linarith only [hs, hsprod]
   have h₁ := mul_nonneg (sub_nonneg.mpr hr.2) ga
   have h₂ := mul_nonneg (sub_nonneg.mpr hr.1) gb
   have h₃ := mul_nonneg (sub_nonneg.mpr hr.1) (sub_nonneg.mpr hr.2)
@@ -164,30 +174,30 @@ lemma annular_cosine_quotient {r s : ℝ}
       (71/50-7/12)*(r-7/12)*(71/50-r) := by
     dsimp [G]
     ring
-  have hg : 0 ≤ G r s := by nlinarith
-  apply (div_le_iff₀ (by nlinarith [hr.1,hs.1])).2
+  have hg : 0 ≤ G r s := by linarith only [h₁, h₂, h₃, hid]
+  apply (div_le_iff₀ (by nlinarith only [hr.1, hs.1])).2
   dsimp [G] at hg
-  nlinarith
+  linarith only [hg]
 
 lemma annular_angle_lower {r s θ : ℝ}
     (hr : 7/12 ≤ r ∧ r ≤ 71/50) (hs : 7/12 ≤ s ∧ s ≤ 71/50)
     (hθ : 0 ≤ θ ∧ θ ≤ Real.pi)
     (hd : 1 ≤ r^2+s^2-2*r*s*Real.cos θ) : 3/5 < θ := by
-  have hpos : 0 < 2*r*s := by nlinarith [hr.1, hs.1]
+  have hpos : 0 < 2*r*s := by nlinarith only [hr.1, hs.1]
   have hc : Real.cos θ ≤ (r^2+s^2-1)/(2*r*s) := by
     apply (le_div_iff₀ hpos).2
-    nlinarith
+    linarith
   have hbound := hc.trans (annular_cosine_quotient hr hs)
   have hcos : 41/50 ≤ Real.cos (3/5 : ℝ) := by
-    nlinarith [Real.one_sub_sq_div_two_le_cos (x := (3/5 : ℝ))]
+    linarith [Real.one_sub_sq_div_two_le_cos (x := (3/5 : ℝ))]
   by_contra! hn
   have hm := Real.cos_le_cos_of_nonneg_of_le_pi hθ.1
     (by linarith [Real.pi_gt_three] : (3/5 : ℝ) ≤ Real.pi) hn
   linarith
 
-/-- Any two retained halfplanes have a common nonzero recession direction.
-The antiparallel case uses a perpendicular direction rather than division
-by the vanishing sum of the normals. -/
+/-- Two closed half-planes with unit inward normals `n₁` and `n₂` have a common nonzero
+recession direction: `n₁ + n₂`, or, when the normals are opposite and their sum vanishes, a
+direction perpendicular to them. -/
 lemma two_halfplanes_recession {n₁ n₂ : Point}
     (h₁ : normSq n₁ = 1) (h₂ : normSq n₂ = 1) :
     ∃ v : Point, v ≠ (0, 0) ∧ 0 ≤ dot n₁ v ∧ 0 ≤ dot n₂ v := by
@@ -197,22 +207,22 @@ lemma two_halfplanes_recession {n₁ n₂ : Point}
       have hx := congrArg Prod.fst h
       have hy := congrArg Prod.snd h
       dsimp [normSq] at h₁
-      simp only [Prod.fst, Prod.snd] at hx hy
-      nlinarith
+      simp only at hx hy
+      nlinarith only [h₁, hx, hy]
     · dsimp [dot]
-      nlinarith
+      linarith
     · have hx := congrArg Prod.fst hn
       have hy := congrArg Prod.snd hn
       dsimp [add] at hx hy
       dsimp [dot]
-      nlinarith
+      linarith [congrArg (fun x => x * n₁.2) hx, congrArg (fun x => x * n₁.1) hy]
   · refine ⟨add n₁ n₂, hn, ?_, ?_⟩
     all_goals
       have hc := cauchy_sq n₁ n₂
       rw [h₁, h₂] at hc
-      have hd : -1 ≤ dot n₁ n₂ := by nlinarith [sq_nonneg (dot n₁ n₂ + 1)]
+      have hd : -1 ≤ dot n₁ n₂ := by linarith [sq_nonneg (dot n₁ n₂ + 1)]
       dsimp [dot, add, normSq] at *
-      nlinarith
+      linarith
 
 def radialSquare (K : UnitSquare) (t : ℝ) : UnitSquare :=
   moveCenter K (scale t K.center)
@@ -238,8 +248,8 @@ lemma radialSquare_core {K : UnitSquare} (hK : CoreAvoiding K) {t : ℝ} (ht : 1
   obtain ⟨hx,hy⟩ := radialSquare_coordinates K (show 0 ≤ t by linarith)
   have ha := alpha_nonneg K (0, 0)
   have hb := beta_nonneg K (0, 0)
-  have hax : alpha K (0, 0) ≤ t * alpha K (0, 0) := by nlinarith
-  have hby : beta K (0, 0) ≤ t * beta K (0, 0) := by nlinarith
+  have hax : alpha K (0, 0) ≤ t * alpha K (0, 0) := by nlinarith only [ht, ha]
+  have hby : beta K (0, 0) ≤ t * beta K (0, 0) := by nlinarith only [ht, hb]
   have hx' := max_le_max (sub_le_sub_right hax (1/2)) (le_refl (0 : ℝ))
   have hy' := max_le_max (sub_le_sub_right hby (1/2)) (le_refl (0 : ℝ))
   have hx₂ := pow_le_pow_left₀ (le_max_right _ _) hx' 2
@@ -263,13 +273,15 @@ lemma translate_pair_feasible {K L : UnitSquare} (axis : SignedAxis)
     (h : axis.Feasible K L) {u v : Point}
     (hproj : 0 ≤ dot (axis.normal K L) (sub v u)) :
     axis.Feasible (moveCenter K (add K.center u)) (moveCenter L (add L.center v)) := by
-  have he := threshold_same_frames (moveCenter_sameFrame K _) (moveCenter_sameFrame L _)
-  have hn := signed_normal_same_frames (moveCenter_sameFrame K _) (moveCenter_sameFrame L _) axis
+  have he := threshold_same_frames (moveCenter_sameFrame K (add K.center u))
+    (moveCenter_sameFrame L (add L.center v))
+  have hn := signed_normal_same_frames (moveCenter_sameFrame K (add K.center u))
+    (moveCenter_sameFrame L (add L.center v)) axis
   dsimp [SignedAxis.Feasible] at *
   rw [he]
   dsimp [SignedAxis.projection]
   rw [hn]
-  dsimp [moveCenter, dot, sub, add] at *
+  dsimp [moveCenter, dot, sub, add, SignedAxis.projection] at *
   linarith
 
 lemma continuous_center_phi (K : UnitSquare) (p v : Point) :
@@ -284,9 +296,9 @@ lemma continuous_center_coreDistance (K : UnitSquare) (p v : Point) :
   dsimp [coreDistanceSq,alpha,beta,moveCenter,localX,localY,add,scale]
   fun_prop
 
-/-- Compactness in one real parameter: the least zero of the minimum of
-the two clearances is attained. Every earlier parameter retains both weak
-constraints. This is the first-contact step used by the actual translation. -/
+/-- The first contact: by compactness the least zero of the minimum of the two clearances
+`q - F` and `G - ρ` on `[0, B]` is attained, and both weak constraints hold at every earlier
+parameter. It stops the translation of `vertex_motion_exists`. -/
 lemma first_two_boundary_contact {F G : ℝ → ℝ} {q ρ B : ℝ}
     (hF : Continuous F) (hG : Continuous G) (hB : 0 < B)
     (hF₀ : F 0 ≤ q) (hG₀ : ρ ≤ G 0) (hFB : q < F B) :
@@ -333,7 +345,7 @@ lemma center_le_phi (K : UnitSquare) :
     normSq K.center ≤ phi (alpha K (0,0)) (beta K (0,0)) := by
   rw [center_radius_sq]
   dsimp [phi]
-  nlinarith [alpha_nonneg K (0,0),beta_nonneg K (0,0)]
+  linarith [alpha_nonneg K (0,0),beta_nonneg K (0,0)]
 
 lemma ray_leaves_containment (K : UnitSquare) {q : ℝ} (hq : q ≤ Q0)
     {v : Point} (hv : v ≠ (0,0)) :
@@ -354,8 +366,11 @@ lemma ray_leaves_containment (K : UnitSquare) {q : ℝ} (hq : q ≤ Q0)
       linarith
     refine ⟨B,hB,?_⟩
     have hc := center_le_phi (moveCenter K (add K.center (scale B v)))
-    dsimp [normSq,moveCenter,add,scale] at hc
-    nlinarith [sq_abs (K.center.1+B*v.1),sq_nonneg (K.center.2+B*v.2)]
+    have hcen : normSq (moveCenter K (add K.center (scale B v))).center =
+        (K.center.1+B*v.1)^2+(K.center.2+B*v.2)^2 := by
+      dsimp [normSq,moveCenter,add,scale]
+    rw [hcen] at hc
+    nlinarith only [sq_abs (K.center.1+B*v.1), sq_nonneg (K.center.2+B*v.2), hQ, hnorm, hc]
   · let B := (3+|K.center.2|)/|v.2|
     have hB : 0 < B := div_pos (by positivity) (abs_pos.mpr hvy)
     have hm : B*|v.2|=3+|K.center.2| := by dsimp [B]; field_simp
@@ -365,8 +380,13 @@ lemma ray_leaves_containment (K : UnitSquare) {q : ℝ} (hq : q ≤ Q0)
       linarith
     refine ⟨B,hB,?_⟩
     have hc := center_le_phi (moveCenter K (add K.center (scale B v)))
-    dsimp [normSq,moveCenter,add,scale] at hc
-    nlinarith [sq_abs (K.center.2+B*v.2),sq_nonneg (K.center.1+B*v.1)]
+    have hcen : normSq (moveCenter K (add K.center (scale B v))).center =
+        (K.center.1+B*v.1)^2+(K.center.2+B*v.2)^2 := by
+      dsimp [normSq,moveCenter,add,scale]
+    rw [hcen] at hc
+    nlinarith only [sq_abs (K.center.2+B*v.2), sq_nonneg (K.center.1+B*v.1), hQ, hnorm, hc]
+
+private lemma moveCenter_self (K : UnitSquare) : moveCenter K K.center = K := rfl
 
 def movedVertex {q : ℝ} (C : NeighborCycle q) (i : Vertex) (v : Point) (t : ℝ)
     (j : Vertex) : UnitSquare :=
@@ -384,26 +404,28 @@ lemma movedVertex_feasible {q : ℝ} (C : NeighborCycle q) (i : Vertex) {v : Poi
   have hself : next i ≠ i := by intro h; have := congrArg Fin.val h; fin_cases i <;> norm_num [next] at this
   by_cases hj : j=i
   · subst j
-    simp only [movedVertex,if_pos rfl,if_neg hself]
+    simp only [movedVertex,hself,↓reduceIte]
     have hh := translate_pair_feasible (C.selected i) (C.feasible i)
       (u := scale t v) (v := (0,0)) (by
         dsimp [dot,sub,scale] at *
-        nlinarith [mul_nonpos_of_nonneg_of_nonpos ht hout])
-    simpa [add] using hh
+        linarith [mul_nonpos_of_nonneg_of_nonpos ht hout])
+    simpa [add,moveCenter_self] using hh
   · by_cases hnext : next j=i
     · have hjprev : j=prev i := by rw [← hnext,prev_next]
       subst j
-      simp only [movedVertex,if_neg hj,next_prev,if_pos rfl]
+      simp only [movedVertex,hj,next_prev,↓reduceIte]
       have hh := translate_pair_feasible (C.selected (prev i)) (C.feasible (prev i))
         (u := (0,0)) (v := scale t v) (by
           rw [next_prev]
           dsimp [dot,sub,scale] at *
-          nlinarith [mul_nonneg ht hin])
-      simpa [add,next_prev] using hh
+          linarith [mul_nonneg ht hin])
+      simpa [add,next_prev,moveCenter_self] using hh
     · simpa [movedVertex,hj,hnext] using C.feasible j
 
-/-- One concrete fixed-frame translation, including every intermediate
-admissible square. This supplies the continuous path needed for order. -/
+/-- A translation of the square `i` along a fixed direction, with its frame kept, along which
+both of its witnesses keep separating, every intermediate square is in the disk and avoids the
+core disk, and the last square touches a radial boundary. The continuous path keeps the cyclic
+order of the centre directions. -/
 structure VertexMotion {q : ℝ} (C : NeighborCycle q) (i : Vertex) where
   direction : Point
   duration : ℝ
@@ -432,7 +454,7 @@ theorem vertex_motion_exists {q : ℝ} (C : NeighborCycle q) (hq : q ≤ Q0) (i 
     (by simpa [moveCenter,add,scale,SqContained] using C.contained i)
     (by simpa [moveCenter,add,scale] using (coreAvoiding_iff_distance _).mp (C.core i)) hFB
   refine ⟨⟨v,t,ht,hvin,?_,?_,hboundary⟩⟩
-  · dsimp [n₂,dot,scale] at hvout
+  · dsimp [n₂,dot,scale] at hvout ⊢
     linarith
   · intro s hs
     have h := hall s hs
@@ -474,9 +496,10 @@ lemma dot_sq_add_cross_sq (p v : Point) :
   dsimp [dot,cross,normSq]
   ring
 
-/-- A straight center motion avoiding the origin has a concrete continuous
-real argument. The relative complex number stays off the negative real axis:
-an antiparallel endpoint would force an earlier center to be zero. -/
+/-- A centre moving along a segment that avoids the origin has a continuous real polar angle.
+The quotient of the moving point by the starting point, as a complex number, stays off the
+negative real axis: an antiparallel position would force an earlier point of the segment to be
+the origin. -/
 lemma straight_line_polar_lift {p v : Point} {T β : ℝ}
     (hT : 0 ≤ T) (hn : ∀ t, 0 ≤ t ∧ t ≤ T → 0 < normSq (add p (scale t v)))
     (hx : p.1=Real.sqrt (normSq p)*Real.cos β)
@@ -495,20 +518,20 @@ lemma straight_line_polar_lift {p v : Point} {T β : ℝ}
       by_contra! hd
       have htpos : 0 < t := by
         by_contra! h
-        have he : t=0 := by linarith [ht.1]
+        have he : t=0 := by linarith only [ht.1, h]
         subst t
         dsimp [dot,add,scale,normSq] at hd hp
-        nlinarith
+        linarith only [hp, hd]
       let D := normSq p-dot p (add p (scale t v))
       let s := t*normSq p/D
-      have hD : 0 < D := by dsimp [D]; linarith
+      have hD : 0 < D := by dsimp [D]; linarith only [hp, hd]
       have hs : 0 ≤ s ∧ s ≤ t := by
         constructor
         · exact div_nonneg (mul_nonneg ht.1 hp.le) hD.le
         · apply (div_le_iff₀ hD).2
           have hm := mul_nonpos_of_nonneg_of_nonpos ht.1 hd
           dsimp [D]
-          nlinarith
+          linarith only [hm]
       have hcv : cross p v=0 := by
         have he : cross p (add p (scale t v))=t*cross p v := by dsimp [cross,add,scale]; ring
         rw [he] at hc
@@ -517,22 +540,34 @@ lemma straight_line_polar_lift {p v : Point} {T β : ℝ}
         have he : cross p (add p (scale s v))=s*cross p v := by dsimp [cross,add,scale]; ring
         rw [he,hcv,mul_zero]
       have hds : dot p (add p (scale s v))=0 := by
-        dsimp [s,D,dot,add,scale,normSq]
-        field_simp [ne_of_gt hD]
-        ring
+        have hlin (u : ℝ) : dot p (add p (scale u v))=normSq p+u*dot p v := by
+          dsimp [dot,add,scale,normSq]; ring
+        have hDe : D=-(t*dot p v) := by simp only [D,hlin]; ring
+        have hsD : s*D=t*normSq p := by simp only [s]; field_simp
+        rw [hlin]
+        clear_value s D
+        subst hDe
+        apply mul_left_cancel₀ (ne_of_gt htpos)
+        linear_combination -hsD
       have hidentity := dot_sq_add_cross_sq p (add p (scale s v))
       rw [hds,hcs] at hidentity
       have hpositive := mul_pos hp (hn s ⟨hs.1,hs.2.trans ht.2⟩)
-      nlinarith
+      linarith only [hidentity, hpositive]
     · exact Or.inr hc
   let θ : ℝ → ℝ := fun t => β+Complex.arg (z t)
-  have hzcont : Continuous z := by dsimp [z,dot,cross,add,scale]; fun_prop
+  have hzcont : Continuous z := by
+    have he : z = fun t => (dot p (add p (scale t v)) : ℂ) +
+        (cross p (add p (scale t v)) : ℂ) * Complex.I := by
+      funext t; exact Complex.mk_eq_add_mul_I _ _
+    rw [he]
+    dsimp [dot,cross,add,scale]
+    fun_prop
   have hθcont : ContinuousOn θ (Set.Icc 0 T) :=
     continuousOn_const.add (Complex.continuousOn_arg.comp hzcont.continuousOn hzslit)
   have hz₀ : Complex.arg (z 0)=0 := by
     apply Complex.arg_eq_zero_iff.mpr
     dsimp [z,dot,cross,add,scale,normSq] at *
-    constructor <;> nlinarith
+    constructor <;> linarith only [hp]
   refine ⟨θ,hθcont,by simp [θ,hz₀],?_⟩
   intro t ht
   let r₀ := Real.sqrt (normSq p)
@@ -541,9 +576,8 @@ lemma straight_line_polar_lift {p v : Point} {T β : ℝ}
   have hr₁ : 0 < r₁ := Real.sqrt_pos.mpr (hn t ht)
   have hr₀₂ : r₀^2=normSq p := Real.sq_sqrt hp.le
   have hnorm : ‖z t‖=r₀*r₁ := by
-    rw [Complex.norm_def]
-    change Real.sqrt ((dot p (add p (scale t v)))^2+(cross p (add p (scale t v)))^2)=_
-    rw [dot_sq_add_cross_sq,Real.sqrt_mul hp.le]
+    rw [Complex.norm_def,Complex.normSq_mk,← pow_two,← pow_two,dot_sq_add_cross_sq,
+      Real.sqrt_mul hp.le]
   have hcarg := Complex.norm_mul_cos_arg (z t)
   have hsarg := Complex.norm_mul_sin_arg (z t)
   rw [hnorm] at hcarg hsarg
@@ -560,12 +594,12 @@ lemma straight_line_polar_lift {p v : Point} {T β : ℝ}
     rw [Real.cos_add,hcβ,hsβ,hca,hsa]
     field_simp [ne_of_gt hr₀,ne_of_gt hr₁]
     dsimp [normSq,dot,cross,add,scale] at *
-    nlinarith [congrArg (fun a : ℝ => (p.1+t*v.1)*a) hr₀₂]
+    linarith only [congrArg (fun a : ℝ => (p.1+t*v.1)*a) hr₀₂, hr₀₂]
   · change _=r₁*Real.sin (β+Complex.arg (z t))
     rw [Real.sin_add,hcβ,hsβ,hca,hsa]
     field_simp [ne_of_gt hr₀,ne_of_gt hr₁]
     dsimp [normSq,dot,cross,add,scale] at *
-    nlinarith [congrArg (fun a : ℝ => (p.2+t*v.2)*a) hr₀₂]
+    linarith only [congrArg (fun a : ℝ => (p.2+t*v.2)*a) hr₀₂, hr₀₂]
 
 structure PolarOrder {q : ℝ} (C : NeighborCycle q) where
   beta : Vertex → ℝ
@@ -580,7 +614,7 @@ lemma polar_pair_distance {p₁ p₂ : Point} {r₁ r₂ β₁ β₂ : ℝ}
     normSq (sub p₂ p₁)=r₁^2+r₂^2-2*r₁*r₂*Real.cos (β₂-β₁) := by
   dsimp [normSq,sub]
   rw [hx₁,hy₁,hx₂,hy₂,Real.cos_sub]
-  nlinarith [congrArg (fun x : ℝ => r₁^2*x) (Real.sin_sq_add_cos_sq β₁),
+  linarith [congrArg (fun x : ℝ => r₁^2*x) (Real.sin_sq_add_cos_sq β₁),
     congrArg (fun x : ℝ => r₂^2*x) (Real.sin_sq_add_cos_sq β₂)]
 
 lemma polar_gap_cosine_bound {q : ℝ} (C : NeighborCycle q) (hq : q ≤ Q0)
@@ -600,8 +634,8 @@ lemma polar_gap_cosine_bound {q : ℝ} (C : NeighborCycle q) (hq : q ≤ Q0)
     by_cases hi : i=6 <;> simp [angleGap,hi,Real.cos_add_two_pi]
   rw [← hcos] at hdist
   have hd : Real.cos (angleGap β i) ≤ (r^2+s^2-1)/(2*r*s) := by
-    apply (le_div_iff₀ (by nlinarith [hr.1,hs.1])).2
-    nlinarith
+    apply (le_div_iff₀ (by nlinarith only [hr.1, hs.1])).2
+    linarith
   exact hd.trans (annular_cosine_quotient hr hs)
 
 lemma positive_angle_of_continuous_no_collision {T : ℝ} {δ : ℝ → ℝ}
@@ -631,17 +665,18 @@ lemma seven_gaps_below_pi (β : Vertex → ℝ) (h : ∀ i, 3/5 < angleGap β i)
   intro i
   have hh := pi_lt_22_over_7
   norm_num [Fin.sum_univ_succ] at hs
-  fin_cases i <;> linarith [h 0,h 1,h 2,h 3,h 4,h 5,h 6]
+  fin_cases i <;> simp only [Fin.zero_eta,Fin.mk_one,Fin.reduceFinMk] <;>
+    linarith only [h 0, h 1, h 2, h 3, h 4, h 5, h 6, hh, hs, h]
 
 /-- The lifted gaps cannot cross zero or a full turn. Their uniform annular
 lower bound then excludes a half turn by the total seven-gap budget. -/
-theorem VertexMotion.polarOrder {q : ℝ} {C : NeighborCycle q} {i : Vertex}
+def VertexMotion.polarOrder {q : ℝ} {C : NeighborCycle q} {i : Vertex}
     (M : VertexMotion C i) (O : PolarOrder C) (hq : q ≤ Q0) : PolarOrder M.endpoint := by
   have hnonzero (t : ℝ) (ht : 0 ≤ t ∧ t ≤ M.duration) :
       0 < normSq (add (C.square i).center (scale t M.direction)) := by
     have hh := center_radius_pos (M.admissible t ht).2
     exact Real.sqrt_pos.mp hh
-  obtain ⟨θ,hθ,hθ₀,hθpolar⟩ := straight_line_polar_lift M.duration_nonneg hnonzero
+  choose θ hθ hθ₀ hθpolar using straight_line_polar_lift M.duration_nonneg hnonzero
     (O.center_cos i) (O.center_sin i)
   let β : ℝ → Vertex → ℝ := fun t j => if j=i then θ t else O.beta j
   have hβ₀ : β 0=O.beta := by funext j; by_cases h : j=i <;> simp [β,h,hθ₀]
@@ -684,8 +719,8 @@ lemma turnSquare_sameSquare (k : Fin 4) (K : UnitSquare) : SameSquare (turnSquar
   have hY (p : Point) :
       localY (turnSquare k K) p=![localY K p,-localX K p,-localY K p,localX K p] k := by
     fin_cases k <;> dsimp [turnSquare,localX,localY] <;> ring
-  constructor <;> intro p <;> fin_cases k <;>
-    simp [openSquare,closedSquare,hX,hY,abs_neg,and_comm]
+  constructor <;> intro p <;> simp only [openSquare,closedSquare,hX,hY] <;> fin_cases k <;>
+    simp [abs_neg,and_comm]
 
 lemma turnSquare_physical (k : Fin 4) (K : UnitSquare) : SamePhysicalFrame (turnSquare k K) K := by
   fin_cases k <;> simp [SamePhysicalFrame,turnSquare]
@@ -694,12 +729,12 @@ lemma turnSquare_phi (k : Fin 4) (K : UnitSquare) :
     phi (alpha (turnSquare k K) (0,0)) (beta (turnSquare k K) (0,0)) =
       phi (alpha K (0,0)) (beta K (0,0)) := by
   fin_cases k <;> dsimp [turnSquare,alpha,beta,localX,localY,phi] <;>
-    ring_nf <;> simp [abs_neg,add_comm]
+    simp only [← Real.sqrt_sq_eq_abs] <;> ring_nf
 
 lemma turnSquare_coreDistance (k : Fin 4) (K : UnitSquare) :
     coreDistanceSq (turnSquare k K)=coreDistanceSq K := by
   fin_cases k <;> dsimp [turnSquare,coreDistanceSq,alpha,beta,localX,localY] <;>
-    ring_nf <;> simp [abs_neg,add_comm]
+    simp only [← Real.sqrt_sq_eq_abs] <;> ring_nf
 
 lemma turnSquare_frame_coordinates (k : Fin 4) (K : UnitSquare) (p : Point) :
     frameX (turnSquare k K) p=![frameX K p,frameY K p,-frameX K p,-frameY K p] k ∧
@@ -726,11 +761,11 @@ lemma canonical_quarter_choice (K : UnitSquare) (hp : 0 < normSq K.center) :
           (turnSquare_frame_coordinates 0 K K.center).2,Matrix.cons_val_zero]
         rw [abs_of_nonneg hx] at hxy
         dsimp [x,y] at *
-        nlinarith [sq_abs (frameY K K.center),abs_nonneg (frameY K K.center)]
+        nlinarith only [sq_abs (frameY K K.center), abs_nonneg (frameY K K.center), hnorm, hxy, hx]
     · refine ⟨2,?_,?_⟩
       all_goals
         simp only [(turnSquare_frame_coordinates 2 K K.center).1,
-          (turnSquare_frame_coordinates 2 K K.center).2,Matrix.cons_val_succ,Matrix.cons_val_zero,abs_neg]
+          (turnSquare_frame_coordinates 2 K K.center).2,Matrix.cons_val,abs_neg]
         rw [abs_of_neg (lt_of_not_ge hx)] at hxy
         dsimp [x,y] at *
         linarith
@@ -738,14 +773,14 @@ lemma canonical_quarter_choice (K : UnitSquare) (hp : 0 < normSq K.center) :
     · refine ⟨1,?_,?_⟩
       all_goals
         simp only [(turnSquare_frame_coordinates 1 K K.center).1,
-          (turnSquare_frame_coordinates 1 K K.center).2,Matrix.cons_val_succ,Matrix.cons_val_zero,abs_neg]
+          (turnSquare_frame_coordinates 1 K K.center).2,Matrix.cons_val,abs_neg]
         rw [abs_of_nonneg hy] at hxy
         dsimp [x,y] at *
         linarith [abs_nonneg (frameX K K.center)]
     · refine ⟨3,?_,?_⟩
       all_goals
         simp only [(turnSquare_frame_coordinates 3 K K.center).1,
-          (turnSquare_frame_coordinates 3 K K.center).2,Matrix.cons_val_succ,Matrix.cons_val_zero]
+          (turnSquare_frame_coordinates 3 K K.center).2,Matrix.cons_val]
         rw [abs_of_neg (lt_of_not_ge hy)] at hxy
         dsimp [x,y] at *
         linarith [abs_nonneg (frameX K K.center)]
@@ -781,15 +816,14 @@ lemma canonical_square_exists (K : UnitSquare) (hp : 0 < normSq K.center) :
 
 lemma CanonicalSquare.coordinates {K : UnitSquare} (N : CanonicalSquare K) :
     alpha N.square (0,0)=N.a ∧ beta N.square (0,0)=N.b := by
+  have hc : N.square.center = rotate N.square (N.a,-N.sigma*N.b) := N.center_eq
   have hX : localX N.square (0,0) = -N.a := by
-    change localX (turnSquare N.quarter K) (0,0)=_
-    rw [localX,N.center_eq]
-    dsimp [turnSquare,rotate]
+    rw [localX,hc]
+    dsimp [rotate]
     linear_combination -N.a*N.square.unit
   have hY : localY N.square (0,0) = N.sigma*N.b := by
-    change localY (turnSquare N.quarter K) (0,0)=_
-    rw [localY,N.center_eq]
-    dsimp [turnSquare,rotate]
+    rw [localY,hc]
+    dsimp [rotate]
     linear_combination N.sigma*N.b*N.square.unit
   have hσ : |N.sigma|=1 := by rcases N.sigma_sign with h | h <;> simp [h]
   simp [alpha,beta,hX,hY,abs_mul,hσ,abs_of_nonneg N.a_pos.le,abs_of_nonneg N.b_nonneg]
@@ -797,7 +831,8 @@ lemma CanonicalSquare.coordinates {K : UnitSquare} (N : CanonicalSquare K) :
 lemma CanonicalSquare.radius_sq {K : UnitSquare} (N : CanonicalSquare K) :
     normSq K.center=N.a^2+N.b^2 := by
   have hh := center_radius_sq N.square
-  simpa [N.coordinates.1,N.coordinates.2,CanonicalSquare.square,turnSquare] using hh
+  rw [N.coordinates.1,N.coordinates.2] at hh
+  exact hh
 
 lemma CanonicalSquare.boundary_kind {K : UnitSquare} {q : ℝ} (N : CanonicalSquare K)
     (hcore : CoreAvoiding K) (hb : OnRadialBoundary q K) :
@@ -818,7 +853,7 @@ lemma CanonicalSquare.boundary_kind {K : UnitSquare} {q : ℝ} (N : CanonicalSqu
     rw [max_eq_left (by linarith)] at hd
     by_cases hNb : N.b ≤ 1/2
     · rw [max_eq_right (by linarith)] at hd
-      exact ⟨.coreSide,by dsimp [BoundaryState]; exact ⟨by nlinarith,hNb⟩⟩
+      exact ⟨.coreSide,by dsimp [BoundaryState]; exact ⟨by nlinarith only [hd, ha],hNb⟩⟩
     · rw [max_eq_left (by linarith)] at hd
       exact ⟨.coreCorner,by dsimp [BoundaryState]; exact ⟨by linarith,hd⟩⟩
 
@@ -849,7 +884,7 @@ lemma turnSquare_threshold (k l : Fin 4) (K J : UnitSquare) :
     SAT.threshold (turnSquare k K) (turnSquare l J)=SAT.threshold K J := by
   fin_cases k <;> fin_cases l <;>
     dsimp [turnSquare,SAT.threshold,relativeC,relativeS] <;>
-    ring_nf <;> simp [abs_neg,add_comm]
+    simp only [← Real.sqrt_sq_eq_abs] <;> ring_nf
 
 lemma transportQuarterAxis_feasible {k l : Fin 4} {axis : SignedAxis} {K J : UnitSquare}
     (h : axis.Feasible K J) :
@@ -871,18 +906,21 @@ lemma arctan_polar_coordinates {a b σ : ℝ} (ha : 0 < a) (hb : 0 ≤ b)
     rw [← Real.tan_eq_sin_div_cos,Real.tan_arctan]
   have hmul : a*Real.sin t=σ*b*Real.cos t := by
     apply (div_eq_div_iff (ne_of_gt hcpos) (ne_of_gt ha)).mp at htan
-    nlinarith
+    linarith only [htan]
   have hσ₂ : σ^2=1 := by rcases hσ with h | h <;> simp [h]
-  have hr : 0 < Real.sqrt (a^2+b^2) := Real.sqrt_pos.mpr (by nlinarith [sq_nonneg b])
+  have hr : 0 < Real.sqrt (a^2+b^2) := Real.sqrt_pos.mpr (by nlinarith only [sq_nonneg b, ha])
   have hr₂ := Real.sq_sqrt (show 0 ≤ a^2+b^2 by positivity)
   have hcos : Real.sqrt (a^2+b^2)*Real.cos t=a := by
     have hsq := congrArg (fun x : ℝ => x^2) hmul
     have hu := congrArg (fun x : ℝ => a^2*x) (Real.sin_sq_add_cos_sq t)
     have hp := mul_pos hr hcpos
-    nlinarith
-  have hsin : Real.sqrt (a^2+b^2)*Real.sin t=σ*b := by nlinarith
-  exact ⟨(eq_div_iff (ne_of_gt hr)).2 (by nlinarith),
-    (eq_div_iff (ne_of_gt hr)).2 (by nlinarith)⟩
+    nlinarith only [congrArg (fun x : ℝ => x*Real.cos t^2) hr₂,
+      congrArg (fun x : ℝ => x*b^2*Real.cos t^2) hσ₂, hsq, hu, hr₂, hσ₂, ha, hp]
+  have hsin : Real.sqrt (a^2+b^2)*Real.sin t=σ*b := by
+    nlinarith only [congrArg (fun x : ℝ => Real.sqrt (a^2+b^2)*x) hmul,
+      congrArg (fun x : ℝ => σ*b*x) hcos, hmul, hcos, ha]
+  exact ⟨(eq_div_iff (ne_of_gt hr)).2 (by linarith only [hcos]),
+    (eq_div_iff (ne_of_gt hr)).2 (by linarith only [hsin])⟩
 
 lemma CanonicalSquare.frame_polar {K : UnitSquare} (N : CanonicalSquare K) {β : ℝ}
     (hx : K.center.1=Real.sqrt (normSq K.center)*Real.cos β)
@@ -890,23 +928,30 @@ lemma CanonicalSquare.frame_polar {K : UnitSquare} (N : CanonicalSquare K) {β :
     N.square.cosine=Real.cos (β+Real.arctan (N.sigma*N.b/N.a)) ∧
     N.square.sine=Real.sin (β+Real.arctan (N.sigma*N.b/N.a)) := by
   obtain ⟨hca,hsa⟩ := arctan_polar_coordinates N.a_pos N.b_nonneg N.sigma_sign
-  have hr : 0 < Real.sqrt (N.a^2+N.b^2) := Real.sqrt_pos.mpr (by nlinarith [N.a_pos,sq_nonneg N.b])
+  have hr : 0 < Real.sqrt (N.a^2+N.b^2) :=
+    Real.sqrt_pos.mpr (by nlinarith only [N.a_pos, sq_nonneg N.b])
   rw [N.radius_sq] at hx hy
   have hx' := congrArg Prod.fst N.center_eq
   have hy' := congrArg Prod.snd N.center_eq
   have hσ₂ : N.sigma^2=1 := by rcases N.sigma_sign with h | h <;> simp [h]
   have hr₂ := Real.sq_sqrt (show 0 ≤ N.a^2+N.b^2 by positivity)
-  have hcosβ : Real.cos β=K.center.1/Real.sqrt (N.a^2+N.b^2) := by apply (eq_div_iff (ne_of_gt hr)).2; nlinarith
-  have hsinβ : Real.sin β=K.center.2/Real.sqrt (N.a^2+N.b^2) := by apply (eq_div_iff (ne_of_gt hr)).2; nlinarith
+  have hcosβ : Real.cos β=K.center.1/Real.sqrt (N.a^2+N.b^2) := by
+    apply (eq_div_iff (ne_of_gt hr)).2; linarith only [hx]
+  have hsinβ : Real.sin β=K.center.2/Real.sqrt (N.a^2+N.b^2) := by
+    apply (eq_div_iff (ne_of_gt hr)).2; linarith only [hy]
   constructor
   · rw [Real.cos_add,hca,hsa,hcosβ,hsinβ]
     field_simp [ne_of_gt hr]
     dsimp [rotate,CanonicalSquare.square] at *
-    nlinarith [congrArg (fun x : ℝ => N.a*x) hx',congrArg (fun x : ℝ => N.sigma*N.b*x) hy']
+    linarith only [congrArg (fun x : ℝ => N.a*x) hx', congrArg (fun x : ℝ => N.sigma*N.b*x) hy',
+      congrArg (fun x : ℝ => (turnSquare N.quarter K).cosine*x) hr₂,
+      congrArg (fun x : ℝ => (turnSquare N.quarter K).cosine*N.b^2*x) hσ₂, hx', hy', hr₂, hσ₂]
   · rw [Real.sin_add,hca,hsa,hcosβ,hsinβ]
     field_simp [ne_of_gt hr]
     dsimp [rotate,CanonicalSquare.square] at *
-    nlinarith [congrArg (fun x : ℝ => N.sigma*N.b*x) hx',congrArg (fun x : ℝ => N.a*x) hy']
+    linarith only [congrArg (fun x : ℝ => N.sigma*N.b*x) hx', congrArg (fun x : ℝ => N.a*x) hy',
+      congrArg (fun x : ℝ => (turnSquare N.quarter K).sine*x) hr₂,
+      congrArg (fun x : ℝ => (turnSquare N.quarter K).sine*N.b^2*x) hσ₂, hx', hy', hr₂, hσ₂]
 
 def canonicalBoundaryCycle {q : ℝ} (C : NeighborCycle q) (O : PolarOrder C)
     (hboundary : ∀ i, OnRadialBoundary q (C.square i)) : BoundaryCycle q := by
@@ -944,9 +989,13 @@ def canonicalBoundaryCycle {q : ℝ} (C : NeighborCycle q) (O : PolarOrder C)
   · intro i p hp
     exact C.core i p ((turnSquare_sameSquare (N i).quarter (C.square i)).2 p |>.mp hp)
   · intro i
-    simpa [(N i).radius_sq] using O.center_cos i
+    have h := O.center_cos i
+    rw [(N i).radius_sq] at h
+    exact h
   · intro i
-    simpa [(N i).radius_sq] using O.center_sin i
+    have h := O.center_sin i
+    rw [(N i).radius_sq] at h
+    exact h
 
 lemma canonicalBoundaryCycle_sameSquare {q : ℝ} (C : NeighborCycle q) (O : PolarOrder C)
     (hboundary : ∀ i, OnRadialBoundary q (C.square i)) (i : Vertex) :
@@ -993,7 +1042,9 @@ theorem anchored_cycle_exists {q : ℝ} (C : NeighborCycle q) (O : PolarOrder C)
         by_cases h : j=i
         · simpa [h] using M.endpoint_boundary
         · rw [M.endpoint_other h]
-          exact hanchored j (by have hval : j.val ≠ n := by intro he; apply h; exact Fin.ext he; omega)
+          exact hanchored j (by
+            have hval : j.val ≠ n := by intro he; apply h; exact Fin.ext he
+            omega)
       · intro j
         exact ⟨(M.endpoint_frames j).1.trans (hframe j).1,(M.endpoint_frames j).2.trans (hframe j).2⟩
   obtain ⟨D,hO,hb,hf,hs⟩ := stage 7 (le_refl _)

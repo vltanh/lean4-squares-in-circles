@@ -10,6 +10,7 @@ coefficients and therefore also apply to the Taylor parameter expressions.
 -/
 
 @[expose] public section
+noncomputable section
 open Set
 
 namespace SquaresInCircles.Eight.Arithmetic.PreparedArc
@@ -74,7 +75,8 @@ theorem lower_endpoint {a : PreparedArc} (ha : a.NumericValid)
       have hY : 0 ≤ Y := by
         simpa [ratioLo,hs,ScalarExpr.value,ScalarExpr.eval] using hl
       have hm := mul_le_mul_of_nonneg_left hd.1 hY
-      nlinarith only [hm,hx,hL]
+      rw [hx,hL]
+      linarith
   | false =>
       have hf := a.circleFacts ha hs hxy
       have hc : x=circleX a.data.shift a.radiusExpr.value y ∧
@@ -83,9 +85,10 @@ theorem lower_endpoint {a : PreparedArc} (ha : a.NumericValid)
         simpa [SupportDomain,hs] using hd.2.2
       have hL := circle_branch hf.lower_shift hf.lower_circle
       have hh := circle_lower_endpoint hc.2 ⟨hd.1,hd.2.1⟩
-        (by simpa [ratioLo_value hf hs] using hl)
-        (by simpa [ratioHi_value hf hs] using hu)
-      simpa [← hL,← hc.1] using hh
+        (by rwa [ratioLo_value hf hs] at hl)
+        (by rwa [ratioHi_value hf hs] at hu)
+      rw [← hL,← hc.1] at hh
+      exact hh
 
 theorem upper_endpoint {a : PreparedArc} (ha : a.NumericValid)
     {x y X Y : ℝ} (hxy : a.data.Contains a.radius x y)
@@ -100,7 +103,8 @@ theorem upper_endpoint {a : PreparedArc} (ha : a.NumericValid)
       have hY : Y ≤ 0 := by
         simpa [ratioHi,hs,ScalarExpr.value,ScalarExpr.eval] using hu
       have hm := mul_le_mul_of_nonpos_left hd.2.1 hY
-      nlinarith only [hm,hx,hU]
+      rw [hx,hU]
+      linarith
   | false =>
       have hf := a.circleFacts ha hs hxy
       have hc : x=circleX a.data.shift a.radiusExpr.value y ∧
@@ -109,9 +113,10 @@ theorem upper_endpoint {a : PreparedArc} (ha : a.NumericValid)
         simpa [SupportDomain,hs] using hd.2.2
       have hU := circle_branch hf.upper_shift hf.upper_circle
       have hh := circle_upper_endpoint hc.2 ⟨hd.1,hd.2.1⟩
-        (by simpa [ratioLo_value hf hs] using hl)
-        (by simpa [ratioHi_value hf hs] using hu)
-      simpa [← hU,← hc.1] using hh
+        (by rwa [ratioLo_value hf hs] at hl)
+        (by rwa [ratioHi_value hf hs] at hu)
+      rw [← hU,← hc.1] at hh
+      exact hh
 
 theorem circle_majorant_lower {a : PreparedArc} (ha : a.NumericValid)
     (hs : a.data.side=false) {x y X Y h : ℝ}

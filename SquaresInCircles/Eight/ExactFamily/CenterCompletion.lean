@@ -4,15 +4,23 @@ public import SquaresInCircles.Eight.Model
 public import SquaresInCircles.Eight.ExactFamily.Weights
 
 /-!
-# Center completion and the stationary original-position dual
+# Eight squares: completing the square at the centres, and the stationary identity
 
-Uncompiled source draft.  All center identities below hold for arbitrary
-centers.  In particular, the zero-error dual does not assume that original
-centers are near a radially deformed center or inside a slider rectangle.
+The identity `complete_center_square` completes the square `μ |p + o|² + ⟨F, p⟩` at a centre `p`.
+The constants of the terminal inequality are fixed here, with the rational step that absorbs the
+quadratic and cubic remainders into the first-order reserve for total errors up to `1/1000`
+(`terminal_remainder_absorption`, `combine_terminal_terms`), and the step from equality to zero
+errors (`terminal_equality_forces`).
 
-Sources: `HAND_EXACT_CENTER_SQUARE_COMPLETION.md`, Sections 2 and 6;
-`HAND_TERMINAL_WITH_AUTOMATIC_SLIDERS.md`, Sections 3--5; and
-`EQUALITY_PULLBACK_TO_ORIGINAL_SQUARES.md`, Sections 3--4.
+The stationary identity (`OriginalDual`) applies the weights of a stationary chain to seven centres
+with zero frame errors: the weighted sum of the five corner constraints less the weighted gaps
+along the normals of the model equals `q` plus the weighted squared distances of the five anchored
+centres from those of the model (`OriginalDual.exact_identity`). All these identities hold for
+arbitrary centres; nothing assumes that a centre is near a moved one or inside a slider range. So
+if the five anchored corners lie in the disk of squared radius `q` and the gaps are nonnegative,
+the five anchors are those of the model and every gap vanishes
+(`OriginalDual.original_centers_rigid`), and the two sliders lie on their lines
+(`OriginalDual.slider_coordinates`).
 -/
 
 @[expose] public section
@@ -76,15 +84,17 @@ theorem terminal_remainder_absorption {S : ℝ} (hS : 0 ≤ S) (hS' : S ≤ 1/10
       terminalReserve*S := by
   obtain ⟨h₂,h₂',h₃,h₃',hρ,hid⟩ := terminal_constants
   have hS₂ : S^2 ≤ S/1000 := by nlinarith
-  have hS₃ : S^3 ≤ S^2/1000 := by nlinarith [mul_nonneg hS hS₂]
+  have hS₃ : S^3 ≤ S^2/1000 := by nlinarith [mul_le_mul_of_nonneg_left hS₂ hS]
   have h₁ := mul_le_mul_of_nonneg_right h₂'.le (sq_nonneg S)
   have h₂ := mul_le_mul_of_nonneg_right h₃'.le (pow_nonneg hS 3)
   have h₃ := mul_le_mul_of_nonneg_left hS₃ (by norm_num : (0:ℝ) ≤ 3/2)
   have h₄ := mul_le_mul_of_nonneg_left hS₂ (by norm_num : (0:ℝ) ≤ 93/10)
+  have h₅ : terminalReserve*S = firstOrderReserve*S-93/10000*S := by
+    rw [← hid]; ring
   nlinarith [mul_nonneg hS (sq_nonneg S)]
 
-/-- The final rational absorption step, separated from the geometric estimates
-which supply its four summands. -/
+/-- The last rational step of the terminal inequality, apart from the geometric estimates that
+supply its four summands. -/
 theorem combine_terminal_terms {q qstar μ t tstar S C L : ℝ}
     (hμ : 0 ≤ μ) (hS : 0 ≤ S) (hS' : S ≤ 1/1000)
     (hdual : C+L ≤ q)
@@ -109,8 +119,8 @@ theorem terminal_equality_forces {q μ t tstar S C : ℝ}
 namespace OriginalDual
 open ExactFamily.Coordinates
 
-/-- Positions are indexed A,B,D,E,H,T,G in this algebra-only module.  The
-adapter to the canonical cycle is the explicit permutation below. -/
+/-- Centres indexed by `A, B, D, E, H, T, G`. The permutation `cycleIndex` passes from the
+order `H, G, A, B, T, D, E` of the cycle. -/
 abbrev Positions := Fin 7 → Point
 
 def cycleIndex : Fin 7 → Fin 7 := ![2,3,5,6,0,4,1]
@@ -149,7 +159,7 @@ theorem weighted_gap_difference (d : Coordinates) (p r : Positions) :
        (∑ e : Fin 7, d.lam e*gap d r e) =
       ∑ i : Fin 7, dot (d.forces i) (sub (p i) (r i)) := by
   simp [Fin.sum_univ_succ,gap,lam,rawLambda,forces,rawForces,
-    dot,sub,scale,e,f]
+    dot,sub,scale,Coordinates.e,Coordinates.f]
   ring
 
 theorem reference_value {d : Coordinates} (hd : d.IsChain)
@@ -178,16 +188,20 @@ theorem exact_identity {d : Coordinates} (hd : d.IsChain) (hw : d.WeightDomain)
   have hsum' := Finset.sum_congr rfl (fun i (_ : i ∈ (Finset.univ : Finset (Fin 5))) => hsum i)
   have hgap := weighted_gap_difference d p r
   have hzero := d.slider_forces_zero
-  have hrefl := reference_value hd hw hz 0 0
+  have hrefl : value d r = d.q := reference_value hd hw hz 0 0
   have hforces : (∑ i : Fin 7, dot (d.forces i) (sub (p i) (r i))) =
       ∑ i : Fin 5, dot (d.forces i.castSucc.castSucc)
         (sub (p i.castSucc.castSucc) (r i.castSucc.castSucc)) := by
-    simp [Fin.sum_univ_succ,hzero.1,hzero.2,dot]
+    rw [Fin.sum_univ_castSucc,Fin.sum_univ_castSucc]
+    have h5 : d.forces (Fin.last 5).castSucc = (0,0) := hzero.1
+    have h6 : d.forces (Fin.last 6) = (0,0) := hzero.2
+    rw [h5,h6]
+    simp [dot]
   rw [hforces] at hgap
   simp only [hforce] at hgap
   simp only [Finset.sum_add_distrib,Finset.sum_sub_distrib] at hsum'
-  simp only [href] at hsum' hgap
-  dsimp [value] at hrefl ⊢
+  dsimp only [value] at hrefl ⊢
+  simp only [href] at hsum' hgap hrefl
   linarith
 
 theorem value_le {d : Coordinates} (hw : d.WeightDomain) {p : Positions} {q : ℝ}
@@ -201,7 +215,9 @@ theorem value_le {d : Coordinates} (hw : d.WeightDomain) {p : Positions} {q : �
   dsimp [value]
   linarith
 
-/-- Original-center rigidity, with no displacement or slider-size hypothesis. -/
+/-- The original centres are rigid: if the five anchored corners lie in the disk of squared
+radius `q` and the seven gaps are nonnegative, the anchors are the centres of the model and the
+gaps vanish. Nothing is assumed about displacements or about the positions of the sliders. -/
 theorem original_centers_rigid {d : Coordinates} (hd : d.IsChain)
     (hw : d.WeightDomain) (hz : d.defect = 0) (hstation : d.positionDerivative = 0)
     {p : Positions}
@@ -254,16 +270,19 @@ theorem slider_coordinates {d : Coordinates} {p : Positions}
     ∃ Z η : ℝ, p 5 = d.pT Z ∧ p 6 = d.pG η := by
   refine ⟨(p 5).2,dot d.f (p 6)-d.h₂-1/2,?_,?_⟩
   · have h := hTB
-    simp only [gap,Matrix.cons_val_succ,Matrix.cons_val_zero,hB,Coordinates.pB] at h
+    simp only [gap,Matrix.cons_val_zero,Matrix.cons_val_one,hB,
+      Coordinates.pB] at h
     ext <;> dsimp [Coordinates.pT]
-    · linarith
-    · rfl
+    linarith
   · have h := hHG
-    simp only [gap,Matrix.cons_val_succ,Matrix.cons_val_zero,hH,dot_sub_right,
-      Coordinates.pH,d.dot_e_inFrame] at h
-    have hx : dot d.e (p 6) = d.h₁+3/2 := by linarith
-    rw [← frame_reconstruction d (p 6),hx]
-    congr 1 <;> dsimp [Coordinates.pG] <;> ring
+    simp only [gap,hH,dot_sub_right,Coordinates.pH,d.dot_e_inFrame] at h
+    have hx : dot d.e (p 6) = d.h₁+3/2 := by
+      simp at h
+      linarith
+    conv_lhs => rw [← frame_reconstruction d (p 6)]
+    rw [hx,Coordinates.pG]
+    congr 1
+    ring
 
 end OriginalDual
 end SquaresInCircles.Eight

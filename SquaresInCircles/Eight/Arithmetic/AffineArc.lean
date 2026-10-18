@@ -15,12 +15,17 @@ original ordered edge.
 -/
 
 @[expose] public section
+noncomputable section
 open Set
 
 namespace SquaresInCircles.Eight.Arithmetic
 
 inductive ForwardAxis | one | two | three | four
-  deriving DecidableEq, Fintype, Repr
+  deriving DecidableEq, Repr
+
+instance : Fintype ForwardAxis where
+  elems := {.one, .two, .three, .four}
+  complete x := by cases x <;> decide
 
 def ForwardAxis.reverse : ForwardAxis → ForwardAxis
   | .one => .three | .two => .four | .three => .one | .four => .two
@@ -74,48 +79,48 @@ theorem charge_reverse (Ls Lt : AffineLabel) (β a b A B φ : ℝ) :
   ring
 
 /-- Coefficients of the four original-axis Lagrangians. -/
-def sourceX (axis : ForwardAxis) (Ls : AffineLabel) (λ φ : ℝ) : ℝ :=
+def sourceX (axis : ForwardAxis) (Ls : AffineLabel) (lam φ : ℝ) : ℝ :=
   match axis with
-  | .one => Ls.p | .two => Ls.p+λ*Real.cos φ
-  | .three => Ls.p-λ*Real.sin φ | .four => Ls.p-λ
+  | .one => Ls.p | .two => Ls.p+lam*Real.cos φ
+  | .three => Ls.p-lam*Real.sin φ | .four => Ls.p-lam
 
-def sourceY (axis : ForwardAxis) (Ls : AffineLabel) (λ σ φ : ℝ) : ℝ :=
+def sourceY (axis : ForwardAxis) (Ls : AffineLabel) (lam σ φ : ℝ) : ℝ :=
   match axis with
-  | .one => Ls.q-λ*σ | .two => Ls.q-λ*σ*Real.sin φ
-  | .three => Ls.q-λ*σ*Real.cos φ | .four => Ls.q
+  | .one => Ls.q-lam*σ | .two => Ls.q-lam*σ*Real.sin φ
+  | .three => Ls.q-lam*σ*Real.cos φ | .four => Ls.q
 
-def targetX (axis : ForwardAxis) (Lt : AffineLabel) (λ φ : ℝ) : ℝ :=
+def targetX (axis : ForwardAxis) (Lt : AffineLabel) (lam φ : ℝ) : ℝ :=
   match axis with
-  | .one => -Lt.p-λ*Real.sin φ | .two => -Lt.p-λ
-  | .three => -Lt.p | .four => -Lt.p+λ*Real.cos φ
+  | .one => -Lt.p-lam*Real.sin φ | .two => -Lt.p-lam
+  | .three => -Lt.p | .four => -Lt.p+lam*Real.cos φ
 
-def targetY (axis : ForwardAxis) (Lt : AffineLabel) (λ τ φ : ℝ) : ℝ :=
+def targetY (axis : ForwardAxis) (Lt : AffineLabel) (lam τ φ : ℝ) : ℝ :=
   match axis with
-  | .one => -Lt.q+λ*τ*Real.cos φ | .two => -Lt.q
-  | .three => -Lt.q+λ*τ | .four => -Lt.q+λ*τ*Real.sin φ
+  | .one => -Lt.q+lam*τ*Real.cos φ | .two => -Lt.q
+  | .three => -Lt.q+lam*τ | .four => -Lt.q+lam*τ*Real.sin φ
 
-def lagrangianBase (Ls Lt : AffineLabel) (λ β φ : ℝ) : ℝ :=
-  φ+(Ls.c : ℝ)-Lt.c+λ*frameWidth φ-β*frameCharge φ
+def lagrangianBase (Ls Lt : AffineLabel) (lam β φ : ℝ) : ℝ :=
+  φ+(Ls.c : ℝ)-Lt.c+lam*frameWidth φ-β*frameCharge φ
 
 theorem lagrangian_identity (axis : ForwardAxis) (Ls Lt : AffineLabel)
-    (λ β σ τ a b A B φ : ℝ) :
-    chargedCost Ls Lt β a b A B φ-λ*forwardMargin axis σ τ a b A B φ =
-      lagrangianBase Ls Lt λ β φ + sourceX axis Ls λ φ*a +
-      sourceY axis Ls λ σ φ*b + targetX axis Lt λ φ*A +
-      targetY axis Lt λ τ φ*B := by
+    (lam β σ τ a b A B φ : ℝ) :
+    chargedCost Ls Lt β a b A B φ-lam*forwardMargin axis σ τ a b A B φ =
+      lagrangianBase Ls Lt lam β φ + sourceX axis Ls lam φ*a +
+      sourceY axis Ls lam σ φ*b + targetX axis Lt lam φ*A +
+      targetY axis Lt lam τ φ*B := by
   cases axis <;>
     simp only [chargedCost,forwardMargin,lagrangianBase,sourceX,sourceY,
       targetX,targetY,AffineLabel.eval] <;> push_cast <;> ring
 
 theorem charged_pair_gt_of_support {axis : ForwardAxis} {Ls Lt : AffineLabel}
-    {λ β σ τ a b A B φ sourceLower targetLower γ : ℝ}
-    (hλ : 0 ≤ λ) (haxis : 0 ≤ forwardMargin axis σ τ a b A B φ)
-    (hs : sourceLower ≤ sourceX axis Ls λ φ*a+sourceY axis Ls λ σ φ*b)
-    (ht : targetLower ≤ targetX axis Lt λ φ*A+targetY axis Lt λ τ φ*B)
-    (hcost : γ < lagrangianBase Ls Lt λ β φ+sourceLower+targetLower) :
+    {lam β σ τ a b A B φ sourceLower targetLower γ : ℝ}
+    (hlam : 0 ≤ lam) (haxis : 0 ≤ forwardMargin axis σ τ a b A B φ)
+    (hs : sourceLower ≤ sourceX axis Ls lam φ*a+sourceY axis Ls lam σ φ*b)
+    (ht : targetLower ≤ targetX axis Lt lam φ*A+targetY axis Lt lam τ φ*B)
+    (hcost : γ < lagrangianBase Ls Lt lam β φ+sourceLower+targetLower) :
     γ < chargedCost Ls Lt β a b A B φ := by
-  have hid := lagrangian_identity axis Ls Lt λ β σ τ a b A B φ
-  have hn := mul_nonneg hλ haxis
+  have hid := lagrangian_identity axis Ls Lt lam β σ τ a b A B φ
+  have hn := mul_nonneg hlam haxis
   linarith
 
 /-- Full-circle support is valid without locating the minimizing point in an
@@ -147,7 +152,7 @@ theorem side_endpoint_lower {a b l u X Y m : ℝ} (hb : l ≤ b ∧ b ≤ u)
   by_cases hY : 0 ≤ Y
   · have h := mul_le_mul_of_nonneg_left hb.1 hY
     linarith
-  · have h := mul_le_mul_of_nonpos_left hb.2 (le_of_not_ge hY).le
+  · have h := mul_le_mul_of_nonpos_left hb.2 (le_of_not_ge hY)
     linarith
 
 def circleX (v ρ b : ℝ) : ℝ := v+Real.sqrt (ρ^2-(b-v)^2)
@@ -156,7 +161,8 @@ def circleRatio (v ρ b : ℝ) : ℝ := (b-v)/Real.sqrt (ρ^2-(b-v)^2)
 theorem circleX_deriv {v ρ b : ℝ} (hb : 0 < ρ^2-(b-v)^2) :
     HasDerivAt (circleX v ρ) (-circleRatio v ρ b) b := by
   have harg : HasDerivAt (fun y : ℝ => ρ^2-(y-v)^2) (-2*(b-v)) b := by
-    convert ((((hasDerivAt_id b).sub_const v).pow 2).const_sub (ρ^2)) using 1 <;> ring
+    convert ((((hasDerivAt_id' b).sub_const v).fun_pow 2).const_sub (ρ^2)) using 1
+    norm_num
   have hs := harg.sqrt (ne_of_gt hb)
   convert hs.const_add v using 1
   · rfl
@@ -187,7 +193,7 @@ theorem circleRatio_mono {v ρ l u : ℝ}
 
 theorem circle_functional_deriv {v ρ X Y b : ℝ} (hb : 0 < ρ^2-(b-v)^2) :
     HasDerivAt (fun z => X*circleX v ρ z+Y*z) (Y-X*circleRatio v ρ b) b := by
-  convert ((circleX_deriv hb).const_mul X).add ((hasDerivAt_id b).const_mul Y) using 1
+  convert ((circleX_deriv hb).const_mul X).fun_add ((hasDerivAt_id' b).const_mul Y) using 1
   ring
 
 theorem circle_functional_concave {v ρ X Y l u : ℝ} (hX : 0 ≤ X)
@@ -197,8 +203,8 @@ theorem circle_functional_concave {v ρ X Y l u : ℝ} (hX : 0 ≤ X)
     (fun b hb => circle_functional_deriv (X := X) (Y := Y) (hpos b hb))
     (fun b hb => ((circleRatio_deriv (hpos b hb)).const_mul X).const_sub Y)
   intro b hb
-  dsimp
-  have hn : 0 ≤ X*(ρ^2/(Real.sqrt (ρ^2-(b-v)^2))^3) := by positivity
+  have hn : 0 ≤ X*(ρ^2/(Real.sqrt (ρ^2-(b-v)^2))^3) :=
+    mul_nonneg hX (div_nonneg (sq_nonneg ρ) (pow_nonneg (Real.sqrt_nonneg _) 3))
   linarith
 
 theorem circle_endpoints_lower {v ρ X Y l u b m : ℝ} (hX : 0 ≤ X)
@@ -216,7 +222,7 @@ theorem affine_of_endpoint_bounds {X Y r rl ru : ℝ} (hr : rl ≤ r ∧ r ≤ r
   by_cases hX : 0 ≤ X
   · have h := mul_le_mul_of_nonneg_left hr.2 hX
     linarith
-  · have h := mul_le_mul_of_nonpos_left hr.1 (le_of_not_ge hX).le
+  · have h := mul_le_mul_of_nonpos_left hr.1 (le_of_not_ge hX)
     linarith
 
 theorem circle_lower_endpoint {v ρ X Y l u b : ℝ}

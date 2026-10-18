@@ -12,6 +12,7 @@ leaf or an interval containing that point.
 -/
 
 @[expose] public section
+noncomputable section
 
 namespace SquaresInCircles.Eight.Arithmetic
 
@@ -65,7 +66,7 @@ theorem QBox.mem_left {n : ℕ} {b : QBox n} {i : Fin n} {c : ℚ}
   intro j
   by_cases hji : j = i
   · subst j
-    simpa [left] using And.intro (hx i).1 hi
+    simpa [left,QInterval.Mem] using And.intro (hx i).1 hi
   · simpa [left,Function.update_of_ne hji] using hx j
 
 theorem QBox.mem_right {n : ℕ} {b : QBox n} {i : Fin n} {c : ℚ}
@@ -74,7 +75,7 @@ theorem QBox.mem_right {n : ℕ} {b : QBox n} {i : Fin n} {c : ℚ}
   intro j
   by_cases hji : j = i
   · subst j
-    simpa [right] using And.intro hi (hx i).2
+    simpa [right,QInterval.Mem] using And.intro hi (hx i).2
   · simpa [right,Function.update_of_ne hji] using hx j
 
 inductive SplitCover (n : ℕ)

@@ -11,6 +11,7 @@ case splits cover the entire stated parameter intervals.
 -/
 
 @[expose] public section
+noncomputable section
 
 namespace SquaresInCircles.Eight.Arithmetic
 open Generated
@@ -130,7 +131,6 @@ theorem centralBandP_normalized (Cminus D u : ℝ) :
   have hz : (1+u^2 : ℝ) ≠ 0 := ne_of_gt (by positivity)
   unfold centralBandP
   field_simp [hz]
-  ring
 
 /-- Increasing quadratic comparison, with its positive branch explicit. -/
 theorem root_lt_of_quadratic_positive {X Y B C : ℝ}

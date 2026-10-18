@@ -5,18 +5,30 @@ public import SquaresInCircles.Eight.CentralCore
 public import SquaresInCircles.Common.Analysis
 
 /-!
-# Radius transfer for the seven-square boundary relaxation
+# Eight squares: radius expansion and the ordered exterior squares
 
-Source: `HAND_FIXED_CEILING_TRANSFER_WITH_AUTOMATIC_TERMINAL.md`, §§1–2.
+A square with its state on the outer curve at the level `q`, and its canonical axis at the angle
+`α` from its centre direction, has its centre at the distance `outerRadius q B` from the origin,
+the positive root of `r² + B r + 1/2 = q` with `B = cos α + |sin α|` (`outerRadius_equation`).
+For `5/2 ≤ q ≤ 4` this distance lies in `(4/5, 3/2)` (`outerRadius_bounds`) and grows with `q`
+at a rate between `1/4` and `1/3`: the identity `(r₂ - r₁)(r₂ + r₁ + B) = q₂ - q₁` gives both
+bounds on its increments at once (`outerRadius_increment`). A square on the core curve has its
+centre within `4/5` of the origin (`BoundaryCycle.core_radius_bound`).
 
-This draft gives an endpoint version of the hand derivative argument. The
-identity `(r₂-r₁) * (r₂+r₁+B) = q₂-q₁` gives both increment bounds at once.
-The signs of the two projection coefficients are retained. Consequently the
-argument applies to **each** initially feasible signed axis, including ties;
-it does not choose a new owner after the motion.
+Expanding a boundary cycle from the level `q` to a level `r ≥ q` moves each square on the outer
+curve along its centre direction, with its frame, to the outer curve at the level `r`, and keeps
+the squares on the core curve (`BoundaryCycle.expand`, `radius_expand_boundary_cycle`). Every
+signed axis that separates two consecutive squares before the expansion separates them after it
+(`every_feasible_projection_preserved`): the projection is linear in the two centre distances,
+with fixed coefficients of absolute value at most `1`, and the increment bounds, applied with the
+signs of the two coefficients, show that it does not decrease (`outer_outer_increment`,
+`core_outer_increment`). This holds for each separating axis, ties included
+(`all_axes_preserved`), so no witness is chosen anew after the motion. All lengths are Euclidean
+distances; no norm of the product space `ℝ × ℝ` is used.
 
-All lengths here are Euclidean scalar radii. No product-space norm is used.
-These sources have deliberately not been compiled or sent to CI.
+The file ends with the exterior squares of a packing in the order of their centre directions, a
+neighbour cycle at the level `max q qMinus` (`ordered_exterior_exists`), and with its boundary
+reduction and the expansion of that to the level `Q1` (`boundary_normalization_exists`).
 -/
 
 @[expose] public section
@@ -39,7 +51,7 @@ lemma coefficient_bounds {B : ℝ} (hB : FrameCoefficient B) :
   have hn := Real.sqrt_nonneg (2 : ℝ)
   have hs := Real.sq_sqrt (show (0 : ℝ) ≤ 2 by norm_num)
   exact ⟨hB.1, hB.2.trans_lt sqrt_two_lt_three_halves,
-    by nlinarith [sq_nonneg (B - 1)], by nlinarith [hB.1, hB.2]⟩
+    by nlinarith [sq_nonneg (B - 1), hB.1], by nlinarith [hB.1, hB.2]⟩
 
 lemma discriminant_bounds {q B : ℝ} (hq : q ∈ Set.Icc (5 / 2) 4)
     (hB : FrameCoefficient B) :
@@ -246,9 +258,9 @@ lemma core_outer_increment {r c dr Δ u v : ℝ}
   have h₂ := mul_nonneg (show 0 ≤ u - 2 / 15 by linarith) hΔ
   nlinarith
 
-/-- A radial state retains its kind under radius transfer. The core radius is
-part of the state, and is held fixed. Side/corner distinctions are geometric
-data upstream and are immaterial to this projection theorem. -/
+/-- A radial state keeps its kind under radius transfer. The centre distance of a square on the
+core curve is part of the state and is held fixed. The side and the corner of the core curve are
+not distinguished: only the centre distance enters the projections. -/
 inductive RadialState where
   | outer (B : ℝ) (frame : FrameCoefficient B)
   | core (r : ℝ) (bounds : 0 ≤ r ∧ r < 4 / 5)
@@ -340,7 +352,7 @@ lemma BoundaryCycle.center_polar {q : ℝ} (C : BoundaryCycle q) (i : Vertex) :
   exact Prod.ext (C.center_cos i) (C.center_sin i)
 
 lemma BoundaryCycle.absolute_coordinates {q : ℝ} (C : BoundaryCycle q) (i : Vertex) :
-    alpha (C.square i) (0, 0) = C.a i ∧ beta (C.square i) (0, 0) = C.b i := by
+    SquaresInCircles.alpha (C.square i) (0, 0) = C.a i ∧ SquaresInCircles.beta (C.square i) (0, 0) = C.b i := by
   have hX : localX (C.square i) (0, 0) = -C.a i := by
     rw [localX, C.center_eq i]
     dsimp [rotate]
@@ -350,8 +362,8 @@ lemma BoundaryCycle.absolute_coordinates {q : ℝ} (C : BoundaryCycle q) (i : Ve
     dsimp [rotate]
     linear_combination C.sigma i*C.b i * (C.square i).unit
   have hσ : |C.sigma i| = 1 := by rcases C.sigma_sign i with h | h <;> simp [h]
-  simp [alpha, beta, hX, hY, abs_mul, hσ, abs_of_nonneg (C.a_pos i).le,
-    abs_of_nonneg (C.b_nonneg i)]
+  simp [SquaresInCircles.alpha, SquaresInCircles.beta, hX, hY, abs_mul, hσ,
+    abs_of_nonneg (C.a_pos i).le, abs_of_nonneg (C.b_nonneg i)]
 
 def BoundaryCycle.radialCoefficient {q : ℝ} (C : BoundaryCycle q) (i : Vertex) : ℝ :=
   (C.a i+C.b i)/C.radius i
@@ -403,9 +415,9 @@ lemma BoundaryCycle.radialState_source {q : ℝ} (C : BoundaryCycle q)
     (hq : q ∈ Set.Icc (5/2) 4) (i : Vertex) :
     (C.radialState i).radius q = C.radius i := by
   by_cases h : C.kind i = .outer
-  · simp only [BoundaryCycle.radialState, dif_pos h, RadiusTransfer.RadialState.radius]
-    apply (RadiusTransfer.outerRadius_unique hq (C.radialCoefficient_bounds i)
-      (C.radius_pos i).le).symm
+  · simp only [BoundaryCycle.radialState, h, ↓reduceDIte, RadiusTransfer.RadialState.radius]
+    refine (RadiusTransfer.outerRadius_unique hq (C.radialCoefficient_bounds i)
+      (C.radius_pos i).le ?_).symm
     have hb := C.boundary i
     simp only [h, BoundaryState, phi] at hb
     have hr := C.radius_sq i
@@ -444,18 +456,18 @@ lemma BoundaryCycle.expanded_sqrt {q r : ℝ} (C : BoundaryCycle q)
     (i : Vertex) :
     Real.sqrt ((C.expansionFactor r i*C.a i)^2+(C.expansionFactor r i*C.b i)^2) =
       C.expansionFactor r i*C.radius i := by
-  have hλ := C.expansionFactor_ge_one hq hr hqr i
-  apply Real.sqrt_eq_iff_mul_self_eq (by nlinarith [C.radius_pos i]) |>.2
-  nlinarith [C.radius_sq i]
+  have hlam := C.expansionFactor_ge_one hq hr hqr i
+  apply (Real.sqrt_eq_iff_mul_self_eq (by positivity) (by nlinarith [C.radius_pos i])).2
+  nlinarith [C.radius_sq i, congrArg (fun x => C.expansionFactor r i ^ 2 * x) (C.radius_sq i)]
 
 lemma BoundaryCycle.expanded_tangent {q r : ℝ} (C : BoundaryCycle q)
     (hq : q ∈ Set.Icc (5/2) 4) (hr : r ∈ Set.Icc (5/2) 4) (hqr : q ≤ r)
     (i : Vertex) :
     C.sigma i*(C.expansionFactor r i*C.b i)/(C.expansionFactor r i*C.a i) = C.tangent i := by
-  have hλ : C.expansionFactor r i ≠ 0 := ne_of_gt (by linarith [C.expansionFactor_ge_one hq hr hqr i])
+  have hlam : C.expansionFactor r i ≠ 0 :=
+    ne_of_gt (by linarith [C.expansionFactor_ge_one hq hr hqr i])
   dsimp [BoundaryCycle.tangent]
-  field_simp [hλ,ne_of_gt (C.a_pos i)]
-  ring
+  field_simp [hlam,ne_of_gt (C.a_pos i)]
 
 lemma BoundaryCycle.expanded_boundary {q r : ℝ} (C : BoundaryCycle q)
     (hq : q ∈ Set.Icc (5/2) 4) (hr : r ∈ Set.Icc (5/2) 4) (hqr : q ≤ r)
@@ -465,20 +477,21 @@ lemma BoundaryCycle.expanded_boundary {q r : ℝ} (C : BoundaryCycle q)
   | outer =>
     have he := RadiusTransfer.outerRadius_equation hr (C.radialCoefficient_bounds i)
     have hmul := C.expansionFactor_radius (r := r) i
-    simp only [BoundaryCycle.radialState,dif_pos hk,RadiusTransfer.RadialState.radius] at hmul
+    simp only [BoundaryCycle.radialState,hk,↓reduceDIte,RadiusTransfer.RadialState.radius] at hmul
     have hc : C.radialCoefficient i*C.radius i = C.a i+C.b i := by
       simp [BoundaryCycle.radialCoefficient,ne_of_gt (C.radius_pos i)]
     have hr₂ := C.radius_sq i
     have hprod := congrArg (fun x : ℝ => C.expansionFactor r i*x) hc
     have hsq := congrArg (fun x : ℝ => C.expansionFactor r i^2*x) hr₂
-    simp only [hk,BoundaryState,phi]
-    nlinarith
+    simp only [BoundaryState,phi]
+    nlinarith [congrArg (fun x : ℝ => x^2) hmul,
+      congrArg (fun x : ℝ => C.radialCoefficient i*x) hmul]
   | coreSide =>
-    have hλ := C.expansionFactor_core (r := r) i (by simp [hk])
-    simpa [hk,hλ,BoundaryState] using C.boundary i
+    have hlam := C.expansionFactor_core (r := r) i (by simp [hk])
+    simpa [hk,hlam,BoundaryState] using C.boundary i
   | coreCorner =>
-    have hλ := C.expansionFactor_core (r := r) i (by simp [hk])
-    simpa [hk,hλ,BoundaryState] using C.boundary i
+    have hlam := C.expansionFactor_core (r := r) i (by simp [hk])
+    simpa [hk,hlam,BoundaryState] using C.boundary i
 
 lemma BoundaryCycle.expanded_contained {q r : ℝ} (C : BoundaryCycle q)
     (hq : q ∈ Set.Icc (5/2) 4) (hr : r ∈ Set.Icc (5/2) 4) (hqr : q ≤ r)
@@ -545,15 +558,16 @@ lemma BoundaryCycle.expanded_axis {q r : ℝ} (C : BoundaryCycle q)
     have hi := C.expansionFactor_radius (r := r) i
     have hj := C.expansionFactor_radius (r := r) (next i)
     dsimp [u,v,dot,sub,scale]
-    nlinarith [congrArg (fun x : ℝ => x*(C.ray i).1) hi,
-      congrArg (fun x : ℝ => x*(C.ray i).2) hi,
-      congrArg (fun x : ℝ => x*(C.ray (next i)).1) hj,
-      congrArg (fun x : ℝ => x*(C.ray (next i)).2) hj]
+    nlinarith [congrArg (fun x : ℝ => x*(n.1*(C.ray i).1)) hi,
+      congrArg (fun x : ℝ => x*(n.2*(C.ray i).2)) hi,
+      congrArg (fun x : ℝ => x*(n.1*(C.ray (next i)).1)) hj,
+      congrArg (fun x : ℝ => x*(n.2*(C.ray (next i)).2)) hj]
   simpa [htarget] using htransport
 
-/-- The actual endpoint configuration. Its full square records, polar rays,
-nearest-axis representatives, radial kinds and selected witnesses are retained.
-The proof of `feasible` uses the stronger all-axis endpoint transport above. -/
+/-- The expansion of `C` to the level `r`: each square on the outer curve is moved along its
+centre direction to the outer curve at the level `r`, and the polar rays, canonical frames,
+radial kinds and witnesses are those of `C`. The witnesses separate by
+`BoundaryCycle.expanded_axis`, which holds for every separating axis. -/
 def BoundaryCycle.expand {q r : ℝ} (C : BoundaryCycle q)
     (hq : q ∈ Set.Icc (5/2) 4) (hr : r ∈ Set.Icc (5/2) 4) (hqr : q ≤ r) :
     BoundaryCycle r where
@@ -581,12 +595,14 @@ def BoundaryCycle.expand {q r : ℝ} (C : BoundaryCycle q)
     rw [C.expanded_sqrt hq hr hqr i]
     change C.expansionFactor r i*(C.square i).center.1 = _
     rw [C.center_cos i]
-    rfl
+    simp only [BoundaryCycle.radius]
+    ring
   center_sin i := by
     rw [C.expanded_sqrt hq hr hqr i]
     change C.expansionFactor r i*(C.square i).center.2 = _
     rw [C.center_sin i]
-    rfl
+    simp only [BoundaryCycle.radius]
+    ring
   frame_cos i := by
     rw [C.expanded_tangent hq hr hqr i]
     exact C.frame_cos i
@@ -645,10 +661,12 @@ lemma center_direction_separated {K J : UnitSquare} {q : ℝ}
   let γ := dist ((Complex.arg zK) : Direction) ((Complex.arg zJ) : Direction)
   have hγ : 0 ≤ γ ∧ γ ≤ Real.pi := by
     refine ⟨dist_nonneg,?_⟩
-    rw [γ,direction_dist]
+    simp only [γ]
+    rw [direction_dist]
     exact Real.Angle.abs_toReal_le_pi _
   have hcos : Real.cos γ=Real.cos (Complex.arg zJ-Complex.arg zK) := by
-    rw [γ,dist_comm,direction_dist,Real.cos_abs]
+    simp only [γ]
+    rw [dist_comm,direction_dist,Real.cos_abs]
     have he := congrArg Real.Angle.cos
       (Real.Angle.coe_toReal (((Complex.arg zJ : Direction))-((Complex.arg zK : Direction))))
     simpa [Real.Angle.cos_coe,← Real.Angle.coe_sub] using he
@@ -667,9 +685,9 @@ structure OrderedExterior {S : Fin 8 → UnitSquare} (q : ℝ) where
   square_eq : ∀ i, cycle.square i=S (index i)
   original_order : PolarOrder cycle
 
-/-- The initial cyclic order is obtained from actual center directions. Its
-twenty-one separation facts come directly from the original packing. Only
-the seven selected neighboring witnesses are retained afterwards. -/
+/-- The exterior squares of a packing, in the order of their centre directions, form a
+neighbour cycle with a polar order. The separations of all twenty-one pairs come from the
+packing; only the seven witnesses of consecutive pairs are kept. -/
 theorem ordered_exterior_exists {S : Fin 8 → UnitSquare} {q : ℝ}
     (hp : SqPacking S (0,0) q) (hq : q ≤ Q1) : Nonempty (OrderedExterior (S := S) q) := by
   have hbounds := sourceLevel_bounds hq
@@ -715,11 +733,20 @@ theorem ordered_exterior_exists {S : Fin 8 → UnitSquare} {q : ℝ}
     simp only [directions,Real.Angle.cos_coe,Real.Angle.sin_coe] at hcos hsin
     rw [← hcos] at hx
     rw [← hsin] at hy
-    constructor <;> simpa [C,Complex.norm_def,Complex.normSq_mk,normSq,pow_two] using (by first | exact hx.symm | exact hy.symm)
+    constructor
+    · simpa [C,Complex.norm_def,Complex.normSq_mk,normSq,pow_two] using hx.symm
+    · simpa [C,Complex.norm_def,Complex.normSq_mk,normSq,pow_two] using hy.symm
   have hpos (i : Vertex) : 0 < angleGap β i := by
+    have h0 := hstep 0
+    have h1 := hstep 1
+    have h2 := hstep 2
+    have h3 := hstep 3
+    have h4 := hstep 4
+    have h5 := hstep 5
+    simp at h0 h1 h2 h3 h4 h5 hwrap
     fin_cases i <;>
       simp [angleGap,next] <;>
-      linarith [hstep 0,hstep 1,hstep 2,hstep 3,hstep 4,hstep 5]
+      linarith
   have hstrict (i : Vertex) : 3/5 < angleGap β i := gap_gt_three_fifths (hpos i)
     (polar_gap_cosine_bound C (hbounds.2.2.2.trans radius_levels.2.2.1.le) β
       (fun j => (hpolar j).1) (fun j => (hpolar j).2) i)
@@ -738,9 +765,10 @@ theorem ordered_exterior_exists {S : Fin 8 → UnitSquare} {q : ℝ}
   obtain ⟨i,hi⟩ := Fin.exists_succAbove_eq hj
   exact ⟨σ.symm i,by simpa using hi⟩
 
-/-- The recovered source is the boundary cycle before expansion. The original
-packing's centers remain in `original.cycle`; they are retained separately
-for the stationary equality pullback. -/
+/-- The ordered exterior squares of a packing (`original`), their boundary reduction
+(`reduction`), whose result is a boundary cycle at the level `max q qMinus`, and the expansion of
+that cycle to the level `Q1` (`expanded`). The centres of the packing remain in
+`original.cycle`, for the pullback of the stationary identity in the equality case. -/
 structure BoundaryNormalization {S : Fin 8 → UnitSquare} (q : ℝ) where
   original : OrderedExterior (S := S) q
   reduction : BoundaryReduction original.cycle

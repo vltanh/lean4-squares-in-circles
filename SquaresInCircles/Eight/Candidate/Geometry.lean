@@ -3,10 +3,16 @@ module
 public import SquaresInCircles.Eight.Candidate.Model
 
 /-!
-# Actual-pair adapters and the elementary candidate exclusions
+# Eight squares: state bounds, and owners and signs at small mismatch
 
-This draft proves the coordinate estimates for both radial kinds and keeps
-the order of the zero-owner and sign consequences explicit.
+In a boundary cycle at a level at most `Q0` every square has `447/800 < a < 283/200` and
+`0 ≤ b < 9/10` (`canonical_bounds`), on either radial curve. For a cycle with a candidate frame
+the projections of a pair on the four forward axes, less the threshold, are the margins
+`forwardMargin` at the angle `phi` (`Frame.margin_identity`). Two consequences follow, in this
+order. If the mismatch is at most `2/5`, only the forward axes `0` and `2` can separate the pairs
+of the three edges with digit `0` (`zero_owners_of_mismatch`). If it is at most `1/10`, the source
+of each such edge has a positive and the target a negative tangent, which fixes the signs of `H`,
+`G`, `A`, `B`, `T` and `D` (`signs_of_mismatch`).
 -/
 
 @[expose] public section
@@ -67,15 +73,15 @@ theorem canonical_bounds {q : ℝ} (C : BoundaryCycle q) (hq : q ≤ Q0) (i : Ve
     have hsq : (C.a i - 1 / 2) ^ 2 ≤ (47 / 800 : ℝ) ^ 2 :=
       pow_le_pow_left₀ (by linarith) (by linarith) 2
     norm_num at hsq hcore
-    nlinarith
+    linarith
   have hau : C.a i < 283 / 200 := by
     dsimp [SquaresInCircles.phi, Q0] at hp
-    nlinarith [sq_nonneg (C.b i)]
+    nlinarith only [sq_nonneg (C.b i), hb, hp, ha]
   have hbu : C.b i < 9 / 10 := by
     have hsq : (C.b i + 1 / 2) ^ 2 ≤ (C.a i + 1 / 2) ^ 2 :=
       pow_le_pow_left₀ (by linarith) (by linarith) 2
     dsimp [SquaresInCircles.phi, Q0] at hp
-    nlinarith
+    nlinarith only [hab, hp, hsq, ha, haHalf, hb]
   exact ⟨hal, hau, hb, hbu⟩
 
 theorem signed_b_abs {q : ℝ} (C : BoundaryCycle q) (i : Vertex) :
@@ -124,16 +130,16 @@ theorem primary_margin_negative {X Y v t : ℝ}
     (hX : X ≤ 283 / 200) (hY : 447 / 800 ≤ Y) (hv : |v| ≤ Y)
     (ht : |t| ≤ 2 / 5) : X - Y * Real.cos t + v * Real.sin t - pairWidth t < 0 := by
   obtain ⟨hc, hs⟩ := small_angle ht
-  have hc0 : 0 ≤ Real.cos t := by nlinarith
+  have hc0 : 0 ≤ Real.cos t := by linarith
   have hs0 := abs_nonneg (Real.sin t)
   have hm : v * Real.sin t ≤ Y * |Real.sin t| := by
     calc v * Real.sin t ≤ |v * Real.sin t| := le_abs_self _
       _ = |v| * |Real.sin t| := abs_mul _ _
       _ ≤ Y * |Real.sin t| := mul_le_mul_of_nonneg_right hv hs0
-  have hcs : 0 ≤ Real.cos t - |Real.sin t| := by nlinarith
+  have hcs : 0 ≤ Real.cos t - |Real.sin t| := by linarith
   have hprod := mul_nonneg (sub_nonneg.mpr hY) hcs
   rw [pairWidth, abs_of_nonneg hc0]
-  nlinarith
+  linarith
 
 theorem zero_edge_primary_excluded {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
     (hq : q ≤ Q0) {i : Vertex} (hi : i ∈ zeroEdges)
@@ -174,13 +180,15 @@ theorem zero_owners_of_mismatch {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
   · norm_num [zeroOwners]
   · exact (h3 hj).elim
 
-/-- Two scalar bounds used in the strict sign bootstrap. -/
+/-- If the source has `σ b ≤ 0`, the margins of the forward axes `0` and `2` are negative at
+angles up to `1/10`. With `secondary_margins_target_nonneg`, for a target with `τ B ≥ 0`, this
+gives the strict signs of `zero_edge_signs`. -/
 theorem secondary_margins_source_nonpos {a b A B σ τ t : ℝ}
     (ha : 0 ≤ a) (hA : 0 ≤ A) (hau : a ≤ 283 / 200) (hAu : A ≤ 283 / 200)
     (hx : σ * b ≤ 0) (hy : |τ * B| ≤ 9 / 10) (ht : |t| ≤ 1 / 10) :
     forwardMargin 0 a b A B σ τ t < 0 ∧ forwardMargin 2 a b A B σ τ t < 0 := by
   obtain ⟨hc, hs⟩ := small_angle ht
-  have hc0 : 0 ≤ Real.cos t := by nlinarith
+  have hc0 : 0 ≤ Real.cos t := by linarith
   have hc1 := Real.cos_le_one t
   have hs0 := abs_nonneg (Real.sin t)
   have hsin : Real.sin t ≤ |Real.sin t| := le_abs_self _
@@ -191,14 +199,14 @@ theorem secondary_margins_source_nonpos {a b A B σ τ t : ℝ}
   have has := mul_le_mul_of_nonneg_left hsin ha
   have hAs' := mul_le_mul_of_nonneg_right hAu hs0
   have has' := mul_le_mul_of_nonneg_right hau hs0
-  constructor <;> simp [forwardMargin, pairWidth, abs_of_nonneg hc0] <;> nlinarith
+  constructor <;> simp [forwardMargin, pairWidth, abs_of_nonneg hc0] <;> linarith
 
 theorem secondary_margins_target_nonneg {a b A B σ τ t : ℝ}
     (ha : 0 ≤ a) (hA : 0 ≤ A) (hau : a ≤ 283 / 200) (hAu : A ≤ 283 / 200)
     (hx : |σ * b| ≤ 9 / 10) (hy : 0 ≤ τ * B) (ht : |t| ≤ 1 / 10) :
     forwardMargin 0 a b A B σ τ t < 0 ∧ forwardMargin 2 a b A B σ τ t < 0 := by
   obtain ⟨hc, hs⟩ := small_angle ht
-  have hc0 : 0 ≤ Real.cos t := by nlinarith
+  have hc0 : 0 ≤ Real.cos t := by linarith
   have hc1 := Real.cos_le_one t
   have hs0 := abs_nonneg (Real.sin t)
   have hsin : Real.sin t ≤ |Real.sin t| := le_abs_self _
@@ -209,7 +217,7 @@ theorem secondary_margins_target_nonneg {a b A B σ τ t : ℝ}
   have has := mul_le_mul_of_nonneg_left hsin ha
   have hAs' := mul_le_mul_of_nonneg_right hAu hs0
   have has' := mul_le_mul_of_nonneg_right hau hs0
-  constructor <;> simp [forwardMargin, pairWidth, abs_of_nonneg hc0] <;> nlinarith
+  constructor <;> simp [forwardMargin, pairWidth, abs_of_nonneg hc0] <;> linarith
 
 theorem zero_edge_signs {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
     (hq : q ≤ Q0) {i : Vertex} (hi : i ∈ zeroEdges)

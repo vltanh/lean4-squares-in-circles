@@ -5,10 +5,19 @@ public import SquaresInCircles.Common.Trigonometry
 public import SquaresInCircles.Common.Analysis
 
 /-!
-# Candidate-word coordinates
+# Eight squares: candidate coordinates
 
-The fixed cyclic roles are H,G,A,B,T,D,E. The five charged differences
-exclude G→A and E→H. This source is an uncompiled F7/F8 draft.
+In a boundary cycle with the quarter word `0101011` the squares have the roles
+`H, G, A, B, T, D, E`, and their canonical frames are `-1, -1, 0, 0, 1, 1, 2` quarter turns ahead
+of that of `A` (`offsets`). A `Frame` gives real representatives `theta` of the frames with
+`theta A = 0`. The five aligned edges `H → G`, `A → B`, `B → T`, `T → D` and `D → E` are charged:
+the mismatch is the sum of the frame differences on them, which leaves out the two mixed edges
+`G → A` and `E → H`, and the tilt is `theta G`.
+
+The file also names the tangent cuts (`EHalf`, `GCut`, `TCut`, `HDCut`), the signs and the owner
+sets of the later steps, and `ChargedBound`, what a charged table proves about a cycle: one label
+per square and a bound on the charged cost of every edge for every separating forward axis.
+Summed round the cycle it gives `∑ γᵢ + β hSum < 2π` (`ChargedBound.cyclic`).
 -/
 
 @[expose] public section
@@ -78,9 +87,10 @@ theorem delta_le_mismatch (θ : Vertex → ℝ) {i : Vertex} (hi : i ∈ charged
     |delta θ i| ≤ mismatch θ :=
   Finset.single_le_sum (fun j _ => abs_nonneg (delta θ j)) hi
 
-/-- Real frame lifts after the geometric quarter-word theorem and an actual
-rotation normalizing A. No tangent, mismatch, owner, or tilt conclusion is
-included here. -/
+/-- Real representatives of the frames of a cycle with the candidate word, after the rotation
+that makes `theta A = 0`: the canonical angles are `theta i + offsets i · π/2`, the
+representatives lie in an interval shorter than `7/10`, the gaps lie in `(19/25, 3π/4)`, and only
+forward axes separate. The tangents, the mismatch, the owners and the tilt are bounded later. -/
 structure Frame {q : ℝ} (C : BoundaryCycle q) where
   theta : Vertex → ℝ
   theta_A : theta A = 0
@@ -110,7 +120,8 @@ def margin {q : ℝ} (C : BoundaryCycle q) (θ : Vertex → ℝ) (i : Vertex) (j
   forwardMargin j (C.a i) (C.b i) (C.a (next i)) (C.b (next i))
     (C.sigma i) (C.sigma (next i)) (phi θ i)
 
-/-- Tangent cuts in their exact dependency order. -/
+/-- The tangent cuts, in the order in which they are proved, each using the earlier ones. The
+first, `τ_E ≤ 0`, is a normalization by a reflection. -/
 def EHalf {q : ℝ} (C : BoundaryCycle q) : Prop := C.tangent E ≤ 0
 
 def GCut {q : ℝ} (C : BoundaryCycle q) : Prop :=
@@ -144,8 +155,8 @@ def QuarterOwners {q : ℝ} (C : BoundaryCycle q) : Prop :=
 
 def charge (β : ℝ) (i : Vertex) : ℝ := if i ∈ charged then β else 0
 
-/-- The continuous conclusion of a complete charged table. The label is chosen
-once per vertex. All initially feasible forward axes receive the same bound. -/
+/-- What a charged table proves about a cycle: with one label per square, the cost of every
+edge, charged by `β` on the aligned edges, exceeds `γ i` for every separating forward axis. -/
 structure ChargedBound {q : ℝ} (C : BoundaryCycle q) (F : Frame C)
     (β : ℝ) (γ : Vertex → ℝ) where
   label : Vertex → ℝ
@@ -156,7 +167,9 @@ structure ChargedBound {q : ℝ} (C : BoundaryCycle q) (F : Frame C)
 theorem ChargedBound.cyclic {q : ℝ} {C : BoundaryCycle q} {F : Frame C}
     {β : ℝ} {γ : Vertex → ℝ} (P : ChargedBound C F β γ) :
     (∑ i, γ i) + β * hSum F.theta < 2 * Real.pi := by
-  have hedge (i : Vertex) := by
+  have hedge : ∀ i, γ i < phi F.theta i - charge β i * h (phi F.theta i) +
+      P.label i - P.label (next i) := by
+    intro i
     obtain ⟨j, hj⟩ := F.forward_complete i (C.selected i) (C.feasible i)
     exact P.pair_bound i j (hj ▸ C.feasible i)
   have hh := Finset.sum_lt_sum_of_nonempty (s := (Finset.univ : Finset Vertex))
@@ -165,8 +178,17 @@ theorem ChargedBound.cyclic {q : ℝ} {C : BoundaryCycle q} {F : Frame C}
       (∑ i, (phi F.theta i - charge β i * h (phi F.theta i) +
         P.label i - P.label (next i))) =
       2 * Real.pi - β * hSum F.theta := by
-    simp [Fin.sum_univ_succ, charge, charged, hSum, h_phi,
-      phi, delta, word, next]
+    have hterm : ∀ i, phi F.theta i - charge β i * h (phi F.theta i) +
+        P.label i - P.label (next i) =
+        phi F.theta i - charge β i * h (|delta F.theta i|) +
+          (P.label i - P.label (next i)) := by
+      intro i
+      rw [h_phi]
+      ring
+    have hcharge : (∑ i, charge β i * h (|delta F.theta i|)) = β * hSum F.theta := by
+      simp only [charge, ite_mul, zero_mul, Fintype.sum_ite_mem, hSum, Finset.mul_sum]
+    rw [Finset.sum_congr rfl (fun i _ => hterm i), Finset.sum_add_distrib,
+      Finset.sum_sub_distrib, sum_phi, sum_marker_difference, hcharge]
     ring
   rw [hid] at hh
   linarith

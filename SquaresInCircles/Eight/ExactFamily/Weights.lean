@@ -3,11 +3,16 @@ module
 public import SquaresInCircles.Eight.ExactFamily.Coordinates
 
 /-!
-# The adaptive contact and circle weights
+# Eight squares: the contact and circle weights of the chain
 
-Uncompiled draft, transcribing `HUMAN_ADAPTIVE_DUAL_SEVEN_SQUARE_SHARPNESS.md`
-Section 3.  The E vertical balance is proved from position stationarity.  It
-is not included among the assumptions on the weights.
+From the coordinates of a chain, the module defines five circle weights `mu`, one for each corner
+on the circle, normalized to add up to `1` (`WeightDomain.mu_sum`), and seven contact weights `lam`,
+one for each contact of the cycle. They are positive on the sign domain `WeightDomain`, which holds
+at every point of the stationary system (`IsStationary.weightDomain`). With these weights the
+forces on the squares balance: at each of `A`, `B`, `D`, `E` and `H` the contact forces cancel the
+corner force `2 μ P` (`force_balance`), and on `T` and `G` they cancel each other
+(`slider_forces_zero`). The vertical balance at `E` is not an assumption on the weights; it follows
+from the position equation `positionDerivative = 0` (`last_force_residual`).
 -/
 
 @[expose] public section
@@ -37,8 +42,8 @@ def rawLambda (d : Coordinates) : Fin 7 → ℝ :=
   ![d.rawAlpha,d.rawBeta,d.rawBeta,d.rawDelta,1,1,d.rawEpsilon]
 def lam (d : Coordinates) (i : Fin 7) : ℝ := d.rawLambda i/d.weightMass
 
-/-- The elementary sign domain used by the adaptive comparison at variable
-tilt.  It does not assert stationarity or optimality. -/
+/-- The sign conditions under which the weights are positive. The adaptive comparison uses them
+at every tilt; they assert neither stationarity nor optimality. -/
 structure WeightDomain (d : Coordinates) : Prop where
   x₁_pos : 0 < d.x₁
   x₂_pos : 0 < d.x₂
@@ -117,16 +122,19 @@ theorem WeightDomain.mu_pos {d : Coordinates} (h : d.WeightDomain) (i : Fin 5) :
 
 theorem WeightDomain.mu_sum {d : Coordinates} (h : d.WeightDomain) :
     ∑ i : Fin 5, d.mu i = 1 := by
-  simp only [mu, ← Finset.sum_div, ← weightMass,
-    div_self (ne_of_gt h.weightMass_pos)]
+  simp only [mu]
+  rw [← Finset.sum_div]
+  exact div_self (ne_of_gt h.weightMass_pos)
 
 theorem WeightDomain.rawLambda_pos {d : Coordinates} (h : d.WeightDomain) (i : Fin 7) :
     0 < d.rawLambda i := by
+  have hα : 0 < d.rawAlpha := h.rawAlpha_pos
+  have hβ : 0 < d.rawBeta := h.rawBeta_pos
   have hδ : 0 < d.rawDelta := mul_pos
     (mul_pos (by norm_num) (h.rawMu_pos 2)) h.y₃_pos
   have hε : 0 < d.rawEpsilon := div_pos_of_neg_of_neg h.h₂_neg h.h₁_neg
-  fin_cases i <;> simp only [rawLambda, Matrix.cons_val_zero, Matrix.cons_val_one,
-    Matrix.cons_val_succ] <;> first | assumption | norm_num
+  fin_cases i <;> simp only [rawLambda, Fin.zero_eta, Fin.mk_one, Fin.reduceFinMk,
+    Matrix.cons_val] <;> first | assumption | norm_num
 
 theorem WeightDomain.lam_pos {d : Coordinates} (h : d.WeightDomain) (i : Fin 7) :
     0 < d.lam i := div_pos (h.rawLambda_pos i) h.weightMass_pos
@@ -147,7 +155,7 @@ theorem last_force_residual {d : Coordinates} (h : d.WeightDomain) :
   field_simp [hx₁,hx₂,hy₃,hx₃,hx₄,hy,hh₁]
   ring
 
-/-- The unnormalized center forces, in A,B,D,E,H,T,G order. -/
+/-- The unnormalized centre forces, in the order `A, B, D, E, H, T, G`. -/
 def rawForces (d : Coordinates) : Fin 7 → Point :=
   ![(-d.c, d.rawAlpha-d.s),
     (-d.rawBeta,-d.rawAlpha),
@@ -169,12 +177,11 @@ theorem raw_force_balance {d : Coordinates} (h : d.WeightDomain)
     simp
   fin_cases i
   all_goals
-    ext <;> simp only [rawMu, rawForces, anchorPoints, Matrix.cons_val_zero,
-      Matrix.cons_val_one, Matrix.cons_val_succ, Fin.castSucc_mk, add, scale,
-      Prod.fst_mk, Prod.snd_mk]
+    ext <;> simp only [rawMu, rawForces, anchorPoints, Fin.zero_eta, Fin.mk_one,
+      Fin.reduceFinMk, Fin.reduceCastSucc, Matrix.cons_val, add, scale]
   all_goals
     first
-    | simpa [mul_comm] using hE
+    | linear_combination hE
     | dsimp [rawMuA,rawMuB,rawMuD,rawMuE,rawMuH,rawAlpha,rawBeta,
         rawDelta,rawEpsilon,inFrame]
       field_simp [hx₁,hx₃,hx₄,hy,hh₁]

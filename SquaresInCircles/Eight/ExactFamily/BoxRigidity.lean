@@ -4,17 +4,18 @@ public import SquaresInCircles.Eight.Equality
 public import SquaresInCircles.Common.DiskSupport
 
 /-!
-# Five independent parameters modulo every Euclidean isometry
+# Eight squares: distinct points of the box give non-congruent packings
 
-Uncompiled draft, completing the noncongruence assertion of Section 12.8 of
-`UNRESTRICTED_EIGHT_SQUARE_HAND_PROOF.md`.  A distance preserving bijection is
-allowed to translate, rotate, reflect, and relabel.  The positive stationary
-circle weights first recover the disk center.  Two disjoint rational bands
-for the radii of the A and E centers recover these two anchors.  Their
-centers are linearly independent, so polarization fixes the isometry.
-The remaining center bands and two support widths recover all parameters.
-
-This proof uses the full five dimensional box, including its boundary.
+If two points of the closed box `InBox` give models that are congruent by a distance-preserving
+bijection of the plane, which may translate, rotate and reflect, together with a relabelling of
+the squares, then the two points are equal (`box_rigid_parameters`, `box_rigidlyCongruent_iff`). The
+positive circle weights of the stationary chain first recover the disk centre: the origin is the
+only centre of a disk of radius `√qStar` that holds a model (`enclosing_center_unique`), so the
+isometry fixes it. The squared distances of the eight centres from the origin lie in rational
+bands (`center_band`), and the bands of `A` and `E` are disjoint from all others, so the isometry
+fixes the centres of `A` and `E`. These are linearly independent, so by polarization the isometry is
+the identity (`fixed_independent_points`). The remaining centres and the frame of the central
+square, through its support widths, then give all five parameters.
 -/
 
 @[expose] public section
@@ -38,36 +39,40 @@ theorem isometry_midpoint (e : Point ≃ Point)
   have h₂ := he r (midpoint p r)
   have h₃ := he p r
   have hm := midpoint_identity (e p) (e r) (e (midpoint p r))
+  have hpm : normSq (sub p (midpoint p r))=normSq (sub p r)/4 := by
+    dsimp [normSq,sub,midpoint]; ring
+  have hrm : normSq (sub r (midpoint p r))=normSq (sub p r)/4 := by
+    dsimp [normSq,sub,midpoint]; ring
   have hn : normSq (sub (midpoint (e p) (e r)) (e (midpoint p r)))=0 := by
-    rw [h₁,h₂,h₃] at hm
-    dsimp [normSq,sub,midpoint] at hm
-    nlinarith
+    rw [h₁,h₂,h₃,hpm,hrm] at hm
+    linarith
   have hz := (zero_normSq_iff _).mp hn
-  apply Prod.ext <;>
-    have hx := congrArg Prod.fst hz <;> have hy := congrArg Prod.snd hz <;>
-    dsimp [sub] at hx hy <;> linarith
+  have hx := congrArg Prod.fst hz
+  have hy := congrArg Prod.snd hz
+  dsimp [sub] at hx hy
+  exact Prod.ext (by linarith) (by linarith)
 
 theorem closed_center_distance (K : UnitSquare) {p : Point} (hp : closedSquare K p) :
     normSq (sub p K.center)≤1/2 := by
   have hx : (localX K p)^2≤(1/2:ℝ)^2 := by
     have h := abs_le.mp hp.1
-    nlinarith [mul_nonneg (by linarith : 0≤localX K p+1/2)
-      (by linarith : 0≤1/2-localX K p)]
+    linarith [mul_nonneg (by linarith only [h] : 0≤localX K p+1/2)
+      (by linarith only [h] : 0≤1/2-localX K p)]
   have hy : (localY K p)^2≤(1/2:ℝ)^2 := by
     have h := abs_le.mp hp.2
-    nlinarith [mul_nonneg (by linarith : 0≤localY K p+1/2)
-      (by linarith : 0≤1/2-localY K p)]
+    linarith [mul_nonneg (by linarith only [h] : 0≤localY K p+1/2)
+      (by linarith only [h] : 0≤1/2-localY K p)]
   have hid : normSq (sub p K.center)=(localX K p)^2+(localY K p)^2 := by
     dsimp [normSq,sub,localX,localY]
     linear_combination -((p.1-K.center.1)^2+(p.2-K.center.2)^2)*K.unit
   rw [hid]
-  linarith
+  linarith only [hx, hy]
 
-/-- The center is recovered from one pair of opposite vertices.  This avoids
-any choice of quarter-turn representative for the square's physical frame. -/
+/-- The centre is recovered from one pair of opposite vertices. This avoids
+any choice of quarter-turn representative for the frame of the square. -/
 theorem isometry_square_center (e : Point ≃ Point)
     (he : ∀ p r, normSq (sub (e p) (e r))=normSq (sub p r))
-    (K L : UnitSquare) (himage : ∀ p, closedSquare K p→closedSquare L (e p)) :
+    (K L : UnitSquare) (himage : ∀ p, closedSquare K p→ closedSquare L (e p)) :
     e K.center=L.center := by
   let p := add K.center (rotate K (1/2,1/2))
   let r := add K.center (rotate K (-1/2,-1/2))
@@ -89,7 +94,7 @@ theorem isometry_square_center (e : Point ≃ Point)
   have hm := midpoint_identity (e p) (e r) L.center
   rw [he p r,hdist,← isometry_midpoint e he p r,hmid] at hm
   have hz : normSq (sub (e K.center) L.center)=0 := by
-    nlinarith [normSq_nonneg (sub (e K.center) L.center)]
+    linarith [normSq_nonneg (sub (e K.center) L.center)]
   have hzero := (zero_normSq_iff _).mp hz
   apply Prod.ext <;>
     have hx := congrArg Prod.fst hzero <;> have hy := congrArg Prod.snd hzero <;>
@@ -99,7 +104,7 @@ theorem same_closed_width {K L : UnitSquare}
     (hc : K.center=L.center) (hs : ∀ p,closedSquare K p↔closedSquare L p)
     (n : Point) : width K n=width L n := by
   have one_way (K L : UnitSquare) (hc : K.center=L.center)
-      (h : ∀ p,closedSquare K p→closedSquare L p) : width K n≤width L n := by
+      (h : ∀ p,closedSquare K p→ closedSquare L p) : width K n≤width L n := by
     obtain ⟨p,hp,he⟩ := exists_support_vertex K n
     have hb := closed_dot_bound L n (h p hp)
     have hb' := (abs_le.mp hb).2
@@ -114,21 +119,21 @@ def anchorIndex : Fin 5 → Fin 8 := ![3,4,6,7,1]
 theorem anchor_closed (p : EqualityParameters) (i : Fin 5) :
     closedSquare (p.model sharpData (anchorIndex i)) (sharpData.anchorPoints i) := by
   fin_cases i
-  all_goals
-    first
-    | norm_num [anchorIndex,model,anchorPoints,pA,pB,pD,pE,axisSquare,
-        closedSquare,localX,localY]
-    | change closedSquare (sharpData.tiltedSquare sharpData.pH)
-        (sharpData.inFrame sharpData.h₁ sharpData.h₂)
-      have hx : localX (sharpData.tiltedSquare sharpData.pH)
-          (sharpData.inFrame sharpData.h₁ sharpData.h₂)= -1/2 := by
-        dsimp [localX,tiltedSquare,pH,inFrame]
-        linear_combination -(1/2:ℝ)*sharpData.unit
-      have hy : localY (sharpData.tiltedSquare sharpData.pH)
-          (sharpData.inFrame sharpData.h₁ sharpData.h₂)= -1/2 := by
-        dsimp [localY,tiltedSquare,pH,inFrame]
-        linear_combination -(1/2:ℝ)*sharpData.unit
-      norm_num [closedSquare,hx,hy]
+  · norm_num [anchorIndex,model,anchorPoints,pA,axisSquare,closedSquare,localX,localY]
+  · norm_num [anchorIndex,model,anchorPoints,pB,axisSquare,closedSquare,localX,localY]
+  · norm_num [anchorIndex,model,anchorPoints,pD,axisSquare,closedSquare,localX,localY]
+  · norm_num [anchorIndex,model,anchorPoints,pE,axisSquare,closedSquare,localX,localY]
+  · change closedSquare (sharpData.tiltedSquare sharpData.pH)
+      (sharpData.inFrame sharpData.h₁ sharpData.h₂)
+    have hx : localX (sharpData.tiltedSquare sharpData.pH)
+        (sharpData.inFrame sharpData.h₁ sharpData.h₂)= -1/2 := by
+      dsimp [localX,tiltedSquare,pH,inFrame]
+      linear_combination -(1/2:ℝ)*sharpData.unit
+    have hy : localY (sharpData.tiltedSquare sharpData.pH)
+        (sharpData.inFrame sharpData.h₁ sharpData.h₂)= -1/2 := by
+      dsimp [localY,tiltedSquare,pH,inFrame]
+      linear_combination -(1/2:ℝ)*sharpData.unit
+    norm_num [closedSquare,hx,hy]
 
 theorem anchor_barycenter :
     (∑ i : Fin 5,sharpData.mu i*(sharpData.anchorPoints i).1)=0 ∧
@@ -180,10 +185,11 @@ theorem anchor_second_moment (o : Point) :
   rw [← Finset.sum_mul,hmass]
   ring
 
-/-- The stationary barycenter proves uniqueness of the enclosing center
-directly, before invoking the unrestricted optimality theorem. -/
+/-- The origin is the only centre of a disk of squared radius `qStar` that holds a model. The
+corners on the circle have their weighted barycentre at the origin, so a disk about any other point
+would miss one of them; this needs no lower bound for the radius. -/
 theorem enclosing_center_unique (p : EqualityParameters) (o : Point)
-    (h : ∀ i x,closedSquare (p.model sharpData i) x→normSq (sub x o)≤qStar) :
+    (h : ∀ i x,closedSquare (p.model sharpData i) x→ normSq (sub x o)≤qStar) :
     o=(0,0) := by
   have hsum : (∑ i : Fin 5,sharpData.mu i*normSq (sub (sharpData.anchorPoints i) o))≤
       ∑ i : Fin 5,sharpData.mu i*qStar := by
@@ -192,14 +198,14 @@ theorem enclosing_center_unique (p : EqualityParameters) (o : Point)
     exact mul_le_mul_of_nonneg_left (h (anchorIndex i) _ (anchor_closed p i))
       (sharpData_stationary.weightDomain.mu_pos i).le
   rw [anchor_second_moment,← Finset.sum_mul,sharpData_stationary.weightDomain.mu_sum] at hsum
-  have hz : normSq o=0 := by nlinarith [normSq_nonneg o]
+  have hz : normSq o=0 := by linarith [normSq_nonneg o]
   exact (zero_normSq_iff _).mp hz
 
 private theorem positive_square_interval {l u x : ℝ} (hl : 0≤l)
     (hx : l≤x ∧ x≤u) : l^2≤x^2 ∧ x^2≤u^2 := by
   have h₁ := mul_nonneg (sub_nonneg.mpr hx.1) (show 0≤x+l by linarith)
   have h₂ := mul_nonneg (sub_nonneg.mpr hx.2) (show 0≤u+x by linarith)
-  constructor <;> nlinarith
+  constructor <;> linarith
 
 def centerBand : Fin 8 → ℝ × ℝ :=
   ![(1/100,3/100),(161/100,163/100),(157/100,159/100),
@@ -207,7 +213,7 @@ def centerBand : Fin 8 → ℝ × ℝ :=
     (161/100,163/100),(196/100,198/100)]
 
 /-- Only D and H share a band.  A, E, the central square and both sliders
-are distinguished using the squared radii of their centers alone. -/
+are distinguished using the squared radii of their centres alone. -/
 theorem center_band {p : EqualityParameters} (hp : p.InBox) (i : Fin 8) :
     (centerBand i).1<normSq (p.model sharpData i).center ∧
       normSq (p.model sharpData i).center<(centerBand i).2 := by
@@ -215,63 +221,101 @@ theorem center_band {p : EqualityParameters} (hp : p.InBox) (i : Fin 8) :
   obtain ⟨hy,huy⟩ := sharp_y
   obtain ⟨hpx,hpy,hpw,hpz,hpη⟩ := hp
   have hAx := positive_square_interval (l:=12515/10000) (u:=12516/10000)
-    (x:=sharpData.x₁-1/2) (by norm_num) ⟨by linarith,by linarith⟩
+    (x:=sharpData.x₁-1/2) (by norm_num) ⟨by linarith only [hx₁],by linarith only [hx₁u]⟩
   have hAy := positive_square_interval (l:=4205/10000) (u:=4208/10000)
-    (x:=-(sharpData.y+1/2)) (by norm_num) ⟨by linarith,by linarith⟩
+    (x:=-(sharpData.y+1/2)) (by norm_num) ⟨by linarith only [huy],by linarith only [hy]⟩
   have hBx := positive_square_interval (l:=11584/10000) (u:=11586/10000)
-    (x:=sharpData.x₂-1/2) (by norm_num) ⟨by linarith,by linarith⟩
+    (x:=sharpData.x₂-1/2) (by norm_num) ⟨by linarith only [hx₂],by linarith only [hx₂u]⟩
   have hBy := positive_square_interval (l:=5792/10000) (u:=5795/10000)
-    (x:=sharpData.y+3/2) (by norm_num) ⟨by linarith,by linarith⟩
+    (x:=sharpData.y+3/2) (by norm_num) ⟨by linarith only [hy],by linarith only [huy]⟩
   have hDx := positive_square_interval (l:=8414/10000) (u:=8416/10000)
-    (x:=-(sharpData.x₂-5/2)) (by norm_num) ⟨by linarith,by linarith⟩
+    (x:=-(sharpData.x₂-5/2)) (by norm_num) ⟨by linarith only [hx₂u],by linarith only [hx₂]⟩
   have hDy := positive_square_interval (l:=9545/10000) (u:=9547/10000)
-    (x:=sharpData.y₃-1/2) (by norm_num) ⟨by linarith,by linarith⟩
+    (x:=sharpData.y₃-1/2) (by norm_num) ⟨by linarith only [hy₃],by linarith only [hy₃u]⟩
   have hEx := positive_square_interval (l:=14021/10000) (u:=14022/10000)
-    (x:=-(sharpData.x₄+1/2)) (by norm_num) ⟨by linarith,by linarith⟩
+    (x:=-(sharpData.x₄+1/2)) (by norm_num) ⟨by linarith only [hx₄u],by linarith only [hx₄]⟩
   have hEy := positive_square_interval (l:=453/10000) (u:=455/10000)
-    (x:=-(sharpData.y₃-3/2)) (by norm_num) ⟨by linarith,by linarith⟩
+    (x:=-(sharpData.y₃-3/2)) (by norm_num) ⟨by linarith only [hy₃u],by linarith only [hy₃]⟩
   have hHx := positive_square_interval (l:=8674/10000) (u:=8680/10000)
-    (x:=-(sharpData.h₁+1/2)) (by norm_num) ⟨by linarith,by linarith⟩
+    (x:=-(sharpData.h₁+1/2)) (by norm_num) ⟨by linarith only [hh₁u],by linarith only [hh₁]⟩
   have hHy := positive_square_interval (l:=9297/10000) (u:=9303/10000)
-    (x:=-(sharpData.h₂+1/2)) (by norm_num) ⟨by linarith,by linarith⟩
+    (x:=-(sharpData.h₂+1/2)) (by norm_num) ⟨by linarith only [hh₂u],by linarith only [hh₂]⟩
   have hGx := positive_square_interval (l:=1320/10000) (u:=1326/10000)
-    (x:=sharpData.h₁+3/2) (by norm_num) ⟨by linarith,by linarith⟩
+    (x:=sharpData.h₁+3/2) (by norm_num) ⟨by linarith only [hh₁],by linarith only [hh₁u]⟩
   have hGy := positive_square_interval (l:=12487/10000) (u:=12513/10000)
-    (x:=-(sharpData.h₂+1/2+p.eta)) (by norm_num) ⟨by linarith,by linarith⟩
+    (x:=-(sharpData.h₂+1/2+p.eta)) (by norm_num)
+    ⟨by linarith only [hh₂u,hpη.2],by linarith only [hh₂,hpη.1]⟩
   have hTx := positive_square_interval (l:=1584/10000) (u:=1586/10000)
-    (x:=sharpData.x₂-3/2) (by norm_num) ⟨by linarith,by linarith⟩
+    (x:=sharpData.x₂-3/2) (by norm_num) ⟨by linarith only [hx₂],by linarith only [hx₂u]⟩
   have hTy := positive_square_interval (l:=1349/1000) (u:=1351/1000)
     (x:=p.z) (by norm_num) hpz
   have hCx := positive_square_interval (l:=139/1000) (u:=141/1000)
     (x:=p.x) (by norm_num) hpx
   have hCy : p.y^2≤(1/1000:ℝ)^2 := by
-    have h := mul_nonneg (by linarith [hpy.1] : 0≤p.y+1/1000)
-      (by linarith [hpy.2] : 0≤1/1000-p.y)
-    nlinarith
-  fin_cases i <;>
-    simp only [centerBand,model,axisSquare,tiltedSquare,centralSquare,center,
-      Matrix.cons_val_zero,Matrix.cons_val_succ,Matrix.cons_val_one,pA,pB,pD,pE,pH,pG,pT,
-      sharpData.normSq_inFrame,normSq,x₃,y₄] <;>
-    constructor <;> nlinarith [sq_nonneg p.y]
+    have h := mul_nonneg (by linarith only [hpy.1] : 0≤ p.y+1/1000)
+      (by linarith only [hpy.2] : 0≤ 1/1000-p.y)
+    linarith only [h]
+  have c0 : (1/100:ℝ) < normSq (p.x,p.y) ∧ normSq (p.x,p.y) < 3/100 := by
+    simp only [normSq]
+    constructor <;> linarith only [hCx.1,hCx.2,hCy,sq_nonneg p.y]
+  have c1 : (161/100:ℝ) < normSq sharpData.pH ∧ normSq sharpData.pH < 163/100 := by
+    rw [pH,sharpData.normSq_inFrame]
+    constructor <;> linarith only [hHx.1,hHx.2,hHy.1,hHy.2]
+  have c2 : (157/100:ℝ) < normSq (sharpData.pG p.eta) ∧
+      normSq (sharpData.pG p.eta) < 159/100 := by
+    rw [pG,sharpData.normSq_inFrame]
+    constructor <;> linarith only [hGx.1,hGx.2,hGy.1,hGy.2]
+  have c3 : (173/100:ℝ) < normSq sharpData.pA ∧ normSq sharpData.pA < 175/100 := by
+    simp only [pA,normSq]
+    constructor <;> linarith only [hAx.1,hAx.2,hAy.1,hAy.2]
+  have c4 : (167/100:ℝ) < normSq sharpData.pB ∧ normSq sharpData.pB < 169/100 := by
+    simp only [pB,normSq]
+    constructor <;> linarith only [hBx.1,hBx.2,hBy.1,hBy.2]
+  have c5 : (184/100:ℝ) < normSq (sharpData.pT p.z) ∧ normSq (sharpData.pT p.z) < 186/100 := by
+    simp only [pT,normSq]
+    constructor <;> linarith only [hTx.1,hTx.2,hTy.1,hTy.2]
+  have c6 : (161/100:ℝ) < normSq sharpData.pD ∧ normSq sharpData.pD < 163/100 := by
+    simp only [pD,normSq,x₃]
+    constructor <;> linarith only [hDx.1,hDx.2,hDy.1,hDy.2]
+  have c7 : (196/100:ℝ) < normSq sharpData.pE ∧ normSq sharpData.pE < 198/100 := by
+    simp only [pE,normSq,y₄]
+    constructor <;> linarith only [hEx.1,hEx.2,hEy.1,hEy.2]
+  fin_cases i
+  · exact c0
+  · exact c1
+  · exact c2
+  · exact c3
+  · exact c4
+  · exact c5
+  · exact c6
+  · exact c7
 
 theorem distinguished_band {p r : EqualityParameters} (hp : p.InBox) (hr : r.InBox)
     (i j : Fin 8) (hi : i=0 ∨ i=2 ∨ i=3 ∨ i=5 ∨ i=7)
     (h : normSq (p.model sharpData j).center=normSq (r.model sharpData i).center) : j=i := by
   have hpj := center_band hp j
   have hri := center_band hr i
-  fin_cases i <;> fin_cases j <;>
-    norm_num [centerBand] at hi hpj hri ⊢ <;> linarith
+  rw [h] at hpj
+  generalize normSq (r.model sharpData i).center = v at hpj hri
+  obtain ⟨a1,a2⟩ := hpj
+  obtain ⟨b1,b2⟩ := hri
+  rcases hi with rfl | rfl | rfl | rfl | rfl <;> fin_cases j <;>
+    first
+    | rfl
+    | (exfalso
+       simp only [centerBand,Fin.zero_eta,Fin.mk_one,Fin.reduceFinMk,Matrix.cons_val] at a1 a2 b1 b2
+       linarith)
 
 theorem anchors_independent :
     sharpData.pA.1*sharpData.pE.2-sharpData.pA.2*sharpData.pE.1≠0 := by
   obtain ⟨hx₁,hx₁u,hx₂,hx₂u,hy₃,hy₃u,hx₄,hx₄u,hc,hcu,hs,hsu,hh₁,hh₁u,hh₂,hh₂u⟩ := sharp_coordinates
   obtain ⟨hy,huy⟩ := sharp_y
   have hpos : 0<(sharpData.y+1/2)*(sharpData.x₄+1/2) :=
-    mul_pos_of_neg_of_neg (by linarith) (by linarith)
+    mul_pos_of_neg_of_neg (by linarith only [huy]) (by linarith only [hx₄u])
   have hneg : (sharpData.x₁-1/2)*(sharpData.y₃-3/2)<0 :=
-    mul_neg_of_pos_of_neg (by linarith) (by linarith)
+    mul_neg_of_pos_of_neg (by linarith only [hx₁]) (by linarith only [hy₃u])
   dsimp [pA,pE,y₄]
-  linarith
+  linarith only [hpos, hneg]
 
 theorem fixed_independent_points (e : Point ≃ Point)
     (he : ∀ p r, normSq (sub (e p) (e r))=normSq (sub p r))
@@ -286,10 +330,10 @@ theorem fixed_independent_points (e : Point ≃ Point)
   rw [hE] at h₂
   have hdA : sharpData.pA.1*((e p).1-p.1)+sharpData.pA.2*((e p).2-p.2)=0 := by
     dsimp [normSq,sub] at hn h₁
-    nlinarith
+    linarith
   have hdE : sharpData.pE.1*((e p).1-p.1)+sharpData.pE.2*((e p).2-p.2)=0 := by
     dsimp [normSq,sub] at hn h₂
-    nlinarith
+    linarith
   let det := sharpData.pA.1*sharpData.pE.2-sharpData.pA.2*sharpData.pE.1
   have hx : det*((e p).1-p.1)=0 := by
     dsimp [det]
@@ -304,23 +348,24 @@ theorem fixed_independent_points (e : Point ≃ Point)
 theorem central_frame_from_sets {p r : EqualityParameters} (hp : p.InBox) (hr : r.InBox)
     (hc : p.centralSquare.center=r.centralSquare.center)
     (hs : ∀ x,closedSquare p.centralSquare x↔closedSquare r.centralSquare x) : p.w=r.w := by
-  have hpC := box_data_bounds hp 0
-  have hpS := box_data_bounds hp 1
-  have hrC := box_data_bounds hr 0
-  have hrS := box_data_bounds hr 1
-  simp only [boxData,boxLower,boxUpper,Matrix.cons_val_zero,Matrix.cons_val_succ] at hpC hpS hrC hrS
+  have hpC : (979/1000:ℝ) ≤ p.C ∧ p.C ≤ 981/1000 := box_data_bounds hp 0
+  have hpS : (39/200:ℝ) ≤ p.S ∧ p.S ≤ 201/1000 := box_data_bounds hp 1
+  have hrC : (979/1000:ℝ) ≤ r.C ∧ r.C ≤ 981/1000 := box_data_bounds hr 0
+  have hrS : (39/200:ℝ) ≤ r.S ∧ r.S ≤ 201/1000 := box_data_bounds hr 1
   have hx := same_closed_width hc hs (1,0)
   have hd := same_closed_width hc hs (1,1)
-  simp only [width,frameX,frameY,centralSquare,Prod.fst_mk,Prod.snd_mk,
-    mul_one,mul_zero,add_zero,zero_add,neg_mul,abs_neg] at hx hd
-  rw [abs_of_pos (by linarith : 0<p.C),abs_of_pos (by linarith : 0<p.S),
-    abs_of_pos (by linarith : 0<r.C),abs_of_pos (by linarith : 0<r.S)] at hx
-  rw [abs_of_pos (by linarith : 0<p.C+p.S),
-    abs_of_pos (by linarith : 0< -p.S+p.C),
-    abs_of_pos (by linarith : 0<r.C+r.S),
-    abs_of_pos (by linarith : 0< -r.S+r.C)] at hd
-  have hC : p.C=r.C := by linarith
-  have hS : p.S=r.S := by linarith
+  change (|p.C*1+p.S*0|+|-p.S*1+p.C*0|)/2=(|r.C*1+r.S*0|+|-r.S*1+r.C*0|)/2 at hx
+  change (|p.C*1+p.S*1|+|-p.S*1+p.C*1|)/2=(|r.C*1+r.S*1|+|-r.S*1+r.C*1|)/2 at hd
+  rw [abs_of_pos (by linarith only [hpC] : (0:ℝ) < p.C*1+p.S*0),
+    abs_of_neg (by linarith only [hpS] : -p.S*1+p.C*0 < 0),
+    abs_of_pos (by linarith only [hrC] : (0:ℝ) < r.C*1+r.S*0),
+    abs_of_neg (by linarith only [hrS] : -r.S*1+r.C*0 < 0)] at hx
+  rw [abs_of_pos (by linarith only [hpC, hpS] : (0:ℝ) < p.C*1+p.S*1),
+    abs_of_pos (by linarith only [hpC, hpS] : (0:ℝ) < -p.S*1+p.C*1),
+    abs_of_pos (by linarith only [hrC, hrS] : (0:ℝ) < r.C*1+r.S*1),
+    abs_of_pos (by linarith only [hrC, hrS] : (0:ℝ) < -r.S*1+r.C*1)] at hd
+  have hC : p.C=r.C := by linarith only [hd]
+  have hS : p.S=r.S := by linarith only [hx, hd]
   have recover (w : ℝ) : halfAngleSin w/(1+halfAngleCos w)=w := by
     dsimp [halfAngleCos,halfAngleSin]
     field_simp [ne_of_gt (halfAngle_den_pos w)]

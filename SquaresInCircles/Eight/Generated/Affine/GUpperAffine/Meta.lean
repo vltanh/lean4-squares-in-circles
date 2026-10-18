@@ -3,11 +3,12 @@ module
 public import SquaresInCircles.Eight.Arithmetic.AffineTableData
 
 @[expose] public section
+noncomputable section
 namespace SquaresInCircles.Eight.Generated.Affine.GUpperAffine
 open Arithmetic
 
 /-- Complete original arc data; schema eight-affine-v1. -/
-def meta : AffineTableMeta :=
+noncomputable def table : AffineTableMeta :=
   { radius := (1957767069/500000000)
     arcs := [
       ⟨0,0,false,false,⟨0,(6/7)⟩,⟨(644043/2500000),0,(-51523439/50000000)⟩⟩,
@@ -139,6 +140,6 @@ def meta : AffineTableMeta :=
     differenceRange := ![⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩]
     allowedAxes := ![[.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four]] }
 
-theorem arc_count : meta.arcs.length = 122 := by rfl
+theorem arc_count : table.arcs.length = 122 := by rfl
 
 end SquaresInCircles.Eight.Generated.Affine.GUpperAffine
