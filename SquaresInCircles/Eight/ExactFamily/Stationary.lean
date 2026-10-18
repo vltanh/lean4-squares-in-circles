@@ -5,6 +5,7 @@ public import SquaresInCircles.Eight.ExactFamily.Weights
 public import SquaresInCircles.Eight.ExactFamily.Generated.StationaryLocalization
 public import SquaresInCircles.Eight.ExactFamily.TiltCurvature
 public import SquaresInCircles.Eight.ExactFamily.PositionLocalization
+public import SquaresInCircles.Eight.ExactFamily.EnvelopeNorm
 
 /-!
 # The exact selected stationary configuration
@@ -157,6 +158,26 @@ theorem familyValue_position_strictConvex {q z : ℝ} (hq : q<4)
     StrictConvexOn ℝ {u : ℝ | FiveCornerGeometry.Domain q u}
       (fun u => familyValue q (-u,z)) := by
   simpa only [familyValue_geometric] using FiveCornerGeometry.strictConvexOn_halfAngle hq hz hzu
+
+/-- A position critical point has squared corner norm below four even
+when its scalar defect is positive.  This is the norm bound needed by
+the global envelope argument, rather than a consequence of `F=0`. -/
+theorem familyValue_position_stationary_norm_lt_four {q z u : ℝ}
+    (hql : (79/40:ℝ)^2 ≤ q) (hqu : q<4) (hz : 0 ≤ z) (hzu : z<1)
+    (ht : halfAngleSin z/halfAngleCos z ≤ 1/5)
+    (hu : FiveCornerGeometry.Domain q u)
+    (hstat : HasDerivAt (fun v => familyValue q (-v,z)) 0 u) :
+    familyValue q (-u,z)+q<4 := by
+  have hc : 0<halfAngleCos z := halfAngleCos_pos (by rw [abs_lt]; constructor <;> linarith)
+  have hs : 0 ≤ halfAngleSin z := by
+    exact div_nonneg (by linarith) (halfAngle_den_pos z).le
+  have hd : HasDerivAt (FiveCornerGeometry.defect q (halfAngleCos z) (halfAngleSin z)) 0 u := by
+    simpa only [familyValue_geometric] using hstat
+  have hn := FiveCornerGeometry.position_stationary_norm_lt_four hql hqu hc hs ht
+    (halfAngle_unit z) hu hd
+  rw [familyValue_geometric]
+  dsimp [FiveCornerGeometry.defect]
+  linarith
 
 theorem familyY_radical {q y z : ℝ}
     (h : (radicalCoordinates q y z).IsChain) :

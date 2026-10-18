@@ -112,6 +112,41 @@ is the global minimum on the entire domain.  This theorem requires only
 the actual derivative at that position, not differentiability at all
 radical endpoints.
 
+## 4. A norm bound that includes positive envelope defect
+
+`ExactFamily/EnvelopeNorm.lean` supplies the unconditional norm gate at
+every position minimum.  At the single trial position `u=15/16`, successive
+circle comparisons give, for every `q>=(79/40)^2` with `q<4`,
+
+```
+r > 1.738,   v < .546,   w > 1.898.
+```
+
+Writing `h=s/c`, the two positive components are consequently bounded by
+`2+c*(-.738+(15/16)*h)` and `1+c*(.546-.898*h)`.  The circle equation for
+`c,s` gives `1-h^2/2<=c<=1`.  Expanding the sum of squares therefore bounds
+it by the explicit cubic
+
+```
+E(h)=5+2*(1-h^2/2)*(-.93+.977*h)
+          +(.738-(15/16)*h)^2+(.546-.898*h)^2.
+```
+
+On the whole interval `0<=h<=1/5`, the difference between its endpoint
+chord and `E(h)` factors as
+
+```
+h*(1/5-h)*(C-.977*(h+1/5)),
+C=.93+(15/16)^2+.898^2.
+```
+
+All factors are nonnegative, and the two exact endpoint values are
+`E(0)=3.982760` and `E(1/5)=3.99748321`, both below four.  Global position
+minimality transfers that norm bound from the trial to every position
+critical point.  `position_stationary_norm_lt_four` does not assume
+`F<=0`; `Stationary.familyValue_position_stationary_norm_lt_four` is its
+bridge to the existing scalar function.
+
 ## Remaining dependency to eliminate
 
 To replace `stationary_local` itself, the global proof must still prove
@@ -122,8 +157,7 @@ determinant at **every** envelope critical point, including positive
 defect.  Positive curvature only at stationary zeros is insufficient
 because it does not exclude separated feasible components.
 
-The next gates are therefore an unconditional norm bound `k1^2+k2^2<4`
-at position minima, the geometric bounds on the mixed and normal Hessian
+The next gates are therefore the geometric bounds on the mixed and normal Hessian
 terms at envelope critical points, and the envelope uniqueness argument.
 The recursive localization import can be deleted only once those gates
 are proved and connected to the existing stationary uniqueness theorem.

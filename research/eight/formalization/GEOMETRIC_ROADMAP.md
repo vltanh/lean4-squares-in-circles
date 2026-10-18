@@ -100,6 +100,14 @@ global fixed-tilt minimum, including comparison with radical endpoints.
 The remaining envelope and radius gates still require proof; this
 checkpoint does not remove the root checker.
 
+**G1.2 norm gate implemented:** a single trial chain at `u=15/16`
+and one cubic endpoint-chord identity prove `k₁²+k₂²<4` at every
+position minimum throughout the full radius strip and `0≤tan(t)≤1/5`.
+The proof permits positive defect. Its scalar adapter is
+`familyValue_position_stationary_norm_lt_four`. This supplies the norm
+input for the critical-Hessian argument; the mixed derivative and
+global envelope uniqueness still remain to be connected.
+
 ## G2 — Remove angular subdivisions by exact contact geometry: open
 
 For a signed half-angle parameter, a square's sine, cosine and width have
