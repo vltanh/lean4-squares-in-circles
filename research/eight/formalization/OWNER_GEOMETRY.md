@@ -1,4 +1,4 @@
-# Owner geometry: a complete replacement for the nonpositive tilt tables
+# Owner geometry: two complete table replacements
 
 ## Result and exact scope
 
@@ -272,10 +272,11 @@ with their imports and entries in `tiltLeft`. This removes exactly
 generated Lean lines, and 1,136,918 bytes. The owner generator filters
 these nonpositive bundles so regeneration cannot reinstate them.
 
-The 48 quarter-owner patterns, 15 mixed-owner patterns, and 41 remaining
-positive tilt bundles remain active. Their geometric replacements are
-still open. In particular, this theorem uses the intended owners; it
-does not by itself supply the quarter or mixed owner restrictions.
+The separate three-edge argument below removes 16 of the quarter-owner
+patterns as well. There remain 32 quarter-owner patterns, 15 mixed-owner
+patterns, and 41 positive tilt bundles. Their geometric replacements are
+still open. In particular, the negative-tilt theorem uses the intended
+owners; it does not by itself supply the quarter or mixed restrictions.
 
 A useful warning for the positive-tail work is that freezing the
 stationary stress at the sharp positive tilt does not give a lower
@@ -283,3 +284,89 @@ radius bound increasing away from that tilt. Exploratory evaluation
 of that frozen stress gives a negative tilt Hessian. A replacement
 there should use the primal five-corner chain, adaptive geometric
 forces, or another provable whole-region inequality.
+
+## 6. A primary span excludes an entire quarter-owner class
+
+The second replacement is independent of the tilt sign and both mixed
+owners. Assume the candidate frame, signed tangent cuts, zero-edge owner
+restriction, \(q\le Q_0\), and \(S\le1/10\). Suppose an intended
+owner (axis 3 or 4) is feasible on B to T, and a forbidden owner (axis 1
+or 2) is feasible on D to E. Select any feasible owner on T to D; the
+zero-edge restriction says it is axis 1 or 3.
+
+The three nominal projections are, respectively,
+
+\[
+a_B-b_T,\qquad b_T+b_D,\qquad a_E-b_D.
+\]
+
+For any aligned edge, containment and the true separating inequality
+give the exact per-edge estimate
+
+\[
+F_i^{\rm nominal}\ge1-\frac32|d_i|.
+\tag{13}
+\]
+
+It follows from the center-amplitude bound and \(W\ge1\); no small
+angle approximation or owner table is involved. Adding the three rows
+telescopes both transverse coordinates and gives
+
+\[
+\boxed{a_B+a_E\ge3-\frac32
+  (|d_B|+|d_T|+|d_D|)\ge3-\frac32S.}
+\tag{14}
+\]
+
+On the other hand, canonical containment already gives
+\(a_i<283/200\). Thus
+
+\[
+a_B+a_E<\frac{283}{100}
+ <\frac{57}{20}
+ \le3-\frac32S,
+\]
+
+which is a contradiction. At \(S=1/10\) the strict span reserve is
+\(1/50\). The quarter-capture call only needs \(S\le3/200\), so it
+satisfies this hypothesis with room to spare.
+
+`Candidate/GeometricOwnersQuarter.lean` proves this as
+`quarter_telescoping_primary_bound` and
+`quarter_mixed_direction_excluded`. Its projection identities inspect
+each of the four original axes. Hence a forbidden feasible D axis is
+excluded even when another D axis is also feasible. The proof does not
+assume a future quarter or mixed owner conclusion.
+
+In the original 48-pattern quarter enumeration, the excluded class is
+
+\[
+(1,g,1,3,1,1,h),\qquad g,h\in\{1,2,3,4\}.
+\]
+
+If any forbidden quarter axis remains, every selected feasible B axis
+must now be forbidden: this is immediate when the offending edge is B,
+and follows from (14) when the offending edge is D. The remaining
+complete pattern set therefore has only
+
+\[
+(1,g,1,1,1,d,h),\qquad
+g,h\in\{1,2,3,4\},\ d\in\{1,3\},
+\]
+
+with exactly 32 patterns. `quarter_owners` derives this restriction
+before requesting any certificate, and `QuarterPattern` and its finite
+completeness theorem now express that exact set.
+
+The removed modules are `Quarter008`--`Quarter011`,
+`Quarter020`--`Quarter023`, `Quarter032`--`Quarter035`, and
+`Quarter044`--`Quarter047`. They contain exactly 480 quartics, 2,400
+Bernstein coefficient checks, 20,688 generated Lean lines, and
+1,384,893 UTF-8 bytes. Their imports, owner-table entries, and generator
+outputs have been removed; the generation index now records 32 quarter
+groups and 1,065 remaining quarter rows.
+
+Together the two geometric replacements remove 34 generated modules,
+858 quartics, 4,290 Bernstein coefficient checks, 37,428 generated Lean
+lines, and 2,521,811 bytes. These are source/dependency counts. No Lean
+compilation or runtime claim is made.

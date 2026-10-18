@@ -28,6 +28,14 @@ entries: 18 bundles containing 378 quartic certificates and 16,740 lines.
 The exact positive reserve over `Q0` is `34477/144000000`, including tilt
 zero. The 41 positive-tail bundles remain in use.
 
+A second geometric exclusion uses three consecutive aligned edges:
+their transverse coordinates cancel, forcing a primary-coordinate span
+that containment forbids. It replaces all 16 owner patterns with an
+intended `B→T` separator and a forbidden `D→E` separator, for every tilt
+and mixed-owner choice. Another 480 quartic certificates and 20,688
+generated lines have been deleted. The combined removal is 34 generated
+modules, 858 quartics, and 37,428 lines; 32 quarter-owner bundles remain.
+
 These are source replacements with the original geometric hypotheses;
 their Lean elaboration and kernel checking remain deferred. The large
 affine corpus and the global stationary root cover still belong to the

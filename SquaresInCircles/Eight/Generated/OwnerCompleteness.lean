@@ -13,9 +13,10 @@ open SquaresInCircles.Eight.Candidate
 open SquaresInCircles.Eight.Candidate.Dual
 namespace SquaresInCircles.Eight.Generated.Owner
 
+/-- The opposite quarter direction (`p 3=2`, `p 5=0`) is excluded by
+`quarter_mixed_direction_excluded`, uniformly over the full tilt chart. -/
 def QuarterPattern (p : Vertex → Fin 4) : Prop :=
-  p 0=0 ∧ p 2=0 ∧ p 4=0 ∧ (p 3=0 ∨ p 3=2) ∧
-    (p 5=0 ∨ p 5=2) ∧ (p 3=0 ∨ p 5=0)
+  p 0=0 ∧ p 2=0 ∧ p 4=0 ∧ p 3=0 ∧ (p 5=0 ∨ p 5=2)
 
 def MixedPattern (p : Vertex → Fin 4) : Prop :=
   p 0=0 ∧ p 2=0 ∧ p 4=0 ∧ p 3=2 ∧ p 5=2 ∧ (p 1≠0 ∨ p 6≠1)
@@ -25,18 +26,18 @@ instance (p : Vertex → Fin 4) : Decidable (QuarterPattern p) := by
 instance (p : Vertex → Fin 4) : Decidable (MixedPattern p) := by
   unfold MixedPattern; infer_instance
 
-def quarterByIndex (k : Fin 48) : OwnerTable :=
+def quarterByIndex (k : Fin 32) : OwnerTable :=
   quarterTables.get ⟨k.val, by simpa only [quarterTables, List.length_cons, List.length_nil] using k.isLt⟩
 def mixedByIndex (k : Fin 15) : OwnerTable :=
   mixedTables.get ⟨k.val, by simpa only [mixedTables, List.length_cons, List.length_nil] using k.isLt⟩
 
 theorem quarter_pattern_complete : ∀ p : Vertex → Fin 4,
-    QuarterPattern p → ∃ k : Fin 48, (quarterByIndex k).owners=p := by decide
+    QuarterPattern p → ∃ k : Fin 32, (quarterByIndex k).owners=p := by decide
 
 theorem mixed_pattern_complete : ∀ p : Vertex → Fin 4,
     MixedPattern p → ∃ k : Fin 15, (mixedByIndex k).owners=p := by decide
 
-theorem quarterByIndex_mode (k : Fin 48) : (quarterByIndex k).mode=.quarter := by
+theorem quarterByIndex_mode (k : Fin 32) : (quarterByIndex k).mode=.quarter := by
   fin_cases k <;> rfl
 theorem mixedByIndex_mode (k : Fin 15) : (mixedByIndex k).mode=.mixed := by
   fin_cases k <;> rfl

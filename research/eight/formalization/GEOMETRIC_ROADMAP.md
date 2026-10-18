@@ -148,6 +148,18 @@ The generator now skips precisely those bundles. The 41 positive-tail
 bundles and the remaining owner alternatives are still active. All new
 Lean proof bodies remain uncompiled.
 
+**G3.2 first whole class implemented:** if `B→T` has an intended owner
+and `D→E` a forbidden owner, the three aligned inequalities on
+`B→T→D→E` telescope to `3-(3/2)S ≤ a_B+a_E`. Containment gives
+`a_B+a_E < 283/100`, contradicting `S ≤ 1/10`. This uses the original
+feasible axes, allows ties, and is independent of tilt and mixed owners.
+`quarter_owners` now applies this obstruction before the remaining
+32-pattern certificate dispatch. Sixteen complete quarter bundles have
+been deleted: 480 quartics and 20,688 generated lines. Together with
+G3.1, 34 modules, 858 quartics, 4,290 Bernstein coefficient checks,
+and 37,428 generated lines have been removed. The remaining B-forbidden
+and mixed-owner classes are open.
+
 ## G4 — Replace finite word and pair searches: open
 
 The four geometric labels form a small weighted graph. Replace the
