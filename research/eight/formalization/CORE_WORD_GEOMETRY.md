@@ -11,7 +11,8 @@ axis, and common marker at each vertex are unchanged.
 This removes **192 individual depth-96 recursive certificate declarations**:
 three quarter increments, four ordered pairs of closed core charts, four
 sign pairs, and four original axes. The generated common block decreases
-from 432 to 240 declarations. The two wrong-word role tables are unchanged.
+from 432 to 240 declarations at this first checkpoint. The role labels
+in the two wrong-word tables are unchanged.
 The source generator omits exactly the core/core common class, so rerunning
 it cannot restore the removed searches.
 
@@ -107,3 +108,47 @@ No quarter increment or axis occurs in this argument. Thus all 192
 original cases are covered at once, including multiple feasible axes.
 Each vertex still has one marker value shared by its two incident edges,
 so the global telescoping budget remains valid.
+
+## Four geometric separator exclusions in the general word layer
+
+The primary and secondary core obstructions also apply to an arbitrary
+quarter lift, before any candidate-word or tangent-cut assumption.
+`WordGeometry.original_not_core_excluded` now transfers the actual
+separating-axis margin to the same four geometric estimates used by the
+affine coverage proof:
+
+| Original axis, zero-based | Excluded state condition | Angle condition |
+|---|---|---|
+| 1, target primary | Target is core | Quarter increment zero, `|phi|≤7/10` |
+| 3, source primary | Source is core | Quarter increment zero, `|phi|≤7/10` |
+| 0, source secondary | Target is core and source sign is negative | Every angle |
+| 2, target secondary | Source is core and target sign is positive | Every angle |
+
+For a primary axis, `cos(phi)−|sin(phi)|≥11/200` and the width at least
+one require the receiving primary coordinate to exceed one. A core
+coordinate is at most `7/12`. For a secondary axis, the orthogonal
+projection identity bounds the core contribution by `5/6`; the indicated
+signed transverse coordinate contributes at most zero, while the width
+is at least one. These margins are strictly negative.
+
+`WordProblems.CoreSeparatorExcluded` expresses these four semantic
+classes, with no row identifiers or numerical partitions. The retained
+certificate dispatchers require that this predicate be false, and the
+actual geometry proves that fact. The originally selected feasible axis
+is retained. At `b=0` the signed product is zero regardless of the sign,
+so there is no exception or uncovered sign boundary.
+
+This removes another 424 individual depth-96 certificate declarations:
+
+| Family | Original declarations | After common core/core cost | After separator exclusions |
+|---|---:|---:|---:|
+| Common increments | 432 | 240 | 200 |
+| Wrong word `0010111` | 684 | 684 | 492 |
+| Wrong word `0011011` | 684 | 684 | 492 |
+| **Total** | **1,800** | **1,608** | **1,184** |
+
+The additional removals comprise 40 common declarations and 192 from
+each wrong-word family. Every retained individual statement is byte-for-byte
+identical to its preceding version. The source generator now omits both
+the whole common core/core class and the four impossible separator classes.
+The remaining 1,184 finite decisions are still active and unevaluated.

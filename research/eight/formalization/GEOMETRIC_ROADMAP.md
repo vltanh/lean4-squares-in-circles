@@ -248,9 +248,19 @@ Center separation gives the cost `>59/60`, exceeding every common
 increment threshold by at least `7/1200`. `WordGeometry.common_pair`
 now uses this geometry before its finite dispatcher. All 192 common
 core/core recursive certificate declarations and their generator entries
-have been removed; the common block has 240 retained declarations.
-The two wrong-word role tables remain active. See
+have been removed; this first checkpoint leaves 240 common declarations.
+See
 [`CORE_WORD_GEOMETRY.md`](CORE_WORD_GEOMETRY.md).
+
+**G4.4 four separator classes integrated in every word:** the same
+primary and secondary core obstructions apply to an arbitrary quarter
+lift before candidate capture. `original_not_core_excluded` proves that
+the original feasible axis avoids those semantic classes, preserving
+zero-coordinate cases. Another 424 individual recursive declarations
+have been removed: 40 common, 192 short-word, and 192 second-word cases.
+The word layer now contains 1,184 individual finite decisions instead
+of 1,800: 200 common and 492 for each wrong word. Every retained
+individual certificate statement and every role label is unchanged.
 
 ## G5 — Integration and final acceptance: open
 

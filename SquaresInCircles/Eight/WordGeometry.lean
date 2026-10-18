@@ -3,6 +3,7 @@ module
 public import SquaresInCircles.Eight.Generated.WordCertificates
 public import SquaresInCircles.Eight.CycleActions
 public import SquaresInCircles.Eight.Arithmetic.CoreWordGeometry
+public import SquaresInCircles.Eight.Candidate.GeometricSecondaryExclusion
 
 /-!
 # Actual geometric exclusion of the six noncandidate quarter words
@@ -153,6 +154,53 @@ lemma original_margin (C : BoundaryCycle Q0) (F : QuarterLift C)
   rw [← he]
   exact sub_nonneg.mpr hj
 
+/-- The original feasible axis cannot belong to any excluded core class.
+The quarter lift remains arbitrary; no candidate word or tangent cut is
+assumed, and zero transverse coordinates keep their actual signed value. -/
+lemma original_not_core_excluded (C : BoundaryCycle Q0) (F : QuarterLift C)
+    (hgap : ∀ i,19/25<angleGap C.beta i) (i : Vertex) (j : Fin 4)
+    (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i))) :
+    ¬ CoreSeparatorExcluded (F.word hgap pi_lt_22_over_7 i)
+      (C.kind i) (C.kind (next i)) (positiveOf C i) (positiveOf C (next i)) j := by
+  have hm := original_margin C F hgap i j hj
+  rw [positiveOf_spec,positiveOf_spec] at hm
+  have hσ : |C.sigma i*C.b i| ≤ C.a i := by
+    rw [Candidate.signed_b_abs]
+    exact C.b_le_a i
+  have hτ : |C.sigma (next i)*C.b (next i)| ≤ C.a (next i) := by
+    rw [Candidate.signed_b_abs]
+    exact C.b_le_a (next i)
+  rintro (⟨hk,⟨rfl,ht⟩ | ⟨rfl,hs⟩⟩ | ⟨rfl,hnegative,ht⟩ | ⟨rfl,hpositive,hs⟩)
+  · have hsmall : |phaseValue F hgap i| ≤ 7/10 := by
+      simpa [phaseValue,hk] using (difference_small F i).le
+    have hp := Candidate.Geometric.primary_margin_upper (C.a_pos i).le hσ hsmall
+      (X := C.a (next i))
+    have hcore := Candidate.Geometric.core_primary_upper C (next i) ht
+    simp [forwardMargin] at hm
+    nlinarith [C.a_pos i]
+  · have hsmall : |phaseValue F hgap i| ≤ 7/10 := by
+      simpa [phaseValue,hk] using (difference_small F i).le
+    have hp := Candidate.Geometric.primary_margin_upper (C.a_pos (next i)).le
+      (v := -(C.sigma (next i)*C.b (next i)))
+      (by simpa only [abs_neg] using hτ) hsmall (X := C.a i)
+    have hcore := Candidate.Geometric.core_primary_upper C i hs
+    simp [forwardMargin] at hm
+    nlinarith [C.a_pos (next i)]
+  · have hsource : C.sigma i*C.b i ≤ 0 := by
+      rw [← positiveOf_spec C i,hnegative]
+      simpa [WordProblems.sign] using neg_nonpos.mpr (C.b_nonneg i)
+    have hn := Candidate.Geometric.target_core_secondary_margin (a := C.a i)
+      hsource (C.a_pos (next i)).le (Candidate.Geometric.core_primary_upper C (next i) ht)
+      hτ (t := phaseValue F hgap i)
+    linarith
+  · have htarget : 0 ≤ C.sigma (next i)*C.b (next i) := by
+      rw [← positiveOf_spec C (next i),hpositive]
+      simpa [WordProblems.sign] using C.b_nonneg (next i)
+    have hn := Candidate.Geometric.source_core_secondary_margin (A := C.a (next i))
+      htarget (C.a_pos i).le (Candidate.Geometric.core_primary_upper C i hs)
+      hσ (t := phaseValue F hgap i)
+    linarith
+
 lemma environment (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hgap : ∀ i,19/25<angleGap C.beta i) (i : Vertex) (j : Fin 4)
     (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i))) :
@@ -239,7 +287,8 @@ lemma common_pair_of_outer (C : BoundaryCycle Q0) (F : QuarterLift C)
   obtain ⟨hbox,hhyps⟩ := environment C F hgap i j hj
   have h := certify_sound
     (common_certificates (F.word hgap pi_lt_22_over_7 i) (C.kind i) (C.kind (next i))
-      (positiveOf C i) (positiveOf C (next i)) j houter)
+      (positiveOf C i) (positiveOf C (next i)) j houter
+      (original_not_core_excluded C F hgap i j hj))
     ![C.b i,C.b (next i),difference F i] hbox hhyps
   change 0 < (phase (F.word hgap pi_lt_22_over_7 i)+
     commonLabel (C.kind i) (positiveOf C i) (.var 0)-
@@ -344,7 +393,8 @@ lemma wrong_pair (C : BoundaryCycle Q0) (F : QuarterLift C)
   rw [hw] at hhyps
   have h := certify_sound
     (wrong_certificates w i (C.kind i) (C.kind (next i)) (positiveOf C i)
-      (positiveOf C (next i)) j (actual_allowed C F hgap w hw i))
+      (positiveOf C (next i)) j (actual_allowed C F hgap w hw i)
+      (by simpa [hw] using original_not_core_excluded C F hgap i j hj))
     ![C.b i,C.b (next i),difference F i] hbox hhyps
   change 0 < (phase (wrongWord w i)+
     wrongLabel w i (C.kind i) (positiveOf C i) (.var 0)-

@@ -104,6 +104,21 @@ def pairHypotheses (k : Fin 3) (source target : RadialKind)
 def pairBox (source target : RadialKind) : Box 3 :=
   ![transverseBox source,transverseBox target,⟨-7/10,7/10⟩]
 
+/-- Four complete state/axis classes are impossible geometrically.
+The first two use only the full zero-quarter frame range; the secondary
+classes use the core projection bound at every angle. This predicate
+contains no row index, numerical partition, or computed success flag. -/
+def CoreSeparatorExcluded (k : Fin 3) (source target : RadialKind)
+    (σ τ : Bool) (axis : Fin 4) : Prop :=
+  (k=0 ∧ ((axis=1 ∧ target≠.outer) ∨ (axis=3 ∧ source≠.outer))) ∨
+    (axis=0 ∧ σ=false ∧ target≠.outer) ∨
+    (axis=2 ∧ τ=true ∧ source≠.outer)
+
+instance (k : Fin 3) (source target : RadialKind) (σ τ : Bool) (axis : Fin 4) :
+    Decidable (CoreSeparatorExcluded k source target σ τ axis) := by
+  unfold CoreSeparatorExcluded
+  infer_instance
+
 def commonLabel (kind : RadialKind) (σ : Bool) (b : E) : E :=
   let a := primary kind b
   let unsigned := if kind=.outer then
