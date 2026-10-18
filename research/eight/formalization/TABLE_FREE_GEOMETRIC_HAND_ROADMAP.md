@@ -1,6 +1,6 @@
 # Gated roadmap: a genuinely table-free hand proof for eight squares
 
-**Branch:** PR #10, based on hand-only commit \`d3eafec9a14ab90754bdfd8ca10e2bae82a81cf4\`.
+**Branch:** PR #10, based on hand-only commit `d3eafec9a14ab90754bdfd8ca10e2bae82a81cf4`.
 **Mode:** mathematical research and complete pen-and-paper derivations only.
 **No Lean implementation, compilation, CI, native kernel, or external scripts as a proof premise.**
 
@@ -52,12 +52,12 @@ Already available as **hand arguments**, with uncompiled Lean drafts where noted
 
 1. Center-gap and angular-budget arguments; the odd-seven-walk potential
    identity; and the core/core pair and common-word cost bounds.
-2. The committed global theorem \`HAND_GLOBAL_CORE_CYCLE.md\`: any seven-cycle
+2. The committed global theorem `HAND_GLOBAL_CORE_CYCLE.md`: any seven-cycle
    with \(g_i>19/25\) has at most one core/core neighboring edge. Therefore
    at most four core vertices occur and only 64 of 128 indexed radial words
    survive. **This fact is global**; it cannot by itself justify deleting
    a locally quantified pair theorem.
-3. The exact half-angle SAT-contact reduction in \`MISMATCH_GEOMETRY.md\`.
+3. The exact half-angle SAT-contact reduction in `MISMATCH_GEOMETRY.md`.
    At fixed pair states, all four SAT margins have quadratic numerators,
    so a charged angle minimum is attained at an interval endpoint or an
    SAT contact root. The **continuous state-variable positivity gate is open**.
@@ -204,7 +204,7 @@ and derive a uniform outer-versus-core/outer support. Exploit the
 global CC-edge exclusion if a local pair bound is unnecessarily strong.
 
 **Exit.** All four types, including their shared boundaries and all
-four axes, are handled by analytic formulas; no chart-pair \`certify\`
+four axes, are handled by analytic formulas; no chart-pair `certify`
 call remains mathematically necessary.
 
 ### G2 — All six wrong quarter-word exclusions from a cycle inequality
@@ -413,8 +413,8 @@ original square centers and classify **every** packing by the
 five-parameter family, including the converse and the noncongruent box.
 
 **Exit.** Write a consolidated proof with no dependence on:
-\`affine_rows%\`, \`RealBox.certify\`, generated owner bundles,
-\`by decide\` over large data, adaptive box indices, or historical
+`affine_rows%`, `RealBox.certify`, generated owner bundles,
+`by decide` over large data, adaptive box indices, or historical
 manifest PASS claims. Give a cross-reference for each eliminated
 original table and its *complete* geometric replacement.
 Only **after** this gate should a new Lean implementation be planned.
@@ -482,24 +482,24 @@ different complete theorem, not duplicate the same numerical cases.
 
 ## 5. Commit discipline and next concrete deliverables
 
-Each hand-only milestone goes in a separate \`[skip ci]\` commit to PR #10.
+Each hand-only milestone goes in a separate `[skip ci]` commit to PR #10.
 Preserve the current Lean and historical input files unchanged.
 The next useful files are:
 
-1. **\`HAND_CYCLE_STRESS_INTERFACE.md\`** — write the *exact*
+1. **`HAND_CYCLE_STRESS_INTERFACE.md`** — write the *exact*
    seven-edge feasible set and proposed cycle stress, prove the
    angular/contact elimination and articulate precisely the
    remaining continuous-state inequality. Include a clear failed
    candidate if a natural simple marker is false.
-2. **\`HAND_COARSE_MISMATCH_GEOMETRY.md\`** — either close both coarse
+2. **`HAND_COARSE_MISMATCH_GEOMETRY.md`** — either close both coarse
    contractions \(S<2/5\), \(S<13/50\) with a single geometric
    mechanism or record a concrete global obstruction that forces
    a change of method. This is the first genuinely large-table
    replacement gate.
-3. **\`HAND_WORD_CYCLE_GEOMETRY.md\`** — establish the complete
+3. **`HAND_WORD_CYCLE_GEOMETRY.md`** — establish the complete
    \(0010111\) or \(0011011\) exclusion with shared vertex states,
    not a reduction in recursive word certificate counts.
-4. **\`HAND_POSITIVE_TILT_ENVELOPE.md\`** — prove both positive
+4. **`HAND_POSITIVE_TILT_ENVELOPE.md`** — prove both positive
    tails as complete intervals after the explicit owner conditions,
    using an actual-circle envelope.
 
