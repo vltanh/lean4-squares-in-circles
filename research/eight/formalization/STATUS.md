@@ -36,6 +36,15 @@ and mixed-owner choice. Another 480 quartic certificates and 20,688
 generated lines have been deleted. The combined removal is 34 generated
 modules, 858 quartics, and 37,428 lines; 32 quarter-owner bundles remain.
 
+Core/core pair geometry now replaces four recursive chart decisions,
+covering their 32 source-axis/sign problems at once. The unchanged public
+pair theorem uses center separation and the same signed vertex marker.
+Primary-axis geometry also removes 6,028 complete coarse affine angle
+chains from the active Lean payload. The coarse and enhanced bounds now
+share 123,003 retained rows, with the original closed coverage checks on
+every other state/axis domain. The affine active total is 654,342 rows;
+the 660,370-row historical input is retained for provenance.
+
 These are source replacements with the original geometric hypotheses;
 their Lean elaboration and kernel checking remain deferred. The large
 affine corpus and the global stationary root cover still belong to the

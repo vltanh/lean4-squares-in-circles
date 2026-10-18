@@ -115,6 +115,22 @@ or a stronger direct capture theorem that bypasses that assembly. Reusing
 not removal of the coarse table. Detailed execution belongs in
 `MISMATCH_GEOMETRY.md`.
 
+**G2.1–G2.2 implemented:** `Candidate.GeometricMismatch` gives the exact
+sixteen signed quarter/axis numerator identities, charged-cost monotonicity,
+and the endpoint/contact-root reduction, including linear, constant,
+double-root, and disconnected feasible-set cases. The actual-frame
+adapter retains every originally feasible axis. G2.3 remains open.
+
+**Whole-state exclusion integrated:** the full frame range implies that a
+zero-quarter primary separator needs the corresponding primary coordinate
+above one. A core arc has primary coordinate at most `7/12`. The active
+coarse and enhanced coverage dispatchers now exclude these impossible
+regions geometrically, retaining all original checks on the other regions.
+This removes 6,028 entire angle chains from the Lean row payload, reducing
+the shared coarse table from 129,031 to 123,003 rows. Historical research
+input is preserved. The active total across all affine tables is now
+654,342 rows, and all remaining table-backed charged stages are explicit.
+
 ## G3 — Eliminate owner and tilt regions by direct circle stresses: open
 
 First eliminate free slider centers symbolically from the original

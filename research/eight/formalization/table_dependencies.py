@@ -16,7 +16,10 @@ import subprocess
 
 
 IMPORT = re.compile(r"^(?:public\s+)?import\s+(\S+)", re.MULTILINE)
-AFFINE = re.compile(r'affine_rows%\s+"([^"]+)"\s+rows\s+(\d+)')
+AFFINE = re.compile(
+    r'affine_rows%\s+"([^"]+)"\s+rows\s+(\d+)'
+    r'(?:\s+excluding_zero_core_primary\s+(\d+))?'
+)
 
 
 def inventory(root: Path, entry: str) -> dict:
@@ -37,8 +40,15 @@ def inventory(root: Path, entry: str) -> dict:
 
     affine = []
     for module, source in sorted(reached.items()):
-        for data_path, rows in AFFINE.findall(source):
-            affine.append({"module": module, "rows": int(rows), "input": data_path})
+        for data_path, input_rows, retained_rows in AFFINE.findall(source):
+            rows = int(retained_rows or input_rows)
+            affine.append({
+                "module": module,
+                "rows": rows,
+                "input_rows": int(input_rows),
+                "excluded_by_geometry": int(input_rows) - rows,
+                "input": data_path,
+            })
 
     owner = {
         kind.lower(): sum(
@@ -68,6 +78,8 @@ def inventory(root: Path, entry: str) -> dict:
         "eight_modules": sum(module.startswith("SquaresInCircles.Eight.") for module in reached),
         "affine_tables": affine,
         "affine_rows": sum(table["rows"] for table in affine),
+        "affine_input_rows": sum(table["input_rows"] for table in affine),
+        "affine_geometric_exclusions": sum(table["excluded_by_geometry"] for table in affine),
         "stationary_root_cover_imported": "SquaresInCircles.Eight.ExactFamily.Generated.StationaryLocalization" in reached,
         "owner_bundle_modules": owner,
         "recursive_search_declarations": searches,
