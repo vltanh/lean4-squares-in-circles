@@ -208,23 +208,165 @@ with the positive position entry and determinant.  Its bridge
 `Stationary.stationary_geometric_hessian_positive` exposes the conclusion
 before local-box membership or root localization.
 
+## 6. A fixed interior window for every position minimum
+
+`ExactFamily/EnvelopePosition.lean` constructs the minimizing position on
+one fixed compact window
+
+```
+87/100 <= u <= 11/10.
+```
+
+Throughout the complete radius strip this window has strictly positive
+radicals; in particular `r>1.64`, `U>1.619`, `Y>1.411`, and `w>1.885`.
+At the left endpoint section 3 gives the negative position derivative.
+At the right endpoint the actual circle comparisons give
+
+```
+r < 1.65,  v < .47,  w > 1.91,  0 < p < .42,
+u/r > 2/3,  0 < v/w < 1/4.
+```
+
+Consequently, with `a=s+c*u/r` and `b=p*(c+s*v/w)`,
+
+```
+k1 >= 1.35,  a > (2/3)*c,
+k2 <= 1.47,  b <= .441*c,
+F_u/2 = k1*a-k2*b > .25173*c > c/4 > 0.
+```
+
+Continuity of the actual derivative and the intermediate value theorem
+therefore supply an interior root for every allowed tilt.  Full-domain
+strict convexity makes it the unique global position minimum, including
+comparison with all radical endpoints.  `windowMinimizer_geometric`
+identifies the compactly chosen minimizer with that root and proves its
+actual zero derivative and global minimum property.  Thus no implicit
+assumption about radical-endpoint smoothness remains.
+
+`positionEnvelope` is the infimum over this fixed window.  Its equality
+with the value at `windowMinimizer` is proved directly by compactness, and
+`positionEnvelope_continuous` follows from joint continuity of the actual
+formula and compactness of the fixed parameter window.
+
+The derivative interface in `CriticalDifferentiation.lean` now applies to
+`SmoothDomain`, which records the full radical domain, `q<4`, and four
+positive radicals.  In particular it covers the whole minimizing window,
+not only `u<=1`.  `SmoothDomain.positionSecond_pos` proves
+
+```
+F_uu = 2*(a^2+b^2+k1*c*q/r^3
+                  +k2*(p*Z*(c+s*v/w)+s*q*p^2/w^3)) > 0
+```
+
+at every such smooth position for unit tilts with `c>0`, `s>=0`.
+All normal terms are positive because they are the curvatures of the
+actual circles.  The new `positionHalf_deriv` theorem supplies the actual
+derivative `F_uu/2` of the position-root equation.
+
+## 7. Every envelope critical position is below one
+
+`ExactFamily/EnvelopeCriticalPosition.lean` excludes the entire remaining
+window `[1,11/10]` without any hypothesis on the sign of `F`.  Successive
+circle comparisons give
+
+```
+1 < r < 1.71,  w > 1.9,  v > 0,  0 < p < .525,
+p*r < .89775 < w-1.
+```
+
+Write `d=s*(r-1)+c*u` and `e=c*(w-1)+s*v`, so the position and tilt
+stationary equations are `k1*a=k2*b` and `k1*d=k2*e`.  Their tangent cross
+product has the exact expansion
+
+```
+b*d-a*e
+ = c^2*(u/r)*(p*r-w+1)
+   +c*s*(p*(r-1)-(w-1)+u*v*(p/w-1/r))
+   +s^2*(v/w)*(p*(r-1)-w).
+```
+
+Each coefficient is negative on this whole interval.  Since `c>0` and
+`s>=0`, the cross product is strictly negative, whereas the two stationary
+equations force it to vanish.  This is the contradiction proving
+`window_critical_below_one`.
+
+`windowMinimizer_isStripCritical` combines that result with the interior
+window theorem and supplies the actual `StripCritical` input for section
+5 whenever the tilt derivative at the position minimum vanishes.  Thus the
+positive determinant is available at **every** envelope critical point,
+including critical points of positive defect.
+
+## 8. Strict radius decrease by circle inclusion
+
+`ExactFamily/RadiusMonotonicity.lean` proves a finite comparison on the
+entire radical domain.  If `q0<q1<4`, increasing the radius gives
+
+```
+Domain(q0) subset Domain(q1),
+r(q0,u) < r(q1,u),
+v(q1,u) < v(q0,u),
+w(q0,u) < w(q1,u).
+```
+
+Both positive corner components therefore strictly decrease for every
+allowed nonnegative tilt, so
+
+```
+F(q1,u,t) < F(q0,u,t)-(q1-q0).
+```
+
+`EnvelopePosition.positionEnvelope_radius_decrease` transfers this
+comparison to the actual position envelope by evaluating the larger-radius
+minimum at the smaller-radius minimizing position.  It needs no derivative
+of the minimizer with respect to radius.  The finite comparison also proves
+`radius_eq_of_zero_global_minima`: once global angular minimality is
+available, two zero minima cannot occur at different radii.
+
+## 9. The actual envelope derivative and global critical-point argument
+
+`ExactFamily/ImplicitEnvelope.lean` packages the scalar implicit-function
+theorem from the pinned Mathlib revision. Joint smoothness of the actual
+position-gradient equation and its nonzero position derivative produce a
+local root. Uniqueness in the open position window identifies that root
+with the previously chosen minimizer. The proof does not assume that the
+chosen minimizer is continuous. Differentiating the equation gives
+`u'(t)=-F_ut/F_uu`; differentiating the objective and its actual tilt
+partial gives `M'(t)=F_t` and `M''(t)=F_tt-F_ut^2/F_uu`.
+
+`ExactFamily/EnvelopeDifferentiation.lean` supplies every hypothesis from
+the actual nested radicals. It proves joint smoothness of `F`, `F_u`, and
+`F_t`, differentiates both mixed partials directly, and instantiates the
+implicit theorem using the geometric window and strict convexity. Its
+`positionEnvelope_second_derivative` is a derivative of the defined
+`positionEnvelope`, rather than a relation between independent formal
+symbols. At a critical tilt, `windowMinimizer_isStripCritical` supplies the
+positive-defect Hessian estimate from section 5. The Schur complement is
+therefore positive at every critical point on `0<t<atan(1/5)`.
+
+`ExactFamily/EnvelopeUniqueness.lean` proves the remaining real-variable
+argument. A positive second derivative at a critical point gives a strict
+local minimum. Two strict minima would force an interior local maximum
+between them; that maximum is another critical point and cannot be a
+strict minimum. The same argument proves that each interior critical point
+is the global minimum on the full closed interval, including comparison
+with both endpoints. It does not require a connected nonpositive sublevel
+set or derivative signs at the endpoints.
+
+The resulting actual-family theorems are
+`positionEnvelope_critical_strictMinimum`,
+`positionEnvelope_critical_unique`, and
+`positionEnvelope_critical_global_minimum`. None uses the root cover or
+assumes the sign of the defect.
+
 ## Remaining dependency to eliminate
 
-To replace `stationary_local` itself, the global proof must still prove
-uniqueness of the minimized envelope's critical point at each radius,
-then strict radius monotonicity of its minimum.  The argument in
-`HUMAN_FAMILY_CLOSURE.md`, section 4, requires a positive Hessian
-determinant at **every** envelope critical point, including positive
-defect.  Positive curvature only at stationary zeros is insufficient
-because it does not exclude separated feasible components.
+The remaining connection is the original `Coordinates.IsStationary`
+adapter: identify its tilt and position with the actual envelope critical
+point, use finite radius decrease to identify the unique zero, and recover
+the original coordinates. The geometric, regularity, and global envelope
+gates above supply the analytic inputs to that connection.
 
-The Hessian gates are now proved for the complete critical-position strip.
-The remaining formal steps are to show that the unique position minimum is
-interior in the full radical domain, to exclude `u>=1` at every envelope
-critical point (without assuming a nonpositive defect), to obtain the
-smooth minimizing-position function and its Schur derivative, and to apply
-one-dimensional critical-point uniqueness.  Strict decrease of the minimum
-with radius then identifies the unique zero.  A generic real-variable
-critical-point lemma is useful only after this actual-envelope instantiation.
-The recursive localization import can be deleted only once those gates
-are proved and connected to the existing stationary uniqueness theorem.
+The recursive localization import remains active until these last results
+are connected to the existing stationary uniqueness theorem.  All new Lean
+sources in this note are still uncompiled, in accordance with the explicit
+no-compilation and no-CI instruction.

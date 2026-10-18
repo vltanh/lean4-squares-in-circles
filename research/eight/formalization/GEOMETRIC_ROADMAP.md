@@ -120,6 +120,21 @@ closes the quantitative Hessian gate on that strip; interiority, the
 smooth minimizing-position function, and its global envelope argument
 remain necessary before removing root localization.
 
+**G1.2 actual envelope completed:** the fixed window `[87/100,11/10]`
+has opposite endpoint derivative signs and positive `F_uu` throughout.
+Its unique position minimum is interior and globally minimizes over the
+full radical domain. A whole-interval tangent-cross-product inequality
+excludes every critical position `u≥1`, without a defect-sign assumption.
+`EnvelopeDifferentiation` applies the scalar implicit-function theorem
+to the actual radical equation and proves both envelope derivatives.
+The positive Hessian determinant now implies a strict local minimum at
+every critical tilt. The intervening-maximum argument gives uniqueness
+and global minimality over the closed tilt interval. Finite circle
+inclusion also proves strict radius decrease of the actual envelope.
+The final gate is connecting these results to the original stationary
+coordinates and replacing the root-cover call; it remains active at this
+checkpoint.
+
 ## G2 — Remove angular subdivisions by exact contact geometry: open
 
 For a signed half-angle parameter, a square's sine, cosine and width have
