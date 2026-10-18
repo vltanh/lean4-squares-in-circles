@@ -1,0 +1,211 @@
+{
+  "status": "COMPLETE_EXACT_REPLAY_AND_INDEPENDENT_CONTINUOUS_ASSEMBLY_PASS",
+  "theorem": "S<=13/50 implies S<1/10 under the stated candidate boundary and tangent hypotheses, with all four original axes and both A/B signs retained",
+  "Q": "1957767069/500000000",
+  "rows": 131255,
+  "angle_chains": 123168,
+  "arcs": 401,
+  "state_unions": 18,
+  "polynomials": 354398,
+  "coefficients": 2903573,
+  "least_strict_cost_bound": "76173/20000000000000",
+  "beta": "1/400",
+  "gamma": [
+    ".897582",
+    ".897582",
+    ".897582",
+    ".897582",
+    ".897582",
+    ".897582",
+    ".897582"
+  ],
+  "gamma_sum": "3141537/500000",
+  "strict_contraction_reserve": "18173/2712000000",
+  "full_replay_sha256": "13a7dc18a78aaa4bbdeef9dc0d83b8f0098ba6c0e6e68ba55401d41849ef0f24",
+  "independent_review": "Independent shifted-atan reconstruction of all closed state and original-axis angle unions, continuous SAT support scope, prior hypotheses, exact cyclic contraction, compact positivity and full replay binding; additionally every explicit coefficient list, minimum and ordered index scanned exactly. PASS.",
+  "logical_proof_files": [
+    {
+      "name": "MISMATCH_026_TO_01_AFFINE_HAND_THEOREM.md",
+      "bytes": 10385,
+      "sha256": "c38f3776daef7b8b6969791dae4786f0c7b49907f9e0efd717a8e243fde03490"
+    },
+    {
+      "name": "MISMATCH_026_TO_01_AFFINE_HAND_DATA.json",
+      "bytes": 16218282,
+      "sha256": "3230d71cdb3f1aa513aa74de04dc49429bb6ff2759a115cd55d98b160e1fedf4"
+    },
+    {
+      "name": "MISMATCH_026_TO_01_AFFINE_HAND_COMPACT_REPORT.json",
+      "bytes": 31132511,
+      "sha256": "9c0fcd59ed378dedf85e6134cc1bc5b7dee156ca781ef255b4564c9115a855ab"
+    },
+    {
+      "name": "verify_mismatch_026_to_01_affine_hand.js",
+      "bytes": 16986,
+      "sha256": "6af3d41fe7d404da7dd286c46644160f5444edd3028d864701266e9a4cd18697"
+    },
+    {
+      "name": "replay_mismatch_026_to_01_hand.py",
+      "bytes": 1938,
+      "sha256": "a0715830416ca2de5e183de98022d535a986fdb9f6edd848ecbc6ecdfb21aa8d"
+    },
+    {
+      "name": "audit_mismatch_026_to_01_hand_assembly.py",
+      "bytes": 7031,
+      "sha256": "3169530564a88aa4747f90be0744c4f52cd033f1d261289aefa6695f8487ab81"
+    },
+    {
+      "name": "MISMATCH_026_TO_01_AFFINE_HAND_ASSEMBLY_AUDIT.json",
+      "bytes": 1529,
+      "sha256": "c804b2f36a48beab84c605e6b5614bbdb2d920a900a4ffe6061937d02d886842"
+    },
+    {
+      "name": "MISMATCH_026_TO_01_INDEPENDENT_AUDIT.md",
+      "bytes": 7867,
+      "sha256": "170924a3a6236bdadf703d951ea43027d1b5f4b50e3a0f24bf7c3ec54b8ca81b"
+    },
+    {
+      "name": "audit_mismatch_026_to_01_independently.py",
+      "bytes": 12577,
+      "sha256": "f37829af3b4aa8cf78c401105530d407bcf57e7c1ca1aa1069ac9d09490d1c3e"
+    },
+    {
+      "name": "MISMATCH_026_TO_01_INDEPENDENT_ASSEMBLY.json",
+      "bytes": 3474,
+      "sha256": "5806cfcd15505d2617aef023004d6db421fc65392b05f3c4b88dc147489075c0"
+    },
+    {
+      "name": "compact_mismatch_026_to_01_report_independently.py",
+      "bytes": 3412,
+      "sha256": "9367362457d5a26fcce669135985738e3f65c3af1ca3462c1fe036c12c150e29"
+    },
+    {
+      "name": "MISMATCH_026_TO_01_INDEPENDENT_FULL_REPORT_BINDING.json",
+      "bytes": 1127,
+      "sha256": "0491613419a88b6b8eca34a7d05ef5d7cf424ffd81d4b7ca810ec59c5cd574b8"
+    }
+  ],
+  "storage": "The two oversized logical inputs are restored byte-for-byte from ordered raw text parts before replay; all independently bound full-file hashes remain unchanged.",
+  "materialized_from_parts": [
+    "MISMATCH_026_TO_01_AFFINE_HAND_DATA.json",
+    "MISMATCH_026_TO_01_AFFINE_HAND_COMPACT_REPORT.json"
+  ],
+  "optional_full_replay_file": "MISMATCH_026_TO_01_AFFINE_HAND_ARITHMETIC.json",
+  "files": [
+    {
+      "name": "MISMATCH_026_TO_01_AFFINE_HAND_THEOREM.md",
+      "bytes": 10385,
+      "sha256": "c38f3776daef7b8b6969791dae4786f0c7b49907f9e0efd717a8e243fde03490"
+    },
+    {
+      "name": "verify_mismatch_026_to_01_affine_hand.js",
+      "bytes": 16986,
+      "sha256": "6af3d41fe7d404da7dd286c46644160f5444edd3028d864701266e9a4cd18697"
+    },
+    {
+      "name": "replay_mismatch_026_to_01_hand.py",
+      "bytes": 1938,
+      "sha256": "a0715830416ca2de5e183de98022d535a986fdb9f6edd848ecbc6ecdfb21aa8d"
+    },
+    {
+      "name": "audit_mismatch_026_to_01_hand_assembly.py",
+      "bytes": 7031,
+      "sha256": "3169530564a88aa4747f90be0744c4f52cd033f1d261289aefa6695f8487ab81"
+    },
+    {
+      "name": "MISMATCH_026_TO_01_AFFINE_HAND_ASSEMBLY_AUDIT.json",
+      "bytes": 1529,
+      "sha256": "c804b2f36a48beab84c605e6b5614bbdb2d920a900a4ffe6061937d02d886842"
+    },
+    {
+      "name": "MISMATCH_026_TO_01_INDEPENDENT_AUDIT.md",
+      "bytes": 7867,
+      "sha256": "170924a3a6236bdadf703d951ea43027d1b5f4b50e3a0f24bf7c3ec54b8ca81b"
+    },
+    {
+      "name": "audit_mismatch_026_to_01_independently.py",
+      "bytes": 12577,
+      "sha256": "f37829af3b4aa8cf78c401105530d407bcf57e7c1ca1aa1069ac9d09490d1c3e"
+    },
+    {
+      "name": "MISMATCH_026_TO_01_INDEPENDENT_ASSEMBLY.json",
+      "bytes": 3474,
+      "sha256": "5806cfcd15505d2617aef023004d6db421fc65392b05f3c4b88dc147489075c0"
+    },
+    {
+      "name": "compact_mismatch_026_to_01_report_independently.py",
+      "bytes": 3412,
+      "sha256": "9367362457d5a26fcce669135985738e3f65c3af1ca3462c1fe036c12c150e29"
+    },
+    {
+      "name": "MISMATCH_026_TO_01_INDEPENDENT_FULL_REPORT_BINDING.json",
+      "bytes": 1127,
+      "sha256": "0491613419a88b6b8eca34a7d05ef5d7cf424ffd81d4b7ca810ec59c5cd574b8"
+    },
+    {
+      "name": "MISMATCH_026_TO_01_HAND_BUNDLE.md",
+      "bytes": 2395,
+      "sha256": "791a3dc1559af012ac9b7209229489b3dca030ef4f6d894c2d9bd05e1786764c"
+    },
+    {
+      "name": "MISMATCH_026_TO_01_HAND_INPUT_PARTS.json",
+      "bytes": 2350,
+      "sha256": "4db4bd5776dfd4c38063195538d1ee3877f1610bea15adff6aeeaa26be276f82"
+    },
+    {
+      "name": "restore_mismatch_026_to_01_hand_inputs.py",
+      "bytes": 1636,
+      "sha256": "8c81c3e5830dfc424fb30a7ae91456f08c29955b60b59402d5d851a0e3850452"
+    },
+    {
+      "name": "MISMATCH_026_TO_01_INPUT_PARTS_RESTORE_AUDIT.json",
+      "bytes": 537,
+      "sha256": "8a9783a14ade4d2f4b2acf832310c7b7420404e99afae3f33c70515a2fe9757f"
+    },
+    {
+      "name": "MISMATCH_026_TO_01_AFFINE_HAND_DATA.part01",
+      "bytes": 5500000,
+      "sha256": "a1eb3465b5f441f49d0bb82ccdb89cf90839633eb62c5bfb856d7d7b2d3eb127"
+    },
+    {
+      "name": "MISMATCH_026_TO_01_AFFINE_HAND_DATA.part02",
+      "bytes": 5500000,
+      "sha256": "f751e80ea44ddfec41e95602d90bc7f9c25cefa2dfbfd5e77bf5fe34fbb4bbd9"
+    },
+    {
+      "name": "MISMATCH_026_TO_01_AFFINE_HAND_DATA.part03",
+      "bytes": 5218282,
+      "sha256": "c90433e7ccbca6f9ef9b41e18b6d9b9f88e7b43ab999ef0c8e966e3839ce847e"
+    },
+    {
+      "name": "MISMATCH_026_TO_01_AFFINE_HAND_COMPACT_REPORT.part01",
+      "bytes": 5500000,
+      "sha256": "234a60d3258e8c954ede58dd4f5c495e12e3664a21980247992808d4b01d05b2"
+    },
+    {
+      "name": "MISMATCH_026_TO_01_AFFINE_HAND_COMPACT_REPORT.part02",
+      "bytes": 5500000,
+      "sha256": "8a621d6710fbc3ca9da0349b83c2a61eaef6ee57ad09205404142fa751aa99d7"
+    },
+    {
+      "name": "MISMATCH_026_TO_01_AFFINE_HAND_COMPACT_REPORT.part03",
+      "bytes": 5500000,
+      "sha256": "5d871078f71b738e9f9ff04f9791b16e78c55793d3369c6a63f57d6fdfd8107b"
+    },
+    {
+      "name": "MISMATCH_026_TO_01_AFFINE_HAND_COMPACT_REPORT.part04",
+      "bytes": 5500000,
+      "sha256": "490d32eae2685863bcc01c89ddafdb1dea62fc62ceff61be668eb58e4048b340"
+    },
+    {
+      "name": "MISMATCH_026_TO_01_AFFINE_HAND_COMPACT_REPORT.part05",
+      "bytes": 5500000,
+      "sha256": "875d1bed00d3dda808002ddc54dcf3e8cb32212a7e723432b8cee4d797c922d0"
+    },
+    {
+      "name": "MISMATCH_026_TO_01_AFFINE_HAND_COMPACT_REPORT.part06",
+      "bytes": 3632511,
+      "sha256": "5941712f7b3a10623614b928d18c49ee78b3e26760b8d7ac35e985ce6e8e063c"
+    }
+  ]
+}
