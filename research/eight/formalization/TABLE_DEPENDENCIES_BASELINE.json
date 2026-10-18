@@ -1,0 +1,203 @@
+{
+  "kind": "source-only inventory; no Lean, CI, or certificate execution",
+  "head": "e352b87f9e0c49846ff63d3c90001b4d15c500fd",
+  "entry": "SquaresInCircles.Eight.Theorem",
+  "repository_modules": 252,
+  "eight_modules": 235,
+  "affine_tables": [
+    {
+      "module": "SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch",
+      "rows": 129031,
+      "input": "../../../../research/eight/CANDIDATE_COARSE_MISMATCH_HAND_DATA.json"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Generated.Affine.DUpperAffine",
+      "rows": 24197,
+      "input": "../../../../research/eight/D_UPPER_AFFINE_HAND_DATA.json"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Generated.Affine.GLowerAffine",
+      "rows": 9087,
+      "input": "../../../../research/eight/G_LOWER_AFFINE_HAND_DATA.json"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Generated.Affine.GUpperAffine",
+      "rows": 9796,
+      "input": "../../../../research/eight/G_UPPER_AFFINE_HAND_DATA.json"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Generated.Affine.HLowerAffine",
+      "rows": 48050,
+      "input": "../../../../research/eight/H_LOWER_AFFINE_HAND_DATA.json"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Generated.Affine.Mismatch015To001Affine",
+      "rows": 144709,
+      "input": "../../../../research/eight/MISMATCH_015_TO_001_AFFINE_HAND_DATA.json"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Generated.Affine.Mismatch01To015Affine",
+      "rows": 107196,
+      "input": "../../../../research/eight/MISMATCH_01_TO_015_AFFINE_HAND_DATA.json"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Generated.Affine.Mismatch026To01Affine",
+      "rows": 131255,
+      "input": "../../../../research/eight/MISMATCH_026_TO_01_AFFINE_HAND_DATA.json"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Generated.Affine.TLowerAffine",
+      "rows": 49971,
+      "input": "../../../../research/eight/T_LOWER_AFFINE_HAND_DATA.json"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Generated.Affine.TUpperAffine",
+      "rows": 7078,
+      "input": "../../../../research/eight/T_UPPER_AFFINE_HAND_DATA.json"
+    }
+  ],
+  "affine_rows": 660370,
+  "stationary_root_cover_imported": true,
+  "owner_bundle_modules": {
+    "quarter": 48,
+    "mixed": 15,
+    "tilt": 59
+  },
+  "recursive_search_declarations": [
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 162,
+      "expression": "certify depth (problem .coreSide .coreSide p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 170,
+      "expression": "certify depth (problem .coreSide .coreCorner p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 178,
+      "expression": "certify depth (problem .coreSide .low p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 186,
+      "expression": "certify depth (problem .coreSide .middle p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 194,
+      "expression": "certify depth (problem .coreSide .high p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 202,
+      "expression": "certify depth (problem .coreCorner .coreSide p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 210,
+      "expression": "certify depth (problem .coreCorner .coreCorner p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 218,
+      "expression": "certify depth (problem .coreCorner .low p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 226,
+      "expression": "certify depth (problem .coreCorner .middle p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 234,
+      "expression": "certify depth (problem .coreCorner .high p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 242,
+      "expression": "certify depth (problem .low .coreSide p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 250,
+      "expression": "certify depth (problem .low .coreCorner p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 258,
+      "expression": "certify depth (problem .low .low p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 266,
+      "expression": "certify depth (problem .low .middle p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 274,
+      "expression": "certify depth (problem .low .high p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 282,
+      "expression": "certify depth (problem .middle .coreSide p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 290,
+      "expression": "certify depth (problem .middle .coreCorner p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 298,
+      "expression": "certify depth (problem .middle .low p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 306,
+      "expression": "certify depth (problem .middle .middle p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 314,
+      "expression": "certify depth (problem .middle .high p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 322,
+      "expression": "certify depth (problem .high .coreSide p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 330,
+      "expression": "certify depth (problem .high .coreCorner p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 338,
+      "expression": "certify depth (problem .high .low p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 346,
+      "expression": "certify depth (problem .high .middle p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 354,
+      "expression": "certify depth (problem .high .high p r four)"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Arithmetic.FourTypePairs",
+      "line": 359,
+      "expression": "certify depth (problem s t p r four) (domain s t)=true := by"
+    },
+    {
+      "module": "SquaresInCircles.Eight.ExactFamily.Generated.StationaryLocalization",
+      "line": 23,
+      "expression": "CompactRootCover.certify stationaryTargets localBox 48 initialBox = true := by"
+    }
+  ]
+}
