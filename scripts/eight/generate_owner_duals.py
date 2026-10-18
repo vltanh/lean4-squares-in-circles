@@ -211,10 +211,13 @@ for mode,filename in inputs:
         pats=sorted({tuple(r['owners']) for r in data['rows']})
         # If B-to-T is intended but D-to-E is forbidden, the three-edge
         # primary span is impossible by GeometricOwnersQuarter.lean.
+        # Its rotated-corner chain also excludes forbidden B with G-axis 2
+        # (axis 3 in these historical one-based input labels).
         # Keep the original pattern indices for the remaining bundles.
         groups=[(k,sorted([r for r in data['rows'] if tuple(r['owners'])==p],key=lambda r:Q(r['lo'])))
                 for k,p in enumerate(pats)
-                if not (mode=='quarter' and p[3]==3 and p[5]==1)]
+                if not (mode=='quarter' and
+                        ((p[3]==3 and p[5]==1) or (p[3]==1 and p[1]==3)))]
     rows_total=0
     for groupno,group in groups:
         chunkname=f'{mode.title()}{groupno:03d}'

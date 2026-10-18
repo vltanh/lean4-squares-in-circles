@@ -16,14 +16,6 @@ public import SquaresInCircles.Eight.Generated.Owner.Quarter016
 public import SquaresInCircles.Eight.Generated.Owner.Quarter017
 public import SquaresInCircles.Eight.Generated.Owner.Quarter018
 public import SquaresInCircles.Eight.Generated.Owner.Quarter019
-public import SquaresInCircles.Eight.Generated.Owner.Quarter024
-public import SquaresInCircles.Eight.Generated.Owner.Quarter025
-public import SquaresInCircles.Eight.Generated.Owner.Quarter026
-public import SquaresInCircles.Eight.Generated.Owner.Quarter027
-public import SquaresInCircles.Eight.Generated.Owner.Quarter028
-public import SquaresInCircles.Eight.Generated.Owner.Quarter029
-public import SquaresInCircles.Eight.Generated.Owner.Quarter030
-public import SquaresInCircles.Eight.Generated.Owner.Quarter031
 public import SquaresInCircles.Eight.Generated.Owner.Quarter036
 public import SquaresInCircles.Eight.Generated.Owner.Quarter037
 public import SquaresInCircles.Eight.Generated.Owner.Quarter038
@@ -100,12 +92,12 @@ open SquaresInCircles.Eight.Candidate
 open SquaresInCircles.Eight.Candidate.Dual
 namespace SquaresInCircles.Eight.Generated.Owner
 
-def quarterTables : List OwnerTable := [quarterTable000, quarterTable001, quarterTable002, quarterTable003, quarterTable004, quarterTable005, quarterTable006, quarterTable007, quarterTable012, quarterTable013, quarterTable014, quarterTable015, quarterTable016, quarterTable017, quarterTable018, quarterTable019, quarterTable024, quarterTable025, quarterTable026, quarterTable027, quarterTable028, quarterTable029, quarterTable030, quarterTable031, quarterTable036, quarterTable037, quarterTable038, quarterTable039, quarterTable040, quarterTable041, quarterTable042, quarterTable043]
+def quarterTables : List OwnerTable := [quarterTable000, quarterTable001, quarterTable002, quarterTable003, quarterTable004, quarterTable005, quarterTable006, quarterTable007, quarterTable012, quarterTable013, quarterTable014, quarterTable015, quarterTable016, quarterTable017, quarterTable018, quarterTable019, quarterTable036, quarterTable037, quarterTable038, quarterTable039, quarterTable040, quarterTable041, quarterTable042, quarterTable043]
 
 theorem quarter_table_modes : ∀ T ∈ quarterTables, T.mode = .quarter := by
   intro T hT
   simp only [quarterTables, List.mem_cons, List.mem_singleton] at hT
-  rcases hT with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl <;> rfl
+  rcases hT with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl <;> rfl
 
 def mixedTables : List OwnerTable := [mixedTable000, mixedTable001, mixedTable002, mixedTable003, mixedTable004, mixedTable005, mixedTable006, mixedTable007, mixedTable008, mixedTable009, mixedTable010, mixedTable011, mixedTable012, mixedTable013, mixedTable014]
 

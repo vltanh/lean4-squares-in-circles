@@ -1,4 +1,4 @@
-# Owner geometry: two complete table replacements
+# Owner geometry: three complete table replacements
 
 ## Result and exact scope
 
@@ -272,8 +272,8 @@ with their imports and entries in `tiltLeft`. This removes exactly
 generated Lean lines, and 1,136,918 bytes. The owner generator filters
 these nonpositive bundles so regeneration cannot reinstate them.
 
-The separate three-edge argument below removes 16 of the quarter-owner
-patterns as well. There remain 32 quarter-owner patterns, 15 mixed-owner
+The two three-edge arguments below remove 24 of the quarter-owner
+patterns as well. There remain 24 quarter-owner patterns, 15 mixed-owner
 patterns, and 41 positive tilt bundles. Their geometric replacements are
 still open. In particular, the negative-tilt theorem uses the intended
 owners; it does not by itself supply the quarter or mixed restrictions.
@@ -354,19 +354,104 @@ complete pattern set therefore has only
 g,h\in\{1,2,3,4\},\ d\in\{1,3\},
 \]
 
-with exactly 32 patterns. `quarter_owners` derives this restriction
-before requesting any certificate, and `QuarterPattern` and its finite
-completeness theorem now express that exact set.
+with exactly 32 patterns before the next geometric reduction.
+`quarter_owners` derives this restriction before requesting any
+certificate.
 
 The removed modules are `Quarter008`--`Quarter011`,
 `Quarter020`--`Quarter023`, `Quarter032`--`Quarter035`, and
 `Quarter044`--`Quarter047`. They contain exactly 480 quartics, 2,400
 Bernstein coefficient checks, 20,688 generated Lean lines, and
 1,384,893 UTF-8 bytes. Their imports, owner-table entries, and generator
-outputs have been removed; the generation index now records 32 quarter
-groups and 1,065 remaining quarter rows.
+outputs have been removed. This step left 32 quarter groups and 1,065
+quarter rows, before the reduction below.
 
 Together the two geometric replacements remove 34 generated modules,
 858 quartics, 4,290 Bernstein coefficient checks, 37,428 generated Lean
 lines, and 2,521,811 bytes. These are source/dependency counts. No Lean
 compilation or runtime claim is made.
+
+## 7. One rotated corner removes another eight quarter patterns
+
+Suppose a forbidden B-to-T axis is feasible, and G-to-A axis 3 is
+feasible (axis `2` in Lean's zero-based indexing). No owner restriction
+on D-to-E or E-to-H is needed. Write \(c=\cos t\) and \(s=\sin t\).
+The actual G-to-A angle has no mismatch. Add its nominal projection to
+the zero-edge A-to-B projection and the forbidden B-to-T projection:
+
+\[
+\begin{aligned}
+&(a_Gc-b_Gs-b_A)+(b_A+b_B)+(a_T-b_B)\\
+&\qquad=a_Gc-b_Gs+a_T\\
+&\qquad\ge\frac{1+c+|s|}{2}+2-
+  \frac32(|d_A|+|d_B|).
+\end{aligned}
+\tag{15}
+\]
+
+The cancellation is exact for either actual forbidden B axis and
+either allowed zero-edge A axis. Since \(b_G\ge0\), replacing
+\(-s\) by \(|s|\) only increases the rightward projection of G's
+center. Complete its corner disk with circle weight \(1/4\):
+
+\[
+c(a_G+1/2)+|s|(b_G+1/2)
+\le\frac q4+c^2+|s|^2=\frac q4+1.
+\tag{16}
+\]
+
+Combining (15) and (16), using
+\(c+|s|\ge1\) and \(|d_A|+|d_B|\le S\), gives
+
+\[
+\boxed{a_T+\frac q4\ge\frac52-\frac32S.}
+\tag{17}
+\]
+
+The reusable lemma `rotated_corner_primary_span` proves the scalar
+step on the entire closed right semicircle \(c\ge0\),
+\(c^2+s^2=1\). Thus it covers both signs of the tilt, zero tilt,
+and both closed endpoints of the original half-angle chart.
+`G_axis_two_forbidden_quarter_bound` supplies its hypotheses directly
+from actual square containment and feasible axes.
+
+At the allowed mismatch \(S\le3/200\), the canonical primary bound
+\(a_T<283/200\) contradicts (17). The exact strict reserve is
+
+\[
+\frac52-\frac32\frac3{200}-\frac{283}{200}
+ -\frac14\frac{9789}{2500}
+=\frac{209}{2500}>0.
+\tag{18}
+\]
+
+This removes every pattern
+\((1,3,1,1,1,d,h)\), where \(d\in\{1,3\}\) and
+\(h\in\{1,2,3,4\}\), in the historical one-based axis labels.
+The corresponding modules are `Quarter024` through `Quarter031`.
+They contain 240 quartics, 1,200 Bernstein coefficient checks,
+10,344 generated Lean lines, and 682,081 UTF-8 bytes.
+
+The remaining exact quarter pattern family is
+
+\[
+(1,g,1,1,1,d,h),\qquad
+g\in\{1,2,4\},\quad d\in\{1,3\},\quad
+h\in\{1,2,3,4\}.
+\]
+
+Its completeness proof uses the direct index \(8g'+4d'+h'\), with
+\(g'\in\mathrm{Fin}\,3\), \(d'\in\mathrm{Fin}\,2\), and
+\(h'\in\mathrm{Fin}\,4\). It checks just these 24 concrete owner
+vectors. The previous exhaustive decision over all functions
+\(\mathrm{Fin}\,7\to\mathrm{Fin}\,4\) is removed.
+
+All three replacements together delete 42 generated modules,
+1,098 quartics, 5,490 Bernstein coefficient checks, 47,772 generated
+Lean lines, and 3,203,892 bytes. The owner generator filters all three
+excluded regions, and the generation index now has 24 quarter groups
+with 825 rows, 15 mixed groups with 729 rows, and 41 positive tilt
+bundles with 861 rows. Exact static checks confirmed the disjoint
+48-pattern partition (16 plus 8 removed, 24 retained), all 24 direct
+selector outputs, the reserve in (18), and the remaining source imports.
+No Lean compilation or historical certificate replay was run.

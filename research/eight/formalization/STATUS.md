@@ -36,6 +36,12 @@ and mixed-owner choice. Another 480 quartic certificates and 20,688
 generated lines have been deleted. The combined removal is 34 generated
 modules, 858 quartics, and 37,428 lines; 32 quarter-owner bundles remain.
 
+The rotated-corner support on `G→A→B→T` removes another eight complete
+quarter bundles. Cumulative owner/tilt deletion is now 42 modules,
+1,098 quartics, and 47,772 lines, leaving 24 quarter bundles. Their
+completeness is expressed by a direct index formula with 24 concrete
+projections instead of enumeration of all seven-vertex owner functions.
+
 Core/core pair geometry now replaces four recursive chart decisions,
 covering their 32 source-axis/sign problems at once. The unchanged public
 pair theorem uses center separation and the same signed vertex marker.

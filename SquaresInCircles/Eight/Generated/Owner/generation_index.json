@@ -6,8 +6,8 @@
       "input": "candidate_quarter_owner_large_mismatch_dual_data.json",
       "sha256": "a4a86562adf04d833a48eafcfd6a2b98fb344d7b32926d1ce5b0926afd70e1ee",
       "mode": "quarter",
-      "groups": 32,
-      "rows": 1065
+      "groups": 24,
+      "rows": 825
     },
     {
       "input": "candidate_mixed_owner_shared_mismatch_hand_data.json",

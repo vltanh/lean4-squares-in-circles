@@ -176,6 +176,17 @@ G3.1, 34 modules, 858 quartics, 4,290 Bernstein coefficient checks,
 and 37,428 generated lines have been removed. The remaining B-forbidden
 and mixed-owner classes are open.
 
+**G3.2 second whole class implemented:** for a forbidden B separator and
+G-axis 2, the `G→A→B→T` chain and a single rotated-corner support yield
+`5/2-(3/2)S ≤ a_T+q/4`. Containment contradicts this at `S ≤ 3/200`,
+with exact reserve `209/2500`. The proof covers the whole tilt chart,
+both D directions, and every E owner. `Quarter024`–`Quarter031` have
+been removed: eight modules, 240 quartics, and 10,344 lines. The total
+owner/tilt removal is now 42 modules, 1,098 quartics, 5,490 Bernstein
+coefficient checks, and 47,772 lines. The 24 retained quarter patterns
+use an explicit index formula and 24 concrete projections; the previous
+enumeration of functions `Fin 7 → Fin 4` has also been removed.
+
 ## G4 — Replace finite word and pair searches: open
 
 The four geometric labels form a small weighted graph. Replace the
