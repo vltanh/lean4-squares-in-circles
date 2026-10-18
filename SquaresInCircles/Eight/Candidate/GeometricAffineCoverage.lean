@@ -1,15 +1,16 @@
 module
 
 public import SquaresInCircles.Eight.Arithmetic.AffineCertificate
-public import SquaresInCircles.Eight.Candidate.GeometricPrimaryExclusion
+public import SquaresInCircles.Eight.Candidate.GeometricSecondaryExclusion
 
 /-!
-# Affine coverage with proved core-primary exclusions
+# Affine coverage with proved core separator exclusions
 
-Only zero-quarter target-core/target-primary and source-core/source-primary
-domains are omitted.  Their infeasibility follows from the actual frame
-geometry below.  All retained domains use exactly the original endpoint,
-state, row-matching, and closed angle-chain predicates.  No exclusion list
+Two primary-axis classes are excluded over the complete zero-quarter frame
+range. Two secondary-axis classes are excluded at every angle, by bounding
+the core center's projection. Their infeasibility follows from actual frame
+geometry below. All retained domains use exactly the original endpoint,
+state, row-matching, and closed angle-chain predicates. No exclusion list
 or computed replacement coverage table is embedded.
 -/
 
@@ -18,13 +19,22 @@ open scoped BigOperators
 namespace SquaresInCircles.Eight.Candidate.GeometricAffine
 open Arithmetic
 
-def Excluded (M : AffineTableMeta) (s t : ℕ) (axis : ForwardAxis) : Prop :=
+def PrimaryExcluded (M : AffineTableMeta) (s t : ℕ) (axis : ForwardAxis) : Prop :=
   (arcAt M s).role ∈ zeroEdges ∧
     ((axis=.two ∧ (arcAt M t).outer=false) ∨
      (axis=.four ∧ (arcAt M s).outer=false))
 
+def SecondaryExcluded (M : AffineTableMeta) (s t : ℕ) (axis : ForwardAxis) : Prop :=
+  (axis=.one ∧ (arcAt M s).positive=false ∧ (arcAt M t).outer=false) ∨
+  (axis=.three ∧ (arcAt M t).positive=true ∧ (arcAt M s).outer=false)
+
+def Excluded (M : AffineTableMeta) (s t : ℕ) (axis : ForwardAxis) : Prop :=
+  PrimaryExcluded M s t axis ∨ SecondaryExcluded M s t axis
+
 instance (M : AffineTableMeta) (s t : ℕ) (axis : ForwardAxis) :
-    Decidable (Excluded M s t axis) := by unfold Excluded; infer_instance
+    Decidable (Excluded M s t axis) := by
+  unfold Excluded PrimaryExcluded SecondaryExcluded
+  infer_instance
 
 /-- The original angle validity predicate, restricted only by a geometric
 infeasibility theorem.  Retained chain and row checks are unchanged. -/
@@ -71,21 +81,40 @@ theorem feasible_not_excluded {M : AffineTableMeta}
     (hsi : (arcAt M s).role=i)
     (hs : (arcAt M s).Contains M.radius (C.a i) (C.b i))
     (ht : (arcAt M t).Contains M.radius (C.a (next i)) (C.b (next i)))
+    (hσ : (arcAt M s).sign*C.b i=C.sigma i*C.b i)
+    (hτ : (arcAt M t).sign*C.b (next i)=C.sigma (next i)*C.b (next i))
     (j : Fin 4) (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i))) :
     ¬ Excluded M s t (ForwardAxis.ofIndex j) := by
-  rintro ⟨hi, ⟨haxis,hcore⟩ | ⟨haxis,hcore⟩⟩
-  · have hi' : i∈zeroEdges := by simpa [hsi] using hi
-    have hji : j=1 := by fin_cases j <;> norm_num [ForwardAxis.ofIndex] at haxis ⊢
-    subst j
-    have hlarge := (Geometric.zero_target_primary_requires_outer F hi' hj).2
-    have hsmall := arc_core_primary_upper ht hcore
-    linarith
-  · have hi' : i∈zeroEdges := by simpa [hsi] using hi
-    have hji : j=3 := by fin_cases j <;> norm_num [ForwardAxis.ofIndex] at haxis ⊢
-    subst j
-    have hlarge := (Geometric.zero_source_primary_requires_outer F hi' hj).2
-    have hsmall := arc_core_primary_upper hs hcore
-    linarith
+  intro hexcluded
+  rcases hexcluded with hprimary | hsecondary
+  · rcases hprimary with ⟨hi, ⟨haxis,hcore⟩ | ⟨haxis,hcore⟩⟩
+    · have hi' : i∈zeroEdges := by simpa [hsi] using hi
+      have hji : j=1 := by fin_cases j <;> norm_num [ForwardAxis.ofIndex] at haxis ⊢
+      subst j
+      have hlarge := (Geometric.zero_target_primary_requires_outer F hi' hj).2
+      have hsmall := arc_core_primary_upper ht hcore
+      linarith
+    · have hi' : i∈zeroEdges := by simpa [hsi] using hi
+      have hji : j=3 := by fin_cases j <;> norm_num [ForwardAxis.ofIndex] at haxis ⊢
+      subst j
+      have hlarge := (Geometric.zero_source_primary_requires_outer F hi' hj).2
+      have hsmall := arc_core_primary_upper hs hcore
+      linarith
+  · rcases hsecondary with ⟨haxis,hnegative,hcore⟩ | ⟨haxis,hpositive,hcore⟩
+    · have hji : j=0 := by fin_cases j <;> norm_num [ForwardAxis.ofIndex] at haxis ⊢
+      subst j
+      have hsign : C.sigma i*C.b i ≤ 0 := by
+        rw [← hσ]
+        simpa [ArcData.sign,hnegative] using neg_nonpos.mpr (C.b_nonneg i)
+      exact Geometric.source_secondary_excluded_of_target_core F
+        (arc_core_primary_upper ht hcore) hsign hj
+    · have hji : j=2 := by fin_cases j <;> norm_num [ForwardAxis.ofIndex] at haxis ⊢
+      subst j
+      have hsign : 0 ≤ C.sigma (next i)*C.b (next i) := by
+        rw [← hτ]
+        simpa [ArcData.sign,hpositive] using C.b_nonneg (next i)
+      exact Geometric.target_secondary_excluded_of_source_core F
+        (arc_core_primary_upper hs hcore) hsign hj
 
 theorem row_cover {K : AffineCover} {M : AffineTableMeta} {rows : List AffineTableRow}
     (hK : AngleValid K M rows) {s t : Fin M.arcs.length}
@@ -132,7 +161,8 @@ noncomputable def chargedBound {K : AffineCover} {M : AffineTableMeta} {rows : L
   have hallowed : axis∈M.allowedAxes (arcAt M (selected i)).role := by
     simpa [axis,hrole] using haxes i j hj
   have hkeep : ¬ Excluded M (selected i) (selected (next i)) axis :=
-    feasible_not_excluded C F (hrole i) (hcontains i) (hcontains (next i)) j hj
+    feasible_not_excluded C F (hrole i) (hcontains i) (hcontains (next i))
+      (hproducts i) (hproducts (next i)) j hj
   obtain ⟨row,hrow,hs,ht,he,ha,hk,hr,hru,hγ⟩ := row_cover hK.2.2
     (by rw [hrole,hrole]; rfl) hallowed hkeep hu
   have hsdata : row.sourceArc M=arcAt M (selected i) := by simp [AffineTableRow.sourceArc,arcAt,hs]

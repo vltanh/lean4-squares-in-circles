@@ -9,17 +9,103 @@ certificate. Run from any directory; --root can select another checkout.
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import json
 from pathlib import Path
 import re
 import subprocess
 
 
-IMPORT = re.compile(r"^(?:public\s+)?import\s+(\S+)", re.MULTILINE)
+IMPORT = re.compile(r"^(?:public\s+)?(?:meta\s+)?import\s+(\S+)", re.MULTILINE)
 AFFINE = re.compile(
     r'affine_rows%\s+"([^"]+)"\s+rows\s+(\d+)'
-    r'(?:\s+excluding_zero_core_primary\s+(\d+))?'
+    r'(?:\s+(excluding_zero_core_primary|excluding_core_separators)\s+(\d+))?'
 )
+CERTIFY = re.compile(r"(?<![\w'])certify(?![\w'])")
+DECLARATION = re.compile(
+    r"^\s*(?:@\[[^\]]*\]\s*)*"
+    r"(?:(?:public|private|protected|noncomputable|partial|unsafe)\s+)*"
+    r"(theorem|lemma|def|abbrev|opaque|axiom)\s+([\w.']+)"
+)
+
+
+def lean_code(source: str) -> str:
+    """Mask comments and strings, preserving offsets and line numbers."""
+    result = list(source)
+    pos = depth = 0
+    quoted = False
+    while pos < len(source):
+        if depth:
+            if source.startswith("/-", pos):
+                depth += 1
+                result[pos:pos + 2] = "  "
+                pos += 2
+            elif source.startswith("-/", pos):
+                depth -= 1
+                result[pos:pos + 2] = "  "
+                pos += 2
+            else:
+                if source[pos] != "\n":
+                    result[pos] = " "
+                pos += 1
+        elif quoted:
+            if source[pos] == "\\" and pos + 1 < len(source):
+                result[pos] = " "
+                if source[pos + 1] != "\n":
+                    result[pos + 1] = " "
+                pos += 2
+            else:
+                if source[pos] == '"':
+                    quoted = False
+                if source[pos] != "\n":
+                    result[pos] = " "
+                pos += 1
+        elif source.startswith("/-", pos):
+            depth = 1
+            result[pos:pos + 2] = "  "
+            pos += 2
+        elif source.startswith("--", pos):
+            end = source.find("\n", pos)
+            if end < 0:
+                end = len(source)
+            result[pos:end] = " " * (end - pos)
+            pos = end
+        elif source[pos] == '"':
+            quoted = True
+            result[pos] = " "
+            pos += 1
+        else:
+            pos += 1
+    return "".join(result)
+
+
+def certify_occurrences(module: str, source: str) -> list[dict]:
+    """Find literal source uses, without interpreting or evaluating Lean."""
+    occurrences = []
+    declaration = declaration_kind = None
+    in_body = False
+    for line, (raw, code) in enumerate(zip(source.splitlines(), lean_code(source).splitlines()), 1):
+        named = DECLARATION.match(code)
+        if named:
+            declaration_kind, declaration = named.groups()
+            in_body = False
+        assignment = code.find(":=")
+        for match in CERTIFY.finditer(code):
+            if named and named.start(2) <= match.start() < named.end(2):
+                kind = "definition"
+            elif declaration and declaration.split(".")[-1] == "certify":
+                kind = "recursive_body"
+            elif declaration_kind in ("theorem", "lemma"):
+                kind = "proof_reference" if in_body or (0 <= assignment < match.start()) else "certificate_statement"
+            else:
+                kind = "other_reference"
+            occurrences.append({
+                "module": module, "line": line, "kind": kind,
+                "declaration": declaration, "expression": raw.strip(),
+            })
+        if assignment >= 0:
+            in_body = True
+    return occurrences
 
 
 def inventory(root: Path, entry: str) -> dict:
@@ -36,17 +122,18 @@ def inventory(root: Path, entry: str) -> dict:
             continue
         source = path.read_text()
         reached[module] = source
-        pending.extend(IMPORT.findall(source))
+        pending.extend(IMPORT.findall(lean_code(source)))
 
     affine = []
     for module, source in sorted(reached.items()):
-        for data_path, input_rows, retained_rows in AFFINE.findall(source):
+        for data_path, input_rows, exclusion_rule, retained_rows in AFFINE.findall(source):
             rows = int(retained_rows or input_rows)
             affine.append({
                 "module": module,
                 "rows": rows,
                 "input_rows": int(input_rows),
                 "excluded_by_geometry": int(input_rows) - rows,
+                "exclusion_rule": exclusion_rule or None,
                 "input": data_path,
             })
 
@@ -58,11 +145,12 @@ def inventory(root: Path, entry: str) -> dict:
         for kind in ("Quarter", "Mixed", "Tilt")
     }
     searches = []
+    search_counts = {}
     for module, source in sorted(reached.items()):
-        for line, text in enumerate(source.splitlines(), 1):
-            if ("certify " in text or "certify\n" in text) and "theorem" not in text:
-                if "depth (problem" in text or "CompactRootCover.certify stationaryTargets" in text:
-                    searches.append({"module": module, "line": line, "expression": text.strip()})
+        occurrences = certify_occurrences(module, source)
+        searches.extend(occurrences)
+        if occurrences:
+            search_counts[module] = {"total": len(occurrences), **dict(Counter(row["kind"] for row in occurrences))}
 
     try:
         head = subprocess.check_output(
@@ -82,6 +170,17 @@ def inventory(root: Path, entry: str) -> dict:
         "affine_geometric_exclusions": sum(table["excluded_by_geometry"] for table in affine),
         "stationary_root_cover_imported": "SquaresInCircles.Eight.ExactFamily.Generated.StationaryLocalization" in reached,
         "owner_bundle_modules": owner,
+        "recursive_search_inventory_kind": (
+            "literal certify tokens in source, excluding comments and strings; "
+            "definitions, statements and proof/body references are distinguished; "
+            "these are not executed searches, recursion-node counts, or runtime measurements"
+        ),
+        "recursive_search_source_occurrences": len(searches),
+        "recursive_search_source_counts_by_kind": dict(Counter(row["kind"] for row in searches)),
+        "recursive_search_source_counts_by_module": search_counts,
+        "recursive_search_runtime_measurements": None,
+        # Keep the historical output key, now with complete literal source
+        # occurrences and a kind for each; it previously missed word proofs.
         "recursive_search_declarations": searches,
     }
 

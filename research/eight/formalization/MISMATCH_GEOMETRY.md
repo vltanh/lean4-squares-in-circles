@@ -2,17 +2,24 @@
 
 ## Result and remaining scope
 
-The active coarse mismatch payload now contains **123,003 rows**, down
-from 129,031. The same removal is shared by the enhanced coarse bound.
-The 6,028 omitted rows cover complete geometric domains that are
-impossible: on a zero-quarter edge a target-primary separator requires
-an outer target with primary coordinate greater than one, and a
-source-primary separator requires the analogous outer source. Core-side
-and core-corner primary coordinates are at most 7/12.
+Four complete geometric state/axis classes now remove **77,480 row
+constructors** across all ten affine tables. Their active payload is
+**582,890 rows**, down from 660,370. The coarse mismatch table contains
+**115,463 rows**, down from 129,031; the enhanced coarse bound shares
+that same 13,568-row removal.
 
-`Candidate/GeometricPrimaryExclusion.lean` proves these exclusions from
-the complete original frame range. `Candidate/GeometricAffineCoverage.lean`
-connects them to actual feasible axes before selecting an angle chain.
+On a zero-quarter edge a target-primary separator requires an outer
+target with primary coordinate greater than one, and a source-primary
+separator requires the analogous outer source. Core-side and core-corner
+primary coordinates are at most 7/12. At every angle a core center's
+projection is at most 5/6, which also excludes two secondary-axis classes
+when the corresponding signed transverse coordinate has the wrong sign.
+
+`Candidate/GeometricPrimaryExclusion.lean` proves the primary exclusions
+from the complete original frame range. `GeometricSecondaryExclusion.lean`
+proves the secondary exclusions at every angle.
+`Candidate/GeometricAffineCoverage.lean` connects both to actual feasible
+axes before selecting an angle chain.
 The data-only reader omits these constructors before Lean elaboration;
 the retained domains use the original row checks, endpoint enclosures,
 state coverage, and closed angle-chain predicate. The historical research
@@ -38,9 +45,9 @@ This is a replacement for the **angular verification method**, not yet a
 replacement for one of the four complete charged bounds. The endpoint and
 contact-root inequalities must still be proved uniformly over their two
 state parameters with one consistent potential per vertex. The primary
-exclusion removes 152 of the 960 semantic cases below before this
-remaining positivity work begins. All added Lean is an uncompiled draft,
-as requested.
+and secondary exclusions each remove 152 disjoint cases from the 960
+semantic cases below, leaving at most **656** before this remaining
+positivity work begins. All added Lean is an uncompiled draft, as requested.
 
 ## 1. The half-angle geometry
 
@@ -258,7 +265,9 @@ is not yet handled. Proving it by again splitting states into dozens of
 numerical intervals would restore the main problem, even if the resulting
 tables were smaller.
 
-## 6. Closed state gate: primary separation requires an outer receiver
+## 6. Closed state gates for core separators
+
+### Primary separation requires an outer receiver
 
 The following elementary inequality holds on the entire original frame
 range \(|d|\le7/10\). If \(Y\ge0\) and \(|v|\le Y\), then
@@ -324,13 +333,63 @@ coarse row metadata found 3,014 target-core/target-primary rows and
 replay their certificates or treat a numerical result as the proof of
 infeasibility; (8) is the proof.
 
+### Secondary exclusions at every angle
+
+For a core center the canonical bounds give
+\(0\le b\le a\le7/12\). Consequently
+
+\[
+a^2+b^2\le2(7/12)^2=49/72<25/36=(5/6)^2.
+\]
+
+For any real \(v\) with \(|v|\le a\), the exact orthogonal-projection
+identity
+
+\[
+(a\sin\phi+v\cos\phi)^2+(a\cos\phi-v\sin\phi)^2=a^2+v^2
+\]
+
+therefore gives the whole-angle inequality
+
+\[
+\boxed{|a\sin\phi+v\cos\phi|\le5/6.}
+\tag{9}
+\]
+
+The source-secondary margin is
+\(\sigma b+A\sin\phi-\tau B\cos\phi-W(\phi)\).
+If the target is core and \(\sigma b\le0\), then (9) and
+\(W\ge1\) bound this margin by \(-1/6<0\). The target-secondary
+margin is \(a\sin\phi+\sigma b\cos\phi-\tau B-W(\phi)\).
+It has the same strict negative bound if the source is core and
+\(\tau B\ge0\). These two exclusions impose no frame-angle or
+total-mismatch restriction.
+
+`GeometricSecondaryExclusion.lean` implements the projection estimate,
+both negative margins, and their adapters to actual `Frame` feasibility.
+In the 31 state branches of Section 5, the negative-sign branch counts
+are \((3,2,3,3,0,3,3)\), the positive-sign counts are
+\((3,0,3,3,2,3,0)\), and the core counts remain
+\((4,1,4,4,1,4,2)\). Thus these two axis classes exclude
+
+\[
+2\sum_i\left(n_i^-c_{i+1}+c_i n_{i+1}^+\right)=152
+\]
+
+additional axis/sign/state-pair cases. They use the other two axes from
+the primary exclusions, so the two sets are disjoint. Their combined
+count is 304, leaving at most 656 semantic cases for further work.
+
 ### Active coverage and row removal
 
-`GeometricAffine.Excluded` recognizes exactly the two state/axis classes
-above. Its `feasible_not_excluded` theorem applies (8) to original actual
-axes. The chosen arc's `Contains` predicate supplies the core bound, so
-the proof does not assume that an endpoint shared by two radial curves
-has a unique radial label.
+`GeometricAffine.Excluded` recognizes exactly the four state/axis classes
+above. Its `feasible_not_excluded` theorem applies (8) and (9) to original
+actual axes. The chosen arc's `Contains` predicate supplies the core
+bound, so the proof does not assume that an endpoint shared by two radial
+curves has a unique radial label. For the secondary exclusions, the
+existing state cover's signed-product equalities transport the selected
+arc sign to the actual transverse coordinate. This also preserves both
+labels at a zero transverse coordinate.
 
 `GeometricAffine.AngleValid` inserts the hypothesis `¬ Excluded` before
 the original chain predicate. Every retained row must still match its
@@ -344,29 +403,36 @@ The notation
 
 ```lean
 affine_rows% "...CANDIDATE_COARSE_MISMATCH_HAND_DATA.json" rows 129031
-  excluding_zero_core_primary 123003
+  excluding_core_separators 115463
 ```
 
 checks both input and retained counts. It filters by the edge, original
-axis, and radial kind, with no list of excluded row identifiers or
+axis, radial kind, and transverse sign, with no list of excluded row identifiers or
 replacement coverage table. A filter mistake cannot establish coverage:
 the independent retained-domain predicate must still be proved.
 
-The metadata-only audit gives the following removed row counts, in the
-historical JSON's one-based axis numbering:
+The metadata-only audit gives these active payload counts:
 
-| Zero edge | Target-primary axis 2, core target | Source-primary axis 4, core source |
-|---|---:|---:|
-| 0 | 734 | 823 |
-| 2 | 1,457 | 1,457 |
-| 4 | 823 | 734 |
-| Total | 3,014 | 3,014 |
+| Affine table | Historical rows | Primary exclusions | Secondary exclusions | Active rows |
+|---|---:|---:|---:|---:|
+| Candidate coarse mismatch | 129,031 | 6,028 | 7,540 | 115,463 |
+| D upper | 24,197 | 2,445 | 3,219 | 18,533 |
+| G lower | 9,087 | 380 | 425 | 8,282 |
+| G upper | 9,796 | 349 | 442 | 9,005 |
+| H lower | 48,050 | 3,359 | 4,395 | 40,296 |
+| Mismatch 0.015 to 0.001 | 144,709 | 0 | 8,899 | 135,810 |
+| Mismatch 0.1 to 0.015 | 107,196 | 7,140 | 7,988 | 92,068 |
+| Mismatch 0.26 to 0.1 | 131,255 | 7,040 | 9,409 | 114,806 |
+| T lower | 49,971 | 3,281 | 4,512 | 42,178 |
+| T upper | 7,078 | 299 | 330 | 6,449 |
+| **Total** | **660,370** | **30,321** | **47,159** | **582,890** |
 
-All 6,028 removals delete whole angle chains. The ordered row records in
-every retained chain are identical to the historical records; only the
-row indices are renumbered by the unchanged `AffineCertificate.cover`
-constructor. The enhanced coarse bound maps its higher edge targets over
-the same retained rows and uses the same geometric coverage dispatcher.
+All 77,480 removals delete whole angle chains. In all ten tables, the
+ordered row records in every retained chain are identical to the
+historical records; only the row indices are renumbered by the unchanged
+`AffineCertificate.cover` constructor. The enhanced coarse bound maps
+its higher edge targets over the same retained coarse rows and uses the
+same geometric coverage dispatcher.
 
 The touched reader also now accepts the frozen finite decimal strings
 exactly: `.89727` becomes `89727/100000`, `-0.125` becomes `-125/1000`,
@@ -399,22 +465,29 @@ proof of its required reserve.
 ## 8. Current dependency and validation status
 
 - New source: `Candidate/GeometricPrimaryExclusion.lean`,
+  `Candidate/GeometricSecondaryExclusion.lean`,
   `Candidate/GeometricAffineCoverage.lean`, and `Candidate/GeometricMismatch.lean`.
 - New numerical tables or generated coverage lists: none.
-- Active coarse and enhanced payload: **123,003 rows**, sharing the same
-  6,028-row geometric removal from the historical 129,031-row input.
+- Active affine payload: **582,890 rows** across ten tables, a reduction
+  of 77,480 from the preserved historical inputs.
+- Active coarse and enhanced payload: **115,463 rows**, sharing the same
+  13,568-row geometric removal from the historical 129,031-row input.
 - All four complete charged bounds are still backed by their retained
   table domains. Their further replacement remains the state-positivity gate.
 - Complete geometric regions excluded analytically: all zero-edge
-  target-core/target-primary and source-core/source-primary regions,
-  comprising 152 semantic cases and 6,028 old coarse rows.
+  target-core/target-primary and source-core/source-primary regions;
+  all-angle target-core/source-secondary regions with nonpositive source
+  transverse coordinate; and all-angle source-core/target-secondary
+  regions with nonnegative target transverse coordinate. Together they
+  remove 304 semantic cases and 13,568 historical coarse rows.
 - Existing capture hypotheses strengthened or assumed: none.
 - `sorry`, new axioms, external-oracle substitutions: none.
 - Validation performed: exact symbolic polynomial expansion of all SAT
   coefficient formulas and the discriminant identity; static source review;
-  a metadata-only audit of whole-chain deletion and unchanged retained
-  records; Python checks of exact conversion for all 30,311 distinct
-  row/gamma strings and ten positive/ten rejection grammar fixtures.
+  metadata-only audits of whole-chain deletion and unchanged retained
+  records in all ten tables; Python checks of exact conversion for all
+  155,148 distinct-per-table row/gamma strings and ten positive/ten
+  rejection grammar fixtures.
 - Historical coarse input SHA-256 remains
   `ffa48df0d02e18880314907a72a70fcc6aaceea4ee1060ea76b4fdb04c23a5fa`.
 - Lean compilation, CI, and full certificate replay: not run.

@@ -132,15 +132,20 @@ and the endpoint/contact-root reduction, including linear, constant,
 double-root, and disconnected feasible-set cases. The actual-frame
 adapter retains every originally feasible axis. G2.3 remains open.
 
-**Whole-state exclusion integrated:** the full frame range implies that a
-zero-quarter primary separator needs the corresponding primary coordinate
-above one. A core arc has primary coordinate at most `7/12`. The active
-coarse and enhanced coverage dispatchers now exclude these impossible
-regions geometrically, retaining all original checks on the other regions.
-This removes 6,028 entire angle chains from the Lean row payload, reducing
-the shared coarse table from 129,031 to 123,003 rows. Historical research
-input is preserved. The active total across all affine tables is now
-654,342 rows, and all remaining table-backed charged stages are explicit.
+**Four whole-state exclusions integrated:** the full frame range implies
+that a zero-quarter primary separator needs the corresponding primary
+coordinate above one. A core arc has primary coordinate at most `7/12`.
+At every angle a core center's projection is at most `5/6`, excluding
+two further secondary-axis classes when the other transverse coordinate
+has the incompatible sign. The active coverage dispatchers apply these
+geometric obstructions across all ten affine tables, retaining every
+original check on the remaining regions. They remove 77,480 row
+constructors, with complete angle chains removed together. The shared
+coarse table decreases from 129,031 to 115,463 rows, and the affine total
+from 660,370 to 582,890. The state cover transports signed products, so
+zero-coordinate and radial junctions retain their original coverage.
+Historical research inputs are preserved. All four complete charged
+stages still depend on their retained table domains.
 
 ## G3 — Eliminate owner and tilt regions by direct circle stresses: open
 

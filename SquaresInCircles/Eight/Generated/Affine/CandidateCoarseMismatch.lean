@@ -4,9 +4,9 @@ public meta import SquaresInCircles.Eight.AffineDataReader
 public import SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.Meta
 public import SquaresInCircles.Eight.Candidate.GeometricAffineCoverage
 
-/-! The historical input contains 129,031 rows. Whole-domain core-primary
-exclusions remove 6,028 constructors from the active Lean payload. Every
-remaining domain retains the original row semantics and closed coverage.
+/-! The historical input contains 129,031 rows. Whole-domain core
+separator exclusions remove 13,568 constructors from the active Lean payload.
+Every retained domain keeps the original row semantics and closed coverage.
 All decision proofs below are uncompiled and have not been executed. -/
 
 @[expose] public section
@@ -18,9 +18,9 @@ set_option maxHeartbeats 0
 
 def rows : List AffineTableRow :=
   affine_rows% "../../../../research/eight/CANDIDATE_COARSE_MISMATCH_HAND_DATA.json" rows 129031
-    excluding_zero_core_primary 123003
+    excluding_core_separators 115463
 
-theorem complete_row_count : rows.length = 123003 := by rfl
+theorem complete_row_count : rows.length = 115463 := by rfl
 
 theorem rows_valid : AffineCertificate.RowsValid meta rows := by decide
 
