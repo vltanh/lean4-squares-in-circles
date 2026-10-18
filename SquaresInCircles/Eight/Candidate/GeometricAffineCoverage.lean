@@ -1,15 +1,17 @@
 module
 
 public import SquaresInCircles.Eight.Arithmetic.AffineCertificate
-public import SquaresInCircles.Eight.Candidate.GeometricSecondaryExclusion
+public import SquaresInCircles.Eight.Candidate.GeometricCoreQuarter
 
 /-!
 # Affine coverage with proved core separator exclusions
 
 Two primary-axis classes are excluded over the complete zero-quarter frame
 range. Two secondary-axis classes are excluded at every angle, by bounding
-the core center's projection. Their infeasibility follows from actual frame
-geometry below. All retained domains use exactly the original endpoint,
+the core center's projection. A fifth class excludes all axes on a core/core
+quarter edge with positive source and negative target signs, by the physical
+center-gap cap. Their infeasibility follows from actual frame geometry
+below. All retained domains use exactly the original endpoint,
 state, row-matching, and closed angle-chain predicates. No exclusion list
 or computed replacement coverage table is embedded.
 -/
@@ -28,12 +30,16 @@ def SecondaryExcluded (M : AffineTableMeta) (s t : ℕ) (axis : ForwardAxis) : P
   (axis=.one ∧ (arcAt M s).positive=false ∧ (arcAt M t).outer=false) ∨
   (axis=.three ∧ (arcAt M t).positive=true ∧ (arcAt M s).outer=false)
 
+def CoreQuarterExcluded (M : AffineTableMeta) (s t : ℕ) : Prop :=
+  word (arcAt M s).role=1 ∧ (arcAt M s).outer=false ∧ (arcAt M t).outer=false ∧
+    (arcAt M s).positive=true ∧ (arcAt M t).positive=false
+
 def Excluded (M : AffineTableMeta) (s t : ℕ) (axis : ForwardAxis) : Prop :=
-  PrimaryExcluded M s t axis ∨ SecondaryExcluded M s t axis
+  PrimaryExcluded M s t axis ∨ SecondaryExcluded M s t axis ∨ CoreQuarterExcluded M s t
 
 instance (M : AffineTableMeta) (s t : ℕ) (axis : ForwardAxis) :
     Decidable (Excluded M s t axis) := by
-  unfold Excluded PrimaryExcluded SecondaryExcluded
+  unfold Excluded PrimaryExcluded SecondaryExcluded CoreQuarterExcluded
   infer_instance
 
 /-- The original angle validity predicate, restricted only by a geometric
@@ -86,7 +92,7 @@ theorem feasible_not_excluded {M : AffineTableMeta}
     (j : Fin 4) (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i))) :
     ¬ Excluded M s t (ForwardAxis.ofIndex j) := by
   intro hexcluded
-  rcases hexcluded with hprimary | hsecondary
+  rcases hexcluded with hprimary | hsecondary | hquarter
   · rcases hprimary with ⟨hi, ⟨haxis,hcore⟩ | ⟨haxis,hcore⟩⟩
     · have hi' : i∈zeroEdges := by simpa [hsi] using hi
       have hji : j=1 := by fin_cases j <;> norm_num [ForwardAxis.ofIndex] at haxis ⊢
@@ -115,6 +121,17 @@ theorem feasible_not_excluded {M : AffineTableMeta}
         simpa [ArcData.sign,hpositive] using C.b_nonneg (next i)
       exact Geometric.target_secondary_excluded_of_source_core F
         (arc_core_primary_upper hs hcore) hsign hj
+  · rcases hquarter with ⟨hk,hsource,htarget,hpositive,hnegative⟩
+    have hk' : word i=1 := by simpa only [hsi] using hk
+    have hsourceSign : C.sigma i*C.b i=C.b i := by
+      rw [← hσ]
+      simp [ArcData.sign,hpositive]
+    have htargetSign : C.sigma (next i)*C.b (next i)= -C.b (next i) := by
+      rw [← hτ]
+      simp [ArcData.sign,hnegative]
+    exact Geometric.quarter_core_opposite_excluded F hk'
+      (arc_core_primary_upper hs hsource) (arc_core_primary_upper ht htarget)
+      hsourceSign htargetSign j hj
 
 theorem row_cover {K : AffineCover} {M : AffineTableMeta} {rows : List AffineTableRow}
     (hK : AngleValid K M rows) {s t : Fin M.arcs.length}

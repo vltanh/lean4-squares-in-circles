@@ -14,7 +14,7 @@ Each statement carries the actual branch/sign/axis expression. A failed
 leaf will make its `by decide` proof fail during the later requested audit.
 The common core/core block has been removed: WordGeometry supplies its
 whole-domain geometric proof before calling the retained dispatcher.
-Both dispatchers also omit the four impossible core separator classes;
+Both dispatchers also omit the five impossible core separator classes;
 WordGeometry proves this exclusion for every actual feasible axis.
 -/
 
@@ -1168,22 +1168,6 @@ theorem short_4_coreSide_outer_10_2 :
     certify 96 (wrongProblem .short 4 .coreSide .outer true false 2) (pairBox .coreSide .outer)=true := by decide
 theorem short_4_coreSide_outer_10_3 :
     certify 96 (wrongProblem .short 4 .coreSide .outer true false 3) (pairBox .coreSide .outer)=true := by decide
-theorem short_4_coreSide_coreSide_10_0 :
-    certify 96 (wrongProblem .short 4 .coreSide .coreSide true false 0) (pairBox .coreSide .coreSide)=true := by decide
-theorem short_4_coreSide_coreSide_10_1 :
-    certify 96 (wrongProblem .short 4 .coreSide .coreSide true false 1) (pairBox .coreSide .coreSide)=true := by decide
-theorem short_4_coreSide_coreSide_10_2 :
-    certify 96 (wrongProblem .short 4 .coreSide .coreSide true false 2) (pairBox .coreSide .coreSide)=true := by decide
-theorem short_4_coreSide_coreSide_10_3 :
-    certify 96 (wrongProblem .short 4 .coreSide .coreSide true false 3) (pairBox .coreSide .coreSide)=true := by decide
-theorem short_4_coreSide_coreCorner_10_0 :
-    certify 96 (wrongProblem .short 4 .coreSide .coreCorner true false 0) (pairBox .coreSide .coreCorner)=true := by decide
-theorem short_4_coreSide_coreCorner_10_1 :
-    certify 96 (wrongProblem .short 4 .coreSide .coreCorner true false 1) (pairBox .coreSide .coreCorner)=true := by decide
-theorem short_4_coreSide_coreCorner_10_2 :
-    certify 96 (wrongProblem .short 4 .coreSide .coreCorner true false 2) (pairBox .coreSide .coreCorner)=true := by decide
-theorem short_4_coreSide_coreCorner_10_3 :
-    certify 96 (wrongProblem .short 4 .coreSide .coreCorner true false 3) (pairBox .coreSide .coreCorner)=true := by decide
 theorem short_4_coreCorner_outer_10_0 :
     certify 96 (wrongProblem .short 4 .coreCorner .outer true false 0) (pairBox .coreCorner .outer)=true := by decide
 theorem short_4_coreCorner_outer_10_1 :
@@ -1192,22 +1176,6 @@ theorem short_4_coreCorner_outer_10_2 :
     certify 96 (wrongProblem .short 4 .coreCorner .outer true false 2) (pairBox .coreCorner .outer)=true := by decide
 theorem short_4_coreCorner_outer_10_3 :
     certify 96 (wrongProblem .short 4 .coreCorner .outer true false 3) (pairBox .coreCorner .outer)=true := by decide
-theorem short_4_coreCorner_coreSide_10_0 :
-    certify 96 (wrongProblem .short 4 .coreCorner .coreSide true false 0) (pairBox .coreCorner .coreSide)=true := by decide
-theorem short_4_coreCorner_coreSide_10_1 :
-    certify 96 (wrongProblem .short 4 .coreCorner .coreSide true false 1) (pairBox .coreCorner .coreSide)=true := by decide
-theorem short_4_coreCorner_coreSide_10_2 :
-    certify 96 (wrongProblem .short 4 .coreCorner .coreSide true false 2) (pairBox .coreCorner .coreSide)=true := by decide
-theorem short_4_coreCorner_coreSide_10_3 :
-    certify 96 (wrongProblem .short 4 .coreCorner .coreSide true false 3) (pairBox .coreCorner .coreSide)=true := by decide
-theorem short_4_coreCorner_coreCorner_10_0 :
-    certify 96 (wrongProblem .short 4 .coreCorner .coreCorner true false 0) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem short_4_coreCorner_coreCorner_10_1 :
-    certify 96 (wrongProblem .short 4 .coreCorner .coreCorner true false 1) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem short_4_coreCorner_coreCorner_10_2 :
-    certify 96 (wrongProblem .short 4 .coreCorner .coreCorner true false 2) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem short_4_coreCorner_coreCorner_10_3 :
-    certify 96 (wrongProblem .short 4 .coreCorner .coreCorner true false 3) (pairBox .coreCorner .coreCorner)=true := by decide
 theorem short_4_outer_outer_11_0 :
     certify 96 (wrongProblem .short 4 .outer .outer true true 0) (pairBox .outer .outer)=true := by decide
 theorem short_4_outer_outer_11_1 :
@@ -1408,22 +1376,6 @@ theorem short_5_coreSide_outer_10_2 :
     certify 96 (wrongProblem .short 5 .coreSide .outer true false 2) (pairBox .coreSide .outer)=true := by decide
 theorem short_5_coreSide_outer_10_3 :
     certify 96 (wrongProblem .short 5 .coreSide .outer true false 3) (pairBox .coreSide .outer)=true := by decide
-theorem short_5_coreSide_coreSide_10_0 :
-    certify 96 (wrongProblem .short 5 .coreSide .coreSide true false 0) (pairBox .coreSide .coreSide)=true := by decide
-theorem short_5_coreSide_coreSide_10_1 :
-    certify 96 (wrongProblem .short 5 .coreSide .coreSide true false 1) (pairBox .coreSide .coreSide)=true := by decide
-theorem short_5_coreSide_coreSide_10_2 :
-    certify 96 (wrongProblem .short 5 .coreSide .coreSide true false 2) (pairBox .coreSide .coreSide)=true := by decide
-theorem short_5_coreSide_coreSide_10_3 :
-    certify 96 (wrongProblem .short 5 .coreSide .coreSide true false 3) (pairBox .coreSide .coreSide)=true := by decide
-theorem short_5_coreSide_coreCorner_10_0 :
-    certify 96 (wrongProblem .short 5 .coreSide .coreCorner true false 0) (pairBox .coreSide .coreCorner)=true := by decide
-theorem short_5_coreSide_coreCorner_10_1 :
-    certify 96 (wrongProblem .short 5 .coreSide .coreCorner true false 1) (pairBox .coreSide .coreCorner)=true := by decide
-theorem short_5_coreSide_coreCorner_10_2 :
-    certify 96 (wrongProblem .short 5 .coreSide .coreCorner true false 2) (pairBox .coreSide .coreCorner)=true := by decide
-theorem short_5_coreSide_coreCorner_10_3 :
-    certify 96 (wrongProblem .short 5 .coreSide .coreCorner true false 3) (pairBox .coreSide .coreCorner)=true := by decide
 theorem short_5_coreCorner_outer_10_0 :
     certify 96 (wrongProblem .short 5 .coreCorner .outer true false 0) (pairBox .coreCorner .outer)=true := by decide
 theorem short_5_coreCorner_outer_10_1 :
@@ -1432,22 +1384,6 @@ theorem short_5_coreCorner_outer_10_2 :
     certify 96 (wrongProblem .short 5 .coreCorner .outer true false 2) (pairBox .coreCorner .outer)=true := by decide
 theorem short_5_coreCorner_outer_10_3 :
     certify 96 (wrongProblem .short 5 .coreCorner .outer true false 3) (pairBox .coreCorner .outer)=true := by decide
-theorem short_5_coreCorner_coreSide_10_0 :
-    certify 96 (wrongProblem .short 5 .coreCorner .coreSide true false 0) (pairBox .coreCorner .coreSide)=true := by decide
-theorem short_5_coreCorner_coreSide_10_1 :
-    certify 96 (wrongProblem .short 5 .coreCorner .coreSide true false 1) (pairBox .coreCorner .coreSide)=true := by decide
-theorem short_5_coreCorner_coreSide_10_2 :
-    certify 96 (wrongProblem .short 5 .coreCorner .coreSide true false 2) (pairBox .coreCorner .coreSide)=true := by decide
-theorem short_5_coreCorner_coreSide_10_3 :
-    certify 96 (wrongProblem .short 5 .coreCorner .coreSide true false 3) (pairBox .coreCorner .coreSide)=true := by decide
-theorem short_5_coreCorner_coreCorner_10_0 :
-    certify 96 (wrongProblem .short 5 .coreCorner .coreCorner true false 0) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem short_5_coreCorner_coreCorner_10_1 :
-    certify 96 (wrongProblem .short 5 .coreCorner .coreCorner true false 1) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem short_5_coreCorner_coreCorner_10_2 :
-    certify 96 (wrongProblem .short 5 .coreCorner .coreCorner true false 2) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem short_5_coreCorner_coreCorner_10_3 :
-    certify 96 (wrongProblem .short 5 .coreCorner .coreCorner true false 3) (pairBox .coreCorner .coreCorner)=true := by decide
 theorem short_5_outer_outer_11_0 :
     certify 96 (wrongProblem .short 5 .outer .outer true true 0) (pairBox .outer .outer)=true := by decide
 theorem short_5_outer_outer_11_1 :
@@ -2032,22 +1968,6 @@ theorem second_3_coreSide_outer_10_2 :
     certify 96 (wrongProblem .second 3 .coreSide .outer true false 2) (pairBox .coreSide .outer)=true := by decide
 theorem second_3_coreSide_outer_10_3 :
     certify 96 (wrongProblem .second 3 .coreSide .outer true false 3) (pairBox .coreSide .outer)=true := by decide
-theorem second_3_coreSide_coreSide_10_0 :
-    certify 96 (wrongProblem .second 3 .coreSide .coreSide true false 0) (pairBox .coreSide .coreSide)=true := by decide
-theorem second_3_coreSide_coreSide_10_1 :
-    certify 96 (wrongProblem .second 3 .coreSide .coreSide true false 1) (pairBox .coreSide .coreSide)=true := by decide
-theorem second_3_coreSide_coreSide_10_2 :
-    certify 96 (wrongProblem .second 3 .coreSide .coreSide true false 2) (pairBox .coreSide .coreSide)=true := by decide
-theorem second_3_coreSide_coreSide_10_3 :
-    certify 96 (wrongProblem .second 3 .coreSide .coreSide true false 3) (pairBox .coreSide .coreSide)=true := by decide
-theorem second_3_coreSide_coreCorner_10_0 :
-    certify 96 (wrongProblem .second 3 .coreSide .coreCorner true false 0) (pairBox .coreSide .coreCorner)=true := by decide
-theorem second_3_coreSide_coreCorner_10_1 :
-    certify 96 (wrongProblem .second 3 .coreSide .coreCorner true false 1) (pairBox .coreSide .coreCorner)=true := by decide
-theorem second_3_coreSide_coreCorner_10_2 :
-    certify 96 (wrongProblem .second 3 .coreSide .coreCorner true false 2) (pairBox .coreSide .coreCorner)=true := by decide
-theorem second_3_coreSide_coreCorner_10_3 :
-    certify 96 (wrongProblem .second 3 .coreSide .coreCorner true false 3) (pairBox .coreSide .coreCorner)=true := by decide
 theorem second_3_coreCorner_outer_10_0 :
     certify 96 (wrongProblem .second 3 .coreCorner .outer true false 0) (pairBox .coreCorner .outer)=true := by decide
 theorem second_3_coreCorner_outer_10_1 :
@@ -2056,22 +1976,6 @@ theorem second_3_coreCorner_outer_10_2 :
     certify 96 (wrongProblem .second 3 .coreCorner .outer true false 2) (pairBox .coreCorner .outer)=true := by decide
 theorem second_3_coreCorner_outer_10_3 :
     certify 96 (wrongProblem .second 3 .coreCorner .outer true false 3) (pairBox .coreCorner .outer)=true := by decide
-theorem second_3_coreCorner_coreSide_10_0 :
-    certify 96 (wrongProblem .second 3 .coreCorner .coreSide true false 0) (pairBox .coreCorner .coreSide)=true := by decide
-theorem second_3_coreCorner_coreSide_10_1 :
-    certify 96 (wrongProblem .second 3 .coreCorner .coreSide true false 1) (pairBox .coreCorner .coreSide)=true := by decide
-theorem second_3_coreCorner_coreSide_10_2 :
-    certify 96 (wrongProblem .second 3 .coreCorner .coreSide true false 2) (pairBox .coreCorner .coreSide)=true := by decide
-theorem second_3_coreCorner_coreSide_10_3 :
-    certify 96 (wrongProblem .second 3 .coreCorner .coreSide true false 3) (pairBox .coreCorner .coreSide)=true := by decide
-theorem second_3_coreCorner_coreCorner_10_0 :
-    certify 96 (wrongProblem .second 3 .coreCorner .coreCorner true false 0) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem second_3_coreCorner_coreCorner_10_1 :
-    certify 96 (wrongProblem .second 3 .coreCorner .coreCorner true false 1) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem second_3_coreCorner_coreCorner_10_2 :
-    certify 96 (wrongProblem .second 3 .coreCorner .coreCorner true false 2) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem second_3_coreCorner_coreCorner_10_3 :
-    certify 96 (wrongProblem .second 3 .coreCorner .coreCorner true false 3) (pairBox .coreCorner .coreCorner)=true := by decide
 theorem second_3_outer_outer_11_0 :
     certify 96 (wrongProblem .second 3 .outer .outer true true 0) (pairBox .outer .outer)=true := by decide
 theorem second_3_outer_outer_11_1 :
@@ -2392,22 +2296,6 @@ theorem second_5_coreSide_outer_10_2 :
     certify 96 (wrongProblem .second 5 .coreSide .outer true false 2) (pairBox .coreSide .outer)=true := by decide
 theorem second_5_coreSide_outer_10_3 :
     certify 96 (wrongProblem .second 5 .coreSide .outer true false 3) (pairBox .coreSide .outer)=true := by decide
-theorem second_5_coreSide_coreSide_10_0 :
-    certify 96 (wrongProblem .second 5 .coreSide .coreSide true false 0) (pairBox .coreSide .coreSide)=true := by decide
-theorem second_5_coreSide_coreSide_10_1 :
-    certify 96 (wrongProblem .second 5 .coreSide .coreSide true false 1) (pairBox .coreSide .coreSide)=true := by decide
-theorem second_5_coreSide_coreSide_10_2 :
-    certify 96 (wrongProblem .second 5 .coreSide .coreSide true false 2) (pairBox .coreSide .coreSide)=true := by decide
-theorem second_5_coreSide_coreSide_10_3 :
-    certify 96 (wrongProblem .second 5 .coreSide .coreSide true false 3) (pairBox .coreSide .coreSide)=true := by decide
-theorem second_5_coreSide_coreCorner_10_0 :
-    certify 96 (wrongProblem .second 5 .coreSide .coreCorner true false 0) (pairBox .coreSide .coreCorner)=true := by decide
-theorem second_5_coreSide_coreCorner_10_1 :
-    certify 96 (wrongProblem .second 5 .coreSide .coreCorner true false 1) (pairBox .coreSide .coreCorner)=true := by decide
-theorem second_5_coreSide_coreCorner_10_2 :
-    certify 96 (wrongProblem .second 5 .coreSide .coreCorner true false 2) (pairBox .coreSide .coreCorner)=true := by decide
-theorem second_5_coreSide_coreCorner_10_3 :
-    certify 96 (wrongProblem .second 5 .coreSide .coreCorner true false 3) (pairBox .coreSide .coreCorner)=true := by decide
 theorem second_5_coreCorner_outer_10_0 :
     certify 96 (wrongProblem .second 5 .coreCorner .outer true false 0) (pairBox .coreCorner .outer)=true := by decide
 theorem second_5_coreCorner_outer_10_1 :
@@ -2416,22 +2304,6 @@ theorem second_5_coreCorner_outer_10_2 :
     certify 96 (wrongProblem .second 5 .coreCorner .outer true false 2) (pairBox .coreCorner .outer)=true := by decide
 theorem second_5_coreCorner_outer_10_3 :
     certify 96 (wrongProblem .second 5 .coreCorner .outer true false 3) (pairBox .coreCorner .outer)=true := by decide
-theorem second_5_coreCorner_coreSide_10_0 :
-    certify 96 (wrongProblem .second 5 .coreCorner .coreSide true false 0) (pairBox .coreCorner .coreSide)=true := by decide
-theorem second_5_coreCorner_coreSide_10_1 :
-    certify 96 (wrongProblem .second 5 .coreCorner .coreSide true false 1) (pairBox .coreCorner .coreSide)=true := by decide
-theorem second_5_coreCorner_coreSide_10_2 :
-    certify 96 (wrongProblem .second 5 .coreCorner .coreSide true false 2) (pairBox .coreCorner .coreSide)=true := by decide
-theorem second_5_coreCorner_coreSide_10_3 :
-    certify 96 (wrongProblem .second 5 .coreCorner .coreSide true false 3) (pairBox .coreCorner .coreSide)=true := by decide
-theorem second_5_coreCorner_coreCorner_10_0 :
-    certify 96 (wrongProblem .second 5 .coreCorner .coreCorner true false 0) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem second_5_coreCorner_coreCorner_10_1 :
-    certify 96 (wrongProblem .second 5 .coreCorner .coreCorner true false 1) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem second_5_coreCorner_coreCorner_10_2 :
-    certify 96 (wrongProblem .second 5 .coreCorner .coreCorner true false 2) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem second_5_coreCorner_coreCorner_10_3 :
-    certify 96 (wrongProblem .second 5 .coreCorner .coreCorner true false 3) (pairBox .coreCorner .coreCorner)=true := by decide
 theorem second_5_outer_outer_11_0 :
     certify 96 (wrongProblem .second 5 .outer .outer true true 0) (pairBox .outer .outer)=true := by decide
 theorem second_5_outer_outer_11_1 :
@@ -2878,26 +2750,10 @@ theorem wrong_certificates (w : WrongWord) (i : Vertex) (source target : RadialK
   | exact short_4_coreSide_outer_10_1
   | exact short_4_coreSide_outer_10_2
   | exact short_4_coreSide_outer_10_3
-  | exact short_4_coreSide_coreSide_10_0
-  | exact short_4_coreSide_coreSide_10_1
-  | exact short_4_coreSide_coreSide_10_2
-  | exact short_4_coreSide_coreSide_10_3
-  | exact short_4_coreSide_coreCorner_10_0
-  | exact short_4_coreSide_coreCorner_10_1
-  | exact short_4_coreSide_coreCorner_10_2
-  | exact short_4_coreSide_coreCorner_10_3
   | exact short_4_coreCorner_outer_10_0
   | exact short_4_coreCorner_outer_10_1
   | exact short_4_coreCorner_outer_10_2
   | exact short_4_coreCorner_outer_10_3
-  | exact short_4_coreCorner_coreSide_10_0
-  | exact short_4_coreCorner_coreSide_10_1
-  | exact short_4_coreCorner_coreSide_10_2
-  | exact short_4_coreCorner_coreSide_10_3
-  | exact short_4_coreCorner_coreCorner_10_0
-  | exact short_4_coreCorner_coreCorner_10_1
-  | exact short_4_coreCorner_coreCorner_10_2
-  | exact short_4_coreCorner_coreCorner_10_3
   | exact short_4_outer_outer_11_0
   | exact short_4_outer_outer_11_1
   | exact short_4_outer_outer_11_2
@@ -2998,26 +2854,10 @@ theorem wrong_certificates (w : WrongWord) (i : Vertex) (source target : RadialK
   | exact short_5_coreSide_outer_10_1
   | exact short_5_coreSide_outer_10_2
   | exact short_5_coreSide_outer_10_3
-  | exact short_5_coreSide_coreSide_10_0
-  | exact short_5_coreSide_coreSide_10_1
-  | exact short_5_coreSide_coreSide_10_2
-  | exact short_5_coreSide_coreSide_10_3
-  | exact short_5_coreSide_coreCorner_10_0
-  | exact short_5_coreSide_coreCorner_10_1
-  | exact short_5_coreSide_coreCorner_10_2
-  | exact short_5_coreSide_coreCorner_10_3
   | exact short_5_coreCorner_outer_10_0
   | exact short_5_coreCorner_outer_10_1
   | exact short_5_coreCorner_outer_10_2
   | exact short_5_coreCorner_outer_10_3
-  | exact short_5_coreCorner_coreSide_10_0
-  | exact short_5_coreCorner_coreSide_10_1
-  | exact short_5_coreCorner_coreSide_10_2
-  | exact short_5_coreCorner_coreSide_10_3
-  | exact short_5_coreCorner_coreCorner_10_0
-  | exact short_5_coreCorner_coreCorner_10_1
-  | exact short_5_coreCorner_coreCorner_10_2
-  | exact short_5_coreCorner_coreCorner_10_3
   | exact short_5_outer_outer_11_0
   | exact short_5_outer_outer_11_1
   | exact short_5_outer_outer_11_2
@@ -3310,26 +3150,10 @@ theorem wrong_certificates (w : WrongWord) (i : Vertex) (source target : RadialK
   | exact second_3_coreSide_outer_10_1
   | exact second_3_coreSide_outer_10_2
   | exact second_3_coreSide_outer_10_3
-  | exact second_3_coreSide_coreSide_10_0
-  | exact second_3_coreSide_coreSide_10_1
-  | exact second_3_coreSide_coreSide_10_2
-  | exact second_3_coreSide_coreSide_10_3
-  | exact second_3_coreSide_coreCorner_10_0
-  | exact second_3_coreSide_coreCorner_10_1
-  | exact second_3_coreSide_coreCorner_10_2
-  | exact second_3_coreSide_coreCorner_10_3
   | exact second_3_coreCorner_outer_10_0
   | exact second_3_coreCorner_outer_10_1
   | exact second_3_coreCorner_outer_10_2
   | exact second_3_coreCorner_outer_10_3
-  | exact second_3_coreCorner_coreSide_10_0
-  | exact second_3_coreCorner_coreSide_10_1
-  | exact second_3_coreCorner_coreSide_10_2
-  | exact second_3_coreCorner_coreSide_10_3
-  | exact second_3_coreCorner_coreCorner_10_0
-  | exact second_3_coreCorner_coreCorner_10_1
-  | exact second_3_coreCorner_coreCorner_10_2
-  | exact second_3_coreCorner_coreCorner_10_3
   | exact second_3_outer_outer_11_0
   | exact second_3_outer_outer_11_1
   | exact second_3_outer_outer_11_2
@@ -3490,26 +3314,10 @@ theorem wrong_certificates (w : WrongWord) (i : Vertex) (source target : RadialK
   | exact second_5_coreSide_outer_10_1
   | exact second_5_coreSide_outer_10_2
   | exact second_5_coreSide_outer_10_3
-  | exact second_5_coreSide_coreSide_10_0
-  | exact second_5_coreSide_coreSide_10_1
-  | exact second_5_coreSide_coreSide_10_2
-  | exact second_5_coreSide_coreSide_10_3
-  | exact second_5_coreSide_coreCorner_10_0
-  | exact second_5_coreSide_coreCorner_10_1
-  | exact second_5_coreSide_coreCorner_10_2
-  | exact second_5_coreSide_coreCorner_10_3
   | exact second_5_coreCorner_outer_10_0
   | exact second_5_coreCorner_outer_10_1
   | exact second_5_coreCorner_outer_10_2
   | exact second_5_coreCorner_outer_10_3
-  | exact second_5_coreCorner_coreSide_10_0
-  | exact second_5_coreCorner_coreSide_10_1
-  | exact second_5_coreCorner_coreSide_10_2
-  | exact second_5_coreCorner_coreSide_10_3
-  | exact second_5_coreCorner_coreCorner_10_0
-  | exact second_5_coreCorner_coreCorner_10_1
-  | exact second_5_coreCorner_coreCorner_10_2
-  | exact second_5_coreCorner_coreCorner_10_3
   | exact second_5_outer_outer_11_0
   | exact second_5_outer_outer_11_1
   | exact second_5_outer_outer_11_2

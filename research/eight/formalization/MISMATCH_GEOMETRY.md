@@ -2,11 +2,11 @@
 
 ## Result and remaining scope
 
-Four complete geometric state/axis classes now remove **77,480 row
+Five complete geometric state/axis classes now remove **78,736 row
 constructors** across all ten affine tables. Their active payload is
-**582,890 rows**, down from 660,370. The coarse mismatch table contains
-**115,463 rows**, down from 129,031; the enhanced coarse bound shares
-that same 13,568-row removal.
+**581,634 rows**, down from 660,370. The coarse mismatch table contains
+**115,231 rows**, down from 129,031; the enhanced coarse bound shares
+that same 13,800-row removal.
 
 On a zero-quarter edge a target-primary separator requires an outer
 target with primary coordinate greater than one, and a source-primary
@@ -14,11 +14,16 @@ separator requires the analogous outer source. Core-side and core-corner
 primary coordinates are at most 7/12. At every angle a core center's
 projection is at most 5/6, which also excludes two secondary-axis classes
 when the corresponding signed transverse coordinate has the wrong sign.
+Finally, a core/core quarter pair with positive source and negative target
+signs has no feasible axis: the physical center-gap cap leaves too little
+angular room for the transverse coordinates needed to separate the squares.
 
 `Candidate/GeometricPrimaryExclusion.lean` proves the primary exclusions
 from the complete original frame range. `GeometricSecondaryExclusion.lean`
 proves the secondary exclusions at every angle.
-`Candidate/GeometricAffineCoverage.lean` connects both to actual feasible
+`GeometricCoreQuarter.lean` proves the complete opposite-sign quarter
+exclusion from the physical gap and two whole error-sign intervals.
+`Candidate/GeometricAffineCoverage.lean` connects all five to actual feasible
 axes before selecting an angle chain.
 The data-only reader omits these constructors before Lean elaboration;
 the retained domains use the original row checks, endpoint enclosures,
@@ -46,7 +51,8 @@ replacement for one of the four complete charged bounds. The endpoint and
 contact-root inequalities must still be proved uniformly over their two
 state parameters with one consistent potential per vertex. The primary
 and secondary exclusions each remove 152 disjoint cases from the 960
-semantic cases below, leaving at most **656** before this remaining
+semantic cases below. The opposite-sign quarter exclusion removes another
+32, leaving at most **624** before this remaining
 positivity work begins. All added Lean is an uncompiled draft, as requested.
 
 ## 1. The half-angle geometry
@@ -380,10 +386,77 @@ additional axis/sign/state-pair cases. They use the other two axes from
 the primary exclusions, so the two sets are disjoint. Their combined
 count is 304, leaving at most 656 semantic cases for further work.
 
+### The complete opposite-sign core/core quarter class
+
+Let both primary coordinates be in `[1/2,7/12]`, with unsigned transverse
+coordinates `0≤b≤a` and `0≤B≤A`. Suppose the source signed transverse
+coordinate is `b`, the target's is `−B`, and the relative phase is
+`π/2+d`, where `|d|≤7/10`. The physical gap is then
+
+\[
+ g=\pi/2+d+\alpha+\theta,\qquad
+ \alpha=\arctan(b/a),\quad \theta=\arctan(B/A).
+\]
+
+The other six gaps each exceed `19/25`, and the seven gaps sum to `2π`.
+Using `π<22/7` gives `g<7/4`. Concavity of arctangent on `[0,1]` gives
+`atan t≥πt/4≥3t/4`; hence each core coordinate satisfies
+`b≤(7/9)α` and `B≤(7/9)θ`. Combining these with `π>31/10` yields
+
+\[
+ \boxed{b+B\le\frac79\left(\frac15-d\right).}
+\tag{10}
+\]
+
+This is a whole-state angular restriction, independent of every candidate
+cut, radial upper bound, total mismatch contraction, and generated label.
+For `x=|d|≤7/10`, write `c=cos x` and `s=sin x`. The elementary bounds
+`s≥9x/10`, `c≥1−x²/2`, `c,s≤1`, and `c,s≥0` hold on the full interval.
+
+If `d=−x`, the two secondary margins have the form
+
+\[
+ b+Ac+Bs-\frac{1+c+s}{2}
+ \le b+B-\frac5{12}-\frac9{20}x
+ \le-\frac{47}{180}+\frac{59}{180}x
+ \le-\frac{19}{600}<0.
+\]
+
+The exchanged source/target expression has the same bound. The two primary
+margins have the form
+
+\[
+ A-as+bc-\frac{1+c+s}{2}
+ \le b-\frac5{12}-s+\frac{x^2}{4}
+ \le-\frac{47}{180}-\frac{11}{90}x+\frac{x^2}{4}
+ \le-\frac{269}{1200}<0,
+\]
+
+where `x²≤7x/10` proves the last inequality. If `d=x`, the two secondary
+margins are at most `b+7/12−1≤−47/180`, or its exchanged version.
+For either primary margin, `W≥1` and `sin x≤x` give
+
+\[
+ A+a\sin x+b\cos x-W
+ \le-\frac5{12}+\frac7{12}x+b
+ \le-\frac{47}{180}-\frac7{36}x<0.
+\]
+
+Thus all four axes are impossible in both closed sign intervals, including
+`d=0`. `GeometricCoreQuarter.lean` proves these estimates as
+`core_quarter_negative_error`, `core_quarter_nonnegative_error`, and
+`core_quarter_opposite_margin`. The actual adapter uses equality of signed
+products, so either sign label at `b=0` or `B=0` remains covered.
+
+In the coarse state classification this excludes the four ordered core-chart
+pairs on `D+→E−`, all four axes, and both angular signs: 32 additional
+semantic cases, disjoint from the previous 304. The remaining finite
+state-positivity gate has at most **624** cases.
+
 ### Active coverage and row removal
 
-`GeometricAffine.Excluded` recognizes exactly the four state/axis classes
-above. Its `feasible_not_excluded` theorem applies (8) and (9) to original
+`GeometricAffine.Excluded` recognizes exactly the five state/axis classes
+above. Its `feasible_not_excluded` theorem applies (8), (9), and (10) to original
 actual axes. The chosen arc's `Contains` predicate supplies the core
 bound, so the proof does not assume that an endpoint shared by two radial
 curves has a unique radial label. For the secondary exclusions, the
@@ -403,7 +476,7 @@ The notation
 
 ```lean
 affine_rows% "...CANDIDATE_COARSE_MISMATCH_HAND_DATA.json" rows 129031
-  excluding_core_separators 115463
+  excluding_core_separators 115231
 ```
 
 checks both input and retained counts. It filters by the edge, original
@@ -413,21 +486,21 @@ the independent retained-domain predicate must still be proved.
 
 The metadata-only audit gives these active payload counts:
 
-| Affine table | Historical rows | Primary exclusions | Secondary exclusions | Active rows |
-|---|---:|---:|---:|---:|
-| Candidate coarse mismatch | 129,031 | 6,028 | 7,540 | 115,463 |
-| D upper | 24,197 | 2,445 | 3,219 | 18,533 |
-| G lower | 9,087 | 380 | 425 | 8,282 |
-| G upper | 9,796 | 349 | 442 | 9,005 |
-| H lower | 48,050 | 3,359 | 4,395 | 40,296 |
-| Mismatch 0.015 to 0.001 | 144,709 | 0 | 8,899 | 135,810 |
-| Mismatch 0.1 to 0.015 | 107,196 | 7,140 | 7,988 | 92,068 |
-| Mismatch 0.26 to 0.1 | 131,255 | 7,040 | 9,409 | 114,806 |
-| T lower | 49,971 | 3,281 | 4,512 | 42,178 |
-| T upper | 7,078 | 299 | 330 | 6,449 |
-| **Total** | **660,370** | **30,321** | **47,159** | **582,890** |
+| Affine table | Historical rows | Primary exclusions | Secondary exclusions | Opposite core quarter | Active rows |
+|---|---:|---:|---:|---:|---:|
+| Candidate coarse mismatch | 129,031 | 6,028 | 7,540 | 232 | 115,231 |
+| D upper | 24,197 | 2,445 | 3,219 | 232 | 18,301 |
+| G lower | 9,087 | 380 | 425 | 32 | 8,250 |
+| G upper | 9,796 | 349 | 442 | 48 | 8,957 |
+| H lower | 48,050 | 3,359 | 4,395 | 232 | 40,064 |
+| Mismatch 0.015 to 0.001 | 144,709 | 0 | 8,899 | 0 | 135,810 |
+| Mismatch 0.1 to 0.015 | 107,196 | 7,140 | 7,988 | 0 | 92,068 |
+| Mismatch 0.26 to 0.1 | 131,255 | 7,040 | 9,409 | 0 | 114,806 |
+| T lower | 49,971 | 3,281 | 4,512 | 464 | 41,714 |
+| T upper | 7,078 | 299 | 330 | 16 | 6,433 |
+| **Total** | **660,370** | **30,321** | **47,159** | **1,256** | **581,634** |
 
-All 77,480 removals delete whole angle chains. In all ten tables, the
+All 78,736 removals delete whole angle chains. In all ten tables, the
 ordered row records in every retained chain are identical to the
 historical records; only the row indices are renumbered by the unchanged
 `AffineCertificate.cover` constructor. The enhanced coarse bound maps
@@ -466,20 +539,22 @@ proof of its required reserve.
 
 - New source: `Candidate/GeometricPrimaryExclusion.lean`,
   `Candidate/GeometricSecondaryExclusion.lean`,
+  `Candidate/GeometricCoreQuarter.lean`,
   `Candidate/GeometricAffineCoverage.lean`, and `Candidate/GeometricMismatch.lean`.
 - New numerical tables or generated coverage lists: none.
-- Active affine payload: **582,890 rows** across ten tables, a reduction
-  of 77,480 from the preserved historical inputs.
-- Active coarse and enhanced payload: **115,463 rows**, sharing the same
-  13,568-row geometric removal from the historical 129,031-row input.
+- Active affine payload: **581,634 rows** across ten tables, a reduction
+  of 78,736 from the preserved historical inputs.
+- Active coarse and enhanced payload: **115,231 rows**, sharing the same
+  13,800-row geometric removal from the historical 129,031-row input.
 - All four complete charged bounds are still backed by their retained
   table domains. Their further replacement remains the state-positivity gate.
 - Complete geometric regions excluded analytically: all zero-edge
   target-core/target-primary and source-core/source-primary regions;
   all-angle target-core/source-secondary regions with nonpositive source
   transverse coordinate; and all-angle source-core/target-secondary
-  regions with nonnegative target transverse coordinate. Together they
-  remove 304 semantic cases and 13,568 historical coarse rows.
+  regions with nonnegative target transverse coordinate; and all four
+  axes on the positive-source/negative-target core/core quarter region.
+  Together they remove 336 semantic cases and 13,800 historical coarse rows.
 - Existing capture hypotheses strengthened or assumed: none.
 - `sorry`, new axioms, external-oracle substitutions: none.
 - Validation performed: exact symbolic polynomial expansion of all SAT
@@ -487,7 +562,8 @@ proof of its required reserve.
   metadata-only audits of whole-chain deletion and unchanged retained
   records in all ten tables; Python checks of exact conversion for all
   155,148 distinct-per-table row/gamma strings and ten positive/ten
-  rejection grammar fixtures.
+  rejection grammar fixtures; exact rational reserves for both whole
+  core-quarter error-sign intervals.
 - Historical coarse input SHA-256 remains
   `ffa48df0d02e18880314907a72a70fcc6aaceea4ee1060ea76b4fdb04c23a5fa`.
 - Lean compilation, CI, and full certificate replay: not run.

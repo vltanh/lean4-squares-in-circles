@@ -3,7 +3,7 @@ module
 public import SquaresInCircles.Eight.Generated.WordCertificates
 public import SquaresInCircles.Eight.CycleActions
 public import SquaresInCircles.Eight.Arithmetic.CoreWordGeometry
-public import SquaresInCircles.Eight.Candidate.GeometricSecondaryExclusion
+public import SquaresInCircles.Eight.Candidate.GeometricCoreQuarter
 
 /-!
 # Actual geometric exclusion of the six noncandidate quarter words
@@ -170,7 +170,8 @@ lemma original_not_core_excluded (C : BoundaryCycle Q0) (F : QuarterLift C)
   have hτ : |C.sigma (next i)*C.b (next i)| ≤ C.a (next i) := by
     rw [Candidate.signed_b_abs]
     exact C.b_le_a (next i)
-  rintro (⟨hk,⟨rfl,ht⟩ | ⟨rfl,hs⟩⟩ | ⟨rfl,hnegative,ht⟩ | ⟨rfl,hpositive,hs⟩)
+  rintro (⟨hk,⟨rfl,ht⟩ | ⟨rfl,hs⟩⟩ | ⟨rfl,hnegative,ht⟩ | ⟨rfl,hpositive,hs⟩ |
+    ⟨hk,hs,ht,hpositive,hnegative⟩)
   · have hsmall : |phaseValue F hgap i| ≤ 7/10 := by
       simpa [phaseValue,hk] using (difference_small F i).le
     have hp := Candidate.Geometric.primary_margin_upper (C.a_pos i).le hσ hsmall
@@ -199,6 +200,32 @@ lemma original_not_core_excluded (C : BoundaryCycle Q0) (F : QuarterLift C)
     have hn := Candidate.Geometric.source_core_secondary_margin (A := C.a (next i))
       htarget (C.a_pos i).le (Candidate.Geometric.core_primary_upper C i hs)
       hσ (t := phaseValue F hgap i)
+    linarith
+  · have hsourceSign : C.sigma i=1 := by
+      rw [← positiveOf_spec C i,hpositive]
+      norm_num [WordProblems.sign]
+    have htargetSign : C.sigma (next i)= -1 := by
+      rw [← positiveOf_spec C (next i),hnegative]
+      norm_num [WordProblems.sign]
+    have hsourceAngle : C.alpha i=Real.arctan (C.b i/C.a i) := by
+      rw [alpha_formula C i,hpositive]
+      norm_num [WordProblems.sign]
+    have htargetAngle : C.alpha (next i)= -Real.arctan (C.b (next i)/C.a (next i)) := by
+      rw [alpha_formula C (next i),hnegative]
+      norm_num [WordProblems.sign]
+    have hphase : phaseValue F hgap i=Real.pi/2+difference F i := by
+      simp [phaseValue,hk,add_comm]
+    have he := phase_gap C F hgap i
+    rw [hphase,hsourceAngle,htargetAngle] at he
+    have hg := Candidate.Geometric.cycle_gap_lt_seven_quarters C hgap i
+    have hn := Candidate.Geometric.core_quarter_opposite_margin
+      ⟨(Candidate.Geometric.canonical_primary_gt_half C i).le,
+        Candidate.Geometric.core_primary_upper C i hs⟩
+      ⟨(Candidate.Geometric.canonical_primary_gt_half C (next i)).le,
+        Candidate.Geometric.core_primary_upper C (next i) ht⟩
+      ⟨C.b_nonneg i,C.b_le_a i⟩ ⟨C.b_nonneg (next i),C.b_le_a (next i)⟩
+      (difference_small F i).le (by linarith) j
+    rw [hsourceSign,htargetSign,hphase] at hm
     linarith
 
 lemma environment (C : BoundaryCycle Q0) (F : QuarterLift C)

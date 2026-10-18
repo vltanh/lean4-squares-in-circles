@@ -6,7 +6,7 @@ This generator enumerates the retained increment/branch/sign/axis cases
 and writes ordinary Lean `by decide` bodies for the depth-96 compiler.
 It neither invokes Lean nor evaluates those decisions or a historical checker.
 Common core/core cases are proved by CoreWordGeometry and are omitted.
-The four geometric CoreSeparatorExcluded classes are also omitted.
+The five geometric CoreSeparatorExcluded classes are also omitted.
 """
 from pathlib import Path
 root = Path(__file__).resolve().parents[2]
@@ -27,7 +27,7 @@ Each statement carries the actual branch/sign/axis expression. A failed
 leaf will make its `by decide` proof fail during the later requested audit.
 The common core/core block has been removed: WordGeometry supplies its
 whole-domain geometric proof before calling the retained dispatcher.
-Both dispatchers also omit the four impossible core separator classes;
+Both dispatchers also omit the five impossible core separator classes;
 WordGeometry proves this exclusion for every actual feasible axis.
 -/
 
@@ -42,7 +42,8 @@ rad=['outer','coreSide','coreCorner']
 def core_separator_excluded(k,a,b,si,ti,ax):
  return ((k==0 and ((ax==1 and b!='outer') or (ax==3 and a!='outer'))) or
          (ax==0 and not si and b!='outer') or
-         (ax==2 and ti and a!='outer'))
+         (ax==2 and ti and a!='outer') or
+         (k==1 and a!='outer' and b!='outer' and si and not ti))
 common_count=0
 for k in range(3):
  for a in rad:

@@ -22,8 +22,9 @@ The optional `excluding_zero_core_primary` form omits zero-quarter rows on
 target-primary axes with a core target, and source-primary axes with a core
 source. `excluding_core_separators` also omits source-secondary rows with
 a nonpositive source sign and core target, and target-secondary rows with
-a nonnegative target sign and core source, at every angle. Both forms
-check the historical input count and retained count, and elaborate only
+a nonnegative target sign and core source, at every angle. It also omits
+core/core quarter rows with positive source and negative target signs.
+Both forms check the historical input count and retained count, and elaborate only
 the retained constructors. The filter's soundness is not trusted:
 `Candidate.GeometricAffineCoverage` proves those actual geometric domains
 infeasible and checks complete coverage of every retained domain.
@@ -118,7 +119,7 @@ syntax (name := affineRowsCore) "affine_rows% " str " rows " num
 /-- This filters by fixed geometric state/axis classes, never by row number,
 angle interval, multiplier, or a computed numerical success flag. -/
 private def excludedCoreSeparators (core positive : Std.HashMap Nat Bool)
-    (secondary : Bool) (r : Json) : TermElabM Bool := do
+    (allCore : Bool) (r : Json) : TermElabM Bool := do
   let edge ← nat (← field r "edge")
   let quarter ← nat (← field r "k")
   let axis ← nat (← field r "axis")
@@ -130,12 +131,14 @@ private def excludedCoreSeparators (core positive : Std.HashMap Nat Bool)
   let some targetPositive := positive.get? target | throwError "unknown affine target arc {target}"
   let primary := quarter == 0 && (edge == 0 || edge == 2 || edge == 4) &&
     ((axis == 2 && targetCore) || (axis == 4 && sourceCore))
-  return primary || (secondary &&
+  let oppositeQuarter := quarter == 1 && (edge == 1 || edge == 3 || edge == 5 || edge == 6) &&
+    sourceCore && targetCore && sourcePositive && !targetPositive
+  return primary || (allCore &&
     ((axis == 1 && !sourcePositive && targetCore) ||
-     (axis == 3 && targetPositive && sourceCore)))
+     (axis == 3 && targetPositive && sourceCore) || oppositeQuarter))
 
 private def elaborateRows (path : TSyntax `str) (count : Nat)
-    (retainedCount? : Option Nat) (secondary : Bool)
+    (retainedCount? : Option Nat) (allCore : Bool)
     (expectedType? : Option Expr) : TermElabM Expr := do
   let content ← elabTerm (← `(include_str $path)) (some (mkConst ``String))
   let .lit (.strVal text) := content | throwError "affine input did not elaborate to text"
@@ -165,7 +168,7 @@ private def elaborateRows (path : TSyntax `str) (count : Nat)
     -- Validate even an omitted row, but do not embed its constructor.
     let literal ← rowSyntax ids gamma r
     let excluded ← if retainedCount?.isSome then
-      excludedCoreSeparators core positive secondary r else pure false
+      excludedCoreSeparators core positive allCore r else pure false
     if !excluded then literals := literals.push literal
   if let some retainedCount := retainedCount? then
     if literals.size ≠ retainedCount then

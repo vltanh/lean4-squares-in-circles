@@ -167,6 +167,15 @@ zero-coordinate and radial junctions retain their original coverage.
 Historical research inputs are preserved. All four complete charged
 stages still depend on their retained table domains.
 
+**Fifth whole-state exclusion integrated:** on a quarter edge with two
+core endpoints and opposite transverse signs `(+,-)`, the physical gap
+cap `7/4` bounds the sum of their two core angles. The arctangent chord
+then bounds their total transverse projection, excluding all four
+original separating axes on both closed error-sign intervals. This
+removes another 1,256 complete-chain affine rows. The active total is
+581,634, a reduction of 78,736 from the historical 660,370; the shared
+coarse table has 115,231 rows. No new angular subdivision is introduced.
+
 ## G3 — Eliminate owner and tilt regions by direct circle stresses: open
 
 First eliminate free slider centers symbolically from the original
@@ -281,6 +290,14 @@ have been removed: 40 common, 192 short-word, and 192 second-word cases.
 The word layer now contains 1,184 individual finite decisions instead
 of 1,800: 200 common and 492 for each wrong word. Every retained
 individual certificate statement and every role label is unchanged.
+
+**G4.5 opposite-sign core quarter class integrated:** the same fifth
+geometric class applies to arbitrary quarter lifts using the original
+physical gaps. It removes 64 more wrong-word declarations, 32 per
+family, leaving 1,120 individual declarations: 200 common and 460 for
+each wrong word. The cumulative reduction is 680 of the original 1,800.
+All retained statements are unchanged; the remaining decisions are
+explicit dependencies, not discharged by this exclusion.
 
 ## G5 — Integration and final acceptance: open
 

@@ -20,6 +20,11 @@ The source is an uncompiled draft. No Lean compilation, CI, or certificate
 evaluation was performed. Exact rational arithmetic checked the margins
 below; it does not establish Lean elaboration.
 
+The five semantic separator exclusions described below remove another
+488 declarations. The current active count is **1,120**, down from the
+original 1,800. The removed classes have direct actual-pair proofs before
+the remaining certificate dispatcher is called.
+
 ## The same marker on the complete core boundary
 
 The common label is
@@ -109,12 +114,12 @@ original cases are covered at once, including multiple feasible axes.
 Each vertex still has one marker value shared by its two incident edges,
 so the global telescoping budget remains valid.
 
-## Four geometric separator exclusions in the general word layer
+## Five geometric separator exclusions in the general word layer
 
 The primary and secondary core obstructions also apply to an arbitrary
 quarter lift, before any candidate-word or tangent-cut assumption.
 `WordGeometry.original_not_core_excluded` now transfers the actual
-separating-axis margin to the same four geometric estimates used by the
+separating-axis margin to the same five geometric estimates used by the
 affine coverage proof:
 
 | Original axis, zero-based | Excluded state condition | Angle condition |
@@ -123,6 +128,7 @@ affine coverage proof:
 | 3, source primary | Source is core | Quarter increment zero, `|phi|≤7/10` |
 | 0, source secondary | Target is core and source sign is negative | Every angle |
 | 2, target secondary | Source is core and target sign is positive | Every angle |
+| All four axes | Both endpoints core; source positive, target negative | Quarter increment one, `|d|≤7/10`, physical gap `<7/4` |
 
 For a primary axis, `cos(phi)−|sin(phi)|≥11/200` and the width at least
 one require the receiving primary coordinate to exceed one. A core
@@ -131,24 +137,57 @@ projection identity bounds the core contribution by `5/6`; the indicated
 signed transverse coordinate contributes at most zero, while the width
 is at least one. These margins are strictly negative.
 
-`WordProblems.CoreSeparatorExcluded` expresses these four semantic
+`WordProblems.CoreSeparatorExcluded` expresses these five semantic
 classes, with no row identifiers or numerical partitions. The retained
 certificate dispatchers require that this predicate be false, and the
 actual geometry proves that fact. The originally selected feasible axis
 is retained. At `b=0` the signed product is zero regardless of the sign,
 so there is no exception or uncovered sign boundary.
 
-This removes another 424 individual depth-96 certificate declarations:
+The first four separator classes removed 424 individual depth-96
+certificate declarations. The fifth removes 64 further declarations:
 
-| Family | Original declarations | After common core/core cost | After separator exclusions |
-|---|---:|---:|---:|
-| Common increments | 432 | 240 | 200 |
-| Wrong word `0010111` | 684 | 684 | 492 |
-| Wrong word `0011011` | 684 | 684 | 492 |
-| **Total** | **1,800** | **1,608** | **1,184** |
+| Family | Original declarations | After common core/core cost | After first four separator classes | After opposite core quarter |
+|---|---:|---:|---:|---:|
+| Common increments | 432 | 240 | 200 | 200 |
+| Wrong word `0010111` | 684 | 684 | 492 | 460 |
+| Wrong word `0011011` | 684 | 684 | 492 | 460 |
+| **Total** | **1,800** | **1,608** | **1,184** | **1,120** |
 
 The additional removals comprise 40 common declarations and 192 from
 each wrong-word family. Every retained individual statement is byte-for-byte
 identical to its preceding version. The source generator now omits both
-the whole common core/core class and the four impossible separator classes.
-The remaining 1,184 finite decisions are still active and unevaluated.
+the whole common core/core class and the five impossible separator classes.
+The remaining 1,120 finite decisions are still active and unevaluated.
+
+## Why a positive-to-negative core/core quarter pair is impossible
+
+The fifth class is independent of the candidate word and all candidate
+cuts. Let the relative phase be `π/2+d` and the unsigned core angles be
+`α=atan(b/a)` and `θ=atan(B/A)`. With positive source and negative target
+signs, the physical center gap equals `π/2+d+α+θ`.
+
+The six other gaps exceed `19/25`, so the total `2π` gives an individual
+gap cap `<7/4`. Concavity of arctangent gives `atan t≥3t/4` on `[0,1]`,
+and a core primary coordinate is at most `7/12`. Consequently
+
+\[
+ b+B\le\frac79(\alpha+\theta)
+       \le\frac79\left(\frac15-d\right).
+\]
+
+`Candidate.Geometric.core_quarter_opposite_margin` combines this angular
+budget with the four original SAT formulas. On `d=−x`, `0≤x≤7/10`,
+the secondary margins are at most `−19/600` and the primary margins at
+most `−269/1200`. On `d=x`, all four are at most `−47/180`. These use
+only `sin x≥9x/10`, `cos x≥1−x²/2`, the core coordinate order, and
+the support width. There is one proof on each complete sign interval;
+no angular or state mesh is substituted.
+
+`WordGeometry.original_not_core_excluded` supplies the actual phase and
+center-gap identity from the arbitrary `QuarterLift`. All four ordered
+pairs of closed core charts and all four original axes are covered.
+This removes 32 declarations from each wrong-word family; the common
+core/core declarations were already removed by the earlier marker proof.
+The exact derivation and signed-product candidate adapter are documented
+in `MISMATCH_GEOMETRY.md`.

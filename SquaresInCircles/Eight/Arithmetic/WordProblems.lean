@@ -104,15 +104,18 @@ def pairHypotheses (k : Fin 3) (source target : RadialKind)
 def pairBox (source target : RadialKind) : Box 3 :=
   ![transverseBox source,transverseBox target,⟨-7/10,7/10⟩]
 
-/-- Four complete state/axis classes are impossible geometrically.
+/-- Five complete state/axis classes are impossible geometrically.
 The first two use only the full zero-quarter frame range; the secondary
-classes use the core projection bound at every angle. This predicate
+classes use the core projection bound at every angle. The last class
+uses the physical gap cap to exclude every core/core quarter separator
+with positive source and negative target signs. This predicate
 contains no row index, numerical partition, or computed success flag. -/
 def CoreSeparatorExcluded (k : Fin 3) (source target : RadialKind)
     (σ τ : Bool) (axis : Fin 4) : Prop :=
   (k=0 ∧ ((axis=1 ∧ target≠.outer) ∨ (axis=3 ∧ source≠.outer))) ∨
     (axis=0 ∧ σ=false ∧ target≠.outer) ∨
-    (axis=2 ∧ τ=true ∧ source≠.outer)
+    (axis=2 ∧ τ=true ∧ source≠.outer) ∨
+    (k=1 ∧ source≠.outer ∧ target≠.outer ∧ σ=true ∧ τ=false)
 
 instance (k : Fin 3) (source target : RadialKind) (σ τ : Bool) (axis : Fin 4) :
     Decidable (CoreSeparatorExcluded k source target σ τ axis) := by

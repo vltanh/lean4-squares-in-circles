@@ -17,9 +17,9 @@ set_option maxHeartbeats 0
 
 def rows : List AffineTableRow :=
   affine_rows% "../../../../research/eight/T_UPPER_AFFINE_HAND_DATA.json" rows 7078
-    excluding_core_separators 6449
+    excluding_core_separators 6433
 
-theorem complete_row_count : rows.length = 6449 := by rfl
+theorem complete_row_count : rows.length = 6433 := by rfl
 
 theorem rows_valid : AffineCertificate.RowsValid meta rows := by decide
 
