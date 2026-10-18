@@ -154,6 +154,16 @@ def Valid {n : ℕ} (boxes : QBox n) : ParamPoly n → Prop
   | .mul a b => Valid boxes a ∧ Valid boxes b
   | .pow a _ => Valid boxes a
 
+instance validDecidable {n : ℕ} (boxes : QBox n) (p : ParamPoly n) :
+    Decidable (p.Valid boxes) := by
+  induction p with
+  | scalar e => exact inferInstance
+  | angle => exact isTrue True.intro
+  | add a b ha hb => exact @instDecidableAnd _ _ ha hb
+  | neg a ha => exact ha
+  | mul a b ha hb => exact @instDecidableAnd _ _ ha hb
+  | pow a k ha => exact ha
+
 theorem actual_eval {n : ℕ} (env : Fin n → ℝ) (x : ℝ) (p : ParamPoly n) :
     RealPoly.eval (p.actual env) x = p.eval env x := by
   induction p <;>

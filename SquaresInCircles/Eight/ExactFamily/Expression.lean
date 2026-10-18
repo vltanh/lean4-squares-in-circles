@@ -13,6 +13,7 @@ No external evaluator or native-decide axiom is used.
 
 @[expose] public section
 noncomputable section
+open scoped BigOperators
 
 namespace SquaresInCircles.Eight.ExactFamily
 open Arithmetic
@@ -120,6 +121,49 @@ def RegularAt {n : ℕ} (env : Fin n → ℝ) : Formula n → Prop
   | .inv a => RegularAt env a ∧ a.eval env ≠ 0
   | .sqrt a => RegularAt env a ∧ 0 < a.eval env
   | .pow a _ => RegularAt env a
+
+def directional {n : ℕ} (env v : Fin n → ℝ) : Formula n → ℝ
+  | .const _ => 0
+  | .var i => v i
+  | .add a b => directional env v a+directional env v b
+  | .neg a => -directional env v a
+  | .mul a b => directional env v a*b.eval env+a.eval env*directional env v b
+  | .inv a => -directional env v a/(a.eval env)^2
+  | .sqrt a => directional env v a/(2*Real.sqrt (a.eval env))
+  | .pow a k => k*(a.eval env)^(k-1)*directional env v a
+
+theorem directional_eq_partials {n : ℕ} (a : Formula n) (env v : Fin n → ℝ) :
+    a.directional env v = ∑ i : Fin n, (a.diff i).eval env*v i := by
+  induction a with
+  | const q => simp [directional,diff,eval]
+  | var j => simp [directional,diff,eval]
+  | add a b ha hb => simp [directional,diff,ha,hb,Finset.sum_add_distrib,add_mul]
+  | neg a ha => simp [directional,diff,ha,Finset.sum_neg_distrib]
+  | mul a b ha hb =>
+      simp [directional,diff,ha,hb,Finset.sum_add_distrib,Finset.sum_mul,
+        Finset.mul_sum,add_mul,mul_assoc,mul_comm,mul_left_comm]
+  | inv a ha =>
+      simp [directional,diff,ha,Finset.sum_mul,Finset.sum_neg_distrib,
+        div_eq_mul_inv,mul_assoc,mul_comm,mul_left_comm]
+  | sqrt a ha =>
+      simp [directional,diff,ha,Finset.sum_mul,div_eq_mul_inv,
+        mul_assoc,mul_comm,mul_left_comm]
+  | pow a k ha =>
+      simp [directional,diff,ha,eval,Finset.mul_sum,mul_assoc,mul_comm,mul_left_comm]
+
+theorem hasDerivAt_curve {n : ℕ} (a : Formula n) {env : ℝ → Fin n → ℝ}
+    {t : ℝ} {v : Fin n → ℝ} (hv : ∀ i, HasDerivAt (fun s => env s i) (v i) t)
+    (h : a.RegularAt (env t)) :
+    HasDerivAt (fun s => a.eval (env s)) (a.directional (env t) v) t := by
+  induction a with
+  | const q => simpa [eval,directional] using hasDerivAt_const t (q:ℝ)
+  | var i => exact hv i
+  | add a b ha hb => exact (ha h.1).add (hb h.2)
+  | neg a ha => exact (ha h).neg
+  | mul a b ha hb => exact (ha h.1).mul (hb h.2)
+  | inv a ha => simpa [directional,eval] using (ha h.1).inv h.2
+  | sqrt a ha => simpa [directional,eval] using (ha h.1).sqrt (ne_of_gt h.2)
+  | pow a k ha => simpa [directional,eval,mul_assoc] using (ha h).pow k
 
 theorem hasDerivAt_partial {n : ℕ} (a : Formula n) (i : Fin n)
     (env : Fin n → ℝ) (h : a.RegularAt env) :

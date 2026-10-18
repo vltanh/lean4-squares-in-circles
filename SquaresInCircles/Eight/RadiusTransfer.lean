@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Common.Basic
+public import SquaresInCircles.Eight.BoundaryReduction
 public import SquaresInCircles.Common.Analysis
 
 /-!
@@ -313,3 +313,299 @@ theorem all_axes_preserved {ι : Type*} (s₁ s₂ : RadialState)
   exact every_feasible_projection_preserved s₁ s₂ ha hb hab (hu i) (hv i) (hw i) hi
 
 end SquaresInCircles.Eight.RadiusTransfer
+
+namespace SquaresInCircles.Eight
+
+def BoundaryCycle.radius {q : ℝ} (C : BoundaryCycle q) (i : Vertex) : ℝ :=
+  Real.sqrt (C.a i^2 + C.b i^2)
+
+def BoundaryCycle.ray {q : ℝ} (C : BoundaryCycle q) (i : Vertex) : Point :=
+  (Real.cos (C.beta i), Real.sin (C.beta i))
+
+lemma BoundaryCycle.radius_pos {q : ℝ} (C : BoundaryCycle q) (i : Vertex) :
+    0 < C.radius i := by
+  apply Real.sqrt_pos.mpr
+  nlinarith [C.a_pos i, sq_nonneg (C.b i)]
+
+lemma BoundaryCycle.radius_sq {q : ℝ} (C : BoundaryCycle q) (i : Vertex) :
+    C.radius i^2 = C.a i^2 + C.b i^2 := Real.sq_sqrt (by positivity)
+
+lemma BoundaryCycle.ray_unit {q : ℝ} (C : BoundaryCycle q) (i : Vertex) :
+    normSq (C.ray i) = 1 := by
+  simpa [BoundaryCycle.ray, normSq, add_comm] using Real.sin_sq_add_cos_sq (C.beta i)
+
+lemma BoundaryCycle.center_polar {q : ℝ} (C : BoundaryCycle q) (i : Vertex) :
+    (C.square i).center = scale (C.radius i) (C.ray i) := by
+  exact Prod.ext (C.center_cos i) (C.center_sin i)
+
+lemma BoundaryCycle.absolute_coordinates {q : ℝ} (C : BoundaryCycle q) (i : Vertex) :
+    alpha (C.square i) (0, 0) = C.a i ∧ beta (C.square i) (0, 0) = C.b i := by
+  have hX : localX (C.square i) (0, 0) = -C.a i := by
+    rw [localX, C.center_eq i]
+    dsimp [rotate]
+    linear_combination -(C.a i) * (C.square i).unit
+  have hY : localY (C.square i) (0, 0) = C.sigma i*C.b i := by
+    rw [localY, C.center_eq i]
+    dsimp [rotate]
+    linear_combination C.sigma i*C.b i * (C.square i).unit
+  have hσ : |C.sigma i| = 1 := by rcases C.sigma_sign i with h | h <;> simp [h]
+  simp [alpha, beta, hX, hY, abs_mul, hσ, abs_of_nonneg (C.a_pos i).le,
+    abs_of_nonneg (C.b_nonneg i)]
+
+def BoundaryCycle.radialCoefficient {q : ℝ} (C : BoundaryCycle q) (i : Vertex) : ℝ :=
+  (C.a i+C.b i)/C.radius i
+
+lemma BoundaryCycle.radialCoefficient_bounds {q : ℝ} (C : BoundaryCycle q) (i : Vertex) :
+    RadiusTransfer.FrameCoefficient (C.radialCoefficient i) := by
+  have hr := C.radius_pos i
+  have hr₂ := C.radius_sq i
+  have ha := C.a_pos i
+  have hb := C.b_nonneg i
+  have hsum : C.radius i ≤ C.a i+C.b i := by
+    nlinarith [mul_nonneg ha.le hb]
+  have hsum' : C.a i+C.b i ≤ Real.sqrt 2*C.radius i := by
+    have hs := Real.sq_sqrt (show (0 : ℝ) ≤ 2 by norm_num)
+    have hn := Real.sqrt_nonneg (2 : ℝ)
+    have hp := mul_nonneg hn hr.le
+    nlinarith [sq_nonneg (C.a i-C.b i)]
+  exact ⟨(le_div_iff₀ hr).2 (by simpa using hsum),
+    (div_le_iff₀ hr).2 hsum'⟩
+
+lemma BoundaryCycle.core_radius_bound {q : ℝ} (C : BoundaryCycle q) (i : Vertex)
+    (hi : C.kind i ≠ .outer) : C.radius i < 4/5 := by
+  have hr := (C.radius_pos i).le
+  have hr₂ := C.radius_sq i
+  have ha := C.a_pos i
+  have hb := C.b_nonneg i
+  have hab := C.b_le_a i
+  have h := C.boundary i
+  cases hk : C.kind i with
+  | outer => exact (hi hk).elim
+  | coreSide =>
+    simp only [hk, BoundaryState] at h
+    nlinarith [mul_nonneg (show 0 ≤ 1/2-C.b i by linarith) (show 0 ≤ 1/2+C.b i by linarith)]
+  | coreCorner =>
+    simp only [hk, BoundaryState] at h
+    have hsum : C.a i+C.b i-1 < 1/8 := by
+      have hsq : (C.a i+C.b i-1)^2 ≤ 1/72 := by
+        nlinarith [sq_nonneg (C.a i-C.b i)]
+      nlinarith
+    nlinarith
+
+def BoundaryCycle.radialState {q : ℝ} (C : BoundaryCycle q) (i : Vertex) :
+    RadiusTransfer.RadialState :=
+  if h : C.kind i = .outer then
+    .outer (C.radialCoefficient i) (C.radialCoefficient_bounds i)
+  else .core (C.radius i) ⟨(C.radius_pos i).le,C.core_radius_bound i h⟩
+
+lemma BoundaryCycle.radialState_source {q : ℝ} (C : BoundaryCycle q)
+    (hq : q ∈ Set.Icc (5/2) 4) (i : Vertex) :
+    (C.radialState i).radius q = C.radius i := by
+  by_cases h : C.kind i = .outer
+  · simp only [BoundaryCycle.radialState, dif_pos h, RadiusTransfer.RadialState.radius]
+    apply (RadiusTransfer.outerRadius_unique hq (C.radialCoefficient_bounds i)
+      (C.radius_pos i).le).symm
+    have hb := C.boundary i
+    simp only [h, BoundaryState, phi] at hb
+    have hr := C.radius_sq i
+    have he : C.radialCoefficient i*C.radius i = C.a i+C.b i := by
+      simp [BoundaryCycle.radialCoefficient, ne_of_gt (C.radius_pos i)]
+    nlinarith
+  · simp [BoundaryCycle.radialState,h,RadiusTransfer.RadialState.radius]
+
+def BoundaryCycle.expansionFactor {q : ℝ} (C : BoundaryCycle q) (r : ℝ) (i : Vertex) : ℝ :=
+  (C.radialState i).radius r / C.radius i
+
+lemma BoundaryCycle.expansionFactor_core {q r : ℝ} (C : BoundaryCycle q) (i : Vertex)
+    (h : C.kind i ≠ .outer) : C.expansionFactor r i = 1 := by
+  simp [BoundaryCycle.expansionFactor,BoundaryCycle.radialState,h,
+    RadiusTransfer.RadialState.radius,ne_of_gt (C.radius_pos i)]
+
+lemma BoundaryCycle.expansionFactor_ge_one {q r : ℝ} (C : BoundaryCycle q)
+    (hq : q ∈ Set.Icc (5/2) 4) (hr : r ∈ Set.Icc (5/2) 4) (hqr : q ≤ r)
+    (i : Vertex) : 1 ≤ C.expansionFactor r i := by
+  by_cases h : C.kind i = .outer
+  · have hm := RadiusTransfer.outerRadius_monotone hq hr hqr (C.radialCoefficient_bounds i)
+    have hs := C.radialState_source hq i
+    simp only [BoundaryCycle.radialState,dif_pos h,RadiusTransfer.RadialState.radius] at hs
+    dsimp [BoundaryCycle.expansionFactor]
+    simp only [BoundaryCycle.radialState,dif_pos h,RadiusTransfer.RadialState.radius]
+    apply (le_div_iff₀ (C.radius_pos i)).2
+    simpa [hs] using hm
+  · rw [C.expansionFactor_core i h]
+
+lemma BoundaryCycle.expansionFactor_radius {q r : ℝ} (C : BoundaryCycle q) (i : Vertex) :
+    C.expansionFactor r i*C.radius i = (C.radialState i).radius r := by
+  simp [BoundaryCycle.expansionFactor,ne_of_gt (C.radius_pos i)]
+
+lemma BoundaryCycle.expanded_sqrt {q r : ℝ} (C : BoundaryCycle q)
+    (hq : q ∈ Set.Icc (5/2) 4) (hr : r ∈ Set.Icc (5/2) 4) (hqr : q ≤ r)
+    (i : Vertex) :
+    Real.sqrt ((C.expansionFactor r i*C.a i)^2+(C.expansionFactor r i*C.b i)^2) =
+      C.expansionFactor r i*C.radius i := by
+  have hλ := C.expansionFactor_ge_one hq hr hqr i
+  apply Real.sqrt_eq_iff_mul_self_eq (by nlinarith [C.radius_pos i]) |>.2
+  nlinarith [C.radius_sq i]
+
+lemma BoundaryCycle.expanded_tangent {q r : ℝ} (C : BoundaryCycle q)
+    (hq : q ∈ Set.Icc (5/2) 4) (hr : r ∈ Set.Icc (5/2) 4) (hqr : q ≤ r)
+    (i : Vertex) :
+    C.sigma i*(C.expansionFactor r i*C.b i)/(C.expansionFactor r i*C.a i) = C.tangent i := by
+  have hλ : C.expansionFactor r i ≠ 0 := ne_of_gt (by linarith [C.expansionFactor_ge_one hq hr hqr i])
+  dsimp [BoundaryCycle.tangent]
+  field_simp [hλ,ne_of_gt (C.a_pos i)]
+  ring
+
+lemma BoundaryCycle.expanded_boundary {q r : ℝ} (C : BoundaryCycle q)
+    (hq : q ∈ Set.Icc (5/2) 4) (hr : r ∈ Set.Icc (5/2) 4) (hqr : q ≤ r)
+    (i : Vertex) :
+    BoundaryState r (C.kind i) (C.expansionFactor r i*C.a i) (C.expansionFactor r i*C.b i) := by
+  cases hk : C.kind i with
+  | outer =>
+    have he := RadiusTransfer.outerRadius_equation hr (C.radialCoefficient_bounds i)
+    have hmul := C.expansionFactor_radius (r := r) i
+    simp only [BoundaryCycle.radialState,dif_pos hk,RadiusTransfer.RadialState.radius] at hmul
+    have hc : C.radialCoefficient i*C.radius i = C.a i+C.b i := by
+      simp [BoundaryCycle.radialCoefficient,ne_of_gt (C.radius_pos i)]
+    have hr₂ := C.radius_sq i
+    have hprod := congrArg (fun x : ℝ => C.expansionFactor r i*x) hc
+    have hsq := congrArg (fun x : ℝ => C.expansionFactor r i^2*x) hr₂
+    simp only [hk,BoundaryState,phi]
+    nlinarith
+  | coreSide =>
+    have hλ := C.expansionFactor_core (r := r) i (by simp [hk])
+    simpa [hk,hλ,BoundaryState] using C.boundary i
+  | coreCorner =>
+    have hλ := C.expansionFactor_core (r := r) i (by simp [hk])
+    simpa [hk,hλ,BoundaryState] using C.boundary i
+
+lemma BoundaryCycle.expanded_contained {q r : ℝ} (C : BoundaryCycle q)
+    (hq : q ∈ Set.Icc (5/2) 4) (hr : r ∈ Set.Icc (5/2) 4) (hqr : q ≤ r)
+    (i : Vertex) : SqContained r (radialSquare (C.square i) (C.expansionFactor r i)) := by
+  by_cases hk : C.kind i = .outer
+  · obtain ⟨hx,hy⟩ := radialSquare_coordinates (C.square i)
+      (show 0 ≤ C.expansionFactor r i by linarith [C.expansionFactor_ge_one hq hr hqr i])
+    obtain ⟨ha,hb⟩ := C.absolute_coordinates i
+    have he := C.expanded_boundary hq hr hqr i
+    simp only [hk,BoundaryState] at he
+    simpa [SqContained,hx,hy,ha,hb] using he.le
+  · rw [C.expansionFactor_core i hk]
+    simpa [radialSquare,moveCenter,scale] using (C.contained i).mono hqr
+
+lemma BoundaryCycle.expanded_axis {q r : ℝ} (C : BoundaryCycle q)
+    (hq : q ∈ Set.Icc (5/2) 4) (hr : r ∈ Set.Icc (5/2) 4) (hqr : q ≤ r)
+    (i : Vertex) (axis : SignedAxis)
+    (haxis : axis.Feasible (C.square i) (C.square (next i))) :
+    axis.Feasible
+      (radialSquare (C.square i) (C.expansionFactor r i))
+      (radialSquare (C.square (next i)) (C.expansionFactor r (next i))) := by
+  let n := axis.normal (C.square i) (C.square (next i))
+  let u := -dot n (C.ray i)
+  let v := dot n (C.ray (next i))
+  have hunit : normSq n = 1 := signed_normal_unit axis _ _
+  have hu : -1 ≤ u ∧ u ≤ 1 := by
+    have hh := cauchy_sq n (C.ray i)
+    rw [hunit,C.ray_unit] at hh
+    dsimp [u]
+    constructor <;> nlinarith [sq_nonneg (dot n (C.ray i)+1),sq_nonneg (dot n (C.ray i)-1)]
+  have hv : -1 ≤ v ∧ v ≤ 1 := by
+    have hh := cauchy_sq n (C.ray (next i))
+    rw [hunit,C.ray_unit] at hh
+    dsimp [v]
+    constructor <;> nlinarith [sq_nonneg (dot n (C.ray (next i))+1),sq_nonneg (dot n (C.ray (next i))-1)]
+  have hsource : axis.projection (C.square i) (C.square (next i)) =
+      u*(C.radialState i).radius q+v*(C.radialState (next i)).radius q := by
+    rw [C.radialState_source hq i,C.radialState_source hq (next i)]
+    dsimp [SignedAxis.projection]
+    rw [C.center_polar i,C.center_polar (next i)]
+    dsimp [u,v,n,dot,sub,scale]
+    ring
+  have htransport := RadiusTransfer.every_feasible_projection_preserved
+    (C.radialState i) (C.radialState (next i)) hq hr hqr hu hv
+    (threshold_ge_one (C.square i) (C.square (next i)))
+    (by simpa [SignedAxis.Feasible,hsource] using haxis)
+  have hnormal := signed_normal_same_frames
+    (radialSquare_frame (C.square i) (C.expansionFactor r i))
+    (radialSquare_frame (C.square (next i)) (C.expansionFactor r (next i))) axis
+  have hthreshold := threshold_same_frames
+    (radialSquare_frame (C.square i) (C.expansionFactor r i))
+    (radialSquare_frame (C.square (next i)) (C.expansionFactor r (next i)))
+  dsimp [SignedAxis.Feasible]
+  rw [hthreshold]
+  have htarget : axis.projection
+      (radialSquare (C.square i) (C.expansionFactor r i))
+      (radialSquare (C.square (next i)) (C.expansionFactor r (next i))) =
+      u*(C.radialState i).radius r+v*(C.radialState (next i)).radius r := by
+    dsimp [SignedAxis.projection]
+    rw [hnormal]
+    change dot n (sub (scale (C.expansionFactor r (next i)) (C.square (next i)).center)
+      (scale (C.expansionFactor r i) (C.square i).center)) = _
+    rw [C.center_polar i,C.center_polar (next i)]
+    have hi := C.expansionFactor_radius (r := r) i
+    have hj := C.expansionFactor_radius (r := r) (next i)
+    dsimp [u,v,dot,sub,scale]
+    nlinarith [congrArg (fun x : ℝ => x*(C.ray i).1) hi,
+      congrArg (fun x : ℝ => x*(C.ray i).2) hi,
+      congrArg (fun x : ℝ => x*(C.ray (next i)).1) hj,
+      congrArg (fun x : ℝ => x*(C.ray (next i)).2) hj]
+  simpa [htarget] using htransport
+
+/-- The actual endpoint configuration. Its full square records, polar rays,
+nearest-axis representatives, radial kinds and selected witnesses are retained.
+The proof of `feasible` uses the stronger all-axis endpoint transport above. -/
+def BoundaryCycle.expand {q r : ℝ} (C : BoundaryCycle q)
+    (hq : q ∈ Set.Icc (5/2) 4) (hr : r ∈ Set.Icc (5/2) 4) (hqr : q ≤ r) :
+    BoundaryCycle r where
+  square i := radialSquare (C.square i) (C.expansionFactor r i)
+  contained := C.expanded_contained hq hr hqr
+  core i := radialSquare_core (C.core i) (C.expansionFactor_ge_one hq hr hqr i)
+  selected := C.selected
+  feasible i := C.expanded_axis hq hr hqr i (C.selected i) (C.feasible i)
+  kind := C.kind
+  a i := C.expansionFactor r i*C.a i
+  b i := C.expansionFactor r i*C.b i
+  sigma := C.sigma
+  a_pos i := mul_pos (by linarith [C.expansionFactor_ge_one hq hr hqr i]) (C.a_pos i)
+  b_nonneg i := mul_nonneg (by linarith [C.expansionFactor_ge_one hq hr hqr i]) (C.b_nonneg i)
+  b_le_a i := mul_le_mul_of_nonneg_left (C.b_le_a i)
+    (by linarith [C.expansionFactor_ge_one hq hr hqr i])
+  sigma_sign := C.sigma_sign
+  center_eq i := by
+    change scale (C.expansionFactor r i) (C.square i).center = _
+    rw [C.center_eq i]
+    apply Prod.ext <;> dsimp [rotate,radialSquare,moveCenter,scale] <;> ring
+  boundary := C.expanded_boundary hq hr hqr
+  beta := C.beta
+  center_cos i := by
+    rw [C.expanded_sqrt hq hr hqr i]
+    change C.expansionFactor r i*(C.square i).center.1 = _
+    rw [C.center_cos i]
+    rfl
+  center_sin i := by
+    rw [C.expanded_sqrt hq hr hqr i]
+    change C.expansionFactor r i*(C.square i).center.2 = _
+    rw [C.center_sin i]
+    rfl
+  frame_cos i := by
+    rw [C.expanded_tangent hq hr hqr i]
+    exact C.frame_cos i
+  frame_sin i := by
+    rw [C.expanded_tangent hq hr hqr i]
+    exact C.frame_sin i
+  gap_pos := C.gap_pos
+  gap_lt_pi := C.gap_lt_pi
+
+theorem BoundaryCycle.expand_spec {q r : ℝ} (C : BoundaryCycle q)
+    (hq : q ∈ Set.Icc (5/2) 4) (hr : r ∈ Set.Icc (5/2) 4) (hqr : q ≤ r) :
+    RadiusExpansion C (C.expand hq hr hqr) := by
+  refine ⟨rfl,fun i => ⟨rfl,rfl⟩,rfl,?_,?_⟩
+  · funext i
+    exact C.expanded_tangent hq hr hqr i
+  · exact C.expanded_axis hq hr hqr
+
+theorem radius_expand_boundary_cycle {q r : ℝ} (C : BoundaryCycle q)
+    (hq : q ∈ Set.Icc (5/2) 4) (hr : r ∈ Set.Icc (5/2) 4) (hqr : q ≤ r) :
+    ∃ D : BoundaryCycle r, RadiusExpansion C D :=
+  ⟨C.expand hq hr hqr,C.expand_spec hq hr hqr⟩
+
+end SquaresInCircles.Eight
