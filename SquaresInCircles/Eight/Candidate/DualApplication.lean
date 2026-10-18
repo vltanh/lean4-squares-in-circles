@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Eight.Candidate.GeometricOwnersDoubleComplete
+public import SquaresInCircles.Eight.Candidate.GeometricOwnersForbiddenB
 public import SquaresInCircles.Eight.Generated.OwnerCompleteness
 
 /-!
@@ -195,13 +195,20 @@ theorem quarter_owners {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
       simpa [G, heq] using hp G
     exact G_axis_two_forbidden_quarter_excluded F hq hc hzero hS
       hBbad (hp B) hGsep
+  have hGthree : p 1 ≠ 3 := by
+    intro heq
+    have hGsep : (forwardAxis 3).Feasible (C.square G) (C.square (next G)) := by
+      simpa [G, heq] using hp G
+    exact G_axis_three_forbidden_B_excluded F hq hc hzero hS hBbad (hp B) hGsep
+  have hGsmall : p 1 < 2 := by
+    fin_cases p 1 <;> norm_num at hGnot hGthree ⊢
   have hDlarge : ¬p 5 < 2 := by
     have hh : p 5 ∈ quarterOwners := by simpa [D] using hDgood
     fin_cases p 5 <;> norm_num [quarterOwners] at hh ⊢
   let p' : Vertex → Fin 4 := fun k => collapseOwner k (p k)
   have hpattern : Generated.Owner.QuarterPattern p' := by
     simp [Generated.Owner.QuarterPattern, p', collapseOwner,
-      zeroEdges, otherQuarterEdges, hBsmall, hDlarge, hGnot]
+      zeroEdges, otherQuarterEdges, hBsmall, hDlarge, hGsmall]
   obtain ⟨T,hTm,hTo⟩ := Generated.Owner.quarter_certificate hpattern
   obtain ⟨z,hzl,hzu,ht⟩ := half_angle_chart F.tilt_small
   obtain ⟨r,hrm,hzr⟩ := T.select ⟨hzl.le,hzu.le⟩

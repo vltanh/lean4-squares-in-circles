@@ -211,12 +211,14 @@ for mode,filename in inputs:
         pats=sorted({tuple(r['owners']) for r in data['rows']})
         # D is captured by GeometricOwnersDoubleComplete.D_quarter_owners,
         # for every B/G/E axis. For forbidden B with intended D, the
-        # rotated-corner chain still excludes G-axis 2 (historical axis 3).
+        # rotated-corner chain excludes G-axis 2. The global short-arc
+        # four-circle stress excludes G-axis 3 for all E axes as well
+        # (historical one-based labels 3 and 4).
         # Keep the original pattern indices for the remaining bundles.
         groups=[(k,sorted([r for r in data['rows'] if tuple(r['owners'])==p],key=lambda r:Q(r['lo'])))
                 for k,p in enumerate(pats)
                 if not (mode=='quarter' and
-                        (p[5]==1 or (p[3]==1 and p[1]==3)))]
+                        (p[5]==1 or (p[3]==1 and p[1] in (3,4))))]
     rows_total=0
     for groupno,group in groups:
         chunkname=f'{mode.title()}{groupno:03d}'

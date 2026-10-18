@@ -1,4 +1,4 @@
-# Owner geometry: six complete table replacements
+# Owner geometry: seven complete table replacements
 
 ## Result and exact scope
 
@@ -272,8 +272,8 @@ with their imports and entries in `tiltLeft`. This removes exactly
 generated Lean lines, and 1,136,918 bytes. The owner generator filters
 these nonpositive bundles so regeneration cannot reinstate them.
 
-The five chain arguments below remove 36 of the quarter-owner
-patterns as well. There remain 12 quarter-owner patterns, 15 mixed-owner
+The six chain arguments below remove 40 of the quarter-owner
+patterns as well. There remain eight quarter-owner patterns, 15 mixed-owner
 patterns, and 41 positive tilt bundles. Their geometric replacements are
 still open. In particular, the negative-tilt theorem uses the intended
 owners; it does not by itself supply the quarter or mixed restrictions.
@@ -858,3 +858,230 @@ quarter selector outputs and all 15 mixed selector outputs, the
 48-pattern partition, generator filtering, manifest counts, and
 resolved source imports. No Lean compilation or historical replay
 was run.
+
+
+## 11. The H corner gives a global short arc and removes every G-axis-3 quarter pattern
+
+The H cone has \(b_H\ge a_H/2\). At the test corner
+\((29/25,29/50)\), the squared radius exceeds the permitted ceiling by
+
+\[
+\left(\frac{29}{25}+\frac12\right)^2+
+\left(\frac{29}{50}+\frac12\right)^2-Q_0
+=\frac4{625}>0.
+\tag{37}
+\]
+
+Thus the original H corner disk and its cone imply
+\(a_H\le29/25\). This is `H_primary_twenty_nine`; its underlying
+`corner_primary_twenty_nine` only needs a transverse coordinate at
+least \(29/50\). No contact equality is assumed.
+
+### A short negative arc before any owner restriction
+
+Set \(L=447/800\), \(V=29/25\), and \(U=283/200\).
+Containment and the H cone give
+
+\[
+L\le a_H\le V,\quad b_H\ge a_H/2\ge L/2,
+\quad L\le a_E\le U,\quad b_E\ge0.
+\]
+
+On the entire rectangle \(3/4\le c\le1\),
+\(3/8\le r\le1\), all four nominal E projections fail:
+
+| E axis in Lean | Projection upper bound | Minimum gap below \(W-3/100\) |
+|---|---|---|
+| 0 | \(V(c-r/2)\) | \(43/200\) |
+| 1 | \(V-Lr\) | \(21/256\) |
+| 2 | \(Uc-L/2\) | \(7/320\) |
+| 3 | \(U-Lr-(L/2)c\) | \(117/3200\) |
+
+Here \(W=(1+c+r)/2\). The first bound uses
+\(c-r/2\ge0\) and \(b_H\ge a_H/2\); the other three
+use only products of the stated nonnegative factors. Every actual
+E axis requires its nominal projection to be at least
+\(W-2S\ge W-3/100\). Consequently
+
+\[
+\boxed{\sin t>-3/8}
+\tag{38}
+\]
+
+holds for every candidate frame with \(q\le Q_0\), tangent cuts,
+and \(S\le3/200\). Neither zero owners, quarter owners, nor mixed
+owners are assumed in `global_negative_tilt_bound`. The excluded
+boundary \(\sin t=-3/8\) has a strict reserve in every E case.
+
+### A forbidden B axis first bounds A
+
+The A zero edge followed by a forbidden B edge gives
+
+\[
+b_A+a_T\ge2-\frac32(|d_A|+|d_B|).
+\]
+
+The original T cone contains \(a_T\le349/250\), hence
+
+\[
+b_A\ge2-\frac32\frac3{200}-\frac{349}{250}
+=\frac{1163}{2000}>\frac{29}{50}.
+\]
+
+Equation (37), now applied to A, gives \(a_A\le29/25\).
+This is `forbidden_B_A_coordinates`; it spends only the actual A and
+B errors before bounding their sum by \(S\).
+
+Suppose G axis 3 in Lean is feasible. If \(\sin t\ge0\), then
+\(a_A\ge0\), \(c\ge3/4\), and \(a_G\le U\) imply
+
+\[
+a_G-a_A\sin t-b_Ac
+\le U-\frac{29}{50}\frac34=\frac{49}{50}<1\le W.
+\]
+
+This is impossible with reserve \(1/50\). Thus \(\sin t<0\),
+and (38) leaves only the closed scalar domain
+
+\[
+0\le r\le3/8,\qquad c\ge3/4,\qquad c^2+r^2=1.
+\tag{39}
+\]
+
+It also gives \(9/10\le c\le1\) and
+\(1-c\le(4/7)r^2\). The first follows from
+\(c^2=1-r^2\ge55/64>(9/10)^2\). The second follows from
+\((1-c)(1+c)=r^2\) and \(1+c\ge7/4\).
+
+### One four-circle stress covers all four E axes
+
+The D axis is already captured geometrically by (36). Give the seven
+nominal separation inequalities the following weights:
+
+\[
+(\lambda_H,\lambda_G,\lambda_A,\lambda_B,
+ \lambda_T,\lambda_D,\lambda_E)
+=\left(\frac25,1,c,c,\frac25,\frac9{20},\frac9{20}\right).
+\tag{40}
+\]
+
+The A and B projections telescope, cancelling the B transverse
+coordinate and the negative A transverse force from G. Write
+\(w=2/5\), \(e=9/20\). The common part of the force is
+
+\[
+(a_G+w b_G)+r a_A+(c a_T+w b_T)+(e a_D+w b_D).
+\]
+
+The following four additional forces are the exact contributions of
+H and E, after including D's positive E transverse term:
+
+| E axis in Lean | Additional force |
+|---|---|
+| 0 | \(ec a_H+(w-er)b_H\) |
+| 1 | \(e a_H+w b_H-er a_E+e(1-c)b_E\) |
+| 2 | \((w-e)b_H+ec a_E+e(1-r)b_E\) |
+| 3 | \(-er a_H+(w-ec)b_H+e a_E+e b_E\) |
+
+The common demand is
+
+\[
+D(c,r)=\frac{29}{20}W+2c+\frac54.
+\]
+
+All aligned weights in (40) are at most one and nonnegative on (39).
+Thus their true weighted absolute errors cost at most \(3S/2\),
+and the E error costs at most \(2eS=9S/10\). The complete loss is
+therefore \(12S/5\). This is the explicit `shared_loss` proof;
+it does not spend a fresh total mismatch budget on each edge.
+
+Complete four original corner circles, using weight \(11/40\) on
+G and T and weight \(3/20\) on D and either H or E. The force
+directions are
+
+| Circle | Force direction |
+|---|---|
+| G, all cases | \((1,w)\) |
+| T, all cases | \((c,w)\) |
+| D, all cases | \((e,w)\) |
+| H, E axis 0 | \((ec,w-er)\) |
+| H, E axis 1 | \((e,w)\) |
+| E, E axis 2 | \((ec,e(1-r))\) |
+| E, E axis 3 | \((e,e)\) |
+
+Their circle weights sum to \(17/20\). Each is a direct instance
+of the supporting inequality
+
+\[
+x a+y b\le\mu q+\frac{x^2+y^2}{4\mu}-\frac{x+y}{2}.
+\tag{41}
+\]
+
+For E axis 1, the remaining E terms are bounded using
+\(a_E\ge L\), \(b_E\le9/10\), \(r\ge0\), and
+\(1-c\ge0\). For E axis 2, the remaining H term is
+\(-(1/20)b_H\le0\). For E axis 3, its transverse H term is
+nonpositive because \(c\ge9/10\) gives \(w-ec<0\), and
+its primary H term is at most \(-eLr\). Every case uses
+\(r a_A\le(29/25)r\). No sign assumption on a circle force
+itself is needed for (41).
+
+For reproducibility, after these coordinate bounds and
+\(c^2=1-r^2\), the four resulting lower bounds on demand minus
+force are
+
+\[
+\begin{array}{c|l}
+0&\displaystyle \frac{241}{1320}+\frac{69}{20}c-\frac3{50}r+
+ \frac{10}{11}r^2-\frac{17}{20}q\\[2pt]
+1&\displaystyle \frac{17}{6600}+\frac{363}{100}c-\frac{2937}{16000}r+
+ \frac{10}{11}r^2-\frac{17}{20}q\\[2pt]
+2&\displaystyle \frac{361}{2640}+\frac{69}{20}c+\frac3{200}r+
+ \frac{10}{11}r^2-\frac{17}{20}q\\[2pt]
+3&\displaystyle \frac{191}{528}+\frac{129}{40}c-\frac{2937}{16000}r+
+ \frac{10}{11}r^2-\frac{17}{20}q.
+\end{array}
+\tag{42}
+\]
+
+Substitute \(c\ge1-(4/7)r^2\), \(r\le3/8\),
+\(r^2\le9/64\), and \(q\le Q_0\); discard the positive
+linear term in case 2. This gives the respective exact lower bounds
+
+\[
+\frac{556183}{4200000},\quad
+\frac{4813153}{67200000},\quad
+\frac{458183}{4200000},\quad
+\frac{3920153}{67200000}.
+\]
+
+Every one exceeds \(1/20\). The lemma
+`ForbiddenBStress.four_circle_gap` therefore gives one common gap
+\(D-F\ge1/20\). Comparing this with the entire true error loss
+produces the exact contradiction
+
+\[
+\frac1{20}-\frac{12}{5}\frac3{200}=\frac7{500}>0.
+\tag{43}
+\]
+
+`G_axis_three_forbidden_B_excluded` covers both signs of tilt and
+all four original E axes, including all feasible-axis ties. Its
+source is `Candidate/GeometricOwnersForbiddenB.lean`.
+
+This removes `Quarter040` through `Quarter043`: four modules,
+120 quartics, 600 Bernstein coefficient checks, 5,172 generated
+Lean lines, and 343,769 bytes. The remaining quarter selector is
+\(![0,g,0,0,0,2,e]\) with \(g\in\{0,1\}\) and all four E
+axes, so it checks eight concrete vectors. Its source bundles are
+`Quarter004`--`Quarter007` and `Quarter016`--`Quarter019`.
+
+Cumulatively, the seven owner/tilt replacements remove 58 generated
+modules, 1,578 quartics, 7,890 Bernstein checks, 68,460 generated
+Lean lines, and 4,593,946 bytes. The owner manifest has eight quarter
+groups with 345 rows, 15 mixed groups with 729 rows, and 41 positive
+tilt bundles with 861 rows. Exact static checks verify the four
+weighted force identities, the scalar bounds and reserves, both
+small selectors, the 48-pattern partition, generator filtering,
+manifest counts, and resolved source imports. These remain uncompiled
+proof-source changes; no historical certificate replay was run.
