@@ -1,34 +1,45 @@
 # Packing unit squares in a disk
 
-**Optimal packings of one to seven unit squares, with a Lean 4
+**Optimal packings of one to eight unit squares, with a Lean 4
 formalization**
 
 A companion text to the Lean 4 formalization in this repository
 ([lean4-squares-in-circles](https://github.com/vltanh/lean4-squares-in-circles));
 for its authorship see [Contributors](../contributors.md).
 
-**Abstract.** For $n = 1, \dots, 7$ we determine the least radius $R_n$ of a
+**Abstract.** For $n = 1, \dots, 8$ we determine the least radius $R_n$ of a
 closed disk that holds $n$ non-overlapping unit squares, and every packing
 that attains it: $R_1 = \frac{\sqrt2}2$, $R_2 = \frac{\sqrt5}2$,
 $R_3 = \frac{5\sqrt{17}}{16}$, $R_4 = \sqrt2$, $R_5 = \sqrt{5/2}$,
-$R_6 \approx 1.68854$, whose square is a root of an explicit quartic, and
-$R_7 = \frac{\sqrt{13}}2$. For $n \le 6$ the optimal packing is unique up to
-a rotation about the disk centre and a relabelling of the squares; for $n = 6$
-one of its squares is turned by $\frac\pi4$. For $n = 7$
+$R_6 \approx 1.68854$, whose square is a root of an explicit quartic,
+$R_7 = \frac{\sqrt{13}}2$ and $R_8 \approx 1.97877$, whose square is the
+first coordinate of the unique solution of an explicit system of equations.
+For $n \le 6$ the optimal packing is unique up to a rotation about the disk
+centre and a relabelling of the squares; for $n = 6$ one of its squares is
+turned by $\frac\pi4$. For $n = 7$
 the optimal packings form a three-parameter family: two columns of two squares
 are fixed, and each of the three squares of the middle column can move along
-it on its own. Every case is proved in the same way. An analysis of the
-packings at the optimal radius shows that they are all congruent to the
-optimal models, and the lower bound follows because every optimal model
-reaches the circle. For three to five squares the analysis measures the arcs
-of a small circle about the disk centre that the squares hold. For six squares
+it on its own. For $n = 8$ they form a five-parameter family, together with its
+mirror image: the five squares that touch the circle are fixed, two other
+squares can slide, and a square in the middle can move and turn. For one to
+seven squares an analysis of the packings at the optimal radius shows that
+they are all congruent to the optimal models, and the lower bound follows
+because every optimal model reaches the circle. For three to five squares the
+analysis measures the arcs of a small circle about the disk centre that the
+squares hold. For six squares
 the arcs find the square that contains the disk centre and five fixed points
 label the others; then a weighted sum of separating inequalities, whose
 weights balance at the optimal packing, bounds the radius, with estimates
 uniform over whole intervals of the angles of the squares. For seven squares
 the analysis attaches to each square that avoids the disk centre a direction,
 its marker, and shows that the markers of two disjoint squares are at least
-$\frac\pi3$ apart. Every result is proved in Lean 4 with mathlib, and each
+$\frac\pi3$ apart. For eight squares the lower bound is proved directly: one
+square holds a small disk about the centre, the frames of the other seven are
+forced close together and into the arrangement of the optimal packing, and a
+weighted sum of separating inequalities with balanced weights gives the
+radius. The step that pins the frames rests on finite tables of explicit
+inequalities, each proved on whole intervals of positions and angles and
+checked in Lean. Every result is proved in Lean 4 with mathlib, and each
 numbered statement names the declarations that prove it.
 
 ## Contents
@@ -112,6 +123,20 @@ numbered statement names the declarations that prove it.
   - [10.6 The ring](10-seven.md#106-the-ring)
   - [10.7 The middle column](10-seven.md#107-the-middle-column)
   - [10.8 Proof of Theorem 10.1](10-seven.md#108-proof-of-theorem-101)
+- [11. Eight squares](11-eight.md)
+  - [Theorem 11.1 (eight squares)](11-eight.md#theorem-111-eight-squares)
+  - [11.1 Construction](11-eight.md#111-construction)
+  - [11.2 The central square and the one-twelfth core](11-eight.md#112-the-central-square-and-the-one-twelfth-core)
+  - [11.3 The boundary neighbour cycle](11-eight.md#113-the-boundary-neighbour-cycle)
+  - [11.4 Three radius levels](11-eight.md#114-three-radius-levels)
+  - [11.5 Frame concentration](11-eight.md#115-frame-concentration)
+  - [11.6 Quarter words](11-eight.md#116-quarter-words)
+  - [11.7 Candidate coordinates and the tangent exclusions](11-eight.md#117-candidate-coordinates-and-the-tangent-exclusions)
+  - [11.8 What an affine-arc table row proves](11-eight.md#118-what-an-affine-arc-table-row-proves)
+  - [11.9 The mismatch chain](11-eight.md#119-the-mismatch-chain)
+  - [11.10 Owners, tilt and the sharp terminal](11-eight.md#1110-owners-tilt-and-the-sharp-terminal)
+  - [11.11 The unrestricted lower bound and the pullback](11-eight.md#1111-the-unrestricted-lower-bound-and-the-pullback)
+  - [11.12 The equality domain](11-eight.md#1112-the-equality-domain)
 - [Appendix A. One-variable estimates](appendix-a.md)
   - [A.1 Monotonicity and concavity](appendix-a.md#a1-monotonicity-and-concavity)
   - [A.2 Sine and cosine](appendix-a.md#a2-sine-and-cosine)
@@ -173,6 +198,37 @@ numbered statement names the declarations that prove it.
   - [I.2 Target sign negative](appendix-i.md#i2-target-sign-negative)
   - [I.3 Opposite signs](appendix-i.md#i3-opposite-signs)
   - [I.4 Both signs negative](appendix-i.md#i4-both-signs-negative)
+- [Appendix J. Eight squares: the stationary system](appendix-j.md)
+  - [J.1 The chain](appendix-j.md#j1-the-chain)
+  - [J.2 Convexity on the local rectangle](appendix-j.md#j2-convexity-on-the-local-rectangle)
+  - [J.3 The minimized defect](appendix-j.md#j3-the-minimized-defect)
+  - [J.4 Every solution lies in the local rectangle](appendix-j.md#j4-every-solution-lies-in-the-local-rectangle)
+  - [J.5 Proof of Proposition 11.4](appendix-j.md#j5-proof-of-proposition-114)
+  - [J.6 The weights](appendix-j.md#j6-the-weights)
+- [Appendix K. Eight squares: the central core](appendix-k.md)
+  - [K.1 Arcs on two circles](appendix-k.md#k1-arcs-on-two-circles)
+  - [K.2 A positive depth](appendix-k.md#k2-a-positive-depth)
+  - [K.3 Common points](appendix-k.md#k3-common-points)
+  - [K.4 Directions blocked by a rectangle](appendix-k.md#k4-directions-blocked-by-a-rectangle)
+  - [K.5 Proof of Theorem 11.10](appendix-k.md#k5-proof-of-theorem-1110)
+  - [K.6 A square beyond a line](appendix-k.md#k6-a-square-beyond-a-line)
+- [Appendix L. Eight squares: what a table row proves](appendix-l.md)
+  - [L.1 Arcs of the radial curves](appendix-l.md#l1-arcs-of-the-radial-curves)
+  - [L.2 The separating-axis reduction](appendix-l.md#l2-the-separating-axis-reduction)
+  - [L.3 The last radical](appendix-l.md#l3-the-last-radical)
+  - [L.4 One angle](appendix-l.md#l4-one-angle)
+  - [L.5 Proof of Proposition 11.31 (1)](appendix-l.md#l5-proof-of-proposition-1131-1)
+  - [L.6 Covers](appendix-l.md#l6-covers)
+  - [L.7 Pair tables](appendix-l.md#l7-pair-tables)
+- [Appendix M. Eight squares: the sharp terminal](appendix-m.md)
+  - [M.1 The comparison chain at a free tilt](appendix-m.md#m1-the-comparison-chain-at-a-free-tilt)
+  - [M.2 Weights at a free tilt](appendix-m.md#m2-weights-at-a-free-tilt)
+  - [M.3 The dual bound and the completed squares](appendix-m.md#m3-the-dual-bound-and-the-completed-squares)
+  - [M.4 The first-order term](appendix-m.md#m4-the-first-order-term)
+  - [M.5 The remainder](appendix-m.md#m5-the-remainder)
+  - [M.6 Proof of Theorem 11.36](appendix-m.md#m6-proof-of-theorem-1136)
+  - [M.7 The circle duals of the quartic tables](appendix-m.md#m7-the-circle-duals-of-the-quartic-tables)
+  - [M.8 The identity at zero errors](appendix-m.md#m8-the-identity-at-zero-errors)
 
 ## 1. Introduction
 
@@ -188,8 +244,8 @@ Both questions are harder than they look. Turning a square changes how far it
 reaches in every direction at once, so the space of packings is curved and
 large, and the optimal packings found by search are often rigid only in part.
 The best packings known for small $n$ are collected on Erich Friedman's
-*Squares in Circles* page [1]. We prove that seven of them are optimal, and
-find all optimal packings in those seven cases.
+*Squares in Circles* page [1]. We prove that eight of them are optimal, and
+find all optimal packings in those eight cases.
 
 ### 1.2 The main theorem
 
@@ -211,6 +267,7 @@ the optimal radii and models, and Figure 1.1 draws them.
 | 5 | $\sqrt{5/2}$ | 1.5811 | $(0, 0)$, $(1, 0)$, $(0, 1)$, $(-1, 0)$, $(0, -1)$ | the plus |
 | 6 | $\sqrt{q_*}$ | 1.6885 | $(s_*, s_*)$, $(s_*, s_* + 1)$, $(s_* + 1, s_*)$, $(s_* - 1, t_*)$, $(t_*, s_* - 1)$, $(-d_*, -d_*)$ | a square with four neighbours, two of them pushed along its sides, and a turned square between those two |
 | 7 | $\frac{\sqrt{13}}2$ | 1.8028 | $(1, -\frac12)$, $(1, \frac12)$, $(-1, -\frac12)$, $(-1, \frac12)$, $(0, y_1)$, $(0, y_2)$, $(0, y_3)$ | the column packings |
+| 8 | $\sqrt{q_*}$ | 1.9788 | $(x_1 - \frac12, y_* + \frac12)$, $(x_2 - \frac12, y_* + \frac32)$, $(x_3 + \frac12, y_3 - \frac12)$, $(x_4 + \frac12, y_4 + \frac12)$, $(x_2 - \frac32, \zeta)$, and three turned squares | two columns of two, a top square between them, two turned squares at the bottom and a square in the middle |
 
 *Table 1.1.* The optimal radii and the optimal models $Q(c_1), \dots, Q(c_n)$.
 For $n \le 6$ there is one optimal model; for $n = 6$ its sixth square is the
@@ -219,17 +276,27 @@ $t_* \approx 0.4202$, $d_* \approx 0.7869$ and $q_* \approx 2.8512$ are given
 in closed form in Theorem 9.1. For $n = 7$ the optimal models are the *column
 packings*, one for each choice of heights with $y_1 + 1 \le y_2$,
 $y_2 + 1 \le y_3$ and $-(\sqrt3 - \frac12) \le y_1$, $y_3 \le \sqrt3 - \frac12$.
+For $n = 8$ the optimal models are the models $M(x, y, w, \zeta, \eta)$ of
+Theorem 11.1 with admissible parameters and their mirror images in the
+diagonal $y = x$: five axis-parallel squares with the listed centres, two
+squares $H$ and $G$ turned by $t_* \approx 0.1236$, of which $G$ slides along
+$H$ with the parameter $\eta$, and a central square with the centre $(x, y)$
+turned by $2\arctan w$. Here $q_* \approx 3.9155$, $y_* \approx -0.9207$ and
+$t_*$ come from the unique solution of the stationary system of
+Theorem 11.1, and $x_1, \dots, y_4$ are determined by them; the numbers $q_*$
+and $t_*$ of six and of eight squares are different.
 
-![The seven optimal packings side by side at a common scale, each in its dashed circle of radius R_n: one square; two squares forming a 2 by 1 rectangle; the T of three squares; the 2 by 2 block of four; the plus of five; six squares, a square with four neighbours, two of them pushed along its sides, and a square turned by 45 degrees between those two; and seven squares, two columns of two beside a column of three. Dots mark the corners that lie on the circles](figures/01-introduction/optimal.svg)
+![The eight optimal packings side by side at a common scale, each in its dashed circle of radius R_n: one square; two squares forming a 2 by 1 rectangle; the T of three squares; the 2 by 2 block of four; the plus of five; six squares, a square with four neighbours, two of them pushed along its sides, and a square turned by 45 degrees between those two; seven squares, two columns of two beside a column of three; and eight squares, two columns of two with a square on top between them, two squares turned by about 7 degrees at the bottom and a turned square in the middle. Dots mark the corners that lie on the circles](figures/01-introduction/optimal.svg)
 
-*Figure 1.1.* The optimal packings of $n = 1, \dots, 7$ unit squares, each in
+*Figure 1.1.* The optimal packings of $n = 1, \dots, 8$ unit squares, each in
 its circle of radius $R_n$, at a common scale; for $n = 7$ the column packing
-with the heights $(-1, 0, 1)$. Dots mark the corners on the circle; for
-$n = 6$ two of them are vertices of the turned square.
+with the heights $(-1, 0, 1)$, and for $n = 8$ the model at the centre of the
+box of Proposition 11.7. Dots mark the corners on the circle; for $n = 6$ two
+of them are vertices of the turned square.
 
 #### Theorem 1.1 (main theorem)
 
-Let $1 \le n \le 7$, and let $R_n$ and the optimal models be as in
+Let $1 \le n \le 8$, and let $R_n$ and the optimal models be as in
 Table 1.1.
 
 1. $R_n$ is the least radius of a closed disk that holds a packing of $n$ unit
@@ -237,15 +304,15 @@ Table 1.1.
 2. The packings of $n$ unit squares in a closed disk of radius $R_n$ are
    exactly the configurations congruent to an optimal model.
 
-*Proof.* For $n = 1, \dots, 7$ this is Theorem 4.1, 5.1, 6.1, 7.1, 8.1, 9.1
-and 10.1 respectively: parts (1) and (2) of each give the attainment and the
-lower bound of (1) here, and part (3) gives (2). $\square$
+*Proof.* For $n = 1, \dots, 8$ this is Theorem 4.1, 5.1, 6.1, 7.1, 8.1, 9.1,
+10.1 and 11.1 respectively: parts (1) and (2) of each give the attainment and
+the lower bound of (1) here, and part (3) gives (2). $\square$
 
-*Lean: [`optimal_radius`](../../SquaresInCircles.lean#L72),
-[`optimal_packings`](../../SquaresInCircles.lean#L78),
-[`optimal_packings_rigid`](../../SquaresInCircles.lean#L86),
-[`optimalRadius`](../../SquaresInCircles/Optimal.lean#L21),
-[`optimalPackings`](../../SquaresInCircles/Optimal.lean#L36).*
+*Lean: [`optimal_radius`](../../SquaresInCircles.lean#L61),
+[`optimal_packings`](../../SquaresInCircles.lean#L67),
+[`optimal_packings_rigid`](../../SquaresInCircles.lean#L75),
+[`optimalRadius`](../../SquaresInCircles/Geometry.lean#L499),
+[`optimalPackings`](../../SquaresInCircles/Geometry.lean#L514).*
 
 *Remarks.* (i) For $n \le 6$ the theorem says that the optimal packing is
 unique up to a rotation about the disk centre and a relabelling of the
@@ -257,7 +324,14 @@ middle column on its own, as long as their centres stay at least 1 apart and
 within $\sqrt3 - \frac12$ of the disk centre; the total slack is
 $2\sqrt3 - 3 \approx 0.464$. So the optimal packings form a three-parameter
 family, and infinitely many of them are pairwise not congruent (Figure 1.2).
-(iii) The cases $n \ge 8$ are not treated here.
+(iii) For $n = 8$ the optimum is not unique either. The five squares that touch
+the circle are fixed; the top square moves vertically, one turned square
+slides along the other, and the central square moves and turns in the room
+the others leave, within the admissible domain of Theorem 11.1. So the
+optimal packings form a five-parameter family
+([Figure 11.2](11-eight.md#theorem-111-eight-squares)). The models have no
+symmetry, and their mirror images in the diagonal are optimal models as well.
+(iv) The cases $n \ge 9$ are not treated here.
 
 ![Four optimal packings of seven unit squares in the circle of radius root 13 over 2 about o. In each, the four side squares are the same, and the three middle squares sit at different heights along the dotted middle column: centred at -1, 0, 1; with the lower two pushed to the bottom; with only the bottom square moved down; and with the middle square moved up and the top square near the top of its range](figures/01-introduction/columns.svg)
 
@@ -270,8 +344,10 @@ own along the dotted column $[-\frac12, \frac12] \times [-\sqrt3, \sqrt3]$.
 
 The packings of Table 1.1 are listed on Friedman's page [1], which has collected
 the best known packings of squares in a circle since 1997; the packings of
-three, five, six and seven squares were found by Friedman in 1997, and the
-exact radius of the packing of six squares by David Ellsworth in 2023. One and
+three, five, six and seven squares were found by Friedman in 1997, the exact
+radius of the packing of six squares by David Ellsworth in 2023, and the
+packing of eight squares, listed with the radius $1.97877\ldots$, by David W.
+Cantrell in March 2002. One and
 two squares are folklore, listed there as trivial. For three squares, Montanher,
 Neumaier, Markót, Domes and Schichl [2] enclosed the optimal radius in an
 interval of width $6 \cdot 10^{-14}$ that contains $\frac{5\sqrt{17}}{16}$, and
@@ -283,8 +359,8 @@ official solution [7] proves the radius; an unpublished note by Wei Zhao [8]
 also proves that the block is the only optimal packing, by the argument of
 [Chapter 7](07-four.md). The argument here was reached without the note, but
 both came out of work with Claude, so the two may not be independent. We found
-no earlier proof for five, six or seven squares, whose packings in Table 1.1
-were listed only as the best known ones.
+no earlier proof for five, six, seven or eight squares, whose packings in
+Table 1.1 were listed only as the best known ones.
 
 Proof assistants have verified packing theorems in other settings: the Kepler
 conjecture [3] and the optimal sphere packing in dimension 8 [4]. We found no
@@ -294,16 +370,17 @@ or a square. A more detailed review is on the
 
 ### 1.4 Outline of the proof
 
-**The reduction.** For each $n$, Corollary 2.10 reduces Theorem 1.1 to three
-facts about the set of optimal models: (a) each optimal model is a packing in
-the closed disk of radius $R_n$; (b) each optimal model reaches the circle of
-radius $R_n$; (c) every packing of $n$ unit squares in a closed disk of radius
-$R_n$ is congruent to an optimal model. Facts (a) and (b) are direct
+**The reduction.** For each $n \le 7$, Corollary 2.10 reduces Theorem 1.1 to
+three facts about the set of optimal models: (a) each optimal model is a
+packing in the closed disk of radius $R_n$; (b) each optimal model reaches the
+circle of radius $R_n$; (c) every packing of $n$ unit squares in a closed disk
+of radius $R_n$ is congruent to an optimal model. Facts (a) and (b) are direct
 computations. The lower bound is not proved separately: a packing in a smaller
 disk would also be a packing at the radius $R_n$, so by (c) it would be
 congruent to an optimal model, and by (b) it would not fit in the smaller disk
 (Proposition 2.9, Figure 1.3). All the work is in (c), uniqueness at the
-optimal radius.
+optimal radius. For eight squares the lower bound is proved directly, by an
+argument that holds below the radius $R_8$ as well, and (c) follows from it.
 
 ![The plus of five squares turned about the disk centre o inside its dashed circle of radius R_5, with a smaller solid circle of radius R about o; the eight outer corners lie on the dashed circle, and the parts of the squares outside the smaller circle are highlighted in red](figures/01-introduction/reduction.svg)
 
@@ -469,12 +546,59 @@ each contains the arc of half-width $\frac12$ of the unit circle about its
 marker (thick); turned closer, the squares overlap. In every column packing
 the six markers form a regular hexagon.
 
+**Eight squares** (Chapter 11 and Appendices J to M). The radius has no closed
+form: five corners on one circle and seven contacts leave a chain of squares
+with two free numbers, a position and a tilt, and $R_8^2 = q_*$ is the least
+squared radius at which the chain fits in the circle (Theorem 11.1). The lower
+bound is proved directly, for a packing in a closed disk of squared radius at
+most $Q_0 = \frac{9789}{2500}$, just above $q_*$.
+
+1. *The central core.* On the unit circle and the circle of radius $\frac54$
+   about the disk centre, a square that avoids the centre holds arcs of
+   lengths $L_1$ and $L_{5/4}$ with $3L_1 + L_{5/4} \ge \pi$, so eight such
+   squares do not fit (Figure 1.10). One square contains the disk centre, and
+   in fact the closed disk of radius $\frac1{12}$ about it.
+2. *A boundary cycle.* The seven other squares, in the order of their centre
+   directions, are separated from their neighbours along chosen axes. Each can
+   be moved, keeping its frame and these separations, until it touches the
+   circle or the small disk, and pushing the squares further out keeps every
+   separation; so the next steps can be carried out at fixed squared radii
+   just above $q_*$.
+3. *Frames and the quarter word.* A budget of the angles between neighbours
+   puts the frames of the seven squares within $\frac7{10}$ of one another
+   modulo quarter turns, and the quarter turns between the frames of
+   neighbours form the word $0101011$ of the optimal packing.
+4. *Finite tables.* Ten tables of 660,370 rows in all, each row an inequality
+   proved on two whole arcs of positions and an interval of angles, bound the
+   positions of four squares and shrink the turn between the frames of
+   neighbours below $\frac1{1000}$; 3,513 quartic polynomials then fix the
+   separating axes and the tilt of the two turned squares. Lean checks every
+   row.
+5. *The sharp terminal.* A weighted sum of the seven contacts and the five
+   corner constraints, with the weights of the stationary chain, bounds the
+   squared radius below by $q_*$, and at $q = q_*$ it fixes the five squares
+   on the circle; the other three squares then range over the five-parameter
+   family.
+
+![The optimal packing of eight squares with the unit circle and the circle of radius 5/4 about o; each of the seven squares that avoid o holds one arc of each circle, drawn thick in its colour, and the grey central square, which contains o, meets neither circle](figures/11-eight/measure.svg)
+
+*Figure 1.10.* Step 1 in the optimal packing of eight squares. On the unit
+circle and on the circle of radius $\frac54$ each square that avoids $o$
+holds arcs (thick) with $3L_1 + L_{5/4} > \pi$. In general the sum is at least
+$\pi$; the two circles hold $3 \cdot 2\pi + 2\pi = 8\pi$ in all, and equality
+for eight squares would need eight arcs of $\frac\pi3$ on the unit circle, so
+not all eight squares avoid $o$.
+
 ### 1.5 This text and the formalization
 
 Chapters 2 and 3 contain the definitions and the tools shared by several cases;
-each of Chapters 4 to 10 proves one case, and the appendices hold the long
+each of Chapters 4 to 11 proves one case, and the appendices hold the long
 computations: Appendix A the one-variable estimates, Appendices B to E those of
-six squares and Appendices F to I those of seven squares. Definitions, lemmas,
+six squares, Appendices F to I those of seven squares and Appendices J to M
+those of eight squares. For eight squares part of the proof rests on finite
+tables of inequalities; Chapter 11 says what each row of a table proves, how
+the rows are checked and how large each table is, and the tables themselves
+are part of the formalization. Definitions, lemmas,
 propositions, theorems and corollaries are numbered together within each
 chapter; figures, tables and tagged equations are numbered separately.
 Sections are cited as §3.4. Proofs end with $\square$.

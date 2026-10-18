@@ -1,6 +1,6 @@
 # Appendix A. One-variable estimates
 
-[Contents](README.md) · [← 10. Seven squares](10-seven.md) · [Appendix B →](appendix-b.md)
+[Contents](README.md) · [← 11. Eight squares](11-eight.md) · [Appendix B →](appendix-b.md)
 
 This appendix proves the facts about functions of one real variable on which
 the analysis of six and seven squares rests.

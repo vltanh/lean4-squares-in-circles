@@ -2,14 +2,14 @@
 
 [Back to the README](../README.md)
 
-The results for all seven cases are in the root file `SquaresInCircles.lean`,
-namespace `SquaresInCircles`. The same two theorems cover `n = 1, …, 7`:
+The results for all eight cases are in the root file `SquaresInCircles.lean`,
+namespace `SquaresInCircles`. The same two theorems cover `n = 1, …, 8`:
 
 ```lean
-theorem optimal_radius (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 7) :
+theorem optimal_radius (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 8) :
     IsLeast {R | ∃ (S : Fin n → UnitSquare) (o : Point), Packing S o R} (optimalRadius n)
 
-theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 7)
+theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 8)
     (S : Fin n → UnitSquare) (o : Point) :
     Packing S o (optimalRadius n) ↔ ∃ M ∈ optimalPackings n, Congruent S o M
 ```
@@ -20,9 +20,10 @@ of radius `optimalRadius n` and that none fits in a smaller one.
 `optimal_packings` says that the packings of that radius are exactly the
 configurations congruent to an optimal model. `optimalPackings n` is
 `{X.model}` for the case `X` of `n ≤ 6`, so the optimal packing is unique up to
-a rotation about the disk centre and a relabelling, and the set of all column
-packings `Set.range Seven.columnModel` for `n = 7`
-([Definitions](definitions.md#the-optimal-packings)). The statements use only
+a rotation about the disk centre and a relabelling, the set of all column
+packings `Set.range Seven.columnModel` for `n = 7`, and for `n = 8` the set
+`EightStatement.models` of the packings of admissible parameters and their
+reflections ([Definitions](definitions.md#the-optimal-packings)). The statements use only
 the definitions in [Definitions](definitions.md).
 
 `optimal_packings_rigid` restates the forward direction of `optimal_packings`
@@ -32,8 +33,8 @@ the plane that preserves Euclidean distance and takes the origin to `o`: under
 model.
 
 **One framework.** Each case also stands alone, in namespaces
-`SquaresInCircles.One`, …, `SquaresInCircles.Seven` (folders `One/`, …,
-`Seven/`), and each proves the same things:
+`SquaresInCircles.One`, …, `SquaresInCircles.Eight` (folders `One/`, …,
+`Eight/`), and each proves the same things:
 
 | declaration | for `n = 3` |
 | --- | --- |
@@ -65,6 +66,23 @@ disjoint squares that avoid the disk centre and satisfy the farthest-vertex
 bound of the disk of radius `√13 / 2`: their markers are at least `π/3` apart
 (`Seven.marker_separation_closed`), and exactly `π/3` apart only if they touch
 as in the optimal packing (`Seven.ordered_chart_contact`).
+
+For [eight squares](proof/11-eight.md) the optimum is a five-parameter
+family. `Eight.lower_bound` and `Eight.uniqueness` chain the central core
+(`Eight.central_core_and_exteriors`), the boundary reduction of the seven
+exterior squares (`Eight.boundary_reduction_exists`), the concentration of
+their frames (`Eight.physical_cycle_width_bound`), the quarter words
+(`Eight.quarter_word_candidate`), the candidate tables and the sharp terminal
+(`Eight.Terminal.boundary_rigid`); at the optimal radius
+`Eight.origin_equality_classification` recovers a model from the original
+squares. `Eight.equality_iff_parameters` states the result as an admissible
+parameter point with an optional reflection, and
+`Eight.full_dimensional_equality_box` shows that a five-dimensional box of
+parameters gives packings no two of which are congruent, even allowing
+reflections. The proof builds the stationary packing by the analytic argument
+of `ExactFamily/Stationary.lean`, and `Eight.radius_statement` and
+`Eight.models_statement` identify its radius and models with
+`EightStatement.radius` and `EightStatement.models` of the statement.
 
 For [six squares](proof/09-six.md) `Six.model` has five axis-parallel squares and
 one turned by `π / 4`, `Six.diagonalSquare`, so there are no `Six.centers`.

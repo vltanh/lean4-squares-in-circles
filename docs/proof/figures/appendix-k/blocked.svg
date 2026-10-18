@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="656" height="703" viewBox="0 0 656 703" role="img" aria-label="The rectangle T_Lambda(0.3) and the segment V turned by angles from 0 to F_Lambda(0.3), each copy meeting the rectangle, the last one at its corner">
+<title>The rectangle T_Lambda(0.3) and the segment V turned by angles from 0 to F_Lambda(0.3), each copy meeting the rectangle, the last one at its corner</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<polygon points="74.4,488.0 505.2,488.0 505.2,347.0 74.4,347.0" fill="#dbeafe" stroke="#2563eb" stroke-width="1.4" fill-opacity="1"/>
+<line x1="505.2" y1="652.5" x2="505.2" y2="323.5" stroke="#1f2937" stroke-width="1.0"/>
+<line x1="520.2" y1="606.2" x2="485.5" y2="279.1" stroke="#1f2937" stroke-width="1.0"/>
+<line x1="530.1" y1="558.7" x2="461.3" y2="237.0" stroke="#1f2937" stroke-width="1.0"/>
+<line x1="535.0" y1="510.3" x2="432.7" y2="197.7" stroke="#1f2937" stroke-width="1.0"/>
+<line x1="534.8" y1="461.7" x2="400.2" y2="161.6" stroke="#1f2937" stroke-width="1.0"/>
+<line x1="529.5" y1="413.4" x2="364.0" y2="129.1" stroke="#1f2937" stroke-width="1.0"/>
+<line x1="519.1" y1="366.0" x2="324.6" y2="100.6" stroke="#dc2626" stroke-width="2.4"/>
+<path d="M 159.0 488.0 A 84.6 84.6 0 0 0 142.6 438.0" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/>
+<text x="197.7" y="419.7" font-size="13" font-family="Georgia, 'Times New Roman', serif" text-anchor="start" dominant-baseline="middle" fill="#ffffff" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"><tspan font-style="italic">F</tspan><tspan dy="3.9" font-size="8.8">Λ</tspan><tspan dy="-3.9">(0.3)</tspan></text>
+<text x="197.7" y="419.7" font-size="13" font-family="Georgia, 'Times New Roman', serif" text-anchor="start" dominant-baseline="middle" fill="#ea580c"><tspan font-style="italic">F</tspan><tspan dy="3.9" font-size="8.8">Λ</tspan><tspan dy="-3.9">(0.3)</tspan></text>
+<line x1="74.4" y1="488.0" x2="505.2" y2="347.0" stroke="#1f2937" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="505.2" cy="347.0" r="3.4" fill="#dc2626"/>
+<circle cx="483.9" cy="354.0" r="3" fill="#1f2937"/>
+<circle cx="74.4" cy="488.0" r="2.6" fill="#1f2937"/>
+<text x="65.0" y="511.5" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">o</text>
+<text x="519.3" y="337.6" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">(<tspan font-style="italic">A</tspan><tspan dy="4" font-size="9">1</tspan><tspan dy="-4">, 0.3)</tspan></text>
+<text x="289.8" y="417.5" font-size="13" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"><tspan font-style="italic">T</tspan><tspan dy="3.9" font-size="8.8">Λ</tspan><tspan dy="-3.9">(0.3)</tspan></text>
+<text x="289.8" y="417.5" font-size="13" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#2563eb"><tspan font-style="italic">T</tspan><tspan dy="3.9" font-size="8.8">Λ</tspan><tspan dy="-3.9">(0.3)</tspan></text>
+<text x="524.0" y="633.7" font-size="14" font-family="Georgia, 'Times New Roman', serif" text-anchor="start" dominant-baseline="middle" fill="#ffffff" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"><tspan font-style="italic">V</tspan></text>
+<text x="524.0" y="633.7" font-size="14" font-family="Georgia, 'Times New Roman', serif" text-anchor="start" dominant-baseline="middle" fill="#1f2937"><tspan font-style="italic">V</tspan></text>
+<text x="505.2" y="676.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">Λ = 11/12</text>
+</svg>

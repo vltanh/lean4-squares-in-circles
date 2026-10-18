@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="459" height="504" viewBox="0 0 459 504" role="img" aria-label="Squares that avoid the core and lie in the disk, with centre directions within 19/50 of the horizontal, all contain the point at distance 41/40 on the horizontal axis">
+<title>Squares that avoid the core and lie in the disk, with centre directions within 19/50 of the horizontal, all contain the point at distance 41/40 on the horizontal axis</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<polygon points="63.0,252.0 393.8,384.1 397.0,375.7 400.0,367.2 402.8,358.6 405.4,350.0 407.8,341.3 410.0,332.5 411.9,323.7 413.6,314.8 415.1,305.9 416.3,297.0 417.4,288.0 418.2,279.0 418.7,270.0 419.1,261.0 419.2,252.0 419.1,243.0 418.7,234.0 418.2,225.0 417.4,216.0 416.3,207.0 415.1,198.1 413.6,189.2 411.9,180.3 410.0,171.5 407.8,162.7 405.4,154.0 402.8,145.4 400.0,136.8 397.0,128.3 393.8,119.9" fill="#e5e7eb" stroke="none" stroke-width="1.5" fill-opacity="0.9"/>
+<polyline points="298.1,519.6 303.7,514.5 309.2,509.4 314.6,504.1 319.9,498.7 325.1,493.2 330.2,487.5 335.1,481.8 340.0,476.0 344.7,470.0 349.2,464.0 353.7,457.9 358.0,451.6 362.1,445.3 366.2,438.9 370.1,432.4 373.9,425.9 377.5,419.2 381.0,412.5 384.3,405.7 387.5,398.9 390.5,391.9 393.4,384.9 396.2,377.9 398.8,370.8 401.2,363.6 403.5,356.4 405.7,349.1 407.7,341.8 409.5,334.5 411.2,327.1 412.7,319.7 414.0,312.3 415.2,304.8 416.3,297.3 417.2,289.8 417.9,282.2 418.5,274.7 418.9,267.1 419.1,259.6 419.2,252.0 419.1,244.4 418.9,236.9 418.5,229.3 417.9,221.8 417.2,214.2 416.3,206.7 415.2,199.2 414.0,191.7 412.7,184.3 411.2,176.9 409.5,169.5 407.7,162.2 405.7,154.9 403.5,147.6 401.2,140.4 398.8,133.2 396.2,126.1 393.4,119.1 390.5,112.1 387.5,105.1 384.3,98.3 381.0,91.5 377.5,84.8 373.9,78.1 370.1,71.6 366.2,65.1 362.1,58.7 358.0,52.4 353.7,46.1 349.2,40.0 344.7,34.0 340.0,28.0 335.1,22.2 330.2,16.5 325.1,10.8 319.9,5.3 314.6,-0.1 309.2,-5.4 303.7,-10.5 298.1,-15.6" fill="none" fill-opacity="1.0" stroke="#1f2937" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4"/>
+<polygon points="249.3,274.5 416.4,207.8 349.7,40.6 182.5,107.4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8" fill-opacity="0.25"/>
+<circle cx="299.5" cy="157.6" r="2.2" fill="#2563eb"/>
+<polygon points="157.4,289.7 228.4,455.1 393.8,384.1 322.8,218.7" fill="#ffedd5" stroke="#ea580c" stroke-width="1.8" fill-opacity="0.25"/>
+<circle cx="275.6" cy="336.9" r="2.2" fill="#ea580c"/>
+<polygon points="135.3,417.5 305.7,359.4 247.6,189.1 77.2,247.2" fill="#dcfce7" stroke="#16a34a" stroke-width="1.8" fill-opacity="0.25"/>
+<circle cx="191.4" cy="303.3" r="2.2" fill="#16a34a"/>
+<polygon points="76.9,246.4 242.3,317.4 313.3,152.0 147.9,81.0" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.8" fill-opacity="0.25"/>
+<circle cx="195.1" cy="199.2" r="2.2" fill="#9333ea"/>
+<circle cx="63.0" cy="252.0" r="15.0" fill="#fecaca" stroke="#dc2626" stroke-width="1.0"/>
+<circle cx="247.5" cy="252.0" r="4.2" fill="#dc2626"/>
+<text x="261.9" y="264.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" text-anchor="start" dominant-baseline="middle" fill="#ffffff" stroke="#ffffff" stroke-width="4" stroke-linejoin="round">41/40</text>
+<text x="261.9" y="264.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" text-anchor="start" dominant-baseline="middle" fill="#dc2626">41/40</text>
+<line x1="63.0" y1="252.0" x2="393.8" y2="119.9" stroke="#1f2937" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="63.0" y1="252.0" x2="393.8" y2="384.1" stroke="#1f2937" stroke-width="1" stroke-dasharray="3 3"/>
+<path d="M 154.9 288.7 A 99.0 99.0 0 0 0 162.0 252.0" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-linecap="round"/>
+<text x="183.2" y="275.1" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">19/50</text>
+<circle cx="63.0" cy="252.0" r="2.6" fill="#1f2937"/>
+<text x="54.0" y="270.0" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">o</text>
+</svg>

@@ -4,12 +4,12 @@
     python3 scripts/figures/proof_figures.py
 
 The figures of each chapter go to the directory of its page: 01-introduction/
-for the introduction, 02-preliminaries/ to 10-seven/ for the chapters, and
-appendix-a/ to appendix-i/ for the appendices. This module draws the figures
+for the introduction, 02-preliminaries/ to 11-eight/ for the chapters, and
+appendix-a/ to appendix-m/ for the appendices. This module draws the figures
 shared since the first version of the pages and holds the drawing helpers; the
-modules fig_front.py (Chapters 1 to 3), fig_one.py to fig_seven.py
-(Chapters 4 to 10) and fig_appa.py to fig_appi.py (Appendices A to I) draw the
-figures of each chapter, and main() runs them all.
+modules fig_front.py (Chapters 1 to 3), fig_one.py to fig_seven.py and
+fig_eight.py (Chapters 4 to 11) and fig_appa.py to fig_appm.py (Appendices A
+to M) draw the figures of each chapter, and main() runs them all.
 
 Arcs of squares on the auxiliary circles are found by sampling the circle and
 testing membership in the open squares, so every figure is computed from the
@@ -1622,9 +1622,10 @@ def main():
     # The figures of each chapter, drawn by one module per chapter.
     import importlib
     for module in ('fig_front', 'fig_one', 'fig_two', 'fig_three', 'fig_four',
-                   'fig_five', 'fig_six', 'fig_seven', 'fig_appa', 'fig_appb',
-                   'fig_appc', 'fig_appd', 'fig_appe', 'fig_appf', 'fig_appg',
-                   'fig_apph', 'fig_appi'):
+                   'fig_five', 'fig_six', 'fig_seven', 'fig_eight', 'fig_appa',
+                   'fig_appb', 'fig_appc', 'fig_appd', 'fig_appe', 'fig_appf',
+                   'fig_appg', 'fig_apph', 'fig_appi', 'fig_appj', 'fig_appk',
+                   'fig_appl', 'fig_appm'):
         importlib.import_module(module).main()
 
 

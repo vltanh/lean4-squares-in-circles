@@ -4,13 +4,15 @@
 [![Doc links](https://github.com/vltanh/lean4-squares-in-circles/actions/workflows/docs.yml/badge.svg)](https://github.com/vltanh/lean4-squares-in-circles/actions/workflows/docs.yml)
 [![Palomar](https://img.shields.io/badge/Palomar-registered-blue)](https://palomar-registry.org/entry.html?id=PALOMAR-2026-10-02-000002&version=1)
 
-Machine-checked proofs, for `n = 1, …, 7`, of the least radius of a disk
+Machine-checked proofs, for `n = 1, …, 8`, of the least radius of a disk
 holding `n` non-overlapping unit squares, and of every packing that attains it,
 up to rotation about the disk centre and relabelling: exactly one for `n ≤ 6`,
-and for `n = 7` a family in which each of the three middle squares slides along
-the middle column.
+for `n = 7` a family in which each of the three middle squares slides along
+the middle column, and for `n = 8` a five-parameter family, with its
+reflections, in which two squares slide and the central square moves and
+turns.
 
-![The optimal packings of one to seven unit squares, each in its dashed circle of radius R_n at a common scale, with n and the exact radius under each: one square; two squares side by side; the T; the 2 by 2 block; the plus; six squares, one of them turned by 45 degrees; and seven squares in columns of two, three and two](docs/proof/figures/01-introduction/optimal.svg)
+![The optimal packings of one to eight unit squares, each in its dashed circle of radius R_n at a common scale, with n and the radius under each: one square; two squares side by side; the T; the 2 by 2 block; the plus; six squares, one of them turned by 45 degrees; seven squares in columns of two, three and two; and eight squares, two columns of two with a square on top between them, two turned squares at the bottom and a turned square in the middle](docs/proof/figures/01-introduction/optimal.svg)
 
 ## Definitions
 
@@ -155,18 +157,65 @@ def Six.model : Fin 6 → UnitSquare :=
     axisSquare (tStar, sStar - 1), diagonalSquare]
 ```
 
+### Eight squares
+
+The optimal packings of eight squares form a family. Five squares have a corner
+on the circle: four axis-parallel ones, `A`, `B`, `D` and `E`, and `H`, turned
+by a small angle `t` (about 7°). Two squares slide: `T`, axis-parallel between
+`D` and `B`, and `G`, turned as `H` is and beside it. The central square moves
+and turns. The radius is not a radical: given `q`, the position `y` and the
+tilt `t`, the four corners of `A`, `B`, `D`, `E` on the circle of squared radius
+`q` determine the corner of `H`, and its *defect* `h₁² + h₂² - q` measures how
+far that fifth corner is from the circle. The squared optimal radius is the
+least `q` at which the defect can vanish; there the defect is stationary in
+`y` and in `t`. `EightStatement.selected` is the solution of that system, in
+the variable `z = tan (t / 2)`; the system has exactly one solution, so the
+choice is determined:
+
+```lean
+structure EightStatement.Root.IsStationary (d : Root) : Prop extends IsChain d where
+  q_lower : (79/40 : ℝ)^2 ≤ d.q
+  q_upper : d.q ≤ 9789/2500
+  ⋯
+  zero_defect : d.defect = 0
+  position_stationary : d.positionDerivative = 0
+  tilt_stationary : d.tiltDerivative = 0
+
+def EightStatement.selected : Root := Classical.epsilon Root.IsStationary
+def EightStatement.qStar : ℝ := selected.q   -- ≈ 3.91553
+def EightStatement.radius : ℝ := Real.sqrt qStar   -- ≈ 1.97877
+```
+
+The five free numbers are the centre `(x, y)` and the turn `w` of the central
+square, the height `z` of `T` and the offset `eta` of `G`.
+`Parameters.Admissible` asks that the turn lie in a half-open interval, that `T`
+and `G` lie in the disk at distance at least `1/12` from its centre, that the
+disk centre be less than `5/12` from the centre of the central square along each
+of its axes, and that the central square be separated from each of the seven
+others by an axis. Congruence turns but never reflects, and these packings
+have no mirror symmetry, so the models include their reflections:
+
+```lean
+def EightStatement.models : Set (Fin 8 → UnitSquare) :=
+  {M | ∃ reflected : Bool, ∃ p : Parameters,
+    p.Admissible selected ∧ M = reflectedModel reflected p}
+```
+
+All of it, about 250 lines, is in `Geometry.lean`; every field is explained in
+[docs/definitions.md](docs/definitions.md).
+
 ## Results
 
 More on each theorem: [docs/results.md](docs/results.md).
 
-For `1 ≤ n ≤ 7`, the root file `SquaresInCircles.lean` proves, in namespace
+For `1 ≤ n ≤ 8`, the root file `SquaresInCircles.lean` proves, in namespace
 `SquaresInCircles`:
 
 ```lean
-theorem optimal_radius (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 7) :
+theorem optimal_radius (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 8) :
     IsLeast {R | ∃ (S : Fin n → UnitSquare) (o : Point), Packing S o R} (optimalRadius n)
 
-theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 7)
+theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 8)
     (S : Fin n → UnitSquare) (o : Point) :
     Packing S o (optimalRadius n) ↔ ∃ M ∈ optimalPackings n, Congruent S o M
 ```
@@ -174,8 +223,9 @@ theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 7)
 `optimal_radius`: `optimalRadius n` is the least radius of a disk holding `n`
 unit squares; some packing attains it, and none fits in a smaller disk.
 `optimal_packings`: the packings of that radius are exactly the configurations
-congruent to a model in `optimalPackings n`, which holds one model for `n ≤ 6`
-and every column packing for `n = 7`:
+congruent to a model in `optimalPackings n`, which holds one model for `n ≤ 6`,
+every column packing for `n = 7`, and for `n = 8` every packing of admissible
+parameters and its reflection:
 
 ```lean
 def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
@@ -186,6 +236,7 @@ def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
   | 5 => {Five.model}
   | 6 => {Six.model}
   | 7 => Set.range Seven.columnModel
+  | 8 => EightStatement.models
   | _ => ∅
 ```
 
@@ -203,6 +254,7 @@ five axis-parallel squares and one turned by `π / 4`
 | 5 | `Real.sqrt (5 / 2)` | `![(0,0),(1,0),(0,1),(-1,0),(0,-1)]` |
 | 6 | `Real.sqrt Six.qStar` | `(s,s)`, `(s,s+1)`, `(s+1,s)`, `(s-1,t)`, `(t,s-1)` and the turned square at `(-d,-d)`, for `s, t, d = Six.sStar, Six.tStar, Six.dStar` |
 | 7 | `Real.sqrt 13 / 2` | `Seven.columnCenters c` for every `c : Seven.Column` |
+| 8 | `Real.sqrt EightStatement.qStar` | the squares of `EightStatement.Parameters.model selected p` for every admissible `p`, and their reflections ([below](#eight-squares)) |
 
 Every case proves one `Optimum` (`Common/Optimum.lean`): the radius, the
 models, that they pack the disk (`model_packing`; for seven squares
@@ -220,9 +272,9 @@ with the [preliminaries](docs/proof/02-preliminaries.md), the shared
 [tools](docs/proof/03-tools.md), one chapter per case ([one](docs/proof/04-one.md),
 [two](docs/proof/05-two.md), [three](docs/proof/06-three.md),
 [four](docs/proof/07-four.md), [five](docs/proof/08-five.md),
-[six](docs/proof/09-six.md), [seven](docs/proof/10-seven.md)), and nine appendices
-of computations: one-variable estimates, then four for six squares and four for
-seven squares.
+[six](docs/proof/09-six.md), [seven](docs/proof/10-seven.md),
+[eight](docs/proof/11-eight.md)), and thirteen appendices of computations:
+one-variable estimates, then four each for six, seven and eight squares.
 
 - **One and two squares.** The farthest corner of a square is at least half a
   diagonal from the disk centre, so in the disk of radius `√2 / 2` the square
@@ -255,6 +307,18 @@ seven squares.
   pairwise at least `π/3` apart, so one square contains the disk centre, and
   the markers of the other six form a regular hexagon, which rebuilds the
   packing up to the heights of the three middle squares.
+- **Eight squares.** Arcs on two circles about the disk centre give a central
+  square near the disk centre and seven exterior squares around it, each
+  separated from the next along one of four forward axes. Expanded to a fixed
+  radius, their frames are pinned down in steps: pair costs of four types
+  bound the spread of the frames, a whole-cycle bound leaves one sequence of
+  quarter turns, and tables of row inequalities contract the frame errors.
+  At the end a weighted sum of support inequalities, with the weights of the
+  stationary packing, bounds the radius, and at equality every error
+  vanishes: five squares are fixed, two slide, and the central square moves
+  and turns. The tables, hundreds of thousands of one-variable inequalities,
+  are checked in Lean's kernel by fixed-point and natural-number arithmetic
+  whose soundness is proved.
 - **The lower bound** is shared by all cases: a packing in a smaller disk also
   packs the optimal one, so it is congruent to a model, whose outer corners
   reach the circle of the optimal radius.
@@ -278,10 +342,11 @@ More on each earlier result, with references:
   argument used here: each square holds at least a quarter of a small circle
   about the disk centre. Our proof was written without the note, but both came
   from work with Claude, so they may not be independent.
-- **Five, six and seven squares.** We found no earlier proof; in July 2026
-  Friedman's page listed his packings of 1997 as the best known. For six
-  squares it gives the exact radius found by David Ellsworth in 2023, which
-  agrees with the one here.
+- **Five to eight squares.** We found no earlier proof; in July 2026
+  Friedman's page listed his packings of 1997 as the best known, and for
+  eight squares the packing found by David W. Cantrell in March 2002, of
+  radius `1.97877…`. For six squares it gives the exact radius found by David
+  Ellsworth in 2023. Both agree with the radii here.
 
 We found no proof-assistant verification of any optimal square or circle
 packing.
@@ -291,7 +356,7 @@ packing.
 More on each file: [docs/layout.md](docs/layout.md).
 
 ```text
-SquaresInCircles.lean      the main theorems, for all seven cases
+SquaresInCircles.lean      the main theorems, for all eight cases
 Challenge.lean             the statement alone, for the Palomar registry
 SquaresInCircles/
 ├── Geometry.lean          the statement: squares, disks, Packing, Congruent,
@@ -302,8 +367,15 @@ SquaresInCircles/
 ├── Six/                   Construction, Exterior, Containing, Uniqueness, and
 │                          Normalization/, Separators/, Wings/, Tails/,
 │                          Stress/, Equality/ in between
-└── Seven/                 Construction, Exterior, Containing, Uniqueness, and
-                           the pair theorem (Pair, Pair/) and the Ring
+├── Seven/                 Construction, Exterior, Containing, Uniqueness, and
+│                          the pair theorem (Pair, Pair/) and the Ring
+└── Eight/                 the central core, the boundary cycle, frames and
+                           quarter words, Candidate/ and Terminal, Uniqueness;
+                           ExactFamily/ (the stationary packing and the
+                           equality domain), Arithmetic/ (the kernel checkers)
+                           and Generated/ (the checked tables)
+data/eight/                the data of the tables, read by Generated/
+scripts/eight/             the generators of data/eight/ and Generated/
 ```
 
 Each case imports only `Common/` and its own folder.

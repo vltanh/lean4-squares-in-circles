@@ -1,6 +1,6 @@
 # 10. Seven squares
 
-[Contents](README.md) · [← 9. Six squares](09-six.md) · [Appendix A →](appendix-a.md)
+[Contents](README.md) · [← 9. Six squares](09-six.md) · [11. Eight squares →](11-eight.md)
 
 This chapter proves that the least radius of a closed disk that holds seven
 unit squares with disjoint interiors is $R_7 = \frac{\sqrt{13}}2$, and it
@@ -52,11 +52,11 @@ middle square (grey) contains $o$. The centres of the six arcs are the markers
 of Definition 10.6, in the directions 30°, 90°, …, 330°, exactly $\frac\pi3$
 apart.
 
-*Lean: [`Seven.radius`](../../SquaresInCircles/Geometry.lean#L246),
-[`Seven.columnLimit`](../../SquaresInCircles/Geometry.lean#L251),
-[`Seven.Column`](../../SquaresInCircles/Geometry.lean#L256),
-[`Seven.columnCenters`](../../SquaresInCircles/Geometry.lean#L267),
-[`Seven.columnModel`](../../SquaresInCircles/Geometry.lean#L273),
+*Lean: [`Seven.radius`](../../SquaresInCircles/Geometry.lean#L243),
+[`Seven.columnLimit`](../../SquaresInCircles/Geometry.lean#L248),
+[`Seven.Column`](../../SquaresInCircles/Geometry.lean#L253),
+[`Seven.columnCenters`](../../SquaresInCircles/Geometry.lean#L264),
+[`Seven.columnModel`](../../SquaresInCircles/Geometry.lean#L270),
 [`Seven.column_packing`](../../SquaresInCircles/Seven/Construction.lean#L54),
 [`Seven.uniqueness`](../../SquaresInCircles/Seven/Uniqueness.lean#L69),
 [`Seven.optimum`](../../SquaresInCircles/Seven/Uniqueness.lean#L75).*

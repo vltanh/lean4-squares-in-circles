@@ -182,3 +182,32 @@ Times are rough commit times, in US Central time (UTC−5).
   conjecture: each file begins with `module`, imports with `public import` and
   exposes its definitions. Two lemmas whose statements use private definitions
   became private themselves; nothing else changed.
+
+## 30 September to 17 October 2026
+
+* **Eight squares by hand.** ChatGPT 6 Pro proved the optimum of eight
+  squares and found all its optimal packings, a family with five parameters,
+  in a proof written for people, with large finite tables of inequalities
+  checked by computer
+  ([PR #9](https://github.com/vltanh/lean4-squares-in-circles/pull/9)).
+
+## 17 to 18 October 2026
+
+* **From 21:20 on 17 October — eight squares in Lean.** ChatGPT 6 Pro wrote
+  the whole proof in Lean, without compiling it
+  ([PR #10](https://github.com/vltanh/lean4-squares-in-circles/pull/10)),
+  and on 18 October replaced some of its tables by geometric arguments.
+* **From 08:35 on 18 October — eight squares compiled.** Claude Opus 5.5, in
+  Claude Code, compiled the draft. Its 427 failing proofs were repaired with
+  their strategies kept; one lemma was false as stated, because a definition
+  listed the two branches of one coefficient in the wrong order. The draft's
+  finite checks could not run in Lean's kernel: a branch-and-bound search
+  over boxes for each of 2,000 pair problems, and rational arithmetic for
+  about 664,000 table rows. They became fixed-point and natural-number tests
+  whose soundness is proved once, evaluated by `decide +kernel`: the ten
+  tables of 660,370 affine rows, the owner and tilt quartics, and the
+  exact-family certificates, and the pair problems became generated rows of
+  the same kind, 9,444 of them with their coverage trees. The PR's geometric
+  exclusion of 77,480 rows and its owner geometry were ported. It also wrote
+  eight squares into the textbook as Chapter 11, with Appendices J to M and
+  38 figures.

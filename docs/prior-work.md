@@ -8,7 +8,8 @@ This review reflects the literature as of September 2026.
 
 Erich Friedman's [Squares in Circles](https://erich-friedman.github.io/packing/squincir/)
 page has collected the best known packings since 1997, including his own of
-three, five, six and seven squares. Before this repository:
+three, five, six and seven squares, and David W. Cantrell's of eight squares.
+Before this repository:
 
 | n | earlier result | this repository |
 | :-: | --- | --- |
@@ -18,6 +19,7 @@ three, five, six and seven squares. Before this repository:
 | 5 | none found; the plus was listed only as the best known packing | formal proofs of optimality and uniqueness |
 | 6 | none found; Friedman's packing of 1997 was listed only as the best known one, with its exact radius found by David Ellsworth in 2023 | formal proofs of optimality and uniqueness |
 | 7 | none found; the packing of radius `√13/2` was listed only as the best known one | formal proofs of optimality and of uniqueness up to the heights of the three middle squares |
+| 8 | none found; the packing found by David W. Cantrell in March 2002, of radius `1.97877…`, was listed only as the best known one | formal proofs of optimality, and of uniqueness up to five parameters and a reflection |
 
 Montanher et al. [1] pose the three-square problem as a constraint satisfaction
 problem and solve it by interval branch and bound, in C++ with the Filib and
@@ -68,7 +70,7 @@ Proof assistants have verified packing theorems elsewhere: the Kepler conjecture
 in HOL Light and Isabelle [2], and sphere packing in dimension 8 in Lean [3]. We
 found no formal proof of an optimal packing of squares or circles in a circle or
 a square, and no earlier exact proof of optimality or of uniqueness for three,
-five, six or seven squares; uniqueness for four squares is in the note [5].
+five, six, seven or eight squares; uniqueness for four squares is in the note [5].
 
 ## References
 

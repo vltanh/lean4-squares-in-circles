@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="345" height="523" viewBox="0 0 345 523" role="img" aria-label="The centres of the central square admissible for w = 0.1, zeta = 1.35 and eta = -0.32: a polygon bounded by contacts with exterior squares and by the core condition, with the section of the box of Proposition 11.7">
+<title>The centres of the central square admissible for w = 0.1, zeta = 1.35 and eta = -0.32: a polygon bounded by contacts with exterior squares and by the core condition, with the section of the box of Proposition 11.7</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<polygon points="244.9,430.4 244.9,123.2 234.2,70.5 145.5,88.4 215.3,434.1" fill="#dbeafe" stroke="none" stroke-width="1.5" fill-opacity="1"/>
+<line x1="244.9" y1="430.4" x2="244.9" y2="123.2" stroke="#2563eb" stroke-width="2.2"/>
+<text x="262.9" y="276.8" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">A</text>
+<line x1="244.9" y1="123.2" x2="234.2" y2="70.5" stroke="#ea580c" stroke-width="2.2"/>
+<text x="257.2" y="93.3" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">B</text>
+<line x1="234.2" y1="70.5" x2="145.5" y2="88.4" stroke="#16a34a" stroke-width="2.2"/>
+<text x="186.3" y="61.8" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">D</text>
+<line x1="145.5" y1="88.4" x2="215.3" y2="434.1" stroke="#db2777" stroke-width="2.2"/>
+<text x="162.8" y="264.8" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#db2777" text-anchor="middle" dominant-baseline="middle" font-style="italic">H</text>
+<line x1="215.3" y1="434.1" x2="244.9" y2="430.4" stroke="#ca8a04" stroke-width="2.2"/>
+<text x="232.3" y="450.1" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#ca8a04" text-anchor="middle" dominant-baseline="middle" font-style="italic">G</text>
+<polygon points="209.7,139.3 212.7,139.3 212.7,136.3 209.7,136.3" fill="#1f2937" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
+<text x="218.7" y="137.8" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">box</text>
+<line x1="63.0" y1="486.6" x2="321.4" y2="486.6" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="63.0" y1="486.6" x2="63.0" y2="24.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="151.2" y1="486.6" x2="151.2" y2="492.6" stroke="#1f2937" stroke-width="1"/>
+<text x="151.2" y="504.6" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">0.10</text>
+<line x1="181.2" y1="486.6" x2="181.2" y2="492.6" stroke="#1f2937" stroke-width="1"/>
+<text x="181.2" y="504.6" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">0.12</text>
+<line x1="211.2" y1="486.6" x2="211.2" y2="492.6" stroke="#1f2937" stroke-width="1"/>
+<text x="211.2" y="504.6" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">0.14</text>
+<line x1="241.2" y1="486.6" x2="241.2" y2="492.6" stroke="#1f2937" stroke-width="1"/>
+<text x="241.2" y="504.6" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">0.16</text>
+<line x1="63.0" y1="437.8" x2="57.0" y2="437.8" stroke="#1f2937" stroke-width="1"/>
+<text x="54.0" y="437.8" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">−0.20</text>
+<line x1="63.0" y1="362.8" x2="57.0" y2="362.8" stroke="#1f2937" stroke-width="1"/>
+<text x="54.0" y="362.8" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">−0.15</text>
+<line x1="63.0" y1="287.8" x2="57.0" y2="287.8" stroke="#1f2937" stroke-width="1"/>
+<text x="54.0" y="287.8" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">−0.10</text>
+<line x1="63.0" y1="212.8" x2="57.0" y2="212.8" stroke="#1f2937" stroke-width="1"/>
+<text x="54.0" y="212.8" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">−0.05</text>
+<line x1="63.0" y1="137.8" x2="57.0" y2="137.8" stroke="#1f2937" stroke-width="1"/>
+<text x="54.0" y="137.8" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">0.00</text>
+<text x="321.4" y="471.6" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle" font-style="italic"><tspan font-style="italic">x</tspan></text>
+<text x="72.0" y="27.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic"><tspan font-style="italic">y</tspan></text>
+</svg>

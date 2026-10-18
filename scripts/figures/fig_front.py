@@ -271,6 +271,86 @@ MODELS[6] = ([(S6, S6), (S6, S6 + 1), (S6 + 1, S6), (S6 - 1, T6),
               (T6, S6 - 1), ((-D6, -D6), 45)], R6, '√q* ≈ 1.6885')
 
 
+# Eight squares: the stationary zero (q*, u*, t*) of the five-corner contact
+# family, by Newton's method on F = F_u = F_t = 0 (Chapter 11, (11.1)).
+def _eight_defect(q, u, t):
+    U = math.sqrt(q - (2 - u) ** 2)
+    v = 2 - math.sqrt(q - (3 - U) ** 2)
+    k1 = 2 - math.cos(t) * (math.sqrt(q - u * u) - 1) + u * math.sin(t)
+    k2 = 1 + v * math.cos(t) - (math.sqrt(q - v * v) - 1) * math.sin(t)
+    return k1 * k1 + k2 * k2 - q
+
+
+def _eight_stationary():
+    def grad(x, h=1e-6):
+        q, u, t = x
+        return [_eight_defect(q, u, t),
+                (_eight_defect(q, u + h, t) - _eight_defect(q, u - h, t)) / (2 * h),
+                (_eight_defect(q, u, t + h) - _eight_defect(q, u, t - h)) / (2 * h)]
+    x = [3.9155, 0.92, 0.12]
+    for _ in range(30):
+        g = grad(x)
+        J = []
+        for k in range(3):
+            e = [0.0, 0.0, 0.0]
+            e[k] = 1e-4
+            gp = grad([a + b for a, b in zip(x, e)])
+            gm = grad([a - b for a, b in zip(x, e)])
+            J.append([(p - m) / 2e-4 for p, m in zip(gp, gm)])
+        # J[k][i] = dG_i/dx_k; solve sum_k J[k][i] dx_k = -g_i by Cramer's rule.
+        M = [[J[k][i] for k in range(3)] for i in range(3)]
+
+        def det(A):
+            return (A[0][0] * (A[1][1] * A[2][2] - A[1][2] * A[2][1])
+                    - A[0][1] * (A[1][0] * A[2][2] - A[1][2] * A[2][0])
+                    + A[0][2] * (A[1][0] * A[2][1] - A[1][1] * A[2][0]))
+        d = det(M)
+        step = []
+        for k in range(3):
+            A = [row[:] for row in M]
+            for i in range(3):
+                A[i][k] = -g[i]
+            step.append(det(A) / d)
+        x = [a + b for a, b in zip(x, step)]
+        if max(abs(s) for s in step) < 1e-13:
+            break
+    return x
+
+
+Q8, U8, T8 = _eight_stationary()
+assert abs(Q8 - 3.9155341375174753) < 1e-9
+R8 = math.sqrt(Q8)
+
+
+def eight_model(x=0.14, y=0.0, w=0.1, z=1.35, eta=-0.32):
+    """The packing of eight squares with central centre (x, y), central frame
+    2 arctan w, slider heights z (T) and eta (G); the default is the centre of
+    the box of Proposition 11.7. Squares as (centre, angle in degrees), in the
+    order A, B, D, E, H, T, G and the central square."""
+    c, s = math.cos(T8), math.sin(T8)
+    yy = -U8
+    x1 = math.sqrt(Q8 - yy * yy)
+    x2 = math.sqrt(Q8 - (yy + 2) ** 2)
+    x3 = x2 - 3
+    y3 = math.sqrt(Q8 - x3 * x3)
+    y4 = y3 - 2
+    x4 = -math.sqrt(Q8 - y4 * y4)
+    h1 = c * x1 + s * yy - 2 - c
+    h2 = -s * x4 + c * y4 - 1 - s
+
+    def frame(a, b):
+        return (c * a - s * b, s * a + c * b)
+    tilt = math.degrees(T8)
+    return [(x1 - 0.5, yy + 0.5), (x2 - 0.5, yy + 1.5),
+            (x3 + 0.5, y3 - 0.5), (x4 + 0.5, y4 + 0.5),
+            (frame(h1 + 0.5, h2 + 0.5), tilt), (x2 - 1.5, z),
+            (frame(h1 + 1.5, h2 + 0.5 + eta), tilt),
+            ((x, y), math.degrees(2 * math.atan(w)))]
+
+
+MODELS[8] = (eight_model(), R8, '√q* ≈ 1.9788')
+
+
 def placed(c):
     """Centre and angle of a model square given as a centre or a pair."""
     return (c, 0.0) if isinstance(c[0], (int, float)) else c
@@ -358,9 +438,20 @@ def phi_ab(a, b):
 
 # -------------------------------------------------------------- chapter 1
 
+def model_colours(n):
+    """Fills and strokes of the squares of the model of n squares: the
+    palette in order, and grey for the central square of eight."""
+    k = len(MODELS[n][0])
+    fills = [FILLS[j % len(FILLS)] for j in range(k)]
+    strokes = [COLORS[j % len(COLORS)] for j in range(k)]
+    if n == 8:
+        fills[7], strokes[7] = GREY, FAINT
+    return fills, strokes
+
+
 def optimal_packings():
     gap, s = 0.34, 58
-    rows = [(1, 2, 3, 4), (5, 6, 7)]
+    rows = [(1, 2, 3, 4, 5), (6, 7, 8)]
     widths = [sum(2 * MODELS[n][1] for n in row) + gap * (len(row) - 1)
               for row in rows]
     W = max(widths)
@@ -373,18 +464,21 @@ def optimal_packings():
     # The radii, with R and q italic and the numbers upright.
     radii = {1: '√2/2', 2: '√5/2', 3: '5√17/16', 4: '√2', 5: '√(5/2)',
              6: '√' + sb(it('q'), '*', NB + '≈' + NB + '1.6885', 14),
-             7: '√13/2'}
+             7: '√13/2',
+             8: '√' + sb(it('q'), '*', NB + '≈' + NB + '1.9788', 14)}
+    assert abs(R8 - 1.9788) < 5e-5
     for row, width, R_top, y in zip(rows, widths, top, ys):
         x = (W - width) / 2
         for n in row:
             centers, R, name = MODELS[n]
             x += R
-            draw_model(f, centers, R, at=(x, y))
+            fills, strokes = model_colours(n)
+            draw_model(f, centers, R, at=(x, y), fills=fills, strokes=strokes)
             word(f, (x, y - R_top - 0.2), it('n') + f' = {n}', size=14)
             word(f, (x, y - R_top - 0.45),
                  sb(it('R'), str(n), eq + radii[n], 14), size=14)
             x += R + gap
-    f.save('01-introduction/optimal', 'The seven optimal packings, n = 1 to 7, each '
+    f.save('01-introduction/optimal', 'The eight optimal packings, n = 1 to 8, each '
            'in its dashed circle of radius R_n, drawn at a common scale; dots '
            'mark the corners on the circle')
 
@@ -946,8 +1040,9 @@ def lower_bound():
 
 
 def scheme():
-    """Corollary 2.10 (a) and (b) for the six optimal models: each lies in
-    its disk, and one corner p reaches the circle, |p|^2 = R_n^2."""
+    """Corollary 2.10 (a) and (b) for the eight optimal models: each lies in
+    its disk, and one corner p reaches the circle, |p|^2 = R_n^2. For eight
+    squares p is the far corner (x1, y) of the square A."""
     corners = {1: ((0.5, 0.5), '¼ + ¼ = ½'),
                2: ((1, 0.5), '1 + ¼ = 5/4'),
                3: ((-1, -13 / 16), '1 + 169/256 = 425/256'),
@@ -959,9 +1054,17 @@ def scheme():
                    + sb(it('s'), '*', NB + '+' + NB + '½)²' + NB + '=' + NB,
                         12)
                    + sb(it('q'), '*', size=12)),
-               7: ((1.5, -1), '9/4 + 1 = 13/4')}
-    gap, s = 0.62, 56
-    rows = [(1, 2, 3, 4), (5, 6, 7)]
+               7: ((1.5, -1), '9/4 + 1 = 13/4'),
+               8: ((math.sqrt(Q8 - U8 * U8), -U8),
+                   sb(it('x'), '1', '²' + NB + '+' + NB, 12)
+                   + sb(it('y'), '*', '²' + NB + '=' + NB, 12)
+                   + sb(it('q'), '*', size=12))}
+    # the corner of eight squares is the far corner of A, the first square
+    A8 = MODELS[8][0][0]
+    p8 = corners[8][0]
+    assert norm((A8[0] + 0.5 - p8[0], A8[1] - 0.5 - p8[1])) < 1e-12
+    gap, s = 0.62, 54
+    rows = [(1, 2, 3, 4, 5), (6, 7, 8)]
     widths = [sum(2 * MODELS[n][1] for n in row) + gap * (len(row) - 1)
               for row in rows]
     W = max(widths)
@@ -980,14 +1083,16 @@ def scheme():
                        for c in centers for q in square_corners(*placed(c)))
             x += R
             at = (x, y)
-            draw_model(f, centers, R, at=at, touch=False)
+            fills, strokes = model_colours(n)
+            draw_model(f, centers, R, at=at, fills=fills, strokes=strokes,
+                       touch=False)
             f.line(at, shift(at, p), stroke=ORANGE, width=1.8)
             f.dot(shift(at, p), r=4, fill=ORANGE)
             word(f, (x, y - R_top - 0.22), it('n') + f' = {n}', size=13)
             f.text((x, y - R_top - 0.47), '|' + it('p') + '|² = ' + text,
                    size=12, italic=False, color=ORANGE)
             x += R + gap
-    f.save('02-preliminaries/scheme', 'The seven optimal models, each in its dashed circle '
+    f.save('02-preliminaries/scheme', 'The eight optimal models, each in its dashed circle '
            'of radius R_n, with one corner p on the circle and its squared '
            'distance from the centre, which equals R_n squared')
 

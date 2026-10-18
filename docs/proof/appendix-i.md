@@ -1,6 +1,6 @@
 # Appendix I. Seven squares: the critical gap, the forward axis
 
-[Contents](README.md) · [← Appendix H](appendix-h.md)
+[Contents](README.md) · [← Appendix H](appendix-h.md) · [Appendix J →](appendix-j.md)
 
 This appendix proves the critical-gap proposition
 ([Proposition 10.17](10-seven.md#proposition-1017-the-critical-gap)) on the forward axis, for the signs that
