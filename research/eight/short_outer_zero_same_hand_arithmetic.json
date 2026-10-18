@@ -1,0 +1,613 @@
+{
+  "status": "PASS",
+  "scope": "All four same-sign outer/outer zero-quarter favorable secondary branches, edges0++,1--,3++,3--; sourcef after reflection/reversal; whole |phi|<=.7",
+  "raw_branches": 4,
+  "fixed_comparisons": 56,
+  "proved_cost_lower": ".898",
+  "normalized_rows": [
+    {
+      "edge": 0,
+      "signs": "++",
+      "axis": 1,
+      "c": "-613/10000",
+      "p": "0",
+      "q": "47383/50000",
+      "P": "0",
+      "t": "4997/5000"
+    },
+    {
+      "edge": 1,
+      "signs": "--",
+      "axis": 3,
+      "c": "13543/50000",
+      "p": "-9133/100000",
+      "q": "44037/50000",
+      "P": "6711/50000",
+      "t": "25957/25000"
+    },
+    {
+      "edge": 3,
+      "signs": "++",
+      "axis": 1,
+      "c": "-75097/100000",
+      "p": "25777/50000",
+      "q": "119909/100000",
+      "P": "0",
+      "t": "71553/100000"
+    },
+    {
+      "edge": 3,
+      "signs": "--",
+      "axis": 3,
+      "c": "74349/100000",
+      "p": "-3867/20000",
+      "q": "9593/12500",
+      "P": "33147/100000",
+      "t": "1417/1250"
+    }
+  ],
+  "rows": [
+    {
+      "edge": 0,
+      "signs": "++",
+      "axis": 1,
+      "lambda": ".98",
+      "source_support": "diagonal",
+      "target_support": "circle",
+      "interval": [
+        ".107",
+        ".2"
+      ],
+      "endpoint": ".107",
+      "lower": "0.898050929936"
+    },
+    {
+      "edge": 0,
+      "signs": "++",
+      "axis": 1,
+      "lambda": ".98",
+      "source_support": "diagonal",
+      "target_support": "circle",
+      "interval": [
+        ".107",
+        ".2"
+      ],
+      "endpoint": ".2",
+      "lower": "0.901125491024"
+    },
+    {
+      "edge": 0,
+      "signs": "++",
+      "axis": 1,
+      "lambda": ".94766",
+      "source_support": "endpoints",
+      "target_support": "circle",
+      "interval": [
+        ".2",
+        ".7"
+      ],
+      "endpoint": ".2",
+      "lower": "0.902599464256"
+    },
+    {
+      "edge": 0,
+      "signs": "++",
+      "axis": 1,
+      "lambda": ".94766",
+      "source_support": "endpoints",
+      "target_support": "circle",
+      "interval": [
+        ".2",
+        ".7"
+      ],
+      "endpoint": ".7",
+      "lower": "0.898110421444"
+    },
+    {
+      "edge": 1,
+      "signs": "--",
+      "axis": 3,
+      "lambda": "1",
+      "source_support": "diagonal",
+      "target_support": "axial",
+      "interval": [
+        ".107",
+        ".3"
+      ],
+      "endpoint": ".107",
+      "lower": "0.898097672006"
+    },
+    {
+      "edge": 1,
+      "signs": "--",
+      "axis": 3,
+      "lambda": "1",
+      "source_support": "diagonal",
+      "target_support": "axial",
+      "interval": [
+        ".107",
+        ".3"
+      ],
+      "endpoint": ".3",
+      "lower": "0.899022816726"
+    },
+    {
+      "edge": 1,
+      "signs": "--",
+      "axis": 3,
+      "lambda": ".94",
+      "source_support": "circle",
+      "target_support": "circle",
+      "interval": [
+        ".3",
+        ".7"
+      ],
+      "endpoint": ".3",
+      "lower": "0.903533161036"
+    },
+    {
+      "edge": 1,
+      "signs": "--",
+      "axis": 3,
+      "lambda": ".94",
+      "source_support": "circle",
+      "target_support": "circle",
+      "interval": [
+        ".3",
+        ".7"
+      ],
+      "endpoint": ".7",
+      "lower": "0.898105707205"
+    },
+    {
+      "edge": 3,
+      "signs": "++",
+      "axis": 1,
+      "lambda": ".90362",
+      "source_support": "endpoints",
+      "target_support": "axial",
+      "interval": [
+        ".107",
+        ".7"
+      ],
+      "endpoint": ".107",
+      "lower": "0.898077171496"
+    },
+    {
+      "edge": 3,
+      "signs": "++",
+      "axis": 1,
+      "lambda": ".90362",
+      "source_support": "endpoints",
+      "target_support": "axial",
+      "interval": [
+        ".107",
+        ".7"
+      ],
+      "endpoint": ".7",
+      "lower": "0.943273596164"
+    },
+    {
+      "edge": 3,
+      "signs": "--",
+      "axis": 3,
+      "lambda": "1.025",
+      "source_support": "diagonal",
+      "target_support": "circle",
+      "interval": [
+        ".107",
+        ".16"
+      ],
+      "endpoint": ".107",
+      "lower": "0.898089215497"
+    },
+    {
+      "edge": 3,
+      "signs": "--",
+      "axis": 3,
+      "lambda": "1.025",
+      "source_support": "diagonal",
+      "target_support": "circle",
+      "interval": [
+        ".107",
+        ".16"
+      ],
+      "endpoint": ".16",
+      "lower": "0.898135905229"
+    },
+    {
+      "edge": 3,
+      "signs": "--",
+      "axis": 3,
+      "lambda": "1",
+      "source_support": "diagonal",
+      "target_support": "circle",
+      "interval": [
+        ".16",
+        ".3"
+      ],
+      "endpoint": ".16",
+      "lower": "0.898922123486"
+    },
+    {
+      "edge": 3,
+      "signs": "--",
+      "axis": 3,
+      "lambda": "1",
+      "source_support": "diagonal",
+      "target_support": "circle",
+      "interval": [
+        ".16",
+        ".3"
+      ],
+      "endpoint": ".3",
+      "lower": "0.898709289884"
+    },
+    {
+      "edge": 3,
+      "signs": "--",
+      "axis": 3,
+      "lambda": ".95",
+      "source_support": "circle",
+      "target_support": "circle",
+      "interval": [
+        ".3",
+        ".4"
+      ],
+      "endpoint": ".3",
+      "lower": "0.902158367656"
+    },
+    {
+      "edge": 3,
+      "signs": "--",
+      "axis": 3,
+      "lambda": ".95",
+      "source_support": "circle",
+      "target_support": "circle",
+      "interval": [
+        ".3",
+        ".4"
+      ],
+      "endpoint": ".4",
+      "lower": "0.903456209617"
+    },
+    {
+      "edge": 3,
+      "signs": "--",
+      "axis": 3,
+      "lambda": ".906",
+      "source_support": "circle",
+      "target_support": "circle",
+      "interval": [
+        ".4",
+        ".5"
+      ],
+      "endpoint": ".4",
+      "lower": "0.899329670542"
+    },
+    {
+      "edge": 3,
+      "signs": "--",
+      "axis": 3,
+      "lambda": ".906",
+      "source_support": "circle",
+      "target_support": "circle",
+      "interval": [
+        ".4",
+        ".5"
+      ],
+      "endpoint": ".5",
+      "lower": "0.901787522592"
+    },
+    {
+      "edge": 3,
+      "signs": "--",
+      "axis": 3,
+      "lambda": ".906",
+      "source_support": "circle",
+      "target_support": "circle",
+      "interval": [
+        ".5",
+        ".7"
+      ],
+      "endpoint": ".5",
+      "lower": "0.901787522592"
+    },
+    {
+      "edge": 3,
+      "signs": "--",
+      "axis": 3,
+      "lambda": ".906",
+      "source_support": "circle",
+      "target_support": "circle",
+      "interval": [
+        ".5",
+        ".7"
+      ],
+      "endpoint": ".7",
+      "lower": "0.898094700777"
+    }
+  ],
+  "checks": [
+    {
+      "name": "R<2",
+      "lower": "0.021212492459",
+      "threshold": "0"
+    },
+    {
+      "name": "d<1",
+      "lower": "0.100785934890",
+      "threshold": "0"
+    },
+    {
+      "name": "a0-.5<.915",
+      "lower": "-0.914575671004",
+      "threshold": "-183/200"
+    },
+    {
+      "name": "axial derivative factor<1.043",
+      "lower": "-1.042700819987",
+      "threshold": "-1043/1000"
+    },
+    {
+      "name": "favorable same-sign phi>.107",
+      "lower": "0.000253443431",
+      "threshold": "0"
+    },
+    {
+      "name": "edge0++ axis1 source q-l<=p lambda.98",
+      "lower": "0.032340000000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge0++ axis1 target t>lambda 49/50",
+      "lower": "0.999400000000",
+      "threshold": "49/50"
+    },
+    {
+      "name": "edge0++ axis1 norm concavity .107 .2",
+      "lower": "1.960000000000",
+      "threshold": "25189521147049/25000000000000"
+    },
+    {
+      "name": "edge0++ axis1 circle endpoint.107 lambda.98",
+      "lower": "0.898050929936",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge0++ axis1 circle endpoint.2 lambda.98",
+      "lower": "0.901125491024",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge0++ axis1 target t>lambda 47383/50000",
+      "lower": "0.999400000000",
+      "threshold": "47383/50000"
+    },
+    {
+      "name": "edge0++ axis1 norm concavity .2 .7",
+      "lower": "1.895320000000",
+      "threshold": "51955215601839/50000000000000"
+    },
+    {
+      "name": "edge0++ axis1 circle endpoint.2 lambda.94766",
+      "lower": "0.902599464256",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge0++ axis1 circle endpoint.7 lambda.94766",
+      "lower": "0.898110421444",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge1-- axis3 source q-l<=p lambda1",
+      "lower": "0.027930000000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge1-- axis3 target X negative .107",
+      "lower": "0.241015943014",
+      "threshold": "0"
+    },
+    {
+      "name": "edge1-- axis3 axial derivative nonnegative .107",
+      "lower": "0.018943351100",
+      "threshold": "0"
+    },
+    {
+      "name": "edge1-- axis3 target X negative .3",
+      "lower": "0.429740206661",
+      "threshold": "0"
+    },
+    {
+      "name": "edge1-- axis3 axial derivative nonnegative .3",
+      "lower": "0.029285066237",
+      "threshold": "0"
+    },
+    {
+      "name": "edge1 early axial envelope concavity",
+      "lower": "0.207392653260",
+      "threshold": "0"
+    },
+    {
+      "name": "edge1-- axis3 axial endpoint.107 lambda1",
+      "lower": "0.898097672006",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge1-- axis3 axial endpoint.3 lambda1",
+      "lower": "0.899022816726",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge1-- axis3 target t>lambda 47/50",
+      "lower": "1.038280000000",
+      "threshold": "47/50"
+    },
+    {
+      "name": "edge1-- axis3 norm concavity .3 .7",
+      "lower": "1.880000000000",
+      "threshold": "147967779673799/100000000000000"
+    },
+    {
+      "name": "edge1-- axis3 circle endpoint.3 lambda.94",
+      "lower": "0.903533161036",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge1-- axis3 circle endpoint.7 lambda.94",
+      "lower": "0.898105707205",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3++ source concave p",
+      "lower": "0.515540000000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge3++ axis1 target X negative .107",
+      "lower": "0.096502950026",
+      "threshold": "0"
+    },
+    {
+      "name": "edge3++ axis1 axial derivative nonnegative .107",
+      "lower": "0.208124337721",
+      "threshold": "0"
+    },
+    {
+      "name": "edge3++ axis1 target X negative .7",
+      "lower": "0.582127986541",
+      "threshold": "0"
+    },
+    {
+      "name": "edge3++ axis1 axial derivative nonnegative .7",
+      "lower": "0.127622024702",
+      "threshold": "0"
+    },
+    {
+      "name": "edge3++ axial envelope increasing",
+      "lower": "0.057524340000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge3++ axis1 axial endpoint.107 lambda.90362",
+      "lower": "0.898077171496",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3++ axis1 axial endpoint.7 lambda.90362",
+      "lower": "0.943273596164",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3-- axis3 source q-l<=p lambda1.025",
+      "lower": "0.064210000000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge3-- axis3 n>lambda 41/40",
+      "lower": "1.394921320900",
+      "threshold": "1681/1600"
+    },
+    {
+      "name": "edge3-- axis3 N'' positive on.107 .16",
+      "lower": "1.066311642488",
+      "threshold": "41/40"
+    },
+    {
+      "name": "edge3-- axis3 circle endpoint.107 lambda1.025",
+      "lower": "0.898089215497",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3-- axis3 circle endpoint.16 lambda1.025",
+      "lower": "0.898135905229",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3-- axis3 source q-l<=p lambda1",
+      "lower": "0.039210000000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge3-- axis3 n>lambda 1",
+      "lower": "1.394921320900",
+      "threshold": "1"
+    },
+    {
+      "name": "edge3-- axis3 full curvature on.16 .3",
+      "lower": "0.055388851242",
+      "threshold": "0"
+    },
+    {
+      "name": "edge3-- axis3 circle endpoint.16 lambda1",
+      "lower": "0.898922123486",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3-- axis3 circle endpoint.3 lambda1",
+      "lower": "0.898709289884",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3-- axis3 n>lambda 19/20",
+      "lower": "1.394921320900",
+      "threshold": "361/400"
+    },
+    {
+      "name": "edge3-- axis3 full curvature on.3 .4",
+      "lower": "0.135324775813",
+      "threshold": "0"
+    },
+    {
+      "name": "edge3-- axis3 circle endpoint.3 lambda.95",
+      "lower": "0.902158367656",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3-- axis3 circle endpoint.4 lambda.95",
+      "lower": "0.903456209617",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3-- axis3 n>lambda 453/500",
+      "lower": "1.394921320900",
+      "threshold": "205209/250000"
+    },
+    {
+      "name": "edge3-- axis3 full curvature on.4 .5",
+      "lower": "0.110484175273",
+      "threshold": "0"
+    },
+    {
+      "name": "edge3-- axis3 circle endpoint.4 lambda.906",
+      "lower": "0.899329670542",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3-- axis3 circle endpoint.5 lambda.906",
+      "lower": "0.901787522592",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3-- axis3 target t>lambda 453/500",
+      "lower": "1.133600000000",
+      "threshold": "453/500"
+    },
+    {
+      "name": "edge3-- axis3 norm concavity .5 .7",
+      "lower": "1.812000000000",
+      "threshold": "43662025899843/25000000000000"
+    },
+    {
+      "name": "edge3-- axis3 circle endpoint.5 lambda.906",
+      "lower": "0.901787522592",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3-- axis3 circle endpoint.7 lambda.906",
+      "lower": "0.898094700777",
+      "threshold": ".898"
+    }
+  ]
+}

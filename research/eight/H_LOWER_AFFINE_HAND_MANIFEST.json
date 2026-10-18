@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "theorem": "u_H>1/2 for normalized candidate 0101011 under the proved G/T bounds",
+  "Q": "3.915534138",
+  "gamma_sum": "62839/10000",
+  "reserve_above_710_over_113": "807/1130000",
+  "arcs": 279,
+  "rows": 48050,
+  "angle_chains": 45560,
+  "polynomials": 126530,
+  "coefficients": 860259,
+  "files": [
+    {
+      "path": "H_LOWER_AFFINE_HAND_EXCLUSION.md",
+      "bytes": 6973,
+      "sha256": "d8c5e31f16872e80681d010001489c91713ef8de333842a917327627f4190ce8"
+    },
+    {
+      "path": "H_LOWER_AFFINE_HAND_DATA.json",
+      "bytes": 5841774,
+      "sha256": "aa838899a723f6bf099f34ab6bf9a55849ade5da315acb903a00c21afadb1425"
+    },
+    {
+      "path": "H_LOWER_AFFINE_HAND_COMPACT_REPORT.json",
+      "bytes": 3300743,
+      "sha256": "b5f5f3abe57b9c209d85c6ae77820a5386b86ef3931ed755ea4b8afc07c213c1"
+    },
+    {
+      "path": "verify_H_lower_affine_hand.js",
+      "bytes": 15356,
+      "sha256": "1bd04b7b8890f7008108489da6fdf24b947e472eb4873f7523994ce4b81b85ee"
+    },
+    {
+      "path": "replay_H_lower_hand.py",
+      "bytes": 1861,
+      "sha256": "306ca7b6e6dda68c36a66e77af8c0c2539216e85f10fa29f7d0003d6b8d4a19f"
+    },
+    {
+      "path": "audit_H_lower_hand_assembly_independently.py",
+      "bytes": 6519,
+      "sha256": "7682f1711ad3602ed274bd0c39f2ee0a8041fa9d5ab3bd5f284987f3448463c2"
+    },
+    {
+      "path": "H_LOWER_AFFINE_HAND_INDEPENDENT_ASSEMBLY.json",
+      "bytes": 1212,
+      "sha256": "cc49960a8284f88f1beafe3578d53fdca4af747e50d35f7eb587f3962529f69c"
+    },
+    {
+      "path": "H_LOWER_AFFINE_HAND_INDEPENDENT_AUDIT.md",
+      "bytes": 4005,
+      "sha256": "fe13e3750a82275c859e98e0fd1e5028ddbc77c8f7e2a46fff3933c5d4d68433"
+    }
+  ],
+  "optional_full_replay": {
+    "path": "H_LOWER_AFFINE_HAND_ARITHMETIC.json",
+    "sha256": "de4a7e204de32faba3420dd85c57c90af1e847a36348cbd40a9c3bc9d83a4847",
+    "committed": false
+  }
+}

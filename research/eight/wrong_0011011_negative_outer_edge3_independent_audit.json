@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "scope": "Repaired whole edge3 OO(--), reflected edge5(++), all four axes and both quarter halves",
+  "replayed_fixed_comparisons": 134,
+  "replay_byte_identical": true,
+  "independent_fixed_comparisons": 12,
+  "independent_checks": [
+    {
+      "name": "small-target stationary transverse derivative",
+      "reserve": "595243767901468066773526978184514408152879018578119064909033378703897331863/898376036541486377581668319318442609613095220000000000000000000000000000000000"
+    },
+    {
+      "name": "large-target stationary angular curvature",
+      "reserve": "2198830252491023060900671963220363226789339139255456334187287892197554189888282546881461310706232352499818256200011769184691456472893851238046730112783460112214514601831280961979456328255919/511516232262823150904756223850218514382924984346481362584755229580824508605829155547883598632812500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "small-target angular-coordinate upper bound",
+      "reserve": "143/150000"
+    },
+    {
+      "name": "primary slope lower square completion",
+      "reserve": "2477/350000"
+    },
+    {
+      "name": "primary angular product 19/25",
+      "reserve": "21929/1562500"
+    },
+    {
+      "name": "primary angular product 21/25",
+      "reserve": "57431/390625"
+    },
+    {
+      "name": "primary angular product 1",
+      "reserve": "2227/8000"
+    },
+    {
+      "name": "repaired axis1 contact derivative concavity",
+      "reserve": "643/15625000"
+    },
+    {
+      "name": "strong-convexity endpoint reference",
+      "reserve": "671999/480000000000"
+    },
+    {
+      "name": "zero-target six-row mean-value reserve",
+      "reserve": "1/4000"
+    },
+    {
+      "name": "diagonal-target angular decrease",
+      "reserve": "2091973/28300000"
+    },
+    {
+      "name": "final strict comparison",
+      "reserve": "3/25000"
+    }
+  ],
+  "correction_reviewed": "The lower/upper axis1 signs were corrected before this audit; the actual lower half includes the new zero-source endpoint argument.",
+  "sha256": {
+    "WRONG_0011011_EDGE3_NEGATIVE_OUTER_QUARTER_HAND_PROOF.md": "664122d1a4872dabc4d40b51e7009ae9c910708e4cbe40b2330c51b024a95686",
+    "verify_wrong_0011011_edge3_negative_outer_quarter_hand.py": "c23cefadd389753bb05db4e6a796f35ebe7fb4cbc3a8e1ffcd01612cc278a2c4",
+    "wrong_0011011_edge3_negative_outer_quarter_hand_arithmetic.json": "4811021a7d047d6dffa18743abedb5745834d77d319cc26d259a8bc70626cc55"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "status": "COMPLETED UNRESTRICTED COMPUTER-ASSISTED PROOF; HAND CONVERSION OPEN",
+  "archives": [
+    {
+      "file": "sharp_capture_completed_evidence.tar.xz",
+      "bytes": 4835656,
+      "sha256": "37b3a67bf69b7e72328df9d95277632c9de32a0f61ed1083d9f4f1628be70eaa"
+    },
+    {
+      "file": "sharp_capture_interfaces.tar.xz",
+      "bytes": 368268,
+      "sha256": "cc3327adabb5db9fc9343262be3bc3f7605d98a96b04d22ffacd66c266edc257"
+    }
+  ],
+  "numeric_manifest": "SHARP_CAPTURE_ARCHIVE_MEMBERS.json",
+  "interface_manifest": "CAPTURE_INTERFACE_REPLAY.json",
+  "ordinary_exclusions": 123,
+  "terminal_budget_compositions": 4,
+  "root_interface_replays": 13,
+  "canonical_chart_convention": "center=(a,-a*u); frame=center_ray+atan(u)",
+  "notes": [
+    "CENTER_FREE_PROJECTED_SLIDER_REMAINDER.md",
+    "SHARP_CAPTURE_CERTIFICATE_INDEX.md",
+    "BROAD_CENTER_FREE_SHARPNESS_INDEPENDENT_AUDIT.md",
+    "COMPLETE_BOUNDARY_CAPTURE_INDEPENDENT_AUDIT.md",
+    "ALL_OUTER_CAPTURE_ROADMAP.md",
+    "MEAN_VALUE_PAIR_KERNEL_AUDIT.md",
+    "BROAD_STATIONARY_GRAPH_AND_CURVATURE.md",
+    "LONG_TWO_CORE_CAPTURE_LEDGER.md",
+    "LONG_TWO_CORE_TERMINAL_INTERFACE.md",
+    "ONE_CORE_CAPTURE_LEDGER.md",
+    "ONE_CORE_TERMINAL_INTERFACE.md"
+  ]
+}

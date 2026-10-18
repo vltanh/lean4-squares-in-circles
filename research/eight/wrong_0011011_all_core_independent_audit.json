@@ -1,0 +1,143 @@
+{
+  "status": "PASS",
+  "scope": "All ten canonical core/core cases; complete core side/corner lemma and angle proof reviewed.",
+  "author_replay_count": 52,
+  "independent_comparison_count": 32,
+  "bindings": {
+    "proof_integration/WRONG_0011011_ALL_CORE_CORE_HAND_PROOF.md": "f723f07f8534a25c54f847602680457b9c6af2cc0f5c68dd6e9590ed36078b94",
+    "proof_integration/verify_wrong_0011011_core_core_hand.py": "e34f01ad0d65c7f04243d5ec8643aa5d916132c7fe6a19355d9cf29410a3599e",
+    "proof_integration/wrong_0011011_core_core_hand_arithmetic.json": "fd477da49b5b12344c575a3616cb4572bf93333fbd38a920d2084c68e3184f15",
+    "proof_integration/wrong_0011011_labels.json": "a4349b3d463bf9e67ecbb86f575c4d15df059d12c195b84eddceab85463eef6d"
+  },
+  "independent_checker_sha256": "2833233277f5fea981ae8c80c9c151eaf3d714248c0aba70f46661868faa99b1",
+  "checks": [
+    {
+      "name": "Machin lower exceeds3.14",
+      "strict_reserve": "84051185206996125341/52774336599893261718750"
+    },
+    {
+      "name": "Machin upper below355/113",
+      "strict_reserve": "45167474711/189820334689453125"
+    },
+    {
+      "name": "square root lower",
+      "strict_reserve": "87541199831/10000000000000000000000"
+    },
+    {
+      "name": "square root upper",
+      "strict_reserve": "48825378161/2500000000000000000000"
+    },
+    {
+      "name": "whole side atan minimum",
+      "strict_reserve": "19054878031137673550071209457/875000000000000000000000000000000"
+    },
+    {
+      "name": "corner convex numerator",
+      "strict_reserve": "11/6"
+    },
+    {
+      "name": "core side squared radius",
+      "strict_reserve": "179/3600"
+    },
+    {
+      "name": "core corner squared radius",
+      "strict_reserve": "27367965643/1800000000000"
+    },
+    {
+      "name": "core pair1.35 angle contradiction",
+      "strict_reserve": "117720971007671/358400000000000000"
+    },
+    {
+      "name": "core nonaffine corner correction",
+      "strict_reserve": "5513/3000000"
+    },
+    {
+      "name": "two-zero strict local sign",
+      "strict_reserve": "116250103315361/3359651941406250"
+    },
+    {
+      "name": "independent core row 0++",
+      "strict_reserve": "565668214395095899603/68805671760000000000000000"
+    },
+    {
+      "name": "core row strict reserve 0++",
+      "strict_reserve": "4147/100000"
+    },
+    {
+      "name": "independent core row 0+-",
+      "strict_reserve": "64567294767580190519/68805671760000000000000000"
+    },
+    {
+      "name": "core row strict reserve 0+-",
+      "strict_reserve": "1/25000"
+    },
+    {
+      "name": "independent core row 2-+",
+      "strict_reserve": "1/100000"
+    },
+    {
+      "name": "core row strict reserve 2-+",
+      "strict_reserve": "45323/100000"
+    },
+    {
+      "name": "independent core row 2--",
+      "strict_reserve": "109642643967676580822412772636429/6880567176000000000000000000000000000"
+    },
+    {
+      "name": "core row strict reserve 2--",
+      "strict_reserve": "20609/100000"
+    },
+    {
+      "name": "independent core row 3--",
+      "strict_reserve": "110612482228028437907/8600708970000000000000000"
+    },
+    {
+      "name": "core row strict reserve 3--",
+      "strict_reserve": "3797/25000"
+    },
+    {
+      "name": "independent core row 3-+",
+      "strict_reserve": "1/300000"
+    },
+    {
+      "name": "core row strict reserve 3-+",
+      "strict_reserve": "9277/25000"
+    },
+    {
+      "name": "independent core row 3+-",
+      "strict_reserve": "84051185206996125341/105548673199786523437500"
+    },
+    {
+      "name": "core row strict reserve 3+-",
+      "strict_reserve": "5687/50000"
+    },
+    {
+      "name": "independent core row 3++",
+      "strict_reserve": "5021487448487456489/860070897000000000000000"
+    },
+    {
+      "name": "core row strict reserve 3++",
+      "strict_reserve": "17303/100000"
+    },
+    {
+      "name": "independent core row 4++",
+      "strict_reserve": "449441223970035403153/68805671760000000000000000"
+    },
+    {
+      "name": "core row strict reserve 4++",
+      "strict_reserve": "661/10000"
+    },
+    {
+      "name": "independent core row 4+-",
+      "strict_reserve": "105412865170035403153/34402835880000000000000000"
+    },
+    {
+      "name": "core row strict reserve 4+-",
+      "strict_reserve": "2867/100000"
+    },
+    {
+      "name": "core table exceeds gamma",
+      "strict_reserve": "247/20000"
+    }
+  ]
+}

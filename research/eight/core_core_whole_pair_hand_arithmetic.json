@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "K_domain": [
+    "7",
+    "8"
+  ],
+  "g": "269343/250000",
+  "side_potential_upper": "608599/3500000",
+  "corner_increment_upper": "1/300",
+  "absolute_potential_upper": "9/50",
+  "cosine_lower_at_four_thirds": "7709/32805",
+  "pair_lower": "14033/15000",
+  "target": "23/25",
+  "strict_reserve": "233/15000",
+  "scope": "all signed core/core pairs and all separating axes"
+}

@@ -1,0 +1,255 @@
+{
+  "status": "PASS",
+  "fixed_comparisons": 68,
+  "scope": "Ten complete named mixed zero-quarter regimes; all costs >449/500=.898>17953/20000.",
+  "Q": "9789/2500",
+  "tables": [
+    {
+      "family": "A full circle",
+      "row": "edge1 C- O-",
+      "range": [
+        ".3024",
+        ".6"
+      ],
+      "lambda": "1.48",
+      "values": [
+        {
+          "phi": ".3024",
+          "N_upper": "0.752500381",
+          "cost_lower": "0.898082891"
+        },
+        {
+          "phi": ".6",
+          "N_upper": "0.987646562",
+          "cost_lower": "0.933939892"
+        }
+      ]
+    },
+    {
+      "family": "A full circle",
+      "row": "edge1 C- O-",
+      "range": [
+        ".6",
+        ".7"
+      ],
+      "lambda": "2",
+      "values": [
+        {
+          "phi": ".6",
+          "N_upper": "1.443154513",
+          "cost_lower": "1.015375055"
+        },
+        {
+          "phi": ".7",
+          "N_upper": "1.524756142",
+          "cost_lower": "0.992066344"
+        }
+      ]
+    },
+    {
+      "family": "A full circle",
+      "row": "edge3 C- O-",
+      "range": [
+        ".3024",
+        ".7"
+      ],
+      "lambda": "1.463",
+      "values": [
+        {
+          "phi": ".3024",
+          "N_upper": "0.889699308",
+          "cost_lower": "0.898073945"
+        },
+        {
+          "phi": ".7",
+          "N_upper": "1.188992345",
+          "cost_lower": "0.932576398"
+        }
+      ]
+    },
+    {
+      "family": "A full circle",
+      "row": "edge0 O+ C+ reversed",
+      "range": [
+        ".3024",
+        ".6"
+      ],
+      "lambda": "1.443",
+      "values": [
+        {
+          "phi": ".3024",
+          "N_upper": "0.607833300",
+          "cost_lower": "0.898083147"
+        },
+        {
+          "phi": ".6",
+          "N_upper": "0.850329060",
+          "cost_lower": "0.914307860"
+        }
+      ]
+    },
+    {
+      "family": "A full circle",
+      "row": "edge0 O+ C+ reversed",
+      "range": [
+        ".6",
+        ".7"
+      ],
+      "lambda": "2",
+      "values": [
+        {
+          "phi": ".6",
+          "N_upper": "1.330229034",
+          "cost_lower": "1.017405583"
+        },
+        {
+          "phi": ".7",
+          "N_upper": "1.413795632",
+          "cost_lower": "0.990208615"
+        }
+      ]
+    },
+    {
+      "family": "A full circle",
+      "row": "edge3 O+ C+ reversed",
+      "range": [
+        ".4",
+        ".7"
+      ],
+      "lambda": "1.6",
+      "values": [
+        {
+          "phi": ".4",
+          "N_upper": "0.294909969",
+          "cost_lower": "0.909737777"
+        },
+        {
+          "phi": ".7",
+          "N_upper": "0.515798008",
+          "cost_lower": "0.930376146"
+        }
+      ]
+    },
+    {
+      "family": "A endpoint support",
+      "row": "edge3 O+ C+ reversed",
+      "range": [
+        ".3024",
+        ".4"
+      ],
+      "lambda": "1.19",
+      "diagonal_lower": "0.898080923",
+      "axial_lower": "0.902330108"
+    },
+    {
+      "family": "B monotone",
+      "row": "edge0 C+ O- reversed",
+      "endpoint_lower": "0.951139714"
+    },
+    {
+      "family": "B monotone",
+      "row": "edge1 O+ C-",
+      "endpoint_lower": "0.957924362"
+    },
+    {
+      "family": "B monotone",
+      "row": "edge3 O+ C-",
+      "endpoint_lower": "0.919710358"
+    },
+    {
+      "family": "B monotone",
+      "row": "edge3 C+ O- reversed",
+      "endpoint_lower": "0.898101904"
+    },
+    {
+      "family": "B low",
+      "phi_minus_x": "0",
+      "cost_lower": "0.905463428"
+    },
+    {
+      "family": "B low",
+      "phi_minus_x": ".44152",
+      "cost_lower": "0.898108834"
+    },
+    {
+      "family": "B core-diagonal contact",
+      "reference": ".14",
+      "Fprime_upper": "-0.005592863",
+      "Fsecond_lower": "0.004461983",
+      "Fsecond_upper": "0.004461984",
+      "right": ".44152",
+      "terminal_lower": "0.898108332"
+    }
+  ],
+  "checks": [
+    "d>.8992140",
+    "d<.8992141",
+    "dc>.5589",
+    "dc<.559",
+    "a0>1.414",
+    "R<2",
+    "negative-core feasibility excludes phi<=.3024",
+    "negative-angle feasibility excludes x>=.44152",
+    "cos(.44152)>.9",
+    "edge1 C- O- multiplier above core slope 1.48",
+    "edge1 C- O- norm concavity 1.48",
+    "edge1 C- O- full support .3024 lambda 1.48",
+    "edge1 C- O- full support .6 lambda 1.48",
+    "edge1 C- O- multiplier above core slope 2",
+    "edge1 C- O- norm concavity 2",
+    "edge1 C- O- full support .6 lambda 2",
+    "edge1 C- O- full support .7 lambda 2",
+    "edge3 C- O- multiplier above core slope 1.463",
+    "edge3 C- O- norm concavity 1.463",
+    "edge3 C- O- full support .3024 lambda 1.463",
+    "edge3 C- O- full support .7 lambda 1.463",
+    "edge0 O+ C+ reversed multiplier above core slope 1.443",
+    "edge0 O+ C+ reversed norm concavity 1.443",
+    "edge0 O+ C+ reversed full support .3024 lambda 1.443",
+    "edge0 O+ C+ reversed full support .6 lambda 1.443",
+    "edge0 O+ C+ reversed multiplier above core slope 2",
+    "edge0 O+ C+ reversed norm concavity 2",
+    "edge0 O+ C+ reversed full support .6 lambda 2",
+    "edge0 O+ C+ reversed full support .7 lambda 2",
+    "edge3 O+ C+ reversed multiplier above core slope 1.6",
+    "edge3 O+ C+ reversed norm concavity 1.6",
+    "edge3 O+ C+ reversed full support .4 lambda 1.6",
+    "edge3 O+ C+ reversed full support .7 lambda 1.6",
+    "D multiplier above core slope",
+    "D nonnegative secondary coefficient",
+    "D axial envelope decreasing",
+    "cos(.4)>.92",
+    "D diagonal envelope increasing",
+    "D diagonal left endpoint",
+    "D axial right endpoint",
+    "edge0 C+ O- reversed core slope>1",
+    "edge0 C+ O- reversed source diagonal condition",
+    "edge0 C+ O- reversed monotone endpoint",
+    "edge1 O+ C- core slope>1",
+    "edge1 O+ C- source diagonal condition",
+    "edge1 O+ C- monotone endpoint",
+    "edge3 O+ C- core slope>1",
+    "edge3 O+ C- source endpoint comparison",
+    "edge3 O+ C- positive endpoint secondary coefficient",
+    "edge3 O+ C- monotone endpoint",
+    "edge3 C+ O- reversed core slope>1",
+    "edge3 C+ O- reversed source diagonal condition",
+    "edge3 C+ O- reversed monotone endpoint",
+    "B high envelope derivative quotient>1",
+    "B low core diagonal condition",
+    "B low initial derivative",
+    "B low endpoint 0",
+    "B low endpoint .44152",
+    "B contact derivative in target coordinate",
+    "B contact b endpoint<.8993",
+    "B contact radical lower from b bound",
+    "B contact bprime>.95",
+    "B contact Fthird<-.5",
+    "B contact Fprime reference",
+    "B contact Fsecond upper",
+    "B contact Fsecond lower",
+    "B contact strong-concavity derivative maximum",
+    "B contact terminal value"
+  ]
+}
+

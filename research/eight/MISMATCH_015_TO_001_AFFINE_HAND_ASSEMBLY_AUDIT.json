@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "scope": "Exact state and conditional angle domain union, rational input binding and mismatch contraction; polynomial arithmetic comes from the separately reviewed kernel",
+  "Q": "3.915534138",
+  "word": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1
+  ],
+  "cuts": {
+    "0": [
+      "1/2",
+      "1"
+    ],
+    "1": [
+      "-4/5",
+      "-1/20"
+    ],
+    "2": [
+      "0",
+      "1"
+    ],
+    "3": [
+      "-1",
+      "0"
+    ],
+    "4": [
+      "1/20",
+      "4/5"
+    ],
+    "5": [
+      "-1",
+      "-1/2"
+    ],
+    "6": [
+      "-1",
+      "0"
+    ]
+  },
+  "axis_domains": {
+    "0": [
+      1,
+      3
+    ],
+    "1": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "2": [
+      1,
+      3
+    ],
+    "3": [
+      3,
+      4
+    ],
+    "4": [
+      1,
+      3
+    ],
+    "5": [
+      3,
+      4
+    ],
+    "6": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "arcs": 456,
+  "state_unions": 14,
+  "angle_chains": 129368,
+  "rows": 144709,
+  "polynomials": 399773,
+  "printed_nonnegative_coefficients": 3183184,
+  "least_strict_cost_coefficient": "3986139/100000000000000",
+  "gamma_sum": "502653/80000",
+  "mismatch_input_bound": "3/200",
+  "mismatch_output_strict_bound": "1/1000",
+  "beta": "1/20",
+  "pi_upper": "628318531/100000000",
+  "h_lower_at_output": "5996999/12000000000",
+  "strict_contraction_reserve": "522599/240000000000",
+  "full_coefficient_replay_sha256": "ba5e037e9d9da8369526f546275fa7037477c6d0225c33c82a5df317f8a25924",
+  "sha256": {
+    "MISMATCH_015_TO_001_AFFINE_HAND_DATA.json": "da456f7eb49a2e0dc702054c684afc14da52a5e55c042add695ef862d7a6c1a2",
+    "MISMATCH_015_TO_001_AFFINE_HAND_COMPACT_REPORT.json": "2818421ab2e711ae586fd88722676f0690cbc21c9f7ccc648de7f92f5fee9a45",
+    "verify_mismatch_015_to_001_affine_hand.js": "6af3d41fe7d404da7dd286c46644160f5444edd3028d864701266e9a4cd18697"
+  }
+}

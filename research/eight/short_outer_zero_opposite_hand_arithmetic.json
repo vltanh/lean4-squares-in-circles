@@ -1,0 +1,1034 @@
+{
+  "status": "PASS",
+  "scope": "All six opposite-sign outer/outer zero-quarter secondary branches on edges0,1,3, axes1 and3, signs(+,-), full |phi|<=.7; hand contact curvature and scalar support proof",
+  "proved_cost_lower": ".898",
+  "target": "17953/20000",
+  "raw_branches": 6,
+  "fixed_comparisons": 134,
+  "normalized_rows": [
+    {
+      "edge": 0,
+      "axis": 1,
+      "c": "-24463/100000",
+      "p": "0",
+      "q": "47383/50000",
+      "v": "6711/50000",
+      "t": "25957/25000"
+    },
+    {
+      "edge": 0,
+      "axis": 3,
+      "c": "-24463/100000",
+      "p": "6711/50000",
+      "q": "25957/25000",
+      "v": "0",
+      "t": "47383/50000"
+    },
+    {
+      "edge": 1,
+      "axis": 1,
+      "c": "8753/100000",
+      "p": "0",
+      "q": "4997/5000",
+      "v": "-9133/100000",
+      "t": "44037/50000"
+    },
+    {
+      "edge": 1,
+      "axis": 3,
+      "c": "8753/100000",
+      "p": "-9133/100000",
+      "q": "44037/50000",
+      "v": "0",
+      "t": "4997/5000"
+    },
+    {
+      "edge": 3,
+      "axis": 1,
+      "c": "-1133/2500",
+      "p": "25777/50000",
+      "q": "119909/100000",
+      "v": "-3867/20000",
+      "t": "9593/12500"
+    },
+    {
+      "edge": 3,
+      "axis": 3,
+      "c": "-1133/2500",
+      "p": "-3867/20000",
+      "q": "9593/12500",
+      "v": "25777/50000",
+      "t": "119909/100000"
+    }
+  ],
+  "regimes": [
+    {
+      "edge": 0,
+      "axis": 1,
+      "angle_interval": [
+        "-.1",
+        ".08"
+      ],
+      "contact_rule": "concavity",
+      "endpoint_cost_lower": ".898"
+    },
+    {
+      "edge": 0,
+      "axis": 3,
+      "angle_interval": [
+        "-.1",
+        ".04"
+      ],
+      "contact_rule": "concavity",
+      "endpoint_cost_lower": ".898"
+    },
+    {
+      "edge": 3,
+      "axis": 1,
+      "angle_interval": [
+        "-.1",
+        ".06"
+      ],
+      "contact_rule": "one-valley",
+      "endpoint_cost_lower": ".898"
+    },
+    {
+      "edge": 3,
+      "axis": 3,
+      "angle_interval": [
+        "-.1",
+        ".1"
+      ],
+      "contact_rule": "one-peak",
+      "endpoint_cost_lower": ".898"
+    },
+    {
+      "edge": 0,
+      "axis": 1,
+      "kind": "axial",
+      "lambda": ".94766",
+      "source": "endpoints",
+      "endpoint": "-.1",
+      "lower": "0.971661604932"
+    },
+    {
+      "edge": 0,
+      "axis": 1,
+      "kind": "diagonal",
+      "lambda": ".94766",
+      "source": "endpoints",
+      "endpoint": "-.1",
+      "lower": "0.939476344631"
+    },
+    {
+      "edge": 0,
+      "axis": 1,
+      "kind": "axial",
+      "lambda": ".94766",
+      "source": "endpoints",
+      "endpoint": ".08",
+      "lower": "0.902116291944"
+    },
+    {
+      "edge": 0,
+      "axis": 1,
+      "kind": "diagonal",
+      "lambda": ".94766",
+      "source": "endpoints",
+      "endpoint": ".08",
+      "lower": "0.956186003149"
+    },
+    {
+      "edge": 0,
+      "axis": 3,
+      "kind": "axial",
+      "lambda": ".96135",
+      "source": "endpoints",
+      "endpoint": "-.1",
+      "lower": "0.987934096297"
+    },
+    {
+      "edge": 0,
+      "axis": 3,
+      "kind": "diagonal",
+      "lambda": ".96135",
+      "source": "endpoints",
+      "endpoint": "-.1",
+      "lower": "0.930480796792"
+    },
+    {
+      "edge": 0,
+      "axis": 3,
+      "kind": "circle",
+      "lambda": ".96135",
+      "source": "endpoints",
+      "endpoint": ".04",
+      "lower": "0.910850327794"
+    },
+    {
+      "edge": 0,
+      "axis": 3,
+      "kind": "circle",
+      "lambda": ".96135",
+      "source": "endpoints",
+      "endpoint": ".08",
+      "lower": "0.913714008057"
+    },
+    {
+      "edge": 0,
+      "axis": 3,
+      "kind": "axial continuation",
+      "lambda": ".96135",
+      "angle_interval": [
+        ".08",
+        ".7"
+      ],
+      "derivative_lower": "-3/1000",
+      "lower": "0.912923824426"
+    },
+    {
+      "edge": 1,
+      "axis": 1,
+      "kind": "axial",
+      "lambda": ".9994",
+      "source": "endpoints",
+      "endpoint": "0",
+      "lower": "0.957736803967"
+    },
+    {
+      "edge": 1,
+      "axis": 1,
+      "kind": "diagonal",
+      "lambda": ".9994",
+      "source": "endpoints",
+      "endpoint": "0",
+      "lower": "0.898104038467"
+    },
+    {
+      "edge": 1,
+      "axis": 1,
+      "kind": "circle",
+      "lambda": ".9994",
+      "source": "endpoints",
+      "endpoint": ".02",
+      "lower": "0.910049540187"
+    },
+    {
+      "edge": 1,
+      "axis": 1,
+      "kind": "circle",
+      "lambda": ".9994",
+      "source": "endpoints",
+      "endpoint": ".3",
+      "lower": "0.963593385453"
+    },
+    {
+      "edge": 1,
+      "axis": 1,
+      "kind": "axial continuation",
+      "lambda": ".9994",
+      "angle_interval": [
+        ".3",
+        ".7"
+      ],
+      "derivative_lower": "-43/1000",
+      "lower": "0.948105021635"
+    },
+    {
+      "edge": 1,
+      "axis": 3,
+      "kind": "axial",
+      "lambda": ".9994",
+      "source": "diagonal",
+      "endpoint": "0",
+      "lower": "0.898104038467"
+    },
+    {
+      "edge": 1,
+      "axis": 3,
+      "kind": "diagonal",
+      "lambda": ".9994",
+      "source": "diagonal",
+      "endpoint": "0",
+      "lower": "0.898104038467"
+    },
+    {
+      "edge": 3,
+      "axis": 1,
+      "kind": "axial",
+      "lambda": ".90362",
+      "source": "endpoints",
+      "endpoint": "-.1",
+      "lower": "0.976641656796"
+    },
+    {
+      "edge": 3,
+      "axis": 1,
+      "kind": "diagonal",
+      "lambda": ".90362",
+      "source": "endpoints",
+      "endpoint": "-.1",
+      "lower": "0.911399677435"
+    },
+    {
+      "edge": 3,
+      "axis": 1,
+      "kind": "circle",
+      "lambda": ".90362",
+      "source": "endpoints",
+      "endpoint": ".06",
+      "lower": "0.899507729879"
+    },
+    {
+      "edge": 3,
+      "axis": 1,
+      "kind": "circle",
+      "lambda": ".90362",
+      "source": "endpoints",
+      "endpoint": ".3",
+      "lower": "0.940601829306"
+    },
+    {
+      "edge": 3,
+      "axis": 1,
+      "kind": "axial continuation",
+      "lambda": ".90362",
+      "angle_interval": [
+        ".3",
+        ".7"
+      ],
+      "derivative_lower": "0",
+      "lower": "0.941776284779"
+    },
+    {
+      "edge": 3,
+      "axis": 3,
+      "kind": "axial",
+      "lambda": ".90362",
+      "source": "circle",
+      "endpoint": "-.1",
+      "lower": "0.946944314713"
+    },
+    {
+      "edge": 3,
+      "axis": 3,
+      "kind": "diagonal",
+      "lambda": ".90362",
+      "source": "circle",
+      "endpoint": "-.1",
+      "lower": "0.904513397754"
+    },
+    {
+      "edge": 3,
+      "axis": 3,
+      "kind": "nearpositive axial",
+      "lambda": ".9635",
+      "angle_interval": [
+        ".1",
+        ".2"
+      ],
+      "lower": "0.898514881132"
+    },
+    {
+      "edge": 3,
+      "axis": 3,
+      "kind": "nearpositive diagonal",
+      "lambda": ".9635",
+      "angle_interval": [
+        ".1",
+        ".2"
+      ],
+      "lower": "0.898571929033"
+    },
+    {
+      "edge": 3,
+      "axis": 3,
+      "kind": "axial",
+      "lambda": ".90362",
+      "source": "circle",
+      "endpoint": ".2",
+      "lower": "0.903292603770"
+    },
+    {
+      "edge": 3,
+      "axis": 3,
+      "kind": "diagonal",
+      "lambda": ".90362",
+      "source": "circle",
+      "endpoint": ".2",
+      "lower": "1.012009249994"
+    }
+  ],
+  "checks": [
+    {
+      "name": "R<2",
+      "lower": "0.021212492459",
+      "threshold": "0"
+    },
+    {
+      "name": "d+.5>1.399",
+      "lower": "1.399214065109",
+      "threshold": "1.399"
+    },
+    {
+      "name": "d+.5<1.4",
+      "lower": "-1.399214065110",
+      "threshold": "-7/5"
+    },
+    {
+      "name": "a0+.5>1.914",
+      "lower": "1.914575671003",
+      "threshold": "1.914"
+    },
+    {
+      "name": "a0+.5<1.915",
+      "lower": "-1.914575671004",
+      "threshold": "-383/200"
+    },
+    {
+      "name": "b0>.1",
+      "lower": "0.100785934890",
+      "threshold": ".1"
+    },
+    {
+      "name": "b0<.101",
+      "lower": "-0.100785934891",
+      "threshold": "-101/1000"
+    },
+    {
+      "name": "H0>1.885",
+      "lower": "1.885379606455",
+      "threshold": "1.885"
+    },
+    {
+      "name": "H0<1.886",
+      "lower": "-1.885379606456",
+      "threshold": "-943/500"
+    },
+    {
+      "name": "r(b0)<.319",
+      "lower": "-0.318655157208",
+      "threshold": "-319/1000"
+    },
+    {
+      "name": "whole arc curvature ratio",
+      "lower": "-2.561917389215",
+      "threshold": "-257/100"
+    },
+    {
+      "name": "restricted ratio",
+      "lower": "-2.450032930738",
+      "threshold": "-123/50"
+    },
+    {
+      "name": "near contact cannot have b=0",
+      "lower": "0.062925438285",
+      "threshold": "0"
+    },
+    {
+      "name": "near contact cannot have B=0",
+      "lower": "0.006982803511",
+      "threshold": "0"
+    },
+    {
+      "name": "negative diagonal endpoint b<.245",
+      "lower": "-0.242468663119",
+      "threshold": "-49/200"
+    },
+    {
+      "name": "r(.245)<.41",
+      "lower": "-0.406396048581",
+      "threshold": "-41/100"
+    },
+    {
+      "name": "negative projected endpoint X>1.8",
+      "lower": "3.275600000000",
+      "threshold": "81/25"
+    },
+    {
+      "name": "negative projected endpoint Y<.8",
+      "lower": "-0.801000000000",
+      "threshold": "-401/500"
+    },
+    {
+      "name": "sharper negative Y bound",
+      "lower": "-0.798878750755",
+      "threshold": "-4/5"
+    },
+    {
+      "name": "positive K<.7",
+      "lower": "0.004376483184",
+      "threshold": "0"
+    },
+    {
+      "name": "positive H>1.85",
+      "lower": "3.425600000000",
+      "threshold": "1369/400"
+    },
+    {
+      "name": "positive f derivative",
+      "lower": "0.419666556678",
+      "threshold": "0"
+    },
+    {
+      "name": "negative diagonal endpoint derivative",
+      "lower": "1.057928228690",
+      "threshold": "1"
+    },
+    {
+      "name": "negative projected endpoint derivative",
+      "lower": "1.295427055702",
+      "threshold": "1"
+    },
+    {
+      "name": "positive diagonal endpoint derivative",
+      "lower": "0.520000000000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge0 axis1 source coordinate monotonic",
+      "lower": "0.947660000000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge0 axis1 target coordinate monotonic",
+      "lower": "0.904060000000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge0 axis3 source coordinate monotonic",
+      "lower": "0.904060000000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge0 axis3 target coordinate monotonic",
+      "lower": "0.947660000000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge1 axis1 source coordinate monotonic",
+      "lower": "0.999400000000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge1 axis1 target coordinate monotonic",
+      "lower": "0.880740000000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge1 axis3 source coordinate monotonic",
+      "lower": "0.880740000000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge1 axis3 target coordinate monotonic",
+      "lower": "0.999400000000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge3 axis1 source coordinate monotonic",
+      "lower": "0.683550000000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge3 axis1 target coordinate monotonic",
+      "lower": "0.767440000000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge3 axis3 source coordinate monotonic",
+      "lower": "0.767440000000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge3 axis3 target coordinate monotonic",
+      "lower": "0.683550000000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge0 axis1 negative source endpoint slope",
+      "lower": "0.947660000000",
+      "threshold": ".76"
+    },
+    {
+      "name": "edge0 axis1 negative target endpoint slope",
+      "lower": "0.978626666666",
+      "threshold": ".76"
+    },
+    {
+      "name": "edge0 axis1 positive source endpoint slope upper",
+      "lower": "-0.947660000000",
+      "threshold": "-6/5"
+    },
+    {
+      "name": "edge0 axis1 aligned targetDiag",
+      "lower": "0.905209290399",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge0 axis1 positive endpoint targetDiag .08",
+      "lower": "0.956186003149",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge0 axis1 aligned sourceDiag",
+      "lower": "0.898108872198",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge0 axis1 positive endpoint sourceDiag .08",
+      "lower": "0.904201827494",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge0 axis3 negative source endpoint slope",
+      "lower": "0.983249800000",
+      "threshold": ".76"
+    },
+    {
+      "name": "edge0 axis3 negative target endpoint slope",
+      "lower": "0.947660000000",
+      "threshold": ".76"
+    },
+    {
+      "name": "edge0 axis3 positive source endpoint slope upper",
+      "lower": "-1.038280000000",
+      "threshold": "-6/5"
+    },
+    {
+      "name": "edge0 axis3 aligned targetDiag",
+      "lower": "0.898108872198",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge0 axis3 positive endpoint targetDiag .04",
+      "lower": "0.922524568563",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge0 axis3 aligned sourceDiag",
+      "lower": "0.905209290399",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge0 axis3 positive endpoint sourceDiag .04",
+      "lower": "0.910903903896",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3 axis1 negative source endpoint slope",
+      "lower": "0.987718600000",
+      "threshold": ".76"
+    },
+    {
+      "name": "edge3 axis1 negative target endpoint slope",
+      "lower": "0.767440000000",
+      "threshold": ".76"
+    },
+    {
+      "name": "edge3 axis1 positive source endpoint slope upper",
+      "lower": "-1.199090000000",
+      "threshold": "-6/5"
+    },
+    {
+      "name": "edge3 axis1 aligned targetDiag",
+      "lower": "0.898099811618",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3 axis1 positive endpoint targetDiag .06",
+      "lower": "0.933990515505",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3 axis1 aligned sourceDiag",
+      "lower": "0.898103423422",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3 axis1 positive endpoint sourceDiag .06",
+      "lower": "0.912753185474",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3 axis1 positive projected endpoint increasing",
+      "lower": "0.203069144329",
+      "threshold": "0"
+    },
+    {
+      "name": "edge3 axis3 negative source endpoint slope",
+      "lower": "0.767440000000",
+      "threshold": ".76"
+    },
+    {
+      "name": "edge3 axis3 negative target endpoint slope",
+      "lower": "0.969961111111",
+      "threshold": ".76"
+    },
+    {
+      "name": "edge3 axis3 positive source endpoint slope upper",
+      "lower": "-0.960790000000",
+      "threshold": "-6/5"
+    },
+    {
+      "name": "edge3 axis3 aligned targetDiag",
+      "lower": "0.898103423422",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3 axis3 positive endpoint targetDiag .1",
+      "lower": "0.966795561379",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3 axis3 aligned sourceDiag",
+      "lower": "0.898099811618",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3 axis3 positive endpoint sourceDiag .1",
+      "lower": "0.899965458771",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge0 axis1 contact concavity",
+      "lower": "0.058488041113",
+      "threshold": "0"
+    },
+    {
+      "name": "edge0 axis3 contact concavity",
+      "lower": "0.016704399820",
+      "threshold": "0"
+    },
+    {
+      "name": "cos.04-sin.04>.959",
+      "lower": "0.959210772474",
+      "threshold": ".959"
+    },
+    {
+      "name": "edge3 axis1 negative contact concavity",
+      "lower": "0.005652702079",
+      "threshold": "0"
+    },
+    {
+      "name": "edge3 axis1 positive right derivative negative",
+      "lower": "0.970730235377",
+      "threshold": ".96079"
+    },
+    {
+      "name": "edge3 axis3 positive left derivative positive",
+      "lower": "0.073842740000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge3 axis3 negative curvature 0",
+      "lower": "0.039899000000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge3 axis3 negative curvature .1",
+      "lower": "0.015990950000",
+      "threshold": "0"
+    },
+    {
+      "name": "sin u>=.99u on[0,.1]",
+      "lower": "0.998333333333",
+      "threshold": ".99"
+    },
+    {
+      "name": "zero aligned edge3 concavity",
+      "lower": "0.039899000000",
+      "threshold": "0"
+    },
+    {
+      "name": "all negative axial envelopes decrease",
+      "lower": "1.032150366911",
+      "threshold": "1"
+    },
+    {
+      "name": "all negative diagonal envelopes decrease endpoint0",
+      "lower": "1.264357813514",
+      "threshold": "1"
+    },
+    {
+      "name": "all negative diagonal envelopes decrease endpoint.7",
+      "lower": "1.199427875519",
+      "threshold": "1"
+    },
+    {
+      "name": "positive axial derivative factor",
+      "lower": "-1.042700819987",
+      "threshold": "-1043/1000"
+    },
+    {
+      "name": "positive diagonal envelopes increase",
+      "lower": "0.600000000000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge0 axis1 axial -.1 lambda.94766",
+      "lower": "0.971661604932",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge0 axis1 diagonal -.1 lambda.94766",
+      "lower": "0.939476344631",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge0 axis1 axial .08 lambda.94766",
+      "lower": "0.902116291944",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge0 axis1 diagonal .08 lambda.94766",
+      "lower": "0.956186003149",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge0 positive axial increasing",
+      "lower": "0.011590620000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge0 axis3 axial -.1 lambda.96135",
+      "lower": "0.987934096297",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge0 axis3 diagonal -.1 lambda.96135",
+      "lower": "0.930480796792",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge0 axis3 circle concavity lambda.96135",
+      "lower": "0.961350000000",
+      "threshold": "94766000000001/100000000000000"
+    },
+    {
+      "name": "edge0 axis3 circle endpoint .04 lambda.96135",
+      "lower": "0.910850327794",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge0 axis3 circle endpoint .08 lambda.96135",
+      "lower": "0.913714008057",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge0 axis3 axial support X at.08",
+      "lower": "0.076825991047",
+      "threshold": "0"
+    },
+    {
+      "name": "edge0 axis3 axial support derivative at0 at.08",
+      "lower": "0.009448130835",
+      "threshold": "0"
+    },
+    {
+      "name": "edge0 axis3 axial derivative bound lambda.96135",
+      "lower": "-0.002688050000",
+      "threshold": "-3/1000"
+    },
+    {
+      "name": "edge0 axis3 axial continuation from.08",
+      "lower": "0.912923824426",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge1 axis1 negative support Y<=X",
+      "lower": "0.999400000000",
+      "threshold": "97207/100000"
+    },
+    {
+      "name": "edge1 axis1 near-positive diagonal ordering",
+      "lower": "0.007143459169",
+      "threshold": "0"
+    },
+    {
+      "name": "edge1 axis1 axial 0 lambda.9994",
+      "lower": "0.957736803967",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge1 axis1 diagonal 0 lambda.9994",
+      "lower": "0.898104038467",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge1 axis1 positive diagonal endpoint0",
+      "lower": "0.898104038467",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge1 axis1 circle concavity lambda.9994",
+      "lower": "0.999400000000",
+      "threshold": "8854626567507/10000000000000"
+    },
+    {
+      "name": "edge1 axis1 circle endpoint .02 lambda.9994",
+      "lower": "0.910049540187",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge1 axis1 circle endpoint .3 lambda.9994",
+      "lower": "0.963593385453",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge1 axis1 axial support X at.3",
+      "lower": "0.386672894537",
+      "threshold": "0"
+    },
+    {
+      "name": "edge1 axis1 axial support derivative at0 at.3",
+      "lower": "0.026958068687",
+      "threshold": "0"
+    },
+    {
+      "name": "edge1 axis1 axial derivative bound lambda.9994",
+      "lower": "-0.042374200000",
+      "threshold": "-43/1000"
+    },
+    {
+      "name": "edge1 axis1 axial continuation from.3",
+      "lower": "0.948105021635",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge1 axis3 source diagonal criterion",
+      "lower": "0.118660000000",
+      "threshold": ".09133"
+    },
+    {
+      "name": "edge1 axis3 axial 0 lambda.9994",
+      "lower": "0.898104038467",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge1 axis3 diagonal 0 lambda.9994",
+      "lower": "0.898104038467",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge1 axis3 axial concavity to.2",
+      "lower": "0.308335152400",
+      "threshold": "0"
+    },
+    {
+      "name": "edge1 axis3 positive axial endpoint.2",
+      "lower": "0.906554189777",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge1 axis3 lambda .93 target positive",
+      "lower": "0.069400000000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge1 axis3 lambda.93 axial increasing",
+      "lower": "0.030010000000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge1 axis3 lambda.93 endpoint .2",
+      "lower": "0.904242645049",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3 axis1 negative target endpoint criterion",
+      "lower": "0.989317135778",
+      "threshold": ".96079"
+    },
+    {
+      "name": "edge3 axis1 axial -.1 lambda.90362",
+      "lower": "0.976641656796",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3 axis1 diagonal -.1 lambda.90362",
+      "lower": "0.911399677435",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3 axis1 circle concavity lambda.90362",
+      "lower": "0.903620000000",
+      "threshold": "3165686974039/4000000000000"
+    },
+    {
+      "name": "edge3 axis1 circle endpoint .06 lambda.90362",
+      "lower": "0.899507729879",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3 axis1 circle endpoint .3 lambda.90362",
+      "lower": "0.940601829306",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3 axis1 axial support X at.3",
+      "lower": "0.460387969143",
+      "threshold": "0"
+    },
+    {
+      "name": "edge3 axis1 axial support derivative at0 at.3",
+      "lower": "0.024411219062",
+      "threshold": "0"
+    },
+    {
+      "name": "edge3 axis1 axial derivative bound lambda.90362",
+      "lower": "0.057524340000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge3 axis1 axial continuation from.3",
+      "lower": "0.941776284779",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3 axis3 axial -.1 lambda.90362",
+      "lower": "0.946944314713",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3 axis3 diagonal -.1 lambda.90362",
+      "lower": "0.904513397754",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3 axis3 target Y positive forlambda.9635",
+      "lower": "0.235590000000",
+      "threshold": "0"
+    },
+    {
+      "name": "edge3 axis3 lambda.9635 axial derivative>-.005",
+      "lower": "-0.004930500000",
+      "threshold": "-.005"
+    },
+    {
+      "name": "edge3 axis3 nearpositive axial continuation",
+      "lower": "0.898514881132",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3 axis3 nearpositive diagonal continuation",
+      "lower": "0.898571929033",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3 axis3 axial .2 lambda.90362",
+      "lower": "0.903292603770",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3 axis3 diagonal .2 lambda.90362",
+      "lower": "1.012009249994",
+      "threshold": ".898"
+    },
+    {
+      "name": "edge3 axis3 lambda.90362 axial increase",
+      "lower": "0.057524340000",
+      "threshold": "0"
+    }
+  ]
+}

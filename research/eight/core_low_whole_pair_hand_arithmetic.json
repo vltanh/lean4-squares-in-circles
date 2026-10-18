@@ -1,0 +1,664 @@
+{
+  "status": "PASS",
+  "strict_comparisons": 120,
+  "fixed_polynomial_rows": [
+    {
+      "name": "negative-target axial support",
+      "interval": [
+        "0",
+        "1571/1000"
+      ],
+      "degree": 6,
+      "coefficient_lower_numerators_over_1000000": [
+        167371,
+        147526,
+        90767,
+        31856,
+        13144,
+        70276,
+        208525
+      ],
+      "exact_coefficients": [
+        "41843/250000",
+        "44257872901/300000000000",
+        "1361519568037/15000000000000",
+        "63713923572514353/2000000000000000000",
+        "788687516363085221/60000000000000000000",
+        "843320955602295531507527/12000000000000000000000000",
+        "8341011503670993865208773/40000000000000000000000000"
+      ]
+    },
+    {
+      "name": "positive-target radical upper",
+      "interval": [
+        "0",
+        "6/5"
+      ],
+      "degree": 9,
+      "coefficient_lower_numerators_over_1000000": [
+        773,
+        2028,
+        2327,
+        2200,
+        2095,
+        2300,
+        2842,
+        3356,
+        2969,
+        178
+      ],
+      "exact_coefficients": [
+        "386629063/500000000000",
+        "1014146863/500000000000",
+        "5818109597/2500000000000",
+        "38513892107/17500000000000",
+        "916798206533/437500000000000",
+        "1006649184389/437500000000000",
+        "22204375050229/7812500000000000",
+        "183560797733611/54687500000000000",
+        "162418797505129/54687500000000000",
+        "6981963028883/39062500000000000"
+      ]
+    },
+    {
+      "name": "positive-target whole circle cost",
+      "interval": [
+        "0",
+        "6/5"
+      ],
+      "degree": 8,
+      "coefficient_lower_numerators_over_1000000": [
+        144942,
+        120668,
+        102475,
+        88215,
+        75631,
+        62718,
+        48109,
+        31369,
+        13139
+      ],
+      "exact_coefficients": [
+        "92763/640000",
+        "9653511/80000000",
+        "40990251/400000000",
+        "247003893/2800000000",
+        "42353481/560000000",
+        "109758170181/1750000000000",
+        "84190858461/1750000000000",
+        "1372424280189/43750000000000",
+        "574865058837/43750000000000"
+      ]
+    },
+    {
+      "name": "positive-target low cut cost",
+      "interval": [
+        "6/5",
+        "1571/1000"
+      ],
+      "degree": 6,
+      "coefficient_lower_numerators_over_1000000": [
+        14274,
+        8519,
+        5400,
+        5338,
+        8710,
+        15824,
+        26898
+      ],
+      "exact_coefficients": [
+        "11152324779521/781250000000000",
+        "3993695638784743/468750000000000000",
+        "1012519276521403871/187500000000000000000",
+        "133469565158987005229/25000000000000000000000",
+        "261324264021361951441489/30000000000000000000000000",
+        "94945008772487286045467329/6000000000000000000000000000",
+        "21518738699711695110781372971/800000000000000000000000000000"
+      ]
+    },
+    {
+      "name": "low-source middle interval",
+      "interval": [
+        "3/5",
+        "1571/1000"
+      ],
+      "degree": 13,
+      "coefficient_lower_numerators_over_1000000": [
+        38649,
+        23617,
+        13318,
+        7443,
+        5538,
+        7011,
+        11130,
+        17038,
+        23760,
+        30225,
+        35283,
+        37730,
+        36330,
+        29843
+      ],
+      "exact_coefficients": [
+        "845457385599159/21875000000000000",
+        "191892902314624217/8125000000000000000",
+        "64928995266914463307/4875000000000000000000",
+        "558810262421779506415873/75075000000000000000000000",
+        "27722425429672220146861237/5005000000000000000000000000",
+        "189503124188474093732967698243/27027000000000000000000000000000",
+        "417824497363528521205007836679/37537500000000000000000000000000",
+        "18419708297082588359805184826093807/1081080000000000000000000000000000000",
+        "2201729275285875476367047507784879971/92664000000000000000000000000000000000",
+        "62240229078121912068345800520466616083/2059200000000000000000000000000000000000",
+        "101718912368123813825307692874905557544867/2882880000000000000000000000000000000000000",
+        "5933069187386609841208062192083531343112487/157248000000000000000000000000000000000000000",
+        "380863595323538878476415921188658984503947803/10483200000000000000000000000000000000000000000",
+        "1604367818106557264950448491717467131077269389/53760000000000000000000000000000000000000000000"
+      ]
+    }
+  ],
+  "small_angle_endpoint_rows": [
+    {
+      "x": "3/10",
+      "branch": "minus sine",
+      "cost_lower": "2321515331/2000000000"
+    },
+    {
+      "x": "3/10",
+      "branch": "plus sine",
+      "cost_lower": "543169921967/560000000000"
+    },
+    {
+      "x": "3/5",
+      "branch": "minus sine",
+      "cost_lower": "2051464199/2000000000"
+    },
+    {
+      "x": "3/5",
+      "branch": "plus sine",
+      "cost_lower": "114960155557/70000000000"
+    }
+  ],
+  "comparisons": [
+    {
+      "name": "a0 lower",
+      "strict_margin": "1159/4000000"
+    },
+    {
+      "name": "a0 upper",
+      "strict_margin": "13/8000"
+    },
+    {
+      "name": "a1 lower",
+      "strict_margin": "303127/1600000000"
+    },
+    {
+      "name": "a1 upper",
+      "strict_margin": "21153/100000000"
+    },
+    {
+      "name": "R upper",
+      "strict_margin": "841/1000000"
+    },
+    {
+      "name": "core diagonal lower",
+      "strict_margin": "151/250000"
+    },
+    {
+      "name": "core diagonal upper",
+      "strict_margin": "46/625"
+    },
+    {
+      "name": "core marker upper",
+      "strict_margin": "6535213/12000000000"
+    },
+    {
+      "name": "core marker slope",
+      "strict_margin": "6429559/1000000"
+    },
+    {
+      "name": "low marker increasing",
+      "strict_margin": "68519/100000"
+    },
+    {
+      "name": "low marker cut lower",
+      "strict_margin": "4972131/8000000000"
+    },
+    {
+      "name": "low marker cut upper",
+      "strict_margin": "27233/250000000"
+    },
+    {
+      "name": "low transverse bound",
+      "strict_margin": "3/10000"
+    },
+    {
+      "name": "low radial slope upper",
+      "strict_margin": "2727/1798700"
+    },
+    {
+      "name": "global charge bound",
+      "strict_margin": "41/2500"
+    },
+    {
+      "name": "pi over two upper",
+      "strict_margin": "23/113000"
+    },
+    {
+      "name": "pi over four upper",
+      "strict_margin": "17/28250"
+    },
+    {
+      "name": "all relative angles exceed minus .3",
+      "strict_margin": "3/125"
+    },
+    {
+      "name": "large angle cost",
+      "strict_margin": "31/5000"
+    },
+    {
+      "name": "low/core secondary impossible",
+      "strict_margin": "1/20"
+    },
+    {
+      "name": "core/low secondary nonpositive angle impossible",
+      "strict_margin": "23/200"
+    },
+    {
+      "name": "core/low primary nonpositive cosine impossible",
+      "strict_margin": "11/120"
+    },
+    {
+      "name": "low/core primary small angle impossible",
+      "strict_margin": "7739/100000"
+    },
+    {
+      "name": "negative core secondary lies on side",
+      "strict_margin": "17/200"
+    },
+    {
+      "name": "sin 1.75 lower",
+      "strict_margin": "95328814063/23917599129600"
+    },
+    {
+      "name": "cos 1.75 lower",
+      "strict_margin": "3670400537/543581798400"
+    },
+    {
+      "name": "sin 1.9 lower",
+      "strict_margin": "1195204047870781/3991680000000000000"
+    },
+    {
+      "name": "cos 1.9 lower",
+      "strict_margin": "25615798711199/36288000000000000"
+    },
+    {
+      "name": "cos 1.9 upper",
+      "strict_margin": "12600570559/4032000000000"
+    },
+    {
+      "name": "sin 2 lower",
+      "strict_margin": "1847/6237000"
+    },
+    {
+      "name": "cos 2 lower",
+      "strict_margin": "479/567000"
+    },
+    {
+      "name": "cos 2 upper",
+      "strict_margin": "37/6300"
+    },
+    {
+      "name": "sin 2.05 lower",
+      "strict_margin": "2947816100574835559/8174960640000000000000"
+    },
+    {
+      "name": "cos 2.05 lower",
+      "strict_margin": "34040137795803599/37158912000000000000"
+    },
+    {
+      "name": "sin .6 lower",
+      "strict_margin": "15459516063/24062500000000"
+    },
+    {
+      "name": "sin 1.2 upper",
+      "strict_margin": "75057/78125000"
+    },
+    {
+      "name": "cos 1.2 upper",
+      "strict_margin": "70061/109375000"
+    },
+    {
+      "name": "negative-target core-primary forced B",
+      "strict_margin": "28487/117600"
+    },
+    {
+      "name": "negative-target core-primary short interval",
+      "strict_margin": "34432753/11760000000"
+    },
+    {
+      "name": "negative-target core-primary tail",
+      "strict_margin": "81/5000"
+    },
+    {
+      "name": "positive-target core-primary angle barrier",
+      "strict_margin": "37/600"
+    },
+    {
+      "name": "core-primary norm at 2",
+      "strict_margin": "104561770111/124740000000000"
+    },
+    {
+      "name": "core-primary norm at 2.05",
+      "strict_margin": "1217733050469324113641967/817496064000000000000000000"
+    },
+    {
+      "name": "positive-target core-primary first interval",
+      "strict_margin": "63819/800000"
+    },
+    {
+      "name": "positive-target core-primary second interval",
+      "strict_margin": "691211/4000000"
+    },
+    {
+      "name": "positive norm upper polynomial",
+      "strict_margin": "3039/3125"
+    },
+    {
+      "name": "negative-target axial support: Bernstein coefficient 0",
+      "strict_margin": "1/1000000"
+    },
+    {
+      "name": "negative-target axial support: Bernstein coefficient 1",
+      "strict_margin": "72901/300000000000"
+    },
+    {
+      "name": "negative-target axial support: Bernstein coefficient 2",
+      "strict_margin": "14568037/15000000000000"
+    },
+    {
+      "name": "negative-target axial support: Bernstein coefficient 3",
+      "strict_margin": "1923572514353/2000000000000000000"
+    },
+    {
+      "name": "negative-target axial support: Bernstein coefficient 4",
+      "strict_margin": "47516363085221/60000000000000000000"
+    },
+    {
+      "name": "negative-target axial support: Bernstein coefficient 5",
+      "strict_margin": "8955602295531507527/12000000000000000000000000"
+    },
+    {
+      "name": "negative-target axial support: Bernstein coefficient 6",
+      "strict_margin": "11503670993865208773/40000000000000000000000000"
+    },
+    {
+      "name": "positive-target radical upper: Bernstein coefficient 0",
+      "strict_margin": "129063/500000000000"
+    },
+    {
+      "name": "positive-target radical upper: Bernstein coefficient 1",
+      "strict_margin": "146863/500000000000"
+    },
+    {
+      "name": "positive-target radical upper: Bernstein coefficient 2",
+      "strict_margin": "609597/2500000000000"
+    },
+    {
+      "name": "positive-target radical upper: Bernstein coefficient 3",
+      "strict_margin": "13892107/17500000000000"
+    },
+    {
+      "name": "positive-target radical upper: Bernstein coefficient 4",
+      "strict_margin": "235706533/437500000000000"
+    },
+    {
+      "name": "positive-target radical upper: Bernstein coefficient 5",
+      "strict_margin": "399184389/437500000000000"
+    },
+    {
+      "name": "positive-target radical upper: Bernstein coefficient 6",
+      "strict_margin": "1250050229/7812500000000000"
+    },
+    {
+      "name": "positive-target radical upper: Bernstein coefficient 7",
+      "strict_margin": "29547733611/54687500000000000"
+    },
+    {
+      "name": "positive-target radical upper: Bernstein coefficient 8",
+      "strict_margin": "51610005129/54687500000000000"
+    },
+    {
+      "name": "positive-target radical upper: Bernstein coefficient 9",
+      "strict_margin": "28838028883/39062500000000000"
+    },
+    {
+      "name": "positive-target whole circle cost: Bernstein coefficient 0",
+      "strict_margin": "3/16000000"
+    },
+    {
+      "name": "positive-target whole circle cost: Bernstein coefficient 1",
+      "strict_margin": "71/80000000"
+    },
+    {
+      "name": "positive-target whole circle cost: Bernstein coefficient 2",
+      "strict_margin": "251/400000000"
+    },
+    {
+      "name": "positive-target whole circle cost: Bernstein coefficient 3",
+      "strict_margin": "1893/2800000000"
+    },
+    {
+      "name": "positive-target whole circle cost: Bernstein coefficient 4",
+      "strict_margin": "121/560000000"
+    },
+    {
+      "name": "positive-target whole circle cost: Bernstein coefficient 5",
+      "strict_margin": "1670181/1750000000000"
+    },
+    {
+      "name": "positive-target whole circle cost: Bernstein coefficient 6",
+      "strict_margin": "108461/1750000000000"
+    },
+    {
+      "name": "positive-target whole circle cost: Bernstein coefficient 7",
+      "strict_margin": "30530189/43750000000000"
+    },
+    {
+      "name": "positive-target whole circle cost: Bernstein coefficient 8",
+      "strict_margin": "33808837/43750000000000"
+    },
+    {
+      "name": "positive-target low cut cost: Bernstein coefficient 0",
+      "strict_margin": "762279521/781250000000000"
+    },
+    {
+      "name": "positive-target low cut cost: Bernstein coefficient 1",
+      "strict_margin": "414388784743/468750000000000000"
+    },
+    {
+      "name": "positive-target low cut cost: Bernstein coefficient 2",
+      "strict_margin": "19276521403871/187500000000000000000"
+    },
+    {
+      "name": "positive-target low cut cost: Bernstein coefficient 3",
+      "strict_margin": "19565158987005229/25000000000000000000000"
+    },
+    {
+      "name": "positive-target low cut cost: Bernstein coefficient 4",
+      "strict_margin": "24264021361951441489/30000000000000000000000000"
+    },
+    {
+      "name": "positive-target low cut cost: Bernstein coefficient 5",
+      "strict_margin": "1008772487286045467329/6000000000000000000000000000"
+    },
+    {
+      "name": "positive-target low cut cost: Bernstein coefficient 6",
+      "strict_margin": "338699711695110781372971/800000000000000000000000000000"
+    },
+    {
+      "name": "low-source middle interval: Bernstein coefficient 0",
+      "strict_margin": "10510599159/21875000000000000"
+    },
+    {
+      "name": "low-source middle interval: Bernstein coefficient 1",
+      "strict_margin": "4777314624217/8125000000000000000"
+    },
+    {
+      "name": "low-source middle interval: Bernstein coefficient 2",
+      "strict_margin": "3745266914463307/4875000000000000000000"
+    },
+    {
+      "name": "low-source middle interval: Bernstein coefficient 3",
+      "strict_margin": "27037421779506415873/75075000000000000000000000"
+    },
+    {
+      "name": "low-source middle interval: Bernstein coefficient 4",
+      "strict_margin": "4735429672220146861237/5005000000000000000000000000"
+    },
+    {
+      "name": "low-source middle interval: Bernstein coefficient 5",
+      "strict_margin": "16827188474093732967698243/27027000000000000000000000000000"
+    },
+    {
+      "name": "low-source middle interval: Bernstein coefficient 6",
+      "strict_margin": "32122363528521205007836679/37537500000000000000000000000000"
+    },
+    {
+      "name": "low-source middle interval: Bernstein coefficient 7",
+      "strict_margin": "267257082588359805184826093807/1081080000000000000000000000000000000"
+    },
+    {
+      "name": "low-source middle interval: Bernstein coefficient 8",
+      "strict_margin": "32635285875476367047507784879971/92664000000000000000000000000000000000"
+    },
+    {
+      "name": "low-source middle interval: Bernstein coefficient 9",
+      "strict_margin": "909078121912068345800520466616083/2059200000000000000000000000000000000000"
+    },
+    {
+      "name": "low-source middle interval: Bernstein coefficient 10",
+      "strict_margin": "2257328123813825307692874905557544867/2882880000000000000000000000000000000000000"
+    },
+    {
+      "name": "low-source middle interval: Bernstein coefficient 11",
+      "strict_margin": "102147386609841208062192083531343112487/157248000000000000000000000000000000000000000"
+    },
+    {
+      "name": "low-source middle interval: Bernstein coefficient 12",
+      "strict_margin": "8939323538878476415921188658984503947803/10483200000000000000000000000000000000000000000"
+    },
+    {
+      "name": "low-source middle interval: Bernstein coefficient 13",
+      "strict_margin": "8138106557264950448491717467131077269389/53760000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "negative-target secondary B positive",
+      "strict_margin": "2376242541/2500000000"
+    },
+    {
+      "name": "negative-target secondary B upper",
+      "strict_margin": "872029/625000000"
+    },
+    {
+      "name": "negative-target secondary D positive",
+      "strict_margin": "247158279/2500000000"
+    },
+    {
+      "name": "negative-target secondary D upper",
+      "strict_margin": "11097541/10000000000"
+    },
+    {
+      "name": "negative-target secondary derivative",
+      "strict_margin": "5231/62500"
+    },
+    {
+      "name": "negative-target secondary endpoint cost",
+      "strict_margin": "1232261/10000000"
+    },
+    {
+      "name": "positive-target cut support at 1.2",
+      "strict_margin": "622624363/12500000000"
+    },
+    {
+      "name": "positive-target cut support monotonicity",
+      "strict_margin": "36001/50000"
+    },
+    {
+      "name": "positive-target secondary quadrant-II cosine sign",
+      "strict_margin": "247158279/2500000000"
+    },
+    {
+      "name": "core corner support curvature",
+      "strict_margin": "6931/1000000"
+    },
+    {
+      "name": "core corner support loss",
+      "strict_margin": "1165030851/62500000000"
+    },
+    {
+      "name": "small-angle source norm upper",
+      "strict_margin": "20968203/20000000000"
+    },
+    {
+      "name": "low-source small interval minus sine at 3/10",
+      "strict_margin": "501515331/2000000000"
+    },
+    {
+      "name": "low-source small interval plus sine at 3/10",
+      "strict_margin": "33569921967/560000000000"
+    },
+    {
+      "name": "low-source small interval minus sine at 3/5",
+      "strict_margin": "231464199/2000000000"
+    },
+    {
+      "name": "low-source small interval plus sine at 3/5",
+      "strict_margin": "51260155557/70000000000"
+    },
+    {
+      "name": "small-angle envelope concavity",
+      "strict_margin": "6343/2500"
+    },
+    {
+      "name": "variable multiplier forces low cut",
+      "strict_margin": "462007/18800000"
+    },
+    {
+      "name": "variable multiplier core support",
+      "strict_margin": "263044757/47000000"
+    },
+    {
+      "name": "middle-interval positive sine coefficient",
+      "strict_margin": "5843/500000"
+    },
+    {
+      "name": "quadrant-II continuation derivative",
+      "strict_margin": "569955247/1966922500"
+    },
+    {
+      "name": "corner target excludes first quadrant",
+      "strict_margin": "17/200"
+    },
+    {
+      "name": "corner target angle exceeds 1.9",
+      "strict_margin": "1/250"
+    },
+    {
+      "name": "corner target first transverse cap",
+      "strict_margin": "109009/16000000"
+    },
+    {
+      "name": "corner target second transverse cap",
+      "strict_margin": "137009/4000000"
+    },
+    {
+      "name": "corner target first cost",
+      "strict_margin": "137309/10000000"
+    },
+    {
+      "name": "corner target second cost",
+      "strict_margin": "314301/20000000"
+    }
+  ]
+}

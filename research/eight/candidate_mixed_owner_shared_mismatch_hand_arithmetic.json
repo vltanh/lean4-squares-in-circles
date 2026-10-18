@@ -1,0 +1,209 @@
+{
+  "status": "PASS_FIXED_SHARED_ERROR_HAND_POLYNOMIALS_AND_COVER",
+  "Q": "9789/2500",
+  "epsilon": "1/1000",
+  "aligned_loss": "1001/1000",
+  "input_sha256": "19038e85e57c80c3423666acca47f1548c6aebdc953445cabd4f81b1ee8c58e1",
+  "checker_sha256": "c1ed1785e9fb2541df23955935ab37ab9161269c9db3c929e06812941cb846fe",
+  "owner_patterns": 15,
+  "quartics": 729,
+  "bernstein_coefficients": 3645,
+  "minimum_printed_coefficient": "231527/1000000000000",
+  "pattern_summary": [
+    {
+      "owners": [
+        1,
+        1,
+        1,
+        3,
+        1,
+        3,
+        1
+      ],
+      "closed_cells": 33,
+      "minimum_numerator": 5953557
+    },
+    {
+      "owners": [
+        1,
+        1,
+        1,
+        3,
+        1,
+        3,
+        3
+      ],
+      "closed_cells": 30,
+      "minimum_numerator": 68125329805
+    },
+    {
+      "owners": [
+        1,
+        1,
+        1,
+        3,
+        1,
+        3,
+        4
+      ],
+      "closed_cells": 30,
+      "minimum_numerator": 44975153262
+    },
+    {
+      "owners": [
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        1
+      ],
+      "closed_cells": 49,
+      "minimum_numerator": 2909245
+    },
+    {
+      "owners": [
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        2
+      ],
+      "closed_cells": 281,
+      "minimum_numerator": 231527
+    },
+    {
+      "owners": [
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        3
+      ],
+      "closed_cells": 30,
+      "minimum_numerator": 51570462478
+    },
+    {
+      "owners": [
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        4
+      ],
+      "closed_cells": 30,
+      "minimum_numerator": 42033996741
+    },
+    {
+      "owners": [
+        1,
+        3,
+        1,
+        3,
+        1,
+        3,
+        1
+      ],
+      "closed_cells": 30,
+      "minimum_numerator": 6288385817
+    },
+    {
+      "owners": [
+        1,
+        3,
+        1,
+        3,
+        1,
+        3,
+        2
+      ],
+      "closed_cells": 30,
+      "minimum_numerator": 2020049375
+    },
+    {
+      "owners": [
+        1,
+        3,
+        1,
+        3,
+        1,
+        3,
+        3
+      ],
+      "closed_cells": 30,
+      "minimum_numerator": 32505153564
+    },
+    {
+      "owners": [
+        1,
+        3,
+        1,
+        3,
+        1,
+        3,
+        4
+      ],
+      "closed_cells": 30,
+      "minimum_numerator": 23318580412
+    },
+    {
+      "owners": [
+        1,
+        4,
+        1,
+        3,
+        1,
+        3,
+        1
+      ],
+      "closed_cells": 31,
+      "minimum_numerator": 1707213256
+    },
+    {
+      "owners": [
+        1,
+        4,
+        1,
+        3,
+        1,
+        3,
+        2
+      ],
+      "closed_cells": 35,
+      "minimum_numerator": 903443947
+    },
+    {
+      "owners": [
+        1,
+        4,
+        1,
+        3,
+        1,
+        3,
+        3
+      ],
+      "closed_cells": 30,
+      "minimum_numerator": 13995606039
+    },
+    {
+      "owners": [
+        1,
+        4,
+        1,
+        3,
+        1,
+        3,
+        4
+      ],
+      "closed_cells": 30,
+      "minimum_numerator": 13526892069
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "isolated_absent_file_restoration": true,
+  "second_run_idempotent": true,
+  "original_inputs_byte_identical": true,
+  "restored_inputs": [
+    {
+      "name": "MISMATCH_026_TO_01_AFFINE_HAND_DATA.json",
+      "bytes": 16218282,
+      "sha256": "3230d71cdb3f1aa513aa74de04dc49429bb6ff2759a115cd55d98b160e1fedf4"
+    },
+    {
+      "name": "MISMATCH_026_TO_01_AFFINE_HAND_COMPACT_REPORT.json",
+      "bytes": 31132511,
+      "sha256": "9c0fcd59ed378dedf85e6134cc1bc5b7dee156ca781ef255b4564c9115a855ab"
+    }
+  ]
+}

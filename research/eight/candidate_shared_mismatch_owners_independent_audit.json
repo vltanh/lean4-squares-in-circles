@@ -1,0 +1,220 @@
+{
+  "status": "PASS_INDEPENDENT_SHARED_MISMATCH_OWNER_PROOF_AND_FIXED_ARITHMETIC",
+  "Q": "9789/2500",
+  "epsilon": "1/1000",
+  "aligned_loss": "1001/1000",
+  "sha256": {
+    "HAND_CANDIDATE_MIXED_OWNERS_WITH_TOTAL_MISMATCH.md": "035b9ec5d4fc6305791c10d815ef277078dd3d4aea5996f4c9ebb80ca15fac30",
+    "HAND_CANDIDATE_MIXED_OWNERS_AND_TILT.md": "62e1217f196cd72be30688a101737d1091fd8e25101c4a2e21bed9afe4496bcf",
+    "verify_candidate_shared_mismatch_owner_duals.py": "c1ed1785e9fb2541df23955935ab37ab9161269c9db3c929e06812941cb846fe",
+    "candidate_mixed_owner_shared_mismatch_hand_data.json": "19038e85e57c80c3423666acca47f1548c6aebdc953445cabd4f81b1ee8c58e1",
+    "candidate_mixed_owner_shared_mismatch_hand_arithmetic.json": "95ef21550d0647d6fb5df9bb208c48f867e3a50a5e8a1791eef6da32e25b113f"
+  },
+  "independent_checker_sha256": "85ca9bef2a7d3ba770381a1268298d1f3992259ba98d219ee8164666caecd3b0",
+  "independent_projection_table": "explicit nominal geometric formulas; no author imports",
+  "coefficient_method": "rational five-point Bernstein interpolation and global polynomial reconstruction",
+  "owner_patterns": 15,
+  "quartics": 729,
+  "bernstein_coefficients": 3645,
+  "minimum_printed_coefficient": "231527/1000000000000",
+  "closed_pattern_cover": "exactly [-3/8,3/8] for every forbidden mixed pattern",
+  "author_replay": "byte-identical in an isolated flat directory; no stderr",
+  "unchanged_inputs": true,
+  "pattern_summary": [
+    {
+      "owners": [
+        1,
+        1,
+        1,
+        3,
+        1,
+        3,
+        1
+      ],
+      "closed_cells": 33,
+      "minimum_numerator": 5953557
+    },
+    {
+      "owners": [
+        1,
+        1,
+        1,
+        3,
+        1,
+        3,
+        3
+      ],
+      "closed_cells": 30,
+      "minimum_numerator": 68125329805
+    },
+    {
+      "owners": [
+        1,
+        1,
+        1,
+        3,
+        1,
+        3,
+        4
+      ],
+      "closed_cells": 30,
+      "minimum_numerator": 44975153262
+    },
+    {
+      "owners": [
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        1
+      ],
+      "closed_cells": 49,
+      "minimum_numerator": 2909245
+    },
+    {
+      "owners": [
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        2
+      ],
+      "closed_cells": 281,
+      "minimum_numerator": 231527
+    },
+    {
+      "owners": [
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        3
+      ],
+      "closed_cells": 30,
+      "minimum_numerator": 51570462478
+    },
+    {
+      "owners": [
+        1,
+        2,
+        1,
+        3,
+        1,
+        3,
+        4
+      ],
+      "closed_cells": 30,
+      "minimum_numerator": 42033996741
+    },
+    {
+      "owners": [
+        1,
+        3,
+        1,
+        3,
+        1,
+        3,
+        1
+      ],
+      "closed_cells": 30,
+      "minimum_numerator": 6288385817
+    },
+    {
+      "owners": [
+        1,
+        3,
+        1,
+        3,
+        1,
+        3,
+        2
+      ],
+      "closed_cells": 30,
+      "minimum_numerator": 2020049375
+    },
+    {
+      "owners": [
+        1,
+        3,
+        1,
+        3,
+        1,
+        3,
+        3
+      ],
+      "closed_cells": 30,
+      "minimum_numerator": 32505153564
+    },
+    {
+      "owners": [
+        1,
+        3,
+        1,
+        3,
+        1,
+        3,
+        4
+      ],
+      "closed_cells": 30,
+      "minimum_numerator": 23318580412
+    },
+    {
+      "owners": [
+        1,
+        4,
+        1,
+        3,
+        1,
+        3,
+        1
+      ],
+      "closed_cells": 31,
+      "minimum_numerator": 1707213256
+    },
+    {
+      "owners": [
+        1,
+        4,
+        1,
+        3,
+        1,
+        3,
+        2
+      ],
+      "closed_cells": 35,
+      "minimum_numerator": 903443947
+    },
+    {
+      "owners": [
+        1,
+        4,
+        1,
+        3,
+        1,
+        3,
+        3
+      ],
+      "closed_cells": 30,
+      "minimum_numerator": 13995606039
+    },
+    {
+      "owners": [
+        1,
+        4,
+        1,
+        3,
+        1,
+        3,
+        4
+      ],
+      "closed_cells": 30,
+      "minimum_numerator": 13526892069
+    }
+  ]
+}

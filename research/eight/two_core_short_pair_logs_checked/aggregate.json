@@ -1,0 +1,12 @@
+{
+  "status": "ALL 28 BRANCHES AND 1792 INITIAL RECTANGLES CHECKED",
+  "manifest_sha256": "a85327adafc727f27b751c294e45be1d23c7c9d56fb4d9fe1914ac424828f5c6",
+  "branch_count": 28,
+  "initial_rectangles": 1792,
+  "nodes": 9535240,
+  "terminal_rectangles": 4768516,
+  "maximum_depth": 29,
+  "maximum_recorded_scaled_margin_upper_numerator": -7079,
+  "scale": 281474976710656,
+  "note": "A numerator of -1 may be the empty cost-failure-domain sentinel, rather than a SAT expression bound. Every acceptance is exact; all branch accounting and hash bindings verified."
+}

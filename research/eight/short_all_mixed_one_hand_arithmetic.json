@@ -1,0 +1,3349 @@
+{
+  "status": "PASS",
+  "scope": "All 96 mixed C/O quarter-one raw branches of word 0010111, conditional on stated frame interval, exterior cap and role signs; each cost>.898>.89765.",
+  "Q": "9789/2500",
+  "fixed_comparisons": 390,
+  "raw_branches": 96,
+  "normalized_secondary_rows": 48,
+  "normalized_primary_representatives": 28,
+  "failures": [],
+  "tables": [
+    {
+      "name": "positive core target primary, side rows",
+      "rows": [
+        {
+          "idx": 2,
+          "a": "1.12",
+          "b": "1.25",
+          "l": "1.3",
+          "minimum_lower": "0.978583703"
+        },
+        {
+          "idx": 2,
+          "a": "1.25",
+          "b": "p",
+          "l": "1.115",
+          "minimum_lower": "0.898109783"
+        },
+        {
+          "idx": 3,
+          "a": "1.12",
+          "b": "1.25",
+          "l": "1.4",
+          "minimum_lower": "0.982827762"
+        },
+        {
+          "idx": 3,
+          "a": "1.25",
+          "b": "p",
+          "l": "1.13855",
+          "minimum_lower": "0.898112380"
+        },
+        {
+          "idx": 6,
+          "a": "1.12",
+          "b": "1.25",
+          "l": "1.3",
+          "minimum_lower": "0.973793319"
+        },
+        {
+          "idx": 6,
+          "a": "1.25",
+          "b": "p",
+          "l": "1.0853",
+          "minimum_lower": "0.898112641"
+        },
+        {
+          "idx": 7,
+          "a": "1.12",
+          "b": "1.3",
+          "l": "1.3",
+          "minimum_lower": "0.957894154"
+        },
+        {
+          "idx": 7,
+          "a": "1.3",
+          "b": "1.4",
+          "l": "1.1",
+          "minimum_lower": "0.919700340"
+        },
+        {
+          "idx": 7,
+          "a": "1.4",
+          "b": "p",
+          "l": "1.04073",
+          "minimum_lower": "0.898101165"
+        },
+        {
+          "idx": 14,
+          "a": "1.12",
+          "b": "1.3",
+          "l": "1.2",
+          "minimum_lower": "0.913507945"
+        },
+        {
+          "idx": 14,
+          "a": "1.3",
+          "b": "1.4",
+          "l": "1.06",
+          "minimum_lower": "0.900485162"
+        },
+        {
+          "idx": 14,
+          "a": "1.4",
+          "b": "1.45",
+          "l": "1.01",
+          "minimum_lower": "0.898485672"
+        },
+        {
+          "idx": 14,
+          "a": "1.45",
+          "b": "1.51",
+          "l": ".96",
+          "minimum_lower": "0.898257746"
+        },
+        {
+          "idx": 14,
+          "a": "1.51",
+          "b": "p",
+          "l": ".95324",
+          "minimum_lower": "0.898103109"
+        },
+        {
+          "idx": 15,
+          "a": "1.12",
+          "b": "1.3",
+          "l": "1.2",
+          "minimum_lower": "0.913258669"
+        },
+        {
+          "idx": 15,
+          "a": "1.3",
+          "b": "1.4",
+          "l": "1.06",
+          "minimum_lower": "0.900321608"
+        },
+        {
+          "idx": 15,
+          "a": "1.4",
+          "b": "1.45",
+          "l": "1.01",
+          "minimum_lower": "0.898367386"
+        },
+        {
+          "idx": 15,
+          "a": "1.45",
+          "b": "1.51",
+          "l": ".96",
+          "minimum_lower": "0.898312067"
+        },
+        {
+          "idx": 15,
+          "a": "1.51",
+          "b": "p",
+          "l": ".95269",
+          "minimum_lower": "0.898109171"
+        },
+        {
+          "idx": 20,
+          "a": "1.12",
+          "b": "1.25",
+          "l": "1.3",
+          "minimum_lower": "0.979112440"
+        },
+        {
+          "idx": 20,
+          "a": "1.25",
+          "b": "p",
+          "l": "1.1274",
+          "minimum_lower": "0.898107125"
+        },
+        {
+          "idx": 21,
+          "a": "1.12",
+          "b": "p",
+          "l": "1.1014",
+          "minimum_lower": "0.898104085"
+        }
+      ]
+    },
+    {
+      "name": "negative core target, simple side support",
+      "rows": [
+        {
+          "idx": 0,
+          "a": "lo",
+          "b": "1.1",
+          "lambda": "1.11",
+          "minimum_lower": "0.928395026"
+        },
+        {
+          "idx": 0,
+          "a": "1.1",
+          "b": "p",
+          "lambda": ".958",
+          "minimum_lower": "0.921302267"
+        },
+        {
+          "idx": 11,
+          "a": "lo",
+          "b": "1.1",
+          "lambda": "1.11",
+          "minimum_lower": "0.928347895"
+        },
+        {
+          "idx": 11,
+          "a": "1.1",
+          "b": "p",
+          "lambda": ".958",
+          "minimum_lower": "0.931779418"
+        }
+      ]
+    },
+    {
+      "name": "Of 4 side positive T",
+      "interval": [
+        ".87",
+        "1.571"
+      ],
+      "degree": 10,
+      "coefficient_lower": [
+        "1.992945571",
+        "2.013388620",
+        "2.035193094",
+        "2.057487859",
+        "2.079327832",
+        "2.099712551",
+        "2.117606809",
+        "2.131962565",
+        "2.141741092",
+        "2.145934079",
+        "2.143582158"
+      ]
+    },
+    {
+      "name": "Of 4 side squared radical majorant",
+      "interval": [
+        ".87",
+        "1.571"
+      ],
+      "degree": 20,
+      "coefficient_lower": [
+        "0.087761718",
+        "0.076372425",
+        "0.066130524",
+        "0.057132592",
+        "0.049449803",
+        "0.043124449",
+        "0.038166855",
+        "0.034552735",
+        "0.032221092",
+        "0.031072701",
+        "0.030969245",
+        "0.031733135",
+        "0.033148051",
+        "0.034960215",
+        "0.036880391",
+        "0.038586603",
+        "0.039727545",
+        "0.039926624",
+        "0.038786595",
+        "0.035894723",
+        "0.030828372"
+      ]
+    },
+    {
+      "name": "Of 12 side positive T",
+      "interval": [
+        ".87",
+        "1.571"
+      ],
+      "degree": 10,
+      "coefficient_lower": [
+        "2.607227219",
+        "2.657810724",
+        "2.706614533",
+        "2.752561599",
+        "2.794528345",
+        "2.831365546",
+        "2.861920771",
+        "2.885061490",
+        "2.899697717",
+        "2.904802826",
+        "2.899430894"
+      ]
+    },
+    {
+      "name": "Of 12 side squared radical majorant",
+      "interval": [
+        ".87",
+        "1.571"
+      ],
+      "degree": 20,
+      "coefficient_lower": [
+        "0.023669927",
+        "0.019498424",
+        "0.017336319",
+        "0.017144668",
+        "0.018837727",
+        "0.022281198",
+        "0.027291202",
+        "0.033634036",
+        "0.041026752",
+        "0.049138593",
+        "0.057593307",
+        "0.065972328",
+        "0.073818817",
+        "0.080642516",
+        "0.085925382",
+        "0.089127914",
+        "0.089696108",
+        "0.087068937",
+        "0.080686258",
+        "0.069997029",
+        "0.054467720"
+      ]
+    },
+    {
+      "name": "Of 19 side positive T",
+      "interval": [
+        ".87",
+        "1.571"
+      ],
+      "degree": 10,
+      "coefficient_lower": [
+        "2.621943521",
+        "2.673362467",
+        "2.722922560",
+        "2.769541045",
+        "2.812089328",
+        "2.849413924",
+        "2.880358947",
+        "2.903789253",
+        "2.918613106",
+        "2.923802982",
+        "2.918412897"
+      ]
+    },
+    {
+      "name": "Of 19 side squared radical majorant",
+      "interval": [
+        ".87",
+        "1.571"
+      ],
+      "degree": 20,
+      "coefficient_lower": [
+        "0.023077246",
+        "0.018871884",
+        "0.016694673",
+        "0.016506323",
+        "0.018220144",
+        "0.021700312",
+        "0.026760870",
+        "0.033165518",
+        "0.040628238",
+        "0.048814784",
+        "0.057345053",
+        "0.065796336",
+        "0.073707428",
+        "0.080583564",
+        "0.085902125",
+        "0.089119056",
+        "0.089675901",
+        "0.087007361",
+        "0.080549291",
+        "0.069746986",
+        "0.054063677"
+      ]
+    },
+    {
+      "name": "Of 23 side positive T",
+      "interval": [
+        ".87",
+        "1.571"
+      ],
+      "degree": 10,
+      "coefficient_lower": [
+        "2.393531686",
+        "2.437577915",
+        "2.480801153",
+        "2.522169024",
+        "2.560594267",
+        "2.594955122",
+        "2.624117425",
+        "2.646957548",
+        "2.662385075",
+        "2.669363868",
+        "2.666929891"
+      ]
+    },
+    {
+      "name": "Of 23 side squared radical majorant",
+      "interval": [
+        ".87",
+        "1.571"
+      ],
+      "degree": 20,
+      "coefficient_lower": [
+        "0.116718622",
+        "0.100653502",
+        "0.086207892",
+        "0.073531210",
+        "0.062729408",
+        "0.053861444",
+        "0.046936421",
+        "0.041911459",
+        "0.038690371",
+        "0.037123187",
+        "0.037006581",
+        "0.038085200",
+        "0.040053920",
+        "0.042561003",
+        "0.045212131",
+        "0.047575271",
+        "0.049186306",
+        "0.049555355",
+        "0.048173691",
+        "0.044521166",
+        "0.038074023"
+      ]
+    },
+    {
+      "name": "endpoint curvature E",
+      "interval": [
+        "1.32",
+        "1.7"
+      ],
+      "degree": 4,
+      "coefficient_lower": [
+        "3.085310604",
+        "2.614595484",
+        "2.111708044",
+        "1.635361324",
+        "1.265119724"
+      ]
+    },
+    {
+      "name": "endpoint curvature A",
+      "interval": [
+        "1.32",
+        "1.7"
+      ],
+      "degree": 1,
+      "coefficient_lower": [
+        "0.928417627",
+        "1.024557627"
+      ]
+    },
+    {
+      "name": "endpoint curvature squared bound",
+      "interval": [
+        "1.32",
+        "1.7"
+      ],
+      "degree": 8,
+      "coefficient_lower": [
+        "0.672348963",
+        "0.522477124",
+        "0.404904695",
+        "0.332908541",
+        "0.310357819",
+        "0.330469984",
+        "0.376840965",
+        "0.428113442",
+        "0.468109775"
+      ]
+    },
+    {
+      "name": "early negative-core corner contact references",
+      "rows": [
+        {
+          "idx": 0,
+          "kind": "join",
+          "ref": 1.17,
+          "F_lower": "0.926218815612",
+          "derivative_interval": [
+            "0.000166507919",
+            "0.000166507920"
+          ],
+          "completed_lower": "0.926218794285"
+        },
+        {
+          "idx": 0,
+          "kind": "diag",
+          "ref": 1.075,
+          "F_lower": "0.898114793038",
+          "derivative_interval": [
+            "-0.000228429304",
+            "-0.000228429303"
+          ],
+          "completed_lower": "0.898114752900"
+        },
+        {
+          "idx": 4,
+          "kind": "join",
+          "ref": 1.149,
+          "F_lower": "0.907693000489",
+          "derivative_interval": [
+            "-0.000099645772",
+            "-0.000099645771"
+          ],
+          "completed_lower": "0.907692992851"
+        },
+        {
+          "idx": 4,
+          "kind": "diag",
+          "ref": 1.047,
+          "F_lower": "0.898117130742",
+          "derivative_interval": [
+            "0.000326385836",
+            "0.000326385837"
+          ],
+          "completed_lower": "0.898117048798"
+        },
+        {
+          "idx": 11,
+          "kind": "join",
+          "ref": 1.061,
+          "F_lower": "0.931511796872",
+          "derivative_interval": [
+            "0.000482643129",
+            "0.000482643130"
+          ],
+          "completed_lower": "0.931511617684"
+        },
+        {
+          "idx": 11,
+          "kind": "diag",
+          "ref": 0.962,
+          "F_lower": "0.898101173348",
+          "derivative_interval": [
+            "-0.000002172965",
+            "-0.000002172964"
+          ],
+          "completed_lower": "0.898101173344"
+        },
+        {
+          "idx": 12,
+          "kind": "join",
+          "ref": "lo",
+          "F_lower": "0.906056905970",
+          "derivative_interval": [
+            "0.024032022782",
+            "0.024032022783"
+          ],
+          "completed_lower": "0.906056905970"
+        },
+        {
+          "idx": 12,
+          "kind": "diag",
+          "ref": "lo",
+          "F_lower": "0.898108602258",
+          "derivative_interval": [
+            "0.140672780014",
+            "0.140672780015"
+          ],
+          "completed_lower": "0.898108602258"
+        },
+        {
+          "idx": 19,
+          "kind": "join",
+          "ref": "lo",
+          "F_lower": "0.905928100610",
+          "derivative_interval": [
+            "0.025279764693",
+            "0.025279764694"
+          ],
+          "completed_lower": "0.905928100610"
+        },
+        {
+          "idx": 19,
+          "kind": "diag",
+          "ref": "lo",
+          "F_lower": "0.898110957785",
+          "derivative_interval": [
+            "0.142661101979",
+            "0.142661101980"
+          ],
+          "completed_lower": "0.898110957785"
+        },
+        {
+          "idx": 23,
+          "kind": "join",
+          "ref": 1.148,
+          "F_lower": "0.907547595907",
+          "derivative_interval": [
+            "0.000011911775",
+            "0.000011911776"
+          ],
+          "completed_lower": "0.907547595798"
+        },
+        {
+          "idx": 23,
+          "kind": "diag",
+          "ref": 1.056,
+          "F_lower": "0.898107389056",
+          "derivative_interval": [
+            "0.000085285326",
+            "0.000085285327"
+          ],
+          "completed_lower": "0.898107383461"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "pi lower",
+      "lower": "3.141592653589",
+      "upper": "3.141592653590",
+      "threshold": "3.14159",
+      "ok": true
+    },
+    {
+      "name": "pi upper",
+      "lower": "-3.141592653590",
+      "upper": "-3.141592653589",
+      "threshold": "-3927/1250",
+      "ok": true
+    },
+    {
+      "name": "outer diagonal",
+      "lower": "0.899214065109",
+      "upper": "0.899214065110",
+      "threshold": ".8992",
+      "ok": true
+    },
+    {
+      "name": "outer axial",
+      "lower": "-1.414575671004",
+      "upper": "-1.414575671003",
+      "threshold": "-283/200",
+      "ok": true
+    },
+    {
+      "name": "outer axial lower",
+      "lower": "1.414575671003",
+      "upper": "1.414575671004",
+      "threshold": "1.4145",
+      "ok": true
+    },
+    {
+      "name": "core diagonal lower",
+      "lower": "0.558925565098",
+      "upper": "0.558925565099",
+      "threshold": ".5589",
+      "ok": true
+    },
+    {
+      "name": "core diagonal upper",
+      "lower": "-0.558925565099",
+      "upper": "-0.558925565098",
+      "threshold": "-559/1000",
+      "ok": true
+    },
+    {
+      "name": "sin lower across quarter strip",
+      "lower": "0.764842187284",
+      "upper": "0.764842187285",
+      "threshold": ".764",
+      "ok": true
+    },
+    {
+      "name": "absolute cosine across quarter strip",
+      "lower": "-0.644217687238",
+      "upper": "-0.644217687237",
+      "threshold": "-129/200",
+      "ok": true
+    },
+    {
+      "name": "sin .4>.389",
+      "lower": "0.389418342308",
+      "upper": "0.389418342309",
+      "threshold": ".389",
+      "ok": true
+    },
+    {
+      "name": "cos 1.05>.497",
+      "lower": "0.497571047891",
+      "upper": "0.497571047892",
+      "threshold": ".497",
+      "ok": true
+    },
+    {
+      "name": "cos 1.2>.362",
+      "lower": "0.362357754476",
+      "upper": "0.362357754477",
+      "threshold": ".362",
+      "ok": true
+    },
+    {
+      "name": "strip lower>.87",
+      "lower": "0.870796326794",
+      "upper": "0.870796326795",
+      "threshold": ".87",
+      "ok": true
+    },
+    {
+      "name": "pi/2<1.571",
+      "lower": "-1.570796326795",
+      "upper": "-1.570796326794",
+      "threshold": "-1571/1000",
+      "ok": true
+    },
+    {
+      "name": "Cf 0 norm derivative",
+      "lower": "0.652272250000",
+      "upper": "0.652272250000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 0 axial primary sign",
+      "lower": "0.538382200000",
+      "upper": "0.538382200000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 0 axial secondary sign",
+      "lower": "0.399235250000",
+      "upper": "0.399235250000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 0 negative-target left",
+      "lower": "1.087415127568",
+      "upper": "1.087415127569",
+      "threshold": "1.038",
+      "ok": true
+    },
+    {
+      "name": "Cf 1 norm derivative",
+      "lower": "0.613977510000",
+      "upper": "0.613977510000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 1 nonnegative core support",
+      "lower": "0.000000000000",
+      "upper": "-0.000000000000",
+      "threshold": "0",
+      "comparison": ">=",
+      "ok": true
+    },
+    {
+      "name": "Cf 1 concavity lo 1.25",
+      "lower": "0.060030362898",
+      "upper": "0.060030362899",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 1 concavity 1.25 p",
+      "lower": "0.085402538910",
+      "upper": "0.085402538911",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 1 concavity p p+.3",
+      "lower": "0.043223934201",
+      "upper": "0.043223934202",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 1 concavity p+.3 hi",
+      "lower": "0.120800286784",
+      "upper": "0.120800286785",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 1 positive-target endpoints",
+      "lower": "0.971666925212",
+      "upper": "0.971666925213",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Cf 2 norm derivative",
+      "lower": "0.583581460000",
+      "upper": "0.583581460000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 2 nonnegative core support",
+      "lower": "0.000000000000",
+      "upper": "-0.000000000000",
+      "threshold": "0",
+      "comparison": ">=",
+      "ok": true
+    },
+    {
+      "name": "Cf 2 concavity 1 1.25",
+      "lower": "0.065821840727",
+      "upper": "0.065821840728",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 2 concavity 1.25 p",
+      "lower": "0.069802951906",
+      "upper": "0.069802951907",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 2 concavity p p+.3",
+      "lower": "0.040333968612",
+      "upper": "0.040333968613",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 2 concavity p+.3 hi",
+      "lower": "0.247577239375",
+      "upper": "0.247577239376",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 2 positive-target endpoints",
+      "lower": "0.898112380949",
+      "upper": "0.898112380950",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Cf 3 norm derivative",
+      "lower": "0.613977510000",
+      "upper": "0.613977510000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 3 nonnegative core support",
+      "lower": "0.067710000000",
+      "upper": "0.067710000000",
+      "threshold": "0",
+      "comparison": ">=",
+      "ok": true
+    },
+    {
+      "name": "Cf 3 concavity 1 1.25",
+      "lower": "0.393021265186",
+      "upper": "0.393021265187",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 3 concavity 1.25 p",
+      "lower": "0.390074964863",
+      "upper": "0.390074964864",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 3 concavity p p+.3",
+      "lower": "0.346527583381",
+      "upper": "0.346527583382",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 3 concavity p+.3 hi",
+      "lower": "0.518550717853",
+      "upper": "0.518550717854",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 3 positive-target endpoints",
+      "lower": "0.898109783924",
+      "upper": "0.898109783925",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Cf 4 norm derivative",
+      "lower": "0.499249570000",
+      "upper": "0.499249570000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 4 axial primary sign",
+      "lower": "0.585447720000",
+      "upper": "0.585447720000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 4 axial secondary sign",
+      "lower": "0.159209150000",
+      "upper": "0.159209150000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 4 negative-target left",
+      "lower": "1.038166806218",
+      "upper": "1.038166806219",
+      "threshold": "1.038",
+      "ok": true
+    },
+    {
+      "name": "Cf 5 norm derivative",
+      "lower": "0.461613410000",
+      "upper": "0.461613410000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 5 nonnegative core support",
+      "lower": "0.000000000000",
+      "upper": "-0.000000000000",
+      "threshold": "0",
+      "comparison": ">=",
+      "ok": true
+    },
+    {
+      "name": "Cf 5 concavity lo 1.25",
+      "lower": "0.307940880941",
+      "upper": "0.307940880942",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 5 concavity 1.25 p",
+      "lower": "0.370007628467",
+      "upper": "0.370007628468",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 5 concavity p p+.3",
+      "lower": "0.324182638144",
+      "upper": "0.324182638145",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 5 concavity p+.3 hi",
+      "lower": "0.458890538636",
+      "upper": "0.458890538637",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 5 positive-target endpoints",
+      "lower": "0.905454212610",
+      "upper": "0.905454212611",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Cf 6 norm derivative",
+      "lower": "0.663793760000",
+      "upper": "0.663793760000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 6 nonnegative core support",
+      "lower": "0.000000000000",
+      "upper": "-0.000000000000",
+      "threshold": "0",
+      "comparison": ">=",
+      "ok": true
+    },
+    {
+      "name": "Cf 6 concavity 1 1.25",
+      "lower": "0.318741917833",
+      "upper": "0.318741917834",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 6 concavity 1.25 p",
+      "lower": "0.316961722576",
+      "upper": "0.316961722577",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 6 concavity p p+.3",
+      "lower": "0.278762372710",
+      "upper": "0.278762372711",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 6 concavity p+.3 hi",
+      "lower": "0.444529794309",
+      "upper": "0.444529794310",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 6 positive-target endpoints",
+      "lower": "0.898101165491",
+      "upper": "0.898101165493",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Cf 7 norm derivative",
+      "lower": "0.461613410000",
+      "upper": "0.461613410000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 7 nonnegative core support",
+      "lower": "0.093350000000",
+      "upper": "0.093350000000",
+      "threshold": "0",
+      "comparison": ">=",
+      "ok": true
+    },
+    {
+      "name": "Cf 7 concavity 1 1.25",
+      "lower": "0.449001409607",
+      "upper": "0.449001409608",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 7 concavity 1.25 p",
+      "lower": "0.447840835963",
+      "upper": "0.447840835964",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 7 concavity p p+.3",
+      "lower": "0.404204131685",
+      "upper": "0.404204131686",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 7 concavity p+.3 hi",
+      "lower": "0.566600753436",
+      "upper": "0.566600753437",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 7 positive-target endpoints",
+      "lower": "0.898112641104",
+      "upper": "0.898112641105",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Cf 8 norm derivative",
+      "lower": "0.499249570000",
+      "upper": "0.499249570000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 8 axial primary sign",
+      "lower": "0.239783560000",
+      "upper": "0.239783560000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 8 axial secondary sign",
+      "lower": "0.451032950000",
+      "upper": "0.451032950000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 8 negative-target left",
+      "lower": "1.201846401281",
+      "upper": "1.201846401282",
+      "threshold": ".921",
+      "ok": true
+    },
+    {
+      "name": "Cf 9 norm derivative",
+      "lower": "0.546664920000",
+      "upper": "0.546664920000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 9 axial primary sign",
+      "lower": "0.727855160000",
+      "upper": "0.727855160000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 9 axial secondary sign",
+      "lower": "0.101044950000",
+      "upper": "0.101044950000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 9 negative-target left",
+      "lower": "1.040268775914",
+      "upper": "1.040268775915",
+      "threshold": ".921",
+      "ok": true
+    },
+    {
+      "name": "Cf 10 norm derivative",
+      "lower": "0.663793760000",
+      "upper": "0.663793760000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 10 nonnegative core support",
+      "lower": "0.000000000000",
+      "upper": "-0.000000000000",
+      "threshold": "0",
+      "comparison": ">=",
+      "ok": true
+    },
+    {
+      "name": "Cf 10 concavity lo 1.25",
+      "lower": "0.013429342573",
+      "upper": "0.013429342574",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 10 concavity 1.25 p",
+      "lower": "0.039207443169",
+      "upper": "0.039207443170",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 10 concavity p p+.3",
+      "lower": "0.002316070443",
+      "upper": "0.002316070444",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 10 concavity p+.3 hi",
+      "lower": "0.079665316648",
+      "upper": "0.079665316649",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 10 positive-target endpoints",
+      "lower": "0.966781061546",
+      "upper": "0.966781061547",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Cf 11 norm derivative",
+      "lower": "0.546664920000",
+      "upper": "0.546664920000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 11 axial primary sign",
+      "lower": "0.757849800000",
+      "upper": "0.757849800000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 11 axial secondary sign",
+      "lower": "0.075722250000",
+      "upper": "0.075722250000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 11 negative-target left",
+      "lower": "1.030872161330",
+      "upper": "1.030872161331",
+      "threshold": ".940",
+      "ok": true
+    },
+    {
+      "name": "Cf 12 norm derivative",
+      "lower": "0.498826540000",
+      "upper": "0.498826540000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 12 axial primary sign",
+      "lower": "0.913875160000",
+      "upper": "0.913875160000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 12 axial secondary sign",
+      "lower": "0.195474950000",
+      "upper": "0.195474950000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 12 negative-target left",
+      "lower": "0.921329409594",
+      "upper": "0.921329409595",
+      "threshold": ".921",
+      "ok": true
+    },
+    {
+      "name": "Cf 13 norm derivative",
+      "lower": "0.499249570000",
+      "upper": "0.499249570000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 13 nonnegative core support",
+      "lower": "0.000000000000",
+      "upper": "-0.000000000000",
+      "threshold": "0",
+      "comparison": ">=",
+      "ok": true
+    },
+    {
+      "name": "Cf 13 concavity lo 1.25",
+      "lower": "0.134250134930",
+      "upper": "0.134250134931",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 13 concavity 1.25 p",
+      "lower": "0.218631941186",
+      "upper": "0.218631941187",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 13 concavity p p+.3",
+      "lower": "0.193860059520",
+      "upper": "0.193860059521",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 13 concavity p+.3 hi",
+      "lower": "0.370009467070",
+      "upper": "0.370009467071",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 13 positive-target endpoints",
+      "lower": "0.907728025328",
+      "upper": "0.907728025329",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Cf 14 norm derivative",
+      "lower": "0.496948380000",
+      "upper": "0.496948380000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 14 nonnegative core support",
+      "lower": "0.000000000000",
+      "upper": "-0.000000000000",
+      "threshold": "0",
+      "comparison": ">=",
+      "ok": true
+    },
+    {
+      "name": "Cf 14 concavity 1 1.25",
+      "lower": "0.186730989106",
+      "upper": "0.186730989107",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 14 concavity 1.25 p",
+      "lower": "0.192707618243",
+      "upper": "0.192707618244",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 14 concavity p p+.3",
+      "lower": "0.167489021654",
+      "upper": "0.167489021655",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 14 concavity p+.3 hi",
+      "lower": "0.335597408285",
+      "upper": "0.335597408286",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 14 positive-target endpoints",
+      "lower": "0.898109171714",
+      "upper": "0.898109171715",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Cf 15 norm derivative",
+      "lower": "0.499249570000",
+      "upper": "0.499249570000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 15 nonnegative core support",
+      "lower": "0.000000000000",
+      "upper": "-0.000000000000",
+      "threshold": "0",
+      "comparison": ">=",
+      "ok": true
+    },
+    {
+      "name": "Cf 15 concavity 1 1.25",
+      "lower": "0.191735933103",
+      "upper": "0.191735933104",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 15 concavity 1.25 p",
+      "lower": "0.197685544206",
+      "upper": "0.197685544207",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 15 concavity p p+.3",
+      "lower": "0.172292622445",
+      "upper": "0.172292622446",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 15 concavity p+.3 hi",
+      "lower": "0.340102495565",
+      "upper": "0.340102495566",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 15 positive-target endpoints",
+      "lower": "0.898103109402",
+      "upper": "0.898103109403",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Cf 16 norm derivative",
+      "lower": "0.498826540000",
+      "upper": "0.498826540000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 16 axial primary sign",
+      "lower": "0.943869800000",
+      "upper": "0.943869800000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 16 axial secondary sign",
+      "lower": "0.170152250000",
+      "upper": "0.170152250000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 16 negative-target left",
+      "lower": "0.940352795010",
+      "upper": "0.940352795011",
+      "threshold": ".940",
+      "ok": true
+    },
+    {
+      "name": "Cf 17 norm derivative",
+      "lower": "0.663793760000",
+      "upper": "0.663793760000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 17 axial primary sign",
+      "lower": "0.757681720000",
+      "upper": "0.757681720000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 17 axial secondary sign",
+      "lower": "0.229174150000",
+      "upper": "0.229174150000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 17 negative-target left",
+      "lower": "0.940355188717",
+      "upper": "0.940355188718",
+      "threshold": ".940",
+      "ok": true
+    },
+    {
+      "name": "Cf 18 norm derivative",
+      "lower": "0.496948380000",
+      "upper": "0.496948380000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 18 nonnegative core support",
+      "lower": "0.000000000000",
+      "upper": "-0.000000000000",
+      "threshold": "0",
+      "comparison": ">=",
+      "ok": true
+    },
+    {
+      "name": "Cf 18 concavity lo 1.25",
+      "lower": "0.129602390788",
+      "upper": "0.129602390789",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 18 concavity 1.25 p",
+      "lower": "0.214062523926",
+      "upper": "0.214062523927",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 18 concavity p p+.3",
+      "lower": "0.189471774934",
+      "upper": "0.189471774935",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 18 concavity p+.3 hi",
+      "lower": "0.366087380875",
+      "upper": "0.366087380876",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 18 positive-target endpoints",
+      "lower": "0.907600249820",
+      "upper": "0.907600249821",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Cf 19 norm derivative",
+      "lower": "0.663793760000",
+      "upper": "0.663793760000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 19 axial primary sign",
+      "lower": "0.728275360000",
+      "upper": "0.728275360000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 19 axial secondary sign",
+      "lower": "0.254000200000",
+      "upper": "0.254000200000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 19 negative-target left",
+      "lower": "0.921426207447",
+      "upper": "0.921426207448",
+      "threshold": ".921",
+      "ok": true
+    },
+    {
+      "name": "Cf 20 norm derivative",
+      "lower": "0.724012240000",
+      "upper": "0.724012240000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 20 nonnegative core support",
+      "lower": "0.109670000000",
+      "upper": "0.109670000000",
+      "threshold": "0",
+      "comparison": ">=",
+      "ok": true
+    },
+    {
+      "name": "Cf 20 concavity 1 1.25",
+      "lower": "0.330505943648",
+      "upper": "0.330505943649",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 20 concavity 1.25 p",
+      "lower": "0.326428599421",
+      "upper": "0.326428599422",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 20 concavity p p+.3",
+      "lower": "0.284319862890",
+      "upper": "0.284319862891",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 20 concavity p+.3 hi",
+      "lower": "0.458042974059",
+      "upper": "0.458042974060",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 20 positive-target endpoints",
+      "lower": "0.898104085447",
+      "upper": "0.898104085448",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Cf 21 norm derivative",
+      "lower": "0.498826540000",
+      "upper": "0.498826540000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 21 nonnegative core support",
+      "lower": "0.039240000000",
+      "upper": "0.039240000000",
+      "threshold": "0",
+      "comparison": ">=",
+      "ok": true
+    },
+    {
+      "name": "Cf 21 concavity 1 1.25",
+      "lower": "0.457015186378",
+      "upper": "0.457015186379",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 21 concavity 1.25 p",
+      "lower": "0.455537959626",
+      "upper": "0.455537959627",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 21 concavity p p+.3",
+      "lower": "0.410401258581",
+      "upper": "0.410401258582",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 21 concavity p+.3 hi",
+      "lower": "0.579861722152",
+      "upper": "0.579861722153",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 21 positive-target endpoints",
+      "lower": "0.898107125855",
+      "upper": "0.898107125856",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Cf 22 norm derivative",
+      "lower": "0.724012240000",
+      "upper": "0.724012240000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 22 nonnegative core support",
+      "lower": "0.000000000000",
+      "upper": "-0.000000000000",
+      "threshold": "0",
+      "comparison": ">=",
+      "ok": true
+    },
+    {
+      "name": "Cf 22 concavity lo 1.25",
+      "lower": "0.178866103582",
+      "upper": "0.178866103583",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 22 concavity 1.25 p",
+      "lower": "0.239665729609",
+      "upper": "0.239665729610",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 22 concavity p p+.3",
+      "lower": "0.196395682493",
+      "upper": "0.196395682494",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 22 concavity p+.3 hi",
+      "lower": "0.339730953378",
+      "upper": "0.339730953379",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 22 positive-target endpoints",
+      "lower": "0.905428851015",
+      "upper": "0.905428851016",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Cf 23 norm derivative",
+      "lower": "0.496948380000",
+      "upper": "0.496948380000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 23 axial primary sign",
+      "lower": "0.613094240000",
+      "upper": "0.613094240000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 23 axial secondary sign",
+      "lower": "0.132856800000",
+      "upper": "0.132856800000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 23 negative-target left",
+      "lower": "1.074143061418",
+      "upper": "1.074143061419",
+      "threshold": "1.038",
+      "ok": true
+    },
+    {
+      "name": "Cf low-g derivative",
+      "lower": "0.005263417733",
+      "upper": "0.005263417734",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf middle-g derivative",
+      "lower": "-0.042700819987",
+      "upper": "-0.042700819986",
+      "threshold": "-.043",
+      "ok": true
+    },
+    {
+      "name": "Cf high-g derivative",
+      "lower": "-0.187636233965",
+      "upper": "-0.187636233964",
+      "threshold": "-.19",
+      "ok": true
+    },
+    {
+      "name": "Cf middle-g continuation",
+      "lower": "0.909900000000",
+      "upper": "0.909900000000",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Cf high-g continuation",
+      "lower": "0.905000000000",
+      "upper": "0.905000000000",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Cf negative-source forward cap at 1",
+      "lower": "0.000562262373",
+      "upper": "0.000562262374",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 0 secondary core sign",
+      "lower": "0.059422700000",
+      "upper": "0.059422700000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 0 negative-target secondary",
+      "lower": "1.750020097954",
+      "upper": "1.750020097955",
+      "threshold": "1.381",
+      "ok": true
+    },
+    {
+      "name": "Of 1 secondary core sign",
+      "lower": "0.407378000000",
+      "upper": "0.407378000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 1 positive-target secondary left",
+      "lower": "1.424947440641",
+      "upper": "1.424947440642",
+      "threshold": "1.424",
+      "ok": true
+    },
+    {
+      "name": "Of 2 secondary core sign",
+      "lower": "0.479212700000",
+      "upper": "0.479212700000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 2 positive-target secondary left",
+      "lower": "1.300390602683",
+      "upper": "1.300390602684",
+      "threshold": "1.103",
+      "ok": true
+    },
+    {
+      "name": "Of 3 secondary core sign",
+      "lower": "0.365136950000",
+      "upper": "0.365136950000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 3 positive-target secondary left",
+      "lower": "1.666811250938",
+      "upper": "1.666811250939",
+      "threshold": "1.424",
+      "ok": true
+    },
+    {
+      "name": "Of 4 secondary core sign",
+      "lower": "0.457691200000",
+      "upper": "0.457691200000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 4 negative-target secondary",
+      "lower": "1.381564369879",
+      "upper": "1.381564369880",
+      "threshold": "1.381",
+      "ok": true
+    },
+    {
+      "name": "Of 5 secondary core sign",
+      "lower": "0.505070400000",
+      "upper": "0.505070400000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 5 positive-target secondary left",
+      "lower": "1.164739436499",
+      "upper": "1.164739436500",
+      "threshold": "1.103",
+      "ok": true
+    },
+    {
+      "name": "Of 6 secondary core sign",
+      "lower": "0.496951200000",
+      "upper": "0.496951200000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 6 positive-target secondary left",
+      "lower": "1.103369863319",
+      "upper": "1.103369863320",
+      "threshold": "1.103",
+      "ok": true
+    },
+    {
+      "name": "Of 7 secondary core sign",
+      "lower": "0.480328200000",
+      "upper": "0.480328200000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 7 positive-target secondary left",
+      "lower": "1.290701501027",
+      "upper": "1.290701501028",
+      "threshold": "1.103",
+      "ok": true
+    },
+    {
+      "name": "Of 8 secondary core sign",
+      "lower": "0.491173150000",
+      "upper": "0.491173150000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 8 negative-target secondary",
+      "lower": "1.466104240147",
+      "upper": "1.466104240148",
+      "threshold": "1.381",
+      "ok": true
+    },
+    {
+      "name": "Of 9 secondary core sign",
+      "lower": "0.052630400000",
+      "upper": "0.052630400000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 9 negative-target secondary",
+      "lower": "1.651477313966",
+      "upper": "1.651477313967",
+      "threshold": "1.381",
+      "ok": true
+    },
+    {
+      "name": "Of 10 secondary core sign",
+      "lower": "0.530433150000",
+      "upper": "0.530433150000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 10 positive-target secondary left",
+      "lower": "1.168459065490",
+      "upper": "1.168459065491",
+      "threshold": "1.103",
+      "ok": true
+    },
+    {
+      "name": "Of 11 secondary core sign",
+      "lower": "0.027888200000",
+      "upper": "0.027888200000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 11 negative-target secondary",
+      "lower": "1.763340250651",
+      "upper": "1.763340250652",
+      "threshold": "1.381",
+      "ok": true
+    },
+    {
+      "name": "Of 12 secondary core sign",
+      "lower": "0.456070400000",
+      "upper": "0.456070400000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 12 negative-target secondary",
+      "lower": "1.423295019996",
+      "upper": "1.423295019997",
+      "threshold": "1.381",
+      "ok": true
+    },
+    {
+      "name": "Of 13 secondary core sign",
+      "lower": "0.430265800000",
+      "upper": "0.430265800000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 13 positive-target secondary left",
+      "lower": "1.192067915983",
+      "upper": "1.192067915984",
+      "threshold": "1.103",
+      "ok": true
+    },
+    {
+      "name": "Of 14 secondary core sign",
+      "lower": "0.417580400000",
+      "upper": "0.417580400000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 14 positive-target secondary left",
+      "lower": "1.189526186782",
+      "upper": "1.189526186783",
+      "threshold": "1.103",
+      "ok": true
+    },
+    {
+      "name": "Of 15 secondary core sign",
+      "lower": "0.414295600000",
+      "upper": "0.414295600000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 15 positive-target secondary left",
+      "lower": "1.194665017166",
+      "upper": "1.194665017167",
+      "threshold": "1.103",
+      "ok": true
+    },
+    {
+      "name": "Of 16 secondary core sign",
+      "lower": "0.431328200000",
+      "upper": "0.431328200000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 16 negative-target secondary",
+      "lower": "1.477670250651",
+      "upper": "1.477670250652",
+      "threshold": "1.381",
+      "ok": true
+    },
+    {
+      "name": "Of 17 secondary core sign",
+      "lower": "0.469525800000",
+      "upper": "0.469525800000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 17 negative-target secondary",
+      "lower": "1.432987941284",
+      "upper": "1.432987941285",
+      "threshold": "1.381",
+      "ok": true
+    },
+    {
+      "name": "Of 18 secondary core sign",
+      "lower": "0.392838200000",
+      "upper": "0.392838200000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 18 positive-target secondary left",
+      "lower": "1.257719917664",
+      "upper": "1.257719917665",
+      "threshold": "1.103",
+      "ok": true
+    },
+    {
+      "name": "Of 19 secondary core sign",
+      "lower": "0.453555600000",
+      "upper": "0.453555600000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 19 negative-target secondary",
+      "lower": "1.426599312239",
+      "upper": "1.426599312240",
+      "threshold": "1.381",
+      "ok": true
+    },
+    {
+      "name": "Of 20 secondary core sign",
+      "lower": "0.565735800000",
+      "upper": "0.565735800000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 20 positive-target secondary left",
+      "lower": "1.132441077758",
+      "upper": "1.132441077759",
+      "threshold": "1.103",
+      "ok": true
+    },
+    {
+      "name": "Of 21 secondary core sign",
+      "lower": "0.380489300000",
+      "upper": "0.380489300000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 21 positive-target secondary left",
+      "lower": "1.467524432237",
+      "upper": "1.467524432238",
+      "threshold": "1.103",
+      "ok": true
+    },
+    {
+      "name": "Of 22 secondary core sign",
+      "lower": "0.549765600000",
+      "upper": "0.549765600000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 22 positive-target secondary left",
+      "lower": "1.169024954936",
+      "upper": "1.169024954937",
+      "threshold": "1.103",
+      "ok": true
+    },
+    {
+      "name": "Of 23 secondary core sign",
+      "lower": "0.341999300000",
+      "upper": "0.341999300000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 23 negative-target secondary",
+      "lower": "1.680195131271",
+      "upper": "1.680195131272",
+      "threshold": "1.381",
+      "ok": true
+    },
+    {
+      "name": "Of secondary negative-target derivative",
+      "lower": "0.391723746970",
+      "upper": "0.391723746971",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of secondary low slope",
+      "lower": "-0.029166666667",
+      "upper": "-0.029166666666",
+      "threshold": "-.03",
+      "ok": true
+    },
+    {
+      "name": "Of secondary high slope",
+      "lower": "-0.294916666667",
+      "upper": "-0.294916666666",
+      "threshold": "-.3",
+      "ok": true
+    },
+    {
+      "name": "Of secondary low continuation",
+      "lower": "1.082000000000",
+      "upper": "1.082000000000",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of secondary high continuation",
+      "lower": "1.214000000000",
+      "upper": "1.214000000000",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "role 3 C sign-difference derivative",
+      "lower": "1.674790000000",
+      "upper": "1.674790000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "role 3 C sign-difference at zero",
+      "lower": "0.196890000000",
+      "upper": "0.196890000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "role 3 O sign-difference derivative",
+      "lower": "1.485680000000",
+      "upper": "1.485680000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "role 3 O sign-difference at zero",
+      "lower": "0.001469739097",
+      "upper": "0.001469739098",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "role 4 C sign-difference derivative",
+      "lower": "1.629020000000",
+      "upper": "1.629020000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "role 4 C sign-difference at zero",
+      "lower": "0.219150000000",
+      "upper": "0.219150000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "role 4 O sign-difference derivative",
+      "lower": "1.289620000000",
+      "upper": "1.289620000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "role 4 O sign-difference at zero",
+      "lower": "0.024261794011",
+      "upper": "0.024261794012",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "role 5 C sign-difference derivative",
+      "lower": "1.944640000000",
+      "upper": "1.944640000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "role 5 C sign-difference at zero",
+      "lower": "0.014210000000",
+      "upper": "0.014210000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "role 5 O sign-difference derivative",
+      "lower": "1.489650000000",
+      "upper": "1.489650000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "role 5 O sign-difference at zero",
+      "lower": "0.025284080939",
+      "upper": "0.025284080940",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "role 6 C sign-difference derivative",
+      "lower": "1.944970000000",
+      "upper": "1.944970000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "role 6 C sign-difference at zero",
+      "lower": "0.014210000000",
+      "upper": "0.014210000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "role 6 O sign-difference derivative",
+      "lower": "1.612440000000",
+      "upper": "1.612440000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "role 6 O sign-difference at zero",
+      "lower": "0.025165919633",
+      "upper": "0.025165919634",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf positive-target primary cap at x=.4",
+      "lower": "0.021044621949",
+      "upper": "0.021044621950",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf positive-target primary decreasing",
+      "lower": "0.429084800000",
+      "upper": "0.429084800000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 2 primary outer X<0",
+      "lower": "1.137940000000",
+      "upper": "1.137940000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 2 primary outer Y>0",
+      "lower": "0.023310000000",
+      "upper": "0.023310000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 2 positive-target primary endpoint",
+      "lower": "1.282611965209",
+      "upper": "1.282611965210",
+      "threshold": "1.216",
+      "ok": true
+    },
+    {
+      "name": "Cf 3 primary outer X<0",
+      "lower": "0.531070000000",
+      "upper": "0.531070000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 3 primary outer Y>0",
+      "lower": "0.341660000000",
+      "upper": "0.341660000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 3 positive-target primary endpoint",
+      "lower": "1.318444254584",
+      "upper": "1.318444254585",
+      "threshold": "1.216",
+      "ok": true
+    },
+    {
+      "name": "Cf 6 primary outer X<0",
+      "lower": "0.622400000000",
+      "upper": "0.622400000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 6 primary outer Y>0",
+      "lower": "0.353560000000",
+      "upper": "0.353560000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 6 positive-target primary endpoint",
+      "lower": "1.275039791370",
+      "upper": "1.275039791371",
+      "threshold": "1.216",
+      "ok": true
+    },
+    {
+      "name": "Cf 7 primary outer X<0",
+      "lower": "0.429050000000",
+      "upper": "0.429050000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 7 primary outer Y>0",
+      "lower": "0.454960000000",
+      "upper": "0.454960000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 7 positive-target primary endpoint",
+      "lower": "1.301317455574",
+      "upper": "1.301317455575",
+      "threshold": "1.216",
+      "ok": true
+    },
+    {
+      "name": "Cf 14 primary outer X<0",
+      "lower": "0.840660000000",
+      "upper": "0.840660000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 14 primary outer Y>0",
+      "lower": "0.387680000000",
+      "upper": "0.387680000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 14 positive-target primary endpoint",
+      "lower": "1.217012956914",
+      "upper": "1.217012956915",
+      "threshold": "1.216",
+      "ok": true
+    },
+    {
+      "name": "Cf 15 primary outer X<0",
+      "lower": "0.832070000000",
+      "upper": "0.832070000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 15 primary outer Y>0",
+      "lower": "0.391920000000",
+      "upper": "0.391920000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 15 positive-target primary endpoint",
+      "lower": "1.216625708306",
+      "upper": "1.216625708307",
+      "threshold": "1.216",
+      "ok": true
+    },
+    {
+      "name": "Cf 20 primary outer X<0",
+      "lower": "0.622400000000",
+      "upper": "0.622400000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 20 primary outer Y>0",
+      "lower": "0.274740000000",
+      "upper": "0.274740000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 20 positive-target primary endpoint",
+      "lower": "1.363748909020",
+      "upper": "1.363748909021",
+      "threshold": "1.216",
+      "ok": true
+    },
+    {
+      "name": "Cf 21 primary outer X<0",
+      "lower": "0.436380000000",
+      "upper": "0.436380000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 21 primary outer Y>0",
+      "lower": "0.412440000000",
+      "upper": "0.412440000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 21 positive-target primary endpoint",
+      "lower": "1.279414985157",
+      "upper": "1.279414985158",
+      "threshold": "1.216",
+      "ok": true
+    },
+    {
+      "name": "Cf 0 negative-target primary decreasing",
+      "lower": "0.583675412222",
+      "upper": "0.583675412223",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 0 negative-target quarter baseline",
+      "lower": "1.340635772495",
+      "upper": "1.340635772496",
+      "threshold": "1.28",
+      "ok": true
+    },
+    {
+      "name": "Cf 4 negative-target primary decreasing",
+      "lower": "0.160644129322",
+      "upper": "0.160644129323",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 4 negative-target quarter baseline",
+      "lower": "1.286433593760",
+      "upper": "1.286433593761",
+      "threshold": "1.28",
+      "ok": true
+    },
+    {
+      "name": "Cf 11 negative-target primary decreasing",
+      "lower": "0.000137610310",
+      "upper": "0.000137610311",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 11 negative-target quarter baseline",
+      "lower": "1.369122199805",
+      "upper": "1.369122199806",
+      "threshold": "1.28",
+      "ok": true
+    },
+    {
+      "name": "Cf 12 negative-target primary decreasing",
+      "lower": "0.131995089997",
+      "upper": "0.131995089998",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 12 negative-target quarter baseline",
+      "lower": "1.328956852977",
+      "upper": "1.328956852978",
+      "threshold": "1.28",
+      "ok": true
+    },
+    {
+      "name": "Cf 19 negative-target primary decreasing",
+      "lower": "0.214196599330",
+      "upper": "0.214196599331",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 19 negative-target quarter baseline",
+      "lower": "1.354874111108",
+      "upper": "1.354874111109",
+      "threshold": "1.28",
+      "ok": true
+    },
+    {
+      "name": "Cf 23 negative-target primary decreasing",
+      "lower": "0.166563631600",
+      "upper": "0.166563631600",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Cf 23 negative-target quarter baseline",
+      "lower": "1.287242061507",
+      "upper": "1.287242061508",
+      "threshold": "1.28",
+      "ok": true
+    },
+    {
+      "name": "Cf negative-target upper-half loss",
+      "lower": "-0.203021746498",
+      "upper": "-0.203021746497",
+      "threshold": "-.21",
+      "ok": true
+    },
+    {
+      "name": "Cf negative-target continuation",
+      "lower": "1.070000000000",
+      "upper": "1.070000000000",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of positive-target side cap at 1.12",
+      "lower": "0.007463866884",
+      "upper": "0.007463866885",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of positive-target corner threshold",
+      "lower": "0.085424328996",
+      "upper": "0.085424328997",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 2 positive-primary 1.12 1.25",
+      "lower": "0.978583703084",
+      "upper": "0.978583703085",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 2 positive-primary 1.25 p",
+      "lower": "0.898109783924",
+      "upper": "0.898109783925",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 3 positive-primary 1.12 1.25",
+      "lower": "0.982827762559",
+      "upper": "0.982827762560",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 3 positive-primary 1.25 p",
+      "lower": "0.898112380949",
+      "upper": "0.898112380950",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 6 positive-primary 1.12 1.25",
+      "lower": "0.973793319731",
+      "upper": "0.973793319732",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 6 positive-primary 1.25 p",
+      "lower": "0.898112641104",
+      "upper": "0.898112641105",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 7 positive-primary 1.12 1.3",
+      "lower": "0.957894154786",
+      "upper": "0.957894154787",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 7 positive-primary 1.3 1.4",
+      "lower": "0.919700340519",
+      "upper": "0.919700340520",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 7 positive-primary 1.4 p",
+      "lower": "0.898101165491",
+      "upper": "0.898101165493",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 14 positive-primary 1.12 1.3",
+      "lower": "0.913507945085",
+      "upper": "0.913507945086",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 14 positive-primary 1.3 1.4",
+      "lower": "0.900485162983",
+      "upper": "0.900485162984",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 14 positive-primary 1.4 1.45",
+      "lower": "0.898485672509",
+      "upper": "0.898485672510",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 14 positive-primary 1.45 1.51",
+      "lower": "0.898257746399",
+      "upper": "0.898257746400",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 14 positive-primary 1.51 p",
+      "lower": "0.898103109402",
+      "upper": "0.898103109403",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 15 positive-primary 1.12 1.3",
+      "lower": "0.913258669797",
+      "upper": "0.913258669798",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 15 positive-primary 1.3 1.4",
+      "lower": "0.900321608165",
+      "upper": "0.900321608166",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 15 positive-primary 1.4 1.45",
+      "lower": "0.898367386397",
+      "upper": "0.898367386398",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 15 positive-primary 1.45 1.51",
+      "lower": "0.898312067283",
+      "upper": "0.898312067284",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 15 positive-primary 1.51 p",
+      "lower": "0.898109171714",
+      "upper": "0.898109171715",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 20 positive-primary 1.12 1.25",
+      "lower": "0.979112440301",
+      "upper": "0.979112440302",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 20 positive-primary 1.25 p",
+      "lower": "0.898107125855",
+      "upper": "0.898107125856",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 21 positive-primary 1.12 p",
+      "lower": "0.898104085447",
+      "upper": "0.898104085448",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 2 terminal multiplier >=g",
+      "lower": "0.067710000000",
+      "upper": "0.067710000000",
+      "threshold": "0",
+      "comparison": ">=",
+      "ok": true
+    },
+    {
+      "name": "Of 2 terminal multiplier <=1.14",
+      "lower": "0.025000000000",
+      "upper": "0.025000000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 3 terminal multiplier >=g",
+      "lower": "0.000000000000",
+      "upper": "-0.000000000000",
+      "threshold": "0",
+      "comparison": ">=",
+      "ok": true
+    },
+    {
+      "name": "Of 3 terminal multiplier <=1.14",
+      "lower": "0.001450000000",
+      "upper": "0.001450000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 6 terminal multiplier >=g",
+      "lower": "0.093350000000",
+      "upper": "0.093350000000",
+      "threshold": "0",
+      "comparison": ">=",
+      "ok": true
+    },
+    {
+      "name": "Of 6 terminal multiplier <=1.14",
+      "lower": "0.054700000000",
+      "upper": "0.054700000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 7 terminal multiplier >=g",
+      "lower": "0.000000000000",
+      "upper": "-0.000000000000",
+      "threshold": "0",
+      "comparison": ">=",
+      "ok": true
+    },
+    {
+      "name": "Of 7 terminal multiplier <=1.14",
+      "lower": "0.099270000000",
+      "upper": "0.099270000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 14 terminal multiplier >=g",
+      "lower": "0.000000000000",
+      "upper": "-0.000000000000",
+      "threshold": "0",
+      "comparison": ">=",
+      "ok": true
+    },
+    {
+      "name": "Of 14 terminal multiplier <=1.14",
+      "lower": "0.186760000000",
+      "upper": "0.186760000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 15 terminal multiplier >=g",
+      "lower": "0.000000000000",
+      "upper": "-0.000000000000",
+      "threshold": "0",
+      "comparison": ">=",
+      "ok": true
+    },
+    {
+      "name": "Of 15 terminal multiplier <=1.14",
+      "lower": "0.187310000000",
+      "upper": "0.187310000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 20 terminal multiplier >=g",
+      "lower": "0.039240000000",
+      "upper": "0.039240000000",
+      "threshold": "0",
+      "comparison": ">=",
+      "ok": true
+    },
+    {
+      "name": "Of 20 terminal multiplier <=1.14",
+      "lower": "0.012600000000",
+      "upper": "0.012600000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 21 terminal multiplier >=g",
+      "lower": "0.109670000000",
+      "upper": "0.109670000000",
+      "threshold": "0",
+      "comparison": ">=",
+      "ok": true
+    },
+    {
+      "name": "Of 21 terminal multiplier <=1.14",
+      "lower": "0.038600000000",
+      "upper": "0.038600000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of positive-target upper-half derivative",
+      "lower": "0.126317300000",
+      "upper": "0.126317300000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 0 negative-side lo 1.1",
+      "lower": "0.928395026602",
+      "upper": "0.928395026603",
+      "threshold": ".921",
+      "ok": true
+    },
+    {
+      "name": "Of 0 negative-side 1.1 p",
+      "lower": "0.921302267648",
+      "upper": "0.921302267649",
+      "threshold": ".921",
+      "ok": true
+    },
+    {
+      "name": "Of 11 negative-side lo 1.1",
+      "lower": "0.928347895016",
+      "upper": "0.928347895017",
+      "threshold": ".921",
+      "ok": true
+    },
+    {
+      "name": "Of 11 negative-side 1.1 p",
+      "lower": "0.931779418376",
+      "upper": "0.931779418377",
+      "threshold": ".921",
+      "ok": true
+    },
+    {
+      "name": "Of 4 side sine coefficient",
+      "lower": "0.490290000000",
+      "upper": "0.490290000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 4 side positive T all Bernstein coefficients",
+      "lower": "1.992945571202",
+      "upper": "1.992945571203",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 4 side squared radical majorant all Bernstein coefficients",
+      "lower": "0.030828372834",
+      "upper": "0.030828372835",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 12 side sine coefficient",
+      "lower": "1.207220000000",
+      "upper": "1.207220000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 12 side positive T all Bernstein coefficients",
+      "lower": "2.607227219835",
+      "upper": "2.607227219836",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 12 side squared radical majorant all Bernstein coefficients",
+      "lower": "0.017144668691",
+      "upper": "0.017144668692",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 19 side sine coefficient",
+      "lower": "1.225985000000",
+      "upper": "1.225985000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 19 side positive T all Bernstein coefficients",
+      "lower": "2.621943521334",
+      "upper": "2.621943521335",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 19 side squared radical majorant all Bernstein coefficients",
+      "lower": "0.016506323808",
+      "upper": "0.016506323809",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 23 side sine coefficient",
+      "lower": "1.013170000000",
+      "upper": "1.013170000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 23 side positive T all Bernstein coefficients",
+      "lower": "2.393531686317",
+      "upper": "2.393531686318",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 23 side squared radical majorant all Bernstein coefficients",
+      "lower": "0.037006581076",
+      "upper": "0.037006581077",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 0 late negative corner",
+      "lower": "0.903835730911",
+      "upper": "0.903835730913",
+      "threshold": ".903",
+      "ok": true
+    },
+    {
+      "name": "Of 4 late negative corner",
+      "lower": "0.903333429872",
+      "upper": "0.903333429873",
+      "threshold": ".903",
+      "ok": true
+    },
+    {
+      "name": "Of 11 late negative corner",
+      "lower": "0.921171366492",
+      "upper": "0.921171366493",
+      "threshold": ".903",
+      "ok": true
+    },
+    {
+      "name": "Of 12 late negative corner",
+      "lower": "0.954795206329",
+      "upper": "0.954795206330",
+      "threshold": ".903",
+      "ok": true
+    },
+    {
+      "name": "Of 19 late negative corner",
+      "lower": "0.955003354123",
+      "upper": "0.955003354124",
+      "threshold": ".903",
+      "ok": true
+    },
+    {
+      "name": "Of 23 late negative corner",
+      "lower": "0.905820915854",
+      "upper": "0.905820915855",
+      "threshold": ".903",
+      "ok": true
+    },
+    {
+      "name": "negative diagonal late derivative",
+      "lower": "0.098520769690",
+      "upper": "0.098520769691",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "early corner u lower first band",
+      "lower": "1.475777299317",
+      "upper": "1.475777299318",
+      "threshold": "1.47",
+      "ok": true
+    },
+    {
+      "name": "early corner u upper first band",
+      "lower": "-1.697902494508",
+      "upper": "-1.697902494507",
+      "threshold": "-17/10",
+      "ok": true
+    },
+    {
+      "name": "early corner u lower second band",
+      "lower": "1.328788960092",
+      "upper": "1.328788960093",
+      "threshold": "1.32",
+      "ok": true
+    },
+    {
+      "name": "early corner u upper second band",
+      "lower": "-1.539035301883",
+      "upper": "-1.539035301882",
+      "threshold": "-77/50",
+      "ok": true
+    },
+    {
+      "name": "Of 0 p/q lower",
+      "lower": "0.103696891250",
+      "upper": "0.103696891251",
+      "threshold": "-.263",
+      "ok": true
+    },
+    {
+      "name": "Of 0 p/q upper",
+      "lower": "-0.103696891251",
+      "upper": "-0.103696891250",
+      "threshold": "-253/1000",
+      "ok": true
+    },
+    {
+      "name": "Of 0 q lower",
+      "lower": "0.880740000000",
+      "upper": "0.880740000000",
+      "threshold": ".767",
+      "ok": true
+    },
+    {
+      "name": "Of 4 p/q lower",
+      "lower": "0.251941519858",
+      "upper": "0.251941519859",
+      "threshold": "-.263",
+      "ok": true
+    },
+    {
+      "name": "Of 4 p/q upper",
+      "lower": "-0.251941519859",
+      "upper": "-0.251941519858",
+      "threshold": "-253/1000",
+      "ok": true
+    },
+    {
+      "name": "Of 4 q lower",
+      "lower": "0.767440000000",
+      "upper": "0.767440000000",
+      "threshold": ".767",
+      "ok": true
+    },
+    {
+      "name": "Of 11 p/q lower",
+      "lower": "0.000000000000",
+      "upper": "-0.000000000000",
+      "threshold": "-.263",
+      "ok": true
+    },
+    {
+      "name": "Of 11 p/q upper",
+      "lower": "0.000000000000",
+      "upper": "-0.000000000000",
+      "threshold": "-253/1000",
+      "ok": true
+    },
+    {
+      "name": "Of 11 q lower",
+      "lower": "0.868840000000",
+      "upper": "0.868840000000",
+      "threshold": ".767",
+      "ok": true
+    },
+    {
+      "name": "Of 12 p/q lower",
+      "lower": "-0.252468451980",
+      "upper": "-0.252468451979",
+      "threshold": "-.263",
+      "ok": true
+    },
+    {
+      "name": "Of 12 p/q upper",
+      "lower": "0.252468451979",
+      "upper": "0.252468451980",
+      "threshold": "-253/1000",
+      "ok": true
+    },
+    {
+      "name": "Of 12 q lower",
+      "lower": "0.830480000000",
+      "upper": "0.830480000000",
+      "threshold": ".767",
+      "ok": true
+    },
+    {
+      "name": "Of 19 p/q lower",
+      "lower": "-0.261476902435",
+      "upper": "-0.261476902434",
+      "threshold": "-.263",
+      "ok": true
+    },
+    {
+      "name": "Of 19 p/q upper",
+      "lower": "0.261476902434",
+      "upper": "0.261476902435",
+      "threshold": "-253/1000",
+      "ok": true
+    },
+    {
+      "name": "Of 19 q lower",
+      "lower": "0.834720000000",
+      "upper": "0.834720000000",
+      "threshold": ".767",
+      "ok": true
+    },
+    {
+      "name": "Of 23 p/q lower",
+      "lower": "0.000000000000",
+      "upper": "-0.000000000000",
+      "threshold": "-.263",
+      "ok": true
+    },
+    {
+      "name": "Of 23 p/q upper",
+      "lower": "0.000000000000",
+      "upper": "-0.000000000000",
+      "threshold": "-253/1000",
+      "ok": true
+    },
+    {
+      "name": "Of 23 q lower",
+      "lower": "0.947660000000",
+      "upper": "0.947660000000",
+      "threshold": ".767",
+      "ok": true
+    },
+    {
+      "name": "D concavity uniform",
+      "lower": "7.583464158415",
+      "upper": "7.583464158416",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "radical t>1.01",
+      "lower": "1.012719112093",
+      "upper": "1.012719112094",
+      "threshold": "1.01",
+      "ok": true
+    },
+    {
+      "name": "early corner curvature ratio at 1.47",
+      "lower": "5.510682865784",
+      "upper": "5.510682865785",
+      "threshold": "9789/2500",
+      "ok": true
+    },
+    {
+      "name": "early corner curvature ratio at 1.7",
+      "lower": "4.116998027188",
+      "upper": "4.116998027189",
+      "threshold": "9789/2500",
+      "ok": true
+    },
+    {
+      "name": "early corner curvature ratio at 1.32",
+      "lower": "4.295237354264",
+      "upper": "4.295237354265",
+      "threshold": "9789/2500",
+      "ok": true
+    },
+    {
+      "name": "early corner curvature ratio at 1.54",
+      "lower": "3.971149826554",
+      "upper": "3.971149826555",
+      "threshold": "9789/2500",
+      "ok": true
+    },
+    {
+      "name": "first core-coordinate concavity",
+      "lower": "0.364000000000",
+      "upper": "0.364000000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "second core-coordinate concavity",
+      "lower": "0.104000000000",
+      "upper": "0.104000000000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "extended outer label monotone",
+      "lower": "0.632414417780",
+      "upper": "0.632414417781",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "diagonal contact K",
+      "lower": "1.124795574642",
+      "upper": "1.124795574643",
+      "threshold": "1.12479",
+      "ok": true
+    },
+    {
+      "name": "join contact K",
+      "lower": "1.173611111111",
+      "upper": "1.173611111112",
+      "threshold": "1.12479",
+      "ok": true
+    },
+    {
+      "name": "endpoint curvature E all Bernstein coefficients",
+      "lower": "1.265119724000",
+      "upper": "1.265119724000",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "endpoint curvature A all Bernstein coefficients",
+      "lower": "0.928417627118",
+      "upper": "0.928417627119",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "endpoint curvature squared bound all Bernstein coefficients",
+      "lower": "0.310357819678",
+      "upper": "0.310357819679",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 0 join contact reference completion",
+      "lower": "0.926218794285",
+      "upper": "0.926218794286",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 0 diag contact reference completion",
+      "lower": "0.898114752900",
+      "upper": "0.898114752901",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 4 join contact reference completion",
+      "lower": "0.907692992851",
+      "upper": "0.907692992852",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 4 diag contact reference completion",
+      "lower": "0.898117048798",
+      "upper": "0.898117048799",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 11 join contact reference completion",
+      "lower": "0.931511617684",
+      "upper": "0.931511617685",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 11 diag contact reference completion",
+      "lower": "0.898101173344",
+      "upper": "0.898101173345",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 12 join boundary derivative",
+      "lower": "0.024032022782",
+      "upper": "0.024032022783",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 12 join contact reference completion",
+      "lower": "0.906056905970",
+      "upper": "0.906056905971",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 12 diag boundary derivative",
+      "lower": "0.140672780014",
+      "upper": "0.140672780015",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 12 diag contact reference completion",
+      "lower": "0.898108602258",
+      "upper": "0.898108602259",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 19 join boundary derivative",
+      "lower": "0.025279764693",
+      "upper": "0.025279764694",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 19 join contact reference completion",
+      "lower": "0.905928100610",
+      "upper": "0.905928100611",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 19 diag boundary derivative",
+      "lower": "0.142661101979",
+      "upper": "0.142661101980",
+      "threshold": "0",
+      "ok": true
+    },
+    {
+      "name": "Of 19 diag contact reference completion",
+      "lower": "0.898110957785",
+      "upper": "0.898110957786",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 23 join contact reference completion",
+      "lower": "0.907547595798",
+      "upper": "0.907547595799",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 23 diag contact reference completion",
+      "lower": "0.898107383461",
+      "upper": "0.898107383462",
+      "threshold": "449/500",
+      "ok": true
+    },
+    {
+      "name": "Of 0 negative-target upper-half baseline",
+      "lower": "0.995580087852",
+      "upper": "0.995580087853",
+      "threshold": ".905",
+      "ok": true
+    },
+    {
+      "name": "Of 4 negative-target upper-half baseline",
+      "lower": "0.905454212610",
+      "upper": "0.905454212611",
+      "threshold": ".905",
+      "ok": true
+    },
+    {
+      "name": "Of 11 negative-target upper-half baseline",
+      "lower": "1.045008452589",
+      "upper": "1.045008452590",
+      "threshold": ".905",
+      "ok": true
+    },
+    {
+      "name": "Of 12 negative-target upper-half baseline",
+      "lower": "0.907728025328",
+      "upper": "0.907728025329",
+      "threshold": ".905",
+      "ok": true
+    },
+    {
+      "name": "Of 19 negative-target upper-half baseline",
+      "lower": "0.907600249820",
+      "upper": "0.907600249821",
+      "threshold": ".905",
+      "ok": true
+    },
+    {
+      "name": "Of 23 negative-target upper-half baseline",
+      "lower": "0.905428851015",
+      "upper": "0.905428851016",
+      "threshold": ".905",
+      "ok": true
+    },
+    {
+      "name": "negative-target upper-half derivative",
+      "lower": "0.537755833333",
+      "upper": "0.537755833334",
+      "threshold": "0",
+      "ok": true
+    }
+  ]
+}

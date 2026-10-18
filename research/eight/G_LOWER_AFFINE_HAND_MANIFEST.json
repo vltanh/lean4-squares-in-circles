@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "theorem": "No word0101011 boundary cycle at Q3.915534138 with u_G<=-4/5,u_E<=0 under physical center-order and frame-spread hypotheses",
+  "gamma_sum": "62839/10000",
+  "reserve_above_710_over_113": "807/1130000",
+  "arcs": 114,
+  "rows": 9087,
+  "angle_chains": 8240,
+  "polynomials": 25221,
+  "coefficients": 184288,
+  "files": [
+    {
+      "path": "G_LOWER_AFFINE_HAND_EXCLUSION.md",
+      "bytes": 9255,
+      "sha256": "540e659f7a51f86e2bfd0f3946891722faf27600d05d565d0b81470c0fc7eb05"
+    },
+    {
+      "path": "G_LOWER_AFFINE_HAND_DATA.json",
+      "bytes": 1110266,
+      "sha256": "619cf1f7f11aa9f82dd3a355df9a8d042f1d69403f25c53aaf1ac2bbe1dbf776"
+    },
+    {
+      "path": "G_LOWER_AFFINE_HAND_COMPACT_REPORT.json",
+      "bytes": 654615,
+      "sha256": "cb11ec4a315639b80ee7c74d8e6fb568c97dc1d895a8b172ae8474d2bcc65856"
+    },
+    {
+      "path": "verify_G_lower_affine_hand.js",
+      "bytes": 15356,
+      "sha256": "1bd04b7b8890f7008108489da6fdf24b947e472eb4873f7523994ce4b81b85ee"
+    },
+    {
+      "path": "replay_G_lower_hand.py",
+      "bytes": 1861,
+      "sha256": "19ea42c389a29aa84d24d01270f0cf381cc982693eca508879b2288d4a2d5138"
+    },
+    {
+      "path": "audit_G_lower_hand_assembly_independently.py",
+      "bytes": 6202,
+      "sha256": "9a78f6095fce8aabb0819b2554ae977855d79b33790e09fd1d7c34d7fc38937d"
+    },
+    {
+      "path": "G_LOWER_AFFINE_HAND_INDEPENDENT_ASSEMBLY.json",
+      "bytes": 1119,
+      "sha256": "c22b3adefdb6a7da91a5745a159fabcee6c838c902c3f523175bbfbbc7ba2acf"
+    },
+    {
+      "path": "G_LOWER_AFFINE_HAND_INDEPENDENT_AUDIT.md",
+      "bytes": 3044,
+      "sha256": "1e1245c185afc914ad2c81f2a2fcc3c922ceb98799e798ec87c8e6a340c1f829"
+    }
+  ],
+  "optional_full_replay": {
+    "path": "G_LOWER_AFFINE_HAND_ARITHMETIC.json",
+    "sha256": "ae78b786aa819f912897937708cfe7fd299d20a701e56041357ba8411bf0dc79",
+    "committed": false
+  },
+  "excluded_from_proof": "All discovery iterations, provisional fits and failed rows."
+}

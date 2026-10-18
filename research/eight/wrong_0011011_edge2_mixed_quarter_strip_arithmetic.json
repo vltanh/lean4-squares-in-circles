@@ -1,0 +1,737 @@
+{
+  "status": "PASS",
+  "scope": "All permitted mixed edge2 quarter-one transitions for |phi-pi/2|<=1/50; includes aligned prerequisites.",
+  "comparisons": 146,
+  "checks": [
+    {
+      "name": "Machin lower bound for pi",
+      "pass": true,
+      "gap": "21011/12547500000"
+    },
+    {
+      "name": "axis radical lower positive",
+      "pass": true,
+      "gap": "1914575671/1000000000"
+    },
+    {
+      "name": "axis radical squared lower",
+      "pass": true,
+      "gap": "14899759/1000000000000000000"
+    },
+    {
+      "name": "axis radical squared upper",
+      "pass": true,
+      "gap": "233917544201/10000000000000000000000"
+    },
+    {
+      "name": "outer diagonal lower positive",
+      "pass": true,
+      "gap": "13992140651/10000000000"
+    },
+    {
+      "name": "outer diagonal squared lower",
+      "pass": true,
+      "gap": "2633296199/100000000000000000000"
+    },
+    {
+      "name": "outer diagonal squared upper",
+      "pass": true,
+      "gap": "1157640649/39062500000000000000"
+    },
+    {
+      "name": "core diagonal lower positive",
+      "pass": true,
+      "gap": "5892556509/100000000000"
+    },
+    {
+      "name": "core diagonal squared lower",
+      "pass": true,
+      "gap": "94175596271/90000000000000000000000"
+    },
+    {
+      "name": "core diagonal squared upper",
+      "pass": true,
+      "gap": "117956438089/90000000000000000000000"
+    },
+    {
+      "name": "outer a=1 lower positive",
+      "pass": true,
+      "gap": "129058126439/100000000000"
+    },
+    {
+      "name": "outer a=1 squared lower",
+      "pass": true,
+      "gap": "55089179279/10000000000000000000000"
+    },
+    {
+      "name": "outer a=1 squared upper",
+      "pass": true,
+      "gap": "126891921/6250000000000000000"
+    },
+    {
+      "name": "a0<1.415",
+      "pass": true,
+      "gap": "42432899/100000000000"
+    },
+    {
+      "name": "d>.899",
+      "pass": true,
+      "gap": "2140651/10000000000"
+    },
+    {
+      "name": "d<.9",
+      "pass": true,
+      "gap": "4912093/6250000000"
+    },
+    {
+      "name": "core coordinate<.559",
+      "pass": true,
+      "gap": "7443489/100000000000"
+    },
+    {
+      "name": "b0>.790",
+      "pass": true,
+      "gap": "58126439/100000000000"
+    },
+    {
+      "name": "b0<.791",
+      "pass": true,
+      "gap": "1046839/2500000000"
+    },
+    {
+      "name": "a0-1<.415",
+      "pass": true,
+      "gap": "42432899/100000000000"
+    },
+    {
+      "name": "outer r>.261",
+      "pass": true,
+      "gap": "29574986639/100000000000000"
+    },
+    {
+      "name": "outer r'>.557",
+      "pass": true,
+      "gap": "6535801107634004859365001351265343/1000000000000000000000000000000000000"
+    },
+    {
+      "name": "r'>1.16 when a<=1",
+      "pass": true,
+      "gap": "3/5000"
+    },
+    {
+      "name": "r<.861 when b<=b0",
+      "pass": true,
+      "gap": "2296839/2500000000"
+    },
+    {
+      "name": "r>.86 when b>=b0",
+      "pass": true,
+      "gap": "58126439/100000000000"
+    },
+    {
+      "name": "L derivative positive",
+      "pass": true,
+      "gap": "2887/4000000"
+    },
+    {
+      "name": "L'/r decreasing numerator",
+      "pass": true,
+      "gap": "650412059/4000000000"
+    },
+    {
+      "name": "L'/r at b0 >1.08",
+      "pass": true,
+      "gap": "294116059389389274871377/86038750960000000000000000"
+    },
+    {
+      "name": "quarter E2 OC+ endpoint",
+      "pass": true,
+      "gap": "3376859407654390677/625000000000000000000000"
+    },
+    {
+      "name": "C3 minus side increasing",
+      "pass": true,
+      "gap": "18621/20000"
+    },
+    {
+      "name": "E2 OC- curvature>.6",
+      "pass": true,
+      "gap": "1521077/39062500"
+    },
+    {
+      "name": "G test radical lower positive",
+      "pass": true,
+      "gap": "140042707771/100000000000"
+    },
+    {
+      "name": "G test radical squared lower",
+      "pass": true,
+      "gap": "166296211559/10000000000000000000000"
+    },
+    {
+      "name": "G test radical squared upper",
+      "pass": true,
+      "gap": "7111825249/625000000000000000000"
+    },
+    {
+      "name": "G(.898)>.89778",
+      "pass": true,
+      "gap": "424673687789488683559/1500000000000000000000000000"
+    },
+    {
+      "name": "G'(.898)>-.0001",
+      "pass": true,
+      "gap": "302128675138585040136799949673093/9805979999986873248106000000000000000"
+    },
+    {
+      "name": "G'(.898)<.0001",
+      "pass": true,
+      "gap": "37706073376586162057726611694221/222863181817883482911500000000000000"
+    },
+    {
+      "name": "G strong convexity lower bound",
+      "pass": true,
+      "gap": "15599/120000000"
+    },
+    {
+      "name": "E2 CO+ curvature>.5",
+      "pass": true,
+      "gap": "1836623/25000000"
+    },
+    {
+      "name": "H2 test radical lower positive",
+      "pass": true,
+      "gap": "83146613731/50000000000"
+    },
+    {
+      "name": "H2 test radical squared lower",
+      "pass": true,
+      "gap": "67882259639/2500000000000000000000"
+    },
+    {
+      "name": "H2 test radical squared upper",
+      "pass": true,
+      "gap": "6150685489/156250000000000000000"
+    },
+    {
+      "name": "H2(.5725)>.89778",
+      "pass": true,
+      "gap": "2882691206051/500000000000000000"
+    },
+    {
+      "name": "H2' >-.0001",
+      "pass": true,
+      "gap": "281189470070361609579/1998716676250000000000000"
+    },
+    {
+      "name": "H2' <.0001",
+      "pass": true,
+      "gap": "24659194189270450087977/415733068655000000000000000"
+    },
+    {
+      "name": "H2 strong convexity lower bound",
+      "pass": true,
+      "gap": "12999/100000000"
+    },
+    {
+      "name": "outer O3- nonconstant coefficient positive",
+      "pass": true,
+      "gap": "4847853/20000000"
+    },
+    {
+      "name": "core C0+ <.583",
+      "pass": true,
+      "gap": "49621/100000000"
+    },
+    {
+      "name": "E2 CO- direct",
+      "pass": true,
+      "gap": "21369/200000"
+    },
+    {
+      "name": "C3- upper<.58",
+      "pass": true,
+      "gap": "35427/20000000"
+    },
+    {
+      "name": "C3+ lower",
+      "pass": true,
+      "gap": "1/100000"
+    },
+    {
+      "name": "O3+ lower>-.01451",
+      "pass": true,
+      "gap": "1/160000"
+    },
+    {
+      "name": "O4- lower>-.03",
+      "pass": true,
+      "gap": "9/78125"
+    },
+    {
+      "name": "C4+ upper<.58",
+      "pass": true,
+      "gap": "19471/100000000"
+    },
+    {
+      "name": "E3 CO target-negative direct",
+      "pass": true,
+      "gap": "12629/200000"
+    },
+    {
+      "name": "E3 OC source-positive direct",
+      "pass": true,
+      "gap": "15727/200000"
+    },
+    {
+      "name": "O3- derivative lower quadratic",
+      "pass": true,
+      "gap": "180453906299773/16002999900000000"
+    },
+    {
+      "name": "O4+ derivative lower quadratic",
+      "pass": true,
+      "gap": "23363370672471/2637979850000000"
+    },
+    {
+      "name": "O3- diagonal upper<.68",
+      "pass": true,
+      "gap": "5102371795728729836913/10000000000000000000000000"
+    },
+    {
+      "name": "E3 OC both-negative direct",
+      "pass": true,
+      "gap": "1291/8000"
+    },
+    {
+      "name": "E3 CO++ contact concavity",
+      "pass": true,
+      "gap": "98788111/125000000"
+    },
+    {
+      "name": "J at b0",
+      "pass": true,
+      "gap": "7795672569276395332077/250000000000000000000000000"
+    },
+    {
+      "name": "J at diagonal",
+      "pass": true,
+      "gap": "6748572791226226119/1000000000000000000000000"
+    },
+    {
+      "name": "H3''' negative after division by r'",
+      "pass": true,
+      "gap": "211496739/69950000"
+    },
+    {
+      "name": "H3 split radical lower positive",
+      "pass": true,
+      "gap": "5076273701/3125000000"
+    },
+    {
+      "name": "H3 split radical squared lower",
+      "pass": true,
+      "gap": "35762599/9765625000000000000"
+    },
+    {
+      "name": "H3 split radical squared upper",
+      "pass": true,
+      "gap": "288260615489/10000000000000000000000"
+    },
+    {
+      "name": "H3''(.63)>.2",
+      "pass": true,
+      "gap": "336014744910738649172098355360425060096635426881846493/43145461698053657389686695189671676950604460585792362500"
+    },
+    {
+      "name": "H3'(.63)>0",
+      "pass": true,
+      "gap": "2830993628296832812873/396583882890625000000000"
+    },
+    {
+      "name": "H3 test radical lower positive",
+      "pass": true,
+      "gap": "16421887833/10000000000"
+    },
+    {
+      "name": "H3 test radical squared lower",
+      "pass": true,
+      "gap": "366564111/100000000000000000000"
+    },
+    {
+      "name": "H3 test radical squared upper",
+      "pass": true,
+      "gap": "291781345561/10000000000000000000000"
+    },
+    {
+      "name": "H3(.604)>.897788",
+      "pass": true,
+      "gap": "1441228338780547889/15000000000000000000000000"
+    },
+    {
+      "name": "H3'(.604)>-.000013",
+      "pass": true,
+      "gap": "1694782281974947323/2736981305500000000000000"
+    },
+    {
+      "name": "H3'(.604)<.000013",
+      "pass": true,
+      "gap": "20840002766316967116519/821094391655000000000000000"
+    },
+    {
+      "name": "H3 strong convexity lower bound",
+      "pass": true,
+      "gap": "55199831/400000000000"
+    },
+    {
+      "name": "H3 at b0>.8978",
+      "pass": true,
+      "gap": "3387017707829185996231/750000000000000000000000000"
+    },
+    {
+      "name": "K curvature>.29",
+      "pass": true,
+      "gap": "200072597/100000000000"
+    },
+    {
+      "name": "K test radical lower positive",
+      "pass": true,
+      "gap": "33226344969/20000000000"
+    },
+    {
+      "name": "K test radical squared lower",
+      "pass": true,
+      "gap": "1008389039/400000000000000000000"
+    },
+    {
+      "name": "K test radical squared upper",
+      "pass": true,
+      "gap": "76763430929/2500000000000000000000"
+    },
+    {
+      "name": "K(.575)>.9008",
+      "pass": true,
+      "gap": "1567065952699/16000000000000000"
+    },
+    {
+      "name": "K'(.575)>-.003",
+      "pass": true,
+      "gap": "717761849801981890978103/166131724846000000000000000"
+    },
+    {
+      "name": "K'(.575)<.003",
+      "pass": true,
+      "gap": "279028497424009109021897/166131724845000000000000000"
+    },
+    {
+      "name": "K strong convexity lower bound",
+      "pass": true,
+      "gap": "909/290000"
+    },
+    {
+      "name": "cos(.02)>=.9998",
+      "pass": true,
+      "gap": "1/10000000"
+    },
+    {
+      "name": "quarter signed denominator positive",
+      "pass": true,
+      "gap": "1/1250"
+    },
+    {
+      "name": "OC axis1 impossible",
+      "pass": true,
+      "gap": "60823/150000"
+    },
+    {
+      "name": "OC axis2 impossible",
+      "pass": true,
+      "gap": "11651/30000"
+    },
+    {
+      "name": "core diagonal>.558",
+      "pass": true,
+      "gap": "92556509/100000000000"
+    },
+    {
+      "name": "OC3 positive core end infeasible",
+      "pass": true,
+      "gap": "1/8"
+    },
+    {
+      "name": "OC4 positive core end infeasible",
+      "pass": true,
+      "gap": "329271/2500000"
+    },
+    {
+      "name": "OC3 zero core at outer diagonal infeasible",
+      "pass": true,
+      "gap": "41/500"
+    },
+    {
+      "name": "OC4 zero core at outer diagonal infeasible",
+      "pass": true,
+      "gap": "53/600"
+    },
+    {
+      "name": "OC3 positive contact core coordinate<.5",
+      "pass": true,
+      "gap": "67/1000"
+    },
+    {
+      "name": "OC3 negative contact core coordinate<.13",
+      "pass": true,
+      "gap": "4101/5000000"
+    },
+    {
+      "name": "OC4 positive contact core coordinate<.5",
+      "pass": true,
+      "gap": "2197/30000"
+    },
+    {
+      "name": "OC4 negative contact core coordinate<.13",
+      "pass": true,
+      "gap": "10961/1500000"
+    },
+    {
+      "name": "core negative side derivative>.97",
+      "pass": true,
+      "gap": "163/312500"
+    },
+    {
+      "name": "OC3 positive-half derivative",
+      "pass": true,
+      "gap": "1822/3125"
+    },
+    {
+      "name": "OC3 negative-half positive target b>=.49",
+      "pass": true,
+      "gap": "19856003/625000000"
+    },
+    {
+      "name": "negative target OC3 forces a<1.029",
+      "pass": true,
+      "gap": "3971/5000000"
+    },
+    {
+      "name": "a(outer b=.75)>1.03",
+      "pass": true,
+      "gap": "61/5000"
+    },
+    {
+      "name": "OC3 negative-half negative target derivative sign",
+      "pass": true,
+      "gap": "84903/400000"
+    },
+    {
+      "name": "small OC split radical lower positive",
+      "pass": true,
+      "gap": "85666504539/50000000000"
+    },
+    {
+      "name": "small OC split radical squared lower",
+      "pass": true,
+      "gap": "69492397479/2500000000000000000000"
+    },
+    {
+      "name": "small OC split radical squared upper",
+      "pass": true,
+      "gap": "254601529/6250000000000000000"
+    },
+    {
+      "name": "small OC aligned endpoint>.942",
+      "pass": true,
+      "gap": "40813470258721/100000000000000000"
+    },
+    {
+      "name": "small OC whole strip",
+      "pass": true,
+      "gap": "487/20000"
+    },
+    {
+      "name": "OC4 positive F_e<.102",
+      "pass": true,
+      "gap": "12220153/37500000000"
+    },
+    {
+      "name": "OC4 negative F_e>1.065",
+      "pass": true,
+      "gap": "1/30000"
+    },
+    {
+      "name": "OC4 positive-half cost derivative",
+      "pass": true,
+      "gap": "558547/625000"
+    },
+    {
+      "name": "OC4 negative-half cost derivative",
+      "pass": true,
+      "gap": "661/20000"
+    },
+    {
+      "name": "OC3 zero-core unique root, outer axis",
+      "pass": true,
+      "gap": "2021463779329/5000000000000"
+    },
+    {
+      "name": "OC3 zero-core root a<1.029",
+      "pass": true,
+      "gap": "3971/5000000"
+    },
+    {
+      "name": "OC3 zero-core root a>.982",
+      "pass": true,
+      "gap": "1/10000000"
+    },
+    {
+      "name": "a(.83)<.982",
+      "pass": true,
+      "gap": "6203/125000"
+    },
+    {
+      "name": "OC3 zero-core root r>.817",
+      "pass": true,
+      "gap": "807/1000000"
+    },
+    {
+      "name": "OC3 zero-core root r<.9",
+      "pass": true,
+      "gap": "19/5000"
+    },
+    {
+      "name": "outer L' global upper<1.073",
+      "pass": true,
+      "gap": "821/1000000"
+    },
+    {
+      "name": "OC3 zero-core negative-half derivative sign",
+      "pass": true,
+      "gap": "184227/4000000"
+    },
+    {
+      "name": "OC3 zero-core positive-half derivative sign",
+      "pass": true,
+      "gap": "2213733/5000000"
+    },
+    {
+      "name": "L'/r global lower>.972",
+      "pass": true,
+      "gap": "31837/50000000"
+    },
+    {
+      "name": "L'/r global upper<3",
+      "pass": true,
+      "gap": "184626808581/20000000000000"
+    },
+    {
+      "name": "OC4 zero-core a lower above diagonal",
+      "pass": true,
+      "gap": "1670986279/18750000000"
+    },
+    {
+      "name": "OC4 zero-core a upper below axis",
+      "pass": true,
+      "gap": "1178727013/3000000000"
+    },
+    {
+      "name": "OC4 zero-core negative-half derivative sign",
+      "pass": true,
+      "gap": "215347/5000000"
+    },
+    {
+      "name": "OC4 zero-core positive-half derivative sign",
+      "pass": true,
+      "gap": "18/25"
+    },
+    {
+      "name": "CO target-negative whole strip",
+      "pass": true,
+      "gap": "17369/200000"
+    },
+    {
+      "name": "CO+ axis3 impossible",
+      "pass": true,
+      "gap": "60823/150000"
+    },
+    {
+      "name": "CO+ axis4 impossible",
+      "pass": true,
+      "gap": "11651/30000"
+    },
+    {
+      "name": "CO+ axis1 contact on core side",
+      "pass": true,
+      "gap": "67/1000"
+    },
+    {
+      "name": "CO+ axis2 every feasible core on side",
+      "pass": true,
+      "gap": "2197/30000"
+    },
+    {
+      "name": "CO+ axis1 positive-half derivative",
+      "pass": true,
+      "gap": "146019/250000"
+    },
+    {
+      "name": "CO+ axis1 negative-half B>=.462 derivative sign",
+      "pass": true,
+      "gap": "24290139/250000000000"
+    },
+    {
+      "name": "small CO split radical lower positive",
+      "pass": true,
+      "gap": "34584135091/20000000000"
+    },
+    {
+      "name": "small CO split radical squared lower",
+      "pass": true,
+      "gap": "7462421719/400000000000000000000"
+    },
+    {
+      "name": "small CO split radical squared upper",
+      "pass": true,
+      "gap": "9721729/610351562500000000"
+    },
+    {
+      "name": "small CO aligned endpoint>.9093",
+      "pass": true,
+      "gap": "3182906398441/39062500000000000"
+    },
+    {
+      "name": "small CO aligned derivative negative",
+      "pass": true,
+      "gap": "14142140541307007104977417/69168270182000000000000000"
+    },
+    {
+      "name": "CO+ axis1 negative-half derivative upper<.481",
+      "pass": true,
+      "gap": "801019/1000000000"
+    },
+    {
+      "name": "small CO whole strip",
+      "pass": true,
+      "gap": "203/100000"
+    },
+    {
+      "name": "CO+ axis2 positive-half derivative",
+      "pass": true,
+      "gap": "44696969/50000000"
+    },
+    {
+      "name": "CO+ axis2 negative-half derivative sign",
+      "pass": true,
+      "gap": "2147953/20000000"
+    },
+    {
+      "name": "O3+ maximum<.64805",
+      "pass": true,
+      "gap": "37346376895847336407/3906250000000000000000000"
+    },
+    {
+      "name": "CO+ zero-core-coordinate exit cost",
+      "pass": true,
+      "gap": "769/200000"
+    }
+  ]
+}

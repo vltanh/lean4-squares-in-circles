@@ -1,0 +1,292 @@
+{
+  "status": "PASS",
+  "checks": 71,
+  "min_scaled_margin": "3959242",
+  "rows": [
+    {
+      "name": "d lower",
+      "margin": "214065109"
+    },
+    {
+      "name": "d upper",
+      "margin": "785934890"
+    },
+    {
+      "name": "a0 lower",
+      "margin": "75671003"
+    },
+    {
+      "name": "a0 upper",
+      "margin": "424328996"
+    },
+    {
+      "name": "D0 upper",
+      "margin": "700442661"
+    },
+    {
+      "name": "Dd upper",
+      "margin": "14010156430"
+    },
+    {
+      "name": "Dd lower",
+      "margin": "1989843550"
+    },
+    {
+      "name": "Dhalf lower",
+      "margin": "14411061"
+    },
+    {
+      "name": "Dphalf abs",
+      "margin": "57162687"
+    },
+    {
+      "name": "Dphalf negative",
+      "margin": "31042837306"
+    },
+    {
+      "name": "global D lower via curvature",
+      "margin": "58197500"
+    },
+    {
+      "name": "D .1 upper",
+      "margin": "29081236458"
+    },
+    {
+      "name": "D .85 upper",
+      "margin": "1600141264"
+    },
+    {
+      "name": "D .2 upper",
+      "margin": "9649226242"
+    },
+    {
+      "name": "D .76 upper",
+      "margin": "25360299685"
+    },
+    {
+      "name": "speed .15 square",
+      "margin": "5967362082"
+    },
+    {
+      "name": "speed .3 square",
+      "margin": "9723746364"
+    },
+    {
+      "name": "global positive speed square",
+      "margin": "16051342006"
+    },
+    {
+      "name": "positive derivative middle product",
+      "margin": "41200000000"
+    },
+    {
+      "name": "positive derivative high product",
+      "margin": "12160000000"
+    },
+    {
+      "name": "positive derivative tail product",
+      "margin": "107500000000"
+    },
+    {
+      "name": "a .15 upper",
+      "margin": "1016318958"
+    },
+    {
+      "name": "a .3 upper",
+      "margin": "138126817"
+    },
+    {
+      "name": "cos .7 lower",
+      "margin": "840765277"
+    },
+    {
+      "name": "sin .7 upper",
+      "margin": "766083332"
+    },
+    {
+      "name": "cos .25 upper",
+      "margin": "87239583"
+    },
+    {
+      "name": "sin .25 lower",
+      "margin": "3959242"
+    },
+    {
+      "name": "b .3 .7 lower",
+      "margin": "30350000000"
+    },
+    {
+      "name": "b .15 .7 lower",
+      "margin": "6250000000"
+    },
+    {
+      "name": "b 0 .25 upper",
+      "margin": "1747300000"
+    },
+    {
+      "name": "Dprime .15 negative",
+      "margin": "1506836095887"
+    },
+    {
+      "name": "L .15 chord",
+      "margin": "2104504819"
+    },
+    {
+      "name": "D .6 below c",
+      "margin": "373629132830"
+    },
+    {
+      "name": "Dprime .6",
+      "margin": "38879928979"
+    },
+    {
+      "name": "F .6 lower",
+      "margin": "58056756019"
+    },
+    {
+      "name": "F0 lower",
+      "margin": "199220000000"
+    },
+    {
+      "name": "F .85 lower",
+      "margin": "11633279"
+    },
+    {
+      "name": "Fprime .85 negative abs",
+      "margin": "381955915"
+    },
+    {
+      "name": "Fprime .85 positive abs",
+      "margin": "9618044077"
+    },
+    {
+      "name": "F global strong convex",
+      "margin": "5000000"
+    },
+    {
+      "name": "small positive box",
+      "margin": "97902813"
+    },
+    {
+      "name": "D .4 lower",
+      "margin": "3839662517"
+    },
+    {
+      "name": "D .6 lower",
+      "margin": "388769978"
+    },
+    {
+      "name": "Dprime .4 negative",
+      "margin": "517836011166"
+    },
+    {
+      "name": "no low B stationary middle",
+      "margin": "584641400"
+    },
+    {
+      "name": "no low B stationary outside",
+      "margin": "17453135600"
+    },
+    {
+      "name": "D .56 lower",
+      "margin": "9151517"
+    },
+    {
+      "name": "Dprime .56 lower",
+      "margin": "9005897502"
+    },
+    {
+      "name": "D .66 lower",
+      "margin": "64778944"
+    },
+    {
+      "name": "Dprime .66 lower",
+      "margin": "4879754988"
+    },
+    {
+      "name": "speed derivative .56",
+      "margin": "212724000000"
+    },
+    {
+      "name": "speed derivative .66",
+      "margin": "1348308000000"
+    },
+    {
+      "name": "stationary b .56 impossible",
+      "margin": "5513363788"
+    },
+    {
+      "name": "stationary b .66 impossible",
+      "margin": "4589620100"
+    },
+    {
+      "name": "D .67 lower",
+      "margin": "66578289"
+    },
+    {
+      "name": "ratio .7 .56 upper",
+      "margin": "856708399"
+    },
+    {
+      "name": "D .7 lower",
+      "margin": "32313645"
+    },
+    {
+      "name": "ratio .7 .66 upper",
+      "margin": "598600910"
+    },
+    {
+      "name": "Dprime .7 lower",
+      "margin": "27770335957"
+    },
+    {
+      "name": "ratio derivative global upper",
+      "margin": "2578562058"
+    },
+    {
+      "name": "boundary d speed positive",
+      "margin": "1631455360000"
+    },
+    {
+      "name": "x .7 infeasible",
+      "margin": "194956000000"
+    },
+    {
+      "name": "sin .7 coarse lower",
+      "margin": "217576527"
+    },
+    {
+      "name": "cos .7 coarse upper",
+      "margin": "157804958"
+    },
+    {
+      "name": "cos .5 lower",
+      "margin": "82465277"
+    },
+    {
+      "name": "sin .5 upper",
+      "margin": "72916666"
+    },
+    {
+      "name": "negative phi wrong primary",
+      "margin": "271836000000"
+    },
+    {
+      "name": "positive phi <= .5 wrong primary",
+      "margin": "121302000000"
+    },
+    {
+      "name": "a .6 lower",
+      "margin": "70815596"
+    },
+    {
+      "name": "positive phi B<=.6 wrong primary",
+      "margin": "72627200000"
+    },
+    {
+      "name": "primary far lower cost",
+      "margin": "41650000000"
+    }
+  ]
+}
+

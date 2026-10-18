@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "replayed_fixed_comparisons": 166,
+  "replay_byte_identical": true,
+  "independent_polynomial_degree": 8,
+  "independent_polynomial_coefficients": 9,
+  "independent_printed_bounds": 9,
+  "independent_coarse_checks": 5,
+  "label_binding": "Exact role3 C+ and role4 O+ rows match the shared rational table",
+  "sha256": {
+    "WRONG_0011011_EDGE3_POSITIVE_CORE_TO_POSITIVE_OUTER_HAND_PROOF.md": "ab289916a84b770614f16bbd10b28345e94d79fc661e64e59f944539a019cc07",
+    "verify_wrong_0011011_edge3_positive_core_to_positive_outer.js": "e303e278db554dbfd8e34bf9009bc37bbef7b05e9cb0c8db2e9138997f0e59d9",
+    "wrong_0011011_edge3_positive_core_to_positive_outer_arithmetic.json": "9324181309dcd99f77b9dc192c103d11146b16492365c48a06a8f14d960ccfaf"
+  }
+}

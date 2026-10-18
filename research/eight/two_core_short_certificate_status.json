@@ -1,0 +1,8 @@
+{
+  "status": "CERTIFIED",
+  "data": "two_core_short_pair_data.json",
+  "data_sha256": "9b20d5185ce194017521dd7c9c252dc278a216258c6539677c3a6521a9459f6b",
+  "manifest": "two_core_short_pair_logs_checked/manifest.json",
+  "manifest_sha256": "a85327adafc727f27b751c294e45be1d23c7c9d56fb4d9fe1914ac424828f5c6",
+  "proved_word_exclusion": "COCOOOO"
+}

@@ -1,0 +1,68 @@
+{
+  "status": "PASS_INDEPENDENT_DOMAIN_AND_CHARGE_ASSEMBLY",
+  "scope": "Full-SAT first mismatch budget, with only G/T/E tangent cuts; no H/D tangent, small-mismatch or selected-owner premise.",
+  "Q": "3.915534138",
+  "word": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1
+  ],
+  "cuts": {
+    "1": [
+      "-4/5",
+      "-1/20"
+    ],
+    "4": [
+      "1/20",
+      "4/5"
+    ],
+    "6": [
+      "-1",
+      "0"
+    ]
+  },
+  "arcs": 462,
+  "state_domains": 22,
+  "angle_chains": 121808,
+  "fixed_rows": 129031,
+  "polynomials": 354720,
+  "nonnegative_coefficient_bounds": 2961120,
+  "least_strict_cost_coefficient": "642432521/100000000000000",
+  "charged_edges": [
+    0,
+    2,
+    3,
+    4,
+    5
+  ],
+  "beta": "99/5000",
+  "gamma": "89727/100000",
+  "width_chord_coefficient": "29/100",
+  "width_endpoint_reserve": "22020061/14400000000",
+  "resulting_S_upper": "2/5",
+  "contraction_reserve": "271/282500000",
+  "zero_quarter_edges": [
+    0,
+    2,
+    4
+  ],
+  "excluded_primary_axes": [
+    2,
+    4
+  ],
+  "universal_primary_margin_upper": "-711/20000",
+  "atan_method": "atan(t)=atan(1/2)+atan((2t-1)/(t+2)); direct alternating series with terms 0..60/61 and outward denominator 10^26",
+  "sha256": {
+    "CANDIDATE_COARSE_MISMATCH_HAND_DATA.json": "ffa48df0d02e18880314907a72a70fcc6aaceea4ee1060ea76b4fdb04c23a5fa",
+    "CANDIDATE_COARSE_MISMATCH_HAND_COMPACT_REPORT.json": "995c1c652957c00ac0aa40e0a3dede26db689e15e281e78dac2b5ae8091f963f",
+    "verify_candidate_coarse_mismatch_hand.js": "6af3d41fe7d404da7dd286c46644160f5444edd3028d864701266e9a4cd18697"
+  },
+  "unchanged_inputs": true,
+  "full_coefficient_output_hashes": {
+    "CANDIDATE_COARSE_MISMATCH_HAND_ARITHMETIC.json": "9e44e1fe7a0df8c7f2f4e7203a2c5f5f154fd07322852574539ccddb6df19b11"
+  }
+}

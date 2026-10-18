@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "theorem": "No candidate word0101011 boundary cycle at Q3.915534138 with G[-4/5,-1/20],T[-1,1/20],E[-1,0] under physical center-order and frame-spread hypotheses",
+  "gamma_sum": "3927/625",
+  "reserve_above_710_over_113": "1/70625",
+  "arcs": 303,
+  "rows": 49971,
+  "angle_chains": 47168,
+  "polynomials": 132139,
+  "coefficients": 857343,
+  "files": [
+    {
+      "path": "T_LOWER_AFFINE_HAND_EXCLUSION.md",
+      "bytes": 9882,
+      "sha256": "d542001bc9e8b7d110d22d6bf259ae2d7a2d0c4712359e65a6b72082e84f1b3c"
+    },
+    {
+      "path": "T_LOWER_AFFINE_HAND_DATA.json",
+      "bytes": 6075272,
+      "sha256": "d09d5eed09b0297139d13be0506fd108df3b34f27048670fd7f10b916d6b6dd3"
+    },
+    {
+      "path": "T_LOWER_AFFINE_HAND_COMPACT_REPORT.json",
+      "bytes": 3438992,
+      "sha256": "9a7b186298bd8d75fd2ce7f22c42b4b62c3f05b14b9df3ef47077a0463873666"
+    },
+    {
+      "path": "verify_T_lower_affine_hand.js",
+      "bytes": 15356,
+      "sha256": "1bd04b7b8890f7008108489da6fdf24b947e472eb4873f7523994ce4b81b85ee"
+    },
+    {
+      "path": "replay_T_lower_hand.py",
+      "bytes": 1861,
+      "sha256": "1d6d5110c26f377f92cb8443730565dbc0b014f883d38060dc2bae6550a1cfde"
+    },
+    {
+      "path": "audit_T_lower_hand_assembly.py",
+      "bytes": 6213,
+      "sha256": "9203370de006f03e597b4e24e5807fef733b6218f2c87ebd12969018234bef74"
+    },
+    {
+      "path": "T_LOWER_AFFINE_HAND_ASSEMBLY_AUDIT.json",
+      "bytes": 1157,
+      "sha256": "5b030815f6d911a0bafca8722c879d8f99cd0419543e9b931dfc8e46a4cd712a"
+    },
+    {
+      "path": "audit_T_lower_hand_assembly_independently.py",
+      "bytes": 6322,
+      "sha256": "c85286bd197b56149b6e5232472c610b0c6b438cf2958904bc98711aa9114184"
+    },
+    {
+      "path": "T_LOWER_AFFINE_HAND_INDEPENDENT_ASSEMBLY.json",
+      "bytes": 1157,
+      "sha256": "5b030815f6d911a0bafca8722c879d8f99cd0419543e9b931dfc8e46a4cd712a"
+    },
+    {
+      "path": "T_LOWER_AFFINE_HAND_INDEPENDENT_AUDIT.md",
+      "bytes": 4968,
+      "sha256": "f883df6095559e62b70db598ec017579513c4eb16f511116ab35098f0a6535b4"
+    }
+  ],
+  "optional_full_replay": {
+    "path": "T_LOWER_AFFINE_HAND_ARITHMETIC.json",
+    "sha256": "955d268b626f278059698cbe6c08ec90076c0260bd6b696925b1fff71349cd74",
+    "committed": false
+  },
+  "excluded_from_proof": "All discovery iterations, provisional fits and failed rows."
+}

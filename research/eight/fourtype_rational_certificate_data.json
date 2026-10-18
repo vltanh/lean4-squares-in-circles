@@ -1,0 +1,158 @@
+{
+  "status": "CERTIFIED: all40 closed pair branches passed exact dyadic verification with undefined-behavior checks",
+  "Q": [
+    9789,
+    2500
+  ],
+  "core_radius": [
+    1,
+    12
+  ],
+  "coordinate": "t=tan(alpha), odd potential extension",
+  "types": [
+    "core",
+    "outer 0<=abs(t)<=1/4",
+    "outer 1/4<=abs(t)<=3/7",
+    "outer 3/7<=abs(t)<=1"
+  ],
+  "positive_domains": [
+    [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    [
+      [
+        1,
+        4
+      ],
+      [
+        3,
+        7
+      ]
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        1,
+        1
+      ]
+    ]
+  ],
+  "beta": [
+    9,
+    50
+  ],
+  "K": 8,
+  "psi_numerators": [
+    [
+      0,
+      4963699,
+      8978948,
+      12327199,
+      14841828,
+      8212593,
+      -5496777,
+      -2591030,
+      0
+    ],
+    [
+      0,
+      -1166957,
+      -2242117,
+      -3190746,
+      -3838175,
+      -4292398,
+      -4663542,
+      -4951387,
+      -5168609
+    ],
+    [
+      -5846760,
+      -6217415,
+      -5611024,
+      -6755028,
+      -6673340,
+      -6247421,
+      -5827636,
+      -5445707,
+      -5034897
+    ],
+    [
+      -6028360,
+      -5413423,
+      -4267209,
+      -3424593,
+      -2597544,
+      -1806376,
+      -1103832,
+      -526867,
+      0
+    ]
+  ],
+  "psi_denominator": 100000000,
+  "gamma_numerators": [
+    [
+      910793,
+      910782,
+      900470,
+      883157
+    ],
+    [
+      910782,
+      910793,
+      900481,
+      883146
+    ],
+    [
+      900470,
+      900481,
+      890169,
+      893458
+    ],
+    [
+      883157,
+      883146,
+      893458,
+      910793
+    ]
+  ],
+  "gamma_denominator": 1000000,
+  "min_seven_sum_numerator": 6209669,
+  "min_seven_word": [
+    0,
+    2,
+    3,
+    1,
+    3,
+    1,
+    3
+  ],
+  "rational_margin": [
+    19848893,
+    19097000000
+  ],
+  "rational_margin_decimal": 0.0010393723097868776,
+  "notes": "Independent one-sided outer potential values at t cuts. Every positive domain has 8 equal affine pieces. Reflection defines psi(-t)=-psi(t). Closed branches may be verified separately. Six noncritical bounds deliberately weakened; the four-type loop/triangle proof and final reserve are unchanged.",
+  "manifest": "fourtype_pair_logs_checked/manifest.json",
+  "manifest_sha256": "6608f5e8ce9c482a73392b27cb714311fc38d760a13ecbdfae455fc5855d6565",
+  "proof_standard": "Exact computer-assisted continuous certificate. Hand conversion and Lean formalization are not supplied."
+}
