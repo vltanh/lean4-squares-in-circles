@@ -1,76 +1,19 @@
 {
-  "schema": "eight-affine-v1",
-  "status": "raw-data-and-counts-uncompiled",
+  "schema": "eight-affine-single-source-v2",
+  "source_commit": "741c78b1f8c2922fa520304ef00dbe7c319388b7",
+  "status": "compact-source-uncompiled",
+  "rows": 660370,
+  "verification": "not executed",
   "tables": [
-    {
-      "module": "CandidateCoarseMismatch",
-      "source": "CANDIDATE_COARSE_MISMATCH_HAND_DATA.json",
-      "rows": 129031,
-      "arcs": 462,
-      "chunks": 32
-    },
-    {
-      "module": "DUpperAffine",
-      "source": "D_UPPER_AFFINE_HAND_DATA.json",
-      "rows": 24197,
-      "arcs": 199,
-      "chunks": 6
-    },
-    {
-      "module": "GLowerAffine",
-      "source": "G_LOWER_AFFINE_HAND_DATA.json",
-      "rows": 9087,
-      "arcs": 114,
-      "chunks": 3
-    },
-    {
-      "module": "GUpperAffine",
-      "source": "G_UPPER_AFFINE_HAND_DATA.json",
-      "rows": 9796,
-      "arcs": 122,
-      "chunks": 3
-    },
-    {
-      "module": "HLowerAffine",
-      "source": "H_LOWER_AFFINE_HAND_DATA.json",
-      "rows": 48050,
-      "arcs": 279,
-      "chunks": 12
-    },
-    {
-      "module": "Mismatch015To001Affine",
-      "source": "MISMATCH_015_TO_001_AFFINE_HAND_DATA.json",
-      "rows": 144709,
-      "arcs": 456,
-      "chunks": 36
-    },
-    {
-      "module": "Mismatch01To015Affine",
-      "source": "MISMATCH_01_TO_015_AFFINE_HAND_DATA.json",
-      "rows": 107196,
-      "arcs": 335,
-      "chunks": 27
-    },
-    {
-      "module": "Mismatch026To01Affine",
-      "source": "MISMATCH_026_TO_01_AFFINE_HAND_DATA.json",
-      "rows": 131255,
-      "arcs": 401,
-      "chunks": 33
-    },
-    {
-      "module": "TLowerAffine",
-      "source": "T_LOWER_AFFINE_HAND_DATA.json",
-      "rows": 49971,
-      "arcs": 303,
-      "chunks": 13
-    },
-    {
-      "module": "TUpperAffine",
-      "source": "T_UPPER_AFFINE_HAND_DATA.json",
-      "rows": 7078,
-      "arcs": 102,
-      "chunks": 2
-    }
+    {"module":"CandidateCoarseMismatch","source":"CANDIDATE_COARSE_MISMATCH_HAND_DATA.json","rows":129031,"arcs":462},
+    {"module":"DUpperAffine","source":"D_UPPER_AFFINE_HAND_DATA.json","rows":24197,"arcs":199},
+    {"module":"GLowerAffine","source":"G_LOWER_AFFINE_HAND_DATA.json","rows":9087,"arcs":114},
+    {"module":"GUpperAffine","source":"G_UPPER_AFFINE_HAND_DATA.json","rows":9796,"arcs":122},
+    {"module":"HLowerAffine","source":"H_LOWER_AFFINE_HAND_DATA.json","rows":48050,"arcs":279},
+    {"module":"Mismatch015To001Affine","source":"MISMATCH_015_TO_001_AFFINE_HAND_DATA.json","rows":144709,"arcs":456},
+    {"module":"Mismatch01To015Affine","source":"MISMATCH_01_TO_015_AFFINE_HAND_DATA.json","rows":107196,"arcs":335},
+    {"module":"Mismatch026To01Affine","source":"MISMATCH_026_TO_01_AFFINE_HAND_DATA.json","rows":131255,"arcs":401},
+    {"module":"TLowerAffine","source":"T_LOWER_AFFINE_HAND_DATA.json","rows":49971,"arcs":303},
+    {"module":"TUpperAffine","source":"T_UPPER_AFFINE_HAND_DATA.json","rows":7078,"arcs":102}
   ]
 }
