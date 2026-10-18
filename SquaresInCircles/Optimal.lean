@@ -1,14 +1,15 @@
 module
 
-public import SquaresInCircles.Eight.Theorem
+public import SquaresInCircles.StatementEight
 
 /-!
-# The public radius and model registries, through eight squares
+# The pure public radius and model registries, through eight squares
 
-The elementary square definitions remain in Geometry. The eight-square entry
-depends on the selected stationary root and its five-parameter equality
-family, so these two registries live downstream of the individual cases.
-The n=8 extension is an uncompiled source draft.
+The elementary square definitions remain in Geometry. The eight-square
+entry uses the explicit stationary predicate and five-parameter equality
+family in StatementEight. No case proof is imported here. The downstream
+StatementLink module proves these definitions agree with the analytically
+selected root and the family used in Eight.optimum.
 -/
 
 @[expose] public section
@@ -25,7 +26,7 @@ def optimalRadius : ℕ → ℝ
   | 5 => Five.radius
   | 6 => Six.radius
   | 7 => Seven.radius
-  | 8 => Eight.radius
+  | 8 => EightStatement.radius
   | _ => 0
 
 /-- All normalized optimum models. At eight squares the two exterior
@@ -40,7 +41,7 @@ def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
   | 5 => {Five.model}
   | 6 => {Six.model}
   | 7 => Set.range Seven.columnModel
-  | 8 => Eight.models
+  | 8 => EightStatement.models
   | _ => ∅
 
 end SquaresInCircles

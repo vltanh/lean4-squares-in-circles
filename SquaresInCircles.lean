@@ -23,7 +23,12 @@ At `n = 8`, five outer anchors are fixed, two exterior squares slide, and
 the central square translates and rotates in an explicit admissible domain.
 Both orientations of this five-parameter family are included. The public
 registries `optimalRadius` and `optimalPackings` are in `Optimal.lean`;
-primitive square geometry remains in `Geometry.lean`.
+primitive square geometry remains in `Geometry.lean`. The eighth-case
+statement data in `StatementEight.lean` use ordinary classical selection
+from explicit stationary equations, with existence, uniqueness, and agreement
+with the analytic root proved in `Eight/ExactFamily/StatementLink.lean`.
+Thus the public definitions and their Mathlib-only Challenge mirror do not
+depend on importing the case proofs.
 
 The n=8 extension is delivered as uncompiled draft Lean source. Its proof
 scripts and generated rational certificates have not been compiled or
@@ -58,7 +63,8 @@ def optimum : (n : ℕ) → 1 ≤ n ∧ n ≤ 8 → Optimum n
 lemma optimum_spec (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 8) :
     (optimum n hn).radius = optimalRadius n ∧ (optimum n hn).models = optimalPackings n := by
   match n, hn with
-  | 1, _ | 2, _ | 3, _ | 4, _ | 5, _ | 6, _ | 7, _ | 8, _ => exact ⟨rfl,rfl⟩
+  | 1, _ | 2, _ | 3, _ | 4, _ | 5, _ | 6, _ | 7, _ => exact ⟨rfl,rfl⟩
+  | 8, _ => exact ⟨Eight.radius_statement,Eight.models_statement⟩
   | 0, h | _+9, h => exact absurd h (by omega)
 
 /-- `optimalRadius n` is the least radius of a disk that holds `n` unit squares

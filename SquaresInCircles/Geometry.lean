@@ -1,23 +1,27 @@
 module
 
 public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Angle
+public import Mathlib.Tactic
 
 /-!
 # The statement: squares, disks, packings, congruence and the optimal models
 
-Everything the main theorems (`SquaresInCircles.lean`) state: unit squares, each
-with its own position and rotation; packings in a closed disk; congruence to a
-model given about the origin; and the optimal radius and models of each case.
+The primitive definitions used by the main theorems (`SquaresInCircles.lean`):
+unit squares, each with its own position and rotation; packings in a closed
+disk; congruence to a model given about the origin; and the explicit radius
+and models for the first seven cases. `StatementEight.lean` supplies the
+pure eighth-case stationary root and equality domain; `Optimal.lean` supplies
+the public registries through eight.
 `Packing` asks only that the closed squares lie in the disk and that no point
 lie in two open squares (`openSquare`, with strict inequalities).
 
-`Challenge.lean` restates this file word for word, and Comparator checks that
-the two elaborate identically. That needs every definition here, in this
-order: Lean names the auxiliary lemmas inside a definition, such as the proof
-of `Nat.AtLeastTwo 2` behind the real numeral `2`, after the first definition
-in the file that needs them. Edit here only:
-`scripts/verify-comparator.sh --write` copies the definitions into
-`Challenge.lean`.
+`Challenge.lean` restates the three pure modules in their dependency order:
+Geometry, StatementEight, Optimal. The standalone
+`python3 scripts/sync-challenge.py --write` command copies only source text;
+it does not compile or run the comparator. The later comparator procedure
+checks that the definitions and public theorem statements elaborate
+identically. Declaration order is retained because Lean names auxiliary
+proofs after the first definition that requires them.
 -/
 
 @[expose] public section
@@ -271,8 +275,9 @@ def columnModel (c : Column) : Fin 7 → UnitSquare :=
 
 end Seven
 
-/- The public radius/model registries are in `SquaresInCircles/Optimal.lean`.
-Keeping them downstream allows the n=8 stationary radius to be defined from
-its existence theorem without introducing an import cycle through Basic. -/
+/- The pure n=8 definitions are in `SquaresInCircles/StatementEight.lean` and
+the pure public registries in `SquaresInCircles/Optimal.lean`. Their ordinary
+epsilon selection is linked to the analytically proved unique root by the
+downstream `Eight/ExactFamily/StatementLink.lean`. -/
 
 end SquaresInCircles

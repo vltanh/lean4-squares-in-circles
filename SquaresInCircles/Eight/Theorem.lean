@@ -4,6 +4,7 @@ public import SquaresInCircles.Eight.GlobalNormalization
 public import SquaresInCircles.Eight.Candidate.Capture
 public import SquaresInCircles.Eight.ExactFamily.CentralParameters
 public import SquaresInCircles.Eight.ExactFamily.BoxRigidity
+public import SquaresInCircles.Eight.ExactFamily.StatementLink
 
 /-!
 # The unrestricted eight-square theorem

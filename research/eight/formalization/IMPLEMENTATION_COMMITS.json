@@ -1,0 +1,70 @@
+{
+  "schema": "n8-uncompiled-implementation-milestones-v1",
+  "source_pr": 9,
+  "source_commit": "a21c91f54039e805a637e983bc612bd130f39ee7",
+  "implementation_pr": 10,
+  "branch": "formalize/eight-uncompiled-draft",
+  "timestamp_source": "GitHub Git commit API author.date and committer.date; UTC",
+  "verification_performed": {
+    "lean": false,
+    "ci": false,
+    "audit": false
+  },
+  "commits": [
+    {
+      "sha": "c3b1283c10bff2dec65f97f1d5e5357c8bd0a164",
+      "message": "[skip ci] Transfer n=8 formalization roadmap and draft shared geometry model",
+      "author_date": "2026-10-18T02:23:55Z",
+      "committer_date": "2026-10-18T02:23:55Z",
+      "tree": "138f36d7f401089e2e7505a1a04fbcc77ca2ae45",
+      "parent_shas": [
+        "a21c91f54039e805a637e983bc612bd130f39ee7"
+      ],
+      "url": "https://github.com/vltanh/lean4-squares-in-circles/commit/c3b1283c10bff2dec65f97f1d5e5357c8bd0a164"
+    },
+    {
+      "sha": "587731b65fcba4eba9ae928e3978fa4bdf000ec4",
+      "message": "[skip ci] Draft signed SAT, arithmetic semantics, radius transfer, and mismatch lemmas",
+      "author_date": "2026-10-18T02:37:20Z",
+      "committer_date": "2026-10-18T02:37:20Z",
+      "tree": "4e1375c266af9e5c1c37e53bbc09963bbe412d5a",
+      "parent_shas": [
+        "c3b1283c10bff2dec65f97f1d5e5357c8bd0a164"
+      ],
+      "url": "https://github.com/vltanh/lean4-squares-in-circles/commit/587731b65fcba4eba9ae928e3978fa4bdf000ec4"
+    },
+    {
+      "sha": "55809af8c715c6ce372d67eba07e2c2069bd27fa",
+      "message": "[skip ci] Draft geometric reductions, stationary selection, and complete owner-dual application",
+      "author_date": "2026-10-18T03:13:22Z",
+      "committer_date": "2026-10-18T03:13:22Z",
+      "tree": "0a3444f70688d6d89b867a7d018e074b94a9a617",
+      "parent_shas": [
+        "587731b65fcba4eba9ae928e3978fa4bdf000ec4"
+      ],
+      "url": "https://github.com/vltanh/lean4-squares-in-circles/commit/55809af8c715c6ce372d67eba07e2c2069bd27fa"
+    },
+    {
+      "sha": "0858b29e5e05196bcbb11845de23e693958f3197",
+      "message": "[skip ci] Add exact closed-cover and polynomial Lean source data for n=8",
+      "author_date": "2026-10-18T03:54:10Z",
+      "committer_date": "2026-10-18T03:54:10Z",
+      "tree": "fc4ea24fbeef854365422fa0876303bb6d2a6702",
+      "parent_shas": [
+        "55809af8c715c6ce372d67eba07e2c2069bd27fa"
+      ],
+      "url": "https://github.com/vltanh/lean4-squares-in-circles/commit/0858b29e5e05196bcbb11845de23e693958f3197"
+    },
+    {
+      "sha": "02d9a502110af157e14f9b645287c37a6a472f1d",
+      "message": "[skip ci] Complete uncompiled n=8 lower bound and five-parameter equality source",
+      "author_date": "2026-10-18T03:59:24Z",
+      "committer_date": "2026-10-18T03:59:24Z",
+      "tree": "dc3edec204f8c9552634efe87bb421282283fa00",
+      "parent_shas": [
+        "0858b29e5e05196bcbb11845de23e693958f3197"
+      ],
+      "url": "https://github.com/vltanh/lean4-squares-in-circles/commit/02d9a502110af157e14f9b645287c37a6a472f1d"
+    }
+  ]
+}

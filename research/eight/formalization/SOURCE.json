@@ -13,5 +13,16 @@
     "deliverable": "uncompiled Lean source draft"
   },
   "history": "../PRE_SQUASH_COMMITS.json",
-  "history_human": "../PROGRESS_HISTORY.md"
+  "history_human": "../PROGRESS_HISTORY.md",
+  "implementation_pr": 10,
+  "implementation_pr_url": "https://github.com/vltanh/lean4-squares-in-circles/pull/10",
+  "implementation_branch": "formalize/eight-uncompiled-draft",
+  "implementation_base_branch": "research/eight-proof",
+  "delivery_kind": "uncompiled Lean source draft",
+  "mathematical_entry_point": "SquaresInCircles/Eight/Theorem.lean",
+  "public_entry_point": "SquaresInCircles.lean",
+  "milestone_history": "IMPLEMENTATION_COMMITS.json",
+  "milestone_history_human": "IMPLEMENTATION_HISTORY.md",
+  "finite_lean_decisions": "written as source; not evaluated",
+  "ci_skip_marker": "[skip ci]"
 }

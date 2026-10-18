@@ -108,6 +108,25 @@ Public exports include `Eight.optimum`, `Eight.lower_bound`,
 `Eight.packing_iff`, `Eight.equality_iff_parameters`, `Eight.isLeast`, and
 `Eight.full_dimensional_equality_box`.
 
+## Pure statement mirror
+
+`../../StatementEight.lean` defines the explicit stationary predicate and
+selects its root by ordinary `Classical.epsilon`. It imports primitive
+geometry and Mathlib, without importing the eight-square proofs. It also
+contains the complete five-parameter domain and both model orientations.
+`StatementLink.lean` proves the predicate has a unique actual solution,
+identifies its selected coordinates with `sharpData`, and proves the pure
+radius and model set equal those used by the analytic proof.
+
+The public `Optimal.lean` registry uses these pure definitions; the n=8
+branch of the root `optimum_spec` uses `Eight.radius_statement` and
+`Eight.models_statement`. `scripts/sync-challenge.py --write` materializes
+the Geometry, StatementEight, and Optimal definitions in dependency order
+inside the Mathlib-only Challenge source. This source copier performs no
+Lean compilation or comparator execution. The Challenge retains its two
+intentional theorem statement stubs, now with the same range through eight
+as the implemented public theorem statements.
+
 ## Generated data
 
 The generators write Lean expressions and rational arithmetic proof
