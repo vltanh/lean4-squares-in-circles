@@ -25,7 +25,7 @@ toolchain, independent statement, or definition of the equality family.
 ## G0 — Identify the actual dependencies: complete
 
 The source import closure of `SquaresInCircles.Eight.Theorem` at the starting
-commit contains 252 repository modules, of which 235 are n=8 modules. It
+commit contains 253 repository modules, of which 236 are n=8 modules. It
 still imports all ten affine tables, totaling 660,370 rows:
 
 | Input | Rows | Geometric purpose |
@@ -52,6 +52,16 @@ The reproducible source inventory is
 [`table_dependencies.py`](table_dependencies.py), with its initial report
 in [`TABLE_DEPENDENCIES_BASELINE.json`](TABLE_DEPENDENCIES_BASELINE.json).
 It reads imports and declarations without expanding or evaluating a table.
+
+The inventory was corrected during this execution to follow `public meta
+import` and count every literal `certify` occurrence, including individual
+word-certificate statements. The same revised script now reads the original
+commit directly with `--revision`, so before/after counts are comparable.
+The original word layer contains 1,800 individual certificate declarations;
+its four-type pair layer contains 25 chart declarations. These counts are
+distinct from recursion nodes and from definitions or proof references to
+the checker. `--details` optionally lists all source occurrences; the
+default report keeps compact per-module counts. No checker is evaluated.
 
 ## G1 — Replace stationary-root subdivision by the family geometry: open
 
