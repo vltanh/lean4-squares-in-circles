@@ -1,0 +1,1201 @@
+module
+
+public import SquaresInCircles.Eight.ExactFamily.Generated.StationaryFormula
+
+/-! Uncompiled proof data for the complete fixed cover of the adaptive
+stationary curve.  Validity is ordinary rational `decide`, not native code. -/
+
+@[expose] public section
+noncomputable section
+set_option maxRecDepth 100000
+set_option maxHeartbeats 0
+namespace SquaresInCircles.Eight.ExactFamily.AdaptiveGenerated
+open Arithmetic Generated
+
+
+def adaptiveFormula0 : Formula 3 := .var 0
+def adaptiveFormula1 : Formula 3 := .var 1
+def adaptiveFormula2 : Formula 3 := .var 2
+def adaptiveFormula3 : Formula 3 := .const 1
+def adaptiveFormula4 : Formula 3 := .const 2
+def adaptiveFormula5 : Formula 3 := .const 3
+def adaptiveFormula6 : Formula 3 := .pow adaptiveFormula1 2
+def adaptiveFormula7 : Formula 3 := .neg adaptiveFormula6
+def adaptiveFormula8 : Formula 3 := .const 0
+def adaptiveFormula9 : Formula 3 := .add adaptiveFormula0 adaptiveFormula7
+def adaptiveFormula10 : Formula 3 := .sqrt adaptiveFormula9
+def adaptiveFormula11 : Formula 3 := .add adaptiveFormula1 adaptiveFormula4
+def adaptiveFormula12 : Formula 3 := .pow adaptiveFormula11 2
+def adaptiveFormula13 : Formula 3 := .neg adaptiveFormula12
+def adaptiveFormula14 : Formula 3 := .add adaptiveFormula0 adaptiveFormula13
+def adaptiveFormula15 : Formula 3 := .sqrt adaptiveFormula14
+def adaptiveFormula16 : Formula 3 := .const -3
+def adaptiveFormula17 : Formula 3 := .add adaptiveFormula15 adaptiveFormula16
+def adaptiveFormula18 : Formula 3 := .pow adaptiveFormula17 2
+def adaptiveFormula19 : Formula 3 := .neg adaptiveFormula18
+def adaptiveFormula20 : Formula 3 := .add adaptiveFormula0 adaptiveFormula19
+def adaptiveFormula21 : Formula 3 := .sqrt adaptiveFormula20
+def adaptiveFormula22 : Formula 3 := .const -2
+def adaptiveFormula23 : Formula 3 := .add adaptiveFormula21 adaptiveFormula22
+def adaptiveFormula24 : Formula 3 := .pow adaptiveFormula23 2
+def adaptiveFormula25 : Formula 3 := .neg adaptiveFormula24
+def adaptiveFormula26 : Formula 3 := .add adaptiveFormula0 adaptiveFormula25
+def adaptiveFormula27 : Formula 3 := .sqrt adaptiveFormula26
+def adaptiveFormula28 : Formula 3 := .neg adaptiveFormula27
+def adaptiveFormula29 : Formula 3 := .pow adaptiveFormula2 2
+def adaptiveFormula30 : Formula 3 := .add adaptiveFormula3 adaptiveFormula29
+def adaptiveFormula31 : Formula 3 := .neg adaptiveFormula29
+def adaptiveFormula32 : Formula 3 := .add adaptiveFormula3 adaptiveFormula31
+def adaptiveFormula33 : Formula 3 := .inv adaptiveFormula30
+def adaptiveFormula34 : Formula 3 := .mul adaptiveFormula32 adaptiveFormula33
+def adaptiveFormula35 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula2
+def adaptiveFormula36 : Formula 3 := .mul adaptiveFormula35 adaptiveFormula33
+def adaptiveFormula37 : Formula 3 := .mul adaptiveFormula34 adaptiveFormula10
+def adaptiveFormula38 : Formula 3 := .mul adaptiveFormula36 adaptiveFormula1
+def adaptiveFormula39 : Formula 3 := .add adaptiveFormula37 adaptiveFormula38
+def adaptiveFormula40 : Formula 3 := .add adaptiveFormula39 adaptiveFormula22
+def adaptiveFormula41 : Formula 3 := .neg adaptiveFormula34
+def adaptiveFormula42 : Formula 3 := .add adaptiveFormula40 adaptiveFormula41
+def adaptiveFormula43 : Formula 3 := .mul adaptiveFormula36 adaptiveFormula28
+def adaptiveFormula44 : Formula 3 := .neg adaptiveFormula43
+def adaptiveFormula45 : Formula 3 := .mul adaptiveFormula34 adaptiveFormula23
+def adaptiveFormula46 : Formula 3 := .add adaptiveFormula44 adaptiveFormula45
+def adaptiveFormula47 : Formula 3 := .const -1
+def adaptiveFormula48 : Formula 3 := .add adaptiveFormula46 adaptiveFormula47
+def adaptiveFormula49 : Formula 3 := .neg adaptiveFormula36
+def adaptiveFormula50 : Formula 3 := .add adaptiveFormula48 adaptiveFormula49
+def adaptiveFormula51 : Formula 3 := .pow adaptiveFormula42 2
+def adaptiveFormula52 : Formula 3 := .pow adaptiveFormula50 2
+def adaptiveFormula53 : Formula 3 := .add adaptiveFormula51 adaptiveFormula52
+def adaptiveFormula54 : Formula 3 := .neg adaptiveFormula0
+def adaptiveFormula55 : Formula 3 := .add adaptiveFormula53 adaptiveFormula54
+def adaptiveFormula56 : Formula 3 := .pow adaptiveFormula30 2
+def adaptiveFormula57 : Formula 3 := .inv adaptiveFormula56
+def adaptiveFormula58 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula10
+def adaptiveFormula59 : Formula 3 := .inv adaptiveFormula58
+def adaptiveFormula60 : Formula 3 := .mul adaptiveFormula34 adaptiveFormula59
+def adaptiveFormula61 : Formula 3 := .mul adaptiveFormula42 adaptiveFormula60
+def adaptiveFormula62 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula61
+def adaptiveFormula63 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula15
+def adaptiveFormula64 : Formula 3 := .inv adaptiveFormula63
+def adaptiveFormula65 : Formula 3 := .mul adaptiveFormula17 adaptiveFormula64
+def adaptiveFormula66 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula65
+def adaptiveFormula67 : Formula 3 := .neg adaptiveFormula66
+def adaptiveFormula68 : Formula 3 := .add adaptiveFormula3 adaptiveFormula67
+def adaptiveFormula69 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula21
+def adaptiveFormula70 : Formula 3 := .inv adaptiveFormula69
+def adaptiveFormula71 : Formula 3 := .mul adaptiveFormula68 adaptiveFormula70
+def adaptiveFormula72 : Formula 3 := .mul adaptiveFormula23 adaptiveFormula71
+def adaptiveFormula73 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula72
+def adaptiveFormula74 : Formula 3 := .neg adaptiveFormula73
+def adaptiveFormula75 : Formula 3 := .add adaptiveFormula3 adaptiveFormula74
+def adaptiveFormula76 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula27
+def adaptiveFormula77 : Formula 3 := .inv adaptiveFormula76
+def adaptiveFormula78 : Formula 3 := .mul adaptiveFormula75 adaptiveFormula77
+def adaptiveFormula79 : Formula 3 := .neg adaptiveFormula78
+def adaptiveFormula80 : Formula 3 := .mul adaptiveFormula36 adaptiveFormula79
+def adaptiveFormula81 : Formula 3 := .neg adaptiveFormula80
+def adaptiveFormula82 : Formula 3 := .mul adaptiveFormula34 adaptiveFormula71
+def adaptiveFormula83 : Formula 3 := .add adaptiveFormula81 adaptiveFormula82
+def adaptiveFormula84 : Formula 3 := .mul adaptiveFormula50 adaptiveFormula83
+def adaptiveFormula85 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula84
+def adaptiveFormula86 : Formula 3 := .add adaptiveFormula62 adaptiveFormula85
+def adaptiveFormula87 : Formula 3 := .add adaptiveFormula86 adaptiveFormula47
+def adaptiveFormula88 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula1
+def adaptiveFormula89 : Formula 3 := .neg adaptiveFormula88
+def adaptiveFormula90 : Formula 3 := .mul adaptiveFormula89 adaptiveFormula59
+def adaptiveFormula91 : Formula 3 := .mul adaptiveFormula34 adaptiveFormula90
+def adaptiveFormula92 : Formula 3 := .add adaptiveFormula91 adaptiveFormula36
+def adaptiveFormula93 : Formula 3 := .mul adaptiveFormula42 adaptiveFormula92
+def adaptiveFormula94 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula93
+def adaptiveFormula95 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula11
+def adaptiveFormula96 : Formula 3 := .neg adaptiveFormula95
+def adaptiveFormula97 : Formula 3 := .mul adaptiveFormula96 adaptiveFormula64
+def adaptiveFormula98 : Formula 3 := .mul adaptiveFormula17 adaptiveFormula97
+def adaptiveFormula99 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula98
+def adaptiveFormula100 : Formula 3 := .neg adaptiveFormula99
+def adaptiveFormula101 : Formula 3 := .mul adaptiveFormula100 adaptiveFormula70
+def adaptiveFormula102 : Formula 3 := .mul adaptiveFormula23 adaptiveFormula101
+def adaptiveFormula103 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula102
+def adaptiveFormula104 : Formula 3 := .neg adaptiveFormula103
+def adaptiveFormula105 : Formula 3 := .mul adaptiveFormula104 adaptiveFormula77
+def adaptiveFormula106 : Formula 3 := .neg adaptiveFormula105
+def adaptiveFormula107 : Formula 3 := .mul adaptiveFormula36 adaptiveFormula106
+def adaptiveFormula108 : Formula 3 := .neg adaptiveFormula107
+def adaptiveFormula109 : Formula 3 := .mul adaptiveFormula34 adaptiveFormula101
+def adaptiveFormula110 : Formula 3 := .add adaptiveFormula108 adaptiveFormula109
+def adaptiveFormula111 : Formula 3 := .mul adaptiveFormula50 adaptiveFormula110
+def adaptiveFormula112 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula111
+def adaptiveFormula113 : Formula 3 := .add adaptiveFormula94 adaptiveFormula112
+def adaptiveFormula114 : Formula 3 := .neg adaptiveFormula35
+def adaptiveFormula115 : Formula 3 := .mul adaptiveFormula114 adaptiveFormula33
+def adaptiveFormula116 : Formula 3 := .mul adaptiveFormula35 adaptiveFormula57
+def adaptiveFormula117 : Formula 3 := .neg adaptiveFormula116
+def adaptiveFormula118 : Formula 3 := .mul adaptiveFormula32 adaptiveFormula117
+def adaptiveFormula119 : Formula 3 := .add adaptiveFormula115 adaptiveFormula118
+def adaptiveFormula120 : Formula 3 := .mul adaptiveFormula119 adaptiveFormula10
+def adaptiveFormula121 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula33
+def adaptiveFormula122 : Formula 3 := .mul adaptiveFormula35 adaptiveFormula117
+def adaptiveFormula123 : Formula 3 := .add adaptiveFormula121 adaptiveFormula122
+def adaptiveFormula124 : Formula 3 := .mul adaptiveFormula123 adaptiveFormula1
+def adaptiveFormula125 : Formula 3 := .add adaptiveFormula120 adaptiveFormula124
+def adaptiveFormula126 : Formula 3 := .neg adaptiveFormula119
+def adaptiveFormula127 : Formula 3 := .add adaptiveFormula125 adaptiveFormula126
+def adaptiveFormula128 : Formula 3 := .mul adaptiveFormula42 adaptiveFormula127
+def adaptiveFormula129 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula128
+def adaptiveFormula130 : Formula 3 := .mul adaptiveFormula123 adaptiveFormula28
+def adaptiveFormula131 : Formula 3 := .neg adaptiveFormula130
+def adaptiveFormula132 : Formula 3 := .mul adaptiveFormula119 adaptiveFormula23
+def adaptiveFormula133 : Formula 3 := .add adaptiveFormula131 adaptiveFormula132
+def adaptiveFormula134 : Formula 3 := .neg adaptiveFormula123
+def adaptiveFormula135 : Formula 3 := .add adaptiveFormula133 adaptiveFormula134
+def adaptiveFormula136 : Formula 3 := .mul adaptiveFormula50 adaptiveFormula135
+def adaptiveFormula137 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula136
+def adaptiveFormula138 : Formula 3 := .add adaptiveFormula129 adaptiveFormula137
+def adaptiveFormula139 : Formula 3 := .mul adaptiveFormula92 adaptiveFormula92
+def adaptiveFormula140 : Formula 3 := .mul adaptiveFormula22 adaptiveFormula59
+def adaptiveFormula141 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula90
+def adaptiveFormula142 : Formula 3 := .pow adaptiveFormula58 2
+def adaptiveFormula143 : Formula 3 := .inv adaptiveFormula142
+def adaptiveFormula144 : Formula 3 := .mul adaptiveFormula141 adaptiveFormula143
+def adaptiveFormula145 : Formula 3 := .neg adaptiveFormula144
+def adaptiveFormula146 : Formula 3 := .mul adaptiveFormula89 adaptiveFormula145
+def adaptiveFormula147 : Formula 3 := .add adaptiveFormula140 adaptiveFormula146
+def adaptiveFormula148 : Formula 3 := .mul adaptiveFormula34 adaptiveFormula147
+def adaptiveFormula149 : Formula 3 := .mul adaptiveFormula42 adaptiveFormula148
+def adaptiveFormula150 : Formula 3 := .add adaptiveFormula139 adaptiveFormula149
+def adaptiveFormula151 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula150
+def adaptiveFormula152 : Formula 3 := .mul adaptiveFormula110 adaptiveFormula110
+def adaptiveFormula153 : Formula 3 := .mul adaptiveFormula101 adaptiveFormula101
+def adaptiveFormula154 : Formula 3 := .mul adaptiveFormula97 adaptiveFormula97
+def adaptiveFormula155 : Formula 3 := .mul adaptiveFormula22 adaptiveFormula64
+def adaptiveFormula156 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula97
+def adaptiveFormula157 : Formula 3 := .pow adaptiveFormula63 2
+def adaptiveFormula158 : Formula 3 := .inv adaptiveFormula157
+def adaptiveFormula159 : Formula 3 := .mul adaptiveFormula156 adaptiveFormula158
+def adaptiveFormula160 : Formula 3 := .neg adaptiveFormula159
+def adaptiveFormula161 : Formula 3 := .mul adaptiveFormula96 adaptiveFormula160
+def adaptiveFormula162 : Formula 3 := .add adaptiveFormula155 adaptiveFormula161
+def adaptiveFormula163 : Formula 3 := .mul adaptiveFormula17 adaptiveFormula162
+def adaptiveFormula164 : Formula 3 := .add adaptiveFormula154 adaptiveFormula163
+def adaptiveFormula165 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula164
+def adaptiveFormula166 : Formula 3 := .neg adaptiveFormula165
+def adaptiveFormula167 : Formula 3 := .mul adaptiveFormula166 adaptiveFormula70
+def adaptiveFormula168 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula101
+def adaptiveFormula169 : Formula 3 := .pow adaptiveFormula69 2
+def adaptiveFormula170 : Formula 3 := .inv adaptiveFormula169
+def adaptiveFormula171 : Formula 3 := .mul adaptiveFormula168 adaptiveFormula170
+def adaptiveFormula172 : Formula 3 := .neg adaptiveFormula171
+def adaptiveFormula173 : Formula 3 := .mul adaptiveFormula100 adaptiveFormula172
+def adaptiveFormula174 : Formula 3 := .add adaptiveFormula167 adaptiveFormula173
+def adaptiveFormula175 : Formula 3 := .mul adaptiveFormula23 adaptiveFormula174
+def adaptiveFormula176 : Formula 3 := .add adaptiveFormula153 adaptiveFormula175
+def adaptiveFormula177 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula176
+def adaptiveFormula178 : Formula 3 := .neg adaptiveFormula177
+def adaptiveFormula179 : Formula 3 := .mul adaptiveFormula178 adaptiveFormula77
+def adaptiveFormula180 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula105
+def adaptiveFormula181 : Formula 3 := .pow adaptiveFormula76 2
+def adaptiveFormula182 : Formula 3 := .inv adaptiveFormula181
+def adaptiveFormula183 : Formula 3 := .mul adaptiveFormula180 adaptiveFormula182
+def adaptiveFormula184 : Formula 3 := .neg adaptiveFormula183
+def adaptiveFormula185 : Formula 3 := .mul adaptiveFormula104 adaptiveFormula184
+def adaptiveFormula186 : Formula 3 := .add adaptiveFormula179 adaptiveFormula185
+def adaptiveFormula187 : Formula 3 := .neg adaptiveFormula186
+def adaptiveFormula188 : Formula 3 := .mul adaptiveFormula36 adaptiveFormula187
+def adaptiveFormula189 : Formula 3 := .neg adaptiveFormula188
+def adaptiveFormula190 : Formula 3 := .mul adaptiveFormula34 adaptiveFormula174
+def adaptiveFormula191 : Formula 3 := .add adaptiveFormula189 adaptiveFormula190
+def adaptiveFormula192 : Formula 3 := .mul adaptiveFormula50 adaptiveFormula191
+def adaptiveFormula193 : Formula 3 := .add adaptiveFormula152 adaptiveFormula192
+def adaptiveFormula194 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula193
+def adaptiveFormula195 : Formula 3 := .add adaptiveFormula151 adaptiveFormula194
+def adaptiveFormula196 : Formula 3 := .mul adaptiveFormula127 adaptiveFormula92
+def adaptiveFormula197 : Formula 3 := .mul adaptiveFormula119 adaptiveFormula90
+def adaptiveFormula198 : Formula 3 := .add adaptiveFormula197 adaptiveFormula123
+def adaptiveFormula199 : Formula 3 := .mul adaptiveFormula42 adaptiveFormula198
+def adaptiveFormula200 : Formula 3 := .add adaptiveFormula196 adaptiveFormula199
+def adaptiveFormula201 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula200
+def adaptiveFormula202 : Formula 3 := .mul adaptiveFormula135 adaptiveFormula110
+def adaptiveFormula203 : Formula 3 := .mul adaptiveFormula123 adaptiveFormula106
+def adaptiveFormula204 : Formula 3 := .neg adaptiveFormula203
+def adaptiveFormula205 : Formula 3 := .mul adaptiveFormula119 adaptiveFormula101
+def adaptiveFormula206 : Formula 3 := .add adaptiveFormula204 adaptiveFormula205
+def adaptiveFormula207 : Formula 3 := .mul adaptiveFormula50 adaptiveFormula206
+def adaptiveFormula208 : Formula 3 := .add adaptiveFormula202 adaptiveFormula207
+def adaptiveFormula209 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula208
+def adaptiveFormula210 : Formula 3 := .add adaptiveFormula201 adaptiveFormula209
+def adaptiveFormula211 : Formula 3 := .mul adaptiveFormula127 adaptiveFormula127
+def adaptiveFormula212 : Formula 3 := .mul adaptiveFormula22 adaptiveFormula33
+def adaptiveFormula213 : Formula 3 := .mul adaptiveFormula114 adaptiveFormula117
+def adaptiveFormula214 : Formula 3 := .add adaptiveFormula212 adaptiveFormula213
+def adaptiveFormula215 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula57
+def adaptiveFormula216 : Formula 3 := .mul adaptiveFormula30 adaptiveFormula35
+def adaptiveFormula217 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula216
+def adaptiveFormula218 : Formula 3 := .pow adaptiveFormula56 2
+def adaptiveFormula219 : Formula 3 := .inv adaptiveFormula218
+def adaptiveFormula220 : Formula 3 := .mul adaptiveFormula217 adaptiveFormula219
+def adaptiveFormula221 : Formula 3 := .neg adaptiveFormula220
+def adaptiveFormula222 : Formula 3 := .mul adaptiveFormula35 adaptiveFormula221
+def adaptiveFormula223 : Formula 3 := .add adaptiveFormula215 adaptiveFormula222
+def adaptiveFormula224 : Formula 3 := .neg adaptiveFormula223
+def adaptiveFormula225 : Formula 3 := .mul adaptiveFormula32 adaptiveFormula224
+def adaptiveFormula226 : Formula 3 := .add adaptiveFormula213 adaptiveFormula225
+def adaptiveFormula227 : Formula 3 := .add adaptiveFormula214 adaptiveFormula226
+def adaptiveFormula228 : Formula 3 := .mul adaptiveFormula227 adaptiveFormula10
+def adaptiveFormula229 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula117
+def adaptiveFormula230 : Formula 3 := .mul adaptiveFormula35 adaptiveFormula224
+def adaptiveFormula231 : Formula 3 := .add adaptiveFormula229 adaptiveFormula230
+def adaptiveFormula232 : Formula 3 := .add adaptiveFormula229 adaptiveFormula231
+def adaptiveFormula233 : Formula 3 := .mul adaptiveFormula232 adaptiveFormula1
+def adaptiveFormula234 : Formula 3 := .add adaptiveFormula228 adaptiveFormula233
+def adaptiveFormula235 : Formula 3 := .neg adaptiveFormula227
+def adaptiveFormula236 : Formula 3 := .add adaptiveFormula234 adaptiveFormula235
+def adaptiveFormula237 : Formula 3 := .mul adaptiveFormula42 adaptiveFormula236
+def adaptiveFormula238 : Formula 3 := .add adaptiveFormula211 adaptiveFormula237
+def adaptiveFormula239 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula238
+def adaptiveFormula240 : Formula 3 := .mul adaptiveFormula135 adaptiveFormula135
+def adaptiveFormula241 : Formula 3 := .mul adaptiveFormula232 adaptiveFormula28
+def adaptiveFormula242 : Formula 3 := .neg adaptiveFormula241
+def adaptiveFormula243 : Formula 3 := .mul adaptiveFormula227 adaptiveFormula23
+def adaptiveFormula244 : Formula 3 := .add adaptiveFormula242 adaptiveFormula243
+def adaptiveFormula245 : Formula 3 := .neg adaptiveFormula232
+def adaptiveFormula246 : Formula 3 := .add adaptiveFormula244 adaptiveFormula245
+def adaptiveFormula247 : Formula 3 := .mul adaptiveFormula50 adaptiveFormula246
+def adaptiveFormula248 : Formula 3 := .add adaptiveFormula240 adaptiveFormula247
+def adaptiveFormula249 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula248
+def adaptiveFormula250 : Formula 3 := .add adaptiveFormula239 adaptiveFormula249
+def adaptiveFormula251 : Formula 3 := .mul adaptiveFormula34 adaptiveFormula1
+def adaptiveFormula252 : Formula 3 := .inv adaptiveFormula10
+def adaptiveFormula253 : Formula 3 := .mul adaptiveFormula251 adaptiveFormula252
+def adaptiveFormula254 : Formula 3 := .neg adaptiveFormula253
+def adaptiveFormula255 : Formula 3 := .add adaptiveFormula36 adaptiveFormula254
+def adaptiveFormula256 : Formula 3 := .inv adaptiveFormula95
+def adaptiveFormula257 : Formula 3 := .mul adaptiveFormula255 adaptiveFormula256
+def adaptiveFormula258 : Formula 3 := .mul adaptiveFormula255 adaptiveFormula15
+def adaptiveFormula259 : Formula 3 := .inv adaptiveFormula11
+def adaptiveFormula260 : Formula 3 := .mul adaptiveFormula258 adaptiveFormula259
+def adaptiveFormula261 : Formula 3 := .neg adaptiveFormula17
+def adaptiveFormula262 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula261
+def adaptiveFormula263 : Formula 3 := .inv adaptiveFormula262
+def adaptiveFormula264 : Formula 3 := .mul adaptiveFormula260 adaptiveFormula263
+def adaptiveFormula265 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula264
+def adaptiveFormula266 : Formula 3 := .mul adaptiveFormula265 adaptiveFormula21
+def adaptiveFormula267 : Formula 3 := .neg adaptiveFormula42
+def adaptiveFormula268 : Formula 3 := .mul adaptiveFormula4 adaptiveFormula267
+def adaptiveFormula269 : Formula 3 := .inv adaptiveFormula268
+def adaptiveFormula270 : Formula 3 := .neg adaptiveFormula50
+def adaptiveFormula271 : Formula 3 := .inv adaptiveFormula267
+def adaptiveFormula272 : Formula 3 := .mul adaptiveFormula270 adaptiveFormula271
+def adaptiveFormula273 : Formula 3 := .mul adaptiveFormula36 adaptiveFormula272
+def adaptiveFormula274 : Formula 3 := .mul adaptiveFormula273 adaptiveFormula77
+def adaptiveFormula275 : Formula 3 := .add adaptiveFormula60 adaptiveFormula257
+def adaptiveFormula276 : Formula 3 := .add adaptiveFormula275 adaptiveFormula264
+def adaptiveFormula277 : Formula 3 := .add adaptiveFormula276 adaptiveFormula274
+def adaptiveFormula278 : Formula 3 := .add adaptiveFormula277 adaptiveFormula269
+def adaptiveFormula279 : Formula 3 := .inv adaptiveFormula278
+def adaptiveFormula280 : Formula 3 := .mul adaptiveFormula279 adaptiveFormula255
+def adaptiveFormula281 : Formula 3 := .mul adaptiveFormula279 adaptiveFormula260
+def adaptiveFormula282 : Formula 3 := .mul adaptiveFormula279 adaptiveFormula266
+def adaptiveFormula283 : Formula 3 := .mul adaptiveFormula279 adaptiveFormula272
+def adaptiveFormula284 : Formula 3 := .mul adaptiveFormula279 adaptiveFormula60
+def adaptiveFormula285 : Formula 3 := .mul adaptiveFormula279 adaptiveFormula257
+def adaptiveFormula286 : Formula 3 := .mul adaptiveFormula279 adaptiveFormula264
+def adaptiveFormula287 : Formula 3 := .mul adaptiveFormula279 adaptiveFormula274
+def adaptiveFormula288 : Formula 3 := .mul adaptiveFormula279 adaptiveFormula269
+def adaptiveFormula289 : Formula 3 := .neg adaptiveFormula15
+def adaptiveFormula290 : Formula 3 := .add adaptiveFormula10 adaptiveFormula289
+def adaptiveFormula291 : Formula 3 := .mul adaptiveFormula283 adaptiveFormula34
+def adaptiveFormula292 : Formula 3 := .inv adaptiveFormula281
+def adaptiveFormula293 : Formula 3 := .mul adaptiveFormula291 adaptiveFormula292
+def adaptiveFormula294 : Formula 3 := .mul adaptiveFormula21 adaptiveFormula27
+def adaptiveFormula295 : Formula 3 := .inv adaptiveFormula261
+def adaptiveFormula296 : Formula 3 := .mul adaptiveFormula294 adaptiveFormula295
+def adaptiveFormula297 : Formula 3 := .neg adaptiveFormula296
+def adaptiveFormula298 : Formula 3 := .add adaptiveFormula293 adaptiveFormula297
+def adaptiveFormula299 : Formula 3 := .add adaptiveFormula11 adaptiveFormula298
+def adaptiveFormula300 : Formula 3 := .mul adaptiveFormula281 adaptiveFormula299
+def adaptiveFormula301 : Formula 3 := .add adaptiveFormula21 adaptiveFormula298
+def adaptiveFormula302 : Formula 3 := .mul adaptiveFormula281 adaptiveFormula301
+def adaptiveFormula303 : Formula 3 := .mul adaptiveFormula283 adaptiveFormula36
+def adaptiveFormula304 : Formula 3 := .neg adaptiveFormula23
+def adaptiveFormula305 : Formula 3 := .mul adaptiveFormula303 adaptiveFormula304
+def adaptiveFormula306 : Formula 3 := .inv adaptiveFormula27
+def adaptiveFormula307 : Formula 3 := .mul adaptiveFormula305 adaptiveFormula306
+def adaptiveFormula308 : Formula 3 := .add adaptiveFormula28 adaptiveFormula3
+def adaptiveFormula309 : Formula 3 := .mul adaptiveFormula34 adaptiveFormula308
+def adaptiveFormula310 : Formula 3 := .neg adaptiveFormula309
+def adaptiveFormula311 : Formula 3 := .mul adaptiveFormula36 adaptiveFormula23
+def adaptiveFormula312 : Formula 3 := .neg adaptiveFormula311
+def adaptiveFormula313 : Formula 3 := .add adaptiveFormula310 adaptiveFormula312
+def adaptiveFormula314 : Formula 3 := .add adaptiveFormula42 adaptiveFormula313
+def adaptiveFormula315 : Formula 3 := .mul adaptiveFormula283 adaptiveFormula314
+def adaptiveFormula316 : Formula 3 := .neg adaptiveFormula315
+def adaptiveFormula317 : Formula 3 := .neg adaptiveFormula290
+def adaptiveFormula318 : Formula 3 := .add adaptiveFormula3 adaptiveFormula317
+def adaptiveFormula319 : Formula 3 := .mul adaptiveFormula280 adaptiveFormula318
+def adaptiveFormula320 : Formula 3 := .neg adaptiveFormula300
+def adaptiveFormula321 : Formula 3 := .add adaptiveFormula319 adaptiveFormula320
+def adaptiveFormula322 : Formula 3 := .neg adaptiveFormula302
+def adaptiveFormula323 : Formula 3 := .add adaptiveFormula281 adaptiveFormula322
+def adaptiveFormula324 : Formula 3 := .const (-917/1000)
+def adaptiveFormula325 : Formula 3 := .neg adaptiveFormula298
+def adaptiveFormula326 : Formula 3 := .add adaptiveFormula324 adaptiveFormula325
+def adaptiveFormula327 : Formula 3 := .mul adaptiveFormula281 adaptiveFormula326
+def adaptiveFormula328 : Formula 3 := .const (1057/1000)
+def adaptiveFormula329 : Formula 3 := .add adaptiveFormula328 adaptiveFormula298
+def adaptiveFormula330 : Formula 3 := .mul adaptiveFormula281 adaptiveFormula329
+def adaptiveFormula331 : Formula 3 := .const (49/125)
+def adaptiveFormula332 : Formula 3 := .mul adaptiveFormula331 adaptiveFormula279
+def adaptiveFormula333 : Formula 3 := .neg adaptiveFormula332
+def adaptiveFormula334 : Formula 3 := .add adaptiveFormula316 adaptiveFormula333
+def adaptiveFormula335 : Formula 3 := .const (97/200)
+def adaptiveFormula336 : Formula 3 := .mul adaptiveFormula335 adaptiveFormula279
+def adaptiveFormula337 : Formula 3 := .add adaptiveFormula336 adaptiveFormula315
+def adaptiveFormula338 : Formula 3 := .mul adaptiveFormula280 adaptiveFormula10
+def adaptiveFormula339 : Formula 3 := .inv adaptiveFormula34
+def adaptiveFormula340 : Formula 3 := .mul adaptiveFormula338 adaptiveFormula339
+def adaptiveFormula341 : Formula 3 := .mul adaptiveFormula281 adaptiveFormula11
+def adaptiveFormula342 : Formula 3 := .mul adaptiveFormula282 adaptiveFormula261
+def adaptiveFormula343 : Formula 3 := .mul adaptiveFormula282 adaptiveFormula27
+def adaptiveFormula344 : Formula 3 := .inv adaptiveFormula36
+def adaptiveFormula345 : Formula 3 := .mul adaptiveFormula343 adaptiveFormula344
+def adaptiveFormula346 : Formula 3 := .mul adaptiveFormula283 adaptiveFormula267
+def adaptiveFormula347 : Formula 3 := .const (4209/5000)
+def adaptiveFormula348 : Formula 3 := .mul adaptiveFormula340 adaptiveFormula36
+def adaptiveFormula349 : Formula 3 := .add adaptiveFormula348 adaptiveFormula345
+def adaptiveFormula350 : Formula 3 := .const (1/2)
+def adaptiveFormula351 : Formula 3 := .mul adaptiveFormula349 adaptiveFormula350
+def adaptiveFormula352 : Formula 3 := .const (4209/10000)
+def adaptiveFormula353 : Formula 3 := .add adaptiveFormula351 adaptiveFormula352
+def adaptiveFormula354 : Formula 3 := .mul adaptiveFormula303 adaptiveFormula350
+def adaptiveFormula355 : Formula 3 := .const (3/4)
+def adaptiveFormula356 : Formula 3 := .const (12627/20000)
+def adaptiveFormula357 : Formula 3 := .add adaptiveFormula354 adaptiveFormula356
+def adaptiveFormula358 : Formula 3 := .add adaptiveFormula353 adaptiveFormula357
+def adaptiveFormula359 : Formula 3 := .add adaptiveFormula340 adaptiveFormula341
+def adaptiveFormula360 : Formula 3 := .add adaptiveFormula342 adaptiveFormula346
+def adaptiveFormula361 : Formula 3 := .add adaptiveFormula359 adaptiveFormula360
+def adaptiveFormula362 : Formula 3 := .const 6
+def adaptiveFormula363 : Formula 3 := .const (1/6)
+def adaptiveFormula364 : Formula 3 := .mul adaptiveFormula361 adaptiveFormula363
+def adaptiveFormula365 : Formula 3 := .const (1403/10000)
+def adaptiveFormula366 : Formula 3 := .mul adaptiveFormula283 adaptiveFormula363
+def adaptiveFormula367 : Formula 3 := .add adaptiveFormula366 adaptiveFormula352
+def adaptiveFormula368 : Formula 3 := .add adaptiveFormula365 adaptiveFormula367
+def adaptiveFormula369 : Formula 3 := .add adaptiveFormula364 adaptiveFormula368
+def omegaFormula : Formula 3 := adaptiveFormula279
+def alphaFormula : Formula 3 := adaptiveFormula280
+def betaFormula : Formula 3 := adaptiveFormula281
+def deltaFormula : Formula 3 := adaptiveFormula282
+def epsilonFormula : Formula 3 := adaptiveFormula283
+def YFormula : Formula 3 := adaptiveFormula290
+def JFormula : Formula 3 := adaptiveFormula298
+def XFormula : Formula 3 := adaptiveFormula300
+def KFormula : Formula 3 := adaptiveFormula302
+def LFormula : Formula 3 := adaptiveFormula307
+def NFormula : Formula 3 := adaptiveFormula316
+def hTwoFormula : Formula 3 := adaptiveFormula50
+def mu0Formula : Formula 3 := adaptiveFormula284
+def mu1Formula : Formula 3 := adaptiveFormula285
+def mu2Formula : Formula 3 := adaptiveFormula286
+def mu3Formula : Formula 3 := adaptiveFormula287
+def mu4Formula : Formula 3 := adaptiveFormula288
+def reserve0Formula : Formula 3 := adaptiveFormula300
+def reserve1Formula : Formula 3 := adaptiveFormula321
+def reserve2Formula : Formula 3 := adaptiveFormula302
+def reserve3Formula : Formula 3 := adaptiveFormula323
+def reserve4Formula : Formula 3 := adaptiveFormula327
+def reserve5Formula : Formula 3 := adaptiveFormula330
+def reserve6Formula : Formula 3 := adaptiveFormula307
+def reserve7Formula : Formula 3 := adaptiveFormula334
+def reserve8Formula : Formula 3 := adaptiveFormula337
+def quadraticFormula : Formula 3 := adaptiveFormula358
+def cubicFormula : Formula 3 := adaptiveFormula369
+def reserveFormula : Fin 9 → Formula 3 := ![reserve0Formula,reserve1Formula,reserve2Formula,reserve3Formula,reserve4Formula,reserve5Formula,reserve6Formula,reserve7Formula,reserve8Formula]
+def lambdaFormula : Fin 7 → Formula 3 := ![alphaFormula,betaFormula,betaFormula,deltaFormula,omegaFormula,omegaFormula,epsilonFormula]
+def graphBoxes : Fin 256 → QBox 3 := ![![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93576669/100000000),(-93536669/100000000)⟩, ⟨(1/20),(12831/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93561323/100000000),(-93521323/100000000)⟩, ⟨(12831/256000),(6431/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93545979/100000000),(-93505979/100000000)⟩, ⟨(6431/128000),(12893/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93530637/100000000),(-93490637/100000000)⟩, ⟨(12893/256000),(3231/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-2922353/3125000),(-2921103/3125000)⟩, ⟨(3231/64000),(2591/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46749979/50000000),(-46729979/50000000)⟩, ⟨(2591/51200),(6493/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93484621/100000000),(-93444621/100000000)⟩, ⟨(6493/128000),(13017/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93469287/100000000),(-93429287/100000000)⟩, ⟨(13017/256000),(1631/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46726977/50000000),(-46706977/50000000)⟩, ⟨(1631/32000),(13079/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93438623/100000000),(-93398623/100000000)⟩, ⟨(13079/256000),(1311/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46711647/50000000),(-46691647/50000000)⟩, ⟨(1311/25600),(13141/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93407967/100000000),(-93367967/100000000)⟩, ⟨(13141/256000),(3293/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46696321/50000000),(-46676321/50000000)⟩, ⟨(3293/64000),(13203/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46688659/50000000),(-46668659/50000000)⟩, ⟨(13203/256000),(6617/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93361997/100000000),(-93321997/100000000)⟩, ⟨(6617/128000),(2653/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46673339/50000000),(-46653339/50000000)⟩, ⟨(2653/51200),(831/16000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-583321/625000),(-583071/625000)⟩, ⟨(831/16000),(13327/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23329011/25000000),(-23319011/25000000)⟩, ⟨(13327/256000),(6679/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93300731/100000000),(-93260731/100000000)⟩, ⟨(6679/128000),(13389/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93285419/100000000),(-93245419/100000000)⟩, ⟨(13389/256000),(671/12800)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93270109/100000000),(-93230109/100000000)⟩, ⟨(671/12800),(13451/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93254801/100000000),(-93214801/100000000)⟩, ⟨(13451/256000),(6741/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18647899/20000000),(-18639899/20000000)⟩, ⟨(6741/128000),(13513/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9322419/10000000),(-9318419/10000000)⟩, ⟨(13513/256000),(1693/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11651111/12500000),(-11646111/12500000)⟩, ⟨(1693/32000),(543/10240)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23298397/25000000),(-23288397/25000000)⟩, ⟨(543/10240),(6803/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93178289/100000000),(-93138289/100000000)⟩, ⟨(6803/128000),(13637/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93162993/100000000),(-93122993/100000000)⟩, ⟨(13637/256000),(3417/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46573849/50000000),(-46553849/50000000)⟩, ⟨(3417/64000),(13699/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18626481/20000000),(-18618481/20000000)⟩, ⟨(13699/256000),(1373/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46558557/50000000),(-46538557/50000000)⟩, ⟨(1373/25600),(13761/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-3724073/4000000),(-3722473/4000000)⟩, ⟨(13761/256000),(431/8000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46543269/50000000),(-46523269/50000000)⟩, ⟨(431/8000),(13823/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93071253/100000000),(-93031253/100000000)⟩, ⟨(13823/256000),(6927/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9305597/10000000),(-9301597/10000000)⟩, ⟨(6927/128000),(2777/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93040689/100000000),(-93000689/100000000)⟩, ⟨(2777/51200),(3479/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9302541/10000000),(-9298541/10000000)⟩, ⟨(3479/64000),(13947/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23252533/25000000),(-23242533/25000000)⟩, ⟨(13947/256000),(6989/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92994857/100000000),(-92954857/100000000)⟩, ⟨(6989/128000),(14009/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92979583/100000000),(-92939583/100000000)⟩, ⟨(14009/256000),(351/6400)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92964311/100000000),(-92924311/100000000)⟩, ⟨(351/6400),(14071/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46474521/50000000),(-46454521/50000000)⟩, ⟨(14071/256000),(7051/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46466887/50000000),(-46446887/50000000)⟩, ⟨(7051/128000),(14133/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23229627/25000000),(-23219627/25000000)⟩, ⟨(14133/256000),(3541/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23225811/25000000),(-23215811/25000000)⟩, ⟨(3541/64000),(2839/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46443991/50000000),(-46423991/50000000)⟩, ⟨(2839/51200),(7113/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46436361/50000000),(-46416361/50000000)⟩, ⟨(7113/128000),(14257/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11607183/12500000),(-11602183/12500000)⟩, ⟨(14257/256000),(893/16000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-2901319/3125000),(-2900069/3125000)⟩, ⟨(893/16000),(14319/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92826953/100000000),(-92786953/100000000)⟩, ⟨(14319/256000),(287/5120)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92811701/100000000),(-92771701/100000000)⟩, ⟨(287/5120),(14381/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1855929/2000000),(-1855129/2000000)⟩, ⟨(14381/256000),(3603/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46390601/50000000),(-46370601/50000000)⟩, ⟨(3603/64000),(14443/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18553191/20000000),(-18545191/20000000)⟩, ⟨(14443/256000),(7237/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92750711/100000000),(-92710711/100000000)⟩, ⟨(7237/128000),(2901/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23183867/25000000),(-23173867/25000000)⟩, ⟨(2901/51200),(1817/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92720227/100000000),(-92680227/100000000)⟩, ⟨(1817/32000),(14567/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23176247/25000000),(-23166247/25000000)⟩, ⟨(14567/256000),(7299/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92689751/100000000),(-92649751/100000000)⟩, ⟨(7299/128000),(14629/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23168629/25000000),(-23158629/25000000)⟩, ⟨(14629/256000),(733/12800)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92659283/100000000),(-92619283/100000000)⟩, ⟨(733/12800),(14691/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23161013/25000000),(-23151013/25000000)⟩, ⟨(14691/256000),(7361/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92628823/100000000),(-92588823/100000000)⟩, ⟨(7361/128000),(14753/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23153399/25000000),(-23143399/25000000)⟩, ⟨(14753/256000),(231/4000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92598371/100000000),(-92558371/100000000)⟩, ⟨(231/4000),(2963/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92583147/100000000),(-92543147/100000000)⟩, ⟨(2963/51200),(7423/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46283963/50000000),(-46263963/50000000)⟩, ⟨(7423/128000),(14877/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46276353/50000000),(-46256353/50000000)⟩, ⟨(14877/256000),(3727/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92537489/100000000),(-92497489/100000000)⟩, ⟨(3727/64000),(14939/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92522273/100000000),(-92482273/100000000)⟩, ⟨(14939/256000),(1497/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-4625353/5000000),(-4623353/5000000)⟩, ⟨(1497/25600),(15001/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11561481/12500000),(-11556481/12500000)⟩, ⟨(15001/256000),(1879/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46238319/50000000),(-46218319/50000000)⟩, ⟨(1879/32000),(15063/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92461431/100000000),(-92421431/100000000)⟩, ⟨(15063/256000),(7547/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-3697849/4000000),(-3696249/4000000)⟩, ⟨(7547/128000),(121/2048)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92431021/100000000),(-92391021/100000000)⟩, ⟨(121/2048),(3789/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92415819/100000000),(-92375819/100000000)⟩, ⟨(3789/64000),(15187/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92400619/100000000),(-92360619/100000000)⟩, ⟨(15187/256000),(7609/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92385421/100000000),(-92345421/100000000)⟩, ⟨(7609/128000),(15249/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-3694809/4000000),(-3693209/4000000)⟩, ⟨(15249/256000),(191/3200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92355031/100000000),(-92315031/100000000)⟩, ⟨(191/3200),(15311/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92339839/100000000),(-92299839/100000000)⟩, ⟨(15311/256000),(7671/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92324649/100000000),(-92284649/100000000)⟩, ⟨(7671/128000),(15373/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-4615473/5000000),(-4613473/5000000)⟩, ⟨(15373/256000),(3851/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46147137/50000000),(-46127137/50000000)⟩, ⟨(3851/64000),(3087/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9227909/10000000),(-9223909/10000000)⟩, ⟨(3087/51200),(7733/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92263907/100000000),(-92223907/100000000)⟩, ⟨(7733/128000),(15497/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92248727/100000000),(-92208727/100000000)⟩, ⟨(15497/256000),(1941/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23058387/25000000),(-23048387/25000000)⟩, ⟨(1941/32000),(15559/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23054593/25000000),(-23044593/25000000)⟩, ⟨(15559/256000),(1559/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92203197/100000000),(-92163197/100000000)⟩, ⟨(1559/25600),(15621/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-3687521/4000000),(-3685921/4000000)⟩, ⟨(15621/256000),(3913/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46086427/50000000),(-46066427/50000000)⟩, ⟨(3913/64000),(15683/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46078843/50000000),(-46058843/50000000)⟩, ⟨(15683/256000),(7857/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92142519/100000000),(-92102519/100000000)⟩, ⟨(7857/128000),(3149/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46063677/50000000),(-46043677/50000000)⟩, ⟨(3149/51200),(493/8000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1439253/1562500),(-359657/390625)⟩, ⟨(493/8000),(15807/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92097031/100000000),(-92057031/100000000)⟩, ⟨(15807/256000),(7919/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-5755117/6250000),(-5752617/6250000)⟩, ⟨(7919/128000),(15869/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18413343/20000000),(-18405343/20000000)⟩, ⟨(15869/256000),(159/2560)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-2301289/2500000),(-2300289/2500000)⟩, ⟨(159/2560),(15931/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92036407/100000000),(-91996407/100000000)⟩, ⟨(15931/256000),(7981/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92021257/100000000),(-91981257/100000000)⟩, ⟨(7981/128000),(15993/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23001527/25000000),(-22991527/25000000)⟩, ⟨(15993/256000),(2003/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91990961/100000000),(-91950961/100000000)⟩, ⟨(2003/32000),(3211/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11496977/12500000),(-11491977/12500000)⟩, ⟨(3211/51200),(8043/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91960673/100000000),(-91920673/100000000)⟩, ⟨(8043/128000),(16117/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22986383/25000000),(-22976383/25000000)⟩, ⟨(16117/256000),(4037/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91930393/100000000),(-91890393/100000000)⟩, ⟨(4037/64000),(16179/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18383051/20000000),(-18375051/20000000)⟩, ⟨(16179/256000),(1621/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-2297503/2500000),(-2296503/2500000)⟩, ⟨(1621/25600),(16241/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91884987/100000000),(-91844987/100000000)⟩, ⟨(16241/256000),(1017/16000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-2870933/3125000),(-2869683/3125000)⟩, ⟨(1017/16000),(16303/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91854727/100000000),(-91814727/100000000)⟩, ⟨(16303/256000),(8167/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-229599/250000),(-229499/250000)⟩, ⟨(8167/128000),(3273/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45912237/50000000),(-45892237/50000000)⟩, ⟨(3273/51200),(4099/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91809351/100000000),(-91769351/100000000)⟩, ⟨(4099/64000),(16427/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9179423/10000000),(-9175423/10000000)⟩, ⟨(16427/256000),(8229/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91779111/100000000),(-91739111/100000000)⟩, ⟨(8229/128000),(16489/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91763993/100000000),(-91723993/100000000)⟩, ⟨(16489/256000),(413/6400)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45874439/50000000),(-45854439/50000000)⟩, ⟨(413/6400),(16551/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18346753/20000000),(-18338753/20000000)⟩, ⟨(16551/256000),(8291/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91718653/100000000),(-91678653/100000000)⟩, ⟨(8291/128000),(16613/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11462943/12500000),(-11457943/12500000)⟩, ⟨(16613/256000),(4161/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91688437/100000000),(-91648437/100000000)⟩, ⟨(4161/64000),(667/10240)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91673331/100000000),(-91633331/100000000)⟩, ⟨(667/10240),(8353/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22914557/25000000),(-22904557/25000000)⟩, ⟨(8353/128000),(16737/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91643127/100000000),(-91603127/100000000)⟩, ⟨(16737/256000),(131/2000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91628027/100000000),(-91588027/100000000)⟩, ⟨(131/2000),(16799/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9161293/10000000),(-9157293/10000000)⟩, ⟨(16799/256000),(1683/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45798917/50000000),(-45778917/50000000)⟩, ⟨(1683/25600),(16861/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91582741/100000000),(-91542741/100000000)⟩, ⟨(16861/256000),(4223/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1831353/2000000),(-1830553/2000000)⟩, ⟨(4223/64000),(16923/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1144407/1250000),(-1143907/1250000)⟩, ⟨(16923/256000),(8477/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91537473/100000000),(-91497473/100000000)⟩, ⟨(8477/128000),(3397/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91522387/100000000),(-91482387/100000000)⟩, ⟨(3397/51200),(2127/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11438413/12500000),(-11433413/12500000)⟩, ⟨(2127/32000),(17047/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91492223/100000000),(-91452223/100000000)⟩, ⟨(17047/256000),(8539/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91477143/100000000),(-91437143/100000000)⟩, ⟨(8539/128000),(17109/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45731033/50000000),(-45711033/50000000)⟩, ⟨(17109/256000),(857/12800)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9144699/10000000),(-9140699/10000000)⟩, ⟨(857/12800),(17171/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91431917/100000000),(-91391917/100000000)⟩, ⟨(17171/256000),(8601/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18283369/20000000),(-18275369/20000000)⟩, ⟨(8601/128000),(17233/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-5712611/6250000),(-5710111/6250000)⟩, ⟨(17233/256000),(1079/16000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91386709/100000000),(-91346709/100000000)⟩, ⟨(1079/16000),(3459/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91371643/100000000),(-91331643/100000000)⟩, ⟨(3459/51200),(8663/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-4567829/5000000),(-4565829/5000000)⟩, ⟨(8663/128000),(17357/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45670759/50000000),(-45650759/50000000)⟩, ⟨(17357/256000),(4347/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91326459/100000000),(-91286459/100000000)⟩, ⟨(4347/64000),(17419/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45655701/50000000),(-45635701/50000000)⟩, ⟨(17419/256000),(349/5120)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45648173/50000000),(-45628173/50000000)⟩, ⟨(349/5120),(17481/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91281293/100000000),(-91241293/100000000)⟩, ⟨(17481/256000),(2189/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91266241/100000000),(-91226241/100000000)⟩, ⟨(2189/32000),(17543/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11406399/12500000),(-11401399/12500000)⟩, ⟨(17543/256000),(8787/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18247229/20000000),(-18239229/20000000)⟩, ⟨(8787/128000),(3521/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91221099/100000000),(-91181099/100000000)⟩, ⟨(3521/51200),(4409/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11400757/12500000),(-11395757/12500000)⟩, ⟨(4409/64000),(17667/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18238203/20000000),(-18230203/20000000)⟩, ⟨(17667/256000),(8849/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11396997/12500000),(-11391997/12500000)⟩, ⟨(8849/128000),(17729/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45580469/50000000),(-45560469/50000000)⟩, ⟨(17729/256000),(111/1600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91145903/100000000),(-91105903/100000000)⟩, ⟨(111/1600),(17791/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9113087/10000000),(-9109087/10000000)⟩, ⟨(17791/256000),(8911/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91115839/100000000),(-91075839/100000000)⟩, ⟨(8911/128000),(17853/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91100809/100000000),(-91060809/100000000)⟩, ⟨(17853/256000),(4471/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45542891/50000000),(-45522891/50000000)⟩, ⟨(4471/64000),(3583/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91070757/100000000),(-91030757/100000000)⟩, ⟨(3583/51200),(8973/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45527867/50000000),(-45507867/50000000)⟩, ⟨(8973/128000),(17977/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91040713/100000000),(-91000713/100000000)⟩, ⟨(17977/256000),(2251/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45512847/50000000),(-45492847/50000000)⟩, ⟨(2251/32000),(18039/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91010677/100000000),(-90970677/100000000)⟩, ⟨(18039/256000),(1807/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45497831/50000000),(-45477831/50000000)⟩, ⟨(1807/25600),(18101/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90980649/100000000),(-90940649/100000000)⟩, ⟨(18101/256000),(4533/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90965637/100000000),(-90925637/100000000)⟩, ⟨(4533/64000),(18163/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90950629/100000000),(-90910629/100000000)⟩, ⟨(18163/256000),(9097/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45467811/50000000),(-45447811/50000000)⟩, ⟨(9097/128000),(729/10240)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90920617/100000000),(-90880617/100000000)⟩, ⟨(729/10240),(1141/16000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45452807/50000000),(-45432807/50000000)⟩, ⟨(1141/16000),(18287/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90890613/100000000),(-90850613/100000000)⟩, ⟨(18287/256000),(9159/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45437807/50000000),(-45417807/50000000)⟩, ⟨(9159/128000),(18349/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90860617/100000000),(-90820617/100000000)⟩, ⟨(18349/256000),(919/12800)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45422811/50000000),(-45402811/50000000)⟩, ⟨(919/12800),(18411/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9083063/10000000),(-9079063/10000000)⟩, ⟨(18411/256000),(9221/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90815639/100000000),(-90775639/100000000)⟩, ⟨(9221/128000),(18473/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1816013/2000000),(-1815213/2000000)⟩, ⟨(18473/256000),(2313/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-709263/781250),(-1417901/1562500)⟩, ⟨(2313/32000),(3707/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90770679/100000000),(-90730679/100000000)⟩, ⟨(3707/51200),(9283/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-5672231/6250000),(-5669731/6250000)⟩, ⟨(9283/128000),(18597/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22685179/25000000),(-22675179/25000000)⟩, ⟨(18597/256000),(4657/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90725737/100000000),(-90685737/100000000)⟩, ⟨(4657/64000),(18659/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90710761/100000000),(-90670761/100000000)⟩, ⟨(18659/256000),(1869/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45347893/50000000),(-45327893/50000000)⟩, ⟨(1869/25600),(18721/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45340407/50000000),(-45320407/50000000)⟩, ⟨(18721/256000),(293/4000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22666461/25000000),(-22656461/25000000)⟩, ⟨(293/4000),(18783/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-725207/800000),(-724887/800000)⟩, ⟨(18783/256000),(9407/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90635909/100000000),(-90595909/100000000)⟩, ⟨(9407/128000),(3769/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18124189/20000000),(-18116189/20000000)⟩, ⟨(3769/51200),(4719/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90605983/100000000),(-90565983/100000000)⟩, ⟨(4719/64000),(18907/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90591023/100000000),(-90551023/100000000)⟩, ⟨(18907/256000),(9469/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1415251/1562500),(-707313/781250)⟩, ⟨(9469/128000),(18969/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22640277/25000000),(-22630277/25000000)⟩, ⟨(18969/256000),(19/256)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45273077/50000000),(-45253077/50000000)⟩, ⟨(19/256),(19031/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45265601/50000000),(-45245601/50000000)⟩, ⟨(19031/256000),(9531/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90516253/100000000),(-90476253/100000000)⟩, ⟨(9531/128000),(19093/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18100261/20000000),(-18092261/20000000)⟩, ⟨(19093/256000),(4781/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90486359/100000000),(-90446359/100000000)⟩, ⟨(4781/64000),(3831/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18094283/20000000),(-18086283/20000000)⟩, ⟨(3831/51200),(9593/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90456473/100000000),(-90416473/100000000)⟩, ⟨(9593/128000),(19217/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45220767/50000000),(-45200767/50000000)⟩, ⟨(19217/256000),(1203/16000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22606649/25000000),(-22596649/25000000)⟩, ⟨(1203/16000),(19279/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90411661/100000000),(-90371661/100000000)⟩, ⟨(19279/256000),(1931/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90396727/100000000),(-90356727/100000000)⟩, ⟨(1931/25600),(19341/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22595449/25000000),(-22585449/25000000)⟩, ⟨(19341/256000),(4843/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45183433/50000000),(-45163433/50000000)⟩, ⟨(4843/64000),(19403/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90351939/100000000),(-90311939/100000000)⟩, ⟨(19403/256000),(9717/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90337013/100000000),(-90297013/100000000)⟩, ⟨(9717/128000),(3893/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9032209/10000000),(-9028209/10000000)⟩, ⟨(3893/51200),(2437/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90307169/100000000),(-90267169/100000000)⟩, ⟨(2437/32000),(19527/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-361169/400000),(-361009/400000)⟩, ⟨(19527/256000),(9779/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90277333/100000000),(-90237333/100000000)⟩, ⟨(9779/128000),(19589/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45131209/50000000),(-45111209/50000000)⟩, ⟨(19589/256000),(981/12800)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18049501/20000000),(-18041501/20000000)⟩, ⟨(981/12800),(19651/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45116297/50000000),(-45096297/50000000)⟩, ⟨(19651/256000),(9841/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18043537/20000000),(-18035537/20000000)⟩, ⟨(9841/128000),(19713/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45101389/50000000),(-45081389/50000000)⟩, ⟨(19713/256000),(617/8000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45093937/50000000),(-45073937/50000000)⟩, ⟨(617/8000),(791/10240)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90172971/100000000),(-90132971/100000000)⟩, ⟨(791/10240),(9903/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90158071/100000000),(-90118071/100000000)⟩, ⟨(9903/128000),(19837/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22535793/25000000),(-22525793/25000000)⟩, ⟨(19837/256000),(4967/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22532069/25000000),(-22522069/25000000)⟩, ⟨(4967/64000),(19899/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90113381/100000000),(-90073381/100000000)⟩, ⟨(19899/256000),(1993/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90098489/100000000),(-90058489/100000000)⟩, ⟨(1993/25600),(19961/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90083599/100000000),(-90043599/100000000)⟩, ⟨(19961/256000),(2499/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90068711/100000000),(-90028711/100000000)⟩, ⟨(2499/32000),(20023/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1407091/1562500),(-703233/781250)⟩, ⟨(20023/256000),(10027/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-4501947/5000000),(-4499947/5000000)⟩, ⟨(10027/128000),(4017/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45012029/50000000),(-44992029/50000000)⟩, ⟨(4017/51200),(5029/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90009179/100000000),(-89969179/100000000)⟩, ⟨(5029/64000),(20147/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89994301/100000000),(-89954301/100000000)⟩, ⟨(20147/256000),(10089/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-3599177/4000000),(-3597577/4000000)⟩, ⟨(10089/128000),(20209/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89964551/100000000),(-89924551/100000000)⟩, ⟨(20209/256000),(253/3200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1124371/1250000),(-1123871/1250000)⟩, ⟨(253/3200),(20271/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-8993481/10000000),(-8989481/10000000)⟩, ⟨(20271/256000),(10151/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89919943/100000000),(-89879943/100000000)⟩, ⟨(10151/128000),(20333/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89905077/100000000),(-89865077/100000000)⟩, ⟨(20333/256000),(5091/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-44945107/50000000),(-44925107/50000000)⟩, ⟨(5091/64000),(4079/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89875353/100000000),(-89835353/100000000)⟩, ⟨(4079/51200),(10213/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-44930247/50000000),(-44910247/50000000)⟩, ⟨(10213/128000),(20457/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89845637/100000000),(-89805637/100000000)⟩, ⟨(20457/256000),(2561/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-44915391/50000000),(-44895391/50000000)⟩, ⟨(2561/32000),(20519/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89815929/100000000),(-89775929/100000000)⟩, ⟨(20519/256000),(411/5120)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-44900539/50000000),(-44880539/50000000)⟩, ⟨(411/5120),(20581/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89786229/100000000),(-89746229/100000000)⟩, ⟨(20581/256000),(5153/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89771383/100000000),(-89731383/100000000)⟩, ⟨(5153/64000),(20643/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-44878269/50000000),(-44858269/50000000)⟩, ⟨(20643/256000),(10337/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-701107/781250),(-1401589/1562500)⟩, ⟨(10337/128000),(4141/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-17945371/20000000),(-17937371/20000000)⟩, ⟨(4141/51200),(81/1000)⟩]]
+def lowerBoxes : Fin 256 → QBox 3 := ![![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93576669/100000000),(-93576669/100000000)⟩, ⟨(1/20),(12831/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93561323/100000000),(-93561323/100000000)⟩, ⟨(12831/256000),(6431/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93545979/100000000),(-93545979/100000000)⟩, ⟨(6431/128000),(12893/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93530637/100000000),(-93530637/100000000)⟩, ⟨(12893/256000),(3231/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-2922353/3125000),(-2922353/3125000)⟩, ⟨(3231/64000),(2591/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46749979/50000000),(-46749979/50000000)⟩, ⟨(2591/51200),(6493/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93484621/100000000),(-93484621/100000000)⟩, ⟨(6493/128000),(13017/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93469287/100000000),(-93469287/100000000)⟩, ⟨(13017/256000),(1631/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46726977/50000000),(-46726977/50000000)⟩, ⟨(1631/32000),(13079/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93438623/100000000),(-93438623/100000000)⟩, ⟨(13079/256000),(1311/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46711647/50000000),(-46711647/50000000)⟩, ⟨(1311/25600),(13141/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93407967/100000000),(-93407967/100000000)⟩, ⟨(13141/256000),(3293/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46696321/50000000),(-46696321/50000000)⟩, ⟨(3293/64000),(13203/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46688659/50000000),(-46688659/50000000)⟩, ⟨(13203/256000),(6617/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93361997/100000000),(-93361997/100000000)⟩, ⟨(6617/128000),(2653/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46673339/50000000),(-46673339/50000000)⟩, ⟨(2653/51200),(831/16000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-583321/625000),(-583321/625000)⟩, ⟨(831/16000),(13327/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23329011/25000000),(-23329011/25000000)⟩, ⟨(13327/256000),(6679/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93300731/100000000),(-93300731/100000000)⟩, ⟨(6679/128000),(13389/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93285419/100000000),(-93285419/100000000)⟩, ⟨(13389/256000),(671/12800)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93270109/100000000),(-93270109/100000000)⟩, ⟨(671/12800),(13451/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93254801/100000000),(-93254801/100000000)⟩, ⟨(13451/256000),(6741/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18647899/20000000),(-18647899/20000000)⟩, ⟨(6741/128000),(13513/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9322419/10000000),(-9322419/10000000)⟩, ⟨(13513/256000),(1693/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11651111/12500000),(-11651111/12500000)⟩, ⟨(1693/32000),(543/10240)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23298397/25000000),(-23298397/25000000)⟩, ⟨(543/10240),(6803/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93178289/100000000),(-93178289/100000000)⟩, ⟨(6803/128000),(13637/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93162993/100000000),(-93162993/100000000)⟩, ⟨(13637/256000),(3417/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46573849/50000000),(-46573849/50000000)⟩, ⟨(3417/64000),(13699/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18626481/20000000),(-18626481/20000000)⟩, ⟨(13699/256000),(1373/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46558557/50000000),(-46558557/50000000)⟩, ⟨(1373/25600),(13761/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-3724073/4000000),(-3724073/4000000)⟩, ⟨(13761/256000),(431/8000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46543269/50000000),(-46543269/50000000)⟩, ⟨(431/8000),(13823/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93071253/100000000),(-93071253/100000000)⟩, ⟨(13823/256000),(6927/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9305597/10000000),(-9305597/10000000)⟩, ⟨(6927/128000),(2777/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93040689/100000000),(-93040689/100000000)⟩, ⟨(2777/51200),(3479/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9302541/10000000),(-9302541/10000000)⟩, ⟨(3479/64000),(13947/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23252533/25000000),(-23252533/25000000)⟩, ⟨(13947/256000),(6989/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92994857/100000000),(-92994857/100000000)⟩, ⟨(6989/128000),(14009/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92979583/100000000),(-92979583/100000000)⟩, ⟨(14009/256000),(351/6400)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92964311/100000000),(-92964311/100000000)⟩, ⟨(351/6400),(14071/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46474521/50000000),(-46474521/50000000)⟩, ⟨(14071/256000),(7051/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46466887/50000000),(-46466887/50000000)⟩, ⟨(7051/128000),(14133/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23229627/25000000),(-23229627/25000000)⟩, ⟨(14133/256000),(3541/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23225811/25000000),(-23225811/25000000)⟩, ⟨(3541/64000),(2839/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46443991/50000000),(-46443991/50000000)⟩, ⟨(2839/51200),(7113/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46436361/50000000),(-46436361/50000000)⟩, ⟨(7113/128000),(14257/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11607183/12500000),(-11607183/12500000)⟩, ⟨(14257/256000),(893/16000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-2901319/3125000),(-2901319/3125000)⟩, ⟨(893/16000),(14319/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92826953/100000000),(-92826953/100000000)⟩, ⟨(14319/256000),(287/5120)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92811701/100000000),(-92811701/100000000)⟩, ⟨(287/5120),(14381/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1855929/2000000),(-1855929/2000000)⟩, ⟨(14381/256000),(3603/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46390601/50000000),(-46390601/50000000)⟩, ⟨(3603/64000),(14443/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18553191/20000000),(-18553191/20000000)⟩, ⟨(14443/256000),(7237/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92750711/100000000),(-92750711/100000000)⟩, ⟨(7237/128000),(2901/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23183867/25000000),(-23183867/25000000)⟩, ⟨(2901/51200),(1817/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92720227/100000000),(-92720227/100000000)⟩, ⟨(1817/32000),(14567/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23176247/25000000),(-23176247/25000000)⟩, ⟨(14567/256000),(7299/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92689751/100000000),(-92689751/100000000)⟩, ⟨(7299/128000),(14629/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23168629/25000000),(-23168629/25000000)⟩, ⟨(14629/256000),(733/12800)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92659283/100000000),(-92659283/100000000)⟩, ⟨(733/12800),(14691/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23161013/25000000),(-23161013/25000000)⟩, ⟨(14691/256000),(7361/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92628823/100000000),(-92628823/100000000)⟩, ⟨(7361/128000),(14753/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23153399/25000000),(-23153399/25000000)⟩, ⟨(14753/256000),(231/4000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92598371/100000000),(-92598371/100000000)⟩, ⟨(231/4000),(2963/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92583147/100000000),(-92583147/100000000)⟩, ⟨(2963/51200),(7423/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46283963/50000000),(-46283963/50000000)⟩, ⟨(7423/128000),(14877/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46276353/50000000),(-46276353/50000000)⟩, ⟨(14877/256000),(3727/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92537489/100000000),(-92537489/100000000)⟩, ⟨(3727/64000),(14939/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92522273/100000000),(-92522273/100000000)⟩, ⟨(14939/256000),(1497/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-4625353/5000000),(-4625353/5000000)⟩, ⟨(1497/25600),(15001/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11561481/12500000),(-11561481/12500000)⟩, ⟨(15001/256000),(1879/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46238319/50000000),(-46238319/50000000)⟩, ⟨(1879/32000),(15063/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92461431/100000000),(-92461431/100000000)⟩, ⟨(15063/256000),(7547/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-3697849/4000000),(-3697849/4000000)⟩, ⟨(7547/128000),(121/2048)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92431021/100000000),(-92431021/100000000)⟩, ⟨(121/2048),(3789/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92415819/100000000),(-92415819/100000000)⟩, ⟨(3789/64000),(15187/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92400619/100000000),(-92400619/100000000)⟩, ⟨(15187/256000),(7609/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92385421/100000000),(-92385421/100000000)⟩, ⟨(7609/128000),(15249/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-3694809/4000000),(-3694809/4000000)⟩, ⟨(15249/256000),(191/3200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92355031/100000000),(-92355031/100000000)⟩, ⟨(191/3200),(15311/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92339839/100000000),(-92339839/100000000)⟩, ⟨(15311/256000),(7671/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92324649/100000000),(-92324649/100000000)⟩, ⟨(7671/128000),(15373/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-4615473/5000000),(-4615473/5000000)⟩, ⟨(15373/256000),(3851/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46147137/50000000),(-46147137/50000000)⟩, ⟨(3851/64000),(3087/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9227909/10000000),(-9227909/10000000)⟩, ⟨(3087/51200),(7733/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92263907/100000000),(-92263907/100000000)⟩, ⟨(7733/128000),(15497/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92248727/100000000),(-92248727/100000000)⟩, ⟨(15497/256000),(1941/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23058387/25000000),(-23058387/25000000)⟩, ⟨(1941/32000),(15559/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23054593/25000000),(-23054593/25000000)⟩, ⟨(15559/256000),(1559/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92203197/100000000),(-92203197/100000000)⟩, ⟨(1559/25600),(15621/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-3687521/4000000),(-3687521/4000000)⟩, ⟨(15621/256000),(3913/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46086427/50000000),(-46086427/50000000)⟩, ⟨(3913/64000),(15683/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46078843/50000000),(-46078843/50000000)⟩, ⟨(15683/256000),(7857/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92142519/100000000),(-92142519/100000000)⟩, ⟨(7857/128000),(3149/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46063677/50000000),(-46063677/50000000)⟩, ⟨(3149/51200),(493/8000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1439253/1562500),(-1439253/1562500)⟩, ⟨(493/8000),(15807/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92097031/100000000),(-92097031/100000000)⟩, ⟨(15807/256000),(7919/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-5755117/6250000),(-5755117/6250000)⟩, ⟨(7919/128000),(15869/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18413343/20000000),(-18413343/20000000)⟩, ⟨(15869/256000),(159/2560)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-2301289/2500000),(-2301289/2500000)⟩, ⟨(159/2560),(15931/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92036407/100000000),(-92036407/100000000)⟩, ⟨(15931/256000),(7981/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92021257/100000000),(-92021257/100000000)⟩, ⟨(7981/128000),(15993/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23001527/25000000),(-23001527/25000000)⟩, ⟨(15993/256000),(2003/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91990961/100000000),(-91990961/100000000)⟩, ⟨(2003/32000),(3211/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11496977/12500000),(-11496977/12500000)⟩, ⟨(3211/51200),(8043/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91960673/100000000),(-91960673/100000000)⟩, ⟨(8043/128000),(16117/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22986383/25000000),(-22986383/25000000)⟩, ⟨(16117/256000),(4037/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91930393/100000000),(-91930393/100000000)⟩, ⟨(4037/64000),(16179/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18383051/20000000),(-18383051/20000000)⟩, ⟨(16179/256000),(1621/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-2297503/2500000),(-2297503/2500000)⟩, ⟨(1621/25600),(16241/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91884987/100000000),(-91884987/100000000)⟩, ⟨(16241/256000),(1017/16000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-2870933/3125000),(-2870933/3125000)⟩, ⟨(1017/16000),(16303/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91854727/100000000),(-91854727/100000000)⟩, ⟨(16303/256000),(8167/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-229599/250000),(-229599/250000)⟩, ⟨(8167/128000),(3273/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45912237/50000000),(-45912237/50000000)⟩, ⟨(3273/51200),(4099/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91809351/100000000),(-91809351/100000000)⟩, ⟨(4099/64000),(16427/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9179423/10000000),(-9179423/10000000)⟩, ⟨(16427/256000),(8229/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91779111/100000000),(-91779111/100000000)⟩, ⟨(8229/128000),(16489/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91763993/100000000),(-91763993/100000000)⟩, ⟨(16489/256000),(413/6400)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45874439/50000000),(-45874439/50000000)⟩, ⟨(413/6400),(16551/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18346753/20000000),(-18346753/20000000)⟩, ⟨(16551/256000),(8291/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91718653/100000000),(-91718653/100000000)⟩, ⟨(8291/128000),(16613/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11462943/12500000),(-11462943/12500000)⟩, ⟨(16613/256000),(4161/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91688437/100000000),(-91688437/100000000)⟩, ⟨(4161/64000),(667/10240)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91673331/100000000),(-91673331/100000000)⟩, ⟨(667/10240),(8353/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22914557/25000000),(-22914557/25000000)⟩, ⟨(8353/128000),(16737/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91643127/100000000),(-91643127/100000000)⟩, ⟨(16737/256000),(131/2000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91628027/100000000),(-91628027/100000000)⟩, ⟨(131/2000),(16799/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9161293/10000000),(-9161293/10000000)⟩, ⟨(16799/256000),(1683/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45798917/50000000),(-45798917/50000000)⟩, ⟨(1683/25600),(16861/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91582741/100000000),(-91582741/100000000)⟩, ⟨(16861/256000),(4223/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1831353/2000000),(-1831353/2000000)⟩, ⟨(4223/64000),(16923/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1144407/1250000),(-1144407/1250000)⟩, ⟨(16923/256000),(8477/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91537473/100000000),(-91537473/100000000)⟩, ⟨(8477/128000),(3397/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91522387/100000000),(-91522387/100000000)⟩, ⟨(3397/51200),(2127/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11438413/12500000),(-11438413/12500000)⟩, ⟨(2127/32000),(17047/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91492223/100000000),(-91492223/100000000)⟩, ⟨(17047/256000),(8539/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91477143/100000000),(-91477143/100000000)⟩, ⟨(8539/128000),(17109/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45731033/50000000),(-45731033/50000000)⟩, ⟨(17109/256000),(857/12800)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9144699/10000000),(-9144699/10000000)⟩, ⟨(857/12800),(17171/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91431917/100000000),(-91431917/100000000)⟩, ⟨(17171/256000),(8601/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18283369/20000000),(-18283369/20000000)⟩, ⟨(8601/128000),(17233/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-5712611/6250000),(-5712611/6250000)⟩, ⟨(17233/256000),(1079/16000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91386709/100000000),(-91386709/100000000)⟩, ⟨(1079/16000),(3459/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91371643/100000000),(-91371643/100000000)⟩, ⟨(3459/51200),(8663/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-4567829/5000000),(-4567829/5000000)⟩, ⟨(8663/128000),(17357/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45670759/50000000),(-45670759/50000000)⟩, ⟨(17357/256000),(4347/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91326459/100000000),(-91326459/100000000)⟩, ⟨(4347/64000),(17419/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45655701/50000000),(-45655701/50000000)⟩, ⟨(17419/256000),(349/5120)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45648173/50000000),(-45648173/50000000)⟩, ⟨(349/5120),(17481/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91281293/100000000),(-91281293/100000000)⟩, ⟨(17481/256000),(2189/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91266241/100000000),(-91266241/100000000)⟩, ⟨(2189/32000),(17543/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11406399/12500000),(-11406399/12500000)⟩, ⟨(17543/256000),(8787/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18247229/20000000),(-18247229/20000000)⟩, ⟨(8787/128000),(3521/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91221099/100000000),(-91221099/100000000)⟩, ⟨(3521/51200),(4409/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11400757/12500000),(-11400757/12500000)⟩, ⟨(4409/64000),(17667/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18238203/20000000),(-18238203/20000000)⟩, ⟨(17667/256000),(8849/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11396997/12500000),(-11396997/12500000)⟩, ⟨(8849/128000),(17729/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45580469/50000000),(-45580469/50000000)⟩, ⟨(17729/256000),(111/1600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91145903/100000000),(-91145903/100000000)⟩, ⟨(111/1600),(17791/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9113087/10000000),(-9113087/10000000)⟩, ⟨(17791/256000),(8911/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91115839/100000000),(-91115839/100000000)⟩, ⟨(8911/128000),(17853/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91100809/100000000),(-91100809/100000000)⟩, ⟨(17853/256000),(4471/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45542891/50000000),(-45542891/50000000)⟩, ⟨(4471/64000),(3583/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91070757/100000000),(-91070757/100000000)⟩, ⟨(3583/51200),(8973/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45527867/50000000),(-45527867/50000000)⟩, ⟨(8973/128000),(17977/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91040713/100000000),(-91040713/100000000)⟩, ⟨(17977/256000),(2251/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45512847/50000000),(-45512847/50000000)⟩, ⟨(2251/32000),(18039/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91010677/100000000),(-91010677/100000000)⟩, ⟨(18039/256000),(1807/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45497831/50000000),(-45497831/50000000)⟩, ⟨(1807/25600),(18101/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90980649/100000000),(-90980649/100000000)⟩, ⟨(18101/256000),(4533/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90965637/100000000),(-90965637/100000000)⟩, ⟨(4533/64000),(18163/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90950629/100000000),(-90950629/100000000)⟩, ⟨(18163/256000),(9097/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45467811/50000000),(-45467811/50000000)⟩, ⟨(9097/128000),(729/10240)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90920617/100000000),(-90920617/100000000)⟩, ⟨(729/10240),(1141/16000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45452807/50000000),(-45452807/50000000)⟩, ⟨(1141/16000),(18287/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90890613/100000000),(-90890613/100000000)⟩, ⟨(18287/256000),(9159/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45437807/50000000),(-45437807/50000000)⟩, ⟨(9159/128000),(18349/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90860617/100000000),(-90860617/100000000)⟩, ⟨(18349/256000),(919/12800)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45422811/50000000),(-45422811/50000000)⟩, ⟨(919/12800),(18411/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9083063/10000000),(-9083063/10000000)⟩, ⟨(18411/256000),(9221/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90815639/100000000),(-90815639/100000000)⟩, ⟨(9221/128000),(18473/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1816013/2000000),(-1816013/2000000)⟩, ⟨(18473/256000),(2313/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-709263/781250),(-709263/781250)⟩, ⟨(2313/32000),(3707/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90770679/100000000),(-90770679/100000000)⟩, ⟨(3707/51200),(9283/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-5672231/6250000),(-5672231/6250000)⟩, ⟨(9283/128000),(18597/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22685179/25000000),(-22685179/25000000)⟩, ⟨(18597/256000),(4657/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90725737/100000000),(-90725737/100000000)⟩, ⟨(4657/64000),(18659/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90710761/100000000),(-90710761/100000000)⟩, ⟨(18659/256000),(1869/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45347893/50000000),(-45347893/50000000)⟩, ⟨(1869/25600),(18721/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45340407/50000000),(-45340407/50000000)⟩, ⟨(18721/256000),(293/4000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22666461/25000000),(-22666461/25000000)⟩, ⟨(293/4000),(18783/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-725207/800000),(-725207/800000)⟩, ⟨(18783/256000),(9407/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90635909/100000000),(-90635909/100000000)⟩, ⟨(9407/128000),(3769/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18124189/20000000),(-18124189/20000000)⟩, ⟨(3769/51200),(4719/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90605983/100000000),(-90605983/100000000)⟩, ⟨(4719/64000),(18907/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90591023/100000000),(-90591023/100000000)⟩, ⟨(18907/256000),(9469/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1415251/1562500),(-1415251/1562500)⟩, ⟨(9469/128000),(18969/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22640277/25000000),(-22640277/25000000)⟩, ⟨(18969/256000),(19/256)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45273077/50000000),(-45273077/50000000)⟩, ⟨(19/256),(19031/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45265601/50000000),(-45265601/50000000)⟩, ⟨(19031/256000),(9531/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90516253/100000000),(-90516253/100000000)⟩, ⟨(9531/128000),(19093/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18100261/20000000),(-18100261/20000000)⟩, ⟨(19093/256000),(4781/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90486359/100000000),(-90486359/100000000)⟩, ⟨(4781/64000),(3831/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18094283/20000000),(-18094283/20000000)⟩, ⟨(3831/51200),(9593/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90456473/100000000),(-90456473/100000000)⟩, ⟨(9593/128000),(19217/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45220767/50000000),(-45220767/50000000)⟩, ⟨(19217/256000),(1203/16000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22606649/25000000),(-22606649/25000000)⟩, ⟨(1203/16000),(19279/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90411661/100000000),(-90411661/100000000)⟩, ⟨(19279/256000),(1931/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90396727/100000000),(-90396727/100000000)⟩, ⟨(1931/25600),(19341/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22595449/25000000),(-22595449/25000000)⟩, ⟨(19341/256000),(4843/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45183433/50000000),(-45183433/50000000)⟩, ⟨(4843/64000),(19403/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90351939/100000000),(-90351939/100000000)⟩, ⟨(19403/256000),(9717/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90337013/100000000),(-90337013/100000000)⟩, ⟨(9717/128000),(3893/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9032209/10000000),(-9032209/10000000)⟩, ⟨(3893/51200),(2437/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90307169/100000000),(-90307169/100000000)⟩, ⟨(2437/32000),(19527/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-361169/400000),(-361169/400000)⟩, ⟨(19527/256000),(9779/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90277333/100000000),(-90277333/100000000)⟩, ⟨(9779/128000),(19589/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45131209/50000000),(-45131209/50000000)⟩, ⟨(19589/256000),(981/12800)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18049501/20000000),(-18049501/20000000)⟩, ⟨(981/12800),(19651/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45116297/50000000),(-45116297/50000000)⟩, ⟨(19651/256000),(9841/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18043537/20000000),(-18043537/20000000)⟩, ⟨(9841/128000),(19713/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45101389/50000000),(-45101389/50000000)⟩, ⟨(19713/256000),(617/8000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45093937/50000000),(-45093937/50000000)⟩, ⟨(617/8000),(791/10240)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90172971/100000000),(-90172971/100000000)⟩, ⟨(791/10240),(9903/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90158071/100000000),(-90158071/100000000)⟩, ⟨(9903/128000),(19837/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22535793/25000000),(-22535793/25000000)⟩, ⟨(19837/256000),(4967/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22532069/25000000),(-22532069/25000000)⟩, ⟨(4967/64000),(19899/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90113381/100000000),(-90113381/100000000)⟩, ⟨(19899/256000),(1993/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90098489/100000000),(-90098489/100000000)⟩, ⟨(1993/25600),(19961/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90083599/100000000),(-90083599/100000000)⟩, ⟨(19961/256000),(2499/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90068711/100000000),(-90068711/100000000)⟩, ⟨(2499/32000),(20023/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1407091/1562500),(-1407091/1562500)⟩, ⟨(20023/256000),(10027/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-4501947/5000000),(-4501947/5000000)⟩, ⟨(10027/128000),(4017/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45012029/50000000),(-45012029/50000000)⟩, ⟨(4017/51200),(5029/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90009179/100000000),(-90009179/100000000)⟩, ⟨(5029/64000),(20147/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89994301/100000000),(-89994301/100000000)⟩, ⟨(20147/256000),(10089/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-3599177/4000000),(-3599177/4000000)⟩, ⟨(10089/128000),(20209/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89964551/100000000),(-89964551/100000000)⟩, ⟨(20209/256000),(253/3200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1124371/1250000),(-1124371/1250000)⟩, ⟨(253/3200),(20271/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-8993481/10000000),(-8993481/10000000)⟩, ⟨(20271/256000),(10151/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89919943/100000000),(-89919943/100000000)⟩, ⟨(10151/128000),(20333/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89905077/100000000),(-89905077/100000000)⟩, ⟨(20333/256000),(5091/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-44945107/50000000),(-44945107/50000000)⟩, ⟨(5091/64000),(4079/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89875353/100000000),(-89875353/100000000)⟩, ⟨(4079/51200),(10213/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-44930247/50000000),(-44930247/50000000)⟩, ⟨(10213/128000),(20457/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89845637/100000000),(-89845637/100000000)⟩, ⟨(20457/256000),(2561/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-44915391/50000000),(-44915391/50000000)⟩, ⟨(2561/32000),(20519/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89815929/100000000),(-89815929/100000000)⟩, ⟨(20519/256000),(411/5120)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-44900539/50000000),(-44900539/50000000)⟩, ⟨(411/5120),(20581/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89786229/100000000),(-89786229/100000000)⟩, ⟨(20581/256000),(5153/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89771383/100000000),(-89771383/100000000)⟩, ⟨(5153/64000),(20643/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-44878269/50000000),(-44878269/50000000)⟩, ⟨(20643/256000),(10337/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-701107/781250),(-701107/781250)⟩, ⟨(10337/128000),(4141/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-17945371/20000000),(-17945371/20000000)⟩, ⟨(4141/51200),(81/1000)⟩]]
+def upperBoxes : Fin 256 → QBox 3 := ![![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93536669/100000000),(-93536669/100000000)⟩, ⟨(1/20),(12831/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93521323/100000000),(-93521323/100000000)⟩, ⟨(12831/256000),(6431/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93505979/100000000),(-93505979/100000000)⟩, ⟨(6431/128000),(12893/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93490637/100000000),(-93490637/100000000)⟩, ⟨(12893/256000),(3231/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-2921103/3125000),(-2921103/3125000)⟩, ⟨(3231/64000),(2591/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46729979/50000000),(-46729979/50000000)⟩, ⟨(2591/51200),(6493/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93444621/100000000),(-93444621/100000000)⟩, ⟨(6493/128000),(13017/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93429287/100000000),(-93429287/100000000)⟩, ⟨(13017/256000),(1631/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46706977/50000000),(-46706977/50000000)⟩, ⟨(1631/32000),(13079/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93398623/100000000),(-93398623/100000000)⟩, ⟨(13079/256000),(1311/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46691647/50000000),(-46691647/50000000)⟩, ⟨(1311/25600),(13141/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93367967/100000000),(-93367967/100000000)⟩, ⟨(13141/256000),(3293/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46676321/50000000),(-46676321/50000000)⟩, ⟨(3293/64000),(13203/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46668659/50000000),(-46668659/50000000)⟩, ⟨(13203/256000),(6617/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93321997/100000000),(-93321997/100000000)⟩, ⟨(6617/128000),(2653/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46653339/50000000),(-46653339/50000000)⟩, ⟨(2653/51200),(831/16000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-583071/625000),(-583071/625000)⟩, ⟨(831/16000),(13327/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23319011/25000000),(-23319011/25000000)⟩, ⟨(13327/256000),(6679/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93260731/100000000),(-93260731/100000000)⟩, ⟨(6679/128000),(13389/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93245419/100000000),(-93245419/100000000)⟩, ⟨(13389/256000),(671/12800)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93230109/100000000),(-93230109/100000000)⟩, ⟨(671/12800),(13451/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93214801/100000000),(-93214801/100000000)⟩, ⟨(13451/256000),(6741/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18639899/20000000),(-18639899/20000000)⟩, ⟨(6741/128000),(13513/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9318419/10000000),(-9318419/10000000)⟩, ⟨(13513/256000),(1693/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11646111/12500000),(-11646111/12500000)⟩, ⟨(1693/32000),(543/10240)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23288397/25000000),(-23288397/25000000)⟩, ⟨(543/10240),(6803/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93138289/100000000),(-93138289/100000000)⟩, ⟨(6803/128000),(13637/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93122993/100000000),(-93122993/100000000)⟩, ⟨(13637/256000),(3417/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46553849/50000000),(-46553849/50000000)⟩, ⟨(3417/64000),(13699/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18618481/20000000),(-18618481/20000000)⟩, ⟨(13699/256000),(1373/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46538557/50000000),(-46538557/50000000)⟩, ⟨(1373/25600),(13761/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-3722473/4000000),(-3722473/4000000)⟩, ⟨(13761/256000),(431/8000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46523269/50000000),(-46523269/50000000)⟩, ⟨(431/8000),(13823/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93031253/100000000),(-93031253/100000000)⟩, ⟨(13823/256000),(6927/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9301597/10000000),(-9301597/10000000)⟩, ⟨(6927/128000),(2777/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93000689/100000000),(-93000689/100000000)⟩, ⟨(2777/51200),(3479/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9298541/10000000),(-9298541/10000000)⟩, ⟨(3479/64000),(13947/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23242533/25000000),(-23242533/25000000)⟩, ⟨(13947/256000),(6989/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92954857/100000000),(-92954857/100000000)⟩, ⟨(6989/128000),(14009/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92939583/100000000),(-92939583/100000000)⟩, ⟨(14009/256000),(351/6400)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92924311/100000000),(-92924311/100000000)⟩, ⟨(351/6400),(14071/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46454521/50000000),(-46454521/50000000)⟩, ⟨(14071/256000),(7051/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46446887/50000000),(-46446887/50000000)⟩, ⟨(7051/128000),(14133/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23219627/25000000),(-23219627/25000000)⟩, ⟨(14133/256000),(3541/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23215811/25000000),(-23215811/25000000)⟩, ⟨(3541/64000),(2839/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46423991/50000000),(-46423991/50000000)⟩, ⟨(2839/51200),(7113/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46416361/50000000),(-46416361/50000000)⟩, ⟨(7113/128000),(14257/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11602183/12500000),(-11602183/12500000)⟩, ⟨(14257/256000),(893/16000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-2900069/3125000),(-2900069/3125000)⟩, ⟨(893/16000),(14319/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92786953/100000000),(-92786953/100000000)⟩, ⟨(14319/256000),(287/5120)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92771701/100000000),(-92771701/100000000)⟩, ⟨(287/5120),(14381/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1855129/2000000),(-1855129/2000000)⟩, ⟨(14381/256000),(3603/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46370601/50000000),(-46370601/50000000)⟩, ⟨(3603/64000),(14443/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18545191/20000000),(-18545191/20000000)⟩, ⟨(14443/256000),(7237/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92710711/100000000),(-92710711/100000000)⟩, ⟨(7237/128000),(2901/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23173867/25000000),(-23173867/25000000)⟩, ⟨(2901/51200),(1817/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92680227/100000000),(-92680227/100000000)⟩, ⟨(1817/32000),(14567/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23166247/25000000),(-23166247/25000000)⟩, ⟨(14567/256000),(7299/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92649751/100000000),(-92649751/100000000)⟩, ⟨(7299/128000),(14629/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23158629/25000000),(-23158629/25000000)⟩, ⟨(14629/256000),(733/12800)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92619283/100000000),(-92619283/100000000)⟩, ⟨(733/12800),(14691/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23151013/25000000),(-23151013/25000000)⟩, ⟨(14691/256000),(7361/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92588823/100000000),(-92588823/100000000)⟩, ⟨(7361/128000),(14753/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23143399/25000000),(-23143399/25000000)⟩, ⟨(14753/256000),(231/4000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92558371/100000000),(-92558371/100000000)⟩, ⟨(231/4000),(2963/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92543147/100000000),(-92543147/100000000)⟩, ⟨(2963/51200),(7423/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46263963/50000000),(-46263963/50000000)⟩, ⟨(7423/128000),(14877/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46256353/50000000),(-46256353/50000000)⟩, ⟨(14877/256000),(3727/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92497489/100000000),(-92497489/100000000)⟩, ⟨(3727/64000),(14939/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92482273/100000000),(-92482273/100000000)⟩, ⟨(14939/256000),(1497/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-4623353/5000000),(-4623353/5000000)⟩, ⟨(1497/25600),(15001/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11556481/12500000),(-11556481/12500000)⟩, ⟨(15001/256000),(1879/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46218319/50000000),(-46218319/50000000)⟩, ⟨(1879/32000),(15063/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92421431/100000000),(-92421431/100000000)⟩, ⟨(15063/256000),(7547/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-3696249/4000000),(-3696249/4000000)⟩, ⟨(7547/128000),(121/2048)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92391021/100000000),(-92391021/100000000)⟩, ⟨(121/2048),(3789/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92375819/100000000),(-92375819/100000000)⟩, ⟨(3789/64000),(15187/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92360619/100000000),(-92360619/100000000)⟩, ⟨(15187/256000),(7609/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92345421/100000000),(-92345421/100000000)⟩, ⟨(7609/128000),(15249/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-3693209/4000000),(-3693209/4000000)⟩, ⟨(15249/256000),(191/3200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92315031/100000000),(-92315031/100000000)⟩, ⟨(191/3200),(15311/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92299839/100000000),(-92299839/100000000)⟩, ⟨(15311/256000),(7671/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92284649/100000000),(-92284649/100000000)⟩, ⟨(7671/128000),(15373/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-4613473/5000000),(-4613473/5000000)⟩, ⟨(15373/256000),(3851/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46127137/50000000),(-46127137/50000000)⟩, ⟨(3851/64000),(3087/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9223909/10000000),(-9223909/10000000)⟩, ⟨(3087/51200),(7733/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92223907/100000000),(-92223907/100000000)⟩, ⟨(7733/128000),(15497/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92208727/100000000),(-92208727/100000000)⟩, ⟨(15497/256000),(1941/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23048387/25000000),(-23048387/25000000)⟩, ⟨(1941/32000),(15559/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-23044593/25000000),(-23044593/25000000)⟩, ⟨(15559/256000),(1559/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92163197/100000000),(-92163197/100000000)⟩, ⟨(1559/25600),(15621/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-3685921/4000000),(-3685921/4000000)⟩, ⟨(15621/256000),(3913/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46066427/50000000),(-46066427/50000000)⟩, ⟨(3913/64000),(15683/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46058843/50000000),(-46058843/50000000)⟩, ⟨(15683/256000),(7857/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92102519/100000000),(-92102519/100000000)⟩, ⟨(7857/128000),(3149/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46043677/50000000),(-46043677/50000000)⟩, ⟨(3149/51200),(493/8000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-359657/390625),(-359657/390625)⟩, ⟨(493/8000),(15807/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-92057031/100000000),(-92057031/100000000)⟩, ⟨(15807/256000),(7919/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-5752617/6250000),(-5752617/6250000)⟩, ⟨(7919/128000),(15869/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18405343/20000000),(-18405343/20000000)⟩, ⟨(15869/256000),(159/2560)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-2300289/2500000),(-2300289/2500000)⟩, ⟨(159/2560),(15931/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91996407/100000000),(-91996407/100000000)⟩, ⟨(15931/256000),(7981/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91981257/100000000),(-91981257/100000000)⟩, ⟨(7981/128000),(15993/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22991527/25000000),(-22991527/25000000)⟩, ⟨(15993/256000),(2003/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91950961/100000000),(-91950961/100000000)⟩, ⟨(2003/32000),(3211/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11491977/12500000),(-11491977/12500000)⟩, ⟨(3211/51200),(8043/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91920673/100000000),(-91920673/100000000)⟩, ⟨(8043/128000),(16117/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22976383/25000000),(-22976383/25000000)⟩, ⟨(16117/256000),(4037/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91890393/100000000),(-91890393/100000000)⟩, ⟨(4037/64000),(16179/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18375051/20000000),(-18375051/20000000)⟩, ⟨(16179/256000),(1621/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-2296503/2500000),(-2296503/2500000)⟩, ⟨(1621/25600),(16241/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91844987/100000000),(-91844987/100000000)⟩, ⟨(16241/256000),(1017/16000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-2869683/3125000),(-2869683/3125000)⟩, ⟨(1017/16000),(16303/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91814727/100000000),(-91814727/100000000)⟩, ⟨(16303/256000),(8167/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-229499/250000),(-229499/250000)⟩, ⟨(8167/128000),(3273/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45892237/50000000),(-45892237/50000000)⟩, ⟨(3273/51200),(4099/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91769351/100000000),(-91769351/100000000)⟩, ⟨(4099/64000),(16427/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9175423/10000000),(-9175423/10000000)⟩, ⟨(16427/256000),(8229/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91739111/100000000),(-91739111/100000000)⟩, ⟨(8229/128000),(16489/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91723993/100000000),(-91723993/100000000)⟩, ⟨(16489/256000),(413/6400)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45854439/50000000),(-45854439/50000000)⟩, ⟨(413/6400),(16551/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18338753/20000000),(-18338753/20000000)⟩, ⟨(16551/256000),(8291/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91678653/100000000),(-91678653/100000000)⟩, ⟨(8291/128000),(16613/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11457943/12500000),(-11457943/12500000)⟩, ⟨(16613/256000),(4161/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91648437/100000000),(-91648437/100000000)⟩, ⟨(4161/64000),(667/10240)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91633331/100000000),(-91633331/100000000)⟩, ⟨(667/10240),(8353/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22904557/25000000),(-22904557/25000000)⟩, ⟨(8353/128000),(16737/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91603127/100000000),(-91603127/100000000)⟩, ⟨(16737/256000),(131/2000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91588027/100000000),(-91588027/100000000)⟩, ⟨(131/2000),(16799/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9157293/10000000),(-9157293/10000000)⟩, ⟨(16799/256000),(1683/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45778917/50000000),(-45778917/50000000)⟩, ⟨(1683/25600),(16861/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91542741/100000000),(-91542741/100000000)⟩, ⟨(16861/256000),(4223/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1830553/2000000),(-1830553/2000000)⟩, ⟨(4223/64000),(16923/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1143907/1250000),(-1143907/1250000)⟩, ⟨(16923/256000),(8477/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91497473/100000000),(-91497473/100000000)⟩, ⟨(8477/128000),(3397/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91482387/100000000),(-91482387/100000000)⟩, ⟨(3397/51200),(2127/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11433413/12500000),(-11433413/12500000)⟩, ⟨(2127/32000),(17047/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91452223/100000000),(-91452223/100000000)⟩, ⟨(17047/256000),(8539/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91437143/100000000),(-91437143/100000000)⟩, ⟨(8539/128000),(17109/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45711033/50000000),(-45711033/50000000)⟩, ⟨(17109/256000),(857/12800)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9140699/10000000),(-9140699/10000000)⟩, ⟨(857/12800),(17171/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91391917/100000000),(-91391917/100000000)⟩, ⟨(17171/256000),(8601/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18275369/20000000),(-18275369/20000000)⟩, ⟨(8601/128000),(17233/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-5710111/6250000),(-5710111/6250000)⟩, ⟨(17233/256000),(1079/16000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91346709/100000000),(-91346709/100000000)⟩, ⟨(1079/16000),(3459/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91331643/100000000),(-91331643/100000000)⟩, ⟨(3459/51200),(8663/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-4565829/5000000),(-4565829/5000000)⟩, ⟨(8663/128000),(17357/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45650759/50000000),(-45650759/50000000)⟩, ⟨(17357/256000),(4347/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91286459/100000000),(-91286459/100000000)⟩, ⟨(4347/64000),(17419/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45635701/50000000),(-45635701/50000000)⟩, ⟨(17419/256000),(349/5120)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45628173/50000000),(-45628173/50000000)⟩, ⟨(349/5120),(17481/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91241293/100000000),(-91241293/100000000)⟩, ⟨(17481/256000),(2189/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91226241/100000000),(-91226241/100000000)⟩, ⟨(2189/32000),(17543/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11401399/12500000),(-11401399/12500000)⟩, ⟨(17543/256000),(8787/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18239229/20000000),(-18239229/20000000)⟩, ⟨(8787/128000),(3521/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91181099/100000000),(-91181099/100000000)⟩, ⟨(3521/51200),(4409/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11395757/12500000),(-11395757/12500000)⟩, ⟨(4409/64000),(17667/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18230203/20000000),(-18230203/20000000)⟩, ⟨(17667/256000),(8849/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-11391997/12500000),(-11391997/12500000)⟩, ⟨(8849/128000),(17729/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45560469/50000000),(-45560469/50000000)⟩, ⟨(17729/256000),(111/1600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91105903/100000000),(-91105903/100000000)⟩, ⟨(111/1600),(17791/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9109087/10000000),(-9109087/10000000)⟩, ⟨(17791/256000),(8911/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91075839/100000000),(-91075839/100000000)⟩, ⟨(8911/128000),(17853/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91060809/100000000),(-91060809/100000000)⟩, ⟨(17853/256000),(4471/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45522891/50000000),(-45522891/50000000)⟩, ⟨(4471/64000),(3583/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91030757/100000000),(-91030757/100000000)⟩, ⟨(3583/51200),(8973/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45507867/50000000),(-45507867/50000000)⟩, ⟨(8973/128000),(17977/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-91000713/100000000),(-91000713/100000000)⟩, ⟨(17977/256000),(2251/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45492847/50000000),(-45492847/50000000)⟩, ⟨(2251/32000),(18039/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90970677/100000000),(-90970677/100000000)⟩, ⟨(18039/256000),(1807/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45477831/50000000),(-45477831/50000000)⟩, ⟨(1807/25600),(18101/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90940649/100000000),(-90940649/100000000)⟩, ⟨(18101/256000),(4533/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90925637/100000000),(-90925637/100000000)⟩, ⟨(4533/64000),(18163/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90910629/100000000),(-90910629/100000000)⟩, ⟨(18163/256000),(9097/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45447811/50000000),(-45447811/50000000)⟩, ⟨(9097/128000),(729/10240)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90880617/100000000),(-90880617/100000000)⟩, ⟨(729/10240),(1141/16000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45432807/50000000),(-45432807/50000000)⟩, ⟨(1141/16000),(18287/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90850613/100000000),(-90850613/100000000)⟩, ⟨(18287/256000),(9159/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45417807/50000000),(-45417807/50000000)⟩, ⟨(9159/128000),(18349/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90820617/100000000),(-90820617/100000000)⟩, ⟨(18349/256000),(919/12800)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45402811/50000000),(-45402811/50000000)⟩, ⟨(919/12800),(18411/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9079063/10000000),(-9079063/10000000)⟩, ⟨(18411/256000),(9221/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90775639/100000000),(-90775639/100000000)⟩, ⟨(9221/128000),(18473/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1815213/2000000),(-1815213/2000000)⟩, ⟨(18473/256000),(2313/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1417901/1562500),(-1417901/1562500)⟩, ⟨(2313/32000),(3707/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90730679/100000000),(-90730679/100000000)⟩, ⟨(3707/51200),(9283/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-5669731/6250000),(-5669731/6250000)⟩, ⟨(9283/128000),(18597/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22675179/25000000),(-22675179/25000000)⟩, ⟨(18597/256000),(4657/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90685737/100000000),(-90685737/100000000)⟩, ⟨(4657/64000),(18659/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90670761/100000000),(-90670761/100000000)⟩, ⟨(18659/256000),(1869/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45327893/50000000),(-45327893/50000000)⟩, ⟨(1869/25600),(18721/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45320407/50000000),(-45320407/50000000)⟩, ⟨(18721/256000),(293/4000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22656461/25000000),(-22656461/25000000)⟩, ⟨(293/4000),(18783/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-724887/800000),(-724887/800000)⟩, ⟨(18783/256000),(9407/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90595909/100000000),(-90595909/100000000)⟩, ⟨(9407/128000),(3769/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18116189/20000000),(-18116189/20000000)⟩, ⟨(3769/51200),(4719/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90565983/100000000),(-90565983/100000000)⟩, ⟨(4719/64000),(18907/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90551023/100000000),(-90551023/100000000)⟩, ⟨(18907/256000),(9469/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-707313/781250),(-707313/781250)⟩, ⟨(9469/128000),(18969/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22630277/25000000),(-22630277/25000000)⟩, ⟨(18969/256000),(19/256)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45253077/50000000),(-45253077/50000000)⟩, ⟨(19/256),(19031/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45245601/50000000),(-45245601/50000000)⟩, ⟨(19031/256000),(9531/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90476253/100000000),(-90476253/100000000)⟩, ⟨(9531/128000),(19093/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18092261/20000000),(-18092261/20000000)⟩, ⟨(19093/256000),(4781/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90446359/100000000),(-90446359/100000000)⟩, ⟨(4781/64000),(3831/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18086283/20000000),(-18086283/20000000)⟩, ⟨(3831/51200),(9593/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90416473/100000000),(-90416473/100000000)⟩, ⟨(9593/128000),(19217/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45200767/50000000),(-45200767/50000000)⟩, ⟨(19217/256000),(1203/16000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22596649/25000000),(-22596649/25000000)⟩, ⟨(1203/16000),(19279/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90371661/100000000),(-90371661/100000000)⟩, ⟨(19279/256000),(1931/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90356727/100000000),(-90356727/100000000)⟩, ⟨(1931/25600),(19341/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22585449/25000000),(-22585449/25000000)⟩, ⟨(19341/256000),(4843/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45163433/50000000),(-45163433/50000000)⟩, ⟨(4843/64000),(19403/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90311939/100000000),(-90311939/100000000)⟩, ⟨(19403/256000),(9717/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90297013/100000000),(-90297013/100000000)⟩, ⟨(9717/128000),(3893/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-9028209/10000000),(-9028209/10000000)⟩, ⟨(3893/51200),(2437/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90267169/100000000),(-90267169/100000000)⟩, ⟨(2437/32000),(19527/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-361009/400000),(-361009/400000)⟩, ⟨(19527/256000),(9779/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90237333/100000000),(-90237333/100000000)⟩, ⟨(9779/128000),(19589/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45111209/50000000),(-45111209/50000000)⟩, ⟨(19589/256000),(981/12800)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18041501/20000000),(-18041501/20000000)⟩, ⟨(981/12800),(19651/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45096297/50000000),(-45096297/50000000)⟩, ⟨(19651/256000),(9841/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-18035537/20000000),(-18035537/20000000)⟩, ⟨(9841/128000),(19713/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45081389/50000000),(-45081389/50000000)⟩, ⟨(19713/256000),(617/8000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-45073937/50000000),(-45073937/50000000)⟩, ⟨(617/8000),(791/10240)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90132971/100000000),(-90132971/100000000)⟩, ⟨(791/10240),(9903/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90118071/100000000),(-90118071/100000000)⟩, ⟨(9903/128000),(19837/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22525793/25000000),(-22525793/25000000)⟩, ⟨(19837/256000),(4967/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-22522069/25000000),(-22522069/25000000)⟩, ⟨(4967/64000),(19899/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90073381/100000000),(-90073381/100000000)⟩, ⟨(19899/256000),(1993/25600)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90058489/100000000),(-90058489/100000000)⟩, ⟨(1993/25600),(19961/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90043599/100000000),(-90043599/100000000)⟩, ⟨(19961/256000),(2499/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-90028711/100000000),(-90028711/100000000)⟩, ⟨(2499/32000),(20023/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-703233/781250),(-703233/781250)⟩, ⟨(20023/256000),(10027/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-4499947/5000000),(-4499947/5000000)⟩, ⟨(10027/128000),(4017/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-44992029/50000000),(-44992029/50000000)⟩, ⟨(4017/51200),(5029/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89969179/100000000),(-89969179/100000000)⟩, ⟨(5029/64000),(20147/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89954301/100000000),(-89954301/100000000)⟩, ⟨(20147/256000),(10089/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-3597577/4000000),(-3597577/4000000)⟩, ⟨(10089/128000),(20209/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89924551/100000000),(-89924551/100000000)⟩, ⟨(20209/256000),(253/3200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1123871/1250000),(-1123871/1250000)⟩, ⟨(253/3200),(20271/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-8989481/10000000),(-8989481/10000000)⟩, ⟨(20271/256000),(10151/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89879943/100000000),(-89879943/100000000)⟩, ⟨(10151/128000),(20333/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89865077/100000000),(-89865077/100000000)⟩, ⟨(20333/256000),(5091/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-44925107/50000000),(-44925107/50000000)⟩, ⟨(5091/64000),(4079/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89835353/100000000),(-89835353/100000000)⟩, ⟨(4079/51200),(10213/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-44910247/50000000),(-44910247/50000000)⟩, ⟨(10213/128000),(20457/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89805637/100000000),(-89805637/100000000)⟩, ⟨(20457/256000),(2561/32000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-44895391/50000000),(-44895391/50000000)⟩, ⟨(2561/32000),(20519/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89775929/100000000),(-89775929/100000000)⟩, ⟨(20519/256000),(411/5120)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-44880539/50000000),(-44880539/50000000)⟩, ⟨(411/5120),(20581/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89746229/100000000),(-89746229/100000000)⟩, ⟨(20581/256000),(5153/64000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-89731383/100000000),(-89731383/100000000)⟩, ⟨(5153/64000),(20643/256000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-44858269/50000000),(-44858269/50000000)⟩, ⟨(20643/256000),(10337/128000)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1401589/1562500),(-1401589/1562500)⟩, ⟨(10337/128000),(4141/51200)⟩],
+  ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-17937371/20000000),(-17937371/20000000)⟩, ⟨(4141/51200),(81/1000)⟩]]
+def yLo (i : Fin 256) : ℝ := ((graphBoxes i 1).lo:ℝ)
+def yHi (i : Fin 256) : ℝ := ((graphBoxes i 1).hi:ℝ)
+def zLo (i : Fin 256) : ℝ := 1/20+(31/256000)*(i.val:ℝ)
+def zHi (i : Fin 256) : ℝ := 1/20+(31/256000)*(i.val+1:ℝ)
+
+theorem graph_shape (i : Fin 256) :
+    (graphBoxes i 0).Mem q ↔ sharpLower ≤ q ∧ q ≤ sharpUpper := by
+  fin_cases i <;> norm_num [graphBoxes,QInterval.Mem,sharpLower,sharpUpper]
+
+theorem graph_z (i : Fin 256) (z : ℝ) :
+    (graphBoxes i 2).Mem z ↔ zLo i ≤ z ∧ z ≤ zHi i := by
+  fin_cases i <;> norm_num [graphBoxes,QInterval.Mem,zLo,zHi]
+
+theorem graph_local (i : Fin 256) :
+    -(937/1000:ℝ) ≤ yLo i ∧ yLo i < yHi i ∧ yHi i ≤ -(179/200) := by
+  fin_cases i <;> norm_num [yLo,yHi,graphBoxes]
+
+end SquaresInCircles.Eight.ExactFamily.AdaptiveGenerated

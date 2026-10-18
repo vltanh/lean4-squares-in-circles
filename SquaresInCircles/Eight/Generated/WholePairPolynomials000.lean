@@ -225,4 +225,364 @@ theorem wrong_0011011_edge2_negative_core_corner_arithmetic_poly_tables_7_positi
     0 < wrong_0011011_edge2_negative_core_corner_arithmetic_poly_tables_7.polynomial.eval x :=
   wrong_0011011_edge2_negative_core_corner_arithmetic_poly_tables_7_valid.positive (by norm_num) hx
 
+/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial segment P, row 0. -/
+def central_segment_P0 : Arithmetic.BernsteinRow :=
+  { interval := ⟨0,(1/4)⟩
+    polynomial := [(721/90000), (3/20), (7379/90000), (-11/3), (589379/90000), (43/60), (-329279/90000)]
+    degree := 6
+    coefficients := [(721/90000), (2567/180000), (450419/21600000), (89717/3600000), (8746403/345600000), (208973/9216000), (30689/1638400)] }
+
+theorem central_segment_P0_valid : central_segment_P0.Valid (721/180000) := by
+  constructor
+  · norm_num [central_segment_P0]
+  · rfl
+  · intro t
+    norm_num [central_segment_P0, Arithmetic.QPoly.eval, Arithmetic.bernsteinEval,
+      Arithmetic.bernsteinBasis, Arithmetic.BernsteinRow.coefficient,
+      Finset.sum_range_succ]
+    ring
+  · intro i hi
+    have hi' : i ≤ 6 := hi
+    interval_cases i <;> norm_num [central_segment_P0,Arithmetic.BernsteinRow.coefficient]
+
+theorem central_segment_P0_positive {x : ℝ} (hx : (0 : ℝ) ≤ x ∧ x ≤ (1/4)) :
+    0 < central_segment_P0.polynomial.eval x :=
+  central_segment_P0_valid.positive (by norm_num) hx
+
+/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial segment P, row 1. -/
+def central_segment_P1 : Arithmetic.BernsteinRow :=
+  { interval := ⟨(1/4),(1/2)⟩
+    polynomial := [(721/90000), (3/20), (7379/90000), (-11/3), (589379/90000), (43/60), (-329279/90000)]
+    degree := 6
+    coefficients := [(30689/1638400), (545113/36864000), (13177187/1382400000), (119661/25600000), (205099/69120000), (85637/11520000), (2521/128000)] }
+
+theorem central_segment_P1_valid : central_segment_P1.Valid (205099/138240000) := by
+  constructor
+  · norm_num [central_segment_P1]
+  · rfl
+  · intro t
+    norm_num [central_segment_P1, Arithmetic.QPoly.eval, Arithmetic.bernsteinEval,
+      Arithmetic.bernsteinBasis, Arithmetic.BernsteinRow.coefficient,
+      Finset.sum_range_succ]
+    ring
+  · intro i hi
+    have hi' : i ≤ 6 := hi
+    interval_cases i <;> norm_num [central_segment_P1,Arithmetic.BernsteinRow.coefficient]
+
+theorem central_segment_P1_positive {x : ℝ} (hx : ((1/4) : ℝ) ≤ x ∧ x ≤ (1/2)) :
+    0 < central_segment_P1.polynomial.eval x :=
+  central_segment_P1_valid.positive (by norm_num) hx
+
+/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial segment P, row 2. -/
+def central_segment_P2 : Arithmetic.BernsteinRow :=
+  { interval := ⟨(1/2),1⟩
+    polynomial := [(721/90000), (3/20), (7379/90000), (-11/3), (589379/90000), (43/60), (-329279/90000)]
+    degree := 6
+    coefficients := [(2521/128000), (127349/2880000), (215831/2160000), (119867/600000), (451367/1350000), (251/600), (9/50)] }
+
+theorem central_segment_P2_valid : central_segment_P2.Valid (2521/256000) := by
+  constructor
+  · norm_num [central_segment_P2]
+  · rfl
+  · intro t
+    norm_num [central_segment_P2, Arithmetic.QPoly.eval, Arithmetic.bernsteinEval,
+      Arithmetic.bernsteinBasis, Arithmetic.BernsteinRow.coefficient,
+      Finset.sum_range_succ]
+    ring
+  · intro i hi
+    have hi' : i ≤ 6 := hi
+    interval_cases i <;> norm_num [central_segment_P2,Arithmetic.BernsteinRow.coefficient]
+
+theorem central_segment_P2_positive {x : ℝ} (hx : ((1/2) : ℝ) ≤ x ∧ x ≤ 1) :
+    0 < central_segment_P2.polynomial.eval x :=
+  central_segment_P2_valid.positive (by norm_num) hx
+
+/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial segment V, row 0. -/
+def central_segment_V0 : Arithmetic.BernsteinRow :=
+  { interval := ⟨0,(3/14)⟩
+    polynomial := [(3/20), (-5/6), (7/10), (17/6), (-17/20)]
+    degree := 4
+    coefficients := [(3/20), (59/560), (37/560), (4293/109760), (22787/768320)] }
+
+theorem central_segment_V0_valid : central_segment_V0.Valid (22787/1536640) := by
+  constructor
+  · norm_num [central_segment_V0]
+  · rfl
+  · intro t
+    norm_num [central_segment_V0, Arithmetic.QPoly.eval, Arithmetic.bernsteinEval,
+      Arithmetic.bernsteinBasis, Arithmetic.BernsteinRow.coefficient,
+      Finset.sum_range_succ]
+    ring
+  · intro i hi
+    have hi' : i ≤ 4 := hi
+    interval_cases i <;> norm_num [central_segment_V0,Arithmetic.BernsteinRow.coefficient]
+
+theorem central_segment_V0_positive {x : ℝ} (hx : (0 : ℝ) ≤ x ∧ x ≤ (3/14)) :
+    0 < central_segment_V0.polynomial.eval x :=
+  central_segment_V0_valid.positive (by norm_num) hx
+
+/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial segment V, row 1. -/
+def central_segment_V1 : Arithmetic.BernsteinRow :=
+  { interval := ⟨(3/14),(3/7)⟩
+    polynomial := [(3/20), (-5/6), (7/10), (17/6), (-17/20)]
+    degree := 4
+    coefficients := [(22787/768320), (15523/768320), (5427/192080), (1133/19208), (278/2401)] }
+
+theorem central_segment_V1_valid : central_segment_V1.Valid (15523/1536640) := by
+  constructor
+  · norm_num [central_segment_V1]
+  · rfl
+  · intro t
+    norm_num [central_segment_V1, Arithmetic.QPoly.eval, Arithmetic.bernsteinEval,
+      Arithmetic.bernsteinBasis, Arithmetic.BernsteinRow.coefficient,
+      Finset.sum_range_succ]
+    ring
+  · intro i hi
+    have hi' : i ≤ 4 := hi
+    interval_cases i <;> norm_num [central_segment_V1,Arithmetic.BernsteinRow.coefficient]
+
+theorem central_segment_V1_positive {x : ℝ} (hx : ((3/14) : ℝ) ≤ x ∧ x ≤ (3/7)) :
+    0 < central_segment_V1.polynomial.eval x :=
+  central_segment_V1_valid.positive (by norm_num) hx
+
+/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandA P, row 0. -/
+def central_bandA_P0 : Arithmetic.BernsteinRow :=
+  { interval := ⟨0,(1/4)⟩
+    polynomial := [(2540913450225412921/39062500000000000000), (117708140112740701/3125000000000000000), (4442784786036443889/625000000000000000000), (-5821802411/1562500000), (4161617771686036443889/625000000000000000000), (2383626569387259299/3125000000000000000), (-143004146824774587079/39062500000000000000)]
+    degree := 6
+    coefficients := [(2540913450225412921/39062500000000000000), (124906549113638337733/1875000000000000000000), (10232382994102584864529/150000000000000000000000), (3346683221025046384769/50000000000000000000000), (49274612618208571550491/800000000000000000000000), (1269022836132573026803/24000000000000000000000), (17020603344683950553/400000000000000000000)] }
+
+theorem central_bandA_P0_valid : central_bandA_P0.Valid (17020603344683950553/800000000000000000000) := by
+  constructor
+  · norm_num [central_bandA_P0]
+  · rfl
+  · intro t
+    norm_num [central_bandA_P0, Arithmetic.QPoly.eval, Arithmetic.bernsteinEval,
+      Arithmetic.bernsteinBasis, Arithmetic.BernsteinRow.coefficient,
+      Finset.sum_range_succ]
+    ring
+  · intro i hi
+    have hi' : i ≤ 6 := hi
+    interval_cases i <;> norm_num [central_bandA_P0,Arithmetic.BernsteinRow.coefficient]
+
+theorem central_bandA_P0_positive {x : ℝ} (hx : (0 : ℝ) ≤ x ∧ x ≤ (1/4)) :
+    0 < central_bandA_P0.polynomial.eval x :=
+  central_bandA_P0_valid.positive (by norm_num) hx
+
+/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandA P, row 1. -/
+def central_bandA_P1 : Arithmetic.BernsteinRow :=
+  { interval := ⟨(1/4),(3/8)⟩
+    polynomial := [(2540913450225412921/39062500000000000000), (117708140112740701/3125000000000000000), (4442784786036443889/625000000000000000000), (-5821802411/1562500000), (4161617771686036443889/625000000000000000000), (2383626569387259299/3125000000000000000), (-143004146824774587079/39062500000000000000)]
+    degree := 6
+    coefficients := [(17020603344683950553/400000000000000000000), (1794685765910538072737/48000000000000000000000), (101840905596005076143891/3200000000000000000000000), (33383322024218801507483/1280000000000000000000000), (392541216014807255335331/19200000000000000000000000), (23425421096397963792737/1536000000000000000000000), (4439300063959196787073/409600000000000000000000)] }
+
+theorem central_bandA_P1_valid : central_bandA_P1.Valid (4439300063959196787073/819200000000000000000000) := by
+  constructor
+  · norm_num [central_bandA_P1]
+  · rfl
+  · intro t
+    norm_num [central_bandA_P1, Arithmetic.QPoly.eval, Arithmetic.bernsteinEval,
+      Arithmetic.bernsteinBasis, Arithmetic.BernsteinRow.coefficient,
+      Finset.sum_range_succ]
+    ring
+  · intro i hi
+    have hi' : i ≤ 6 := hi
+    interval_cases i <;> norm_num [central_bandA_P1,Arithmetic.BernsteinRow.coefficient]
+
+theorem central_bandA_P1_positive {x : ℝ} (hx : ((1/4) : ℝ) ≤ x ∧ x ≤ (3/8)) :
+    0 < central_bandA_P1.polynomial.eval x :=
+  central_bandA_P1_valid.positive (by norm_num) hx
+
+/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandA P, row 2. -/
+def central_bandA_P2 : Arithmetic.BernsteinRow :=
+  { interval := ⟨(3/8),(7/16)⟩
+    polynomial := [(2540913450225412921/39062500000000000000), (117708140112740701/3125000000000000000), (4442784786036443889/625000000000000000000), (-5821802411/1562500000), (4161617771686036443889/625000000000000000000), (2383626569387259299/3125000000000000000), (-143004146824774587079/39062500000000000000)]
+    degree := 6
+    coefficients := [(4439300063959196787073/409600000000000000000000), (106066818492572000247337/12288000000000000000000000), (4067714786141968923411823/614400000000000000000000000), (1985415032490743810656699/409600000000000000000000000), (549558444919499815651801/163840000000000000000000000), (2146654046558964370104061/983040000000000000000000000), (180262552727933630595469/131072000000000000000000000)] }
+
+theorem central_bandA_P2_valid : central_bandA_P2.Valid (180262552727933630595469/262144000000000000000000000) := by
+  constructor
+  · norm_num [central_bandA_P2]
+  · rfl
+  · intro t
+    norm_num [central_bandA_P2, Arithmetic.QPoly.eval, Arithmetic.bernsteinEval,
+      Arithmetic.bernsteinBasis, Arithmetic.BernsteinRow.coefficient,
+      Finset.sum_range_succ]
+    ring
+  · intro i hi
+    have hi' : i ≤ 6 := hi
+    interval_cases i <;> norm_num [central_bandA_P2,Arithmetic.BernsteinRow.coefficient]
+
+theorem central_bandA_P2_positive {x : ℝ} (hx : ((3/8) : ℝ) ≤ x ∧ x ≤ (7/16)) :
+    0 < central_bandA_P2.polynomial.eval x :=
+  central_bandA_P2_valid.positive (by norm_num) hx
+
+/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandA P, row 3. -/
+def central_bandA_P3 : Arithmetic.BernsteinRow :=
+  { interval := ⟨(7/16),(1/2)⟩
+    polynomial := [(2540913450225412921/39062500000000000000), (117708140112740701/3125000000000000000), (4442784786036443889/625000000000000000000), (-5821802411/1562500000), (4161617771686036443889/625000000000000000000), (2383626569387259299/3125000000000000000), (-143004146824774587079/39062500000000000000)]
+    degree := 6
+    coefficients := [(180262552727933630595469/131072000000000000000000000), (278642122180020044413987/491520000000000000000000000), (14826383139893791419829/122880000000000000000000000), (1953451669079521155421/25600000000000000000000000), (452507753787127338707/960000000000000000000000), (13397119863903505241/10000000000000000000000), (5419983821580126081/2000000000000000000000)] }
+
+theorem central_bandA_P3_valid : central_bandA_P3.Valid (1953451669079521155421/51200000000000000000000000) := by
+  constructor
+  · norm_num [central_bandA_P3]
+  · rfl
+  · intro t
+    norm_num [central_bandA_P3, Arithmetic.QPoly.eval, Arithmetic.bernsteinEval,
+      Arithmetic.bernsteinBasis, Arithmetic.BernsteinRow.coefficient,
+      Finset.sum_range_succ]
+    ring
+  · intro i hi
+    have hi' : i ≤ 6 := hi
+    interval_cases i <;> norm_num [central_bandA_P3,Arithmetic.BernsteinRow.coefficient]
+
+theorem central_bandA_P3_positive {x : ℝ} (hx : ((7/16) : ℝ) ≤ x ∧ x ≤ (1/2)) :
+    0 < central_bandA_P3.polynomial.eval x :=
+  central_bandA_P3_valid.positive (by norm_num) hx
+
+/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandA P, row 4. -/
+def central_bandA_P4 : Arithmetic.BernsteinRow :=
+  { interval := ⟨(1/2),1⟩
+    polynomial := [(2540913450225412921/39062500000000000000), (117708140112740701/3125000000000000000), (4442784786036443889/625000000000000000000), (-5821802411/1562500000), (4161617771686036443889/625000000000000000000), (2383626569387259299/3125000000000000000), (-143004146824774587079/39062500000000000000)]
+    degree := 6
+    coefficients := [(5419983821580126081/2000000000000000000000), (136722313059877631717/10000000000000000000000), (1702740069587793601717/30000000000000000000000), (3665723121458833105957/25000000000000000000000), (10366293767811381451763/37500000000000000000000), (54687474688075349441/150000000000000000000), (72155839983428881/500000000000000000)] }
+
+theorem central_bandA_P4_valid : central_bandA_P4.Valid (5419983821580126081/4000000000000000000000) := by
+  constructor
+  · norm_num [central_bandA_P4]
+  · rfl
+  · intro t
+    norm_num [central_bandA_P4, Arithmetic.QPoly.eval, Arithmetic.bernsteinEval,
+      Arithmetic.bernsteinBasis, Arithmetic.BernsteinRow.coefficient,
+      Finset.sum_range_succ]
+    ring
+  · intro i hi
+    have hi' : i ≤ 6 := hi
+    interval_cases i <;> norm_num [central_bandA_P4,Arithmetic.BernsteinRow.coefficient]
+
+theorem central_bandA_P4_positive {x : ℝ} (hx : ((1/2) : ℝ) ≤ x ∧ x ≤ 1) :
+    0 < central_bandA_P4.polynomial.eval x :=
+  central_bandA_P4_valid.positive (by norm_num) hx
+
+/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandA V, row 0. -/
+def central_bandA_V0 : Arithmetic.BernsteinRow :=
+  { interval := ⟨0,(3/14)⟩
+    polynomial := [(268618391/2000000000), (-43078848583/50000000000), (731381609/1000000000), (143218848583/50000000000), (-1731381609/2000000000)]
+    degree := 4
+    coefficients := [(268618391/2000000000), (246829201651/2800000000000), (2379734267/50000000000), (10800114775129/548800000000000), (18494556101093/1920800000000000)] }
+
+theorem central_bandA_V0_valid : central_bandA_V0.Valid (18494556101093/3841600000000000) := by
+  constructor
+  · norm_num [central_bandA_V0]
+  · rfl
+  · intro t
+    norm_num [central_bandA_V0, Arithmetic.QPoly.eval, Arithmetic.bernsteinEval,
+      Arithmetic.bernsteinBasis, Arithmetic.BernsteinRow.coefficient,
+      Finset.sum_range_succ]
+    ring
+  · intro i hi
+    have hi' : i ≤ 4 := hi
+    interval_cases i <;> norm_num [central_bandA_V0,Arithmetic.BernsteinRow.coefficient]
+
+theorem central_bandA_V0_positive {x : ℝ} (hx : (0 : ℝ) ≤ x ∧ x ≤ (3/14)) :
+    0 < central_bandA_V0.polynomial.eval x :=
+  central_bandA_V0_valid.positive (by norm_num) hx
+
+/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandA V, row 1. -/
+def central_bandA_V1 : Arithmetic.BernsteinRow :=
+  { interval := ⟨(3/14),(9/28)⟩
+    polynomial := [(268618391/2000000000), (-43078848583/50000000000), (731381609/1000000000), (143218848583/50000000000), (-1731381609/2000000000)]
+    degree := 4
+    coefficients := [(18494556101093/1920800000000000), (7073306636131/1536640000000000), (77671165583/19208000000000), (52878472222753/6146560000000000), (578371840373027/30732800000000000)] }
+
+theorem central_bandA_V1_valid : central_bandA_V1.Valid (77671165583/38416000000000) := by
+  constructor
+  · norm_num [central_bandA_V1]
+  · rfl
+  · intro t
+    norm_num [central_bandA_V1, Arithmetic.QPoly.eval, Arithmetic.bernsteinEval,
+      Arithmetic.bernsteinBasis, Arithmetic.BernsteinRow.coefficient,
+      Finset.sum_range_succ]
+    ring
+  · intro i hi
+    have hi' : i ≤ 4 := hi
+    interval_cases i <;> norm_num [central_bandA_V1,Arithmetic.BernsteinRow.coefficient]
+
+theorem central_bandA_V1_positive {x : ℝ} (hx : ((3/14) : ℝ) ≤ x ∧ x ≤ (9/28)) :
+    0 < central_bandA_V1.polynomial.eval x :=
+  central_bandA_V1_valid.positive (by norm_num) hx
+
+/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandA V, row 2. -/
+def central_bandA_V2 : Arithmetic.BernsteinRow :=
+  { interval := ⟨(9/28),(3/7)⟩
+    polynomial := [(268618391/2000000000), (-43078848583/50000000000), (731381609/1000000000), (143218848583/50000000000), (-1731381609/2000000000)]
+    degree := 4
+    coefficients := [(578371840373027/30732800000000000), (892351319632289/30732800000000000), (172523972746231/3841600000000000), (64326357702913/960400000000000), (287124070757/3001250000000)] }
+
+theorem central_bandA_V2_valid : central_bandA_V2.Valid (578371840373027/61465600000000000) := by
+  constructor
+  · norm_num [central_bandA_V2]
+  · rfl
+  · intro t
+    norm_num [central_bandA_V2, Arithmetic.QPoly.eval, Arithmetic.bernsteinEval,
+      Arithmetic.bernsteinBasis, Arithmetic.BernsteinRow.coefficient,
+      Finset.sum_range_succ]
+    ring
+  · intro i hi
+    have hi' : i ≤ 4 := hi
+    interval_cases i <;> norm_num [central_bandA_V2,Arithmetic.BernsteinRow.coefficient]
+
+theorem central_bandA_V2_positive {x : ℝ} (hx : ((9/28) : ℝ) ≤ x ∧ x ≤ (3/7)) :
+    0 < central_bandA_V2.polynomial.eval x :=
+  central_bandA_V2_valid.positive (by norm_num) hx
+
+/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandB P, row 0. -/
+def central_bandB_P0 : Arithmetic.BernsteinRow :=
+  { interval := ⟨0,(1/2)⟩
+    polynomial := [(5759271769/40000000000), (-130551593/2000000000), (-3465819669/40000000000), (-190363/50000), (270512580331/40000000000), (1660671593/2000000000), (-146531128231/40000000000)]
+    degree := 6
+    coefficients := [(5759271769/40000000000), (8312528671/60000000000), (315980167871/2400000000000), (79628156411/800000000000), (89386636807/1920000000000), (384220597/40000000000), (2642023161/512000000000)] }
+
+theorem central_bandB_P0_valid : central_bandB_P0.Valid (2642023161/1024000000000) := by
+  constructor
+  · norm_num [central_bandB_P0]
+  · rfl
+  · intro t
+    norm_num [central_bandB_P0, Arithmetic.QPoly.eval, Arithmetic.bernsteinEval,
+      Arithmetic.bernsteinBasis, Arithmetic.BernsteinRow.coefficient,
+      Finset.sum_range_succ]
+    ring
+  · intro i hi
+    have hi' : i ≤ 6 := hi
+    interval_cases i <;> norm_num [central_bandB_P0,Arithmetic.BernsteinRow.coefficient]
+
+theorem central_bandB_P0_positive {x : ℝ} (hx : (0 : ℝ) ≤ x ∧ x ≤ (1/2)) :
+    0 < central_bandB_P0.polynomial.eval x :=
+  central_bandB_P0_valid.positive (by norm_num) hx
+
+/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandB P, row 1. -/
+def central_bandB_P1 : Arithmetic.BernsteinRow :=
+  { interval := ⟨(1/2),1⟩
+    polynomial := [(5759271769/40000000000), (-130551593/2000000000), (-3465819669/40000000000), (-190363/50000), (270512580331/40000000000), (1660671593/2000000000), (-146531128231/40000000000)]
+    degree := 6
+    coefficients := [(2642023161/512000000000), (915056701/1280000000000), (27623314799/960000000000), (84650781839/800000000000), (136737927263/600000000000), (3813150259/12000000000), (22934521/200000000)] }
+
+theorem central_bandB_P1_valid : central_bandB_P1.Valid (915056701/2560000000000) := by
+  constructor
+  · norm_num [central_bandB_P1]
+  · rfl
+  · intro t
+    norm_num [central_bandB_P1, Arithmetic.QPoly.eval, Arithmetic.bernsteinEval,
+      Arithmetic.bernsteinBasis, Arithmetic.BernsteinRow.coefficient,
+      Finset.sum_range_succ]
+    ring
+  · intro i hi
+    have hi' : i ≤ 6 := hi
+    interval_cases i <;> norm_num [central_bandB_P1,Arithmetic.BernsteinRow.coefficient]
+
+theorem central_bandB_P1_positive {x : ℝ} (hx : ((1/2) : ℝ) ≤ x ∧ x ≤ 1) :
+    0 < central_bandB_P1.polynomial.eval x :=
+  central_bandB_P1_valid.positive (by norm_num) hx
+
 end SquaresInCircles.Eight.Generated

@@ -1,0 +1,151 @@
+{
+  "schema": "eight-polynomial-v1",
+  "status": "uncompiled-source",
+  "rows": 28,
+  "chunks": [
+    "WholePairPolynomials000",
+    "WholePairPolynomials001"
+  ],
+  "sources": [
+    {
+      "declaration": "high_high_whole_pair_poly_polynomial",
+      "source": "high_high_whole_pair_hand_arithmetic.json",
+      "polynomial": "poly_polynomial"
+    },
+    {
+      "declaration": "low_low_whole_pair_plus_circle",
+      "source": "low_low_whole_pair_hand_arithmetic.json",
+      "polynomial": "plus_circle"
+    },
+    {
+      "declaration": "low_low_whole_pair_plus_endpoint",
+      "source": "low_low_whole_pair_hand_arithmetic.json",
+      "polynomial": "plus_endpoint"
+    },
+    {
+      "declaration": "low_low_whole_pair_minus_circle",
+      "source": "low_low_whole_pair_hand_arithmetic.json",
+      "polynomial": "minus_circle"
+    },
+    {
+      "declaration": "low_low_whole_pair_minus_endpoint",
+      "source": "low_low_whole_pair_hand_arithmetic.json",
+      "polynomial": "minus_endpoint"
+    },
+    {
+      "declaration": "low_low_whole_pair_negative_target_axial",
+      "source": "low_low_whole_pair_hand_arithmetic.json",
+      "polynomial": "negative_target_axial"
+    },
+    {
+      "declaration": "wrong_0011011_edge2_negative_core_corner_arithmetic_poly_tables_5",
+      "source": "wrong_0011011_edge2_negative_core_corner_arithmetic.json",
+      "polynomial": "poly_tables_5"
+    },
+    {
+      "declaration": "wrong_0011011_edge2_negative_core_corner_arithmetic_poly_tables_6",
+      "source": "wrong_0011011_edge2_negative_core_corner_arithmetic.json",
+      "polynomial": "poly_tables_6"
+    },
+    {
+      "declaration": "wrong_0011011_edge2_negative_core_corner_arithmetic_poly_tables_7",
+      "source": "wrong_0011011_edge2_negative_core_corner_arithmetic.json",
+      "polynomial": "poly_tables_7"
+    },
+    {
+      "declaration": "central_segment_P0",
+      "source": "CENTRAL_BAND_COMMON_POINT_LEMMAS.md",
+      "polynomial": "segment P, row 0"
+    },
+    {
+      "declaration": "central_segment_P1",
+      "source": "CENTRAL_BAND_COMMON_POINT_LEMMAS.md",
+      "polynomial": "segment P, row 1"
+    },
+    {
+      "declaration": "central_segment_P2",
+      "source": "CENTRAL_BAND_COMMON_POINT_LEMMAS.md",
+      "polynomial": "segment P, row 2"
+    },
+    {
+      "declaration": "central_segment_V0",
+      "source": "CENTRAL_BAND_COMMON_POINT_LEMMAS.md",
+      "polynomial": "segment V, row 0"
+    },
+    {
+      "declaration": "central_segment_V1",
+      "source": "CENTRAL_BAND_COMMON_POINT_LEMMAS.md",
+      "polynomial": "segment V, row 1"
+    },
+    {
+      "declaration": "central_bandA_P0",
+      "source": "CENTRAL_BAND_COMMON_POINT_LEMMAS.md",
+      "polynomial": "bandA P, row 0"
+    },
+    {
+      "declaration": "central_bandA_P1",
+      "source": "CENTRAL_BAND_COMMON_POINT_LEMMAS.md",
+      "polynomial": "bandA P, row 1"
+    },
+    {
+      "declaration": "central_bandA_P2",
+      "source": "CENTRAL_BAND_COMMON_POINT_LEMMAS.md",
+      "polynomial": "bandA P, row 2"
+    },
+    {
+      "declaration": "central_bandA_P3",
+      "source": "CENTRAL_BAND_COMMON_POINT_LEMMAS.md",
+      "polynomial": "bandA P, row 3"
+    },
+    {
+      "declaration": "central_bandA_P4",
+      "source": "CENTRAL_BAND_COMMON_POINT_LEMMAS.md",
+      "polynomial": "bandA P, row 4"
+    },
+    {
+      "declaration": "central_bandA_V0",
+      "source": "CENTRAL_BAND_COMMON_POINT_LEMMAS.md",
+      "polynomial": "bandA V, row 0"
+    },
+    {
+      "declaration": "central_bandA_V1",
+      "source": "CENTRAL_BAND_COMMON_POINT_LEMMAS.md",
+      "polynomial": "bandA V, row 1"
+    },
+    {
+      "declaration": "central_bandA_V2",
+      "source": "CENTRAL_BAND_COMMON_POINT_LEMMAS.md",
+      "polynomial": "bandA V, row 2"
+    },
+    {
+      "declaration": "central_bandB_P0",
+      "source": "CENTRAL_BAND_COMMON_POINT_LEMMAS.md",
+      "polynomial": "bandB P, row 0"
+    },
+    {
+      "declaration": "central_bandB_P1",
+      "source": "CENTRAL_BAND_COMMON_POINT_LEMMAS.md",
+      "polynomial": "bandB P, row 1"
+    },
+    {
+      "declaration": "central_bandB_V0",
+      "source": "CENTRAL_BAND_COMMON_POINT_LEMMAS.md",
+      "polynomial": "bandB V, row 0"
+    },
+    {
+      "declaration": "central_bandB_V1",
+      "source": "CENTRAL_BAND_COMMON_POINT_LEMMAS.md",
+      "polynomial": "bandB V, row 1"
+    },
+    {
+      "declaration": "central_bandB_V2",
+      "source": "CENTRAL_BAND_COMMON_POINT_LEMMAS.md",
+      "polynomial": "bandB V, row 2"
+    },
+    {
+      "declaration": "central_bandB_V3",
+      "source": "CENTRAL_BAND_COMMON_POINT_LEMMAS.md",
+      "polynomial": "bandB V, row 3"
+    }
+  ]
+}

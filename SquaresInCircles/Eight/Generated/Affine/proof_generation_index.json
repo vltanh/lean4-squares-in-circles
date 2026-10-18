@@ -1,0 +1,66 @@
+{
+  "status": "complete-row-proof-scripts-uncompiled",
+  "verification": "not run",
+  "tables": [
+    {
+      "module": "CandidateCoarseMismatch",
+      "rows": 129031,
+      "arcs": 462,
+      "proof_chunks": 32
+    },
+    {
+      "module": "DUpperAffine",
+      "rows": 24197,
+      "arcs": 199,
+      "proof_chunks": 6
+    },
+    {
+      "module": "GLowerAffine",
+      "rows": 9087,
+      "arcs": 114,
+      "proof_chunks": 3
+    },
+    {
+      "module": "GUpperAffine",
+      "rows": 9796,
+      "arcs": 122,
+      "proof_chunks": 3
+    },
+    {
+      "module": "HLowerAffine",
+      "rows": 48050,
+      "arcs": 279,
+      "proof_chunks": 12
+    },
+    {
+      "module": "Mismatch015To001Affine",
+      "rows": 144709,
+      "arcs": 456,
+      "proof_chunks": 36
+    },
+    {
+      "module": "Mismatch01To015Affine",
+      "rows": 107196,
+      "arcs": 335,
+      "proof_chunks": 27
+    },
+    {
+      "module": "Mismatch026To01Affine",
+      "rows": 131255,
+      "arcs": 401,
+      "proof_chunks": 33
+    },
+    {
+      "module": "TLowerAffine",
+      "rows": 49971,
+      "arcs": 303,
+      "proof_chunks": 13
+    },
+    {
+      "module": "TUpperAffine",
+      "rows": 7078,
+      "arcs": 102,
+      "proof_chunks": 2
+    }
+  ]
+}
