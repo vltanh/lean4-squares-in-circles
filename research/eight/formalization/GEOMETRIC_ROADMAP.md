@@ -226,6 +226,16 @@ been deleted. The exact pair reserve is `233/15000`. The remaining
 21 chart-pair decisions and quarter-word exclusions are still active.
 See [`CORE_PAIR_GEOMETRY.md`](CORE_PAIR_GEOMETRY.md).
 
+**G4.3 common core/core word block implemented:** the original common
+marker has signed correction in `(-7/40,7/40)` on both closed core charts.
+Center separation gives the cost `>59/60`, exceeding every common
+increment threshold by at least `7/1200`. `WordGeometry.common_pair`
+now uses this geometry before its finite dispatcher. All 192 common
+core/core recursive certificate declarations and their generator entries
+have been removed; the common block has 240 retained declarations.
+The two wrong-word role tables remain active. See
+[`CORE_WORD_GEOMETRY.md`](CORE_WORD_GEOMETRY.md).
+
 ## G5 — Integration and final acceptance: open
 
 For each established replacement:

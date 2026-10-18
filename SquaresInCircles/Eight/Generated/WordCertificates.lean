@@ -12,6 +12,8 @@ opaque arithmetic record, or numerical optimizer is consumed here.
 
 Each statement carries the actual branch/sign/axis expression. A failed
 leaf will make its `by decide` proof fail during the later requested audit.
+The common core/core block has been removed: WordGeometry supplies its
+whole-domain geometric proof before calling the retained dispatcher.
 -/
 
 @[expose] public section
@@ -147,70 +149,6 @@ theorem common_0_coreSide_outer_11_2 :
     certify 96 (commonProblem 0 .coreSide .outer true true 2) (pairBox .coreSide .outer)=true := by decide
 theorem common_0_coreSide_outer_11_3 :
     certify 96 (commonProblem 0 .coreSide .outer true true 3) (pairBox .coreSide .outer)=true := by decide
-theorem common_0_coreSide_coreSide_00_0 :
-    certify 96 (commonProblem 0 .coreSide .coreSide false false 0) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_0_coreSide_coreSide_00_1 :
-    certify 96 (commonProblem 0 .coreSide .coreSide false false 1) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_0_coreSide_coreSide_00_2 :
-    certify 96 (commonProblem 0 .coreSide .coreSide false false 2) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_0_coreSide_coreSide_00_3 :
-    certify 96 (commonProblem 0 .coreSide .coreSide false false 3) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_0_coreSide_coreSide_01_0 :
-    certify 96 (commonProblem 0 .coreSide .coreSide false true 0) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_0_coreSide_coreSide_01_1 :
-    certify 96 (commonProblem 0 .coreSide .coreSide false true 1) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_0_coreSide_coreSide_01_2 :
-    certify 96 (commonProblem 0 .coreSide .coreSide false true 2) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_0_coreSide_coreSide_01_3 :
-    certify 96 (commonProblem 0 .coreSide .coreSide false true 3) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_0_coreSide_coreSide_10_0 :
-    certify 96 (commonProblem 0 .coreSide .coreSide true false 0) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_0_coreSide_coreSide_10_1 :
-    certify 96 (commonProblem 0 .coreSide .coreSide true false 1) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_0_coreSide_coreSide_10_2 :
-    certify 96 (commonProblem 0 .coreSide .coreSide true false 2) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_0_coreSide_coreSide_10_3 :
-    certify 96 (commonProblem 0 .coreSide .coreSide true false 3) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_0_coreSide_coreSide_11_0 :
-    certify 96 (commonProblem 0 .coreSide .coreSide true true 0) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_0_coreSide_coreSide_11_1 :
-    certify 96 (commonProblem 0 .coreSide .coreSide true true 1) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_0_coreSide_coreSide_11_2 :
-    certify 96 (commonProblem 0 .coreSide .coreSide true true 2) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_0_coreSide_coreSide_11_3 :
-    certify 96 (commonProblem 0 .coreSide .coreSide true true 3) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_0_coreSide_coreCorner_00_0 :
-    certify 96 (commonProblem 0 .coreSide .coreCorner false false 0) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_0_coreSide_coreCorner_00_1 :
-    certify 96 (commonProblem 0 .coreSide .coreCorner false false 1) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_0_coreSide_coreCorner_00_2 :
-    certify 96 (commonProblem 0 .coreSide .coreCorner false false 2) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_0_coreSide_coreCorner_00_3 :
-    certify 96 (commonProblem 0 .coreSide .coreCorner false false 3) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_0_coreSide_coreCorner_01_0 :
-    certify 96 (commonProblem 0 .coreSide .coreCorner false true 0) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_0_coreSide_coreCorner_01_1 :
-    certify 96 (commonProblem 0 .coreSide .coreCorner false true 1) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_0_coreSide_coreCorner_01_2 :
-    certify 96 (commonProblem 0 .coreSide .coreCorner false true 2) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_0_coreSide_coreCorner_01_3 :
-    certify 96 (commonProblem 0 .coreSide .coreCorner false true 3) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_0_coreSide_coreCorner_10_0 :
-    certify 96 (commonProblem 0 .coreSide .coreCorner true false 0) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_0_coreSide_coreCorner_10_1 :
-    certify 96 (commonProblem 0 .coreSide .coreCorner true false 1) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_0_coreSide_coreCorner_10_2 :
-    certify 96 (commonProblem 0 .coreSide .coreCorner true false 2) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_0_coreSide_coreCorner_10_3 :
-    certify 96 (commonProblem 0 .coreSide .coreCorner true false 3) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_0_coreSide_coreCorner_11_0 :
-    certify 96 (commonProblem 0 .coreSide .coreCorner true true 0) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_0_coreSide_coreCorner_11_1 :
-    certify 96 (commonProblem 0 .coreSide .coreCorner true true 1) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_0_coreSide_coreCorner_11_2 :
-    certify 96 (commonProblem 0 .coreSide .coreCorner true true 2) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_0_coreSide_coreCorner_11_3 :
-    certify 96 (commonProblem 0 .coreSide .coreCorner true true 3) (pairBox .coreSide .coreCorner)=true := by decide
 theorem common_0_coreCorner_outer_00_0 :
     certify 96 (commonProblem 0 .coreCorner .outer false false 0) (pairBox .coreCorner .outer)=true := by decide
 theorem common_0_coreCorner_outer_00_1 :
@@ -243,70 +181,6 @@ theorem common_0_coreCorner_outer_11_2 :
     certify 96 (commonProblem 0 .coreCorner .outer true true 2) (pairBox .coreCorner .outer)=true := by decide
 theorem common_0_coreCorner_outer_11_3 :
     certify 96 (commonProblem 0 .coreCorner .outer true true 3) (pairBox .coreCorner .outer)=true := by decide
-theorem common_0_coreCorner_coreSide_00_0 :
-    certify 96 (commonProblem 0 .coreCorner .coreSide false false 0) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_0_coreCorner_coreSide_00_1 :
-    certify 96 (commonProblem 0 .coreCorner .coreSide false false 1) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_0_coreCorner_coreSide_00_2 :
-    certify 96 (commonProblem 0 .coreCorner .coreSide false false 2) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_0_coreCorner_coreSide_00_3 :
-    certify 96 (commonProblem 0 .coreCorner .coreSide false false 3) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_0_coreCorner_coreSide_01_0 :
-    certify 96 (commonProblem 0 .coreCorner .coreSide false true 0) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_0_coreCorner_coreSide_01_1 :
-    certify 96 (commonProblem 0 .coreCorner .coreSide false true 1) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_0_coreCorner_coreSide_01_2 :
-    certify 96 (commonProblem 0 .coreCorner .coreSide false true 2) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_0_coreCorner_coreSide_01_3 :
-    certify 96 (commonProblem 0 .coreCorner .coreSide false true 3) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_0_coreCorner_coreSide_10_0 :
-    certify 96 (commonProblem 0 .coreCorner .coreSide true false 0) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_0_coreCorner_coreSide_10_1 :
-    certify 96 (commonProblem 0 .coreCorner .coreSide true false 1) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_0_coreCorner_coreSide_10_2 :
-    certify 96 (commonProblem 0 .coreCorner .coreSide true false 2) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_0_coreCorner_coreSide_10_3 :
-    certify 96 (commonProblem 0 .coreCorner .coreSide true false 3) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_0_coreCorner_coreSide_11_0 :
-    certify 96 (commonProblem 0 .coreCorner .coreSide true true 0) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_0_coreCorner_coreSide_11_1 :
-    certify 96 (commonProblem 0 .coreCorner .coreSide true true 1) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_0_coreCorner_coreSide_11_2 :
-    certify 96 (commonProblem 0 .coreCorner .coreSide true true 2) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_0_coreCorner_coreSide_11_3 :
-    certify 96 (commonProblem 0 .coreCorner .coreSide true true 3) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_0_coreCorner_coreCorner_00_0 :
-    certify 96 (commonProblem 0 .coreCorner .coreCorner false false 0) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_0_coreCorner_coreCorner_00_1 :
-    certify 96 (commonProblem 0 .coreCorner .coreCorner false false 1) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_0_coreCorner_coreCorner_00_2 :
-    certify 96 (commonProblem 0 .coreCorner .coreCorner false false 2) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_0_coreCorner_coreCorner_00_3 :
-    certify 96 (commonProblem 0 .coreCorner .coreCorner false false 3) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_0_coreCorner_coreCorner_01_0 :
-    certify 96 (commonProblem 0 .coreCorner .coreCorner false true 0) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_0_coreCorner_coreCorner_01_1 :
-    certify 96 (commonProblem 0 .coreCorner .coreCorner false true 1) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_0_coreCorner_coreCorner_01_2 :
-    certify 96 (commonProblem 0 .coreCorner .coreCorner false true 2) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_0_coreCorner_coreCorner_01_3 :
-    certify 96 (commonProblem 0 .coreCorner .coreCorner false true 3) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_0_coreCorner_coreCorner_10_0 :
-    certify 96 (commonProblem 0 .coreCorner .coreCorner true false 0) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_0_coreCorner_coreCorner_10_1 :
-    certify 96 (commonProblem 0 .coreCorner .coreCorner true false 1) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_0_coreCorner_coreCorner_10_2 :
-    certify 96 (commonProblem 0 .coreCorner .coreCorner true false 2) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_0_coreCorner_coreCorner_10_3 :
-    certify 96 (commonProblem 0 .coreCorner .coreCorner true false 3) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_0_coreCorner_coreCorner_11_0 :
-    certify 96 (commonProblem 0 .coreCorner .coreCorner true true 0) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_0_coreCorner_coreCorner_11_1 :
-    certify 96 (commonProblem 0 .coreCorner .coreCorner true true 1) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_0_coreCorner_coreCorner_11_2 :
-    certify 96 (commonProblem 0 .coreCorner .coreCorner true true 2) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_0_coreCorner_coreCorner_11_3 :
-    certify 96 (commonProblem 0 .coreCorner .coreCorner true true 3) (pairBox .coreCorner .coreCorner)=true := by decide
 theorem common_1_outer_outer_00_0 :
     certify 96 (commonProblem 1 .outer .outer false false 0) (pairBox .outer .outer)=true := by decide
 theorem common_1_outer_outer_00_1 :
@@ -435,70 +309,6 @@ theorem common_1_coreSide_outer_11_2 :
     certify 96 (commonProblem 1 .coreSide .outer true true 2) (pairBox .coreSide .outer)=true := by decide
 theorem common_1_coreSide_outer_11_3 :
     certify 96 (commonProblem 1 .coreSide .outer true true 3) (pairBox .coreSide .outer)=true := by decide
-theorem common_1_coreSide_coreSide_00_0 :
-    certify 96 (commonProblem 1 .coreSide .coreSide false false 0) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_1_coreSide_coreSide_00_1 :
-    certify 96 (commonProblem 1 .coreSide .coreSide false false 1) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_1_coreSide_coreSide_00_2 :
-    certify 96 (commonProblem 1 .coreSide .coreSide false false 2) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_1_coreSide_coreSide_00_3 :
-    certify 96 (commonProblem 1 .coreSide .coreSide false false 3) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_1_coreSide_coreSide_01_0 :
-    certify 96 (commonProblem 1 .coreSide .coreSide false true 0) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_1_coreSide_coreSide_01_1 :
-    certify 96 (commonProblem 1 .coreSide .coreSide false true 1) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_1_coreSide_coreSide_01_2 :
-    certify 96 (commonProblem 1 .coreSide .coreSide false true 2) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_1_coreSide_coreSide_01_3 :
-    certify 96 (commonProblem 1 .coreSide .coreSide false true 3) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_1_coreSide_coreSide_10_0 :
-    certify 96 (commonProblem 1 .coreSide .coreSide true false 0) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_1_coreSide_coreSide_10_1 :
-    certify 96 (commonProblem 1 .coreSide .coreSide true false 1) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_1_coreSide_coreSide_10_2 :
-    certify 96 (commonProblem 1 .coreSide .coreSide true false 2) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_1_coreSide_coreSide_10_3 :
-    certify 96 (commonProblem 1 .coreSide .coreSide true false 3) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_1_coreSide_coreSide_11_0 :
-    certify 96 (commonProblem 1 .coreSide .coreSide true true 0) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_1_coreSide_coreSide_11_1 :
-    certify 96 (commonProblem 1 .coreSide .coreSide true true 1) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_1_coreSide_coreSide_11_2 :
-    certify 96 (commonProblem 1 .coreSide .coreSide true true 2) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_1_coreSide_coreSide_11_3 :
-    certify 96 (commonProblem 1 .coreSide .coreSide true true 3) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_1_coreSide_coreCorner_00_0 :
-    certify 96 (commonProblem 1 .coreSide .coreCorner false false 0) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_1_coreSide_coreCorner_00_1 :
-    certify 96 (commonProblem 1 .coreSide .coreCorner false false 1) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_1_coreSide_coreCorner_00_2 :
-    certify 96 (commonProblem 1 .coreSide .coreCorner false false 2) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_1_coreSide_coreCorner_00_3 :
-    certify 96 (commonProblem 1 .coreSide .coreCorner false false 3) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_1_coreSide_coreCorner_01_0 :
-    certify 96 (commonProblem 1 .coreSide .coreCorner false true 0) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_1_coreSide_coreCorner_01_1 :
-    certify 96 (commonProblem 1 .coreSide .coreCorner false true 1) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_1_coreSide_coreCorner_01_2 :
-    certify 96 (commonProblem 1 .coreSide .coreCorner false true 2) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_1_coreSide_coreCorner_01_3 :
-    certify 96 (commonProblem 1 .coreSide .coreCorner false true 3) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_1_coreSide_coreCorner_10_0 :
-    certify 96 (commonProblem 1 .coreSide .coreCorner true false 0) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_1_coreSide_coreCorner_10_1 :
-    certify 96 (commonProblem 1 .coreSide .coreCorner true false 1) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_1_coreSide_coreCorner_10_2 :
-    certify 96 (commonProblem 1 .coreSide .coreCorner true false 2) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_1_coreSide_coreCorner_10_3 :
-    certify 96 (commonProblem 1 .coreSide .coreCorner true false 3) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_1_coreSide_coreCorner_11_0 :
-    certify 96 (commonProblem 1 .coreSide .coreCorner true true 0) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_1_coreSide_coreCorner_11_1 :
-    certify 96 (commonProblem 1 .coreSide .coreCorner true true 1) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_1_coreSide_coreCorner_11_2 :
-    certify 96 (commonProblem 1 .coreSide .coreCorner true true 2) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_1_coreSide_coreCorner_11_3 :
-    certify 96 (commonProblem 1 .coreSide .coreCorner true true 3) (pairBox .coreSide .coreCorner)=true := by decide
 theorem common_1_coreCorner_outer_00_0 :
     certify 96 (commonProblem 1 .coreCorner .outer false false 0) (pairBox .coreCorner .outer)=true := by decide
 theorem common_1_coreCorner_outer_00_1 :
@@ -531,70 +341,6 @@ theorem common_1_coreCorner_outer_11_2 :
     certify 96 (commonProblem 1 .coreCorner .outer true true 2) (pairBox .coreCorner .outer)=true := by decide
 theorem common_1_coreCorner_outer_11_3 :
     certify 96 (commonProblem 1 .coreCorner .outer true true 3) (pairBox .coreCorner .outer)=true := by decide
-theorem common_1_coreCorner_coreSide_00_0 :
-    certify 96 (commonProblem 1 .coreCorner .coreSide false false 0) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_1_coreCorner_coreSide_00_1 :
-    certify 96 (commonProblem 1 .coreCorner .coreSide false false 1) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_1_coreCorner_coreSide_00_2 :
-    certify 96 (commonProblem 1 .coreCorner .coreSide false false 2) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_1_coreCorner_coreSide_00_3 :
-    certify 96 (commonProblem 1 .coreCorner .coreSide false false 3) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_1_coreCorner_coreSide_01_0 :
-    certify 96 (commonProblem 1 .coreCorner .coreSide false true 0) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_1_coreCorner_coreSide_01_1 :
-    certify 96 (commonProblem 1 .coreCorner .coreSide false true 1) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_1_coreCorner_coreSide_01_2 :
-    certify 96 (commonProblem 1 .coreCorner .coreSide false true 2) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_1_coreCorner_coreSide_01_3 :
-    certify 96 (commonProblem 1 .coreCorner .coreSide false true 3) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_1_coreCorner_coreSide_10_0 :
-    certify 96 (commonProblem 1 .coreCorner .coreSide true false 0) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_1_coreCorner_coreSide_10_1 :
-    certify 96 (commonProblem 1 .coreCorner .coreSide true false 1) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_1_coreCorner_coreSide_10_2 :
-    certify 96 (commonProblem 1 .coreCorner .coreSide true false 2) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_1_coreCorner_coreSide_10_3 :
-    certify 96 (commonProblem 1 .coreCorner .coreSide true false 3) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_1_coreCorner_coreSide_11_0 :
-    certify 96 (commonProblem 1 .coreCorner .coreSide true true 0) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_1_coreCorner_coreSide_11_1 :
-    certify 96 (commonProblem 1 .coreCorner .coreSide true true 1) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_1_coreCorner_coreSide_11_2 :
-    certify 96 (commonProblem 1 .coreCorner .coreSide true true 2) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_1_coreCorner_coreSide_11_3 :
-    certify 96 (commonProblem 1 .coreCorner .coreSide true true 3) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_1_coreCorner_coreCorner_00_0 :
-    certify 96 (commonProblem 1 .coreCorner .coreCorner false false 0) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_1_coreCorner_coreCorner_00_1 :
-    certify 96 (commonProblem 1 .coreCorner .coreCorner false false 1) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_1_coreCorner_coreCorner_00_2 :
-    certify 96 (commonProblem 1 .coreCorner .coreCorner false false 2) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_1_coreCorner_coreCorner_00_3 :
-    certify 96 (commonProblem 1 .coreCorner .coreCorner false false 3) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_1_coreCorner_coreCorner_01_0 :
-    certify 96 (commonProblem 1 .coreCorner .coreCorner false true 0) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_1_coreCorner_coreCorner_01_1 :
-    certify 96 (commonProblem 1 .coreCorner .coreCorner false true 1) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_1_coreCorner_coreCorner_01_2 :
-    certify 96 (commonProblem 1 .coreCorner .coreCorner false true 2) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_1_coreCorner_coreCorner_01_3 :
-    certify 96 (commonProblem 1 .coreCorner .coreCorner false true 3) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_1_coreCorner_coreCorner_10_0 :
-    certify 96 (commonProblem 1 .coreCorner .coreCorner true false 0) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_1_coreCorner_coreCorner_10_1 :
-    certify 96 (commonProblem 1 .coreCorner .coreCorner true false 1) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_1_coreCorner_coreCorner_10_2 :
-    certify 96 (commonProblem 1 .coreCorner .coreCorner true false 2) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_1_coreCorner_coreCorner_10_3 :
-    certify 96 (commonProblem 1 .coreCorner .coreCorner true false 3) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_1_coreCorner_coreCorner_11_0 :
-    certify 96 (commonProblem 1 .coreCorner .coreCorner true true 0) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_1_coreCorner_coreCorner_11_1 :
-    certify 96 (commonProblem 1 .coreCorner .coreCorner true true 1) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_1_coreCorner_coreCorner_11_2 :
-    certify 96 (commonProblem 1 .coreCorner .coreCorner true true 2) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_1_coreCorner_coreCorner_11_3 :
-    certify 96 (commonProblem 1 .coreCorner .coreCorner true true 3) (pairBox .coreCorner .coreCorner)=true := by decide
 theorem common_2_outer_outer_00_0 :
     certify 96 (commonProblem 2 .outer .outer false false 0) (pairBox .outer .outer)=true := by decide
 theorem common_2_outer_outer_00_1 :
@@ -723,70 +469,6 @@ theorem common_2_coreSide_outer_11_2 :
     certify 96 (commonProblem 2 .coreSide .outer true true 2) (pairBox .coreSide .outer)=true := by decide
 theorem common_2_coreSide_outer_11_3 :
     certify 96 (commonProblem 2 .coreSide .outer true true 3) (pairBox .coreSide .outer)=true := by decide
-theorem common_2_coreSide_coreSide_00_0 :
-    certify 96 (commonProblem 2 .coreSide .coreSide false false 0) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_2_coreSide_coreSide_00_1 :
-    certify 96 (commonProblem 2 .coreSide .coreSide false false 1) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_2_coreSide_coreSide_00_2 :
-    certify 96 (commonProblem 2 .coreSide .coreSide false false 2) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_2_coreSide_coreSide_00_3 :
-    certify 96 (commonProblem 2 .coreSide .coreSide false false 3) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_2_coreSide_coreSide_01_0 :
-    certify 96 (commonProblem 2 .coreSide .coreSide false true 0) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_2_coreSide_coreSide_01_1 :
-    certify 96 (commonProblem 2 .coreSide .coreSide false true 1) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_2_coreSide_coreSide_01_2 :
-    certify 96 (commonProblem 2 .coreSide .coreSide false true 2) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_2_coreSide_coreSide_01_3 :
-    certify 96 (commonProblem 2 .coreSide .coreSide false true 3) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_2_coreSide_coreSide_10_0 :
-    certify 96 (commonProblem 2 .coreSide .coreSide true false 0) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_2_coreSide_coreSide_10_1 :
-    certify 96 (commonProblem 2 .coreSide .coreSide true false 1) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_2_coreSide_coreSide_10_2 :
-    certify 96 (commonProblem 2 .coreSide .coreSide true false 2) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_2_coreSide_coreSide_10_3 :
-    certify 96 (commonProblem 2 .coreSide .coreSide true false 3) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_2_coreSide_coreSide_11_0 :
-    certify 96 (commonProblem 2 .coreSide .coreSide true true 0) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_2_coreSide_coreSide_11_1 :
-    certify 96 (commonProblem 2 .coreSide .coreSide true true 1) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_2_coreSide_coreSide_11_2 :
-    certify 96 (commonProblem 2 .coreSide .coreSide true true 2) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_2_coreSide_coreSide_11_3 :
-    certify 96 (commonProblem 2 .coreSide .coreSide true true 3) (pairBox .coreSide .coreSide)=true := by decide
-theorem common_2_coreSide_coreCorner_00_0 :
-    certify 96 (commonProblem 2 .coreSide .coreCorner false false 0) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_2_coreSide_coreCorner_00_1 :
-    certify 96 (commonProblem 2 .coreSide .coreCorner false false 1) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_2_coreSide_coreCorner_00_2 :
-    certify 96 (commonProblem 2 .coreSide .coreCorner false false 2) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_2_coreSide_coreCorner_00_3 :
-    certify 96 (commonProblem 2 .coreSide .coreCorner false false 3) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_2_coreSide_coreCorner_01_0 :
-    certify 96 (commonProblem 2 .coreSide .coreCorner false true 0) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_2_coreSide_coreCorner_01_1 :
-    certify 96 (commonProblem 2 .coreSide .coreCorner false true 1) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_2_coreSide_coreCorner_01_2 :
-    certify 96 (commonProblem 2 .coreSide .coreCorner false true 2) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_2_coreSide_coreCorner_01_3 :
-    certify 96 (commonProblem 2 .coreSide .coreCorner false true 3) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_2_coreSide_coreCorner_10_0 :
-    certify 96 (commonProblem 2 .coreSide .coreCorner true false 0) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_2_coreSide_coreCorner_10_1 :
-    certify 96 (commonProblem 2 .coreSide .coreCorner true false 1) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_2_coreSide_coreCorner_10_2 :
-    certify 96 (commonProblem 2 .coreSide .coreCorner true false 2) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_2_coreSide_coreCorner_10_3 :
-    certify 96 (commonProblem 2 .coreSide .coreCorner true false 3) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_2_coreSide_coreCorner_11_0 :
-    certify 96 (commonProblem 2 .coreSide .coreCorner true true 0) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_2_coreSide_coreCorner_11_1 :
-    certify 96 (commonProblem 2 .coreSide .coreCorner true true 1) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_2_coreSide_coreCorner_11_2 :
-    certify 96 (commonProblem 2 .coreSide .coreCorner true true 2) (pairBox .coreSide .coreCorner)=true := by decide
-theorem common_2_coreSide_coreCorner_11_3 :
-    certify 96 (commonProblem 2 .coreSide .coreCorner true true 3) (pairBox .coreSide .coreCorner)=true := by decide
 theorem common_2_coreCorner_outer_00_0 :
     certify 96 (commonProblem 2 .coreCorner .outer false false 0) (pairBox .coreCorner .outer)=true := by decide
 theorem common_2_coreCorner_outer_00_1 :
@@ -819,76 +501,13 @@ theorem common_2_coreCorner_outer_11_2 :
     certify 96 (commonProblem 2 .coreCorner .outer true true 2) (pairBox .coreCorner .outer)=true := by decide
 theorem common_2_coreCorner_outer_11_3 :
     certify 96 (commonProblem 2 .coreCorner .outer true true 3) (pairBox .coreCorner .outer)=true := by decide
-theorem common_2_coreCorner_coreSide_00_0 :
-    certify 96 (commonProblem 2 .coreCorner .coreSide false false 0) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_2_coreCorner_coreSide_00_1 :
-    certify 96 (commonProblem 2 .coreCorner .coreSide false false 1) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_2_coreCorner_coreSide_00_2 :
-    certify 96 (commonProblem 2 .coreCorner .coreSide false false 2) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_2_coreCorner_coreSide_00_3 :
-    certify 96 (commonProblem 2 .coreCorner .coreSide false false 3) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_2_coreCorner_coreSide_01_0 :
-    certify 96 (commonProblem 2 .coreCorner .coreSide false true 0) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_2_coreCorner_coreSide_01_1 :
-    certify 96 (commonProblem 2 .coreCorner .coreSide false true 1) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_2_coreCorner_coreSide_01_2 :
-    certify 96 (commonProblem 2 .coreCorner .coreSide false true 2) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_2_coreCorner_coreSide_01_3 :
-    certify 96 (commonProblem 2 .coreCorner .coreSide false true 3) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_2_coreCorner_coreSide_10_0 :
-    certify 96 (commonProblem 2 .coreCorner .coreSide true false 0) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_2_coreCorner_coreSide_10_1 :
-    certify 96 (commonProblem 2 .coreCorner .coreSide true false 1) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_2_coreCorner_coreSide_10_2 :
-    certify 96 (commonProblem 2 .coreCorner .coreSide true false 2) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_2_coreCorner_coreSide_10_3 :
-    certify 96 (commonProblem 2 .coreCorner .coreSide true false 3) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_2_coreCorner_coreSide_11_0 :
-    certify 96 (commonProblem 2 .coreCorner .coreSide true true 0) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_2_coreCorner_coreSide_11_1 :
-    certify 96 (commonProblem 2 .coreCorner .coreSide true true 1) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_2_coreCorner_coreSide_11_2 :
-    certify 96 (commonProblem 2 .coreCorner .coreSide true true 2) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_2_coreCorner_coreSide_11_3 :
-    certify 96 (commonProblem 2 .coreCorner .coreSide true true 3) (pairBox .coreCorner .coreSide)=true := by decide
-theorem common_2_coreCorner_coreCorner_00_0 :
-    certify 96 (commonProblem 2 .coreCorner .coreCorner false false 0) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_2_coreCorner_coreCorner_00_1 :
-    certify 96 (commonProblem 2 .coreCorner .coreCorner false false 1) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_2_coreCorner_coreCorner_00_2 :
-    certify 96 (commonProblem 2 .coreCorner .coreCorner false false 2) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_2_coreCorner_coreCorner_00_3 :
-    certify 96 (commonProblem 2 .coreCorner .coreCorner false false 3) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_2_coreCorner_coreCorner_01_0 :
-    certify 96 (commonProblem 2 .coreCorner .coreCorner false true 0) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_2_coreCorner_coreCorner_01_1 :
-    certify 96 (commonProblem 2 .coreCorner .coreCorner false true 1) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_2_coreCorner_coreCorner_01_2 :
-    certify 96 (commonProblem 2 .coreCorner .coreCorner false true 2) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_2_coreCorner_coreCorner_01_3 :
-    certify 96 (commonProblem 2 .coreCorner .coreCorner false true 3) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_2_coreCorner_coreCorner_10_0 :
-    certify 96 (commonProblem 2 .coreCorner .coreCorner true false 0) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_2_coreCorner_coreCorner_10_1 :
-    certify 96 (commonProblem 2 .coreCorner .coreCorner true false 1) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_2_coreCorner_coreCorner_10_2 :
-    certify 96 (commonProblem 2 .coreCorner .coreCorner true false 2) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_2_coreCorner_coreCorner_10_3 :
-    certify 96 (commonProblem 2 .coreCorner .coreCorner true false 3) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_2_coreCorner_coreCorner_11_0 :
-    certify 96 (commonProblem 2 .coreCorner .coreCorner true true 0) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_2_coreCorner_coreCorner_11_1 :
-    certify 96 (commonProblem 2 .coreCorner .coreCorner true true 1) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_2_coreCorner_coreCorner_11_2 :
-    certify 96 (commonProblem 2 .coreCorner .coreCorner true true 2) (pairBox .coreCorner .coreCorner)=true := by decide
-theorem common_2_coreCorner_coreCorner_11_3 :
-    certify 96 (commonProblem 2 .coreCorner .coreCorner true true 3) (pairBox .coreCorner .coreCorner)=true := by decide
 
 theorem common_certificates (k : Fin 3) (source target : RadialKind)
-    (σ τ : Bool) (axis : Fin 4) :
+    (σ τ : Bool) (axis : Fin 4) (houter : source=.outer ∨ target=.outer) :
     certify 96 (commonProblem k source target σ τ axis) (pairBox source target)=true := by
   fin_cases k <;> cases source <;> cases target <;> cases σ <;> cases τ <;> fin_cases axis
   all_goals first
+  | solve | simp at houter
   | exact common_0_outer_outer_00_0
   | exact common_0_outer_outer_00_1
   | exact common_0_outer_outer_00_2
@@ -953,38 +572,6 @@ theorem common_certificates (k : Fin 3) (source target : RadialKind)
   | exact common_0_coreSide_outer_11_1
   | exact common_0_coreSide_outer_11_2
   | exact common_0_coreSide_outer_11_3
-  | exact common_0_coreSide_coreSide_00_0
-  | exact common_0_coreSide_coreSide_00_1
-  | exact common_0_coreSide_coreSide_00_2
-  | exact common_0_coreSide_coreSide_00_3
-  | exact common_0_coreSide_coreSide_01_0
-  | exact common_0_coreSide_coreSide_01_1
-  | exact common_0_coreSide_coreSide_01_2
-  | exact common_0_coreSide_coreSide_01_3
-  | exact common_0_coreSide_coreSide_10_0
-  | exact common_0_coreSide_coreSide_10_1
-  | exact common_0_coreSide_coreSide_10_2
-  | exact common_0_coreSide_coreSide_10_3
-  | exact common_0_coreSide_coreSide_11_0
-  | exact common_0_coreSide_coreSide_11_1
-  | exact common_0_coreSide_coreSide_11_2
-  | exact common_0_coreSide_coreSide_11_3
-  | exact common_0_coreSide_coreCorner_00_0
-  | exact common_0_coreSide_coreCorner_00_1
-  | exact common_0_coreSide_coreCorner_00_2
-  | exact common_0_coreSide_coreCorner_00_3
-  | exact common_0_coreSide_coreCorner_01_0
-  | exact common_0_coreSide_coreCorner_01_1
-  | exact common_0_coreSide_coreCorner_01_2
-  | exact common_0_coreSide_coreCorner_01_3
-  | exact common_0_coreSide_coreCorner_10_0
-  | exact common_0_coreSide_coreCorner_10_1
-  | exact common_0_coreSide_coreCorner_10_2
-  | exact common_0_coreSide_coreCorner_10_3
-  | exact common_0_coreSide_coreCorner_11_0
-  | exact common_0_coreSide_coreCorner_11_1
-  | exact common_0_coreSide_coreCorner_11_2
-  | exact common_0_coreSide_coreCorner_11_3
   | exact common_0_coreCorner_outer_00_0
   | exact common_0_coreCorner_outer_00_1
   | exact common_0_coreCorner_outer_00_2
@@ -1001,38 +588,6 @@ theorem common_certificates (k : Fin 3) (source target : RadialKind)
   | exact common_0_coreCorner_outer_11_1
   | exact common_0_coreCorner_outer_11_2
   | exact common_0_coreCorner_outer_11_3
-  | exact common_0_coreCorner_coreSide_00_0
-  | exact common_0_coreCorner_coreSide_00_1
-  | exact common_0_coreCorner_coreSide_00_2
-  | exact common_0_coreCorner_coreSide_00_3
-  | exact common_0_coreCorner_coreSide_01_0
-  | exact common_0_coreCorner_coreSide_01_1
-  | exact common_0_coreCorner_coreSide_01_2
-  | exact common_0_coreCorner_coreSide_01_3
-  | exact common_0_coreCorner_coreSide_10_0
-  | exact common_0_coreCorner_coreSide_10_1
-  | exact common_0_coreCorner_coreSide_10_2
-  | exact common_0_coreCorner_coreSide_10_3
-  | exact common_0_coreCorner_coreSide_11_0
-  | exact common_0_coreCorner_coreSide_11_1
-  | exact common_0_coreCorner_coreSide_11_2
-  | exact common_0_coreCorner_coreSide_11_3
-  | exact common_0_coreCorner_coreCorner_00_0
-  | exact common_0_coreCorner_coreCorner_00_1
-  | exact common_0_coreCorner_coreCorner_00_2
-  | exact common_0_coreCorner_coreCorner_00_3
-  | exact common_0_coreCorner_coreCorner_01_0
-  | exact common_0_coreCorner_coreCorner_01_1
-  | exact common_0_coreCorner_coreCorner_01_2
-  | exact common_0_coreCorner_coreCorner_01_3
-  | exact common_0_coreCorner_coreCorner_10_0
-  | exact common_0_coreCorner_coreCorner_10_1
-  | exact common_0_coreCorner_coreCorner_10_2
-  | exact common_0_coreCorner_coreCorner_10_3
-  | exact common_0_coreCorner_coreCorner_11_0
-  | exact common_0_coreCorner_coreCorner_11_1
-  | exact common_0_coreCorner_coreCorner_11_2
-  | exact common_0_coreCorner_coreCorner_11_3
   | exact common_1_outer_outer_00_0
   | exact common_1_outer_outer_00_1
   | exact common_1_outer_outer_00_2
@@ -1097,38 +652,6 @@ theorem common_certificates (k : Fin 3) (source target : RadialKind)
   | exact common_1_coreSide_outer_11_1
   | exact common_1_coreSide_outer_11_2
   | exact common_1_coreSide_outer_11_3
-  | exact common_1_coreSide_coreSide_00_0
-  | exact common_1_coreSide_coreSide_00_1
-  | exact common_1_coreSide_coreSide_00_2
-  | exact common_1_coreSide_coreSide_00_3
-  | exact common_1_coreSide_coreSide_01_0
-  | exact common_1_coreSide_coreSide_01_1
-  | exact common_1_coreSide_coreSide_01_2
-  | exact common_1_coreSide_coreSide_01_3
-  | exact common_1_coreSide_coreSide_10_0
-  | exact common_1_coreSide_coreSide_10_1
-  | exact common_1_coreSide_coreSide_10_2
-  | exact common_1_coreSide_coreSide_10_3
-  | exact common_1_coreSide_coreSide_11_0
-  | exact common_1_coreSide_coreSide_11_1
-  | exact common_1_coreSide_coreSide_11_2
-  | exact common_1_coreSide_coreSide_11_3
-  | exact common_1_coreSide_coreCorner_00_0
-  | exact common_1_coreSide_coreCorner_00_1
-  | exact common_1_coreSide_coreCorner_00_2
-  | exact common_1_coreSide_coreCorner_00_3
-  | exact common_1_coreSide_coreCorner_01_0
-  | exact common_1_coreSide_coreCorner_01_1
-  | exact common_1_coreSide_coreCorner_01_2
-  | exact common_1_coreSide_coreCorner_01_3
-  | exact common_1_coreSide_coreCorner_10_0
-  | exact common_1_coreSide_coreCorner_10_1
-  | exact common_1_coreSide_coreCorner_10_2
-  | exact common_1_coreSide_coreCorner_10_3
-  | exact common_1_coreSide_coreCorner_11_0
-  | exact common_1_coreSide_coreCorner_11_1
-  | exact common_1_coreSide_coreCorner_11_2
-  | exact common_1_coreSide_coreCorner_11_3
   | exact common_1_coreCorner_outer_00_0
   | exact common_1_coreCorner_outer_00_1
   | exact common_1_coreCorner_outer_00_2
@@ -1145,38 +668,6 @@ theorem common_certificates (k : Fin 3) (source target : RadialKind)
   | exact common_1_coreCorner_outer_11_1
   | exact common_1_coreCorner_outer_11_2
   | exact common_1_coreCorner_outer_11_3
-  | exact common_1_coreCorner_coreSide_00_0
-  | exact common_1_coreCorner_coreSide_00_1
-  | exact common_1_coreCorner_coreSide_00_2
-  | exact common_1_coreCorner_coreSide_00_3
-  | exact common_1_coreCorner_coreSide_01_0
-  | exact common_1_coreCorner_coreSide_01_1
-  | exact common_1_coreCorner_coreSide_01_2
-  | exact common_1_coreCorner_coreSide_01_3
-  | exact common_1_coreCorner_coreSide_10_0
-  | exact common_1_coreCorner_coreSide_10_1
-  | exact common_1_coreCorner_coreSide_10_2
-  | exact common_1_coreCorner_coreSide_10_3
-  | exact common_1_coreCorner_coreSide_11_0
-  | exact common_1_coreCorner_coreSide_11_1
-  | exact common_1_coreCorner_coreSide_11_2
-  | exact common_1_coreCorner_coreSide_11_3
-  | exact common_1_coreCorner_coreCorner_00_0
-  | exact common_1_coreCorner_coreCorner_00_1
-  | exact common_1_coreCorner_coreCorner_00_2
-  | exact common_1_coreCorner_coreCorner_00_3
-  | exact common_1_coreCorner_coreCorner_01_0
-  | exact common_1_coreCorner_coreCorner_01_1
-  | exact common_1_coreCorner_coreCorner_01_2
-  | exact common_1_coreCorner_coreCorner_01_3
-  | exact common_1_coreCorner_coreCorner_10_0
-  | exact common_1_coreCorner_coreCorner_10_1
-  | exact common_1_coreCorner_coreCorner_10_2
-  | exact common_1_coreCorner_coreCorner_10_3
-  | exact common_1_coreCorner_coreCorner_11_0
-  | exact common_1_coreCorner_coreCorner_11_1
-  | exact common_1_coreCorner_coreCorner_11_2
-  | exact common_1_coreCorner_coreCorner_11_3
   | exact common_2_outer_outer_00_0
   | exact common_2_outer_outer_00_1
   | exact common_2_outer_outer_00_2
@@ -1241,38 +732,6 @@ theorem common_certificates (k : Fin 3) (source target : RadialKind)
   | exact common_2_coreSide_outer_11_1
   | exact common_2_coreSide_outer_11_2
   | exact common_2_coreSide_outer_11_3
-  | exact common_2_coreSide_coreSide_00_0
-  | exact common_2_coreSide_coreSide_00_1
-  | exact common_2_coreSide_coreSide_00_2
-  | exact common_2_coreSide_coreSide_00_3
-  | exact common_2_coreSide_coreSide_01_0
-  | exact common_2_coreSide_coreSide_01_1
-  | exact common_2_coreSide_coreSide_01_2
-  | exact common_2_coreSide_coreSide_01_3
-  | exact common_2_coreSide_coreSide_10_0
-  | exact common_2_coreSide_coreSide_10_1
-  | exact common_2_coreSide_coreSide_10_2
-  | exact common_2_coreSide_coreSide_10_3
-  | exact common_2_coreSide_coreSide_11_0
-  | exact common_2_coreSide_coreSide_11_1
-  | exact common_2_coreSide_coreSide_11_2
-  | exact common_2_coreSide_coreSide_11_3
-  | exact common_2_coreSide_coreCorner_00_0
-  | exact common_2_coreSide_coreCorner_00_1
-  | exact common_2_coreSide_coreCorner_00_2
-  | exact common_2_coreSide_coreCorner_00_3
-  | exact common_2_coreSide_coreCorner_01_0
-  | exact common_2_coreSide_coreCorner_01_1
-  | exact common_2_coreSide_coreCorner_01_2
-  | exact common_2_coreSide_coreCorner_01_3
-  | exact common_2_coreSide_coreCorner_10_0
-  | exact common_2_coreSide_coreCorner_10_1
-  | exact common_2_coreSide_coreCorner_10_2
-  | exact common_2_coreSide_coreCorner_10_3
-  | exact common_2_coreSide_coreCorner_11_0
-  | exact common_2_coreSide_coreCorner_11_1
-  | exact common_2_coreSide_coreCorner_11_2
-  | exact common_2_coreSide_coreCorner_11_3
   | exact common_2_coreCorner_outer_00_0
   | exact common_2_coreCorner_outer_00_1
   | exact common_2_coreCorner_outer_00_2
@@ -1289,38 +748,6 @@ theorem common_certificates (k : Fin 3) (source target : RadialKind)
   | exact common_2_coreCorner_outer_11_1
   | exact common_2_coreCorner_outer_11_2
   | exact common_2_coreCorner_outer_11_3
-  | exact common_2_coreCorner_coreSide_00_0
-  | exact common_2_coreCorner_coreSide_00_1
-  | exact common_2_coreCorner_coreSide_00_2
-  | exact common_2_coreCorner_coreSide_00_3
-  | exact common_2_coreCorner_coreSide_01_0
-  | exact common_2_coreCorner_coreSide_01_1
-  | exact common_2_coreCorner_coreSide_01_2
-  | exact common_2_coreCorner_coreSide_01_3
-  | exact common_2_coreCorner_coreSide_10_0
-  | exact common_2_coreCorner_coreSide_10_1
-  | exact common_2_coreCorner_coreSide_10_2
-  | exact common_2_coreCorner_coreSide_10_3
-  | exact common_2_coreCorner_coreSide_11_0
-  | exact common_2_coreCorner_coreSide_11_1
-  | exact common_2_coreCorner_coreSide_11_2
-  | exact common_2_coreCorner_coreSide_11_3
-  | exact common_2_coreCorner_coreCorner_00_0
-  | exact common_2_coreCorner_coreCorner_00_1
-  | exact common_2_coreCorner_coreCorner_00_2
-  | exact common_2_coreCorner_coreCorner_00_3
-  | exact common_2_coreCorner_coreCorner_01_0
-  | exact common_2_coreCorner_coreCorner_01_1
-  | exact common_2_coreCorner_coreCorner_01_2
-  | exact common_2_coreCorner_coreCorner_01_3
-  | exact common_2_coreCorner_coreCorner_10_0
-  | exact common_2_coreCorner_coreCorner_10_1
-  | exact common_2_coreCorner_coreCorner_10_2
-  | exact common_2_coreCorner_coreCorner_10_3
-  | exact common_2_coreCorner_coreCorner_11_0
-  | exact common_2_coreCorner_coreCorner_11_1
-  | exact common_2_coreCorner_coreCorner_11_2
-  | exact common_2_coreCorner_coreCorner_11_3
 theorem short_0_outer_outer_10_0 :
     certify 96 (wrongProblem .short 0 .outer .outer true false 0) (pairBox .outer .outer)=true := by decide
 theorem short_0_outer_outer_10_1 :

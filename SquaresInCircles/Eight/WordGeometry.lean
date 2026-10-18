@@ -2,11 +2,14 @@ module
 
 public import SquaresInCircles.Eight.Generated.WordCertificates
 public import SquaresInCircles.Eight.CycleActions
+public import SquaresInCircles.Eight.Arithmetic.CoreWordGeometry
 
 /-!
 # Actual geometric exclusion of the six noncandidate quarter words
 
-The common increment table first excludes every word containing a two.
+The common increment bounds first exclude every word containing a two.
+Their core/core block follows from center geometry and a uniform marker
+estimate; only cases with an outer endpoint use the retained common table.
 The two remaining wrong words use their separate role-dependent label
 systems.  A marker is evaluated once per vertex, so the target value on
 one edge is exactly the source value on the next edge.
@@ -186,6 +189,16 @@ lemma commonLabel_eval (kind : RadialKind) (σ : Bool) (b : E) (env : Fin 3→�
 def commonMarker (C : BoundaryCycle Q0) (i : Vertex) : ℝ :=
   commonValue (C.kind i) (positiveOf C i) (C.b i)
 
+lemma commonMarker_core_eq (C : BoundaryCycle Q0) (i : Vertex)
+    (hk : C.kind i ≠ .outer) :
+    commonMarker C i=C.sigma i*CoreWordGeometry.label (C.a i) (C.b i) := by
+  have ha : 1/2<C.a i := by linarith [(Candidate.canonical_bounds C le_rfl i).1]
+  have he := (actual_primary (C.kind i) ha (C.b_nonneg i) (C.b_le_a i)
+    (C.boundary i)).1
+  dsimp [commonMarker,commonValue]
+  rw [positiveOf_spec,if_neg hk,← he]
+  rfl
+
 def wrongValue (w : WrongWord) (i : Vertex) (kind : RadialKind) (σ : Bool) (b : ℝ) : ℝ :=
   let a := primaryValue kind b
   match w with
@@ -215,17 +228,18 @@ lemma marker_budget (C : BoundaryCycle Q0) (F : QuarterLift C)
   rw [Finset.sum_sub_distrib,Finset.sum_add_distrib,sum_next,phase_sum C F hgap]
   ring
 
-/-- The common table is applied to the original owner chosen by geometry;
-every other feasible owner also satisfies the same conclusion. -/
-lemma common_pair (C : BoundaryCycle Q0) (F : QuarterLift C)
+/-- The retained common table is needed only when at least one endpoint
+is outer. Its original owner, domain, and sign checks are unchanged. -/
+lemma common_pair_of_outer (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hgap : ∀ i,19/25<angleGap C.beta i) (i : Vertex) (j : Fin 4)
-    (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i))) :
+    (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i)))
+    (houter : C.kind i=.outer ∨ C.kind (next i)=.outer) :
     (commonGamma (F.word hgap pi_lt_22_over_7 i):ℝ)<
       phaseValue F hgap i+commonMarker C i-commonMarker C (next i) := by
   obtain ⟨hbox,hhyps⟩ := environment C F hgap i j hj
   have h := certify_sound
     (common_certificates (F.word hgap pi_lt_22_over_7 i) (C.kind i) (C.kind (next i))
-      (positiveOf C i) (positiveOf C (next i)) j)
+      (positiveOf C i) (positiveOf C (next i)) j houter)
     ![C.b i,C.b (next i),difference F i] hbox hhyps
   change 0 < (phase (F.word hgap pi_lt_22_over_7 i)+
     commonLabel (C.kind i) (positiveOf C i) (.var 0)-
@@ -234,6 +248,24 @@ lemma common_pair (C : BoundaryCycle Q0) (F : QuarterLift C)
       ![C.b i,C.b (next i),difference F i] at h
   simp only [Expr.eval,phase_eval,commonLabel_eval] at h
   simpa [phaseValue,commonMarker,Expr.eval] using sub_pos.mp h
+
+/-- Every core/core common cost follows from center separation and one
+uniform marker bound, for all increments and every feasible original axis. -/
+lemma common_pair (C : BoundaryCycle Q0) (F : QuarterLift C)
+    (hgap : ∀ i,19/25<angleGap C.beta i) (i : Vertex) (j : Fin 4)
+    (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i))) :
+    (commonGamma (F.word hgap pi_lt_22_over_7 i):ℝ)<
+      phaseValue F hgap i+commonMarker C i-commonMarker C (next i) := by
+  by_cases hi : C.kind i=.outer
+  · exact common_pair_of_outer C F hgap i j hj (Or.inl hi)
+  by_cases ht : C.kind (next i)=.outer
+  · exact common_pair_of_outer C F hgap i j hj (Or.inr ht)
+  have h := CoreWordGeometry.common_core_cost C i hi ht
+  rw [← commonMarker_core_eq C i hi,← commonMarker_core_eq C (next i) ht] at h
+  have hγ : (commonGamma (F.word hgap pi_lt_22_over_7 i):ℝ) ≤ 391/400 := by
+    generalize F.word hgap pi_lt_22_over_7 i=k
+    fin_cases k <;> norm_num [commonGamma]
+  linarith [phase_gap C F hgap i]
 
 lemma commonGamma_numerator (k : Fin 3) :
     (commonGamma k:ℝ)=(doubleWordCostNumerator k:ℝ)/10000 := by

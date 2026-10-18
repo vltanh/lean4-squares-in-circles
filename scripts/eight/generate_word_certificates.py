@@ -2,9 +2,10 @@
 """Emit n=8 closed-domain word proof scripts, schema n8-word-box-script-v1.
 
 The geometric expressions and exact role labels are in WordProblems.lean.
-This generator enumerates every specified increment/branch/sign/axis case
+This generator enumerates the retained increment/branch/sign/axis cases
 and writes ordinary Lean `by decide` bodies for the depth-96 compiler.
 It neither invokes Lean nor evaluates those decisions or a historical checker.
+Common core/core cases are proved by CoreWordGeometry and are omitted.
 """
 from pathlib import Path
 root = Path(__file__).resolve().parents[2]
@@ -23,6 +24,8 @@ opaque arithmetic record, or numerical optimizer is consumed here.
 
 Each statement carries the actual branch/sign/axis expression. A failed
 leaf will make its `by decide` proof fail during the later requested audit.
+The common core/core block has been removed: WordGeometry supplies its
+whole-domain geometric proof before calling the retained dispatcher.
 -/
 
 @[expose] public section
@@ -33,24 +36,29 @@ set_option maxHeartbeats 0
 '''
 # Individual source-axis and radial/sign statements keep elaboration names reviewable.
 rad=['outer','coreSide','coreCorner']
+common_count=0
 for k in range(3):
  for a in rad:
   for b in rad:
+   if a!='outer' and b!='outer':continue
    for si in [False,True]:
     for ti in [False,True]:
      for ax in range(4):
+      common_count+=1
       S=str(si).lower();T=str(ti).lower()
       g+=f'theorem common_{k}_{a}_{b}_{int(si)}{int(ti)}_{ax} :\n    certify 96 (commonProblem {k} .{a} .{b} {S} {T} {ax}) (pairBox .{a} .{b})=true := by decide\n'
 g+='''
 theorem common_certificates (k : Fin 3) (source target : RadialKind)
-    (σ τ : Bool) (axis : Fin 4) :
+    (σ τ : Bool) (axis : Fin 4) (houter : source=.outer ∨ target=.outer) :
     certify 96 (commonProblem k source target σ τ axis) (pairBox source target)=true := by
   fin_cases k <;> cases source <;> cases target <;> cases σ <;> cases τ <;> fin_cases axis
   all_goals first
+  | solve | simp at houter
 '''
 for k in range(3):
  for a in rad:
   for b in rad:
+   if a!='outer' and b!='outer':continue
    for si in [False,True]:
     for ti in [False,True]:
      for ax in range(4):g+=f'  | exact common_{k}_{a}_{b}_{int(si)}{int(ti)}_{ax}\n'
@@ -79,4 +87,5 @@ theorem wrong_certificates (w : WrongWord) (i : Vertex) (source target : RadialK
 for name in case_names:g+=f'  | exact {name}\n'
 g+='\nend SquaresInCircles.Eight.WordProblems\n'
 (root/'SquaresInCircles/Eight/Generated/WordCertificates.lean').write_text(g)
-print('Wrote WordCertificates.lean:',432+len(case_names),'finite proof scripts; no decision evaluated.')
+print('Wrote WordCertificates.lean:',common_count+len(case_names),
+      'finite proof scripts;',432-common_count,'common core/core cases removed by geometry; no decision evaluated.')
