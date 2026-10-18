@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 from collections import Counter
 import json
+from math import prod
 from pathlib import Path
 import re
 import subprocess
@@ -29,6 +30,7 @@ DECLARATION = re.compile(
     r"(?:(?:public|private|protected|noncomputable|partial|unsafe)\s+)*"
     r"(theorem|lemma|def|abbrev|opaque|axiom)\s+([\w.']+)"
 )
+THEOREM_STATEMENT = re.compile(r"(?m)^theorem\s+([\w.']+)\b([\s\S]*?)\s:=")
 
 
 def lean_code(source: str) -> str:
@@ -110,6 +112,30 @@ def certify_occurrences(module: str, source: str) -> list[dict]:
     return occurrences
 
 
+def dependency_cycles(reached: dict[str, str]) -> list[list[str]]:
+    """Report cycles among repository modules, without elaborating imports."""
+    done: set[str] = set()
+    active: list[str] = []
+    cycles: list[list[str]] = []
+
+    def visit(module: str) -> None:
+        if module in active:
+            cycles.append(active[active.index(module):] + [module])
+            return
+        if module in done:
+            return
+        active.append(module)
+        for imported in IMPORT.findall(lean_code(reached[module])):
+            if imported in reached:
+                visit(imported)
+        active.pop()
+        done.add(module)
+
+    for module in sorted(reached):
+        visit(module)
+    return cycles
+
+
 def inventory(root: Path, entry: str, revision: str | None = None,
               details: bool = False) -> dict:
     committed_files = None
@@ -185,6 +211,21 @@ def inventory(root: Path, entry: str, revision: str | None = None,
         head = tree = None
     word_counts = Counter()
     four_type_count = 0
+    fixed_box_bounds = []
+    local_formula_checks = []
+    for module, source in sorted(reached.items()):
+        for name, statement in THEOREM_STATEMENT.findall(lean_code(source)):
+            if re.search(r"\bboundedAt\b", statement) and statement.rstrip().endswith("= true"):
+                cardinalities = [int(n) for n in re.findall(r"\bFin\s+(\d+)\b", statement)]
+                fixed_box_bounds.append({
+                    "module": module, "theorem": name,
+                    "finite_index_cardinalities": cardinalities,
+                    "scalar_box_checks": prod(cardinalities),
+                })
+            if module.endswith(".Generated.LocalStationaryBounds") and (
+                "FormulaCertificate.mk" in statement and ".Valid" in statement
+            ):
+                local_formula_checks.append(name)
     for row in searches:
         if row["kind"] != "certificate_statement":
             continue
@@ -209,6 +250,19 @@ def inventory(root: Path, entry: str, revision: str | None = None,
         "affine_input_rows": sum(table["input_rows"] for table in affine),
         "affine_geometric_exclusions": sum(table["excluded_by_geometry"] for table in affine),
         "stationary_root_cover_imported": "SquaresInCircles.Eight.ExactFamily.Generated.StationaryLocalization" in reached,
+        "stationary_root_search_utility_imported": "SquaresInCircles.Eight.ExactFamily.CompactRootCover" in reached,
+        "stationary_geometric_uniqueness_imported": "SquaresInCircles.Eight.ExactFamily.GeometricStationary" in reached,
+        "fixed_interval_bound_declarations": fixed_box_bounds,
+        "adaptive_scalar_box_checks": sum(
+            row["scalar_box_checks"] for row in fixed_box_bounds
+            if row["module"].endswith(".Generated.AdaptiveBounds")
+        ),
+        "local_stationary_formula_certificate_declarations": local_formula_checks,
+        "local_stationary_formula_certificate_count": len(local_formula_checks),
+        "interval_inventory_kind": (
+            "declared fixed-box bounds and products of explicit finite index sizes; "
+            "these are source obligations, not interval operations or runtime measurements"
+        ),
         "owner_bundle_modules": owner,
         "owner_row_certificates": dict(owner_rows),
         "owner_generated_lines": sum(len(source.splitlines()) for source in owner_sources.values()),
@@ -217,6 +271,7 @@ def inventory(root: Path, entry: str, revision: str | None = None,
         "word_individual_certificate_total": sum(word_counts.values()),
         "four_type_chart_certificate_declarations": four_type_count,
         "missing_repository_imports": sorted(module for module in external if module.startswith("SquaresInCircles")),
+        "repository_import_cycles": dependency_cycles(reached),
         "recursive_search_inventory_kind": (
             "literal certify tokens in source, excluding comments and strings; "
             "definitions, statements and proof/body references are distinguished; "

@@ -1,7 +1,7 @@
 module
 
 public import SquaresInCircles.Eight.ExactFamily.Generated.AdaptiveFormula
-public import SquaresInCircles.Eight.ExactFamily.CompactRootCover
+public import SquaresInCircles.Eight.ExactFamily.IntervalEnclosure
 
 /-!
 # Uniform estimates along the stationary curve
@@ -17,7 +17,7 @@ the optimal geometry. These decision proofs have not been executed in Lean.
 
 @[expose] public section
 namespace SquaresInCircles.Eight.ExactFamily.AdaptiveGenerated
-open Arithmetic Generated CompactRootCover
+open Arithmetic Generated IntervalEnclosure
 
 /-- The same precision as the original adaptive-box generator. -/
 def adaptivePrecision : ℕ := 100

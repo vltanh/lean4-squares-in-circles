@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Generate exact rational interval data for the stationary equations.
 
-This program produces Lean data, not a proof by external execution.  Every
-interval and every closed split is checked by the ordinary Lean predicates.
-It never invokes Lean, lake, a compiler, or CI.
+The default output is the retained local existence and bracket data. The
+active global uniqueness proof is geometric and needs no root cover.
+`--legacy-root-cover` explicitly regenerates the historical search archive.
+This program never invokes Lean, lake, a compiler, or CI; its output remains
+subject to the ordinary Lean interval and closed-box predicates.
 """
 from fractions import Fraction as Q
 from math import isqrt
@@ -237,7 +239,8 @@ def write_lean(out,nodes,root):
     for start in range(0,len(nodes),chunk_size):
         end=min(len(nodes),start+chunk_size)
         name=f'RootCover{start//chunk_size:03d}'
-        imports=['SquaresInCircles.Eight.ExactFamily.Generated.StationaryFormula']
+        imports=['SquaresInCircles.Eight.ExactFamily.RootCover',
+          'SquaresInCircles.Eight.ExactFamily.Generated.StationaryFormula']
         needed=set()
         for n in nodes[start:end]:
             if n[0]=='split':
@@ -306,7 +309,8 @@ def write_local(out):
     bounds={'F':F,'Fq':Fq,'Fy':Fy,'Fz':Fz,'Fyy':Fyy,'Fyz':Fyz,'Fzz':Fzz,
       'xOne':x1,'xTwo':x2,'yThree':y3,'xFour':x4,'cosine':c,'sine':s,'hOne':h1,'hTwo':h2,
       'determinant':det}
-    lines=[header]
+    local_header=header.replace('ExactFamily.RootCover','ExactFamily.Expression')
+    lines=[local_header]
     for i,n in enumerate(A.nodes):
         core=formula_node(n).replace(' n',' formula')
         lines.append(f'def formula{i} : Formula 3 := {core}')
@@ -465,22 +469,23 @@ def write_local(out):
 if __name__ == '__main__':
     out=Path(__file__).parent/'Generated'
     out.mkdir(exist_ok=True)
-    cached=out/'root_cover_data.json'
-    if cached.exists():
-        cache=json.loads(cached.read_text());root=cache['root'];nodes=[]
-        for n in cache['nodes']:
-            if n[0]=='split': nodes.append((n[0],n[1],Q(n[2]),n[3],n[4]))
-            else:nodes.append((n[0],tuple((Q(a),Q(b)) for a,b in n[1]),*n[2:]))
-    else:nodes,root=isolate()
-    rows=[]
-    for i,n in enumerate(nodes):
-        if n[0]=='split': rows.append([n[0],n[1],str(n[2]),n[3],n[4]])
-        else: rows.append([n[0],[[str(a),str(b)] for a,b in n[1]],*n[2:]])
-    (out/'root_cover_data.json').write_text(json.dumps({'root':root,'nodes':rows,'outputs':outputs,
-      'algebra':[[n[0],*[str(x) if isinstance(x,Q) else x for x in n[1:]]] for n in A.nodes]},separators=(',',':')))
-    print(json.dumps({'nodes':len(nodes),'excluded_leaves':sum(n[0]=='excluded' for n in nodes),
-      'inside_leaves':sum(n[0]=='inside' for n in nodes),'algebra_nodes':len(A.nodes)}))
-    if '--local-only' not in sys.argv: write_lean(out,nodes,root)
+    if '--legacy-root-cover' in sys.argv:
+        cached=out/'root_cover_data.json'
+        if cached.exists():
+            cache=json.loads(cached.read_text());root=cache['root'];nodes=[]
+            for n in cache['nodes']:
+                if n[0]=='split': nodes.append((n[0],n[1],Q(n[2]),n[3],n[4]))
+                else:nodes.append((n[0],tuple((Q(a),Q(b)) for a,b in n[1]),*n[2:]))
+        else:nodes,root=isolate()
+        rows=[]
+        for i,n in enumerate(nodes):
+            if n[0]=='split': rows.append([n[0],n[1],str(n[2]),n[3],n[4]])
+            else: rows.append([n[0],[[str(a),str(b)] for a,b in n[1]],*n[2:]])
+        (out/'root_cover_data.json').write_text(json.dumps({'root':root,'nodes':rows,'outputs':outputs,
+          'algebra':[[n[0],*[str(x) if isinstance(x,Q) else x for x in n[1:]]] for n in A.nodes]},separators=(',',':')))
+        print(json.dumps({'nodes':len(nodes),'excluded_leaves':sum(n[0]=='excluded' for n in nodes),
+          'inside_leaves':sum(n[0]=='inside' for n in nodes),'algebra_nodes':len(A.nodes)}))
+        write_lean(out,nodes,root)
     write_local(out)
     print(json.dumps({'lean_files':len(list(out.glob('*.lean'))),
       'lean_bytes':sum(p.stat().st_size for p in out.glob('*.lean'))}))

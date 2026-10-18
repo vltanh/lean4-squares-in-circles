@@ -92,6 +92,122 @@
   "affine_input_rows": 660370,
   "affine_geometric_exclusions": 0,
   "stationary_root_cover_imported": true,
+  "stationary_root_search_utility_imported": true,
+  "stationary_geometric_uniqueness_imported": false,
+  "fixed_interval_bound_declarations": [
+    {
+      "module": "SquaresInCircles.Eight.ExactFamily.Generated.AdaptiveBounds",
+      "theorem": "lower_checked",
+      "finite_index_cardinalities": [
+        256
+      ],
+      "scalar_box_checks": 256
+    },
+    {
+      "module": "SquaresInCircles.Eight.ExactFamily.Generated.AdaptiveBounds",
+      "theorem": "upper_checked",
+      "finite_index_cardinalities": [
+        256
+      ],
+      "scalar_box_checks": 256
+    },
+    {
+      "module": "SquaresInCircles.Eight.ExactFamily.Generated.AdaptiveBounds",
+      "theorem": "reserves_checked",
+      "finite_index_cardinalities": [
+        256,
+        9
+      ],
+      "scalar_box_checks": 2304
+    },
+    {
+      "module": "SquaresInCircles.Eight.ExactFamily.Generated.AdaptiveBounds",
+      "theorem": "weights_checked",
+      "finite_index_cardinalities": [
+        256,
+        7
+      ],
+      "scalar_box_checks": 1792
+    },
+    {
+      "module": "SquaresInCircles.Eight.ExactFamily.Generated.AdaptiveBounds",
+      "theorem": "hTwo_checked",
+      "finite_index_cardinalities": [
+        256
+      ],
+      "scalar_box_checks": 256
+    },
+    {
+      "module": "SquaresInCircles.Eight.ExactFamily.Generated.AdaptiveBounds",
+      "theorem": "quadratic_checked",
+      "finite_index_cardinalities": [
+        256
+      ],
+      "scalar_box_checks": 256
+    },
+    {
+      "module": "SquaresInCircles.Eight.ExactFamily.Generated.AdaptiveBounds",
+      "theorem": "cubic_checked",
+      "finite_index_cardinalities": [
+        256
+      ],
+      "scalar_box_checks": 256
+    }
+  ],
+  "adaptive_scalar_box_checks": 5376,
+  "local_stationary_formula_certificate_declarations": [
+    "fullF_valid",
+    "fullFy_valid",
+    "fullFz_valid",
+    "fullFq_valid",
+    "fullFyy_valid",
+    "localXOne_valid",
+    "localXTwo_valid",
+    "localYThree_valid",
+    "localXFour_valid",
+    "localCosine_valid",
+    "localSine_valid",
+    "localHOne_valid",
+    "localHTwo_valid",
+    "det00_valid",
+    "det01_valid",
+    "det02_valid",
+    "det03_valid",
+    "det10_valid",
+    "det11_valid",
+    "det12_valid",
+    "det13_valid",
+    "det20_valid",
+    "det21_valid",
+    "det22_valid",
+    "det23_valid",
+    "det30_valid",
+    "det31_valid",
+    "det32_valid",
+    "det33_valid",
+    "trialFy_valid",
+    "trialFz_valid",
+    "lowerTest_valid",
+    "upperTest_valid",
+    "sharpLowF_valid",
+    "sharpLowFy_valid",
+    "sharpLowFz_valid",
+    "sharpHighF_valid",
+    "sharpHighFy_valid",
+    "sharpHighFz_valid",
+    "sharpTrialFy_valid",
+    "sharpTrialFz_valid",
+    "sharpXOne_valid",
+    "sharpXTwo_valid",
+    "sharpYThree_valid",
+    "sharpXFour_valid",
+    "sharpCosine_valid",
+    "sharpSine_valid",
+    "sharpHOne_valid",
+    "sharpHTwo_valid"
+  ],
+  "local_stationary_formula_certificate_count": 49,
+  "interval_inventory_kind": "declared fixed-box bounds and products of explicit finite index sizes; these are source obligations, not interval operations or runtime measurements",
   "owner_bundle_modules": {
     "quarter": 48,
     "mixed": 15,
@@ -112,6 +228,7 @@
   "word_individual_certificate_total": 1800,
   "four_type_chart_certificate_declarations": 25,
   "missing_repository_imports": [],
+  "repository_import_cycles": [],
   "recursive_search_inventory_kind": "literal certify tokens in source, excluding comments and strings; definitions, statements and proof/body references are distinguished; these are not executed searches, recursion-node counts, or runtime measurements",
   "recursive_search_source_occurrences": 1844,
   "recursive_search_source_counts_by_kind": {

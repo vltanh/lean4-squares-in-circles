@@ -411,10 +411,24 @@ interior minimizing window, the scalar implicit-function theorem, the
 global critical-point argument, and finite radius inclusion.
 
 The separate 256-box adaptive derivative, reserve, and perturbation bounds
-are still present.  Their enclosure utility currently shares a module
-with the old recursive checker; using the enclosure utility does not
-reintroduce the stationary localization certificate.  Those adaptive
-bounds remain a distinct target for further geometric reduction.
+are still present: seven families declare 21 scalar bounds per index,
+or 5,376 fixed-box checks. The 49 formula certificates for local existence
+and numerical brackets also remain. These counts describe source
+obligations, not interval operations or measured evaluation cost.
+
+`IntervalEnclosure.lean` now contains the unchanged fixed-box enclosure
+routine and its soundness proof. `AdaptiveBounds` imports that utility
+directly, and `StationaryFormula` imports only the expression layer.
+Neither `CompactRootCover` nor `RootCover` is in the active theorem's
+import closure. The dead generated `StationaryLocalization.lean` decision
+module has been deleted. This extraction is dependency cleanup; it does
+not replace the retained adaptive estimates by geometry.
+
+The stationary generator now writes only local existence and bracket
+data by default. The explicit `--legacy-root-cover` option preserves the
+historical reconstruction path. No generator or recursive certificate
+was run for this cleanup. The remaining adaptive bounds are a separate
+target for further geometric reduction.
 
 All new Lean sources in this note remain uncompiled, in accordance with
 the explicit no-compilation and no-CI instruction.  Verification so far
