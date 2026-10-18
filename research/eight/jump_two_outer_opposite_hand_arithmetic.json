@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "scope": "OO negative-positive source-negative-primary jump-two branch",
+  "multiplier": "3/4",
+  "uniform_N_squared_upper": "2333/2500",
+  "strict_curvature_upper": "-1/16",
+  "endpoint_rows": [
+    {
+      "endpoint": "pi_minus_seven_tenths",
+      "N_squared_upper": "276419/400000",
+      "N_upper": "104/125",
+      "F_lower": "203993/250000",
+      "strict_reserve": "243/250000"
+    },
+    {
+      "endpoint": "thirteen_fifths",
+      "N_squared_upper": "44821/50000",
+      "N_upper": "947/1000",
+      "F_lower": "815887/1000000",
+      "strict_reserve": "887/1000000"
+    }
+  ],
+  "large_angle_lower": "209/250",
+  "subdivision_intervals": 0,
+  "numerical_roots": 0
+}

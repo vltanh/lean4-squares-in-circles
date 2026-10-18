@@ -1,0 +1,766 @@
+{
+  "status": "PASS",
+  "scope": "Whole physical high/high frame-pair entry >.9099",
+  "strict_comparisons": 108,
+  "endpoint_rows": [
+    {
+      "case": "++ endpoint a",
+      "sigma": 1,
+      "tau": 1,
+      "lambda": "39/100",
+      "source": "a",
+      "target": "a",
+      "angle": ".35",
+      "strict_cost_lower": "9316539/10000000",
+      "lower_numerator_over_1e8": 93165390,
+      "norm_bounds": []
+    },
+    {
+      "case": "++ endpoint a",
+      "sigma": 1,
+      "tau": 1,
+      "lambda": "39/100",
+      "source": "a",
+      "target": "a",
+      "angle": "1.2",
+      "strict_cost_lower": "96736501/100000000",
+      "lower_numerator_over_1e8": 96736501,
+      "norm_bounds": []
+    },
+    {
+      "case": "++ endpoint b",
+      "sigma": 1,
+      "tau": 1,
+      "lambda": "39/100",
+      "source": "a",
+      "target": "b",
+      "angle": ".35",
+      "strict_cost_lower": "93308297/100000000",
+      "lower_numerator_over_1e8": 93308297,
+      "norm_bounds": []
+    },
+    {
+      "case": "++ endpoint b",
+      "sigma": 1,
+      "tau": 1,
+      "lambda": "39/100",
+      "source": "a",
+      "target": "b",
+      "angle": "1.2",
+      "strict_cost_lower": "50539319/50000000",
+      "lower_numerator_over_1e8": 101078638,
+      "norm_bounds": []
+    },
+    {
+      "case": "++ circle",
+      "sigma": 1,
+      "tau": 1,
+      "lambda": "39/100",
+      "source": "a",
+      "target": "o",
+      "angle": "1.2",
+      "strict_cost_lower": "48232139/50000000",
+      "lower_numerator_over_1e8": 96464278,
+      "norm_bounds": [
+        {
+          "squared_norm_upper": "845210798356543747845825900158497/8658200502395629882812500000000000",
+          "strict_norm_upper": "781103723/2500000000"
+        }
+      ]
+    },
+    {
+      "case": "++ circle",
+      "sigma": 1,
+      "tau": 1,
+      "lambda": "39/100",
+      "source": "a",
+      "target": "o",
+      "angle": "quarter",
+      "strict_cost_lower": "92448679/100000000",
+      "lower_numerator_over_1e8": 92448679,
+      "norm_bounds": [
+        {
+          "squared_norm_upper": "23785403189/100000000000",
+          "strict_norm_upper": "4877028111/10000000000"
+        }
+      ]
+    },
+    {
+      "case": "+- first",
+      "sigma": 1,
+      "tau": -1,
+      "lambda": "11/20",
+      "source": "o",
+      "target": "b",
+      "angle": ".35",
+      "strict_cost_lower": "24404577/25000000",
+      "lower_numerator_over_1e8": 97618308,
+      "norm_bounds": [
+        {
+          "squared_norm_upper": "21712591189/100000000000",
+          "strict_norm_upper": "1164919289/2500000000"
+        }
+      ]
+    },
+    {
+      "case": "+- first",
+      "sigma": 1,
+      "tau": -1,
+      "lambda": "11/20",
+      "source": "o",
+      "target": "b",
+      "angle": ".6",
+      "strict_cost_lower": "11484183/12500000",
+      "lower_numerator_over_1e8": 91873464,
+      "norm_bounds": [
+        {
+          "squared_norm_upper": "21712591189/100000000000",
+          "strict_norm_upper": "1164919289/2500000000"
+        }
+      ]
+    },
+    {
+      "case": "+- middle",
+      "sigma": 1,
+      "tau": -1,
+      "lambda": "43/100",
+      "source": "a",
+      "target": "b",
+      "angle": ".6",
+      "strict_cost_lower": "11539747/12500000",
+      "lower_numerator_over_1e8": 92317976,
+      "norm_bounds": []
+    },
+    {
+      "case": "+- middle",
+      "sigma": 1,
+      "tau": -1,
+      "lambda": "43/100",
+      "source": "a",
+      "target": "b",
+      "angle": ".8",
+      "strict_cost_lower": "18340207/20000000",
+      "lower_numerator_over_1e8": 91701035,
+      "norm_bounds": []
+    },
+    {
+      "case": "+- last a",
+      "sigma": 1,
+      "tau": -1,
+      "lambda": "17/50",
+      "source": "a",
+      "target": "a",
+      "angle": ".8",
+      "strict_cost_lower": "47971187/50000000",
+      "lower_numerator_over_1e8": 95942374,
+      "norm_bounds": []
+    },
+    {
+      "case": "+- last b",
+      "sigma": 1,
+      "tau": -1,
+      "lambda": "17/50",
+      "source": "a",
+      "target": "b",
+      "angle": ".8",
+      "strict_cost_lower": "47600047/50000000",
+      "lower_numerator_over_1e8": 95200094,
+      "norm_bounds": []
+    },
+    {
+      "case": "-- last a",
+      "sigma": -1,
+      "tau": -1,
+      "lambda": "17/50",
+      "source": "o",
+      "target": "a",
+      "angle": ".95",
+      "strict_cost_lower": "11414849/12500000",
+      "lower_numerator_over_1e8": 91318792,
+      "norm_bounds": [
+        {
+          "squared_norm_upper": "20394263189/100000000000",
+          "strict_norm_upper": "1129000199/2500000000"
+        }
+      ]
+    },
+    {
+      "case": "-- last b",
+      "sigma": -1,
+      "tau": -1,
+      "lambda": "17/50",
+      "source": "o",
+      "target": "b",
+      "angle": ".95",
+      "strict_cost_lower": "91629877/100000000",
+      "lower_numerator_over_1e8": 91629877,
+      "norm_bounds": [
+        {
+          "squared_norm_upper": "20394263189/100000000000",
+          "strict_norm_upper": "1129000199/2500000000"
+        }
+      ]
+    },
+    {
+      "case": "-+ first",
+      "sigma": -1,
+      "tau": 1,
+      "lambda": "2/5",
+      "source": "o",
+      "target": "a",
+      "angle": "1",
+      "strict_cost_lower": "9640643/10000000",
+      "lower_numerator_over_1e8": 96406430,
+      "norm_bounds": [
+        {
+          "squared_norm_upper": "24583631189/100000000000",
+          "strict_norm_upper": "2479094149/5000000000"
+        }
+      ]
+    },
+    {
+      "case": "-+ first",
+      "sigma": -1,
+      "tau": 1,
+      "lambda": "2/5",
+      "source": "o",
+      "target": "a",
+      "angle": "1.3",
+      "strict_cost_lower": "3733077/4000000",
+      "lower_numerator_over_1e8": 93326925,
+      "norm_bounds": [
+        {
+          "squared_norm_upper": "24583631189/100000000000",
+          "strict_norm_upper": "2479094149/5000000000"
+        }
+      ]
+    },
+    {
+      "case": "-+ last",
+      "sigma": -1,
+      "tau": 1,
+      "lambda": "73/200",
+      "source": "b",
+      "target": "o",
+      "angle": "1.3",
+      "strict_cost_lower": "46805553/50000000",
+      "lower_numerator_over_1e8": 93611106,
+      "norm_bounds": [
+        {
+          "squared_norm_upper": "1068897999169763425471048278387376550477394952252141/8994147285860352000000000000000000000000000000000000",
+          "strict_norm_upper": "1723685939/5000000000"
+        }
+      ]
+    },
+    {
+      "case": "-+ last",
+      "sigma": -1,
+      "tau": 1,
+      "lambda": "73/200",
+      "source": "b",
+      "target": "o",
+      "angle": "1.5543",
+      "strict_cost_lower": "90994723/100000000",
+      "lower_numerator_over_1e8": 90994723,
+      "norm_bounds": [
+        {
+          "squared_norm_upper": "45277353330202583346264756785993272037567819041578553238030290267719541280600806607311900831186855404985725345527425092471281657201/212739817472000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "strict_norm_upper": "4613347033/10000000000"
+        }
+      ]
+    }
+  ],
+  "polynomial": {
+    "interval": [
+      ".6",
+      ".95"
+    ],
+    "degree": 14,
+    "lower_numerators_over_1e8": [
+      6008661,
+      4521736,
+      3269000,
+      2241201,
+      1427808,
+      817238,
+      397075,
+      154297,
+      75489,
+      147054,
+      355411,
+      687182,
+      1129359,
+      1669462,
+      2295674
+    ],
+    "coefficients": [
+      "65061887296399928500418892361/62500000000000000000000000000",
+      "-14361530534617802192848951/6250000000000000000000000",
+      "-395814506222929894934369/1562500000000000000000000",
+      "44764226035050131557357117/12500000000000000000000000",
+      "-3449913973653868140397513/1562500000000000000000000",
+      "-67589710177681104489577917/250000000000000000000000000",
+      "49033978091542260142307551/93750000000000000000000000",
+      "-3845526581737986312557/117187500000000000000000",
+      "-16331055428326233593923/300000000000000000000000",
+      "44376341560401292601/7500000000000000000000",
+      "36010985562250571555267/12000000000000000000000000",
+      "-78301333229349206449/250000000000000000000000",
+      "-50471846334608017259/562500000000000000000000",
+      "4308315637825501/703125000000000000000",
+      "4462364729761/3515625000000000000"
+    ],
+    "exact_bernstein": [
+      "14669583267672231987689498498329/244140625000000000000000000000000",
+      "88315175302997474908154070223233/1953125000000000000000000000000000",
+      "6640157706331547878852795276151799/203125000000000000000000000000000000",
+      "18209759744242642391807518389125891/812500000000000000000000000000000000",
+      "127610395342535725747327485329273233/8937500000000000000000000000000000000",
+      "1168650970497872164509539280317612589/143000000000000000000000000000000000000",
+      "929157356003981479484371114285357883/234000000000000000000000000000000000000",
+      "3530328250748472641342356968187754037/2288000000000000000000000000000000000000",
+      "6908780946184157841421089297178445633/9152000000000000000000000000000000000000",
+      "161500786839709773398221863591050275753/109824000000000000000000000000000000000000",
+      "141937117010348194054418539048175976191/39936000000000000000000000000000000000000",
+      "45738834710153918915988414060378049859/6656000000000000000000000000000000000000",
+      "52040868965623984587512790805864930289/4608000000000000000000000000000000000000",
+      "2136912010634037898636137059397142679/128000000000000000000000000000000000000",
+      "23507704513769642194328894577210970521/1024000000000000000000000000000000000000"
+    ],
+    "T_lower_bound": "69642073750981/250000000000000"
+  },
+  "checks": [
+    {
+      "name": "folded radius lower",
+      "strict_reserve": "12247031/10000000000000000"
+    },
+    {
+      "name": "folded radius upper",
+      "strict_reserve": "136859649/2500000000000000"
+    },
+    {
+      "name": "cut primary lower",
+      "strict_reserve": "1444687339/62500000000000000"
+    },
+    {
+      "name": "cut primary upper",
+      "strict_reserve": "366317749/10000000000000000"
+    },
+    {
+      "name": "folded arc slope below .253",
+      "strict_reserve": "57811191/135661147000"
+    },
+    {
+      "name": "label increases",
+      "strict_reserve": "457587871/1000000000"
+    },
+    {
+      "name": "label cut positive",
+      "strict_reserve": "40181655414863/125000000000000"
+    },
+    {
+      "name": "label cut upper",
+      "strict_reserve": "18824363/25000000000000"
+    },
+    {
+      "name": "center radius greater than one",
+      "strict_reserve": "30858593/50000000"
+    },
+    {
+      "name": "center radius less than four thirds",
+      "strict_reserve": "33930323/450000000"
+    },
+    {
+      "name": "cosine comparison for positive folded angle",
+      "strict_reserve": "5/928"
+    },
+    {
+      "name": "positive extra axis source offset",
+      "strict_reserve": "1983441/500000000"
+    },
+    {
+      "name": "positive extra axis impossible",
+      "strict_reserve": "53/300"
+    },
+    {
+      "name": "negative extra axis impossible",
+      "strict_reserve": "62942163/100000000"
+    },
+    {
+      "name": "all signs impossible through .35",
+      "strict_reserve": "29731201272173092504597190668811/1104150528000000000000000000000000"
+    },
+    {
+      "name": "negative-negative impossible through .6",
+      "strict_reserve": "9376074216051566144653141/109484375000000000000000000"
+    },
+    {
+      "name": "negative-positive impossible through 1",
+      "strict_reserve": "121221176150466647/2905943040000000000"
+    },
+    {
+      "name": "square root two below 1.42",
+      "strict_reserve": "41/2500"
+    },
+    {
+      "name": "common tail from quarter",
+      "strict_reserve": "17987/1000000"
+    },
+    {
+      "name": "positive-negative direct tail",
+      "strict_reserve": "1023/10000"
+    },
+    {
+      "name": "negative-negative direct tail",
+      "strict_reserve": "423/500000"
+    },
+    {
+      "name": "negative-positive direct tail",
+      "strict_reserve": "827/113000000"
+    },
+    {
+      "name": "late tail starts before quarter",
+      "strict_reserve": "3299/200000"
+    },
+    {
+      "name": "positive-source axial lower multiplier",
+      "strict_reserve": "250707/1000000"
+    },
+    {
+      "name": "positive-source axial upper multiplier",
+      "strict_reserve": "50179/1000000"
+    },
+    {
+      "name": "positive-positive target C at .35",
+      "strict_reserve": "6618469944780017443495999/2914957393920000000000000000"
+    },
+    {
+      "name": "positive-positive target C at 1.2",
+      "strict_reserve": "1399350933101/97198486328125"
+    },
+    {
+      "name": "positive-positive target V positive",
+      "strict_reserve": "19021/1000000"
+    },
+    {
+      "name": "positive-negative first target U",
+      "strict_reserve": "89293/1000000"
+    },
+    {
+      "name": "positive-negative first target V",
+      "strict_reserve": "69821/1000000"
+    },
+    {
+      "name": "target C above1.38 at .6",
+      "strict_reserve": "21848895234269167/2189687500000000000"
+    },
+    {
+      "name": "target C above1.38 at .8",
+      "strict_reserve": "17699818123732681/519623107910156250"
+    },
+    {
+      "name": "target C above1.38 at .95",
+      "strict_reserve": "2156576177132786287267428679/142832912302080000000000000000"
+    },
+    {
+      "name": "target D at .8 below .021",
+      "strict_reserve": "80973087751141/230943603515625000"
+    },
+    {
+      "name": "positive-negative middle target U",
+      "strict_reserve": "80263/1000000"
+    },
+    {
+      "name": "positive-negative middle target V",
+      "strict_reserve": "113221/1000000"
+    },
+    {
+      "name": "lambda .34 endpoint support criterion",
+      "strict_reserve": "734511189/100000000000"
+    },
+    {
+      "name": "varying target D below .232",
+      "strict_reserve": "326665797386314186805027/1220794122240000000000000000"
+    },
+    {
+      "name": "varying target derivative auxiliary positive",
+      "strict_reserve": "5063/200000"
+    },
+    {
+      "name": "varying target derivative negative",
+      "strict_reserve": "387261/200000000"
+    },
+    {
+      "name": "negative-positive first target D positive",
+      "strict_reserve": "144260279/479001600"
+    },
+    {
+      "name": "negative-positive target C at 1",
+      "strict_reserve": "13231336117/87178291200"
+    },
+    {
+      "name": "negative-positive target C at 1.3",
+      "strict_reserve": "708832746363321145147/670602240000000000000000"
+    },
+    {
+      "name": "negative-positive first target V",
+      "strict_reserve": "11821/1000000"
+    },
+    {
+      "name": "late negative source decreases",
+      "strict_reserve": "242871/1000000000"
+    },
+    {
+      "name": "++ axial cosine coefficient positive",
+      "strict_reserve": "10013869707/10000000000"
+    },
+    {
+      "name": "++ axial sine coefficient negative",
+      "strict_reserve": "4013869707/10000000000"
+    },
+    {
+      "name": "++ axial right derivative negative",
+      "strict_reserve": "842275662414050724685477/10691833496093750000000000"
+    },
+    {
+      "name": "++ cut cosine coefficient positive",
+      "strict_reserve": "30885493131/25000000000"
+    },
+    {
+      "name": "++ cut sine coefficient negative",
+      "strict_reserve": "31529427/312500000"
+    },
+    {
+      "name": "++ cut right derivative negative",
+      "strict_reserve": "502567636695113056557601/2672958374023437500000000"
+    },
+    {
+      "name": "+- first cosine coefficient positive",
+      "strict_reserve": "64085223/62500000"
+    },
+    {
+      "name": "+- first sine coefficient negative",
+      "strict_reserve": "4295908319/5000000000"
+    },
+    {
+      "name": "+- first right derivative negative",
+      "strict_reserve": "3153993554949270089760393273/10948437500000000000000000000"
+    },
+    {
+      "name": "+- middle cosine coefficient positive",
+      "strict_reserve": "244378599/312500000"
+    },
+    {
+      "name": "+- middle sine coefficient negative",
+      "strict_reserve": "17284005247/25000000000"
+    },
+    {
+      "name": "+- middle right derivative negative",
+      "strict_reserve": "277063180930801990686251291/6495288848876953125000000000"
+    },
+    {
+      "name": "-+ first cosine coefficient positive",
+      "strict_reserve": "257342813/250000000"
+    },
+    {
+      "name": "-+ first sine coefficient negative",
+      "strict_reserve": "102342813/250000000"
+    },
+    {
+      "name": "-+ first right derivative negative",
+      "strict_reserve": "209802094001456800031317596031/2069760000000000000000000000000"
+    },
+    {
+      "name": "lambda .34 scalar increases a",
+      "strict_reserve": "397561622747561439/3125000000000000000"
+    },
+    {
+      "name": "lambda .34 scalar increases b",
+      "strict_reserve": "100255988493781403367/312500000000000000000"
+    },
+    {
+      "name": "++ circle nonzero norm",
+      "strict_reserve": "6565488811/100000000000"
+    },
+    {
+      "name": "++ circle quarter norm bound",
+      "strict_reserve": "1214596811/100000000000"
+    },
+    {
+      "name": "++ circle norm increases",
+      "strict_reserve": "91439753067405431/234985351562500000"
+    },
+    {
+      "name": "++ circle cost strictly concave",
+      "strict_reserve": "3136441634333613/12031250000000000"
+    },
+    {
+      "name": "-+ circle nonzero norm",
+      "strict_reserve": "2790488811/100000000000"
+    },
+    {
+      "name": "-+ circle quarter norm bound",
+      "strict_reserve": "125166811/100000000000"
+    },
+    {
+      "name": "-+ circle norm increases",
+      "strict_reserve": "9670560187085724419946407/21772800000000000000000000"
+    },
+    {
+      "name": "-+ circle cost strictly concave",
+      "strict_reserve": "4211813719690424398237/15966720000000000000000"
+    },
+    {
+      "name": "++ endpoint a endpoint .35",
+      "strict_reserve": "211372396599606854995920600951884671/9716524646400000000000000000000000000"
+    },
+    {
+      "name": "++ endpoint a endpoint 1.2",
+      "strict_reserve": "76800791535690456628047/1336479187011718750000000"
+    },
+    {
+      "name": "++ endpoint b endpoint .35",
+      "strict_reserve": "563144794764115967161413734911445423/24291311616000000000000000000000000000"
+    },
+    {
+      "name": "++ endpoint b endpoint 1.2",
+      "strict_reserve": "86292836326479747132861757/855346679687500000000000000"
+    },
+    {
+      "name": "++ circle endpoint 1.2",
+      "strict_reserve": "47947835792348311401/875875000000000000000"
+    },
+    {
+      "name": "++ circle endpoint quarter",
+      "strict_reserve": "7293399382837823/500000000000000000"
+    },
+    {
+      "name": "+- first endpoint .35",
+      "strict_reserve": "14862488940769099933825924477172611/224227491840000000000000000000000000"
+    },
+    {
+      "name": "+- first endpoint .6",
+      "strict_reserve": "1758646238296221270902779/199062500000000000000000000"
+    },
+    {
+      "name": "+- middle endpoint .6",
+      "strict_reserve": "145392635944113521281319497/10948437500000000000000000000"
+    },
+    {
+      "name": "+- middle endpoint .8",
+      "strict_reserve": "147788227536623976448412953/20784924316406250000000000000"
+    },
+    {
+      "name": "+- last a endpoint .8",
+      "strict_reserve": "2058694617649806537112747271/41569848632812500000000000000"
+    },
+    {
+      "name": "+- last b endpoint .8",
+      "strict_reserve": "875064875466278974082620489/20784924316406250000000000000"
+    },
+    {
+      "name": "-- last a endpoint .95",
+      "strict_reserve": "2348122149326421298603689160221471539/714164561510400000000000000000000000000"
+    },
+    {
+      "name": "-- last b endpoint .95",
+      "strict_reserve": "2284890223680366841619623361769952069/357082280755200000000000000000000000000"
+    },
+    {
+      "name": "-+ first endpoint 1",
+      "strict_reserve": "46112808716144193215639/851350500000000000000000"
+    },
+    {
+      "name": "-+ first endpoint 1.3",
+      "strict_reserve": "1958934349306408694342659178449/83825280000000000000000000000000"
+    },
+    {
+      "name": "-+ last endpoint 1.3",
+      "strict_reserve": "703087903830493972080439/26824089600000000000000000"
+    },
+    {
+      "name": "-+ last endpoint 1.5543",
+      "strict_reserve": "30810552173889668468333893935983629717321580148013969426007351/652288000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "varying polynomial Bernstein 0",
+      "strict_reserve": "748140981987689498498329/244140625000000000000000000000000"
+    },
+    {
+      "name": "varying polynomial Bernstein 1",
+      "strict_reserve": "19052997474908154070223233/1953125000000000000000000000000000"
+    },
+    {
+      "name": "varying polynomial Bernstein 2",
+      "strict_reserve": "1456331547878852795276151799/203125000000000000000000000000000000"
+    },
+    {
+      "name": "varying polynomial Bernstein 3",
+      "strict_reserve": "1619242642391807518389125891/812500000000000000000000000000000000"
+    },
+    {
+      "name": "varying polynomial Bernstein 4",
+      "strict_reserve": "55342535725747327485329273233/8937500000000000000000000000000000000"
+    },
+    {
+      "name": "varying polynomial Bernstein 5",
+      "strict_reserve": "630497872164509539280317612589/143000000000000000000000000000000000000"
+    },
+    {
+      "name": "varying polynomial Bernstein 6",
+      "strict_reserve": "1856003981479484371114285357883/234000000000000000000000000000000000000"
+    },
+    {
+      "name": "varying polynomial Bernstein 7",
+      "strict_reserve": "12890748472641342356968187754037/2288000000000000000000000000000000000000"
+    },
+    {
+      "name": "varying polynomial Bernstein 8",
+      "strict_reserve": "27666184157841421089297178445633/9152000000000000000000000000000000000000"
+    },
+    {
+      "name": "varying polynomial Bernstein 9",
+      "strict_reserve": "201879709773398221863591050275753/109824000000000000000000000000000000000000"
+    },
+    {
+      "name": "varying polynomial Bernstein 10",
+      "strict_reserve": "180050348194054418539048175976191/39936000000000000000000000000000000000000"
+    },
+    {
+      "name": "varying polynomial Bernstein 11",
+      "strict_reserve": "790153918915988414060378049859/6656000000000000000000000000000000000000"
+    },
+    {
+      "name": "varying polynomial Bernstein 12",
+      "strict_reserve": "6245623984587512790805864930289/4608000000000000000000000000000000000000"
+    },
+    {
+      "name": "varying polynomial Bernstein 13",
+      "strict_reserve": "650634037898636137059397142679/128000000000000000000000000000000000000"
+    },
+    {
+      "name": "varying polynomial Bernstein 14",
+      "strict_reserve": "2753769642194328894577210970521/1024000000000000000000000000000000000000"
+    },
+    {
+      "name": "varying polynomial cosine coefficient positive",
+      "strict_reserve": "981075861/1562500000"
+    },
+    {
+      "name": "varying polynomial sine coefficient negative",
+      "strict_reserve": "349628029/250000000"
+    },
+    {
+      "name": "cosine lower polynomial positive",
+      "strict_reserve": "25239354119/46080000000"
+    },
+    {
+      "name": "sine upper polynomial below one",
+      "strict_reserve": "16723901/384000000"
+    },
+    {
+      "name": "varying polynomial T positive",
+      "strict_reserve": "142073750981/250000000000000"
+    }
+  ]
+}

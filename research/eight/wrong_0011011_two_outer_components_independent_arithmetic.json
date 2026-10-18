@@ -1,0 +1,140 @@
+{
+  "status": "PASS",
+  "scope": "Independent exact label binding and coarse scalar/Hessian/completion comparisons for both reviewed0011011 outer components",
+  "independent_comparisons": 28,
+  "checks": [
+    {
+      "name": "P fourth derivative coarse numerator",
+      "strict_reserve": "97/25"
+    },
+    {
+      "name": "L global derivative completion",
+      "strict_reserve": "23279/400000000"
+    },
+    {
+      "name": "L low-source contact derivative",
+      "strict_reserve": "1469/200000"
+    },
+    {
+      "name": "L target-small contact ratio after squaring",
+      "strict_reserve": "7292881325814720223/6037278145890498046875"
+    },
+    {
+      "name": "global f1 lower complete square",
+      "strict_reserve": "20016239/26250000000"
+    },
+    {
+      "name": "L target-large contact ratio",
+      "strict_reserve": "2154977/1757587000"
+    },
+    {
+      "name": "L source-diagonal contact derivative",
+      "strict_reserve": "191787/781250"
+    },
+    {
+      "name": "L target-zero high-source curvature",
+      "strict_reserve": "9419/125000"
+    },
+    {
+      "name": "L target-zero value completion",
+      "strict_reserve": "19399991/2000000000000"
+    },
+    {
+      "name": "P E decreasing first interval",
+      "strict_reserve": "3472209/15625000"
+    },
+    {
+      "name": "P E decreasing second interval",
+      "strict_reserve": "251658073/2500000000"
+    },
+    {
+      "name": "P negative Hessian determinant first interval",
+      "strict_reserve": "23991450381335881/15258789062500000000"
+    },
+    {
+      "name": "P negative Hessian determinant second interval",
+      "strict_reserve": "147072208797959579761/3906250000000000000000"
+    },
+    {
+      "name": "P diagonal cost curvature .107:.2",
+      "strict_reserve": "4122601/40000000"
+    },
+    {
+      "name": "P diagonal cost curvature .2:.3",
+      "strict_reserve": "15066321/250000000"
+    },
+    {
+      "name": "P diagonal cost curvature .3:.4",
+      "strict_reserve": "34066569/1000000000"
+    },
+    {
+      "name": "P diagonal cost curvature .4:.5",
+      "strict_reserve": "898519/62500000"
+    },
+    {
+      "name": "P diagonal cost curvature .5:.6",
+      "strict_reserve": "9697/31250000"
+    },
+    {
+      "name": "P diagonal cost curvature .6:.7",
+      "strict_reserve": "222269/62500000"
+    },
+    {
+      "name": "P diagonal boundary completion",
+      "strict_reserve": "179/18000000000"
+    },
+    {
+      "name": "P upper-angle boundary completion",
+      "strict_reserve": "81/8225000000"
+    },
+    {
+      "name": "R global concavity",
+      "strict_reserve": "43342826444241123/136906209950000000"
+    },
+    {
+      "name": "K global concavity",
+      "strict_reserve": "13884275134174419/68453104975000000"
+    },
+    {
+      "name": "quarter late-angle lower",
+      "strict_reserve": "229/20000000"
+    },
+    {
+      "name": "quarter large-sum lower",
+      "strict_reserve": "8129/20000000"
+    },
+    {
+      "name": "quarter scalar derivative norm",
+      "strict_reserve": "19011/62500"
+    },
+    {
+      "name": "quarter small-sum primary impossibility",
+      "strict_reserve": "3549/20000"
+    },
+    {
+      "name": "quarter conclusion target",
+      "strict_reserve": "19/20000"
+    }
+  ],
+  "records": [
+    {
+      "scope": "same_outer_zero",
+      "companion_comparisons": 133,
+      "sha256": {
+        "WRONG_0011011_SAME_OUTER_ZERO_HAND_PROOF.md": "a070318c7bea40c706d3a471938d9a0c1fcc9a057806976d34bc1583bfbd255c",
+        "verify_wrong_0011011_same_outer_zero_hand.py": "d8c0f90ebd6f44576053fe47aa5875a435f23ae4f62394511094851bd5dd9705",
+        "wrong_0011011_same_outer_zero_hand_arithmetic.json": "87abc9bae610bec320659e79b69b727c05b4ab34bda34d4af2366725b552e6ba"
+      }
+    },
+    {
+      "scope": "positive_negative_outer_quarter",
+      "companion_comparisons": 17,
+      "sha256": {
+        "WRONG_0011011_POSITIVE_NEGATIVE_OUTER_QUARTER_HAND_PROOF.md": "908e34c74247102a5ac487af03a96bb0865d9c183028ac186623abaa721a00fc",
+        "verify_wrong_0011011_positive_negative_outer_quarter_hand.py": "6e459d52e005ea9ec1a2339dc38bc37345050a2698d01888452b712e40a658f0",
+        "wrong_0011011_positive_negative_outer_quarter_hand_arithmetic.json": "ce41a801a59ee6ddc07bddc21a8bdea6b7d6d074eb55859d5a916762e77d856f"
+      }
+    }
+  ],
+  "label_sha256": "a4349b3d463bf9e67ecbb86f575c4d15df059d12c195b84eddceab85463eef6d"
+}

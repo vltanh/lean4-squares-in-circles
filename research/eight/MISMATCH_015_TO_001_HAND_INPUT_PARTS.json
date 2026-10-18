@@ -1,0 +1,74 @@
+{
+  "format": "ordered byte-exact UTF-8 parts",
+  "outputs": [
+    {
+      "output": "MISMATCH_015_TO_001_AFFINE_HAND_DATA.json",
+      "bytes": 17792662,
+      "sha256": "da456f7eb49a2e0dc702054c684afc14da52a5e55c042add695ef862d7a6c1a2",
+      "parts": [
+        {
+          "name": "MISMATCH_015_TO_001_AFFINE_HAND_DATA.part01",
+          "bytes": 5500000,
+          "sha256": "5df0d421110af6eda008fb28587fe6ba03e46711ab37392704a46f5a2c8f5e39"
+        },
+        {
+          "name": "MISMATCH_015_TO_001_AFFINE_HAND_DATA.part02",
+          "bytes": 5500000,
+          "sha256": "c565a35748923bec9b0d650c6fb10e80040b5accb5dfbb961eec8c19bde92c25"
+        },
+        {
+          "name": "MISMATCH_015_TO_001_AFFINE_HAND_DATA.part03",
+          "bytes": 5500000,
+          "sha256": "33c58ef2c0eb6bbe410002a3f04114451e3450f669b45c35daee3ace626cba05"
+        },
+        {
+          "name": "MISMATCH_015_TO_001_AFFINE_HAND_DATA.part04",
+          "bytes": 1292662,
+          "sha256": "c72e3931cfa9c1f7c96739ee44fcb78ea33b7635f6e35c5babab1198b28cc42e"
+        }
+      ]
+    },
+    {
+      "output": "MISMATCH_015_TO_001_AFFINE_HAND_COMPACT_REPORT.json",
+      "bytes": 34730514,
+      "sha256": "2818421ab2e711ae586fd88722676f0690cbc21c9f7ccc648de7f92f5fee9a45",
+      "parts": [
+        {
+          "name": "MISMATCH_015_TO_001_AFFINE_HAND_COMPACT_REPORT.part01",
+          "bytes": 5500000,
+          "sha256": "236e560cd04aa3d777879ba4647da23332fbf63b148efaf20d96fc0c39a885a6"
+        },
+        {
+          "name": "MISMATCH_015_TO_001_AFFINE_HAND_COMPACT_REPORT.part02",
+          "bytes": 5500000,
+          "sha256": "d8e6fc77b23dc623eb943ead61f0cd380f6e5aabcccd1fa5a3c8d45794641902"
+        },
+        {
+          "name": "MISMATCH_015_TO_001_AFFINE_HAND_COMPACT_REPORT.part03",
+          "bytes": 5500000,
+          "sha256": "99ec78cb684ee3ea3837ef07be2c7847a59b4df4b17294d60a80ad523013f01a"
+        },
+        {
+          "name": "MISMATCH_015_TO_001_AFFINE_HAND_COMPACT_REPORT.part04",
+          "bytes": 5500000,
+          "sha256": "16a8e2f3994800e366acbc33ef18301533c6aa97b30a10e170fd63a9e65a089c"
+        },
+        {
+          "name": "MISMATCH_015_TO_001_AFFINE_HAND_COMPACT_REPORT.part05",
+          "bytes": 5500000,
+          "sha256": "ca8934f61b64f1f923ca7ef9da941565a13610ebac45a4fc3550473b07aebb96"
+        },
+        {
+          "name": "MISMATCH_015_TO_001_AFFINE_HAND_COMPACT_REPORT.part06",
+          "bytes": 5500000,
+          "sha256": "525c2a2505b6fa995c14a221982b77a188b7dafc68f85b83e127d73396216375"
+        },
+        {
+          "name": "MISMATCH_015_TO_001_AFFINE_HAND_COMPACT_REPORT.part07",
+          "bytes": 1730514,
+          "sha256": "30bcd9a9737e532516db636bbdb945dc65756ee804d541696dbb5003b4ab22ba"
+        }
+      ]
+    }
+  ]
+}

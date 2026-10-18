@@ -1,0 +1,127 @@
+{
+  "status": "PASS_INDEPENDENTLY_REVIEWED_HAND_MISMATCH_BOUND",
+  "scope": "Full adjacent SAT candidate boundary cycle, all radial types and all original axes, using only established G/T/E tangent cuts and physical frame/gap bounds. No small mismatch, H/D cuts or desired owners are assumed.",
+  "Q": "1957767069/500000000",
+  "initial_mismatch_bound": "2/5",
+  "concavity_mismatch_bound": "109/400",
+  "strongest_mismatch_bound": "13/50",
+  "gamma": "89727/100000",
+  "beta": "99/5000",
+  "charged_edges": [
+    0,
+    2,
+    3,
+    4,
+    5
+  ],
+  "arcs": 462,
+  "state_domains": 22,
+  "angle_chains": 121808,
+  "rows": 129031,
+  "polynomials": 354720,
+  "coefficients": 2961120,
+  "initial_contradiction_reserve": "271/282500000",
+  "strongest_contradiction_reserve": "9154605884982919/494375000000000000000",
+  "full_output_sha256": "9e44e1fe7a0df8c7f2f4e7203a2c5f5f154fd07322852574539ccddb6df19b11",
+  "files": {
+    "CANDIDATE_COARSE_MISMATCH_HAND_PROOF.md": {
+      "sha256": "c789d8b49f88024923e76f64734b0c70b2f94645202ddd235ef0c43229843809",
+      "bytes": 7188
+    },
+    "CANDIDATE_COARSE_MISMATCH_HAND_COMPACT_REPORT.json": {
+      "sha256": "995c1c652957c00ac0aa40e0a3dede26db689e15e281e78dac2b5ae8091f963f",
+      "bytes": 9194271
+    },
+    "verify_candidate_coarse_mismatch_hand.js": {
+      "sha256": "6af3d41fe7d404da7dd286c46644160f5444edd3028d864701266e9a4cd18697",
+      "bytes": 16986
+    },
+    "replay_candidate_coarse_mismatch_hand.py": {
+      "sha256": "c82502d5b61181309ee31706ecbc6f3f45cc8d4d74831942c6e3efd8f37422bd",
+      "bytes": 1938
+    },
+    "CANDIDATE_COARSE_MISMATCH_INDEPENDENT_AUDIT.md": {
+      "sha256": "2f72be70ca319ed777c949307f3065d2bb887a6f7caf970904d6bf3b5d09fa13",
+      "bytes": 8254
+    },
+    "audit_coarse_mismatch_assembly.py": {
+      "sha256": "aaf0a601c22fb3d8022da3c0f3740fcd722fbc7bb64107195df267677648248d",
+      "bytes": 10020
+    },
+    "CANDIDATE_COARSE_MISMATCH_INDEPENDENT_ASSEMBLY.json": {
+      "sha256": "9555f516045cdfed4bb1a88949c5a0db935870c0458a6a80b5ef31bfdbdd22af",
+      "bytes": 1772
+    },
+    "replay_coarse_mismatch_independently.py": {
+      "sha256": "9ded6693e6c459d6c0bcb5029b1e084fdcf375fe9f60d4771a0d1bb987a977fd",
+      "bytes": 4635
+    },
+    "CANDIDATE_COARSE_MISMATCH_INDEPENDENT_REPLAY.json": {
+      "sha256": "cfdc3f6b3e3020a3b4f9adde00f1f2ff011047a3663bf3eb481a5ce7e9824e56",
+      "bytes": 780
+    },
+    "COARSE_MISMATCH_CONCAVITY_STRENGTHENING.md": {
+      "sha256": "560e961de3fbfaf5137fa972a98dc5614db46e89b5d54f5f455678da9b1e6262",
+      "bytes": 2398
+    },
+    "verify_coarse_mismatch_concavity_strengthening.py": {
+      "sha256": "10605f54c4686f17ada115d01471f93da178171a0cf58ca0fab9f7ddfdd4e58c",
+      "bytes": 1507
+    },
+    "coarse_mismatch_concavity_strengthening_arithmetic.json": {
+      "sha256": "7c619874bf5cff15a983446ae905ab1aa9e4cd2c0efa1d82e814619296aadfdc",
+      "bytes": 736
+    },
+    "CANDIDATE_COARSE_MISMATCH_INDEPENDENT_MANIFEST.json": {
+      "sha256": "7f8c6116bdaf3214eb86e51f14ed10edf9b837eba483ce115a919ccf769ccca6",
+      "bytes": 2410
+    },
+    "COARSE_MISMATCH_PRINTED_RESERVE_STRENGTHENING.md": {
+      "sha256": "adadaa3b1b3da9370db5e4df846d4b6917103caf6fb078028b8aa3e9a6306493",
+      "bytes": 3440
+    },
+    "verify_coarse_mismatch_printed_reserves.py": {
+      "sha256": "6652ea6b1f2b66cd77a8fa65e8f07262cf1538b1dc500eeaae6e91280668a9e4",
+      "bytes": 3012
+    },
+    "coarse_mismatch_printed_reserves_arithmetic.json": {
+      "sha256": "2948696287cd865374166fbc14a23ad8a757eacf7443ad1b12a697035bd90ad7",
+      "bytes": 1093
+    },
+    "COARSE_MISMATCH_PRINTED_RESERVE_MANIFEST.json": {
+      "sha256": "9564309148012325fe79111b4d5b821d8546abdb61a084991b6c6ab07647c4f8",
+      "bytes": 1087
+    },
+    "restore_candidate_coarse_mismatch_hand_input.py": {
+      "sha256": "eea9984fd14eee49669f089b4b5de37f45a535507bc45a65eb4679bdf9321e83",
+      "bytes": 1187
+    },
+    "COARSE_MISMATCH_HAND_BUNDLE.md": {
+      "sha256": "36f6702ba9f5b85e147f9da0cccc361c9fdf35710fbbfd80758e57a83f35a554",
+      "bytes": 2790
+    },
+    "CANDIDATE_COARSE_MISMATCH_INPUT_PARTS.json": {
+      "sha256": "7563425b93328810969f3fc46217e9b4cf5e6e209172b17072d810465ef9676c",
+      "bytes": 763
+    },
+    "CANDIDATE_COARSE_MISMATCH_HAND_DATA.part01": {
+      "sha256": "37300b68dc94ec921ace1ccf0fbb4f41331d836225b741f3ef670bc0ac494326",
+      "bytes": 5500000
+    },
+    "CANDIDATE_COARSE_MISMATCH_HAND_DATA.part02": {
+      "sha256": "66897708beedb618ee23c28b95378465031d3f69e060c675826a44781c26cf2a",
+      "bytes": 5500000
+    },
+    "CANDIDATE_COARSE_MISMATCH_HAND_DATA.part03": {
+      "sha256": "52e6043dd99184748e803790cd3c074c6a9c52ccf09d1cb9a5f27048e6799ab2",
+      "bytes": 4758073
+    }
+  },
+  "reconstructed_inputs": {
+    "CANDIDATE_COARSE_MISMATCH_HAND_DATA.json": {
+      "sha256": "ffa48df0d02e18880314907a72a70fcc6aaceea4ee1060ea76b4fdb04c23a5fa",
+      "bytes": 15758073
+    }
+  },
+  "reconstruction": "restore_candidate_coarse_mismatch_hand_input.py"
+}

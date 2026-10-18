@@ -1,0 +1,53 @@
+{
+  "status": "PASS_INDEPENDENT_REVIEW_WITH_HAND_CONCAVITY_COROLLARY",
+  "scope": "Complete first full-SAT candidate mismatch bound, its zero-quarter owner consequence, and the additional hand implication S<109/400 from the same fixed pair table.",
+  "reviewed_inputs": {
+    "CANDIDATE_COARSE_MISMATCH_HAND_DATA.json": "ffa48df0d02e18880314907a72a70fcc6aaceea4ee1060ea76b4fdb04c23a5fa",
+    "CANDIDATE_COARSE_MISMATCH_HAND_COMPACT_REPORT.json": "995c1c652957c00ac0aa40e0a3dede26db689e15e281e78dac2b5ae8091f963f",
+    "verify_candidate_coarse_mismatch_hand.js": "6af3d41fe7d404da7dd286c46644160f5444edd3028d864701266e9a4cd18697"
+  },
+  "reviewed_author_manuscript": {
+    "CANDIDATE_COARSE_MISMATCH_HAND_PROOF.md": "c789d8b49f88024923e76f64734b0c70b2f94645202ddd235ef0c43229843809"
+  },
+  "fixed_rows": 129031,
+  "angle_chains": 121808,
+  "polynomials": 354720,
+  "compared_coefficient_bounds": 2961120,
+  "full_output_sha256": "9e44e1fe7a0df8c7f2f4e7203a2c5f5f154fd07322852574539ccddb6df19b11",
+  "initial_S_upper": "2/5",
+  "strengthened_S_upper": "109/400",
+  "files": {
+    "CANDIDATE_COARSE_MISMATCH_INDEPENDENT_AUDIT.md": {
+      "sha256": "2f72be70ca319ed777c949307f3065d2bb887a6f7caf970904d6bf3b5d09fa13",
+      "bytes": 8254
+    },
+    "audit_coarse_mismatch_assembly.py": {
+      "sha256": "aaf0a601c22fb3d8022da3c0f3740fcd722fbc7bb64107195df267677648248d",
+      "bytes": 10020
+    },
+    "CANDIDATE_COARSE_MISMATCH_INDEPENDENT_ASSEMBLY.json": {
+      "sha256": "9555f516045cdfed4bb1a88949c5a0db935870c0458a6a80b5ef31bfdbdd22af",
+      "bytes": 1772
+    },
+    "replay_coarse_mismatch_independently.py": {
+      "sha256": "9ded6693e6c459d6c0bcb5029b1e084fdcf375fe9f60d4771a0d1bb987a977fd",
+      "bytes": 4635
+    },
+    "CANDIDATE_COARSE_MISMATCH_INDEPENDENT_REPLAY.json": {
+      "sha256": "cfdc3f6b3e3020a3b4f9adde00f1f2ff011047a3663bf3eb481a5ce7e9824e56",
+      "bytes": 780
+    },
+    "COARSE_MISMATCH_CONCAVITY_STRENGTHENING.md": {
+      "sha256": "560e961de3fbfaf5137fa972a98dc5614db46e89b5d54f5f455678da9b1e6262",
+      "bytes": 2398
+    },
+    "verify_coarse_mismatch_concavity_strengthening.py": {
+      "sha256": "10605f54c4686f17ada115d01471f93da178171a0cf58ca0fab9f7ddfdd4e58c",
+      "bytes": 1507
+    },
+    "coarse_mismatch_concavity_strengthening_arithmetic.json": {
+      "sha256": "7c619874bf5cff15a983446ae905ab1aa9e4cd2c0efa1d82e814619296aadfdc",
+      "bytes": 736
+    }
+  }
+}

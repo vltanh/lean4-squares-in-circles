@@ -1,0 +1,273 @@
+{
+  "status": "PASS",
+  "strict_comparisons": 66,
+  "Q": "9789/2500",
+  "gamma": "17953/20000",
+  "proved_lower": "0.89778",
+  "checks": [
+    {
+      "name": "diagonal lower",
+      "strict_reserve": "1070325547/5000000000000"
+    },
+    {
+      "name": "diagonal upper",
+      "strict_reserve": "78593489059/100000000000000"
+    },
+    {
+      "name": "axial lower",
+      "strict_reserve": "7567100389/100000000000000"
+    },
+    {
+      "name": "axial upper",
+      "strict_reserve": "4243289961/10000000000000"
+    },
+    {
+      "name": "radius upper",
+      "strict_reserve": "530312311477/25000000000000"
+    },
+    {
+      "name": "P third derivative numerator",
+      "strict_reserve": "643198593489059/200000000000000"
+    },
+    {
+      "name": "P derivative lower",
+      "strict_reserve": "153731914103771/200000000000000000"
+    },
+    {
+      "name": "P derivative upper",
+      "strict_reserve": "32941536564734713100368513967/93280937673960000000000000000000"
+    },
+    {
+      "name": "P second derivative positive at zero",
+      "strict_reserve": "100516423105822157/957287835501950000"
+    },
+    {
+      "name": "J third derivative numerator",
+      "strict_reserve": "141612453/250000000"
+    },
+    {
+      "name": "J second derivative upper",
+      "strict_reserve": "226559058598607948734832617829666099020175278628664538979/1119718613333336517883663092581574265477506800849011507425000"
+    },
+    {
+      "name": "J derivative lower",
+      "strict_reserve": "81687896292565023086187024454216385505465203/97890000000000012335763527400000000000000000000"
+    },
+    {
+      "name": "J derivative upper",
+      "strict_reserve": "123460705515797231395067150783/191457567100389000000000000000000"
+    },
+    {
+      "name": "aligned derivative at right",
+      "strict_reserve": "252443120969515943171936051466138573375019458114208344263/3411334044055914256159705564099754167080000000000000000000"
+    },
+    {
+      "name": "aligned left endpoint",
+      "strict_reserve": "7486962808403999250153968319/1000000000000000000000000000000000"
+    },
+    {
+      "name": "aligned right endpoint",
+      "strict_reserve": "8107765734684319012086564233/500000000000000000000000000000000"
+    },
+    {
+      "name": "primary negative angle bound",
+      "strict_reserve": "243014985527501111848608146459190653/889574400000000000000000000000000000"
+    },
+    {
+      "name": "primary positive angle .5 barrier",
+      "strict_reserve": "241936684805524636529285587/1983790448640000000000000000"
+    },
+    {
+      "name": "primary target .6 barrier",
+      "strict_reserve": "767455761884281280897440429275853/10296000000000000000000000000000000"
+    },
+    {
+      "name": "primary P-J cost",
+      "strict_reserve": "2800494019675651743/25000000000000000000"
+    },
+    {
+      "name": "primary J-P cost",
+      "strict_reserve": "250697291270450299/10000000000000000000"
+    },
+    {
+      "name": "no simultaneous zero secondary contact",
+      "strict_reserve": "7890999320516912078716840094180761/88957440000000000000000000000000000"
+    },
+    {
+      "name": "positive contact speed lower",
+      "strict_reserve": "42837452577038053018029013762047713/889574400000000000000000000000000000"
+    },
+    {
+      "name": "outer radial slope lower",
+      "strict_reserve": "2957498679821/19145756710039000"
+    },
+    {
+      "name": "universal positive contact speed",
+      "strict_reserve": "33576053411/50000000000000"
+    },
+    {
+      "name": "P small-angle speed envelope increases",
+      "strict_reserve": "9294858617996894919793/44844800000000000000000"
+    },
+    {
+      "name": "P small-angle cost derivative",
+      "strict_reserve": "4171935446345188092463/732160000000000000000000"
+    },
+    {
+      "name": "P large-angle contact coordinate",
+      "strict_reserve": "2993004733240869489133646257/4928000000000000000000000000000"
+    },
+    {
+      "name": "P derivative at .708",
+      "strict_reserve": "1868583637750882920764191081/1780988907209500000000000000000"
+    },
+    {
+      "name": "P large-angle cost derivative",
+      "strict_reserve": "53999/1000000"
+    },
+    {
+      "name": "J target .2 speed",
+      "strict_reserve": "41112195127/50000000000000"
+    },
+    {
+      "name": "J first half target-large cost derivative",
+      "strict_reserve": "11477/500000"
+    },
+    {
+      "name": "J first half target-small coordinate",
+      "strict_reserve": "191448622624383177087435229/35708228075520000000000000000"
+    },
+    {
+      "name": "J derivative at .35",
+      "strict_reserve": "9674904535811781701289394155423551124702279/19956875000000046300963558597500000000000000000"
+    },
+    {
+      "name": "J first half target-small cost derivative",
+      "strict_reserve": "12279/1000000"
+    },
+    {
+      "name": "J latter half source coordinate upper",
+      "strict_reserve": "2381200386847879653599/3503554560000000000000000"
+    },
+    {
+      "name": "J derivative latter half lower",
+      "strict_reserve": "960579367404342775236914287862269151099577/5603074999999982935646359085000000000000000000"
+    },
+    {
+      "name": "J latter half second derivative lower",
+      "strict_reserve": "390710094828597183378814898353100258609461/597752419679129614134246768230366391148487500"
+    },
+    {
+      "name": "latter-half c-rs upper",
+      "strict_reserve": "33568658083/61312204800000"
+    },
+    {
+      "name": "latter-half rc+s lower",
+      "strict_reserve": "20486684818143906800791/415134720000000000000000000"
+    },
+    {
+      "name": "J speed product decreases with target",
+      "strict_reserve": "94880597/500000000"
+    },
+    {
+      "name": "J zero-target last contact lower",
+      "strict_reserve": "20929022624221093871590094180761/88957440000000000000000000000000000"
+    },
+    {
+      "name": "J zero-target last derivative upper",
+      "strict_reserve": "21050212364608074590379912343286478327776400581257478841055532315521112910441923413477/28896120011191392182771032658923230953472000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "J zero-target last speed lower",
+      "strict_reserve": "28731478701300648164687623678689011/17791488000000000000000000000000000000"
+    },
+    {
+      "name": "J zero-target speed product increases in angle",
+      "strict_reserve": "352719/2500000"
+    },
+    {
+      "name": "J zero-target final speed product",
+      "strict_reserve": "188815793757471365084141172190407248946114570100330447295268597249051313902511589599746016789741615804161881464680239777/257052486212835759861532317149420378214962823168000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "positive source-diagonal zero-target angle lower",
+      "strict_reserve": "16583847712059181969929403864737392118876410541064960449291120048320487270730781/5320940625000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "positive source-diagonal zero-target angle upper",
+      "strict_reserve": "1190870999870384455755052922448218216269359/1678466796875000000000000000000000000000000000"
+    },
+    {
+      "name": "positive source-diagonal endpoint P-J",
+      "strict_reserve": "388352635587270579253480159/100000000000000000000000000000000"
+    },
+    {
+      "name": "positive source-diagonal endpoint J-P",
+      "strict_reserve": "62145137240916578616988123827/125000000000000000000000000000000"
+    },
+    {
+      "name": "positive boundary target coordinate upper",
+      "strict_reserve": "1070325547/5000000000000"
+    },
+    {
+      "name": "P boundary second derivative",
+      "strict_reserve": "1966015086830581103350185967165318685432701/2680459553671081671036871768128829671796150000"
+    },
+    {
+      "name": "positive boundary speed positive",
+      "strict_reserve": "17706227602347/37706227602347"
+    },
+    {
+      "name": "positive boundary f upper",
+      "strict_reserve": "21005433722799219428014222618763048136137/2644608319347234046936035156250000000000000"
+    },
+    {
+      "name": "positive boundary f-prime numerator",
+      "strict_reserve": "363/5000"
+    },
+    {
+      "name": "positive boundary U lower",
+      "strict_reserve": "1706227602347/20000000000000"
+    },
+    {
+      "name": "P positive boundary strict concavity",
+      "strict_reserve": "43013/125000"
+    },
+    {
+      "name": "negative P contact cost derivative square",
+      "strict_reserve": "421319281/2500000000"
+    },
+    {
+      "name": "negative J contact curvature",
+      "strict_reserve": "526481/2500000"
+    },
+    {
+      "name": "negative diagonal endpoint before .56",
+      "strict_reserve": "16023537300586977852451441469867/2766028046607971191406250000000000"
+    },
+    {
+      "name": "negative boundary Z positive",
+      "strict_reserve": "14474306118306887159553017/32362528145313262939453125"
+    },
+    {
+      "name": "negative boundary speed positive",
+      "strict_reserve": "28719785129483040353936532403/39985769743467892547607421875"
+    },
+    {
+      "name": "negative boundary f-prime numerator coefficient",
+      "strict_reserve": "6889/2500"
+    },
+    {
+      "name": "negative boundary inverse secant slope",
+      "strict_reserve": "7/28500"
+    },
+    {
+      "name": "negative boundary P derivative beats secant",
+      "strict_reserve": "71/1000"
+    },
+    {
+      "name": "claimed bound exceeds target",
+      "strict_reserve": "13/100000"
+    }
+  ]
+}

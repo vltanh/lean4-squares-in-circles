@@ -1,0 +1,2582 @@
+{
+  "status": "PASS",
+  "scope": "Independent continuous scalar-support audit, Fraction coefficient reconstruction by triangular Bernstein elimination, literal table binding, and complete 96 angle-chain union",
+  "rows": 140,
+  "polynomials": 310,
+  "coefficient_comparisons": 4475,
+  "printed_coefficient_lower_bounds_verified": 4475,
+  "angle_chains": 96,
+  "whole_outer_quarter_cases": 48,
+  "weakest_exact_cost_coefficient": "945228276818927/10000000000000000000",
+  "weakest_cost_exceeds": ".000094",
+  "author_replay": "byte-identical",
+  "replay_directory": "/tmp/m5_short_scalar_audit_ddtxeb10",
+  "whole_word_assembly": {
+    "status": "PASS",
+    "scope": "Exact label binding, complete304-case role/radial/axis cover and96 signed outer-quarter angle chains; fixed arithmetic records only, not an independent replacement for their mathematical proofs",
+    "quarter_word": [
+      0,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1
+    ],
+    "cyclic_lower": "31417/5000",
+    "rational_two_pi_upper": "710/113",
+    "strict_rational_reserve": "121/565000",
+    "allowed_sign_entries": 19,
+    "total_radial_axis_cases": 304,
+    "OO_zero_cases": 28,
+    "OO_quarter_cases": 48,
+    "scalar_rows": 140,
+    "scalar_polynomials": 310,
+    "scalar_Bernstein_comparisons": 4475,
+    "weakest_scalar_cost_reserve": "590767673/6250000000000"
+  },
+  "sha256": {
+    "SHORT_WRONG_WORD_OUTER_QUARTER_SCALAR_HAND_PROOF.md": "1a28ad7ed7d04756dec280d8f9dfccb47b6c30957f8a2a7c7b33e60bfd852dad",
+    "verify_short_quarter_scalar_hand.js": "d11d9d6f7be0451d9722ca7761bfca1825c1deffd8c9fb124417ffb5ca973582",
+    "short_quarter_scalar_body.js": "9624c9291e5ca00dbb109135fc6831d64034859a240c42f8a669e0d2f733ea6c",
+    "short_quarter_scalar_hand_table.json": "fbc6adb328e133114dfa2456b120ed06cad7bf593f843b67920848d35118d916",
+    "short_quarter_scalar_hand_arithmetic.json": "d5d97410db1c497d76ab032cabed6f60c8f400b4b490e317ebb60a2d8cf3f5b5",
+    "short_hand_labels.json": "2113900b72530b6cb660e2a2b9f52d4fd3a54d793426978caa2167cd954a5051",
+    "SHORT_WRONG_WORD_OUTER_QUARTER_ALIGNED_HAND_PROOF.md": "61eb49ece16e137f8c1e08aef122226359ffd88af70accd4d2037095d7df7992",
+    "SHORT_WRONG_WORD_COMPLETE_HAND_EXCLUSION.md": "4e429f03e09a62bde5b209d3db7d57ed8ae874b5b56cb59ace32b9eaf1196dd3",
+    "audit_short_whole_word_hand.py": "b9d2db16a585005ae4650cf9b086c882b379f25dadb76cc03111f67509bda005"
+  },
+  "independent_checker_sha256": "073d7d61782042e14b7afd8d53ecb6321057165d55f6aebc040afefd56ef8112",
+  "rows_reconstructed": [
+    {
+      "index": 0,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "2372441430112840922044376433365011676444308711/4222771200000017032869625156992000000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "107574950940832154887/115200000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "315032402579462031689310568559/1920000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "30889618508125263/23932195887548750"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "1735213/1000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "3496542136352273283/10000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "9133/100000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "3029065228276818927/10000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "78513462265538747423166543127891399/259200000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "41537704306274205829568504564810572163705809/1319616000000005322771757861560000000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "3113/100000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "33648489666953088863255048329/108000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "46017152902233793418830310792222741918512128902271078581622724422320194433784755135072317/588561377354605840608524033538469068800000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "3314856166778915942216260532350663518754837/4398720000000017742572526205200000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "85588344006234649/672000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "49096654229554965383146749437857/864000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "source_mode": "diagonal monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "20121275652096303734373/56000000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "7881900891985198025111845980482047/560000000000000000000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "63055650686112466270352447128775439379/4480000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "5964423821830039396200679/50625000000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "9550288397311411308916444029107913/6250000000000000000000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "95528865425596725925896854303599797/62500000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "33147/100000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "1174467244625560373/10000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "965968877164725277/1000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "33147/100000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "2774467244625560373/10000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "1125968877164725277/1000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "178247827524725011436563197625110424741706745177/1881489113732646436421797338135920000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "348117147758526367701529383403532416782149321/3674539167780170842400197965285000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "9133/100000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "945228276818927/10000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "21879162093261/200000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "344071195151/307200000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "27652063986071760734590981/27648000000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "383099109376384896030199460165813/176947200000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "681026700780920809397069/69578470195200000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "945228276818927/10000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "21879162093261/200000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "12394184630217330749154286571729257955890754475066871943/1133541512655671772226124817566219108352000000000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "1359639016097652975641570999/927712935936000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "6292638868291736408781359889744419269/429496729600000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "384361705787903794707338769632044951398697754064024524651347386988867720035058546004249585256917653/18701472068841661922572331902495316546822744938905600000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "24023660683216551556684222351376733304462597116178961176236489351051797137351105664837206880175353/496688244031657203069599875846877696374918348800000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "308599641827560438285287225581189660328164176033/359344892224414818668844470845440000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "9644274396608992034647691899179054651300308489/11230151542329795961812354081607500000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "11170213213179810409036855593290461371612997/65892905877955197026458239764062500000000000000"
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "157640731151/307200000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "28073459942318627932645381/27648000000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "390483852606863544400989860165813/176947200000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "2276227962503367/478643917750975000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "19283/50000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "48697247474817869638246739112232643/257698037760000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "1562458130936147458127059513047835414274598181045599152941887525905694592906610163221783392559289737779676197/1121867805048057583666046809829170776547609207196398229913600000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "15271643193331618981456218932495216378773864511585402917052450568364432717101717366575985860439993353874989/5513111660426198261930737479925723488632672076906155212800000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "source_mode": "diagonal monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "8213501057132733442222123935406277227392108493955466566197032602717029506766459607594571557/1152699911183874295922992932699144821145600000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "1226755526404321468992935655777596636444308711/4222771200000017032869625156992000000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "86686886940832154887/115200000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "269220594461173993289310568559/1920000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "240538600406914859/239321958875487500"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "187383/125000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "1742628331862125707/5000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "3867/20000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "585871065566997501/2000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "75929000359389151272190936527152023/259200000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "10878962331277481153141510434992536381127529/101999304347826498378493361280000000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "3011/100000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "57886522815837425712064127927/192000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "417739378648665534984789675626938945864781/1127601562500004548266882938344726562500000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "55259412404701/1845703125000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "38383937679349001356961935923/44800000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "15668024210218382276864996486459505056445548967735221110742485868848479073/4834478534465515439898275663355295965448021888732910156250000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "2882854024717566815277068382957349565903114562972369913812267631453833161176033807009/6245515796180171220254116386836368588800000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "6195795136086381459175896316595987652441337/8797440000000035485145052410400000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "436717451556995149/1344000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "116790821569599352553375219914357/1728000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "source_mode": "diagonal monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "1844866151438811907797/8000000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "253940737960183599759577360597583/80000000000000000000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "1339701747757994974470721910530644409/450000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "source_mode": "diagonal monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "748897522970823907746811/1612800000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "1472852083562393885002477777/16200000000000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "26704460107555192628459359961/12960000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "source_mode": "diagonal monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "3877034177739214589428910643105823159459975225851/30546666666666789878975876425000000000000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "31583290665620283643/25000000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "157933317007769775295321673000498159/12500000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "764883527379909011808235562748531909540523768177/1678476587754486771988885251250000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "2916605635213041554858110038176838754089053/6400261084438785887148441600000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "3867/20000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "907065566997501/2000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "117665959389151272190936527152023/259200000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "224266604603171839181166070099091144713121181343/2111385600000008516434812578496000000000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "29639/1000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "57921272068776629953840289383/172800000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "83456487870713238374847362969362891671/180391367846506424588738392000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "163009265246955506337453485459379220319057589/352344857539469631276709207505000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "0"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "229326794896619/1000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "20434245164043529666981161963447439/259200000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "20037/100000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "20037/100000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "94913181907542706905129299112232643/257698037760000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "298859269700316629940080880835343382872242698242221437137/2267083025311343544452249635132438216704000000000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "362235713948523010128604241441/1855425871872000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "3017077825304845487661486037308114371/858993459200000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "source_mode": "diagonal monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "576271522195279626389559214033803764247968223890959099376570075684788519036576900488292546531267834227779/34760247346143310485182439592030240231672232141232537600000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "source_mode": "diagonal monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "5574405328594444393769010042464227367769867401954211661752420458485802105229913459664204256129691/121874176620286417702215766260736547880960000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "126046421856952025942774561152471626365173673/275398121739131545621932075456000000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "122190413439374571343/172800000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "215337022434538785562022997277/1728000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "20967/100000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "7368904077342822353/10000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "1375613836618439029/1000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "0"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "443287326794896619/1000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "2246216019779409583/5000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "0"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "736890326794896619/1000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "1380304966802625601/1000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "25324789365404407794710008473514413622399745159/63341568000000255493044377354880000000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "1384492867425523316903/1728000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "2142316219872535044096534782117/17280000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "0"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "736890326794896619/1000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "1380304966802625601/1000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "20967/100000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "5713374632006272980845029979/12000000000000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "4570696483065884879968051808947/9600000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 55,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "20967/100000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "7368904077342822353/10000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "1375613836618439029/1000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "221020286875843392265198858931368189654087644031/394502542214114207079321103761408000000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "17964936289950941054669/452984832000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "24485384575006973/10000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 57,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "1275109180867888486382708894252318123460224558590387913707722473588686993240584566492081303/237645627718395514816711911944266209482764374245376000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 58,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "13138149113948556261744232072303456272325973099699847966246227618759681303/29729143692326619144676359528231168000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 59,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "47307787173732601/69368683732025000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "15331/100000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "24485384575006973/10000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 60,
+      "source_mode": "diagonal monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "0"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "883326794896619/1000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "59832362698335678992600971/5184000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 61,
+      "source_mode": "diagonal monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "0"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "0"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "2448326794896619/1000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 62,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "972571127585405626053372243981366236444308711/4222771200000017032869625156992000000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "97598630940832154887/115200000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "267258199057549584329310568559/1920000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 63,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "1804356329873420567/1914575671003900000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "158437/100000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "351406400799868143/1000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 64,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "0"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "238367326794896619/1000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "150992106566414931790230075403693/345600000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 65,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "11902625169630332541/80000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 66,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "1576469447001809958320050947556120796444308711/4222771200000017032869625156992000000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "129906470940832154887/115200000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "44913815722870266569310568559/1920000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 67,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "501084927621579711/478643917750975000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "85859/50000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "285015986546738461/1000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 68,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "508489023425122876500559393345827702820563071868133/3891705937920015697492646544683827200000000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "1812327753058853531447/117964800000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "76817122927754453/500000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 69,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "251603995151/307200000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "24348092680345121998309381/27648000000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "397399462795997312852676260165813/176947200000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 70,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "300345592529785817315929252898685094788311194753/1114060967327806727666050528560000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 71,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "3560000780518107435401968301106822305380545839746283936512548458403295390035847/10869203555372293567006084470000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 72,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "136945476492659128280609666329418419444191920317/5234038814894182317927414123114062500000000000000"
+        }
+      ]
+    },
+    {
+      "index": 73,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "73481213279398492451231229368910448547/586496000000002365676336827360000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "8741519832094387/3456000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "25294960474751141/1000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 74,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "1971456853215731249/19145756710039000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "240411/1000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "26164960474751141/1000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 75,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "108583265781442687006909687304153772332094893/360048687250079780566913094300000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 76,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "170797640895882701810127912639313122831332184436817670359111921589066164783898644369019155024772257726537821741/257032029413729200612109407040234756623889104166474974494720000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 77,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "277055961404365499616272758866632411514935926877568472863556613146537351767087236564520383495299180799/106860870235492599488421567339680346824444047862739763200000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 78,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "1376051362292353367301054942363500463024674813848191868121941930698098055173827363670048954730869/461842753676829892253039316939339435565545999564800000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 79,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "70249769141855551847963928878574301570787339/4003812693333349483017126074777600000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "29460556233189950743557091/33554432000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "12996695483953504425780676636213/47185920000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 80,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "23752890106928194276118013786105264493276895717/22922488912412732117245250625000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 81,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "3125869709124401589215180313532712294574937/3016471182294240581322515200000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 82,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "11797747765901847619/117964800000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "4148574963075394083810735903435923/21233664000000000000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "528378903958844655884090704961022381562897/543581798400000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 83,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "251603995151/307200000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "23652303112345121998309381/27648000000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "392946409560797312852676260165813/176947200000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 84,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "390715718756533994323371259327994702925129/377041532683908010921328125000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 85,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "8589925911924807932191687470846621004141337061973740207291162481469620273403951959631663/280640788627458161463837628170240000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 86,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "4984870156692578867617914373380086768683162824717685993018816011242872591748167246511610301493/47744569888451661028584991932055164026880000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 87,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "416318642731447317571434471273505759693475851053/1409795774368555091707724772147200000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 88,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "525233502059182642599080715831117881099542105084394941671499067793736884071990869332812513908988221174480818113/665632259502302486578703432367667688949842886618495162415212134400000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 89,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "7213437880930062987397507307398490265905083366690095448552901597829690869312815051837225347479069313311/2480738685673041530009070838828044932010599463280390963200000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 90,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "5556311292683532820603503650708306069386208236961560225442554764873574183811855813509312212655918301/1802622593436123750288858249236454409282874690135654400000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 91,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "78244114196651579222676543435631325570787339/4003812693333349483017126074777600000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "29314594453989950743557091/33554432000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "13006369254546708731700676636213/47185920000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 92,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "1208941449710368958167510475211388282186760785697/1422536592104489872831924811250000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 93,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "200490663053138750333934930002755606207996157/235816050819292819828611902800000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 94,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "896044469915096243/9830400000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "346339155799703237787334323516931/1769472000000000000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "44019410857769301065361637685931158384609/45298483200000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 95,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "248965147151/307200000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "23652297444120165042661381/27648000000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "393055069924588567968861860165813/176947200000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 96,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "3131488556492036501749594166540892982130093/3683240173543863129980000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 97,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "406148368708687971851378362761700211136985965950795305396112105873931125081137361003872847/13436831404670017545197408093499993369600000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 98,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "98653843135800714532313093442415686036686027145417129028493873496769661219927395055569556357/951854347436513783959217939577569280000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 99,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "2244009625894259090487151595522461246015368709/4750617600000019161978328301616000000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "142661527365588657253/129600000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "35781404315072669031999560767/1296000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 100,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "410934927621579711/478643917750975000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "49799/50000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "621086960474751141/1000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 101,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "277576408789083770148545835358801210561/1099680000000004435643131551300000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "218202975982810481/6480000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "27274711562998913448606606269/81000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 102,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "0"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "621086326794896619/1000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "280471895024909543/200000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 103,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "91482760965246117049583982304507978602467735809/190024704000000766479133132064640000000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "5049106342328334377953/5184000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "1406960033968568833604787678067/51840000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 104,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "0"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "621086326794896619/1000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "280471895024909543/200000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 105,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "604393708362299754950109569491450389937/2932480000000011828381684136800000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "1935736396451476577/17280000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "361006960474751141/1000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 106,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "410934927621579711/478643917750975000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "49799/50000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "621086960474751141/1000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 107,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "7683545603636216878690012335645224480993596937277997352117052453984359910160889/20461168167338723955118336561891737600000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 108,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "36388177405271134056325613344784826554082734014393/1373536122015977115835091558080400000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 109,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "0"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "25847326794896619/1000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "10603656700092613977/62500000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 110,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "29233/250000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "29233/250000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "26492326794896619/1000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 111,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "1619964180257408237362614476799809756444308711/4222771200000017032869625156992000000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "115259942940832154887/115200000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "45141079057549584329310568559/1920000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 112,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "505985356498757119/478643917750975000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "1589803/1000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "2847496073009118633/10000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 113,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "478229132740133563659610081315185404372029551432053/3891705937920015697492646544683827200000000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "1847005941205924986727/117964800000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "31314408168317081/200000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 114,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "248965147151/307200000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "24351349476120165042661381/27648000000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "397529002929388567968861860165813/176947200000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 115,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "96741569142131266249514007951810689905498799/357151292640744671362572800000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 116,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "2443272910405427334660746306056325597353747251/5057637807369548523174486011075000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 117,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "2444046575981930919657796311628314916635519701/5059239315024064692849644286225000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 118,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "9301/50000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "75420799225037/156250000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "25176564480897480503690994528377921/259200000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 119,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "64418155471331724120195479/695784701952000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "45529558639824975352537427112232643/257698037760000000000000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "137430373566159157/1000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 120,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "44742703197048918885227/2717908992000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "1670060759073427575596547528091982759/515396075520000000000000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "10605745718602643862313640716413839773581049/111325552312320000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 121,
+      "source_mode": "diagonal monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "55043539326769798203070893361122178611646322869/2026930176000008175777420075356160000000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "2624293215039018847717/1698693120000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "664590325600171225425622267226389/42467328000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 122,
+      "source_mode": "diagonal monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "33649794104608607438360276906979182369706128168506593590242233489192601917199461240437/1418047874144155831075728291318988800000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 123,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "118987619711057321770030399345020455733772143393/3692157349843427532743941857280000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 124,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "14878123969916704106310321376460383151212211319/461664624444158731112984969255000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 125,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "0"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "32112326794896619/1000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "4787694610327540218513114363041393/28800000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 126,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "59201/500000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "59201/500000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "30902326794896619/1000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 127,
+      "source_mode": "whole-circle lower bound",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "3347936344584488050635240710082261093268477307/45899686956521924270322012576000000000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "887044360275405454411/6048000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "2804881623098065846987666074307/86400000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 128,
+      "source_mode": "diagonal monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "122528649573595521664931540567585053331869464828527059775435155858580024023947422561170136891551081/2301211998699874106539591351559855063545203916800000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 129,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "84675530531340483151176512978085998623559/169140234375000682240032440751708984375000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "9803202176753/553710937500000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "1366190974123150005382227073/4480000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 130,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "571382034306130094205997445515661226262662107387869592816846136053/185319054865520623945473967157162368297576904296875000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 131,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "108789850084084054943776427999804886807339907176969792879218138586014070179/299871597161388407050757192969952000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 132,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "2201403422494299940806007832806661728739561/2639232000000010645543515723120000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "125967736600812797/403200000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "34917300956902467743495061011621/518400000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 133,
+      "source_mode": "diagonal monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "6696912385917526899751/28000000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "802461028371674648528377470450789/280000000000000000000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "4217847454882937626639031889503068147/1575000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 134,
+      "source_mode": "diagonal monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "762751474970823907746811/1612800000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "1469809804787953209622477777/16200000000000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "16309457368937874548459359961/12960000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 135,
+      "source_mode": "diagonal monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "531640106746984018205458443893853930656806788797/3984347826086972592909896925000000000000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "214128295731099911327/175000000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "152986826791379428210862579355395493/12500000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 136,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "1235187062204301654114702866443242716444308711/4222771200000017032869625156992000000000000000"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "86185766940832154887/115200000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "388689148087907115209310568559/1920000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 137,
+      "source_mode": "concave endpoint minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "122677162756273463/119660979437743750"
+        },
+        {
+          "kind": "premise",
+          "degree": 10,
+          "minimum": "39103/25000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "381974832364651959/1000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 138,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "premise",
+          "degree": 9,
+          "minimum": "0"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "299789326794896619/1000000000000000000"
+        },
+        {
+          "kind": "cost",
+          "degree": 10,
+          "minimum": "12496792210327540218513114363041393/28800000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "index": 139,
+      "source_mode": "axial monotone minimum",
+      "source_bound_verified": true,
+      "polynomials": [
+        {
+          "kind": "cost",
+          "degree": 30,
+          "minimum": "6228938936369778617/40000000000000000000"
+        }
+      ]
+    }
+  ]
+}

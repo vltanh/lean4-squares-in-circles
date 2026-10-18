@@ -1,0 +1,33 @@
+{
+  "status": "PASS_PRINTED_RESERVE_HAND_COROLLARY",
+  "conclusion": "S<13/50",
+  "scope": "Same complete coarse pair table and original G/T/E scope; no additional pair row or geometric premise.",
+  "rows_recounted": 129031,
+  "gamma": "89727/100000",
+  "beta": "99/5000",
+  "edge_minimum_cost_reserves": [
+    "48118637/3125000000000",
+    "69373153/5000000000000",
+    "471477251/25000000000000",
+    "1251076023/100000000000000",
+    "384797283/25000000000000",
+    "2347069107/100000000000000",
+    "642432521/100000000000000"
+  ],
+  "retained_edge_increases": [
+    "3/200000",
+    "13/1000000",
+    "9/500000",
+    "3/250000",
+    "3/200000",
+    "23/1000000",
+    "3/500000"
+  ],
+  "retained_cyclic_increase": "51/500000",
+  "reserve_above_710_over_113": "9154605884982919/494375000000000000000",
+  "sha256": {
+    "CANDIDATE_COARSE_MISMATCH_HAND_DATA.json": "ffa48df0d02e18880314907a72a70fcc6aaceea4ee1060ea76b4fdb04c23a5fa",
+    "CANDIDATE_COARSE_MISMATCH_HAND_COMPACT_REPORT.json": "995c1c652957c00ac0aa40e0a3dede26db689e15e281e78dac2b5ae8091f963f"
+  },
+  "unchanged_inputs": true
+}

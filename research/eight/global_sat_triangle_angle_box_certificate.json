@@ -1,0 +1,46 @@
+{
+  "description": "A sound nonzero 3D rational half-tangent angle BOX ruled out globally for its selected true directed 3-square SAT owner cycle, for all centers and any other exterior squares.",
+  "angle_half_tangent_boxes": [
+    [
+      "-1/100",
+      "1/100"
+    ],
+    [
+      "6/25",
+      "13/50"
+    ],
+    [
+      "49/100",
+      "51/100"
+    ]
+  ],
+  "cycle": [
+    [
+      0,
+      1,
+      0,
+      "e",
+      1
+    ],
+    [
+      1,
+      2,
+      1,
+      "e",
+      1
+    ],
+    [
+      2,
+      0,
+      2,
+      "e",
+      1
+    ]
+  ],
+  "coefficient_norm_upper_bounds": [
+    "19/20",
+    "11/20",
+    "11/20"
+  ],
+  "claimed_minimum_margin": "2/5"
+}

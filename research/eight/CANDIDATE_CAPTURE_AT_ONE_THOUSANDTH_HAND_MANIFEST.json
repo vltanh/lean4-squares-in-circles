@@ -1,0 +1,295 @@
+{
+  "status": "PASS_INDEPENDENTLY_REVIEWED_CONDITIONAL_HAND_CAPTURE",
+  "scope": "For candidate roles, retained forward SAT, the displayed coarse tangent cuts, core avoidance, containment q<=Q1 and S<=1/1000: every required owner and 1/10<t<4/25 follow; the automatic-slider terminal gives q>=q* with its equality conditions.",
+  "excluded_scope": "This manifest does not certify the global mismatch contraction to S<=1/1000 or omit the boundary/original transfer in an application.",
+  "radius_ceiling": "1957767069/500000000",
+  "mismatch_premise": "1/1000",
+  "roles": [
+    "H",
+    "G",
+    "A",
+    "B",
+    "T",
+    "D",
+    "E"
+  ],
+  "quarter_word": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1
+  ],
+  "aligned_edges": [
+    0,
+    2,
+    3,
+    4,
+    5
+  ],
+  "tangent_domains": [
+    [
+      "1/2",
+      "1"
+    ],
+    [
+      "-4/5",
+      "-1/20"
+    ],
+    [
+      "0",
+      "1"
+    ],
+    [
+      "-1",
+      "0"
+    ],
+    [
+      "1/20",
+      "4/5"
+    ],
+    [
+      "-1",
+      "-1/2"
+    ],
+    [
+      "-1",
+      "0"
+    ]
+  ],
+  "allowed_owners": [
+    [
+      1,
+      3
+    ],
+    [
+      1
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      2
+    ]
+  ],
+  "strict_tilt_interval": [
+    "1/10",
+    "4/25"
+  ],
+  "terminal_linear_reserve": "10293/5000000",
+  "total_quartics": 3513,
+  "total_bernstein_coefficients": 17565,
+  "stages": [
+    {
+      "name": "quarter_owners",
+      "Q": "9789/2500",
+      "epsilon": "3/200",
+      "manuscript": "HAND_CANDIDATE_MIXED_OWNERS_AND_TILT.md",
+      "checker": "verify_candidate_mixed_owner_and_tilt_duals.py",
+      "data": "candidate_quarter_owner_large_mismatch_dual_data.json",
+      "arithmetic": "candidate_quarter_owner_large_mismatch_dual_arithmetic.json",
+      "review": "CANDIDATE_QUARTER_LARGE_MISMATCH_INDEPENDENT_AUDIT.md",
+      "independent_checker": "audit_candidate_quarter_large_mismatch_independently.py",
+      "independent_arithmetic": "candidate_quarter_owner_large_mismatch_independent_audit.json",
+      "quartics": 1545,
+      "coefficients": 7725,
+      "patterns": 48,
+      "minimum": "2539981/1000000000000",
+      "status": "PASS_INDEPENDENTLY_REVIEWED"
+    },
+    {
+      "name": "mixed_owners",
+      "Q": "9789/2500",
+      "epsilon": "1/1000",
+      "manuscript": "HAND_CANDIDATE_MIXED_OWNERS_WITH_TOTAL_MISMATCH.md",
+      "checker": "verify_candidate_shared_mismatch_owner_duals.py",
+      "data": "candidate_mixed_owner_shared_mismatch_hand_data.json",
+      "arithmetic": "candidate_mixed_owner_shared_mismatch_hand_arithmetic.json",
+      "review": "HAND_CANDIDATE_SHARED_MISMATCH_OWNERS_INDEPENDENT_AUDIT.md",
+      "independent_checker": "audit_candidate_shared_mismatch_owners_independently.py",
+      "independent_arithmetic": "candidate_shared_mismatch_owners_independent_audit.json",
+      "quartics": 729,
+      "coefficients": 3645,
+      "patterns": 15,
+      "minimum": "231527/1000000000000",
+      "status": "PASS_INDEPENDENTLY_REVIEWED"
+    },
+    {
+      "name": "common_tilt",
+      "Q": "1957767069/500000000",
+      "epsilon": "1/1000",
+      "manuscript": "HAND_CANDIDATE_TILT_FROM_SIGNED_ERROR_VERTICES.md",
+      "checker": "verify_candidate_signed_error_tilt_duals.py",
+      "data": "candidate_tilt_signed_error_hand_data.json",
+      "arithmetic": "candidate_tilt_signed_error_hand_arithmetic.json",
+      "review": "CANDIDATE_SIGNED_ERROR_TILT_INDEPENDENT_AUDIT.md",
+      "independent_checker": "audit_candidate_signed_error_tilt_independently.py",
+      "independent_arithmetic": "candidate_signed_error_tilt_independent_audit.json",
+      "quartics": 1239,
+      "coefficients": 6195,
+      "cells": 59,
+      "vertices": 21,
+      "minimum": "40703/500000000000",
+      "status": "PASS_INDEPENDENTLY_REVIEWED"
+    }
+  ],
+  "files": {
+    "CANDIDATE_QUARTER_LARGE_MISMATCH_INDEPENDENT_AUDIT.md": {
+      "sha256": "e8aa9a749d09e187cb067eae748720a7aaef46618b665471563555302d95f559",
+      "bytes": 4033
+    },
+    "CANDIDATE_SIGNED_ERROR_TILT_INDEPENDENT_AUDIT.md": {
+      "sha256": "98c70fc031e925fb2e2aa1a8f3fc3309d4bd4ebd32679e497991d5c6571114f8",
+      "bytes": 5047
+    },
+    "HAND_CANDIDATE_CAPTURE_AT_ONE_THOUSANDTH.md": {
+      "sha256": "7ee1a11292c08b979d9ba22296bbd4e849ff61ec90ab1af65c5de717d0ec0a4b",
+      "bytes": 8366
+    },
+    "HAND_CANDIDATE_MIXED_OWNERS_AND_TILT.md": {
+      "sha256": "62e1217f196cd72be30688a101737d1091fd8e25101c4a2e21bed9afe4496bcf",
+      "bytes": 12354
+    },
+    "HAND_CANDIDATE_MIXED_OWNERS_WITH_TOTAL_MISMATCH.md": {
+      "sha256": "035b9ec5d4fc6305791c10d815ef277078dd3d4aea5996f4c9ebb80ca15fac30",
+      "bytes": 5802
+    },
+    "HAND_CANDIDATE_SHARED_MISMATCH_OWNERS_INDEPENDENT_AUDIT.md": {
+      "sha256": "86e707fb2305d1b1f6b93383331e074e7f0a6b0bd0ba0efb654734d593f98985",
+      "bytes": 7703
+    },
+    "HAND_CANDIDATE_TILT_FROM_SIGNED_ERROR_VERTICES.md": {
+      "sha256": "2eed8e78c79cb07d3533f50bcc308b6701faf06504c89a7dea240a25358fb491",
+      "bytes": 11700
+    },
+    "assemble_candidate_capture_at_one_thousandth.py": {
+      "sha256": "4e4569bf20bafeb6be4abbce4e002fe7014c79f6448964edddfe004e7914e69f",
+      "bytes": 11530
+    },
+    "audit_candidate_quarter_large_mismatch_independently.py": {
+      "sha256": "76918831bec3074c9e6bca45de80e35286bbd6b4b3d56ed1d39d4a6d87186eb4",
+      "bytes": 6607
+    },
+    "audit_candidate_shared_mismatch_owners_independently.py": {
+      "sha256": "85ca9bef2a7d3ba770381a1268298d1f3992259ba98d219ee8164666caecd3b0",
+      "bytes": 10884
+    },
+    "audit_candidate_signed_error_tilt_independently.py": {
+      "sha256": "848a06ca5993dda049471cd10f9a0b18dd31621826a45fd3d2730640069392a5",
+      "bytes": 6720
+    },
+    "candidate_mixed_owner_shared_mismatch_hand_arithmetic.json": {
+      "sha256": "95ef21550d0647d6fb5df9bb208c48f867e3a50a5e8a1791eef6da32e25b113f",
+      "bytes": 3176
+    },
+    "candidate_mixed_owner_shared_mismatch_hand_data.json": {
+      "sha256": "19038e85e57c80c3423666acca47f1548c6aebdc953445cabd4f81b1ee8c58e1",
+      "bytes": 501325
+    },
+    "candidate_quarter_owner_large_mismatch_dual_arithmetic.json": {
+      "sha256": "55a5239d443546e5fa4113a8af9d43aef8ae7f421aa127cf261147ec60458a88",
+      "bytes": 8675
+    },
+    "candidate_quarter_owner_large_mismatch_dual_data.json": {
+      "sha256": "a4a86562adf04d833a48eafcfd6a2b98fb344d7b32926d1ce5b0926afd70e1ee",
+      "bytes": 1089877
+    },
+    "candidate_quarter_owner_large_mismatch_independent_audit.json": {
+      "sha256": "20a62b6d1220d87d72c9b6edf1c183524b1c7ff87a9e0658f9275d2a536a602d",
+      "bytes": 1158
+    },
+    "candidate_shared_mismatch_owners_independent_audit.json": {
+      "sha256": "2faa2d73a0c5fbe133ec5f1b019f09628f5ab579a2cd89ecc03143c498827b30",
+      "bytes": 4149
+    },
+    "candidate_signed_error_tilt_independent_audit.json": {
+      "sha256": "c0aed151926c87dc5a651e75a3b2b6e7e1354e6b506949b79e51dda89f0c6639",
+      "bytes": 1064
+    },
+    "candidate_tilt_signed_error_hand_arithmetic.json": {
+      "sha256": "0a48e82cdb52296c2b44f45bad883800f6cdf6b3249111e2b79cf52d734c8c6d",
+      "bytes": 5932
+    },
+    "candidate_tilt_signed_error_hand_data.json": {
+      "sha256": "bc5305ef2b0b00e62b89259da64d8eedadfa93c71fcf1269110b29aeaae28bc1",
+      "bytes": 746452
+    },
+    "verify_candidate_mixed_owner_and_tilt_duals.py": {
+      "sha256": "7ce4ee711b2c1c377c8cc738fa7b2f06ad28f5fb378ad685dd6f6ed0ad93963b",
+      "bytes": 7402
+    },
+    "verify_candidate_shared_mismatch_owner_duals.py": {
+      "sha256": "c1ed1785e9fb2541df23955935ab37ab9161269c9db3c929e06812941cb846fe",
+      "bytes": 5870
+    },
+    "verify_candidate_signed_error_tilt_duals.py": {
+      "sha256": "05c4ed1b89ccaa16d2f44f4b0ad26408376fb921a5399fc647a1b1f245403d2f",
+      "bytes": 7461
+    }
+  },
+  "existing_dependencies": {
+    "HAND_CANDIDATE_MISMATCH_BOOTSTRAP.md": {
+      "sha256": "d2485f4e1db5707be71e01e4f6491061e90e4029dc6c947f661ff1c2cd042e2f",
+      "bytes": 7250
+    },
+    "verify_candidate_mismatch_bootstrap.py": {
+      "sha256": "da2d892a5d325ff9a2f9fb08f3035192d47b4d88124f510388fa84be834b9eac",
+      "bytes": 1818
+    },
+    "candidate_mismatch_bootstrap_arithmetic.json": {
+      "sha256": "6206d8f5b10b0bdae95ad5eecd25b1493a54724c4f08fee5a9ed4bb71f2fde4e",
+      "bytes": 1973
+    },
+    "HAND_TERMINAL_WITH_AUTOMATIC_SLIDERS.md": {
+      "sha256": "624fb9ffc0b819ae0aa5e891a4ca2f541b5b7562df789e5617a4e8c3d03d5d90",
+      "bytes": 9326
+    },
+    "verify_automatic_slider_terminal.py": {
+      "sha256": "4d37ef83d40bf39bdd0901d3339392510b7f1242df95cf9aa5d6a3f9d6ae4625",
+      "bytes": 2305
+    },
+    "automatic_slider_terminal_arithmetic.json": {
+      "sha256": "cdf4e5a309fdd7fabfd96be9f7880ebe757bde79aebbae7f15b0665a2c9c2eac",
+      "bytes": 2351
+    },
+    "AUTOMATIC_SLIDER_TERMINAL_INDEPENDENT_AUDIT.md": {
+      "sha256": "ac3fd8bec7bfe26b4354f9f1ec3ec41ad48b67c25e4fb210ec12d3d299b3fb1d",
+      "bytes": 4627
+    },
+    "verify_automatic_slider_terminal_independently.py": {
+      "sha256": "ce538b256bee60e4494b4c0f29ea3f44336c76ffc995d466d88c5d8b1e4fbcbf",
+      "bytes": 3968
+    },
+    "automatic_slider_terminal_independent_audit.json": {
+      "sha256": "6a10e50280132b16f79e6d0de326a46734483a5c4ec2092c8dc81f2fed728843",
+      "bytes": 3398
+    },
+    "HAND_EXACT_CENTER_SQUARE_COMPLETION.md": {
+      "sha256": "833515826402c73a17862e019c9c6afa2c99b919f2330670e04387d771443f88",
+      "bytes": 12521
+    },
+    "COMPLETE_EQUALITY_PARAMETER_DOMAIN.md": {
+      "sha256": "c2dc592e5d8d8d099bd169f95b1609e476dd553c0238095b4b9de2837d9273ac",
+      "bytes": 18177
+    },
+    "EQUALITY_PULLBACK_TO_ORIGINAL_SQUARES.md": {
+      "sha256": "0e0ab2b2da5b88f7799793762bd5a1157a779c8781caf6f7d872990d2a0fdbc9",
+      "bytes": 7725
+    }
+  }
+}

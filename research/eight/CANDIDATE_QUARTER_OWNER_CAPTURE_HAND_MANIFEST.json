@@ -1,0 +1,42 @@
+{
+  "status": "PASS_INDEPENDENTLY_REVIEWED_CONDITIONAL_HAND_THEOREM",
+  "scope": "B→T and D→E allow only canonical axes 3 or 4, conditional on the displayed tangent cones, S≤1/500, physical frames, central-core avoidance, containment and all adjacent SAT conditions. Mixed owners and tilt remain separate gates.",
+  "Q": "9789/2500",
+  "mismatch_premise": "1/500",
+  "owner_patterns": 48,
+  "closed_cells_per_pattern": 30,
+  "quartics": 1440,
+  "positive_bernstein_coefficients": 7200,
+  "minimum_printed_coefficient": "1970267266/1000000000000",
+  "independent_review": "CANDIDATE_QUARTER_OWNER_CAPTURE_INDEPENDENT_AUDIT.md",
+  "files": {
+    "HAND_CANDIDATE_QUARTER_OWNER_CAPTURE.md": {
+      "sha256": "4a5097c43fcac10aac93401b2946f7dc35f4ff4a23ed952d9243bca22957da26",
+      "bytes": 10804
+    },
+    "candidate_quarter_owner_circle_dual_hand_data.json": {
+      "sha256": "bcafd38fc19e78e0352d436b1f0c11d931a4a7436d2b9d320a2c3eae2edb52d2",
+      "bytes": 1017933
+    },
+    "candidate_quarter_owner_circle_dual_hand_arithmetic.json": {
+      "sha256": "600f331c78e7c72fe1bab862801658918310327f2d969d5242b9f069b2cd3e64",
+      "bytes": 7545
+    },
+    "verify_candidate_quarter_owner_circle_duals.py": {
+      "sha256": "1813b8d049f9c8a8dffa2d8f6f4f772e2056abb1fa8cedfa84a9ad346fd5d342",
+      "bytes": 5800
+    },
+    "CANDIDATE_QUARTER_OWNER_CAPTURE_INDEPENDENT_AUDIT.md": {
+      "sha256": "fa1a92b01ea64be208c72f7b80ab1f81a4c94faf5c1a0c19c621d452e64a1194",
+      "bytes": 5151
+    },
+    "audit_candidate_quarter_owners_independently.py": {
+      "sha256": "8bdae7cd429b9f937909ffec04672ecf9c4034a3bb2dcdd7dac8724bed028dd9",
+      "bytes": 6019
+    },
+    "candidate_quarter_owner_capture_independent_audit.json": {
+      "sha256": "d7116d3afe0113e6579a0a5b67d7f5c52df18bfa892b39d51e3ce839641be77b",
+      "bytes": 1094
+    }
+  }
+}

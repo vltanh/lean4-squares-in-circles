@@ -1,0 +1,600 @@
+{
+  "status": "PASS_UNRESTRICTED_HAND_PROOF_AND_COMPLETE_EQUALITY_CLASSIFICATION",
+  "scope": "Eight closed unit squares with pairwise disjoint open interiors in an arbitrary circle; all orientations and positions; sharp radius and the exact necessary/sufficient equality family up to isometry and relabeling.",
+  "mathematical_form": "Continuous hand arguments with supplied fixed rational scalar and univariate Bernstein tables. The tables are part of the proof. This manifest binds those sources and their completed independent reviews; it is not itself a geometric proof or a replacement for any table.",
+  "pending_mathematical_gates": [],
+  "exact_constant": {
+    "definition": "Unique admissible stationary zero in UNRESTRICTED_EIGHT_SQUARE_HAND_PROOF.md (1.1)-(1.3).",
+    "coarse_lower_q": "7831/2000",
+    "capture_ceiling_q": "1957767069/500000000",
+    "frame_ceiling_q": "9789/2500",
+    "sharp_bracket_center_q": "97888353437936883163/25000000000000000000",
+    "sharp_bracket_lower_offset": "-1/5000000000000000",
+    "sharp_bracket_upper_offset": "1/10000000000000000"
+  },
+  "equality": {
+    "classification": "Exactly the five-variable explicit domain in main Section12, equivalently COMPLETE_EQUALITY_PARAMETER_DOMAIN.md; both necessity and sufficiency.",
+    "unique_data": [
+      "admissible stationary root",
+      "normalized five exterior anchors",
+      "two exterior orientation groups"
+    ],
+    "free_parameters": [
+      "central x",
+      "central y",
+      "central tan(theta/2)",
+      "T vertical coordinate z",
+      "G f-coordinate eta"
+    ],
+    "contains_full_dimension_noncongruent_box": 5
+  },
+  "mismatch_chain": [
+    "13/50",
+    "1/10",
+    "3/200",
+    "1/1000"
+  ],
+  "mismatch_stage_reserves": {
+    "13/50_to_1/10": "18173/2712000000",
+    "1/10_to_3/200": "2287/6400000000",
+    "3/200_to_1/1000": "522599/240000000000"
+  },
+  "fixed_interface_checks": {
+    "strict_rational_comparisons": 44,
+    "four_type_order": [
+      "C",
+      "L",
+      "M",
+      "H"
+    ],
+    "seven_walks": 16384,
+    "seven_walk_floor": "3881/625",
+    "admissible_quarter_words": 70,
+    "dihedral_quarter_classes": 7
+  },
+  "excluded_proof_premises": [
+    "earlier central-core adaptive subdivision certificate",
+    "earlier piecewise-linear four-type interval certificate",
+    "radial-necklace / three-core / short-two-core interval exclusions",
+    "earlier 123-box role-potential capture",
+    "discovery samples, optimizer minima, failed rows or adaptive state trees",
+    "Lean formalization or CI success"
+  ],
+  "historical_status_policy": "Frozen component notes may retain historical pending/computer-assisted wording. Only the explicit completed hand implications in the main dependency graph are used, and their former external capture premises are now discharged by the named hand stages. Frozen source hashes remain unchanged.",
+  "groups": {
+    "main_assembly": [
+      "UNRESTRICTED_EIGHT_SQUARE_HAND_PROOF.md",
+      "verify_unrestricted_eight_hand_interfaces.py",
+      "unrestricted_eight_hand_interface_arithmetic.json",
+      "UNRESTRICTED_EIGHT_HAND_DEPENDENCY_INDEPENDENT_AUDIT.md",
+      "unrestricted_eight_hand_dependency_independent_audit.json",
+      "UNRESTRICTED_EIGHT_ROOT_CORE_EQUALITY_INDEPENDENT_AUDIT.md",
+      "unrestricted_eight_root_core_equality_independent_binding.json",
+      "assemble_unrestricted_eight_hand_proof.py"
+    ],
+    "exact_family_and_attainment": [
+      "ANALYTIC_RATIONAL_CONSTRUCTION.md",
+      "FIVE_CORNER_REDUCTION.md",
+      "HUMAN_FIVE_CORNER.md",
+      "HUMAN_FAMILY_ENCLOSURE.md",
+      "HUMAN_FAMILY_CLOSURE.md",
+      "HUMAN_SHARP_CEILING_BRACKET.md",
+      "HUMAN_BROAD_TERMINAL_ARITHMETIC.md"
+    ],
+    "central_square_and_positive_core": [
+      "HUMAN_GLOBAL_GEOMETRY_CLOSURE.md",
+      "HUMAN_CENTRAL_CORE_FROM_TRANSVERSE_SEGMENT.md",
+      "CENTRAL_BAND_COMMON_POINT_LEMMAS.md"
+    ],
+    "radial_boundary_and_lifts": [
+      "CYCLIC_RADIAL_BOUNDARY_REDUCTION.md",
+      "LIFTED_STATE_POTENTIAL_TELESCOPING.md",
+      "COMMON_POINT_AND_THREE_QUARTER_ANGLE.md",
+      "HUMAN_CIRCULAR_CAP_AND_AXIS_ELIMINATION.md"
+    ],
+    "complete_four_type_frame_theorem": [
+      "CORE_CORE_WHOLE_PAIR_HAND_PROOF.md",
+      "CORE_LOW_WHOLE_PAIR_HAND_PROOF.md",
+      "CORE_MID_WHOLE_PAIR_HAND_PROOF.md",
+      "CORE_HIGH_WHOLE_PAIR_HAND_PROOF.md",
+      "LOW_LOW_WHOLE_PAIR_HAND_PROOF.md",
+      "LOW_MID_WHOLE_PAIR_HAND_PROOF.md",
+      "LOW_HIGH_WHOLE_PAIR_HAND_PROOF.md",
+      "MID_MID_WHOLE_PAIR_HAND_PROOF.md",
+      "MID_HIGH_WHOLE_PAIR_HAND_PROOF.md",
+      "HIGH_HIGH_WHOLE_PAIR_HAND_PROOF.md",
+      "FOUR_TYPE_HAND_COVERAGE_INVENTORY.md",
+      "HAND_EXTERIOR_FRAME_CONCENTRATION.md",
+      "LOW_FRAME_ENTRIES_INDEPENDENT_AUDIT.md",
+      "CORE_MID_WHOLE_PAIR_INDEPENDENT_AUDIT.md",
+      "CORE_HIGH_INDEPENDENT_AUDIT.md",
+      "LOW_MID_WHOLE_PAIR_INDEPENDENT_AUDIT.md",
+      "LOW_HIGH_WHOLE_PAIR_INDEPENDENT_AUDIT.md",
+      "MID_MID_WHOLE_PAIR_INDEPENDENT_AUDIT.md",
+      "MID_HIGH_WHOLE_PAIR_INDEPENDENT_AUDIT.md",
+      "RESTORED_HIGH_HIGH_INDEPENDENT_AUDIT.md"
+    ],
+    "all_six_wrong_quarter_words": [
+      "SEVEN_QUARTER_WORDS.md",
+      "QUARTER_ZERO_ALL_BOUNDARY_STATES_HAND_PROOF.md",
+      "QUARTER_ONE_ALL_BOUNDARY_STATES_HAND_PROOF.md",
+      "QUARTER_TWO_ALL_BOUNDARY_STATES_HAND_PROOF.md",
+      "COMMON_QUARTER_TABLE_AND_FOUR_WORD_EXCLUSIONS.md",
+      "SHORT_WRONG_WORD_COMPLETE_HAND_EXCLUSION.md",
+      "short_whole_word_hand_assembly_audit.json",
+      "WRONG_0011011_WHOLE_WORD_HAND_PROOF.md",
+      "wrong_0011011_hand_word_closure_manifest.json"
+    ],
+    "continuous_scalar_support_kernel": [
+      "AFFINE_MARKER_SUPPORT_REDUCTION.md",
+      "AFFINE_ARC_ONE_ANGLE_HAND_KERNEL.md",
+      "CONDITIONAL_AFFINE_ARC_KERNEL_INDEPENDENT_AUDIT.md"
+    ],
+    "six_candidate_tangent_cuts": [
+      "CANDIDATE_WORD_HAND_CAPTURE_INTERFACES.md",
+      "G_LOWER_AFFINE_HAND_MANIFEST.json",
+      "G_UPPER_AFFINE_HAND_MANIFEST.json",
+      "T_LOWER_AFFINE_HAND_MANIFEST.json",
+      "T_UPPER_AFFINE_HAND_MANIFEST.json",
+      "H_LOWER_AFFINE_HAND_MANIFEST.json",
+      "D_UPPER_AFFINE_HAND_MANIFEST.json"
+    ],
+    "complete_mismatch_chain": [
+      "CANDIDATE_COARSE_MISMATCH_HAND_MANIFEST.json",
+      "COARSE_MISMATCH_PRINTED_RESERVE_MANIFEST.json",
+      "MISMATCH_026_TO_01_AFFINE_HAND_MANIFEST.json",
+      "MISMATCH_01_TO_015_AFFINE_HAND_MANIFEST.json",
+      "MISMATCH_015_TO_001_AFFINE_HAND_MANIFEST.json",
+      "HAND_CANDIDATE_MISMATCH_BOOTSTRAP.md"
+    ],
+    "owners_tilt_and_arbitrary_center_terminal": [
+      "CANDIDATE_CAPTURE_AT_ONE_THOUSANDTH_HAND_MANIFEST.json",
+      "HAND_EXACT_CENTER_SQUARE_COMPLETION.md",
+      "HAND_TERMINAL_WITH_AUTOMATIC_SLIDERS.md"
+    ],
+    "original_radius_and_complete_equality": [
+      "FIXED_CEILING_TRANSFER_HAND_MANIFEST.json",
+      "EQUALITY_PULLBACK_TO_ORIGINAL_SQUARES.md",
+      "COMPLETE_EQUALITY_PARAMETER_DOMAIN.md",
+      "COMPLETE_EQUALITY_PARAMETER_DOMAIN_INDEPENDENT_AUDIT.md"
+    ]
+  },
+  "child_manifests": {
+    "CANDIDATE_CAPTURE_AT_ONE_THOUSANDTH_HAND_MANIFEST.json": {
+      "status": "PASS_INDEPENDENTLY_REVIEWED_CONDITIONAL_HAND_CAPTURE",
+      "sha256": "dd0146dd4262476704293ad8928921d15e5184212490d7eb8c9406e7b7bf8bf6"
+    },
+    "CANDIDATE_COARSE_MISMATCH_HAND_MANIFEST.json": {
+      "status": "PASS_INDEPENDENTLY_REVIEWED_HAND_MISMATCH_BOUND",
+      "sha256": "823566487fd82658e8c3da6ac924d9e7b26b2d7127cf36040c7bdadc36975d4e"
+    },
+    "COARSE_MISMATCH_PRINTED_RESERVE_MANIFEST.json": {
+      "status": "PASS_HAND_COROLLARY",
+      "sha256": "9564309148012325fe79111b4d5b821d8546abdb61a084991b6c6ab07647c4f8"
+    },
+    "D_UPPER_AFFINE_HAND_MANIFEST.json": {
+      "status": "PASS_INDEPENDENTLY_REVIEWED_HAND_EXCLUSION",
+      "sha256": "fb5bdc01b5295ca21ceedd411ef686b371d1cf0ac21374f53d88ce093e8f1e98"
+    },
+    "FIXED_CEILING_TRANSFER_HAND_MANIFEST.json": {
+      "status": "PASS_INDEPENDENTLY_REVIEWED_CONDITIONAL_FIXED_CEILING_TRANSFER",
+      "sha256": "fdb493446d66ccabfac0131773c37d5b75e362f92c409d42d75191c0383bbca5"
+    },
+    "G_LOWER_AFFINE_HAND_MANIFEST.json": {
+      "status": "PASS",
+      "sha256": "143e6db9c94e297261ed2ccc92e70c2c34671151e83a6904a639324fe1dad533"
+    },
+    "G_UPPER_AFFINE_HAND_MANIFEST.json": {
+      "status": "PASS",
+      "sha256": "5a701fa6f0b1bf758b55b23c507a1e9104c3637e6b3773734ab64b0faeedc646"
+    },
+    "H_LOWER_AFFINE_HAND_MANIFEST.json": {
+      "status": "PASS",
+      "sha256": "7c6c2404fbb78d68f378bc1dd93c157a9c9af7e8a9c512a562c4b46d91a4dbe4"
+    },
+    "MISMATCH_015_TO_001_AFFINE_HAND_MANIFEST.json": {
+      "status": "COMPLETE_EXACT_REPLAY_AND_INDEPENDENT_CONTINUOUS_ASSEMBLY_PASS",
+      "sha256": "709768865526a5a97ca0f4bbbe2354f814fa9ab1db9b7ccda7aacfed78493054"
+    },
+    "MISMATCH_01_TO_015_AFFINE_HAND_MANIFEST.json": {
+      "status": "COMPLETE_EXACT_REPLAY_AND_INDEPENDENT_CONTINUOUS_ASSEMBLY_PASS",
+      "sha256": "f18cc8c70edecdb03cc15a273ece2696355278b469fa5c96d3392a979a1c15ef"
+    },
+    "MISMATCH_026_TO_01_AFFINE_HAND_MANIFEST.json": {
+      "status": "COMPLETE_EXACT_REPLAY_AND_INDEPENDENT_CONTINUOUS_ASSEMBLY_PASS",
+      "sha256": "7459acab407a101463a3f8394d5006d3b339ef92f54fa09f59010666185cc89c"
+    },
+    "T_LOWER_AFFINE_HAND_MANIFEST.json": {
+      "status": "PASS",
+      "sha256": "33ea380e4e63d713694278bc055f8590f3f805839c10181136dce1ebfb70a661"
+    },
+    "T_UPPER_AFFINE_HAND_MANIFEST.json": {
+      "status": "PASS",
+      "sha256": "ee0813a60d983fd65788aefb4d80bffe8b926781f3290a23254cd44efa415177"
+    },
+    "short_whole_word_hand_assembly_audit.json": {
+      "status": "PASS",
+      "sha256": "0bc2bd61accb10eadfff722c68703c17a20a59281f8f81bc1e6c372aa81da06f"
+    },
+    "wrong_0011011_hand_word_closure_manifest.json": {
+      "status": "PASS_FIXED_CASE_AND_SOURCE_BINDING",
+      "sha256": "89620b01091366f9a85522de591a62277333ea5afb3a220b70b0904d3d2e1e62"
+    }
+  },
+  "direct_main_links": [
+    "AFFINE_ARC_ONE_ANGLE_HAND_KERNEL.md",
+    "CANDIDATE_COARSE_MISMATCH_HAND_PROOF.md",
+    "CANDIDATE_WORD_HAND_CAPTURE_INTERFACES.md",
+    "CENTRAL_BAND_COMMON_POINT_LEMMAS.md",
+    "COARSE_MISMATCH_PRINTED_RESERVE_STRENGTHENING.md",
+    "COMMON_POINT_AND_THREE_QUARTER_ANGLE.md",
+    "COMMON_QUARTER_TABLE_AND_FOUR_WORD_EXCLUSIONS.md",
+    "COMPLETE_EQUALITY_PARAMETER_DOMAIN.md",
+    "CONDITIONAL_AFFINE_ARC_KERNEL_INDEPENDENT_AUDIT.md",
+    "CYCLIC_RADIAL_BOUNDARY_REDUCTION.md",
+    "EQUALITY_PULLBACK_TO_ORIGINAL_SQUARES.md",
+    "FOUR_TYPE_HAND_COVERAGE_INVENTORY.md",
+    "HAND_CANDIDATE_CAPTURE_AT_ONE_THOUSANDTH.md",
+    "HAND_CANDIDATE_MISMATCH_BOOTSTRAP.md",
+    "HAND_CANDIDATE_MIXED_OWNERS_AND_TILT.md",
+    "HAND_CANDIDATE_MIXED_OWNERS_WITH_TOTAL_MISMATCH.md",
+    "HAND_CANDIDATE_TILT_FROM_SIGNED_ERROR_VERTICES.md",
+    "HAND_EXACT_CENTER_SQUARE_COMPLETION.md",
+    "HAND_EXTERIOR_FRAME_CONCENTRATION.md",
+    "HAND_FIXED_CEILING_TRANSFER_WITH_AUTOMATIC_TERMINAL.md",
+    "HAND_TERMINAL_WITH_AUTOMATIC_SLIDERS.md",
+    "HUMAN_BROAD_TERMINAL_ARITHMETIC.md",
+    "HUMAN_CENTRAL_CORE_FROM_TRANSVERSE_SEGMENT.md",
+    "HUMAN_CIRCULAR_CAP_AND_AXIS_ELIMINATION.md",
+    "HUMAN_FAMILY_CLOSURE.md",
+    "HUMAN_FAMILY_ENCLOSURE.md",
+    "HUMAN_FIVE_CORNER.md",
+    "HUMAN_GLOBAL_GEOMETRY_CLOSURE.md",
+    "HUMAN_SHARP_CEILING_BRACKET.md",
+    "MISMATCH_015_TO_001_AFFINE_HAND_THEOREM.md",
+    "MISMATCH_01_TO_015_AFFINE_HAND_THEOREM.md",
+    "MISMATCH_026_TO_01_AFFINE_HAND_THEOREM.md",
+    "SEVEN_QUARTER_WORDS.md",
+    "SHORT_WRONG_WORD_COMPLETE_HAND_EXCLUSION.md",
+    "WRONG_0011011_WHOLE_WORD_HAND_PROOF.md",
+    "verify_unrestricted_eight_hand_interfaces.py"
+  ],
+  "files": {
+    "AFFINE_ARC_ONE_ANGLE_HAND_KERNEL.md": {
+      "sha256": "82780f86a3d75f96be94eb083c58c0fd128a5e1715e325ae4fa548bf3f839080",
+      "bytes": 9397
+    },
+    "AFFINE_MARKER_SUPPORT_REDUCTION.md": {
+      "sha256": "0ba6c7b63f13b14a83dd30fabbbf739b995bbadd6e5a8bc876efd81d0bc09dd7",
+      "bytes": 5139
+    },
+    "ANALYTIC_RATIONAL_CONSTRUCTION.md": {
+      "sha256": "c570e452b4edbfd6d096ff040d80c5c1da96eba5a56f512fbf6a3de5c3819c9b",
+      "bytes": 10641
+    },
+    "CANDIDATE_CAPTURE_AT_ONE_THOUSANDTH_HAND_MANIFEST.json": {
+      "sha256": "dd0146dd4262476704293ad8928921d15e5184212490d7eb8c9406e7b7bf8bf6",
+      "bytes": 9807
+    },
+    "CANDIDATE_COARSE_MISMATCH_HAND_MANIFEST.json": {
+      "sha256": "823566487fd82658e8c3da6ac924d9e7b26b2d7127cf36040c7bdadc36975d4e",
+      "bytes": 4998
+    },
+    "CANDIDATE_COARSE_MISMATCH_HAND_PROOF.md": {
+      "sha256": "c789d8b49f88024923e76f64734b0c70b2f94645202ddd235ef0c43229843809",
+      "bytes": 7188
+    },
+    "CANDIDATE_WORD_HAND_CAPTURE_INTERFACES.md": {
+      "sha256": "f46df89d0521cec770b7079c578b0595abf4ab43abe97bf445396472d892f406",
+      "bytes": 9535
+    },
+    "CENTRAL_BAND_COMMON_POINT_LEMMAS.md": {
+      "sha256": "54c6a35ac1d2bdd0c558bea8b006c6225eed0fc67e276631231c81084c78db7f",
+      "bytes": 6997
+    },
+    "COARSE_MISMATCH_PRINTED_RESERVE_MANIFEST.json": {
+      "sha256": "9564309148012325fe79111b4d5b821d8546abdb61a084991b6c6ab07647c4f8",
+      "bytes": 1087
+    },
+    "COARSE_MISMATCH_PRINTED_RESERVE_STRENGTHENING.md": {
+      "sha256": "adadaa3b1b3da9370db5e4df846d4b6917103caf6fb078028b8aa3e9a6306493",
+      "bytes": 3440
+    },
+    "COMMON_POINT_AND_THREE_QUARTER_ANGLE.md": {
+      "sha256": "c8605b5b9c3a906169f0171fd5c0ea36bba645e605943184b8cbb3e1dc2b0049",
+      "bytes": 8315
+    },
+    "COMMON_QUARTER_TABLE_AND_FOUR_WORD_EXCLUSIONS.md": {
+      "sha256": "6432b2fffdafca4ff3be52cf7c887da4db9c012aa35765bdba36316bda6f7b35",
+      "bytes": 4877
+    },
+    "COMPLETE_EQUALITY_PARAMETER_DOMAIN.md": {
+      "sha256": "c2dc592e5d8d8d099bd169f95b1609e476dd553c0238095b4b9de2837d9273ac",
+      "bytes": 18177
+    },
+    "COMPLETE_EQUALITY_PARAMETER_DOMAIN_INDEPENDENT_AUDIT.md": {
+      "sha256": "cbbe297a3f0be91ca0c5f8e3d61ccae13d61cf04a26d8fcdb653c41a8bb7c5ee",
+      "bytes": 8645
+    },
+    "CONDITIONAL_AFFINE_ARC_KERNEL_INDEPENDENT_AUDIT.md": {
+      "sha256": "47fadfbc025b9453d48f09982280fdca9b35b4266fde0eeffeca38b81ac5c204",
+      "bytes": 6016
+    },
+    "CORE_CORE_WHOLE_PAIR_HAND_PROOF.md": {
+      "sha256": "3fa99eac79dfd28293e522f72985dcb6ec36235205d8beed9791cb60be543cfa",
+      "bytes": 5098
+    },
+    "CORE_HIGH_INDEPENDENT_AUDIT.md": {
+      "sha256": "d9cfa3677d8e660f1bedd188b073cc00ce2ae71206f7d2fb33339c5d1eab6b2c",
+      "bytes": 2210
+    },
+    "CORE_HIGH_WHOLE_PAIR_HAND_PROOF.md": {
+      "sha256": "dc20ffd8ef8adb45cff46068a5761a120eeca33c8501c0b140c4111b1cae2ec0",
+      "bytes": 17108
+    },
+    "CORE_LOW_WHOLE_PAIR_HAND_PROOF.md": {
+      "sha256": "0d4ea9d15b63f269702e97e6b89b743993c6bb74c135768410eac80c4489b599",
+      "bytes": 19765
+    },
+    "CORE_MID_WHOLE_PAIR_HAND_PROOF.md": {
+      "sha256": "736a208d70fc42ad4b089ff5b191101a73227df317ea58c880ade6463d3c124d",
+      "bytes": 23250
+    },
+    "CORE_MID_WHOLE_PAIR_INDEPENDENT_AUDIT.md": {
+      "sha256": "cd24aaff699a2400e7b55c093069e0877c1e4b1cbed29711a9d64e094ae3d620",
+      "bytes": 8166
+    },
+    "CYCLIC_RADIAL_BOUNDARY_REDUCTION.md": {
+      "sha256": "4602abac124f4fea7cb9bf71d9ef5cc1e5214ffebb1f0b135bf19bb8e795a7c2",
+      "bytes": 8720
+    },
+    "D_UPPER_AFFINE_HAND_MANIFEST.json": {
+      "sha256": "fb5bdc01b5295ca21ceedd411ef686b371d1cf0ac21374f53d88ce093e8f1e98",
+      "bytes": 2627
+    },
+    "EQUALITY_PULLBACK_TO_ORIGINAL_SQUARES.md": {
+      "sha256": "0e0ab2b2da5b88f7799793762bd5a1157a779c8781caf6f7d872990d2a0fdbc9",
+      "bytes": 7725
+    },
+    "FIVE_CORNER_REDUCTION.md": {
+      "sha256": "ec4dc9ecea758f25ad2b7c46a994f5cfe7e0db619104041345900bfd3fa775f8",
+      "bytes": 6443
+    },
+    "FIXED_CEILING_TRANSFER_HAND_MANIFEST.json": {
+      "sha256": "fdb493446d66ccabfac0131773c37d5b75e362f92c409d42d75191c0383bbca5",
+      "bytes": 2256
+    },
+    "FOUR_TYPE_HAND_COVERAGE_INVENTORY.md": {
+      "sha256": "99e5cb1a415dee84dd18d07fb6ca57db01170d1e05c21b162d2b1daab0c8ce88",
+      "bytes": 9934
+    },
+    "G_LOWER_AFFINE_HAND_MANIFEST.json": {
+      "sha256": "143e6db9c94e297261ed2ccc92e70c2c34671151e83a6904a639324fe1dad533",
+      "bytes": 2005
+    },
+    "G_UPPER_AFFINE_HAND_MANIFEST.json": {
+      "sha256": "5a701fa6f0b1bf758b55b23c507a1e9104c3637e6b3773734ab64b0faeedc646",
+      "bytes": 2339
+    },
+    "HAND_CANDIDATE_CAPTURE_AT_ONE_THOUSANDTH.md": {
+      "sha256": "7ee1a11292c08b979d9ba22296bbd4e849ff61ec90ab1af65c5de717d0ec0a4b",
+      "bytes": 8366
+    },
+    "HAND_CANDIDATE_MISMATCH_BOOTSTRAP.md": {
+      "sha256": "d2485f4e1db5707be71e01e4f6491061e90e4029dc6c947f661ff1c2cd042e2f",
+      "bytes": 7250
+    },
+    "HAND_CANDIDATE_MIXED_OWNERS_AND_TILT.md": {
+      "sha256": "62e1217f196cd72be30688a101737d1091fd8e25101c4a2e21bed9afe4496bcf",
+      "bytes": 12354
+    },
+    "HAND_CANDIDATE_MIXED_OWNERS_WITH_TOTAL_MISMATCH.md": {
+      "sha256": "035b9ec5d4fc6305791c10d815ef277078dd3d4aea5996f4c9ebb80ca15fac30",
+      "bytes": 5802
+    },
+    "HAND_CANDIDATE_TILT_FROM_SIGNED_ERROR_VERTICES.md": {
+      "sha256": "2eed8e78c79cb07d3533f50bcc308b6701faf06504c89a7dea240a25358fb491",
+      "bytes": 11700
+    },
+    "HAND_EXACT_CENTER_SQUARE_COMPLETION.md": {
+      "sha256": "833515826402c73a17862e019c9c6afa2c99b919f2330670e04387d771443f88",
+      "bytes": 12521
+    },
+    "HAND_EXTERIOR_FRAME_CONCENTRATION.md": {
+      "sha256": "54bcd69b5c2a61ce5fb5df2e57d293fc62dd20af604fe13f4d6264ededc04b62",
+      "bytes": 6706
+    },
+    "HAND_FIXED_CEILING_TRANSFER_WITH_AUTOMATIC_TERMINAL.md": {
+      "sha256": "09c574dbcad7353057ef247341424e2f6bc158c2ed1329bd7a125223ab062265",
+      "bytes": 9143
+    },
+    "HAND_TERMINAL_WITH_AUTOMATIC_SLIDERS.md": {
+      "sha256": "624fb9ffc0b819ae0aa5e891a4ca2f541b5b7562df789e5617a4e8c3d03d5d90",
+      "bytes": 9326
+    },
+    "HIGH_HIGH_WHOLE_PAIR_HAND_PROOF.md": {
+      "sha256": "b976e006a9dd0a725c5992b48af6edbb2b2ef998e9d3116ee66eef0f896ad0d3",
+      "bytes": 16060
+    },
+    "HUMAN_BROAD_TERMINAL_ARITHMETIC.md": {
+      "sha256": "4b8984085a43d8e7e6547961cbec3935e1699b53cd43dfb7ff0110c963440f66",
+      "bytes": 16622
+    },
+    "HUMAN_CENTRAL_CORE_FROM_TRANSVERSE_SEGMENT.md": {
+      "sha256": "133a7a3cc7ffdfb1f188f75421b67f4c55a685a06fb956da77fc86e49812517d",
+      "bytes": 14527
+    },
+    "HUMAN_CIRCULAR_CAP_AND_AXIS_ELIMINATION.md": {
+      "sha256": "49bc0de80cdfdd8427da565dd0d3fea358602989c79b767bcee0a7212011173c",
+      "bytes": 4284
+    },
+    "HUMAN_FAMILY_CLOSURE.md": {
+      "sha256": "3748db8c72ab877a6bf8646af968a5a6892cf8994212123496191c59fbcf91fe",
+      "bytes": 19730
+    },
+    "HUMAN_FAMILY_ENCLOSURE.md": {
+      "sha256": "c80a60df97cd17e4fe529ba63b21e2606a687e3cbab275236c30b0c29dfa260c",
+      "bytes": 8134
+    },
+    "HUMAN_FIVE_CORNER.md": {
+      "sha256": "4c445a9efddc79fecf2a7c236bf869b9cc299a17e53a109f9a9167dcdffd8d8c",
+      "bytes": 40593
+    },
+    "HUMAN_GLOBAL_GEOMETRY_CLOSURE.md": {
+      "sha256": "3f79549331e98b114683293311d8c314a0512be79d8b569d079fe8a157d4d0ca",
+      "bytes": 11268
+    },
+    "HUMAN_SHARP_CEILING_BRACKET.md": {
+      "sha256": "3e8fc399f7f2e326bebe7e4f042f49b4f8b16201fa05a396559496ccbcad4a6e",
+      "bytes": 4433
+    },
+    "H_LOWER_AFFINE_HAND_MANIFEST.json": {
+      "sha256": "7c6c2404fbb78d68f378bc1dd93c157a9c9af7e8a9c512a562c4b46d91a4dbe4",
+      "bytes": 1888
+    },
+    "LIFTED_STATE_POTENTIAL_TELESCOPING.md": {
+      "sha256": "eb5ce57a43b6ca611f9b6533de6ed1b98a2315dfeb4980c7a5eaf8500ecc8694",
+      "bytes": 2103
+    },
+    "LOW_FRAME_ENTRIES_INDEPENDENT_AUDIT.md": {
+      "sha256": "4545d9575809a9b4b40c26f8690bf732157a7d71e0e0513cb484e3e0fc8d7978",
+      "bytes": 2500
+    },
+    "LOW_HIGH_WHOLE_PAIR_HAND_PROOF.md": {
+      "sha256": "3903a894e7e90bdcdba6423f3a628cd790e99047aeddbc92de881673910209b6",
+      "bytes": 35522
+    },
+    "LOW_HIGH_WHOLE_PAIR_INDEPENDENT_AUDIT.md": {
+      "sha256": "7146722b6ef4b2b0ef3800308bc6d501ceb6f5787d2cd43b4bdc02aafa9d0a6d",
+      "bytes": 8544
+    },
+    "LOW_LOW_WHOLE_PAIR_HAND_PROOF.md": {
+      "sha256": "c77b76f91870509adb20c8f2020dd053082f7a5e5d813c024b621328cdc18033",
+      "bytes": 13030
+    },
+    "LOW_MID_WHOLE_PAIR_HAND_PROOF.md": {
+      "sha256": "6ce5edf08836a572a9f18a3d52219d7c5228da87df1f1a9e550b24838113ea68",
+      "bytes": 15145
+    },
+    "LOW_MID_WHOLE_PAIR_INDEPENDENT_AUDIT.md": {
+      "sha256": "97a6f67213361ab104c7f188507849f157f5a7b171ee0d6f5d259f0996cc2444",
+      "bytes": 6692
+    },
+    "MID_HIGH_WHOLE_PAIR_HAND_PROOF.md": {
+      "sha256": "3db4337619e38923d25dfcb578e1da3a2b4e40a6ae2fdcd16f640dfe972f5121",
+      "bytes": 23403
+    },
+    "MID_HIGH_WHOLE_PAIR_INDEPENDENT_AUDIT.md": {
+      "sha256": "9961d2dd8f5626177fd47087de581c6d27364d56d92b0e8a9d6ac3528c5a5ed3",
+      "bytes": 4657
+    },
+    "MID_MID_WHOLE_PAIR_HAND_PROOF.md": {
+      "sha256": "a084fa1c08af25dc18ff80f06ff19de39576009ec958f285fc6f27a61febeaab",
+      "bytes": 16731
+    },
+    "MID_MID_WHOLE_PAIR_INDEPENDENT_AUDIT.md": {
+      "sha256": "653f0c121f144b5665b11f36754abd00c118296c7ce73f787c54b27942f7e425",
+      "bytes": 6017
+    },
+    "MISMATCH_015_TO_001_AFFINE_HAND_MANIFEST.json": {
+      "sha256": "709768865526a5a97ca0f4bbbe2354f814fa9ab1db9b7ccda7aacfed78493054",
+      "bytes": 7433
+    },
+    "MISMATCH_015_TO_001_AFFINE_HAND_THEOREM.md": {
+      "sha256": "17d713fd344de5877fa79d4ad1f0f228036434476e86825d12b61d7a8f54da28",
+      "bytes": 9925
+    },
+    "MISMATCH_01_TO_015_AFFINE_HAND_MANIFEST.json": {
+      "sha256": "f18cc8c70edecdb03cc15a273ece2696355278b469fa5c96d3392a979a1c15ef",
+      "bytes": 2308
+    },
+    "MISMATCH_01_TO_015_AFFINE_HAND_THEOREM.md": {
+      "sha256": "018270113e58fcbeb6abcbe3cdc2a0031dfaf2aa25db346f78298d7f21a16e40",
+      "bytes": 9086
+    },
+    "MISMATCH_026_TO_01_AFFINE_HAND_MANIFEST.json": {
+      "sha256": "7459acab407a101463a3f8394d5006d3b339ef92f54fa09f59010666185cc89c",
+      "bytes": 7876
+    },
+    "MISMATCH_026_TO_01_AFFINE_HAND_THEOREM.md": {
+      "sha256": "c38f3776daef7b8b6969791dae4786f0c7b49907f9e0efd717a8e243fde03490",
+      "bytes": 10385
+    },
+    "QUARTER_ONE_ALL_BOUNDARY_STATES_HAND_PROOF.md": {
+      "sha256": "2ef8b7513d12272c352db66321a43f77a0a8c9eb384c61b06eb7c4193ea8df2f",
+      "bytes": 17566
+    },
+    "QUARTER_TWO_ALL_BOUNDARY_STATES_HAND_PROOF.md": {
+      "sha256": "dd1bc7baa561a27029a733f4d66abb80cfa5bad4f5708d1c541c48ad91f472f9",
+      "bytes": 8485
+    },
+    "QUARTER_ZERO_ALL_BOUNDARY_STATES_HAND_PROOF.md": {
+      "sha256": "b6445784381fc4dbe782b88e98c11486b197db2728a970ddc57aae2fb95be122",
+      "bytes": 16392
+    },
+    "RESTORED_HIGH_HIGH_INDEPENDENT_AUDIT.md": {
+      "sha256": "f257559e4ed9c3fd5aba491a36dc5a8156c589f12643dbfa09b062624f20f5f0",
+      "bytes": 4791
+    },
+    "SEVEN_QUARTER_WORDS.md": {
+      "sha256": "4518d97f7cabb69ece209a5ebe2de5093e0cb62cc1489fe585c33d81705cfa48",
+      "bytes": 7442
+    },
+    "SHORT_WRONG_WORD_COMPLETE_HAND_EXCLUSION.md": {
+      "sha256": "4e429f03e09a62bde5b209d3db7d57ed8ae874b5b56cb59ace32b9eaf1196dd3",
+      "bytes": 7014
+    },
+    "T_LOWER_AFFINE_HAND_MANIFEST.json": {
+      "sha256": "33ea380e4e63d713694278bc055f8590f3f805839c10181136dce1ebfb70a661",
+      "bytes": 2367
+    },
+    "T_UPPER_AFFINE_HAND_MANIFEST.json": {
+      "sha256": "ee0813a60d983fd65788aefb4d80bffe8b926781f3290a23254cd44efa415177",
+      "bytes": 2028
+    },
+    "UNRESTRICTED_EIGHT_HAND_DEPENDENCY_INDEPENDENT_AUDIT.md": {
+      "sha256": "ca362601a56e53ef611cd209a6f6c2a6d2c094145c5dfc50ea1893fc6159676d",
+      "bytes": 11634
+    },
+    "UNRESTRICTED_EIGHT_ROOT_CORE_EQUALITY_INDEPENDENT_AUDIT.md": {
+      "sha256": "7b78e8c2b31d3f423b15e2f01a8171ad636f24ba7c18d1eba128f8de3b6ebbc6",
+      "bytes": 19503
+    },
+    "UNRESTRICTED_EIGHT_SQUARE_HAND_PROOF.md": {
+      "sha256": "a69a1d897fad1c144fd1931a09bb1e464cbaed9054d273151d37645225e277fc",
+      "bytes": 64955
+    },
+    "WRONG_0011011_WHOLE_WORD_HAND_PROOF.md": {
+      "sha256": "cc279d0273715d20af8201d49f89d0ff2cb41d564103b9f1b29a6f3c6cb104b2",
+      "bytes": 13652
+    },
+    "assemble_unrestricted_eight_hand_proof.py": {
+      "sha256": "3e3b1131e5e15cd7305cb59e05d6df7c48e98e3c09dc8ce0f0b23cf2b40593c3",
+      "bytes": 11621
+    },
+    "short_whole_word_hand_assembly_audit.json": {
+      "sha256": "0bc2bd61accb10eadfff722c68703c17a20a59281f8f81bc1e6c372aa81da06f",
+      "bytes": 33350
+    },
+    "unrestricted_eight_hand_dependency_independent_audit.json": {
+      "sha256": "8c0670e59023bb0fe233579d97d7124fa1003bff0bdad6b5f73d4a5a10a68861",
+      "bytes": 1993
+    },
+    "unrestricted_eight_hand_interface_arithmetic.json": {
+      "sha256": "10a6a3c30b28d3dbbdd0887fe862a8bee41c906005f4e6cb58c8c028537e0eeb",
+      "bytes": 5029
+    },
+    "unrestricted_eight_root_core_equality_independent_binding.json": {
+      "sha256": "76ef38bf942662a5eca58fb0d673901257a0c103a3a1a5fa1254159325a8697f",
+      "bytes": 58509
+    },
+    "verify_unrestricted_eight_hand_interfaces.py": {
+      "sha256": "c0456cfcea4ae8da527d761e4c505c5d92f9e897d1bfc618ab88a9b221dbf85d",
+      "bytes": 6660
+    },
+    "wrong_0011011_hand_word_closure_manifest.json": {
+      "sha256": "89620b01091366f9a85522de591a62277333ea5afb3a220b70b0904d3d2e1e62",
+      "bytes": 44139
+    }
+  }
+}

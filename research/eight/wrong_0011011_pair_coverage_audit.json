@@ -1,0 +1,1827 @@
+{
+  "status": "PASS_FINITE_COVERAGE",
+  "scope": "Exact sign/label/reflection/manuscript cover only; component inequalities require their mathematical proofs and independent reviews.",
+  "Q": "9789/2500",
+  "word": [
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1
+  ],
+  "gamma": "17953/20000",
+  "conditional_cycle_bound": "125671/20000",
+  "twice_pi_upper": "710/113",
+  "conditional_rational_surplus": "823/2260000",
+  "admissible_sign_assignments": 24,
+  "admissible_edge_sign_classes": 19,
+  "directed_pair_cases": 76,
+  "canonical_pair_cases": 39,
+  "canonical_kind_counts": {
+    "CC": 10,
+    "mixed": 19,
+    "OO": 10
+  },
+  "reflection_fixed_pair_cases": [
+    [
+      4,
+      "+-",
+      "CC"
+    ],
+    [
+      4,
+      "+-",
+      "OO"
+    ]
+  ],
+  "directed_axis_cases": 304,
+  "axis_reflection_orbits": 152,
+  "axis_reflection": {
+    "1": 3,
+    "2": 4,
+    "3": 1,
+    "4": 2
+  },
+  "edge_sign_classes": {
+    "0": [
+      "++",
+      "+-"
+    ],
+    "1": [
+      "+-",
+      "--"
+    ],
+    "2": [
+      "-+",
+      "--"
+    ],
+    "3": [
+      "++",
+      "+-",
+      "-+",
+      "--"
+    ],
+    "4": [
+      "++",
+      "+-",
+      "--"
+    ],
+    "5": [
+      "++",
+      "+-",
+      "-+",
+      "--"
+    ],
+    "6": [
+      "++",
+      "-+"
+    ]
+  },
+  "label_file": "proof_integration/wrong_0011011_labels.json",
+  "manuscript_hashes": {
+    "m5_agent/hand_conversion/WRONG_0011011_ALIGNED_MIXED_QUARTER_HAND_PROOF.md": "52a89ca440dd06f96f9ba3fe7ac7d0775a4c2f2ad2dcfc24f9be79c63177048d",
+    "m5_agent/hand_conversion/WRONG_0011011_EDGE2_CORE_TO_POSITIVE_OUTER_HAND_PROOF.md": "1bc307ab6384accd2a1ce0b51b2dbd60459446131f521a11c9d7b0ccb00b5138",
+    "m5_agent/hand_conversion/WRONG_0011011_EDGE2_MIXED_QUARTER_STRIP_HAND_PROOF.md": "a79ab9bc25cd0b62a7636fa14051068f92a16dafee4af326df1fedd930aa87d7",
+    "m5_agent/hand_conversion/WRONG_0011011_EDGE2_NEGATIVE_CORE_CORNER_HAND_PROOF.md": "a1dcd3e651924719a721fdb58e2de5d078a73ef11bbf579f94f601bf1805901a",
+    "m5_agent/hand_conversion/WRONG_0011011_EDGE2_NEGATIVE_CORE_SIDE_HAND_PROOF.md": "8fc06d371357ceffe1194b2954f0c580768213c67af02456395093249b61e771",
+    "m5_agent/hand_conversion/WRONG_0011011_EDGE2_NEGATIVE_CORE_TO_OUTER_HAND_PROOF.md": "036854ca26f62693803c2f8abb5dec55b39a06c7ed45719ff30ee30a128c697c",
+    "m5_agent/hand_conversion/WRONG_0011011_EDGE2_OUTER_TO_POSITIVE_CORE_HAND_PROOF.md": "decd2daec9c748540ebc6c580ad22b01304b974b57675a0cc81b9ddd7ce69843",
+    "m5_agent/hand_conversion/WRONG_0011011_EDGE3_FOUR_WHOLE_MIXED_FAMILIES_HAND_PROOF.md": "81b77f6f443ce9b963363ec3524f82be17f1cf8057f86065851de32ef79c9a8a",
+    "m5_agent/hand_conversion/WRONG_0011011_EDGE3_NEGATIVE_CORE_TO_POSITIVE_OUTER_HAND_PROOF.md": "82f8681b84775f395079192b4d4ca23a39b863b65efe5640466776e9496bbba3",
+    "m5_agent/hand_conversion/WRONG_0011011_EDGE3_OUTER_TO_NEGATIVE_CORE_HAND_PROOF.md": "207165df31ee62bdbb1068cfaf06bbfd63a229d70296323ba849b34868ccd4ea",
+    "m5_agent/hand_conversion/WRONG_0011011_EDGE3_OUTER_TO_POSITIVE_CORE_HAND_PROOF.md": "abf41af9f488953b6d2864ab222372e68169da8d72f4d81fddba40d5cd8784d5",
+    "m5_agent/hand_conversion/WRONG_0011011_EDGE3_POSITIVE_CORE_TO_POSITIVE_OUTER_HAND_PROOF.md": "ab289916a84b770614f16bbd10b28345e94d79fc661e64e59f944539a019cc07",
+    "m5_agent/hand_conversion/WRONG_0011011_EDGE3_POSITIVE_OUTER_PAIR_HAND_PROOF.md": "c0ca11ec36df4b9592b22b2ef274356be44b188d14a639d56108220b5f9c40bb",
+    "proof_integration/WRONG_0011011_ALL_CORE_CORE_HAND_PROOF.md": "f723f07f8534a25c54f847602680457b9c6af2cc0f5c68dd6e9590ed36078b94",
+    "proof_integration/WRONG_0011011_ASYMMETRIC_OPPOSITE_OUTER_ZERO_HAND_PROOF.md": "fbbd2da52f34c98507c2ea9a6c1756c2e14f73f588a1da75fd5a939223a5451a",
+    "proof_integration/WRONG_0011011_EDGE3_NEGATIVE_OUTER_QUARTER_HAND_PROOF.md": "664122d1a4872dabc4d40b51e7009ae9c910708e4cbe40b2330c51b024a95686",
+    "proof_integration/WRONG_0011011_EDGE3_OPPOSITE_AXES12_HAND_PROOF.md": "0759a975966a5bda41a8144aa7e7a9e99e08c54135cc31d848a25d5897c397bf",
+    "proof_integration/WRONG_0011011_EDGE3_OPPOSITE_AXES34_HAND_PROOF.md": "6078d06293eb9dba710d62e7968b117568f2c0b1e8d5b67744e8d60c5f16babe",
+    "proof_integration/WRONG_0011011_NEGATIVE_OUTER_QUARTER_HAND_PROOF.md": "313f4d93c388669ed1d1210399808bbf267bad7f9f0fb2994ae3813bf0655552",
+    "proof_integration/WRONG_0011011_OPPOSITE_MIXED_ZERO_HAND_PROOF.md": "8d474cce619253791d16c68eb0eda8cf5a6405aa5947b46383f11359b8bf6e40",
+    "proof_integration/WRONG_0011011_OPPOSITE_OUTER_EDGE2_QUARTER_HAND_PROOF.md": "01b38e6215c2d9cf7ff78bab6e0cfd2c4071de8b84e51b48a517da7779df5461",
+    "proof_integration/WRONG_0011011_POSITIVE_NEGATIVE_OUTER_QUARTER_HAND_PROOF.md": "908e34c74247102a5ac487af03a96bb0865d9c183028ac186623abaa721a00fc",
+    "proof_integration/WRONG_0011011_SAME_OUTER_ZERO_HAND_PROOF.md": "a070318c7bea40c706d3a471938d9a0c1fcc9a057806976d34bc1583bfbd255c",
+    "proof_integration/WRONG_0011011_SAME_SIGN_MIXED_ZERO_HAND_PROOF.md": "f95575cadcefe37e3035365c9c672d9f1ba72e393f062e112a5963f3ea74b587",
+    "proof_integration/WRONG_0011011_SYMMETRIC_ALIGNED_OUTER_HAND_PROOF.md": "306b4740afbc4395dbc62f5db1aab3117c0d4f5033d376653fa402ab422a4076",
+    "proof_integration/WRONG_0011011_SYMMETRIC_OUTER_WHOLE_ANGLE_HAND_PROOF.md": "d0866ce36e92b1aa304df33296d59855a42bc64010f74624c0c2fc27dce1ada1",
+    "proof_integration/wrong_0011011_labels.json": "a4349b3d463bf9e67ecbb86f575c4d15df059d12c195b84eddceab85463eef6d"
+  },
+  "explicit_import_manuscripts": [
+    "m5_agent/hand_conversion/WRONG_0011011_ALIGNED_MIXED_QUARTER_HAND_PROOF.md",
+    "m5_agent/hand_conversion/WRONG_0011011_EDGE2_MIXED_QUARTER_STRIP_HAND_PROOF.md",
+    "proof_integration/WRONG_0011011_SYMMETRIC_ALIGNED_OUTER_HAND_PROOF.md"
+  ],
+  "canonical_cover": [
+    {
+      "canonical_pair": [
+        0,
+        "++",
+        "CC"
+      ],
+      "quarter": 0,
+      "source_unsigned_label_numerators": [
+        125,
+        0,
+        103981,
+        0,
+        0
+      ],
+      "target_unsigned_label_numerators": [
+        19555,
+        0,
+        63132,
+        0,
+        0
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          0,
+          "++",
+          "CC"
+        ],
+        [
+          1,
+          "--",
+          "CC"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_ALL_CORE_CORE_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        0,
+        "++",
+        "CO"
+      ],
+      "quarter": 0,
+      "source_unsigned_label_numerators": [
+        125,
+        0,
+        103981,
+        0,
+        0
+      ],
+      "target_unsigned_label_numerators": [
+        0,
+        -26,
+        83194,
+        -11864,
+        17627
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          0,
+          "++",
+          "CO"
+        ],
+        [
+          1,
+          "--",
+          "OC"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_SAME_SIGN_MIXED_ZERO_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        0,
+        "++",
+        "OC"
+      ],
+      "quarter": 0,
+      "source_unsigned_label_numerators": [
+        2478,
+        0,
+        93015,
+        2363,
+        -11055
+      ],
+      "target_unsigned_label_numerators": [
+        19555,
+        0,
+        63132,
+        0,
+        0
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          0,
+          "++",
+          "OC"
+        ],
+        [
+          1,
+          "--",
+          "CO"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_SAME_SIGN_MIXED_ZERO_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        0,
+        "++",
+        "OO"
+      ],
+      "quarter": 0,
+      "source_unsigned_label_numerators": [
+        2478,
+        0,
+        93015,
+        2363,
+        -11055
+      ],
+      "target_unsigned_label_numerators": [
+        0,
+        -26,
+        83194,
+        -11864,
+        17627
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          0,
+          "++",
+          "OO"
+        ],
+        [
+          1,
+          "--",
+          "OO"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_SAME_OUTER_ZERO_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        0,
+        "+-",
+        "CC"
+      ],
+      "quarter": 0,
+      "source_unsigned_label_numerators": [
+        125,
+        0,
+        103981,
+        0,
+        0
+      ],
+      "target_unsigned_label_numerators": [
+        19555,
+        0,
+        63132,
+        0,
+        0
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          0,
+          "+-",
+          "CC"
+        ],
+        [
+          1,
+          "+-",
+          "CC"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_ALL_CORE_CORE_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        0,
+        "+-",
+        "CO"
+      ],
+      "quarter": 0,
+      "source_unsigned_label_numerators": [
+        125,
+        0,
+        103981,
+        0,
+        0
+      ],
+      "target_unsigned_label_numerators": [
+        0,
+        -26,
+        83194,
+        -11864,
+        17627
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          0,
+          "+-",
+          "CO"
+        ],
+        [
+          1,
+          "+-",
+          "OC"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_OPPOSITE_MIXED_ZERO_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        0,
+        "+-",
+        "OC"
+      ],
+      "quarter": 0,
+      "source_unsigned_label_numerators": [
+        2478,
+        0,
+        93015,
+        2363,
+        -11055
+      ],
+      "target_unsigned_label_numerators": [
+        19555,
+        0,
+        63132,
+        0,
+        0
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          0,
+          "+-",
+          "OC"
+        ],
+        [
+          1,
+          "+-",
+          "CO"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_OPPOSITE_MIXED_ZERO_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        0,
+        "+-",
+        "OO"
+      ],
+      "quarter": 0,
+      "source_unsigned_label_numerators": [
+        2478,
+        0,
+        93015,
+        2363,
+        -11055
+      ],
+      "target_unsigned_label_numerators": [
+        0,
+        -26,
+        83194,
+        -11864,
+        17627
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          0,
+          "+-",
+          "OO"
+        ],
+        [
+          1,
+          "+-",
+          "OO"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_ASYMMETRIC_OPPOSITE_OUTER_ZERO_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        2,
+        "-+",
+        "CC"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        125,
+        0,
+        103981,
+        0,
+        0
+      ],
+      "target_unsigned_label_numerators": [
+        -1449,
+        0,
+        104240,
+        0,
+        0
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          2,
+          "-+",
+          "CC"
+        ],
+        [
+          6,
+          "-+",
+          "CC"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_ALL_CORE_CORE_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        2,
+        "-+",
+        "CO"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        125,
+        0,
+        103981,
+        0,
+        0
+      ],
+      "target_unsigned_label_numerators": [
+        0,
+        -1025,
+        16031,
+        0,
+        63457
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          2,
+          "-+",
+          "CO"
+        ],
+        [
+          6,
+          "-+",
+          "OC"
+        ]
+      ],
+      "proof_manuscripts": [
+        "m5_agent/hand_conversion/WRONG_0011011_EDGE2_CORE_TO_POSITIVE_OUTER_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        2,
+        "-+",
+        "OC"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        2478,
+        0,
+        93015,
+        2363,
+        -11055
+      ],
+      "target_unsigned_label_numerators": [
+        -1449,
+        0,
+        104240,
+        0,
+        0
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          2,
+          "-+",
+          "OC"
+        ],
+        [
+          6,
+          "-+",
+          "CO"
+        ]
+      ],
+      "proof_manuscripts": [
+        "m5_agent/hand_conversion/WRONG_0011011_EDGE2_OUTER_TO_POSITIVE_CORE_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        2,
+        "-+",
+        "OO"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        2478,
+        0,
+        93015,
+        2363,
+        -11055
+      ],
+      "target_unsigned_label_numerators": [
+        0,
+        -1025,
+        16031,
+        0,
+        63457
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          2,
+          "-+",
+          "OO"
+        ],
+        [
+          6,
+          "-+",
+          "OO"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_OPPOSITE_OUTER_EDGE2_QUARTER_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        2,
+        "--",
+        "CC"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        125,
+        0,
+        103981,
+        0,
+        0
+      ],
+      "target_unsigned_label_numerators": [
+        22042,
+        -34492,
+        98439,
+        -5334,
+        0
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          2,
+          "--",
+          "CC"
+        ],
+        [
+          6,
+          "++",
+          "CC"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_ALL_CORE_CORE_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        2,
+        "--",
+        "CO"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        125,
+        0,
+        103981,
+        0,
+        0
+      ],
+      "target_unsigned_label_numerators": [
+        1670,
+        0,
+        242322,
+        -91744,
+        -95769
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          2,
+          "--",
+          "CO"
+        ],
+        [
+          6,
+          "++",
+          "OC"
+        ]
+      ],
+      "proof_manuscripts": [
+        "m5_agent/hand_conversion/WRONG_0011011_EDGE2_NEGATIVE_CORE_TO_OUTER_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        2,
+        "--",
+        "OC"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        2478,
+        0,
+        93015,
+        2363,
+        -11055
+      ],
+      "target_unsigned_label_numerators": [
+        22042,
+        -34492,
+        98439,
+        -5334,
+        0
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          2,
+          "--",
+          "OC"
+        ],
+        [
+          6,
+          "++",
+          "CO"
+        ]
+      ],
+      "proof_manuscripts": [
+        "m5_agent/hand_conversion/WRONG_0011011_EDGE2_NEGATIVE_CORE_SIDE_HAND_PROOF.md",
+        "m5_agent/hand_conversion/WRONG_0011011_EDGE2_NEGATIVE_CORE_CORNER_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        2,
+        "--",
+        "OO"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        2478,
+        0,
+        93015,
+        2363,
+        -11055
+      ],
+      "target_unsigned_label_numerators": [
+        1670,
+        0,
+        242322,
+        -91744,
+        -95769
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          2,
+          "--",
+          "OO"
+        ],
+        [
+          6,
+          "++",
+          "OO"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_NEGATIVE_OUTER_QUARTER_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        3,
+        "++",
+        "CC"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        -1449,
+        0,
+        104240,
+        0,
+        0
+      ],
+      "target_unsigned_label_numerators": [
+        4970,
+        0,
+        94831,
+        0,
+        0
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          3,
+          "++",
+          "CC"
+        ],
+        [
+          5,
+          "--",
+          "CC"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_ALL_CORE_CORE_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        3,
+        "++",
+        "CO"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        -1449,
+        0,
+        104240,
+        0,
+        0
+      ],
+      "target_unsigned_label_numerators": [
+        3965,
+        0,
+        385510,
+        -149748,
+        -189442
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          3,
+          "++",
+          "CO"
+        ],
+        [
+          5,
+          "--",
+          "OC"
+        ]
+      ],
+      "proof_manuscripts": [
+        "m5_agent/hand_conversion/WRONG_0011011_EDGE3_POSITIVE_CORE_TO_POSITIVE_OUTER_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        3,
+        "++",
+        "OC"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        0,
+        -1025,
+        16031,
+        0,
+        63457
+      ],
+      "target_unsigned_label_numerators": [
+        4970,
+        0,
+        94831,
+        0,
+        0
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          3,
+          "++",
+          "OC"
+        ],
+        [
+          5,
+          "--",
+          "CO"
+        ]
+      ],
+      "proof_manuscripts": [
+        "m5_agent/hand_conversion/WRONG_0011011_EDGE3_FOUR_WHOLE_MIXED_FAMILIES_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        3,
+        "++",
+        "OO"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        0,
+        -1025,
+        16031,
+        0,
+        63457
+      ],
+      "target_unsigned_label_numerators": [
+        3965,
+        0,
+        385510,
+        -149748,
+        -189442
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          3,
+          "++",
+          "OO"
+        ],
+        [
+          5,
+          "--",
+          "OO"
+        ]
+      ],
+      "proof_manuscripts": [
+        "m5_agent/hand_conversion/WRONG_0011011_EDGE3_POSITIVE_OUTER_PAIR_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        3,
+        "+-",
+        "CC"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        -1449,
+        0,
+        104240,
+        0,
+        0
+      ],
+      "target_unsigned_label_numerators": [
+        16823,
+        0,
+        62312,
+        0,
+        0
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          3,
+          "+-",
+          "CC"
+        ],
+        [
+          5,
+          "+-",
+          "CC"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_ALL_CORE_CORE_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        3,
+        "+-",
+        "CO"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        -1449,
+        0,
+        104240,
+        0,
+        0
+      ],
+      "target_unsigned_label_numerators": [
+        0,
+        -2112,
+        29090,
+        0,
+        44642
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          3,
+          "+-",
+          "CO"
+        ],
+        [
+          5,
+          "+-",
+          "OC"
+        ]
+      ],
+      "proof_manuscripts": [
+        "m5_agent/hand_conversion/WRONG_0011011_EDGE3_FOUR_WHOLE_MIXED_FAMILIES_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        3,
+        "+-",
+        "OC"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        0,
+        -1025,
+        16031,
+        0,
+        63457
+      ],
+      "target_unsigned_label_numerators": [
+        16823,
+        0,
+        62312,
+        0,
+        0
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          3,
+          "+-",
+          "OC"
+        ],
+        [
+          5,
+          "+-",
+          "CO"
+        ]
+      ],
+      "proof_manuscripts": [
+        "m5_agent/hand_conversion/WRONG_0011011_EDGE3_FOUR_WHOLE_MIXED_FAMILIES_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        3,
+        "+-",
+        "OO"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        0,
+        -1025,
+        16031,
+        0,
+        63457
+      ],
+      "target_unsigned_label_numerators": [
+        0,
+        -2112,
+        29090,
+        0,
+        44642
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          3,
+          "+-",
+          "OO"
+        ],
+        [
+          5,
+          "+-",
+          "OO"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_POSITIVE_NEGATIVE_OUTER_QUARTER_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        3,
+        "-+",
+        "CC"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        22042,
+        -34492,
+        98439,
+        -5334,
+        0
+      ],
+      "target_unsigned_label_numerators": [
+        4970,
+        0,
+        94831,
+        0,
+        0
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          3,
+          "-+",
+          "CC"
+        ],
+        [
+          5,
+          "-+",
+          "CC"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_ALL_CORE_CORE_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        3,
+        "-+",
+        "CO"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        22042,
+        -34492,
+        98439,
+        -5334,
+        0
+      ],
+      "target_unsigned_label_numerators": [
+        3965,
+        0,
+        385510,
+        -149748,
+        -189442
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          3,
+          "-+",
+          "CO"
+        ],
+        [
+          5,
+          "-+",
+          "OC"
+        ]
+      ],
+      "proof_manuscripts": [
+        "m5_agent/hand_conversion/WRONG_0011011_EDGE3_NEGATIVE_CORE_TO_POSITIVE_OUTER_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        3,
+        "-+",
+        "OC"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        1670,
+        0,
+        242322,
+        -91744,
+        -95769
+      ],
+      "target_unsigned_label_numerators": [
+        4970,
+        0,
+        94831,
+        0,
+        0
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          3,
+          "-+",
+          "OC"
+        ],
+        [
+          5,
+          "-+",
+          "CO"
+        ]
+      ],
+      "proof_manuscripts": [
+        "m5_agent/hand_conversion/WRONG_0011011_EDGE3_OUTER_TO_POSITIVE_CORE_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        3,
+        "-+",
+        "OO"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        1670,
+        0,
+        242322,
+        -91744,
+        -95769
+      ],
+      "target_unsigned_label_numerators": [
+        3965,
+        0,
+        385510,
+        -149748,
+        -189442
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          3,
+          "-+",
+          "OO"
+        ],
+        [
+          5,
+          "-+",
+          "OO"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_EDGE3_OPPOSITE_AXES12_HAND_PROOF.md",
+        "proof_integration/WRONG_0011011_EDGE3_OPPOSITE_AXES34_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        3,
+        "--",
+        "CC"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        22042,
+        -34492,
+        98439,
+        -5334,
+        0
+      ],
+      "target_unsigned_label_numerators": [
+        16823,
+        0,
+        62312,
+        0,
+        0
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          3,
+          "--",
+          "CC"
+        ],
+        [
+          5,
+          "++",
+          "CC"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_ALL_CORE_CORE_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        3,
+        "--",
+        "CO"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        22042,
+        -34492,
+        98439,
+        -5334,
+        0
+      ],
+      "target_unsigned_label_numerators": [
+        0,
+        -2112,
+        29090,
+        0,
+        44642
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          3,
+          "--",
+          "CO"
+        ],
+        [
+          5,
+          "++",
+          "OC"
+        ]
+      ],
+      "proof_manuscripts": [
+        "m5_agent/hand_conversion/WRONG_0011011_EDGE3_FOUR_WHOLE_MIXED_FAMILIES_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        3,
+        "--",
+        "OC"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        1670,
+        0,
+        242322,
+        -91744,
+        -95769
+      ],
+      "target_unsigned_label_numerators": [
+        16823,
+        0,
+        62312,
+        0,
+        0
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          3,
+          "--",
+          "OC"
+        ],
+        [
+          5,
+          "++",
+          "CO"
+        ]
+      ],
+      "proof_manuscripts": [
+        "m5_agent/hand_conversion/WRONG_0011011_EDGE3_OUTER_TO_NEGATIVE_CORE_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        3,
+        "--",
+        "OO"
+      ],
+      "quarter": 1,
+      "source_unsigned_label_numerators": [
+        1670,
+        0,
+        242322,
+        -91744,
+        -95769
+      ],
+      "target_unsigned_label_numerators": [
+        0,
+        -2112,
+        29090,
+        0,
+        44642
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          3,
+          "--",
+          "OO"
+        ],
+        [
+          5,
+          "++",
+          "OO"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_EDGE3_NEGATIVE_OUTER_QUARTER_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        4,
+        "++",
+        "CC"
+      ],
+      "quarter": 0,
+      "source_unsigned_label_numerators": [
+        4970,
+        0,
+        94831,
+        0,
+        0
+      ],
+      "target_unsigned_label_numerators": [
+        16823,
+        0,
+        62312,
+        0,
+        0
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          4,
+          "++",
+          "CC"
+        ],
+        [
+          4,
+          "--",
+          "CC"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_ALL_CORE_CORE_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        4,
+        "++",
+        "CO"
+      ],
+      "quarter": 0,
+      "source_unsigned_label_numerators": [
+        4970,
+        0,
+        94831,
+        0,
+        0
+      ],
+      "target_unsigned_label_numerators": [
+        0,
+        -2112,
+        29090,
+        0,
+        44642
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          4,
+          "++",
+          "CO"
+        ],
+        [
+          4,
+          "--",
+          "OC"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_SAME_SIGN_MIXED_ZERO_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        4,
+        "++",
+        "OC"
+      ],
+      "quarter": 0,
+      "source_unsigned_label_numerators": [
+        3965,
+        0,
+        385510,
+        -149748,
+        -189442
+      ],
+      "target_unsigned_label_numerators": [
+        16823,
+        0,
+        62312,
+        0,
+        0
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          4,
+          "++",
+          "OC"
+        ],
+        [
+          4,
+          "--",
+          "CO"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_SAME_SIGN_MIXED_ZERO_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        4,
+        "++",
+        "OO"
+      ],
+      "quarter": 0,
+      "source_unsigned_label_numerators": [
+        3965,
+        0,
+        385510,
+        -149748,
+        -189442
+      ],
+      "target_unsigned_label_numerators": [
+        0,
+        -2112,
+        29090,
+        0,
+        44642
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          4,
+          "++",
+          "OO"
+        ],
+        [
+          4,
+          "--",
+          "OO"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_SAME_OUTER_ZERO_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        4,
+        "+-",
+        "CC"
+      ],
+      "quarter": 0,
+      "source_unsigned_label_numerators": [
+        4970,
+        0,
+        94831,
+        0,
+        0
+      ],
+      "target_unsigned_label_numerators": [
+        4970,
+        0,
+        94831,
+        0,
+        0
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          4,
+          "+-",
+          "CC"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_ALL_CORE_CORE_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        4,
+        "+-",
+        "CO"
+      ],
+      "quarter": 0,
+      "source_unsigned_label_numerators": [
+        4970,
+        0,
+        94831,
+        0,
+        0
+      ],
+      "target_unsigned_label_numerators": [
+        3965,
+        0,
+        385510,
+        -149748,
+        -189442
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          4,
+          "+-",
+          "CO"
+        ],
+        [
+          4,
+          "+-",
+          "OC"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_OPPOSITE_MIXED_ZERO_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "canonical_pair": [
+        4,
+        "+-",
+        "OO"
+      ],
+      "quarter": 0,
+      "source_unsigned_label_numerators": [
+        3965,
+        0,
+        385510,
+        -149748,
+        -189442
+      ],
+      "target_unsigned_label_numerators": [
+        3965,
+        0,
+        385510,
+        -149748,
+        -189442
+      ],
+      "label_denominator": 100000,
+      "orbit": [
+        [
+          4,
+          "+-",
+          "OO"
+        ]
+      ],
+      "proof_manuscripts": [
+        "proof_integration/WRONG_0011011_SYMMETRIC_OUTER_WHOLE_ANGLE_HAND_PROOF.md"
+      ],
+      "retained_axes_covered": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ]
+}

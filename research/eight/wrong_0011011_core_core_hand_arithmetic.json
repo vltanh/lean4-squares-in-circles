@@ -1,0 +1,215 @@
+{
+  "status": "PASS",
+  "strict_comparisons": 52,
+  "scope": "All core/core cases only; no outer or mixed claim.",
+  "checks": [
+    {
+      "name": "sqrt2 lower",
+      "positive_reserve": "87541199831/10000000000000000000000"
+    },
+    {
+      "name": "sqrt2 upper",
+      "positive_reserve": "48825378161/2500000000000000000000"
+    },
+    {
+      "name": "atan side minimum reserve",
+      "positive_reserve": "19054878031137673550071209457/875000000000000000000000000000000"
+    },
+    {
+      "name": "diagonal lower",
+      "positive_reserve": "4079/800000000000"
+    },
+    {
+      "name": "diagonal upper",
+      "positive_reserve": "5881/1200000000000"
+    },
+    {
+      "name": "diagonal above .55",
+      "positive_reserve": "223139/25000000"
+    },
+    {
+      "name": "corner second derivative numerator",
+      "positive_reserve": "11/6"
+    },
+    {
+      "name": "nonaffine correction negative",
+      "positive_reserve": "5513/3000000"
+    },
+    {
+      "name": "side radius squared below .64",
+      "positive_reserve": "179/3600"
+    },
+    {
+      "name": "corner radius squared below .64",
+      "positive_reserve": "27367965643/1800000000000"
+    },
+    {
+      "name": "gap 1.35 cannot separate incircles",
+      "positive_reserve": "117720971007671/358400000000000000"
+    },
+    {
+      "name": "pi above 3.14",
+      "positive_reserve": "84051185206996125341/52774336599893261718750"
+    },
+    {
+      "name": "pi below 355/113",
+      "positive_reserve": "4525115621373289/16965192412869873046875"
+    },
+    {
+      "name": "two-zero sign inference",
+      "positive_reserve": "391/11300"
+    },
+    {
+      "name": "exceptional quarter angle",
+      "positive_reserve": "84051185206996125341/105548673199786523437500"
+    },
+    {
+      "name": "role 0 sign 1 slope positive",
+      "positive_reserve": "103981/100000"
+    },
+    {
+      "name": "role 0 sign 1 slope at most 8/7",
+      "positive_reserve": "72133/700000"
+    },
+    {
+      "name": "role 0 sign -1 slope positive",
+      "positive_reserve": "63607/100000"
+    },
+    {
+      "name": "role 0 sign -1 slope at most 8/7",
+      "positive_reserve": "354751/700000"
+    },
+    {
+      "name": "role 1 sign 1 slope positive",
+      "positive_reserve": "15783/25000"
+    },
+    {
+      "name": "role 1 sign 1 slope at most 8/7",
+      "positive_reserve": "89519/175000"
+    },
+    {
+      "name": "role 1 sign -1 slope positive",
+      "positive_reserve": "15783/25000"
+    },
+    {
+      "name": "role 1 sign -1 slope at most 8/7",
+      "positive_reserve": "89519/175000"
+    },
+    {
+      "name": "role 3 sign 1 slope positive",
+      "positive_reserve": "1303/1250"
+    },
+    {
+      "name": "role 3 sign 1 slope at most 8/7",
+      "positive_reserve": "879/8750"
+    },
+    {
+      "name": "role 4 sign 1 slope positive",
+      "positive_reserve": "94831/100000"
+    },
+    {
+      "name": "role 4 sign 1 slope at most 8/7",
+      "positive_reserve": "136183/700000"
+    },
+    {
+      "name": "role 4 sign -1 slope positive",
+      "positive_reserve": "7789/12500"
+    },
+    {
+      "name": "role 4 sign -1 slope at most 8/7",
+      "positive_reserve": "45477/87500"
+    },
+    {
+      "name": "nonaffine core slope positive",
+      "positive_reserve": "98439/100000"
+    },
+    {
+      "name": "nonaffine core slope at most 8/7",
+      "positive_reserve": "110927/700000"
+    },
+    {
+      "name": "edge 0 signs 1,1 printed bound",
+      "positive_reserve": "2304198567/282500000000000"
+    },
+    {
+      "name": "edge 0 signs 1,1 above .91",
+      "positive_reserve": "4147/100000"
+    },
+    {
+      "name": "edge 0 signs 1,-1 printed bound",
+      "positive_reserve": "229080891/282500000000000"
+    },
+    {
+      "name": "edge 0 signs 1,-1 above .91",
+      "positive_reserve": "1/25000"
+    },
+    {
+      "name": "edge 2 signs -1,1 printed bound",
+      "positive_reserve": "1/100000"
+    },
+    {
+      "name": "edge 2 signs -1,1 above .91",
+      "positive_reserve": "45323/100000"
+    },
+    {
+      "name": "edge 2 signs -1,-1 printed bound",
+      "positive_reserve": "2690019007519101863/169500000000000000000000"
+    },
+    {
+      "name": "edge 2 signs -1,-1 above .91",
+      "positive_reserve": "20609/100000"
+    },
+    {
+      "name": "edge 3 signs -1,-1 printed bound",
+      "positive_reserve": "1355808469/105937500000000"
+    },
+    {
+      "name": "edge 3 signs -1,-1 above .91",
+      "positive_reserve": "3797/25000"
+    },
+    {
+      "name": "edge 3 signs -1,1 printed bound",
+      "positive_reserve": "1/300000"
+    },
+    {
+      "name": "edge 3 signs -1,1 above .91",
+      "positive_reserve": "9277/25000"
+    },
+    {
+      "name": "edge 3 signs 1,-1 printed bound",
+      "positive_reserve": "84051185206996125341/105548673199786523437500"
+    },
+    {
+      "name": "edge 3 signs 1,-1 above .91",
+      "positive_reserve": "5687/50000"
+    },
+    {
+      "name": "edge 3 signs 1,1 printed bound",
+      "positive_reserve": "20388221/3531250000000"
+    },
+    {
+      "name": "edge 3 signs 1,1 above .91",
+      "positive_reserve": "17303/100000"
+    },
+    {
+      "name": "edge 4 signs 1,1 printed bound",
+      "positive_reserve": "1827129517/282500000000000"
+    },
+    {
+      "name": "edge 4 signs 1,1 above .91",
+      "positive_reserve": "661/10000"
+    },
+    {
+      "name": "edge 4 signs 1,-1 printed bound",
+      "positive_reserve": "414629517/141250000000000"
+    },
+    {
+      "name": "edge 4 signs 1,-1 above .91",
+      "positive_reserve": "2867/100000"
+    },
+    {
+      "name": "whole core bound exceeds wrong-word gamma",
+      "positive_reserve": "247/20000"
+    }
+  ]
+}

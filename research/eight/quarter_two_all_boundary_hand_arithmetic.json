@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "scope": "all C/O signed jump-two source-axis branches",
+  "core_label_upper": "1243231/1500000",
+  "core_outer_target_B_upper": "233/300",
+  "outer_core_derivative_lower": "67/2000",
+  "cost_bounds": {
+    "nonnegative_marker_sign_pattern": "3119/2000",
+    "angle_at_least_thirteen_fifths": "209/250",
+    "source_secondary_target_outer": "591/400",
+    "source_negative_primary_core_outer": "1687/2000",
+    "source_negative_primary_outer_core": "4759/5000"
+  },
+  "critical_outer_outer_dependency": "JUMP_TWO_OUTER_OPPOSITE_HAND_PROOF.md",
+  "ring_axis_dependency": "cap and common-point backward-axis exclusion"
+}

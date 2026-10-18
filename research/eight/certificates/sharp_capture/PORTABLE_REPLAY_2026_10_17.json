@@ -1,0 +1,116 @@
+{
+  "status": "ALL THIRTEEN PORTABLE INTERFACE REPLAYS PASSED",
+  "member_count": 28211,
+  "commands": [
+    {
+      "command": [
+        "audit_capture/verify_sharp_pi_bound.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: exact Machin and alternating-series comparisons\n2*pi < 6283185307179586476925286767/1000000000000000000000000000\nThis rational upper bound exceeds 2*pi by less than 10^-27\n2*pi < 3141592653589793238462643383279503/500000000000000000000000000000000\nThis sharper rational upper bound exceeds 2*pi by less than 10^-33\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "global_attack/audit_long_two_core_cover.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: all32 closed exclusions cover the declared complements, with no domain gap\nPASS: reflection and maximum-core box interfaces match the exact input domains\nPASS: final box is exactly the terminal budget domain\nAudited pair inputs matched: 32 of 32\nIndependent binding/coverage audits: 32 of 32\nPending exact inputs: 0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "audit_capture/audit_all_outer_capture_cover.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: all45 closed exclusion domains cover the entire canonical all-O domain outside the terminal box\nPASS: every canonical-maximum truncation and rational input-domain inclusion\nPASS: final box exactly matches the terminal budget domain\nExact manifests: 45 /45; independent audits: 45 /45\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "global_attack/audit_one_core_cover.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: all46 closed exclusions cover the declared complements, with no domain gap\nPASS: two retained core phases, sequential prefixes, and conditional last cuts match\nPASS: both captured boxes lie in their frozen terminal budget domains\nAudited pair inputs matched: 46 of 46\nIndependent binding/coverage audits: 46 of 46\nPending exact inputs: 0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "global_attack/verify_long_terminal_angle_lift.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: all five aligned quarter-turn lifts are fixed\nPASS: named mixed-frame tilt lies strictly between1/10 and4/25\noutward exact enclosure, decimals for display: 0.10289676348694778 0.1503772470898711\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "audit_capture/verify_all_outer_terminal_angle_lift.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: all five aligned quarter-turn lifts are fixed\nPASS: named mixed-frame tilt lies strictly between1/10 and4/25\noutward exact enclosure, decimals for display: 0.10153282918635352 0.14624787771295664\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "global_attack/verify_endpoint_terminal_angles.py",
+        "global_attack/one_core_t_aligned_budget_v1.json",
+        "--capture-domain",
+        "global_attack/one_core_t_capture_target.json"
+      ],
+      "exit_code": 0,
+      "stdout": "NAMED TILT EXACT ENCLOSURE, approximate display: 0.10430682664489872 0.1548525029012073\nPASS: all five aligned quarter-turns fixed; named tilt in[1/10,4/25]\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "global_attack/verify_endpoint_terminal_angles.py",
+        "global_attack/one_core_g_aligned_budget_v1.json",
+        "--capture-domain",
+        "global_attack/one_core_g_capture_target.json"
+      ],
+      "exit_code": 0,
+      "stdout": "NAMED TILT EXACT ENCLOSURE, approximate display: 0.10327108418394779 0.13415503517201155\nPASS: all five aligned quarter-turns fixed; named tilt in[1/10,4/25]\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "global_attack/verify_broad_stationary_h2.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: 512 closed z cells cover[1/20,81/1000]\nPASS: opposite Fy signs on the affine corridor, with Fyy>7 throughout\nPASS: the stationary graph contains the exact candidate root\nPASS: -29/20<h2<-7/5 on the entire stationary graph\nh2 enclosure display: -1.4441725506270873 -1.4078179354190294\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "global_attack/verify_broad_reduced_curvature.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: reduced curvature Ftt-Fyt\u00b2/Fyy>1 on the full broad stationary corridor\nEnclosure display: 1.3347931021631632 1.483255941496291\nConsequently the stationary reduced F is strictly convex, with its candidate minimum0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "audit_capture/verify_broad_dual_coefficients_independently.py"
+      ],
+      "exit_code": 0,
+      "stdout": "INDEPENDENT EXACT BROAD DUAL COEFFICIENT AUDIT PASS\nAll327680 owner coefficients exceed9/500; Young sum<100; all norm/weight bounds pass.\nMinimum reserve display: 0.020211620988928595\nMaximum Young display: 93.58002073450173\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "global_attack/verify_one_core_projected_sliders.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: both exact outer-root bounds hold throughout the pullback q interval\nPASS: both projected T heights lie in[29/50,7/5]\nPASS: both eta intervals lie in[-1/2,37/100], using the certified broad h2 range\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "audit_capture/verify_all_outer_terminal_sliders.py"
+      ],
+      "exit_code": 0,
+      "stdout": "EXACT CONDITIONAL ALL-OUTER SLIDER AUDIT PASS\nT height: [1.363092857142857, 1.369407142857143]\nG eta: [-0.4779000000000001, -0.4214999999999999]\n",
+      "stderr": ""
+    }
+  ]
+}

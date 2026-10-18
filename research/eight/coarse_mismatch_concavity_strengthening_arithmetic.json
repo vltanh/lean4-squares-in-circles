@@ -1,0 +1,20 @@
+{
+  "status": "PASS_FIXED_RATIONAL_COMPARISONS",
+  "scope": "Conditional hand strengthening of the already proved S<2/5 coarse cyclic budget; no extra pair inequality is assumed.",
+  "gamma": "89727/100000",
+  "beta": "99/5000",
+  "cos_minus_sin_lower_on_0_to_2_over_5": "13/25",
+  "conclusion": "S<109/400",
+  "comparisons": [
+    {
+      "S_threshold": "109/400",
+      "width_lower_polynomial": "1917739110113386843531/16515072000000000000000",
+      "reserve_above_710_over_113": "3469086670939846509033/1036779520000000000000000000"
+    },
+    {
+      "S_threshold": "11/40",
+      "width_lower_polynomial": "64401110580983/550502400000000",
+      "reserve_above_710_over_113": "2123678636485607/103677952000000000000"
+    }
+  ]
+}

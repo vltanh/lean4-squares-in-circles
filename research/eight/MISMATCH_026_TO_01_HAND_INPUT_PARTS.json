@@ -1,0 +1,64 @@
+{
+  "format": "ordered byte-exact UTF-8 parts",
+  "outputs": [
+    {
+      "output": "MISMATCH_026_TO_01_AFFINE_HAND_DATA.json",
+      "bytes": 16218282,
+      "sha256": "3230d71cdb3f1aa513aa74de04dc49429bb6ff2759a115cd55d98b160e1fedf4",
+      "parts": [
+        {
+          "name": "MISMATCH_026_TO_01_AFFINE_HAND_DATA.part01",
+          "bytes": 5500000,
+          "sha256": "a1eb3465b5f441f49d0bb82ccdb89cf90839633eb62c5bfb856d7d7b2d3eb127"
+        },
+        {
+          "name": "MISMATCH_026_TO_01_AFFINE_HAND_DATA.part02",
+          "bytes": 5500000,
+          "sha256": "f751e80ea44ddfec41e95602d90bc7f9c25cefa2dfbfd5e77bf5fe34fbb4bbd9"
+        },
+        {
+          "name": "MISMATCH_026_TO_01_AFFINE_HAND_DATA.part03",
+          "bytes": 5218282,
+          "sha256": "c90433e7ccbca6f9ef9b41e18b6d9b9f88e7b43ab999ef0c8e966e3839ce847e"
+        }
+      ]
+    },
+    {
+      "output": "MISMATCH_026_TO_01_AFFINE_HAND_COMPACT_REPORT.json",
+      "bytes": 31132511,
+      "sha256": "9c0fcd59ed378dedf85e6134cc1bc5b7dee156ca781ef255b4564c9115a855ab",
+      "parts": [
+        {
+          "name": "MISMATCH_026_TO_01_AFFINE_HAND_COMPACT_REPORT.part01",
+          "bytes": 5500000,
+          "sha256": "234a60d3258e8c954ede58dd4f5c495e12e3664a21980247992808d4b01d05b2"
+        },
+        {
+          "name": "MISMATCH_026_TO_01_AFFINE_HAND_COMPACT_REPORT.part02",
+          "bytes": 5500000,
+          "sha256": "8a621d6710fbc3ca9da0349b83c2a61eaef6ee57ad09205404142fa751aa99d7"
+        },
+        {
+          "name": "MISMATCH_026_TO_01_AFFINE_HAND_COMPACT_REPORT.part03",
+          "bytes": 5500000,
+          "sha256": "5d871078f71b738e9f9ff04f9791b16e78c55793d3369c6a63f57d6fdfd8107b"
+        },
+        {
+          "name": "MISMATCH_026_TO_01_AFFINE_HAND_COMPACT_REPORT.part04",
+          "bytes": 5500000,
+          "sha256": "490d32eae2685863bcc01c89ddafdb1dea62fc62ceff61be668eb58e4048b340"
+        },
+        {
+          "name": "MISMATCH_026_TO_01_AFFINE_HAND_COMPACT_REPORT.part05",
+          "bytes": 5500000,
+          "sha256": "875d1bed00d3dda808002ddc54dcf3e8cb32212a7e723432b8cee4d797c922d0"
+        },
+        {
+          "name": "MISMATCH_026_TO_01_AFFINE_HAND_COMPACT_REPORT.part06",
+          "bytes": 3632511,
+          "sha256": "5941712f7b3a10623614b928d18c49ee78b3e26760b8d7ac35e985ce6e8e063c"
+        }
+      ]
+    }
+  ]
+}

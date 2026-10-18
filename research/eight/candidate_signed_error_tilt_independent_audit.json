@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "scope": "Independent signed-error disjunction, direct rational circle-dual evaluation, quartic reconstruction and complete tilt-tail cover",
+  "Q": "1957767069/500000000",
+  "epsilon": "1/1000",
+  "common_weight_bundles": 59,
+  "alternatives_per_bundle": 21,
+  "quartics": 1239,
+  "independently_recomputed_bernstein_coefficients": 6195,
+  "independent_sixth_identity_points": 1239,
+  "minimum_printed_coefficient": "40703/500000000000",
+  "closed_union": "[-3/8,1001/20000] union [2/25,3/8]",
+  "author_replay_byte_identical": true,
+  "sha256": {
+    "HAND_CANDIDATE_TILT_FROM_SIGNED_ERROR_VERTICES.md": "2eed8e78c79cb07d3533f50bcc308b6701faf06504c89a7dea240a25358fb491",
+    "verify_candidate_signed_error_tilt_duals.py": "05c4ed1b89ccaa16d2f44f4b0ad26408376fb921a5399fc647a1b1f245403d2f",
+    "candidate_tilt_signed_error_hand_data.json": "bc5305ef2b0b00e62b89259da64d8eedadfa93c71fcf1269110b29aeaae28bc1",
+    "candidate_tilt_signed_error_hand_arithmetic.json": "0a48e82cdb52296c2b44f45bad883800f6cdf6b3249111e2b79cf52d734c8c6d"
+  }
+}

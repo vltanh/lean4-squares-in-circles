@@ -1,0 +1,227 @@
+{
+  "status": "PASS",
+  "scope": "Six stated near-aligned OO quarter-one regimes only",
+  "independent_fraction_comparisons": 45,
+  "source_replay_comparisons": 80,
+  "source_replay_byte_identical": true,
+  "binding": [
+    {
+      "edge": 2,
+      "normalized_source_f": [
+        "-53489/100000",
+        "33147/100000",
+        "1417/1250",
+        "-9133/100000",
+        "44037/50000"
+      ]
+    },
+    {
+      "edge": 4,
+      "normalized_source_f": [
+        "-26531/50000",
+        "20967/100000",
+        "10381/12500",
+        "-3867/20000",
+        "9593/12500"
+      ]
+    },
+    {
+      "edge": 6,
+      "normalized_source_f": [
+        "-647/3125",
+        "10913/50000",
+        "5217/6250",
+        "0",
+        "47383/50000"
+      ]
+    }
+  ],
+  "hashes": {
+    "SHORT_WRONG_WORD_OUTER_QUARTER_ALIGNED_HAND_PROOF.md": "61eb49ece16e137f8c1e08aef122226359ffd88af70accd4d2037095d7df7992",
+    "verify_short_outer_quarter_aligned_hand.js": "5a54c483efd0c335fd57ec5d7ff14c60d421587286178bed3252e34f966aa45d",
+    "short_outer_quarter_aligned_hand_arithmetic.json": "69fbc4ba12f906a8498597d52e0432d5f97ecc4f8ea642ea3947d6f69a6c5363",
+    "short_hand_labels.json": "2113900b72530b6cb660e2a2b9f52d4fd3a54d793426978caa2167cd954a5051"
+  },
+  "checks": [
+    {
+      "name": "inactive e diagonal-zero infeasible",
+      "strict_reserve": "151/10000"
+    },
+    {
+      "name": "source f increases 0",
+      "strict_reserve": "80213/100000"
+    },
+    {
+      "name": "target e increases 0",
+      "strict_reserve": "80213/100000"
+    },
+    {
+      "name": "aligned curvature independently",
+      "strict_reserve": "438807541271/6964321000000"
+    },
+    {
+      "name": "aligned quadratic completion independently",
+      "strict_reserve": "193328638289380696706046570473249507016931675778966995684019319052570186774757565663858753540046720989311/10941534311275157233579914705959263810698860451956501543510357335160694101863785976181030273437500000000000000"
+    },
+    {
+      "name": "aligned derivative small-B 0",
+      "strict_reserve": "241507456006448915703734101/4778054959193014624853700000"
+    },
+    {
+      "name": "aligned small-B allowance independently 0",
+      "strict_reserve": "268300660399242192076258133064290823733647181566801256123/1121267030110534908289829544219733886718750000000000000000000"
+    },
+    {
+      "name": "linear target diagonal versus axial 0",
+      "strict_reserve": "3717743602090618999/10000000000000000000"
+    },
+    {
+      "name": "negative f diagonal speed 0:0:.15:0",
+      "strict_reserve": "5119699724807641957049868077299192960327709135861178587/13590332340139397742592000000000000000000000000000000000"
+    },
+    {
+      "name": "negative f diagonal speed 0:0:.15:.15",
+      "strict_reserve": "3354715655946074473236498880122846859453721111493729030965093019372644075280959279/7988258219322025756419551678955520000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "negative f diagonal speed 0:.15:.3:.15",
+      "strict_reserve": "2547952974561725153468108155364161409538339905652002478383580825173419424001473/7417055314533724805259864309760000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "negative f diagonal speed 0:.15:.3:.3",
+      "strict_reserve": "8440866781924211551117700571696225678297460043093666757693485455346887667/23826375265129409967554560000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "positive e initial derivative 0:0",
+      "strict_reserve": "33790011162337682946318449169/129058126439213000000000000000000"
+    },
+    {
+      "name": "positive e initial derivative 0:1/80",
+      "strict_reserve": "62727650186521818790002633911/32624221734012250000000000000000"
+    },
+    {
+      "name": "source f increases 1",
+      "strict_reserve": "62081/100000"
+    },
+    {
+      "name": "target e increases 1",
+      "strict_reserve": "62081/100000"
+    },
+    {
+      "name": "aligned monotonicity independently 1",
+      "strict_reserve": "13031/100000"
+    },
+    {
+      "name": "aligned endpoint independently 1",
+      "strict_reserve": "1385427005995091756517907607535000759730938542825591203/70079189381908431768114346513733367919921875000000000000000"
+    },
+    {
+      "name": "aligned derivative small-B 1",
+      "strict_reserve": "4212483678167826957450886357/14334164877579043874561100000"
+    },
+    {
+      "name": "aligned small-B allowance independently 1",
+      "strict_reserve": "23295012705616027560814911573396801519473971488412504381123/1121267030110534908289829544219733886718750000000000000000000"
+    },
+    {
+      "name": "linear target diagonal versus axial 1",
+      "strict_reserve": "2216460713387553077/10000000000000000000"
+    },
+    {
+      "name": "negative f diagonal speed 1:0:.15:0",
+      "strict_reserve": "401505362062796265898100583429640319551501054442372807/13590332340139397742592000000000000000000000000000000000"
+    },
+    {
+      "name": "negative f diagonal speed 1:0:.15:.15",
+      "strict_reserve": "494306052730170251343430048859063928832047554585243983821196440710906094862759019/7988258219322025756419551678955520000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "negative f diagonal speed 1:.15:.3:.15",
+      "strict_reserve": "100381205492862891822357453326729759779592134022904230061296001813107824630853/7417055314533724805259864309760000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "negative f diagonal speed 1:.15:.3:.3",
+      "strict_reserve": "515495481781609877538536978562643841584531908256778419754923870704986687/23826375265129409967554560000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "positive e initial derivative 1:0",
+      "strict_reserve": "707046753516729342649010559831/25811625287842600000000000000000"
+    },
+    {
+      "name": "positive e initial derivative 1:1/80",
+      "strict_reserve": "173843654422474230841940237089/6524844346802450000000000000000"
+    },
+    {
+      "name": "source f increases 2",
+      "strict_reserve": "30823/50000"
+    },
+    {
+      "name": "target e increases 2",
+      "strict_reserve": "30823/50000"
+    },
+    {
+      "name": "aligned monotonicity independently 2",
+      "strict_reserve": "5647/50000"
+    },
+    {
+      "name": "aligned endpoint independently 2",
+      "strict_reserve": "2274582707370868583883387443812110469300039946448849187/280316757527633727072457386054933471679687500000000000000000"
+    },
+    {
+      "name": "aligned derivative small-B 2",
+      "strict_reserve": "3385117987862829136194582133/11134574503119435866846568750"
+    },
+    {
+      "name": "aligned small-B allowance independently 2",
+      "strict_reserve": "11508006072730106275737663775172156737899978568776930901499/560633515055267454144914772109866943359375000000000000000000"
+    },
+    {
+      "name": "linear target diagonal versus axial 2",
+      "strict_reserve": "305242237151226823/625000000000000000"
+    },
+    {
+      "name": "negative f diagonal speed 2:0:.15:0",
+      "strict_reserve": "29169415970240854246969034297213158311366535216085239/970738024295671267328000000000000000000000000000000000"
+    },
+    {
+      "name": "negative f diagonal speed 2:0:.15:.15",
+      "strict_reserve": "35604917945884535918503557178959530270411411905866716860120643732000124094579163/570589872808716125458539405639680000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "negative f diagonal speed 2:.15:.3:.15",
+      "strict_reserve": "6396832426792934891076795718433237204715341406618708473060121500387995354581/529789665323837486089990307840000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "negative f diagonal speed 2:.15:.3:.3",
+      "strict_reserve": "34317268119855004994852124425853759077845427096338964399018186408597999/1701883947509243569111040000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "positive e initial derivative 2:0",
+      "strict_reserve": "16332719104638789/1290581264392130000"
+    },
+    {
+      "name": "positive e initial derivative 2:1/80",
+      "strict_reserve": "204057695597367891/13049688693604900000"
+    },
+    {
+      "name": "negative f interior speed independently",
+      "strict_reserve": "266738217093987727712213660053/43964722051205047701895450000000"
+    },
+    {
+      "name": "positive f interior speed independently",
+      "strict_reserve": "687/2000"
+    },
+    {
+      "name": "negative e active speed independently",
+      "strict_reserve": "87568312136352433150911077089247533423697/281600000000000000000000000000000000000000"
+    },
+    {
+      "name": "negative e diagonal speed independently",
+      "strict_reserve": "169265665459911265868727006588212679460996951/555825304782985782584549114220949649135000000"
+    },
+    {
+      "name": "positive e speed product decreases independently",
+      "strict_reserve": "416299/2143750"
+    }
+  ]
+}
