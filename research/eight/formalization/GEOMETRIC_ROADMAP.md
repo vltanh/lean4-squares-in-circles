@@ -139,6 +139,12 @@ whole-domain pair arguments, then the seven quarter-word classes.
 No proof about the weighted graph discharges an inequality for actual
 pairs of squares. Track the combinatorial and geometric changes separately.
 
+**G4.1 implemented:** the seven-walk enumeration in `Frames.lean` has
+been replaced by two alternating vertex potentials and 32 edge comparisons.
+The proof, including its sharp weighted-graph witness, is in
+[`ODD_CYCLE_GEOMETRY.md`](ODD_CYCLE_GEOMETRY.md). The continuous pair and
+quarter-word gates remain open; the new source has not been compiled.
+
 ## G5 — Integration and final acceptance: open
 
 For each established replacement:

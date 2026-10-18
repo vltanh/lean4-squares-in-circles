@@ -11,9 +11,10 @@ Source: `HAND_EXTERIOR_FRAME_CONCENTRATION.md`. The matrix here is the
 completed **hand** matrix, scaled by 10,000. It is deliberately distinct
 from the historical dyadic certificate matrix.
 
-The finite walk theorem quantifies over all 4^7 words. The continuous pair
-premises remain explicit in the summation theorem: the finite walk fact is
-not used as a substitute for a continuous pair proof.
+The finite walk theorem is proved by two alternating vertex potentials.
+Only the sixteen entries of the four-type matrix are checked; there is no
+enumeration of the 4^7 words. The continuous pair premises remain explicit
+in the summation theorem.
 
 Uncompiled draft. All finite arithmetic uses ordinary kernel reduction.
 -/
@@ -104,13 +105,76 @@ def handGammaNumerator : Fin 4 → Fin 4 → ℕ :=
 
 def handGamma (i j : Fin 4) : ℝ := handGammaNumerator i j / 10000
 
-set_option maxRecDepth 200000 in
-set_option maxHeartbeats 0 in
-/-- Complete finite seven-walk enumeration; no native evaluator enters the
-trust boundary. It includes constant walks, repeated vertices, and every loop. -/
+/-! The least edge cost is 8833. Lift the four labels to the two parities
+of a walk. The following eight integers are vertex potentials on that lift.
+Every edge pays at least its potential increase. On an odd closed walk the
+parity changes, leaving a surplus 265 at a non-middle vertex. A walk made
+only of middle vertices is handled directly. -/
+
+private def handEvenPotential : Fin 4 → ℤ := ![265, 265, 172, 0]
+private def handOddPotential : Fin 4 → ℤ := ![0, 0, 93, 265]
+
+private theorem hand_potential_step (i j : Fin 4) :
+    (8833 : ℤ) + handOddPotential j - handEvenPotential i ≤
+      (handGammaNumerator i j : ℤ) ∧
+    (8833 : ℤ) + handEvenPotential j - handOddPotential i ≤
+      (handGammaNumerator i j : ℤ) := by
+  fin_cases i <;> fin_cases j <;>
+    norm_num [handGammaNumerator, handEvenPotential, handOddPotential]
+
+private theorem hand_seven_walk_potentials (τ : Vertex → Fin 4) :
+    (61831 : ℤ) + handOddPotential (τ 0) - handEvenPotential (τ 0) ≤
+      ∑ i, (handGammaNumerator (τ i) (τ (next i)) : ℤ) ∧
+    (61831 : ℤ) + handEvenPotential (τ 0) - handOddPotential (τ 0) ≤
+      ∑ i, (handGammaNumerator (τ i) (τ (next i)) : ℤ) := by
+  have h01 := hand_potential_step (τ 0) (τ 1)
+  have h12 := hand_potential_step (τ 1) (τ 2)
+  have h23 := hand_potential_step (τ 2) (τ 3)
+  have h34 := hand_potential_step (τ 3) (τ 4)
+  have h45 := hand_potential_step (τ 4) (τ 5)
+  have h56 := hand_potential_step (τ 5) (τ 6)
+  have h60 := hand_potential_step (τ 6) (τ 0)
+  norm_num [Fin.sum_univ_succ, next]
+  constructor
+  · linarith [h01.1, h12.2, h23.1, h34.2, h45.1, h56.2, h60.1]
+  · linarith [h01.2, h12.1, h23.2, h34.1, h45.2, h56.1, h60.2]
+
+private theorem hand_seven_walk_nonmiddle (τ : Vertex → Fin 4)
+    (hτ : τ 0 ≠ 2) :
+    62096 ≤ ∑ i, handGammaNumerator (τ i) (τ (next i)) := by
+  have h := hand_seven_walk_potentials τ
+  have hc : τ 0 = 0 ∨ τ 0 = 1 ∨ τ 0 = 2 ∨ τ 0 = 3 := by omega
+  rcases hc with hc | hc | hc | hc
+  · have hh := h.2
+    norm_num [hc, handEvenPotential, handOddPotential] at hh
+    exact_mod_cast hh
+  · have hh := h.2
+    norm_num [hc, handEvenPotential, handOddPotential] at hh
+    exact_mod_cast hh
+  · exact False.elim (hτ hc)
+  · have hh := h.1
+    norm_num [hc, handEvenPotential, handOddPotential] at hh
+    exact_mod_cast hh
+
+private theorem hand_walk_rotation (τ : Vertex → Fin 4) (k : Vertex) :
+    (∑ i, handGammaNumerator (τ (i+k)) (τ (next i+k))) =
+      ∑ i, handGammaNumerator (τ i) (τ (next i)) := by
+  fin_cases k <;> norm_num [Fin.sum_univ_succ, next] <;> omega
+
+/-- The complete seven-walk bound from an odd-cycle potential argument.
+Repeated vertices and loops are included. Only a four-by-four edge check
+and telescoping of seven inequalities are used. -/
 theorem four_type_seven_walk_numerator :
     ∀ τ : Vertex → Fin 4, 62096 ≤ ∑ i, handGammaNumerator (τ i) (τ (next i)) := by
-  decide
+  intro τ
+  by_cases hm : ∀ i, τ i = 2
+  · norm_num [hm, handGammaNumerator, Fin.sum_univ_succ]
+  · push_neg at hm
+    obtain ⟨k, hk⟩ := hm
+    have hh := hand_seven_walk_nonmiddle (fun i => τ (i+k))
+      (by simpa using hk)
+    rw [hand_walk_rotation] at hh
+    exact hh
 
 theorem four_type_seven_walk (τ : Vertex → Fin 4) :
     3881 / 625 ≤ ∑ i, handGamma (τ i) (τ (next i)) := by
