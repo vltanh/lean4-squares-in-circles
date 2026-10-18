@@ -4,6 +4,7 @@ public import SquaresInCircles.Eight.ExactFamily.Analysis
 public import SquaresInCircles.Eight.ExactFamily.Weights
 public import SquaresInCircles.Eight.ExactFamily.Generated.StationaryLocalization
 public import SquaresInCircles.Eight.ExactFamily.TiltCurvature
+public import SquaresInCircles.Eight.ExactFamily.PositionLocalization
 
 /-!
 # The exact selected stationary configuration
@@ -185,9 +186,19 @@ theorem chain_eq_radical {d : Coordinates} (hd : d.IsChain) :
   cases d
   simp_all [radicalCoordinates,Coordinates.x₃,Coordinates.y₄]
 
+/-- Broad analytic localization: the entire stationary position range is
+obtained from one circle comparison and strict convexity. -/
+theorem stationary_geometric_position_bounds {d : Coordinates} (hd : d.IsStationary) :
+    87/100< -d.y ∧ -d.y<1 := by
+  constructor
+  · simpa only [FiveCornerGeometry.comparisonPosition] using
+      FiveCornerGeometry.stationary_coordinate_lower hd
+  · linarith [hd.y_lower]
+
 theorem stationary_local {d : Coordinates} (hd : d.IsStationary) :
     localBox.Mem ![d.q,d.y,d.z] := by
   have hc := chain_eq_radical hd.toIsChain
+  have hgeometry := stationary_geometric_position_bounds hd
   have hzden : 0 < 1-d.z^2 := by nlinarith [hd.z_pos,hd.z_lt_one]
   have hzsmall : d.z < 1/10 := by
     have ht := (div_lt_iff₀ hzden).mp hd.tilt_range
@@ -195,7 +206,7 @@ theorem stationary_local {d : Coordinates} (hd : d.IsStationary) :
   apply stationary_localization ![d.q,d.y,d.z]
   · intro i; fin_cases i <;> norm_num [initialBox,QInterval.Mem]
     · exact ⟨by nlinarith [hd.q_lower],hd.q_upper⟩
-    · exact ⟨hd.y_lower.le,hd.y_upper.le⟩
+    · exact ⟨hd.y_lower.le,by linarith [hgeometry.1]⟩
     · exact ⟨hd.z_pos.le,hzsmall.le⟩
   · intro i; fin_cases i
     · change familyValue d.q (d.y,d.z)=0

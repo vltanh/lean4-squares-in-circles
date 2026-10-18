@@ -89,6 +89,17 @@ function. It does not assume nonpositive defect. The root cover remains
 active in `Stationary`: the envelope and radius gates are still needed.
 These new Lean proof bodies remain uncompiled.
 
+**G1.2 position gate implemented:** one comparison position, `u=87/100`,
+and five circle-derived coefficient bounds give
+`F_u/(2 c²) ≤ -81/20000` throughout the complete radius and tilt strip.
+Strict convexity then places every stationary position to its right.
+`Stationary.stationary_geometric_position_bounds` connects this argument
+to the original stationary coordinates and is used in `stationary_local`.
+The same secant argument proves that a derivative-zero position is the
+global fixed-tilt minimum, including comparison with radical endpoints.
+The remaining envelope and radius gates still require proof; this
+checkpoint does not remove the root checker.
+
 ## G2 — Remove angular subdivisions by exact contact geometry: open
 
 For a signed half-angle parameter, a square's sine, cosine and width have
