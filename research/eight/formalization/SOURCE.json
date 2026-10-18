@@ -1,0 +1,17 @@
+{
+  "source_pr": 9,
+  "source_branch": "research/eight-proof",
+  "source_commit": "a21c91f54039e805a637e983bc612bd130f39ee7",
+  "source_tree": "1e5b7609e09b3132bfdef31561dea94ff07f39c5",
+  "main_baseline": "089a1cb83aeb40eea802375c1f35d3301fda06a3",
+  "lean_toolchain": "leanprover/lean4:v4.35.0-rc3",
+  "mathlib_revision": "c55e6e786f49471c72fbddbec5415808896aec1e",
+  "instruction": {
+    "compile_lean": false,
+    "run_ci": false,
+    "audit": false,
+    "deliverable": "uncompiled Lean source draft"
+  },
+  "history": "../PRE_SQUASH_COMMITS.json",
+  "history_human": "../PROGRESS_HISTORY.md"
+}
