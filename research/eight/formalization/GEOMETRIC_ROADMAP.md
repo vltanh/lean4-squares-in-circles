@@ -179,6 +179,15 @@ The proof, including its sharp weighted-graph witness, is in
 [`ODD_CYCLE_GEOMETRY.md`](ODD_CYCLE_GEOMETRY.md). The continuous pair and
 quarter-word gates remain open; the new source has not been compiled.
 
+**G4.2 core/core implemented:** `Arithmetic.CorePairGeometry` proves the
+entire core/core pair bound from center separation, two circle chords,
+and a uniform bound on the original vertex marker. `cycle_pair` now
+handles this case before finite dispatch. The four core/core recursive
+chart declarations, representing 32 source-axis/sign problems, have
+been deleted. The exact pair reserve is `233/15000`. The remaining
+21 chart-pair decisions and quarter-word exclusions are still active.
+See [`CORE_PAIR_GEOMETRY.md`](CORE_PAIR_GEOMETRY.md).
+
 ## G5 — Integration and final acceptance: open
 
 For each established replacement:

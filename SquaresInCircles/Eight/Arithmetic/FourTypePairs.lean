@@ -1,6 +1,7 @@
 module
 
 public import SquaresInCircles.Eight.Arithmetic.RealBox
+public import SquaresInCircles.Eight.Arithmetic.CorePairGeometry
 public import SquaresInCircles.Eight.BoundaryGeometry
 public import SquaresInCircles.Eight.Frames
 
@@ -13,7 +14,9 @@ closed core corner are kept as separate analytic charts; L, M and H are
 the three closed outer tangent ranges.  A vertex chooses its chart and
 sign once, and its resulting label is used on both incident edges.
 
-The finite problems below contain the actual radial square roots, signed
+The entire core/core entry is proved geometrically by center separation
+and a uniform marker bound in `CorePairGeometry`. The remaining finite
+problems below contain the actual radial square roots, signed
 labels, physical center gap, and original source-axis separating margin.
 No table consequence is an assumption of the continuous theorem.  The
 closed-box compiler can close a leaf only by excluding one of these
@@ -148,28 +151,12 @@ def domain (s t : Branch) : Box 3 := ![s.bBox,t.bBox,⟨-1,4⟩]
 the output of an executed checker. -/
 def depth : ℕ := 96
 
-/- The 25 declarations in the following block each bind all eight sign/
-source-axis choices to one ordered pair of analytic charts.  Thus the
-original 128 type/sign/source-axis branches are all represented; splitting
-the core curve increases the analytic chart count to 200. -/
+/- The 21 declarations in the following block each bind all eight sign/
+source-axis choices to one ordered pair of analytic charts. The four
+core/core chart pairs have been removed: their 32 source-axis branches
+are replaced by the whole-domain geometric theorem in `cycle_pair`. -/
 
 -- BEGIN FINITE FOUR-TYPE PROOF SCRIPTS
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem coreSide_coreSide_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .coreSide .coreSide p r four)
-        (domain .coreSide .coreSide)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem coreSide_coreCorner_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .coreSide .coreCorner p r four)
-        (domain .coreSide .coreCorner)=true := by
-  decide
 
 set_option maxRecDepth 2000000 in
 set_option maxHeartbeats 0 in
@@ -193,22 +180,6 @@ theorem coreSide_high_certificates :
     ∀ p r four : Bool,
       certify depth (problem .coreSide .high p r four)
         (domain .coreSide .high)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem coreCorner_coreSide_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .coreCorner .coreSide p r four)
-        (domain .coreCorner .coreSide)=true := by
-  decide
-
-set_option maxRecDepth 2000000 in
-set_option maxHeartbeats 0 in
-theorem coreCorner_coreCorner_certificates :
-    ∀ p r four : Bool,
-      certify depth (problem .coreCorner .coreCorner p r four)
-        (domain .coreCorner .coreCorner)=true := by
   decide
 
 set_option maxRecDepth 2000000 in
@@ -355,16 +326,17 @@ theorem high_high_certificates :
         (domain .high .high)=true := by
   decide
 
-theorem source_axis_certificates (s t : Branch) (p r four : Bool) :
+theorem source_axis_certificates (s t : Branch) (p r four : Bool)
+    (hnon : s.type ≠ 0 ∨ t.type ≠ 0) :
     certify depth (problem s t p r four) (domain s t)=true := by
   cases s <;> cases t
-  · exact coreSide_coreSide_certificates p r four
-  · exact coreSide_coreCorner_certificates p r four
+  · rcases hnon with h | h <;> exact False.elim (h rfl)
+  · rcases hnon with h | h <;> exact False.elim (h rfl)
   · exact coreSide_low_certificates p r four
   · exact coreSide_middle_certificates p r four
   · exact coreSide_high_certificates p r four
-  · exact coreCorner_coreSide_certificates p r four
-  · exact coreCorner_coreCorner_certificates p r four
+  · rcases hnon with h | h <;> exact False.elim (h rfl)
+  · rcases hnon with h | h <;> exact False.elim (h rfl)
   · exact coreCorner_low_certificates p r four
   · exact coreCorner_middle_certificates p r four
   · exact coreCorner_high_certificates p r four
@@ -497,13 +469,15 @@ theorem gamma_symmetric (s t : Branch) :
     handGamma t.type s.type=handGamma s.type t.type := by
   cases s <;> cases t <;> norm_num [Branch.type,handGamma,handGammaNumerator]
 
-/-- Soundness of each source-axis problem, on every point of its full
-closed state box and its closed physical angular domain. -/
+/-- Soundness for each remaining source-axis problem, on every point of
+its full closed state box and closed physical angular domain. Core/core
+actual pairs are handled directly by `CorePairGeometry.core_pair_cost`. -/
 theorem source_pair (s t : State) (four : Bool) (φ : ℝ)
     (hφ : -1 ≤ φ ∧ φ ≤ 4)
     (hgap : 19/25 ≤ s.gap t φ ∧ s.gap t φ ≤ 3*Real.pi/4)
     (haxis : 0 ≤ SquaresInCircles.Eight.forwardMargin (sourceAxis four)
-      s.a s.b t.a t.b (sign s.positive) (sign t.positive) φ) :
+      s.a s.b t.a t.b (sign s.positive) (sign t.positive) φ)
+    (hnon : s.branch.type ≠ 0 ∨ t.branch.type ≠ 0) :
     handGamma s.branch.type t.branch.type < s.cost t φ := by
   let env : Fin 3 → ℝ := ![s.b,t.b,φ]
   let a : Expr 3 := radialExpr s.branch (.var 0)
@@ -540,7 +514,7 @@ theorem source_pair (s t : State) (four : Bool) (φ : ℝ)
     · exact hcuts e he
     · exact hCuts e he
   have h := RealBox.certify_sound
-    (source_axis_certificates s.branch t.branch s.positive t.positive four) env hbox hhyps
+    (source_axis_certificates s.branch t.branch s.positive t.positive four hnon) env hbox hhyps
   change 0 < Expr.eval env (costExpr s.branch t.branch s.positive t.positive
     a (.var 0) A (.var 1) (.var 2)) at h
   rw [costExpr_eval,ha,hA] at h
@@ -552,10 +526,11 @@ theorem pair (s t : State) (j : Fin 4) (φ : ℝ)
     (hφ : -1 ≤ φ ∧ φ ≤ 4)
     (hgap : 19/25 ≤ s.gap t φ ∧ s.gap t φ ≤ 3*Real.pi/4)
     (haxis : 0 ≤ SquaresInCircles.Eight.forwardMargin j
-      s.a s.b t.a t.b (sign s.positive) (sign t.positive) φ) :
+      s.a s.b t.a t.b (sign s.positive) (sign t.positive) φ)
+    (hnon : s.branch.type ≠ 0 ∨ t.branch.type ≠ 0) :
     handGamma s.branch.type t.branch.type < s.cost t φ := by
   fin_cases j
-  · exact source_pair s t false φ hφ hgap haxis
+  · exact source_pair s t false φ hφ hgap haxis hnon
   · have hm : 0 ≤ SquaresInCircles.Eight.forwardMargin (sourceAxis true)
         t.flip.a t.flip.b s.flip.a s.flip.b
         (sign t.flip.positive) (sign s.flip.positive) φ := by
@@ -563,6 +538,7 @@ theorem pair (s t : State) (j : Fin 4) (φ : ℝ)
         sub_eq_add_neg,mul_add,add_mul,mul_comm,mul_left_comm,mul_assoc,
         add_comm,add_left_comm,add_assoc] using haxis
     have hh := source_pair t.flip s.flip true φ hφ (by simpa using hgap) hm
+      (by simpa only [State.flip] using hnon.symm)
     change handGamma t.branch.type s.branch.type < t.flip.cost s.flip φ at hh
     rw [State.reverse_cost,gamma_symmetric] at hh
     exact hh
@@ -573,10 +549,11 @@ theorem pair (s t : State) (j : Fin 4) (φ : ℝ)
         sub_eq_add_neg,mul_add,add_mul,mul_comm,mul_left_comm,mul_assoc,
         add_comm,add_left_comm,add_assoc] using haxis
     have hh := source_pair t.flip s.flip false φ hφ (by simpa using hgap) hm
+      (by simpa only [State.flip] using hnon.symm)
     change handGamma t.branch.type s.branch.type < t.flip.cost s.flip φ at hh
     rw [State.reverse_cost,gamma_symmetric] at hh
     exact hh
-  · exact source_pair s t true φ hφ hgap haxis
+  · exact source_pair s t true φ hφ hgap haxis hnon
 
 noncomputable def branchOf (C : BoundaryCycle Q0) (i : Vertex) : Branch :=
   match C.kind i with
@@ -584,6 +561,15 @@ noncomputable def branchOf (C : BoundaryCycle Q0) (i : Vertex) : Branch :=
   | .coreCorner => .coreCorner
   | .outer => if 4*C.b i ≤ C.a i then .low
       else if 7*C.b i ≤ 3*C.a i then .middle else .high
+
+theorem branchOf_core_iff (C : BoundaryCycle Q0) (i : Vertex) :
+    (branchOf C i).type=0 ↔ C.kind i ≠ .outer := by
+  cases hk : C.kind i with
+  | outer =>
+      simp only [branchOf,hk]
+      split_ifs <;> norm_num [Branch.type]
+  | coreSide => simp [branchOf,hk,Branch.type]
+  | coreCorner => simp [branchOf,hk,Branch.type]
 
 noncomputable def signOf (C : BoundaryCycle Q0) (i : Vertex) : Bool :=
   if C.sigma i=1 then true else false
@@ -655,6 +641,20 @@ theorem stateOf_offset (C : BoundaryCycle Q0) (i : Vertex) :
   rcases C.sigma_sign i with h | h <;>
     simp [h,neg_div,Real.arctan_neg]
 
+/-- The geometric proof uses exactly the same marker as both incident
+four-type inequalities, including the sign chosen at this vertex. -/
+theorem stateOf_core_label (C : BoundaryCycle Q0) (i : Vertex)
+    (hk : C.kind i ≠ .outer) :
+    (stateOf C i).signedLabel=C.sigma i*CorePairGeometry.label (C.a i) (C.b i) := by
+  cases he : C.kind i with
+  | outer => exact False.elim (hk he)
+  | coreSide =>
+      simp [State.signedLabel,stateOf,branchOf,he,signOf_spec,label,
+        CorePairGeometry.label,CorePairGeometry.K,CorePairGeometry.g]
+  | coreCorner =>
+      simp [State.signedLabel,stateOf,branchOf,he,signOf_spec,label,
+        CorePairGeometry.label,CorePairGeometry.K,CorePairGeometry.g]
+
 /-- The last edge includes its genuine full-turn winding. -/
 noncomputable def pairAngle (C : BoundaryCycle Q0) (i : Vertex) : ℝ :=
   C.canonicalAngle (next i)-C.canonicalAngle i+if i=6 then 2*Real.pi else 0
@@ -709,6 +709,16 @@ theorem cycle_pair (C : BoundaryCycle Q0) (i : Vertex) (j : Fin 4)
         (9/50)*periodicFrameCost (C.canonicalAngle (next i)-C.canonicalAngle i)+
         (C.alpha (next i)-(stateOf C (next i)).signedLabel)-
         (C.alpha i-(stateOf C i).signedLabel) := by
+  by_cases hcore : (branchOf C i).type=0 ∧ (branchOf C (next i)).type=0
+  · have hi := (branchOf_core_iff C i).mp hcore.1
+    have hn := (branchOf_core_iff C (next i)).mp hcore.2
+    have hh := CorePairGeometry.core_pair_cost C i hi hn
+      (C.canonicalAngle (next i)-C.canonicalAngle i)
+    rw [stateOf_core_label C i hi,stateOf_core_label C (next i) hn]
+    exact lt_trans
+      (by rw [hcore.1,hcore.2]; norm_num [handGamma,handGammaNumerator]) hh
+  have hnon : (branchOf C i).type ≠ 0 ∨ (branchOf C (next i)).type ≠ 0 := by
+    tauto
   have hm := canonical_margin_identity j _ _ _ _ _ _ _ _ (pairAngle C i)
     (C.center_eq i) (C.center_eq (next i)) (pairAngle_trig C i).1 (pairAngle_trig C i).2
   have hmargin : 0 ≤ SquaresInCircles.Eight.forwardMargin j
@@ -723,6 +733,7 @@ theorem cycle_pair (C : BoundaryCycle Q0) (i : Vertex) (j : Fin 4)
     (pairAngle_mem C i)
     (by rw [hgap]; exact ⟨(boundary_gap_lower C le_rfl i).le,(boundary_gap_upper C le_rfl i).le⟩)
     (by simpa only [stateOf,signOf_spec] using hmargin)
+    (by simpa only [stateOf] using hnon)
   change handGamma (branchOf C i).type (branchOf C (next i)).type <
     (stateOf C i).cost (stateOf C (next i)) (pairAngle C i) at hh
   unfold State.cost at hh
