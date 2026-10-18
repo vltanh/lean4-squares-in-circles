@@ -24,8 +24,11 @@ source. `excluding_core_separators` also omits source-secondary rows with
 a nonpositive source sign and core target, and target-secondary rows with
 a nonnegative target sign and core source, at every angle. It also omits
 core/core quarter rows with positive source and negative target signs.
-Both forms check the historical input count and retained count, and elaborate only
-the retained constructors. The filter's soundness is not trusted:
+The `excluding_core_pairs` form additionally omits all core/core rows;
+`Candidate.GeometricCoreCoverage` supplies their direct charged cost from
+center separation and explicit endpoint bounds on the original labels.
+Each form checks the historical input count and retained count and
+elaborates only the retained constructors. The filter's soundness is not trusted:
 `Candidate.GeometricAffineCoverage` proves those actual geometric domains
 infeasible and checks complete coverage of every retained domain.
 
@@ -115,11 +118,13 @@ syntax (name := affineRowsGeometric) "affine_rows% " str " rows " num
   " excluding_zero_core_primary " num : term
 syntax (name := affineRowsCore) "affine_rows% " str " rows " num
   " excluding_core_separators " num : term
+syntax (name := affineRowsCorePairs) "affine_rows% " str " rows " num
+  " excluding_core_pairs " num : term
 
 /-- This filters by fixed geometric state/axis classes, never by row number,
 angle interval, multiplier, or a computed numerical success flag. -/
-private def excludedCoreSeparators (core positive : Std.HashMap Nat Bool)
-    (allCore : Bool) (r : Json) : TermElabM Bool := do
+private def omitCoreRows (core positive : Std.HashMap Nat Bool)
+    (allCore corePairs : Bool) (r : Json) : TermElabM Bool := do
   let edge ← nat (← field r "edge")
   let quarter ← nat (← field r "k")
   let axis ← nat (← field r "axis")
@@ -135,10 +140,11 @@ private def excludedCoreSeparators (core positive : Std.HashMap Nat Bool)
     sourceCore && targetCore && sourcePositive && !targetPositive
   return primary || (allCore &&
     ((axis == 1 && !sourcePositive && targetCore) ||
-     (axis == 3 && targetPositive && sourceCore) || oppositeQuarter))
+     (axis == 3 && targetPositive && sourceCore) || oppositeQuarter)) ||
+    (corePairs && sourceCore && targetCore)
 
 private def elaborateRows (path : TSyntax `str) (count : Nat)
-    (retainedCount? : Option Nat) (allCore : Bool)
+    (retainedCount? : Option Nat) (allCore corePairs : Bool)
     (expectedType? : Option Expr) : TermElabM Expr := do
   let content ← elabTerm (← `(include_str $path)) (some (mkConst ``String))
   let .lit (.strVal text) := content | throwError "affine input did not elaborate to text"
@@ -168,7 +174,7 @@ private def elaborateRows (path : TSyntax `str) (count : Nat)
     -- Validate even an omitted row, but do not embed its constructor.
     let literal ← rowSyntax ids gamma r
     let excluded ← if retainedCount?.isSome then
-      excludedCoreSeparators core positive allCore r else pure false
+      omitCoreRows core positive allCore corePairs r else pure false
     if !excluded then literals := literals.push literal
   if let some retainedCount := retainedCount? then
     if literals.size ≠ retainedCount then
@@ -180,16 +186,21 @@ private def elaborateRows (path : TSyntax `str) (count : Nat)
 
 @[term_elab affineRows] def elabAffineRows : TermElab := fun stx expectedType? => do
   let `(affine_rows% $path:str rows $count:num) := stx | throwUnsupportedSyntax
-  elaborateRows path count.getNat none false expectedType?
+  elaborateRows path count.getNat none false false expectedType?
 
 @[term_elab affineRowsGeometric] def elabAffineRowsGeometric : TermElab := fun stx expectedType? => do
   let `(affine_rows% $path:str rows $count:num excluding_zero_core_primary $retained:num) := stx |
     throwUnsupportedSyntax
-  elaborateRows path count.getNat (some retained.getNat) false expectedType?
+  elaborateRows path count.getNat (some retained.getNat) false false expectedType?
 
 @[term_elab affineRowsCore] def elabAffineRowsCore : TermElab := fun stx expectedType? => do
   let `(affine_rows% $path:str rows $count:num excluding_core_separators $retained:num) := stx |
     throwUnsupportedSyntax
-  elaborateRows path count.getNat (some retained.getNat) true expectedType?
+  elaborateRows path count.getNat (some retained.getNat) true false expectedType?
+
+@[term_elab affineRowsCorePairs] def elabAffineRowsCorePairs : TermElab := fun stx expectedType? => do
+  let `(affine_rows% $path:str rows $count:num excluding_core_pairs $retained:num) := stx |
+    throwUnsupportedSyntax
+  elaborateRows path count.getNat (some retained.getNat) true true expectedType?
 
 end SquaresInCircles.Eight.AffineDataReader

@@ -2,10 +2,11 @@ module
 
 public meta import SquaresInCircles.Eight.AffineDataReader
 public import SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.Meta
-public import SquaresInCircles.Eight.Candidate.GeometricAffineCoverage
+public import SquaresInCircles.Eight.Candidate.GeometricCoreCoverage
 
 /-! The historical input contains 129,031 rows. Whole-domain core
-separator exclusions remove 13,800 constructors from the active Lean payload.
+separator exclusions and direct core/core costs remove 18,606 constructors.
+The same vertex labels have explicit endpoint bounds and analytic curvature.
 Every retained domain keeps the original row semantics and closed coverage.
 All decision proofs below are uncompiled and have not been executed. -/
 
@@ -18,9 +19,9 @@ set_option maxHeartbeats 0
 
 def rows : List AffineTableRow :=
   affine_rows% "../../../../research/eight/CANDIDATE_COARSE_MISMATCH_HAND_DATA.json" rows 129031
-    excluding_core_separators 115231
+    excluding_core_pairs 110425
 
-theorem complete_row_count : rows.length = 115231 := by rfl
+theorem complete_row_count : rows.length = 110425 := by rfl
 
 theorem rows_valid : AffineCertificate.RowsValid meta rows := by decide
 
@@ -32,7 +33,7 @@ theorem all_rows_structural : ∀ r ∈ rows, r.Structural meta :=
 
 def cover : AffineCover := AffineCertificate.cover meta rows
 
-theorem cover_numeric : Candidate.GeometricAffine.NumericValid cover meta rows := by decide
+theorem cover_numeric : Candidate.GeometricCoreCoverage.NumericValid cover meta rows := by decide
 
 theorem word_matches : ∀ i, (meta.word i:ℝ)=(Candidate.word i:ℝ) := by
   intro i; fin_cases i <;> norm_num [meta,Candidate.word]
@@ -45,7 +46,7 @@ noncomputable def charged_bound (C : BoundaryCycle (meta.radius:ℝ))
     (haxes : ∀ i j, (forwardAxis j).Feasible (C.square i) (C.square (next i)) →
       ForwardAxis.ofIndex j∈meta.allowedAxes i) :
     Candidate.ChargedBound C F β (fun i => (meta.target i:ℝ)) :=
-  Candidate.GeometricAffine.chargedBound cover_numeric all_row_claims C F β
+  Candidate.GeometricCoreCoverage.chargedBound cover_numeric all_row_claims C F β
     word_matches hcharge hcuts hdiff haxes
 
 end SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch

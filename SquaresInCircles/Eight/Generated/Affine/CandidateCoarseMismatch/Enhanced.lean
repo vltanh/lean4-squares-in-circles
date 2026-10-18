@@ -28,7 +28,7 @@ theorem enhanced_claims : ∀ r ∈ enhancedRows, r.Claim enhancedMeta :=
   AffineCertificate.row_claims enhanced_rows_valid
 
 theorem enhanced_cover_numeric :
-    Candidate.GeometricAffine.NumericValid cover enhancedMeta enhancedRows := by decide
+    Candidate.GeometricCoreCoverage.NumericValid cover enhancedMeta enhancedRows := by decide
 
 noncomputable def enhanced_charged_bound (C : BoundaryCycle (meta.radius:ℝ))
     (F : Candidate.Frame C) (β : ℝ)
@@ -38,7 +38,7 @@ noncomputable def enhanced_charged_bound (C : BoundaryCycle (meta.radius:ℝ))
     (haxes : ∀ i j, (forwardAxis j).Feasible (C.square i) (C.square (next i)) →
       ForwardAxis.ofIndex j∈meta.allowedAxes i) :
     Candidate.ChargedBound C F β (fun i => (enhancedMeta.target i:ℝ)) :=
-  Candidate.GeometricAffine.chargedBound enhanced_cover_numeric enhanced_claims C F β
+  Candidate.GeometricCoreCoverage.chargedBound enhanced_cover_numeric enhanced_claims C F β
     word_matches hcharge hcuts hdiff haxes
 
 end SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch

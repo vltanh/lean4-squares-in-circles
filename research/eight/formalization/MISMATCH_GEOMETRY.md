@@ -2,11 +2,13 @@
 
 ## Result and remaining scope
 
-Five complete geometric state/axis classes now remove **78,736 row
-constructors** across all ten affine tables. Their active payload is
-**581,634 rows**, down from 660,370. The coarse mismatch table contains
-**115,231 rows**, down from 129,031; the enhanced coarse bound shares
-that same 13,800-row removal.
+Whole-domain core geometry now removes **83,542 row constructors** across
+all ten affine tables. Their active payload is **576,828 rows**, down from
+660,370. The coarse mismatch table contains **110,425 rows**, down from
+129,031; the enhanced coarse bound shares that same 18,606-row removal.
+Five infeasible state/axis classes account for 78,736 removals. A direct
+cost proof for every coarse core/core pair removes another 4,806 active
+rows while preserving every original vertex label.
 
 On a zero-quarter edge a target-primary separator requires an outer
 target with primary coordinate greater than one, and a source-primary
@@ -31,6 +33,15 @@ state coverage, and closed angle-chain predicate. The historical research
 inputs remain intact. This is an active payload reduction, not a claim
 that the remaining coarse charged bound has become table-free.
 
+`GeometricCoreMarker.lean` supplies the whole coarse core/core cost from
+center separation and bounds on the original markers. Its finite gates
+are explicit: 496 endpoint-label inequalities on 124 existing core arcs,
+structural conditions on those arcs, and seven edge-budget comparisons
+with nonnegative-charge checks. `GeometricCoreCoverage.lean` selects each
+vertex label once, applies this direct cost to core/core pairs, and uses
+the original row proof for pairs with an outer endpoint. All 462 original
+coarse arc labels remain in use; none is replaced or refitted.
+
 The new table-free module
 `SquaresInCircles/Eight/Candidate/GeometricMismatch.lean` proves an exact
 contact-frontier reduction for **all four actual SAT axes**, both candidate
@@ -52,8 +63,9 @@ contact-root inequalities must still be proved uniformly over their two
 state parameters with one consistent potential per vertex. The primary
 and secondary exclusions each remove 152 disjoint cases from the 960
 semantic cases below. The opposite-sign quarter exclusion removes another
-32, leaving at most **624** before this remaining
-positivity work begins. All added Lean is an uncompiled draft, as requested.
+32, leaving at most 624. The complete core/core cost closes 160 more
+semantic cases, leaving at most **464 outer-endpoint cases** in the coarse
+state-positivity gate. All added Lean is an uncompiled draft, as requested.
 
 ## 1. The half-angle geometry
 
@@ -476,31 +488,35 @@ The notation
 
 ```lean
 affine_rows% "...CANDIDATE_COARSE_MISMATCH_HAND_DATA.json" rows 129031
-  excluding_core_separators 115231
+  excluding_core_pairs 110425
 ```
 
 checks both input and retained counts. It filters by the edge, original
 axis, radial kind, and transverse sign, with no list of excluded row identifiers or
 replacement coverage table. A filter mistake cannot establish coverage:
 the independent retained-domain predicate must still be proved.
+The coarse `excluding_core_pairs` form includes the five infeasibility
+classes and additionally omits all core/core rows. Its separate coverage
+kernel proves the direct cost for those feasible domains, as detailed
+in Section 7. The other nine tables retain `excluding_core_separators`.
 
 The metadata-only audit gives these active payload counts:
 
-| Affine table | Historical rows | Primary exclusions | Secondary exclusions | Opposite core quarter | Active rows |
-|---|---:|---:|---:|---:|---:|
-| Candidate coarse mismatch | 129,031 | 6,028 | 7,540 | 232 | 115,231 |
-| D upper | 24,197 | 2,445 | 3,219 | 232 | 18,301 |
-| G lower | 9,087 | 380 | 425 | 32 | 8,250 |
-| G upper | 9,796 | 349 | 442 | 48 | 8,957 |
-| H lower | 48,050 | 3,359 | 4,395 | 232 | 40,064 |
-| Mismatch 0.015 to 0.001 | 144,709 | 0 | 8,899 | 0 | 135,810 |
-| Mismatch 0.1 to 0.015 | 107,196 | 7,140 | 7,988 | 0 | 92,068 |
-| Mismatch 0.26 to 0.1 | 131,255 | 7,040 | 9,409 | 0 | 114,806 |
-| T lower | 49,971 | 3,281 | 4,512 | 464 | 41,714 |
-| T upper | 7,078 | 299 | 330 | 16 | 6,433 |
-| **Total** | **660,370** | **30,321** | **47,159** | **1,256** | **581,634** |
+| Affine table | Historical rows | Primary exclusions | Secondary exclusions | Opposite core quarter | Additional core cost | Active rows |
+|---|---:|---:|---:|---:|---:|---:|
+| Candidate coarse mismatch | 129,031 | 6,028 | 7,540 | 232 | 4,806 | 110,425 |
+| D upper | 24,197 | 2,445 | 3,219 | 232 | 0 | 18,301 |
+| G lower | 9,087 | 380 | 425 | 32 | 0 | 8,250 |
+| G upper | 9,796 | 349 | 442 | 48 | 0 | 8,957 |
+| H lower | 48,050 | 3,359 | 4,395 | 232 | 0 | 40,064 |
+| Mismatch 0.015 to 0.001 | 144,709 | 0 | 8,899 | 0 | 0 | 135,810 |
+| Mismatch 0.1 to 0.015 | 107,196 | 7,140 | 7,988 | 0 | 0 | 92,068 |
+| Mismatch 0.26 to 0.1 | 131,255 | 7,040 | 9,409 | 0 | 0 | 114,806 |
+| T lower | 49,971 | 3,281 | 4,512 | 464 | 0 | 41,714 |
+| T upper | 7,078 | 299 | 330 | 16 | 0 | 6,433 |
+| **Total** | **660,370** | **30,321** | **47,159** | **1,256** | **4,806** | **576,828** |
 
-All 78,736 removals delete whole angle chains. In all ten tables, the
+All 83,542 removals delete whole angle chains. In all ten tables, the
 ordered row records in every retained chain are identical to the
 historical records; only the row indices are renumbered by the unchanged
 `AffineCertificate.cover` constructor. The enhanced coarse bound maps
@@ -512,7 +528,146 @@ exactly: `.89727` becomes `89727/100000`, `-0.125` becomes `-125/1000`,
 and `19.9999997` becomes `199999997/10000000`. It parses only integer
 digits and emits integer-ratio syntax, with no floating-point conversion.
 
-## 7. What the old labels suggest, and what they do not establish
+## 7. The complete coarse core/core cost with unchanged labels
+
+For the label selected at a vertex, define its marker by
+
+\[
+ \psi=\sigma\arctan(b/a)-L(a,b).
+\]
+
+The physical angle identity gives the exact charged pair cost
+
+\[
+ \phi+L_s-L_t-\beta_i h(\phi)
+ =g-\psi_s+\psi_t-\beta_i h(\phi).
+\tag{11}
+\]
+
+The radius of every core center is below `4/5`. Disjoint unit squares
+have center distance at least one, so the core/core physical gap exceeds
+`4/3`; this is the center-chord proof in `Arithmetic/CorePairGeometry.lean`.
+The new `selected_core_gap` adapter derives the radius bound from the
+selected arcs' `Contains` predicates. It therefore covers radial chart
+junctions without assuming that the actual radial tag is unique.
+
+### Whole-arc marker control
+
+All 124 original coarse core labels have `p=0`. On each of the 88 side
+arcs, `a=7/12`, so with `t=b/a` the marker is
+
+\[
+ f(t)=\sigma\arctan t-c-\frac7{12}qt.
+\]
+
+The affine slope disappears from the second derivative. For `t≥0`,
+
+\[
+ |f''(t)|=\frac{2t}{(1+t^2)^2}\le1,
+ \qquad
+ (1+t^2)^2-2t=t^4+t^2+(t-1)^2\ge0.
+\]
+
+On an original label interval `[l,u]`, suppose both endpoint values lie
+between `L+e` and `U−e`, where `e=(u−l)²/8`. Then the complete marker
+lies in `[L,U]`. To prove the lower bound, subtract
+`(t−l)(t−u)/2` from `f`; the resulting function is concave and lies
+above the smaller of its endpoint values. The identity
+
+\[
+ (u-l)^2+4(t-l)(t-u)=(2t-l-u)^2\ge0
+\]
+
+gives the error `e`. Apply the same argument to `−f` for the upper
+bound. This also covers a degenerate interval. The Lean lemmas
+`endpoint_lower`, `endpoint_bounds`, and `chart_bounds` prove these
+statements without subdivision or a radical derivative.
+
+All 36 original core-corner labels also have `q=0`. Their markers are
+signed arctangent minus a constant, so monotonicity directly bounds the
+whole closed interval by its endpoint values, with zero interpolation
+error. Both labels at any shared endpoint are individually checked.
+
+### Explicit endpoint gates and edge budgets
+
+The rational marker bounds are:
+
+| Role | Lower bound | Upper bound |
+|---|---:|---:|
+| H | −383/1000 | 90/1000 |
+| G | −323/1000 | −120/1000 |
+| A | −368/1000 | 100/1000 |
+| B | −329/1000 | 134/1000 |
+| T | −88/1000 | 96/1000 |
+| D, negative sign | −319/1000 | −12/1000 |
+| D, positive sign | −319/1000 | 643/1000 |
+| E | −342/1000 | −111/1000 |
+
+`ArcValid` exposes four rational endpoint-label inequalities per existing
+core arc: **496 inequalities** in total. It reuses the existing arctangent
+endpoint enclosures; it introduces no new endpoint coordinates. The
+predicate also checks the zero coefficients, ordered tangent interval,
+and negative sign on core E arcs. The exact endpoint-only audit found all
+496 inequalities valid, with a minimum reserve above `0.00044264`.
+These are small explicit finite obligations, not a claim that the original
+piecewise vertex labels have disappeared.
+
+The positive D upper bound is intentionally kept large. When both ends
+of `D→E` are core, a positive D sign gives the impossible core/core quarter
+class of Section 6. The actual feasibility theorem therefore removes that
+case before applying D's negative-sign upper bound. A positive D marker
+used as a target on the preceding edge still keeps its original value.
+
+By the unit-circle identity, `h(φ)<21/100` at every angle. Thus (11) and
+the two marker bounds give the whole pair estimate
+
+\[
+ \phi+L_s-L_t-\beta_i h(\phi)
+ >\frac43-U_i+L_{i+1}-\frac{21}{100}\beta_i.
+\tag{12}
+\]
+
+The seven rational comparisons against the coarse targets have reserves
+
+| Edge | Reserve above the coarse target |
+|---|---:|
+| H→G | 14179/750000 |
+| G→A | 56419/300000 |
+| A→B | 2179/750000 |
+| B→T | 157429/750000 |
+| T→D | 12679/750000 |
+| D→E | 76429/750000 |
+| E→H | 49219/300000 |
+
+The weakest lower bound in (12) is above `0.9001753`, compared with the
+coarse target `0.89727`. Every enhancement, at most `23/1000000`, fits
+inside these reserves. `BudgetsValid` states the seven comparisons and
+nonnegative-charge checks explicitly for each of the coarse and enhanced
+metadata records. The source leaves their ordinary `by decide` proofs
+uncompiled, just like the retained table obligations.
+
+### Actual coverage and remaining cases
+
+`GeometricCoreCoverage.chargedBound` first selects exactly one original
+arc label per vertex. It then splits on the two selected radial classes.
+For core/core pairs, `GeometricCoreMarker.pair_bound` proves (12) using
+the actual center gap and the same two label values. For pairs with an
+outer endpoint, every remaining allowed actual axis uses the original
+continuous row claim and original closed angle-chain predicate.
+
+The historical coarse input contains 8,644 core/core rows. The five
+infeasibility classes already removed 3,838 of them; the direct cost
+removes the remaining **4,806**, leaving **110,425 active coarse rows**.
+The 462 original arc labels and their state-cover selection are unchanged.
+No two-state cost data or angular cover replaces the omitted core rows.
+
+In the 960-case coarse semantic classification, 384 cases are core/core.
+The five infeasibility classes remove 224 of these. Equation (12) closes
+all 160 remaining core/core cases, leaving **464 outer-endpoint cases**
+after the full 336-case infeasibility reduction. The complete coarse
+`ChargedBound` continues to depend on those retained outer-endpoint rows.
+
+## 8. What the old labels suggest, and what they do not establish
 
 Inspection of the 462 coarse arc labels shows that **460 have no primary
 coordinate coefficient**: they are piecewise functions \(c+q b\).
@@ -535,19 +690,25 @@ close the corresponding charged bound. The remaining minimization is
 two-dimensional state geometry. Merely naming that operator is not a
 proof of its required reserve.
 
-## 8. Current dependency and validation status
+## 9. Current dependency and validation status
 
 - New source: `Candidate/GeometricPrimaryExclusion.lean`,
   `Candidate/GeometricSecondaryExclusion.lean`,
   `Candidate/GeometricCoreQuarter.lean`,
-  `Candidate/GeometricAffineCoverage.lean`, and `Candidate/GeometricMismatch.lean`.
-- New numerical tables or generated coverage lists: none.
-- Active affine payload: **581,634 rows** across ten tables, a reduction
-  of 78,736 from the preserved historical inputs.
-- Active coarse and enhanced payload: **115,231 rows**, sharing the same
-  13,800-row geometric removal from the historical 129,031-row input.
-- All four complete charged bounds are still backed by their retained
-  table domains. Their further replacement remains the state-positivity gate.
+  `Candidate/GeometricAffineCoverage.lean`, `Candidate/GeometricMismatch.lean`,
+  `Candidate/GeometricCoreMarker.lean`, and `Candidate/GeometricCoreCoverage.lean`.
+- New angle tables or generated coverage lists: none.
+- Active affine payload: **576,828 rows** across ten tables, a reduction
+  of 83,542 from the preserved historical inputs.
+- Active coarse and enhanced payload: **110,425 rows**, sharing the same
+  18,606-row geometric removal from the historical 129,031-row input.
+- All four complete charged stages still retain active tables. The coarse
+  and enhanced stages have no core/core row dependency; their remaining
+  state-positivity gate has at most 464 outer-endpoint cases.
+- Preserved coarse vertex data: all 462 original labeled arcs. Explicit
+  new core-marker checks: 496 endpoint-label inequalities on 124 existing
+  arcs, their structural conditions, and seven budget comparisons with
+  nonnegative-charge checks for each coarse/enhanced stage.
 - Complete geometric regions excluded analytically: all zero-edge
   target-core/target-primary and source-core/source-primary regions;
   all-angle target-core/source-secondary regions with nonpositive source
@@ -555,6 +716,9 @@ proof of its required reserve.
   regions with nonnegative target transverse coordinate; and all four
   axes on the positive-source/negative-target core/core quarter region.
   Together they remove 336 semantic cases and 13,800 historical coarse rows.
+- Complete feasible class handled by a direct cost proof: every coarse
+  core/core pair, closing 160 additional semantic cases and removing the
+  remaining 4,806 core/core rows with the same shared marker values.
 - Existing capture hypotheses strengthened or assumed: none.
 - `sorry`, new axioms, external-oracle substitutions: none.
 - Validation performed: exact symbolic polynomial expansion of all SAT
@@ -563,7 +727,9 @@ proof of its required reserve.
   records in all ten tables; Python checks of exact conversion for all
   155,148 distinct-per-table row/gamma strings and ten positive/ten
   rejection grammar fixtures; exact rational reserves for both whole
-  core-quarter error-sign intervals.
+  core-quarter error-sign intervals; endpoint-only rational checks for all
+  496 core-marker inequalities and the seven coarse/enhanced edge budgets;
+  exact polynomial identities in the curvature proof.
 - Historical coarse input SHA-256 remains
   `ffa48df0d02e18880314907a72a70fcc6aaceea4ee1060ea76b4fdb04c23a5fa`.
 - Lean compilation, CI, and full certificate replay: not run.
@@ -571,6 +737,7 @@ proof of its required reserve.
 The Python conversion checks validate the exact string arithmetic and
 input compatibility; they do not execute or validate the Lean elaborator.
 
-The next gate is a complete state-branch positivity proof for one charged
-stage using (5)–(6). That gate has a concrete finite geometric interface;
-it must close before the corresponding table import is removed.
+The next gate is a complete positivity proof over the remaining
+outer-endpoint state branches using (5)–(6). That gate has a concrete
+finite geometric interface; it must close before the corresponding
+charged-stage table import is removed.
