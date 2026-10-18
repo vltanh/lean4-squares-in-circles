@@ -1425,7 +1425,7 @@ lemma translated_containment_reserve {S : Fin 8 → UnitSquare} {q δ : ℝ} {p 
   rw [hpδ] at hc
   have hm := mul_le_mul_of_nonneg_right hnorm (sq_nonneg δ)
   have hd : -2*δ ≤ dot z p := by
-    have hQ : Q0 < 4 := radius_levels.2.2.2.2
+    have hQ : Q0 < 4 := radius_levels.2.2.2
     have hm' := mul_le_mul_of_nonneg_right hQ.le (sq_nonneg δ)
     by_contra! hh
     have hs := mul_pos (show 0 < -dot z p-2*δ by linarith)

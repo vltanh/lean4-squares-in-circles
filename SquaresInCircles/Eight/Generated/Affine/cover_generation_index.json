@@ -1,0 +1,56 @@
+{
+  "status": "closed-cover-proof-scripts-uncompiled",
+  "verification": "not run",
+  "tables": [
+    {
+      "module": "CandidateCoarseMismatch",
+      "angle_groups": 121808,
+      "arcs": 462
+    },
+    {
+      "module": "DUpperAffine",
+      "angle_groups": 23016,
+      "arcs": 199
+    },
+    {
+      "module": "GLowerAffine",
+      "angle_groups": 8240,
+      "arcs": 114
+    },
+    {
+      "module": "GUpperAffine",
+      "angle_groups": 8876,
+      "arcs": 122
+    },
+    {
+      "module": "HLowerAffine",
+      "angle_groups": 45560,
+      "arcs": 279
+    },
+    {
+      "module": "Mismatch015To001Affine",
+      "angle_groups": 129368,
+      "arcs": 456
+    },
+    {
+      "module": "Mismatch01To015Affine",
+      "angle_groups": 101280,
+      "arcs": 335
+    },
+    {
+      "module": "Mismatch026To01Affine",
+      "angle_groups": 123168,
+      "arcs": 401
+    },
+    {
+      "module": "TLowerAffine",
+      "angle_groups": 47168,
+      "arcs": 303
+    },
+    {
+      "module": "TUpperAffine",
+      "angle_groups": 6452,
+      "arcs": 102
+    }
+  ]
+}

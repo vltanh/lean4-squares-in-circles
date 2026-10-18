@@ -41,6 +41,18 @@ named={'omega':omega,'alpha':alpha,'beta':beta,'delta':delta,'epsilon':epsilon,
  'Y':Y,'J':J,'X':X,'K':K,'L':L,'N':N,'hTwo':h2}
 for i,t in enumerate(mu):named['mu'+str(i)]=t
 for i,t in enumerate(reserves):named['reserve'+str(i)]=t
+ka=A.div(A.mul(alpha,x1),c)
+kb=A.mul(beta,A.add(g.y,two))
+kd=A.mul(delta,A.neg(x3))
+ke=A.div(A.mul(delta,A.neg(x4)),s)
+kh=A.mul(epsilon,A.neg(h1))
+ww=C(Q(4209,5000))
+quadratic=A.add(A.add(A.div(A.add(A.mul(ka,s),ke),two),A.div(ww,two)),
+ A.add(A.div(A.mul(epsilon,s),two),A.mul(C(Q(3,4)),ww)))
+cubic=A.add(A.div(A.add(A.add(ka,kb),A.add(kd,kh)),C(6)),
+ A.add(A.div(ww,C(6)),A.add(A.div(epsilon,C(6)),A.div(ww,two))))
+named['quadratic']=quadratic
+named['cubic']=cubic
 
 qcenter=Q('3.91553413751747532652')
 qlo,qhi=qcenter-Q(2,10**16),qcenter+Q(1,10**16)
@@ -161,6 +173,8 @@ def generate():
             for j,t in enumerate([alpha,beta,delta,omega,epsilon]):
                 cert(f'weight{k}_{j}',b,t,Q(1,100),w)
             cert(f'hTwo{k}',b,h2,Q(-29,20),Q(-7,5))
+            cert(f'quadratic{k}',b,quadratic,Q(0),Q(232,25))
+            cert(f'cubic{k}',b,cubic,Q(0),Q(3,2))
         lines += ['end SquaresInCircles.Eight.ExactFamily.AdaptiveGenerated','']
         (out/(name+'.lean')).write_text('\n'.join(lines))
     lines=[header.replace('public import SquaresInCircles.Eight.ExactFamily.Generated.StationaryFormula',
@@ -190,6 +204,12 @@ def generate():
       '    -(29/20:ℝ) ≤ hTwoFormula.eval env ∧ hTwoFormula.eval env ≤ -(7/5) := by',
       '  fin_cases i']
     for k in range(NCELLS):lines.append(f'  · exact hTwo{k}_bound env he')
+    for name,target,hi in [('quadratic',quadratic,Q(232,25)),('cubic',cubic,Q(3,2))]:
+        lines += ['',f'theorem {name}_bound (i : Fin 256) (env : Fin 3 → ℝ)',
+          '    (he : (graphBoxes i).Mem env) :',
+          f'    {name}Formula.eval env ≤ {g.rat(hi)} := by',
+          '  fin_cases i']
+        for k in range(NCELLS):lines.append(f'  · exact ({name}{k}_bound env he).2')
     lines += ['','end SquaresInCircles.Eight.ExactFamily.AdaptiveGenerated','']
     (out/'AdaptiveBounds.lean').write_text('\n'.join(lines))
     print({'cells':NCELLS,'reserve_lower_bounds':[float(v) for v in boundmins],

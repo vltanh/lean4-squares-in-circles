@@ -271,30 +271,8 @@ def columnModel (c : Column) : Fin 7 → UnitSquare :=
 
 end Seven
 
-/-- The optimal radius for `n` unit squares, for `1 ≤ n ≤ 7`. Every other `n`
-gets the placeholder `0`, about which nothing is claimed. -/
-def optimalRadius : ℕ → ℝ
-  | 1 => One.radius
-  | 2 => Two.radius
-  | 3 => Three.radius
-  | 4 => Four.radius
-  | 5 => Five.radius
-  | 6 => Six.radius
-  | 7 => Seven.radius
-  | _ => 0
-
-/-- The optimal packings of `n` unit squares, as models about the origin: one
-packing for `n ≤ 6`, and for `n = 7` every position of the three middle
-squares. Every other `n` gets the placeholder `∅`, about which nothing is
-claimed. -/
-def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
-  | 1 => {One.model}
-  | 2 => {Two.model}
-  | 3 => {Three.model}
-  | 4 => {Four.model}
-  | 5 => {Five.model}
-  | 6 => {Six.model}
-  | 7 => Set.range Seven.columnModel
-  | _ => ∅
+/- The public radius/model registries are in `SquaresInCircles/Optimal.lean`.
+Keeping them downstream allows the n=8 stationary radius to be defined from
+its existence theorem without introducing an import cycle through Basic. -/
 
 end SquaresInCircles

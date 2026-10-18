@@ -1,6 +1,7 @@
 module
 
 public import SquaresInCircles.Eight.BoundaryReduction
+public import SquaresInCircles.Eight.CentralCore
 public import SquaresInCircles.Common.Analysis
 
 /-!
@@ -607,5 +608,181 @@ theorem radius_expand_boundary_cycle {q r : ℝ} (C : BoundaryCycle q)
     (hq : q ∈ Set.Icc (5/2) 4) (hr : r ∈ Set.Icc (5/2) 4) (hqr : q ≤ r) :
     ∃ D : BoundaryCycle r, RadiusExpansion C D :=
   ⟨C.expand hq hr hqr,C.expand_spec hq hr hqr⟩
+
+def sourceLevel (q : ℝ) : ℝ := max q qMinus
+
+lemma sourceLevel_bounds {q : ℝ} (hq : q ≤ Q1) :
+    q ≤ sourceLevel q ∧ qMinus ≤ sourceLevel q ∧
+    sourceLevel q ∈ Set.Icc (5/2) 4 ∧ sourceLevel q ≤ Q1 := by
+  have hlow := radius_levels.1
+  have hhigh := radius_levels.2.1
+  have hQ : Q1 < 4 := radius_levels.2.2.1.trans radius_levels.2.2.2
+  have hmax : sourceLevel q ≤ Q1 := max_le hq hhigh.le
+  exact ⟨le_max_left _ _,le_max_right _ _,
+    ⟨hlow.le.trans (le_max_right _ _),hmax.trans hQ.le⟩,hmax⟩
+
+lemma center_direction_separated {K J : UnitSquare} {q : ℝ}
+    (hK : SqContained q K) (hJ : SqContained q J) (hq : q ≤ Q0)
+    (hcK : CoreAvoiding K) (hcJ : CoreAvoiding J)
+    (hd : ∀ p, ¬ (openSquare K p ∧ openSquare J p)) :
+    3/5 < dist ((Complex.arg (⟨K.center.1,K.center.2⟩ : ℂ)) : Direction)
+      ((Complex.arg (⟨J.center.1,J.center.2⟩ : ℂ)) : Direction) := by
+  obtain ⟨axis,haxis⟩ := signed_axis_of_disjoint K J hd
+  have hdist := signed_axis_center_distance haxis
+  let zK : ℂ := ⟨K.center.1,K.center.2⟩
+  let zJ : ℂ := ⟨J.center.1,J.center.2⟩
+  let r := Real.sqrt (normSq K.center)
+  let s := Real.sqrt (normSq J.center)
+  have hnormK : ‖zK‖=r := by simp [zK,r,Complex.norm_def,Complex.normSq_mk,normSq,pow_two]
+  have hnormJ : ‖zJ‖=s := by simp [zJ,s,Complex.norm_def,Complex.normSq_mk,normSq,pow_two]
+  have hxK := (Complex.norm_mul_cos_arg zK).symm
+  have hyK := (Complex.norm_mul_sin_arg zK).symm
+  have hxJ := (Complex.norm_mul_cos_arg zJ).symm
+  have hyJ := (Complex.norm_mul_sin_arg zJ).symm
+  rw [hnormK] at hxK hyK
+  rw [hnormJ] at hxJ hyJ
+  rw [polar_pair_distance hxK hyK hxJ hyJ] at hdist
+  let γ := dist ((Complex.arg zK) : Direction) ((Complex.arg zJ) : Direction)
+  have hγ : 0 ≤ γ ∧ γ ≤ Real.pi := by
+    refine ⟨dist_nonneg,?_⟩
+    rw [γ,direction_dist]
+    exact Real.Angle.abs_toReal_le_pi _
+  have hcos : Real.cos γ=Real.cos (Complex.arg zJ-Complex.arg zK) := by
+    rw [γ,dist_comm,direction_dist,Real.cos_abs]
+    have he := congrArg Real.Angle.cos
+      (Real.Angle.coe_toReal (((Complex.arg zJ : Direction))-((Complex.arg zK : Direction))))
+    simpa [Real.Angle.cos_coe,← Real.Angle.coe_sub] using he
+  apply annular_angle_lower
+    ⟨annular_center_radius_lower hcK,(annular_center_radius_upper hK hq).le⟩
+    ⟨annular_center_radius_lower hcJ,(annular_center_radius_upper hJ hq).le⟩ hγ
+  simpa [hcos] using hdist
+
+structure OrderedExterior {S : Fin 8 → UnitSquare} (q : ℝ) where
+  central : Fin 8
+  contains_core : ContainsCore (S central)
+  index : Vertex ↪ Fin 8
+  misses_central : ∀ i, central ≠ index i
+  covers_exterior : ∀ j, j ≠ central → ∃ i, index i=j
+  cycle : NeighborCycle (sourceLevel q)
+  square_eq : ∀ i, cycle.square i=S (index i)
+  original_order : PolarOrder cycle
+
+/-- The initial cyclic order is obtained from actual center directions. Its
+twenty-one separation facts come directly from the original packing. Only
+the seven selected neighboring witnesses are retained afterwards. -/
+theorem ordered_exterior_exists {S : Fin 8 → UnitSquare} {q : ℝ}
+    (hp : SqPacking S (0,0) q) (hq : q ≤ Q1) : Nonempty (OrderedExterior (S := S) q) := by
+  have hbounds := sourceLevel_bounds hq
+  have hq₀ : q ≤ Q0 := hq.trans radius_levels.2.2.1.le
+  obtain ⟨k,hcore,hextcore⟩ := central_core_and_exteriors hp hq₀
+  let E : Vertex → UnitSquare := fun i => S (k.succAbove i)
+  have hne (i : Vertex) : k ≠ k.succAbove i := (Fin.succAbove_ne k i).symm
+  have hc (i : Vertex) : CoreAvoiding (E i) := (hextcore _ (hne i)).weak
+  have hcontained (i : Vertex) : SqContained (sourceLevel q) (E i) := by
+    apply (SqContained.iff_points (by linarith [hbounds.2.2.1.1]) _).2
+    intro p h
+    simpa [sub] using (hp.2.1 (k.succAbove i) p h).trans hbounds.1
+  have hdisjoint : InteriorDisjoint E := by
+    intro i j hij
+    exact hp.2.2 _ _ (Fin.succAbove_right_injective.ne hij)
+  let directions : Vertex → Direction := fun i =>
+    (Complex.arg (⟨(E i).center.1,(E i).center.2⟩ : ℂ) : Direction)
+  have hsep (i j : Vertex) (hij : i ≠ j) : 3/5 < dist (directions i) (directions j) :=
+    center_direction_separated (hcontained i) (hcontained j)
+      (hbounds.2.2.2.trans radius_levels.2.2.1.le) (hc i) (hc j) (hdisjoint i j hij)
+  obtain ⟨σ,β,hrepr,hstep,hwrap⟩ := sorted_directions directions
+    (by linarith [Real.pi_gt_three] : (3/5 : ℝ) ≤ 2*Real.pi)
+    (fun i j hij => (hsep i j hij).le)
+  have hnext (i : Vertex) : i ≠ next i := by
+    intro h
+    fin_cases i <;> norm_num [next] at h
+  choose selected hselected using fun i =>
+    signed_axis_of_disjoint (E (σ i)) (E (σ (next i)))
+      (hdisjoint _ _ (σ.injective.ne (hnext i)))
+  let C : NeighborCycle (sourceLevel q) := {
+    square := fun i => E (σ i)
+    contained := fun i => hcontained (σ i)
+    core := fun i => hc (σ i)
+    selected := selected
+    feasible := hselected }
+  have hpolar (i : Vertex) :
+      (C.square i).center.1=Real.sqrt (normSq (C.square i).center)*Real.cos (β i) ∧
+      (C.square i).center.2=Real.sqrt (normSq (C.square i).center)*Real.sin (β i) := by
+    have hcos := congrArg Real.Angle.cos (hrepr i)
+    have hsin := congrArg Real.Angle.sin (hrepr i)
+    have hx := Complex.norm_mul_cos_arg (⟨(E (σ i)).center.1,(E (σ i)).center.2⟩ : ℂ)
+    have hy := Complex.norm_mul_sin_arg (⟨(E (σ i)).center.1,(E (σ i)).center.2⟩ : ℂ)
+    simp only [directions,Real.Angle.cos_coe,Real.Angle.sin_coe] at hcos hsin
+    rw [← hcos] at hx
+    rw [← hsin] at hy
+    constructor <;> simpa [C,Complex.norm_def,Complex.normSq_mk,normSq,pow_two] using (by first | exact hx.symm | exact hy.symm)
+  have hpos (i : Vertex) : 0 < angleGap β i := by
+    fin_cases i <;>
+      simp [angleGap,next] <;>
+      linarith [hstep 0,hstep 1,hstep 2,hstep 3,hstep 4,hstep 5]
+  have hstrict (i : Vertex) : 3/5 < angleGap β i := gap_gt_three_fifths (hpos i)
+    (polar_gap_cosine_bound C (hbounds.2.2.2.trans radius_levels.2.2.1.le) β
+      (fun j => (hpolar j).1) (fun j => (hpolar j).2) i)
+  let O : PolarOrder C := ⟨β,fun i => (hpolar i).1,fun i => (hpolar i).2,hpos,seven_gaps_below_pi β hstrict⟩
+  refine ⟨{
+    central := k
+    contains_core := hcore
+    index := { toFun := fun i => k.succAbove (σ i)
+               inj' := Fin.succAbove_right_injective.comp σ.injective }
+    misses_central := fun i => hne (σ i)
+    covers_exterior := ?_
+    cycle := C
+    square_eq := fun i => rfl
+    original_order := O }⟩
+  intro j hj
+  obtain ⟨i,hi⟩ := Fin.exists_succAbove_eq hj
+  exact ⟨σ.symm i,by simpa using hi⟩
+
+/-- The recovered source is the boundary cycle before expansion. The original
+packing's centers remain in `original.cycle`; they are retained separately
+for the stationary equality pullback. -/
+structure BoundaryNormalization {S : Fin 8 → UnitSquare} (q : ℝ) where
+  original : OrderedExterior (S := S) q
+  reduction : BoundaryReduction original.cycle
+  expanded : BoundaryCycle Q1
+  expansion : RadiusExpansion reduction.result expanded
+  selected_eq : expanded.selected=reduction.result.selected
+
+theorem boundary_normalization_exists {S : Fin 8 → UnitSquare} {q : ℝ}
+    (hp : SqPacking S (0,0) q) (hq : q ≤ Q1) : Nonempty (BoundaryNormalization (S := S) q) := by
+  obtain ⟨O⟩ := ordered_exterior_exists hp hq
+  have hb := sourceLevel_bounds hq
+  obtain ⟨R⟩ := boundary_reduction_exists O.cycle O.original_order
+    (hb.2.2.2.trans radius_levels.2.2.1.le)
+  have hQ : Q1 ∈ Set.Icc (5/2) 4 :=
+    ⟨radius_levels.1.le.trans radius_levels.2.1.le,
+      (radius_levels.2.2.1.trans radius_levels.2.2.2).le⟩
+  exact ⟨⟨O,R,R.result.expand hb.2.2.1 hQ hb.2.2.2,
+    R.result.expand_spec hb.2.2.1 hQ hb.2.2.2,rfl⟩⟩
+
+lemma BoundaryNormalization.selected_normal {S : Fin 8 → UnitSquare} {q : ℝ}
+    (N : BoundaryNormalization (S := S) q) (i : Vertex) :
+    (N.expanded.selected i).normal (N.expanded.square i) (N.expanded.square (next i)) =
+      (N.original.cycle.selected i).normal
+        (S (N.original.index i)) (S (N.original.index (next i))) := by
+  rw [N.selected_eq]
+  rw [signed_normal_same_frames (N.expansion.same_frames i) (N.expansion.same_frames (next i))]
+  rw [N.reduction.axis_transport i,N.reduction.raw_selected]
+  rw [signed_normal_same_frames (N.reduction.raw_frames i) (N.reduction.raw_frames (next i))]
+  rw [N.original.square_eq i,N.original.square_eq (next i)]
+
+lemma BoundaryNormalization.original_selected_feasible {S : Fin 8 → UnitSquare} {q : ℝ}
+    (N : BoundaryNormalization (S := S) q) (i : Vertex) :
+    (N.original.cycle.selected i).Feasible
+      (S (N.original.index i)) (S (N.original.index (next i))) := by
+  simpa [N.original.square_eq i,N.original.square_eq (next i)] using N.original.cycle.feasible i
+
+lemma BoundaryNormalization.physical_frames {S : Fin 8 → UnitSquare} {q : ℝ}
+    (N : BoundaryNormalization (S := S) q) (i : Vertex) :
+    SamePhysicalFrame (N.expanded.square i) (S (N.original.index i)) := by
+  have h := N.reduction.physical_frames i
+  rw [N.original.square_eq i] at h
+  rcases h with h | h | h | h <;>
+    simp only [SamePhysicalFrame,(N.expansion.same_frames i).1,(N.expansion.same_frames i).2] at * <;> aesop
 
 end SquaresInCircles.Eight

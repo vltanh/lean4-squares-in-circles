@@ -390,9 +390,18 @@ theorem coefficient_reserve {d : Coordinates} (hw : d.WeightDomain)
   have hηl := mul_le_mul_of_nonneg_left hη.1 hω.le
   have hηu := mul_le_mul_of_nonneg_left hη.2 hω.le
   have hXdef : d.cutX=d.edgeBeta*(d.y+2+d.cutJ) := rfl
+  have reserve_iff (r w c : ℝ) : r≤w/2-|c| ↔ -w/2+r≤c ∧ c≤w/2-r := by
+    constructor
+    · intro h
+      have hc : |c|≤w/2-r := by linarith
+      have hh := abs_le.mp hc
+      exact ⟨by linarith,hh.2⟩
+    · intro h
+      have hc : |c|≤w/2-r := abs_le.mpr ⟨by linarith,h.2⟩
+      linarith
   fin_cases i <;> simp only [edgeWeights,coefficient,Matrix.cons_val_zero,Matrix.cons_val_succ]
   all_goals
-    split_ifs <;> rw [le_sub_iff_add_le,abs_le] <;> constructor <;> nlinarith
+    split_ifs <;> rw [reserve_iff] <;> constructor <;> nlinarith
 
 theorem linear_cusp_lower {d : Coordinates} (hw : d.WeightDomain)
     (hstation : d.positionDerivative=0) (hY : 0<d.cutY ∧ d.cutY<1)
@@ -411,5 +420,10 @@ theorem linear_cusp_lower {d : Coordinates} (hw : d.WeightDomain)
     linarith
   have hs := Finset.sum_le_sum (s:=(Finset.univ : Finset (Fin 5))) (fun i _=>hterm i)
   simpa [errorSum,cusp,Finset.mul_sum,Finset.sum_add_distrib] using hs
+
+def quadraticCoefficient (d : Coordinates) (w : ℝ) : ℝ :=
+  (KA d*d.s+KE d)/2+w/2+d.edgeEpsilon*d.s/2+3*w/4
+def cubicCoefficient (d : Coordinates) (w : ℝ) : ℝ :=
+  (KA d+KB d+KD d+KH d)/6+w/6+d.edgeEpsilon/6+w/2
 
 end SquaresInCircles.Eight.ExactFamily.Perturbation
