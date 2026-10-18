@@ -3,8 +3,8 @@ module
 public import SquaresInCircles.Eight.Generated.OwnerData
 
 /-! Finite owner-pattern completeness and closed tilt-tail coverage.
-These predicates enumerate concrete four-owner functions; they contain no
-geometric exclusion conclusion. Ordinary `decide` is left for Lean to check. -/
+Owner completeness uses explicit selectors for the varying axes. The
+remaining closed interval chains use ordinary `decide`. -/
 
 @[expose] public section
 set_option maxRecDepth 1000000
@@ -13,10 +13,9 @@ open SquaresInCircles.Eight.Candidate
 open SquaresInCircles.Eight.Candidate.Dual
 namespace SquaresInCircles.Eight.Generated.Owner
 
-/-- Three geometric chains restrict both quarter directions and G. -/
+/-- D is captured geometrically; only the forbidden B direction remains. -/
 def QuarterPattern (p : Vertex → Fin 4) : Prop :=
-  p 0=0 ∧ p 2=0 ∧ p 4=0 ∧ p 3=0 ∧ (p 5=0 ∨ p 5=2) ∧ p 1≠2 ∧
-    (p 5=0 → p 1≠0)
+  p 0=0 ∧ p 2=0 ∧ p 4=0 ∧ p 3=0 ∧ p 5=2 ∧ p 1≠2
 
 def MixedPattern (p : Vertex → Fin 4) : Prop :=
   p 0=0 ∧ p 2=0 ∧ p 4=0 ∧ p 3=2 ∧ p 5=2 ∧ (p 1≠0 ∨ p 6≠1)
@@ -26,52 +25,61 @@ instance (p : Vertex → Fin 4) : Decidable (QuarterPattern p) := by
 instance (p : Vertex → Fin 4) : Decidable (MixedPattern p) := by
   unfold MixedPattern; infer_instance
 
-def quarterByIndex (k : Fin 20) : OwnerTable :=
+def quarterByIndex (k : Fin 12) : OwnerTable :=
   quarterTables.get ⟨k.val, by simpa only [quarterTables, List.length_cons, List.length_nil] using k.isLt⟩
 def mixedByIndex (k : Fin 15) : OwnerTable :=
   mixedTables.get ⟨k.val, by simpa only [mixedTables, List.length_cons, List.length_nil] using k.isLt⟩
 
-/-- The five surviving (G,D) pairs, in source-table order. -/
-def quarterDirection : Fin 5 → Fin 4 × Fin 4 :=
-  ![(0,2),(1,0),(1,2),(3,0),(3,2)]
+/-- The three surviving G axes, in source-table order. -/
+def quarterG : Fin 3 → Fin 4 := ![0,1,3]
 
-def quarterIndex (k : Fin 5) (e : Fin 4) : Fin 20 :=
+def quarterIndex (k : Fin 3) (e : Fin 4) : Fin 12 :=
   ⟨4*k.val+e.val, by omega⟩
 
-theorem quarterByIndex_owners (k : Fin 5) (e : Fin 4) :
+theorem quarterByIndex_owners (k : Fin 3) (e : Fin 4) :
     (quarterByIndex (quarterIndex k e)).owners =
-      ![0,(quarterDirection k).1,0,0,0,(quarterDirection k).2,e] := by
+      ![0,quarterG k,0,0,0,2,e] := by
   fin_cases k <;> fin_cases e <;> rfl
 
-theorem quarterDirection_complete (g d : Fin 4) (hg : g≠2)
-    (hd : d=0 ∨ d=2) (hdouble : d=0 → g≠0) :
-    ∃ k : Fin 5, (quarterDirection k).1=g ∧ (quarterDirection k).2=d := by
-  rcases hd with rfl | rfl
-  · fin_cases g
-    · exact False.elim (hdouble rfl rfl)
-    · exact ⟨1,rfl,rfl⟩
-    · exact False.elim (hg rfl)
-    · exact ⟨3,rfl,rfl⟩
-  · fin_cases g
-    · exact ⟨0,rfl,rfl⟩
-    · exact ⟨2,rfl,rfl⟩
-    · exact False.elim (hg rfl)
-    · exact ⟨4,rfl,rfl⟩
+theorem quarterG_complete (g : Fin 4) (hg : g≠2) :
+    ∃ k : Fin 3, quarterG k=g := by
+  fin_cases g
+  · exact ⟨0,rfl⟩
+  · exact ⟨1,rfl⟩
+  · exact False.elim (hg rfl)
+  · exact ⟨2,rfl⟩
 
 theorem quarter_pattern_complete : ∀ p : Vertex → Fin 4,
-    QuarterPattern p → ∃ k : Fin 20, (quarterByIndex k).owners=p := by
+    QuarterPattern p → ∃ k : Fin 12, (quarterByIndex k).owners=p := by
   intro p hp
-  rcases hp with ⟨h0,h2,h4,h3,h5,hG,hdouble⟩
-  obtain ⟨k,hkg,hkd⟩ := quarterDirection_complete (p 1) (p 5) hG h5 hdouble
+  rcases hp with ⟨h0,h2,h4,h3,h5,hG⟩
+  obtain ⟨k,hkg⟩ := quarterG_complete (p 1) hG
   refine ⟨quarterIndex k (p 6), ?_⟩
-  rw [quarterByIndex_owners,hkg,hkd]
+  rw [quarterByIndex_owners,hkg]
   funext i
-  fin_cases i <;> simp [h0,h2,h3,h4]
+  fin_cases i <;> simp [h0,h2,h3,h4,h5]
+
+/-- Row-major order on the mixed-axis pairs, skipping the intended (0,1). -/
+def mixedIndex (g e : Fin 4) : Fin 15 :=
+  ⟨if 4*g.val+e.val=0 then 0 else 4*g.val+e.val-1, by
+    have hg := g.isLt
+    have he := e.isLt
+    split_ifs <;> omega⟩
+
+theorem mixedByIndex_owners (g e : Fin 4) (hbad : g≠0 ∨ e≠1) :
+    (mixedByIndex (mixedIndex g e)).owners = ![0,g,0,2,0,2,e] := by
+  fin_cases g <;> fin_cases e <;> first | rfl | (norm_num at hbad)
 
 theorem mixed_pattern_complete : ∀ p : Vertex → Fin 4,
-    MixedPattern p → ∃ k : Fin 15, (mixedByIndex k).owners=p := by decide
+    MixedPattern p → ∃ k : Fin 15, (mixedByIndex k).owners=p := by
+  intro p hp
+  rcases hp with ⟨h0,h2,h4,h3,h5,hbad⟩
+  refine ⟨mixedIndex (p 1) (p 6), ?_⟩
+  rw [mixedByIndex_owners _ _ hbad]
+  funext i
+  fin_cases i <;> simp [h0,h2,h3,h4,h5]
 
-theorem quarterByIndex_mode (k : Fin 20) : (quarterByIndex k).mode=.quarter := by
+theorem quarterByIndex_mode (k : Fin 12) : (quarterByIndex k).mode=.quarter := by
   fin_cases k <;> rfl
 theorem mixedByIndex_mode (k : Fin 15) : (mixedByIndex k).mode=.mixed := by
   fin_cases k <;> rfl

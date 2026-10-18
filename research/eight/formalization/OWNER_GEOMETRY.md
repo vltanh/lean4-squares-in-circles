@@ -1,4 +1,4 @@
-# Owner geometry: four complete table replacements
+# Owner geometry: six complete table replacements
 
 ## Result and exact scope
 
@@ -272,8 +272,8 @@ with their imports and entries in `tiltLeft`. This removes exactly
 generated Lean lines, and 1,136,918 bytes. The owner generator filters
 these nonpositive bundles so regeneration cannot reinstate them.
 
-The three chain arguments below remove 28 of the quarter-owner
-patterns as well. There remain 20 quarter-owner patterns, 15 mixed-owner
+The five chain arguments below remove 36 of the quarter-owner
+patterns as well. There remain 12 quarter-owner patterns, 15 mixed-owner
 patterns, and 41 positive tilt bundles. Their geometric replacements are
 still open. In particular, the negative-tilt theorem uses the intended
 owners; it does not by itself supply the quarter or mixed restrictions.
@@ -575,3 +575,286 @@ rows. The generator excludes every removed class, the direct selector
 was checked against all 20 retained source vectors, and the rational
 support constants and reserves above were checked exactly. These are
 uncompiled proof-source changes.
+
+## 9. All four E axes bound the negative tilt under a forbidden D direction
+
+A forbidden feasible D-to-E axis gives
+
+\[
+a_E-b_D\ge1-\frac32|d_D|.
+\]
+
+Since \(b_D\ge0\) and \(S\le3/200\), it follows that
+\(a_E\ge391/400>39/40\). The H tangent cone gives
+\(b_H\ge a_H/2\), and containment gives
+\(a_H\ge1/2\), hence \(b_H\ge1/4\).
+
+Suppose the negative sine magnitude \(r=-\sin t\) were at least
+\(9/20\). On the closed half-angle chart,
+\(3/4\le c=\cos t\le1\) and \(r\le1\). The four nominal E
+projections have the following upper bounds, where \(U=283/200\):
+
+| E axis in Lean | Projection | Upper bound | Minimum gap below \(W-3/100\) |
+|---|---|---|---|
+| 0 | \(a_Hc-b_Hr-b_E\) | \(U(c-r/2)\) | \(787/8000\) |
+| 1 | \(a_H-a_Er-b_Ec\) | \(U-(39/40)r\) | \(3/32\) |
+| 2 | \(a_Ec-b_Er-b_H\) | \(Uc-1/4\) | \(3/100\) |
+| 3 | \(a_E-a_Hr-b_Hc\) | \(U-r/2-c/4\) | \(27/400\) |
+
+Here \(W=(1+c+r)/2\). Each last-column gap follows on the entire
+rectangle \(c\in[3/4,1]\), \(r\in[9/20,1]\), without using a
+particular relation between \(c\) and \(r\). For the first row,
+\(c-r/2\ge0\) permits multiplying the primary upper bound by
+that factor. Every discarded term has its sign justified by
+\(b_E\ge0\), \(c\ge0\), and \(r\ge0\).
+
+But every actual feasible E axis requires its nominal projection to be
+at least \(W-2S\ge W-3/100\). Thus all four axes fail at once.
+The direct theorem `forbidden_D_negative_tilt_bound` concludes
+
+\[
+\boxed{\sin t>-9/20}
+\tag{27}
+\]
+
+for every forbidden feasible D axis. This argument includes the
+boundary \(\sin t=-9/20\), all four original E axes, and all their
+possible ties. Its source is `Candidate/GeometricOwnersTiltCone.lean`.
+
+Now assume both quarter directions are forbidden. By (21),
+\(b_A\ge81/100\), and the support (23) gives \(a_A\le1\).
+If G-to-A axis 3 is feasible in Lean, its nominal projection is
+
+\[
+F_G=a_G-a_A\sin t-b_A\cos t\ge W.
+\tag{28}
+\]
+
+For \(\sin t\ge0\), nonnegativity of \(a_A\) and
+\(c\ge3/4\) give
+
+\[
+W-F_G\ge\frac12+\frac{131}{100}c-U
+\ge\frac{27}{400}>0.
+\]
+
+For \(\sin t\le0\), (27) gives \(0\le r<9/20\).
+The unit-circle identity then gives \(c\ge89/100\). Hence
+
+\[
+W-F_G\ge\frac12+\frac{131}{100}c-\frac r2-U
+\ge\frac{259}{10000}>0.
+\tag{29}
+\]
+
+Both signs contradict (28). No E owner was selected in advance, and
+the proof does not rely on a future mixed-owner restriction.
+`G_axis_three_double_forbidden_excluded` removes `Quarter036` through
+`Quarter039`, containing 120 quartics, 600 Bernstein checks, 5,172
+generated Lean lines, and 349,491 bytes.
+
+There are now four remaining \((G,D)\) pairs:
+\((0,2),(1,0),(1,2),(3,2)\), with four E axes each. The direct
+quarter selector checks these 16 vectors. The separate mixed selector
+now also avoids a decision over all owner functions: it orders the
+16 mixed pairs by \(4g+e\), skips only the intended pair \((0,1)\),
+and checks the remaining 15 source vectors explicitly.
+
+The cumulative owner/tilt deletion is 50 modules, 1,338 quartics,
+6,690 Bernstein checks, 58,116 generated Lean lines, and 3,899,736
+bytes. The owner manifest has 16 quarter groups with 585 rows,
+15 mixed groups with 729 rows, and 41 positive tilt bundles with
+861 rows. The exact disjoint quarter partition is
+\(48=16+8+4+4+16\). Both explicit selectors, all rational gaps,
+the generator's filtering, and source imports were checked statically.
+No Lean compilation or historical replay was run.
+
+
+## 10. Every forbidden D axis is excluded by four short-arc chains
+
+The last case with both quarter directions forbidden is G-to-A axis 1
+in Lean. The A support (23) improves the primary bound to
+\(a_A\le99/100\). If \(\sin t\ge0\), that G projection satisfies
+
+\[
+a_A-a_G\sin t-b_G\cos t\le99/100<1\le W,
+\]
+
+because \(a_G,b_G,\cos t\ge0\). Therefore \(\sin t<0\).
+The all-axis E argument from Section 9 then gives
+\(0<r=-\sin t<9/20\). The scalar proof deliberately uses the
+closed, larger domain
+
+\[
+\frac34\le c,\qquad 0\le r\le\frac9{20},\qquad c^2+r^2=1.
+\]
+
+On this domain the following elementary chord bounds hold:
+
+\[
+\frac78\le c\le1,\qquad
+1-c\le\frac8{15}r^2,\qquad 1-c\le\frac r4.
+\tag{30}
+\]
+
+Indeed, \(c<7/8\) contradicts the unit-circle equation and
+\(r\le9/20\). Then \(1+c\ge15/8\) gives the quadratic bound,
+and \((8/15)r^2\le(6/25)r\le r/4\) gives the linear bound.
+These statements are `short_negative_geometry` in
+`Candidate/GeometricOwnersDoubleComplete.lean`.
+
+The G projection and the H zero-edge projection now read
+
+\[
+a_A+a_Gr-b_Gc\ge W,\qquad
+b_H+b_G\ge1-\frac32S,
+\quad W=\frac{1+c+r}{2}.
+\tag{31}
+\]
+
+Every actual E axis has its nominal projection from the table in
+Section 9 at least \(W-2S\). Give the H inequality weight \(c\),
+and give E weight one except in its axis-2 case, where its weight is
+also \(c\). The G transverse coordinate always cancels. The exact
+resulting forces and demands are as follows:
+
+| E axis in Lean | Sum of coordinate forces | Demand before error |
+|---|---|---|
+| 0 | \(a_A+a_Gr+c a_H+(c-r)b_H-b_E\) | \(2W+c\) |
+| 1 | \(a_A+a_H+c b_H+(a_G-a_E)r-b_Ec\) | \(2W+c\) |
+| 2 | \(a_A+a_Gr+c^2a_E-crb_E\) | \((1+c)W+c\) |
+| 3 | \(a_A+a_E+(a_G-a_H)r\) | \(2W+c\) |
+
+The error in the first, second, and fourth rows is at most
+\((2+3c/2)S\), and in the third row at most \(7cS/2\).
+Since \(0\le c\le1\) and \(S\ge0\), every row loses at most
+\(7S/2\). This uses the shared total mismatch, with no independent
+error assigned to each nominal edge.
+
+Write \(U=283/200\). We use only the original containment and cone
+bounds
+
+\[
+a_A\le1,\quad a_G,a_E\le U,\quad
+ a_E\ge39/40,\quad a_H\ge1/2,\quad b_E\ge0,
+\]
+
+and the H corner disk
+\((a_H+1/2)^2+(b_H+1/2)^2\le q\).
+For any real force \((x,y)\), its single circle completion with
+weight \(1/3\) is
+
+\[
+x a_H+y b_H
+\le\frac q3+\frac34(x^2+y^2)-\frac{x+y}{2}.
+\tag{32}
+\]
+
+There is no sign restriction on \((x,y)\) in (32). The first row
+uses \((x,y)=(c,c-r)\), and the second uses \((1,c)\).
+After the primary-coordinate bounds and the unit-circle identity,
+the direction terms needed for their respective gaps are
+
+\[
+\begin{aligned}
+3c-\frac{183}{200}r+\frac34r^2+\frac32cr&\ge3,\\
+\frac52c+\frac34r^2+\frac{14}{25}r&\ge\frac52.
+\end{aligned}
+\tag{33}
+\]
+
+The quadratic chord bound in (30), together with
+\(cr\ge(7/8)r\) and \(r^2\le(9/20)r\), proves the first
+line with residual at least \((3/200)r\), and the second with
+residual at least \((119/400)r\). The discarded terms
+\(-b_E\) and \(-b_Ec\) are nonpositive. Thus each of these
+first two rows forces
+
+\[
+\frac72S\ge\frac32-\frac q3\ge\frac{487}{2500}.
+\tag{34}
+\]
+
+For the third row, (30) gives
+
+\[
+(1+c)W+c\ge3,
+\]
+
+with residual at least \((17/80)r\). Also
+\(r+c^2=1+r-r^2\le5/4\), so its force is at most
+\(1+5U/4=443/160\); the discarded term \(-crb_E\) is
+nonpositive because all three factors are nonnegative. Hence this
+row forces \(7S/2\ge37/160\).
+
+For the fourth row, its force is at most
+\(1+U+(U-1/2)r\), so the gap is at least
+
+\[
+2c-U+(3/2-U)r\ge\frac{67}{200}.
+\]
+
+All sign uses have been stated: \(r,c,b_E\ge0\),
+\(3/2-U=17/200>0\), and each primary bound is multiplied
+only by \(r\), \(c^2\), or one. The four exact reserves after
+subtracting the full mismatch loss \((7/2)(3/200)=21/400\)
+are
+
+\[
+\frac{1423}{10000},\quad
+\frac{1423}{10000},\quad
+\frac{143}{800},\quad
+\frac{113}{400},
+\tag{35}
+\]
+
+respectively. Every reserve is strictly positive. Consequently every
+actual E axis fails, and G axis 1 is excluded even when another E or
+G axis is feasible simultaneously. No interval partition is used.
+
+`G_axis_one_double_forbidden_excluded` combines this scalar proof with
+the original projection inequalities. `double_forbidden_excluded`
+then covers all four G axes: axes 0 and 3 use Sections 8 and 9, axis
+2 uses Section 7, and axis 1 uses (30)--(35). Finally,
+`D_quarter_owners` chooses any feasible B axis. Its intended case is
+excluded by the primary span from Section 6, and its forbidden case
+by `double_forbidden_excluded`. The result is the full geometric
+restriction
+
+\[
+\boxed{\text{every feasible D-to-E axis belongs to the intended
+quarter-owner set }\{2,3\}\text{ in Lean}.}
+\tag{36}
+\]
+
+The hypotheses remain \(q\le Q_0\), the candidate frame and tangent
+cuts, the previously established zero owners, and \(S\le3/200\).
+There is no prerequisite quarter-owner, mixed-owner, or tilt-window
+table. `quarter_owners` obtains (36) before its remaining lookup.
+
+This removes `Quarter012` through `Quarter015`: 120 quartics,
+600 Bernstein coefficient checks, 5,172 generated Lean lines, and
+350,441 bytes. Combined with Section 9, the checkpoint removes eight
+modules, 240 quartics, 1,200 Bernstein checks, 10,344 generated lines,
+and 699,932 bytes. The final quarter selector has just the 12 vectors
+
+\[
+![0,g,0,0,0,2,e],\qquad g\in\{0,1,3\},\quad e\in\{0,1,2,3\},
+\]
+
+in the order \(4k+e\) for \(g=![0,1,3]_k\). The original 48
+patterns split as 32 with forbidden D, four additional forbidden-B
+patterns with G axis 2 and intended D, and these 12 retained patterns.
+The remaining source modules are `Quarter004`--`Quarter007`,
+`Quarter016`--`Quarter019`, and `Quarter040`--`Quarter043`.
+
+Cumulatively, the six owner/tilt replacements remove 54 generated
+modules, 1,458 quartics, 7,290 Bernstein coefficient checks, 63,288
+generated Lean lines, and 4,250,177 bytes. The manifest now has 12
+quarter groups with 465 rows, 15 mixed groups with 729 rows, and 41
+positive tilt bundles with 861 rows. Exact static checks verify the
+four force identities, direction residuals and reserves, all 12
+quarter selector outputs and all 15 mixed selector outputs, the
+48-pattern partition, generator filtering, manifest counts, and
+resolved source imports. No Lean compilation or historical replay
+was run.

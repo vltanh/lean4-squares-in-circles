@@ -243,6 +243,23 @@ and 52,944 lines. The 20 remaining quarter patterns have a direct
 five-direction-pair selector with four E choices each. The 15 mixed
 patterns and 41 positive tilt bundles remain active.
 
+**G3.2 D-direction capture completed:** a forbidden D separator forces
+`a_E≥39/40`. Every E axis then excludes `sin(t)≤-9/20`. On the remaining
+arc, the large A transverse coordinate excludes G-axis 3 directly and
+G-axis 1 by four E-axis arguments: two H-circle supports and two
+telescoping chains. Their post-error reserves are respectively
+`1423/10000`, `1423/10000`, `143/800`, and `113/400`.
+`D_quarter_owners` now captures every feasible D axis geometrically,
+including axis ties, before any owner-table lookup. This removes
+`Quarter012`–`Quarter015` and `Quarter036`–`Quarter039`, eight modules
+and 240 quartics. Cumulative owner/tilt removal is 54 modules,
+1,458 quartics, 7,290 Bernstein coefficient checks, 63,288 generated
+lines, and 4,250,177 source bytes. The remaining quarter family has
+12 patterns and 465 rows; mixed has 15 patterns and 729 rows; positive
+tilt has 41 bundles and 861 rows. Both owner completeness proofs now
+use explicit selectors for their varying axes instead of enumerating
+all functions `Fin 7 → Fin 4`.
+
 ## G4 — Replace finite word and pair searches: open
 
 The four geometric labels form a small weighted graph. Replace the
