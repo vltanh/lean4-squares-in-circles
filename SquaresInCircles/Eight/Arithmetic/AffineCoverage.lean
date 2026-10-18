@@ -8,7 +8,7 @@ public import SquaresInCircles.Eight.Frames
 # Complete affine-table coverage and the cyclic charged bound
 
 The state cover chooses one label per vertex before any separating axis is
-selected.  Angle chains cover every original axis permitted by the stage.
+selected. Angle chains cover every original axis permitted by the stage.
 Their finite predicate is independent of the continuous row Claims.
 -/
 
@@ -156,7 +156,9 @@ theorem required_mem {K : AffineCover} {M : AffineTableMeta}
     · rw [F.physical_angle]
       ring
   have hpi : piBox.Mem Real.pi := ⟨pi_hand_enclosure.1.le,pi_hand_enclosure.2.le⟩
-  have hb := QInterval.mem_mul (QInterval.mem_point (((M.word i:ℚ)/2):ℝ)) hpi
+  -- The singleton constructor takes a rational; its membership theorem
+  -- performs the coercion to the real coordinate. Do not coerce first.
+  have hb := QInterval.mem_mul (QInterval.mem_point ((M.word i:ℚ)/2)) hpi
   have hbase : (baseBox M i).Mem ((M.word i:ℝ)*Real.pi/2) := by
     convert hb using 1 <;> push_cast <;> ring
   have hph : Candidate.phi F.theta i=(M.word i:ℝ)*Real.pi/2+Candidate.delta F.theta i := by
