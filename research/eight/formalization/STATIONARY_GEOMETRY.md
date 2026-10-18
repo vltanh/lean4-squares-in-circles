@@ -147,6 +147,67 @@ critical point.  `position_stationary_norm_lt_four` does not assume
 `F<=0`; `Stationary.familyValue_position_stationary_norm_lt_four` is its
 bridge to the existing scalar function.
 
+## 5. The actual critical-chain mixed and normal Hessian bounds
+
+`ExactFamily/CriticalStrip.lean` supplies circle support inequalities on
+the complete closed strip `87/100<=u<=1`, at the same radii.  In addition
+to the radical signs, its main bounds are
+
+```
+p > 3/2-u,               u*(1+p) > 141/100,
+w-1-(6/7)*u > 3/70,
+Z > (13/10)*(1+p),       q/r^3 < 4/5,
+Z=q/((2-u)*U^2)+p*q/(Y*V^2).
+```
+
+The first bound follows directly from the rational circle supports
+`U<1.128+.58*u`, `Y<1+u/2`.  With `t=1-u`, its remaining numerator is
+`.011+.172*t+t^2*(2.159-.29*t)>0`.  This replaces integration of a bound
+on `v''`.  The left-circle support follows from `U>.9+.8*u`, then
+`v<1.52-u`, and one further square comparison.  There is no subdivision
+of the position or radius intervals.
+
+`ExactFamily/CriticalHessian.lean` defines `StripCritical` using only
+that strip, the unit sine/cosine conditions, the small tilt, and the two
+actual stationary equations `F_u=F_t=0`.  It **does not** assume `F=0`,
+`F<=0`, a norm bound, or a Hessian sign.  It derives the norm bound from
+section 4 and proves all six constants from `HUMAN_FAMILY_CLOSURE.md`:
+
+```
+kappa > 7/5,             0 < tau < 7/8,
+nu > 9/100,              A0/k1 > 17/50,
+kappa*sigma > 3,         sigma > 27/16.
+```
+
+Here `k_t=kappa*k_u`, `A0=|k_u|^2`, and `sigma`, `tau`, `nu` are the
+position, mixed, and angular normal terms divided by `k1`.  The mixed
+term uses the exact cancellation `tau=(1-(u/r)*(v/w))/(c+s*v/w)`.
+The normal term uses the circle norm bound and the cone
+`k1/2<k2<(7/6)*k1`.  In particular the proof retains `|k|^2` in its
+angular normal term; replacing it by `q` would be invalid at positive
+defect.
+
+The last scalar comparison is explicit:
+
+```
+sigma*kappa^2-2*tau*kappa+nu > 46/25,
+det(Hess F)/(4*k1^2)
+  > (17/50)*(46/25)+(27/16)*(9/100)-(7/8)^2
+  = 237/20000 > 0.
+```
+
+`StripCritical.hessian_reserve` proves the equivalent strict margin
+`det(Hess F)>(237/5000)*k1^2`.
+
+`ExactFamily/CriticalDifferentiation.lean` differentiates the nested
+radicals, proves `p'=-p*Z`, and identifies the displayed position and
+mixed Hessian entries with derivatives of the actual gradient formulas.
+`actual_critical_hessian` packages those derivative identities together
+with the positive position entry and determinant.  Its bridge
+`stationary_isStripCritical` uses only the broad stationary predicate;
+`Stationary.stationary_geometric_hessian_positive` exposes the conclusion
+before local-box membership or root localization.
+
 ## Remaining dependency to eliminate
 
 To replace `stationary_local` itself, the global proof must still prove
@@ -157,7 +218,13 @@ determinant at **every** envelope critical point, including positive
 defect.  Positive curvature only at stationary zeros is insufficient
 because it does not exclude separated feasible components.
 
-The next gates are therefore the geometric bounds on the mixed and normal Hessian
-terms at envelope critical points, and the envelope uniqueness argument.
+The Hessian gates are now proved for the complete critical-position strip.
+The remaining formal steps are to show that the unique position minimum is
+interior in the full radical domain, to exclude `u>=1` at every envelope
+critical point (without assuming a nonpositive defect), to obtain the
+smooth minimizing-position function and its Schur derivative, and to apply
+one-dimensional critical-point uniqueness.  Strict decrease of the minimum
+with radius then identifies the unique zero.  A generic real-variable
+critical-point lemma is useful only after this actual-envelope instantiation.
 The recursive localization import can be deleted only once those gates
 are proved and connected to the existing stationary uniqueness theorem.

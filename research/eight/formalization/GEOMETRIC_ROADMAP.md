@@ -108,6 +108,18 @@ The proof permits positive defect. Its scalar adapter is
 input for the critical-Hessian argument; the mixed derivative and
 global envelope uniqueness still remain to be connected.
 
+**G1.2 critical-Hessian gate implemented:** on the complete position strip
+`87/100≤u≤1`, rational circle supports give `p>3/2-u`,
+`w-1-(6/7)u>3/70`, and the actual curvature bounds. The two critical
+equations then imply all six normalized Hessian estimates, with
+`det(Hess F)>(237/5000)k₁²>0`. The hypothesis permits positive defect.
+`CriticalDifferentiation` identifies the formulas with derivatives of the
+actual nested radicals, and `stationary_geometric_hessian_positive`
+connects the result to the original broad stationary predicate. This
+closes the quantitative Hessian gate on that strip; interiority, the
+smooth minimizing-position function, and its global envelope argument
+remain necessary before removing root localization.
+
 ## G2 — Remove angular subdivisions by exact contact geometry: open
 
 For a signed half-angle parameter, a square's sine, cosine and width have

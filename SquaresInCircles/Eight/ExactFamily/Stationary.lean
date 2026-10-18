@@ -6,6 +6,7 @@ public import SquaresInCircles.Eight.ExactFamily.Generated.StationaryLocalizatio
 public import SquaresInCircles.Eight.ExactFamily.TiltCurvature
 public import SquaresInCircles.Eight.ExactFamily.PositionLocalization
 public import SquaresInCircles.Eight.ExactFamily.EnvelopeNorm
+public import SquaresInCircles.Eight.ExactFamily.CriticalDifferentiation
 
 /-!
 # The exact selected stationary configuration
@@ -215,6 +216,13 @@ theorem stationary_geometric_position_bounds {d : Coordinates} (hd : d.IsStation
   · simpa only [FiveCornerGeometry.comparisonPosition] using
       FiveCornerGeometry.stationary_coordinate_lower hd
   · linarith [hd.y_lower]
+
+/-- The Hessian determinant is positive on every broad stationary chain,
+before any computed root localization.  The underlying theorem also
+covers critical chains of positive defect in the same position strip. -/
+theorem stationary_geometric_hessian_positive {d : Coordinates} (hd : d.IsStationary) :
+    0<FiveCornerGeometry.hessianDeterminant d.q d.c d.s (-d.y) :=
+  (FiveCornerGeometry.stationary_isStripCritical hd).hessian_pos
 
 theorem stationary_local {d : Coordinates} (hd : d.IsStationary) :
     localBox.Mem ![d.q,d.y,d.z] := by
