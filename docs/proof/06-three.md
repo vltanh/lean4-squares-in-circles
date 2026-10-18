@@ -38,8 +38,8 @@ c_1 = \left(-\tfrac12, -\tfrac5{16}\right), \qquad c_2 = \left(\tfrac12, -\tfrac
 $o$ (dashed). The circle $\Gamma_{3/8}$ about $o$ splits into three arcs of
 exactly $\frac{2\pi}3$, one in each square.
 
-*Lean: [`Three.radius`](../../SquaresInCircles/Geometry.lean#L145),
-[`Three.model`](../../SquaresInCircles/Geometry.lean#L152),
+*Lean: [`Three.radius`](../../SquaresInCircles/Geometry.lean#L149),
+[`Three.model`](../../SquaresInCircles/Geometry.lean#L156),
 [`Three.model_packing`](../../SquaresInCircles/Three/Construction.lean#L27),
 [`Three.uniqueness`](../../SquaresInCircles/Three/Uniqueness.lean#L126),
 [`Three.optimum`](../../SquaresInCircles/Three/Uniqueness.lean#L199).*

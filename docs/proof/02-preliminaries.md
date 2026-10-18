@@ -50,10 +50,10 @@ A *configuration* of $n$ unit squares is a family $S_1, \dots, S_n$ of unit
 squares (Definition 2.1), indexed by $\lbrace 1, \dots, n\rbrace$. A
 *relabelling* is a permutation $\sigma$ of $\lbrace 1, \dots, n\rbrace$.
 
-*Lean: [`Point`](../../SquaresInCircles/Geometry.lean#L31),
-[`normSq`](../../SquaresInCircles/Geometry.lean#L34),
-[`inDisk`](../../SquaresInCircles/Geometry.lean#L71),
-[`Direction`](../../SquaresInCircles/Geometry.lean#L83),
+*Lean: [`Point`](../../SquaresInCircles/Geometry.lean#L35),
+[`normSq`](../../SquaresInCircles/Geometry.lean#L38),
+[`inDisk`](../../SquaresInCircles/Geometry.lean#L75),
+[`Direction`](../../SquaresInCircles/Geometry.lean#L87),
 [`direction_dist`](../../SquaresInCircles/Common/Arcs.lean#L38).*
 
 ## 2.2 Unit squares
@@ -99,11 +99,11 @@ by a quarter turn. The square and the point $p$ are the same, and the local
 coordinates of $p$ change from $(x_S(p), y_S(p))$ to $(y_S(p), -x_S(p))$:
 both are less than $\frac12$ in absolute value in either frame.
 
-*Lean: [`UnitSquare`](../../SquaresInCircles/Geometry.lean#L41),
-[`localX`](../../SquaresInCircles/Geometry.lean#L48),
-[`localY`](../../SquaresInCircles/Geometry.lean#L52),
-[`openSquare`](../../SquaresInCircles/Geometry.lean#L62),
-[`closedSquare`](../../SquaresInCircles/Geometry.lean#L57).*
+*Lean: [`UnitSquare`](../../SquaresInCircles/Geometry.lean#L45),
+[`localX`](../../SquaresInCircles/Geometry.lean#L52),
+[`localY`](../../SquaresInCircles/Geometry.lean#L56),
+[`openSquare`](../../SquaresInCircles/Geometry.lean#L66),
+[`closedSquare`](../../SquaresInCircles/Geometry.lean#L61).*
 
 ### Definition 2.2 (axis-parallel square)
 
@@ -120,7 +120,7 @@ Q(c)^\circ = \lbrace (x, y) : |x - c_1| < \tfrac12,\ |y - c_2| < \tfrac12 \rbrac
 *Figure 2.5.* The square $Q(c)$ spans $c_1 \pm \frac12$ across and
 $c_2 \pm \frac12$ up.
 
-*Lean: [`axisSquare`](../../SquaresInCircles/Geometry.lean#L91),
+*Lean: [`axisSquare`](../../SquaresInCircles/Geometry.lean#L95),
 [`openAxisSquare`](../../SquaresInCircles/Common/Constructions.lean#L18),
 [`closedAxisSquare`](../../SquaresInCircles/Common/Constructions.lean#L20),
 [`axisSquare_open`](../../SquaresInCircles/Common/Constructions.lean#L23),
@@ -153,7 +153,7 @@ single square has touching squares.
 but the open squares do not meet: the squares are disjoint, and may both
 belong to a packing. Right, the open squares meet in the shaded region.
 
-*Lean: [`Packing`](../../SquaresInCircles/Geometry.lean#L77),
+*Lean: [`Packing`](../../SquaresInCircles/Geometry.lean#L81),
 [`InteriorDisjoint`](../../SquaresInCircles/Common/Basic.lean#L52).*
 
 ## 2.4 Frames and congruence
@@ -184,7 +184,7 @@ F_\phi(x, y) \in S^\circ \iff |x - c_1| < \tfrac12 \ \text{ and } \ |y - c_2| < 
 $u(\phi + \frac\pi2)$. The square $S$ sits at $c = (c_1, c_2)$: in these
 coordinates it is $Q(c)$.
 
-*Lean: [`pointInDirection`](../../SquaresInCircles/Geometry.lean#L87),
+*Lean: [`pointInDirection`](../../SquaresInCircles/Geometry.lean#L91),
 [`Represents`](../../SquaresInCircles/Common/Congruence.lean#L25).*
 
 ### Lemma 2.5 (frames are rigid motions)
@@ -259,7 +259,7 @@ turned about $o$ by another angle: in the new frame (faint axes) the squares
 $S_3$, $S_2$, $S_1$ sit at $c_1$, $c_2$, $c_3$, the two lower squares having
 exchanged their slots.
 
-*Lean: [`Congruent`](../../SquaresInCircles/Geometry.lean#L103).*
+*Lean: [`Congruent`](../../SquaresInCircles/Geometry.lean#L107).*
 
 ### Lemma 2.7 (congruent configurations)
 

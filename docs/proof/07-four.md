@@ -90,9 +90,9 @@ applies. $\square$
 
 *Lean:
 [`Four.model_packing`](../../SquaresInCircles/Four/Construction.lean#L26),
-[`Four.model`](../../SquaresInCircles/Geometry.lean#L166),
-[`Four.centers`](../../SquaresInCircles/Geometry.lean#L163),
-[`Four.radius`](../../SquaresInCircles/Geometry.lean#L160).*
+[`Four.model`](../../SquaresInCircles/Geometry.lean#L170),
+[`Four.centers`](../../SquaresInCircles/Geometry.lean#L167),
+[`Four.radius`](../../SquaresInCircles/Geometry.lean#L164).*
 
 ## 7.2 The diamond
 

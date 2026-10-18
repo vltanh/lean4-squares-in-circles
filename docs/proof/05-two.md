@@ -86,8 +86,8 @@ So [Lemma 2.8](02-preliminaries.md#lemma-28-axis-parallel-squares) (3)
 applies. $\square$
 
 *Lean: [`Two.model_packing`](../../SquaresInCircles/Two/Construction.lean#L23),
-[`Two.model`](../../SquaresInCircles/Geometry.lean#L137),
-[`Two.radius`](../../SquaresInCircles/Geometry.lean#L131),
+[`Two.model`](../../SquaresInCircles/Geometry.lean#L141),
+[`Two.radius`](../../SquaresInCircles/Geometry.lean#L135),
 [`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L43).*
 
 ## 5.2 The centres

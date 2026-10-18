@@ -67,8 +67,8 @@ So [Lemma 2.8](02-preliminaries.md#lemma-28-axis-parallel-squares) (3)
 applies. $\square$
 
 *Lean: [`One.model_packing`](../../SquaresInCircles/One/Construction.lean#L22),
-[`One.model`](../../SquaresInCircles/Geometry.lean#L123),
-[`One.radius`](../../SquaresInCircles/Geometry.lean#L117),
+[`One.model`](../../SquaresInCircles/Geometry.lean#L127),
+[`One.radius`](../../SquaresInCircles/Geometry.lean#L121),
 [`axis_packing`](../../SquaresInCircles/Common/Constructions.lean#L43).*
 
 ## 4.2 Uniqueness

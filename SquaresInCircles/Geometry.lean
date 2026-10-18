@@ -1,23 +1,27 @@
 module
 
 public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Angle
+public import Mathlib.Tactic
 
 /-!
 # The statement: squares, disks, packings, congruence and the optimal models
 
-Everything the main theorems (`SquaresInCircles.lean`) state: unit squares, each
-with its own position and rotation; packings in a closed disk; congruence to a
-model given about the origin; and the optimal radius and models of each case.
+The primitive definitions used by the main theorems (`SquaresInCircles.lean`):
+unit squares, each with its own position and rotation; packings in a closed
+disk; congruence to a model given about the origin; and the explicit radius
+and models for the first seven cases. `StatementEight.lean` supplies the
+pure eighth-case stationary root and equality domain; `Optimal.lean` supplies
+the public registries through eight.
 `Packing` asks only that the closed squares lie in the disk and that no point
 lie in two open squares (`openSquare`, with strict inequalities).
 
-`Challenge.lean` restates this file word for word, and Comparator checks that
-the two elaborate identically. That needs every definition here, in this
-order: Lean names the auxiliary lemmas inside a definition, such as the proof
-of `Nat.AtLeastTwo 2` behind the real numeral `2`, after the first definition
-in the file that needs them. Edit here only:
-`scripts/verify-comparator.sh --write` copies the definitions into
-`Challenge.lean`.
+`Challenge.lean` restates the three pure modules in their dependency order:
+Geometry, StatementEight, Optimal. The standalone
+`python3 scripts/sync-challenge.py --write` command copies only source text;
+it does not compile or run the comparator. The later comparator procedure
+checks that the definitions and public theorem statements elaborate
+identically. Declaration order is retained because Lean names auxiliary
+proofs after the first definition that requires them.
 -/
 
 @[expose] public section
@@ -271,30 +275,9 @@ def columnModel (c : Column) : Fin 7 → UnitSquare :=
 
 end Seven
 
-/-- The optimal radius for `n` unit squares, for `1 ≤ n ≤ 7`. Every other `n`
-gets the placeholder `0`, about which nothing is claimed. -/
-def optimalRadius : ℕ → ℝ
-  | 1 => One.radius
-  | 2 => Two.radius
-  | 3 => Three.radius
-  | 4 => Four.radius
-  | 5 => Five.radius
-  | 6 => Six.radius
-  | 7 => Seven.radius
-  | _ => 0
-
-/-- The optimal packings of `n` unit squares, as models about the origin: one
-packing for `n ≤ 6`, and for `n = 7` every position of the three middle
-squares. Every other `n` gets the placeholder `∅`, about which nothing is
-claimed. -/
-def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
-  | 1 => {One.model}
-  | 2 => {Two.model}
-  | 3 => {Three.model}
-  | 4 => {Four.model}
-  | 5 => {Five.model}
-  | 6 => {Six.model}
-  | 7 => Set.range Seven.columnModel
-  | _ => ∅
+/- The pure n=8 definitions are in `SquaresInCircles/StatementEight.lean` and
+the pure public registries in `SquaresInCircles/Optimal.lean`. Their ordinary
+epsilon selection is linked to the analytically proved unique root by the
+downstream `Eight/ExactFamily/StatementLink.lean`. -/
 
 end SquaresInCircles
