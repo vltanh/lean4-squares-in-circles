@@ -2,18 +2,17 @@ module
 
 public import SquaresInCircles.Common.Analysis
 public import SquaresInCircles.Eight.ExactFamily.Generated.LocalStationaryBounds
-public import SquaresInCircles.Eight.ExactFamily.Generated.StationaryLocalization
 public import SquaresInCircles.Eight.ExactFamily.Coordinates
 
 /-!
 # Existence and uniqueness of the stationary zero
 
 Uncompiled draft.  The local argument uses the minimum on a fixed compact
-rectangle.  The complete generated closed cover sends every admissible
-stationary zero to that rectangle.  The cover does not supply existence;
-existence follows from continuity, two opposite value signs, and the
-intermediate value theorem.  The Hessian certificate gives curvature 1/4
-in the position and half-angle coordinates.
+rectangle.  Existence follows from continuity, two opposite value signs,
+and the intermediate value theorem.  The Hessian certificate gives
+curvature 1/4 in the position and half-angle coordinates.  Broad stationary
+localization is a separate dependency of `Stationary`, and is not imported
+or needed by this local existence argument.
 -/
 
 @[expose] public section

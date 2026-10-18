@@ -2,6 +2,8 @@ module
 
 public import SquaresInCircles.Eight.ExactFamily.Analysis
 public import SquaresInCircles.Eight.ExactFamily.Weights
+public import SquaresInCircles.Eight.ExactFamily.Generated.StationaryLocalization
+public import SquaresInCircles.Eight.ExactFamily.TiltCurvature
 
 /-!
 # The exact selected stationary configuration
@@ -100,6 +102,60 @@ theorem familyValue_radical (q y z : ℝ) :
     familyValue q (y,z) = (radicalCoordinates q y z).defect := by
   simp [familyValue,F_eval,scalarF,radicalCoordinates,defect,h₁,h₂,c,s,y₄,
     halfAngleCos,halfAngleSin,div_eq_mul_inv]
+
+/-- The existing scalar function is exactly the geometric radical chain,
+with position `u=-y`.  This identity does not assume stationarity, a box
+membership, or even positivity of the radicals. -/
+theorem familyValue_geometric (q u z : ℝ) :
+    familyValue q (-u,z)=
+      FiveCornerGeometry.defect q (halfAngleCos z) (halfAngleSin z) u := by
+  let d := radicalCoordinates q (-u) z
+  have hr : FiveCornerGeometry.lowerRight q u=d.x₁ := by
+    change Real.sqrt (q-u^2)=Real.sqrt (q-(-u)^2)
+    rw [sq_neg]
+  have hU : FiveCornerGeometry.topRight q u=d.x₂ := by
+    change Real.sqrt (q-(2-u)^2)=Real.sqrt (q-(-u+2)^2)
+    congr 1
+    ring
+  have hY : FiveCornerGeometry.topHeight q u=d.y₃ := by
+    change Real.sqrt (q-(3-FiveCornerGeometry.topRight q u)^2)=
+      Real.sqrt (q-(d.x₂-3)^2)
+    rw [hU]
+    congr 1
+    ring
+  have hv : FiveCornerGeometry.lowerHeight q u=2-d.y₃ := by
+    rw [FiveCornerGeometry.lowerHeight,hY]
+  have hw : FiveCornerGeometry.lowerLeft q u= -d.x₄ := by
+    change Real.sqrt (q-FiveCornerGeometry.lowerHeight q u^2)=
+      -(-Real.sqrt (q-(d.y₃-2)^2))
+    rw [hv,neg_neg]
+    congr 1
+    ring
+  have hfirst : FiveCornerGeometry.firstComponent q (halfAngleCos z) (halfAngleSin z) u=
+      -d.h₁ := by
+    rw [FiveCornerGeometry.firstComponent,hr]
+    change 2-halfAngleCos z*(d.x₁-1)+halfAngleSin z*u=
+      -(halfAngleCos z*d.x₁+halfAngleSin z*(-u)-2-halfAngleCos z)
+    ring
+  have hsecond : FiveCornerGeometry.secondComponent q (halfAngleCos z) (halfAngleSin z) u=
+      -d.h₂ := by
+    rw [FiveCornerGeometry.secondComponent,hv,hw]
+    change 1+halfAngleCos z*(2-d.y₃)-halfAngleSin z*(-d.x₄-1)=
+      -(-halfAngleSin z*d.x₄+halfAngleCos z*(d.y₃-2)-1-halfAngleSin z)
+    ring
+  rw [familyValue_radical,FiveCornerGeometry.defect,hfirst,hsecond]
+  change d.h₁^2+d.h₂^2-d.q=(-d.h₁)^2+(-d.h₂)^2-q
+  have hdq : d.q=q := rfl
+  rw [hdq]
+  ring
+
+/-- The strict-convexity interface for `familyValue` itself now covers the
+entire radical position domain, including its endpoints. -/
+theorem familyValue_position_strictConvex {q z : ℝ} (hq : q<4)
+    (hz : 0 ≤ z) (hzu : z<1) :
+    StrictConvexOn ℝ {u : ℝ | FiveCornerGeometry.Domain q u}
+      (fun u => familyValue q (-u,z)) := by
+  simpa only [familyValue_geometric] using FiveCornerGeometry.strictConvexOn_halfAngle hq hz hzu
 
 theorem familyY_radical {q y z : ℝ}
     (h : (radicalCoordinates q y z).IsChain) :

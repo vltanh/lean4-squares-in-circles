@@ -79,6 +79,16 @@ The fixed-tilt argument alone does not justify deleting the root cover:
 uniqueness of the minimizing tilt and the radius are distinct obligations.
 Detailed execution belongs in `STATIONARY_GEOMETRY.md`.
 
+**G1.1 implemented:** `ExactFamily.CircleConvexity` derives the complete
+radical-domain convexity and strict position convexity from circle chords,
+including radical endpoints. `Stationary.familyValue_position_strictConvex`
+connects it to the existing scalar family. `TiltCurvature` additionally
+proves `F_tt + 4 F > 91/45` on that whole domain from circle support and
+the span-three relation, with derivatives of the actual trigonometric
+function. It does not assume nonpositive defect. The root cover remains
+active in `Stationary`: the envelope and radius gates are still needed.
+These new Lean proof bodies remain uncompiled.
+
 ## G2 — Remove angular subdivisions by exact contact geometry: open
 
 For a signed half-angle parameter, a square's sine, cosine and width have
