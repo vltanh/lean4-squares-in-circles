@@ -8,17 +8,20 @@ integration, and public theorem assembly are written; the independent statement
 mirror through n=8 has been materialized as source. The n=8 entry point is
 [`SquaresInCircles/Eight/Theorem.lean`](../../../SquaresInCircles/Eight/Theorem.lean).
 
-**This is source delivery before verification.** The user asked to finish the
-draft without compiling Lean, running CI, or auditing it. None of those actions
-was performed. Written proof bodies and generated certificate data remain
-subject to elaboration, kernel checking, finite decision evaluation, and the
-later F12 handoff. [STATUS.md](STATUS.md) records the stage-by-stage state, the
-completed statement integration, and every deferred verification gate.
+**This is uncompiled source.** The original transfer was delivered before
+verification; the geometric replacement execution now adds source review,
+pinned-Mathlib API checks, small exact rational identities, and reproducible
+static dependency inventories. Lean, lake, CI, and large certificate replays
+remain unrun. Written proof bodies are still subject to elaboration and
+kernel checking. [STATUS.md](STATUS.md) records the replacements, remaining
+finite computations, and deferred F12 gates.
 
 ## Start here
 
 | Document or source | Purpose |
 |---|---|
+| [GEOMETRIC_ROADMAP.md](GEOMETRIC_ROADMAP.md) | Executed geometric replacement gates, exact removal counts, and remaining work. |
+| [TABLE_DEPENDENCIES_BASELINE.json](TABLE_DEPENDENCIES_BASELINE.json) and [TABLE_DEPENDENCIES_CURRENT.json](TABLE_DEPENDENCIES_CURRENT.json) | Comparable committed-tree source inventories; no Lean or checker execution. |
 | [ROADMAP.md](ROADMAP.md) | The transferred F0–F12 specification, proof dependencies, finite domains, and acceptance criteria. |
 | [STATUS.md](STATUS.md) | What has been written, the public exports, and exactly which verification claims remain deferred. |
 | [SOURCE.json](SOURCE.json) | Machine-readable source provenance, toolchain pins, and the instruction to deliver uncompiled source. |
@@ -168,7 +171,7 @@ squares and axes. Candidate capture at `Q1` can be pulled back along
 
 | Modules | Role and useful names |
 |---|---|
-| `ExactFamily/Coordinates.lean`, `Expression.lean`, `Analysis.lean`, `RootCover.lean`, `Stationary.lean`, `Weights.lean` | Exact radical coordinates and positive stationary weights, a closed stationary-root cover, and the exact constant. Main entry points: `qStar_bracket`, `qStar_limits`, `sharpData_stationary`, `exact_stationary_existsUnique`. |
+| `ExactFamily/Coordinates.lean`, `CircleConvexity.lean`, `EnvelopeDifferentiation.lean`, `GeometricStationary.lean`, `Analysis.lean`, `Stationary.lean`, `Weights.lean` | Exact radical coordinates and positive stationary weights, geometric uniqueness on the original broad domain, local analytic existence, and the exact constant. Main entry points: `qStar_bracket`, `qStar_limits`, `sharpData_stationary`, `exact_stationary_existsUnique`. |
 | `ExactFamily/StatementLink.lean` | Identification of the pure statement root, radius, admissible domain, and models with the F2/F11 construction. Source exports include `statement_stationary_existsUnique`, `selected_stationary`, `selected_coordinates`, `qStar_eq`, `Eight.radius_statement`, and `Eight.models_statement`. |
 | `ExactFamily/Adaptive.lean`, `AdaptiveBounds.lean`, `Perturbation.lean`, `PerturbationBounds.lean`, `PerturbationEstimates.lean`, `PerturbationModel.lean` | Explicit quantitative error bounds and perturbation estimates used by the terminal inequality. |
 | `Terminal.lean` | Boundary quantitative control, rigidity, and the original-center stationary pullback. Main entry points: `Terminal.boundary_quantitative`, `Terminal.boundary_rigid`, `Terminal.original_pullback`. |
@@ -191,11 +194,23 @@ semantics for affine rows and real-expression boxes. The source bindings are
 intended to connect each finite inequality to actual square geometry, with all
 radial branches, signs, and originally feasible axes represented.
 
-The repository includes **660,370 generated affine rows**, their domain and
-coverage data, and the direct budget wrappers in `Generated/`. The full
-stationary-cover data are present in `ExactFamily/Generated/`, with the
-generation scripts `generate_stationary.py`, `generate_adaptive.py`, and
-`generate_equality.py` beside the exact-family modules. Polynomial-generation
+The historical research inputs include **660,370 affine rows**. Geometric
+exclusions and the whole coarse core/core cost proof reduce the active Lean
+payload to **576,828 rows**, with the original remaining row claims and
+closed coverage checks. The original 462 coarse arc labels are unchanged.
+Owner/tilt geometry deletes 58 generated modules and 1,578 quartic
+certificates. Pair and word geometry remove four chart decisions and
+680 individual word decisions; the seven-walk enumeration is replaced by
+32 edge comparisons. Details and exact before/after counts are in
+[GEOMETRIC_ROADMAP.md](GEOMETRIC_ROADMAP.md).
+
+The global stationary-root decision has been deleted. `GeometricStationary`
+proves uniqueness from the original broad stationary predicate. The retained
+49 local existence/bracket certificates and 5,376 adaptive fixed-box scalar
+checks remain explicit dependencies. The enclosure utility is separate from
+the retired root search, and `generate_stationary.py` requires the explicit
+`--legacy-root-cover` option to reconstruct historical root data. The adaptive
+and equality generators remain beside the exact-family modules. Generation
 metadata are recorded in `Generated/polynomial_generation_index.json`.
 
 The F5/F6 real-box bridge uses ordinary source scripts of the form
@@ -204,13 +219,15 @@ The F5/F6 real-box bridge uses ordinary source scripts of the form
 and its semantic proof, but this source-delivery pass does not establish that
 every requested decision succeeds, that every adapter elaborates, or that the
 chosen computation fits practical time and memory limits. All such questions
-belong to the later audit. The same restriction applies to finite enumeration,
-rational arithmetic, and generated polynomial proof scripts elsewhere in the
-tree.
+belong to the later audit. The retained Lean finite enumeration, rational arithmetic, and generated
+polynomial proof scripts elsewhere in the tree are likewise unevaluated.
+Small separate exact rational calculations were used only to review the new
+geometric identities and reserves.
 
-Generated source volume is not a verification result. The complete data are
-included so that the later pass can inspect and check the actual obligations
-without reconstructing omitted tables or accepting an external success log.
+Source inventories distinguish retained obligations from geometrically
+removed domains; they are not performance measurements or kernel acceptance.
+Historical data remain available for provenance, while the active finite
+proofs retain their complete semantic and closed-coverage obligations.
 
 ## Independent statement source
 

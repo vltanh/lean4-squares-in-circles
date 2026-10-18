@@ -1,9 +1,10 @@
 # Exact family, sharp terminal, and equality source
 
-This directory is an **uncompiled Lean source draft**. No Lean build, Lean
-elaboration, CI run, or audit was performed when preparing this handoff.
-The theorem bodies and rational certificate proofs are supplied for the
-subsequent compilation and audit pass.
+This directory is an **uncompiled Lean source draft**. The geometric
+replacement pass includes source review, pinned-Mathlib API checks, small
+exact rational identities, and static dependency counts. No Lean build,
+elaboration, CI run, or large certificate replay has been performed. The
+proof bodies remain subject to subsequent compilation and kernel checking.
 
 ## Exact stationary selection (F2)
 
@@ -13,20 +14,32 @@ five equality parameters. `Weights.lean` derives the seven contact weights
 and five positive circle weights from those coordinates. Its last vertical
 force balance follows from position stationarity.
 
-`Expression.lean` connects the rational interval expression language to a
-differentiable real expression language. It retains nonzero denominator and
-positive radicand obligations. `RootCover.lean` provides simultaneous-zero
-exclusion and complete weak closed splitting. The generated stationary
-cover includes both sides of every cut and retains boundary ties.
+`Expression.lean` connects rational interval syntax to differentiable real
+expressions, retaining nonzero denominator and positive radicand obligations.
+The 49 local existence and numerical bracket formula certificates remain.
+`Analysis.lean` constructs an interior minimizer in the local rectangle,
+proves strict monotonicity and continuity of its minimized value in radius,
+and selects `qStar` at its unique zero.
 
-`Analysis.lean` proves existence of an interior minimizer for every radius
-in the local rectangle, uniform strict convexity in the two pose variables,
-strict monotonicity and continuity of the minimized value as the radius
-varies, and existence and uniqueness of its zero. The selected `qStar` is
-obtained from that existence theorem. `Stationary.lean` identifies its
-actual nested-radical coordinates, localizes every solution of the broad
-stationary system by the generated closed cover, and proves uniqueness.
-No external stationary witness is an assumption of these results.
+Global uniqueness now follows from geometry on the original broad domain.
+`CircleConvexity` proves strict position convexity on the complete closed
+radical domain. `EnvelopePosition` locates its unique minimum in the fixed
+window `[87/100,11/10]`. `EnvelopeDifferentiation` derives the actual smooth
+minimizer and both envelope derivatives using the implicit-function theorem.
+At every critical tilt, whole-interval circle comparisons and the six
+`CriticalHessian` estimates make the envelope second derivative positive,
+including when the defect is positive. An intervening-maximum argument gives
+critical-point uniqueness and global minimality on the closed tilt interval.
+Finite radius inclusion then identifies the radius of any stationary zero.
+
+`GeometricStationary.stationary_chain_unique` identifies all original chain
+coordinates. `Stationary.stationary_unique` applies it to the constructed
+witness, and `stationary_local` follows from that equality. The generated
+global root-cover decision is deleted; neither `CompactRootCover` nor
+`RootCover` is in the active theorem's import closure. No external stationary
+witness, local-box membership, Hessian sign, or global-minimum property is
+assumed. See `research/eight/formalization/STATIONARY_GEOMETRY.md` for the
+full proof chain and its uncompiled-source status.
 
 The principal exports are:
 
@@ -36,10 +49,10 @@ The principal exports are:
 - `sharp_coordinates` and `sharp_y`.
 
 Hand sources: `EXACT_CONFIGURATION_AND_FREEDOM.md`,
-`ANALYTIC_EXACT_CONSTRUCTION.md`, `HUMAN_FIVE_CORNER.md`, and
-`UNRESTRICTED_EIGHT_SQUARE_HAND_PROOF.md`, Section 1. The closed stationary
-cover and the sharp bracket arithmetic also follow the expressions in
-`verify_hand_sharp_ceiling_bracket.py`.
+`ANALYTIC_EXACT_CONSTRUCTION.md`, `HUMAN_FIVE_CORNER.md`,
+`HUMAN_FAMILY_CLOSURE.md`, and `UNRESTRICTED_EIGHT_SQUARE_HAND_PROOF.md`,
+Section 1. The retained sharp bracket arithmetic follows the expressions
+in `verify_hand_sharp_ceiling_bracket.py`.
 
 ## Adaptive and terminal comparison (F9)
 
@@ -47,7 +60,10 @@ cover and the sharp bracket arithmetic also follow the expressions in
 value at each tilt in the terminal interval. `AdaptiveBounds.lean` supplies
 the original-owner first-order reserves from exact rational expression
 certificates. `PerturbationBounds.lean` supplies bounds on the quadratic and
-cubic remainder coefficients.
+cubic remainder coefficients. The current adaptive bounds retain 256 indices
+and 21 scalar checks per index, totaling 5,376. Their fixed-box interval
+utility is now in `IntervalEnclosure.lean`, separate from the retired root
+search. This extraction does not replace those quantitative estimates.
 
 `PerturbationModel.lean` defines the seven actual signed gaps, original
 centers, center forces, and completed center squares.
@@ -133,12 +149,14 @@ The generators write Lean expressions and rational arithmetic proof
 objects. The theorem statements interpret those expressions over the
 reals. A successful Python run is not used as a Lean premise.
 
-- `generate_stationary.py`: stationary closed cover, derivatives, Hessian
-  bounds, root brackets, and coordinate brackets;
+- `generate_stationary.py`: local derivatives, Hessian bounds, root brackets,
+  and coordinate brackets. The default no longer reconstructs a root cover;
+  `--legacy-root-cover` explicitly enables that historical archive;
 - `generate_adaptive.py`: adaptive position brackets, all nine owner
   reserves, edge weight bounds, and perturbation remainder bounds;
 - `generate_equality.py`: the explicit equality box and its strict
   containment, core, and central separation reserves.
 
-The large generated files are split into source modules so their full
-rational arithmetic data remain available to the later Lean pass.
+The remaining generated arithmetic data are available to the later Lean
+pass. Historical root-search utilities remain outside the active proof
+dependency graph; their former decision module has been deleted.

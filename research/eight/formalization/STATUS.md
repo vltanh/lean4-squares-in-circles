@@ -7,55 +7,79 @@ written. The independent statement mirror through n=8 has been materialized as
 source. This status records the implementation pass requested on 2026-10-18 UTC;
 it does not report a checked formalization.
 
-The user explicitly requested completion of the source before compilation or
-audit. Accordingly, **no Lean compilation, build, CI run, certificate evaluation,
-or audit was performed in this pass**. A theorem written with a proof body is
-recorded below as a *source draft*, not as a theorem whose elaboration or kernel
-checking has succeeded. Every F12 verification gate remains deferred.
+The original transfer was delivered before compilation or audit. The
+subsequent geometric replacement execution includes mathematical/source
+review, pinned-Mathlib API checks, small exact rational identities, and a
+static import inventory. **No Lean compilation, lake build, CI run, or large
+certificate replay has been performed.** Written proof bodies remain
+uncompiled source, and no kernel-acceptance or performance claim is made.
+The compilation, axiom, and comparator gates of F12 remain deferred.
 
 ## Provenance and delivery
 
 ### Geometric replacement pass
 
-The subsequent execution of [GEOMETRIC_ROADMAP.md](GEOMETRIC_ROADMAP.md)
-has begun replacing active finite computations by geometric proof bodies.
-The four-type seven-walk bound now follows from alternating vertex
-potentials and 32 edge inequalities, replacing enumeration of all 16,384
-words. The entire nonpositive tilt chart now follows from a four-circle
-stress and one shared mismatch budget. This removes `Owner/Tilt000.lean`
-through `Owner/Tilt017.lean`, their active imports, and their coverage
-entries: 18 bundles containing 378 quartic certificates and 16,740 lines.
-The exact positive reserve over `Q0` is `34477/144000000`, including tilt
-zero. The 41 positive-tail bundles remain in use.
+The execution of [GEOMETRIC_ROADMAP.md](GEOMETRIC_ROADMAP.md) has replaced
+several actual proof dependencies. The same geometric hypotheses, original
+signed axes, closed boundaries, exact constant, and equality family remain.
+The current published source snapshot and the original PR snapshot are
+recorded by the same parser in
+[TABLE_DEPENDENCIES_CURRENT.json](TABLE_DEPENDENCIES_CURRENT.json) and
+[TABLE_DEPENDENCIES_BASELINE.json](TABLE_DEPENDENCIES_BASELINE.json).
 
-A second geometric exclusion uses three consecutive aligned edges:
-their transverse coordinates cancel, forcing a primary-coordinate span
-that containment forbids. It replaces all 16 owner patterns with an
-intended `B→T` separator and a forbidden `D→E` separator, for every tilt
-and mixed-owner choice. Another 480 quartic certificates and 20,688
-generated lines have been deleted. The combined removal is 34 generated
-modules, 858 quartics, and 37,428 lines; 32 quarter-owner bundles remain.
+| Dependency | Original PR #10 | Current source | What replaced the removed part |
+|---|---:|---:|---|
+| Global stationary root cover | One depth-48 recursive decision | **Removed** | Actual disk convexity, implicit envelope derivatives, critical-point geometry, and finite radius inclusion. |
+| Active affine row constructors | 660,370 | **576,828** | Five complete state/axis exclusions and the full coarse core/core cost bound using unchanged markers. |
+| Generated owner/tilt modules | 122 | **64** | Uniform circle stresses and telescoping chains. |
+| Owner/tilt quartic certificates | 3,513 | **1,935** | 1,578 certificates and 7,890 Bernstein coefficient checks deleted. |
+| Individual word certificates | 1,800 | **1,120** | Common core/core geometry and five complete separator classes. |
+| Four-type chart certificate declarations | 25 | **21** | Whole core/core center separation and marker bounds. |
+| Four-type seven-word enumeration | 16,384 walks | **32 edge comparisons** | Alternating vertex potentials and an odd-cycle argument. |
+| Adaptive fixed-box scalar checks | 5,376 | **5,376** | Retained; no geometric removal claimed. |
+| Local stationary formula certificates | 49 | **49** | Retained existence and numerical bracket bounds. |
 
-The rotated-corner support on `G→A→B→T` removes another eight complete
-quarter bundles. Cumulative owner/tilt deletion is now 42 modules,
-1,098 quartics, and 47,772 lines, leaving 24 quarter bundles. Their
-completeness is expressed by a direct index formula with 24 concrete
-projections instead of enumeration of all seven-vertex owner functions.
+The global stationary replacement proves uniqueness directly from the
+original broad `Coordinates.IsStationary` predicate. Its Hessian argument
+covers critical points with positive defect, and its angular minimum
+comparison includes both closed tilt endpoints. `stationary_unique` now
+identifies the original chain with the constructed witness;
+`stationary_local` follows afterward. The generated localization decision
+has been deleted. The retained adaptive interval utility has been extracted
+from the historical root-search module, so neither root-search module is
+in the active theorem's import closure. See
+[STATIONARY_GEOMETRY.md](STATIONARY_GEOMETRY.md).
 
-Core/core pair geometry now replaces four recursive chart decisions,
-covering their 32 source-axis/sign problems at once. The unchanged public
-pair theorem uses center separation and the same signed vertex marker.
-Primary-axis geometry also removes 6,028 complete coarse affine angle
-chains from the active Lean payload. The coarse and enhanced bounds now
-share 123,003 retained rows, with the original closed coverage checks on
-every other state/axis domain. The affine active total is 654,342 rows;
-the 660,370-row historical input is retained for provenance.
+The coarse core/core proof preserves all 462 original arc labels, with
+496 endpoint inequalities on 124 core arcs and seven edge budgets. It
+replaces 4,806 additional two-state rows after the five axis exclusions.
+The coarse and enhanced stages share 110,425 remaining rows. The total
+affine reduction is 83,542 active constructors; the historical 660,370-row
+research inputs are preserved. Full outer-state charged inequalities are
+still finite dependencies. See [MISMATCH_GEOMETRY.md](MISMATCH_GEOMETRY.md).
 
-These are source replacements with the original geometric hypotheses;
-their Lean elaboration and kernel checking remain deferred. The large
-affine corpus and the global stationary root cover still belong to the
-active proof graph. The gate-by-gate roadmap distinguishes implemented
-replacements from preparatory geometric lemmas and remaining obligations.
+Owner/tilt geometry has deleted 58 modules, 68,460 generated lines, and
+4,593,946 bytes. Every D axis is now captured geometrically. The remaining
+quarter family has 8 patterns and 345 rows, mixed has 15 patterns and
+729 rows, and positive tilt has 41 bundles and 861 rows. Every nonpositive
+tilt is excluded by one four-circle stress, including tilt zero. See
+[OWNER_GEOMETRY.md](OWNER_GEOMETRY.md).
+
+The word layer retains 200 common, 460 short-word, and 460 second-word
+individual recursive decisions. These are counts of source statements,
+not recursion nodes or measured runs. All retained individual word
+statements and labels are unchanged. See
+[CORE_WORD_GEOMETRY.md](CORE_WORD_GEOMETRY.md),
+[CORE_PAIR_GEOMETRY.md](CORE_PAIR_GEOMETRY.md), and
+[ODD_CYCLE_GEOMETRY.md](ODD_CYCLE_GEOMETRY.md).
+
+Static import traversal finds no missing repository import or import cycle
+in the published snapshot. Independent source reviews checked the actual
+envelope argument against pinned Mathlib and the new circle/marker
+identities with exact rational arithmetic. These checks do not establish
+Lean elaboration, theorem dependencies after elaboration, or kernel
+acceptance. The remaining affine, owner, word, pair, and adaptive computations
+are explicit open gates in the roadmap.
 
 ### Original source transfer
 
@@ -85,7 +109,7 @@ or axioms.
 |---|---|---|
 | **F0 — model and interfaces** | `Model.lean`, `SeparatingAxis.lean`: squared-radius packing adapters, actual signed square axes, radial boundary states, original-cycle and radius-expansion transport records. | Source draft complete. |
 | **F1 — real and rational certificate kernels** | `Arithmetic/`: rational intervals, Bernstein expansions, radical and trigonometric bounds, closed covers, real-expression box semantics, and the continuous interpretation of affine rows. `Generated/` holds the emitted data and claim bindings. | Source draft complete; evaluation deferred. |
-| **F2 — exact stationary configuration** | `ExactFamily/Coordinates.lean`, `Expression.lean`, `RootCover.lean`, `Stationary.lean`, `Weights.lean`, and `Generated/`: exact radicals, stationary equations, uniqueness cover, exact weights, and radius brackets. Exports include `qStar_bracket`, `qStar_limits`, `sharpData_stationary`, and `exact_stationary_existsUnique`. | Source draft complete. |
+| **F2 — exact stationary configuration** | `ExactFamily/Coordinates.lean`, `CircleConvexity.lean`, `EnvelopeDifferentiation.lean`, `GeometricStationary.lean`, `Stationary.lean`, `Weights.lean`, and local `Generated/` bounds: exact radicals, geometric stationary uniqueness, exact weights, and radius brackets. Exports include `qStar_bracket`, `qStar_limits`, `sharpData_stationary`, and `exact_stationary_existsUnique`. | Source draft complete. |
 | **F3 — central square and strict core** | `CentralCore.lean`, `CentralForbidden.lean`, `Arithmetic/CentralBandPolynomials.lean`: circle-arc measure argument, a unique central square, actual common-point inequalities, and the forbidden-ray budget. Exports include `central_core_and_exteriors` and `central_core_unique`. | Source draft complete. |
 | **F4 — boundary reduction and radius transfer** | `BoundaryReduction.lean`, `RadiusTransfer.lean`: finite successive first-contact moves, explicit frame and signed-axis transport, original cyclic order, and fixed-ray radius expansion preserving every initially feasible signed axis. Exports include `boundary_reduction_exists`, `radius_expand_boundary_cycle`, `BoundaryCycle.expand`, and `boundary_normalization_exists`. | Source draft complete. |
 | **F5 — frame range** | `Frames.lean`, `Arithmetic/FourTypePairs.lean`: four-type pair semantics on actual boundary cycles, finite cycle costs, shortest quarter-turn lifts, and the frame-diameter bound. Exports include `four_type_pair_bound`, `physical_cycle_width_bound`, and `physical_frame_lift_of_cost`. | Source draft complete; finite real-box decisions are unevaluated. |
@@ -147,13 +171,19 @@ product-space norm on `ℝ × ℝ`.
 
 ## Generated source and unevaluated finite proofs
 
-The affine certificate corpus contains **660,370 generated rows** in the
-repository. The source includes their interval domains, polynomial data, closed
-cover structure, semantic bindings to actual candidate quantities, and budget
-wrappers. The full exact stationary-root cover data are also present as source
-under `ExactFamily/Generated/`; their generation scripts remain alongside the
-exact-family modules. The draft does not replace either corpus with a numerical
-summary or a sampled success report.
+The historical affine research corpus contains **660,370 rows**. The active
+Lean payload now contains **576,828 retained constructors**, with all original
+row claims and closed coverage obligations preserved for their remaining
+domains. Removed domains have geometric proofs, as recorded above; the input
+JSON files remain available for provenance and source comparison.
+
+The global stationary-root decision is removed. Its generic historical
+search utility is outside the active import closure, and the stationary
+generator requires `--legacy-root-cover` to reconstruct that archive. Local
+existence and bracket certificates remain, as do the separate 256-box
+adaptive derivative, reserve, weight, and perturbation bounds. The latter
+use `IntervalEnclosure` directly and still declare 5,376 scalar checks.
+No generator or certificate was executed for the dependency cleanup.
 
 F5 and F6 also use the real-expression interval compiler in
 `Arithmetic/RealBox.lean`. Their source contains ordinary `by decide` proof
@@ -164,8 +194,9 @@ kernel reduction requires are all questions for the later verification pass.
 The number `96` is a parameter of the written decision procedure; it is not an
 observed successful proof run or a measured resource bound.
 
-The finite quarter-word enumeration, polynomial identities, cover bookkeeping,
-and rational arithmetic scripts are likewise unevaluated. The source is
+The retained Lean quarter-word enumeration, polynomial identities, cover
+bookkeeping, and rational arithmetic proof scripts are likewise unevaluated.
+Small separate rational checks were used to review the new geometric identities. The source is
 organized to expose the actual real inequalities, all signed separating axes,
 and closed endpoint coverage. That organization is part of the implementation;
 it is not an audit result.

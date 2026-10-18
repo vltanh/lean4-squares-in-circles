@@ -1,0 +1,258 @@
+{
+  "kind": "source-only inventory; no Lean, CI, or certificate execution",
+  "head": "39ad5576d3ce848717b5cdebcb89e801757582a0",
+  "source_snapshot": "committed tree",
+  "committed_tree": "a246bbf3f36e171ede200ea25777062e42f2bc85",
+  "entry": "SquaresInCircles.Eight.Theorem",
+  "repository_modules": 221,
+  "eight_modules": 204,
+  "affine_tables": [
+    {
+      "module": "SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch",
+      "rows": 110425,
+      "input_rows": 129031,
+      "excluded_by_geometry": 18606,
+      "exclusion_rule": "excluding_core_pairs",
+      "input": "../../../../research/eight/CANDIDATE_COARSE_MISMATCH_HAND_DATA.json"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Generated.Affine.DUpperAffine",
+      "rows": 18301,
+      "input_rows": 24197,
+      "excluded_by_geometry": 5896,
+      "exclusion_rule": "excluding_core_separators",
+      "input": "../../../../research/eight/D_UPPER_AFFINE_HAND_DATA.json"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Generated.Affine.GLowerAffine",
+      "rows": 8250,
+      "input_rows": 9087,
+      "excluded_by_geometry": 837,
+      "exclusion_rule": "excluding_core_separators",
+      "input": "../../../../research/eight/G_LOWER_AFFINE_HAND_DATA.json"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Generated.Affine.GUpperAffine",
+      "rows": 8957,
+      "input_rows": 9796,
+      "excluded_by_geometry": 839,
+      "exclusion_rule": "excluding_core_separators",
+      "input": "../../../../research/eight/G_UPPER_AFFINE_HAND_DATA.json"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Generated.Affine.HLowerAffine",
+      "rows": 40064,
+      "input_rows": 48050,
+      "excluded_by_geometry": 7986,
+      "exclusion_rule": "excluding_core_separators",
+      "input": "../../../../research/eight/H_LOWER_AFFINE_HAND_DATA.json"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Generated.Affine.Mismatch015To001Affine",
+      "rows": 135810,
+      "input_rows": 144709,
+      "excluded_by_geometry": 8899,
+      "exclusion_rule": "excluding_core_separators",
+      "input": "../../../../research/eight/MISMATCH_015_TO_001_AFFINE_HAND_DATA.json"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Generated.Affine.Mismatch01To015Affine",
+      "rows": 92068,
+      "input_rows": 107196,
+      "excluded_by_geometry": 15128,
+      "exclusion_rule": "excluding_core_separators",
+      "input": "../../../../research/eight/MISMATCH_01_TO_015_AFFINE_HAND_DATA.json"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Generated.Affine.Mismatch026To01Affine",
+      "rows": 114806,
+      "input_rows": 131255,
+      "excluded_by_geometry": 16449,
+      "exclusion_rule": "excluding_core_separators",
+      "input": "../../../../research/eight/MISMATCH_026_TO_01_AFFINE_HAND_DATA.json"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Generated.Affine.TLowerAffine",
+      "rows": 41714,
+      "input_rows": 49971,
+      "excluded_by_geometry": 8257,
+      "exclusion_rule": "excluding_core_separators",
+      "input": "../../../../research/eight/T_LOWER_AFFINE_HAND_DATA.json"
+    },
+    {
+      "module": "SquaresInCircles.Eight.Generated.Affine.TUpperAffine",
+      "rows": 6433,
+      "input_rows": 7078,
+      "excluded_by_geometry": 645,
+      "exclusion_rule": "excluding_core_separators",
+      "input": "../../../../research/eight/T_UPPER_AFFINE_HAND_DATA.json"
+    }
+  ],
+  "affine_rows": 576828,
+  "affine_input_rows": 660370,
+  "affine_geometric_exclusions": 83542,
+  "stationary_root_cover_imported": false,
+  "stationary_root_search_utility_imported": false,
+  "stationary_geometric_uniqueness_imported": true,
+  "fixed_interval_bound_declarations": [
+    {
+      "module": "SquaresInCircles.Eight.ExactFamily.Generated.AdaptiveBounds",
+      "theorem": "lower_checked",
+      "finite_index_cardinalities": [
+        256
+      ],
+      "scalar_box_checks": 256
+    },
+    {
+      "module": "SquaresInCircles.Eight.ExactFamily.Generated.AdaptiveBounds",
+      "theorem": "upper_checked",
+      "finite_index_cardinalities": [
+        256
+      ],
+      "scalar_box_checks": 256
+    },
+    {
+      "module": "SquaresInCircles.Eight.ExactFamily.Generated.AdaptiveBounds",
+      "theorem": "reserves_checked",
+      "finite_index_cardinalities": [
+        256,
+        9
+      ],
+      "scalar_box_checks": 2304
+    },
+    {
+      "module": "SquaresInCircles.Eight.ExactFamily.Generated.AdaptiveBounds",
+      "theorem": "weights_checked",
+      "finite_index_cardinalities": [
+        256,
+        7
+      ],
+      "scalar_box_checks": 1792
+    },
+    {
+      "module": "SquaresInCircles.Eight.ExactFamily.Generated.AdaptiveBounds",
+      "theorem": "hTwo_checked",
+      "finite_index_cardinalities": [
+        256
+      ],
+      "scalar_box_checks": 256
+    },
+    {
+      "module": "SquaresInCircles.Eight.ExactFamily.Generated.AdaptiveBounds",
+      "theorem": "quadratic_checked",
+      "finite_index_cardinalities": [
+        256
+      ],
+      "scalar_box_checks": 256
+    },
+    {
+      "module": "SquaresInCircles.Eight.ExactFamily.Generated.AdaptiveBounds",
+      "theorem": "cubic_checked",
+      "finite_index_cardinalities": [
+        256
+      ],
+      "scalar_box_checks": 256
+    }
+  ],
+  "adaptive_scalar_box_checks": 5376,
+  "local_stationary_formula_certificate_declarations": [
+    "fullF_valid",
+    "fullFy_valid",
+    "fullFz_valid",
+    "fullFq_valid",
+    "fullFyy_valid",
+    "localXOne_valid",
+    "localXTwo_valid",
+    "localYThree_valid",
+    "localXFour_valid",
+    "localCosine_valid",
+    "localSine_valid",
+    "localHOne_valid",
+    "localHTwo_valid",
+    "det00_valid",
+    "det01_valid",
+    "det02_valid",
+    "det03_valid",
+    "det10_valid",
+    "det11_valid",
+    "det12_valid",
+    "det13_valid",
+    "det20_valid",
+    "det21_valid",
+    "det22_valid",
+    "det23_valid",
+    "det30_valid",
+    "det31_valid",
+    "det32_valid",
+    "det33_valid",
+    "trialFy_valid",
+    "trialFz_valid",
+    "lowerTest_valid",
+    "upperTest_valid",
+    "sharpLowF_valid",
+    "sharpLowFy_valid",
+    "sharpLowFz_valid",
+    "sharpHighF_valid",
+    "sharpHighFy_valid",
+    "sharpHighFz_valid",
+    "sharpTrialFy_valid",
+    "sharpTrialFz_valid",
+    "sharpXOne_valid",
+    "sharpXTwo_valid",
+    "sharpYThree_valid",
+    "sharpXFour_valid",
+    "sharpCosine_valid",
+    "sharpSine_valid",
+    "sharpHOne_valid",
+    "sharpHTwo_valid"
+  ],
+  "local_stationary_formula_certificate_count": 49,
+  "interval_inventory_kind": "declared fixed-box bounds and products of explicit finite index sizes; these are source obligations, not interval operations or runtime measurements",
+  "owner_bundle_modules": {
+    "quarter": 8,
+    "mixed": 15,
+    "tilt": 41
+  },
+  "owner_row_certificates": {
+    "tilt": 861,
+    "mixed": 729,
+    "quarter": 345
+  },
+  "owner_generated_lines": 83997,
+  "owner_generated_bytes": 5912186,
+  "word_individual_certificates": {
+    "common": 200,
+    "short": 460,
+    "second": 460
+  },
+  "word_individual_certificate_total": 1120,
+  "four_type_chart_certificate_declarations": 21,
+  "missing_repository_imports": [],
+  "repository_import_cycles": [],
+  "recursive_search_inventory_kind": "literal certify tokens in source, excluding comments and strings; definitions, statements and proof/body references are distinguished; these are not executed searches, recursion-node counts, or runtime measurements",
+  "recursive_search_source_occurrences": 1151,
+  "recursive_search_source_counts_by_kind": {
+    "certificate_statement": 1145,
+    "definition": 1,
+    "recursive_body": 2,
+    "proof_reference": 3
+  },
+  "recursive_search_source_counts_by_module": {
+    "SquaresInCircles.Eight.Arithmetic.FourTypePairs": {
+      "total": 22,
+      "certificate_statement": 22
+    },
+    "SquaresInCircles.Eight.Arithmetic.RealBox": {
+      "total": 7,
+      "definition": 1,
+      "recursive_body": 2,
+      "certificate_statement": 1,
+      "proof_reference": 3
+    },
+    "SquaresInCircles.Eight.Generated.WordCertificates": {
+      "total": 1122,
+      "certificate_statement": 1122
+    }
+  },
+  "recursive_search_runtime_measurements": null
+}

@@ -26,7 +26,7 @@ toolchain, independent statement, or definition of the equality family.
 
 The source import closure of `SquaresInCircles.Eight.Theorem` at the starting
 commit contains 253 repository modules, of which 236 are n=8 modules. It
-still imports all ten affine tables, totaling 660,370 rows:
+imports all ten affine tables, totaling 660,370 rows:
 
 | Input | Rows | Geometric purpose |
 |---|---:|---|
@@ -41,7 +41,7 @@ still imports all ten affine tables, totaling 660,370 rows:
 | `Mismatch01To015Affine` | 107,196 | Contract to mismatch less than 3/200. |
 | `Mismatch015To001Affine` | 144,709 | Contract to mismatch less than 1/1000. |
 
-The root-localization module still calls `CompactRootCover.certify` with
+At the starting commit, the root-localization module calls `CompactRootCover.certify` with
 depth 48. Its retained diagnostic reports 22,601 visited nodes; that number
 is not a measured Lean cost. Owner capture imports 48 quarter bundles,
 15 mixed bundles and 59 tilt bundles, with 21 alternatives per tilt bundle.
@@ -63,104 +63,57 @@ distinct from recursion nodes and from definitions or proof references to
 the checker. `--details` optionally lists all source occurrences; the
 default report keeps compact per-module counts. No checker is evaluated.
 
-## G1 — Replace stationary-root subdivision by the family geometry: implemented
+## G1 — Replace stationary-root subdivision by family geometry: implemented
 
-The manuscript already contains a substantially more geometric proof in
-`HUMAN_FIVE_CORNER.md`, `HUMAN_FAMILY_ENCLOSURE.md`, and
-`HUMAN_FAMILY_CLOSURE.md`. Transfer its actual reasoning instead of
-reconstructing a root-subdivision tree in Lean.
+`GeometricStationary.stationary_chain_unique` now proves equality of any
+two chains satisfying the original broad `Coordinates.IsStationary`
+predicate. The active proof no longer imports or calls the root search.
+The proof does not assume a local root box, a defect sign, envelope
+regularity, a Hessian sign, or global minimality as an extra hypothesis.
 
-1. **G1.1 — Position convexity.** Prove strict convexity of the complete
-   radical-chain defect at each fixed tilt, including the closed radical
-   endpoints. Instantiate the semicircle and composition inequalities for
-   the actual five-corner coordinates.
-2. **G1.2 — Envelope uniqueness.** Prove interiority and differentiability
-   of the unique position minimizer. At every critical tilt prove the
-   positive Hessian determinant from the six broad inequalities in the
-   family-closure manuscript. This must not assume zero defect. It then
-   excludes two critical tilts by the intervening maximum argument.
-3. **G1.3 — Exact root identification.** Combine strict radius monotonicity
-   with the already supplied explicit endpoint tests. Identify this unique
-   broad-strip solution with `sharpData` and the pure statement root.
-   Remove the import of `Generated.StationaryLocalization` only after the
-   existing broad-domain uniqueness theorem has a complete replacement.
+The implementation follows six geometric steps:
 
-The fixed-tilt argument alone does not justify deleting the root cover:
-uniqueness of the minimizing tilt and the radius are distinct obligations.
-Detailed execution belongs in `STATIONARY_GEOMETRY.md`.
+1. `CircleConvexity` derives strict position convexity of the actual
+   nested-radical defect on its complete closed radical domain, including
+   comparison with radical endpoints.
+2. `PositionLocalization` and `EnvelopePosition` give opposite derivative
+   signs on the fixed window `[87/100,11/10]`. Its interior position root
+   is the unique global minimum on the full radical domain. A single
+   trial chain at `u=15/16` supplies the norm bound needed below, including
+   at minima with positive defect.
+3. `EnvelopeDifferentiation` applies the scalar implicit-function theorem
+   to the actual position equation. Uniqueness identifies the smooth local
+   root with the chosen minimizer. It proves `u'=-F_ut/F_uu`, `M'=F_t`,
+   and the actual envelope's second derivative `M''=F_tt-F_ut^2/F_uu`.
+4. `EnvelopeCriticalPosition` excludes critical positions `u>=1` by a
+   whole-interval circle comparison. On `87/100<=u<=1`, six actual-chain
+   estimates in `CriticalHessian` give
+   `det(Hess F)>(237/5000)*k1^2>0`. Every critical envelope point is
+   therefore a strict local minimum, regardless of its defect sign.
+   An intervening interior maximum excludes two critical points and gives
+   global minimality over the complete closed tilt interval.
+5. `RadiusMonotonicity` uses finite circle inclusion to prove
+   `M(q1,t)<M(q0,t)-(q1-q0)` when `q0<q1`. Two stationary zeros at
+   different radii would contradict the global angular lower bounds.
+6. The exact angle `2*atan(z)`, critical-point uniqueness, strict position
+   convexity, and the four signed circle radicals identify all coordinates.
+   `Stationary.stationary_unique` applies this theorem to `sharpData`;
+   `stationary_local` then follows from equality with that witness.
 
-**G1.1 implemented:** `ExactFamily.CircleConvexity` derives the complete
-radical-domain convexity and strict position convexity from circle chords,
-including radical endpoints. `Stationary.familyValue_position_strictConvex`
-connects it to the existing scalar family. `TiltCurvature` additionally
-proves `F_tt + 4 F > 91/45` on that whole domain from circle support and
-the span-three relation, with derivatives of the actual trigonometric
-function. It does not assume nonpositive defect. The root cover remains
-active in `Stationary`: the envelope and radius gates are still needed.
-These new Lean proof bodies remain uncompiled.
+`Generated.StationaryLocalization.lean` has been deleted. The unchanged
+fixed-box enclosure routine has been extracted to `IntervalEnclosure`,
+so neither `CompactRootCover` nor `RootCover` remains in the public entry
+point's import closure. The historical search is available only through
+the stationary generator's explicit `--legacy-root-cover` option.
 
-**G1.2 position gate implemented:** one comparison position, `u=87/100`,
-and five circle-derived coefficient bounds give
-`F_u/(2 c²) ≤ -81/20000` throughout the complete radius and tilt strip.
-Strict convexity then places every stationary position to its right.
-`Stationary.stationary_geometric_position_bounds` connects this argument
-to the original stationary coordinates and is used in `stationary_local`.
-The same secant argument proves that a derivative-zero position is the
-global fixed-tilt minimum, including comparison with radical endpoints.
-The remaining envelope and radius gates still require proof; this
-checkpoint does not remove the root checker.
+**Retained finite work:** the analytic witness and numerical brackets use
+49 local formula certificates. The separate adaptive curve estimates use
+256 indices and 21 scalar bounds per index, or 5,376 fixed-box checks.
+Their removal is not claimed. All replacement Lean remains uncompiled.
+Details and the positive-defect coverage argument are in
+[`STATIONARY_GEOMETRY.md`](STATIONARY_GEOMETRY.md).
 
-**G1.2 norm gate implemented:** a single trial chain at `u=15/16`
-and one cubic endpoint-chord identity prove `k₁²+k₂²<4` at every
-position minimum throughout the full radius strip and `0≤tan(t)≤1/5`.
-The proof permits positive defect. Its scalar adapter is
-`familyValue_position_stationary_norm_lt_four`. This supplies the norm
-input for the critical-Hessian argument; the mixed derivative and
-global envelope uniqueness still remain to be connected.
-
-**G1.2 critical-Hessian gate implemented:** on the complete position strip
-`87/100≤u≤1`, rational circle supports give `p>3/2-u`,
-`w-1-(6/7)u>3/70`, and the actual curvature bounds. The two critical
-equations then imply all six normalized Hessian estimates, with
-`det(Hess F)>(237/5000)k₁²>0`. The hypothesis permits positive defect.
-`CriticalDifferentiation` identifies the formulas with derivatives of the
-actual nested radicals, and `stationary_geometric_hessian_positive`
-connects the result to the original broad stationary predicate. This
-closes the quantitative Hessian gate on that strip; interiority, the
-smooth minimizing-position function, and its global envelope argument
-remain necessary before removing root localization.
-
-**G1.2 actual envelope completed:** the fixed window `[87/100,11/10]`
-has opposite endpoint derivative signs and positive `F_uu` throughout.
-Its unique position minimum is interior and globally minimizes over the
-full radical domain. A whole-interval tangent-cross-product inequality
-excludes every critical position `u≥1`, without a defect-sign assumption.
-`EnvelopeDifferentiation` applies the scalar implicit-function theorem
-to the actual radical equation and proves both envelope derivatives.
-The positive Hessian determinant now implies a strict local minimum at
-every critical tilt. The intervening-maximum argument gives uniqueness
-and global minimality over the closed tilt interval. Finite circle
-inclusion also proves strict radius decrease of the actual envelope.
-The final gate is connecting these results to the original stationary
-coordinates and replacing the root-cover call; it remains active at this
-checkpoint.
-
-**G1.3 connected; global root-cover call removed:**
-`GeometricStationary.stationary_chain_unique` proves equality of arbitrary
-chains satisfying the original broad `Coordinates.IsStationary` predicate.
-The exact angle `2*atan(z)` supplies the actual envelope zero and critical
-point. Global angular minimality plus finite radius decrease identifies
-the radius; critical-point uniqueness identifies the angle; strict position
-convexity and the four circle equations identify all coordinates.
-`Stationary.stationary_unique` now applies this theorem to `sharpData`.
-`stationary_local` follows from equality with that witness, and the import
-and depth-48 call to `Generated.StationaryLocalization` have been removed.
-This is an actual replacement under the original hypotheses. The local
-existence/bracket bounds and the separate 256-box adaptive estimates are
-retained; their removal is not claimed. All replacement Lean remains
-uncompiled.
-
-## G2 — Remove angular subdivisions by exact contact geometry: open
+## G2 — Remove angular subdivisions by exact contact geometry: partly implemented
 
 For a signed half-angle parameter, a square's sine, cosine and width have
 a common positive denominator. All four original separating-axis margins
@@ -216,91 +169,57 @@ removes another 1,256 complete-chain affine rows. The active total is
 581,634, a reduction of 78,736 from the historical 660,370; the shared
 coarse table has 115,231 rows. No new angular subdivision is introduced.
 
-## G3 — Eliminate owner and tilt regions by direct circle stresses: open
+**Whole coarse core/core cost implemented:** the labels selected by the
+original 462-arc cover remain unchanged. On each of its 124 core arcs,
+arctangent curvature and endpoint bounds control the exact same signed
+marker throughout the closed interval; corner labels use monotonicity.
+The finite marker obligations are 496 rational endpoint inequalities,
+plus seven scalar budgets. Center separation then supplies the complete
+two-state core/core inequality, including shared chart endpoints.
+`GeometricCoreCoverage` handles that branch before row dispatch. This
+removes another 4,806 rows, leaving **110,425 coarse rows and 576,828
+active affine rows in total**, a cumulative reduction of **83,542**.
+All remaining coarse rows have an outer endpoint. The D-positive marker
+keeps its actual upper bound `643/1000`; its impossible outgoing core
+pair is excluded geometrically rather than by tightening that bound.
 
-First eliminate free slider centers symbolically from the original
-separating inequalities. Use nonnegative stress weights and disk support
-on the remaining constrained corners. Keep total frame error as one
-shared budget rather than charging every edge independently.
+## G3 — Eliminate owner and tilt regions by circle stresses: partly implemented
 
-1. **G3.1 — Nonpositive tilt.** Prove a single whole-region exclusion at
-   mismatch at most 1/1000 using the exact zero-tilt five-corner stress.
-   Cover tilt zero explicitly. If this closes, remove all negative-only
-   tilt bundles from the active import and coverage lists.
-2. **G3.2 — Remaining owner alternatives.** Group alternatives by the
-   actual wrong separator, and prove a whole-region geometric obstruction
-   for each group. Retain the original four axes until eliminated.
-3. **G3.3 — Positive tilt tails.** Apply the reduced five-corner chain and
-   an adaptive geometric stress or the family envelope. A frozen stress
-   that is sharp at the optimum need not remain a useful lower bound away
-   from the optimum; establish its sign before using it on a tail.
+Eliminate slider coordinates symbolically from the original separating
+inequalities, then use nonnegative circle stress weights. The total frame
+error is spent as one shared budget. Every originally feasible axis and
+closed boundary remains covered until a geometric contradiction excludes it.
 
-Detailed execution belongs in `OWNER_GEOMETRY.md`.
+The following entire classes are now handled before finite dispatch:
 
-**G3.1 implemented:** `Candidate.GeometricOwners.negative_tilt_excluded`
-now handles the entire closed half-chart `-3/8 ≤ z ≤ 0`, including zero,
-under the actual terminal-owner and shared-mismatch hypotheses. The four
-circle weights give the exact reserve `34477/144000000` above `Q0`.
-`tilt_window` uses this theorem before consulting positive-tail certificates.
-The 18 negative-only bundles `Tilt000`–`Tilt017` have been deleted from
-source and from the import and coverage lists: 378 quartic certificates,
-1,890 Bernstein coefficient checks, and 16,740 generated lines removed.
-The generator now skips precisely those bundles. The 41 positive-tail
-bundles and the remaining owner alternatives are still active. All new
-Lean proof bodies remain uncompiled.
+| Geometric class | Argument | Deleted modules | Deleted quartics |
+|---|---|---:|---:|
+| Nonpositive tilt, including zero | Four-circle stress on the complete half-chart, with reserve `34477/144000000` over `Q0` at `S<=1/1000`. | 18 | 378 |
+| Intended B, forbidden D | `B→T→D→E` telescopes to `3-(3/2)S<=a_B+a_E`, contradicting containment at `S<=1/10`. | 16 | 480 |
+| Forbidden B, G axis 2 | Rotated-corner support on `G→A→B→T`, with reserve `209/2500`. | 8 | 240 |
+| Both B and D forbidden, G axis 0 | Two weighted chains force `b_A>=81/100`; one A-circle support gives reserve `1/400`. | 4 | 120 |
+| Remaining forbidden D cases | Every E axis excludes the long negative arc; two circle supports and two chains exclude the remaining G axes. | 8 | 240 |
+| Forbidden B, G axis 3 | H-circle geometry forces `sin(t)>-3/8`; one four-circle stress covers all E axes with final reserve `7/500`. | 4 | 120 |
+| **Total** | | **58** | **1,578** |
 
-**G3.2 first whole class implemented:** if `B→T` has an intended owner
-and `D→E` a forbidden owner, the three aligned inequalities on
-`B→T→D→E` telescope to `3-(3/2)S ≤ a_B+a_E`. Containment gives
-`a_B+a_E < 283/100`, contradicting `S ≤ 1/10`. This uses the original
-feasible axes, allows ties, and is independent of tilt and mixed owners.
-`quarter_owners` now applies this obstruction before the remaining
-32-pattern certificate dispatch. Sixteen complete quarter bundles have
-been deleted: 480 quartics and 20,688 generated lines. Together with
-G3.1, 34 modules, 858 quartics, 4,290 Bernstein coefficient checks,
-and 37,428 generated lines have been removed. The remaining B-forbidden
-and mixed-owner classes are open.
+`D_quarter_owners` now captures every originally feasible D axis by
+geometry, including ties, without a quarter/mixed table lookup. Quarter
+completeness uses eight explicit vectors, and mixed completeness uses a
+direct 15-vector selector; neither enumerates functions `Fin 7 → Fin 4`.
+The generator and manifests omit exactly the removed geometric classes.
 
-**G3.2 second whole class implemented:** for a forbidden B separator and
-G-axis 2, the `G→A→B→T` chain and a single rotated-corner support yield
-`5/2-(3/2)S ≤ a_T+q/4`. Containment contradicts this at `S ≤ 3/200`,
-with exact reserve `209/2500`. The proof covers the whole tilt chart,
-both D directions, and every E owner. `Quarter024`–`Quarter031` have
-been removed: eight modules, 240 quartics, and 10,344 lines. The total
-owner/tilt removal is now 42 modules, 1,098 quartics, 5,490 Bernstein
-coefficient checks, and 47,772 lines. The 24 retained quarter patterns
-use an explicit index formula and 24 concrete projections; the previous
-enumeration of functions `Fin 7 → Fin 4` has also been removed.
+The cumulative deletion is **7,890 Bernstein coefficient checks,
+68,460 generated lines, and 4,593,946 source bytes**. The remaining
+quarter family has 8 patterns and 345 rows; mixed has 15 patterns and
+729 rows; positive tilt has 41 bundles and 861 rows.
 
-**G3.2 third whole class implemented:** when both quarter directions are
-forbidden, two weighted chains and the T circle force `b_A ≥ 81/100`.
-A single supporting line of the A circle then excludes G-axis 0 over
-the full tilt chart, independently of the E owner. Its final reserve
-at `S ≤ 3/200` is `1/400`. This removes `Quarter000`–`Quarter003`:
-four modules, 120 quartics, and 5,172 generated lines. The cumulative
-owner/tilt removal is 46 modules, 1,218 quartics, 6,090 Bernstein checks,
-and 52,944 lines. The 20 remaining quarter patterns have a direct
-five-direction-pair selector with four E choices each. The 15 mixed
-patterns and 41 positive tilt bundles remain active.
+Remaining work is to eliminate the other B/G/E owner classes and both
+positive tilt tails under their original mismatch assumptions. A stress
+sharp only at the optimum cannot be assumed to stay useful on a whole
+tail. Detailed hypotheses, weights, identities, boundary coverage, and
+source-only checks are in [`OWNER_GEOMETRY.md`](OWNER_GEOMETRY.md).
 
-**G3.2 D-direction capture completed:** a forbidden D separator forces
-`a_E≥39/40`. Every E axis then excludes `sin(t)≤-9/20`. On the remaining
-arc, the large A transverse coordinate excludes G-axis 3 directly and
-G-axis 1 by four E-axis arguments: two H-circle supports and two
-telescoping chains. Their post-error reserves are respectively
-`1423/10000`, `1423/10000`, `143/800`, and `113/400`.
-`D_quarter_owners` now captures every feasible D axis geometrically,
-including axis ties, before any owner-table lookup. This removes
-`Quarter012`–`Quarter015` and `Quarter036`–`Quarter039`, eight modules
-and 240 quartics. Cumulative owner/tilt removal is 54 modules,
-1,458 quartics, 7,290 Bernstein coefficient checks, 63,288 generated
-lines, and 4,250,177 source bytes. The remaining quarter family has
-12 patterns and 465 rows; mixed has 15 patterns and 729 rows; positive
-tilt has 41 bundles and 861 rows. Both owner completeness proofs now
-use explicit selectors for their varying axes instead of enumerating
-all functions `Fin 7 → Fin 4`.
-
-## G4 — Replace finite word and pair searches: open
+## G4 — Replace finite word and pair searches: partly implemented
 
 The four geometric labels form a small weighted graph. Replace the
 enumeration of all 4^7 walks by a short odd-cycle potential argument.
