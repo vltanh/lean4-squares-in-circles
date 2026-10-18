@@ -14,6 +14,9 @@ turns.
 
 ![The optimal packings of one to eight unit squares, each in its dashed circle of radius R_n at a common scale, with n and the radius under each: one square; two squares side by side; the T; the 2 by 2 block; the plus; six squares, one of them turned by 45 degrees; seven squares in columns of two, three and two; and eight squares, two columns of two with a square on top between them, two turned squares at the bottom and a turned square in the middle](docs/proof/figures/01-introduction/optimal.svg)
 
+Move the squares, slide the families and watch the circle in the
+[playground](https://vltanh.me/squares-in-circles/).
+
 ## Definitions
 
 More on each definition: [docs/definitions.md](docs/definitions.md).
