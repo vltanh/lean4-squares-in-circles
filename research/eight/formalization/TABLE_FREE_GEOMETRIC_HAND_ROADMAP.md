@@ -318,6 +318,14 @@ calculus also replaces the former early-angle tangent lists and
 corner derivative ranges. The nineteen-class mixed assembly is still
 explicitly incomplete pending its final two quarter-turn families.
 
+`HAND_SHORT_WORD_UPPER_PRIMARY_CONTACTS_WITHOUT_TABLES.md` proves
+three complete upper-primary branches of 0010111, on edges 2, 4,
+and 6, with corrected cost greater than .8978. Its contact minimum
+passes through the intrinsic axial/diagonal join; the one possible
+interior segment is controlled by an exact angular derivative.
+The two curvature polynomials are proved on their whole geometric
+sign domains, without angle or state subdivision.
+
 ### G3 — Tangent cuts as a single structural theorem
 
 **Replaces.** The six large G/T/H/D tail tables (the H/D part may use
