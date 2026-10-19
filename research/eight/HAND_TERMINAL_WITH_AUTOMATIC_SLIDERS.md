@@ -1,5 +1,14 @@
 # The sharp hand terminal with automatic slider bounds
 
+**Table-free successor.**
+[The whole-domain terminal proof](formalization/HAND_TERMINAL_RESERVES_AND_SQUARE_COMPLETION_WITHOUT_TABLES.md)
+proves this same \(S\le1/1000\) sharp-radius conclusion, its automatic
+original-center sliders, and its equality implications with no numerical
+rectangle or derivative table. Its explicit linear reserve is \(S/500\),
+and it retains the nonnegative actual family defect in place of a
+quantitative reduced-curvature estimate. The earlier arithmetic below is
+not an input to that proof.
+
 ## Theorem and effect on the remaining gates
 
 The two projected-slider bounds need not be separate global capture

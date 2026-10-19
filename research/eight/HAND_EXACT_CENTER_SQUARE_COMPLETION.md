@@ -1,5 +1,12 @@
 # Exact square completion enlarges the hand terminal to S ≤ 1/500
 
+**Table-free terminal at \(S\le1/1000\).**
+[The whole-domain replacement](formalization/HAND_TERMINAL_RESERVES_AND_SQUARE_COMPLETION_WITHOUT_TABLES.md)
+uses the exact identities in Sections 2--5 below and proves their weights,
+first-order reserves, and remainders on one complete analytic domain.
+It is the version used in the table-free assembly; the stronger
+\(S\le1/500\) statement below retains its older arithmetic inputs.
+
 This is a conditional geometric theorem. It assumes the seven named signed
 separators, the frame lifts, and the two projected-slider bounds in
 `HUMAN_BROAD_TERMINAL_ARITHMETIC.md`. It replaces that note's nonlinear

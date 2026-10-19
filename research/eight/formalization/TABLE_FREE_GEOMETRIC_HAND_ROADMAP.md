@@ -428,8 +428,8 @@ the intermediate value theorem, the single continuous five-circle stress,
 and five exact rational trial-point comparisons. The existing geometric
 critical-point theorem gives broad uniqueness. The same rational trial is
 an unconditional eight-square packing at the upper ceiling. No local root
-box or five-interval family enclosure is used. The narrower coordinate
-brackets, adaptive terminal reserve, and equality components remain open.
+box or five-interval family enclosure is used. The narrower historical
+coordinate brackets are not asserted by this existence theorem.
 
 **Whole-terminal stationary position and slider coefficient, proved.**
 `HAND_STATIONARY_POSITION_AND_SLIDER_BOUNDS.md` proves
@@ -440,6 +440,30 @@ convexity and one affine comparison curve; stationarity simplifies the
 slider coefficient exactly and makes its whole-domain monotonicity
 available. No local cover is used. These are components of the terminal
 reserve theorem, not additional global capture assumptions.
+
+**Conditional sharp terminal closed on paper (2026-10-19).**
+`HAND_TERMINAL_RESERVES_AND_SQUARE_COMPLETION_WITHOUT_TABLES.md`
+proves all nine enlarged owner reserves \(>3/250\), every edge
+weight \(<.87\), and automatic original-center slider bounds on
+the whole terminal domain. Exact completion of the five center
+squares leaves a remainder \(<9.75S^2\), so for \(S\le.001\)
+it gives
+\[
+ r_0\ge q_*+\mu_HM(q_*,t)
+ +\sum_{i=A,B,D,E,H}\mu_i
+       \left|p_i+o_i+\frac{F_i}{2\mu_i}\right|^2
+ +\frac{S}{500}\ge q_*.
+\]
+The retained family defect is globally nonnegative and has its unique
+zero at \(t_*\), by the table-free existence and uniqueness proof.
+Thus the old reduced-curvature table is unnecessary. The theorem
+handles every one of the 32 original allowed owner choices, including
+ties, and applies directly to original centers. It imports none of
+the old four rectangles, position brackets, nine-midpoint owner
+checks, or adaptive derivative bounds. The owner/tilt/mismatch
+capture hypotheses remain the separate G2--G8 gates. The final
+equality-parameter domain and noncongruent box are being handled
+separately below this terminal conclusion.
 
 **Replaces.** The 49 stationary existence/bracket comparisons; the
 5,376 adaptive fixed-box scalar checks; the short central-core
