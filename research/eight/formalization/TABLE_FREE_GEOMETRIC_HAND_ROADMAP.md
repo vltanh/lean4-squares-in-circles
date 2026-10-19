@@ -318,13 +318,15 @@ All four original axes and both angle halves have cost greater than
 .89777. The proof retains the original contact exits and uses no
 critical-curve bracket sequence or derivative-range table.
 
-`HAND_WRONG_0011011_MIXED_COMPONENTS_WITHOUT_TABLES.md`, Sections
-1--6, now proves every mixed zero-quarter component and the stated
-complete quarter-turn components. Its common actual-circle support
-argument removes nine squared-polynomial rows; whole contact-curve
-calculus also replaces the former early-angle tangent lists and
-corner derivative ranges. The nineteen-class mixed assembly is still
-explicitly incomplete pending its final two quarter-turn families.
+`HAND_WRONG_0011011_MIXED_COMPONENTS_WITHOUT_TABLES.md` now proves
+the complete mixed component: all nineteen reflection classes,
+thirty-eight directed radial/sign cases, and 152 original axis
+branches. Its common actual-circle support argument removes nine
+squared-polynomial rows. Whole contact-curve calculus replaces the
+early-angle tangent lists, corner derivative ranges, side discriminant
+rows, and final implicit zero-curve intervals. Section 9 gives the
+full dependency map, including the actual-cycle zero-primary
+exclusion before any candidate capture or mismatch assumption.
 
 `HAND_SHORT_WORD_UPPER_PRIMARY_CONTACTS_WITHOUT_TABLES.md` proves
 three complete upper-primary branches of 0010111, on edges 2, 4,

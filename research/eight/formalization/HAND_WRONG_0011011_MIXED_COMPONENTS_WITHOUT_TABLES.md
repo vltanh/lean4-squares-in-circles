@@ -6,10 +6,11 @@ in the nineteen mixed reflection classes of
 reductions retain their original separating axes, core side and corner,
 closed angle endpoints, and ties. All decimals below are exact rationals.
 
-**Assembly status.** Section 1 is complete: it replaces all nine squared
-degree-eight polynomial rows identified there. The other mixed contact
-and curvature replacements are being assembled below; this document does
-not yet claim the full nineteen-class theorem.
+**Assembly status.** Sections 1–8 give all remaining analytic replacements.
+Section 9 assembles the complete nineteen mixed reflection classes for
+an actual seven-cycle after frame concentration and the zero-primary
+cyclic exclusion. This is the mixed component of the whole-word proof;
+the core/core and outer/outer components have separate proofs.
 
 Throughout,
 \[
@@ -944,3 +945,533 @@ arguments, §§6.1–6.3 prove the complete positive-core to positive-outer
 edge-3 class, with its original axes, both core pieces, and all closed
 boundaries.
 
+## 7. The complete edge-2 negative outer to negative core component
+
+This section replaces the scalar premises in the original
+EDGE2_NEGATIVE_CORE_SIDE and EDGE2_NEGATIVE_CORE_CORNER hand notes.
+It covers the full side and corner, including their common join.
+
+### 7.1. The side discriminant has a whole-domain derivative proof
+
+Keep the side note's valid quadratic minorant for the negative outer
+label. Its remaining scalar target is positivity of
+\[
+\begin{aligned}
+ E(x)={}&s^2(4kv-p^2)+2gps+4gkDs\\
+        &-4\zeta(v+pD+kD^2)-g^2,\qquad0\le x\le.7,
+\end{aligned}                                               \tag{58}
+\]
+where
+\[
+\begin{gathered}
+ s=\cos x,\quad D=-.4+(13/12)\sin x+\tfrac12\cos x,\\
+ p=.973417553,\quad k=.39,\quad g=.98439,\quad\zeta=.05334,\\
+ v=v_0-x,\quad
+ v_0=\pi/2-.790136935+.22042-.34492(7/12)-\gamma.
+\end{gathered}
+\]
+This is the actual discriminant, before any Taylor-polynomial
+substitution. Expanding its two harmonics and differentiating four
+times gives exactly
+\[
+ E''''=A\cos x+B\sin x+16(C-.78x)\cos2x-12.372204\sin2x,
+                                                               \tag{59}
+\]
+where
+\[
+\begin{gathered}
+ A=1.2316256254413,\qquad B=-.15288005320042,\\
+ C=2kv_0-p^2/2+gk-2\zeta k\{1/4-(13/12)^2\},
+ \qquad -.12770<C<-.12769.
+\end{gathered}
+\]
+On this entire range \(\sin2x,\cos2x\ge0\).
+The positive function
+\[
+ h(x)=-16C\cos2x+12.372204\sin2x
+\]
+is concave, since \(h''=-4h<0\). Its two endpoint values exceed
+2.04 and 12, respectively. Thus \(h>2.04\), and (59) gives
+\[
+                             E''''<1.232-2.04<0.           \tag{60}
+\]
+
+The following point bounds now suffice:
+\[
+\begin{gathered}
+ E(0)>.000177,\quad E(.3)>.00339,\quad
+ E(.5)>.00279,\quad E(.7)>.00389,\\
+ E'''(.3)>1.4,\quad E'(.3)<-.013,\quad E''(.3)>.047,\\
+ E'''(.5)<-1.1,\quad E'(.5)>.0086,\quad E''(.5)>.088,\\
+ E(.426)>.00244,\qquad |E'(.426)|<.00004.
+\end{gathered}                                               \tag{61}
+\]
+By (60), \(E'''\) decreases. On \([0,.3]\), \(E'\) is convex and
+has a negative right endpoint; \(E\) has no interior minimum.
+On \([.5,.7]\), \(E'\) is concave and has a positive left endpoint;
+again \(E\) has no interior minimum.
+On the middle range, \(E''\) is concave and both endpoints exceed
+.047. The completed lower tangent quadratic at .426 therefore gives
+\[
+                   E>.00244-\frac{(.00004)^2}{.094}>0.      \tag{62}
+\]
+Together with the four endpoint bounds, this proves (58) everywhere.
+The three derivative-covered ranges follow from one global fourth
+derivative sign; there is no interval enclosure or coefficient row.
+The original positive quadratic coefficient then proves every
+lower-half axis-4 side state.
+
+### 7.2. One height comparison replaces the five early corner rows
+
+Use the common negative outer label in height coordinates:
+\[
+ M(u)=.369499372+.02363u^2-.055275u
+                    -(.961795-.11055u)\sqrt{Q-u^2}.
+                                                               \tag{63}
+\]
+Put \(k=.11055,V=.961795,z=\sqrt{Q-u^2}\).
+Its first three derivatives are the original explicit formulas;
+in particular
+\[
+ M'''=3Q(Vu-kQ)/z^5>0,\qquad
+ q(u):=\frac{M''''}{M'''}=\frac V{Vu-kQ}+\frac{5u}{z^2}.
+\]
+On \(1.4\le u\le1.7\), this last function increases strictly:
+\[
+ q'=-\frac{V^2}{(Vu-kQ)^2}+\frac5{z^2}+\frac{10u^2}{z^4}
+ >-1.11+2.55>0.                                            \tag{64}
+\]
+Define \(L(u)=M''-5.4M'+4.13904\).
+Then \(L''=M'''(q-5.4)\), whose sign can change only from
+negative to positive. Accordingly \(L'\) has no interior maximum.
+Its two endpoint values are below \(-3.29\) and \(-.74\);
+thus \(L'<0\) throughout. As \(L(1.4)<-.136\), we obtain
+\[
+                  M''<5.4M'-4.13904.                       \tag{65}
+\]
+
+On every early corner contact, \(\phi\le1.1\),
+the actual height belongs to \((1.4,1.7)\) and \(\cos\phi>.45\).
+Writing \(\delta=M'\cos\phi-.34492\), (65) gives
+\(M''<12\delta\). The original radical derivatives give
+\(M''>0\) on this height domain, so \(\delta>0\) as well.
+The original exact core-coordinate formula is
+\[
+ f_{BB}=M''(\sin\phi+w\cos\phi)^2
+       -12\delta(1+w^2)^{3/2}-.10668,\qquad0\le w\le1.
+\]
+Since the squared factor is at most \(1+w^2\), this is strictly
+negative everywhere. The whole early corner therefore reduces to
+its join and diagonal, without five angle ranges.
+
+### 7.3. Uniform strong convexity of both endpoint curves
+
+For either endpoint, write
+\[
+ u=1+A_*\cos\phi-B_*\sin\phi,\quad K=A_*^2+B_*^2>K_0=1.12479.
+\]
+The endpoint cost has curvature
+\[
+ H''=M''\{K-(u-1)^2\}-M'(u-1)\ge A(u),
+\]
+where
+\[
+ A(u)=M''J-M'(u-1),\qquad J=K_0-(u-1)^2,\quad1.33\le u\le1.7.
+\]
+We prove \(A''>.4\) on this whole height range.
+With \(q_2=Q-u^2=z^2\), direct differentiation gives
+\[
+ A''=-.18904+\frac{\mathcal E(u)}{z^7},
+\]
+\[
+\begin{aligned}
+ \mathcal E(u)={}&3Q\bigl[
+ \{V(Q+4u^2)-5kQu\}J-5(Vu-kQ)(u-1)q_2\bigr]\\
+ &+8kuq_2^3-4Q(V-ku)q_2^2.                                \tag{66}
+\end{aligned}
+\]
+For \(t=u-1.33\in[0,.37]\), expanding the single expression (66)
+and grouping powers gives
+\[
+ \mathcal E(1.33+t)>
+ 9.4+t(52-81t-21t^4-9t^5-t^6)>9.4.                        \tag{67}
+\]
+The first inequality follows directly by subtracting its right
+side: all power coefficients are nonnegative. The parenthesis
+exceeds 21 on the full range, by replacing its negative powers
+with their values at .37. As \(z<1.466\),
+\[
+ 9.4>(.18904+.4)(1.466)^7
+ \quad\Longrightarrow\quad A''>.4.                         \tag{68}
+\]
+At \(u=1.5\), \(A>.54319\) and \(|A'|<.046\).
+One square completion yields everywhere
+\[
+ A(u)>.54319-\frac{.046^2}{.8}>.54>.4.                      \tag{69}
+\]
+Thus both endpoint curves have \(H''>.4\), replacing all three
+former endpoint-curvature polynomials.
+The original single reference for each endpoint consequently
+gives \(H_{\rm diagonal}>.89777\) and \(H_{\rm join}>.9002\).
+
+### 7.4. One whole late-corner bound replaces the remaining two ranges
+
+For \(1.1\le\phi\le1.191\), use the same exact expression for
+\(f_{BB}\). It increases with \(\phi\), at each fixed core coordinate.
+To see this, put
+\[
+ L=\sin\phi+w\cos\phi,\quad
+ h=-u_\phi=(A+1/2)\sin\phi+(B-1/2)\cos\phi.
+\]
+Differentiating gives
+\[
+\begin{aligned}
+ \partial_\phi f_{BB}
+ ={}&-M'''hL^2+2M''L(\cos\phi-w\sin\phi)\\
+ &+12\{M''h\cos\phi+M'\sin\phi\}(1+w^2)^{3/2}.
+\end{aligned}
+\]
+Here \(L^2\le1+w^2\), and
+\(2L(\cos\phi-w\sin\phi)\ge-(1+w^2)\).
+The whole late rectangle has
+\[
+ 1.33<u<1.492,\quad M'>.909,\quad
+ 0<M''<1.22,\quad M'''<3.2,\quad h<1.09,\quad\sin\phi>.89.
+\]
+Discarding a positive term therefore gives
+\[
+ \partial_\phi f_{BB}>
+ (1+w^2)\{-3.2(1.09)-1.22+12(.909)(.89)\}>0.                \tag{70}
+\]
+It suffices to bound the entire final-angle core at \(\phi=1.191\).
+There \(u<1.402,M''<.986,\delta>-.0054\), and
+\(\sin\phi+\cos\phi<1.3\). Since \(12(1+w^2)^{3/2}<34\),
+\[
+ f_{BB}<.986(1.3)^2+34(.0054)-.10668<7/4.                   \tag{71}
+\]
+This bound holds everywhere in the late rectangle by (70).
+
+The core-corner length is less than .059. The usual chord correction
+for \(f''\le7/4\) loses at most \((7/4)(.059)^2/8\).
+Equation (69) and the original positive diagonal derivative at 1.1
+show that both endpoint costs on the whole late range exceed .89849.
+Consequently
+\[
+ f>.89849-\frac{(7/4)(.059)^2}{8}
+   >.89772>\gamma.                                         \tag{72}
+\]
+The original two late angle ranges are unnecessary.
+
+The original side and corner axis exclusions and support bounds,
+combined with §§7.1–7.4, prove the complete negative-outer to
+negative-core edge-2 class with no scalar polynomial or interval
+table remaining.
+
+## 8. The complete edge-3 negative core to positive outer component
+
+We now replace the last scalar premises in
+EDGE3_NEGATIVE_CORE_TO_POSITIVE_OUTER: the three derivative
+polynomials in its §2.2 and the four zero-contact angle intervals in
+its §3.2. Its upper circle support is already covered by Section 1.2.
+Write
+\[
+ g=.98439,\quad v=.05334,\quad e=.22042-.34492(7/12),
+\]
+\[
+ J(B)=.03965+3.85510B-1.49748B^2-1.89442A(B)B,
+ \qquad A(B)=\sqrt{Q-(B+.5)^2}-.5.
+\]
+The original bounds \(J'>0\) and \(J'''>1\) use only the explicit
+radical derivatives and their whole-domain monotonicity.
+
+### 8.1. One uniform derivative estimate replaces three polynomial rows
+
+Keep the original exact angle minimization. With
+\[
+ U=A+.5,\quad V=B+.5,\quad P=U-1,\quad T=P^2+V^2,
+ \quad S=\sqrt{h^2T-1},\quad\beta=\arctan(V/P),
+\]
+it gives the lower bound
+\[
+ E_h(B)=\beta+\arctan S-S-e-\frac{(g-h)^2}{4v}
+                         +\frac h2-J(B),                   \tag{73}
+\]
+using \(h=g\) on \(0\le B\le.45\) and \(h=.975\) on
+\(.45\le B\le.54\). The contact and all roots in (73) are in
+the domains justified by the original geometric reduction.
+
+For clarity, here are the exact derivative polynomials in the height
+variable \(u=U\):
+\[
+\begin{gathered}
+ T=Q+1-2u,\qquad W=Q-u^2,\qquad Z=h^2T-1,\\
+ E_0=2u^2-4Qu+Q(Q+1),\qquad E_0'=4u-4Q,\\
+ A_0=E_0u^2T-W\{E_0'uT-E_0(3T-4u)\},\\
+ D_0=u^5T^3-A_0,
+\end{gathered}
+\]
+\[
+\begin{aligned}
+ C_h={}&3h^2QuT^2Z-h^4Wu^2T^2-4h^2Wu^2TZ\\
+       &+3QT^2Z^2-6QuTZ^2+8Wu^2Z^2.                       \tag{74}
+\end{aligned}
+\]
+For \(G_h=\beta+\arctan S-S\), the original direct identity is
+\[
+ G_h'''=\frac{A_0S^3-VC_h}{u^5T^3S^3},                    \tag{75}
+\]
+where these derivatives are with respect to \(B\).
+
+Put \(t=u-1.68\). On the entire range \(0\le t\le.235\),
+expansion and grouping of the single polynomial \(D_0\) give
+\[
+ D_0(1.68+t)>
+ 27+t(76-206t-84t^5-49t^6-8t^7)>27.                       \tag{76}
+\]
+The difference in the first inequality has nonnegative power
+coefficients and a strictly positive constant. The bracket in the
+second inequality is positive by bounding each negative power by
+its value at .235.
+
+For every \(a=h^2\in[.95,.97]\), the polynomial (74) satisfies
+the uniform bound
+\[
+ C_h'(1.68+t)\le-39+372t-1169t^2+333t^3
+              \le-39+372t-1090t^2<0.                     \tag{77}
+\]
+Here the prime denotes the height derivative. To verify the first
+inequality directly with the parameter still free, expand (74) in
+\(t\) and \(a\). At \(a=.95\) the resulting derivative is bounded
+above by
+\[
+ -39+342.84t-1169t^2+306.5t^3.
+\]
+Its derivative with respect to \(a\) is at most
+\(1443t+1323t^3\) for \(.95\le a\le.97\):
+its coefficients at degrees \(0,2,4,5\) in \(t\) are negative,
+and the remaining two coefficients are increasing linear functions
+bounded above by 1443 and 1323. Integrating over a length at
+most .02 proves the first inequality in (77).
+The second uses \(1169-333(.235)>1090\); the final quadratic is
+strictly negative because \(4(39)(1090)>372^2\).
+These are inequalities for one printed polynomial with a free
+parameter, with no coefficient table or subdivision.
+
+Thus each \(C_h\) decreases throughout the required height range.
+The two right endpoint comparisons
+\[
+ C_g(1.915)>.05312,\qquad C_{.975}(1.74)>2.52              \tag{78}
+\]
+prove its positivity on \([1.68,1.915]\) and \([1.68,1.74]\),
+respectively. These are the whole height ranges needed in (73).
+Equations (75)–(78) imply \(G_h'''<1\); since \(J'''>1\),
+\[
+                              E_h'''<0.                  \tag{79}
+\]
+
+The original point comparisons now finish the whole target domain.
+On \([0,.32]\), (79) and \(E_g''(.32)>.22\) give
+\[
+ E_g>.89776733-\frac{(.000006)^2}{.44}>\gamma
+\]
+by square completion at \(B=.3035\).
+On \([.32,.4]\), the concave derivative \(E_g'\) has positive
+endpoints. On \([.4,.45]\), \(E_g''<0\) and the two cost endpoints
+exceed .8985. Finally \(E_{.975}''(.45)<0\); (79) makes the whole
+last range concave, with both cost endpoints exceeding .89807.
+These derivative-covered ranges finish every lower axis-1 contact.
+
+### 8.2. One whole zero-curve derivative replaces four angle intervals
+
+The original lower axis-2 reduction is decreasing in the angle
+along each fixed-target contact. Its only remaining middle zero-source
+curve is contained in \(1.32\le\phi\le1.48\). On that whole
+enlarged interval, put
+\[
+\begin{gathered}
+ m=\tfrac12\sin\phi+\tfrac{13}{12}\cos\phi,\qquad
+ w=\tfrac{13}{12}\sin\phi-\tfrac12\cos\phi>0,\\
+ U=1+m,\quad V=\sqrt{Q-U^2},\quad B_z=V-\tfrac12,\qquad
+ K(\phi)=\phi-e-J(B_z).
+\end{gathered}                                             \tag{80}
+\]
+Here
+\[
+ U'=-w,\quad U''=-(U-1),\quad
+ w^2=\frac{205}{144}-(U-1)^2,\qquad1.59<U<1.76.             \tag{81}
+\]
+Use the same negative-label height function as in §6.3:
+\[
+ M(U)=m_0-1.49748U^2-.94721U
+                 -(6.29979-1.89442U)\sqrt{Q-U^2}.
+\]
+Then \(K=\phi+M(U)+\text{constant}\).
+With \(z=\sqrt{Q-U^2}\), its explicit third derivative is
+\[
+ M'''=\frac{3Q(6.29979U-1.89442Q)}{z^5}>0,
+\]
+and its logarithmic derivative has the whole-domain lower bound
+\[
+ \frac{M''''}{M'''}
+ =\frac{6.29979}{6.29979U-1.89442Q}+\frac{5U}{Q-U^2}
+ >1.7+5.7>7.                                             \tag{82}
+\]
+The first summand decreases, so its lower bound is checked at
+1.76; the second increases, so its lower bound is checked at 1.59.
+At \(U=1.59\),
+\[
+ .96<M'<1,\qquad -.234<M''<0,\qquad M'''>13.
+\]
+In particular \(M''\) increases and
+\(M'>.96-.234(.17)>.92>0\) on the entire height range.
+
+For completeness, (82) gives the required stronger comparison
+without enclosing these derivatives separately on short intervals.
+First \(M'''-M''\) is positive and increasing, since its derivative
+is greater than \(6M'''>0\). Therefore \(M'''-2M'\) is positive
+and increasing: its derivative is greater than
+\(7M'''-2M''>5M'''>0\).
+Finally \(M'''-5M''-2M'\) is positive at 1.59 and has derivative
+greater than \(2(M'''-M'')>0\). These three facts imply
+\[
+                   M'''>2M'+5\max(M'',0).                 \tag{83}
+\]
+
+Differentiating the whole curve (80) gives
+\[
+ \frac{K'''}w=-M'''w^2+3M''(U-1)+M'.                      \tag{84}
+\]
+Throughout (81), \(2w^2>1\) and \(5w^2>3(U-1)\).
+As \(M'>0\), (83) proves that (84) is strictly negative,
+whether \(M''\) is positive or negative. Thus
+\[
+                         K'''<0
+       \quad\hbox{on all of }[1.32,1.48].                 \tag{85}
+\]
+
+Only one strong-convexity reference is now needed. The exact
+trigonometric and radical comparisons give
+\[
+ \begin{gathered}
+ K''(1.4)>.77,\qquad K(1.387)>.89995,\qquad
+ |K'(1.387)|<.0003,\\
+ K'(1.4)>.011,\qquad K'(1.48)>.008.
+ \end{gathered}
+\]
+On \([1.32,1.4]\), (85) implies \(K''>.77\), so
+\[
+                 K>.89995-\frac{(.0003)^2}{1.54}
+                         >.89994>\gamma.                 \tag{86}
+\]
+On \([1.4,1.48]\), \(K'\) is concave with positive endpoints.
+The cost therefore increases from its already bounded value at
+1.4. This proves the whole zero curve and replaces all four
+former midpoint intervals.
+
+The original small-target branch reduces to the axis-1 estimate
+already proved in §8.1. Its large-target branch imports the
+positive-core zero curve from the original
+EDGE3_POSITIVE_CORE_TO_POSITIVE_OUTER §5.2; that branch was already
+table-free and is retained, with its exact label difference
+\(e-.01449=709/150000\).
+The original upper axis-1 deformation and upper axis-2 strip
+use monotonic contacts with all exits included. The remaining upper
+axis-2 support is Section 1.2, and upper axis 4 uses its original
+whole-interval concavity bound. Axis 3 was excluded by the original
+norm inequality.
+Thus §§8.1–8.2 and Section 1 complete this last mixed class,
+including all four original signed axes and both core pieces.
+
+## 9. Complete nineteen-class assembly and dependency scope
+
+We use the exact states, labels, signs, and reflection identity in
+WRONG_0011011_WHOLE_WORD_HAND_PROOF. Let the seven boundary states
+come from an actual packing after the central-core and fixed-axis
+boundary reductions and the complete frame-concentration theorem.
+The physical frame lifts then lie in a common interval of length
+less than .7, and the ordered center gaps exceed \(19/25\).
+Apply HAND_ZERO_PRIMARY_CYCLIC_EXCLUSION to this same cycle before
+any wrong-word or candidate-word cut. It excludes the primary
+separator branches of every zero-quarter edge.
+
+This last input is essential to the stated scope of Section 2:
+its original Family IV is absent in the actual cycle.
+We do not assert that this omitted primary branch satisfies the
+same label inequality for an unrestricted isolated pair.
+The zero-primary exclusion uses frame concentration and the
+closed-tour geometry, so this assembly does not depend on
+wrong-word exclusion, candidate capture, or a mismatch threshold.
+
+Here is the entire mixed reflection cover. A section number refers
+to this note and replaces precisely the scalar premises in the
+original whole-family proof. “Original” means that the indicated
+whole-family proof already has no continuous interval or coefficient
+table. All manuscript stems below have the prefix
+WRONG_0011011 and suffix HAND_PROOF.md.
+
+| Edge | Signs | Core to outer | Outer to core |
+|---:|:---:|---|---|
+| 0 | \(++\) | §2 + SAME_SIGN_MIXED_ZERO | §2 + SAME_SIGN_MIXED_ZERO |
+| 0 | \(+-\) | §4 + OPPOSITE_MIXED_ZERO | §4 + OPPOSITE_MIXED_ZERO |
+| 2 | \(--\) | Original EDGE2_NEGATIVE_CORE_TO_OUTER | §7 + EDGE2_NEGATIVE_CORE_SIDE and EDGE2_NEGATIVE_CORE_CORNER |
+| 2 | \(-+\) | §1 + EDGE2_CORE_TO_POSITIVE_OUTER | §1 + EDGE2_OUTER_TO_POSITIVE_CORE |
+| 3 | \(++\) | §§1,6 + EDGE3_POSITIVE_CORE_TO_POSITIVE_OUTER | Original EDGE3_FOUR_WHOLE_MIXED_FAMILIES |
+| 3 | \(+-\) | Original EDGE3_FOUR_WHOLE_MIXED_FAMILIES | Original EDGE3_FOUR_WHOLE_MIXED_FAMILIES |
+| 3 | \(-+\) | §§1,8 + EDGE3_NEGATIVE_CORE_TO_POSITIVE_OUTER | §§1,5 + EDGE3_OUTER_TO_POSITIVE_CORE |
+| 3 | \(--\) | Original EDGE3_FOUR_WHOLE_MIXED_FAMILIES | §§1,3 + EDGE3_OUTER_TO_NEGATIVE_CORE |
+| 4 | \(++\) | §2 + SAME_SIGN_MIXED_ZERO | §2 + SAME_SIGN_MIXED_ZERO |
+| 4 | \(+-\) | §4 + OPPOSITE_MIXED_ZERO | Reflection of the core-to-outer entry |
+
+The table contains nineteen representatives: both radial orders
+in its first nine rows and one in its final row.
+Reflection of the plane followed by reversal of the center order
+sends
+\[
+ (i,\sigma,\tau,K_s,K_t)
+       \longmapsto(1-i,-\tau,-\sigma,K_t,K_s).
+\]
+The word and the corrected cost are invariant, by the exact label
+identity \(L_{2-i}^{\sigma}=L_i^{-\sigma}\). The original signed
+axes are permuted by \((1\ 3)(2\ 4)\).
+Every mixed reflection class has two members, so the cover gives
+all thirty-eight directed mixed cases and all 152 of their original
+directed axis branches. The primary zero branches are geometrically
+absent as just explained; every other branch has the strict cost bound.
+
+Two shared imports require explicit mention. The original
+ALIGNED_MIXED_QUARTER proves all its stated mixed cases exactly
+at \(\phi=\pi/2\), by scalar derivative signs, concavity, and
+one-point strong convexity. EDGE2_MIXED_QUARTER_STRIP continues the
+relevant original separators throughout
+\(|\phi-\pi/2|\le.02\), including each side/corner and zero-coordinate
+exit. Both are already table-free. They are used only on their
+stated closed domains, while their parent notes and the replacements
+above cover all other angles.
+
+The two “Original” whole-family imports in the cover have likewise
+been read on their full domains: EDGE2_NEGATIVE_CORE_TO_OUTER
+uses one strongly convex scalar and whole-axis monotonicity;
+EDGE3_FOUR_WHOLE_MIXED_FAMILIES uses circular chords, whole-domain
+monotonicity, and concavity. Neither contains a remaining continuous
+interval enclosure, Bernstein row, or sampled-domain premise.
+
+It follows that every mixed edge in an actual 0011011 boundary
+cycle has
+\[
+ \phi_i+\sigma_iL_i^{\sigma_i}(a_i,b_i)
+       -\sigma_{i+1}L_{i+1}^{\sigma_{i+1}}(a_{i+1},b_{i+1})
+                         >.89765.                         \tag{87}
+\]
+This includes the complete core side and corner, their common join,
+the full outer arc, closed angle endpoints, zero transverse
+coordinates, and every nearest-axis tie.
+At a zero coordinate or a tie, choose one signed representation
+for the vertex and use it on both incident edges. The labels can
+then telescope in the whole-word proof even when alternative signed
+formulas have different values at the same geometric state.
+
+Equation (87) is the complete mixed component. Combining it with
+the separate core/core and outer/outer components gives the seven
+strict edge inequalities used in the whole-word sum. No numerical
+role-box exclusion, continuous mesh, or Bernstein coefficient row
+from a mixed source note remains a premise of that sum.
