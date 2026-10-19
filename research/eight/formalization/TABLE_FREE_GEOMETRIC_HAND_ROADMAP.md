@@ -382,7 +382,17 @@ statements, including the complete transverse segment and both closed angular
 bands, with three full-domain positive-remainder identities and one common
 quartic curvature bound. Together with the existing analytic central-existence
 and forbidden-width arguments, this proves the unrestricted one-twelfth core
-without the 19 Bernstein rows. The other G9 components below remain open.
+without the 19 Bernstein rows.
+
+**Stationary existence component closed on paper (2026-10-19).**
+`HAND_STATIONARY_EXISTENCE_WITHOUT_LOCAL_BOXES.md` supplies an interior
+stationary zero with `3.9154 < q_* < 3.915534138` by compact minimization,
+the intermediate value theorem, the single continuous five-circle stress,
+and five exact rational trial-point comparisons. The existing geometric
+critical-point theorem gives broad uniqueness. The same rational trial is
+an unconditional eight-square packing at the upper ceiling. No local root
+box or five-interval family enclosure is used. The narrower coordinate
+brackets, adaptive terminal reserve, and equality components remain open.
 
 **Replaces.** The 49 stationary existence/bracket comparisons; the
 5,376 adaptive fixed-box scalar checks; the short central-core
