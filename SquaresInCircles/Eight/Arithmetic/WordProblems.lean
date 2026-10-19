@@ -93,6 +93,21 @@ def signIndex (σ : Bool) : Fin 2 := if σ then 1 else 0
 def wrongGamma (w : WrongWord) (i : Vertex) : ℚ :=
   if w=.short ∧ i=2 then 359/400 else 17953/20000
 
+/-- The radial kinds, signs and original axes `j` of an edge with quarter increment `k` that no
+feasible separator has (`WordGeometry.original_not_core_excluded`): on a zero edge, axis two
+against a core target or axis four against a core source; on any edge, axis one against a core
+target with a source of sign `-1`, or axis three against a core source with a target of sign
+`+1`; on a quarter edge, every axis from a core source of sign `+1` to a core target of sign
+`-1`. -/
+def CoreSeparatorExcluded (k : Fin 3) (ks kt : RadialKind) (σ τ : Bool) (j : Fin 4) : Prop :=
+  (k=0 ∧ ((j=1 ∧ kt≠.outer) ∨ (j=3 ∧ ks≠.outer))) ∨
+    (j=0 ∧ σ=false ∧ kt≠.outer) ∨ (j=2 ∧ τ=true ∧ ks≠.outer) ∨
+    (k=1 ∧ ks≠.outer ∧ kt≠.outer ∧ σ=true ∧ τ=false)
+
+instance (k : Fin 3) (ks kt : RadialKind) (σ τ : Bool) (j : Fin 4) :
+    Decidable (CoreSeparatorExcluded k ks kt σ τ j) := by
+  unfold CoreSeparatorExcluded; infer_instance
+
 set_option maxRecDepth 200000 in
 theorem all_original_case_count (w : WrongWord) :
     (Finset.univ.filter (fun p : Vertex×Bool×Bool => allowed w p.1 p.2.1 p.2.2)).card=19 := by

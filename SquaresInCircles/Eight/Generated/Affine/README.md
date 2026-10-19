@@ -12,7 +12,9 @@ theorem:
   `k ≤ 3` of a row gives `sin φ` and `cos φ` as `± sin u` or `± cos u`.
 - the rows cover every required angle of every arc pair, axis and half: `coverBlock` in
   `Arithmetic/RowCover.lean`, a walk over the sorted rows for a block of source arcs, with
-  `coverBlocks_sound` for blocks that cover all arcs;
+  `coverBlocks_sound` for blocks that cover all arcs; the pairs and axes that no feasible
+  separator has (`ExcludedArcs`) are skipped, and in the tables written with `--core` also the
+  pairs of two core arcs;
 - the arc boxes enclose the exact arcs of `Meta.lean` (`boxesRange`, `TableCtx.valid_of`); the
   arctangent endpoints are valid and every tangent value of an arc has one (`atanRange`,
   `atanFoundRange`, `endpointsValid_of_blocks`); the fixed-point arctangent intervals of the
@@ -42,6 +44,13 @@ every row and the coverage with the same integer algorithm and chooses the circl
   The rows are checked against the raised targets, and the claims for the table's own targets
   follow by monotonicity (`AffineRow.claim_of_target_le`).
 
-and records the hashes of the input and of the data files in `generation_index.json`, since
-Lake does not track the data files. The blocks keep the kernel's memory for each theorem below
-about 1.5 GB.
+With `--core markers` (the coarse table) the costs of two core arcs follow from rational bounds
+of the markers of the core arcs at their tangent endpoints (`markers_valid`, `budgets_valid`,
+`Candidate/GeometricCoreMarker.lean`), and the same bounds with the target `9/10` show that no
+edge joins two core squares (`no_adjacent_core`). With `--core free` (the tables used after the
+coarse stage: `HLowerAffine`, `DUpperAffine` and the three mismatch tables) `charged_bound`
+assumes `NoAdjacentCore`.
+
+The generator records the hashes of the input and of the data files in `generation_index.json`,
+since Lake does not track the data files. The blocks keep the kernel's memory for each theorem
+below about 1.5 GB.

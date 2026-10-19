@@ -380,17 +380,17 @@ defect is positive except at its minimum $(y_*, t_*)$, where it vanishes.
 The proof is given in [Appendix J](appendix-j.md).
 
 *Lean:
-[`Eight.ExactFamily.exact_stationary_existsUnique`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L306),
+[`Eight.ExactFamily.exact_stationary_existsUnique`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L257),
 [`Eight.ExactFamily.StatementLink.statement_stationary_existsUnique`](../../SquaresInCircles/Eight/ExactFamily/StatementLink.lean#L93),
 [`Eight.ExactFamily.StatementLink.selected_eq`](../../SquaresInCircles/Eight/ExactFamily/StatementLink.lean#L109),
 [`Eight.ExactFamily.StatementLink.qStar_eq`](../../SquaresInCircles/Eight/ExactFamily/StatementLink.lean#L112),
-[`Eight.ExactFamily.qStar_bracket`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L187),
-[`Eight.ExactFamily.qStar_limits`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L199),
+[`Eight.ExactFamily.qStar_bracket`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L160),
+[`Eight.ExactFamily.qStar_limits`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L172),
 [`Eight.radius_levels`](../../SquaresInCircles/Eight/Model.lean#L38),
-[`Eight.ExactFamily.sharp_coordinates`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L309),
-[`Eight.ExactFamily.sharp_y`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L344),
-[`Eight.ExactFamily.unique_minimum_zero`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L382),
-[`Eight.ExactFamily.minimum_radius_difference`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L334).*
+[`Eight.ExactFamily.sharp_coordinates`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L260),
+[`Eight.ExactFamily.sharp_y`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L295),
+[`Eight.ExactFamily.unique_minimum_zero`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L360),
+[`Eight.ExactFamily.minimum_radius_difference`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L312).*
 
 The three numbers $q_-$, $Q_1$ and $Q_0$ are the *radius levels* of the
 proof (§11.4). The level $Q_0$ is a round number above $q_*$; $Q_1$ exceeds
@@ -1203,8 +1203,8 @@ markers are, provided each square uses one marker on both of its edges.
 [`Eight.frameCost`](../../SquaresInCircles/Eight/Frames.lean#L168),
 [`Eight.periodicFrameCost`](../../SquaresInCircles/Eight/Frames.lean#L170),
 [`Eight.cyclic_markers_cancel`](../../SquaresInCircles/Eight/Frames.lean#L53),
-[`Eight.Arithmetic.FourType.label`](../../SquaresInCircles/Eight/Arithmetic/FourTypePairs.lean#L67),
-[`Eight.Arithmetic.FourType.TypeMem`](../../SquaresInCircles/Eight/Arithmetic/FourTypePairs.lean#L76).*
+[`Eight.Arithmetic.FourType.label`](../../SquaresInCircles/Eight/Arithmetic/FourTypePairs.lean#L68),
+[`Eight.Arithmetic.FourType.TypeMem`](../../SquaresInCircles/Eight/Arithmetic/FourTypePairs.lean#L77).*
 
 ### Proposition 11.21 (pair costs of the four types; a finite table)
 
@@ -1233,9 +1233,9 @@ violates the gap of (11.4) or is covered by an affine row that proves the cost
 greater than $\Gamma_{XY}$; 1,069 rows in all.
 
 *Lean:
-[`Eight.Arithmetic.FourType.fourTypeProblem`](../../SquaresInCircles/Eight/Arithmetic/FourTypePairs.lean#L218),
-[`Eight.Arithmetic.FourType.fourTypeTable_holds`](../../SquaresInCircles/Eight/Arithmetic/FourTypePairs.lean#L249),
-[`Eight.Arithmetic.FourType.source_pair`](../../SquaresInCircles/Eight/Arithmetic/FourTypePairs.lean#L369),
+[`Eight.Arithmetic.FourType.fourTypeProblem`](../../SquaresInCircles/Eight/Arithmetic/FourTypePairs.lean#L219),
+[`Eight.Arithmetic.FourType.fourTypeTable_holds`](../../SquaresInCircles/Eight/Arithmetic/FourTypePairs.lean#L248),
+[`Eight.Arithmetic.FourType.source_pair`](../../SquaresInCircles/Eight/Arithmetic/FourTypePairs.lean#L368),
 [`Eight.four_type_cycle_budget`](../../SquaresInCircles/Eight/Frames.lean#L147).*
 
 ### Lemma 11.22 (closed walks)
@@ -1472,15 +1472,15 @@ $\frac{125671}{20000}$, which exceeds $\frac{710}{113}$ by
 $\frac{823}{2260000}$. $\square$
 
 *Lean:
-[`Eight.WordGeometry.no_double`](../../SquaresInCircles/Eight/WordGeometry.lean#L402),
-[`Eight.WordGeometry.wrong_word_impossible`](../../SquaresInCircles/Eight/WordGeometry.lean#L488),
-[`Eight.WordGeometry.six_exclusions`](../../SquaresInCircles/Eight/WordGeometry.lean#L540),
-[`Eight.quarter_word_candidate`](../../SquaresInCircles/Eight/WordGeometry.lean#L569),
+[`Eight.WordGeometry.no_double`](../../SquaresInCircles/Eight/WordGeometry.lean#L491),
+[`Eight.WordGeometry.wrong_word_impossible`](../../SquaresInCircles/Eight/WordGeometry.lean#L578),
+[`Eight.WordGeometry.six_exclusions`](../../SquaresInCircles/Eight/WordGeometry.lean#L630),
+[`Eight.quarter_word_candidate`](../../SquaresInCircles/Eight/WordGeometry.lean#L659),
 [`Eight.candidate_word_after_six_exclusions`](../../SquaresInCircles/Eight/QuarterWords.lean#L393),
-[`Eight.WordGeometry.commonPairProblem`](../../SquaresInCircles/Eight/WordGeometry.lean#L206),
-[`Eight.WordGeometry.wrongPairProblem`](../../SquaresInCircles/Eight/WordGeometry.lean#L211),
-[`Eight.WordGeometry.word_pair`](../../SquaresInCircles/Eight/WordGeometry.lean#L305),
-[`Eight.WordProblems.all_original_case_count`](../../SquaresInCircles/Eight/Arithmetic/WordProblems.lean#L97).*
+[`Eight.WordGeometry.commonPairProblem`](../../SquaresInCircles/Eight/WordGeometry.lean#L279),
+[`Eight.WordGeometry.wrongPairProblem`](../../SquaresInCircles/Eight/WordGeometry.lean#L284),
+[`Eight.WordGeometry.word_pair`](../../SquaresInCircles/Eight/WordGeometry.lean#L381),
+[`Eight.WordProblems.all_original_case_count`](../../SquaresInCircles/Eight/Arithmetic/WordProblems.lean#L112).*
 
 The three cost bounds are finite tables of continuous inequalities, one for
 each digit or edge, each pair of radial curves, each pair of signs and each
@@ -1603,11 +1603,11 @@ Theorem 11.23; no separating axis is chosen in advance.
 [`Eight.Candidate.Tables.g_upper_excluded`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L82),
 [`Eight.Candidate.Tables.t_upper_excluded`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L180),
 [`Eight.Candidate.Tables.t_lower_excluded`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L130),
-[`Eight.Candidate.Tables.h_lower_excluded`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L230),
-[`Eight.Candidate.Tables.d_upper_excluded`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L282),
-[`Eight.Candidate.Tables.g_cut`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L334),
-[`Eight.Candidate.Tables.t_cut`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L339),
-[`Eight.Candidate.Tables.hd_cut`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L344).*
+[`Eight.Candidate.Tables.h_lower_excluded`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L287),
+[`Eight.Candidate.Tables.d_upper_excluded`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L340),
+[`Eight.Candidate.Tables.g_cut`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L393),
+[`Eight.Candidate.Tables.t_cut`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L398),
+[`Eight.Candidate.Tables.hd_cut`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L403).*
 
 ![The exterior squares of the optimal packing, each with a shaded fan of the centre directions that its signed tangent allows after Proposition 11.29, drawn about its canonical axis: narrow fans on one side for G and T, the outer parts of the fans for H and D, the half fan on the side of negative tangents for E, and full fans for A and B, which share their axis; the actual centre direction of each square lies in its fan](figures/11-eight/tangents.svg)
 
@@ -1659,7 +1659,7 @@ angle interval:
 [`Eight.Arithmetic.AffineTableRow`](../../SquaresInCircles/Eight/Arithmetic/AffineTableData.lean#L54),
 [`Eight.Arithmetic.AffineTableRow.Claim`](../../SquaresInCircles/Eight/Arithmetic/AffineTableData.lean#L82),
 [`Eight.Arithmetic.AffineTableMeta`](../../SquaresInCircles/Eight/Arithmetic/AffineTableData.lean#L44),
-[`Eight.Arithmetic.AffineCover`](../../SquaresInCircles/Eight/Arithmetic/AffineCoverage.lean#L115),
+[`Eight.Arithmetic.AffineCover`](../../SquaresInCircles/Eight/Arithmetic/AffineCoverage.lean#L131),
 [`Eight.Arithmetic.chargedCost`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L67).*
 
 Where the margin $M_j$ is nonnegative, that is, where the axis $j$
@@ -1702,7 +1702,7 @@ the labels as markers. Summing and using (11.6) gives (11.11).
 [`Eight.Arithmetic.CoreRow.sound`](../../SquaresInCircles/Eight/Arithmetic/CoreRow.lean#L323),
 [`Eight.Arithmetic.PreparedRow.claim`](../../SquaresInCircles/Eight/Arithmetic/PreparedRow.lean#L157),
 [`Eight.Arithmetic.affine_table_covered`](../../SquaresInCircles/Eight/Arithmetic/AffineTableData.lean#L99),
-[`Eight.Arithmetic.coverBlocks_sound`](../../SquaresInCircles/Eight/Arithmetic/RowCover.lean#L519),
+[`Eight.Arithmetic.coverBlocks_sound`](../../SquaresInCircles/Eight/Arithmetic/RowCover.lean#L524),
 [`Eight.Arithmetic.StateChains.covers`](../../SquaresInCircles/Eight/Arithmetic/StateCoverage.lean#L149),
 [`Eight.Arithmetic.ClosedChain.covers`](../../SquaresInCircles/Eight/Arithmetic/ClosedCover.lean#L27),
 [`Eight.Candidate.ChargedBound.cyclic`](../../SquaresInCircles/Eight/Candidate/Model.lean#L167).*
@@ -1936,11 +1936,11 @@ $\square$
 [`Eight.Candidate.contraction_026_to_01`](../../SquaresInCircles/Eight/Candidate/Mismatch.lean#L180),
 [`Eight.Candidate.contraction_01_to_015`](../../SquaresInCircles/Eight/Candidate/Mismatch.lean#L188),
 [`Eight.Candidate.contraction_015_to_001`](../../SquaresInCircles/Eight/Candidate/Mismatch.lean#L200),
-[`Eight.Candidate.Tables.coarse_bound`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L350),
-[`Eight.Candidate.Tables.enhanced_bound`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L627),
-[`Eight.Candidate.Tables.middle_bound`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L403),
-[`Eight.Candidate.Tables.intermediate_bound`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L472),
-[`Eight.Candidate.Tables.final_bound`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L545),
+[`Eight.Candidate.Tables.coarse_bound`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L409),
+[`Eight.Candidate.Tables.enhanced_bound`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L654),
+[`Eight.Candidate.Tables.middle_bound`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L427),
+[`Eight.Candidate.Tables.intermediate_bound`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L497),
+[`Eight.Candidate.Tables.final_bound`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L571),
 [`Eight.Arithmetic.pi_hand_enclosure`](../../SquaresInCircles/Eight/Arithmetic/Taylor.lean#L19).*
 
 ![The contraction steps as graphs against the mismatch Delta on a logarithmic axis from 10 to the minus 4 to 1: for each step, its charge term, beta times its lower bound for the frame charge, divided by the deficit of its constants, the bound on 2 pi minus the sum of the gamma_i. The first bound of the coarse step uses the chord 0.29 Delta (dashed curve), the others g(Delta). Each curve increases and passes the level 1, a dashed horizontal line, just before the threshold of its step, 2/5, 13/50, 1/10, 3/200 and 1/1000, where a dot marks its value above 1](figures/11-eight/mismatch.svg)
@@ -2028,9 +2028,9 @@ and $2\arctan\frac2{25} < \frac4{25}$. The details are in
 [`Eight.Candidate.Dual.Row.Valid.excludes`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L343),
 [`Eight.Candidate.Dual.OwnerTable`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L400),
 [`Eight.Candidate.Dual.TiltBundle`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L423),
-[`Eight.Candidate.quarter_owners`](../../SquaresInCircles/Eight/Candidate/DualApplication.lean#L230),
-[`Eight.Candidate.mixed_owners`](../../SquaresInCircles/Eight/Candidate/DualApplication.lean#L284),
-[`Eight.Candidate.tilt_window`](../../SquaresInCircles/Eight/Candidate/DualApplication.lean#L492),
+[`Eight.Candidate.quarter_owners`](../../SquaresInCircles/Eight/Candidate/GeometricOwnersQuarterComplete.lean#L330),
+[`Eight.Candidate.mixed_owners`](../../SquaresInCircles/Eight/Candidate/DualApplication.lean#L202),
+[`Eight.Candidate.tilt_window`](../../SquaresInCircles/Eight/Candidate/DualApplication.lean#L412),
 [`Eight.Candidate.terminalOwners`](../../SquaresInCircles/Eight/Candidate/Model.lean#L142),
 [`Eight.Candidate.Dual.alternative_count`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L141).*
 

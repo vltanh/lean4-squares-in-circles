@@ -4,7 +4,6 @@ public import SquaresInCircles.Eight.Generated.Affine.HLowerAffine.Rows000
 public import SquaresInCircles.Eight.Generated.Affine.HLowerAffine.Rows001
 public import SquaresInCircles.Eight.Generated.Affine.HLowerAffine.Rows002
 public import SquaresInCircles.Eight.Generated.Affine.HLowerAffine.Rows003
-public import SquaresInCircles.Eight.Generated.Affine.HLowerAffine.Rows004
 
 /-! All rows of the table. -/
 
@@ -17,13 +16,13 @@ set_option maxRecDepth 100000
 
 /-- The rows in parts of 200, in natural numbers, sorted by source, target, axis and half. -/
 noncomputable def chunks : List (List AffineRow) :=
-  parts000 ++ (parts001 ++ (parts002 ++ (parts003 ++ parts004)))
+  parts000 ++ (parts001 ++ (parts002 ++ parts003))
 
 /-- All rows. -/
 noncomputable def data : List AffineRow := chunks.flatten
 
 theorem data_check : checkRows ctx data = true := by
   simp only [data, chunks, checkRows_flatten, List.all_append, parts000_check, parts001_check,
-    parts002_check, parts003_check, parts004_check, Bool.and_true]
+    parts002_check, parts003_check, Bool.and_true]
 
 end SquaresInCircles.Eight.Generated.Affine.HLowerAffine

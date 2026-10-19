@@ -11,16 +11,16 @@ open Arithmetic
 
 set_option maxRecDepth 100000
 
-theorem cover_0 : coverBlock coverCtx table 0 48 0 0 chunks = true := by
+theorem cover_0 : coverBlock coverCtx table false 0 48 0 0 chunks = true := by
   decide +kernel
 
-theorem cover_1 : coverBlock coverCtx table 48 33 11 160 chunks = true := by
+theorem cover_1 : coverBlock coverCtx table false 48 33 11 144 chunks = true := by
   decide +kernel
 
-theorem cover_2 : coverBlock coverCtx table 81 40 28 9 chunks = true := by
+theorem cover_2 : coverBlock coverCtx table false 81 40 27 177 chunks = true := by
   decide +kernel
 
-theorem cover_3 : coverBlock coverCtx table 121 1 44 79 chunks = true := by
+theorem cover_3 : coverBlock coverCtx table false 121 1 44 31 chunks = true := by
   decide +kernel
 
 end SquaresInCircles.Eight.Generated.Affine.GUpperAffine

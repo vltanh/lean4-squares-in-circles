@@ -3,11 +3,15 @@ module
 public import SquaresInCircles.Eight.Generated.PairsWords
 public import SquaresInCircles.Eight.Arithmetic.WordProblems
 public import SquaresInCircles.Eight.CycleActions
+public import SquaresInCircles.Eight.Arithmetic.CorePairGeometry
+public import SquaresInCircles.Eight.Candidate.GeometricCoreQuarter
 
 /-!
 # Actual geometric exclusion of the six noncandidate quarter words
 
-The common increment table first excludes every word containing a two.
+The common increment costs first exclude every word containing a two: on an
+edge between two core vertices from the separation of the centres
+(`CorePairGeometry.core_cost`), on the other edges from the common table.
 The two remaining wrong words use their separate role-dependent label
 systems.  A marker is evaluated once per vertex, so the target value on
 one edge is exactly the source value on the next edge.
@@ -15,9 +19,10 @@ one edge is exactly the source value on the next edge.
 Each pair inequality is a problem of a pair table (`Generated/Pairs`): its
 ends carry the actual radial charts, signs and labels, and the table proves
 it for every state pair and frame difference `|d| ≤ 7/10` with the physical
-gap and the original separating-axis margin. The nineteen allowed sign cases
-follow from the two initial zero increments and the impossibility of a
-negative-to-positive zero edge.
+gap and the original separating-axis margin. The tables leave out the kinds,
+signs and axes that no feasible separator has (`original_not_core_excluded`).
+The nineteen allowed sign cases follow from the two initial zero increments and
+the impossibility of a negative-to-positive zero edge.
 
 Dihedral normalization acts on actual squares and lifts through
 `CycleAction.boundary` and `QuarterLift.act`.  In particular reflection
@@ -150,6 +155,74 @@ lemma original_margin (C : BoundaryCycle Q0) (F : QuarterLift C)
   rw [← he]
   exact sub_nonneg.mpr hj
 
+/-- No feasible original axis of an edge is in a class of `CoreSeparatorExcluded`: a primary
+axis on a zero edge needs an outer far square, a secondary axis against a core square needs
+the transverse sign pointing outward, and no axis separates two core squares of opposite signs
+on a quarter edge. -/
+lemma original_not_core_excluded (C : BoundaryCycle Q0) (F : QuarterLift C)
+    (hgap : ∀ i,19/25<angleGap C.beta i) (i : Vertex) (j : Fin 4)
+    (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i))) :
+    ¬ CoreSeparatorExcluded (F.word hgap pi_lt_22_over_7 i)
+      (C.kind i) (C.kind (next i)) (positiveOf C i) (positiveOf C (next i)) j := by
+  have hm := original_margin C F hgap i j hj
+  rw [positiveOf_spec,positiveOf_spec] at hm
+  have hσ : |C.sigma i*C.b i| ≤ C.a i := by
+    rw [Candidate.signed_b_abs]
+    exact C.b_le_a i
+  have hτ : |C.sigma (next i)*C.b (next i)| ≤ C.a (next i) := by
+    rw [Candidate.signed_b_abs]
+    exact C.b_le_a (next i)
+  have hsmall (hk : F.word hgap pi_lt_22_over_7 i=0) : |phaseValue F hgap i| ≤ 7/10 := by
+    simpa [phaseValue,hk] using (difference_small F i).le
+  rintro (⟨hk,⟨rfl,ht⟩ | ⟨rfl,hs⟩⟩ | ⟨rfl,hnegative,ht⟩ | ⟨rfl,hpositive,hs⟩ |
+    ⟨hk,hs,ht,hpositive,hnegative⟩)
+  · have hp := Candidate.Geometric.primary_margin_upper (C.a_pos i).le hσ (hsmall hk)
+      (X := C.a (next i))
+    have hcore := Candidate.Geometric.core_primary_upper C (next i) ht
+    simp [forwardMargin] at hm
+    nlinarith [C.a_pos i]
+  · have hp := Candidate.Geometric.primary_margin_upper (C.a_pos (next i)).le
+      (v := -(C.sigma (next i)*C.b (next i))) (by simpa only [abs_neg] using hτ) (hsmall hk)
+      (X := C.a i)
+    have hcore := Candidate.Geometric.core_primary_upper C i hs
+    simp [forwardMargin] at hm
+    nlinarith [C.a_pos (next i)]
+  · have hsource : C.sigma i*C.b i ≤ 0 := by
+      rw [← positiveOf_spec C i,hnegative]
+      simpa [WordProblems.sign] using C.b_nonneg i
+    have hn := Candidate.Geometric.target_core_secondary_margin (a := C.a i) hsource
+      (C.a_pos (next i)).le (Candidate.Geometric.core_primary_upper C (next i) ht) hτ
+      (t := phaseValue F hgap i)
+    linarith
+  · have htarget : 0 ≤ C.sigma (next i)*C.b (next i) := by
+      rw [← positiveOf_spec C (next i),hpositive]
+      simpa [WordProblems.sign] using C.b_nonneg (next i)
+    have hn := Candidate.Geometric.source_core_secondary_margin (A := C.a (next i)) htarget
+      (C.a_pos i).le (Candidate.Geometric.core_primary_upper C i hs) hσ
+      (t := phaseValue F hgap i)
+    linarith
+  · have hsign : C.sigma i=1 := by
+      rw [← positiveOf_spec C i, hpositive]
+      norm_num [WordProblems.sign]
+    have htsign : C.sigma (next i)= -1 := by
+      rw [← positiveOf_spec C (next i), hnegative]
+      norm_num [WordProblems.sign]
+    have hphase : phaseValue F hgap i=Real.pi/2+difference F i := by
+      simp [phaseValue, hk, add_comm]
+    have he := phase_gap C F hgap i
+    rw [hphase, alpha_formula, alpha_formula, hpositive, hnegative] at he
+    norm_num [WordProblems.sign] at he
+    have hn := Candidate.Geometric.core_quarter_opposite_margin
+      ⟨(Candidate.Geometric.canonical_primary_gt_half C i).le,
+        Candidate.Geometric.core_primary_upper C i hs⟩
+      ⟨(Candidate.Geometric.canonical_primary_gt_half C (next i)).le,
+        Candidate.Geometric.core_primary_upper C (next i) ht⟩
+      ⟨C.b_nonneg i, C.b_le_a i⟩ ⟨C.b_nonneg (next i), C.b_le_a (next i)⟩
+      (difference_small F i).le
+      (by linarith [Candidate.Geometric.cycle_gap_lt_seven_quarters C.beta hgap i]) j
+    rw [hsign, htsign, hphase] at hm
+    linarith
+
 def commonValue (kind : RadialKind) (σ : Bool) (b : ℝ) : ℝ :=
   let a := primaryValue kind b
   (WordProblems.sign σ:ℝ)*(if kind=.outer then -9/100+(13/200)*a+(203/200)*b
@@ -255,11 +328,14 @@ theorem wrongTable_holds (w : WrongWord) (i : Vertex) :
   · exact Generated.Pairs.Second6.sound
 
 theorem commonPairProblem_mem : ∀ (k : Fin 3) (ks kt : RadialKind) (σ τ : Bool) (j : Fin 4),
-    commonPairProblem k ks kt σ τ j ∈ commonTable k := by
+    (ks = .outer ∨ kt = .outer) → ¬ CoreSeparatorExcluded k ks kt σ τ j →
+      commonPairProblem k ks kt σ τ j ∈ commonTable k := by
   decide +kernel
 
 theorem wrongPairProblem_mem : ∀ (w : WrongWord) (i : Vertex) (ks kt : RadialKind)
-    (σ τ : Bool) (j : Fin 4), allowed w i σ τ → wrongPairProblem w i ks kt σ τ j ∈ wrongTable w i := by
+    (σ τ : Bool) (j : Fin 4), allowed w i σ τ →
+      ¬ CoreSeparatorExcluded (wrongWord w i) ks kt σ τ j →
+      wrongPairProblem w i ks kt σ τ j ∈ wrongTable w i := by
   decide +kernel
 
 lemma sign_cast (σ : Bool) : ((WordProblems.sign σ : ℚ) : ℝ) = sgnR σ := by
@@ -377,15 +453,28 @@ lemma marker_budget (C : BoundaryCycle Q0) (F : QuarterLift C)
   rw [Finset.sum_sub_distrib,Finset.sum_add_distrib,sum_next,phase_sum C F hgap]
   ring
 
-/-- The common table is applied to the original owner chosen by geometry;
-every other feasible owner also satisfies the same conclusion. -/
+/-- At a core vertex the common marker is `σ` times the common core label. -/
+lemma commonMarker_core_eq (C : BoundaryCycle Q0) (i : Vertex) (hk : C.kind i ≠ .outer) :
+    commonMarker C i=C.sigma i*CorePairGeometry.label (73/10) (291/250) (C.a i) (C.b i) := by
+  simp [commonMarker, commonValue, primary_vertex, hk, positiveOf_spec, CorePairGeometry.label]
+
+/-- The common cost of an edge for every feasible original axis: from the separation of the
+centres when both vertices are core, from the common table otherwise. -/
 lemma common_pair (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hgap : ∀ i,19/25<angleGap C.beta i) (i : Vertex) (j : Fin 4)
     (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i))) :
     (commonGamma (F.word hgap pi_lt_22_over_7 i):ℝ)<
       phaseValue F hgap i+commonMarker C i-commonMarker C (next i) := by
+  by_cases hcore : C.kind i ≠ .outer ∧ C.kind (next i) ≠ .outer
+  · have h := CorePairGeometry.core_cost (Or.inr ⟨rfl, rfl⟩) C i hcore.1 hcore.2
+    rw [← commonMarker_core_eq C i hcore.1, ← commonMarker_core_eq C (next i) hcore.2] at h
+    have hγ : (commonGamma (F.word hgap pi_lt_22_over_7 i):ℝ) ≤ 391/400 := by
+      generalize F.word hgap pi_lt_22_over_7 i = k
+      fin_cases k <;> norm_num [commonGamma]
+    linarith [phase_gap C F hgap i]
   have hP := commonTable_holds _ _ (commonPairProblem_mem (F.word hgap pi_lt_22_over_7 i)
-    (C.kind i) (C.kind (next i)) (positiveOf C i) (positiveOf C (next i)) j)
+    (C.kind i) (C.kind (next i)) (positiveOf C i) (positiveOf C (next i)) j (by tauto)
+    (original_not_core_excluded C F hgap i j hj))
   have h := word_pair C F hgap i j hj _ _ _ hP le_rfl le_rfl
   rw [commonMarker, commonMarker, commonValue_eq, commonValue_eq, primary_vertex, primary_vertex]
   have hhi : ((commonQuad (C.kind (next i)) (positiveOf C (next i))).cLo : ℝ) =
@@ -469,7 +558,8 @@ lemma wrong_pair (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i))) :
     (wrongGamma w i:ℝ)<phaseValue F hgap i+wrongMarker C w i-wrongMarker C w (next i) := by
   have hP := wrongTable_holds w i _ (wrongPairProblem_mem w i (C.kind i) (C.kind (next i))
-    (positiveOf C i) (positiveOf C (next i)) j (actual_allowed C F hgap w hw i))
+    (positiveOf C i) (positiveOf C (next i)) j (actual_allowed C F hgap w hw i)
+    (by simpa [hw] using original_not_core_excluded C F hgap i j hj))
   have hk : wordHalves (wrongWord w i).val =
       wordHalves (F.word hgap pi_lt_22_over_7 i).val := by rw [hw]
   simp only [wrongPairProblem, hk] at hP

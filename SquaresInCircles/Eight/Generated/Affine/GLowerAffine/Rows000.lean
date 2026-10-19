@@ -3,7 +3,7 @@ module
 public import SquaresInCircles.Eight.Generated.Affine.GLowerAffine.Context
 public meta import SquaresInCircles.Eight.IntRows
 
-/-! Rows 0 to 8281 of the table, checked by `decide +kernel`, 200 rows a theorem. -/
+/-! Rows 0 to 8249 of the table, checked by `decide +kernel`, 200 rows a theorem. -/
 
 @[expose] public section
 noncomputable section
@@ -259,12 +259,12 @@ noncomputable def rows000_40 : List AffineRow :=
 theorem rows000_40_check : checkRows ctx rows000_40 = true := by decide +kernel
 
 noncomputable def rows000_41 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/affine/G_LOWER_AFFINE.rows" 8201 8283 ↦
+  nat_rows% "../../../../../data/eight/affine/G_LOWER_AFFINE.rows" 8201 8251 ↦
     AffineRow.ofData
 
 theorem rows000_41_check : checkRows ctx rows000_41 = true := by decide +kernel
 
-/-- Rows 0 to 8281, in parts of 200. -/
+/-- Rows 0 to 8249, in parts of 200. -/
 noncomputable def parts000 : List (List AffineRow) :=
   [rows000_0, rows000_1, rows000_2, rows000_3, rows000_4, rows000_5, rows000_6, rows000_7,
    rows000_8, rows000_9, rows000_10, rows000_11, rows000_12, rows000_13, rows000_14, rows000_15,
@@ -285,6 +285,6 @@ theorem parts000_check : parts000.all (checkRows ctx) = true := by
     rows000_37_check, rows000_38_check, rows000_39_check, rows000_40_check, rows000_41_check,
     Bool.and_true]
 
-theorem parts000_length : (parts000.map List.length).sum = 8282 := by decide +kernel
+theorem parts000_length : (parts000.map List.length).sum = 8250 := by decide +kernel
 
 end SquaresInCircles.Eight.Generated.Affine.GLowerAffine

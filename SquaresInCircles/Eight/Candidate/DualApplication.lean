@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Eight.Candidate.GeometricOwnersForbiddenB
+public import SquaresInCircles.Eight.Candidate.GeometricOwnersMixed
 public import SquaresInCircles.Eight.Generated.OwnerCompleteness
 
 /-!
@@ -10,11 +10,10 @@ The quartic rows of `Candidate/Dual.lean` are applied to boundary cycles with a 
 The projection estimates of `Candidate/GeometricOwners.lean` turn the separations of a cycle into
 the necessary inequality of a row (`Dual.Row.original_of_continuous`).
 
-At mismatch at most `3/200` every axis that separates `B → T` or `D → E` is the forward axis `2`
-or `3` (`quarter_owners`): the axis of `D` by `D_quarter_owners`, and a forbidden axis of `B` by
-the geometric exclusions of `G`-axes `2` and `3` and by the quarter tables of `G`-axes `0` and `1`.
 At mismatch at most `1/1000` every separating axis lies in the terminal owner set of its edge
-(`mixed_owners`). Each separating axis is treated on its own, so an excluded axis is excluded
+(`mixed_owners`): on the zero and quarter edges by `ZeroOwners` and `quarter_owners`, on `E → H`
+for the axes `2` and `3` by `mixed_E_owners`, and for the other owners of `G → A` and `E → H` by
+the mixed tables. Each separating axis is treated on its own, so an excluded axis is excluded
 whichever witness was chosen. The nonpositive half-angle chart is excluded by
 `negative_tilt_excluded`, and the tilt bundles exclude the positive half-angle tangents outside
 `(1001/20000, 2/25)`, which gives `1/10 < t < 4/25` for the tilt (`tilt_window`); in each bundle
@@ -166,33 +165,6 @@ theorem maxLambda_bound (r : Row) (j : Fin 5) : r.lambda (alignedEdge j) ≤ r.m
   have h₇ := le_max_right (r.lambda 4) (r.lambda 5)
   fin_cases j <;> simp [alignedEdge,Row.maxLambda] <;> linarith
 
-theorem quarter_continuous_necessary {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
-    (hq : q ≤ Q0) (hc : TangentCuts C) (hzero : ZeroOwners C)
-    (p : Vertex → Fin 4) (hp : FeasibleOwners C p) (hS : mismatch F.theta ≤ 3/200)
-    {r : Row} (hr : r.Valid) (hmode : r.mode=.quarter) (halt : r.alternative=.zero)
-    (howners : ∀ i, r.owners i=collapseOwner i (p i)) :
-    r.continuousNecessary C (tilt F.theta) := by
-  have hw (i : Vertex) :
-      pairWidth (nominalPhase (tilt F.theta) i) -
-        (if i ∈ charged then (3/2)*(3/200) else if i=G then 0 else 2*(3/200)) ≤
-      actualProjection C i (r.owners i) (nominalPhase (tilt F.theta) i) := by
-    rw [howners,collapsed_projection hc _ _ _ (fun hi => hzero i hi (p i) (hp i))]
-    by_cases hi : i ∈ charged
-    · rw [if_pos hi,(aligned_width F hi).1]
-      exact aligned_coarse_projection F hq hi (p i) (hp i) hS
-    · rw [if_neg hi]
-      fin_cases i <;> norm_num [charged] at hi <;>
-        first | simpa [G] using mixed_G_projection F (p G) (hp G)
-              | simpa [G,E] using mixed_E_projection F hq (p E) (hp E) (by norm_num) hS
-  have hm := Finset.sum_le_sum (s := (Finset.univ : Finset Vertex))
-    (fun i _ => mul_le_mul_of_nonneg_left (hw i)
-      (show (0:ℝ) ≤ r.lambda i by exact_mod_cast hr.lambda_nonneg i))
-  unfold Row.continuousNecessary
-  rw [halt]
-  simp [weightedSlack,Row.loss,Row.epsilon,hmode,charged,alignedEdge,G,E,
-    Fin.sum_univ_succ] at hm ⊢
-  linarith
-
 theorem mixed_continuous_necessary {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
     (hq : q ≤ Q0) (hc : TangentCuts C) (hzero : ZeroOwners C)
     (p : Vertex → Fin 4) (hp : FeasibleOwners C p) (hS : mismatch F.theta ≤ 1/1000)
@@ -226,60 +198,6 @@ theorem mixed_continuous_necessary {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
   simp [weightedSlack,Row.loss,Row.epsilon,hmode,charged,alignedEdge,G,E,
     Fin.sum_univ_succ] at hm he ⊢
   linarith
-
-theorem quarter_owners {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
-    (hq : q ≤ Q0) (hc : TangentCuts C) (hzero : ZeroOwners C)
-    (hS : mismatch F.theta ≤ 3/200) : QuarterOwners C := by
-  intro i hi j hj
-  by_contra hbad
-  obtain ⟨p,hp,hpi⟩ := F.choose_owners_at i j hj
-  have hDgood := D_quarter_owners F hq hc hzero hS (p D) (hp D)
-  have hBbad : p B ∉ quarterOwners := by
-    intro hB
-    have hi' : i=B ∨ i=D := by simpa [otherQuarterEdges, B, D] using hi
-    rcases hi' with rfl | rfl
-    · exact hbad (hpi ▸ hB)
-    · exact hbad (hpi ▸ hDgood)
-  have hBsmall : p 3 < 2 := by
-    have hh : p 3 ∉ quarterOwners := by simpa [B] using hBbad
-    revert hh
-    generalize p 3 = a
-    fin_cases a <;> decide
-  have hGnot : p 1 ≠ 2 := by
-    intro heq
-    have hGsep : (forwardAxis 2).Feasible (C.square G) (C.square (next G)) := by
-      simpa [G, heq] using hp G
-    exact G_axis_two_forbidden_quarter_excluded F hq hc hzero hS hBbad (hp B) hGsep
-  have hGthree : p 1 ≠ 3 := by
-    intro heq
-    have hGsep : (forwardAxis 3).Feasible (C.square G) (C.square (next G)) := by
-      simpa [G, heq] using hp G
-    exact G_axis_three_forbidden_B_excluded F hq hc hzero hS hBbad (hp B) hGsep
-  have hGsmall : p 1 < 2 := by
-    revert hGnot hGthree
-    generalize p 1 = a
-    fin_cases a <;> decide
-  have hDlarge : ¬p 5 < 2 := by
-    have hh : p 5 ∈ quarterOwners := by simpa [D] using hDgood
-    revert hh
-    generalize p 5 = a
-    fin_cases a <;> decide
-  let p' : Vertex → Fin 4 := fun k => collapseOwner k (p k)
-  have hpattern : Generated.Owner.QuarterPattern p' := by
-    simp [Generated.Owner.QuarterPattern, p', collapseOwner,
-      zeroEdges, otherQuarterEdges, hBsmall, hDlarge, hGsmall]
-  obtain ⟨T,hTm,hTo⟩ := Generated.Owner.quarter_certificate hpattern
-  obtain ⟨z,hzl,hzu,ht⟩ := half_angle_chart F.tilt_small
-  obtain ⟨r,hrm,hzr⟩ := T.select ⟨hzl.le,hzu.le⟩
-  have hr := T.valid r hrm
-  have hcont := quarter_continuous_necessary F hq hc hzero p hp hS hr
-    ((T.same_mode r hrm).trans hTm) (T.no_error r hrm)
-    (fun k => congrFun ((T.same_owners r hrm).trans hTo) k)
-  apply hr.excludes_original hzr C.a C.b (hc.cones hq)
-  · intro k
-    have hh := (canonical_containment C k).trans hq
-    simpa [Row.Q,(T.same_mode r hrm).trans hTm,Q0,SquaresInCircles.phi] using hh
-  · exact Row.original_of_continuous hc hr hzr (abs_le.mpr ⟨hzl.le,hzu.le⟩) ht hcont
 
 theorem mixed_owners {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
     (hq : q ≤ Q0) (hc : TangentCuts C) (hzero : ZeroOwners C)
@@ -320,7 +238,9 @@ theorem mixed_owners {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
       revert hi0 hiq
       fin_cases i <;> decide
     refine ⟨hz 0 (by decide), hz 2 (by decide), hz 4 (by decide),
-      hq' 3 (by decide) hp3, hq' 5 (by decide) hp5, ?_⟩
+      hq' 3 (by decide) hp3, hq' 5 (by decide) hp5, ?_, ?_⟩
+    · rw [hm 6 (by decide) (by decide)]
+      exact mixed_E_owners F hq hc hzero hquarter hS (p 6) (hp 6)
     rcases hi' with rfl | rfl
     · left
       rw [hm 1 (by decide) (by decide), hpi]
@@ -478,7 +398,7 @@ theorem tilt_bundle_excludes {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
     have hza : (B.row (.spike j second positive)).interval.Mem z := by
       simpa [B.same_interval] using hz
     have hepsilon : ((B.row (.spike j second positive)).epsilon : ℝ) = 1/1000 := by
-      simp [Row.epsilon, B.same_mode]
+      simp [Row.epsilon]
     have hh : (B.row (.spike j second positive)).continuousNecessary C (tilt F.theta) := by
       unfold Row.continuousNecessary
       rw [B.same_alternative]

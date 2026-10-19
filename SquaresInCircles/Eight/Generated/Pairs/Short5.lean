@@ -5,8 +5,8 @@ public meta import SquaresInCircles.Eight.PairData
 
 /-! # The pair table `Short5`
 
-Each of its 336 rows passes `checkRow`, so it satisfies its claim; the labels of its 35 arcs
-pass `labelsCheck`; the trees of its 144 problems pass `problemsCheck`. So every problem holds. -/
+Each of its 262 rows passes `checkRow`, so it satisfies its claim; the labels of its 35 arcs
+pass `labelsCheck`; the trees of its 104 problems pass `problemsCheck`. So every problem holds. -/
 
 @[expose] public section
 noncomputable section

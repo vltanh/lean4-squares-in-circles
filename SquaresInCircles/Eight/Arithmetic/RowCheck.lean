@@ -1,7 +1,7 @@
 module
 
 public import SquaresInCircles.Eight.Arithmetic.TrigLin
-public import SquaresInCircles.Eight.Arithmetic.AffineCoverage
+public import SquaresInCircles.Eight.Arithmetic.StateCoverage
 
 /-!
 # A fast check of one affine row

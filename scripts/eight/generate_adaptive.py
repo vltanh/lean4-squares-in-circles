@@ -213,7 +213,6 @@ def bounds_text(hs):
 
 public import SquaresInCircles.Eight.ExactFamily.Generated.AdaptiveFormula
 public import SquaresInCircles.Eight.ExactFamily.FixedEval
-public import SquaresInCircles.Eight.ExactFamily.CompactRootCover
 
 /-!
 # Uniform estimates along the stationary curve
@@ -228,7 +227,7 @@ fixed-point interval evaluation in the kernel (`FixedEval`).
 @[expose] public section
 noncomputable section
 namespace SquaresInCircles.Eight.ExactFamily.AdaptiveGenerated
-open Arithmetic Generated CompactRootCover
+open Arithmetic Generated FixedEval
 
 set_option maxRecDepth 1000000
 set_option linter.all false

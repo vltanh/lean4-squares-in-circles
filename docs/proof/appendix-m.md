@@ -475,9 +475,9 @@ finite reduction valid.
 [`Eight.Candidate.Dual.Alternative`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L129),
 [`Eight.Candidate.Dual.alternative_count`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L141),
 [`Eight.Candidate.Dual.TiltBundle`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L423),
-[`Eight.Candidate.tilt_weighted_necessary`](../../SquaresInCircles/Eight/Candidate/DualApplication.lean#L376),
-[`Eight.Candidate.tilt_bundle_excludes`](../../SquaresInCircles/Eight/Candidate/DualApplication.lean#L444),
-[`Eight.Candidate.tilt_window`](../../SquaresInCircles/Eight/Candidate/DualApplication.lean#L492),
+[`Eight.Candidate.tilt_weighted_necessary`](../../SquaresInCircles/Eight/Candidate/DualApplication.lean#L296),
+[`Eight.Candidate.tilt_bundle_excludes`](../../SquaresInCircles/Eight/Candidate/DualApplication.lean#L364),
+[`Eight.Candidate.tilt_window`](../../SquaresInCircles/Eight/Candidate/DualApplication.lean#L412),
 [`Eight.Candidate.aligned_second_order_projection`](../../SquaresInCircles/Eight/Candidate/GeometricOwners.lean#L110),
 [`Eight.Candidate.mixed_E_second_order`](../../SquaresInCircles/Eight/Candidate/GeometricOwners.lean#L171).*
 

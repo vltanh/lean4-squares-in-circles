@@ -227,12 +227,70 @@ theorem t_upper_excluded {C : BoundaryCycle Q1} (F : Frame C)
   have hpi := two_pi_lt_710_over_113
   linarith
 
+/-- The charges, cuts, difference ranges and axes of the coarse table hold for a cycle with the
+cuts `E`, `G` and `T`. -/
+theorem coarse_context (C : BoundaryCycle (SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.radius:ℝ)) (F : Frame C)
+    (hE : EHalf C) (hG : GCut C) (hT : TCut C) :
+    (∀ i, (SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.charge i:ℝ)=charge coarseBeta i) ∧
+    (∀ i, (SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.cuts i).Mem (C.tangent i)) ∧
+    (∀ i, (SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.differenceRange i).Mem (delta F.theta i)) ∧
+    (∀ i j, (forwardAxis j).Feasible (C.square i) (C.square (next i)) →
+      ForwardAxis.ofIndex j∈SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.allowedAxes i) := by
+  have he : C.tangent 6≤0 := hE
+  have hgl : -4/5<C.tangent 1 := hG.1
+  have hgu : C.tangent 1< -1/20 := hG.2
+  have htl : 1/20<C.tangent 4 := hT.1
+  have htu : C.tangent 4<4/5 := hT.2
+  have hcuts : ∀ i, (SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.cuts i).Mem (C.tangent i) := by
+    have hc : SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.cuts =
+        ![⟨-1,1⟩, ⟨(-4/5),(-1/20)⟩, ⟨-1,1⟩, ⟨-1,1⟩, ⟨(1/20),(4/5)⟩, ⟨-1,1⟩, ⟨-1,0⟩] := rfl
+    intro i
+    obtain ⟨hb1,hb2⟩ := C.tangent_mem i
+    rw [hc]
+    rcases affineBudgets_fin7 i with rfl|rfl|rfl|rfl|rfl|rfl|rfl <;>
+      refine ⟨?_,?_⟩ <;> norm_num <;> linarith
+  have hdiff : ∀ i, (SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.differenceRange i).Mem (delta F.theta i) := by
+    have hd : SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.differenceRange =
+        ![⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩] := rfl
+    intro i
+    obtain ⟨hb1,hb2⟩ := abs_le.mp (F.delta_small i).le
+    rw [hd]
+    rcases affineBudgets_fin7 i with rfl|rfl|rfl|rfl|rfl|rfl|rfl <;>
+      refine ⟨?_,?_⟩ <;> norm_num <;> linarith
+  have haxes : ∀ i j, (forwardAxis j).Feasible (C.square i) (C.square (next i)) →
+      ForwardAxis.ofIndex j∈SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.allowedAxes i := by
+    have ha : SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.allowedAxes =
+        ![[.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four]] := rfl
+    intro i j _
+    rw [ha]
+    rcases affineBudgets_fin7 i with rfl|rfl|rfl|rfl|rfl|rfl|rfl <;>
+      exact affineBudgets_all_axes _
+  have hb : ∀ i, (SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.charge i:ℝ)=charge (coarseBeta) i := by
+    have hc : SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.charge =
+        ![(99/5000), 0, (99/5000), (99/5000), (99/5000), (99/5000), 0] := rfl
+    intro i
+    rw [hc]
+    rcases affineBudgets_fin7 i with rfl|rfl|rfl|rfl|rfl|rfl|rfl <;>
+      norm_num [charge,charged,coarseBeta]
+  exact ⟨hb, hcuts, hdiff, haxes⟩
+
+/-- No edge of a cycle with the cuts `E`, `G` and `T` joins two core squares, by the coarse
+table. -/
+theorem no_adjacent_core {C : BoundaryCycle Q1} (F : Frame C)
+    (hE : EHalf C) (hG : GCut C) (hT : TCut C) : NoAdjacentCore C := by
+  revert C
+  rw [← affineBudgets_radius (r := SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.radius) rfl]
+  intro C F hE hG hT
+  obtain ⟨hb, hcuts, hdiff, haxes⟩ := coarse_context C F hE hG hT
+  exact SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.no_adjacent_core C F coarseBeta (by norm_num [coarseBeta]) hb hcuts hdiff haxes
+
 theorem h_lower_excluded {C : BoundaryCycle Q1} (F : Frame C)
     (hE : EHalf C) (hG : GCut C) (hT : TCut C)
     (hFail : C.tangent H≤1/2) : False := by
+  have hC := no_adjacent_core F hE hG hT
   revert C
   rw [← affineBudgets_radius (r := SquaresInCircles.Eight.Generated.Affine.HLowerAffine.table.radius) rfl]
-  intro C F hE hG hT hFail
+  intro C F hE hG hT hFail hC
   have he : C.tangent 6≤0 := hE
   have hgl : -4/5<C.tangent 1 := hG.1
   have hgu : C.tangent 1< -1/20 := hG.2
@@ -270,7 +328,7 @@ theorem h_lower_excluded {C : BoundaryCycle Q1} (F : Frame C)
     rw [hc]
     rcases affineBudgets_fin7 i with rfl|rfl|rfl|rfl|rfl|rfl|rfl <;>
       norm_num [charge,charged]
-  have P := SquaresInCircles.Eight.Generated.Affine.HLowerAffine.charged_bound C F (0) hb hcuts hdiff haxes
+  have P := SquaresInCircles.Eight.Generated.Affine.HLowerAffine.charged_bound C F (0) hb hcuts hdiff haxes hC
   have hbudget := P.cyclic
   have ht : SquaresInCircles.Eight.Generated.Affine.HLowerAffine.table.target =
       ![(8977/10000), (8977/10000), (8977/10000), (8977/10000), (8977/10000), (8977/10000), (8977/10000)] := rfl
@@ -282,9 +340,10 @@ theorem h_lower_excluded {C : BoundaryCycle Q1} (F : Frame C)
 theorem d_upper_excluded {C : BoundaryCycle Q1} (F : Frame C)
     (hE : EHalf C) (hG : GCut C) (hT : TCut C)
     (hFail : -1/2≤C.tangent D) : False := by
+  have hC := no_adjacent_core F hE hG hT
   revert C
   rw [← affineBudgets_radius (r := SquaresInCircles.Eight.Generated.Affine.DUpperAffine.table.radius) rfl]
-  intro C F hE hG hT hFail
+  intro C F hE hG hT hFail hC
   have he : C.tangent 6≤0 := hE
   have hgl : -4/5<C.tangent 1 := hG.1
   have hgu : C.tangent 1< -1/20 := hG.2
@@ -322,7 +381,7 @@ theorem d_upper_excluded {C : BoundaryCycle Q1} (F : Frame C)
     rw [hc]
     rcases affineBudgets_fin7 i with rfl|rfl|rfl|rfl|rfl|rfl|rfl <;>
       norm_num [charge,charged]
-  have P := SquaresInCircles.Eight.Generated.Affine.DUpperAffine.charged_bound C F (0) hb hcuts hdiff haxes
+  have P := SquaresInCircles.Eight.Generated.Affine.DUpperAffine.charged_bound C F (0) hb hcuts hdiff haxes hC
   have hbudget := P.cyclic
   have ht : SquaresInCircles.Eight.Generated.Affine.DUpperAffine.table.target =
       ![(17953/20000), (17953/20000), (17953/20000), (17953/20000), (17953/20000), (17953/20000), (17953/20000)] := rfl
@@ -353,42 +412,7 @@ noncomputable def coarse_bound {C : BoundaryCycle Q1} (F : Frame C)
   revert C
   rw [← affineBudgets_radius (r := SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.radius) rfl]
   intro C F hE hG hT
-  have he : C.tangent 6≤0 := hE
-  have hgl : -4/5<C.tangent 1 := hG.1
-  have hgu : C.tangent 1< -1/20 := hG.2
-  have htl : 1/20<C.tangent 4 := hT.1
-  have htu : C.tangent 4<4/5 := hT.2
-  have hcuts : ∀ i, (SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.cuts i).Mem (C.tangent i) := by
-    have hc : SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.cuts =
-        ![⟨-1,1⟩, ⟨(-4/5),(-1/20)⟩, ⟨-1,1⟩, ⟨-1,1⟩, ⟨(1/20),(4/5)⟩, ⟨-1,1⟩, ⟨-1,0⟩] := rfl
-    intro i
-    obtain ⟨hb1,hb2⟩ := C.tangent_mem i
-    rw [hc]
-    rcases affineBudgets_fin7 i with rfl|rfl|rfl|rfl|rfl|rfl|rfl <;>
-      refine ⟨?_,?_⟩ <;> norm_num <;> linarith
-  have hdiff : ∀ i, (SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.differenceRange i).Mem (delta F.theta i) := by
-    have hd : SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.differenceRange =
-        ![⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩] := rfl
-    intro i
-    obtain ⟨hb1,hb2⟩ := abs_le.mp (F.delta_small i).le
-    rw [hd]
-    rcases affineBudgets_fin7 i with rfl|rfl|rfl|rfl|rfl|rfl|rfl <;>
-      refine ⟨?_,?_⟩ <;> norm_num <;> linarith
-  have haxes : ∀ i j, (forwardAxis j).Feasible (C.square i) (C.square (next i)) →
-      ForwardAxis.ofIndex j∈SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.allowedAxes i := by
-    have ha : SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.allowedAxes =
-        ![[.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four]] := rfl
-    intro i j _
-    rw [ha]
-    rcases affineBudgets_fin7 i with rfl|rfl|rfl|rfl|rfl|rfl|rfl <;>
-      exact affineBudgets_all_axes _
-  have hb : ∀ i, (SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.charge i:ℝ)=charge (coarseBeta) i := by
-    have hc : SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.charge =
-        ![(99/5000), 0, (99/5000), (99/5000), (99/5000), (99/5000), 0] := rfl
-    intro i
-    rw [hc]
-    rcases affineBudgets_fin7 i with rfl|rfl|rfl|rfl|rfl|rfl|rfl <;>
-      norm_num [charge,charged,coarseBeta]
+  obtain ⟨hb, hcuts, hdiff, haxes⟩ := coarse_context C F hE hG hT
   have P := SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.charged_bound C F (coarseBeta) hb hcuts hdiff haxes
   have hγ : (fun i => (SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.target i:ℝ)) = coarseGamma := by
     have ht : SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.target =
@@ -404,9 +428,10 @@ noncomputable def middle_bound {C : BoundaryCycle Q1} (F : Frame C)
     (hE : EHalf C) (hG : GCut C) (hT : TCut C) (hHD : HDCut C)
     (hS : mismatch F.theta≤13/50)
     : ChargedBound C F (1/400) middleGamma := by
+  have hC := no_adjacent_core F hE hG hT
   revert C
   rw [← affineBudgets_radius (r := SquaresInCircles.Eight.Generated.Affine.Mismatch026To01Affine.table.radius) rfl]
-  intro C F hE hG hT hHD hS
+  intro C F hE hG hT hHD hS hC
   have he : C.tangent 6≤0 := hE
   have hgl : -4/5<C.tangent 1 := hG.1
   have hgu : C.tangent 1< -1/20 := hG.2
@@ -458,7 +483,7 @@ noncomputable def middle_bound {C : BoundaryCycle Q1} (F : Frame C)
     rw [hc]
     rcases affineBudgets_fin7 i with rfl|rfl|rfl|rfl|rfl|rfl|rfl <;>
       norm_num [charge,charged]
-  have P := SquaresInCircles.Eight.Generated.Affine.Mismatch026To01Affine.charged_bound C F (1/400) hb hcuts hdiff haxes
+  have P := SquaresInCircles.Eight.Generated.Affine.Mismatch026To01Affine.charged_bound C F (1/400) hb hcuts hdiff haxes hC
   have hγ : (fun i => (SquaresInCircles.Eight.Generated.Affine.Mismatch026To01Affine.table.target i:ℝ)) = middleGamma := by
     have ht : SquaresInCircles.Eight.Generated.Affine.Mismatch026To01Affine.table.target =
         ![(448791/500000), (448791/500000), (448791/500000), (448791/500000), (448791/500000), (448791/500000), (448791/500000)] := rfl
@@ -473,9 +498,10 @@ noncomputable def intermediate_bound {C : BoundaryCycle Q1} (F : Frame C)
     (hE : EHalf C) (hG : GCut C) (hT : TCut C) (hSigns : Signs C)
     (hS : mismatch F.theta≤1/10)
     : ChargedBound C F (1/200) intermediateGamma := by
+  have hC := no_adjacent_core F hE hG hT
   revert C
   rw [← affineBudgets_radius (r := SquaresInCircles.Eight.Generated.Affine.Mismatch01To015Affine.table.radius) rfl]
-  intro C F hE hG hT hSigns hS
+  intro C F hE hG hT hSigns hS hC
   have he : C.tangent 6≤0 := hE
   have hgl : -4/5<C.tangent 1 := hG.1
   have hgu : C.tangent 1< -1/20 := hG.2
@@ -531,7 +557,7 @@ noncomputable def intermediate_bound {C : BoundaryCycle Q1} (F : Frame C)
     rw [hc]
     rcases affineBudgets_fin7 i with rfl|rfl|rfl|rfl|rfl|rfl|rfl <;>
       norm_num [charge,charged]
-  have P := SquaresInCircles.Eight.Generated.Affine.Mismatch01To015Affine.charged_bound C F (1/200) hb hcuts hdiff haxes
+  have P := SquaresInCircles.Eight.Generated.Affine.Mismatch01To015Affine.charged_bound C F (1/200) hb hcuts hdiff haxes hC
   have hγ : (fun i => (SquaresInCircles.Eight.Generated.Affine.Mismatch01To015Affine.table.target i:ℝ)) = intermediateGamma := by
     have ht : SquaresInCircles.Eight.Generated.Affine.Mismatch01To015Affine.table.target =
         ![(1121991/1250000), (1121991/1250000), (1121991/1250000), (1121991/1250000), (1121991/1250000), (3590371/4000000), (8975917/10000000)] := rfl
@@ -547,9 +573,10 @@ noncomputable def final_bound {C : BoundaryCycle Q1} (F : Frame C)
     (hZero : ZeroOwners C) (hQuarter : QuarterOwners C)
     (hS : mismatch F.theta≤3/200)
     : ChargedBound C F (1/20) finalGamma := by
+  have hC := no_adjacent_core F hE hG hT
   revert C
   rw [← affineBudgets_radius (r := SquaresInCircles.Eight.Generated.Affine.Mismatch015To001Affine.table.radius) rfl]
-  intro C F hE hG hT hHD hSigns hZero hQuarter hS
+  intro C F hE hG hT hHD hSigns hZero hQuarter hS hC
   have he : C.tangent 6≤0 := hE
   have hgl : -4/5<C.tangent 1 := hG.1
   have hgu : C.tangent 1< -1/20 := hG.2
@@ -613,7 +640,7 @@ noncomputable def final_bound {C : BoundaryCycle Q1} (F : Frame C)
     rw [hc]
     rcases affineBudgets_fin7 i with rfl|rfl|rfl|rfl|rfl|rfl|rfl <;>
       norm_num [charge,charged]
-  have P := SquaresInCircles.Eight.Generated.Affine.Mismatch015To001Affine.charged_bound C F (1/20) hb hcuts hdiff haxes
+  have P := SquaresInCircles.Eight.Generated.Affine.Mismatch015To001Affine.charged_bound C F (1/20) hb hcuts hdiff haxes hC
   have hγ : (fun i => (SquaresInCircles.Eight.Generated.Affine.Mismatch015To001Affine.table.target i:ℝ)) = finalGamma := by
     have ht : SquaresInCircles.Eight.Generated.Affine.Mismatch015To001Affine.table.target =
         ![(179519/200000), (179519/200000), (179519/200000), (179519/200000), (179519/200000), (179519/200000), (359037/400000)] := rfl
@@ -630,42 +657,7 @@ noncomputable def enhanced_bound {C : BoundaryCycle Q1} (F : Frame C)
   revert C
   rw [← affineBudgets_radius (r := SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.radius) rfl]
   intro C F hE hG hT
-  have he : C.tangent 6≤0 := hE
-  have hgl : -4/5<C.tangent 1 := hG.1
-  have hgu : C.tangent 1< -1/20 := hG.2
-  have htl : 1/20<C.tangent 4 := hT.1
-  have htu : C.tangent 4<4/5 := hT.2
-  have hcuts : ∀ i, (SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.cuts i).Mem (C.tangent i) := by
-    have hc : SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.cuts =
-        ![⟨-1,1⟩, ⟨(-4/5),(-1/20)⟩, ⟨-1,1⟩, ⟨-1,1⟩, ⟨(1/20),(4/5)⟩, ⟨-1,1⟩, ⟨-1,0⟩] := rfl
-    intro i
-    obtain ⟨hb1,hb2⟩ := C.tangent_mem i
-    rw [hc]
-    rcases affineBudgets_fin7 i with rfl|rfl|rfl|rfl|rfl|rfl|rfl <;>
-      refine ⟨?_,?_⟩ <;> norm_num <;> linarith
-  have hdiff : ∀ i, (SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.differenceRange i).Mem (delta F.theta i) := by
-    have hd : SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.differenceRange =
-        ![⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩] := rfl
-    intro i
-    obtain ⟨hb1,hb2⟩ := abs_le.mp (F.delta_small i).le
-    rw [hd]
-    rcases affineBudgets_fin7 i with rfl|rfl|rfl|rfl|rfl|rfl|rfl <;>
-      refine ⟨?_,?_⟩ <;> norm_num <;> linarith
-  have haxes : ∀ i j, (forwardAxis j).Feasible (C.square i) (C.square (next i)) →
-      ForwardAxis.ofIndex j∈SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.allowedAxes i := by
-    have ha : SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.allowedAxes =
-        ![[.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four]] := rfl
-    intro i j _
-    rw [ha]
-    rcases affineBudgets_fin7 i with rfl|rfl|rfl|rfl|rfl|rfl|rfl <;>
-      exact affineBudgets_all_axes _
-  have hb : ∀ i, (SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.charge i:ℝ)=charge (coarseBeta) i := by
-    have hc : SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.charge =
-        ![(99/5000), 0, (99/5000), (99/5000), (99/5000), (99/5000), 0] := rfl
-    intro i
-    rw [hc]
-    rcases affineBudgets_fin7 i with rfl|rfl|rfl|rfl|rfl|rfl|rfl <;>
-      norm_num [charge,charged,coarseBeta]
+  obtain ⟨hb, hcuts, hdiff, haxes⟩ := coarse_context C F hE hG hT
   have P := SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.enhanced_charged_bound C F coarseBeta hb hcuts hdiff haxes
   have hγ : (fun i => (SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.enhancedMeta.target i:ℝ)) = enhancedGamma := by
     have ht : SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.table.target =

@@ -9,7 +9,8 @@ For a table NAME it writes, under data/eight/affine:
               2 upper, 3 circle; a circle row gives its radical parameter h and its m pieces:
               parameters h_j and the interior cuts c_j, over den). Rows are sorted by
               (source, target, axis, positive first, lo, hi). The rows of an excluded arc
-              pair and axis (ExcludedArcs) are left out.
+              pair and axis (ExcludedArcs) are left out, and with --core those of two core
+              arcs.
   NAME.arcs   first line: den arcs; seven lines `betaHalf.lo betaHalf.hi gamma.lo gamma.hi`;
               one line per arc: side positive, then the fixed-point intervals (lo hi) of
               c p q shift rho aLo bLo aHi bHi rLo rHi alpha; alpha is the arctangent
@@ -20,6 +21,11 @@ Bernstein11.lean, Bernstein7.lean, TrigLin.lean and RowCheck.lean. Every row and
 coverage are checked here with the same integer algorithm before anything is written; circle
 rows are split into pieces whose AM-GM parameter h is sqrt V at the piece's midpoint. With
 --enhance the rows are checked against the targets raised by the given millionths.
+
+With --core markers the rows of two core arcs are left out and the table module proves their
+costs from the markers of the core arcs (Candidate/GeometricCoreMarker.lean), and that no edge
+joins two core squares (`no_adjacent_core`). With --core free they are left out and the charged
+bound assumes that no edge joins two core squares.
 
 With --lean MODULE it also writes the Lean modules of the table under
 SquaresInCircles/Eight/Generated/Affine:
@@ -34,7 +40,7 @@ SquaresInCircles/Eight/Generated/Affine:
   MODULE/Enhanced.lean  with --enhance, the same for the enhanced targets.
 
   python3 -I scripts/eight/affine_rows.py PATH/NAME.json [--out DIR] [--lean MODULE]
-      [--enhance e0,...,e6]
+      [--enhance e0,...,e6] [--core markers|free]
 """
 import argparse
 import fcntl
@@ -385,13 +391,23 @@ def alpha_fi(a):
     return (lo, hi) if a.positive else (-hi, -lo)
 
 
+CORE = None   # --core: how the table bounds the costs of two core arcs
+
+
 def excluded(aS, aT, axis):
     """excludedB / ExcludedArcs in RowCover.lean and AffineCoverage.lean: the arc pairs and axes
     that no feasible separator has."""
     zero = aS.role in (0, 2, 4)
+    quarter = aS.role in (1, 3, 5, 6)
     return ((zero and ((axis == 2 and not aT.outer) or (axis == 4 and not aS.outer)))
             or (axis == 1 and not aS.positive and not aT.outer)
-            or (axis == 3 and aT.positive and not aS.outer))
+            or (axis == 3 and aT.positive and not aS.outer)
+            or (quarter and not aS.outer and not aT.outer and aS.positive and not aT.positive))
+
+
+def skipped(aS, aT, axis):
+    """skipB in RowCover.lean: the excluded keys and, with --core, the pairs of two core arcs."""
+    return excluded(aS, aT, axis) or (CORE is not None and not aS.outer and not aT.outer)
 
 
 # ----------------------------------------------------------------- tables
@@ -652,7 +668,7 @@ def cover_check(t, ctx, rows):
                 continue
             phase = fadd(fsub(GAP, ctx["boxes"][s]["alpha"]), ctx["boxes"][u]["alpha"])
             for ax in t.axes[i]:
-                if excluded(a, b, ax):
+                if skipped(a, b, ax):
                     continue
                 for r in (True, False):
                     raw = fsub(phase, base) if r else fsub(base, phase)
@@ -874,6 +890,7 @@ def write_modules(root, module, name, t, cuts, ctx, rows, enhance):
         old.unlink()
     rel = "../../../../../data/eight/affine/" + name
     den, n = ctx["den"], ctx["n"]
+    core = "false" if CORE is None else "true"
     L = UNIT * den
     pre = "SquaresInCircles.Eight.Generated.Affine." + module
     meta = "enhancedMeta" if enhance else "table"
@@ -1037,7 +1054,7 @@ theorem data_check : checkRows ctx data = true := by
         first.setdefault(x["source"], idx)
         count_by_source[x["source"]] += 1
     cost = [2 * sum(1 for b in t.arcs if b.role == (a.role + 1) % 7
-                    for ax in t.axes[a.role] if not excluded(a, b, ax)) + count_by_source[s]
+                    for ax in t.axes[a.role] if not skipped(a, b, ax)) + count_by_source[s]
             for s, a in enumerate(t.arcs)]
     assert CHUNK % PART == 0
     cover = []
@@ -1061,14 +1078,35 @@ theorem data_check : checkRows ctx data = true := by
                 % (part[0][0], part[-1][0] + part[-1][1] - 1), module=module)
         for j, (a, c, ck, o) in enumerate(part):
             text += f"""
-theorem cover_{m + j} : coverBlock coverCtx table {a} {c} {ck} {o} chunks = true := by
+theorem cover_{m + j} : coverBlock coverCtx table {core} {a} {c} {ck} {o} chunks = true := by
   decide +kernel
 """
         text += FOOTER.format(module=module)
         (base / module / (mod + ".lean")).write_text(text)
     # ------------------------------------------------------------ the table
     imports = "\n".join(["public import %s.Data" % pre] +
-                        ["public import %s.%s" % (pre, mod) for mod in cover_modules])
+                        ["public import %s.%s" % (pre, mod) for mod in cover_modules] +
+                        (["public import SquaresInCircles.Eight.Candidate.GeometricCoreMarker"]
+                         if CORE == "markers" else []))
+    core_bound = "(by simp)"
+    core_theorems = ""
+    core_hyp = ""
+    if CORE == "free":
+        core_bound = "(fun _ => hC.corePairBound F)"
+        core_hyp = "\n    (hC : NoAdjacentCore C)"
+    if CORE == "markers":
+        core_bound = ("(fun _ => Candidate.GeometricCoreMarker.pair_bound cover_endpoints markers_valid\n"
+                      "      budgets_valid C F)")
+        core_theorems = """
+theorem markers_valid : Candidate.GeometricCoreMarker.MarkersValid cover table := by
+  decide +kernel
+
+theorem budgets_valid : Candidate.GeometricCoreMarker.BudgetsValid table := by decide +kernel
+
+theorem strong_budgets_valid :
+    Candidate.GeometricCoreMarker.BudgetsValid {table with target := fun _ => 9/10} := by
+  decide +kernel
+"""
     claim = "checkRow_claim ctx_valid (checkRows_sound data_check x hx)"
     if enhance:
         claim = ("AffineRow.claim_of_target_le (le_add_of_nonneg_right (enhancement_nonneg _))\n"
@@ -1098,13 +1136,13 @@ theorem all_row_claims : ∀ r ∈ rows, r.Claim table := by
 theorem cover_endpoints : cover.EndpointsValid table := endpointsValid_atanEnds table _
 
 theorem cover_blocks :
-    AllBlocks (fun a n => ∃ c o, coverBlock coverCtx table a n c o chunks = true)
+    AllBlocks (fun a n => ∃ c o, coverBlock coverCtx table {core} a n c o chunks = true)
 {wrap([str((a, c)) for a, c, _, _ in cover], 5, "    [")}] :=
   {all_blocks(["⟨%d, %d, cover_%d⟩" % (ck, o, j) for j, (a, c, ck, o) in enumerate(cover)])}
 
-theorem cover_angles : cover.AngleCovers table rows :=
+theorem cover_angles : cover.AngleCovers table rows {core} :=
   coverBlocks_sound coverCtx_valid.1 coverCtx_valid.2 (by decide +kernel) cover_blocks
-
+{core_theorems}
 theorem word_matches : ∀ i, (table.word i:ℝ)=(Candidate.word i:ℝ) := by
   have hw : table.word = ![{", ".join(map(str, t.word))}] := rfl
   intro i; rw [hw]; fin_cases i <;> norm_num [Candidate.word]
@@ -1115,10 +1153,23 @@ noncomputable def charged_bound (C : BoundaryCycle (table.radius:ℝ))
     (hcuts : ∀ i, (table.cuts i).Mem (C.tangent i))
     (hdiff : ∀ i, (table.differenceRange i).Mem (Candidate.delta F.theta i))
     (haxes : ∀ i j, (forwardAxis j).Feasible (C.square i) (C.square (next i)) →
-      ForwardAxis.ofIndex j∈table.allowedAxes i) :
+      ForwardAxis.ofIndex j∈table.allowedAxes i){core_hyp} :
     Candidate.ChargedBound C F β (fun i => (table.target i:ℝ)) :=
   AffineCover.chargedBoundOf cover_endpoints cover_states cover_angles all_row_claims C F β
-    word_matches hcharge hcuts hdiff haxes
+    word_matches hcharge hcuts hdiff haxes {core_bound}
+"""
+    if CORE == "markers":
+        text += """
+/-- No edge of a cycle with the cuts of the table joins two core squares. -/
+theorem no_adjacent_core (C : BoundaryCycle (table.radius:ℝ)) (F : Candidate.Frame C) (β : ℝ)
+    (hβ : 0 ≤ β) (hcharge : ∀ i, (table.charge i:ℝ)=Candidate.charge β i)
+    (hcuts : ∀ i, (table.cuts i).Mem (C.tangent i))
+    (hdiff : ∀ i, (table.differenceRange i).Mem (Candidate.delta F.theta i))
+    (haxes : ∀ i j, (forwardAxis j).Feasible (C.square i) (C.square (next i)) →
+      ForwardAxis.ofIndex j∈table.allowedAxes i) : NoAdjacentCore C :=
+  Candidate.GeometricCoreMarker.no_adjacent_core cover_endpoints cover_states cover_angles
+    all_row_claims markers_valid budgets_valid strong_budgets_valid (by decide +kernel)
+    (by decide +kernel) C F β hβ word_matches hcharge hcuts hdiff haxes
 """
     text += FOOTER.format(module=module)
     (base / (module + ".lean")).write_text(text)
@@ -1129,6 +1180,19 @@ noncomputable def charged_bound (C : BoundaryCycle (table.radius:ℝ))
             doc="The same rows and coverage for the enhanced targets: the rows were checked\n"
                 "against them, and the coverage walk does not involve the targets.",
             module=module)
+        enhanced_bound = "(by simp)"
+        enhanced_theorems = ""
+        if CORE == "markers":
+            enhanced_bound = ("(fun _ => Candidate.GeometricCoreMarker.pair_bound enhanced_endpoints\n"
+                              "      enhanced_markers_valid enhanced_budgets_valid C F)")
+            enhanced_theorems = """
+theorem enhanced_markers_valid :
+    Candidate.GeometricCoreMarker.MarkersValid enhancedCover enhancedMeta := by
+  decide +kernel
+
+theorem enhanced_budgets_valid : Candidate.GeometricCoreMarker.BudgetsValid enhancedMeta := by
+  decide +kernel
+"""
         text += """
 /-- All rows of the table, with the enhanced targets. -/
 noncomputable def enhancedRows : List AffineTableRow := data.map (·.toTableRow enhancedMeta ctx.den)
@@ -1149,11 +1213,11 @@ theorem enhanced_coverCtx_valid : coverCtx.Valid enhancedCover enhancedMeta ∧
     coverCtx.alphas.length = enhancedMeta.arcs.length :=
   CoverCtx.valid_of (by decide +kernel) (by decide +kernel) coverCtx_alphas
 
-theorem enhanced_angles : enhancedCover.AngleCovers enhancedMeta enhancedRows :=
+theorem enhanced_angles : enhancedCover.AngleCovers enhancedMeta enhancedRows """ + core + """ :=
   coverBlocks_sound enhanced_coverCtx_valid.1 enhanced_coverCtx_valid.2 (by decide +kernel)
     (AllBlocks.imp (fun a n ⟨c, o, h⟩ =>
-      ⟨c, o, (coverBlock_congr rfl rfl rfl a n c o chunks).trans h⟩) cover_blocks)
-
+      ⟨c, o, (coverBlock_congr rfl rfl rfl _ a n c o chunks).trans h⟩) cover_blocks)
+""" + enhanced_theorems + """
 noncomputable def enhanced_charged_bound (C : BoundaryCycle (table.radius:ℝ))
     (F : Candidate.Frame C) (β : ℝ)
     (hcharge : ∀ i, (table.charge i:ℝ)=Candidate.charge β i)
@@ -1163,7 +1227,7 @@ noncomputable def enhanced_charged_bound (C : BoundaryCycle (table.radius:ℝ))
       ForwardAxis.ofIndex j∈table.allowedAxes i) :
     Candidate.ChargedBound C F β (fun i => (enhancedMeta.target i:ℝ)) :=
   AffineCover.chargedBoundOf enhanced_endpoints enhanced_states enhanced_angles enhanced_claims
-    C F β word_matches hcharge hcuts hdiff haxes
+    C F β word_matches hcharge hcuts hdiff haxes """ + enhanced_bound + """
 """
         text += FOOTER.format(module=module)
         (base / module / "Enhanced.lean").write_text(text)
@@ -1178,7 +1242,11 @@ def main():
     ap.add_argument("--out", type=Path, default=root / "data" / "eight" / "affine")
     ap.add_argument("--lean", metavar="MODULE")
     ap.add_argument("--enhance", help="millionths added to the seven targets, e.g. 15,13,...")
+    ap.add_argument("--core", choices=["markers", "free"],
+                    help="leave out the rows of two core arcs: bounded by the markers, or absent")
     args = ap.parse_args()
+    global CORE
+    CORE = args.core
     args.table = args.json.stem
     t = load_table(args.json)
     enhance = [int(v) for v in args.enhance.split(",")] if args.enhance else None
@@ -1194,7 +1262,7 @@ def main():
                          lam=exact(r["lambda"], LAM_SCALE), mode=MODES[r["mode"]],
                          h=exact(r.get("h", "1"), H_SCALE), pieces=[]))
     total = len(rows)
-    rows = [x for x in rows if not excluded(t.arcs[x["source"]], t.arcs[x["target"]], x["axis"])]
+    rows = [x for x in rows if not skipped(t.arcs[x["source"]], t.arcs[x["target"]], x["axis"])]
     rows.sort(key=lambda x: (x["source"], x["target"], x["axis"], not x["positive"],
                              x["lo"], x["hi"]))
     pieces = 0

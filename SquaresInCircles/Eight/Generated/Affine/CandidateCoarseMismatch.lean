@@ -5,10 +5,11 @@ public import SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.Co
 public import SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.Cover01
 public import SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.Cover02
 public import SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.Cover03
+public import SquaresInCircles.Eight.Candidate.GeometricCoreMarker
 
 /-! # The affine table `CandidateCoarseMismatch`
 
-Each of its 115463 rows passes `checkRow`, so it satisfies its claim
+Each of its 110425 rows passes `checkRow`, so it satisfies its claim
 (`checkRow_claim`). The walks `coverBlock` over blocks of sources covering all arcs
 give the angle coverage (`coverBlocks_sound`). With the state chains and the
 arctangent intervals of the arcs they give the charged bound. -/
@@ -23,7 +24,7 @@ set_option maxRecDepth 100000
 /-- All rows of the table. -/
 noncomputable def rows : List AffineTableRow := data.map (·.toTableRow table ctx.den)
 
-theorem complete_row_count : rows.length = 115463 := by
+theorem complete_row_count : rows.length = 110425 := by
   simp only [rows, data, chunks, List.length_map, List.length_flatten, List.map_append,
     List.sum_append, parts000_length, parts001_length, parts002_length, parts003_length,
     parts004_length, parts005_length, parts006_length, parts007_length, parts008_length,
@@ -38,26 +39,35 @@ theorem all_row_claims : ∀ r ∈ rows, r.Claim table := by
 theorem cover_endpoints : cover.EndpointsValid table := endpointsValid_atanEnds table _
 
 theorem cover_blocks :
-    AllBlocks (fun a n => ∃ c o, coverBlock coverCtx table a n c o chunks = true)
-    [(0, 27), (27, 29), (56, 18), (74, 14), (88, 7), (95, 6), (101, 6), (107, 6), (113, 6),
-     (119, 15), (134, 11), (145, 10), (155, 11), (166, 12), (178, 8), (186, 8), (194, 7), (201, 6),
-     (207, 17), (224, 17), (241, 17), (258, 16), (274, 16), (290, 14), (304, 8), (312, 8),
-     (320, 7), (327, 10), (337, 15), (352, 14), (366, 12), (378, 12), (390, 17), (407, 14),
-     (421, 7), (428, 6), (434, 6), (440, 6), (446, 6), (452, 6), (458, 4)] :=
+    AllBlocks (fun a n => ∃ c o, coverBlock coverCtx table true a n c o chunks = true)
+    [(0, 30), (30, 29), (59, 18), (77, 13), (90, 8), (98, 6), (104, 6), (110, 6), (116, 9),
+     (125, 17), (142, 11), (153, 11), (164, 12), (176, 9), (185, 8), (193, 7), (200, 7), (207, 21),
+     (228, 18), (246, 18), (264, 15), (279, 17), (296, 12), (308, 8), (316, 7), (323, 7),
+     (330, 18), (348, 16), (364, 12), (376, 12), (388, 17), (405, 16), (421, 9), (430, 6),
+     (436, 6), (442, 6), (448, 6), (454, 6), (460, 2)] :=
   by simp only [AllBlocks]; exact
-    ⟨⟨0, 0, cover_0⟩, ⟨14, 32, cover_1⟩, ⟨19, 152, cover_2⟩, ⟨36, 12, cover_3⟩, ⟨54, 38, cover_4⟩,
-    ⟨70, 157, cover_5⟩, ⟨87, 143, cover_6⟩, ⟨104, 159, cover_7⟩, ⟨120, 179, cover_8⟩,
-    ⟨137, 39, cover_9⟩, ⟨146, 58, cover_10⟩, ⟨162, 89, cover_11⟩, ⟨169, 163, cover_12⟩,
-    ⟨173, 185, cover_13⟩, ⟨176, 18, cover_14⟩, ⟨186, 90, cover_15⟩, ⟨199, 166, cover_16⟩,
-    ⟨214, 103, cover_17⟩, ⟨229, 46, cover_18⟩, ⟨246, 170, cover_19⟩, ⟨265, 157, cover_20⟩,
-    ⟨282, 185, cover_21⟩, ⟨301, 9, cover_22⟩, ⟨318, 124, cover_23⟩, ⟨333, 51, cover_24⟩,
-    ⟨343, 153, cover_25⟩, ⟨356, 160, cover_26⟩, ⟨370, 132, cover_27⟩, ⟨387, 32, cover_28⟩,
-    ⟨399, 175, cover_29⟩, ⟨415, 95, cover_30⟩, ⟨434, 35, cover_31⟩, ⟨452, 64, cover_32⟩,
-    ⟨460, 124, cover_33⟩, ⟨469, 147, cover_34⟩, ⟨485, 196, cover_35⟩, ⟨502, 73, cover_36⟩,
-    ⟨518, 74, cover_37⟩, ⟨535, 130, cover_38⟩, ⟨551, 123, cover_39⟩, ⟨567, 64, cover_40⟩, trivial⟩
+    ⟨⟨0, 0, cover_0⟩, ⟨13, 173, cover_1⟩, ⟨19, 194, cover_2⟩, ⟨37, 129, cover_3⟩,
+    ⟨56, 70, cover_4⟩, ⟨73, 112, cover_5⟩, ⟨90, 124, cover_6⟩, ⟨107, 78, cover_7⟩,
+    ⟨123, 43, cover_8⟩, ⟨138, 158, cover_9⟩, ⟨149, 79, cover_10⟩, ⟨159, 159, cover_11⟩,
+    ⟨164, 83, cover_12⟩, ⟨166, 5, cover_13⟩, ⟨175, 199, cover_14⟩, ⟨189, 2, cover_15⟩,
+    ⟨203, 50, cover_16⟩, ⟨220, 52, cover_17⟩, ⟨239, 90, cover_18⟩, ⟨259, 2, cover_19⟩,
+    ⟨274, 171, cover_20⟩, ⟨294, 119, cover_21⟩, ⟨311, 7, cover_22⟩, ⟨323, 171, cover_23⟩,
+    ⟨335, 67, cover_24⟩, ⟨347, 170, cover_25⟩, ⟨363, 44, cover_26⟩, ⟨379, 178, cover_27⟩,
+    ⟨392, 173, cover_28⟩, ⟨411, 44, cover_29⟩, ⟨430, 191, cover_30⟩, ⟨440, 111, cover_31⟩,
+    ⟨448, 176, cover_32⟩, ⟨465, 55, cover_33⟩, ⟨482, 111, cover_34⟩, ⟨499, 10, cover_35⟩,
+    ⟨515, 151, cover_36⟩, ⟨531, 140, cover_37⟩, ⟨547, 40, cover_38⟩, trivial⟩
 
-theorem cover_angles : cover.AngleCovers table rows :=
+theorem cover_angles : cover.AngleCovers table rows true :=
   coverBlocks_sound coverCtx_valid.1 coverCtx_valid.2 (by decide +kernel) cover_blocks
+
+theorem markers_valid : Candidate.GeometricCoreMarker.MarkersValid cover table := by
+  decide +kernel
+
+theorem budgets_valid : Candidate.GeometricCoreMarker.BudgetsValid table := by decide +kernel
+
+theorem strong_budgets_valid :
+    Candidate.GeometricCoreMarker.BudgetsValid {table with target := fun _ => 9/10} := by
+  decide +kernel
 
 theorem word_matches : ∀ i, (table.word i:ℝ)=(Candidate.word i:ℝ) := by
   have hw : table.word = ![0, 1, 0, 1, 0, 1, 1] := rfl
@@ -72,6 +82,18 @@ noncomputable def charged_bound (C : BoundaryCycle (table.radius:ℝ))
       ForwardAxis.ofIndex j∈table.allowedAxes i) :
     Candidate.ChargedBound C F β (fun i => (table.target i:ℝ)) :=
   AffineCover.chargedBoundOf cover_endpoints cover_states cover_angles all_row_claims C F β
-    word_matches hcharge hcuts hdiff haxes
+    word_matches hcharge hcuts hdiff haxes (fun _ => Candidate.GeometricCoreMarker.pair_bound cover_endpoints markers_valid
+      budgets_valid C F)
+
+/-- No edge of a cycle with the cuts of the table joins two core squares. -/
+theorem no_adjacent_core (C : BoundaryCycle (table.radius:ℝ)) (F : Candidate.Frame C) (β : ℝ)
+    (hβ : 0 ≤ β) (hcharge : ∀ i, (table.charge i:ℝ)=Candidate.charge β i)
+    (hcuts : ∀ i, (table.cuts i).Mem (C.tangent i))
+    (hdiff : ∀ i, (table.differenceRange i).Mem (Candidate.delta F.theta i))
+    (haxes : ∀ i j, (forwardAxis j).Feasible (C.square i) (C.square (next i)) →
+      ForwardAxis.ofIndex j∈table.allowedAxes i) : NoAdjacentCore C :=
+  Candidate.GeometricCoreMarker.no_adjacent_core cover_endpoints cover_states cover_angles
+    all_row_claims markers_valid budgets_valid strong_budgets_valid (by decide +kernel)
+    (by decide +kernel) C F β hβ word_matches hcharge hcuts hdiff haxes
 
 end SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch

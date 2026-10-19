@@ -15,17 +15,21 @@ force balance follows from position stationarity.
 
 `Expression.lean` connects the rational interval expression language to a
 differentiable real expression language. It retains nonzero denominator and
-positive radicand obligations. `RootCover.lean` provides simultaneous-zero
-exclusion and complete weak closed splitting. The generated stationary
-cover includes both sides of every cut and retains boundary ties.
+positive radicand obligations.
 
 `Analysis.lean` proves existence of an interior minimizer for every radius
 in the local rectangle, uniform strict convexity in the two pose variables,
 strict monotonicity and continuity of the minimized value as the radius
 varies, and existence and uniqueness of its zero. The selected `qStar` is
 obtained from that existence theorem. `Stationary.lean` identifies its
-actual nested-radical coordinates, localizes every solution of the broad
-stationary system by the generated closed cover, and proves uniqueness.
+actual nested-radical coordinates and proves that it is the only solution of
+the broad stationary system. That uniqueness is geometric: `Convexity.lean`
+proves strict convexity of the defect in the position on the whole radical
+domain, the localization of position minima, and the decrease of the defect
+with the radius; `CriticalHessian.lean` bounds the Hessian at every critical
+point of the strip `87/100 ≤ u ≤ 1`; and `Envelope.lean` shows that the
+envelope of position minima has a unique critical tilt, which is its minimum,
+and concludes `stationary_chain_unique`.
 No external stationary witness is an assumption of these results.
 
 The principal exports are:
@@ -37,8 +41,8 @@ The principal exports are:
 
 Hand sources: `EXACT_CONFIGURATION_AND_FREEDOM.md`,
 `ANALYTIC_EXACT_CONSTRUCTION.md`, `HUMAN_FIVE_CORNER.md`, and
-`UNRESTRICTED_EIGHT_SQUARE_HAND_PROOF.md`, Section 1. The closed stationary
-cover and the sharp bracket arithmetic also follow the expressions in
+`UNRESTRICTED_EIGHT_SQUARE_HAND_PROOF.md`, Section 1. The sharp bracket
+arithmetic also follows the expressions in
 `verify_hand_sharp_ceiling_bracket.py`.
 
 ## Adaptive and terminal comparison (F9)
@@ -133,12 +137,10 @@ The generators in `scripts/eight/` write Lean expressions and rational
 arithmetic proof objects into `Generated/`. The theorem statements interpret
 those expressions over the reals. A successful Python run is not used as a
 Lean premise. Interval bounds on formulas are checked in the kernel by the
-fixed-point evaluator of `FixedEval.lean`, and the stationary localization uses
-the mean-value covering rules of `MeanValueCover.lean`.
+fixed-point evaluator of `FixedEval.lean`.
 
-- `generate_stationary.py`: stationary closed cover, derivatives, Hessian
-  bounds, root brackets, and coordinate brackets (`StationaryFormula`,
-  `LocalStationaryBounds`, `StationaryLocalization`);
+- `generate_stationary.py`: derivatives, Hessian bounds, root brackets, and
+  coordinate brackets (`StationaryFormula`, `LocalStationaryBounds`);
 - `generate_adaptive.py`: adaptive position brackets, all nine owner
   reserves, edge weight bounds, and perturbation remainder bounds
   (`AdaptiveFormula`, `AdaptiveBounds`);

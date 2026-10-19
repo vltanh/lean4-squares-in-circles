@@ -1,6 +1,7 @@
 module
 
 public import SquaresInCircles.Eight.Arithmetic.AtanBounds
+public import SquaresInCircles.Eight.Arithmetic.AffineCoverage
 
 /-!
 # A linear check of the angle coverage of an affine table
@@ -11,7 +12,8 @@ and half (`AffineCover.AngleCovers`). The rows are sorted by (source, target, ax
 walk over the arc pairs of a block of sources, in the same order, takes the rows of each key
 from the front of the remaining list and checks that they cover the required interval
 (`coverBlock`); blocks covering all sources give the coverage (`coverBlocks_sound`). The keys
-whose axis no feasible separator has (`ExcludedArcs`) are skipped. The required interval is
+whose axis no feasible separator has (`ExcludedArcs`) are skipped, and with `core` the pairs of
+two core arcs. The required interval is
 enclosed by integers over `unit * den`, from fixed-point enclosures of the arctangent intervals
 of the arcs, which `alphasRange` checks against the integer arctangent bounds of `AtanBounds`.
 -/
@@ -190,16 +192,19 @@ theorem keyOf_eq_true {s t a : Nat} {r : Bool} {x : AffineRow} :
 def excludedB (aS aT : ArcData) (a : Nat) : Bool :=
   ((Nat.beq aS.role.val 0 || Nat.beq aS.role.val 2 || Nat.beq aS.role.val 4) &&
       ((Nat.beq a 2 && !aT.outer) || (Nat.beq a 4 && !aS.outer))) ||
-    (Nat.beq a 1 && !aS.positive && !aT.outer) || (Nat.beq a 3 && aT.positive && !aS.outer)
+    (Nat.beq a 1 && !aS.positive && !aT.outer) || (Nat.beq a 3 && aT.positive && !aS.outer) ||
+    ((Nat.beq aS.role.val 1 || Nat.beq aS.role.val 3 || Nat.beq aS.role.val 5 ||
+      Nat.beq aS.role.val 6) && !aS.outer && !aT.outer && aS.positive && !aT.positive)
 
 theorem excludedB_iff (aS aT : ArcData) (axis : ForwardAxis) :
     excludedB aS aT (axisNum axis) = true ↔ ExcludedArcs aS aT axis := by
-  have hz : aS.role ∈ Candidate.zeroEdges ↔
-      (aS.role.val = 0 ∨ aS.role.val = 2 ∨ aS.role.val = 4) := by
-    rcases aS with ⟨_, ⟨r, hr⟩, _, _, _, _⟩
-    simp only [Candidate.zeroEdges, Finset.mem_insert, Finset.mem_singleton, Fin.ext_iff]
-    simp
-  cases axis <;> simp [excludedB, ExcludedArcs, axisNum, hz, Nat.beq_eq] <;> tauto
+  rcases aS with ⟨_, r, _, _, _, _⟩
+  cases axis <;> fin_cases r <;>
+    simp [excludedB, ExcludedArcs, axisNum, Candidate.zeroEdges, Candidate.word, and_assoc]
+
+/-- The keys skipped by the walk: the excluded ones and, with `core`, those of two core arcs. -/
+def skipB (core : Bool) (aS aT : ArcData) (a : Nat) : Bool :=
+  excludedB aS aT a || (core && !aS.outer && !aT.outer)
 
 theorem div_unit_den (n : Nat) {den : Nat} (hden : 0 < den) :
     (((n : Int) * unit : Int) : ℝ) / ((unit : ℝ) * den) = (n : ℝ) / den := by
@@ -401,24 +406,24 @@ theorem coverAxes_sound {den s t i w : Nat} (hden : 0 < den) {gap base αs αt :
 
 /-- The arc pairs of a source arc `aS` (index `s`) with the arcs of the next role, for the word
 `word` and the allowed axes `axes` of the table. -/
-def coverT (C : CoverCtx) (word : Fin 7 → ℕ) (axes : Fin 7 → List ForwardAxis) (s : Nat)
-    (aS : ArcData) (αs : FI) :
+def coverT (C : CoverCtx) (word : Fin 7 → ℕ) (axes : Fin 7 → List ForwardAxis) (core : Bool)
+    (s : Nat) (aS : ArcData) (αs : FI) :
     Nat → List (ArcData × FI) → List AffineRow → Option (List AffineRow)
   | _, [], R => some R
   | t, (aT, αt) :: rest, R =>
     if aT.role = aS.role + 1 then
       match coverAxes C.den s t aS.role (word aS.role) C.gap (nth ⟨0, 0⟩ C.base aS.role) αs αt
-          (nth 0 C.dLo aS.role) (nth 0 C.dHi aS.role) (excludedB aS aT) (axes aS.role) R with
+          (nth 0 C.dLo aS.role) (nth 0 C.dHi aS.role) (skipB core aS aT) (axes aS.role) R with
       | none => none
-      | some R' => coverT C word axes s aS αs (t + 1) rest R'
-    else coverT C word axes s aS αs (t + 1) rest R
+      | some R' => coverT C word axes core s aS αs (t + 1) rest R'
+    else coverT C word axes core s aS αs (t + 1) rest R
 
 theorem coverT_sound {C : CoverCtx} {word : Fin 7 → ℕ} {axes : Fin 7 → List ForwardAxis}
-    (hden : 0 < C.den) {s : Nat} {aS : ArcData} {αs : FI} :
+    {core : Bool} (hden : 0 < C.den) {s : Nat} {aS : ArcData} {αs : FI} :
     ∀ {t₀ : Nat} {L : List (ArcData × FI)} {R R' : List AffineRow},
-      coverT C word axes s aS αs t₀ L R = some R' →
+      coverT C word axes core s aS αs t₀ L R = some R' →
       (∀ x ∈ R', x ∈ R) ∧ ∀ j (hj : j < L.length), L[j].1.role = aS.role + 1 →
-        ∀ a ∈ axes aS.role, excludedB aS L[j].1 (axisNum a) = false → ∀ r : Bool,
+        ∀ a ∈ axes aS.role, skipB core aS L[j].1 (axisNum a) = false → ∀ r : Bool,
           KeyCovered C.den s (t₀ + j) aS.role (word aS.role) (axisNum a) r
             (reqBounds C.den C.gap (nth ⟨0, 0⟩ C.base aS.role) αs L[j].2
               (nth 0 C.dLo aS.role) (nth 0 C.dHi aS.role) r).1
@@ -452,21 +457,21 @@ theorem coverT_sound {C : CoverCtx} {word : Fin 7 → ℕ} {axes : Fin 7 → Lis
             simpa [Nat.add_assoc, Nat.add_comm 1 j] using this
 
 /-- The arc pairs of the sources in `L` (the first with index `s₀`), source by source. -/
-def coverS (C : CoverCtx) (word : Fin 7 → ℕ) (axes : Fin 7 → List ForwardAxis)
+def coverS (C : CoverCtx) (word : Fin 7 → ℕ) (axes : Fin 7 → List ForwardAxis) (core : Bool)
     (all : List (ArcData × FI)) :
     Nat → List (ArcData × FI) → List AffineRow → Option (List AffineRow)
   | _, [], R => some R
   | s, (aS, αs) :: rest, R =>
-    match coverT C word axes s aS αs 0 all R with
+    match coverT C word axes core s aS αs 0 all R with
     | none => none
-    | some R' => coverS C word axes all (s + 1) rest R'
+    | some R' => coverS C word axes core all (s + 1) rest R'
 
 theorem coverS_sound {C : CoverCtx} {word : Fin 7 → ℕ} {axes : Fin 7 → List ForwardAxis}
-    (hden : 0 < C.den) {all : List (ArcData × FI)} :
+    {core : Bool} (hden : 0 < C.den) {all : List (ArcData × FI)} :
     ∀ {s₀ : Nat} {L : List (ArcData × FI)} {R R' : List AffineRow},
-      coverS C word axes all s₀ L R = some R' →
+      coverS C word axes core all s₀ L R = some R' →
       ∀ j (hj : j < L.length) jt (hjt : jt < all.length), all[jt].1.role = L[j].1.role + 1 →
-        ∀ a ∈ axes L[j].1.role, excludedB L[j].1 all[jt].1 (axisNum a) = false → ∀ r : Bool,
+        ∀ a ∈ axes L[j].1.role, skipB core L[j].1 all[jt].1 (axisNum a) = false → ∀ r : Bool,
           KeyCovered C.den (s₀ + j) jt L[j].1.role (word L[j].1.role) (axisNum a) r
             (reqBounds C.den C.gap (nth ⟨0, 0⟩ C.base L[j].1.role) L[j].2 all[jt].2
               (nth 0 C.dLo L[j].1.role) (nth 0 C.dHi L[j].1.role) r).1
@@ -504,25 +509,25 @@ theorem mem_of_mem_rowsFrom {chunks : List (List AffineRow)} {c o : Nat} {x : Af
 
 /-- The walk over the sources `s₀, …, s₀ + n - 1`, from the row `o` of the chunk `c` of the
 sorted rows on. -/
-def coverBlock (C : CoverCtx) (M : AffineTableMeta) (s₀ n c o : Nat)
+def coverBlock (C : CoverCtx) (M : AffineTableMeta) (core : Bool) (s₀ n c o : Nat)
     (chunks : List (List AffineRow)) : Bool :=
-  (coverS C M.word M.allowedAxes (M.arcs.zip C.alphas) s₀
+  (coverS C M.word M.allowedAxes core (M.arcs.zip C.alphas) s₀
     (((M.arcs.zip C.alphas).drop s₀).take n) (rowsFrom chunks c o)).isSome
 
 theorem coverBlock_congr {C : CoverCtx} {M M' : AffineTableMeta} (ha : M'.arcs = M.arcs)
-    (hw : M'.word = M.word) (hx : M'.allowedAxes = M.allowedAxes) (s₀ n c o : Nat)
+    (hw : M'.word = M.word) (hx : M'.allowedAxes = M.allowedAxes) (core : Bool) (s₀ n c o : Nat)
     (chunks : List (List AffineRow)) :
-    coverBlock C M' s₀ n c o chunks = coverBlock C M s₀ n c o chunks := by
+    coverBlock C M' core s₀ n c o chunks = coverBlock C M core s₀ n c o chunks := by
   simp only [coverBlock, ha, hw, hx]
 
 /-- The angle coverage of a table, from walks over blocks of sources covering all arcs. -/
-theorem coverBlocks_sound {K : AffineCover} {M : AffineTableMeta} {C : CoverCtx}
+theorem coverBlocks_sound {K : AffineCover} {M : AffineTableMeta} {C : CoverCtx} {core : Bool}
     (hC : C.Valid K M) (hlen : C.alphas.length = M.arcs.length)
     {chunks : List (List AffineRow)} {blocks : List (Nat × Nat)}
     (hcov : blocksCover 0 blocks M.arcs.length = true)
-    (hb : AllBlocks (fun s₀ n => ∃ c o, coverBlock C M s₀ n c o chunks = true) blocks) :
-    K.AngleCovers M (chunks.flatten.map (·.toTableRow M C.den)) := by
-  intro s t hst axis haxis hkeep r u hu
+    (hb : AllBlocks (fun s₀ n => ∃ c o, coverBlock C M core s₀ n c o chunks = true) blocks) :
+    K.AngleCovers M (chunks.flatten.map (·.toTableRow M C.den)) core := by
+  intro s t hst axis haxis hkeep hcore r u hu
   obtain ⟨⟨s₀, n⟩, hmem, h1, h2⟩ := blocksCover_mem hcov s.val (Nat.zero_le _) s.2
   obtain ⟨c, o, hk⟩ := AllBlocks.of_mem hb _ hmem
   obtain ⟨R', hR⟩ := Option.isSome_iff_exists.mp hk
@@ -543,10 +548,14 @@ theorem coverBlocks_sound {K : AffineCover} {M : AffineTableMeta} {C : CoverCtx}
   have hzt : (M.arcs.zip C.alphas)[t.val] = (arcAt M t, nth ⟨0, 0⟩ C.alphas t) := by
     rw [List.getElem_zip, arcAt, nth_eq_getD]
     simp [List.getD_eq_getElem?_getD, List.getElem?_eq_getElem hta]
-  have hex : excludedB (arcAt M s) (arcAt M t) (axisNum axis) = false := by
-    cases h : excludedB (arcAt M s) (arcAt M t) (axisNum axis)
-    · rfl
-    · exact absurd ((excludedB_iff _ _ _).mp h) hkeep
+  have hex : skipB core (arcAt M s) (arcAt M t) (axisNum axis) = false := by
+    have h1 : excludedB (arcAt M s) (arcAt M t) (axisNum axis) = false := by
+      cases h : excludedB (arcAt M s) (arcAt M t) (axisNum axis)
+      · rfl
+      · exact absurd ((excludedB_iff _ _ _).mp h) hkeep
+    cases hc : core
+    · simp [skipB, h1]
+    · rcases hcore hc with h | h <;> simp [skipB, h1, h]
   have hk' := coverS_sound hC.den_pos hR (s.val - s₀) hj t.val ht
     (by rw [hLj, hzt]; exact hst) axis (by rw [hLj]; exact haxis) (by rw [hLj, hzt]; exact hex) r
   rw [hLj, hzt, show s₀ + (s.val - s₀) = s.val by omega] at hk'

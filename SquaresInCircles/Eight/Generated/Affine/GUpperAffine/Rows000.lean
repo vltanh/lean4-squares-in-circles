@@ -3,7 +3,7 @@ module
 public import SquaresInCircles.Eight.Generated.Affine.GUpperAffine.Context
 public meta import SquaresInCircles.Eight.IntRows
 
-/-! Rows 0 to 9004 of the table, checked by `decide +kernel`, 200 rows a theorem. -/
+/-! Rows 0 to 8956 of the table, checked by `decide +kernel`, 200 rows a theorem. -/
 
 @[expose] public section
 noncomputable section
@@ -277,25 +277,19 @@ noncomputable def rows000_43 : List AffineRow :=
 theorem rows000_43_check : checkRows ctx rows000_43 = true := by decide +kernel
 
 noncomputable def rows000_44 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/affine/G_UPPER_AFFINE.rows" 8801 9001 ↦
+  nat_rows% "../../../../../data/eight/affine/G_UPPER_AFFINE.rows" 8801 8958 ↦
     AffineRow.ofData
 
 theorem rows000_44_check : checkRows ctx rows000_44 = true := by decide +kernel
 
-noncomputable def rows000_45 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/affine/G_UPPER_AFFINE.rows" 9001 9006 ↦
-    AffineRow.ofData
-
-theorem rows000_45_check : checkRows ctx rows000_45 = true := by decide +kernel
-
-/-- Rows 0 to 9004, in parts of 200. -/
+/-- Rows 0 to 8956, in parts of 200. -/
 noncomputable def parts000 : List (List AffineRow) :=
   [rows000_0, rows000_1, rows000_2, rows000_3, rows000_4, rows000_5, rows000_6, rows000_7,
    rows000_8, rows000_9, rows000_10, rows000_11, rows000_12, rows000_13, rows000_14, rows000_15,
    rows000_16, rows000_17, rows000_18, rows000_19, rows000_20, rows000_21, rows000_22, rows000_23,
    rows000_24, rows000_25, rows000_26, rows000_27, rows000_28, rows000_29, rows000_30, rows000_31,
    rows000_32, rows000_33, rows000_34, rows000_35, rows000_36, rows000_37, rows000_38, rows000_39,
-   rows000_40, rows000_41, rows000_42, rows000_43, rows000_44, rows000_45]
+   rows000_40, rows000_41, rows000_42, rows000_43, rows000_44]
 
 theorem parts000_check : parts000.all (checkRows ctx) = true := by
   simp only [parts000, List.all_cons, List.all_nil, rows000_0_check, rows000_1_check,
@@ -307,8 +301,8 @@ theorem parts000_check : parts000.all (checkRows ctx) = true := by
     rows000_27_check, rows000_28_check, rows000_29_check, rows000_30_check, rows000_31_check,
     rows000_32_check, rows000_33_check, rows000_34_check, rows000_35_check, rows000_36_check,
     rows000_37_check, rows000_38_check, rows000_39_check, rows000_40_check, rows000_41_check,
-    rows000_42_check, rows000_43_check, rows000_44_check, rows000_45_check, Bool.and_true]
+    rows000_42_check, rows000_43_check, rows000_44_check, Bool.and_true]
 
-theorem parts000_length : (parts000.map List.length).sum = 9005 := by decide +kernel
+theorem parts000_length : (parts000.map List.length).sum = 8957 := by decide +kernel
 
 end SquaresInCircles.Eight.Generated.Affine.GUpperAffine

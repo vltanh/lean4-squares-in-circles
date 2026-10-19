@@ -5,7 +5,7 @@ public import SquaresInCircles.Eight.Generated.Affine.GUpperAffine.Cover00
 
 /-! # The affine table `GUpperAffine`
 
-Each of its 9005 rows passes `checkRow`, so it satisfies its claim
+Each of its 8957 rows passes `checkRow`, so it satisfies its claim
 (`checkRow_claim`). The walks `coverBlock` over blocks of sources covering all arcs
 give the angle coverage (`coverBlocks_sound`). With the state chains and the
 arctangent intervals of the arcs they give the charged bound. -/
@@ -20,7 +20,7 @@ set_option maxRecDepth 100000
 /-- All rows of the table. -/
 noncomputable def rows : List AffineTableRow := data.map (·.toTableRow table ctx.den)
 
-theorem complete_row_count : rows.length = 9005 := by
+theorem complete_row_count : rows.length = 8957 := by
   simp only [rows, data, chunks, List.length_map, List.length_flatten, List.map_append,
     List.sum_append, parts000_length, Nat.reduceAdd]
 
@@ -32,12 +32,12 @@ theorem all_row_claims : ∀ r ∈ rows, r.Claim table := by
 theorem cover_endpoints : cover.EndpointsValid table := endpointsValid_atanEnds table _
 
 theorem cover_blocks :
-    AllBlocks (fun a n => ∃ c o, coverBlock coverCtx table a n c o chunks = true)
+    AllBlocks (fun a n => ∃ c o, coverBlock coverCtx table false a n c o chunks = true)
     [(0, 48), (48, 33), (81, 40), (121, 1)] :=
   by simp only [AllBlocks]; exact
-    ⟨⟨0, 0, cover_0⟩, ⟨11, 160, cover_1⟩, ⟨28, 9, cover_2⟩, ⟨44, 79, cover_3⟩, trivial⟩
+    ⟨⟨0, 0, cover_0⟩, ⟨11, 144, cover_1⟩, ⟨27, 177, cover_2⟩, ⟨44, 31, cover_3⟩, trivial⟩
 
-theorem cover_angles : cover.AngleCovers table rows :=
+theorem cover_angles : cover.AngleCovers table rows false :=
   coverBlocks_sound coverCtx_valid.1 coverCtx_valid.2 (by decide +kernel) cover_blocks
 
 theorem word_matches : ∀ i, (table.word i:ℝ)=(Candidate.word i:ℝ) := by
@@ -53,6 +53,6 @@ noncomputable def charged_bound (C : BoundaryCycle (table.radius:ℝ))
       ForwardAxis.ofIndex j∈table.allowedAxes i) :
     Candidate.ChargedBound C F β (fun i => (table.target i:ℝ)) :=
   AffineCover.chargedBoundOf cover_endpoints cover_states cover_angles all_row_claims C F β
-    word_matches hcharge hcuts hdiff haxes
+    word_matches hcharge hcuts hdiff haxes (by simp)
 
 end SquaresInCircles.Eight.Generated.Affine.GUpperAffine

@@ -1,12 +1,8 @@
 module
 
-public import SquaresInCircles.Eight.Generated.Pairs.FourTypeCoreSideCoreSide
-public import SquaresInCircles.Eight.Generated.Pairs.FourTypeCoreSideCoreCorner
 public import SquaresInCircles.Eight.Generated.Pairs.FourTypeCoreSideLow
 public import SquaresInCircles.Eight.Generated.Pairs.FourTypeCoreSideMiddle
 public import SquaresInCircles.Eight.Generated.Pairs.FourTypeCoreSideHigh
-public import SquaresInCircles.Eight.Generated.Pairs.FourTypeCoreCornerCoreSide
-public import SquaresInCircles.Eight.Generated.Pairs.FourTypeCoreCornerCoreCorner
 public import SquaresInCircles.Eight.Generated.Pairs.FourTypeCoreCornerLow
 public import SquaresInCircles.Eight.Generated.Pairs.FourTypeCoreCornerMiddle
 public import SquaresInCircles.Eight.Generated.Pairs.FourTypeCoreCornerHigh
@@ -26,4 +22,4 @@ public import SquaresInCircles.Eight.Generated.Pairs.FourTypeHighLow
 public import SquaresInCircles.Eight.Generated.Pairs.FourTypeHighMiddle
 public import SquaresInCircles.Eight.Generated.Pairs.FourTypeHighHigh
 
-/-! The 25 pair tables of the four-type pair bounds. -/
+/-! The 21 pair tables of the four-type pair bounds. -/

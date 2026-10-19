@@ -4,12 +4,15 @@
 Two families of finite inequalities are proved by the rows of Arithmetic/RowCheck.lean and the
 coverage trees of Arithmetic/PairCover.lean:
 
-* the four-type pair bounds `FourType.source_pair` (FourTypePairs.lean): 25 tables, one per
-  ordered pair of charts (core side, core corner and the outer ranges low, middle, high), each
-  with the eight problems (σ, τ, axis one or four) on six halves (k, r, u⁺) of φ ∈ [-1, 4];
+* the four-type pair bounds `FourType.source_pair` (FourTypePairs.lean): 21 tables, one per
+  ordered pair of charts (core side, core corner and the outer ranges low, middle, high) with an
+  outer chart, each with the eight problems (σ, τ, axis one or four) on six halves (k, r, u⁺)
+  of φ ∈ [-1, 4]; a pair of two core charts follows from `CorePairGeometry.core_cost`;
 * the quarter-word pair bounds `common_pair` and `wrong_pair` (WordGeometry.lean): three tables
-  of the common increments (quarter k = 0, 1, 2) and one table per edge of each of the two wrong
-  words, each problem on the halves (k, ±, 7/10) of the frame difference.
+  of the common increments (quarter k = 0, 1, 2) for the pairs of kinds with an outer kind (a pair
+  of two core kinds follows from `CorePairGeometry.core_cost`), and one table per edge of each
+  of the two wrong words, each problem on the halves (k, ±, 7/10) of the frame difference; the
+  kinds, signs and axes that no feasible separator has (`CoreSeparatorExcluded`) are left out.
 
 A problem fixes the source and target ends (chart, tangent range, sign, label), the original
 axis, the charge β and the target γ. The labels are read from the Lean sources. A label constant
@@ -225,10 +228,20 @@ def camel(s):
     return s[0].upper() + s[1:]
 
 
+def core_separator_excluded(k, sk, tk, p, r, ax):
+    """WordProblems.CoreSeparatorExcluded (the axis numbered 1 to 4): the kinds, signs and axes
+    that no feasible separator has (WordGeometry.original_not_core_excluded)."""
+    return ((k == 0 and ((ax == 2 and tk != "outer") or (ax == 4 and sk != "outer")))
+            or (ax == 1 and not p and tk != "outer") or (ax == 3 and r and sk != "outer")
+            or (k == 1 and sk != "outer" and tk != "outer" and p and not r))
+
+
 def tables():
     out = []
     for s in BRANCHES:
         for t in BRANCHES:
+            if TYPE_OF_BRANCH[s] == 0 and TYPE_OF_BRANCH[t] == 0:
+                continue
             probs = []
             for p in (False, True):
                 for r in (False, True):
@@ -249,9 +262,13 @@ def tables():
         probs = []
         for sk in KINDS:
             for tk in KINDS:
+                if sk != "outer" and tk != "outer":
+                    continue
                 for p in (False, True):
                     for r in (False, True):
                         for ax in (1, 2, 3, 4):
+                            if core_separator_excluded(k, sk, tk, p, r, ax):
+                                continue
                             sig, tau = (1 if p else -1), (1 if r else -1)
                             src = End(*CHART_OF_KIND[sk], p, common_label(sk).scale(sig), 0)
                             tgt = End(*CHART_OF_KIND[tk], r, common_label(tk).scale(tau), 1)
@@ -273,6 +290,8 @@ def tables():
                                     (nx == 2 and r) or (k == 0 and not p and r):
                                 continue
                             for ax in (1, 2, 3, 4):
+                                if core_separator_excluded(k, sk, tk, p, r, ax):
+                                    continue
                                 sig, tau = (1 if p else -1), (1 if r else -1)
                                 src = End(*CHART_OF_KIND[sk], p, wrong_label(w, i, sk, sig), i)
                                 tgt = End(*CHART_OF_KIND[tk], r, wrong_label(w, nx, tk, tau), nx)
@@ -1148,13 +1167,13 @@ theorem sound : ∀ P ∈ problems, P.Holds table.radius ctx.den :=
 
 def write_umbrellas(root, tabs):
     base = root / "SquaresInCircles" / "Eight" / "Generated" / "Pairs"
-    for name, doc, sel in (("FourType", "The 25 pair tables of the four-type pair bounds.",
+    for name, doc, sel in (("FourType", "pair tables of the four-type pair bounds",
                             lambda t: t.name.startswith("four_type")),
-                           ("Words", "The 17 pair tables of the quarter-word pair bounds.",
+                           ("Words", "pair tables of the quarter-word pair bounds",
                             lambda t: not t.name.startswith("four_type"))):
         mods = [t.module for t in tabs if sel(t)]
         text = "module\n\n" + "\n".join("public import SquaresInCircles.Eight.Generated.Pairs.%s" % m
-                                        for m in mods) + "\n\n/-! %s -/\n" % doc
+                                        for m in mods) + "\n\n/-! The %d %s. -/\n" % (len(mods), doc)
         (base.parent / ("Pairs%s.lean" % name)).write_text(text)
 
 

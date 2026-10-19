@@ -2,7 +2,6 @@ module
 
 public import SquaresInCircles.Common.Analysis
 public import SquaresInCircles.Eight.ExactFamily.Generated.LocalStationaryBounds
-public import SquaresInCircles.Eight.ExactFamily.Generated.StationaryLocalization
 public import SquaresInCircles.Eight.ExactFamily.Coordinates
 
 /-!
@@ -12,16 +11,12 @@ For each squared radius `q` in `[qMinus, Q0]` the defect `F(q, ·, ·)` of the c
 of the position `y` and the half-angle tangent `z` of the tilt, is strongly convex on the fixed
 compact rectangle `poseBox`: the interval bounds on its Hessian give it curvature `1/4` in both
 coordinates (`hessian_data`, `family_strong_convex`). Its minimum over the rectangle is attained
-at an interior point (`minimum_interior`), the only stationary point there
-(`stationary_pose_unique`). The minimum value decreases in `q` with slope between `3` and `4`
+at an interior point (`minimum_interior`), where both partial derivatives vanish
+(`minimizingPose_stationary`). The minimum value decreases in `q` with slope between `3` and `4`
 (`minimum_radius_difference`), so it is continuous, and it is positive at `qMinus` and negative at
 `Q0` (`minimum_endpoint_signs`). By the intermediate value theorem it vanishes at exactly one
-`qStar` (`unique_minimum_zero`), and `(qStar, sharpPose)` is the only simultaneous zero of `F`,
-`F_y` and `F_z` in these boxes (`stationary_existsUnique`).
-
-Existence comes from this argument alone. The closed cover of
-`Generated/StationaryLocalization.lean` sends every stationary zero of the analytic strip into the
-rectangle, and `Stationary.lean` uses it for uniqueness.
+`qStar` (`unique_minimum_zero`), so `F`, `F_y` and `F_z` vanish at `(qStar, sharpPose)`
+(`sharpPose_value`, `sharpPose_stationary`).
 -/
 
 @[expose] public section
@@ -176,16 +171,6 @@ theorem family_strong_convex {q : ℝ} (hq : q ∈ radiusBox)
   simp only [h0,h1] at hcurv
   linarith
 
-theorem stationary_pose_unique {q : ℝ} (hq : q ∈ radiusBox)
-    {a b : Pose} (ha : a ∈ poseBox) (hb : b ∈ poseBox)
-    (haY : familyY q a=0) (haZ : familyZ q a=0)
-    (hbY : familyY q b=0) (hbZ : familyZ q b=0) : a=b := by
-  have h₁ := family_strong_convex hq ha hb
-  have h₂ := family_strong_convex hq hb ha
-  rw [haY,haZ] at h₁
-  rw [hbY,hbZ] at h₂
-  ext <;> nlinarith [sq_nonneg (b.1-a.1),sq_nonneg (b.2-a.2)]
-
 theorem compact_poseBox : IsCompact poseBox := isCompact_Icc.prod isCompact_Icc
 
 theorem minimum_exists (q : ℝ) :
@@ -299,13 +284,6 @@ theorem minimizingPose_stationary {q : ℝ} (hq : q ∈ radiusBox) :
     (hzmin.isLocalMin (Icc_mem_nhds hzL hzU)).hasDerivAt_eq_zero
       (family_partial_z hq hp)⟩
 
-theorem stationary_is_minimum {q : ℝ} (hq : q ∈ radiusBox) {p : Pose}
-    (hp : p ∈ poseBox) (hy : familyY q p=0) (hz : familyZ q p=0) :
-    minimumValue q = familyValue q p := by
-  have hm := minimizingPose_stationary hq
-  have heq := stationary_pose_unique hq (minimizingPose_mem q) hp hm.1 hm.2 hy hz
-  rw [minimumValue,heq]
-
 theorem family_radius_difference {q r : ℝ} (hq : q ∈ radiusBox) (hr : r ∈ radiusBox)
     (hqr : q ≤ r) {p : Pose} (hp : p ∈ poseBox) :
     -4*(r-q) ≤ familyValue r p-familyValue q p ∧
@@ -403,24 +381,5 @@ theorem minimum_qStar : minimumValue qStar=0 := (Classical.choose_spec unique_mi
 theorem sharpPose_stationary : familyY qStar sharpPose=0 ∧ familyZ qStar sharpPose=0 :=
   minimizingPose_stationary qStar_mem
 theorem sharpPose_value : familyValue qStar sharpPose=0 := minimum_qStar
-
-/-- The stationary zero in the variables `(q, y, z)` of the formulas: the only point of the boxes
-where `F`, `F_y` and `F_z` vanish. `Stationary.lean` translates it into the stationary system
-`Coordinates.IsStationary`. -/
-theorem stationary_existsUnique : ∃! x : ℝ × Pose,
-    x.1 ∈ radiusBox ∧ x.2 ∈ poseBox ∧ familyValue x.1 x.2=0 ∧
-      familyY x.1 x.2=0 ∧ familyZ x.1 x.2=0 := by
-  refine ⟨(qStar,sharpPose),⟨qStar_mem,minimizingPose_mem _,sharpPose_value,
-    sharpPose_stationary.1,sharpPose_stationary.2⟩,?_⟩
-  intro x hx
-  have hmin := stationary_is_minimum hx.1 hx.2.1 hx.2.2.2.1 hx.2.2.2.2
-  have hq : x.1=qStar := (Classical.choose_spec unique_minimum_zero).2 x.1
-    ⟨hx.1,by linarith [hx.2.2.1]⟩
-  have hp : x.2=sharpPose := stationary_pose_unique hx.1 hx.2.1
-    (by simpa [hq,sharpPose] using minimizingPose_mem qStar)
-    hx.2.2.2.1 hx.2.2.2.2
-    (by simpa [hq] using sharpPose_stationary.1)
-    (by simpa [hq] using sharpPose_stationary.2)
-  exact Prod.ext hq hp
 
 end SquaresInCircles.Eight.ExactFamily

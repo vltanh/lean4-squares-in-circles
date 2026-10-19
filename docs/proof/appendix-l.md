@@ -333,8 +333,8 @@ endpoint of the range must be covered too.
 [`Eight.Arithmetic.ArctanEndpoint.sound`](../../SquaresInCircles/Eight/Arithmetic/Arctangent.lean#L122),
 [`Eight.Arithmetic.atanLower_le`](../../SquaresInCircles/Eight/Arithmetic/Arctangent.lean#L21),
 [`Eight.Arithmetic.arctan_le_atanUpper`](../../SquaresInCircles/Eight/Arithmetic/Arctangent.lean#L39),
-[`Eight.Arithmetic.AffineCover.required_mem`](../../SquaresInCircles/Eight/Arithmetic/AffineCoverage.lean#L180),
-[`Eight.Arithmetic.coverBlocks_sound`](../../SquaresInCircles/Eight/Arithmetic/RowCover.lean#L519).*
+[`Eight.Arithmetic.AffineCover.required_mem`](../../SquaresInCircles/Eight/Arithmetic/AffineCoverage.lean#L196),
+[`Eight.Arithmetic.coverBlocks_sound`](../../SquaresInCircles/Eight/Arithmetic/RowCover.lean#L524).*
 
 ![The two radial curves at the level Q1 in the (a, b)-plane, with the arcs of the role G in the coarse table of the mismatch chain drawn alternately in two colours: 25 arcs on the outer curve, with endpoints at the tangents 1/20, then multiples of 1/32, then 4/5, and 8 arcs on the side a = 7/12 of the core curve, with endpoints at 1/20, multiples of 3/28 and 4/5; dashed rays from the origin mark the tangents 1/20 and 4/5 that bound the declared range](figures/appendix-l/cover.svg)
 

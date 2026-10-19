@@ -576,9 +576,9 @@ def lowerPrimaryN (i : Vertex) : ℕ := if i = G ∨ i = T then 14000000000 else
 def upperPrimaryN (i : Vertex) : ℕ := if i = G ∨ i = T then 33504000000 else 33960000000
 
 /-- `20000 · epsilon`. -/
-def epsilonN : ℕ := if mode = .quarter then 300 else 20
+def epsilonN : ℕ := 20
 /-- `1.2 · 10¹⁰ · epsilon`. -/
-def halfN : ℕ := if mode = .quarter then 180000000 else 12000000
+def halfN : ℕ := 12000000
 /-- `12 · forceScale² · Q / ten8`. -/
 def QN : ℕ := if mode = .tilt then 1879456386240000000 else 1879488000000000000
 
@@ -603,8 +603,6 @@ def maxLambdaN : ℕ := max (L.lam 0) (max (L.lam 2) (max (L.lam 3) (max (L.lam 
 /-- `rhsScale · loss`. -/
 def lossN : ℕ :=
   match mode with
-  | .quarter => 540000000 * (L.lam 0 + L.lam 2 + L.lam 3 + L.lam 4 + L.lam 5) +
-      720000000 * L.lam E
   | .mixed => 24024000 * L.maxLambdaN + 48000000 * L.lam E
   | .tilt => 24024 * L.maxLambdaN + 27000 * L.lam E
 
@@ -614,8 +612,8 @@ def errorAN (i : Vertex) : P2 :=
   | .zero => Z2
   | .spike j second positive =>
     let t := ((derivativeAN (alignedEdge j) (Alternative.owner j second) i).nsmul
-        (Nat.mul (epsilonN mode) (L.lam (alignedEdge j)))).sub
-      ((derivativeAN E 1 i).nsmul (Nat.mul (epsilonN mode) (L.lam E)))
+        (Nat.mul epsilonN (L.lam (alignedEdge j)))).sub
+      ((derivativeAN E 1 i).nsmul (Nat.mul epsilonN (L.lam E)))
     bif positive then t else t.neg
 
 /-- `forceScale · errorB`. -/
@@ -624,8 +622,8 @@ def errorBN (i : Vertex) : P2 :=
   | .zero => Z2
   | .spike j second positive =>
     let t := ((derivativeBN (alignedEdge j) (Alternative.owner j second) i).nsmul
-        (Nat.mul (epsilonN mode) (L.lam (alignedEdge j)))).sub
-      ((derivativeBN E 1 i).nsmul (Nat.mul (epsilonN mode) (L.lam E)))
+        (Nat.mul epsilonN (L.lam (alignedEdge j)))).sub
+      ((derivativeBN E 1 i).nsmul (Nat.mul epsilonN (L.lam E)))
     bif positive then t else t.neg
 
 /-- `rhsScale · errorRhs`. -/
@@ -634,7 +632,7 @@ def errorRhsN : P2 :=
   | .zero => Z2
   | .spike j _ positive =>
     let w := (lastWidthN L.positive).nsmul (L.lam E)
-    ((D2.nsmul (L.lam (alignedEdge j))).add (bif positive then w.neg else w)).nsmul (halfN mode)
+    ((D2.nsmul (L.lam (alignedEdge j))).add (bif positive then w.neg else w)).nsmul halfN
 
 /-- `forceScale · forceA` without the error term: the cone term, and the terms of the edges `j`
 and `prev j` that do not vanish. -/
@@ -657,8 +655,8 @@ def forceAN (j : Vertex) : P2 :=
   | .zero => L.baseAN owners j
   | .spike s second positive =>
     let t := (derivativeAN (alignedEdge s) (Alternative.owner s second) j).nsmul
-      (Nat.mul (epsilonN mode) (L.lam (alignedEdge s)))
-    let u := (derivativeAN E 1 j).nsmul (Nat.mul (epsilonN mode) (L.lam E))
+      (Nat.mul epsilonN (L.lam (alignedEdge s)))
+    let u := (derivativeAN E 1 j).nsmul (Nat.mul epsilonN (L.lam E))
     bif positive then ((L.baseAN owners j).addIf (onEdge (alignedEdge s) j) t).subIf (onEdge E j) u
     else ((L.baseAN owners j).subIf (onEdge (alignedEdge s) j) t).addIf (onEdge E j) u
 
@@ -668,20 +666,20 @@ def forceBN (j : Vertex) : P2 :=
   | .zero => L.baseBN owners j
   | .spike s second positive =>
     let t := (derivativeBN (alignedEdge s) (Alternative.owner s second) j).nsmul
-      (Nat.mul (epsilonN mode) (L.lam (alignedEdge s)))
-    let u := (derivativeBN E 1 j).nsmul (Nat.mul (epsilonN mode) (L.lam E))
+      (Nat.mul epsilonN (L.lam (alignedEdge s)))
+    let u := (derivativeBN E 1 j).nsmul (Nat.mul epsilonN (L.lam E))
     bif positive then ((L.baseBN owners j).addIf (onEdge (alignedEdge s) j) t).subIf (onEdge E j) u
     else ((L.baseBN owners j).subIf (onEdge (alignedEdge s) j) t).addIf (onEdge E j) u
 
 /-- `rhsScale · rhs`. -/
 def rhsN : P2 :=
   ((sum7 fun i => (widthOf L.positive i).nsmul (L.lam i)).add
-    (P2.ofD (L.coneRhsN.sub (.ofNat (L.lossN mode))))).add (L.errorRhsN mode alt)
+    (P2.ofD (L.coneRhsN.sub (.ofNat (L.lossN mode))))).add (L.errorRhsN alt)
 
 /-- `rhsScale · L`. -/
 def LN : P2 :=
   (L.rhsN mode alt).add
-    ((sum7 fun i => (L.forceAN mode owners alt i).add (L.forceBN mode owners alt i)).nsmul 600000)
+    ((sum7 fun i => (L.forceAN owners alt i).add (L.forceBN owners alt i)).nsmul 600000)
 
 def prodMu : ℕ :=
   Nat.mul (Nat.mul (Nat.mul (Nat.mul (Nat.mul (Nat.mul (L.mu 0) (L.mu 1)) (L.mu 2)) (L.mu 3))
@@ -694,7 +692,7 @@ def sumMu : ℕ :=
 def quarticN : P4 :=
   ((((L.LN mode owners alt).mulD).nsmul (Nat.mul 20000000 L.prodMu)).sub
     (DD4.nsmul (Nat.mul (Nat.mul (QN mode) L.sumMu) L.prodMu))).sub
-    (sum7' fun i => ((L.forceAN mode owners alt i).sq.add (L.forceBN mode owners alt i).sq).nsmul
+    (sum7' fun i => ((L.forceAN owners alt i).sq.add (L.forceBN owners alt i).sq).nsmul
       (Nat.mul 300000000 (L.prodMu / L.mu i)))
 
 /-- `M = 12 forceScale² ∏ᵢ μᵢ ten8⁷`. -/
@@ -747,32 +745,32 @@ theorem upperPrimaryN_eq (i : Vertex) :
   unfold upperPrimaryN upperPrimary; split_ifs <;> norm_num
 
 theorem errorAN_toPoly (i : Vertex) :
-    (L.errorAN mode alt i).toPoly = C (forceScale : ℚ) * (L.row mode owners alt).errorA i := by
+    (L.errorAN alt i).toPoly = C (forceScale : ℚ) * (L.row mode owners alt).errorA i := by
   apply Polynomial.funext; intro z
   cases alt with
   | zero => simp [errorAN, Row.errorA]
   | spike j second positive =>
-    cases mode <;> cases positive <;>
+    cases positive <;>
       simp [errorAN, Row.errorA, Row.epsilon, epsilonN, signValue, forceScale, ten8] <;> ring
 
 theorem errorBN_toPoly (i : Vertex) :
-    (L.errorBN mode alt i).toPoly = C (forceScale : ℚ) * (L.row mode owners alt).errorB i := by
+    (L.errorBN alt i).toPoly = C (forceScale : ℚ) * (L.row mode owners alt).errorB i := by
   apply Polynomial.funext; intro z
   cases alt with
   | zero => simp [errorBN, Row.errorB]
   | spike j second positive =>
-    cases mode <;> cases positive <;>
+    cases positive <;>
       simp [errorBN, Row.errorB, Row.epsilon, epsilonN, signValue, forceScale, ten8] <;> ring
 
 theorem errorRhsN_toPoly :
-    (L.errorRhsN mode alt).toPoly = C (rhsScale : ℚ) * (L.row mode owners alt).errorRhs := by
+    (L.errorRhsN alt).toPoly = C (rhsScale : ℚ) * (L.row mode owners alt).errorRhs := by
   apply Polynomial.funext; intro z
   have hw := congrArg (Polynomial.eval z) (lastWidthN_toPoly L.positive)
   simp only [Polynomial.eval_mul, Polynomial.eval_C] at hw
   cases alt with
   | zero => simp [errorRhsN, Row.errorRhs]
   | spike j second positive =>
-    cases mode <;> cases positive <;>
+    cases positive <;>
       simp [errorRhsN, Row.errorRhs, Row.epsilon, halfN, signValue, rhsScale, ten8, hw] <;> ring
 
 theorem baseAN_toPoly (j : Vertex) :
@@ -790,8 +788,8 @@ theorem baseBN_toPoly (j : Vertex) :
     P2.addIf_toPoly _ _ (P2.nsmul_toPoly_of_isZero _)]
 
 theorem forceAN_eq (j : Vertex) :
-    (L.forceAN mode owners alt j).toPoly =
-      (L.baseAN owners j).toPoly + (L.errorAN mode alt j).toPoly := by
+    (L.forceAN owners alt j).toPoly =
+      (L.baseAN owners j).toPoly + (L.errorAN alt j).toPoly := by
   cases alt with
   | zero => simp [forceAN, errorAN]
   | spike s second positive =>
@@ -801,8 +799,8 @@ theorem forceAN_eq (j : Vertex) :
         P2.sub_toPoly, P2.neg_toPoly] <;> ring
 
 theorem forceBN_eq (j : Vertex) :
-    (L.forceBN mode owners alt j).toPoly =
-      (L.baseBN owners j).toPoly + (L.errorBN mode alt j).toPoly := by
+    (L.forceBN owners alt j).toPoly =
+      (L.baseBN owners j).toPoly + (L.errorBN alt j).toPoly := by
   cases alt with
   | zero => simp [forceBN, errorBN]
   | spike s second positive =>
@@ -812,7 +810,7 @@ theorem forceBN_eq (j : Vertex) :
         P2.sub_toPoly, P2.neg_toPoly] <;> ring
 
 theorem forceAN_toPoly (j : Vertex) :
-    (L.forceAN mode owners alt j).toPoly =
+    (L.forceAN owners alt j).toPoly =
       C (forceScale : ℚ) * (L.row mode owners alt).forceA j := by
   apply Polynomial.funext; intro z
   have he := congrArg (Polynomial.eval z) (L.errorAN_toPoly mode owners alt j)
@@ -827,7 +825,7 @@ theorem forceAN_toPoly (j : Vertex) :
   ring
 
 theorem forceBN_toPoly (j : Vertex) :
-    (L.forceBN mode owners alt j).toPoly =
+    (L.forceBN owners alt j).toPoly =
       C (forceScale : ℚ) * (L.row mode owners alt).forceB j := by
   apply Polynomial.funext; intro z
   have he := congrArg (Polynomial.eval z) (L.errorBN_toPoly mode owners alt j)
@@ -844,8 +842,8 @@ theorem forceBN_toPoly (j : Vertex) :
 theorem lossN_eq : (L.lossN mode : ℚ) = rhsScale * (L.row mode owners alt).loss := by
   have h8 : (0 : ℚ) ≤ 100000000 := by norm_num
   cases mode <;>
-    simp [lossN, Row.loss, Row.epsilon, Row.maxLambda, maxLambdaN, Fin.sum_univ_five, alignedEdge,
-      rhsScale, ten8, max_div_div_right h8] <;> ring
+    simp [lossN, Row.loss, Row.epsilon, Row.maxLambda, maxLambdaN, rhsScale, ten8,
+      max_div_div_right h8] <;> ring
 
 theorem rhsN_toPoly :
     (L.rhsN mode alt).toPoly = C (rhsScale : ℚ) * (L.row mode owners alt).rhs := by
@@ -897,8 +895,8 @@ theorem quarticN_toPoly (hmu : ∀ i, 0 < L.mu i) :
   have hB := fun i => congrArg (Polynomial.eval z) (L.forceBN_toPoly mode owners alt i)
   simp only [Polynomial.eval_mul, Polynomial.eval_C] at hL hA hB
   have hsum : ∑ i, (((300000000 * (L.prodMu / L.mu i) : ℕ) : ℚ) *
-        ((L.forceAN mode owners alt i).toPoly.eval z ^ 2 +
-          (L.forceBN mode owners alt i).toPoly.eval z ^ 2)) =
+        ((L.forceAN owners alt i).toPoly.eval z ^ 2 +
+          (L.forceBN owners alt i).toPoly.eval z ^ 2)) =
       L.M * ∑ i, 1 / (4 * (L.row mode owners alt).mu i) *
         (((L.row mode owners alt).forceA i).eval z ^ 2 +
           ((L.row mode owners alt).forceB i).eval z ^ 2) := by

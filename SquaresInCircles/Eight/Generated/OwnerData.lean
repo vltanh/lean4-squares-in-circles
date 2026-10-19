@@ -6,8 +6,8 @@ public import SquaresInCircles.Eight.Generated.Owner.Bundles
 /-!
 # Eight squares: the owner tables and tilt bundles
 
-`quarterTables` and `mixedTables` list the owner tables of the quarter and mixed modes, and
-`tiltLeft` and `tiltRight` the tilt bundles whose intervals cover the two tails
+`mixedTables` lists the owner tables of the mixed mode, and `tiltLeft` and `tiltRight` the tilt
+bundles whose intervals cover the two tails
 `[0, 1001/20000]` and `[2/25, 3/8]` of the positive half-angle chart; the nonpositive half-angles
 are excluded by `negative_tilt_excluded`.
 -/
@@ -20,19 +20,12 @@ open SquaresInCircles.Eight.Candidate
 open SquaresInCircles.Eight.Candidate.Dual
 namespace SquaresInCircles.Eight.Generated.Owner
 
-def quarterTables : List OwnerTable := [quarterTable004, quarterTable005, quarterTable006, quarterTable007, quarterTable016, quarterTable017, quarterTable018, quarterTable019]
-
-theorem quarter_table_modes : ∀ T ∈ quarterTables, T.mode = .quarter := by
-  intro T hT
-  simp only [quarterTables, List.mem_cons, List.not_mem_nil, or_false] at hT
-  rcases hT with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl <;> rfl
-
-def mixedTables : List OwnerTable := [mixedTable000, mixedTable001, mixedTable002, mixedTable003, mixedTable004, mixedTable005, mixedTable006, mixedTable007, mixedTable008, mixedTable009, mixedTable010, mixedTable011, mixedTable012, mixedTable013, mixedTable014]
+def mixedTables : List OwnerTable := [mixedTable000, mixedTable003, mixedTable004, mixedTable007, mixedTable008, mixedTable011, mixedTable012]
 
 theorem mixed_table_modes : ∀ T ∈ mixedTables, T.mode = .mixed := by
   intro T hT
   simp only [mixedTables, List.mem_cons, List.not_mem_nil, or_false] at hT
-  rcases hT with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl <;> rfl
+  rcases hT with rfl | rfl | rfl | rfl | rfl | rfl | rfl <;> rfl
 
 def tiltLeft : List TiltBundle := [tiltBundle018, tiltBundle019, tiltBundle020, tiltBundle021, tiltBundle022, tiltBundle023, tiltBundle024, tiltBundle025, tiltBundle026, tiltBundle027, tiltBundle028, tiltBundle029, tiltBundle030, tiltBundle031, tiltBundle032, tiltBundle033, tiltBundle034, tiltBundle035, tiltBundle036, tiltBundle037, tiltBundle038, tiltBundle039]
 

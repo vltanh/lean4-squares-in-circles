@@ -31,10 +31,17 @@ theorem enhanced_coverCtx_valid : coverCtx.Valid enhancedCover enhancedMeta ∧
     coverCtx.alphas.length = enhancedMeta.arcs.length :=
   CoverCtx.valid_of (by decide +kernel) (by decide +kernel) coverCtx_alphas
 
-theorem enhanced_angles : enhancedCover.AngleCovers enhancedMeta enhancedRows :=
+theorem enhanced_angles : enhancedCover.AngleCovers enhancedMeta enhancedRows true :=
   coverBlocks_sound enhanced_coverCtx_valid.1 enhanced_coverCtx_valid.2 (by decide +kernel)
     (AllBlocks.imp (fun a n ⟨c, o, h⟩ =>
-      ⟨c, o, (coverBlock_congr rfl rfl rfl a n c o chunks).trans h⟩) cover_blocks)
+      ⟨c, o, (coverBlock_congr rfl rfl rfl _ a n c o chunks).trans h⟩) cover_blocks)
+
+theorem enhanced_markers_valid :
+    Candidate.GeometricCoreMarker.MarkersValid enhancedCover enhancedMeta := by
+  decide +kernel
+
+theorem enhanced_budgets_valid : Candidate.GeometricCoreMarker.BudgetsValid enhancedMeta := by
+  decide +kernel
 
 noncomputable def enhanced_charged_bound (C : BoundaryCycle (table.radius:ℝ))
     (F : Candidate.Frame C) (β : ℝ)
@@ -45,6 +52,7 @@ noncomputable def enhanced_charged_bound (C : BoundaryCycle (table.radius:ℝ))
       ForwardAxis.ofIndex j∈table.allowedAxes i) :
     Candidate.ChargedBound C F β (fun i => (enhancedMeta.target i:ℝ)) :=
   AffineCover.chargedBoundOf enhanced_endpoints enhanced_states enhanced_angles enhanced_claims
-    C F β word_matches hcharge hcuts hdiff haxes
+    C F β word_matches hcharge hcuts hdiff haxes (fun _ => Candidate.GeometricCoreMarker.pair_bound enhanced_endpoints
+      enhanced_markers_valid enhanced_budgets_valid C F)
 
 end SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch

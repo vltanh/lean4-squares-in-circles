@@ -1,8 +1,7 @@
 module
 
 public import SquaresInCircles.Eight.Arithmetic.StateCoverage
-public import SquaresInCircles.Eight.Candidate.GeometricSecondaryExclusion
-public import SquaresInCircles.Eight.Frames
+public import SquaresInCircles.Eight.Candidate.GeometricCoreQuarter
 
 /-!
 # Complete affine-table coverage and the cyclic charged bound
@@ -10,9 +9,11 @@ public import SquaresInCircles.Eight.Frames
 The state cover chooses one label per vertex before any separating axis is
 selected. For each pair of labels and each allowed original axis, the rows of
 the table cover every required angle (`AngleCovers`), except on the pairs and
-axes that no feasible separator can have (`Excluded`): an axis two or four
-separator against a core square on a zero-quarter edge, and an axis one or
-three separator against a core square with the inward transverse sign.
+axes that no feasible separator can have (`ExcludedArcs`): an axis two or four
+separator against a core square on a zero-quarter edge, an axis one or three
+separator against a core square with the inward transverse sign, and any
+separator on a quarter edge from a core square of sign `+1` to a core square
+of sign `-1`.
 -/
 
 @[expose] public section
@@ -46,12 +47,15 @@ theorem forwardMargin_congr_products (axis : ForwardAxis) {σ τ σ' τ' a b A B
 /-- An arc pair and an original axis that no feasible separator has (`feasible_not_excluded`):
 on a zero-quarter edge, axis two against a core target or axis four against a core source; on
 any edge, axis one with a core target and a source of sign `-1`, or axis three with a core
-source and a target of sign `+1`. -/
+source and a target of sign `+1`; on a quarter edge, every axis from a core source of sign `+1`
+to a core target of sign `-1`. -/
 def ExcludedArcs (aS aT : ArcData) (axis : ForwardAxis) : Prop :=
   (aS.role ∈ Candidate.zeroEdges ∧
     ((axis = .two ∧ aT.outer = false) ∨ (axis = .four ∧ aS.outer = false))) ∨
   (axis = .one ∧ aS.positive = false ∧ aT.outer = false) ∨
-  (axis = .three ∧ aT.positive = true ∧ aS.outer = false)
+  (axis = .three ∧ aT.positive = true ∧ aS.outer = false) ∨
+  (Candidate.word aS.role = 1 ∧ aS.outer = false ∧ aT.outer = false ∧ aS.positive = true ∧
+    aT.positive = false)
 
 instance (aS aT : ArcData) (axis : ForwardAxis) : Decidable (ExcludedArcs aS aT axis) := by
   unfold ExcludedArcs
@@ -80,7 +84,8 @@ theorem feasible_not_excluded {M : AffineTableMeta}
     (j : Fin 4) (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i))) :
     ¬ ExcludedArcs (arcAt M s) (arcAt M t) (ForwardAxis.ofIndex j) := by
   intro hexcluded
-  rcases hexcluded with hprimary | hsecondary
+  rcases hexcluded with hprimary | ⟨haxis,hnegative,hcore⟩ | ⟨haxis,hpositive,hcore⟩ |
+    ⟨hk, hsc, htc, hsp, htn⟩
   · rcases hprimary with ⟨hi, ⟨haxis,hcore⟩ | ⟨haxis,hcore⟩⟩
     · have hi' : i ∈ Candidate.zeroEdges := by simpa [hsi] using hi
       have hji : j = 1 := by fin_cases j <;> simp_all [ForwardAxis.ofIndex]
@@ -94,21 +99,32 @@ theorem feasible_not_excluded {M : AffineTableMeta}
       have hlarge := (Candidate.Geometric.zero_source_primary_requires_outer F hi' hj).2
       have hsmall := arc_core_primary_upper hs hcore
       linarith
-  · rcases hsecondary with ⟨haxis,hnegative,hcore⟩ | ⟨haxis,hpositive,hcore⟩
-    · have hji : j = 0 := by fin_cases j <;> simp_all [ForwardAxis.ofIndex]
-      subst j
-      have hsign : C.sigma i*C.b i ≤ 0 := by
-        rw [← hσ]
-        simpa [ArcData.sign,hnegative] using neg_nonpos.mpr (C.b_nonneg i)
-      exact Candidate.Geometric.source_secondary_excluded_of_target_core F
-        (arc_core_primary_upper ht hcore) hsign hj
-    · have hji : j = 2 := by fin_cases j <;> simp_all [ForwardAxis.ofIndex]
-      subst j
-      have hsign : 0 ≤ C.sigma (next i)*C.b (next i) := by
-        rw [← hτ]
-        simpa [ArcData.sign,hpositive] using C.b_nonneg (next i)
-      exact Candidate.Geometric.target_secondary_excluded_of_source_core F
-        (arc_core_primary_upper hs hcore) hsign hj
+  · have hji : j = 0 := by fin_cases j <;> simp_all [ForwardAxis.ofIndex]
+    subst j
+    have hsign : C.sigma i*C.b i ≤ 0 := by
+      rw [← hσ]
+      simpa [ArcData.sign,hnegative] using neg_nonpos.mpr (C.b_nonneg i)
+    exact Candidate.Geometric.source_secondary_excluded_of_target_core F
+      (arc_core_primary_upper ht hcore) hsign hj
+  · have hji : j = 2 := by fin_cases j <;> simp_all [ForwardAxis.ofIndex]
+    subst j
+    have hsign : 0 ≤ C.sigma (next i)*C.b (next i) := by
+      rw [← hτ]
+      simpa [ArcData.sign,hpositive] using C.b_nonneg (next i)
+    exact Candidate.Geometric.target_secondary_excluded_of_source_core F
+      (arc_core_primary_upper hs hcore) hsign hj
+  · rw [hsi] at hk
+    refine Candidate.Geometric.quarter_core_opposite_excluded F hk (arc_core_primary_upper hs hsc)
+      (arc_core_primary_upper ht htc) ?_ ?_ j hj
+    · rw [← hσ]
+      simp [ArcData.sign, hsp]
+    · rw [← hτ]
+      simp [ArcData.sign, htn]
+
+/-- No edge of the cycle joins two squares with primary coordinate at most `7/12`, in
+particular two core squares. -/
+def NoAdjacentCore {q : ℝ} (C : BoundaryCycle q) : Prop :=
+  ∀ i, ¬ (C.a i ≤ 7/12 ∧ C.a (next i) ≤ 7/12)
 
 /-- The cover data of a table: for each arc the intervals of the arctangents of its two tangent
 endpoints, and the state chains. -/
@@ -272,32 +288,61 @@ theorem required_mem {K : AffineCover} {M : AffineTableMeta}
       exact hfin
 
 /-- Every required angle of every arc pair with consecutive roles and every allowed axis that is
-not excluded lies in the angle interval of a row of that pair, axis and half. -/
-def AngleCovers (K : AffineCover) (M : AffineTableMeta) (rows : List AffineTableRow) : Prop :=
+not excluded lies in the angle interval of a row of that pair, axis and half; with `core`, the
+pairs of two core arcs are left out, their costs being bounded otherwise (`CorePairBound`). -/
+def AngleCovers (K : AffineCover) (M : AffineTableMeta) (rows : List AffineTableRow)
+    (core : Bool) : Prop :=
   ∀ s t : Fin M.arcs.length, (arcAt M t).role=(arcAt M s).role+1 →
     ∀ axis : ForwardAxis, axis∈M.allowedAxes (arcAt M s).role →
-      ¬ ExcludedArcs (arcAt M s) (arcAt M t) axis → ∀ r : Bool, ∀ u : ℝ,
+      ¬ ExcludedArcs (arcAt M s) (arcAt M t) axis →
+      (core = true → (arcAt M s).outer = true ∨ (arcAt M t).outer = true) → ∀ r : Bool, ∀ u : ℝ,
       (K.required M s t r).Mem u →
       ∃ row ∈ rows,
         row.source=s.val ∧ row.target=t.val ∧ row.edge=(arcAt M s).role ∧
         row.axis=axis ∧ row.quarter=M.word (arcAt M s).role ∧
         row.positiveHalf=r ∧ row.angle.Mem u ∧ M.target (arcAt M s).role≤row.lowerTarget
 
-/-- The charged bound from the endpoint, state and angle covers and the row claims. -/
-noncomputable def chargedBoundOf {K : AffineCover} {M : AffineTableMeta}
-    {rows : List AffineTableRow} (hE : K.EndpointsValid M) (hS : K.states.NumericValid M)
-    (hA : K.AngleCovers M rows) (hrows : ∀ r∈rows, r.Claim M)
-    (C : BoundaryCycle (M.radius:ℝ)) (F : Candidate.Frame C) (β : ℝ)
+/-- The cost bound of the edges between two core arcs of a table, for a cycle. -/
+def CorePairBound (M : AffineTableMeta) (C : BoundaryCycle (M.radius:ℝ))
+    (F : Candidate.Frame C) : Prop :=
+  ∀ {i : Vertex} {s t : Fin M.arcs.length}, (arcAt M s).role=i → (arcAt M t).role=next i →
+    (arcAt M s).Contains M.radius (C.a i) (C.b i) →
+    (arcAt M t).Contains M.radius (C.a (next i)) (C.b (next i)) →
+    (arcAt M s).sign*C.b i=C.sigma i*C.b i →
+    (arcAt M t).sign*C.b (next i)=C.sigma (next i)*C.b (next i) →
+    (arcAt M s).outer=false → (arcAt M t).outer=false →
+    ∀ j : Fin 4, (forwardAxis j).Feasible (C.square i) (C.square (next i)) →
+      (M.target i:ℝ) < chargedCost (arcAt M s).label (arcAt M t).label (M.charge i)
+        (C.a i) (C.b i) (C.a (next i)) (C.b (next i)) (Candidate.phi F.theta i)
+
+/-- Without adjacent core squares the bound holds vacuously. -/
+theorem _root_.SquaresInCircles.Eight.Arithmetic.NoAdjacentCore.corePairBound
+    {M : AffineTableMeta} {C : BoundaryCycle (M.radius:ℝ)} (hC : NoAdjacentCore C)
+    (F : Candidate.Frame C) : CorePairBound M C F :=
+  fun _ _ hs ht _ _ hsc htc _ _ =>
+    (hC _ ⟨arc_core_primary_upper hs hsc, arc_core_primary_upper ht htc⟩).elim
+
+/-- The cost bound of an edge for two arcs of the table that contain the states of its vertices:
+from the rows, or from `CorePairBound` for two core arcs when `core`. -/
+theorem pairBound {K : AffineCover} {M : AffineTableMeta} {rows : List AffineTableRow}
+    {core : Bool} (hE : K.EndpointsValid M) (hA : K.AngleCovers M rows core)
+    (hrows : ∀ r∈rows, r.Claim M) (C : BoundaryCycle (M.radius:ℝ)) (F : Candidate.Frame C)
     (hword : ∀ i, (M.word i:ℝ)=(Candidate.word i:ℝ))
-    (hcharge : ∀ i, (M.charge i:ℝ)=Candidate.charge β i)
-    (hcuts : ∀ i, (M.cuts i).Mem (C.tangent i))
     (hdiff : ∀ i, (M.differenceRange i).Mem (Candidate.delta F.theta i))
     (haxes : ∀ i j, (forwardAxis j).Feasible (C.square i) (C.square (next i)) →
-      ForwardAxis.ofIndex j∈M.allowedAxes i) :
-    Candidate.ChargedBound C F β (fun i => (M.target i:ℝ)) := by
-  choose selected hrole hcontains hproducts using fun i => K.states.covers hS C hcuts i
-  refine ⟨fun i => (arcAt M (selected i)).label.eval (C.a i) (C.b i), ?_⟩
-  intro i j hj
+      ForwardAxis.ofIndex j∈M.allowedAxes i)
+    (hcore : core = true → CorePairBound M C F)
+    {i : Vertex} {s t : Fin M.arcs.length} (hsi : (arcAt M s).role=i)
+    (hti : (arcAt M t).role=next i)
+    (hs : (arcAt M s).Contains M.radius (C.a i) (C.b i))
+    (ht : (arcAt M t).Contains M.radius (C.a (next i)) (C.b (next i)))
+    (hσ : (arcAt M s).sign*C.b i=C.sigma i*C.b i)
+    (hτ : (arcAt M t).sign*C.b (next i)=C.sigma (next i)*C.b (next i))
+    (j : Fin 4) (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i))) :
+    (M.target i:ℝ) < chargedCost (arcAt M s).label (arcAt M t).label (M.charge i)
+      (C.a i) (C.b i) (C.a (next i)) (C.b (next i)) (Candidate.phi F.theta i) := by
+  by_cases hcc : core = true ∧ (arcAt M s).outer=false ∧ (arcAt M t).outer=false
+  · exact hcore hcc.1 hsi hti hs ht hσ hτ hcc.2.1 hcc.2.2 j hj
   let axis := ForwardAxis.ofIndex j
   let d := Candidate.delta F.theta i
   let r : Bool := decide (0≤d)
@@ -310,29 +355,30 @@ noncomputable def chargedBoundOf {K : AffineCover} {M : AffineTableMeta}
     · have hr : r = false := by simp [r,d,hd]
       rw [hr]
       simp [AnglePolynomial.signQ,u,d,abs_of_neg (lt_of_not_ge hd)]
-  have hu := K.required_mem hE C F hword hdiff (hrole i) (hcontains i)
-    (hcontains (next i)) (hproducts i) (hproducts (next i)) (r:=r) (u:=u) rfl hdu
-  have hallowed : axis∈M.allowedAxes (arcAt M (selected i)).role := by
-    rw [hrole]
+  have hu := K.required_mem hE C F hword hdiff hsi hs ht hσ hτ (r:=r) (u:=u) rfl hdu
+  have hallowed : axis∈M.allowedAxes (arcAt M s).role := by
+    rw [hsi]
     exact haxes i j hj
-  have hkeep : ¬ ExcludedArcs (arcAt M (selected i)) (arcAt M (selected (next i))) axis :=
-    feasible_not_excluded C F (hrole i) (hcontains i) (hcontains (next i)) (hproducts i)
-      (hproducts (next i)) j hj
-  obtain ⟨row,hrow,hs,ht,he,ha,hk,hr,hru,hγ⟩ := hA _ _
-    (by rw [hrole,hrole]; rfl) axis hallowed hkeep r u hu
-  have hsdata : row.sourceArc M=arcAt M (selected i) := by
-    simp [AffineTableRow.sourceArc,arcAt,hs]
-  have htdata : row.targetArc M=arcAt M (selected (next i)) := by
-    simp [AffineTableRow.targetArc,arcAt,ht]
-  have he' : row.edge=i := he.trans (hrole i)
+  have hkeep : ¬ ExcludedArcs (arcAt M s) (arcAt M t) axis :=
+    feasible_not_excluded C F hsi hs ht hσ hτ j hj
+  have houter : core = true → (arcAt M s).outer = true ∨ (arcAt M t).outer = true := by
+    intro hc
+    cases hso : (arcAt M s).outer <;> cases hto : (arcAt M t).outer <;> simp_all
+  obtain ⟨row,hrow,hrs,hrt,he,ha,hk,hr,hru,hγ⟩ := hA _ _
+    (by rw [hsi,hti]; rfl) axis hallowed hkeep houter r u hu
+  have hsdata : row.sourceArc M=arcAt M s := by
+    simp [AffineTableRow.sourceArc,arcAt,hrs]
+  have htdata : row.targetArc M=arcAt M t := by
+    simp [AffineTableRow.targetArc,arcAt,hrt]
+  have he' : row.edge=i := he.trans hsi
   have hphi : row.phi u=Candidate.phi F.theta i := by
-    rw [AffineTableRow.phi,hk,hrole]
+    rw [AffineTableRow.phi,hk,hsi]
     rw [show row.sign=(AnglePolynomial.signQ r:ℝ) by
       cases hrr : r <;> simp [AffineTableRow.sign,hr,hrr,AnglePolynomial.signQ]]
     rw [← hdu,hword]
     rfl
   have hdom : row.Domain M (C.a i) (C.b i) (C.a (next i)) (C.b (next i)) u :=
-    ⟨by rw [hsdata]; exact hcontains i,by rw [htdata]; exact hcontains (next i),hru⟩
+    ⟨by rw [hsdata]; exact hs,by rw [htdata]; exact ht,hru⟩
   have hactual := (F.margin_nonneg_iff i j).mp hj
   have horiginal : 0≤forwardMargin axis (C.sigma i) (C.sigma (next i))
       (C.a i) (C.b i) (C.a (next i)) (C.b (next i)) (Candidate.phi F.theta i) := by
@@ -340,20 +386,34 @@ noncomputable def chargedBoundOf {K : AffineCover} {M : AffineTableMeta}
     exact hactual
   have hselected : 0≤forwardMargin row.axis (row.sourceArc M).sign (row.targetArc M).sign
       (C.a i) (C.b i) (C.a (next i)) (C.b (next i)) (row.phi u) := by
-    rw [ha,hsdata,htdata,hphi,
-      forwardMargin_congr_products axis (hproducts i) (hproducts (next i))]
+    rw [ha,hsdata,htdata,hphi,forwardMargin_congr_products axis hσ hτ]
     exact horiginal
   have hp := hrows row hrow _ _ _ _ _ hdom hselected
   have htarget : (M.target i:ℝ)≤row.lowerTarget := by
-    have hγ' : (M.target (arcAt M (selected i)).role:ℝ)≤row.lowerTarget := by
-      exact_mod_cast hγ
-    rwa [hrole] at hγ'
-  have hh := htarget.trans_lt hp
-  rw [hsdata,htdata,he',hphi,hcharge] at hh
-  simp only [chargedCost,frameCharge] at hh
-  show (M.target i:ℝ) < Candidate.phi F.theta i-Candidate.charge β i*
-      Candidate.h (Candidate.phi F.theta i)+(arcAt M (selected i)).label.eval (C.a i) (C.b i)-
-      (arcAt M (selected (next i))).label.eval (C.a (next i)) (C.b (next i))
+    have hγ' : (M.target (arcAt M s).role:ℝ)≤row.lowerTarget := by exact_mod_cast hγ
+    rwa [hsi] at hγ'
+  rw [hsdata,htdata,he',hphi] at hp
+  exact htarget.trans_lt hp
+
+/-- The charged bound from the endpoint, state and angle covers and the row claims. -/
+noncomputable def chargedBoundOf {K : AffineCover} {M : AffineTableMeta}
+    {rows : List AffineTableRow} {core : Bool} (hE : K.EndpointsValid M)
+    (hS : K.states.NumericValid M) (hA : K.AngleCovers M rows core)
+    (hrows : ∀ r∈rows, r.Claim M) (C : BoundaryCycle (M.radius:ℝ)) (F : Candidate.Frame C)
+    (β : ℝ) (hword : ∀ i, (M.word i:ℝ)=(Candidate.word i:ℝ))
+    (hcharge : ∀ i, (M.charge i:ℝ)=Candidate.charge β i)
+    (hcuts : ∀ i, (M.cuts i).Mem (C.tangent i))
+    (hdiff : ∀ i, (M.differenceRange i).Mem (Candidate.delta F.theta i))
+    (haxes : ∀ i j, (forwardAxis j).Feasible (C.square i) (C.square (next i)) →
+      ForwardAxis.ofIndex j∈M.allowedAxes i)
+    (hcore : core = true → CorePairBound M C F) :
+    Candidate.ChargedBound C F β (fun i => (M.target i:ℝ)) := by
+  choose selected hrole hcontains hproducts using fun i => K.states.covers hS C hcuts i
+  refine ⟨fun i => (arcAt M (selected i)).label.eval (C.a i) (C.b i), fun i j hj => ?_⟩
+  have h := pairBound hE hA hrows C F hword hdiff haxes hcore (hrole i) (hrole (next i))
+    (hcontains i) (hcontains (next i)) (hproducts i) (hproducts (next i)) j hj
+  rw [hcharge] at h
+  simp only [chargedCost,frameCharge] at h
   unfold Candidate.h
   linarith
 

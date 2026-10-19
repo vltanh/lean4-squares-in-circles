@@ -2,6 +2,7 @@ module
 
 public import SquaresInCircles.Eight.ExactFamily.Analysis
 public import SquaresInCircles.Eight.ExactFamily.Weights
+public import SquaresInCircles.Eight.ExactFamily.Envelope
 
 /-!
 # Eight squares: the stationary configuration
@@ -9,11 +10,11 @@ public import SquaresInCircles.Eight.ExactFamily.Weights
 `sharpData` is the chain at the stationary zero `(qStar, sharpPose)` of `Analysis.lean`, with its
 coordinates given by the successive square roots (`radicalCoordinates`). Its equations, its
 branch signs and its uniqueness are theorems: it solves the stationary system
-(`sharpData_stationary`), and every solution of that system equals it (`stationary_unique`),
-because the closed cover of `Generated/StationaryLocalization.lean` puts every solution in the
-rectangle where the stationary zero is unique (`stationary_local`). The decimals below are
-rational brackets for `qStar` and the coordinates (`qStar_bracket`, `qStar_limits`,
-`sharp_coordinates`, `sharp_y`), not definitions of them.
+(`sharpData_stationary`), and every solution of that system equals it (`stationary_unique`), by
+the geometric argument of `Envelope.lean` (`FiveCornerGeometry.stationary_chain_unique`); in
+particular every solution lies in the rectangle of `Analysis.lean` (`stationary_local`). The
+decimals below are rational brackets for `qStar` and the coordinates (`qStar_bracket`,
+`qStar_limits`, `sharp_coordinates`, `sharp_y`), not definitions of them.
 -/
 
 @[expose] public section
@@ -139,34 +140,6 @@ theorem familyZ_radical (q y z : ℝ) :
   field_simp [ne_of_gt (halfAngle_den_pos z)]
   ring
 
-theorem chain_eq_radical {d : Coordinates} (hd : d.IsChain) :
-    d=radicalCoordinates d.q d.y d.z := by
-  obtain ⟨h₁,h₂,h₃,h₄⟩ := hd.radicals
-  cases d
-  simp_all [radicalCoordinates,Coordinates.x₃,Coordinates.y₄]
-
-theorem stationary_local {d : Coordinates} (hd : d.IsStationary) :
-    localBox.Mem ![d.q,d.y,d.z] := by
-  have hc := chain_eq_radical hd.toIsChain
-  have hzden : 0 < 1-d.z^2 := by nlinarith only [hd.z_pos, hd.z_lt_one]
-  have hzsmall : d.z < 1/10 := by
-    have ht := (div_lt_iff₀ hzden).mp hd.tilt_range
-    linarith [sq_nonneg d.z]
-  apply stationary_localization ![d.q,d.y,d.z]
-  · intro i; fin_cases i <;> norm_num [initialBox,QInterval.Mem]
-    · exact ⟨by linarith [hd.q_lower],hd.q_upper⟩
-    · exact ⟨hd.y_lower.le,hd.y_upper.le⟩
-    · exact ⟨hd.z_pos.le,hzsmall.le⟩
-  · intro i; fin_cases i
-    · change familyValue d.q (d.y,d.z)=0
-      rw [familyValue_radical,← hc]
-      exact hd.zero_defect
-    · change familyY d.q (d.y,d.z)=0
-      rw [familyY_radical (hc ▸ hd.toIsChain),← hc]
-      exact hd.position_stationary
-    · change familyZ d.q (d.y,d.z)=0
-      rw [familyZ_radical,← hc,hd.tilt_stationary,mul_zero]
-
 theorem sharp_endpoint_signs : 0 < minimumValue sharpLower ∧ minimumValue sharpUpper < 0 := by
   have hL := sharpLowF_bound ![sharpLower,trialY,trialZ]
     (by intro i; fin_cases i <;> norm_num [sharpLower,sharpLowFBox,QInterval.Mem,trialY,trialZ])
@@ -273,35 +246,13 @@ theorem sharpData_stationary : sharpData.IsStationary := by
     exact (mul_eq_zero.mp hzv).resolve_left
       (ne_of_gt (div_pos (by norm_num) (halfAngle_den_pos sharpPose.2)))
 
-theorem stationary_unique {d : Coordinates} (hd : d.IsStationary) : d=sharpData := by
-  have he := stationary_local hd
-  have hq : d.q ∈ radiusBox := by
-    have h := he 0
-    norm_num [localBox,QInterval.Mem] at h
-    exact h
-  have hp : (d.y,d.z) ∈ poseBox := by
-    have h1 := he 1
-    have h2 := he 2
-    norm_num [localBox,QInterval.Mem] at h1 h2
-    simp only [poseBox,Set.mem_prod,Set.mem_Icc]
-    refine ⟨⟨?_,?_⟩,?_,?_⟩ <;> linarith
-  have hc := chain_eq_radical hd.toIsChain
-  have hv : familyValue d.q (d.y,d.z)=0 := by
-    rw [familyValue_radical,← hc]; exact hd.zero_defect
-  have hy : familyY d.q (d.y,d.z)=0 := by
-    rw [familyY_radical (hc ▸ hd.toIsChain),← hc]; exact hd.position_stationary
-  have hz : familyZ d.q (d.y,d.z)=0 := by
-    rw [familyZ_radical,← hc,hd.tilt_stationary,mul_zero]
-  have hroot := (Classical.choose_spec stationary_existsUnique).2
-    (d.q,(d.y,d.z)) ⟨hq,hp,hv,hy,hz⟩
-  have hsharp := (Classical.choose_spec stationary_existsUnique).2
-    (qStar,sharpPose) ⟨qStar_mem,minimizingPose_mem _,sharpPose_value,
-      sharpPose_stationary.1,sharpPose_stationary.2⟩
-  have hx : (d.q,(d.y,d.z))=(qStar,sharpPose) := hroot.trans hsharp.symm
-  apply chain_unique_radicals hd.toIsChain sharpData_stationary.toIsChain
-  · exact congrArg Prod.fst hx
-  · exact congrArg (fun x : ℝ × Pose => x.2.1) hx
-  · exact congrArg (fun x : ℝ × Pose => x.2.2) hx
+theorem stationary_unique {d : Coordinates} (hd : d.IsStationary) : d=sharpData :=
+  FiveCornerGeometry.stationary_chain_unique hd sharpData_stationary
+
+theorem stationary_local {d : Coordinates} (hd : d.IsStationary) :
+    localBox.Mem ![d.q,d.y,d.z] := by
+  rw [stationary_unique hd]
+  exact local_mem qStar_mem (minimizingPose_mem qStar)
 
 theorem exact_stationary_existsUnique : ∃! d : Coordinates, d.IsStationary :=
   ⟨sharpData,sharpData_stationary,fun _ h => stationary_unique h⟩

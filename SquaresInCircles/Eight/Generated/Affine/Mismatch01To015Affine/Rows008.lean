@@ -3,7 +3,7 @@ module
 public import SquaresInCircles.Eight.Generated.Affine.Mismatch01To015Affine.Context
 public meta import SquaresInCircles.Eight.IntRows
 
-/-! Rows 80000 to 89999 of the table, checked by `decide +kernel`, 200 rows a theorem. -/
+/-! Rows 80000 to 87117 of the table, checked by `decide +kernel`, 200 rows a theorem. -/
 
 @[expose] public section
 noncomputable section
@@ -223,104 +223,18 @@ noncomputable def rows008_34 : List AffineRow :=
 theorem rows008_34_check : checkRows ctx rows008_34 = true := by decide +kernel
 
 noncomputable def rows008_35 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/affine/MISMATCH_01_TO_015_AFFINE.rows" 87001 87201 ↦
+  nat_rows% "../../../../../data/eight/affine/MISMATCH_01_TO_015_AFFINE.rows" 87001 87119 ↦
     AffineRow.ofData
 
 theorem rows008_35_check : checkRows ctx rows008_35 = true := by decide +kernel
 
-noncomputable def rows008_36 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/affine/MISMATCH_01_TO_015_AFFINE.rows" 87201 87401 ↦
-    AffineRow.ofData
-
-theorem rows008_36_check : checkRows ctx rows008_36 = true := by decide +kernel
-
-noncomputable def rows008_37 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/affine/MISMATCH_01_TO_015_AFFINE.rows" 87401 87601 ↦
-    AffineRow.ofData
-
-theorem rows008_37_check : checkRows ctx rows008_37 = true := by decide +kernel
-
-noncomputable def rows008_38 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/affine/MISMATCH_01_TO_015_AFFINE.rows" 87601 87801 ↦
-    AffineRow.ofData
-
-theorem rows008_38_check : checkRows ctx rows008_38 = true := by decide +kernel
-
-noncomputable def rows008_39 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/affine/MISMATCH_01_TO_015_AFFINE.rows" 87801 88001 ↦
-    AffineRow.ofData
-
-theorem rows008_39_check : checkRows ctx rows008_39 = true := by decide +kernel
-
-noncomputable def rows008_40 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/affine/MISMATCH_01_TO_015_AFFINE.rows" 88001 88201 ↦
-    AffineRow.ofData
-
-theorem rows008_40_check : checkRows ctx rows008_40 = true := by decide +kernel
-
-noncomputable def rows008_41 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/affine/MISMATCH_01_TO_015_AFFINE.rows" 88201 88401 ↦
-    AffineRow.ofData
-
-theorem rows008_41_check : checkRows ctx rows008_41 = true := by decide +kernel
-
-noncomputable def rows008_42 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/affine/MISMATCH_01_TO_015_AFFINE.rows" 88401 88601 ↦
-    AffineRow.ofData
-
-theorem rows008_42_check : checkRows ctx rows008_42 = true := by decide +kernel
-
-noncomputable def rows008_43 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/affine/MISMATCH_01_TO_015_AFFINE.rows" 88601 88801 ↦
-    AffineRow.ofData
-
-theorem rows008_43_check : checkRows ctx rows008_43 = true := by decide +kernel
-
-noncomputable def rows008_44 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/affine/MISMATCH_01_TO_015_AFFINE.rows" 88801 89001 ↦
-    AffineRow.ofData
-
-theorem rows008_44_check : checkRows ctx rows008_44 = true := by decide +kernel
-
-noncomputable def rows008_45 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/affine/MISMATCH_01_TO_015_AFFINE.rows" 89001 89201 ↦
-    AffineRow.ofData
-
-theorem rows008_45_check : checkRows ctx rows008_45 = true := by decide +kernel
-
-noncomputable def rows008_46 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/affine/MISMATCH_01_TO_015_AFFINE.rows" 89201 89401 ↦
-    AffineRow.ofData
-
-theorem rows008_46_check : checkRows ctx rows008_46 = true := by decide +kernel
-
-noncomputable def rows008_47 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/affine/MISMATCH_01_TO_015_AFFINE.rows" 89401 89601 ↦
-    AffineRow.ofData
-
-theorem rows008_47_check : checkRows ctx rows008_47 = true := by decide +kernel
-
-noncomputable def rows008_48 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/affine/MISMATCH_01_TO_015_AFFINE.rows" 89601 89801 ↦
-    AffineRow.ofData
-
-theorem rows008_48_check : checkRows ctx rows008_48 = true := by decide +kernel
-
-noncomputable def rows008_49 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/affine/MISMATCH_01_TO_015_AFFINE.rows" 89801 90001 ↦
-    AffineRow.ofData
-
-theorem rows008_49_check : checkRows ctx rows008_49 = true := by decide +kernel
-
-/-- Rows 80000 to 89999, in parts of 200. -/
+/-- Rows 80000 to 87117, in parts of 200. -/
 noncomputable def parts008 : List (List AffineRow) :=
   [rows008_0, rows008_1, rows008_2, rows008_3, rows008_4, rows008_5, rows008_6, rows008_7,
    rows008_8, rows008_9, rows008_10, rows008_11, rows008_12, rows008_13, rows008_14, rows008_15,
    rows008_16, rows008_17, rows008_18, rows008_19, rows008_20, rows008_21, rows008_22, rows008_23,
    rows008_24, rows008_25, rows008_26, rows008_27, rows008_28, rows008_29, rows008_30, rows008_31,
-   rows008_32, rows008_33, rows008_34, rows008_35, rows008_36, rows008_37, rows008_38, rows008_39,
-   rows008_40, rows008_41, rows008_42, rows008_43, rows008_44, rows008_45, rows008_46, rows008_47,
-   rows008_48, rows008_49]
+   rows008_32, rows008_33, rows008_34, rows008_35]
 
 theorem parts008_check : parts008.all (checkRows ctx) = true := by
   simp only [parts008, List.all_cons, List.all_nil, rows008_0_check, rows008_1_check,
@@ -330,11 +244,8 @@ theorem parts008_check : parts008.all (checkRows ctx) = true := by
     rows008_17_check, rows008_18_check, rows008_19_check, rows008_20_check, rows008_21_check,
     rows008_22_check, rows008_23_check, rows008_24_check, rows008_25_check, rows008_26_check,
     rows008_27_check, rows008_28_check, rows008_29_check, rows008_30_check, rows008_31_check,
-    rows008_32_check, rows008_33_check, rows008_34_check, rows008_35_check, rows008_36_check,
-    rows008_37_check, rows008_38_check, rows008_39_check, rows008_40_check, rows008_41_check,
-    rows008_42_check, rows008_43_check, rows008_44_check, rows008_45_check, rows008_46_check,
-    rows008_47_check, rows008_48_check, rows008_49_check, Bool.and_true]
+    rows008_32_check, rows008_33_check, rows008_34_check, rows008_35_check, Bool.and_true]
 
-theorem parts008_length : (parts008.map List.length).sum = 10000 := by decide +kernel
+theorem parts008_length : (parts008.map List.length).sum = 7118 := by decide +kernel
 
 end SquaresInCircles.Eight.Generated.Affine.Mismatch01To015Affine

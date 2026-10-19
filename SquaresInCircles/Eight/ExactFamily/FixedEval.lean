@@ -9,7 +9,8 @@ An interval is a pair of integers `lo, hi`, read as `[lo / 2 ^ p, hi / 2 ^ p]`, 
 operation rounds outwards. One pass over a formula encloses its value on a box. Square roots and
 reciprocals are accepted only for arguments with a positive lower end, so a successful pass also
 shows that the formula is regular on the box. In the kernel this is much cheaper than proposing
-an annotated rational certificate and checking it.
+an annotated rational certificate and checking it. `inside` tests the inclusion of one box in
+another (`box_mem_of_subset`).
 -/
 
 @[expose] public section
@@ -354,12 +355,6 @@ def bounded {n : ℕ} (p : ℕ) (B : QBox n) (f : Formula n) (lo hi : ℚ) : Boo
   | some I => decide ((DI.ofRat p lo).hi ≤ I.lo ∧ I.hi ≤ (DI.ofRat p hi).lo)
   | none => false
 
-/-- `f` does not vanish on `B`. -/
-def excludes {n : ℕ} (p : ℕ) (B : QBox n) (f : Formula n) : Bool :=
-  match eval p (ofBox p B) f with
-  | some I => decide (I.hi < 0 ∨ 0 < I.lo)
-  | none => false
-
 /-- `f` is regular on `B`. -/
 def regular {n : ℕ} (p : ℕ) (B : QBox n) (f : Formula n) : Bool :=
   (eval p (ofBox p B) f).isSome
@@ -382,26 +377,20 @@ theorem bounded_sound {n p : ℕ} {B : QBox n} {f : Formula n} {lo hi : ℚ}
     · exact le_of_mul_le_mul_right (hlo.trans (hl.trans hm.1)) h2
     · exact le_of_mul_le_mul_right (hm.2.trans (hu.trans hhi)) h2
 
-theorem excludes_sound {n p : ℕ} {B : QBox n} {f : Formula n} (h : excludes p B f = true)
-    {env : Fin n → ℝ} (he : B.Mem env) : f.eval env ≠ 0 := by
-  have h2 := two_pow_pos p
-  cases hI : eval p (ofBox p B) f with
-  | none => simp [excludes, hI] at h
-  | some I =>
-    have hc : I.hi < 0 ∨ 0 < I.lo := by simpa [excludes, hI] using h
-    obtain ⟨hm1, hm2⟩ := (eval_sound (mem_ofBox he) f hI).1
-    intro hz
-    rw [hz, zero_mul] at hm1 hm2
-    rcases hc with hc | hc
-    · have : (I.hi : ℝ) < 0 := by exact_mod_cast hc
-      linarith
-    · have : (0 : ℝ) < I.lo := by exact_mod_cast hc
-      linarith
-
 theorem regular_sound {n p : ℕ} {B : QBox n} {f : Formula n} (h : regular p B f = true)
     {env : Fin n → ℝ} (he : B.Mem env) : f.RegularAt env := by
   cases hI : eval p (ofBox p B) f with
   | none => simp [regular, hI] at h
   | some I => exact (eval_sound (mem_ofBox he) f hI).2
+
+/-- The box `B` lies in `target`; the test uses weak endpoints in every coordinate. -/
+def inside (B target : QBox 3) : Bool :=
+  decide (∀ i, (target i).lo ≤ (B i).lo ∧ (B i).hi ≤ (target i).hi)
+
+theorem box_mem_of_subset {n : ℕ} {box inner : QBox n}
+    (h : ∀ i, (inner i).lo ≤ (box i).lo ∧ (box i).hi ≤ (inner i).hi)
+    {env : Fin n → ℝ} (he : box.Mem env) : inner.Mem env := by
+  intro i
+  exact QInterval.mem_mono (he i) (h i).1 (h i).2
 
 end SquaresInCircles.Eight.ExactFamily.FixedEval

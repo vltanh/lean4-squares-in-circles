@@ -28,8 +28,8 @@ them. As a check of the data the script
 
     python3 -I scripts/eight/owner_rows.py [--commit 65e4060] [--lean]
 
-With `--lean` it also writes the two Lean modules of the tables: the owner tables of both
-modes, and the tilt bundles.
+With `--lean` it also writes the two Lean modules of the tables: the owner tables of the
+mixed mode, and the tilt bundles.
 """
 from fractions import Fraction as Q
 from pathlib import Path
@@ -154,12 +154,11 @@ def quartic(row):
     mode, positive = row['mode'], row['positive']
     lam, cone, mu, alt = row['lambda'], row['cone'], row['mu'], row['alternative']
     owners = row['owners']
+    assert mode in (1, 2), 'only the mixed and tilt modes are used'
     q = Q(1957767069, 500000000) if mode == 2 else Q(9789, 2500)
-    eps = Q(3, 200) if mode == 0 else Q(1, 1000)
+    eps = Q(1, 1000)
     max_lambda = max(lam[i] for i in ALIGNED)
-    if mode == 0:
-        loss = eps * (Q(3, 2) * sum(lam[i] for i in ALIGNED) + 2 * lam[E])
-    elif mode == 1:
+    if mode == 1:
         loss = eps * (Q(1001, 1000) * max_lambda + 2 * lam[E])
     else:
         loss = eps ** 2 * (Q(1001, 1000) * max_lambda + Q(9, 8) * lam[E])
@@ -360,8 +359,8 @@ def quartic_n(row, ints):
     """`Line.quarticN`, with integers in place of differences of natural numbers."""
     mode, owners, alt, positive = row['mode'], row['owners'], row['alternative'], ints[0] == 1
     lam, K, U = ints[6:13], ints[13:48], ints[48:55]
-    eps = 300 if mode == 0 else 20
-    half = 180000000 if mode == 0 else 12000000
+    eps = 20
+    half = 12000000
     QN = 1879456386240000000 if mode == 2 else 1879488000000000000
     lower = [10000, 1000, 0, 0, 1000, 10000, 0]
     upper = [20000, 16000, 20000, 20000, 16000, 20000, 20000]
@@ -385,8 +384,7 @@ def quartic_n(row, ints):
               error(derivative_b, j)) for j in range(7)]
     cone_rhs = sum(lp[i] * K[5*i] - up[i] * K[5*i+1] - 21600000000 * K[5*i+4] for i in range(7))
     max_lambda = max(lam[i] for i in ALIGNED)
-    loss = (540000000 * sum(lam[i] for i in ALIGNED) + 720000000 * lam[E] if mode == 0 else
-            24024000 * max_lambda + 48000000 * lam[E] if mode == 1 else
+    loss = (24024000 * max_lambda + 48000000 * lam[E] if mode == 1 else
             24024 * max_lambda + 27000 * lam[E])
     width = add(D_INT, C_INT, S_INT if positive else scale(-1, S_INT))
     rhs = add(*[scale(12000000000 * lam[i], width) if i in MIXED else
@@ -466,14 +464,11 @@ def convert(commit):
 
 def needed(info):
     """Whether the proof uses the table. The nonpositive half-angles are excluded geometrically
-    (`negative_tilt_excluded`), and so are the quarter patterns other than a forbidden `B` axis
-    with the intended `D` axis and `G`-axis `0` or `1` (`quarter_owners`)."""
+    (`negative_tilt_excluded`), and so are all quarter patterns (`quarter_owners`) and the mixed
+    patterns with the `E` axis `2` or `3` (`mixed_E_owners`)."""
     if info['kind'] == 'bundle':
         return info['hi'] > 0
-    owners = info['owners']
-    if info['mode'] == 'quarter':
-        return owners[3] == 0 and owners[5] == 2 and owners[1] < 2
-    return True
+    return info['mode'] == 'mixed' and info['owners'][6] < 2
 
 
 def check(tables):
@@ -563,17 +558,12 @@ noncomputable def {stem}Lines : List Line :=
 
 def lean_tables(tables):
     """The module of the owner tables."""
-    def count(mode):
-        return [info for info in tables if info['mode'] == mode]
-    quarter, mixed = count('quarter'), count('mixed')
     out = HEADER + '/-! # Owner tables\n\n' + wrap(
-        f'The {len(quarter)} owner tables of the quarter mode and the {len(mixed)} of the mixed '
-        f'mode, with {sum(len(i["rows"]) for i in quarter)} and '
-        f'{sum(len(i["rows"]) for i in mixed)} rows, read from `data/eight/owner/quarter*.txt` and '
-        f'`mixed*.txt`, one file per table. For each table the kernel evaluates that every row '
-        f'passes `Line.check` and that the intervals cover the half-angle chart '
-        f'(`coverCheck`). -/') + '\n\n' + OPEN
-    for info in quarter + mixed:
+        f'The {len(tables)} owner tables of the mixed mode, with '
+        f'{sum(len(i["rows"]) for i in tables)} rows, read from `data/eight/owner/mixed*.txt`, one '
+        f'file per table. For each table the kernel evaluates that every row passes `Line.check` '
+        f'and that the intervals cover the half-angle chart (`coverCheck`). -/') + '\n\n' + OPEN
+    for info in tables:
         stem, text = lines_def(info, '')
         mode, owners = info['mode'], f'![{info["owners_text"]}]'
         test = f'Line.check .{mode} {owners} .zero'

@@ -3,7 +3,7 @@ module
 public import SquaresInCircles.Eight.Generated.Affine.TLowerAffine.Context
 public meta import SquaresInCircles.Eight.IntRows
 
-/-! Rows 40000 to 42177 of the table, checked by `decide +kernel`, 200 rows a theorem. -/
+/-! Rows 40000 to 41713 of the table, checked by `decide +kernel`, 200 rows a theorem. -/
 
 @[expose] public section
 noncomputable section
@@ -61,33 +61,21 @@ noncomputable def rows004_7 : List AffineRow :=
 theorem rows004_7_check : checkRows ctx rows004_7 = true := by decide +kernel
 
 noncomputable def rows004_8 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/affine/T_LOWER_AFFINE.rows" 41601 41801 ↦
+  nat_rows% "../../../../../data/eight/affine/T_LOWER_AFFINE.rows" 41601 41715 ↦
     AffineRow.ofData
 
 theorem rows004_8_check : checkRows ctx rows004_8 = true := by decide +kernel
 
-noncomputable def rows004_9 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/affine/T_LOWER_AFFINE.rows" 41801 42001 ↦
-    AffineRow.ofData
-
-theorem rows004_9_check : checkRows ctx rows004_9 = true := by decide +kernel
-
-noncomputable def rows004_10 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/affine/T_LOWER_AFFINE.rows" 42001 42179 ↦
-    AffineRow.ofData
-
-theorem rows004_10_check : checkRows ctx rows004_10 = true := by decide +kernel
-
-/-- Rows 40000 to 42177, in parts of 200. -/
+/-- Rows 40000 to 41713, in parts of 200. -/
 noncomputable def parts004 : List (List AffineRow) :=
   [rows004_0, rows004_1, rows004_2, rows004_3, rows004_4, rows004_5, rows004_6, rows004_7,
-   rows004_8, rows004_9, rows004_10]
+   rows004_8]
 
 theorem parts004_check : parts004.all (checkRows ctx) = true := by
   simp only [parts004, List.all_cons, List.all_nil, rows004_0_check, rows004_1_check,
     rows004_2_check, rows004_3_check, rows004_4_check, rows004_5_check, rows004_6_check,
-    rows004_7_check, rows004_8_check, rows004_9_check, rows004_10_check, Bool.and_true]
+    rows004_7_check, rows004_8_check, Bool.and_true]
 
-theorem parts004_length : (parts004.map List.length).sum = 2178 := by decide +kernel
+theorem parts004_length : (parts004.map List.length).sum = 1714 := by decide +kernel
 
 end SquaresInCircles.Eight.Generated.Affine.TLowerAffine

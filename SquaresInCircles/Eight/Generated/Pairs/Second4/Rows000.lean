@@ -3,7 +3,7 @@ module
 public import SquaresInCircles.Eight.Generated.Pairs.Second4.Data
 public meta import SquaresInCircles.Eight.IntRows
 
-/-! Rows 0 to 1379 of the table, checked by `decide +kernel`, a hundred rows a theorem. -/
+/-! Rows 0 to 1313 of the table, checked by `decide +kernel`, a hundred rows a theorem. -/
 
 @[expose] public section
 noncomputable section
@@ -78,11 +78,11 @@ def rows000_12 : List AffineRow :=
 theorem rows000_12_check : checkRows ctx rows000_12 = true := by decide +kernel
 
 def rows000_13 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/pairs/second_4.rows" 1301 1381 ↦ AffineRow.ofData
+  nat_rows% "../../../../../data/eight/pairs/second_4.rows" 1301 1315 ↦ AffineRow.ofData
 
 theorem rows000_13_check : checkRows ctx rows000_13 = true := by decide +kernel
 
-/-- Rows 0 to 1379. -/
+/-- Rows 0 to 1313. -/
 def chunk000 : List AffineRow :=
   rows000_0 ++ rows000_1 ++ rows000_2 ++ rows000_3 ++ rows000_4 ++ rows000_5 ++ rows000_6 ++
     rows000_7 ++ rows000_8 ++ rows000_9 ++ rows000_10 ++ rows000_11 ++ rows000_12 ++ rows000_13

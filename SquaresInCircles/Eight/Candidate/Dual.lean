@@ -212,7 +212,7 @@ def coneB (j : ConeIndex) (r : Vertex) : ℚ :=
 def coneRhs (j : ConeIndex) : ℚ :=
   ![lowerPrimary j.1, -upperPrimary j.1, 0, 0, -9 / 10] j.2
 
-inductive Mode | quarter | mixed | tilt
+inductive Mode | mixed | tilt
   deriving DecidableEq
 
 structure Row where
@@ -229,13 +229,13 @@ structure Row where
   reserve : ℚ
 
 def Row.Q (r : Row) : ℚ := if r.mode = .tilt then 1957767069 / 500000000 else 9789 / 2500
-def Row.epsilon (r : Row) : ℚ := if r.mode = .quarter then 3 / 200 else 1 / 1000
+/-- The bound `1/1000` on the mismatch, in both modes. -/
+def Row.epsilon (_ : Row) : ℚ := 1 / 1000
 def Row.maxLambda (r : Row) : ℚ :=
   max (r.lambda 0) (max (r.lambda 2) (max (r.lambda 3) (max (r.lambda 4) (r.lambda 5))))
 
 def Row.loss (r : Row) : ℚ :=
   match r.mode with
-  | .quarter => r.epsilon * ((3 / 2) * ∑ j : Fin 5, r.lambda (alignedEdge j) + 2 * r.lambda E)
   | .mixed => r.epsilon * ((1001 / 1000) * r.maxLambda + 2 * r.lambda E)
   | .tilt => r.epsilon ^ 2 * ((1001 / 1000) * r.maxLambda + (9 / 8) * r.lambda E)
 

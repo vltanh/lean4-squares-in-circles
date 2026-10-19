@@ -3,7 +3,7 @@ module
 public import SquaresInCircles.Eight.Generated.Pairs.Second3.Data
 public meta import SquaresInCircles.Eight.IntRows
 
-/-! Rows 0 to 1651 of the table, checked by `decide +kernel`, a hundred rows a theorem. -/
+/-! Rows 0 to 1577 of the table, checked by `decide +kernel`, a hundred rows a theorem. -/
 
 @[expose] public section
 noncomputable section
@@ -88,25 +88,20 @@ def rows000_14 : List AffineRow :=
 theorem rows000_14_check : checkRows ctx rows000_14 = true := by decide +kernel
 
 def rows000_15 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/pairs/second_3.rows" 1501 1601 ↦ AffineRow.ofData
+  nat_rows% "../../../../../data/eight/pairs/second_3.rows" 1501 1579 ↦ AffineRow.ofData
 
 theorem rows000_15_check : checkRows ctx rows000_15 = true := by decide +kernel
 
-def rows000_16 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/pairs/second_3.rows" 1601 1653 ↦ AffineRow.ofData
-
-theorem rows000_16_check : checkRows ctx rows000_16 = true := by decide +kernel
-
-/-- Rows 0 to 1651. -/
+/-- Rows 0 to 1577. -/
 def chunk000 : List AffineRow :=
   rows000_0 ++ rows000_1 ++ rows000_2 ++ rows000_3 ++ rows000_4 ++ rows000_5 ++ rows000_6 ++
     rows000_7 ++ rows000_8 ++ rows000_9 ++ rows000_10 ++ rows000_11 ++ rows000_12 ++ rows000_13 ++
-    rows000_14 ++ rows000_15 ++ rows000_16
+    rows000_14 ++ rows000_15
 
 theorem chunk000_check : checkRows ctx chunk000 = true := by
   simp only [chunk000, checkRows_append, rows000_0_check, rows000_1_check, rows000_2_check,
     rows000_3_check, rows000_4_check, rows000_5_check, rows000_6_check, rows000_7_check,
     rows000_8_check, rows000_9_check, rows000_10_check, rows000_11_check, rows000_12_check,
-    rows000_13_check, rows000_14_check, rows000_15_check, rows000_16_check, Bool.and_true]
+    rows000_13_check, rows000_14_check, rows000_15_check, Bool.and_true]
 
 end SquaresInCircles.Eight.Generated.Pairs.Second3

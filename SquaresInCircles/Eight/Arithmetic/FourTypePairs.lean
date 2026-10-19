@@ -1,8 +1,7 @@
 module
 
 public import SquaresInCircles.Eight.Generated.PairsFourType
-public import SquaresInCircles.Eight.BoundaryGeometry
-public import SquaresInCircles.Eight.Frames
+public import SquaresInCircles.Eight.Arithmetic.CorePairGeometry
 
 /-!
 # The continuous four-type pair table, with its geometric meaning
@@ -13,12 +12,14 @@ closed core corner are kept as separate analytic charts; L, M and H are
 the three closed outer tangent ranges.  A vertex chooses its chart and
 sign once, and its resulting label is used on both incident edges.
 
-For an ordered pair of charts, signs and a source axis, the pair inequality is a
-problem of a pair table (`Generated/Pairs`): its ends carry the actual charts,
-tangent ranges and signed labels, with rational brackets of the constants
-`√(Q₀ - 1/4)`, `√(Q₀/2)` and `π`. The table proves it on the six halves of
-`φ ∈ [-1, 4]`, for every state pair and angle with the physical gap and the
-source-axis margin. Reflection and reversal supply both target axes.
+A pair of two core vertices follows from the separation of the centres
+(`CorePairGeometry.core_cost`). For an ordered pair of charts with an outer
+chart, signs and a source axis, the pair inequality is a problem of a pair table
+(`Generated/Pairs`): its ends carry the actual charts, tangent ranges and signed
+labels, with rational brackets of the constants `√(Q₀ - 1/4)`, `√(Q₀/2)` and `π`.
+The table proves it on the six halves of `φ ∈ [-1, 4]`, for every state pair and
+angle with the physical gap and the source-axis margin. Reflection and reversal
+supply both target axes.
 -/
 
 @[expose] public section
@@ -218,15 +219,13 @@ def fourTypeHalves : List (ℕ × Bool × ℕ) :=
 def fourTypeProblem (s t : Branch) (σ τ four : Bool) : PairProblem :=
   ⟨branchEnd s σ, branchEnd t τ, if four then .four else .one, 9/50, gammaQ s t, fourTypeHalves⟩
 
-/-- The pair table of an ordered pair of branches. -/
+/-- The pair table of an ordered pair of branches, empty for two core branches. -/
 def fourTypeTable : Branch → Branch → List PairProblem
-  | .coreSide, .coreSide => Generated.Pairs.FourTypeCoreSideCoreSide.problems
-  | .coreSide, .coreCorner => Generated.Pairs.FourTypeCoreSideCoreCorner.problems
+  | .coreSide, .coreSide | .coreSide, .coreCorner | .coreCorner, .coreSide
+  | .coreCorner, .coreCorner => []
   | .coreSide, .low => Generated.Pairs.FourTypeCoreSideLow.problems
   | .coreSide, .middle => Generated.Pairs.FourTypeCoreSideMiddle.problems
   | .coreSide, .high => Generated.Pairs.FourTypeCoreSideHigh.problems
-  | .coreCorner, .coreSide => Generated.Pairs.FourTypeCoreCornerCoreSide.problems
-  | .coreCorner, .coreCorner => Generated.Pairs.FourTypeCoreCornerCoreCorner.problems
   | .coreCorner, .low => Generated.Pairs.FourTypeCoreCornerLow.problems
   | .coreCorner, .middle => Generated.Pairs.FourTypeCoreCornerMiddle.problems
   | .coreCorner, .high => Generated.Pairs.FourTypeCoreCornerHigh.problems
@@ -249,13 +248,13 @@ def fourTypeTable : Branch → Branch → List PairProblem
 theorem fourTypeTable_holds (s t : Branch) :
     ∀ P ∈ fourTypeTable s t, P.Holds ((9789/2500 : ℚ) : ℝ) 100000000 := by
   cases s <;> cases t
-  · exact Generated.Pairs.FourTypeCoreSideCoreSide.sound
-  · exact Generated.Pairs.FourTypeCoreSideCoreCorner.sound
+  · simp [fourTypeTable]
+  · simp [fourTypeTable]
   · exact Generated.Pairs.FourTypeCoreSideLow.sound
   · exact Generated.Pairs.FourTypeCoreSideMiddle.sound
   · exact Generated.Pairs.FourTypeCoreSideHigh.sound
-  · exact Generated.Pairs.FourTypeCoreCornerCoreSide.sound
-  · exact Generated.Pairs.FourTypeCoreCornerCoreCorner.sound
+  · simp [fourTypeTable]
+  · simp [fourTypeTable]
   · exact Generated.Pairs.FourTypeCoreCornerLow.sound
   · exact Generated.Pairs.FourTypeCoreCornerMiddle.sound
   · exact Generated.Pairs.FourTypeCoreCornerHigh.sound
@@ -275,8 +274,8 @@ theorem fourTypeTable_holds (s t : Branch) :
   · exact Generated.Pairs.FourTypeHighMiddle.sound
   · exact Generated.Pairs.FourTypeHighHigh.sound
 
-theorem fourTypeProblem_mem :
-    ∀ s t : Branch, ∀ σ τ four : Bool, fourTypeProblem s t σ τ four ∈ fourTypeTable s t := by
+theorem fourTypeProblem_mem : ∀ s t : Branch, ∀ σ τ four : Bool, s.type ≠ 0 ∨ t.type ≠ 0 →
+    fourTypeProblem s t σ τ four ∈ fourTypeTable s t := by
   decide +kernel
 
 /-- Every `φ ∈ [-1, 4]` is `k π / 2 ± u` on one of the six halves. -/
@@ -364,17 +363,18 @@ theorem state_mem (s : State) :
 
 end Tables
 
-/-- Soundness of each source-axis problem, on every point of its full
+/-- Soundness of each source-axis problem with an outer chart, on every point of its full
 closed state box and its closed physical angular domain. -/
 theorem source_pair (s t : State) (four : Bool) (φ : ℝ)
     (hφ : -1 ≤ φ ∧ φ ≤ 4)
     (hgap : 19/25 ≤ s.gap t φ ∧ s.gap t φ ≤ 3*Real.pi/4)
     (haxis : 0 ≤ SquaresInCircles.Eight.forwardMargin (sourceAxis four)
-      s.a s.b t.a t.b (sign s.positive) (sign t.positive) φ) :
+      s.a s.b t.a t.b (sign s.positive) (sign t.positive) φ)
+    (hnon : s.branch.type ≠ 0 ∨ t.branch.type ≠ 0) :
     handGamma s.branch.type t.branch.type < s.cost t φ := by
   obtain ⟨hv, hmem, u, hu0, hu1, hphi⟩ := four_type_half hφ
   have hP := fourTypeTable_holds s.branch t.branch _
-    (fourTypeProblem_mem s.branch t.branch s.positive t.positive four)
+    (fourTypeProblem_mem s.branch t.branch s.positive t.positive four hnon)
   have hcs := QuadLabel.signed_bounds (branchConst_mem s.branch) s.positive
   have hct := QuadLabel.signed_bounds (branchConst_mem t.branch) t.positive
   have hc := hP hv hmem (sgnR s.positive * branchConst s.branch)
@@ -409,17 +409,18 @@ theorem pair (s t : State) (j : Fin 4) (φ : ℝ)
     (hφ : -1 ≤ φ ∧ φ ≤ 4)
     (hgap : 19/25 ≤ s.gap t φ ∧ s.gap t φ ≤ 3*Real.pi/4)
     (haxis : 0 ≤ SquaresInCircles.Eight.forwardMargin j
-      s.a s.b t.a t.b (sign s.positive) (sign t.positive) φ) :
+      s.a s.b t.a t.b (sign s.positive) (sign t.positive) φ)
+    (hnon : s.branch.type ≠ 0 ∨ t.branch.type ≠ 0) :
     handGamma s.branch.type t.branch.type < s.cost t φ := by
   fin_cases j
-  · exact source_pair s t false φ hφ hgap haxis
+  · exact source_pair s t false φ hφ hgap haxis hnon
   · have hm : 0 ≤ SquaresInCircles.Eight.forwardMargin (sourceAxis true)
         t.flip.a t.flip.b s.flip.a s.flip.b
         (sign t.flip.positive) (sign s.flip.positive) φ := by
       simpa [sourceAxis,State.flip,sign_not,SquaresInCircles.Eight.forwardMargin,
         sub_eq_add_neg,mul_add,add_mul,mul_comm,mul_left_comm,mul_assoc,
         add_comm,add_left_comm,add_assoc] using haxis
-    have hh := source_pair t.flip s.flip true φ hφ (by simpa using hgap) hm
+    have hh := source_pair t.flip s.flip true φ hφ (by simpa using hgap) hm hnon.symm
     change handGamma t.branch.type s.branch.type < t.flip.cost s.flip φ at hh
     rw [State.reverse_cost,gamma_symmetric] at hh
     exact hh
@@ -429,11 +430,11 @@ theorem pair (s t : State) (j : Fin 4) (φ : ℝ)
       simpa [sourceAxis,State.flip,sign_not,SquaresInCircles.Eight.forwardMargin,
         sub_eq_add_neg,mul_add,add_mul,mul_comm,mul_left_comm,mul_assoc,
         add_comm,add_left_comm,add_assoc] using haxis
-    have hh := source_pair t.flip s.flip false φ hφ (by simpa using hgap) hm
+    have hh := source_pair t.flip s.flip false φ hφ (by simpa using hgap) hm hnon.symm
     change handGamma t.branch.type s.branch.type < t.flip.cost s.flip φ at hh
     rw [State.reverse_cost,gamma_symmetric] at hh
     exact hh
-  · exact source_pair s t true φ hφ hgap haxis
+  · exact source_pair s t true φ hφ hgap haxis hnon
 
 noncomputable def branchOf (C : BoundaryCycle Q0) (i : Vertex) : Branch :=
   match C.kind i with
@@ -441,6 +442,13 @@ noncomputable def branchOf (C : BoundaryCycle Q0) (i : Vertex) : Branch :=
   | .coreCorner => .coreCorner
   | .outer => if 4*C.b i ≤ C.a i then .low
       else if 7*C.b i ≤ 3*C.a i then .middle else .high
+
+theorem branchOf_core_iff (C : BoundaryCycle Q0) (i : Vertex) :
+    (branchOf C i).type=0 ↔ C.kind i ≠ .outer := by
+  cases hk : C.kind i
+  · simp only [branchOf, hk]
+    split_ifs <;> simp [Branch.type]
+  all_goals simp [branchOf, hk, Branch.type]
 
 noncomputable def signOf (C : BoundaryCycle Q0) (i : Vertex) : Bool :=
   if C.sigma i=1 then true else false
@@ -512,6 +520,18 @@ theorem stateOf_offset (C : BoundaryCycle Q0) (i : Vertex) :
   rcases C.sigma_sign i with h | h <;>
     simp [h,neg_div,Real.arctan_neg]
 
+/-- At a core vertex the signed label is `σ` times the four-type core label. -/
+theorem stateOf_core_label (C : BoundaryCycle Q0) (i : Vertex) (hk : C.kind i ≠ .outer) :
+    (stateOf C i).signedLabel=
+      C.sigma i*CorePairGeometry.label CorePairGeometry.K CorePairGeometry.g (C.a i) (C.b i) := by
+  have hb : label (branchOf C i) (C.a i) (C.b i)=
+      CorePairGeometry.label CorePairGeometry.K CorePairGeometry.g (C.a i) (C.b i) := by
+    cases he : C.kind i
+    · exact absurd he hk
+    all_goals simp [branchOf, he, label, CorePairGeometry.label, CorePairGeometry.K,
+      CorePairGeometry.g]
+  simp only [State.signedLabel, stateOf, signOf_spec, hb]
+
 /-- The last edge includes its genuine full-turn winding. -/
 noncomputable def pairAngle (C : BoundaryCycle Q0) (i : Vertex) : ℝ :=
   C.canonicalAngle (next i)-C.canonicalAngle i+if i=6 then 2*Real.pi else 0
@@ -566,6 +586,14 @@ theorem cycle_pair (C : BoundaryCycle Q0) (i : Vertex) (j : Fin 4)
         (9/50)*periodicFrameCost (C.canonicalAngle (next i)-C.canonicalAngle i)+
         (C.alpha (next i)-(stateOf C (next i)).signedLabel)-
         (C.alpha i-(stateOf C i).signedLabel) := by
+  by_cases hcore : (branchOf C i).type=0 ∧ (branchOf C (next i)).type=0
+  · have hi := (branchOf_core_iff C i).mp hcore.1
+    have hn := (branchOf_core_iff C (next i)).mp hcore.2
+    have hh := CorePairGeometry.core_cost (Or.inl ⟨rfl, rfl⟩) C i hi hn
+    have hc := CorePairGeometry.charge_upper (C.canonicalAngle (next i)-C.canonicalAngle i)
+    have h0 : handGamma 0 0=23/25 := by norm_num [handGamma, handGammaNumerator]
+    rw [stateOf_core_label C i hi, stateOf_core_label C (next i) hn, hcore.1, hcore.2, h0]
+    linarith
   have hm := canonical_margin_identity j _ _ _ _ _ _ _ _ (pairAngle C i)
     (C.center_eq i) (C.center_eq (next i)) (pairAngle_trig C i).1 (pairAngle_trig C i).2
   have hmargin : 0 ≤ SquaresInCircles.Eight.forwardMargin j
@@ -579,7 +607,7 @@ theorem cycle_pair (C : BoundaryCycle Q0) (i : Vertex) (j : Fin 4)
   have hh := pair (stateOf C i) (stateOf C (next i)) j (pairAngle C i)
     (pairAngle_mem C i)
     (by rw [hgap]; exact ⟨(boundary_gap_lower C le_rfl i).le,(boundary_gap_upper C le_rfl i).le⟩)
-    (by simpa only [stateOf,signOf_spec] using hmargin)
+    (by simpa only [stateOf,signOf_spec] using hmargin) (not_and_or.mp hcore)
   change handGamma (branchOf C i).type (branchOf C (next i)).type <
     (stateOf C i).cost (stateOf C (next i)) (pairAngle C i) at hh
   unfold State.cost at hh

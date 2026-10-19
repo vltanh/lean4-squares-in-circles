@@ -5,7 +5,7 @@ public import SquaresInCircles.Eight.Generated.Affine.DUpperAffine.Cover00
 
 /-! # The affine table `DUpperAffine`
 
-Each of its 18533 rows passes `checkRow`, so it satisfies its claim
+Each of its 14213 rows passes `checkRow`, so it satisfies its claim
 (`checkRow_claim`). The walks `coverBlock` over blocks of sources covering all arcs
 give the angle coverage (`coverBlocks_sound`). With the state chains and the
 arctangent intervals of the arcs they give the charged bound. -/
@@ -20,7 +20,7 @@ set_option maxRecDepth 100000
 /-- All rows of the table. -/
 noncomputable def rows : List AffineTableRow := data.map (·.toTableRow table ctx.den)
 
-theorem complete_row_count : rows.length = 18533 := by
+theorem complete_row_count : rows.length = 14213 := by
   simp only [rows, data, chunks, List.length_map, List.length_flatten, List.map_append,
     List.sum_append, parts000_length, parts001_length, Nat.reduceAdd]
 
@@ -32,13 +32,13 @@ theorem all_row_claims : ∀ r ∈ rows, r.Claim table := by
 theorem cover_endpoints : cover.EndpointsValid table := endpointsValid_atanEnds table _
 
 theorem cover_blocks :
-    AllBlocks (fun a n => ∃ c o, coverBlock coverCtx table a n c o chunks = true)
-    [(0, 46), (46, 29), (75, 29), (104, 43), (147, 34), (181, 17), (198, 1)] :=
+    AllBlocks (fun a n => ∃ c o, coverBlock coverCtx table true a n c o chunks = true)
+    [(0, 52), (52, 38), (90, 49), (139, 47), (186, 13)] :=
   by simp only [AllBlocks]; exact
-    ⟨⟨0, 0, cover_0⟩, ⟨15, 93, cover_1⟩, ⟨31, 16, cover_2⟩, ⟨44, 154, cover_3⟩, ⟨61, 13, cover_4⟩,
-    ⟨73, 128, cover_5⟩, ⟨91, 122, cover_6⟩, trivial⟩
+    ⟨⟨0, 0, cover_0⟩, ⟨16, 111, cover_1⟩, ⟨28, 7, cover_2⟩, ⟨45, 152, cover_3⟩, ⟨59, 43, cover_4⟩,
+    trivial⟩
 
-theorem cover_angles : cover.AngleCovers table rows :=
+theorem cover_angles : cover.AngleCovers table rows true :=
   coverBlocks_sound coverCtx_valid.1 coverCtx_valid.2 (by decide +kernel) cover_blocks
 
 theorem word_matches : ∀ i, (table.word i:ℝ)=(Candidate.word i:ℝ) := by
@@ -51,9 +51,10 @@ noncomputable def charged_bound (C : BoundaryCycle (table.radius:ℝ))
     (hcuts : ∀ i, (table.cuts i).Mem (C.tangent i))
     (hdiff : ∀ i, (table.differenceRange i).Mem (Candidate.delta F.theta i))
     (haxes : ∀ i j, (forwardAxis j).Feasible (C.square i) (C.square (next i)) →
-      ForwardAxis.ofIndex j∈table.allowedAxes i) :
+      ForwardAxis.ofIndex j∈table.allowedAxes i)
+    (hC : NoAdjacentCore C) :
     Candidate.ChargedBound C F β (fun i => (table.target i:ℝ)) :=
   AffineCover.chargedBoundOf cover_endpoints cover_states cover_angles all_row_claims C F β
-    word_matches hcharge hcuts hdiff haxes
+    word_matches hcharge hcuts hdiff haxes (fun _ => hC.corePairBound F)
 
 end SquaresInCircles.Eight.Generated.Affine.DUpperAffine

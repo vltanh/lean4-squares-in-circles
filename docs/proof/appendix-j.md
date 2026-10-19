@@ -71,9 +71,9 @@ and $h_2$. $\square$
 [`Eight.ExactFamily.Coordinates.h₂deriv`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L75),
 [`Eight.ExactFamily.Coordinates.positionDerivative`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L77),
 [`Eight.ExactFamily.Coordinates.tiltDerivative`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L79),
-[`Eight.ExactFamily.radicalCoordinates`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L26),
-[`Eight.ExactFamily.familyY_radical`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L119),
-[`Eight.ExactFamily.familyZ_radical`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L134).*
+[`Eight.ExactFamily.radicalCoordinates`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L27),
+[`Eight.ExactFamily.familyY_radical`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L120),
+[`Eight.ExactFamily.familyZ_radical`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L135).*
 
 The second derivatives used below are, with $\partial$ for $\partial/\partial y$,
 
@@ -130,11 +130,11 @@ m\left(\tfrac{7831}{2000}\right) > \tfrac1{8000} - \tfrac1{12 \cdot 2000^2} - \t
 ```
 
 *Lean:
-[`Eight.ExactFamily.hessian_data`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L85),
-[`Eight.ExactFamily.family_q_bound`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L82),
-[`Eight.ExactFamily.trial_gradients`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L207),
-[`Eight.ExactFamily.minimum_endpoint_signs`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L367),
-[`Eight.ExactFamily.sharp_endpoint_signs`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L170),
+[`Eight.ExactFamily.hessian_data`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L80),
+[`Eight.ExactFamily.family_q_bound`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L77),
+[`Eight.ExactFamily.trial_gradients`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L192),
+[`Eight.ExactFamily.minimum_endpoint_signs`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L345),
+[`Eight.ExactFamily.sharp_endpoint_signs`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L143),
 [`Eight.ExactFamily.Generated.fullFyy_bound`](../../SquaresInCircles/Eight/ExactFamily/Generated/LocalStationaryBounds.lean#L53),
 [`Eight.ExactFamily.Generated.fullFq_bound`](../../SquaresInCircles/Eight/ExactFamily/Generated/LocalStationaryBounds.lean#L47).*
 
@@ -162,10 +162,10 @@ $0 \le \lambda \le 1$, with $\phi'' \ge \frac14|P' - P|^2$. Integrating twice,
 $\phi(1) \ge \phi(0) + \phi'(0) + \frac18|P' - P|^2$, which is (J.1). $\square$
 
 *Lean:
-[`Eight.ExactFamily.quadratic_form_bound`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L96),
-[`Eight.ExactFamily.family_segment_first`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L126),
-[`Eight.ExactFamily.family_segment_second`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L136),
-[`Eight.ExactFamily.family_strong_convex`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L156).*
+[`Eight.ExactFamily.quadratic_form_bound`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L91),
+[`Eight.ExactFamily.family_segment_first`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L121),
+[`Eight.ExactFamily.family_segment_second`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L131),
+[`Eight.ExactFamily.family_strong_convex`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L151).*
 
 ## J.3 The minimized defect
 
@@ -206,16 +206,15 @@ value theorem gives one zero $q_*$, and $m(\ell_*) > 0 > m(u_*)$ places it
 between $\ell_*$ and $u_*$. $\square$
 
 *Lean:
-[`Eight.ExactFamily.minimum_exists`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L191),
-[`Eight.ExactFamily.minimum_interior`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L220),
-[`Eight.ExactFamily.minimizingPose_stationary`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L285),
-[`Eight.ExactFamily.stationary_pose_unique`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L179),
-[`Eight.ExactFamily.stationary_is_minimum`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L302),
-[`Eight.ExactFamily.family_radius_difference`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L309),
-[`Eight.ExactFamily.minimum_radius_difference`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L334),
-[`Eight.ExactFamily.minimum_continuous`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L345),
-[`Eight.ExactFamily.unique_minimum_zero`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L382),
-[`Eight.ExactFamily.qStar_bracket`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L187).*
+[`Eight.ExactFamily.minimum_exists`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L176),
+[`Eight.ExactFamily.minimum_interior`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L205),
+[`Eight.ExactFamily.minimizingPose_stationary`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L270),
+[`Eight.ExactFamily.FiveCornerGeometry.minimizer_unique`](../../SquaresInCircles/Eight/ExactFamily/Convexity.lean#L306),
+[`Eight.ExactFamily.family_radius_difference`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L287),
+[`Eight.ExactFamily.minimum_radius_difference`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L312),
+[`Eight.ExactFamily.minimum_continuous`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L323),
+[`Eight.ExactFamily.unique_minimum_zero`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L360),
+[`Eight.ExactFamily.qStar_bracket`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L160).*
 
 ![The graph of the minimized defect m(q) against q over the radius interval from 7831/2000 to 9789/2500: a decreasing, nearly straight line from about 0.000126 to about -0.000243, crossing zero at q*, between two dashed lines of slopes -3 and -4 through the crossing. Beside it, an enlargement of the shaded bracket from l* to u*, of width 3 times 10 to the minus 16, in which m, computed to 60 digits and drawn in units of 10 to the minus 16, decreases from about 7.4 at l* to about -3.7 at u* and crosses zero at q*](figures/appendix-j/minimum.svg)
 
@@ -242,21 +241,14 @@ $1 - z^2 \le 1$, so $0 < z < \frac1{10}$. So $(q, y, z)$ lies in the initial
 box of Lemma J.1 and is a common zero of $F$, $F_y$ and $F_z$, the last one
 because $F_z = \frac2{1 + z^2}F_t$.
 
-The formal proof shows that the common zeros of $F$, $F_y$ and $F_z$ in the
-initial box lie in $\mathcal R$ by a recursive closed subdivision of the
-initial box. Each box of the subdivision is either contained in $\mathcal R$,
-or one of the three functions is shown by interval arithmetic to have no zero
-on it, or it is split along one coordinate at a rational cut into two closed
-boxes that share the cut. The subdivision has about 22,600 boxes. A common
-zero lies in some leaf; it cannot lie in a leaf of the second kind, so it lies
-in $\mathcal R$. $\square$
+The formal proof follows the analytic argument below. $\square$
 
 *Lean:
-[`Eight.ExactFamily.stationary_local`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L148),
-[`Eight.ExactFamily.Generated.stationary_localization`](../../SquaresInCircles/Eight/ExactFamily/Generated/StationaryLocalization.lean#L2146),
-[`Eight.ExactFamily.CompactRootCover.sound`](../../SquaresInCircles/Eight/ExactFamily/CompactRootCover.lean#L172),
-[`Eight.ExactFamily.interval_excludes_zero`](../../SquaresInCircles/Eight/ExactFamily/RootCover.lean#L24),
-[`Eight.ExactFamily.closed_box_split`](../../SquaresInCircles/Eight/ExactFamily/RootCover.lean#L43).*
+[`Eight.ExactFamily.stationary_local`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L252),
+[`Eight.ExactFamily.FiveCornerGeometry.stationary_chain_unique`](../../SquaresInCircles/Eight/ExactFamily/Envelope.lean#L1074),
+[`Eight.ExactFamily.FiveCornerGeometry.positionEnvelope_critical_unique`](../../SquaresInCircles/Eight/ExactFamily/Envelope.lean#L965),
+[`Eight.ExactFamily.FiveCornerGeometry.strictConvexOn_defect`](../../SquaresInCircles/Eight/ExactFamily/Convexity.lean#L297),
+[`Eight.ExactFamily.FiveCornerGeometry.defect_radius_decrease`](../../SquaresInCircles/Eight/ExactFamily/Convexity.lean#L449).*
 
 The hand proof reaches the same conclusion analytically. It shows that, for
 each squared radius in $[(\frac{79}{40})^2, \frac{9789}{2500}]$ and tilt in
@@ -301,15 +293,15 @@ $[\ell_*, u_*] \times [y_0 - 10^{-12}, y_0 + 10^{-12}] \times [z_0 - 10^{-12}, z
 interval $\frac1{20} \le \tan\frac t2 \le \frac{81}{1000}$. $\square$
 
 *Lean:
-[`Eight.ExactFamily.sharpData`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L239),
-[`Eight.ExactFamily.sharpData_stationary`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L241),
-[`Eight.ExactFamily.stationary_unique`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L276),
-[`Eight.ExactFamily.exact_stationary_existsUnique`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L306),
-[`Eight.ExactFamily.sharpPose_close`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L207),
-[`Eight.ExactFamily.sharpBox_mem`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L230),
-[`Eight.ExactFamily.sharp_coordinates`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L309),
-[`Eight.ExactFamily.sharp_y`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L344),
-[`Eight.ExactFamily.qStar_limits`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L199).*
+[`Eight.ExactFamily.sharpData`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L212),
+[`Eight.ExactFamily.sharpData_stationary`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L214),
+[`Eight.ExactFamily.stationary_unique`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L249),
+[`Eight.ExactFamily.exact_stationary_existsUnique`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L257),
+[`Eight.ExactFamily.sharpPose_close`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L180),
+[`Eight.ExactFamily.sharpBox_mem`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L203),
+[`Eight.ExactFamily.sharp_coordinates`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L260),
+[`Eight.ExactFamily.sharp_y`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L295),
+[`Eight.ExactFamily.qStar_limits`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L172).*
 
 The statement of Theorem 11.1 defines $q_*$ by the stationary system alone,
 through a choice of its unique solution; the formal proof shows that this
@@ -378,8 +370,8 @@ Adding the five equations of (J.2), the right sides cancel. $\square$
 [`Eight.ExactFamily.Coordinates.last_force_residual`](../../SquaresInCircles/Eight/ExactFamily/Weights.lean#L143),
 [`Eight.ExactFamily.Coordinates.force_balance`](../../SquaresInCircles/Eight/ExactFamily/Weights.lean#L193),
 [`Eight.ExactFamily.Coordinates.slider_forces_zero`](../../SquaresInCircles/Eight/ExactFamily/Weights.lean#L204),
-[`Eight.ExactFamily.sharp_mu_positive`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L350),
-[`Eight.ExactFamily.sharp_lambda_positive`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L353).*
+[`Eight.ExactFamily.sharp_mu_positive`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L301),
+[`Eight.ExactFamily.sharp_lambda_positive`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L304).*
 
 At the solution of the stationary system the weights are approximately
 $\mu = (0.2097, 0.2212, 0.2734, 0.0251, 0.2706)$ for $A, B, D, E, H$ and

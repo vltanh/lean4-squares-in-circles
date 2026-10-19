@@ -2,7 +2,7 @@ module
 
 public import SquaresInCircles.Eight.Generated.Affine.Mismatch015To001Affine.Data
 
-/-! The angle coverage for the source arcs 116 to 289, checked by `decide +kernel`. -/
+/-! The angle coverage for the source arcs 121 to 320, checked by `decide +kernel`. -/
 
 @[expose] public section
 noncomputable section
@@ -11,40 +11,40 @@ open Arithmetic
 
 set_option maxRecDepth 100000
 
-theorem cover_12 : coverBlock coverCtx table 116 7 238 170 chunks = true := by
+theorem cover_12 : coverBlock coverCtx table true 121 8 239 7 chunks = true := by
   decide +kernel
 
-theorem cover_13 : coverBlock coverCtx table 123 8 258 47 chunks = true := by
+theorem cover_13 : coverBlock coverCtx table true 129 12 260 53 chunks = true := by
   decide +kernel
 
-theorem cover_14 : coverBlock coverCtx table 131 13 278 60 chunks = true := by
+theorem cover_14 : coverBlock coverCtx table true 141 21 276 103 chunks = true := by
   decide +kernel
 
-theorem cover_15 : coverBlock coverCtx table 144 19 294 65 chunks = true := by
+theorem cover_15 : coverBlock coverCtx table true 162 18 292 153 chunks = true := by
   decide +kernel
 
-theorem cover_16 : coverBlock coverCtx table 163 18 309 183 chunks = true := by
+theorem cover_16 : coverBlock coverCtx table true 180 17 310 122 chunks = true := by
   decide +kernel
 
-theorem cover_17 : coverBlock coverCtx table 181 17 327 170 chunks = true := by
+theorem cover_17 : coverBlock coverCtx table true 197 21 329 47 chunks = true := by
   decide +kernel
 
-theorem cover_18 : coverBlock coverCtx table 198 18 346 135 chunks = true := by
+theorem cover_18 : coverBlock coverCtx table true 218 12 347 111 chunks = true := by
   decide +kernel
 
-theorem cover_19 : coverBlock coverCtx table 216 12 363 33 chunks = true := by
+theorem cover_19 : coverBlock coverCtx table true 230 12 366 49 chunks = true := by
   decide +kernel
 
-theorem cover_20 : coverBlock coverCtx table 228 12 381 189 chunks = true := by
+theorem cover_20 : coverBlock coverCtx table true 242 12 384 159 chunks = true := by
   decide +kernel
 
-theorem cover_21 : coverBlock coverCtx table 240 12 400 103 chunks = true := by
+theorem cover_21 : coverBlock coverCtx table true 254 22 402 161 chunks = true := by
   decide +kernel
 
-theorem cover_22 : coverBlock coverCtx table 252 18 418 199 chunks = true := by
+theorem cover_22 : coverBlock coverCtx table true 276 24 419 12 chunks = true := by
   decide +kernel
 
-theorem cover_23 : coverBlock coverCtx table 270 20 434 89 chunks = true := by
+theorem cover_23 : coverBlock coverCtx table true 300 21 438 149 chunks = true := by
   decide +kernel
 
 end SquaresInCircles.Eight.Generated.Affine.Mismatch015To001Affine

@@ -1,11 +1,11 @@
 module
 
-public import SquaresInCircles.Eight.ExactFamily.RootCover
+public import SquaresInCircles.Eight.ExactFamily.Expression
 
 /-! The formulas of the stationary point: the defect `F` of the chain in the variables `(q, y, z)`,
 its first partial derivatives and its second derivatives in `y` and `z`, the coordinates of the
-chain and the determinant of the shifted Hessian, with the boxes of the localization and the
-bracket of `qStar`. The derivative identities are decided by evaluating the symbolic derivative in
+chain and the determinant of the shifted Hessian, with the box `localBox` and the bracket
+of `qStar`. The derivative identities are decided by evaluating the symbolic derivative in
 the kernel. -/
 
 @[expose] public section
@@ -293,10 +293,7 @@ noncomputable def sineFormula : Formula 3 := formula36
 noncomputable def hOneFormula : Formula 3 := formula42
 noncomputable def hTwoFormula : Formula 3 := formula50
 noncomputable def determinantFormula : Formula 3 := formula258
-noncomputable def stationaryFormula : Formula 3 := FFormula
-noncomputable def stationaryTargets : Fin 3 → Formula 3 := ![FFormula,FyFormula,FzFormula]
 noncomputable def localBox : QBox 3 := ![⟨(7831/2000),(9789/2500)⟩, ⟨(-937/1000),(-179/200)⟩, ⟨(1/20),(81/1000)⟩]
-noncomputable def initialBox : QBox 3 := ![⟨(6241/1600),(9789/2500)⟩, ⟨-1,(-1/2)⟩, ⟨0,(1/10)⟩]
 noncomputable def trialY : ℝ := (-3682626712030424527/4000000000000000000)
 noncomputable def trialZ : ℝ := (618974110076603597/10000000000000000000)
 noncomputable def sharpLower : ℝ := (97888353437936878163/25000000000000000000)

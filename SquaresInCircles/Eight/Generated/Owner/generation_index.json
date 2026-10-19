@@ -32,18 +32,6 @@
       "sha256": "4ddeb0fb36368200083895355468c77e74b399b4c6242f17b3908891b5ff23c0"
     },
     {
-      "file": "data/eight/owner/mixed001.txt",
-      "table": "mixedTable001",
-      "rows": 30,
-      "sha256": "aec42966b827185cf0f00b6b00cd65dd4ad9aeeffd1ca501858f4a002c272f72"
-    },
-    {
-      "file": "data/eight/owner/mixed002.txt",
-      "table": "mixedTable002",
-      "rows": 30,
-      "sha256": "9a5791d5644a75d35f0c7d53d586684575eeedce902a76755fc38fa89629d93a"
-    },
-    {
       "file": "data/eight/owner/mixed003.txt",
       "table": "mixedTable003",
       "rows": 49,
@@ -54,18 +42,6 @@
       "table": "mixedTable004",
       "rows": 281,
       "sha256": "15cb2aceb27caef7f76f91e1342b3400fa24bcc2e1948c56eb1f1965396ac390"
-    },
-    {
-      "file": "data/eight/owner/mixed005.txt",
-      "table": "mixedTable005",
-      "rows": 30,
-      "sha256": "167b14e449398a95ac8468998be6ad76e03222941c3f799f579a52156b4aa7e6"
-    },
-    {
-      "file": "data/eight/owner/mixed006.txt",
-      "table": "mixedTable006",
-      "rows": 30,
-      "sha256": "ec00f51c8911a975c74eb66d92054c1ce55fd3c5ac5c93f7acd39796f5557494"
     },
     {
       "file": "data/eight/owner/mixed007.txt",
@@ -80,18 +56,6 @@
       "sha256": "2fb43c9ab71c99992dbac2d52a9c78dbad83bdfa910cb6179bcab7988d4547e1"
     },
     {
-      "file": "data/eight/owner/mixed009.txt",
-      "table": "mixedTable009",
-      "rows": 30,
-      "sha256": "d520987e20257d5356328b3e49be10aca46fc9700e6903fe29f2c540cd047bf8"
-    },
-    {
-      "file": "data/eight/owner/mixed010.txt",
-      "table": "mixedTable010",
-      "rows": 30,
-      "sha256": "dcb6fed3114d2a0941dd1dcaf2a743d23275d641008c2e691776a1b72424ed2b"
-    },
-    {
       "file": "data/eight/owner/mixed011.txt",
       "table": "mixedTable011",
       "rows": 31,
@@ -102,66 +66,6 @@
       "table": "mixedTable012",
       "rows": 35,
       "sha256": "94377af7c238ca29c4dc741cc353941f36312a103b6666bd417ccd18680049ad"
-    },
-    {
-      "file": "data/eight/owner/mixed013.txt",
-      "table": "mixedTable013",
-      "rows": 30,
-      "sha256": "88cb53e995ad1a8c2527d2e0a1e733fc92dffd2d46bdc03f5aba0b963ede7631"
-    },
-    {
-      "file": "data/eight/owner/mixed014.txt",
-      "table": "mixedTable014",
-      "rows": 30,
-      "sha256": "e0e0fc0423f998c69d0bb6273591db1c74917dbd4dfbee76d2778f08f80ecd27"
-    },
-    {
-      "file": "data/eight/owner/quarter004.txt",
-      "table": "quarterTable004",
-      "rows": 31,
-      "sha256": "b7469b2b34b56e952e094240f465371afe25185affa30f30e17b9324f5134145"
-    },
-    {
-      "file": "data/eight/owner/quarter005.txt",
-      "table": "quarterTable005",
-      "rows": 48,
-      "sha256": "a2efc52c623423bbbd5501dd50bce1bf16f3d90d1bfbd5f2273e1c2b03d22413"
-    },
-    {
-      "file": "data/eight/owner/quarter006.txt",
-      "table": "quarterTable006",
-      "rows": 30,
-      "sha256": "c486c30ea45210be81a903ac2efd7cee060d1da5507e75ed2827baba088fce27"
-    },
-    {
-      "file": "data/eight/owner/quarter007.txt",
-      "table": "quarterTable007",
-      "rows": 30,
-      "sha256": "215d84cdeb7640f8dea2255c7bb0fe532cea43fd5032a6b534005e80e2716f2d"
-    },
-    {
-      "file": "data/eight/owner/quarter016.txt",
-      "table": "quarterTable016",
-      "rows": 43,
-      "sha256": "63d80c4610283f7e3f0caff82901a0856491edf55817acb471ee1a7d7aa53585"
-    },
-    {
-      "file": "data/eight/owner/quarter017.txt",
-      "table": "quarterTable017",
-      "rows": 103,
-      "sha256": "5db4a9b86fc4b95ccbd42a345016993535f1c3caed31bb11bd37d5390cd08740"
-    },
-    {
-      "file": "data/eight/owner/quarter018.txt",
-      "table": "quarterTable018",
-      "rows": 30,
-      "sha256": "f54633e8cb8e8690a7b2146044753f94d0e70a33ed03e473a1337267624ce893"
-    },
-    {
-      "file": "data/eight/owner/quarter019.txt",
-      "table": "quarterTable019",
-      "rows": 30,
-      "sha256": "db4c939f899cb43e5b874aed4787081a07e6d7085c9977ee239cb156acb797f4"
     },
     {
       "file": "data/eight/owner/tilt018.txt",

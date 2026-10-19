@@ -3,7 +3,7 @@ module
 public import SquaresInCircles.Eight.Generated.Pairs.Short6.Data
 public meta import SquaresInCircles.Eight.IntRows
 
-/-! Rows 0 to 186 of the table, checked by `decide +kernel`, a hundred rows a theorem. -/
+/-! Rows 0 to 152 of the table, checked by `decide +kernel`, a hundred rows a theorem. -/
 
 @[expose] public section
 noncomputable section
@@ -18,11 +18,11 @@ def rows000_0 : List AffineRow :=
 theorem rows000_0_check : checkRows ctx rows000_0 = true := by decide +kernel
 
 def rows000_1 : List AffineRow :=
-  nat_rows% "../../../../../data/eight/pairs/short_6.rows" 101 188 ↦ AffineRow.ofData
+  nat_rows% "../../../../../data/eight/pairs/short_6.rows" 101 154 ↦ AffineRow.ofData
 
 theorem rows000_1_check : checkRows ctx rows000_1 = true := by decide +kernel
 
-/-- Rows 0 to 186. -/
+/-- Rows 0 to 152. -/
 def chunk000 : List AffineRow :=
   rows000_0 ++ rows000_1
 

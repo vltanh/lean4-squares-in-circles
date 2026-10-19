@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Generate exact rational interval data for the stationary equations.
 
-Writes StationaryFormula.lean, LocalStationaryBounds.lean and
-StationaryLocalization.lean in SquaresInCircles/Eight/ExactFamily/Generated.
+Writes StationaryFormula.lean and LocalStationaryBounds.lean in
+SquaresInCircles/Eight/ExactFamily/Generated.
 This program produces Lean data, not a proof by external execution.  Every
-interval and every closed split is checked by the ordinary Lean predicates.
+interval is checked by the ordinary Lean predicates.
 It never invokes Lean, lake, a compiler, or CI.
 """
 from fractions import Fraction as Q
@@ -12,7 +12,6 @@ from math import isqrt
 from pathlib import Path
 
 OUT = Path(__file__).resolve().parents[2]/'SquaresInCircles'/'Eight'/'ExactFamily'/'Generated'
-DEPTH = 48
 
 
 class Algebra:
@@ -192,50 +191,8 @@ def fx_enclosure(box,t,p):
 def fx_bounded(box,t,lo,hi,p):
     I=fx_enclosure(box,t,p)
     return I is not None and fx_ofrat(lo,p)[1]<=I[0] and I[1]<=fx_ofrat(hi,p)[0]
-def fx_excludes(box,t,p):
-    I=fx_enclosure(box,t,p)
-    return I is not None and (I[1]<0 or 0<I[0])
-def fx_mean_value(box,t,D,p):
-    """The interval of `MeanValueCover.meanValue`: f(c) + sum_j D_j(B) (B_j - c_j)."""
-    c=[(I[0]+I[1])/2 for I in box]
-    I=fx_enclosure(tuple((x,x) for x in c),t,p)
-    Ds=[fx_enclosure(box,d,p) for d in D]
-    if I is None or None in Ds: return None
-    for j in range(3):
-        P=fx_mul(Ds[j],(fx_ofrat(box[j][0]-c[j],p)[0],fx_ofrat(box[j][1]-c[j],p)[1]),p)
-        I=(I[0]+P[0],I[1]+P[1])
-    return I
 
 local = ((Q(7831,2000),Q(9789,2500)),(Q(-937,1000),Q(-179,200)),(Q(1,20),Q(81,1000)))
-initial = ((Q(6241,1600),Q(9789,2500)),(Q(-1),Q(-1,2)),(Q(0),Q(1,10)))
-
-SPLIT_SCALE = (Q(8), Q(1), Q(2))
-COVER_BITS = 40
-
-def build_cover(partials):
-    """A cover of `initial` by closed cuts.  Every leaf lies in `local`, or one target has a
-    fixed-point enclosure on it that excludes zero: a direct one, or the mean-value enclosure
-    f(c) + sum_j D_j f(B) (B_j - c_j) about the centre c.  Of the tests that succeed, the one
-    with the fewest formula nodes is kept."""
-    targets=[F,Fy,Fz]
-    cost_direct={t:len(A.dependencies([t])) for t in targets}
-    cost_mv={t:len(A.dependencies([t]))+len(A.dependencies(partials[t])) for t in targets}
-    def excludes(I): return I is not None and (I[1]<0 or 0<I[0])
-    def visit(box,depth):
-        if inside(box,local): return ('inside',0)
-        options=[(cost_direct[t],('exclude',j,cost_direct[t])) for j,t in enumerate(targets)
-          if fx_excludes(box,t,COVER_BITS)]
-        if not options:
-            options=[(cost_mv[t],('meanValue',j,cost_mv[t])) for j,t in enumerate(targets)
-              if excludes(fx_mean_value(box,t,partials[t],COVER_BITS))]
-        if options: return min(options)[1]
-        if depth>=DEPTH: raise RuntimeError(('unresolved',box))
-        widths=[(I[1]-I[0])*w for I,w in zip(box,SPLIT_SCALE)]
-        axis=max(range(3),key=lambda i:widths[i])
-        cut=(box[axis][0]+box[axis][1])/2
-        L=list(box);R=list(box);L[axis]=(box[axis][0],cut);R[axis]=(cut,box[axis][1])
-        return ('split',axis,cut,visit(tuple(L),depth+1),visit(tuple(R),depth+1))
-    return visit(initial,0)
 
 
 def rat(q):
@@ -280,8 +237,8 @@ def header(imports,doc):
 
 FORMULA_DOC='''The formulas of the stationary point: the defect `F` of the chain in the variables `(q, y, z)`,
 its first partial derivatives and its second derivatives in `y` and `z`, the coordinates of the
-chain and the determinant of the shifted Hessian, with the boxes of the localization and the
-bracket of `qStar`. The derivative identities are decided by evaluating the symbolic derivative in
+chain and the determinant of the shifted Hessian, with the box `localBox` and the bracket
+of `qStar`. The derivative identities are decided by evaluating the symbolic derivative in
 the kernel.'''
 
 BOUNDS_DOC='''Interval certificates near the stationary point: regularity of `F`, `F_y` and `F_z` on
@@ -311,15 +268,12 @@ def write_local(out):
     bounds={'F':F,'Fq':Fq,'Fy':Fy,'Fz':Fz,'Fyy':Fyy,'Fyz':Fyz,'Fzz':Fzz,
       'xOne':x1,'xTwo':x2,'yThree':y3,'xFour':x4,'cosine':c,'sine':s,'hOne':h1,'hTwo':h2,
       'determinant':det}
-    lines=[header(['SquaresInCircles.Eight.ExactFamily.RootCover'],FORMULA_DOC)]
+    lines=[header(['SquaresInCircles.Eight.ExactFamily.Expression'],FORMULA_DOC)]
     for i,n in enumerate(A.nodes):
         core=formula_node(n).replace(' n',' formula')
         lines.append(f'def formula{i} : Formula 3 := {core}')
     lines += ['',*['def '+name+'Formula : Formula 3 := formula'+str(i) for name,i in bounds.items()],
-      'def stationaryFormula : Formula 3 := FFormula',
-      'def stationaryTargets : Fin 3 → Formula 3 := ![FFormula,FyFormula,FzFormula]',
       'def localBox : QBox 3 := '+boxlit(local),
-      'def initialBox : QBox 3 := '+boxlit(initial),
       'def trialY : ℝ := '+rat(yt),'def trialZ : ℝ := '+rat(zt),
       'def sharpLower : ℝ := '+rat(qlo),'def sharpUpper : ℝ := '+rat(qhi),'',
       'theorem Fq_diff : FFormula.diff 0 = FqFormula := by decide +kernel',
@@ -365,7 +319,6 @@ def write_local(out):
       'end SquaresInCircles.Eight.ExactFamily.Generated','']
     lines=[('noncomputable '+l if l.startswith('def ') else l) for l in lines]
     (out/'StationaryFormula.lean').write_text('\n'.join(lines))
-    formulas=len(A.nodes)
     lines=[header(['SquaresInCircles.Eight.ExactFamily.Generated.StationaryFormula',
       'SquaresInCircles.Eight.ExactFamily.FixedEval'],BOUNDS_DOC)+BOUNDS_HELPERS]
     def certificate(name,box,target,lo=None,hi=None,bits=80,regular=False):
@@ -490,102 +443,6 @@ def write_local(out):
     lines += ['end SquaresInCircles.Eight.ExactFamily.Generated','']
     lines=[('noncomputable '+l if l.startswith('def ') else l) for l in lines]
     (out/'LocalStationaryBounds.lean').write_text('\n'.join(lines))
-    return formulas
-
-def write_cover(out,formulas):
-    """The localization cover, in one module.  `formulas` is the number of formulas defined in
-    StationaryFormula.lean; the partial derivatives in `q` of `F_y` and `F_z` are new formulas."""
-    Fyq=A.derivative(Fy,0);Fzq=A.derivative(Fz,0)
-    # F_z has the same derivative in y as F_y in z (`mixed_partials`).
-    partials={F:[Fq,Fy,Fz],Fy:[Fyq,Fyy,Fyz],Fz:[Fzq,Fyz,Fzz]}
-    tree=build_cover(partials)
-    nodes=[]   # preorder: (parent box definition, node, left, right)
-    def number(t,parent):
-        k=len(nodes);nodes.append(None)
-        if t[0]=='split':
-            l=number(t[3],f'coverBox{k}.left {t[1]} {rat(t[2])}')
-            r=number(t[4],f'coverBox{k}.right {t[1]} {rat(t[2])}')
-            nodes[k]=(parent,t,l,r)
-        else: nodes[k]=(parent,t,None,None)
-        return k
-    number(tree,'initialBox')
-    leaves=[k for k,n in enumerate(nodes) if n[1][0]!='split']
-    kinds=[nodes[k][1][0] for k in leaves]
-    def depth(k):
-        n=nodes[k]
-        return 0 if n[2] is None else 1+max(depth(n[2]),depth(n[3]))
-    def name(i): return f'formula{i}' if i<formulas else f'coverFormula{i}'
-    def node_text(n):
-        op=n[0]
-        if op=='const': return f'.const {const_arg(n[1])}'
-        if op=='var': return f'.var {n[1]}'
-        if op in ('neg','inv','sqrt'): return f'.{op} {name(n[1])}'
-        if op=='pow': return f'.pow {name(n[1])} {n[2]}'
-        return f'.{op} {name(n[1])} {name(n[2])}'
-    lines=['module','','public import SquaresInCircles.Eight.ExactFamily.Generated.StationaryFormula',
-      'public import SquaresInCircles.Eight.ExactFamily.MeanValueCover','','/-!',
-      '# Stationary localization','',
-      'Every simultaneous zero of `F`, `F_y` and `F_z` in `initialBox` lies in `localBox`. Closed cuts',
-      f'split `initialBox` into a tree of {len(nodes)} boxes of depth at most {depth(0)}. Each of its {len(leaves)} leaves lies in',
-      f'`localBox` ({kinds.count("inside")} leaves), or one target has a fixed-point enclosure on it that excludes',
-      f'zero: a direct one ({kinds.count("exclude")} leaves) or a mean-value enclosure ({kinds.count("meanValue")} leaves) built from enclosures',
-      'of the partial derivatives.','-/','','@[expose] public section','noncomputable section',
-      'namespace SquaresInCircles.Eight.ExactFamily.Generated','open Arithmetic MeanValueCover','',
-      'set_option maxRecDepth 1000000','set_option linter.all false','']
-    for i in A.dependencies([Fyq,Fzq]):
-        if i>=formulas: lines.append(f'def coverFormula{i} : Formula 3 := {node_text(A.nodes[i])}')
-    lines += [f'def coverFyq : Formula 3 := {name(Fyq)}',f'def coverFzq : Formula 3 := {name(Fzq)}','',
-      'theorem coverFyq_diff : FyFormula.diff 0 = coverFyq := by decide +kernel',
-      'theorem coverFzq_diff : FzFormula.diff 0 = coverFzq := by decide +kernel','',
-      '/-- The partial derivatives of the three targets. -/',
-      'def coverPartial : Fin 3 → Fin 3 → Formula 3 :=',
-      '  ![![FqFormula, FyFormula, FzFormula], ![coverFyq, FyyFormula, FyzFormula],',
-      '    ![coverFzq, FyzFormula, FzzFormula]]','',
-      'theorem coverPartial_eval (j k : Fin 3) (x : Fin 3 → ℝ) :',
-      '    ((stationaryTargets j).diff k).eval x = (coverPartial j k).eval x := by',
-      '  fin_cases j <;> fin_cases k',
-      '  · show (FFormula.diff 0).eval x = FqFormula.eval x; rw [Fq_diff]',
-      '  · show (FFormula.diff 1).eval x = FyFormula.eval x; rw [Fy_diff]',
-      '  · show (FFormula.diff 2).eval x = FzFormula.eval x; rw [Fz_diff]',
-      '  · show (FyFormula.diff 0).eval x = coverFyq.eval x; rw [coverFyq_diff]',
-      '  · show (FyFormula.diff 1).eval x = FyyFormula.eval x; rw [Fyy_diff]',
-      '  · show (FyFormula.diff 2).eval x = FyzFormula.eval x; rw [Fyz_diff]',
-      '  · show (FzFormula.diff 0).eval x = coverFzq.eval x; rw [coverFzq_diff]',
-      '  · exact mixed_partials x',
-      '  · show (FzFormula.diff 2).eval x = FzzFormula.eval x; rw [Fzz_diff]','',
-      '/-- The radicands and denominators of the three targets are positive on `initialBox`. -/',
-      'theorem coverRegular (j : Fin 3) :',
-      '    ∀ x, initialBox.Mem x → (stationaryTargets j).RegularAt x := by',
-      '  intro x hx',
-      f'  fin_cases j <;> exact FixedEval.regular_sound (p := {COVER_BITS}) (by decide +kernel) hx','']
-    for k,(parent,_,_,_) in enumerate(nodes):
-        lines.append(f'def coverBox{k} : QBox 3 := {parent}')
-    lines.append('')
-    for k in leaves:
-        t=nodes[k][1]
-        lines.append(f'theorem cover{k} : Covered stationaryTargets localBox coverBox{k} :=')
-        if t[0]=='inside': lines.append('  covered_inside (by decide +kernel)')
-        elif t[0]=='exclude':
-            lines.append(f'  covered_exclude (p := {COVER_BITS}) {t[1]} (by decide +kernel)')
-        else:
-            lines += [f'  covered_meanValue (p := {COVER_BITS}) {t[1]} (coverPartial {t[1]}) (coverPartial_eval {t[1]})',
-              f'    (regular_of_inside (by decide +kernel) (coverRegular {t[1]})) (by decide +kernel)']
-    lines.append('')
-    for k in reversed(range(len(nodes))):
-        parent,t,l,r=nodes[k]
-        if t[0]=='split':
-            lines += [f'theorem cover{k} : Covered stationaryTargets localBox coverBox{k} :=',
-              f'  covered_split coverBox{k} {t[1]} {rat(t[2])} cover{l} cover{r}']
-    lines += ['','theorem stationary_localization (env : Fin 3 → ℝ)',
-      '    (he : initialBox.Mem env) (hz : SimultaneousZeros stationaryTargets env) :',
-      '    localBox.Mem env :=','  cover0 env he hz','',
-      'end SquaresInCircles.Eight.ExactFamily.Generated','']
-    lines=[('noncomputable '+l if l.startswith('def ') else l) for l in lines]
-    (out/'StationaryLocalization.lean').write_text('\n'.join(lines))
-    return {'cover_nodes':len(nodes),'leaves':len(leaves),'depth':depth(0),
-      'inside':kinds.count('inside'),'exclude':kinds.count('exclude'),'meanValue':kinds.count('meanValue')}
-
 
 if __name__ == '__main__':
-    formulas=write_local(OUT)
-    print(write_cover(OUT,formulas))
+    write_local(OUT)
