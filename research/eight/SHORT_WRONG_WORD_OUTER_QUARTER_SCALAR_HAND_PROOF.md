@@ -44,6 +44,12 @@ original branches:
   proves eight original same-sign owners on both full halves.
 * [Complete positive role 4](formalization/HAND_SHORT_WORD_ROLE_FOUR_POSITIVE_QUARTER_WITHOUT_TABLES.md)
   finishes every role-4 \((+,+)\) owner.
+* [Complete opposite-primary lower halves](formalization/HAND_SHORT_WORD_NEGATIVE_PRIMARY_FAMILIES_WITHOUT_TABLES.md)
+  proves all six lower halves on edges 2, 4, and 6 using the original
+  separator's global angle restriction and fixed circle supports.
+* [Complete opposite-primary upper halves](formalization/HAND_SHORT_WORD_OPPOSITE_UPPER_PRIMARY_COMPLETE_WITHOUT_TABLES.md)
+  proves all six upper halves, including the three earlier owners it
+  cites, by the actual contact curve and uniform state curvature.
 
 The remaining role/sign families are separate obligations until the
 full original-case assembly binds them to their analytic proofs.

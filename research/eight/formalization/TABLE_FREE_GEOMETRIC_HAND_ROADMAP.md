@@ -370,8 +370,21 @@ every positive-sign role-4 owner at its intrinsic diagonal-support
 transition. Each theorem covers both full angle halves; all extension
 arguments use uniform monotonicity or concavity. These successors and
 the previously published families cover 75 of the 96 original
-outer-quarter angle halves. The remaining complete family assembly
-and the short-word mixed scalar replacements are still required.
+outer-quarter angle halves.
+
+`HAND_SHORT_WORD_NEGATIVE_PRIMARY_FAMILIES_WITHOUT_TABLES.md` now
+proves all six opposite-sign primary lower halves on edges 2, 4,
+and 6. The original separator forces the entire feasible angle
+domain below .226; one constant support per original owner then
+gives the claimed strict cost on that whole domain.
+`HAND_SHORT_WORD_OPPOSITE_UPPER_PRIMARY_COMPLETE_WITHOUT_TABLES.md`
+closes the other three upper-primary owners. Its single contact
+speed bound and uniform state convexity cover both sides of the
+intrinsic axial/diagonal contact transition. These two independently
+audited successors raise published coverage to 84 of the 96 original
+outer-quarter angle halves, and complete every opposite-sign
+primary owner on edges 2, 4, and 6. The twelve aligned halves and
+the complete short-word assembly are still required.
 
 ### G3 — Tangent cuts as a single structural theorem
 
