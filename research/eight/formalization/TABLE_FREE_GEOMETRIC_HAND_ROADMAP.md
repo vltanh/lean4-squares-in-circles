@@ -22,7 +22,7 @@ The unrestricted sharp theorem still requires global candidate capture.
 | G2 | Closed on paper | All six wrong words excluded; 0101011 is the only survivor. |
 | G3 | E normalization closed; six cuts open | The reflection proves \(u_E\le0\), not the G/T/H/D tangent bounds. |
 | G4 | Open | Coarse mismatch contractions \(S<.4\), then \(S<.26\). |
-| G5 | Open | \(.26\to.1\), sign rigidity, and \(.1\to.015\). |
+| G5 | Contractions open; sign subgate conditionally closed | \(.26\to.1\) and \(.1\to.015\) remain open; signs are proved from \(S\le.1\) without tangent cuts. |
 | G6 | Conditionally closed on paper | Quarter-owner rigidity under its stated signed cuts and \(S\le.015\). |
 | G7 | Last contraction open; mixed owners conditionally closed | Must prove \(.015\to.001\) without assuming the mixed owners first. |
 | G8 | Conditionally closed on paper | Complete positive-tilt tails under the captured cuts, owners and \(S\le.001\). |
@@ -189,6 +189,19 @@ then the required role signs, and
 \[
  S\le.1\Rightarrow S<.015.
 \]
+The **sign-rigidity subgate is now proved** in
+[HAND_ZERO_EDGE_SIGN_RIGIDITY_AT_ONE_TENTH](HAND_ZERO_EDGE_SIGN_RIGIDITY_AT_ONE_TENTH.md):
+using only the established G0--G2 geometry, every zero-quarter edge
+with \(|d_i|\le1/10\) has opposite nonzero signs, and its physical
+gap forces the source sign positive and target sign negative. Hence
+\[
+ S\le1/10\Longrightarrow
+ (\sigma_H,\sigma_G,\sigma_A,\sigma_B,\sigma_T,\sigma_D)
+      =(+,-,+,-,+,-),\quad u_E\le0.
+\]
+No G/T/H/D tangent cut or original SAT-owner selection is needed for
+this lemma. The preceding \(.26\to.1\) contraction and the following
+\(.1\to.015\) contraction are **still open**.
 A uniform first-order cycle stress with a controlled quadratic remainder
 is admissible. The desired signs must not enter the preceding contraction
 as unproved inputs.
@@ -277,6 +290,11 @@ directions of the complete family classification. No final conclusion
 may be used in reverse to justify an earlier capture gate.
 
 ## 7. Published closure milestones and retained history
+
+- `34eafad16ea7f7810aae68c627a3aa3ecf6d32d5`: exact table-free
+  sign rigidity on the **conditional** domain `S <= 1/10`, without
+  candidate tangent cuts or any owner assumption. This does not close
+  the preceding or following G5 contractions.
 
 - `452d5ad937e441b2ef3008af79d5f5214d5cf15f`: complete 0010111 table-free
   component assembly, exact original-axis cover and cyclic contradiction.
