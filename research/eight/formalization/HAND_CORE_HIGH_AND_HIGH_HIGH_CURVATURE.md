@@ -4,7 +4,8 @@
 
 This note replaces the sole remaining Bernstein-polynomial argument in each
 of `../CORE_HIGH_WHOLE_PAIR_HAND_PROOF.md` and
-`../HIGH_HIGH_WHOLE_PAIR_HAND_PROOF.md`. The original geometric support,
+`../HIGH_HIGH_WHOLE_PAIR_HAND_PROOF.md`, as well as the former two-interval
+corner-tail estimate in the first note. The original geometric support,
 sign, and axis arguments remain in force. Consequently their complete
 core/high and high/high pair inequalities follow without either polynomial
 coefficient list:
@@ -182,10 +183,67 @@ Apply (1) with \(M=3/250\). It proves on the complete interval that
 
 Together with (5), this proves the inherited Section 5.2's entire
 support bound, with a visible uniform reserve. Its Sections 2--5.1 and
-5.3--5.4 already cover every other sign, axis, and physical angle by
-circle supports, monotonicity, and concavity. All their closed boundary
-cases remain covered. This completes the table-free scalar replacement
-for the full \(C/H\) entry.
+5.3 use circle supports, monotonicity, and concavity. Replace the final
+two-interval estimate of Section 5.4 by the following single argument.
+
+### 2.3. One monotone bound for the positive core corner
+
+The inherited geometric reduction leaves only \(2.28\le x\le2.5\)
+and gives the necessary inequality
+\(a\ge\tfrac12+\sin x+\cos x/12\) for the high source.
+Set
+
+\[
+ z=\sin x+\frac{\cos x}{12},\quad
+ D=-\cos x+\frac{\sin x}{12}
+   =\sqrt{\frac{145}{144}-z^2},\quad
+ K=1+z,\quad Y=\sqrt{Q-K^2}.
+\]
+
+Here \(z'=-D\), \(.53<z<.71\), and all radicals are positive.
+The corner inequality and containing circle imply
+\(a\ge K-1/2\), \(b\le Y-1/2\). The adverse labels satisfy
+\(L_C<.786\), \(.18h<.0378\), and
+\(L_H=k-ua+vb\), where \(k<.946\). Hence the original pair cost
+is bounded below by
+
+\[
+ J(x)=x-.8238-k+u(K-\tfrac12)-v(Y-\tfrac12).
+\]
+
+Differentiation gives
+\(J'=1-uD-vDK/Y\). To bound its last term uniformly, regard
+\(G(z)=DK/Y\) as a function of \(z\). Its derivative has positive
+denominator \(DY^3\) and numerator
+
+\[
+ Q\left(\frac{145}{144}-z^2\right)
+       -zK(Q-K^2)
+ >Q\left(\frac{145}{144}-.71^2\right)
+       -.71(1.71)(Q-1.53^2)
+ =\frac{17128331}{300000000}>0.
+\]
+
+Thus \(G(z)<G(.71)<1.23\); the last squared comparison has
+positive difference \(2967291/100000000\). Similarly \(D<.86\),
+since \(.86^2-(145/144-.53^2)=61/4500\). Therefore
+
+\[
+ J'>1-.57(.86)-.391(1.23)=\frac{2887}{100000}>0.
+\]
+
+At the single left endpoint, the alternating sine and cosine sums give
+\(K-1/2>1.2\), and then \(Y-1/2<.514\) by squaring. Consequently
+
+\[
+ J(2.28)>2.28-.8238-.946+.569(1.2)-.391(.514)
+         =.992026>.8833.
+\]
+
+This covers the whole corner tail without the two old angle cells.
+All closed angle endpoints, core joins, signs, and axes in the inherited
+geometric reduction remain included. The full \(C/H\) scalar
+replacement is now complete.
 
 ## 3. High/high: replace Section 6 of the inherited pair proof
 

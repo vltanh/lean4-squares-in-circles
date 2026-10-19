@@ -1069,9 +1069,9 @@ coefficient arrays or numerical PASS status.
 
 The separate note `HAND_CORE_HIGH_AND_HIGH_HIGH_CURVATURE.md`
 removes the C/H and H/H scalar gates, and `HAND_MID_HIGH_CURVATURE.md`
-removes the M/H gates. At this writing, the remaining G1 scalar
-obligations lie in the C/L and L/H whole-pair notes.
-In particular this file must not be cited
-as a complete frame-concentration proof before those dependencies
-are discharged. G2's two residual whole-word inequalities are also
-separate obligations.
+removes the M/H gates. `HAND_CORE_LOW_SCALAR_WITHOUT_TABLES.md` and
+`HAND_LOW_HIGH_SCALAR_REPLACEMENTS.md` discharge the C/L and L/H
+obligations. The complete frame-concentration proof, with its exact
+geometric and scalar dependency list, is assembled in
+`../HAND_EXTERIOR_FRAME_CONCENTRATION.md`. G2's two residual whole-word
+inequalities remain separate obligations.

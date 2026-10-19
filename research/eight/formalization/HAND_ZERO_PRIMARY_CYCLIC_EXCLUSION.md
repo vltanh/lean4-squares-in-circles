@@ -3,9 +3,10 @@
 **Status.** The primary-edge estimate in Sections 2–5 is a table-free hand
 proof on its complete continuous domain. Section 6 turns it into a
 seven-cycle exclusion using the common four-type pair inequality from G1.
-That G1 inequality is an explicit prerequisite: this note does **not**
-claim to have removed its remaining continuous certificates, nor to have
-proved the coarse mismatch bound G4.
+That G1 inequality is supplied without coefficient tables or interval
+meshes by `../HAND_EXTERIOR_FRAME_CONCENTRATION.md`. Thus the
+seven-cycle exclusion is also table-free. It does not prove the coarse
+mismatch bound G4.
 
 The resulting dependency is stronger than the old bootstrap: after G1,
 all zero-quarter edges already have only original axes 0 and 2, before
@@ -458,8 +459,8 @@ matrix is at least \(8833/10000\), so
 \]
 
 This is the only imported continuous pair inequality in this section.
-Its remaining certificate dependency must be removed in G1 to make the
-assembled theorem table-free.
+The complete table-free dependency list is in Section 2 of
+`../HAND_EXTERIOR_FRAME_CONCENTRATION.md`.
 
 A closed real frame walk whose range is less than \(7/10\) obeys
 
@@ -517,10 +518,10 @@ increment do not change under that radial process. The common G1 marker
 must be selected on this Q-boundary cycle; it must not be silently reused
 as a different radial or candidate arc label after changing the ceiling.
 
-The new complete mathematical result is the primary-edge estimate (17)
-and its conditional cyclic consequence (30). The full G1 pair theorem,
-the first bound on S, and the unrestricted sharp theorem are not proved
-by this note. No Lean source, compilation, CI, or certificate table was
+The complete mathematical result is the primary-edge estimate (17)
+and the cyclic exclusion (30), with its G1 prerequisite now independently
+proved table-free. The first bound on S and the unrestricted sharp
+theorem remain separate obligations. No Lean source, compilation, CI, or certificate table was
 changed. Exploratory contact optimization was used to identify the
 support cancellation; the proof uses only the displayed whole-domain
 inequalities and rational polynomial identities.

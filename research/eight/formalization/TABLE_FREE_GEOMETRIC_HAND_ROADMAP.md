@@ -183,8 +183,11 @@ on *every* actual seven-cycle. Check separately that the center-radius
 hypotheses for the core/core chord estimate apply after expansion.
 
 **Status.** The new CC angular-budget theorem is complete on paper.
-The other components are in the inherited hand proof, but some retain
-small fixed algebraic certificates to be replaced under G9.
+The central core and strict physical gap now follow without coefficient
+tables from `HAND_CENTRAL_BANDS_WITHOUT_TABLES.md`; the normalization,
+radial translation, and radius expansion retain the original analytic
+arguments. The exact dependency substitution for the physical gap is
+recorded in `../HAND_EXTERIOR_FRAME_CONCENTRATION.md`, Section 1.
 
 ### G1 — Four-type frame concentration without recursive pair certificates
 
@@ -206,6 +209,25 @@ global CC-edge exclusion if a local pair bound is unnecessarily strong.
 **Exit.** All four types, including their shared boundaries and all
 four axes, are handled by analytic formulas; no chart-pair `certify`
 call remains mathematically necessary.
+
+**Status — closed on paper.**
+`../HAND_EXTERIOR_FRAME_CONCENTRATION.md` assembles complete
+whole-domain proofs for all ten unordered type pairs, hence all 128
+ordered source-axis branches and their reflected target axes. Six new
+scalar notes replace every inherited Bernstein row and continuous
+interval mesh, including the common-point appendix, C/M curvature
+mesh, C/L endpoint intervals, C/H corner tail, and L/H short-angle
+appendix. The existing odd-seven-walk argument gives
+\(\sum\Gamma\ge3881/625\); its closed orientation-tour lift then
+proves strict spread \(<7/10\). The complete dependency chain has
+been independently audited. This closes G1, not the residual word,
+tangent-cut, or mismatch gates.
+
+As an additional consequence, `HAND_ZERO_PRIMARY_CYCLIC_EXCLUSION.md`
+now excludes every primary original axis on every zero-quarter edge
+before any tangent cut or mismatch bound, including primary axes tied
+with secondary ones. It uses the compulsory return cost of the closed
+frame tour and the newly table-free G1 pair inequalities.
 
 ### G2 — All six wrong quarter-word exclusions from a cycle inequality
 
