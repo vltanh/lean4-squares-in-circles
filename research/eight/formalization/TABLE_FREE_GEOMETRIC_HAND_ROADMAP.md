@@ -286,7 +286,11 @@ of the complementary path or use a different proved stress.
 sixteen same-sign outer/outer zero-quarter branches of 0011011 without
 the former critical-curve or angle-curvature rows. Its contact Hessian
 has a uniformly negative determinant, and its diagonal boundary has
-whole-interval curvature greater than 1/30. The other components of
+whole-interval curvature greater than 1/30. `HAND_WRONG_0011011_NEGATIVE_QUARTER_WITHOUT_TABLES.md` also proves
+the complete negative outer edge-2 quarter component and its reflected
+edge-6 component. One global fourth-derivative sign replaces its five
+endpoint derivative rows, and the full contact surface is strictly
+concave in its eliminated source coordinate. The other components of
 this residual word are still required.
 
 ### G3 — Tangent cuts as a single structural theorem
