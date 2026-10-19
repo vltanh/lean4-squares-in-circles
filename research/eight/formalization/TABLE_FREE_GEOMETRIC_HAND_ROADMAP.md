@@ -34,6 +34,28 @@ The old tabular proof remains a comparison oracle for *discovery*, not part of
 the new proof. Do not delete it merely on the strength of this roadmap.
 No Lean source is to be changed until a complete hand argument exists.
 
+### Current hand-proof status (2026-10-19)
+
+The geometric normalization and the complete frame theorem are now
+table-free. The stationary construction, sharp conditional terminal,
+and full conditional equality family are also table-free. The
+unrestricted theorem is still missing its global capture proof.
+
+| Gate | Current mathematical status |
+|---|---|
+| G0--G1 | Central core, physical gaps, boundary reduction, and all ten frame-pair inequalities are proved; the real frame spread is strictly below .7. |
+| G2 | The four words with a double increment are excluded. The two residual words 0010111 and 0011011 remain open. |
+| G3 | The structural tangent-cut proof remains open. |
+| G4--G5 | The coarse and middle mismatch contractions remain open. |
+| G6 | Quarter-owner rigidity is proved under its stated cuts and \(S\le.015\). |
+| G7 | Mixed-owner rigidity is proved under its stated hypotheses and \(S\le.001\); the preceding \(.015\to.001\) contraction remains open. |
+| G8 | The positive-tilt tails are excluded under the original owner and mismatch hypotheses. |
+| G9 | Stationary existence/uniqueness, the exact packing at \(q_*\), the conditional sharp terminal, and the full conditional equality domain/box are proved without the historical small certificates. |
+| G10 | The unrestricted assembly awaits G2--G5 and the remaining G7 contraction. |
+
+All closure statements here are hand mathematics. The retained Lean and
+generated data have not been edited, compiled, or run through CI.
+
 ### Baseline and existing reusable results
 
 At the currently committed source snapshot, the theorem import closure still
@@ -250,6 +272,15 @@ double-increment contradiction, valid for all radial types, signs,
 axes, endpoints and reflections. A numerical check of a few words
 does not close this gate.
 
+**A local route has been ruled out exactly.**
+`HAND_TWO_ZERO_EDGE_BOOST_OBSTRUCTION.md` constructs three actual
+outer-boundary squares with two zero-quarter secondary contacts,
+physical gaps above .76, and frame spread below .4. Their common-G1
+path cost, even including the compulsory frame-return charge, is
+less than \(46/25\). It cannot pay the remaining five edges at
+their universal G1 minimum. A whole-word argument must retain more
+of the complementary path or use a different proved stress.
+
 ### G3 — Tangent cuts as a single structural theorem
 
 **Replaces.** The six large G/T/H/D tail tables (the H/D part may use
@@ -361,6 +392,11 @@ rather than by a generated owner index.
 **Exit.** One theorem covers both edges, all four possible original
 axes and simultaneous feasible ties, without a quarter selector.
 
+**Status — conditionally closed on paper.**
+`HAND_QUARTER_OWNER_CLOSURE.md` proves exactly this theorem under
+the candidate frame, signed cuts, zero owners, \(q\le Q_0\), and
+\(S\le3/200\), without the eight remaining quarter groups.
+
 ### G7 — Last contraction and the two mixed owners
 
 **Replaces.** The \(0.015\to0.001\) affine table and 15 mixed-owner
@@ -387,6 +423,12 @@ Do not assign a fresh error budget to each edge.
 **Exit.** The specified ordering is respected and every forbidden
 mixed axis is impossible even if a permitted axis is feasible as well.
 
+**Status — owner component conditionally closed; contraction open.**
+`HAND_MIXED_OWNER_CLOSURE.md` and its two analytic companions prove
+the mixed-owner restriction with \(S\le1/1000\), the signed cuts,
+and the already established quarter owners. They retain every
+original feasible tie. They do not supply the preceding contraction.
+
 ### G8 — Positive tilt tails by the exact envelope, not 41 bundles
 
 **Replaces.** The 41 positive tilt bundles (861 quartics); the
@@ -410,6 +452,13 @@ a numerical multiplier vector at the optimum.
 **Exit.** Each complete positive tail is excluded by a monotonicity,
 convexity or one-support argument, with strict endpoint margins and no
 finite interval cover.
+
+**Status — conditionally closed on paper.**
+`HAND_POSITIVE_TILT_CLOSURE.md` and
+`HAND_POSITIVE_TILT_NOMINAL_GAP.md` prove both entire positive tails,
+including the actual shared frame errors, under the original cuts,
+owners, \(q\le Q_1\), and \(S\le1/1000\). The negative half
+is excluded by the existing analytic owner geometry.
 
 ### G9 — Remove the remaining small computational certificates
 
@@ -461,9 +510,25 @@ handles every one of the 32 original allowed owner choices, including
 ties, and applies directly to original centers. It imports none of
 the old four rectangles, position brackets, nine-midpoint owner
 checks, or adaptive derivative bounds. The owner/tilt/mismatch
-capture hypotheses remain the separate G2--G8 gates. The final
-equality-parameter domain and noncongruent box are being handled
-separately below this terminal conclusion.
+capture hypotheses remain the separate G2--G8 gates.
+
+**Conditional equality and exact construction closed on paper (2026-10-19).**
+`HAND_EQUALITY_FAMILY_WITHOUT_BRACKET_TABLES.md` proves
+\(.1<\tan t_*<.13\) and \(.916<u_*<.94\) from two tilt
+comparisons and whole-domain monotonicity. These coarse bounds suffice
+for the original five-anchor pullback, exact weak exterior-slider
+ranges, all 21 exterior pairs, and the seven maximum-form central SAT
+conditions. It proves the complete weak five-parameter domain and
+its converse, including the entire independent parameter box and
+pairwise noncongruence. The box gives an unconditional exact packing
+at \(q_*\); four anchor vertices determine its unique least enclosing
+circle. No narrow stationary/formula bracket, five-interval family
+enclosure, or equality-box arithmetic table is imported.
+
+Thus every component of G9 needed by the current hand path is closed.
+The sharp lower bound and classification still require the explicitly
+stated global capture hypotheses; no conclusion here supplies them
+in reverse.
 
 **Replaces.** The 49 stationary existence/bracket comparisons; the
 5,376 adaptive fixed-box scalar checks; the short central-core

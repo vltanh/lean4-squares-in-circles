@@ -1,5 +1,15 @@
 # The complete equality family: five rigid squares and an explicit five-parameter domain
 
+**Table-free successor.**
+[The coarse-stationary equality proof](formalization/HAND_EQUALITY_FAMILY_WITHOUT_BRACKET_TABLES.md)
+now proves the full weak domain, its converse, and the same independent
+five-dimensional box using only whole-domain stationary estimates.
+It includes all 28 pair separations and the noncongruence argument.
+The narrow root bounds, family-enclosure intervals, and numerical
+equality-box calculations used in the older manuscript below are not
+inputs to that replacement. The classification retains its explicit
+global capture hypothesis.
+
 ## 1. The classification and its input
 
 Let \((q_*,y_*,t_*)\) be the unique admissible stationary solution
