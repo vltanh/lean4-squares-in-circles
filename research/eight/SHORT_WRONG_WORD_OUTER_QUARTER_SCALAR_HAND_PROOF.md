@@ -32,7 +32,21 @@ All terminating decimals here and in the table denote exact rationals.
 now proves the entire outer/outer role-5 opposite-sign family, all four
 original axes and both angle halves, with strict cost greater than
 42643/47500. None of that component's scalar angle rows is needed.
-The remaining role/sign families are separate obligations.
+The following further whole-domain successors now replace their stated
+original branches:
+
+* [Complete role 5](formalization/HAND_SHORT_WORD_EDGE_FIVE_COMPLETE_WITHOUT_TABLES.md)
+  proves its other three sign pairs and, with the preceding note, all
+  original role-5 owners. It also proves every role-4 \((+,-)\) owner.
+* [Opposite-sign secondary families](formalization/HAND_SHORT_WORD_OPPOSITE_SECONDARY_FAMILIES_WITHOUT_TABLES.md)
+  proves both transverse owners on edges 2, 4, and 6, on both full halves.
+* [Same-sign unit supports](formalization/HAND_SHORT_WORD_SAME_SIGN_UNIT_SUPPORTS_WITHOUT_TABLES.md)
+  proves eight original same-sign owners on both full halves.
+* [Complete positive role 4](formalization/HAND_SHORT_WORD_ROLE_FOUR_POSITIVE_QUARTER_WITHOUT_TABLES.md)
+  finishes every role-4 \((+,+)\) owner.
+
+The remaining role/sign families are separate obligations until the
+full original-case assembly binds them to their analytic proofs.
 
 ## 1. State coordinates and normalization
 

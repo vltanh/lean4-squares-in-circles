@@ -358,6 +358,21 @@ interior segment is controlled by an exact angular derivative.
 The two curvature polynomials are proved on their whole geometric
 sign domains, without angle or state subdivision.
 
+The short-word outer-quarter component now also has four further
+complete whole-domain successors. `HAND_SHORT_WORD_EDGE_FIVE_COMPLETE_WITHOUT_TABLES.md`
+finishes all original role-5 owners and all role-4 positive-to-negative
+owners. `HAND_SHORT_WORD_OPPOSITE_SECONDARY_FAMILIES_WITHOUT_TABLES.md`
+proves both opposite-sign transverse owners on edges 2, 4, and 6.
+`HAND_SHORT_WORD_SAME_SIGN_UNIT_SUPPORTS_WITHOUT_TABLES.md` proves
+eight original same-sign owners using a single unit support.
+`HAND_SHORT_WORD_ROLE_FOUR_POSITIVE_QUARTER_WITHOUT_TABLES.md` completes
+every positive-sign role-4 owner at its intrinsic diagonal-support
+transition. Each theorem covers both full angle halves; all extension
+arguments use uniform monotonicity or concavity. These successors and
+the previously published families cover 75 of the 96 original
+outer-quarter angle halves. The remaining complete family assembly
+and the short-word mixed scalar replacements are still required.
+
 ### G3 — Tangent cuts as a single structural theorem
 
 **Replaces.** The six large G/T/H/D tail tables (the H/D part may use
