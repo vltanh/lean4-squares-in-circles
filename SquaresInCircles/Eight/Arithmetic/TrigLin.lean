@@ -4,18 +4,26 @@ public import SquaresInCircles.Eight.Arithmetic.Bernstein7
 public import SquaresInCircles.Eight.Arithmetic.Taylor
 
 /-!
-# Positivity of `c₀ + c₁ u + c₂ sin u + c₃ cos u` on a short interval
+# Eight squares: positivity of `c₀ + c₁ u + c₂ sin u + c₃ cos u`
 
-Every finite inequality of the affine tables has this form in the angle `u`,
-with coefficients known only as intervals. For `u ≥ 0`,
-`sin u = sin₇ u + e_s u⁹` with `0 ≤ e_s ≤ 1/9!` and
-`cos u = cos₈ u + e_c u¹⁰` with `-1/10! ≤ e_c ≤ 0`, so the expression is at least
-the polynomial whose coefficients are the lower ends of the coefficient
-intervals. That polynomial has integer coefficients over `unit`, and the
-Bernstein test of `Bernstein11` decides its sign on the interval.
+Every inequality in the angle that the row check of `RowCheck.lean` decides is
+`c₀ + c₁ u + c₂ sin u + c₃ cos u > 0`, or `≥ 0`, for `u` in an interval `[l / den, h / den]` of
+`[0, ∞)`, with coefficients known as fixed-point intervals (`Fixed.lean`). `trigPositive` and
+`trigNonneg` decide it by three tests, the cheapest first, and `trigPositive_sound` and
+`trigNonneg_sound` state what they prove.
 
-For `u ≤ 4/5` the Taylor tails also fit into the coefficient of `u⁶`, which gives a lower
-polynomial of degree six and the cheaper test of `Bernstein7`; it is tried first.
+The test of degree three (`mono3`), on intervals inside `[0, 1]`, uses
+`c₂ sin u ≥ c₂ u - c₂⁺ u³ / 6` and `c₃ cos u ≥ c₃ - c₃⁺ u² / 2` there: the cubic below the
+expression is the difference of two polynomials with natural coefficients, both increasing in `u`,
+so it is positive on the interval when the second at `h / den` is below the first at `l / den`
+(`cubicPos`, `cubicNeg`). The test
+of degree six (`trigPositive6`), on intervals inside `[0, 4/5]`, fits the Taylor tails of the sine
+and the cosine into the coefficient of `u⁶` and decides the sign of the lower polynomial
+`lowerPN6` by the Bernstein test of `Bernstein7.lean`. The test of degree ten (`trigPositive10`)
+writes `sin u = sin7 u + e u⁹` and `cos u = cos8 u + e' u¹⁰` with bounded `e` and `e'`
+(`Taylor.lean`); as `u ≥ 0`, the polynomial whose coefficients are lower bounds of the
+coefficients of this expansion (`trigLower`) is below the expression, and the Bernstein test of
+`Bernstein11.lean` decides its sign.
 -/
 
 @[expose] public section
@@ -35,13 +43,14 @@ theorem floorDiv_le (a : Int) {k : Nat} (hk : 0 < k) :
   push_cast at h'
   exact h'
 
-/-- The lower coefficients of `c₀ + c₁ u + c₂ sin u + c₃ cos u`, scaled by `unit`. -/
+/-- The integer coefficients, over `unit`, of the lower polynomial of degree ten of
+`c₀ + c₁ u + c₂ sin u + c₃ cos u` (`trigLower_le`). -/
 def trigLower (c0 c1 c2 c3 : FI) : List Int :=
   [c0.lo + c3.lo, c1.lo + c2.lo, floorDiv (-c3.hi) 2, floorDiv (-c2.hi) 6, floorDiv c3.lo 24,
    floorDiv c2.lo 120, floorDiv (-c3.hi) 720, floorDiv (-c2.hi) 5040, floorDiv c3.lo 40320,
    floorDiv (min 0 c2.lo) 362880, floorDiv (min 0 (-c3.hi)) 3628800]
 
-/-- Split integer coefficients into their positive and negative parts. -/
+/-- The positive parts of eleven integer coefficients; `splitNeg` gives the negative parts. -/
 def splitPos : List Int → N11
   | [a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10] =>
       ⟨a0.toNat, a1.toNat, a2.toNat, a3.toNat, a4.toNat, a5.toNat, a6.toNat, a7.toNat, a8.toNat,
@@ -54,8 +63,8 @@ def splitNeg : List Int → N11
         (-a7).toNat, (-a8).toNat, (-a9).toNat, (-a10).toNat⟩
   | _ => ⟨0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0⟩
 
-/-- The positive and the negative parts of the lower coefficients, computed directly with the
-integer operations of `Fixed`. -/
+/-- The positive and the negative parts of the coefficients of `trigLower`, computed directly
+with the integer operations of `Fixed.lean`. -/
 def lowerPN (c0 c1 c2 c3 : FI) : N11 × N11 :=
   let a0 := iadd c0.lo c3.lo
   let a1 := iadd c1.lo c2.lo
@@ -82,7 +91,7 @@ theorem lowerPN_eq (c0 c1 c2 c3 : FI) :
 
 /-- The positive and negative parts of the coefficients of a lower polynomial of degree six,
 for `0 ≤ u ≤ 4/5`: the tails of `sin` and `cos` are bounded by multiples of `u⁶`. The integer
-operations are those of `Fixed` that the kernel evaluates on natural numbers. -/
+operations are those of `Fixed.lean`, which the kernel evaluates on natural numbers. -/
 def lowerPN6 (c0 c1 c2 c3 : FI) : N7 × N7 :=
   let n3 := ineg c3.hi
   let p0 := intPN (iadd c0.lo c3.lo)
@@ -107,7 +116,7 @@ theorem lowerPN6_eq (c0 c1 c2 c3 : FI) : lowerPN6 c0 c1 c2 c3 =
   simp (disch := norm_num) only [lowerPN6, intPN_eq, floorPN_eq, iadd_eq, ineg_eq, imax_eq,
     imin_eq, ifloor_eq, floorDiv, Int.ofNat_eq_natCast, Nat.cast_zero]
 
-/-- Degree ten. -/
+/-- The test of degree ten: the Bernstein test of the lower polynomial `trigLower`. -/
 def trigPositive10 (den l h : Nat) (c0 c1 c2 c3 : FI) : Bool :=
   let p := lowerPN c0 c1 c2 c3
   positiveOnN den l h p.1 p.2
@@ -116,7 +125,8 @@ def trigNonneg10 (den l h : Nat) (c0 c1 c2 c3 : FI) : Bool :=
   let p := lowerPN c0 c1 c2 c3
   nonnegOnN den l h p.1 p.2
 
-/-- Degree six, on intervals inside `[0, 4/5]`. -/
+/-- The test of degree six, on intervals inside `[0, 4/5]`: the Bernstein test of the lower
+polynomial `lowerPN6`. -/
 def trigPositive6 (den l h : Nat) (c0 c1 c2 c3 : FI) : Bool :=
   Nat.ble (Nat.mul 5 h) (Nat.mul 4 den) &&
     (let p := lowerPN6 c0 c1 c2 c3; positiveOnN7 den l h p.1 p.2)
@@ -127,12 +137,12 @@ def trigNonneg6 (den l h : Nat) (c0 c1 c2 c3 : FI) : Bool :=
 
 /-- For `u ∈ [0, 1]`, `c₂ sin u ≥ c₂ u - c₂⁺ u³ / 6` and `c₃ cos u ≥ c₃ - c₃⁺ u² / 2`, so the
 polynomial `(c₀ + c₃) + (c₁ + c₂) u - n₂ u² - n₃ u³` with `n₂ = ⌈c₃⁺ / 2⌉`, `n₃ = ⌈c₂⁺ / 6⌉` (lower
-ends, over `unit`) is below the expression. This is its positive part at `l`, scaled by `den ³`. -/
+ends, over `unit`) is below the expression. This is its positive part at `l`, scaled by `den³`. -/
 def cubicPos (den l : Nat) (c0 c1 c2 c3 : FI) : Nat :=
   Nat.add (Nat.mul (ipos (iadd c0.lo c3.lo)) (Nat.mul (Nat.mul den den) den))
     (Nat.mul (Nat.mul (ipos (iadd c1.lo c2.lo)) l) (Nat.mul den den))
 
-/-- Its negative part at `h`, scaled by `den ³`. -/
+/-- Its negative part at `h`, scaled by `den³`. -/
 def cubicNeg (den h : Nat) (c0 c1 c2 c3 : FI) : Nat :=
   Nat.add
     (Nat.add (Nat.mul (ineg' (iadd c0.lo c3.lo)) (Nat.mul (Nat.mul den den) den))
@@ -140,9 +150,9 @@ def cubicNeg (den h : Nat) (c0 c1 c2 c3 : FI) : Nat :=
     (Nat.add (Nat.mul (Nat.mul (Nat.div (Nat.add (ipos c3.lo) 1) 2) (Nat.mul h h)) den)
       (Nat.mul (Nat.div (Nat.add (ipos c2.lo) 5) 6) (Nat.mul (Nat.mul h h) h)))
 
-/-- Degree three, on intervals inside `[0, 1]`: the positive part increases and the negative part
-decreases in `u`, so the polynomial is positive (nonnegative) on `[l, h]` when the negative part at
-`h` is below (at most) the positive part at `l`. -/
+/-- The test of degree three, on intervals inside `[0, 1]`: the positive and the negative part
+both increase in `u`, so the polynomial is positive (nonnegative) on `[l / den, h / den]` when the
+negative part at `h` is below (at most) the positive part at `l`. -/
 def mono3 (den l h : Nat) (c0 c1 c2 c3 : FI) (strict : Bool) : Bool :=
   Nat.blt 0 den && Nat.ble h den &&
     bif strict then Nat.blt (cubicNeg den h c0 c1 c2 c3) (cubicPos den l c0 c1 c2 c3)
@@ -509,7 +519,7 @@ theorem cubic_le {c0 c1 c2 c3 : FI} {x0 x1 x2 x3 u : ℝ} {n2 n3 : Nat}
   push_cast
   linarith
 
-/-- Scaled by `den ³`, the comparison of the two parts bounds the polynomial below on
+/-- Scaled by `den³`, the comparison of the two parts bounds the polynomial below on
 `[l / den, h / den]`. -/
 theorem cubic_gap {den l h p0 p1 q0 q1 n2 n3 : Nat} (hden : 0 < den) {u : ℝ}
     (hu : (l : ℝ) / den ≤ u ∧ u ≤ (h : ℝ) / den) :
@@ -552,7 +562,7 @@ theorem mono3_lower {den l h : Nat} {c0 c1 c2 c3 : FI} (hden : 0 < den) (hhd : h
   rw [cubicPos_eq, cubicNeg_eq, ha0, ha1]
   exact cubic_gap hden hu
 
-/-! ### Both degrees -/
+/-! ### The three tests together -/
 
 /-- A successful test proves the strict inequality on the whole interval. -/
 theorem trigPositive_sound {den l h : Nat} {c0 c1 c2 c3 : FI}

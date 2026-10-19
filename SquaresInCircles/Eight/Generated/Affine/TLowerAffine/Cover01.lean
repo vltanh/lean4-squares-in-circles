@@ -2,7 +2,11 @@ module
 
 public import SquaresInCircles.Eight.Generated.Affine.TLowerAffine.Data
 
-/-! The angle coverage for the source arcs 267 to 302, checked by `decide +kernel`. -/
+/-!
+# Eight squares: the angle coverage of the affine table `TLowerAffine`, source arcs 267 to 302
+
+The walks `coverBlock` over blocks of these source arcs, evaluated by the kernel.
+-/
 
 @[expose] public section
 noncomputable section

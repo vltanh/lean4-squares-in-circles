@@ -45,7 +45,7 @@ theorem canonical_core_distance {q : ℝ} (C : BoundaryCycle q) (i : Vertex) :
       (max (C.a i - 1 / 2) 0) ^ 2 + (max (C.b i - 1 / 2) 0) ^ 2 := by
   obtain ⟨p, hp, he⟩ := exists_clipped_point (C.square i) (0, 0)
   have hc := C.core i p hp
-  simp only [canonical_alpha, canonical_beta, sub_zero, sub, sub_self] at he
+  simp only [canonical_alpha, canonical_beta, sub_zero, sub] at he
   simpa [coreRadius, he] using hc
 
 theorem canonical_bounds {q : ℝ} (C : BoundaryCycle q) (hq : q ≤ Q0) (i : Vertex) :

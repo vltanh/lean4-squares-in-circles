@@ -5,17 +5,30 @@ public import SquaresInCircles.Common.Trigonometry
 public import SquaresInCircles.Common.Analysis
 
 /-!
-# Four-type budgets and the real-frame range
+# Eight squares: the four-type budget and the real frames
 
-Source: `HAND_EXTERIOR_FRAME_CONCENTRATION.md`. The matrix here is the
-completed **hand** matrix, scaled by 10,000. It is deliberately distinct
-from the historical dyadic certificate matrix.
+The vertices of a boundary cycle have four types, the core `C` and the three outer tangent
+ranges, low `L`, middle `M` and high `H` (`Arithmetic/FourTypePairs.lean`), and an edge from a
+vertex of type `s` to one of type `t` costs more than `γ(s, t)`, the entry of
+`handGammaNumerator` over `10⁴`. Every closed walk of seven steps on the four types weighs at
+least `62096/10⁴ = 3881/625` (`four_type_seven_walk`): it is three two-step walks and one step,
+each two-step walk weighs at least the min-plus square of the matrix at its ends, and the kernel
+checks the remaining closed walks of four steps. With the frame charge `(9/50) hᵢ` on each edge
+and markers that telescope, the gaps, which add up to `2π`, leave `∑ hᵢ < 10394/25425`
+(`four_type_cycle_budget`, `physical_cycle_width_bound`).
 
-The finite walk theorem quantifies over all 4^7 words. The continuous pair
-premises remain explicit in the summation theorem: the finite walk fact is
-not used as a substitute for a continuous pair proof.
+The charge of a relative frame angle `x` is `periodicFrameCost x = (|cos x| + |sin x| - 1)/2`,
+invariant under quarter turns; on `[0, π/4]` it is `frameCost x = (cos x + sin x - 1)/2`, which
+is increasing, concave and subadditive (`frameCost_monotone`, `frameCost_concave`,
+`frameCost_triangle`). If the charges of the steps of seven angles `φᵢ` round the cycle add up to
+less than `10394/25425`, which is below `2 frameCost (7/10)`, the representatives of the steps in
+`[-π/4, π/4]` (`shortestQuarter`) have no winding, and they lift the angles to real
+representatives with integer quarter offsets in an interval shorter than `7/10`
+(`physical_frame_lift_of_cost`, `PhysicalFrameLift`): twice the frame cost of the range of the
+lift is at most the total charge (`frameCost_closed_range`). `CycleActions.lean` turns this lift
+into a quarter lift of the cycle (`quarterLift_of_cost`).
 
-Uncompiled draft. All finite arithmetic uses ordinary kernel reduction.
+The file starts with sums round the cycle (`sum_next`, `angleGap_sum`).
 -/
 
 @[expose] public section
@@ -36,6 +49,7 @@ def nextPerm : Equiv.Perm Vertex where
   left_inv := prev_next
   right_inv := next_prev
 
+/-- A sum over the vertices does not change when every vertex is replaced by the next. -/
 lemma sum_next {α : Type*} [AddCommMonoid α] (f : Vertex → α) :
     ∑ i, f (next i) = ∑ i, f i := by
   exact Equiv.sum_comp nextPerm f
@@ -43,22 +57,26 @@ lemma sum_next {α : Type*} [AddCommMonoid α] (f : Vertex → α) :
 lemma cyclic_difference_sum (f : Vertex → ℝ) : ∑ i, (f (next i) - f i) = 0 := by
   rw [Finset.sum_sub_distrib, sum_next, sub_self]
 
+/-- The seven gaps `angleGap β i` add up to `2π`, whatever the directions `β`. -/
 lemma angleGap_sum (β : Vertex → ℝ) : ∑ i, angleGap β i = 2 * Real.pi := by
   simp [angleGap, Finset.sum_add_distrib, Finset.sum_sub_distrib, sum_next]
 
+/-- Markers telescope round the cycle. -/
 lemma cyclic_markers_cancel (δ w ψ : Vertex → ℝ) (b : ℝ) :
     ∑ i, (δ i - b * w i + ψ (next i) - ψ i) =
       (∑ i, δ i) - b * ∑ i, w i := by
   simp only [Finset.sum_sub_distrib, Finset.sum_add_distrib, ← Finset.mul_sum, sum_next]
   ring
 
-/-- C, L, M, H, in precisely that order. -/
+/-- The lower bounds `γ(s, t)` of the cost of an edge from a vertex of type `s` to one of type
+`t`, times `10⁴`, for the types `C, L, M, H` in this order. -/
 def handGammaNumerator : Fin 4 → Fin 4 → ℕ :=
   ![![9200, 9100, 9005, 8833],
     ![9100, 9100, 9005, 8833],
     ![9005, 9005, 8912, 8926],
     ![8833, 8833, 8926, 9099]]
 
+/-- The bound `γ(s, t) = handGammaNumerator s t / 10⁴`. -/
 def handGamma (i j : Fin 4) : ℝ := handGammaNumerator i j / 10000
 
 /-- The least weight of a two-step walk between two types, the min-plus square
@@ -70,11 +88,9 @@ private def twoStepGammaNumerator : Fin 4 → Fin 4 → ℕ :=
     ![17759, 17759, 17824, 17838],
     ![17931, 17931, 17838, 17666]]
 
-/-- Complete finite seven-walk bound; no native evaluator enters the trust
-boundary. It covers constant walks, repeated vertices, and every loop. A closed
-seven-walk is three two-step walks and one step; each two-step walk weighs at
-least `twoStepGammaNumerator` of its ends, and the kernel checks the remaining
-closed walk through four types for all `4 ^ 4` choices. -/
+/-- Every closed walk of seven steps on the four types weighs at least `62096`. It is three
+two-step walks and one step; each two-step walk weighs at least `twoStepGammaNumerator` of its
+ends, and the kernel checks the remaining closed walk of four steps for all `4 ^ 4` choices. -/
 theorem four_type_seven_walk_numerator :
     ∀ τ : Vertex → Fin 4, 62096 ≤ ∑ i, handGammaNumerator (τ i) (τ (next i)) := by
   have two : ∀ a b c : Fin 4,
@@ -91,6 +107,7 @@ theorem four_type_seven_walk_numerator :
   simp only [Fin.sum_univ_seven, next, Fin.isValue, Fin.reduceAdd]
   omega
 
+/-- Every closed walk of seven steps on the four types costs at least `3881/625`. -/
 theorem four_type_seven_walk (τ : Vertex → Fin 4) :
     3881 / 625 ≤ ∑ i, handGamma (τ i) (τ (next i)) := by
   have hn := four_type_seven_walk_numerator τ
@@ -99,8 +116,8 @@ theorem four_type_seven_walk (τ : Vertex → Fin 4) :
   simp only [handGamma, ← Finset.sum_div]
   nlinarith
 
-/-- The continuous edge hypotheses are charged before their markers telescope.
-One fixed marker is used at a vertex on both incident edges. -/
+/-- If each edge has `γ(τᵢ, τᵢ₊₁) < δᵢ - (9/50) hᵢ + ψᵢ₊₁ - ψᵢ`, with one marker `ψᵢ` at each
+vertex used on both of its edges, then `3881/625 < ∑ δᵢ - (9/50) ∑ hᵢ`. -/
 theorem four_type_cycle_budget (τ : Vertex → Fin 4) (δ h ψ : Vertex → ℝ)
     (hpair : ∀ i,
       handGamma (τ i) (τ (next i)) <
@@ -111,6 +128,8 @@ theorem four_type_cycle_budget (τ : Vertex → Fin 4) (δ h ψ : Vertex → ℝ
   rw [cyclic_markers_cancel] at hsum
   exact (four_type_seven_walk τ).trans_lt hsum
 
+/-- With the gaps of the centre directions for `δ`, which add up to `2π < 710/113`, the charges add
+up to less than `10394/25425`. -/
 theorem physical_cycle_width_bound (τ : Vertex → Fin 4) (β h ψ : Vertex → ℝ)
     (hpair : ∀ i,
       handGamma (τ i) (τ (next i)) <
@@ -121,9 +140,12 @@ theorem physical_cycle_width_bound (τ : Vertex → Fin 4) (β h ψ : Vertex →
   rw [angleGap_sum] at hh
   linarith
 
-/-- On the short orientation interval this is the angular width excess. -/
+/-- Half the excess over `1` of the width `cos x + sin x` of a unit square turned by `x`; on
+`[0, π/4]` it is `periodicFrameCost x` (`periodicFrameCost_of_short_nonneg`). -/
 def frameCost (x : ℝ) : ℝ := (Real.cos x + Real.sin x - 1) / 2
 
+/-- The frame charge `(|cos x| + |sin x| - 1)/2` of a relative frame angle `x`, invariant under
+quarter turns (`periodicFrameCost_int_quarter`). -/
 def periodicFrameCost (x : ℝ) : ℝ :=
   (|Real.cos x| + |Real.sin x| - 1) / 2
 
@@ -159,8 +181,8 @@ lemma frameCost_monotone : MonotoneOn frameCost (Set.Icc 0 (Real.pi / 4)) := by
     have hsqrt : 0 < Real.sqrt 2 := Real.sqrt_pos.mpr (by norm_num)
     nlinarith
 
-/-- An elementary closed-walk total-variation bound. It is stated for an
-arbitrary selected pair of vertices, so extrema can be supplied afterwards. -/
+/-- Round the cycle, twice the difference of any two values is at most the sum of the absolute
+steps. -/
 lemma closed_walk_range_bound (θ : Vertex → ℝ) (i j : Vertex) :
     2 * |θ j - θ i| ≤ ∑ k, |θ (next k) - θ k| := by
   have hp (k : Vertex) := le_abs_self (θ (next k) - θ k)
@@ -206,15 +228,15 @@ lemma closed_walk_range_bound (θ : Vertex → ℝ) (i j : Vertex) :
       rcases hj with rfl | rfl | rfl | rfl | rfl | rfl | rfl <;>
       linarith
 
-/-! ## The shortest orientation tour and its real lift -/
+/-! ## The real lift of the frames -/
 
 lemma frameCost_concave : ConcaveOn ℝ (Set.Icc 0 (Real.pi / 4)) frameCost := by
   apply concave_of_deriv2 (fun x _ => frameCost_hasDerivAt x)
     (f' := fun x => (Real.cos x - Real.sin x) / 2)
     (f'' := fun x => -(Real.sin x + Real.cos x) / 2)
   · intro x hx
-    convert (((Real.hasDerivAt_cos x).sub (Real.hasDerivAt_sin x)).div_const 2)
-      using 1 <;> ring
+    convert (((Real.hasDerivAt_cos x).sub (Real.hasDerivAt_sin x)).div_const 2) using 1
+    ring
   · intro x hx
     have hs := Real.sin_nonneg_of_nonneg_of_le_pi hx.1
       (by linarith [hx.2,Real.pi_pos])
@@ -238,8 +260,8 @@ lemma frameCost_at_quarter_pos : 0 < frameCost (Real.pi/4) := by
   have hn := Real.sqrt_nonneg (2:ℝ)
   nlinarith
 
-/-- The chord estimate is available on every initial subinterval. This also
-provides the metric triangle inequality used below. -/
+/-- On `[0, π/4]` the frame cost lies above its chords from `0`: `(a/b) frameCost b ≤ frameCost a`
+for `0 ≤ a ≤ b ≤ π/4`. -/
 lemma frameCost_chord {a b : ℝ} (ha : 0 ≤ a) (hab : a ≤ b)
     (hb : 0 < b) (hbH : b ≤ Real.pi/4) :
     a / b * frameCost b ≤ frameCost a := by
@@ -252,6 +274,8 @@ lemma frameCost_chord {a b : ℝ} (ha : 0 ≤ a) (hab : a ≤ b)
   have hid : (a/b)*b=a := div_mul_cancel₀ a hb.ne'
   simpa only [smul_eq_mul,hid,frameCost_zero,mul_zero,zero_add] using h
 
+/-- The frame cost is subadditive on `[0, π/4]`: `frameCost c ≤ frameCost a + frameCost b` when
+`c ≤ a + b`. -/
 lemma frameCost_triangle {a b c : ℝ}
     (ha : a ∈ Set.Icc 0 (Real.pi/4))
     (hb : b ∈ Set.Icc 0 (Real.pi/4))
@@ -328,8 +352,11 @@ lemma periodicFrameCost_int_quarter (x : ℝ) (n : ℤ) :
       rw [hid] at h
       simpa only [Int.cast_negSucc,sub_eq_add_neg,neg_mul] using h.symm
 
+/-- The integer nearest to `x / (π/2)`, halves rounded up. -/
 def nearestQuarter (x : ℝ) : ℤ := ⌊x/(Real.pi/2)+1/2⌋
 
+/-- The representative `x - n π/2` of `x` modulo quarter turns in `[-π/4, π/4]`
+(`shortestQuarter_range`). -/
 def shortestQuarter (x : ℝ) : ℝ := x-(nearestQuarter x:ℝ)*(Real.pi/2)
 
 lemma shortestQuarter_range (x : ℝ) : |shortestQuarter x| ≤ Real.pi/4 := by
@@ -352,8 +379,8 @@ lemma shortestQuarter_cost (x : ℝ) :
   rw [hid] at h
   exact h.symm
 
-/-- Real lifts are constructed from the physical frame tour, including the
-integer representatives. The winding vanishes by the strict cost budget. -/
+/-- Real representatives `theta` of the angles `φ` modulo quarter turns, with integer quarter
+offsets, in an interval of length less than `7/10`. -/
 structure PhysicalFrameLift (φ : Vertex → ℝ) where
   theta : Vertex → ℝ
   quarter : Vertex → ℤ
@@ -363,6 +390,7 @@ structure PhysicalFrameLift (φ : Vertex → ℝ) where
   theta_range : ∀ i, left ≤ theta i ∧ theta i ≤ left+diameter
   represents : ∀ i, φ i=theta i+(quarter i:ℝ)*(Real.pi/2)
 
+/-- The sum of `m j` over the vertices `j` before `i`. -/
 def quarterPrefix (m : Vertex → ℤ) (i : Vertex) : ℤ :=
   ∑ j ∈ Finset.univ.filter (fun j : Vertex => j.val< i.val),m j
 
@@ -372,9 +400,11 @@ lemma quarterPrefix_difference (m : Vertex → ℤ) (hm : ∑ i,m i=0) (i : Vert
   simp only [quarterPrefix,Finset.sum_filter,Fin.sum_univ_seven]
   have hi : i = 0 ∨ i = 1 ∨ i = 2 ∨ i = 3 ∨ i = 4 ∨ i = 5 ∨ i = 6 := by
     revert i; decide
-  rcases hi with rfl | rfl | rfl | rfl | rfl | rfl | rfl <;>
-    simp [next] <;> omega
+  rcases hi with rfl | rfl | rfl | rfl | rfl | rfl | rfl <;> simp [next]
+  omega
 
+/-- If `θ` is least at `l` and greatest at `u`, within `π/4`, then twice the frame cost of its range
+is at most the sum of the frame costs of its steps round the cycle. -/
 lemma frameCost_closed_range (θ : Vertex → ℝ) {l u : Vertex}
     (hl : ∀ i,θ l ≤ θ i) (hu : ∀ i,θ i ≤ θ u)
     (hD : θ u-θ l ≤ Real.pi/4) :
@@ -399,6 +429,8 @@ lemma frameCost_closed_range (θ : Vertex → ℝ) {l u : Vertex}
   rw [hr₀,hr₁,sub_zero,abs_of_nonneg (frameCost_nonneg ⟨sub_nonneg.2 (hl u),hD⟩)] at hh
   exact hh.trans (Finset.sum_le_sum (fun i _ => hstep i))
 
+/-- If the charges of the steps of `φ` round the cycle add up to less than `10394/25425`, then `φ`
+has a real lift in an interval shorter than `7/10`. -/
 theorem physical_frame_lift_of_cost (φ : Vertex → ℝ)
     (hcost : (∑ i,periodicFrameCost (φ (next i)-φ i)) < 10394/25425) :
     Nonempty (PhysicalFrameLift φ) := by

@@ -228,7 +228,7 @@ lemma SquareChart.closed_membership {K : UnitSquare} {o : Point}
       |t * (r * Real.cos θ - C.a)| < 1 / 2 ∧
         |t * (r * Real.sin θ - C.b)| < 1 / 2 := by
     rw [← hpoint, C.shifted_membership]
-    congr 2 <;> ring
+    ring_nf
   constructor
   · intro hp
     constructor <;> apply bound_from_shrinks <;> intro t ht₀ ht₁
@@ -486,13 +486,13 @@ lemma two_arcsin_quarter_lt : 2 * Real.arcsin (1 / 4 : ℝ) < Real.pi / 6 := by
   rw [Real.sin_pi_div_six] at hh
   linarith
 
-lemma canonical_x_bound {x y : ℝ} (hx : 0 ≤ x) (hy : -1 / 2 ≤ y)
+lemma canonical_x_bound {x y : ℝ} (hy : -1 / 2 ≤ y)
     (hfar : (x + 1) ^ 2 + (y + 1) ^ 2 ≤ 98 / 25) : x < 11 / 12 := by
   have hysq : 1 / 4 ≤ (y + 1) ^ 2 := by nlinarith only [hy]
   linarith [sq_nonneg (x - 11 / 12)]
 
-lemma canonical_corner_sum {x y : ℝ} (hx : 0 ≤ x) (hy : 0 ≤ y)
-    (hfar : (x + 1) ^ 2 + (y + 1) ^ 2 ≤ 98 / 25) : x + y ≤ 4 / 5 := by
+lemma canonical_corner_sum {x y : ℝ} (hfar : (x + 1) ^ 2 + (y + 1) ^ 2 ≤ 98 / 25) :
+    x + y ≤ 4 / 5 := by
   linarith [sq_nonneg (x - y), sq_nonneg (x + y - 4 / 5)]
 
 /-- The polynomial inequality behind `corner_arcsin_sum` in the corner branch, for the two
@@ -501,7 +501,7 @@ lemma corner_quadratic {x y C : ℝ} (hx : 0 ≤ x) (hy : 0 ≤ y)
     (hfar : (x + 1) ^ 2 + (y + 1) ^ 2 ≤ 98 / 25)
     (hC : C = 17 / 25 ∨ C = 497 / 625) :
     x ^ 2 + y ^ 2 + 2 * C * x * y ≤ 16 / 25 * C + 8 / 25 * (1 - C) := by
-  have hs := canonical_corner_sum hx hy hfar
+  have hs := canonical_corner_sum hfar
   have hp := mul_nonneg hx hy
   by_cases hlow : x + y ≤ 7 / 10
   · have hsq := mul_nonneg (sub_nonneg.2 hlow)
@@ -521,7 +521,7 @@ lemma corner_arcsin_sum {x y r : ℝ} (hx : 0 ≤ x) (hy : 0 ≤ y)
     Real.arcsin (x / r) + Real.arcsin (y / r) ≤
       2 * Real.arcsin (2 / (5 * r)) := by
   have hr₀ : 0 < r := by rcases hr with rfl | rfl <;> norm_num
-  have hs := canonical_corner_sum hx hy hfar
+  have hs := canonical_corner_sum hfar
   have hxrange : -1 ≤ x / r ∧ x / r ≤ 1 := by
     rcases hr with rfl | rfl <;> constructor <;> linarith only [hx, hy, hs]
   have hyrange : -1 ≤ y / r ∧ y / r ≤ 1 := by
@@ -655,7 +655,7 @@ lemma intervalLength_straddling (r x t : ℝ) :
   rw [show -t + 1 = 1 - t by ring, max_neg_neg]
   ring
 
-lemma intervalLength_corner {r x y : ℝ} (hr : 0 < r) (hx : 0 ≤ x) (hy : 0 ≤ y) :
+lemma intervalLength_corner {r x y : ℝ} (hr : 0 < r) (hy : 0 ≤ y) :
     intervalLength r x y =
       min (Real.arccos (x / r) - Real.arcsin (y / r))
         (Real.arcsin ((y + 1) / r) - Real.arcsin (y / r)) := by
@@ -709,7 +709,7 @@ lemma straddling_unit_angle {x t : ℝ} (hx : 0 ≤ x)
     (ht : 0 ≤ t ∧ t ≤ 1 / 2)
     (hfar : (x + 1) ^ 2 + (1 - t) ^ 2 ≤ 98 / 25) :
     Real.arccos (5 / 7 : ℝ) < Real.arccos x + Real.arcsin t := by
-  have hxmax := canonical_x_bound hx (show (-1 / 2 : ℝ) ≤ -t by linarith only [ht])
+  have hxmax := canonical_x_bound (show (-1 / 2 : ℝ) ≤ -t by linarith only [ht])
     (by linarith only [hfar] : (x + 1) ^ 2 + (-t + 1) ^ 2 ≤ 98 / 25)
   have hxP := straddling_polynomial_upper hx ht hfar
   let A := Real.arccos (5 / 7 : ℝ)
@@ -758,7 +758,7 @@ lemma straddling_larger_angle {x t : ℝ} (hx : 0 ≤ x)
     (hfar : (x + 1) ^ 2 + (1 - t) ^ 2 ≤ 98 / 25) :
     2 * Real.arcsin (2 / 5 : ℝ) <
       Real.arccos (x / (5 / 4)) + Real.arcsin (t / (5 / 4)) := by
-  have hxmax := canonical_x_bound hx (show (-1 / 2 : ℝ) ≤ -t by linarith only [ht])
+  have hxmax := canonical_x_bound (show (-1 / 2 : ℝ) ≤ -t by linarith only [ht])
     (by linarith only [hfar] : (x + 1) ^ 2 + (-t + 1) ^ 2 ≤ 98 / 25)
   have hxP := straddling_polynomial_upper hx ht hfar
   let A := 2 * Real.arcsin (2 / 5 : ℝ)
@@ -914,7 +914,7 @@ lemma general_straddling_unit_length {x t : ℝ} (hx : 0 ≤ x)
   rw [intervalLength_straddling]
   simp only [div_one]
   have hAC := straddling_unit_angle hx ht hfar
-  have hmax := canonical_x_bound hx (show (-1 / 2 : ℝ) ≤ -t by linarith only [ht])
+  have hmax := canonical_x_bound (show (-1 / 2 : ℝ) ≤ -t by linarith only [ht])
     (by linarith only [hfar] : (x + 1) ^ 2 + (-t + 1) ^ 2 ≤ 98 / 25)
   have hBC := arcsin_midpoint (u := 1 - t) (v := t) (by linarith only [ht]) ht.1
     (by linarith only [])
@@ -957,7 +957,7 @@ lemma general_straddling_larger_length {x t : ℝ} (hx : 0 ≤ x)
     (by norm_num; linarith only [])
   have hmid : (((1 - t) / (5 / 4) + t / (5 / 4)) / 2) = (2 / 5 : ℝ) := by ring
   rw [hmid] at hBC
-  have hmax := canonical_x_bound hx (show (-1 / 2 : ℝ) ≤ -t by linarith only [ht])
+  have hmax := canonical_x_bound (show (-1 / 2 : ℝ) ≤ -t by linarith only [ht])
     (by linarith only [hfar] : (x + 1) ^ 2 + (-t + 1) ^ 2 ≤ 98 / 25)
   have hCA : Real.arcsin (t / (5 / 4)) ≤ Real.arccos (x / (5 / 4)) := by
     have hsq := Real.sin_sq_add_cos_sq (Real.arcsin (t / (5 / 4)))
@@ -981,7 +981,7 @@ lemma general_straddling_larger_length {x t : ℝ} (hx : 0 ≤ x)
 
 lemma small_corner_length {x y : ℝ} (hx : 0 ≤ x ∧ x < 1 / 4)
     (hy : 0 ≤ y ∧ y ≤ x) : Real.pi / 3 < intervalLength 1 x y := by
-  rw [intervalLength_corner (by norm_num) hx.1 hy.1]
+  rw [intervalLength_corner (by norm_num) hy.1]
   simp only [div_one]
   rw [Real.arcsin_of_one_le (by linarith : 1 ≤ y + 1)]
   have hA := Real.arccos_le_pi_div_two.mpr hx.1
@@ -993,7 +993,7 @@ lemma small_corner_length {x y : ℝ} (hx : 0 ≤ x ∧ x < 1 / 4)
 lemma corner_unit_length {x y : ℝ} (hx : 0 ≤ x) (hy : 0 ≤ y)
     (hfar : (x + 1) ^ 2 + (y + 1) ^ 2 ≤ 98 / 25) :
     Real.pi / 2 - 2 * Real.arcsin (2 / 5 : ℝ) ≤ intervalLength 1 x y := by
-  rw [intervalLength_corner (by norm_num) hx hy]
+  rw [intervalLength_corner (by norm_num) hy]
   simp only [div_one]
   rw [Real.arcsin_of_one_le (by linarith : 1 ≤ y + 1)]
   have hA := Real.arccos_le_pi_div_two.mpr hx
@@ -1005,7 +1005,7 @@ lemma corner_unit_length {x y : ℝ} (hx : 0 ≤ x) (hy : 0 ≤ y)
 lemma corner_larger_length {x y : ℝ} (hx : 0 ≤ x) (hy : 0 ≤ y)
     (hfar : (x + 1) ^ 2 + (y + 1) ^ 2 ≤ 98 / 25) :
     Real.pi / 2 - 2 * Real.arcsin (8 / 25 : ℝ) ≤ intervalLength (5 / 4) x y := by
-  rw [intervalLength_corner (by norm_num) hx hy]
+  rw [intervalLength_corner (by norm_num) hy]
   apply le_min
   · rw [Real.arccos_eq_pi_div_two_sub_arcsin]
     have hh := corner_arcsin_sum hx hy hfar (r := 5 / 4) (Or.inr rfl)
@@ -1042,7 +1042,7 @@ theorem one_square_two_circle_inequality (K : UnitSquare)
     have hh := chart_phi C hcontain
     dsimp [phi, x, y] at *
     linarith only [hh]
-  have hxmax := TwoCircle.canonical_x_bound hx hy hfar
+  have hxmax := TwoCircle.canonical_x_bound hy hfar
   have hL₁ : TwoCircle.intervalLength 1 x y ≤ angularLength K 1 :=
     TwoCircle.intervalLength_le_angularLength C (by norm_num) ⟨hx, by linarith only [hxmax]⟩
       ⟨by linarith only [hy], by linarith only [hsort, hxmax]⟩ (by linarith only [hx])

@@ -3,12 +3,14 @@ module
 public import SquaresInCircles.Eight.Candidate.GeometricOwnersDoubleComplete
 
 /-!
-# Eight squares: a forbidden `B` direction with `G`-axis `3`
+# Eight squares: a forbidden `B` direction with the `G` axis `3`
 
-The cone and circle of `H` bound `a_H ≤ 29/25`, and then every axis of `E` forces `sin t > -3/8`,
-with no owner hypothesis (`global_negative_tilt_bound`). For a forbidden `B → T` axis and `G`-axis
-`3`, positive tilt is impossible directly, and on the remaining short arc one four-circle stress,
-with a uniform gap `1/20` and error at most `12S/5`, covers every axis of `E`
+The cone and the circle of `H` bound `a_H ≤ 29/25` (`H_primary_twenty_nine`), and then no axis of
+`E` separates `E → H` when `sin t ≤ -3/8`, with no owner hypothesis (`global_negative_tilt_bound`).
+A forbidden `B → T` axis and the cone of `T` give `b_A ≥ 29/50` and `a_A ≤ 29/25`
+(`forbidden_B_A_coordinates`). For a forbidden `B → T` axis and the `G` axis `3`, a nonnegative
+tilt is impossible directly, and on the remaining short arc one four-circle stress, with a uniform
+gap `1/20` and error at most `12S/5`, covers every axis of `E`
 (`G_axis_three_forbidden_B_excluded`).
 -/
 
@@ -18,7 +20,8 @@ open scoped BigOperators
 namespace SquaresInCircles.Eight.Candidate
 open _root_.SquaresInCircles.Eight.Candidate.Dual
 
-/-- The corner `(29/25, 29/50)` lies strictly outside `Q0`. -/
+/-- A point of the corner disk at a level `q ≤ Q0` with `b ≥ 29/50` has `a ≤ 29/25`: the corner
+`(29/25, 29/50)` lies outside the disk of squared radius `Q0`. -/
 theorem corner_primary_twenty_nine {a b q : ℝ} (hq : q ≤ Q0)
     (hb : 29/50 ≤ b) (hcircle : (a+1/2)^2+(b+1/2)^2 ≤ q) :
     a ≤ 29/25 := by
@@ -31,6 +34,8 @@ theorem corner_primary_twenty_nine {a b q : ℝ} (hq : q ≤ Q0)
   norm_num at hsa hsb
   linarith
 
+/-- Under the tangent cuts at a level `q ≤ Q0`, `a_H ≤ 29/25`: otherwise the cone `b_H ≥ a_H/2` of
+`H` would give `b_H ≥ 29/50`, against `corner_primary_twenty_nine`. -/
 theorem H_primary_twenty_nine {q : ℝ} {C : BoundaryCycle q}
     (hq : q ≤ Q0) (hc : TangentCuts C) : C.a H ≤ 29/25 := by
   have hratio := (hc.cones hq H).2.2.1
@@ -41,8 +46,10 @@ theorem H_primary_twenty_nine {q : ℝ} {C : BoundaryCycle q}
   have hb : 29/50 ≤ C.b H := by simp only [H] at *; linarith
   exact (not_le.mpr ha) (corner_primary_twenty_nine hq hb hcircle)
 
-/-- Every axis of `E` fails on this closed rectangle. The bound on the primary coordinate of `H`
-follows from its cone and its corner disk. -/
+/-- On the closed box `447/800 ≤ a_E ≤ 283/200`, `b_E ≥ 0`, `447/800 ≤ a_H ≤ 29/25`,
+`b_H ≥ a_H/2`, `3/4 ≤ c ≤ 1`, `3/8 ≤ r ≤ 1`, each of the four projections of `E → H` at the
+nominal angle, with `c = cos t` and `r = -sin t`, is below `(1 + c + r)/2 - 3/100`. The bound on
+the primary coordinate of `H` follows from its cone and its corner disk. -/
 theorem global_negative_E_axis_upper {aE bE aH bH c r : ℝ}
     (hEa : 447/800 ≤ aE) (hEu : aE ≤ 283/200) (hEb : 0 ≤ bE)
     (hHa : 447/800 ≤ aH) (hHu : aH ≤ 29/25) (hHb : aH/2 ≤ bH)
@@ -71,7 +78,8 @@ theorem global_negative_E_axis_upper {aE bE aH bH c r : ℝ}
     norm_num
     nlinarith
 
-/-- This bound uses no owner hypothesis. -/
+/-- Under the tangent cuts at mismatch at most `3/200`, the tilt has `sin t > -3/8`: otherwise no
+axis would separate `E → H`. No owner hypothesis is used. -/
 theorem global_negative_tilt_bound {q : ℝ} {C : BoundaryCycle q}
     (F : Frame C) (hq : q ≤ Q0) (hc : TangentCuts C)
     (hS : mismatch F.theta ≤ 3/200) : -(3/8:ℝ) < Real.sin (tilt F.theta) := by
@@ -100,8 +108,9 @@ theorem global_negative_tilt_bound {q : ℝ} {C : BoundaryCycle q}
     (p E)
   linarith
 
-/-- With the upper cone bound of `T`, the forbidden `B` chain makes the transverse coordinate of `A`
-large. Only the errors of `A` and `B` are spent. -/
+/-- A forbidden `B → T` axis gives `b_A ≥ 29/50` and `a_A ≤ 29/25`: the chain `A → B → T` gives
+`b_A + a_T ≥ 2 - (3/2) S`, the cone of `T` bounds `a_T ≤ 349/250`, and the corner disk of `A`
+bounds `a_A`. Only the errors of `A` and `B` are spent. -/
 theorem forbidden_B_A_coordinates {q : ℝ} {C : BoundaryCycle q}
     (F : Frame C) (hq : q ≤ Q0) (hc : TangentCuts C) (hzero : ZeroOwners C)
     (hS : mismatch F.theta ≤ 3/200) {jB : Fin 4} (hB : jB ∉ quarterOwners)
@@ -138,10 +147,15 @@ theorem nominal_D_intended_projection {q : ℝ} {C : BoundaryCycle q}
 
 namespace ForbiddenBStress
 
+/-- The weights `(2/5, 1, c, c, 2/5, 9/20, 9/20)` of the edges `H, G, A, B, T, D, E`. -/
 def edgeWeight (c : ℝ) : Vertex → ℝ := ![2/5,1,c,c,2/5,9/20,9/20]
 
+/-- The sum of the seven nominal thresholds weighted by `edgeWeight`, with `c = cos t` and
+`r = -sin t`. -/
 def demand (c r : ℝ) : ℝ := (29/20)*(1+c+r)/2+2*c+5/4
 
+/-- The sum of the seven nominal projections weighted by `edgeWeight`, for the `G` axis `3` and
+the axis `j` of `E`, in the states; the transverse coordinates of `A` and `B` have cancelled. -/
 def force (a b : Vertex → ℝ) (c r : ℝ) (j : Fin 4) : ℝ :=
   a G+(2/5)*b G+r*a A+c*a T+(2/5)*b T+(9/20)*a D+(2/5)*b D+
     ![(9/20)*c*a H+(2/5-(9/20)*r)*b H,
@@ -149,6 +163,8 @@ def force (a b : Vertex → ℝ) (c r : ℝ) (j : Fin 4) : ℝ :=
       (2/5-9/20)*b H+(9/20)*c*a E+(9/20)*(1-r)*b E,
       -(9/20)*r*a H+(2/5-(9/20)*c)*b H+(9/20)*a E+(9/20)*b E] j
 
+/-- The weighted errors of the aligned edges add up to at most the mismatch, the weights being at
+most `1`. -/
 theorem shared_loss (θ : Vertex → ℝ) {c : ℝ} (hc : c ≤ 1) :
     (∑ j : Fin 5, edgeWeight c (alignedEdge j)*|delta θ (alignedEdge j)|) ≤
       mismatch θ := by
@@ -160,9 +176,10 @@ theorem shared_loss (θ : Vertex → ℝ) {c : ℝ} (hc : c ≤ 1) :
     (by simp [mismatch, charged, alignedEdge, Fin.sum_univ_succ])
   simpa using hh
 
-/-- One four-circle argument with four force directions for `E`. The weights of `G` and `T` are
-`11/40`, those of `D` and of `H` or `E` are `3/20`, with total `17/20`. All four forces have the gap
-`1/20`. -/
+/-- For each axis `j` of `E`, the force is at least `1/20` below the demand on the arc
+`0 ≤ r ≤ 3/8`: the circles of `G` and `T` are completed with the weight `11/40`, those of `D` and
+of `H` (the axes `0` and `1`) or `E` (the axes `2` and `3`) with the weight `3/20`, `17/20` in
+all. -/
 theorem four_circle_gap (a b : Vertex → ℝ) {q c r : ℝ}
     (hq : q ≤ Q0) (hcircle : ∀ i, (a i+1/2)^2+(b i+1/2)^2 ≤ q)
     (hAa : a A ≤ 29/25) (hEa : 447/800 ≤ a E) (hHa : 447/800 ≤ a H)
@@ -216,8 +233,9 @@ theorem four_circle_gap (a b : Vertex → ℝ) {q c r : ℝ}
 
 end ForbiddenBStress
 
-/-- With a forbidden `B` axis, the `G` axis `3` is excluded on the whole chart, for every `E`
-axis. The `D` axis is a quarter owner by `D_quarter_owners`, which fixes its projection. -/
+/-- With a forbidden `B → T` axis at mismatch at most `3/200`, the `G` axis `3` does not separate
+`G → A`, on the whole chart and for every axis of `E`. The axis of `D` is a quarter owner by
+`D_quarter_owners`, which fixes its projection. -/
 theorem G_axis_three_forbidden_B_excluded {q : ℝ} {C : BoundaryCycle q}
     (F : Frame C) (hq : q ≤ Q0) (hc : TangentCuts C) (hzero : ZeroOwners C)
     (hS : mismatch F.theta ≤ 3/200) {jB : Fin 4} (hB : jB ∉ quarterOwners)

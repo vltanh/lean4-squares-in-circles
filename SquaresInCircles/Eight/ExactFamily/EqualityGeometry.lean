@@ -356,7 +356,6 @@ def exteriorNormal (d : Coordinates) (i j : Fin 7) : Point :=
   else if i=5 ∧ j=6 then (0,-1)
   else (-1,0)
 
-set_option linter.unusedSimpArgs false in
 theorem exterior_separator {p : EqualityParameters} (hp : p.Admissible sharpData)
     (i j : Fin 7) (hij : i<j) :
     exteriorNormal sharpData i j≠(0,0) ∧
@@ -451,17 +450,17 @@ theorem exterior_separator {p : EqualityParameters} (hp : p.Admissible sharpData
   · refine ⟨ne_y,?_⟩
     show width (sharpData.tiltedSquare sharpData.pH) ((0,1):Point) + width (axisSquare sharpData.pB) ((0,1):Point) ≤ dot ((0,1):Point) (sub (sharpData.pB) (sharpData.pH))
     rw [wTy,wAy]
-    simp only [dot,sub,pA,pB,pD,pE,pH,pT,pG,inFrame,x₃,y₄]
+    simp only [dot,sub,pB,pH,inFrame]
     linarith only [hyB, hHtop]
   · refine ⟨ne_y,?_⟩
     show width (sharpData.tiltedSquare sharpData.pH) ((0,1):Point) + width (axisSquare (sharpData.pT p.z)) ((0,1):Point) ≤ dot ((0,1):Point) (sub (sharpData.pT p.z) (sharpData.pH))
     rw [wTy,wAy]
-    simp only [dot,sub,pA,pB,pD,pE,pH,pT,pG,inFrame,x₃,y₄]
+    simp only [dot,sub,pH,pT,inFrame]
     linarith only [hY0, hHtop, hx₁u, hx₂, hz]
   · refine ⟨ne_y,?_⟩
     show width (sharpData.tiltedSquare sharpData.pH) ((0,1):Point) + width (axisSquare sharpData.pD) ((0,1):Point) ≤ dot ((0,1):Point) (sub (sharpData.pD) (sharpData.pH))
     rw [wTy,wAy]
-    simp only [dot,sub,pA,pB,pD,pE,pH,pT,pG,inFrame,x₃,y₄]
+    simp only [dot,sub,pD,pH,inFrame,x₃]
     linarith only [hY0, hHtop, hx₁u, hx₂, hy₃]
   · refine ⟨ne_f,?_⟩
     show width (sharpData.tiltedSquare sharpData.pH) sharpData.f+width (axisSquare sharpData.pE) sharpData.f ≤ dot sharpData.f (sub (sharpData.pE) (sharpData.pH))
@@ -474,72 +473,72 @@ theorem exterior_separator {p : EqualityParameters} (hp : p.Admissible sharpData
   · refine ⟨ne_y,?_⟩
     show width (sharpData.tiltedSquare (sharpData.pG p.eta)) ((0,1):Point) + width (axisSquare sharpData.pB) ((0,1):Point) ≤ dot ((0,1):Point) (sub (sharpData.pB) (sharpData.pG p.eta))
     rw [wTy,wAy]
-    simp only [dot,sub,pA,pB,pD,pE,pH,pT,pG,inFrame,x₃,y₄]
+    simp only [dot,sub,pB,pG,inFrame]
     linarith only [hyB, hGtop, hηc]
   · refine ⟨ne_y,?_⟩
     show width (sharpData.tiltedSquare (sharpData.pG p.eta)) ((0,1):Point) + width (axisSquare (sharpData.pT p.z)) ((0,1):Point) ≤ dot ((0,1):Point) (sub (sharpData.pT p.z) (sharpData.pG p.eta))
     rw [wTy,wAy]
-    simp only [dot,sub,pA,pB,pD,pE,pH,pT,pG,inFrame,x₃,y₄]
+    simp only [dot,sub,pT,pG,inFrame]
     linarith only [hY0, hGtop, hx₁u, hx₂, hz, hηc]
   · refine ⟨ne_y,?_⟩
     show width (sharpData.tiltedSquare (sharpData.pG p.eta)) ((0,1):Point) + width (axisSquare sharpData.pD) ((0,1):Point) ≤ dot ((0,1):Point) (sub (sharpData.pD) (sharpData.pG p.eta))
     rw [wTy,wAy]
-    simp only [dot,sub,pA,pB,pD,pE,pH,pT,pG,inFrame,x₃,y₄]
+    simp only [dot,sub,pD,pG,inFrame,x₃]
     linarith only [hY0, hGtop, hx₁u, hx₂, hy₃, hηc]
   · refine ⟨ne_mx,?_⟩
     show width (sharpData.tiltedSquare (sharpData.pG p.eta)) ((-1,0):Point)+width (axisSquare sharpData.pE) ((-1,0):Point) ≤ dot ((-1,0):Point) (sub (sharpData.pE) (sharpData.pG p.eta))
     rw [wTmx,wAmx]
-    simp only [dot,sub,pA,pB,pD,pE,pH,pT,pG,inFrame,x₃,y₄]
+    simp only [dot,sub,pE,pG,inFrame,y₄]
     linarith only [hY0, hGleft, hx₁u, hx₂, hx₄u, hηs]
   · refine ⟨ne_y,?_⟩
     show width (axisSquare sharpData.pA) ((0,1):Point) + width (axisSquare sharpData.pB) ((0,1):Point) ≤ dot ((0,1):Point) (sub (sharpData.pB) (sharpData.pA))
     rw [wAy,wAy]
-    simp only [dot,sub,pA,pB,pD,pE,pH,pT,pG,inFrame,x₃,y₄]
+    simp only [dot,sub,pA,pB]
     linarith only []
   · refine ⟨ne_mx,?_⟩
     show width (axisSquare sharpData.pA) ((-1,0):Point)+width (axisSquare (sharpData.pT p.z)) ((-1,0):Point) ≤ dot ((-1,0):Point) (sub (sharpData.pT p.z) (sharpData.pA))
     rw [wAmx,wAmx]
-    simp only [dot,sub,pA,pB,pD,pE,pH,pT,pG,inFrame,x₃,y₄]
+    simp only [dot,sub,pA,pT]
     linarith only [hY0]
   · refine ⟨ne_mx,?_⟩
     show width (axisSquare sharpData.pA) ((-1,0):Point)+width (axisSquare sharpData.pD) ((-1,0):Point) ≤ dot ((-1,0):Point) (sub (sharpData.pD) (sharpData.pA))
     rw [wAmx,wAmx]
-    simp only [dot,sub,pA,pB,pD,pE,pH,pT,pG,inFrame,x₃,y₄]
+    simp only [dot,sub,pA,pD,x₃]
     linarith only [hY0, hx₁u, hx₂]
   · refine ⟨ne_mx,?_⟩
     show width (axisSquare sharpData.pA) ((-1,0):Point)+width (axisSquare sharpData.pE) ((-1,0):Point) ≤ dot ((-1,0):Point) (sub (sharpData.pE) (sharpData.pA))
     rw [wAmx,wAmx]
-    simp only [dot,sub,pA,pB,pD,pE,pH,pT,pG,inFrame,x₃,y₄]
+    simp only [dot,sub,pA,pE,y₄]
     linarith only [hY0, hx₁u, hx₂, hx₄u]
   · refine ⟨ne_mx,?_⟩
     show width (axisSquare sharpData.pB) ((-1,0):Point)+width (axisSquare (sharpData.pT p.z)) ((-1,0):Point) ≤ dot ((-1,0):Point) (sub (sharpData.pT p.z) (sharpData.pB))
     rw [wAmx,wAmx]
-    simp only [dot,sub,pA,pB,pD,pE,pH,pT,pG,inFrame,x₃,y₄]
+    simp only [dot,sub,pB,pT]
     linarith only []
   · refine ⟨ne_mx,?_⟩
     show width (axisSquare sharpData.pB) ((-1,0):Point)+width (axisSquare sharpData.pD) ((-1,0):Point) ≤ dot ((-1,0):Point) (sub (sharpData.pD) (sharpData.pB))
     rw [wAmx,wAmx]
-    simp only [dot,sub,pA,pB,pD,pE,pH,pT,pG,inFrame,x₃,y₄]
+    simp only [dot,sub,pB,pD,x₃]
     linarith only [hY0, hx₁u, hx₂]
   · refine ⟨ne_mx,?_⟩
     show width (axisSquare sharpData.pB) ((-1,0):Point)+width (axisSquare sharpData.pE) ((-1,0):Point) ≤ dot ((-1,0):Point) (sub (sharpData.pE) (sharpData.pB))
     rw [wAmx,wAmx]
-    simp only [dot,sub,pA,pB,pD,pE,pH,pT,pG,inFrame,x₃,y₄]
+    simp only [dot,sub,pB,pE,y₄]
     linarith only [hY0, hx₁u, hx₂, hx₄u]
   · refine ⟨ne_mx,?_⟩
     show width (axisSquare (sharpData.pT p.z)) ((-1,0):Point)+width (axisSquare sharpData.pD) ((-1,0):Point) ≤ dot ((-1,0):Point) (sub (sharpData.pD) (sharpData.pT p.z))
     rw [wAmx,wAmx]
-    simp only [dot,sub,pA,pB,pD,pE,pH,pT,pG,inFrame,x₃,y₄]
+    simp only [dot,sub,pD,pT,x₃]
     linarith only []
   · refine ⟨ne_mx,?_⟩
     show width (axisSquare (sharpData.pT p.z)) ((-1,0):Point)+width (axisSquare sharpData.pE) ((-1,0):Point) ≤ dot ((-1,0):Point) (sub (sharpData.pE) (sharpData.pT p.z))
     rw [wAmx,wAmx]
-    simp only [dot,sub,pA,pB,pD,pE,pH,pT,pG,inFrame,x₃,y₄]
+    simp only [dot,sub,pE,pT,y₄]
     linarith only [hY0, hx₁u, hx₂, hx₄u]
   · refine ⟨ne_my,?_⟩
     show width (axisSquare sharpData.pD) ((0,-1):Point)+width (axisSquare sharpData.pE) ((0,-1):Point) ≤ dot ((0,-1):Point) (sub (sharpData.pE) (sharpData.pD))
     rw [wAmy,wAmy]
-    simp only [dot,sub,pA,pB,pD,pE,pH,pT,pG,inFrame,x₃,y₄]
+    simp only [dot,sub,pD,pE,x₃,y₄]
     linarith only []
 
 theorem exterior_disjoint {p : EqualityParameters} (hp : p.Admissible sharpData) :

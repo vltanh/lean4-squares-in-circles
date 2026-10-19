@@ -24,7 +24,7 @@ the weights are fixed on its closed interval before an error alternative is chos
 noncomputable section
 open scoped BigOperators
 namespace SquaresInCircles.Eight.Candidate
-open Dual
+open SquaresInCircles.Eight.Candidate.Dual
 
 private theorem DualApplication.peval_add (p q : Poly) (z : ℝ) :
     peval (p + q) z = peval p z + peval q z := by
@@ -155,15 +155,7 @@ theorem Dual.Row.original_of_continuous {q : ℝ} {C : BoundaryCycle q} (hc : Ta
     linarith
 
 theorem maxLambda_bound (r : Row) (j : Fin 5) : r.lambda (alignedEdge j) ≤ r.maxLambda := by
-  have h₀ := le_max_left (r.lambda 0) (max (r.lambda 2) (max (r.lambda 3) (max (r.lambda 4) (r.lambda 5))))
-  have h₁ := le_max_right (r.lambda 0) (max (r.lambda 2) (max (r.lambda 3) (max (r.lambda 4) (r.lambda 5))))
-  have h₂ := le_max_left (r.lambda 2) (max (r.lambda 3) (max (r.lambda 4) (r.lambda 5)))
-  have h₃ := le_max_right (r.lambda 2) (max (r.lambda 3) (max (r.lambda 4) (r.lambda 5)))
-  have h₄ := le_max_left (r.lambda 3) (max (r.lambda 4) (r.lambda 5))
-  have h₅ := le_max_right (r.lambda 3) (max (r.lambda 4) (r.lambda 5))
-  have h₆ := le_max_left (r.lambda 4) (r.lambda 5)
-  have h₇ := le_max_right (r.lambda 4) (r.lambda 5)
-  fin_cases j <;> simp [alignedEdge,Row.maxLambda] <;> linarith
+  fin_cases j <;> simp [alignedEdge,Row.maxLambda]
 
 theorem mixed_continuous_necessary {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
     (hq : q ≤ Q0) (hc : TangentCuts C) (hzero : ZeroOwners C)
@@ -177,9 +169,9 @@ theorem mixed_continuous_necessary {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
       actualProjection C i (r.owners i) (nominalPhase (tilt F.theta) i) := by
     rw [howners,collapsed_projection hc _ _ _ (fun hi => hzero i hi (p i) (hp i))]
     by_cases hi : i ∈ charged
-    · rw [if_pos hi,(aligned_width F hi).1]
+    · rw [ite_eq_left hi,(aligned_width F hi).1]
       exact aligned_first_order_projection F hq hi (p i) (hp i) (by linarith)
-    · rw [if_neg hi]
+    · rw [ite_eq_right hi]
       fin_cases i <;> norm_num [charged] at hi <;>
         first | simpa [G] using mixed_G_projection F (p G) (hp G)
               | simpa [G,E] using mixed_E_projection F hq (p E) (hp E) (by norm_num) hS
@@ -382,8 +374,7 @@ theorem tilt_bundle_excludes {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
     (fun j : Fin 5 => errorCoefficient C (tilt F.theta) (B.row .zero).positive
       B.lambda (alignedEdge j) (p (alignedEdge j)))
     (fun j : Fin 5 => (B.lambda (alignedEdge j) : ℝ))
-    (fun j : Fin 5 => delta F.theta (alignedEdge j))
-    (by norm_num : (0:ℝ) ≤ 1/1000) hball hnecessary
+    (fun j : Fin 5 => delta F.theta (alignedEdge j)) hball hnecessary
   · have hh : (B.row .zero).continuousNecessary C (tilt F.theta) := by
       unfold Row.continuousNecessary
       rw [B.same_alternative, B.same_owners, B.same_lambda]

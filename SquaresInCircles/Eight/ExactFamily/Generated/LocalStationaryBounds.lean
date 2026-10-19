@@ -3,16 +3,27 @@ module
 public import SquaresInCircles.Eight.ExactFamily.Generated.StationaryFormula
 public import SquaresInCircles.Eight.ExactFamily.FixedEval
 
-/-! Interval certificates near the stationary point: regularity of `F`, `F_y` and `F_z` on
-`localBox`, bounds there on `F_q`, `F_yy`, the coordinates of the chain and the determinant of the
-shifted Hessian, and the values of `F` and its first derivatives at the trial point and at the ends
-of the bracket of `qStar`. Every bound is decided in the kernel by fixed-point interval evaluation
-(`FixedEval`). -/
+/-!
+# Eight squares: interval bounds near the stationary point
+
+Bounds on the formulas of `StationaryFormula.lean`, each decided by the kernel with the
+fixed-point interval evaluation of `ExactFamily/FixedEval.lean`, at 80 to 200 bits. On `localBox`
+the formulas `F`, `F_y` and `F_z` are regular (`fullF_regular`, ...), `-4 ≤ F_q ≤ -3`
+(`fullFq_bound`), `6 ≤ F_yy ≤ 9` (`fullFyy_bound`), and the coordinates of the chain lie in
+rational intervals (`localXOne_bound`, ...); the determinant of the shifted Hessian lies in
+`[10, 100]` on every cell of a 4 × 4 grid in `(y, z)` (`determinant_bound`), and the cells cover
+`localBox` (`determinant_cover`). At the trial point `F_y` and `F_z` are small for every radius of
+`localBox` (`trialFy_bound`, `trialFz_bound`); `F` is positive at `q = qMinus` and negative at
+`q = Q0` (`lowerTest_bound`, `upperTest_bound`), and likewise at the two ends of the bracket of
+`qStar` (`sharpLowF_bound`, `sharpHighF_bound`); and on the bracket `|F_y|` and `|F_z|` are at
+most `10⁻¹⁵` (`sharpTrialFy_bound`, ...). On `sharpBox` the coordinates lie in narrow intervals
+(`sharpXOne_bound`, ...). `ExactFamily/Analysis.lean` and `ExactFamily/Stationary.lean` use these
+bounds. Written by `scripts/eight/generate_stationary.py`.
+-/
 
 @[expose] public section
 noncomputable section
 set_option maxRecDepth 100000
-set_option linter.all false
 
 namespace SquaresInCircles.Eight.ExactFamily.Generated
 open Arithmetic
@@ -187,9 +198,11 @@ theorem det33_bound (env : Fin 3 → ℝ) (he : det33Box.Mem env) :
   bound_of_bounded (p := 80) (10) (100)
     (by decide +kernel) (by rat_cast) (by rat_cast) he
 
+/-- The cells of the 4 × 4 grid of `localBox` in `(y, z)`. -/
 noncomputable def determinantBoxes : Fin 4 → Fin 4 → QBox 3 :=
   ![![det00Box, det01Box, det02Box, det03Box], ![det10Box, det11Box, det12Box, det13Box], ![det20Box, det21Box, det22Box, det23Box], ![det30Box, det31Box, det32Box, det33Box]]
 
+/-- The determinant of the shifted Hessian is in `[10, 100]` on every cell of the grid. -/
 theorem determinant_bound (i j : Fin 4) (env : Fin 3 → ℝ)
     (he : (determinantBoxes i j).Mem env) :
     (10:ℝ) ≤ formula258.eval env ∧ formula258.eval env ≤ 100 := by
@@ -211,6 +224,7 @@ theorem determinant_bound (i j : Fin 4) (env : Fin 3 → ℝ)
   · exact det32_bound env he
   · exact det33_bound env he
 
+/-- Every point of `localBox` lies in a cell of the grid. -/
 theorem determinant_cover (env : Fin 3 → ℝ) (he : localBox.Mem env) :
     ∃ i j : Fin 4, (determinantBoxes i j).Mem env := by
   have hq := he 0; have hy := he 1; have hz := he 2
@@ -372,6 +386,7 @@ theorem sharpTrialFz_bound (env : Fin 3 → ℝ) (he : sharpTrialFzBox.Mem env) 
   · exact bound_of_bounded (p := 200) (-1/1000000000000000) (1/1000000000000000)
       (by decide +kernel) (by rat_cast) (by rat_cast) (QBox.mem_right he h)
 
+/-- The bracket of `qStar` times the square of side `2·10⁻¹²` about the trial point. -/
 noncomputable def sharpBox : QBox 3 := ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-3682626712034424527/4000000000000000000),(-3682626712026424527/4000000000000000000)⟩, ⟨(618974110066603597/10000000000000000000),(618974110086603597/10000000000000000000)⟩]
 
 noncomputable def sharpXOneBox : QBox 3 := ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-3682626712034424527/4000000000000000000),(-3682626712026424527/4000000000000000000)⟩, ⟨(618974110066603597/10000000000000000000),(618974110086603597/10000000000000000000)⟩]

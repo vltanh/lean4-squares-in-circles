@@ -3,8 +3,12 @@ module
 public import SquaresInCircles.Eight.Arithmetic.FourTypeProblems
 public meta import SquaresInCircles.Eight.IntRows
 
-/-! The data of the pair table `FourTypeCoreSideLow`: its arcs, the quadratic label of each arc with its
-side, its problems and its fixed-point context, checked once. -/
+/-!
+# Eight squares: the data of the pair table `FourTypeCoreSideLow`
+
+Its arcs, the quadratic label of each arc with its side, its problems and its
+fixed-point context, checked against the arcs once.
+-/
 
 @[expose] public section
 noncomputable section

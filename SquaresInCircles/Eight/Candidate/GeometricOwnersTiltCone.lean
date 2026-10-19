@@ -5,16 +5,18 @@ public import SquaresInCircles.Eight.Candidate.GeometricOwnersDouble
 /-!
 # Eight squares: a forbidden `D` direction bounds the negative tilt
 
-A forbidden `D → E` axis forces `a_E ≥ 39/40`; with the cone of `H`, every axis of `E` fails when
-`sin t ≤ -9/20` (`forbidden_D_negative_tilt_bound`). With the large transverse coordinate of `A`,
-this excludes `G`-axis `3` under two forbidden quarter directions
-(`G_axis_three_double_forbidden_excluded`).
+A forbidden `D → E` axis at mismatch at most `3/200` forces `a_E ≥ 39/40`; with the cone
+`b_H ≥ a_H/2` of `H`, no axis of `E` separates `E → H` when `sin t ≤ -9/20` for the tilt `t`
+(`forbidden_D_negative_tilt_bound`). With the large transverse coordinate of `A`
+(`double_forbidden_transverse_bound`), this excludes the `G` axis `3` under two forbidden quarter
+directions (`G_axis_three_double_forbidden_excluded`).
 -/
 
 @[expose] public section
 noncomputable section
 namespace SquaresInCircles.Eight.Candidate
 
+/-- On the closed half-angle chart `|z| ≤ 3/8`, the tilt `t = 2 arctan z` has `cos t ≥ 3/4`. -/
 theorem half_angle_cos_three_quarters {z t : ℝ} (hz : |z| ≤ 3/8)
     (ht : t=2*Real.arctan z) : 3/4 ≤ Real.cos t := by
   have hid := half_angle_identities z
@@ -25,7 +27,9 @@ theorem half_angle_cos_three_quarters {z t : ℝ} (hz : |z| ≤ 3/8)
   apply (le_div_iff₀ hd).mpr
   nlinarith
 
-/-- Each of the four signed axes of `E` fails on this closed rectangle, with a strict gap. -/
+/-- On the closed box `39/40 ≤ a_E ≤ 283/200`, `b_E ≥ 0`, `1/2 ≤ a_H ≤ 283/200`, `b_H ≥ a_H/2`,
+`3/4 ≤ c ≤ 1`, `9/20 ≤ r ≤ 1`, each of the four projections of `E → H` at the nominal angle, with
+`c = cos t` and `r = -sin t`, is below `(1 + c + r)/2 - 3/100`. -/
 theorem negative_E_axis_upper {aE bE aH bH c r : ℝ}
     (hEa : 39/40 ≤ aE) (hEu : aE ≤ 283/200) (hEb : 0 ≤ bE)
     (hHa : 1/2 ≤ aH) (hHu : aH ≤ 283/200) (hHb : aH/2 ≤ bH)
@@ -69,8 +73,8 @@ theorem nominal_E_negative_projection_formula {q : ℝ} {C : BoundaryCycle q}
       nominalPhase, zeroEdges, otherQuarterEdges, next, E, H, G, hs, Dual.signs,
       Real.sin_add, Real.cos_add] <;> ring
 
-/-- A forbidden `D` axis excludes the far negative tilt, for every axis of `E`. The only error spent
-on `E` is its coarse projection loss `2S`. -/
+/-- A forbidden `D → E` axis at mismatch at most `3/200` gives `sin t > -9/20` for the tilt `t`,
+whatever the axis of `E`. The only error spent on `E → H` is its projection loss `2S`. -/
 theorem forbidden_D_negative_tilt_bound {q : ℝ} {C : BoundaryCycle q}
     (F : Frame C) (hq : q ≤ Q0) (hc : TangentCuts C)
     (hS : mismatch F.theta ≤ 3/200)
@@ -108,6 +112,7 @@ theorem forbidden_D_negative_tilt_bound {q : ℝ} {C : BoundaryCycle q}
     (p E)
   linarith
 
+/-- A point of the corner disk at a level `q ≤ Q0` with `b ≥ 81/100` has `a ≤ 1`. -/
 theorem large_transverse_primary_bound {a b q : ℝ} (hq : q ≤ Q0)
     (hb : 81/100 ≤ b) (hcircle : (a+1/2)^2+(b+1/2)^2 ≤ q) : a ≤ 1 := by
   have hsupport := Dual.circle_linear_upper (a := a) (b := b)
@@ -126,8 +131,9 @@ theorem nominal_G_axis_three_projection {q : ℝ} {C : BoundaryCycle q}
     Real.sin_sub, Real.cos_sub]
   ring
 
-/-- With the transverse coordinate and the negative tilt bounded, axis `3` cannot separate `G` from
-`A` on the remaining chart, for either sign of the tilt. -/
+/-- If `g ≤ 283/200`, `0 ≤ a ≤ 1` and `b ≥ 81/100`, then for a direction `(c, s)` with `c ≥ 3/4`
+and `s > -9/20` the projection `g - a s - b c` of the `G` axis `3` stays below the threshold
+`(1 + c + |s|)/2`, for either sign of `s`. -/
 theorem large_transverse_G_three_excluded {g a b c s : ℝ}
     (hgu : g ≤ 283/200) (ha : 0 ≤ a) (hau : a ≤ 1) (hb : 81/100 ≤ b)
     (hc : 3/4 ≤ c) (hunit : c^2+s^2=1) (hs : -(9/20:ℝ) < s)
@@ -149,7 +155,8 @@ theorem large_transverse_G_three_excluded {g a b c s : ℝ}
     rw [abs_of_nonpos hs0] at hprojection
     nlinarith
 
-/-- This excludes four owner patterns, for every signed axis of `E`, ties included. -/
+/-- With forbidden axes on `B → T` and `D → E` at mismatch at most `3/200`, the `G` axis `3` does
+not separate `G → A`, whatever the axis of `E`. -/
 theorem G_axis_three_double_forbidden_excluded {q : ℝ} {C : BoundaryCycle q}
     (F : Frame C) (hq : q ≤ Q0) (hc : TangentCuts C) (hzero : ZeroOwners C)
     (hS : mismatch F.theta ≤ 3/200)

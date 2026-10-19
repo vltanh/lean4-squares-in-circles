@@ -10,13 +10,13 @@ For each half-angle tangent `z` of the tilt in `tiltBox = [1/20, 81/1000]`, the 
 `adaptiveData z` is the chain at the squared radius `qStar` with the tilt `z` and the position
 `adaptiveY z` at which the derivative of the defect in the position vanishes. That position is a
 zero given by the intermediate value theorem: the fixed cover of 256 graph boxes of
-`Generated/AdaptiveBounds.lean` covers the stationary graph and gives the derivative opposite
-signs at the two ends of the position interval of each box (`adaptive_position_exists`); it is
-unique because the derivative increases in the position with slope at least `6`
-(`familyY_slope`, `adaptiveY_unique`). The defect of the adaptive chain is at least
-`(z - z*)²/8` (`adaptive_curvature`), and at the stationary tilt the adaptive chain is
-`sharpData` (`adaptive_sharp`). The file ends with the contact weights of the edges and the nine
-owner reserves (`ownerReserve`), which the same cover bounds below.
+`Generated/AdaptiveFormula.lean` covers the stationary graph, and `Generated/AdaptiveBounds.lean`
+gives the derivative opposite signs at the two ends of the position interval of each box
+(`adaptive_position_exists`). As
+the derivative increases in the position with slope at least `6` (`familyY_slope`), the chosen
+zero lies in the graph box of its tilt (`adaptive_graph_mem`). The defect of the adaptive chain
+is at least `(z - z*)²/8` (`adaptive_curvature`). The file ends with the contact weights of the
+edges and the nine owner reserves (`ownerReserve`), which the same cover bounds below.
 -/
 
 @[expose] public section
@@ -29,8 +29,7 @@ open Arithmetic Generated
 
 def tiltBox : Set ℝ := Icc (1/20) (81/1000)
 
-theorem uniform_grid_cover (n : ℕ) (hn : 0<n) {l w x : ℝ}
-    (hw : 0 ≤ w) (hx : l ≤ x ∧ x ≤ l+(n:ℝ)*w) :
+theorem uniform_grid_cover (n : ℕ) (hn : 0<n) {l w x : ℝ} (hx : l ≤ x ∧ x ≤ l+(n:ℝ)*w) :
     ∃ i : Fin n, l+(i.val:ℝ)*w ≤ x ∧ x ≤ l+(i.val+1:ℝ)*w := by
   induction n with
   | zero => omega
@@ -48,7 +47,7 @@ theorem uniform_grid_cover (n : ℕ) (hn : 0<n) {l w x : ℝ}
 theorem adaptive_grid_cover {z : ℝ} (hz : z ∈ tiltBox) :
     ∃ i : Fin 256, AdaptiveGenerated.zLo i ≤ z ∧ z ≤ AdaptiveGenerated.zHi i := by
   obtain ⟨i,hi⟩ := uniform_grid_cover 256 (by omega) (l:=1/20)
-    (w:=31/256000) (x:=z) (by norm_num) (by
+    (w:=31/256000) (x:=z) (by
       have hz' : (1/20:ℝ) ≤ z ∧ z ≤ 81/1000 := hz
       norm_num
       exact hz')

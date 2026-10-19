@@ -7,12 +7,14 @@ public import SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.Co
 public import SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.Cover03
 public import SquaresInCircles.Eight.Candidate.GeometricCoreMarker
 
-/-! # The affine table `CandidateCoarseMismatch`
+/-!
+# Eight squares: the affine table `CandidateCoarseMismatch`
 
 Each of its 110425 rows passes `checkRow`, so it satisfies its claim
 (`checkRow_claim`). The walks `coverBlock` over blocks of sources covering all arcs
 give the angle coverage (`coverBlocks_sound`). With the state chains and the
-arctangent intervals of the arcs they give the charged bound. -/
+arctangent intervals of the arcs they give the charged bound (`charged_bound`).
+-/
 
 @[expose] public section
 noncomputable section

@@ -3,20 +3,16 @@ module
 public import SquaresInCircles.Eight.Arithmetic.ClosedCover
 
 /-!
-# Eight squares: formulas, derivatives and interval certificates
+# Eight squares: formulas and their derivatives
 
 A `Formula` is a real expression in `n` variables built from rational constants, sums,
 negation, products, inverses, square roots and powers. `Formula.diff` is its symbolic partial
-derivative, and where every radicand is positive and every inverted value nonzero
-(`Formula.RegularAt`) it is the partial derivative of its value, by the ordinary rules of real
-differentiation (`Formula.hasDerivAt_partial`).
-
-An interval expression `ScalarExpr` carries rational brackets; erasing them gives a formula with the
-same value (`erase`, `erase_eval`), so the brackets do not change the expression whose bound is
-proved. A `FormulaCertificate` for a target formula is an interval expression that erases to it;
-when it is valid on a box, the target takes its values in the computed interval on the whole box
-(`FormulaCertificate.sound`). `StrictValid` adds strict positivity of every radicand and inverted
-value, which makes the formula regular on the box (`strictValid_regular`).
+derivative, assembled with `plus`, `minus`, `times`, `power`, `reciprocal` and `quotient`, which
+simplify rational constants. Where every radicand is positive and every inverted value nonzero
+(`Formula.RegularAt`), the value of a formula along a differentiable curve has the derivative
+`Formula.directional` (`Formula.hasDerivAt_curve`), the sum of the symbolic partial derivatives
+against the velocity (`Formula.directional_eq_partials`); in particular `Formula.diff` gives the
+partial derivatives (`Formula.hasDerivAt_partial`). `FixedEval.lean` bounds formulas on boxes.
 -/
 
 @[expose] public section

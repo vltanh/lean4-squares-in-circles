@@ -3,12 +3,14 @@ module
 public import SquaresInCircles.Eight.Candidate.DualCheck
 meta import SquaresInCircles.Eight.IntRows
 
-/-! # Tilt bundles
+/-!
+# Eight squares: the tilt bundles
 
 The tilt bundles of the two tails `[0, 1001/20000]` and `[2/25, 3/8]` of the positive half-angle
 chart, 22 and 19 of them, with 861 rows, read from `data/eight/owner/tilt*.txt`, one file per bundle
 with one row for each error alternative. For each bundle the kernel evaluates `bundleCheck`: every
-row passes `Line.check`. -/
+row passes `Line.check`.
+-/
 
 @[expose] public section
 noncomputable section

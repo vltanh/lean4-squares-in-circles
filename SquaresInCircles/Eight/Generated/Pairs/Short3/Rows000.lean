@@ -3,7 +3,11 @@ module
 public import SquaresInCircles.Eight.Generated.Pairs.Short3.Data
 public meta import SquaresInCircles.Eight.IntRows
 
-/-! Rows 0 to 171 of the table, checked by `decide +kernel`, a hundred rows a theorem. -/
+/-!
+# Eight squares: rows 0 to 171 of the pair table `Short3`
+
+Each part of 100 rows passes `checkRows`, evaluated by the kernel.
+-/
 
 @[expose] public section
 noncomputable section

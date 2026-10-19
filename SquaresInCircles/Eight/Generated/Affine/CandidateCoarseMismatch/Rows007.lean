@@ -3,7 +3,11 @@ module
 public import SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.Context
 public meta import SquaresInCircles.Eight.IntRows
 
-/-! Rows 70000 to 79999 of the table, checked by `decide +kernel`, 200 rows a theorem. -/
+/-!
+# Eight squares: rows 70000 to 79999 of the affine table `CandidateCoarseMismatch`
+
+Each part of 200 rows passes `checkRows`, evaluated by the kernel.
+-/
 
 @[expose] public section
 noncomputable section

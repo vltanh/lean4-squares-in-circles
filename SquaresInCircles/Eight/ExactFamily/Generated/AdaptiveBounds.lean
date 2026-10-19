@@ -4,13 +4,18 @@ public import SquaresInCircles.Eight.ExactFamily.Generated.AdaptiveFormula
 public import SquaresInCircles.Eight.ExactFamily.FixedEval
 
 /-!
-# Uniform estimates along the stationary curve
+# Eight squares: the interval checks along the adaptive chain
 
-There are 256 closed boxes but only seven kinds of bound. The strict signs of the derivative at
-both ends of the position interval of each box, from which `Adaptive.lean` obtains the adaptive
-stationary point, are checked box by box. The other five kinds of estimate are uniform on 32
-hulls of 8 consecutive graph boxes each, so they are checked once per hull. Every enclosure is a
-fixed-point interval evaluation in the kernel (`FixedEval`).
+On the lower face of each of the 256 graph boxes of `AdaptiveFormula.lean` the position derivative
+`F_y` of the defect is at most `-1/1000000`, and on the upper face at least `1/1000000`
+(`lower_sign`, `upper_sign`); from these signs `ExactFamily/Adaptive.lean` obtains the adaptive
+position. Each graph box lies in one of 32 hulls of 8 consecutive graph boxes (`hull_mem`), and on
+each hull the owner reserves are at least `56793/5000000`, the contact weights at most `4209/5000`,
+`h₂` lies in `[-29/20, -7/5]`, and the quadratic and cubic remainder coefficients are at most
+`232/25` and `3/2` (`hull_bounds`); so these bounds hold on every graph box (`reserve_bound`,
+`weight_bound`, `hTwo_bound`, `quadratic_bound`, `cubic_bound`). Each check (`cellCheck`,
+`hullCheck`) is a fixed-point interval evaluation of `ExactFamily/FixedEval.lean`, decided by the
+kernel. Written by `scripts/eight/generate_adaptive.py`.
 -/
 
 @[expose] public section
@@ -19,9 +24,8 @@ namespace SquaresInCircles.Eight.ExactFamily.AdaptiveGenerated
 open Arithmetic Generated FixedEval
 
 set_option maxRecDepth 1000000
-set_option linter.all false
 
-/-- Boxes containing 8 consecutive graph boxes each. -/
+/-- The 32 hulls, each the least box containing 8 consecutive graph boxes. -/
 noncomputable def graphHull : Fin 32 → QBox 3 := ![![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93576669/100000000),(-93429287/100000000)⟩, ⟨(1/20),(1631/32000)⟩],
   ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-46726977/50000000),(-46653339/50000000)⟩, ⟨(1631/32000),(831/16000)⟩],
   ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-583321/625000),(-9318419/10000000)⟩, ⟨(831/16000),(1693/32000)⟩],
@@ -58,7 +62,7 @@ noncomputable def graphHull : Fin 32 → QBox 3 := ![![⟨(97888353437936878163/
 /-- The hull of the graph box `i`. -/
 noncomputable def hullOf (i : Fin 256) : Fin 32 := ⟨i.val / 8, by omega⟩
 
-/-- The five kinds of graph estimate on a hull. -/
+/-- The five kinds of graph estimate on the hull `m`. -/
 noncomputable def hullCheck (m : Fin 32) : Bool :=
   (List.finRange 9).all (fun j =>
     FixedEval.bounded 100 (graphHull m) (reserveFormula j) (56793/5000000) 2) &&
@@ -68,7 +72,7 @@ noncomputable def hullCheck (m : Fin 32) : Bool :=
     FixedEval.bounded 100 (graphHull m) quadraticFormula 0 (232/25) &&
     FixedEval.bounded 100 (graphHull m) cubicFormula 0 (3/2)
 
-/-- The derivative signs at both ends of the position interval of box `i`, and its hull. -/
+/-- The signs of `F_y` on the two faces of the graph box `i`, and its inclusion in its hull. -/
 noncomputable def cellCheck (i : Fin 256) : Bool :=
   FixedEval.bounded 100 (lowerBoxes i) FyFormula (-1) (-1/1000000) &&
     FixedEval.bounded 100 (upperBoxes i) FyFormula (1/1000000) 1 &&
@@ -364,6 +368,7 @@ theorem cellCheck_253 : cellCheck 253 = true := by decide +kernel
 theorem cellCheck_254 : cellCheck 254 = true := by decide +kernel
 theorem cellCheck_255 : cellCheck 255 = true := by decide +kernel
 
+/-- Every hull passes `hullCheck`. -/
 theorem hullCheck_all : ∀ m : Fin 32, hullCheck m = true := by
   intro m
   fin_cases m
@@ -374,6 +379,7 @@ theorem hullCheck_all : ∀ m : Fin 32, hullCheck m = true := by
     hullCheck_20, hullCheck_21, hullCheck_22, hullCheck_23, hullCheck_24, hullCheck_25,
     hullCheck_26, hullCheck_27, hullCheck_28, hullCheck_29, hullCheck_30, hullCheck_31]
 
+/-- Every graph box passes `cellCheck`. -/
 theorem cellCheck_all : ∀ i : Fin 256, cellCheck i = true := by
   intro i
   fin_cases i
@@ -422,12 +428,14 @@ theorem cellCheck_all : ∀ i : Fin 256, cellCheck i = true := by
     cellCheck_248, cellCheck_249, cellCheck_250, cellCheck_251, cellCheck_252, cellCheck_253,
     cellCheck_254, cellCheck_255]
 
+/-- Every point of a graph box lies in its hull. -/
 theorem hull_mem (i : Fin 256) {env : Fin 3 → ℝ} (he : (graphBoxes i).Mem env) :
     (graphHull (hullOf i)).Mem env := by
   have h := cellCheck_all i
   simp only [cellCheck, Bool.and_eq_true] at h
   exact box_mem_of_subset (by simpa [inside] using h.2) he
 
+/-- The bounds of `hullCheck` at every point of a hull. -/
 theorem hull_bounds {m : Fin 32} {env : Fin 3 → ℝ} (he : (graphHull m).Mem env) :
     (∀ j : Fin 9, (((56793/5000000 : ℚ)) : ℝ) ≤ (reserveFormula j).eval env) ∧
     (∀ j : Fin 7, (lambdaFormula j).eval env ≤ (((4209/5000 : ℚ)) : ℝ)) ∧
@@ -443,6 +451,7 @@ theorem hull_bounds {m : Fin 32} {env : Fin 3 → ℝ} (he : (graphHull m).Mem e
     (FixedEval.bounded_sound h3 he).2, (FixedEval.bounded_sound h4 he).2,
     (FixedEval.bounded_sound h5 he).2⟩
 
+/-- `F_y < 0` on the lower face of every graph box. -/
 theorem lower_sign (i : Fin 256) (env : Fin 3 → ℝ)
     (he : (lowerBoxes i).Mem env) : FyFormula.eval env < 0 := by
   have h := cellCheck_all i
@@ -451,6 +460,7 @@ theorem lower_sign (i : Fin 256) (env : Fin 3 → ℝ)
   push_cast at hb
   linarith
 
+/-- `F_y > 0` on the upper face of every graph box. -/
 theorem upper_sign (i : Fin 256) (env : Fin 3 → ℝ)
     (he : (upperBoxes i).Mem env) : 0 < FyFormula.eval env := by
   have h := cellCheck_all i
@@ -459,6 +469,7 @@ theorem upper_sign (i : Fin 256) (env : Fin 3 → ℝ)
   push_cast at hb
   linarith
 
+/-- The owner reserves are at least `56793/5000000` on every graph box. -/
 theorem reserve_bound (i : Fin 256) (j : Fin 9) (env : Fin 3 → ℝ)
     (he : (graphBoxes i).Mem env) :
     (56793/5000000 : ℝ) ≤ (reserveFormula j).eval env := by
@@ -466,6 +477,7 @@ theorem reserve_bound (i : Fin 256) (j : Fin 9) (env : Fin 3 → ℝ)
   push_cast at h
   exact h
 
+/-- The contact weights are at most `4209/5000` on every graph box. -/
 theorem weight_bound (i : Fin 256) (j : Fin 7) (env : Fin 3 → ℝ)
     (he : (graphBoxes i).Mem env) :
     (lambdaFormula j).eval env ≤ 4209/5000 := by
@@ -473,6 +485,7 @@ theorem weight_bound (i : Fin 256) (j : Fin 7) (env : Fin 3 → ℝ)
   push_cast at h
   exact h
 
+/-- `h₂` lies in `[-29/20, -7/5]` on every graph box. -/
 theorem hTwo_bound (i : Fin 256) (env : Fin 3 → ℝ)
     (he : (graphBoxes i).Mem env) :
     -(29/20:ℝ) ≤ hTwoFormula.eval env ∧ hTwoFormula.eval env ≤ -(7/5) := by
@@ -482,12 +495,14 @@ theorem hTwo_bound (i : Fin 256) (env : Fin 3 → ℝ)
   push_cast at h1 h2
   constructor <;> linarith
 
+/-- The quadratic remainder coefficient is at most `232/25` on every graph box. -/
 theorem quadratic_bound (i : Fin 256) (env : Fin 3 → ℝ)
     (he : (graphBoxes i).Mem env) : quadraticFormula.eval env ≤ 232/25 := by
   have h := (hull_bounds (hull_mem i he)).2.2.2.2.1
   push_cast at h
   exact h
 
+/-- The cubic remainder coefficient is at most `3/2` on every graph box. -/
 theorem cubic_bound (i : Fin 256) (env : Fin 3 → ℝ)
     (he : (graphBoxes i).Mem env) : cubicFormula.eval env ≤ 3/2 := by
   have h := (hull_bounds (hull_mem i he)).2.2.2.2.2

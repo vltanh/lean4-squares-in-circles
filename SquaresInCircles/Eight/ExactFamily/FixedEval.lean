@@ -3,14 +3,21 @@ module
 public import SquaresInCircles.Eight.ExactFamily.Expression
 
 /-!
-# Fixed-point interval evaluation of formulas
+# Eight squares: fixed-point interval evaluation of formulas
 
-An interval is a pair of integers `lo, hi`, read as `[lo / 2 ^ p, hi / 2 ^ p]`, and every
-operation rounds outwards. One pass over a formula encloses its value on a box. Square roots and
+An interval `DI` is a pair of integers `lo, hi`, read as `[lo / 2 ^ p, hi / 2 ^ p]`, and every
+operation rounds outwards to that scale. One pass of `eval` over a `Formula` of `Expression.lean`
+encloses its value at every point of a box of such intervals (`eval_sound`). Square roots and
 reciprocals are accepted only for arguments with a positive lower end, so a successful pass also
-shows that the formula is regular on the box. In the kernel this is much cheaper than proposing
-an annotated rational certificate and checking it. `inside` tests the inclusion of one box in
-another (`box_mem_of_subset`).
+shows that the formula is regular on the box (`Formula.RegularAt`). Every intermediate number is
+an integer at the fixed scale `2 ^ p`, so no denominators accumulate along the formula.
+
+On a rational box the Boolean tests `bounded` and `regular` run one pass; their success gives the
+bounds, and the regularity, at every real point of the box (`bounded_sound`, `regular_sound`).
+`inside` tests that one box lies in another (`box_mem_of_subset`). The generated modules
+`Generated/LocalStationaryBounds.lean` and `Generated/AdaptiveBounds.lean` decide these tests
+with `decide +kernel`; their generators run the same integer arithmetic (`fx_eval` in
+`scripts/eight/generate_stationary.py`) before they write a bound.
 -/
 
 @[expose] public section
@@ -19,7 +26,7 @@ noncomputable section
 namespace SquaresInCircles.Eight.ExactFamily.FixedEval
 open Arithmetic
 
-/-- The unit `2 ^ p`. -/
+/-- The scale `2 ^ p`, as an integer. -/
 def scale (p : ℕ) : Int := ((2 ^ p : ℕ) : Int)
 
 theorem scale_pos (p : ℕ) : 0 < scale p := by
@@ -56,21 +63,22 @@ theorem le_up_mul (p : ℕ) (a : Int) : (a : ℝ) ≤ (up p a : ℝ) * 2 ^ p := 
   rw [← scale_real]
   exact le_neg_ediv_mul_real a (scale_pos p)
 
-/-- An interval `[lo / 2 ^ p, hi / 2 ^ p]`. -/
+/-- An interval `[lo / 2 ^ p, hi / 2 ^ p]` with integer ends; the scale `p` is a parameter of
+the operations. -/
 structure DI where
   lo : Int
   hi : Int
 
 namespace DI
 
-/-- Membership, stated without division. -/
+/-- `x` lies in the interval at the scale `2 ^ p`, stated without division. -/
 def Mem (p : ℕ) (I : DI) (x : ℝ) : Prop := (I.lo : ℝ) ≤ x * 2 ^ p ∧ x * 2 ^ p ≤ (I.hi : ℝ)
 
 def add (I J : DI) : DI := ⟨I.lo + J.lo, I.hi + J.hi⟩
 
 def neg (I : DI) : DI := ⟨-I.hi, -I.lo⟩
 
-/-- The corner products, rounded outwards. -/
+/-- The product: the least and the greatest corner product, rounded down and up to the scale. -/
 def mul (p : ℕ) (I J : DI) : DI :=
   let a := I.lo * J.lo
   let b := I.lo * J.hi
@@ -78,15 +86,19 @@ def mul (p : ℕ) (I J : DI) : DI :=
   let d := I.hi * J.hi
   ⟨down p (min (min a b) (min c d)), up p (max (max a b) (max c d))⟩
 
-/-- The reciprocal of an interval with positive lower end. -/
+/-- The reciprocal `[⌊2 ^ (2p) / hi⌋, ⌈2 ^ (2p) / lo⌉]` of an interval with positive lower end;
+it encloses the reciprocals (`mem_inv`). -/
 def inv (p : ℕ) (I : DI) : DI := ⟨scale (2 * p) / I.hi, -((-scale (2 * p)) / I.lo)⟩
 
-/-- The square root of an interval with nonnegative lower end. -/
+/-- The square root `[⌊√(lo 2 ^ p)⌋, ⌊√(hi 2 ^ p)⌋ + 1]` of an interval with nonnegative ends; it
+encloses the square roots when the lower end is positive (`mem_sqrt`). -/
 def sqrt (p : ℕ) (I : DI) : DI :=
   ⟨((Nat.sqrt (I.lo.toNat * 2 ^ p) : ℕ) : Int), ((Nat.sqrt (I.hi.toNat * 2 ^ p) + 1 : ℕ) : Int)⟩
 
+/-- The point `1`. -/
 def one (p : ℕ) : DI := ⟨scale p, scale p⟩
 
+/-- Powers, by repeated multiplication. -/
 def pow (p : ℕ) (I : DI) : ℕ → DI
   | 0 => one p
   | k + 1 => mul p (pow p I k) I
@@ -138,6 +150,7 @@ theorem mem_mul {p : ℕ} {I J : DI} {x y : ℝ} (hx : I.Mem p x) (hy : J.Mem p 
         (max (I.hi * J.lo) (I.hi * J.hi))) : Int) : ℝ) * 2 ^ p := by linarith
     exact le_of_mul_le_mul_right this h2
 
+/-- For a positive lower end the reciprocal interval encloses `x⁻¹`, and `x` is positive. -/
 theorem mem_inv {p : ℕ} {I : DI} {x : ℝ} (hx : I.Mem p x) (hpos : 0 < I.lo) :
     (I.inv p).Mem p x⁻¹ ∧ 0 < x := by
   have h2 := two_pow_pos p
@@ -174,6 +187,7 @@ theorem mem_inv {p : ℕ} {I : DI} {x : ℝ} (hx : I.Mem p x) (hpos : 0 < I.lo) 
       nlinarith
     exact hq2.trans hq
 
+/-- For a positive lower end the square-root interval encloses `√x`, and `x` is positive. -/
 theorem mem_sqrt {p : ℕ} {I : DI} {x : ℝ} (hx : I.Mem p x) (hpos : 0 < I.lo) :
     (I.sqrt p).Mem p (Real.sqrt x) ∧ 0 < x := by
   have h2 := two_pow_pos p
@@ -247,7 +261,9 @@ theorem mem_ofRat (p : ℕ) (q : ℚ) : (ofRat p q).Mem p q := by
 
 end DI
 
-/-- One pass of outward-rounded interval arithmetic over a formula. -/
+/-- One pass of outward-rounded interval arithmetic over a formula, with the intervals `B` for
+the variables; `none` when a reciprocal or a square root meets a lower end that is not
+positive. -/
 def eval {n : ℕ} (p : ℕ) (B : Fin n → DI) : Formula n → Option DI
   | .const q => some (DI.ofRat p q)
   | .var i => some (B i)
@@ -270,7 +286,8 @@ def eval {n : ℕ} (p : ℕ) (B : Fin n → DI) : Formula n → Option DI
     | some x => some (x.pow p k)
     | none => none
 
-/-- A successful pass encloses the value and shows regularity. -/
+/-- If every variable lies in its interval, a successful pass encloses the value of the formula,
+and the formula is regular there. -/
 theorem eval_sound {n p : ℕ} {B : Fin n → DI} {env : Fin n → ℝ}
     (hB : ∀ i, (B i).Mem p (env i)) :
     ∀ (f : Formula n) {I : DI}, eval p B f = some I → I.Mem p (f.eval env) ∧ f.RegularAt env := by
@@ -349,16 +366,18 @@ theorem mem_ofBox {n p : ℕ} {B : QBox n} {env : Fin n → ℝ} (he : B.Mem env
   exact ⟨hl.trans (mul_le_mul_of_nonneg_right (he i).1 h2.le),
     (mul_le_mul_of_nonneg_right (he i).2 h2.le).trans hu⟩
 
-/-- `f` takes values in `[lo, hi]` on `B`. -/
+/-- The test that one pass on `B` encloses `f` in `[lo, hi]`, with `lo` and `hi` rounded
+inwards. -/
 def bounded {n : ℕ} (p : ℕ) (B : QBox n) (f : Formula n) (lo hi : ℚ) : Bool :=
   match eval p (ofBox p B) f with
   | some I => decide ((DI.ofRat p lo).hi ≤ I.lo ∧ I.hi ≤ (DI.ofRat p hi).lo)
   | none => false
 
-/-- `f` is regular on `B`. -/
+/-- The test that one pass over `f` on `B` succeeds. -/
 def regular {n : ℕ} (p : ℕ) (B : QBox n) (f : Formula n) : Bool :=
   (eval p (ofBox p B) f).isSome
 
+/-- If `bounded` succeeds, `lo ≤ f ≤ hi` at every real point of the box. -/
 theorem bounded_sound {n p : ℕ} {B : QBox n} {f : Formula n} {lo hi : ℚ}
     (h : bounded p B f lo hi = true) {env : Fin n → ℝ} (he : B.Mem env) :
     (lo : ℝ) ≤ f.eval env ∧ f.eval env ≤ hi := by
@@ -377,19 +396,21 @@ theorem bounded_sound {n p : ℕ} {B : QBox n} {f : Formula n} {lo hi : ℚ}
     · exact le_of_mul_le_mul_right (hlo.trans (hl.trans hm.1)) h2
     · exact le_of_mul_le_mul_right (hm.2.trans (hu.trans hhi)) h2
 
+/-- If `regular` succeeds, `f` is regular at every real point of the box. -/
 theorem regular_sound {n p : ℕ} {B : QBox n} {f : Formula n} (h : regular p B f = true)
     {env : Fin n → ℝ} (he : B.Mem env) : f.RegularAt env := by
   cases hI : eval p (ofBox p B) f with
   | none => simp [regular, hI] at h
   | some I => exact (eval_sound (mem_ofBox he) f hI).2
 
-/-- The box `B` lies in `target`; the test uses weak endpoints in every coordinate. -/
+/-- The test that the box `B` lies in `target`, with weak inequalities in every coordinate. -/
 def inside (B target : QBox 3) : Bool :=
   decide (∀ i, (target i).lo ≤ (B i).lo ∧ (B i).hi ≤ (target i).hi)
 
-theorem box_mem_of_subset {n : ℕ} {box inner : QBox n}
-    (h : ∀ i, (inner i).lo ≤ (box i).lo ∧ (box i).hi ≤ (inner i).hi)
-    {env : Fin n → ℝ} (he : box.Mem env) : inner.Mem env := by
+/-- A point of a box lies in every box that contains it. -/
+theorem box_mem_of_subset {n : ℕ} {box outer : QBox n}
+    (h : ∀ i, (outer i).lo ≤ (box i).lo ∧ (box i).hi ≤ (outer i).hi)
+    {env : Fin n → ℝ} (he : box.Mem env) : outer.Mem env := by
   intro i
   exact QInterval.mem_mono (he i) (h i).1 (h i).2
 

@@ -110,8 +110,7 @@ theorem WeightDomain.rawMu_pos {d : Coordinates} (h : d.WeightDomain) (i : Fin 5
   have hε : 0 < d.rawEpsilon := div_pos_of_neg_of_neg h.h₂_neg h.h₁_neg
   have hE : 0 < d.rawMuE := div_pos_of_neg_of_neg
     (mul_neg_of_neg_of_pos (by linarith [h.s_pos]) hε) (by linarith [h.x₄_neg])
-  fin_cases i <;> simp only [rawMu, Matrix.cons_val_zero, Matrix.cons_val_one,
-    Matrix.cons_val_succ] <;> assumption
+  fin_cases i <;> simp only [rawMu] <;> assumption
 
 theorem WeightDomain.weightMass_pos {d : Coordinates} (h : d.WeightDomain) :
     0 < d.weightMass := by

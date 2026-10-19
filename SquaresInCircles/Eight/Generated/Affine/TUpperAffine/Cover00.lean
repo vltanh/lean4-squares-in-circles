@@ -2,7 +2,11 @@ module
 
 public import SquaresInCircles.Eight.Generated.Affine.TUpperAffine.Data
 
-/-! The angle coverage for the source arcs 0 to 101, checked by `decide +kernel`. -/
+/-!
+# Eight squares: the angle coverage of the affine table `TUpperAffine`, source arcs 0 to 101
+
+The walks `coverBlock` over blocks of these source arcs, evaluated by the kernel.
+-/
 
 @[expose] public section
 noncomputable section

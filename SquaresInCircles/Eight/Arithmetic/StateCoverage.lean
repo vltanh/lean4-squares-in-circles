@@ -4,17 +4,23 @@ public import SquaresInCircles.Eight.Arithmetic.Arctangent
 public import SquaresInCircles.Eight.Arithmetic.PreparedRow
 
 /-!
-# Closed state coverage and consistent labels
+# Eight squares: the state chains of a table
 
-Coverage is in the signed tangent coordinate.  At tangent zero either sign
-represents the same state; the resulting theorem preserves the signed product
-σb, which is exactly what occurs in every original separating margin.
+Each square of a boundary cycle is given one arc of its role that contains its state, and so one
+label for both of its edges. For each vertex and each curve, the table lists the arcs of that role
+on that curve (`StateChains`); `StateChains.NumericValid` checks that they have the right role and
+curve and are well formed, and that their intervals of the signed tangent `σ b / a` form a closed
+chain over the cut of the vertex (`ClosedChain`, `ClosedCover.lean`). Then every square of a cycle
+whose signed tangent lies in the cut lies on an arc of its chain (`StateChains.covers`); the sign
+of the arc gives the same product `σ b` as the square, also at the tangent zero, where `b = 0`.
+The margins depend on the signs only through these products.
 -/
 
 @[expose] public section
 noncomputable section
 namespace SquaresInCircles.Eight.Arithmetic
 
+/-- `P` holds at every element of a list, as a decidable conjunction. -/
 def Every {α : Type*} (P : α→ Prop) : List α→ Prop
   | [] => True | a::xs => P a ∧ Every P xs
 instance everyDecidable {α : Type*} (P : α→ Prop) [DecidablePred P] (xs : List α) :
@@ -29,12 +35,17 @@ theorem Every.of_mem {α : Type*} {P : α→ Prop} {xs : List α}
       · exact h.1
       · exact ih h.2 hx
 
+/-- The interval of the signed tangent `σ b / a` on the arc. -/
 def ArcData.signedInterval (a : ArcData) : QInterval :=
   if a.positive then a.tangent else a.tangent.neg
 
+/-- Whether a radial kind is the outer curve. -/
 def radialOuter : RadialKind→ Bool | .outer => true | .coreSide => false | .coreCorner => false
+/-- The arc `i` of a table (a default arc for an index out of range). -/
 def arcAt (M : AffineTableMeta) (i : ℕ) : ArcData := M.arcs.getD i default
 
+/-- A signed tangent in the signed interval of a well-formed arc has its absolute value in the
+tangent interval and the sign of the arc. -/
 theorem signed_interval_absolute {a : ArcData} (ha : a.WellFormed) {t : ℝ}
     (ht : a.signedInterval.Mem t) : a.tangent.Mem |t| ∧ t=a.sign*|t| := by
   have hlo : (0:ℝ)≤a.tangent.lo := by exact_mod_cast ha.1
@@ -58,6 +69,9 @@ theorem boundary_tangent_absolute {q : ℝ} (C : BoundaryCycle q) (i : Vertex) :
     simp [BoundaryCycle.tangent,hs,abs_div,abs_of_pos (C.a_pos i),
       abs_of_nonneg (C.b_nonneg i)]
 
+/-- A square of the cycle on the curve of a well-formed arc, with its tangent in the tangent
+interval of the arc, lies on the curve of the arc (`ArcData.OnCurve`): the core side and the core
+corner meet at the tangent `6/7`. -/
 theorem boundary_on_arc_curve {q : ℝ} (C : BoundaryCycle q) (i : Vertex)
     {a : ArcData} (ha : a.WellFormed) (hout : a.outer=radialOuter (C.kind i))
     (ht : a.tangent.Mem (C.b i/C.a i)) : a.OnCurve q (C.a i) (C.b i) := by
@@ -85,7 +99,7 @@ theorem boundary_on_arc_curve {q : ℝ} (C : BoundaryCycle q) (i : Vertex)
         have he : C.b i=1/2 := by
           rw [hb'.1] at hcross
           linarith [hb'.2]
-        simp only [ArcData.OnCurve,ho,hhi,Bool.false_eq_true,if_false]
+        simp only [ArcData.OnCurve,ho,hhi,Bool.false_eq_true,ite_false]
         rw [hb'.1,he]
         norm_num
   | coreCorner =>
@@ -103,11 +117,13 @@ theorem boundary_on_arc_curve {q : ℝ} (C : BoundaryCycle q) (i : Vertex)
         have hcross := (div_le_iff₀ hA).mp hratio
         have heA : C.a i=7/12 := by linarith [hb'.1]
         have heB : C.b i=1/2 := by linarith [hb'.1]
-        simp only [ArcData.OnCurve,ho,hhi,Bool.false_eq_true,if_false,if_true]
+        simp only [ArcData.OnCurve,ho,hhi,Bool.false_eq_true,ite_false,ite_true]
         rw [heA,heB]
         norm_num
       · simpa [ArcData.OnCurve,ho,hhi] using hb'
 
+/-- A square of the cycle whose signed tangent lies in the signed interval of a well-formed arc
+of its curve lies on the arc, and the sign of the arc gives the same product `σ b`. -/
 theorem boundary_arc_contains {q : ℝ} (C : BoundaryCycle q) (i : Vertex)
     {a : ArcData} (ha : a.WellFormed) (hout : a.outer=radialOuter (C.kind i))
     (ht : a.signedInterval.Mem (C.tangent i)) :
@@ -122,7 +138,10 @@ theorem boundary_arc_contains {q : ℝ} (C : BoundaryCycle q) (i : Vertex)
   field_simp [ha0] at he
   nlinarith only [he]
 
+/-- For each vertex and each curve (outer or core), a list of indices of arcs. -/
 def StateChains := Vertex→ Bool→ List ℕ
+/-- The checks of the state chains: every index names a well-formed arc of the vertex on the
+curve, and the signed intervals of each chain form a closed chain over the cut of the vertex. -/
 def StateChains.NumericValid (M : AffineTableMeta) (S : StateChains) : Prop :=
   ∀ i : Vertex, ∀ outer : Bool,
     Every (fun k => k<M.arcs.length ∧ (arcAt M k).role=i ∧
@@ -135,6 +154,8 @@ instance (M : AffineTableMeta) (S : StateChains) : Decidable (S.NumericValid M) 
   unfold ArcData.WellFormed
   infer_instance
 
+/-- Every square of a cycle whose signed tangents lie in the cuts lies on an arc of its role,
+whose sign gives the same product `σ b`. -/
 theorem StateChains.covers {M : AffineTableMeta} {S : StateChains}
     (hS : S.NumericValid M) (C : BoundaryCycle (M.radius : ℝ))
     (hc : ∀ i, (M.cuts i).Mem (C.tangent i)) (i : Vertex) :

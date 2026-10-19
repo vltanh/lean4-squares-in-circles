@@ -4,27 +4,35 @@ public import SquaresInCircles.Eight.Arithmetic.AtanBounds
 public import SquaresInCircles.Eight.Arithmetic.LabelRelax
 
 /-!
-# Coverage trees of the pair tables
+# Eight squares: coverage trees of the pair tables
 
-A pair problem fixes a source end and a target end (chart, sign, tangent range and quadratic
-label), an original separating axis, a charge `β`, a target `γ` and halves `(k, r, u⁺)`: on the
-half the relative frame angle is `φ = k π / 2 ± u` with `0 ≤ u ≤ u⁺`. Its claim
-(`PairProblem.Cell`) is the charged inequality
-`γ < φ + L_s(a, b) - L_t(A, B) - β h(φ)` for every source state, target state and angle that
-satisfy the physical gap `19/25 ≤ φ + α_s - α_t ≤ 3π/4` and the axis margin.
+A pair problem (`PairProblem`) fixes a source end and a target end (`PairEnd`: chart, sign,
+tangent range and quadratic label), a separating axis, a charge `β`, a target `γ` and a list of
+halves `(k, r, u⁺)`: on a half the frame angle difference is `φ = k π / 2 ± u` with
+`0 ≤ u ≤ u⁺`, the sign given by `r` (`phiOf`). On a cell `S × T × [l / den, h / den]` of
+(source tangent) × (target tangent) × (angle `u`), its claim (`PairProblem.Cell`) is the charged
+inequality `γ < φ + L_s(a, b) - L_t(A, B) - β h(φ)`, with the frame charge `h`, for every source
+label constant at least `c⁻`, target label constant at most `c⁺`, and every pair of states and
+angle in the cell with the gap `19/25 ≤ φ + σ arctan (b / a) - τ arctan (B / A) ≤ 3π/4` between
+the centre directions and a nonnegative margin on the axis. The problem holds
+(`PairProblem.Holds`) when its claim holds on the full box of each half.
 
-A tree splits the box (source tangent) × (target tangent) × (angle): the tangent intervals and
-the angle interval are bisected. At a leaf either
-* the gap excludes the whole cell (`gap`): `arctan` bounds at the ends of the tangent intervals
-  confine `u` to an interval disjoint from the cell, or it confines `u` to a subinterval on which
-  the tree continues (`trim`); or
-* the next row of the table covers the cell (`row`): its arcs contain the two tangent intervals
-  with the same chart and sign, its angle interval contains the cell's, it has the axis, quarter
-  and half of the problem, and its arcs' affine labels bound the quadratic labels of the problem
-  (`SpecsHold`). Its claim (`AffineTableRow.Claim`) then gives the inequality on the cell.
+A tree (`PairTree`) splits the box of a half: it bisects the source tangent interval, the target
+tangent interval or the angle interval. At a leaf either
+* the gap excludes the whole cell (`gap`): integer bounds of `arctan` at the ends of the tangent
+  intervals (`AtanBounds.lean`) confine `u` to an interval disjoint from the cell, or they
+  confine `u` to a subinterval on which the tree continues (`trim`); or
+* the next row of the table covers the cell (`row`, `leafCheck`): its arcs contain the two
+  tangent intervals with the same chart and sign, its angle interval contains the cell's, it has
+  the axis, quarter and half of the problem, its edge has the charge of the problem and a target
+  at least that of the problem, and the affine labels of its arcs bound the quadratic labels of
+  the problem (`SpecsHold`, `LabelRelax.lean`). Its claim (`AffineTableRow.Claim`, proved by
+  `checkRow` of `RowCheck.lean`) then gives the inequality on the cell.
 
 `problemsCheck` walks the problems, their halves and their trees in order and consumes the rows
-in the same order, so a leaf needs no row index.
+in the same order, so a leaf needs no row index. For a table of `Generated/Pairs/`, `table_sound`
+derives every problem from the validity of the table context, the check of the labels of its
+arcs, the claims of its rows and the check of its trees.
 -/
 
 @[expose] public section
@@ -51,11 +59,12 @@ def PairEnd.OnCurve (E : PairEnd) (Q a b : ℝ) : Prop :=
   else if E.side then a = 7 / 12 ∧ b ≤ 1 / 2
   else 1 / 2 ≤ b ∧ (a - 1 / 2) ^ 2 + (b - 1 / 2) ^ 2 = (1 / 12 : ℝ) ^ 2
 
-/-- `(a, b)` is a point of the chart of `E` whose tangent `b / a` lies in `S`. -/
+/-- `(a, b)`, with `0 ≤ b ≤ a`, is a point of the chart of `E` whose tangent `b / a` lies
+in `S`. -/
 def PairEnd.Mem (E : PairEnd) (Q : ℝ) (S : QInterval) (a b : ℝ) : Prop :=
   0 < a ∧ 0 ≤ b ∧ b ≤ a ∧ S.Mem (b / a) ∧ E.OnCurve Q a b
 
-/-- A pair problem: its ends, original axis, charge, target and halves `(k, r, u⁺)`. -/
+/-- A pair problem: its ends, separating axis, charge, target and halves `(k, r, u⁺)`. -/
 structure PairProblem where
   src : PairEnd
   tgt : PairEnd
@@ -67,12 +76,13 @@ structure PairProblem where
 /-- The angle `k π / 2 ± u` of the half `(k, r)`. -/
 def phiOf (k : ℕ) (r : Bool) (u : ℝ) : ℝ := (k : ℝ) * Real.pi / 2 + sgnR r * u
 
-/-- The physical gap `φ + σ arctan (b / a) - τ arctan (B / A)`. -/
+/-- The angle `φ + σ arctan (b / a) - τ arctan (B / A)` between the centre directions of the two
+ends, when their frames differ by `φ`. -/
 def PairProblem.gap (P : PairProblem) (φ a b A B : ℝ) : ℝ :=
   φ + sgnR P.src.positive * Real.arctan (b / a) - sgnR P.tgt.positive * Real.arctan (B / A)
 
 /-- The inequality of `P` on the cell `S × T × [l / den, h / den]` of the half `(k, r)`, for
-every admissible pair of label constants. -/
+every source label constant at least `c⁻` and target label constant at most `c⁺`. -/
 def PairProblem.Cell (P : PairProblem) (Q : ℝ) (den k : ℕ) (r : Bool) (S T : QInterval)
     (l h : ℕ) : Prop :=
   ∀ cs ct : ℝ, (P.src.label.cLo : ℝ) ≤ cs → ct ≤ P.tgt.label.cHi →
@@ -91,8 +101,9 @@ def gapLo : Int := 76000000000000000000
 /-- An upper bound of `3π/4` over `angleUnit`. -/
 def gapHi : Int := 235619449019234492925
 
-/-- Bounds of `π/2` over `angleUnit`. -/
+/-- A lower bound of `π/2` over `angleUnit`. -/
 def piHalfLo : Int := 157079632679489661900
+/-- An upper bound of `π/2` over `angleUnit`. -/
 def piHalfHi : Int := 157079632679489661950
 
 theorem gapLo_eq : (gapLo : ℝ) / angleUnit = 19 / 25 := by norm_num [gapLo, angleUnit]
@@ -107,10 +118,12 @@ theorem piHalf_bounds :
   have h := pi_hand_enclosure
   constructor <;> norm_num [piHalfLo, piHalfHi, angleUnit] <;> linarith [h.1, h.2]
 
-/-- Bounds over `angleUnit` of `σ arctan t` for `t ∈ S`. -/
+/-- A lower bound over `angleUnit` of `σ arctan t` for `t ∈ S`. -/
 def alphaLo (σ : Bool) (S : QInterval) : Int := if σ then atanLo S.lo else -atanHi S.hi
+/-- An upper bound over `angleUnit` of `σ arctan t` for `t ∈ S`. -/
 def alphaHi (σ : Bool) (S : QInterval) : Int := if σ then atanHi S.hi else -atanLo S.lo
 
+/-- `alphaLo` and `alphaHi` bound `σ arctan t` for `t ∈ S`. -/
 theorem alpha_bounds (σ : Bool) {S : QInterval} {t : ℝ} (ht : S.Mem t) :
     (alphaLo σ S : ℝ) / angleUnit ≤ sgnR σ * Real.arctan t ∧
       sgnR σ * Real.arctan t ≤ (alphaHi σ S : ℝ) / angleUnit := by
@@ -126,16 +139,19 @@ theorem alpha_bounds (σ : Bool) {S : QInterval} {t : ℝ} (ht : S.Mem t) :
   · simp only [alphaLo, alphaHi, sgnR, ↓reduceIte, one_mul]
     constructor <;> linarith
 
-/-- Bounds over `angleUnit` of the angle `u` of the half `(k, r)` allowed by the gap, when the
-tangents lie in `S` and `T`. -/
+/-- A lower bound over `angleUnit` of the angles `u` of the half `(k, r)` allowed by the gap,
+when the tangents lie in `S` and `T`. -/
 def uLo (k : ℕ) (r σ τ : Bool) (S T : QInterval) : Int :=
   if r then gapLo - alphaHi σ S + alphaLo τ T - k * piHalfHi
   else k * piHalfLo - (gapHi - alphaLo σ S + alphaHi τ T)
 
+/-- An upper bound over `angleUnit` of the angles `u` of the half `(k, r)` allowed by the gap,
+when the tangents lie in `S` and `T`. -/
 def uHi (k : ℕ) (r σ τ : Bool) (S T : QInterval) : Int :=
   if r then gapHi - alphaLo σ S + alphaHi τ T - k * piHalfLo
   else k * piHalfHi - (gapLo - alphaHi σ S + alphaLo τ T)
 
+/-- An angle `u` of the half `(k, r)` that satisfies the gap lies between `uLo` and `uHi`. -/
 theorem u_bounds {k : ℕ} {r σ τ : Bool} {S T : QInterval} {u ts tt : ℝ} (hs : S.Mem ts)
     (ht : T.Mem tt)
     (h1 : 19 / 25 ≤ phiOf k r u + sgnR σ * Real.arctan ts - sgnR τ * Real.arctan tt)
@@ -269,15 +285,17 @@ theorem mem_halves {S : QInterval} {t : ℝ} (ht : S.Mem t) :
   · exact Or.inl ⟨ht.1, h⟩
   · exact Or.inr ⟨h, ht.2⟩
 
-/-- The arc `a` covers the end `E` on the tangent interval `S`. -/
+/-- The arc `a` covers the end `E` on the tangent interval `S`: it has the chart and the sign of
+`E`, and its tangent range contains `S`. -/
 def arcFits (a : ArcData) (E : PairEnd) (S : QInterval) : Bool :=
   (a.outer == E.outer) && (a.side == E.side) && (a.positive == E.positive) &&
     decide (a.tangent.lo ≤ S.lo) && decide (S.hi ≤ a.tangent.hi)
 
 /-- Equality of rationals as a Boolean, by numerator and denominator. The leaves compare the
-labels of the problems, which are computed, with those of the arcs, which are fractions: this
-comparison evaluates both sides, while the derived `DecidableEq` casts along the equality of each
-field and so makes the kernel unify the two terms. -/
+labels and charges of the problems, which are computed, with the entries of `specs` and the
+charges of the table, which are fractions: this comparison evaluates both sides, while the
+derived `DecidableEq` casts along the equality of each field and so makes the kernel unify the
+two terms. -/
 def ratEq (a b : ℚ) : Bool := a.num == b.num && a.den == b.den
 
 theorem eq_of_ratEq {a b : ℚ} (h : ratEq a b = true) : a = b := by
@@ -297,7 +315,11 @@ theorem eq_of_labelEq {L L' : QuadLabel} (h : labelEq L L' = true) : L = L' := b
   rw [eq_of_ratEq h1, eq_of_ratEq h2, eq_of_ratEq h3, eq_of_ratEq h4, eq_of_ratEq h5,
     eq_of_ratEq h6]
 
-/-- The row `x` covers the cell `S × T × [l, h]` of the half `(k, r)` of `P`. -/
+/-- The row `x` covers the cell `S × T × [l, h]` of the half `(k, r)` of `P`: its arcs are arcs
+of the table that fit the ends on `S` and `T`, with the labels of the ends as their entries of
+`specs`, bounded below for the source and above for the target; it has the axis, quarter and half
+of the cell and an angle interval containing `[l, h]`; and its edge has the charge of `P` and a
+target at least that of `P`. -/
 def leafCheck (M : AffineTableMeta) (C : TableCtx) (specs : List (QuadLabel × Bool))
     (P : PairProblem) (k : ℕ) (r : Bool) (S T : QInterval) (l h : ℕ) (x : AffineRow) : Bool :=
   decide (x.source < C.n) && decide (x.target < C.n) && (axisOf x.axis == P.axis) &&
@@ -309,7 +331,8 @@ def leafCheck (M : AffineTableMeta) (C : TableCtx) (specs : List (QuadLabel × B
     decide (P.target ≤ M.target (Fin.ofNat 7 x.edge)) &&
     ratEq (M.charge (Fin.ofNat 7 x.edge)) P.charge
 
-/-- The check of a tree on a cell. It returns the rows that follow the rows of its leaves. -/
+/-- The check of a tree on a cell. It returns the rows that follow the rows of its leaves, or
+`none` if a leaf fails. -/
 def treeCheck (M : AffineTableMeta) (C : TableCtx) (specs : List (QuadLabel × Bool))
     (P : PairProblem) (k : ℕ) (r : Bool) (t : PairTree) :
     QInterval → QInterval → ℕ → ℕ → List AffineRow → Option (List AffineRow) :=
@@ -339,6 +362,8 @@ section Sound
 
 variable {M : AffineTableMeta} {C : TableCtx} {specs : List (QuadLabel × Bool)}
 
+/-- A point of the end `E` with its tangent in `S` is a point of an arc that fits `E` on `S`, and
+the arc has the sign of `E`. -/
 theorem arcFits_contains {a : ArcData} {E : PairEnd} {S : QInterval} (h : arcFits a E S = true)
     {Q : ℝ} {x y : ℝ} (hxy : E.Mem Q S x y) : a.Contains Q x y ∧ a.sign = sgnR E.positive := by
   simp only [arcFits, Bool.and_eq_true, beq_iff_eq, decide_eq_true_eq] at h
@@ -369,6 +394,8 @@ theorem arcFits_contains {a : ArcData} {E : PairEnd} {S : QInterval} (h : arcFit
       exact hc
   · simp [ArcData.sign, sgnR, hp]
 
+/-- A row that passes `leafCheck` on a cell gives the inequality of the problem there, from its
+claim. -/
 theorem leafCheck_sound (hC : C.Valid M) (hspecs : SpecsHold M C specs) {P : PairProblem}
     {k : ℕ} {r : Bool} {S T : QInterval} {l h : ℕ} {x : AffineRow}
     (hx : leafCheck M C specs P k r S T l h x = true) (hclaim : (x.toTableRow M C.den).Claim M) :
@@ -607,8 +634,8 @@ theorem problemsCheck_sound (hC : C.Valid M) (hspecs : SpecsHold M C specs) :
 
 end Sound
 
-/-- The problems of a table hold, from its four finite checks: the table data, the labels of its
-arcs, the claims of its rows and the trees of its problems. -/
+/-- The problems of a table hold, given the validity of its context, the check of the labels of
+its arcs, the claims of its rows and the check of the trees of its problems. -/
 theorem table_sound {M : AffineTableMeta} {C : TableCtx} {specs : List (QuadLabel × Bool)}
     {Ps : List PairProblem} {ts : List PairTree} {rows : List AffineRow} (hC : C.Valid M)
     (hlabels : labelsCheck M.radius C.boxes 0 M.arcs specs = true)

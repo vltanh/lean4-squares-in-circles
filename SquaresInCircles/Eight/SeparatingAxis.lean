@@ -6,15 +6,17 @@ public import SquaresInCircles.Common.Contacts
 /-!
 # Eight squares: the eight signed axes and the four forward margins
 
-Two squares have disjoint interiors exactly when one of the eight signed axes separates them
-(`disjoint_iff_signed_axis`). The owner of the axis, one of the two axes of either square, and
-its sign are independent. One direction is the separating-axis theorem; the converse uses the
-strict support of an open square (`open_point_strict_support`). The projection may equal the
-threshold.
+Two squares have disjoint interiors exactly when one of the eight signed axes separates them:
+an axis is the `e` or `f` axis of either square, with a sign, and it separates when the
+projection of the difference of the centres on it reaches the threshold `SAT.threshold`. One
+direction is the separating-axis theorem (`signed_axis_of_disjoint`); the converse,
+`SignedAxis.disjoint`, uses the strict support of an open square (`open_point_strict_support`).
+The projection may equal the threshold.
 
-For a pair written in the canonical frame of its first square, the source, the four forward axes
-`forwardAxis j` separate exactly when the margins `forwardMargin j` are nonnegative
-(`forward_feasible_iff_margin`), and the margins are the same in any frame
+The four forward axes `forwardAxis j` of a pair are the `+f` axis of the source, the `+e` and
+`+f` axes of the target and the `-e` axis of the source. On each of them the projection exceeds
+the threshold by the margin `forwardMargin j`, explicit in the states `(a, b)` and `(A, B)` of
+the two centres in their own frames, their signs `σ` and `τ` and the angle `φ` between the frames
 (`canonical_margin_identity`).
 -/
 

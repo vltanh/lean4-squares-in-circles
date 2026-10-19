@@ -3,7 +3,11 @@ module
 public import SquaresInCircles.Eight.Generated.Affine.GUpperAffine.Context
 public meta import SquaresInCircles.Eight.IntRows
 
-/-! Rows 0 to 8956 of the table, checked by `decide +kernel`, 200 rows a theorem. -/
+/-!
+# Eight squares: rows 0 to 8956 of the affine table `GUpperAffine`
+
+Each part of 200 rows passes `checkRows`, evaluated by the kernel.
+-/
 
 @[expose] public section
 noncomputable section

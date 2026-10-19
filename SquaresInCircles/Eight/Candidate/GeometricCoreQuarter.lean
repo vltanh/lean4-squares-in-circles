@@ -4,14 +4,16 @@ public import SquaresInCircles.Eight.Candidate.GeometricSecondaryExclusion
 public import SquaresInCircles.Eight.Frames
 
 /-!
-# Quarter edges between two core squares with opposite transverse signs
+# Eight squares: quarter edges between core squares of opposite signs
 
 On a quarter edge `φ = π/2 + d` from a core square with transverse sign `+1` to one with sign
-`-1`, the gap `π/2 + d + arctan (b / a) + arctan (B / A)` is below `7/4`, the bound of every gap
-of a cycle (`cycle_gap_lt_seven_quarters`). Since `arctan x ≥ (3/4) x` on `[0, 1]`, a core
+`-1`, the gap `π/2 + d + arctan (b / a) + arctan (B / A)` is below `7/4`, a bound of every gap of
+a cycle (`cycle_gap_lt_seven_quarters`). Since `arctan x ≥ (3/4) x` on `[0, 1]`, a core
 transverse coordinate is at most `7/9` of its angle, so `b + B ≤ (7/9)(1/5 - d)`, and then no
-original axis separates the pair, on the whole frame range `|d| ≤ 7/10`
-(`core_quarter_opposite_margin`, `quarter_core_opposite_excluded`).
+forward axis separates the pair, on the whole frame range `|d| ≤ 7/10`
+(`core_quarter_opposite_margin`, `quarter_core_opposite_excluded`). The pair tables leave these
+pairs out: the word tables through `WordGeometry.original_not_core_excluded`, the affine tables
+through `ExcludedArcs` (`Arithmetic/AffineCoverage.lean`).
 -/
 
 @[expose] public section
@@ -20,7 +22,8 @@ open Set
 
 namespace SquaresInCircles.Eight.Candidate.Geometric
 
-/-- The chord of `arctan` on `[0, 1]`, with `π > 3`. -/
+/-- `arctan x ≥ (3/4) x` on `[0, 1]`: `arctan` is concave there, so it lies above its chord, of
+slope `π/4 > 3/4`. -/
 theorem arctan_chord {x : ℝ} (hx : 0 ≤ x ∧ x ≤ 1) : (3/4:ℝ)*x ≤ Real.arctan x := by
   have hc : ConcaveOn ℝ (Icc (0:ℝ) 1) Real.arctan :=
     concave_of_deriv2 (fun y _ => Real.hasDerivAt_arctan y)
@@ -32,7 +35,8 @@ theorem arctan_chord {x : ℝ} (hx : 0 ≤ x ∧ x ≤ 1) : (3/4:ℝ)*x ≤ Real
   simp only [smul_eq_mul, mul_zero, zero_add, mul_one, Real.arctan_zero, Real.arctan_one] at h
   nlinarith [Real.pi_gt_three]
 
-/-- A core transverse coordinate is at most `7/9` of its angle. -/
+/-- A core transverse coordinate is at most `7/9` of its angle: `b ≤ (7/9) arctan (b / a)` when
+`0 ≤ b ≤ a ≤ 7/12`. -/
 theorem core_transverse_le_angle {a b : ℝ} (ha : 0 < a) (hau : a ≤ 7/12) (hb : 0 ≤ b)
     (hab : b ≤ a) : b ≤ (7/9:ℝ)*Real.arctan (b/a) := by
   have h := arctan_chord ⟨div_nonneg hb ha.le, (div_le_one ha).mpr hab⟩
@@ -62,7 +66,8 @@ theorem cycle_gap_lt_seven_quarters (β : Vertex → ℝ) (hgap : ∀ i, 19/25 <
   simp only [Fin.sum_univ_seven] at hsum
   fin_cases i <;> simp <;> linarith
 
-/-- On the negative-error half `φ = π/2 - x` no axis separates. -/
+/-- On the half `φ = π/2 - x`, `0 ≤ x ≤ 7/10`, every margin from a core square of sign `+1` to a
+core square of sign `-1` is negative when `b + B ≤ (7/9)(1/5 + x)`. -/
 theorem core_quarter_negative_error {a b A B x : ℝ}
     (ha : 1/2 ≤ a ∧ a ≤ 7/12) (hA : 1/2 ≤ A ∧ A ≤ 7/12)
     (hb : 0 ≤ b) (hB : 0 ≤ B) (hx : 0 ≤ x ∧ x ≤ 7/10)
@@ -89,7 +94,7 @@ theorem core_quarter_negative_error {a b A B x : ℝ}
       abs_of_nonneg hc0, abs_of_nonneg hs0] <;>
     nlinarith [ha.1, ha.2, hA.1, hA.2, hx.1, hx.2]
 
-/-- On the nonnegative-error half `φ = π/2 + x` no axis separates. -/
+/-- On the half `φ = π/2 + x`, `0 ≤ x ≤ 7/10`, the same holds when `b + B ≤ (7/9)(1/5 - x)`. -/
 theorem core_quarter_nonnegative_error {a b A B x : ℝ}
     (ha : 1/2 ≤ a ∧ a ≤ 7/12) (hA : 1/2 ≤ A ∧ A ≤ 7/12)
     (hb : 0 ≤ b) (hB : 0 ≤ B) (hx : 0 ≤ x ∧ x ≤ 7/10)

@@ -5,7 +5,11 @@ public import SquaresInCircles.Eight.Generated.Affine.HLowerAffine.Rows001
 public import SquaresInCircles.Eight.Generated.Affine.HLowerAffine.Rows002
 public import SquaresInCircles.Eight.Generated.Affine.HLowerAffine.Rows003
 
-/-! All rows of the table. -/
+/-!
+# Eight squares: the rows of the affine table `HLowerAffine`
+
+All rows of the table, as the list of their parts; together they pass `checkRows`.
+-/
 
 @[expose] public section
 noncomputable section

@@ -11,8 +11,7 @@ public import SquaresInCircles.Eight.ExactFamily.Envelope
 coordinates given by the successive square roots (`radicalCoordinates`). Its equations, its
 branch signs and its uniqueness are theorems: it solves the stationary system
 (`sharpData_stationary`), and every solution of that system equals it (`stationary_unique`), by
-the geometric argument of `Envelope.lean` (`FiveCornerGeometry.stationary_chain_unique`); in
-particular every solution lies in the rectangle of `Analysis.lean` (`stationary_local`). The
+the geometric argument of `Envelope.lean` (`FiveCornerGeometry.stationary_chain_unique`). The
 decimals below are rational brackets for `qStar` and the coordinates (`qStar_bracket`,
 `qStar_limits`, `sharp_coordinates`, `sharp_y`), not definitions of them.
 -/
@@ -93,7 +92,7 @@ theorem radical_isChain {q y z : ℝ} (he : localBox.Mem ![q,y,z]) :
     dsimp [radicalCoordinates] at h₄
     linarith only [h₄]
   refine ⟨h₁,h₂,h₃,h₄,?_,?_,?_,?_⟩ <;>
-    simp [radicalCoordinates,x₃,y₄,Real.sq_sqrt,r₁,r₂,r₃,r₄] <;> ring
+    simp [radicalCoordinates,x₃,y₄,Real.sq_sqrt,r₁,r₂,r₃,r₄]
 
 theorem radical_weightDomain {q y z : ℝ} (he : localBox.Mem ![q,y,z]) :
     (radicalCoordinates q y z).WeightDomain := by
@@ -138,7 +137,7 @@ theorem familyZ_radical (q y z : ℝ) :
   dsimp [scalarFz,tiltDerivative,h₁,h₂,c,s,y₄,halfAngleCos,halfAngleSin,
     radicalCoordinates]
   field_simp [ne_of_gt (halfAngle_den_pos z)]
-  ring
+  ring_nf
 
 theorem sharp_endpoint_signs : 0 < minimumValue sharpLower ∧ minimumValue sharpUpper < 0 := by
   have hL := sharpLowF_bound ![sharpLower,trialY,trialZ]

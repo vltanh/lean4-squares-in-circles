@@ -2,16 +2,24 @@ module
 
 public import SquaresInCircles.Eight.ExactFamily.Expression
 
-/-! The formulas of the stationary point: the defect `F` of the chain in the variables `(q, y, z)`,
-its first partial derivatives and its second derivatives in `y` and `z`, the coordinates of the
-chain and the determinant of the shifted Hessian, with the box `localBox` and the bracket
-of `qStar`. The derivative identities are decided by evaluating the symbolic derivative in
-the kernel. -/
+/-!
+# Eight squares: the formulas of the stationary point
+
+The chain of `ExactFamily/Coordinates.lean` as formulas (`Formula`) in the variables `(q, y, z)`:
+the coordinates `x₁, x₂, y₃, x₄` (`xOneFormula`, ...), the cosine and sine of the tilt, the fifth
+corner `(h₁, h₂)`, the defect `F = h₁² + h₂² - q` (`FFormula`), its first partial derivatives,
+its second derivatives in `y` and `z`, and the determinant `(F_yy - 1/4)(F_zz - 1/4) - F_yz²` of
+the shifted Hessian (`determinantFormula`, `determinant_eval`). Each derivative is the symbolic
+derivative `Formula.diff` of `F`, `F_y` or `F_z`, an identity of formulas decided by the kernel
+(`Fq_diff`, ...), and the two mixed partials agree in value (`mixed_partials`). `scalarF` and its
+companions write `F`, `F_y`, `F_z` and the coordinates as explicit real expressions (`F_eval`,
+...). The module also fixes the box `localBox`, the trial point `(trialY, trialZ)` and the
+bracket `[sharpLower, sharpUpper]` of `qStar`. Written by `scripts/eight/generate_stationary.py`.
+-/
 
 @[expose] public section
 noncomputable section
 set_option maxRecDepth 100000
-set_option linter.all false
 
 namespace SquaresInCircles.Eight.ExactFamily.Generated
 open Arithmetic
@@ -290,10 +298,16 @@ noncomputable def sineFormula : Formula 3 := formula36
 noncomputable def hOneFormula : Formula 3 := formula42
 noncomputable def hTwoFormula : Formula 3 := formula50
 noncomputable def determinantFormula : Formula 3 := formula258
+/-- The box of `(q, y, z)`: `q` in `[qMinus, Q0]` and `(y, z)` in the rectangle `poseBox`
+of `ExactFamily/Analysis.lean`. -/
 noncomputable def localBox : QBox 3 := ![⟨(7831/2000),(9789/2500)⟩, ⟨(-937/1000),(-179/200)⟩, ⟨(1/20),(81/1000)⟩]
+/-- The position `y` of the trial point, near the stationary pose (`sharpPose_close`). -/
 noncomputable def trialY : ℝ := (-3682626712030424527/4000000000000000000)
+/-- The half-angle tangent `z` of the trial point. -/
 noncomputable def trialZ : ℝ := (618974110076603597/10000000000000000000)
+/-- The lower end of the bracket of `qStar` (`qStar_bracket`). -/
 noncomputable def sharpLower : ℝ := (97888353437936878163/25000000000000000000)
+/-- The upper end of the bracket of `qStar`. -/
 noncomputable def sharpUpper : ℝ := (97888353437936885663/25000000000000000000)
 
 theorem Fq_diff : FFormula.diff 0 = FqFormula := by decide +kernel
@@ -531,7 +545,7 @@ noncomputable def scalarFz (q y z : ℝ) : ℝ := by
 theorem Fz_eval (q y z : ℝ) : FzFormula.eval ![q,y,z] = scalarFz q y z := by
   rfl
 
-noncomputable def scalarxOne (q y z : ℝ) : ℝ := by
+noncomputable def scalarxOne (q y _z : ℝ) : ℝ := by
   let n0 : ℝ := q
   let n1 : ℝ := y
   let n6 : ℝ := n1^2
@@ -542,7 +556,7 @@ noncomputable def scalarxOne (q y z : ℝ) : ℝ := by
 theorem xOne_eval (q y z : ℝ) : xOneFormula.eval ![q,y,z] = scalarxOne q y z := by
   rfl
 
-noncomputable def scalarxTwo (q y z : ℝ) : ℝ := by
+noncomputable def scalarxTwo (q y _z : ℝ) : ℝ := by
   let n0 : ℝ := q
   let n1 : ℝ := y
   let n4 : ℝ := ((2:ℚ):ℝ)
@@ -555,7 +569,7 @@ noncomputable def scalarxTwo (q y z : ℝ) : ℝ := by
 theorem xTwo_eval (q y z : ℝ) : xTwoFormula.eval ![q,y,z] = scalarxTwo q y z := by
   rfl
 
-noncomputable def scalaryThree (q y z : ℝ) : ℝ := by
+noncomputable def scalaryThree (q y _z : ℝ) : ℝ := by
   let n0 : ℝ := q
   let n1 : ℝ := y
   let n4 : ℝ := ((2:ℚ):ℝ)
@@ -574,7 +588,7 @@ noncomputable def scalaryThree (q y z : ℝ) : ℝ := by
 theorem yThree_eval (q y z : ℝ) : yThreeFormula.eval ![q,y,z] = scalaryThree q y z := by
   rfl
 
-noncomputable def scalarxFour (q y z : ℝ) : ℝ := by
+noncomputable def scalarxFour (q y _z : ℝ) : ℝ := by
   let n0 : ℝ := q
   let n1 : ℝ := y
   let n4 : ℝ := ((2:ℚ):ℝ)
@@ -600,7 +614,7 @@ noncomputable def scalarxFour (q y z : ℝ) : ℝ := by
 theorem xFour_eval (q y z : ℝ) : xFourFormula.eval ![q,y,z] = scalarxFour q y z := by
   rfl
 
-noncomputable def scalarcosine (q y z : ℝ) : ℝ := by
+noncomputable def scalarcosine (_q _y z : ℝ) : ℝ := by
   let n2 : ℝ := z
   let n3 : ℝ := ((1:ℚ):ℝ)
   let n29 : ℝ := n2^2
@@ -613,7 +627,7 @@ noncomputable def scalarcosine (q y z : ℝ) : ℝ := by
 theorem cosine_eval (q y z : ℝ) : cosineFormula.eval ![q,y,z] = scalarcosine q y z := by
   rfl
 
-noncomputable def scalarsine (q y z : ℝ) : ℝ := by
+noncomputable def scalarsine (_q _y z : ℝ) : ℝ := by
   let n2 : ℝ := z
   let n3 : ℝ := ((1:ℚ):ℝ)
   let n4 : ℝ := ((2:ℚ):ℝ)
@@ -699,6 +713,7 @@ noncomputable def scalarhTwo (q y z : ℝ) : ℝ := by
 theorem hTwo_eval (q y z : ℝ) : hTwoFormula.eval ![q,y,z] = scalarhTwo q y z := by
   rfl
 
+/-- `determinantFormula` is `(F_yy - 1/4)(F_zz - 1/4) - F_yz²`. -/
 theorem determinant_eval (env : Fin 3 → ℝ) :
     determinantFormula.eval env =
       (FyyFormula.eval env-1/4)*(FzzFormula.eval env-1/4)-(FyzFormula.eval env)^2 := by
@@ -707,6 +722,7 @@ theorem determinant_eval (env : Fin 3 → ℝ) :
   push_cast
   ring
 
+/-- The derivative of `F_z` in `y` has the value of `F_yz`. -/
 theorem mixed_partials (env : Fin 3 → ℝ) :
     (FzFormula.diff 1).eval env = FyzFormula.eval env := by
   norm_num [FzFormula,FyzFormula,Formula.diff,Formula.plus,Formula.minus,Formula.times,

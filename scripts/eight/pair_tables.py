@@ -35,7 +35,8 @@ For each table NAME it writes
   data/eight/pairs/NAME.rows   the rows, in the order the trees consume them (affine_rows format)
   data/eight/pairs/NAME.arcs   the arc boxes (affine_rows format; the arctangent field is unused)
   data/eight/pairs/NAME.trees  one tree per problem half, in prefix order (PairData.lean)
-and the modules SquaresInCircles/Eight/Generated/Pairs/MODULE{.lean,/Data.lean,/RowsNNN.lean}.
+and the modules SquaresInCircles/Eight/Generated/Pairs/MODULE{.lean,/Data.lean,/RowsNNN.lean},
+with the modules Generated/PairsFourType.lean and Generated/PairsWords.lean importing them.
 
   python3 -I scripts/eight/pair_tables.py [--jobs N] [--only NAME ...] [--no-write]
 """
@@ -1007,6 +1008,15 @@ def lean_q(q):
     return "(%d/%d)" % (q.numerator, q.denominator)
 
 
+def joined_simps(name, parts):
+    """the simp set that proves `checkRows ctx name = true` for `name := p₁ ++ ... ++ pₙ` from
+    the theorems `pᵢ_check`"""
+    checks = [q + "_check" for q in parts]
+    if len(parts) == 1:
+        return [name] + checks
+    return [name, "checkRows_append"] + checks + ["Bool.and_true"]
+
+
 def write_data(out, tab, arcs, rows, trees, ctx):
     out.mkdir(parents=True, exist_ok=True)
     with open(out / (tab.name + ".rows"), "w") as f:
@@ -1039,7 +1049,9 @@ HEADER = """module
 
 {imports}
 
-/-! {doc} -/
+/-!
+{doc}
+-/
 
 @[expose] public section
 noncomputable section
@@ -1086,8 +1098,9 @@ theorem ctx_boxes_{j} : boxesRange table.radius table.arcs ctx.boxes {a} {c} = t
     text = HEADER.format(
         imports="public import %s\n"
                 "public meta import SquaresInCircles.Eight.IntRows" % problem_module,
-        doc="The data of the pair table `%s`: its arcs, the quadratic label of each arc with its\n"
-            "side, its problems and its fixed-point context, checked once." % mod, module=mod)
+        doc="# Eight squares: the data of the pair table `%s`\n\n"
+            "Its arcs, the quadratic label of each arc with its side, its problems and its\n"
+            "fixed-point context, checked against the arcs once." % mod, module=mod)
     text += f"""
 /-- The arcs of the table. The fields `cuts`, `word`, `differenceRange` and `allowedAxes` serve
 the state and angle covers of the affine tables; the pair tables use coverage trees instead. -/
@@ -1136,8 +1149,9 @@ theorem labels_check : labelsCheck table.radius ctx.boxes 0 table.arcs specs = t
         parts = []
         text = HEADER.format(
             imports="public import %s.Data\npublic meta import SquaresInCircles.Eight.IntRows" % pre,
-            doc="Rows %d to %d of the table, checked by `decide +kernel`, a hundred rows a theorem."
-                % (start, start + count - 1), module=mod)
+            doc="# Eight squares: rows %d to %d of the pair table `%s`\n\n"
+                "Each part of %d rows passes `checkRows`, evaluated by the kernel."
+                % (start, start + count - 1, mod, part), module=mod)
         for k, s0 in enumerate(range(start, start + count, part)):
             n = min(part, start + count - s0)
             nm = "rows%03d_%d" % (c, k)
@@ -1151,8 +1165,7 @@ theorem {nm}_check : checkRows ctx {nm} = true := by decide +kernel
         cn = "chunk%03d" % c
         chunks.append(cn)
         joined = ar.wrap(parts, 4, "  ", sep=" ++ ")
-        simps = ar.wrap([cn, "checkRows_append"] + [p + "_check" for p in parts] + ["Bool.and_true"],
-                        4, "  simp only [")
+        simps = ar.wrap(joined_simps(cn, parts), 4, "  simp only [")
         text += f"""
 /-- Rows {start} to {start + count - 1}. -/
 def {cn} : List AffineRow :=
@@ -1167,10 +1180,11 @@ theorem {cn}_check : checkRows ctx {cn} = true := by
                         ["public meta import SquaresInCircles.Eight.PairData"])
     text = HEADER.format(
         imports=imports,
-        doc=f"# The pair table `{mod}`\n\n" + textwrap.fill(
+        doc=f"# Eight squares: the pair table `{mod}`\n\n" + textwrap.fill(
             f"Each of its {len(rows)} rows passes `checkRow`, so it satisfies its claim; the "
             f"labels of its {len(arcs)} arcs pass `labelsCheck`; the trees of its "
-            f"{len(tab.problems)} problems pass `problemsCheck`. So every problem holds.", 96),
+            f"{len(tab.problems)} problems pass `problemsCheck`. So every problem holds (`sound`).",
+            96),
         module=mod)
     text += f"""
 /-- All rows, in the order the trees consume them. -/
@@ -1178,7 +1192,7 @@ def data : List AffineRow :=
   {(" ++" + chr(10) + "    ").join(chunks)}
 
 theorem data_check : checkRows ctx data = true := by
-{ar.wrap(["data", "checkRows_append"] + [c + "_check" for c in chunks] + ["Bool.and_true"], 4, "  simp only [")}]
+{ar.wrap(joined_simps("data", chunks), 4, "  simp only [")}]
 
 theorem all_row_claims : ∀ x ∈ data, (x.toTableRow table ctx.den).Claim table :=
   fun x hx => checkRow_claim ctx_valid (checkRows_sound data_check x hx)
@@ -1199,13 +1213,19 @@ theorem sound : ∀ P ∈ problems, P.Holds table.radius ctx.den :=
 
 def write_umbrellas(root, tabs):
     base = root / "SquaresInCircles" / "Eight" / "Generated" / "Pairs"
-    for name, doc, sel in (("FourType", "pair tables of the four-type pair bounds",
-                            lambda t: t.name.startswith("four_type")),
-                           ("Words", "pair tables of the quarter-word pair bounds",
-                            lambda t: not t.name.startswith("four_type"))):
+    for name, doc, use, sel in (
+            ("FourType", "four-type pair bounds", "`Arithmetic/FourTypePairs.lean`",
+             lambda t: t.name.startswith("four_type")),
+            ("Words", "quarter-word pair bounds", "`WordGeometry.lean`",
+             lambda t: not t.name.startswith("four_type"))):
         mods = [t.module for t in tabs if sel(t)]
-        text = "module\n\n" + "\n".join("public import SquaresInCircles.Eight.Generated.Pairs.%s" % m
-                                        for m in mods) + "\n\n/-! The %d %s. -/\n" % (len(mods), doc)
+        text = ("module\n\n" +
+                "\n".join("public import SquaresInCircles.Eight.Generated.Pairs.%s" % m
+                          for m in mods) +
+                "\n\n/-!\n# Eight squares: the pair tables of the %s\n\n" % doc +
+                textwrap.fill("The %d tables of `Generated/Pairs/` whose problems are the %s of %s; "
+                              "each table proves its problems (`sound`)." % (len(mods), doc, use),
+                              100) + "\n-/\n")
         (base.parent / ("Pairs%s.lean" % name)).write_text(text)
 
 

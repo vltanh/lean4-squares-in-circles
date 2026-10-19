@@ -11,35 +11,38 @@ public import Mathlib.Topology.Order.IntermediateValue
 /-!
 # Eight squares: the envelope in the tilt and the uniqueness of the stationary chain
 
-Two strict local minima of a continuous function enclose an interior local maximum. So if every
-critical point of a function in an open interval is a strict local minimum, there is at most one
-(`critical_unique_of_strict_minimum`), and it is the minimum on the closed interval
-(`critical_is_global_minimum`); a positive second derivative makes a critical point a strict
-minimum (`strictMinimum_of_positive_second_derivative`). If `G(t, u) = 0` has a nonzero position
-derivative and a root `g t` that is unique in an open window near `t`, then `g` is the implicit
-function, hence `C²` (`contDiffAt_of_unique_root`), with slope `-G_t/G_u`
-(`implicit_root_derivative`).
+The general part (`EnvelopeGeometry`): two strict local minima of a continuous function enclose
+an interior local maximum. So if every critical point of a function in an open interval is a
+strict local minimum, there is at most one (`critical_unique_of_strict_minimum`), and it is the
+minimum on the closed interval (`critical_is_global_minimum`); a positive second derivative makes
+a critical point a strict minimum (`strictMinimum_of_positive_second_derivative`). If
+`G(t, u) = 0` has a nonzero position derivative and a root `g t` that is unique in an open window
+near `t`, then `g` is the implicit function, hence `C²` (`contDiffAt_of_unique_root`), with slope
+`-G_t/G_u` (`implicit_root_derivative`).
 
 On the window `[87/100, 11/10]` the four radicals stay positive for every `q` of the strip
-(`window_bounds`). The position derivative is negative at `87/100` and exceeds `c/4` at `11/10`
-(`upper_position_positive`), so it vanishes inside, and by strict convexity that root is the global
-position minimum (`windowMinimizer_geometric`). `positionEnvelope q t` is the minimum over the
-window at the tilt `t`; it is continuous and decreases with the radius faster than `q`
+(`window_bounds`). At every tilt with `0 ≤ s/c ≤ 1/5`, `positionHalf` is negative at `87/100`
+(`comparison_position_negative`) and exceeds `c/4` at `11/10` (`upper_position_positive`), so it
+vanishes inside, and by the strict convexity of `Convexity.lean` that root is the global position
+minimum (`windowMinimizer_geometric`). `positionEnvelope q t` is the minimum over the window at
+the tilt `t`; it is continuous and decreases with the radius faster than `q`
 (`positionEnvelope_radius_decrease`). On `[1, 11/10]` the cross product of the position and tilt
-gradients is a negative quadratic form in `(c, s)`, so a critical point in the window has `u < 1`
-and is a critical point of the strip (`windowMinimizer_isStripCritical`).
+derivatives of `(k₁, k₂)` is a negative quadratic form in `(c, s)`, so a critical point in the
+window has `u < 1` and is a critical point of the strip of `CriticalHessian.lean`
+(`windowMinimizer_isStripCritical`).
 
 On the tilt interval `0 < t < arctan (1/5)` the position minimum is the implicit root of
-`F_u = 0`, so the envelope `M(t)` has `M' = F_t` and `M'' = F_tt - F_tu²/F_uu`, which is positive at
-a critical point by the Hessian bound. Hence every critical tilt is a strict minimum, there is at
-most one (`positionEnvelope_critical_unique`), and it is the minimum on the closed interval
-(`positionEnvelope_critical_global_minimum`).
+`F_u = 0`, where `F` is the defect, so the envelope `M(t)` has `M' = F_t` and
+`M'' = F_tt - F_tu²/F_uu`, which is positive at a critical point by the Hessian bound. Hence every
+critical tilt is a strict minimum, there is at most one (`positionEnvelope_critical_unique`), and
+it is the minimum on the closed interval (`positionEnvelope_critical_global_minimum`).
 
 A stationary chain `d` gives the tilt `t = 2 arctan z` in `(0, arctan (1/5))`, where the envelope
 `M(d.q, ·)` vanishes and is critical, so `M(d.q, ·) ≥ 0` on the closed tilt interval. If two
 stationary chains had radii `q₀ < q₁`, the radius decrease would give
 `0 ≤ M(q₁, t₀) < M(q₀, t₀) - (q₁ - q₀) < 0`; so the radii agree, then the critical tilts, then the
-positions, and the chains are equal (`stationary_chain_unique`).
+positions, and the chains are equal (`stationary_chain_unique`). `Stationary.lean` uses this for
+the uniqueness of the stationary configuration.
 -/
 
 @[expose] public section
@@ -52,7 +55,7 @@ namespace SquaresInCircles.Eight.ExactFamily.EnvelopeGeometry
 
 /-! ### Functions whose critical points are strict minima -/
 
-/-- A strict minimum on an explicit open neighborhood. -/
+/-- `f x < f y` for every `y ≠ x` in an open interval about `x`. -/
 def StrictMinimum (f : ℝ → ℝ) (x : ℝ) : Prop :=
   ∃ ε>0, ∀ y∈Ioo (x-ε) (x+ε), y≠x → f x<f y
 
@@ -131,6 +134,7 @@ theorem StrictMinimum.left_witness {f : ℝ → ℝ} {x y : ℝ}
   have hez : x-ε<z := lt_of_le_of_lt (le_max_right _ _) hlz
   exact ⟨z,⟨hyz,hzx⟩,hf z ⟨hez,by linarith⟩ (ne_of_lt hzx)⟩
 
+/-- A point above both ends of an interval forces an interior maximum. -/
 theorem point_above_endpoints_forces_interior_maximum {f : ℝ → ℝ} {x y u : ℝ}
     (hxy : x<y) (hc : ContinuousOn f (Icc x y)) (hu : u∈Icc x y)
     (hux : f x<f u) (huy : f y<f u) :
@@ -240,6 +244,7 @@ theorem critical_is_global_minimum {f : ℝ → ℝ} {a b x : ℝ}
 
 /-! ### Implicit roots -/
 
+/-- The linear map `(v₁, v₂) ↦ dt v₁ + du v₂`. -/
 def pairDerivative (dt du : ℝ) : (ℝ × ℝ) →L[ℝ] ℝ :=
   dt • ContinuousLinearMap.fst ℝ ℝ ℝ+du • ContinuousLinearMap.snd ℝ ℝ ℝ
 
@@ -268,6 +273,8 @@ theorem pair_hasFDerivAt {H : ℝ × ℝ → ℝ} {t u dt du : ℝ}
   rw [← he]
   exact hH.hasFDerivAt
 
+/-- The restriction of `pairDerivative dt du` to the second coordinate is invertible when
+`du ≠ 0`. -/
 theorem pairDerivative_position_invertible {dt du : ℝ} (hu : du≠0) :
     ((pairDerivative dt du).comp (ContinuousLinearMap.inr ℝ ℝ ℝ)).IsInvertible := by
   apply ContinuousLinearMap.IsInvertible.of_inverse
@@ -334,6 +341,7 @@ theorem envelope_tilt_derivative {T : ℝ × ℝ → ℝ} {g : ℝ → ℝ}
     rw [pairDerivative_apply]
     ring)
 
+/-- With `uu > 0` and `uu tt - tu² > 0` the Schur complement `tt - tu²/uu` is positive. -/
 theorem schur_positive {tt tu uu : ℝ} (huu : 0<uu) (hdet : 0<uu*tt-tu^2) :
     0<tt-tu^2/uu := by
   have hh := (div_lt_iff₀ huu).mpr (show tu^2<tt*uu by nlinarith)
@@ -347,8 +355,10 @@ open EnvelopeGeometry
 
 /-! ### The window of position minima -/
 
+/-- The window `[87/100, 11/10]` of positions. -/
 def positionWindow : Set ℝ := Icc (87/100) (11/10)
 
+/-- Rational bounds on the radicals in the window. -/
 structure WindowBounds (q u : ℝ) : Prop where
   domain : Domain q u
   r_lower : 41/25<lowerRight q u
@@ -363,6 +373,7 @@ theorem WindowBounds.smoothDomain {q u : ℝ} (h : WindowBounds q u) (hq : q<4) 
   ⟨h.domain,hq,by linarith [h.r_lower],by linarith [h.U_lower],
     by linarith [h.Y_lower],by linarith [h.w_lower]⟩
 
+/-- The four radicals are positive in the window, for every `q` of the strip. -/
 theorem window_bounds {q u : ℝ} (hql : (79/40:ℝ)^2 ≤ q) (hqu : q ≤ 9789/2500)
     (hu : u∈positionWindow) : WindowBounds q u := by
   have hul : 87/100 ≤ u := hu.1
@@ -399,6 +410,7 @@ theorem window_bounds {q u : ℝ} (hql : (79/40:ℝ)^2 ≤ q) (hqu : q ≤ 9789/
   exact ⟨domain_of_pos hup (by linarith [hr.1]) (by linarith [hU.1]) (by linarith [hY.1])
     (by linarith [hw.1]),hr.1,hU.1,hV.1,hY.1,hv.1,hw.1⟩
 
+/-- Rational bounds at `u = 11/10`. -/
 theorem upper_comparison_bounds {q : ℝ}
     (hql : (79/40:ℝ)^2 ≤ q) (hqu : q ≤ 9789/2500) :
     lowerRight q (11/10)<33/20 ∧ lowerHeight q (11/10)<47/100 ∧
@@ -501,6 +513,7 @@ theorem upper_position_positive {q c s : ℝ}
   rw [he]
   nlinarith
 
+/-- The position derivative vanishes inside the window, at the global position minimum. -/
 theorem window_stationary_exists {q c s : ℝ}
     (hql : (79/40:ℝ)^2 ≤ q) (hqu : q ≤ 9789/2500)
     (hc : 0<c) (hs : 0 ≤ s) (hunit : c^2+s^2=1) (ht : s/c ≤ 1/5) :
@@ -545,6 +558,7 @@ theorem window_minimum_exists (q c s : ℝ) :
     (defect_continuous q c s).continuousOn
   exact ⟨u,hu,fun v hv => hm hv⟩
 
+/-- A minimum of the defect over the window. -/
 def windowMinimizer (q c s : ℝ) : ℝ := Classical.choose (window_minimum_exists q c s)
 
 theorem windowMinimizer_mem (q c s : ℝ) : windowMinimizer q c s∈positionWindow :=
@@ -554,6 +568,7 @@ theorem windowMinimizer_le (q c s : ℝ) {u : ℝ} (hu : u∈positionWindow) :
     defect q c s (windowMinimizer q c s) ≤ defect q c s u :=
   (Classical.choose_spec (window_minimum_exists q c s)).2 u hu
 
+/-- The minimum over the window is unique. -/
 theorem window_minimizer_unique {q c s u v : ℝ}
     (hql : (79/40:ℝ)^2 ≤ q) (hqu : q ≤ 9789/2500)
     (hc : 0<c) (hs : 0 ≤ s) (hunit : c^2+s^2=1)
@@ -571,6 +586,8 @@ theorem window_minimizer_unique {q c s u v : ℝ}
   have h₂ := hmv _ hm
   linarith
 
+/-- The minimum over the window is interior and critical, and it is the global minimum on the
+radical domain. -/
 theorem windowMinimizer_geometric {q c s : ℝ}
     (hql : (79/40:ℝ)^2 ≤ q) (hqu : q ≤ 9789/2500)
     (hc : 0<c) (hs : 0 ≤ s) (hunit : c^2+s^2=1) (ht : s/c ≤ 1/5) :
@@ -586,6 +603,7 @@ theorem windowMinimizer_geometric {q c s : ℝ}
   rw [he]
   exact ⟨hu,hzero,hd,hm⟩
 
+/-- Every critical position is the minimum over the window. -/
 theorem windowMinimizer_eq_of_stationary {q c s u : ℝ}
     (hql : (79/40:ℝ)^2 ≤ q) (hqu : q ≤ 9789/2500)
     (hc : 0<c) (hs : 0 ≤ s) (hunit : c^2+s^2=1) (ht : s/c ≤ 1/5)
@@ -596,9 +614,11 @@ theorem windowMinimizer_eq_of_stationary {q c s u : ℝ}
     (window_bounds hql hqu (windowMinimizer_mem q c s)).domain hu hm
     (stationary_global_minimum (by linarith) hc hcu hs hsu hu hd)
 
+/-- The envelope `M(q, t)`: the minimum of the defect over the window at the tilt `t`. -/
 def positionEnvelope (q t : ℝ) : ℝ :=
   sInf ((fun u => defect q (Real.cos t) (Real.sin t) u) '' positionWindow)
 
+/-- The envelope is attained at `windowMinimizer`. -/
 theorem positionEnvelope_eq (q t : ℝ) :
     positionEnvelope q t=defect q (Real.cos t) (Real.sin t)
       (windowMinimizer q (Real.cos t) (Real.sin t)) := by
@@ -631,6 +651,7 @@ theorem positionEnvelope_radius_decrease {q₀ q₁ t : ℝ}
 
 /-! ### Critical positions lie below one -/
 
+/-- Rational bounds for `1 ≤ u ≤ 11/10`. -/
 theorem right_window_bounds {q u : ℝ} (hql : (79/40:ℝ)^2 ≤ q) (hqu : q ≤ 9789/2500)
     (hul : 1 ≤ u) (huu : u ≤ 11/10) :
     1<lowerRight q u ∧ lowerRight q u<171/100 ∧ 19/10<lowerLeft q u ∧
@@ -686,6 +707,8 @@ theorem right_window_bounds {q u : ℝ} (hql : (79/40:ℝ)^2 ≤ q) (hqu : q ≤
     nlinarith
   exact ⟨by linarith [hb.r_lower],hru,hwl,hb.v_pos,hp,hpu,hpr⟩
 
+/-- The cross product of the position and tilt derivatives of `(k₁, k₂)` as a quadratic form in
+`(c, s)`. -/
 theorem tangent_cross_identity (r w u v p c s : ℝ) (hr : r≠0) (hw : w≠0) :
     (p*(c+s*v/w))*(s*(r-1)+c*u)-(s+c*u/r)*(c*(w-1)+s*v)=
       c^2*(u/r)*(p*r-w+1)+
@@ -694,6 +717,8 @@ theorem tangent_cross_identity (r w u v p c s : ℝ) (hr : r≠0) (hw : w≠0) :
   field_simp [hr,hw]
   ring
 
+/-- On `[1, 11/10]` the cross product of the position and tilt derivatives of `(k₁, k₂)` is
+negative. -/
 theorem right_window_cross_negative {q c s u : ℝ}
     (hql : (79/40:ℝ)^2 ≤ q) (hqu : q ≤ 9789/2500)
     (hul : 1 ≤ u) (huu : u ≤ 11/10) (hc : 0<c) (hs : 0 ≤ s) :
@@ -726,6 +751,7 @@ theorem right_window_cross_negative {q c s u : ℝ}
   dsimp [positionb,positionB,positionA,firstTilt,secondTilt]
   nlinarith
 
+/-- A critical point in the window has `u < 1`. -/
 theorem window_critical_below_one {q c s u : ℝ}
     (hql : (79/40:ℝ)^2 ≤ q) (hqu : q ≤ 9789/2500)
     (hc : 0<c) (hs : 0 ≤ s) (hunit : c^2+s^2=1)
@@ -746,6 +772,7 @@ theorem window_critical_below_one {q c s u : ℝ}
   have hn := mul_neg_of_pos_of_neg hk hcross
   linarith
 
+/-- At a critical tilt the minimum over the window is a critical point of the strip. -/
 theorem windowMinimizer_isStripCritical {q c s : ℝ}
     (hql : (79/40:ℝ)^2 ≤ q) (hqu : q ≤ 9789/2500)
     (hc : 0<c) (hs : 0 ≤ s) (hunit : c^2+s^2=1) (ht : s/c ≤ 1/5)
@@ -758,14 +785,19 @@ theorem windowMinimizer_isStripCritical {q c s : ℝ}
 
 /-! ### The envelope in the tilt -/
 
+/-- The defect as a function of the tilt and the position. -/
 def jointDefect (q : ℝ) (p : ℝ × ℝ) : ℝ :=
   defect q (Real.cos p.1) (Real.sin p.1) p.2
+/-- The position derivative of the defect as a function of the tilt and the position. -/
 def jointPosition (q : ℝ) (p : ℝ × ℝ) : ℝ :=
   2*positionHalf q (Real.cos p.1) (Real.sin p.1) p.2
+/-- The tilt derivative of the defect as a function of the tilt and the position. -/
 def jointTilt (q : ℝ) (p : ℝ × ℝ) : ℝ :=
   tiltFirst q (Real.cos p.1) (Real.sin p.1) p.2
+/-- The position minimum at the tilt `t`. -/
 def minimizingPosition (q t : ℝ) : ℝ :=
   windowMinimizer q (Real.cos t) (Real.sin t)
+/-- The tilt interval `(0, arctan (1/5))`. -/
 def tiltInterval : Set ℝ := Ioo 0 (Real.arctan (1/5))
 
 theorem tiltInterval_bounds {t : ℝ} (ht : t∈tiltInterval) :
@@ -877,6 +909,7 @@ theorem minimizingPosition_root {q t : ℝ}
   dsimp [jointPosition,minimizingPosition]
   rw [hp,mul_zero]
 
+/-- The position minimum is a `C²` function of the tilt. -/
 theorem minimizingPosition_contDiffAt {q t : ℝ}
     (hql : (79/40:ℝ)^2≤q) (hqu : q≤9789/2500) (ht : t∈tiltInterval) :
     ContDiffAt ℝ 2 (minimizingPosition q) t := by
@@ -899,6 +932,7 @@ theorem minimizingPosition_contDiffAt {q t : ℝ}
   exact (windowMinimizer_eq_of_stationary hql hqu hcx hsx.le (Real.cos_sq_add_sin_sq x) htx.le
     hdomv.toDomain hdv).symm
 
+/-- The slope of the position minimum is `-F_tu/F_uu`. -/
 theorem minimizingPosition_hasDerivAt {q t : ℝ}
     (hql : (79/40:ℝ)^2≤q) (hqu : q≤9789/2500) (ht : t∈tiltInterval) :
     HasDerivAt (minimizingPosition q)
@@ -913,6 +947,7 @@ theorem minimizingPosition_hasDerivAt {q t : ℝ}
   filter_upwards [isOpen_Ioo.mem_nhds ht] with x hx
   exact minimizingPosition_root hql hqu hx
 
+/-- `M' = F_t` at the position minimum. -/
 theorem positionEnvelope_hasDerivAt {q t : ℝ}
     (hql : (79/40:ℝ)^2≤q) (hqu : q≤9789/2500) (ht : t∈tiltInterval) :
     HasDerivAt (positionEnvelope q)
@@ -927,6 +962,7 @@ theorem positionEnvelope_hasDerivAt {q t : ℝ}
   funext x
   exact positionEnvelope_eq q x
 
+/-- `M'' = F_tt - F_tu²/F_uu` at the position minimum. -/
 theorem positionEnvelope_second_derivative {q t : ℝ}
     (hql : (79/40:ℝ)^2≤q) (hqu : q≤9789/2500) (ht : t∈tiltInterval) :
     HasDerivAt (deriv (positionEnvelope q))
@@ -959,6 +995,7 @@ theorem positionEnvelope_critical_strictMinimum {q t : ℝ}
     (fun x hx => (positionEnvelope_hasDerivAt hql hqu hx).differentiableAt.differentiableWithinAt)
     ht hzero (positionEnvelope_second_derivative hql hqu ht) hschur
 
+/-- The envelope has at most one critical tilt. -/
 theorem positionEnvelope_critical_unique {q t v : ℝ}
     (hql : (79/40:ℝ)^2≤q) (hqu : q≤9789/2500) (ht : t∈tiltInterval) (hv : v∈tiltInterval)
     (hdt : deriv (positionEnvelope q) t=0) (hdv : deriv (positionEnvelope q) v=0) : t=v :=
@@ -975,6 +1012,7 @@ theorem positionEnvelope_critical_global_minimum {q t : ℝ}
 
 /-! ### The stationary chain is unique -/
 
+/-- The tilt `2 arctan z` of a chain. -/
 def coordinateAngle (d : Coordinates) : ℝ := 2*Real.arctan d.z
 
 /-- `c` and `s` are the cosine and sine of `2 arctan z`. -/
@@ -994,6 +1032,7 @@ theorem coordinateAngle_frame (d : Coordinates) :
     field_simp [hn,ne_of_gt hp]
     nlinarith
 
+/-- The tilt of a stationary chain lies in the tilt interval. -/
 theorem stationary_angle_mem {d : Coordinates} (hd : d.IsStationary) :
     coordinateAngle d∈tiltInterval := by
   have hpos : 0<Real.arctan d.z := Real.arctan_pos.mpr hd.z_pos
@@ -1016,6 +1055,7 @@ theorem stationary_minimizingPosition {d : Coordinates} (hd : d.IsStationary) :
     hcritical.cosine_pos hcritical.sine_nonneg hcritical.unit hcritical.tilt_upper
     hcritical.strip.bounds.domain hcritical.position_derivative_zero
 
+/-- The envelope vanishes at the radius and the tilt of a stationary chain. -/
 theorem stationary_envelope_zero {d : Coordinates} (hd : d.IsStationary) :
     positionEnvelope d.q (coordinateAngle d)=0 := by
   rw [positionEnvelope_eq]
@@ -1025,6 +1065,7 @@ theorem stationary_envelope_zero {d : Coordinates} (hd : d.IsStationary) :
   rw [stationary_minimizingPosition hd,hc,hs,coordinate_defect hd.toIsChain]
   exact hd.zero_defect
 
+/-- The tilt of a stationary chain is a critical tilt of the envelope at its radius. -/
 theorem stationary_envelope_critical {d : Coordinates} (hd : d.IsStationary) :
     deriv (positionEnvelope d.q) (coordinateAngle d)=0 := by
   have hderiv := (positionEnvelope_hasDerivAt hd.q_lower hd.q_upper (stationary_angle_mem hd)).deriv
@@ -1032,7 +1073,8 @@ theorem stationary_envelope_critical {d : Coordinates} (hd : d.IsStationary) :
   rw [stationary_minimizingPosition hd,hc,hs,coordinate_tiltFirst hd.toIsChain] at hderiv
   exact hderiv.trans hd.tilt_stationary
 
-/-- The envelope is nonnegative on the closed tilt interval. -/
+/-- At the radius of a stationary chain the envelope is nonnegative on the closed tilt
+interval. -/
 theorem stationary_envelope_nonneg {d : Coordinates} (hd : d.IsStationary)
     {t : ℝ} (ht : t∈Icc 0 (Real.arctan (1/5))) :
     0 ≤ positionEnvelope d.q t := by
@@ -1058,6 +1100,7 @@ theorem stationary_radius_eq {d e : Coordinates} (hd : d.IsStationary) (he : e.I
     rw [stationary_envelope_zero he] at hdecrease
     linarith
 
+/-- Two stationary chains have the same tilt. -/
 theorem stationary_angle_eq {d e : Coordinates} (hd : d.IsStationary) (he : e.IsStationary) :
     coordinateAngle d=coordinateAngle e := by
   have hq := stationary_radius_eq hd he

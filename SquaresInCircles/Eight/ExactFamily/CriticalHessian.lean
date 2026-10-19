@@ -5,27 +5,30 @@ public import SquaresInCircles.Eight.ExactFamily.Convexity
 /-!
 # Eight squares: the Hessian at a critical point
 
-On the strip `(79/40)² ≤ q ≤ 9789/2500`, `87/100 ≤ u ≤ 1` the circle equations bound the
-radicals (`CriticalStrip.bounds`), and rational support lines of the circles give
-`p > 3/2 - u` for the slope `p = -v'` (`slope_affine_lower`), `w - 1 - 6u/7 > 3/70`
-(`left_support_lower`), `Z > (13/10)(1 + p)` for the curvature ratio
-`Z = q/((2-u)U²) + p q/(Y V²)` (`curvatureRatio_lower`) and `q/r³ < 4/5`
+On the strip `(79/40)² ≤ q ≤ 9789/2500`, `87/100 ≤ u ≤ 1` (`CriticalStrip`) the circle
+equations bound the radicals of `Convexity.lean` (`CriticalStrip.bounds`). Rational support lines
+of the circles give `p > 3/2 - u` for the slope `p = -v'` (`slope_affine_lower`) and
+`w - 1 - 6u/7 > 3/70` (`left_support_lower`), and the bounds give `Z > (13/10)(1 + p)` for the
+curvature ratio `Z = q/((2-u)U²) + p q/(Y V²)` (`curvatureRatio_lower`) and `q/r³ < 4/5`
 (`right_curvature_upper`).
 
 `StripCritical` is a point of the strip with `0 ≤ s/c ≤ 1/5` where both partial derivatives of
-the defect vanish; the defect may have either sign. There the tilt and position gradients are
-proportional, `k_t = κ k_u`, and the determinant of the Hessian is
-`4 k₁² (A (σ κ² - 2 τ κ + ν) + σ ν - τ²)` (`StripCritical.normalized_hessian_identity`), where
-`A = |k_u|²/k₁` and `σ`, `τ`, `ν` are the position, mixed and tilt normal terms divided by `k₁`.
-The circle bounds give `A > 17/50`, `κ > 7/5`, `0 < τ < 7/8`, `ν > 9/100`, `κ σ > 3`,
-`σ > 27/16`, hence `det > (237/5000) k₁² > 0` (`StripCritical.hessian_reserve`).
+the defect vanish; the defect may have either sign. There the tilt and position derivatives of
+`(k₁, k₂)` are proportional, `k_t = κ k_u` (`StripCritical.derivative_proportionality`), and the
+determinant of the Hessian is `4 k₁² (A (σ κ² - 2 τ κ + ν) + σ ν - τ²)`
+(`StripCritical.normalized_hessian_identity`), where `A = |k_u|²/k₁` and `σ`, `τ`, `ν` are the
+position, mixed and tilt normal terms divided by `k₁`. The circle bounds give `A > 17/50`,
+`κ > 7/5`, `0 < τ < 7/8`, `ν > 9/100`, `κ σ > 3`, `σ > 27/16`, hence
+`det > (237/5000) k₁² > 0` (`StripCritical.hessian_reserve`).
 
 On `SmoothDomain` (the radical domain with `q < 4` and the four radicals positive) the nested
-radicals are differentiable, `p' = -p Z`, and the position derivative `2 positionHalf` has
-position derivative `positionSecond` and tilt derivative `mixedSecond` (`position_second_deriv`,
-`mixed_angle_deriv`). The position entry is positive, since all its normal terms are curvatures of
-circles (`SmoothDomain.positionSecond_pos`). A stationary chain is a critical point of the strip
-(`stationary_isStripCritical`).
+radicals are differentiable, `p' = -p Z` (`slopeRatio_deriv`), and the position derivative
+`2 positionHalf` has position derivative `positionSecond` (`position_second_deriv`) and tilt
+derivative `mixedSecond` (`mixed_angle_deriv`). The position entry is positive, since `k₁` and
+`k₂` are positive and have the positive second position derivatives `rightSecond` and
+`leftSecond`, which come from the curvature of the circles (`SmoothDomain.positionSecond_pos`). A
+stationary chain is a critical point of the strip (`stationary_isStripCritical`). `Envelope.lean`
+uses the Hessian bound for the second derivative of the envelope in the tilt.
 -/
 
 @[expose] public section
@@ -35,12 +38,14 @@ namespace SquaresInCircles.Eight.ExactFamily.FiveCornerGeometry
 
 /-! ### The strip `87/100 ≤ u ≤ 1` -/
 
+/-- The strip `(79/40)² ≤ q ≤ 9789/2500`, `87/100 ≤ u ≤ 1`. -/
 structure CriticalStrip (q u : ℝ) : Prop where
   q_lower : (79/40:ℝ)^2 ≤ q
   q_upper : q ≤ 9789/2500
   u_lower : 87/100 ≤ u
   u_upper : u ≤ 1
 
+/-- Rational bounds on the radicals and on `p` throughout the strip. -/
 structure StripBounds (q u : ℝ) : Prop where
   domain : Domain q u
   r_lower : 17/10<lowerRight q u
@@ -56,6 +61,7 @@ structure StripBounds (q u : ℝ) : Prop where
   w_upper : lowerLeft q u<48/25
   p_lower : 1/2<slopeRatio q u
 
+/-- The circle equations give the bounds of `StripBounds`. -/
 theorem CriticalStrip.bounds {q u : ℝ} (h : CriticalStrip q u) : StripBounds q u := by
   have hu : 0 ≤ u := by linarith [h.u_lower]
   have hA : 1 ≤ 2-u ∧ 2-u ≤ 113/100 := by constructor <;> linarith [h.u_lower,h.u_upper]
@@ -135,7 +141,8 @@ theorem top_support_upper {q u : ℝ} (h : CriticalStrip q u) :
     nlinarith
   exact ⟨hUl,hYl⟩
 
-/-- `p > 3/2 - u`: the numerator is a cubic in `1 - u` with positive terms. -/
+/-- `p > 3/2 - u`: after the support lines of `top_support_upper`, the difference is a cubic in
+`1 - u` with positive terms. -/
 theorem slope_affine_lower {q u : ℝ} (h : CriticalStrip q u) :
     3/2-u<slopeRatio q u := by
   have hb := h.bounds
@@ -165,6 +172,7 @@ theorem slope_affine_lower {q u : ℝ} (h : CriticalStrip q u) :
   rw [lt_div_iff₀ (mul_pos hUp hYp)]
   nlinarith
 
+/-- `u (1 + p) > 141/100` on the strip. -/
 theorem position_slope_product_lower {q u : ℝ} (h : CriticalStrip q u) :
     141/100<u*(1+slopeRatio q u) := by
   have hp := slope_affine_lower h
@@ -174,6 +182,7 @@ theorem position_slope_product_lower {q u : ℝ} (h : CriticalStrip q u) :
     (by linarith [h.u_upper] : 0 ≤ 163/100-u)
   nlinarith
 
+/-- Two rational lower support lines: `U > 9/10 + 4u/5` and `v < 38/25 - u`. -/
 theorem top_support_lower {q u : ℝ} (h : CriticalStrip q u) :
     9/10+(4/5)*u<topRight q u ∧ lowerHeight q u<38/25-u := by
   have hb := h.bounds
@@ -198,7 +207,7 @@ theorem top_support_lower {q u : ℝ} (h : CriticalStrip q u) :
   dsimp [lowerHeight]
   linarith
 
-/-- A lower support line of the left circle. -/
+/-- A lower support line of the left circle: `w > 73/70 + 6u/7`. -/
 theorem left_support_lower {q u : ℝ} (h : CriticalStrip q u) :
     3/70<lowerLeft q u-1-(6/7)*u := by
   have hb := h.bounds
@@ -217,10 +226,11 @@ theorem left_support_lower {q u : ℝ} (h : CriticalStrip q u) :
     nlinarith
   linarith
 
+/-- The curvature ratio `Z = q/((2-u)U²) + p q/(Y V²)`, with `p' = -p Z` (`slopeRatio_deriv`). -/
 def curvatureRatio (q u : ℝ) : ℝ :=
   q/((2-u)*topRight q u^2)+slopeRatio q u*q/(topHeight q u*topLeft q u^2)
 
-/-- Both terms of the curvature ratio exceed `13/10`. -/
+/-- `Z > (13/10)(1 + p)`: `q/((2-u)U²)` and `q/(Y V²)` both exceed `13/10`. -/
 theorem curvatureRatio_lower {q u : ℝ} (h : CriticalStrip q u) :
     (13/10)*(1+slopeRatio q u)<curvatureRatio q u := by
   have hb := h.bounds
@@ -251,6 +261,7 @@ theorem curvatureRatio_lower {q u : ℝ} (h : CriticalStrip q u) :
       nlinarith
     _ = curvatureRatio q u := by dsimp [curvatureRatio]; ring
 
+/-- `q/r³ < 4/5` on the strip. -/
 theorem right_curvature_upper {q u : ℝ} (h : CriticalStrip q u) :
     q/lowerRight q u^3<4/5 := by
   have hb := h.bounds
@@ -266,34 +277,53 @@ theorem right_curvature_upper {q u : ℝ} (h : CriticalStrip q u) :
 
 /-! ### The Hessian at a critical point -/
 
+/-- `s + c u/r`, the position derivative of `k₁`. -/
 def positionA (q c s u : ℝ) : ℝ := s+c*u/lowerRight q u
+/-- `c + s v/w`; the position derivative of `k₂` is `-p (c + s v/w)`. -/
 def positionB (q c s u : ℝ) : ℝ := c+s*lowerHeight q u/lowerLeft q u
+/-- Minus the position derivative of `k₂`. -/
 def positionb (q c s u : ℝ) : ℝ := slopeRatio q u*positionB q c s u
+/-- `c q/r³`, the second position derivative of `k₁`. -/
 def rightSecond (q c u : ℝ) : ℝ := c*q/lowerRight q u^3
+/-- The second position derivative of `k₂`. -/
 def leftSecond (q c s u : ℝ) : ℝ :=
   slopeRatio q u*curvatureRatio q u*positionB q c s u+
     s*q*slopeRatio q u^2/lowerLeft q u^3
+/-- `|k_u|²`, the squared norm of the position derivative of `(k₁, k₂)`. -/
 def positionNorm (q c s u : ℝ) : ℝ := positionA q c s u^2+positionb q c s u^2
+/-- The position normal term `k₁ k₁'' + k₂ k₂''`. -/
 def positionNormal (q c s u : ℝ) : ℝ :=
   firstComponent q c s u*rightSecond q c u+secondComponent q c s u*leftSecond q c s u
+/-- The mixed normal term: `(k₁, k₂)` against the tilt derivative of its position derivative. -/
 def mixedNormal (q c s u : ℝ) : ℝ :=
   firstComponent q c s u*(c-s*u/lowerRight q u)+
     secondComponent q c s u*slopeRatio q u*(s-c*lowerHeight q u/lowerLeft q u)
+/-- The tilt normal term `k₁ (2 - k₁) + k₂ (1 - k₂)`: `(k₁, k₂)` against its second tilt
+derivative. -/
 def tiltNormal (q c s u : ℝ) : ℝ :=
   2*firstComponent q c s u+secondComponent q c s u-
     (firstComponent q c s u^2+secondComponent q c s u^2)
+/-- The second position derivative of the defect, `2 (|k_u|² + positionNormal)`. -/
 def positionSecond (q c s u : ℝ) : ℝ :=
   2*(positionNorm q c s u+positionNormal q c s u)
+/-- The mixed second derivative of the defect in the tilt and the position. -/
 def mixedSecond (q c s u : ℝ) : ℝ :=
   2*(positionA q c s u*firstTilt q c s u-positionb q c s u*secondTilt q c s u+
     mixedNormal q c s u)
+/-- `κ`, the tilt derivative of `k₁` divided by its position derivative. -/
 def tangentRatio (q c s u : ℝ) : ℝ := firstTilt q c s u/positionA q c s u
+/-- `σ`, the position normal term divided by `k₁`. -/
 def normalizedPosition (q c s u : ℝ) : ℝ := positionNormal q c s u/firstComponent q c s u
+/-- `τ`, the mixed normal term divided by `k₁`. -/
 def normalizedMixed (q c s u : ℝ) : ℝ := mixedNormal q c s u/firstComponent q c s u
+/-- `ν`, the tilt normal term divided by `k₁`. -/
 def normalizedTilt (q c s u : ℝ) : ℝ := tiltNormal q c s u/firstComponent q c s u
+/-- The determinant of the Hessian of the defect in the tilt and the position. -/
 def hessianDeterminant (q c s u : ℝ) : ℝ :=
   positionSecond q c s u*tiltSecond q c s u-mixedSecond q c s u^2
 
+/-- A critical point of the defect in the strip, at a tilt with `0 ≤ s/c ≤ 1/5`; the defect may
+have either sign. -/
 structure StripCritical (q c s u : ℝ) : Prop where
   strip : CriticalStrip q u
   cosine_pos : 0<c
@@ -303,6 +333,7 @@ structure StripCritical (q c s u : ℝ) : Prop where
   position_zero : positionHalf q c s u=0
   tilt_zero : tiltFirst q c s u=0
 
+/-- A tilt with `0 ≤ s/c ≤ 1/5` has `c > 49/50` and `5 s ≤ c`. -/
 theorem small_tilt_bounds {c s : ℝ} (hc : 0<c) (hs : 0 ≤ s)
     (hunit : c^2+s^2=1) (ht : s/c ≤ 1/5) :
     49/50<c ∧ c ≤ 1 ∧ s ≤ 1 ∧ 5*s ≤ c := by
@@ -418,6 +449,7 @@ theorem tilt_ratio_lower {q c s u : ℝ} (h : CriticalStrip q u)
   dsimp [firstTilt,secondTilt]
   nlinarith
 
+/-- At a critical point `k₁/2 < k₂ < 7 k₁/6`. -/
 theorem StripCritical.component_ratio {q c s u : ℝ} (h : StripCritical q c s u) :
     (1/2)*firstComponent q c s u<secondComponent q c s u ∧
       secondComponent q c s u<(7/6)*firstComponent q c s u := by
@@ -450,6 +482,7 @@ theorem normal_reserve {x y : ℝ} (hx : 0<x) (hy : 0<y)
   have hs := square_mono_nonneg hL (show (191/100)*x+y ≤ x^2+y^2 by linarith)
   nlinarith
 
+/-- `ν > 9/100`. -/
 theorem StripCritical.normalizedTilt_lower {q c s u : ℝ} (h : StripCritical q c s u) :
     9/100<normalizedTilt q c s u := by
   obtain ⟨hk₁,hk₂⟩ := h.components_pos
@@ -480,6 +513,7 @@ theorem StripCritical.normalizedMixed_formula {q c s u : ℝ} (h : StripCritical
   apply (div_eq_div_iff (ne_of_gt hk₁) (ne_of_gt (show 0<positionB q c s u by linarith))).2
   nlinarith
 
+/-- `0 < τ < 7/8`. -/
 theorem StripCritical.normalizedMixed_bounds {q c s u : ℝ} (h : StripCritical q c s u) :
     0<normalizedMixed q c s u ∧ normalizedMixed q c s u<7/8 := by
   obtain ⟨hxl,hxu,hyl,hyu⟩ := h.strip.quotient_bounds
@@ -501,7 +535,7 @@ theorem StripCritical.normalizedMixed_bounds {q c s u : ℝ} (h : StripCritical 
   rw [div_lt_iff₀ hBp]
   nlinarith
 
-/-- `A > 17/50`. -/
+/-- `|k_u|²/k₁ > 17/50`. -/
 theorem StripCritical.positionNorm_lower {q c s u : ℝ} (h : StripCritical q c s u) :
     17/50<positionNorm q c s u/firstComponent q c s u := by
   have hb := h.strip.bounds
@@ -540,6 +574,7 @@ theorem StripCritical.tangentRatio_formula {q c s u : ℝ} (h : StripCritical q 
   field_simp [ne_of_gt hsum]
   ring
 
+/-- `7/5 < κ < 16/9`. -/
 theorem StripCritical.tangentRatio_bounds {q c s u : ℝ} (h : StripCritical q c s u) :
     7/5<tangentRatio q c s u ∧ tangentRatio q c s u<16/9 := by
   have hb := h.strip.bounds
@@ -583,6 +618,7 @@ theorem angular_curvature_reserve {h : ℝ} (hh : 0 ≤ h) :
     exact key
   linarith
 
+/-- `κ σ > 3`. -/
 theorem StripCritical.tangent_position_reserve {q c s u : ℝ} (h : StripCritical q c s u) :
     3<tangentRatio q c s u*normalizedPosition q c s u := by
   have hb := h.strip.bounds
@@ -643,6 +679,7 @@ theorem StripCritical.tangent_position_reserve {q c s u : ℝ} (h : StripCritica
   have hangle := mul_lt_mul_of_pos_left (angular_curvature_reserve ht) hc
   linarith [mul_lt_mul_of_pos_left hκQ hc]
 
+/-- `σ > 27/16`. -/
 theorem StripCritical.normalizedPosition_lower {q c s u : ℝ} (h : StripCritical q c s u) :
     27/16<normalizedPosition q c s u := by
   have hk := h.tangentRatio_bounds
@@ -655,6 +692,7 @@ theorem StripCritical.normalizedPosition_lower {q c s u : ℝ} (h : StripCritica
   have hm := mul_lt_mul_of_pos_right hk.2 hσp
   nlinarith
 
+/-- At a critical point the tilt derivative of `(k₁, k₂)` is `κ` times its position derivative. -/
 theorem StripCritical.derivative_proportionality {q c s u : ℝ} (h : StripCritical q c s u) :
     firstTilt q c s u=tangentRatio q c s u*positionA q c s u ∧
       secondTilt q c s u= -tangentRatio q c s u*positionb q c s u := by
@@ -671,6 +709,7 @@ theorem StripCritical.derivative_proportionality {q c s u : ℝ} (h : StripCriti
   apply mul_left_cancel₀ (ne_of_gt hk₂)
   nlinarith
 
+/-- The determinant of the Hessian in terms of `κ`, `|k_u|²` and the three normal terms. -/
 theorem StripCritical.hessian_identity {q c s u : ℝ} (h : StripCritical q c s u) :
     hessianDeterminant q c s u=4*(
       positionNorm q c s u*(positionNormal q c s u*tangentRatio q c s u^2-
@@ -700,6 +739,7 @@ theorem StripCritical.normalized_hessian_identity {q c s u : ℝ} (h : StripCrit
   dsimp only [normalizedPosition,normalizedMixed,normalizedTilt]
   field_simp [ne_of_gt h.components_pos.1]
 
+/-- The rational inequality behind `StripCritical.hessian_reserve`. -/
 theorem normalized_determinant_reserve {A κ σ τ ν : ℝ}
     (hA : 17/50<A) (hκ : 7/5<κ) (hτl : 0<τ) (hτu : τ<7/8)
     (hν : 9/100<ν) (hκσ : 3<κ*σ) (hσ : 27/16<σ) :
@@ -728,6 +768,7 @@ theorem StripCritical.hessian_reserve {q c s u : ℝ} (h : StripCritical q c s u
   rw [lt_div_iff₀ (mul_pos (by norm_num) (sq_pos_of_pos hk))] at hbound
   nlinarith
 
+/-- The determinant of the Hessian is positive at every critical point of the strip. -/
 theorem StripCritical.hessian_pos {q c s u : ℝ} (h : StripCritical q c s u) :
     0<hessianDeterminant q c s u := by
   have hp := mul_pos (by norm_num : (0:ℝ)<237/5000) (sq_pos_of_pos h.components_pos.1)
@@ -735,6 +776,7 @@ theorem StripCritical.hessian_pos {q c s u : ℝ} (h : StripCritical q c s u) :
 
 /-! ### The second derivatives -/
 
+/-- The radical domain with `q < 4` and the four radicals positive. -/
 structure SmoothDomain (q u : ℝ) : Prop extends Domain q u where
   radius_lt_four : q<4
   r_pos : 0<lowerRight q u
@@ -755,6 +797,7 @@ theorem circle_ratio_derivative (A U V Y q : ℝ)
         field_simp
         ring
 
+/-- `p' = -p Z`. -/
 theorem slopeRatio_deriv {q u : ℝ} (h : SmoothDomain q u) :
     HasDerivAt (slopeRatio q) (-slopeRatio q u*curvatureRatio q u) u := by
   obtain ⟨_,dU,dV,dY,_,_⟩ := radical_derivatives h.r_pos h.U_pos h.Y_pos h.w_pos
@@ -806,6 +849,7 @@ theorem positionB_deriv {q c s u : ℝ} (h : SmoothDomain q u) :
     ring
   · ring
 
+/-- The position derivative of `2 positionHalf` is `positionSecond`. -/
 theorem position_second_deriv {q c s u : ℝ} (h : SmoothDomain q u) :
     HasDerivAt (fun v => 2*positionHalf q c s v) (positionSecond q c s u) u := by
   obtain ⟨dk₁,dk₂⟩ := components_position_deriv (c:=c) (s:=s) h.r_pos h.U_pos h.Y_pos h.w_pos
@@ -860,6 +904,7 @@ theorem positionB_angle_deriv (q u t : ℝ) :
   (Real.hasDerivAt_cos t).fun_add (((Real.hasDerivAt_sin t).mul_const (lowerHeight q u)).div_const
     (lowerLeft q u))
 
+/-- The tilt derivative of `2 positionHalf` is `mixedSecond`. -/
 theorem mixed_angle_deriv (q u t : ℝ) :
     HasDerivAt (fun x => 2*positionHalf q (Real.cos x) (Real.sin x) u)
       (mixedSecond q (Real.cos t) (Real.sin t) u) t :=

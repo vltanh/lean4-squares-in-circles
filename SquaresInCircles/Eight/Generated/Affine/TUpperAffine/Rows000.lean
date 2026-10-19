@@ -3,7 +3,11 @@ module
 public import SquaresInCircles.Eight.Generated.Affine.TUpperAffine.Context
 public meta import SquaresInCircles.Eight.IntRows
 
-/-! Rows 0 to 6432 of the table, checked by `decide +kernel`, 200 rows a theorem. -/
+/-!
+# Eight squares: rows 0 to 6432 of the affine table `TUpperAffine`
+
+Each part of 200 rows passes `checkRows`, evaluated by the kernel.
+-/
 
 @[expose] public section
 noncomputable section

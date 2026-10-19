@@ -7,29 +7,41 @@ public import SquaresInCircles.Eight.Arithmetic.CorePairGeometry
 public import SquaresInCircles.Eight.Candidate.GeometricCoreQuarter
 
 /-!
-# Actual geometric exclusion of the six noncandidate quarter words
+# Eight squares: the six non-candidate quarter words
 
-The common increment costs first exclude every word containing a two: on an
-edge between two core vertices from the separation of the centres
-(`CorePairGeometry.core_cost`), on the other edges from the common table.
-The two remaining wrong words use their separate role-dependent label
-systems.  A marker is evaluated once per vertex, so the target value on
-one edge is exactly the source value on the next edge.
+The quarter word of a quarter lift of a boundary cycle at the level `Q0`, whose gaps exceed
+`19/25`, is admissible (`QuarterWords.lean`). This file excludes the six classes of admissible
+words other than that of the candidate, so the word is equivalent to `0101011`
+(`quarter_word_candidate`). On the edge `i` the phase `φᵢ = θᵢ₊₁ - θᵢ + kᵢ π/2` of the lift
+(`phaseValue`) is the relative angle of the two frames (`relative_phase`), and `φᵢ + αᵢ - αᵢ₊₁`
+is the gap of the centre directions (`phase_gap`), so the phases add up to `2π`. A marker `ψ`
+with one value at each vertex, used on both edges of the vertex, telescopes: the edge costs
+`φᵢ + ψᵢ - ψᵢ₊₁` add up to `2π` (`marker_budget`), so lower bounds of them add up to at most `2π`.
 
-Each pair inequality is a problem of a pair table (`Generated/Pairs`): its
-ends carry the actual radial charts, signs and labels, and the table proves
-it for every state pair and frame difference `|d| ≤ 7/10` with the physical
-gap and the original separating-axis margin. The tables define their problems
-from `commonPairProblem` and `wrongPairProblem` (`WordProblems`), and leave out
-the kinds, signs and axes that no feasible separator has
-(`original_not_core_excluded`).
-The nineteen allowed sign cases follow from the two initial zero increments and
-the impossibility of a negative-to-positive zero edge.
+The words with a digit `2` are excluded together (`no_double`): with the common markers
+(`commonMarker`) the cost of an edge exceeds `commonGamma` of its digit (`common_pair`), and these
+bounds add up to more than `2π` on every admissible word with a digit `2`. On an edge between two
+core squares the bound follows from the separation of the centres
+(`Arithmetic/CorePairGeometry.lean`). The two other words, `0010111` and `0011011`, have markers
+that depend on the role of the vertex (`wrongMarker`), with bounds `wrongGamma` that add up to
+more than `2π` (`wrong_word_impossible`).
 
-Dihedral normalization acts on actual squares and lifts through
-`CycleAction.boundary` and `QuarterLift.act`.  In particular reflection
-reverses an edge before transporting its separating axis.  The extra one
-in the reflected vertex shift accounts for that endpoint reversal.
+Each remaining pair bound is a problem of a pair table of `Generated/Pairs/` (`word_pair`): its
+ends carry the radial charts, signs and labels of the two squares, and the table proves it for
+every pair of states and every frame difference `|d| ≤ 7/10` with the gap in `[19/25, 3π/4]` and
+a nonnegative margin of the separating axis. The tables define their problems by
+`commonPairProblem` and `wrongPairProblem` (`Arithmetic/WordProblems.lean`), and leave out the
+radial kinds, signs and axes for which the axis cannot separate (`original_not_core_excluded`, by
+the margins of `Candidate/GeometricPrimaryExclusion.lean`,
+`Candidate/GeometricSecondaryExclusion.lean` and `Candidate/GeometricCoreQuarter.lean`). On the
+two words the two initial zero digits force the sign `+1` at the role `0` and `-1` at the role
+`2` (`initial_signs`), and no zero edge goes from the sign `-1` to the sign `+1`
+(`zero_not_negative_positive`), which leaves nineteen sign pairs on the seven edges of each word.
+
+A word equivalent to a representative is taken to it by a rotation or reflection of the cycle
+(`normalize_word`), which acts on the squares themselves (`CycleAction.boundary` and
+`QuarterLift.act` of `CycleActions.lean`). A reflection reverses each edge, so the vertex shift of
+a reflected action has an extra `1` (`normalizingAction`).
 -/
 
 @[expose] public section
@@ -40,6 +52,7 @@ namespace SquaresInCircles.Eight.WordGeometry
 
 open Arithmetic Arithmetic.PairCover WordProblems
 
+/-- `true` when the transverse sign `σᵢ` of the vertex `i` is `+1`. -/
 def positiveOf (C : BoundaryCycle Q0) (i : Vertex) : Bool :=
   if C.sigma i=1 then true else false
 
@@ -61,7 +74,7 @@ lemma unsigned_angle_nonneg (C : BoundaryCycle Q0) (i : Vertex) :
 lemma alpha_nonpos (C : BoundaryCycle Q0) (i : Vertex) (h : positiveOf C i=false) :
     C.alpha i ≤ 0 := by
   rw [alpha_formula,h]
-  simp only [WordProblems.sign,Bool.false_eq_true,if_false,Rat.cast_neg,Rat.cast_one,neg_one_mul]
+  simp only [WordProblems.sign,Bool.false_eq_true,ite_false,Rat.cast_neg,Rat.cast_one,neg_one_mul]
   exact neg_nonpos.mpr (unsigned_angle_nonneg C i)
 
 lemma alpha_nonneg (C : BoundaryCycle Q0) (i : Vertex) (h : positiveOf C i=true) :
@@ -81,9 +94,12 @@ lemma positiveOf_of_alpha_neg (C : BoundaryCycle Q0) (i : Vertex) (h : C.alpha i
   · rfl
   · exact (not_lt_of_ge (alpha_nonneg C i hp) h).elim
 
+/-- The frame difference `θᵢ₊₁ - θᵢ` of the edge `i`. -/
 def difference {C : BoundaryCycle Q0} (F : QuarterLift C) (i : Vertex) : ℝ :=
   F.theta (next i)-F.theta i
 
+/-- The phase `φᵢ = θᵢ₊₁ - θᵢ + kᵢ π/2` of the edge `i`, with the digit `kᵢ` of the quarter word:
+the relative angle of the frames of its two squares (`relative_phase`). -/
 def phaseValue {C : BoundaryCycle Q0} (F : QuarterLift C)
     (hgap : ∀ i,19/25<angleGap C.beta i) (i : Vertex) : ℝ :=
   difference F i+((F.word hgap pi_lt_22_over_7 i).val:ℝ)*Real.pi/2
@@ -97,6 +113,7 @@ lemma theta_spread {C : BoundaryCycle Q0} (F : QuarterLift C) (i j : Vertex) :
 lemma difference_small {C : BoundaryCycle Q0} (F : QuarterLift C) (i : Vertex) :
     |difference F i|<7/10 := theta_spread F i (next i)
 
+/-- The phase plus `αᵢ - αᵢ₊₁` is the gap of the centre directions. -/
 lemma phase_gap (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hgap : ∀ i,19/25<angleGap C.beta i) (i : Vertex) :
     phaseValue F hgap i+C.alpha i-C.alpha (next i)=angleGap C.beta i := by
@@ -108,6 +125,7 @@ lemma phase_gap (C : BoundaryCycle Q0) (F : QuarterLift C)
   dsimp [difference]
   linarith
 
+/-- The phases of the seven edges add up to `2π`. -/
 lemma phase_sum (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hgap : ∀ i,19/25<angleGap C.beta i) :
     (∑ i,phaseValue F hgap i)=2*Real.pi := by
@@ -126,6 +144,7 @@ lemma canonical_phase (C : BoundaryCycle Q0) (F : QuarterLift C)
   by_cases hi : i=6 <;>
     simp [BoundaryCycle.canonicalAngle,angleGap,hi] at * <;> linarith
 
+/-- The relative cosine and sine of the frames of the edge `i` are those of its phase. -/
 lemma relative_phase (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hgap : ∀ i,19/25<angleGap C.beta i) (i : Vertex) :
     relativeC (C.square i) (C.square (next i))=Real.cos (phaseValue F hgap i) ∧
@@ -136,14 +155,18 @@ lemma relative_phase (C : BoundaryCycle Q0) (F : QuarterLift C)
   have hsj : (C.square (next i)).sine=Real.sin (C.canonicalAngle (next i)) := C.frame_sin _
   have hc : relativeC (C.square i) (C.square (next i))=
       Real.cos (C.canonicalAngle (next i)-C.canonicalAngle i) := by
-    simp [relativeC,hci,hsi,hcj,hsj,Real.cos_sub] <;> ring
+    simp [relativeC,hci,hsi,hcj,hsj,Real.cos_sub]
+    ring
   have hs : relativeS (C.square i) (C.square (next i))=
       Real.sin (C.canonicalAngle (next i)-C.canonicalAngle i) := by
-    simp [relativeS,hci,hsi,hcj,hsj,Real.sin_sub] <;> ring
+    simp [relativeS,hci,hsi,hcj,hsj,Real.sin_sub]
+    ring
   rw [canonical_phase C F hgap i] at hc hs
   by_cases hi : i=6 <;>
     simpa [hi,Real.cos_sub,Real.sin_sub] using And.intro hc hs
 
+/-- A separating forward axis of the edge `i` has a nonnegative margin `forwardMargin` at the
+phase, in the states and signs of the two squares. -/
 lemma original_margin (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hgap : ∀ i,19/25<angleGap C.beta i) (i : Vertex) (j : Fin 4)
     (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i))) :
@@ -157,10 +180,11 @@ lemma original_margin (C : BoundaryCycle Q0) (F : QuarterLift C)
   rw [← he]
   exact sub_nonneg.mpr hj
 
-/-- No feasible original axis of an edge is in a class of `CoreSeparatorExcluded`: a primary
-axis on a zero edge needs an outer far square, a secondary axis against a core square needs
-the transverse sign pointing outward, and no axis separates two core squares of opposite signs
-on a quarter edge. -/
+/-- No separating forward axis of an edge is in a class of `CoreSeparatorExcluded`: on a zero
+edge the primary axis of a core square does not separate, the secondary axis of the source
+against a core target needs the source sign `+1`, the secondary axis of the target against a core
+source needs the target sign `-1`, and on a quarter edge no axis separates a core source of sign
+`+1` from a core target of sign `-1`. -/
 lemma original_not_core_excluded (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hgap : ∀ i,19/25<angleGap C.beta i) (i : Vertex) (j : Fin 4)
     (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i))) :
@@ -225,14 +249,21 @@ lemma original_not_core_excluded (C : BoundaryCycle Q0) (F : QuarterLift C)
     rw [hsign, htsign, hphase] at hm
     linarith
 
+/-- The common label of a vertex of radial kind `kind`, sign `σ` and transverse coordinate `b`, at
+the primary coordinate `a` of its curve: `σ (-9/100 + (13/200) a + (203/200) b)` on the outer
+curve and `σ ((73/10)(7/12 - a) + (291/250) b)` on the core curves. -/
 def commonValue (kind : RadialKind) (σ : Bool) (b : ℝ) : ℝ :=
   let a := primaryValue kind b
   (WordProblems.sign σ:ℝ)*(if kind=.outer then -9/100+(13/200)*a+(203/200)*b
     else (73/10)*(7/12-a)+(291/250)*b)
 
+/-- The common label at the vertex `i`: the marker of the words with a digit `2`. -/
 def commonMarker (C : BoundaryCycle Q0) (i : Vertex) : ℝ :=
   commonValue (C.kind i) (positiveOf C i) (C.b i)
 
+/-- The label of the word `w` at the role `i`, with coefficients over `10⁵` that depend on the
+role, the radial kind (outer or core) and the sign: `c + p a + σ q b` for `0010111` and
+`σ (c + p a + q b + r b² + s a b)` for `0011011`. -/
 def wrongValue (w : WrongWord) (i : Vertex) (kind : RadialKind) (σ : Bool) (b : ℝ) : ℝ :=
   let a := primaryValue kind b
   match w with
@@ -244,17 +275,18 @@ def wrongValue (w : WrongWord) (i : Vertex) (kind : RadialKind) (σ : Bool) (b :
       (WordProblems.sign σ:ℝ)*((v 0:ℝ)/100000+(v 1:ℝ)/100000*a+
         (v 2:ℝ)/100000*b+(v 3:ℝ)/100000*b^2+(v 4:ℝ)/100000*a*b)
 
+/-- The label of the word `w` at the vertex `i`: its marker. -/
 def wrongMarker (C : BoundaryCycle Q0) (w : WrongWord) (i : Vertex) : ℝ :=
   wrongValue w i (C.kind i) (positiveOf C i) (C.b i)
 
 /-! ### The pair tables -/
 
-/-- The common tables. -/
+/-- The common pair tables of the digits `0`, `1` and `2`. -/
 def commonTable : Fin 3 → List PairProblem :=
   ![Generated.Pairs.Common0.problems, Generated.Pairs.Common1.problems,
     Generated.Pairs.Common2.problems]
 
-/-- The tables of the edges of the wrong words. -/
+/-- The pair tables of the seven edges of the words `0010111` and `0011011`. -/
 def wrongTable : WrongWord → Vertex → List PairProblem
   | .short => ![Generated.Pairs.Short0.problems, Generated.Pairs.Short1.problems,
       Generated.Pairs.Short2.problems, Generated.Pairs.Short3.problems,
@@ -265,6 +297,7 @@ def wrongTable : WrongWord → Vertex → List PairProblem
       Generated.Pairs.Second4.problems, Generated.Pairs.Second5.problems,
       Generated.Pairs.Second6.problems]
 
+/-- Every problem of a common table holds at the level `Q0`, with angles over `10⁸`. -/
 theorem commonTable_holds (k : Fin 3) :
     ∀ P ∈ commonTable k, P.Holds ((9789/2500 : ℚ) : ℝ) 100000000 := by
   fin_cases k
@@ -272,6 +305,7 @@ theorem commonTable_holds (k : Fin 3) :
   · exact Generated.Pairs.Common1.sound
   · exact Generated.Pairs.Common2.sound
 
+/-- Every problem of a table of the two words holds at the level `Q0`, with angles over `10⁸`. -/
 theorem wrongTable_holds (w : WrongWord) (i : Vertex) :
     ∀ P ∈ wrongTable w i, P.Holds ((9789/2500 : ℚ) : ℝ) 100000000 := by
   cases w <;> fin_cases i
@@ -349,8 +383,9 @@ lemma vertex_mem (C : BoundaryCycle Q0) (i : Vertex) (σ : Bool) (L : QuadLabel)
     rw [le_div_iff₀ ha0]
     linarith
 
-/-- A pair problem of the tables with the actual ends of the edge `i` gives the charged
-inequality of the edge, for every admissible pair of label constants. -/
+/-- The pair bound of the edge `i`: if the problem with the ends of the edge, its original axis
+`j` and the target `γ` holds, then `γ` is below the cost `φᵢ + L_s(aᵢ, bᵢ) - L_t(aᵢ₊₁, bᵢ₊₁)` of
+the edge, for every admissible pair of label constants. -/
 lemma word_pair (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hgap : ∀ i,19/25<angleGap C.beta i) (i : Vertex) (j : Fin 4)
     (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i))) (Ls Lt : QuadLabel) (γ : ℚ)
@@ -414,12 +449,16 @@ lemma wrongValue_eq (w : WrongWord) (i : Vertex) (kind : RadialKind) (σ : Bool)
       (primaryValue kind b) b := by
   cases w <;> cases σ <;>
     simp [wrongValue, wrongQuad, QuadLabel.signed, QuadLabel.neg, QuadLabel.eval,
-      WordProblems.sign] <;> ring
+      WordProblems.sign]
+  ring
 
+/-- On its radial curve the primary coordinate of a vertex is `primaryValue` of its transverse
+coordinate. -/
 lemma primary_vertex (C : BoundaryCycle Q0) (i : Vertex) : primaryValue (C.kind i) (C.b i) = C.a i :=
   (actual_primary (C.kind i) (by linarith [(Candidate.canonical_bounds C le_rfl i).1])
     (C.b_nonneg i) (C.b_le_a i) (C.boundary i)).1.symm
 
+/-- For any marker `ψ`, the edge costs `φᵢ + ψᵢ - ψᵢ₊₁` add up to `2π`. -/
 lemma marker_budget (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hgap : ∀ i,19/25<angleGap C.beta i) (marker : Vertex→ℝ) :
     (∑ i,(phaseValue F hgap i+marker i-marker (next i)))=2*Real.pi := by
@@ -431,8 +470,9 @@ lemma commonMarker_core_eq (C : BoundaryCycle Q0) (i : Vertex) (hk : C.kind i �
     commonMarker C i=C.sigma i*CorePairGeometry.label (73/10) (291/250) (C.a i) (C.b i) := by
   simp [commonMarker, commonValue, primary_vertex, hk, positiveOf_spec, CorePairGeometry.label]
 
-/-- The common cost of an edge for every feasible original axis: from the separation of the
-centres when both vertices are core, from the common table otherwise. -/
+/-- The cost of the edge `i` with the common markers exceeds `commonGamma` of its digit, for every
+separating forward axis: by the separation of the centres when both squares are core, by the
+common table otherwise. -/
 lemma common_pair (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hgap : ∀ i,19/25<angleGap C.beta i) (i : Vertex) (j : Fin 4)
     (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i))) :
@@ -461,6 +501,8 @@ lemma commonGamma_numerator (k : Fin 3) :
     (commonGamma k:ℝ)=(doubleWordCostNumerator k:ℝ)/10000 := by
   fin_cases k <;> norm_num [commonGamma,doubleWordCostNumerator]
 
+/-- No digit of the quarter word of a cycle is `2`: the bounds `commonGamma` of the edge costs add
+up to `6.295 > 2π` on every admissible word with a digit `2`. -/
 theorem no_double (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hgap : ∀ i,19/25<angleGap C.beta i) :
     ¬ ∃ i,F.word hgap pi_lt_22_over_7 i=2 := by
@@ -475,6 +517,8 @@ theorem no_double (C : BoundaryCycle Q0) (F : QuarterLift C)
   · exact (marker_budget C F hgap (commonMarker C)).le
   · exact pi_lt_22_over_7
 
+/-- On a zero edge the sign does not go from `-1` to `+1`: the gap would be at most the frame
+difference, below `7/10`, while it exceeds `19/25`. -/
 lemma zero_not_negative_positive (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hgap : ∀ i,19/25<angleGap C.beta i) (i : Vertex)
     (hz : F.word hgap pi_lt_22_over_7 i=0) :
@@ -487,8 +531,9 @@ lemma zero_not_negative_positive (C : BoundaryCycle Q0) (F : QuarterLift C)
   simp only [phaseValue,hz,Fin.val_zero,Nat.cast_zero,zero_mul,zero_div,add_zero] at he
   linarith [hgap i]
 
-/-- The two initial zero increments force strictly positive alpha at role
-0 and strictly negative alpha at role 2, without a sign choice by search. -/
+/-- On the words `0010111` and `0011011` the two initial zero digits force `α₀ > 0` and `α₂ < 0`:
+the gaps of the edges `0` and `1` exceed `19/25`, while `θ₂ - θ₀` is below `7/10` and each `αᵢ`
+lies in `[-π/4, π/4]`. -/
 lemma initial_signs (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hgap : ∀ i,19/25<angleGap C.beta i) (w : WrongWord)
     (hw : F.word hgap pi_lt_22_over_7=wrongWord w) :
@@ -508,6 +553,8 @@ lemma initial_signs (C : BoundaryCycle Q0) (F : QuarterLift C)
   have hbneg : C.alpha 2<0 := by linarith [pi_lt_22_over_7]
   exact ⟨positiveOf_of_alpha_pos C 0 hapos,positiveOf_of_alpha_neg C 2 hbneg⟩
 
+/-- On a cycle with the word `w`, the signs of the two squares of each edge are allowed
+(`allowed`). -/
 lemma actual_allowed (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hgap : ∀ i,19/25<angleGap C.beta i) (w : WrongWord)
     (hw : F.word hgap pi_lt_22_over_7=wrongWord w) (i : Vertex) :
@@ -525,6 +572,8 @@ lemma actual_allowed (C : BoundaryCycle Q0) (F : QuarterLift C)
   · intro hz
     exact zero_not_negative_positive C F hgap i (by simpa [hw] using hz)
 
+/-- On a cycle with the word `w`, the cost of the edge `i` with the markers of `w` exceeds
+`wrongGamma w i`, for every separating forward axis. -/
 lemma wrong_pair (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hgap : ∀ i,19/25<angleGap C.beta i) (w : WrongWord)
     (hw : F.word hgap pi_lt_22_over_7=wrongWord w) (i : Vertex) (j : Fin 4)
@@ -548,6 +597,8 @@ lemma wrongGamma_sum (w : WrongWord) :
     (710/113:ℝ)<∑ i,(wrongGamma w i:ℝ) := by
   cases w <;> norm_num [wrongGamma,Fin.sum_univ_succ]
 
+/-- The quarter word of a cycle is neither `0010111` nor `0011011`: the bounds `wrongGamma` of the
+edge costs add up to more than `2π`. -/
 theorem wrong_word_impossible (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hgap : ∀ i,19/25<angleGap C.beta i) (w : WrongWord) :
     F.word hgap pi_lt_22_over_7 ≠ wrongWord w := by
@@ -560,9 +611,9 @@ theorem wrong_word_impossible (C : BoundaryCycle Q0) (F : QuarterLift C)
   rw [marker_budget C F hgap (wrongMarker C w)] at hh
   linarith [wrongGamma_sum w,two_pi_lt_710_over_113]
 
-/-- Normalizing the EDGE word requires an extra vertex shift in the
-reflected case.  The physical action itself is the shared actual-square
-action, with its complete signed-axis transport. -/
+/-- The cycle action that takes a word `quarterDihedral shift reversed v` to `v`: its edge `i` is
+the edge `i - shift`, or `shift - i` when reversed. A reflection reverses each edge, which adds
+`1` to the vertex shift. -/
 def normalizingAction (shift : Vertex) (reversed : Bool) : CycleAction where
   shift := if reversed then shift+1 else -shift
   reversed := reversed
@@ -572,8 +623,9 @@ lemma normalizing_edge (shift : Vertex) (reversed : Bool) (i : Vertex) :
     (if reversed then shift-(normalizingAction shift reversed).edge i
       else (normalizingAction shift reversed).edge i+shift)=i := by
   cases reversed <;>
-    simp [normalizingAction,CycleAction.edge,CycleAction.index,next] <;> abel
+    simp [normalizingAction,CycleAction.edge,CycleAction.index,next]
 
+/-- The word of the lift moved by `G` is the word of the lift on the edges of `G`. -/
 lemma word_act (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hgap : ∀ i,19/25<angleGap C.beta i) (G : CycleAction) :
     (F.act G).word (boundary_gap_lower (G.boundary C) le_rfl) pi_lt_22_over_7=
@@ -584,6 +636,7 @@ lemma word_act (C : BoundaryCycle Q0) (F : QuarterLift C)
     (integerQuarterIncrement F.quarter (G.edge i)).toNat
   rw [G.quarter_increment]
 
+/-- A word equivalent to `v` is taken to `v` by a cycle action. -/
 lemma normalize_word (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hgap : ∀ i,19/25<angleGap C.beta i) (v : QuarterWord)
     (hv : (F.word hgap pi_lt_22_over_7).DihedralEquivalent v) :
@@ -598,8 +651,9 @@ lemma normalize_word (C : BoundaryCycle Q0) (F : QuarterLift C)
     else (normalizingAction shift reversed).edge i+shift)=v i
   rw [normalizing_edge]
 
-/-- All six representatives are excluded as actual geometric cycles,
-including every cyclic shift and every reflected orientation. -/
+/-- The quarter word of a cycle is not equivalent to any of the six representatives other than the
+candidate: four have a digit `2` (`no_double`), and the other two are the words of
+`wrong_word_impossible`. Every rotation and reflection is covered by `normalize_word`. -/
 theorem six_exclusions (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hgap : ∀ i,19/25<angleGap C.beta i) (j : Fin 6) :
     ¬ (F.word hgap pi_lt_22_over_7).DihedralEquivalent (quarterRepresentatives j.castSucc) := by
@@ -627,8 +681,8 @@ end SquaresInCircles.Eight.WordGeometry
 
 namespace SquaresInCircles.Eight
 
-/-- The complete quarter-word reduction, now supplied with all six actual
-continuous exclusions.  No word-exclusion premise remains. -/
+/-- The quarter word of a boundary cycle at the level `Q0` is equivalent to the candidate word
+`0101011`. -/
 theorem quarter_word_candidate (C : BoundaryCycle Q0) (F : QuarterLift C)
     (hgap : ∀ i,19/25<angleGap C.beta i) :
     (F.word hgap pi_lt_22_over_7).DihedralEquivalent candidateQuarterWord := by

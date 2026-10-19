@@ -2,12 +2,21 @@ module
 
 public import SquaresInCircles.Eight.Arithmetic.AffineTableData
 
+/-!
+# Eight squares: the data of the affine table `TLowerAffine`
+
+The radius level of the table, its arcs (each with its role, kind, sign, tangent
+interval and affine label), the cuts of the tangents, the quarter word, the charges,
+the targets, the ranges of the frame differences and the axes allowed on each edge, as
+exact rationals.
+-/
+
 @[expose] public section
 noncomputable section
 namespace SquaresInCircles.Eight.Generated.Affine.TLowerAffine
 open Arithmetic
 
-/-- Complete original arc data; schema eight-affine-v1. -/
+/-- The exact data of the table. -/
 noncomputable def table : AffineTableMeta :=
   { radius := (1957767069/500000000)
     arcs := [

@@ -4,9 +4,13 @@ public import SquaresInCircles.Eight.Generated.Affine.Mismatch015To001Affine.Met
 public import SquaresInCircles.Eight.Arithmetic.RowCover
 public meta import SquaresInCircles.Eight.IntRows
 
-/-! The fixed-point data of the table, checked against the exact data of `Meta`: the
-arc boxes and the arctangent intervals of the arcs (in blocks), the scalars, the
-state chains and the data of the angle coverage. -/
+/-!
+# Eight squares: the fixed-point context of the affine table `Mismatch015To001Affine`
+
+The fixed-point data of the table, checked against its exact data (`Meta.lean`): the
+arc boxes and the arctangent intervals of the arcs, in blocks, the scalars, the state
+chains and the data of the angle coverage.
+-/
 
 @[expose] public section
 noncomputable section

@@ -3,19 +3,27 @@ module
 public import SquaresInCircles.Eight.Arithmetic.Fixed
 
 /-!
-# Degree-ten Bernstein tests on eleven natural numbers
+# Eight squares: Bernstein tests of degree ten
 
-A polynomial with integer coefficients is split as `P - N` with `P` and `N`
-nonnegative. Moving it to `[0, 1]` and expanding it in the Bernstein basis are
-linear maps with nonnegative coefficients, so they act on `P` and `N`
-separately, in natural numbers, which the kernel evaluates fastest.
+A polynomial of degree ten with integer coefficients is written as `P - N`, where `P` and `N`
+have natural coefficients (`N11`). On an interval `[l / den, h / den]` the test `positiveOnN`
+shows `N < P` in one of two ways: by `N(h / den) < P(l / den)`, enough because both polynomials
+increase on `[0, ∞)`, or by the Bernstein coefficients of `N` on the interval lying below those
+of `P`. Moving a polynomial to `[0, 1]` (`N11.shift`) and taking its Bernstein coefficients
+(`N11.bern`) are linear maps with natural coefficients, so they act on `P` and `N` separately,
+in natural numbers; as the Bernstein basis is nonnegative on `[0, 1]` and sums to one, smaller
+coefficients give a smaller polynomial (`bern_gap_pos`). `nonnegOnN` is the weak test, and
+`positiveOnN_sound` and `nonnegOnN_sound` state what the two tests prove.
+
+The tests call the operations of `Nat`, which the kernel evaluates on literals directly.
+`Bernstein7.lean` gives the same tests in degree six, and `TrigLin.lean` applies both.
 -/
 
 @[expose] public section
 
 namespace SquaresInCircles.Eight.Arithmetic.Fixed
 
-/-- Eleven coefficients, lowest degree first. -/
+/-- Eleven natural coefficients, lowest degree first. -/
 structure N11 where
 
   c0 : Nat
@@ -32,14 +40,14 @@ structure N11 where
 
 namespace N11
 
-/-- `Σ c_j x^j`. -/
+/-- The polynomial `∑ cⱼ xʲ` at `x`. -/
 noncomputable def eval (q : N11) (x : ℝ) : ℝ :=
   (q.c0 : ℝ) * x ^ 0 + (q.c1 : ℝ) * x ^ 1 + (q.c2 : ℝ) * x ^ 2 + (q.c3 : ℝ) * x ^ 3 +
     (q.c4 : ℝ) * x ^ 4 + (q.c5 : ℝ) * x ^ 5 + (q.c6 : ℝ) * x ^ 6 + (q.c7 : ℝ) * x ^ 7 +
     (q.c8 : ℝ) * x ^ 8 + (q.c9 : ℝ) * x ^ 9 + (q.c10 : ℝ) * x ^ 10
 
-/-- The coefficients of `den ^ 10 q((l + d t) / den)`, a polynomial in `t`: the Taylor shift by
-`l` by synthetic division (Horner), then the scaling by `d`. -/
+/-- The coefficients of `den¹⁰ q((l + d t) / den)`, a polynomial in `t`: the Taylor shift by `l`
+by synthetic division (Horner), then the scaling by `d`. -/
 def shift (den l d : Nat) (p : N11) : N11 :=
   let e2 := Nat.mul den den
   let e3 := Nat.mul e2 den
@@ -137,7 +145,8 @@ def shift (den l d : Nat) (p : N11) : N11 :=
    Nat.mul d9 h9_9,
    Nat.mul d10 b10⟩
 
-/-- The Bernstein numerators `10! b_k = Σ_{j ≤ k} C(k, j) j! (10 - j)! c_j`, by Pascal's rule. -/
+/-- The Bernstein numerators `10! bₖ`, the sums over `j ≤ k` of `C(k, j) j! (10 - j)! cⱼ`, by
+Pascal's rule. -/
 def bern (q : N11) : N11 :=
   let a0 := Nat.mul 3628800 q.c0
   let a1 := Nat.mul 362880 q.c1
@@ -235,7 +244,7 @@ def le (N P : N11) : Bool :=
     Nat.ble N.c9 P.c9 &&
     Nat.ble N.c10 P.c10
 
-/-- `den ^ 10 q (x / den) = Σ q_j x ^ j den ^ (10 - j)`, by Horner's rule. -/
+/-- `den¹⁰ q(x / den)`, the sum of the `cⱼ xʲ den¹⁰⁻ʲ`, by Horner's rule. -/
 def evalAt (den x : Nat) (q : N11) : Nat :=
   let e2 := Nat.mul den den
   let e3 := Nat.mul e2 den
@@ -259,8 +268,8 @@ def evalAt (den x : Nat) (q : N11) : Nat :=
 
 end N11
 
-/-- `P - N > 0` on `[l / den, h / den]`: either `N(h) < P(l)`, enough since both have
-nonnegative coefficients and so increase, or the Bernstein test. -/
+/-- `P - N > 0` on `[l / den, h / den]`: by `N(h / den) < P(l / den)`, enough since both have
+natural coefficients and so increase, or by the Bernstein coefficients. -/
 def positiveOnN (den l h : Nat) (P N : N11) : Bool :=
   Nat.blt 0 den && Nat.ble l h &&
     (Nat.blt (N.evalAt den h) (P.evalAt den l) ||
@@ -416,7 +425,7 @@ theorem shift_point_nat {den l h : Nat} (hden : 0 < den) (hlh : l ≤ h) {u : �
   push_cast [Nat.cast_sub hlh]
   ring
 
-/-- The gap between the two sides of a Bernstein comparison, at one point of `[0, 1]`. -/
+/-- Bernstein coefficients of `NS` below those of `PS` give `NS < PS` on `[0, 1]`. -/
 theorem bern_gap_pos (PS NS : N11) {t : ℝ} (ht : 0 ≤ t ∧ t ≤ 1) (hlt : N11.lt NS.bern PS.bern = true) :
     NS.eval t < PS.eval t := by
   obtain ⟨⟨b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10⟩, hsum⟩ := bernstein10_basis ht
@@ -455,7 +464,8 @@ theorem evalAt_eq (den x : Nat) (hden : 0 < den) (q : N11) :
   field_simp
   ring
 
-/-- `N(h) < P(l)` gives `N < P` on `[l / den, h / den]`. -/
+/-- On `[l / den, h / den]`, `N` is at most its value at `h / den` and `P` at least its value
+at `l / den`. -/
 theorem mono_gap {den l h : Nat} (hden : 0 < den) {P N : N11}
     {u : ℝ} (hu : (l : ℝ) / den ≤ u ∧ u ≤ (h : ℝ) / den) :
     N.eval u ≤ (N.evalAt den h : ℝ) / (den : ℝ) ^ 10 ∧

@@ -330,9 +330,13 @@ theorem central_core_coordinates (p : EqualityParameters) :
     beta p.centralSquare (0,0) = |-p.S*p.x+p.C*p.y| := by
   constructor
   · change |p.C*(0-p.x)+p.S*(0-p.y)| = _
-    convert abs_neg (p.C*p.x+p.S*p.y) using 1 <;> congr 1 <;> ring
+    convert abs_neg (p.C*p.x+p.S*p.y) using 1
+    congr 1
+    ring
   · change |-p.S*(0-p.x)+p.C*(0-p.y)| = _
-    convert abs_neg (-p.S*p.x+p.C*p.y) using 1 <;> congr 1 <;> ring
+    convert abs_neg (-p.S*p.x+p.C*p.y) using 1
+    congr 1
+    ring
 
 theorem central_containment {a : Coordinates} {p : EqualityParameters}
     (hp : p.Admissible a) (hq : (121/72 : ℝ) < a.q) :

@@ -5,23 +5,29 @@ public import SquaresInCircles.Eight.Generated.PairsFourType
 public import SquaresInCircles.Eight.Arithmetic.CorePairGeometry
 
 /-!
-# The continuous four-type pair table, with its geometric meaning
+# Eight squares: the four-type pair bounds
 
-The four labels and all sixteen constants are those in
-`HAND_EXTERIOR_FRAME_CONCENTRATION.md`, section 2.  The closed core side and
-closed core corner are kept as separate analytic charts; L, M and H are
-the three closed outer tangent ranges.  A vertex chooses its chart and
-sign once, and its resulting label is used on both incident edges.
+Each vertex of a boundary cycle at the squared radius `Q₀` receives a branch (`branchOf`): its
+core chart, or on the outer circle the low, middle or high range of its tangent `b / a`, cut at
+`1/4` and `3/7`; the type of the branch is `0` for the core and `1`, `2`, `3` for the three
+ranges. The marker of the vertex is `ψᵢ = αᵢ - σᵢ L(aᵢ, bᵢ)`, with the label `L` of its branch
+(`label`), and serves both of its edges. Every edge then satisfies
+`handGamma τᵢ τᵢ₊₁ < angleGap β i - (9/50) h(θᵢ₊₁ - θᵢ) + ψᵢ₊₁ - ψᵢ`, indices modulo `7`, for
+the types `τ`, the frame charge `h` (`periodicFrameCost`) and the canonical angles `θ`
+(`four_type_pair_bound`). `GlobalNormalization.lean` sums these bounds around the cycle
+(`physical_cycle_width_bound` in `Frames.lean`) to bound the total frame charge.
 
-A pair of two core vertices follows from the separation of the centres
-(`CorePairGeometry.core_cost`). For an ordered pair of charts with an outer
-chart, signs and a source axis, the pair inequality is the problem
-`fourTypeProblem` (`FourTypeProblems`) of a pair table (`Generated/Pairs`): its
-ends carry the actual charts, tangent ranges and signed labels, with rational
-brackets of the constants `√(Q₀ - 1/4)`, `√(Q₀/2)` and `π`. The table defines its
-problems from `fourTypeProblem`, and proves them on the six halves of
-`φ ∈ [-1, 4]`, for every state pair and angle with the physical gap and the
-source-axis margin. Reflection and reversal supply both target axes.
+A vertex is a `State`: a branch, a sign and a point of the chart of the branch with `b ≤ a` and
+the tangent in the closed range of the branch. When one of two states is outer, the pair
+inequality `handGamma < State.cost` holds for every frame angle difference `φ ∈ [-1, 4]` with the
+gap `19/25 ≤ φ + α_s - α_t ≤ 3π/4` and a nonnegative margin of a separating axis (`pair`). For
+the axes one and four it is a problem `fourTypeProblem` (`FourTypeProblems.lean`) of the pair
+table of the two branches (`fourTypeTable`, `Generated/Pairs/`), proved on the six halves of
+`φ ∈ [-1, 4]` (`source_pair`); the labels with `√(Q₀ - 1/4)`, `√(Q₀/2)` and `π` enter it through
+the rational brackets of their constants (`branchConst_mem`). The axes two and three are the axes
+four and one of the reversed edge with both signs flipped. An edge between two core vertices
+follows instead from `CorePairGeometry.core_cost` and the bound of the frame charge
+(`cycle_pair`).
 -/
 
 @[expose] public section
@@ -30,26 +36,33 @@ open scoped BigOperators
 
 namespace SquaresInCircles.Eight.Arithmetic.FourType
 
+/-- The range of `b` on the chart of a branch. -/
 def Branch.bBox : Branch → QInterval
   | .coreSide => ⟨0,1/2⟩
   | .coreCorner => ⟨1/2,14/25⟩
   | .low | .middle | .high => ⟨0,9/10⟩
 
+/-- The sign `1` or `-1` of a vertex, as a real number. -/
 def sign (positive : Bool) : ℝ := if positive then 1 else -1
 
 @[simp] theorem sign_not (p : Bool) : sign (!p)= -sign p := by
   cases p <;> norm_num [sign]
 
+/-- The coordinate `a` of the point of the chart of a branch with the coordinate `b`. -/
 noncomputable def radialA (s : Branch) (b : ℝ) : ℝ :=
   match s with
   | .coreSide => 7/12
   | .coreCorner => 1/2+Real.sqrt ((1/12:ℝ)^2-(b-1/2)^2)
   | .low | .middle | .high => Real.sqrt (Q0-(b+1/2)^2)-1/2
 
+/-- The coordinate `a` of the point of the outer circle with `b = 0`. -/
 noncomputable def a0 : ℝ := Real.sqrt (Q0-1/4)-1/2
+/-- The coordinates `a = b` of the point of the outer circle on the diagonal. -/
 noncomputable def c0 : ℝ := Real.sqrt (Q0/2)-1/2
 
-/-- Exact positive-half labels, including the constant terms. -/
+/-- The label of a branch for the sign `+1`, constant included: the core label
+`K (7/12 - a) + g b` of `CorePairGeometry.lean` on the two core charts and an affine function of
+`(a, b)` on each outer range. -/
 noncomputable def label (s : Branch) (a b : ℝ) : ℝ :=
   match s with
   | .coreSide | .coreCorner => (7506931/1000000)*(7/12-a)+(269343/250000)*b
@@ -57,8 +70,9 @@ noncomputable def label (s : Branch) (a b : ℝ) : ℝ :=
   | .middle => -85723/40000+(1489593/1000000)*a+(1580219/1000000)*b
   | .high => Real.pi/4-(8898/15625)*(a-c0)+(195443/500000)*(b-c0)
 
-/-- Multiplication removes the strictly positive denominator from each
-tangent-type restriction.  Every chart includes both of its endpoints. -/
+/-- The closed tangent range of a branch, multiplied by `a`: `4b ≤ a` on the low range, `a ≤ 4b`
+and `7b ≤ 3a` on the middle one, `3a ≤ 7b` on the high one, and no condition on the core
+charts. -/
 def TypeMem (s : Branch) (a b : ℝ) : Prop :=
   match s with
   | .coreSide | .coreCorner => True
@@ -66,13 +80,15 @@ def TypeMem (s : Branch) (a b : ℝ) : Prop :=
   | .middle => a ≤ 4*b ∧ 7*b ≤ 3*a
   | .high => 3*a ≤ 7*b
 
+/-- The index of the axis of a source problem: `3` for the axis four, `0` for the axis one. -/
 def sourceAxis (four : Bool) : Fin 4 := if four then 3 else 0
 
 @[simp] theorem gammaQ_cast (s t : Branch) :
     (gammaQ s t : ℝ)=handGamma s.type t.type := by
   simp [gammaQ,handGamma]
 
-/-- An actual closed chart point.  None of its fields is a pair inequality. -/
+/-- A vertex: a branch, a sign and a point `(a, b)` of the chart of the branch, given by `b`
+(`radialA`), with `b ≤ a` and the tangent in the closed range of the branch. -/
 structure State where
   branch : Branch
   positive : Bool
@@ -83,11 +99,19 @@ structure State where
   canonical : b ≤ a
   type_mem : TypeMem branch a b
 
+/-- The state with the opposite sign. -/
 def State.flip (s : State) : State := { s with positive := !s.positive }
 
+/-- The angle `σ arctan (b / a)` from the centre direction of the square to its frame
+(`BoundaryCycle.alpha`). -/
 noncomputable def State.offset (s : State) : ℝ := sign s.positive*Real.arctan (s.b/s.a)
+/-- The signed label `σ L(a, b)` of the state. -/
 noncomputable def State.signedLabel (s : State) : ℝ := sign s.positive*label s.branch s.a s.b
+/-- The angle `φ + α_s - α_t` between the centre directions of two squares whose frames differ by
+`φ`. -/
 noncomputable def State.gap (s t : State) (φ : ℝ) : ℝ := φ+s.offset-t.offset
+/-- The charged cost `φ - (9/50) h(φ) + σ_s L_s - σ_t L_t` of an edge, with the frame charge
+`h`. -/
 noncomputable def State.cost (s t : State) (φ : ℝ) : ℝ :=
   φ-(9/50)*periodicFrameCost φ+s.signedLabel-t.signedLabel
 
@@ -107,6 +131,7 @@ noncomputable def State.cost (s t : State) (φ : ℝ) : ℝ :=
   simp [State.cost]
   ring
 
+/-- The four-type matrix is symmetric. -/
 theorem gamma_symmetric (s t : Branch) :
     handGamma t.type s.type=handGamma s.type t.type := by
   cases s <;> cases t <;> norm_num [Branch.type,handGamma,handGammaNumerator]
@@ -144,9 +169,11 @@ noncomputable def branchConst : Branch → ℝ
   | .middle => -85723/40000
   | .high => Real.pi/4+(8898/15625-195443/500000)*c0
 
+/-- The label of a branch is `branchQuad` with the constant `branchConst`. -/
 theorem label_eq (s : Branch) (a b : ℝ) : label s a b = (branchQuad s).eval (branchConst s) a b := by
   cases s <;> simp only [label, branchQuad, branchConst, QuadLabel.eval] <;> push_cast <;> ring
 
+/-- The rational bracket of `branchQuad` contains the constant of the label. -/
 theorem branchConst_mem (s : Branch) :
     ((branchQuad s).cLo : ℝ) ≤ branchConst s ∧ branchConst s ≤ (branchQuad s).cHi := by
   have ha := a0_bounds
@@ -155,7 +182,8 @@ theorem branchConst_mem (s : Branch) :
   cases s <;> simp only [branchQuad,
     branchConst] <;> push_cast <;> constructor <;> linarith only [ha, hc, hp]
 
-/-- The pair table of an ordered pair of branches, empty for two core branches. -/
+/-- The problems of the pair table of an ordered pair of branches; none for two core
+branches. -/
 def fourTypeTable : Branch → Branch → List PairProblem
   | .coreSide, .coreSide | .coreSide, .coreCorner | .coreCorner, .coreSide
   | .coreCorner, .coreCorner => []
@@ -181,6 +209,7 @@ def fourTypeTable : Branch → Branch → List PairProblem
   | .high, .middle => Generated.Pairs.FourTypeHighMiddle.problems
   | .high, .high => Generated.Pairs.FourTypeHighHigh.problems
 
+/-- Every problem of a pair table holds. -/
 theorem fourTypeTable_holds (s t : Branch) :
     ∀ P ∈ fourTypeTable s t, P.Holds ((9789/2500 : ℚ) : ℝ) 100000000 := by
   cases s <;> cases t
@@ -304,8 +333,8 @@ theorem state_mem (s : State) :
 
 end Tables
 
-/-- Soundness of each source-axis problem with an outer chart, on every point of its full
-closed state box and its closed physical angular domain. -/
+/-- The pair inequality for the axes one and four, when one of the branches is outer, from the
+pair table of the two branches. -/
 theorem source_pair (s t : State) (four : Bool) (φ : ℝ)
     (hφ : -1 ≤ φ ∧ φ ≤ 4)
     (hgap : 19/25 ≤ s.gap t φ ∧ s.gap t φ ≤ 3*Real.pi/4)
@@ -344,8 +373,8 @@ theorem source_pair (s t : State) (four : Bool) (φ : ℝ)
   push_cast at h
   linarith
 
-/-- Original target axes are covered by reflected reversal, with both
-vertex signs and both vertex labels transported together. -/
+/-- The pair inequality for every separating axis, when one of the branches is outer: the axes
+two and three are the axes four and one of the reversed edge with both signs flipped. -/
 theorem pair (s t : State) (j : Fin 4) (φ : ℝ)
     (hφ : -1 ≤ φ ∧ φ ≤ 4)
     (hgap : 19/25 ≤ s.gap t φ ∧ s.gap t φ ≤ 3*Real.pi/4)
@@ -377,6 +406,7 @@ theorem pair (s t : State) (j : Fin 4) (φ : ℝ)
     exact hh
   · exact source_pair s t true φ hφ hgap haxis hnon
 
+/-- The branch of a vertex: its core chart, or the range of its tangent on the outer circle. -/
 noncomputable def branchOf (C : BoundaryCycle Q0) (i : Vertex) : Branch :=
   match C.kind i with
   | .coreSide => .coreSide
@@ -391,12 +421,14 @@ theorem branchOf_core_iff (C : BoundaryCycle Q0) (i : Vertex) :
     split_ifs <;> simp [Branch.type]
   all_goals simp [branchOf, hk, Branch.type]
 
+/-- The sign of a vertex, `true` for `+1`. -/
 noncomputable def signOf (C : BoundaryCycle Q0) (i : Vertex) : Bool :=
   if C.sigma i=1 then true else false
 
 theorem signOf_spec (C : BoundaryCycle Q0) (i : Vertex) : sign (signOf C i)=C.sigma i := by
   rcases C.sigma_sign i with h | h <;> norm_num [signOf,sign,h]
 
+/-- A vertex is the point of the chart of its branch given by `b`, in the range of the branch. -/
 theorem branchOf_spec (C : BoundaryCycle Q0) (i : Vertex) :
     C.a i=radialA (branchOf C i) (C.b i) ∧
       (branchOf C i).bBox.Mem (C.b i) ∧ TypeMem (branchOf C i) (C.a i) (C.b i) := by
@@ -443,8 +475,7 @@ theorem branchOf_spec (C : BoundaryCycle Q0) (i : Vertex) :
         by simpa [branchOf,hk,Branch.bBox,QInterval.Mem] using And.intro hc.1 hb',
         by simp [branchOf,hk,TypeMem]⟩
 
-/-- One consistent representative for a vertex, before either incident
-pair is considered. -/
+/-- The state of a vertex; the same state serves both edges of the vertex. -/
 noncomputable def stateOf (C : BoundaryCycle Q0) (i : Vertex) : State where
   branch := branchOf C i
   positive := signOf C i
@@ -473,7 +504,8 @@ theorem stateOf_core_label (C : BoundaryCycle Q0) (i : Vertex) (hk : C.kind i �
       CorePairGeometry.g]
   simp only [State.signedLabel, stateOf, signOf_spec, hb]
 
-/-- The last edge includes its genuine full-turn winding. -/
+/-- The frame angle difference of the edge `i`: the difference of the canonical angles of its
+ends, plus `2π` on the last edge, so that it is `angleGap β i + αᵢ₊₁ - αᵢ` (`pairAngle_gap`). -/
 noncomputable def pairAngle (C : BoundaryCycle Q0) (i : Vertex) : ℝ :=
   C.canonicalAngle (next i)-C.canonicalAngle i+if i=6 then 2*Real.pi else 0
 
@@ -491,10 +523,12 @@ theorem pairAngle_trig (C : BoundaryCycle Q0) (i : Vertex) :
   have hsj : (C.square (next i)).sine=Real.sin (C.canonicalAngle (next i)) := C.frame_sin _
   have hc : relativeC (C.square i) (C.square (next i))=
       Real.cos (C.canonicalAngle (next i)-C.canonicalAngle i) := by
-    simp [relativeC,hci,hsi,hcj,hsj,Real.cos_sub] <;> ring
+    simp [relativeC,hci,hsi,hcj,hsj,Real.cos_sub]
+    ring
   have hs : relativeS (C.square i) (C.square (next i))=
       Real.sin (C.canonicalAngle (next i)-C.canonicalAngle i) := by
-    simp [relativeS,hci,hsi,hcj,hsj,Real.sin_sub] <;> ring
+    simp [relativeS,hci,hsi,hcj,hsj,Real.sin_sub]
+    ring
   by_cases hi : i=6 <;>
     simpa [pairAngle,hi,Real.cos_add,Real.sin_add] using And.intro hc hs
 
@@ -506,8 +540,9 @@ theorem pairAngle_charge (C : BoundaryCycle Q0) (i : Vertex) :
       (C.canonicalAngle (next i)-C.canonicalAngle i) 4
     convert h using 1
     congr 1
-    simp only [pairAngle,hi,if_true]
-    norm_num <;> ring
+    simp only [pairAngle,hi,ite_true]
+    norm_num
+    ring
   · simp [pairAngle,hi]
 
 theorem pairAngle_mem (C : BoundaryCycle Q0) (i : Vertex) :
@@ -519,7 +554,9 @@ theorem pairAngle_mem (C : BoundaryCycle Q0) (i : Vertex) :
   rw [pairAngle_gap]
   constructor <;> linarith [pi_lt_22_over_7]
 
-/-- The four-type inequality for every actual retained forward axis. -/
+/-- The pair bound of the edge `i` of a boundary cycle at `Q₀` for a feasible separating axis
+`j`: from `CorePairGeometry.core_cost` and `CorePairGeometry.charge_upper` when both ends are
+core, from `pair` otherwise. -/
 theorem cycle_pair (C : BoundaryCycle Q0) (i : Vertex) (j : Fin 4)
     (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i))) :
     handGamma (branchOf C i).type (branchOf C (next i)).type <
@@ -559,9 +596,10 @@ end SquaresInCircles.Eight.Arithmetic.FourType
 
 namespace SquaresInCircles.Eight
 
-/-- Complete actual continuous four-type pair bridge.  Type and marker
-are chosen once per vertex.  Every originally feasible signed axis is
-covered, including simultaneous feasible ties. -/
+/-- The four-type pair bounds of a boundary cycle at `Q₀`: with the type `τᵢ` and the marker
+`ψᵢ` of each vertex, the same on both of its edges, every edge has
+`handGamma τᵢ τᵢ₊₁ < angleGap β i - (9/50) h(θᵢ₊₁ - θᵢ) + ψᵢ₊₁ - ψᵢ`, where `h` is the frame
+charge of the difference of the canonical angles. -/
 theorem four_type_pair_bound (C : BoundaryCycle Q0) :
     ∃ τ : Vertex → Fin 4, ∃ ψ : Vertex → ℝ, ∀ i,
       handGamma (τ i) (τ (next i)) <

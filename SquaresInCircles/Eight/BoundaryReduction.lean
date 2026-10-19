@@ -822,7 +822,7 @@ lemma CanonicalSquare.radius_sq {K : UnitSquare} (N : CanonicalSquare K) :
   exact hh
 
 lemma CanonicalSquare.boundary_kind {K : UnitSquare} {q : ℝ} (N : CanonicalSquare K)
-    (hcore : CoreAvoiding K) (hb : OnRadialBoundary q K) :
+    (hb : OnRadialBoundary q K) :
     ∃ kind, BoundaryState q kind N.a N.b := by
   have hφ := turnSquare_phi N.quarter K
   have hc := turnSquare_coreDistance N.quarter K
@@ -882,8 +882,7 @@ lemma transportQuarterAxis_feasible {k l : Fin 4} {axis : SignedAxis} {K J : Uni
   rw [transportQuarterAxis_normal]
   exact h
 
-lemma arctan_polar_coordinates {a b σ : ℝ} (ha : 0 < a) (hb : 0 ≤ b)
-    (hσ : σ = -1 ∨ σ = 1) :
+lemma arctan_polar_coordinates {a b σ : ℝ} (ha : 0 < a) (hσ : σ = -1 ∨ σ = 1) :
     Real.cos (Real.arctan (σ*b/a))=a/Real.sqrt (a^2+b^2) ∧
     Real.sin (Real.arctan (σ*b/a))=σ*b/Real.sqrt (a^2+b^2) := by
   let t := Real.arctan (σ*b/a)
@@ -914,7 +913,7 @@ lemma CanonicalSquare.frame_polar {K : UnitSquare} (N : CanonicalSquare K) {β :
     (hy : K.center.2=Real.sqrt (normSq K.center)*Real.sin β) :
     N.square.cosine=Real.cos (β+Real.arctan (N.sigma*N.b/N.a)) ∧
     N.square.sine=Real.sin (β+Real.arctan (N.sigma*N.b/N.a)) := by
-  obtain ⟨hca,hsa⟩ := arctan_polar_coordinates N.a_pos N.b_nonneg N.sigma_sign
+  obtain ⟨hca,hsa⟩ := arctan_polar_coordinates N.a_pos N.sigma_sign
   have hr : 0 < Real.sqrt (N.a^2+N.b^2) :=
     Real.sqrt_pos.mpr (by nlinarith only [N.a_pos, sq_nonneg N.b])
   rw [N.radius_sq] at hx hy
@@ -944,7 +943,7 @@ def canonicalBoundaryCycle {q : ℝ} (C : NeighborCycle q) (O : PolarOrder C)
     (hboundary : ∀ i, OnRadialBoundary q (C.square i)) : BoundaryCycle q := by
   let N : (i : Vertex) → CanonicalSquare (C.square i) := fun i =>
     Classical.choice (canonical_square_exists (C.square i) (Real.sqrt_pos.mp (center_radius_pos (C.core i))))
-  choose kind hkind using fun i => (N i).boundary_kind (C.core i) (hboundary i)
+  choose kind hkind using fun i => (N i).boundary_kind (hboundary i)
   refine {
     square := fun i => (N i).square
     contained := ?_

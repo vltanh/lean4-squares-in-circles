@@ -2,13 +2,24 @@ module
 
 public import SquaresInCircles.Eight.ExactFamily.Generated.StationaryFormula
 
-/-! Proof data for the complete fixed cover of the adaptive stationary curve: the formulas of
-the adaptive estimates and the 256 graph boxes with their endpoint boxes. -/
+/-!
+# Eight squares: the formulas and the graph boxes of the adaptive chain
+
+The contact weights (`lambdaFormula`, from `alphaFormula`, `betaFormula`, `deltaFormula`,
+`omegaFormula` and `epsilonFormula`), the nine owner reserves (`reserveFormula`), the coordinate
+`h₂` (`hTwoFormula`) and the quadratic and cubic remainder coefficients (`quadraticFormula`,
+`cubicFormula`), as formulas in the variables `(q, y, z)` of `StationaryFormula.lean`;
+`ExactFamily/AdaptiveBounds.lean` and `ExactFamily/PerturbationBounds.lean` identify them with
+the quantities of the chain. Each of the 256 graph boxes `graphBoxes` has the radius interval
+`[sharpLower, sharpUpper]` (`graph_shape`), a tilt cell `[zLo i, zHi i]` of width `31/256000`,
+the cells covering `[1/20, 81/1000]` (`graph_z`), and a position interval `[yLo i, yHi i]` in
+`[-937/1000, -179/200]` (`graph_local`); `lowerBoxes` and `upperBoxes` are their faces
+`y = yLo i` and `y = yHi i`. Written by `scripts/eight/generate_adaptive.py`.
+-/
 
 @[expose] public section
 noncomputable section
 set_option maxRecDepth 100000
-set_option linter.all false
 namespace SquaresInCircles.Eight.ExactFamily.AdaptiveGenerated
 open Arithmetic Generated
 
@@ -196,8 +207,11 @@ noncomputable def reserve7Formula : Formula 3 := adaptiveFormula334
 noncomputable def reserve8Formula : Formula 3 := adaptiveFormula337
 noncomputable def quadraticFormula : Formula 3 := adaptiveFormula358
 noncomputable def cubicFormula : Formula 3 := adaptiveFormula369
+/-- The nine owner reserves, in the order of `Coordinates.ownerReserve`. -/
 noncomputable def reserveFormula : Fin 9 → Formula 3 := ![reserve0Formula,reserve1Formula,reserve2Formula,reserve3Formula,reserve4Formula,reserve5Formula,reserve6Formula,reserve7Formula,reserve8Formula]
+/-- The seven contact weights, in the contact order of `Coordinates.lam`. -/
 noncomputable def lambdaFormula : Fin 7 → Formula 3 := ![alphaFormula,betaFormula,betaFormula,deltaFormula,omegaFormula,omegaFormula,epsilonFormula]
+/-- The graph boxes, one for each tilt cell. -/
 noncomputable def graphBoxes : Fin 256 → QBox 3 := ![![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93576669/100000000),(-93536669/100000000)⟩, ⟨(1/20),(12831/256000)⟩],
   ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93561323/100000000),(-93521323/100000000)⟩, ⟨(12831/256000),(6431/128000)⟩],
   ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93545979/100000000),(-93505979/100000000)⟩, ⟨(6431/128000),(12893/256000)⟩],
@@ -454,6 +468,7 @@ noncomputable def graphBoxes : Fin 256 → QBox 3 := ![![⟨(9788835343793687816
   ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-44878269/50000000),(-44858269/50000000)⟩, ⟨(20643/256000),(10337/128000)⟩],
   ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-701107/781250),(-1401589/1562500)⟩, ⟨(10337/128000),(4141/51200)⟩],
   ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-17945371/20000000),(-17937371/20000000)⟩, ⟨(4141/51200),(81/1000)⟩]]
+/-- The lower faces `y = yLo i` of the graph boxes. -/
 noncomputable def lowerBoxes : Fin 256 → QBox 3 := ![![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93576669/100000000),(-93576669/100000000)⟩, ⟨(1/20),(12831/256000)⟩],
   ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93561323/100000000),(-93561323/100000000)⟩, ⟨(12831/256000),(6431/128000)⟩],
   ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93545979/100000000),(-93545979/100000000)⟩, ⟨(6431/128000),(12893/256000)⟩],
@@ -710,6 +725,7 @@ noncomputable def lowerBoxes : Fin 256 → QBox 3 := ![![⟨(9788835343793687816
   ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-44878269/50000000),(-44878269/50000000)⟩, ⟨(20643/256000),(10337/128000)⟩],
   ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-701107/781250),(-701107/781250)⟩, ⟨(10337/128000),(4141/51200)⟩],
   ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-17945371/20000000),(-17945371/20000000)⟩, ⟨(4141/51200),(81/1000)⟩]]
+/-- The upper faces `y = yHi i` of the graph boxes. -/
 noncomputable def upperBoxes : Fin 256 → QBox 3 := ![![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93536669/100000000),(-93536669/100000000)⟩, ⟨(1/20),(12831/256000)⟩],
   ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93521323/100000000),(-93521323/100000000)⟩, ⟨(12831/256000),(6431/128000)⟩],
   ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-93505979/100000000),(-93505979/100000000)⟩, ⟨(6431/128000),(12893/256000)⟩],
@@ -966,16 +982,20 @@ noncomputable def upperBoxes : Fin 256 → QBox 3 := ![![⟨(9788835343793687816
   ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-44858269/50000000),(-44858269/50000000)⟩, ⟨(20643/256000),(10337/128000)⟩],
   ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-1401589/1562500),(-1401589/1562500)⟩, ⟨(10337/128000),(4141/51200)⟩],
   ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-17937371/20000000),(-17937371/20000000)⟩, ⟨(4141/51200),(81/1000)⟩]]
+/-- The lower end of the position interval of the graph box `i`. -/
 noncomputable def yLo (i : Fin 256) : ℝ := ((graphBoxes i 1).lo:ℝ)
+/-- The upper end of the position interval of the graph box `i`. -/
 noncomputable def yHi (i : Fin 256) : ℝ := ((graphBoxes i 1).hi:ℝ)
+/-- The lower end of the tilt cell `i`. -/
 noncomputable def zLo (i : Fin 256) : ℝ := 1/20+(31/256000)*(i.val:ℝ)
+/-- The upper end of the tilt cell `i`. -/
 noncomputable def zHi (i : Fin 256) : ℝ := 1/20+(31/256000)*(i.val+1:ℝ)
 
 set_option synthInstance.maxSize 100000 in
-/-- The table of graph boxes: every radius interval is the sharp interval, the `z` intervals
-are the consecutive cells of width `31/256000` from `1/20`, and every `y` interval is a
-nondegenerate subinterval of `[-937/1000, -179/200]`. The quantifier is unrolled over the
-256 boxes and the numerals are compared. -/
+/-- The table of graph boxes: every radius interval is the bracket `[sharpLower, sharpUpper]`,
+the `z` intervals are the consecutive cells of width `31/256000` from `1/20`, and every `y`
+interval is a nondegenerate subinterval of `[-937/1000, -179/200]`. The quantifier is unrolled
+over the 256 boxes and the numerals are compared. -/
 private theorem graphBoxes_data : ∀ i : Fin 256,
     graphBoxes i 0 = ⟨97888353437936878163/25000000000000000000,
       97888353437936885663/25000000000000000000⟩ ∧
@@ -988,11 +1008,13 @@ private theorem graphBoxes_data : ∀ i : Fin 256,
     Fin.val_succ, QInterval.mk.injEq]
   decide +kernel
 
+/-- The radius interval of every graph box is `[sharpLower, sharpUpper]`. -/
 theorem graph_shape (i : Fin 256) :
     (graphBoxes i 0).Mem q ↔ sharpLower ≤ q ∧ q ≤ sharpUpper := by
   rw [(graphBoxes_data i).1]
   norm_num [QInterval.Mem, sharpLower, sharpUpper]
 
+/-- The tilt interval of the graph box `i` is the cell `[zLo i, zHi i]`. -/
 theorem graph_z (i : Fin 256) (z : ℝ) :
     (graphBoxes i 2).Mem z ↔ zLo i ≤ z ∧ z ≤ zHi i := by
   rw [(graphBoxes_data i).2.1]
@@ -1000,6 +1022,8 @@ theorem graph_z (i : Fin 256) (z : ℝ) :
   push_cast
   rfl
 
+/-- The position interval of every graph box is a nondegenerate subinterval of
+`[-937/1000, -179/200]`. -/
 theorem graph_local (i : Fin 256) :
     -(937/1000:ℝ) ≤ yLo i ∧ yLo i < yHi i ∧ yHi i ≤ -(179/200) := by
   obtain ⟨-, -, h1, h2, h3⟩ := graphBoxes_data i

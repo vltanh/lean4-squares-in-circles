@@ -4,16 +4,29 @@ public import SquaresInCircles.Eight.Arithmetic.StateCoverage
 public import SquaresInCircles.Eight.Candidate.GeometricCoreQuarter
 
 /-!
-# Complete affine-table coverage and the cyclic charged bound
+# Eight squares: the charged bound of an affine table
 
-The state cover chooses one label per vertex before any separating axis is
-selected. For each pair of labels and each allowed original axis, the rows of
-the table cover every required angle (`AngleCovers`), except on the pairs and
-axes that no feasible separator can have (`ExcludedArcs`): an axis two or four
-separator against a core square on a zero-quarter edge, an axis one or three
-separator against a core square with the inward transverse sign, and any
-separator on a quarter edge from a core square of sign `+1` to a core square
-of sign `-1`.
+`AffineCover.chargedBoundOf` turns an affine table, whose quarters and charges are those of the
+candidate, into the charged bound `Candidate.ChargedBound` of every boundary cycle at its level
+whose signed tangents lie in the cuts, whose frame differences lie in the ranges and whose
+separating forward axes are allowed by the table. The state chains give each square one arc, and
+so one label for both of its edges, before any axis is chosen (`StateChains.covers`). For every
+forward axis that separates the two squares of an edge, a row of the two arcs, the axis and the
+half of the edge whose angle interval contains `u = |δ|` gives the charged inequality of the edge
+(`pairBound`), and two facts provide such a row. First, `u` lies in the required interval of the
+two arcs (`AffineCover.required_mem`): the gap between the centre directions lies in
+`(19/25, 710/113 - 114/25)`, the arctangents of the signed tangents lie in the intervals of the
+arcs (`EndpointsValid`), and `u < 7/10`. Second, the rows cover every required interval
+(`AngleCovers`), as `RowCover.lean` checks.
+
+No row is needed for an arc pair and an axis that never separates two squares on these arcs
+(`ExcludedArcs`, `feasible_not_excluded`): on an edge of quarter zero the axis two with a core
+target and the axis four with a core source, on any edge the axis one with a core target and a
+source of sign `-1` and the axis three with a core source and a target of sign `+1`, and on an
+edge of quarter one every axis from a core source of sign `+1` to a core target of sign `-1`. With
+`core` no row is needed for two core arcs either, whose costs are bounded otherwise
+(`CorePairBound`): by the markers of `Candidate/GeometricCoreMarker.lean`, or vacuously when no
+edge joins two core squares (`NoAdjacentCore.corePairBound`).
 -/
 
 @[expose] public section
@@ -23,6 +36,7 @@ namespace SquaresInCircles.Eight.Arithmetic
 
 instance : Inhabited QInterval := ⟨⟨0,0⟩⟩
 
+/-- The intersection of two intervals. -/
 def QInterval.inter (I J : QInterval) : QInterval := ⟨max I.lo J.lo,min I.hi J.hi⟩
 theorem QInterval.mem_inter {I J : QInterval} {x : ℝ} (hI : I.Mem x) (hJ : J.Mem x) :
     (I.inter J).Mem x := by
@@ -34,20 +48,22 @@ theorem QInterval.mem_inter {I J : QInterval} {x : ℝ} (hI : I.Mem x) (hJ : J.M
     · simpa [QInterval.inter,min_eq_left h] using hI.2
     · simpa [QInterval.inter,min_eq_right h] using hJ.2
 
+/-- The forward axis of number `i` in `forwardAxis`, from zero. -/
 def ForwardAxis.ofIndex (i : Fin 4) : ForwardAxis := ![.one,.two,.three,.four] i
 @[simp] theorem ForwardAxis.index_ofIndex (i : Fin 4) : (ForwardAxis.ofIndex i).index=i := by
   fin_cases i <;> rfl
 
+/-- The margins depend on the signs only through the products `σ b` and `τ B`. -/
 theorem forwardMargin_congr_products (axis : ForwardAxis) {σ τ σ' τ' a b A B φ : ℝ}
     (hs : σ*b=σ'*b) (ht : τ*B=τ'*B) :
     forwardMargin axis σ τ a b A B φ=forwardMargin axis σ' τ' a b A B φ := by
   cases axis <;> simp only [forwardMargin,hs,ht]
 
-/-- An arc pair and an original axis that no feasible separator has (`feasible_not_excluded`):
-on a zero-quarter edge, axis two against a core target or axis four against a core source; on
-any edge, axis one with a core target and a source of sign `-1`, or axis three with a core
-source and a target of sign `+1`; on a quarter edge, every axis from a core source of sign `+1`
-to a core target of sign `-1`. -/
+/-- An arc pair and a forward axis that never separates two squares on these arcs
+(`feasible_not_excluded`): on an edge of quarter zero, the axis two with a core target or the axis
+four with a core source; on any edge, the axis one with a core target and a source of sign `-1`,
+or the axis three with a core source and a target of sign `+1`; on an edge of quarter one, every
+axis from a core source of sign `+1` to a core target of sign `-1`. -/
 def ExcludedArcs (aS aT : ArcData) (axis : ForwardAxis) : Prop :=
   (aS.role ∈ Candidate.zeroEdges ∧
     ((axis = .two ∧ aT.outer = false) ∨ (axis = .four ∧ aS.outer = false))) ∨
@@ -67,7 +83,8 @@ theorem arc_core_primary_upper {s : ArcData} {Q a b : ℝ}
     by_contra! ha
     nlinarith [sq_nonneg (a-7/12), sq_nonneg (b-1/2)]
 
-/-- A feasible original axis of the selected labels is not excluded. -/
+/-- A forward axis that separates two consecutive squares of a cycle is not excluded for arcs
+that contain their states with the same products `σ b`. -/
 theorem feasible_not_excluded {M : AffineTableMeta}
     (C : BoundaryCycle (M.radius:ℝ)) (F : Candidate.Frame C)
     {i : Vertex} {s t : Fin M.arcs.length}
@@ -129,17 +146,26 @@ structure AffineCover where
 
 namespace AffineCover
 
+/-- The intervals of the arctangents of the two endpoints of the arc `k`. -/
 def endpointAt (K : AffineCover) (k : ℕ) : QInterval × QInterval :=
   K.endpoints.getD k default
+/-- An interval of the arctangent `arctan (σ b / a)` of the signed tangent on the arc `k`. -/
 def alphaBox (K : AffineCover) (M : AffineTableMeta) (k : ℕ) : QInterval :=
   if (arcAt M k).positive then ⟨(K.endpointAt k).1.lo,(K.endpointAt k).2.hi⟩
   else ⟨-(K.endpointAt k).2.hi,-(K.endpointAt k).1.lo⟩
+/-- `π` to eighteen decimals. -/
 def piBox : QInterval :=
   ⟨3141592653589793238/1000000000000000000,3141592653589793239/1000000000000000000⟩
+/-- An interval of the angle `φ = g - α_s + α_t` between the frames on an edge with the arcs `s`
+and `t`, for a gap `g` between the centre directions in `[19/25, 710/113 - 114/25]`. -/
 def phaseBox (K : AffineCover) (M : AffineTableMeta) (s t : ℕ) : QInterval :=
   (⟨19/25,710/113-114/25⟩ : QInterval).sub (K.alphaBox M s) |>.add (K.alphaBox M t)
+/-- An interval of the base angle `w π / 2` of the edge `i`, with its quarter `w`. -/
 def baseBox (M : AffineTableMeta) (i : Vertex) : QInterval :=
   (QInterval.point ((M.word i : ℚ)/2)).mul piBox
+/-- The required interval of `u` for the arcs `s` and `t` and a half: `φ - w π / 2` on the
+positive half and its negative on the other, within the range of the frame difference (or its
+negative) and within `[0, 7/10]`. -/
 def required (K : AffineCover) (M : AffineTableMeta) (s t : ℕ) (positiveHalf : Bool) : QInterval :=
   let i := (arcAt M s).role
   let phase := K.phaseBox M s t
@@ -154,6 +180,8 @@ def EndpointsValid (K : AffineCover) (M : AffineTableMeta) : Prop :=
     (K.endpointAt k).1.Mem (Real.arctan (arcAt M k).tangent.lo) ∧
     (K.endpointAt k).2.Mem (Real.arctan (arcAt M k).tangent.hi)
 
+/-- With valid endpoint intervals, the arctangent of the signed tangent of a state of an arc lies
+in `alphaBox`. -/
 theorem alpha_mem {K : AffineCover} {M : AffineTableMeta} (hK : K.EndpointsValid M)
     (k : Fin M.arcs.length) {a b : ℝ} (hab : (arcAt M k).Contains M.radius a b) :
     (K.alphaBox M k).Mem (Real.arctan ((arcAt M k).sign*b/a)) := by
@@ -172,6 +200,8 @@ theorem alpha_mem {K : AffineCover} {M : AffineTableMeta} (hK : K.EndpointsValid
       push_cast
       exact ⟨by linarith [hu,hhi.2],by linarith [hl,hlo.1]⟩
 
+/-- Each gap between consecutive centre directions is below `710/113 - 114/25`, since the seven
+gaps sum to `2π` and each exceeds `19/25`. -/
 theorem frame_gap_upper {q : ℝ} {C : BoundaryCycle q} (F : Candidate.Frame C) (i : Vertex) :
     angleGap C.beta i < (710/113-114/25 : ℝ) := by
   have hsum := angleGap_sum C.beta
@@ -188,6 +218,8 @@ theorem frame_gap_upper {q : ℝ} {C : BoundaryCycle q} (F : Candidate.Frame C) 
     revert i; decide
   rcases hcases with rfl|rfl|rfl|rfl|rfl|rfl|rfl <;> linarith
 
+/-- On an edge whose squares lie on the arcs `s` and `t`, `u = |δ|` lies in the required
+interval of the half of the sign of the frame difference `δ`. -/
 theorem required_mem {K : AffineCover} {M : AffineTableMeta}
     (hK : K.EndpointsValid M) (C : BoundaryCycle (M.radius:ℝ)) (F : Candidate.Frame C)
     (hword : ∀ i, (M.word i:ℝ)=(Candidate.word i:ℝ))
@@ -230,8 +262,7 @@ theorem required_mem {K : AffineCover} {M : AffineTableMeta}
     · show Real.pi ≤ ((3141592653589793239/1000000000000000000 : ℚ) : ℝ)
       push_cast
       exact pi_hand_enclosure.2.le
-  -- The singleton constructor takes a rational; its membership theorem
-  -- performs the coercion to the real coordinate. Do not coerce first.
+  -- `QInterval.mem_point` is applied to the rational `word i / 2`, which it casts to the reals.
   have hb := QInterval.mem_mul (QInterval.mem_point ((M.word i:ℚ)/2)) hpi
   have hbase : (baseBox M i).Mem ((M.word i:ℝ)*Real.pi/2) := by
     have he : ((((M.word i:ℚ)/2 : ℚ)) : ℝ)*Real.pi = (M.word i:ℝ)*Real.pi/2 := by
@@ -282,9 +313,11 @@ theorem required_mem {K : AffineCover} {M : AffineTableMeta}
       rw [← hsi] at hfin
       exact hfin
 
-/-- Every required angle of every arc pair with consecutive roles and every allowed axis that is
-not excluded lies in the angle interval of a row of that pair, axis and half; with `core`, the
-pairs of two core arcs are left out, their costs being bounded otherwise (`CorePairBound`). -/
+/-- Every `u` in the required interval of an arc pair with consecutive roles, an allowed axis that
+is not excluded and a half lies in the angle interval of a row of that pair, axis and half, on the
+edge of the source role with its quarter and with a lower target at least the target of the edge;
+with `core`, the pairs of two core arcs are left out, their costs being bounded otherwise
+(`CorePairBound`). -/
 def AngleCovers (K : AffineCover) (M : AffineTableMeta) (rows : List AffineTableRow)
     (core : Bool) : Prop :=
   ∀ s t : Fin M.arcs.length, (arcAt M t).role=(arcAt M s).role+1 →

@@ -3,18 +3,22 @@ module
 public import Mathlib
 
 /-!
-# Rigidity from a positive energy
+# Eight squares: rigidity from a positive energy
 
-The numerical certificates are needed only to establish positivity of the
-coefficients. The equality argument itself is independent of their values.
+If `qStar + κ d² + E + ρ m ≤ q ≤ qStar` with `κ, ρ > 0` and `E, m ≥ 0`, then `q = qStar`,
+`d = 0` and `m = 0` (`positive_energy_rigid`). The sharp terminal (`boundary_rigid` in
+`Terminal.lean`) applies it to the lower bound of the squared radius given by the adaptive dual,
+with `d` the deviation of the half-angle tangent of the tilt from that of the optimal packing,
+`E` the completed squares of the centres and `m` the mismatch. Only the signs of `κ`, `ρ`, `E`
+and `m` enter, not their values.
 -/
 
 @[expose] public section
 noncomputable section
 namespace SquaresInCircles.Eight.Arithmetic
 
-/-- Below the candidate value there is no room for a positive error term.
-This statement has no numerical approximation to the sharp configuration. -/
+/-- If `qStar` plus a positive multiple of `d²`, a nonnegative energy and a positive multiple of
+a nonnegative mismatch `m` is at most `q ≤ qStar`, then `q = qStar`, `d = 0` and `m = 0`. -/
 theorem positive_energy_rigid {q qStar κ ρ displacement energy mismatch : ℝ}
     (hκ : 0 < κ) (hρ : 0 < ρ) (he : 0 ≤ energy) (hm : 0 ≤ mismatch)
     (hq : q ≤ qStar)

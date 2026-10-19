@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Convert the owner and tilt rows of eight squares into natural-number data files.
 
-The rows were first written as Lean structure literals (commit 65e4060,
-`SquaresInCircles/Eight/Generated/Owner/*.lean`). This script parses them and writes
-one file per table to `data/eight/owner/`, one row per line of 55 natural numbers,
+The script reads the rows from the Lean structure literals of
+`SquaresInCircles/Eight/Generated/Owner/*.lean` at commit 65e4060 (option `--commit`) and
+writes one file per table to `data/eight/owner/`, one row per line of 55 natural numbers,
 read by `Line.ofNats` (`Candidate/DualCheck.lean`):
 
     positive a⁺ a⁻ b⁺ b⁻ d lambda[7] cone[35] mu[7]
@@ -558,11 +558,11 @@ noncomputable def {stem}Lines : List Line :=
 
 def lean_tables(tables):
     """The module of the owner tables."""
-    out = HEADER + '/-! # Owner tables\n\n' + wrap(
+    out = HEADER + '/-!\n# Eight squares: the owner tables\n\n' + wrap(
         f'The {len(tables)} owner tables of the mixed mode, with '
         f'{sum(len(i["rows"]) for i in tables)} rows, read from `data/eight/owner/mixed*.txt`, one '
         f'file per table. For each table the kernel evaluates that every row passes `Line.check` '
-        f'and that the intervals cover the half-angle chart (`coverCheck`). -/') + '\n\n' + OPEN
+        f'and that the intervals cover the half-angle chart (`coverCheck`).') + '\n-/\n\n' + OPEN
     for info in tables:
         stem, text = lines_def(info, '')
         mode, owners = info['mode'], f'![{info["owners_text"]}]'
@@ -588,12 +588,12 @@ def lean_bundles(tables):
     if len(left) + len(right) != len(tables):
         raise ValueError('a tilt bundle meets the window (1001/20000, 2/25)')
     rows = sum(len(info['rows']) for info in tables)
-    out = HEADER + '/-! # Tilt bundles\n\n' + wrap(
+    out = HEADER + '/-!\n# Eight squares: the tilt bundles\n\n' + wrap(
         f'The tilt bundles of the two tails `[0, 1001/20000]` and `[2/25, 3/8]` of the positive '
         f'half-angle chart, {len(left)} and {len(right)} of them, with {rows} rows, read from '
         f'`data/eight/owner/tilt*.txt`, one file per bundle with one row for each error '
         f'alternative. For each bundle the kernel evaluates `bundleCheck`: every row passes '
-        f'`Line.check`. -/') + '\n\n' + OPEN
+        f'`Line.check`.') + '\n-/\n\n' + OPEN
     for info in left + right:
         a, b = show(info['lo']).strip('()'), show(info['hi']).strip('()')
         stem, text = lines_def(info, f' on `[{a}, {b}]`, in the order of `Alternative.index`')

@@ -4,12 +4,14 @@ public import SquaresInCircles.Eight.Generated.Affine.HLowerAffine.Data
 public import SquaresInCircles.Eight.Generated.Affine.HLowerAffine.Cover00
 public import SquaresInCircles.Eight.Generated.Affine.HLowerAffine.Cover01
 
-/-! # The affine table `HLowerAffine`
+/-!
+# Eight squares: the affine table `HLowerAffine`
 
 Each of its 35666 rows passes `checkRow`, so it satisfies its claim
 (`checkRow_claim`). The walks `coverBlock` over blocks of sources covering all arcs
 give the angle coverage (`coverBlocks_sound`). With the state chains and the
-arctangent intervals of the arcs they give the charged bound. -/
+arctangent intervals of the arcs they give the charged bound (`charged_bound`).
+-/
 
 @[expose] public section
 noncomputable section

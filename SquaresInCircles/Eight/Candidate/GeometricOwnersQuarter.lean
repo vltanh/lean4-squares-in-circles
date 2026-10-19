@@ -5,20 +5,28 @@ public import SquaresInCircles.Eight.Candidate.GeometricOwners
 /-!
 # Eight squares: three-edge chains on the quarter edges
 
-An intended `B → T` axis, a zero-edge `T → D` axis and a forbidden `D → E` axis telescope: the
+On the quarter edges `B → T` and `D → E` the quarter owners `2` and `3` (`quarterOwners`) are the
+intended axes, and `0` and `1` the forbidden ones. The chains of this file and of
+`GeometricOwnersDouble.lean` to `GeometricOwnersMixed.lean` assume the tangent cuts
+(`TangentCuts`), and the zero owners (`ZeroOwners`) when they pass through a zero edge. On an
+aligned edge every separating axis has projection at least `1 - (3/2)|δᵢ|` at the nominal angle
+(`aligned_projection_loss`), and the errors `|δᵢ|` of the aligned edges add up to the mismatch
+`S`. An intended `B → T` axis, a zero owner on `T → D` and a forbidden `D → E` axis telescope: the
 transverse coordinates cancel and `3 - (3/2) S ≤ a_B + a_E` (`quarter_telescoping_primary_bound`),
 which containment forbids at mismatch at most `1/10` (`quarter_mixed_direction_excluded`). A
-second chain, `G → A` on axis `2`, `A → B` and a forbidden `B → T` axis, needs one circle completion
-at the rotated corner of `G` and gives `5/2 - (3/2) S ≤ a_T + q/4`
-(`G_axis_two_forbidden_quarter_bound`), impossible at mismatch at most `3/200`. Each separating
-axis is treated on its own, and both signs of the tilt are included.
+second chain, `G → A` on the axis `2`, `A → B` and a forbidden `B → T` axis, needs one circle
+completion at the rotated corner of `G` and gives `5/2 - (3/2) S ≤ a_T + q/4`
+(`G_axis_two_forbidden_quarter_bound`), impossible at mismatch at most `3/200`
+(`G_axis_two_forbidden_quarter_excluded`). Each separating axis is treated on its own, and both
+signs of the tilt are included.
 -/
 
 @[expose] public section
 noncomputable section
 namespace SquaresInCircles.Eight.Candidate
 
-/-- The loss on this edge, in terms of its own difference. -/
+/-- On an aligned edge, a separating axis has projection at least `1 - (3/2)|δᵢ|` at the nominal
+angle, with the frame difference `δᵢ` of the edge. -/
 theorem aligned_projection_loss {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
     (hq : q ≤ Q0) {i : Vertex} (hi : i ∈ charged) (j : Fin 4)
     (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i))) :
@@ -34,6 +42,8 @@ theorem aligned_projection_loss {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
   have hh := (abs_le.mp hl).2
   linarith
 
+/-- Under the tangent cuts, a zero owner of a zero edge has projection `bᵢ + bᵢ₊₁` at the nominal
+angle. -/
 theorem nominal_zero_projection {q : ℝ} {C : BoundaryCycle q}
     (hc : TangentCuts C) (t : ℝ) {i : Vertex} (hi : i ∈ zeroEdges)
     {j : Fin 4} (hj : j ∈ zeroOwners) :
@@ -83,8 +93,10 @@ theorem nominal_G_axis_two_projection {q : ℝ} {C : BoundaryCycle q}
     Real.sin_sub, Real.cos_sub]
   ring
 
-/-- Both transverse coordinates cancel. The bound holds on the whole tilt chart and keeps the sum of
-the three edge errors. -/
+/-- An intended `B → T` axis, a zero owner of `T → D` and a forbidden `D → E` axis have the
+projections `a_B - b_T`, `b_T + b_D` and `a_E - b_D`, whose transverse coordinates cancel, so
+`3 - (3/2) S ≤ a_B + a_E`. The bound holds on the whole tilt chart and keeps the sum of the three
+edge errors. -/
 theorem quarter_telescoping_primary_bound {q : ℝ} {C : BoundaryCycle q}
     (F : Frame C) (hq : q ≤ Q0) (hc : TangentCuts C) (hzero : ZeroOwners C)
     {jB jD : Fin 4} (hB : jB ∈ quarterOwners) (hD : jD ∉ quarterOwners)
@@ -107,8 +119,9 @@ theorem quarter_telescoping_primary_bound {q : ℝ} {C : BoundaryCycle q}
   simp only [B, T, D, E] at hBp hDp hpartial ⊢
   linarith
 
-/-- Every owner pair of the class is excluded, also when several axes are feasible. At `S = 1/10`
-the span is at least `57/20`, while containment bounds it strictly by `283/100`. -/
+/-- An intended `B → T` axis and a forbidden `D → E` axis do not separate together at mismatch at
+most `1/10`, also when other axes separate as well: at `S = 1/10` the span `a_B + a_E` is at least
+`57/20`, while containment bounds it strictly by `283/100`. -/
 theorem quarter_mixed_direction_excluded {q : ℝ} {C : BoundaryCycle q}
     (F : Frame C) (hq : q ≤ Q0) (hc : TangentCuts C) (hzero : ZeroOwners C)
     (hS : mismatch F.theta ≤ 1/10)
@@ -120,8 +133,9 @@ theorem quarter_mixed_direction_excluded {q : ℝ} {C : BoundaryCycle q}
   have hEu := (canonical_bounds C hq E).2.1
   linarith
 
-/-- A rotated corner and a primary span. This circle inequality holds on the closed right
-semicircle, for both signs of `s`. -/
+/-- If `(1 + c + |s|)/2 + 2 - loss ≤ a c - b s + x` for a point `(a, b)` of the corner disk with
+`b ≥ 0` and a direction `(c, s)` with `c ≥ 0`, then `5/2 - loss ≤ x + q/4`: one circle completion
+with the weight `1/4`, on the closed right semicircle and for both signs of `s`. -/
 theorem rotated_corner_primary_span {a b x q c s loss : ℝ}
     (hb : 0 ≤ b) (hc : 0 ≤ c) (hunit : c^2+s^2=1)
     (hcircle : (a+1/2)^2+(b+1/2)^2 ≤ q)
@@ -177,8 +191,9 @@ theorem G_axis_two_forbidden_quarter_bound {q : ℝ} {C : BoundaryCycle q}
   · simp only [A, B, T, G] at hBp hGp hpartial ⊢
     linarith
 
-/-- This excludes the eight nominal patterns with a forbidden `B` axis and `G`-axis `2`. At `S =
-3/200` the span gap is `209/2500`. -/
+/-- The `G` axis `2` and a forbidden `B → T` axis do not separate together at mismatch at most
+`3/200`, whatever the axes of the other edges: at `S = 3/200` the bound of
+`G_axis_two_forbidden_quarter_bound` fails by `209/2500`. -/
 theorem G_axis_two_forbidden_quarter_excluded {q : ℝ} {C : BoundaryCycle q}
     (F : Frame C) (hq : q ≤ Q0) (hc : TangentCuts C) (hzero : ZeroOwners C)
     (hS : mismatch F.theta ≤ 3/200)

@@ -15,11 +15,12 @@ and every packing in the disk of radius `radius` is congruent to one of
 central square and the two sliding squares anywhere in the admissible domain,
 and their reflections.
 
-A packing at a squared radius `q ≤ qStar` has a boundary neighbour cycle
-(`GlobalNormalization.lean`), which is expanded to the level `max q qMinus`;
-its frames are captured near the candidate frames (`Candidate/Capture.lean`),
-and the boundary terminal (`Terminal.lean`) forces `q = qStar` with every frame
-error zero. The stationary identity, evaluated again at the original centres,
+A packing at a squared radius `q ≤ qStar` has a boundary neighbour cycle at the
+level `max q qMinus` (`GlobalNormalization.lean`), which is expanded to the
+level `Q1`; there its frames are captured near the candidate frames
+(`Candidate/Capture.lean`), the capture is pulled back to the level
+`max q qMinus`, and the boundary terminal (`Terminal.lean`) forces `q = qStar`
+with every frame error zero. The stationary identity, evaluated again at the original centres,
 then fixes the five squares with a corner on the circle by its positive circle
 weights, and leaves free only the two sliding squares, by its zero slider
 forces, and the central square (`ExactFamily/CentralParameters.lean`).
@@ -426,7 +427,7 @@ theorem source_square_models (N : GlobalNormalization S qStar) {Z η : ℝ}
   · have hf := N.original_frames hS hz i
     fin_cases i <;>
       simp only [SamePhysicalFrame,exteriorSquares,axisSquare,tiltedSquare,
-        Matrix.cons_val_zero,Matrix.cons_val_succ,sharpCanonicalCos,sharpCanonicalSin] at hf ⊢ <;>
+        sharpCanonicalCos,sharpCanonicalSin] at hf ⊢ <;>
       aesop
 
 end GlobalNormalization
@@ -443,8 +444,8 @@ theorem squared_radius_lower_bound (S : Fin 8 → UnitSquare) {q : ℝ}
   rw [hr.1] at hstrict
   exact lt_irrefl _ hstrict
 
-/-- The squared optimum has its originally selected stationary value; the
-choice is established in F2, independently of this global lower bound. -/
+/-- The square of `radius` is `qStar`, the zero of the minimum of the stationary family
+(`ExactFamily/Analysis.lean`). -/
 theorem radius_sq : radius^2=qStar :=
   Real.sq_sqrt (by linarith [qStar_limits.1])
 

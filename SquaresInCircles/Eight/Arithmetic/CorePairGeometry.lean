@@ -4,18 +4,24 @@ public import SquaresInCircles.Eight.Arithmetic.Arctangent
 public import SquaresInCircles.Eight.BoundaryGeometry
 
 /-!
-# Core/core pairs from the separation of the centres
+# Eight squares: pairs of two core squares
 
-A core square has its centre within `4/5` of the origin (`core_radius_sq`). Two squares with
-disjoint interiors have centres at least `1` apart, so the gap between two consecutive core
-centres exceeds `4/3` (`core_gap`), whichever axis separates them.
+A square of a boundary cycle whose state lies on the core side or the core corner (`CoreState`)
+has its centre within `4/5` of the origin (`core_radius_sq`). Two consecutive squares of the
+cycle have centres at least `1` apart, by their separating axis, so the angle between the
+directions of two consecutive core centres exceeds `4/3` (`core_gap`), whichever axis separates
+them.
 
-The core labels `k (7/12 - a) + l b` of the four-type pairs and of the common quarter-word
-increments have markers `arctan (b / a) - k (7/12 - a) - l b` in `(-177/1000, 177/1000)` on the
-closed core side and the closed core corner (`marker_mem`): on the side by the tangent of
-`arctan` at `3/4`, on the corner by its tangent at `6/7` and the circle equation. So the cost of
-a core/core edge, with the signed markers of its two vertices, exceeds `4/3 - 354/1000`
-(`core_cost`), for all signs and separating axes at once.
+The core labels `k (7/12 - a) + l b` of the four-type pair bounds and of the common quarter-word
+increments (`CoreLabel`) have markers `arctan (b / a) - k (7/12 - a) - l b` in
+`(-177/1000, 177/1000)` on the closed core side and the closed core corner (`marker_mem`): on the
+side by `x - x³/3 ≤ arctan x` and the tangent of `arctan` at `3/4`, on the corner by
+`arctan (6/7) > 2/3`, the tangent at `6/7` and the circle equation (`corner_geometry`); the values
+of `arctan` at `3/4` and `6/7` are bounded in `Arctangent.lean`. So the cost of an edge between
+two core squares, with the signed markers of its ends, exceeds `4/3 - 354/1000 > 979/1000`
+(`core_cost`), for all signs and separating axes at once. With the bound `21/100` of the frame
+charge (`charge_upper`) this gives the pairs of two core charts in `FourTypePairs.lean` and in
+`WordGeometry.lean`; `Candidate/GeometricCoreMarker.lean` uses `core_gap` and `charge_upper`.
 -/
 
 @[expose] public section
@@ -24,7 +30,9 @@ open Set
 
 namespace SquaresInCircles.Eight.CorePairGeometry
 
+/-- The coefficient `k` of the core label of the four-type pair bounds. -/
 def K : ℝ := 7506931/1000000
+/-- The coefficient `l` of the core label of the four-type pair bounds. -/
 def g : ℝ := 269343/250000
 
 /-- The core label `k (7/12 - a) + l b`. -/
@@ -82,7 +90,8 @@ theorem arctan_six_sevenths : (2/3:ℝ) < Real.arctan (6/7:ℝ) := by
   norm_num [Arithmetic.atanLower] at h
   linarith
 
-/-- On `[0, ∞)`, `x - x³/3 ≤ arctan x < 161/250 + (16/25)(x - 3/4)`, the tangent at `3/4`. -/
+/-- On `[0, ∞)`, `x - x³/3 ≤ arctan x < 161/250 + (16/25)(x - 3/4)`: the tangent at `3/4`, with
+`arctan (3/4) < 161/250`. -/
 theorem side_angle {x : ℝ} (hx : 0 ≤ x) :
     x-x^3/3 ≤ Real.arctan x ∧ Real.arctan x < 161/250+(16/25)*(x-3/4) := by
   have hu := arctan_tangent hx (show (0:ℝ) ≤ 3/4 by norm_num)
@@ -149,6 +158,7 @@ theorem core_radius_sq {a b : ℝ} (h : CoreState a b) : a^2+b^2 < 16/25 := by
   · nlinarith
   · nlinarith [sq_nonneg (a-b), sq_nonneg (a+b-1-3/25)]
 
+/-- A vertex of a boundary cycle that is not on the outer circle is in a core state. -/
 theorem boundary_core_state {q : ℝ} (C : BoundaryCycle q) (i : Vertex)
     (hk : C.kind i ≠ .outer) : CoreState (C.a i) (C.b i) := by
   have hb := C.boundary i

@@ -3,11 +3,13 @@ module
 public import SquaresInCircles.Eight.Candidate.DualCheck
 meta import SquaresInCircles.Eight.IntRows
 
-/-! # Owner tables
+/-!
+# Eight squares: the owner tables
 
 The 7 owner tables of the mixed mode, with 489 rows, read from `data/eight/owner/mixed*.txt`, one
 file per table. For each table the kernel evaluates that every row passes `Line.check` and that the
-intervals cover the half-angle chart (`coverCheck`). -/
+intervals cover the half-angle chart (`coverCheck`).
+-/
 
 @[expose] public section
 noncomputable section

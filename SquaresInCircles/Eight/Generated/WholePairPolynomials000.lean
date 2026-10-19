@@ -2,15 +2,28 @@ module
 
 public import SquaresInCircles.Eight.Arithmetic.BernsteinCheck
 
-/-! Polynomial rows of schema eight-polynomial-v1: a polynomial, an interval, and Bernstein
-coefficients on that interval. `BernsteinRow.check` verifies a row in the kernel. -/
+/-!
+# Eight squares: the polynomial rows of the central band
+
+The polynomials `centralBandP` and `centralBandV` of
+`Arithmetic/CentralBandPolynomials.lean` for `transverse_segment_sides`, `bandA_sides`
+and `bandB_sides` of `CentralCore.lean`, expanded in powers of the half-angle tangent
+`u`, each on the pieces of a cut of its interval: `[0, 1]` for `centralBandP` and
+`[0, 3/7]` for `centralBandV`. A row (`Arithmetic.BernsteinRow`) holds the expansion,
+the piece and the exact Bernstein coefficients there. The kernel checks each row by
+`BernsteinRow.check` (`_valid`), and its positive coefficients make the polynomial
+positive on the piece (`_positive`). `Arithmetic/CentralBandPolynomials.lean`
+identifies each expansion with its polynomial and joins the pieces. Written by
+`scripts/eight/generate_polynomial_rows.py`.
+-/
 
 @[expose] public section
 noncomputable section
 open scoped BigOperators
 namespace SquaresInCircles.Eight.Generated
 
-/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial segment P, row 0. -/
+/-- The polynomial `centralBandP (11/12) (7/20)` for `transverse_segment_sides`,
+expanded in powers of `u`, on `[0, 1/4]`. -/
 def central_segment_P0 : Arithmetic.BernsteinRow :=
   { interval := ⟨0,(1/4)⟩
     polynomial := [(721/90000), (3/20), (7379/90000), (-11/3), (589379/90000), (43/60), (-329279/90000)]
@@ -22,7 +35,8 @@ theorem central_segment_P0_valid : central_segment_P0.Valid (721/180000) :=
 theorem central_segment_P0_positive {x : ℝ} (hx : (0 : ℝ) ≤ x ∧ x ≤ (1/4)) :
     0 < central_segment_P0.polynomial.eval x :=
   central_segment_P0_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial segment P, row 1. -/
+/-- The polynomial `centralBandP (11/12) (7/20)` for `transverse_segment_sides`,
+expanded in powers of `u`, on `[1/4, 1/2]`. -/
 def central_segment_P1 : Arithmetic.BernsteinRow :=
   { interval := ⟨(1/4),(1/2)⟩
     polynomial := [(721/90000), (3/20), (7379/90000), (-11/3), (589379/90000), (43/60), (-329279/90000)]
@@ -34,7 +48,8 @@ theorem central_segment_P1_valid : central_segment_P1.Valid (205099/138240000) :
 theorem central_segment_P1_positive {x : ℝ} (hx : ((1/4) : ℝ) ≤ x ∧ x ≤ (1/2)) :
     0 < central_segment_P1.polynomial.eval x :=
   central_segment_P1_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial segment P, row 2. -/
+/-- The polynomial `centralBandP (11/12) (7/20)` for `transverse_segment_sides`,
+expanded in powers of `u`, on `[1/2, 1]`. -/
 def central_segment_P2 : Arithmetic.BernsteinRow :=
   { interval := ⟨(1/2),1⟩
     polynomial := [(721/90000), (3/20), (7379/90000), (-11/3), (589379/90000), (43/60), (-329279/90000)]
@@ -46,7 +61,8 @@ theorem central_segment_P2_valid : central_segment_P2.Valid (2521/256000) :=
 theorem central_segment_P2_positive {x : ℝ} (hx : ((1/2) : ℝ) ≤ x ∧ x ≤ 1) :
     0 < central_segment_P2.polynomial.eval x :=
   central_segment_P2_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial segment V, row 0. -/
+/-- The polynomial `centralBandV (1/2) (11/12) (7/20)` for `transverse_segment_sides`,
+expanded in powers of `u`, on `[0, 3/14]`. -/
 def central_segment_V0 : Arithmetic.BernsteinRow :=
   { interval := ⟨0,(3/14)⟩
     polynomial := [(3/20), (-5/6), (7/10), (17/6), (-17/20)]
@@ -58,7 +74,8 @@ theorem central_segment_V0_valid : central_segment_V0.Valid (22787/1536640) :=
 theorem central_segment_V0_positive {x : ℝ} (hx : (0 : ℝ) ≤ x ∧ x ≤ (3/14)) :
     0 < central_segment_V0.polynomial.eval x :=
   central_segment_V0_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial segment V, row 1. -/
+/-- The polynomial `centralBandV (1/2) (11/12) (7/20)` for `transverse_segment_sides`,
+expanded in powers of `u`, on `[3/14, 3/7]`. -/
 def central_segment_V1 : Arithmetic.BernsteinRow :=
   { interval := ⟨(3/14),(3/7)⟩
     polynomial := [(3/20), (-5/6), (7/10), (17/6), (-17/20)]
@@ -70,7 +87,8 @@ theorem central_segment_V1_valid : central_segment_V1.Valid (15523/1536640) :=
 theorem central_segment_V1_positive {x : ℝ} (hx : ((3/14) : ℝ) ≤ x ∧ x ≤ (3/7)) :
     0 < central_segment_V1.polynomial.eval x :=
   central_segment_V1_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandA P, row 0. -/
+/-- The polynomial `centralBandP bandA_Cminus bandA_D` for `bandA_sides`,
+expanded in powers of `u`, on `[0, 1/4]`. -/
 def central_bandA_P0 : Arithmetic.BernsteinRow :=
   { interval := ⟨0,(1/4)⟩
     polynomial := [(2540913450225412921/39062500000000000000), (117708140112740701/3125000000000000000), (4442784786036443889/625000000000000000000), (-5821802411/1562500000), (4161617771686036443889/625000000000000000000), (2383626569387259299/3125000000000000000), (-143004146824774587079/39062500000000000000)]
@@ -82,7 +100,8 @@ theorem central_bandA_P0_valid : central_bandA_P0.Valid (17020603344683950553/80
 theorem central_bandA_P0_positive {x : ℝ} (hx : (0 : ℝ) ≤ x ∧ x ≤ (1/4)) :
     0 < central_bandA_P0.polynomial.eval x :=
   central_bandA_P0_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandA P, row 1. -/
+/-- The polynomial `centralBandP bandA_Cminus bandA_D` for `bandA_sides`,
+expanded in powers of `u`, on `[1/4, 3/8]`. -/
 def central_bandA_P1 : Arithmetic.BernsteinRow :=
   { interval := ⟨(1/4),(3/8)⟩
     polynomial := [(2540913450225412921/39062500000000000000), (117708140112740701/3125000000000000000), (4442784786036443889/625000000000000000000), (-5821802411/1562500000), (4161617771686036443889/625000000000000000000), (2383626569387259299/3125000000000000000), (-143004146824774587079/39062500000000000000)]
@@ -94,7 +113,8 @@ theorem central_bandA_P1_valid : central_bandA_P1.Valid (4439300063959196787073/
 theorem central_bandA_P1_positive {x : ℝ} (hx : ((1/4) : ℝ) ≤ x ∧ x ≤ (3/8)) :
     0 < central_bandA_P1.polynomial.eval x :=
   central_bandA_P1_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandA P, row 2. -/
+/-- The polynomial `centralBandP bandA_Cminus bandA_D` for `bandA_sides`,
+expanded in powers of `u`, on `[3/8, 7/16]`. -/
 def central_bandA_P2 : Arithmetic.BernsteinRow :=
   { interval := ⟨(3/8),(7/16)⟩
     polynomial := [(2540913450225412921/39062500000000000000), (117708140112740701/3125000000000000000), (4442784786036443889/625000000000000000000), (-5821802411/1562500000), (4161617771686036443889/625000000000000000000), (2383626569387259299/3125000000000000000), (-143004146824774587079/39062500000000000000)]
@@ -106,7 +126,8 @@ theorem central_bandA_P2_valid : central_bandA_P2.Valid (18026255272793363059546
 theorem central_bandA_P2_positive {x : ℝ} (hx : ((3/8) : ℝ) ≤ x ∧ x ≤ (7/16)) :
     0 < central_bandA_P2.polynomial.eval x :=
   central_bandA_P2_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandA P, row 3. -/
+/-- The polynomial `centralBandP bandA_Cminus bandA_D` for `bandA_sides`,
+expanded in powers of `u`, on `[7/16, 1/2]`. -/
 def central_bandA_P3 : Arithmetic.BernsteinRow :=
   { interval := ⟨(7/16),(1/2)⟩
     polynomial := [(2540913450225412921/39062500000000000000), (117708140112740701/3125000000000000000), (4442784786036443889/625000000000000000000), (-5821802411/1562500000), (4161617771686036443889/625000000000000000000), (2383626569387259299/3125000000000000000), (-143004146824774587079/39062500000000000000)]
@@ -118,7 +139,8 @@ theorem central_bandA_P3_valid : central_bandA_P3.Valid (1953451669079521155421/
 theorem central_bandA_P3_positive {x : ℝ} (hx : ((7/16) : ℝ) ≤ x ∧ x ≤ (1/2)) :
     0 < central_bandA_P3.polynomial.eval x :=
   central_bandA_P3_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandA P, row 4. -/
+/-- The polynomial `centralBandP bandA_Cminus bandA_D` for `bandA_sides`,
+expanded in powers of `u`, on `[1/2, 1]`. -/
 def central_bandA_P4 : Arithmetic.BernsteinRow :=
   { interval := ⟨(1/2),1⟩
     polynomial := [(2540913450225412921/39062500000000000000), (117708140112740701/3125000000000000000), (4442784786036443889/625000000000000000000), (-5821802411/1562500000), (4161617771686036443889/625000000000000000000), (2383626569387259299/3125000000000000000), (-143004146824774587079/39062500000000000000)]
@@ -130,7 +152,8 @@ theorem central_bandA_P4_valid : central_bandA_P4.Valid (5419983821580126081/400
 theorem central_bandA_P4_positive {x : ℝ} (hx : ((1/2) : ℝ) ≤ x ∧ x ≤ 1) :
     0 < central_bandA_P4.polynomial.eval x :=
   central_bandA_P4_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandA V, row 0. -/
+/-- The polynomial `centralBandV (5007/10000) bandA_Cplus bandA_D` for `bandA_sides`,
+expanded in powers of `u`, on `[0, 3/14]`. -/
 def central_bandA_V0 : Arithmetic.BernsteinRow :=
   { interval := ⟨0,(3/14)⟩
     polynomial := [(268618391/2000000000), (-43078848583/50000000000), (731381609/1000000000), (143218848583/50000000000), (-1731381609/2000000000)]
@@ -142,7 +165,8 @@ theorem central_bandA_V0_valid : central_bandA_V0.Valid (18494556101093/38416000
 theorem central_bandA_V0_positive {x : ℝ} (hx : (0 : ℝ) ≤ x ∧ x ≤ (3/14)) :
     0 < central_bandA_V0.polynomial.eval x :=
   central_bandA_V0_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandA V, row 1. -/
+/-- The polynomial `centralBandV (5007/10000) bandA_Cplus bandA_D` for `bandA_sides`,
+expanded in powers of `u`, on `[3/14, 9/28]`. -/
 def central_bandA_V1 : Arithmetic.BernsteinRow :=
   { interval := ⟨(3/14),(9/28)⟩
     polynomial := [(268618391/2000000000), (-43078848583/50000000000), (731381609/1000000000), (143218848583/50000000000), (-1731381609/2000000000)]
@@ -154,7 +178,8 @@ theorem central_bandA_V1_valid : central_bandA_V1.Valid (77671165583/38416000000
 theorem central_bandA_V1_positive {x : ℝ} (hx : ((3/14) : ℝ) ≤ x ∧ x ≤ (9/28)) :
     0 < central_bandA_V1.polynomial.eval x :=
   central_bandA_V1_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandA V, row 2. -/
+/-- The polynomial `centralBandV (5007/10000) bandA_Cplus bandA_D` for `bandA_sides`,
+expanded in powers of `u`, on `[9/28, 3/7]`. -/
 def central_bandA_V2 : Arithmetic.BernsteinRow :=
   { interval := ⟨(9/28),(3/7)⟩
     polynomial := [(268618391/2000000000), (-43078848583/50000000000), (731381609/1000000000), (143218848583/50000000000), (-1731381609/2000000000)]
@@ -166,7 +191,8 @@ theorem central_bandA_V2_valid : central_bandA_V2.Valid (578371840373027/6146560
 theorem central_bandA_V2_positive {x : ℝ} (hx : ((9/28) : ℝ) ≤ x ∧ x ≤ (3/7)) :
     0 < central_bandA_V2.polynomial.eval x :=
   central_bandA_V2_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandB P, row 0. -/
+/-- The polynomial `centralBandP bandB_Cminus bandB_D` for `bandB_sides`,
+expanded in powers of `u`, on `[0, 1/2]`. -/
 def central_bandB_P0 : Arithmetic.BernsteinRow :=
   { interval := ⟨0,(1/2)⟩
     polynomial := [(5759271769/40000000000), (-130551593/2000000000), (-3465819669/40000000000), (-190363/50000), (270512580331/40000000000), (1660671593/2000000000), (-146531128231/40000000000)]
@@ -178,7 +204,8 @@ theorem central_bandB_P0_valid : central_bandB_P0.Valid (2642023161/102400000000
 theorem central_bandB_P0_positive {x : ℝ} (hx : (0 : ℝ) ≤ x ∧ x ≤ (1/2)) :
     0 < central_bandB_P0.polynomial.eval x :=
   central_bandB_P0_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandB P, row 1. -/
+/-- The polynomial `centralBandP bandB_Cminus bandB_D` for `bandB_sides`,
+expanded in powers of `u`, on `[1/2, 1]`. -/
 def central_bandB_P1 : Arithmetic.BernsteinRow :=
   { interval := ⟨(1/2),1⟩
     polynomial := [(5759271769/40000000000), (-130551593/2000000000), (-3465819669/40000000000), (-190363/50000), (270512580331/40000000000), (1660671593/2000000000), (-146531128231/40000000000)]
@@ -190,7 +217,8 @@ theorem central_bandB_P1_valid : central_bandB_P1.Valid (915056701/2560000000000
 theorem central_bandB_P1_positive {x : ℝ} (hx : ((1/2) : ℝ) ≤ x ∧ x ≤ 1) :
     0 < central_bandB_P1.polynomial.eval x :=
   central_bandB_P1_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandB V, row 0. -/
+/-- The polynomial `centralBandV (107/200) bandB_Cplus bandB_D` for `bandB_sides`,
+expanded in powers of `u`, on `[0, 3/14]`. -/
 def central_bandB_V0 : Arithmetic.BernsteinRow :=
   { interval := ⟨0,(3/14)⟩
     polynomial := [(4789/40000), (-166767/200000), (15211/20000), (594767/200000), (-35211/40000)]
@@ -202,7 +230,8 @@ theorem central_bandB_V0_valid : central_bandB_V0.Valid (25928687/15366400000) :
 theorem central_bandB_V0_positive {x : ℝ} (hx : (0 : ℝ) ≤ x ∧ x ≤ (3/14)) :
     0 < central_bandB_V0.polynomial.eval x :=
   central_bandB_V0_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandB V, row 1. -/
+/-- The polynomial `centralBandV (107/200) bandB_Cplus bandB_D` for `bandB_sides`,
+expanded in powers of `u`, on `[3/14, 15/56]`. -/
 def central_bandB_V1 : Arithmetic.BernsteinRow :=
   { interval := ⟨(3/14),(15/56)⟩
     polynomial := [(4789/40000), (-166767/200000), (15211/20000), (594767/200000), (-35211/40000)]
@@ -214,7 +243,8 @@ theorem central_bandB_V1_valid : central_bandB_V1.Valid (30053507/61465600000) :
 theorem central_bandB_V1_positive {x : ℝ} (hx : ((3/14) : ℝ) ≤ x ∧ x ≤ (15/56)) :
     0 < central_bandB_V1.polynomial.eval x :=
   central_bandB_V1_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandB V, row 2. -/
+/-- The polynomial `centralBandV (107/200) bandB_Cplus bandB_D` for `bandB_sides`,
+expanded in powers of `u`, on `[15/56, 9/28]`. -/
 def central_bandB_V2 : Arithmetic.BernsteinRow :=
   { interval := ⟨(15/56),(9/28)⟩
     polynomial := [(4789/40000), (-166767/200000), (15211/20000), (594767/200000), (-35211/40000)]
@@ -226,7 +256,8 @@ theorem central_bandB_V2_valid : central_bandB_V2.Valid (1401939853/786759680000
 theorem central_bandB_V2_positive {x : ℝ} (hx : ((15/56) : ℝ) ≤ x ∧ x ≤ (9/28)) :
     0 < central_bandB_V2.polynomial.eval x :=
   central_bandB_V2_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- Source: CENTRAL_BAND_COMMON_POINT_LEMMAS.md, polynomial bandB V, row 3. -/
+/-- The polynomial `centralBandV (107/200) bandB_Cplus bandB_D` for `bandB_sides`,
+expanded in powers of `u`, on `[9/28, 3/7]`. -/
 def central_bandB_V3 : Arithmetic.BernsteinRow :=
   { interval := ⟨(9/28),(3/7)⟩
     polynomial := [(4789/40000), (-166767/200000), (15211/20000), (594767/200000), (-35211/40000)]

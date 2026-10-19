@@ -2,8 +2,13 @@ module
 
 public import SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch
 
-/-! The same rows and coverage for the enhanced targets: the rows were checked
-against them, and the coverage walk does not involve the targets. -/
+/-!
+# Eight squares: the affine table `CandidateCoarseMismatch` at its enhanced targets
+
+The rows of the table are checked against the targets raised by `enhancement`, and
+the coverage walk does not involve the targets, so the same rows and coverage give
+the charged bound for the raised targets (`enhanced_charged_bound`).
+-/
 
 @[expose] public section
 noncomputable section

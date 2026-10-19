@@ -13,8 +13,30 @@ public import SquaresInCircles.Eight.Generated.Affine.TUpperAffine
 public import SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.Enhanced
 public import SquaresInCircles.Eight.Candidate.Mismatch
 
-/-! Complete F7/F8 affine-table instances in their dependency order.
-All Lean source and generated decision proof scripts remain uncompiled. -/
+/-!
+# Eight squares: the candidate budgets from the affine tables
+
+The affine tables of `Generated/Affine/` are applied at the level `Q1` to a boundary cycle with a
+candidate frame and `τ_E ≤ 0`. A table gives a charged bound (`ChargedBound`), with its charge
+and targets, once the cycle satisfies its context: every tangent in its cut, every frame
+difference in its range and every separating axis allowed; its radius is `Q1`
+(`affineBudgets_radius`).
+
+The tangent cuts come first, each from the earlier ones. A table with charge `0` whose targets add
+up to more than `2π` excludes the cycles whose tangents lie in its cuts: `τ_G ≤ -4/5` and
+`τ_G ≥ -1/20` (`g_lower_excluded`, `g_upper_excluded`, so `g_cut`), then `τ_T ≤ 1/20` and
+`τ_T ≥ 4/5` (`t_lower_excluded`, `t_upper_excluded`, so `t_cut`), then `τ_H ≤ 1/2` and
+`τ_D ≥ -1/2` (`h_lower_excluded`, `d_upper_excluded`, so `hd_cut`). Under the cuts of `E`, `G`
+and `T` the coarse table also shows that no edge joins two squares with primary coordinate at most
+`7/12` (`no_adjacent_core`, by `Candidate/GeometricCoreMarker.lean`), which the later tables use
+for their core/core pairs.
+
+Then come the charged bounds of the mismatch chain of `Candidate/Mismatch.lean`: the coarse bound
+and its enhancement by the retained reserves (`coarse_bound`, `enhanced_bound`), and the bounds at
+mismatch at most `13/50`, `1/10` and `3/200` (`middle_bound`, `intermediate_bound`,
+`final_bound`), the last with the axes of the aligned edges restricted to the zero and quarter
+owners. `Candidate/Capture.lean` chains them.
+-/
 
 @[expose] public section
 noncomputable section
@@ -32,14 +54,16 @@ theorem affineBudgets_fin4 (j : Fin 4) : j=0 ∨ j=1 ∨ j=2 ∨ j=3 := by
 theorem affineBudgets_all_axes (a : ForwardAxis) : a∈[.one,.two,.three,.four] := by
   cases a <;> simp
 
-/-- Every table records the radius `Q1` as a rational number. These helpers are
-public because the exposed budget definitions below use them. -/
+/-- Every table records the level `Q1` as the rational `1957767069/500000000`. -/
 theorem affineBudgets_radius {r : ℚ} (h : r = 1957767069/500000000) :
     (r : ℝ) = Q1 := by
   rw [h, Q1]
   push_cast
   ring
 
+/-- A cycle at the level `Q1` with a candidate frame and `τ_E ≤ 0` has `τ_G > -4/5`: on
+`τ_G ≤ -4/5` the table `GLowerAffine` has charge `0` and seven targets `8977/10000`, which add up
+to more than `2π`. -/
 theorem g_lower_excluded {C : BoundaryCycle Q1} (F : Frame C)
     (hE : EHalf C)
     (hFail : C.tangent G≤ -4/5) : False := by
@@ -88,6 +112,7 @@ theorem g_lower_excluded {C : BoundaryCycle Q1} (F : Frame C)
   have hpi := two_pi_lt_710_over_113
   linarith
 
+/-- Likewise `τ_G < -1/20`, by the table `GUpperAffine`. -/
 theorem g_upper_excluded {C : BoundaryCycle Q1} (F : Frame C)
     (hE : EHalf C)
     (hFail : -1/20≤C.tangent G) : False := by
@@ -136,6 +161,8 @@ theorem g_upper_excluded {C : BoundaryCycle Q1} (F : Frame C)
   have hpi := two_pi_lt_710_over_113
   linarith
 
+/-- With the cut of `G`, also `τ_T > 1/20`, by the table `TLowerAffine`, whose seven targets are
+`561/625`. -/
 theorem t_lower_excluded {C : BoundaryCycle Q1} (F : Frame C)
     (hE : EHalf C) (hG : GCut C)
     (hFail : C.tangent T≤1/20) : False := by
@@ -186,6 +213,7 @@ theorem t_lower_excluded {C : BoundaryCycle Q1} (F : Frame C)
   have hpi := two_pi_lt_710_over_113
   linarith
 
+/-- With the cut of `G`, also `τ_T < 4/5`, by the table `TUpperAffine`. -/
 theorem t_upper_excluded {C : BoundaryCycle Q1} (F : Frame C)
     (hE : EHalf C) (hG : GCut C)
     (hFail : 4/5≤C.tangent T) : False := by
@@ -283,8 +311,8 @@ theorem coarse_context (C : BoundaryCycle (SquaresInCircles.Eight.Generated.Affi
       norm_num [charge,charged,coarseBeta]
   exact ⟨hb, hcuts, hdiff, haxes⟩
 
-/-- No edge of a cycle with the cuts `E`, `G` and `T` joins two core squares, by the coarse
-table. -/
+/-- No edge of a cycle with the cuts of `E`, `G` and `T` joins two squares with primary coordinate
+at most `7/12` (`NoAdjacentCore`), in particular two core squares, by the coarse table. -/
 theorem no_adjacent_core {C : BoundaryCycle Q1} (F : Frame C)
     (hE : EHalf C) (hG : GCut C) (hT : TCut C) : NoAdjacentCore C := by
   revert C
@@ -293,6 +321,8 @@ theorem no_adjacent_core {C : BoundaryCycle Q1} (F : Frame C)
   obtain ⟨hb, hcuts, hdiff, haxes⟩ := coarse_context C F hE hG hT
   exact SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch.no_adjacent_core C F coarseBeta (by norm_num [coarseBeta]) hb hcuts hdiff haxes
 
+/-- With the cuts of `E`, `G` and `T`, also `τ_H > 1/2`, by the table `HLowerAffine`, whose
+core/core pairs are excluded by `no_adjacent_core`. -/
 theorem h_lower_excluded {C : BoundaryCycle Q1} (F : Frame C)
     (hE : EHalf C) (hG : GCut C) (hT : TCut C)
     (hFail : C.tangent H≤1/2) : False := by
@@ -346,6 +376,8 @@ theorem h_lower_excluded {C : BoundaryCycle Q1} (F : Frame C)
   have hpi := two_pi_lt_710_over_113
   linarith
 
+/-- With the cuts of `E`, `G` and `T`, also `τ_D < -1/2`, by the table `DUpperAffine`, whose seven
+targets are `17953/20000`. -/
 theorem d_upper_excluded {C : BoundaryCycle Q1} (F : Frame C)
     (hE : EHalf C) (hG : GCut C) (hT : TCut C)
     (hFail : -1/2≤C.tangent D) : False := by
@@ -399,22 +431,27 @@ theorem d_upper_excluded {C : BoundaryCycle Q1} (F : Frame C)
   have hpi := two_pi_lt_710_over_113
   linarith
 
+/-- The cut `-4/5 < τ_G < -1/20`. -/
 theorem g_cut {C : BoundaryCycle Q1} (F : Frame C) (hE : EHalf C) : GCut C := by
   constructor
   · by_contra! hFail; exact g_lower_excluded F hE hFail
   · by_contra! hFail; exact g_upper_excluded F hE hFail
 
+/-- The cut `1/20 < τ_T < 4/5`. -/
 theorem t_cut {C : BoundaryCycle Q1} (F : Frame C) (hE : EHalf C) (hG : GCut C) : TCut C := by
   constructor
   · by_contra! hFail; exact t_lower_excluded F hE hG hFail
   · by_contra! hFail; exact t_upper_excluded F hE hG hFail
 
+/-- The cuts `τ_H > 1/2` and `τ_D < -1/2`. -/
 theorem hd_cut {C : BoundaryCycle Q1} (F : Frame C)
     (hE : EHalf C) (hG : GCut C) (hT : TCut C) : HDCut C := by
   constructor
   · by_contra! hFail; exact h_lower_excluded F hE hG hT hFail
   · by_contra! hFail; exact d_upper_excluded F hE hG hT hFail
 
+/-- The charged bound of the coarse table under the cuts of `E`, `G` and `T`: charge `coarseBeta`
+and targets `coarseGamma`. -/
 noncomputable def coarse_bound {C : BoundaryCycle Q1} (F : Frame C)
     (hE : EHalf C) (hG : GCut C) (hT : TCut C)
     : ChargedBound C F (coarseBeta) coarseGamma := by
@@ -433,6 +470,8 @@ noncomputable def coarse_bound {C : BoundaryCycle Q1} (F : Frame C)
   rw [hγ] at P
   exact P
 
+/-- The charged bound of the table `Mismatch026To01Affine` with the cuts of `E`, `G`, `T`, `H` and
+`D` at mismatch at most `13/50`: charge `1/400` and targets `middleGamma`. -/
 noncomputable def middle_bound {C : BoundaryCycle Q1} (F : Frame C)
     (hE : EHalf C) (hG : GCut C) (hT : TCut C) (hHD : HDCut C)
     (hS : mismatch F.theta≤13/50)
@@ -503,6 +542,8 @@ noncomputable def middle_bound {C : BoundaryCycle Q1} (F : Frame C)
   rw [hγ] at P
   exact P
 
+/-- The charged bound of the table `Mismatch01To015Affine` with the cuts of `E`, `G` and `T` and the
+signs at mismatch at most `1/10`: charge `1/200` and targets `intermediateGamma`. -/
 noncomputable def intermediate_bound {C : BoundaryCycle Q1} (F : Frame C)
     (hE : EHalf C) (hG : GCut C) (hT : TCut C) (hSigns : Signs C)
     (hS : mismatch F.theta≤1/10)
@@ -577,6 +618,9 @@ noncomputable def intermediate_bound {C : BoundaryCycle Q1} (F : Frame C)
   rw [hγ] at P
   exact P
 
+/-- The charged bound of the table `Mismatch015To001Affine` with the tangent cuts, the signs, the
+zero owners and the quarter owners at mismatch at most `3/200`: charge `1/20` and targets
+`finalGamma`. -/
 noncomputable def final_bound {C : BoundaryCycle Q1} (F : Frame C)
     (hE : EHalf C) (hG : GCut C) (hT : TCut C) (hHD : HDCut C) (hSigns : Signs C)
     (hZero : ZeroOwners C) (hQuarter : QuarterOwners C)
@@ -660,6 +704,8 @@ noncomputable def final_bound {C : BoundaryCycle Q1} (F : Frame C)
   rw [hγ] at P
   exact P
 
+/-- The charged bound of the coarse table with the retained reserves, under the cuts of `E`, `G`
+and `T`: charge `coarseBeta` and targets `enhancedGamma`. -/
 noncomputable def enhanced_bound {C : BoundaryCycle Q1} (F : Frame C)
     (hE : EHalf C) (hG : GCut C) (hT : TCut C) :
     ChargedBound C F coarseBeta enhancedGamma := by

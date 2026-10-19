@@ -15,10 +15,11 @@ rotation and reflection of the cycle there are seven admissible words
 these symmetries, and it concerns the quarter increments only, whatever the radial curves of the
 squares.
 
-The classification and the count run through all `3 ^ 7` words as digit vectors: the kernel
-evaluates Boolean checks on the seven digits and never enumerates the function type itself. The
-facts about words with a digit `2` then follow from the classification, because sums over
-positions are invariant under rotation and reflection.
+The classification runs through all `3 ^ 7` words as digit vectors: the kernel evaluates
+Boolean checks on the seven digits and never enumerates the function type itself. The summed
+cost bound of the words with a digit `2` then follows from the classification
+(`double_word_cost_numerator`), because sums over positions are invariant under rotation and
+reflection.
 
 If the frames lie in an interval shorter than `7/10` and the gaps exceed `19/25`, the word of the
 cycle is admissible (`QuarterLift.word_admissible`): a digit below `0` or above `2` would make a

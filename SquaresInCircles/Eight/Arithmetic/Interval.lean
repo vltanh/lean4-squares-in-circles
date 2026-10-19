@@ -4,10 +4,19 @@ public import SquaresInCircles.Common.Trigonometry
 public import Mathlib
 
 /-!
-# Exact rational intervals
+# Eight squares: rational intervals
 
-Uncompiled formalization draft.  Every comparison below is an ordinary
-ordered-field proposition.  No external evaluation result is a premise.
+A `QInterval` is a pair of rationals `lo` and `hi`, read as the closed interval `[lo, hi]` of
+reals (`QInterval.Mem`). The operations `add`, `neg`, `sub`, `mul`, `inv` and `pow` act on the
+endpoints, and each has a membership lemma: the interval of an operation contains the result of
+the operation on members of the operands, for `inv` when the operand interval has `lo > 0`. A
+product lies between the four products of the endpoints (`product_between_corners`), and a
+nonnegative interval whose endpoints square to bounds of the interval of `x` contains `√x`
+(`mem_sqrt`).
+
+`ScalarExpr.lean` evaluates expressions in these intervals, `Fixed.lean` encloses them by
+fixed-point intervals, and the arcs, cuts and angle intervals of the affine tables are given as
+such intervals (`AffineTableData.lean`).
 -/
 
 @[expose] public section
@@ -15,21 +24,26 @@ noncomputable section
 
 namespace SquaresInCircles.Eight.Arithmetic
 
+/-- A closed interval `[lo, hi]` with rational endpoints. -/
 structure QInterval where
   lo : ℚ
   hi : ℚ
 
 namespace QInterval
 
+/-- The real `x` lies in `[lo, hi]`. -/
 def Mem (I : QInterval) (x : ℝ) : Prop := (I.lo : ℝ) ≤ x ∧ x ≤ (I.hi : ℝ)
 def point (q : ℚ) : QInterval := ⟨q,q⟩
 def add (I J : QInterval) : QInterval := ⟨I.lo+J.lo,I.hi+J.hi⟩
 def neg (I : QInterval) : QInterval := ⟨-I.hi,-I.lo⟩
 def sub (I J : QInterval) : QInterval := add I (neg J)
+/-- The product: from the least to the greatest of the four products of the endpoints. -/
 def mul (I J : QInterval) : QInterval :=
   ⟨min (min (I.lo*J.lo) (I.lo*J.hi)) (min (I.hi*J.lo) (I.hi*J.hi)),
    max (max (I.lo*J.lo) (I.lo*J.hi)) (max (I.hi*J.lo) (I.hi*J.hi))⟩
+/-- The reciprocal `[1 / hi, 1 / lo]`, an enclosure when `lo > 0` (`mem_inv_pos`). -/
 def inv (I : QInterval) : QInterval := ⟨I.hi⁻¹,I.lo⁻¹⟩
+/-- The `n`-th power, by repeated products. -/
 def pow (I : QInterval) : ℕ → QInterval
   | 0 => point 1
   | n+1 => mul (pow I n) I
@@ -51,8 +65,8 @@ theorem mem_sub {I J : QInterval} {x y : ℝ} (hx : I.Mem x) (hy : J.Mem y) :
     (I.sub J).Mem (x-y) := by
   simpa [sub_eq_add_neg,sub] using mem_add hx (mem_neg hy)
 
-/-- A bilinear function on a rectangle lies between its four corner values.
-This elementary proof also covers degenerate intervals. -/
+/-- For `x ∈ [l, u]` and `y ∈ [L, U]`, the product `x y` lies between every lower and every
+upper bound of the four products `l L`, `l U`, `u L` and `u U`. -/
 theorem product_between_corners {l u L U x y m M : ℝ}
     (hx : l ≤ x ∧ x ≤ u) (hy : L ≤ y ∧ y ≤ U)
     (hlo : m ≤ l*L ∧ m ≤ l*U ∧ m ≤ u*L ∧ m ≤ u*U)
@@ -126,7 +140,8 @@ theorem mem_inv_pos {I : QInterval} {x : ℝ} (hI : 0 < I.lo) (hx : I.Mem x) :
   push_cast
   exact ⟨inv_anti₀ hx0 hx.2,inv_anti₀ hIl hx.1⟩
 
-/-- Square-root enclosures are justified by their squared rational endpoints. -/
+/-- For `x ∈ I` with `I.lo ≥ 0`, a nonnegative interval `J` with `J.lo² ≤ I.lo` and
+`I.hi ≤ J.hi²` contains `√x`. -/
 theorem mem_sqrt {I J : QInterval} {x : ℝ}
     (hx : I.Mem x) (hI : 0 ≤ I.lo) (hJ : 0 ≤ J.lo)
     (hl : J.lo^2 ≤ I.lo) (hu : I.hi ≤ J.hi^2) (hJu : 0 ≤ J.hi) :

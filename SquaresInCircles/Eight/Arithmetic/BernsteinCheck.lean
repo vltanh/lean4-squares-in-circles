@@ -3,13 +3,15 @@ module
 public import SquaresInCircles.Eight.Arithmetic.Bernstein
 
 /-!
-# A Boolean test for Bernstein rows
+# Eight squares: a Boolean test for Bernstein rows
 
-`BernsteinRow.check` decides the three conditions of `BernsteinRow.Valid` by exact rational
-arithmetic on coefficient lists. The expansion identity is tested coefficientwise: the
-polynomial is moved to `[0, 1]` by Horner's rule, the Bernstein form is expanded in powers
-of `t`, and every coefficient of the difference must vanish. The kernel evaluates the test,
-and `BernsteinRow.valid_of_check` turns its success into `Valid`.
+`BernsteinRow.check` decides the three conditions of `BernsteinRow.Valid` (`Bernstein.lean`) by
+exact rational arithmetic on coefficient lists. The expansion identity is tested
+coefficientwise: the polynomial is moved to `[0, 1]` by Horner's rule (`QPoly.compLinear`), the
+Bernstein form is expanded in powers of `t` (`QPoly.bernsteinSum`), and every coefficient of the
+difference (`BernsteinRow.residual`) must vanish. The kernel evaluates the test, and
+`BernsteinRow.valid_of_check` turns its success into `Valid`. The nineteen rows of the central
+band (`Generated/WholePairPolynomials000.lean`) are proved valid in this way.
 -/
 
 @[expose] public section
@@ -115,9 +117,10 @@ def BernsteinRow.check (r : BernsteinRow) (margin : ℚ) : Bool :=
     (List.range (r.degree + 1)).all (fun i => decide (margin ≤ r.coefficient i)) &&
     r.residual.all (fun c => c == 0)
 
+/-- A row that passes the test is valid. -/
 theorem BernsteinRow.valid_of_check {r : BernsteinRow} {margin : ℚ}
     (h : r.check margin = true) : r.Valid margin := by
-  simp only [check, Bool.and_eq_true, decide_eq_true_eq, beq_iff_eq] at h
+  simp only [check, Bool.and_eq_true, decide_eq_true_eq] at h
   obtain ⟨⟨horder, hmargin⟩, hres⟩ := h
   refine ⟨horder, fun t => ?_, fun i hi => ?_⟩
   · have h0 := QPoly.eval_eq_zero hres t

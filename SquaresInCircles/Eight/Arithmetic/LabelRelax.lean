@@ -3,20 +3,27 @@ module
 public import SquaresInCircles.Eight.Arithmetic.RowCheck
 
 /-!
-# Affine bounds of quadratic labels on an arc
+# Eight squares: affine bounds of quadratic labels on an arc
 
-A label of the pair tables is `c + p a + q b + r b² + s a b`, where the constant `c` is known
-only to lie in a rational interval `[c⁻, c⁺]` (it contains `π` or a square root). An arc of a
-table carries an affine label `ℓ`: below the label for a source arc, above it for a target arc.
+A label of the pair tables is `c + p a + q b + r b² + s a b` (`QuadLabel`), where the constant
+`c` is only known to lie in a rational interval `[c⁻, c⁺]`, a single point unless `c` involves
+`π` or a square root. The rows of a table are stated with affine labels, so each arc of a table
+carries an affine label `ℓ` that bounds the quadratic label of its end on the arc: from below for
+a source arc, from above for a target arc (`ArcData.Bounds`). Only the labels of the quarter word
+`0011011` have `r` or `s` nonzero (`WordProblems.lean`).
 
-On a circle chart `a² + b² = κ₀ + κ₁ (a + b)`, and each of `a`, `b`, `a + b`, `a - b` lies
-between bounds `x⁻ ≤ x ≤ x⁺` on the arc, so `(x - x⁻)(x⁺ - x) ≥ 0`. With multipliers `μ ≥ 0`
-fixed by the signs of `r` and `s`, the difference of the label and `ℓ`, minus these products
-and a multiple of the circle identity, is an affine function `e₀ + e₁ a + e₂ b`; the check is
-that its minimum over the box `[a⁻, a⁺] × [b⁻, b⁺]` is nonnegative. On the core side
-`a = 7/12`, and `b²` is bounded above by its secant or below by its midpoint tangent.
+On a circle chart `a² + b² = κ₀ + κ₁ (a + b)` (`kappa0`, `kappa1`), and each of `a`, `b`,
+`a + b`, `a - b` lies between bounds `x⁻ ≤ x ≤ x⁺` on the arc (`Ranges`), so
+`(x - x⁻)(x⁺ - x) ≥ 0`. With multipliers `μ ≥ 0` fixed by the signs of `r` and `s`, the
+difference of the label and `ℓ`, minus these products and a multiple of the circle identity, is
+an affine function `e₀ + e₁ a + e₂ b` (`circleRemainder`); the check is that its minimum over the
+box `[a⁻, a⁺] × [b⁻, b⁺]` is nonnegative. On the core side `a = 7/12`, and `b²` is bounded above
+by its secant or below by its tangent at the midpoint (`sideRemainder`). The bounds `x⁻` and
+`x⁺` are the lower bounds `sourceLower` of `±x` on the arc box of the table (`RowCheck.lean`).
 
-The bounds `x⁻` and `x⁺` are `sourceLower` of `±x` on the arc box of the table.
+`labelsCheck` checks every arc of a table against its entry of `specs`, a quadratic label and
+the side it is bounded from, and `labelsCheck_sound` gives `SpecsHold`. The leaves of the
+coverage trees (`PairCover.lean`) use it to pass from the rows to the problems.
 -/
 
 @[expose] public section
@@ -102,6 +109,8 @@ structure Ranges where
   dL : ℚ
   dH : ℚ
 
+/-- The ranges of the arc of a box, from the lower bounds of `±a`, `±b`, `±(a + b)` and
+`±(a - b)` on it. -/
 def Ranges.ofBox (B : ArcBox) : Ranges :=
   ⟨boxLower B 1 0, -boxLower B (-1) 0, boxLower B 0 1, -boxLower B 0 (-1),
     boxLower B 1 1, -boxLower B (-1) (-1), boxLower B 1 (-1), -boxLower B (-1) 1⟩
@@ -133,17 +142,20 @@ theorem Ranges.ofBox_holds {B : ArcBox} {P : PreparedArc} (hB : B.Encloses P) {a
 /-! ### The affine remainder -/
 
 /-- The coefficients `(e₀, e₁)` of the remainder `e₀ + e₁ b` on the core side `a = 7/12`, for
-the difference `d₀ + d₁ a + d₂ b + r b² + s a b`: `b²` is replaced by its secant on `[b⁻, b⁺]`
-when `r ≤ 0` and by its tangent at the midpoint `m` when `r > 0`. -/
+the difference `d₀ + d₁ a + d₂ b + r b² + s a b`: `b²` is bounded above by its secant on
+`[b⁻, b⁺]` when `r ≤ 0` and below by its tangent at the midpoint when `r > 0`. -/
 def sideRemainder (R : Ranges) (d0 d1 d2 r s : ℚ) : ℚ × ℚ :=
   if r ≤ 0 then (d0 + 7 / 12 * d1 - r * (R.bL * R.bH), d2 + 7 / 12 * s + r * (R.bL + R.bH))
   else (d0 + 7 / 12 * d1 - r * ((R.bL + R.bH) / 2) ^ 2, d2 + 7 / 12 * s + r * (R.bL + R.bH))
 
-/-- The multipliers of `(a - a⁻)(a⁺ - a)`, `(b - b⁻)(b⁺ - b)`, `(a - b - d⁻)(d⁺ - a + b)` and
-`(a + b - s⁻)(s⁺ - a - b)`: they cancel `r b² + s a b` together with the circle identity. -/
+/-- The multiplier `μ_a` of `(a - a⁻)(a⁺ - a)`. With `μ_b`, `μ_d`, `μ_s` and the circle identity
+it cancels `r b² + s a b`. -/
 def muA (r : ℚ) : ℚ := max r 0
+/-- The multiplier `μ_b` of `(b - b⁻)(b⁺ - b)`. -/
 def muB (r : ℚ) : ℚ := max (-r) 0
+/-- The multiplier `μ_d` of `(a - b - d⁻)(d⁺ - a + b)`. -/
 def muD (s : ℚ) : ℚ := max s 0 / 2
+/-- The multiplier `μ_s` of `(a + b - s⁻)(s⁺ - a - b)`. -/
 def muS (s : ℚ) : ℚ := max (-s) 0 / 2
 
 /-- The coefficients `(e₀, e₁, e₂)` of the remainder on a circle chart
@@ -253,8 +265,11 @@ theorem circleOK_sound {R : Ranges} {e : ℚ × ℚ × ℚ} (h : circleOK R e = 
   have h2 := min_mul_le (e := (e.2.2 : ℝ)) hR.bL hR.bH
   linarith
 
-/-- `a² + b² = κ₀ + κ₁ (a + b)` on the outer circle and on the core corner. -/
+/-- The constant `κ₀` of `a² + b² = κ₀ + κ₁ (a + b)` on the outer circle and on the core
+corner. -/
 def kappa0 (Q : ℚ) (outer : Bool) : ℚ := if outer then Q - 1 / 2 else -71 / 144
+/-- The coefficient `κ₁` of `a² + b² = κ₀ + κ₁ (a + b)` on the outer circle and on the core
+corner. -/
 def kappa1 (outer : Bool) : ℚ := if outer then -1 else 1
 
 /-- `ℓ ≤ L` on the arc whose box is `B`: the remainder of `L - ℓ` is nonnegative on the box of
@@ -313,7 +328,8 @@ theorem lowerCheck_sound {Q : ℚ} {B : ArcBox} {arc : ArcData}
     push_cast at hrem
     linarith
 
-/-- The check of one arc against its quadratic label: below it (`lower`) or above it. -/
+/-- The check of one arc against a quadratic label: its affine label below it (`lower`) or above
+it. -/
 def labelCheck (Q : ℚ) (B : ArcBox) (arc : ArcData) (L : QuadLabel) (lower : Bool) : Bool :=
   if lower then lowerCheck Q B arc.side arc.outer L arc.label
   else lowerCheck Q B arc.side arc.outer L.neg arc.label.neg

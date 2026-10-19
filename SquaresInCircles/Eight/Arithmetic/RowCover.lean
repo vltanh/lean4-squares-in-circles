@@ -4,18 +4,23 @@ public import SquaresInCircles.Eight.Arithmetic.AtanBounds
 public import SquaresInCircles.Eight.Arithmetic.AffineCoverage
 
 /-!
-# A linear check of the angle coverage of an affine table
+# Eight squares: the check of the angle coverage of an affine table
 
 For every pair of arcs with consecutive roles, every allowed axis and both halves, the required
-angles `AffineCover.required` must lie in the angle intervals of the rows of that pair, axis
-and half (`AffineCover.AngleCovers`). The rows are sorted by (source, target, axis, half). A
-walk over the arc pairs of a block of sources, in the same order, takes the rows of each key
-from the front of the remaining list and checks that they cover the required interval
-(`coverBlock`); blocks covering all sources give the coverage (`coverBlocks_sound`). The keys
-whose axis no feasible separator has (`ExcludedArcs`) are skipped, and with `core` the pairs of
-two core arcs. The required interval is
-enclosed by integers over `unit * den`, from fixed-point enclosures of the arctangent intervals
-of the arcs, which `alphasRange` checks against the integer arctangent bounds of `AtanBounds`.
+interval of `u` (`AffineCover.required`) must lie in the angle intervals of the rows of that pair,
+axis and half, on the edge of the source role with its quarter (`AffineCover.AngleCovers`). The
+rows are sorted by source, target, axis and half. A walk over the arc pairs of a block of sources,
+in the same order, takes the rows of each key from the front of the remaining list and checks that
+they cover the required interval as a chain (`coverBlock`); walks over blocks covering all sources
+give the coverage (`coverBlocks_sound`). The keys whose axis is excluded (`ExcludedArcs`) are
+skipped, and with `core` the pairs of two core arcs. A walk starts at a given row of a given chunk
+of the rows (`rowsFrom`), so that the kernel does not walk through all the rows before it.
+
+The required interval is enclosed by integers over `unit · den`, from fixed-point enclosures of
+the gap, the base angles, the ranges of the frame differences and the arctangent intervals of the
+arcs (`CoverCtx`, `required_bounds`). The arctangent intervals come from the integer bounds of
+`AtanBounds.lean` (`atanInterval`, `endpointsValid_atanEnds`), and `alphasRange` checks the
+fixed-point enclosures against them (`CoverCtx.valid_of`).
 -/
 
 @[expose] public section
@@ -51,11 +56,11 @@ theorem QInterval.mem_of_mem_inter {I J : QInterval} {x : ℝ} (h : (I.inter J).
 def rawAngle (gap base αs αt : FI) (r : Bool) : FI :=
   if r then ((gap.sub αs).add αt).sub base else base.sub ((gap.sub αs).add αt)
 
-/-- The lower end over `unit * den` of the required interval. -/
+/-- The lower end over `unit · den` of the required interval. -/
 def reqLo (den : Nat) (raw : FI) (dlo : Int) : Int :=
   imax (imax (imul raw.lo (Int.ofNat den)) dlo) (Int.ofNat 0)
 
-/-- The upper end over `unit * den` of the required interval. -/
+/-- The upper end over `unit · den` of the required interval. -/
 def reqHi (den : Nat) (raw : FI) (dhi : Int) : Int :=
   imin (imin (imul raw.hi (Int.ofNat den)) dhi) (ifloor (imul (Int.ofNat 7) (imul unit (Int.ofNat den))) 10)
 
@@ -68,7 +73,7 @@ theorem reqHi_eq (den : Nat) (raw : FI) (dhi : Int) :
   simp (disch := norm_num) [reqHi, ifloor_eq, Int.ofNat_eq_natCast]
 
 /-- The fixed-point data of the angle coverage: the angle scale, the gap interval, per role the
-base angle and the difference range over `unit * den`, per arc its arctangent interval. -/
+base angle and the difference range over `unit · den`, per arc its arctangent interval. -/
 structure CoverCtx where
   den : Nat
   gap : FI
@@ -77,6 +82,8 @@ structure CoverCtx where
   dHi : List Int
   alphas : List FI
 
+/-- The fixed-point coverage data enclose those of the table: the gap, the base angles, the
+ranges of the frame differences (exactly) and the arctangent intervals of the arcs. -/
 structure CoverCtx.Valid (K : AffineCover) (M : AffineTableMeta) (C : CoverCtx) : Prop where
   den_pos : 0 < C.den
   gap : C.gap.Covers ⟨19/25, 710/113-114/25⟩
@@ -171,6 +178,7 @@ theorem required_bounds {K : AffineCover} {M : AffineTableMeta} {C : CoverCtx}
 
 /-! ### The walk over the arc pairs -/
 
+/-- The number `1, …, 4` of an axis. -/
 def axisNum : ForwardAxis → Nat
   | .one => 1
   | .two => 2
@@ -213,7 +221,7 @@ theorem div_unit_den (n : Nat) {den : Nat} (hden : 0 < den) :
   push_cast
   field_simp
 
-/-- Every angle of `[lo, hi]` (over `unit * den`) lies in a row of `R` of key `(s, t, a, r)`
+/-- Every angle of `[lo, hi]` (over `unit · den`) lies in a row of `R` of key `(s, t, a, r)`
 on edge `i` with quarter `w`. -/
 def KeyCovered (den s t i w a : Nat) (r : Bool) (lo hi : Int) (R : List AffineRow) : Prop :=
   ∀ u : ℝ, (lo : ℝ) / ((unit : ℝ) * den) ≤ u → u ≤ (hi : ℝ) / ((unit : ℝ) * den) →
@@ -228,7 +236,7 @@ theorem KeyCovered.mono {den s t i w a : Nat} {r : Bool} {lo hi : Int} {R R₀ :
   exact ⟨x, hsub x hx, hrest⟩
 
 /-- One pass over the rows of a key at the front of a list, from the point `cur` on (over
-`unit * den`): each row starts at or before the point reached so far and is on edge `i` with
+`unit · den`): each row starts at or before the point reached so far and is on edge `i` with
 quarter `w`; once a row reaches `hi` (`done`), the other rows of the key are passed over. The
 result is the list after the rows of the key, once `hi` is reached. -/
 def walkKey (key : AffineRow → Bool) (i w : Nat) (hi : Int) (R : List AffineRow) :
@@ -379,7 +387,7 @@ theorem coverAxes_sound {den s t i w : Nat} (hden : 0 < den) {gap base αs αt :
       simp only [coverAxes] at h
       cases hex : ex (axisNum a) with
       | true =>
-          simp only [hex, cond_true] at h
+          simp only [hex, Bool.cond_true] at h
           obtain ⟨s3, k3⟩ := coverAxes_sound hden h
           refine ⟨s3, fun b hb hb' r => ?_⟩
           rcases List.mem_cons.mp hb with rfl | hb
@@ -387,7 +395,7 @@ theorem coverAxes_sound {den s t i w : Nat} (hden : 0 < den) {gap base αs αt :
             exact absurd hb' (by decide)
           · exact k3 b hb hb' r
       | false =>
-      simp only [hex, cond_false] at h
+      simp only [hex, Bool.cond_false] at h
       split at h
       · simp at h
       · rename_i R1 h1
@@ -579,11 +587,12 @@ theorem coverBlocks_sound {K : AffineCover} {M : AffineTableMeta} {C : CoverCtx}
 
 /-! ### The data checked once per table -/
 
-/-- The interval of the arctangent of `x`, from the integer bounds of `PairCover.atanLo` and
-`PairCover.atanHi` over `10 ^ 20`. -/
+/-- The interval of the arctangent of `x`, from the integer bounds `PairCover.atanLo` and
+`PairCover.atanHi` over `10²⁰`. -/
 def atanInterval (x : ℚ) : QInterval :=
   ⟨(PairCover.atanLo x : ℚ) / PairCover.angleUnit, (PairCover.atanHi x : ℚ) / PairCover.angleUnit⟩
 
+/-- The interval contains `arctan x`. -/
 theorem atanInterval_mem (x : ℚ) : (atanInterval x).Mem (Real.arctan x) := by
   constructor
   · have h := PairCover.atanLo_le x
@@ -605,6 +614,7 @@ theorem atanEnds_at (M : AffineTableMeta) (S : StateChains) {k : ℕ} (hk : k < 
   simp [AffineCover.endpointAt, atanEnds, arcAt, List.getD_eq_getElem?_getD,
     List.getElem?_eq_getElem hk]
 
+/-- The arctangent intervals of the endpoints of the arcs are valid. -/
 theorem endpointsValid_atanEnds (M : AffineTableMeta) (S : StateChains) :
     (⟨atanEnds M, S⟩ : AffineCover).EndpointsValid M := by
   intro k
@@ -625,7 +635,7 @@ theorem alphaBox_atanEnds (M : AffineTableMeta) (S : StateChains) {k : ℕ}
     AffineCover.alphaBox ⟨atanEnds M, S⟩ M k = alphaOf (arcAt M k) := by
   simp only [AffineCover.alphaBox, atanEnds_at M S hk, alphaOf]
 
-/-- The same interval in fixed point, exactly: `unit = 10 ^ 4 · 10 ^ 20`. -/
+/-- The same interval in fixed point, exactly: `unit = 10⁴ · 10²⁰`. -/
 def alphaFI (a : ArcData) : FI :=
   bif a.positive then
     ⟨imul (PairCover.atanLo a.tangent.lo) (Int.ofNat 10000),
@@ -644,7 +654,7 @@ theorem alphaFI_covers {F : FI} {a : ArcData} (h : F.wider (alphaFI a) = true) :
   have h1 : (F.lo : ℝ) ≤ (alphaFI a).lo := by exact_mod_cast h.1
   have h2 : ((alphaFI a).hi : ℝ) ≤ F.hi := by exact_mod_cast h.2
   cases hp : a.positive <;>
-    simp only [alphaFI, hp, cond_true, cond_false, imul_eq, ineg_eq, Int.ofNat_eq_natCast,
+    simp only [alphaFI, hp, Bool.cond_true, Bool.cond_false, imul_eq, ineg_eq, Int.ofNat_eq_natCast,
       Nat.cast_ofNat] at h1 h2 <;>
     simp only [FI.Covers, alphaOf, atanInterval, hp, Bool.false_eq_true, ↓reduceIte]
   · constructor
@@ -676,8 +686,8 @@ def alphasRange (arcs : List ArcData) (alphas : List FI) (s c : Nat) : Bool :=
 def chainsOf (d : List (List (List ℕ))) : StateChains :=
   fun i o => nth [] (nth [] d i) (if o then 1 else 0)
 
-/-- The scalar coverage data of a table: the angle scale, the gap, per role the base angle and
-the difference range, and the number of arctangent intervals. -/
+/-- The check of the scalar coverage data of a table: a positive angle scale, the gap, per role
+the base angle and the difference range, and the number of arctangent intervals. -/
 def CoverCtx.checkScalars (M : AffineTableMeta) (C : CoverCtx) : Bool :=
   decide (0 < C.den) && C.gap.wider (FI.ofQI ⟨19/25, 710/113-114/25⟩) &&
     decide (∀ i : Fin 7,

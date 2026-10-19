@@ -18,4 +18,9 @@ public import SquaresInCircles.Eight.Generated.Pairs.Second4
 public import SquaresInCircles.Eight.Generated.Pairs.Second5
 public import SquaresInCircles.Eight.Generated.Pairs.Second6
 
-/-! The 17 pair tables of the quarter-word pair bounds. -/
+/-!
+# Eight squares: the pair tables of the quarter-word pair bounds
+
+The 17 tables of `Generated/Pairs/` whose problems are the quarter-word pair bounds of
+`WordGeometry.lean`; each table proves its problems (`sound`).
+-/

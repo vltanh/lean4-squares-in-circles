@@ -3,21 +3,28 @@ module
 public import SquaresInCircles.Eight.Arithmetic.Interval
 
 /-!
-# Fixed-point intervals for kernel evaluation
+# Eight squares: fixed-point intervals
 
-The tables of eight squares are checked by evaluating Boolean functions in the
-kernel. Rational arithmetic normalizes every result by a gcd, and its numbers
-grow with every product, so it is slow there. Here a number is an integer
-multiple of `1 / unit`, with `unit = 10 ^ 24`; an interval is a pair of such
-integers, and a product is rounded outwards. The table data are decimals with at
-most eight places, so they and their sums are represented exactly.
+The affine and the pair tables are checked by Boolean functions that the kernel evaluates. In
+rational arithmetic every result is reduced by a gcd and the numbers grow with every product,
+which is slow there. Here a number is an integer multiple of `1 / unit`, with `unit = 10²⁴`, and
+an interval `FI` is a pair of such integers, read as `[lo / unit, hi / unit]` (`FI.Mem`). Sums,
+differences and negatives are exact, and a product is rounded outwards (`FI.mul`); each operation
+has its membership lemma (`FI.mem_add`, `FI.mem_sub`, `FI.mem_neg`, `FI.mem_mul`), and `FI.ofQ`
+encloses a rational. Decimals with at most 24 places are exact, and the labels, charges, targets,
+angles and multipliers of the affine tables have at most fourteen.
+
+The integer operations such as `iadd`, `imul`, `ifloor` and `ile` split an integer into its sign
+and magnitude and call the operations of `Nat`, which the kernel evaluates on literals directly;
+each equals the corresponding operation of `Int` (`iadd_eq`, `imul_eq`, `ifloor_eq`, `ile_eq`).
+`TrigLin.lean`, `RowCheck.lean` and `RowCover.lean` compute with them.
 -/
 
 @[expose] public section
 
 namespace SquaresInCircles.Eight.Arithmetic.Fixed
 
-/-- The fixed-point unit `10 ^ 24`. -/
+/-- The fixed-point unit `10²⁴`. -/
 def unit : Int := 1000000000000000000000000
 
 /-- The unit as a natural number. -/
@@ -35,7 +42,7 @@ The kernel computes with natural-number literals directly (`Nat.add`, `Nat.sub`,
 `Nat.div`, `Nat.ble`, `Nat.beq`), but it evaluates an operation of `Int` by unfolding its
 definition, about ten times as slowly, and an arithmetic operator by unfolding its instances
 first. The operations below split an integer by `Int.casesOn` into its sign and magnitude and
-call the operations of `Nat` directly; each equals the operation of `Int` it replaces. -/
+call the operations of `Nat` directly; each equals the corresponding operation of `Int`. -/
 
 /-- `-n` for a natural number `n`. -/
 def negN (n : Nat) : Int := cond (Nat.beq n 0) (Int.ofNat 0) (Int.negSucc (Nat.sub n 1))
@@ -250,6 +257,7 @@ structure FI where
 
 namespace FI
 
+/-- The real `x` lies in `[lo / unit, hi / unit]`. -/
 def Mem (I : FI) (x : ℝ) : Prop := (I.lo : ℝ) / unit ≤ x ∧ x ≤ (I.hi : ℝ) / unit
 
 def add (I J : FI) : FI := ⟨iadd I.lo J.lo, iadd I.hi J.hi⟩

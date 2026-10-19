@@ -3,20 +3,26 @@ module
 public import SquaresInCircles.Eight.Candidate.GeometricOwnersQuarter
 
 /-!
-# Eight squares: two forbidden quarter directions and `G`-axis `0`
+# Eight squares: two forbidden quarter directions and the `G` axis `0`
 
-With forbidden axes on both `B → T` and `D → E`, two weighted three-edge chains and the circle of
-`T` give `b_A ≥ 81/100` at mismatch at most `3/200` (`double_forbidden_transverse_bound`). One
-supporting line of the circle of `A` then excludes `G`-axis `0` on the whole half-angle chart,
-whatever the axis of `E` (`G_axis_zero_double_forbidden_excluded`).
+With forbidden axes on both `B → T` and `D → E`, the projections of the four aligned edges from
+`A` to `E`, weighted `1, 1, 2/3, 2/3`, and the circle of `T` give `b_A ≥ 81/100` at mismatch at
+most `3/200` (`double_forbidden_transverse_bound`). One supporting line of the circle of `A` and
+one of the unit circle of directions then exclude the `G` axis `0` on the whole half-angle chart,
+whatever the axis of `E` (`G_axis_zero_double_forbidden_excluded`). The `G` axes `3` and `1` are
+excluded under the same hypotheses in `GeometricOwnersTiltCone.lean` and
+`GeometricOwnersDoubleComplete.lean`.
 -/
 
 @[expose] public section
 noncomputable section
 namespace SquaresInCircles.Eight.Candidate
 
-/-- The weight `2/3` keeps the useful direction of the corner of `T`. The four aligned errors are
-charged through their shared sum. -/
+/-- With forbidden axes on `B → T` and `D → E`, the projections of the edges `A`, `B`, `T`, `D`,
+weighted `1, 1, 2/3, 2/3`, add up to `b_A + a_T + (2/3)(b_T + a_E)`, and the circle of `T`,
+completed with the weight `3/10` for the force `(1, 2/3)`, gives
+`10/3 - (3/2) S ≤ b_A + (2/3) a_E + (3/10) q + 10/27`. The four aligned errors are charged
+through their shared sum. -/
 theorem double_forbidden_transverse_quantitative {q : ℝ} {C : BoundaryCycle q}
     (F : Frame C) (hq : q ≤ Q0) (hc : TangentCuts C) (hzero : ZeroOwners C)
     {jB jD : Fin 4} (hB : jB ∉ quarterOwners) (hD : jD ∉ quarterOwners)
@@ -48,6 +54,7 @@ theorem double_forbidden_transverse_quantitative {q : ℝ} {C : BoundaryCycle q}
   norm_num at hsupport
   linarith
 
+/-- With forbidden axes on `B → T` and `D → E` at mismatch at most `3/200`, `b_A ≥ 81/100`. -/
 theorem double_forbidden_transverse_bound {q : ℝ} {C : BoundaryCycle q}
     (F : Frame C) (hq : q ≤ Q0) (hc : TangentCuts C) (hzero : ZeroOwners C)
     (hS : mismatch F.theta ≤ 3/200)
@@ -60,8 +67,8 @@ theorem double_forbidden_transverse_bound {q : ℝ} {C : BoundaryCycle q}
   dsimp [Q0] at hq
   linarith
 
-/-- A rational cone containing the closed chart. At its endpoint the ratio is `48/55`, strictly
-below `9/10`. -/
+/-- On the closed half-angle chart `|z| ≤ 3/8`, the tilt `t = 2 arctan z` has `cos t ≥ 0` and
+`|sin t| ≤ (9/10) cos t`; at the ends of the chart the ratio is `48/55`. -/
 theorem half_angle_nine_tenths_cone {z t : ℝ} (hz : |z| ≤ 3/8)
     (ht : t=2*Real.arctan z) :
     0 ≤ Real.cos t ∧ |Real.sin t| ≤ (9/10)*Real.cos t := by
@@ -78,8 +85,11 @@ theorem half_angle_nine_tenths_cone {z t : ℝ} (hz : |z| ≤ 3/8)
     apply (div_le_div_iff_of_pos_right hd).mpr
     nlinarith
 
-/-- One supporting line of the circle of `A` and one of the unit circle of directions. The geometric
-reserve exceeds the whole aligned loss at `S = 3/200`. -/
+/-- If `b ≥ 81/100`, `h ≤ 9/10` and `(1 + c + |s|)/2 + 1 - loss ≤ a c - b s + h` for a point
+`(a, b)` of the corner disk at a level `q ≤ Q0` and a direction `(c, s)` in the cone
+`|s| ≤ (9/10) c`, then
+`loss ≥ 1/40`, by one supporting line of the corner disk and one of the unit circle of
+directions. This exceeds the aligned loss `(3/2) S` at `S ≤ 3/200`. -/
 theorem large_transverse_G_zero_loss {a b h q c s loss : ℝ}
     (hq : q ≤ Q0) (hb : 81/100 ≤ b) (hh : h ≤ 9/10)
     (hc : 0 ≤ c) (hunit : c^2+s^2=1) (hcone : |s| ≤ (9/10)*c)
@@ -114,7 +124,8 @@ theorem nominal_G_axis_zero_projection {q : ℝ} {C : BoundaryCycle q}
     Real.sin_sub, Real.cos_sub]
   ring
 
-/-- This excludes four owner patterns at once, whatever the axis of `E` and the sign of the tilt. -/
+/-- With forbidden axes on `B → T` and `D → E` at mismatch at most `3/200`, the `G` axis `0` does
+not separate `G → A`, whatever the axis of `E` and the sign of the tilt. -/
 theorem G_axis_zero_double_forbidden_excluded {q : ℝ} {C : BoundaryCycle q}
     (F : Frame C) (hq : q ≤ Q0) (hc : TangentCuts C) (hzero : ZeroOwners C)
     (hS : mismatch F.theta ≤ 3/200)

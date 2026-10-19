@@ -435,8 +435,7 @@ theorem contained_center_bound {q : ℝ} {K : UnitSquare} (hq : q≤Q0) (hK : Sq
   nlinarith
 
 theorem automatic_projections {q z : ℝ} {C : BoundaryCycle q} (F : Frame C)
-    (hq : q≤Q0) (hz : z ∈ tiltBox)
-    (ht : tilt F.theta=2*Real.arctan z) (hS : mismatch F.theta≤1/1000) :
+    (hq : q≤Q0) (hz : z ∈ tiltBox) (hS : mismatch F.theta≤1/1000) :
     |(positions C 5).1|≤3/2 ∧ |(positions C 5).2|≤3/2 ∧
     |dot (ex (tilt F.theta)) (positions C 6)|≤3/2 ∧
     |dot (ey (tilt F.theta)) (positions C 6)|≤3/2 ∧

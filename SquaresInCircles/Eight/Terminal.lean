@@ -39,7 +39,7 @@ theorem boundary_quantitative {q z : ℝ} {C : BoundaryCycle q} (F : Frame C)
         completed (adaptiveData z hz) (tilt F.theta) (errors F) o (positions C)+
         terminalReserve*mismatch F.theta≤q := by
   obtain ⟨o,hg⟩ := owners_and_gaps F ho
-  obtain ⟨hX,hZabs,hU,hV,hZ,hη⟩ := automatic_projections F hq hz ht hS
+  obtain ⟨hX,hZabs,hU,hV,hZ,hη⟩ := automatic_projections F hq hz hS
   refine ⟨o,?_⟩
   simpa [error_sum F] using quantitative hz ht htw (errors F) o (positions C)
     (by simpa [error_sum F] using hS) (vertex_containment F) hg hX hZabs hU hV hZ hη

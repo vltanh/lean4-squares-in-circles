@@ -10,7 +10,11 @@ public import SquaresInCircles.Eight.Generated.Affine.Mismatch01To015Affine.Rows
 public import SquaresInCircles.Eight.Generated.Affine.Mismatch01To015Affine.Rows007
 public import SquaresInCircles.Eight.Generated.Affine.Mismatch01To015Affine.Rows008
 
-/-! All rows of the table. -/
+/-!
+# Eight squares: the rows of the affine table `Mismatch01To015Affine`
+
+All rows of the table, as the list of their parts; together they pass `checkRows`.
+-/
 
 @[expose] public section
 noncomputable section

@@ -22,4 +22,9 @@ public import SquaresInCircles.Eight.Generated.Pairs.FourTypeHighLow
 public import SquaresInCircles.Eight.Generated.Pairs.FourTypeHighMiddle
 public import SquaresInCircles.Eight.Generated.Pairs.FourTypeHighHigh
 
-/-! The 21 pair tables of the four-type pair bounds. -/
+/-!
+# Eight squares: the pair tables of the four-type pair bounds
+
+The 21 tables of `Generated/Pairs/` whose problems are the four-type pair bounds of
+`Arithmetic/FourTypePairs.lean`; each table proves its problems (`sound`).
+-/

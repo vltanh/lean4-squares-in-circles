@@ -3,12 +3,14 @@ module
 public import SquaresInCircles.Eight.Generated.Affine.GLowerAffine.Data
 public import SquaresInCircles.Eight.Generated.Affine.GLowerAffine.Cover00
 
-/-! # The affine table `GLowerAffine`
+/-!
+# Eight squares: the affine table `GLowerAffine`
 
 Each of its 8250 rows passes `checkRow`, so it satisfies its claim
 (`checkRow_claim`). The walks `coverBlock` over blocks of sources covering all arcs
 give the angle coverage (`coverBlocks_sound`). With the state chains and the
-arctangent intervals of the arcs they give the charged bound. -/
+arctangent intervals of the arcs they give the charged bound (`charged_bound`).
+-/
 
 @[expose] public section
 noncomputable section

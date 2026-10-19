@@ -119,7 +119,7 @@ theorem coefficient_identities {d : Coordinates} (hw : d.WeightDomain) :
   dsimp [KA,KB,KD,KE,KH,edgeAlpha,edgeBeta,edgeDelta,edgeEpsilon,edgeOmega,
     lam,mu,rawLambda,rawMu,rawMuA,rawMuB,rawMuD,rawMuE,rawMuH,rawDelta,rawEpsilon]
   repeat' constructor
-  all_goals field_simp [hM,hA,hB,hc,hs,hx₁,hx₃,hx₄,hh₁,hh₂,hy] <;> ring
+  all_goals field_simp [hM,hA,hB,hc,hs,hx₁,hx₃,hx₄,hh₁,hh₂,hy]
 
 theorem force_coefficients_pos {d : Coordinates} (hw : d.WeightDomain) :
     0<KA d ∧ 0<KB d ∧ 0<KD d ∧ 0<KE d ∧ 0<KH d := by
@@ -142,9 +142,9 @@ theorem norm_linear_combination (a b : ℝ) (u v : Point) :
   dsimp [normSq,add,scale,dot]; ring
 
 @[simp] theorem norm_ex (t : ℝ) : normSq (ex t)=1 := by
-  simpa [normSq,ex] using Real.cos_sq_add_sin_sq t
+  simp [normSq,ex]
 @[simp] theorem norm_ey (t : ℝ) : normSq (ey t)=1 := by
-  simpa [normSq,ey,add_comm] using Real.cos_sq_add_sin_sq t
+  simp [normSq,ey,add_comm]
 theorem dot_ey_ex (b t : ℝ) : dot (ey b) (ex t)=Real.sin (t-b) := by
   simp [dot,ey,ex,Real.sin_sub]; ring
 theorem dot_ex_ey (t b : ℝ) : dot (ex t) (ey b)=Real.sin (t-b) := by

@@ -7,10 +7,9 @@ public import SquaresInCircles.Eight.ExactFamily.Weights
 # Eight squares: completing the square at the centres, and the stationary identity
 
 The identity `complete_center_square` completes the square `μ |p + o|² + ⟨F, p⟩` at a centre `p`.
-The constants of the terminal inequality are fixed here, with the rational step that absorbs the
-quadratic and cubic remainders into the first-order reserve for total errors up to `1/1000`
-(`terminal_remainder_absorption`, `combine_terminal_terms`), and the step from equality to zero
-errors (`terminal_equality_forces`).
+The constants of the terminal inequality are fixed here (`terminal_constants`): bounds on the
+quadratic and cubic remainder coefficients, and the reserve that remains of the first-order
+reserve once the remainders are absorbed for total errors up to `1/1000`.
 
 The stationary identity (`OriginalDual`) applies the weights of a stationary chain to seven centres
 with zero frame errors: the weighted sum of the five corner constraints less the weighted gaps

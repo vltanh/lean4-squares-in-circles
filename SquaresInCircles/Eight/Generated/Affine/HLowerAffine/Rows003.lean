@@ -3,7 +3,11 @@ module
 public import SquaresInCircles.Eight.Generated.Affine.HLowerAffine.Context
 public meta import SquaresInCircles.Eight.IntRows
 
-/-! Rows 30000 to 35665 of the table, checked by `decide +kernel`, 200 rows a theorem. -/
+/-!
+# Eight squares: rows 30000 to 35665 of the affine table `HLowerAffine`
+
+Each part of 200 rows passes `checkRows`, evaluated by the kernel.
+-/
 
 @[expose] public section
 noncomputable section

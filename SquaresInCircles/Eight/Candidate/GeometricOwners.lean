@@ -6,21 +6,25 @@ public import SquaresInCircles.Eight.Candidate.Nominal
 # Eight squares: projection estimates and the nonpositive tilt
 
 On an aligned edge, the projection of a separating axis at the nominal angle is at least
-`1 - (3/2) ε` at mismatch `ε`, with first- and second-order forms in the frame difference
+`1 - (3/2) S` at mismatch `S`, with first- and second-order forms in the frame difference
 (`aligned_coarse_projection`, `aligned_first_order_projection`,
 `aligned_second_order_projection`); on the mixed edges it is compared with the nominal threshold
-(`mixed_G_projection`, `mixed_E_projection`, `mixed_E_second_order`). With the terminal owners
-every edge has the projection of its nominal owner (`terminal_nominal_projection`).
+(`mixed_G_projection`, `mixed_E_projection`, `mixed_E_second_order`). Under the tangent cuts and
+with the terminal owners every edge has the projection of its nominal owner
+(`terminal_nominal_projection`). These estimates serve the chains of the files
+`GeometricOwnersQuarter.lean` to `GeometricOwnersMixed.lean` and the duals of
+`DualApplication.lean`.
 
-These seven inequalities exclude the whole nonpositive half-angle chart `-3/8 ≤ z ≤ 0` at
+Under the tangent cuts and with the terminal owners, the seven inequalities, one for each edge,
+exclude the whole nonpositive half-angle chart `-3/8 ≤ z ≤ 0` of the tilt `t = 2 arctan z` at
 mismatch at most `1/1000` (`negative_tilt_excluded`). Weighted by
 `(ω, ω, α, ω, ω, ε, ε) = (1271/1728, 1271/1728, 31/72, 1271/1728, 1271/1728, 41/48, 41/48)`,
 their sum cancels the transverse coordinates of `G` and `T`. Completing the square in the four
 circles of `A`, `B`, `D`, `H`, with weights `31/144, 31/144, 41/144, 41/144` taken from the aligned
 configuration whose four far corners have squared norm `2257/576`, gives
-`2257/576 + (451/4608)(-sin t) - (3001/1000)(41/48) S ≤ q` (`negative_tilt_quantitative`), which
-exceeds `Q0` by at least `34477/144000000`. The aligned errors are charged once, through their
-shared sum `S`.
+`2257/576 + (451/4608)(-sin t) - (3001/1000)(41/48) S ≤ q` at the tilt `t` and the mismatch `S`
+(`negative_tilt_quantitative`), which exceeds `Q0` by at least `34477/144000000`. The aligned
+errors are charged once, through their shared sum `S`.
 -/
 
 @[expose] public section
@@ -70,6 +74,8 @@ theorem aligned_width {q : ℝ} {C : BoundaryCycle q} (F : Frame C) {i : Vertex}
     simp [nominalPhase, zeroEdges, otherQuarterEdges, phi, word,
       pairWidth_half_pi_add, h0, h1]
 
+/-- On an aligned edge at mismatch at most `ε`, a separating axis has projection at least
+`1 - (3/2) ε` at the nominal angle, by the Lipschitz bound of the projection. -/
 theorem aligned_coarse_projection {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
     (hq : q ≤ Q0) {i : Vertex} (hi : i ∈ charged) (j : Fin 4)
     (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i)))
@@ -86,6 +92,8 @@ theorem aligned_coarse_projection {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
   have hh := (abs_le.mp hl).2
   linarith
 
+/-- At mismatch at most `1/500`, the bound `1 - (1001/1000)|δᵢ|`, from the cusp of the threshold
+at `0`. -/
 theorem aligned_first_order_projection {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
     (hq : q ≤ Q0) {i : Vertex} (hi : i ∈ charged) (j : Fin 4)
     (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i)))
@@ -107,6 +115,8 @@ theorem aligned_first_order_projection {q : ℝ} {C : BoundaryCycle q} (F : Fram
   have h₄ := mul_le_mul_of_nonneg_left h₂ (show (0:ℝ) ≤ 1/500 by norm_num)
   nlinarith [sq_abs (delta F.theta i)]
 
+/-- At mismatch at most `1/500`, the second-order bound, with the derivative of the projection at
+the nominal angle. -/
 theorem aligned_second_order_projection {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
     (hq : q ≤ Q0) {i : Vertex} (hi : i ∈ charged) (j : Fin 4)
     (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i)))
@@ -125,6 +135,8 @@ theorem aligned_second_order_projection {q : ℝ} {C : BoundaryCycle q} (F : Fra
   have h₃ := mul_le_mul_of_nonneg_right hd (sq_nonneg (delta F.theta i))
   nlinarith [sq_abs (delta F.theta i)]
 
+/-- On `G → A`, whose angle is nominal, a separating axis has projection at least the nominal
+threshold. -/
 theorem mixed_G_projection {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
     (j : Fin 4) (hj : (forwardAxis j).Feasible (C.square G) (C.square (next G))) :
     pairWidth (nominalPhase (tilt F.theta) G) ≤
@@ -133,6 +145,8 @@ theorem mixed_G_projection {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
   rw [← he]
   exact actualProjection_feasible F G j hj
 
+/-- On `E → H`, at mismatch at most `ε ≤ 3/200`, a separating axis has projection at least the
+nominal threshold less `2ε`. -/
 theorem mixed_E_projection {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
     (hq : q ≤ Q0) (j : Fin 4)
     (hj : (forwardAxis j).Feasible (C.square E) (C.square (next E)))
@@ -168,6 +182,8 @@ theorem mixed_E_projection {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
   rw [hnw]
   linarith
 
+/-- The second-order bound on `E → H` at mismatch at most `1/1000`, with the slope of the threshold
+on the side of the sign of the tilt. -/
 theorem mixed_E_second_order {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
     (hq : q ≤ Q0) (j : Fin 4)
     (hj : (forwardAxis j).Feasible (C.square E) (C.square (next E)))
@@ -195,6 +211,8 @@ theorem mixed_E_second_order {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
   rw [hnw]
   nlinarith
 
+/-- Under the tangent cuts and with the terminal owners, the projection of any separating axis of
+an edge at the nominal angle, for every tilt, is that of the nominal owner of the edge. -/
 theorem terminal_nominal_projection {q : ℝ} {C : BoundaryCycle q}
     (hc : TangentCuts C) (ho : OwnerRestriction C terminalOwners)
     (p : Vertex → Fin 4) (hp : FeasibleOwners C p) (t : ℝ) (i : Vertex) :
@@ -212,8 +230,9 @@ theorem terminal_nominal_projection {q : ℝ} {C : BoundaryCycle q}
   generalize p i = a
   fin_cases i <;> fin_cases a <;> decide
 
-/-- The two transverse coordinates cancel in a fixed weighted sum. The identity holds at every tilt.
--/
+/-- Under the tangent cuts, the projections of the nominal owners at the nominal angles of the tilt
+`t`, in the states of the squares. The transverse coordinates of `G` and `T` cancel in the sum
+weighted by `AlignedStress.edgeWeight`. -/
 theorem intended_projection_formula {q : ℝ} {C : BoundaryCycle q}
     (hc : TangentCuts C) (t : ℝ) (i : Vertex) :
     actualProjection C i (nominalOwner i) (nominalPhase t i) =
@@ -233,12 +252,15 @@ theorem intended_projection_formula {q : ℝ} {C : BoundaryCycle q}
 
 namespace AlignedStress
 
-/-- Weights from the rational configuration at zero tilt. Unnormalized they are `24/41`, `1` and
-`36/31`, with circle-weight mass `1728/1271`. -/
+/-- The edge weights `α`, `ω`, `ε` of the stress, from the aligned configuration at zero tilt.
+They are in the proportion `24/41 : 1 : 36/31`, normalized so that the four circle weights add up
+to `1`. -/
 def alpha : ℝ := 31 / 72
 def omega : ℝ := 1271 / 1728
 def epsilon : ℝ := 41 / 48
 
+/-- The sum of the seven nominal projections weighted by `edgeWeight`, in the states, with
+`r = -sin t` and `c = cos t`; the transverse coordinates of `G` and `T` have cancelled. -/
 def force (a b : Vertex → ℝ) (r c : ℝ) : ℝ :=
   omega * c * a A + (alpha + omega * r) * b A +
   omega * a B + alpha * b B +
@@ -246,15 +268,19 @@ def force (a b : Vertex → ℝ) (r c : ℝ) : ℝ :=
   epsilon * a H + omega * b H +
   epsilon * (-a E * r + b E * (1 - c))
 
+/-- The sum of the seven nominal thresholds weighted by `edgeWeight`. -/
 def demand (r c : ℝ) : ℝ :=
   3 * omega + alpha + epsilon + (omega + epsilon) * ((1 + c + r) / 2)
 
+/-- The weights `(ω, ω, α, ω, ω, ε, ε)` of the edges `H, G, A, B, T, D, E`. -/
 def edgeWeight : Vertex → ℝ :=
   ![omega, omega, alpha, omega, omega, epsilon, epsilon]
 
-/-- One identity on the whole negative half-chart. The four completed circles have weights `31/144,
-31/144, 41/144, 41/144`, summing to one. The force of `E` is bounded by its quadrant and needs no
-circle weight. -/
+/-- If the force is at least the demand less `loss`, with `r ≥ 0`, `c² + r² = 1` and the chord
+bound `1 - c ≤ (3/8) r` of the nonpositive half-chart, then `2257/576 + (451/4608) r - loss ≤ q`:
+the circles of `A`, `B`, `D`, `H` are completed with the weights `31/144, 31/144, 41/144, 41/144`,
+which add up to `1`, and the terms of `E` are bounded by `a_E ≥ 1/2` and `b_E ≤ 1`, with no circle
+weight. -/
 theorem four_circle_bound (a b : Vertex → ℝ) {q r c loss : ℝ}
     (hcircle : ∀ i, (a i + 1/2)^2 + (b i + 1/2)^2 ≤ q)
     (hEa : 1/2 ≤ a E) (hEb : b E ≤ 1)
@@ -278,11 +304,13 @@ theorem four_circle_bound (a b : Vertex → ℝ) {q r c loss : ℝ}
   have hEb' := mul_le_mul_of_nonneg_right hEb (sub_nonneg.mpr hc)
   dsimp [demand, force, alpha, omega, epsilon] at hforce hA hB hD hH
   norm_num at hA hB hD hH
-  /- After adding the four circle inequalities, the exact remainder is
-     2257/576 + epsilon*r - (omega+3*epsilon/2)*(1-c) - loss.
-     The chord inequality leaves (451/4608)*r. -/
+  /- After the four circle inequalities are added, the remainder is exactly
+     `2257/576 + ε r - (ω + 3ε/2)(1 - c) - loss`, and the chord bound `1 - c ≤ (3/8) r` leaves
+     `(451/4608) r`. -/
   nlinarith
 
+/-- The weighted errors of the aligned edges add up to at most `ε` times the mismatch, `ε` being the
+largest weight of an aligned edge. -/
 theorem shared_loss (θ : Vertex → ℝ) :
     (∑ j : Fin 5, edgeWeight (alignedEdge j) * |delta θ (alignedEdge j)|) ≤
       epsilon * mismatch θ := by
@@ -294,8 +322,8 @@ theorem shared_loss (θ : Vertex → ℝ) :
 
 end AlignedStress
 
-/-- Half-angle geometry, including both endpoints and `z = 0`. The chord identity is `1 - cos t =
-(-z)(-sin t)`. -/
+/-- For `t = 2 arctan z` with `-3/8 ≤ z ≤ 0`: `sin t ≤ 0 ≤ cos t` and `1 - cos t ≤ (3/8)(-sin t)`,
+by the identity `1 - cos t = (-z)(-sin t)`. -/
 theorem negative_half_angle_geometry {z t : ℝ}
     (hz : -(3/8 : ℝ) ≤ z ∧ z ≤ 0) (ht : t=2*Real.arctan z) :
     0 ≤ -Real.sin t ∧ 0 ≤ Real.cos t ∧
@@ -317,8 +345,11 @@ theorem negative_half_angle_geometry {z t : ℝ}
   rw [hchord]
   exact mul_le_mul_of_nonneg_right (by linarith [hz.1]) (neg_nonneg.mpr hs)
 
-/-- The seven separating-axis inequalities enter one geometric stress. The owners are arbitrary and
-may tie. The aligned loss is charged once, through the shared sum of absolute errors. -/
+/-- On the nonpositive half-angle chart, under the tangent cuts, with the terminal owners and at
+mismatch `S ≤ 1/1000`, the seven projection inequalities weighted by `AlignedStress.edgeWeight`
+and the four circles give `2257/576 + (451/4608)(-sin t) - (3001/1000)(41/48) S ≤ q` at the tilt
+`t`. The owners are any separating axes (`Frame.choose_owners`), ties included, and the aligned
+errors are charged once, through their shared sum. -/
 theorem negative_tilt_quantitative {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
     (hq : q ≤ Q0) (hc : TangentCuts C)
     (ho : OwnerRestriction C terminalOwners)

@@ -19,7 +19,7 @@ and in the half-angle variable `z`, are the rational forces of the duals divided
 noncomputable section
 open scoped BigOperators
 namespace SquaresInCircles.Eight.Candidate
-open Dual
+open SquaresInCircles.Eight.Candidate.Dual
 
 structure TangentCuts {q : ℝ} (C : BoundaryCycle q) : Prop where
   signs : Signs C
@@ -66,7 +66,7 @@ theorem TangentCuts.signed_coordinates {q : ℝ} {C : BoundaryCycle q} (hc : Tan
   · simpa [Dual.signs,D] using nonpositive_tangent_coordinate C hD.le
   · simpa [Dual.signs,E] using nonpositive_tangent_coordinate C hc.e_half
 
-theorem slider_primary_bounds {a b q : ℝ} (ha : 1/2 < a) (hb : 0 ≤ b)
+theorem slider_primary_bounds {a b q : ℝ} (ha : 1/2 < a)
     (hcone : a/20 ≤ b ∧ b ≤ (4/5)*a)
     (hcore : (1/12:ℝ)^2 ≤ (max (a-1/2) 0)^2+(max (b-1/2) 0)^2)
     (hcircle : (a+1/2)^2+(b+1/2)^2 ≤ q) (hq : q ≤ Q0) :
@@ -123,13 +123,13 @@ theorem TangentCuts.cones {q : ℝ} {C : BoundaryCycle q} (hc : TangentCuts C)
     linarith only [hh]
   have hG := slider_primary_bounds
     (a := C.a G) (b := C.b G) (q := q)
-    (by have hh := (canonical_bounds C hq G).1; linarith only [hh]) (C.b_nonneg G)
+    (by have hh := (canonical_bounds C hq G).1; linarith only [hh])
     hGratio (canonical_core_distance C G) (canonical_containment C G) hq
   have hT := slider_primary_bounds
     (a := C.a T) (b := C.b T) (q := q)
-    (by have hh := (canonical_bounds C hq T).1; linarith only [hh]) (C.b_nonneg T)
+    (by have hh := (canonical_bounds C hq T).1; linarith only [hh])
     hTratio (canonical_core_distance C T) (canonical_containment C T) hq
-  simp only [H, G, A, B, T, D, E] at hGratio hTratio hHr hDr hG hT
+  simp only [H, G, T, D] at hGratio hTratio hHr hDr hG hT
   obtain ⟨hG1, hG2⟩ := hGratio
   obtain ⟨hT1, hT2⟩ := hTratio
   obtain ⟨hG3, hG4⟩ := hG
@@ -333,7 +333,8 @@ theorem nominal_width_derivative_identity {z : ℝ} {positive : Bool} :
   have hid := half_angle_identities z
   cases positive <;>
     simp [lastWidthDerivative, widthSlope, peval, Cpoly, Spoly, Dpoly, hid.1, hid.2] <;>
-    field_simp [show (1+z^2:ℝ)≠0 by positivity] <;> ring
+    field_simp [show (1+z^2:ℝ)≠0 by positivity]
+  ring
 
 def FeasibleOwners {q : ℝ} (C : BoundaryCycle q) (p : Vertex → Fin 4) : Prop :=
   ∀ i, (forwardAxis (p i)).Feasible (C.square i) (C.square (next i))

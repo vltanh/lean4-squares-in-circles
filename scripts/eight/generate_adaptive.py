@@ -1,13 +1,28 @@
 #!/usr/bin/env python3
-"""Emit exact interval data on a fixed stationary-graph cover.
+"""Write the formulas and the interval checks along the adaptive chain.
 
-Writes AdaptiveFormula.lean and AdaptiveBounds.lean in
-SquaresInCircles/Eight/ExactFamily/Generated.  The floating evaluation only
-proposes a rational root bracket.  Every bound that AdaptiveBounds.lean checks
-(the two strict derivative signs of each box and the estimates on the hulls) is
-first evaluated here by the same fixed-point interval arithmetic
-(`generate_stationary.fx_*`); no floating value is a premise.  This source
-generator never invokes Lean.
+    python3 -I scripts/eight/generate_adaptive.py
+
+At each half-angle tangent z of the tilt in tiltBox = [1/20, 81/1000] the adaptive chain of
+SquaresInCircles/Eight/ExactFamily/Adaptive.lean has the position y where F_y(qStar, y, z) = 0.
+With the chain of generate_stationary.py the script builds, as formulas in (q, y, z), the contact
+weights, the nine owner reserves, h₂ and the quadratic and cubic remainder coefficients of the
+terminal inequality. It cuts tiltBox into 256 cells of width 31/256000. In each cell a
+floating-point bisection at the middle of the cell proposes the root y; the half-width of the
+position interval around it starts at 1/5000 and grows by 1/10000 until exact rational interval
+arithmetic (`generate_stationary.evaluate`) gives F_y < 0 on the lower face and F_y > 0 on the
+upper face of the graph box, for every q of the bracket of qStar and every z of the cell. The
+script writes, in SquaresInCircles/Eight/ExactFamily/Generated,
+
+- AdaptiveFormula.lean: the formulas, and the graph boxes with their lower and upper faces;
+- AdaptiveBounds.lean: the signs of F_y on the faces, and the bounds on the formulas over 32 hulls
+  of eight consecutive graph boxes.
+
+Every check of AdaptiveBounds.lean (the signs of F_y, F_y ≤ -10⁻⁶ on the lower faces and
+F_y ≥ 10⁻⁶ on the upper faces, the inclusion of each graph box in its hull, and the bounds on the
+hulls) is evaluated with the fixed-point interval arithmetic of ExactFamily/FixedEval.lean
+(`generate_stationary.fx_bounded`) before it is written, and the script stops at the first that
+fails.
 """
 from fractions import Fraction as Q
 from pathlib import Path
@@ -20,6 +35,9 @@ A=g.A
 c,s,x1,x2,x3,y3,x4,y4,h1,h2=g.c,g.s,g.x1,g.x2,g.x3,g.y3,g.x4,g.y4,g.h1,g.h2
 C=A.const
 two=C(2)
+# The weights of ExactFamily/Weights.lean: the raw circle weights rawA, rawB, rawD, rawE, rawH and
+# the raw contact weights rawa, rawb, rawd, rawe, divided by the mass of the circle weights;
+# omega = 1/mass is the weight of the contacts GA and HG.
 rawA=A.div(c,A.mul(two,x1))
 rawa=A.sub(s,A.div(A.mul(c,g.y),x1))
 rawB=A.div(rawa,A.mul(two,A.add(g.y,two)))
@@ -32,7 +50,11 @@ rawE=A.div(A.mul(s,rawe),A.mul(two,A.neg(x4)))
 mass=A.add(A.add(A.add(A.add(rawA,rawB),rawD),rawE),rawH)
 omega=A.inv(mass)
 alpha,beta,delta,epsilon=[A.mul(omega,v) for v in (rawa,rawb,rawd,rawe)]
+# The circle weights `μ = ω (A, B, D, E, H)` are not written, but their nodes come before those of
+# the reserves, whose numbers `adaptiveFormulaN` the proofs of ExactFamily/AdaptiveBounds.lean use.
 mu=[A.mul(omega,v) for v in (rawA,rawB,rawD,rawE,rawH)]
+# The nine owner reserves of `Coordinates.ownerReserve` (ExactFamily/Adaptive.lean), built from
+# the cuts Y, J, X, K, L and N.
 Y=A.sub(x1,x2)
 J=A.sub(A.div(A.mul(epsilon,c),beta),A.div(A.mul(y3,A.neg(x4)),A.neg(x3)))
 X=A.mul(beta,A.add(A.add(g.y,two),J))
@@ -45,6 +67,8 @@ reserves=[X,A.sub(A.mul(alpha,A.sub(C(1),Y)),X),K,A.sub(beta,K),
  L,A.sub(N,A.mul(C(Q('.392')),omega)),A.sub(A.mul(C(Q('.485')),omega),N)]
 named={'omega':omega,'alpha':alpha,'beta':beta,'delta':delta,'epsilon':epsilon,'hTwo':h2}
 for i,t in enumerate(reserves):named['reserve'+str(i)]=t
+# `quadraticCoefficient` and `cubicCoefficient` of ExactFamily/PerturbationEstimates.lean, with
+# ww = 4209/5000, the bound on the contact weights, for their parameter w.
 ka=A.div(A.mul(alpha,x1),c)
 kb=A.mul(beta,A.add(g.y,two))
 kd=A.mul(delta,A.neg(x3))
@@ -58,14 +82,18 @@ cubic=A.add(A.div(A.add(A.add(ka,kb),A.add(kd,kh)),C(6)),
 named['quadratic']=quadratic
 named['cubic']=cubic
 
+# the bracket [sharpLower, sharpUpper] of qStar, as in generate_stationary.py
 qcenter=Q('3.91553413751747532652')
 qlo,qhi=qcenter-Q(2,10**16),qcenter+Q(1,10**16)
+# 256 cells of width 31/256000 cover tiltBox
 NCELLS=256
 step=Q(31,1000*NCELLS)
+# the lower bound of the owner reserves and the upper bound of the contact weights
 rho=Q(56793,5000000)
 w=Q(4209,5000)
 
 def float_value(target,box):
+    """The floating-point value of a formula at a point, used only to propose the roots."""
     vals={}
     for i in A.dependencies([target]):
         n=A.nodes[i];op=n[0]
@@ -81,6 +109,8 @@ def float_value(target,box):
     return vals[target]
 
 def cell(k):
+    """The graph box of the cell k and its lower and upper faces: F_y changes sign across the
+    position interval for every q of the bracket of qStar and every z of the cell."""
     zl=Q(1,20)+step*k;zu=zl+step;zm=(zl+zu)/2
     lo,hi=-.937,-.895
     for _ in range(48):
@@ -104,23 +134,34 @@ header='''module
 
 public import SquaresInCircles.Eight.ExactFamily.Generated.StationaryFormula
 
-/-! Proof data for the complete fixed cover of the adaptive stationary curve: the formulas of
-the adaptive estimates and the 256 graph boxes with their endpoint boxes. -/
+/-!
+# Eight squares: the formulas and the graph boxes of the adaptive chain
+
+The contact weights (`lambdaFormula`, from `alphaFormula`, `betaFormula`, `deltaFormula`,
+`omegaFormula` and `epsilonFormula`), the nine owner reserves (`reserveFormula`), the coordinate
+`h₂` (`hTwoFormula`) and the quadratic and cubic remainder coefficients (`quadraticFormula`,
+`cubicFormula`), as formulas in the variables `(q, y, z)` of `StationaryFormula.lean`;
+`ExactFamily/AdaptiveBounds.lean` and `ExactFamily/PerturbationBounds.lean` identify them with
+the quantities of the chain. Each of the 256 graph boxes `graphBoxes` has the radius interval
+`[sharpLower, sharpUpper]` (`graph_shape`), a tilt cell `[zLo i, zHi i]` of width `31/256000`,
+the cells covering `[1/20, 81/1000]` (`graph_z`), and a position interval `[yLo i, yHi i]` in
+`[-937/1000, -179/200]` (`graph_local`); `lowerBoxes` and `upperBoxes` are their faces
+`y = yLo i` and `y = yHi i`. Written by `scripts/eight/generate_adaptive.py`.
+-/
 
 @[expose] public section
 noncomputable section
 set_option maxRecDepth 100000
-set_option linter.all false
 namespace SquaresInCircles.Eight.ExactFamily.AdaptiveGenerated
 open Arithmetic Generated
 
 '''
 
 graph_facts='''set_option synthInstance.maxSize 100000 in
-/-- The table of graph boxes: every radius interval is the sharp interval, the `z` intervals
-are the consecutive cells of width `31/256000` from `1/20`, and every `y` interval is a
-nondegenerate subinterval of `[-937/1000, -179/200]`. The quantifier is unrolled over the
-256 boxes and the numerals are compared. -/
+/-- The table of graph boxes: every radius interval is the bracket `[sharpLower, sharpUpper]`,
+the `z` intervals are the consecutive cells of width `31/256000` from `1/20`, and every `y`
+interval is a nondegenerate subinterval of `[-937/1000, -179/200]`. The quantifier is unrolled
+over the 256 boxes and the numerals are compared. -/
 private theorem graphBoxes_data : ∀ i : Fin 256,
     graphBoxes i 0 = ⟨97888353437936878163/25000000000000000000,
       97888353437936885663/25000000000000000000⟩ ∧
@@ -133,11 +174,13 @@ private theorem graphBoxes_data : ∀ i : Fin 256,
     Fin.val_succ, QInterval.mk.injEq]
   decide +kernel
 
+/-- The radius interval of every graph box is `[sharpLower, sharpUpper]`. -/
 theorem graph_shape (i : Fin 256) :
     (graphBoxes i 0).Mem q ↔ sharpLower ≤ q ∧ q ≤ sharpUpper := by
   rw [(graphBoxes_data i).1]
   norm_num [QInterval.Mem, sharpLower, sharpUpper]
 
+/-- The tilt interval of the graph box `i` is the cell `[zLo i, zHi i]`. -/
 theorem graph_z (i : Fin 256) (z : ℝ) :
     (graphBoxes i 2).Mem z ↔ zLo i ≤ z ∧ z ≤ zHi i := by
   rw [(graphBoxes_data i).2.1]
@@ -145,6 +188,8 @@ theorem graph_z (i : Fin 256) (z : ℝ) :
   push_cast
   rfl
 
+/-- The position interval of every graph box is a nondegenerate subinterval of
+`[-937/1000, -179/200]`. -/
 theorem graph_local (i : Fin 256) :
     -(937/1000:ℝ) ≤ yLo i ∧ yLo i < yHi i ∧ yHi i ≤ -(179/200) := by
   obtain ⟨-, -, h1, h2, h3⟩ := graphBoxes_data i
@@ -158,6 +203,8 @@ theorem graph_local (i : Fin 256) :
     exact h
 '''
 
+# the precision of the fixed-point checks, the margin of the signs of F_y on the faces, the bounds
+# on the remainder coefficients and the interval of h₂
 BITS=100
 BUFFER=Q(1,10**6)
 QUADRATIC=Q(232,25)
@@ -172,7 +219,7 @@ def graph_checks():
       [(h2,*HTWO),(quadratic,Q(0),QUADRATIC),(cubic,Q(0),CUBIC)])
 
 def hulls(boxes):
-    """Boxes containing `HULL` consecutive graph boxes each."""
+    """The least boxes containing `HULL` consecutive graph boxes each."""
     out=[]
     for m in range(0,NCELLS,HULL):
         bs=[boxes[k][0] for k in range(m,m+HULL)]
@@ -181,7 +228,8 @@ def hulls(boxes):
     return out
 
 def check_bounds(boxes,hs):
-    """Every check of AdaptiveBounds.lean, by the fixed-point arithmetic of the Lean evaluator."""
+    """Every check of AdaptiveBounds.lean, by the fixed-point arithmetic of `FixedEval.bounded`
+    and the test of `FixedEval.inside`; raises RuntimeError at the first that fails."""
     for k,(b,lb,ub) in enumerate(boxes):
         if not g.fx_bounded(lb,g.Fy,Q(-1),-BUFFER,BITS): raise RuntimeError(('lower',k))
         if not g.fx_bounded(ub,g.Fy,BUFFER,Q(1),BITS): raise RuntimeError(('upper',k))
@@ -202,6 +250,7 @@ def wrapped(items,indent,width=100):
     return '\n'.join(lines)
 
 def bounds_text(hs):
+    """The text of AdaptiveBounds.lean for the hulls hs."""
     nh=len(hs)
     hullnames=wrapped([f'hullCheck_{m}' for m in range(nh)],'    ')
     cellnames=wrapped([f'cellCheck_{k}' for k in range(NCELLS)],'    ')
@@ -213,13 +262,18 @@ public import SquaresInCircles.Eight.ExactFamily.Generated.AdaptiveFormula
 public import SquaresInCircles.Eight.ExactFamily.FixedEval
 
 /-!
-# Uniform estimates along the stationary curve
+# Eight squares: the interval checks along the adaptive chain
 
-There are 256 closed boxes but only seven kinds of bound. The strict signs of the derivative at
-both ends of the position interval of each box, from which `Adaptive.lean` obtains the adaptive
-stationary point, are checked box by box. The other five kinds of estimate are uniform on {nh}
-hulls of {HULL} consecutive graph boxes each, so they are checked once per hull. Every enclosure is a
-fixed-point interval evaluation in the kernel (`FixedEval`).
+On the lower face of each of the 256 graph boxes of `AdaptiveFormula.lean` the position derivative
+`F_y` of the defect is at most `-1/{BUFFER.denominator}`, and on the upper face at least `1/{BUFFER.denominator}`
+(`lower_sign`, `upper_sign`); from these signs `ExactFamily/Adaptive.lean` obtains the adaptive
+position. Each graph box lies in one of {nh} hulls of {HULL} consecutive graph boxes (`hull_mem`), and on
+each hull the owner reserves are at least `{r.numerator}/{r.denominator}`, the contact weights at most `{w_.numerator}/{w_.denominator}`,
+`h₂` lies in `[{ha.numerator}/{ha.denominator}, {hb.numerator}/{hb.denominator}]`, and the quadratic and cubic remainder coefficients are at most
+`{qd.numerator}/{qd.denominator}` and `{cb.numerator}/{cb.denominator}` (`hull_bounds`); so these bounds hold on every graph box (`reserve_bound`,
+`weight_bound`, `hTwo_bound`, `quadratic_bound`, `cubic_bound`). Each check (`cellCheck`,
+`hullCheck`) is a fixed-point interval evaluation of `ExactFamily/FixedEval.lean`, decided by the
+kernel. Written by `scripts/eight/generate_adaptive.py`.
 -/
 
 @[expose] public section
@@ -228,15 +282,14 @@ namespace SquaresInCircles.Eight.ExactFamily.AdaptiveGenerated
 open Arithmetic Generated FixedEval
 
 set_option maxRecDepth 1000000
-set_option linter.all false
 
-/-- Boxes containing {HULL} consecutive graph boxes each. -/
+/-- The {nh} hulls, each the least box containing {HULL} consecutive graph boxes. -/
 noncomputable def graphHull : Fin {nh} → QBox 3 := ![""" + ',\n  '.join(g.boxlit(H) for H in hs) + f"""]
 
 /-- The hull of the graph box `i`. -/
 noncomputable def hullOf (i : Fin 256) : Fin {nh} := ⟨i.val / {HULL}, by omega⟩
 
-/-- The five kinds of graph estimate on a hull. -/
+/-- The five kinds of graph estimate on the hull `m`. -/
 noncomputable def hullCheck (m : Fin {nh}) : Bool :=
   (List.finRange 9).all (fun j =>
     {bnd('(graphHull m)','(reserveFormula j)',f'({r.numerator}/{r.denominator})','2')}) &&
@@ -246,7 +299,7 @@ noncomputable def hullCheck (m : Fin {nh}) : Bool :=
     {bnd('(graphHull m)','quadraticFormula','0',f'({qd.numerator}/{qd.denominator})')} &&
     {bnd('(graphHull m)','cubicFormula','0',f'({cb.numerator}/{cb.denominator})')}
 
-/-- The derivative signs at both ends of the position interval of box `i`, and its hull. -/
+/-- The signs of `F_y` on the two faces of the graph box `i`, and its inclusion in its hull. -/
 noncomputable def cellCheck (i : Fin 256) : Bool :=
   {bnd('(lowerBoxes i)','FyFormula','(-1)',f'(-1/{BUFFER.denominator})')} &&
     {bnd('(upperBoxes i)','FyFormula',f'(1/{BUFFER.denominator})','1')} &&
@@ -254,24 +307,28 @@ noncomputable def cellCheck (i : Fin 256) : Bool :=
 
 """ + ''.join(f'theorem hullCheck_{m} : hullCheck {m} = true := by decide +kernel\n' for m in range(nh)) + '\n' + \
       ''.join(f'theorem cellCheck_{k} : cellCheck {k} = true := by decide +kernel\n' for k in range(NCELLS)) + f"""
+/-- Every hull passes `hullCheck`. -/
 theorem hullCheck_all : ∀ m : Fin {nh}, hullCheck m = true := by
   intro m
   fin_cases m
   exacts [
 {hullnames}]
 
+/-- Every graph box passes `cellCheck`. -/
 theorem cellCheck_all : ∀ i : Fin 256, cellCheck i = true := by
   intro i
   fin_cases i
   exacts [
 {cellnames}]
 
+/-- Every point of a graph box lies in its hull. -/
 theorem hull_mem (i : Fin 256) {{env : Fin 3 → ℝ}} (he : (graphBoxes i).Mem env) :
     (graphHull (hullOf i)).Mem env := by
   have h := cellCheck_all i
   simp only [cellCheck, Bool.and_eq_true] at h
   exact box_mem_of_subset (by simpa [inside] using h.2) he
 
+/-- The bounds of `hullCheck` at every point of a hull. -/
 theorem hull_bounds {{m : Fin {nh}}} {{env : Fin 3 → ℝ}} (he : (graphHull m).Mem env) :
     (∀ j : Fin 9, ((({r.numerator}/{r.denominator} : ℚ)) : ℝ) ≤ (reserveFormula j).eval env) ∧
     (∀ j : Fin 7, (lambdaFormula j).eval env ≤ ((({w_.numerator}/{w_.denominator} : ℚ)) : ℝ)) ∧
@@ -287,6 +344,7 @@ theorem hull_bounds {{m : Fin {nh}}} {{env : Fin 3 → ℝ}} (he : (graphHull m)
     (FixedEval.bounded_sound h3 he).2, (FixedEval.bounded_sound h4 he).2,
     (FixedEval.bounded_sound h5 he).2⟩
 
+/-- `F_y < 0` on the lower face of every graph box. -/
 theorem lower_sign (i : Fin 256) (env : Fin 3 → ℝ)
     (he : (lowerBoxes i).Mem env) : FyFormula.eval env < 0 := by
   have h := cellCheck_all i
@@ -295,6 +353,7 @@ theorem lower_sign (i : Fin 256) (env : Fin 3 → ℝ)
   push_cast at hb
   linarith
 
+/-- `F_y > 0` on the upper face of every graph box. -/
 theorem upper_sign (i : Fin 256) (env : Fin 3 → ℝ)
     (he : (upperBoxes i).Mem env) : 0 < FyFormula.eval env := by
   have h := cellCheck_all i
@@ -303,6 +362,7 @@ theorem upper_sign (i : Fin 256) (env : Fin 3 → ℝ)
   push_cast at hb
   linarith
 
+/-- The owner reserves are at least `{r.numerator}/{r.denominator}` on every graph box. -/
 theorem reserve_bound (i : Fin 256) (j : Fin 9) (env : Fin 3 → ℝ)
     (he : (graphBoxes i).Mem env) :
     ({r.numerator}/{r.denominator} : ℝ) ≤ (reserveFormula j).eval env := by
@@ -310,6 +370,7 @@ theorem reserve_bound (i : Fin 256) (j : Fin 9) (env : Fin 3 → ℝ)
   push_cast at h
   exact h
 
+/-- The contact weights are at most `{w_.numerator}/{w_.denominator}` on every graph box. -/
 theorem weight_bound (i : Fin 256) (j : Fin 7) (env : Fin 3 → ℝ)
     (he : (graphBoxes i).Mem env) :
     (lambdaFormula j).eval env ≤ {w_.numerator}/{w_.denominator} := by
@@ -317,6 +378,7 @@ theorem weight_bound (i : Fin 256) (j : Fin 7) (env : Fin 3 → ℝ)
   push_cast at h
   exact h
 
+/-- `h₂` lies in `[{ha.numerator}/{ha.denominator}, {hb.numerator}/{hb.denominator}]` on every graph box. -/
 theorem hTwo_bound (i : Fin 256) (env : Fin 3 → ℝ)
     (he : (graphBoxes i).Mem env) :
     -({-ha.numerator}/{ha.denominator}:ℝ) ≤ hTwoFormula.eval env ∧ hTwoFormula.eval env ≤ -({-hb.numerator}/{hb.denominator}) := by
@@ -326,12 +388,14 @@ theorem hTwo_bound (i : Fin 256) (env : Fin 3 → ℝ)
   push_cast at h1 h2
   constructor <;> linarith
 
+/-- The quadratic remainder coefficient is at most `{qd.numerator}/{qd.denominator}` on every graph box. -/
 theorem quadratic_bound (i : Fin 256) (env : Fin 3 → ℝ)
     (he : (graphBoxes i).Mem env) : quadraticFormula.eval env ≤ {qd.numerator}/{qd.denominator} := by
   have h := (hull_bounds (hull_mem i he)).2.2.2.2.1
   push_cast at h
   exact h
 
+/-- The cubic remainder coefficient is at most `{cb.numerator}/{cb.denominator}` on every graph box. -/
 theorem cubic_bound (i : Fin 256) (env : Fin 3 → ℝ)
     (he : (graphBoxes i).Mem env) : cubicFormula.eval env ≤ {cb.numerator}/{cb.denominator} := by
   have h := (hull_bounds (hull_mem i he)).2.2.2.2.2
@@ -342,6 +406,7 @@ end SquaresInCircles.Eight.ExactFamily.AdaptiveGenerated
 """
 
 def generate():
+    """Write AdaptiveFormula.lean, check every bound, and write AdaptiveBounds.lean."""
     out=g.OUT
     boxes=[cell(k) for k in range(NCELLS)]
     lines=[header]
@@ -350,19 +415,28 @@ def generate():
           g.formula_node(A.nodes[i]).replace(' n',' adaptiveFormula'))
     for name,target in named.items():
         lines.append(f'def {name}Formula : Formula 3 := adaptiveFormula{target}')
-    lines += ['def reserveFormula : Fin 9 → Formula 3 := !['+
+    lines += ['/-- The nine owner reserves, in the order of `Coordinates.ownerReserve`. -/',
+      'def reserveFormula : Fin 9 → Formula 3 := !['+
       ','.join(f'reserve{i}Formula' for i in range(9))+']',
+      '/-- The seven contact weights, in the contact order of `Coordinates.lam`. -/',
       'def lambdaFormula : Fin 7 → Formula 3 := ![alphaFormula,betaFormula,betaFormula,'+
       'deltaFormula,omegaFormula,omegaFormula,epsilonFormula]',
+      '/-- The graph boxes, one for each tilt cell. -/',
       'def graphBoxes : Fin 256 → QBox 3 := !['+
       ',\n  '.join(g.boxlit(b[0]) for b in boxes)+']',
+      '/-- The lower faces `y = yLo i` of the graph boxes. -/',
       'def lowerBoxes : Fin 256 → QBox 3 := !['+
       ',\n  '.join(g.boxlit(b[1]) for b in boxes)+']',
+      '/-- The upper faces `y = yHi i` of the graph boxes. -/',
       'def upperBoxes : Fin 256 → QBox 3 := !['+
       ',\n  '.join(g.boxlit(b[2]) for b in boxes)+']',
+      '/-- The lower end of the position interval of the graph box `i`. -/',
       'def yLo (i : Fin 256) : ℝ := ((graphBoxes i 1).lo:ℝ)',
+      '/-- The upper end of the position interval of the graph box `i`. -/',
       'def yHi (i : Fin 256) : ℝ := ((graphBoxes i 1).hi:ℝ)',
+      '/-- The lower end of the tilt cell `i`. -/',
       'def zLo (i : Fin 256) : ℝ := 1/20+(31/256000)*(i.val:ℝ)',
+      '/-- The upper end of the tilt cell `i`. -/',
       'def zHi (i : Fin 256) : ℝ := 1/20+(31/256000)*(i.val+1:ℝ)','',
       graph_facts,
       'end SquaresInCircles.Eight.ExactFamily.AdaptiveGenerated','']

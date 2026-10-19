@@ -6,20 +6,21 @@ public import SquaresInCircles.Eight.Candidate.GeometricOwnersForbiddenB
 # Eight squares: a forbidden `B` direction is impossible
 
 Suppose that a forbidden axis separates `B → T` at mismatch `S ≤ 3/200`. The `G` axis is then
-`0` or `1` (`G_axis_two_forbidden_quarter_excluded`, `G_axis_three_forbidden_B_excluded`), the
-corner disks give `a_A, a_H ≤ 29/25` and `b_A ≥ 29/50`, and the tilt satisfies `sin t > -3/8`
-(`global_negative_tilt_bound`). For a nonnegative tilt the chain `H → G` gives `sin t ≤ 1/10`
-(`forbidden_B_positive_tilt`).
+`0` or `1` (`G_axis_two_forbidden_quarter_excluded`, `G_axis_three_forbidden_B_excluded`),
+`b_A ≥ 29/50`, `a_A ≤ 29/25` and `a_H ≤ 29/25` (`forbidden_B_A_coordinates`,
+`H_primary_twenty_nine`), and the tilt satisfies `sin t > -3/8` (`global_negative_tilt_bound`).
+For a nonnegative tilt the chain `H → G` gives `sin t ≤ 1/10` (`forbidden_B_positive_tilt`).
 
-Two three-edge chains through `H`, `G` and `E` exclude the `E` axes `2` and `3`: demand minus
-force is at least `13/100`, the error at most `7S/2` (`forbidden_B_E_axis_two_three`). The `E` axes
-`0` and `1` are excluded by one seven-edge stress, with weights `(h, 1, 7/10, 7/10, 1/4, 3/10,
-11/10)` on `H, G, A, B, T, D, E` and `h = 1` or `cos t`, and the corner disks of `A`, `T`, `D`, `H`
-completed with weights `3/10, 3/16, 1/10, 3/8`: demand minus force is at least
-`467/4800 - 31/1000`, the error at most `37S/10` (`forbidden_B_stress`). So no forbidden axis
-separates `B → T` (`forbidden_B_excluded`), and with `D_quarter_owners` every axis that separates
-`B → T` or `D → E` at mismatch at most `3/200` is a quarter owner (`quarter_owners`). Each
-separating axis is treated on its own, so ties between axes are included.
+A three-edge chain through `H`, `G` and `E`, weighted for each pair of axes, excludes the `E` axes
+`2` and `3`: demand minus force is at least `13/100`, the error at most `7S/2`
+(`forbidden_B_E_axis_two_three`). The `E` axes `0` and `1` are excluded by one seven-edge stress,
+with weights `(h, 1, 7/10, 7/10, 1/4, 3/10, 11/10)` on `H, G, A, B, T, D, E` and `h = 1` or
+`cos t`, and the corner disks of `A`, `T`, `D`, `H` completed with weights `3/10, 3/16, 1/10, 3/8`:
+demand minus force is at least `467/4800 - 31/1000`, the error at most `37S/10`
+(`forbidden_B_stress`). So no forbidden axis separates `B → T` (`forbidden_B_excluded`), and with
+`D_quarter_owners` every axis that separates `B → T` or `D → E` at mismatch at most `3/200` is a
+quarter owner (`quarter_owners`). Each separating axis is treated on its own, so ties between axes
+are included.
 -/
 
 @[expose] public section
@@ -73,7 +74,8 @@ theorem nominal_E_width {t : ℝ} (hc : 0 ≤ Real.cos t) :
   simp [pairWidth, abs_of_nonneg hc]
   ring
 
-/-- On the arc `-3/8 ≤ sin t ≤ 0` of the right half circle, with linear and quadratic chords. -/
+/-- For a direction `(c, s)` of the unit circle with `3/4 ≤ c ≤ 1` and `-3/8 ≤ s ≤ 0`: `c ≥ 9/10`,
+`1 - c ≤ (4/7) s²` and `s² ≤ (3/8)(-s)`. -/
 theorem negative_arc_geometry {c s : ℝ} (hc : 3/4 ≤ c) (hc1 : c ≤ 1) (hs : s ≤ 0)
     (hsL : -(3/8) ≤ s) (hunit : c^2+s^2=1) :
     9/10 ≤ c ∧ 1-c ≤ (4/7)*s^2 ∧ s^2 ≤ (3/8)*(-s) := by
@@ -106,10 +108,11 @@ theorem forbidden_B_positive_tilt {aA bA aG bG bH c s eH : ℝ} {g : Fin 4} (hg 
       mul_nonneg hs (sub_nonneg.2 hs10)]
   exact ⟨hs10, hc99⟩
 
-/-- Two three-edge chains through `H`, `G` and `E` exclude the `E` axes `2` and `3`, with weights
-`(1, 1, 1)`, `(c, c, 1)`, `(c, 1, c)` and `(c, 1, 1)` for the axis pairs `(0, 2)`, `(0, 3)`,
-`(1, 2)`, `(1, 3)`. The transverse coordinates of `G` and `H` cancel, demand minus force is at
-least `13/100`, and the error is at most `7S/2`. -/
+/-- For the `G` axes `0` and `1`, a three-edge chain through `H`, `G` and `E` excludes the `E` axes
+`2` and `3`, with the weights `(1, 1, 1)`, `(c, c, 1)`, `(c, 1, c)` and `(c, 1, 1)` on `H`, `G`,
+`E` for the pairs `(0, 2)`, `(0, 3)`, `(1, 2)`, `(1, 3)` of the axes of `G` and `E`. The
+transverse coordinates of `G` and `H` cancel, demand minus force is at least `13/100`, and the
+error is at most `7S/2`. -/
 theorem forbidden_B_E_axis_two_three {aA bA aG bG aH bH aE bE c s eH S : ℝ} {g e : Fin 4}
     (hg : g < 2) (he : 2 ≤ e)
     (hAa : aA ≤ 29/25) (hAb : 29/50 ≤ bA) (hAb' : bA ≤ 9/10)
@@ -241,7 +244,8 @@ theorem forbidden_B_stress {aH bH aG bG aA bA bB aT bT aD bD aE bE c s q eH eA e
     · linarith only [hq, hS, hsum, heA, heB, heT, heD, hsL, hunit, hchord, hr2, hHc, hG, hA, hB,
         hT, hD, hE, hA1, hT', hD', hH11, hceH, hGs, hEl, hEs]
 
-/-- With a forbidden `B` axis, the `G` axes `0` and `1` are excluded, for every axis of `E`. -/
+/-- With a forbidden `B → T` axis at mismatch at most `3/200`, the `G` axes `0` and `1` do not
+separate `G → A`, for every axis of `E`. -/
 theorem forbidden_B_G_axis_zero_one_excluded {q : ℝ} {C : BoundaryCycle q}
     (F : Frame C) (hq : q ≤ Q0) (hc : TangentCuts C) (hzero : ZeroOwners C)
     (hS : mismatch F.theta ≤ 3/200) {jB : Fin 4} (hB : jB ∉ quarterOwners)
@@ -310,7 +314,8 @@ theorem forbidden_B_G_axis_zero_one_excluded {q : ℝ} {C : BoundaryCycle q}
       (hcircle H) hconeG.1 hconeG.2.1 hbE.1.le hbE.2.1.le hbE.2.2.1 hcL hc1 hunit hsL hpos
       he0 he2 he3 he4 he5 hsum hS hHp' hAp' hBp hTp' hDp hGp hEp
 
-/-- No forbidden axis separates `B → T`, also when an intended axis separates as well. -/
+/-- At mismatch at most `3/200` no forbidden axis separates `B → T`, also when an intended axis
+separates as well. -/
 theorem forbidden_B_excluded {q : ℝ} {C : BoundaryCycle q}
     (F : Frame C) (hq : q ≤ Q0) (hc : TangentCuts C) (hzero : ZeroOwners C)
     (hS : mismatch F.theta ≤ 3/200) {jB : Fin 4} (hB : jB ∉ quarterOwners)

@@ -769,7 +769,9 @@ HEADER = """module
 
 {imports}
 
-/-! {doc} -/
+/-!
+{doc}
+-/
 
 @[expose] public section
 noncomputable section
@@ -823,8 +825,13 @@ def write_meta(root, module, path):
     d = json.load(open(path))
     pre = "SquaresInCircles.Eight.Generated.Affine." + module
     lines = ["module", "", "public import SquaresInCircles.Eight.Arithmetic.AffineTableData", "",
+             "/-!", "# Eight squares: the data of the affine table `%s`" % module, "",
+             "The radius level of the table, its arcs (each with its role, kind, sign, tangent",
+             "interval and affine label), the cuts of the tangents, the quarter word, the charges,",
+             "the targets, the ranges of the frame differences and the axes allowed on each edge, as",
+             "exact rationals.", "-/", "",
              "@[expose] public section", "noncomputable section", "namespace " + pre,
-             "open Arithmetic", "", "/-- Complete original arc data; schema eight-affine-v1. -/",
+             "open Arithmetic", "", "/-- The exact data of the table. -/",
              "noncomputable def table : AffineTableMeta :=", "  { radius := " + q(d["Q"]), "    arcs := ["]
     for a in d["arcs"]:
         lines.append("      ⟨%d,%d,%s,%s,%s,⟨%s⟩⟩," % (
@@ -879,8 +886,7 @@ def write_index(root, module, src, files, rows, arcs):
 def write_modules(root, module, name, t, cuts, ctx, rows, enhance):
     base = root / "SquaresInCircles" / "Eight" / "Generated" / "Affine"
     (base / module).mkdir(parents=True, exist_ok=True)
-    for old in list((base / module).glob("Rows*.lean")) + list((base / module).glob("Atan*.lean")) \
-            + list((base / module).glob("Cover[0-9]*.lean")):
+    for old in list((base / module).glob("Rows*.lean")) + list((base / module).glob("Cover[0-9]*.lean")):
         old.unlink()
     rel = "../../../../../data/eight/affine/" + name
     den, n = ctx["den"], ctx["n"]
@@ -909,9 +915,10 @@ def write_modules(root, module, name, t, cuts, ctx, rows, enhance):
     text = HEADER.format(
         imports="public import %s.Meta\npublic import SquaresInCircles.Eight.Arithmetic.RowCover\n"
                 "public meta import SquaresInCircles.Eight.IntRows" % pre,
-        doc="The fixed-point data of the table, checked against the exact data of `Meta`: the\n"
-            "arc boxes and the arctangent intervals of the arcs (in blocks), the scalars, the\n"
-            "state chains and the data of the angle coverage.",
+        doc=f"# Eight squares: the fixed-point context of the affine table `{module}`\n\n"
+            "The fixed-point data of the table, checked against its exact data (`Meta.lean`): the\n"
+            "arc boxes and the arctangent intervals of the arcs, in blocks, the scalars, the state\n"
+            "chains and the data of the angle coverage.",
         module=module)
     if enhance:
         text += f"""
@@ -995,8 +1002,9 @@ theorem coverCtx_valid :
         text = HEADER.format(
             imports="public import %s.Context\n"
                     "public meta import SquaresInCircles.Eight.IntRows" % pre,
-            doc="Rows %d to %d of the table, checked by `decide +kernel`, %d rows a theorem."
-                % (start, start + count - 1, PART), module=module)
+            doc="# Eight squares: rows %d to %d of the affine table `%s`\n\n"
+                "Each part of %d rows passes `checkRows`, evaluated by the kernel."
+                % (start, start + count - 1, module, PART), module=module)
         for k, s0 in enumerate(range(start, start + count, PART)):
             m = min(PART, start + count - s0)
             nm = "rows%03d_%d" % (c, k)
@@ -1024,7 +1032,11 @@ theorem {pn}_check : {pn}.all (checkRows ctx) = true := by
         (base / module / ("Rows%03d.lean" % c)).write_text(text)
     # ------------------------------------------------------------ all rows
     imports = "\n".join("public import %s.Rows%03d" % (pre, c) for c in range(len(modules)))
-    text = HEADER.format(imports=imports, doc="All rows of the table.", module=module)
+    text = HEADER.format(
+        imports=imports,
+        doc=f"# Eight squares: the rows of the affine table `{module}`\n\n"
+            "All rows of the table, as the list of their parts; together they pass `checkRows`.",
+        module=module)
     text += f"""
 /-- The rows in parts of {PART}, in natural numbers, sorted by source, target, axis and half. -/
 noncomputable def chunks : List (List AffineRow) :=
@@ -1034,7 +1046,8 @@ noncomputable def chunks : List (List AffineRow) :=
 noncomputable def data : List AffineRow := chunks.flatten
 
 theorem data_check : checkRows ctx data = true := by
-{wrap(["data", "chunks", "checkRows_flatten", "List.all_append"] +
+{wrap(["data", "chunks", "checkRows_flatten"] + [c + "_check" for c in modules] if len(modules) == 1
+      else ["data", "chunks", "checkRows_flatten", "List.all_append"] +
       [c + "_check" for c in modules] + ["Bool.and_true"], 4, "  simp only [")}]
 """
     text += FOOTER.format(module=module)
@@ -1066,8 +1079,9 @@ theorem data_check : checkRows ctx data = true := by
         part = cover[m:m + COVER_MODULE]
         text = HEADER.format(
             imports="public import %s.Data" % pre,
-            doc="The angle coverage for the source arcs %d to %d, checked by `decide +kernel`."
-                % (part[0][0], part[-1][0] + part[-1][1] - 1), module=module)
+            doc="# Eight squares: the angle coverage of the affine table `%s`, source arcs %d to %d"
+                "\n\nThe walks `coverBlock` over blocks of these source arcs, evaluated by the kernel."
+                % (module, part[0][0], part[-1][0] + part[-1][1] - 1), module=module)
         for j, (a, c, ck, o) in enumerate(part):
             text += f"""
 theorem cover_{m + j} : coverBlock coverCtx table {core} {a} {c} {ck} {o} chunks = true := by
@@ -1105,11 +1119,11 @@ theorem strong_budgets_valid :
                  "    (checkRow_claim ctx_valid (checkRows_sound data_check x hx))")
     text = HEADER.format(
         imports=imports,
-        doc=f"# The affine table `{module}`\n\n"
+        doc=f"# Eight squares: the affine table `{module}`\n\n"
             f"Each of its {nrows} rows passes `checkRow`, so it satisfies its claim\n"
             "(`checkRow_claim`). The walks `coverBlock` over blocks of sources covering all arcs\n"
             "give the angle coverage (`coverBlocks_sound`). With the state chains and the\n"
-            "arctangent intervals of the arcs they give the charged bound.",
+            "arctangent intervals of the arcs they give the charged bound (`charged_bound`).",
         module=module)
     text += f"""
 /-- All rows of the table. -/
@@ -1164,8 +1178,10 @@ theorem no_adjacent_core (C : BoundaryCycle (table.radius:ℝ)) (F : Candidate.F
     if enhance:
         text = HEADER.format(
             imports="public import %s" % pre,
-            doc="The same rows and coverage for the enhanced targets: the rows were checked\n"
-                "against them, and the coverage walk does not involve the targets.",
+            doc=f"# Eight squares: the affine table `{module}` at its enhanced targets\n\n"
+                "The rows of the table are checked against the targets raised by `enhancement`, and\n"
+                "the coverage walk does not involve the targets, so the same rows and coverage give\n"
+                "the charged bound for the raised targets (`enhanced_charged_bound`).",
             module=module)
         enhanced_bound = "(by simp)"
         enhanced_theorems = ""

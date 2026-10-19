@@ -3,15 +3,23 @@ module
 public import SquaresInCircles.Eight.Arithmetic.RowCheck
 
 /-!
-# Integer bounds of the arctangent on `[0, 1]`
+# Eight squares: integer bounds for the arctangent
 
-For `0 ≤ x ≤ 1` and the anchor `c = j / 16` nearest to `x`, the addition formula gives
-`arctan x = arctan c + arctan z` with `z = (x - c) / (1 + x c)`, `|z| ≤ 1/32`. For `z ≥ 0` the
-alternating series gives `z - z³/3 + ⋯ - z¹¹/11 ≤ arctan z ≤ z - z³/3 + ⋯ + z⁹/9`.
+The gap leaves of the coverage trees (`PairCover.lean`) bound `arctan` at the ends of the tangent
+intervals. For a rational `x`, `atanLo x` and `atanHi x` are integers with
+`atanLo x / 10²⁰ ≤ arctan x ≤ atanHi x / 10²⁰` (`atanLo_le`, `le_atanHi`).
 
-The anchors `arctan (j / 16)` are integers over `10²⁰`, rounded down and up. Each anchor follows
-from the previous one by the same addition formula with `z = 16 / (256 + j (j + 1))`; one
-`decide` checks the sixteen steps.
+For `x ≥ 0` and the anchor `c = j / 16` nearest to `x`, with `j ≤ 16`, the addition formula gives
+`arctan x = arctan c + arctan z` with `z = (x - c) / (1 + x c)` (`atan_split`), and `|z| ≤ 1/32`
+when `x ≤ 1`. For `z ≥ 0` the alternating series gives
+`z - z³/3 + ⋯ - z¹¹/11 ≤ arctan z ≤ z - z³/3 + ⋯ + z⁹/9`, for `z < 0` the bounds follow by
+oddness, and both are rounded outwards to integers over `10²⁰` (`seriesLo`, `seriesHi`). For
+`x < 0` the bounds are `-2` and `2`.
+
+The anchors `arctan (j / 16)` are integers over `10²⁰`, rounded down and up (`anchorLo`,
+`anchorHi`). The anchor of `j + 1` follows from that of `j` by the same addition formula with
+`z = 16 / (256 + j (j + 1))`; one `decide` checks the sixteen steps (`anchors_check`), and
+induction on `j` gives the bounds of all seventeen anchors (`anchor_bounds`).
 -/
 
 @[expose] public section
@@ -110,11 +118,13 @@ theorem arctan_le_atanPolyHi {z : ℝ} (hz : 0 ≤ z) :
       positivity) hz
   linarith
 
-/-- The lower bound of `arctan z` over `angleUnit`, for either sign of `z`. -/
+/-- A lower bound of `arctan z` over `angleUnit`: the series rounded down, by oddness for
+`z < 0`. -/
 def seriesLo (z : ℚ) : Int :=
   if 0 ≤ z then floorQ (atanPolyLo z * angleUnit) else -ceilQ (atanPolyHi (-z) * angleUnit)
 
-/-- The upper bound of `arctan z` over `angleUnit`, for either sign of `z`. -/
+/-- An upper bound of `arctan z` over `angleUnit`: the series rounded up, by oddness for
+`z < 0`. -/
 def seriesHi (z : ℚ) : Int :=
   if 0 ≤ z then ceilQ (atanPolyHi z * angleUnit) else -floorQ (atanPolyLo (-z) * angleUnit)
 
@@ -180,10 +190,11 @@ def anchorL (j : ℕ) : Int := nth 0 anchorLo j
 /-- The `j`-th upper anchor. -/
 def anchorH (j : ℕ) : Int := nth 0 anchorHi j
 
-/-- `(c_{j+1} - c_j) / (1 + c_j c_{j+1})` for `c_j = j / 16`. -/
+/-- `(cⱼ₊₁ - cⱼ) / (1 + cⱼ cⱼ₊₁)` for `cⱼ = j / 16`. -/
 def anchorStep (j : ℕ) : ℚ := 16 / (256 + j * (j + 1))
 
-/-- Each anchor follows from the previous one by the addition formula. -/
+/-- The anchors start at `0`, and the anchor of `j + 1` follows from that of `j` by the addition
+formula, with the series bounds at `anchorStep j`. -/
 def anchorsCheck : Bool :=
   (anchorL 0 == 0) && (anchorH 0 == 0) &&
     (List.range 16).all fun j =>
@@ -212,6 +223,7 @@ theorem arctan_eq_add {x c : ℝ} (hx : 0 ≤ x) (hc : 0 ≤ c) :
   rw [hd2, hn]
   field_simp
 
+/-- The anchors bound `arctan (j / 16)` for `j ≤ 16`. -/
 theorem anchor_bounds : ∀ j ≤ 16,
     ((anchorL j : Int) : ℝ) / angleUnit ≤ Real.arctan ((j : ℝ) / 16) ∧
       Real.arctan ((j : ℝ) / 16) ≤ ((anchorH j : Int) : ℝ) / angleUnit := by
@@ -262,17 +274,21 @@ theorem anchor_bounds : ∀ j ≤ 16,
 /-- The anchor nearest to `x`, at most `16`. -/
 def anchorIndex (x : ℚ) : ℕ := min 16 (floorQ (16 * x + 1 / 2)).toNat
 
-/-- The argument of the series after the addition formula at the anchor of `x`. -/
+/-- `(x - c) / (1 + x c)` for the anchor `c` of `x`: the argument of the series after the
+addition formula. -/
 def anchorArg (x : ℚ) : ℚ := (x - anchorIndex x / 16) / (1 + x * (anchorIndex x / 16))
 
-/-- A lower bound of `arctan x` over `angleUnit`. -/
+/-- A lower bound of `arctan x` over `angleUnit`: the lower anchor of `x` plus the lower series
+bound at `anchorArg x`, and `-2` for `x < 0`. -/
 def atanLo (x : ℚ) : Int :=
   if 0 ≤ x then anchorL (anchorIndex x) + seriesLo (anchorArg x) else -2 * angleUnit
 
-/-- An upper bound of `arctan x` over `angleUnit`. -/
+/-- An upper bound of `arctan x` over `angleUnit`: the upper anchor of `x` plus the upper series
+bound at `anchorArg x`, and `2` for `x < 0`. -/
 def atanHi (x : ℚ) : Int :=
   if 0 ≤ x then anchorH (anchorIndex x) + seriesHi (anchorArg x) else 2 * angleUnit
 
+/-- The addition formula at the anchor of `x`. -/
 theorem atan_split {x : ℚ} (hx : 0 ≤ x) :
     Real.arctan x = Real.arctan ((anchorIndex x : ℝ) / 16) + Real.arctan (anchorArg x) := by
   have h := arctan_eq_add (x := (x : ℝ)) (c := (anchorIndex x : ℝ) / 16) (by exact_mod_cast hx)
@@ -283,6 +299,7 @@ theorem atan_split {x : ℚ} (hx : 0 ≤ x) :
   push_cast
   ring
 
+/-- `atanLo x` over `angleUnit` is a lower bound of `arctan x`. -/
 theorem atanLo_le (x : ℚ) : (atanLo x : ℝ) / angleUnit ≤ Real.arctan x := by
   have hA := angleUnit_pos
   unfold atanLo
@@ -299,6 +316,7 @@ theorem atanLo_le (x : ℚ) : (atanLo x : ℝ) / angleUnit ≤ Real.arctan x := 
     rw [mul_div_assoc, div_self (ne_of_gt hA)]
     linarith
 
+/-- `atanHi x` over `angleUnit` is an upper bound of `arctan x`. -/
 theorem le_atanHi (x : ℚ) : Real.arctan x ≤ (atanHi x : ℝ) / angleUnit := by
   have hA := angleUnit_pos
   unfold atanHi

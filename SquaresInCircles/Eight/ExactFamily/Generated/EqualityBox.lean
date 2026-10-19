@@ -2,17 +2,25 @@ module
 
 public import SquaresInCircles.Eight.ExactFamily.Expression
 
-/-! Exact interval certificates for the complete closed equality parameter box.
-Every certificate is checked by evaluating its rational interval arithmetic in the
-kernel. -/
+/-!
+# Eight squares: interval expressions on the box of parameters
+
+The box `box` of the eight variables: `sharpBox` of `LocalStationaryBounds.lean` in the squared
+radius, the position and the tilt of the chain, and `InBox` in the five parameters
+`(x, y, w, z, eta)` of the family. For each of eighteen quantities of the model there is an
+interval expression (`ScalarExpr`, `Arithmetic/ScalarExpr.lean`) whose nodes carry rational
+intervals; the kernel decides that they are valid on `box` (`_valid`), so the quantity lies
+between rational bounds on the whole box (`_bound`). `ExactFamily/EqualityBox.lean` identifies the
+expressions with the quantities of the model. Written by `scripts/eight/generate_equality.py`.
+-/
 
 @[expose] public section
 noncomputable section
 set_option maxRecDepth 100000
-set_option linter.all false
 namespace SquaresInCircles.Eight.ExactFamily.EqualityGenerated
 open Arithmetic
 
+/-- The box `sharpBox` in `(q, y, z)` and `InBox` in the parameters `(x, y, w, z, eta)`. -/
 noncomputable def box : QBox 8 := ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-3682626712034424527/4000000000000000000),(-3682626712026424527/4000000000000000000)⟩, ⟨(618974110066603597/10000000000000000000),(618974110086603597/10000000000000000000)⟩, ⟨(139/1000),(141/1000)⟩, ⟨(-1/1000),(1/1000)⟩, ⟨(99/1000),(101/1000)⟩, ⟨(1349/1000),(1351/1000)⟩, ⟨(-321/1000),(-319/1000)⟩]
 
 /-- An expression valid on `box` lies in every rational interval containing its range. -/

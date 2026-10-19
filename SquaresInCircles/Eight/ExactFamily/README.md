@@ -1,150 +1,95 @@
-# Exact family, sharp terminal, and equality source
+# Eight squares: the stationary configuration, the terminal inequality and the family
 
-This directory is an **uncompiled Lean source draft**. No Lean build, Lean
-elaboration, CI run, or audit was performed when preparing this handoff.
-The theorem bodies and rational certificate proofs are supplied for the
-subsequent compilation and audit pass.
+The modules of this directory define the optimal configuration of eight unit squares, prove the
+terminal inequality, a lower bound for the squared radius near that configuration, and describe
+the optimal packings as a five-parameter family. Bare file names are those of this directory;
+other paths start at the root of the repository.
 
-## Exact stationary selection (F2)
+## The stationary configuration
 
-`Coordinates.lean` defines the nested-radical chain through four circle
-vertices, the fifth contact vertex, the two stationarity equations, and the
-five equality parameters. `Weights.lean` derives the seven contact weights
-and five positive circle weights from those coordinates. Its last vertical
-force balance follows from position stationarity.
+- `Coordinates.lean`: the chain of the squares `A, B, D, E, H` with five corners on the circle
+  (`Coordinates`, `IsChain`), its defect, and the stationary system `IsStationary`; the five
+  parameters of the family (`EqualityParameters`), their domain `Admissible`, the box `InBox` and
+  the model `EqualityParameters.model`.
+- `Weights.lean`: the five circle weights `mu` and the seven contact weights `lam` of a chain,
+  positive on `WeightDomain`, and the balance of forces (`force_balance`, `slider_forces_zero`).
+- `Expression.lean`: formulas in several variables (`Formula`) and their symbolic partial
+  derivatives (`Formula.diff`), which are the partial derivatives of their values wherever the
+  radicands are positive and the inverted values nonzero (`Formula.hasDerivAt_partial`).
+- `FixedEval.lean`: fixed-point interval evaluation of formulas on rational boxes, whose success
+  gives bounds and regularity on the whole box (`bounded_sound`, `regular_sound`).
+- `Analysis.lean`: for every squared radius in `[qMinus, Q0]` the defect is strongly convex in the
+  position and the tilt on the rectangle `poseBox`; its minimum vanishes at exactly one squared
+  radius `qStar`, at the point `sharpPose` (`unique_minimum_zero`, `sharpPose_stationary`).
+- `Convexity.lean`, `CriticalHessian.lean`, `Envelope.lean`: the stationary system has at most one
+  solution (`FiveCornerGeometry.stationary_chain_unique`). The defect is strictly convex in the
+  position on the whole radical domain, the determinant of its Hessian is positive at every
+  critical point of the strip, and the minimum over the position, as a function of the tilt, has
+  at most one critical point.
+- `Stationary.lean`: the stationary configuration `sharpData`, which solves the stationary system
+  (`sharpData_stationary`) and is its only solution (`stationary_unique`,
+  `exact_stationary_existsUnique`), with rational brackets for `qStar` and the coordinates
+  (`qStar_bracket`, `qStar_limits`, `sharp_coordinates`, `sharp_y`).
 
-`Expression.lean` connects the rational interval expression language to a
-differentiable real expression language. It retains nonzero denominator and
-positive radicand obligations.
+## The terminal inequality
 
-`Analysis.lean` proves existence of an interior minimizer for every radius
-in the local rectangle, uniform strict convexity in the two pose variables,
-strict monotonicity and continuity of the minimized value as the radius
-varies, and existence and uniqueness of its zero. The selected `qStar` is
-obtained from that existence theorem. `Stationary.lean` identifies its
-actual nested-radical coordinates and proves that it is the only solution of
-the broad stationary system. That uniqueness is geometric: `Convexity.lean`
-proves strict convexity of the defect in the position on the whole radical
-domain, the localization of position minima, and the decrease of the defect
-with the radius; `CriticalHessian.lean` bounds the Hessian at every critical
-point of the strip `87/100 ≤ u ≤ 1`; and `Envelope.lean` shows that the
-envelope of position minima has a unique critical tilt, which is its minimum,
-and concludes `stationary_chain_unique`.
-No external stationary witness is an assumption of these results.
+- `Adaptive.lean`: at every tilt of `tiltBox` the adaptive chain `adaptiveData`, at the squared
+  radius `qStar` and at the position where the position derivative of the defect vanishes; its
+  defect is at least `(z - z*)²/8` (`adaptive_curvature`). The module also defines the owner
+  reserves `ownerReserve`.
+- `AdaptiveBounds.lean`: along the adaptive chain the owner reserves are positive, the contact
+  weights are at most `4209/5000` and `h₂` lies in `[-29/20, -7/5]` (`adaptive_owner_bounds`,
+  `adaptive_edge_weight_bound`, `adaptive_hTwo_bound`).
+- `CenterCompletion.lean`: completing the square at the centres (`complete_center_square`), the
+  constants of the terminal inequality (`terminal_constants`), and the stationary identity at
+  arbitrary centres, which fixes the five squares with a corner on the circle and the lines of the
+  two sliders (`OriginalDual.original_centers_rigid`, `OriginalDual.slider_coordinates`).
+- `PerturbationModel.lean`: the terminal dual at arbitrary centres, frame errors and owners; it is
+  at most the squared radius when the anchored corners lie in the disk and the gaps are
+  nonnegative (`dual_le`), and it is a sum of completed squares and a reduced part
+  (`exact_completion`).
+- `PerturbationEstimates.lean`: lower bounds for the reduced part: its value at zero frame errors
+  plus first-order terms, less quadratic and cubic remainders.
+- `PerturbationBounds.lean`: bounds on the remainder coefficients along the adaptive chain
+  (`adaptive_remainder_bounds`).
+- `Perturbation.lean`: the quantitative terminal inequality (`Perturbation.quantitative`), which
+  `SquaresInCircles/Eight/Terminal.lean` applies to a boundary cycle with the estimates of
+  `SquaresInCircles/Eight/TerminalEstimates.lean`.
 
-The principal exports are:
+## The family
 
-- `qStar`, `sharpData`, and `sharpData_stationary`;
-- `qStar_bracket` and `qStar_limits`;
-- `stationary_unique` and `exact_stationary_existsUnique`;
-- `sharp_coordinates` and `sharp_y`.
+- `EqualityGeometry.lean`: every admissible model is a packing in the disk of squared radius
+  `qStar` (`model_sqPacking`).
+- `EqualityBox.lean`: rational bounds on eighteen quantities of the model on the box `InBox`
+  (`box_data_bounds`).
+- `CentralParameters.lean`: every unit square is the central square of parameters whose frame
+  parameter lies in the half-open interval of `Admissible` (`central_parameters_exist`).
+- `BoxRigidity.lean`: distinct points of `InBox` give non-congruent models
+  (`BoxRigidity.box_rigid_parameters`, `BoxRigidity.box_rigidlyCongruent_iff`).
+- `StatementLink.lean`: the radius and the models of the statement in
+  `SquaresInCircles/Geometry.lean` (namespace `EightStatement`) are those of the proof
+  (`radius_statement`, `models_statement`).
 
-Hand sources: `EXACT_CONFIGURATION_AND_FREEDOM.md`,
-`ANALYTIC_EXACT_CONSTRUCTION.md`, `HUMAN_FIVE_CORNER.md`, and
-`UNRESTRICTED_EIGHT_SQUARE_HAND_PROOF.md`, Section 1. The sharp bracket
-arithmetic also follows the expressions in
-`verify_hand_sharp_ceiling_bracket.py`.
+`SquaresInCircles/Eight/Equality.lean` and `SquaresInCircles/Eight/Uniqueness.lean` assemble the
+family and the uniqueness theorem from these modules.
 
-## Adaptive and terminal comparison (F9)
+## Generated modules
 
-`Adaptive.lean` proves existence and uniqueness of the position-stationary
-value at each tilt in the terminal interval. `AdaptiveBounds.lean` supplies
-the original-owner first-order reserves from exact rational expression
-certificates. `PerturbationBounds.lean` supplies bounds on the quadratic and
-cubic remainder coefficients.
+The modules of `Generated/` are written by scripts in `scripts/eight/`, run from the root of the
+repository, for example `python3 -I scripts/eight/generate_stationary.py`. Each script evaluates
+every bound with exact arithmetic before it writes it, and the kernel decides the bound again with
+`decide +kernel`; running a script again reproduces its files byte for byte.
 
-`PerturbationModel.lean` defines the seven actual signed gaps, original
-centers, center forces, and completed center squares.
-`PerturbationEstimates.lean` proves the trigonometric remainder estimates
-and the enlarged slider coefficient bounds. `Perturbation.lean` assembles
-the positive-error comparison. It uses the positive curvature already
-proved for the reduced function in the half-angle variable; the exact
-coefficient need only be positive to force the unique equality tilt.
+- `generate_stationary.py` writes `Generated/StationaryFormula.lean`, the defect, its derivatives
+  and the coordinates of the chain as formulas, with the derivative identities, and
+  `Generated/LocalStationaryBounds.lean`, their bounds near the stationary point by the
+  fixed-point evaluation of `FixedEval.lean`.
+- `generate_adaptive.py` writes `Generated/AdaptiveFormula.lean`, the contact weights, the owner
+  reserves, `h₂` and the remainder coefficients as formulas, with the 256 graph boxes of the
+  adaptive chain, and `Generated/AdaptiveBounds.lean`, the signs of the position derivative on the
+  faces of the graph boxes and the bounds on their hulls, again by `FixedEval.lean`.
+- `generate_equality.py` writes `Generated/EqualityBox.lean`, interval expressions (`ScalarExpr`)
+  for the eighteen quantities of `EqualityBox.lean` on the box of parameters.
 
-`CenterCompletion.lean` contains the separate stationary identity on
-arbitrary original centers. Its slider forces are exactly zero. In
-particular, its `OriginalDual.original_centers_rigid` theorem assumes no
-distance from the displaced centers and no original slider rectangle.
-
-`../Terminal.lean` contains the physical boundary adapters and exports
-`Terminal.boundary_quantitative`, `Terminal.boundary_rigid`, and
-`Terminal.original_pullback`.
-
-Hand sources: `HUMAN_ADAPTIVE_DUAL_SEVEN_SQUARE_SHARPNESS.md`,
-`HAND_EXACT_CENTER_SQUARE_COMPLETION.md`,
-`HAND_TERMINAL_WITH_AUTOMATIC_SLIDERS.md`,
-`HUMAN_BROAD_TERMINAL_ARITHMETIC.md`, and
-`EQUALITY_PULLBACK_TO_ORIGINAL_SQUARES.md`.
-
-## Full equality domain and noncongruence (F11)
-
-`EqualityGeometry.lean` proves sufficiency for the entire weak parameter
-domain, including all exterior pairs and all seven central SAT conditions.
-`EqualityBox.lean` interprets the exact interval certificates for the full
-displayed five-parameter box. `../Equality.lean` proves necessity from the
-actual original geometry and exports the family, its attaining packing,
-and circle contact witnesses.
-
-`CentralParameters.lean` chooses a physical quarter-turn representative for
-the central square and recovers its half-angle parameter in the specified
-half-open interval. `BoxRigidity.lean` proves distinct box parameters are
-noncongruent under every distance-preserving plane equivalence, with any
-square permutation. Its argument recovers the unique containing center
-from the stationary contact-vertex barycenter, fixes the independent A and
-E centers using disjoint rational center-radius bands, and recovers the
-remaining parameters from the slider centers and central support widths.
-
-Hand source: `COMPLETE_EQUALITY_PARAMETER_DOMAIN.md`, together with
-`UNRESTRICTED_EIGHT_SQUARE_HAND_PROOF.md`, Sections 11–12.
-
-## Unrestricted public assembly (F10/F12)
-
-`../Theorem.lean` consumes the geometric `GlobalNormalization` record.
-Candidate capture is applied to the Q1 expansion and pulled back to the
-recovered cycle at `max q qMinus`. Boundary rigidity fixes the radius,
-tilt, and five frame errors. The original stationary identity then fixes
-the untouched original anchors and identifies the two slider lines.
-Only after these anchors are fixed is original cyclic order used to
-identify the two slider sectors. The central parameter representative and
-the full admissible domain produce the reflected or unreflected model.
-
-Public exports include `Eight.optimum`, `Eight.lower_bound`,
-`Eight.packing_iff`, `Eight.equality_iff_parameters`, `Eight.isLeast`, and
-`Eight.full_dimensional_equality_box`.
-
-## Pure statement mirror
-
-`../../StatementEight.lean` defines the explicit stationary predicate and
-selects its root by ordinary `Classical.epsilon`. It imports primitive
-geometry and Mathlib, without importing the eight-square proofs. It also
-contains the complete five-parameter domain and both model orientations.
-`StatementLink.lean` proves the predicate has a unique actual solution,
-identifies its selected coordinates with `sharpData`, and proves the pure
-radius and model set equal those used by the analytic proof.
-
-The public `Optimal.lean` registry uses these pure definitions; the n=8
-branch of the root `optimum_spec` uses `Eight.radius_statement` and
-`Eight.models_statement`. `scripts/sync-challenge.py --write` materializes
-the Geometry, StatementEight, and Optimal definitions in dependency order
-inside the Mathlib-only Challenge source. This source copier performs no
-Lean compilation or comparator execution. The Challenge retains its two
-intentional theorem statement stubs, now with the same range through eight
-as the implemented public theorem statements.
-
-## Generated data
-
-The generators in `scripts/eight/` write Lean expressions and rational
-arithmetic proof objects into `Generated/`. The theorem statements interpret
-those expressions over the reals. A successful Python run is not used as a
-Lean premise. Interval bounds on formulas are checked in the kernel by the
-fixed-point evaluator of `FixedEval.lean`.
-
-- `generate_stationary.py`: derivatives, Hessian bounds, root brackets, and
-  coordinate brackets (`StationaryFormula`, `LocalStationaryBounds`);
-- `generate_adaptive.py`: adaptive position brackets, all nine owner
-  reserves, edge weight bounds, and perturbation remainder bounds
-  (`AdaptiveFormula`, `AdaptiveBounds`);
-- `generate_equality.py`: the explicit equality box and its strict
-  containment, core, and central separation reserves (`EqualityBox`).
-
-Running a generator again reproduces its files byte for byte.
+`generate_adaptive.py` and `generate_equality.py` build on the formulas and the interval
+arithmetic of `generate_stationary.py`.

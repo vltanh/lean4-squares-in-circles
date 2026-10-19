@@ -87,8 +87,7 @@ theorem weighted_total_error {ι : Type*} [Fintype ι]
 an error in the ball `∑ |dᵢ| ≤ ε`, also holds at zero error or at one vertex `dᵢ = ±ε` of the
 ball. -/
 theorem error_vertex_disjunction {ι : Type*} [Fintype ι] [Nonempty ι]
-    (c lam d : ι → ℝ) {B R ε : ℝ} (hε : 0 ≤ ε)
-    (hball : ∑ i, |d i| ≤ ε)
+    (c lam d : ι → ℝ) {B R ε : ℝ} (hball : ∑ i, |d i| ≤ ε)
     (hnecessary : 0 ≤ B + (∑ i, (c i * d i - lam i / 2 * |d i|)) + R) :
     0 ≤ B + R ∨ ∃ i, ∃ s : ℝ, (s = -1 ∨ s = 1) ∧
       0 ≤ B + ε * (s * c i - lam i / 2) + R := by

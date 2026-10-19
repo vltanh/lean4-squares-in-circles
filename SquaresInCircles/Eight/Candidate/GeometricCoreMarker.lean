@@ -4,18 +4,25 @@ public import SquaresInCircles.Eight.Arithmetic.CorePairGeometry
 public import SquaresInCircles.Eight.Arithmetic.AffineCoverage
 
 /-!
-# Core/core costs of an affine table from the markers of its core arcs
+# Eight squares: core/core costs from the markers of the core arcs
 
-On a core arc of the coarse table the label is `c + q b`, and constant on the core corner, so
-the marker `± arctan x - c - (7/12) q x` is a function of the tangent `x` of the state. Its
-second derivative lies in `[-1, 1]`, so on an arc `[l, u]` of the core side it is within
-`(u - l)²/8` of the range of its two endpoint values (`chart_bounds`); on an arc of the corner it
-is monotone. Rational bounds of the endpoint values (`MarkersValid`) bound the marker of every
-core vertex (`arc_marker_mem`). With the gap `4/3` between two core centres, the frame charge
-below `21/100` and seven edge budgets (`BudgetsValid`) they give the cost of every core/core
-edge (`pair_bound`). The same argument with the target `9/10` on one core/core edge and the
-coarse targets `89727/100000` on the six others exceeds `2π`: no edge joins two core squares
-(`no_adjacent_core`).
+On a core arc of an affine table with valid markers (`ArcValid`) the label is `c + q b`, constant
+on the core corner, so the marker `± arctan x - c - (7/12) q x` of a state is a function of its
+tangent `x`. Its second derivative lies in `[-1, 1]`, so on an arc `[l, u]` of the core side it is
+within `(u - l)²/8` of the range of its two endpoint values (`chart_bounds`); on an arc of the
+corner it is monotone. Rational bounds of the endpoint values (`MarkersValid`) therefore bound the
+marker of every core vertex (`arc_marker_mem`). With the gap `4/3` between two consecutive core
+centres (`Arithmetic/CorePairGeometry.lean`), the frame charge below `21/100` and seven edge
+budgets (`BudgetsValid`) they bound the cost of every core/core edge (`pair_bound`): this is the
+`CorePairBound` for the pairs of core arcs that the coverage of a table leaves out
+(`Arithmetic/AffineCoverage.lean`).
+
+Two squares with primary coordinate at most `7/12` lie on core arcs
+(`arc_core_of_small_primary`). If an edge joined two such squares, the same argument would give it
+a cost above `9/10`, and with the targets `89727/100000` of the coarse table on the six other edges
+the bounds would add up to more than `2π`; so no edge joins them (`no_adjacent_core`). The bounds
+are checked for the coarse table in `Generated/Affine/CandidateCoarseMismatch.lean`, and
+`Generated/AffineBudgets.lean` passes the conclusion to the later tables.
 -/
 
 @[expose] public section
@@ -94,12 +101,14 @@ theorem chart_bounds (positive : Bool) (c q : ℝ) {l u x L U : ℝ} (hl0 : 0 �
 def markerLower (i : Vertex) : ℚ :=
   ![-383/1000,-323/1000,-368/1000,-329/1000,-88/1000,-319/1000,-342/1000] i
 
-/-- Upper bounds of the markers of the core states of the seven roles. -/
+/-- Upper bounds of the markers of the core states of the seven roles, apart from a positive `D`
+state. -/
 def baseUpper (i : Vertex) : ℚ :=
   ![90/1000,-120/1000,100/1000,134/1000,96/1000,-12/1000,-111/1000] i
 
-/-- The marker of a positive `D` state may reach `643/1000`; its outgoing core/core edge has no
-feasible separator (`ExcludedArcs`). -/
+/-- The upper bound of the marker of a core state with the role `i` and the sign `positive`:
+`baseUpper i`, and `643/1000` for a positive `D` state, whose core/core edge `D → E` has no
+separating axis (`ExcludedArcs`), the core arcs of `E` having the sign `-1`. -/
 def markerUpper (i : Vertex) (positive : Bool) : ℚ :=
   if i=5 ∧ positive=true then 643/1000 else baseUpper i
 
@@ -111,8 +120,9 @@ def interpolationError (s : ArcData) : ℚ :=
 def endpointMarker (s : ArcData) (e : QInterval) (x : ℚ) : QInterval :=
   (if s.positive then e else e.neg).sub (QInterval.point (s.label.c+(7/12)*s.label.q*x))
 
-/-- The endpoint bounds of a core arc: its label is `c + q b`, constant on the corner, and the
-marker at both tangent endpoints lies within the role's bounds, by the interpolation error. -/
+/-- The endpoint bounds of a core arc: its label is `c + q b`, constant on the corner, its tangent
+interval lies in `[0, ∞)`, a core arc of `E` has the sign `-1`, and the marker at both tangent
+endpoints lies within the bounds of the role narrowed by the interpolation error. -/
 def ArcValid (s : ArcData) (lo hi : QInterval) : Prop :=
   s.label.p=0 ∧ (6/7 < s.tangent.hi → s.label.q=0) ∧
     (0 ≤ s.tangent.lo ∧ s.tangent.lo ≤ s.tangent.hi) ∧ (s.role=6 → s.positive=false) ∧

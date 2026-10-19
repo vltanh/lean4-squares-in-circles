@@ -2,7 +2,11 @@ module
 
 public import SquaresInCircles.Eight.Generated.Affine.Mismatch015To001Affine.Data
 
-/-! The angle coverage for the source arcs 321 to 455, checked by `decide +kernel`. -/
+/-!
+# Eight squares: the angle coverage of the affine table `Mismatch015To001Affine`, source arcs 321 to 455
+
+The walks `coverBlock` over blocks of these source arcs, evaluated by the kernel.
+-/
 
 @[expose] public section
 noncomputable section

@@ -3,10 +3,19 @@ module
 public import SquaresInCircles.Eight.Arithmetic.Interval
 
 /-!
-# Taylor remainder semantics used by the one-angle tables
+# Eight squares: Taylor bounds of the sine and the cosine
 
-The unknown remainder coefficients can depend on the angle.  The witnesses
-below are pointwise; no derivative of a remainder coefficient is assumed.
+For `x ≥ 0` the Taylor polynomials of the sine and the cosine bound them alternately:
+`sin7 x ≤ sin x ≤ sin9 x` and `cos10 x ≤ cos x ≤ cos8 x` (`trig_taylor_bounds`). Starting from
+the lower bound `sin_lower_seven`, each bound follows from the one before, as each difference
+vanishes at `0` and its derivative is the difference before it. Since consecutive polynomials
+differ by one term, `sin x = sin7 x + e x⁹` with `0 ≤ e ≤ 1/9!` and `cos x = cos8 x + e x¹⁰`
+with `-1/10! ≤ e ≤ 0` (`sin_remainder_coefficient`, `cos_remainder_coefficient`); the
+coefficient `e` depends on `x`, and only these bounds of it are used.
+
+The module also bounds `π` to eighteen decimals (`pi_hand_enclosure`), with the consequences
+`2π < 710/113` and `2π < 628318531 / 10⁸`. `TrigLin.lean` turns the Taylor bounds into lower
+polynomials of `c₀ + c₁ u + c₂ sin u + c₃ cos u`.
 -/
 
 @[expose] public section
@@ -14,8 +23,8 @@ noncomputable section
 
 namespace SquaresInCircles.Eight.Arithmetic
 
-/-- The rational pi enclosure already proved in mathlib uses Machin's
-identity and arctangent-series bounds; the source proof is reused here. -/
+/-- `π` to eighteen decimals, from the bounds `Real.pi_gt_d20` and `Real.pi_lt_d20` of
+Mathlib. -/
 theorem pi_hand_enclosure :
     (3141592653589793238 : ℝ)/1000000000000000000 < Real.pi ∧
     Real.pi < (3141592653589793239 : ℝ)/1000000000000000000 := by
@@ -28,9 +37,13 @@ theorem two_pi_lt_628318531_over_1e8 :
     2*Real.pi < (628318531 : ℝ)/100000000 := by
   linarith [pi_hand_enclosure.2]
 
+/-- The Taylor polynomial of the sine through the degree seven. -/
 def sin7 (x : ℝ) : ℝ := x-x^3/6+x^5/120-x^7/5040
+/-- The Taylor polynomial of the sine through the degree nine. -/
 def sin9 (x : ℝ) : ℝ := sin7 x+x^9/362880
+/-- The Taylor polynomial of the cosine through the degree eight. -/
 def cos8 (x : ℝ) : ℝ := 1-x^2/2+x^4/24-x^6/720+x^8/40320
+/-- The Taylor polynomial of the cosine through the degree ten. -/
 def cos10 (x : ℝ) : ℝ := cos8 x-x^10/3628800
 
 theorem cos_le_cos8 {x : ℝ} (hx : 0 ≤ x) : Real.cos x ≤ cos8 x := by
@@ -61,11 +74,13 @@ theorem cos10_le_cos {x : ℝ} (hx : 0 ≤ x) : cos10 x ≤ Real.cos x := by
       linarith) hx
   linarith
 
+/-- For `x ≥ 0`, `sin7 x ≤ sin x ≤ sin9 x` and `cos10 x ≤ cos x ≤ cos8 x`. -/
 theorem trig_taylor_bounds {x : ℝ} (hx : 0 ≤ x) :
     sin7 x ≤ Real.sin x ∧ Real.sin x ≤ sin9 x ∧
     cos10 x ≤ Real.cos x ∧ Real.cos x ≤ cos8 x :=
   ⟨sin_lower_seven hx,sin_le_sin9 hx,cos10_le_cos hx,cos_le_cos8 hx⟩
 
+/-- For `x ≥ 0`, `sin x = sin7 x + e x⁹` for some `e ∈ [0, 1/9!]`. -/
 theorem sin_remainder_coefficient {x : ℝ} (hx : 0 ≤ x) :
     ∃ e : ℝ, 0 ≤ e ∧ e ≤ 1/362880 ∧ Real.sin x = sin7 x+e*x^9 := by
   rcases hx.eq_or_lt with he | hp
@@ -80,6 +95,7 @@ theorem sin_remainder_coefficient {x : ℝ} (hx : 0 ≤ x) :
     · field_simp [ne_of_gt hp]
       ring
 
+/-- For `x ≥ 0`, `cos x = cos8 x + e x¹⁰` for some `e ∈ [-1/10!, 0]`. -/
 theorem cos_remainder_coefficient {x : ℝ} (hx : 0 ≤ x) :
     ∃ e : ℝ, -(1/3628800) ≤ e ∧ e ≤ 0 ∧ Real.cos x = cos8 x+e*x^10 := by
   rcases hx.eq_or_lt with he | hp

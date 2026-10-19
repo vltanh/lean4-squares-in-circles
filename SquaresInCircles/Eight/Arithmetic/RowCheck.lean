@@ -4,18 +4,33 @@ public import SquaresInCircles.Eight.Arithmetic.TrigLin
 public import SquaresInCircles.Eight.Arithmetic.StateCoverage
 
 /-!
-# A fast check of one affine row
+# Eight squares: the check of a row of an affine table
 
-A row of an affine table claims a strict charged inequality for all states of two arcs and all
-angles of an interval (`AffineTableRow.Claim`). After the axis reversal of `PreparedRow.core`
-the claim follows from the Lagrangian bound `CoreRow.Positive`. In it the source term is
-bounded below by a constant (`sourceLower`), and the base and the target term are of the form
-`c₀ + c₁ u + c₂ sin u + c₃ cos u` in the angle `u`, so `trigPositive` and `trigNonneg` decide
-every inequality the row needs. The circle mode bounds the norm by `√V ≤ (V / h + h) / 2` on
-pieces of the angle interval, each with its own `h`.
+A row of an affine table or of a pair table claims a strict charged inequality for all states of
+two arcs and all angles of an interval (`AffineTableRow.Claim`). `checkRow` decides it in
+fixed-point integer arithmetic (`Fixed.lean`), and `checkRow_claim` proves the claim of every row
+that passes. A row is a record of natural numbers (`AffineRow`); the data of the arcs are
+fixed-point boxes given once per table (`ArcBox`, `TableCtx`) and checked against the exact arcs
+(`ArcBox.check`, `TableCtx.valid_of`).
 
-All numbers are fixed-point intervals (`Fixed.FI`). The data of an arc are computed once per
-table (`ArcBox`); a row is a record of natural numbers (`AffineRow`).
+After the reversal of `PreparedRow.core` the row is a core row on the axis one or four, and its
+claim follows from the Lagrangian bound `CoreRow.Positive`, which `coreCheck` decides
+(`coreCheck_positive`). The source term has constant coefficients and is bounded below by a constant
+(`sourceLower`): by the endpoint rules of `TargetSupport.lean`, or on the whole circle with an upper
+bound of `√(X² + Y²)` from Newton steps (`sqrtUp`). For `u ∈ [0, 1]` the constant term is
+`k π / 2 ± u + c_s - c_t + λ / 2 + β / 2 + (λ / 2 - β / 2)(sin u + cos u)` (`base_lin`), and the
+coefficients of the target state are `-p + x g(u)` and `-q + y g'(u)`, with `(g, g')` equal to
+`(sin, cos)` or `(cos, sin)` and `x² = y² = λ²` (`target_lin`). The target term is bounded by the
+support mode of the row (`modeCheck`): by the two endpoint values (on the core side or with
+`X ≥ 0`), by the value at the lower or at the upper endpoint (with the slope `Y - X r` of one sign
+at both ends), or on the whole circle with `√V ≤ (V / h + h) / 2` on pieces of the angle interval,
+each with its own `h`. Every inequality that remains has the form
+`c₀ + c₁ u + c₂ sin u + c₃ cos u > 0` or `≥ 0`, decided by `trigPositive` and `trigNonneg`
+(`TrigLin.lean`).
+
+A check over many indices is split into blocks (`blocksCover`, `AllBlocks`), each decided by a
+theorem of its own. The table modules of `Generated/Affine/` and `Generated/Pairs/` apply these
+checks to their data, written by `scripts/eight/affine_rows.py` and `scripts/eight/pair_tables.py`.
 -/
 
 @[expose] public section
@@ -112,11 +127,11 @@ theorem nth_eq_getD {α : Type} (d : α) (l : List α) (i : Nat) : nth d l i = l
 
 /-! ### Rows and arcs -/
 
-/-- A row of an affine table in natural numbers. The angle interval is `[lo / den, hi / den]`
-for the angle scale `den` of the table and the multiplier is `lam / 10 ^ 8`; `axis` is
-`1, …, 4` and `mode` is `0` (endpoints), `1` (lower), `2` (upper) or `3` (circle). A circle
-row lists pieces `(h, upto)`: consecutive angle intervals, the `j`-th ending at `upto / den`,
-with the parameter `h / 10 ^ 7`. -/
+/-- A row of a table in natural numbers. The angle interval is `[lo / den, hi / den]` for the
+angle scale `den` of the table and the multiplier is `lam / 10⁸`; `axis` is `1, …, 4`, `positive`
+is the half, and `mode`, the support of the target arc, is `0` (endpoints), `1` (lower), `2`
+(upper) or `3` (circle). A circle row lists pieces `(h, upto)`: consecutive angle intervals, the
+`j`-th ending at `upto / den`, with the parameter `h / 10⁷`. -/
 structure AffineRow where
   edge : Nat
   source : Nat
@@ -130,6 +145,7 @@ structure AffineRow where
   mode : Nat
   pieces : List (Nat × Nat)
 
+/-- The axis of number `1, …, 4`; any other number gives the axis four. -/
 def axisOf : Nat → ForwardAxis
   | 1 => .one
   | 2 => .two
@@ -174,11 +190,11 @@ reached in at most `i / 32 + 31` steps of the list recursor. -/
 def boxAt (B : List (List ArcBox)) (i : Nat) : ArcBox :=
   nth default (nth [] B (Nat.div i 32)) (Nat.mod i 32)
 
-/-- The box of the reversed arc: opposite sign and label. -/
+/-- The box of the reversed arc: the opposite sign and the negated label. -/
 def ArcBox.reverse (B : ArcBox) : ArcBox :=
   { B with positive := !B.positive, c := B.c.neg, p := B.p.neg, q := B.q.neg }
 
-/-- The box encloses the data of a prepared arc. -/
+/-- The box encloses the data of a valid prepared arc. -/
 structure ArcBox.Encloses (B : ArcBox) (P : PreparedArc) : Prop where
   valid : P.NumericValid
   side : B.side = P.data.side
@@ -227,7 +243,8 @@ theorem PreparedArc.ofArc_radius (Q : ℚ) (a : ArcData) :
   unfold PreparedArc.ofArc
   split <;> rfl
 
-/-- Compare a box with the rational enclosures of the prepared arc. -/
+/-- The prepared arc of an arc is valid, and the box contains the interval values of its data
+(`ArcBox.check_sound`). -/
 def ArcBox.check (Q : ℚ) (a : ArcData) (B : ArcBox) : Bool :=
   let P := PreparedArc.ofArc Q a
   decide P.NumericValid && (B.side == a.side) && (B.positive == a.positive) &&
@@ -241,6 +258,7 @@ def ArcBox.check (Q : ℚ) (a : ArcData) (B : ArcBox) : Bool :=
     B.rLo.wider (FI.ofQI (P.ratioLo.range closedBoxes)) &&
     B.rHi.wider (FI.ofQI (P.ratioHi.range closedBoxes))
 
+/-- A box that passes `ArcBox.check` encloses the prepared arc of its arc. -/
 theorem ArcBox.check_sound {Q : ℚ} {a : ArcData} {B : ArcBox} (h : B.check Q a = true) :
     B.Encloses (PreparedArc.ofArc Q a) := by
   simp only [ArcBox.check, Bool.and_eq_true, decide_eq_true_eq, beq_iff_eq] at h
@@ -277,6 +295,8 @@ structure TableCtx where
   betaHalf : List FI
   gamma : List FI
 
+/-- The fixed-point data of a table enclose its exact data: the boxes enclose the prepared arcs,
+and the intervals of each edge contain half its charge and its target. -/
 structure TableCtx.Valid (M : AffineTableMeta) (C : TableCtx) : Prop where
   den_pos : 0 < C.den
   n_eq : C.n = M.arcs.length
@@ -347,8 +367,8 @@ theorem boxesRange_sound {Q : ℚ} {arcs : List ArcData} {boxes : List (List Arc
   rw [← nth_eq_getD]
   exact ArcBox.check_sound (h i ⟨h1, h2⟩)
 
-/-- The scalar data of a table: the angle scale, the number of arcs, half the charge and the
-target of every edge. -/
+/-- The check of the scalar data of a table: a positive angle scale, the number of arcs, and
+intervals containing half the charge and the target of every edge. -/
 def TableCtx.checkScalars (M : AffineTableMeta) (C : TableCtx) : Bool :=
   decide (0 < C.den) && (C.n == M.arcs.length) &&
     decide (∀ i : Fin 7, (nth (FI.point 0) C.betaHalf i).wider (FI.ofQ (M.charge i / 2)) = true ∧
@@ -379,7 +399,8 @@ theorem TableCtx.valid_of {M : AffineTableMeta} {C : TableCtx} (hs : C.checkScal
 
 /-! ### Reading the data -/
 
-/-- The circle pieces `h₁ c₁ h₂ c₂ … h_m`: the `j`-th piece ends at `c_j`, the last at `hi`. -/
+/-- The circle pieces of the numbers `h₁ c₁ h₂ c₂ … hₘ`: the `j`-th piece has the parameter `hⱼ`
+and ends at `cⱼ`, the last at `hi`. -/
 def piecesOf (hi : Nat) : List Nat → List (Nat × Nat)
   | [] => []
   | [h] => [(h, hi)]
@@ -422,7 +443,8 @@ theorem sqrt_le_amgm {V h : ℝ} (hV : 0 ≤ V) (hh : 0 < h) : Real.sqrt V ≤ (
   have : 0 ≤ (s - h) ^ 2 / (2 * h) := by positivity
   linarith
 
-/-- On the circle of a non-side arc, `X x + Y y ≥ v (X + Y) - ρ w` for every `w ≥ √(X² + Y²)`. -/
+/-- At a state `(x, y)` of a valid arc off the core side, `X x + Y y ≥ v (X + Y) - ρ w` for every
+`w ≥ √(X² + Y²)`. -/
 theorem PreparedArc.circle_lower {P : PreparedArc} (hP : P.NumericValid)
     (hs : P.data.side = false) {x y X Y w : ℝ} (hxy : P.data.Contains P.radius x y)
     (hw : Real.sqrt (X ^ 2 + Y ^ 2) ≤ w) :
@@ -448,7 +470,7 @@ theorem le_cdiv (a : Int) {b : Int} (hb : 0 < b) : (a : ℝ) / b ≤ (cdiv a b :
   rw [div_le_iff₀ hbR]
   linarith
 
-/-- Newton steps for `√m`, decreasing from a starting value above it. -/
+/-- `n` Newton steps `h ↦ (m / h + h) / 2` for `√m`, in integers. -/
 def newton (m : Int) : Nat → Int → Int
   | 0, h => h
   | n + 1, h => newton m n ((m / h + h) / 2)
@@ -459,6 +481,7 @@ def sqrtUp (V : FI) (guess : Int) : Int :=
   let h := max 1 (newton (V.hi * unit) 5 guess)
   cdiv (cdiv (V.hi * unit) h + h) 2
 
+/-- `sqrtUp` bounds `√v` above for every `v ≥ 0` in the interval, whatever the starting value. -/
 theorem sqrtUp_sound {V : FI} {v : ℝ} (hv : V.Mem v) (hv0 : 0 ≤ v) (guess : Int) :
     Real.sqrt v ≤ (sqrtUp V guess : ℝ) / unit := by
   have hU := unit_pos_real
@@ -487,7 +510,7 @@ theorem sqrtUp_sound {V : FI} {v : ℝ} (hv : V.Mem v) (hv0 : 0 ≤ v) (guess : 
     _ ≤ _ := by gcongr
 
 /-- A lower bound, as an integer over `unit`, of `X a + Y b` on the arc of `S`: from the two
-endpoints when `X ≥ 0` or the arc is a side; from the lower or the upper endpoint when the slope
+endpoints when `X ≥ 0` or on the core side; from the lower or the upper endpoint when the slope
 `Y - X r` has one sign at both ends; otherwise from the whole circle. -/
 def sourceLower (S : ArcBox) (X Y : FI) : Int :=
   bif S.side || ile (Int.ofNat 0) X.lo then
@@ -502,6 +525,8 @@ def sourceLower (S : ArcBox) (X Y : FI) : Int :=
     ((S.shift.mul (X.add Y)).sub (S.rho.mul ⟨0, sqrtUp ((X.mul X).add (Y.mul Y))
       ((X.lo.natAbs + X.hi.natAbs + Y.lo.natAbs + Y.hi.natAbs : Nat) + 1000000000000)⟩)).lo
 
+/-- `sourceLower` is a lower bound of `x a + y b` at every state `(a, b)` of the arc, for all
+coefficients `x` and `y` in the intervals `X` and `Y`. -/
 theorem sourceLower_sound {S : ArcBox} {P : PreparedArc} (hS : S.Encloses P) {X Y : FI}
     {x y : ℝ} (hX : X.Mem x) (hY : Y.Mem y) {a b : ℝ} (hab : P.data.Contains P.radius a b) :
     ((sourceLower S X Y : Int) : ℝ) / unit ≤ x * a + y * b := by
@@ -678,6 +703,7 @@ theorem mem_sgnBox (b : Bool) : (sgnBox b).Mem (sgnR b) := by
 
 theorem mem_zero : (FI.point 0).Mem 0 := by simp [FI.point, FI.Mem]
 
+/-- The interval of `xaR`, from an interval of `λ`; `yaF` is that of `yaR`. -/
 def xaF (four k1 flip sgn : Bool) (lam : FI) : FI :=
   let v := bif four then (bif k1 then (bif sgn then lam.neg else lam) else lam)
     else (bif k1 then lam.neg else (bif sgn then lam.neg else lam))
@@ -831,7 +857,7 @@ theorem slopeR_eval (x0 xa y0 ya R : ℝ) (xs neg : Bool) (u : ℝ) :
   cases neg <;> cases xs <;> simp only [slopeR, gS, gC, Bool.false_eq_true, ↓reduceIte] <;> ring
 
 /-- The coefficients of `b₀ + b_T (sin u + cos u) + v (X + Y) - ρ (V / h + h) / 2` with
-`V = X² + Y² = x₀² + y₀² + λ² + 2 x₀ x_a g + 2 y₀ y_a g'` and `h = hn / 10 ^ 7`. -/
+`V = X² + Y² = x₀² + y₀² + λ² + 2 x₀ x_a g + 2 y₀ y_a g'` and `h = hn / 10⁷`. -/
 def circleCoeffs (b0 bT x0 xa y0 ya lam shift rho : FI) (hn : Nat) (xs : Bool) : FI × FI × FI :=
   let w := rho.scaleDiv 10000000 (2 * hn)
   let rh := rho.scaleDiv hn 20000000
@@ -971,6 +997,9 @@ def modeCheck (den lo hi mode : Nat) (pieces : List (Nat × Nat)) (T : ArcBox)
   | _ => !T.side && piecesOK (fun h l up => decide (0 < h) &&
       pos3 den l up c1 (circleCoeffs b0 bT x0 xa y0 ya lam T.shift T.rho h xs)) lo pieces hi
 
+/-- When the tests of a mode pass, `b₀ + c₁ u + b_T (sin u + cos u) + X A + Y B > 0` with
+`X = x₀ + x_a g(u)` and `Y = y₀ + y_a g'(u)`, for every `u` in the interval and every state
+`(A, B)` of the target arc. -/
 theorem modeCheck_sound {den lo hi mode : Nat} {pieces : List (Nat × Nat)} {T : ArcBox}
     {P : PreparedArc} (hT : T.Encloses P) {lam b0 bT c1 x0 xa y0 ya : FI} {xs : Bool}
     {lamr b0r bTr c1r x0r xar y0r yar : ℝ} (hlam : lam.Mem lamr) (hb0 : b0.Mem b0r)
@@ -1082,6 +1111,8 @@ def coreCheck (den lo hi : Nat) (four : Bool) (k : Nat) (sgn : Bool) (mode : Nat
     (lamHalf.sub betaHalf) (sgnBox sgn) T.p.neg (xaF four k1 flip sgn lam) T.q.neg
     (yaF four k1 flip sgn T.positive lam) (bif four then k1 else !k1)
 
+/-- A core row satisfies its Lagrangian bound when its check passes on boxes enclosing its arcs
+and intervals enclosing its multiplier, half the multiplier, half the charge and the target. -/
 theorem coreCheck_positive {c : CoreRow} {den lo hi mode : Nat} {pieces : List (Nat × Nat)}
     {S T : ArcBox} {lam lamHalf betaHalf gamma : FI} {four sgn : Bool}
     (hS : S.Encloses c.source) (hT : T.Encloses c.target) (hfour : c.axisFour = four)
@@ -1202,6 +1233,7 @@ def rowPrep (M : AffineTableMeta) (den : Nat) (x : AffineRow) : PreparedRow :=
     PreparedArc.ofArc M.radius ((x.toTableRow M den).targetArc M),
     M.charge (x.toTableRow M den).edge⟩
 
+/-- The claim of a row from the check of its core row on boxes enclosing the core arcs. -/
 theorem row_claim_of_core {M : AffineTableMeta} {C : TableCtx} (hC : C.Valid M) {x : AffineRow}
     (he : x.edge < 7) (hq : x.quarter ≤ 3) (hhi : x.hi ≤ C.den) {four : Bool}
     {S T : ArcBox} (hS : S.Encloses (rowPrep M C.den x).core.source)

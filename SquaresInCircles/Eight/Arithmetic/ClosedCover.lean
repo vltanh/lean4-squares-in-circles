@@ -3,12 +3,22 @@ module
 public import SquaresInCircles.Eight.Arithmetic.ScalarExpr
 
 /-!
-# Closed interval and box coverage
+# Eight squares: closed chains and boxes
 
-Coverage is a separate proposition from row validity.  All comparisons use
-weak interval membership, and both branches retain their common cut.  Empty
-coverage is allowed only for a strictly empty domain; a singleton requires a
-leaf or an interval containing that point.
+A list of rational intervals is a closed chain over `[lo, hi]` (`ClosedChain`) when its first
+interval starts at or before `lo` and either reaches `hi` or ends at a point `c ≥ lo` from which
+the rest of the list is a closed chain over `[c, hi]`; consecutive intervals thus meet at a
+common endpoint, and the empty list is a closed chain only over an empty interval (`hi < lo`).
+Every point of `[lo, hi]` then lies in an interval of the chain (`ClosedChain.covers`). The chain
+condition compares rationals only, and is decidable.
+
+A `QBox n` is a product of `n` rational intervals. `QBox.left` and `QBox.right` cut it at a
+rational in one coordinate, and a point of the box on one side of the cut lies in that half
+(`QBox.mem_left`, `QBox.mem_right`).
+
+The state chains of the affine tables (`StateCoverage.lean`) and the row intervals of the circle
+duals (`Candidate/Dual.lean`) are closed chains, and the formulas of `ExactFamily/` are bounded
+on such boxes.
 -/
 
 @[expose] public section
@@ -16,6 +26,8 @@ noncomputable section
 
 namespace SquaresInCircles.Eight.Arithmetic
 
+/-- The intervals cover `[lo, hi]` as a chain: each starts at or before the point reached by
+the ones before it, until one reaches `hi`; the empty list covers only an empty interval. -/
 def ClosedChain (lo hi : ℚ) : List QInterval → Prop
   | [] => hi < lo
   | I::rest => I.lo ≤ lo ∧ (hi ≤ I.hi ∨ (lo ≤ I.hi ∧ ClosedChain I.hi hi rest))
@@ -24,6 +36,7 @@ instance closedChainDecidable (lo hi : ℚ) (xs : List QInterval) :
     Decidable (ClosedChain lo hi xs) := by
   induction xs generalizing lo <;> simp only [ClosedChain] <;> infer_instance
 
+/-- Every point of `[lo, hi]` lies in an interval of a closed chain over it. -/
 theorem ClosedChain.covers {lo hi : ℚ} {xs : List QInterval}
     (hc : ClosedChain lo hi xs) {x : ℝ} (hx : QInterval.Mem ⟨lo,hi⟩ x) :
     ∃ I ∈ xs, I.Mem x := by
@@ -42,14 +55,17 @@ theorem ClosedChain.covers {lo hi : ℚ} {xs : List QInterval}
         · obtain ⟨J,hJ,hJx⟩ := ih hnext.2 ⟨hxi',hx.2⟩
           exact ⟨J,List.mem_cons_of_mem I hJ,hJx⟩
 
+/-- A box: a rational interval for each of `n` coordinates. -/
 abbrev QBox (n : ℕ) := Fin n → QInterval
 
 def QBox.Mem {n : ℕ} (b : QBox n) (x : Fin n → ℝ) : Prop :=
   ∀ i, (b i).Mem (x i)
 
+/-- The part of the box where the coordinate `i` is at most `c`. -/
 def QBox.left {n : ℕ} (b : QBox n) (i : Fin n) (c : ℚ) : QBox n :=
   Function.update b i ⟨(b i).lo,c⟩
 
+/-- The part of the box where the coordinate `i` is at least `c`. -/
 def QBox.right {n : ℕ} (b : QBox n) (i : Fin n) (c : ℚ) : QBox n :=
   Function.update b i ⟨c,(b i).hi⟩
 

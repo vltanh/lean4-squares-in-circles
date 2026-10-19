@@ -3,26 +3,26 @@ module
 public meta import Lean
 
 /-!
-# Integer data files
+# Eight squares: integer data files
 
-`int_rows% "file"` is the `List (List Int)` whose rows are the lines of `file`,
-each a list of decimal integers separated by spaces; `int_rows% "file" a b`
-keeps the rows `a, …, b - 1`. `nat_rows%` is the same for natural numbers,
-with values `List (List ℕ)`. With `↦ f` at the end, each line `n₁ … nₖ` becomes
-`f n₁ … nₖ` instead of a list, so that a row is read without decoding a list.
-If the last parameter of `f` is a list of numbers, a line `n₁ … nₖ m₁ … mⱼ` with
-`k` the number of the other parameters becomes `f n₁ … nₖ [m₁, …, mⱼ]`, so lines
-may differ in length. The path is relative to the directory of the source file
-that uses the notation.
+`int_rows% "file"` is the `List (List Int)` whose rows are the nonempty lines of `file`, each a
+list of decimal integers separated by single spaces; `int_rows% "file" a b` keeps the rows
+`a, …, b - 1`, counted from `0`. `nat_rows%` is the same for natural numbers, with values
+`List (List ℕ)`, and a negative entry is an error. With `↦ f` at the end, each line `n₁ … nₖ`
+becomes `f n₁ … nₖ` instead of a list, so that a row is read without decoding a list. If the
+last parameter of `f` is a list of numbers, a line `n₁ … nₖ m₁ … mⱼ` with `k` the number of the
+other parameters becomes `f n₁ … nₖ [m₁, …, mⱼ]`, so lines may differ in length. The values of
+`f` must be data, not proofs. The path is relative to the directory of the source file that uses
+the notation.
 
-The term is built directly from raw literals: a natural number is a raw
-literal, and an integer is `Int.ofNat n` or `Int.negSucc n` with `n` a raw
-literal. No numeral is elaborated, and the kernel reads each number in constant
-time. The notation produces data only; every property of the rows is a
-separate theorem.
+The term is built directly from raw literals: a natural number is a raw literal, and an integer
+is `Int.ofNat n` or `Int.negSucc n` with `n` a raw literal. No numeral is elaborated, and the
+kernel reads each number in constant time. The notation produces data only; every property of
+the rows is a separate theorem.
 
-A module using the notation reads the file when it is elaborated, so it must be
-rebuilt after the file changes.
+A module using the notation reads each of its files once, when it is elaborated, so it must be
+rebuilt after a file changes. The generated tables of `Generated/Affine/`, `Generated/Owner/` and
+`Generated/Pairs/` read their data from `data/eight/` in this way.
 -/
 
 public meta section
@@ -74,7 +74,11 @@ def readRows (path : String) (a b : Option Nat) : TermElabM (List (List Int)) :=
   | .ok rows => pure rows
   | .error e => throwError "{file}: {e}"
 
+/-- `int_rows% "file" a b ↦ f`: the rows `a, …, b - 1` of the integer data file, as lists or
+through `f`. -/
 syntax (name := intRows) "int_rows% " str (ppSpace num ppSpace num)? (" ↦ " term)? : term
+/-- `nat_rows% "file" a b ↦ f`: the rows `a, …, b - 1` of the natural-number data file, as lists
+or through `f`. -/
 syntax (name := natRows) "nat_rows% " str (ppSpace num ppSpace num)? (" ↦ " term)? : term
 
 /-- The list of the rows, each a list of literals or, given `f`, `f` applied to its literals. -/
@@ -106,11 +110,13 @@ def rowsLit (ty : Expr) (lit : Int → Expr) (rows : List (List Int)) (f : Optio
     return apps.foldr (fun x acc => mkApp3 (Lean.mkConst ``List.cons [v]) rowTy x acc)
       (mkApp (Lean.mkConst ``List.nil [v]) rowTy)
 
+/-- The elaborator of `int_rows%`. -/
 @[term_elab intRows] def elabIntRows : TermElab := fun stx _ => do
   let `(int_rows% $path:str $[$a:num $b:num]? $[↦ $f]?) := stx | throwUnsupportedSyntax
   let rows ← readRows path.getString (a.map (·.getNat)) (b.map (·.getNat))
   rowsLit (Lean.mkConst ``Int) intLit rows f
 
+/-- The elaborator of `nat_rows%`; it rejects a negative entry. -/
 @[term_elab natRows] def elabNatRows : TermElab := fun stx _ => do
   let `(nat_rows% $path:str $[$a:num $b:num]? $[↦ $f]?) := stx | throwUnsupportedSyntax
   let rows ← readRows path.getString (a.map (·.getNat)) (b.map (·.getNat))

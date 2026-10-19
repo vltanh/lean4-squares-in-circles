@@ -3,11 +3,21 @@ module
 public import SquaresInCircles.Eight.Arithmetic.AffineTableData
 
 /-!
-# From tangent arcs to support domains
+# Eight squares: the endpoints of an arc
 
-These lemmas supply the analytic part of row preparation: a tangent interval
-on either circular branch maps to a closed interval in b, with the positive
-root branch retained. They are independent of a particular finite table.
+An arc of a table ends at two rational values `u` of the tangent `b / a`, at the points `(a, u a)`
+of its curve. On the outer circle `(a + 1/2)² + (b + 1/2)² = Q` the endpoint has
+`a = outerEndpointA Q u`, the positive root of `(1 + u²) a² + (u + 1) a + 1/2 - Q = 0`, and on the
+core corner `(a - 1/2)² + (b - 1/2)² = (1/12)²` it has `a = coreEndpointA u`, the larger root of
+`(1 + u²) a² - (u + 1) a + 71/144 = 0`. `outerEndpoint_facts` and `coreEndpoint_facts` show that
+these points lie on the curves with `0 ≤ b ≤ a`, for `u ∈ [0, 1]` on the outer circle and
+`u ∈ [6/7, 1]` on the corner.
+
+On a circle with centre `(v, v)`, a point to the right of the centre lies on the branch
+`a = circleX v ρ b` (`circle_branch`), and to the right of and above the centre `b` increases with
+the tangent (`circle_tangent_lower`, `circle_tangent_upper`); so the states of an arc have `b`
+between the values at its endpoints, where the radicand of `circleX` is positive
+(`circle_arc_radicand_positive`). `PreparedArc.lean` applies these facts to the arcs of a table.
 -/
 
 @[expose] public section
@@ -16,12 +26,18 @@ open Set
 
 namespace SquaresInCircles.Eight.Arithmetic
 
+/-- The first coordinate of the point of tangent `u` on the outer circle
+`(a + 1/2)² + (b + 1/2)² = Q`. -/
 def outerEndpointA (Q u : ℝ) : ℝ :=
   (-(u+1)+Real.sqrt ((u+1)^2+4*(1+u^2)*(Q-1/2)))/(2*(1+u^2))
 
+/-- The first coordinate of the point of tangent `u` on the core corner
+`(a - 1/2)² + (b - 1/2)² = (1/12)²`, the larger root. -/
 def coreEndpointA (u : ℝ) : ℝ :=
   (u+1+Real.sqrt ((u+1)^2-(1+u^2)*(71/36)))/(2*(1+u^2))
 
+/-- For `Q > 1/2` and `u ∈ [0, 1]`, the point `(a, u a)` with `a = outerEndpointA Q u` has
+`a > 0` and `0 ≤ u a ≤ a`, and lies on the outer circle. -/
 theorem outerEndpoint_facts {Q u : ℝ} (hQ : 1/2 < Q) (hu : 0 ≤ u ∧ u ≤ 1) :
     0 < outerEndpointA Q u ∧ 0 ≤ u*outerEndpointA Q u ∧
     u*outerEndpointA Q u ≤ outerEndpointA Q u ∧
@@ -48,6 +64,8 @@ theorem outerEndpoint_facts {Q u : ℝ} (hQ : 1/2 < Q) (hu : 0 ≤ u ∧ u ≤ 1
       exact (mul_eq_zero.mp hid2).resolve_left (by positivity)
     nlinarith only [hquad]
 
+/-- For `u ∈ [6/7, 1]`, the point `(a, u a)` with `a = coreEndpointA u` has `a > 1/2` and
+`1/2 ≤ u a ≤ a`, and lies on the core corner. -/
 theorem coreEndpoint_facts {u : ℝ} (hu : 6/7 ≤ u ∧ u ≤ 1) :
     1/2 < coreEndpointA u ∧ 1/2 ≤ u*coreEndpointA u ∧
     u*coreEndpointA u ≤ coreEndpointA u ∧
@@ -90,15 +108,19 @@ theorem coreEndpoint_facts {u : ℝ} (hu : 6/7 ≤ u ∧ u ≤ 1) :
       exact (mul_eq_zero.mp hid2).resolve_left (by positivity : (4:ℝ)*(1+u^2) ≠ 0)
     nlinarith only [hquad]
 
+/-- A point of the circle with centre `(v, v)` and radius `ρ` to the right of the centre lies on
+the branch `circleX`. -/
 theorem circle_branch {v ρ a b : ℝ} (ha : v < a)
     (hc : (a-v)^2+(b-v)^2=ρ^2) : a = circleX v ρ b := by
   have he : ρ^2-(b-v)^2=(a-v)^2 := by nlinarith only [hc]
   rw [circleX,he,Real.sqrt_sq (sub_pos.mpr ha).le]
   ring
 
+/-- On a circle with centre `(v, v)`, a point to the right of and above the centre with tangent
+at least `t` has `b` at least that of the point `(a₀, t a₀)` of the circle to the right of the
+centre. -/
 theorem circle_tangent_lower {v ρ a b a₀ b₀ t : ℝ}
-    (ha : 0 < a) (ha₀ : 0 < a₀) (haV : v < a) (ha₀V : v < a₀)
-    (hbV : v ≤ b) (hb₀V : v ≤ b₀) (ht : 0 ≤ t)
+    (ha : 0 < a) (haV : v < a) (ha₀V : v < a₀) (hbV : v ≤ b) (ht : 0 ≤ t)
     (hpoint : b₀=t*a₀) (hl : t ≤ b/a)
     (hc : (a-v)^2+(b-v)^2=ρ^2) (hc₀ : (a₀-v)^2+(b₀-v)^2=ρ^2) :
     b₀ ≤ b := by
@@ -112,9 +134,11 @@ theorem circle_tangent_lower {v ρ a b a₀ b₀ t : ℝ}
   rw [← hpoint] at hm
   linarith
 
+/-- On a circle with centre `(v, v)`, a point to the right of the centre with tangent at most `t`
+has `b` at most that of the point `(a₁, t a₁)` of the circle to the right of and above the
+centre. -/
 theorem circle_tangent_upper {v ρ a b a₁ b₁ t : ℝ}
-    (ha : 0 < a) (ha₁ : 0 < a₁) (haV : v < a) (ha₁V : v < a₁)
-    (hbV : v ≤ b) (hb₁V : v ≤ b₁) (ht : 0 ≤ t)
+    (ha : 0 < a) (haV : v < a) (ha₁V : v < a₁) (hb₁V : v ≤ b₁) (ht : 0 ≤ t)
     (hpoint : b₁=t*a₁) (hu : b/a ≤ t)
     (hc : (a-v)^2+(b-v)^2=ρ^2) (hc₁ : (a₁-v)^2+(b₁-v)^2=ρ^2) :
     b ≤ b₁ := by
@@ -128,6 +152,8 @@ theorem circle_tangent_upper {v ρ a b a₁ b₁ t : ℝ}
   rw [← hpoint] at hm
   linarith
 
+/-- The radicand `ρ² - (b - v)²` of `circleX` is positive for `b` from `l ≥ v` up to the second
+coordinate `u` of a point `(aU, u)` of the circle to the right of the centre. -/
 theorem circle_arc_radicand_positive {v ρ l u aU : ℝ}
     (hl : v ≤ l) (ha : v < aU)
     (hc : (aU-v)^2+(u-v)^2=ρ^2) :

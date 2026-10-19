@@ -12,10 +12,10 @@ The models of the admissible parameters `(x, y, w, z, eta)` and their mirror ima
 diagonal (`reflectedModel`) form the set `models`: each is a packing in the closed disk of radius
 `radius = √qStar` about the origin (`model_packing`) that reaches the circle (`model_reaches`).
 The admissible set contains its weak contact boundaries. Every point of the rational box
-`InBox`, of side `0.002` in each parameter, is admissible (`box_admissible`), and distinct
-parameters give distinct models (`model_parameter_injective`), so the family has five independent
-parameters (`five_parameter_box`). Conversely, the admissibility conditions are necessary for a
-packing at the radius `√qStar` whose exterior squares are those of a model
+`InBox`, of side `0.002` in each parameter, is admissible (`box_admissible`), so its models are
+packings (`whole_box_packing`); that distinct points of the box give non-congruent packings is
+`full_dimensional_equality_box` (`Uniqueness.lean`). Conversely, the admissibility conditions
+are necessary for a packing at the radius `√qStar` whose exterior squares are those of a model
 (`admissible_of_original_geometry`).
 
 The mirror image is a separate branch, chosen by a Boolean, because `Congruent` uses positively

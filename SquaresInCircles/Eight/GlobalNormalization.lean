@@ -6,15 +6,35 @@ public import SquaresInCircles.Eight.WordGeometry
 public import SquaresInCircles.Eight.ExactFamily.EqualityGeometry
 
 /-!
-# Arbitrary packing to the captured candidate frame
+# Eight squares: the global normalization
 
-The original centers are retained in `source`. Boundary reduction is used at
-`max q qMinus`; its representative is then expanded to Q1. The temporary Q0
-expansion supplies only the frame and quarter-word conclusions. Actual
-permutations, a possible reflection and a common rotation act on the original
-packing and on both boundary cycles together.
+A packing of eight squares at a squared radius `q ≤ Q1` is congruent, up to the reflection in the
+diagonal, to a packing in a normal form (`GlobalNormalization`, `global_normalization_exists`).
+Its square `0` contains the core disk, and the seven others, in the order of their centre
+directions, form a neighbour cycle at the level `max q qMinus` (`RadiusTransfer.lean`). The
+boundary reduction of that cycle (`BoundaryReduction.lean`) is expanded to a boundary cycle at
+the level `Q1` with a candidate frame and `τ_E ≤ 0`. The original centres are kept in the cycle
+`source`: a square is determined by its centre and its physical frame, and the threshold of a
+pair by the physical frames (`sameSquare_of_physical_center`, `threshold_same_physical`), so the
+original squares, with the frames of the expanded cycle, keep its witnesses
+(`BoundaryNormalization.source`).
 
-Uncompiled source draft.
+The candidate frame comes from the quarter word. The boundary cycle at `Q1` is expanded once more,
+to `Q0`, where the four-type pair bounds (`Arithmetic/FourTypePairs.lean`) and the budget of
+`Frames.lean` bound the frame charges, which gives a quarter lift (`quarterLift_of_cost`), and its
+word is equivalent to `0101011` (`WordGeometry.lean`). The lift is read on the cycle at `Q1`,
+whose rays, tangents and frames are the same (`QuarterLift.pullback`). A rotation or reflection
+of the cycle (`CycleActions.lean`) then takes the word to `0101011` itself, and a rotation of the
+plane makes `θ_A = 0` (`candidateFrameOfWordAction`); of the two orientations that keep the
+candidate word (`candidate_word_mirror`), one has `τ_E ≤ 0` (`candidate_normalization_of_word`,
+`boundary_candidate_normalization`). These motions act on the packing, the source cycle and the
+two boundary cycles together (`NormalizationData.act`), which keeps the congruence with the
+original packing.
+
+The file ends with the sides of the two sliding squares in the equality case
+(`GlobalNormalization.original_slider_sectors`): once the original centres are those of the
+stationary family, the polar order of the original centres places `T` between `B` and `D` and
+`G` between `H` and `A`, and avoiding the core disk gives `7/12 ≤ Z` and `η ≤ etaMax`.
 -/
 
 @[expose] public section
@@ -22,8 +42,12 @@ noncomputable section
 open scoped BigOperators
 namespace SquaresInCircles.Eight
 
-/-- The geometric entry point consumed by the sharp terminal and original
-stationary pullback. Original containment remains at the actual input q. -/
+/-- A normal form of the packing `S` at the squared radius `q`: a packing `squares`, congruent to
+`S` after the reflection in the diagonal when `reflected`, whose square `0` contains the core
+disk. The seven other squares, with their centres, form the neighbour cycle `source` at the level
+`max q qMinus`, in polar order; `recovered` is the boundary cycle of their reduction, and
+`expanded` its expansion to the level `Q1`, with a candidate frame and `τ_E ≤ 0`. The squares of
+`source` have the frames and witnesses of `expanded`. -/
 structure GlobalNormalization (S : Fin 8 → UnitSquare) (q : ℝ) where
   squares : Fin 8 → UnitSquare
   packing : SqPacking squares (0,0) q
@@ -42,6 +66,8 @@ structure GlobalNormalization (S : Fin 8 → UnitSquare) (q : ℝ) where
   source_frames : ∀ i,SameFrame (source.square i) (expanded.square i)
   source_selected : source.selected=expanded.selected
 
+/-- The data of a `GlobalNormalization` without the candidate frame, on which the cycle actions
+act (`NormalizationData.act`). -/
 structure NormalizationData (S : Fin 8 → UnitSquare) (q : ℝ) where
   squares : Fin 8 → UnitSquare
   packing : SqPacking squares (0,0) q
@@ -56,6 +82,7 @@ structure NormalizationData (S : Fin 8 → UnitSquare) (q : ℝ) where
   source_frames : ∀ i,SameFrame (source.square i) (expanded.square i)
   source_selected : source.selected=expanded.selected
 
+/-- Two squares with the same centre and the same physical frame are the same square. -/
 lemma sameSquare_of_physical_center {K J : UnitSquare}
     (hc : K.center=J.center) (hf : SamePhysicalFrame K J) : SameSquare K J := by
   rcases hf with ⟨hcos,hsin⟩|⟨hcos,hsin⟩|⟨hcos,hsin⟩|⟨hcos,hsin⟩
@@ -86,12 +113,15 @@ private lemma relative_same_physical {K K' J J' : UnitSquare}
     | (right; right; left; constructor <;> simp only [relativeC,relativeS,hc,hs,hC,hS] <;> ring1)
     | (right; right; right; constructor <;> simp only [relativeC,relativeS,hc,hs,hC,hS] <;> ring1)
 
+/-- The separating-axis threshold of a pair depends only on the physical frames. -/
 lemma threshold_same_physical {K K' J J' : UnitSquare}
     (hK : SamePhysicalFrame K K') (hJ : SamePhysicalFrame J J') :
     SAT.threshold K J=SAT.threshold K' J' := by
   rcases relative_same_physical hK hJ with ⟨h₁,h₂⟩|⟨h₁,h₂⟩|⟨h₁,h₂⟩|⟨h₁,h₂⟩ <;>
     simp only [SAT.threshold,h₁,h₂,abs_neg] <;> ring
 
+/-- The square `i` of the expanded cycle moved to the centre of the original square: the original
+square with the canonical frame of the cycle (`sourceSquare_same`). -/
 def BoundaryNormalization.sourceSquare {S : Fin 8 → UnitSquare} {q : ℝ}
     (N : BoundaryNormalization (S := S) q) (i : Vertex) : UnitSquare :=
   moveCenter (N.expanded.square i) (S (N.original.index i)).center
@@ -117,6 +147,8 @@ lemma BoundaryNormalization.sourceSquare_feasible {S : Fin 8 → UnitSquare} {q 
   rw [hn']
   exact hp
 
+/-- The original exterior squares, with the canonical frames and witnesses of the expanded cycle,
+as a neighbour cycle at the level `max q qMinus`. -/
 def BoundaryNormalization.source {S : Fin 8 → UnitSquare} {q : ℝ}
     (N : BoundaryNormalization (S := S) q) : NeighborCycle (sourceLevel q) where
   square := N.sourceSquare
@@ -138,6 +170,7 @@ def BoundaryNormalization.source {S : Fin 8 → UnitSquare} {q : ℝ}
   selected := N.expanded.selected
   feasible := N.sourceSquare_feasible
 
+/-- The polar order of the original exterior squares, as a polar order of the source cycle. -/
 def BoundaryNormalization.sourceOrder {S : Fin 8 → UnitSquare} {q : ℝ}
     (N : BoundaryNormalization (S := S) q) : PolarOrder N.source where
   beta := N.original.original_order.beta
@@ -148,8 +181,8 @@ def BoundaryNormalization.sourceOrder {S : Fin 8 → UnitSquare} {q : ℝ}
   positive := N.original.original_order.positive
   below_pi := N.original.original_order.below_pi
 
-/-- Extend the central label and the seven actual exterior labels to a full
-bijection. Surjectivity is part of the central-core enumeration. -/
+/-- The permutation of `Fin 8` that sends `0` to the central square and `i + 1` to the exterior
+square `i`. -/
 def OrderedExterior.labels {S : Fin 8 → UnitSquare} {q : ℝ} (O : OrderedExterior (S := S) q) :
     Equiv.Perm (Fin 8) := Equiv.ofBijective
   (Fin.cases O.central (fun i => O.index i)) (by
@@ -174,6 +207,7 @@ def OrderedExterior.labels {S : Fin 8 → UnitSquare} {q : ℝ} (O : OrderedExte
       · obtain ⟨i,hi⟩ := O.covers_exterior j hj
         exact ⟨i.succ,hi⟩)
 
+/-- The central square of the packing followed by the seven source squares. -/
 def BoundaryNormalization.squares {S : Fin 8 → UnitSquare} {q : ℝ}
     (N : BoundaryNormalization (S := S) q) : Fin 8 → UnitSquare :=
   Fin.cases (S N.original.central) N.sourceSquare
@@ -185,6 +219,7 @@ lemma BoundaryNormalization.squares_same {S : Fin 8 → UnitSquare} {q : ℝ}
   · exact ⟨fun _ => Iff.rfl,fun _ => Iff.rfl⟩
   · exact N.sourceSquare_same j
 
+/-- The normalization data of a boundary normalization of a packing, before any cycle action. -/
 def BoundaryNormalization.data {S : Fin 8 → UnitSquare} {q : ℝ}
     (N : BoundaryNormalization (S := S) q) (hp : SqPacking S (0,0) q) : NormalizationData S q where
   squares := N.squares
@@ -213,6 +248,8 @@ lemma reflectionSquare_twice (K : UnitSquare) :
   cases K
   rfl
 
+/-- The packing with its exterior squares renumbered by the action, the square `0` first, and
+moved by the motion of the action. -/
 def CycleAction.squares (G : CycleAction) (S : Fin 8 → UnitSquare) : Fin 8 → UnitSquare :=
   fun i => motionSquare G.rotation G.reversed (S (extendExteriorPerm G.index i))
 
@@ -230,6 +267,8 @@ lemma CycleAction.squares_packing {q : ℝ} (G : CycleAction) {S : Fin 8 → Uni
         packing_pull (packing_reflectDiagonal hl) (G.rotation:Direction)
   exact (sqPacking_iff_packing _ _ hp.1).2 hfinal
 
+/-- The packing is congruent to its image under the action, reflected in the diagonal when the
+action reverses the cycle. -/
 lemma CycleAction.squares_congruent (G : CycleAction) (S : Fin 8 → UnitSquare) :
     Congruent S (0,0) (fun i => reflectionSquare G.reversed (G.squares S i)) := by
   rcases G with ⟨s,rev,rot⟩
@@ -265,6 +304,8 @@ lemma reflection_congruent_trans {S T U : Fin 8 → UnitSquare}
   · refine ⟨false,congruent_trans hb ?_⟩
     simpa [reflectionSquare,reflectionSquare_twice] using congruent_diagonal hc
 
+/-- The normalization data moved by a cycle action: the packing, the source cycle, the two
+boundary cycles and the expansion move together. -/
 def NormalizationData.act {S : Fin 8 → UnitSquare} {q : ℝ}
     (N : NormalizationData S q) (G : CycleAction) : NormalizationData S q where
   squares := G.squares N.squares
@@ -284,6 +325,8 @@ lemma candidate_quarter_cast (i : Vertex) :
     ((candidateQuarterWord i).val:ℤ)=Candidate.word i := by
   fin_cases i <;> norm_num [candidateQuarterWord,quarterRepresentatives,Candidate.word]
 
+/-- Quarter offsets whose increments are the digits of the candidate word are `Candidate.offsets`
+up to a constant. -/
 lemma quarter_eq_offsets {m : Vertex → ℤ}
     (hm : ∀ i,integerQuarterIncrement m i=Candidate.word i) (i : Vertex) :
     m i=m Candidate.A+Candidate.offsets i := by
@@ -297,8 +340,9 @@ lemma quarter_eq_offsets {m : Vertex → ℤ}
   fin_cases i <;>
     norm_num [integerQuarterIncrement,Candidate.word,Candidate.offsets,Candidate.A,next] at * <;> omega
 
-/-- The action giving the reflected candidate ordering; its edge permutation
-is i ↦ 4−i and its vertex permutation is i ↦ 5−i. -/
+/-- The action `G` composed with the reflection of the cycle that keeps the candidate word: its
+vertex `i` is the vertex `5 - i` of `G` and its edge `i` the edge `4 - i` of `G`
+(`candidateMirror_edge`). -/
 def CycleAction.candidateMirror (G : CycleAction) : CycleAction :=
   ⟨G.index 5,!G.reversed,0⟩
 
@@ -309,6 +353,7 @@ lemma CycleAction.candidateMirror_edge (G : CycleAction) (i : Vertex) :
     decide
   exact htable G.shift G.reversed i
 
+/-- The mirror changes the sign of the tangent of `E`. -/
 lemma CycleAction.candidateMirror_E {q : ℝ} (G : CycleAction) (C : BoundaryCycle q) :
     (G.candidateMirror.boundary C).tangent Candidate.E= -(G.boundary C).tangent Candidate.E := by
   rw [G.candidateMirror.tangent,G.tangent]
@@ -323,9 +368,12 @@ lemma CycleAction.candidateMirror_E {q : ℝ} (G : CycleAction) (C : BoundaryCyc
   rw [hidx,hsign]
   ring
 
+/-- The candidate word has the same digit on the edges `i` and `4 - i`. -/
 lemma candidate_word_mirror (i : Vertex) : Candidate.word (4-i)=Candidate.word i := by
   fin_cases i <;> norm_num [Candidate.word]
 
+/-- The action `G` followed by the rotation of the plane that turns the canonical angle
+`θ_A + m_A π/2` of `A`, in the lift moved by `G`, to `0`. -/
 def normalizedCandidateAction {q : ℝ} {C : BoundaryCycle q} (F : QuarterLift C) (G : CycleAction) :
     CycleAction :=
   { G with rotation := G.rotation+(F.act G).theta Candidate.A+
@@ -335,8 +383,10 @@ lemma normalizedCandidateAction_tangent {q : ℝ} {C : BoundaryCycle q} (F : Qua
     (G : CycleAction) (i : Vertex) :
     ((normalizedCandidateAction F G).boundary C).tangent i=(G.boundary C).tangent i := rfl
 
-/-- Subtract the actual A-frame angle, after the integer word has already
-fixed all seven quarter offsets. No tangent or owner capture is assumed. -/
+/-- If the action `G` turns the quarter increments into the digits of the candidate word, the
+representatives `θᵢ - θ_A` of the moved lift are a candidate frame of the normalized cycle: the
+word fixes the quarter offsets (`quarter_eq_offsets`), and the gaps and the forward axes come
+from `BoundaryGeometry.lean`. -/
 def candidateFrameOfWordAction {q : ℝ} {C : BoundaryCycle q} (F : QuarterLift C)
     (hq : q ≤ Q0) (G : CycleAction)
     (hword : ∀ i,integerQuarterIncrement (G.quarter F.quarter) i=Candidate.word i) :
@@ -370,11 +420,15 @@ def candidateFrameOfWordAction {q : ℝ} {C : BoundaryCycle q} (F : QuarterLift 
   gap_upper := boundary_gap_upper _ hq
   forward_complete := boundary_forward_complete _ hq
 
+/-- A cycle action under which `C` has a candidate frame and `τ_E ≤ 0`. -/
 structure CandidateNormalization {q : ℝ} (C : BoundaryCycle q) where
   action : CycleAction
   frame : Candidate.Frame (action.boundary C)
   eHalf : Candidate.EHalf (action.boundary C)
 
+/-- A cycle at a level `q ≤ Q0` whose quarter word is equivalent to `0101011` has a candidate
+normalization: the action that takes the word to `0101011`, or its mirror, whichever gives
+`τ_E ≤ 0`. -/
 lemma candidate_normalization_of_word {q : ℝ} (C : BoundaryCycle q) (F : QuarterLift C)
     (hq : q ≤ Q0) (hgap : ∀ i,19/25<angleGap C.beta i)
     (hw : (F.word hgap pi_lt_22_over_7).DihedralEquivalent candidateQuarterWord) :
@@ -387,8 +441,7 @@ lemma candidate_normalization_of_word {q : ℝ} (C : BoundaryCycle q) (F : Quart
     have he : (F.word hgap pi_lt_22_over_7) (G.edge i)=candidateQuarterWord i := by
       rw [hw']
       cases hb : b <;>
-        simp [quarterDihedral,G,CycleAction.edge,CycleAction.index,hb,next] <;>
-        congr 1 <;> abel
+        simp [quarterDihedral,G,CycleAction.edge,CycleAction.index,hb,next]
     rw [he,candidate_quarter_cast]
   have hwordR (i : Vertex) :
       integerQuarterIncrement (G.candidateMirror.quarter F.quarter) i=Candidate.word i := by
@@ -404,9 +457,10 @@ lemma candidate_normalization_of_word {q : ℝ} (C : BoundaryCycle q) (F : Quart
       candidateFrameOfWordAction F hq G.candidateMirror hwordR,
       by simpa [Candidate.EHalf,normalizedCandidateAction_tangent] using hneg⟩⟩
 
-/-- The Q0 cycle is a temporary witness for frame concentration and the word
-exclusion. The unchanged real rays, tangents and quarter lifts are then read
-on the already-feasible Q1 cycle. -/
+/-- Every boundary cycle at the level `Q1` has a candidate normalization. Its expansion to `Q0` has
+frame charges below `10394/25425` by the four-type pair bounds, hence a quarter lift, whose word
+is equivalent to `0101011` (`quarter_word_candidate`); the lift is read on the cycle at `Q1`, with
+the same word. -/
 theorem boundary_candidate_normalization (C : BoundaryCycle Q1) :
     Nonempty (CandidateNormalization C) := by
   have hQ1 : Q1 ∈ Set.Icc (5/2) 4 :=
@@ -432,6 +486,7 @@ theorem boundary_candidate_normalization (C : BoundaryCycle Q1) :
   apply candidate_normalization_of_word C F' radius_levels.2.2.1.le hgapC
   simpa only [hw] using hwordD
 
+/-- Every packing at a squared radius `q ≤ Q1` has a global normalization. -/
 theorem global_normalization_exists {S : Fin 8 → UnitSquare} {q : ℝ}
     (hp : SqPacking S (0,0) q) (hq : q ≤ Q1) : Nonempty (GlobalNormalization S q) := by
   obtain ⟨B⟩ := boundary_normalization_exists hp hq
@@ -456,8 +511,9 @@ theorem global_normalization_exists {S : Fin 8 → UnitSquare} {q : ℝ}
     source_frames := M.source_frames
     source_selected := M.source_selected }⟩
 
-/-! ## The original slider sectors, after stationary anchor recovery -/
+/-! ## The sides of the sliding squares in the equality case -/
 
+/-- Two successive gaps add up to less than `π`, since the five others exceed `19/25`. -/
 lemma two_successive_gaps_lt_pi (β : Vertex → ℝ)
     (hgap : ∀ i,19/25<angleGap β i) (i : Vertex) :
     angleGap β i+angleGap β (next i)<Real.pi := by
@@ -473,9 +529,9 @@ lemma two_successive_gaps_lt_pi (β : Vertex → ℝ)
     norm_num [Fin.sum_univ_succ,angleGap,next] at * <;>
     linarith [pi_lt_22_over_7]
 
-/-- A linear functional positive at both ends of an angular interval shorter
-than pi remains positive at every positive-radius point strictly between
-those rays. The sine interpolation identity supplies positive coefficients. -/
+/-- A linear functional positive at two points whose directions `a < c` differ by less than `π` is
+positive at every point at a positive distance whose direction lies strictly between them: by the
+sine identity the point is a positive combination of the two. -/
 lemma dot_positive_between_polar {p₁ p₂ p₃ n : Point} {r₁ r₂ r₃ a b c : ℝ}
     (hr₁ : 0<r₁) (hr₂ : 0<r₂) (hr₃ : 0<r₃)
     (hp₁ : p₁=(r₁*Real.cos a,r₁*Real.sin a))
@@ -501,6 +557,8 @@ lemma dot_positive_between_polar {p₁ p₂ p₃ n : Point} {r₁ r₂ r₃ a b 
   rw [← hid] at hright
   nlinarith
 
+/-- The same for the centres of three squares of a polar order whose directions span less than
+`π`. -/
 lemma polarOrder_positive_three {q : ℝ} {C : NeighborCycle q} (O : PolarOrder C)
     {l m u : Vertex} {n : Point}
     (hlm : O.beta l<O.beta m) (hmu : O.beta m<O.beta u)
@@ -513,8 +571,10 @@ lemma polarOrder_positive_three {q : ℝ} {C : NeighborCycle q} (O : PolarOrder 
     (Prod.ext (O.center_cos m) (O.center_sin m))
     (Prod.ext (O.center_cos u) (O.center_sin u)) hlm hmu hspan hl hu
 
+/-- A square that avoids the core disk, with secondary coordinate `|b| ≤ 1/2`, has primary
+coordinate at least `7/12`. -/
 lemma core_primary_of_small_secondary {K : UnitSquare} {a b : ℝ}
-    (hcore : CoreAvoiding K) (ha : 0≤a) (hb : |b|≤1/2)
+    (hcore : CoreAvoiding K) (hb : |b|≤1/2)
     (hα : alpha K (0,0)=a) (hβ : beta K (0,0)=|b|) : 7/12≤a := by
   have hc := (coreAvoiding_iff_distance K).1 hcore
   rw [coreDistanceSq,hα,hβ,max_eq_right (by linarith : |b|-1/2≤0)] at hc
@@ -527,9 +587,10 @@ lemma core_primary_of_small_secondary {K : UnitSquare} {a b : ℝ}
   nlinarith
 
 open ExactFamily ExactFamily.Coordinates in
-/-- The side of each slider line is selected from the untouched original
-cyclic order only after the five anchor centers have been fixed. No claim
-about preserving individual rays during boundary reduction is used. -/
+/-- In the equality case, if the original centres are `sharpData.exteriorCenters Z η` and `T` and
+`G` have their stationary frames, then `7/12 ≤ Z` and `η ≤ etaMax`: the polar order of the
+original centres places `T` between `B` and `D` and `G` between `H` and `A`, which fixes the side
+of each centre, and both squares avoid the core disk. -/
 theorem GlobalNormalization.original_slider_sectors {S : Fin 8 → UnitSquare}
     (N : GlobalNormalization S qStar) {Z η : ℝ}
     (hcenters : ∀ i,(N.source.square i).center=sharpData.exteriorCenters Z η i)
@@ -601,9 +662,8 @@ theorem GlobalNormalization.original_slider_sectors {S : Fin 8 → UnitSquare}
       norm_num [exteriorCenters,pG,inFrame]
       linear_combination -(sharpData.h₁+3/2)*sharpData.unit
     rw [beta,hlocal,abs_neg]
-  have hT := core_primary_of_small_secondary (N.source.core 4) hTpositive.le hxsmall hTα hTβ
-  have hG := core_primary_of_small_secondary (N.source.core 1)
-    (by linarith) hXsmall hGα hGβ
+  have hT := core_primary_of_small_secondary (N.source.core 4) hxsmall hTα hTβ
+  have hG := core_primary_of_small_secondary (N.source.core 1) hXsmall hGα hGβ
   exact ⟨hT,by dsimp [etaMax]; linarith⟩
 
 end SquaresInCircles.Eight

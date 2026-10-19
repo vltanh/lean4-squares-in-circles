@@ -13,10 +13,11 @@ the chain `A → B` and the corner disk of `A` give `b_A ≥ 3/10` and `a_A ≤ 
 For each axis of `G`, a three-edge chain through `H`, `G` and `E` excludes the `E` axes `2` and
 `3`. The chains of the `G` axes `2` and `3` complete the corner disk of `G` once, with the force
 `(c, 1 - s)`, `(1, 1)`, `(c, c - s)` or `(1, c)`. A nonpositive tilt with the `E` axis `2`
-satisfies `sin t > -1/4`, and a nonnegative tilt with the `G` axis `2` or `3` satisfies
-`sin t ≤ 1/5` or `sin t ≤ 3/20`. Demand minus force is at least `3/400` and the error at most
+satisfies `sin t > -1/4`, and a nonnegative tilt satisfies `sin t ≤ 1/5` with the `G` axis `2` and
+`sin t ≤ 3/20` with the `G` axis `3`. Demand minus force is at least `3/400` and the error at most
 `3001S/1000` (`mixed_E_axis_two_three`). So every axis that separates `E → H` is `0` or `1`
-(`mixed_E_owners`), also when another axis separates as well.
+(`mixed_E_owners`), also when another axis separates as well; `DualApplication.lean` uses this for
+the terminal owners (`mixed_owners`).
 -/
 
 @[expose] public section

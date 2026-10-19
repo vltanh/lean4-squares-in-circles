@@ -3,10 +3,16 @@ module
 public import SquaresInCircles.Eight.Arithmetic.CoreRow
 
 /-!
-# Original-axis binding for a proof-producing row
+# Eight squares: from a table row to its core row
 
-Axes two and three exchange the endpoints and negate both signs and labels.
-This adapter restores the statement to the original ordered geometric pair.
+A prepared row (`PreparedRow`) is a row of a table with its two prepared arcs and the charge of
+its edge. Its core row (`PreparedRow.core`) keeps a row on the axis one or four as it is; on the
+axes two and three it exchanges the source and the target and reverses both arcs (opposite sign,
+negated label), which turns the axis two into four and three into one without changing the
+margin or the charged cost (`margin_reverse`, `charge_reverse`). So the Lagrangian bound of the
+core row and a nonnegative multiplier give the charged inequality of the row itself
+(`sound_of_positive`), and when the arcs and the charge are those of the table (`Matches`), the
+claim of the row (`claim_of_positive`).
 -/
 
 @[expose] public section
@@ -14,6 +20,7 @@ noncomputable section
 
 namespace SquaresInCircles.Eight.Arithmetic
 
+/-- The arc with the opposite sign and the negated label. -/
 def ArcData.reverse (a : ArcData) : ArcData :=
   {a with positive:=!a.positive,label:=a.label.neg}
 def PreparedArc.reverse (a : PreparedArc) : PreparedArc := {a with data:=a.data.reverse}
@@ -22,6 +29,7 @@ def PreparedArc.reverse (a : PreparedArc) : PreparedArc := {a with data:=a.data.
   cases h : a.positive <;> simp [reverse,sign,h]
 @[simp] theorem ArcData.reverse_label (a : ArcData) : a.reverse.label=a.label.neg := rfl
 
+/-- A row of a table with its prepared source and target arcs and the charge of its edge. -/
 structure PreparedRow where
   row : AffineTableRow
   source : PreparedArc
@@ -30,6 +38,8 @@ structure PreparedRow where
 
 namespace PreparedRow
 
+/-- The core row: on the axes one and four the row itself; on the axes two and three the row
+with the source and the target exchanged and reversed, on the axes four and one. -/
 def core (p : PreparedRow) : CoreRow :=
   let reversed := p.row.axis=.two ∨ p.row.axis=.three
   { source := if reversed then p.target.reverse else p.source
@@ -47,8 +57,8 @@ theorem core_phi (p : PreparedRow) (u : ℝ) : p.core.phi u=p.row.phi u := by
     simp [core,CoreRow.phi,AnglePolynomial.phi,AnglePolynomial.signQ,
       AffineTableRow.phi,AffineTableRow.sign,h]
 
-/-- The charged inequality on the original ordered pair, from the Lagrangian bound of the
-core row (whose axes 2 and 3 are reversed to 4 and 1). -/
+/-- The charged inequality of the row from the Lagrangian bound of its core row, through the
+reversal on the axes two and three. -/
 theorem sound_of_positive {p : PreparedRow} (hp : p.core.Positive) (hlam : 0 ≤ p.row.multiplier)
     {a b A B u : ℝ} (hs : p.source.data.Contains p.source.radius a b)
     (ht : p.target.data.Contains p.target.radius A B) (hu : p.row.angle.Mem u)
@@ -115,11 +125,14 @@ theorem sound_of_positive {p : PreparedRow} (hp : p.core.Positive) (hlam : 0 ≤
       rw [h1,h2,hphi] at hh
       exact hh
 
+/-- The prepared arcs are those of the row in the table, at its level, and the charge is that of
+the edge. -/
 def Matches (p : PreparedRow) (M : AffineTableMeta) : Prop :=
   p.source.data=p.row.sourceArc M ∧ p.target.data=p.row.targetArc M ∧
   p.source.radius=M.radius ∧ p.target.radius=M.radius ∧ p.charge=M.charge p.row.edge
 
-/-- The row claim from the Lagrangian bound of the core row. -/
+/-- The claim of the row from the Lagrangian bound of its core row, for a nonnegative multiplier
+and arcs and charge matching the table. -/
 theorem claim_of_positive {p : PreparedRow} {M : AffineTableMeta}
     (hp : p.core.Positive) (hlam : 0 ≤ p.row.multiplier) (hm : p.Matches M) :
     p.row.Claim M := by

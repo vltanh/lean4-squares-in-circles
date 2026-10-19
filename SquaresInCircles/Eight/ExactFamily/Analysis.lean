@@ -333,7 +333,7 @@ theorem minimum_continuous : ContinuousOn minimumValue radiusBox := by
       simp only [Real.dist_eq,Subtype.dist_eq,NNReal.coe_ofNat]
       rw [abs_of_nonneg (by linarith : 0 ≤ (q:ℝ)-(r:ℝ))]
       exact abs_le.mpr ⟨by linarith,by linarith⟩
-  exact continuousOn_iff_continuous_restrict.mpr hlip.continuous
+  exact continuousOn_iff_continuous_domRestrict.mpr hlip.continuous
 
 theorem minimum_trial_lower {q : ℝ} (hq : q ∈ radiusBox) :
     familyValue q trial-2*(familyY q trial)^2-2*(familyZ q trial)^2 ≤ minimumValue q := by

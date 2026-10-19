@@ -5,18 +5,24 @@ public import SquaresInCircles.Eight.Candidate.GeometricOwnersTiltCone
 /-!
 # Eight squares: both forbidden quarter directions are impossible
 
-The last `G` axis, `1`, is excluded by four arguments, one for each axis of `E`: two complete the
-square in the circle of `H`, two telescope the transverse coordinates, and the shared error is at
-most `7S/2` (`G_axis_one_double_forbidden_excluded`). With the previous classes, two forbidden
-quarter directions are impossible (`double_forbidden_excluded`), and every axis that separates
-`D → E` at mismatch at most `3/200` is a quarter owner (`D_quarter_owners`).
+With forbidden axes on both `B → T` and `D → E` at mismatch at most `3/200`, the `G` axis `1` does
+not separate (`G_axis_one_double_forbidden_excluded`). With `b_A ≥ 81/100`, a supporting line of
+the circle of `A` gives `a_A ≤ 99/100`, which excludes a nonnegative tilt, and
+`forbidden_D_negative_tilt_bound` gives `sin t > -9/20`. On the remaining arc four arguments, one
+for each axis of `E`, finish: two complete the square in the circle of `H`, two telescope the
+transverse coordinates, and the shared error is at most `7S/2` (`double_G_one_all_E_excluded`).
+With the `G` axes `0`, `2` and `3` (`GeometricOwnersDouble.lean`, `GeometricOwnersQuarter.lean`,
+`GeometricOwnersTiltCone.lean`), two forbidden quarter directions are impossible
+(`double_forbidden_excluded`), and with `quarter_mixed_direction_excluded` every axis that
+separates `D → E` at mismatch at most `3/200` is a quarter owner (`D_quarter_owners`).
 -/
 
 @[expose] public section
 noncomputable section
 namespace SquaresInCircles.Eight.Candidate
 
-/-- On the short negative arc the chord has a quadratic and a linear bound, endpoints included. -/
+/-- For a direction `(c, r)` of the unit circle with `c ≥ 3/4` and `0 ≤ r ≤ 9/20`: `7/8 ≤ c ≤ 1`,
+`1 - c ≤ (8/15) r²` and `1 - c ≤ r/4`. -/
 theorem short_negative_geometry {c r : ℝ} (hc : 3/4 ≤ c)
     (hr : 0 ≤ r) (hrU : r ≤ 9/20) (hunit : c^2+r^2=1) :
     7/8 ≤ c ∧ c ≤ 1 ∧ 1-c ≤ (8/15)*r^2 ∧ 1-c ≤ r/4 := by
@@ -42,9 +48,10 @@ theorem nominal_G_axis_one_projection {q : ℝ} {C : BoundaryCycle q}
     Real.sin_sub, Real.cos_sub]
   ring
 
-/-- Four scalar arguments cover the four axes of `E`. Two complete the square in the circle of `H`,
-with weight `1/3` and force directions `(c, c - r)` and `(1, c)`; the other two use bounds on
-primary coordinates. -/
+/-- For the `G` axis `1` at a tilt with `c = cos t ≥ 3/4` and `0 ≤ r = -sin t ≤ 9/20`, with
+`a_A ≤ 1` and `a_E ≥ 39/40`, no axis of `E` separates `E → H`. Two cases complete the square in
+the circle of `H`, with the weight `1/3` and the forces `(c, c - r)` and `(1, c)`; the other two
+telescope the transverse coordinates and use bounds on the primary coordinates. -/
 theorem double_G_one_all_E_excluded
     {aA aG bG aH bH aE bE c r q ε : ℝ}
     (hq : q ≤ Q0) (hAa : aA ≤ 1) (hGa : aG ≤ 283/200)
@@ -95,8 +102,8 @@ theorem double_G_one_all_E_excluded
     have hHprimary := mul_le_mul_of_nonneg_right hHa hr
     nlinarith only [hAa,hEu,hGprimary,hHprimary,hG,hHc,hE,hεc,hεU,hcL,hr]
 
-/-- A supporting line of the circle of `A` has a strict gap below one, which excludes nonnegative
-tilt for `G`-axis `1`. -/
+/-- A point of the corner disk at a level `q ≤ Q0` with `b ≥ 81/100` has `a ≤ 99/100`, which
+excludes a nonnegative tilt for the `G` axis `1`. -/
 theorem large_transverse_primary_ninety_nine {a b q : ℝ} (hq : q ≤ Q0)
     (hb : 81/100 ≤ b) (hcircle : (a+1/2)^2+(b+1/2)^2 ≤ q) : a ≤ 99/100 := by
   have hsupport := Dual.circle_linear_upper (a := a) (b := b)
@@ -105,6 +112,8 @@ theorem large_transverse_primary_ninety_nine {a b q : ℝ} (hq : q ≤ Q0)
   norm_num at hsupport
   linarith
 
+/-- With forbidden axes on `B → T` and `D → E` at mismatch at most `3/200`, the `G` axis `1` does
+not separate `G → A`, whatever the axis of `E`. -/
 theorem G_axis_one_double_forbidden_excluded {q : ℝ} {C : BoundaryCycle q}
     (F : Frame C) (hq : q ≤ Q0) (hc : TangentCuts C) (hzero : ZeroOwners C)
     (hS : mismatch F.theta ≤ 3/200)
@@ -166,8 +175,9 @@ theorem G_axis_one_double_forbidden_excluded {q : ℝ} {C : BoundaryCycle q}
   · simpa [H, G, next] using hHp
   · exact hEp
 
-/-- With both quarter axes forbidden, no `G` axis is feasible. Each case assumes only that its
-own axis is feasible; other axes may be feasible as well. -/
+/-- Forbidden axes do not separate both `B → T` and `D → E` at mismatch at most `3/200`: no axis
+would separate `G → A`. Each case assumes only that its own axis separates; other axes may
+separate as well. -/
 theorem double_forbidden_excluded {q : ℝ} {C : BoundaryCycle q}
     (F : Frame C) (hq : q ≤ Q0) (hc : TangentCuts C) (hzero : ZeroOwners C)
     (hS : mismatch F.theta ≤ 3/200)
@@ -185,8 +195,8 @@ theorem double_forbidden_excluded {q : ℝ} {C : BoundaryCycle q}
   · exact G_axis_two_forbidden_quarter_excluded F hq hc hzero hS hB hBsep hG
   · exact G_axis_three_double_forbidden_excluded F hq hc hzero hS hB hD hBsep hDsep hG
 
-/-- Every feasible `D` axis is a quarter owner. A forbidden axis is excluded even when another
-axis is feasible at the same time. -/
+/-- At mismatch at most `3/200`, every axis that separates `D → E` is a quarter owner. A forbidden
+axis is excluded even when another axis separates at the same time. -/
 theorem D_quarter_owners {q : ℝ} {C : BoundaryCycle q}
     (F : Frame C) (hq : q ≤ Q0) (hc : TangentCuts C) (hzero : ZeroOwners C)
     (hS : mismatch F.theta ≤ 3/200) (jD : Fin 4)

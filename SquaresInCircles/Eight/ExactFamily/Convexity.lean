@@ -9,30 +9,32 @@ public import Mathlib.Topology.Order.Compact
 /-!
 # Eight squares: convexity of the chain in the position
 
-The chain of `Coordinates` is written with the downward position `u = -y` and the four successive
-square roots `r, U, Y, w` (`lowerRight`, `topRight`, `topHeight`, `lowerLeft`); the radical domain
-`Domain q u` is `u ≥ 0` with the four radicands nonnegative. For `q < 4` a chord of a disk lies in
-the disk, so applying it successively along the chain shows that the domain is convex and that the
-two components `k₁, k₂` of the fifth corner are convex in `u`, the first strictly. Both are
-positive for `0 < c ≤ 1`, `0 ≤ s ≤ 1`, so the defect `k₁² + k₂² - q` is strictly convex on the
-whole domain, endpoints included (`strictConvexOn_defect`), and has at most one minimum
-(`minimizer_unique`). The chart agrees with `Coordinates` (`coordinate_values`,
-`coordinate_defect`). For `q₀ < q₁ < 4` each circle contains the smaller one, so
-`F(q₁) < F(q₀) - (q₁ - q₀)` at every position and every tilt with `c > 0`, `s ≥ 0`
-(`defect_radius_decrease`).
+The chain of `Coordinates.lean` is written with the downward position `u = -y` and the four
+successive square roots `r, U, Y, w` (`lowerRight`, `topRight`, `topHeight`, `lowerLeft`), with
+`V = 3 - U` (`topLeft`) and `v = 2 - Y` (`lowerHeight`); the radical domain `Domain q u` is
+`u ≥ 0` with the four radicands nonnegative. For `q < 4` a chord of a disk lies in the disk, so
+applying it successively along the chain shows that the domain is convex and that the two
+components `k₁, k₂` of the fifth corner are convex in `u`, the first strictly. Both are positive
+for `0 < c ≤ 1`, `0 ≤ s ≤ 1`, so the defect `k₁² + k₂² - q` is strictly convex on the whole
+domain, endpoints included (`strictConvexOn_defect`), and has at most one minimum
+(`minimizer_unique`). The chart gives the coordinates of a chain (`coordinate_values`,
+`coordinate_defect`). For `q₀ < q₁ < 4` the radicals `r` and `w` grow and `v` shrinks with the
+radius (`domain_radius_inclusion`), so at every position of the domain and every such tilt the
+defect at `q₁` is less than the defect at `q₀` minus `q₁ - q₀` (`defect_radius_decrease`).
 
 Where the four radicals are positive the defect is differentiable in the position, with
-derivative `2 positionHalf` (`position_deriv`), and in the tilt `t`, with `c = cos t`, `s = sin t`,
-it has the derivatives `tiltFirst` and `tiltSecond`. Throughout the strip
-`(79/40)² ≤ q ≤ 9789/2500`, `0 ≤ s/c ≤ 1/5`, the circle equations bound the radicals at
-`u = 87/100` by successive square comparisons, and five coefficient bounds then give
-`positionHalf < 0` there (`comparison_position_negative`). By strict convexity every critical
-position lies to the right (`stationary_position_lower`) and is the global minimum on the radical
-domain (`stationary_global_minimum`); a stationary chain has `87/100 < -y`
-(`stationary_coordinate_lower`). At the trial position `u = 15/16` the squared norm `k₁² + k₂²`
-is at most a cubic in `s/c` that lies below its chord, with both ends below `4`, so
+derivative `2 positionHalf` (`position_deriv`); in the tilt `t`, with `c = cos t`, `s = sin t`,
+it has the first and second derivatives `tiltFirst` and `tiltSecond` (`defect_angle_deriv`,
+`defect_angle_second_deriv`). Throughout the strip `(79/40)² ≤ q ≤ 9789/2500`, `0 ≤ s/c ≤ 1/5`,
+the circle equations bound the radicals at `u = 87/100` by successive square comparisons, and
+five coefficient bounds then give `positionHalf < 0` there (`comparison_position_negative`). By
+strict convexity every critical position lies to the right (`stationary_position_lower`) and is
+the global minimum on the radical domain (`stationary_global_minimum`); a stationary chain has
+`87/100 < -y` (`stationary_coordinate_lower`). At the trial position `u = 15/16` the squared norm
+`k₁² + k₂²` is at most a cubic in `s/c` that lies below its chord, with both ends below `4`, so
 `k₁² + k₂² < 4` at every position minimum, whatever the sign of the defect
-(`position_minimum_norm_lt_four`).
+(`position_minimum_norm_lt_four`). `CriticalHessian.lean` and `Envelope.lean` build on these
+results.
 -/
 
 @[expose] public section
@@ -42,22 +44,33 @@ namespace SquaresInCircles.Eight.ExactFamily.FiveCornerGeometry
 
 /-! ### The chain and its convexity in the position -/
 
+/-- The upper half of the circle of squared radius `q`, `√(q - x²)`. -/
 def upper (q x : ℝ) : ℝ := Real.sqrt (q-x^2)
+/-- `r = √(q - u²)`, the abscissa of the lower right corner of `A`. -/
 def lowerRight (q u : ℝ) : ℝ := upper q u
+/-- `U = √(q - (2 - u)²)`, the abscissa of the upper right corner of `B`, at height `2 - u`. -/
 def topRight (q u : ℝ) : ℝ := upper q (2-u)
+/-- `V = 3 - U`, minus the abscissa of the upper left corner of `D`. -/
 def topLeft (q u : ℝ) : ℝ := 3-topRight q u
+/-- `Y = √(q - V²)`, the height of the upper left corner of `D`. -/
 def topHeight (q u : ℝ) : ℝ := upper q (topLeft q u)
+/-- `v = 2 - Y`, minus the height of the lower left corner of `E`. -/
 def lowerHeight (q u : ℝ) : ℝ := 2-topHeight q u
+/-- `w = √(q - v²)`, minus the abscissa of the lower left corner of `E`. -/
 def lowerLeft (q u : ℝ) : ℝ := upper q (lowerHeight q u)
 
+/-- `k₁ = 2 - c (r - 1) + s u`, minus the first coordinate `h₁` of the fifth corner in the
+frame `(c, s)` of `H`. -/
 def firstComponent (q c s u : ℝ) : ℝ :=
   2-c*(lowerRight q u-1)+s*u
+/-- `k₂ = 1 + c v - s (w - 1)`, minus the second coordinate `h₂` of the fifth corner. -/
 def secondComponent (q c s u : ℝ) : ℝ :=
   1+c*lowerHeight q u-s*(lowerLeft q u-1)
+/-- The defect `k₁² + k₂² - q`, by which the squared norm of the fifth corner exceeds `q`. -/
 def defect (q c s u : ℝ) : ℝ :=
   firstComponent q c s u^2+secondComponent q c s u^2-q
 
-/-- The real-radical domain of the chain in the downward position. -/
+/-- The radical domain of the chain: `u ≥ 0` and the four radicands are nonnegative. -/
 structure Domain (q u : ℝ) : Prop where
   height_nonneg : 0 ≤ u
   first_radicand : u^2 ≤ q
@@ -294,6 +307,8 @@ theorem defect_mix_strict {q c s u₀ u₁ a b : ℝ} (hq : q<4)
   dsimp [defect]
   nlinarith
 
+/-- For `q < 4`, `0 < c ≤ 1` and `0 ≤ s ≤ 1` the defect is strictly convex in the position on
+the radical domain. -/
 theorem strictConvexOn_defect {q c s : ℝ} (hq : q<4)
     (hc : 0<c) (hcu : c ≤ 1) (hs : 0 ≤ s) (hsu : s ≤ 1) :
     StrictConvexOn ℝ {u : ℝ | Domain q u} (defect q c s) := by
@@ -322,7 +337,7 @@ theorem defect_continuous (q c s : ℝ) : Continuous (defect q c s) := by
     topLeft topRight upper
   fun_prop
 
-/-- The chart is the chain of `Coordinates` with `u = -y`. -/
+/-- The chart at `u = -y` gives the coordinates of a chain. -/
 theorem coordinate_values {d : Coordinates} (hd : d.IsChain) :
     lowerRight d.q (-d.y)=d.x₁ ∧ topRight d.q (-d.y)=d.x₂ ∧
     topLeft d.q (-d.y)= -d.x₃ ∧ topHeight d.q (-d.y)=d.y₃ ∧
@@ -446,6 +461,7 @@ theorem defect_radius_strict {q₀ q₁ c s u : ℝ}
   dsimp [defect]
   linarith
 
+/-- The defect decreases faster than the squared radius grows. -/
 theorem defect_radius_decrease {q₀ q₁ c s u : ℝ}
     (hq : q₀<q₁) (hqu : q₁<4) (h : Domain q₀ u)
     (hc : 0<c) (hcu : c ≤ 1) (hs : 0 ≤ s) (hsu : s ≤ 1) :
@@ -516,9 +532,12 @@ theorem position_deriv {q c s u : ℝ}
   exact (((dk₁.fun_pow 2).fun_add (dk₂.fun_pow 2)).sub_const q).congr_deriv (by
     rw [positionHalf]; push_cast; ring)
 
+/-- `u/r` at `u = 87/100`. -/
 def comparisonX (q : ℝ) : ℝ := 87/100/lowerRight q (87/100)
+/-- `v/w` at `u = 87/100`. -/
 def comparisonY (q : ℝ) : ℝ := lowerHeight q (87/100)/lowerLeft q (87/100)
 
+/-- Rational bounds on the radicals, on `p` and on the two ratios at `u = 87/100`. -/
 structure ComparisonBounds (q : ℝ) : Prop where
   r_lower : 1773/1000<lowerRight q (87/100)
   U_lower : 1619/1000<topRight q (87/100)
@@ -602,15 +621,20 @@ theorem comparison_bounds {q : ℝ}
       nlinarith [hw.1,hv.2]
   exact ⟨hr.1,hU.1,hY.1,hv.1,hw.1,hw.2,hp.1,hp.2,hx.1,hx.2,hy.1,hy.2⟩
 
+/-- The coefficient of `L` in `comparisonPolynomial`. -/
 def coefficientLc (q : ℝ) : ℝ := 2*comparisonX q-slopeRatio q (87/100)
+/-- The coefficient of `h L` in `comparisonPolynomial`. -/
 def coefficientLs (q : ℝ) : ℝ := 2-slopeRatio q (87/100)*comparisonY q
+/-- Minus the constant term of `comparisonPolynomial`. -/
 def coefficientQc (q : ℝ) : ℝ :=
   (lowerRight q (87/100)-1)*comparisonX q+
     slopeRatio q (87/100)*lowerHeight q (87/100)
+/-- The coefficient of `h` in `comparisonPolynomial`. -/
 def coefficientJ (q : ℝ) : ℝ :=
   87/100*comparisonX q-(lowerRight q (87/100)-1)-
     slopeRatio q (87/100)*lowerHeight q (87/100)*comparisonY q+
       slopeRatio q (87/100)*(lowerLeft q (87/100)-1)
+/-- The coefficient of `h²` in `comparisonPolynomial`. -/
 def coefficientQs (q : ℝ) : ℝ :=
   87/100+slopeRatio q (87/100)*(lowerLeft q (87/100)-1)*comparisonY q
 
@@ -651,10 +675,13 @@ theorem comparison_coefficients {q : ℝ}
   · dsimp only [coefficientQs]
     linarith
 
+/-- `positionHalf` at `u = 87/100` divided by `c²`, in `h = s/c` and `L = 1/c`
+(`comparison_position_identity`). -/
 def comparisonPolynomial (q h L : ℝ) : ℝ :=
   L*coefficientLc q-coefficientQc q+h*(L*coefficientLs q+coefficientJ q)+
     h^2*coefficientQs q
 
+/-- `comparisonPolynomial ≤ -81/20000` for `0 ≤ h ≤ 1/5` and `0 ≤ L ≤ 51/50`. -/
 theorem comparisonPolynomial_bound {q h L : ℝ}
     (hql : (79/40:ℝ)^2 ≤ q) (hqu : q ≤ 9789/2500)
     (hh : 0 ≤ h) (hhu : h ≤ 1/5) (hL : 0 ≤ L) (hLu : L ≤ 51/50) :
@@ -696,6 +723,7 @@ theorem comparison_position_identity {q c s : ℝ} (hc : c≠0) :
     coefficientJ,coefficientQs,comparisonX,comparisonY,firstComponent,secondComponent,
     div_eq_mul_inv,mul_assoc] using h
 
+/-- `positionHalf < 0` at `u = 87/100` throughout the strip. -/
 theorem comparison_position_negative {q c s : ℝ}
     (hql : (79/40:ℝ)^2 ≤ q) (hqu : q ≤ 9789/2500)
     (hc : 0<c) (hs : 0 ≤ s) (ht : s/c ≤ 1/5) (hunit : c^2+s^2=1) :
@@ -715,7 +743,7 @@ theorem comparison_position_negative {q c s : ℝ}
   rw [comparison_position_identity (ne_of_gt hc)]
   exact mul_neg_of_pos_of_neg (sq_pos_of_pos hc) (by linarith)
 
-/-- A critical position lies right of `87/100`. -/
+/-- In the strip a critical position lies to the right of `87/100`. -/
 theorem stationary_position_lower {q c s u : ℝ}
     (hql : (79/40:ℝ)^2 ≤ q) (hqu : q ≤ 9789/2500)
     (hc : 0<c) (hs : 0 ≤ s) (ht : s/c ≤ 1/5) (hunit : c^2+s^2=1)
@@ -724,11 +752,12 @@ theorem stationary_position_lower {q c s u : ℝ}
   obtain ⟨hcu,hsu⟩ := unit_le_one hunit
   have hconv := strictConvexOn_defect hq hc hcu hs hsu
   have hb := comparison_bounds hql hqu
-  have hcomp := domain_of_pos (u:=87/100) (by norm_num) (by linarith [hb.r_lower])
-    (by linarith [hb.U_lower]) (by linarith [hb.Y_lower]) (by linarith [hb.w_lower])
-  have hd := position_deriv (q:=q) (c:=c) (s:=s) (u:=87/100)
-    (by linarith [hb.r_lower]) (by linarith [hb.U_lower])
-    (by linarith [hb.Y_lower]) (by linarith [hb.w_lower])
+  have hr : 0<lowerRight q (87/100) := lt_trans (by norm_num) hb.r_lower
+  have hU : 0<topRight q (87/100) := lt_trans (by norm_num) hb.U_lower
+  have hY : 0<topHeight q (87/100) := lt_trans (by norm_num) hb.Y_lower
+  have hw : 0<lowerLeft q (87/100) := lt_trans (by norm_num) hb.w_lower
+  have hcomp := domain_of_pos (by norm_num) hr hU hY hw
+  have hd := position_deriv (c:=c) (s:=s) hr hU hY hw
   have hn := comparison_position_negative hql hqu hc hs ht hunit
   by_contra! hle
   rcases lt_or_eq_of_le hle with hlt | rfl
@@ -754,6 +783,7 @@ theorem stationary_global_minimum {q c s u : ℝ} (hq : q<4)
     rw [slope_def_field,div_le_iff₀ (sub_pos.mpr hlt)] at h
     linarith
 
+/-- In the chart `2 positionHalf` is minus `positionDerivative`, since `u = -y`. -/
 theorem coordinate_positionHalf {d : Coordinates} (hd : d.IsChain) :
     2*positionHalf d.q d.c d.s (-d.y)= -d.positionDerivative := by
   obtain ⟨hr,hU,hV,hY,hv,hw⟩ := coordinate_values hd
@@ -800,11 +830,15 @@ theorem stationary_coordinate_lower {d : Coordinates} (hd : d.IsStationary) :
 
 /-! ### The tilt derivatives -/
 
+/-- The tilt derivative of `k₁` (`firstComponent_angle_deriv`). -/
 def firstTilt (q c s u : ℝ) : ℝ := s*(lowerRight q u-1)+c*u
+/-- The tilt derivative of `k₂` (`secondComponent_angle_deriv`). -/
 def secondTilt (q c s u : ℝ) : ℝ := -s*lowerHeight q u-c*(lowerLeft q u-1)
+/-- The tilt derivative of the defect (`defect_angle_deriv`). -/
 def tiltFirst (q c s u : ℝ) : ℝ :=
   2*(firstComponent q c s u*firstTilt q c s u+
     secondComponent q c s u*secondTilt q c s u)
+/-- The second tilt derivative of the defect (`defect_angle_second_deriv`). -/
 def tiltSecond (q c s u : ℝ) : ℝ :=
   2*(firstTilt q c s u^2+secondTilt q c s u^2+
     firstComponent q c s u*(2-firstComponent q c s u)+
@@ -849,6 +883,7 @@ theorem defect_angle_second_deriv (q u t : ℝ) :
     ((secondComponent_angle_deriv q u t).fun_mul (secondTilt_angle_deriv q u t))).const_mul 2
       |>.congr_deriv (by rw [tiltSecond]; ring)
 
+/-- In the chart `tiltFirst` is `tiltDerivative`. -/
 theorem coordinate_tiltFirst {d : Coordinates} (hd : d.IsChain) :
     tiltFirst d.q d.c d.s (-d.y)=d.tiltDerivative := by
   obtain ⟨hr,_,_,_,hv,hw⟩ := coordinate_values hd
@@ -858,6 +893,7 @@ theorem coordinate_tiltFirst {d : Coordinates} (hd : d.IsChain) :
 
 /-! ### The fifth corner at a position minimum -/
 
+/-- The trial position `u = 15/16` lies in the radical domain, with bounds on `r`, `v` and `w`. -/
 theorem normTrial_bounds {q : ℝ} (hql : (79/40:ℝ)^2 ≤ q) (hqu : q<4) :
     Domain q (15/16) ∧ 1738/1000<lowerRight q (15/16) ∧
       lowerHeight q (15/16)<546/1000 ∧ 1898/1000<lowerLeft q (15/16) := by
@@ -884,6 +920,7 @@ theorem normTrial_bounds {q : ℝ} (hql : (79/40:ℝ)^2 ≤ q) (hqu : q<4) :
   exact ⟨domain_of_pos (by norm_num) (by linarith [hr.1]) (by linarith [hU.1])
     (by linarith [hY.1]) (by linarith [hw.1]),hr.1,hv.2,hw.1⟩
 
+/-- `c ≥ 1 - h²/2` when `c > 0` and `c² (1 + h²) = 1`. -/
 theorem cosine_from_tangent_lower {c h : ℝ} (hc : 0<c)
     (hunit : c^2*(1+h^2)=1) : 1-h^2/2 ≤ c := by
   have hc2 : c^2 ≤ 1 := by
@@ -900,6 +937,8 @@ theorem cosine_from_tangent_lower {c h : ℝ} (hc : 0<c)
     exact (not_lt_of_ge hnon) (mul_neg_of_pos_of_neg (by linarith) hh)
   linarith
 
+/-- A cubic in `h = s/c`: for `0 ≤ h ≤ 1/5` it bounds `k₁² + k₂²` at `u = 15/16` from above and
+is less than `4` (`trial_upper_norm`, `trialPolynomial_lt_four`). -/
 def trialPolynomial (h : ℝ) : ℝ :=
   5+2*(1-h^2/2)*(-(93/100)+h*(977/1000))+
     (369/500-h*(15/16))^2+(273/500-h*(449/500))^2
@@ -989,6 +1028,7 @@ theorem position_minimum_norm_lt_four {q c s u : ℝ}
   dsimp [defect] at hm
   linarith
 
+/-- `k₁² + k₂² < 4` at every critical position. -/
 theorem position_stationary_norm_lt_four {q c s u : ℝ}
     (hql : (79/40:ℝ)^2 ≤ q) (hqu : q<4)
     (hc : 0<c) (hs : 0 ≤ s) (ht : s/c ≤ 1/5) (hunit : c^2+s^2=1)

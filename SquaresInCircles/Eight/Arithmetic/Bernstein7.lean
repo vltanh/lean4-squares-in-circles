@@ -3,17 +3,20 @@ module
 public import SquaresInCircles.Eight.Arithmetic.Bernstein11
 
 /-!
-# Degree-six Bernstein tests on seven natural numbers
+# Eight squares: Bernstein tests of degree six
 
-The degree-six analogue of `Bernstein11`. It is about half as costly in the kernel, and enough
-for most inequalities of the tables; the degree-ten test is the fallback.
+The tests of `Bernstein11.lean` for polynomials of degree six, on seven natural coefficients
+(`N7`): `positiveOnN7` and `nonnegOnN7` show `N < P` and `N ≤ P` on `[l / den, h / den]`, by the
+values at the ends of the interval or by the Bernstein coefficients (`positiveOnN7_sound`,
+`nonnegOnN7_sound`). They cost less in the kernel than the tests of degree ten, and
+`TrigLin.lean` tries them before those, on the intervals inside `[0, 4/5]`.
 -/
 
 @[expose] public section
 
 namespace SquaresInCircles.Eight.Arithmetic.Fixed
 
-/-- Seven coefficients, lowest degree first. -/
+/-- Seven natural coefficients, lowest degree first. -/
 structure N7 where
   c0 : Nat
   c1 : Nat
@@ -25,13 +28,13 @@ structure N7 where
 
 namespace N7
 
-/-- `Σ c_j x^j`. -/
+/-- The polynomial `∑ cⱼ xʲ` at `x`. -/
 noncomputable def eval (q : N7) (x : ℝ) : ℝ :=
   (q.c0 : ℝ) * x ^ 0 + (q.c1 : ℝ) * x ^ 1 + (q.c2 : ℝ) * x ^ 2 + (q.c3 : ℝ) * x ^ 3 +
     (q.c4 : ℝ) * x ^ 4 + (q.c5 : ℝ) * x ^ 5 + (q.c6 : ℝ) * x ^ 6
 
-/-- The coefficients of `den ^ 6 q((l + d t) / den)`, a polynomial in `t`: the Taylor shift by
-`l` by synthetic division (Horner), then the scaling by `d`. The operations of `Nat` are called
+/-- The coefficients of `den⁶ q((l + d t) / den)`, a polynomial in `t`: the Taylor shift by `l`
+by synthetic division (Horner), then the scaling by `d`. The operations of `Nat` are called
 directly, which the kernel evaluates without unfolding the arithmetic type classes. -/
 def shift (den l d : Nat) (p : N7) : N7 :=
   let e2 := Nat.mul den den
@@ -80,7 +83,8 @@ def shift (den l d : Nat) (p : N7) : N7 :=
    Nat.mul d5 h5_5,
    Nat.mul d6 b6⟩
 
-/-- The Bernstein numerators `6! b_k = Σ_{j ≤ k} C(k, j) j! (6 - j)! c_j`, by Pascal's rule. -/
+/-- The Bernstein numerators `6! bₖ`, the sums over `j ≤ k` of `C(k, j) j! (6 - j)! cⱼ`, by
+Pascal's rule. -/
 def bern (q : N7) : N7 :=
   let a0 := Nat.mul 720 q.c0
   let a1 := Nat.mul 120 q.c1
@@ -132,7 +136,7 @@ def le (N P : N7) : Bool :=
     Nat.ble N.c5 P.c5 &&
     Nat.ble N.c6 P.c6
 
-/-- `den ^ 6 q (x / den) = Σ q_j x ^ j den ^ (6 - j)`, by Horner's rule. -/
+/-- `den⁶ q(x / den)`, the sum of the `cⱼ xʲ den⁶⁻ʲ`, by Horner's rule. -/
 def evalAt (den x : Nat) (q : N7) : Nat :=
   let e2 := Nat.mul den den
   let e3 := Nat.mul e2 den
@@ -148,8 +152,8 @@ def evalAt (den x : Nat) (q : N7) : Nat :=
 
 end N7
 
-/-- `P - N > 0` on `[l / den, h / den]`: either `N(h) < P(l)`, enough since both have
-nonnegative coefficients and so increase, or the Bernstein test. -/
+/-- `P - N > 0` on `[l / den, h / den]`: by `N(h / den) < P(l / den)`, enough since both have
+natural coefficients and so increase, or by the Bernstein coefficients. -/
 def positiveOnN7 (den l h : Nat) (P N : N7) : Bool :=
   Nat.blt 0 den && Nat.ble l h &&
     (Nat.blt (N.evalAt den h) (P.evalAt den l) ||
@@ -239,6 +243,7 @@ theorem le_sound {N P : N7} (h : le N P = true) :
 
 end N7
 
+/-- Bernstein coefficients of `NS` below those of `PS` give `NS < PS` on `[0, 1]`. -/
 theorem bern7_gap_pos (PS NS : N7) {t : ℝ} (ht : 0 ≤ t ∧ t ≤ 1)
     (hlt : N7.lt NS.bern PS.bern = true) : NS.eval t < PS.eval t := by
   obtain ⟨⟨b0, b1, b2, b3, b4, b5, b6⟩, hsum⟩ := bernstein6_basis ht
@@ -274,7 +279,8 @@ theorem evalAt_eq (den x : Nat) (hden : 0 < den) (q : N7) :
   field_simp
   ring
 
-/-- `N(h) < P(l)` gives `N < P` on `[l / den, h / den]`. -/
+/-- On `[l / den, h / den]`, `N` is at most its value at `h / den` and `P` at least its value
+at `l / den`. -/
 theorem mono_gap {den l h : Nat} (hden : 0 < den) {P N : N7}
     {u : ℝ} (hu : (l : ℝ) / den ≤ u ∧ u ≤ (h : ℝ) / den) :
     N.eval u ≤ (N.evalAt den h : ℝ) / (den : ℝ) ^ 6 ∧

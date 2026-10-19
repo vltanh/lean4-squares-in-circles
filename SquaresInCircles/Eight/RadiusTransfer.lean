@@ -17,14 +17,14 @@ centre within `4/5` of the origin (`BoundaryCycle.core_radius_bound`).
 
 Expanding a boundary cycle from the level `q` to a level `r ≥ q` moves each square on the outer
 curve along its centre direction, with its frame, to the outer curve at the level `r`, and keeps
-the squares on the core curve (`BoundaryCycle.expand`, `radius_expand_boundary_cycle`). Every
+the squares on the core curve (`BoundaryCycle.expand`, `BoundaryCycle.expand_spec`). Every
 signed axis that separates two consecutive squares before the expansion separates them after it
-(`every_feasible_projection_preserved`): the projection is linear in the two centre distances,
-with fixed coefficients of absolute value at most `1`, and the increment bounds, applied with the
-signs of the two coefficients, show that it does not decrease (`outer_outer_increment`,
-`core_outer_increment`). This holds for each separating axis, ties included
-(`all_axes_preserved`), so no witness is chosen anew after the motion. All lengths are Euclidean
-distances; no norm of the product space `ℝ × ℝ` is used.
+(`every_feasible_projection_preserved`, `BoundaryCycle.expanded_axis`): the projection is linear
+in the two centre distances, with fixed coefficients of absolute value at most `1`, and the
+increment bounds, applied with the signs of the two coefficients, show that it does not decrease
+(`outer_outer_increment`, `core_outer_increment`). This holds for each separating axis, ties
+included, so no witness is chosen anew after the motion. All lengths are Euclidean distances; no
+norm of the product space `ℝ × ℝ` is used.
 
 The file ends with the exterior squares of a packing in the order of their centre directions, a
 neighbour cycle at the level `max q qMinus` (`ordered_exterior_exists`), and with its boundary
@@ -308,7 +308,7 @@ lemma BoundaryCycle.radius_sq {q : ℝ} (C : BoundaryCycle q) (i : Vertex) :
 
 lemma BoundaryCycle.ray_unit {q : ℝ} (C : BoundaryCycle q) (i : Vertex) :
     normSq (C.ray i) = 1 := by
-  simpa [BoundaryCycle.ray, normSq, add_comm] using Real.sin_sq_add_cos_sq (C.beta i)
+  simp [BoundaryCycle.ray, normSq]
 
 lemma BoundaryCycle.center_polar {q : ℝ} (C : BoundaryCycle q) (i : Vertex) :
     (C.square i).center = scale (C.radius i) (C.ray i) := by
@@ -403,9 +403,9 @@ lemma BoundaryCycle.expansionFactor_ge_one {q r : ℝ} (C : BoundaryCycle q)
   by_cases h : C.kind i = .outer
   · have hm := RadiusTransfer.outerRadius_monotone hq hr hqr (C.radialCoefficient_bounds i)
     have hs := C.radialState_source hq i
-    simp only [BoundaryCycle.radialState,dif_pos h,RadiusTransfer.RadialState.radius] at hs
+    simp only [BoundaryCycle.radialState,dite_eq_left h,RadiusTransfer.RadialState.radius] at hs
     dsimp [BoundaryCycle.expansionFactor]
-    simp only [BoundaryCycle.radialState,dif_pos h,RadiusTransfer.RadialState.radius]
+    simp only [BoundaryCycle.radialState,dite_eq_left h,RadiusTransfer.RadialState.radius]
     apply (le_div_iff₀ (C.radius_pos i)).2
     simpa [hs] using hm
   · rw [C.expansionFactor_core i h]
@@ -433,8 +433,7 @@ lemma BoundaryCycle.expanded_tangent {q r : ℝ} (C : BoundaryCycle q)
   field_simp [hlam,ne_of_gt (C.a_pos i)]
 
 lemma BoundaryCycle.expanded_boundary {q r : ℝ} (C : BoundaryCycle q)
-    (hq : q ∈ Set.Icc (5/2) 4) (hr : r ∈ Set.Icc (5/2) 4) (hqr : q ≤ r)
-    (i : Vertex) :
+    (hr : r ∈ Set.Icc (5/2) 4) (i : Vertex) :
     BoundaryState r (C.kind i) (C.expansionFactor r i*C.a i) (C.expansionFactor r i*C.b i) := by
   cases hk : C.kind i with
   | outer =>
@@ -463,7 +462,7 @@ lemma BoundaryCycle.expanded_contained {q r : ℝ} (C : BoundaryCycle q)
   · obtain ⟨hx,hy⟩ := radialSquare_coordinates (C.square i)
       (show 0 ≤ C.expansionFactor r i by linarith [C.expansionFactor_ge_one hq hr hqr i])
     obtain ⟨ha,hb⟩ := C.absolute_coordinates i
-    have he := C.expanded_boundary hq hr hqr i
+    have he := C.expanded_boundary hr i
     simp only [hk,BoundaryState] at he
     simpa [SqContained,hx,hy,ha,hb] using he.le
   · rw [C.expansionFactor_core i hk]
@@ -552,7 +551,7 @@ def BoundaryCycle.expand {q r : ℝ} (C : BoundaryCycle q)
     change scale (C.expansionFactor r i) (C.square i).center = _
     rw [C.center_eq i]
     apply Prod.ext <;> dsimp [rotate,radialSquare,moveCenter,scale] <;> ring
-  boundary := C.expanded_boundary hq hr hqr
+  boundary := C.expanded_boundary hr
   beta := C.beta
   center_cos i := by
     rw [C.expanded_sqrt hq hr hqr i]
@@ -625,9 +624,7 @@ lemma center_direction_separated {K J : UnitSquare} {q : ℝ}
   have hcos : Real.cos γ=Real.cos (Complex.arg zJ-Complex.arg zK) := by
     simp only [γ]
     rw [dist_comm,direction_dist,Real.cos_abs]
-    have he := congrArg Real.Angle.cos
-      (Real.Angle.coe_toReal (((Complex.arg zJ : Direction))-((Complex.arg zK : Direction))))
-    simpa [Real.Angle.cos_coe,← Real.Angle.coe_sub] using he
+    simp [Real.Angle.cos_coe,← Real.Angle.coe_sub]
   apply annular_angle_lower
     ⟨annular_center_radius_lower hcK,(annular_center_radius_upper hK hq).le⟩
     ⟨annular_center_radius_lower hcJ,(annular_center_radius_upper hJ hq).le⟩ hγ

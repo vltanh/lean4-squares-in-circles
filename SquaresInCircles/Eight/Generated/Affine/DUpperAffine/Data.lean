@@ -3,7 +3,11 @@ module
 public import SquaresInCircles.Eight.Generated.Affine.DUpperAffine.Rows000
 public import SquaresInCircles.Eight.Generated.Affine.DUpperAffine.Rows001
 
-/-! All rows of the table. -/
+/-!
+# Eight squares: the rows of the affine table `DUpperAffine`
+
+All rows of the table, as the list of their parts; together they pass `checkRows`.
+-/
 
 @[expose] public section
 noncomputable section

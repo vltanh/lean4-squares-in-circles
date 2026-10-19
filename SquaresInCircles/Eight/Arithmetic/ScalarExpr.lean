@@ -3,14 +3,21 @@ module
 public import SquaresInCircles.Eight.Arithmetic.Interval
 
 /-!
-# Rational interval expression certificates
+# Eight squares: interval evaluation of scalar expressions
 
-The expression itself is embedded in Lean.  Square-root nodes carry rational
-brackets, whose squared endpoint comparisons are included in `Valid`.
-Positive-denominator division is similarly an explicit checked condition.
-The interpreter's theorem proves enclosure of the real expression for every
-real input in the declared box; no sampled-value or imported Boolean premise
-occurs in that theorem.
+A `ScalarExpr n` is an expression in `n` real variables built from rational constants, sums,
+negatives, products, reciprocals, square roots and powers; a square root, and an `enclose` node
+around any subexpression, carries a rational interval, the bracket of its value. `eval` is the
+real value of an expression at a point, and `range` its interval value on a box of the variables
+(`Interval.lean`), in which a square root or an `enclose` node takes its bracket. `Valid` collects
+the side conditions, decided on the rationals: the argument of every reciprocal has an interval
+value of positive numbers, every square-root bracket is nonnegative and squares to bounds of the
+interval value of its argument, and every `enclose` bracket contains the interval value of its
+argument. For a valid expression the value at every point of the box lies in the interval value
+(`sound`).
+
+`PreparedArc.lean` evaluates the endpoints of the arcs of the affine tables in this way, and
+`ExactFamily/Expression.lean` bounds its formulas on boxes with these expressions.
 -/
 
 @[expose] public section
@@ -18,6 +25,7 @@ noncomputable section
 
 namespace SquaresInCircles.Eight.Arithmetic
 
+/-- An expression in `n` real variables; `sqrt` and `enclose` carry the bracket of their value. -/
 inductive ScalarExpr (n : ℕ)
   | const (q : ℚ)
   | var (i : Fin n)
@@ -34,6 +42,7 @@ namespace ScalarExpr
 def sub {n : ℕ} (a b : ScalarExpr n) : ScalarExpr n := add a (neg b)
 def div {n : ℕ} (a b : ScalarExpr n) : ScalarExpr n := mul a (inv b)
 
+/-- The real value of an expression at the point `env`. -/
 def eval {n : ℕ} (env : Fin n → ℝ) : ScalarExpr n → ℝ
   | .const q => q
   | .var i => env i
@@ -45,6 +54,8 @@ def eval {n : ℕ} (env : Fin n → ℝ) : ScalarExpr n → ℝ
   | .pow a k => (eval env a)^k
   | .enclose a _ => eval env a
 
+/-- The interval value of an expression on a box of the variables; a square root or an
+`enclose` node takes its bracket. -/
 def range {n : ℕ} (boxes : Fin n → QInterval) : ScalarExpr n → QInterval
   | .const q => .point q
   | .var i => boxes i
@@ -56,6 +67,9 @@ def range {n : ℕ} (boxes : Fin n → QInterval) : ScalarExpr n → QInterval
   | .pow a k => (range boxes a).pow k
   | .enclose _ bracket => bracket
 
+/-- The side conditions of the interval evaluation on a box: positive arguments of the
+reciprocals, square-root brackets that square to bounds of their arguments, and `enclose`
+brackets that contain the interval values of their arguments. -/
 def Valid {n : ℕ} (boxes : Fin n → QInterval) : ScalarExpr n → Prop
   | .const _ => True
   | .var _ => True
@@ -72,6 +86,7 @@ instance validDecidable {n : ℕ} (boxes : Fin n → QInterval) (e : ScalarExpr 
     Decidable (Valid boxes e) := by
   induction e <;> simp only [Valid] <;> infer_instance
 
+/-- The value of a valid expression at every point of the box lies in its interval value. -/
 theorem sound {n : ℕ} (boxes : Fin n → QInterval) (e : ScalarExpr n)
     (he : e.Valid boxes) (env : Fin n → ℝ)
     (henv : ∀ i, (boxes i).Mem (env i)) : (e.range boxes).Mem (e.eval env) := by

@@ -166,8 +166,8 @@ structure CycleAction where
 def CycleAction.index (G : CycleAction) : Equiv.Perm Vertex where
   toFun i := if G.reversed then G.shift-i else i+G.shift
   invFun i := if G.reversed then G.shift-i else i-G.shift
-  left_inv i := by cases h : G.reversed <;> simp [h] <;> abel
-  right_inv i := by cases h : G.reversed <;> simp [h] <;> abel
+  left_inv i := by cases G.reversed <;> simp
+  right_inv i := by cases G.reversed <;> simp
 
 def CycleAction.edge (G : CycleAction) (i : Vertex) : Vertex :=
   if G.reversed then G.index (next i) else G.index i
@@ -231,14 +231,14 @@ lemma CycleAction.lift_cos (G : CycleAction) (β : Vertex → ℝ) (i : Vertex) 
       (reflectionSign G.reversed*β (G.index i)+(if G.reversed then Real.pi/2 else 0)-G.rotation) := by
   cases h : G.reversed <;>
     simp [CycleAction.lift,CycleAction.wrap,h,reflectionSign] <;>
-    split <;> simp [Real.cos_add,Real.sin_add,Real.cos_sub,Real.sin_sub] <;> ring
+    split <;> simp [Real.cos_add,Real.sin_add,Real.cos_sub]
 
 lemma CycleAction.lift_sin (G : CycleAction) (β : Vertex → ℝ) (i : Vertex) :
     Real.sin (G.lift β i)=Real.sin
       (reflectionSign G.reversed*β (G.index i)+(if G.reversed then Real.pi/2 else 0)-G.rotation) := by
   cases h : G.reversed <;>
     simp [CycleAction.lift,CycleAction.wrap,h,reflectionSign] <;>
-    split <;> simp [Real.cos_add,Real.sin_add,Real.cos_sub,Real.sin_sub] <;> ring
+    split <;> simp [Real.cos_add,Real.sin_add,Real.sin_sub]
 
 lemma motionPoint_polar (θ : ℝ) (b : Bool) (r β : ℝ) :
     motionPoint θ b (r*Real.cos β,r*Real.sin β)=
@@ -316,8 +316,8 @@ def CycleAction.boundary {q : ℝ} (G : CycleAction) (C : BoundaryCycle q) : Bou
   b_nonneg i := C.b_nonneg _
   b_le_a i := C.b_le_a _
   sigma_sign i := by
-    cases h : G.reversed <;> rcases C.sigma_sign (G.index i) with hs|hs <;>
-      simp [reflectionSign,h,hs]
+    cases G.reversed <;> rcases C.sigma_sign (G.index i) with hs|hs <;>
+      simp [reflectionSign,hs]
   center_eq i := by
     change (motionSquare G.rotation G.reversed (C.square (G.index i))).center=
       rotate (motionSquare G.rotation G.reversed (C.square (G.index i)))
@@ -409,7 +409,7 @@ lemma CycleAction.alpha {q : ℝ} (G : CycleAction) (C : BoundaryCycle q) (i : V
     (G.boundary C).alpha i=reflectionSign G.reversed*C.alpha (G.index i) := by
   unfold BoundaryCycle.alpha
   rw [G.tangent]
-  cases h : G.reversed <;> simp [reflectionSign,h,Real.arctan_neg]
+  cases G.reversed <;> simp [reflectionSign,Real.arctan_neg]
 
 lemma CycleAction.canonical {q : ℝ} (G : CycleAction) (C : BoundaryCycle q) (i : Vertex) :
     (G.boundary C).canonicalAngle i=
@@ -440,7 +440,7 @@ lemma CycleAction.axis_feasible_iff {q : ℝ} (G : CycleAction) (C : BoundaryCyc
     simpa [CycleAction.axis,h] using
       (reflectedAxis_feasible_iff G.rotation true a.reverse _ _).trans (reverse_feasible_iff a _ _)
 
-def CycleAction.radiusExpansion {q r : ℝ} (G : CycleAction) {C : BoundaryCycle q} {D : BoundaryCycle r}
+theorem CycleAction.radiusExpansion {q r : ℝ} (G : CycleAction) {C : BoundaryCycle q} {D : BoundaryCycle r}
     (h : RadiusExpansion C D) : RadiusExpansion (G.boundary C) (G.boundary D) where
   same_kind := by funext i; exact congrFun h.same_kind (G.index i)
   same_frames i := motionSquare_sameFrame _ _ (h.same_frames (G.index i))
@@ -482,13 +482,13 @@ def QuarterLift.act {q : ℝ} {C : BoundaryCycle q} (F : QuarterLift C) (G : Cyc
   small := F.small
   theta_range i := by
     have h := F.theta_range (G.index i)
-    cases hb : G.reversed <;> simp [hb,reflectionSign] <;> constructor <;> linarith
+    cases G.reversed <;> simp [reflectionSign] <;> constructor <;> linarith
   represents i := by
     have h := F.represents (G.index i)
     change (G.boundary C).canonicalAngle i=_
     rw [G.canonical]
     cases hb : G.reversed <;>
-      simp only [CycleAction.quarter,reflectionSign,reflectionSignInt,hb,ite_true,ite_false,
+      simp only [CycleAction.quarter,reflectionSign,reflectionSignInt,hb,ite_true,
         Int.cast_add,Int.cast_mul,Int.cast_ofNat,Int.cast_neg,Int.cast_one] <;>
       dsimp [BoundaryCycle.canonicalAngle] at * <;> linarith
 

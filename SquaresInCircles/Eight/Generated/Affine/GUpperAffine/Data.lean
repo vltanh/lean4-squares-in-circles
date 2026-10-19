@@ -2,7 +2,11 @@ module
 
 public import SquaresInCircles.Eight.Generated.Affine.GUpperAffine.Rows000
 
-/-! All rows of the table. -/
+/-!
+# Eight squares: the rows of the affine table `GUpperAffine`
+
+All rows of the table, as the list of their parts; together they pass `checkRows`.
+-/
 
 @[expose] public section
 noncomputable section
@@ -19,6 +23,6 @@ noncomputable def chunks : List (List AffineRow) :=
 noncomputable def data : List AffineRow := chunks.flatten
 
 theorem data_check : checkRows ctx data = true := by
-  simp only [data, chunks, checkRows_flatten, List.all_append, parts000_check, Bool.and_true]
+  simp only [data, chunks, checkRows_flatten, parts000_check]
 
 end SquaresInCircles.Eight.Generated.Affine.GUpperAffine
