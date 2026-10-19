@@ -1,308 +1,273 @@
-# The three remaining same-sign primary owners, on both whole angle halves
+# Three same-sign primary owners, on both whole angle halves
 
-All terminating decimals in this note are exact rationals. This proves the
-complete outer/outer families
-
+Every terminating decimal in this note is an exact rational. For the
+short word 0010111, this proves the complete outer/outer families
 \[
- (i,\sigma,\tau,j)=(2,-,-,4),\ (4,-,-,4),\ (6,+,+,2)
+ (i,\sigma,\tau,j)=(2,-,-,4),\ (4,-,-,4),\ (6,+,+,2).
 \]
+The last coordinate is the original one-based separating axis. Every
+weak separating contact with \(|\phi-\pi/2|\le.7\) has corrected cost
+\(C>.898\), including all state endpoints and simultaneous owners.
+There is no near-aligned or complementary angle-table premise.
 
-of the short word 0010111. The last coordinate is the **original one-based
-separating axis**. For every weak separating contact and every
-\(|\phi-\pi/2|\le .7\), the original corrected cost is greater than .898.
-In particular it exceeds both required assembly thresholds .8975 and .89765.
-No near-aligned interval table or complementary scalar table is used.
-
-The proof treats each entire angle half. On the negative half, a circle-speed
-identity moves every active contact to alignment or the source diagonal;
-the latter is one strictly concave curve. On the positive half, the actual
-contact domain ends at an axial/diagonal event; one uniform angular curvature
-bound controls the possible initial loss before that event.
-
-## 1. Exact normalization and labels
+## 1. Exact normalization
 
 Put
 \[
- Q=9789/2500,\quad R=\sqrt Q,\quad
- a(y)=\sqrt{Q-(y+1/2)^2}-1/2,\quad
+ Q=9789/2500,\quad a(y)=\sqrt{Q-(y+1/2)^2}-1/2,\quad
  d=\sqrt{Q/2}-1/2,\quad a_0=a(0),\quad b_0=1-d.
 \]
-Both outer states have primary/secondary coordinates \((a,b)\), \((A,B)\),
-where \(a=a(b), A=a(B)\) and \(0\le b,B\le d\). Write
+Both states are outer: \(a=a(b),A=a(B),0\le b,B\le d\). Write
 \[
- r(y)=\frac{y+1/2}{a(y)+1/2},\qquad
- a'=-r,\qquad r'=\frac{Q}{(a+1/2)^3}.
+ r(y)=\frac{y+1/2}{a(y)+1/2},\qquad a'=-r,\qquad
+ r'=Q/(a+1/2)^3.
 \]
-The exact reflection/reversal of original axis 2 in the last family leaves
-the angle and corrected cost unchanged. All three cases then have the form
+Exact reflection/reversal of original axis 2 in the last family preserves
+the angle and corrected cost. All three cases become
 \[
- C=\pi/2+x+c+pa-qb-PA+tB,
- \qquad a+A\sin x+B\cos x\ge W,
- \quad W=\frac{1+\cos x+|\sin x|}{2}.                     \tag{1}
+ C=\pi/2+x+c+pa-qb-PA+tB,\qquad
+ a+A\sin x+B\cos x\ge W,
 \]
-Their coefficient tuples \((c,p,q,P,t)\), respectively, are
+\[
+ W=(1+\cos x+|\sin x|)/2,\qquad - .7\le x\le.7.
+\tag{1}
+\]
+Their literal adjacent-label tuples \((c,p,q,P,t)\) are
 \[
 \begin{aligned}
- &(-.53489,\ .09133,\ .88074,\ -.33147,\ 1.1336),\\
- &(-.53062,\ .19335,\ .76744,\ -.20967,\ .83048),\\
- &(-.20704,\ 0,\ .94766,\ -.21826,\ .83472).
-\end{aligned}                                             \tag{2}
+ &(-.53489,.09133,.88074,-.33147,1.1336),\\
+ &(-.53062,.19335,.76744,-.20967,.83048),\\
+ &(-.20704,0,.94766,-.21826,.83472).
+\end{aligned}                                               \tag{2}
 \]
-These are the literal affine label differences in short_hand_labels.json.
-For the reflected case, the rule on a positive-secondary tuple is
+The reflection rule on a paired positive-secondary tuple is
 \((p,q,P,t)\mapsto(-P,t,-p,q)\), with both signs reversed.
-Thus (1) is the stipulated original owner, not a newly selected separator.
+Thus (1) is the stipulated original owner, not a new owner selection.
 
-In primary coordinates the source cost \(M(a)=pa-qb(a)\) has
+In primary coordinates the source cost \(M(a)=pa-qb(a)\) satisfies
 \[
- M'(a)=p+q\frac{a+1/2}{b+1/2}=:L>0,\qquad
- M''(a)=\frac{qQ}{(b+1/2)^3}>0.                            \tag{3}
+ M'=p+q\frac{a+1/2}{b+1/2}=:L>0,\qquad
+ M''=\frac{qQ}{(b+1/2)^3}>0.
+\tag{3}
 \]
-The target cost \(-PA+tB\) increases strictly with \(B\), since its
- derivative is \(t+Pr(B)\ge t+P>0\).
-
-The elementary radical bounds used below are
-\[
-\begin{gathered}
- .899<d<.9,\quad .1<b_0<.101,\quad a_0<1.415,\\
- a(b_0)+1/2>1.885,\quad
- \sqrt{Q-9/4}>1.29,\quad p+q\ge .94766.
-\end{gathered}                                             \tag{4}
-\]
-For reproducible point comparisons one may use
+The target cost increases with \(B\), since
+\((-PA+tB)'=t+Pr(B)\ge t+P>0\).
+The circle equation gives the bounds
 \[
 \begin{gathered}
-1.414575671<a_0<1.414575672,\\
-.899214065109<d<.899214065110,\\
-1.29058126439213<\sqrt{Q-9/4}<1.29058126439214.
-\end{gathered}
+ .899214065109<d<.899214065110,\quad .1<b_0<.101,\\
+ 1.414575671<a_0<1.414575672,\quad a(b_0)+1/2>1.885,\\
+ 1.29058126439213<\sqrt{Q-9/4}<1.29058126439214,\quad
+ p+q\ge.94766.
+\end{gathered}                                               \tag{4}
 \]
-They follow by squaring positive rational endpoints.
+Every radical bound follows by squaring positive rational endpoints.
 
-## 2. All aligned contacts
+## 2. Every aligned contact
 
-At \(x=0\), minimizing (1) first in \(a\), then in the increasing target
-coordinate on any source-diagonal slack portion, leaves exactly
-\(a+B=1\), \(0\le B\le b_0\). Its cost is
+At \(x=0\), reduce the source coordinate and then the increasing target
+coordinate on any diagonal slack portion. This leaves exactly
+\(a+B=1\), \(0\le B\le b_0\), with cost
 \[
- H(B)=\pi/2+c+p(1-B)-q\,a(1-B)-P\,a(B)+tB.                 \tag{5}
+ H(B)=\pi/2+c+p(1-B)-q\,a(1-B)-P\,a(B)+tB.
+\tag{5}
 \]
-For rows 2 and 3 of (2),
+For rows 2 and 3,
 \[
  H'=-p-q\frac{1.5-B}{\sqrt{Q-(1.5-B)^2}}+Pr(B)+t
- \le -p-q+t<0.
+                    \le-p-q+t<0.
 \]
-Their two minimum values \(H(b_0)\) are respectively greater than .89811
-and .89810.
-
+Their endpoint minima \(H(b_0)\) exceed .89811 and .89810, respectively.
 For row 1,
 \[
- H''=\frac{qQ}{[a(1-B)+1/2]^3}
-                  +\frac{PQ}{[a(B)+1/2]^3}
- >\frac{.88074Q}{1.4^3}-\frac{.33147Q}{1.885^3}>1.
+ H''>\frac{.88074Q}{1.4^3}-\frac{.33147Q}{1.885^3}>1.
 \]
-At the single rational reference \(B=517/10000\), direct substitution gives
+At the single reference \(B=517/10000\), direct evaluation gives
+\(H(B)-H'(B)^2/2>.89811\). Integrating the curvature bound and
+completing a square proves, for every row and every aligned state,
 \[
- H(B)-\frac{H'(B)^2}{2}>.89811.
-\]
-Integrating the preceding lower curvature bound and completing a square
-therefore proves, for every row,
-\[
-                         H(B)>.8981.                      \tag{6}
+                              H(B)>.8981.
+\tag{6}
 \]
 
-We record two further fixed comparisons for the positive half. Let
-\(\eta=1/80\). Each \(H\) decreases on \([0,\eta]\), and
+Set \(\eta=1/80\). Each \(H\) decreases on \([0,\eta]\).
+For row 1 this follows from \(H''>0\) and \(H'(\eta)<0\); for the
+other rows it was just proved. The three values \(H(\eta)\) exceed
+.89908, .91962, and .91937, respectively. In particular,
 \[
-                         H(\eta)>.89908.                  \tag{7}
+                         H(B)>.89908\quad(0\le B\le\eta).
+\tag{7}
 \]
-For row 1 the decrease follows from \(H''>0\) and \(H'(\eta)<0\);
-for the other rows it was just proved. The three values of \(H(\eta)\)
-exceed .89908, .91962, and .91937, respectively. All these comparisons
-are direct evaluations of (5), not a continuous-domain cover.
+These are evaluations of (5), not a cover of its variable domain.
 
-## 3. The whole negative half
+## 3. The complete negative half
 
-Write \(x=-u\), \(0\le u\le .7\), and \(s=\sin u,k=\cos u\).
-The least source primary coordinate before imposing \(a\ge d\) is
+Write \(x=-u\), \(0\le u\le.7\), \(s=\sin u,k=\cos u\).
+The unclamped least source coordinate is
 \[
- a_c=\frac12+(\tfrac12-B)k+(A+\tfrac12)s.                  \tag{8}
+ a_c=1/2+(1/2-B)k+(A+1/2)s.
+\tag{8}
 \]
-At fixed \(B,u\), reduce the source to \(a=\max\{d,a_c\}\).
-If this leaves strict separation at \(a=d\), reduce \(B\) until contact.
-This always reaches contact before \(B=0\), because
-\(a_c(0,u)\ge a_c(0,0)=1>d\). Here \(a_c(0,u)\) increases on
-\([0,.7]\). Thus it suffices to bound the active contacts (8).
+First choose \(a=\max(d,a_c)\). On any remaining slack portion at
+\(a=d\), reduce \(B\), decreasing cost, until contact. It reaches
+contact before \(B=0\), because \(a_c(0,u)\ge a_c(0,0)=1>d\);
+this last contact height increases with \(u\) on the whole range.
+Thus every minimum is represented by an active contact (8).
 
-Their speed is positive:
+Its speed is positive:
 \[
- (a_c)_u=(A+\tfrac12)k+(B-\tfrac12)s
- >1.399(.764)-\tfrac12(.645)>0.
+ (a_c)_u=(A+1/2)k+(B-1/2)s
+                 >1.399(.764)-.5(.645)>0.
 \]
-More importantly, the exact circle identity gives
+The exact circle identity retains both state coordinates:
 \[
- [(a_c)_u]^2=Q-2B-(a-\tfrac12)^2
-                   >Q-1.8-.915^2.
+ [(a_c)_u]^2=Q-2B-(a-1/2)^2>Q-1.8-.915^2.
 \]
-Together with (3)--(4), this gives **on every active contact in the
-entire negative half**
+Since \(L\ge p+q\ge.94766\), the single rational comparison
 \[
- L^2[(a_c)_u]^2>.94766^2(Q-1.8-.915^2)>1,
- \qquad C_u=-1+L(a_c)_u>0.                                 \tag{9}
+ .94766^2(Q-1.8-.915^2)>1
 \]
-Decreasing \(u\) at fixed \(B\) consequently decreases the cost and stays
-on its original feasible contact until alignment or \(a=d\).
-An axial or target-diagonal endpoint of the target arc is included in
-this same motion. The upper source endpoint also immediately enters the
-arc under this motion; it introduces no additional minimum.
+proves on every active contact
+\[
+                         C_u=-1+L(a_c)_u>0.
+\tag{9}
+\]
+Decreasing \(u\) at fixed \(B\) stays on the original contact and
+reduces cost until alignment or the source diagonal. An axial or
+diagonal target endpoint is included in this motion; a source-axis
+endpoint immediately moves into the outer arc.
 
-### 3.1. The complete source-diagonal contact is concave
+### 3.1. The entire source-diagonal curve
 
-Put \(k_0=1/2-d<0\), and define
+Put \(k_0=1/2-d<0\) and
 \[
  Z=k+k_0,\quad Y=\sqrt{Q-Z^2},\quad
  U=Yk-Zs,\quad V=Ys+Zk,\quad B=V-1/2.
 \]
-These are the target coordinates on \(a=b=d\):
-\(Vk-Us=k+k_0\) and \(U^2+V^2=Q\).
-The physical contact starts at \(u=0,B=b_0\) and ends at the unique
-\(u=u_*\) where \(B=d\). The contact height increases strictly in \(u\),
-and substitution gives
-\[
-                         .5558<u_*<.5559.                 \tag{10}
-\]
+These are the target coordinates on \(a=b=d\), since
+\(Vk-Us=k+k_0\), \(U^2+V^2=Q\). The physical curve starts at
+\(u=0,B=b_0\) and ends at the unique \(u_*\) with \(B=d\).
 Equivalently, \(u_*\) is the unique zero of
-\(\tfrac12+(	frac12-d)\cos u+(d+\tfrac12)\sin u-d\).
-Its derivative is positive on \([0,.7]\), so the two point signs suffice.
-
-Set \(f=1-s/Y\). Direct differentiation gives
 \[
- U'=-Vf,\qquad V'=Uf,\qquad
- f'=\frac{(1-Q+k_0^2)k+k_0(1+k^2)}{Y^3}<0.                 \tag{11}
+ 1/2+(1/2-d)\cos u+(d+1/2)\sin u-d.
 \]
-Moreover \(f>0\), since
-\(Y^2-s^2=Q-1-2k_0k-k_0^2>0\).
-Along this entire physical curve, \(U\ge V>0\), and
-\(tU+PV\ge(t+P)U>0\).
-Its cost is
+Its derivative is positive on \([0,.7]\). The two endpoint signs give
 \[
- E(u)=\pi/2-u+c+(p-q)d-P(U-1/2)+t(V-1/2),
+                              .5558<u_*<.5559.
+\tag{10}
 \]
-so
+Let \(f=1-s/Y\). Direct differentiation gives
 \[
- E''=(PU-tV)f^2+(tU+PV)f'<0.                               \tag{12}
+ U'=-Vf,\quad V'=Uf,\quad
+ f'=\frac{(1-Q+k_0^2)k+k_0(1+k^2)}{Y^3}<0.
 \]
-Thus its minimum is at an endpoint. At zero it is the aligned value
-\(H(b_0)>.8981\). At \(u_*\), its value is
+Also \(f>0\), because \(Y^2-s^2=Q-1-2k_0k-k_0^2>0\).
+On the physical arc, \(U\ge V>0\) and \(tU+PV\ge(t+P)U>0\).
+Its cost
 \[
- \pi/2-u_*+c+(p-q-P+t)d>.9025                              \tag{13}
+ E(u)=\pi/2-u+c+(p-q)d-P(U-1/2)+t(V-1/2)
 \]
-for each of the three exact tuples. The weaker bound
-\(\pi/2>1.570795\) and the upper bound in (10) already prove (13).
-
-Equations (6), (9), and (12)--(13) exhaust the active contact and all
-its boundaries. Therefore every original negative-half owner has
-\(C>.8981\), with no short-angle or tail restriction.
-
-## 4. The whole positive half
-
-Write \(x\ge0\). Now
+therefore has
 \[
- a_c=\frac12+(\tfrac12-B)\cos x-(A-\tfrac12)\sin x.        \tag{14}
+ E''=(PU-tV)f^2+(tU+PV)f'<0.
+\tag{11}
 \]
-As before choose \(a=\max\{d,a_c\}\). On a source-diagonal slack
-portion, reducing \(B\) decreases cost until contact or \(B=0\).
-Thus it is enough to handle active contacts and the clamped axial
-boundary after those contacts end.
-
-The contact function is strictly decreasing in \(B\), because
-\((a_c)_B=-\cos x+r(B)\sin x<0\) on \([0,.7]\).
-If \(B\ge1/2\), (14) is at most \(1/2<d\) and hence inactive.
-If \(B\le1/2\), then \(a_c\le1-B\).
-Consequently every active contact satisfies
+The minimum is at an endpoint. At zero it is (6). At the other endpoint,
 \[
- 0\le B\le b_0,\qquad d\le a_c\le1.
+ E(u_*)=\pi/2-u_*+c+(p-q-P+t)d>.9025
+\tag{12}
 \]
-Its angle cannot exceed the unique axial/diagonal event \(x_a\) where
+for every tuple (2), using \(\pi/2>1.570795\), (4), and (10).
+Equations (6), (9), and (11)--(12) prove the whole negative half.
+
+## 4. The complete positive half
+
+For \(0\le x\le.7\), the unclamped contact is now
 \[
- \tfrac12+\tfrac12\cos x_a-(a_0-\tfrac12)\sin x_a=d,
- \qquad .1072<x_a<.1073<.108.                              \tag{15}
+ a_c=1/2+(1/2-B)\cos x-(A-1/2)\sin x.
+\tag{13}
 \]
-The left side decreases strictly, and its point signs at .1072 and
-.1073 prove the bracket. For larger angles every least-source state
-is clamped at \(a=d\), and its least target is \(B=0\); that cost
-increases with slope 1. The entire original angle range beyond the
-contact event is therefore accounted for, not discarded.
-
-### 4.1. One angular curvature estimate on the entire contact domain
-
-Put \(u=a_c+1/2, v=b+1/2\), and
+Choose \(a=\max(d,a_c)\). A diagonal slack portion reduces in cost
+by decreasing \(B\) until contact or \(B=0\).
+The contact is strictly decreasing in \(B\), since
+\((a_c)_B=-\cos x+r(B)\sin x<0\).
+If \(B\ge1/2\), it is below \(d\). If \(B\le1/2\), then
+\(a_c\le1-B\). Thus every active contact has
 \[
- h=-(a_c)_x=(A-\tfrac12)\cos x+(\tfrac12-B)\sin x>0.
+                     0\le B\le b_0,\qquad d\le a_c\le1.
+\]
+It can occur only before the unique axial/diagonal event \(x_a\):
+\[
+ 1/2+(1/2)\cos x_a-(a_0-1/2)\sin x_a=d,\qquad
+ .1072<x_a<.1073<.108.
+\tag{14}
+\]
+The defining function decreases, and the two rational point signs prove
+the bracket. After this event, the least source is diagonal for every
+target; the least target is axial, and that cost increases with slope 1.
+This accounts for the entire rest of the original angle range.
+
+### 4.1. Uniform contact curvature
+
+Set \(u=a_c+1/2,v=b+1/2\), and
+\[
+ h=-(a_c)_x=(A-1/2)\cos x+(1/2-B)\sin x>0.
 \]
 Then
 \[
  C_x=1-Lh,\qquad
- C_{xx}=\frac{qQh^2}{v^3}-L(u-1).                          \tag{16}
+ C_{xx}=qQh^2/v^3-L(u-1).
+\tag{15}
 \]
-Throughout this domain,
+Over the whole active domain, \(1.29<v<1.4\), \(u\le1.5\),
+\(L<.19335+.94766(1.5)/1.29<1.3\), and \(h>.879\).
+For the last bound use \(A-1/2>.885\), \(x<.108\), and
+\(\cos(.108)>.994\). Hence one global curvature estimate is
 \[
- 1.29<v<1.4,\quad h>.879,\quad u\le1.5,\quad
- L<.19335+.94766(1.5)/1.29<1.3.
+ C_{xx}>\frac{.76744Q(.879)^2}{1.4^3}-.65>.19.
+\tag{16}
 \]
-For the speed bound, use \(A-1/2>.885\), \(x<.108\), and
-\(\cos(.108)>.994\). Since \(q\ge.76744\), (16) gives uniformly
-\[
- C_{xx}>\frac{.76744Q(.879)^2}{1.4^3}-.65>.19.             \tag{17}
-\]
-
-At zero its angular derivative is
+At zero its angle derivative equals
 \[
  e(B)=1-
  \left[p+q\frac{1.5-B}{\sqrt{Q-(1.5-B)^2}}\right]
- (a(B)-1/2).                                               \tag{18}
+                   (a(B)-1/2).
+\tag{17}
 \]
-Both positive factors subtracted in (18) decrease with \(B\), so
-\(e\) increases strictly. Direct substitution into (18) gives for
-all three tuples
+Both positive factors subtracted in (17) decrease with \(B\), so
+\(e\) increases strictly. Direct evaluation gives in every row
 \[
-                        e(0)>-.02,\qquad e(1/80)>0.        \tag{19}
+                              e(0)>-.02,\qquad e(1/80)>0.
+\tag{18}
 \]
-
-If \(e(B)\ge0\), (17) shows that the cost increases from its aligned
-value. If \(e(B)<0\), monotonicity and (19) force \(B<1/80\), and
-(7) gives \(H(B)>.89908\). Integrating (17) from alignment and
-completing one square now proves
+If \(e(B)\ge0\), (16) makes the cost increase from alignment, covered
+by (6). If \(e(B)<0\), (18) forces \(B<1/80\), and (7) applies.
+Integration and a single square completion give
 \[
  C(B,x)>H(B)-\frac{.02^2}{2(.19)}
-          >.89908-\frac{.0004}{.38}>.89802.                 \tag{20}
+             >.89908-\frac{.0004}{.38}>.89802.
+\tag{19}
 \]
-The integration is valid on the whole segment from zero to the active
-angle: at fixed \(B\), (14) decreases from \(1-B\) to its current
-value in \([d,1]\). After it reaches \(d\), the actual clamped cost
-has derivative 1 and cannot undo this bound.
-The two alternatives above are the sign of the actual initial
-angular derivative, not a table of target-coordinate intervals.
+At fixed \(B\), the entire segment from zero to an active angle stays
+in \(d\le a_c\le1\), since (13) decreases from \(1-B\). After it
+reaches the source diagonal, the actual clamped cost has derivative 1.
+Thus this continuation cannot reduce the bound (19).
+These are the two signs of the actual initial angular derivative,
+not a target-coordinate partition.
 
-Equations (6), (15), and (17)--(20) prove \(C>.898\) on the whole
-positive half, including the clamped axial ray and its transition.
+## 5. Scope and arithmetic
 
-## 5. Arithmetic, scope, and dependency substitution
+Sections 2--4 prove all six original angle halves named at the start.
+No theorem from the historical near-aligned note or its scalar-table tails
+is used. Every deformation keeps its stipulated weak original separator,
+so axis ties and all closed coordinate endpoints remain covered.
 
-The fixed comparisons in this note involve only the three coefficient
-tuples (2), the displayed radicals, (5), and (18). Radical brackets
-are checked by squaring positive rationals. Sine and cosine at the
-four event-bracketing points use alternating Taylor inequalities;
-Machin's identity supplies the stated rational lower bound for \(\pi/2\).
-The only interior reference is the aligned row-1 strong-convexity
-comparison following (5). No program result or sampled minimum is an
-input to the argument.
-
-This replaces **all six angle halves** of the three same-sign original
-primary owners named at the start. In particular neither Section 3 of
-SHORT_WRONG_WORD_OUTER_QUARTER_ALIGNED_HAND_PROOF nor their complementary
-rows in SHORT_WRONG_WORD_OUTER_QUARTER_SCALAR_HAND_PROOF is needed.
-All deformations preserve the stipulated original separator. Closed
-state endpoints, weak separation, both copies of alignment, and
-simultaneous feasible owners are included. The three companion
-same-sign secondary owners are separate obligations.
+The point comparisons have explicit inputs (2), (5), (14), and (17).
+Positive square comparisons prove the radical bounds; alternating Taylor
+inequalities prove the event brackets and fixed trigonometric values.
+Machin's identity supplies the rational bounds for \(\pi/2\).
+The continuous inequalities are the circle speed (9), whole-curve
+concavity (11), and uniform angular curvature (16). The only interior
+reference is the row-1 aligned comparison following (5).
+No verification-program result, continuous mesh, or coefficient-sign
+table is a premise of this proof.
