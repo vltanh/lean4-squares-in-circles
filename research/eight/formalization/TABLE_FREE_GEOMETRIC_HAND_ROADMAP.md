@@ -376,6 +376,14 @@ finite interval cover.
 
 ### G9 — Remove the remaining small computational certificates
 
+**Central-core component closed on paper (2026-10-19).**
+`HAND_CENTRAL_BANDS_WITHOUT_TABLES.md` proves all three original common-point
+statements, including the complete transverse segment and both closed angular
+bands, with three full-domain positive-remainder identities and one common
+quartic curvature bound. Together with the existing analytic central-existence
+and forbidden-width arguments, this proves the unrestricted one-twelfth core
+without the 19 Bernstein rows. The other G9 components below remain open.
+
 **Replaces.** The 49 stationary existence/bracket comparisons; the
 5,376 adaptive fixed-box scalar checks; the short central-core
 Bernstein and equality-box arithmetic appendices; any retained
