@@ -33,7 +33,6 @@ structure QuadLabel where
   q : ℚ
   r : ℚ
   s : ℚ
-  deriving DecidableEq, Repr
 
 instance : Inhabited QuadLabel := ⟨⟨0, 0, 0, 0, 0, 0⟩⟩
 

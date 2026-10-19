@@ -18,7 +18,6 @@ namespace SquaresInCircles.Eight.Arithmetic
 structure QInterval where
   lo : ℚ
   hi : ℚ
-  deriving DecidableEq, Repr
 
 namespace QInterval
 

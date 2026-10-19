@@ -79,18 +79,6 @@ theorem localXFour_bound (env : Fin 3 → ℝ) (he : localXFourBox.Mem env) :
   bound_of_bounded (p := 80) (-19049/10000) (-9487/5000)
     (by decide +kernel) (by rat_cast) (by rat_cast) he
 
-noncomputable def localCosineBox : QBox 3 := ![⟨(7831/2000),(9789/2500)⟩, ⟨(-937/1000),(-179/200)⟩, ⟨(1/20),(81/1000)⟩]
-theorem localCosine_bound (env : Fin 3 → ℝ) (he : localCosineBox.Mem env) :
-    ((9869/10000):ℝ) ≤ formula34.eval env ∧ formula34.eval env ≤ (9951/10000) :=
-  bound_of_bounded (p := 80) (9869/10000) (9951/10000)
-    (by decide +kernel) (by rat_cast) (by rat_cast) he
-
-noncomputable def localSineBox : QBox 3 := ![⟨(7831/2000),(9789/2500)⟩, ⟨(-937/1000),(-179/200)⟩, ⟨(1/20),(81/1000)⟩]
-theorem localSine_bound (env : Fin 3 → ℝ) (he : localSineBox.Mem env) :
-    ((993/10000):ℝ) ≤ formula36.eval env ∧ formula36.eval env ≤ (1617/10000) :=
-  bound_of_bounded (p := 80) (993/10000) (1617/10000)
-    (by decide +kernel) (by rat_cast) (by rat_cast) he
-
 noncomputable def localHOneBox : QBox 3 := ![⟨(7831/2000),(9789/2500)⟩, ⟨(-937/1000),(-179/200)⟩, ⟨(1/20),(81/1000)⟩]
 theorem localHOne_bound (env : Fin 3 → ℝ) (he : localHOneBox.Mem env) :
     ((-14263/10000):ℝ) ≤ formula42.eval env ∧ formula42.eval env ≤ (-6599/5000) :=
@@ -366,18 +354,6 @@ noncomputable def sharpHighFBox : QBox 3 := ![⟨(97888353437936885663/250000000
 theorem sharpHighF_bound (env : Fin 3 → ℝ) (he : sharpHighFBox.Mem env) :
     ((-1/2500000000000000):ℝ) ≤ formula55.eval env ∧ formula55.eval env ≤ (-3/10000000000000000) :=
   bound_of_bounded (p := 200) (-1/2500000000000000) (-3/10000000000000000)
-    (by decide +kernel) (by rat_cast) (by rat_cast) he
-
-noncomputable def sharpHighFyBox : QBox 3 := ![⟨(97888353437936885663/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-3682626712030424527/4000000000000000000),(-3682626712030424527/4000000000000000000)⟩, ⟨(618974110076603597/10000000000000000000),(618974110076603597/10000000000000000000)⟩]
-theorem sharpHighFy_bound (env : Fin 3 → ℝ) (he : sharpHighFyBox.Mem env) :
-    ((-1/1000000000000000):ℝ) ≤ formula113.eval env ∧ formula113.eval env ≤ (1/1000000000000000) :=
-  bound_of_bounded (p := 200) (-1/1000000000000000) (1/1000000000000000)
-    (by decide +kernel) (by rat_cast) (by rat_cast) he
-
-noncomputable def sharpHighFzBox : QBox 3 := ![⟨(97888353437936885663/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-3682626712030424527/4000000000000000000),(-3682626712030424527/4000000000000000000)⟩, ⟨(618974110076603597/10000000000000000000),(618974110076603597/10000000000000000000)⟩]
-theorem sharpHighFz_bound (env : Fin 3 → ℝ) (he : sharpHighFzBox.Mem env) :
-    ((-1/1000000000000000):ℝ) ≤ formula138.eval env ∧ formula138.eval env ≤ (1/1000000000000000) :=
-  bound_of_bounded (p := 200) (-1/1000000000000000) (1/1000000000000000)
     (by decide +kernel) (by rat_cast) (by rat_cast) he
 
 noncomputable def sharpTrialFyBox : QBox 3 := ![⟨(97888353437936878163/25000000000000000000),(97888353437936885663/25000000000000000000)⟩, ⟨(-3682626712030424527/4000000000000000000),(-3682626712030424527/4000000000000000000)⟩, ⟨(618974110076603597/10000000000000000000),(618974110076603597/10000000000000000000)⟩]

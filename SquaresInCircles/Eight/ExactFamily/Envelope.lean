@@ -354,11 +354,8 @@ structure WindowBounds (q u : ℝ) : Prop where
   r_lower : 41/25<lowerRight q u
   U_lower : 1619/1000<topRight q u
   V_lower : 1237/1000<topLeft q u
-  V_upper : topLeft q u<1381/1000
   Y_lower : 1411/1000<topHeight q u
-  Y_upper : topHeight q u<2
   v_pos : 0<lowerHeight q u
-  v_upper : lowerHeight q u<589/1000
   w_lower : 1885/1000<lowerLeft q u
 
 theorem WindowBounds.smoothDomain {q u : ℝ} (h : WindowBounds q u) (hq : q<4) :
@@ -400,7 +397,7 @@ theorem window_bounds {q u : ℝ} (hql : (79/40:ℝ)^2 ≤ q) (hqu : q ≤ 9789/
       nlinarith
     · nlinarith [sq_nonneg (lowerHeight q u)]
   exact ⟨domain_of_pos hup (by linarith [hr.1]) (by linarith [hU.1]) (by linarith [hY.1])
-    (by linarith [hw.1]),hr.1,hU.1,hV.1,hV.2,hY.1,hY.2,hv.1,hv.2,hw.1⟩
+    (by linarith [hw.1]),hr.1,hU.1,hV.1,hY.1,hv.1,hw.1⟩
 
 theorem upper_comparison_bounds {q : ℝ}
     (hql : (79/40:ℝ)^2 ≤ q) (hqu : q ≤ 9789/2500) :

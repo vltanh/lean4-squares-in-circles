@@ -11,7 +11,7 @@
       "data": [
         {
           "file": "data/eight/affine/CANDIDATE_COARSE_MISMATCH.rows",
-          "sha256": "9e34501d322cb3425361191b22afd9231a53f30010073cabb1bd70fbad00324d"
+          "sha256": "5e1add663fb546580954d59fe496fcc93bd59b23fd389ed27337d3599732795a"
         },
         {
           "file": "data/eight/affine/CANDIDATE_COARSE_MISMATCH.arcs",
@@ -28,7 +28,7 @@
       "data": [
         {
           "file": "data/eight/affine/D_UPPER_AFFINE.rows",
-          "sha256": "9bbfd6c287d1b3de63e33cceaacca78602f26237c91e4e0226e843beaa979be4"
+          "sha256": "950432bbf529ae6f806327a4922fa39cb3f1d59709409a76ecb2511aa010c0e7"
         },
         {
           "file": "data/eight/affine/D_UPPER_AFFINE.arcs",
@@ -45,7 +45,7 @@
       "data": [
         {
           "file": "data/eight/affine/G_LOWER_AFFINE.rows",
-          "sha256": "8ea345b572d41f3b03fdae5b41f639217916ec313853455f0c25d19016028633"
+          "sha256": "971f95df1ee7865461a5dd7ba9a9ecff23739c695640794f9badc79bc61f1bec"
         },
         {
           "file": "data/eight/affine/G_LOWER_AFFINE.arcs",
@@ -62,7 +62,7 @@
       "data": [
         {
           "file": "data/eight/affine/G_UPPER_AFFINE.rows",
-          "sha256": "9de98f7877ee685b6323bc66b6e2563a79445a8fd1ed815a5bde81aa9c28a7a3"
+          "sha256": "27995ae06be6247f26db24e84190dbc582a3388e2eb425d8efe57c72761d09f9"
         },
         {
           "file": "data/eight/affine/G_UPPER_AFFINE.arcs",
@@ -79,7 +79,7 @@
       "data": [
         {
           "file": "data/eight/affine/H_LOWER_AFFINE.rows",
-          "sha256": "e65df0804e8b30db5fd6837fe08d761987f7399b7386d7abe05560714573bfb6"
+          "sha256": "88b8587e33ba17895ce269f955c78f11dbf963bf508aaacb85c4823219c43695"
         },
         {
           "file": "data/eight/affine/H_LOWER_AFFINE.arcs",
@@ -96,7 +96,7 @@
       "data": [
         {
           "file": "data/eight/affine/MISMATCH_015_TO_001_AFFINE.rows",
-          "sha256": "07d0e6205a5807565e5cf47f8cc4aa73a87f98dc372cdd86a46cbd7209a962df"
+          "sha256": "c40f1483a06664c8900a982119c8e473b2ae076bb0f3e5a437f0a428bdc33239"
         },
         {
           "file": "data/eight/affine/MISMATCH_015_TO_001_AFFINE.arcs",
@@ -113,7 +113,7 @@
       "data": [
         {
           "file": "data/eight/affine/MISMATCH_01_TO_015_AFFINE.rows",
-          "sha256": "47b7c7259b6cc2914e4f440ec10ae10c7aaca2aa103c2b66698850b9032ae6d4"
+          "sha256": "10b98d47f4294225b54dcec25b2c7336a5c4afb140b04a2ebc4f8e9bfaaeb21a"
         },
         {
           "file": "data/eight/affine/MISMATCH_01_TO_015_AFFINE.arcs",
@@ -130,7 +130,7 @@
       "data": [
         {
           "file": "data/eight/affine/MISMATCH_026_TO_01_AFFINE.rows",
-          "sha256": "0c428b1087ac493e753d3929535eb211d4f889e8062222c56c2d0dfae824d840"
+          "sha256": "16faf4f0e796b9e812be275511c45a399781f4c5420ea329b37105e575351b7b"
         },
         {
           "file": "data/eight/affine/MISMATCH_026_TO_01_AFFINE.arcs",
@@ -147,7 +147,7 @@
       "data": [
         {
           "file": "data/eight/affine/T_LOWER_AFFINE.rows",
-          "sha256": "5d4cfe9753ccad33a05ec6dd888f68f0226ec26b3e13b0f177fb6c62a447f8cd"
+          "sha256": "babb8792971ac10726d23134161aecf5a65e060327197a60612c492c2c7f6827"
         },
         {
           "file": "data/eight/affine/T_LOWER_AFFINE.arcs",
@@ -164,7 +164,7 @@
       "data": [
         {
           "file": "data/eight/affine/T_UPPER_AFFINE.rows",
-          "sha256": "df680f8c9a9194a7e0f26b32d4c3514d41edd572e0c0f1a0ea8f6818945393c6"
+          "sha256": "d6e744266adac5aad3f3213bef5dfd5916ae280759cb543c270fde034b5b1af0"
         },
         {
           "file": "data/eight/affine/T_UPPER_AFFINE.arcs",

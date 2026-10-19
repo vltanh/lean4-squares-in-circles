@@ -44,7 +44,6 @@ structure PairEnd where
   positive : Bool
   range : QInterval
   label : QuadLabel
-  deriving DecidableEq, Repr
 
 /-- `(a, b)` is on the chart of `E`. -/
 def PairEnd.OnCurve (E : PairEnd) (Q a b : ℝ) : Prop :=
@@ -64,7 +63,6 @@ structure PairProblem where
   charge : ℚ
   target : ℚ
   halves : List (ℕ × Bool × ℕ)
-  deriving DecidableEq, Repr
 
 /-- The angle `k π / 2 ± u` of the half `(k, r)`. -/
 def phiOf (k : ℕ) (r : Bool) (u : ℝ) : ℝ := (k : ℝ) * Real.pi / 2 + sgnR r * u

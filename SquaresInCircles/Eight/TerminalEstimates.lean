@@ -96,11 +96,6 @@ theorem error_sum {q : ℝ} {C : BoundaryCycle q} (F : Frame C) :
     Fin.sum_univ_succ,hA2,abs_sub_comm]
   ring
 
-theorem physical_phases {q : ℝ} {C : BoundaryCycle q} (F : Frame C) (i : Fin 7) :
-    phases (tilt F.theta) (errors F) i=F.theta (OriginalDual.cycleIndex i) := by
-  have hA2 : F.theta 2 = 0 := F.theta_A
-  fin_cases i <;> simp [phases,errors,tilt,OriginalDual.cycleIndex,H,G,B,T,D,E,hA2]
-
 theorem selected_vertex {q : ℝ} {C : BoundaryCycle q} (F : Frame C) (i : Fin 5) :
     closedSquare (C.square (OriginalDual.cycleIndex i.castSucc.castSucc))
       (add (positions C i.castSucc.castSucc) (offset (tilt F.theta) (errors F) i)) := by

@@ -25,6 +25,4 @@ noncomputable def parts013 : List (List AffineRow) :=
 theorem parts013_check : parts013.all (checkRows ctx) = true := by
   simp only [parts013, List.all_cons, List.all_nil, rows013_0_check, Bool.and_true]
 
-theorem parts013_length : (parts013.map List.length).sum = 198 := by decide +kernel
-
 end SquaresInCircles.Eight.Generated.Affine.Mismatch015To001Affine

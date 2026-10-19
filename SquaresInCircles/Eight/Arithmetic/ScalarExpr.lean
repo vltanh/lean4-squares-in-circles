@@ -28,7 +28,6 @@ inductive ScalarExpr (n : ℕ)
   | sqrt (a : ScalarExpr n) (bracket : QInterval)
   | pow (a : ScalarExpr n) (exponent : ℕ)
   | enclose (a : ScalarExpr n) (bracket : QInterval)
-  deriving DecidableEq, Repr
 
 namespace ScalarExpr
 
@@ -88,20 +87,6 @@ theorem sound {n : ℕ} (boxes : Fin n → QInterval) (e : ScalarExpr n)
         he.2.2.2.1 he.2.2.2.2.1 he.2.2.2.2.2
   | pow a k ha => exact QInterval.mem_pow (ha he) k
   | enclose a J ha => exact QInterval.mem_mono (ha he.1) he.2.1 he.2.2
-
-theorem positive {n : ℕ} (boxes : Fin n → QInterval) (e : ScalarExpr n)
-    (he : e.Valid boxes) (hp : 0 < (e.range boxes).lo)
-    (env : Fin n → ℝ) (henv : ∀ i, (boxes i).Mem (env i)) :
-    0 < e.eval env := by
-  have hp' : (0 : ℝ) < (e.range boxes).lo := by exact_mod_cast hp
-  exact hp'.trans_le (sound boxes e he env henv).1
-
-theorem negative {n : ℕ} (boxes : Fin n → QInterval) (e : ScalarExpr n)
-    (he : e.Valid boxes) (hp : (e.range boxes).hi < 0)
-    (env : Fin n → ℝ) (henv : ∀ i, (boxes i).Mem (env i)) :
-    e.eval env < 0 := by
-  have hp' : ((e.range boxes).hi : ℝ) < 0 := by exact_mod_cast hp
-  exact (sound boxes e he env henv).2.trans_lt hp'
 
 end ScalarExpr
 end SquaresInCircles.Eight.Arithmetic

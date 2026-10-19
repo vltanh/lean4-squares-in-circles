@@ -335,6 +335,4 @@ theorem parts001_check : parts001.all (checkRows ctx) = true := by
     rows001_42_check, rows001_43_check, rows001_44_check, rows001_45_check, rows001_46_check,
     rows001_47_check, rows001_48_check, rows001_49_check, Bool.and_true]
 
-theorem parts001_length : (parts001.map List.length).sum = 10000 := by decide +kernel
-
 end SquaresInCircles.Eight.Generated.Affine.TLowerAffine

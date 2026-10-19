@@ -111,9 +111,6 @@ structure IsStationary (d : Coordinates) : Prop extends IsChain d where
 theorem unit (d : Coordinates) : d.c ^ 2 + d.s ^ 2 = 1 :=
   halfAngle_unit d.z
 
-theorem IsChain.q_pos {d : Coordinates} (h : d.IsChain) : 0 < d.q := by
-  nlinarith [sq_pos_of_pos h.x₁_pos, sq_nonneg d.y, h.first_circle]
-
 theorem IsChain.radicals {d : Coordinates} (h : d.IsChain) :
     d.x₁ = Real.sqrt (d.q - d.y ^ 2) ∧
     d.x₂ = Real.sqrt (d.q - (d.y + 2) ^ 2) ∧

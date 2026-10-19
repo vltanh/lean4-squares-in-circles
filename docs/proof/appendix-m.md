@@ -53,12 +53,10 @@ rectangle by the bounds of Lemma J.1 and Proposition 11.4 (3). $\square$
 *Lean:
 [`Eight.ExactFamily.tiltBox`](../../SquaresInCircles/Eight/ExactFamily/Adaptive.lean#L30),
 [`Eight.ExactFamily.adaptive_position_exists`](../../SquaresInCircles/Eight/ExactFamily/Adaptive.lean#L132),
-[`Eight.ExactFamily.adaptiveY_unique`](../../SquaresInCircles/Eight/ExactFamily/Adaptive.lean#L159),
-[`Eight.ExactFamily.adaptive_chain`](../../SquaresInCircles/Eight/ExactFamily/Adaptive.lean#L199),
-[`Eight.ExactFamily.adaptive_weightDomain`](../../SquaresInCircles/Eight/ExactFamily/Adaptive.lean#L202),
-[`Eight.ExactFamily.adaptive_position_stationary`](../../SquaresInCircles/Eight/ExactFamily/Adaptive.lean#L205),
-[`Eight.ExactFamily.adaptive_curvature`](../../SquaresInCircles/Eight/ExactFamily/Adaptive.lean#L209),
-[`Eight.ExactFamily.adaptive_sharp`](../../SquaresInCircles/Eight/ExactFamily/Adaptive.lean#L218).*
+[`Eight.ExactFamily.adaptive_chain`](../../SquaresInCircles/Eight/ExactFamily/Adaptive.lean#L188),
+[`Eight.ExactFamily.adaptive_weightDomain`](../../SquaresInCircles/Eight/ExactFamily/Adaptive.lean#L191),
+[`Eight.ExactFamily.adaptive_position_stationary`](../../SquaresInCircles/Eight/ExactFamily/Adaptive.lean#L194),
+[`Eight.ExactFamily.adaptive_curvature`](../../SquaresInCircles/Eight/ExactFamily/Adaptive.lean#L198).*
 
 The chain at $(q_*, Y(t), t)$ has four corners $P_A, P_B, P_D, P_E$ on the
 circle of squared radius $q_*$ and the fifth corner $P_H = h_1 e_t + h_2 f_t$
@@ -91,8 +89,8 @@ interval evaluation of their formulas on the local rectangle. $\square$
 [`Eight.ExactFamily.Coordinates.WeightDomain.lam_pos`](../../SquaresInCircles/Eight/ExactFamily/Weights.lean#L139),
 [`Eight.ExactFamily.Coordinates.WeightDomain.mu_sum`](../../SquaresInCircles/Eight/ExactFamily/Weights.lean#L123),
 [`Eight.ExactFamily.Coordinates.force_balance`](../../SquaresInCircles/Eight/ExactFamily/Weights.lean#L193),
-[`Eight.ExactFamily.Coordinates.edgeAlpha`](../../SquaresInCircles/Eight/ExactFamily/Adaptive.lean#L229),
-[`Eight.ExactFamily.Coordinates.edgeBeta`](../../SquaresInCircles/Eight/ExactFamily/Adaptive.lean#L230).*
+[`Eight.ExactFamily.Coordinates.edgeAlpha`](../../SquaresInCircles/Eight/ExactFamily/Adaptive.lean#L209),
+[`Eight.ExactFamily.Coordinates.edgeBeta`](../../SquaresInCircles/Eight/ExactFamily/Adaptive.lean#L210).*
 
 The weights at $t$ are not those at $t_*$, and this matters: with the weights
 frozen at $t_*$ the bound below would be
@@ -149,7 +147,7 @@ $\sum_P\mu_P|P_P|^2 = q_* + \mu_H F(q_*, Y(t), t)$. $\square$
 *Lean:
 [`Eight.complete_center_square`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L33),
 [`Eight.center_square_difference`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L41),
-[`Eight.OriginalDual.value_le`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L207),
+[`Eight.OriginalDual.value_le`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L158),
 [`Eight.ExactFamily.Perturbation.zero_force`](../../SquaresInCircles/Eight/ExactFamily/Perturbation.lean#L29),
 [`Eight.ExactFamily.Perturbation.zero_offset`](../../SquaresInCircles/Eight/ExactFamily/Perturbation.lean#L36),
 [`Eight.ExactFamily.Perturbation.zero_gap`](../../SquaresInCircles/Eight/ExactFamily/Perturbation.lean#L40),
@@ -196,9 +194,9 @@ $-\frac{29}{20} < h_2 < -\frac75$ on the window of tilts this gives the second.
 $\square$
 
 *Lean:
-[`Eight.Terminal.automatic_projections`](../../SquaresInCircles/Eight/TerminalEstimates.lean#L442),
-[`Eight.Terminal.contained_center_bound`](../../SquaresInCircles/Eight/TerminalEstimates.lean#L428),
-[`Eight.Candidate.center_amplitude`](../../SquaresInCircles/Eight/Candidate/Projection.lean#L102).*
+[`Eight.Terminal.automatic_projections`](../../SquaresInCircles/Eight/TerminalEstimates.lean#L437),
+[`Eight.Terminal.contained_center_bound`](../../SquaresInCircles/Eight/TerminalEstimates.lean#L423),
+[`Eight.Candidate.center_amplitude`](../../SquaresInCircles/Eight/Candidate/Projection.lean#L96).*
 
 ### Lemma M.5 (the owner reserves)
 
@@ -231,9 +229,8 @@ $\omega(\frac12 \mp \eta) \mp N$ of the cusps of $T$ and $G$. The least is
 $\rho$. $\square$
 
 *Lean:
-[`Eight.ExactFamily.Coordinates.ownerReserve`](../../SquaresInCircles/Eight/ExactFamily/Adaptive.lean#L241),
-[`Eight.ExactFamily.Coordinates.cut_identities`](../../SquaresInCircles/Eight/ExactFamily/Adaptive.lean#L246),
-[`Eight.enlarged_owner_reserves`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L70),
+[`Eight.ExactFamily.Coordinates.ownerReserve`](../../SquaresInCircles/Eight/ExactFamily/Adaptive.lean#L221),
+[`Eight.ExactFamily.Coordinates.cut_identities`](../../SquaresInCircles/Eight/ExactFamily/Adaptive.lean#L226),
 [`Eight.ExactFamily.Perturbation.linear_variation_identity`](../../SquaresInCircles/Eight/ExactFamily/Perturbation.lean#L92),
 [`Eight.ExactFamily.Perturbation.adaptive_order_bounds`](../../SquaresInCircles/Eight/ExactFamily/Perturbation.lean#L153).*
 
@@ -294,12 +291,11 @@ for $\Delta \le \frac1{1000}$. $\square$
 
 *Lean:
 [`Eight.terminal_constants`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L63),
-[`Eight.terminal_remainder_absorption`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L82),
 [`Eight.ExactFamily.Perturbation.force_term_lower`](../../SquaresInCircles/Eight/ExactFamily/PerturbationEstimates.lean#L211),
 [`Eight.ExactFamily.Perturbation.support_term_rows`](../../SquaresInCircles/Eight/ExactFamily/PerturbationEstimates.lean#L407),
 [`Eight.ExactFamily.Perturbation.aligned_row_remainder`](../../SquaresInCircles/Eight/ExactFamily/PerturbationEstimates.lean#L420),
 [`Eight.ExactFamily.Perturbation.two_cosines_difference`](../../SquaresInCircles/Eight/ExactFamily/PerturbationEstimates.lean#L82),
-[`Eight.Candidate.width_semiconvex`](../../SquaresInCircles/Eight/Candidate/Projection.lean#L216).*
+[`Eight.Candidate.width_semiconvex`](../../SquaresInCircles/Eight/Candidate/Projection.lean#L210).*
 
 ## M.6 Proof of Theorem 11.36
 
@@ -314,10 +310,8 @@ $\rho\Delta - \frac{93}{10}\Delta^2 \ge (\frac{56793}{5000000} - \frac{93}{10000
 This is (11.17). $\square$
 
 *Lean:
-[`Eight.combine_terminal_terms`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L98),
 [`Eight.ExactFamily.Perturbation.quantitative`](../../SquaresInCircles/Eight/ExactFamily/Perturbation.lean#L184),
 [`Eight.Terminal.boundary_quantitative`](../../SquaresInCircles/Eight/Terminal.lean#L33),
-[`Eight.terminal_equality_forces`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L107),
 [`Eight.Terminal.boundary_rigid`](../../SquaresInCircles/Eight/Terminal.lean#L49).*
 
 Equality in (11.17) at $q = q_*$ forces $\Delta = 0$, $t = t_*$ and all five
@@ -379,13 +373,13 @@ $(a + \frac12)^2 + (\frac a{20} + \frac12)^2 > Q_0$ at $a = \frac{349}{250}$.
 The ratio bounds are (11.9) and the signs. $\square$
 
 *Lean:
-[`Eight.Candidate.projection_amplitude`](../../SquaresInCircles/Eight/Candidate/Projection.lean#L131),
-[`Eight.Candidate.sinusoid_lipschitz`](../../SquaresInCircles/Eight/Candidate/Projection.lean#L62),
-[`Eight.Candidate.width_one_le`](../../SquaresInCircles/Eight/Candidate/Projection.lean#L143),
-[`Eight.Candidate.nominal_projection_identity`](../../SquaresInCircles/Eight/Candidate/Nominal.lean#L240),
+[`Eight.Candidate.projection_amplitude`](../../SquaresInCircles/Eight/Candidate/Projection.lean#L125),
+[`Eight.Candidate.sinusoid_lipschitz`](../../SquaresInCircles/Eight/Candidate/Projection.lean#L56),
+[`Eight.Candidate.width_one_le`](../../SquaresInCircles/Eight/Candidate/Projection.lean#L137),
+[`Eight.Candidate.nominal_projection_identity`](../../SquaresInCircles/Eight/Candidate/Nominal.lean#L236),
 [`Eight.Candidate.TangentCuts.cones`](../../SquaresInCircles/Eight/Candidate/Nominal.lean#L90),
-[`Eight.Candidate.Dual.ConeBounds`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L435),
-[`Eight.Candidate.collapsed_projection`](../../SquaresInCircles/Eight/Candidate/Nominal.lean#L366).*
+[`Eight.Candidate.Dual.ConeBounds`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L425),
+[`Eight.Candidate.collapsed_projection`](../../SquaresInCircles/Eight/Candidate/Nominal.lean#L362).*
 
 ### Lemma M.8 (the circle dual)
 
@@ -410,8 +404,8 @@ every vector $y$, and $|(a_i + \frac12, b_i + \frac12)|^2 \le q$ by
 *Lean:
 [`Eight.Candidate.Dual.circle_linear_upper`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L38),
 [`Eight.Candidate.Dual.circle_dual_necessary`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L53),
-[`Eight.Candidate.Dual.Row.Valid.excludes`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L343),
-[`Eight.Candidate.Dual.Row.Valid.excludes_original`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L459).*
+[`Eight.Candidate.Dual.Row.Valid.excludes`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L333),
+[`Eight.Candidate.Dual.Row.Valid.excludes_original`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L449).*
 
 With $z = \tan\frac t2$ and $D_z = 1 + z^2$, on a closed interval where $z$
 has a fixed sign, $\sin t = \frac{2z}{D_z}$, $\cos t = \frac{1 - z^2}{D_z}$
@@ -473,8 +467,7 @@ finite reduction valid.
 [`Eight.Candidate.Dual.weighted_total_error`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L76),
 [`Eight.Candidate.Dual.error_vertex_disjunction`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L89),
 [`Eight.Candidate.Dual.Alternative`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L129),
-[`Eight.Candidate.Dual.alternative_count`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L141),
-[`Eight.Candidate.Dual.TiltBundle`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L423),
+[`Eight.Candidate.Dual.TiltBundle`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L413),
 [`Eight.Candidate.tilt_weighted_necessary`](../../SquaresInCircles/Eight/Candidate/DualApplication.lean#L296),
 [`Eight.Candidate.tilt_bundle_excludes`](../../SquaresInCircles/Eight/Candidate/DualApplication.lean#L364),
 [`Eight.Candidate.tilt_window`](../../SquaresInCircles/Eight/Candidate/DualApplication.lean#L412),
@@ -514,9 +507,9 @@ the left side is $\sum_P\mu_P|P_P|^2 = q_*$, as all five corners lie on the
 circle at the stationary solution; so the constants agree. $\square$
 
 *Lean:
-[`Eight.OriginalDual.reference_gap`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L145),
-[`Eight.OriginalDual.weighted_gap_difference`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L157),
-[`Eight.OriginalDual.reference_value`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L165),
-[`Eight.OriginalDual.exact_identity`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L174),
-[`Eight.OriginalDual.original_centers_rigid`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L221),
-[`Eight.OriginalDual.slider_coordinates`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L267).*
+[`Eight.OriginalDual.reference_gap`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L96),
+[`Eight.OriginalDual.weighted_gap_difference`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L108),
+[`Eight.OriginalDual.reference_value`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L116),
+[`Eight.OriginalDual.exact_identity`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L125),
+[`Eight.OriginalDual.original_centers_rigid`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L172),
+[`Eight.OriginalDual.slider_coordinates`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L218).*

@@ -4,10 +4,10 @@
 For a table NAME it writes, under data/eight/affine:
 
   NAME.rows   first line: den rows; then one row per line,
-              edge source target axis k r lo hi lam mode [h h1 c1 ... c(m-1) hm]
-              (angles over den, lam over 10^8, h over 10^7; mode 0 endpoints, 1 lower,
-              2 upper, 3 circle; a circle row gives its radical parameter h and its m pieces:
-              parameters h_j and the interior cuts c_j, over den). Rows are sorted by
+              edge source target axis k r lo hi lam mode [h1 c1 ... c(m-1) hm]
+              (angles over den, lam over 10^8; mode 0 endpoints, 1 lower, 2 upper,
+              3 circle; a circle row gives its m pieces: the parameters h_j, over 10^7, and
+              the interior cuts c_j, over den). Rows are sorted by
               (source, target, axis, positive first, lo, hi). The rows of an excluded arc
               pair and axis (ExcludedArcs) are left out, and with --core those of two core
               arcs.
@@ -808,8 +808,7 @@ def right_nested(names, indent):
 
 
 def write_meta(root, module, path):
-    """MODULE/Meta.lean, the exact data of the table, and the modules `Claims` and `Cover`,
-    which the aggregate modules import."""
+    """MODULE/Meta.lean, the exact data of the table."""
     def q(x):
         f = F(str(x))
         return str(f.numerator) if f.denominator == 1 else "(%d/%d)" % (f.numerator, f.denominator)
@@ -842,15 +841,10 @@ def write_meta(root, module, path):
             str(i), ["-7/10", "7/10"])) for i in range(7)]),
         "    allowedAxes := " + vec(["[" + ",".join(axis[int(j) - 1] for j in domains.get(
             str(i), [1, 2, 3, 4])) + "]" for i in range(7)]) + " }", ""]
-    if len(d["arcs"]) > 200:
-        lines.append("set_option maxRecDepth 10000 in")
-    lines += ["theorem arc_count : table.arcs.length = %d := by rfl" % len(d["arcs"]), "",
-              "end " + pre, ""]
+    lines += ["end " + pre, ""]
     base = root / "SquaresInCircles" / "Eight" / "Generated" / "Affine"
     (base / module).mkdir(parents=True, exist_ok=True)
     (base / module / "Meta.lean").write_text("\n".join(lines))
-    for shim in ("Claims", "Cover"):
-        (base / module / (shim + ".lean")).write_text("module\n\npublic import %s\n" % pre)
 
 
 def write_index(root, module, src, files, rows, arcs):
@@ -1025,8 +1019,6 @@ noncomputable def {pn} : List (List AffineRow) :=
 
 theorem {pn}_check : {pn}.all (checkRows ctx) = true := by
 {simps}]
-
-theorem {pn}_length : ({pn}.map List.length).sum = {count} := by decide +kernel
 """
         text += FOOTER.format(module=module)
         (base / module / ("Rows%03d.lean" % c)).write_text(text)
@@ -1122,11 +1114,6 @@ theorem strong_budgets_valid :
     text += f"""
 /-- All rows of the table. -/
 noncomputable def rows : List AffineTableRow := data.map (·.toTableRow table ctx.den)
-
-theorem complete_row_count : rows.length = {nrows} := by
-{wrap(["rows", "data", "chunks", "List.length_map", "List.length_flatten", "List.map_append",
-       "List.sum_append"] + [c + "_length" for c in modules] + ["Nat.reduceAdd"], 4,
-      "  simp only [")}]
 
 theorem all_row_claims : ∀ r ∈ rows, r.Claim table := by
   intro r hr
@@ -1282,7 +1269,6 @@ def main():
             v = [x["edge"], x["source"], x["target"], x["axis"], x["k"], int(x["positive"]),
                  x["lo"], x["hi"], x["lam"], x["mode"]]
             if x["mode"] == 3:
-                v.append(x["h"])
                 for j, (hn, upto) in enumerate(x["pieces"]):
                     v.append(hn)
                     if j + 1 < len(x["pieces"]):

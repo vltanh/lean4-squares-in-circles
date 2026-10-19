@@ -21,11 +21,7 @@ open Set
 namespace SquaresInCircles.Eight.Arithmetic
 
 inductive ForwardAxis | one | two | three | four
-  deriving DecidableEq, Repr
-
-instance : Fintype ForwardAxis where
-  elems := {.one, .two, .three, .four}
-  complete x := by cases x <;> decide
+  deriving DecidableEq
 
 def ForwardAxis.reverse : ForwardAxis → ForwardAxis
   | .one => .three | .two => .four | .three => .one | .four => .two
@@ -37,7 +33,6 @@ structure AffineLabel where
   c : ℚ
   p : ℚ
   q : ℚ
-  deriving DecidableEq, Repr
 
 def AffineLabel.eval (L : AffineLabel) (a b : ℝ) : ℝ := L.c+L.p*a+L.q*b
 def AffineLabel.neg (L : AffineLabel) : AffineLabel := ⟨-L.c,-L.p,-L.q⟩
@@ -57,12 +52,6 @@ theorem forwardMargin_actual (axis : ForwardAxis) (σ τ a b A B φ : ℝ) :
       SquaresInCircles.Eight.forwardMargin axis.index a b A B σ τ φ := by
   cases axis <;> simp [ForwardAxis.index,forwardMargin,
     SquaresInCircles.Eight.forwardMargin,frameWidth,pairWidth]
-
-theorem actual_axis_iff_margin (axis : ForwardAxis) (σ τ a b A B φ : ℝ) :
-    (forwardAxis axis.index).Feasible (localSource a b σ) (localTarget A B τ φ) ↔
-      0 ≤ forwardMargin axis σ τ a b A B φ := by
-  rw [forwardMargin_actual]
-  exact forward_feasible_iff_margin axis.index a b A B σ τ φ
 
 def chargedCost (Ls Lt : AffineLabel) (β a b A B φ : ℝ) : ℝ :=
   φ+Ls.eval a b-Lt.eval A B-β*frameCharge φ
@@ -112,17 +101,6 @@ theorem lagrangian_identity (axis : ForwardAxis) (Ls Lt : AffineLabel)
     simp only [chargedCost,forwardMargin,lagrangianBase,sourceX,sourceY,
       targetX,targetY,AffineLabel.eval] <;> push_cast <;> ring
 
-theorem charged_pair_gt_of_support {axis : ForwardAxis} {Ls Lt : AffineLabel}
-    {lam β σ τ a b A B φ sourceLower targetLower γ : ℝ}
-    (hlam : 0 ≤ lam) (haxis : 0 ≤ forwardMargin axis σ τ a b A B φ)
-    (hs : sourceLower ≤ sourceX axis Ls lam φ*a+sourceY axis Ls lam σ φ*b)
-    (ht : targetLower ≤ targetX axis Lt lam φ*A+targetY axis Lt lam τ φ*B)
-    (hcost : γ < lagrangianBase Ls Lt lam β φ+sourceLower+targetLower) :
-    γ < chargedCost Ls Lt β a b A B φ := by
-  have hid := lagrangian_identity axis Ls Lt lam β σ τ a b A B φ
-  have hn := mul_nonneg hlam haxis
-  linarith
-
 /-- Full-circle support is valid without locating the minimizing point in an
 arc.  The explicit circle equation is the semantic premise. -/
 theorem full_circle_lower {v ρ a b X Y : ℝ} (hρ : 0 ≤ ρ)
@@ -137,14 +115,6 @@ theorem full_circle_lower {v ρ a b X Y : ℝ} (hρ : 0 ≤ ρ)
   have hl : -ρ*Real.sqrt (X^2+Y^2) ≤ X*(a-v)+Y*(b-v) := by
     nlinarith [sq_nonneg (X*(b-v)-Y*(a-v))]
   nlinarith only [hl]
-
-theorem full_circle_majorant_lower {v ρ a b X Y h : ℝ}
-    (hρ : 0 ≤ ρ) (hh : 0 < h) (hcircle : (a-v)^2+(b-v)^2=ρ^2) :
-    v*(X+Y)-ρ*radicalMajorant h (X^2+Y^2) ≤ X*a+Y*b := by
-  have ht := mul_le_mul_of_nonneg_left
-    (sqrt_le_radicalMajorant hh (by positivity : 0 ≤ X^2+Y^2)) hρ
-  have hc := full_circle_lower hρ hcircle (X := X) (Y := Y)
-  linarith
 
 /-- A straight-side functional is affine in its free coordinate. -/
 theorem side_endpoint_lower {a b l u X Y m : ℝ} (hb : l ≤ b ∧ b ≤ u)

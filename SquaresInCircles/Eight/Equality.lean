@@ -228,33 +228,6 @@ theorem admissible_of_original_geometry {p : EqualityParameters}
   · simpa [model] using hp.2.2 0 1 (by decide)
   · simpa [model] using hp.2.2 0 2 (by decide)
 
-theorem model_parameter_injective : Function.Injective (fun p : EqualityParameters=>p.model sharpData) := by
-  intro p r h
-  have h0 := congrFun h 0
-  have hT := congrFun h 5
-  have hG := congrFun h 2
-  have hxy := congrArg UnitSquare.center h0
-  have hC := congrArg UnitSquare.cosine h0
-  have hS := congrArg UnitSquare.sine h0
-  have hZ := congrArg (fun K : UnitSquare=>K.center.2) hT
-  have hη := congrArg (fun K : UnitSquare=>dot sharpData.f K.center) hG
-  have recover (w : ℝ) : halfAngleSin w/(1+halfAngleCos w)=w := by
-    dsimp [halfAngleCos,halfAngleSin]
-    field_simp [ne_of_gt (halfAngle_den_pos w)]
-    ring
-  have hw : p.w=r.w := by
-    rw [← recover p.w,← recover r.w]
-    simpa [model,centralSquare,C,S] using congrArg₂ (fun c s : ℝ=>s/(1+c)) hC hS
-  have heta : p.eta=r.eta := by
-    simp [model,tiltedSquare,pG,sharpData.dot_f_inFrame] at hη
-    linarith
-  have hpx : p.x=r.x := congrArg Prod.fst hxy
-  have hpy : p.y=r.y := congrArg Prod.snd hxy
-  have hpz : p.z=r.z := hZ
-  cases p; cases r
-  simp only [EqualityParameters.mk.injEq]
-  exact ⟨hpx,hpy,hw,hpz,heta⟩
-
 def radius : ℝ := Real.sqrt qStar
 def reflectedModel (reflected : Bool) (p : EqualityParameters) : Fin 8 → UnitSquare :=
   if reflected then fun i=>reflectDiagonalSquare (p.model sharpData i) else p.model sharpData
@@ -273,9 +246,6 @@ theorem model_packing (M : Fin 8 → UnitSquare) (hM : M∈models) :
   cases b
   · exact h
   · exact packing_reflectDiagonal h
-
-theorem attainingPacking : Packing attainingModel (0,0) radius :=
-  model_packing _ ⟨false,sampleParameters,sample_admissible,rfl⟩
 
 theorem unreflected_model_reaches (p : EqualityParameters) :
     ∃ i x, closedSquare (p.model sharpData i) x ∧ radius^2≤normSq x := by
@@ -298,12 +268,5 @@ theorem model_reaches (M : Fin 8 → UnitSquare) (hM : M∈models) :
 theorem whole_box_packing {p : EqualityParameters} (hp : p.InBox) :
     Packing (p.model sharpData) (0,0) radius :=
   model_packing _ ⟨false,p,box_admissible hp,rfl⟩
-
-/-- Every point of the box of five closed intervals gives a packing at the optimal radius, and
-distinct points give distinct models. -/
-theorem five_parameter_box :
-    (∀ p : EqualityParameters, p.InBox→ Packing (p.model sharpData) (0,0) radius) ∧
-      Function.Injective (fun p : EqualityParameters=>p.model sharpData) :=
-  ⟨fun _ hp=>whole_box_packing hp,model_parameter_injective⟩
 
 end SquaresInCircles.Eight

@@ -106,9 +106,6 @@ theorem selected_stationary : EightStatement.selected.IsStationary := by
 theorem selected_coordinates : toCoordinates EightStatement.selected=sharpData :=
   stationary_unique ((stationary_iff _).mp selected_stationary)
 
-theorem selected_eq : EightStatement.selected=fromCoordinates sharpData := by
-  simpa only [from_to_coordinates] using congrArg fromCoordinates selected_coordinates
-
 theorem qStar_eq : EightStatement.qStar=qStar :=
   congrArg Coordinates.q selected_coordinates
 
@@ -122,11 +119,6 @@ def fromParameters (p : EqualityParameters) : EightStatement.Parameters :=
   ⟨p.x,p.y,p.w,p.z,p.eta⟩
 
 @[simp] theorem to_from_parameters (p : EqualityParameters) : toParameters (fromParameters p)=p := by
-  cases p
-  rfl
-
-@[simp] theorem from_to_parameters (p : EightStatement.Parameters) :
-    fromParameters (toParameters p)=p := by
   cases p
   rfl
 

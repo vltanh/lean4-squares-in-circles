@@ -132,6 +132,4 @@ noncomputable def table : AffineTableMeta :=
     differenceRange := ![⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-7/10),(7/10)⟩]
     allowedAxes := ![[.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four]] }
 
-theorem arc_count : table.arcs.length = 114 := by rfl
-
 end SquaresInCircles.Eight.Generated.Affine.GLowerAffine

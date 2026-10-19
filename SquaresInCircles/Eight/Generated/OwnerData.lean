@@ -22,11 +22,6 @@ namespace SquaresInCircles.Eight.Generated.Owner
 
 def mixedTables : List OwnerTable := [mixedTable000, mixedTable003, mixedTable004, mixedTable007, mixedTable008, mixedTable011, mixedTable012]
 
-theorem mixed_table_modes : ∀ T ∈ mixedTables, T.mode = .mixed := by
-  intro T hT
-  simp only [mixedTables, List.mem_cons, List.not_mem_nil, or_false] at hT
-  rcases hT with rfl | rfl | rfl | rfl | rfl | rfl | rfl <;> rfl
-
 def tiltLeft : List TiltBundle := [tiltBundle018, tiltBundle019, tiltBundle020, tiltBundle021, tiltBundle022, tiltBundle023, tiltBundle024, tiltBundle025, tiltBundle026, tiltBundle027, tiltBundle028, tiltBundle029, tiltBundle030, tiltBundle031, tiltBundle032, tiltBundle033, tiltBundle034, tiltBundle035, tiltBundle036, tiltBundle037, tiltBundle038, tiltBundle039]
 
 theorem tilt_left_cover : Arithmetic.ClosedChain 0 (1001/20000)
@@ -36,6 +31,5 @@ def tiltRight : List TiltBundle := [tiltBundle040, tiltBundle041, tiltBundle042,
 
 theorem tilt_right_cover : Arithmetic.ClosedChain (2/25) (3/8)
     (tiltRight.map TiltBundle.interval) := by decide +kernel
-
 
 end SquaresInCircles.Eight.Generated.Owner

@@ -60,11 +60,7 @@ lemma actual_primary {a b : ℝ} (k : RadialKind) (ha : 1/2<a)
 def commonGamma (k : Fin 3) : ℚ := ![391/400,157/200,163/200] k
 
 inductive WrongWord | short | second
-  deriving DecidableEq, Repr
-
-instance : Fintype WrongWord where
-  elems := {.short, .second}
-  complete x := by cases x <;> decide
+  deriving DecidableEq
 
 def wrongWord : WrongWord→ QuarterWord
   | .short => ![0,0,1,0,1,1,1]
@@ -108,11 +104,6 @@ def CoreSeparatorExcluded (k : Fin 3) (ks kt : RadialKind) (σ τ : Bool) (j : F
 instance (k : Fin 3) (ks kt : RadialKind) (σ τ : Bool) (j : Fin 4) :
     Decidable (CoreSeparatorExcluded k ks kt σ τ j) := by
   unfold CoreSeparatorExcluded; infer_instance
-
-set_option maxRecDepth 200000 in
-theorem all_original_case_count (w : WrongWord) :
-    (Finset.univ.filter (fun p : Vertex×Bool×Bool => allowed w p.1 p.2.1 p.2.2)).card=19 := by
-  cases w <;> decide
 
 end SquaresInCircles.Eight.WordProblems
 

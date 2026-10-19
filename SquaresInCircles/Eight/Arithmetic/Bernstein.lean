@@ -57,32 +57,11 @@ theorem bernstein_lower {n : ℕ} {b : ℕ → ℚ} {m : ℚ} {t : ℝ}
       have hb' : (m : ℝ) ≤ b i := by exact_mod_cast hb i hi'
       exact mul_le_mul_of_nonneg_right hb' (bernsteinBasis_nonneg ht)
 
-theorem bernstein_positive {n : ℕ} {b : ℕ → ℚ} {t : ℝ}
-    (ht : 0 ≤ t ∧ t ≤ 1) (hb : ∀ i, i ≤ n → 0 < b i) :
-    0 < bernsteinEval n b t := by
-  have hsum : ∃ i ∈ Finset.range (n+1), 0 < bernsteinBasis n i t := by
-    by_contra hn
-    push Not at hn
-    have hz : ∑ i ∈ Finset.range (n+1), bernsteinBasis n i t ≤ 0 :=
-      Finset.sum_nonpos (fun i hi => hn i hi)
-    rw [bernsteinBasis_sum] at hz
-    norm_num at hz
-  obtain ⟨j,hj,hjpos⟩ := hsum
-  unfold bernsteinEval
-  apply Finset.sum_pos'
-  · intro i hi
-    have hbi : (0 : ℝ) < b i := by
-      exact_mod_cast (hb i (Nat.le_of_lt_succ (Finset.mem_range.mp hi)))
-    exact mul_nonneg hbi.le (bernsteinBasis_nonneg ht)
-  · refine ⟨j,hj,mul_pos ?_ hjpos⟩
-    exact_mod_cast hb j (Nat.le_of_lt_succ (Finset.mem_range.mp hj))
-
 structure BernsteinRow where
   interval : QInterval
   polynomial : QPoly
   degree : ℕ
   coefficients : List ℚ
-  deriving Repr
 
 def BernsteinRow.coefficient (r : BernsteinRow) (i : ℕ) : ℚ :=
   r.coefficients.getD i 0
@@ -92,7 +71,6 @@ count, and arithmetic comparisons.  The identity is proved by ring arithmetic
 in each generated row; it is not inferred from provenance metadata. -/
 structure BernsteinRow.Valid (r : BernsteinRow) (margin : ℚ) : Prop where
   interval_order : r.interval.lo < r.interval.hi
-  coefficient_count : r.coefficients.length = r.degree + 1
   expansion : ∀ t : ℝ,
     r.polynomial.eval ((r.interval.lo : ℝ)+(r.interval.hi-r.interval.lo : ℚ)*t) =
       bernsteinEval r.degree r.coefficient t
@@ -123,30 +101,5 @@ theorem BernsteinRow.Valid.positive {r : BernsteinRow} {margin : ℚ}
     0 < r.polynomial.eval x := by
   have hm' : (0 : ℝ) < margin := by exact_mod_cast hm
   exact hm'.trans_le (hr.sound hx)
-
-/-- Singleton cells use direct evaluation; they remain in a closed cover. -/
-structure PointRow where
-  point : ℚ
-  polynomial : QPoly
-  deriving Repr
-
-def PointRow.Valid (r : PointRow) (margin : ℚ) : Prop :=
-  (margin : ℝ) ≤ r.polynomial.eval (r.point : ℝ)
-
-theorem PointRow.sound {r : PointRow} {margin : ℚ} (hr : r.Valid margin)
-    {x : ℝ} (hx : (QInterval.point r.point).Mem x) :
-    (margin : ℝ) ≤ r.polynomial.eval x := by
-  have he : x = (r.point : ℝ) := le_antisymm hx.2 hx.1
-  rw [he]
-  exact hr
-
-/-- A semantic lower comparison attaches the certified polynomial to the
-actual real expression of a row.  Downstream users must supply this comparison
-from interval/Taylor/support soundness. -/
-theorem positive_of_polynomial_lower {r : BernsteinRow} {margin : ℚ}
-    (hr : r.Valid margin) (hm : 0 < margin) {f : ℝ → ℝ}
-    (hmodel : ∀ x, r.interval.Mem x → r.polynomial.eval x ≤ f x)
-    {x : ℝ} (hx : r.interval.Mem x) : 0 < f x :=
-  (hr.positive hm hx).trans_le (hmodel x hx)
 
 end SquaresInCircles.Eight.Arithmetic

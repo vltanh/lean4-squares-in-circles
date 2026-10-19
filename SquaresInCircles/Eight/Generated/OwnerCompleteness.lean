@@ -22,9 +22,6 @@ and `1` at `E`; the `E` axes `2` and `3` are excluded geometrically in `mixed_E_
 def MixedPattern (p : Vertex → Fin 4) : Prop :=
   p 0=0 ∧ p 2=0 ∧ p 4=0 ∧ p 3=2 ∧ p 5=2 ∧ p 6<2 ∧ (p 1≠0 ∨ p 6≠1)
 
-instance (p : Vertex → Fin 4) : Decidable (MixedPattern p) := by
-  unfold MixedPattern; infer_instance
-
 def mixedByIndex (k : Fin 7) : OwnerTable :=
   mixedTables.get ⟨k.val, by simpa only [mixedTables, List.length_cons, List.length_nil] using k.isLt⟩
 

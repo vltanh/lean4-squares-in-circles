@@ -35,11 +35,7 @@ def Branch.bBox : Branch → QInterval
   | .coreCorner => ⟨1/2,14/25⟩
   | .low | .middle | .high => ⟨0,9/10⟩
 
-def signQ (positive : Bool) : ℚ := if positive then 1 else -1
 def sign (positive : Bool) : ℝ := if positive then 1 else -1
-
-@[simp] theorem signQ_cast (p : Bool) : (signQ p : ℝ)=sign p := by
-  cases p <;> norm_num [signQ,sign]
 
 @[simp] theorem sign_not (p : Bool) : sign (!p)= -sign p := by
   cases p <;> norm_num [sign]

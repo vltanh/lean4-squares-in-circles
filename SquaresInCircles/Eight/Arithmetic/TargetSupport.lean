@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Eight.Arithmetic.SourceSupport
+public import SquaresInCircles.Eight.Arithmetic.PreparedArc
 
 /-!
 # Target-state support on the complete closed tangent arc
@@ -117,16 +117,5 @@ theorem upper_endpoint {a : PreparedArc} (ha : a.NumericValid)
         (by rwa [ratioHi_value hf hs] at hu)
       rw [← hU,← hc.1] at hh
       exact hh
-
-theorem circle_majorant_lower {a : PreparedArc} (ha : a.NumericValid)
-    (hs : a.data.side=false) {x y X Y h : ℝ}
-    (hxy : a.data.Contains a.radius x y) (hh : 0 < h) :
-    (a.data.shift : ℝ)*(X+Y)-a.radiusExpr.value*radicalMajorant h (X^2+Y^2) ≤
-      X*x+Y*y := by
-  have hf := a.circleFacts ha hs hxy
-  have hρ : 0 ≤ a.radiusExpr.value := by
-    rw [radiusExpr_value]
-    split_ifs <;> positivity
-  exact full_circle_majorant_lower hρ hh hf.point_circle
 
 end SquaresInCircles.Eight.Arithmetic.PreparedArc

@@ -718,18 +718,11 @@ def row : Row where
 
 @[simp] theorem row_mode : (L.row mode owners alt).mode = mode := rfl
 @[simp] theorem row_positive : (L.row mode owners alt).positive = L.positive := rfl
-@[simp] theorem row_interval : (L.row mode owners alt).interval = L.interval := rfl
 @[simp] theorem row_owners : (L.row mode owners alt).owners = owners := rfl
 @[simp] theorem row_lambda (i : Vertex) : (L.row mode owners alt).lambda i = L.lam i / ten8 := rfl
 @[simp] theorem row_cone (k : ConeIndex) : (L.row mode owners alt).cone k = L.cone k / ten8 := rfl
 @[simp] theorem row_mu (i : Vertex) : (L.row mode owners alt).mu i = L.mu i / ten8 := rfl
 @[simp] theorem row_alternative : (L.row mode owners alt).alternative = alt := rfl
-@[simp] theorem row_polynomial :
-    (L.row mode owners alt).polynomial = L.polynomial mode owners alt := rfl
-@[simp] theorem row_bernstein :
-    (L.row mode owners alt).bernstein = bernstein4 (L.polynomial mode owners alt) L.interval := rfl
-@[simp] theorem row_reserve : (L.row mode owners alt).reserve =
-    minList (bernstein4 (L.polynomial mode owners alt) L.interval) := rfl
 
 /-! ### The forces, right-hand side and quartic of a line -/
 
@@ -1021,7 +1014,6 @@ theorem check_sound (h : L.check mode owners alt = true) : (L.row mode owners al
       polynomial_identity := hid
       bernstein_valid :=
         { interval_order := div_lt_div_of_pos_right hval hd'
-          coefficient_count := hcount
           expansion := bernstein4_expansion (L.polynomial mode owners alt) hlen L.interval
           coefficient_lower := hlower }
       reserve_pos := minList_pos (by simp [bernstein4]) hpos }

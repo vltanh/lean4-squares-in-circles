@@ -21,16 +21,12 @@ def PreparedArc.reverse (a : PreparedArc) : PreparedArc := {a with data:=a.data.
 @[simp] theorem ArcData.reverse_sign (a : ArcData) : a.reverse.sign = -a.sign := by
   cases h : a.positive <;> simp [reverse,sign,h]
 @[simp] theorem ArcData.reverse_label (a : ArcData) : a.reverse.label=a.label.neg := rfl
-@[simp] theorem ArcData.reverse_contains (a : ArcData) (Q x y : ℝ) :
-    a.reverse.Contains Q x y ↔ a.Contains Q x y := Iff.rfl
 
 structure PreparedRow where
   row : AffineTableRow
   source : PreparedArc
   target : PreparedArc
   charge : ℚ
-  sourceNormRoot : QInterval
-  deriving DecidableEq, Repr
 
 namespace PreparedRow
 
@@ -44,13 +40,7 @@ def core (p : PreparedRow) : CoreRow :=
     angle := p.row.angle
     multiplier := p.row.multiplier
     charge := p.charge
-    lowerTarget := p.row.lowerTarget
-    mode := p.row.mode
-    radicalParameter := p.row.radicalParameter
-    sourceNormRoot := p.sourceNormRoot }
-
-def NumericValid (p : PreparedRow) : Prop := p.core.NumericValid
-instance (p : PreparedRow) : Decidable p.NumericValid := inferInstanceAs (Decidable p.core.NumericValid)
+    lowerTarget := p.row.lowerTarget }
 
 theorem core_phi (p : PreparedRow) (u : ℝ) : p.core.phi u=p.row.phi u := by
   cases h : p.row.positiveHalf <;>
@@ -125,21 +115,9 @@ theorem sound_of_positive {p : PreparedRow} (hp : p.core.Positive) (hlam : 0 ≤
       rw [h1,h2,hphi] at hh
       exact hh
 
-theorem sound {p : PreparedRow} (hp : p.NumericValid)
-    {a b A B u : ℝ} (hs : p.source.data.Contains p.source.radius a b)
-    (ht : p.target.data.Contains p.target.radius A B) (hu : p.row.angle.Mem u)
-    (haxis : 0≤forwardMargin p.row.axis p.source.data.sign p.target.data.sign
-      a b A B (p.row.phi u)) :
-    (p.row.lowerTarget : ℝ) < chargedCost p.source.data.label p.target.data.label
-      p.charge a b A B (p.row.phi u) :=
-  sound_of_positive (CoreRow.lagrangian_positive hp) hp.2.2.2.2.2.2.1 hs ht hu haxis
-
 def Matches (p : PreparedRow) (M : AffineTableMeta) : Prop :=
   p.source.data=p.row.sourceArc M ∧ p.target.data=p.row.targetArc M ∧
   p.source.radius=M.radius ∧ p.target.radius=M.radius ∧ p.charge=M.charge p.row.edge
-
-instance (p : PreparedRow) (M : AffineTableMeta) : Decidable (p.Matches M) := by
-  unfold Matches; infer_instance
 
 /-- The row claim from the Lagrangian bound of the core row. -/
 theorem claim_of_positive {p : PreparedRow} {M : AffineTableMeta}
@@ -152,11 +130,6 @@ theorem claim_of_positive {p : PreparedRow} {M : AffineTableMeta}
         (by simpa [hm.1,hm.2.2.1] using hdom.1)
         (by simpa [hm.2.1,hm.2.2.2.1] using hdom.2.1) hdom.2.2
         (by simpa [hm.1,hm.2.1] using haxis))
-
-/-- This is the exported semantic row theorem used by complete table proofs. -/
-theorem claim {p : PreparedRow} {M : AffineTableMeta}
-    (hp : p.NumericValid) (hm : p.Matches M) : p.row.Claim M :=
-  claim_of_positive (CoreRow.lagrangian_positive hp) hp.2.2.2.2.2.2.1 hm
 
 end PreparedRow
 end SquaresInCircles.Eight.Arithmetic

@@ -22,7 +22,6 @@ structure N7 where
   c4 : Nat
   c5 : Nat
   c6 : Nat
-  deriving DecidableEq, Repr
 
 namespace N7
 

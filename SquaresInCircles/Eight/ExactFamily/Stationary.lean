@@ -249,11 +249,6 @@ theorem sharpData_stationary : sharpData.IsStationary := by
 theorem stationary_unique {d : Coordinates} (hd : d.IsStationary) : d=sharpData :=
   FiveCornerGeometry.stationary_chain_unique hd sharpData_stationary
 
-theorem stationary_local {d : Coordinates} (hd : d.IsStationary) :
-    localBox.Mem ![d.q,d.y,d.z] := by
-  rw [stationary_unique hd]
-  exact local_mem qStar_mem (minimizingPose_mem qStar)
-
 theorem exact_stationary_existsUnique : ∃! d : Coordinates, d.IsStationary :=
   ⟨sharpData,sharpData_stationary,fun _ h => stationary_unique h⟩
 
@@ -297,11 +292,5 @@ theorem sharp_y : -92071/100000 < sharpData.y ∧ sharpData.y < -92059/100000 :=
   dsimp [sharpData,radicalCoordinates]
   norm_num [trialY] at h
   constructor <;> linarith
-
-theorem sharp_mu_positive (i : Fin 5) : 0 < sharpData.mu i :=
-  sharpData_stationary.weightDomain.mu_pos i
-
-theorem sharp_lambda_positive (i : Fin 7) : 0 < sharpData.lam i :=
-  sharpData_stationary.weightDomain.lam_pos i
 
 end SquaresInCircles.Eight.ExactFamily

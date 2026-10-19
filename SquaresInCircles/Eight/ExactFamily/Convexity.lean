@@ -521,14 +521,9 @@ def comparisonY (q : ℝ) : ℝ := lowerHeight q (87/100)/lowerLeft q (87/100)
 
 structure ComparisonBounds (q : ℝ) : Prop where
   r_lower : 1773/1000<lowerRight q (87/100)
-  r_upper : lowerRight q (87/100)<1778/1000
   U_lower : 1619/1000<topRight q (87/100)
-  V_lower : 1375/1000<topLeft q (87/100)
-  V_upper : topLeft q (87/100)<1381/1000
   Y_lower : 1411/1000<topHeight q (87/100)
-  Y_upper : topHeight q (87/100)<1424/1000
   v_lower : 576/1000<lowerHeight q (87/100)
-  v_upper : lowerHeight q (87/100)<589/1000
   w_lower : 1885/1000<lowerLeft q (87/100)
   w_upper : lowerLeft q (87/100)<1894/1000
   p_lower : 671/1000<slopeRatio q (87/100)
@@ -605,8 +600,7 @@ theorem comparison_bounds {q : ℝ}
       nlinarith [hw.2,hv.1]
     · rw [div_lt_iff₀ (by linarith : 0<lowerLeft q (87/100))]
       nlinarith [hw.1,hv.2]
-  exact ⟨hr.1,hr.2,hU.1,hV.1,hV.2,hY.1,hY.2,hv.1,hv.2,
-    hw.1,hw.2,hp.1,hp.2,hx.1,hx.2,hy.1,hy.2⟩
+  exact ⟨hr.1,hU.1,hY.1,hv.1,hw.1,hw.2,hp.1,hp.2,hx.1,hx.2,hy.1,hy.2⟩
 
 def coefficientLc (q : ℝ) : ℝ := 2*comparisonX q-slopeRatio q (87/100)
 def coefficientLs (q : ℝ) : ℝ := 2-slopeRatio q (87/100)*comparisonY q

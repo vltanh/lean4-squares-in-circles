@@ -432,13 +432,4 @@ theorem box_rigidlyCongruent_iff {p r : EqualityParameters} (hp : p.InBox) (hr :
   rintro rfl
   exact ⟨Equiv.refl _,Equiv.refl _,by simp,by simp⟩
 
-theorem distinct_box_noncongruent {p r : EqualityParameters} (hp : p.InBox) (hr : r.InBox)
-    (hne : p≠r) : ¬RigidlyCongruent (p.model sharpData) (r.model sharpData) :=
-  fun h=>hne (box_rigid_parameters hp hr h)
-
-theorem congruent_implies_parameters {p r : EqualityParameters} (hp : p.InBox) (hr : r.InBox)
-    (h : Congruent (p.model sharpData) (0,0) (r.model sharpData)) : p=r := by
-  obtain ⟨e,σ,hzero,he,hs⟩ := h.rigid_witness
-  exact box_rigid_parameters hp hr ⟨e,σ,he,hs⟩
-
 end SquaresInCircles.Eight.ExactFamily.BoxRigidity

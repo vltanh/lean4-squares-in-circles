@@ -419,7 +419,4 @@ noncomputable def table : AffineTableMeta :=
     differenceRange := ![⟨(-13/50),(13/50)⟩, ⟨(-7/10),(7/10)⟩, ⟨(-13/50),(13/50)⟩, ⟨(-13/50),(13/50)⟩, ⟨(-13/50),(13/50)⟩, ⟨(-13/50),(13/50)⟩, ⟨(-7/10),(7/10)⟩]
     allowedAxes := ![[.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four], [.one,.two,.three,.four]] }
 
-set_option maxRecDepth 10000 in
-theorem arc_count : table.arcs.length = 401 := by rfl
-
 end SquaresInCircles.Eight.Generated.Affine.Mismatch026To01Affine

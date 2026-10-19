@@ -38,6 +38,4 @@ theorem parts011_check : parts011.all (checkRows ctx) = true := by
   simp only [parts011, List.all_cons, List.all_nil, rows011_0_check, rows011_1_check,
     rows011_2_check, Bool.and_true]
 
-theorem parts011_length : (parts011.map List.length).sum = 425 := by decide +kernel
-
 end SquaresInCircles.Eight.Generated.Affine.CandidateCoarseMismatch

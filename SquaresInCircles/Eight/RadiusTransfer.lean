@@ -150,27 +150,6 @@ lemma outerRadius_monotone {qa qb B : ℝ}
   have h := (outerRadius_increment ha hb hab hB).1
   linarith
 
-lemma outerRadius_hasDerivAt {q B : ℝ}
-    (hq : q ∈ Set.Icc (5 / 2) 4) (hB : FrameCoefficient B) :
-    HasDerivAt (fun x => outerRadius x B)
-      (1 / Real.sqrt (B ^ 2 + 4 * q - 2)) q := by
-  have hd : 0 < B ^ 2 + 4 * q - 2 := by
-    linarith [(discriminant_bounds hq hB).1]
-  have hs := ((((hasDerivAt_id q).const_mul 4).const_add (B ^ 2)).sub_const 2).sqrt
-    (ne_of_gt hd)
-  have hf := (hs.sub_const B).div_const 2
-  convert hf using 1 <;> dsimp [outerRadius] <;> ring
-
-lemma outerRadius_derivative_bounds {q B : ℝ}
-    (hq : q ∈ Set.Icc (5 / 2) 4) (hB : FrameCoefficient B) :
-    1 / 4 ≤ 1 / Real.sqrt (B ^ 2 + 4 * q - 2) ∧
-      1 / Real.sqrt (B ^ 2 + 4 * q - 2) ≤ 1 / 3 := by
-  obtain ⟨hl, hu⟩ := root_bounds hq hB
-  have hp : 0 < Real.sqrt (B ^ 2 + 4 * q - 2) := by linarith
-  constructor
-  · exact (div_le_div_iff₀ (by norm_num) hp).2 (by linarith)
-  · exact (div_le_div_iff₀ hp (by norm_num)).2 (by linarith)
-
 /-- The nonnegative-coefficient case of an active outer/outer projection. -/
 lemma nonnegative_projection_reserve {r s u v : ℝ}
     (hr : r < 3 / 2) (hs : s < 3 / 2)
@@ -270,10 +249,6 @@ def RadialState.radius (s : RadialState) (q : ℝ) : ℝ :=
   | .outer B _ => outerRadius q B
   | .core r _ => r
 
-def RadialState.isOuter : RadialState → Bool
-  | .outer .. => true
-  | .core .. => false
-
 /-- Every initially feasible signed projection remains feasible. Coefficients
 are fixed dot products of the retained unit axis with the two retained rays.
 The threshold is the unchanged sum of support half-widths. -/
@@ -312,18 +287,6 @@ theorem every_feasible_projection_preserved
       dsimp [RadialState.radius] at *
       nlinarith
     | core d hd => exact hfeas
-
-/-- Simultaneous transport makes no finiteness or single-owner assumption on
-the family of selected axes. In particular it retains every owner tie. -/
-theorem all_axes_preserved {ι : Type*} (s₁ s₂ : RadialState)
-    {qa qb : ℝ} (u v width : ι → ℝ)
-    (ha : qa ∈ Set.Icc (5 / 2) 4) (hb : qb ∈ Set.Icc (5 / 2) 4)
-    (hab : qa ≤ qb) (hu : ∀ i, -1 ≤ u i ∧ u i ≤ 1)
-    (hv : ∀ i, -1 ≤ v i ∧ v i ≤ 1) (hw : ∀ i, 1 ≤ width i) :
-    ∀ i, width i ≤ u i * s₁.radius qa + v i * s₂.radius qa →
-      width i ≤ u i * s₁.radius qb + v i * s₂.radius qb := by
-  intro i hi
-  exact every_feasible_projection_preserved s₁ s₂ ha hb hab (hu i) (hv i) (hw i) hi
 
 end SquaresInCircles.Eight.RadiusTransfer
 
@@ -619,11 +582,6 @@ theorem BoundaryCycle.expand_spec {q r : ℝ} (C : BoundaryCycle q)
   · funext i
     exact C.expanded_tangent hq hr hqr i
   · exact C.expanded_axis hq hr hqr
-
-theorem radius_expand_boundary_cycle {q r : ℝ} (C : BoundaryCycle q)
-    (hq : q ∈ Set.Icc (5/2) 4) (hr : r ∈ Set.Icc (5/2) 4) (hqr : q ≤ r) :
-    ∃ D : BoundaryCycle r, RadiusExpansion C D :=
-  ⟨C.expand hq hr hqr,C.expand_spec hq hr hqr⟩
 
 def sourceLevel (q : ℝ) : ℝ := max q qMinus
 

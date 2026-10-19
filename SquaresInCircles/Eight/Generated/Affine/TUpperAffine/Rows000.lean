@@ -228,6 +228,4 @@ theorem parts000_check : parts000.all (checkRows ctx) = true := by
     rows000_27_check, rows000_28_check, rows000_29_check, rows000_30_check, rows000_31_check,
     rows000_32_check, Bool.and_true]
 
-theorem parts000_length : (parts000.map List.length).sum = 6433 := by decide +kernel
-
 end SquaresInCircles.Eight.Generated.Affine.TUpperAffine

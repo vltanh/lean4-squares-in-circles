@@ -43,9 +43,7 @@ N=A.neg(A.mul(epsilon,A.add(h1,h2t)))
 reserves=[X,A.sub(A.mul(alpha,A.sub(C(1),Y)),X),K,A.sub(beta,K),
  A.mul(beta,A.sub(C(Q('-0.917')),J)),A.mul(beta,A.add(C(Q('1.057')),J)),
  L,A.sub(N,A.mul(C(Q('.392')),omega)),A.sub(A.mul(C(Q('.485')),omega),N)]
-named={'omega':omega,'alpha':alpha,'beta':beta,'delta':delta,'epsilon':epsilon,
- 'Y':Y,'J':J,'X':X,'K':K,'L':L,'N':N,'hTwo':h2}
-for i,t in enumerate(mu):named['mu'+str(i)]=t
+named={'omega':omega,'alpha':alpha,'beta':beta,'delta':delta,'epsilon':epsilon,'hTwo':h2}
 for i,t in enumerate(reserves):named['reserve'+str(i)]=t
 ka=A.div(A.mul(alpha,x1),c)
 kb=A.mul(beta,A.add(g.y,two))
@@ -347,8 +345,9 @@ def generate():
     out=g.OUT
     boxes=[cell(k) for k in range(NCELLS)]
     lines=[header]
-    for i,n in enumerate(A.nodes):
-        lines.append(f'def adaptiveFormula{i} : Formula 3 := '+g.formula_node(n).replace(' n',' adaptiveFormula'))
+    for i in A.dependencies(list(named.values())):
+        lines.append(f'def adaptiveFormula{i} : Formula 3 := '+
+          g.formula_node(A.nodes[i]).replace(' n',' adaptiveFormula'))
     for name,target in named.items():
         lines.append(f'def {name}Formula : Formula 3 := adaptiveFormula{target}')
     lines += ['def reserveFormula : Fin 9 → Formula 3 := !['+

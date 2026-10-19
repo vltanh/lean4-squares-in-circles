@@ -259,6 +259,9 @@ local macro "rat_cast" : tactic =>
   `(tactic| simp only [Rat.cast_div, Rat.cast_neg, Rat.cast_ofNat, Rat.cast_one, Rat.cast_zero])
 '''
 
+# the formulas whose value is also written as an explicit real expression (`scalarF`, ...)
+SCALARS=['F','Fy','Fz','xOne','xTwo','yThree','xFour','cosine','sine','hOne','hTwo']
+
 def write_local(out):
     quarter=A.const(Q(1,4))
     det=A.sub(A.mul(A.sub(Fyy,quarter),A.sub(Fzz,quarter)),A.sq(Fyz))
@@ -269,8 +272,9 @@ def write_local(out):
       'xOne':x1,'xTwo':x2,'yThree':y3,'xFour':x4,'cosine':c,'sine':s,'hOne':h1,'hTwo':h2,
       'determinant':det}
     lines=[header(['SquaresInCircles.Eight.ExactFamily.Expression'],FORMULA_DOC)]
-    for i,n in enumerate(A.nodes):
-        core=formula_node(n).replace(' n',' formula')
+    nodes=A.dependencies(list(bounds.values()))
+    for i in nodes:
+        core=formula_node(A.nodes[i]).replace(' n',' formula')
         lines.append(f'def formula{i} : Formula 3 := {core}')
     lines += ['',*['def '+name+'Formula : Formula 3 := formula'+str(i) for name,i in bounds.items()],
       'def localBox : QBox 3 := '+boxlit(local),
@@ -282,7 +286,8 @@ def write_local(out):
       'theorem Fyy_diff : FyFormula.diff 1 = FyyFormula := by decide +kernel',
       'theorem Fyz_diff : FyFormula.diff 2 = FyzFormula := by decide +kernel',
       'theorem Fzz_diff : FzFormula.diff 2 = FzzFormula := by decide +kernel','']
-    for name,target in bounds.items():
+    for name in SCALARS:
+        target=bounds[name]
         lines += [f'def scalar{name} (q y z : ℝ) : ℝ := by']
         for i in A.dependencies([target]):
             n=A.nodes[i];op=n[0]
@@ -295,12 +300,10 @@ def write_local(out):
             elif op=='add':core=f'n{n[1]}+n{n[2]}'
             elif op=='mul':core=f'n{n[1]}*n{n[2]}'
             lines.append(f'  let n{i} : ℝ := {core}')
-        # `determinant_eval` is the polynomial identity below.
-        suffix='_eval_scalar' if name=='determinant' else '_eval'
         lines += [f'  exact n{target}',
-          f'theorem {name}{suffix} (q y z : ℝ) : {name}Formula.eval ![q,y,z] = scalar{name} q y z := by',
+          f'theorem {name}_eval (q y z : ℝ) : {name}Formula.eval ![q,y,z] = scalar{name} q y z := by',
           '  rfl','']
-    defs=', '.join('formula'+str(i) for i in range(len(A.nodes)))
+    defs=', '.join('formula'+str(i) for i in nodes)
     top=sorted((i for i in A.dependencies([det]) if i>max(Fyy,Fyz,Fzz)),reverse=True)
     assert len(top)==7
     t=[f'formula{i}' for i in top]
@@ -358,8 +361,6 @@ def write_local(out):
       ('localXTwo',x2,Q('1.6414'),Q('1.6691')),
       ('localYThree',y3,Q('1.4387'),Q('1.4643')),
       ('localXFour',x4,Q('-1.9049'),Q('-1.8974')),
-      ('localCosine',c,Q('.9869'),Q('.9951')),
-      ('localSine',s,Q('.0993'),Q('.1617')),
       ('localHOne',h1,Q('-1.4263'),Q('-1.3198')),
       ('localHTwo',h2,Q('-1.5316'),Q('-1.3202'))]:
         certificate(name,local,target,lo,hi)
@@ -422,8 +423,9 @@ def write_local(out):
         b=((qv,qv),(yt,yt),(zt,zt))
         certificate(name+'F',b,F,Q(7,10**16) if name=='sharpLow' else Q(-4,10**16),
           Q(8,10**16) if name=='sharpLow' else Q(-3,10**16),200)
-        certificate(name+'Fy',b,Fy,Q(-1,10**15),Q(1,10**15),200)
-        certificate(name+'Fz',b,Fz,Q(-1,10**15),Q(1,10**15),200)
+        if name=='sharpLow':
+            certificate(name+'Fy',b,Fy,Q(-1,10**15),Q(1,10**15),200)
+            certificate(name+'Fz',b,Fz,Q(-1,10**15),Q(1,10**15),200)
     sharpbox=((qlo,qhi),(yt,yt),(zt,zt))
     certificate('sharpTrialFy',sharpbox,Fy,Q(-1,10**15),Q(1,10**15),200)
     certificate('sharpTrialFz',sharpbox,Fz,Q(-1,10**15),Q(1,10**15),200)

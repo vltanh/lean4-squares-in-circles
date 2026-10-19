@@ -280,10 +280,6 @@ def NormalizationData.act {S : Fin 8 → UnitSquare} {q : ℝ}
   source_frames i := motionSquare_sameFrame _ _ (N.source_frames (G.index i))
   source_selected := by simp [CycleAction.neighbor,CycleAction.boundary,N.source_selected]
 
-lemma candidate_offsets_increment (i : Vertex) :
-    integerQuarterIncrement Candidate.offsets i=Candidate.word i := by
-  fin_cases i <;> norm_num [integerQuarterIncrement,Candidate.offsets,Candidate.word,next]
-
 lemma candidate_quarter_cast (i : Vertex) :
     ((candidateQuarterWord i).val:ℤ)=Candidate.word i := by
   fin_cases i <;> norm_num [candidateQuarterWord,quarterRepresentatives,Candidate.word]

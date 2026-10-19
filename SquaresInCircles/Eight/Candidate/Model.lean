@@ -68,10 +68,6 @@ theorem h_phi (θ : Vertex → ℝ) (i : Vertex) : h (phi θ i) = h (|delta θ i
   fin_cases i <;>
     simp [phi, word, h_half_pi_add, h_abs]
 
-theorem sum_delta (θ : Vertex → ℝ) : (∑ i, delta θ i) = 0 := by
-  simp [Fin.sum_univ_succ, delta, next]
-  ring
-
 theorem sum_phi (θ : Vertex → ℝ) : (∑ i, phi θ i) = 2 * Real.pi := by
   simp [Fin.sum_univ_succ, phi, word, delta, next]
   ring

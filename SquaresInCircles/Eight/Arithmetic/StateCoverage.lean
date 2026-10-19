@@ -29,17 +29,6 @@ theorem Every.of_mem {α : Type*} {P : α→ Prop} {xs : List α}
       · exact h.1
       · exact ih h.2 hx
 
-theorem list_getD_mem {α : Type*} {xs : List α} {d : α} {i : ℕ}
-    (hi : i<xs.length) : xs.getD i d∈xs := by
-  induction xs generalizing i with
-  | nil => simp at hi
-  | cons a xs ih =>
-      cases i with
-      | zero => simp
-      | succ i =>
-          have hii : i<xs.length := by simpa using hi
-          simpa using List.mem_cons_of_mem a (ih hii)
-
 def ArcData.signedInterval (a : ArcData) : QInterval :=
   if a.positive then a.tangent else a.tangent.neg
 

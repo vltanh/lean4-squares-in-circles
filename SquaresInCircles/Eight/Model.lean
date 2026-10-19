@@ -58,10 +58,6 @@ theorem packing_sq {n : ℕ} {S : Fin n → UnitSquare} {o : Point} {R : ℝ}
     (h : Packing S o R) : SqPacking S o (R ^ 2) :=
   ⟨sq_nonneg _, h.2.1, h.2.2⟩
 
-theorem SqPacking.mono {n : ℕ} {S : Fin n → UnitSquare} {o : Point} {q r : ℝ}
-    (h : SqPacking S o q) (hqr : q ≤ r) : SqPacking S o r :=
-  ⟨h.1.trans hqr, fun i p hp => (h.2.1 i p hp).trans hqr, h.2.2⟩
-
 theorem SqContained.iff_points {q : ℝ} (hq : 0 ≤ q) (K : UnitSquare) :
     SqContained q K ↔ ∀ p, closedSquare K p → normSq p ≤ q := by
   constructor
@@ -96,8 +92,6 @@ def e (K : UnitSquare) : Point := (K.cosine, K.sine)
 def f (K : UnitSquare) : Point := (-K.sine, K.cosine)
 
 theorem e_unit (K : UnitSquare) : normSq (e K) = 1 := K.unit
-theorem f_unit (K : UnitSquare) : normSq (f K) = 1 := by
-  simpa [f, normSq, add_comm] using K.unit
 
 def SameFrame (K L : UnitSquare) : Prop := K.cosine = L.cosine ∧ K.sine = L.sine
 
@@ -119,28 +113,12 @@ theorem moveCenter_sameFrame (K : UnitSquare) (p : Point) :
 
 /-- Four axes, independently of their two orientations. -/
 inductive AxisOwner | sourceX | sourceY | targetX | targetY
-  deriving DecidableEq
-
-instance : Fintype AxisOwner where
-  elems := {.sourceX, .sourceY, .targetX, .targetY}
-  complete x := by cases x <;> decide
-
-def AxisOwner.index : AxisOwner → Fin 4
-  | .sourceX => 0 | .sourceY => 1 | .targetX => 2 | .targetY => 3
-
-def AxisOwner.fromIndex (i : Fin 4) : AxisOwner :=
-  ![.sourceX, .sourceY, .targetX, .targetY] i
 
 def AxisOwner.normal (a : AxisOwner) (K L : UnitSquare) : Point :=
   match a with
   | .sourceX => e K | .sourceY => f K | .targetX => e L | .targetY => f L
 
 inductive AxisSign | positive | negative
-  deriving DecidableEq
-
-instance : Fintype AxisSign where
-  elems := {.positive, .negative}
-  complete x := by cases x <;> decide
 
 def AxisSign.value : AxisSign → ℝ | .positive => 1 | .negative => -1
 def AxisSign.flip : AxisSign → AxisSign | .positive => .negative | .negative => .positive
@@ -148,11 +126,6 @@ def AxisSign.flip : AxisSign → AxisSign | .positive => .negative | .negative =
 structure SignedAxis where
   owner : AxisOwner
   sign : AxisSign
-  deriving DecidableEq
-
-instance : Fintype SignedAxis :=
-  Fintype.ofEquiv (AxisOwner × AxisSign)
-    ⟨fun p => ⟨p.1, p.2⟩, fun a => (a.owner, a.sign), fun _ => rfl, fun _ => rfl⟩
 
 def SignedAxis.normal (a : SignedAxis) (K L : UnitSquare) : Point :=
   scale a.sign.value (a.owner.normal K L)
@@ -174,10 +147,6 @@ def angleGap (β : Vertex → ℝ) (i : Vertex) : ℝ :=
 
 inductive RadialKind | outer | coreSide | coreCorner
   deriving DecidableEq
-
-instance : Fintype RadialKind where
-  elems := {.outer, .coreSide, .coreCorner}
-  complete x := by cases x <;> decide
 
 /-- The two radial curves, with the core side/corner junction kept weak. -/
 def BoundaryState (q : ℝ) (k : RadialKind) (a b : ℝ) : Prop :=
@@ -264,12 +233,9 @@ transported (`result`). The witnesses keep their normals (`axis_transport`), so 
 relabelled without its sign. -/
 structure BoundaryReduction {q : ℝ} (C : NeighborCycle q) where
   raw : NeighborCycle q
-  raw_boundary : ∀ i, OnRadialBoundary q (raw.square i)
   raw_frames : ∀ i, SameFrame (raw.square i) (C.square i)
   raw_selected : raw.selected = C.selected
   result : BoundaryCycle q
-  same_squares : ∀ i, SameSquare (result.square i) (raw.square i)
-  same_centers : ∀ i, (result.square i).center = (raw.square i).center
   physical_frames : ∀ i, SamePhysicalFrame (result.square i) (C.square i)
   axis_transport : ∀ i,
     (result.selected i).normal (result.square i) (result.square (next i)) =

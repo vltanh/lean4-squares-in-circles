@@ -132,15 +132,6 @@ theorem centralBandP_normalized (Cminus D u : ℝ) :
   unfold centralBandP
   field_simp [hz]
 
-/-- Increasing quadratic comparison, with its positive branch explicit. -/
-theorem root_lt_of_quadratic_positive {X Y B C : ℝ}
-    (hX : 0 ≤ X) (hY : 0 < Y) (hB : 0 ≤ B)
-    (hroot : X^2+B*X+C=0) (hpoly : 0 < Y^2+B*Y+C) : X < Y := by
-  by_contra h
-  have hYX : Y ≤ X := le_of_not_gt h
-  have hp := mul_nonneg (sub_nonneg.mpr hYX) (show 0 ≤ X+Y+B by linarith)
-  nlinarith
-
 theorem centralBandV_normalized {A Cplus D u : ℝ} (hu : 0 ≤ u ∧ u ≤ 3/7)
     (hp : 0 < centralBandV A Cplus D u) :
     Cplus*(2*u/(1+u^2))+D*((1-u^2)/(1+u^2))-

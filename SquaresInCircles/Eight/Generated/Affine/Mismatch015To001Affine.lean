@@ -22,13 +22,6 @@ set_option maxRecDepth 100000
 /-- All rows of the table. -/
 noncomputable def rows : List AffineTableRow := data.map (·.toTableRow table ctx.den)
 
-theorem complete_row_count : rows.length = 130198 := by
-  simp only [rows, data, chunks, List.length_map, List.length_flatten, List.map_append,
-    List.sum_append, parts000_length, parts001_length, parts002_length, parts003_length,
-    parts004_length, parts005_length, parts006_length, parts007_length, parts008_length,
-    parts009_length, parts010_length, parts011_length, parts012_length, parts013_length,
-    Nat.reduceAdd]
-
 theorem all_row_claims : ∀ r ∈ rows, r.Claim table := by
   intro r hr
   obtain ⟨x, hx, rfl⟩ := List.mem_map.mp hr

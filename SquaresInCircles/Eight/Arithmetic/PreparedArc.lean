@@ -39,9 +39,6 @@ structure PreparedArc where
   rootLo : QInterval
   rootHi : QInterval
   radiusRoot : QInterval
-  deriving DecidableEq, Repr
-
-instance : Inhabited PreparedArc := ⟨⟨default,0,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
 
 namespace PreparedArc
 

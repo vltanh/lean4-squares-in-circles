@@ -95,26 +95,4 @@ theorem cos_remainder_coefficient {x : ℝ} (hx : 0 ≤ x) :
     · field_simp [ne_of_gt hp]
       ring
 
-/-- The global cubic radical majorant from hand equation (8.3). -/
-def radicalMajorant (h V : ℝ) : ℝ :=
-  (5*h+15*V/h-5*V^2/h^3+V^3/h^5)/16
-
-theorem radical_majorant_identity {h V : ℝ} (hh : 0 < h) (hV : 0 ≤ V) :
-    radicalMajorant h V-Real.sqrt V =
-      (Real.sqrt V-h)^4*(V+4*h*Real.sqrt V+5*h^2)/(16*h^5) := by
-  have hs : (Real.sqrt V)^2 = V := Real.sq_sqrt hV
-  have hid (s : ℝ) : radicalMajorant h (s^2)-s =
-      (s-h)^4*(s^2+4*h*s+5*h^2)/(16*h^5) := by
-    unfold radicalMajorant
-    field_simp [ne_of_gt hh]
-    ring
-  simpa only [hs] using hid (Real.sqrt V)
-
-theorem sqrt_le_radicalMajorant {h V : ℝ} (hh : 0 < h) (hV : 0 ≤ V) :
-    Real.sqrt V ≤ radicalMajorant h V := by
-  have hn : 0 ≤ (Real.sqrt V-h)^4*(V+4*h*Real.sqrt V+5*h^2)/(16*h^5) := by
-    positivity
-  rw [← radical_majorant_identity hh hV] at hn
-  linarith
-
 end SquaresInCircles.Eight.Arithmetic

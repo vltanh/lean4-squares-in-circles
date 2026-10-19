@@ -129,16 +129,6 @@ def signs : Vertex → ℚ := ![1, -1, 1, -1, 1, -1, -1]
 inductive Alternative
   | zero
   | spike (edge : Fin 5) (secondOwner : Bool) (positive : Bool)
-  deriving DecidableEq
-
-instance : Fintype Alternative :=
-  Fintype.ofEquiv (Option (Fin 5 × Bool × Bool))
-    { toFun := fun o => match o with | none => .zero | some (e, s, p) => .spike e s p
-      invFun := fun a => match a with | .zero => none | .spike e s p => some (e, s, p)
-      left_inv := fun o => by rcases o with _ | ⟨e, s, p⟩ <;> rfl
-      right_inv := fun a => by cases a <;> rfl }
-
-theorem alternative_count : Fintype.card Alternative = 21 := by decide
 
 def Alternative.owner (j : Fin 5) (second : Bool) : Fin 4 :=
   if second then (if j = 2 ∨ j = 4 then 3 else 2)

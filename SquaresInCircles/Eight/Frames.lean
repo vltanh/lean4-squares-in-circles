@@ -40,10 +40,6 @@ lemma sum_next {α : Type*} [AddCommMonoid α] (f : Vertex → α) :
     ∑ i, f (next i) = ∑ i, f i := by
   exact Equiv.sum_comp nextPerm f
 
-lemma sum_prev {α : Type*} [AddCommMonoid α] (f : Vertex → α) :
-    ∑ i, f (prev i) = ∑ i, f i := by
-  exact Equiv.sum_comp nextPerm.symm f
-
 lemma cyclic_difference_sum (f : Vertex → ℝ) : ∑ i, (f (next i) - f i) = 0 := by
   rw [Finset.sum_sub_distrib, sum_next, sub_self]
 
@@ -55,45 +51,6 @@ lemma cyclic_markers_cancel (δ w ψ : Vertex → ℝ) (b : ℝ) :
       (∑ i, δ i) - b * ∑ i, w i := by
   simp only [Finset.sum_sub_distrib, Finset.sum_add_distrib, ← Finset.mul_sum, sum_next]
   ring
-
-lemma cyclic_summation_by_parts (ν θ : Vertex → ℝ) :
-    ∑ i, ν i * (θ (next i) - θ i) =
-      ∑ i, (ν (prev i) - ν i) * θ i := by
-  have hshift : ∑ i, ν i * θ (next i) = ∑ i, ν (prev i) * θ i := by
-    have hh := sum_next (fun i => ν (prev i) * θ i)
-    simpa only [prev_next] using hh
-  simp only [mul_sub, sub_mul, Finset.sum_sub_distrib]
-  rw [hshift]
-
-/-- Cyclic frame charges depend on total variation of their multipliers.
-The common frame midpoint is subtracted before absolute values are taken. -/
-lemma cyclic_charge_bound (ν θ : Vertex → ℝ) {J D : ℝ}
-    (hθ : ∀ i, J ≤ θ i ∧ θ i ≤ J + D) :
-    |∑ i, ν i * (θ (next i) - θ i)| ≤
-      D / 2 * ∑ i, |ν (prev i) - ν i| := by
-  have hD : 0 ≤ D := by linarith [(hθ 0).1, (hθ 0).2]
-  have hmid (i : Vertex) : |θ i - (J + D / 2)| ≤ D / 2 := by
-    apply abs_le.mpr
-    constructor <;> linarith [(hθ i).1, (hθ i).2]
-  have hcoeff : ∑ i, (ν (prev i) - ν i) = 0 := by
-    rw [Finset.sum_sub_distrib, sum_prev, sub_self]
-  rw [cyclic_summation_by_parts]
-  have hid : ∑ i, (ν (prev i) - ν i) * θ i =
-      ∑ i, (ν (prev i) - ν i) * (θ i - (J + D / 2)) := by
-    simp only [mul_sub, Finset.sum_sub_distrib, ← Finset.sum_mul, hcoeff, zero_mul, sub_zero]
-  rw [hid]
-  calc
-    |∑ i, (ν (prev i) - ν i) * (θ i - (J + D / 2))| ≤
-        ∑ i, |(ν (prev i) - ν i) * (θ i - (J + D / 2))| :=
-      Finset.abs_sum_le_sum_abs _ _
-    _ ≤ ∑ i, |ν (prev i) - ν i| * (D / 2) := by
-      apply Finset.sum_le_sum
-      intro i hi
-      rw [abs_mul]
-      exact mul_le_mul_of_nonneg_left (hmid i) (abs_nonneg _)
-    _ = D / 2 * ∑ i, |ν (prev i) - ν i| := by
-      rw [← Finset.sum_mul]
-      ring
 
 /-- C, L, M, H, in precisely that order. -/
 def handGammaNumerator : Fin 4 → Fin 4 → ℕ :=
@@ -171,16 +128,6 @@ def periodicFrameCost (x : ℝ) : ℝ :=
   (|Real.cos x| + |Real.sin x| - 1) / 2
 
 lemma frameCost_zero : frameCost 0 = 0 := by norm_num [frameCost]
-
-lemma periodicFrameCost_nonneg (x : ℝ) : 0 ≤ periodicFrameCost x := by
-  have hh := Real.sin_sq_add_cos_sq x
-  have hc := abs_nonneg (Real.cos x)
-  have hs := abs_nonneg (Real.sin x)
-  have hp := mul_nonneg hc hs
-  have hsum : 1 ≤ |Real.cos x| + |Real.sin x| := by
-    nlinarith [sq_abs (Real.cos x), sq_abs (Real.sin x)]
-  dsimp [periodicFrameCost]
-  linarith
 
 lemma periodicFrameCost_pi_half (x : ℝ) :
     periodicFrameCost (x + Real.pi / 2) = periodicFrameCost x := by
@@ -412,7 +359,6 @@ structure PhysicalFrameLift (φ : Vertex → ℝ) where
   quarter : Vertex → ℤ
   left : ℝ
   diameter : ℝ
-  diameter_nonneg : 0 ≤ diameter
   small : diameter < 7/10
   theta_range : ∀ i, left ≤ theta i ∧ theta i ≤ left+diameter
   represents : ∀ i, φ i=theta i+(quarter i:ℝ)*(Real.pi/2)
@@ -523,7 +469,7 @@ theorem physical_frame_lift_of_cost (φ : Vertex → ℝ)
     have hmono := frameCost_monotone ⟨by norm_num,hseven⟩ ⟨hd0,hdH.le⟩ hbad
     change ∑ i,frameCost |x i| < 10394/25425 at hU
     linarith [frameCost_seven_tenths]
-  refine ⟨⟨θ,M,θ l,θ u-θ l,hd0,hdsmall,?_,?_⟩⟩
+  refine ⟨⟨θ,M,θ l,θ u-θ l,hdsmall,?_,?_⟩⟩
   · intro i
     exact ⟨hl' i,by linarith [hu' i]⟩
   · intro i

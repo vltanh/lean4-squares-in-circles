@@ -55,7 +55,6 @@ structure StripBounds (q u : ℝ) : Prop where
   w_lower : 1885/1000<lowerLeft q u
   w_upper : lowerLeft q u<48/25
   p_lower : 1/2<slopeRatio q u
-  p_upper : slopeRatio q u<684/1000
 
 theorem CriticalStrip.bounds {q u : ℝ} (h : CriticalStrip q u) : StripBounds q u := by
   have hu : 0 ≤ u := by linarith [h.u_lower]
@@ -92,25 +91,18 @@ theorem CriticalStrip.bounds {q u : ℝ} (h : CriticalStrip q u) : StripBounds q
       nlinarith [h.q_upper]
   have hUp : 0<topRight q u := by linarith [hU.1]
   have hYp : 0<topHeight q u := by linarith [hY.1]
-  have hprodL : (1619/1000:ℝ)*(1411/1000) ≤ topRight q u*topHeight q u :=
-    mul_le_mul hU.1.le hY.1.le (by norm_num) hUp.le
   have hprodU : topRight q u*topHeight q u ≤ (1708/1000:ℝ)*(3/2) :=
     mul_le_mul hU.2.le hY.2.le hYp.le (by norm_num)
   have hnumL : (1292/1000:ℝ) ≤ (2-u)*topLeft q u := by
     have hh := mul_le_mul hA.1 hV.1.le (by norm_num : (0:ℝ) ≤ 1292/1000)
       (by linarith : 0 ≤ 2-u)
     nlinarith
-  have hnumU : (2-u)*topLeft q u ≤ (113/100:ℝ)*(1381/1000) :=
-    mul_le_mul hA.2 hV.2.le (by linarith [hV.1]) (by norm_num)
-  have hp : 1/2<slopeRatio q u ∧ slopeRatio q u<684/1000 := by
+  have hp : 1/2<slopeRatio q u := by
     dsimp [slopeRatio]
-    constructor
-    · rw [lt_div_iff₀ (mul_pos hUp hYp)]
-      nlinarith
-    · rw [div_lt_iff₀ (mul_pos hUp hYp)]
-      nlinarith
+    rw [lt_div_iff₀ (mul_pos hUp hYp)]
+    nlinarith
   exact ⟨domain_of_pos hu (by linarith [hr.1]) hUp hYp (by linarith [hw.1]),hr.1,hr.2,hU.1,
-    hV.1,hV.2,hY.1,hY.2,hv.1,hv.2,hw.1,hw.2,hp.1,hp.2⟩
+    hV.1,hV.2,hY.1,hY.2,hv.1,hv.2,hw.1,hw.2,hp⟩
 
 /-- Two rational upper support lines of the top circles. -/
 theorem top_support_upper {q u : ℝ} (h : CriticalStrip q u) :
@@ -749,11 +741,6 @@ structure SmoothDomain (q u : ℝ) : Prop extends Domain q u where
   U_pos : 0<topRight q u
   Y_pos : 0<topHeight q u
   w_pos : 0<lowerLeft q u
-
-theorem CriticalStrip.smoothDomain {q u : ℝ} (h : CriticalStrip q u) : SmoothDomain q u := by
-  have hb := h.bounds
-  exact ⟨hb.domain,by linarith [h.q_upper],by linarith [hb.r_lower],
-    by linarith [hb.U_lower],by linarith [hb.Y_lower],by linarith [hb.w_lower]⟩
 
 theorem circle_ratio_derivative (A U V Y q : ℝ)
     (hA : A≠0) (hU : U≠0) (hV : V≠0) (hY : Y≠0)

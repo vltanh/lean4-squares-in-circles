@@ -49,10 +49,6 @@ lemma motionSquare_center (θ : ℝ) (b : Bool) (K : UnitSquare) :
     (motionSquare θ b K).center=motionPoint θ b K.center := by
   cases b <;> rfl
 
-lemma motion_left_inverse (θ : ℝ) (b : Bool) (p : Point) :
-    motionInverse θ b (motionPoint θ b p)=p := by
-  cases b <;> simp [motionInverse,motionPoint,reflectionPoint]
-
 lemma motion_right_inverse (θ : ℝ) (b : Bool) (p : Point) :
     motionPoint θ b (motionInverse θ b p)=p := by
   cases b <;> simp [motionInverse,motionPoint,reflectionPoint,-frameEquiv_apply]
@@ -124,11 +120,6 @@ def reflectedAxis (b : Bool) (a : SignedAxis) : SignedAxis :=
     | .sourceX | .targetX => a
     | .sourceY | .targetY => ⟨a.owner,a.sign.flip⟩
   else a
-
-lemma reflectedAxis_involutive (b : Bool) (a : SignedAxis) :
-    reflectedAxis b (reflectedAxis b a)=a := by
-  cases b <;> cases a with
-  | mk owner sign => cases owner <;> cases sign <;> rfl
 
 lemma reflectedAxis_normal (θ : ℝ) (b : Bool) (a : SignedAxis) (K J : UnitSquare) :
     (reflectedAxis b a).normal (motionSquare θ b K) (motionSquare θ b J)=

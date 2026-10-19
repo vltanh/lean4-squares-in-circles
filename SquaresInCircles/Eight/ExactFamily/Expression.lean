@@ -35,7 +35,7 @@ inductive Formula (n : ℕ)
   | inv (a : Formula n)
   | sqrt (a : Formula n)
   | pow (a : Formula n) (k : ℕ)
-  deriving DecidableEq, Repr
+  deriving DecidableEq
 
 namespace Formula
 
@@ -202,76 +202,5 @@ theorem hasDerivAt_partial {n : ℕ} (a : Formula n) (i : Fin n)
       simpa [eval,diff,mul_assoc] using (ha h).fun_pow k
 
 end Formula
-
-def erase {n : ℕ} : ScalarExpr n → Formula n
-  | .const q => .const q
-  | .var i => .var i
-  | .add a b => .add (erase a) (erase b)
-  | .neg a => .neg (erase a)
-  | .mul a b => .mul (erase a) (erase b)
-  | .inv a => .inv (erase a)
-  | .sqrt a _ => .sqrt (erase a)
-  | .pow a k => .pow (erase a) k
-  | .enclose a _ => erase a
-
-theorem erase_eval {n : ℕ} (a : ScalarExpr n) (env : Fin n → ℝ) :
-    (erase a).eval env = a.eval env := by
-  induction a <;> simp_all [erase,Formula.eval,ScalarExpr.eval]
-
-/-- Positivity of radicands is explicit and independent of the ordinary weak
-square-root enclosure predicate. -/
-def StrictValid {n : ℕ} (box : QBox n) : ScalarExpr n → Prop
-  | .const _ => True
-  | .var _ => True
-  | .add a b => StrictValid box a ∧ StrictValid box b
-  | .neg a => StrictValid box a
-  | .mul a b => StrictValid box a ∧ StrictValid box b
-  | .inv a => StrictValid box a ∧ 0 < (a.range box).lo
-  | .sqrt a _ => StrictValid box a ∧ 0 < (a.range box).lo
-  | .pow a _ => StrictValid box a
-  | .enclose a _ => StrictValid box a
-
-instance strictValidDecidable {n : ℕ} (box : QBox n) (a : ScalarExpr n) :
-    Decidable (StrictValid box a) := by
-  induction a <;> simp only [StrictValid] <;> infer_instance
-
-theorem strictValid_regular {n : ℕ} (box : QBox n) (a : ScalarExpr n)
-    (hv : a.Valid box) (hs : StrictValid box a) {env : Fin n → ℝ} (he : box.Mem env) :
-    (erase a).RegularAt env := by
-  induction a with
-  | const q => trivial
-  | var i => trivial
-  | add a b ha hb => exact ⟨ha hv.1 hs.1,hb hv.2 hs.2⟩
-  | neg a ha => exact ha hv hs
-  | mul a b ha hb => exact ⟨ha hv.1 hs.1,hb hv.2 hs.2⟩
-  | inv a ha =>
-      refine ⟨ha hv.1 hs.1,?_⟩
-      rw [erase_eval]
-      exact ne_of_gt (ScalarExpr.positive box a hv.1 hs.2 env he)
-  | sqrt a J ha =>
-      refine ⟨ha hv.1 hs.1,?_⟩
-      rw [erase_eval]
-      exact ScalarExpr.positive box a hv.1 hs.2 env he
-  | pow a k ha => exact ha hv hs
-  | enclose a J ha => exact ha hv.1 hs
-
-/-- An exact interval certificate also fixes the entire expression syntax. -/
-structure FormulaCertificate (n : ℕ) where
-  expression : ScalarExpr n
-  deriving DecidableEq, Repr
-
-def FormulaCertificate.Valid {n : ℕ} (c : FormulaCertificate n)
-    (box : QBox n) (target : Formula n) : Prop :=
-  erase c.expression = target ∧ c.expression.Valid box
-
-instance {n : ℕ} (c : FormulaCertificate n) (box : QBox n) (target : Formula n) :
-    Decidable (c.Valid box target) := by unfold FormulaCertificate.Valid; infer_instance
-
-theorem FormulaCertificate.sound {n : ℕ} {c : FormulaCertificate n}
-    {box : QBox n} {target : Formula n} (hc : c.Valid box target)
-    {env : Fin n → ℝ} (he : box.Mem env) :
-    (c.expression.range box).Mem (target.eval env) := by
-  rw [← hc.1,erase_eval]
-  exact ScalarExpr.sound box c.expression hc.2 env he
 
 end SquaresInCircles.Eight.ExactFamily

@@ -42,13 +42,6 @@ theorem ClosedChain.covers {lo hi : ℚ} {xs : List QInterval}
         · obtain ⟨J,hJ,hJx⟩ := ih hnext.2 ⟨hxi',hx.2⟩
           exact ⟨J,List.mem_cons_of_mem I hJ,hJx⟩
 
-theorem ClosedChain.sound {lo hi : ℚ} {xs : List QInterval}
-    (hc : ClosedChain lo hi xs) {P : ℝ → Prop}
-    (hrow : ∀ I ∈ xs, ∀ x, I.Mem x → P x)
-    {x : ℝ} (hx : QInterval.Mem ⟨lo,hi⟩ x) : P x := by
-  obtain ⟨I,hI,hIx⟩ := hc.covers hx
-  exact hrow I hI x hIx
-
 abbrev QBox (n : ℕ) := Fin n → QInterval
 
 def QBox.Mem {n : ℕ} (b : QBox n) (x : Fin n → ℝ) : Prop :=
@@ -78,31 +71,4 @@ theorem QBox.mem_right {n : ℕ} {b : QBox n} {i : Fin n} {c : ℚ}
     simpa [right,QInterval.Mem] using And.intro hi (hx i).2
   · simpa [right,Function.update_of_ne hji] using hx j
 
-inductive SplitCover (n : ℕ)
-  | leaf
-  | split (coordinate : Fin n) (cut : ℚ) (left right : SplitCover n)
-  deriving DecidableEq, Repr
-
-namespace SplitCover
-
-/-- Leaf conclusions and all closed split coordinates are explicitly checked.
-This is an ordinary finite predicate, with no statement about an external
-program's return value. -/
-def ValidFor {n : ℕ} (Good : QBox n → Prop) (b : QBox n) : SplitCover n → Prop
-  | .leaf => Good b
-  | .split i c l r => (b i).lo ≤ c ∧ c ≤ (b i).hi ∧
-      ValidFor Good (b.left i c) l ∧ ValidFor Good (b.right i c) r
-
-theorem sound {n : ℕ} {Good : QBox n → Prop} {P : (Fin n → ℝ) → Prop}
-    (hGood : ∀ b, Good b → ∀ x, b.Mem x → P x)
-    (tree : SplitCover n) (b : QBox n) (hv : tree.ValidFor Good b)
-    (x : Fin n → ℝ) (hx : b.Mem x) : P x := by
-  induction tree generalizing b with
-  | leaf => exact hGood b hv x hx
-  | split i c l r hl hr =>
-      by_cases hxc : x i ≤ (c : ℝ)
-      · exact hl (b.left i c) hv.2.2.1 (QBox.mem_left hx hxc)
-      · exact hr (b.right i c) hv.2.2.2 (QBox.mem_right hx (lt_of_not_ge hxc).le)
-
-end SplitCover
 end SquaresInCircles.Eight.Arithmetic

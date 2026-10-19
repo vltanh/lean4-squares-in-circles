@@ -67,55 +67,6 @@ theorem terminal_constants :
     firstOrderReserve-93/10000 = terminalReserve := by
   norm_num [terminalQuadratic,terminalCubic,terminalReserve,firstOrderReserve]
 
-theorem enlarged_owner_reserves :
-    (1869/100000 : ℝ) > firstOrderReserve ∧
-    (34656/100000 : ℝ) > firstOrderReserve ∧
-    (3112575/10000000 : ℝ) > firstOrderReserve ∧
-    (3984975/10000000 : ℝ) > firstOrderReserve ∧
-    641425/10000000-(17/1000)*(4209/5000 : ℝ) > firstOrderReserve ∧
-    3072/100000-(23/1000)*(4209/5000 : ℝ) = firstOrderReserve ∧
-    (21785/1000000 : ℝ) > firstOrderReserve ∧
-    345425/10000000-(22/1000)*(4209/5000 : ℝ) > firstOrderReserve ∧
-    521875/10000000-(15/1000)*(4209/5000 : ℝ) > firstOrderReserve := by
-  norm_num [firstOrderReserve]
-
-theorem terminal_remainder_absorption {S : ℝ} (hS : 0 ≤ S) (hS' : S ≤ 1/1000) :
-    firstOrderReserve*S-terminalQuadratic*S^2-terminalCubic*S^3 ≥
-      terminalReserve*S := by
-  obtain ⟨h₂,h₂',h₃,h₃',hρ,hid⟩ := terminal_constants
-  have hS₂ : S^2 ≤ S/1000 := by nlinarith
-  have hS₃ : S^3 ≤ S^2/1000 := by nlinarith [mul_le_mul_of_nonneg_left hS₂ hS]
-  have h₁ := mul_le_mul_of_nonneg_right h₂'.le (sq_nonneg S)
-  have h₂ := mul_le_mul_of_nonneg_right h₃'.le (pow_nonneg hS 3)
-  have h₃ := mul_le_mul_of_nonneg_left hS₃ (by norm_num : (0:ℝ) ≤ 3/2)
-  have h₄ := mul_le_mul_of_nonneg_left hS₂ (by norm_num : (0:ℝ) ≤ 93/10)
-  have h₅ : terminalReserve*S = firstOrderReserve*S-93/10000*S := by
-    rw [← hid]; ring
-  nlinarith [mul_nonneg hS (sq_nonneg S)]
-
-/-- The last rational step of the terminal inequality, apart from the geometric estimates that
-supply its four summands. -/
-theorem combine_terminal_terms {q qstar μ t tstar S C L : ℝ}
-    (hμ : 0 ≤ μ) (hS : 0 ≤ S) (hS' : S ≤ 1/1000)
-    (hdual : C+L ≤ q)
-    (hL : qstar+(3*μ/8)*(t-tstar)^2+firstOrderReserve*S-
-      terminalQuadratic*S^2-terminalCubic*S^3 ≤ L) :
-    qstar+(3*μ/8)*(t-tstar)^2+C+terminalReserve*S ≤ q := by
-  have h := terminal_remainder_absorption hS hS'
-  linarith
-
-theorem terminal_equality_forces {q μ t tstar S C : ℝ}
-    (hμ : 0 < μ) (hS : 0 ≤ S) (hC : 0 ≤ C)
-    (h : q+(3*μ/8)*(t-tstar)^2+C+terminalReserve*S ≤ q) :
-    t = tstar ∧ S = 0 ∧ C = 0 := by
-  have hρ : 0 < terminalReserve := terminal_constants.2.2.2.2.1
-  have ht : 0 ≤ (3*μ/8)*(t-tstar)^2 := mul_nonneg (by positivity) (sq_nonneg _)
-  have hs : 0 ≤ terminalReserve*S := mul_nonneg hρ.le hS
-  have hC0 : C = 0 := by linarith
-  have hS0 : S = 0 := by nlinarith
-  have ht0 : (t-tstar)^2 = 0 := by nlinarith
-  exact ⟨by nlinarith,hS0,hC0⟩
-
 namespace OriginalDual
 open ExactFamily.Coordinates
 

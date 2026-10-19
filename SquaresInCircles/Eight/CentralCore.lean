@@ -389,34 +389,6 @@ lemma strictCoreAvoiding_of_containsCore {K L : UnitSquare}
   by_contra! hn
   exact open_closed_disjoint hd p ⟨hcore p hn, hp⟩
 
-/-- Polynomial identity behind the two-circle position monotonicities. -/
-lemma two_circle_difference_factorization (r X Y Q : ℝ)
-    (hQ : X ^ 2 + Y ^ 2 = Q) :
-    X ^ 2 * (r ^ 2 - (X - 1) ^ 2) -
-        Y ^ 2 * (r ^ 2 - (Y - 1) ^ 2) =
-      (X - Y) * ((r ^ 2 - 1) * (X + Y) +
-        (X + Y) ^ 2 - Q * (X + Y) + Q) := by
-  rw [← hQ]
-  ring
-
-lemma two_circle_factor_positive {r X Y Q : ℝ}
-    (hr : 1 ≤ r) (hX : 0 < X) (hY : 0 < Y) (hQ : 0 < Q ∧ Q < 4) :
-    0 < (r ^ 2 - 1) * (X + Y) + (X + Y) ^ 2 - Q * (X + Y) + Q := by
-  have hr' : 0 ≤ r ^ 2 - 1 := sub_nonneg.2 (one_le_pow₀ hr)
-  have hp := mul_nonneg hr' (show 0 ≤ X + Y by linarith)
-  have hq := mul_pos hQ.1 (show 0 < 1 - Q / 4 by linarith)
-  linarith [sq_nonneg (X + Y - Q / 2)]
-
-lemma central_band_one_angle_contradiction {w span : ℝ}
-    (hw : 347 / 200 < w) (hspan : 6 * (19 / 25 : ℝ) < span)
-    (hbudget : w + span ≤ 2 * Real.pi) (hpi : Real.pi < 22 / 7) : False := by
-  linarith
-
-lemma central_band_two_angle_contradiction {w span : ℝ}
-    (hw : 899 / 500 < w) (hspan : 6 * (3741 / 5000 : ℝ) < span)
-    (hbudget : w + span ≤ 2 * Real.pi) (hpi : Real.pi < 22 / 7) : False := by
-  linarith
-
 lemma translated_ceiling_reserve :
     Q0 + 4 / 1000 + (1 / 1000 : ℝ) ^ 2 < 98 / 25 := by
   norm_num [Q0]
@@ -1252,26 +1224,6 @@ theorem transverse_segment_sides {r c s y : ℝ} (h : Quadrant c s) (hne : s ≤
   constructor <;> apply abs_lt.mpr <;> constructor <;> linarith only [hp, hyslo, ha, hupper, hv,
     hratio, hyclo, hp', hychi]
 
-theorem transverse_segment_interior {K : UnitSquare} {r c s : ℝ}
-    (h : Quadrant c s) (hne : s ≤ c) (hr : 0 ≤ r)
-    (hcenter : K.center = (r,0)) (hcos : K.cosine = c) (hsin : K.sine = s)
-    (ha : 1/2 < r*c) (hcontained : SqContained Q0 K) :
-    ∀ y, |y| ≤ 7/20 → openSquare K (11/12,y) := by
-  have hab : alpha K (0,0) = r*c ∧ beta K (0,0) = r*s := by
-    constructor <;>
-    simp [alpha,beta,localX,localY,hcenter,hcos,hsin,abs_mul,
-      abs_of_nonneg hr,abs_of_nonneg h.c_nonneg,abs_of_nonneg h.s_nonneg] <;> ring
-  have hp : phi (r*c) (r*s) ≤ Q0 := by simpa [SqContained,hab.1,hab.2] using hcontained
-  intro y hy
-  have hv := transverse_segment_sides h hne hr ha hp hy
-  have hx : localX K (11/12,y) = (11/12)*c+y*s-r*c := by
-    simp only [localX,hcenter,hcos,hsin]
-    ring
-  have hy' : localY K (11/12,y) = -(11/12)*s+y*c+r*s := by
-    simp only [localY,hcenter,hcos,hsin]
-    ring
-  exact ⟨by rw [hx]; exact hv.1,by rw [hy']; exact hv.2⟩
-
 lemma cos_upper_eight {x : ℝ} (hx : 0 ≤ x) :
     Real.cos x ≤ 1-x^2/2+x^4/24-x^6/720+x^8/40320 := by
   have h := nonneg_of_deriv_nonneg
@@ -1288,15 +1240,6 @@ lemma sin_upper_nine {x : ℝ} (hx : 0 ≤ x) :
     (by fun_prop) (by norm_num) (fun t ht => by
       simp (disch := fun_prop)
       linarith [cos_upper_eight ht]) hx
-  linarith
-
-lemma cos_lower_ten {x : ℝ} (hx : 0 ≤ x) :
-    1-x^2/2+x^4/24-x^6/720+x^8/40320-x^10/3628800 ≤ Real.cos x := by
-  have h := nonneg_of_deriv_nonneg
-    (fun t => Real.cos t-(1-t^2/2+t^4/24-t^6/720+t^8/40320-t^10/3628800))
-    (by fun_prop) (by norm_num) (fun t ht => by
-      simp (disch := fun_prop)
-      linarith [sin_upper_nine ht]) hx
   linarith
 
 lemma bandA_trig :
@@ -1966,13 +1909,5 @@ theorem central_core_and_exteriors {S : Fin 8 → UnitSquare} {q : ℝ}
   have hcore : ContainsCore (S i) := containsCore_of_center_bounds
     ((le_max_left _ _).trans_lt hmax') ((le_max_right _ _).trans_lt hmax')
   exact ⟨i,hcore,fun j hij => strictCoreAvoiding_of_containsCore hcore (hp.2.2 i j hij)⟩
-
-theorem central_core_unique {S : Fin 8 → UnitSquare} {q : ℝ}
-    (hp : SqPacking S (0,0) q) (hq : q ≤ Q0) : ∃! i, ContainsCore (S i) := by
-  obtain ⟨i,hi,_⟩ := central_core_and_exteriors hp hq
-  refine ⟨i,hi,fun j hj => ?_⟩
-  exact central_square_unique hp.2.2
-    (hj (0,0) (by norm_num [normSq,coreRadius]))
-    (hi (0,0) (by norm_num [normSq,coreRadius]))
 
 end SquaresInCircles.Eight

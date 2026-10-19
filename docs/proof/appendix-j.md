@@ -65,7 +65,7 @@ $2x_4\partial x_4 + 2y_4\partial y_4 = 0$, and from the formulas for $h_1$
 and $h_2$. $\square$
 
 *Lean:
-[`Eight.ExactFamily.Coordinates.IsChain.radicals`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L117),
+[`Eight.ExactFamily.Coordinates.IsChain.radicals`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L114),
 [`Eight.ExactFamily.Coordinates.y₄deriv`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L72),
 [`Eight.ExactFamily.Coordinates.h₁deriv`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L74),
 [`Eight.ExactFamily.Coordinates.h₂deriv`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L75),
@@ -244,9 +244,8 @@ because $F_z = \frac2{1 + z^2}F_t$.
 The formal proof follows the analytic argument below. $\square$
 
 *Lean:
-[`Eight.ExactFamily.stationary_local`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L252),
-[`Eight.ExactFamily.FiveCornerGeometry.stationary_chain_unique`](../../SquaresInCircles/Eight/ExactFamily/Envelope.lean#L1074),
-[`Eight.ExactFamily.FiveCornerGeometry.positionEnvelope_critical_unique`](../../SquaresInCircles/Eight/ExactFamily/Envelope.lean#L965),
+[`Eight.ExactFamily.FiveCornerGeometry.stationary_chain_unique`](../../SquaresInCircles/Eight/ExactFamily/Envelope.lean#L1071),
+[`Eight.ExactFamily.FiveCornerGeometry.positionEnvelope_critical_unique`](../../SquaresInCircles/Eight/ExactFamily/Envelope.lean#L962),
 [`Eight.ExactFamily.FiveCornerGeometry.strictConvexOn_defect`](../../SquaresInCircles/Eight/ExactFamily/Convexity.lean#L297),
 [`Eight.ExactFamily.FiveCornerGeometry.defect_radius_decrease`](../../SquaresInCircles/Eight/ExactFamily/Convexity.lean#L449).*
 
@@ -296,11 +295,11 @@ interval $\frac1{20} \le \tan\frac t2 \le \frac{81}{1000}$. $\square$
 [`Eight.ExactFamily.sharpData`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L212),
 [`Eight.ExactFamily.sharpData_stationary`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L214),
 [`Eight.ExactFamily.stationary_unique`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L249),
-[`Eight.ExactFamily.exact_stationary_existsUnique`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L257),
+[`Eight.ExactFamily.exact_stationary_existsUnique`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L252),
 [`Eight.ExactFamily.sharpPose_close`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L180),
 [`Eight.ExactFamily.sharpBox_mem`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L203),
-[`Eight.ExactFamily.sharp_coordinates`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L260),
-[`Eight.ExactFamily.sharp_y`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L295),
+[`Eight.ExactFamily.sharp_coordinates`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L255),
+[`Eight.ExactFamily.sharp_y`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L290),
 [`Eight.ExactFamily.qStar_limits`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L172).*
 
 The statement of Theorem 11.1 defines $q_*$ by the stationary system alone,
@@ -312,9 +311,8 @@ on the proof.
 [`Eight.ExactFamily.StatementLink.stationary_iff`](../../SquaresInCircles/Eight/ExactFamily/StatementLink.lean#L41),
 [`Eight.ExactFamily.StatementLink.statement_stationary_existsUnique`](../../SquaresInCircles/Eight/ExactFamily/StatementLink.lean#L93),
 [`Eight.ExactFamily.StatementLink.selected_stationary`](../../SquaresInCircles/Eight/ExactFamily/StatementLink.lean#L101),
-[`Eight.ExactFamily.StatementLink.selected_eq`](../../SquaresInCircles/Eight/ExactFamily/StatementLink.lean#L109),
-[`Eight.ExactFamily.StatementLink.qStar_eq`](../../SquaresInCircles/Eight/ExactFamily/StatementLink.lean#L112),
-[`Eight.ExactFamily.StatementLink.radius_eq`](../../SquaresInCircles/Eight/ExactFamily/StatementLink.lean#L115).*
+[`Eight.ExactFamily.StatementLink.qStar_eq`](../../SquaresInCircles/Eight/ExactFamily/StatementLink.lean#L109),
+[`Eight.ExactFamily.StatementLink.radius_eq`](../../SquaresInCircles/Eight/ExactFamily/StatementLink.lean#L112).*
 
 ## J.6 The weights
 
@@ -369,9 +367,7 @@ Adding the five equations of (J.2), the right sides cancel. $\square$
 [`Eight.ExactFamily.Coordinates.WeightDomain.mu_sum`](../../SquaresInCircles/Eight/ExactFamily/Weights.lean#L123),
 [`Eight.ExactFamily.Coordinates.last_force_residual`](../../SquaresInCircles/Eight/ExactFamily/Weights.lean#L143),
 [`Eight.ExactFamily.Coordinates.force_balance`](../../SquaresInCircles/Eight/ExactFamily/Weights.lean#L193),
-[`Eight.ExactFamily.Coordinates.slider_forces_zero`](../../SquaresInCircles/Eight/ExactFamily/Weights.lean#L204),
-[`Eight.ExactFamily.sharp_mu_positive`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L301),
-[`Eight.ExactFamily.sharp_lambda_positive`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L304).*
+[`Eight.ExactFamily.Coordinates.slider_forces_zero`](../../SquaresInCircles/Eight/ExactFamily/Weights.lean#L204).*
 
 At the solution of the stationary system the weights are approximately
 $\mu = (0.2097, 0.2212, 0.2734, 0.0251, 0.2706)$ for $A, B, D, E, H$ and

@@ -35,17 +35,6 @@ def R (t : ℝ) (p : Point) : Point :=
 def ex (t : ℝ) : Point := (Real.cos t,Real.sin t)
 def ey (t : ℝ) : Point := (-Real.sin t,Real.cos t)
 
-theorem norm_R (t : ℝ) (p : Point) : normSq (R t p)=normSq p := by
-  dsimp [normSq,R]
-  linear_combination (p.1^2+p.2^2)*(Real.cos_sq_add_sin_sq t)
-
-theorem dot_R (t : ℝ) (p q : Point) : dot (R t p) (R t q)=dot p q := by
-  dsimp [dot,R]
-  linear_combination (p.1*q.1+p.2*q.2)*(Real.cos_sq_add_sin_sq t)
-
-theorem R_add (t u : ℝ) (p : Point) : R t (R u p)=R (t+u) p := by
-  ext <;> simp [R,Real.cos_add,Real.sin_add] <;> ring
-
 theorem atan_frame (z : ℝ) :
     Real.cos (2*Real.arctan z)=halfAngleCos z ∧
     Real.sin (2*Real.arctan z)=halfAngleSin z := by

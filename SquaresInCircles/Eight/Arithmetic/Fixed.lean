@@ -23,8 +23,6 @@ def unit : Int := 1000000000000000000000000
 /-- The unit as a natural number. -/
 def unitN : Nat := 1000000000000000000000000
 
-theorem unitN_eq : (unitN : Int) = unit := rfl
-
 theorem unit_pos : (0 : Int) < unit := by decide
 
 theorem unit_pos_real : (0 : ℝ) < unit := by exact_mod_cast unit_pos
@@ -249,7 +247,6 @@ theorem le_up (a : Int) : (a : ℝ) / unit ≤ (up a : ℝ) := by
 structure FI where
   lo : Int
   hi : Int
-  deriving DecidableEq, Repr
 
 namespace FI
 
@@ -437,8 +434,6 @@ theorem mem_ofQ (q : ℚ) : (ofQ q).Mem (q : ℝ) := by
 
 theorem mem_ofQI {I : QInterval} {x : ℝ} (hx : I.Mem x) : (ofQI I).Mem x :=
   ⟨(mem_ofQ I.lo).1.trans hx.1, hx.2.trans (mem_ofQ I.hi).2⟩
-
-theorem mem_point (q : ℚ) : (ofQ q).Mem (q : ℝ) := mem_ofQ q
 
 end FI
 

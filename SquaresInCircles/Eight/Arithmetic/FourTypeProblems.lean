@@ -24,11 +24,6 @@ open PairCover
 /-- Five analytic charts for the four geometric types.  The two core
 charts have the same label and the same matrix index. -/
 inductive Branch | coreSide | coreCorner | low | middle | high
-  deriving DecidableEq, Repr
-
-instance : Fintype Branch where
-  elems := {.coreSide, .coreCorner, .low, .middle, .high}
-  complete x := by cases x <;> decide
 
 def Branch.type : Branch → Fin 4
   | .coreSide | .coreCorner => 0

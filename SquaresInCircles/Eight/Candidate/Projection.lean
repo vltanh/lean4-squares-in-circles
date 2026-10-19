@@ -53,12 +53,6 @@ theorem harmonic_abs_le {u v M : ℝ} (hM : 0 ≤ M)
   rw [← sq_abs (u * Real.sin x + v * Real.cos x)] at hid
   nlinarith only [huv, hid, hM]
 
-theorem sinusoid_derivative_bound {u v M : ℝ} (hM : 0 ≤ M)
-    (huv : u ^ 2 + v ^ 2 ≤ M ^ 2) (x : ℝ) :
-    |sinusoidDeriv u v x| ≤ M := by
-  simpa [sinusoidDeriv, add_comm, mul_comm, sub_eq_add_neg] using
-    harmonic_abs_le hM (u := -v) (v := u) (by linarith) x
-
 theorem sinusoid_lipschitz {u v M : ℝ} (hM : 0 ≤ M)
     (huv : u ^ 2 + v ^ 2 ≤ M ^ 2) (c x y : ℝ) :
     |sinusoid c u v x - sinusoid c u v y| ≤ M * |x - y| := by

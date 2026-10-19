@@ -1015,7 +1015,6 @@ def write_data(out, tab, arcs, rows, trees, ctx):
             v = [x["edge"], x["source"], x["target"], x["axis"], x["k"], int(x["positive"]),
                  x["lo"], x["hi"], x["lam"], x["mode"]]
             if x["mode"] == 3:
-                v.append(x["h"])
                 for j, (hn, upto) in enumerate(x["pieces"]):
                     v.append(hn)
                     if j + 1 < len(x["pieces"]):

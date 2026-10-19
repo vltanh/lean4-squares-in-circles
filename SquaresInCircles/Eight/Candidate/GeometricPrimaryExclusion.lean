@@ -95,17 +95,4 @@ theorem zero_source_primary_requires_outer {q : ℝ} {C : BoundaryCycle q}
   have hc := core_primary_upper C i hk
   linarith
 
-/-- The complete core/core zero-edge state region has its owner family
-captured before the first coarse mismatch table is applied. -/
-theorem zero_core_pair_owners {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
-    {i : Vertex} (hi : i ∈ zeroEdges)
-    (hs : C.kind i ≠ .outer) (ht : C.kind (next i) ≠ .outer)
-    (j : Fin 4) (hj : (forwardAxis j).Feasible (C.square i) (C.square (next i))) :
-    j ∈ zeroOwners := by
-  fin_cases j
-  · norm_num [zeroOwners]
-  · exact (ht (zero_target_primary_requires_outer F hi hj).1).elim
-  · norm_num [zeroOwners]
-  · exact (hs (zero_source_primary_requires_outer F hi hj).1).elim
-
 end SquaresInCircles.Eight.Candidate.Geometric

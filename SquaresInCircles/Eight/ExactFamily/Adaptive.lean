@@ -156,17 +156,6 @@ theorem adaptiveY_zero {z : ℝ} (hz : z ∈ tiltBox) :
     familyY qStar (adaptiveY z hz,z)=0 :=
   (Classical.choose_spec (adaptive_position_exists hz)).2
 
-theorem adaptiveY_unique {z y : ℝ} (hz : z ∈ tiltBox)
-    (hy : y ∈ Icc (-(937/1000)) (-(179/200))) (hzero : familyY qStar (y,z)=0) :
-    y=adaptiveY z hz := by
-  have hm := adaptiveY_mem hz
-  have hzero' := adaptiveY_zero hz
-  rcases le_total y (adaptiveY z hz) with h | h
-  · have hh := familyY_slope qStar_mem hz hy hm h
-    linarith only [hz, hzero, hzero', hh, h]
-  · have hh := familyY_slope qStar_mem hz hm hy h
-    linarith only [hz, h, hzero, hzero', hh]
-
 theorem adaptive_graph_mem {z : ℝ} (hz : z ∈ tiltBox) :
     ∃ i : Fin 256, (AdaptiveGenerated.graphBoxes i).Mem ![qStar,adaptiveY z hz,z] := by
   obtain ⟨i,hi⟩ := adaptive_grid_cover hz
@@ -214,15 +203,6 @@ theorem adaptive_curvature {z : ℝ} (hz : z ∈ tiltBox) :
   rw [familyValue_radical] at h
   dsimp [adaptiveData,sharpData,radicalCoordinates] at *
   linarith only [sq_nonneg (adaptiveY z hz-sharpPose.1), hz, h]
-
-theorem adaptive_sharp : adaptiveData sharpData.z
-    (by exact (minimizingPose_mem qStar).2) = sharpData := by
-  have hy := adaptiveY_unique (z:=sharpData.z) (y:=sharpData.y)
-    (by exact (minimizingPose_mem qStar).2) (minimizingPose_mem qStar).1
-    sharpPose_stationary.1
-  simp only [adaptiveData]
-  rw [← hy]
-  rfl
 
 namespace Coordinates
 

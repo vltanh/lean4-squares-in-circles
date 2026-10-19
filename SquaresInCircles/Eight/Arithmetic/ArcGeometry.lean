@@ -137,27 +137,4 @@ theorem circle_arc_radicand_positive {v ρ l u aU : ℝ}
   have hsq := sq_pos_of_pos (sub_pos.mpr ha)
   nlinarith
 
-/-- Generic circle endpoint support directly from tangent-domain geometry. -/
-theorem tangent_arc_endpoints_lower {v ρ a b a₀ b₀ a₁ b₁ t₀ t₁ X Y m : ℝ}
-    (ha : 0 < a) (ha₀ : 0 < a₀) (ha₁ : 0 < a₁)
-    (haV : v < a) (ha₀V : v < a₀) (ha₁V : v < a₁)
-    (hbV : v ≤ b) (hb₀V : v ≤ b₀) (hb₁V : v ≤ b₁)
-    (ht₀ : 0 ≤ t₀) (ht₁ : 0 ≤ t₁)
-    (he₀ : b₀=t₀*a₀) (he₁ : b₁=t₁*a₁)
-    (ht : t₀ ≤ b/a ∧ b/a ≤ t₁)
-    (hc : (a-v)^2+(b-v)^2=ρ^2)
-    (hc₀ : (a₀-v)^2+(b₀-v)^2=ρ^2)
-    (hc₁ : (a₁-v)^2+(b₁-v)^2=ρ^2)
-    (hX : 0 ≤ X) (h₀ : m ≤ X*a₀+Y*b₀) (h₁ : m ≤ X*a₁+Y*b₁) :
-    m ≤ X*a+Y*b := by
-  have hlo := circle_tangent_lower ha ha₀ haV ha₀V hbV hb₀V ht₀ he₀ ht.1 hc hc₀
-  have hhi := circle_tangent_upper ha ha₁ haV ha₁V hbV hb₁V ht₁ he₁ ht.2 hc hc₁
-  have hpos := circle_arc_radicand_positive hb₀V ha₁V hc₁
-  have he := circle_branch haV hc
-  have he₀' := circle_branch ha₀V hc₀
-  have he₁' := circle_branch ha₁V hc₁
-  rw [he] at ⊢
-  exact circle_endpoints_lower hX hpos ⟨hlo,hhi⟩
-    (by simpa [← he₀'] using h₀) (by simpa [← he₁'] using h₁)
-
 end SquaresInCircles.Eight.Arithmetic

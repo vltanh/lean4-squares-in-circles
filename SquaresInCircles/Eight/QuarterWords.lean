@@ -41,10 +41,6 @@ def QuarterWord.Admissible (w : QuarterWord) : Prop :=
   (∑ i, (w i).val) = 4 ∧
     ∀ i, ¬ (w i = 0 ∧ w (next i) = 0 ∧ w (next (next i)) = 0)
 
-instance (w : QuarterWord) : Decidable (QuarterWord.Admissible w) :=
-  inferInstanceAs (Decidable ((∑ i, (w i).val) = 4 ∧
-    ∀ i, ¬ (w i = 0 ∧ w (next i) = 0 ∧ w (next (next i)) = 0)))
-
 /-- The seven representatives `0010012`, `0010102`, `0010201`, `0011002`, `0010111`, `0011011`
 and `0101011`. -/
 def quarterRepresentatives : Fin 7 → QuarterWord :=
@@ -64,9 +60,6 @@ def quarterDihedral (shift : Vertex) (reversed : Bool) (w : QuarterWord) : Quart
 
 def QuarterWord.DihedralEquivalent (w v : QuarterWord) : Prop :=
   ∃ shift reversed, w = quarterDihedral shift reversed v
-
-instance (w v : QuarterWord) : Decidable (QuarterWord.DihedralEquivalent w v) :=
-  inferInstanceAs (Decidable (∃ shift reversed, w = quarterDihedral shift reversed v))
 
 /-! ### Words as digit vectors
 
@@ -146,30 +139,6 @@ theorem quarter_word_complete_classification :
   exact QuarterWords.isImage_spec
     (by simpa [hw] using key (w 0) (w 1) (w 2) (w 3) (w 4) (w 5) (w 6))
 
-/-- A sum over words of length `n + 1` splits off the first digit. -/
-private theorem QuarterWords.sum_cons {n : ℕ} {β : Type*} [AddCommMonoid β]
-    (F : (Fin (n + 1) → Fin 3) → β) :
-    ∑ w, F w = ∑ a, ∑ v : Fin n → Fin 3, F (Matrix.vecCons a v) := by
-  rw [← Fintype.sum_prod_type']
-  exact (Fintype.sum_equiv (Fin.consEquiv fun _ => Fin 3) _ _ fun _ => rfl).symm
-
-private theorem QuarterWords.sum_nil {β : Type*} [AddCommMonoid β]
-    (F : (Fin 0 → Fin 3) → β) : ∑ v, F v = F ![] := by
-  rw [Fintype.sum_unique]
-  exact congrArg F (Subsingleton.elim _ _)
-
-theorem admissible_quarter_word_count :
-    (Finset.univ.filter QuarterWord.Admissible).card = 70 := by
-  -- Seven nested sums over the digits, evaluated by the kernel.
-  rw [Finset.card_filter]
-  simp only [QuarterWords.sum_cons, QuarterWords.sum_nil, QuarterWords.admissible_vec]
-  decide +kernel
-
-theorem quarter_representatives_inequivalent :
-    ∀ i j : Fin 7, (quarterRepresentatives i).DihedralEquivalent (quarterRepresentatives j) →
-      i = j := by
-  decide +kernel
-
 /-- Sums over the positions of a word do not see rotation or reflection. -/
 private theorem QuarterWords.sum_dihedral {β : Type*} [AddCommMonoid β] (f : Fin 3 → β)
     (s : Vertex) (r : Bool) (w : QuarterWord) :
@@ -177,35 +146,6 @@ private theorem QuarterWords.sum_dihedral {β : Type*} [AddCommMonoid β] (f : F
   cases r
   · exact Equiv.sum_comp (Equiv.addRight s) (fun i => f (w i))
   · exact Equiv.sum_comp (Equiv.subLeft s) (fun i => f (w i))
-
-theorem quarter_word_at_most_one_double :
-    ∀ w : QuarterWord, w.Admissible → (Finset.univ.filter (fun i => w i = 2)).card ≤ 1 := by
-  intro w hw
-  obtain ⟨j, s, r, rfl⟩ := quarter_word_complete_classification w hw
-  have key : ∀ j : Fin 7,
-      (Finset.univ.filter (fun i => quarterRepresentatives j i = 2)).card ≤ 1 := by
-    decide
-  rw [Finset.card_filter, QuarterWords.sum_dihedral (fun d => if d = 2 then 1 else 0)]
-  simpa only [Finset.card_filter] using key j
-
-lemma quarterDihedral_preserves_admissibility :
-    ∀ (shift : Vertex) (reversed : Bool) (w : QuarterWord),
-      (quarterDihedral shift reversed w).Admissible ↔ w.Admissible := by
-  intro s r w
-  refine and_congr (by rw [QuarterWords.sum_dihedral (fun d => d.val)]) ?_
-  cases r
-  · refine (Equiv.addRight s).forall_congr fun i => ?_
-    simp only [quarterDihedral, Bool.false_eq_true, ite_false, Equiv.coe_addRight, next,
-      add_right_comm _ (1 : Vertex) s]
-  · -- The window at `i` of the reflected word is the window at `s - (i + 2)`, read backwards.
-    refine (Equiv.subLeft (s - 1 - 1)).forall_congr fun i => ?_
-    have e₁ : s - 1 - 1 - i = s - (i + 1 + 1) := by abel
-    have e₂ : s - (i + 1 + 1) + 1 = s - (i + 1) := by abel
-    have e₃ : s - (i + 1) + 1 = s - i := by abel
-    simp only [quarterDihedral, ite_true, Equiv.subLeft_apply, next, e₁, e₂, e₃]
-    exact not_congr ⟨fun ⟨h₀, h₁, h₂⟩ => ⟨h₂, h₁, h₀⟩, fun ⟨h₂, h₁, h₀⟩ => ⟨h₀, h₁, h₂⟩⟩
-
-lemma candidate_quarter_admissible : candidateQuarterWord.Admissible := by decide
 
 /-- The integer increment of the quarter offsets on the edge `i`, with the winding of four
 quarter turns added on the last edge, so that the increments add up to `4`
@@ -352,11 +292,6 @@ theorem QuarterLift.word_admissible {q : ℝ} {C : BoundaryCycle q} (F : Quarter
       rw [hi.2.2] at he
       norm_num at he
       exact he.symm
-
-theorem QuarterLift.seven_classes {q : ℝ} {C : BoundaryCycle q} (F : QuarterLift C)
-    (hgap : ∀ i, 19 / 25 < angleGap C.beta i) (hpi : Real.pi < 22 / 7) :
-    ∃ j : Fin 7, (F.word hgap hpi).DihedralEquivalent (quarterRepresentatives j) :=
-  quarter_word_complete_classification _ (F.word_admissible hgap hpi)
 
 /-- The lower bounds of the common table for the cost of an edge with the digit `0`, `1` or
 `2`, in units of `10⁻⁴`. -/

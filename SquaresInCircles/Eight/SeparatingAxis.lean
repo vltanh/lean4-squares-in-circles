@@ -169,10 +169,6 @@ theorem SignedAxis.disjoint {a : SignedAxis} {K L : UnitSquare}
   rw [signed_width_sum] at hproj
   exact (not_lt_of_ge h) hproj
 
-theorem disjoint_iff_signed_axis (K L : UnitSquare) :
-    (∀ p, ¬ (openSquare K p ∧ openSquare L p)) ↔ ∃ a : SignedAxis, a.Feasible K L :=
-  ⟨signed_axis_of_disjoint K L, fun ⟨_, ha⟩ => SignedAxis.disjoint ha⟩
-
 def AxisOwner.swap : AxisOwner → AxisOwner
   | .sourceX => .targetX | .sourceY => .targetY
   | .targetX => .sourceX | .targetY => .sourceY
@@ -205,39 +201,6 @@ def forwardMargin (j : Fin 4) (a b A B σ τ φ : ℝ) : ℝ :=
     A - a * Real.cos φ + σ * b * Real.sin φ - pairWidth φ,
     a * Real.sin φ + σ * b * Real.cos φ - τ * B - pairWidth φ,
     a - A * Real.cos φ - τ * B * Real.sin φ - pairWidth φ] j
-
-def localSource (a b σ : ℝ) : UnitSquare := axisSquare (a, -σ * b)
-
-def localTarget (A B τ φ : ℝ) : UnitSquare where
-  center := (A * Real.cos φ + τ * B * Real.sin φ,
-    A * Real.sin φ - τ * B * Real.cos φ)
-  cosine := Real.cos φ
-  sine := Real.sin φ
-  unit := by nlinarith [Real.sin_sq_add_cos_sq φ]
-
-theorem local_threshold (a b A B σ τ φ : ℝ) :
-    SAT.threshold (localSource a b σ) (localTarget A B τ φ) = pairWidth φ := by
-  simp only [SAT.threshold, localSource, localTarget, axisSquare,
-    relativeC, relativeS, pairWidth]
-  ring_nf
-
-theorem forward_margin_identity (j : Fin 4) (a b A B σ τ φ : ℝ) :
-    (forwardAxis j).projection (localSource a b σ) (localTarget A B τ φ) -
-      SAT.threshold (localSource a b σ) (localTarget A B τ φ) =
-        forwardMargin j a b A B σ τ φ := by
-  rw [local_threshold]
-  fin_cases j <;>
-    simp [forwardAxis, forwardMargin, SignedAxis.projection, SignedAxis.normal,
-      AxisOwner.normal, AxisSign.value, localSource, localTarget, axisSquare,
-      e, f, dot, scale, sub] <;>
-    nlinarith [Real.sin_sq_add_cos_sq φ, congrArg (fun x => A * x) (Real.sin_sq_add_cos_sq φ),
-      congrArg (fun x => τ * B * x) (Real.sin_sq_add_cos_sq φ)]
-
-theorem forward_feasible_iff_margin (j : Fin 4) (a b A B σ τ φ : ℝ) :
-    (forwardAxis j).Feasible (localSource a b σ) (localTarget A B τ φ) ↔
-      0 ≤ forwardMargin j a b A B σ τ φ := by
-  rw [← forward_margin_identity]
-  exact (sub_nonneg).symm
 
 theorem frameX_sub (K : UnitSquare) (p r : Point) :
     frameX K (sub p r) = frameX K p - frameX K r := by

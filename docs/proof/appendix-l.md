@@ -47,14 +47,14 @@ a'(b) = -\varrho(b), \qquad \varrho'(b) = \frac{\rho^2}{(a - v)^3} > 0, \qquad a
 ```
 
 *Lean:
-[`Eight.Arithmetic.ArcData`](../../SquaresInCircles/Eight/Arithmetic/AffineTableData.lean#L23),
-[`Eight.Arithmetic.ArcData.OnCurve`](../../SquaresInCircles/Eight/Arithmetic/AffineTableData.lean#L36),
+[`Eight.Arithmetic.ArcData`](../../SquaresInCircles/Eight/Arithmetic/AffineTableData.lean#L22),
+[`Eight.Arithmetic.ArcData.OnCurve`](../../SquaresInCircles/Eight/Arithmetic/AffineTableData.lean#L34),
 [`Eight.Arithmetic.outerEndpoint_facts`](../../SquaresInCircles/Eight/Arithmetic/ArcGeometry.lean#L25),
 [`Eight.Arithmetic.coreEndpoint_facts`](../../SquaresInCircles/Eight/Arithmetic/ArcGeometry.lean#L51),
-[`Eight.Arithmetic.circleX_deriv`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L161),
-[`Eight.Arithmetic.circleRatio_deriv`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L172),
+[`Eight.Arithmetic.circleX_deriv`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L131),
+[`Eight.Arithmetic.circleRatio_deriv`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L142),
 [`Eight.Arithmetic.PreparedArc`](../../SquaresInCircles/Eight/Arithmetic/PreparedArc.lean#L36),
-[`Eight.Arithmetic.PreparedArc.NumericValid`](../../SquaresInCircles/Eight/Arithmetic/PreparedArc.lean#L73).*
+[`Eight.Arithmetic.PreparedArc.NumericValid`](../../SquaresInCircles/Eight/Arithmetic/PreparedArc.lean#L70).*
 
 ### Lemma L.1 (supports on an arc)
 
@@ -78,13 +78,12 @@ whole circle the minimum of the linear function is the value at the centre
 minus $\rho$ times the length of $(X, Y)$, by Cauchy–Schwarz. $\square$
 
 *Lean:
-[`Eight.Arithmetic.side_endpoint_lower`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L150),
-[`Eight.Arithmetic.circle_functional_concave`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L199),
-[`Eight.Arithmetic.circle_endpoints_lower`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L210),
-[`Eight.Arithmetic.circle_lower_endpoint`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L228),
-[`Eight.Arithmetic.circle_upper_endpoint`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L244),
-[`Eight.Arithmetic.full_circle_lower`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L128),
-[`Eight.Arithmetic.tangent_arc_endpoints_lower`](../../SquaresInCircles/Eight/Arithmetic/ArcGeometry.lean#L141).*
+[`Eight.Arithmetic.side_endpoint_lower`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L120),
+[`Eight.Arithmetic.circle_functional_concave`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L169),
+[`Eight.Arithmetic.circle_endpoints_lower`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L180),
+[`Eight.Arithmetic.circle_lower_endpoint`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L198),
+[`Eight.Arithmetic.circle_upper_endpoint`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L214),
+[`Eight.Arithmetic.full_circle_lower`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L106).*
 
 The rules hold whatever the sign of $X$ in rule 3, and rule 4 holds even when
 the point of the circle where the minimum is attained lies outside the arc;
@@ -136,13 +135,11 @@ margins as stated; the cost $\varphi + L_s - L_t$ equals
 $\varphi + (-L_t) - (-L_s)$. $\square$
 
 *Lean:
-[`Eight.Arithmetic.forwardMargin`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L48),
-[`Eight.Arithmetic.forwardMargin_actual`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L55),
-[`Eight.Arithmetic.actual_axis_iff_margin`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L61),
-[`Eight.Arithmetic.margin_reverse`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L70),
-[`Eight.Arithmetic.charge_reverse`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L75),
-[`Eight.Arithmetic.lagrangian_identity`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L105),
-[`Eight.Arithmetic.charged_pair_gt_of_support`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L115).*
+[`Eight.Arithmetic.forwardMargin`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L43),
+[`Eight.Arithmetic.forwardMargin_actual`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L50),
+[`Eight.Arithmetic.margin_reverse`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L59),
+[`Eight.Arithmetic.charge_reverse`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L64),
+[`Eight.Arithmetic.lagrangian_identity`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L94).*
 
 So, for a fixed angle, $G$ is a constant plus a linear function on the source
 arc with constant coefficients, plus a linear function on the target arc whose
@@ -170,12 +167,6 @@ T_{h_0}(V) - \sqrt V = \frac{\left(\sqrt V - h_0\right)^4\left(V + 4h_0\sqrt V +
 *Proof.* With $w = \sqrt V$, both sides multiplied by $16h_0^5$ equal
 $w^6 - 5h_0^2 w^4 + 15h_0^4 w^2 - 16h_0^5 w + 5h_0^6$, as one checks by
 expanding $(w - h_0)^4(w^2 + 4h_0 w + 5h_0^2)$. $\square$
-
-*Lean:
-[`Eight.Arithmetic.radicalMajorant`](../../SquaresInCircles/Eight/Arithmetic/Taylor.lean#L99),
-[`Eight.Arithmetic.radical_majorant_identity`](../../SquaresInCircles/Eight/Arithmetic/Taylor.lean#L102),
-[`Eight.Arithmetic.sqrt_le_radicalMajorant`](../../SquaresInCircles/Eight/Arithmetic/Taylor.lean#L113),
-[`Eight.Arithmetic.full_circle_majorant_lower`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L141).*
 
 So the circle bound $v(X_t + Y_t) - \rho\sqrt{V_j}$ is at least
 $v(X_t + Y_t) - \rho\,T_{h_0}(V_j)$, a polynomial in $\sin\varphi$ and
@@ -250,9 +241,8 @@ up to $(x + 1 - x)^n = 1$, so $\underline G$ is at least the least $g_j$. $\squa
 [`Eight.Arithmetic.bernsteinBasis_nonneg`](../../SquaresInCircles/Eight/Arithmetic/Bernstein.lean#L29),
 [`Eight.Arithmetic.bernsteinBasis_sum`](../../SquaresInCircles/Eight/Arithmetic/Bernstein.lean#L36),
 [`Eight.Arithmetic.bernstein_lower`](../../SquaresInCircles/Eight/Arithmetic/Bernstein.lean#L47),
-[`Eight.Arithmetic.BernsteinRow.Valid.sound`](../../SquaresInCircles/Eight/Arithmetic/Bernstein.lean#L101),
-[`Eight.Arithmetic.BernsteinRow.strictCheck_sound`](../../SquaresInCircles/Eight/Arithmetic/RationalBernstein.lean#L89),
-[`Eight.Arithmetic.BernsteinRow.expansion_of_algebraic`](../../SquaresInCircles/Eight/Arithmetic/RationalBernstein.lean#L55).*
+[`Eight.Arithmetic.BernsteinRow.Valid.sound`](../../SquaresInCircles/Eight/Arithmetic/Bernstein.lean#L79),
+[`Eight.Arithmetic.BernsteinRow.valid_of_check`](../../SquaresInCircles/Eight/Arithmetic/BernsteinCheck.lean#L118).*
 
 ## L.5 Proof of Proposition 11.31 (1)
 
@@ -269,15 +259,13 @@ coefficients positive, Lemma L.5 gives (L.1). Every step is an inequality
 valid on the whole product of the two arcs and the interval. $\square$
 
 *Lean:
-[`Eight.Arithmetic.CoreRow`](../../SquaresInCircles/Eight/Arithmetic/CoreRow.lean#L24),
-[`Eight.Arithmetic.CoreRow.NumericValid`](../../SquaresInCircles/Eight/Arithmetic/CoreRow.lean#L112),
-[`Eight.Arithmetic.CoreRow.lagrangian_positive`](../../SquaresInCircles/Eight/Arithmetic/CoreRow.lean#L200),
-[`Eight.Arithmetic.CoreRow.sound`](../../SquaresInCircles/Eight/Arithmetic/CoreRow.lean#L323),
-[`Eight.Arithmetic.PreparedRow.sound`](../../SquaresInCircles/Eight/Arithmetic/PreparedRow.lean#L128),
-[`Eight.Arithmetic.PreparedRow.claim`](../../SquaresInCircles/Eight/Arithmetic/PreparedRow.lean#L157),
-[`Eight.Arithmetic.SourceSupport.sound`](../../SquaresInCircles/Eight/Arithmetic/SourceSupport.lean#L122),
-[`Eight.Arithmetic.AnglePolynomial.env_mem`](../../SquaresInCircles/Eight/Arithmetic/AnglePolynomial.lean#L33),
-[`Eight.Arithmetic.AffineTableRow.Claim.actual`](../../SquaresInCircles/Eight/Arithmetic/AffineTableData.lean#L88).*
+[`Eight.Arithmetic.CoreRow`](../../SquaresInCircles/Eight/Arithmetic/CoreRow.lean#L22),
+[`Eight.Arithmetic.CoreRow.Positive`](../../SquaresInCircles/Eight/Arithmetic/CoreRow.lean#L51),
+[`Eight.Arithmetic.coreCheck_positive`](../../SquaresInCircles/Eight/Arithmetic/RowCheck.lean#L1085),
+[`Eight.Arithmetic.CoreRow.sound_of_positive`](../../SquaresInCircles/Eight/Arithmetic/CoreRow.lean#L63),
+[`Eight.Arithmetic.PreparedRow.sound_of_positive`](../../SquaresInCircles/Eight/Arithmetic/PreparedRow.lean#L52),
+[`Eight.Arithmetic.PreparedRow.claim_of_positive`](../../SquaresInCircles/Eight/Arithmetic/PreparedRow.lean#L123),
+[`Eight.Arithmetic.checkRow_claim`](../../SquaresInCircles/Eight/Arithmetic/RowCheck.lean#L1245).*
 
 In the formal proof the data of a row are only its arcs, axis, angle
 interval, multiplier, rule and $h_0$; the polynomial $\underline G$, its
@@ -325,15 +313,17 @@ consecutive intervals meeting at a common rational endpoint; an isolated
 endpoint of the range must be covered too.
 
 *Lean:
-[`Eight.Arithmetic.StateChains`](../../SquaresInCircles/Eight/Arithmetic/StateCoverage.lean#L136),
-[`Eight.Arithmetic.StateChains.covers`](../../SquaresInCircles/Eight/Arithmetic/StateCoverage.lean#L149),
-[`Eight.Arithmetic.boundary_arc_contains`](../../SquaresInCircles/Eight/Arithmetic/StateCoverage.lean#L122),
+[`Eight.Arithmetic.StateChains`](../../SquaresInCircles/Eight/Arithmetic/StateCoverage.lean#L125),
+[`Eight.Arithmetic.StateChains.covers`](../../SquaresInCircles/Eight/Arithmetic/StateCoverage.lean#L138),
+[`Eight.Arithmetic.boundary_arc_contains`](../../SquaresInCircles/Eight/Arithmetic/StateCoverage.lean#L111),
 [`Eight.Arithmetic.ClosedChain`](../../SquaresInCircles/Eight/Arithmetic/ClosedCover.lean#L19),
 [`Eight.Arithmetic.ClosedChain.covers`](../../SquaresInCircles/Eight/Arithmetic/ClosedCover.lean#L27),
-[`Eight.Arithmetic.ArctanEndpoint.sound`](../../SquaresInCircles/Eight/Arithmetic/Arctangent.lean#L122),
-[`Eight.Arithmetic.atanLower_le`](../../SquaresInCircles/Eight/Arithmetic/Arctangent.lean#L21),
-[`Eight.Arithmetic.arctan_le_atanUpper`](../../SquaresInCircles/Eight/Arithmetic/Arctangent.lean#L39),
-[`Eight.Arithmetic.AffineCover.required_mem`](../../SquaresInCircles/Eight/Arithmetic/AffineCoverage.lean#L196),
+[`Eight.Arithmetic.PairCover.atanLo_le`](../../SquaresInCircles/Eight/Arithmetic/AtanBounds.lean#L286),
+[`Eight.Arithmetic.PairCover.le_atanHi`](../../SquaresInCircles/Eight/Arithmetic/AtanBounds.lean#L302),
+[`Eight.Arithmetic.endpointsValid_atanEnds`](../../SquaresInCircles/Eight/Arithmetic/RowCover.lean#L608),
+[`Eight.Arithmetic.atanLower_le`](../../SquaresInCircles/Eight/Arithmetic/Arctangent.lean#L25),
+[`Eight.Arithmetic.arctan_le_atanUpper`](../../SquaresInCircles/Eight/Arithmetic/Arctangent.lean#L43),
+[`Eight.Arithmetic.AffineCover.required_mem`](../../SquaresInCircles/Eight/Arithmetic/AffineCoverage.lean#L191),
 [`Eight.Arithmetic.coverBlocks_sound`](../../SquaresInCircles/Eight/Arithmetic/RowCover.lean#L524).*
 
 ![The two radial curves at the level Q1 in the (a, b)-plane, with the arcs of the role G in the coarse table of the mismatch chain drawn alternately in two colours: 25 arcs on the outer curve, with endpoints at the tangents 1/20, then multiples of 1/32, then 4/5, and 8 arcs on the side a = 7/12 of the core curve, with endpoints at 1/20, multiples of 3/28 and 4/5; dashed rays from the origin mark the tangents 1/20 and 4/5 that bound the declared range](figures/appendix-l/cover.svg)
@@ -395,12 +385,12 @@ $c = \frac j{16}$ nearest to $x$ and the alternating series through the powers
 9 and 11; each anchor follows from the previous one by the same formula.
 
 *Lean:
-[`Eight.Arithmetic.PairCover.PairProblem.Cell`](../../SquaresInCircles/Eight/Arithmetic/PairCover.lean#L78),
-[`Eight.Arithmetic.PairCover.treeCheck_sound`](../../SquaresInCircles/Eight/Arithmetic/PairCover.lean#L467),
-[`Eight.Arithmetic.PairCover.problemsCheck_sound`](../../SquaresInCircles/Eight/Arithmetic/PairCover.lean#L593),
-[`Eight.Arithmetic.PairCover.table_sound`](../../SquaresInCircles/Eight/Arithmetic/PairCover.lean#L614),
-[`Eight.Arithmetic.lowerCheck_sound`](../../SquaresInCircles/Eight/Arithmetic/LabelRelax.lean#L273),
-[`Eight.Arithmetic.labelsCheck_sound`](../../SquaresInCircles/Eight/Arithmetic/LabelRelax.lean#L369),
+[`Eight.Arithmetic.PairCover.PairProblem.Cell`](../../SquaresInCircles/Eight/Arithmetic/PairCover.lean#L76),
+[`Eight.Arithmetic.PairCover.treeCheck_sound`](../../SquaresInCircles/Eight/Arithmetic/PairCover.lean#L465),
+[`Eight.Arithmetic.PairCover.problemsCheck_sound`](../../SquaresInCircles/Eight/Arithmetic/PairCover.lean#L591),
+[`Eight.Arithmetic.PairCover.table_sound`](../../SquaresInCircles/Eight/Arithmetic/PairCover.lean#L612),
+[`Eight.Arithmetic.lowerCheck_sound`](../../SquaresInCircles/Eight/Arithmetic/LabelRelax.lean#L272),
+[`Eight.Arithmetic.labelsCheck_sound`](../../SquaresInCircles/Eight/Arithmetic/LabelRelax.lean#L368),
 [`Eight.Arithmetic.PairCover.anchor_bounds`](../../SquaresInCircles/Eight/Arithmetic/AtanBounds.lean#L215),
 [`Eight.Arithmetic.PairCover.atanLo_le`](../../SquaresInCircles/Eight/Arithmetic/AtanBounds.lean#L286),
 [`Eight.Arithmetic.PairCover.le_atanHi`](../../SquaresInCircles/Eight/Arithmetic/AtanBounds.lean#L302).*

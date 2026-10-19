@@ -201,10 +201,6 @@ theorem actualProjection_taylor {q : ℝ} (C : BoundaryCycle q) (hq : q ≤ Q0)
   simp only [actualProjection, actualDerivative, projection, projectionDeriv]
   constructor <;> linarith [h.1, h.2]
 
-theorem actualDerivative_abs {q : ℝ} (C : BoundaryCycle q) (hq : q ≤ Q0)
-    (i : Vertex) (j : Fin 4) (x : ℝ) : |actualDerivative C i j x| ≤ 3/2 :=
-  sinusoid_derivative_bound (by norm_num) (projection_amplitude C hq i j) x
-
 private theorem peval_add (p q : Poly) (z : ℝ) : peval (p + q) z = peval p z + peval q z := by
   simp [peval]
 private theorem peval_sub (p q : Poly) (z : ℝ) : peval (p - q) z = peval p z - peval q z := by

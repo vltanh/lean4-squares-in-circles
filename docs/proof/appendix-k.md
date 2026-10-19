@@ -52,10 +52,6 @@ and $2(X^2 + XY + Y^2) = Q + \sigma^2$ and $\sigma(X^2 + Y^2) = \sigma Q$. The
 second factor is at least $\sigma^2 - Q\sigma + Q = (\sigma - \frac Q2)^2 + Q(1 - \frac Q4) > 0$,
 as $0 < Q < 4$. $\square$
 
-*Lean:
-[`Eight.two_circle_difference_factorization`](../../SquaresInCircles/Eight/CentralCore.lean#L393),
-[`Eight.two_circle_factor_positive`](../../SquaresInCircles/Eight/CentralCore.lean#L402).*
-
 ### Lemma K.2 (two monotone angles)
 
 Let $r \ge 1$.
@@ -91,11 +87,11 @@ increasing $x$ to $X(y) - 1$ and then $y$ to $\frac25$ increases the sum, to
 $2\arcsin\frac{2/5}r$. $\square$
 
 *Lean:
-[`Eight.TwoCircle.straddling_polynomial_upper`](../../SquaresInCircles/Eight/CentralCore.lean#L721),
-[`Eight.TwoCircle.straddling_unit_angle`](../../SquaresInCircles/Eight/CentralCore.lean#L736),
-[`Eight.TwoCircle.straddling_larger_angle`](../../SquaresInCircles/Eight/CentralCore.lean#L784),
-[`Eight.TwoCircle.corner_arcsin_sum`](../../SquaresInCircles/Eight/CentralCore.lean#L546),
-[`Eight.TwoCircle.corner_quadratic`](../../SquaresInCircles/Eight/CentralCore.lean#L528).*
+[`Eight.TwoCircle.straddling_polynomial_upper`](../../SquaresInCircles/Eight/CentralCore.lean#L693),
+[`Eight.TwoCircle.straddling_unit_angle`](../../SquaresInCircles/Eight/CentralCore.lean#L708),
+[`Eight.TwoCircle.straddling_larger_angle`](../../SquaresInCircles/Eight/CentralCore.lean#L756),
+[`Eight.TwoCircle.corner_arcsin_sum`](../../SquaresInCircles/Eight/CentralCore.lean#L518),
+[`Eight.TwoCircle.corner_quadratic`](../../SquaresInCircles/Eight/CentralCore.lean#L500).*
 
 ### Proof of Lemma 11.8
 
@@ -172,17 +168,17 @@ Only the first region allows equality, exactly for the squares of the
 statement. $\square$
 
 *Lean:
-[`Eight.TwoCircle.intervalLength_straddling`](../../SquaresInCircles/Eight/CentralCore.lean#L678),
-[`Eight.TwoCircle.intervalLength_corner`](../../SquaresInCircles/Eight/CentralCore.lean#L686),
-[`Eight.TwoCircle.small_straddling_length`](../../SquaresInCircles/Eight/CentralCore.lean#L918),
-[`Eight.TwoCircle.general_straddling_unit_length`](../../SquaresInCircles/Eight/CentralCore.lean#L938),
-[`Eight.TwoCircle.general_straddling_larger_length`](../../SquaresInCircles/Eight/CentralCore.lean#L977),
-[`Eight.TwoCircle.small_corner_length`](../../SquaresInCircles/Eight/CentralCore.lean#L1010),
-[`Eight.TwoCircle.corner_unit_length`](../../SquaresInCircles/Eight/CentralCore.lean#L1021),
-[`Eight.TwoCircle.corner_larger_length`](../../SquaresInCircles/Eight/CentralCore.lean#L1033),
-[`Eight.TwoCircle.weighted_straddling_constant`](../../SquaresInCircles/Eight/CentralCore.lean#L839),
-[`Eight.TwoCircle.corner_larger_far_side`](../../SquaresInCircles/Eight/CentralCore.lean#L898),
-[`Eight.one_square_two_circle_inequality`](../../SquaresInCircles/Eight/CentralCore.lean#L1058).*
+[`Eight.TwoCircle.intervalLength_straddling`](../../SquaresInCircles/Eight/CentralCore.lean#L650),
+[`Eight.TwoCircle.intervalLength_corner`](../../SquaresInCircles/Eight/CentralCore.lean#L658),
+[`Eight.TwoCircle.small_straddling_length`](../../SquaresInCircles/Eight/CentralCore.lean#L890),
+[`Eight.TwoCircle.general_straddling_unit_length`](../../SquaresInCircles/Eight/CentralCore.lean#L910),
+[`Eight.TwoCircle.general_straddling_larger_length`](../../SquaresInCircles/Eight/CentralCore.lean#L949),
+[`Eight.TwoCircle.small_corner_length`](../../SquaresInCircles/Eight/CentralCore.lean#L982),
+[`Eight.TwoCircle.corner_unit_length`](../../SquaresInCircles/Eight/CentralCore.lean#L993),
+[`Eight.TwoCircle.corner_larger_length`](../../SquaresInCircles/Eight/CentralCore.lean#L1005),
+[`Eight.TwoCircle.weighted_straddling_constant`](../../SquaresInCircles/Eight/CentralCore.lean#L811),
+[`Eight.TwoCircle.corner_larger_far_side`](../../SquaresInCircles/Eight/CentralCore.lean#L870),
+[`Eight.one_square_two_circle_inequality`](../../SquaresInCircles/Eight/CentralCore.lean#L1030).*
 
 ![Three panels, each a canonical square S = [x, x + 1] x [y, y + 1] with the unit circle and the circle of radius 5/4 about o, and the arcs of each circle in the closed square drawn thick, blue on the unit circle and orange on the larger one. Left: x = 0.1 and y = -1/2, the square straddling the axis, holding an arc of exactly 60 degrees of the unit circle and missing the larger circle. Middle: x = 0.4 and y = -0.25, holding arcs of both circles. Right: x = 0.35 and y = 0.2, a corner square holding arcs of both circles. Under each panel, its region and the lengths L1 and L5/4](figures/appendix-k/regions.svg)
 
@@ -233,14 +229,14 @@ gives $A \ge \frac12 + \frac\Delta{\sqrt2}$. Finally $\frac1{\sqrt2} > \frac7{10
 and $a \le \frac9{20}$ means $\Delta \ge \frac1{20}$. $\square$
 
 *Lean:
-[`Eight.centralDepth`](../../SquaresInCircles/Eight/CentralCore.lean#L1433),
-[`Eight.centralDepth_gt_milli`](../../SquaresInCircles/Eight/CentralCore.lean#L1532),
-[`Eight.translated_ceiling_reserve`](../../SquaresInCircles/Eight/CentralCore.lean#L420),
-[`Eight.translated_containment_reserve`](../../SquaresInCircles/Eight/CentralCore.lean#L1502),
-[`Eight.exterior_distance_from_centralDepth`](../../SquaresInCircles/Eight/CentralCore.lean#L1545),
-[`Eight.primary_distance_lower`](../../SquaresInCircles/Eight/CentralCore.lean#L1553),
-[`Eight.exterior_primary_bandA`](../../SquaresInCircles/Eight/CentralCore.lean#L1573),
-[`Eight.exterior_primary_bandB`](../../SquaresInCircles/Eight/CentralCore.lean#L1582).*
+[`Eight.centralDepth`](../../SquaresInCircles/Eight/CentralCore.lean#L1376),
+[`Eight.centralDepth_gt_milli`](../../SquaresInCircles/Eight/CentralCore.lean#L1475),
+[`Eight.translated_ceiling_reserve`](../../SquaresInCircles/Eight/CentralCore.lean#L392),
+[`Eight.translated_containment_reserve`](../../SquaresInCircles/Eight/CentralCore.lean#L1445),
+[`Eight.exterior_distance_from_centralDepth`](../../SquaresInCircles/Eight/CentralCore.lean#L1488),
+[`Eight.primary_distance_lower`](../../SquaresInCircles/Eight/CentralCore.lean#L1496),
+[`Eight.exterior_primary_bandA`](../../SquaresInCircles/Eight/CentralCore.lean#L1516),
+[`Eight.exterior_primary_bandB`](../../SquaresInCircles/Eight/CentralCore.lean#L1525).*
 
 ## K.3 Common points
 
@@ -366,13 +362,12 @@ both, and $o + \lambda u(\psi)$ would lie in both open squares. $\square$
 [`Eight.Arithmetic.bandB_P_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L107),
 [`Eight.Arithmetic.bandB_V_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L114),
 [`Eight.Arithmetic.centralBandP_normalized`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L125),
-[`Eight.Arithmetic.centralBandV_normalized`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L144),
-[`Eight.CentralBand.transverse_segment_interior`](../../SquaresInCircles/Eight/CentralCore.lean#L1255),
-[`Eight.CentralBand.bandA_sides`](../../SquaresInCircles/Eight/CentralCore.lean#L1396),
-[`Eight.CentralBand.bandB_sides`](../../SquaresInCircles/Eight/CentralCore.lean#L1408),
-[`Eight.CentralBand.RayData.common_point_A`](../../SquaresInCircles/Eight/CentralCore.lean#L1689),
-[`Eight.CentralBand.RayData.common_point_B`](../../SquaresInCircles/Eight/CentralCore.lean#L1715),
-[`Eight.CentralBand.closed_caps_strictly_separated`](../../SquaresInCircles/Eight/CentralCore.lean#L1741).*
+[`Eight.Arithmetic.centralBandV_normalized`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L135),
+[`Eight.CentralBand.bandA_sides`](../../SquaresInCircles/Eight/CentralCore.lean#L1339),
+[`Eight.CentralBand.bandB_sides`](../../SquaresInCircles/Eight/CentralCore.lean#L1351),
+[`Eight.CentralBand.RayData.common_point_A`](../../SquaresInCircles/Eight/CentralCore.lean#L1632),
+[`Eight.CentralBand.RayData.common_point_B`](../../SquaresInCircles/Eight/CentralCore.lean#L1658),
+[`Eight.CentralBand.closed_caps_strictly_separated`](../../SquaresInCircles/Eight/CentralCore.lean#L1684).*
 
 ![Two graphs on a common logarithmic scale from 10^3 to 10^6 millionths. Left: the polynomial P of the segment case against u from 0 to 1, positive throughout, with its Bernstein control points on the three cells [0, 1/4], [1/4, 1/2] and [1/2, 1] drawn as polygons with dots, the least of them, about 0.003, on the middle cell. Right: the polynomial V of the segment case against u from 0 to 3/7, positive, with its control points on the two cells [0, 3/14] and [3/14, 3/7]](figures/appendix-k/polys.svg)
 
@@ -428,7 +423,7 @@ directions. $\square$
 *Lean:
 [`Eight.CentralForbidden.rectangle_segment_interval`](../../SquaresInCircles/Eight/CentralForbidden.lean#L133),
 [`Eight.CentralForbidden.Row.Valid.forbidden`](../../SquaresInCircles/Eight/CentralForbidden.lean#L251),
-[`Eight.central_rectangle_forbids`](../../SquaresInCircles/Eight/CentralCore.lean#L1868).*
+[`Eight.central_rectangle_forbids`](../../SquaresInCircles/Eight/CentralCore.lean#L1811).*
 
 ![The rectangle T_Lambda(0.3) = [0, 11/12] x [0, 0.3], shaded, with o at its lower left corner, and seven copies of the segment V turned about o by equally spaced angles from 0 up to F_Lambda(0.3), drawn thin, the last one thick and red; each copy meets the rectangle, the last one only at the corner (A1, 0.3). The arc of directions from 0 to F_Lambda(0.3) is marked at o, and a dotted segment from o to the corner shows the radial projection of the corner onto the middle copy](figures/appendix-k/blocked.svg)
 
@@ -549,11 +544,8 @@ square lying in $K^\circ$; and a closed square is compact, so its distance
 from $o$ is attained and exceeds $\frac1{12}$. $\square$
 
 *Lean:
-[`Eight.seven_rays_avoid_interval_budget`](../../SquaresInCircles/Eight/CentralCore.lean#L1795),
-[`Eight.central_band_one_angle_contradiction`](../../SquaresInCircles/Eight/CentralCore.lean#L410),
-[`Eight.central_band_two_angle_contradiction`](../../SquaresInCircles/Eight/CentralCore.lean#L415),
-[`Eight.central_core_and_exteriors`](../../SquaresInCircles/Eight/CentralCore.lean#L1894),
-[`Eight.central_core_unique`](../../SquaresInCircles/Eight/CentralCore.lean#L1970),
+[`Eight.seven_rays_avoid_interval_budget`](../../SquaresInCircles/Eight/CentralCore.lean#L1738),
+[`Eight.central_core_and_exteriors`](../../SquaresInCircles/Eight/CentralCore.lean#L1837),
 [`Eight.containsCore_of_center_bounds`](../../SquaresInCircles/Eight/CentralCore.lean#L313),
 [`Eight.strictCoreAvoiding_of_containsCore`](../../SquaresInCircles/Eight/CentralCore.lean#L385).*
 

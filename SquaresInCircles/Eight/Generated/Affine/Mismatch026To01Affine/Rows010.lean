@@ -259,6 +259,4 @@ theorem parts010_check : parts010.all (checkRows ctx) = true := by
     rows010_32_check, rows010_33_check, rows010_34_check, rows010_35_check, rows010_36_check,
     rows010_37_check, Bool.and_true]
 
-theorem parts010_length : (parts010.map List.length).sum = 7596 := by decide +kernel
-
 end SquaresInCircles.Eight.Generated.Affine.Mismatch026To01Affine

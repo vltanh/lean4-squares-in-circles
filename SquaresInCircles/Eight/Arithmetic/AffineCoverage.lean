@@ -22,7 +22,6 @@ open scoped BigOperators
 namespace SquaresInCircles.Eight.Arithmetic
 
 instance : Inhabited QInterval := ⟨⟨0,0⟩⟩
-instance : Inhabited AffineTableRow := ⟨⟨0,0,0,.one,0,true,⟨0,0⟩,0,.endpoints,1,0⟩⟩
 
 def QInterval.inter (I J : QInterval) : QInterval := ⟨max I.lo J.lo,min I.hi J.hi⟩
 theorem QInterval.mem_inter {I J : QInterval} {x : ℝ} (hI : I.Mem x) (hJ : J.Mem x) :
@@ -56,10 +55,6 @@ def ExcludedArcs (aS aT : ArcData) (axis : ForwardAxis) : Prop :=
   (axis = .three ∧ aT.positive = true ∧ aS.outer = false) ∨
   (Candidate.word aS.role = 1 ∧ aS.outer = false ∧ aT.outer = false ∧ aS.positive = true ∧
     aT.positive = false)
-
-instance (aS aT : ArcData) (axis : ForwardAxis) : Decidable (ExcludedArcs aS aT axis) := by
-  unfold ExcludedArcs
-  infer_instance
 
 /-- A core arc has primary coordinate at most `7/12`. -/
 theorem arc_core_primary_upper {s : ArcData} {Q a b : ℝ}

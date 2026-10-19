@@ -37,10 +37,6 @@ lemma normSq_scale (t : ℝ) (p : Point) : normSq (scale t p) = t^2 * normSq p :
   dsimp [normSq, scale]
   ring
 
-lemma coreDistanceSq_nonneg (K : UnitSquare) : 0 ≤ coreDistanceSq K := by
-  dsimp [coreDistanceSq]
-  positivity
-
 lemma coreDistanceSq_attained (K : UnitSquare) :
     ∃ p, closedSquare K p ∧ normSq p = coreDistanceSq K := by
   obtain ⟨p, hp, he⟩ := exists_clipped_point K (0, 0)
@@ -80,15 +76,6 @@ theorem coreAvoiding_iff_distance (K : UnitSquare) :
     simpa [he] using h p hp
   · intro h p hp
     exact h.trans (coreDistanceSq_le hp)
-
-theorem strictCoreAvoiding_iff_distance (K : UnitSquare) :
-    StrictCoreAvoiding K ↔ coreRadius^2 < coreDistanceSq K := by
-  constructor
-  · intro h
-    obtain ⟨p, hp, he⟩ := coreDistanceSq_attained K
-    simpa [he] using h p hp
-  · intro h p hp
-    exact h.trans_le (coreDistanceSq_le hp)
 
 lemma center_radius_sq (K : UnitSquare) :
     normSq K.center = (alpha K (0, 0))^2 + (beta K (0, 0))^2 := by
@@ -997,16 +984,6 @@ def canonicalBoundaryCycle {q : ℝ} (C : NeighborCycle q) (O : PolarOrder C)
     rw [(N i).radius_sq] at h
     exact h
 
-lemma canonicalBoundaryCycle_sameSquare {q : ℝ} (C : NeighborCycle q) (O : PolarOrder C)
-    (hboundary : ∀ i, OnRadialBoundary q (C.square i)) (i : Vertex) :
-    SameSquare ((canonicalBoundaryCycle C O hboundary).square i) (C.square i) := by
-  unfold canonicalBoundaryCycle
-  exact turnSquare_sameSquare _ _
-
-lemma canonicalBoundaryCycle_centers {q : ℝ} (C : NeighborCycle q) (O : PolarOrder C)
-    (hboundary : ∀ i, OnRadialBoundary q (C.square i)) (i : Vertex) :
-    ((canonicalBoundaryCycle C O hboundary).square i).center=(C.square i).center := rfl
-
 lemma canonicalBoundaryCycle_physical {q : ℝ} (C : NeighborCycle q) (O : PolarOrder C)
     (hboundary : ∀ i, OnRadialBoundary q (C.square i)) (i : Vertex) :
     SamePhysicalFrame ((canonicalBoundaryCycle C O hboundary).square i) (C.square i) := by
@@ -1055,12 +1032,9 @@ theorem boundary_reduction_exists {q : ℝ} (C : NeighborCycle q) (O : PolarOrde
   obtain ⟨D,⟨OD⟩,hb,hf,hs⟩ := anchored_cycle_exists C O hq
   refine ⟨{
     raw := D
-    raw_boundary := hb
     raw_frames := hf
     raw_selected := hs
     result := canonicalBoundaryCycle D OD hb
-    same_squares := canonicalBoundaryCycle_sameSquare D OD hb
-    same_centers := canonicalBoundaryCycle_centers D OD hb
     physical_frames := ?_
     axis_transport := canonicalBoundaryCycle_axes D OD hb }⟩
   intro i

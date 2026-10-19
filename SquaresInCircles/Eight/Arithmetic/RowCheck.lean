@@ -113,10 +113,10 @@ theorem nth_eq_getD {α : Type} (d : α) (l : List α) (i : Nat) : nth d l i = l
 /-! ### Rows and arcs -/
 
 /-- A row of an affine table in natural numbers. The angle interval is `[lo / den, hi / den]`
-for the angle scale `den` of the table, the multiplier is `lam / 10 ^ 8` and the radical
-parameter `rad / 10 ^ 7`; `axis` is `1, …, 4` and `mode` is `0` (endpoints), `1` (lower),
-`2` (upper) or `3` (circle). A circle row lists pieces `(h, upto)`: consecutive angle
-intervals, the `j`-th ending at `upto / den`, with the parameter `h / 10 ^ 7`. -/
+for the angle scale `den` of the table and the multiplier is `lam / 10 ^ 8`; `axis` is
+`1, …, 4` and `mode` is `0` (endpoints), `1` (lower), `2` (upper) or `3` (circle). A circle
+row lists pieces `(h, upto)`: consecutive angle intervals, the `j`-th ending at `upto / den`,
+with the parameter `h / 10 ^ 7`. -/
 structure AffineRow where
   edge : Nat
   source : Nat
@@ -128,7 +128,6 @@ structure AffineRow where
   hi : Nat
   lam : Nat
   mode : Nat
-  rad : Nat
   pieces : List (Nat × Nat)
 
 def axisOf : Nat → ForwardAxis
@@ -136,12 +135,6 @@ def axisOf : Nat → ForwardAxis
   | 2 => .two
   | 3 => .three
   | _ => .four
-
-def modeOf : Nat → SupportMode
-  | 0 => .endpoints
-  | 1 => .lower
-  | 2 => .upper
-  | _ => .circle
 
 /-- The table row a record denotes; its lower target is the target of its edge. -/
 def AffineRow.toTableRow (M : AffineTableMeta) (den : Nat) (x : AffineRow) : AffineTableRow where
@@ -153,8 +146,6 @@ def AffineRow.toTableRow (M : AffineTableMeta) (den : Nat) (x : AffineRow) : Aff
   positiveHalf := x.positive
   angle := ⟨(x.lo : ℚ) / den, (x.hi : ℚ) / den⟩
   multiplier := (x.lam : ℚ) / 10 ^ 8
-  mode := modeOf x.mode
-  radicalParameter := (x.rad : ℚ) / 10 ^ 7
   lowerTarget := M.target (Fin.ofNat 7 x.edge)
 
 /-- Fixed-point data of an arc: the side flag, the sign, the label, the circle (shift and
@@ -395,11 +386,10 @@ def piecesOf (hi : Nat) : List Nat → List (Nat × Nat)
   | h :: c :: rest => (h, c) :: piecesOf hi rest
 
 /-- A row from its data line `edge source target axis k r lo hi lam mode`, followed for a circle
-row by its radical parameter and its pieces. -/
+row by its pieces. -/
 def AffineRow.ofData (edge source target axis quarter r lo hi lam mode : Nat)
     (rest : List Nat) : AffineRow :=
-  ⟨edge, source, target, axis, quarter, r == 1, lo, hi, lam, mode, rest.headD 10000000,
-    piecesOf hi rest.tail⟩
+  ⟨edge, source, target, axis, quarter, r == 1, lo, hi, lam, mode, piecesOf hi rest⟩
 
 /-- An arc box from its data line: `side positive`, then the intervals
 `c p q shift rho aLo bLo aHi bHi rLo rHi` and the angle interval of the arc (not part of the
@@ -566,13 +556,10 @@ theorem sourceLower_sound {S : ArcBox} {P : PreparedArc} (hS : S.Encloses P) {X 
     have hv := FI.mem_sub (FI.mem_mul hS.shift (FI.mem_add hX hY)) (FI.mem_mul hS.rho hw)
     exact hv.1.trans (P.circle_lower hS.valid hside hab le_rfl)
 
-
 /-! ### The angle, the base and the target coefficients -/
 
 /-- `1` or `-1`. -/
 def sgnR (b : Bool) : ℝ := if b then 1 else -1
-
-theorem sgnR_sq (b : Bool) : sgnR b ^ 2 = 1 := by cases b <;> norm_num [sgnR]
 
 theorem signQ_eq_sgnR (b : Bool) : (AnglePolynomial.signQ b : ℝ) = sgnR b := by
   cases b <;> simp [AnglePolynomial.signQ, sgnR]
@@ -954,7 +941,6 @@ theorem piecesOK_sound {test : Nat → Nat → Nat → Bool} {den lo hi : Nat}
       · exact ⟨h, lo, upto, hp.1, h1, hu⟩
       · exact piecesFrom_sound hp.2 (lt_of_not_ge hu) h2
 
-
 /-- The coefficients of `X = x₀ + x_a g`. -/
 def xLin (x0 xa : FI) (xs : Bool) : FI × FI × FI :=
   if xs then (x0, xa, FI.point 0) else (x0, FI.point 0, xa)
@@ -1199,7 +1185,7 @@ theorem coreCheck_positive {c : CoreRow} {den lo hi mode : Nat} {pieces : List (
 /-- The check of one row: indices and angle in range, then the tests of its core row. -/
 def checkRow (C : TableCtx) (x : AffineRow) : Bool :=
   match x with
-  | ⟨edge, source, target, axis, quarter, positive, lo, hi, lam, mode, _, pieces⟩ =>
+  | ⟨edge, source, target, axis, quarter, positive, lo, hi, lam, mode, pieces⟩ =>
     Nat.blt edge 7 && Nat.blt source C.n && Nat.blt target C.n && Nat.ble 1 axis &&
       Nat.ble axis 4 && Nat.ble quarter 3 && Nat.ble hi C.den &&
       coreCheck C.den lo hi (Nat.beq axis 2 || Nat.beq axis 4) quarter positive mode pieces
@@ -1214,7 +1200,7 @@ def checkRow (C : TableCtx) (x : AffineRow) : Bool :=
 def rowPrep (M : AffineTableMeta) (den : Nat) (x : AffineRow) : PreparedRow :=
   ⟨x.toTableRow M den, PreparedArc.ofArc M.radius ((x.toTableRow M den).sourceArc M),
     PreparedArc.ofArc M.radius ((x.toTableRow M den).targetArc M),
-    M.charge (x.toTableRow M den).edge, ⟨0, 0⟩⟩
+    M.charge (x.toTableRow M den).edge⟩
 
 theorem row_claim_of_core {M : AffineTableMeta} {C : TableCtx} (hC : C.Valid M) {x : AffineRow}
     (he : x.edge < 7) (hq : x.quarter ≤ 3) (hhi : x.hi ≤ C.den) {four : Bool}
@@ -1258,7 +1244,7 @@ theorem row_claim_of_core {M : AffineTableMeta} {C : TableCtx} (hC : C.Valid M) 
 /-- A row passing the check satisfies its claim. -/
 theorem checkRow_claim {M : AffineTableMeta} {C : TableCtx} (hC : C.Valid M) {x : AffineRow}
     (h : checkRow C x = true) : (x.toTableRow M C.den).Claim M := by
-  obtain ⟨edge, source, target, axis, quarter, positive, lo, hi, lam, mode, rad, pieces⟩ := x
+  obtain ⟨edge, source, target, axis, quarter, positive, lo, hi, lam, mode, pieces⟩ := x
   simp only [checkRow, Bool.and_eq_true, Nat.blt_eq, Nat.ble_eq] at h
   obtain ⟨⟨⟨⟨⟨⟨⟨he, hs⟩, ht⟩, ha1⟩, ha4⟩, hq⟩, hhi⟩, hcore⟩ := h
   have hsrc := hC.boxes source hs

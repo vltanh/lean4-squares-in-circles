@@ -1,7 +1,9 @@
 module
 
 public import SquaresInCircles.Eight.Arithmetic.AffineArc
-public import SquaresInCircles.Eight.Arithmetic.IntervalPolynomial
+public import SquaresInCircles.Eight.Arithmetic.Bernstein
+public import SquaresInCircles.Eight.Arithmetic.ScalarExpr
+public import SquaresInCircles.Eight.Arithmetic.ClosedCover
 
 /-!
 # Embedded affine table schema and real row meaning
@@ -17,9 +19,6 @@ noncomputable section
 
 namespace SquaresInCircles.Eight.Arithmetic
 
-inductive SupportMode | lower | upper | endpoints | circle
-  deriving DecidableEq, Repr
-
 structure ArcData where
   sourceId : ℕ
   role : Fin 7
@@ -27,7 +26,6 @@ structure ArcData where
   positive : Bool
   tangent : QInterval
   label : AffineLabel
-  deriving DecidableEq, Repr
 
 instance : Inhabited ArcData := ⟨⟨0,0,false,false,⟨0,0⟩,⟨0,0,0⟩⟩⟩
 
@@ -60,10 +58,7 @@ structure AffineTableRow where
   positiveHalf : Bool
   angle : QInterval
   multiplier : ℚ
-  mode : SupportMode
-  radicalParameter : ℚ
   lowerTarget : ℚ
-  deriving DecidableEq, Repr
 
 def AffineTableRow.sign (r : AffineTableRow) : ℝ := if r.positiveHalf then 1 else -1
 def AffineTableRow.phi (r : AffineTableRow) (u : ℝ) : ℝ :=
@@ -84,31 +79,5 @@ def AffineTableRow.Claim (M : AffineTableMeta) (r : AffineTableRow) : Prop :=
     0 ≤ forwardMargin r.axis (r.sourceArc M).sign (r.targetArc M).sign a b A B (r.phi u) →
     (r.lowerTarget : ℝ) < chargedCost (r.sourceArc M).label (r.targetArc M).label
       (M.charge r.edge) a b A B (r.phi u)
-
-theorem AffineTableRow.Claim.actual {M : AffineTableMeta} {r : AffineTableRow}
-    (hr : r.Claim M) {a b A B u : ℝ} (hdom : r.Domain M a b A B u)
-    (haxis : (forwardAxis r.axis.index).Feasible
-      (localSource a b (r.sourceArc M).sign)
-      (localTarget A B (r.targetArc M).sign (r.phi u))) :
-    (r.lowerTarget : ℝ) < chargedCost (r.sourceArc M).label (r.targetArc M).label
-      (M.charge r.edge) a b A B (r.phi u) :=
-  hr a b A B u hdom ((actual_axis_iff_margin _ _ _ _ _ _ _ _).mp haxis)
-
-/-- Coverage and row soundness remain independent obligations. The labels on
-both sides are selected once before this implication is applied. -/
-theorem affine_table_covered {M : AffineTableMeta} {rows : List AffineTableRow}
-    (hrows : ∀ r ∈ rows, r.Claim M) {edge : Fin 7} {Ls Lt : AffineLabel}
-    {axis : ForwardAxis} {σ τ a b A B φ : ℝ}
-    (hcover : ∃ r ∈ rows, ∃ u : ℝ,
-      r.edge=edge ∧ r.axis=axis ∧ (r.sourceArc M).label=Ls ∧ (r.targetArc M).label=Lt ∧
-      (r.sourceArc M).sign=σ ∧ (r.targetArc M).sign=τ ∧ r.phi u=φ ∧
-      r.Domain M a b A B u ∧ M.target edge ≤ r.lowerTarget)
-    (haxis : 0 ≤ forwardMargin axis σ τ a b A B φ) :
-    (M.target edge : ℝ) < chargedCost Ls Lt (M.charge edge) a b A B φ := by
-  obtain ⟨r,hr,u,he,ha,hs,ht,hσ,hτ,hφ,hdom,hγ⟩ := hcover
-  have h := hrows r hr a b A B u hdom
-    (by simpa [ha,hσ,hτ,hφ] using haxis)
-  have htarget : (M.target edge : ℝ) ≤ r.lowerTarget := by exact_mod_cast hγ
-  simpa [he,hs,ht,hφ] using htarget.trans_lt h
 
 end SquaresInCircles.Eight.Arithmetic
