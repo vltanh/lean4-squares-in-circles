@@ -109,8 +109,8 @@ For explicit rational checks, put
 Substitution into the exact formula for F_uu gives the upper bound
 
 \[
-2\left[.700^2+.665^2+rac{1.422(.9951)(3.9156)}{1.741^3}
- +1.470\left\{.637(2.354)\left(.9951+rac{.162(.562)}{1.897}\right)
+2\left[.700^2+.665^2+\frac{1.422(.9951)(3.9156)}{1.741^3}
+ +1.470\left\{.637(2.354)\left(.9951+\frac{.162(.562)}{1.897}\right)
               +\frac{.162(.637)^2(3.9156)}{1.897^3}\right\}\right]<8.7.
 \]
 
@@ -119,9 +119,9 @@ The corresponding lower substitution in F_ut is
 \[
 2\left[
  \{.0995(.741)+.9868(.895)\}(.599)
- +1.327\left(.9868-rac{.162(.94)}{1.741}\right)
+ +1.327\left(.9868-\frac{.162(.94)}{1.741}\right)
  +.938(.582)
- -1.470(.637)\left(-.0995+rac{.9951(.562)}{1.897}\right)
+ -1.470(.637)\left(-.0995+\frac{.9951(.562)}{1.897}\right)
  \right]>4.2.
 \]
 
@@ -217,7 +217,7 @@ The coefficients follow from the strict rational comparisons
 The exact ratio is
 
 \[
- \frac C\beta=(2-u)\frac rU\left(1-rac z{u+zr}\right).
+ \frac C\beta=(2-u)\frac rU\left(1-\frac z{u+zr}\right).
 \]
 
 Its lower bound exceeds one because
@@ -292,7 +292,7 @@ Here `0<Delta<.124`, `cu/r<.54`, `a=s+cu/r`, and `s>.0995`.
 Consequently
 
 \[
- K_B-C>rac23\{.876(.0995)-.124(.54)\}
+ K_B-C>\frac23\{.876(.0995)-.124(.54)\}
                      =\boxed{3367/250000}.           \tag{13}
 \]
 
