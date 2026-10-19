@@ -386,6 +386,18 @@ and concavity, with only two nonzero increments at the extremum.
 The required geometric seven-cycle cost inequality is still open;
 these consequences of a bad mismatch do not by themselves close G4.
 
+**First charged contact family, proved.**
+`HAND_COARSE_POSITIVE_ZERO_CONTACT_WITHOUT_TABLES.md` proves
+\((111/112)\delta+F(b)-F(1-B)\ge0\) for one explicit quintic
+\(F\), every \(0\le\delta\le.7\), and both original transverse
+owners of a positive \((+,-)\) zero-quarter edge. It includes all
+contained radial states and all owner ties. The aligned contact
+continuum is an exact equality; every positive angle is strict.
+The proof uses circle speed bounds, a concave stationary-radius
+chord, and two whole-domain polynomial remainders. The other charged
+families and their common seven-cycle assembly are still required
+for either coarse contraction.
+
 ### G5 — Middle contraction and sign rigidity
 
 **Replaces.** The \(0.26\to0.1\) and \(0.1\to0.015\) affine tables.
