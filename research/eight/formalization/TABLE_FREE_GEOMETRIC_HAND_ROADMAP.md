@@ -310,6 +310,14 @@ concave, and a uniform inverse-contact derivative bound handles both
 the full axial minimum and the final target-ratio lemma. This leaves
 no derivative-range table in that eight-half-axis component.
 
+`HAND_WRONG_0011011_MIXED_COMPONENTS_WITHOUT_TABLES.md`, Sections
+1--6, now proves every mixed zero-quarter component and the stated
+complete quarter-turn components. Its common actual-circle support
+argument removes nine squared-polynomial rows; whole contact-curve
+calculus also replaces the former early-angle tangent lists and
+corner derivative ranges. The nineteen-class mixed assembly is still
+explicitly incomplete pending its final two quarter-turn families.
+
 ### G3 — Tangent cuts as a single structural theorem
 
 **Replaces.** The six large G/T/H/D tail tables (the H/D part may use
